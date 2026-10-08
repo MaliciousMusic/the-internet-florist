@@ -46,6 +46,21 @@ def look(gv, name):
 
 if __name__ == '__main__':
     genus, src, out = sys.argv[1], sys.argv[2], sys.argv[3]
+    # one run at a time on this PC, whichever session starts it (the register's rate stays at 1 request every 2 s)
+    import os, atexit
+    LK = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'ws', 'locks', 'kavb')
+    os.makedirs(os.path.dirname(LK), exist_ok=True)
+    while True:
+        try:
+            os.mkdir(LK)
+            break
+        except FileExistsError:
+            if time.time() - os.path.getmtime(LK) > 3600:
+                os.rmdir(LK)
+            else:
+                print('kavb: une autre recherche tourne, j attends', file=sys.stderr, flush=True)
+                time.sleep(20)
+    atexit.register(lambda: os.path.isdir(LK) and os.rmdir(LK))
     names = [l.strip() for l in open(src, encoding='utf-8') if l.strip() and not l.startswith('#')]
     gv = genus_value(genus)
     res = {'source': FORM, 'consulte': time.strftime('%Y-%m-%d'), 'genre': genus, 'resultats': {}}
