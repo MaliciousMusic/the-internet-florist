@@ -1,0 +1,97 @@
+<title>Vie d'un bouquet</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400..700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+/* Layout: the bouquet on its linen print, the ruler of its 30 days right under it, the four stages as a strip, then the notes */
+:root{--bg:#efe9e1;--paper:#f8f4ee;--ink:#1d1916;--ink2:#6e625a;--line:rgba(29,25,22,.14);--wine:#6d1028;--gold:#a8834e;--print:#efe8de;--print2:#e2d8ca;
+  --f-serif:"Instrument Serif","Cormorant Garamond",Georgia,serif;--f-ui:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1b1715;--paper:#25201d;--ink:#efe6dc;--ink2:#b3a69a;--line:rgba(239,230,220,.16);--wine:#e2869d;--gold:#d3ae76;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#1b1715;--paper:#25201d;--ink:#efe6dc;--ink2:#b3a69a;--line:rgba(239,230,220,.16);--wine:#e2869d;--gold:#d3ae76;color-scheme:dark}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-ui);font-size:15px;line-height:1.5;padding-inline:16px;padding-block:22px 48px}
+.wrap{max-width:980px;margin:0 auto;display:grid;gap:22px}
+header{display:grid;gap:6px;max-width:64ch}
+.eyebrow{font-size:11px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--gold)}
+h1{font-family:var(--f-serif);font-weight:400;font-style:italic;font-size:clamp(34px,6vw,54px);line-height:1.02;letter-spacing:-.01em;text-wrap:balance}
+.lede{color:var(--ink2);max-width:60ch}
+.viewer{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:22px;align-items:start}
+@media (max-width:760px){.viewer{grid-template-columns:minmax(0,1fr)}}
+.print{position:relative;background:radial-gradient(ellipse 85% 70% at 50% 38%,#f6f1ea,var(--print) 78%);border-radius:6px;box-shadow:0 1px 0 var(--print2),0 18px 40px rgba(40,25,15,.14);aspect-ratio:3/4;max-width:100%;overflow:hidden}
+.print svg{position:absolute;inset:0;width:100%;height:100%;display:block}
+.tag{position:absolute;left:14px;top:12px;display:flex;align-items:baseline;gap:10px;color:#2a201b}
+.tag b{font-family:var(--f-serif);font-style:italic;font-weight:400;font-size:30px;line-height:1}
+.tag span{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#6e625a;font-variant-numeric:tabular-nums}
+.side{display:grid;gap:18px;min-width:0}
+.ruler{display:grid;gap:8px}
+.ruler label{font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--ink2)}
+.track{position:relative;padding-top:4px}
+input[type=range]{width:100%;accent-color:var(--wine);height:28px}
+.marks{position:relative;height:34px;font-size:11px;color:var(--ink2);font-variant-numeric:tabular-nums}
+.marks span{position:absolute;top:0;transform:translateX(-50%);display:grid;justify-items:center;line-height:1.2;white-space:nowrap}
+.marks span::before{content:"";width:1px;height:7px;background:var(--line);margin-bottom:3px}
+.marks span:first-child{transform:none;justify-items:start}
+.names{position:relative;height:18px;font-size:12px;font-weight:600;color:var(--ink)}
+.names span{position:absolute;top:0;transform:translateX(-50%);white-space:nowrap}
+.marks{height:24px}
+.row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.btn{border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:999px;padding:8px 16px;font:inherit;font-size:14px;font-weight:500;cursor:pointer}
+.btn:hover{border-color:var(--ink2)}
+.btn.main{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.btn:focus-visible,.chip:focus-visible,input:focus-visible,.thumb:focus-visible{outline:2px solid var(--wine);outline-offset:2px}
+.picks{display:grid;gap:6px}
+.chip{display:flex;justify-content:space-between;gap:10px;text-align:left;border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:10px;padding:9px 12px;font:inherit;font-size:14px;cursor:pointer}
+.chip small{color:var(--ink2);font-size:12px}
+.chip[aria-selected="true"]{border-color:var(--wine);background:var(--paper)}
+.strip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+@media (max-width:560px){.strip{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.thumb{position:relative;background:radial-gradient(ellipse 85% 70% at 50% 38%,#f6f1ea,var(--print) 78%);border:0;border-radius:5px;aspect-ratio:3/4;max-width:100%;padding:0;cursor:pointer;overflow:hidden}
+.thumb svg{position:absolute;inset:0;width:100%;height:100%}
+.thumb i{position:absolute;left:8px;bottom:6px;font-family:var(--f-serif);font-size:17px;color:#2a201b}
+.thumb[aria-current="true"]{box-shadow:0 0 0 2px var(--wine)}
+.notes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;border-top:1px solid var(--line);padding-top:18px}
+@media (max-width:760px){.notes{grid-template-columns:minmax(0,1fr)}}
+.notes h2{font-family:var(--f-serif);font-weight:400;font-size:24px;line-height:1.1;margin-bottom:8px}
+.notes ul{padding-left:18px;display:grid;gap:6px;color:var(--ink2);font-size:14px}
+.notes li b{color:var(--ink);font-weight:600}
+.busy{position:absolute;right:12px;top:14px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#6e625a}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
+</style>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs id="defs"></defs></svg>
+<main class="wrap">
+  <header>
+    <p class="eyebrow">Belai's Flowers · prototype à valider</p>
+    <h1>Vie d'un bouquet</h1>
+    <p class="lede">Le même bouquet du bourgeon au fané : 30 jours de vie, puis un souvenir. Fais glisser les jours ou lance la lecture. Le dessin est celui de la boutique, avec le nouveau mécanisme des stades appliqué à toutes les espèces.</p>
+  </header>
+  <section class="viewer" aria-label="Le bouquet au jour choisi">
+    <div class="print" id="print"><svg id="bq" role="img" aria-label="Bouquet"></svg><div class="tag"><b id="stName">Éclosion</b><span id="stDay">jour 10</span></div><span class="busy" id="busy" hidden>dessin…</span></div>
+    <div class="side">
+      <div class="ruler">
+        <label for="day">Jour de vie</label>
+        <div class="track"><input type="range" id="day" min="0" max="45" step="1" value="10">
+          <div class="marks" aria-hidden="true"><span style="left:0">0</span><span style="left:6.67%">3</span><span style="left:44.4%">20</span><span style="left:66.7%">30</span><span style="left:100%;transform:translateX(-100%);justify-items:end">45</span></div>
+          <div class="names" aria-hidden="true"><span style="left:3.3%">Bourg.</span><span style="left:25.6%">Éclosion</span><span style="left:55.6%">Déclin</span><span style="left:83.3%">Fané</span></div></div>
+        <div class="row"><button class="btn main" id="play" type="button">Lecture</button><button class="btn" id="reseed" type="button">Autre composition</button></div>
+      </div>
+      <div class="picks" id="picks" role="tablist" aria-label="Bouquets du prototype"></div>
+    </div>
+  </section>
+  <section class="strip" id="strip" aria-label="Les quatre stades"></section>
+  <section class="notes">
+    <div><h2>Ce que fait le prototype</h2><ul>
+      <li><b>Bourgeon</b> (0 à 3 jours) : les têtes se referment en boutons, pour les espèces qui en dessinent.</li>
+      <li><b>Déclin</b> (20 à 30 jours) : couleurs qui pâlissent, têtes qui penchent vers l'extérieur, premiers pétales sur la table.</li>
+      <li><b>Fané</b> (30 jours et plus) : verts vers l'olive puis la paille, blancs vers l'ivoire puis le parchemin, rouges vers le lie-de-vin, roses vers le vieux rose puis le brun, jaunes vers l'ocre, bleus vers le gris mauve ; tiges brunies dans l'eau.</li>
+      <li>Les espèces qui sèchent sur place (protées, immortelles, hortensias) changent moins.</li>
+    </ul></div>
+    <div><h2>Contrôlé</h2><ul>
+      <li>Les 76 modèles et des bouquets composés, à chacun des 4 stades : <b>0 tige flottante, 0 tige sous le bord, 0 tige cassée</b>.</li>
+      <li>Une tête ne penche jamais à plus de 50° de sa tige, et reste au-dessus de son col.</li>
+      <li>Le rendu habituel des bouquets est inchangé.</li>
+    </ul></div>
+    <div><h2>Ce qui viendra, espèce par espèce</h2><ul>
+      <li>Pétales qui se recroquevillent, bords bruns, transparence des orchidées.</li>
+      <li>Têtes qui se dégarnissent, épis qui fanent par le bas, feuilles qui se recourbent, eau qui se trouble.</li>
+      <li>Les réglages viendront des fiches de fanaison des 533 espèces, en cours de recherche.</li>
+    </ul></div>
+  </section>
+</main>

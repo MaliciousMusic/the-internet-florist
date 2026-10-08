@@ -1,0 +1,19 @@
+# built pages and outputs (rebuilt by mkapp.sh, mkqa.sh, mkpl.sh, mksv.py, shot.sh)
+demo7.html
+belais-flowers-demo.html
+pilote/sv.html
+pilote/bq.html
+pilote/bqp.html
+lab/qa13.html
+lab/pl.html
+lab/u1part.js
+fleur/out/
+fleur/res/
+bronze/out/
+# third-party photos (never committed) and throwaway browser profiles
+refcache/
+chrome_g*/
+ws/locks/
+ch/
+__pycache__/
+*.pyc

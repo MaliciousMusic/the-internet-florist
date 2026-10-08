@@ -1,0 +1,2 @@
+const Q3=new URLSearchParams(location.search),A3=+(Q3.get('a')||0),B3=+(Q3.get('b')||12);
+const NS3=(Q3.get('ns')||'').split(',').filter(Boolean).map(Number);window.LAB=(NS3.length?MODELS.filter(m=>NS3.includes(m.n)):MODELS.slice(A3,B3)).map((m,i)=>[`${m.n} · ${m.nom} · ${m.tpl} · ${m.vase}`,'0 0 100 100',s=>{s.closest('.c').style.background=lt(m.bg||'#e8e0d6',.2);LOD=1;buildBq(s,[],7+i,m.vase,0,null,m);LOD=0}]);
