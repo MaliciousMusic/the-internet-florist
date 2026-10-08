@@ -2,8 +2,8 @@
 reference photographs, by batched headless renders and image measures; no language model in the loop. Mode d'emploi : FIT.md.
 
   python fleur/fit.py <sid> --space <space.json> --targets <targets.json> [--cw i] [--view 2,0,3] [--budget 60] [--out <dir>]
-  python fleur/fit.py targets <sid> --refs <refcache/<sid>> --out <targets.json>            measures of the kept photos
-  python fleur/fit.py targets <sid> --render --space <space.json> --out <targets.json> [--cw i]   measures of the current drawing
+  python fleur/fit.py targets <sid> --refs <refcache/<sid>> --out <targets.json> [--family grappe]   measures of the kept photos
+  python fleur/fit.py targets <sid> --render --space <space.json> --out <targets.json> [--cw i] [--family grappe]   measures of the current drawing
   python fleur/fit.py cmp <a.json> <b.json>                                                   two targets files side by side
 
 Every render goes through fleur/shot.sh (the atelier gate: 3 headless Chrome at most, waits under 3.8 GB of free RAM), many candidates per
@@ -31,8 +31,20 @@ STAGES = {
 }
 SEEDS = [3, 8]
 # the smallest tolerance of each kind of measure (photos: the spread of the kept photos when it is larger)
-TOL = {'hw': .06, 'wh': .06, 'ang': 3.0, 'lab': 5.0, 'stem': .02, 'leaflw': .3, 'leafang': 6.0}
+TOL = {'hw': .06, 'wh': .06, 'ang': 3.0, 'lab': 5.0, 'stem': .02, 'leaflw': .3, 'leafang': 6.0, 'taper': .08, 'fill': .06}
 KINDS = {'bouton': ['hw'], 'entrouverte': ['wh', 'ang'], 'ouverte': ['wh', 'ang'], 'face': ['lab'], 'tige': ['stem'], 'feuille': ['leaflw', 'leafang']}
+# inflorescences (raceme, panicle, thyrse: lilac, hyacinth, grape hyacinth, wisteria, freesia): not a radial flower, so the cup / opening
+# measures give way to the silhouette of the whole cluster, in ratios only: hw length/width, taper narrow end/wide end, fill area/box
+GRAPPE = {'grappe', 'panicule', 'thyrse', 'raceme', 'epi', 'inflorescence'}
+KINDS_G = dict(KINDS, bouton=['hw', 'taper', 'fill'], entrouverte=['hw', 'taper', 'fill'], ouverte=['hw', 'taper', 'fill'])
+LAB_G = ('corps',)  # the colour of a cluster is its body: base and tip are the cup's business
+STAGE_NAME = {'ouvert': 'ouverte', 'ouverte': 'ouverte', 'entrouvert': 'entrouverte', 'entrouverte': 'entrouverte', 'bouton': 'bouton', 'boutons': 'bouton'}
+
+
+def fam_of(x):
+    """'grappe' for a cluster family (any of GRAPPE, case and accents aside), else ''"""
+    x = re.sub(r'[^a-z]', '', (x or '').lower().replace('é', 'e').replace('è', 'e'))
+    return 'grappe' if x in GRAPPE else ''
 
 
 def opts(a):
@@ -134,6 +146,57 @@ def shape(mask):
     if mask is None or mask.sum() < 30:
         return None
     return IMG.measure(trim(mask))
+
+
+def closed(mask):
+    """a silhouette with its holes filled and its specks (within 2 px of the main body) joined; only the main body is kept"""
+    from scipy import ndimage
+    if mask is None or mask.sum() < 60:
+        return None
+    m = ndimage.binary_fill_holes(mask)
+    lb, n = ndimage.label(ndimage.binary_dilation(m, iterations=2))
+    if n > 1:
+        m = m & (lb == 1 + int(np.argmax(ndimage.sum(m, lb, range(1, n + 1)))))
+    return m
+
+
+def body_lab(im, m):
+    """the body colour of a silhouette: Lab of the median colour of its pixels (the edge pixels, blended with the background, left out)"""
+    from scipy import ndimage
+    e = ndimage.binary_erosion(m, iterations=2)
+    e = e if e.sum() >= 20 else m
+    c = np.median(np.asarray(im.convert('RGB'))[e], 0).astype(int)
+    return lab('#%02x%02x%02x' % tuple(c))
+
+
+def thyrse(mask):
+    """silhouette of an inflorescence, in ratios only. The mask is closed (holes filled, specks within 2 px joined to the main body), read in its
+    principal axes (PCA: a tilted photograph reads like an upright drawing; the wide edge is the length) and measured in slabs 2 px thick along
+    the axis; the narrow slabs at both ends (stem, neck, a fine tip: under a fifth of the widest) are dropped, as in trim().
+    hw = length/width of the box; taper = mean width of the narrower end third / that of the wider one (1: a cylinder; it does not matter which
+    end is up, so it serves an upright lilac as well as a hanging wisteria); fill = area / box. Same function for the drawing and the photos."""
+    m = closed(mask)
+    if m is None:
+        return None
+    ys, xs = np.nonzero(m)
+    P = np.stack([xs, ys], 1).astype(float)
+    P -= P.mean(0)
+    ev, evec = np.linalg.eigh(np.cov(P.T))
+    u, v = P @ evec[:, 1], P @ evec[:, 0]
+    k = ((u - u.min()) // 2).astype(int)
+    lo, hi = np.full(k.max() + 1, np.inf), np.full(k.max() + 1, -np.inf)
+    np.minimum.at(lo, k, v)
+    np.maximum.at(hi, k, v)
+    w = np.where(np.isfinite(lo), hi - lo + 1, 0.)
+    big = np.nonzero(w >= .2 * w.max())[0]
+    a, b = big.min(), big.max()
+    if b - a < 5:
+        return None
+    sel = (k >= a) & (k <= b)
+    H, W = 2. * (b - a + 1), np.ptp(v[sel]) + 1
+    w, t = w[a:b + 1], max(1, (b - a + 1) // 3)
+    narrow, wide = sorted([w[:t].mean(), w[-t:].mean()])
+    return {'hw': float(H / W), 'taper': float(narrow / wide), 'fill': float(sel.sum() / (H * W))}
 
 
 def rmask(cell):
@@ -265,11 +328,14 @@ def green(a):
     return (a[..., 1] > a[..., 0] + 8) & (a[..., 1] > a[..., 2] + 8) & (sat > .15)
 
 
-def measure_cell(stage, cell):
-    """the measures of one rendered cell for its stage: {kind: value}"""
+def measure_cell(stage, cell, fam=''):
+    """the measures of one rendered cell for its stage: {kind: value} (fam 'grappe': the silhouette of an inflorescence, the body colour)"""
     if cell is None:
         return {}
-    k = KINDS[stage]
+    k = (KINDS_G if fam else KINDS)[stage]
+    if 'lab' in k and fam:
+        m = closed(rmask(cell))
+        return {'lab': {'corps': body_lab(cell, m)}} if m is not None else {}
     if 'lab' in k:
         c, cf = colours(cell)
         return {'lab': c} if c else {}
@@ -280,6 +346,8 @@ def measure_cell(stage, cell):
     if 'leaflw' in k:
         r = leaf(green(cell) & m, 3)
         return {'leaflw': r[0], 'leafang': r[1]} if r else {}
+    if fam and 'taper' in k:
+        return thyrse(m) or {}
     s = shape(m)
     if not s:
         return {}
@@ -302,11 +370,11 @@ def stage_cells(T, ms):
     return out
 
 
-def aggregate(cells, imgs):
+def aggregate(cells, imgs, fam=''):
     """the measures of one candidate: per stage and kind, the mean over its seeds ({stage.kind[.part]: value})"""
     acc = {}
     for (st, c), im in zip(cells, imgs):
-        for k, v in measure_cell(st, im).items():
+        for k, v in measure_cell(st, im, fam).items():
             if k == 'lab':
                 for part, L in v.items():
                     acc.setdefault('%s.lab.%s' % (st, part), []).append(L)
@@ -481,13 +549,13 @@ class Search:
 
 
 # ---------------------------------------------------------------- the fit
-def evaluator(R, cells, ms, links, probe, log):
+def evaluator(R, cells, ms, links, probe, log, fam=''):
     def ev(cands):
         imgs, base = R.run([c for _, c in cells], cands, links, probe)
         log['base'] = log.get('base') or base
         out = []
         for row in imgs:
-            meas = aggregate(cells, row)
+            meas = aggregate(cells, row, fam)
             dv = devs(meas, ms)
             out.append({'meas': meas, 'dev': dv, 'res': resid(meas, ms), 'cost': cost(dv, ms), 'ok': all(abs(v) <= 1 for v in dv.values())})
         return out
@@ -559,8 +627,9 @@ def fit(sid, o):
     if R.cwid is None and any(m['kind'] == 'lab' for m in T['m']):  # the colourway's id (a rank in CWS[sid]) comes back from a render
         R.run([{'k': 'head', 'op': 1, 'wl': 0, 'view': 0, 'seed': 3}], [{}], (), (), D=40)
     ms = active(T, R.cwid)
+    fam = fam_of(o.get('family') or T.get('family'))
     cells = stage_cells(T, ms)
-    ev = evaluator(R, cells, ms, S.links, probe, log)
+    ev = evaluator(R, cells, ms, S.links, probe, log, fam)
     k0 = S.snap([S.norm(i, start[s['path']]) for i, s in enumerate(S.free)])
     x0, start = start, S.cand(k0)  # the start on the settings' steps: the first point of the search
     srch = Search(S, ev, int(o.get('budget', 60)))
@@ -625,6 +694,8 @@ def photo_list(refs):
     if os.path.exists(kj):
         for x in jload(kj):
             tags = dict(t.split(':', 1) for t in x.get('tags', []) if ':' in t)
+            if 'stade' in tags:  # refs.py says « ouvert », the stages here say « ouverte »
+                tags['stade'] = STAGE_NAME.get(tags['stade'].strip().lower(), tags['stade'])
             yield os.path.join(refs, 't%03d.jpg' % x['i']), tags, '%d %s' % (x['i'], x['title'][:30])
         return
     cm = cwmap(refs)
@@ -647,8 +718,8 @@ def photo_list(refs):
         yield p, t, n
 
 
-def measure_photo(p, t):
-    """{key: value} of one photograph by its tags, or the reason it is left out"""
+def measure_photo(p, t, fam=''):
+    """{key: value} of one photograph by its tags, or the reason it is left out (fam 'grappe': inflorescence silhouettes instead of cup measures)"""
     if t is None:
         return None, 'pas une tete (graine, tubercule, planche...)'
     if not os.path.exists(p):
@@ -672,6 +743,8 @@ def measure_photo(p, t):
         r = stem_ratio(m)
         if r:
             out['tige.stem'] = r
+    if fam:
+        return measure_grappe(im, st, org, t.get('coloris', ''), out)
     s = shape(m) if cf else None
     if st.startswith('bouton'):
         if not s:
@@ -694,7 +767,62 @@ def measure_photo(p, t):
     return (out or None), (why or 'rien de mesurable')
 
 
-def build(vals, src):
+def gcomps(im, warm=False, size=320):
+    """the complete inflorescences of a photograph, one mask each, on a copy 320 px wide at most (returned with it): what is far from the colour of
+    the border and is not foliage (green, yellow-green hues, shadows), specks opened away. A body is kept when it touches no edge of the frame,
+    covers 2 to 60 % of it and is nearly convex (area over convex hull .72 at least: two panicles run together, a bush, a branch with its leaves
+    do not pass), then only those at least half as large as the largest (a highlight or a patch of sky is not a second panicle). Foliage hues
+    run from 35 degrees (bark, soil, dry grass count as background) or, for a yellow or orange colourway (warm), from 65."""
+    from scipy import ndimage, spatial
+    im = im.copy()
+    im.thumbnail((size, size))
+    A = np.asarray(im).astype(float)
+    bg = np.median(np.concatenate([A[0], A[-1], A[:, 0], A[:, -1]]), 0)
+    H = np.asarray(im.convert('HSV')).astype(float)
+    hue, sat, val = H[..., 0] * 360 / 255, H[..., 1] / 255, H[..., 2]
+    foliage = green(A) | (val < 70) | ((hue >= (65 if warm else 35)) & (hue <= 170) & (sat > .12))
+    m = (np.sqrt(((A - bg) ** 2).sum(-1)) > 40) & ~foliage
+    m = ndimage.binary_opening(ndimage.binary_closing(m, iterations=1), iterations=1)
+    lb, n = ndimage.label(m)
+    out = []
+    for i in range(1, n + 1):
+        c = ndimage.binary_fill_holes(lb == i)
+        a = c.mean()
+        if not .02 <= a <= .6 or c[0].any() or c[-1].any() or c[:, 0].any() or c[:, -1].any():
+            continue
+        ys, xs = np.nonzero(c)
+        try:
+            hull = spatial.ConvexHull(np.stack([xs, ys], 1)).volume
+        except Exception:
+            continue
+        if c.sum() / hull >= .72:
+            out.append(c)
+    big = max([c.sum() for c in out], default=0)
+    return [c for c in out if c.sum() >= .5 * big], im
+
+
+def measure_grappe(im, st, org, cw, out):
+    """an inflorescence photograph: hw, taper, fill of the silhouettes of its complete clusters (the median of those of one photograph) per stage
+    (bud, half open, open: stage tags only, any view) and the body colour of an open one, for its colourway. Photographs of an organ (winter bud,
+    twig, leaf) are not portraits of the cluster: stem and leaf only."""
+    if st not in ('bouton', 'entrouverte', 'ouverte'):
+        return (out or None), 'stade %s non mesure' % (st or '?')
+    if any(w in org for w in ('bourgeon', 'tige', 'feuille')):
+        return (out or None), 'organe %s : pas le portrait de la grappe' % org
+    cs, th = gcomps(im, bool(re.search(r'jaune|orange|creme|abricot|saumon|dore', cw)))
+    S = [(thyrse(c), c) for c in cs]
+    S = [(s, c) for s, c in S if s]
+    if not S:
+        return (out or None), 'aucune grappe entiere et isolee'
+    for k in ('hw', 'taper', 'fill'):
+        out['%s.%s' % (st, k)] = float(np.median([s[k] for s, _ in S]))
+    if st == 'ouverte' and cw:
+        L = np.median([body_lab(th, closed(c)) for _, c in S], 0)
+        out['face.lab.corps@%s' % cw] = [round(float(x), 1) for x in L]
+    return out, ''
+
+
+def build(vals, src, fam=''):
     """targets from the gathered values: median, spread (MAD), tolerance = max(minimum of its kind, spread)"""
     ms = []
     for key in sorted(vals):
@@ -711,7 +839,8 @@ def build(vals, src):
             med = float(np.median(v))
             sd = float(np.median(np.abs(np.array(v) - med))) * 1.4826 if len(v) > 1 else 0.
             vv = round(med, 4)
-        m = {'id': key.replace('@', '.') if cw else key, 'stage': st, 'kind': kind, 'v': vv, 'tol': round(max(TOL[kind], sd), 3), 'w': 1, 'n': len(v), 'sd': round(sd, 3)}
+        floor = max(TOL[kind], .06 * vv) if fam and kind == 'hw' else TOL[kind]  # a cluster's length/width is 2 to 6: a relative floor
+        m = {'id': key.replace('@', '.') if cw else key, 'stage': st, 'kind': kind, 'v': vv, 'tol': round(max(floor, sd), 3), 'w': 1, 'n': len(v), 'sd': round(sd, 3)}
         if part:
             m['part'] = part
         if cw:
@@ -724,23 +853,26 @@ def build(vals, src):
 
 def targets(sid, o):
     out = o.get('out') or os.path.join(ROOT, 'fleur', 'out', 'targets-%s.json' % sid)
+    fam = fam_of(o.get('family'))
+    if o.get('family') and not fam:
+        print('famille %s : pas une grappe, mesures de fleur radiale' % o['family'])
     if o.get('render'):
         sp = jload(o['space'])
         R = Renderer(sid, sp['spec'], o.get('cw', sp.get('cw', '0')), 'tg_' + re.sub(r'\W', '', sid)[:14])
         sts = ['bouton', 'entrouverte', 'ouverte', 'face'] + (['tige', 'feuille'] if o.get('plant') else [])
         cells = stage_cells({'stages': sp.get('stages', {})}, [{'stage': s} for s in sts])
         imgs, _ = R.run([c for _, c in cells], [{}], (), ())
-        meas = aggregate(cells, imgs[0])
+        meas = aggregate(cells, imgs[0], fam)
         vals = {}
         for k, v in meas.items():
             p = k.split('.')
             vals[(k + '@' + R.cwid) if p[1] == 'lab' else k] = [v]
-        T = {'sid': sid, 'src': 'dessin', 'cw': R.cwid, 'stages': {s: STAGES[s] for s in sts}, 'm': build(vals, None), 'dropped': []}
+        T = {'sid': sid, 'src': 'dessin', 'cw': R.cwid, 'stages': {s: STAGES[s] for s in sts}, 'm': build(vals, None, fam), 'dropped': []}
     else:
         refs = o['refs']
         vals, src, drop, used = {}, {}, [], 0
         for p, t, name in photo_list(refs):
-            r, why = measure_photo(p, t)
+            r, why = measure_photo(p, t, fam)
             if not r:
                 drop.append([name, why])
                 continue
@@ -748,10 +880,12 @@ def targets(sid, o):
             for k, v in r.items():
                 vals.setdefault(k, []).append(v)
                 src.setdefault(k, []).append(name)
-        ms = build(vals, src)
+        ms = build(vals, src, fam)
         T = {'sid': sid, 'src': 'photos', 'refs': refs.replace('\\', '/'), 'stages': {s: STAGES[s] for s in sorted({m['stage'] for m in ms}, key=list(STAGES).index)},
              'm': ms, 'dropped': drop}
         print('%s : %d photos mesurees, %d ecartees (faible confiance ou hors sujet ; voir dropped)' % (sid, used, len(drop)))
+    if fam:
+        T['family'] = fam
     jsave(out, T)
     for m in sorted(T['m'], key=lambda m: m['kind'] == 'lab')[:17]:
         print('  %-26s %-16s tol %-6s n %d' % (m['id'], fmt(m['v']), m['tol'], m['n']))

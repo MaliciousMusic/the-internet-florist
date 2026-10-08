@@ -8,6 +8,8 @@ Tu produis :
 2. Une pièce de kit absente (couronne, rosette, grappe...) : générique et paramétrée, dans app/y3-<famille>.js, jamais dans y3.js. Si tu touches au moteur : l'anémone reste à 0,00 % (fleur/img.py diff) et rtest reste IDENTIQUE.
 3. <<rc>>/space.json (format de fleur/FIT.md) : les réglages libres qui font la silhouette et les angles par stade, avec min, max, step, x0 et les liens. fit.py les ajustera sur les cibles ; pas les couleurs.
 
+Famille <<family>>. Si c'est une grappe (panicule, thyrse, racème) : la tête est l'inflorescence ENTIÈRE ; targets.json donne sa silhouette en rapports (ouverte.hw longueur/largeur, .taper bout étroit/bout large, .fill aire/boîte, face.lab.corps) ; mesure ton dessin pareil : python fleur/fit.py targets <<sid>> --render --space <<rc>>/space.json --family grappe --out <<rc>>/t-dessin.json, puis fit.py cmp <<rc>>/targets.json <<rc>>/t-dessin.json.
+
 Boucle de travail : UNE commande par tour, une seule petite image (1 000 px au plus) :
   sh mkapp.sh | tail -1 && python pilote/mksv.py && sh fleur/shot.sh f_<<sid>> "grid=1&sid=<<sid>>&cws=<2 coloris>&st=.06:0,.2:0,.4:0,.75:0,1:0,1:.35,1:.6,1:.75,1:.9&view=2,0,3&D=110" && python fleur/img.py small fleur/out/f_<<sid>>.png --w 1000
 Les chiffres d'abord : python fleur/img.py pair contre le brief ; n'ouvre l'image que si les chiffres sont dans les fourchettes. Les rendus passent toujours par shot.sh (la porte) ; 20 lignes de sortie par commande.

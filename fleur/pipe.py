@@ -891,17 +891,37 @@ def step_coloris(ctx):
 
 # ---------------------------------------------------------------------------------------------------------------- targets
 
+def targets_cmd(ctx):
+    """fit.py targets on the kept photos; the form family (grappe: an inflorescence, not a radial flower) is passed on, fit.py decides what it means"""
+    cmd = [sys.executable, 'fleur/fit.py', 'targets', ctx.sid, '--refs', ctx.rel, '--out', ctx.rel + '/targets.json']
+    fam = (ctx.st.get('family') or '').strip()
+    return cmd + ['--family', fam] if fam else cmd
+
+
+SILHOUETTE = ('hw', 'taper', 'fill')  # fit.py's measures of an inflorescence's outline (family grappe)
+
+
+def check_targets(t):
+    """at least 3 measures (silhouettes, colours, stem, leaf: all count); a cluster family (targets.json says family grappe) also needs its outline"""
+    ms = t.get('m', [])
+    n = len(ms)
+    kinds = sorted({m.get('kind') for m in ms})
+    sil = sum(1 for m in ms if m.get('kind') in SILHOUETTE)
+    ok = n >= 3 and (t.get('family') != 'grappe' or sil >= 3)
+    msg = '%d measures (%s), %d photos dropped' % (n, ','.join(map(str, kinds)), len(t.get('dropped', [])))
+    if t.get('family') == 'grappe':
+        msg += '; family grappe: %d outline measures%s' % (sil, '' if sil >= 3 else ' (3 needed: no whole inflorescence isolated in the photos)')
+    return ok, msg, {'n': n, 'silhouette': sil}
+
+
 def step_targets(ctx):
     if not have(ctx, 'fleur/fit.py'):
         return {'status': 'skipped', 'msg': 'fleur/fit.py not delivered yet'}
-    code, text = run_cmd(ctx, [sys.executable, 'fleur/fit.py', 'targets', ctx.sid, '--refs', ctx.rel, '--out', ctx.rel + '/targets.json'], 'targets', timeout=1800)
+    code, text = run_cmd(ctx, targets_cmd(ctx), 'targets', timeout=1800)
     if ctx.dry:
         return {'status': 'done', 'msg': 'dry'}
-    t = jload(ctx.rc + '/targets.json', {})
-    n = len(t.get('m', []))
-    kinds = sorted({m.get('kind') for m in t.get('m', [])})
-    ok = n >= 3
-    return {'status': 'done' if ok else 'failed', 'msg': '%d measures (%s), %d photos dropped' % (n, ','.join(map(str, kinds)), len(t.get('dropped', []))), 'checks': {'n': n}}
+    ok, msg, checks = check_targets(jload(ctx.rc + '/targets.json', {}))
+    return {'status': 'done' if ok else 'failed', 'msg': msg, 'checks': checks}
 
 
 # ---------------------------------------------------------------------------------------------------------------- Opus / Sonnet loops
@@ -1486,6 +1506,29 @@ def cmd_selftest(a):
         jsave(rc + '/keep.json', [{'tags': ['stade:bouton']}, {'tags': ['stade:fané']}, {'tags': ['stade:ouverte']}, {'tags': ['organe:tige']}, {'tags': ['organe:feuille-dessus']}])
         c = check_refs(ctx)
         t('refs: hard minimum (10 photos) fails with 5', not c['ok'] and c['n'] == 5, c['msg'])
+        ctx.st['family'] = 'grappe'
+        c = targets_cmd(ctx)
+        t('targets: the family is passed to fit.py', c[-2:] == ['--family', 'grappe'], str(c[-3:]))
+        ctx.st['family'] = ''
+        t('targets: no family, no flag', '--family' not in targets_cmd(ctx))
+        mm = lambda *k: [{'kind': x} for x in k]
+        t('targets: 3 measures of any kind pass', check_targets({'m': mm('leaflw', 'leafang', 'stem')})[0])
+        t('targets: 2 measures fail', not check_targets({'m': mm('leaflw', 'leafang')})[0])
+        t('targets: a grappe counts its outline', check_targets({'family': 'grappe', 'm': mm('hw', 'taper', 'fill', 'lab')})[0])
+        t('targets: a grappe without outline fails', not check_targets({'family': 'grappe', 'm': mm('leaflw', 'leafang', 'stem', 'lab')})[0])
+        try:
+            import numpy as np
+            sys.path.insert(0, HERE)
+            import fit as FITMOD
+            from PIL import Image, ImageDraw
+            r = []
+            for ang in (0, 35, 170):  # a cone, upright then tilted: the same ratios (principal axes), whichever end is up
+                im = Image.new('L', (200, 260), 0)
+                ImageDraw.Draw(im).polygon([(100, 20), (150, 200), (50, 200)], fill=255)
+                r.append(FITMOD.thyrse(np.asarray(im.rotate(ang, expand=True, resample=Image.BILINEAR)) > 127))
+            t('fit.py thyrse: tilt-proof outline of a cone', all(abs(x['hw'] - r[0]['hw']) < .1 and abs(x['taper'] - r[0]['taper']) < .06 and abs(x['fill'] - r[0]['fill']) < .04 for x in r) and .3 < r[0]['taper'] < .5, str(r))
+        except ImportError as e:
+            t('fit.py thyrse: tilt-proof outline of a cone', False, str(e))
         say('selftest: %d ok, %d failed' % (len(ok), len(bad)))
     finally:
         LOCKS = old_locks
