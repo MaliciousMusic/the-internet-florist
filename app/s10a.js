@@ -44,16 +44,16 @@ function scabPlant(g,t,o){const cw=o.cw||cwNear(CW_SCAB,o.col)||CW_SCAB[0],op=Ma
     leaf:(og,pos)=>lsLeaf2D(og,pos,D*R(1,1.35),(par,x,y,a,l)=>stemLeaf(par,x,y,a,l,.1,'#55784a',{side:og.p.j?.4:-.4,arch:10}))});
   open(k,t,1000,10,.3);return r}
 /* ---------- anemone (Anemone coronaria): six to eight broad satin tepals, cupped, round a dark dome of pistils ringed with dark stamens (a white ring in some); the green ruff of cut bracts below the flower ---------- */
-const CW_ANEM=[{id:'blanc',n:'Blanc à cœur noir (Mistral Bianco Centro Nero, Panda)',c:'#f7f5f0',eye:'#1e1628'},{id:'blanc-vert',n:'Blanc à cœur vert (The Bride)',c:'#f7f5f0',eye:'#5f7a40',st:'#2e3a28'},{id:'rouge',n:'Rouge à anneau blanc (Hollandia, Mistral Rosso)',c:'#c8102e',eye:'#1e1628',ring:'#f2ece8'},
-  {id:'bleu',n:'Bleu violet (Mr Fokker, De Caen)',c:'#5b4aa8',eye:'#1e1628',ring:'#ece8f4'},{id:'lilas',n:'Lilas (Harmony Lavender)',c:'#b8a2d8',eye:'#2a2440',ring:'#f2eef8'},{id:'fuchsia',n:'Fuchsia (Mistral Fucsia, Sylphide)',c:'#d81f7a',eye:'#1e1628'},
-  {id:'rose-pale',n:'Rose pâle (Mistral Rosa Chiaro)',c:'#f2c4cf',eye:'#2a2440'},{id:'saumon',n:'Rose saumon',c:'#f2a8a0',eye:'#2a2030'},{id:'bordeaux',n:'Bordeaux (Mistral Bordeaux)',c:'#6b0f2a',eye:'#160c14'},
-  {id:'prune',n:'Prune noire',c:'#2a1028',eye:'#0e0810'},{id:'bicolore',n:'Blanc cerclé de rouge (Bicolor)',c:'#f6eef0',eye:'#1e1628',ring:'#c8203a',rb:1},
-  {id:'bleu-roi',n:'Bleu roi (Mistral Blu)',c:'#4c34bc',eye:'#1a1838',late:1},{id:'bleu-lavande',n:'Bleu lavande (Galilee Blue)',c:'#9078d6',eye:'#1e1a36',late:1},
-  {id:'azzurro',n:'Lavande à cœur blanc (Mistral Azzurro)',c:'#9e66cf',eye:'#221a34',late:1},{id:'bleu-blanc',n:'Blanc à cœur bleu (Rainbow Blue/White)',c:'#f2f0f6',eye:'#1c1834',late:1},
-  {id:'rose-vif',n:'Rose vif (Galilee Pink)',c:'#e577bd',eye:'#221628',late:1},{id:'rarity',n:'Mauve rosé (Mistral Rarity)',c:'#c480a0',eye:'#24142a',late:1},
-  {id:'ecarlate',n:'Écarlate (Galilee Red)',c:'#ee1414',eye:'#141018',late:1},{id:'rouge-blanc',n:'Rouge et blanc (Rainbow Red/White)',c:'#e91047',eye:'#1c1430',late:1},
-  {id:'tigre',n:'Blanc flammé de rouge (Mistral Tigre)',c:'#d3053d',eye:'#160c18',late:1},{id:'tigre-vin',n:'Blanc flammé de pourpre (Mistral Tigre Wine)',c:'#f2eef4',eye:'#1a1424',late:1},
-  {id:'raisin',n:'Raisin à œil bleu (Mistral Grape)',c:'#86205e',eye:'#141020',late:1},{id:'blush',n:'Blanc rosé (Mistral Blush)',c:'#f6ece8',eye:'#221a28',late:1}];
+const CW_ANEM=[{id:'blanc',ret:1,n:'Blanc à cœur noir',c:'#f7f5f0',eye:'#1e1628'},{id:'blanc-vert',n:'Blanc à cœur vert (The Bride)',c:'#faf9f5',eye:'#8c9c42',st:'#d4d0ae'},{id:'rouge',n:'Rouge à anneau blanc (Hollandia)',c:'#ce0a0a',eye:'#26142a',st:'#2c1620',ring:'#f8d8dc'},
+  {id:'bleu',n:'Bleu violet (Mr Fokker, De Caen)',c:'#6049c9',eye:'#1f1a3a',st:'#201b40'},{id:'lilas',ret:1,n:'Lilas',c:'#b8a2d8',eye:'#2a2440',ring:'#f2eef8'},{id:'fuchsia',n:'Fuchsia (Sylphide)',c:'#ee38c8',eye:'#3a2456',st:'#2b2650'},
+  {id:'rose-pale',ret:1,n:'Rose pâle',c:'#f2c4cf',eye:'#2a2440'},{id:'saumon',ret:1,n:'Rose saumon',c:'#f2a8a0',eye:'#2a2030'},{id:'bordeaux',ret:1,n:'Bordeaux',c:'#6b0f2a',eye:'#160c14'},
+  {id:'prune',ret:1,n:'Prune noire',c:'#2a1028',eye:'#0e0810'},{id:'bicolore',n:'Blanc cerclé de rouge (Bicolor)',c:'#f6eef0',eye:'#17101f',st:'#1c1830',ring:'#d4142e',rb:1},
+  {id:'bleu-roi',ret:1,n:'Bleu roi',c:'#4c34bc',eye:'#1a1838',late:1},{id:'bleu-lavande',ret:1,n:'Bleu lavande',c:'#9078d6',eye:'#1e1a36',late:1},
+  {id:'azzurro',ret:1,n:'Lavande à cœur blanc',c:'#9e66cf',eye:'#221a34',late:1},{id:'bleu-blanc',ret:1,n:'Blanc à cœur bleu',c:'#f2f0f6',eye:'#1c1834',late:1},
+  {id:'rose-vif',ret:1,n:'Rose vif',c:'#e577bd',eye:'#221628',late:1},{id:'rarity',ret:1,n:'Mauve rosé',c:'#c480a0',eye:'#24142a',late:1},
+  {id:'ecarlate',ret:1,n:'Écarlate',c:'#ee1414',eye:'#141018',late:1},{id:'rouge-blanc',ret:1,n:'Rouge et blanc',c:'#e91047',eye:'#1c1430',late:1},
+  {id:'tigre',ret:1,n:'Blanc flammé de rouge',c:'#d3053d',eye:'#160c18',late:1},{id:'tigre-vin',ret:1,n:'Blanc flammé de pourpre',c:'#f2eef4',eye:'#1a1424',late:1},
+  {id:'raisin',ret:1,n:'Raisin à œil bleu',c:'#86205e',eye:'#141020',late:1},{id:'blush',ret:1,n:'Blanc rosé',c:'#f6ece8',eye:'#221a28',late:1}];
 const ANE_TEP=prof([[0,.42],[.3,.9],[.65,1],[1,.62]]),D2R=Math.PI/180;
 function anemFlower(par,B,O,D,cw,op){if(typeof anemSvgPut==='function'){const k=G(par);if(anemSvgPut(k,B,O,D,cw,op))return k;par.removeChild(k)}return anemDrawn(par,B,O,D,cw,op)}
 function anemDrawn(par,B,O,D,cw,op){const k=G(par),R0=D/2,nz=B[2][2],o2=sm01((op-.2)/.8),it=[],rot=R(0,6.28),cache={};
@@ -65,6 +65,19 @@ function anemDrawn(par,B,O,D,cw,op){const k=G(par),R0=D/2,nz=B[2][2],o2=sm01((op
     capDisc(k,B,O,R0*.22,R0*.2,cw.eye,{dots:DET>=1.5?24:0,dc:shd(cw.eye,.3)})}
   return k}
 function anemPlant(g,t,o){const cw=o.cw||cwNear(CW_ANEM,o.col)||CW_ANEM[0],op=Math.max(.05,Math.min(1,o.op??1)),D=(o.cm||7)*UPC,k=G(g),sv=typeof svaStemCols==='function'&&SV_ON,sc=sv?svaStemCols(['#33532a','#5a8644','#86ae68','#bcd8a2']):['#33502a','#527a40','#7a9e62','#a8c890'];
+  /* SVG plant v2 (y3-anemone2.js, 2026-10-08): the same chance as below (the frame taken here as lsHeadS would; the same L-system, lsHeadS's draws, D*R(.5,.65)
+     and ten R() per bract, the head's share), the collar slid to its measured place, the stalk bent as the flower fades, the head's stem in two whole
+     pieces (lsTurtle and lsPlant swapped for this call only, restored in finally) */
+  if(sv&&typeof acoNeck==='function'){const B0=acoBudUp(frameOf(o,.6),op),wl=svaLife(),o2=svSm((op-.15)/.6),wk=svSm((wl-.3)/.5),Z=B0[2],
+      hW=Math.hypot(Z[0],Z[2])>.05?V3.nz([Z[0],0,Z[2]]):[1,0,0],A2=V3.nz(V3.cr([0,1,0],hW)),b={dC:D*(.04+.26*o2+.2*wk),a2:.26*wk,A2,gW:.1*svSm((wl-.2)/.6)},
+      rotB=B=>{if(b.a2<1e-4)return B;const R2=B.slice(0,3).map(v=>rotA(v,A2,b.a2));R2.upV=B.upV;R2.reach=B.reach;return R2};
+    const T0=lsTurtle,P0=lsPlant;let n0=0,r;lsTurtle=function(m,oo){const res=T0(m,oo);if(!n0++)acoNeck(res,b);return res};
+    lsPlant=function(k2,res,o3){return acoLsPlant(k2,res,o3,cw,wl,D)};
+    try{r=lsHeadS(k,Object.assign({},o,{Bf:B0}),{D,w:D*.055,cols:sc,op,rr:.6,nodes:1,li:.9,lp:.55,whorl:3,leafAng:80+8*o2+8*wk,side:null,wig:.1,e:.05,aimK:.28,
+      flower:(par,B,O,D2,op2)=>{anemFlower(par,rotB(B),O,D2,cw,op2)},
+      leaf:(og,pos)=>{const len=D*R(.5,.65);return{z:Math.min(-.001,pos[2]+og.H[2]*len*.3),cast:false,
+        fn:par=>acoBract(par,og,pos,len,svSeed('collerette',cw.id,Math.round(pos[0]*8),Math.round(pos[1]*8),Math.round(og.H[0]*40)),wl,op)}}})}finally{lsTurtle=T0;lsPlant=P0}
+    if(r)r.ncols=acoStemCols(cw,0,wl,1);open(k,t,1000,10,.3);return r}
   const r=lsHeadS(k,o,{D,w:D*.06,cols:sc,op,rr:.6,nodes:1,li:.9,lp:.55,whorl:3,leafAng:62,side:null,wig:sv?.09:.05,e:.05,aimK:.28,
     flower:(par,B,O,D2,op2)=>{if(op2<.3&&!sv){spBud(par,B,V3.add(O,toV(B,[0,0,-D2*.12])),D2*.42,D2*.38,mix(cw.c,'#7f9f5a',.25),{tp:.3,pw:.55});return}anemFlower(par,B,O,D2,cw,op2)},
     leaf:(og,pos)=>{if(sv){const len=D*R(.5,.65);return{z:pos[2],cast:false,fn:par=>svaBract3(par,og,pos,len,svSeed('collerette',cw.id,Math.round(pos[0]*8),Math.round(pos[1]*8),Math.round(og.H[0]*40)),svaLife())}}return lsLeaf2D(og,pos,D*R(.5,.65),(par,x,y,a,l)=>fineLeaf(par,x,y,a,l,'#4a7a38'))}});

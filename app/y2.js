@@ -7,20 +7,29 @@
    radius), ringed by 90 to 140 dark stamens arched up and out, anthers oblong, a few dusted with pollen. Every flower is drawn from its own
    genes: the same exemplaire is always the same, no two are alike. */
 let SV_ON=true;
-/* the colourways measured (front: base, body, tip; back; the washes; veins; margin; the heart) */
+/* the five colourways of the shop (The Bride, Mister Fokker, Hollandia, Sylphide, Bicolor), measured on photographs of the named varieties (REFERENCES.md,
+   section on the five free colourways): front (base, body, tip), the washes, veins, margin, the heart; the back is derived from the body (not measured) */
 const SVA_CW={
-  bleu:{st:[[0,'#dcdaf4'],[.17,'#d2cff2'],[.36,'#6f66cc'],[.7,'#655bc4'],[1,'#6a62c8']],bst:[[0,'#b4b2da'],[.35,'#8582c6'],[1,'#7a76c0']],
-    shade:'#2a1890',lite:'#a8a8f2',bshade:'#2e2a7a',blite:'#cdcaf0',vein:'#2e1e8c',bvein:'#4c449c',rim:'#c6c4f4',cast:'#160c48',
-    dome:'#1d1832',pist:'#4c4466',fil:'#1f1a42',anth:'#1a1532',anl:'#6a72b0',pol:'#d6ccae'},
+  bleu:{st:[[0,'#3c3494'],[.14,'#4538a8'],[.3,'#5340b8'],[.5,'#6049c9'],[1,'#6f5ccc']],bst:[[0,'#b4b2da'],[.35,'#8582c6'],[1,'#7a76c0']],
+    shade:'#241670',lite:'#9585f0',bshade:'#2e2a7a',blite:'#cdcaf0',vein:'#2e1e8c',bvein:'#4c449c',rim:'#c6c4f4',cast:'#160c48',
+    dome:'#1f1a3a',pist:'#3e3a5c',fil:'#201b40',anth:'#17142c',anl:'#5a62a0',pol:'#d6ccae'},
   blanc:{st:[[0,'#c8c4da'],[.1,'#dcd9e6'],[.2,'#f2f1ee'],[.6,'#f7f6f2'],[1,'#fbfaf7']],bst:[[0,'#e2e3dc'],[.4,'#ecece6'],[1,'#f0efea']],
     shade:'#868698',lite:'#ffffff',bshade:'#8a8c90',blite:'#ffffff',vein:'#b9b8c6',bvein:'#c4c6c0',rim:'#ffffff',cast:'#33303e',
     dome:'#17101f',pist:'#3a3046',fil:'#1d1627',anth:'#140e1b',anl:'#4c4658',pol:'#d8d0b4'},
-  'blanc-vert':{st:[[0,'#d8e2b8'],[.12,'#e6ecd0'],[.24,'#f3f3ec'],[.6,'#f7f6f2'],[1,'#fbfaf7']],bst:[[0,'#e2e6d2'],[.4,'#ecece4'],[1,'#f0efea']],
-    shade:'#868c88',lite:'#ffffff',bshade:'#8a8e88',blite:'#ffffff',vein:'#bcc0b8',bvein:'#c6c8c0',rim:'#ffffff',cast:'#30382c',
-    dome:'#5f7a40',pist:'#8aa060',fil:'#d8d2b8',anth:'#c8bc98',anl:'#f0e8d0',pol:'#f4ecd0'}};
-/* the other colourways, measured on photographs where they exist (Hollandia, Sylphide, Harmony Lavender, pink and bicolour anemones: REFERENCES.md),
-   derived from the shop's colour otherwise: body, tip, the paler zone at the base (bv: how far), shade and light of the washes, a coloured band (bicolour) */
-const SVA_SPEC={rouge:{c:'#d42222',tip:'#d62626',base:'#f4ece8',bv:.15,shade:'#5e0806',lite:'#f6645c'},fuchsia:{c:'#de24a4',tip:'#e22aa8',base:'#f0a8d8',bv:.12,shade:'#6a0848',lite:'#f86ad8',dome:'#8a7c9c',pist:'#c8bcd6'},
+  'blanc-vert':{st:[[0,'#e0e5c8'],[.12,'#eaeed9'],[.24,'#f4f5ed'],[.6,'#faf9f5'],[1,'#fcfcf9']],bst:[[0,'#e2e6d2'],[.4,'#ecece4'],[1,'#f0efea']],
+    shade:'#9ca098',lite:'#ffffff',bshade:'#8a8e88',blite:'#ffffff',vein:'#bcc0b8',bvein:'#c6c8c0',rim:'#ffffff',cast:'#30382c',
+    dome:'#8c9c42',pist:'#a9b86a',fil:'#d4d0ae',anth:'#bdb780',anl:'#e8e2bc',pol:'#ece0a8'},
+  rouge:{st:[[0,'#fbe4e4'],[.36,'#f8d0d4'],[.48,'#e85a64'],[.58,'#ce0a0a'],[1,'#ce0d12']],bst:[[0,'#e06f6d'],[.35,'#d2312f'],[1,'#d12726']],
+    shade:'#5e0408',lite:'#f2323c',bshade:'#5d1e23',blite:'#e99897',vein:'#8a0810',bvein:'#b21f21',rim:'#df6060',cast:'#340204',
+    dome:'#26142a',pist:'#4a3052',fil:'#2c1620',anth:'#1a0e18',anl:'#6a4660',pol:'#d6ccae'},
+  fuchsia:{st:[[0,'#c824a8'],[.14,'#d82ab8'],[.3,'#e430c2'],[.55,'#ee38c8'],[1,'#ea36c4']],bst:[[0,'#f289db'],[.35,'#ed57cb'],[1,'#ed4fca']],
+    shade:'#6a0c5a',lite:'#fa80ec',bshade:'#65235c',blite:'#f6abe5',vein:'#9a0e82',bvein:'#c836aa',rim:'#f47edb',cast:'#3a0732',
+    dome:'#3a2456',pist:'#5a4480',fil:'#2b2650',anth:'#262040',anl:'#8a80c0',pol:'#d8d070'},
+  bicolore:{st:[[0,'#eab0be'],[.14,'#d4142e'],[.5,'#cc0e28'],[.6,'#f4a8bc'],[.7,'#f8e8ee'],[1,'#f4eef0']],bst:[[0,'#f5f0f0'],[.35,'#f1eae9'],[1,'#f2ebeb']],
+    shade:'#958a92',lite:'#ffffff',bshade:'#837c84',blite:'#f8f5f4',vein:'#cbbfc6',bvein:'#e0d7d9',rim:'#f9f4f5',cast:'#524c50',
+    dome:'#17101f',pist:'#5b4a74',fil:'#1c1830',anth:'#1a1830',anl:'#8a6a9a',pol:'#d6ccae'}};
+/* the other colourways (retired from the shop, kept for the old bouquets), derived from their colour: body, tip, the paler zone at the base (bv: how far), shade and light of the washes, a coloured band (bicolour) */
+const SVA_SPEC={
   lilas:{c:'#b99ad6',tip:'#bea2da',base:'#f0eaf8',bv:.18,shade:'#54388a',lite:'#e6d8f4'},'rose-pale':{c:'#e8c6d2',tip:'#ecccd8',base:'#f6eaf0',bv:.2,shade:'#9a6478',lite:'#fbeef4'},
   saumon:{c:'#f2a296',tip:'#f4aa9e',base:'#fcebe4',bv:.18,shade:'#a24c42',lite:'#fcd6ce'},bordeaux:{c:'#6a0436',tip:'#6e0638',base:'#5a1a5a',bv:.1,shade:'#220010',lite:'#94407e',dome:'#1a1a40'},
   prune:{c:'#34142f',tip:'#381632',base:'#3e1a38',bv:.1,shade:'#0b0307',lite:'#6e3466'},
@@ -35,7 +44,7 @@ const SVA_SPEC={rouge:{c:'#d42222',tip:'#d62626',base:'#f4ece8',bv:.15,shade:'#5
   tigre:{st:[[0,'#f8eef0'],[.18,'#f4e2e8'],[.36,'#e04a74'],[.56,'#d3053d'],[1,'#cc0538']],shade:'#6a0218',lite:'#f27a9a',flames:{c:'#f8eef0',n:[5,9],from:.2,to:.95,w:.02,op:.85}},
   'tigre-vin':{st:[[0,'#f8f4f8'],[.3,'#f4eef6'],[1,'#f0eaf4']],shade:'#8a8098',lite:'#ffffff',vein:'#c8bcd4',flames:{c:'#6a2a7a',n:[6,10],from:.2,to:1,w:.022,op:.85}},
   raisin:{st:[[0,'#f6f2f6'],[.2,'#ece8f6'],[.28,'#5c5ac2'],[.4,'#7a3a9a'],[.55,'#86205e'],[1,'#7e1c58']],shade:'#2c0420',lite:'#c0508e'},
-  blush:{st:[[0,'#f8f2ec'],[.4,'#f8eeea'],[.8,'#f4d6dc'],[1,'#f0c8d2']],shade:'#a08890',lite:'#ffffff',vein:'#e0c8cc'},bicolore:{c:'#f6eff1',tip:'#f9f4f5',band:'#7e1622',bandE:'#c3596a',shade:'#958a92',lite:'#ffffff',vein:'#cbbfc6'}};
+  blush:{st:[[0,'#f8f2ec'],[.4,'#f8eeea'],[.8,'#f4d6dc'],[1,'#f0c8d2']],shade:'#a08890',lite:'#ffffff',vein:'#e0c8cc'}};
 function svaMat(cw){if(SVA_CW[cw.id])return SVA_CW[cw.id];const S=SVA_SPEC[cw.id]||{c:cw.c},c=S.c||(S.st?S.st[Math.min(3,S.st.length-1)][1]:cw.c),[h,s0,l]=h2l(c),back=mix(c,'#e6e2da',s0>.6?.18:.3),eye=cw.eye||'#1e1628',dark=h2l(eye)[2]<.3;
   const st=S.st?S.st:S.band?[[0,S.band],[.33,S.band],[.43,S.bandE],[.5,mix(S.bandE,c,.7)],[.58,c],[1,S.tip]]:[[0,S.base||mix(c,'#ffffff',.5)],[(S.bv??.16)*.6,S.base||mix(c,'#ffffff',.5)],[(S.bv??.16)+.18,mix(c,S.base||'#ffffff',.12)],[.7,c],[1,S.tip||c]];
   if(S.st){const mid=S.st[Math.min(3,S.st.length-1)][1];S.c=S.c||mid}
