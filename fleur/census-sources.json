@@ -10,7 +10,9 @@
     "Named groups: nom (required), url, img, couleur, obtenteur, annee, groupe, espece (\"orientalis\", \"S. vulgaris\", \"Syringa vulgaris\"), syn (synonyms), x_<anything> (kept in `extra`). liste.flags: i s m x (default \"is\").",
     "nettoyage_nom: [[regex, replacement], ...] applied to the name. legendes: {group: {code: text}} (couleur: codes inside the text are replaced). groupe_depuis: group used as horticultural group.",
     "doutes_si: [{champ, regex, doute}] adds a doubt when a group matches. fiche: optional detail page of each entry ({url is the entry url}): {entree:[regex], images: regex, max: N}.",
-    "®, ™ and 'trademark' near a name are kept as `marque.indice`. Registers whose names are denominations: `registres_denomination` (a vendor sign on those names is not a doubt)."
+    "®, ™ and 'trademark' near a name are kept as `marque.indice`. Registers whose names are denominations: `registres_denomination` (a vendor sign on those names is not a doubt).",
+    "liste.post: urlencoded body of a read-only POST ({n} etc. filled), used only where the owner allowed it (JdW listing: no account, no personal data, >= 2 s between requests). liste.format \"json\": liste.chemin = dotted path of the list in the answer, liste.champs = {group: template with {dotted.path} or {dotted.path|slug} of each item}.",
+    "registre: true with niveau N1 marks a registration authority (ICRA): a vendor's ® on a name it registers is not a trademark doubt (the cultivar gets `registres`)."
   ],
   "registres_denomination": [
     "KAVB"
@@ -137,6 +139,46 @@
           ""
         ]
       ]
+    },
+    {
+      "id": "jdw-hyacinth",
+      "nom": "Jan de Wit en Zonen (bulbiculteur-obtenteur, assortiment Hyacinth)",
+      "url": "https://www.jandewitenzonen.com/en/assortment/hyacinth/",
+      "niveau": "N2",
+      "genres": [
+        "Hyacinthus"
+      ],
+      "delai": 2,
+      "licence": "droits réservés (mesure locale seulement)",
+      "liste": {
+        "format": "json",
+        "urls": [
+          "https://www.jandewitenzonen.com/products_filter_db.php?nocache=0&l=en"
+        ],
+        "post": {
+          "category": "hyacinth",
+          "searchQuery": "",
+          "currentPage": "{n}",
+          "resultsPerPage": "100",
+          "cf": "",
+          "fromCf": "false"
+        },
+        "iter": {
+          "n": [
+            1,
+            10
+          ]
+        },
+        "chemin": "results",
+        "champs": {
+          "nom": "{name}",
+          "url": "/en/assortment/hyacinth/{id}/{name|slug}/",
+          "img": "/img/products/hyacinth/{picture}",
+          "groupe": "{properties.GROEP.val_tr}",
+          "couleur": "{properties.KLEUR.val_tr}",
+          "x_hauteur": "{properties.LENGTE.val_tr}"
+        }
+      }
     }
   ]
 }

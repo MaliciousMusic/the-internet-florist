@@ -145,8 +145,9 @@ class Net:
             if len(self.errors[src]) < 5:
                 self.errors[src].append(msg[:160])
 
-    def get(self, src, url, headers=None, delay=1.0, backoff=(6, 20, 60), timeout=45, tries=3):
-        f = self._file(url)
+    def get(self, src, url, headers=None, delay=1.0, backoff=(6, 20, 60), timeout=45, tries=3, data=None):
+        """data: urlencoded body of a read-only POST, only for the endpoints the owner authorised (KAVB form, listing of a grower)"""
+        f = self._file(url if data is None else url + '\n' + data.decode('utf-8', 'replace'))
         if os.path.exists(f):
             raw = open(f, 'rb').read()
             head, _, body = raw.partition(b'\n')
@@ -168,7 +169,7 @@ class Net:
                 wait = self.last.get(host, 0) + delay - time.time()
                 if wait > 0:
                     time.sleep(wait)
-                req = urllib.request.Request(url, headers={'User-Agent': UA, 'Accept-Encoding': 'gzip', **(headers or {})})
+                req = urllib.request.Request(url, data=data, headers={'User-Agent': UA, 'Accept-Encoding': 'gzip', **(headers or {})})
                 self._count(src, 'req')
                 code, ra, body = None, None, b''
                 try:
@@ -625,8 +626,41 @@ def names_from_list(v):
     return [clean_name(x) for x in ns if clean_name(x) and clean_name(x).lower() not in ('etc', 'etc.', '?')]
 
 
+def jget(item, path):
+    cur = item
+    for k in path.split('.'):
+        if isinstance(cur, dict):
+            cur = cur.get(k)
+        elif isinstance(cur, list) and k.isdigit() and int(k) < len(cur):
+            cur = cur[int(k)]
+        else:
+            return ''
+    return '' if cur is None else str(cur)
+
+
+def json_entries(text, L):
+    """liste.format "json": liste.chemin (dotted path of the list) and liste.champs {group: template with {dotted.path} of the item}"""
+    try:
+        items = json.loads(text)
+    except ValueError:
+        return
+    for k in (L.get('chemin') or '').split('.'):
+        if k:
+            items = items.get(k, []) if isinstance(items, dict) else []
+    for it in items or []:
+        g = {}
+        for champ, tpl in L['champs'].items():
+            vals = [jget(it, m[0]) for m in re.findall(r'\{([\w.]+)(\|slug)?\}', tpl)]
+            if all(vals):
+                g[champ] = re.sub(r'\{([\w.]+)(\|slug)?\}', lambda m: urllib.parse.quote(jget(it, m.group(1)).replace(' ', '-')) if m.group(2) else jget(it, m.group(1)), tpl).strip()
+        yield g, json.dumps(it, ensure_ascii=False)
+
+
 def adapter_entries(text, L, fl):
-    regs = L['entree'] if isinstance(L['entree'], list) else [L['entree']]
+    if L.get('format') == 'json':
+        yield from json_entries(text, L)
+        return
+    regs =L['entree'] if isinstance(L['entree'], list) else [L['entree']]
     if L.get('decoupe'):
         starts = [m.start() for m in re.finditer(L['decoupe'], text, rxf(L.get('decoupe_flags', 'm')))]
         for s, e in zip(starts, starts[1:] + [len(text)]):
@@ -674,7 +708,7 @@ def adapter_finding(ctx, ad, g, raw, page):
     if f['couleur'] and G.get('x_rgb_fleur'):
         f['couleur'] += ' (RGB %s)' % G['x_rgb_fleur']
     f['synonymes'] = names_from_list(G['syn']) if G.get('syn') else []
-    f['preuves'].append({'niveau': ad['niveau'], 'source': ad['nom'], 'url': url, 'registre': bool(ad.get('registre'))})
+    f['preuves'].append({'niveau': ad['niveau'], 'source': ad['nom'], 'url': url, 'registre': bool(ad.get('registre')) and ad['niveau'] == 'N1'})
     if g.get('img'):
         f['photos'].append(photo(urllib.parse.urljoin(page, htmlmod.unescape(g['img'])), url, ad.get('licence', 'droits réservés (mesure locale seulement)'),
                                  ad['nom'], ad['id'], ad['niveau'], vue='fleur'))
@@ -696,7 +730,7 @@ def run_adapter(ctx, ad):
     delay = ad.get('delai', 1.5)
     fl = rxf(L.get('flags', 'is'))
     pdf = L.get('format') == 'pdf'
-    entries, pages = [], 0
+    entries, pages, seen_nom = [], 0, set()
     it = L.get('iter') or {}
     plan = []
     for tpl in L['urls']:
@@ -713,11 +747,20 @@ def run_adapter(ctx, ad):
             before, guard = len(entries), 0
             while url and guard < ad.get('pages_max', 60):
                 guard += 1
-                text = pdf_text(ctx.net, src, url) if pdf else ctx.net.text(src, url, delay=delay)
+                if L.get('post'):       # read-only POST of a listing the owner authorised (no account, no personal data, >= 2 s)
+                    kv = {var: v} if var else {}
+                    body = urllib.parse.urlencode({k: fill(str(x), ctx, **kv) for k, x in L['post'].items()}).encode()
+                    text = ctx.net.text(src, url, data=body, delay=max(delay, 2.0),
+                                        headers={'X-Requested-With': 'XMLHttpRequest', 'Referer': ad.get('url', url)})
+                else:
+                    text = pdf_text(ctx.net, src, url) if pdf else ctx.net.text(src, url, delay=delay)
                 pages += 1
                 if text is None:
                     break
                 got = list(adapter_entries(text, L, fl))
+                fresh = [(g, raw) for g, raw in got if g.get('nom') not in seen_nom]      # a page past the end may repeat the last one
+                seen_nom |= {g.get('nom') for g, _ in got}
+                got = fresh
                 if not got:
                     break
                 entries += [(g, raw, url) for g, raw in got]
@@ -811,7 +854,8 @@ def merge(findings, ctx, cfg):
         spell = Counter(n for _, n in r['noms'])
         syn = sorted((r['syn'] | set(spell)) - {nom})
         mk = next((m for m in r['marques'] if m['indice']), None)
-        c = {'nom': nom, 'cle': k, 'synonymes': syn, 'groupe': pick(r['grp']), 'obtenteur': pick(r['obt']), 'annee': pick(r['an']),
+        regs = sorted({p['source'] for p in r['preuves'] if p.get('registre') and p['niveau'] == 'N1'})
+        c = {'nom': nom, 'cle': k, 'registres': regs, 'synonymes': syn, 'groupe': pick(r['grp']), 'obtenteur': pick(r['obt']), 'annee': pick(r['an']),
              'taxon': tx, 'preuves': preuves, 'photos': photos, 'couleur_texte': pick(r['col']),
              'marque': dict(mk) if mk else {'indice': None, 'ou': None, 'url': None},
              'kavb': r['extra'].pop('kavb', None), 'doutes': set(r['doutes']), 'extra': r['extra']}
@@ -865,12 +909,12 @@ def doubts(cults, cfg):
                         b['doutes'].add('nom_proche:' + a['nom'])
     for c in cults:
         c['niveau_provisoire'] = level(c)
-        reg = {p['source'] for p in c['preuves'] if p['niveau'] == 'N1'} & exempt
+        reg = set(c['registres']) | ({p['source'] for p in c['preuves'] if p['niveau'] == 'N1'} & exempt)   # an ICRA register's name is a free denomination
         if c['kavb'] and c['kavb'].get('statut') == 'enregistré':
             reg.add('KAVB')
         if c['marque']['indice']:
-            if reg & exempt:
-                c['marque']['note'] = 'dénomination au registre %s : le signe du vendeur ne fait pas une marque de la variété' % sorted(reg & exempt)[0]
+            if reg:
+                c['marque']['note'] = 'dénomination au registre %s : le signe du vendeur ne fait pas une marque de la variété' % sorted(reg)[0]
             else:
                 c['doutes'].add('marque_incertaine')
         elif any(re.search(r'\b' + re.escape(s) + r'\b', fold(c['nom'])) for s in series):
@@ -977,7 +1021,9 @@ def main():
                 extras.setdefault(k, v)
     if a.kavb:
         cults, _ = merge(findings, ctx, cfg)
-        cults.sort(key=lambda c: (-len(c['photos']) - len(c['preuves']), c['nom']))
+        kc = os.path.join(a.out, 'kavb-cache.json')
+        done = set(json.load(open(kc, encoding='utf-8'))) if os.path.exists(kc) else set()
+        cults.sort(key=lambda c: (c['nom'] not in done, -len(c['photos']) - len(c['preuves']), c['nom']))     # names already looked up are free: first
         names = [c['nom'] for c in cults][:a.max]
         if names:
             fs, info = src_kavb(ctx, names)
