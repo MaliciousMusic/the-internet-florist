@@ -62,11 +62,23 @@ def jload(p, dflt=None):
         return dflt
 
 
+_JLOCK = threading.Lock()
+
+
 def jsave(p, o):
+    # several steps run model calls in threads: one writer at a time, a temp name per thread, the file closed before the replace (Windows)
     os.makedirs(os.path.dirname(p), exist_ok=True)
-    tmp = p + '.tmp%d' % os.getpid()
-    json.dump(o, open(tmp, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
-    os.replace(tmp, p)
+    tmp = p + '.tmp%d_%d' % (os.getpid(), threading.get_ident())
+    with _JLOCK:
+        with open(tmp, 'w', encoding='utf-8') as f:
+            json.dump(o, f, ensure_ascii=False, indent=1)
+        for k in range(5):
+            try:
+                os.replace(tmp, p)
+                return
+            except PermissionError:
+                time.sleep(.2 * (k + 1))
+        os.replace(tmp, p)
 
 
 def slug(s):
@@ -159,7 +171,10 @@ class Lock:
 
     def beat(self):
         if self.name:
-            jsave('%s/%s/info.json' % (LOCKS, self.name), {'pid': os.getpid(), 'sid': self.sid, 't': now()})
+            try:
+                jsave('%s/%s/info.json' % (LOCKS, self.name), {'pid': os.getpid(), 'sid': self.sid, 't': now()})
+            except OSError:
+                pass  # a missed heartbeat is harmless: the lock is stale only after 3 hours of silence
 
     def acquire(self, wait=True, poll=20, say_every=300):
         t0, last = time.time(), 0
