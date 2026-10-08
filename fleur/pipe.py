@@ -1108,7 +1108,10 @@ def step_temoins(ctx):
             ok = False
             out.append('anemone render failed')
         else:
-            c, t = run_cmd(ctx, [sys.executable, 'fleur/img.py', 'diff', 'fleur/out/temoin_anem.png', MAIN + '/fleur/out/base_before.png'], 'temoin-diff', timeout=120, quiet=True)
+            # the anemone's witness: base_v2.png once the copy holds the anemone merge (d227daa, colours remeasured), base_before.png before it
+            v2 = subprocess.run(['git', 'merge-base', '--is-ancestor', 'd227daa', 'HEAD'], cwd=ctx.ch, capture_output=True).returncode == 0
+            base = MAIN + '/fleur/out/' + ('base_v2.png' if v2 else 'base_before.png')
+            c, t = run_cmd(ctx, [sys.executable, 'fleur/img.py', 'diff', 'fleur/out/temoin_anem.png', base], 'temoin-diff', timeout=120, quiet=True)
             mm = re.search(r'changed ([\d.]+)%', t)
             pct = float(mm.group(1)) if mm else None
             ok = ok and pct == 0.0
