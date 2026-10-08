@@ -1041,7 +1041,7 @@ def step_fit(ctx, part='forme'):
         raise StepFailed('fit.py code %d: %s' % (code, (text.strip().splitlines() or [''])[-1][:160]))
     summ = fit_summary(d + '/fit.json') if not ctx.dry else 'dry'
     r = call_model(ctx, 'fit' if part == 'forme' else 'plante', 'look', 'opus', prompt_text('fit', **ctx.sub(part=part, space='%s/%s' % (ctx.rel, space), out='%s/%s' % (ctx.rel, outdir), summary=summ)),
-                   READ + ['Write', 'Edit'] + SAFE_BASH, turns=16)
+                   READ + ['Write', 'Edit'] + SAFE_BASH, turns=26)  # 16 ran out on a lilac look (a render with the wrong sid, then the journal)
     fin = r.get('final') or {}
     ok = ctx.dry or (fin.get('status') == 'done' and os.path.exists(d + '/fit.png'))
     return {'status': 'done' if ok else 'failed', 'msg': '%s; look: %s' % (summ, fin.get('verdict') or fin.get('note') or r['subtype']), 'checks': {'fit_png': os.path.exists(d + '/fit.png')}}
