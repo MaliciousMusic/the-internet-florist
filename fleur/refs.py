@@ -4,7 +4,7 @@
   python refs.py url   <sid> <image url> [--title t] [--page p]               add any photo (a grower's product shot) as a candidate
   python refs.py sheet <sid> [--from 0] [--n 20] [--tile 230]                   numbered contact sheet of the candidates -> sheet_<from>.jpg
   python refs.py pal   <sid> <i> [--box x0,y0,x1,y1] [--k 6] [--grey]          dominant colours of a photo (or a box of it, fractions)
-  python refs.py ring  <sid> <i> <cx,cy,r> [--n 5]                             colour from the centre outward (base -> tip), r as a fraction of width
+  python refs.py ring  <sid> <i> <cx,cy,r> [--n 5]                             colour from the centre outward (base -> tip): cx, cy as fractions of width and height, r of the width
   python refs.py keep  <sid> <i> <tags...> [--m "measure"]                     keep a photo as a reference (its page, author, licence, tags) -> keep.json
   python refs.py kept  <sid> [--tile 220]                                       one sheet of the kept photos, numbered and tagged -> kept.jpg
   python refs.py list  <sid>                                                   the kept references, one line each (for REFERENCES.md)
@@ -181,7 +181,7 @@ def ring(sid, i, cx, cy, r, n=5):
     W, H = im.size
     A = np.asarray(im, dtype=float)
     yy, xx = np.mgrid[0:H, 0:W]
-    dd = np.hypot(xx - cx * W, yy - cy * W) / (r * W)
+    dd = np.hypot(xx - cx * W, yy - cy * H) / (r * W)  # cx of the width, cy of the height, r of the width (any aspect)
     out = []
     for j in range(n):
         m = (dd >= j / n) & (dd < (j + 1) / n)
