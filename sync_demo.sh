@@ -22,7 +22,7 @@ open(p,'w',encoding='utf-8',newline=chr(10)).write(s)
 EOF
 for f in pl.js cards.js sptime.js stg.js qa13.js vgal.js inv.js head.html perf.js perf2.js perf3.js; do [ -f "$SP/lab/$f" ] && { cmp -s "$SP/lab/$f" "$D/lab/$f" || { cp "$SP/lab/$f" "$D/lab/$f"; echo "  lab/$f"; }; }; done
 # the flower method's atelier tools (catalogue/serre/methode/METHODE.md): copies, the atelier itself is C:/Users/agent/Desktop/flower-atelier
-mkdir -p "$D/lab/fleur"; for f in fleur/refs.py fleur/img.py fleur/bill.py fleur/shot.sh pilote/svtest.js pilote/mksv.py ws/qawatch.sh ws/chrome1.sh ws/gate.sh; do b=$(basename "$f"); cmp -s "$SP/$f" "$D/lab/fleur/$b" || { cp "$SP/$f" "$D/lab/fleur/$b"; echo "  lab/fleur/$b"; }; done
+mkdir -p "$D/lab/fleur"; for f in fleur/refs.py fleur/img.py fleur/bill.py fleur/shot.sh fleur/chantier.sh fleur/res.ps1 pilote/svtest.js pilote/mksv.py ws/qawatch.sh ws/chrome1.sh ws/gate.sh; do b=$(basename "$f"); cmp -s "$SP/$f" "$D/lab/fleur/$b" || { cp "$SP/$f" "$D/lab/fleur/$b"; echo "  lab/fleur/$b"; }; done
 (cd "$D/src" && sh build.sh) && echo "demo/index.html reconstruit ($(wc -c < "$D/index.html") octets)"
 # with a message: commit demo/ only and push main to GitHub (private repo MaliciousMusic/belais-flowers)
 if [ -n "$1" ]; then cd "$W" && git add demo && git commit -q -m "$1" -m "Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>" && git push -q origin main && echo "poussé : $(git log --oneline -1)"; fi

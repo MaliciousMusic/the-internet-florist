@@ -114,17 +114,15 @@ def dur(a, b):
 
 def res(sid):
     """the load samples of a species: [(utc, cpu, ram, gpu, headless chromes)]"""
-    p = os.path.join(HERE, 'res', sid + '.csv')
-    if not os.path.exists(p):
-        return []
     out = []
-    for line in open(p, encoding='ascii').read().splitlines()[1:]:
+    for p in glob.glob(os.path.join(HERE, 'res', '*.csv')):  # every sampling run; each group reads its own time window
+      for line in open(p, encoding='ascii').read().splitlines()[1:]:
         x = line.split(',')
         try:
             out.append((x[0], float(x[1] or 0), float(x[2] or 0), float(x[3] or 0), int(x[4] or 0)))
         except Exception:
             pass
-    return out
+    return sorted(out)
 
 
 def mname(model):
