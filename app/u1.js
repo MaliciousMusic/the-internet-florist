@@ -59,7 +59,8 @@ function renderModels(){
   g.querySelectorAll('.fcard').forEach(c=>IO.observe(c))}
 /* ---------- flowers (compose) ---------- */
 const norm=s=>s.normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase();
-function flowerList(){const q=norm(S.q||''),o=S.cocc;let L=PRODUCTS.filter(p=>(!q||norm(p.n+' '+p.cn+' '+p.sens).includes(q))&&(o==='tous'||!p.occ.length||p.occ.includes(o)&&!p.ev.includes(o)));
+/* retired colourways (ret:1) stay resolvable but are no longer offered: the shop list, its search, its occasion filter, its family sections and their counters, and the price and name sorts all start from this list */
+function flowerList(){const q=norm(S.q||''),o=S.cocc;let L=PRODUCTS.filter(p=>!p.ret&&(!q||norm(p.n+' '+p.cn+' '+p.sens).includes(q))&&(o==='tous'||!p.occ.length||p.occ.includes(o)&&!p.ev.includes(o)));
   if(S.fsort==='prix')return[[null,L.slice().sort((a,b)=>a.price-b.price||a.n.localeCompare(b.n,'fr'))]];
   if(S.fsort==='nom')return[[null,L.slice().sort((a,b)=>a.n.localeCompare(b.n,'fr')||a.cn.localeCompare(b.cn,'fr'))]];
   return FAMS.map(fm=>[fm,L.filter(p=>p.fam===fm[0]).sort((a,b)=>hsl(b.col)[2]-hsl(a.col)[2])]).filter(([,l])=>l.length)}

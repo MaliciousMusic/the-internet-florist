@@ -133,7 +133,7 @@ function svDraw(par,pieces,o){const Dm=o.D,tol=Math.max(.06,Dm*.0035),k=G(par),i
     const cg=G(ik,{'clip-path':`url(#${it.cid})`}),K=svShade(sh),FF=sh.F.map(x=>it.s*x*3),pb=svAt(sh,0,0),pt=svAt(sh,0,1),Ls=Math.max(Math.hypot(pt[0]-pb[0],pt[1]-pb[1]),(it.bb[2]-it.bb[0]+it.bb[3]-it.bb[1])*.35),
       bg=G(cg,{filter:svBlur(Ls*(m.soft??.05))}),wash=(lv,col,a,dark)=>{for(const t of lv){const V=Array.from(K,(x,q)=>Math.min(dark?t-x:x-t,FF[q]));if(!V.some(x=>x>0))continue;
         const d=svLoopsD(sh,svIso(sh.nu,sh.nv,V,0),Math.max(tol*2.5,Dm*.008));if(d)E('path',{d,fill:col,'fill-opacity':a,'fill-rule':'evenodd'},bg)}};
-    /* flames (streaks of a second colour along the tissue: Tigre, Rainbow), soft wide strokes in the blurred washes */
+    /* flames (streaks of a second colour along the tissue: the flamed anemones), soft wide strokes in the blurred washes */
     if(m.flames&&!(m.flames.side&&m.flames.side!==it.s)){let k2=0;for(const[pl,w]of m.flames.list){k2++;let run=[],dF='',dH='';const flush=()=>{if(run.length>2){const n=run.length,L=[],Rr=[];for(let q=0;q<n;q++){const a=run[Math.max(0,q-1)],b=run[Math.min(n-1,q+1)],dx=b[0]-a[0],dy=b[1]-a[1],l=Math.hypot(dx,dy)||1,t=q/(n-1),
           ww=Dm*w*.5*Math.pow(Math.sin(Math.PI*Math.min(.97,.04+.93*t)),.7)*(.75+.5*pxHashS(q,k2,7));L.push([run[q][0]-dy/l*ww,run[q][1]+dx/l*ww]);Rr.push([run[q][0]+dy/l*ww*(.6+.4*pxHashS(q,k2,9)),run[q][1]-dx/l*ww*(.6+.4*pxHashS(q,k2,9))])}
         const d=svSpl(L.concat(Rr.reverse()));dF+=d}run=[]};

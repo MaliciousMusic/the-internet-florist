@@ -27,9 +27,10 @@ function cdist(a,b){const x=hx(a),y=hx(b),dr=x[0]-y[0],dg=x[1]-y[1],db=x[2]-y[2]
 function toneOf(items){let w=0,warm=0,cool=0,Ls=0,Ss=0;for(const it of items){w++;if(it.S>.22&&(it.H<65||it.H>330))warm++;if(it.S>.18&&it.H>=170&&it.H<=300)cool++;Ls+=it.L;Ss+=it.S}
   if(!w)return'mixte';const L=Ls/w,Sm=Ss/w;return L<.36?'sombre':L>.72&&Sm<.62?'pastel':warm/w>=.55?'chaud':cool/w>=.45?'froid':'mixte'}
 /* the closest species of a kind to a target colour, preferring those whose meaning suits the occasion and never one that would be clumsy */
+/* retired colourways (ret:1) stay resolvable but are no longer offered: a proposed filler never takes one (the random draw is still spent, so the other proposals of old gifts stay the same) */
 function pickFour(kind,target,occ,taken){const ok=FOUR[kind];let best=null,bs=1e9;
   for(const r of RECIPES){const m=MBY[r.id]||{};if(!ok(r,m)||taken.has(r.id)||/seche|stabilis|teint|sechee/.test(r.id)||(m.e||[]).includes(occ))continue;
-    (r.cols||[]).slice(0,4).forEach(col=>{const d=cdist(col,target)+((m.o||[]).includes(occ)?-16:0)+Math.max(0,(r.price||300)-700)/40+(kind==='branche'&&SEASON==='printemps'&&(r.p||{}).type==='blossom'?-20:0)+rnd()*12;if(d<bs){bs=d;best={r,col}}})}
+    (r.cols||[]).slice(0,4).forEach((col,ci)=>{const d=cdist(col,target)+((m.o||[]).includes(occ)?-16:0)+Math.max(0,(r.price||300)-700)/40+(kind==='branche'&&SEASON==='printemps'&&(r.p||{}).type==='blossom'?-20:0)+rnd()*12;if(d<bs&&!((CWS[r.id]||[])[ci]||{}).ret){bs=d;best={r,col}}})}
   return best&&prodFor(best.r.id,best.col)}
 /* silhouettes measured on the references: asp = width/height of the mass */
 const TPL={eventail:{w:.24,asp:1.35,lines:[3,5],drape:'l',dec:[.15,.3]},libre:{w:.2,asp:1.2,lines:[3,7],drape:'lL',dec:[.2,.4]},triangle:{w:.16,asp:1,lines:[1,3],drape:'l',dec:[.25,.4]},
