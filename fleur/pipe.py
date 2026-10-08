@@ -642,6 +642,21 @@ def step_census(ctx):
         for f in futs:
             f.result()
     c = check_census(ctx)
+    if not c['ok'] and 'BOUQUET SKU WITHOUT A/B' in c['msg'] and not os.path.exists(d + '/verdict-900.json'):
+        # the bouquet's cultivars below B get one targeted Haiku search for N2/N3 photos (lot 900), then the check again
+        raw = {norm(x.get('nom', '')): x for x in jload(d + '/census.json', {}).get('cultivars', [])}
+        lot = []
+        for x in ctx.st.get('skus', []):
+            r = raw.get(norm(x.get('cultivar') or ''))
+            if r is not None:
+                lot.append(dict(r, consigne='SKU du bouquet %s sous le niveau B : cherche par WebSearch ciblée au moins une photo nommée N2 ou N3 de ce cultivar '
+                                         '(obtenteur, arboretum, jardin botanique, collection nationale, société du genre, pépinière spécialisée) et une seconde photo '
+                                         'indépendante ; donne les URL des images. Si rien ne se trouve, dis-le.' % x['sku']))
+        if lot:
+            say('  bouquet cultivars below B: one targeted search (lot 900)')
+            jsave(d + '/douteux-900.json', lot)
+            one(d + '/douteux-900.json')
+            c = check_census(ctx)
     return {'status': 'done' if c['ok'] else 'failed', 'msg': c['msg'], 'checks': c}
 
 
