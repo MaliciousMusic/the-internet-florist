@@ -1,6 +1,12 @@
 #!/bin/sh
 # qawatch.sh <url> <out.json>: one headless QA run, killed if free RAM drops under 3 GB (checked every 3 s)
 SP="C:/Users/agent/Desktop/flower-atelier"
+QL="$SP/ws/locks/qa"; mkdir -p "$SP/ws/locks"
+while ! mkdir "$QL" 2>/dev/null; do
+  t=$(cat "$QL/t" 2>/dev/null || echo 0); [ $(( $(date +%s) - t )) -gt 2700 ] && rm -rf "$QL"
+  sleep 10
+done
+date +%s > "$QL/t"; trap 'rm -rf "$QL"' EXIT
 sh "$SP/ws/chrome1.sh" dom "$1" "$2" > "$2.log" 2>&1 &
 PID=$!; minr=99
 while kill -0 $PID 2>/dev/null; do

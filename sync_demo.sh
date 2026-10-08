@@ -8,6 +8,7 @@ D="$W/demo"
 [ "$(git -C "$W" rev-parse --abbrev-ref HEAD)" = main ] || { echo "flower-claude n'est pas sur main"; exit 1; }
 git -C "$W" fetch -q origin && git -C "$W" merge -q --ff-only origin/main || { echo "main a divergé d'origin/main : à régler à la main"; exit 1; }
 LIST=$(sed -n 's/^cat a1\.html \.\.\/p2\.js \.\.\/p3\.js \.\.\/p4\.js \(.*u3\.js\) > .*/\1/p' "$SP/mkapp.sh")
+LIST=$(cd "$SP/app" && eval "echo $LIST")
 n=0
 for f in $LIST; do cmp -s "$SP/app/$f" "$D/src/$f" || { cp "$SP/app/$f" "$D/src/$f"; n=$((n+1)); echo "  src/$f"; }; done
 for f in p2.js p3.js p4.js; do cmp -s "$SP/$f" "$D/src/$f" || { cp "$SP/$f" "$D/src/$f"; echo "  src/$f"; }; done
