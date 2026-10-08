@@ -1,0 +1,142 @@
+{
+  "format": [
+    "census-sources.json: registers and specialist catalogues read by census.py, one entry in `adapteurs` per source (see CENSUS.md).",
+    "id, nom, url: short id (cache key), name shown in `preuves`, home page. niveau: N1 register / N2 trade / N3 specialist / N4 free (STANDARD-SOURCES.md).",
+    "genres: genera the adapter applies to (\"*\" for all). registre: true if the source is a registration authority. delai: seconds between two requests.",
+    "licence: licence shown with the photos of the source. pages_max: most pages followed (default 60). GET only: no form, no POST, no account.",
+    "liste.urls: URL templates; {genre} {genre_lc} {taxon} {taxon_lc} {espece} {groupe} and the loop variable {n} (liste.iter {\"n\":[1,30]}, stops at the first empty page) or {lettre} (liste.iter {\"lettre\":\"a-z\"}).",
+    "liste.suivant: regex whose group 1 is the URL of the next page. liste.format: \"html\" (default) or \"pdf\" (text of the PDF, needs pdftotext, PyMuPDF or pypdf).",
+    "liste.entree: regex, or list of regexes. The first one makes an entry (html: one match = one entry; with liste.decoupe, the text is first cut at each match of decoupe and the first regex runs on each piece); the others only add groups still missing.",
+    "Named groups: nom (required), url, img, couleur, obtenteur, annee, groupe, espece (\"orientalis\", \"S. vulgaris\", \"Syringa vulgaris\"), syn (synonyms), x_<anything> (kept in `extra`). liste.flags: i s m x (default \"is\").",
+    "nettoyage_nom: [[regex, replacement], ...] applied to the name. legendes: {group: {code: text}} (couleur: codes inside the text are replaced). groupe_depuis: group used as horticultural group.",
+    "doutes_si: [{champ, regex, doute}] adds a doubt when a group matches. fiche: optional detail page of each entry ({url is the entry url}): {entree:[regex], images: regex, max: N}.",
+    "®, ™ and 'trademark' near a name are kept as `marque.indice`. Registers whose names are denominations: `registres_denomination` (a vendor sign on those names is not a doubt)."
+  ],
+  "registres_denomination": [
+    "KAVB"
+  ],
+  "series_commerciales": [
+    "Mistral",
+    "Galilee",
+    "Rainbow",
+    "Rax",
+    "Butterfly"
+  ],
+  "adapteurs": [
+    {
+      "id": "ils-register",
+      "nom": "International Lilac Society (registre des cultivars de Syringa)",
+      "url": "https://www.internationallilacsociety.org/",
+      "niveau": "N1",
+      "registre": true,
+      "genres": [
+        "Syringa"
+      ],
+      "delai": 2,
+      "licence": "texte du registre (aucune photo)",
+      "liste": {
+        "format": "pdf",
+        "urls": [
+          "https://www.internationallilacsociety.org/wp-content/uploads/2025/03/ILS-register-updated-March-6-2025.pdf"
+        ],
+        "decoupe": "^[`‘].{1,60}?['’],\\s",
+        "decoupe_flags": "m",
+        "flags": "s",
+        "entree": [
+          "^[`‘](?P<nom>.{1,60}?)['’],\\s(?P<x_en_tete>[^\n]*)",
+          "^[`‘].{1,60}?['’],[^\n]*?(?P<espece>S\\.\\s*(?:×\\s*)?[a-z][a-z-]+)",
+          "\\n\\s+(?P<obtenteur>[^;\\n]+?)(?:\\s+(?P<annee>(?:pre-)?\\d{4}(?:[-/]\\d{4})?|no dates))?\\s*[;,]\\s*(?P<x_forme>[SD])\\b\\s*(?P<couleur>[IVX]+(?:\\s*[&/-]\\s*[IVX]+)*)?",
+          "\\n\\s+(?P<x_rgb_fleur>\\d{1,3},\\d{1,3},\\d{1,3})\\s+(?P<x_rgb_bouton>\\d{1,3},\\d{1,3},\\d{1,3})",
+          "\\n\\s+syn\\. -\\s*(?P<syn>[^\\n]*?(?:[A-Za-z0-9]\\n\\s+[^\\n]+)?)(?=\\n)",
+          "(?P<x_statut_nom>Cultivar name [^\\n]*)",
+          "(?P<x_prix>Awards?:[^\\n]+)"
+        ]
+      },
+      "legendes": {
+        "x_forme": {
+          "S": "simple",
+          "D": "double"
+        },
+        "couleur": {
+          "I": "white",
+          "II": "violet",
+          "III": "blue",
+          "IV": "lilac",
+          "V": "pink",
+          "VI": "magenta",
+          "VII": "purple"
+        }
+      },
+      "groupe_depuis": "x_forme",
+      "doutes_si": [
+        {
+          "champ": "x_statut_nom",
+          "regex": "not established",
+          "doute": "non_etabli"
+        },
+        {
+          "champ": "x_en_tete",
+          "regex": "not known|incomplete",
+          "doute": "taxon_incertain"
+        }
+      ],
+      "nettoyage_champs": {
+        "obtenteur": [
+          [
+            "^origin not known$",
+            ""
+          ],
+          [
+            "^\\?$",
+            ""
+          ]
+        ]
+      }
+    },
+    {
+      "id": "csweijers",
+      "nom": "C.S. Weijers (grossiste de bulbes, assortiment Hyacinthus)",
+      "url": "https://www.csweijers.nl/en/assortment/hyacinthus",
+      "niveau": "N3",
+      "genres": [
+        "Hyacinthus"
+      ],
+      "delai": 1.5,
+      "licence": "texte (noms seuls)",
+      "liste": {
+        "urls": [
+          "https://www.csweijers.nl/en/assortment/{genre_lc}"
+        ],
+        "entree": "<li>\\s*(?P<espece>[a-z]+)\\s+-\\s+(?P<nom>[^<]{2,60}?)\\s*</li>"
+      }
+    },
+    {
+      "id": "ruigrok",
+      "nom": "Ruigrok Flowerbulbs (bulbiculteur, catalogue de gros Hyacinthus)",
+      "url": "https://ruigrokflowerbulbs.com/product-category/wholesale-hyacinth-bulbs/",
+      "niveau": "N3",
+      "genres": [
+        "Hyacinthus"
+      ],
+      "delai": 1.5,
+      "licence": "droits réservés (mesure locale seulement)",
+      "pages_max": 25,
+      "liste": {
+        "urls": [
+          "https://ruigrokflowerbulbs.com/product-category/wholesale-hyacinth-bulbs/"
+        ],
+        "suivant": "class=\"next page-numbers\"[^>]*href=\"([^\"]+)\"",
+        "entree": [
+          "<li class=\"entry(?:(?!</li>).)*?<img[^>]+?(?:data-src|src)=\"(?P<img>[^\"]+)\"(?:(?!</li>).)*?<a href=\"(?P<url>[^\"]+)\"[^>]*><h2 class=\"woocommerce-loop-product__title\">(?P<nom>[^<]+)</h2>",
+          "loop-product__title\">\\s*(?P<espece>[A-Z][a-z]+\\s+[A-Za-z]+)\\s"
+        ]
+      },
+      "nettoyage_nom": [
+        [
+          "^\\s*[A-Z][a-z]+\\s+[A-Za-z]+\\s+",
+          ""
+        ]
+      ]
+    }
+  ]
+}
