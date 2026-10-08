@@ -375,9 +375,10 @@ def commons_photos(pages, src='Wikimedia Commons'):
     return out
 
 
-def commons_thumb(url, w=800):
-    """the 800 px rendering of a Commons file, from the file URL (asking the API for thumburl makes it render each thumbnail: 5 s a request)"""
-    m = re.match(r'^(https://upload\.wikimedia\.org/wikipedia/commons)/([0-9a-f]/[0-9a-f]{2}/([^/]+))$', url)
+def commons_thumb(url, w=500):
+    """the 500 px rendering of a Commons file, from the file URL (asking the API for thumburl makes it render each thumbnail: 5 s a request)"""
+    # Commons serves only its standard thumbnail widths (https://w.wiki/GHai: 330, 500, 960, 1280...); the API's file URL may carry a ?utm query
+    m = re.match(r'^(https://upload\.wikimedia\.org/wikipedia/commons)/([0-9a-f]/[0-9a-f]{2}/([^/]+))$', url.split('?')[0])
     return '%s/thumb/%s/%dpx-%s' % (m.group(1), m.group(2), w, m.group(3)) if m else None
 
 
