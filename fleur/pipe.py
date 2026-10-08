@@ -1111,6 +1111,25 @@ def step_finition(ctx):
     return {'status': 'done' if (res == 'done' and ok) else 'failed', 'msg': 'finition %s; %s' % (res, msg), 'checks': m}
 
 
+def rtest_parse(txt):
+    """{'stage vessel': 'IDENTIQUE' | 'DIFFERENT' | 'ERR'} from the page's rtest line (items separated by ' | ')"""
+    out = {}
+    for it in txt.split(' | '):
+        m = re.match(r'\s*(\S+) (\S+) (IDENTIQUE|DIFFERENT|ERR)', it)
+        if m:
+            out['%s %s' % (m[1], m[2])] = m[3]
+    return out
+
+
+def rtest_run(ctx, rel_url, rcs, tag):
+    """one rtest page (in the copy, or in the main atelier with rel_url ''), through the gate; {} when dry or unreadable"""
+    url = 'http://localhost:8765/%spilote/sv.html?rtest=1&rc=%s&sv=11&nc=%d' % ((rel_url + '/') if rel_url else '', ','.join(rcs), time.time())
+    outp = 'fleur/out/%s.json' % tag
+    c, t = run_cmd(ctx, [sh_exe(), 'ws/gate.sh', sh_exe(), 'ws/chrome1.sh', 'dom', url, outp], tag, timeout=1700, quiet=True)
+    p = '%s/%s' % (ctx.ch, outp)
+    return rtest_parse(open(p, encoding='utf-8', errors='replace').read()) if not ctx.dry and os.path.exists(p) else {}
+
+
 def step_temoins(ctx):
     out = []
     ok = True
@@ -1136,15 +1155,22 @@ def step_temoins(ctx):
             pct = float(mm.group(1)) if mm else None
             ok = ok and pct == 0.0
             out.append('anemone %s %%' % (pct if pct is not None else '?'))
-    rcs = ['tulipe-simple~7:7', 'tulipe-simple~12:6'] + ['%s:%s' % (x['sku'], x.get('tiges') or 6) for x in ctx.st.get('skus', []) if x.get('sku')]
-    url = 'http://localhost:8765/%s/pilote/sv.html?rtest=1&rc=%s&sv=11&nc=%d' % (ctx.rel_url, ','.join(rcs), time.time())
+    # rtest = the bouquet's random stream with the SVG heads off and on (the composition must not move). The sort's own SKUs must be IDENTIQUE;
+    # the tulip witnesses must do no worse than in the main atelier (they can already differ there: a failure of the witness is not the sort's)
+    own = ['%s:%s' % (x['sku'], x.get('tiges') or 6) for x in ctx.st.get('skus', []) if x.get('sku')]
+    wit = ['tulipe-simple~7:7', 'tulipe-simple~12:6']
     need_servers(ctx)
-    c, t = run_cmd(ctx, [sh_exe(), 'ws/gate.sh', sh_exe(), 'ws/chrome1.sh', 'dom', url, 'fleur/out/rtest.json'], 'temoin-rtest', timeout=1700, quiet=True)
+    r_own = rtest_run(ctx, ctx.rel_url, own, 'temoin-rtest') if own else {}
+    r_wit = rtest_run(ctx, ctx.rel_url, wit, 'temoin-rtest-tulipes')
+    r_ref = rtest_run(ctx, '', wit, 'temoin-rtest-principal') if ctx.rel_url else r_wit
     if not ctx.dry:
-        txt = open('%s/fleur/out/rtest.json' % ctx.ch, encoding='utf-8', errors='replace').read() if os.path.exists('%s/fleur/out/rtest.json' % ctx.ch) else ''
-        ni, nd = txt.count('IDENTIQUE'), txt.count('DIFFERENT') + txt.count('ERR ')
-        ok = ok and ni > 0 and nd == 0
-        out.append('rtest %d IDENTIQUE, %d different' % (ni, nd))
+        nd_own = [k for k, v in r_own.items() if v != 'IDENTIQUE']
+        worse = [k for k, v in r_wit.items() if v != 'IDENTIQUE' and r_ref.get(k) == 'IDENTIQUE']
+        known = [k for k, v in r_wit.items() if v != 'IDENTIQUE' and r_ref.get(k) != 'IDENTIQUE']
+        ok = ok and bool(r_own) == bool(own) and not nd_own and not worse and bool(r_wit)
+        out.append('rtest of the sort %d IDENTIQUE, %d different%s; tulip witnesses %d IDENTIQUE, %d different%s' % (
+            len(r_own) - len(nd_own), len(nd_own), ' (%s)' % ', '.join(nd_own) if nd_own else '', len(r_wit) - len(known) - len(worse), len(known) + len(worse),
+            ' (%d already so in the main atelier%s)' % (len(known), '; WORSE: ' + ', '.join(worse) if worse else '') if known or worse else ''))
     b_ok, b_msg, m = budget(ctx, 'bud_' + ctx.sid)
     out.append(b_msg)
     return {'status': 'done' if (ok and b_ok) or ctx.dry else 'failed', 'msg': '; '.join(out), 'checks': m}
@@ -1529,6 +1555,8 @@ def cmd_selftest(a):
             t('fit.py thyrse: tilt-proof outline of a cone', all(abs(x['hw'] - r[0]['hw']) < .1 and abs(x['taper'] - r[0]['taper']) < .06 and abs(x['fill'] - r[0]['fill']) < .04 for x in r) and .3 < r[0]['taper'] < .5, str(r))
         except ImportError as e:
             t('fit.py thyrse: tilt-proof outline of a cone', False, str(e))
+        rp = rtest_parse('- cylindre-verre-clair IDENTIQUE 5877:1/10 / 5877:1/12 | 2:0.5 coupe-pied-blanche DIFFERENT 5593:1/84 / 5669:2/10 | 3:1 cylindre-verre-clair ERR boom')
+        t('rtest line parsed', rp == {'- cylindre-verre-clair': 'IDENTIQUE', '2:0.5 coupe-pied-blanche': 'DIFFERENT', '3:1 cylindre-verre-clair': 'ERR'}, str(rp))
         say('selftest: %d ok, %d failed' % (len(ok), len(bad)))
     finally:
         LOCKS = old_locks

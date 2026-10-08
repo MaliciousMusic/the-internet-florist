@@ -9,7 +9,7 @@ Cible : 3 M de tokens « équivalent entrée Opus » par sorte (`--cap`).
   `[--ch <copie>] [--from <étape>] [--only <étape>] [--cap <M>] [--dry]` ; `--skus` : SKU du bouquet, cultivar, nombre de tiges (sinon `sku_bouquet` de
   `catalogue/serre/sources/<sid>.json`, en lecture).
   `--family` : famille de forme ; `grappe` (aussi panicule, thyrse, racème, épi : lilas, jacinthe, muscari, glycine, freesia) fait mesurer l'inflorescence entière (FIT.md), le reste : fleur radiale.
-- `python fleur/pipe.py status <sid>` : étapes, contrôles, facture. `bill <sid>` : le tableau par étape. `selftest` : 33 vérifications sans modèle.
+- `python fleur/pipe.py status <sid>` : étapes, contrôles, facture. `bill <sid>` : le tableau par étape. `selftest` : 34 vérifications sans modèle.
 - `python fleur/pipe.py models` : trois appels minuscules, un par modèle (facturés sous `refcache/pipe-test`).
 - Codes de sortie : 0 fini, 2 un contrôle a échoué, 3 plafond atteint, 4 trois sortes déjà en cours. Tout est repris par `run <sid>` (première étape non finie) ou `--from`.
 
@@ -24,7 +24,7 @@ Cible : 3 M de tokens « équivalent entrée Opus » par sorte (`--cap`).
 | fit | `fit.py`, puis Opus : UN regard sur `fit.png`, report de `best` dans la fiche | `fit.json` et `fit.png` |
 | plante | Opus : tige et feuilles, `space-plante.json` ; puis `fit.py` et le regard | idem |
 | finition | Sonnet : matières des coloris | éléments et Ko par tête à DET 1 (rouge au-delà de 1,2 x 300 / 50) |
-| temoins | anémone contre `base_before.png` (0,00 %), `rtest` IDENTIQUE, budget | les trois |
+| temoins | anémone contre `base_before.png` ou `base_v2.png` (0,00 %) ; `rtest` des SKU de la sorte IDENTIQUE (les témoins tulipes ne doivent pas faire pire que dans l'atelier principal) ; budget | les trois |
 | qa | `qawatch.sh`, lots de 2 (RAM libre 4,2 à 5 Go) ou 4 ; attend sous 4,2 Go | flottants, sous le vase, plis : 0 |
 | planches | sku et plante, copiées dans `flower-claude/.../pilote-printemps/sheets/<sid>-sku-p1.png` et `-plante-p1.png` | image écrite |
 La plante reprend `targets.json` (il contient déjà les cibles tige et feuille). Aucun commit ni fusion : les planches sont seulement copiées.
