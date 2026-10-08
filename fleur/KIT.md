@@ -1,0 +1,117 @@
+# Kit de dessin des fleurs : fiche technique (2026-10-08)
+
+Lue à la place du code. Sources : `app/y1.js` (svSheet, svDraw, tiges), `y3.js` (svBloom, SVB_DEF, gènes, cœur à 6, feuille en sangle), `y2.js` (anémone, la référence), `y-tulipa.js` (tulipe), `s10a.js`, `s9a.js`.
+Le moteur dessine des feuilles (sheets) de surface en SVG natif ; l'anémone est la référence finie : chaque réglage vaut sa valeur par défaut, une sorte ne donne que ce qui diffère. Courbe de vie `[a,b]` = `svSm((x-a)/b)`.
+
+## 1. Écrire une sorte en 10 lignes
+1. Module du genre `app/y-<genre>.js` (modèle : `y-tulipa.js`), une fiche par sorte, ajouté aux scripts de `pilote/sv.html` et de la boutique après `y3.js`.
+2. `const S_<SORTE>={genes:s=>svGenes(s,TABLE),mat:cw=>matière,heart:ctx=>..., ...réglages SVB_DEF qui diffèrent}` (§2, §3, §4, §5).
+3. Tête : `function xSvg(par,B,O,D,cwId,op,seed,wl,S){const cwx=(CW_X.find(x=>x.id===cwId))||{id:cwId,c:'#...'};return svBloom(par,B,O,D,S||SPEC,cwx,op,seed,wl==null?life():wl)}`.
+4. Inscription : `SV_HEAD['<sid>']=xSvg;` (la planche `grid` et les pages génériques la trouvent là).
+5. Fané des couleurs : `if(typeof GHI!=='undefined'&&GHI['<sid>'])GHI['<sid>'].wilt=xWiltCol;` (fonction `(couleur #rrggbb, w 0..1)`).
+6. Tige : `GHI['<sid>'].sc=[ombre,corps,lumière,reflet]` avec `.sv={hair,hairK,ribs,swell,gloss,red,redF,redA}`, `.sw` = largeur ; feuilles : `STEML['<sid>'].sv=fn(par,x,y,ang,len,o)`.
+7. Branchement dans la plante (`s9a.js`/`s10a.js`) : une fonction `...SvgPut(par,B,O,D,cw,op,o)` qui CONSOMME le hasard de l'ancien dessin (§6.4) puis appelle la tête avec `svSeed('nom',cw.id,...)` ; l'ancien dessin reste en repli (`SV_ON` faux).
+8. La vie : `life()` = `SVA_LIFE` (surcharge des planches) sinon `lifeWEl(LIFE,lifeProfile({sid,rec:{}}))` (copier `tulLife`). `SVA_LIFE` est le nom d'anémone, partagé par toutes les sortes (à renommer `SV_LIFE`).
+9. Témoins : planche `grid` (stades x coloris x vues) puis `plant` avec `axv=1` et `full=<cm>` ; `rtest=1` (hasard identique, SV coupé/allumé) ; `shot.sh` de l'anémone avant/après = `img.py diff` à 0,00 % si on a touché au moteur ; `pair` contre la photo.
+10. Budget : environ 300 éléments et 50 Ko par tige à DET 1 ; environ 3 à 5 rustines par tête (`dbgp` dit quelles paires).
+
+## 2. svBloom et SVB_DEF
+`svBloom(par,B,O,D,S,cwx,op,seed,wl)` : B = repère 3x3 (B[2] = axe de la fleur), O = centre à l'écran, D = diamètre, op = ouverture 0 bouton..1 plein, wl = fané 0..1. `R0=D/2`. Deux verticilles (externe w=0 : `ceil(n/2)` pièces ; interne w=1), chaque pièce est un `svSheet`. `S` fusionné sur `SVB_DEF` (mis en cache dans `S._m` : ne pas modifier `S` après le premier rendu). Retourne le groupe de `svDraw`.
+Hooks de la fiche : `genes(seed)`, `mat(cwx)`, `heart(ctx)`, `life()` (optionnel). `ctx={par,B,O,D,R0,g,cw0,op,o2,bud,dec,fan,det,pieces}` ; le cœur ajoute ses pièces à `pieces` (`{fn:k=>..., proxy:svSheet}` : un dessin libre avec sa feuille-substitut pour l'ordre).
+Dérivés : `o2=svSm((op+g.op-open[0])/open[1])` ouverture ; `bud=1-svSm((op-bud[0])/bud[1])` ; `dec`, `fan`, `shed` = `svSm((wl-x[0])/x[1])` ; `det`=1.3 si DET>=1.5 (maillage). Index `[w]` = [externe, interne].
+
+| Réglage | Sens | Valeur par défaut |
+|---|---|---|
+| open | ouverture : début, durée | [.2,.8] |
+| bud | bouton : fin du bouton, durée | [.1,.32] |
+| dec / fan / shed | déclin, fané (pétales pendent), chute (tous sauf 1 à 2 qui restent) | [.1,.4] / [.55,.17] / [.78,.17] |
+| green | vert du jeune bouton : part, jusqu'à, sur | [.5,.02,.14] ; greenC '#7a9850' ; greenTip: pointe moins verte (0..1) |
+| tip | inclinaison de la tête au fané : somme de k·svSm((wl-a)/b) | [[.22,.15,.4],[1.05,.5,.3]] |
+| L, Wd | longueur, largeur (x longueur) par verticille (x R0) | [.92,.86], [1.02,.94] |
+| r0, z0 | rayon et hauteur d'insertion (x R0) | .13, [-.012,.004] |
+| a0, a1 | angle de l'axe au pied / à la pointe : [fermé, + ouvert x o2] par verticille | [[.55,.55],[.45,.53]], [[.62,.78],[.52,.73]] |
+| aPow | courbure de la nervure (<1 : fond arrondi, courbure au pied) | 1.3 |
+| cup, cupW, cupFan | creusement en travers, x par verticille, perte au fané | .33, [1,1.15], .65 |
+| cupArc | creusement en vrai arc (pièce plus large que son verticille) | false |
+| lap | chaque pièce tournée sur sa nervure (se posent l'une sur l'autre) | 0 |
+| zb | décalage de profondeur par verticille (ordre) | [0,.002] |
+| wA0, wA1 | ouverture ajoutée au déclin et au fané (pied, pointe) : [dec, fan] | [.22,.25], [.5,.35] |
+| sag | affaissement de la pointe : [base, + ouvert, + déclin] | [.12,.25,.25] |
+| limp | mollesse (la nervure cède vers le sol) : [fané, déclin] | [.95,.15] |
+| wav | ondulation x [bouton réduit, déclin, fané] | [.7,1.3,2.6] |
+| curl, tw | enroulement de la pointe ; torsion | [.22,.4] ; [.6,.35] |
+| fanL, fanW, shedW | raccourcissement / rétrécissement au fané / à la chute | .1, .36, .42 |
+| rev, crk | marges retroussées, froissées au déclin/fané | [.35,.3], [.05,.11] |
+| vb | plus grande largeur (part de la longueur) | .64 |
+| claw, clawK | onglet : [largeur, reste], raideur | [.24,.76], 1.15 |
+| edge | marge qui brunit au déclin : couleur clair/rouge/autre, [déclin, fané] | {light:'#e2cfa4',red:'#5e0a24',other:'#f2ecf2',a:[.18,.42]} |
+| trans | transparence : [base, + déclin] | [.26,.2] |
+| rim | liseré : [épaisseur, + déclin, opacité, + déclin] | [.006,.012,.22,.25] |
+| budH, budR | bouton : hauteur [base, + croissance] x R0, rayon / hauteur | [.5,.38], .38 |
+| budE, budK, budP | profil de l'œuf : [décalage, amplitude], exposant le long, exposant du profil | [.1,.88], 1, .85 |
+| budW, budHw, budRw | enveloppement, hauteur, rayon par verticille | [1.4,1.25], [1,.96], [1,.95] |
+| budPale | false : dos du bouton coloré comme l'envers (sinon dos pâli) | undefined |
+| veinN, veinNet, veinFork | nervures : nombre, réseau, fourches ; [zoom DET>=1.5, normal] | [16,8], [.4,0], [.75,.35] |
+| veinLo | false : pas de nervures hors zoom | true |
+| ao | occlusion : [face avant, longueur, dos, longueur] | [.55,.32,.2,.3] |
+| nu, nv | maillage : [normal, déclin], longueur | [10,13], 16 |
+| pmin | rustine seulement si la pièce passe devant sur >= pmin cellules | 3 |
+| light | matière commune de la feuille (voir ci-dessous) | wrap .3, amb .26, dif .72, sky .14, ks .09, gloss 14, dark [.94,.86,.78,.7,.62,.54], da .17, lit [1.05,1.13,1.21], la .18, darkLo [.91,.78,.65,.52], daLo .23, litLo [1.07,1.18], laLo .22, soft .045 |
+
+`light` : lumière (wrap, amb, dif, sky, ks = brillance, gloss) ; `dark/lit` = niveaux des lavis d'ombre / de lumière (zoom), `da/la` leurs opacités ; `darkLo/litLo/daLo/laLo` idem hors zoom ; `soft` = flou des lavis (x longueur). Une fiche remplace `light` en entier : `Object.assign({},SVB_DEF.light,{...})`.
+Un verticille ne dépassera jamais 24 segments (`ns=24`). `g.n` = nombre de pièces, `g.rot` = rotation, `g.cup`, `g.op` (décalage d'ouverture), `g.ring`, `g.dh/ds/dl` (nuance individuelle : `svShift`), `g.sd`, `g.tep[i]`.
+Contour : pointe `Lu(u)` = superellipse d'exposant `t.tip`, entaille `t.notch`. Fané : les pièces de rang bas dans le monde restent (`pxHashS`), les autres tombent.
+Pièces par pièce : `dL dW dph da0 da1 tw wav wk wph notch tip asym curl cup sd` + `late:{hang,wl}` (obligatoires dans la table de gènes).
+
+## 3. Gènes
+`svGenes(seed,T)` (`svRng(seed)`, tirages dans l'ordre de la table). `T={n:[[nombre,poids]...], tep:{clé:plage}, late:{clé:plage}, head:{clé:plage}}`. Plage : `[a,b]` uniforme ; `[a,b,p]` avec probabilité p (sinon 0) ; `[a,b,'r']` arrondi ; `'sd'` une graine. Résultat `g={n,tep:[...],...head}` ; chaque pièce tire d'abord `tep` puis `late`.
+Clés lues par svBloom : tep = `dL dW dph da0 da1 tw wav wk wph notch tip asym curl cup sd hang wl` ; head = `rot cup op ring dh ds dl sd`. Le cœur lit en plus ses clés (anémone : `dome stN stL stA`, tulipe : `stL`).
+Exemple anémone : `n:[[5,.06],[6,.44],[7,.24],[8,.18],[9,.08]]`, `notch:[.02,.055,.2]`, `dh:[-4,4]` ; tulipe simple : `n:[[6,1]]`, ondulation `wav:[.004,.016]`, `tw:[-.05,.05]`, `tip:[1.7,2.5]`.
+Aides : `svSeed(...clés)` (graine entière), `svRng(s)` (`r()`, `r.in(a,b)`, `r.pick(liste)`), `pxHashS(i,k,sd)` (hasard déterministe), `svShift(hex,dh,ds,dl)`, `svVeins(r,n,net,fork)` -> `{main,fine}` (tracés en (u,v)).
+
+## 4. Matière d'un coloris : `mat(cwx)` rend (cache par id) 
+Face avant = intérieur, `b...` = dos. Tous les champs sont des couleurs `#rrggbb` sauf mention.
+- `st` : rampe de l'avant `[[v,couleur]...]` (v 0 onglet .. 1 pointe ; au moins 4 entrées, `st[3]` sert de couleur du corps) ; `bst` : rampe du dos ; `shade`/`lite` : ombre et lumière des lavis (avant) ; `bshade`/`blite` (dos) ; `vein`, `bvein` : nervures avant/dos ; `rim` : liseré ; `cast` : ombre portée.
+- `blot:{c,e,v,w,op,k}` : tache au pied de l'intérieur (couleur, bord, hauteur, demi-largeur, opacité, arrondi du haut ; `cv` : où le centre s'éclaircit).
+- `band:{c,w,v0,op}` : liseré d'une autre couleur (picotée) depuis v0, sur la pointe ; `bk` : opacité au dos.
+- `flames:{c,n:[a,b],from,to,w,op,side}` : flammes (Tigre) ; `side` -1/1 : un seul côté.
+- `spots` : posé par svBloom au fané (clair qui brunit). `K` : cache.
+- Cœur : `dome pist fil anth anl pol` (anémone), `fil anth pol ov sg` (tulipe).
+Anémone : `SVA_CW[id]` mesuré, ou `SVA_SPEC[id]={c,tip,base,bv,shade,lite,band,bandE,dome,pist,st,flames}` complété par `svaMat`. Tulipe : `TULS[id]={i,t,ba,bv,o,ot,g,sh,li,band,fl,bl,an,fi,po,sg,ov}` -> `tulMat`. Règle : la photo de la variété prime sur le nom.
+Fané : svBloom mêle `edge` aux rampes (`dec`) et, au fané, brunit les clairs ; la couleur propre à l'espèce vient de `GHI[sid].wilt`. `svaWiltCol` : bleus -> pourpre, rouges -> vin, rose -> poussiéreux, blancs -> ivoire/beige ; `tulWiltCol` : tache et anthères gardées (l<.16), rouges -> vin puis olive brune, jaunes/orangés -> ocre puis brun, blancs -> ivoire puis parchemin, verts -> `lifeCol`.
+
+## 5. Cœurs (`heart(ctx)`)
+- `svHeart6(o)` -> hook (lis, tulipes, ...) : `SVH6_DEF={n:6,ovH:.42,ovR:.085,ovT:.82,styL:.03,sgR:.12,sgUp:.3,filL:.26,filR:.07,filW:.05,filA:.1,anL:.3,anW:.034,vers:0,budMax:.4,hide:-2,lo:0}`. Ovaire (hauteur, rayon, rétrécissement), style, stigmate à 3 lobes (rayon, relevé), filets (longueur, rayon d'insertion, largeur, écart), anthères (longueur, largeur ; `vers` les penche), invisible si `bud>budMax` ou si `B[2][2]<hide` hors déclin, `lo:1` = allégé à DET 1. Couleurs du coloris : `anth fil pol ov sg`. Tulipe : `TUL_HEART={ovH:.42,sgR:.09,filL:.26,anL:.3,filA:.1}` ; `tulFloor(h6)` ajoute un fond de coupe (bol sur le réceptacle) avant le cœur.
+- `svaHeart` (anémone) : dôme de pistils + couronne de 165..220 étamines (angle d'or), `recep` (plancher sombre), tout dans une `pieces.push({fn,proxy})`. Sert de modèle pour un cœur libre : une feuille `proxy` = enveloppe du cœur (pour l'ordre), un `fn(k)` qui dessine moitié arrière / centre / moitié avant, avec `LOD` (bas détail) et `DET`.
+- Primitives : `PJ(B,O,p)` -> écran+profondeur, `toV(B,p)`, `E(tag,attrs,parent)`, `G(par,attrs)`, `svSpl(pts,closed)` (courbe lisse), `svDots`, `hull2`, `svF`/`svR` (arrondis), `stops(grad,[[v,c]...])`, `mix`, `h2l`/`l2h`, `LIGHT`, `V3.*`.
+
+## 6. Feuilles, tiges, branchement
+**6.1 Feuilles** `svStrapLeaf(par,pos,H,Out,o)` (tulipe, narcisse, jacinthe, iris) : pos = pied sur l'axe, H = tige (vers le haut), Out = sortie (vue). `SVL_DEF={len:100,w:.2,wp:[[0,.5],[.1,.66],[.32,1],[.62,.82],[.88,.4],[1,0]],sheath:.1,sr:2,lean:.4,droop:.45,tw:.3,gut:.5,wav:.05,wavN:3,hood:.25,up:'#587f68',low:'#7a9a84',base:'#a8c09c',bloom:.6,nu:7,nv:16,wl:0,sd:1}` (`wp` profil de largeur, `sheath` gaine, `sr` rayon de gaine, `lean` écart au départ, `droop` chute, `gut` gouttière, `wav/wavN` ondulation, `hood` capuchon, `bloom` voile glauque). Fané : molle, jaunit par la pointe. Feuilles d'anémone : `svaBract3(par,og,pos,len,sd,wl)` (collerette de 3 bractées découpées) ; matière `SVA_LEAF`.
+**6.2 Tiges** `svStemLine(par,C,Wd,c)` (C = points, Wd = largeurs, `c=[ombre,corps,lumière,reflet]` + `c.sv`) ; `svStem3(par,P,w0,w1,c,n)` = cubique P[4 points]. `c.sv` : `swell` (.05, variation lente de largeur), `ribs` [fractions de largeur], `hair` (couleur), `hairK` (.7), `red`/`redF`/`redA` (teinte vers la tête, .75, .45), `gloss` (.5). Anémone : `svaStemCols` (poils, côtes) ; tulipe : `TULS_SC` (`swell .03, gloss .42`, lisse, glauque). Le col du fané : `tulNeckBend(res,og,wl)` (allonge x1.28 et courbe jusqu'à ~1 rad).
+**6.3 svSheet / svDraw** : `svSheet(B,O,S,{nu,nv,mat,ao,zb})` avec `S(u,v)` -> point 3D (u -1..1 en travers, v 0..1 en long). `svDraw(par,pieces,{D,pmin,sd,sb,so,shadow})` : ordre par paires (`svOrder`), rustines (`SV_PATCH`, désactivées par `?nopatch=1`) là où une pièce passe devant, ombre portée (`sd` décalage .024, `sb` flou .016, `so` opacité .34 ; x D), lavis, nervures, taches, flammes, liseré. Attributs de matière lus : `stops/bstops shade lite bshade blite rim brim cast wrap amb dif sky trans ks gloss dark da lit la darkLo daLo litLo laLo soft rw ro veins(s,front)=>[[tracés,largeur,couleur,opacité]] blot band flames spots`.
+**6.4 Branchement et hasard `R()`** : les bouquets tirent `R()` dans un ordre fixe ; le dessin SVG doit consommer les mêmes tirages que l'ancien, sinon la composition bouge (`rtest`). Anémone : `anemFlower` -> `anemSvgPut` consomme 28 `R(0,1)` si `op>=.3`, puis graine `svSeed('anemone',cw.id,round(O[0]*8),round(O[1]*8),round(D*8))` ; `svaBract3` consomme 10 `R(0,1)` par bractée. Bouton `op<.3` : sphère `spBud` si SV coupé. `anemPlant` appelle `lsHeadS(...)` avec `flower`/`leaf`, `sv=typeof svaStemCols==='function'&&SV_ON`. Tulipe : `tulipHead(... kd)` choisit `sv=kd==='simple'&&typeof tulSvgPut==='function'&&SV_ON&&cw&&cw.id` ; `tulSvgPut` consomme 24 `rnd()` (les trois premiers nomment l'individu : `svSeed('tulipe',cw.id,s)`) ; le col vise `aim` (mélange axe .45 + tige .85) pour montrer le U de profil ; `tulNeckBend` si SV.
+
+## 7. Pièces en chantier, pas encore fusionné (copies dans `ch/<chantier>/app/`)
+- **`ch/tulipes-narcisses/app/y3-marge.js`** : crochet `P.marg(u,t,g)` (marges coupées : tulipe perroquet, frangée, œillet, bleuet). `svMarge(o)` fabrique le crochet : `SVM_DEF={nu:12,n:[3,6],dp:[.05,.14],hw:[.8,1.4],p:1.4,span:.95,wk:.5,ta:.015,la:0,ln:3,k:[.7,1.2]}` (n entailles en V de profondeur dp, demi-largeur hw cellules, puissance p ; dents `ta` ; lobes `la`/`ln` ; `k` échelle par pièce). `o.nu` doit égaler `nu` de la fiche. Les entailles tombent sur les noeuds de la grille. Nécessite la branche de svBloom qui l'appelle.
+- **`ch/rosettes/app/y3-rosette.js`** : `svRosette`, rosette de nombreux pétales sur spirale (renoncule double, pivoine, rose, camélia). Spec sur `SVR_DEF` (spirale `phy:'gold'|'whorl'`, `div`, `nw`, `thin`) ; valeurs par rang `[[f,valeur]...]` (f 0 externe .. 1 cœur) pour `L W r0 z0 cup a0c a0o a1c a1o wA0 wA1 vTrim` ; mode globe (`globe`, `bend`, `wRow`, ...) ; vie `bud dec fan shed shedF tip limp sag` ; `brown`, `green`, `floor`, `core`, `sep` (calice) ; rendu : un seul chemin par pétale, lavis par séries (`run`), budget ~100 éléments à DET 1. Couleurs par rang `fr`/`bk` : `[[f,couleur]...]`. Hooks : `genes`, `mat`, `heart`, `sep`, `life`.
+- **`ch/grappes/app/y3-grappe.js`** : `grDraw(par,B,O,D,S,cwx,op,seed,wl,o)`, grappes de petites fleurs. Fiche `{genes,mat,wilt,dry,stem,lay,law,fl,layout,floret,budget,lit,ao}`. `GR_LAYOUT.dresse` (fait : jacinthe, muscari ; options `lay.sterile lay.pedTh lay.pedW lay.pedq lay.pedO lay.thMax lay.thg lay.hw`), `unilateral`/`panicule`/`pendante` à écrire. `grLaw(law,rang,st,dt)` -> `{o,w}` (`law.t0 spread w order 'acro'|'basi' ws late`). `GR_FLORET.clochette`, `urne` (fait ; `etoile entonnoir papillon` à écrire) via `c.put({d,f,s,sw,so,fo})`, `c.V c.Vd c.d2 c.l2 c.lit c.col c.wc`. Niveaux de détail 2/1/0 dépensés selon `S.budget [DET1, DET1.5]` (~300 éléments/tige). Branchement : `SV_HEAD[sid]=(...)=>grDraw(...)`.
+
+## 8. Outils (dossier `fleur/`, depuis l'atelier ; serveur 8765 et `recv.py` 8781 allumés)
+- **`sh fleur/shot.sh <nom> "<requête>"`** : rend `pilote/sv.html?<requête>` dans un Chrome headless (`ws/gate.sh`), écrit `fleur/out/<nom>.png` et imprime les mesures (têtes, éléments / Ko / rustines par tête). Pas d'image -> « PAS D'IMAGE » (serveur arrêté ?).
+- **`grid=1`** : `sid` (espèce), `cws` (coloris, virgules), `st` (stades `op:wl,...`, défaut `.06:0,.2:0,.4:0,.75:0,1:.35,1:.75`), `view` (indices 0..7 dans VIEWS : 0 face, 1 plongeante, 2 trois-quarts, 3 rasante, 4 gauche, 5 par-dessous, 6 côté, 7 profil), `D` (taille, 120), `det` (1 ou 1.5, défaut 1.5), `seed` (3), `spec` (`SVT_BOTA`, `SVT_SIMPLE` : fiche de tulipe), `dbgp=1` (liste des paires rapiécées `o0-i3...`, `o` externe, `i` interne, `h` cœur : le nombre de rustines), `sw` (largeur du PNG), `nopatch=1` (sans rustines). Une ligne par (coloris, vue), une colonne par stade.
+- **`plant=1`** : `sid`, `cw`, `st` (défaut `.1:0,.3:0,.6:0,1:0,1:.4,1:.75`), `vw` (axe de la tête `x,y,z`, défaut -.45,.15,.88), `axv=1` (transmettre vw comme axe : sinon ignoré, tête de face), `cell` (170), `full=<cm>` (tige entière sous le col avec les feuilles STEML), `det`, `snap`.
+- Autres : `rtest=1&rc=<sid>~<n>:<n>,...&sv=11` (hasard des bouquets : 5 stades x 2 vases, SV coupé puis allumé, attendu IDENTIQUE) ; `cmp=<id>` (rend contre une photo SV_REF) ; sans `grid/plant/cmp` : planche d'une anémone (`cw op D seeds cols views`).
+- **`python fleur/img.py`** : `small <png> [--w 900]` (copie légère, jpg) ; `zoom <png> "x0,y0,x1,y1;..." [--h 280]` (recadrages en pixels, plus sûr que `cell`) ; `cell <png> <cols> <rows> "c,r;..."` (cellules uniformes, les marges de la grille décalent) ; `diff <a> <b> [--t 24] [--out d.png]` (part de pixels changés ; 0,00 % attendu pour l'anémone) ; `pair <photo> "x0,y0,x1,y1" <rendu.png> "box"|"c,r@D" [--kind bud|cup] [--op .6]` (photo gardée à côté du rendu, hauteur/largeur du bouton, largeur/hauteur de la coupe, angle des flancs).
+- **`python fleur/refs.py`** : `find <sid> <requête>`, `url <sid> <url>`, `sheet <sid> [--from --n --tile]`, `pal <sid> <i> [--box --k --grey]`, `ring <sid> <i> <cx,cy,r>` (couleur du centre vers le bord : base -> pointe), `auto <sid> <i>`, `keep <sid> <i> <tags> [--m mesure]`, `kept <sid>`, `list <sid>`, `clean <sid>`.
+
+## 9. Pièges connus (journal tulipe, « Trous de la méthode » ; standard 4 ter)
+1. Ne pas hériter de la courbe d'ouverture de l'anémone (elle s'ouvre à plat) : chaque sorte a sa silhouette mesurée sur photos, comparée par `img.py pair` au stade vendu (op .6 à .85).
+2. Un genre : un module, une fiche par sorte ; une forme réussie mais hors sujet devient la fiche d'une autre sorte (`SVT_BOTA`, hors catalogue et hors `SV_HEAD`).
+3. Le bouton n'est pas un œuf symétrique : plus large au-dessus du milieu, pointe ronde ou aiguë, couleur partant de la pointe, vert depuis le pied (`greenTip`, `budK`, `budP`, `budE`) ; mesurer H/W.
+4. Pièces plus larges que le verticille : `cupArc:true` ; sinon elles se traversent. Pièces qui se recouvrent : `lap`. Pied large et droit : X sous la fleur -> onglets étroits (`claw`, `clawK`) + fond de coupe (`tulFloor`).
+5. Beaucoup de rustines = pièces qui se traversent ou coupes emboîtées ; corriger la géométrie, pas l'ordre ; `pmin` pour ne rapiécer que ce qui se voit ; `dbgp` pour trouver les paires.
+6. Planche `plant` : transmettre `axv=1` (sinon tête de face), `full=<cm>` pour la tige et les feuilles ; contrôler une case à la loupe avant de corriger le dessin (animations non finies, serveur arrêté : rendu « NO OUTPUT »). `img.py cell` décale : préférer `zoom`.
+7. Après toute retouche du moteur : `diff` de la planche anémone = 0,00 % ET `rtest` IDENTIQUE. Le hasard consommé doit rester celui de l'ancien dessin.
+8. Le fané : d'après photos de fleurs fanées, jamais une boule, jamais une fleur fermée ; couleurs propres à l'espèce (`GHI[sid].wilt`) ; la tulipe garde sa tache et ses anthères sombres.
+9. Tige et feuilles en volume, jamais raides ; épaisseur mesurée ; feuilles qui mollissent et jaunissent. La tête garde son orientation réelle sur la tige entière (tulipe : U de profil).
+10. Coloris fidèles à la photo de la variété (outil `refs.py ring`) ; les mesures de champ sont à revérifier sur une fleur isolée. Pas de 3D (SVG seul). Gros blocs de code : les écrire avec Write, pas en heredoc (guillemets JS).
