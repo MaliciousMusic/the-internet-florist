@@ -210,7 +210,7 @@ for(const id of['narcisse-trompette','cyrtanthus'])GH_BUDS.add(id);
    lime green as they swell, then cream, then white, a pink flush when they age. The ball as the hydrangea's: florets laid on a sphere and drawn far to near (floretPath, s4a.js);
    the buds a tight green ball of tiny closed florets ---------- */
 const CW_VIB=[{id:'vert',n:'Vert anis (boule verte)',c:'#c5d86a'},{id:'vert-tendre',n:'Vert tendre (virant au blanc)',c:'#dbe6a0',c2:'#eef0d4'},
-  {id:'blanc',n:'Blanc',c:'#f7f5ee',c2:'#e6ecc8'},{id:'blanc-creme',n:'Blanc crème',c:'#f2eedb'},{id:'blanc-rose',n:'Blanc rosé (fin de saison)',c:'#efc8d4',c2:'#f6eef0'}];
+  {id:'blanc',n:'Blanc',c:'#f7f5ee',c2:'#e6ecc8'},{id:'blanc-creme',n:'Blanc crème',c:'#f2eedb',ret:1},{id:'blanc-rose',n:'Blanc rosé (fin de saison)',c:'#efc8d4',c2:'#f6eef0'}];
 /* a maple-like leaf on the screen at (x,y) along ang: three lobes (the middle one longest), coarse teeth, a truncate base on its petiole; foreshortened across by its tilt */
 function vibLeaf(par,x,y,ang,len,col,o={}){const g=G(par,{transform:`translate(${f(x)},${f(y)}) rotate(${f(ang/D)})`}),P=pal7(col),ct=Math.max(.2,o.face??.7),pl=len*.22,bl=len-pl,nt=DET>=1.5?44:30,out=[],dk=[[pl,0]];
   const lobe=(th,c,L,w)=>{const d=Math.abs(th-c)/w;return d<1?L*Math.pow(Math.cos(d*1.5708),.7):0};
@@ -236,9 +236,9 @@ function vibBall(par,B,O,Rb,cw,op,cache){const k=G(par),o2=sm01((op-.25)/.75),sd
     E('path',{d:smooth(fp.map(p=>[p[0],p[1]])),fill,stroke:shd(q.c,-.3),'stroke-width':.5,'stroke-opacity':.7,'stroke-linejoin':'round'},k);
     if(!LOD&&q.nv[2]>.3){const e=PJ(B,O,V3.sc(q.n0,R1*1.02));eyes+=l41C(e[0],e[1],Math.max(.5,q.s*.09))}}
   if(eyes)E('path',{d:eyes,fill:'#c8d488',opacity:.8},k);return k}
-function vibPlant(g,t,o){const cw=o.cw||cwNear(CW_VIB,o.col)||CW_VIB[0],op=Math.max(.05,Math.min(1,o.op??1)),D=(o.cm||7)*UPC,k=G(g),sc=['#3a3624','#5e5a3e','#86825a','#b0ac84'],cache={},lc='#4f7a36';
+function vibPlant(g,t,o){const cw=o.cw||cwNear(CW_VIB,o.col)||CW_VIB[0],op=Math.max(.05,Math.min(1,o.op??1)),D=(o.cm||7)*UPC,k=G(g),sc=typeof vibStemCols==='function'&&typeof SV_ON!=='undefined'&&SV_ON?vibStemCols():['#3a3624','#5e5a3e','#86825a','#b0ac84'],cache={},lc='#4f7a36';
   const B=frameOf(o,.4,true),up=B.upV?V3.nz([B.upV[0],B.upV[1],B.upV[2]||0]):[0,1,0],face=B[2];let U0=V3s(face,V3.sc(up,V3.dot(face,up)));if(V3l(U0)<1e-3)U0=[0,0,1];
-  const ball=(par,Bf,pos,Dd,a)=>vibBall(par,Bf,pos,Dd/2,cw,a,cache);
+  const sv=typeof vibSvgPut==='function'&&typeof SV_ON!=='undefined'&&SV_ON,ball=(par,Bf,pos,Dd,a,att)=>sv?vibSvgPut(par,Bf,pos,Dd,cw,a,att):vibBall(par,Bf,pos,Dd/2,cw,a,cache);
   if(o.rim){const r=lsHeadS(k,o,{D,w:D*.05,cols:sc,op,rr:.4,nodes:0,lp:.5,flower:(par,B2,O,D2,op2)=>ball(par,B2,O,D2,op2)});open(k,t,1000,6,.3);return r}
   const kr=B.reach?Math.min(1,Math.max(.15,B.reach*.4/(D*1.9))):1,w=D*.06,ph0=R(0,360),nS=rnd()<.35?1:2;
   /* the shoot: two leafy nodes (decussate), the upper one sending out one or two short side shoots, each a pair of small leaves and a younger ball; then the terminal ball on its peduncle */
@@ -249,10 +249,11 @@ function vibPlant(g,t,o){const cw=o.cw||cwNear(CW_VIB,o.col)||CW_VIB[0],op=Math.
     Ls:()=>[['[',{}],['/',{a:90}],['&',{a:55}],['Lv',{i:2,j:0}],[']',{}],['[',{}],['/',{a:270}],['&',{a:55}],['Lv',{i:2,j:1}],[']',{}]]};
   const res=lsTurtle(lsDerive([['S',{}]],rules,4),{p:[0,0,0],H:up,U:U0,wig:.03,seg:D*.14,T:[0,1,0],e:.02,w:w*1.25});for(const ch of res.chains)ch.c=sc;
   const main=res.organs.find(q=>q.t==='K'),apex=main.pos;
-  lsPlant(k,res,{O:[0,0,0],apex,cols:sc,organ:(og,pos)=>{
-    if(og.t==='K'){const Bf=l41Fr(V3.add(og.H,V3.sc(face,.5)),up,R(-.3,.3)),c=V3.add(pos,V3.sc(og.H,D*.4*(.6+.4*Math.min(1,op*1.3))));return{parts:[{z:c[2],fn:par=>ball(par,Bf,c,D,op)}]}}
-    if(og.t==='Kb'){const a=og.p.age,Bf=l41Fr(V3.add(og.H,V3.sc(face,.4)),up,R(-.3,.3)),Dd=D*(.68+.18*a),c=V3.add(pos,V3.sc(og.H,Dd*.4*(.6+.4*Math.min(1,a*1.3))));return{parts:[{z:c[2],fn:par=>ball(par,Bf,c,Dd,a)}]}}
-    if(og.t==='Lv'){const sm=og.p.i===2,len=D*(sm?.5:og.p.i?1.05:.85)*R(.9,1.08),face2=.3+.7*Math.abs(og.U[2]);return{ext:1,parts:[lsLeaf2D(og,pos,len,(par,x,y,a,l)=>vibLeaf(par,x,y,a,l,lc,{face:face2,sd:og.p.i*3+og.p.j}))]}}
+  lsPlant(k,res,{O:[0,0,0],apex,cols:sc,piece:sv?12:undefined,organ:(og,pos)=>{
+    if(og.t==='K'){const Bf=l41Fr(V3.add(og.H,V3.sc(face,.5)),up,R(-.3,.3)),c=V3.add(pos,V3.sc(og.H,D*.4*(.6+.4*Math.min(1,op*1.3))));return{parts:[{z:c[2],fn:par=>ball(par,Bf,c,D,op,V3s(pos,c))}]}}
+    if(og.t==='Kb'){const a=og.p.age,Bf=l41Fr(V3.add(og.H,V3.sc(face,.4)),up,R(-.3,.3)),Dd=D*(.68+.18*a),c=V3.add(pos,V3.sc(og.H,Dd*.4*(.6+.4*Math.min(1,a*1.3))));return{parts:[{z:c[2],fn:par=>ball(par,Bf,c,Dd,a,V3s(pos,c))}]}}
+    if(og.t==='Nd'&&sv&&typeof vibNodeSv==='function')return{ext:1,parts:[{z:pos[2]+.15,cast:false,fn:par=>vibNodeSv(par,og,pos,ph0+og.p.i*90,sc)}]};
+    if(og.t==='Lv'){const sm=og.p.i===2,len=D*(sm?.5:og.p.i?1.05:.85)*R(.9,1.08),face2=.3+.7*Math.abs(og.U[2]);if(sv&&typeof vibLeafSv==='function')return{ext:1,parts:[{z:pos[2]+og.H[2]*len*.4,cast:false,fn:par=>vibLeafSv(par,og,pos,len,up)}]};return{ext:1,parts:[lsLeaf2D(og,pos,len,(par,x,y,a,l)=>vibLeaf(par,x,y,a,l,lc,{face:face2,sd:og.p.i*3+og.p.j}))]}}
     return null}});
   open(k,t,1000,6,.3);return lsNeck(res,[0,0,0],apex)}
 

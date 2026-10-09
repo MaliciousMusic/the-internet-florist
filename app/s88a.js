@@ -234,8 +234,8 @@ function l88Bupleurum(g,t,o){const cw=cwPick(CW_L88BU,o),op=Math.max(.05,Math.mi
 /* ---------- lady's mantle (Alchemilla mollis): a soft hairy stem branching into loose, repeatedly forked cymes — a froth of tiny petal-less flowers (3–5 mm), four pointed sepals
    alternating with four small epicalyx lobes round a yellow disc, acid green-yellow, clustered at the tips; the leaves round, shallowly lobed (9–11 lobes), finely toothed,
    pleated along their veins like a fan and cupped, soft grey-green; small leaves with leafy stipules on the flowering stem ---------- */
-const CW_L88AL=[{id:'vert-acide',n:'Vert acide (mollis)',c:'#c3c94b'},{id:'jaune-vert',n:'Jaune-vert (Thriller)',c:'#d0d064'},{id:'vert-tendre',n:'Vert tendre (Robusta)',c:'#aabd56'}];
-function l88Alchemille(g,t,o){const cw=cwPick(CW_L88AL,o),op=Math.max(.05,Math.min(1,o.op??1)),C=(o.cm||15)*UPC,det=DET>=1.5,sc=['#3e5228','#62783e','#8ca064','#bccb98'],tw='#6e8a44',lc=cw.lc||'#7f9c58',w0=2.8,w1=1.3;
+const CW_L88AL=[{id:'vert-acide',n:'Vert acide',c:'#c3c94b'},{id:'jaune-vert',n:'Jaune-vert',c:'#d0d064'},{id:'vert-tendre',n:'Vert tendre',c:'#aabd56',ret:1}];
+function l88Alchemille(g,t,o){const cw=cwPick(CW_L88AL,o),op=Math.max(.05,Math.min(1,o.op??1)),C=(o.cm||15)*UPC,det=DET>=1.5,sv=typeof alcSvgPlant==='function'&&typeof SV_ON!=='undefined'&&SV_ON,SVI={br:[],lv:[]},sc0=['#3e5228','#62783e','#8ca064','#bccb98'],sc=sv&&typeof alcStemCols==='function'?alcStemCols():sc0,tw='#6e8a44',lc=cw.lc||'#7f9c58',w0=2.8,w1=1.3;
   return bzShoot(g,t,o,{Lt:C*2.5,w0,w1,sc,grow:(A,parts,s0)=>{const L=A.L,l0=L*s0,items=[],rf0=UPC*.19*Math.max(.85,Math.min(1.15,C/(15*UPC)))**.3,FW=A.at(.9).Fr;
     /* one flower at pos on the tip of its stalk H: an eight-pointed star (four sepals, four smaller epicalyx lobes) or a green bud */
     const flower=(pos,H,age)=>{const m=op*1.35-age*.42+R(-.06,.06),ax=V3.nz(V3.add(V3.add(V3.sc(H,.55),[0,.6,0]),V3.sc(FW,.45))),rf=rf0*R(.85,1.12),c=V3.add(pos,V3.sc(ax,rf*.25));
@@ -246,7 +246,7 @@ function l88Alchemille(g,t,o){const cw=cwPick(CW_L88AL,o),op=Math.max(.05,Math.m
     /* a cyme: a flower at each fork (the oldest), two younger branches turned a quarter round; at its tips small glomerules of flowers on short pedicels */
     const cyme=(l,n,age)=>n<=0?[['F',{l:l*.6,w1:1.1,e:.05}],['K',{age,tip:1}]]:[['F',{l:l*.42,w1:1.15}],['K',{age}],['/',{a:90+R(-25,25)}],
       ['[',{w:1.15}],['+',{a:R(26,40)}],...cyme(l*.62,n-1,age+.16),[']',{}],['[',{w:1.15}],['-',{a:R(26,40)}],...cyme(l*.56,n-1,age+.24),[']',{}]];
-    const grown=res=>{l30Twigs(items,res,[[1.25,'t0'],[0,'t1']]);for(const og of res.organs)if(og.t==='K'){flower(og.pos,og.H,og.p.age);
+    const grown=res=>{if(sv)SVI.br.push(res);l30Twigs(items,res,[[1.25,'t0'],[0,'t1']]);for(const og of res.organs)if(og.t==='K'){flower(og.pos,og.H,og.p.age);
       if(og.p.tip){const ne=det?5:3;for(let j=0;j<ne;j++){const[X,Y]=l31Fr(og.H),aa=R(0,6.283),dir=V3.nz(V3.add(V3.sc(og.H,.75),V3.add(V3.sc(X,Math.cos(aa)*.7),V3.sc(Y,Math.sin(aa)*.7)))),e=V3.add(og.pos,V3.sc(dir,rf0*R(1.5,2.4)));
         items.push({z:(og.pos[2]+e[2])/2,fn:B=>l30Add(B,'t2',l88Seg(og.pos,e))});flower(e,dir,og.p.age+.1+.1*j)}}}};
     const dep=det?4:3,top=bzGrow(A,L-.5,0,4,cyme(C*.3,dep-1,0),{w:1.3,seg:UPC*.45,T:[0,1,0],e:.03,wig:.05});grown(top);
@@ -257,12 +257,16 @@ function l88Alchemille(g,t,o){const cw=cwPick(CW_L88AL,o),op=Math.max(.05,Math.m
         r=V3.nz(V3.add(V3.sc(q.Fr,Math.cos(az)),V3.sc(q.Sd,Math.sin(az)))),pdir=V3.nz(V3.add(V3.sc(q.T,.55),r)),pl=UPC*(1.1+.7*j)*R(.9,1.1),Rl=UPC*(1.7+.55*j)*R(.9,1.1),
         ww=w0+(w1-w0)*s,pb=V3.add(q.p,V3.sc(r,ww*.3)),pe=V3.add(V3.add(pb,V3.sc(pdir,pl)),[0,pl*.08,0]),pm=V3.add(V3.add(pb,V3.sc(pdir,pl*.5)),[0,pl*.12,0]),
         nn=V3.nz(V3.add(V3.add([0,1,0],V3.sc(r,.3)),[0,0,.55])),dd=V3.nz(V3.add(r,V3.sc(q.T,.25)));
+      /* SV: the leaf node is handed to the SVG plant (y-alchemilla.js); the old leaf's parts go to gh, kept only as the composer's measure of the
+         stem (no draw of chance below this line) */
+      const gh=[];if(sv)SVI.lv.push({j,l,q,r,ww,gh,pe,Rl,Pp:null});
       const Pp=[];for(let i=0;i<=6;i++){const tt=i/6,a=(1-tt)*(1-tt),b=2*(1-tt)*tt,c2=tt*tt;Pp.push([a*pb[0]+b*pm[0]+c2*pe[0],-(a*pb[1]+b*pm[1]+c2*pe[1])])}
-      parts.push({z:(pb[2]+pe[2])/2-.05,fn:par=>stemPoly(par,Pp,Pp.map((_,i)=>Math.max(1.3,1.7-.3*i/6)),sc)});
+      (sv?gh:parts).push({z:(pb[2]+pe[2])/2-.05,fn:par=>stemPoly(par,Pp,Pp.map((_,i)=>Math.max(1.3,1.7-.3*i/6)),sc0)});
       /* the leafy stipule clasping the node */
-      parts.push({z:q.p[2]+.06,fn:par=>{const st=[];for(let i=0;i<=8;i++){const a=i/8*6.283,p=V3.add(V3.add(q.p,V3.sc(q.T,UPC*.12*Math.sin(a*3)*.5)),V3.add(V3.sc(q.Fr,Math.cos(a)*ww*1.1),V3.sc(q.Sd,Math.sin(a)*ww*1.1)));st.push(p)}
+      (sv?gh:parts).push({z:q.p[2]+.06,fn:par=>{const st=[];for(let i=0;i<=8;i++){const a=i/8*6.283,p=V3.add(V3.add(q.p,V3.sc(q.T,UPC*.12*Math.sin(a*3)*.5)),V3.add(V3.sc(q.Fr,Math.cos(a)*ww*1.1),V3.sc(q.Sd,Math.sin(a)*ww*1.1)));st.push(p)}
         const P7=pal7(lc);E('path',{d:smooth(st.map(p=>[p[0],-p[1]])),fill:toneAt(P7,.55),stroke:P7.d2,'stroke-width':.35,'stroke-opacity':.5},par)}});
-      const lf=l88Disc(pe,dd,nn,Rl,lc,{nl:j?9:7,sinus:.62,off:.38,lobe:.06,pleat:.045,cup:.16,teeth:.05,ao:.95});lf.z=Math.max(lf.z,pe[2]+.1);parts.push(lf)}
+      const lf=l88Disc(pe,dd,nn,Rl,lc,{nl:j?9:7,sinus:.62,off:.38,lobe:.06,pleat:.045,cup:.16,teeth:.05,ao:.95});lf.z=Math.max(lf.z,pe[2]+.1);(sv?gh:parts).push(lf);if(sv)SVI.lv[SVI.lv.length-1].Pp=Pp}
+    if(sv){alcSvgPlant(A,parts,{cw,op,C,L,o,SVI,s0,items,w0,w1,sc0});return}
     const P=pal7(cw.c),PK=pal7(mix(cw.c,'#7a9450',.4)),keys=[['t0',l88SK(tw,1.3)],['t1',l88SK(mix(tw,'#a8bc78',.2),L88_PW+.02)],['t2',l88SK(mix(tw,cw.c,.35),L88_PW)],
       ['bd',{fill:toneAt(pal7('#8faa4c'),.55),stroke:'#4a6a2a','stroke-width':.25,'stroke-opacity':.5}],['fk',{fill:toneAt(PK,.5),stroke:PK.d2,'stroke-width':.25,'stroke-opacity':.5,'stroke-linejoin':'round'}],
       ['f0',{fill:toneAt(P,.52),stroke:P.d2,'stroke-width':.25,'stroke-opacity':.5,'stroke-linejoin':'round'}],['f1',{fill:toneAt(P,.7),stroke:P.d1,'stroke-width':.25,'stroke-opacity':.45,'stroke-linejoin':'round'}],
