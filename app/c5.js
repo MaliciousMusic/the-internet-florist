@@ -78,7 +78,10 @@ function buildBq(svg,ids,sv,vid,t0=150,occ,model,recipe){if(svg._alive)svg._aliv
   /* layers, back to front: the plinth, the back of the vessel, deep (the lines and big leaves at the back of the bouquet: every stem passes in
      front of them), the stems, back (heads the player set at the back), fst, the mass, the vessel, the front (what rests on the lip) */
   const cast=(par,rr)=>{const w=G(par);if(rr>(LOD?24:14))w.setAttribute('filter',`url(#${CUR_DD<.34?csF:CUR_DD<.67?csM:csB})`);return w};const L={};for(const k of['plinth','vback','deep','stems','back','fst','mass','vase','front'])L[k]=G(svg,{'data-l':k});
-  const v=VZ[vid]||VZ['coupe-blanche'],BP=c.BP,list=c.out.slice().sort((a,b)=>a.z-b.z);let n=0;list.forEach((o,i)=>{o.dd=list.length>1?1-i/(list.length-1):0});const TF=[0,1,2,3,4].map(depthTint);const step=Math.max(40,1500/list.length),T=i=>t0+380+i*step;
+  const v=VZ[vid]||VZ['coupe-blanche'],BP=c.BP,list=c.out.slice().sort((a,b)=>a.z-b.z);
+  /* one stage for every head (LIFE_ALL): a bud or a half-open head opens within its own footprint (its size kept), the composition untouched */
+  if(LIFE_ALL)for(const o of list){if(!o.st||o.st==='open'||o.kind!=='head'&&o.kind!=='self')continue;if(o.kind==='head')o.cm=(o.cm||cmOf(o.it.p))*(o.st==='bud'?.62:.86);o.st='open'}
+  let n=0;list.forEach((o,i)=>{o.dd=list.length>1?1-i/(list.length-1):0});const TF=[0,1,2,3,4].map(depthTint);const step=Math.max(40,1500/list.length),T=i=>t0+380+i*step;
   const pl=model?(model.plinth==='none'?null:model.plinth||v.pl):v.pl;
   /* the cut stems in the glass (or on the pins) rise first, from their cut ends */
   let stShow=22;
@@ -138,7 +141,7 @@ function buildBq(svg,ids,sv,vid,t0=150,occ,model,recipe){if(svg._alive)svg._aliv
     const head=()=>{const par=cast(o.front?L.front:o.back?L.back:L.mass,rr);par.setAttribute('data-h','');g=G(par);nod=nod0;
       if(o.it.d3){const a=o.ax||[0,0,1];ex=o.x;ey=o.y;nd=null;np=null;
         /* the head is held by its stem: its own down points at the stem's base (held bouquets: the tie), only a little roll; its neck bends into the stem */
-        const gh=!!CWS[o.it.p.sid],up=[o.x-BP[0],BP[1]-o.y,0];NECK_X=gh;EXT=gh?[]:null;let r;try{r=drawRec(g,t,rec,{col,ax:a,cm:o.cm,op:lifeOp(LIFE,o.st,o.st==='bud'?.14:o.st==='half'?.5:R(.86,1),hN,lifeBudOK(o.it)),roll:gh?R(-.12,.12):R(-.6,.6),up:Math.hypot(up[0],up[1])>6?[up[0]*kr,up[1]*kr,0]:undefined,rim:!!o.rim,dry:LIFE&&LIFE.stage===3&&LP.dry?1:undefined,life:LIFE?{stage:LIFE.stage,u:LIFE.u,w:lifeWEl(LIFE,LP)}:undefined})}finally{NECK_X=false;ext=EXT;EXT=null}
+        const gh=!!CWS[o.it.p.sid],up=[o.x-BP[0],BP[1]-o.y,0];NECK_X=gh;EXT=gh?[]:null;let r;try{r=drawRec(g,t,rec,{col,ax:a,cm:o.cm,op:LIFE_ALL==='open'?1:lifeOp(LIFE,o.st,o.st==='bud'?.14:o.st==='half'?.5:R(.86,1),hN,lifeBudOK(o.it)),roll:gh?R(-.12,.12):R(-.6,.6),up:Math.hypot(up[0],up[1])>6?[up[0]*kr,up[1]*kr,0]:undefined,rim:!!o.rim,dry:LIFE&&LIFE.stage===3&&LP.dry?1:undefined,life:LIFE?{stage:LIFE.stage,u:LIFE.u,w:lifeWEl(LIFE,LP)}:undefined})}finally{NECK_X=false;ext=EXT;EXT=null}
         /* the nod never turns the neck more than 50 degrees away from the way its stem comes up (no broken stem) */
         if(nod&&r&&r.nd&&r.neck){const bx0=BP[0]-(o.x+r.neck[0]),by0=BP[1]+8-(o.y+r.neck[1]),d0=((Math.atan2(r.nd[1],r.nd[0])-Math.atan2(by0,bx0))/D+540)%360-180,na=Math.max(-50-d0,Math.min(50-d0,nod));nod=Math.sign(na)===Math.sign(nod)?na:0;
           /* and the head stays above the end of its neck: a nodding head never hangs below its own stem */

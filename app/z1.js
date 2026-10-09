@@ -2,6 +2,9 @@
 /* ================= Stades de vie : le même bouquet au fil de ses 30 jours — bourgeon, éclosion, déclin, fané ================= */
 /* LIFE: null for the usual rendering, else {stage:0..3, u:0..1 (progress within the stage)}, set by the caller around buildBq */
 let LIFE=null;
+/* LIFE_ALL: null, or 'open' / 'fane' to draw every head at one stage whatever the composition gave it (its footprint, hence the composition,
+   unchanged): 'open' every flower fully open (with LIFE in bloom), 'fane' every flower opened then faded (with LIFE faded) */
+let LIFE_ALL=null;
 const LIFE_NAMES=['Bourgeon','Éclosion','Déclin','Fané'];
 /* the stage of a bouquet from its age in days, with the thresholds of the contract: bud < 3, bloom < 20, decline < 30, then faded */
 function lifeAt(days){const d=Math.max(0,days);return d<3?{stage:0,u:d/3}:d<20?{stage:1,u:(d-3)/17}:d<30?{stage:2,u:(d-20)/10}:{stage:3,u:Math.min(1,(d-30)/30)}}
