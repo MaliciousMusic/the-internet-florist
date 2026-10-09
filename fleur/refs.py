@@ -4,7 +4,8 @@
   python refs.py url   <sid> <image url> [--title t] [--page p]               add any photo (a grower's product shot) as a candidate
   python refs.py sheet <sid> [--from 0] [--n 20] [--tile 230]                   numbered contact sheet of the candidates -> sheet_<from>.jpg
   python refs.py pal   <sid> <i> [--box x0,y0,x1,y1] [--k 6] [--grey]          dominant colours of a photo (or a box of it, fractions)
-  python refs.py ring  <sid> <i> <cx,cy,r> [--n 5]                             colour from the centre outward (base -> tip), r as a fraction of width
+  python refs.py ring  <sid> <i> <cx,cy,r> [--n 5]                             colour from the centre outward (base -> tip): cx, cy as fractions of width and height, r of the width
+  python refs.py auto  <sid> <i>                                              the flower found on its background (foliage excluded): base, body, tip, confidence
   python refs.py keep  <sid> <i> <tags...> [--m "measure"]                     keep a photo as a reference (its page, author, licence, tags) -> keep.json
   python refs.py kept  <sid> [--tile 220]                                       one sheet of the kept photos, numbered and tagged -> kept.jpg
   python refs.py list  <sid>                                                   the kept references, one line each (for REFERENCES.md)
@@ -181,7 +182,7 @@ def ring(sid, i, cx, cy, r, n=5):
     W, H = im.size
     A = np.asarray(im, dtype=float)
     yy, xx = np.mgrid[0:H, 0:W]
-    dd = np.hypot(xx - cx * W, yy - cy * W) / (r * W)
+    dd = np.hypot(xx - cx * W, yy - cy * H) / (r * W)  # cx of the width, cy of the height, r of the width (any aspect)
     out = []
     for j in range(n):
         m = (dd >= j / n) & (dd < (j + 1) / n)
@@ -190,6 +191,33 @@ def ring(sid, i, cx, cy, r, n=5):
             continue
         out.append(hexc(np.median(A[m], 0)))
     print(' '.join(f'{(j + .5) / n:.1f}:{c}' for j, c in enumerate(out)))
+
+
+def auto(sid, i):
+    """the flower without a hand-given centre: pixels far from the border's colour, green foliage left out; median colour of the inner fifth
+    (base), the middle (body) and the outer band (tip); confidence = how much of the found disc is flower"""
+    im = thumb(sid, i)
+    A = np.asarray(im, dtype=float)
+    H, W = A.shape[:2]
+    bg = np.median(np.concatenate([A[0], A[-1], A[:, 0], A[:, -1]]), 0)
+    mx, mn = A.max(-1), A.min(-1)
+    sat = (mx - mn) / np.maximum(mx, 1)
+    green = (A[..., 1] > A[..., 0] + 8) & (A[..., 1] > A[..., 2] + 8) & (sat > .15)
+    mask = (np.sqrt(((A - bg) ** 2).sum(-1)) > 40) & ~green
+    if mask.sum() < 300:
+        print('confiance 0.00 : pas de fleur trouvée (fond trop proche ?) ; mesure à la main')
+        return
+    ys, xs = np.nonzero(mask)
+    cx, cy = np.median(xs), np.median(ys)
+    r = np.percentile(np.hypot(xs - cx, ys - cy), 85)
+    yy, xx = np.mgrid[0:H, 0:W]
+    dd = np.hypot(xx - cx, yy - cy) / max(r, 1)
+    out = []
+    for a, b in ((0, .25), (.35, .65), (.75, 1)):
+        m = mask & (dd >= a) & (dd < b)
+        out.append(hexc(np.median(A[m], 0)) if m.sum() > 20 else '-')
+    conf = min(1.0, mask[dd < 1].mean() * 1.15)
+    print(f'base {out[0]} corps {out[1]} pointe {out[2]} confiance {conf:.2f} (centre {cx / W:.2f},{cy / H:.2f} rayon {r / W:.2f})')
 
 
 def keep(sid, i, tags, m=''):
@@ -261,6 +289,8 @@ if __name__ == '__main__':
     elif cmd == 'ring':
         cx, cy, r = [float(v) for v in pos[3].split(',')]
         ring(sid, int(pos[2]), cx, cy, r, int(opt.get('n', 5)))
+    elif cmd == 'auto':
+        auto(sid, int(pos[2]))
     elif cmd == 'keep':
         keep(sid, int(pos[2]), pos[3:], opt.get('m', ''))
     elif cmd == 'kept':

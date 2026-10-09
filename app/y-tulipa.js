@@ -53,11 +53,22 @@ function tulMat(cw){if(TUL_M[cw.id])return TUL_M[cw.id];const S=TULS[cw.id]||{i:
 function tulWiltCol(c,w){if(w<=0||typeof c!=='string'||c.length!==7||c[0]!=='#')return c;const[h,s,l]=h2l(c);
   if(l<.16)return c;
   if(h>=55&&h<175&&s>.12)return typeof lifeCol==='function'?lifeCol(c,w):c;
+  if(TUL_DK&&(h>=250||h<30||s<.15))return tulWiltDk(h,s,l,w);
   if(s<.15||l>.86){let o=mix(c,'#eadcb8',.7*w);if(w>.5)o=mix(o,'#b89870',(w-.5)*.8);return o}
   if(h>=335||h<18){if(l<.6){let o=l2h(h<18?h-8*w:h,s*(1-.35*w),l*(1-.3*w));if(w>.5)o=mix(o,'#4a3a26',(w-.5)*.9);return o}
     let o=mix(c,'#a87a78',.55*w);if(w>.5)o=mix(o,'#9a6a5a',(w-.5)*.8);return o}
   if(h<55){let o=l2h(h+(32-h)*.4*w,s*(1-.4*w),l*(1-.22*w));if(w>.55)o=mix(o,'#8a6030',(w-.55)*.8);return o}
   let o=l2h(h+(320-h)*.3*w,s*(1-.45*w),l+(.42-l)*.2*w);if(w>.5)o=mix(o,'#6a4a52',(w-.5)*.7);return o}
+/* the dark colourways (a body darker than l .34: noir, pourpre-velours, violet) fade otherwise (refcache/tulipe-simple/fane-sombre.md, ten photographs):
+   a very dark red stays red-black (#480407 to #831019), a bordeaux stays very dark (#4e1c2e), a mauve rose browns to a pink brown (#6f3839 to #8d5754)
+   with a mauve-brown margin (#5b3746), the pale tips and bleached patches go a dusty pink (#c98698, #c3959a); beige shows only on a dried head. No
+   photograph of a fading purple-black was found: assumed like the dark reds and the bordeaux (it stays dark, a little browner, its lights go a dusty
+   mauve pink). TUL_DK is set while such a head is drawn (tulSvg); its purples, reds and greys follow tulWiltDk, the rest (greens, cream foot, pollen)
+   the common rule above. The darks: a little darker and greyer, the hue toward wine; the lights: toward a dusty pink; then both brown a little */
+let TUL_DK=false;
+function tulDark(cwx){const S=TULS[cwx.id],c=(S&&S.i)||cwx.c;return typeof c==='string'&&c.length===7&&h2l(c)[2]<.34}
+function tulWiltDk(h,s,l,w){const hu=h>=250&&h<350?h+(350-h)*.4*w:h,k=svSm((l-.3)/.3),sd=s*(1-.3*w),ld=l*(1-.12*w),sl=s+(.3-s)*.5*w,ll=l+(.64-l)*.3*w;
+  let o=l2h(hu,sd+(sl-sd)*k,ld+(ll-ld)*k);if(w>.55)o=mix(o,mix('#40222a','#a07480',k),(w-.55)*.6);return o}
 if(typeof GHI!=='undefined'&&GHI['tulipe-simple'])GHI['tulipe-simple'].wilt=tulWiltCol;
 /* how far the tulip has wilted: the sheets' override, the bouquet's element, else the bouquet's life stage */
 function tulLife(o){if(typeof SVA_LIFE!=='undefined'&&SVA_LIFE!=null)return SVA_LIFE;if(o&&o.life&&o.life.w!=null)return o.life.w;
@@ -93,13 +104,15 @@ const SVT_SIMPLE=Object.assign({},SVT_BOTA,{genes:s=>svGenes(s,SVT_GENES),heart:
   dec:[.22,.33],wA0:[.75,.3],wA1:[1.15,.45],veinLo:false,
   light:Object.assign({},SVB_DEF.light,{ks:.14,gloss:20,wrap:.32,darkLo:[.86,.66],litLo:[1.12]})});
 /* the tulip head: tepals and heart, in the frame B at O, D across, opening op, wilted wl (by default the bouquet's stage); S its kind's sheet */
-function tulSvg(par,B,O,D,cwId,op,seed,wl,S){const cwx=(typeof CW_TSIM!=='undefined'&&CW_TSIM.find(x=>x.id===cwId))||{id:cwId,c:'#d03030'};
-  return svBloom(par,B,O,D,S||SVT_SIMPLE,cwx,op,seed,wl==null?tulLife():wl)}
+function tulSvg(par,B,O,D,cwId,op,seed,wl,S){const cwx=(typeof CW_TSIM!=='undefined'&&CW_TSIM.find(x=>x.id===cwId))||{id:cwId,c:'#d03030'},dk0=TUL_DK;
+  TUL_DK=tulDark(cwx);try{return svBloom(par,B,O,D,S||SVT_SIMPLE,cwx,op,seed,wl==null?tulLife():wl)}finally{TUL_DK=dk0}}
 SV_HEAD['tulipe-simple']=tulSvg;
 /* the tulip of the bouquet: the old drawing's share of the bouquet's chance is consumed (its six tepals: 24 draws), and the first draws name the individual */
 function tulSvgPut(par,B,O,D,cw,op,o){let s=0;for(let i=0;i<24;i++){const x=rnd();if(i<3)s=(Math.imul(s,7919)+Math.floor(x*1e6))>>>0}
   return tulSvg(par,B,O,D,cw.id,op,svSeed('tulipe',cw.id,s),tulLife(o))}
-/* the neck of a fading tulip: it goes on growing in the vase, lengthens and bends over sideways, toward where the flower leans (the head following its end) */
+/* the neck of a fading tulip: it goes on growing in the vase, lengthens and bends over sideways, toward where the flower leans (the head following its end).
+   On the sheets only (SVA_LIFE set, as for the double tulip): in a bouquet the neck keeps the old drawing's geometry, since where the neck ends decides
+   whether the bouquet moves the head and draws it again (c5.js), which would change the bouquet's draws (rtest) */
 function tulNeckBend(res,og,wl){if(!(wl>0))return;const c0=res.chains[0],P=c0.pts,n=P.length;if(n<3)return;
   const grow=1+.28*svSm((wl-.1)/.6),bend=1.05*svSm((wl-.2)/.6);const hz=V3.nz([(og.H[0]<0?-1:1)*Math.max(Math.abs(og.H[0]),.6),0,og.H[2]*.4]);const A=V3.nz(V3.cr([0,1,0],hz));
   const Q=[P[0]];for(let i=1;i<n;i++){const s=V3s(P[i],P[i-1]),t=i/(n-1);Q.push(V3.add(Q[i-1],V3.sc(rotA(s,A,bend*Math.pow(t,1.3)),grow)))}

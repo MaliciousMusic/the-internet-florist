@@ -51,6 +51,8 @@ if(new URLSearchParams(location.search).get('grid'))setTimeout(()=>{const Q=new 
   document.title='grid '+n+' '+Math.round(ms/n)+'ms';const sp=Q.get('snap')?snapSvg(svg,+(Q.get('sw')||W),Q.get('snap'),'#e9e4dc'):null;if(sp)sp.then(r=>{document.title+=' snap '+r.join(',')});svtOut(svg,n,ms,sp)},400);
 /* whole stems: ?plant=1&cw=bleu&st=.1:0,.3:0,.6:0,1:0,1:.4,1:.75&vw=-.45,.15,.88 → drawRec of the species, one cell per stage, fitted */
 if(new URLSearchParams(location.search).get('plant'))setTimeout(()=>{const Q=new URLSearchParams(location.search),dS=typeof defs!=='undefined'&&defs.closest?defs.closest('svg'):null;document.body.innerHTML='';if(dS)document.body.append(dS);
+  /* seed=<n>: the sheet's own chance, whatever the page drew before it (to compare two builds) */
+  if(Q.get('seed'))sd(+Q.get('seed'));
   DET=+(Q.get('det')||1.5);LOD=0;const sid=Q.get('sid')||'anemone-coronaria',rec=RBY[sid],cw=(CWS[sid]||[]).find(x=>x.id===(Q.get('cw')||'bleu')),st=(Q.get('st')||'.1:0,.3:0,.6:0,1:0,1:.4,1:.75').split(',').map(x=>x.split(':').map(Number)),
     vw=(Q.get('vw')||'-.45,.15,.88').split(',').map(Number),cellW=+(Q.get('cell')||170),svg=E('svg',{width:cellW*st.length,height:cellW*2.2,viewBox:`0 0 ${cellW*st.length} ${cellW*2.2}`},document.body);GDEF=E('defs',{},svg);
   /* full=<cm>: the whole cut stem below the head's neck, with the leaves its species carries in a bouquet (STEML, stemLeaves), as in the vase */
@@ -68,8 +70,12 @@ window.svtStem=(par,r,sid,cm)=>{const e=r.neck,nd=r.nd||[0,1],L=cm*UPC,P3=e,P2=[
    seed once it is drawn, with the SVG heads off and on (the same: the composition does not move) */
 if(new URLSearchParams(location.search).get('rtest'))setTimeout(()=>{const Q=new URLSearchParams(location.search),rc=(Q.get('rc')||'tulipe-simple~7:7,tulipe-simple~12:6').split(',').map(x=>{const[a,b]=x.split(':');return[a,+b]}),out=[];
   for(const L of[null,{stage:0,u:.5},{stage:2,u:.5},{stage:3,u:.3},{stage:3,u:1}])for(const v of['cylindre-verre-clair','coupe-pied-blanche']){const res=[];
-    for(const on of[false,true]){SV_ON=on;LIFE=L;const svg=E('svg',{},document.body);let s1;const r0=rnd;let hh=0,nn=0;rnd=function(){const x=r0();nn++;hh=(Math.imul(hh,31)+Math.floor(x*1e9))|0;return x};try{renderStatic(()=>{buildBq(svg,[],+(Q.get('sv')||11),v,0,'juste',null,rc)});s1=nn+':'+hh+'/'+svg.querySelectorAll('*').length}catch(e){s1='ERR '+e.message}finally{rnd=r0}svg.remove();res.push(s1)}
-    out.push((L?L.stage+':'+L.u:'-')+' '+v+' '+(res[0].split('/')[0]===res[1].split('/')[0]?'IDENTIQUE':'DIFFERENT')+' '+res.join(' / '))}
+    const sts=[];for(const on of[false,true]){SV_ON=on;LIFE=L;const svg=E('svg',{},document.body);let s1;const r0=rnd;let hh=0,nn=0;const ST=Q.get('rtw')?{}:null;sts.push(ST);rnd=function(){const x=r0();nn++;hh=(Math.imul(hh,31)+Math.floor(x*1e9))|0;
+      /* ?rtw=1: who draws (the three callers of each draw, name@line), to find what the SVG drawing consumes on top of the old one */
+      if(ST){const k=new Error().stack.split('\n').slice(2,5).map(q=>{const m=q.trim().match(/^at (?:(\S+) )?\(?.*?:(\d+):\d+\)?$/);return m?(m[1]||'')+'@'+m[2]:'?'}).join('<');ST[k]=(ST[k]||0)+1}return x};try{renderStatic(()=>{buildBq(svg,[],+(Q.get('sv')||11),v,0,'juste',null,rc)});s1=nn+':'+hh+'/'+svg.querySelectorAll('*').length}catch(e){s1='ERR '+e.message}finally{rnd=r0}svg.remove();res.push(s1)}
+    out.push((L?L.stage+':'+L.u:'-')+' '+v+' '+(res[0].split('/')[0]===res[1].split('/')[0]?'IDENTIQUE':'DIFFERENT')+' '+res.join(' / '));
+    if(sts[0]&&res[0].split('/')[0]!==res[1].split('/')[0]){const ks=new Set([...Object.keys(sts[0]),...Object.keys(sts[1])]),d=[];for(const k of ks){const x=sts[0][k]||0,y=sts[1][k]||0;if(x!==y)d.push([y-x,k+' '+x+'>'+y])}
+      d.sort((p,q)=>Math.abs(q[0])-Math.abs(p[0]));out.push('  why: '+d.slice(0,8).map(q=>q[1]).join(' ; '))}}
   SV_ON=true;LIFE=null;const pre=document.createElement('pre');pre.id='out';pre.textContent=out.join(' | ');document.body.append(pre)},400);
 /* which pieces patch each other: ?grid=1&...&dbgp=1 → the pairs of pieces (index in the head: tepals first, then the heart's pieces; o outer, i inner)
    counted over the sheet, with the cells where each is in front (only the pairs svDraw patches) */
@@ -78,3 +84,50 @@ if(new URLSearchParams(location.search).get('dbgp')){const PC={},oDraw=svDraw,oO
   svOrder=function(items,eps){const out=oOrd(items,eps);for(const[A,B2,fa,fb]of out.fr){const a=A.oi,b=B2.oi;const[e,l,c]=a<b?[A,B2,fa]:[B2,A,fb];if(c<3)continue;
       const ia=(A.sh||A.px||{})._i,ib=(B2.sh||B2.px||{})._i,nm=i=>i==null?'?':i<3?'o'+i:i<6?'i'+i:'h'+i,k=[nm(ia),nm(ib)].sort().join('-');PC[k]=(PC[k]||0)+1}return out};
   window.svtOut0=window.svtOut;window.svtOut=(svg,n,ms,sp)=>{const pre=document.createElement('pre');pre.id='out';const L=Object.entries(PC).sort((a,b)=>b[1]-a[1]).map(([k,v])=>k+':'+v);pre.textContent=L.join(' ');document.body.append(pre)}}
+/* fit mode (fleur/fit.py): many candidate settings of one kind drawn in one headless run, one cell per (candidate, cell of the job).
+   ?fit=1&job=<url of a json>&sp=fit&seeds=1&views=0&snap=  (the empty snap and sp=fit keep the default anemone sheet from drawing and saving;
+   shot.sh appends the real snap name). The job: {sid, spec: the global name of the kind's sheet (SVA_P, SVT_SIMPLE...), cw: id or index in CWS[sid],
+   D, gap (cell side x D), cols, det, cells:[{k:'head'|'plant', op, wl, view, seed, Dk (head size x D), vw, axv, full}], cands:[{path:value}], links:[{path,to,k,b}], probe:[paths]}.
+   Paths: 'L.0' a svBloom setting of the sheet (from SVB_DEF when the sheet lacks it), '$NAME.a.b' a key of any global object (gene table, GHI, SVL_DEF),
+   'mat.st.3.1' a field of the colourway's material; a final ':h' ':s' ':l' shifts a colour (svShift). Every change is undone after the candidate's
+   cells (the sheet's cache S._m dropped), so the page's sheets end as they began. Out: pre#out {n,W,H,gap,cw,box:[[x0,y0,x1,y1]],base,err,ms} */
+if(new URLSearchParams(location.search).get('fit')){const Q=new URLSearchParams(location.search),jobP=fetch(Q.get('job'),{cache:'no-store'}).then(r=>r.json());
+  const dc=x=>Array.isArray(x)?x.map(dc):(x&&typeof x==='object'&&Object.getPrototypeOf(x)===Object.prototype)?Object.fromEntries(Object.entries(x).map(([k,v])=>[k,dc(v)])):x,
+    own=(o,k)=>Object.prototype.hasOwnProperty.call(o,k),parse=p=>{const m=/^(.*?)(?::([hsl]))?$/.exec(p);return{ks:m[1].split('.'),ch:m[2]||null}},
+    put=(old,ch,v)=>ch?svShift(old,ch==='h'?v:0,ch==='s'?v:0,ch==='l'?v:0):v,
+    walk=(o,ks)=>{for(const k of ks)o=o==null?o:o[k];return o};
+  /* the current value of a path (a colour shift starts at 0) */
+  const getv=(S,p,cwo)=>{const{ks,ch}=parse(p);if(ch)return 0;if(ks[0][0]==='$')return walk(eval(ks[0].slice(1)),ks.slice(1));
+    if(ks[0]==='mat')return walk(S.mat(cwo),ks.slice(1));return walk(own(S,ks[0])?S:SVB_DEF,ks)};
+  /* set a path for one candidate: the touched top key is replaced by a deep copy (shared arrays of SVB_DEF or a parent sheet stay untouched) */
+  const setv=(S,p,v,undo,mo)=>{const{ks,ch}=parse(p);if(ks[0]==='mat'){mo.push([ks.slice(1),ch,v]);return}
+    const g=ks[0][0]==='$',root=g?eval(ks[0].slice(1)):S,k0=g?ks[1]:ks[0],rest=ks.slice(g?2:1);
+    if(!undo.some(u=>u[0]===root&&u[1]===k0)){const ow=own(root,k0);undo.push([root,k0,ow,root[k0]]);root[k0]=dc(ow||g?root[k0]:SVB_DEF[k0])}
+    if(!rest.length){root[k0]=put(root[k0],ch,v);return}const o=walk(root[k0],rest.slice(0,-1)),kl=rest[rest.length-1];o[kl]=put(o[kl],ch,v)};
+  setTimeout(async()=>{let job;try{job=await jobP}catch(e){const pre=document.createElement('pre');pre.id='out';pre.textContent=JSON.stringify({err:['job '+e.message]});document.body.append(pre);return}
+    const dS=typeof defs!=='undefined'&&defs.closest?defs.closest('svg'):null;document.body.innerHTML='';if(dS)document.body.append(dS);
+    DET=+(job.det||1);LOD=0;const sid=job.sid,S=eval(job.spec),D=job.D||80,gap=Math.round(D*(job.gap||2.3)),cells=job.cells,cands=job.cands,cl=(typeof CWS!=='undefined'&&CWS[sid])||[],
+      cwId=/^\d+$/.test(String(job.cw))?((cl[+job.cw]||{}).id||String(job.cw)):(job.cw||(cl[0]&&cl[0].id)||'bleu'),cwo=cl.find(x=>x.id===cwId)||{id:cwId},
+      VIEWS=[[0,0,1,0],[0,.5,.87,0],[.38,.55,.74,.4],[0,.86,.5,0],[-.55,.25,.8,-.3],[0,-.42,.91,0],[.7,.1,.7,.2],[0,.97,.24,0]],
+      N=cands.length*cells.length,cols=Math.max(1,Math.min(job.cols||12,N)),rows=Math.ceil(N/cols),W=cols*gap,H=rows*gap,
+      svg=E('svg',{width:W,height:H,viewBox:`0 0 ${W} ${H}`},document.body),hf=(typeof SV_HEAD!=='undefined'&&SV_HEAD[sid])||anemSvg,wf=(GHI[sid]&&GHI[sid].wilt)||svaWiltCol;
+    GDEF=E('defs',{},svg);const base={},box=[],err=[];let ms=0;delete S._m;
+    for(const p of job.probe||[])try{base[p]=getv(S,p,cwo)}catch(e){base[p]=null;err.push('probe '+p+' '+e.message)}delete S._m;
+    const head=(g,c,X,Y)=>{const V=VIEWS[c.view||0],B=basis(V3.nz([V[0],V[1],V[2]]),V[3]),T0=WILT;if(c.wl>0&&typeof lifeWilt==='function')WILT=lifeWilt(c.wl,wf,sid);
+      try{hf(g,B,[X,-Y,0],D*(c.Dk||1),cwId,c.op,c.seed||3,c.wl||0)}finally{WILT=T0}};
+    const plant=(g,c,X,Y)=>{const k=G(g),sk=c.full?G(k):null,vw=c.vw||[-.45,.15,.88],T0=WILT;SVA_LIFE=c.wl||null;if(c.wl>0)WILT=lifeWilt(c.wl,wf,sid);
+      try{renderStatic(()=>{const r=drawRec(k,0,RBY[sid],{vw,ax:c.axv?vw:undefined,op:c.op,cw:cwo,col:cwo.c,roll:0});if(sk&&r&&r.neck)svtStem(sk,r,sid,c.full)})}finally{WILT=T0;SVA_LIFE=null}
+      const b=k.getBBox(),s=Math.min(gap*.9/b.width,gap*.9/b.height);k.setAttribute('transform',`translate(${f(X-(b.x+b.width/2)*s)},${f(Y-(b.y+b.height/2)*s)}) scale(${s.toFixed(4)})`)};
+    cands.forEach((cd,ci)=>{const undo=[],mo=[];delete S._m;
+      try{const vals=Object.assign({},cd);for(const L of job.links||[]){const tv=(L.to in vals)?vals[L.to]:base[L.to],k=L.k==null?base[L.path]/base[L.to]:L.k;vals[L.path]=k*tv+(L.b||0)}
+        for(const[p,v]of Object.entries(vals))setv(S,p,v,undo,mo);
+        if(mo.length){const m0=S.mat;undo.push([S,'mat',own(S,'mat'),m0]);S.mat=function(x){const m=Object.assign({},m0.call(this,x));for(const[ks,ch,v]of mo){m[ks[0]]=dc(m[ks[0]]);
+          if(ks.length===1){m[ks[0]]=put(m[ks[0]],ch,v);continue}const o=walk(m[ks[0]],ks.slice(1,-1)),kl=ks[ks.length-1];o[kl]=put(o[kl],ch,v)}return m}}
+        delete S._m;
+        cells.forEach((c,j)=>{const i=ci*cells.length+j,cx=i%cols,cy=Math.floor(i/cols),X=gap*(cx+.5),Y=gap*(cy+.5),t0=performance.now();box.push([gap*cx,gap*cy,gap*(cx+1),gap*(cy+1)]);
+          try{(c.k==='plant'?plant:head)(G(svg),c,X,Y)}catch(e){err.push(i+' '+e.message)}ms+=performance.now()-t0})}
+      catch(e){err.push('cand '+ci+' '+e.message);while(box.length<(ci+1)*cells.length)box.push(null)}
+      finally{for(const[r,k,ow,v]of undo.reverse()){if(ow)r[k]=v;else delete r[k]}delete S._m}});
+    document.title='fit '+N;const name=Q.getAll('snap').filter(Boolean).pop(),out={n:N,W,H,gap,cw:cwId,box,base,err:err.slice(0,20),ms:Math.round(ms)};
+    const fin=r=>{const pre=document.createElement('pre');pre.id='out';out.snap=r;pre.textContent=JSON.stringify(out);document.body.append(pre)};
+    if(name)snapSvg(svg,W,name,'#e9e4dc').then(fin,e=>fin('err '+e));else fin(null)},450)}

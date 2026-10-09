@@ -35,8 +35,9 @@ function ranSingle(par,B,O,D,cw,op,dbl){const k=G(par),R0=D/2,nz=B[2][2],o2=sm01
 const RAN_SC=['#3a5a2a','#5f8a3e','#86ac64','#b8d494'],ranLeaf=(D,col)=>(og,pos)=>lsLeaf2D(og,pos,D*R(.6,.8),(par,x,y,a,l)=>palmLeaf(par,x,y,a,l,col,{lobes:3,spread:110,wl:.24,pet:.22,tilt:R(.3,.6)}));
 function ranPlant(g,t,o,list,kd){const cw=o.cw||cwNear(list,o.col)||list[0],op=Math.max(.05,Math.min(1,o.op??1)),spray=kd==='but'||kd==='nat',Dh=(o.cm||(spray?25:6))*UPC,D=spray?Dh*.2:Dh,k=G(g);
   const S=spray?{nodes:3,li:1.1,lp:1.3,opp:0,leafAng:45,side:{p:.92,n:1,top:3,len:1.5,ang:32,age:[0,.9]},budD:.3,budMax:.35,wig:.05,e:.05}:{nodes:1,li:.8,lp:1.15,opp:0,leafAng:45,side:{p:.45,n:1,top:1,len:.9,ang:30,age:[0,.35]},budD:.42,wig:.04,e:.03};
-  const fl=(par,B,O,D2,op2)=>{if(op2<.3){capBud(par,B,O,D2*(spray?.3:.42),cw.c,.7,'#5f8a40');return}if(spray)ranSingle(par,B,O,D2,cw,op2,kd==='nat');else ranFlower(par,B,O,D2,cw,op2,kd)};
-  const r=lsHeadS(k,o,Object.assign({D,w:D*(spray?.05:.075),cols:RAN_SC,op,rr:.5,flower:fl,bud:(par,B,O,s,a)=>capBud(par,B,O,s,cw.c,a,'#5f8a40'),young:(par,B,O,s,a)=>fl(par,B,O,s,.45+.55*a),leaf:ranLeaf(D,'#4a7a34')},S));
+  /* the classic ranunculus is drawn in SVG (y-ranunculus.js), the bouquet's chance consumed as before */const sv=kd==='cla'&&typeof ranSvgPut==='function'&&typeof SV_ON!=='undefined'&&SV_ON&&cw&&cw.id;
+  const fl=(par,B,O,D2,op2)=>{if(sv){ranSvgPut(par,B,O,D2,cw,op2,o);return}if(op2<.3){capBud(par,B,O,D2*(spray?.3:.42),cw.c,.7,'#5f8a40');return}if(spray)ranSingle(par,B,O,D2,cw,op2,kd==='nat');else ranFlower(par,B,O,D2,cw,op2,kd)};
+  const r=lsHeadS(k,o,Object.assign({D,w:D*(spray?.05:.075),cols:sv?RAN_SVSC:RAN_SC,op,rr:.5,flower:fl,bud:sv?(par,B,O,s,a)=>ranBudSvgPut(par,B,O,s,cw,a):(par,B,O,s,a)=>capBud(par,B,O,s,cw.c,a,'#5f8a40'),young:(par,B,O,s,a)=>fl(par,B,O,s,.45+.55*a),leaf:sv?ranLeafSv(D,cw):ranLeaf(D,'#4a7a34')},S,sv?ranStemOpts(D,o):null));
   open(k,t,1000,10,.3);return r}
 Object.assign(GH,{'renoncule-classique':(g,t,o)=>ranPlant(g,t,o,CW_RCLA,'cla'),'renoncule-cloni':(g,t,o)=>ranPlant(g,t,o,CW_RCLO,'clo'),'renoncule-pon-pon':(g,t,o)=>ranPlant(g,t,o,CW_RPON,'pon'),
   'renoncule-butterfly':(g,t,o)=>ranPlant(g,t,o,CW_RBUT,'but'),'renoncule-natura-moderna':(g,t,o)=>ranPlant(g,t,o,CW_RNAT,'nat')});

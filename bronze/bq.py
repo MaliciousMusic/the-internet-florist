@@ -12,7 +12,7 @@ R = [  # [product, stems, place 1 (back) .. 10 (front)]
     ["tulipe-perroquet~0", 3, 5], ["tulipe-double~4", 3, 5], ["tulipe-simple~7", 3, 6], ["tulipe-simple~12", 2, 6], ["tulipe-frangee~6", 2, 6],
     ["renoncule-butterfly~7", 3, 7], ["renoncule-classique~7", 3, 6], ["renoncule-classique~3", 2, 6],
     ["narcisse-trompette~0", 3, 5], ["narcisse-bouquet~3", 3, 6], ["jacinthe~0", 2, 7], ["jacinthe~4", 2, 7],
-    ["anemone-coronaria~3", 3, 8], ["anemone-coronaria~0", 2, 8], ["freesia~2", 2, 6], ["pois-de-senteur~3", 3, 7], ["pois-de-senteur~10", 2, 7],
+    ["anemone-coronaria~3", 3, 8], ["anemone-sauvage~0", 2, 8], ["freesia~2", 2, 6], ["pois-de-senteur~3", 3, 7], ["pois-de-senteur~10", 2, 7],
     ["muscari~0", 4, 9], ["fritillaire-meleagris~0", 2, 8], ["glycine~1", 2, 9], ["viburnum-roseum~0", 3, 5], ["alchemille~0", 2, 6]]
 SNAP = r"""window.snapSvg=async function(svg,W,name,bg){const XS=new XMLSerializer(),vb=svg.getAttribute('viewBox').trim().split(/\s+/).map(Number),H=Math.round(W*vb[3]/vb[2]);
   const find=id=>svg.querySelector('#'+CSS.escape(id))||document.getElementById(id);let out='';const seen=new Set();

@@ -133,7 +133,7 @@ function svDraw(par,pieces,o){const Dm=o.D,tol=Math.max(.06,Dm*.0035),k=G(par),i
     const cg=G(ik,{'clip-path':`url(#${it.cid})`}),K=svShade(sh),FF=sh.F.map(x=>it.s*x*3),pb=svAt(sh,0,0),pt=svAt(sh,0,1),Ls=Math.max(Math.hypot(pt[0]-pb[0],pt[1]-pb[1]),(it.bb[2]-it.bb[0]+it.bb[3]-it.bb[1])*.35),
       bg=G(cg,{filter:svBlur(Ls*(m.soft??.05))}),wash=(lv,col,a,dark)=>{for(const t of lv){const V=Array.from(K,(x,q)=>Math.min(dark?t-x:x-t,FF[q]));if(!V.some(x=>x>0))continue;
         const d=svLoopsD(sh,svIso(sh.nu,sh.nv,V,0),Math.max(tol*2.5,Dm*.008));if(d)E('path',{d,fill:col,'fill-opacity':a,'fill-rule':'evenodd'},bg)}};
-    /* flames (streaks of a second colour along the tissue: Tigre, Rainbow), soft wide strokes in the blurred washes */
+    /* flames (streaks of a second colour along the tissue: the flamed anemones), soft wide strokes in the blurred washes */
     if(m.flames&&!(m.flames.side&&m.flames.side!==it.s)){let k2=0;for(const[pl,w]of m.flames.list){k2++;let run=[],dF='',dH='';const flush=()=>{if(run.length>2){const n=run.length,L=[],Rr=[];for(let q=0;q<n;q++){const a=run[Math.max(0,q-1)],b=run[Math.min(n-1,q+1)],dx=b[0]-a[0],dy=b[1]-a[1],l=Math.hypot(dx,dy)||1,t=q/(n-1),
           ww=Dm*w*.5*Math.pow(Math.sin(Math.PI*Math.min(.97,.04+.93*t)),.7)*(.75+.5*pxHashS(q,k2,7));L.push([run[q][0]-dy/l*ww,run[q][1]+dx/l*ww]);Rr.push([run[q][0]+dy/l*ww*(.6+.4*pxHashS(q,k2,9)),run[q][1]-dx/l*ww*(.6+.4*pxHashS(q,k2,9))])}
         const d=svSpl(L.concat(Rr.reverse()));dF+=d}run=[]};
@@ -173,12 +173,15 @@ function svStemLine(par,C,Wd0,c){const n=C.length,g=G(par);if(n<2)return g;const
     line=f0=>{const A=[];for(let i=0;i<n;i++){const o0=Wd[i]/2*f0;A.push([C[i][0]+N[i][0]*o0,C[i][1]+N[i][1]*o0])}return A},
     tol=Math.max(.04,Math.min(...Wd)*.05),W0=Wd.reduce((a,b)=>a+b,0)/n;
   const out=[];for(let i=0;i<n;i++)out.push([C[i][0]+N[i][0]*Wd[i]/2,C[i][1]+N[i][1]*Wd[i]/2]);for(let i=n-1;i>=0;i--)out.push([C[i][0]-N[i][0]*Wd[i]/2,C[i][1]-N[i][1]*Wd[i]/2]);
-  const od=svSpl(svSimp(out,tol));E('path',{d:od,fill:c[1]},g);if(LOD)return g;
+  /* a cut stem (sv.cut: the slant of the cut, as a tangent): its first end C[0] cut straight across or slanted, never rounded; a pale lip on the cut */
+  const ct=sv.cut!=null;if(ct){const s=sv.cut*Wd[0]/2,m=out.length-1;out[0]=[out[0][0]+T[0][0]*s,out[0][1]+T[0][1]*s];out[m]=[out[m][0]-T[0][0]*s,out[m][1]-T[0][1]*s]}
+  const od=ct?svSpl(svSimp(out,tol),false)+'Z':svSpl(svSimp(out,tol));E('path',{d:od,fill:c[1]},g);if(LOD)return g;
   const id='sc'+(gid++);E('path',{d:od},E('clipPath',{id},GDEF||defs));const cg=G(g,{'clip-path':`url(#${id})`}),bg=G(cg,{filter:svBlur(W0*.16)});
   E('path',{d:svSpl(svSimp(off(-1.4,-.25),tol)),fill:c[0],'fill-opacity':.85},bg);E('path',{d:svSpl(svSimp(off(-1.4,-.68),tol)),fill:c[0],'fill-opacity':.6},bg);
   E('path',{d:svSpl(svSimp(off(.02,.62),tol)),fill:c[2],'fill-opacity':.8},bg);E('path',{d:svSpl(svSimp(off(.18,.42),tol)),fill:c[3],'fill-opacity':sv.gloss??.5},bg);
   /* fine striations along the stem (its ribs), darker on the shaded side */
   if(sv.ribs&&DET>=1){let d='';for(const f0 of sv.ribs)d+=svSpl(svSimpO(line(f0),tol),false);E('path',{d,fill:'none',stroke:c[0],'stroke-width':svF(Math.max(.06,W0*.05)),'stroke-opacity':.28},cg)}
+  if(ct){const a=out[0],b=out[out.length-1];E('path',{d:'M'+svJ([svR(a[0]),svR(a[1])])+'L'+svJ([svR(b[0]),svR(b[1])]),fill:'none',stroke:sv.cutC||'#dde6c4','stroke-width':svF(Wd[0]*.34),'stroke-opacity':.9},cg)}
   /* the tint toward the head (only where a whole stem is drawn in one piece) */
   if(sv.red){const a=C[0],b=C[n-1],gid2='sg'+(gid++),gr=E('linearGradient',{id:gid2,gradientUnits:'userSpaceOnUse',x1:svF(a[0]),y1:svF(a[1]),x2:svF(b[0]),y2:svF(b[1])},GDEF||defs);
     const f0=sv.redF??.75;stops(gr,[[0,sv.red,0],[f0,sv.red,0],[1,sv.red,sv.redA??.45]]);E('path',{d:od,fill:`url(#${gid2})`},cg)}

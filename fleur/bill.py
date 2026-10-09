@@ -209,8 +209,31 @@ def bill(t0, t1, steps=None, title='', match=None):
     return L
 
 
+def save(B):
+    # atomic: a reader never sees a half-written file
+    with open(BILLS + '.tmp', 'w', encoding='utf-8') as f:
+        json.dump(B, f, indent=1, ensure_ascii=False)
+    os.replace(BILLS + '.tmp', BILLS)
+
+
 if __name__ == '__main__':
     a = sys.argv[1:]
+    LK = BILLS + '.lock'
+    if a[0] in ('mark', 'step', 'match'):
+        # several flower sessions write here at once: a directory lock, stale after 60 s
+        for _ in range(600):
+            try:
+                os.mkdir(LK)
+                break
+            except FileExistsError:
+                try:
+                    if time.time() - os.path.getmtime(LK) > 60:
+                        os.rmdir(LK)
+                except OSError:
+                    pass
+                time.sleep(.1)
+        import atexit
+        atexit.register(lambda: os.path.isdir(LK) and os.rmdir(LK))
     B = json.load(open(BILLS, encoding='utf-8')) if os.path.exists(BILLS) else {}
     if a[0] in ('mark', 'step'):
         b = B.setdefault(a[1], {})
@@ -218,11 +241,11 @@ if __name__ == '__main__':
             b[a[2]] = now()
         else:
             b.setdefault('steps', []).append([a[2], now()])
-        json.dump(B, open(BILLS, 'w', encoding='utf-8'), indent=1, ensure_ascii=False)
+        save(B)
         print(a[1], a[0], a[2], now())
     elif a[0] == 'match':
         B.setdefault(a[1], {})['match'] = a[2]
-        json.dump(B, open(BILLS, 'w', encoding='utf-8'), indent=1, ensure_ascii=False)
+        save(B)
         print(a[1], 'match', a[2])
     elif a[0] == 'report':
         b = B[a[1]]
