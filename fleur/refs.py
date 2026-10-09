@@ -103,10 +103,10 @@ def find(sid, query, n=60, depth=1):
     print(f'{len(new)} new, {len(C)} candidates ({P})')
 
 
-def addurl(sid, url, title='', page=''):
+def addurl(sid, url, title='', page='', author='', lic=''):
     P = os.path.join(d(sid), 'cands.json')
     C = jload(P, [])
-    C.append({'title': 'File:' + (title or url.rsplit('/', 1)[-1][:60]), 'thumb': url, 'page': page or url, 'w': 0, 'h': 0, 'author': '', 'lic': 'tiers (mesure locale)', 'q': 'url'})
+    C.append({'title': 'File:' + (title or url.rsplit('/', 1)[-1][:60]), 'thumb': url, 'page': page or url, 'w': 0, 'h': 0, 'author': author, 'lic': lic or 'tiers (mesure locale)', 'q': 'url'})
     jsave(P, C)
     print(len(C) - 1)
 
@@ -281,7 +281,7 @@ if __name__ == '__main__':
     if cmd == 'find':
         find(sid, ' '.join(pos[2:]), int(opt.get('n', 60)), int(opt.get('depth', 1)))
     elif cmd == 'url':
-        addurl(sid, pos[2], opt.get('title', ''), opt.get('page', ''))
+        addurl(sid, pos[2], opt.get('title', ''), opt.get('page', ''), opt.get('author', ''), opt.get('lic', ''))
     elif cmd == 'sheet':
         sheet(sid, int(opt.get('from', 0)), int(opt.get('n', 20)), int(opt.get('tile', 230)))
     elif cmd == 'pal':

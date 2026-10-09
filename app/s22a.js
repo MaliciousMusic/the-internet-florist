@@ -137,10 +137,14 @@ function frePlant(g,t,o){const cw=o.cw||cwNear(CW_FRE,o.col)||CW_FRE[0],op=Math.
 
 /* ---------- Dutch iris (Iris × hollandica): one flower out of two green spathes at the top of a stiff stem, two or three linear channelled leaves sheathing it;
    three falls (the outer tepals) rising on a narrow haft then hanging their blade, a yellow signal on it; three standards (the inner tepals) upright; three petaloid style arms arching over the hafts ---------- */
-const CW_IRIS=[{id:'bleu',n:'Bleu (Blue Magic)',c:'#4a44a8',sig:'#f2c21c'},{id:'bleu-nuit',n:'Bleu nuit (Professor Blaauw)',c:'#26307a',sig:'#f0b818'},{id:'violet',n:'Violet (Purple Sensation)',c:'#5a2a90',sig:'#f0c020'},
-  {id:'bleu-ciel',n:'Bleu ciel',c:'#8a9ad8',sig:'#f2c830'},{id:'silvery',n:'Bleu pâle et blanc (Silvery Beauty)',c:'#b0bce8',fc:'#f4f4f8',sig:'#f2c830'},{id:'blanc',n:'Blanc (White Excelsior)',c:'#f7f5ee',sig:'#f2d040'},
+const CW_IRIS=[{id:'bleu',n:'Bleu (Blue Magic)',c:'#4a44a8',sig:'#f2c21c'},{id:'bleu-nuit',n:'Bleu gentiane (Professor Blaauw)',c:'#26307a',sig:'#f0b818'},{id:'violet',n:'Violet (Purple Sensation)',c:'#5a2a90',sig:'#f0c020'},
+  {id:'bleu-ciel',n:'Bleu ciel (Wedgwood)',c:'#8a9ad8',sig:'#f2c830'},{id:'silvery',n:'Bleu pâle et blanc (Silvery Beauty)',c:'#b0bce8',fc:'#f4f4f8',sig:'#f2c830'},{id:'blanc',n:'Blanc (White Excelsior)',c:'#f7f5ee',sig:'#f2d040'},
   {id:'jaune',n:'Jaune (Golden Harvest)',c:'#f5d02a',sig:'#f09810'},{id:'apollo',n:'Blanc et jaune (Apollo)',c:'#f6f4ec',fc:'#f5d02a',sig:'#f0a018'},
-  {id:'bronze',n:'Pourpre et bronze (Red Ember)',c:'#6a3a7a',fc:'#9a4a2e',sig:'#f0b020'},{id:'noir',n:'Pourpre noir',c:'#3a1a50',sig:'#f2c21c'}];
+  {id:'bronze',n:'Pourpre et bronze (Red Ember)',c:'#6a3a7a',fc:'#9a4a2e',sig:'#f0b020'},{id:'noir',n:'Pourpre noir',c:'#3a1a50',sig:'#f2c21c'},
+  /* late colourways (measured, coloris-lch.md): after rank 9, so no existing number moves */
+  {id:'violet-blanc',n:'Violet et blanc (Carmen)',c:'#ccc7da',fc:'#c8c9ce',sig:'#e5cf41',late:6},{id:'bronze-cuivre',n:'Bronze cuivre (Autumn Princess)',c:'#9d693c',fc:'#9c7c13',sig:'#c39951',late:6},
+  {id:'bleu-bronze',n:'Bleu-violet et bronze (Tigereye)',c:'#55337b',fc:'#5e313a',sig:'#e8bf17',late:6},{id:'pourpre-brun-or',n:'Pourpre-brun et or (Lion King)',c:'#5f3c29',fc:'#6d550c',sig:'#c3a023',late:6},
+  {id:'mauve-bronze-jaune',n:'Mauve et bronze-jaune (Romano)',c:'#66527e',fc:'#aa8a33',sig:'#debe3b',late:6},{id:'lilas',n:'Lilas (Panther)',c:'#b691e9',fc:'#9784cd',sig:'#fbcd19',late:6}];
 const IR_FALL=prof([[0,.2],[.35,.32],[.55,.82],[.8,1],[.95,.72],[1,.24]]),IR_STD=prof([[0,.18],[.35,.5],[.75,1],[.95,.62],[1,.2]]),IR_STY=prof([[0,.5],[.5,.85],[.8,1],[1,.35]]);
 /* the two spathes round the base of the flower (or the bud), green, their tips papery */
 function irisSpathes(it,B,O,R0){for(const[ph,Lk]of[[R(0,6.28),1],[R(0,6.28)+2.8,.8]])it.push({l:ligule(B,O,{phi:ph,r0:R0*.12,z0:-R0*.85,L:R0*1.2*Lk,W:R0*.27,wp:prof([[0,.9],[.5,.8],[.85,.4],[1,.05]]),a0:.12,a1:.04,pw:1,th:1.6,tip:'point',n:5}),c:'#5f8a4a',cb:'#7a9a5a',ink:'#2e4a22',lift:.2,tipc:'#c8c098',tf:.7})}
