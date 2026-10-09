@@ -1263,8 +1263,12 @@ def step_planches(ctx):
         if not ok:
             raise StepFailed('sheet %s: no image (%s)' % (kind, (text.strip().splitlines() or [''])[-1][:100]))
         os.makedirs(dest, exist_ok=True)
-        shutil.copyfile('%s/fleur/out/%s.png' % (ctx.ch, name), '%s/%s-%s-p1.png' % (dest, ctx.sid, kind))
-        got.append('%s-%s-p1.png (%s el, %s KB)' % (ctx.sid, kind, (m or {}).get('el'), (m or {}).get('kb')))
+        # never overwrite an earlier sheet: the next free -pN (p1 for the pipeline's first pass, p2... after retouches)
+        k = 1
+        while os.path.exists('%s/%s-%s-p%d.png' % (dest, ctx.sid, kind, k)):
+            k += 1
+        shutil.copyfile('%s/fleur/out/%s.png' % (ctx.ch, name), '%s/%s-%s-p%d.png' % (dest, ctx.sid, kind, k))
+        got.append('%s-%s-p%d.png (%s el, %s KB)' % (ctx.sid, kind, k, (m or {}).get('el'), (m or {}).get('kb')))
     return {'status': 'done', 'msg': 'copied to %s: %s' % (dest, ', '.join(got) or 'dry')}
 
 
