@@ -63,11 +63,11 @@ function svTubeIris(ctx,z0,z1,r,mat,o={}){const{B,O,R0,pieces}=ctx,pf=o.prof||(v
    its mouth rising toward the blade, the line of its margins. pos: the foot on the stem's axis; H: the stem there, upward; Out: the way the blade leaves
    it (unit vectors, view space, y up); o.sr: the stem's radius there, o.stem its colour (the sheath takes after it). Returns {blade, sheath, front}: two drawers (par) and whether the blade comes
    toward the viewer, so that the caller orders them about its stem (the sheath always in front of it, the blade in front or behind). */
-const SVBL_DEF={len:100,w:.05,wp:[[0,.8],[.15,.95],[.35,1],[.65,.84],[.88,.5],[1,0]],sheath:.18,sr:2,mouth:.55,lean:.42,droop:.35,tw:.5,gut:.55,wav:.012,wavN:2,
+const SVIL_DEF={len:100,w:.05,wp:[[0,.8],[.15,.95],[.35,1],[.65,.84],[.88,.5],[1,0]],sheath:.18,sr:2,mouth:.55,lean:.42,droop:.35,tw:.5,gut:.55,wav:.012,wavN:2,
   up:'#5f7c4a',low:'#8da57a',sh:'#22331c',stem:null,lt:'#e2ead2',dry:'#c4ae5c',brown:'#8e6c3c',wl:0,sd:1,lite:false};
 /* o.lite: below DET 1.5, a leaf partly hidden by its neighbours (the inner leaves of a tuft, a short upper leaf) keeps its outline, a two-stop gradient,
    the shade of its gutter and its sheath's fill: no midrib, no shade nor rim on the sheath */
-function svBladeLite(pos,H,Out,o0){const o=Object.assign({},SVBL_DEF,o0),r=svRng(o.sd),wl=o.wl||0,len=o.len,W=len*o.w,limp=svSm((wl-.15)/.6),ns=12,
+function svBladeLite(pos,H,Out,o0){const o=Object.assign({},SVIL_DEF,o0),r=svRng(o.sd),wl=o.wl||0,len=o.len,W=len*o.w,limp=svSm((wl-.15)/.6),ns=12,
     dn=[0,-1,0],Hn=V3.nz(H),P2=q=>[q[0],-q[1]],VZ=[0,0,1];
   let e1=V3s(Out,V3.sc(Hn,V3.dot(Out,Hn)));e1=V3l(e1)>1e-3?V3.nz(e1):V3.nz(V3.cr(Hn,VZ));const e2=V3.cr(Hn,e1),side0=V3.nz(V3.cr(e1,Hn));
   const ph=r()*6.3,tw=o.tw*(r()*2-1)*(1+1.5*limp),lean=o.lean*(1+.3*limp),dr=Math.min(.95,o.droop*(1+1.2*limp)),gut=o.gut*(1-.55*limp),wav=o.wav*(1+.6*limp),
