@@ -113,9 +113,9 @@ for(const id of['eremurus','fritillaire-persica'])GH_BUDS.add(id);
 /* ---------- trumpet daffodil (Narcissus, division 1: 'Dutch Master', 'Golden Harvest', 'Mount Hood', 'Las Vegas', 'Galactic Star'): one flower held out sideways at the top of a hollow,
    glaucous, two-edged scape; where it turns, a papery brown spathe; the flower six pointed tepals spread in a star (three outer, three inner), round a trumpet as long as they are,
    widening to a frilled, flared rim; behind them the green ovary. The bud nods in its spathe (the 'gooseneck'), then the tepals part forward round the trumpet ---------- */
-const CW_NAR=[{id:'jaune',n:'Jaune (Dutch Master)',c:'#f5d22c',tr:'#f2c21c',lvl:'A'},{id:'jaune-or',n:"Jaune d'or (Golden Harvest)",c:'#f4c41e',tr:'#f0ae14',lvl:'B'},
-  {id:'citron',n:'Jaune pâle, trompette blanche (Galactic Star)',c:'#f1e05a',tr:'#f2eed0',lvl:'derive'},{id:'blanc',n:'Blanc (Mount Hood)',c:'#f8f5ea',tr:'#f2ecd0',lvl:'B'},
-  {id:'creme',n:'Blanc, trompette citron (Bravoure)',c:'#f2e8cc',tr:'#f0dc6a',lvl:'C'},{id:'bicolore',n:'Bicolore blanc et jaune (Las Vegas)',c:'#f6f2e2',tr:'#f2c42a',lvl:'C'}];
+const CW_NAR=[{id:'jaune',n:'Jaune (Dutch Master)',c:'#f5d22c',tr:'#f2c21c',lvl:'A'},{id:'jaune-or',n:"Jaune d'or (Golden Harvest)",c:'#f4c41e',tr:'#f0ae14',lvl:'A'},
+  {id:'citron',n:'Jaune pâle, trompette blanche (Galactic Star)',c:'#f1e05a',tr:'#f2eed0',lvl:'A'},{id:'blanc',n:'Blanc (Mount Hood)',c:'#f8f5ea',tr:'#f2ecd0',lvl:'A'},
+  {id:'creme',n:'Blanc, trompette citron (Bravoure)',c:'#f2e8cc',tr:'#f0dc6a',lvl:'A'},{id:'bicolore',n:'Bicolore blanc et jaune (Las Vegas)',c:'#f6f2e2',tr:'#f2c42a',lvl:'A'}];
 const NAR_TEP=prof([[0,.36],[.18,.84],[.45,1],[.72,.8],[.9,.42],[1,.1]]),NAR_SPA=prof([[0,.8],[.35,1],[.7,.62],[1,.04]]);
 /* the trumpet in the flower's frame: rings from its base to its frilled rim; Lt its length, rb, rm the radii at the base and the mouth */
 function narTrumpet(par,B,O,R0,cw,o2,cache){const nz=B[2][2],Lt=R0*(.5+.45*o2),rb=R0*.12,rm=R0*(.2+.15*o2),ph=(O[0]*.31+O[1]*.17)%6.283,nr=DET>=1.5?16:12,rings=[],c=cw.tr,P=pal7(c);

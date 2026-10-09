@@ -82,8 +82,8 @@ const l106Vir=(g,t,o)=>l106TulPlant(g,t,o,CW_L106VIR,L106_VIR,'tulipe-viridiflor
    flowers outermost, turned outward ---------- */
 const CW_L106NB=[{id:'paperwhite',n:'Blanc pur (Ziva)',c:'#fbfaf4',tr:'#f4f0dc',nn:[7,10],cl:.7,sz:.9},{id:'geranium',n:'Blanc à coupe orange (Geranium)',c:'#faf8f0',tr:'#ee5a24',nn:[4,6],sz:1.15},
   {id:'minnow',n:'Blanc à coupe jaune citron (Minnow)',c:'#f2e7a6',tr:'#f2c83a',nn:[3,5],sz:.85},{id:'avalanche',n:'Blanc à coupe jaune (Avalanche)',c:'#f9f7ee',tr:'#f2cc3a',nn:[6,9],sz:1},
-  {id:'soleil-d-or',n:'Jaune à coupe orange (Grand Soleil d’Or)',c:'#f4cb2e',tr:'#f08a1e',nn:[5,8],sz:1},{id:'cragford',n:'Blanc à coupe orange vif (Cragford)',c:'#f8f6ee',tr:'#f0742a',nn:[4,6],sz:1.1},
-  {id:'chinensis',n:'Blanc à coupe jaune d’or (Chinese Sacred Lily)',c:'#fbf9f0',tr:'#f2b828',nn:[5,8],sz:1},{id:'silver-chimes',n:'Blanc à coupe blanche (Silver Chimes)',c:'#f6f2e2',tr:'#f2e6a4',nn:[5,8],sz:1.05,cl:1.3},
+  {id:'soleil-d-or',ret:1,n:'Jaune à coupe orange (Grand Soleil d’Or)',c:'#f4cb2e',tr:'#f08a1e',nn:[5,8],sz:1},{id:'cragford',n:'Blanc à coupe orange vif (Cragford)',c:'#f8f6ee',tr:'#f0742a',nn:[4,6],sz:1.1},
+  {id:'chinensis',ret:1,n:'Blanc à coupe jaune d’or (Chinese Sacred Lily)',c:'#fbf9f0',tr:'#f2b828',nn:[5,8],sz:1},{id:'silver-chimes',n:'Blanc à coupe blanche (Silver Chimes)',c:'#f6f2e2',tr:'#f2e6a4',nn:[5,8],sz:1.05,cl:1.3},
   {id:'martinette',n:'Jaune d’or à coupe orange (Martinette)',c:'#f6d034',tr:'#ef7a22',nn:[4,6],sz:1.05},
   {id:'golden-dawn',n:'Jaune d’or profond à coupe orange (Golden Dawn)',c:'#f0c61c',tr:'#f08a08',nn:[5,8],sz:1,late:1}];
 const L106_TTEP=prof([[0,.4],[.2,.85],[.5,1],[.78,.86],[.93,.5],[1,.16]]);

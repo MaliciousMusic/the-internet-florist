@@ -20,7 +20,7 @@ const CW_TFR=[
 const CW_TFRG=[
  {id:'rose',n:'Rose à cœur blanc',c:'#e99ab6',bl:'#f6f0f0',fr:'#f6d6e2'},{id:'blanc',n:'Blanc',c:'#f7f3ea',bl:'#ece6c0',fr:'#ffffff',g:.4},{id:'jaune',n:'Jaune',c:'#f6d02a',bl:'#e8b828',fr:'#faea8a'},
  {id:'rouge',n:'Rouge cramoisi',c:'#a3182e',bl:'#2a1218',fr:'#c8405a'},{id:'lilas',n:'Mauve à franges blanches',c:'#a888c8',bl:'#f0eef6',fr:'#d0c0e4'},{id:'noir',n:'Pourpre noir',c:'#3a0f2c',bl:'#1a0814',fr:'#6a3a5a'},
- {id:'fuchsia',n:'Rose fuchsia à cœur bleu',c:'#d8508a',bl:'#2a2a40',fr:'#f0a0c4'},{id:'orange',n:'Orange abricot à franges dorées',c:'#f08a5a',bl:'#f2c040',fr:'#f8c870'},{id:'jaune-rose',n:'Crème jaune frangé de rose',c:'#f4dc6a',edge:'#e87aa0',bl:'#e8c040',fr:'#f2a0bc'}];
+ {id:'fuchsia',n:'Rose fuchsia à cœur bleu',c:'#d8508a',bl:'#2a2a40',fr:'#f0a0c4'},{id:'orange',n:'Orange abricot à franges dorées',c:'#f08a5a',bl:'#f2c040',fr:'#f8c870'},{id:'jaune-rose',ret:1,n:'Crème jaune frangé de rose',c:'#f4dc6a',edge:'#e87aa0',bl:'#e8c040',fr:'#f2a0bc'}];
 const CW_TPAR=[
  {id:'abricot',n:'Abricot',c:'#f4a873',flame:'#8aa858',bl:'#e8c060'},{id:'rouge',n:'Rouge',c:'#c41f2c',flame:'#5f8a3e',bl:'#2a1418'},{id:'blanc',n:'Blanc',c:'#f6f1e2',flame:'#9ab870',bl:'#e8e0b0'},
  {id:'jaune',n:'Jaune d’or',c:'#f5cf2e',flame:'#8aa848',bl:'#d8a020'},{id:'noir',n:'Pourpre noir',c:'#3f1030',flame:'#4a5a2a',bl:'#1a0814'},{id:'saumon',n:'Saumon',c:'#f28a6e',flame:'#8aa858',bl:'#f0c060'},
