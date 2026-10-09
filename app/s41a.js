@@ -110,12 +110,12 @@ Object.assign(SZG,{'eremurus':[40,50,60,60,70],'fritillaire-persica':[18,22,25,2
 Object.assign(GHI,{'eremurus':{form:'epi',size:1,k:'plant',self:110*UPC,tip:.85,fx:5.5*UPC},'fritillaire-persica':{form:'epi',size:1,k:'plant',self:80*UPC,tip:.9,fx:4.5*UPC}});
 for(const id of['eremurus','fritillaire-persica'])GH_BUDS.add(id);
 
-/* ---------- trumpet daffodil (Narcissus, division 1: 'Dutch Master', 'Golden Harvest', 'Mount Hood', 'Las Vegas', 'Spellbinder'): one flower held out sideways at the top of a hollow,
+/* ---------- trumpet daffodil (Narcissus, division 1: 'Dutch Master', 'Golden Harvest', 'Mount Hood', 'Las Vegas', 'Galactic Star'): one flower held out sideways at the top of a hollow,
    glaucous, two-edged scape; where it turns, a papery brown spathe; the flower six pointed tepals spread in a star (three outer, three inner), round a trumpet as long as they are,
    widening to a frilled, flared rim; behind them the green ovary. The bud nods in its spathe (the 'gooseneck'), then the tepals part forward round the trumpet ---------- */
-const CW_NAR=[{id:'jaune',n:'Jaune (Dutch Master)',c:'#f5d22c',tr:'#f2c21c'},{id:'jaune-or',n:"Jaune d'or (Golden Harvest)",c:'#f4c41e',tr:'#f0ae14'},
-  {id:'citron',n:'Citron, trompette blanchissante (Spellbinder)',c:'#f1e05a',tr:'#f2eed0'},{id:'blanc',n:'Blanc (Mount Hood)',c:'#f8f5ea',tr:'#f2ecd0'},
-  {id:'creme',n:'Crème, trompette citron (Bravoure)',c:'#f2e8cc',tr:'#f0dc6a'},{id:'bicolore',n:'Bicolore blanc et jaune (Las Vegas)',c:'#f6f2e2',tr:'#f2c42a'}];
+const CW_NAR=[{id:'jaune',n:'Jaune (Dutch Master)',c:'#f5d22c',tr:'#f2c21c',lvl:'A'},{id:'jaune-or',n:"Jaune d'or (Golden Harvest)",c:'#f4c41e',tr:'#f0ae14',lvl:'A'},
+  {id:'citron',n:'Jaune pâle, trompette blanche (Galactic Star)',c:'#f1e05a',tr:'#f2eed0',lvl:'A'},{id:'blanc',n:'Blanc (Mount Hood)',c:'#f8f5ea',tr:'#f2ecd0',lvl:'A'},
+  {id:'creme',n:'Blanc, trompette citron (Bravoure)',c:'#f2e8cc',tr:'#f0dc6a',lvl:'A'},{id:'bicolore',n:'Bicolore blanc et jaune (Las Vegas)',c:'#f6f2e2',tr:'#f2c42a',lvl:'A'}];
 const NAR_TEP=prof([[0,.36],[.18,.84],[.45,1],[.72,.8],[.9,.42],[1,.1]]),NAR_SPA=prof([[0,.8],[.35,1],[.7,.62],[1,.04]]);
 /* the trumpet in the flower's frame: rings from its base to its frilled rim; Lt its length, rb, rm the radii at the base and the mouth */
 function narTrumpet(par,B,O,R0,cw,o2,cache){const nz=B[2][2],Lt=R0*(.5+.45*o2),rb=R0*.12,rm=R0*(.2+.15*o2),ph=(O[0]*.31+O[1]*.17)%6.283,nr=DET>=1.5?16:12,rings=[],c=cw.tr,P=pal7(c);
@@ -141,7 +141,8 @@ function narFlower(par,B,O,D,cw,op,cache){const k=G(par),R0=D/2,o2=sm01((op-.25)
 function narBud(par,B,O,D,cw,a){const k=G(par),s=D*(.42+.12*a),c=mix(cw.c,'#9aac62',.55-.35*a);spBud(k,B,O,s,s*.36,c,{tp:.55,pw:.6});
   const l=ligule(B,V3.add(O,toV(B,[0,0,-s*.12])),{phi:R(0,6.28),r0:s*.05,z0:0,L:s*(.78-.25*a),W:s*.26,wp:NAR_SPA,a0:.06,a1:.02,pw:1,th:2.4,tip:'point',n:5});
   drawLig(k,[{l,c:'#d8c49a',ink:'#8a7650'}]);return k}
-function narPlant(g,t,o){const cw=o.cw||cwNear(CW_NAR,o.col)||CW_NAR[0],op=Math.max(.05,Math.min(1,o.op??1)),D=(o.cm||9)*UPC,k=G(g),sc=['#2e4a32','#557a58','#80a682','#b2ccb0'],cache={};
+function narPlant(g,t,o){if(typeof narSvPlant==='function'&&typeof SV_ON!=='undefined'&&SV_ON)return narSvPlant(g,t,o);/* the daffodil in native SVG (y-narcissus.js) */
+  const cw=o.cw||cwNear(CW_NAR,o.col)||CW_NAR[0],op=Math.max(.05,Math.min(1,o.op??1)),D=(o.cm||9)*UPC,k=G(g),sc=['#2e4a32','#557a58','#80a682','#b2ccb0'],cache={};
   const B=frameOf(o,.3,true),up=B.upV?V3.nz([B.upV[0],B.upV[1],B.upV[2]||0]):[0,1,0],face=B[2];let U0=V3s(face,V3.sc(up,V3.dot(face,up)));if(V3l(U0)<1e-3)U0=[0,0,1];
   const bud=op<.3,head=(par,Bf,pos,op2)=>op2<.3?narBud(par,Bf,pos,D,cw,op2/.3):narFlower(par,Bf,pos,D,cw,op2,cache);
   if(o.rim){const r=lsHeadS(k,o,{D,w:D*.055,cols:sc,op,rr:.3,nodes:0,lp:.45,flower:(par,B2,O,D2,op2)=>head(par,B2,O,op2)});open(k,t,1000,8,.3);return r}

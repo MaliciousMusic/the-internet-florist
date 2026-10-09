@@ -19,13 +19,13 @@ const CW_TFR=[
  {id:'violet',n:'Violet',c:'#7a3a8a',bl:'#1e1830'},{id:'noir',n:'Pourpre noir',c:'#3c1428',bl:'#1a0c14'}];
 const CW_TFRG=[
  {id:'rose',n:'Rose à cœur blanc',c:'#e99ab6',bl:'#f6f0f0',fr:'#f6d6e2'},{id:'blanc',n:'Blanc',c:'#f7f3ea',bl:'#ece6c0',fr:'#ffffff',g:.4},{id:'jaune',n:'Jaune',c:'#f6d02a',bl:'#e8b828',fr:'#faea8a'},
- {id:'rouge',n:'Rouge bordeaux',c:'#a3182e',bl:'#2a1218',fr:'#c8405a'},{id:'lilas',n:'Lilas',c:'#a888c8',bl:'#f0eef6',fr:'#d0c0e4'},{id:'noir',n:'Pourpre noir',c:'#3a0f2c',bl:'#1a0814',fr:'#6a3a5a'},
- {id:'fuchsia',n:'Fuchsia',c:'#d8508a',bl:'#2a2a40',fr:'#f0a0c4'},{id:'orange',n:'Orange rosé',c:'#f08a5a',bl:'#f2c040',fr:'#f8c870'},{id:'jaune-rose',n:'Jaune frangé de rose',c:'#f4dc6a',edge:'#e87aa0',bl:'#e8c040',fr:'#f2a0bc'}];
+ {id:'rouge',n:'Rouge cramoisi',c:'#a3182e',bl:'#2a1218',fr:'#c8405a'},{id:'lilas',n:'Mauve à franges blanches',c:'#a888c8',bl:'#f0eef6',fr:'#d0c0e4'},{id:'noir',n:'Pourpre noir',c:'#3a0f2c',bl:'#1a0814',fr:'#6a3a5a'},
+ {id:'fuchsia',n:'Rose fuchsia à cœur bleu',c:'#d8508a',bl:'#2a2a40',fr:'#f0a0c4'},{id:'orange',n:'Orange abricot à franges dorées',c:'#f08a5a',bl:'#f2c040',fr:'#f8c870'},{id:'jaune-rose',ret:1,n:'Crème jaune frangé de rose',c:'#f4dc6a',edge:'#e87aa0',bl:'#e8c040',fr:'#f2a0bc'}];
 const CW_TPAR=[
  {id:'abricot',n:'Abricot',c:'#f4a873',flame:'#8aa858',bl:'#e8c060'},{id:'rouge',n:'Rouge',c:'#c41f2c',flame:'#5f8a3e',bl:'#2a1418'},{id:'blanc',n:'Blanc',c:'#f6f1e2',flame:'#9ab870',bl:'#e8e0b0'},
  {id:'jaune',n:'Jaune d’or',c:'#f5cf2e',flame:'#8aa848',bl:'#d8a020'},{id:'noir',n:'Pourpre noir',c:'#3f1030',flame:'#4a5a2a',bl:'#1a0814'},{id:'saumon',n:'Saumon',c:'#f28a6e',flame:'#8aa858',bl:'#f0c060'},
- {id:'rose',n:'Rose',c:'#f2a2bc',flame:'#8aa868',bl:'#f0e0b8'},{id:'cerise',n:'Cerise',c:'#c8407e',flame:'#6a8a48',bl:'#2a2440'},{id:'lilas',n:'Lilas bleuté',c:'#9a7ab8',flame:'#7a9a68',bl:'#2a2440'},
- {id:'flamme',n:'Jaune flammé de rouge',c:'#f4d050',flame:'#d8302a',bl:'#3a2a18'},{id:'rouge-blanc',n:'Blanc flammé de rouge',c:'#f6eeee',flame:'#c8202c',bl:'#e8d8a0'},{id:'vert-rose',n:'Rose ondé de vert',c:'#ef9ab8',flame:'#7f9f4e',bl:'#f0e0b8'}];
+ {id:'rose',n:'Rose',c:'#f2a2bc',flame:'#8aa868',bl:'#f0e0b8'},{id:'cerise',n:'Orange (Amazing Parrot)',c:'#c8407e',flame:'#6a8a48',bl:'#2a2440'},{id:'lilas',n:'Violet (Blue Parrot)',c:'#9a7ab8',flame:'#7a9a68',bl:'#2a2440'},
+ {id:'flamme',n:'Jaune flammé de rouge',c:'#f4d050',flame:'#d8302a',bl:'#3a2a18'},{id:'rouge-blanc',n:'Rouge et blanc (Estella Rijnveld)',c:'#f6eeee',flame:'#c8202c',bl:'#e8d8a0'},{id:'vert-rose',n:'Rose ondé de vert',c:'#ef9ab8',flame:'#7f9f4e',bl:'#f0e0b8'}];
 const CW_TDBL=[
  {id:'rose-pale',n:'Rose pâle',c:'#f3bccb',cb:'#eeb2c2',g:.3},{id:'blanc',n:'Blanc',c:'#f6f2e8',g:.45},{id:'abricot',n:'Abricot poudré',c:'#f0c4a8',cb:'#e8b8a0',g:.25},
  {id:'peche',n:'Pêche',c:'#f6c0a0',g:.25},{id:'rose-vif',n:'Rose vif',c:'#e2457e',g:.2},{id:'jaune',n:'Jaune',c:'#f4d23c',g:.3},{id:'orange',n:'Orange flammé de pourpre',c:'#f08040',flame:'#8a3a6a',g:.2},
@@ -84,6 +84,8 @@ function tulipHead(g,t,o,list,kd){const cw=o.cw||cwNear(list,o.col)||list[0],op=
   /* the single tulip in native SVG (y-tulipa.js): its head by svBloom, held nearly upright on its stem (the U seen from the side), its neck lengthening
      and bending as it fades (on the sheets only: in a bouquet the neck keeps the old geometry); the bouquet's chance consumed as before */
   const sv=kd==='simple'&&typeof tulSvgPut==='function'&&typeof SV_ON!=='undefined'&&SV_ON&&cw&&cw.id,aim=sv?V3.nz(V3.add(V3.sc(ax,.45),V3.sc(up,.85))):ax;
+  if(kd==='parrot'&&typeof tulParHead==='function'&&typeof SV_ON!=='undefined'&&SV_ON&&cw&&cw.id)return tulParHead(g,t,o,cw,op,Dm,k,B,up,ax,U0,Lq);/* the parrot in native SVG (yz-tulipa-perroquet.js) */
+  if(kd==='fringe'&&typeof tulFrgHead==='function'&&typeof SV_ON!=='undefined'&&SV_ON&&cw&&cw.id)return tulFrgHead(g,t,o,cw,op,Dm,k,B,up,ax,U0,Lq);/* the fringed tulip in native SVG (yz-tulipa-frangee.js) */
   if(kd==='double'&&typeof tdbHead==='function'&&typeof SV_ON!=='undefined'&&SV_ON&&cw&&cw.id)return tdbHead(g,t,o,{cw,op,Dm,k,gh,up,ax,sw,Lq,U0});/* the double tulip in native SVG (yz-tulipa-double.js), the same draws */
   const res=lsTurtle([['F',{l:Lq*.45,w0:sw*1.12,w1:sw*1.06,c:gh.sc||TUL_SC}],['F',{l:Lq*.55,w1:sw,aim,k:.24}],['K',{main:1}]],{p:[0,0,0],H:up,U:U0,wig:.035,seg:Dm*.22}),og=res.organs[0];
   if(sv&&typeof SVA_LIFE!=='undefined'&&SVA_LIFE!=null)tulNeckBend(res,og,tulLife(o));const apex=og.pos;/* the bent neck on the sheets only (y-tulipa.js) */

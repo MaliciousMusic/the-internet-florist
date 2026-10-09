@@ -44,7 +44,7 @@ if(new URLSearchParams(location.search).get('cmp'))setTimeout(()=>svCmp(new URLS
 /* stages × colourways: ?grid=1&cws=bleu,rouge&st=.06:0,.2:0,.4:0,.75:0,1:.35,1:.75&view=2&D=120 */
 if(new URLSearchParams(location.search).get('grid'))setTimeout(()=>{const Q=new URLSearchParams(location.search),dS=typeof defs!=='undefined'&&defs.closest?defs.closest('svg'):null;document.body.innerHTML='';if(dS)document.body.append(dS);
   DET=+(Q.get('det')||1.5);LOD=0;const cws=(Q.get('cws')||'bleu').split(','),st=(Q.get('st')||'.06:0,.2:0,.4:0,.75:0,1:.35,1:.75').split(',').map(x=>x.split(':').map(Number)),D=+(Q.get('D')||120),
-    VIEWS=[[0,0,1,0],[0,.5,.87,0],[.38,.55,.74,.4],[0,.86,.5,0],[-.55,.25,.8,-.3],[0,-.42,.91,0],[.7,.1,.7,.2],[0,.97,.24,0]],VL=(Q.get('view')||'2').split(',').map(x=>VIEWS[+x]),rws=[];for(const cw of cws)for(const V of VL)rws.push([cw,V]);const gap=D*1.15,W=Math.round(st.length*gap+D*.3),H=Math.round(rws.length*gap+D*.2),
+    VIEWS=[[0,0,1,0],[0,.5,.87,0],[.38,.55,.74,.4],[0,.86,.5,0],[-.55,.25,.8,-.3],[0,-.42,.91,0],[.7,.1,.7,.2],[0,.97,.24,0],[.97,-.17,.17,0],[-.62,-.26,.74,0]],VL=(Q.get('view')||'2').split(',').map(x=>VIEWS[+x]),rws=[];for(const cw of cws)for(const V of VL)rws.push([cw,V]);const gap=D*1.15,W=Math.round(st.length*gap+D*.3),H=Math.round(rws.length*gap+D*.2),
     svg=E('svg',{width:W,height:H,viewBox:`0 0 ${W} ${H}`},document.body);GDEF=E('defs',{},svg);let ms=0,n=0;
   rws.forEach(([cw,V],r)=>st.forEach(([op,wl],c)=>{const B=basis(V3.nz([V[0],V[1],V[2]]),V[3]),X=D*.2+gap*(c+.5),Y=D*.1+gap*(r+.55),t0=performance.now(),seed=+(Q.get('seed')||3)+r*7+c;
     const sid=Q.get('sid')||'anemone-coronaria',spec=/^SVT_[A-Z]+$/.test(Q.get('spec')||'')?eval(Q.get('spec')):null,hf=spec?(p,B2,O2,D2,c2,o2,s2,w2)=>tulSvg(p,B2,O2,D2,c2,o2,s2,w2,spec):(typeof SV_HEAD!=='undefined'&&SV_HEAD[sid])||anemSvg,T0=WILT;if(wl>0&&typeof lifeWilt==='function')WILT=lifeWilt(wl,(GHI[sid]&&GHI[sid].wilt)||svaWiltCol,sid);try{hf(G(svg),B,[X,-Y,0],D,cw,op,seed,wl)}finally{WILT=T0}ms+=performance.now()-t0;n++}));
@@ -63,7 +63,9 @@ if(new URLSearchParams(location.search).get('plant'))setTimeout(()=>{const Q=new
   document.title='plant ok';const sp=Q.get('snap')?snapSvg(svg,+(Q.get('sw')||cellW*st.length*2),Q.get('snap'),'#e9e4dc'):null;if(sp)sp.then(r=>{document.title+=' snap '+r.join(',')});svtOut(svg,st.length,ms,sp)},400);
 /* the stem below a head's neck (r: what the head hands back), cm long, with its leaves */
 window.svtStem=(par,r,sid,cm)=>{const e=r.neck,nd=r.nd||[0,1],L=cm*UPC,P3=e,P2=[e[0]+nd[0]*L*.3,e[1]+nd[1]*L*.3],P0=[e[0]+nd[0]*L*.3,e[1]+L],P1=[P0[0],P0[1]-L*.35],P=[P0,P1,P2,P3],C=[],W=[],w=(r.nw||3)*1.12;
-  for(let i=0;i<=24;i++){C.push(bz(P,i/24));W.push(w*(1.08-.08*i/24))}stemPoly(par,C,W,r.ncols||SG);if(STEML[sid])stemLeaves(par,P,sid,P0[1]+L,L*.3,0)};
+  for(let i=0;i<=24;i++){C.push(bz(P,i/24));W.push(w*(1.08-.08*i/24))}
+  /* GHI[sid].basal(par,P,L,w,side): the whole plant's leaves from the foot of the stem (sheets only), behind (-1) then in front (1) of it */
+  const bl=GHI[sid]&&GHI[sid].basal;if(bl)bl(par,P,L,W[0],-1);if(GHI[sid]&&GHI[sid].cut&&typeof svStemCut==='function')svStemCut(par,C,W,r.ncols||SG,(g2,C2,W2)=>stemPoly(g2,C2,W2,r.ncols||SG));else stemPoly(par,C,W,r.ncols||SG);if(STEML[sid])stemLeaves(par,P,sid,P0[1]+L,L*.3,0);if(bl)bl(par,P,L,W[0],1)};
 /* the bouquet's chance, old drawing against the new: ?rtest=1&rc=tulipe-simple~7:7,tulipe-simple~12:6 → for each life stage and vessel, the bouquet's
    seed once it is drawn, with the SVG heads off and on (the same: the composition does not move) */
 if(new URLSearchParams(location.search).get('rtest'))setTimeout(()=>{const Q=new URLSearchParams(location.search),rc=(Q.get('rc')||'tulipe-simple~7:7,tulipe-simple~12:6').split(',').map(x=>{const[a,b]=x.split(':');return[a,+b]}),out=[];
