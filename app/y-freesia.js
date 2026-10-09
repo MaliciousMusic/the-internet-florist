@@ -97,9 +97,10 @@ SV_HEAD['freesia']=frsSvg;
 const FRS_SC=['#33420c','#58691a','#869a30','#c2cf8a'];FRS_SC.sv={swell:.02,gloss:.32,red:'#9c9a2a',redF:.5,redA:.45};
 const FRS_SCB=FRS_SC.slice();FRS_SCB.sv={swell:.02,gloss:.32};
 /* the plant's wilt (the bouquet's WILT, GHI.wilt: the stem and the leaves; the spike sets it aside and fades by frsWiltF): the greens yellow slowly
-   (deduced: a cut freesia's stem stays green while its flowers dry), the rest as the flowers; the leaves yellow faster (frsLeafWilt) */
+   (deduced: a cut freesia's stem stays green while its flowers dry), the rest as the flowers; the leaves yellow faster (frsLeafWilt);
+   a bouquet drawn all faded (LIFE_ALL 'fane') keeps no green: the stem wilts as far as the rest */
 function frsPlantWilt(c,w){if(w<=0||typeof c!=='string'||c.length!==7||c[0]!=='#')return c;const[h,s]=h2l(c);
-  if(h>=55&&h<175&&s>.1)return typeof lifeCol==='function'?lifeCol(c,.45*w):c;return frsWiltCol(c,w)}
+  if(h>=55&&h<175&&s>.1)return typeof lifeCol==='function'?lifeCol(c,(typeof LIFE_ALL!=='undefined'&&LIFE_ALL==='fane'?1:.45)*w):c;return frsWiltCol(c,w)}
 const frsLeafWilt=(c,w)=>typeof lifeCol==='function'?lifeCol(c,.8*w):c;
 if(typeof GHI!=='undefined'&&GHI['freesia'])GHI['freesia'].wilt=frsPlantWilt;
 /* the leaves (photographs 86, 52, 56): two to four flat swords in one plane (distichous, equitant: each sheath folded round the stem inside the one

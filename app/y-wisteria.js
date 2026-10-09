@@ -16,11 +16,19 @@
    dried tissue of this colourway, mixed over fr). Read on photographs 4, 1, 3, 24 (bleu: pale standards, deep wings), 21 (the eye), 98, 85 (mauve),
    129 (white), 144 (the hue of the pink), 26 (the deep violet). Each colourway says in its comment: measured, derived or to confirm. */
 const GLY_CW={
-// SKU: W. floribunda 'Kyushaku' (= Multijuga): classes of photos 4, 1, 3, 24 (dark #4f3961 / mid #8f81a9 / pale #c5bbe0), the standards lightened to them (2026-10-09)
-  bleu:{fr:['#523d65','#82739b','#c0b5da','#d9d3eb','#eeebf6'],bk:['#453850','#5e576a','#9789ba','#aea3ce','#c3badb'],
-    wing:['#201434','#332052','#452b6f','#603c9b','#7960b9'],
-    keel:['#45365d','#574676','#665289','#8777a7','#a496c2'],bud:['#3a2a53','#493568','#58407e','#6e5992','#8977aa'],
-    lo:['#69567e','#7c6b93','#8f81a9','#a295bc','#b5aad0'],eye:'#c9ce7a'},
+// SKU: W. floribunda f. multijuga 'Kyushaku': MEASURED (2026-10-09) on the RHS photograph of the variety (elbo48036, N2: refcache/glycine/mes/kyu.py,
+// kyu2.py): violet pixels by lightness band, at the raceme's foot (open), body and tip (buds). Foot: #403250 #58466c #705d86 #897aa0 #a296b7 #bcb3cd
+// #d4cde1; body: #393151 #50456e #675c89 #7e76a1 #9a93b8 #b4b0ce #cccae1; tip: #343351 #4a496c #5d5c89 #7975a2 #8e8eb8. Standards #cac1d8 (foot,
+// h 263) -> #b9b6d3 (body, h 246); wings #563f78 -> #55417f; tip buds h 240, darker and bluer; eye #bcb96b. The twins <ramp>T: the tip's tone (qT)
+  bleu:{fr:['#897aa0','#a296b7','#bcb3cd','#d4cde1','#ebe7f1'],frT:['#7e76a1','#9a93b8','#b4b0ce','#cccae1','#e2e1ef'],
+    bk:['#58466c','#705d86','#897aa0','#a296b7','#bcb3cd'],bkT:['#50456e','#675c89','#7e76a1','#9a93b8','#b4b0ce'],
+    wing:['#2c2040','#3f2e5c','#563f78','#6e5794','#8a76ae'],wingT:['#29254a','#3a3462','#4f4882','#67609e','#8580b8'],
+    keel:['#382c50','#4c3f6a','#625586','#7b6ea0','#978cba'],keelT:['#302d4c','#424066','#585683','#716f9f','#8d8cba'],
+    bud:['#26253c','#343351','#4a496c','#5d5c89','#7975a2'],budT:['#22223a','#30304e','#43436a','#565684','#6f6f9e'],
+    lo:['#58466c','#705d86','#897aa0','#a296b7','#bcb3cd'],loT:['#50456e','#675c89','#7e76a1','#9a93b8','#b4b0ce'],eye:'#bcb96b',qT:[.15,.85,2],
+    /* the shade deep inside the raceme (blue-violet, h 238, the RHS photo's inner florets) and the standards' lilac from floret to floret (photo:
+       h 246 to 268, some pinker, some bluer) */
+    deep:'#3c3f74',bv:[['#d2bedf',.4],['#b6bcdc',.4]]},
 // W. sinensis 'Prolific': measured classes dark #4c3459 / mid #88749f / pale #c6b4d8 (photos 98, 85; no photo named to the variety): provisional
   mauve:{fr:['#53375c','#806791','#c4aed2','#ddcee6','#efe8f3'],bk:['#423248','#574d5e','#9f84b0','#b9a1c7','#cbbad5'],
     wing:['#23102b','#3b1c48','#532766','#773892','#9056b6'],
@@ -60,18 +68,20 @@ const GLY_GENES={n:[[60,.25],[68,.35],[76,.25],[84,.15]],
   head:{H:[.94,1.06],op:[-.02,.02],div:[134,141],phi0:[0,6.28],sw:[-1,1],sd:'sd'}};
 const GLY_S={layout:'pendante',floret:'papillon',genes:GLY_GENES,mat:glyMat,wilt:glyWiltF,dryW:[.5,.35],
   dry:['#3a2c24','#5a4636','#7e6a56','#a28e78','#c4b49e'],dryTint:.2,stem:['#3c3a26','#62643c','#8c8e62'],
-  lay:{h:[.6,.4,0,.85],hw:.1,hang:.3,sway:.25,droop:.3,z:[.05,.97],dense:.38,L:.095,taper:.4,ped:[.8,.28],pedO:.6,pedTh:[.32,1.25],pedD:.7,pedW:.05,th:[.12,.42,1.4],hang2:1.1,hangW:[.15,.45],rr:[.008,.003],grow:.8,core:.5,coreV:.04,coreN:9},
+  lay:{h:[.6,.4,0,.85],hw:.1,hang:.3,sway:.25,droop:.3,z:[.05,1],dense:.44,L:.095,taper:.4,tip:[.55,.62,1.1],ped:[.8,.28],pedO:.6,pedTh:[.32,1.25],pedD:.7,pedW:.05,th:[.12,.42,1.4],hang2:1.1,hangW:[.15,.45],rr:[.008,.003],grow:.8,core:.2,coreV:.15,coreF:'bk',coreN:9},
   law:{order:'acro',t0:.12,spread:.95,w:.2,ws:.75,late:.3},
   fl:{budAt:.2,bud:[.4,.42],budHW:1.85,bbow:.32,cal:[.24,.05,.1],std:{z:.2,y:.06,h:.9,w:1.12,a0:[.15,1.2],a1:[.25,2.1],ap:1.3,cup:.16,arc:[1.15,.6],notch:.07,wav:.04},
-    wing:{z:[.2,.84],y:[.03,.3],h:.3,x:[.035,.08]},keel:{z1:1,y:.3,h:.18,x:.045,up:.16},eye:[.34,.3],dec:[.2,.35],dry:[.55,.3],shed:[.8,.3,.35],fold:.55,sag:.5,green:[.85,.04,.25,.5]},
-  lit:[.02,.95],ao:.48,budget:[110,260],cost:{2:[8,3],1:[3,2]},bq:{n:.4,L:1.36,slabs:2,budget:[64,140]}};
+    wing:{z:[.2,.84],y:[.03,.3],h:.3,x:[.035,.08]},keel:{z1:1,y:.3,h:.18,x:.045,up:.16},eye:[.34,.3],
+    /* in volume (kit S.fl.vol): rim, body, shaded half, the pale fan of the claw (photo RHS: the standard white-lilac at its foot round the eye), wings shaded and lit */
+    vol:{rim:.2,mid:[.8,.1],hf:.45,rev:1,th:[.045,.6],claw:[.56,.44,.2],eyeL:5,wsh:[.75,.3,.18],whl:[.5,.35,.22],bh:[.45,.4,.22]},dec:[.2,.35],dry:[.55,.3],shed:[.8,.3,.35],fold:.55,sag:.5,green:[.85,.04,.25,.22]},
+  lit:[.02,.95],ao:.48,dep:{t:[.35,.7],v:[-.18,-.07,.06],k:[.45,.18,0]},budget:[110,260],cost:{2:[8,3],1:[3,2]},bq:{n:.62,L:1.32,slabs:2,budget:[64,140],lay:{core:.55,coreV:.2}}};
 /* the wisteria raceme: in the frame B, its foot at O (o.foot) or its middle there; o.hang: B[2] is the way it leaves its spur (the plant), else the
    sheets' frame turned over (the raceme hangs away from the view's axis); the ground's direction handed to the layout */
 function glySvg(par,B,O,D,cwId,op,seed,wl,o){o=o||{};const cwx=(typeof CW_L97GL!=='undefined'&&CW_L97GL.find(x=>x.id===cwId))||{id:cwId,c:'#8a7ec8'},
     Bf=o.hang?B:[B[0],V3.sc(B[1],-1),V3.sc(B[2],-1)],S=Object.assign({},GLY_S,{lay:Object.assign({},GLY_S.lay,{down:[-Bf[0][1],-Bf[1][1],-Bf[2][1]]})});
   /* in a bouquet (o.bq, DET 1): fewer, larger florets, painted by slabs, within a small budget (three strands of two or three racemes a stem) */
   /* (o.bk < 1, a later raceme of the same stem: fewer florets again, a little larger, so that it stays full) */
-  if(o.bq){const B2=GLY_S.bq,kb=o.bk<1?.35+.65*o.bk:1;S.genes=Object.assign({},GLY_GENES,{n:GLY_GENES.n.map(([a,p])=>[Math.round(a*B2.n*kb),p])});S.lay.L*=B2.L/Math.sqrt(kb);S.slabs=B2.slabs;S.budget=B2.budget;S.fl=Object.assign({},GLY_S.fl,{q1:1e9,foot:GLY_FOOT,std:Object.assign({},GLY_S.fl.std,{qw:GLY_FOOT[4]})})}
+  if(o.bq){const B2=GLY_S.bq,kb=o.bk<1?.35+.65*o.bk:1;S.genes=Object.assign({},GLY_GENES,{n:GLY_GENES.n.map(([a,p])=>[Math.round(a*B2.n*kb),p])});S.lay.L*=B2.L/Math.sqrt(kb);S.slabs=B2.slabs;S.budget=B2.budget;if(B2.lay)Object.assign(S.lay,B2.lay);S.fl=Object.assign({},GLY_S.fl,{q1:1e9,foot:GLY_FOOT,std:Object.assign({},GLY_S.fl.std,{qw:GLY_FOOT[4]})})}
   return grDraw(par,Bf,O,D,S,cwx,op,seed,wl==null?glyLife(o):wl,o)}
 /* (in a bouquet the florets are drawn without their calyx: the kit's S.fl.foot [open, bud, width, y] x L, a stroke in the calyx's paint from the
    pedicel's tip into the corolla's foot (past the calyx: the out-of-zoom outlines cut its point), under it, else the larger florets of a later raceme float off their pedicels: QA, 18 pieces on seeds 1 to 8) */
@@ -122,7 +132,17 @@ function glySvLeaf(og,Ll,np,lf,c,lim){const H=og.H,U=og.U,at0=t=>V3.add(V3.add(V
     for(const h of[-1,1]){const f=fold+h*tw,ed=TS.map((t,j)=>{const w=l.W*.5*grProf(GLY_LFP,t);return V3.add(V3.add(mid[j],V3.sc(l.ac,h*w*Math.cos(f))),V3.sc(l.Nl,w*Math.sin(f)))});
       let n=V3.nz(V3s(V3.sc(l.Nl,Math.cos(f)),V3.sc(l.ac,h*Math.sin(f))));const up=n[2]>=0;if(!up)n=V3.sc(n,-1);
       const lam=Math.max(0,Math.min(1,(V3.dot(n,LT)+.35)/1.35)),v=(det?[.3,.52,.78]:[.45,.45,.72]).reduce((a,x)=>a+(lam>x?1:0),0),j4=TS.length>>1;
-      halves.push({z:(mid[j4][2]+ed[j4][2])/2,pts:mid.concat(ed.slice().reverse()).map(sc2),col:TN[up?0:1][v],mid:mid.map(sc2),up,vz:n[2]})}}
+      const hv={z:(mid[j4][2]+ed[j4][2])/2,pts:mid.concat(ed.slice().reverse()).map(sc2),col:TN[up?0:1][v],mid:mid.map(sc2),up,vz:n[2]};
+      /* in zoom, each half in volume (photographs 12, 13: the upper face mid green and a little glossy, the lower paler and greyer, its veins
+         raised): the groove of the fold darker along the midrib, a sheen across the lit upper half, and the side veins, arching toward the tip
+         and fading before the margin (paler below) */
+      if(det){const eP=(t,k)=>{const w=l.W*.5*grProf(GLY_LFP,t)*k,
+            m0=V3.add(V3.add(l.b,V3.sc(l.d,l.L*t)),V3.sc(Gv,l.L*(.1+.25*fd)*t*t));return sc2(V3.add(V3.add(m0,V3.sc(l.ac,h*w*Math.cos(f))),V3.sc(l.Nl,w*Math.sin(f))))},
+          T1=[.04,.2,.4,.6,.8,.95];
+        hv.band=grQ(grCCW(T1.map(t=>eP(t,0)).concat(T1.slice().reverse().map(t=>eP(t,.34+.1*Math.sin(Math.PI*t))))));hv.bc=TN[up?0:1][0];
+        if(up&&lam>.42)hv.hl=grQ(grCCW([.16,.32,.5,.68].map(t=>eP(t,.4)).concat([.68,.5,.32,.16].map(t=>eP(t,.8)))));
+        hv.vn=[.18,.31,.44,.57,.7].map(t=>grQo([eP(t,0),eP(t+.07,.5),eP(Math.min(.95,t+.15),.86)])).join('')}
+      halves.push(hv)}}
   /* out of zoom (a bouquet): one outline per leaflet, in whole units, lit as its more visible half */
   /* (in a bouquet, as one outline in whole units: a leaflet seen edge-on would close to nothing on a row and break (QA 2026-10-09): a row
      closed to under half a unit across its midrib has one margin moved a unit off the other; and each leaflet gets its petiolule, a stroke of the rachis
@@ -141,6 +161,10 @@ function glySvLeaf(og,Ll,np,lf,c,lim){const H=og.H,U=og.U,at0=t=>V3.add(V3.add(V
     for(let s=0;s<ns;s++){const H2=halves.slice(Math.floor(s*halves.length/ns),Math.floor((s+1)*halves.length/ns)),by={};
       for(const h of H2)(by[h.col]=by[h.col]||[]).push(h);
       for(const col in by)E('path',{d:by[col].map(h=>h.lo?grPI(grCCW(h.pts)):grQ(grCCW(h.pts))).join(''),fill:col},g);
+      if(det){for(const u of[1,0]){const Hu=H2.filter(h=>!!h.up===!!u&&h.band);if(!Hu.length)continue;
+          E('path',{d:Hu.map(h=>h.band).join(''),fill:Hu[0].bc,'fill-opacity':.38},g);
+          const hl=Hu.filter(h=>h.hl).map(h=>h.hl).join('');if(hl)E('path',{d:hl,fill:TN[0][3],'fill-opacity':.42},g);
+          E('path',{d:Hu.map(h=>h.vn).join(''),fill:'none',stroke:u?mix(c,'#eef2c4',.3):mix(c2,'#f6f8ec',.45),'stroke-width':svF(RW*.32),'stroke-linecap':'round','stroke-opacity':u?.55:.75},g)}}
       const md=H2.filter(h=>h.up).map(h=>grQo(h.mid.slice(0,-1))).join('');if(md&&det)E('path',{d:md,fill:'none',stroke:mc,'stroke-width':svF(RW*.55),'stroke-linecap':'round','stroke-opacity':.7},g);
       if(s===0){const R2=[];for(let i=0;i<=8;i++)R2.push(sc2(at(i/8)));E('path',{d:grQo(R2),fill:'none',stroke:rc,'stroke-width':svF(RW),'stroke-linecap':'round'},g)}}};
   return[{z:zR,cast:false,fn}]}
@@ -211,8 +235,31 @@ function glyTwine(P,d,len,ph){const ax=V3.nz(V3.add(d,[0,.25,0])),X=V3.nz(Math.a
 /* every shoot's tip (the apex hook; len drawn by the caller, as the old l97Twine): a loose twining tip, kept above the mouth in a bouquet */
 function glySvTip(og,lim,len){const r=svRng(svSeed('glytip',Math.round(og.pos[0]*8),Math.round(og.pos[1]*8))),pts=glyTwine(og.pos,og.H||[0,1,0],(len||UPC*7)*.75,r()*6.28);
   if(lim!=null&&l45Low(pts)<-lim+2)return null;const P=pts.map(q=>[q[0],-q[1]]),n=P.length-1,w0=Math.max(.6,(og.w||UPC*.3)*.45),z=pts.reduce((s,q)=>s+q[2],0)/pts.length;
+  /* the young leaves the twining tip unfolds (photographs 12, 32: a shoot's tip is no bare tendril, wisteria has none): alternate, smaller toward
+     the tip, their rachis leaning out and down, the leaflets folded along their midrib (narrow) and drooping, bronze green and silky; private
+     seed, no chance drawn; a leaf that would reach under the mouth is left out */
+  const yl=glyYoung(pts,len||UPC*7,r,lim);
   return[{z,cast:false,fn:par=>{E('path',{d:polyRibbon(P,i=>Math.max(.4,w0*(1-.7*i/n))),fill:GLY_YWOOD[0]},par);
-    if(DET>=1.5)E('path',{d:polyRibbon(P,i=>Math.max(.18,w0*.45*(1-.7*i/n)),i=>w0*.3),fill:GLY_YWOOD[2],opacity:.8},par)}}]}
+    if(DET>=1.5)E('path',{d:polyRibbon(P,i=>Math.max(.18,w0*.45*(1-.7*i/n)),i=>w0*.3),fill:GLY_YWOOD[2],opacity:.8},par);
+    if(yl.r)E('path',{d:yl.r,fill:'none',stroke:GLY_YLF[0],'stroke-width':svF(Math.max(.4,w0*.35)),'stroke-linecap':'round'},par);
+    if(yl.a)E('path',{d:yl.a,fill:GLY_YLF[1]},par);if(yl.b)E('path',{d:yl.b,fill:GLY_YLF[2]},par);
+    if(yl.v&&DET>=1.5)E('path',{d:yl.v,fill:'none',stroke:GLY_YLF[3],'stroke-width':svF(Math.max(.25,w0*.14)),'stroke-opacity':.7},par)}}]}
+/* young leaves (shoot tips): rachis, shaded side, lit side, silky midrib */
+const GLY_YLF=['#5e5a36','#6f6a3e','#9c9462','#c9c39c'];
+function glyYoung(pts,len,r,lim){const n=pts.length-1,hi=DET>=1.5,at=hi?[.28,.5,.7,.86]:[.4,.72],o={r:'',a:'',b:'',v:''},sc2=p=>[p[0],-p[1]],Dn=[0,-1,0];
+  at.forEach((s,k)=>{const i=Math.max(1,Math.min(n-1,Math.round(s*n))),T=V3.nz(V3s(pts[i+1],pts[i-1])),sg=k%2?1:-1,Sd0=V3.cr(T,[0,0,1]),Sd=V3.sc(V3l(Sd0)>.1?V3.nz(Sd0):[1,0,0],sg),
+      lr=len*(.5-.16*s)*(.85+.3*r()),dr=V3.nz(V3.add(V3.add(V3.sc(Sd,.8),V3.sc(T,.45)),V3.sc(Dn,.3))),
+      rp=t=>V3.add(V3.add(pts[i],V3.sc(dr,lr*t)),V3.sc(Dn,lr*.2*t*t)),np=hi?3:2,LF=[];
+    for(let j=0;j<=np;j++){const term=j===np,t=term?1:.3+.6*j/np,b=rp(t),u0=V3.nz(V3s(rp(Math.min(1,t+.05)),rp(Math.max(0,t-.05))));
+      for(const sd of term?[0]:[-1,1]){const sx0=V3.cr(u0,[0,0,1]),sx=V3l(sx0)>.1?V3.nz(sx0):[1,0,0],a=term?0:.75+.2*r(),
+          u=V3.nz(V3.add(V3.add(V3.sc(u0,Math.cos(a)),V3.sc(sx,sd*Math.sin(a))),V3.sc(Dn,.55+.3*r()))),s2=V3.nz(V3.cr(u,[0,0,1])),
+          ll=lr*(term?.42:.36)*(.85+.25*r()),ww=ll*.38,q=[b,V3.add(V3.add(b,V3.sc(u,ll*.3)),V3.sc(s2,ww*.5)),V3.add(V3.add(b,V3.sc(u,ll*.68)),V3.sc(s2,ww*.4)),
+            V3.add(b,V3.sc(u,ll)),V3.add(V3.add(b,V3.sc(u,ll*.68)),V3.sc(s2,-ww*.4)),V3.add(V3.add(b,V3.sc(u,ll*.3)),V3.sc(s2,-ww*.5))];
+        LF.push({q,lit:sd*sg>=0,m:[b,V3.add(b,V3.sc(u,ll*.85))]})}}
+    const all=[rp(0),rp(1)].concat(...LF.map(x=>x.q));if(lim!=null&&l45Low(all)<-lim+2)return;
+    const R2=[];for(let t=0;t<=4;t++)R2.push(sc2(rp(t/4)));o.r+=grQo(R2);
+    for(const x of LF){const d=grQ(grCCW(x.q.map(sc2)));if(x.lit&&hi)o.b+=d;else o.a+=d;o.v+=grQo(x.m.map(sc2))}});
+  return o}
 /* a spur of the old wood (the knob a raceme hangs from; s97a.js, in place of l39Ovoid when SV_ON): at DET 1.5 l39Ovoid with its scale scars
    inked darker (legible); in a bouquet (DET 1) the same knob as one cheap outline (a few points, half-unit spline), a tenth of its bytes; no
    chance drawn either way */
