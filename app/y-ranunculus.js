@@ -253,4 +253,4 @@ if(typeof CW_RCLA!=='undefined'){const NM={blanc:'Blanc',creme:'Crème','rose-pa
     SW={blanc:'#f7f3ea',creme:'#f4ead0','rose-pale':'#dfa2b9',rose:'#d876a4',fuchsia:'#e2457b',rouge:'#b40d11',bordeaux:'#2d1118',orange:'#f97a0d','orange-brule':'#e04a20',jaune:'#febc08',
       abricot:'#f4b090',peche:'#f6c4a6',prune:'#4d1630',lilas:'#c8a8d8',picotee:'#f6e8dc',bicolore:'#f5d02e'};
   for(const w of CW_RCLA)if(NM[w.id])Object.assign(w,{n:NM[w.id],c:SW[w.id]});
-  if(!CW_RCLA.some(w=>w.id==='corail'))CW_RCLA.push({id:'corail',n:'Corail',c:'#ed3b24',late:1})}
+  if(!CW_RCLA.some(w=>w.id==='corail'))CW_RCLA.push({id:'corail',n:'Corail',c:'#ed3b24',late:2})}
