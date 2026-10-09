@@ -141,8 +141,9 @@ function irisSvgPut(par,B,O,D,cw,op,o){const n=op<.3?2:17;let s=0;for(let i=0;i<
 /* ---------- the plant: a round, smooth, yellowish green stem; narrow channelled grey-green leaves sheathing its lower part ---------- */
 const IRIS_SC=['#44582e','#6e8a48','#9fb36e','#d8e2a4'];IRIS_SC.sv={swell:.03,gloss:.32};
 const IRIS_SW=.1;
-/* the stem fading: it stays green (339), barely dulled (the leaves yellow from their tips, svStrapLeaf's own rule) */
-function irisStemCols(wl){if(!(wl>0)||typeof lifeCol!=='function')return IRIS_SC;const c=IRIS_SC.map(x=>lifeCol(x,.12*wl));c.sv=IRIS_SC.sv;return c}
+/* the stem fading: it stays green (339), barely dulled (the leaves yellow from their tips, svStrapLeaf's own rule); in a bouquet drawn all
+   faded (LIFE_ALL 'fane') it wilts with the rest */
+function irisStemCols(wl){if(!(wl>0)||typeof lifeCol!=='function')return IRIS_SC;const c=IRIS_SC.map(x=>lifeCol(x,(typeof LIFE_ALL!=='undefined'&&LIFE_ALL==='fane'?.85:.12)*wl));c.sv=IRIS_SC.sv;return c}
 if(typeof GHI!=='undefined'&&GHI['iris-hollandais'])Object.assign(GHI['iris-hollandais'],{sc:IRIS_SC});
 /* the leaves (295, 313, 336, 292, 376, 351, 331): linear, channelled, glaucous, MOSTLY BASAL: they sheathe the foot of the stem and rise close along it to
    about half its height, the stem bare above; on a cut stem 2 to 4 are left, the lowest ones longest; often one short clasping leaf higher up */

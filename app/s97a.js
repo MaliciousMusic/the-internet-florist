@@ -133,7 +133,7 @@ function l97EnkianthusPlant(g,t,o){const cw=cwPick(CW_L97EN,o),op=l97C(o.op??1,.
    (W. sinensis 15–30 cm, opening all at once; W. floribunda 30–80 cm, opening from the base) of fragrant pea flowers (2 cm): the round standard reflexed back toward the rachis,
    pale with a yellow-green blotch, the wings and keel deeper, pointing out and down; a cup-shaped calyx; buds grey-green and velvety, pointed, at the tip.
    Colours: mauve ('Prolific'), violet-blue ('Kyushaku', = Multijuga), white ('Shiro-noda'), pink ('Hon-beni', = Rosea), deep violet double ('Yae-kokuryu', = Violacea Plena); cut vines 40–100 cm ---------- */
-const CW_L97GL=[{id:'mauve',ret:1,n:'Mauve (Prolific)',c:'#a18eb6',s:'#c6b4d8',k:'#88749f'},{id:'bleu',ret:1,n:'Violet bleuté (Kyushaku)',c:'#8a7ec8',s:'#b8b0e0',k:'#7c6cc0'},
+const CW_L97GL=[{id:'mauve',ret:1,n:'Mauve (Prolific)',c:'#a18eb6',s:'#c6b4d8',k:'#88749f'},{id:'bleu',n:'Violet bleuté (Kyushaku)',c:'#8a7ec8',s:'#b8b0e0',k:'#7c6cc0'},
   {id:'blanc',ret:1,n:'Blanc (Shiro-noda)',c:'#ebe3d3',s:'#f7efe0',k:'#d9d0bd',w:1},{id:'rose',ret:1,n:'Rose (Hon-beni)',c:'#b290a7',s:'#dbbdd1',k:'#97728b'},
   {id:'violet',ret:1,n:'Violet profond double (Yae-kokuryu)',c:'#9484b0',s:'#c3b6d4',k:'#756298'}];
 /* one pea flower at the end of its pedicel E: its direction fa (out and down), the standard turned up behind, the wings and keel forward; a bud, a pointed velvet spindle */
