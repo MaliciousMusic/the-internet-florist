@@ -60,7 +60,9 @@ function lathyMat(cwx){if(LATHY_M[cwx.id])return LATHY_M[cwx.id];const C=LATHY_C
 /* the colour of a fading sweet pea (no sharp photograph of a faded one: see etat.md, « Devinettes »): the petals go papery and dull; pinks and reds
    tarnish toward a greyed mauve (their pigment blues as it ages), blues and violets go grey, whites to ivory then parchment, all browning at the end;
    the greens by the common rule */
-function lathyWiltCol(c,w){if(w<=0||typeof c!=='string'||c.length!==7||c[0]!=='#')return c;const[h,s,l]=h2l(c);
+/* (a bouquet drawn all faded, LIFE_ALL 'fane': the petals go on to a papery buff-mauve, nothing stays lavender) */
+function lathyWiltCol(c,w){const o=lathyWiltCol0(c,w);return w>0&&o!==c&&typeof LIFE_ALL!=='undefined'&&LIFE_ALL==='fane'&&!(h2l(c)[0]>=65&&h2l(c)[0]<175)?mix(o,'#9c8274',.5*svSm(w/.8)):o}
+function lathyWiltCol0(c,w){if(w<=0||typeof c!=='string'||c.length!==7||c[0]!=='#')return c;const[h,s,l]=h2l(c);
   if(l<.08)return c;
   if(h>=65&&h<175&&s>.08)return typeof lifeCol==='function'?lifeCol(c,w):c;
   if(s<.14||l>.9){let o=mix(c,'#ece2c6',.6*w);if(w>.5)o=mix(o,'#c2a684',(w-.5)*.9);return o}

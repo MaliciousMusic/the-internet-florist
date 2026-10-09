@@ -46,6 +46,10 @@ function muWiltCol(c,w){if(w<=0||typeof c!=='string'||c.length!==7||c[0]!=='#')r
   if(h>=300||h<20)return l2h(h,s*(1-.4*w),l*(1-.28*w));
   return l2h(h+(32-h)*.3*w,s*(1-.32*w),l*(1-.15*w))}
 if(typeof GHI!=='undefined'&&GHI['muscari'])GHI['muscari'].wilt=muWiltCol;
+/* a bouquet drawn all faded (LIFE_ALL 'fane'): the dried urns go on from the violet black to a papery violet-brown, the fresh blue no longer
+   showing through (dryTint): nothing stays blue */
+const MU_DRYF=['#1c1418','#30232a','#46363a','#62504e','#867066'],MU_MF={};
+function muMatF(cw){const m=muMat(cw);if(typeof LIFE_ALL==='undefined'||LIFE_ALL!=='fane')return m;const id=cw&&cw.id;return MU_MF[id]||(MU_MF[id]=Object.assign({},m,{dry:MU_DRYF,dryTint:.05}))}
 /* how far it has wilted: the sheets' override, the bouquet's element, else the bouquet's life stage */
 function muLife(o){if(typeof SVA_LIFE!=='undefined'&&SVA_LIFE!=null)return SVA_LIFE;if(o&&o.life&&o.life.w!=null)return o.life.w;
   return typeof LIFE!=='undefined'&&LIFE&&typeof lifeWEl==='function'?lifeWEl(LIFE,lifeProfile({sid:'muscari',rec:{}})):0}
@@ -54,7 +58,7 @@ const MU_GENES={n:[[34,.15],[38,.3],[42,.3],[46,.25]],
   tep:{dphi:[-.35,.35],dth:[-.16,.16],dL:[.9,1.08],dt:[-.05,.05],roll:[-.3,.3],roll2:[0,1.047],W:[.92,1.08],ph:[0,6.28]},
   head:{phi0:[0,6.2832],div:[134,141],H:[.93,1.06],op:[-.03,.03],sd:'sd'}};
 /* the grape hyacinth for the kit */
-const MU_S={layout:'dresse',floret:'urne',genes:MU_GENES,mat:muMat,wilt:muWiltCol,
+const MU_S={layout:'dresse',floret:'urne',genes:MU_GENES,mat:muMatF,wilt:muWiltCol,
   dry:['#140f1e','#261e3a','#3a2f55','#58497a','#857aa8'],dryTint:.18,stem:['#2a2438','#4a4660','#7a7898'],
   /* the raceme lengthens as it opens, and again as it fades (h, hw); urns from the foot to 90 % of the height, crowded upward; buds standing up
      (the lower ones outward: thq), open urns hanging (more at the foot: nod), the dried straight down; the pedicel leaves the axis at 70 degrees at

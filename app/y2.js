@@ -57,7 +57,8 @@ function svaMat(cw){if(SVA_CW[cw.id])return SVA_CW[cw.id];const S=SVA_SPEC[cw.id
 function svaWiltCol(c,w){if(w<=0||typeof c!=='string'||c.length!==7||c[0]!=='#')return c;const[h,s0,l]=h2l(c);
   if(s0<.12){if(l>.78){let o=mix(c,'#f0e6c8',.75*w);if(w>.5)o=mix(o,'#c9ab7c',(w-.5)*.7);return o}return typeof lifeCol==='function'?lifeCol(c,w):c}
   if(h>=55&&h<175)return typeof lifeCol==='function'?lifeCol(c,w):c;
-  if(h>=200&&h<300)return l2h(h+(306-h)*.6*w,s0*(1-.22*w),l+(.6-l)*.22*w);
+  /* (a bouquet drawn all faded, LIFE_ALL 'fane': the blues, past purple, go on to a dull papery mauve-brown; nothing stays blue or violet) */
+  if(h>=200&&h<300){const o=l2h(h+(306-h)*.6*w,s0*(1-.22*w),l+(.6-l)*.22*w);return typeof LIFE_ALL!=='undefined'&&LIFE_ALL==='fane'?mix(o,'#6a5052',.55*svSm(w/.8)):o}
   if(h>=300||h<20)return l<.5?l2h(h<20?h-10*w:h+(350-h)*.4*w,s0*(1-.15*w),l*(1-.32*w)):mix(c,'#c49aa6',.5*w);
   return typeof lifeCol==='function'?lifeCol(c,w):c}
 if(typeof GHI!=='undefined'&&GHI['anemone-coronaria'])GHI['anemone-coronaria'].wilt=svaWiltCol;
