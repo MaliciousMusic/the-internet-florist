@@ -647,7 +647,8 @@ def step_census(ctx):
         raw = {norm(x.get('nom', '')): x for x in jload(d + '/census.json', {}).get('cultivars', [])}
         lot = []
         for x in ctx.st.get('skus', []):
-            r = raw.get(norm(x.get('cultivar') or ''))
+            k = norm(x.get('cultivar') or '')
+            r = raw.get(k) or next((v for n, v in raw.items() if k and n and (n in k or k in n)), None)  # same loose match as sku_cultivar
             if r is not None:
                 lot.append(dict(r, consigne='SKU du bouquet %s sous le niveau B : cherche par WebSearch ciblée au moins une photo nommée N2 ou N3 de ce cultivar '
                                          '(obtenteur, arboretum, jardin botanique, collection nationale, société du genre, pépinière spécialisée) et une seconde photo '
