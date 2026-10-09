@@ -128,8 +128,11 @@ function grRaceme(k,B,O0,H,S,m,g,st,o){const lay=GR_LAYOUT[S.layout](S,g,H,st),f
     O=o.foot?O0:V3.add(O0,toV(B,ax.mid?V3.sc(ax.mid,-1):[0,0,-H*.42])),hv=p=>{const v=toV(B,p);return[v[0]+O[0],v[1]+O[1],v[2]+O[2]]},sc=v=>[v[0],-v[1]],
     prims=[],CC={},q10=x=>Math.round(x*10)/10,DW=S.dryW||[.42,.4];
   /* colours: a ramp read at v, then the species' decline and the dried tissue at the floret's w, quantized so neighbours share their paint */
-  const colAt=(v,w,ramp,gb)=>{v=q10(v);w=q10(w);gb=q10(gb||0);const key=ramp+v+'|'+w+'|'+gb;if(CC[key])return CC[key];
-    let c=grRamp(m[ramp]||m.fr,v);if(gb>0)c=mix(c,grRamp(m.grn,v),gb);if(w>0){c=S.wilt(c,svSm(w/.55)*.9);const dr=svSm((w-DW[0])/DW[1]);if(dr>0)c=mix(c,mix(grRamp(m.dry||S.dry,v),grRamp(m.fr,v*.6),m.dryTint??S.dryTint??.14),dr)}return CC[key]=c};
+  /* (m.qT [from q, to q, steps], optional: the raceme's tone along its length; a ramp with a twin `<ramp>T` (the tip's) is mixed toward it from
+     q0 to q1 of the axis, in so many steps (shared paints); materials without qT: unchanged) */
+  const QT=m.qT,colAt=(v,w,ramp,gb,qq)=>{v=q10(v);w=q10(w);gb=q10(gb||0);const rT=QT&&m[ramp+'T'],t=rT?Math.round(svSm(((qq||0)-QT[0])/(QT[1]-QT[0]))*QT[2])/QT[2]:0;
+    const key=ramp+v+'|'+w+'|'+gb+(t?'|'+t:'');if(CC[key])return CC[key];
+    let c=grRamp(m[ramp]||m.fr,v);if(t)c=mix(c,grRamp(rT,v),t);if(gb>0)c=mix(c,grRamp(m.grn,v),gb);if(w>0){c=S.wilt(c,svSm(w/.55)*.9);const dr=svSm((w-DW[0])/DW[1]);if(dr>0)c=mix(c,mix(grRamp(m.dry||S.dry,v),grRamp(m.fr,v*.6),m.dryTint??S.dryTint??.14),dr)}return CC[key]=c};
   /* a fixed colour of the material (throat, midrib, margin, anthers) at a floret's w */
   const wcol=(c0,w)=>{w=q10(w);if(w<=0)return c0;const key='w'+c0+w;if(CC[key])return CC[key];let c=S.wilt(c0,svSm(w/.55)*.9);const dr=svSm((w-DW[0])/DW[1]);if(dr>0)c=mix(c,grRamp(m.dry||S.dry,h2l(c0)[2]),dr);return CC[key]=c};
   const lam=n=>Math.max(0,(V3.dot(n,LIGHT)+.35)/1.35);
@@ -149,7 +152,7 @@ function grRaceme(k,B,O0,H,S,m,g,st,o){const lay=GR_LAYOUT[S.layout](S,g,H,st),f
     for(const[,f]of sc2){if(f.lod!==1)continue;const cf=cost[2][bud(f)?1:0]-cost[1][bud(f)?1:0];if(tot+cf<=lim){f.lod=2;tot+=cf}}}
   /* the context handed to a floret */
   const c={m,P:m.fl?Object.assign({},S.fl,m.fl):S.fl,S,det,H,o,put:p=>prims.push(p),d2:P=>grQ(grCCW(P.map(sc))),l2:P=>grQo(P.map(sc)),
-    col:(v,f,ramp,gb)=>colAt(v,f.w,ramp||'fr',gb),wc:(c0,f)=>wcol(c0,f.w),lit:n=>Math.max(0,Math.min(1,(S.lit||[.08,.92])[0]+(S.lit||[.08,.92])[1]*(.6*lam(n)+.4*c.f.pl)*c.f.ao))};
+    col:(v,f,ramp,gb)=>colAt(v,f.w,ramp||'fr',gb,f.q),wc:(c0,f)=>wcol(c0,f.w),lit:n=>Math.max(0,Math.min(1,(S.lit||[.08,.92])[0]+(S.lit||[.08,.92])[1]*(.6*lam(n)+.4*c.f.pl)*c.f.ao))};
   const setF=f=>{c.f=f;c.V=p=>V3.add(f.b,V3.add(V3.add(V3.sc(f.X,p[0]),V3.sc(f.Y,p[1])),V3.sc(f.Z,p[2])));c.Vd=p=>V3.add(V3.add(V3.sc(f.X,p[0]),V3.sc(f.Y,p[1])),V3.sc(f.Z,p[2]));c.down=f.down;c.eye=f.eye;c.bend=0};
   /* the axis (its foot continues the stem) and the dark core inside the florets */
   /* clusters (a layout's ax.cl, [{i:[floret indices]}]: the panicle's cymes) are drawn whole, far to near, each over its blob (the floret's
@@ -180,7 +183,7 @@ function grRaceme(k,B,O0,H,S,m,g,st,o){const lay=GR_LAYOUT[S.layout](S,g,H,st),f
   /* the core: the shadow among the florets (a body round the axis, half as wide as they reach) */
   /* (a layout's ax.core: its own body, the hull of these points in the head's frame, painted at ax.coreV of the ramp; with ax.coreB, a list of
      such bodies, overlapping lumps, one path: the hanging raceme's shade breaks between its florets instead of reading as a column) */
-  if(ax.core){const gb=1-svSm(st.op/.5);prims.push({d:(ax.coreB?ax.core:[ax.core]).map(Q=>grQ(grCCW(svSimp(hull2(Q.map(p=>sc(hv(p)))),H*.008)))).join(''),f:colAt(ax.coreV??.24,st.wl*.8,ax.coreR&&gb>.5?ax.coreR:'fr',gb*(ax.coreG??.6))})}
+  if(ax.core){const gb=1-svSm(st.op/.5);prims.push({d:(ax.coreB?ax.core:[ax.core]).map(Q=>grQ(grCCW(svSimp(hull2(Q.map(p=>sc(hv(p)))),H*.008)))).join(''),f:colAt(ax.coreV??.24,st.wl*.8,ax.coreR&&gb>.5?ax.coreR:(ax.coreF||'fr'),gb*(ax.coreG??.6))})}
   else{const lo=fl.filter(f=>f.w<.55);if(lo.length>11){const z0=Math.min(...lo.map(f=>f.pos[2]))+H*.02,z1=Math.max(...lo.map(f=>f.pos[2])),pts=[];
       const reach=z=>{let s=0,nn=0;for(const f of lo)if(Math.abs(f.pos[2]-z)<H*.12){s+=f.L*(f.o>.22?.5:.8)*Math.sin(Math.acos(Math.max(-1,Math.min(1,f.dir[2]))));nn++}return nn?s/nn:0};
       for(let i=0;i<=6;i++){const z=z0+(z1-z0)*i/6,r=ax.r0+reach(z)*.26*Math.sin(Math.PI*(.12+.76*i/6));for(let j=0;j<12;j++){const a=j/12*6.2832;pts.push(sc(hv([Math.cos(a)*r,Math.sin(a)*r,z])))}}
@@ -557,7 +560,10 @@ GR_LAYOUT.pendante=(S,g,H,st)=>{const P=S.lay,n=g.n,fl=[],Hf=st.Hf||H,ns=24,dn=V
       phi=(g.phi0||0)+i*(g.div||137.5)*Math.PI/180+(gt.dphi||0),rd=V3.nz(V3.add(V3.sc(N1,Math.cos(phi)),V3.sc(B1,Math.sin(phi)))),
       rk=grRank(S.law,q),lw=grLaw(S.law,rk,st,gt.dt),
       gr=svSm(1-(S.law.t0+S.law.spread*rk+(gt.dt||0)-Math.min(1.2,st.op+(S.law.late||0)*wl))/(P.grow||.8)),
-      L=Hf*P.L*(1-P.taper*q)*(gt.dL||1),
+      /* (P.tip [from q, how much smaller, power], optional: the raceme drawn out to a slender tip, its last florets (buds) and their pedicels
+         shrinking fast past q, close round the axis) */
+      tk=P.tip?1-P.tip[1]*Math.pow(svSm((q-P.tip[0])/(1-P.tip[0])),P.tip[2]||1):1,
+      L=Hf*P.L*(1-P.taper*q)*(gt.dL||1)*tk,
       thB=P.th[0]+(P.th[1]-P.th[0])*gr,th=Math.max(.05,thB+(P.th[2]-thB)*svSm((lw.o-.1)/.6)+(gt.dth||0)-(P.hang2||0)*svSm((lw.w-(P.hangW||[.3])[0])/((P.hangW||[0,.5])[1]))),
       rh0=V3s(rd,V3.sc(dn,V3.dot(rd,dn))),rh=V3l(rh0)>.08?V3.nz(rh0):rd,
       dir=V3.nz(V3.add(V3.sc(rh,Math.sin(th)),V3.sc(dn,Math.cos(th)))),dors=V3.nz(V3s(V3.sc(rh,Math.cos(th)),V3.sc(dn,Math.sin(th)))),
@@ -576,8 +582,9 @@ GR_LAYOUT.pendante=(S,g,H,st)=>{const P=S.lay,n=g.n,fl=[],Hf=st.Hf||H,ns=24,dn=V
         ao=cN?(pxHashS(i,5,g.sd||5)-.5)*r*.5:0,ag=pxHashS(i,7,g.sd||5)*6.2832,c0=V3.add(p,V3.add(V3.sc(N1,Math.cos(ag)*ao),V3.sc(B1,Math.sin(ag)*ao))),R1=[];
       for(let j=0;j<10;j++){const a=j/10*6.2832;R1.push(V3.add(c0,V3.add(V3.sc(N1,Math.cos(a)*r),V3.sc(B1,Math.sin(a)*r))))}ring.push(R1)}
     if(cN)for(let i=0;i<nr;i++)core.push(ring[i].concat(ring[i+1]));else core=[].concat(...ring)}
+  /* (lay.coreF, optional: the ramp the fresh core is painted with, default fr) */
   /* (no core: an empty list, never the kit's straight core along z, which would stick out of a hanging raceme as a bar) */
-  return{fl,ax:{z0:0,z1:H,r0:rad(0),r1:rad(1),path,mid:[(x0+x1)/2,(y0+y1)/2,(z0+z1)/2],core:core||[],coreB:cN>0||!core,coreV:P.coreV}}};
+  return{fl,ax:{z0:0,z1:H,r0:rad(0),r1:rad(1),path,mid:[(x0+x1)/2,(y0+y1)/2,(z0+z1)/2],core:core||[],coreB:cN>0||!core,coreV:P.coreV,coreF:P.coreF}}};
 /* ---------- the pea flower (wisteria): the calyx, a cup; the banner (standard) broad and notched, rising from its claw and bending back, cupped,
    its two halves lit apart, the eye at its foot; the two wings side by side round the keel, bulging outward; the keel under them, its tip
    turned up. The bud a pointed pod on its calyx (grPeaBud). Fallen (S.fl.shed), the calyx alone and a stub of style. Decline: the banner folds
@@ -588,6 +595,9 @@ GR_LAYOUT.pendante=(S,g,H,st)=>{const P=S.lay,n=g.n,fl=[],Hf=st.Hf||H,ns=24,dn=V
    outline); colours eye, style, ped. Levels: 2 calyx, banner, its shaded half, eye, two wings, keel; 1 calyx, banner, wings and keel in one; 0
    one outline. ---------- */
 const GR_SP=[[0,.12],[.08,.2],[.2,.55],[.38,.86],[.55,1],[.72,.97],[.86,.82],[.95,.58],[1,.34]];
+/* a view-space outline shrunk by k toward its centre moved o of its radius toward the light (LIGHT, view space): the washes of a floret in volume */
+function grPapShr(Pv,k,o){const n=Pv.length;if(!n)return Pv;let cx=0,cy=0,r=0;for(const p of Pv){cx+=p[0];cy+=p[1]}cx/=n;cy/=n;for(const p of Pv)r=Math.max(r,Math.hypot(p[0]-cx,p[1]-cy));
+  const ln=Math.hypot(LIGHT[0],LIGHT[1])||1,ox=LIGHT[0]/ln*r*o,oy=LIGHT[1]/ln*r*o;return Pv.map(p=>[cx+(p[0]-cx)*k+ox,cy+(p[1]-cy)*k+oy,p[2]||0])}
 GR_FLORET.papillon=(c,f,lod)=>{const P=c.P,gt=f.gt,L=f.L,dec=svSm((f.w-P.dec[0])/P.dec[1]),dry=svSm((f.w-P.dry[0])/P.dry[1]),
     sdk=Math.floor((gt.ph||0)*1e4)+f.i*7,shed=P.shed&&f.w>P.shed[0]+P.shed[1]*pxHashS(f.i,11,sdk),cal=P.cal,ey=c.eye,tol=Math.max(.08,L*.02),
     sideE=V3.nz(V3s(ey,V3.sc([0,0,1],ey[2]))),nS=V3l(sideE)>.1?V3.nz(c.Vd(sideE)):c.Vd([1,0,0]),v0=c.lit(nS),
@@ -629,6 +639,38 @@ GR_FLORET.papillon=(c,f,lod)=>{const P=c.P,gt=f.gt,L=f.L,dec=svSm((f.w-P.dec[0])
         hh=L*Kl.h*.5*Math.pow(sn,.7),xw=L*Kl.x*Math.pow(sn,.8);for(const sx of[-1,1]){let p=[sx*xw*(1-.3*u*u),y+u*hh,z];if(sag)p=V3.add(p,V3.sc(c.down,L*sag*.35*v*v));o.push(c.V(p))}}return o},
     hullD=P2=>c.d2(svSimp(hull2(P2),tol));
   const zCal=c.V([0,0,L*cal[0]*.5])[2],zStd=c.V(C[3])[2],zW=s=>c.V([s*L*(Wg.x[0]+Wg.x[1]*.6),L*(Wg.y[0]+Wg.y[1])*.5,L*(Wg.z[0]+Wg.z[1])*.5])[2],zK=c.V([0,L*(Wg.y[0]+Kl.y*.6),L*(Wg.z[0]+Kl.z1)*.5])[2];
+  /* (P.vol, optional: the floret in volume, washes of flat paint laid one over another (shared paints: a bouquet's slabs merge them). The
+     banner's face: its outline at the rim's tone (rim, darker), its body (mid [k, o]: the outline shrunk by k toward a point o of its radius
+     toward the light), its shaded half (hf, opacity), the pale fan of its claw (claw [half width, height on the banner, + lightness]) and the eye;
+     its back: one tone and the shaded half. The wings and keel: their body, a shade away from the light (wsh [k, o, - lightness]) and a highlight
+     toward it (whl [k, o, + lightness]). Level 0: the banner and the wings one tone each; out of zoom (q1) the calyx left out and the wings and keel one body. Species without
+     vol: unchanged) */
+  const VO=P.vol;
+  if(VO){const q1m=!!(P.q1&&!c.det&&L<P.q1),tq=Math.max(.4,L*.05),pth=Pv=>q1m?grQI(grCCW(svSimp(Pv.map(sc0),tq))):c.d2(svSimp(Pv,tol)),
+      /* (VO.rev, optional: each half of the banner painted by the face it turns to the view: seen from its side, the half folded toward the eye
+         shows its inner face (the revers), the other its back; else the darker half a wash over the banner) */
+      shade=fc=>{const n1=lv(nh(1)),n2=lv(nh(-1)),dk=n1[0]<n2[0]?1:-1,ld=Math.min(n1[0],n2[0]);let dn=0;
+        if(VO.rev)for(const[s,n]of[[1,n1],[-1,n2]])if(n[1]!==frS){c.put({d:half(s),f:c.col(n[0],f,n[1]?'fr':'bk')});if(s===dk)dn=1}
+        if(!dn&&Math.abs(n1[0]-n2[0])>.05)c.put({d:half(dk),f:c.col(ld,f,fc),fo:VO.hf||.5})},
+      /* (VO.th [x L, below which |view z| of the banner's normal]: seen edge-on, the banner's outline stroked so wide, its petal's thickness and
+         rolled margin: darker on its face, the inner face's pale lip on its back; nothing seen face-on) */
+      ezN=Math.abs(V3.nz(c.Vd(Nn[3]))[2]),thW=VO.th&&!q1m?L*VO.th[0]*svSm((VO.th[1]-ezN)/VO.th[1]):0,thk=(p,col)=>{if(thW>.15){p.s=col;p.sw=svF(thW)}c.put(p)};
+    const banner=()=>{const bo=edge(1).concat([SP(.55,nv),nch,SP(-.55,nv)],edge(-1).reverse()).map(c.V);
+      if(!frS){thk({d:pth(bo),f:c.col(lS,f,'bk')},c.col(Math.min(1,lS+.12),f,'fr'));if(!q1m&&lod>1)shade('bk');return}
+      if(!lod){c.put({d:pth(bo),f:c.col(lS,f,'fr')});return}
+      thk({d:pth(bo),f:c.col(lS-VO.rim,f,'fr')},c.col(lS-VO.rim,f,'fr'));c.put({d:pth(grPapShr(bo,VO.mid[0],VO.mid[1])),f:c.col(lS,f,'fr')});if(!q1m&&lod>1)shade('fr');
+      if(e>.25&&dry<.5){const K=VO.claw,cw=[];for(let a=0;a<=8;a++){const t=a/8*Math.PI;cw.push(c.V(V3.add(SPv(K[0]*Math.cos(t),K[1]*Math.sin(t)),V3.sc(Nn[1],L*.005))))}
+        c.put({d:pth(cw),f:c.col(Math.min(1,lS+K[2]),f,'fr')});
+        if(!q1m||L>(VO.eyeL||6)){const E2=P.eye||[.38,.2],k2=E2[1]/.2;
+          c.put({d:pth([[0,.02],[-.2*k2,.1],[-.12*k2,.26],[0,E2[0]],[.12*k2,.26],[.2*k2,.1]].map(([u,v])=>c.V(V3.add(SPv(u,v),V3.sc(Nn[1],L*.01))))),f:c.wc(c.m.eye,f)})}}},
+      body=(P2,lw,rp)=>{const H2=hull2(P2);c.put({d:pth(H2),f:c.col(lw,f,rp)});if(!lod)return;c.put({d:pth(grPapShr(H2,VO.wsh[0],-VO.wsh[1])),f:c.col(lw-VO.wsh[2],f,rp)});
+        c.put({d:pth(grPapShr(H2,VO.whl[0],VO.whl[1])),f:c.col(Math.min(1,lw+VO.whl[2]),f,rp)})},
+      parts=[{z:zStd,fn:banner}];
+    if(!q1m)parts.push({z:zCal,fn:()=>c.put({d:calD(1),f:c.col(v0*.82,f,'cal')})});
+    if(lod>1&&!q1m){for(const s of[-1,1])parts.push({z:zW(s),fn:()=>body(wingP(s),lv([s,.15,0])[0],'wing')});
+      parts.push({z:zK-L*.01,fn:()=>{const[lk]=lv([0,1,.2]);c.put({d:hullD(keelP()),f:c.col(lk,f,'keel')})}})}
+    else parts.push({z:(zW(-1)+zW(1))/2,fn:()=>body(wingP(-1).concat(wingP(1),keelP()),lv([0,.6,.8])[0]*.9,'wing')});
+    parts.sort((a,b)=>a.z-b.z);for(const p of parts)p.fn();return}
   if(lod===0){const wp=wingP(-1).concat(wingP(1));
     /* (P.q1: below this length, out of zoom, the floret one hull of whole units: a bouquet's few pixels) */
     if(P.q1&&!c.det&&L<P.q1){const tq=Math.max(.5,L*.07),Sq=svSimp(edge(1).concat([SP(.55,nv),nch,SP(-.55,nv)],edge(-1).reverse()).map(c.V).map(sc0),tq);
@@ -652,8 +694,10 @@ function grPeaBud(c,f,lod){const P=c.P,cal=P.cal,gb=f.gb??0,gr=f.gr??1,Lb=f.L*(P
     cf=t=>f.L*(.7+.3*gr)*(cal[1]+(cal[2]-cal[1])*Math.pow(t,.7)),calD=c.d2(svSimp(grRevO(c,zc,cf,[0,.4,.8,1],1,null),tol)),
     prof=P.bprof||[[0,.45],[.12,.78],[.35,1],[.6,.9],[.8,.6],[.93,.3],[1,.06]],rf=t=>W*.5*grProf(prof,t);
   const V0=c.V,z0=zc*.55;c.V=p=>V0([p[0],p[1],p[2]+z0]);grBend(c,Lb*.8,(P.bbow||0)*(.4+.6*gr));
-  const body=c.d2(svSimp(grRevO(c,Lb,rf,lod>0?GR_T2:GR_T0,1,null),tol)),bc=c.col(v0*.85,f,'bud',gb),cc=c.col(v0*.8,f,'cal',gb*.7);
-  const pod=()=>{c.put({d:body,f:bc});if(lod>1&&gb<.9)c.put({d:c.d2(svSimp(grRevO(c,Lb,t=>t<.5?rf(.5)*.2:rf(t)*1.01,[.5,.62,.74,.86,.94,1],1,null),tol)),f:c.col(v0*.6,f,'bud',gb*.6)})};
+  const bp=svSimp(grRevO(c,Lb,rf,lod>0?GR_T2:GR_T0,1,null),tol),body=c.d2(bp),bc=c.col(v0*.85,f,'bud',gb),cc=c.col(v0*.8,f,'cal',gb*.7);
+  const pod=()=>{c.put({d:body,f:bc});if(lod>1&&gb<.9)c.put({d:c.d2(svSimp(grRevO(c,Lb,t=>t<.5?rf(.5)*.2:rf(t)*1.01,[.5,.62,.74,.86,.94,1],1,null),tol)),f:c.col(v0*.6,f,'bud',gb*.6)});
+    /* (P.vol.bh [k, o, + lightness], optional: a highlight on the pod, its outline shrunk toward the light) */
+    const BH=P.vol&&P.vol.bh;if(BH&&lod>0)c.put({d:c.d2(grPapShr(bp,BH[0],BH[1])),f:c.col(Math.min(1,v0*.85+BH[2]),f,'bud',gb)})};
   if(lod===0){c.put({d:P.q1&&!c.det&&f.L<P.q1?(f.L<5?grPI:grQI)(grCCW(svSimp(grRevO(c,Lb,rf,GR_T0,1,null),Math.max(.5,Lb*.12)).map(sc0))):body,f:bc});return}
   if(ey[2]>0){c.put({d:calD,f:cc});pod()}else{pod();c.put({d:calD,f:cc})}}
 /* an outline as a polygon of whole units in relative moves: the cheapest path, for florets of a few pixels (screen points) */
