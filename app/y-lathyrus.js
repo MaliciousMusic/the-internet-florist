@@ -50,11 +50,11 @@ function lathyMat(cwx){if(LATHY_M[cwx.id])return LATHY_M[cwx.id];const C=LATHY_C
     K=Object.assign({c:mix(S.c,'#f6f2ea',.72),t:mix(W.c,'#ffffff',.3)},C.kee),vein=C.vein||l2h(h2l(S.c)[0],Math.min(1,h2l(S.c)[1]*1.1),h2l(S.c)[2]*.72),
     mot=C.mot||(cwx.edge?{k:'lisere',c:cwx.edge,w:.012,v0:.3,op:.9,on:['std','win']}:null);
   const std={st:[[0,mix(S.b,'#e4ead0',.45)],[.1,S.b],[.3,mix(S.b,S.c,.72)],[.52,S.c],[.84,S.c],[1,S.e]],bst:[[0,mix(S.bk,'#cdd6b4',.45)],[.28,S.bk],[1,mix(S.bk,S.e,.3)]],
-      shade:S.sh,lite:S.li,bshade:mix(S.sh,'#6a5a6a',.2),blite:mix(S.bk,'#ffffff',.4),rim:mix(S.e,'#ffffff',.3),vein,bvein:mix(S.bk,S.sh,.3),cast:mix(S.sh,'#000000',.45)},
+      shade:S.sh,lite:S.li,bshade:mix(S.sh,'#6a5a6a',.2),blite:mix(S.bk,'#ffffff',.4),rim:mix(S.e,S.sh,.3),vein,bvein:mix(S.bk,S.sh,.3),cast:mix(S.sh,'#000000',.45)},
     win={st:[[0,mix(W.c,'#f4f0e6',.45)],[.25,mix(W.c,'#ffffff',.12)],[.55,W.c],[1,W.e]],bst:[[0,mix(W.bk,'#f0ece2',.4)],[.4,W.bk],[1,mix(W.bk,W.e,.3)]],
-      shade:W.sh,lite:W.li,bshade:mix(W.sh,'#6a5a6a',.2),blite:mix(W.bk,'#ffffff',.4),rim:mix(W.e,'#ffffff',.3),vein:mix(W.c,W.sh,.35),bvein:mix(W.bk,W.sh,.3),cast:mix(W.sh,'#000000',.45)},
+      shade:W.sh,lite:W.li,bshade:mix(W.sh,'#6a5a6a',.2),blite:mix(W.bk,'#ffffff',.4),rim:mix(W.e,W.sh,.3),vein:mix(W.c,W.sh,.35),bvein:mix(W.bk,W.sh,.3),cast:mix(W.sh,'#000000',.45)},
     kee={st:[[0,'#eef0dc'],[.35,K.c],[.8,mix(K.c,K.t,.6)],[1,K.t]],bst:[[0,'#e8ecd4'],[.5,K.c],[1,K.t]],shade:mix(K.t,'#4a3a4a',.5),lite:'#ffffff',bshade:mix(K.t,'#4a3a4a',.45),
-      blite:'#ffffff',rim:'#ffffff',vein:K.t,bvein:K.t,cast:'#3a3040'},
+      blite:'#ffffff',rim:mix(K.t,'#4a3a4a',.3),vein:K.t,bvein:K.t,cast:'#3a3040'},
     cal=Object.assign({c:'#6f8c4c',lt:'#a4bc82',dk:'#3f5a2c',hair:'#e6ecd8'},C.cal),ped=Object.assign({c:'#6a8a4a',lt:'#a8c08a',dk:'#3e5a2c',hair:'#e2e8d4'},C.ped);
   return LATHY_M[cwx.id]={std,win,kee,cal,ped,pod:{c:'#7c9c58',lt:'#b4cc90',dk:'#4a6634',hair:'#e8eed8'},mot}}
 /* the colour of a fading sweet pea (no sharp photograph of a faded one: see etat.md, « Devinettes »): the petals go papery and dull; pinks and reds
@@ -64,8 +64,10 @@ function lathyWiltCol(c,w){if(w<=0||typeof c!=='string'||c.length!==7||c[0]!=='#
   if(l<.08)return c;
   if(h>=65&&h<175&&s>.08)return typeof lifeCol==='function'?lifeCol(c,w):c;
   if(s<.14||l>.9){let o=mix(c,'#ece2c6',.6*w);if(w>.5)o=mix(o,'#c2a684',(w-.5)*.9);return o}
-  if(h>=200&&h<300){let o=l2h(h+(255-h)*.2*w,s*(1-.62*w),l+(.62-l)*.3*w);if(w>.5)o=mix(o,'#a89aa4',(w-.5)*.9);if(w>.7)o=mix(o,'#bfae94',(w-.7)*1.6);return o}
-  if(h>=300||h<30){const h2=h>=300?h:h+360;let o=l2h(h2+(300-h2)*.35*w,s*(1-.55*w),l+(.55-l)*.25*w);if(w>.45)o=mix(o,'#9a8088',(w-.45)*.9);if(w>.7)o=mix(o,'#b49a80',(w-.7)*1.5);return o}
+  if(h>=200&&h<300){let o=l2h(h+(255-h)*.2*w,s*(1-.62*w),l+(.52-l)*.3*w);if(w>.5)o=mix(o,'#a89aa4',(w-.5)*.9);if(w>.7)o=mix(o,'#a3a2b4',(w-.7)*1.2);return o}
+  /* (v2-3) a saturated red or cerise darkens to a dull bordeaux (fanaison: « rouge cerise qui fonce », « bordeaux terne et fripé »; 150) */
+  if((h>=330||h<20)&&l<.6&&s>.35){const h2=h>=330?h:h+360;let o=l2h(h2+(345-h2)*.5*w,s*(1-.45*w),l*(1-.38*w));if(w>.6)o=mix(o,'#5a3438',(w-.6)*.8);return o}
+  if(h>=300||h<30){const h2=h>=300?h:h+360;let o=l2h(h2+(300-h2)*.35*w,s*(1-.55*w),l+(.55-l)*.25*w);if(w>.45)o=mix(o,'#9a8088',(w-.45)*.9);if(w>.7)o=mix(o,'#a48292',(w-.7)*1.4);return o}
   let o=l2h(h-(h-15)*.3*w,s*(1-.5*w),l*(1-.15*w));if(w>.5)o=mix(o,'#a07a62',(w-.5)*.9);return o}
 if(typeof GHI!=='undefined'&&GHI['pois-de-senteur'])GHI['pois-de-senteur'].wilt=lathyWiltCol;
 function lathyLife(o){if(typeof SVA_LIFE!=='undefined'&&SVA_LIFE!=null)return SVA_LIFE;if(o&&o.life&&o.life.w!=null)return o.life.w;
@@ -73,9 +75,9 @@ function lathyLife(o){if(typeof SVA_LIFE!=='undefined'&&SVA_LIFE!=null)return SV
 /* ---------- the genes: per floret (size, standard's width and length, frills, fold, hood, tilt, roll, wings' spread, nod, opening, asymmetry),
    per raceme (number of florets, spacing, pedicels, lean and arch of the rachis, first side, shade; node of the leaf, wings' plane, leaf's turn) ---------- */
 const LATHY_GENES={n:[[2,.1],[3,.33],[4,.4],[5,.17]],
-  tep:{dS:[.94,1.06],sW:[.92,1.08],sL:[.94,1.06],ruf:[.6,1.4],rufPh:[0,6.28],rufN:[6,9,'r'],fold:[.7,1.3],hood:[.7,1.3],tilt:[-1,1],roll:[-.12,.12],
+  tep:{dS:[.94,1.06],sW:[.92,1.08],sL:[.94,1.06],ruf:[.6,1.4],rufPh:[0,6.28],rufN:[5,7,'r'],fold:[.7,1.3],hood:[.7,1.3],tilt:[-1,1],roll:[-.12,.12],
     wsp:[.85,1.15],nod:[-.12,.12],opd:[-.04,.04],asym:[-.05,.05],crk:[0,6.28],sd:'sd'},late:{},
-  head:{sp:[.58,.72],pedL:[.32,.42],lean:[.05,.22],arch:[-.05,.2],bend:[-.12,.12],side:[-1,1],dh:[-4,4],ds:[-.05,.05],dl:[-.02,.02],node:[.3,.42],wing:[.2,1],leaf:[0,6.28],sd:'sd'}};
+  head:{sp:[.52,.68],pedL:[.32,.42],lean:[.05,.22],arch:[-.05,.2],bend:[-.12,.12],side:[-1,1],dh:[-4,4],ds:[-.05,.05],dl:[-.02,.02],node:[.3,.42],wing:[.2,1],leaf:[0,6.28],sd:'sd',vine:[1,1,.15]}};
 const lathyGenes=s=>svGenes(s,LATHY_GENES);
 /* ---------- SVP_ODO: the sweet pea, Spencer type (only what differs from SVP_DEF) ---------- */
 const SVP_ODO={genes:lathyGenes,mat:lathyMat};
@@ -94,26 +96,31 @@ SV_HEAD['pois-de-senteur']=lathySvg;
 /* ---------- the plant (497, 539, 357, 554): a cut stem, winged and downy, carrying at one node a leaf (stipules, winged petiole, one pair of leaflets,
    a three-branched coiling tendril); from that node the round downy peduncle rises bare to the raceme. The old peaPlant's skeleton and chance are
    kept to the draw (rtest): the peduncle is its lower chain, the raceme is set at its cut and leans as its upper chain did ---------- */
-const LATHY_SC=['#4d6b3a','#6a8a4c','#9dbb84','#d4e2bc'];LATHY_SC.sv={hair:'#e8eedf',hairK:2.2,swell:.03,gloss:.3};
+const LATHY_SC=['#4d6b3a','#6a8a4c','#9dbb84','#d4e2bc'];LATHY_SC.sv={hair:'#e8eedf',hairK:2.2,swell:.03,gloss:.3,ribs:[-.42,-.12,.22,.5]};
 function lathyStemCols(wl){if(!(wl>0)||typeof lifeCol!=='function')return LATHY_SC;const c=LATHY_SC.map(x=>lifeCol(x,.3*wl));c.sv=LATHY_SC.sv;return c}
 if(typeof GHI!=='undefined'&&GHI['pois-de-senteur'])Object.assign(GHI['pois-de-senteur'],{sc:LATHY_SC});
 /* the leaf and the main stem (x the floret's width D, relais 3 on 539, 591, 314, 554 and the Flora's ranges): main stem .1 D round (4.6 mm), its two
    wings .045 D each (2 mm, 314, 554); the peduncle above the node .076 D (591, 206: .07 to .1); leaflet 1.45 D, L/W 2.1; petiole .72 D; tendril
    rachis .75 D, branches 1.75 D, coils .12 to .2 D (539); stipules .46 D x .08 D, half-arrow (Flora: 1.5-2.5 cm); next node 1.9 D lower */
 const LATHY_LEAF={wing:'#a9c68b',edge:'#4f6e3a',ww:.045,core:.1,inter:1.9};
+/* (v2) the cut stem of the trade is a BARE PEDUNCLE (v2a: 209, 210, 145, 66, 201, 211: 2 to 6 florets, no leaf above the water, a short coiled point at
+   the top); the leafy, winged vine is the garden plant: kept as a rare variant (gene vine, 15 %; ?vine=0|1 forces it on the sheets).
+   Scale: the standard 3.9 cm wide (hands on 217, 169, 148: 3 to 3.6 cm, Spencer cut flowers larger; RHS up to 5.5 cm for the whole flower: +-25 %),
+   i.e. .43 of the Dutch iris (9 cm) */
+const LATHY_D=3.9,LATHY_VINE=typeof location!=='undefined'&&/[?&]vine=[01]/.test(location.search)?+/[?&]vine=([01])/.exec(location.search)[1]:null;
 /* the raceme put on a plant: its frame from the rachis' way Y and the face, the individual named by the old drawing's draws */
 function lathyRacemeAt(par,Y,face,O,D,cw,op,s,wl){let Z=V3s(face,V3.sc(Y,V3.dot(face,Y)));Z=V3l(Z)<1e-3?[0,0,1]:V3.nz(Z);
-  const cwx=(typeof CW_PEA!=='undefined'&&CW_PEA.find(x=>x.id===cw.id))||cw;return svPapRaceme(par,[V3.cr(Y,Z),Y,Z],O,D,SVP_ODO,cwx,op,svSeed('pois',cw.id,s),wl,{ped:0})}
+  const cwx=(typeof CW_PEA!=='undefined'&&CW_PEA.find(x=>x.id===cw.id))||cw;return svPapRaceme(par,[V3.cr(Y,Z),Y,Z],O,D,SVP_ODO,cwx,op,svSeed('pois',cw.id,s),wl,{ped:0,up:[0,1,0]})}
 function lathyPlantSv(g,t,o){if(!(typeof SV_ON!=='undefined'&&SV_ON))return peaPlant(g,t,o);
-  const cw=o.cw||cwNear(CW_PEA,o.col)||CW_PEA[0],op=Math.max(.05,Math.min(1,o.op??1)),D=4.6*UPC*R(.94,1.06),k=G(g),wl=lathyLife(o),sc=lathyStemCols(wl);
+  const cw=o.cw||cwNear(CW_PEA,o.col)||CW_PEA[0],op=Math.max(.05,Math.min(1,o.op??1)),Dk=4.6*UPC*R(.94,1.06),D=Dk*LATHY_D/4.6,k=G(g),wl=lathyLife(o),sc=lathyStemCols(wl);
   /* on the lip: the old head (lsHeadS and its chance), the raceme in place of its flower (two draws, as peaFlower took) */
-  if(o.rim){const r=lsHeadS(k,o,{D,w:D*.06,cols:sc,op,rr:.3,nodes:0,lp:.5,flower:(par,B,O,D2,op2)=>{let s=0;for(let i=0;i<2;i++)s=(Math.imul(s,7919)+Math.floor(R(0,1)*1e6))>>>0;
-      return lathyRacemeAt(par,B[1],B[2],O,D2*.92,cw,op2,s,wl)}});open(k,t,1000,8,.3);return r}
+  if(o.rim){const r=lsHeadS(k,o,{D:Dk,w:D*.06,cols:sc,op,rr:.3,nodes:0,lp:.5,flower:(par,B,O,D2,op2)=>{let s=0;for(let i=0;i<2;i++)s=(Math.imul(s,7919)+Math.floor(R(0,1)*1e6))>>>0;
+      return lathyRacemeAt(par,B[1],B[2],O,D2*.92*LATHY_D/4.6,cw,op2,s,wl)}});open(k,t,1000,8,.3);return r}
   const B=frameOf(o,.3,true),up=B.upV?V3.nz([B.upV[0],B.upV[1],B.upV[2]||0]):[0,1,0],face=B[2];let U0=V3s(face,V3.sc(up,V3.dot(face,up)));if(V3l(U0)<1e-3)U0=[0,0,1];
-  const nf=op<.3?0:op<.7?2:Math.round(R(3,4)),n=nf+(op<.3?3:1),kr=B.reach?Math.min(1,Math.max(.2,B.reach*.4/(D*1.6))):1,sd=rnd()<.5?-1:1;
-  const rules={S:()=>[['F',{l:D*1.1*kr,w0:D*.095,w1:D*.084,e:.03}],['+',{a:sd*R(8,18)}],['A',{i:0}]],A:p=>{if(p.i>=n)return[['F',{l:D*.25,w1:D*.03}]];const fl=p.i<nf,age=fl?1-.1*p.i:.3-.2*(p.i-nf);
-    return[['F',{l:D*(p.i?.5:.15)*kr,w1:D*(.076-.006*p.i),e:-.02}],['[',{w:D*.035}],['/',{a:(p.i%2?90:-90)+R(-20,20)}],['&',{a:fl?52:35}],['F',{l:D*(fl?.42:.3),w1:D*.03,e:.06}],[fl?'K':'Kb',{age,i:p.i}],[']',{}],['A',{i:p.i+1}]]}};
-  const res=lsTurtle(lsDerive([['S',{}]],rules,n+3),{p:[0,0,0],H:up,U:U0,wig:.04,seg:D*.15,T:[0,1,0],e:.02,w:D*.07});for(const ch of res.chains)ch.c=sc;
+  const nf=op<.3?0:op<.7?2:Math.round(R(3,4)),n=nf+(op<.3?3:1),kr=B.reach?Math.min(1,Math.max(.2,B.reach*.4/(Dk*1.6))):1,sd=rnd()<.5?-1:1;
+  const rules={S:()=>[['F',{l:Dk*1.1*kr,w0:D*.095,w1:D*.084,e:.03}],['+',{a:sd*R(8,18)}],['A',{i:0}]],A:p=>{if(p.i>=n)return[['F',{l:Dk*.25,w1:D*.03}]];const fl=p.i<nf,age=fl?1-.1*p.i:.3-.2*(p.i-nf);
+    return[['F',{l:Dk*(p.i?.5:.15)*kr,w1:D*(.076-.006*p.i),e:-.02}],['[',{w:D*.035}],['/',{a:(p.i%2?90:-90)+R(-20,20)}],['&',{a:fl?52:35}],['F',{l:Dk*(fl?.42:.3),w1:D*.03,e:.06}],[fl?'K':'Kb',{age,i:p.i}],[']',{}],['A',{i:p.i+1}]]}};
+  const res=lsTurtle(lsDerive([['S',{}]],rules,n+3),{p:[0,0,0],H:up,U:U0,wig:.04,seg:Dk*.15,T:[0,1,0],e:.02,w:D*.07});for(const ch of res.chains)ch.c=sc;
   const main=res.organs.find(q=>q.t==='K')||res.organs.find(q=>q.t==='Kb'),apex=main.pos;
   /* the old drawing's draws: three per flower for its frame, two for its petals; the first three name the individual (buds only: D's own draw) */
   let s=0,j=0;for(const og of res.organs)if(og.t==='K')for(let i=0;i<5;i++){const x=R(0,1);if(j++<3)s=(Math.imul(s,7919)+Math.floor(x*1e6))>>>0}
@@ -124,7 +131,7 @@ function lathyPlantSv(g,t,o){if(!(typeof SV_ON!=='undefined'&&SV_ON))return peaP
   lsPlant(k,{chains:[low],organs:[{t:'R',pos:foot},{t:'N',pos:[0,0,0]}]},{O:[0,0,0],apex,cols:sc,organ:(og,pos)=>{
     if(og.t==='R')return{parts:[{z:3e4+pos[2],fn:par=>lathyRacemeAt(par,Y,face,pos,D,cw,op,s,wl)}]};
     /* the node with its leaf, on the stem below the neck; the wings from there down to the cut (in the vase, the lowest fifth is left out) */
-    if(og.t==='N'&&bl.L>D*1.5){const sN=Math.max(D*.6,bl.L*hg.node),s1=bl.L*(B.reach?.8:.98),wc=D*LATHY_LEAF.core,
+    if(og.t==='N'&&bl.L>D*1.5&&(LATHY_VINE!=null?LATHY_VINE:hg.vine)){const sN=Math.max(D*.6,bl.L*hg.node),s1=bl.L*(B.reach?.8:.98),wc=D*LATHY_LEAF.core,
         lc=Object.assign({},LATHY_LEAF,{wing:wl>0&&typeof lifeCol==='function'?lifeCol(LATHY_LEAF.wing,.3*wl):LATHY_LEAF.wing,core:[sc[0],sc[1],sc[2],sc.sv&&sc.sv.hair]}),
         parts=[{z:-1e4,fn:par=>svPapWings(par,bl,sN-wc*.3,s1,wc,D*LATHY_LEAF.ww,hg.wing,lc)}],nodes=[[sN,1]],s2=sN+D*LATHY_LEAF.inter*(.9+.2*hg.leaf/6.283);
       /* the leaf in whose axil the peduncle rises, and the next one down the main stem on the other side (alternate, two-ranked: 539, 357) */

@@ -17,7 +17,19 @@ const svPapLerp=(a,b,t)=>a+(b-a)*t;
    turned toward the inner face, radians: a folded bud standard ~1.4), cup (u^2), hood (margins curling in), rev (margins rolled back),
    ruf/rufN/rufPh (frills round the margin), crk/crkPh (crumple of the decline), wv/wk/wph (a slow wave along the margins), asym. */
 const SVPP_DEF={L:1,W:.6,wp:[[0,.2],[.3,.8],[.65,1],[1,.6]],tip:2,notch:0,vb:.7,P0:[0,0,0],d0:[0,0,1],A0:[1,0,0],a0:0,a1:0,aPow:1,s1:0,tw:0,
-  fold:0,cup:0,hood:0,rev:0,ruf:0,rufN:7,rufPh:0,rufC:.38,crk:0,crkPh:0,wv:0,wk:2,wph:0,limp:0,dn:[0,-1,0],asym:0};
+  fold:0,roll:0,rollK:1,cup:0,hood:0,rev:0,ruf:0,scal:0,rufN:7,rufPh:0,rufC:.38,crk:0,crkPh:0,wv:0,wk:2,wph:0,limp:0,dn:[0,-1,0],asym:0};
+/* (v2-4) the crumple of a declining petal, irregular (a real crumple has folds of different sizes and angles, a few sharp ones, never periodic
+   bands): five oblique folds of finite length whose place, angle, width, depth and kind (soft or sharp crease) come from the petal's gene ph,
+   over a slow uneven wave; the margins crumple more than the foot. Pure hash of ph: no draw from the floret's chance (rtest unchanged). */
+const svPapH=(a,k)=>{const x=Math.sin(a*12.9898+k*78.233)*43758.5453;return x-Math.floor(x)};
+function svPapCrk(u,v,ph){const y=v*1.6;let s=.3*Math.sin(u*2.1+y*2.6+ph*1.7)*Math.sin(y*3.3-u*1.4+ph);
+  for(let k=0;k<5;k++){const h=q=>svPapH(ph,k*8+q),th=(h(1)-.5)*2.3,c=Math.cos(th),sn=Math.sin(th),u0=(h(2)-.5)*1.5,y0=1.6*(.3+.62*h(3)),
+      d=(u-u0)*c-(y-y0)*sn,al=(u-u0)*sn+(y-y0)*c,w=.18+.24*h(4),len=.3+.55*h(5),a=(.35+.65*h(6))*(h(0)<.5?1:-1),e=Math.exp(-al*al/(len*len));
+    s+=a*e*(h(7)<.4?Math.exp(-1.7*Math.abs(d)/w):Math.exp(-d*d/(w*w)))}
+  return s*(.45+.55*Math.min(1,Math.abs(u)+.3*v))}
+/* the sharp creases of svPapCrk as (u,v) lines, drawn as fine shade lines on the standard (a crumple reads by a few clean folds) */
+function svPapCreases(ph){const out=[];for(let k=0;k<5;k++){const h=q=>svPapH(ph,k*8+q);if(h(7)>=.4)continue;const th=(h(1)-.5)*2.3,c=Math.cos(th),sn=Math.sin(th),u0=(h(2)-.5)*1.5,y0=1.6*(.3+.62*h(3)),len=(.3+.55*h(5))*.9,pl=[];
+    for(let i=0;i<=6;i++){const t=-len+2*len*i/6,b=.06*Math.sin(t/len*2.2+ph*3+k),u=u0+t*sn+b*c,v=(y0+t*c-b*sn)/1.6;if(Math.abs(u)<.94&&v>.12&&v<.96)pl.push([u,v])}if(pl.length>2)out.push(pl)}return out}
 function svPapPetal(o0){const o=Object.assign({},SVPP_DEF,o0),ns=18,sp=[],Dv=[],Av=[],Mv=[],hp=svPapProf(o.wp),ang=v=>o.a0+(o.a1-o.a0)*Math.pow(v,o.aPow);
   let d=V3.nz(o.d0),A=V3.nz(V3s(o.A0,V3.sc(d,V3.dot(o.A0,d)))),c=o.P0.slice();d=rotA(d,A,o.a0);
   const dn=V3.nz(o.dn);
@@ -30,13 +42,20 @@ function svPapPetal(o0){const o=Object.assign({},SVPP_DEF,o0),ns=18,sp=[],Dv=[],
     if(j)c=V3.add(c,V3.sc(du,o.L/ns));sp.push(c);Dv.push(du);Av.push(Au);Mv.push(V3.cr(du,Au))}
   const at=(X,v)=>{const x=Math.max(0,Math.min(1,v))*ns,j=Math.min(ns-1,Math.floor(x)),f=x-j;return V3.add(V3.sc(X[j],1-f),V3.sc(X[j+1],f))},
     Lu=u=>o.vb+(1-o.vb)*Math.pow(Math.max(0,1-Math.pow(Math.abs(u),o.tip)),1/o.tip)-o.notch*Math.exp(-u*u/.012),cf=Math.cos(o.fold),sf=Math.sin(o.fold),Wm=o.W/2;
-  return(u,v)=>{const vv=Math.max(0,Math.min(1,v*Lu(u))),c2=at(sp,vv),A2=V3.nz(at(Av,vv)),m2=V3.nz(at(Mv,vv)),au=Math.abs(u),
-      hw=Wm*hp(vv)*(1+o.asym*Math.sign(u)),x=au*hw,cy=(vv-o.rufC)/(1-o.rufC),r=Math.hypot(u,cy),th=Math.atan2(cy,u),
+  return(u,v)=>{let vv=Math.max(0,Math.min(1,v*Lu(u)));const cy0=(vv-o.rufC)/(1-o.rufC),r0=Math.hypot(u,cy0),th0=Math.atan2(cy0,u),
+      /* (v2) Spencer scallops: the margin waved IN the petal's plane too (138: 2 to 3 waves over the top seen from the face) */
+      sk=o.scal?1+o.scal*svSm((r0-.55)/.45)*Math.sin(o.rufN*th0+o.rufPh+.8*Math.sin(2.3*th0+o.rufPh)):1;
+    if(sk!==1&&vv>o.rufC)vv=Math.min(1,o.rufC+(vv-o.rufC)*sk);
+    const c2=at(sp,vv),A2=V3.nz(at(Av,vv)),m2=V3.nz(at(Mv,vv)),au=Math.abs(u),
+      hw=Wm*hp(vv)*(1+o.asym*Math.sign(u))*sk,x=au*hw,cy=(vv-o.rufC)/(1-o.rufC),r=Math.hypot(u,cy),th=Math.atan2(cy,u),
       ruf=o.ruf?o.ruf*Wm*svSm((r-.5)/.5)*Math.sin(o.rufN*th+o.rufPh+.8*Math.sin(2.3*th+o.rufPh)):0,
-      crk=o.crk?o.crk*hw*(.6*Math.sin(u*8.2+o.crkPh+vv*6.3)+.4*Math.sin(u*3.1-vv*9+2*o.crkPh))*svSm(vv/.2):0,
+      crk=o.crk?o.crk*hw*svPapCrk(u,vv,o.crkPh)*svSm(vv/.2):0,
       wv=o.wv?o.wv*hw*Math.pow(au,1.5)*Math.sin(o.wk*Math.PI*vv+o.wph+u*.8)*svSm(vv/.3):0,
-      y=x*sf+o.cup*u*u*hw+o.hood*hw*au*au*au*svSm((vv-.2)/.5)-o.rev*hw*au*au*au*au+ruf+crk+wv;
-    return V3.add(V3.add(c2,V3.sc(A2,Math.sign(u)*x*cf)),V3.sc(m2,y))}}
+      /* (v2-2) roll: each half bent in a true arc toward the inner face (a bud's shell: the standard's halves rounded over the wings and keel,
+         margins tucked under; rollK squeezes it sideways), then turned by fold */
+      rl=o.roll*au,xr=o.roll>1e-3?hw*Math.sin(rl)/o.roll*o.rollK:x,yr=o.roll>1e-3?hw*(1-Math.cos(rl))/o.roll:0,
+      y=xr*sf+yr*cf+o.cup*u*u*hw+o.hood*hw*au*au*au*svSm((vv-.2)/.5)-o.rev*hw*au*au*au*au+ruf+crk+wv;
+    return V3.add(V3.add(c2,V3.sc(A2,Math.sign(u)*(xr*cf-yr*sf))),V3.sc(m2,y))}}
 /* ---------- thin round organs (pedicels, rachis, the pod's beak): a lit band in two or three paths, hairs on its silhouette ----------
    C screen points, W widths, c=[shade, body, light, hair|null] */
 function svPapThin(par,C,W,c,o={}){const n=C.length,g=G(par);if(n<2)return g;const N=[],T=[];
@@ -65,39 +84,52 @@ function svPapBez(P,m){const out=[];for(let i=0;i<=m;i++){const t=i/m,u=1-t;out.
 /* ---------- the generic defaults (x R0 of the floret; angles in radians; [bud, open] pairs are blended by the unfolding o2) ---------- */
 const SVP_DEF={
   /* life of one floret: growth of the bud (size [at op 0, from, over]), unfolding of the standard, full reflex; decline and faded */
-  grow:[.4,.02,.5],unf:[.3,.45],full:[.7,.3],dec:[.12,.35],fan:[.5,.3],green:[.55,.04,.24],greenC:'#7f9a52',greenTip:.7,
+  grow:[.4,.02,.5],unf:[.3,.45],full:[.7,.3],dec:[.12,.35],fan:[.5,.3],green:[.32,.04,.24],greenC:'#7f9a52',greenTip:.85,
   /* the standard: length, width, outline, top, notch; its claw's foot; its midrib [bud, open] at the foot and the tip; fold, cup, hood, frills */
-  sL:1.62,sW:2,swp:[[0,.1],[.08,.2],[.18,.5],[.32,.8],[.5,.96],[.7,1],[.88,.92],[1,.7]],swpB:[[0,.3],[.08,.5],[.18,.7],[.32,.88],[.5,.98],[.7,1],[.88,.86],[1,.55]],sTip:2.2,sTipB:2.8,sNotch:.07,sVb:.72,sP0:[0,.03,-.04],
-  sA0:[.45,.95],sA1:[-.6,1.7],sPow:.8,sRefl:.15,sFold:[1.35,.3],sCup:[.05,.12],sHood:[.05,.35],sRuf:[.01,.05],sRufN:7,sWv:[.01,.03],
+  /* (v2-3) half-open (152, 141): the standard rises upright first (sRise: share of the unfolding) while its halves stay folded round the wings
+     (sFoldM: a fold bump [height, rise, fall start, fall span] over o2), then spreads; the bud an egg in profile (143, 149: H/L .6, rounder tip) */
+  sL:1.72,sW:2.1,swp:[[0,.1],[.08,.2],[.18,.44],[.32,.74],[.5,.94],[.7,1],[.88,.93],[1,.7]],swpB:[[0,.36],[.08,.62],[.18,.8],[.32,.93],[.5,1],[.68,.95],[.86,.76],[1,.4]],sTip:2.2,sTipB:2.1,sNotch:.07,sVb:.72,sP0:[0,.03,-.04],
+  sA0:[.4,1.2],sA1:[-.6,1.75],sPow:.8,sRefl:.15,sFold:[.1,.15],sFoldM:[.72,.33,.35,.5,.12],sRise:.55,sHoodW:[.12,.14],sRoll:[2.75,0],sRollK:[.62,1],sLB:.85,sWB:1,sCup:[.05,.12],sHood:[.05,.08],sRuf:[.01,.08],sScal:[0,.05],sRufN:7,sWv:[.01,.03],
   /* the wings: length, width, outline; first direction [bud, open] (x signed by side); bend out of plane [bud, open] at the tip; sickle; fold, cup */
-  wL:1.15,wW:1,wwp:[[0,.25],[.1,.45],[.3,.85],[.6,1],[.85,.9],[1,.6]],wTip:3.2,wVb:.65,wP0:[.06,.1,.06],
-  wD0:[[.12,-.15,1],[.46,-.64,.46]],wN0:[[.9,.3,.1],[.5,.1,.86]],wA1:[-.35,.08],wS1:[.15,.4],wFold:[.4,.3],wCup:[.45,.32],wEm:[.26,.3],
+  wL:1.66,wW:.95,wwp:[[0,.25],[.1,.45],[.3,.85],[.6,1],[.85,.88],[1,.5]],wTip:2.1,wVb:.65,wP0:[.1,.09,.04],
+  wD0:[[.1,-.1,1],[.38,-.1,.92]],wAx:[[-.05,1,-.05],[-.3,.94,-.1]],wA1:[-.1,.22],wS1:[.1,.15],wFold:[.3,.12],wCup:[.5,.38],wEm:[.42,.26],
   /* the keel: a boat (two halves folded up), its tip curving up into a beak */
-  kL:.95,kW:.42,kwp:[[0,.4],[.3,.85],[.6,1],[.85,.8],[1,.3]],kTip:1.6,kVb:.8,kP0:[0,-.08,0],kD0:[0,-.5,.86],kA1:-1.2,kFold:1.25,
+  kL:1.05,kW:.42,kwp:[[0,.4],[.3,.85],[.6,1],[.85,.8],[1,.3]],kTip:1.6,kVb:.8,kP0:[0,-.24,0],kD0:[0,-.45,.89],kA1:-1.2,kFold:1.25,
   /* the calyx: tube length, radius at its foot and mouth, teeth [upper, lower] length and half width at their foot, their spread [bud, open] */
   cL:.3,cR:[.1,.15],tL:[.28,.4],tW:.06,tSp:[[.18,.12],[.36,.26]],cGrow:[.62,.38],
   /* the decline and the faded floret: the standard falls forward over the wings and crumples, the wings hang, the young pod comes out of the keel */
-  dA1:[.35,.4],dFold:.35,dCrk:[.12,.5],dRev:[.2,.45],dShrink:[.32,.6],wLimp:[.5,.8],pod:[.4,2.4,.13],
+  dA1:[.35,.85],dFold:.6,dCrk:[.12,.5],dRev:[.2,.45],dShrink:[.32,.6],wLimp:[.5,.8],pod:[.3,.8,.11],
   /* the raceme: floret stages from the foot to the tip; nodding [bud, open, faded] */
-  stage:[1.1,.04,.6],wstage:[1.15,.06,.3],nod:[1.15,.12,.4],
+  stage:[1.1,.04,.6],wstage:[1.15,.06,.3],nod:[.95,-.34,.45],nodB:[.1,.36],gap:[.3,.05,.5],grav:.65,
   /* the florets' turn out of the face [mean, spread x the tilt gene] (rad), the pedicels' rise above the horizontal; widths (x D) of the rachis
      [foot, tip] and of a pedicel [rachis, calyx] (591, 206: peduncle and rachis .07 to .1 D, pedicels about half of it) */
-  az:[.82,.2],pedE:.6,rW:[.072,.045],pW:[.04,.03],
+  az:[.62,.25],pedE:.6,rW:[.072,.045],pW:[.04,.03],tipL:.5,
   /* the look: edge browning, translucency, liseré, washes, veins; patch threshold */
-  edge:{light:'#c9b08a',red:'#6a2a3a',other:'#8a6a7a',a:[.2,.45]},trans:[.3,.22],rim:[.006,.01,.25,.2],veinN:[18,9],pmin:5,
-  light:Object.assign({},SVB_DEF.light,{ks:.12,gloss:18,darkLo:[.84,.66],litLo:[1.12],daLo:.24})};
+  edge:{light:'#c9b08a',red:'#6a2a3a',other:'#8a6a7a',silver:'#d6cdd6',a:[.2,.45]},trans:[.06,.08],rim:[.006,.01,.25,.2],rimLo:[.009,.6],veinN:[18,9],pmin:5,
+  light:Object.assign({},SVB_DEF.light,{ks:.04,gloss:18,darkLo:[.84,.66],litLo:[1.12],daLo:.3,la:.12,laLo:.1})};
 /* a floret's material for one petal zone Z ({st,bst,shade,lite,bshade,blite,rim,vein,bvein,cast}) */
-function svPapM(P,Z,o){const{sh,shv,dec,lod,vn,mot,band,fl}=o,light=h2l(Z.st[Math.min(2,Z.st.length-1)][1])[2]>.8,
+function svPapM(P,Z,o){const{sh,shv,dec,lod,vn,mot,band,fl}=o,fan=o.fan||0,crs=o.crs,light=h2l(Z.st[Math.min(2,Z.st.length-1)][1])[2]>.8,
     /* fewer stops away from the full detail (each stop is an element) */
-    trim=(a,k)=>k>=a.length?a:k===2?[a[0],a[a.length-1]]:[a[0],a[Math.floor(a.length/2)],a[a.length-1]],Zs=lod>=2&&DET>=1.5?Z.st:trim(Z.st,lod>=2||lod&&DET>=1.5?3:2),Zb=lod>=2&&DET>=1.5?Z.bst:trim(Z.bst,2),
-    st=Zs.map(([v,c],i)=>[v,i>=Zs.length-2&&dec>0?mix(shv(c,v),light?P.edge.light:P.edge.other,P.edge.a[i===Zs.length-1?1:0]*dec):shv(c,v)]),
+    trim=(a,k)=>{if(k>=a.length)return a;const b=a[Math.floor(a.length/2)];return k===2?[[0,mix(a[0][1],b[1],.35)],[b[0]*.75,b[1]]]:[a[0],b,a[a.length-1]]},Zs=lod>=2&&DET>=1.5?Z.st:trim(Z.st,lod>=1?3:2),Zb=lod>=2&&DET>=1.5?Z.bst:trim(Z.bst,2),
+    /* (v2-4) the declining margin pales to a silvery sheen, then a dirty mauve once faded (fanaison: rose); a saturated red darkens to wine */
+    eg=c=>{if(light)return P.edge.light;const[h,s,l]=h2l(c);return(h>=330||h<20)&&s>.35&&l<.6?P.edge.red:mix(P.edge.silver,P.edge.other,fan)},
+    st=Zs.map(([v,c],i)=>[v,i>=Zs.length-2&&dec>0?mix(shv(c,v),eg(c),P.edge.a[i===Zs.length-1?1:0]*dec*(light?1:1.25)):shv(c,v)]),
     m=Object.assign({},P.light,{stops:st,bstops:Zb.map(([v,c])=>[v,shv(c,v)]),shade:sh(Z.shade),lite:Z.lite,bshade:sh(Z.bshade),blite:Z.blite,
       rim:dec>0?mix(Z.rim,light?'#b08a58':'#ffffff',.6*dec):Z.rim,cast:Z.cast,trans:P.trans[0]+P.trans[1]*dec,
       rw:lod>=1?P.rim[0]+P.rim[1]*dec:0,ro:P.rim[2]+P.rim[3]*dec});
-  const hi=DET>=1.5;if(lod<2){m.darkLo=lod&&hi?[.8]:[];m.litLo=[];m.dark=lod?(hi?[.86,.7,.56]:[.84,.62]):[.8];m.lit=lod?[1.1]:[];if(!hi)m.rw=0}
-  else if(!hi){m.darkLo=[.8];m.litLo=[];m.dark=[.86,.68];m.lit=[1.1];m.rw=0}
-  if(vn&&hi){const vc=sh(Z.vein),bv=Z.bvein,stri=mot&&mot.k==='stries'?mot:null;
-    m.veins=(s2,front)=>{const L=front?(hi?[[vn.main,.0026,vc,.26+.2*dec],[vn.fine,.0017,vc,.17+.15*dec]]:[[vn.main,.0026,vc,.3+.2*dec]]):hi?[[vn.main,.0022,bv,.16]]:[];
+  const hi=DET>=1.5;if(lod<2){m.darkLo=lod?[.86,.75]:[.8];m.litLo=[];m.dark=lod?(hi?[.86,.7,.56]:[.84,.62]):[.8];m.lit=lod?[1.1]:[]}
+  else if(!hi){m.darkLo=[.86,.75];m.litLo=[1.1];m.dark=[.86,.75];m.lit=[1.1]}
+  /* (v2-3) a withered petal shows both faces: one shade wash each and no light wash below the full detail (budget of the faded stem) */
+  if(!hi&&dec>.5){m.darkLo=[.84];m.dark=[.84];m.litLo=[];m.lit=[]}
+  /* (v2-4) lighter shade washes on a crumpled petal: its folds are read by their shading, not by stacked washes */
+  if(dec>0){if(hi&&lod>=2&&dec>.25)m.dark=[.9,.79,.68];m.da=(m.da||.17)*(1-.3*dec);m.daLo=(m.daLo||.3)*(1-.3*dec)}
+  /* (v2-2) below the full detail: the body colour reached early (2 stops), one shade wash, and a dark hairline round each piece that reads its
+     outline on a pale ground (210, 138, 142) */
+  if(!hi)Object.assign(m,lod>=1?{rw:P.rimLo[0],ro:P.rimLo[1]}:{rw:0});
+  /* (v2-2) the main veins kept below the full detail too, on the inner face (210, 138, 142: veins seen at a bouquet's size) */
+  if(vn&&(hi||lod>=1)){const vc=sh(Z.vein),bv=Z.bvein,stri=mot&&mot.k==='stries'?mot:null;
+    m.veins=(s2,front)=>{const L=front?(hi?[[vn.main,.0026,vc,.26+.2*dec],[vn.fine,.0017,vc,.17+.15*dec]]:[[vn.main,.0034,vc,.34+.2*dec]]):hi?[[vn.main,.0022,bv,.16]]:[];
+      if(crs&&crs.length&&dec>.15){L.push([crs,.0032,sh(Z.shade),(front?.36:.22)*dec]);L.push([crs.map(q=>q.map(([u,v])=>[u+.03,v+.012])),.005,'#ffffff',(front?.22:.12)*dec])}
       if(stri&&front)L.push([vn.main,stri.w||.006,sh(stri.c),stri.op||.8]);else if(stri)L.push([vn.main,(stri.w||.006)*.8,sh(stri.c),(stri.op||.8)*.6]);return L}}
   if(band)m.band=band;if(fl)m.flames=fl;return m}
 /* the streaks of a flamed or marbled colourway on one petal, in (u,v) (r: the petal's own chance) */
@@ -128,41 +160,48 @@ function svPapCalyx(par,B,O,R0,c,o){const{gw,sp0,sp1,lod}=o,g=G(par),P=svPapScr,
 /* ---------- one floret, its pieces pushed to the raceme's list ----------
    B, O: its frame and calyx mouth (view space); D its standard's width; g its genes (dS sW sL ruf rufPh rufN fold hood wsp asym crk tk sd), hg the
    raceme's (dh ds dl), M the colourway's zones {std,win,kee,cal,pod,mot}; op, wl its own stage; lod 2 full .. 0 small bud */
-function svPapFloret(pieces,B,O,D,P,g,hg,M,op,wl,lod){const R0=D/2,L=svPapLerp,gr=P.grow[0]+(1-P.grow[0])*svSm((op-P.grow[1])/P.grow[2]),R=R0*gr,
+function svPapFloret(pieces,B,O,D,P,g,hg,M,op,wl,lod,drop){const R0=D/2,L=svPapLerp,gr=P.grow[0]+(1-P.grow[0])*svSm((op-P.grow[1])/P.grow[2]),R=R0*gr,
     o2=svSm((op-P.unf[0])/P.unf[1]),o3=svSm((op-P.full[0])/P.full[1]),dec=svSm((wl-P.dec[0])/P.dec[1]),fan=svSm((wl-P.fan[0])/P.fan[1]),
     gt=P.green[0]*(1-svSm((op-P.green[1])/P.green[2])),sh=c=>{const x=svShift(c,hg.dh,hg.ds,hg.dl);return gt>0?mix(x,P.greenC,gt*.5):x},
     shv=(c,v)=>{const x=svShift(c,hg.dh,hg.ds,hg.dl),k=gt*(1-P.greenTip*v);return k>0?mix(x,P.greenC,k):x},
     dnL=[-B[0][1],-B[1][1],-B[2][1]],r=svRng(g.sd),mot=M.mot,on=z=>mot&&(!mot.on||mot.on.includes(z)),hi=DET>=1.5,
     band=z=>on(z)&&mot.k==='lisere'?{c:sh(mot.c),w:mot.w||.012,v0:mot.v0??.25,op:mot.op??.9,bk:.7}:null,
     flames=(z,rr)=>on(z)&&(mot.k==='flamme'||mot.k==='marbre')?svPapFlames(rr,mot,sh):null,
-    nu=k=>Math.max(4,Math.round(k*(lod>=2?(hi?1.25:1):lod?(hi?.8:.72):.6))),mo={sh,shv,dec,lod,mot};
+    nu=k=>Math.max(4,Math.round(k*(lod>=2?(hi?1.25:1):lod?(hi?.8:.72):.6)*(hi?1:1-.3*fan))),mo={sh,shv,dec,fan,lod,mot};
   /* the standard: folded over the rest in the bud (its dorsal midrib curving forward and down), rising and unfolding, upright and reflexed once open;
      in the decline it falls forward over the wings and crumples, its margins rolling back */
-  const sA0=L(P.sA0[0],P.sA0[1],o2)-.3*fan,sA1=L(P.sA1[0],P.sA1[1],o2)+P.sRefl*o3-P.dA1[0]*dec-P.dA1[1]*fan,
-    std=svPapPetal({L:R*P.sL*g.sL*(1-P.dShrink[0]*fan),W:R*P.sW*g.sW*(1-P.dShrink[1]*fan),wp:P.swp.map(([v,x],i)=>[v,L(P.swpB[i][1],x,o2)]),tip:L(P.sTipB,P.sTip,o2),notch:P.sNotch*(.4+.6*o2),vb:P.sVb,
-      P0:V3.sc(P.sP0,R),d0:[0,0,1],A0:[-1,0,0],a0:sA0,a1:sA1,aPow:P.sPow,fold:L(P.sFold[0],P.sFold[1]*g.fold,o2)+P.dFold*fan,cup:L(P.sCup[0],P.sCup[1],o2),
-      hood:L(P.sHood[0],P.sHood[1],o2)*g.hood*(1-.5*o3),rev:P.dRev[0]*dec+P.dRev[1]*fan,ruf:L(P.sRuf[0],P.sRuf[1],o2)*g.ruf*(1+.6*dec),rufN:g.rufN,rufPh:g.rufPh,
+  /* (v2-4) the half-open hood seen from the face (op .45): its folded halves narrowed a round top into a point; a shallower top arch (vb) and
+     a slightly fuller top, only around op .45 */
+  const hb=svSm(o2/.15)*(1-svSm((o2-.28)/.18)),oA=svSm(o2/P.sRise),sA0=L(P.sA0[0],P.sA0[1],oA)-.3*fan,sA1=L(P.sA1[0],P.sA1[1],oA)+P.sRefl*o3-P.dA1[0]*dec-P.dA1[1]*fan,
+    std=svPapPetal({L:R*P.sL*g.sL*L(P.sLB,1,o2)*(1-P.dShrink[0]*fan),W:R*P.sW*g.sW*L(P.sWB,1,o2)*(1-P.dShrink[1]*fan),wp:P.swp.map(([v,x],i)=>[v,L(P.swpB[i][1],x,o2)+P.sHoodW[0]*hb*svSm((v-.5)/.45)]),tip:L(P.sTipB,P.sTip,o2),notch:lod>=2||hi?P.sNotch*(.4+.6*o2):0,vb:P.sVb+P.sHoodW[1]*hb,
+      P0:V3.sc(P.sP0,R),d0:[0,0,1],A0:[-1,0,0],a0:sA0,a1:sA1,aPow:P.sPow,fold:L(P.sFold[0],P.sFold[1]*g.fold,o2)+P.sFoldM[0]*svSm((o2-P.sFoldM[4])/P.sFoldM[1])*(1-svSm((o2-P.sFoldM[2])/P.sFoldM[3]))+P.dFold*fan,roll:L(P.sRoll[0],P.sRoll[1],svSm(o2/.45)),rollK:L(P.sRollK[0],1,svSm(o2/.3)),cup:L(P.sCup[0],P.sCup[1],o2),
+      hood:L(P.sHood[0],P.sHood[1],o2)*g.hood*(1-.5*o3),rev:P.dRev[0]*dec+P.dRev[1]*fan,ruf:L(P.sRuf[0],P.sRuf[1],o2)*g.ruf*(1+.6*dec),rufN:g.rufN,rufPh:g.rufPh,scal:L(P.sScal[0],P.sScal[1],o2)*g.ruf*(lod>=2||hi?1:.6),
       crk:P.dCrk[0]*dec+P.dCrk[1]*fan,crkPh:g.crk,wv:L(P.sWv[0],P.sWv[1],o2),wph:g.rufPh*.7,asym:g.asym+.12*fan,tw:.9*fan*(g.asym>0?1:-1),limp:.7*fan,dn:dnL}),
-    vnS=lod>=1||hi?svVeins(r,(hi?P.veinN[0]:P.veinN[1])+r.in(0,3),hi?.35:0,hi?.7:.3):null;
-  pieces.push(svSheet(B,O,std,{nu:nu(10),nv:nu(12),mat:svPapM(P,M.std,Object.assign({vn:vnS,band:band('std'),fl:flames('std',svRng(g.sd+13))},mo)),
-    ao:(u,v,front)=>front?1-.42*(1-svSm((v-.02)/.32)):1-.22*(1-svSm(v/.3)),zb:0}));
+    vnS=(lod>=1&&fan<.5)||hi?svVeins(r,(hi?P.veinN[0]:P.veinN[1])+r.in(0,3),hi?.35:0,hi?.7:.3):null;
+  /* (v2-3) fanaison: the faded florets fall whole, from the foot up; the lowest of a raceme of 3 or more is gone at the end (calyx and pod stay) */
+  if(!drop)pieces.push(svSheet(B,O,std,{nu:nu(10),nv:nu(12),mat:svPapM(P,M.std,Object.assign({vn:vnS,band:band('std'),fl:flames('std',svRng(g.sd+13)),crs:(hi||lod>=2)&&fan<.6?svPapCreases(g.crk):null},mo)),
+    ao:(u,v,front)=>front?1-.55*(1-svSm((v-.02)/.4)):1-.3*(1-svSm(v/.34)),zb:0}));
   /* the wings and the keel come out of the opening standard: cupped round the keel, spreading down and out; the keel a pale boat with its beak up */
   const em=svSm((op-P.wEm[0])/P.wEm[1]);
-  if(em>.02){const wd=V3.add(V3.sc(P.wD0[0],1-o2),V3.sc(P.wD0[1],o2)),wn=V3.add(V3.sc(P.wN0[0],1-o2),V3.sc(P.wN0[1],o2));
+  if(em>.02&&!drop){const wd=V3.add(V3.sc(P.wD0[0],1-o2),V3.sc(P.wD0[1],o2)),wx=V3.add(V3.sc(P.wAx[0],1-o2),V3.sc(P.wAx[1],o2));
+    /* (v2) each wing leaves the calyx mouth FORWARD along the keel (131, 132, 47 in profile: the wings are a boat in front of the standard's foot,
+       not a skirt below it); its width axis wAx is nearly upright, its upper edge leaning in over the keel, so that its inner face looks at the
+       keel and its cup closes round it; mirrored for the left wing (u>0 is then its lower edge) */
     for(const s of[-1,1]){const S=svPapPetal({L:R*P.wL*(.55+.45*em)*(1-P.dShrink[0]*fan),W:R*P.wW*(.6+.4*em)*(1-P.dShrink[1]*fan),wp:P.wwp,tip:P.wTip,vb:P.wVb,
-        P0:[s*P.wP0[0]*R,P.wP0[1]*R,P.wP0[2]*R],d0:[s*wd[0]*g.wsp,wd[1],wd[2]],A0:V3.cr(V3.nz([-s*wn[0],-wn[1],-wn[2]]),V3.nz([s*wd[0]*g.wsp,wd[1],wd[2]])),a0:0,a1:L(P.wA1[0],P.wA1[1],o2),s1:-s*L(P.wS1[0],P.wS1[1],o2),
+        P0:[s*P.wP0[0]*R,P.wP0[1]*R,P.wP0[2]*R],d0:[s*wd[0]*g.wsp,wd[1],wd[2]],A0:[wx[0]*g.wsp,s*wx[1],s*wx[2]],a0:0,a1:L(P.wA1[0],P.wA1[1],o2),s1:-s*L(P.wS1[0],P.wS1[1],o2),
         fold:L(P.wFold[0],P.wFold[1],o2),cup:L(P.wCup[0],P.wCup[1],o2),crk:P.dCrk[0]*dec+P.dCrk[1]*fan,crkPh:g.crk+s,rev:.1*fan,limp:P.wLimp[0]*dec+P.wLimp[1]*fan,dn:dnL,
         wv:.02,wph:g.rufPh+s});
       pieces.push(svSheet(B,O,S,{nu:nu(6),nv:nu(8),mat:svPapM(P,M.win,Object.assign({vn:lod>=2?svVeins(r,P.veinN[1],0,.3):null,band:band('win'),fl:flames('win',svRng(g.sd+17+s))},mo)),
         ao:(u,v,front)=>front?1-.35*(1-svSm(v/.35)):1-.15*(1-svSm(v/.3)),zb:R0*.004}))}
-    if(lod>=2||hi){const K=svPapPetal({L:R*P.kL*(.6+.4*em),W:R*P.kW,wp:P.kwp,tip:P.kTip,vb:P.kVb,P0:V3.sc(P.kP0,R),d0:P.kD0,A0:[1,0,0],a0:0,a1:P.kA1,aPow:2,fold:P.kFold,limp:.2*fan,dn:dnL});
+    if(lod>=1&&fan<.6||hi){const K=svPapPetal({L:R*P.kL*(.6+.4*em),W:R*P.kW,wp:P.kwp,tip:P.kTip,vb:P.kVb,P0:V3.sc(P.kP0,R),d0:P.kD0,A0:[1,0,0],a0:0,a1:P.kA1,aPow:2,fold:P.kFold,limp:.2*fan,dn:dnL});
     pieces.push(svSheet(B,O,K,{nu:nu(5),nv:nu(6),mat:svPapM(P,M.kee,mo),ao:(u,v,front)=>1-.3*(1-svSm(v/.4)),zb:R0*.008}))}}
   /* the calyx (its proxy tube for the order) */
   const gw=P.cGrow[0]+P.cGrow[1]*svSm(op/.5),cL=R0*P.cL*gw,tub=svPapTube(B,O,[[0,-.02*R0,-cL],[0,-.02*R0,0]],R0*P.cR[0]*gw,R0*P.cR[1]*gw,{nu:4,nv:2}),
     tk=[0,1,2,3,4].map(k=>.9+.2*pxHashS(k,5,g.sd));
   pieces.push({fn:par=>svPapCalyx(par,B,O,R0,Object.assign({L:P.cL,r0:P.cR[0],r1:P.cR[1],tL:P.tL,tW:P.tW},M.cal),{gw,sp0:L(P.tSp[0][0],P.tSp[1][0],o2)+.25*fan,sp1:L(P.tSp[0][1],P.tSp[1][1],o2)+.2*fan,lod,tk,sd:g.sd}),proxy:tub});
   /* the young pod pushing out of the withered flower (photographs of fading racemes: a green, flattened, downy pod with the style hooked at its tip) */
-  if(fan>.05){const pl=R0*(P.pod[0]+P.pod[1]*fan),pw=R0*P.pod[2]*(.6+.4*fan),d=V3.nz(P.kD0),Pp=[[0,-.06*R0,0],V3.add([0,-.06*R0,0],V3.sc(d,pl*.4)),V3.add([0,-.04*R0,0],V3.add(V3.sc(d,pl*.8),[0,pl*.06,0])),V3.add([0,0,0],V3.add(V3.sc(d,pl),[0,pl*.16,0]))],
+  /* (v2-3) only where the corolla has fallen (in a vase the withered flower hides its ovary until it drops) */
+  if(fan>.05&&drop){const pl=R0*(P.pod[0]+P.pod[1]*fan),pw=R0*P.pod[2]*(.6+.4*fan),d=V3.nz(P.kD0),Pp=[[0,-.06*R0,0],V3.add([0,-.06*R0,0],V3.sc(d,pl*.4)),V3.add([0,-.04*R0,0],V3.add(V3.sc(d,pl*.8),[0,pl*.06,0])),V3.add([0,0,0],V3.add(V3.sc(d,pl),[0,pl*.16,0]))],
       pts=svPapBez(Pp,6),pc=M.pod||M.cal;
     pieces.push({fn:par=>svPapThin(par,svPapScr(B,O,pts),pts.map((q,i)=>pw*(i<5?Math.sin(Math.PI*(.18+.82*i/6))*1+.25:.3)),[pc.dk,pc.c,pc.lt,pc.hair]),proxy:svPapTube(B,O,pts,pw*.5,pw*.3,{nu:4,nv:4}),zb:-R0*.01})}
 }
@@ -170,27 +209,39 @@ function svPapFloret(pieces,B,O,D,P,g,hg,M,op,wl,lod){const R0=D/2,L=svPapLerp,g
    B, O: frame and foot of the rachis (view space; y up the rachis, z the face); D the standard's width of the first floret; S the sort's sheet
    (genes(seed) -> {n, tep:[per floret], sp pedL lean arch bend side dh ds dl}, mat(cwx) -> zones); o: {n, ped (peduncle drawn below the foot, x D), shadow} */
 function svPapRaceme(par,B,O,D,S,cwx,op,seed,wl,o={}){const P=S._m||(S._m=Object.assign({},SVP_DEF,S)),g=P.genes(seed),M=P.mat(cwx),n=Math.max(1,o.n||g.n),pieces=[],sd0=g.side<0?-1:1,hi=DET>=1.5;
-  wl=wl||0;const sp=D*g.sp*(.22+.78*svSm((op-.12)/.62)),Lr=sp*Math.max(.6,n-1)+D*.18,ns=10,rp=[[0,0,0]];let p=[0,0,0];
+  wl=wl||0;
+  /* (v2-2) each floret's stage first: the gap above it grows with it (209, 210, 66, 145: the open florets in a tight head, their standards overlapping,
+     the buds packed at the tip) */
+  const OP=[],WL=[],GP=[];let acc=0;
+  for(let i=0;i<n;i++){const t=g.tep[i%g.tep.length],fi=n>1?i/(n-1):0;OP.push(Math.max(.03,Math.min(1,op*P.stage[0]+P.stage[1]-P.stage[2]*fi+t.opd)));
+    WL.push(wl>0?Math.max(0,Math.min(1,wl*P.wstage[0]+P.wstage[1]-P.wstage[2]*fi)):0);GP.push(acc);acc+=D*g.sp*(P.gap[0]+(1-P.gap[0])*svSm((OP[i]-P.gap[1])/P.gap[2]))}
+  /* the world's up in the raceme's frame (o.up given by the plant): the florets of a leaning stem keep their standards up (P.grav of the way) */
+  const UP=o.up?V3.nz(V3.add(V3.sc([0,1,0],1-P.grav),V3.sc(V3.nz([V3.dot(B[0],o.up),V3.dot(B[1],o.up),V3.dot(B[2],o.up)]),P.grav))):null;
+  const Lr=Math.max(GP[n-1],D*.12)+D*.18,ns=10,rp=[[0,0,0]];let p=[0,0,0];
   for(let j=1;j<=ns;j++){const t=(j-.5)/ns,a=g.lean+g.arch*t,b=g.bend*t,d=V3.nz([Math.sin(b),Math.cos(a),Math.sin(a)]);p=V3.add(p,V3.sc(d,Lr/ns));rp.push(p)}
   const rAt=s=>{const x=Math.max(0,Math.min(1,s/Lr))*ns,j=Math.min(ns-1,Math.floor(x)),f=x-j;return V3.add(V3.sc(rp[j],1-f),V3.sc(rp[j+1],f))};
   /* the rachis (and the peduncle's end below the foot) */
-  {const pd=(o.ped||0)*D,pts=(pd>0?[[0,-pd,-pd*.08],[0,-pd*.5,-pd*.03]]:[]).concat(rp),wf=q=>D*(P.rW[0]-(P.rW[0]-P.rW[1])*Math.max(0,q[1])/Lr);
-    pieces.push({fn:par=>svPapThin(par,svPapScr(B,O,pts),pts.map(wf),[M.ped.dk,M.ped.c,M.ped.lt,M.ped.hair]),proxy:svPapTube(B,O,pts,D*P.rW[0]*.5,D*P.rW[1]*.5,{nu:4,nv:6}),zb:D*.02})}
-  for(let i=0;i<n;i++){const t=g.tep[i%g.tep.length],fi=n>1?i/(n-1):0,side=sd0*(i%2?-1:1),
-      opi=Math.max(.03,Math.min(1,op*P.stage[0]+P.stage[1]-P.stage[2]*fi+t.opd)),wli=wl>0?Math.max(0,Math.min(1,wl*P.wstage[0]+P.wstage[1]-P.wstage[2]*fi)):0,
+  {const pd=(o.ped||0)*D,pts=(pd>0?[[0,-pd,-pd*.08],[0,-pd*.5,-pd*.03]]:[]).concat(rp),wf=q=>D*(P.rW[0]-(P.rW[0]-P.rW[1])*Math.max(0,q[1])/Lr),W=pts.map(wf);
+    /* (v2) the rachis runs on past the last bud into a short point hooking over (v2a 209, 210: a coiled tip at the top of the cut stem) */
+    if(P.tipL){const rt=svRng(g.sd+29),sg=rt()<.5?-1:1,nT=hi?8:6,tl=D*P.tipL*rt.in(.7,1.3),ax=V3.nz([0,.25*sg,1]);let d=V3.nz(V3s(rp[ns],rp[ns-1])),q=rp[ns];
+      for(let k=1;k<=nT;k++){const f=k/nT,st=tl/nT;d=V3.nz(rotA(d,ax,sg*st/(tl*(.5-.36*f))));q=V3.add(q,V3.sc(d,st));pts.push(q);W.push(D*P.rW[1]*(1-.72*f))}}
+    pieces.push({fn:par=>svPapThin(par,svPapScr(B,O,pts),W,[M.ped.dk,M.ped.c,M.ped.lt,M.ped.hair]),proxy:svPapTube(B,O,pts,D*P.rW[0]*.5,D*P.rW[1]*.5,{nu:4,nv:6}),zb:D*.02})}
+  for(let i=0;i<n;i++){const t=g.tep[i%g.tep.length],side=sd0*(i%2?-1:1),opi=OP[i],wli=WL[i],
       Di=D*(1-.05*i)*t.dS,R0i=Di/2,o2=svSm((opi-P.unf[0])/P.unf[1]),fan=svSm((wli-P.fan[0])/P.fan[1]),
-      nod=P.nod[0]*(1-o2)+P.nod[1]*o2+P.nod[2]*fan+t.nod,N=rAt(Math.min(Lr-D*.06,sp*i)),Lp=D*g.pedL*(.6+.4*o2)*(i===n-1&&n>1?.8:1);
+      /* (v2-2) only the young buds nod; a swelling bud rises little by little, an opening floret is held out and up (209, 210, 145, 66, 131, 132, 47:
+         axis 45 to 90 deg from the vertical, the standard upright) */
+      bdn=1-svSm((opi-P.nodB[0])/P.nodB[1]),nod=P.nod[0]*bdn+P.nod[1]*(1-bdn)+P.nod[2]*fan+t.nod,N=rAt(Math.min(Lr-D*.06,GP[i])),Lp=D*g.pedL*(.6+.4*o2)*(i===n-1&&n>1?.8:1);
     /* each floret turned out to its own side (591, 206, 495, 530: alternate, facing away from the rachis at 40 to 65 deg from the raceme's face; the
        buds less), on a pedicel leaving the rachis outward and up (P.pedE above the horizontal) and arching down into the calyx */
     const az=side*(P.az[0]+P.az[1]*t.tilt)*(.6+.4*o2),sa=Math.sin(az),ca=Math.cos(az);
-    let zf=V3.nz([sa,.06,ca]);const xf=V3.nz(V3.cr([0,1,0],zf));let yf=V3.cr(zf,xf);zf=rotA(zf,xf,nod);yf=rotA(yf,xf,nod);
+    let zf=V3.nz([sa,.06,ca]);if(UP){const z2=V3s(zf,V3.sc(UP,V3.dot(zf,UP)-.06));if(V3l(z2)>.2)zf=V3.nz(z2)}const xf=V3.nz(V3.cr(UP||[0,1,0],zf));let yf=V3.cr(zf,xf);zf=rotA(zf,xf,nod);yf=rotA(yf,xf,nod);
     const xr=rotA(xf,zf,t.roll),yr=rotA(yf,zf,t.roll),q=V3.nz([sa*Math.cos(P.pedE),Math.sin(P.pedE),ca*Math.cos(P.pedE)*.55]),Cb=V3.add(N,V3.sc(q,Lp)),gw=P.cGrow[0]+P.cGrow[1]*svSm(opi/.5),Of=V3.add(Cb,V3.sc(zf,R0i*P.cL*gw)),
       pp=svPapBez([N,V3.add(N,V3.sc(q,Lp*.45)),V3.add(Cb,V3.sc(zf,-Lp*.4)),Cb],hi?7:5),
-      lod=hi?2:o2>.5&&(i===0&&n<=3||i===1&&n<=2)?2:o2>.12?1:0;
-    pieces.push({fn:par=>svPapThin(par,svPapScr(B,O,pp),pp.map((x,k)=>D*(P.pW[0]-(P.pW[0]-P.pW[1])*k/(pp.length-1))),[M.ped.dk,M.ped.c,M.ped.lt,lod>=1?M.ped.hair:null],{dark:lod>=2||lod>=1&&hi}),proxy:svPapTube(B,O,pp,D*P.pW[0]*.5,D*P.pW[1]*.5,{nu:4,nv:4}),zb:D*.01});
+      lod=hi?2:fan<.4&&o2>.5&&(i===0&&n<=3||i===1&&n<=2)?2:o2>.12?1:0;
+    pieces.push({fn:par=>svPapThin(par,svPapScr(B,O,pp),pp.map((x,k)=>D*(P.pW[0]-(P.pW[0]-P.pW[1])*k/(pp.length-1))),[M.ped.dk,M.ped.c,M.ped.lt,lod>=1&&(hi||fan<.5)?M.ped.hair:null],{dark:lod>=2||lod>=1&&hi}),proxy:svPapTube(B,O,pp,D*P.pW[0]*.5,D*P.pW[1]*.5,{nu:4,nv:4}),zb:D*.01});
     const Bf=[toV(B,xr),toV(B,yr),toV(B,zf)],Ov=V3.add(O,toV(B,Of));
-    if(lod>0||hi)svPapFloret(pieces,Bf,Ov,Di,P,t,g,M,opi,wli,lod);
-    else{const sub=[];svPapFloret(sub,Bf,Ov,Di,P,t,g,M,opi,wli,0);pieces.push({fn:par2=>{const L0=LOD;LOD=1;try{svDraw(par2,sub,{D:Di,pmin:99,shadow:false})}finally{LOD=L0}},proxy:sub[0]})}}
+    if(lod>0||hi)svPapFloret(pieces,Bf,Ov,Di,P,t,g,M,opi,wli,lod,n>=3&&i===0&&wli>.985);
+    else{const sub=[];svPapFloret(sub,Bf,Ov,Di,P,t,g,M,opi,wli,0,n>=3&&i===0&&wli>.985);pieces.push({fn:par2=>svDraw(par2,sub,{D:Di,pmin:99,shadow:false}),proxy:sub[0].proxy||sub[0]})}}
   return svDraw(par,pieces,{D,pmin:P.pmin,shadow:o.shadow??hi})}
 
 /* ---------- the plant of a climbing legume (sweet pea; later pea, vetch): the cut stem below the head's neck with its two wings, and the compound
@@ -230,7 +281,7 @@ function svPapWings(par,bl,s0,s1,w,ww,ph,c){const g=G(par),n=Math.max(4,Math.min
    a pair (or pairs) of ovate leaflets spread in a V, their blades folded a little up along the midrib and drooping at the tip; the rachis runs on
    into a tendril branched in three, each branch sweeping out then coiling. p the node, t the stem upward there, Out the side the leaf leaves on;
    D the scale (a floret's width); returns parts {z, fn} */
-const SVPL_DEF={pet:.72,petW:.05,petA:.72,tw:0,lf:{n:1,L:1.45,W:.48,wp:[[0,.08],[.1,.5],[.35,.96],[.5,1],[.72,.82],[.9,.38],[1,0]],sp:.55,fold:.35,droop:.26,step:.35},
+const SVPL_DEF={pet:.72,petW:.05,petA:.72,tw:0,lf:{n:1,L:1,W:.56,wp:[[0,.08],[.1,.5],[.35,.96],[.5,1],[.72,.82],[.9,.38],[1,0]],sp:.55,fold:.35,droop:.26,step:.35},
   ten:{L:.75,n:3,bL:1.75,bA:.55,turns:[1.2,2.2],cr:[.12,.2],w:.02,tilt:.3},stip:{L:.46,W:.05,lobe:.28,a:.42},
   up:'#6b9367',low:'#a2b894',vein:'#94b484',tenc:'#86a668',petc:['#3e5a2c','#6a8a4a','#a8c08a',null]};
 function svPapLeaf(p,t,Out,D,o0,r,wl){const o=Object.assign({},SVPL_DEF,o0),lf=Object.assign({},SVPL_DEF.lf,o0&&o0.lf),tn=Object.assign({},SVPL_DEF.ten,o0&&o0.ten),
