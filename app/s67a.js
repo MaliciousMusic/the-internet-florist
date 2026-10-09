@@ -50,14 +50,16 @@ function l67Pan(par,B,O,Lp,cw,op,cache){const k=G(par),sd=((O[0]*.13+O[1]*.29)%6
     if(dO){const t=l67T(cache,cw.c,.3+.7*(I/nO));E('path',{d:dO,fill:t,stroke:cw.edge||ink,'stroke-width':cw.edge?.7:.4,'stroke-opacity':cw.edge?.9:.55,'stroke-linejoin':'round'},k);
       if(dI)E('path',{d:dI,fill:l67T(cache,cw.c,.45+.7*(I/nO)),stroke:ink,'stroke-width':.35,'stroke-opacity':.45},k)}}
   if(eyes)E('path',{d:eyes,fill:shd(cw.c,-.45),opacity:.7},k);return k}
-function l67Lilac(g,t,o){const cw=o.cw||cwNear(L67_LIL,o.col)||L67_LIL[0],op=Math.max(.05,Math.min(1,o.op??1)),D=(o.cm||18)*UPC,k=G(g),sc=['#3a3328','#5e5444','#857a64','#aea48a'],cache={},lc='#4a7034';
+function l67Lilac(g,t,o){const cw=o.cw||cwNear(L67_LIL,o.col)||L67_LIL[0],op=Math.max(.05,Math.min(1,o.op??1)),D=(o.cm||18)*UPC,k=G(g),cache={},lc='#4a7034',
+    /* drawn in SVG (y-syringa.js): the shoot's colours and marks, its settings GHI.lilas (fit.py), the leaves as sheets; the chance consumed as before */
+    sv=typeof syrLeaf==='function'&&typeof SV_ON!=='undefined'&&SV_ON&&!!cw.id,P=sv&&GHI.lilas||{},sc=sv?syrStemCols(0):['#3a3328','#5e5444','#857a64','#aea48a'];
   const B=frameOf(o,.35,true),up=B.upV?V3.nz([B.upV[0],B.upV[1],B.upV[2]||0]):[0,1,0],face=B[2];let U0=V3s(face,V3.sc(up,V3.dot(face,up)));if(V3l(U0)<1e-3)U0=[0,0,1];
-  const pan=(par,Bf,pos,Lp,a)=>l67Pan(par,Bf,pos,Lp,cw,a,cache);
+  const pan=(par,Bf,pos,Lp,a)=>typeof syrSvgPut==='function'&&typeof SV_ON!=='undefined'&&SV_ON&&cw.id?syrSvgPut(par,Bf,pos,Lp,cw,a):l67Pan(par,Bf,pos,Lp,cw,a,cache);
   if(o.rim){const r=lsHeadS(k,o,{D:D*.5,w:D*.03,cols:sc,op,rr:.35,nodes:0,lp:.3,flower:(par,B2,O,D2,op2)=>pan(par,l67Fr(B2[2],up,0),O,D*.85,op2)});open(k,t,1000,6,.3);return r}
-  const kr=B.reach?Math.min(1,Math.max(.15,B.reach*.4/(D*1.1))):1,w=D*.035,ph0=R(0,360),twin=rnd()<.55;
+  const kr=B.reach?Math.min(1,Math.max(.15,B.reach*.4/(D*1.1))):1,w=D*(sv?P.sw:.035),ph0=R(0,360),twin=rnd()<.55;
   /* the shoot: two leafy nodes (decussate pairs), then the leading panicle on its short peduncle; often its twin from the top axil, a little smaller and younger */
   const rules={S:()=>[['F',{l:D*.55*kr,w0:w*1.3,w1:w*1.2,e:.02}],['N',{i:1}],['F',{l:D*.42*kr,w1:w*1.08,e:.02}],['N',{i:0}],['F',{l:D*.16*kr,w1:w*.85,aim:V3.nz(V3.add(up,V3.sc(face,.3))),k:.3}],['K',{main:1}]],
-    N:p=>{const out=[['Nd',{i:p.i}]],r0=ph0+p.i*90;for(let j=0;j<2;j++)out.push(['[',{}],['/',{a:r0+j*180+R(-10,10)}],['&',{a:56+R(-8,8)}],['Lv',{i:p.i,j}],[']',{}]);
+    N:p=>{const out=[['Nd',{i:p.i}]],r0=ph0+p.i*90;for(let j=0;j<2;j++)out.push(['[',{}],['/',{a:r0+j*180+R(-10,10)}],['&',{a:(sv?P.ang:56)+R(-8,8)}],['Lv',{i:p.i,j}],[']',{}]);
       if(!p.i&&twin){const age=Math.min(1,op*R(.75,.95));out.push(['[',{w:w*.75}],['/',{a:r0+90+R(-25,25)}],['&',{a:R(30,40)}],['F',{l:D*.2*kr,w1:w*.6,e:.05}],['Kb',{age}],[']',{}])}
       return out}};
   const res=lsTurtle(lsDerive([['S',{}]],rules,3),{p:[0,0,0],H:up,U:U0,wig:.035,seg:D*.07,T:[0,1,0],e:.02,w:w*1.3});for(const ch of res.chains)ch.c=sc;
@@ -65,9 +67,12 @@ function l67Lilac(g,t,o){const cw=o.cw||cwNear(L67_LIL,o.col)||L67_LIL[0],op=Mat
   lsPlant(k,res,{O:[0,0,0],apex,cols:sc,organ:(og,pos)=>{
     if(og.t==='K'){const Bf=l67Fr(V3.add(og.H,V3.sc(face,.12)),face,R(-.3,.3)),c=V3.add(pos,V3.sc(og.H,-D*.02));return{parts:[{z:c[2],fn:par=>pan(par,Bf,c,D,op)}]}}
     if(og.t==='Kb'){const a=og.p.age,Bf=l67Fr(V3.add(og.H,V3.sc(face,.2)),face,R(-.3,.3)),c=V3.add(pos,V3.sc(og.H,-D*.02));return{parts:[{z:c[2]-1e-3,fn:par=>pan(par,Bf,c,D*R(.62,.78),a)}]}}
-    if(og.t==='Lv'){const len=D*(og.p.i?.66:.56)*R(.9,1.08),face2=.3+.7*Math.abs(og.U[2]);return{ext:1,parts:[lsLeaf2D(og,pos,len,(par,x,y,a,l)=>l67Heart(par,x,y,a,l,lc,{face:face2,bend:R(-.08,.08),I:.5+.25*face2}))]}}
+    if(og.t==='Lv'){const len=D*(og.p.i?(sv?P.L1:.66):(sv?P.L0:.56))*R(.9,1.08),face2=.3+.7*Math.abs(og.U[2]);
+      if(sv)return{ext:1,parts:[{z:pos[2]+og.H[2]*len*.4,cast:false,fn:par=>{R(-.08,.08);syrLeaf(par,og,pos,len,svSeed('lilas-feuille',cw.id,Math.round(pos[0]*8),Math.round(pos[1]*8),Math.round(og.H[0]*40)),syrLife())}}]};
+      return{ext:1,parts:[lsLeaf2D(og,pos,len,(par,x,y,a,l)=>l67Heart(par,x,y,a,l,lc,{face:face2,bend:R(-.08,.08),I:.5+.25*face2}))]}}
+    if(og.t==='Nd'&&sv)return{ext:1,parts:[{z:pos[2]+1e-3,cast:false,fn:par=>syrNode(par,og,pos,w)}]};
     return null}});
-  open(k,t,1000,6,.3);return lsNeck(res,[0,0,0],apex)}
+  open(k,t,1000,6,.3);const nk=lsNeck(res,[0,0,0],apex);if(sv)nk.ncols=syrStemCols(1);return nk}
 
 /* ---------- tall bearded iris (Iris germanica and the tall bearded hybrids): a stout, branched stem from a fan of broad sword leaves, a few short leaves sheathing it;
    at the top and at the end of each branch two or three buds in green spathes, papery-edged, opening one by one; the flower large: three falls (outer tepals) on a narrow veined haft,
