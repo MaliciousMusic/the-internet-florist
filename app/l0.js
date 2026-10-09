@@ -79,7 +79,7 @@ function lsHeadS(k,o,S){const B=frameOf(o,S.rr??.25,!!S.axisFirst),up=B.upV?V3.n
   let U0=V3s(ax,V3.sc(up,V3.dot(ax,up)));if(V3l(U0)<1e-3)U0=[0,0,1];
   /* a head resting on the lip keeps only its short peduncle */
   const nN=o.rim?0:S.nodes??1,li=D*(S.li??.5),lp=D*(S.lp??1)*(o.rim?.6:1),Lh=nN*li+lp,sc=B.reach?Math.min(1,Math.max(.12,B.reach*.4/Lh)):1,sd=S.side,ph0=R(0,360);
-  const rules={A:p=>p.n>0?[['F',{l:li*sc*R(.85,1.15),w1:w*(1.06+.05*p.n)}],['N',{i:p.n}],['A',{n:p.n-1}]]:[['F',{l:lp*sc*.42,w1:w*1.04}],['F',{l:lp*sc*.58,w1:w,aim:ax,k:S.aimK??.24}],['K',{main:1}]],
+  const rules={A:p=>p.n>0?[['F',{l:li*sc*R(.85,1.15),w1:w*(1.06+.05*p.n)}],['N',{i:p.n}],['A',{n:p.n-1}]]:[['F',{l:lp*sc*.42,w1:w*1.04}],['F',{l:lp*sc*.58,w1:w,aim:S.aimAt?S.aimAt(ax):ax,k:S.aimK??.24}],['K',{main:1}]],
     N:p=>{const out=[['Nd',{i:p.i}]],nl=S.whorl||(S.opp?2:1),r0=ph0+p.i*(nl===2?90:nl>2?180/nl:137.5);
       for(let j=0;j<nl;j++)out.push(['[',{}],['/',{a:r0+j*360/nl+R(-14,14)}],['&',{a:(S.leafAng??55)+R(-8,8)}],['Lv',{i:p.i,j}],[']',{}]);
       if(sd&&p.i<=(sd.top??1))for(let j=0;j<(sd.n||1);j++)if(rnd()<(sd.p??.5)){out.push(['[',{w:w*.62}],['/',{a:r0+(S.opp?90:60)+j*180+R(-20,20)}],['&',{a:(sd.ang||35)+R(-8,8)}],['F',{l:D*(sd.len||.6)*sc*R(.8,1.15),w1:w*.5,e:.07}],['Kb',{age:R(sd.age[0],sd.age[1]),i:p.i}],[']',{}])}
