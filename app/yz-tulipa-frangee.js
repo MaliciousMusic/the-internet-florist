@@ -44,7 +44,7 @@ const TFRGS={
   /* jaune-rose = Aria Card (C, derived, to be confirmed: shaded garden photographs 444-454): cream-yellow body, a rose-red picotee (448: #8b1d2e to #bf686f), pink-white fringe, black-brown heart and dark anthers */
   'jaune-rose':{i:'#f4e8a0',t:'#f8eeb4',ba:'#e8d070',bv:.2,o:'#eadc90',ot:'#f2e8a8',g:.15,sh:'#8a7430',li:'#fff8d0',band:['#dc4c74',.03,.5,.85],bl:['#3a2418','#8a7a30',.22,.45,.85],
     an:'#2a2018',fi:'#3a2e24',po:'#5a4a30',sg:'#e8d890',fr:'#f4b8c8',bfr:'#ecc8b0',ob:'#c8b060'},
-  /* ---- late:1, level A or B (coloris.md, recensement.md) ---- */
+  /* ---- late:3, level A or B (coloris.md, recensement.md) ---- */
   /* blanc-rouge = Burning Fire (B): cream-white with broad crimson flames down the seams and the midribs (DutchGrown 46: #de123f), a white fringe */
   'blanc-rouge':{i:'#fffaf0',t:'#fffcf6',ba:'#f8ece0',bv:.2,o:'#f8f0e4',ot:'#fcf6ee',g:.15,sh:'#bcb0a6',li:'#ffffff',fl:{c:'#c4103c',n:[2,2],from:.04,to:.97,w:.1,op:.95},bl:['#e8d8c8','#f6ecdc',.2,.45,.7],
     an:'#3a2a28',fi:'#6a5a50',po:'#8a7a60',sg:'#e8dcb0',fr:'#f6e8e4',bfr:'#f0dcd8',ob:'#e4cbb8'},
@@ -67,11 +67,11 @@ const TFRGS={
   'creme-framboise':{i:'#f8e8f0',t:'#e090c0',ba:'#d86aa4',bv:.16,o:'#f0cade',ot:'#dc80b8',g:.1,sh:'#8a2a62',li:'#fff0f8',fl:{c:'#b0287e',n:[2,2],from:.06,to:.97,w:.09,op:.85},bl:['#6a0c36','#a02a68',.2,.45,.85],
     an:'#2a1a28',fi:'#5a3a4a',po:'#7a5a60',sg:'#e8d8a8',fr:'#b83898',bfr:'#a82888',ob:'#d078a8'}
 };
-/* the colourways added (late:1, at the end: no SKU number moves; the names carry no cultivar's name) */
+/* the colourways added (late:3: the third wave, after the anemones' (1) and the rosettes' (2); at the end, no SKU number moves; the names carry no cultivar's name) */
 if(typeof CW_TFRG!=='undefined'&&!CW_TFRG.some(x=>x.id==='blanc-rouge'))CW_TFRG.push(
- {id:'blanc-rouge',n:'Blanc flammé de rouge',c:'#f6efe4',bl:'#e8d8c8',fr:'#f6e8e4',late:1},{id:'rouge-blanc',n:'Rouge frangé de blanc',c:'#d8383c',bl:'#2a0c10',fr:'#fff0e8',late:1},
- {id:'pourpre-prune',n:'Prune pourpre frangé de mauve',c:'#6c2a52',bl:'#18080f',fr:'#b078a4',late:1},{id:'jaune-blanc',n:'Jaune doux à franges blanches',c:'#f4e050',bl:'#d8b418',fr:'#fbf6dc',late:1},
- {id:'rouge-jaune',n:'Rouge frangé de jaune',c:'#cc2a2a',bl:'#2a1010',fr:'#f29018',late:1},{id:'creme-framboise',n:'Crème à franges framboise',c:'#f2d4e6',bl:'#6a0c36',fr:'#b83898',late:1});
+ {id:'blanc-rouge',n:'Blanc flammé de rouge',c:'#f6efe4',bl:'#e8d8c8',fr:'#f6e8e4',late:3},{id:'rouge-blanc',n:'Rouge frangé de blanc',c:'#d8383c',bl:'#2a0c10',fr:'#fff0e8',late:3},
+ {id:'pourpre-prune',n:'Prune pourpre frangé de mauve',c:'#6c2a52',bl:'#18080f',fr:'#b078a4',late:3},{id:'jaune-blanc',n:'Jaune doux à franges blanches',c:'#f4e050',bl:'#d8b418',fr:'#fbf6dc',late:3},
+ {id:'rouge-jaune',n:'Rouge frangé de jaune',c:'#cc2a2a',bl:'#2a1010',fr:'#f29018',late:3},{id:'creme-framboise',n:'Crème à franges framboise',c:'#f2d4e6',bl:'#6a0c36',fr:'#b83898',late:3});
 for(const k in TFRGS)TULS['frg-'+k]=TFRGS[k];
 /* the material: the genus' (tulMat, on the prefixed key), plus the fringe's colours */
 /* from this wilt on the head is drawn by the lighter sheet SVT_FRINGE_FAN (budget: the faded head was 388 to 469 elements and 74 to 90 Ko, the ceiling is 360 and 60) */

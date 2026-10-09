@@ -85,7 +85,7 @@ const CW_L106NB=[{id:'paperwhite',n:'Blanc pur (Ziva)',c:'#fbfaf4',tr:'#f4f0dc',
   {id:'soleil-d-or',ret:1,n:'Jaune à coupe orange (Grand Soleil d’Or)',c:'#f4cb2e',tr:'#f08a1e',nn:[5,8],sz:1},{id:'cragford',n:'Blanc à coupe orange vif (Cragford)',c:'#f8f6ee',tr:'#f0742a',nn:[4,6],sz:1.1},
   {id:'chinensis',ret:1,n:'Blanc à coupe jaune d’or (Chinese Sacred Lily)',c:'#fbf9f0',tr:'#f2b828',nn:[5,8],sz:1},{id:'silver-chimes',n:'Blanc à coupe blanche (Silver Chimes)',c:'#f6f2e2',tr:'#f2e6a4',nn:[5,8],sz:1.05,cl:1.3},
   {id:'martinette',n:'Jaune d’or à coupe orange (Martinette)',c:'#f6d034',tr:'#ef7a22',nn:[4,6],sz:1.05},
-  {id:'golden-dawn',n:'Jaune d’or profond à coupe orange (Golden Dawn)',c:'#f0c61c',tr:'#f08a08',nn:[5,8],sz:1,late:1}];
+  {id:'golden-dawn',n:'Jaune d’or profond à coupe orange (Golden Dawn)',c:'#f0c61c',tr:'#f08a08',nn:[5,8],sz:1,late:3}];
 const L106_TTEP=prof([[0,.4],[.2,.85],[.5,1],[.78,.86],[.93,.5],[1,.16]]);
 /* the short cup in the flower's frame (as narTrumpet, lot 41): rings from its base to its crimped rim; the anthers show in its mouth */
 function l106Cup(par,B,O,R0,cw,o2,cache){const nz=B[2][2],Lt=R0*(.12+.1*o2)*(cw.cl||1),rb=R0*.15,rm=R0*(.22+.1*o2),ph=(O[0]*.31+O[1]*.17)%6.283,nr=DET>=1.5?16:12,rings=[],c=cw.tr,P=pal7(c);

@@ -33,7 +33,7 @@ const TPARS={
     fl:{c:'#cc1e34',n:[3,5],from:.05,to:.98,w:.09,op:.9},vn:'#d83048',an:'#2a1a20'},
   'vert-rose':{i:'#f0d4d6',t:'#f2c2c8',ba:'#eee6c8',bv:.18,o:'#e4d6c8',ot:'#eac4c6',g:.6,gz:.55,gc:'#7e9a58',sh:'#8a6a6e',li:'#fff4f6',bl:['#eee6c0','#f2ead8',.2,.5,.8],
     band:['#e8a0b0',.025,.5,.5],fl:{c:'#7e9a58',n:[2,3],from:.05,to:.8,w:.07,op:.8,side:-1},vn:'#d898a8',an:'#3a3030'},
-  /* late:1, the cultivars of level A or B (recensement.md, coloris.md) */
+  /* late:3, the cultivars of level A or B (recensement.md, coloris.md) */
   'citron-vert':{flLo:1,i:'#f6ea74',t:'#f8ee8c',ba:'#c8c050',bv:.2,o:'#dcd060',ot:'#e6dc70',g:.6,gz:.55,gc:'#6a8a28',sh:'#7a6c10',li:'#fbf6b0',bl:['#c8c458','#d8d888',.2,.5,.8],
     fl:{c:'#6a8a28',n:[2,4],from:.04,to:.85,w:.022,op:.55},vn:'#a8a830',an:'#4a4020',fi:'#c8c070'},
   'creme-framboise':{i:'#eeaabe',t:'#e07ea4',ba:'#f2e6c8',bv:.22,o:'#ecc8c8',ot:'#e48aa8',g:.4,gz:.35,gc:'#5a7a20',sh:'#8a3a5a',li:'#fff0f4',bl:['#f0e2b8','#f2e8d0',.22,.5,.85],
@@ -53,13 +53,13 @@ const TPARS={
   'rouge-sombre':{bandLo:1,i:'#bc2e44',t:'#c03a48',o:'#b02a40',ot:'#bc4050',g:.3,gz:.3,gc:'#5a7a48',sh:'#4a0614',li:'#f06070',bl:['#3a1018','#6a1a28',.18,.42,.9],
     band:['#e8c8b8',.02,.55,.55],fl:{c:'#5a7a48',n:[1,2],from:.05,to:.4,w:.04,op:.5,side:-1},vn:'#801424',an:'#2a1a1a'}};
 for(const k in TPARS)TULS['par-'+k]=TPARS[k];
-/* the colourways added (late:1, at the end: no SKU number moves) */
+/* the colourways added (late:3: the third wave, after the anemones' (1) and the rosettes' (2); at the end, no SKU number moves) */
 if(typeof CW_TPAR!=='undefined'&&!CW_TPAR.some(x=>x.id==='citron-vert'))CW_TPAR.push(
- {id:'citron-vert',n:'Citron vert strié (Yellow Madonna)',c:'#e2d058',flame:'#769627',bl:'#c8c458',late:1},{id:'creme-framboise',n:'Crème et framboise (Cabanna)',c:'#e8a0bc',flame:'#507809',bl:'#f0e2b8',late:1},
- {id:'blanc-vert',n:'Blanc flammé de vert (Super Parrot)',c:'#ecebd6',flame:'#778b44',bl:'#e6e4c0',late:1},{id:'blanc-rose',n:'Blanc rosé (Silver Parrot)',c:'#efcdd2',bl:'#f0e6c8',late:1},
- {id:'jaune-bord-orange',n:'Jaune bordé d’orange (Caribbean Parrot)',c:'#f0c038',edge:'#e0502a',bl:'#e8b830',late:1},{id:'violet-sombre',n:'Prune magenta (Parrot Negrita)',c:'#b45785',bl:'#2a2040',late:1},
- {id:'fuchsia',n:'Fuchsia (Power Parrot)',c:'#db3a6c',bl:'#e0c070',late:1},{id:'multicolore',n:'Jaune et rouge flammés (Rasta Parrot)',c:'#e8a428',flame:'#c42818',bl:'#f2d040',late:1},
- {id:'rouge-sombre',n:'Rouge sombre bordé crème (Seadov Parrot)',c:'#b2384d',edge:'#e8c8b8',bl:'#3a1018',late:1});
+ {id:'citron-vert',n:'Citron vert strié (Yellow Madonna)',c:'#e2d058',flame:'#769627',bl:'#c8c458',late:3},{id:'creme-framboise',n:'Crème et framboise (Cabanna)',c:'#e8a0bc',flame:'#507809',bl:'#f0e2b8',late:3},
+ {id:'blanc-vert',n:'Blanc flammé de vert (Super Parrot)',c:'#ecebd6',flame:'#778b44',bl:'#e6e4c0',late:3},{id:'blanc-rose',n:'Blanc rosé (Silver Parrot)',c:'#efcdd2',bl:'#f0e6c8',late:3},
+ {id:'jaune-bord-orange',n:'Jaune bordé d’orange (Caribbean Parrot)',c:'#f0c038',edge:'#e0502a',bl:'#e8b830',late:3},{id:'violet-sombre',n:'Prune magenta (Parrot Negrita)',c:'#b45785',bl:'#2a2040',late:3},
+ {id:'fuchsia',n:'Fuchsia (Power Parrot)',c:'#db3a6c',bl:'#e0c070',late:3},{id:'multicolore',n:'Jaune et rouge flammés (Rasta Parrot)',c:'#e8a428',flame:'#c42818',bl:'#f2d040',late:3},
+ {id:'rouge-sombre',n:'Rouge sombre bordé crème (Seadov Parrot)',c:'#b2384d',edge:'#e8c8b8',bl:'#3a1018',late:3});
 /* the material: the genus' (tulMat, on the prefixed key), then the parrot's own: the feathering in the veins, the green flame up the outside, the age */
 const TPAR_M={};
 function tulParMat(cwx){const wl=cwx.wl||0,op=cwx.op??1,key=cwx.id+'|'+Math.round(wl*20)+'|'+Math.round(op*20)+(DET<1.5?'l':'h');if(TPAR_M[key])return TPAR_M[key];
