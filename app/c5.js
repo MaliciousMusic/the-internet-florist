@@ -68,6 +68,70 @@ function heartsFree(L,list,c){const lay=[L.deep,L.back,L.mass,L.front],P=[],byEl
       if(a.gs[0].parentNode===b.gs[0].parentNode){const s=at(a.gs);b.gs[0].before(...a.gs);if(covered().length<n0)continue;back(s)}}
     R=covered()}
   c.heartsLeft=R.length;return R.length}
+/* stemsOver: in a fading bouquet (LIFE: Déclin, Fané) the heads nod and spread past the footprints c4 composed them on, so a head painted
+   behind another may come to lie over that other's stem, which then seems to run through it. The stem stays in front of it: what that stem
+   carries in the stems layers (its stem, its neck, the axis of a plant head) is drawn again over the heads it runs under, by reference
+   (<use>, nothing copied), masked to those heads and the shadows they cast (a little wider, for the breeze), less the stems of the heads in
+   front of its own painted below it that pass there: it shows only over those heads, meets the stem below without a seam and never crosses
+   a stem it passed behind. It is a still piece (no data-o: z5 keeps it with the stems; data-so names the stem), kept above the vessel; the
+   heads keep their order, the composition its places. On the shapes as drawn, as heartsFree (every animation at its end), the stem sampled
+   as lab/coeurs.js does. Returns the stems brought forward */
+function stemsOver(L,list,c,v){const svg=L.mass.ownerSVGElement,R0=L.mass.getCTM(),DF=GDEF||defs;if(!svg||!R0||!DF)return 0;const Ri=R0.inverse(),key=new Map();
+  [...svg.children].filter(n=>n.getAttribute&&n.getAttribute('data-l')).forEach((Ly,li)=>{let j=0;for(const n of Ly.children)key.set(n,li*1e6+j++)});
+  const GEO='path,ellipse,circle,rect,polygon,polyline,line',ref=id=>svg.querySelector('#'+CSS.escape(id))||document.getElementById(id),
+    top=x=>v&&v.prof?vSilTop(v,x):c.BP[1],box=(el,M)=>{try{const b=el.getBBox(),P=[[b.x,b.y],[b.x+b.width,b.y],[b.x,b.y+b.height],[b.x+b.width,b.y+b.height]].map(([x,y])=>new DOMPoint(x,y).matrixTransform(M)),X=P.map(p=>p.x),Y=P.map(p=>p.y);
+      return[Math.min(...X)-1,Math.min(...Y)-1,Math.max(...X)+1,Math.max(...Y)+1]}catch(_){return null}},inB=(b,x,y)=>b&&x>=b[0]&&x<=b[2]&&y>=b[1]&&y<=b[3],
+    meet=(a,b)=>a&&b&&a[0]<=b[2]&&b[0]<=a[2]&&a[1]<=b[3]&&b[1]<=a[3],NB=new Map(),nbox=n=>{if(!NB.has(n)){const C=n.getCTM();NB.set(n,C?box(n,Ri.multiply(C)):null)}return NB.get(n)};
+  /* the painted shapes of a piece: {el, M from its own space to the root, Mi, its box in the root, u the <use> it is seen through} */
+  const SH=new Map(),shapes=n=>{let S=SH.get(n);if(S)return S;S=[];SH.set(n,S);
+    for(const el of n.matches(GEO+',use')?[n]:n.querySelectorAll(GEO+',use')){if(el.closest('clipPath,mask,defs,symbol,pattern,marker'))continue;const C=el.getCTM();if(!C)continue;const M=Ri.multiply(C),bb=box(el,M);if(!bb)continue;
+      if(el.tagName!=='use'){S.push({el,M,Mi:M.inverse(),bb});continue}
+      const t=ref((el.getAttribute('href')||el.getAttribute('xlink:href')||'').slice(1));if(!t)continue;
+      const add=(k,m)=>{const tf=k.transform&&k.transform.baseVal.consolidate(),mm=tf?m.multiply(tf.matrix):m;if(k.matches(GEO))S.push({el:k,M:mm,Mi:mm.inverse(),bb,u:el});else for(const ch of k.children)add(ch,mm)};
+      add(t,M.translate(+el.getAttribute('x')||0,+el.getAttribute('y')||0))}
+    return S};
+  /* whether a shape is filled, stroked */
+  const pnt=s=>{if(!s.p){const a=k=>(s.u||s.el).getAttribute(k)??s.el.getAttribute(k)??(s.u?null:getComputedStyle(s.el)[k]),st=a('stroke');s.p=[a('fill')!=='none',!!st&&st!=='none']}return s.p};
+  const paints=(S,x,y)=>{for(const s of S){if(!inB(s.bb,x,y))continue;const q=new DOMPoint(x,y).matrixTransform(s.Mi),[pf,ps]=pnt(s);
+      try{if(pf&&s.el.isPointInFill(q))return true;if(ps&&s.el.isPointInStroke(q))return true}catch(_){}}return false};
+  /* the pieces painted in the head layers (a head's groups, a cluster, a drape...), the topmost first; where each element stands (its first piece) */
+  const pcs=[],hk=new Map();for(const Ly of[L.back,L.mass,L.front])for(const n of Ly.children){const e=+n.getAttribute('data-o');if(e>=0){const k=key.get(n);pcs.push({n,e,k});if(!(hk.get(e)<=k))hk.set(e,k)}}pcs.sort((a,b)=>b.k-a.k);
+  const stl=[];for(const Ly of[L.stems,L.fst])for(const n of Ly.children){const e=+n.getAttribute('data-o');if(e>=0)stl.push({n,e,k:key.get(n)})}
+  const jobs=[];
+  for(let i=0;i<list.length;i++){const o=list[i];if(o.kind!=='head'||!o.stemP||!o.stN||!o.stN.length||o.rim)continue;const k0=key.get(o.stN[0]);let k1=Infinity,h1=null;
+    for(const p of pcs)if(p.e===i&&p.n.hasAttribute('data-h')&&p.k<k1){k1=p.k;h1=p.n}if(!(k0>=0)||!h1)continue;
+    /* painted after the stem and before its head: behind the head, yet over the stem */
+    const cand=pcs.filter(p=>p.e!==i&&p.k>k0&&p.k<k1);if(!cand.length)continue;
+    for(const p of cand)if(p.bb===undefined)p.bb=nbox(p.n);
+    const pts=[...Array(61)].map((_,j)=>bz(o.stemP,j/60)).concat(o.np||[]),ks=new Set(),hit=[];
+    for(const q of pts){if(q[1]>top(q[0])-1)continue;for(const p of cand)if(inB(p.bb,q[0],q[1])&&paints(shapes(p.n),q[0],q[1])){ks.add(p);hit.push(q);break}}
+    if(ks.size)jobs.push({i,o,h1,k1,hit,ks:[...ks].sort((a,b)=>a.k-b.k)})}
+  const useOf=(n,par,a={})=>{if(!n.id)n.id='so'+(gid++);return E('use',Object.assign({href:'#'+n.id},a),par)},AX='[clip-path^="url(#sc"]',
+    isAx=e=>{const cp=ref(e.getAttribute('clip-path').slice(5,-1));return!!(cp&&cp.firstElementChild&&cp.firstElementChild.tagName==='path'&&e.firstElementChild&&e.firstElementChild.hasAttribute('filter'))},
+    mat=m=>`matrix(${[m.a,m.b,m.c,m.d,m.e,m.f].map(x=>+x.toFixed(4)).join(',')})`;
+  /* the mask filters: wherever a piece paints, even faintly, in white widened by 2, in white, or in black */
+  let fW=null,fw,fB;const flt=(col,dil)=>{const fi=E('filter',{id:'so'+(gid++),x:'-10%',y:'-10%',width:'120%',height:'120%'},DF),ct=E('feComponentTransfer',{in:'SourceAlpha',result:'a'},fi);E('feFuncA',{type:'linear',slope:1000},ct);
+    if(dil)E('feMorphology',{in:'a',operator:'dilate',radius:2,result:'a'},fi);E('feFlood',{'flood-color':col},fi);E('feComposite',{in2:'a',operator:'in'},fi);return`url(#${fi.id})`};
+  for(const{i,o,h1,k1,hit,ks}of jobs){if(!fW){fW=flt('#fff',1);fw=flt('#fff',0);fB=flt('#000',0)}let bb=null;
+    /* where it goes: just under its own head, or at the end of the layer of the topmost head it runs under when that layer lies lower (the
+       forward stems, painted between, stay over it) */
+    const hi=ks[ks.length-1],same=hi.n.parentNode===h1.parentNode,Pk=same?k1-.5:Math.floor(hi.k/1e6)*1e6+999999;
+    for(const p of ks)bb=bb?[Math.min(bb[0],p.bb[0]),Math.min(bb[1],p.bb[1]),Math.max(bb[2],p.bb[2]),Math.max(bb[3],p.bb[3])]:p.bb.slice();bb=[bb[0]-12,bb[1]-12,bb[2]+12,bb[3]+12];
+    /* the mask (every piece drawn by reference, nothing copied): the heads the stem runs under in white, widened, with the shadows they cast;
+       less every stem of a head in front of this one, but inside each of those heads only the stems painted over it */
+    const mk=E('mask',{id:'so'+(gid++),maskUnits:'userSpaceOnUse',x:f(bb[0]),y:f(bb[1]),width:f(bb[2]-bb[0]),height:f(bb[3]-bb[1])},DF);for(const p of ks)useOf(p.n,mk,{filter:fW});
+    const fr=stl.filter(s=>s.e!==i&&hk.get(s.e)>k1&&s.k<Pk&&meet(nbox(s.n),bb)),black=(lo,hi)=>{const a=fr.filter(s=>s.k>lo&&s.k<hi);if(!a.length)return;const g=E('g',{filter:fB},mk);for(const s of a)useOf(s.n,g)};
+    black(-1,Infinity);ks.forEach((p,j)=>{const t=p.n.getAttribute('transform'),g=G(E('g',{filter:fw},mk),t?{transform:t}:{});for(const ch of p.n.children)useOf(ch,g);black(p.k,j+1<ks.length?ks[j+1].k:Infinity)});
+    /* never below the rim of the vessel (a copy under a head resting on the lip paints after the vessel) */
+    const cp=E('clipPath',{id:'so'+(gid++),clipPathUnits:'userSpaceOnUse'},DF),rim=[];for(let x=bb[0];x<bb[2]+3;x+=3)rim.push([x,Math.min(bb[3],top(x)-1)]);
+    E('path',{d:`M${f(bb[0])},${f(bb[1])}L${f(bb[2]+3)},${f(bb[1])}`+rim.reverse().map(p=>`L${f(p[0])},${f(p[1])}`).join('')+'Z'},cp);
+    /* the copy: its stem and neck, by reference */
+    const w=document.createElementNS('http://www.w3.org/2000/svg','g');w.setAttribute('mask',`url(#${mk.id})`);w.setAttribute('clip-path',`url(#${cp.id})`);w.setAttribute('data-so',i);if(same)h1.before(w);else hi.n.parentNode.append(w);
+    for(const Ly of[L.stems,L.fst])for(const n of Ly.children){if(+n.getAttribute('data-o')!==i||n.hasAttribute('data-h')||n.hasAttribute('data-lf'))continue;if(o.stN.includes(n)){useOf(n,w);continue}
+      /* a plant's axes and leaves (ext): only the stretches of axis (svStemLine groups: clipped by an sc… path, blurred inside) the stem's line
+         runs through where it is covered, not the leaves */
+      for(const g of[...n.querySelectorAll(AX)].filter(isAx).map(e=>e.parentNode).filter((g,j,A)=>A.indexOf(g)===j&&hit.some(q=>paints(shapes(g),q[0],q[1])))){const C=g.parentNode.getCTM();if(C)useOf(g,w,{transform:mat(Ri.multiply(C))})}}}
+  return jobs.length}
 function buildBq(svg,ids,sv,vid,t0=150,occ,model,recipe){if(svg._alive)svg._alive.stop();const c=compose(ids,sv,occ||S.occ,vid,model,recipe),tw0=tw.length;sd(sv*7+3);WILT=null;svg.innerHTML='';GDEF=E('defs',{},svg);
   /* cast shadow: each flower throws its own silhouette down and to the right onto what lies behind it (no blurred halo) */
   /* one per plane: the front throws the longest, clearest shadow onto what lies behind it, the back the faintest */
@@ -98,7 +162,7 @@ function buildBq(svg,ids,sv,vid,t0=150,occ,model,recipe){if(svg._alive)svg._aliv
     if(!held&&front&&ey>vTop+2&&v.kind!=='kenzan'&&Math.hypot(ex-lx0,ey-(vTop-5))>14){const lx=lx0,ly=vTop-5,
         Lq=Math.hypot(ex-lx,ey-ly),A=[[bx,BP[1]+8],[bx+(lx-bx)*.2,ly-6],[lx-(lx-bx)*.25,ly-4],[lx,ly]],Bq=[[lx,ly],[lx+(ex-lx)*.45,ly-3],nd?[ex+nd[0]*Lq*.4,ey+nd[1]*Lq*.4]:[ex,ly+(ey-ly)*.4],[ex,ey]],
         s1=stem3(L.stems,A,w0,w0*.85,SCc,10),s2=stem3(L.front,Bq,w0*.85,w1,SCc,10);let hn=head;while(hn&&hn.parentNode!==L.front)hn=hn.parentNode;if(hn)L.front.insertBefore(s2,hn);
-      growUp(s1,bx,BP[1]+8,Math.max(0,t-520),520);growUp(s2,lx,ly,Math.max(0,t-260),300);s1.P=Bq;s1.P0=A;s1.nk={par:L.front,before:hn,gu:[lx,ly,Math.max(0,t-260),300]};if(GL)feet.push({p:A[0],d:[A[0][0]-A[1][0],A[0][1]-A[1][1]],w:w0,c:SCc,tn:TINT});return s1}
+      growUp(s1,bx,BP[1]+8,Math.max(0,t-520),520);growUp(s2,lx,ly,Math.max(0,t-260),300);s1.P=Bq;s1.P0=A;s1.s2=s2;s1.nk={par:L.front,before:hn,gu:[lx,ly,Math.max(0,t-260),300]};if(GL)feet.push({p:A[0],d:[A[0][0]-A[1][0],A[0][1]-A[1][1]],w:w0,c:SCc,tn:TINT});return s1}
     /* a long stem leaves the mouth already leaning toward its head (stems pivot at the lip, they do not rise straight then turn) and arrives in its neck
        along the neck's direction; a short one (a head lying near the rim) goes almost straight, without overshooting; c4 stemSamples is the same curve */
     const dy=BP[1]-ey,Lc=Math.hypot(ex-bx,BP[1]+8-ey),sh=Math.max(0,Math.min(1,1-(Lc-20)/50)),hk=Lc*(.38-.2*sh),P1=[bx+(ex-bx)*.22,BP[1]-dy*.33],P1s=[bx+(ex-bx)*.33,BP[1]+8+(ey-BP[1]-8)*.33],
@@ -106,7 +170,7 @@ function buildBq(svg,ids,sv,vid,t0=150,occ,model,recipe){if(svg._alive)svg._aliv
     if(held)below(P[0][0],P[0][1],P[1][0]-P[0][0],P[1][1]-P[0][1],w0,SCc,t);st.nk={par:FWD?L.fst:L.stems,gu:[bx,BP[1]+8,Math.max(0,t-520),520]};return st}
   /* a head's neck, handed back by the head, drawn with the stems: continuous with its bouquet stem, behind every flower */
   const neckDraw=(nk,st,ext,x,y,nod=0,ps=1)=>{if(!st||!st.nk)return;const put=el=>{if(st.nk.before)st.nk.par.insertBefore(el,st.nk.before);growUp(el,...st.nk.gu)};
-    if(nk&&nk.cp)put(stem3(st.nk.par,nk.cp,nk.w,nk.w*1.12,nk.cols,8));
+    if(nk&&nk.cp)put(st.nkEl=stem3(st.nk.par,nk.cp,nk.w,nk.w*1.12,nk.cols,8));
     /* what a plant head grows besides its flowers (axes, side shoots, leaves) joins the stems, at the head's place */
     if(ext&&ext.length){const eg=G(st.nk.par),ig=G(eg,{transform:`translate(${f(x)},${f(y)})`+(nod?` rotate(${f(nod)})`:'')+(ps!==1?` scale(${ps.toFixed(3)})`:'')});for(const fn of ext)fn(ig);put(eg)}};
   /* every node an element draws is tagged with its index, whatever layer it lands in */
@@ -175,13 +239,14 @@ function buildBq(svg,ids,sv,vid,t0=150,occ,model,recipe){if(svg._alive)svg._aliv
         else{const ok=Math.max(0,Math.min(rr*.6,FL-2-lim));
         if(bot>lim+ok){hp.remove();tw.length=w0;o.y-=bot-(lim+ok);hp=head()}L.front.appendChild(hp);o.front=true}}}catch(_){}
     /* every head keeps its whole stem from the mouth to its receptacle */
-    FWD=!!o.fwd&&!o.front&&!held;const nw1=nk?nk.w*1.12:2.4,st=stemTo(ex,ey,t,Math.max(o.role==='line'?3.2:4,nw1*1.1),nw1,!!o.front,g,nd,nk&&nk.cols);neckDraw(nk,st,ext,o.x,o.y,nod,ps);FWD=false;if(st&&st.P){o.stemP=st.P;o.stemP0=st.P0||null;o.nd=nd;o.np=np||(Math.hypot(ex-o.x,ey-o.y)>3?[[o.x,o.y],[ex,ey]]:null)}
+    FWD=!!o.fwd&&!o.front&&!held;const nw1=nk?nk.w*1.12:2.4,st=stemTo(ex,ey,t,Math.max(o.role==='line'?3.2:4,nw1*1.1),nw1,!!o.front,g,nd,nk&&nk.cols);neckDraw(nk,st,ext,o.x,o.y,nod,ps);FWD=false;if(st&&st.P){o.stemP=st.P;o.stemP0=st.P0||null;o.stN=[st.s2||st,st.nkEl].filter(Boolean);o.nd=nd;o.np=np||(Math.hypot(ex-o.x,ey-o.y)>3?[[o.x,o.y],[ex,ey]]:null)}
     /* the leaves its stem carries, on the part seen above the mouth (or above the tie); tagged data-lf (leaves, not bare stem, for lab/nues.js) */
     if(st&&st.P&&STEML[o.it.p.sid]){let lim=held?BP[1]:FL;if(!held)for(let i=0;i<=6;i++)lim=Math.min(lim,vSilTop(v,st.P[0][0]+(st.P[3][0]-st.P[0][0])*i/6));const n0=L.stems.children.length;stemLeaves(L.stems,st.P,o.it.p.sid,lim-6,rr,t);for(let j=n0;j<L.stems.children.length;j++)L.stems.children[j].setAttribute('data-lf',1)}}
   }finally{WILT=null;TINT=null}
   mark(-1);mk=null;
   /* the last word on overlaps, on the shapes as drawn (every animation at its end): no flower's heart under something painted after it */
-  try{const ws=tw.slice(tw0);for(const w of ws)w.fn(1,1);try{heartsFree(L,list,c)}finally{for(const w of ws)w.fn(0,0)}}catch(_){}
+  /* then, in a fading bouquet, no stem seen running under a head painted behind its own head (stemsOver) */
+  try{const ws=tw.slice(tw0);for(const w of ws)w.fn(1,1);try{heartsFree(L,list,c);if(LIFE&&LIFE.stage>=2)stemsOver(L,list,c,v)}finally{for(const w of ws)w.fn(0,0)}}catch(_){}
   /* in a glass vessel every stem goes on under the mouth: the continuation of its own stem, down to the bottom */
   if(GL&&feet.length){WILT=LIFE?lifeWilt(lifeW(LIFE)*.85):null;try{growUp(stemsIn(L.stems,feet,vid),BP[0],FL-6,t0,560)}finally{WILT=null}}
   /* petals fallen on the table (not swayed by the breeze, outside the frame measure) */
