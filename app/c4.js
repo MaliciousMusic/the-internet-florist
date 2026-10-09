@@ -160,7 +160,8 @@ function stemSamples(x,y,BP,mw,rx,rimY){const bx=BP[0]+Math.max(-1,Math.min(1,(x
       most bare stem lies within its reach, when that hides more than its size of bare stem;
    2. settling, from the mouth outward (four passes): a head showing more bare stem than its allowance (a bud or a half-open head may
       stand on a short bare stem, a focal flower hardly any) slides down its stem toward the mouth: down to the lip, then as far as its
-      bare stem, or 70, 45, 25 % of it, at its depth or a little behind (never a head the player set in front).
+      bare stem, or 70, 45, 25 % of it, at its depth or a little behind (never a head the player set in front). Over a narrow neck (its mouth
+      narrower than the median head) a head stays a diameter above the mouth: lower, its neck would end in the mouth and its stem turn back.
    A move is kept only where the head still fits (it stays visible and hides no flower behind it more than placing allows) and the bouquet
    as a whole shows less bare stem. air (0–1, the bouquet's breathing) widens every allowance and brings fewer heads to the neck: 0 the
    tightest bouquet, 1 no settling at all. Returns the bare length and the length of stem above the vessel, for the score */
@@ -174,7 +175,7 @@ function settle(heads,BP,mw,rx,ry,v,hand,fits,axFor,PL,air=0,fan=FAN){const rimY
     fitsAt=(h,X,Y,z,need)=>{const i=heads.indexOf(h),lip=onLip(h,Y);heads.splice(i,1);const zz=fits(X,Y,h.r,lip?Math.max(z,.97):z,need,h.sid,lip,h.reach?{r:h.r,it:h.it}:null);heads.splice(i,0,h);return zz},
     dB=h=>Math.hypot(h.X-BP[0],h.Y-BP[1]);
   const cone=(x,y,r)=>Math.abs(x-BP[0])-(mw+r*1.1+Math.max(0,BP[1]-y)*fan),
-    yLim=(h,x)=>hand?BP[1]-h.r*.3:!h.focal&&Math.abs(x-BP[0])<=mw*.9+h.r*.4?BP[1]-h.r*.45:BP[1]-h.r*.95-2;
+    yLim=(h,x)=>{if(hand)return BP[1]-h.r*.3;const m=Math.abs(x-BP[0])<=mw*.9+h.r*.4;return m&&mw<rMed?BP[1]-h.r*2-2:m&&!h.focal?BP[1]-h.r*.45:BP[1]-h.r*.95-2};
   for(const h of M)build(h);let tot=total();const moved=new Set();
   /* 1. the neck: the head's footprint goes on the spot (its anchor below it, along its stem) */
   const rs=M.map(h=>h.r).sort((a,b)=>a-b),rMed=rs[rs.length>>1]||20,cell=12,RC=Math.ceil(rMed*SET_K/cell);
