@@ -10,7 +10,7 @@ R = [  # [product, stems, place 1 (back) .. 10 (front)]
     ["cerisier-du-japon-sato-zakura~1", 3, 1], ["cognassier-du-japon~0", 2, 2], ["forsythia~1", 2, 2],
     ["iris-hollandais~0", 3, 3], ["iris-hollandais~2", 2, 3], ["lilas~0", 2, 4],
     ["tulipe-perroquet~0", 3, 5], ["tulipe-double~4", 3, 5], ["tulipe-simple~7", 3, 6], ["tulipe-simple~12", 2, 6], ["tulipe-frangee~6", 2, 6],
-    ["renoncule-butterfly~7", 3, 7], ["renoncule-classique~7", 3, 6], ["renoncule-classique~3", 2, 6],
+    ["renoncule-classique~16", 3, 7], ["renoncule-classique~7", 3, 6], ["renoncule-classique~3", 2, 6],
     ["narcisse-trompette~0", 3, 5], ["narcisse-bouquet~3", 3, 6], ["jacinthe~0", 2, 7], ["jacinthe~4", 2, 7],
     ["anemone-coronaria~3", 3, 8], ["anemone-sauvage~0", 2, 8], ["freesia~2", 2, 6], ["pois-de-senteur~3", 3, 7], ["pois-de-senteur~10", 2, 7],
     ["muscari~0", 4, 9], ["fritillaire-meleagris~0", 2, 8], ["glycine~1", 2, 9], ["viburnum-roseum~0", 3, 5], ["alchemille~0", 2, 6]]
