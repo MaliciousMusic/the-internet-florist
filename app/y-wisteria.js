@@ -25,7 +25,10 @@ const GLY_CW={
     wing:['#2c2040','#3f2e5c','#563f78','#6e5794','#8a76ae'],wingT:['#29254a','#3a3462','#4f4882','#67609e','#8580b8'],
     keel:['#382c50','#4c3f6a','#625586','#7b6ea0','#978cba'],keelT:['#302d4c','#424066','#585683','#716f9f','#8d8cba'],
     bud:['#26253c','#343351','#4a496c','#5d5c89','#7975a2'],budT:['#22223a','#30304e','#43436a','#565684','#6f6f9e'],
-    lo:['#58466c','#705d86','#897aa0','#a296b7','#bcb3cd'],loT:['#50456e','#675c89','#7e76a1','#9a93b8','#b4b0ce'],eye:'#bcb96b',qT:[.15,.85,2]},
+    lo:['#58466c','#705d86','#897aa0','#a296b7','#bcb3cd'],loT:['#50456e','#675c89','#7e76a1','#9a93b8','#b4b0ce'],eye:'#bcb96b',qT:[.15,.85,2],
+    /* the shade deep inside the raceme (blue-violet, h 238, the RHS photo's inner florets) and the standards' lilac from floret to floret (photo:
+       h 246 to 268, some pinker, some bluer) */
+    deep:'#3c3f74',bv:[['#d2bedf',.4],['#b6bcdc',.4]]},
 // W. sinensis 'Prolific': measured classes dark #4c3459 / mid #88749f / pale #c6b4d8 (photos 98, 85; no photo named to the variety): provisional
   mauve:{fr:['#53375c','#806791','#c4aed2','#ddcee6','#efe8f3'],bk:['#423248','#574d5e','#9f84b0','#b9a1c7','#cbbad5'],
     wing:['#23102b','#3b1c48','#532766','#773892','#9056b6'],
@@ -71,14 +74,14 @@ const GLY_S={layout:'pendante',floret:'papillon',genes:GLY_GENES,mat:glyMat,wilt
     wing:{z:[.2,.84],y:[.03,.3],h:.3,x:[.035,.08]},keel:{z1:1,y:.3,h:.18,x:.045,up:.16},eye:[.34,.3],
     /* in volume (kit S.fl.vol): rim, body, shaded half, the pale fan of the claw (photo RHS: the standard white-lilac at its foot round the eye), wings shaded and lit */
     vol:{rim:.2,mid:[.8,.1],hf:.45,rev:1,th:[.045,.6],claw:[.56,.44,.2],eyeL:5,wsh:[.75,.3,.18],whl:[.5,.35,.22],bh:[.45,.4,.22]},dec:[.2,.35],dry:[.55,.3],shed:[.8,.3,.35],fold:.55,sag:.5,green:[.85,.04,.25,.22]},
-  lit:[.02,.95],ao:.48,budget:[110,260],cost:{2:[8,3],1:[3,2]},bq:{n:.62,L:1.12,slabs:2,budget:[64,140]}};
+  lit:[.02,.95],ao:.48,dep:{t:[.35,.7],v:[-.18,-.07,.06],k:[.45,.18,0]},budget:[110,260],cost:{2:[8,3],1:[3,2]},bq:{n:.62,L:1.32,slabs:2,budget:[64,140],lay:{core:.55,coreV:.2}}};
 /* the wisteria raceme: in the frame B, its foot at O (o.foot) or its middle there; o.hang: B[2] is the way it leaves its spur (the plant), else the
    sheets' frame turned over (the raceme hangs away from the view's axis); the ground's direction handed to the layout */
 function glySvg(par,B,O,D,cwId,op,seed,wl,o){o=o||{};const cwx=(typeof CW_L97GL!=='undefined'&&CW_L97GL.find(x=>x.id===cwId))||{id:cwId,c:'#8a7ec8'},
     Bf=o.hang?B:[B[0],V3.sc(B[1],-1),V3.sc(B[2],-1)],S=Object.assign({},GLY_S,{lay:Object.assign({},GLY_S.lay,{down:[-Bf[0][1],-Bf[1][1],-Bf[2][1]]})});
   /* in a bouquet (o.bq, DET 1): fewer, larger florets, painted by slabs, within a small budget (three strands of two or three racemes a stem) */
   /* (o.bk < 1, a later raceme of the same stem: fewer florets again, a little larger, so that it stays full) */
-  if(o.bq){const B2=GLY_S.bq,kb=o.bk<1?.35+.65*o.bk:1;S.genes=Object.assign({},GLY_GENES,{n:GLY_GENES.n.map(([a,p])=>[Math.round(a*B2.n*kb),p])});S.lay.L*=B2.L/Math.sqrt(kb);S.slabs=B2.slabs;S.budget=B2.budget;S.fl=Object.assign({},GLY_S.fl,{q1:1e9,foot:GLY_FOOT,std:Object.assign({},GLY_S.fl.std,{qw:GLY_FOOT[4]})})}
+  if(o.bq){const B2=GLY_S.bq,kb=o.bk<1?.35+.65*o.bk:1;S.genes=Object.assign({},GLY_GENES,{n:GLY_GENES.n.map(([a,p])=>[Math.round(a*B2.n*kb),p])});S.lay.L*=B2.L/Math.sqrt(kb);S.slabs=B2.slabs;S.budget=B2.budget;if(B2.lay)Object.assign(S.lay,B2.lay);S.fl=Object.assign({},GLY_S.fl,{q1:1e9,foot:GLY_FOOT,std:Object.assign({},GLY_S.fl.std,{qw:GLY_FOOT[4]})})}
   return grDraw(par,Bf,O,D,S,cwx,op,seed,wl==null?glyLife(o):wl,o)}
 /* (in a bouquet the florets are drawn without their calyx: the kit's S.fl.foot [open, bud, width, y] x L, a stroke in the calyx's paint from the
    pedicel's tip into the corolla's foot (past the calyx: the out-of-zoom outlines cut its point), under it, else the larger florets of a later raceme float off their pedicels: QA, 18 pieces on seeds 1 to 8) */

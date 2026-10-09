@@ -303,11 +303,13 @@ function svbForm(F,o,fD,sd){const r=svRng(sd>>>0),ch=o.chains.map(c=>Object.assi
       sh(p,w.pl,a[0]);p[2]+=a[1];if(c){sh(p,pM,b[0]);p[2]+=b[1]}};
     ch.forEach((C,c)=>C.pts.forEach((p,i)=>mv(p,c,i)));for(const og of ogs)mv(og.pos,og.ci,og.ii)}
   return Object.assign({},o,{chains:ch,organs:ogs.filter(og=>!og.skip)})}
+/* the bouquet's one stage for every head (LIFE_ALL, z1.js): 'open' a branch at its peak, every flower fresh (none past its age), its leaves unfolded */
+const svbLifeAll=()=>typeof LIFE_ALL!=='undefined'?LIFE_ALL:null;
 function svBranch(par,S0,o){const S=S0._m||(S0._m=Object.assign({},SVBR_DEF,S0));
   /* kinds: the organs keep the kind the old drawing gave them (thorn, leafy spur) instead of all being flowering spurs; form and thorn may depend on the colourway */
   if(S.kinds)o=Object.assign({},o,{organs:o.organs.map(og=>{const q=og.p&&og.p.og&&S.kinds[og.p.og.k];return q&&q!=='fl'?Object.assign({},og,{kd:q}):og})});
   const Fm=typeof S.form==='function'?S.form(o.cw):S.form,Th=typeof S.thorn==='function'?S.thorn(o.cw):S.thorn;if(Fm)o=svbForm(Fm,o,S.fD,svSeed(o.seed||1,'form'));
-  const k=G(par),parts=[],r=svRng(o.seed||1),op=o.op,wl=o.wl||0,cw=o.cw,fD=S.fD,dn=[0,-1,0],
+  const k=G(par),parts=[],r=svRng(o.seed||1),op=svbLifeAll()==='open'?1:o.op,wl=o.wl||0,cw=o.cw,fD=S.fD,dn=[0,-1,0],
     fx=n=>Math.round(n*10)/10,sc=p=>[p[0],-p[1]],det=DET>=1.5;S._wl=wl;
   /* leaf.late:[w0,w1] (option): leaves only after the flowers (forsythia): none before the branch has faded to w0, full size at w1 (the chance is
      drawn as before, so the branch keeps its shape); fsz(cw) (option): the flowers' size by colourway (x fD) */
@@ -344,7 +346,7 @@ function svBranch(par,S0,o){const S=S0._m||(S0._m=Object.assign({},SVBR_DEF,S0))
       const ps=age<.4?.4+.6*svSm(age/.4):1,wgt=svSm((age-.25)/.5),dj=b29Spread(hang,og.U,og.L,j*6.283/nF+r.in(-.4,.4),r.in(I.spread[0],I.spread[1])*(1-.3*wgt),[0,-I.droop*(.5+1.5*wgt),0]),
         pl=I.type==='fascicle'?fD*(I.fpl??.05):fD*r.in(I.ped[0],I.ped[1])*ps,b=V3.add(cp,V3.sc(dj,pl));if(o.spine&&b[1]<28)continue;
       const ax=V3.nz(V3.add(V3.add(V3.sc(dj,.75),[0,-.15,0]),[r.in(-.15,.15),r.in(-.1,.1),r.in(.05,I.face+.15)])),B=basis(ax,r.in(-3,3)),
-        fop=age<.4?.03+age*.55:age<.78?.25+(age-.4)/.38*.75:1,fwl=Math.min(1,wl+Math.max(0,age-1.12)*.9),Df=fD*fK*(fop<.3?1:.88+.12*r());
+        fop=age<.4?.03+age*.55:age<.78?.25+(age-.4)/.38*.75:1,fwl=Math.min(1,wl+(svbLifeAll()==='open'?0:Math.max(0,age-1.12)*.9)),Df=fD*fK*(fop<.3?1:.88+.12*r());
       peds.push([cp,b,wgt]);fl.push({z:b[2],b,B,Df,fop,fwl,sd:r()*1e9|0,big:Df*(fop>.4?1:.5),cp})}
     if(!leafy&&(peds.length||stl>0))parts.push({kd:'pd',z:se[2]+.03,fn:pp=>svbPeds(pp,se,cp,peds,S,cw,age0)})}
   /* (infl.join) the pedicels, one path per cluster under its flowers that face the viewer, one over those seen from behind */
@@ -489,8 +491,10 @@ function svbPedJ(par,items,S,cw){const fx=DET>=1.5?n=>Math.round(n*10)/10:Math.r
    margin band lit apart (the curl reads as volume), midrib and lateral veins, teeth with bristle tips at close range; bronze when young, then green;
    in a fading branch the leaves hang, roll and dull toward olive-brown. At DET 1 one path (two for long leaves: the shaded half). */
 const SVB_LWP=(t,acu=0)=>t<.4?Math.pow(Math.sin(t/.4*Math.PI/2),.65)*.97+.03:(x=>Math.pow(1-x,1.2+.6*acu)*(1+1.3*acu*x)*(1-.1*Math.sin(Math.PI*x)))((t-.4)/.6);
-function svbLeaf(par,a,H0,len,S,cw,o){const Lf=S.leaf,r=svRng(o.seed>>>0),hi=DET>=1.5,fx=hi?n=>Math.round(n*10)/10:Math.round,g=par,cols=S.cols?S.cols(cw):{},wl=S._wl||0,age=(o.age||0)+(Lf.open??0)*wl,
+function svbLeaf(par,a,H0,len,S,cw,o){const Lf=S.leaf,r=svRng(o.seed>>>0),hi=DET>=1.5,fx=hi?n=>Math.round(n*10)/10:Math.round,g=par,cols=S.cols?S.cols(cw):{},wl=S._wl||0,age=Math.max((o.age||0)+(Lf.open??0)*wl,svbLifeAll()==='open'?(Lf.green??.9)+1:0),
     yc=cols.lf||'#7e6a2e',ac=cols.lf2||'#5a8a34';let col=mix(yc,ac,Math.min(1,Math.max(0,(age-(Lf.green??.9))*.8)));if(wl>(Lf.open?.75:.3))col=mix(col,'#9a8a4c',Math.min(Lf.open?.3:.6,(wl-(Lf.open?.75:.3))*.9));
+  /* (LIFE_ALL 'open') a fresh leaf whatever its colourway's grown green: never olive, never dull */
+  if(svbLifeAll()==='open'){const[h,sa,l]=h2l(col);col=l2h(h<82||h>300?82:h,Math.max(sa,.38),Math.max(.3,Math.min(.5,l)))}
   const pl=len*Lf.pet,yk=Math.max(0,1-age/(Lf.green??.9)),Xp=V3.nz(H0),hg=Math.min(1,(Lf.hang||0)*yk),th=Math.acos(Math.max(-1,Math.min(1,Xp[1]))),hz=Math.hypot(Xp[0],Xp[2]),hh=hz>.05?[Xp[0]/hz,0,Xp[2]/hz]:[1,0,0],
     t2=th<2.7?th+(2.7-th)*hg:th,X0=hg>0?[hh[0]*Math.sin(t2),Math.cos(t2),hh[2]*Math.sin(t2)]:Xp,acu=Lf.acu??.6,gl=Lf.gloss||0;
   let N=V3s([0,1,0],V3.sc(X0,X0[1]));if(V3l(N)<.15)N=V3s([0,0,1],V3.sc(X0,X0[2]));N=V3.nz(N);const rl=r.in(-.5,.5),S2=V3.cr(X0,N),Nn=V3.nz(V3.add(V3.sc(N,Math.cos(rl)),V3.sc(S2,Math.sin(rl)))),Sd=V3.cr(X0,Nn);

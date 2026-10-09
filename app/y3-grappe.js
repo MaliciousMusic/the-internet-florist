@@ -55,8 +55,12 @@ const GR_LAYOUT={},GR_FLORET={};
 /* the rank of a floret in the order of opening (0 first .. 1 last) */
 function grRank(L,q,f){return typeof L.order==='function'?L.order(f||{q}):L.order==='basi'?1-q:q}
 /* the stage law: its opening o (0 bud .. 1 open) and wilting w (0 fresh .. 1 dry) */
+/* the bouquet's one stage for every head (LIFE_ALL, z1.js): 'fane' leaves no bud green (budW's lag is lifted, every floret at least at the bouquet's wilt) */
+const grLifeAll=()=>typeof LIFE_ALL!=='undefined'?LIFE_ALL:null;
 function grLaw(L,rank,st,dt){dt=dt||0;const opE=Math.min(1.2,st.op+(L.late||0)*st.wl),t=L.t0+L.spread*rank+dt;
-  return{o:svSm((opE-t)/L.w+.5),w:Math.max(0,Math.min(1,st.wl*(1+L.ws)-L.ws*rank+dt*.5-(L.wa||0)))}}
+  const r={o:svSm((opE-t)/L.w+.5),w:Math.max(0,Math.min(1,st.wl*(1+L.ws)-L.ws*rank+dt*.5-(L.wa||0)))};
+  /* (LIFE_ALL 'fane') no floret is spared, not even the tip's buds */
+  if(st.wl>0&&grLifeAll()==='fane')r.w=Math.max(r.w,Math.min(1,st.wl));return r}
 /* ---------- the upright raceme (hyacinth): florets in a spiral (the head's divergence), crowded and smaller toward the top, standing close to the axis
    as buds, then spreading as they open, the lower ones nodding; a wilted floret hangs. S.lay: z [first, last insertion] (x H), dense (internodes
    shortening upward), L (floret length x H), taper (smaller toward the top), th [bud, open] (angle from the axis; thq: the buds at the foot
@@ -95,7 +99,7 @@ GR_LAYOUT.unilateral=(S,g,H,st)=>{const P=S.lay,n=g.n,fl=[],Hf=st.Hf||H,ns=24,sa
   const at=s=>{const x=Math.max(0,Math.min(1,s))*ns,i=Math.min(ns-1,Math.floor(x)),k=x-i,t=A[i]+(A[i+1]-A[i])*k;return[V3.add(pts[i],V3.sc(V3s(pts[i+1],pts[i]),k)),[Math.sin(t),0,Math.cos(t)],[-Math.cos(t),0,Math.sin(t)]]},
     rad=s=>Hf*(P.rr[0]+(P.rr[1]-P.rr[0])*s);
   for(let i=0;i<n;i++){const gt=g.tep[i],q=n>1?i/(n-1):0,s=P.z[0]+(P.z[1]-P.z[0])*(q*(1+P.gap)-P.gap*q*q),[p,Tg,N]=at(s),ps=(i%2?1:-1)*P.ranks+(gt.dpsi||0),
-      Nr=V3.add(V3.sc(N,Math.cos(ps)),[0,Math.sin(ps),0]),lw=grLaw(S.law,grRank(S.law,q),st,gt.dt),bw0=P.budW?lw.w*=1-P.budW*(1-svSm(lw.o/((S.fl&&S.fl.budAt)||.2))):0,thB=P.th[1]+(P.th[0]-P.th[1])*Math.pow(q,P.thp||1),
+      Nr=V3.add(V3.sc(N,Math.cos(ps)),[0,Math.sin(ps),0]),lw=grLaw(S.law,grRank(S.law,q),st,gt.dt),bw0=P.budW&&grLifeAll()!=='fane'?lw.w*=1-P.budW*(1-svSm(lw.o/((S.fl&&S.fl.budAt)||.2))):0,thB=P.th[1]+(P.th[0]-P.th[1])*Math.pow(q,P.thp||1),
       th=thB+(P.th[2]-thB)*svSm((lw.o-.1)/.6)+(gt.dth||0)-(P.hang||0)*(1+2*(gt.dth||0))*svSm((lw.w-.3)/.5),thc=P.back!=null?Math.min(th,Math.atan2(Tg[0],Tg[2])+P.back):th,dir=V3.nz(V3.add(V3.sc(Tg,Math.cos(thc)),V3.sc(Nr,Math.sin(thc))));
     fl.push(Object.assign({i,q,gt,rad:Nr,side:V3.nz(V3.cr(Tg,Nr)),pos:V3.add(p,V3.sc(Nr,rad(s)*(P.nb??.8))),dir,L:Hf*P.L*(1-P.taper*q)*(gt.dL||1),ap:p,
       gr:P.grow?svSm(1-(S.law.t0+S.law.spread*grRank(S.law,q)+(gt.dt||0)-Math.min(1.2,st.op+(S.law.late||0)*st.wl))/P.grow):svSm((st.op+.3-.9*q)/.6),ster:false,pc:null},lw))}
@@ -130,9 +134,13 @@ function grRaceme(k,B,O0,H,S,m,g,st,o){const lay=GR_LAYOUT[S.layout](S,g,H,st),f
   /* colours: a ramp read at v, then the species' decline and the dried tissue at the floret's w, quantized so neighbours share their paint */
   /* (m.qT [from q, to q, steps], optional: the raceme's tone along its length; a ramp with a twin `<ramp>T` (the tip's) is mixed toward it from
      q0 to q1 of the axis, in so many steps (shared paints); materials without qT: unchanged) */
-  const QT=m.qT,colAt=(v,w,ramp,gb,qq)=>{v=q10(v);w=q10(w);gb=q10(gb||0);const rT=QT&&m[ramp+'T'],t=rT?Math.round(svSm(((qq||0)-QT[0])/(QT[1]-QT[0]))*QT[2])/QT[2]:0;
-    const key=ramp+v+'|'+w+'|'+gb+(t?'|'+t:'');if(CC[key])return CC[key];
-    let c=grRamp(m[ramp]||m.fr,v);if(t)c=mix(c,grRamp(rT,v),t);if(gb>0)c=mix(c,grRamp(m.grn,v),gb);if(w>0){c=S.wilt(c,svSm(w/.55)*.9);const dr=svSm((w-DW[0])/DW[1]);if(dr>0)c=mix(c,mix(grRamp(m.dry||S.dry,v),grRamp(m.fr,v*.6),m.dryTint??S.dryTint??.14),dr)}return CC[key]=c};
+  /* (S.dep, m.bv, optional: a floret's depth tier dk and its banner's variant bv, set below, mix its paint toward the material's deep tone and
+     the variant's colour; both in the paint's key, so neighbours of a tier still share it; species without: unchanged) */
+  const DP=S.dep,BV=m.bv,deepC=DP?m.deep||grRamp(m.wing||m.fr,.1):null,
+    QT=m.qT,colAt=(v,w,ramp,gb,qq,dk,bv)=>{v=q10(v);w=q10(w);gb=q10(gb||0);const rT=QT&&m[ramp+'T'],t=rT?Math.round(svSm(((qq||0)-QT[0])/(QT[1]-QT[0]))*QT[2])/QT[2]:0,
+      kd=DP&&dk!=null?DP.k[dk]||0:0,vb=BV&&bv&&(ramp==='fr'||ramp==='bk')?BV[bv-1]:null;
+    const key=ramp+v+'|'+w+'|'+gb+(t?'|'+t:'')+(kd?'|d'+dk:'')+(vb?'|b'+bv:'');if(CC[key])return CC[key];
+    let c=grRamp(m[ramp]||m.fr,v);if(t)c=mix(c,grRamp(rT,v),t);if(vb)c=mix(c,vb[0],vb[1]);if(kd)c=mix(c,deepC,kd);if(gb>0)c=mix(c,grRamp(m.grn,v),gb);if(w>0){c=S.wilt(c,svSm(w/.55)*.9);const dr=svSm((w-DW[0])/DW[1]);if(dr>0)c=mix(c,mix(grRamp(m.dry||S.dry,v),grRamp(m.fr,v*.6),m.dryTint??S.dryTint??.14),dr)}return CC[key]=c};
   /* a fixed colour of the material (throat, midrib, margin, anthers) at a floret's w */
   const wcol=(c0,w)=>{w=q10(w);if(w<=0)return c0;const key='w'+c0+w;if(CC[key])return CC[key];let c=S.wilt(c0,svSm(w/.55)*.9);const dr=svSm((w-DW[0])/DW[1]);if(dr>0)c=mix(c,grRamp(m.dry||S.dry,h2l(c0)[2]),dr);return CC[key]=c};
   const lam=n=>Math.max(0,(V3.dot(n,LIGHT)+.35)/1.35);
@@ -143,6 +151,11 @@ function grRaceme(k,B,O0,H,S,m,g,st,o){const lay=GR_LAYOUT[S.layout](S,g,H,st),f
   for(const f of fl){const Z=V3.nz(toV(B,f.dir)),X0=toV(B,f.side),X=V3.nz(V3s(X0,V3.sc(Z,V3.dot(X0,Z)))),Y=V3.cr(Z,X),b=hv(f.pos),rv=toV(B,f.rad),axz=hv(f.ap||[0,0,f.pos[2]])[2];
     const ca=f.gt.roll||0,cs=Math.cos(ca),sn=Math.sin(ca);f.X=V3.add(V3.sc(X,cs),V3.sc(Y,sn));f.Y=V3.add(V3.sc(Y,cs),V3.sc(X,-sn));f.Z=Z;f.b=b;
     f.c=V3.add(b,V3.sc(Z,f.L*.45));f.fr=Math.max(-1,Math.min(1,(f.c[2]-axz)/Rr));f.ao=(S.ao||.62)+(1-(S.ao||.62))*(.5+.5*rv[2])*(.75+.25*f.fr);f.pl=.45+.55*lam(rv);
+    /* (S.dep {t:[t1,t2], v:[3 lightness shifts], k:[3 mixes toward m.deep]}: the floret's depth in the raceme in three tiers, 0 deep inside
+       (behind the axis), 1 between, 2 on the rim (in front, or on the silhouette); S.bv with m.bv [[colour, mix],...]: the banner's lilac of
+       each floret one of n+1 variants, by hash (no draw)) */
+    if(DP){const sc=Math.max(.5+.5*f.fr,(DP.e??.9)*(1-Math.abs(rv[2])));f.dk=sc<DP.t[0]?0:sc<DP.t[1]?1:2;f.dv=DP.v[f.dk]||0}
+    if(BV)f.bv=Math.floor(pxHashS(f.i,17,Math.floor((f.gt.ph||0)*1e4)+f.i*7)*(BV.length+1)*.999);
     const L0=V3.dot([0,-1,0],f.X),L1=V3.dot([0,-1,0],f.Y),L2=V3.dot([0,-1,0],f.Z);f.down=[L0,L1,L2];f.eye=[f.X[2],f.Y[2],f.Z[2]]}
   /* the level of detail of each floret, from the best placed down within the budget */
   const cost=S.cost,bud=f=>f.o<S.fl.budAt&&f.w<.5;let tot=fl.length*(cost[0]??1)+4,lim=(S.budget[det?1:0]||200)*(o.bk||1);for(const f of fl)f.lod=0;
@@ -152,7 +165,7 @@ function grRaceme(k,B,O0,H,S,m,g,st,o){const lay=GR_LAYOUT[S.layout](S,g,H,st),f
     for(const[,f]of sc2){if(f.lod!==1)continue;const cf=cost[2][bud(f)?1:0]-cost[1][bud(f)?1:0];if(tot+cf<=lim){f.lod=2;tot+=cf}}}
   /* the context handed to a floret */
   const c={m,P:m.fl?Object.assign({},S.fl,m.fl):S.fl,S,det,H,o,put:p=>prims.push(p),d2:P=>grQ(grCCW(P.map(sc))),l2:P=>grQo(P.map(sc)),
-    col:(v,f,ramp,gb)=>colAt(v,f.w,ramp||'fr',gb,f.q),wc:(c0,f)=>wcol(c0,f.w),lit:n=>Math.max(0,Math.min(1,(S.lit||[.08,.92])[0]+(S.lit||[.08,.92])[1]*(.6*lam(n)+.4*c.f.pl)*c.f.ao))};
+    col:(v,f,ramp,gb)=>colAt(v+(f.dv||0),f.w,ramp||'fr',gb,f.q,f.dk,f.bv),wc:(c0,f)=>wcol(c0,f.w),lit:n=>Math.max(0,Math.min(1,(S.lit||[.08,.92])[0]+(S.lit||[.08,.92])[1]*(.6*lam(n)+.4*c.f.pl)*c.f.ao))};
   const setF=f=>{c.f=f;c.V=p=>V3.add(f.b,V3.add(V3.add(V3.sc(f.X,p[0]),V3.sc(f.Y,p[1])),V3.sc(f.Z,p[2])));c.Vd=p=>V3.add(V3.add(V3.sc(f.X,p[0]),V3.sc(f.Y,p[1])),V3.sc(f.Z,p[2]));c.down=f.down;c.eye=f.eye;c.bend=0};
   /* the axis (its foot continues the stem) and the dark core inside the florets */
   /* clusters (a layout's ax.cl, [{i:[floret indices]}]: the panicle's cymes) are drawn whole, far to near, each over its blob (the floret's

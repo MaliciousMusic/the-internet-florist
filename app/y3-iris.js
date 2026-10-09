@@ -67,7 +67,10 @@ const SVIL_DEF={len:100,w:.05,wp:[[0,.8],[.15,.95],[.35,1],[.65,.84],[.88,.5],[1
   up:'#5f7c4a',low:'#8da57a',sh:'#22331c',stem:null,lt:'#e2ead2',dry:'#c4ae5c',brown:'#8e6c3c',wl:0,sd:1,lite:false};
 /* o.lite: below DET 1.5, a leaf partly hidden by its neighbours (the inner leaves of a tuft, a short upper leaf) keeps its outline, a two-stop gradient,
    the shade of its gutter and its sheath's fill: no midrib, no shade nor rim on the sheath */
-function svBladeLite(pos,H,Out,o0){const o=Object.assign({},SVIL_DEF,o0),r=svRng(o.sd),wl=o.wl||0,len=o.len,W=len*o.w,limp=svSm((wl-.15)/.6),ns=12,
+/* a bouquet drawn all faded (LIFE_ALL 'fane', z1.js): the blade's greens wilt all along it, not only from the tip (nothing stays fresh) */
+function svilFane(o){if(typeof LIFE_ALL==='undefined'||LIFE_ALL!=='fane'||!(o.wl>0)||typeof lifeCol!=='function')return o;
+  for(const k of['up','low','sh','stem','lt'])if(o[k])o[k]=lifeCol(o[k],.85*o.wl);return o}
+function svBladeLite(pos,H,Out,o0){const o=svilFane(Object.assign({},SVIL_DEF,o0)),r=svRng(o.sd),wl=o.wl||0,len=o.len,W=len*o.w,limp=svSm((wl-.15)/.6),ns=12,
     dn=[0,-1,0],Hn=V3.nz(H),P2=q=>[q[0],-q[1]],VZ=[0,0,1];
   let e1=V3s(Out,V3.sc(Hn,V3.dot(Out,Hn)));e1=V3l(e1)>1e-3?V3.nz(e1):V3.nz(V3.cr(Hn,VZ));const e2=V3.cr(Hn,e1),side0=V3.nz(V3.cr(e1,Hn));
   const ph=r()*6.3,tw=o.tw*(r()*2-1)*(1+1.5*limp),lean=o.lean*(1+.3*limp),dr=Math.min(.95,o.droop*(1+1.2*limp)),gut=o.gut*(1-.55*limp),wav=o.wav*(1+.6*limp),

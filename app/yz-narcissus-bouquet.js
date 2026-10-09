@@ -80,7 +80,9 @@ const NBQ_H6=svHeart6({n:6,ovH:.26,ovR:.016,ovT:.85,styL:.01,sgR:.045,sgUp:.5,fi
 /* the back of the flower: the perianth's tube (slender, pale green, .62 R0) then the ovary (a darker green knob with three faint ribs, .34 R0),
    and, drawn alone (sheets), the pedicel's foot bending down */
 /* the tube and the ovary stay green as the flower fades (44, 45): only a little toward olive (the global wilt filter is not laid over them) */
-const nbqBackW=(c,w)=>w>0?mix(c,'#8a8a4a',.35*svSm((w-.3)/.5)):c;
+/* (LIFE_ALL 'fane', z1.js: a bouquet drawn all faded) nothing stays green: the tube and the ovary go to olive, then straw (lifeCol), their shade and rims with them */
+const nbqFaneAll=()=>typeof LIFE_ALL!=='undefined'&&LIFE_ALL==='fane';
+const nbqBackW=(c,w)=>!(w>0)?c:nbqFaneAll()&&typeof lifeCol==='function'?lifeCol(mix(c,'#8a8a4a',.88*svSm((w-.3)/.5)),.8):mix(c,'#8a8a4a',.35*svSm((w-.3)/.5));
 const NBQ_BACK=[[0,'#dfe2b0'],[.2,'#c4cc86'],[.5,'#a2b46a'],[.62,'#6e8e46'],[.8,'#557a38'],[1,'#5a7c3c']];
 function nbqBack(ctx,stub){const{B,O,R0,g,bud,fan,cw0,pieces}=ctx,hi=DET>=1.5;const dn=narDown(B),zt=R0*.02,Lt=R0*.62,Lo=R0*.34,zo=zt-Lt-Lo,La=zt-zo,
     Ls=stub?R0*.55:0,Lb=La+Ls,ka=1.1/(Ls||1),sq=1-.25*bud;
@@ -90,7 +92,7 @@ function nbqBack(ctx,stub){const{B,O,R0,g,bud,fan,cw0,pieces}=ctx,hi=DET>=1.5;co
       else if(x<.64)r=.058+.01*(x-.08)/.56;else if(x<.98){const t=(x-.64)/.34;r=(.068+.062*Math.pow(Math.sin(Math.PI*t),.7))*(1+.06*Math.cos(3*th+(g.rot||0)))*(1+.2*fan)}
       else r=.05+.015*svSm((1.02-x)/.04);return R0*r*sq},
     sh=c=>nbqBackW(svShift(c,g.dh||0,g.ds||0,g.dl||0),(ctx.dec+ctx.fan)/2),st=(cw0.back||NBQ_BACK).map(([x,c])=>[Math.min(1,x*La/Lb),sh(c)]).filter((q,i,a)=>!i||q[0]>a[i-1][0]),
-    mat=Object.assign({stops:st,bstops:st,shade:'#34461a',lite:'#f2f6cc',bshade:'#34461a',blite:'#f2f6cc',rim:'#566a2a',brim:'#566a2a',cast:cw0.cast},SVB_DEF.light,{trans:.05,rw:hi?.004:0,ro:.3,darkLo:[.8],litLo:[]});
+    fk=c=>nbqFaneAll()?nbqBackW(c,(ctx.dec+ctx.fan)/2):c,mat=Object.assign({stops:st,bstops:st,shade:fk('#34461a'),lite:fk('#f2f6cc'),bshade:fk('#34461a'),blite:fk('#f2f6cc'),rim:fk('#566a2a'),brim:fk('#566a2a'),cast:cw0.cast},SVB_DEF.light,{trans:.05,rw:hi?.004:0,ro:.3,darkLo:[.8],litLo:[]});
   const to={spine,rad,ref:V3.nz(V3.cr([0,0,1],dn)),vs:.3,half:true,nu:hi?10:7,nv:hi?14:9,mat},tb=svTubeN(B,O,to),
     nw=f=>k=>{const w0=WILT;WILT=null;try{f(k)}finally{WILT=w0}};pieces.push({fn:nw(hi?k=>svDraw(k,[tb],{D:ctx.D,pmin:3,shadow:false}):k=>svTubeLite(k,B,O,to)),proxy:tb})}
 let NBQ_STUB=true,NBQ_LV=2;/* drawn alone (sheets): with the pedicel's foot; NBQ_LV: the level of detail of the flower being drawn */
@@ -175,8 +177,9 @@ function nbqSpathe(par,U,og,pos,ph,tw,w){const D=U.D,R0=D/2,op=U.op,face=U.face,
 const NBQ_SC=['#38532f','#5f8450','#8fb07a','#c4d8b4'];
 NBQ_SC.sv={line:svStemLineN,cut:svStemCutN,flat:.5,swell:.012,ripple:0,edges:[.28,.12],bloom:.05,gloss:.36,ribs:[-.42,.38],hollow:0,cutY:.24,ownWilt:1};
 const NBQ_SCW=['#4a4a2e','#8c8a58','#b0ab78','#d2cda4'];
-/* the scape stays green longest (brief): its colours drift toward straw only from wl .6 */
-function nbqScW(sc,wl){const k=.5*svSm((wl-.6)/.35);if(!(k>0))return sc;const r=sc.map((c,i)=>mix(c,NBQ_SCW[i],k));r.sv=sc.sv;return r}
+/* the scape stays green longest (brief): its colours drift toward straw only from wl .6; the pedicels with it; in a bouquet drawn all faded
+   (LIFE_ALL 'fane') nothing stays green: they go all the way to straw */
+function nbqScW(sc,wl){const fa=nbqFaneAll()&&typeof lifeCol==='function',k=(fa?.92:.5)*svSm((wl-.6)/.35);if(!(k>0))return sc;const r=sc.map((c,i)=>fa?lifeCol(mix(c,NBQ_SCW[i],k),.8):mix(c,NBQ_SCW[i],k));r.sv=sc.sv;return r}
 function nbqPedLine(par,C,W,c){const n=C.length;if(n<2)return par;const lx=LIGHT[0],ly=-LIGHT[1],H=[];
   for(let i=0;i<n;i++){const a=C[Math.max(0,i-1)],b=C[Math.min(n-1,i+1)],dx=b[0]-a[0],dy=b[1]-a[1],l=Math.hypot(dx,dy)||1,nx=-dy/l,ny=dx/l,s=nx*lx+ny*ly>0?1:-1;
     H.push([C[i][0]+nx*W[i]*.2*s,C[i][1]+ny*W[i]*.2*s])}
@@ -192,7 +195,7 @@ function nbqSvPlant(g,t,o){const cw=cwPick(CW_L106NB,o),op=Math.max(.05,Math.min
   const n=o.rim?2:Math.min(DET>=1.5?12:7,Math.round(R(cw.nn[0],cw.nn[1]+.4))),mods=[['F',{l:Ls,w0:w*1.1,w1:w,e:.01}],['Sp',{}],['F',{l:D*.1,w1:w*.9}]];
   for(let i=0;i<n;i++){const age=i===0?op:Math.max(0,Math.min(1,op*1.15-i/n*(op<.6?.8:.6)+R(-.08,.08))),a=i*137.5+R(-12,12),el=i===0?R(6,14):age<.3?R(8,18):R(22,44);
     mods.push(['[',{w:Math.max(1.2,w*.4)}],['/',{a}],['&',{a:el}],['F',{l:D*(age<.3?.5:.65+.4*age)*R(.85,1.15)*(o.rim?.7:1),w1:Math.max(1.12,w*.3),e:age<.3?.02:-.04}],[i?'Kb':'K',{age,i}],[']',{}])}
-  const res=lsTurtle(mods,{p:[0,0,0],H:up,U:U0,wig:.015,seg:D*.12,T:[0,1,0],e:.01,w:w*1.1});res.chains.forEach((ch,i)=>{ch.c=i?NBQ_PC:sc});
+  const res=lsTurtle(mods,{p:[0,0,0],H:up,U:U0,wig:.015,seg:D*.12,T:[0,1,0],e:.01,w:w*1.1});res.chains.forEach((ch,i)=>{ch.c=i?nbqScW(NBQ_PC,wl):sc});
   const bq=typeof NECK_X!=='undefined'&&NECK_X,bent=!bq&&nbqBend(res,up,face,1.1*svSm((wl-.45)/.45)),unpack=nbqPack(res,up,.65*(1-svSm((op-.1)/.2)));
   const sp=res.organs.find(q=>q.t==='Sp'),c0=res.chains[0].pts,apex=bent?c0[c0.length-1]:V3.add(sp.pos,V3.sc(up,D*.1)),R0=D/2,La=R0*.98,U={fl:[],D,cw,op,wl,face,up,done:0},RV=new Map();
   /* in a bouquet the drawing goes into a marker (nbqOldBox): the head's box stays the old drawing's */
