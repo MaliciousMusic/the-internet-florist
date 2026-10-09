@@ -80,11 +80,12 @@ const l106Vir=(g,t,o)=>l106TulPlant(g,t,o,CW_L106VIR,L106_VIR,'tulipe-viridiflor
    'Silver Chimes', 'Martinette'): a stout, two-edged scape; at its top a papery spathe, split, and out of it an umbel of three to a dozen small, very fragrant flowers on pedicels of
    unequal length; each a flat star of six broad, rounded tepals (with a small point) round a short cup, behind it a slender green floral tube; buds erect in the middle, the oldest
    flowers outermost, turned outward ---------- */
-const CW_L106NB=[{id:'paperwhite',n:'Blanc pur (Paperwhite Ziva)',c:'#fbfaf4',tr:'#f4f0dc',nn:[7,10],cl:.7,sz:.9},{id:'geranium',n:'Blanc à coupe orange (Geranium)',c:'#faf8f0',tr:'#ee5a24',nn:[4,6],sz:1.15},
-  {id:'minnow',n:'Jaune primevère à coupe jaune (Minnow)',c:'#f2e7a6',tr:'#f2c83a',nn:[3,5],sz:.85},{id:'avalanche',n:'Blanc à coupe jaune (Avalanche)',c:'#f9f7ee',tr:'#f2cc3a',nn:[6,9],sz:1},
+const CW_L106NB=[{id:'paperwhite',n:'Blanc pur (Ziva)',c:'#fbfaf4',tr:'#f4f0dc',nn:[7,10],cl:.7,sz:.9},{id:'geranium',n:'Blanc à coupe orange (Geranium)',c:'#faf8f0',tr:'#ee5a24',nn:[4,6],sz:1.15},
+  {id:'minnow',n:'Blanc à coupe jaune citron (Minnow)',c:'#f2e7a6',tr:'#f2c83a',nn:[3,5],sz:.85},{id:'avalanche',n:'Blanc à coupe jaune (Avalanche)',c:'#f9f7ee',tr:'#f2cc3a',nn:[6,9],sz:1},
   {id:'soleil-d-or',n:'Jaune à coupe orange (Grand Soleil d’Or)',c:'#f4cb2e',tr:'#f08a1e',nn:[5,8],sz:1},{id:'cragford',n:'Blanc à coupe orange vif (Cragford)',c:'#f8f6ee',tr:'#f0742a',nn:[4,6],sz:1.1},
-  {id:'chinensis',n:'Blanc à coupe jaune d’or (tazetta chinensis)',c:'#fbf9f0',tr:'#f2b828',nn:[5,8],sz:1},{id:'silver-chimes',n:'Crème à coupe citron pâle (Silver Chimes)',c:'#f6f2e2',tr:'#f2e6a4',nn:[5,8],sz:1.05,cl:1.3},
-  {id:'martinette',n:'Jaune d’or à coupe orange (Martinette)',c:'#f6d034',tr:'#ef7a22',nn:[4,6],sz:1.05}];
+  {id:'chinensis',n:'Blanc à coupe jaune d’or (Chinese Sacred Lily)',c:'#fbf9f0',tr:'#f2b828',nn:[5,8],sz:1},{id:'silver-chimes',n:'Blanc à coupe blanche (Silver Chimes)',c:'#f6f2e2',tr:'#f2e6a4',nn:[5,8],sz:1.05,cl:1.3},
+  {id:'martinette',n:'Jaune d’or à coupe orange (Martinette)',c:'#f6d034',tr:'#ef7a22',nn:[4,6],sz:1.05},
+  {id:'golden-dawn',n:'Jaune d’or profond à coupe orange (Golden Dawn)',c:'#f0c61c',tr:'#f08a08',nn:[5,8],sz:1,late:1}];
 const L106_TTEP=prof([[0,.4],[.2,.85],[.5,1],[.78,.86],[.93,.5],[1,.16]]);
 /* the short cup in the flower's frame (as narTrumpet, lot 41): rings from its base to its crimped rim; the anthers show in its mouth */
 function l106Cup(par,B,O,R0,cw,o2,cache){const nz=B[2][2],Lt=R0*(.12+.1*o2)*(cw.cl||1),rb=R0*.15,rm=R0*(.22+.1*o2),ph=(O[0]*.31+O[1]*.17)%6.283,nr=DET>=1.5?16:12,rings=[],c=cw.tr,P=pal7(c);
@@ -104,7 +105,7 @@ function l106TazFlower(par,B,O,D,cw,op,cache){const k=G(par),R0=D/2,o2=sm01((op-
   spPetals(k,it,cache);return k}
 /* a bud: slim, erect, greenish, the colour showing at its end */
 function l106TazBud(par,B,O,D,cw,a){const s=D*(.38+.16*a);spBud(par,B,V3.add(O,toV(B,[0,0,-s*.06])),s,s*.36,mix(cw.c,'#9aae68',.6-.45*a),{tp:.45,pw:.6})}
-function l106NbPlant(g,t,o){const cw=cwPick(CW_L106NB,o),op=Math.max(.05,Math.min(1,o.op??R(.6,1))),D=(o.cm||3)*UPC*(cw.sz||1),k=G(g),sc=['#2e4a32','#557a58','#80a682','#b2ccb0'],cache={};
+function l106NbPlant(g,t,o){if(typeof nbqSvPlant==='function'&&typeof SV_ON!=='undefined'&&SV_ON)return nbqSvPlant(g,t,o);/* the tazetta in native SVG (yz-narcissus-bouquet.js) */const cw=cwPick(CW_L106NB,o),op=Math.max(.05,Math.min(1,o.op??R(.6,1))),D=(o.cm||3)*UPC*(cw.sz||1),k=G(g),sc=['#2e4a32','#557a58','#80a682','#b2ccb0'],cache={};
   const B=frameOf(o,.3,true),up=l54Up(B),face=B[2],U0=l54U0(face,up),kr=B.reach?Math.min(1,Math.max(.2,B.reach*.4/(D*4.4))):1,w=Math.max(2,D*.14),Ls=D*(o.rim?.9:4.4)*kr;
   /* the umbel: n pedicels out of the spathe, the oldest outermost and turned out, the youngest buds erect in the middle */
   const n=o.rim?2:Math.min(DET>=1.5?12:7,Math.round(R(cw.nn[0],cw.nn[1]+.4))),mods=[['F',{l:Ls,w0:w*1.1,w1:w,e:.01}],['Sp',{}],['F',{l:D*.1,w1:w*.9}]];
