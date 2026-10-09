@@ -112,8 +112,10 @@ function b29Cherry(g,t,o){const cw=cwPick(B29_CER,o),op=b29C(o.op??R(.75,1),.05,
    flowers 3.5–4.5 cm, in tight clusters of 1–3 almost sessile against the old wood, five rounded petals in a cup, a dense boss of forty-odd golden stamens round five styles;
    round coloured buds; here and there a tuft of young bronze-green leaves; the colours of the trade, and the variegated 'Toyo-Nishiki' (white, pink and red on one branch) ---------- */
 const B29_COG=[{id:'corail',n:'Corail saumoné (Salmon Horizon)',c:'#ec7a5e'},{id:'rouge',n:'Rouge écarlate (Crimson and Gold)',c:'#c42a2c'},{id:'rose',n:'Rose (Pink Lady)',c:'#ee9fae'},
- {id:'blanc',n:'Blanc (Nivalis)',c:'#fbf6f1'},{id:'saumon',n:'Saumon abricot (× superba)',c:'#f19a7e'},{id:'orange',n:'Orange vif (Orange Trail)',c:'#ec6430',f:'x'},
- {id:'toyo',n:'Panaché blanc, rose et rouge (Toyo-Nishiki)',c:'#f4c4c8',f:'toyo'}];
+ {id:'blanc',n:'Blanc (Nivalis)',c:'#fbf6f1'},{id:'saumon',n:'Saumon abricot (Cameo)',c:'#f19a7e'},{id:'orange',n:'Orange vif (Orange Trail)',c:'#ec6430',f:'x'},
+ {id:'toyo',n:'Panaché blanc, rose et rouge (Toyo-Nishiki)',c:'#f4c4c8',f:'toyo'},
+ /* the late ones (coloris.md 2nd pass), after the numbered ones: the SKU numbers do not move */
+ {id:'kinshiden',n:'Crème verdâtre (Kinshiden)',c:'#e7e4bf',late:5}];
 const B29_WP_COG=prof([[0,.3],[.12,.62],[.4,.98],[.7,1],[.9,.86],[1,.7]]),B29_TOYO=['#fbf3ef','#f6c8cc','#ee9aa8','#d23c48'];
 function b29QuinceFl(par,B,O,Df,c,op,cache,o={}){const Rr=Df/2,nz=B[2][2],cols=o.toyo?(()=>{const m=rnd()<.6?pick(B29_TOYO):null;return i=>m||B29_TOYO[(i+(rnd()<.5?0:1))%4]})():null,
     sp={n:5,r0:Rr*.1,L:Rr*.86,W:Rr*.5,a0:.5+(1-op)*.75,a1:.95+(1-op)*.5,wp:B29_WP_COG,cu:.2,ht:.2,sep:1,col:c,colB:mix(c,'#f0e0d0',.15),cols,rot:R(0,1.2),jit:.1,jl:.06,ao:.9};
@@ -148,7 +150,9 @@ function b29Quince(g,t,o){const cw=cwPick(B29_COG,o),toyo=cw.f==='toyo',op=b29C(
 /* ---------- forsythia (Forsythia × intermedia): long arching shoots, olive-tan and warted with corky lenticels, the nodes opposite and crossing; at each node, out of the pair of buds,
    one to three bright yellow flowers before the leaves: a short tube and four strap-shaped lobes, spreading in a little bell, nodding on a short pedicel, orange lines in the throat;
    the youngest at the tips are still pointed yellow-green buds. The old drawing cost some 8 000 elements a branch: here a flower is two or three paths ---------- */
-const B29_FOR=[{id:'or',n:'Jaune d\'or (× intermedia Spectabilis)',c:'#eebc22'},{id:'vif',n:'Jaune vif (Lynwood Gold)',c:'#f3cf33'}];
+const B29_FOR=[{id:'or',n:'Jaune d\'or (Spectabilis)',c:'#eebc22'},{id:'vif',n:'Jaune vif (Lynwood Variety)',c:'#f3cf33'},
+ /* the late ones (coloris.md 2nd pass), after the numbered ones: the SKU numbers do not move */
+ {id:'beatrix',n:'Jaune d\'or à grandes fleurs (Beatrix Farrand)',c:'#d2c34a',late:5},{id:'spring',n:'Jaune soufre (Spring Glory)',c:'#d6c14c',late:5}];
 const B29_WP_FOR=prof([[0,.5],[.15,.85],[.5,1],[.8,.9],[1,.62]]);
 function b29ForsFl(par,B,O,Df,c,op,cache){const Rr=Df/2,nz=B[2][2],tl=Rr*.42,tr=Rr*.18,top=V3.add(O,toV(B,[0,0,tl]));
   const tb=tubeFlat(B,O,[[0,0,0],[0,0,tl*.5],[0,0,tl]],tr*.55,tr,toneAt(pal7(mix(c,'#c8a020',.2)),.55),{ink:shd(c,-.5),eo:.4}),

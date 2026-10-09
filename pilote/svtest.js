@@ -19,7 +19,7 @@ window.svtOut=(svg,n,ms,snapP)=>{const el=svg.querySelectorAll('*').length,pat=[
   const fin=r=>{const pre=document.createElement('pre');pre.id='out';pre.textContent=JSON.stringify(Object.assign(o,r?{snap:r.join('x')}:{}));document.body.append(pre)};
   if(snapP)snapP.then(fin,e=>fin(['err '+e]));else fin()};
 /* SVG pilot sheet: heads at several views and seeds. URL: cw, op, D, seeds, views (indices), cols, det, bg, sp (species) */
-if(!new URLSearchParams(location.search).get('cmp')&&!new URLSearchParams(location.search).get('grid')&&!new URLSearchParams(location.search).get('plant'))setTimeout(()=>{const Q=new URLSearchParams(location.search),dS=typeof defs!=='undefined'&&defs.closest?defs.closest('svg'):null;document.body.innerHTML='';if(dS)document.body.append(dS);
+if(!new URLSearchParams(location.search).get('cmp')&&!new URLSearchParams(location.search).get('grid')&&!new URLSearchParams(location.search).get('plant')&&!new URLSearchParams(location.search).get('bq'))setTimeout(()=>{const Q=new URLSearchParams(location.search),dS=typeof defs!=='undefined'&&defs.closest?defs.closest('svg'):null;document.body.innerHTML='';if(dS)document.body.append(dS);
   document.body.style.cssText='margin:0;background:'+(Q.get('bg')||'#e9e4dc');DET=+(Q.get('det')||1.5);LOD=0;
   const cw=Q.get('cw')||'bleu',op=+(Q.get('op')||1),D=+(Q.get('D')||240),seeds=(Q.get('seeds')||'1,2,3,4').split(',').map(Number),cols=+(Q.get('cols')||seeds.length),
     VIEWS=[[0,0,1,0],[0,.5,.87,0],[.38,.55,.74,.4],[0,.86,.5,0],[-.55,.25,.8,-.3],[0,-.42,.91,0],[.7,.1,.7,.2],[0,.97,.24,0],[0,-.97,-.24,0],[.35,-.9,.26,.3],[0,-.55,.83,0]],vi=(Q.get('views')||'0,1,2,3').split(',').map(Number),
@@ -90,9 +90,9 @@ if(new URLSearchParams(location.search).get('rtest'))setTimeout(()=>{const Q=new
 /* which pieces patch each other: ?grid=1&...&dbgp=1 → the pairs of pieces (index in the head: tepals first, then the heart's pieces; o outer, i inner)
    counted over the sheet, with the cells where each is in front (only the pairs svDraw patches) */
 if(new URLSearchParams(location.search).get('dbgp')){const PC={},oDraw=svDraw,oOrd=svOrder;let cur=null;
-  svDraw=function(par,pieces,o){pieces.forEach((p,i)=>{p._i=i;if(p.proxy)p.proxy._i=i});cur=pieces.length;return oDraw(par,pieces,o)};
+  svDraw=function(par,pieces,o){window._dbT=pieces.map(p=>p.tag||(p.proxy&&p.proxy.tag)||null);pieces.forEach((p,i)=>{p._i=i;if(p.proxy)p.proxy._i=i});cur=pieces.length;return oDraw(par,pieces,o)};
   svOrder=function(items,eps){const out=oOrd(items,eps);for(const[A,B2,fa,fb]of out.fr){const a=A.oi,b=B2.oi;const[e,l,c]=a<b?[A,B2,fa]:[B2,A,fb];if(c<3)continue;
-      const ia=(A.sh||A.px||{})._i,ib=(B2.sh||B2.px||{})._i,nm=i=>i==null?'?':i<3?'o'+i:i<6?'i'+i:'h'+i,k=[nm(ia),nm(ib)].sort().join('-');PC[k]=(PC[k]||0)+1}return out};
+      const sa=(A.sh||A.px||{}),sb=(B2.sh||B2.px||{}),nm=q=>(q._i!=null&&window._dbT&&window._dbT[q._i])||(q._i==null?'?':q._i<3?'o'+q._i:q._i<6?'i'+q._i:'h'+q._i),k=[nm(sa),nm(sb)].sort().join('-');PC[k]=(PC[k]||0)+1}return out};
   window.svtOut0=window.svtOut;window.svtOut=(svg,n,ms,sp)=>{const pre=document.createElement('pre');pre.id='out';const L=Object.entries(PC).sort((a,b)=>b[1]-a[1]).map(([k,v])=>k+':'+v);pre.textContent=L.join(' ');document.body.append(pre)}}
 /* fit mode (fleur/fit.py): many candidate settings of one kind drawn in one headless run, one cell per (candidate, cell of the job).
    ?fit=1&job=<url of a json>&sp=fit&seeds=1&views=0&snap=  (the empty snap and sp=fit keep the default anemone sheet from drawing and saving;
@@ -156,3 +156,27 @@ if(new URLSearchParams(location.search).get('bq'))setTimeout(()=>{const Q=new UR
   const o={st:Q.get('stat')?ST:undefined,n:hs.length,heads:m.map(x=>x.join('el/')+'KB').join(' '),el:svg.querySelectorAll('*').length,kb:Math.round(XS.serializeToString(svg).length/1024)};
   const sp=Q.get('snap')?snapSvg(svg,+(Q.get('sw')||900),Q.get('snap'),'#e9e4dc'):null;const fin=r=>{const pre=document.createElement('pre');pre.id='out';pre.textContent=JSON.stringify(Object.assign(o,r?{snap:r.join('x')}:{}));document.body.append(pre)};
   if(sp)sp.then(fin,e=>fin(['err '+e]));else fin()},400);
+/* the junctions of a woody branch (porteur 2026-10-09: no gap between a flower and its calyx, the calyx and its pedicel, the pedicel and its spur):
+   ?plant=1&...&jn=1 → each flower svBranch draws goes in its own group; after the sheet's measures come "JN" (one row per flower: cell, x, y in snap
+   pixels, R0 in snap pixels, az the z of its axis (1 face on, 0 profile, -1 from behind), op, wl, lod, its drawn width and height / D) and "SE" (the
+   spurs' ends: cell, x, y) and "BR" (per cell: the branch's box in cm, fD in cm); python fleur/img.py jn <png> <json> crops one flower per stage and view */
+if(new URLSearchParams(location.search).get('jn')&&typeof svBranch==='function'){const J=[],SE=[],BR=[],o0=svBranch,p0=svbPeds;
+  const PM={},kO=b=>b[0].toFixed(2)+','+b[1].toFixed(2);
+  svbPeds=function(par,se,cp,peds,...a){SE.push(E('circle',{cx:se[0],cy:-se[1],r:.01,fill:'none'},par));const n0=par.childNodes.length,r=p0(par,se,cp,peds,...a),el=par.childNodes[n0];
+    if(el&&!(S0=>S0&&S0.infl&&S0.infl.join)(a[0]))for(const q of peds)PM[kO(q[1])]=el;return r};
+  if(typeof svbPedJ==='function'){const pj0=svbPedJ;svbPedJ=function(par,items,...a){const n0=par.childNodes.length,r=pj0(par,items,...a),el=par.childNodes[n0];if(el)for(const q of items)PM[kO(q[3])]=el;return r}}
+  svBranch=function(par,S,o){if(!S._jn){const f=S.flower;S.flower=(pp,B,O,D,cw,op,sd,wl,lod)=>{const g=E('g',{},pp),m=E('circle',{cx:O[0],cy:-O[1],r:D/2,fill:'none'},pp);
+      const Bn=S.axis?S.axis(B,cw,op,wl):B,j=S.infl&&S.infl.join,F=j?V3.add(O,V3.sc(Bn[2],-j*D)):O;J.push({g,m,D,O,F,az:Bn[2][2],op,wl,lod});return f(g,B,O,D,cw,op,sd,wl,lod)};S._jn=1}const r=o0(par,S,o);BR.push({k:r,fD:S.fD});return r};
+  const f0=window.svtOut;window.svtOut=function(svg,...a){const r=f0.call(this,svg,...a),Q=new URLSearchParams(location.search),vb=svg.viewBox.baseVal,cw=+(Q.get('cell')||170),
+      sk=+(Q.get('sw')||vb.width*2)/vb.width,R=svg.getBoundingClientRect(),P=e=>{const b=e.getBoundingClientRect();return[(b.x+b.width/2-R.x)*sk,(b.y+b.height/2-R.y)*sk,b.width/2*sk]},
+      f2=x=>Math.round(x*100)/100,U=typeof UPC!=='undefined'?UPC:6.5;
+    /* gap: how far (mm) from the pedicel's end (the flower's foot) the flower's own paint begins (0: the foot is inside the flower's fill or outline) */
+    const cov=(g,x,y)=>{const pt={x,y};for(const e of g.querySelectorAll('path,ellipse,circle,polygon')){if(e.closest('[transform]')&&e.closest('[transform]')!==g&&g.contains(e.closest('[transform]')))continue;
+        if(e.getAttribute('fill')!=='none'&&e.isPointInFill(pt))return 1;const st=e.getAttribute('stroke');if(st&&st!=='none'&&e.isPointInStroke(pt))return 1}return 0},
+      gap=q=>{const x=q.F[0],y=-q.F[1],R=q.D/2;if(cov(q.g,x,y))return 0;for(const d of[.02,.04,.07,.1,.15,.2,.3,.45,.7])for(let a=0;a<24;a++)if(cov(q.g,x+Math.cos(a/24*6.283)*d*R,y+Math.sin(a/24*6.283)*d*R))return f2(d*R/U*10);return 99};
+    /* order: 1 the pedicel is painted over a flower that faces us (it crosses the corolla to its centre), 2 under a flower seen from behind (hidden
+       by the petals up to the calyx: the calyx floats on the corolla), 0 right */
+    const ordr=q=>{const el=PM[kO(q.O)];if(!el)return-1;const after=!!(q.g.compareDocumentPosition(el)&Node.DOCUMENT_POSITION_FOLLOWING);return q.az>.15&&after?1:q.az<-.15&&!after?2:0};
+    const jn=J.map(q=>{const[x,y,rr]=P(q.m),bb=q.g.getBBox();return[Math.floor(x/sk/cw),Math.round(x),Math.round(y),Math.round(rr),f2(q.az),f2(q.op),f2(q.wl||0),q.lod,f2(bb.width/q.D),f2(bb.height/q.D),gap(q),ordr(q)]}),
+      se=SE.map(m=>{const[x,y]=P(m);return[Math.floor(x/sk/cw),Math.round(x),Math.round(y)]}),br=BR.map(q=>{const b=q.k.getBBox();return[f2(b.width/U),f2(b.height/U),f2(q.fD/U)]});
+    const add=()=>{const p=document.getElementById('out');if(!p)return setTimeout(add,50);p.textContent+=' JN '+JSON.stringify(jn)+' SE '+JSON.stringify(se)+' BR '+JSON.stringify(br)};add();return r}}

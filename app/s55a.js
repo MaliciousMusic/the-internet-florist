@@ -60,9 +60,13 @@ function l55Lats(N,L,nLat,z0,z1,spec){const cand=N.filter(nd=>nd.l>L*z0&&nd.l<L*
    short spurs, each a tuft of brown bud scales, two or three young leaves (bronze in 'Kanzan', bronze-green in the others) and a pendent corymb of 2–5 flowers on long slender pedicels (3–5 cm)
    from a short common stalk; the flower large (5–6 cm), double, twenty to fifty petals in whorls, their tips fringed and notched, the inner ones smaller and crumpled, the centre two leafy
    green pistils ('Kanzan', 'Ichiyo') or, in the semi-double 'Shirotae' and 'Ukon', a ring of yellow stamens; deep pink round buds; the clusters open along the branch from its foot ---------- */
-const L55_SATO=[{id:'kanzan',n:'Rose vif (Kanzan)',c:'#e27f9e',bud:'#c4406a',lf:'#8a4a2a',dbl:3},{id:'pink',n:'Rose (Pink Perfection)',c:'#efb3c4',bud:'#d0587a',lf:'#7a5a2a',dbl:3},
- {id:'ichiyo',n:'Rose tendre (Ichiyo)',c:'#f6d6de',bud:'#e08aa2',lf:'#6e6a2e',dbl:3},{id:'shirotae',n:'Blanc (Shirotae, Mont Fuji)',c:'#fbf8f4',bud:'#f0c8d0',lf:'#6e7a30',dbl:2},
- {id:'ukon',n:'Jaune verdâtre (Ukon)',c:'#f1eed6',bud:'#d8d8a8',lf:'#7a6a2e',dbl:2}];
+const L55_SATO=[{id:'kanzan',n:'Rose (Kanzan)',c:'#e27f9e',bud:'#c4406a',lf:'#8a4a2a',dbl:3},{id:'pink',n:'Rose (Pink Perfection)',c:'#efb3c4',bud:'#d0587a',lf:'#7a5a2a',dbl:3},
+ {id:'ichiyo',n:'Rose tendre (Ichiyo)',c:'#f6d6de',bud:'#e08aa2',lf:'#6e6a2e',dbl:3,prov:1},{id:'shirotae',n:'Blanc (Shirotae)',c:'#fbf8f4',bud:'#f0c8d0',lf:'#6e7a30',dbl:2},
+ {id:'ukon',n:'Jaune verdâtre (Ukon)',c:'#f1eed6',bud:'#d8d8a8',lf:'#7a6a2e',dbl:2},
+ /* the late ones (coloris4.md), after the five numbered ones: the SKU numbers do not move */
+ {id:'tai-haku',n:'Blanc pur (Tai-haku)',c:'#f2f0ea',bud:'#d8cdc8',lf:'#8c5a42',dbl:2,late:5},{id:'gyoiko',n:'Crème strié de vert (Gyoiko)',c:'#e0e0b0',bud:'#b0b17b',lf:'#8a4a38',dbl:3,late:5},
+ {id:'matsumae-fuki',n:'Blanc (Matsumae-fuki)',c:'#f2eae6',bud:'#e8c6c4',lf:'#5c3428',dbl:2,late:5},{id:'hanagasa',n:'Rose au centre vert (Hanagasa)',c:'#edcde5',bud:'#d08aa4',lf:'#8a5a3a',dbl:3,late:5},
+ {id:'yae-murasaki-zakura',n:'Rose profond (Yae-murasaki-zakura)',c:'#f0ccde',bud:'#bf3a56',lf:'#8a4a38',dbl:2,late:5,prov:1}];
 const L55_WP_SATO=prof([[0,.3],[.12,.6],[.4,.95],[.7,1],[.92,.92],[1,.85]]);
 function l55SatoFl(par,B,O,Df,cw,h,cache){const Rr=Df/2,nz=B[2][2],c=cw.c,cB=mix(c,cw.bud,.3),wp=L55_WP_SATO,rot=R(0,1),dbl=cw.dbl,cal='#5a4a26',
     L1={n:dbl>2?10:6,r0:Rr*.1,L:Rr*.95,W:Rr*(dbl>2?.32:.4),a0:.12+(1-h)*1.05,a1:.2+(1-h)*1.25,wp,fr:2,fd:.06,nt:.06,cu:.18,ht:.18,col:c,colB:cB,rot,jit:.14,jl:.1,ao:.96},
