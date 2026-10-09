@@ -191,6 +191,8 @@ function svStemLine(par,C,Wd0,c){const n=C.length,g=G(par);if(n<2)return g;const
       if(DET>=1.5&&r1<.6){const o=(r2*2-1)*.7*w,q=[C[i][0]+N[i][0]*o,C[i][1]+N[i][1]*o],h=w*(.3+.3*r3);df+='M'+svJ([svR(q[0]),svR(q[1])])+'l'+svJ([svR(T[i][0]*h),svR(T[i][1]*h)])}}}
     if(de)E('path',{d:de,fill:'none',stroke:sv.hair,'stroke-width':svF(Math.max(.04,W0*.026)),'stroke-opacity':.38,'stroke-linecap':'round'},g);
     if(df)E('path',{d:df,fill:'none',stroke:sv.hair,'stroke-width':svF(Math.max(.04,W0*.022)),'stroke-opacity':.1,'stroke-linecap':'round'},cg)}
+  /* a kind's own surface marks (lenticels, nodes of a woody stem): sv.post(g, clipped group, centre line, widths, normals, tangents, mean width) */
+  if(sv.post)sv.post(g,cg,C,Wd,N,T,W0);
   return g}
 /* the shared stem drawers hand a styled stem to svStemLine: a cubic (stem3) or a polyline with widths (stemPoly) */
 function svStem3(par,P,w0,w1,c,n){const C=[],W=[],m=Math.max(10,n*2);for(let i=0;i<=m;i++){const t=i/m,u=1-t,q=[0,1].map(j=>u*u*u*P[0][j]+3*u*u*t*P[1][j]+3*u*t*t*P[2][j]+t*t*t*P[3][j]);C.push(q);W.push(w0+(w1-w0)*t)}return svStemLine(par,C,W,c)}

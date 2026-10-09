@@ -5,8 +5,9 @@ Opus ne regarde que `fit.png`. Aucun modèle de langage dans la boucle, aucun ti
 
 ## Commandes (depuis la copie de travail, serveur 8765 et recv.py 8781 allumés)
 - `python fleur/fit.py <sid> --space space.json --targets targets.json [--cw i] [--view 2,0,3] [--budget 60] [--out dir]`
-- `python fleur/fit.py targets <sid> --refs <refcache/<sid>> --out targets.json` : mesure les photos gardées.
-- `python fleur/fit.py targets <sid> --render --space space.json --out t.json [--cw i] [--plant]` : mesure le dessin actuel.
+- `python fleur/fit.py targets <sid> --refs <refcache/<sid>> --out targets.json [--family grappe]` : mesure les photos gardées.
+- `python fleur/fit.py targets <sid> --render --space space.json --out t.json [--cw i] [--plant] [--family grappe]` : mesure le dessin actuel.
+`--family grappe` (aussi panicule, thyrse, racème, épi) : inflorescence au lieu de fleur radiale, voir « Famille grappe » ; `targets.json` le garde (`family`), le fit le relit.
 - `python fleur/fit.py cmp photos.json dessin.json` : les deux côte à côte, écart en tolérances.
 `--cw` : id ou rang dans `CWS[sid]`. `--view` : vues de la planche avant/après. `--budget` : jeux de réglages essayés au plus.
 
@@ -41,6 +42,20 @@ lab 5 (ΔE), stem .02, leaflw .3, leafang 6. Poids `w` (1 par défaut) : à mont
 Photos : `keep.json` de refs.py (étiquettes `stade:` `vue:` `organe:` `coloris:`) ou, à défaut, `img/*` (étiquettes tirées des noms ; vue
 devinée : face si l/h .7 à 1,45, profil au-delà de 1,6). Écartées et notées : silhouette coupée ou fond confondu, couleurs peu sûres (< .5).
 
+## Famille grappe (lilas, jacinthe, muscari, glycine, freesia)
+Pas de coupe, de bouton ni d'ouverture : la tête est l'inflorescence entière, mesurée en rapports (aucune taille absolue), mêmes fonctions pour le dessin et les photos
+(`thyrse`, `gcomps`, `body_lab` de fit.py). Stades `bouton`, `entrouverte`, `ouverte` (étiquettes `stade:` seules, vue ignorée) :
+| mesure | sens | plancher de tolérance |
+|---|---|---|
+| `hw` | longueur/largeur de la boîte, lue dans les axes principaux (une photo penchée vaut une grappe dressée) | .06 x valeur (.06 au moins) |
+| `taper` | largeur du tiers étroit / largeur du tiers large ; 1 = cylindre ; sans sens haut-bas (lilas dressé ou glycine pendante) | .08 |
+| `fill` | aire / boîte | .06 |
+| `face.lab.corps` | couleur du corps (Lab de la couleur médiane de la silhouette), par coloris | 5 (ΔE) |
+Les rangées étroites aux deux bouts (tige, col, pointe fine : moins d'un cinquième du plus large) sont retirées. Photo : on garde les corps isolés qui ne touchent aucun bord,
+couvrent 2 à 60 % du cadre et sont presque convexes (aire/enveloppe .72), loin de la couleur de la bordure et hors feuillage (vert, teintes de 35 à 170 degrés, ombres ;
+dès 65 pour un coloris jaune ou orange) ; une photo = la médiane de ses grappes. Écartées : photos d'organe (`bourgeon`, `tige`, `feuille`), portraits gros plan, bouquets confondus,
+arbustes entiers. Il en reste souvent 3 à 6 : les tolérances montent avec la dispersion. Les mesures de tige et de feuille restent celles du tableau ci-dessus.
+
 ## Ce que fait le fit
 - Coût = moyenne pondérée de (écart / tolérance)² ; arrêt dès que tout est dans la tolérance, au budget, ou quand le pas est au plus fin.
 - Recherche : grille 5 ou 5x5 si 1 ou 2 réglages, puis Levenberg-Marquardt groupé : chaque lot = balayage du meilleur point (un pas par
@@ -56,4 +71,5 @@ devinée : face si l/h .7 à 1,45, profil au-delà de 1,6). Écartées et notée
 - Les mesures de profil voient la silhouette, pas le détail (marges, nervures, cœur) : Opus juge sur `fit.png`.
 - Une photo non découpée, en gros plan ou sur fond chargé donne peu de silhouettes sûres : garder des photos de profil isolées (refs.py
   `keep` avec `vue:profil`) pour le bouton et la coupe. Les couleurs ne valent que pour le coloris étiqueté.
+- Grappe : le fit ne voit que la silhouette ; la densité des fleurons, leur taille et le détail de la tige restent à l'œil d'Opus sur `fit.png`. Peu de photos propres : poids `w` à garder à 1.
 - Le cœur (`heart`) est une fermeture : ses réglages ne se fittent que s'il lit un objet global (`$...`).

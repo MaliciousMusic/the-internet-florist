@@ -62,11 +62,23 @@ def jload(p, dflt=None):
         return dflt
 
 
+_JLOCK = threading.Lock()
+
+
 def jsave(p, o):
+    # several steps run model calls in threads: one writer at a time, a temp name per thread, the file closed before the replace (Windows)
     os.makedirs(os.path.dirname(p), exist_ok=True)
-    tmp = p + '.tmp%d' % os.getpid()
-    json.dump(o, open(tmp, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
-    os.replace(tmp, p)
+    tmp = p + '.tmp%d_%d' % (os.getpid(), threading.get_ident())
+    with _JLOCK:
+        with open(tmp, 'w', encoding='utf-8') as f:
+            json.dump(o, f, ensure_ascii=False, indent=1)
+        for k in range(5):
+            try:
+                os.replace(tmp, p)
+                return
+            except PermissionError:
+                time.sleep(.2 * (k + 1))
+        os.replace(tmp, p)
 
 
 def slug(s):
@@ -159,7 +171,10 @@ class Lock:
 
     def beat(self):
         if self.name:
-            jsave('%s/%s/info.json' % (LOCKS, self.name), {'pid': os.getpid(), 'sid': self.sid, 't': now()})
+            try:
+                jsave('%s/%s/info.json' % (LOCKS, self.name), {'pid': os.getpid(), 'sid': self.sid, 't': now()})
+            except OSError:
+                pass  # a missed heartbeat is harmless: the lock is stale only after 3 hours of silence
 
     def acquire(self, wait=True, poll=20, say_every=300):
         t0, last = time.time(), 0
@@ -627,6 +642,21 @@ def step_census(ctx):
         for f in futs:
             f.result()
     c = check_census(ctx)
+    if not c['ok'] and 'BOUQUET SKU WITHOUT A/B' in c['msg'] and not os.path.exists(d + '/verdict-900.json'):
+        # the bouquet's cultivars below B get one targeted Haiku search for N2/N3 photos (lot 900), then the check again
+        raw = {norm(x.get('nom', '')): x for x in jload(d + '/census.json', {}).get('cultivars', [])}
+        lot = []
+        for x in ctx.st.get('skus', []):
+            r = raw.get(norm(x.get('cultivar') or ''))
+            if r is not None:
+                lot.append(dict(r, consigne='SKU du bouquet %s sous le niveau B : cherche par WebSearch ciblée au moins une photo nommée N2 ou N3 de ce cultivar '
+                                         '(obtenteur, arboretum, jardin botanique, collection nationale, société du genre, pépinière spécialisée) et une seconde photo '
+                                         'indépendante ; donne les URL des images. Si rien ne se trouve, dis-le.' % x['sku']))
+        if lot:
+            say('  bouquet cultivars below B: one targeted search (lot 900)')
+            jsave(d + '/douteux-900.json', lot)
+            one(d + '/douteux-900.json')
+            c = check_census(ctx)
     return {'status': 'done' if c['ok'] else 'failed', 'msg': c['msg'], 'checks': c}
 
 
@@ -861,17 +891,37 @@ def step_coloris(ctx):
 
 # ---------------------------------------------------------------------------------------------------------------- targets
 
+def targets_cmd(ctx):
+    """fit.py targets on the kept photos; the form family (grappe: an inflorescence, not a radial flower) is passed on, fit.py decides what it means"""
+    cmd = [sys.executable, 'fleur/fit.py', 'targets', ctx.sid, '--refs', ctx.rel, '--out', ctx.rel + '/targets.json']
+    fam = (ctx.st.get('family') or '').strip()
+    return cmd + ['--family', fam] if fam else cmd
+
+
+SILHOUETTE = ('hw', 'taper', 'fill')  # fit.py's measures of an inflorescence's outline (family grappe)
+
+
+def check_targets(t):
+    """at least 3 measures (silhouettes, colours, stem, leaf: all count); a cluster family (targets.json says family grappe) also needs its outline"""
+    ms = t.get('m', [])
+    n = len(ms)
+    kinds = sorted({m.get('kind') for m in ms})
+    sil = sum(1 for m in ms if m.get('kind') in SILHOUETTE)
+    ok = n >= 3 and (t.get('family') != 'grappe' or sil >= 3)
+    msg = '%d measures (%s), %d photos dropped' % (n, ','.join(map(str, kinds)), len(t.get('dropped', [])))
+    if t.get('family') == 'grappe':
+        msg += '; family grappe: %d outline measures%s' % (sil, '' if sil >= 3 else ' (3 needed: no whole inflorescence isolated in the photos)')
+    return ok, msg, {'n': n, 'silhouette': sil}
+
+
 def step_targets(ctx):
     if not have(ctx, 'fleur/fit.py'):
         return {'status': 'skipped', 'msg': 'fleur/fit.py not delivered yet'}
-    code, text = run_cmd(ctx, [sys.executable, 'fleur/fit.py', 'targets', ctx.sid, '--refs', ctx.rel, '--out', ctx.rel + '/targets.json'], 'targets', timeout=1800)
+    code, text = run_cmd(ctx, targets_cmd(ctx), 'targets', timeout=1800)
     if ctx.dry:
         return {'status': 'done', 'msg': 'dry'}
-    t = jload(ctx.rc + '/targets.json', {})
-    n = len(t.get('m', []))
-    kinds = sorted({m.get('kind') for m in t.get('m', [])})
-    ok = n >= 3
-    return {'status': 'done' if ok else 'failed', 'msg': '%d measures (%s), %d photos dropped' % (n, ','.join(map(str, kinds)), len(t.get('dropped', []))), 'checks': {'n': n}}
+    ok, msg, checks = check_targets(jload(ctx.rc + '/targets.json', {}))
+    return {'status': 'done' if ok else 'failed', 'msg': msg, 'checks': checks}
 
 
 # ---------------------------------------------------------------------------------------------------------------- Opus / Sonnet loops
@@ -991,7 +1041,7 @@ def step_fit(ctx, part='forme'):
         raise StepFailed('fit.py code %d: %s' % (code, (text.strip().splitlines() or [''])[-1][:160]))
     summ = fit_summary(d + '/fit.json') if not ctx.dry else 'dry'
     r = call_model(ctx, 'fit' if part == 'forme' else 'plante', 'look', 'opus', prompt_text('fit', **ctx.sub(part=part, space='%s/%s' % (ctx.rel, space), out='%s/%s' % (ctx.rel, outdir), summary=summ)),
-                   READ + ['Write', 'Edit'] + SAFE_BASH, turns=16)
+                   READ + ['Write', 'Edit'] + SAFE_BASH, turns=26)  # 16 ran out on a lilac look (a render with the wrong sid, then the journal)
     fin = r.get('final') or {}
     ok = ctx.dry or (fin.get('status') == 'done' and os.path.exists(d + '/fit.png'))
     return {'status': 'done' if ok else 'failed', 'msg': '%s; look: %s' % (summ, fin.get('verdict') or fin.get('note') or r['subtype']), 'checks': {'fit_png': os.path.exists(d + '/fit.png')}}
@@ -1061,6 +1111,25 @@ def step_finition(ctx):
     return {'status': 'done' if (res == 'done' and ok) else 'failed', 'msg': 'finition %s; %s' % (res, msg), 'checks': m}
 
 
+def rtest_parse(txt):
+    """{'stage vessel': 'IDENTIQUE' | 'DIFFERENT' | 'ERR'} from the page's rtest line (items separated by ' | ')"""
+    out = {}
+    for it in txt.split(' | '):
+        m = re.match(r'\s*(\S+) (\S+) (IDENTIQUE|DIFFERENT|ERR)', it)
+        if m:
+            out['%s %s' % (m[1], m[2])] = m[3]
+    return out
+
+
+def rtest_run(ctx, rel_url, rcs, tag):
+    """one rtest page (in the copy, or in the main atelier with rel_url ''), through the gate; {} when dry or unreadable"""
+    url = 'http://localhost:8765/%spilote/sv.html?rtest=1&rc=%s&sv=11&nc=%d' % ((rel_url + '/') if rel_url else '', ','.join(rcs), time.time())
+    outp = 'fleur/out/%s.json' % tag
+    c, t = run_cmd(ctx, [sh_exe(), 'ws/gate.sh', sh_exe(), 'ws/chrome1.sh', 'dom', url, outp], tag, timeout=1700, quiet=True)
+    p = '%s/%s' % (ctx.ch, outp)
+    return rtest_parse(open(p, encoding='utf-8', errors='replace').read()) if not ctx.dry and os.path.exists(p) else {}
+
+
 def step_temoins(ctx):
     out = []
     ok = True
@@ -1078,20 +1147,30 @@ def step_temoins(ctx):
             ok = False
             out.append('anemone render failed')
         else:
-            c, t = run_cmd(ctx, [sys.executable, 'fleur/img.py', 'diff', 'fleur/out/temoin_anem.png', MAIN + '/fleur/out/base_before.png'], 'temoin-diff', timeout=120, quiet=True)
+            # the anemone's witness: base_v2.png once the copy holds the anemone merge (d227daa, colours remeasured), base_before.png before it
+            v2 = subprocess.run(['git', 'merge-base', '--is-ancestor', 'd227daa', 'HEAD'], cwd=ctx.ch, capture_output=True).returncode == 0
+            base = MAIN + '/fleur/out/' + ('base_v2.png' if v2 else 'base_before.png')
+            c, t = run_cmd(ctx, [sys.executable, 'fleur/img.py', 'diff', 'fleur/out/temoin_anem.png', base], 'temoin-diff', timeout=120, quiet=True)
             mm = re.search(r'changed ([\d.]+)%', t)
             pct = float(mm.group(1)) if mm else None
             ok = ok and pct == 0.0
             out.append('anemone %s %%' % (pct if pct is not None else '?'))
-    rcs = ['tulipe-simple~7:7', 'tulipe-simple~12:6'] + ['%s:%s' % (x['sku'], x.get('tiges') or 6) for x in ctx.st.get('skus', []) if x.get('sku')]
-    url = 'http://localhost:8765/%s/pilote/sv.html?rtest=1&rc=%s&sv=11&nc=%d' % (ctx.rel_url, ','.join(rcs), time.time())
+    # rtest = the bouquet's random stream with the SVG heads off and on (the composition must not move). The sort's own SKUs must be IDENTIQUE;
+    # the tulip witnesses must do no worse than in the main atelier (they can already differ there: a failure of the witness is not the sort's)
+    own = ['%s:%s' % (x['sku'], x.get('tiges') or 6) for x in ctx.st.get('skus', []) if x.get('sku')]
+    wit = ['tulipe-simple~7:7', 'tulipe-simple~12:6']
     need_servers(ctx)
-    c, t = run_cmd(ctx, [sh_exe(), 'ws/gate.sh', sh_exe(), 'ws/chrome1.sh', 'dom', url, 'fleur/out/rtest.json'], 'temoin-rtest', timeout=1700, quiet=True)
+    r_own = rtest_run(ctx, ctx.rel_url, own, 'temoin-rtest') if own else {}
+    r_wit = rtest_run(ctx, ctx.rel_url, wit, 'temoin-rtest-tulipes')
+    r_ref = rtest_run(ctx, '', wit, 'temoin-rtest-principal') if ctx.rel_url else r_wit
     if not ctx.dry:
-        txt = open('%s/fleur/out/rtest.json' % ctx.ch, encoding='utf-8', errors='replace').read() if os.path.exists('%s/fleur/out/rtest.json' % ctx.ch) else ''
-        ni, nd = txt.count('IDENTIQUE'), txt.count('DIFFERENT') + txt.count('ERR ')
-        ok = ok and ni > 0 and nd == 0
-        out.append('rtest %d IDENTIQUE, %d different' % (ni, nd))
+        nd_own = [k for k, v in r_own.items() if v != 'IDENTIQUE']
+        worse = [k for k, v in r_wit.items() if v != 'IDENTIQUE' and r_ref.get(k) == 'IDENTIQUE']
+        known = [k for k, v in r_wit.items() if v != 'IDENTIQUE' and r_ref.get(k) != 'IDENTIQUE']
+        ok = ok and bool(r_own) == bool(own) and not nd_own and not worse and bool(r_wit)
+        out.append('rtest of the sort %d IDENTIQUE, %d different%s; tulip witnesses %d IDENTIQUE, %d different%s' % (
+            len(r_own) - len(nd_own), len(nd_own), ' (%s)' % ', '.join(nd_own) if nd_own else '', len(r_wit) - len(known) - len(worse), len(known) + len(worse),
+            ' (%d already so in the main atelier%s)' % (len(known), '; WORSE: ' + ', '.join(worse) if worse else '') if known or worse else ''))
     b_ok, b_msg, m = budget(ctx, 'bud_' + ctx.sid)
     out.append(b_msg)
     return {'status': 'done' if (ok and b_ok) or ctx.dry else 'failed', 'msg': '; '.join(out), 'checks': m}
@@ -1184,8 +1263,12 @@ def step_planches(ctx):
         if not ok:
             raise StepFailed('sheet %s: no image (%s)' % (kind, (text.strip().splitlines() or [''])[-1][:100]))
         os.makedirs(dest, exist_ok=True)
-        shutil.copyfile('%s/fleur/out/%s.png' % (ctx.ch, name), '%s/%s-%s-p1.png' % (dest, ctx.sid, kind))
-        got.append('%s-%s-p1.png (%s el, %s KB)' % (ctx.sid, kind, (m or {}).get('el'), (m or {}).get('kb')))
+        # never overwrite an earlier sheet: the next free -pN (p1 for the pipeline's first pass, p2... after retouches)
+        k = 1
+        while os.path.exists('%s/%s-%s-p%d.png' % (dest, ctx.sid, kind, k)):
+            k += 1
+        shutil.copyfile('%s/fleur/out/%s.png' % (ctx.ch, name), '%s/%s-%s-p%d.png' % (dest, ctx.sid, kind, k))
+        got.append('%s-%s-p%d.png (%s el, %s KB)' % (ctx.sid, kind, k, (m or {}).get('el'), (m or {}).get('kb')))
     return {'status': 'done', 'msg': 'copied to %s: %s' % (dest, ', '.join(got) or 'dry')}
 
 
@@ -1453,6 +1536,31 @@ def cmd_selftest(a):
         jsave(rc + '/keep.json', [{'tags': ['stade:bouton']}, {'tags': ['stade:fané']}, {'tags': ['stade:ouverte']}, {'tags': ['organe:tige']}, {'tags': ['organe:feuille-dessus']}])
         c = check_refs(ctx)
         t('refs: hard minimum (10 photos) fails with 5', not c['ok'] and c['n'] == 5, c['msg'])
+        ctx.st['family'] = 'grappe'
+        c = targets_cmd(ctx)
+        t('targets: the family is passed to fit.py', c[-2:] == ['--family', 'grappe'], str(c[-3:]))
+        ctx.st['family'] = ''
+        t('targets: no family, no flag', '--family' not in targets_cmd(ctx))
+        mm = lambda *k: [{'kind': x} for x in k]
+        t('targets: 3 measures of any kind pass', check_targets({'m': mm('leaflw', 'leafang', 'stem')})[0])
+        t('targets: 2 measures fail', not check_targets({'m': mm('leaflw', 'leafang')})[0])
+        t('targets: a grappe counts its outline', check_targets({'family': 'grappe', 'm': mm('hw', 'taper', 'fill', 'lab')})[0])
+        t('targets: a grappe without outline fails', not check_targets({'family': 'grappe', 'm': mm('leaflw', 'leafang', 'stem', 'lab')})[0])
+        try:
+            import numpy as np
+            sys.path.insert(0, HERE)
+            import fit as FITMOD
+            from PIL import Image, ImageDraw
+            r = []
+            for ang in (0, 35, 170):  # a cone, upright then tilted: the same ratios (principal axes), whichever end is up
+                im = Image.new('L', (200, 260), 0)
+                ImageDraw.Draw(im).polygon([(100, 20), (150, 200), (50, 200)], fill=255)
+                r.append(FITMOD.thyrse(np.asarray(im.rotate(ang, expand=True, resample=Image.BILINEAR)) > 127))
+            t('fit.py thyrse: tilt-proof outline of a cone', all(abs(x['hw'] - r[0]['hw']) < .1 and abs(x['taper'] - r[0]['taper']) < .06 and abs(x['fill'] - r[0]['fill']) < .04 for x in r) and .3 < r[0]['taper'] < .5, str(r))
+        except ImportError as e:
+            t('fit.py thyrse: tilt-proof outline of a cone', False, str(e))
+        rp = rtest_parse('- cylindre-verre-clair IDENTIQUE 5877:1/10 / 5877:1/12 | 2:0.5 coupe-pied-blanche DIFFERENT 5593:1/84 / 5669:2/10 | 3:1 cylindre-verre-clair ERR boom')
+        t('rtest line parsed', rp == {'- cylindre-verre-clair': 'IDENTIQUE', '2:0.5 coupe-pied-blanche': 'DIFFERENT', '3:1 cylindre-verre-clair': 'ERR'}, str(rp))
         say('selftest: %d ok, %d failed' % (len(ok), len(bad)))
     finally:
         LOCKS = old_locks

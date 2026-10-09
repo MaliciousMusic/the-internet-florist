@@ -8,7 +8,8 @@ Cible : 3 M de tokens « équivalent entrée Opus » par sorte (`--cap`).
 - `python fleur/pipe.py run <sid> --taxon "Genre espèce" [--family F] [--genus G] [--group "..."] [--kavb] [--skus "lilas~0:Nom du cultivar:2,..."]`
   `[--ch <copie>] [--from <étape>] [--only <étape>] [--cap <M>] [--dry]` ; `--skus` : SKU du bouquet, cultivar, nombre de tiges (sinon `sku_bouquet` de
   `catalogue/serre/sources/<sid>.json`, en lecture).
-- `python fleur/pipe.py status <sid>` : étapes, contrôles, facture. `bill <sid>` : le tableau par étape. `selftest` : 26 vérifications sans modèle.
+  `--family` : famille de forme ; `grappe` (aussi panicule, thyrse, racème, épi : lilas, jacinthe, muscari, glycine, freesia) fait mesurer l'inflorescence entière (FIT.md), le reste : fleur radiale.
+- `python fleur/pipe.py status <sid>` : étapes, contrôles, facture. `bill <sid>` : le tableau par étape. `selftest` : 34 vérifications sans modèle.
 - `python fleur/pipe.py models` : trois appels minuscules, un par modèle (facturés sous `refcache/pipe-test`).
 - Codes de sortie : 0 fini, 2 un contrôle a échoué, 3 plafond atteint, 4 trois sortes déjà en cours. Tout est repris par `run <sid>` (première étape non finie) ou `--from`.
 
@@ -18,12 +19,12 @@ Cible : 3 M de tokens « équivalent entrée Opus » par sorte (`--cap`).
 | census | `census.py`, puis Haiku sur chaque `census/douteux-<n>.json` (3 en parallèle) -> `verdict-<n>.json` | un cultivar A ou B, libre de marque, par SKU du bouquet ; `marques-a-verifier.txt` |
 | refs | `refs.py find/sheet`, Haiku choisit et `keep` (puis complète si besoin), Haiku écrit `brief.md` | photos par stade, vue et organe : minimum dur (10 photos, bouton, ouvert, fané, feuille, tige), cibles souples en lacunes |
 | coloris | `refs.py auto` sur 3 photos par cultivar, médianes, ΔE ; Haiku seulement pour les mesures de confiance sous .5, uniques ou en désaccord (ΔE > 10) | base, corps, pointe et niveau A ou B ; `coloris.json`, `coloris.md` |
-| targets | `fit.py targets` | au moins 3 mesures |
+| targets | `fit.py targets [--family F]` ; `grappe` = silhouette de l'inflorescence (hw, taper, fill, couleur du corps), voir FIT.md | au moins 3 mesures (toutes comptent) ; grappe : 3 mesures de silhouette |
 | forme | Opus : `y-<genre>.js`, pièces de kit, `space.json` ; relais par `etat-forme.md` | fichiers, inscription dans mkapp/mkqa/mkpl, `space.json`, construction |
 | fit | `fit.py`, puis Opus : UN regard sur `fit.png`, report de `best` dans la fiche | `fit.json` et `fit.png` |
 | plante | Opus : tige et feuilles, `space-plante.json` ; puis `fit.py` et le regard | idem |
 | finition | Sonnet : matières des coloris | éléments et Ko par tête à DET 1 (rouge au-delà de 1,2 x 300 / 50) |
-| temoins | anémone contre `base_before.png` (0,00 %), `rtest` IDENTIQUE, budget | les trois |
+| temoins | anémone contre `base_before.png` ou `base_v2.png` (0,00 %) ; `rtest` des SKU de la sorte IDENTIQUE (les témoins tulipes ne doivent pas faire pire que dans l'atelier principal) ; budget | les trois |
 | qa | `qawatch.sh`, lots de 2 (RAM libre 4,2 à 5 Go) ou 4 ; attend sous 4,2 Go | flottants, sous le vase, plis : 0 |
 | planches | sku et plante, copiées dans `flower-claude/.../pilote-printemps/sheets/<sid>-sku-p1.png` et `-plante-p1.png` | image écrite |
 La plante reprend `targets.json` (il contient déjà les cibles tige et feuille). Aucun commit ni fusion : les planches sont seulement copiées.
