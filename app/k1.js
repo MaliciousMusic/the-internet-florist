@@ -21,13 +21,13 @@ function is3D(rec){const a=rec.a,k=(rec.p||{}).kind;if(GH[rec.id])return true;if
 /* products = species × colour (up to four colours each) */
 /* retired colourways (ret:1) stay in PRODUCTS and PBY, with the same ids and SKU numbers, so old bouquets, gifts and gardens still draw; the shop and the composer no longer offer them (p.ret) */
 const PRODUCTS=[],PBY={};
-/* colourways added after the catalogue was numbered (late) become products at the end, so no existing SKU number moves */
+/* colourways added after the catalogue was numbered (late) become products at the end, so no existing SKU number moves. late:N is the wave: wave 1 (the anemones, the late tulips) keeps its numbers, wave 2 (the rosettes: double tulip, classic ranunculus) follows it, each wave in the recipes' order */
 const PROD_LATE=[];let PROD_LATE_PASS=false;
 /* a species finished in the greenhouse offers every colourway it is sold in, each with its own name; the others keep up to four colours */
 const lc1=s=>s.charAt(0).toLowerCase()+s.slice(1);
 for(const r of RECIPES){if(CWS[r.id])r.cols=CWS[r.id].map(w=>w.c);const m=MBY[r.id]||{n:r.id},info=recInfo(r),cws=CWS[r.id],cols=cws?cws.map(w=>w.c):(r.cols||['#e8a0b0']).slice(0,4);
   cols.forEach((col,ci)=>{if(cws&&cws[ci].late&&!PROD_LATE_PASS){PROD_LATE.push([r,ci]);return}const fam=famOf(col),p={id:`${r.id}~${ci}`,sid:r.id,n:m.n,cn:cws?lc1(cws[ci].n):colName(col),col,fam,price:Math.max(50,Math.round(r.price||300)),rec:r,info,d3:is3D(r),cat:m.c,role:m.r,sens:(m.sc&&m.sc[fam])||m.s||'',occ:m.o||[],ev:m.e||[]};if(cws&&cws[ci].ret)p.ret=1;PRODUCTS.push(p);PBY[p.id]=p})}
-PROD_LATE_PASS=true;for(const[r,ci]of PROD_LATE){const m=MBY[r.id]||{n:r.id},info=recInfo(r),cws=CWS[r.id],cols=cws.map(w=>w.c),col=cols[ci];(()=>{const fam=famOf(col),p={id:`${r.id}~${ci}`,sid:r.id,n:m.n,cn:cws?lc1(cws[ci].n):colName(col),col,fam,price:Math.max(50,Math.round(r.price||300)),rec:r,info,d3:is3D(r),cat:m.c,role:m.r,sens:(m.sc&&m.sc[fam])||m.s||'',occ:m.o||[],ev:m.e||[]};if(cws&&cws[ci].ret)p.ret=1;PRODUCTS.push(p);PBY[p.id]=p})()}PROD_LATE_PASS=false;
+PROD_LATE_PASS=true;const lateW=([r,ci])=>+CWS[r.id][ci].late||1;PROD_LATE.sort((a,b)=>lateW(a)-lateW(b));for(const[r,ci]of PROD_LATE){const m=MBY[r.id]||{n:r.id},info=recInfo(r),cws=CWS[r.id],cols=cws.map(w=>w.c),col=cols[ci];(()=>{const fam=famOf(col),p={id:`${r.id}~${ci}`,sid:r.id,n:m.n,cn:cws?lc1(cws[ci].n):colName(col),col,fam,price:Math.max(50,Math.round(r.price||300)),rec:r,info,d3:is3D(r),cat:m.c,role:m.r,sens:(m.sc&&m.sc[fam])||m.s||'',occ:m.o||[],ev:m.e||[]};if(cws&&cws[ci].ret)p.ret=1;PRODUCTS.push(p);PBY[p.id]=p})()}PROD_LATE_PASS=false;
 /* an ad-hoc product for a model bouquet element (any colour of any species) */
 function prodFor(sid,col){const r=RBY[sid];if(!r)return null;const key=`${sid}@${col}`;if(PBY[key])return PBY[key];const m=MBY[sid]||{n:sid};
   const fam=famOf(col),p={id:key,sid,n:m.n,cn:colName(col),col,fam,price:Math.max(50,Math.round(r.price||300)),rec:r,info:recInfo(r),d3:is3D(r),cat:m.c,role:m.r,sens:(m.sc&&m.sc[fam])||m.s||'',occ:m.o||[],ev:m.e||[]};PBY[key]=p;return p}

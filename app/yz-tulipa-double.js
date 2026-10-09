@@ -30,7 +30,7 @@ const TDBS={
   mauve:{b:'#c674b2',c:'#b962a1',p:'#c07aaf',m:'#cfa8c4',r:'#b58aa6',g:.2},
   bordeaux:{b:'#512529',c:'#4c2327',p:'#5e3036',m:'#7a4a50',r:'#47222a',g:.1},
   noir:{b:'#4a313c',c:'#3f2b33',p:'#4e3a44',m:'#5e4452',g:.1,an:'#2a2026',fi:'#4a3a3a',po:'#5a4a40',ov:'#6a7040',sg:'#8a8050'},
-  /* the late seven (late:1) */
+  /* the late seven (late:2) */
   'blanc-rouge':{b:'#e8e6dc',c:'#e4e0d6',p:'#e6e2d8',m:'#f2eee6',r:'#e2d6cf',g:.06,li:'#faf6f0',sh:'#9a8c88',rc:'#a8323e',rw:.013,ra:.6,
     ft:[[0,'#efede4'],[.3,'#e8e4da'],[.55,'#e0b0ac'],[.8,'#c4646c'],[1,'#a82e3c']]},
   'blanc-framboise':{b:'#ccd0b6',c:'#d4d8c0',p:'#d8dac8',m:'#ebe9dc',r:'#d3d6c0',g:.2,fc:'#a7b680',sh:'#8d8f80',rc:'#9a6aa4',rw:.019,ra:.85,
@@ -170,7 +170,7 @@ if(typeof STEML!=='undefined'&&STEML['tulipe-double'])STEML['tulipe-double'].sv=
    (the name of a variety registered at the KAVB is a free denomination; no series name under a trade mark, no (R) or (TM)) and corrected where the photograph
    of the variety does not say the old name (a name that misleads is corrected: Britt, a vivid pink with pale margins, is no peach; Uncle Tom is a very dark brown
    burgundy, Black Hero an aubergine black, Copper Image a coppery apricot, Mount Tacoma a greenish cream white, Shirley Double a white edged with violet);
-   the swatch is the tone the rosette gives its tepals (between the body and the foot measured on the studio photograph). Eight late colourways (late:1) follow, after the others, by push as the ranunculus does (Britt, the eighth, a vivid pink with pale margins, by decision of the orchestrator;
+   the swatch is the tone the rosette gives its tepals (between the body and the foot measured on the studio photograph). Eight late colourways (late:2, the second wave) follow, after the others, by push as the ranunculus does (Britt, the eighth, a vivid pink with pale margins, by decision of the orchestrator;
    the names of two varieties sold under a trade mark and absent from the KAVB are used nowhere, nor is that of the cream variety the KAVB does not list). */
 if(typeof CW_TDBL!=='undefined'){const NM={'rose-pale':'Rose pâle (Angélique)',blanc:'Blanc crème verdâtre (Mount Tacoma)',abricot:'Abricot cuivré (Copper Image)',peche:'Pêche (Zantucharme)',
     'rose-vif':'Rose vif (Voque)',jaune:'Jaune (Yellow Pompenette)',orange:'Orange plumeté de vert (Orange Princess)',rouge:'Rouge (Miranda)',lilas:'Lilas rosé (Katinka)',
@@ -178,4 +178,4 @@ if(typeof CW_TDBL!=='undefined'){const NM={'rose-pale':'Rose pâle (Angélique)'
     LATE=[['blanc-rouge','Blanc strié de rouge (Carnaval de Nice)'],['blanc-framboise','Blanc liseré de violet (Shirley Double)'],['creme-rose','Crème à bord rosé'],
       ['corail','Rose corail (Taiwan)'],['jaune-orange-flamme','Orange à flammes rouges (Gudoshnik Double)'],['violet-bleute','Violet (Blue Diamond)'],['jaune-bord-rouge','Jaune à bord rosé (Akebono)'],['rose-bord-pale','Rose vif à bords pâles (Britt)']];
   for(const w of CW_TDBL)if(NM[w.id])Object.assign(w,{n:NM[w.id],c:mix(TDBS[w.id].c,TDBS[w.id].b,.5)});
-  for(const[id,n]of LATE)if(!CW_TDBL.some(w=>w.id===id))CW_TDBL.push({id,n,c:mix(TDBS[id].c,TDBS[id].b,.5),g:TDBS[id].g,late:1})}
+  for(const[id,n]of LATE)if(!CW_TDBL.some(w=>w.id===id))CW_TDBL.push({id,n,c:mix(TDBS[id].c,TDBS[id].b,.5),g:TDBS[id].g,late:2})}
