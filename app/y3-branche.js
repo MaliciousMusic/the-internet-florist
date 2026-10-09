@@ -180,7 +180,10 @@ function svBlossom(par,B,O,D,S0,cwx,op,seed,wl,lod){const S=S0._m||(S0._m=Object
     /* a shed flower: its last hanging petals one by one (a silhouette round the centre would read as an open flower) */
     let so=st.shed>.3&&st.bud<=.6?out.map(x=>poly(x.P)).join(''):sil(out);
     /* (ctube) the corolla stays whole until it falls: its outline, then the tube's (same winding, so that the union fills) */
-    if(CT){const P=silP(out);so=(P?poly(svblOri(P)):'')+(B[2][2]<.5||!lod?poly(ctQ()):'')}
+    /* a silhouette of the lobe tips that misses the tube's mouth (lobes all on one side: a corolla seen edge-on or from behind) would float off
+       its tube and pedicel: each lobe's own outline, from its foot on the mouth, then joins it (porteur 2026-10-09: every flower on its shoot) */
+    if(CT){const P=silP(out),mo=pj([0,0,R0*CT.L]),lj=P&&st.bud<=.6&&!svbIn(P,mo[0],mo[1]);
+      so=(P?poly(svblOri(P)):'')+(lj?out.map(x=>poly(svblOri(x.P))).join(''):'')+(B[2][2]<.5||!lod?poly(ctQ()):'')}
     if(cvL){const SP=silP(out),inP=(x,y)=>{let c=false;for(let i=0,j=SP.length-1;i<SP.length;j=i++){const a=SP[i],b=SP[j];if((a[1]>y)!==(b[1]>y)&&x<(b[0]-a[0])*(y-a[1])/(b[1]-a[1])+a[0])c=!c}return c},
         hid=SP&&calQ().every(Q=>Q.every((p,i)=>{const q=Q[(i+1)%Q.length];return inP(p[0],p[1])&&inP((p[0]+q[0])/2,(p[1]+q[1])/2)}));if(!hid)calDraw(k)}
     if(!(st.gone&&!so))E('path',lod?{d:so,fill:f0,stroke:mix(c0.body,c0.shade,.45),'stroke-width':fx(R0*.018),'stroke-opacity':.5}:{d:so,fill:f0},k);
@@ -368,7 +371,7 @@ function svbDense(P,W){const out=[],n=P.length,g=i=>P[Math.max(0,Math.min(n-1,i)
   for(let i=0;i<out.length;i++){const a=out[Math.max(0,i-1)].p,b=out[Math.min(out.length-1,i+1)].p,dx=b[0]-a[0],dy=b[1]-a[1],l=Math.hypot(dx,dy)||1;out[i].t=[dx/l,dy/l];out[i].n=[-dy/l,dx/l]}
   let s=0;out.forEach((q,i)=>{if(i)s+=Math.hypot(q.p[0]-out[i-1].p[0],q.p[1]-out[i-1].p[1]);q.s=s});return out}
 /* the bark of one piece [a..b] of a dense chain: outline, shade and light washes, the sheen, lenticels and ring scars */
-function svbWood(par,C,a,b,S,o){const Wd=S.wood,g=par,fx=DET>=1.5?n=>Math.round(n*10)/10:Math.round,r=svRng(o.seed>>>0),L=[LIGHT[0],-LIGHT[1]],ll=Math.hypot(L[0],L[1]),Ln=[L[0]/ll,L[1]/ll],
+function svbWood(par,C,a,b,S,o){const Wd=S.wood,g=par,fx=DET>=1.5||C[b].w<1.5?n=>Math.round(n*10)/10:Math.round,r=svRng(o.seed>>>0),L=[LIGHT[0],-LIGHT[1]],ll=Math.hypot(L[0],L[1]),Ln=[L[0]/ll,L[1]/ll],
     a0=Math.max(0,a-1),b0=Math.min(C.length-1,b+1),idx=[];for(let i=a0;i<=b0;i++)idx.push(i);const sTot=C[C.length-1].s||1;
   /* bark colour along the whole chain: old and grey at the foot, young and glossy toward the tips */
   const colAt=i=>{const q=C[i].s/sTot,k=o.main?1-svSm((q-Wd.oldTo*.4)/(Wd.oldTo)):0;return Wd.young.map((c,j)=>mix(c,Wd.old[j],k*.85))},
@@ -539,6 +542,8 @@ function svbLeaf(par,a,H0,len,S,cw,o){const Lf=S.leaf,r=svRng(o.seed>>>0),hi=DET
   return g}
 const svbPoly=(P,fx)=>svbD(P,fx||(n=>Math.round(n*10)/10));
 /* a polygon turned counter-clockwise on the screen (two outlines in one path then add up under the nonzero rule) */
+/* is (x,y) inside the polygon P (even-odd) */
+function svbIn(P,x,y){let c=false;for(let i=0,j=P.length-1;i<P.length;j=i++){const a=P[i],b=P[j];if((a[1]>y)!==(b[1]>y)&&x<(b[0]-a[0])*(y-a[1])/(b[1]-a[1])+a[0])c=!c}return c}
 function svblOri(P){let s=0;for(let i=0;i<P.length;i++){const p=P[i],q=P[(i+1)%P.length];s+=p[0]*q[1]-q[0]*p[1]}return s<0?P.slice().reverse():P}
 /* the generic hook: wraps the plant function GH[sid] of the old drawing. With SVG on, the old drawing still runs (the bouquet's chance is consumed exactly
    as before) but draws into nothing: only its group k is real (it keeps its animation); its skeleton (b29Grow) is caught and the branch is drawn in SVG */

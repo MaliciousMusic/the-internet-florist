@@ -68,7 +68,15 @@ function svBoule(par,B,O,D,S,cwx,op,seed,wl,o={}){const P=S._m||(S._m=Object.ass
         clip='bc'+(gid++);E('path',{d:svSpl(h.map(p=>[ctr[0]+(p[0]-ctr[0])*1.04,ctr[1]+(p[1]-ctr[1])*1.04]))},E('clipPath',{id:clip},GDEF||defs))}}
     /* the stalk into the ball, and the bare cyme where florets have fallen */
     {const a2=[ctr[0]+att[0],ctr[1]-att[1]],w=Math.max(.5,R0*P.stalkW);let d='M'+svJ([svR(a2[0]),svR(a2[1])])+'L'+svJ([svR(ctr[0]),svR(ctr[1])]),db='';
-      if(shd>.05){const n=Math.round(5+12*shd);for(let j=0;j<n;j++){const q=fl[Math.floor(pxHashS(j,3,seed)*fl.length)],m=PJ(B,O,V3.sc(q.c,.55)),e=PJ(B,O,V3.sc(q.c,.9));db+='M'+svJ([svR(ctr[0]),svR(ctr[1])])+'Q'+svJ([svR(m[0]),svR(m[1]),svR(e[0]),svR(e[1])])}}
+      if(shd>.05){const n=Math.round(5+12*shd);for(let j=0;j<n;j++){const q=fl[Math.floor(pxHashS(j,3,seed)*fl.length)],m=PJ(B,O,V3.sc(q.c,.55)),e=PJ(B,O,V3.sc(q.c,.9));db+='M'+svJ([svR(ctr[0]),svR(ctr[1])])+'Q'+svJ([svR(m[0]),svR(m[1]),svR(e[0]),svR(e[1])])}
+        /* a floret left alone where its neighbours have fallen (its disc touches neither the shrunken core nor a floret that does) keeps its own bare
+           cyme branch to the core: no floret floats beside the ball (porteur 2026-10-09). Conservative discs: the core R1 x core x (1 - shd/2) x flat,
+           a floret .6 s (between its notches and its lobe tips); one branch per lone group, to its floret nearest the core */
+        const cR=R1*.97*P.core*(1-.5*shd)*P.flat,fr=s*(.7+.3*fo)*.6,ps=fl.map(q=>PJ(B,O,q.c)),dc=ps.map(p=>Math.hypot(p[0]-ctr[0],p[1]-ctr[1])),on=dc.map(d=>d<cR+fr*.5),st=[];
+        for(let i=0;i<fl.length;i++)if(on[i])st.push(i);
+        const grow=()=>{while(st.length){const i=st.pop();for(let j=0;j<fl.length;j++)if(!on[j]&&Math.hypot(ps[i][0]-ps[j][0],ps[i][1]-ps[j][1])<fr*1.6){on[j]=true;st.push(j)}}};grow();
+        for(;;){let bi=-1;for(let i=0;i<fl.length;i++)if(!on[i]&&(bi<0||dc[i]<dc[bi]))bi=i;if(bi<0)break;
+          const q=fl[bi],m=PJ(B,O,V3.sc(q.c,.55)),e=PJ(B,O,V3.sc(q.c,.9));db+='M'+svJ([svR(ctr[0]),svR(ctr[1])])+'Q'+svJ([svR(m[0]),svR(m[1]),svR(e[0]),svR(e[1])]);on[bi]=true;st.push(bi);grow()}}
       if(db)E('path',{d:db,fill:'none',stroke:C.stalk,'stroke-width':svF(w*.45),'stroke-linecap':'round'},k);
       E('path',{d,fill:'none',stroke:C.stalk,'stroke-width':svF(w),'stroke-linecap':'round'},k)}
     /* the florets, far to near, in depth bands */

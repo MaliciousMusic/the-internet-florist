@@ -147,8 +147,9 @@ function footSet(h,X,Y,B){h.X=X;h.Y=Y;h.c=footCircles(h.sid,X,Y,h.r,B,h.dir);let
    a head's stem as c5 (stemTo) draws it from the mouth, sampled every 6 units above the vessel's silhouette (below it the vessel hides it);
    each sample [x, y, length, number of flowers in front of it]: every head is drawn in front of every stem, so a sample inside a head's
    footprint (SET_K/.92 of its circles) is hidden, one in none of them is bare stem */
-const SET_K=.82,QS=typeof location!=='undefined'?location.search:'',SETTLE_OFF=/[?&]noset=1/.test(QS),NOREACH=/[?&]noreach=1/.test(QS),NOSTEMZ=/[?&]nostemz=1/.test(QS);
-/* to compare in the lab: ?noset=1 the bouquet before settling, ?noreach=1 without the stems' reach, ?nostemz=1 without the stems' depth rule */
+const SET_K=.82,QS=typeof location!=='undefined'?location.search:'',SETTLE_OFF=/[?&]noset=1/.test(QS),NOREACH=/[?&]noreach=1/.test(QS),NOSTEMZ=/[?&]nostemz=1/.test(QS),NOTALL=/[?&]notall=1/.test(QS);
+/* to compare in the lab: ?noset=1 the bouquet before settling, ?noreach=1 without the stems' reach, ?nostemz=1 without the stems' depth rule,
+   ?notall=1 without the products made for height (tallL, tallH) */
 function stemSamples(x,y,BP,mw,rx,rimY){const bx=BP[0]+Math.max(-1,Math.min(1,(x-BP[0])/Math.max(60,rx)))*mw*.45,by=BP[1]+8,dy=BP[1]-y,Lc=Math.hypot(x-bx,by-y),sh=Math.max(0,Math.min(1,1-(Lc-20)/50)),
     P1=[bx+(x-bx)*.22,BP[1]-dy*.33],P1s=[bx+(x-bx)*.33,by+(y-by)*.33],P=[[bx,by],[P1[0]+(P1s[0]-P1[0])*sh,P1[1]+(P1s[1]-P1[1])*sh],[x-(x-bx)*.3,y+dy*.35],[x,y]],n=Math.max(4,Math.ceil(Lc/6)),S=[];
   let p=P[0];for(let i=1;i<=n;i++){const q=bz(P,i/n),l=Math.hypot(q[0]-p[0],q[1]-p[1]);p=q;if(q[1]<rimY(q[0])-1)S.push([q[0],q[1],l,0])}return{S,bx}}
@@ -159,7 +160,8 @@ function stemSamples(x,y,BP,mw,rx,rimY){const bx=BP[0]+Math.max(-1,Math.min(1,(x
       most bare stem lies within its reach, when that hides more than its size of bare stem;
    2. settling, from the mouth outward (four passes): a head showing more bare stem than its allowance (a bud or a half-open head may
       stand on a short bare stem, a focal flower hardly any) slides down its stem toward the mouth: down to the lip, then as far as its
-      bare stem, or 70, 45, 25 % of it, at its depth or a little behind (never a head the player set in front).
+      bare stem, or 70, 45, 25 % of it, at its depth or a little behind (never a head the player set in front). Over a narrow neck (its mouth
+      narrower than the median head) a head stays a diameter above the mouth: lower, its neck would end in the mouth and its stem turn back.
    A move is kept only where the head still fits (it stays visible and hides no flower behind it more than placing allows) and the bouquet
    as a whole shows less bare stem. air (0–1, the bouquet's breathing) widens every allowance and brings fewer heads to the neck: 0 the
    tightest bouquet, 1 no settling at all. Returns the bare length and the length of stem above the vessel, for the score */
@@ -173,20 +175,20 @@ function settle(heads,BP,mw,rx,ry,v,hand,fits,axFor,PL,air=0,fan=FAN){const rimY
     fitsAt=(h,X,Y,z,need)=>{const i=heads.indexOf(h),lip=onLip(h,Y);heads.splice(i,1);const zz=fits(X,Y,h.r,lip?Math.max(z,.97):z,need,h.sid,lip,h.reach?{r:h.r,it:h.it}:null);heads.splice(i,0,h);return zz},
     dB=h=>Math.hypot(h.X-BP[0],h.Y-BP[1]);
   const cone=(x,y,r)=>Math.abs(x-BP[0])-(mw+r*1.1+Math.max(0,BP[1]-y)*fan),
-    yLim=(h,x)=>hand?BP[1]-h.r*.3:!h.focal&&Math.abs(x-BP[0])<=mw*.9+h.r*.4?BP[1]-h.r*.45:BP[1]-h.r*.95-2;
+    yLim=(h,x)=>{if(hand)return BP[1]-h.r*.3;const m=Math.abs(x-BP[0])<=mw*.9+h.r*.4;return m&&mw<rMed?BP[1]-h.r*2-2:m&&!h.focal?BP[1]-h.r*.45:BP[1]-h.r*.95-2};
   for(const h of M)build(h);let tot=total();const moved=new Set();
   /* 1. the neck: the head's footprint goes on the spot (its anchor below it, along its stem) */
   const rs=M.map(h=>h.r).sort((a,b)=>a-b),rMed=rs[rs.length>>1]||20,cell=12,RC=Math.ceil(rMed*SET_K/cell);
   for(let it=0;it<Math.round(8*(1-air));it++){const G=new Map();for(const h of M)for(const p of h.S)if(!p[3]){const k=Math.floor(p[0]/cell)+','+Math.floor(p[1]/cell);G.set(k,(G.get(k)||0)+p[2])}
     const spots=[];for(const k of G.keys()){const[i,j]=k.split(',').map(Number);let s=0;for(let a=-RC;a<=RC;a++)for(let b=-RC;b<=RC;b++)if(a*a+b*b<=RC*RC+1)s+=G.get((i+a)+','+(j+b))||0;spots.push([(i+.5)*cell,(j+.5)*cell,s])}
     spots.sort((a,b)=>b[2]-a[2]);if(!spots.length||spots[0][2]<rMed*1.2)break;
-    const cand=M.filter(h=>!h.focal&&!moved.has(h)&&h.r<=rMed*1.35&&PL(h.it)>3&&(h.it.dp||5)>3).map(h=>[h,bare(h)]).sort((a,b)=>b[1]-a[1]||a[0].r-b[0].r).slice(0,14).map(a=>a[0]);
+    const cand=M.filter(h=>!h.focal&&!h.tall&&!moved.has(h)&&h.r<=rMed*1.35&&PL(h.it)>3&&(h.it.dp||5)>3).map(h=>[h,bare(h)]).sort((a,b)=>b[1]-a[1]||a[0].r-b[0].r).slice(0,14).map(a=>a[0]);
     let best=null;for(const sp of spots.slice(0,4))for(const h of cand){const ux=sp[0]-BP[0],uy=sp[1]-BP[1],l=Math.hypot(ux,uy)||1,c=footOf(h.sid)[0]*h.r,X=sp[0]-ux/l*c,Y=Math.min(sp[1]-uy/l*c,yLim(h,X)),X0=h.X,Y0=h.Y;if(!hand&&cone(X,Y,h.r)>0)continue;
       for(const z0 of[h.z,Math.max(h.z,.92)]){if(z0!==h.z&&PL(h.it)<5)continue;const z=fitsAt(h,X,Y,z0,.5);if(z===null)continue;moveTo(h,X,Y);const g=tot-total();moveTo(h,X0,Y0);if(g>h.r*1.2&&(!best||g>best.g))best={h,X,Y,z,g};break}}
     if(!best)break;moveTo(best.h,best.X,best.Y);best.h.z=onLip(best.h,best.Y)?Math.max(best.z,.97):best.z;tot=total();moved.add(best.h)}
   /* 2. settling */
   for(let pass=0;pass<4;pass++){let n=0;M.sort((a,b)=>dB(a)-dB(b));
-    for(const h of M){const e=bare(h),allow=(h.o.st!=='open'?h.r*1.1:h.focal?h.r*.3:h.r*.55)*(1+2.5*air)+air*24;if(e<=allow+4)continue;
+    for(const h of M){if(h.tall)continue;const e=bare(h),allow=(h.o.st!=='open'?h.r*1.1:h.focal?h.r*.3:h.r*.55)*(1+2.5*air)+air*24;if(e<=allow+4)continue;
       const tx=h.bx,ty=BP[1],d=Math.hypot(h.X-tx,h.Y-ty);if(d<h.r*1.2)continue;const ux=(tx-h.X)/d,uy=(ty-h.Y)/d,X0=h.X,Y0=h.Y,c0=cone(X0,Y0,h.r),zs=PL(h.it)>=8?[h.z]:[h.z,h.z-.25];
       let done=false;for(const z of zs){for(const f of[0,1,.7,.45,.25]){const s=Math.min(f?(e-allow)*f:1e9,d-h.r*1.2);if(s<4)continue;let X=X0+ux*s,Y=Y0+uy*s;const yM=yLim(h,X);
           if(Y>yM){const s2=(yM-Y0)/uy;if(!(s2>=4))continue;X=X0+ux*s2;Y=yM}
@@ -260,7 +262,14 @@ function candidate(P,sv,vid,tk){sd(sv);const T=P.asp?Object.assign({},TPL[tk],{a
     fits=(...a)=>fitz(...a)!==null;
   const axFor=(x,y,z,form)=>{const dx=x-BP[0],dy=BP[1]-y,l=Math.hypot(dx,dy)||1;let fz=.3+1.1*z;if(form==='cornet')fz*=.45;if(form==='orchidee'||form==='disque'||form==='coeur'||form==='etoile')fz=Math.max(fz,.6);return V3.nz([dx/l,dy/l,fz])};
   /* the player's place for a variety (1 at the back … 10 in front, 5 untouched): its depth, how much of it must stay visible, where in the mass */
-  const PL=it=>P.ex&&!P.recipe&&it.pos&&it.pos!==5?it.pos:5,pz=(q,z)=>{const p=PL(q.it);if(p!==5)return Math.max(-.6,Math.min(1.6,z+(p-5)*.12));const d=q.it.dp||5;return d===5?z:Math.max(-.3,Math.min(1.3,z+(d-5)*.05))},pn=(q,n)=>PL(q.it)<=3?n*.55:n;
+  const PL=it=>P.ex&&!P.recipe&&it.pos&&it.pos!==5?it.pos:5,
+    /* products made for height: their trade stem (rec.stem.cm) is long and they stand at the back, set there by the player (place 1-4) or by
+       their species' plane (profondeur.csv). A woody branch (a line at the back, never a grass or a loop) keeps a long stem, up to what it can
+       reach above the water; a head on a stem a quarter longer than the bouquet's usual one rises above the dome, at the back */
+    stemCm=it=>(((it.p||{}).rec||{}).stem||{}).cm||50,back=(it,k)=>{const p=PL(it);return p<=k||p===5&&(it.dp||5)<=k},
+    cmMed=(a=>a.length?a[a.length>>1]:40)(pool.map(q=>stemCm(q.it)).sort((x,y)=>x-y)),
+    tallL=it=>!NOTALL&&!it.short&&back(it,3)&&!['grass','loop'].includes(((it.p.rec||{}).p||{}).type||'grass'),
+    tallH=it=>!NOTALL&&!isClu(it)&&stemCm(it)>=Math.max(45,cmMed*1.2)&&back(it,4),reachL=it=>Math.max(40,(stemCm(it)-dep)*UPC/1.06),pz=(q,z)=>{const p=PL(q.it);if(p!==5)return Math.max(-.6,Math.min(1.6,z+(p-5)*.12));const d=q.it.dp||5;return d===5?z:Math.max(-.3,Math.min(1.3,z+(d-5)*.05))},pn=(q,n)=>PL(q.it)<=3?n*.55:n;
   const push=(q,x,y,z,extra={})=>{const o=Object.assign({it:q.it,role:q.role,kind:'head',x,y,z,cm:q.cm,st:q.st,ax:axFor(x,y,z,q.it.form),rr:q.r,rot:Math.atan2(x-BP[0],BP[1]-y)/D*.8},extra);
     if(isClu(q.it)){if(!hand)y=Math.min(y,BP[1]-q.r*1.25-2);const T=[x,y-q.r*.3],B=baseAt(BP,mw,Math.atan2(T[0]-BP[0],BP[1]-T[1])/D),len=Math.max(30,Math.hypot(T[0]-B[0],T[1]-B[1]));
       Object.assign(o,{kind:'self',x:B[0],y:B[1],spine:spineFor(Math.atan2(T[0]-B[0],B[1]-T[1])/D,len,true),from:Math.max(.3,1-2.2*q.r/len)})}
@@ -269,10 +278,11 @@ function candidate(P,sv,vid,tk){sd(sv);const T=P.asp?Object.assign({},TPL[tk],{a
   if(r.drape.length&&v.kind!=='hand'&&v.kind!=='wrap'){let nd=0;for(const it of r.drape)nd+=cnt.get(it);const dx=DP[0]+s*Math.min(14,mw*.3),dy=BP[1]-8,dr=Math.min(34,16+6*nd);heads.push({x:dx,y:dy,X:dx,Y:dy,r:dr,c:[[dx,dy,dr]],gar:1,dr:1,z:2,it:{p:{id:'drape'},L:.3,S:.3}})}
   /* lines first: the tallest to the apex, others fanned, never parallel */
   const lines=[];for(const it of r.line)for(let i=0;i<cnt.get(it);i++)lines.push(it);if(lines.some(it=>it.short))lines.sort((a,b)=>(a.short?1:0)-(b.short?1:0));const angs=[],hand=v.kind==='hand'||v.kind==='wrap',amax=hand?66:60;
-  lines.forEach((it,i)=>{let th;if(i===0)th=Math.atan2(AP[0]-BP[0],BP[1]-AP[1])/D;else for(let k=0;k<40;k++){th=(rnd()<.65?-s:s)*R(8,amax);if(angs.every(a=>Math.abs(a-th)>=12))break}
+  lines.forEach((it,i)=>{let th;if(i===0)th=Math.atan2(AP[0]-BP[0],BP[1]-AP[1])/D;else for(let k=0;k<40;k++){th=(rnd()<.65?-s:s)*R(8,tallL(it)?Math.min(amax,28):amax);if(angs.every(a=>Math.abs(a-th)>=12))break}
     th=Math.max(-amax,Math.min(amax,th));angs.push(th);
     /* a line is cut to the silhouette: never longer than the bouquet asks for, never stretched past its natural stem */
-    const want=(it.short?R(.44,.64):i===0?1.08:R(.7,1))*(BP[1]-AP[1])*(1-Math.abs(th)/170),len=Math.min(natLen(it)*R(.9,1),want),B=baseAt(BP,mw,th),gh=GHI[it.p.sid]||{},lty=((it.p.rec||{}).p||{}).type,fx=gh.fx||(lty==='loop'?Math.max(24,len*.24):Math.max(10,((((it.p.rec||{}).p||{}).fl||{}).cm||0)*UPC*.6+4)),k0=gh.fx?(it.short?4:7):3;let S=spineFor(th,len,stiffOf(it)),ok=hand;
+    const want=(it.short?R(.44,.64):i===0?1.08:R(.7,1))*(BP[1]-AP[1])*(1-Math.abs(th)/170),
+      len=tallL(it)?Math.min(natLen(it)*R(.9,1),Math.max(want,reachL(it)*(i===0?R(.9,.98):R(.78,.95))*(1-Math.abs(th)/150))):Math.min(natLen(it)*R(.9,1),want),B=baseAt(BP,mw,th),gh=GHI[it.p.sid]||{},lty=((it.p.rec||{}).p||{}).type,fx=gh.fx||(lty==='loop'?Math.max(24,len*.24):Math.max(10,((((it.p.rec||{}).p||{}).fl||{}).cm||0)*UPC*.6+4)),k0=gh.fx?(it.short?4:7):3;let S=spineFor(th,len,stiffOf(it)),ok=hand;
     for(let k=0;k<(P.ex?24:8)&&!ok;k++){if(!hidesUnder(v,S,B,fx,k0)){ok=true;break}th*=.82;S=spineFor(th,len,stiffOf(it),Math.max(.2,1-.15*k))}if(!ok&&!P.ex)return;
     out.push({it,role:'line',kind:'self',x:B[0],y:B[1],spine:S,len,ex:B[0]+S[3][0],ey:B[1]+S[3][1],z:it.short?R(.25,.55):.1,short:!!it.short})});
   /* focal flowers: zigzag at three heights, biggest first so the smaller ones find room around them */
@@ -291,14 +301,15 @@ function candidate(P,sv,vid,tk){sd(sv);const T=P.asp?Object.assign({},TPL[tk],{a
     /* by outline: spikes draw the silhouette (outward and up, along their own stems), hanging bells keep to the low edge where they fall on
        nothing, sprays lie between the core and the edge, round heads where the drift puts them */
     const sg=Math.sign(b0[0]-BP[0])||s,d0=ol==='epi'?[BP[0]+(b0[0]-BP[0])*1.2,b0[1]-ry*.18]:ol==='pendant'?[BP[0]+sg*rx*.7,FP[1]+ry*.4]:ol==='gerbe'?[FP[0]+(b0[0]-FP[0])*1.12,b0[1]]:b0,
-      dc=inReach(grp[0],...hint(grp[0].it,d0),.85);
-    grp.forEach((q,j)=>{if((GHI[q.it.p.sid]||{}).rim){q.skip=1;return}let ok=false,x,y,z;const edge=q.st!=='open';for(let k=0;k<60&&!ok;k++){const a=j*2.39+R(-.7,.7),d=q.r*(.6+.5*Math.sqrt(j+1))*(1+k*.04)*(1.35-.6*(st.grp??.5));
-        if(edge&&k<30){const l=pick(lobes),t=R(0,6.283);x=l.cx+Math.cos(t)*l.rx*R(.85,1.15);y=l.cy+Math.sin(t)*l.ry*R(.85,1.15)}else{x=dc[0]+Math.cos(a)*d;y=dc[1]+Math.sin(a)*d*.85}
+      tl=tallH(grp[0].it),dc=tl?inReach(grp[0],FP[0]+R(-.3,.3)*rx,BP[1]-Math.max(reachOf(grp[0])*R(.8,.9),(BP[1]-FP[1]+ry)*R(.95,1.1))):inReach(grp[0],...hint(grp[0].it,d0),.85);
+    grp.forEach((q,j)=>{if((GHI[q.it.p.sid]||{}).rim){q.skip=1;return}let ok=false,x,y,z;const edge=q.st!=='open'&&!tl;for(let k=0;k<60&&!ok;k++){const a=j*2.39+R(-.7,.7),d=q.r*(.6+.5*Math.sqrt(j+1))*(1+k*.04)*(1.35-.6*(st.grp??.5));
+        if(edge&&k<30){const l=pick(lobes),t=R(0,6.283);x=l.cx+Math.cos(t)*l.rx*R(.85,1.15);y=l.cy+Math.sin(t)*l.ry*R(.85,1.15)}else if(tl){x=dc[0]+Math.cos(a)*d*.5;y=dc[1]+Math.abs(Math.sin(a))*d*1.2}else{x=dc[0]+Math.cos(a)*d;y=dc[1]+Math.sin(a)*d*.85}
         y=Math.min(y,hand?BP[1]-q.r*.3:BP[1]-q.r*.95-2);{const cw=mw+q.r*1.1+Math.max(0,BP[1]-y)*fan;x=Math.max(BP[0]-cw,Math.min(BP[0]+cw,x))}[x,y]=inReach(q,x,y);
-        z=pz(q,q.r<34?R(.45,.95):R(.15,.7));if(!(edge?inEnv(x,y,1.25):inEnv(x,y,1.05)))continue;const zz=fitz(x,y,q.r,z,pn(q,k<30?.55:.45),q.it.p.sid,false,q);ok=zz!==null;if(ok)z=zz}
-      if(ok)push(q,x,y,z);else q.skip=1})});
-  /* rim flowers: stems resting on the lip, one spilling over the front, so the bouquet sits IN the vessel (never a variety the player set at the back) */
-  if(v.kind!=='hand'&&v.kind!=='wrap'){const rimF=q=>(GHI[q.it.p.sid]||{}).rim?1:0,rim=rest.filter(q=>q.skip&&PL(q.it)>3).concat(pool.filter(q=>q.role==='focal'&&q.skip&&rimF(q)&&PL(q.it)>3)).sort((a,b)=>rimF(b)-rimF(a)).slice(0,3),extra=rest.filter(q=>!q.skip&&q.r<44);for(let i=0;!P.ex&&rim.length<2&&i<extra.length;i++)rim.push(Object.assign({},extra[i]));
+        z=pz(q,q.r<34?R(.45,.95):R(.15,.7));if(tl?Math.abs(x-FP[0])>rx*.6:!(edge?inEnv(x,y,1.25):inEnv(x,y,1.05)))continue;const zz=fitz(x,y,q.r,z,pn(q,k<30?.55:.45),q.it.p.sid,false,q);ok=zz!==null;if(ok)z=zz}
+      if(ok){push(q,x,y,z);if(tl){heads[heads.length-1].tall=1;out[out.length-1].tall=1}}else q.skip=1})});
+  /* rim flowers: stems resting on the lip, one spilling over the front, so the bouquet sits IN the vessel (never a variety the player set at the back,
+     never a product made for height) */
+  if(v.kind!=='hand'&&v.kind!=='wrap'){const rimF=q=>(GHI[q.it.p.sid]||{}).rim?1:0,rim=rest.filter(q=>q.skip&&PL(q.it)>3&&!tallH(q.it)).concat(pool.filter(q=>q.role==='focal'&&q.skip&&rimF(q)&&PL(q.it)>3)).sort((a,b)=>rimF(b)-rimF(a)).slice(0,3),extra=rest.filter(q=>!q.skip&&q.r<44);for(let i=0;!P.ex&&rim.length<2&&i<extra.length;i++)rim.push(Object.assign({},extra[i]));
     const U=[.78,.62,.22,.4],pl=[];rim.length=Math.min(rim.length,Math.max(2,Math.min(4,Math.round(mw/22))));
     rim.forEach((q,i)=>{const sd2=i%2?-s:s;let x=0,y=0;for(let k=0;k<12;k++){x=BP[0]+sd2*mw*U[i%4]*R(.85,1.15);y=BP[1]-q.r*R(.12,.38);if(pl.every(p=>Math.hypot(p[0]-x,p[1]-y)>(p[2]+q.r)*.72))break}
       pl.push([x,y,q.r]);push(q,x,y,.97+i*.002,{front:true,rim:true,ax:V3.nz([sd2*.8,.05,.6])});q.skip=0})}

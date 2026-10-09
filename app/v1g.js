@@ -122,13 +122,17 @@ function castBuild(v,S,ts,des){des=des||{};const H=S[S.length-1][0],rmax=Math.ma
   for(let j=0;j<Nv;j++)for(let i=0;i<Nu;i++){const m=((j/BS)|0)*MU+((i/BS)|0),x=Hs[j*Nu+i];if(x>M0[m])M0[m]=x}
   for(let b=0;b<MV;b++)for(let a=0;a<MU;a++){let m=0;for(let db=-2;db<=2;db++)for(let da=-2;da<=2;da++){const bb=b+db,aa=a+da;if(bb>=0&&bb<MV&&aa>=0&&aa<MU)m=Math.max(m,M0[bb*MU+aa])}Mx[b*MU+a]=m}
   F.Mx=Mx;F.MU=MU;F.MV=MV;F.BS=BS;let g=0;for(const x of M0)g=Math.max(g,x);F.Mg=g;return F}
+/* a scaled vessel (v.vs): its reliefs are designed at scale 1, so the height field is made on the profile brought back to scale 1, then every
+   length in it (heights, radii, relief) grows by vs: the carp, the water and their texels keep their proportions to the vessel */
+function castScaled(v,S,ts,des){const k=v.vs||1;if(k===1)return castBuild(v,S,ts,des);
+  const F=castBuild(v,S.map(q=>[q[0]/k,q[1]/k]),ts/k,des);F.dh*=k;F.H*=k;F.ts*=k;F.Mg*=k;for(const A of[F.rr,F.Hs,F.Hb,F.Mx])for(let i=0;i<A.length;i++)A[i]*=k;return F}
 /* the image's resolution (pixels per unit): set it higher for a large render, 0 lets the level of detail decide */
 let CAST_S=0;
 const CAST_LOOK=[1.5,4,8,13];
 /* the body of a cast vessel in pixels (RGBA, W x H) and its place in user space, s pixels per unit. It reads only its arguments: env carries
    the constants (VX, FL, LV, the shadow look-ahead, the design, a debug pass), so the same function runs in a worker */
 function castPixels(v,S,s,env){const{VX,FL,LV:L,LOOK,des,dbg}=env,ts=Math.max(.12,Math.min(.5,1.15/s)),
-    F=castBuild(v,S,ts,des),{U0,du,dh,Nu,Nv,rr,sl,Hs,Hb,AO,Wr,Mx,MU,MV,BS,Mg,H}=F,rmax=Math.max(...S.map(q=>q[1])),m=Mg+1,
+    F=castScaled(v,S,ts,des),{U0,du,dh,Nu,Nv,rr,sl,Hs,Hb,AO,Wr,Mx,MU,MV,BS,Mg,H}=F,rmax=Math.max(...S.map(q=>q[1])),m=Mg+1,
     x0=VX-rmax-m,x1=VX+rmax+m,y0=FL-H-.6,y1=FL+.6,W=Math.ceil((x1-x0)*s),Ht=Math.ceil((y1-y0)*s),
     px=new Uint8ClampedArray(W*Ht*4),
     samp=(A,ph,h)=>{let x=(ph-U0)/du,y=h/dh;x=x<0?0:x>Nu-1.001?Nu-1.001:x;y=y<0?0:y>Nv-1.001?Nv-1.001:y;const i=x|0,j=y|0,u=x-i,w=y-j,k=j*Nu+i;
@@ -193,7 +197,7 @@ function castImage(v,S,s){const key=v.id+'|'+s;if(!CAST_CACHE[key])CAST_CACHE[ke
 let CAST_WK,CAST_SYNC=0;const CAST_JOBS={},CAST_PAR={};
 function castWorker(){if(CAST_WK!==undefined)return CAST_WK;CAST_WK=null;
   try{if(typeof Worker==='undefined'||typeof Blob==='undefined'||typeof URL==='undefined')return null;
-    const fns=[sm01,sRad,castBump,castHash,castNoise,castInside,castNear,castWater,castCarp,castBox,castBlur,castBuild,castPixels],
+    const fns=[sm01,sRad,castBump,castHash,castNoise,castInside,castNear,castWater,castCarp,castBox,castBlur,castBuild,castScaled,castPixels],
       src=fns.map(fn=>'const '+fn.name+'='+String(fn)+';').join('\n')+'\nonmessage=async e=>{const{key,v,S,s,env}=e.data;try{const r='+castPixels.name+'(v,S,s,env);let url=null;'+
         'if(typeof OffscreenCanvas!=="undefined")try{const oc=new OffscreenCanvas(r.W,r.H);oc.getContext("2d").putImageData(new ImageData(r.data,r.W,r.H),0,0);'+
         'const b=await oc.convertToBlob({type:"image/webp",quality:.92});url=new FileReaderSync().readAsDataURL(b)}catch(_){url=null}'+
@@ -206,7 +210,7 @@ function castDone(key,out){CAST_CACHE[key]=out;const p=CAST_PAR[key];delete CAST
 function castLocal(key){const p=CAST_PAR[key];if(p)setTimeout(()=>{if(CAST_PAR[key]===p)castDone(key,castEncode(castPixels(p.v,p.S,p.s,castEnv(p.v))))},40)}
 /* the image of a cast vessel at s pixels per unit: a promise, kept while it is being made */
 function castRequest(v,S,s){const key=v.id+'|'+s;if(CAST_CACHE[key])return Promise.resolve(CAST_CACHE[key]);if(CAST_JOBS[key])return CAST_JOBS[key];
-  CAST_JOBS[key]=new Promise(res=>{CAST_PAR[key]={v,S,s,res};const w=castWorker();if(w)w.postMessage({key,v:{id:v.id,cast:v.cast},S,s,env:castEnv(v)});else castLocal(key)});
+  CAST_JOBS[key]=new Promise(res=>{CAST_PAR[key]={v,S,s,res};const w=castWorker();if(w)w.postMessage({key,v:{id:v.id,cast:v.cast,vs:v.vs||1},S,s,env:castEnv(v)});else castLocal(key)});
   return CAST_JOBS[key]}
 /* every image still being made */
 const castPending=()=>Promise.all(Object.values(CAST_JOBS));
