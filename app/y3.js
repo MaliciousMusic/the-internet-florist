@@ -144,7 +144,9 @@ function svHeart6(o0){const o=Object.assign({},SVH6_DEF,o0);
    Long, entire, parallel-veined; its foot a sheath clasping the stem, then a blade folded in a gutter along its midrib, the margins waved, the tip
    narrowing into a little hood; glaucous (bloom: a waxy veil silvers its lit side, the gloss low) or glossy. It leaves the stem at an angle (lean),
    then bends under its weight (droop), a little twisted. Wilting (wl), it goes limp and hangs, its gutter opens, the margins curl, it yellows from the
-   tip. pos: its foot on the stem's axis; H the stem, upward; Out the way it leaves the stem (view space, unit vectors). Widths x len. */
+   tip. pos: its foot on the stem's axis; H the stem, upward; Out the way it leaves the stem (view space, unit vectors). Widths x len.
+   Optional (not in SVL_DEF, off by default): shade / bshade (the shadow tones of the upper / lower face), veinLo (the parallel veins at DET 1 too),
+   dry 0..1 and dryC (a tip drying from its end: freesia). */
 const SVL_DEF={len:100,w:.2,wp:[[0,.5],[.1,.66],[.32,1],[.62,.82],[.88,.4],[1,0]],sheath:.1,sr:2,lean:.4,droop:.45,tw:.3,gut:.5,wav:.05,wavN:3,hood:.25,
   up:'#587f68',low:'#7a9a84',base:'#a8c09c',bloom:.6,nu:7,nv:16,wl:0,sd:1};
 function svStrapLeaf(par,pos,H,Out,o0){const o=Object.assign({},SVL_DEF,o0),r=svRng(o.sd),wl=o.wl||0,len=o.len,dn=[0,-1,0],limp=svSm((wl-.15)/.6),W=len*o.w,
@@ -165,9 +167,13 @@ function svStrapLeaf(par,pos,H,Out,o0){const o=Object.assign({},SVL_DEF,o0),r=sv
     return V3.add(V3.sc(q,1-t),V3.sc(bl,t))};
   const tipY=mix(o.up,'#b8a85a',.5*limp),bloomL=mix('#d4e2d8',o.up,.25),
     m={stops:[[0,o.base],[o.sheath*1.2,mix(o.base,o.up,.55)],[.35,o.up],[.85,o.up],[1,tipY]],bstops:[[0,o.base],[o.sheath*1.3,mix(o.base,o.low,.6)],[.4,o.low],[1,mix(o.low,'#b8a85a',.4*limp)]],
-      shade:'#1a3224',lite:mix(bloomL,'#ffffff',.2*o.bloom),bshade:'#2c4632',blite:mix(o.low,'#e8f0e8',.5),rim:mix(o.up,'#d8e4d4',.45),cast:'#0e1c12',
+      shade:o.shade||'#1a3224',lite:mix(bloomL,'#ffffff',.2*o.bloom),bshade:o.bshade||'#2c4632',blite:mix(o.low,'#e8f0e8',.5),rim:mix(o.up,'#d8e4d4',.45),cast:'#0e1c12',
       wrap:.3,amb:.3,dif:.68,sky:.2,trans:.22,ks:.05+.1*(1-o.bloom),gloss:10+14*(1-o.bloom),dark:[.88,.72,.56],da:.22,lit:[1.06,1.14],la:.16+.22*o.bloom,darkLo:[.76],daLo:.3,litLo:[1.1],laLo:.25,rw:.006,ro:.3,soft:.05,
       veins:(sh,front)=>{const L=[];for(const u of[-.78,-.56,-.34,-.14,.14,.34,.56,.78])L.push([[u*.6,.02],[u,.25],[u,.6],[u*.9,.9],[u*.3,.99]]);
-        return[...(hi?[[L,hi?.0035:.005,front?mix(o.up,'#2a4a34',.35):mix(o.low,'#e0eadc',.4),front?.32:.3]]:[]),[[[[0,.02],[0,.4],[0,.8],[0,.98]]],.008,front?mix(o.up,'#24402c',.5):mix(o.low,'#f0f4ea',.5),front?.45:.5]]}};
-  if(!hi)Object.assign(m,{dark:[.8,.6],darkLo:[.8,.6],lit:[1.1],litLo:[1.1],rw:0});
+        return[...(hi||o.veinLo?[[L,hi?.0035:.005,front?mix(o.up,'#2a4a34',.35):mix(o.low,'#e0eadc',.4),front?.32:.3]]:[]),[[[[0,.02],[0,.4],[0,.8],[0,.98]]],.008,front?mix(o.up,'#24402c',.5):mix(o.low,'#f0f4ea',.5),front?.45:.5]]}};
+  if(!hi)Object.assign(m,{dark:[.8,.6],darkLo:[.8,.6],lit:[1.1],litLo:[1.1],rw:0},o.mLo);/* o.mLo (optional): the material's own changes below DET 1.5 (fewer washes) */
+  /* o.dry (0..1, optional): the tip dries from its end, straw then tan (o.dryC), the colour running down the blade */
+  if(o.dry>0){const z=Math.min(1,o.dry),dC=o.dryC||'#a68c5c',t0=.86-.4*z,t1=.95-.12*z;
+    m.stops=m.stops.filter(s=>s[0]<t0).concat([[t0,o.up],[t1,mix(tipY,dC,.55*z)],[1,mix(tipY,dC,z)]]);
+    m.bstops=m.bstops.filter(s=>s[0]<t0).concat([[t0,o.low],[t1,mix(o.low,dC,.5*z)],[1,mix(o.low,dC,z)]])}
   return svDraw(par,[svSheet(I3,[0,0,0],S,{nu:hi?o.nu+2:o.nu-2,nv:hi?o.nv+4:o.nv-4,mat:m})],{D:len*.55,sd:.02,sb:.02,so:.3,shadow:hi})}

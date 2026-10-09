@@ -10,6 +10,12 @@ window.snapSvg=async function(svg,W,name,bg){const XS=new XMLSerializer(),vb=svg
 /* the measures of a sheet, for a headless run (fleur/shot.sh): heads, elements and KB per head, patches per head, ms per head */
 window.svtOut=(svg,n,ms,snapP)=>{const el=svg.querySelectorAll('*').length,pat=[...svg.querySelectorAll('use')].filter(u=>(u.getAttribute('clip-path')||'').includes('#sq')).length,
     kb=new XMLSerializer().serializeToString(svg).length/1024,o={n,el:Math.round(el/n),kb:Math.round(kb/n),patch:+(pat/n).toFixed(1)};
+  /* &bd=1 (chantier grappes): per cell, the elements / KB of each top-level piece of the drawing (stem, leaves, head...), then the shared defs */
+  if(new URLSearchParams(location.search).get('bd')){const XS=new XMLSerializer(),m=k=>k.querySelectorAll('*').length+1+'/'+(XS.serializeToString(k).length/1024).toFixed(1)+(new URLSearchParams(location.search).get('bd')==='2'?'/'+(k.getAttribute('fill')||k.tagName):'');
+    o.bd=[...svg.children].filter(g=>g.tagName==='g').map(g=>{let k=g;while(k&&k.children.length===1)k=k.firstElementChild;return k?[...k.children].map(m).join(' '):''});const d=svg.querySelector('defs');if(d){o.defs=m(d);
+      /* the defs by kind: id prefix (letters) -> count, elements, KB */const by={};for(const c of d.children){const k=c.tagName.slice(0,3)+':'+(c.id||'').replace(/[0-9_-].*$/,''),b=by[k]||(by[k]=[0,0,0]);b[0]++;b[1]+=c.querySelectorAll('*').length+1;b[2]+=XS.serializeToString(c).length/1024}
+      /* &dump=1: the whole markup, to analyse offline (one stage) */if(new URLSearchParams(location.search).get('dump'))o.dump=XS.serializeToString(svg);
+      o.defsBy=Object.fromEntries(Object.entries(by).sort((a,b)=>b[1][2]-a[1][2]).map(([k,v])=>[k,v[0]+'x '+v[1]+'el '+v[2].toFixed(1)+'KB']))}}
   const fin=r=>{const pre=document.createElement('pre');pre.id='out';pre.textContent=JSON.stringify(Object.assign(o,r?{snap:r.join('x')}:{}));document.body.append(pre)};
   if(snapP)snapP.then(fin,e=>fin(['err '+e]));else fin()};
 /* SVG pilot sheet: heads at several views and seeds. URL: cw, op, D, seeds, views (indices), cols, det, bg, sp (species) */
@@ -56,7 +62,11 @@ if(new URLSearchParams(location.search).get('plant'))setTimeout(()=>{const Q=new
   /* full=<cm>: the whole cut stem below the head's neck, with the leaves its species carries in a bouquet (STEML, stemLeaves), as in the vase */
   const full=+(Q.get('full')||0),own=(GHI[sid]&&GHI[sid].wilt)||svaWiltCol;let ms=0;
   st.forEach(([op,wl],i)=>{const g=G(svg),k=G(g),sk=full?G(k):null;SVA_LIFE=wl||null;const T0=WILT;if(wl>0)WILT=lifeWilt(wl,own,sid);const t0=performance.now();
-    try{renderStatic(()=>{const r=drawRec(k,0,rec,{vw,ax:Q.get('axv')?vw:undefined,op,cw,col:cw&&cw.c,roll:0});if(sk&&r&&r.neck)svtStem(sk,r,sid,full)})}finally{WILT=T0;SVA_LIFE=null}ms+=performance.now()-t0;
+    /* &strand=60,48,37 (cm, one per cell, cycled): a free strand of that length (o.len: the wisteria's strand as in a bouquet, room unbounded) */
+    const sl=(Q.get('strand')||'').split(',').filter(Boolean).map(Number);
+    /* (the cells' strands as the three strands of one stem held in the hand: one shared drape, its room unbounded) */
+    if(sl.length&&typeof DRAPEX!=='undefined'){if(!window.__svtDr)window.__svtDr={x:0,y:0,side:1,held:true,top:0,mw:26,mcx:0,FL:0};DRAPEX=window.__svtDr}
+    try{renderStatic(()=>{const r=drawRec(k,0,rec,Object.assign({vw,ax:Q.get('axv')?vw:undefined,op,cw,col:cw&&cw.c,roll:0},sl.length?{len:sl[i%sl.length]*UPC}:{}));if(sk&&r&&r.neck)svtStem(sk,r,sid,full)})}finally{WILT=T0;SVA_LIFE=null;if(sl.length&&typeof DRAPEX!=='undefined')DRAPEX=null}ms+=performance.now()-t0;
     const b=k.getBBox(),s=Math.min(cellW*.9/b.width,cellW*2.1/b.height);k.setAttribute('transform',`translate(${f(cellW*(i+.5)-(b.x+b.width/2)*s)},${f(cellW*1.1-(b.y+b.height/2)*s)}) scale(${s.toFixed(4)})`)});
   document.title='plant ok';const sp=Q.get('snap')?snapSvg(svg,+(Q.get('sw')||cellW*st.length*2),Q.get('snap'),'#e9e4dc'):null;if(sp)sp.then(r=>{document.title+=' snap '+r.join(',')});svtOut(svg,st.length,ms,sp)},400);
 /* the stem below a head's neck (r: what the head hands back), cm long, with its leaves */
@@ -76,3 +86,18 @@ if(new URLSearchParams(location.search).get('dbgp')){const PC={},oDraw=svDraw,oO
   svOrder=function(items,eps){const out=oOrd(items,eps);for(const[A,B2,fa,fb]of out.fr){const a=A.oi,b=B2.oi;const[e,l,c]=a<b?[A,B2,fa]:[B2,A,fb];if(c<3)continue;
       const ia=(A.sh||A.px||{})._i,ib=(B2.sh||B2.px||{})._i,nm=i=>i==null?'?':i<3?'o'+i:i<6?'i'+i:'h'+i,k=[nm(ia),nm(ib)].sort().join('-');PC[k]=(PC[k]||0)+1}return out};
   window.svtOut0=window.svtOut;window.svtOut=(svg,n,ms,sp)=>{const pre=document.createElement('pre');pre.id='out';const L=Object.entries(PC).sort((a,b)=>b[1]-a[1]).map(([k,v])=>k+':'+v);pre.textContent=L.join(' ');document.body.append(pre)}}
+/* a whole bouquet (chantier grappes): ?bq=1&rc=jacinthe~0:7,jacinthe~4:7&sv=11&v=cylindre-verre-clair&life=3:.3 -> the bouquet drawn, snapped; the
+   measures of the hyacinth heads drawn in it (elements and KB per raceme group, count); &fn=muSvPlant (or a list) for another species' plant */
+if(new URLSearchParams(location.search).get('bq'))setTimeout(()=>{const Q=new URLSearchParams(location.search),rc=(Q.get('rc')||'jacinthe~0:7,jacinthe~4:7').split(',').map(x=>{const[a,b]=x.split(':');return[a,+b]}),
+    lf=Q.get('life'),L=lf?{stage:+lf.split(':')[0],u:+lf.split(':')[1]}:null;document.body.innerHTML='';DET=+(Q.get('det')||1);LOD=0;LIFE=L;
+  const svg=E('svg',{width:900,height:1100},document.body);const hs=[];for(const nm of(Q.get('fn')||'hyaSvPlant').split(',')){const o0=window[nm];if(typeof o0==='function')window[nm]=function(k,...a){const r=o0(k,...a);hs.push(k);return r}}
+  /* &stat=1: where a raceme's bytes go (path data by floret level and layer, the clusters' blobs, the whole racemes) */
+  const ST={};if(Q.get('stat')&&typeof GR_FLORET!=='undefined'){for(const nm of Object.keys(GR_FLORET)){const f0=GR_FLORET[nm],gp=f0.grp;
+      GR_FLORET[nm]=function(c,f,lod){const p0=c.put;ST['n'+lod]=(ST['n'+lod]||0)+1;c.put=p=>{const kk='l'+lod+'y'+(p.ly??'');ST[kk]=(ST[kk]||0)+(p.d||'').length;return p0(p)};try{return f0(c,f,lod)}finally{c.put=p0}};
+      if(gp)GR_FLORET[nm].grp=function(c,cl){const p0=c.put;c.put=p=>{ST.grp=(ST.grp||0)+(p.d||'').length;return p0(p)};try{return gp(c,cl)}finally{c.put=p0}}}
+    const g0=window.grDraw;window.grDraw=function(...a){const k=g0(...a);ST.pan=(ST.pan||0)+new XMLSerializer().serializeToString(k).length;ST.panEl=(ST.panEl||0)+k.querySelectorAll('*').length;ST.np=(ST.np||0)+1;return k}}
+  renderStatic(()=>{buildBq(svg,[],+(Q.get('sv')||11),Q.get('v')||'cylindre-verre-clair',0,'juste',null,rc)});
+  const XS=new XMLSerializer(),m=hs.map(k=>[k.querySelectorAll('*').length,Math.round(XS.serializeToString(k).length/1024*10)/10]);
+  const o={st:Q.get('stat')?ST:undefined,n:hs.length,heads:m.map(x=>x.join('el/')+'KB').join(' '),el:svg.querySelectorAll('*').length,kb:Math.round(XS.serializeToString(svg).length/1024)};
+  const sp=Q.get('snap')?snapSvg(svg,+(Q.get('sw')||900),Q.get('snap'),'#e9e4dc'):null;const fin=r=>{const pre=document.createElement('pre');pre.id='out';pre.textContent=JSON.stringify(Object.assign(o,r?{snap:r.join('x')}:{}));document.body.append(pre)};
+  if(sp)sp.then(fin,e=>fin(['err '+e]));else fin()},400);

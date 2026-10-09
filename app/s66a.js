@@ -199,10 +199,12 @@ function l66MgPlant(g,t,o){const cw=o.cw||cwNear(CW_L66MG,o.col)||CW_L66MG[0],op
 /* ---------- grape hyacinth (Muscari armeniacum 'Saffier', 'Valerie Finnis', 'Blue Spike'; M. aucheri 'Mount Hood'; M. latifolium; M. botryoides 'Album'): a fleshy scape, a short dense spike
    of thirty to forty little urns packed round it, each nodding on its short pedicel, constricted at its mouth into a rim of six tiny white teeth; they open from the bottom up;
    the top ones smaller, paler and sterile, pointing up in a tuft. On the sheet two or three lax, channelled, linear leaves ---------- */
-const CW_L66MU=[{id:'bleu',n:'Bleu (armeniacum)',c:'#3a54bc',tip:'#8aa2e0'},{id:'bleu-saphir',n:'Bleu saphir (Saffier)',c:'#2c3f9c',tip:'#6e84d2'},
-  {id:'bleu-ciel',n:'Bleu ciel (Valerie Finnis)',c:'#94b4e4',tip:'#cadaf2'},{id:'bleu-double',n:'Bleu double (Blue Spike)',c:'#4a68cc',tip:'#7c94e0',dbl:1},
-  {id:'bleu-blanc',n:'Bleu à tête blanche (aucheri Mount Hood)',c:'#3c5cc4',tip:'#f6f4ee',cap:1},{id:'bicolore',n:'Bleu nuit à tête claire (latifolium)',c:'#1e2a6c',tip:'#6a8ad8',cap:1},
-  {id:'blanc',n:'Blanc (botryoides Album)',c:'#f6f4ec',tip:'#eef0e2',rim:'#e4e8d4'},{id:'rose',n:'Rose pâle (Pink Sunrise)',c:'#ecc4cc',tip:'#f4e0e2'}];
+const CW_L66MU=[{id:'bleu',n:'Bleu (armeniacum)',c:'#5566c8',tip:'#8aa2e0'},{id:'bleu-saphir',n:'Bleu saphir (Saffier)',c:'#566894',tip:'#6e84d2'},
+  {id:'bleu-ciel',n:'Bleu ciel (Valerie Finnis)',c:'#8ea6d0',tip:'#cadaf2'},{id:'bleu-double',n:'Bleu double (Blue Spike)',c:'#6f74c4',tip:'#7c94e0',dbl:1},
+  {id:'bleu-blanc',n:'Bleu à tête blanche (Mount Hood)',c:'#3658a0',tip:'#f6f4ee',cap:1},{id:'bicolore',n:'Bleu nuit à tête claire (latifolium)',c:'#3c3058',tip:'#6a8ad8',cap:1},
+  {id:'blanc',n:'Blanc (Album)',c:'#e0e2d8',tip:'#eef0e2',rim:'#e4e8d4'},{id:'rose',n:'Rose pâle (Pink Sunrise)',c:'#d2b2c2',tip:'#f4e0e2'},
+  /* added late (wave late:4): KAVB names, level B */
+  {id:'blanc-pur',late:4,n:'Blanc (White Magic)',c:'#d7dad7',tip:'#eef0e2',rim:'#e4e8d4'},{id:'bleu-roi',late:4,n:'Bleu roi (Big Smile)',c:'#4465a6',tip:'#8fa3ca'}];
 /* one urn in its frame (local Z its mouth), L long, a open (0 bud … 1), pale (0 … 1 toward the sterile tuft's colour) */
 function l66MuUrn(par,B,O,L,cw,a,pale,cache){const c=pale>0?mix(cw.c,cw.tip,pale):cw.c,nz=B[2][2],o2=Math.max(0,Math.min(1,(a-.3)/.7)),Rf=L*(a<.3?.46:.42+.05*o2),pts=[],ink=shd(c,h2l(c)[2]>.8?-.45:-.4);
   for(let i=0;i<=6;i++){const v=i/6,r=Rf*Math.pow(Math.sin(Math.PI*Math.min(.96,.06+.9*v)),.45)*(v>.78?1-.45*o2*(v-.78)/.22:1),z=v*L;for(let j=0;j<8;j++){const an=j/8*6.283,p=PJ(B,O,[Math.cos(an)*r,Math.sin(an)*r,z]);pts.push([p[0],p[1]])}}
@@ -220,6 +222,8 @@ function l66MuPlant(g,t,o){const cw=o.cw||cwNear(CW_L66MU,o.col)||CW_L66MU[0],op
         ['f',{l:w*(.3-.15*q)}],['K',{i:p.i,q,st}],[']',{}],['A',{i:p.i+1}]]}};
   const res=lsTurtle(lsDerive([['S',{}]],rules,n+3),{p:[0,0,0],H:up,U:U0,wig:.006,seg:D*.12,T:[0,1,0],e:.004,w:w*1.2});for(const ch of res.chains)ch.c=sc;
   const apex=res.organs.find(q=>q.t==='N0').pos;
+  /* native SVG (y-muscari.js): the raceme by the kit y3-grappe.js, the scape a lit cylinder; the chance above is consumed as before */
+  if(typeof muSvPlant==='function'&&typeof SV_ON!=='undefined'&&SV_ON&&cw&&cw.id)return muSvPlant(k,t,o,{res,apex,cw,op,D,sheet,up,face,n,ph0});
   lsPlant(k,res,{O:[0,0,0],apex,cols:sc,organ:(og,pos)=>{
     if(og.t==='K'){const i=og.p.i,st=og.p.st,a=st?.2:i<nOpen?Math.min(1,.6+.4*(1-i/Math.max(1,nOpen))):Math.max(0,.28-.28*(i-nOpen)/Math.max(1,nf-nOpen)),s=Lf*(st?.55:(1.08-.3*og.p.q)*(i<nOpen?1:.82))*(cw.dbl?1.05:1),
         pale=st?1:cw.cap?Math.max(0,(og.p.q-.55)/.3):Math.max(0,(og.p.q-.7)/.3)*.35,Bf=frZ(og.H,up,0);return{parts:[{z:pos[2]+og.H[2]*s*.45,fn:par=>l66MuUrn(par,Bf,pos,s,cw,a,pale,cache)}]}}
