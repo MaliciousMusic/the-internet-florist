@@ -29,6 +29,11 @@ const PAN_DEF={
   ao:.4,ped:.07,                                              /* occlusion in the valleys; peduncle stub x length */
   fanK:.28,coreK:.55,fanShed:.1,fanVar:.5,pdW:.12,scal:.35,            /* tree:1 faded: florets drawn back toward their cluster, its body thinning, share
                                                                   of florets lost, the spread of the browns; pedicels' width (x floret size); the body's scallops */
+  fanFold:0,fanNarrow:0,fanCrumple:0,inkFan:0,fanClub:.5,pdDeep:0,fanBody:0,fanDots:0,                 /* faded florets that shrivel shut (dried lilac): the lobes fold forward over the mouth
+                                                                  (rad; 0 keeps them curling back), narrow, crumple unevenly (length, angle and twist per
+                                                                  lobe); the share of the edge line lost faded; the share of faded florets drawn as dry clubs; the pedicels darkened faded; the body darkened faded, a shadow between the florets, and
+                                                                  its lumps under each floret (x floret size; 0 none) (the volume then comes from the tones: each
+                                                                  shrivelled floret's lobes toward the light a tone up, the others a tone down) */
   tipJag:.3,tipN:7,tipL:.075,                                  /* tree:1 tip: florets standing out of the cone (x max radius), the terminal tuft of
                                                                   buds and florets on short stalks beyond the axis' end (count, reach x length) */
   bands:[6,9],tones:[4,6],                                     /* paths: depth bands and tone bins [DET 1, 1.5] */
@@ -36,7 +41,7 @@ const PAN_DEF={
 /* the panicle head: par, frame B (B[2] the axis), O the centre on screen, D the length scale, S the sheet, cwx the colourway, op 0 bud .. 1 open,
    seed the individual, wl 0 fresh .. 1 dry */
 function svPanicle(par,B,O,D,S,cwx,op,seed,wl){const P=S._m||(S._m=Object.assign({},PAN_DEF,S)),g=P.genes(seed),m=P.mat(cwx),k=G(par),det=DET>=1.5?1:0,
-    dec=svSm((wl-P.dec[0])/P.dec[1]),fan=svSm((wl-P.fan[0])/P.fan[1]),shed=svSm((wl-P.shed[0])/P.shed[1]),
+    dec=svSm((wl-P.dec[0])/P.dec[1]),fan=svSm((wl-P.fan[0])/P.fan[1]),shed=svSm((wl-P.shed[0])/P.shed[1]),fd=P.fanFold?fan:0,
     Lf=D*P.len*(g.len||1),L=Lf*(P.grow[0]+(1-P.grow[0])*svSm(op/P.grow[1])),Rb=L*P.wd*(g.wd||1)*(P.wGrow[0]+(1-P.wGrow[0])*svSm(op/P.wGrow[1]))*(1-P.thin*fan),
     z0=P.tree?-D*P.len/2:-Lf/2,LT=P.light,greenK=P.green[0]*(1-svSm(op/P.green[1]));
   /* the profile (v 0 base .. 1 tip) and its slope */
@@ -121,10 +126,13 @@ function svPanicle(par,B,O,D,S,cwx,op,seed,wl){const P=S._m||(S._m=Object.assign
   if(axD)E('path',{d:axD,stroke:m.rachis,'stroke-width':svF(Math.max(.6,Rb*P.brW*1.4)),'stroke-linecap':'round','stroke-linejoin':'round',fill:'none','stroke-opacity':svF(brA)},k);
   if(brD)E('path',{d:brD,stroke:m.rachis,'stroke-width':svF(Math.max(.5,Rb*P.brW)),'stroke-linecap':'round',fill:'none','stroke-opacity':svF(brA)},k);
   if(hulls.length){const cx=(top[0]+bot[0])/2,cy=(top[1]+bot[1])/2,id='pn'+(gid++),gr=E('radialGradient',{id,gradientUnits:'userSpaceOnUse',cx:svF(cx-Rb*.45),cy:svF(cy-Rb*.5),r:svF(Math.max(Rb*1.6,L*.6))},GDEF||defs);
-    stops(gr,[[0,mix(m.body,m.deep,.45*fan)],[.5,mix(m.shade,m.deep,.3*fan)],[1,m.deep]]);E('path',{d:hulls.map(h=>svSpl(h)).join(''),fill:`url(#${id})`,'fill-opacity':svF(P.tree?1:1-.9*shed)},k)}
+    stops(gr,[[0,mix(m.body,m.deep,Math.min(1,(.45+P.fanBody)*fan))],[.5,mix(m.shade,m.deep,Math.min(1,(.3+P.fanBody)*fan))],[1,P.fanBody?mix(m.deep,'#1a120c',P.fanBody*fan):m.deep]]);E('path',{d:hulls.map(h=>svSpl(h)).join(''),fill:`url(#${id})`,'fill-opacity':svF(P.tree?1:1-.9*shed)},k);
+    /* faded: a dark lump under each shrivelled floret, so that the body reads as the shadow between them, not a flat plate */
+    if(P.tree&&P.fanDots&&fd>.05&&fl.length){const dd=[];for(const q of fl){const e=PJ(B,O,V3.add(q.p,V3.sc(q.n0,q.s*.1)));dd.push([e[0],e[1]])}
+      E('path',{d:svDots(dd),fill:'none',stroke:`url(#${id})`,'stroke-width':svF(Math.max(.5,sz*(1-P.shrink*fan)*P.fanDots*fd)),'stroke-linecap':'round'},k)}}
   /* the pedicels: the raised florets' stalks, and faded, every floret's, from the thinned body */
   if(pdl.length){let d='';for(const[a,b]of pdl)d+='M'+svJ(pj(a))+'L'+svJ(pj(b));
-    E('path',{d,fill:'none',stroke:mix(m.shade,m.rachis,.35+.4*fan),'stroke-width':svF(Math.max(.35,sz*P.pdW)),'stroke-linecap':'round'},k)}
+    E('path',{d,fill:'none',stroke:P.pdDeep?mix(mix(m.shade,m.rachis,.35+.4*fan),m.deep,P.pdDeep*fan):mix(m.shade,m.rachis,.35+.4*fan),'stroke-width':svF(Math.max(.35,sz*P.pdW)),'stroke-linecap':'round'},k)}
   /* the florets far to near in depth bands; in a band, one path per colour class and tone */
   fl.sort((a,b)=>a.z-b.z);const nb=Math.max(1,Math.min(P.bands[det],Math.ceil(fl.length/8))),nt=P.tones[det];
   const ramp=(cs,I)=>{const x=Math.max(0,Math.min(1,I))*(cs.length-1),j=Math.min(cs.length-2,Math.floor(x));return mix(cs[j],cs[j+1],x-j)},
@@ -132,29 +140,37 @@ function svPanicle(par,B,O,D,S,cwx,op,seed,wl){const P=S._m||(S._m=Object.assign
     rampO=[m.deep,m.shade,m.body,m.lite],rampB=[m.budDeep,m.budShade,m.bud,m.budLite].map(grn),rampH=rampO.map((c,j)=>mix(rampB[j],c,.55));
   /* one floret: its lobes as cubic petals from the tube's mouth, in the floret's plane bent forward (opening) or back (reflexed, faded); relative
      coordinates at a tenth of a unit; tb collects the tube behind the lobes */
-  const floret=(q,tb)=>{const n=q.n0,up=Math.abs(n[2])>.9?[1,0,0]:[0,0,1],t1=V3.nz(V3.cr(up,n)),t2=V3.cr(n,t1),nl=P.lobes,o=q.a,
-      Ll=q.s*P.lobeL*(.4+.6*o),W=Ll*P.lobeW,phi=(1-o)*1.15-P.reflex*o-(P.curl*fan+.35*dec)*(.6+.4*o),c=V3.add(q.p,V3.sc(n,q.s*(.18+.2*(1-o)))),cp=Math.cos(phi),sp=Math.sin(phi);
-    const c0=pj(c);let x=c0[0],y=c0[1],d='M'+svJ(c0);const rel=P3=>{let o2='';for(const p of P3){o2+=(o2?' ':'')+svJ([p[0]-x,p[1]-y])}const e=P3[2];x=e[0];y=e[1];return'c'+o2};
-    for(let j=0;j<nl;j++){const th=q.rot+j/nl*6.2832,ra=V3.add(V3.sc(t1,Math.cos(th)),V3.sc(t2,Math.sin(th))),pr=V3.cr(n,ra),dr=V3.add(V3.sc(ra,cp),V3.sc(n,sp)),
-        at=(u,v)=>pj(V3.add(c,V3.add(V3.sc(dr,u*Ll),V3.sc(pr,v*W))));
-      const A3=at(1,0);d+=rel([at(.18,.62),at(1.08,.55),A3]);d+=rel([at(1.08,-.55),at(.18,-.62),c0])}
-    if(tb!=null&&!LOD&&Math.abs(q.nv[2])<.8)tb.d+='M'+svJ(c0)+'L'+svJ(pj(V3.add(c,V3.sc(n,-q.s*P.tube))));
+  /* split: faded, the lobes toward the light and the others as two paths ({a, b}), for the volume by tone */
+  const floret=(q,tb,split)=>{const n=q.n0,up=Math.abs(n[2])>.9?[1,0,0]:[0,0,1],t1=V3.nz(V3.cr(up,n)),t2=V3.cr(n,t1),nl=P.lobes,o=q.a,
+      Ll=q.s*P.lobeL*(.4+.6*o),W=Ll*P.lobeW*(1-P.fanNarrow*fd),phi=(1-o)*1.15-P.reflex*o-((fd?0:P.curl*fan)+.35*dec)*(.6+.4*o),c=V3.add(q.p,V3.sc(n,q.s*(.18+.2*(1-o))));
+    const c0=pj(c);let x=c0[0],y=c0[1],d='M'+svJ(c0),da='',db='';const rel=P3=>{let o2='';for(const p of P3){o2+=(o2?' ':'')+svJ([p[0]-x,p[1]-y])}const e=P3[2];x=e[0];y=e[1];return'c'+o2};
+    for(let j=0;j<nl;j++){const th=q.rot+j/nl*6.2832,ra=V3.add(V3.sc(t1,Math.cos(th)),V3.sc(t2,Math.sin(th))),pr=V3.cr(n,ra),
+        h1=fd?pxHashS(q.i*5+j,31,g.sd):.5,h2=fd?pxHashS(q.i*5+j,37,g.sd):.5,ph=fd?phi*(1-fd)+fd*P.fanFold*(1+P.fanCrumple*(h1-.5)):phi,
+        lj=fd?1-P.fanCrumple*.8*fd*h2:1,tw=fd?P.fanCrumple*fd*(h1-h2):0,dr=V3.add(V3.sc(ra,Math.cos(ph)),V3.sc(n,Math.sin(ph))),
+        at=(u,v)=>pj(V3.add(c,V3.add(V3.sc(dr,u*Ll*lj),V3.sc(pr,(v+tw*u)*W))));
+      const A3=at(1,0),s=rel([at(.18,.62),at(1.08,.55),A3])+rel([at(1.08,-.55),at(.18,-.62),c0]);
+      if(split){const lv=toV(B,ra);if(lv[0]*LIGHT[0]+lv[1]*LIGHT[1]>0)da+=s;else db+=s}else d+=s}
+    if(tb!=null&&!LOD&&Math.abs(q.nv[2])<.8)tb.d+='M'+svJ(c0)+'L'+svJ(pj(V3.add(c,V3.sc(n,-q.s*P.tube*(1-.5*fd)))));
+    if(split)return{a:da?'M'+svJ(c0)+da+'z':'',b:db?'M'+svJ(c0)+db+'z':''};
     return d+'z'};
   const club=q=>{const n=q.n0,c=V3.add(q.p,V3.sc(n,q.s*.25)),hl=q.s*P.budL*budS,w=q.s*P.budW*budS,C=PJ(B,O,c),ax=toV(B,V3.sc(n,hl)),ex=Math.hypot(ax[0],ax[1]),
       rx=Math.max(w,ex),u=ex>1e-6?[ax[0]/ex,-ax[1]/ex]:[1,0],ang=Math.atan2(u[1],u[0])*180/Math.PI,x0=C[0]-u[0]*rx,y0=C[1]-u[1]*rx,x1=C[0]+u[0]*rx,y1=C[1]+u[1]*rx,
       A=' '+svJ([svR(rx),svR(w),Math.round(ang)])+' 1 0 ';
     return{d:'M'+svJ([svR(x0),svR(y0)])+'A'+A+svJ([svR(x1),svR(y1)])+'A'+A+svJ([svR(x0),svR(y0)])+'z',C,u,rx,w}};
-  const ink=mix(m.deep,'#000000',.2);
+  const ink=mix(m.deep,'#000000',.2),inkO=P.ink*(1-P.inkFan*fan);
   for(let bI=0;bI<nb;bI++){const band=fl.slice(Math.floor(bI*fl.length/nb),Math.floor((bI+1)*fl.length/nb)),bins={},dE=[],dH=[],tb={d:''};
-    for(const q of band){const kind=q.a<.15||q.tuft||(fan>.6&&pxHashS(q.i,7,g.sd)<.5)?'b':q.a<.7?'h':'o',ti=Math.max(0,Math.min(nt-1,Math.round(q.I*(nt-1)/1.05))),
+    for(const q of band){const kind=q.a<.15||q.tuft||(fan>.6&&pxHashS(q.i,7,g.sd)<P.fanClub)?'b':q.a<.7?'h':'o',ti=Math.max(0,Math.min(nt-1,Math.round(q.I*(nt-1)/1.05))),
         hv=pxHashS(q.i,19,g.sd),vk=P.tree&&fan>.2?(hv<.3?1:hv>.72?2:0):0,key=kind+ti+'v'+vk;
-      const bn=bins[key]||(bins[key]={kind,ti,vk,d:''});
+      const bn=bins[key]||(bins[key]={kind,ti,vk,d:''}),bin=t=>{const k2=kind+t+'v'+vk;return bins[k2]||(bins[k2]={kind,ti:t,vk,d:''})};
       if(kind==='b'){const cb=club(q);bn.d+=cb.d;if(!LOD&&q.nv[2]>.1&&q.I>.55)dH.push([cb.C[0]+cb.u[0]*cb.rx*.35-cb.w*.25,cb.C[1]+cb.u[1]*cb.rx*.35-cb.w*.3])}
+      else if(fd>.05&&nt>2){const f2=floret(q,P.tree?tb:null,1);if(f2.a)bin(Math.min(nt-1,ti+1)).d+=f2.a;if(f2.b)bin(Math.max(0,ti-1)).d+=f2.b;
+        if(!LOD&&q.nv[2]>.3&&q.a>.7){const e=PJ(B,O,V3.add(q.p,V3.sc(q.n0,q.s*.3)));dE.push([e[0],e[1]])}}
       else{bn.d+=floret(q,P.tree?tb:null);if(!LOD&&q.nv[2]>.3&&q.a>.7){const e=PJ(B,O,V3.add(q.p,V3.sc(q.n0,q.s*.3)));dE.push([e[0],e[1]])}}}
-    if(tb.d)E('path',{d:tb.d,fill:'none',stroke:mix(m.shade,m.body,.6),'stroke-width':svF(Math.max(.4,sz*.2)),'stroke-linecap':'round'},k);
+    if(tb.d)E('path',{d:tb.d,fill:'none',stroke:mix(m.shade,m.body,.6),'stroke-width':svF(Math.max(.4,sz*.2*(1-.4*fd))),'stroke-linecap':'round'},k);
     for(const key of Object.keys(bins).sort((a,b)=>bins[a].ti-bins[b].ti)){const bn=bins[key],cs=bn.kind==='b'?rampB:bn.kind==='h'?rampH:rampO,col0=ramp(cs,bn.ti/Math.max(1,nt-1)),
         col=bn.vk?mix(col0,bn.vk===1?'#22160c':'#efe4cc',P.fanVar*(bn.vk===1?1:.8)*fan):col0;
-      E('path',{d:bn.d,fill:col,stroke:ink,'stroke-width':svF(Math.max(.25,sz*.05)),'stroke-opacity':P.ink,'stroke-linejoin':'round'},k)}
-    if(dE.length)E('path',{d:svDots(dE),fill:'none',stroke:m.eye,'stroke-width':svF(Math.max(.5,sz*.16)),'stroke-linecap':'round','stroke-opacity':.85},k);
+      if(!bn.d)continue;
+      E('path',inkO>.01?{d:bn.d,fill:col,stroke:ink,'stroke-width':svF(Math.max(.25,sz*.05)),'stroke-opacity':inkO,'stroke-linejoin':'round'}:{d:bn.d,fill:col},k)}
+    if(dE.length)E('path',{d:svDots(dE),fill:'none',stroke:m.eye,'stroke-width':svF(Math.max(.5,sz*.16*(1-.5*fd))),'stroke-linecap':'round','stroke-opacity':.85},k);
     if(dH.length)E('path',{d:svDots(dH),fill:'none',stroke:'#ffffff','stroke-width':svF(Math.max(.4,sz*.1)),'stroke-linecap':'round','stroke-opacity':.3},k)}
   return k}
