@@ -53,12 +53,16 @@ function irisMat(cwx){if(IRIS_M[cwx.id])return IRIS_M[cwx.id];const C=IRIS_CW[cw
    skeleton); the signal and the yellows orange, then ochre-brown; whites ivory, then cream-brown; the greens (spathe, tube) by the common rule */
 function irisWiltCol(c,w){if(w<=0||typeof c!=='string'||c.length!==7||c[0]!=='#')return c;const[h,s,l]=h2l(c);
   if(l<.1)return c;
-  if(h>=65&&h<175&&s>.1)return typeof lifeCol==='function'?lifeCol(c,.3*w):c;
+  /* (a bouquet drawn all faded, LIFE_ALL 'fane': the spathe and the tube wilt like the stem, and the blues and violets go on to a dull brown-mauve,
+     papery: nothing stays blue) */
+  const fa=irisAllFane();
+  if(h>=65&&h<175&&s>.1)return typeof lifeCol==='function'?lifeCol(c,(fa?.85:.3)*w):c;
   if(s<.14||l>.88){let o=mix(c,'#e6dcc2',.65*w);if(w>.45)o=mix(o,'#9c8460',(w-.45)*1.1);return o}
   if(h<65){let o=l2h(h-(h-26)*.5*w,s*(1-.3*w),l*(1-.25*w));if(w>.55)o=mix(o,'#8a5a2a',(w-.55)*.9);return o}
   /* blues and violets darken as they go limp and translucent (138 pale lilac-grey at first; 472 night violet, matted): violet, then brown-violet */
-  if(h<335){let o=l2h(h+(288-h)*.55*w,s*(1-.35*w),l*(1-.42*w));if(w>.5)o=mix(o,'#4b3352',Math.min(.6,(w-.5)*1.2));return o}
+  if(h<335){let o=l2h(h+(288-h)*.55*w,s*(1-.35*w),l*(1-.42*w));if(w>.5)o=mix(o,'#4b3352',Math.min(.6,(w-.5)*1.2));if(fa)o=mix(o,'#5a443c',.6*svSm(w/.8));return o}
   let o=mix(c,'#9a6a6a',.5*w);if(w>.5)o=mix(o,'#8a6a50',(w-.5)*.8);return o}
+const irisAllFane=()=>typeof LIFE_ALL!=='undefined'&&LIFE_ALL==='fane';
 if(typeof GHI!=='undefined'&&GHI['iris-hollandais'])GHI['iris-hollandais'].wilt=irisWiltCol;
 function irisLife(o){if(typeof SVA_LIFE!=='undefined'&&SVA_LIFE!=null)return SVA_LIFE;if(o&&o.life&&o.life.w!=null)return o.life.w;
   return typeof LIFE!=='undefined'&&LIFE&&typeof lifeWEl==='function'?lifeWEl(LIFE,lifeProfile({sid:'iris-hollandais',rec:{}})):0}

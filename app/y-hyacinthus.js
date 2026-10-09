@@ -29,11 +29,18 @@ Object.assign(HYA_CW,{
 const HYA_GRN=['#2a3a14','#4a6a26','#6c9838','#98bc58','#c6dc8a'];
 /* the material of a colourway for the kit: its ramps (the buds' from their colour) */
 const HYA_M={};
-function hyaMat(cw){const id=cw&&cw.id;if(HYA_M[id])return HYA_M[id];const S=HYA_CW[id]||(()=>{const c=(cw&&cw.c)||'#8a7cb6';return{fr:[mix(c,'#100818',.7),mix(c,'#100818',.38),c,mix(c,'#ffffff',.25),mix(c,'#ffffff',.55)],
+/* the dried tissue by colourway (photograph 6: dark brown to straw, measured; deduced: the pale ones dry to parchment, the darkest to a deep brown) */
+const HYA_DRY={pale:['#5c4a32','#8c7656','#b6a07c','#d6c6a2','#eee4c8'],dark:['#24130a','#3e2516','#5e3f28','#80603f','#a88a66']};
+/* fading, the scape and the rachis brown and dull (porteur, 2026-10-09: never a bright green under dried florets; photograph 166: the dried scape
+   orange-brown): from life .3, nine tenths of the way at .75. HYA_WL: the life of the raceme being drawn (hyaSvg), else the bouquet's */
+let HYA_WL=null;
+const HYA_SCD=['#3a2814','#6a5030','#987a50','#c4a87c'],HYA_AXD=['#3e2c16','#6a5232','#9a7e54'],hyaBrownF=wl=>.9*svSm(((wl??HYA_WL??hyaLife())-.3)/.45);
+function hyaMat(cw){const id=cw&&cw.id,fw=hyaBrownF(),key=id+'|'+Math.round(fw*10);if(HYA_M[key])return HYA_M[key];const S=HYA_CW[id]||(()=>{const c=(cw&&cw.c)||'#8a7cb6';return{fr:[mix(c,'#100818',.7),mix(c,'#100818',.38),c,mix(c,'#ffffff',.25),mix(c,'#ffffff',.55)],
     mid:mix(c,'#100818',.35),edge:mix(c,'#ffffff',.6),throat:mix(c,'#100818',.65),bud:mix(c,'#ffffff',.15)}})(),b=S.bud;
-  return HYA_M[id]=Object.assign({},S,{bk:S.bk||S.fr,bud:[mix(b,'#141018',.62),mix(b,'#141018',.34),b,mix(b,'#ffffff',.3),mix(b,'#ffffff',.58)],grn:HYA_GRN,anth:S.anth||'#c8bc6a',
+  const lf=h2l(S.fr[2])[2],dry=lf>.66?HYA_DRY.pale:lf<.4?HYA_DRY.dark:undefined,ax=hyaScCols(id,HYA_WL).ax;
+  return HYA_M[key]=Object.assign({},S,{dry,bk:S.bk||S.fr,bud:[mix(b,'#141018',.62),mix(b,'#141018',.34),b,mix(b,'#ffffff',.3),mix(b,'#ffffff',.58)],grn:HYA_GRN,anth:S.anth||'#c8bc6a',
     /* the dark varieties' rachis flushed like their scape (the kit's m.stem) */
-    stem:typeof HYA_SCT!=='undefined'&&HYA_SCT[id]?hyaScCols(id).ax:undefined})}
+    stem:ax||undefined})}
 /* the colour of a fading hyacinth (deduced: no photograph of a fading blue or pink raceme was found; the dried tissue is measured on photograph 6):
    blues and violets pale and grey toward a lilac grey; pinks, reds and purples go dusty; whites and creams to ivory; greens yellow (lifeCol) */
 function hyaWiltCol(c,w){if(w<=0||typeof c!=='string'||c.length!==7||c[0]!=='#')return c;const[h,s,l]=h2l(c);
@@ -58,14 +65,15 @@ const HYA_S={layout:'dresse',floret:'clochette',genes:HYA_GENES,mat:hyaMat,wilt:
   /* foot first; a floret opens over a fifth of the stage; the top tenth still buds in full bloom; the oldest fade first; the buds go on opening */
   law:{order:'acro',t0:.25,spread:.82,w:.24,ws:.5,late:.18},
   fl:{budAt:.22,bud:[.62,.25],budHW:1.55,tube:.44,r:[.075,.15,-.02],lobe:.66,lg:[.6,.4],lw:.26,wO:1.1,a0:[-.06,1.1],a1:[-.26,3.0],ap:1.8,cup:.36,sweep:.25,tw:.5,jl:.14,ja:.4,js:.35,mouth:.5,throatL:.3,
-    sag:.55,curl:3.4,dec:[.12,.4],dry:[.5,.3],green:[.9,.03,.15,.08],wMin:.3},
+    sag:.55,curl:3.4,dec:[.12,.4],dry:[.5,.3],green:[.9,.03,.15,.08],wMin:.3,
+    /* dried (photographs 6, 166): the shrivelled bells hang on their pedicels, half-way to the ground or more; the lobes rolled into ringlets
+       (dryS: their width), each its own length and curl (dryV), rolled tighter toward the tip (dryX) */
+    hang:[.6,.4],dryS:.3,dryV:[.3,.3],dryX:.6},
   /* waxy and bright: the light lifted (lit [base, range]), the shade inside the raceme soft (ao) */
-  lit:[.2,.9],ao:.72,budget:[170,320],cost:{2:[8,4],1:[3,2]},
-  /* the dried ringlets' path written once, stroked two or three times by reference (the kit's S.reuse) */
-  reuse:1};
+  lit:[.2,.9],ao:.72,budget:[170,320],cost:{2:[8,4],1:[3,2]}};
 /* the hyacinth raceme: in the frame B (its axis B[2]) at O (its middle; o.foot: its foot), D its length in bloom */
-function hyaSvg(par,B,O,D,cwId,op,seed,wl,o){const cwx=(typeof CW_HYA!=='undefined'&&CW_HYA.find(x=>x.id===cwId))||{id:cwId,c:'#8a7cb6'};
-  return grDraw(par,B,O,D,HYA_S,cwx,op,seed,wl==null?hyaLife():wl,o||{})}
+function hyaSvg(par,B,O,D,cwId,op,seed,wl,o){const cwx=(typeof CW_HYA!=='undefined'&&CW_HYA.find(x=>x.id===cwId))||{id:cwId,c:'#8a7cb6'},w=wl==null?hyaLife():wl;
+  HYA_WL=w;try{return grDraw(par,B,O,D,HYA_S,cwx,op,seed,w,o||{})}finally{HYA_WL=null}}
 SV_HEAD['jacinthe']=hyaSvg;
 /* ---------- the plant, v2 (2026-10-08): a cut stem with its leaves, never a bulb (STANDARD-RENDU 4 ter, 8 bis and 8 ter) ----------
    Measured (refcache/jacinthe/REFERENCES-jacinthe-organes.md: photograph 1, a cut stem on white; the growers' studio photographs; the IBC guide to
@@ -88,9 +96,11 @@ const HYA_SC=['#34501e','#5f863e','#92b662','#cfe2a8'];HYA_SC.sv={swell:.025,glo
 const HYA_SCT={pourpre:['#3c1230',.72,.08],violet:['#2c1a44',.62,.12],'bleu-nuit':['#382a58',.42,.35],fuchsia:['#5e1626',.42,.35],mauve:['#5a3a58',.16,.55]};
 /* the scape's colours of a colourway: lo even (the bouquet's stem below the plant), hi with its flush toward the raceme, ax the rachis' (flushed) */
 const HYA_SCK={};
-function hyaScCols(id){if(HYA_SCK[id])return HYA_SCK[id];const t=HYA_SCT[id],lo=t?HYA_SC.map(c=>mix(c,t[0],t[1]*t[1]*.45)):HYA_SC.slice();lo.sv=HYA_SC.sv;
-  const hi=lo.slice();hi.sv=Object.assign({},HYA_SC.sv,t?{red:t[0],redA:t[1],redF:t[2]}:{});
-  return HYA_SCK[id]={lo,hi,ax:t?[mix(lo[0],t[0],t[1]),mix(lo[1],t[0],t[1]),mix(lo[2],t[0],t[1]*.8)]:null}}
+function hyaScCols(id,wl){const fw=hyaBrownF(wl),key=id+'|'+Math.round(fw*10);if(HYA_SCK[key])return HYA_SCK[key];const t=HYA_SCT[id],
+    br=(c,j,D)=>fw>0?mix(c,D[j],fw):c,lo=(t?HYA_SC.map(c=>mix(c,t[0],t[1]*t[1]*.45)):HYA_SC.slice()).map((c,j)=>br(c,j,HYA_SCD));lo.sv=HYA_SC.sv;
+  const hi=lo.slice();hi.sv=Object.assign({},HYA_SC.sv,t?{red:br(t[0],1,HYA_SCD),redA:t[1],redF:t[2]}:{});
+  const ax=t?[mix(lo[0],t[0],t[1]),mix(lo[1],t[0],t[1]),mix(lo[2],t[0],t[1]*.8)]:fw>0?HYA_S.stem.map((c,j)=>br(c,j,HYA_AXD)):null;
+  return HYA_SCK[key]={lo,hi,ax,fw}}
 /* a leaf: a broad strap, channelled, hooded at its blunt tip, glossy above, matt and paler below along its keel; its foot sheathing at radius sr */
 const HYA_LEAF={w:.15,wp:[[0,.6],[.1,.62],[.32,.84],[.6,1],[.8,.96],[.9,.82],[.96,.55],[1,0]],sheath:.2,tw:.25,gut:.72,wav:.018,wavN:2,hood:.5,bloom:.12,
   up:'#568a2a',low:'#76a04a',base:'#a8c860',shade:'#20360a',bshade:'#2e4a18',veinLo:1,nv:13};
@@ -120,12 +130,13 @@ function hyaFoot(par,F,rS,R,hb,srs,sd){const r=svRng(sd),ta=Math.tan(.38),g=G(pa
   E('path',{d:dd,fill:'none',stroke:'#8ea65a','stroke-width':svF(rS*.13),'stroke-linecap':'round','stroke-opacity':.8},g);return g}
 /* the hyacinth plant in SVG (hyaPlant's branch when SV_ON): the raceme by the kit, the scape a lit cylinder flushed toward it; on the sheet the
    leaves, all from the foot, and the cut foot */
-function hyaSvPlant(k,t,o,X){const{res,apex,cw,op,D,sheet,up,face,n,ph0}=X,wl=hyaLife(o),c0=res.chains[0],ci=lsCut(res,apex),top=c0.pts[c0.pts.length-1],SC=hyaScCols(cw.id);
+function hyaSvPlant(k,t,o,X){const{res,apex,cw,op,D,sheet,up,face,n,ph0}=X,wl=hyaLife(o),c0=res.chains[0],ci=lsCut(res,apex),top=c0.pts[c0.pts.length-1],SC=hyaScCols(cw.id,wl);
   for(const ch of res.chains)ch.c=SC.lo;
   /* the scape's width (photographs 1 and 124: .095 and .12 of the raceme's): .055 D, a little stouter at its foot, swelling over its last tenth into
      the raceme's fleshy axis (the kit's, .09 D); set on the chain itself, so the bouquet's stem below follows */
   {const P=c0.pts,ac=[0];for(let i=1;i<=ci;i++)ac.push(ac[i-1]+V3l(V3s(P[i],P[i-1])));const Lc=ac[ci]||1;
-    for(let i=0;i<=ci;i++){const t=ac[i]/Lc;c0.ws[i]=D*(.055*(1+.1*(1-t))+.035*svSm((t-.88)/.12))}}
+    /* fading, the scape loses its turgor: a tenth thinner as it browns */
+    for(let i=0;i<=ci;i++){const t=ac[i]/Lc;c0.ws[i]=D*(.055*(1+.1*(1-t))+.035*svSm((t-.88)/.12))*(1-.11*SC.fw)}}
   /* on the sheet the scape starts a node above the cut (its rounded end hidden in the sheaths; the cut face shows its flesh) */
   const Z=V3l(V3s(top,apex))>1e-3?V3.nz(V3s(top,apex)):up,Bf=frZ(Z,face,0),seed=svSeed('jacinthe',cw.id,n,Math.round(ph0*100)),i0=sheet?1:0,res2={chains:[{pts:c0.pts.slice(i0,ci+1),ws:c0.ws.slice(i0,ci+1),c:SC.hi,ord:0}].concat(res.chains.slice(1)),organs:res.organs};
   /* the leaves sheathe one another round the scape: the outermost (the L-system's first) widest; two younger ones inside, between them */

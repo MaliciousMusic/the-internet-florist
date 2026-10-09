@@ -230,8 +230,31 @@ function grUnpinch(sp,ed,R,wMin){const o=(p,q,r)=>(q[0]-p[0])*(r[1]-p[1])-(q[1]-
     const nx=-(q[1]-p[1])/tl,ny=(q[0]-p[0])/tl,k=R[i?i-1:1],dot=r=>(ed[0][r][0]-ed[1][r][0])*nx+(ed[0][r][1]-ed[1][r][1])*ny,ak=dot(k),a=dot(j),
       d=(((ak||a)<0?-1:1)*Math.max(m,Math.abs(a))-a)/2,e0=ed[0][j],e1=ed[1][j];
     ed[0][j]=[e0[0]+nx*d,e0[1]+ny*d,e0[2]];ed[1][j]=[e1[0]-nx*d,e1[1]-ny*d,e1[2]]}}
+/* P.hang [part, + per floret] (optional): a dried floret hangs on its pedicel (hyacinth, photographs 6 and 166: the shrivelled bells droop),
+   its frame turned about its foot so its axis goes that part of the way toward the ground; the context's V, Vd, down and eye follow, so the
+   floret then draws as if it stood in its own frame */
+function grHang(c,f,dry){const H=c.P.hang;if(!H)return;const dn=c.down,k=Math.min(.95,Math.max(0,H[0]+H[1]*(pxHashS(f.i,13,Math.floor((f.gt.ph||0)*1e4))-.5)))*svSm((dry-.5)/.35);
+  if(k<=0)return;let ax=V3.cr([0,0,1],dn);const sl=V3l(ax);ax=sl>1e-4?V3.sc(ax,1/sl):[1,0,0];const a=k*Math.acos(Math.max(-1,Math.min(1,dn[2]))),V0=c.V,Vd0=c.Vd;
+  c.V=p=>V0(rotA(p,ax,a));c.Vd=p=>Vd0(rotA(p,ax,a));c.down=rotA(dn,ax,-a);c.eye=rotA(c.eye,ax,-a)}
+/* the dried bell (photographs 6, 39, 166): the tube shrivelled and crumpled, the lobes rolled into ringlets, papery; no outline anywhere, the
+   volume by tone alone: the lobes behind the bell in shade, the bell lit on one side, the lobes in front each by its own light (in tiers, so they
+   share their paint), a fine sheen along the curl of the lit ones. P.dryS: the ringlet's width (x L x lw, .3) */
+function grBellDry(c,f,lod,lobes,tl,r0,r1){const P=c.P,L=f.L,sdk=Math.floor((f.gt.ph||0)*1e4)+f.i*7,rg=[],lt=[],sw=svF(L*P.lw*(P.dryS||.3));
+  /* the tube: three rings, each point pushed in or out (crumpled) */
+  const lv=[[0,r0*.7],[tl*.4,r0],[tl,r1*.85]],nA=7,lA=[];for(let j=0;j<nA;j++){const a=j/nA*6.2832;lA.push(c.lit(V3.nz(c.Vd([Math.cos(a),Math.sin(a),0]))))}
+  const mA=lA.reduce((s,x)=>s+x,0)/nA;
+  lv.forEach(([z,r],i)=>{for(let j=0;j<nA;j++){const a=j/nA*6.2832,rr=r*(.78+.44*pxHashS(i*nA+j,17,sdk)),p=c.V([Math.cos(a)*rr,Math.sin(a)*rr,z]);rg.push(p);if(lA[j]>=mA)lt.push(p)}lt.push(c.V([0,0,z]))});
+  const lobeV=lb=>c.lit(lb.f2[0]),tier=(v,a,b)=>a+b*Math.round(v*3)/3,spine=lb=>c.l2(lb.sp.filter((q,j)=>j%2===0||j===lb.sp.length-1));
+  /* the ringlets (a lobe rolled on its margins: a strand seen the same from every side), in tiers of light */
+  const strokes=(L2,a,b)=>{const by={};for(const lb of L2){const v=lod>1?tier(lobeV(lb),a,b):a+b*.5;(by[v]=by[v]||[]).push(lb)}
+    for(const v of Object.keys(by).sort())c.put({d:by[v].map(spine).join(''),s:c.col(+v,f,'fr'),sw,so:1})};
+  if(lod===0){c.put({d:c.d2(hull2(rg)),f:c.col(.3,f,'fr')});c.put({d:lobes.map(spine).join(''),s:c.col(.5,f,'fr'),sw,so:1});return}
+  strokes(lobes.filter(l=>!l.front),.18,.3);
+  c.put({d:c.d2(hull2(rg)),f:c.col(.3,f,'fr')});if(lt.length>2)c.put({d:c.d2(hull2(lt)),f:c.col(.34+.45*mA,f,'fr')});
+  const fr=lobes.filter(l=>l.front);strokes(fr,.38,.5);
+  if(lod>1){const ls=fr.filter(lb=>lobeV(lb)>.55);if(ls.length)c.put({d:ls.map(lb=>c.l2(lb.sp.slice(2,7))).join(''),s:c.col(.92,f,'fr'),sw:svF(L*P.lw*.07),so:.55})}}
 GR_FLORET.clochette=(c,f,lod)=>{const P=c.P,L=f.L,gt=f.gt,dec=svSm((f.w-P.dec[0])/P.dec[1]),dry=svSm((f.w-P.dry[0])/P.dry[1]);
-  if(f.o<P.budAt&&dry<.5)return grBud(c,f,lod);
+  if(f.o<P.budAt&&dry<.5)return grBud(c,f,lod);if(dry>.5)grHang(c,f,dry);
   const e=svSm((f.o-P.budAt)/(1-P.budAt)),tl=L*P.tube*(1-.15*dry),r0=L*P.r[0]*(1-.2*dry),r1=L*(P.r[1]+P.r[2]*e)*(1-.3*dry),ll=L*P.lobe*(P.lg[0]+P.lg[1]*e)*(1+.1*dry),
     a0=P.a0[0]+(P.a0[1]-P.a0[0])*e*(1-.25*dec),a1=P.a1[0]+(P.a1[1]-P.a1[0])*e*(gt.curl||1)*(1-.35*dec),ns=6,jm=3,jk=5,lobes=[],zc=c.V([0,0,tl*.5])[2];
   /* the lobes: a spine bending from a0 to a1 (curled further when dry, hanging toward the ground when limp), cupped across */
@@ -239,10 +262,12 @@ GR_FLORET.clochette=(c,f,lod)=>{const P=c.P,L=f.L,gt=f.gt,dec=svSm((f.w-P.dec[0]
   const sdk=Math.floor((gt.ph||0)*1e4)+f.i*7;
   for(let k=0;k<6;k++){const h1=pxHashS(k,1,sdk)-.5,h2=pxHashS(k,2,sdk)-.5,h3=pxHashS(k,3,sdk)-.5,h4=pxHashS(k,4,sdk)-.5,
       ps=(gt.roll2||0)+k*Math.PI/3+h3*.3*e,cs=Math.cos(ps),sn=Math.sin(ps),rd=[cs,sn,0],td=[-sn,cs,0],outer=k%2===0,
-      lw=L*P.lw*(outer?P.wO:1)*(gt.W||1)*(1-.5*dry-.38*dec)*(.85+.15*e),cup=P.cup*(gt.cup||1)*(1+.9*dec),sp=[],ed=[[],[]],nm=[],llk=ll*(1+2*(P.jl||0)*h1*e),a1k=a1+2*(P.ja||0)*h2*e,
+      /* dried (dv, P.dryV [length, curl] spread): each lobe its own length and curl, rolled tighter toward its tip (a spiral, never a ring) */
+      dv=dry>.5?dry:0,h5=dv?pxHashS(k,5,sdk)-.5:0,DV=P.dryV||[0,0],
+      lw=L*P.lw*(outer?P.wO:1)*(gt.W||1)*(1-.5*dry-.38*dec)*(.85+.15*e),cup=P.cup*(gt.cup||1)*(1+.9*dec),sp=[],ed=[[],[]],nm=[],llk=ll*(1+2*(P.jl||0)*h1*e)*(1+2*DV[0]*h5*dv),a1k=a1+2*(P.ja||0)*h2*e,
       sS=((P.sweep||0)*(gt.tw||0)+2*(P.js||0)*h4)*e;
-    let p=[cs*r1,sn*r1,tl];const curlD=P.curl*(.3*dec+.7*dry)*(1+.3*Math.sin(k*2.1+(gt.ph||0))),nsd=dry>.5?9:ns;
-    for(let j=0;j<=nsd;j++){const t=j/nsd,a=a0+(a1k-a0)*Math.pow(t,P.ap)+curlD*Math.pow(t,1.2);let d=[rd[0]*Math.sin(a),rd[1]*Math.sin(a),Math.cos(a)];
+    let p=[cs*r1,sn*r1,tl];const curlD=P.curl*(.3*dec+.7*dry)*(1+.3*Math.sin(k*2.1+(gt.ph||0)))*(1-2*DV[1]*h5*dv),nsd=dry>.5?9:ns,cx=1.2+(P.dryX||0)*dv;
+    for(let j=0;j<=nsd;j++){const t=j/nsd,a=a0+(a1k-a0)*Math.pow(t,P.ap)+curlD*Math.pow(t,cx);let d=[rd[0]*Math.sin(a),rd[1]*Math.sin(a),Math.cos(a)];
       /* a lobe bends sideways one way then the other (an S) and twists on its midrib (P.sweep, P.tw x its genes) */
       if(sS)d=V3.nz(V3.add(d,V3.sc(td,sS*Math.sin(6.2832*t))));
       if(dec>0)d=V3.nz(V3.add(d,V3.sc(c.down,P.sag*dec*t)));if(j)p=V3.add(p,V3.sc(d,llk/nsd));let nI=[-rd[0]*Math.cos(a),-rd[1]*Math.cos(a),Math.sin(a)],tdj=td;
@@ -257,12 +282,7 @@ GR_FLORET.clochette=(c,f,lod)=>{const P=c.P,L=f.L,gt=f.gt,dec=svSm((f.w-P.dec[0]
     ins=(lb,s2,j,k2)=>V3.add(lb.sp[j],V3.sc(V3s(lb.ed[s2][j],lb.sp[j]),k2));
   const ring=[];for(const[z,r]of[[0,r0*.8],[tl*.2,r0*1.05],[tl,r1]])for(let j=0;j<7;j++){const a=j/7*6.2832;ring.push(c.V([Math.cos(a)*r,Math.sin(a)*r,z]))}
   const tubeD=c.d2(hull2(ring)),side=V3.nz(V3s(c.eye,V3.sc([0,0,1],c.eye[2]))),tubeV=c.lit(V3.nz(c.Vd(V3l(side)>.1?side:[1,0,0]))),Ve=c.eye[2];
-  if(dry>.5){/* dried: the tube shrivelled, the lobes rolled into ringlets */
-    c.put({d:tubeD,f:c.col(tubeV*.8,f,'fr')});let dS='';for(const lb of lobes)dS+=c.l2(lb.sp.filter((q,j)=>j%2===0||j===lb.sp.length-1));
-    /* S.reuse (optional): the ringlets written once in the defs, their two or three strokes drawn by reference (the same picture, fewer bytes) */
-    const u=c.S.reuse&&lod>0?'gu'+(gid++):null;if(u)E('path',{id:u,d:dS},GDEF||defs);const rp=u?{u}:{d:dS};
-    c.put(Object.assign({s:c.col(.2,f,'fr'),sw:svF(L*P.lw*.36),so:1},rp));if(lod>0)c.put(Object.assign({s:c.col(.62,f,'fr'),sw:svF(L*P.lw*.2),so:1},rp));
-    if(lod>1)c.put(Object.assign({s:c.col(.92,f,'fr'),sw:svF(L*P.lw*.07),so:.8},rp));return}
+  if(dry>.5)return grBellDry(c,f,lod,lobes,tl,r0,r1);
   if(lod===0){/* one outline: a star, the lobes' tips and the notches between them sorted round the mouth (twelve points) */
     const o0=sc0(c.V([0,0,tl])),St=[];for(let k=0;k<6;k++){const lb=lobes[k],a=(gt.roll2||0)+(k+.5)*Math.PI/3;St.push(sc0(lb.ed[0][jk]),sc0(c.V([Math.cos(a)*r1*1.15,Math.sin(a)*r1*1.15,tl])))}
     const S2=St.concat([sc0(c.V([0,0,0]))]).sort((p,q)=>Math.atan2(p[1]-o0[1],p[0]-o0[0])-Math.atan2(q[1]-o0[1],q[0]-o0[0]));

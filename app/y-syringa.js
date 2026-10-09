@@ -28,7 +28,9 @@ function syrMat(cw){const id=cw&&cw.id||'lilas';if(SYR_M[id])return SYR_M[id];co
 function syrWiltCol(c,w){if(w<=0||typeof c!=='string'||c.length!==7||c[0]!=='#')return c;const[h,s,l]=h2l(c);
   if(h>=55&&h<175&&s>.12)return typeof lifeCol==='function'?lifeCol(c,w):c;
   if(s<.15||l>.86){let o=mix(c,'#e6d8b4',.7*w);if(w>.5)o=mix(o,'#a88a62',(w-.5)*.9);return o}
-  let o=mix(c,l>.45?'#b08a66':'#7e6a48',.75*w);if(w>.55)o=mix(o,'#6f5728',(w-.55)*.9);return o}
+  /* 2026-10-09: the lilacs and purples, and the browns, go to tan then gold-brown at their own lightness (pale lobes tan, valleys dark brown),
+     so that the dry florets keep their volume in the tones instead of one flat brown */
+  const lt=.1+.66*l;let o=mix(c,l2h(30,.3+.12*(1-l),lt),Math.min(1,.85*w));if(w>.55)o=mix(o,l2h(40,.42,lt*.92),(w-.55)*.9);return o}
 if(typeof GHI!=='undefined'&&GHI['lilas'])GHI['lilas'].wilt=syrWiltCol;
 function syrLife(o){if(typeof SVA_LIFE!=='undefined'&&SVA_LIFE!=null)return SVA_LIFE;if(o&&o.life&&o.life.w!=null)return o.life.w;
   return typeof LIFE!=='undefined'&&LIFE&&typeof lifeWEl==='function'?lifeWEl(LIFE,lifeProfile({sid:'lilas',rec:{}})):0}
@@ -41,7 +43,10 @@ const S_LILAS={genes:s=>svGenes(s,SYR_GENES),mat:syrMat,
   /* 2026-10-09 retouch: the branched thyrse (photos 94, 124, 126: a cone of decussate side branches, each a rounded cluster, gaps between; buds packed
      at the top); faded (131, 32): the florets stay on, shrivelled and brown, the head sags a little */
   tree:1,vb:.1,r0:.72,pb:.6,pt:.95,tipR:.23,cap:[.02,.08],topV:.74,brRise:.6,clC:.72,clR:[.44,.3],sub:.22,fs:.23,
-  droop:[.1,.22],shedK:.3,shrink:.3,fanK:.2,coreK:.3,fanShed:.08,tipL:.06};
+  droop:[.1,.22],shedK:.3,shrink:.18,fanK:.2,coreK:.45,fanShed:.08,tipL:.06,
+  /* 2026-10-09 faded (critique: the outlined brown stars read as a cartoon): dried lilac florets shrivel shut into small crumpled brown tubes, no
+     edge line, their volume from the tones (the lobes toward the light lighter, the others darker), the browns varied (fanVar) */
+  fanFold:1.05,fanNarrow:.1,fanCrumple:.7,inkFan:1,fanClub:.1,pdDeep:.55,scal:.12,fanBody:.4,fanDots:.65};
 /* the lilac head: the whole panicle, its base at the foot of the axis B[2], O the centre of the grown head, D its length scale */
 function syrSvg(par,B,O,D,cwId,op,seed,wl,S){const cwx=(typeof L67_LIL!=='undefined'&&L67_LIL.find(x=>x.id===cwId))||{id:cwId,c:'#b58ccc'};
   return svPanicle(par,B,O,D,S||S_LILAS,cwx,op,seed,wl==null?syrLife():wl)}
@@ -85,7 +90,9 @@ if(typeof GHI!=='undefined'&&GHI['lilas'])Object.assign(GHI['lilas'],{
   limp:.75   /* the extra sag of a fading leaf */
 });
 /* the shoot's colours [shade, body, light, sheen], styled for svStemLine: 0 the year's green shoot, 1 the woody cut stem */
-function syrStemCols(wood){const c=wood?['#3a2a1e','#6a4e38','#94755a','#c4ab8e']:['#36402a','#5a6a3e','#869460','#b9c290'];
+function syrStemCols(wood){const c0=wood?['#3a2a1e','#6a4e38','#94755a','#c4ab8e']:['#36402a','#5a6a3e','#869460','#b9c290'],
+    /* the green shoot browns as the panicle dries (a dried cut lilac: olive brown, greyed), never a fresh green under dry florets */
+    fw=wood?0:.9*svSm((syrLife()-.3)/.45),c=fw>0?c0.map((x,j)=>mix(x,['#3a2c1e','#5c4a34','#83705a','#a8977e'][j],fw)):c0;
   c.sv=wood?{swell:.04,gloss:.22,ribs:[-.55,-.2,.25,.6],post:(g,cg,C,Wd,N,T,W0)=>syrStemMarks(g,cg,C,Wd,N,T,W0,1)}
     :{swell:.03,gloss:.34,ribs:[-.4,.45],post:(g,cg,C,Wd,N,T,W0)=>syrStemMarks(g,cg,C,Wd,N,T,W0,0)};return c}
 /* the marks of a lilac stem: pale lens-shaped lenticels along it (sparse on the green shoot); on the wood, every internode, a leaf scar across the stem with its pair of buds
