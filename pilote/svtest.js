@@ -51,6 +51,8 @@ if(new URLSearchParams(location.search).get('grid'))setTimeout(()=>{const Q=new 
   document.title='grid '+n+' '+Math.round(ms/n)+'ms';const sp=Q.get('snap')?snapSvg(svg,+(Q.get('sw')||W),Q.get('snap'),'#e9e4dc'):null;if(sp)sp.then(r=>{document.title+=' snap '+r.join(',')});svtOut(svg,n,ms,sp)},400);
 /* whole stems: ?plant=1&cw=bleu&st=.1:0,.3:0,.6:0,1:0,1:.4,1:.75&vw=-.45,.15,.88 → drawRec of the species, one cell per stage, fitted */
 if(new URLSearchParams(location.search).get('plant'))setTimeout(()=>{const Q=new URLSearchParams(location.search),dS=typeof defs!=='undefined'&&defs.closest?defs.closest('svg'):null;document.body.innerHTML='';if(dS)document.body.append(dS);
+  /* seed=<n>: the sheet's own chance, whatever the page drew before it (to compare two builds) */
+  if(Q.get('seed'))sd(+Q.get('seed'));
   DET=+(Q.get('det')||1.5);LOD=0;const sid=Q.get('sid')||'anemone-coronaria',rec=RBY[sid],cw=(CWS[sid]||[]).find(x=>x.id===(Q.get('cw')||'bleu')),st=(Q.get('st')||'.1:0,.3:0,.6:0,1:0,1:.4,1:.75').split(',').map(x=>x.split(':').map(Number)),
     vw=(Q.get('vw')||'-.45,.15,.88').split(',').map(Number),cellW=+(Q.get('cell')||170),svg=E('svg',{width:cellW*st.length,height:cellW*2.2,viewBox:`0 0 ${cellW*st.length} ${cellW*2.2}`},document.body);GDEF=E('defs',{},svg);
   /* full=<cm>: the whole cut stem below the head's neck, with the leaves its species carries in a bouquet (STEML, stemLeaves), as in the vase */
@@ -66,8 +68,12 @@ window.svtStem=(par,r,sid,cm)=>{const e=r.neck,nd=r.nd||[0,1],L=cm*UPC,P3=e,P2=[
    seed once it is drawn, with the SVG heads off and on (the same: the composition does not move) */
 if(new URLSearchParams(location.search).get('rtest'))setTimeout(()=>{const Q=new URLSearchParams(location.search),rc=(Q.get('rc')||'tulipe-simple~7:7,tulipe-simple~12:6').split(',').map(x=>{const[a,b]=x.split(':');return[a,+b]}),out=[];
   for(const L of[null,{stage:0,u:.5},{stage:2,u:.5},{stage:3,u:.3},{stage:3,u:1}])for(const v of['cylindre-verre-clair','coupe-pied-blanche']){const res=[];
-    for(const on of[false,true]){SV_ON=on;LIFE=L;const svg=E('svg',{},document.body);let s1;const r0=rnd;let hh=0,nn=0;rnd=function(){const x=r0();nn++;hh=(Math.imul(hh,31)+Math.floor(x*1e9))|0;return x};try{renderStatic(()=>{buildBq(svg,[],+(Q.get('sv')||11),v,0,'juste',null,rc)});s1=nn+':'+hh+'/'+svg.querySelectorAll('*').length}catch(e){s1='ERR '+e.message}finally{rnd=r0}svg.remove();res.push(s1)}
-    out.push((L?L.stage+':'+L.u:'-')+' '+v+' '+(res[0].split('/')[0]===res[1].split('/')[0]?'IDENTIQUE':'DIFFERENT')+' '+res.join(' / '))}
+    const sts=[];for(const on of[false,true]){SV_ON=on;LIFE=L;const svg=E('svg',{},document.body);let s1;const r0=rnd;let hh=0,nn=0;const ST=Q.get('rtw')?{}:null;sts.push(ST);rnd=function(){const x=r0();nn++;hh=(Math.imul(hh,31)+Math.floor(x*1e9))|0;
+      /* ?rtw=1: who draws (the three callers of each draw, name@line), to find what the SVG drawing consumes on top of the old one */
+      if(ST){const k=new Error().stack.split('\n').slice(2,5).map(q=>{const m=q.trim().match(/^at (?:(\S+) )?\(?.*?:(\d+):\d+\)?$/);return m?(m[1]||'')+'@'+m[2]:'?'}).join('<');ST[k]=(ST[k]||0)+1}return x};try{renderStatic(()=>{buildBq(svg,[],+(Q.get('sv')||11),v,0,'juste',null,rc)});s1=nn+':'+hh+'/'+svg.querySelectorAll('*').length}catch(e){s1='ERR '+e.message}finally{rnd=r0}svg.remove();res.push(s1)}
+    out.push((L?L.stage+':'+L.u:'-')+' '+v+' '+(res[0].split('/')[0]===res[1].split('/')[0]?'IDENTIQUE':'DIFFERENT')+' '+res.join(' / '));
+    if(sts[0]&&res[0].split('/')[0]!==res[1].split('/')[0]){const ks=new Set([...Object.keys(sts[0]),...Object.keys(sts[1])]),d=[];for(const k of ks){const x=sts[0][k]||0,y=sts[1][k]||0;if(x!==y)d.push([y-x,k+' '+x+'>'+y])}
+      d.sort((p,q)=>Math.abs(q[0])-Math.abs(p[0]));out.push('  why: '+d.slice(0,8).map(q=>q[1]).join(' ; '))}}
   SV_ON=true;LIFE=null;const pre=document.createElement('pre');pre.id='out';pre.textContent=out.join(' | ');document.body.append(pre)},400);
 /* which pieces patch each other: ?grid=1&...&dbgp=1 → the pairs of pieces (index in the head: tepals first, then the heart's pieces; o outer, i inner)
    counted over the sheet, with the cells where each is in front (only the pairs svDraw patches) */

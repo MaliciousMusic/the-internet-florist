@@ -82,10 +82,11 @@ function tulipHead(g,t,o,list,kd){const cw=o.cw||cwNear(list,o.col)||list[0],op=
   const up=B.upV?V3.nz([B.upV[0],B.upV[1],B.upV[2]||0]):[0,1,0],ax=B[2],sw=gh.sw||Dm*.1,Lp=Dm*R(1.4,1.8)*(kd==='french'?1.25:1),Lq=B.reach?Math.max(Dm*.7,Math.min(Lp,B.reach*.38)):Lp;
   let U0=V3s(ax,V3.sc(up,V3.dot(ax,up)));if(V3l(U0)<1e-3)U0=[0,0,1];
   /* the single tulip in native SVG (y-tulipa.js): its head by svBloom, held nearly upright on its stem (the U seen from the side), its neck lengthening
-     and bending as it fades; the bouquet's chance consumed as before */
+     and bending as it fades (on the sheets only: in a bouquet the neck keeps the old geometry); the bouquet's chance consumed as before */
   const sv=kd==='simple'&&typeof tulSvgPut==='function'&&typeof SV_ON!=='undefined'&&SV_ON&&cw&&cw.id,aim=sv?V3.nz(V3.add(V3.sc(ax,.45),V3.sc(up,.85))):ax;
+  if(kd==='double'&&typeof tdbHead==='function'&&typeof SV_ON!=='undefined'&&SV_ON&&cw&&cw.id)return tdbHead(g,t,o,{cw,op,Dm,k,gh,up,ax,sw,Lq,U0});/* the double tulip in native SVG (yz-tulipa-double.js), the same draws */
   const res=lsTurtle([['F',{l:Lq*.45,w0:sw*1.12,w1:sw*1.06,c:gh.sc||TUL_SC}],['F',{l:Lq*.55,w1:sw,aim,k:.24}],['K',{main:1}]],{p:[0,0,0],H:up,U:U0,wig:.035,seg:Dm*.22}),og=res.organs[0];
-  if(sv)tulNeckBend(res,og,tulLife(o));const apex=og.pos;
+  if(sv&&typeof SVA_LIFE!=='undefined'&&SVA_LIFE!=null)tulNeckBend(res,og,tulLife(o));const apex=og.pos;/* the bent neck on the sheets only (y-tulipa.js) */
   lsPlant(k,res,{O:[0,0,0],apex,cols:gh.sc||TUL_SC,organ:(og,pos)=>({parts:[{z:pos[2],fn:par=>sv?tulSvgPut(par,lsFrame(og,null,R(-.12,.12)),pos,Dm,cw,op,o):tulipFlower(par,lsFrame(og,null,R(-.12,.12)),pos,Dm,cw,op,kd)}]})});
   open(k,t,1000,6,.35);return lsNeck(res,[0,0,0],apex)}
 const TUL_SC=['#33503a','#56785c','#80a384','#b2cdb0'];

@@ -144,7 +144,8 @@ function svHeart6(o0){const o=Object.assign({},SVH6_DEF,o0);
    Long, entire, parallel-veined; its foot a sheath clasping the stem, then a blade folded in a gutter along its midrib, the margins waved, the tip
    narrowing into a little hood; glaucous (bloom: a waxy veil silvers its lit side, the gloss low) or glossy. It leaves the stem at an angle (lean),
    then bends under its weight (droop), a little twisted. Wilting (wl), it goes limp and hangs, its gutter opens, the margins curl, it yellows from the
-   tip. pos: its foot on the stem's axis; H the stem, upward; Out the way it leaves the stem (view space, unit vectors). Widths x len. */
+   tip. pos: its foot on the stem's axis; H the stem, upward; Out the way it leaves the stem (view space, unit vectors). Widths x len. roll: once
+   out of its sheath the blade turns on its spine by this much (radians), showing more of one face. */
 const SVL_DEF={len:100,w:.2,wp:[[0,.5],[.1,.66],[.32,1],[.62,.82],[.88,.4],[1,0]],sheath:.1,sr:2,lean:.4,droop:.45,tw:.3,gut:.5,wav:.05,wavN:3,hood:.25,
   up:'#587f68',low:'#7a9a84',base:'#a8c09c',bloom:.6,nu:7,nv:16,wl:0,sd:1};
 function svStrapLeaf(par,pos,H,Out,o0){const o=Object.assign({},SVL_DEF,o0),r=svRng(o.sd),wl=o.wl||0,len=o.len,dn=[0,-1,0],limp=svSm((wl-.15)/.6),W=len*o.w,
@@ -156,7 +157,7 @@ function svStrapLeaf(par,pos,H,Out,o0){const o=Object.assign({},SVL_DEF,o0),r=sv
       k=dr*Math.pow(Math.max(0,(v-o.sheath)/(1-o.sheath)),1.6),d=V3.nz(V3.add(V3.sc(d0,1-k),V3.sc(dn,k)));if(j)p=V3.add(p,V3.sc(d,len/ns));sp.push(p);dv.push(d)}
   const at=(A,v)=>{const x=Math.max(0,Math.min(1,v))*ns,j=Math.min(ns-1,Math.floor(x)),f2=x-j;return V3.add(V3.sc(A[j],1-f2),V3.sc(A[j+1],f2))},
     gut=o.gut*(1-.55*limp),wav=o.wav*(1+.6*limp),sr=o.sr*1.08;
-  const S=(u,v)=>{const c=at(sp,v),d=V3.nz(at(dv,v)),s0=V3.nz(V3s(side0,V3.sc(d,V3.dot(side0,d)))),n0=V3.cr(s0,d),a=tw*v,s=V3.add(V3.sc(s0,Math.cos(a)),V3.sc(n0,Math.sin(a))),n=V3.cr(s,d),
+  const S=(u,v)=>{const c=at(sp,v),d=V3.nz(at(dv,v)),s0=V3.nz(V3s(side0,V3.sc(d,V3.dot(side0,d)))),n0=V3.cr(s0,d),a=tw*v+(o.roll?o.roll*svSm((v-o.sheath)/.3):0),s=V3.add(V3.sc(s0,Math.cos(a)),V3.sc(n0,Math.sin(a))),n=V3.cr(s,d),
       hw=W/2*prof(v),lift=gut*hw*u*u*(1-.5*svSm((v-.6)/.4))+wav*W*Math.pow(Math.abs(u),3)*Math.sin(Math.PI*o.wavN*v+ph+u*.6)*svSm((v-o.sheath)/.2)
         -.35*limp*hw*Math.pow(Math.abs(u),4)+o.hood*hw*u*u*svSm((v-.82)/.18),bl=V3.add(V3.add(c,V3.sc(s,u*hw)),V3.sc(n,lift));
     if(v>=o.sheath*1.8)return bl;
