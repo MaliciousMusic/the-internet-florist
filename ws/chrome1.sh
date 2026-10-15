@@ -1,6 +1,6 @@
 #!/bin/sh
 # chrome1.sh shot <url> <out.png> <W> <H> | dom <url> <out.json>: one headless Chrome, its own throwaway profile per gate slot (run it through gate.sh)
-SP="C:/Users/agent/Desktop/flower-atelier"
+SP="C:/Users/agent/Desktop/flower/flower-atelier"
 CH="/c/Program Files/Google/Chrome/Application/chrome.exe"
 PROF="$SP/chrome_g${GATE_SLOT:-0}"
 LOG="$SP/ws/locks/log${GATE_SLOT:-0}.txt"

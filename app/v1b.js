@@ -23,7 +23,7 @@ function vBody(g0,v,S){const n=S.length-1,tp=v.tp||{},top=FL-S[n][0],mwO=S[n][1]
 function rimPts(cx,top,rx,ry,a0,a1,wave){const P=[];for(let i=0;i<=24;i++){const th=a0+(a1-a0)*i/24;P.push([cx+rx*Math.cos(th),top+ry*Math.sin(th)+(wave?wave.a*UPC*Math.sin(wave.n*th):0)])}return P}
 function vLip(g,v,top,mwO,ry){const tp=v.tp||{},glass=v.mat==='glass',base=vBase(v,v.h),lw=Math.max(1.1,Math.min(v.lipw||3,mwO*.14)),ir=Math.max(.5,mwO-lw),iry=ry*ir/mwO,
     lc=glass?'#ffffff':v.cast?mix(base,'#a49678',.42):v.mat==='metal'?lt(base,.38):lt(base,v.mat==='gloss'?.26:.13),O=rimPts(VX,top,mwO,ry,0,Math.PI,tp.wave),I=rimPts(VX,top,ir,iry,Math.PI,0,tp.wave);
-  E('path',{d:'M'+O.concat(I).map(p=>f(p[0])+','+f(p[1])).join('L')+'Z',fill:lin([[0,lc,glass?.65:1],[.35,lt(lc,.28),glass?.9:1],[1,dk(lc,.22),glass?.45:1]],0,0,1,0)},g);
+  E('path',{d:'M'+O.concat(I).map(p=>f(p[0])+','+f(p[1])).join('L')+'Z',fill:lin([[0,lc,glass?(v.svgb?.38:.65):1],[.35,lt(lc,.28),glass?(v.svgb?.55:.9):1],[1,dk(lc,.22),glass?(v.svgb?.3:.45):1]],0,0,1,0)},g);
   if(v.lip==='rolled'||v.lip==='beaded'){const m=mwO-lw*.4;E('path',{d:'M'+rimPts(VX,top,m,ry*m/mwO,.15,Math.PI-.15,tp.wave).map(p=>f(p[0])+','+f(p[1]-lw*.12)).join('L'),stroke:v.cast?'#efe2c4':'#ffffff','stroke-opacity':v.cast?.22:.38,'stroke-width':f(lw*.32),fill:'none','stroke-linecap':'round'},g)}
   if(v.lip==='thin'||(v.mat==='metal'&&!v.cast))E('path',{d:'M'+O.map(p=>f(p[0])+','+f(p[1])).join('L'),stroke:lt(base,.55),'stroke-width':.6,'stroke-opacity':.8,fill:'none'},g)}
 /* the inside of the mouth and the back half of the rim (drawn behind the stems) */

@@ -1,6 +1,6 @@
 """mk.py: the bronze carp vessel alone (bronze/test.html): the shop page plus the vessel's entry (injected for the render)."""
 import json, sys
-sp = r'C:/Users/agent/Desktop/flower-atelier/'
+sp = r'C:/Users/agent/Desktop/flower/flower-atelier/'
 sys.path.insert(0, sp + 'bronze')
 h = open(sp + 'demo7.html', encoding='utf-8').read()
 PROF = json.loads(open(sp + 'bronze/prof.json').read())

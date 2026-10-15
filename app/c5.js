@@ -24,6 +24,8 @@ function vcen(f0,vw){const R0=RAD[f0]||40;
   if(vw==='bud'){if(f0==='xRose')return R0*.39;if(f0==='xCarn')return R0*.44;if(f0==='xLily')return 31;if(f0==='xAnth')return 29;return R0*.31}
   return 0}
 /* growth from the base: an element scales up from the point where its stem starts, so stems rise from the vase (or the tie) before their flowers open */
+/* the stems seen inside the vessel are marked, so the grow-in (z5.js) makes them grow from the mouth down */
+const inStems=el=>{if(el&&el.setAttribute)el.setAttribute('data-in','1');return el};
 const growUp=(el,x,y,t,d)=>tween(t,d,e=>el.setAttribute('transform',`translate(${f(x)},${f(y)}) scale(${(.01+.99*e).toFixed(3)}) translate(${f(-x)},${f(-y)})`),eo);
 /* render the chosen candidate */
 /* ---------- depth: the bouquet seen in three planes ----------
@@ -151,7 +153,8 @@ function buildBq(svg,ids,sv,vid,t0=150,occ,model,recipe){if(svg._alive)svg._aliv
   let stShow=22;
   /* glass: the stems under the mouth are drawn last, each continuing its own stem (feet gathered while the bouquet is drawn) */
   const GL=v.mat==='glass'&&!!v.prof&&v.kind!=='hand'&&v.kind!=='wrap',feet=[];
-  {const sg=stage(L.plinth,v);stShow=sg.show;vessel(L.vback,vid,t0,{noPlinth:1,part:'back',shClip:sg.top});if(v.kind==='kenzan'||v.mat==='glass'&&!GL){WILT=LIFE?lifeWilt(lifeW(LIFE)*.85):null;try{growUp(stemsBelow(L.stems,12,vid),BP[0],FL-6,t0,560)}finally{WILT=null}}vessel(L.vase,vid,t0,{noPlinth:1,part:'front'})}
+  /* the vessel is there, whole, from the first frame (it never fades in); the stems seen inside it grow from the mouth downward */
+  {const sg=stage(L.plinth,v);stShow=sg.show;vessel(L.vback,vid,0,{noPlinth:1,part:'back',shClip:sg.top});if(v.kind==='kenzan'||v.mat==='glass'&&!GL){WILT=LIFE?lifeWilt(lifeW(LIFE)*.85):null;try{growUp(inStems(stemsBelow(L.stems,12,vid)),BP[0],BP[1],t0+250,700)}finally{WILT=null}}vessel(L.vase,vid,0,{noPlinth:1,part:'front'})}
   let FWD=false;const SC=['#24401c','#3c6229','#5f8a3e','#a9c97a'],held=v.kind==='hand'||v.kind==='wrap',vTop=held?BP[1]:FL-vMh(v),mwV=vMouth(v)||26,mcx=VX+vMx(v);
   /* below the tie of a held bouquet every stem goes on straight in its own direction (the stems cross at the binding point and fan out below it) */
   const below=(x,y,tx,ty,w,cols,t)=>{let l=Math.hypot(tx,ty)||1,ux=tx/l,uy=ty/l;if(uy>-.2)return;const an=Math.max(-.32,Math.min(.32,Math.atan2(ux,-uy)))+R(-.05,.05);ux=Math.sin(an);uy=-Math.cos(an);const Lb=R(118,142),Q=[[x,y],[x-ux*Lb*.34,y-uy*Lb*.34],[x-ux*Lb*.67,y-uy*Lb*.67],[x-ux*Lb+R(-3,3),y-uy*Lb]];
@@ -248,7 +251,7 @@ function buildBq(svg,ids,sv,vid,t0=150,occ,model,recipe){if(svg._alive)svg._aliv
   /* then, in a fading bouquet, no stem seen running under a head painted behind its own head (stemsOver) */
   try{const ws=tw.slice(tw0);for(const w of ws)w.fn(1,1);try{heartsFree(L,list,c);if(LIFE&&LIFE.stage>=2)stemsOver(L,list,c,v)}finally{for(const w of ws)w.fn(0,0)}}catch(_){}
   /* in a glass vessel every stem goes on under the mouth: the continuation of its own stem, down to the bottom */
-  if(GL&&feet.length){WILT=LIFE?lifeWilt(lifeW(LIFE)*.85):null;try{growUp(stemsIn(L.stems,feet,vid),BP[0],FL-6,t0,560)}finally{WILT=null}}
+  if(GL&&feet.length){WILT=LIFE?lifeWilt(lifeW(LIFE)*.85):null;try{growUp(inStems(stemsIn(L.stems,feet,vid)),BP[0],BP[1],t0+250,700)}finally{WILT=null}}
   /* petals fallen on the table (not swayed by the breeze, outside the frame measure) */
   if(LIFE&&LIFE.stage>=2&&!held)lifeFallen(L.plinth,LIFE,list.filter(o=>o.kind==='head'),BP,mwV,stShow,sv);
   /* frame on the real silhouette */

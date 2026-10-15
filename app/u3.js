@@ -102,7 +102,7 @@ function openOv(mode,d){d=d||curGift();OV={mode,d};stopIdle();stopMusic();const 
   {const c=bgCol(d.bg),o2=$('ov');o2.style.background=bgCss(c);o2.classList.toggle('dark',isDark(c))}
   $('ovTitle').textContent=mode==='preview'?`Voici ce que verra ${d.to}`:`Un bouquet de ${d.from}`;$('ovBq').innerHTML='';$('ovHearts').innerHTML='';$('ovCard').classList.remove('show');$('ovAct').innerHTML='';$('ovWid').hidden=true;$('env').hidden=false;$('envTo').textContent='pour '+d.to;
   $('cTo').textContent=d.to+',';$('cMsg').textContent=d.msg;$('cFrom').textContent=d.from}
-$('env').onclick=()=>{if(!OV)return;const d=OV.d;$('env').hidden=true;tw.length=0;idle.length=0;DEPTH_BG=bgCol(d.bg);const c=buildBq($('ovBq'),d.ids||[],d.seed||7,d.vase,100,d.occ,d.model||null);DEPTH_BG='#efe8de';lastOvC=c;play();playMusic(d.music);
+$('env').onclick=()=>{if(!OV)return;const d=OV.d;$('env').hidden=true;tw.length=0;idle.length=0;DEPTH_BG=bgCol(d.bg);const c=buildBq($('ovBq'),d.ids||[],d.seed||7,d.vase,100,d.occ,d.model||null);DEPTH_BG='#efe8de';lastOvC=c;growBq($('ovBq'),c);playMusic(d.music);
   setTimeout(()=>OV&&confetti($('ovHearts'),d.conf||'coeurs',RM?12:40),900);setTimeout(()=>{if(!OV)return;const[sp,px]=bfSpots($('ovBq'),c,$('ovHearts'));butterflies($('ovHearts'),bfKind(d.bf),0,0,sp,px)},1400);setTimeout(()=>OV&&$('ovCard').classList.add('show'),2300);setTimeout(actions,2700)};
 function actions(){if(!OV)return;const a=$('ovAct'),fr=OV.d.from;
   if(OV.mode==='preview'){a.innerHTML=`<button class="btn2" type="button" id="aEdit">Modifier</button><button class="cta" type="button" id="aPay"><span>Payer</span><b>${eur(total())}</b></button>`;$('aEdit').onclick=closeOv;$('aPay').onclick=pay}

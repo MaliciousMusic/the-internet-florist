@@ -1,7 +1,7 @@
 #!/bin/sh
 # wsb.sh <ws>: builds ws/<ws>/pl.html (planche, cards, sptime) and ws/<ws>/qa13.html (QA, perf) from app/ with the workspace overlaid:
 # a .js in ws/<ws>/ with the name of an app/ module replaces it; any other .js there loads just before c4.js (after every lot and reprise)
-SP="C:/Users/agent/Desktop/flower-atelier"
+SP="C:/Users/agent/Desktop/flower/flower-atelier"
 W="$SP/ws/$1"; A="$SP/app"; [ -d "$W" ] || { echo "pas de workspace $W"; exit 1; }
 LIST=$(sed -n 's/.*cat \.\.\/p2\.js \.\.\/p3\.js \.\.\/p4\.js \(.*k1\.js\).*/\1/p' "$SP/mkpl.sh")
 files=""; over=""; extra=""

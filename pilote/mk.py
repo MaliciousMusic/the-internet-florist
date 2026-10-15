@@ -1,7 +1,7 @@
 """mk.py: the pilot page: the bouquet « Printemps à la carpe » (seed 23, bronze carp vessel) drawn before and after the pixel heads, side by side
 (pilote/bq.html), and alone with pixel heads, alive (pilote/bqp.html)."""
 import json
-sp = r'C:/Users/agent/Desktop/flower-atelier/'
+sp = r'C:/Users/agent/Desktop/flower/flower-atelier/'
 h = open(sp + 'demo7.html', encoding='utf-8').read()
 src = open(sp + 'bronze/bq.py', encoding='utf-8').read()
 ns = {}

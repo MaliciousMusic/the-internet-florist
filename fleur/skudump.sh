@@ -16,5 +16,5 @@ s=open('demo7.html',encoding='utf-8').read()
 i=s.rindex('</body>')
 open('lab/skudump.html','w',encoding='utf-8').write(s[:i]+open('lab/skudump_ids.js',encoding='utf-8').read()+s[i:])
 PY
-sh C:/Users/agent/Desktop/flower-atelier/ws/gate.sh sh C:/Users/agent/Desktop/flower-atelier/ws/dbgdump.sh "http://localhost:8765/${REL}/lab/skudump.html" > "refcache/sku-$1.csv"
+sh C:/Users/agent/Desktop/flower/flower-atelier/ws/gate.sh sh C:/Users/agent/Desktop/flower/flower-atelier/ws/dbgdump.sh "http://localhost:8765/${REL}/lab/skudump.html" > "refcache/sku-$1.csv"
 wc -l "refcache/sku-$1.csv"; head -2 "refcache/sku-$1.csv"

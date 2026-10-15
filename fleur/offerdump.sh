@@ -51,5 +51,5 @@ s=open('demo7.html',encoding='utf-8').read()
 i=s.rindex('</body>')
 open('lab/offerdump.html','w',encoding='utf-8').write(s[:i]+open('lab/offerdump_ids.js',encoding='utf-8').read()+s[i:])
 PY
-sh C:/Users/agent/Desktop/flower-atelier/ws/gate.sh sh C:/Users/agent/Desktop/flower-atelier/ws/dbgdump.sh "http://localhost:8765/${REL}/lab/offerdump.html" > "refcache/offer-$1.txt"
+sh C:/Users/agent/Desktop/flower/flower-atelier/ws/gate.sh sh C:/Users/agent/Desktop/flower/flower-atelier/ws/dbgdump.sh "http://localhost:8765/${REL}/lab/offerdump.html" > "refcache/offer-$1.txt"
 cat "refcache/offer-$1.txt"

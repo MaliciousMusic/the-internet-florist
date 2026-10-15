@@ -1,7 +1,7 @@
 #!/bin/sh
 # gate.sh <command...>: runs one headless-Chrome job when a slot is free (GATE_MAX, 3 by default, shared by every workspace)
 # and the PC has room (CPU under 85 %, more than 3.8 GB of free RAM); the slot number is exported as GATE_SLOT
-SP="C:/Users/agent/Desktop/flower-atelier"
+SP="C:/Users/agent/Desktop/flower/flower-atelier"
 LK="$SP/ws/locks"; mkdir -p "$LK"; MAX=${GATE_MAX:-3}; SLOT=""; waited=0
 while [ -z "$SLOT" ]; do
   now=$(date +%s)

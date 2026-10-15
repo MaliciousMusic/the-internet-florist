@@ -6,7 +6,7 @@
 #   merge : brings a finished chantier into the main atelier (git merge; conflicts are reported, never forced)
 #   drop  : removes the working copy (its branch stays)
 # Shared by every chantier: the gate (3 headless Chromes), the QA lock (one QA at a time), recv.py (8781), the server (8765), bill.py.
-MAIN="C:/Users/agent/Desktop/flower-atelier"
+MAIN="C:/Users/agent/Desktop/flower/flower-atelier"
 cd "$MAIN" || exit 1
 case "$1" in
   new)

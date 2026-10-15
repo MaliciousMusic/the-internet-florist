@@ -16,8 +16,8 @@ import sys, os, re, json, time, math, glob, shutil, argparse, subprocess, thread
 
 sys.stdout.reconfigure(encoding='utf-8', errors='replace')
 HERE = os.path.dirname(os.path.abspath(__file__))
-MAIN = 'C:/Users/agent/Desktop/flower-atelier'  # the shared atelier: gate, locks, servers (never modified here)
-FC = 'C:/Users/agent/Desktop/flower-claude'     # the repository: standards read here, sheets copied there, never committed
+MAIN = 'C:/Users/agent/Desktop/flower/flower-atelier'  # the shared atelier: gate, locks, servers (never modified here)
+FC = 'C:/Users/agent/Desktop/flower/flower-claude'     # the repository: standards read here, sheets copied there, never committed
 STEPS = ['census', 'refs', 'coloris', 'targets', 'forme', 'fit', 'plante', 'finition', 'temoins', 'qa', 'planches']
 MODELS = {'haiku': 'claude-haiku-5-5', 'sonnet': 'claude-sonnet-5-5', 'opus': 'claude-opus-5-5'}
 W = {'in': 1, 'cw': 1.25, 'cr': .1, 'out': 5}  # Opus input-equivalent weights (bill.py)

@@ -14,7 +14,7 @@ const stemCount=c=>c.out.filter(o=>o.kind==='head'||o.kind==='self'||o.kind==='d
 function thumb(svg,p){LOD=1;try{renderStatic(()=>{const g=G(svg);if(p.info.k==='head')drawRec(g,0,p.rec,{col:p.col,ax:[.2,.3,.95],roll:0});else if(p.info.an)drawRec(G(g,{transform:`translate(0,${f(-p.info.an[1])})`}),0,p.rec,{col:p.col});else drawRec(g,0,p.rec,{col:p.col})})}catch(_){}LOD=0;fitBox(svg,.06)}
 /* ---------- model detail ---------- */
 function openModel(m){S.route='model';S.model=JSON.parse(JSON.stringify(m));S.vase=m.vase||'coupe-blanche';SEED=1+Math.floor(Math.random()*1e5);MD=1;$('md').classList.add('on');$('mdT').textContent=m.nom;renderModel()}
-function renderModel(now){const m=S.model;stopIdle();tw.length=0;idle.length=0;const c=buildBq($('mdBq'),[],SEED,S.vase,now?0:100,null,m);lastMdC=c;if(now){for(const w of tw)w.fn(1,1);tw.length=0;aliveBq($('mdBq'),c)}else play();
+function renderModel(now){const m=S.model;stopIdle();tw.length=0;idle.length=0;const c=buildBq($('mdBq'),[],SEED,S.vase,now?0:100,null,m);lastMdC=c;if(now){for(const w of tw)w.fn(1,1);tw.length=0;aliveBq($('mdBq'),c)}else growBq($('mdBq'),c);
   $('mdS').textContent=`${stemsOf(m)} tiges · ${m.notes||''}`;$('mdP').textContent=eur(total());
   /* every element of the model under the player's hand: stems (− n +), place from 1 (back) to 10 (front), Échanger, Retirer */
   const box=$('mdEls'),sc=[1,2,3,4,5,6,7,8,9,10];box.innerHTML=m.els.map((e,i)=>{const p=prodFor(e.id,e.col);if(!p)return'';const n=Math.max(1,Math.round(e.n)),s=e.place||5;
@@ -39,7 +39,7 @@ let FS=[],FI=0;
 function openFlow(){FS=(S.route==='model'?[]:['composition']).concat(['contenant','message','confettis','papillons','musique','apercu']);FI=0;FLOW=1;$('fl').classList.add('on');if(S.route==='compose')SEED=SEED||7;drawFlowBq();showStep()}
 /* now: redrawn at once in its final state (a change of the player's hand), else it grows */
 function drawFlowBq(now){stopIdle();tw.length=0;idle.length=0;$('flBq').style.background=bgCss(bgCol(S.bg));DEPTH_BG=bgCol(S.bg);const t0=now?0:100,c=S.route==='model'?buildBq($('flBq'),[],SEED,S.vase,t0,null,S.model):withOpt(()=>buildBq($('flBq'),expand(),SEED,S.vase,t0,S.occ,null));
-  DEPTH_BG='#efe8de';if(now){for(const w of tw)w.fn(1,1);tw.length=0;aliveBq($('flBq'),c)}else play();return c}
+  DEPTH_BG='#efe8de';if(now){for(const w of tw)w.fn(1,1);tw.length=0;aliveBq($('flBq'),c)}else growBq($('flBq'),c);return c}
 function miniVessel(svg,id){const D0=GDEF;GDEF=E('defs',{},svg);try{miniV(svg,id)}finally{GDEF=D0}}
 function miniV(svg,id){const v=VZ[id]||{};
   /* the vessel on its stand, framed on the vessel with a little of what it stands on */
