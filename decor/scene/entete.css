@@ -1,0 +1,246 @@
+/* The header (dock of icons) and the footer (legal notice) of the shop's pages, built by entete.js. Frosted glass like the
+   cards: a light veil, a thin clear edge, the scene blurred behind; never a halo or a glow. Only transforms move. */
+:root {
+  --verre: rgb(255 255 255 / 0.17);
+  --verre-bas: rgb(16 48 86 / 0.1);
+  --verre-bord: rgb(255 255 255 / 0.5);
+  --verre-bord-choisi: rgb(255 255 255 / 0.9);
+  --encre: #fff;
+  --texte: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  /* the dock: 40 px icons in a 52 px capsule (5 px of air round the chosen one), 14 px under the top edge */
+  --dock-h: 52px;
+  --entete-haut: calc(env(safe-area-inset-top) + 14px);
+  --entete-bas: calc(var(--entete-haut) + var(--dock-h));
+  /* on a computer the dock is at the bottom: its foot just above the footer's pill, and what stands above it */
+  --dock-pied: calc(env(safe-area-inset-bottom) + 38px);
+  --dessus-dock: calc(var(--dock-pied) + var(--dock-h) + 12px);
+}
+
+/* ---------- the header ---------- */
+.entete {
+  position: fixed;
+  top: var(--entete-haut);
+  left: 0;
+  right: 0;
+  z-index: 50;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.dock {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  height: var(--dock-h);
+  padding: 0 6px;
+  border: 1px solid var(--verre-bord);
+  border-radius: 999px;
+  background: linear-gradient(to bottom, var(--verre), var(--verre-bas)), var(--verre);
+  -webkit-backdrop-filter: blur(14px) saturate(1.1);
+  backdrop-filter: blur(14px) saturate(1.1);
+  box-sizing: border-box;
+  pointer-events: auto;
+}
+
+.dock-bouton {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  margin: 0;
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  background: none;
+  color: var(--encre);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 0.2s ease;
+}
+
+/* a 48 px touch area round each 40 px icon */
+.dock-bouton::before {
+  content: '';
+  position: absolute;
+  inset: -4px -2px;
+}
+
+.dock-bouton[aria-expanded='true'],
+.dock-bouton[aria-current='page'] {
+  border-color: var(--verre-bord-choisi);
+  background: rgb(255 255 255 / 0.2);
+}
+
+.dock-bouton:active {
+  transform: scale(0.92);
+}
+
+.dock-bouton:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 1px;
+}
+
+.dock-bouton:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.dock-sep {
+  width: 1px;
+  height: 22px;
+  margin: 0 5px;
+  background: rgb(255 255 255 / 0.45);
+}
+
+/* ---------- the footer: a small pill at the bottom edge, unfolding the legal notice ---------- */
+.pied {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 45;
+  pointer-events: none;
+  font-family: var(--texte);
+  color: var(--encre);
+}
+
+.pied-poignee {
+  position: absolute;
+  left: 50%;
+  bottom: calc(env(safe-area-inset-bottom) + 6px);
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  height: 22px;
+  padding: 0 7px 0 10px;
+  border: 1px solid rgb(255 255 255 / 0.35);
+  border-radius: 999px;
+  background: rgb(16 48 86 / 0.14);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  color: rgb(255 255 255 / 0.88);
+  font: 500 11px/1 var(--texte);
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  pointer-events: auto;
+  transform: translateX(-50%);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.pied-poignee svg {
+  width: 13px;
+  height: 13px;
+}
+
+.pied-poignee:focus-visible,
+.pied-fermer:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+.pied-panneau {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: min(100%, 640px);
+  max-height: min(72dvh, 560px);
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 14px max(18px, env(safe-area-inset-left)) calc(env(safe-area-inset-bottom) + 18px);
+  border: 1px solid var(--verre-bord);
+  border-bottom: 0;
+  border-radius: 18px 18px 0 0;
+  background: linear-gradient(to bottom, rgb(255 255 255 / 0.24), rgb(16 48 86 / 0.2)), rgb(60 98 140 / 0.32);
+  -webkit-backdrop-filter: blur(22px) saturate(1.1);
+  backdrop-filter: blur(22px) saturate(1.1);
+  pointer-events: auto;
+  transform: translate(-50%, 102%);
+  visibility: hidden;
+  transition:
+    transform 0.42s cubic-bezier(0.2, 0.8, 0.2, 1),
+    visibility 0s linear 0.42s;
+}
+
+.pied.ouvert .pied-panneau {
+  transform: translate(-50%, 0);
+  visibility: visible;
+  transition:
+    transform 0.42s cubic-bezier(0.2, 0.8, 0.2, 1),
+    visibility 0s;
+}
+
+.pied-tete {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 6px;
+}
+
+.pied-tete h2 {
+  margin: 0;
+  font: 600 16px/1.2 var(--texte);
+}
+
+.pied-fermer {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  border: 1px solid rgb(255 255 255 / 0.4);
+  border-radius: 999px;
+  background: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+.pied-fermer svg {
+  width: 18px;
+  height: 18px;
+}
+
+.pied-texte {
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  font: 400 13px/1.5 var(--texte);
+  color: rgb(255 255 255 / 0.94);
+}
+
+.pied-texte h3 {
+  margin: 14px 0 3px;
+  font: 600 13px/1.3 var(--texte);
+  color: #fff;
+}
+
+.pied-texte p {
+  margin: 0;
+}
+
+.pied-texte .pied-brouillon {
+  margin-top: 2px;
+  font-style: italic;
+  color: rgb(255 255 255 / 0.8);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pied-panneau,
+  .pied.ouvert .pied-panneau,
+  .dock-bouton {
+    transition: none;
+  }
+}
+
+/* computer: the dock goes to the bottom, above the footer's pill */
+@media (min-width: 900px) and (min-aspect-ratio: 4/3) {
+  .entete {
+    top: auto;
+    bottom: var(--dock-pied);
+  }
+
+  .pied.ouvert {
+    z-index: 55;
+  }
+}

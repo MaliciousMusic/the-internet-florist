@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>À propos</title>
+<link rel="stylesheet" href="scene.css">
+<link rel="stylesheet" href="entete.css">
+<style>
+  /* The About page: the shop's still decor behind (the same files as the shop page, already in the browser's cache), one
+     frosted-glass panel that scrolls between the header and the footer's pill. */
+  .apropos {
+    position: fixed;
+    top: calc(var(--entete-bas) + 12px);
+    bottom: calc(env(safe-area-inset-bottom) + 40px);
+    left: 50%;
+    z-index: 40;
+    width: min(calc(100vw - 24px), 620px);
+    box-sizing: border-box;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: 22px clamp(18px, 5vw, 34px) 26px;
+    border: 1px solid var(--verre-bord);
+    border-radius: 20px;
+    background: linear-gradient(to bottom, rgb(255 255 255 / 0.22), rgb(16 48 86 / 0.16)), rgb(60 98 140 / 0.28);
+    -webkit-backdrop-filter: blur(20px) saturate(1.1);
+    backdrop-filter: blur(20px) saturate(1.1);
+    color: #fff;
+    font: 400 15px/1.6 var(--texte);
+    transform: translateX(-50%);
+  }
+
+  /* computer: the dock is at the bottom */
+  @media (min-width: 900px) and (min-aspect-ratio: 4/3) {
+    .apropos {
+      top: 24px;
+      bottom: var(--dessus-dock);
+    }
+  }
+
+  .apropos h1 {
+    margin: 0 0 4px;
+    font: 600 24px/1.2 var(--texte);
+  }
+
+  .apropos .chapeau {
+    margin: 0 0 8px;
+    color: rgb(255 255 255 / 0.9);
+    font-size: 16px;
+  }
+
+  .apropos h2 {
+    margin: 20px 0 4px;
+    font: 600 16px/1.3 var(--texte);
+  }
+
+  .apropos p {
+    margin: 0;
+  }
+
+  .apropos a {
+    color: #fff;
+    font-weight: 600;
+    text-underline-offset: 3px;
+  }
+
+  .apropos a:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+  }
+
+  .apropos .retour {
+    display: inline-block;
+    margin-top: 22px;
+  }
+</style>
+</head>
+<body>
+<!--
+  About page of the shop (a draft for the owner to rewrite): what the project is, how a bouquet is made and priced, how
+  it is bought. The header and the footer come from entete.js. The decor is the shop's still layers (decor/out/), without
+  the bouquet, the clouds or the foreground.
+-->
+<main class="scene" id="scene" aria-hidden="true">
+  <div class="monde">
+    <img class="plan" style="--z:0" src="../out/ciel.svg" alt="" decoding="async">
+    <img class="plan" style="--z:3" src="../out/horizon.svg" alt="" decoding="async">
+    <img class="plan" style="--z:4" src="../out/sol-loin.svg" alt="" decoding="async">
+    <img class="plan" style="--z:5" src="../out/sol-milieu.svg" alt="" decoding="async">
+    <img class="plan" style="--z:7" src="../out/sol-pres.svg" alt="" decoding="async">
+  </div>
+</main>
+
+<article class="apropos">
+  <h1>À propos</h1>
+  <p class="chapeau">Des bouquets dessinés fleur par fleur, qui éclosent sous vos yeux.</p>
+
+  <h2>Des fleurs dessinées d’après nature</h2>
+  <p>Chaque fleur de ce jardin est dessinée en code, trait par trait, à partir de vraies photos : la forme des pétales, leurs
+    couleurs relevées sur chaque variété, les boutons, la fleur ouverte et la fleur fanée. Plus de cinq cents espèces
+    sont déjà au jardin.</p>
+
+  <h2>Un bouquet unique chaque jour</h2>
+  <p>Chaque jour, de nouveaux bouquets sont composés, chacun dans un vrai vase, comme la carpe en bronze. Chaque bouquet est unique :
+    la place de chaque tige, chaque fleur et chaque feuille ne se retrouve dans aucun autre.</p>
+
+  <h2>Un bouquet vivant</h2>
+  <p>Un bouquet vit trois mois à compter de sa frappe : un compte à rebours, en heures et en minutes, l’indique. Ensuite,
+    il reste fané, immobile, pour toujours.</p>
+
+  <h2>Le prix des vraies tiges</h2>
+  <p>Le prix d’un bouquet est la somme des prix de ses tiges chez un fleuriste en France. Le vase est offert. À la
+    revente, nous ne prenons rien : 0 % de royalties.</p>
+
+  <h2>Collectionner un bouquet</h2>
+  <p>Les bouquets sont des NFT de la chaîne Base, mis en vente sur notre page OpenSea. Vous les réglez ici même, depuis
+    votre portefeuille, sans quitter le site.</p>
+
+  <h2>Soutenir le jardin</h2>
+  <p>Chaque bouquet collectionné fait grandir le jardin : de nouvelles espèces, de nouveaux vases, de nouveaux
+    bouquets.</p>
+
+  <a class="retour" href="index.html">← Retour aux bouquets</a>
+</article>
+
+<script src="entete.js" defer></script>
+</body>
+</html>

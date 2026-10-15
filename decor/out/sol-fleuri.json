@@ -1,0 +1,95 @@
+{
+ "coupes": [
+  7,
+  3.3
+ ],
+ "fichiers": {
+  "sol-loin.svg": {
+   "brut": 721.8,
+   "gzip": 165.4
+  },
+  "sol-milieu.svg": {
+   "brut": 1437.2,
+   "gzip": 322.5
+  },
+  "sol-pres.svg": {
+   "brut": 735.9,
+   "gzip": 156.7
+  }
+ },
+ "total3": 644.6,
+ "fleurs": {
+  "tp": 113,
+  "tm": 439,
+  "sil": 779,
+  "far": 8807,
+  "bandes": 121,
+  "low": 398,
+  "ids": {
+   "F0_": "tp/nt-jaune-a",
+   "F1_": "tp/nt-jaune-or-a",
+   "F2_": "tp/ts-rouge-feu-a",
+   "F3_": "tp/td-blanc-a",
+   "F4_": "tp/nt-citron-a",
+   "F5_": "tp/ts-rose-a",
+   "F6_": "tp/ts-blanc-a",
+   "F7_": "tm/td-rose-a",
+   "F8_": "tp/td-rose-a",
+   "F9_": "tp/ts-rouge-a",
+   "Fa_": "tm/ts-rouge-a",
+   "Fb_": "tm/ts-rouge-b",
+   "Fc_": "tm/ts-rose-a",
+   "Fd_": "tm/ts-fuchsia-a",
+   "Fe_": "tp/ts-fuchsia-a",
+   "Ff_": "tm/ts-orange-a",
+   "Fg_": "tm/td-blanc-a",
+   "Fh_": "tm/tp-abricot-a",
+   "Fi_": "tm/nt-jaune-b",
+   "Fj_": "tm/nt-jaune-a",
+   "Fk_": "tm/nt-jaune-c",
+   "Fl_": "tm/tf-rose-a",
+   "Fm_": "tm/an-rouge-a",
+   "Fn_": "tm/td-jaune-a",
+   "Fo_": "tm/re-rose-a",
+   "Fp_": "tm/ja-bleu-a",
+   "Fq_": "tm/ts-rouge-feu-a",
+   "Fr_": "tm/nt-jaune-or-a",
+   "Fs_": "tm/ja-rose-a",
+   "Ft_": "tm/an-blanc-a",
+   "Fu_": "tm/mu-bleu-a",
+   "Fv_": "tm/ir-bleu-b",
+   "Fw_": "tm/ir-bleu-a",
+   "Fx_": "tm/tf-blanc-a",
+   "Fy_": "tm/re-orange-a",
+   "Fz_": "tm/an-bleu-a",
+   "F10_": "tm/ts-rose-b",
+   "F11_": "tm/ts-jaune-b",
+   "F12_": "tp/fr-damier-a",
+   "F13_": "tp/ts-jaune-a",
+   "F14_": "tp/tf-rose-a",
+   "F15_": "tm/fr-damier-a",
+   "F16_": "tm/ts-jaune-a",
+   "F17_": "tm/ts-corail-a"
+  },
+  "drifts": 347,
+  "pieces": 44,
+  "silhouettes": 31,
+  "gradients": 22,
+  "kB": {
+   "defs": 106.6,
+   "uses": 69.2,
+   "total": 176.3
+  }
+ },
+ "sol": {
+  "prairie": 170.7,
+  "loin": 66,
+  "pilier": 140.9,
+  "dalles": 43.5,
+  "total": 608.2
+ },
+ "ms": {
+  "plantation": 474,
+  "sol": 1793
+ }
+}

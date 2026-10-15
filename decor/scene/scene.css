@@ -1,0 +1,174 @@
+/* Shop scene test bench. One world frame of 2400 x 1350 units, scaled to cover the screen and anchored at the bottom
+   centre, so a phone sees the central column and a desktop the whole panorama. Positions inside are in % of the world.
+   Drifting sky: looping veil bands (.bande, 200 % wide, translateX -50 % -> 0) or single crossing clouds (.nuage);
+   see the head of scene.js for the scene.json keys.
+   Shop (2026-10-15): .bouquet is the whole world plane (boutique.js places the bouquet's own box in it); the cards
+   (.cartes), the Buy button and the pillar marker of ?debug=1 are styled in boutique.css. */
+:root {
+  --sky-fallback: #6fa6dc;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  background: var(--sky-fallback);
+  overflow: hidden;
+}
+
+.scene {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  /* the sky's zenith (ciel.svg's top), showing above the world when it is lowered */
+  background: #6c9bcf;
+}
+
+/* cover: as wide as the screen or as wide as 16:9 of its height, whichever is larger */
+.monde {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: max(100vw, 100dvh * 2400 / 1350);
+  aspect-ratio: 2400 / 1350;
+  transform: translateX(-50%);
+  container-type: size;
+}
+
+.plan {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: var(--z);
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Computer (a landscape screen 900 px wide or more): the world hangs from the top edge, whatever the window's shape, so
+   a window wider than 16:9 (not full screen) frames the sky and the frames as the full screen does and only shows less of
+   the foreground, which goes under the bottom edge. --ciel-en-plus lowers it by that fraction of its own height for more
+   sky above (the zenith colour fills it); 0 matches the owner's full-screen reference of 2026-10-16. boutique.js reads
+   the resulting offset. */
+@media (min-width: 900px) and (min-aspect-ratio: 4/3) {
+  .monde {
+    --ciel-en-plus: 0;
+    top: calc(max(100vw, 100dvh * 2400 / 1350) * 1350 / 2400 * var(--ciel-en-plus));
+    bottom: auto;
+  }
+}
+
+/* Clouds: each one crosses the world from just off the left edge to just off the right edge. --t is the crossing time
+   (higher clouds faster, low clouds near the horizon slower), --d a negative delay that spreads them along the way. */
+.nuage {
+  position: absolute;
+  left: 0;
+  top: var(--y);
+  width: var(--w);
+  will-change: transform;
+  animation: derive var(--t) linear var(--d) infinite;
+}
+
+@keyframes derive {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(100cqw);
+  }
+}
+
+/* Veil bands: a 4800-wide image, periodic every 2400 (one tile), at 200 % of the world's width, sliding left to right
+   by half its width in --t seconds, then looping; the tile wraps, so there is no seam and no empty sky. Only a
+   translation moves: nothing inside the image, no opacity, no filter. The lower band is slower (farther). */
+.bande {
+  position: absolute;
+  left: 0;
+  top: var(--y);
+  width: 200%;
+  height: auto;
+  will-change: transform;
+  animation: boucle var(--t) linear var(--d) infinite;
+}
+
+@keyframes boucle {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* Foreground clumps sway around their base; the delay grows from left to right, so a gust crosses the field. */
+.touffe {
+  position: absolute;
+  left: var(--x);
+  bottom: var(--b);
+  width: var(--w);
+  transform-origin: 50% 100%;
+  will-change: transform;
+  animation: balance var(--t) ease-in-out var(--d) infinite alternate;
+}
+
+@keyframes balance {
+  from {
+    transform: rotate(calc(-1 * var(--a)));
+  }
+  to {
+    transform: rotate(var(--a));
+  }
+}
+
+/* Bouquet plane: the whole world frame; boutique.js stands the bouquet in it (.bq-pose), the vessel's foot on the pillar's
+   top (x 1200, y 700), at the scale of boutique.json (boutique.css). */
+.bouquet {
+  overflow: visible;
+}
+
+.paused .nuage,
+.paused .bande,
+.paused .touffe {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nuage,
+  .bande,
+  .touffe {
+    animation: none;
+  }
+}
+
+/* ?debug=1 */
+.colonne {
+  display: none;
+}
+
+.debug .colonne {
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: calc((2400 - 760) / 2 / 2400 * 100%);
+  width: calc(760 / 2400 * 100%);
+  outline: 2px dashed rgb(255 0 0 / 0.6);
+  z-index: 20;
+  pointer-events: none;
+}
+
+.debug .bouquet {
+  outline: 2px dashed rgb(0 0 255 / 0.6);
+}
+
+.perf {
+  position: fixed;
+  right: 8px;
+  bottom: 8px;
+  z-index: 30;
+  padding: 4px 8px;
+  font: 12px/1.3 ui-monospace, monospace;
+  color: #fff;
+  background: rgb(0 0 0 / 0.55);
+  border-radius: 4px;
+}

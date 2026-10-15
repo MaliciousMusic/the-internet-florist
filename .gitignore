@@ -17,3 +17,17 @@ ws/locks/
 ch/
 __pycache__/
 *.pyc
+
+# glass vase work: photo crops and renders stay private
+verre/out/
+
+# shop decor: review plates and raster renders may hold reference photos (never committed); they are rebuilt by the
+# planche_*.py / *_rendu.mjs tools. The site itself only uses the SVG layers of decor/out/.
+decor/planches/
+decor/out/**/*.png
+decor/out/**/*.jpg
+decor/out/**/*.webp
+# built by decor/scene/mkengine.sh
+decor/scene/engine.js
+# stray output of a shell redirect
+decor/nul

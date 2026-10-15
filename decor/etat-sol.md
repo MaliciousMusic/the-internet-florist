@@ -1,0 +1,20 @@
+# Sol de la scène (D3) : état au 15 octobre 2026, relais
+
+- **Assemblage** `decor/sol.mjs` → `out/sol.svg` (+ `sol.json` : coupes, dalles, poids). Ordre par profondeur : z4 (`farMeadow`), puis `grassBand(1,6-14,5)` coupée à chaque objet (pilier 4,37 m, chaque dalle à son bord arrière) ; l'herbe enracinée au-delà passe derrière, la plus proche devant. Chaque rang n'est calculé qu'une fois (tons identiques de part et d'autre d'une coupe). Remplace prairie-loin + prairie-milieu + chemin + pilier dans la page (fichiers séparés toujours produits ; `decor/scene/` non touché).
+- **Fleurs (chantier suivant)** : `sol({ inserts: [{ z, svg, defs, zmin }] })`, documenté en tête de `sol.mjs` ; testé (coupes ajoutées, aucun id en double).
+- **Passage (retour du porteur)** : allée fauchée du bas du cadre au pied du pilier. Ligne foulée 3-4 cm (`TROD` 0,35 × `lawnAt` 8-12 cm), feuilles couchées le long du passage (tuile de feuilles plates par rang, en perspective), remontée progressive à 8-12 cm à 0,42 m, puis retour à la prairie haute sur 0,26-0,31 m (lisière bruitée 3-10 cm). Disque fauché autour du pilier, collier d'herbe non coupée par plaques au ras du pied.
+- **Dalles reprises** (`dalles.mjs`, API `stones(seed, { lawn })`) : enfoncées, tranche 0,4-2,5 cm (médiane 1,2-1,4) ; arête irrégulière (ondes 3-12 cm, éclats, hauteur ±5 mm) ; dessus en lave sans grain en tirets : patine en plaques douces, alvéoles par poches + fond léger, lichens en colonies ; mousse en coussinets (tuile en perspective) à cheval sur les bords avant et latéraux, plaques sur les marges, mousse dans les joints, terre sombre au ras ; ombres des brins du gazon sur le dessus, contact sans filtre.
+- **Pilier** : appelé tel quel (`pilier(1)`, ids préfixés `p`), dernière version prise à 19 h 56 ; ombre portée posée sur l'herbe de derrière, sous celle de devant.
+- **Mesures** (`sol_mesure.mjs`, 1,8 px/unité) : dalles visibles 97/81/83/79 % (de la plus proche à la dernière) ; pied du pilier visible à 85 % sur ses 10 cm du bas ; allée #556c2c L 42,5 contre prairie #2d440d L 25,9 ; dessus des dalles #6d7072 L 47 ; pied #33391e.
+- **Poids** : sol.svg 477,7 Ko gzip (1,73 Mo brut, 13 562 éléments), au-dessus des 400 visés : pilier 148, prairie + allée 204 (gazon dense ≈ 30, masses replacées sous les objets ≈ 20), z4 78, dalles et mousse 43,5. Leviers : `setLawnK` (≈ 8,5 Ko par unité), le pilier. Génération 1,4 s ; resvg 2400 px 1,6 s.
+- **Outils** : `sol_rendu.mjs` (rend chaque plan en entier puis découpe les pixels : resvg panique sur un groupe découpé ou filtré hors cadre), `sol_mesure.mjs`, `planche_sol.py` → `planches/d3-sol.png`.
+- **Reprise** : `node decor/sol.mjs && node decor/sol_mesure.mjs && node decor/sol_rendu.mjs && python decor/planche_sol.py`.
+- **Défauts restants** : herbe encore « vectorielle » à 2× (aplats, traits droits) ; tuile de feuilles couchées lisible comme une trame à 2× ; mousse en moucheté régulier, parfois lue comme un liseré olive ; alvéoles du dessus encore en petits tirets à 2× ; pied du pilier peu mangé ; allée plus claire que la prairie (à juger sur la page) ; rendu Chrome non mesuré.
+- **Questions** : ligne foulée à 3-4 cm (le brief disait 8-12 cm, le porteur veut une allée foulée) ; largeur du passage (±0,42 m fauché + retour) ; budget à 478 Ko ou réduction du gazon.
+- **Modifié par le second chantier des fleurs (15 oct., soir)** — sorties par défaut identiques à l'octet (`sol.svg` :
+  md5 inchangé, vérifié avant et après) : `setWalk({ half, disc, ret, edge, trod })` règle l'allée (par défaut ±0,42 m,
+  disque 0,3, remontée 0,26-0,31) ; le sol fleuri prend `WALK_FLEURI` de `fleurs.mjs` : foulée ±0,25 m autour de la ligne
+  des dalles, bord 3-6 cm, remontée courte 10-13 cm, collier fauché de 2 cm autour du pied, montée foulée→fauchée de 5 à
+  25 cm. `sol({ low, thin, farThin })` passe à `herbe.mjs` les plaques d'herbe basse, l'éclaircissement sous les plaques
+  et celui de la prairie lointaine ; le résultat donne aussi `chunks` (pièces dans l'ordre de peinture avec leur
+  profondeur) et `defs`, d'où `fleurs.mjs` tire `sol-loin`, `sol-milieu`, `sol-pres` (coupes à 7 et 3,3 m).
