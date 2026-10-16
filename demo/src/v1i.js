@@ -7,5 +7,7 @@ function svgbPut(g,txt,tag){const k='_'+tag+(svgbN++).toString(36),
   fix=s=>s.replace(/id="([\w-]+)"/g,(m,a)=>'id="'+a+k+'"').replace(/url\(#([\w-]+)\)/g,(m,a)=>'url(#'+a+k+')');
   const w=G(g,{'data-svgb':tag});w.innerHTML=fix(txt);return w}
 function svgBody(g,v){const b=SVGB[v.svgb];if(!b)return vBody(g,v,profSamples(v.prof,LOD?28:90));return svgbPut(g,'<defs>'+b.defs+'</defs>'+b.body,v.svgb)}
-/* the inside of the mouth, over the plain one, inside the rim */
-function svgMouth(g,v){const b=SVGB[v.svgb];if(b&&b.mouth)svgbPut(g,b.mouth,'m')}
+/* behind the stems: a wall standing behind the bouquet, then the inside of the mouth (over the plain one, inside the rim);
+   a vessel drawing its own lip and mouth (own) brings its defs along */
+function svgMouth(g,v){const b=SVGB[v.svgb];if(!b)return;if(b.back)svgbPut(g,'<defs>'+b.defs+'</defs>'+b.back,'k');
+  if(b.mouth)svgbPut(g,(b.own?'<defs>'+b.defs+'</defs>':'')+b.mouth,'m')}

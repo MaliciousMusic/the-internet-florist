@@ -2,7 +2,12 @@
 /* ---------- sculpted vessels drawn from their measured front outline (head, faceted heart, oval and lobed suibans) ---------- */
 function olSpan(P,h){const xs=[];for(let i=0;i<P.length;i++){const a=P[i],b=P[(i+1)%P.length];if((a[1]-h)*(b[1]-h)<=0&&a[1]!==b[1])xs.push(a[0]+(b[0]-a[0])*(h-a[1])/(b[1]-a[1]))}return xs.length?[Math.min(...xs),Math.max(...xs)]:null}
 const olD=P=>'M'+P.map(([x,h])=>f(VX+x)+','+f(FL-h)).join('L')+'Z';
-function vOutline(g,v,back,front){const ol=v.ol,P=ol.pts,H=v.h,tp=v.tp||{},mx=VX+(v.mx||0),mh=v.mh,mw=Math.max(4,(ol.mouth[1]-ol.mouth[0])/2),ry=v.fam==='sculpture'&&ol.d<H?Math.max(2.5,ol.d/2*.16):vRy(mw),top=FL-mh;
+/* a sculpted vessel drawn as curves (SVGB, generated from its model): the cast shadow of its outline, its back wall and the inside of
+   its mouth behind the stems, its body (with its own lip) in front */
+function vOutlineSvg(g,v,back,front){const P=v.ol.pts,H=v.h;
+  if(back){const S=[];for(let i=0;i<=24;i++){const h=H*i/24,sp=olSpan(P,h);S.push([h,sp?(sp[1]-sp[0])/2:1])}vShadow(g,S,v.mat==='glass'?.14:.3);svgMouth(g,v)}
+  if(front)svgBody(g,v)}
+function vOutline(g,v,back,front){if(v.svgb&&typeof SVGB!=='undefined'&&SVGB[v.svgb])return vOutlineSvg(g,v,back,front);const ol=v.ol,P=ol.pts,H=v.h,tp=v.tp||{},mx=VX+(v.mx||0),mh=v.mh,mw=Math.max(4,(ol.mouth[1]-ol.mouth[0])/2),ry=v.fam==='sculpture'&&ol.d<H?Math.max(2.5,ol.d/2*.16):vRy(mw),top=FL-mh;
   if(back){const S=[];for(let i=0;i<=24;i++){const h=H*i/24,sp=olSpan(P,h);S.push([h,sp?(sp[1]-sp[0])/2:1])}vShadow(g,S,.3);
     const ir=Math.max(2,mw-(v.lipw||3)),iry=ry*ir/mw;E('ellipse',{cx:f(mx),cy:f(top),rx:f(ir),ry:f(iry),fill:ir>26?lin([[0,dk(v.col,.08)],[.5,dk(v.col,.22)],[1,dk(v.col,.5)]],0,0,0,1):dk(v.col,.72)},g);
     E('path',{d:`M${f(mx-mw)},${f(top)}A${f(mw)},${f(ry)} 0 0 1 ${f(mx+mw)},${f(top)}L${f(mx+ir)},${f(top)}A${f(ir)},${f(iry)} 0 0 0 ${f(mx-ir)},${f(top)}Z`,fill:lt(v.col,.1)},g)}

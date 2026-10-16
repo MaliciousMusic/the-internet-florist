@@ -1,0 +1,52 @@
+# État des vases à la pause (16 octobre 2026, ~14 h 45)
+
+Le porteur a mis tout le chantier en pause. Rien n'est commité ni poussé.
+
+## Chantiers (un dossier par vase, `RAPPORT.md` de chacun porte une section « État à la pause »)
+
+| Vase | Réf. | Où il en est |
+|---|---|---|
+| prisme-jaune | 072 | Jugé « MAGNIFIQUE » ; passait le protocole de mesure sans changer l'aspect. |
+| ginkgo | 114 | v5 (feuilles triangulaires, feuille tombante isolée, sans socle ni ombre portée) ; passage en copie exacte des feuilles commencé. |
+| carpes-dorees | 014 | Version finie jugée bien ; recomposition en copie exacte des carpes en cours (état intermédiaire laid, normal). |
+| coque-verte | 022 | Copie mesurée : ΔE 2,7, SSIM adoucie 0,94, IoU 0,968, arêtes 0,59 ; reste arêtes, grain, marche au pied, vue boutique. |
+| torsade-turquoise | 087 | Copie mesurée : ΔE 4,2, SSIM adoucie 0,87, IoU 0,980, arêtes 0,75/0,78 ; reste ombres de la panse. |
+| papillon-rose | 026 | Début : forme, fente, crosses justes ; couleurs et motif des ailes à faire. |
+| coupes-empilees | 006 | Début : anneaux posés, verre encore opaque. |
+| art-nouveau-vert, chauve-souris, dragon-turquoise | 080, 102, 020 | Pas lancés (photos et cartes de profondeur prêtes). |
+
+## Outillage
+
+- Protocole et seuils : [README.md](README.md) (copie fidèle mesurée, décision du porteur du 16 octobre).
+- `depth.py` (Depth Anything V2 dans `.venv-depth`) : cartes calculées pour les 10 photos.
+- `mesure.py` : `spectre`, `grain`, `cmp` (SSIM jugée sur images adoucies), `align`.
+- `build_engine.py` → `app/v1j.js` + fiches dans `app/v0.js` (prisme, ginkgo, carpes ancienne version y sont).
+
+## Moteur modifié, non commité
+
+`app/v1d.js` (`vOutlineSvg`), `app/v1f.js` (`own`, verre clair `clear`), `app/v1i.js` et `verre/build_body.py` (`back`), `app/v1j.js`,
+`app/v0.js`, `mkapp.sh`/`mkqa.sh`/`mkpl.sh` (v1j.js), `verre/shot.sh` (fichier HTML par appel), `.gitignore`.
+
+## Question ouverte
+
+Le porteur envisage de fournir un GLB texturé (Meshy) par vase : il servirait d'outil de mesure (profondeur, normales,
+parties, vue boutique exacte), le produit reste du SVG. Proposé : un essai comparatif sur la coque dès réception de son GLB.
+
+## Questions des chantiers en pause
+
+- **coupes-empilees** (en pause, ΔE 13,5, SSIM adoucie 0,64, 140 Ko gzip) : (1) l'anneau du haut n'a pas d'alésage visible, un alésage de 1,8 cm de rayon a été ajouté pour la bouche ; (2) les stries internes du verre fait main ne sortent pas du modèle physique : faut-il un calque de stries relevé sur la photo pour tenir les seuils ?
+
+## Reprise du 16 octobre (après-midi) : carpes refaites d'après le GLB Meshy
+
+Le porteur a fourni `carpes-dorees/out/model.glb`. Chaîne nouvelle, sans projeter la photo sur le modèle :
+1. `glbkit.py fit|maps` : pose du GLB calée sur la photo (rotation 53°, IoU 0,968), cartes photo et boutique (normales, positions, UV…).
+2. `unwrap.py` : surface du vase déroulée (angle × hauteur, rayon du maillage) ; `segdecor.py` : score relief + agitation ;
+   `samdecor.py` : détourage des carpes par SAM (`facebook/sam-vit-base`, téléchargé avec l'accord du porteur) sur la carte des
+   pentes → `out/unwrap_decor.png`, relu par chaque vue.
+3. `glbvase.py <vase> shop|photo` (+ `glbvase.json`) : éléments (panse tournée parfaite, décor, lèvre, intérieur), matières aux
+   palettes mesurées dans des zones sûres de la photo, lumière de la boutique + studio + creux + ombres du relief, SVG en bandes
+   par élément (`mode=bands`) ; fiche écrite ; `build_engine.py carpes-dorees` l'intègre.
+   Réglage retenu : `ddy=7 dstep=1.6 dy=4 step=3 q=.1 rdp=.5` → 360 Ko gzip, ΔE(svg, champ) 2,4.
+- Verdicts : les trous des nageoires sont corrigés par le détourage SAM ; la carpe centrale du déroulé est hors de la vue (ignorée).
+- À faire : faire valider les carpes ; appliquer la même chaîne aux autres vases à partir de leurs GLB ; reprendre les chantiers en pause.
+- **Clos et publié (soir)** : vase `jarre-carpes` (svgb `carpes-dorees`), carpes en terre cuite comme la panse (matière `or` = `patine`), version retenue par le porteur. `fixdecor.py` (bouchage des encoches, calage des bords sur l'arête du relief par ligne de partage des eaux) a servi avant ce choix.

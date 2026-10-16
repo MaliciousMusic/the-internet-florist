@@ -1,0 +1,147 @@
+{
+ "hcm": 26,
+ "lip_h": 0.93,
+ "wall": 0.02,
+ "relief": {
+  "strong": 0.006,
+  "weak": 0.0022,
+  "min_px": 60,
+  "hole_px": 40,
+  "tex": 0,
+  "body_sigma": 40,
+  "clues": "relief",
+  "flat": 0.0015,
+  "hmax": 0.875,
+  "fin_reach": 16,
+  "fin": 0.0028,
+  "source": "unwrap"
+ },
+ "decor_tex_rule": "a < 14",
+ "materials": {
+  "patine": {
+   "element": "body",
+   "albedo": [
+    [
+     0.1,
+     "#8c5a34"
+    ],
+    [
+     0.38,
+     "#a86a35"
+    ],
+    [
+     0.55,
+     "#8c4b1f"
+    ],
+    [
+     0.7,
+     "#7e4116"
+    ],
+    [
+     0.86,
+     "#70391a"
+    ]
+   ],
+   "amb": 0.42,
+   "diff": 0.75,
+   "spec": 0.55,
+   "rough": 0.25,
+   "spec_col": "#fff1e2",
+   "shadow_col": "#2a1206",
+   "cav": 0.3,
+   "shk": 0.8,
+   "hmin": 0.22,
+   "slices": 1
+  },
+  "or": {
+   "element": "decor",
+   "albedo": [
+    [
+     0.1,
+     "#8c5a34"
+    ],
+    [
+     0.38,
+     "#a86a35"
+    ],
+    [
+     0.55,
+     "#8c4b1f"
+    ],
+    [
+     0.7,
+     "#7e4116"
+    ],
+    [
+     0.86,
+     "#70391a"
+    ]
+   ],
+   "amb": 0.42,
+   "diff": 0.75,
+   "spec": 0.55,
+   "rough": 0.25,
+   "spec_col": "#fff1e2",
+   "shadow_col": "#2a1206",
+   "cav": 0.6,
+   "shk": 0.5
+  },
+  "levre": {
+   "element": "lip",
+   "albedo": [
+    [
+     0.9,
+     "#79401d"
+    ],
+    [
+     1,
+     "#83461f"
+    ]
+   ],
+   "amb": 0.42,
+   "diff": 0.75,
+   "spec": 0.6,
+   "rough": 0.2,
+   "spec_col": "#fff1e2",
+   "shadow_col": "#2a1206",
+   "cav": 0.3
+  },
+  "interieur": {
+   "element": "inside",
+   "albedo": [
+    [
+     0.6,
+     "#3a1e0e"
+    ],
+    [
+     1,
+     "#5a2e14"
+    ]
+   ],
+   "amb": 0.5,
+   "diff": 0.35,
+   "spec": 0.1,
+   "rough": 0.6,
+   "spec_col": "#d8b090",
+   "shadow_col": "#140802",
+   "cav": 0.2
+  }
+ },
+ "fiche": {
+  "id": "jarre-carpes",
+  "refs": [],
+  "n": "Jarre aux carpes en relief",
+  "m": "terre cuite patinée, carpes en haut-relief",
+  "fam": "vase",
+  "shape": "lathe",
+  "p": 0,
+  "mat": "satin",
+  "fin": "",
+  "col": "#a0582a",
+  "col2": null,
+  "lip": "rolled",
+  "lipw": 5.4,
+  "why": "Une jarre globulaire couleur terre cuite où nage un banc de carpes en haut-relief, dans la même matière que la panse.",
+  "svgb": "carpes-dorees"
+ }
+}
