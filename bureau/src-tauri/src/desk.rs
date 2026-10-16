@@ -1,13 +1,13 @@
 //! Setting a window on the desktop itself, as a widget: above the wallpaper and the icons,
-//! under every other window, out of the taskbar and of Alt+Tab, never taking the focus from the
+//! under every other window (or, when asked, in front of them all), out of the taskbar and of Alt+Tab, never taking the focus from the
 //! window you are working in, and still there when « Afficher le bureau » (Win+D) clears the screen.
 
 #[cfg(windows)]
-pub fn settle(hwnd: isize) {
+pub fn settle(hwnd: isize, devant: bool) {
     use windows_sys::Win32::UI::WindowsAndMessaging::{
         FindWindowW, GetWindowLongPtrW, SetWindowLongPtrW, SetWindowPos, GWLP_HWNDPARENT,
-        GWL_EXSTYLE, HWND_BOTTOM, SWP_NOACTIVATE, SWP_NOMOVE, SWP_NOSIZE, WS_EX_APPWINDOW,
-        WS_EX_NOACTIVATE, WS_EX_TOOLWINDOW,
+        GWL_EXSTYLE, HWND_BOTTOM, HWND_NOTOPMOST, HWND_TOPMOST, SWP_NOACTIVATE, SWP_NOMOVE,
+        SWP_NOSIZE, WS_EX_APPWINDOW, WS_EX_NOACTIVATE, WS_EX_TOOLWINDOW,
     };
     let hwnd = hwnd as windows_sys::Win32::Foundation::HWND;
     let progman: Vec<u16> = "Progman\0".encode_utf16().collect();
@@ -22,9 +22,21 @@ pub fn settle(hwnd: isize) {
         if !desktop.is_null() {
             SetWindowLongPtrW(hwnd, GWLP_HWNDPARENT, desktop as isize);
         }
+        // in front of every window, or back under them all
+        if !devant {
+            SetWindowPos(
+                hwnd,
+                HWND_NOTOPMOST,
+                0,
+                0,
+                0,
+                0,
+                SWP_NOMOVE | SWP_NOSIZE | SWP_NOACTIVATE,
+            );
+        }
         SetWindowPos(
             hwnd,
-            HWND_BOTTOM,
+            if devant { HWND_TOPMOST } else { HWND_BOTTOM },
             0,
             0,
             0,
@@ -35,7 +47,7 @@ pub fn settle(hwnd: isize) {
 }
 
 #[cfg(not(windows))]
-pub fn settle(_hwnd: isize) {}
+pub fn settle(_hwnd: isize, _devant: bool) {}
 
 /// True when the windows above this one hide it entirely, so its breeze can rest.
 /// Walks the windows from the top down to this one and takes their rectangles away from its own;

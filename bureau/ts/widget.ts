@@ -18,6 +18,13 @@ const win = T.webviewWindow.getCurrentWebviewWindow();
 const vase = document.getElementById('vase')!;
 const corner = document.getElementById('coin')!;
 const fix = document.getElementById('fixer')!;
+const planBtn = document.getElementById('plan')!;
+
+/* in front of every window (tabs, apps, folders), or on the desktop under them */
+function setDevant(devant: boolean): void {
+  document.body.classList.toggle('devant', devant);
+  planBtn.title = devant ? 'Passer derrière les fenêtres' : 'Passer devant les fenêtres';
+}
 
 function setLocked(locked: boolean): void {
   document.body.classList.toggle('verrou', locked);
@@ -32,13 +39,15 @@ async function show(): Promise<void> {
   const id = new URLSearchParams(location.search).get('id') ?? '';
   let svg: string;
   let locked: boolean;
+  let devant: boolean;
   try {
-    [svg, locked] = await T.core.invoke<[string, boolean]>('dessin', { id });
+    [svg, locked, devant] = await T.core.invoke<[string, boolean, boolean]>('dessin', { id });
   } catch {
     say('Ce bouquet est introuvable. Clic droit pour le retirer.');
     return;
   }
   setLocked(locked);
+  setDevant(devant);
   const root = new DOMParser().parseFromString(svg, 'image/svg+xml').documentElement;
   if (root.localName !== 'svg') {
     say('Le dessin de ce bouquet est abîmé.');
@@ -171,6 +180,9 @@ addEventListener('resize', () => {
 // the ✓: fixed where it stands (no frame, no moving, the mouse goes through); freed again from the tray menu
 fix.addEventListener('mousedown', e => e.stopPropagation());
 fix.addEventListener('click', () => void T.core.invoke('fixer_ici'));
+planBtn.addEventListener('mousedown', e => e.stopPropagation());
+planBtn.addEventListener('click', () => void T.core.invoke('basculer_plan'));
+void win.listen<boolean>('plan', e => setDevant(e.payload));
 // the bouquet's own menu
 addEventListener('contextmenu', e => {
   e.preventDefault();

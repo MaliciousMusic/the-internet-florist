@@ -10,11 +10,19 @@ body:hover:not(.verrou)::after { opacity: 1; }
   filter: drop-shadow(0 0 1px rgba(0, 0, 0, .5)); }
 body:hover:not(.verrou) #coin { opacity: 1; }
 body.verrou #coin { display: none; }
-/* the ✓ that fixes the bouquet where it stands */
-#fixer { position: fixed; top: 8px; right: 8px; width: 30px; height: 30px; border-radius: 50%; border: 0; padding: 0;
-  font: 700 16px/30px system-ui, sans-serif; color: #fff; background: rgba(60, 140, 90, .92); box-shadow: 0 1px 4px rgba(0, 0, 0, .45);
-  cursor: pointer; opacity: 0; transition: opacity .25s, transform .15s; }
-#fixer:hover { transform: scale(1.1); }
-body:hover:not(.verrou) #fixer { opacity: 1; }
-body.verrou #fixer { display: none; }
+/* top centre, on hover: the ✓ that fixes the bouquet where it stands, and the switch in front of / behind the windows */
+#actions { position: fixed; top: 8px; left: 50%; transform: translateX(-50%); display: flex; gap: 8px; opacity: 0; transition: opacity .25s; }
+body:hover:not(.verrou) #actions { opacity: 1; }
+body.verrou #actions { display: none; }
+#actions button { width: 30px; height: 30px; border-radius: 50%; border: 0; padding: 0; display: grid; place-items: center; cursor: pointer;
+  color: #fff; box-shadow: 0 1px 4px rgba(0, 0, 0, .45); transition: transform .15s; }
+#actions button:hover { transform: scale(1.1); }
+#fixer { font: 700 16px/30px system-ui, sans-serif; background: rgba(60, 140, 90, .92); }
+#plan { background: rgba(40, 40, 46, .88); }
+#plan svg { width: 18px; height: 18px; }
+/* the square drawn in front says where the bouquet is: behind the windows, or in front of them */
+#plan rect { fill: none; stroke: #fff; stroke-width: 2; }
+#plan .arriere { fill: #fff; }
+body.devant #plan .arriere { fill: none; }
+body.devant #plan .avant { fill: #fff; }
 #vase.vide { display: grid; place-items: center; font: 600 13px system-ui, sans-serif; color: #fff; text-shadow: 0 1px 2px #000; text-align: center; padding: 12px; }

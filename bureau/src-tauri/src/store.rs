@@ -17,6 +17,9 @@ pub struct Placed {
     /// Fixed where it stands: no frame on hover, no moving, the mouse goes through to the desktop.
     #[serde(default, skip_serializing_if = "std::ops::Not::not")]
     pub fixe: bool,
+    /// In front of every window (tabs, apps, folders) instead of on the desktop under them.
+    #[serde(default, skip_serializing_if = "std::ops::Not::not")]
+    pub devant: bool,
     /// Set for a bouquet read from the chain: shown only while the linked wallet owns it.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub nft: Option<Jeton>,
@@ -188,6 +191,7 @@ mod tests {
             w: 400,
             h: 500,
             fixe: false,
+            devant: false,
             nft: None,
         }
     }
@@ -209,6 +213,7 @@ mod tests {
                 placed("a", 10, 20),
                 Placed {
                     fixe: true,
+                    devant: true,
                     nft: Some(Jeton {
                         id: "7".into(),
                         adresse: "0xab".into(),

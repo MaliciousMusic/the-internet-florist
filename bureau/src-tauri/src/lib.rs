@@ -123,7 +123,8 @@ fn open(app: &AppHandle, b: &Placed) -> tauri::Result<WebviewWindow> {
     .shadow(false)
     .resizable(true)
     .skip_taskbar(true)
-    .always_on_bottom(true)
+    .always_on_bottom(!b.devant)
+    .always_on_top(b.devant)
     .focused(false)
     .visible(false)
     .min_inner_size(
@@ -144,7 +145,17 @@ fn open(app: &AppHandle, b: &Placed) -> tauri::Result<WebviewWindow> {
 fn settle(w: &WebviewWindow) {
     #[cfg(windows)]
     if let Ok(h) = w.hwnd() {
-        desk::settle(h.0 as isize);
+        let devant = id_of(w.label()).is_some_and(|id| {
+            w.app_handle()
+                .state::<App>()
+                .desk
+                .lock()
+                .unwrap()
+                .bouquets
+                .iter()
+                .any(|b| b.id == id && b.devant)
+        });
+        desk::settle(h.0 as isize, devant);
     }
     #[cfg(not(windows))]
     let _ = w;
@@ -163,6 +174,33 @@ fn appliquer(app: &AppHandle) {
             let _ = w.emit_to(l.as_str(), "verrou", immobile);
         }
     }
+}
+
+/// Puts a bouquet in front of every window (tabs, apps, folders), or back on the desktop under them.
+fn placer_plan(app: &AppHandle, id: &str, devant: bool) {
+    let st = app.state::<App>();
+    if let Some(b) = st.desk.lock().unwrap().get_mut(id) {
+        b.devant = devant;
+    }
+    st.changed();
+    let l = label(id);
+    if let Some(w) = app.get_webview_window(&l) {
+        let _ = w.set_always_on_bottom(!devant);
+        let _ = w.set_always_on_top(devant);
+        settle(&w);
+        let _ = w.emit_to(l.as_str(), "plan", devant);
+    }
+    refresh_tray(app);
+}
+
+fn est_devant(app: &AppHandle, id: &str) -> bool {
+    app.state::<App>()
+        .desk
+        .lock()
+        .unwrap()
+        .bouquets
+        .iter()
+        .any(|b| b.id == id && b.devant)
 }
 
 /// Fixes a bouquet where it stands, or frees it to be moved and sized again.
@@ -217,6 +255,7 @@ fn placer(
             w: size.0,
             h: size.1,
             fixe: false,
+            devant: false,
             nft,
         };
         std::fs::create_dir_all(&st.drawings).map_err(|e| e.to_string())?;
@@ -331,6 +370,14 @@ fn tray_menu(app: &AppHandle) -> tauri::Result<Menu<tauri::Wry>> {
             b.fixe,
             None::<&str>,
         )?)?;
+        sub.append(&CheckMenuItem::with_id(
+            app,
+            format!("devant:{}", b.id),
+            "Devant les fenêtres",
+            true,
+            b.devant,
+            None::<&str>,
+        )?)?;
         sub.append(&PredefinedMenuItem::separator(app)?)?;
         for (key, name, _) in store::SIZES {
             sub.append(&MenuItem::with_id(
@@ -439,6 +486,17 @@ fn bouquet_menu(app: &AppHandle, id: &str) -> tauri::Result<Menu<tauri::Wry>> {
         true,
         None::<&str>,
     )?)?;
+    menu.append(&MenuItem::with_id(
+        app,
+        format!("plan:{id}"),
+        if est_devant(app, id) {
+            "Passer derrière les fenêtres"
+        } else {
+            "Passer devant les fenêtres"
+        },
+        true,
+        None::<&str>,
+    )?)?;
     menu.append(&PredefinedMenuItem::separator(app)?)?;
     for (key, name, _) in store::SIZES {
         menu.append(&MenuItem::with_id(
@@ -499,7 +557,13 @@ fn on_menu(app: &AppHandle, e: MenuEvent) {
             app.exit(0);
         }
         _ => {
-            if let Some(b) = id.strip_prefix("fixer:") {
+            if let Some(b) = id
+                .strip_prefix("devant:")
+                .or_else(|| id.strip_prefix("plan:"))
+            {
+                let devant = est_devant(app, b);
+                placer_plan(app, b, !devant);
+            } else if let Some(b) = id.strip_prefix("fixer:") {
                 fixer(app, b, true);
             } else if let Some(b) = id.strip_prefix("fixe:") {
                 let fixe = app
@@ -529,7 +593,7 @@ fn on_menu(app: &AppHandle, e: MenuEvent) {
 
 /// The drawing of a bouquet, for its window.
 #[tauri::command]
-fn dessin(app: AppHandle, id: String) -> Result<(String, bool), String> {
+fn dessin(app: AppHandle, id: String) -> Result<(String, bool, bool), String> {
     if !id.chars().all(|c| c.is_ascii_hexdigit()) {
         return Err("bouquet inconnu".into());
     }
@@ -539,7 +603,7 @@ fn dessin(app: AppHandle, id: String) -> Result<(String, bool), String> {
         d.locked || d.bouquets.iter().any(|b| b.id == id && b.fixe)
     };
     std::fs::read_to_string(st.drawing(&id))
-        .map(|s| (s, locked))
+        .map(|s| (s, locked, est_devant(&app, &id)))
         .map_err(|e| e.to_string())
 }
 
@@ -549,6 +613,15 @@ fn menu(window: WebviewWindow) -> Result<(), String> {
     let id = id_of(window.label()).ok_or("pas un bouquet")?.to_owned();
     let m = bouquet_menu(window.app_handle(), &id).map_err(|e| e.to_string())?;
     window.popup_menu(&m).map_err(|e| e.to_string())
+}
+
+/// The front/back button of a bouquet.
+#[tauri::command]
+fn basculer_plan(window: WebviewWindow) -> Result<(), String> {
+    let id = id_of(window.label()).ok_or("pas un bouquet")?.to_owned();
+    let devant = est_devant(window.app_handle(), &id);
+    placer_plan(window.app_handle(), &id, !devant);
+    Ok(())
 }
 
 /// The ✓ button of a bouquet: fixed where it stands.
@@ -671,7 +744,12 @@ pub fn run() {
             Some(vec![AT_LOGIN]),
         ))
         .invoke_handler(tauri::generate_handler![
-            dessin, menu, ajuster, peint, fixer_ici
+            dessin,
+            menu,
+            ajuster,
+            peint,
+            fixer_ici,
+            basculer_plan
         ])
         // the engine page of a bouquet NFT, for its hidden painting window
         .register_uri_scheme_protocol("peintre", |ctx, req| {

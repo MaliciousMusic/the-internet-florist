@@ -7,19 +7,19 @@
 /// The engine, as stored on-chain (base64 of the gzip of the minified script), and the page templates.
 const MOTEUR: &[u8] = include_bytes!(concat!(
     env!("CARGO_MANIFEST_DIR"),
-    "/../../../packages/engine/dist/engine.b64"
+    "/../../packages/engine/dist/engine.b64"
 ));
 const TETE: &[u8] = include_bytes!(concat!(
     env!("CARGO_MANIFEST_DIR"),
-    "/../../../packages/engine/page/head.html"
+    "/../../packages/engine/page/head.html"
 ));
 const MILIEU: &[u8] = include_bytes!(concat!(
     env!("CARGO_MANIFEST_DIR"),
-    "/../../../packages/engine/page/mid.html"
+    "/../../packages/engine/page/mid.html"
 ));
 const QUEUE: &[u8] = include_bytes!(concat!(
     env!("CARGO_MANIFEST_DIR"),
-    "/../../../packages/engine/page/tail.html"
+    "/../../packages/engine/page/tail.html"
 ));
 
 /// Waits for the drawing to be complete (data-pret), adds the shared definitions (gradients, filters) to it and sends it.
@@ -60,7 +60,7 @@ mod tests {
         // dist/fixture.html is what html(7, 1767225600, 41, seed, [20,2541,1952], [12,5,3]) returns (pack.py)
         let fixture = std::fs::read(concat!(
             env!("CARGO_MANIFEST_DIR"),
-            "/../../../packages/engine/dist/fixture.html"
+            "/../../packages/engine/dist/fixture.html"
         ))
         .unwrap();
         // the seed of the fixture is 0x5eed00c0ffee << 200: on 64 hex digits, 00, 5eed00c0ffee, then 50 zeros

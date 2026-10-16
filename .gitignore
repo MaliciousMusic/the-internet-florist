@@ -44,3 +44,5 @@ ch/
 # published page of the music engine (packages/music: npm run publish-static), rebuilt from the sources
 /music/
 /index.html
+# the on-chain engine build (packages/engine/build.sh): rebuilt from the sources, never committed
+/packages/engine/dist/

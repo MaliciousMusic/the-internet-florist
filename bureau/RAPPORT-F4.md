@@ -81,3 +81,16 @@ il ne se déplace plus et la souris passe au bureau. On le libère par l'icône 
 et le clic droit d'un bouquet libre propose aussi « Fixer ici ». L'état est gardé par bouquet (`fixe`) ; le verrou
 général reste. Chaque fenêtre reçoit son propre état (verrou ou fixé). Installeur 3 Mo (moteur inclus), mis à jour
 sur le PC du porteur.
+
+## F6 — Devant ou derrière les fenêtres (16 octobre 2026, branche `bureau/devant-derriere`)
+
+Demande du porteur : le ✓ au centre en haut, et un bouton pour mettre un bouquet devant ou derrière les onglets,
+applis et dossiers. Au survol, deux boutons au centre en haut : ✓ « Fixer ici » et le bouton de plan (deux carrés, le
+plein dit où est le bouquet). Devant : fenêtre « toujours au premier plan » (HWND_TOPMOST), toujours détenue par le
+bureau, donc visible après Win+D ; derrière : la couche du bureau, comme avant. État gardé par bouquet (`devant`),
+aussi dans le menu de l'icône (« Devant les fenêtres ») et au clic droit. Un bouquet fixé et devant laisse passer la
+souris : un calque par-dessus tout, sans gêner.
+
+Corrigé au déménagement : `bureau/` est un niveau moins profond que l'ancien `apps/bureau/`, le moteur se lit dans
+`../../packages/engine` ; `packages/engine/dist/` est ignoré par git. Installeur mis à jour dans `livrables/` et sur le
+PC du porteur.
