@@ -1,0 +1,25 @@
+{
+ "userough": "0",
+ "rough": ".45",
+ "ks": ".12",
+ "kst": ".6",
+ "envk": "0.12",
+ "hcm": "28",
+ "fiche": {
+  "id": "ronces-noires",
+  "refs": [],
+  "n": "Verre camée aux ronces",
+  "m": "verre camée gravé à l'acide, ronces noires sur fond pêche",
+  "fam": "vase",
+  "shape": "lathe",
+  "p": 0,
+  "mat": "satin",
+  "fin": "",
+  "col": "#f0d2ad",
+  "col2": null,
+  "lip": "plain",
+  "lipw": 3,
+  "why": "Un verre camée pêche où courent des ronces noires chargées de mûres."
+ },
+ "lift": "0.2"
+}

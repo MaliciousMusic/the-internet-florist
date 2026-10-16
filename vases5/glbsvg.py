@@ -74,7 +74,7 @@ def render(s):
         out['uv'] = r['uv'][ss // 2::ss, ss // 2::ss][:Hs, :Ws]
         r = out
     r['cam'] = cam
-    return r, Ws, Hs
+    return r, W, H                  # the output frame: the photograph's pixels (or the shop render, where s = 1)
 
 
 def occlusion(depth, m, k):

@@ -1,0 +1,20 @@
+{
+ "kst": "1.5",
+ "hcm": "34",
+ "fiche": {
+  "id": "dragon-cloisonne",
+  "refs": [],
+  "n": "Balustre noir au dragon",
+  "m": "émail noir brillant, dragon et frises en relief",
+  "fam": "vase",
+  "shape": "lathe",
+  "p": 0,
+  "mat": "gloss",
+  "fin": "",
+  "col": "#111114",
+  "col2": null,
+  "lip": "rolled",
+  "lipw": 3.6,
+  "why": "Un balustre d'émail noir où un dragon aux flammes rouges s'enroule entre deux frises de lotus."
+ }
+}

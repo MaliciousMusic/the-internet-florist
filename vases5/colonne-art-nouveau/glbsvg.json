@@ -1,0 +1,26 @@
+{
+ "userough": "0",
+ "rough": ".75",
+ "ks": ".08",
+ "kst": ".35",
+ "envk": ".1",
+ "lift": ".25",
+ "hcm": "36",
+ "fiche": {
+  "id": "colonne-art-nouveau",
+  "refs": [],
+  "n": "Colonne Art nouveau",
+  "m": "grès moucheté crème et gris-bleu, anses ajourées",
+  "fam": "vase",
+  "shape": "lathe",
+  "p": 0,
+  "mat": "matte",
+  "fin": "",
+  "col": "#cfc59f",
+  "col2": null,
+  "lip": "plain",
+  "lipw": 2.6,
+  "why": "Une haute colonne de grès crème mouchetée de gris-bleu, couronnée de volutes et d'anses ajourées."
+ },
+ "mouth_h": "0.93"
+}

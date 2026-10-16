@@ -104,3 +104,16 @@ baisse d'un facteur 5 à 20. Le budget de 120 Ko n'est pas encore tenu.
   atteint 5,4 Go). Les calages tournent désormais sous `scratchpad/ramguard.ps1`.
 - **Planches** : `_apercu/vases7_v1.jpg` (référence | SVG) et `_apercu/vases7_bouquets.jpg` (moteur + bouquets).
 - **Poids** : `v1j.js` fait 17,2 Mo pour 16 vases ; il reste à alléger.
+
+## Troisième série (16 octobre, nuit) : trois vases calés sur des captures du visualiseur Meshy
+
+| Dossier | GLB | Fiche | Bouquet modèle |
+|---|---|---|---|
+| `dragon-cloisonne/` | Dragon_Vase | `dragon-cloisonne` | 7 |
+| `ronces-noires/` | Blackberry_Elegance | `ronces-noires` | 41 |
+| `colonne-art-nouveau/` | Verdant_Art_Nouveau_V (n° 2) | `colonne-art-nouveau` (bouche à 0,93 de la hauteur) | 32 |
+
+- **Poses** : IoU 0,961 à 0,991. Rendus photo calculés à 2× (`s=2`).
+- **Correctif** : `glbsvg.py` cadrait trop petit les rendus photo calculés avec s ≠ 1.
+- **Planches** : `_apercu/vases8_v1.jpg` et `_apercu/vases8_bouquets.jpg`.
+- **Poids** : `v1j.js` fait 23,4 Mo pour 19 vases.

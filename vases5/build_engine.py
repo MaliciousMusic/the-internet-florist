@@ -13,7 +13,8 @@ CLEAR = {'prisme-jaune'}
 OPT_SOVER = {'cristal-violet': .5}                              # glass whose painting hides the stems inside
 # vases drawn from their GLB (glbsvg.py, verrelys.py): the mouth and lip are part of the drawing, the engine adds none
 GLB_OWN = {'chauve-souris', 'dragon-turquoise', 'papillon-rose', 'calla-verte', 'bambou-brun', 'lys-mauves', 'cristal-violet',
-           'jardiniere-cristaux', 'prismes-bronze', 'narcisses-bronze', 'coque-verte', 'gui-argent', 'feuilles-vertes'}                                                 # clear, unfrosted glass
+           'jardiniere-cristaux', 'prismes-bronze', 'narcisses-bronze', 'coque-verte', 'gui-argent', 'feuilles-vertes',
+           'dragon-cloisonne', 'ronces-noires', 'colonne-art-nouveau'}                                                 # clear, unfrosted glass
 
 
 def half_width(P, h):
