@@ -3,6 +3,7 @@
 function latheD(S,cx=VX){const n=S.length-1,top=FL-S[n][0],mw=S[n][1],ry=vRy(mw);
   return'M'+S.map(([y,w])=>f(cx+w)+','+f(FL-y)).join('L')+`A${f(mw)},${f(ry)} 0 0 1 ${f(cx-mw)},${f(top)}L`+S.slice().reverse().map(([y,w])=>f(cx-w)+','+f(FL-y)).join('L')+'Z'}
 function vClip(d){const id='vk'+(gid++),cp=E('clipPath',{id},GDEF||defs);E('path',{d},cp);return id}
+function vClipT(d,T){if(!T)return vClip(d);const id='vk'+(gid++),cp=E('clipPath',{id},GDEF||defs);E('path',{d,transform:T},cp);return id}
 function vBody(g0,v,S){const n=S.length-1,tp=v.tp||{},top=FL-S[n][0],mwO=S[n][1],ry=vRy(mwO),glass=v.mat==='glass',sq=tp.squarefoot?tp.squarefoot*UPC:0,
     K=LOD?7:(tp.lobes||tp.facets||v.mat==='gloss'||v.mat==='metal')?41:glass?27:17;let last=null,lastA=null,g=g0,mk=null;
   /* glass: colour bands opaque, their transparency carried by a mask, so overlapping bands never stripe */

@@ -3,11 +3,19 @@
 const FL=990,VX=500;
 /* a vessel's scale (v.vs, 1 by default) is one of its properties: its profile, height, mouth, lip and handles grow with it once, here, and a
    cast vessel's reliefs (castScaled) follow it, so the whole object is the same piece, larger */
-function vScale(v){const k=v.vs||1;if(k===1||v._vs)return v;v._vs=1;if(v.prof)v.prof=v.prof.map(q=>[q[0]*k,q[1]*k]);
-  for(const n of['h','mo','mh','mx','lipw'])if(typeof v[n]==='number')v[n]*=k;
+function vScale(v){const k=v.vs||1;if(k===1||v._vs)return v;v._vs=1;return vScaleBy(v,k)}
+/* every length of a vessel times k (profile, outline, true silhouette, mouth, lip, handles); a drawn body (svgb) follows through svgbT */
+function vScaleBy(v,k){if(v.prof)v.prof=v.prof.map(q=>[q[0]*k,q[1]*k]);
+  for(const n of['h','mo','mh','mx','lipw','mry'])if(typeof v[n]==='number')v[n]*=k;
   if(v.hd)v.hd=Object.assign({},v.hd,...['y0','y1','out','th'].filter(n=>typeof v.hd[n]==='number').map(n=>({[n]:v.hd[n]*k})));
-  if(v.box)v.box=Object.assign({},v.box,{w:v.box.w*k,d:v.box.d*k});return v}
-const VZ={};for(const v of VZ0)VZ[v.id]=vScale(v);
+  if(v.box)v.box=Object.assign({},v.box,{w:v.box.w*k,d:v.box.d*k});
+  if(v.ol)v.ol=Object.assign({},v.ol,{pts:v.ol.pts.map(q=>[q[0]*k,q[1]*k]),mouth:v.ol.mouth&&v.ol.mouth.map(x=>x*k)},typeof v.ol.d==='number'?{d:v.ol.d*k}:{});
+  if(v.sil)v.sil=Object.assign({},v.sil,{x0:v.sil.x0*k,dx:v.sil.dx*k,h:v.sil.h.map(x=>x*k)});return v}
+/* a drawn body is written at scale 1 around the vessel's foot (VX, FL): a scaled vessel draws it through this transform */
+const svgbT=k=>k&&k!==1?`translate(${VX} ${FL}) scale(${k}) translate(${-VX} ${-FL})`:null;
+/* the scales the owner set in the vase review (revue-vases/etat.json, written here by revue-vases/version.mjs echelles) */
+const VSC={};
+const VZ={};for(const v of VZ0){if(VSC[v.id])v.vs=VSC[v.id];VZ[v.id]=vScale(v)}
 /* vessels of earlier versions: bouquets already sent keep a vessel close to theirs (the hand-tied and paper-wrapped ones stand in clear glass) */
 const VOLD={'coupe-blanche':'coupe-pied-blanche','coupe-noire':'coupe-pied-noire','boule-chocolat':'vase-ovoide-chocolat','boule-sapin':'boule-vert-sapin','verre':'cylindre-verre-clair','calice':'calice-mouchete',
   'balustre':'balustre-argent-patine','urne':'urne-sablier-noire','cobalt':'boule-cotelee-bleue','jarre':'jarre-gres-chamotte','soliflore':'soliflore-balustre-noir','kenzan':'pique-fleurs-laiton','noue':'cylindre-verre-clair','papier':'cylindre-verre-clair'};

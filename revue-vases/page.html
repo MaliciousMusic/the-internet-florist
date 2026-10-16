@@ -1,0 +1,124 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Revue des vases</title>
+<style>
+:root{--bg:#ece6dd;--panel:#f6f2ec;--line:#d9d0c3;--ink:#3b3029;--mute:#87776a;--accent:#7a4e2d;
+  --revoir:#8a8f99;--corriger:#c46a1f;--envoye:#6a5bb5;--valide:#3f8a4f;--pin:#d2452f}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:var(--bg);color:var(--ink);font:14px/1.4 system-ui,-apple-system,"Segoe UI",sans-serif}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer;border:1px solid var(--line);background:#fff;border-radius:7px;padding:5px 10px}
+button:hover{border-color:#bfb2a1}
+button.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+button.ok{background:var(--valide);border-color:var(--valide);color:#fff}
+button:disabled{opacity:.45;cursor:default}
+#app{display:grid;grid-template-columns:290px 1fr 350px;height:100vh}
+aside,#side{background:var(--panel);overflow:auto}
+aside{border-right:1px solid var(--line);display:flex;flex-direction:column}
+#side{border-left:1px solid var(--line);padding:14px 16px 40px}
+h1{font-size:16px;margin:0}
+h2{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--mute);margin:18px 0 8px;font-weight:600}
+.head{padding:14px 14px 10px;border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--panel);z-index:1}
+.bar{height:6px;border-radius:3px;background:#e2d9cc;overflow:hidden;margin:8px 0 4px;display:flex}
+.bar i{display:block;height:100%}
+.small{font-size:12px;color:var(--mute)}
+.chips{display:flex;flex-wrap:wrap;gap:4px;margin-top:8px}
+.chip{font-size:12px;padding:2px 8px;border-radius:20px;border:1px solid var(--line);background:#fff;cursor:pointer;user-select:none}
+.chip.on{background:var(--ink);border-color:var(--ink);color:#fff}
+#q{width:100%;margin-top:8px;padding:5px 8px;border:1px solid var(--line);border-radius:7px;background:#fff}
+#list{list-style:none;margin:0;padding:4px 0}
+#list li{padding:7px 14px;cursor:pointer;display:grid;grid-template-columns:10px 1fr auto;gap:8px;align-items:center;border-left:3px solid transparent}
+#list li:hover{background:#efe8de}
+#list li.cur{background:#e7ddcf;border-left-color:var(--accent)}
+#list .nm{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#list .id{display:block;font-size:11px;color:var(--mute);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.dot{width:10px;height:10px;border-radius:50%}
+.st-a-revoir{background:var(--revoir)}.st-a-corriger{background:var(--corriger)}.st-envoye{background:var(--envoye)}.st-valide{background:var(--valide)}
+.pill{font-size:11px;color:#fff;padding:1px 8px;border-radius:20px;white-space:nowrap}
+.meta{font-size:11px;color:var(--mute);text-align:right;white-space:nowrap}
+main{display:flex;flex-direction:column;min-width:0}
+.tool{display:flex;align-items:center;gap:8px;padding:9px 14px;border-bottom:1px solid var(--line);background:var(--panel);flex-wrap:wrap}
+.tool .title{font-weight:600;font-size:15px;margin-right:6px}
+.tool select{max-width:260px;padding:4px 6px;border:1px solid var(--line);border-radius:7px;background:#fff}
+.sp{flex:1}
+#stage{flex:1;position:relative;min-height:0;background:radial-gradient(ellipse at 50% 40%,#f8f4ee,#e6ddd0)}
+#stage svg.view{position:absolute;inset:0;width:100%;height:100%;cursor:crosshair}
+#hint{position:absolute;left:14px;bottom:10px;font-size:12px;color:var(--mute);pointer-events:none}
+#busy{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(236,230,221,.75);font-size:15px;color:var(--mute);z-index:5}
+#busy[hidden]{display:none}
+.scale{display:grid;grid-template-columns:1fr 74px;gap:8px;align-items:center}
+.scale input[type=range]{width:100%}
+.scale input[type=number]{width:74px;padding:4px 6px;border:1px solid var(--line);border-radius:7px;background:#fff}
+.dims{display:grid;grid-template-columns:auto 1fr;gap:2px 12px;font-size:13px;margin-top:8px}
+.dims b{font-weight:600}
+.row{display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin-top:8px}
+.note{border:1px solid var(--line);background:#fff;border-radius:9px;padding:8px 9px;margin-bottom:8px}
+.note.sent{background:#f1eef8;border-color:#d9d2ee}
+.note.done{background:#f0f4ef;border-color:#d3e2d2;opacity:.85}
+.note.hl{outline:2px solid var(--pin)}
+.note .top{display:flex;align-items:center;gap:6px;margin-bottom:6px;font-size:12px;color:var(--mute)}
+.num{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;background:var(--pin);color:#fff;font-size:11px;font-weight:700}
+.note.sent .num{background:var(--envoye)}.note.done .num{background:var(--valide)}
+.note textarea{width:100%;min-height:54px;resize:vertical;border:1px solid var(--line);border-radius:7px;padding:6px;background:#fffdfa}
+.note .types{display:flex;flex-wrap:wrap;gap:3px;margin-top:5px}
+.note .types .chip{font-size:11px;padding:1px 7px}
+.note .x{margin-left:auto;border:0;background:none;color:var(--mute);padding:0 4px;font-size:16px;line-height:1}
+.note p{margin:0;white-space:pre-wrap}
+.hist{font-size:12px;border-left:2px solid var(--line);padding-left:10px;margin:0}
+.hist div{margin-bottom:6px}
+#send{position:relative}
+#send .n{display:inline-block;min-width:18px;padding:0 5px;border-radius:9px;background:#fff;color:var(--accent);font-size:11px;font-weight:700;margin-left:6px}
+dialog{border:1px solid var(--line);border-radius:12px;padding:0;max-width:760px;width:calc(100% - 32px);background:var(--panel);color:var(--ink)}
+dialog::backdrop{background:rgba(40,30,20,.35)}
+dialog .in{padding:16px 18px}
+dialog pre{white-space:pre-wrap;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;max-height:50vh;overflow:auto;font:12px/1.45 ui-monospace,Consolas,monospace}
+.empty{color:var(--mute);font-size:13px}
+@media (max-width:1100px){#app{grid-template-columns:240px 1fr 300px}}
+</style></head>
+<body>
+<svg width="0" height="0" style="position:absolute"><defs id="defs"></defs></svg><div id="w" hidden></div>
+<div id="app">
+  <aside>
+    <div class="head">
+      <h1>Revue des vases</h1>
+      <div class="bar" id="bar"></div>
+      <div class="small" id="prog">Chargement du moteur…</div>
+      <div class="chips" id="filters"></div>
+      <input id="q" type="search" placeholder="Chercher un vase…">
+    </div>
+    <ul id="list"></ul>
+  </aside>
+  <main>
+    <div class="tool">
+      <span class="title" id="vt">—</span><span class="pill" id="vs"></span>
+      <span class="sp"></span>
+      <label class="small" for="model">Bouquet</label>
+      <select id="model"></select>
+      <button id="reseed" title="Autre tirage du même bouquet">↻ Autre tirage</button>
+      <button id="alone" title="Voir le vase sans fleurs">Vase seul</button>
+      <button id="send" class="primary" title="Envoyer à Claude toutes les notes non envoyées, les échelles et les validations">Envoyer les corrections<span class="n" id="sendn">0</span></button>
+    </div>
+    <div id="stage"><div id="busy">Chargement du moteur de dessin…</div><div id="hint">Clic sur l'image : ajouter une note à cet endroit · ↑ ↓ : vase précédent / suivant</div></div>
+  </main>
+  <section id="side">
+    <h2>Échelle par rapport aux fleurs</h2>
+    <div class="scale"><input id="sr" type="range" min="0.4" max="2.5" step="0.01"><input id="sn" type="number" min="0.2" max="4" step="0.01"></div>
+    <div class="row"><button id="sreset">Revenir à l'échelle du moteur</button><span class="small" id="seng"></span></div>
+    <div class="dims" id="dims"></div>
+    <h2>Notes de correction</h2>
+    <div id="notes"></div>
+    <div class="small">Clique sur le vase (ou sur une fleur) pour poser un repère numéroté, puis écris ce qui ne va pas.</div>
+    <h2>Validation</h2>
+    <div class="row"><button id="valid" class="ok">Valider ce vase</button><span class="small" id="vinfo"></span></div>
+    <h2>Versions</h2>
+    <div id="hist" class="hist"></div>
+  </section>
+</div>
+<dialog id="dlg"><div class="in">
+  <h1 id="dlgt">Corrections envoyées</h1>
+  <p class="small" id="dlgs"></p>
+  <pre id="dlgm"></pre>
+  <div class="row"><button id="copy">Copier le message</button><span class="sp"></span><button id="close" class="primary">Fermer</button></div>
+</div></dialog>
+<script>function finished(){}</script>
+<!--MODULES-->
+</body></html>

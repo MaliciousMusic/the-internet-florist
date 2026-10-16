@@ -54,3 +54,7 @@ vases5/*/work/
 vases5/_apercu/
 vases5/_eng/
 vases5/.venv-depth/
+
+# vase review: the inbox the session watches and the state being written
+revue-vases/boite.jsonl
+revue-vases/etat.json.tmp

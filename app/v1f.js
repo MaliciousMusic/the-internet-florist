@@ -7,7 +7,7 @@ function vessel(par,id,t=0,o={}){const v=VZ[id]||VZ['coupe-pied-blanche'],g=G(pa
   else if(v.kind==='kenzan')vKenzan(g,v,back,front);
   else{const S=profSamples(v.prof,LOD?28:90),n=S.length-1,top=FL-S[n][0],mwO=S[n][1],ry=vRy(mwO),glass=v.mat==='glass',tp=v.tp||{};
     const own=v.svgb&&typeof SVGB!=='undefined'&&SVGB[v.svgb]&&SVGB[v.svgb].own;
-    if(back){const sb_=v.svgb&&typeof SVGB!=='undefined'&&SVGB[v.svgb];if(sb_&&sb_.shadow)svgbPut(g,sb_.shadow,'s');else vShadow(g,S,glass?.14:.3,o.shClip||(sg&&sg.top));if(!own)vMouthBack(g,v,top,mwO,ry);if(v.svgb&&typeof svgMouth==='function')svgMouth(g,v);if(glass)goldfish(g,v,S)}
+    if(back){const sb_=v.svgb&&typeof SVGB!=='undefined'&&SVGB[v.svgb];if(sb_&&sb_.shadow)svgbPut(g,sb_.shadow,'s',v.vs);else vShadow(g,S,glass?.14:.3,o.shClip||(sg&&sg.top));if(!own)vMouthBack(g,v,top,mwO,ry);if(v.svgb&&typeof svgMouth==='function')svgMouth(g,v);if(glass)goldfish(g,v,S)}
     if(front){if(v.svgb&&typeof svgBody==='function')svgBody(g,v);else if(v.cast)castBody(g,v,S);else{vBody(g,v,S);vTextures(g,v,S)}
       if(tp.beadrow)for(const b of tp.beadrow){const h=b.h==='lip'?S[n][0]-b.r*UPC*1.2:b.h*UPC;beadRing(g,FL-h,sRad(S,h)+b.r*UPC*.3,Math.round(b.n/2),b.r*UPC,b.c)}
       if(tp.beadcol)beadCols(g,v,S,tp.beadcol);if(v.hd)vHandles(g,v,S);if(!own)vLip(g,v,top,mwO,ry);if(glass&&!v.svgb)glassFront(g,v,S);
@@ -20,8 +20,8 @@ function frostBlur(){const id='fb'+(gid++),fl=E('filter',{id,x:'-10%',y:'-5%',wi
    direction, bending only near the bottom to stay inside it; drawn like the stems above (same shading, width and colours) */
 function stemsIn(par,feet,id){const v=VZ[id]||{},g=G(par);if(!v.prof)return g;const S=profSamples(v.prof,40),wall=2.6,I=S.map(([y,w])=>[y,Math.max(1,w-wall)]),sb=v.svgb&&typeof SVGB!=='undefined'?SVGB[v.svgb]:null,
     /* a sculpted vessel: the stems are cut to its cavity first, then softened by the frost (no crisp floating edge), unless its glass is clear */
-    k=sb&&sb.inner?G(sb.clear?G(g,{opacity:v.mat==='glass'?sb.sover||.92:1}):G(g,{opacity:.85,filter:`url(#${frostBlur()})`}),{'clip-path':`url(#${vClip(sb.inner)})`}):G(g,{'clip-path':`url(#${vClip(latheD(I))})`,opacity:.92}),
-    yb=sb&&sb.cavb?sb.cavb+3:FL-5,cx=VX+vMx(v),rb=sb&&sb.cavr?sb.cavr*.55:Math.max(3,sRad(I,8))*.82;
+    k=sb&&sb.inner?G(sb.clear?G(g,{opacity:v.mat==='glass'?sb.sover||.92:1}):G(g,{opacity:.85,filter:`url(#${frostBlur()})`}),{'clip-path':`url(#${vClipT(sb.inner,svgbT(v.vs))})`}):G(g,{'clip-path':`url(#${vClip(latheD(I))})`,opacity:.92}),
+    yb=sb&&sb.cavb?FL-(FL-sb.cavb)*(v.vs||1)+3:FL-5,cx=VX+vMx(v),rb=sb&&sb.cavr?sb.cavr*(v.vs||1)*.55:Math.max(3,sRad(I,8))*.82;
   for(const ft of feet){const[x0,y0]=ft.p,D0=yb-y0;if(D0<4)continue;let[dx,dy]=ft.d;const l=Math.hypot(dx,dy)||1;dx/=l;dy/=l;if(dy<.3){dy=.3;dx=Math.sign(dx||1)*.954}
     const s=dx/dy,x1=Math.max(cx-rb,Math.min(cx+rb,x0+s*D0)),c1=[x0+s*D0*.35,y0+D0*.35],c2=[(x0+s*D0*.7+x1)/2,y0+D0*.72];
     const T0=TINT;TINT=ft.tn||null;try{stem3(k,[[x0,y0],c1,c2,[x1,yb]],ft.w,ft.w*.92,ft.c||SG,10)}finally{TINT=T0}}

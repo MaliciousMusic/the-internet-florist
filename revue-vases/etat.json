@@ -1,0 +1,736 @@
+{
+ "vases": {
+  "kenzan-laiton-rond": {
+   "name": "Kenzan rond en laiton",
+   "version": 1,
+   "scale": null,
+   "engineScale": 1,
+   "engineHeightCm": 4.1,
+   "notes": [],
+   "valid": null,
+   "history": []
+  },
+  "suiban-ovale-peint": {
+   "name": "Suiban ovale peint",
+   "version": 1,
+   "scale": null,
+   "engineScale": 1,
+   "engineHeightCm": 8.1,
+   "notes": [],
+   "valid": null,
+   "history": []
+  },
+  "vase-ovoide-chocolat": {
+   "name": "Vase ovoïde chocolat",
+   "version": 1,
+   "scale": null,
+   "engineScale": 1,
+   "engineHeightCm": 15,
+   "notes": [],
+   "valid": null,
+   "history": []
+  },
+  "vase-tete-veine-sable": {
+   "name": "Vase tête veiné sable",
+   "version": 1,
+   "scale": null,
+   "engineScale": 1,
+   "engineHeightCm": 22,
+   "notes": [],
+   "valid": null,
+   "history": []
+  },
+  "vase-conique-blanc": {
+   "name": "Vase conique blanc",
+   "version": 1,
+   "scale": null,
+   "engineScale": 1,
+   "engineHeightCm": 26,
+   "notes": [],
+   "valid": null,
+   "history": []
+  },
+  "coupe-pied-rosee": {
+   "name": "Coupe sur pied rosée",
+   "version": 1,
+   "scale": null,
+   "engineScale": 1,
+   "engineHeightCm": 14.5,
+   "notes": [],
+   "valid": null,
+   "history": []
+  },
+  "boule-verre-bouteille": {
+   "name": "Boule en verre bouteille",
+   "version": 1,
+   "scale": null,
+   "engineScale": 1,
+   "engineHeightCm": 20,
+   "notes": [],
+   "valid": null,
+   "history": []
+  },
+  "coupe-pied-sable": {
+   "name": "Coupe sur pied sable",
+   "version": 1,
+   "scale": null,
+   "engineScale": 1,
+   "engineHeightCm": 8.2,
+   "notes": [],
+   "valid": null,
+   "history": []
+  },
+  "pot-boule-blanc-perle": {
+   "name": "Pot boule blanc perle",
+   "version": 1,
+   "scale": null,
+   "engineScale": 1,
+   "engineHeightCm": 9.4,
+   "notes": [],
+   "valid": null,
+   "history": []
+  },
+  "bouteille-verre-fume": {
+   "name": "Bouteille en verre fumé",
+   "version": 1,
+   "scale": null,
+   "engineScale": 1,
+   "engineHeightCm": 26,
+   "notes": [],
+   "valid": null,
+   "history": []
+  },
+  "vase-coeur-anthracite": {
+   "name": "Vase cœur anthracite",
+   "version": 1,
+   "scale": null,
+   "engineScale": 1,
+   "engineHeightCm": 30.9,
+   "notes": [],
+   "valid": null,
+   "history": []
+  },
+  "coupe-pied-blanche": {
+   "name": "Coupe sur pied blanche",
+   "version": 1,
+   "scale": null,
+   "engineScale": 1,
+   "engineHeightCm": 10.1,
+   "notes": [],
+   "valid": null,
+   "history": []
+  },
+  "boule-vert-sapin": {
+   "name": "Boule vert sapin",
+   "version": 1,
+   "scale": null,
+   "engineScale": 1,
+   "engineHeightCm": 21.2,
+   "notes": [],
+   "valid": null,
+   "history": []
+  },
+  "urne-medicis-noire": {
+   "name": "Urne Médicis noire",
+   "version": 1,
+   "scale": null,
+   "engineScale": 1,
+   "engineHeightCm": 18.9,
+   "notes": [],
+   "valid": null,
+   "history": []
+  },
+  "cylindre-chrome": {
+   "name": "Cylindre chromé",
+   "version": 1,
+   "scale": null,
+   "engineScale": 1,
+   "engineHeightCm": 13.4,
+   "notes": [],
+   "valid": null,
+   "history": []
+  },
+  "tube-acier-disque": {
+   "name": "Soliflore tube acier",
+   "version": 1,
+   "scale": null,
+   "engineScale": 1,
+   "engineHeightCm": 14.8,
+   "notes": [],
+   "valid": null,
+   "history": []
+  },
+  "coupe-pied-noire": {
+   "name": "Coupe sur pied noire",
+   "version": 1,
+   "scale": null,
+   "engineScale": 1,
+   "engineHeightCm": 11.7,
+   "notes": [],
+   "valid": null,
+   "history": []
+  },
+  "coupe-cobalt-mouchetee": {
+   "name": "Coupe soufflée cobalt",
+   "version": 1,
+   "scale": null,
+   "engineScale": 1,
+   "engineHeightCm": 14.5,
+   "notes": [],
+   "valid": null,
+   "history": []
+  },
+  "balustre-argent-patine": {
+   "name": "Vase balustre argenté",
+   "version": 1,
+   "scale": null,
+   "engineScale": 1,
+   "engineHeightCm": 26.7,
+   "notes": [],
+   "valid": null,
+   "history": []
+  },
+  "bulbe-pied-sable": {
+   "name": "Bulbe sur pied sable",
+   "version": 1,
+   "scale": null,
+   "engineScale": 1,
+   "engineHeightCm": 16.4,
+   "notes": [],
+   "valid": null,
+   "history": []
+  },
+  "calice-celadon-pans": {
+   "name": "Vase céladon à pans",
+   "version": 1,
+   "scale": null,
+   "engineScale": 1,
+   "engineHeightCm": 20.5,
+   "notes": [],
+   "valid": null,
+   "history": []
+  },
+  "cylindre-verre-bouquet": {
+   "name": "Cylindre de verre",
+   "version": 1,
+   "scale": null,
+   "engineScale": 1,
+   "engineHeightCm": 17.5,
+   "notes": [],
+   "valid": null,
+   "history": []
+  },
+  "colonne-blanche": {
+   "name": "Colonne blanche",
+   "version": 1,
+   "scale": null,
+   "engineScale": 1,
+   "engineHeightCm": 60,
+   "notes": [],
+   "valid": null,
+   "history": []
+  },
+  "pot-agate-rose": {
+   "name": "Pot agate rosé",
+   "version": 1,
+   "scale": null,
+   "engineScale": 1,
+   "engineHeightCm": 13.4,
+   "notes": [],
+   "valid": null,
+   "history": []
+  },
+  "coupe-cone-noire": {
+   "name": "Coupe sur cône noire",
+   "version": 1,
+   "scale": null,
+   "engineScale": 1,
+   "engineHeightCm": 20.4,
+   "notes": [],
+   "valid": null,
+   "history": []
+  },
+  "urne-sablier-noire": {
+   "name": "Urne sablier noire",
+   "version": 1,
+   "scale": null,
+   "engineScale": 1,
+   "engineHeightCm": 20,
+   "notes": [],
+   "valid": null,
+   "history": []
+  },
+  "boule-perlee-porcelaine": {
+   "name": "Boule perlée sur pied",
+   "version": 1,
+   "scale": null,
+   "engineScale": 1,
+   "engineHeightCm": 9,
+   "notes": [],
+   "valid": null,
+   "history": []
+  },
+  "urne-ardoise-bleutee": {
+   "name": "Urne ardoise bleutée",
+   "version": 1,
+   "scale": null,
+   "engineScale": 1,
+   "engineHeightCm": 16,
+   "notes": [],
+   "valid": null,
+   "history": []
+  },
+  "cylindre-chinoiserie": {
+   "name": "Cylindre chinoiserie",
+   "version": 1,
+   "scale": null,
+   "engineScale": 1,
+   "engineHeightCm": 20.5,
+   "notes": [],
+   "valid": null,
+   "history": []
+  },
+  "ovoide-verre-glacier": {
+   "name": "Ovoïde verre glacier",
+   "version": 1,
+   "scale": null,
+   "engineScale": 1,
+   "engineHeightCm": 15,
+   "notes": [],
+   "valid": null,
+   "history": []
+  },
+  "pot-shino-marbre": {
+   "name": "Pot shino sur marbre",
+   "version": 1,
+   "scale": null,
+   "engineScale": 1,
+   "engineHeightCm": 6.4,
+   "notes": [],
+   "valid": null,
+   "history": []
+  },
+  "balustre-email-reticule": {
+   "name": "Balustre émail réticulé",
+   "version": 1,
+   "scale": null,
+   "engineScale": 1,
+   "engineHeightCm": 21.4,
+   "notes": [],
+   "valid": null,
+   "history": []
+  },
+  "coupelle-argentee": {
+   "name": "Coupelle argentée",
+   "version": 1,
+   "scale": null,
+   "engineScale": 1,
+   "engineHeightCm": 5.9,
+   "notes": [],
+   "valid": null,
+   "history": []
+  },
+  "boule-aubergine": {
+   "name": "Boule aubergine",
+   "version": 1,
+   "scale": null,
+   "engineScale": 1,
+   "engineHeightCm": 11,
+   "notes": [],
+   "valid": null,
+   "history": []
+  },
+  "coupe-medicis-anses": {
+   "name": "Coupe Médicis à anses",
+   "version": 1,
+   "scale": null,
+   "engineScale": 1,
+   "engineHeightCm": 8.3,
+   "notes": [],
+   "valid": null,
+   "history": []
+  },
+  "coupe-basse-anthracite": {
+   "name": "Coupe basse anthracite",
+   "version": 1,
+   "scale": null,
+   "engineScale": 1,
+   "engineHeightCm": 10,
+   "notes": [],
+   "valid": null,
+   "history": []
+  },
+  "calice-mouchete": {
+   "name": "Calice moucheté",
+   "version": 1,
+   "scale": null,
+   "engineScale": 1,
+   "engineHeightCm": 17,
+   "notes": [],
+   "valid": null,
+   "history": []
+  },
+  "suiban-lobe-rose": {
+   "name": "Suiban lobé rose",
+   "version": 1,
+   "scale": null,
+   "engineScale": 1,
+   "engineHeightCm": 9.5,
+   "notes": [],
+   "valid": null,
+   "history": []
+  },
+  "boule-inox-brossee": {
+   "name": "Boule en inox brossé",
+   "version": 1,
+   "scale": null,
+   "engineScale": 1,
+   "engineHeightCm": 15.4,
+   "notes": [],
+   "valid": null,
+   "history": []
+  },
+  "calice-souffle-col-tube": {
+   "name": "Calice soufflé à col",
+   "version": 1,
+   "scale": null,
+   "engineScale": 1,
+   "engineHeightCm": 37,
+   "notes": [],
+   "valid": null,
+   "history": []
+  },
+  "calice-etain": {
+   "name": "Calice en étain",
+   "version": 1,
+   "scale": null,
+   "engineScale": 1,
+   "engineHeightCm": 16.5,
+   "notes": [],
+   "valid": null,
+   "history": []
+  },
+  "cylindre-verre-clair": {
+   "name": "Cylindre de verre",
+   "version": 1,
+   "scale": null,
+   "engineScale": 1,
+   "engineHeightCm": 14.5,
+   "notes": [],
+   "valid": null,
+   "history": []
+  },
+  "petite-boule-taupe": {
+   "name": "Petite boule taupe",
+   "version": 1,
+   "scale": null,
+   "engineScale": 1,
+   "engineHeightCm": 8.6,
+   "notes": [],
+   "valid": null,
+   "history": []
+  },
+  "jarre-gres-chamotte": {
+   "name": "Jarre en grès chamotté",
+   "version": 1,
+   "scale": null,
+   "engineScale": 1,
+   "engineHeightCm": 21,
+   "notes": [],
+   "valid": null,
+   "history": []
+  },
+  "boule-cotelee-bleue": {
+   "name": "Boule côtelée bleue",
+   "version": 1,
+   "scale": null,
+   "engineScale": 1,
+   "engineHeightCm": 23,
+   "notes": [],
+   "valid": null,
+   "history": []
+  },
+  "soliflore-balustre-noir": {
+   "name": "Soliflore balustre noir",
+   "version": 1,
+   "scale": null,
+   "engineScale": 1,
+   "engineHeightCm": 21.5,
+   "notes": [],
+   "valid": null,
+   "history": []
+  },
+  "coupe-pied-blanche-ciselee": {
+   "name": "Vase sur pied ciselé",
+   "version": 1,
+   "scale": null,
+   "engineScale": 1,
+   "engineHeightCm": 16.4,
+   "notes": [],
+   "valid": null,
+   "history": []
+  },
+  "cylindre-inox-miroir": {
+   "name": "Cylindre inox miroir",
+   "version": 1,
+   "scale": null,
+   "engineScale": 1,
+   "engineHeightCm": 12.8,
+   "notes": [],
+   "valid": null,
+   "history": []
+  },
+  "compotier-noir-laque": {
+   "name": "Compotier noir laqué",
+   "version": 1,
+   "scale": null,
+   "engineScale": 1,
+   "engineHeightCm": 13.2,
+   "notes": [],
+   "valid": null,
+   "history": []
+  },
+  "coupe-pied-blanche-mate": {
+   "name": "Petite coupe sur pied",
+   "version": 1,
+   "scale": null,
+   "engineScale": 1,
+   "engineHeightCm": 9.5,
+   "notes": [],
+   "valid": null,
+   "history": []
+  },
+  "pique-fleurs-laiton": {
+   "name": "Pique-fleurs en laiton",
+   "version": 1,
+   "scale": null,
+   "engineScale": 1,
+   "engineHeightCm": 4.5,
+   "notes": [],
+   "valid": null,
+   "history": []
+  },
+  "coupelle-laiton-console": {
+   "name": "Coupelle en laiton",
+   "version": 1,
+   "scale": null,
+   "engineScale": 1,
+   "engineHeightCm": 5,
+   "notes": [],
+   "valid": null,
+   "history": []
+  },
+  "bronze-carpe": {
+   "name": "Vase en bronze à la carpe",
+   "version": 1,
+   "scale": null,
+   "engineScale": 1,
+   "engineHeightCm": 23.1,
+   "notes": [],
+   "valid": null,
+   "history": []
+  },
+  "verre-danseuses": {
+   "name": "Vase en verre aux danseuses",
+   "version": 1,
+   "scale": null,
+   "engineScale": 1,
+   "engineHeightCm": 36.8,
+   "notes": [],
+   "valid": null,
+   "history": []
+  },
+  "jarre-carpes": {
+   "name": "Jarre aux carpes en relief",
+   "version": 1,
+   "scale": null,
+   "engineScale": 1,
+   "engineHeightCm": 39,
+   "notes": [],
+   "valid": null,
+   "history": []
+  },
+  "prisme-jaune": {
+   "name": "Prisme jaune à cœur suspendu",
+   "version": 1,
+   "scale": null,
+   "engineScale": 1,
+   "engineHeightCm": 37.5,
+   "notes": [],
+   "valid": null,
+   "history": []
+  },
+  "balustre-perce-neige": {
+   "name": "Balustre aux perce-neige",
+   "version": 1,
+   "scale": null,
+   "engineScale": 1,
+   "engineHeightCm": 45,
+   "notes": [],
+   "valid": null,
+   "history": []
+  },
+  "gres-chauve-souris": {
+   "name": "Grès à la chauve-souris",
+   "version": 1,
+   "scale": 1.11,
+   "engineScale": 1,
+   "engineHeightCm": 52.5,
+   "notes": [],
+   "valid": null,
+   "history": [],
+   "scaleSent": false
+  },
+  "bouteille-dragon": {
+   "name": "Bouteille au dragon turquoise",
+   "version": 1,
+   "scale": null,
+   "engineScale": 1,
+   "engineHeightCm": 48,
+   "notes": [],
+   "valid": null,
+   "history": []
+  },
+  "porcelaine-papillon": {
+   "name": "Porcelaine au papillon",
+   "version": 1,
+   "scale": null,
+   "engineScale": 1,
+   "engineHeightCm": 45,
+   "notes": [],
+   "valid": null,
+   "history": []
+  },
+  "calla-gres": {
+   "name": "Calla de grès",
+   "version": 1,
+   "scale": null,
+   "engineScale": 1,
+   "engineHeightCm": 33,
+   "notes": [],
+   "valid": null,
+   "history": []
+  },
+  "bronze-bambous": {
+   "name": "Bronze aux bambous",
+   "version": 1,
+   "scale": null,
+   "engineScale": 1,
+   "engineHeightCm": 54,
+   "notes": [],
+   "valid": null,
+   "history": []
+  },
+  "bronze-lys": {
+   "name": "Bronze aux lys",
+   "version": 1,
+   "scale": null,
+   "engineScale": 1,
+   "engineHeightCm": 33,
+   "notes": [],
+   "valid": null,
+   "history": []
+  },
+  "cristal-ginkgo": {
+   "name": "Cristal améthyste gravé",
+   "version": 1,
+   "scale": null,
+   "engineScale": 1,
+   "engineHeightCm": 34.5,
+   "notes": [],
+   "valid": null,
+   "history": []
+  },
+  "jardiniere-cristaux": {
+   "name": "Jardinière Art nouveau aux cristaux",
+   "version": 1,
+   "scale": null,
+   "engineScale": 1,
+   "engineHeightCm": 36,
+   "notes": [],
+   "valid": null,
+   "history": []
+  },
+  "prismes-bronze": {
+   "name": "Prismes de bronze",
+   "version": 1,
+   "scale": null,
+   "engineScale": 1,
+   "engineHeightCm": 60,
+   "notes": [],
+   "valid": null,
+   "history": []
+  },
+  "narcisses-bronze": {
+   "name": "Bronze aux narcisses",
+   "version": 1,
+   "scale": null,
+   "engineScale": 1,
+   "engineHeightCm": 45,
+   "notes": [],
+   "valid": null,
+   "history": []
+  },
+  "coque-verte": {
+   "name": "Coque verte",
+   "version": 1,
+   "scale": null,
+   "engineScale": 1,
+   "engineHeightCm": 45,
+   "notes": [],
+   "valid": null,
+   "history": []
+  },
+  "gui-argent": {
+   "name": "Céladon au gui d'argent",
+   "version": 1,
+   "scale": null,
+   "engineScale": 1,
+   "engineHeightCm": 36,
+   "notes": [],
+   "valid": null,
+   "history": []
+  },
+  "feuilles-vertes": {
+   "name": "Vase aux grandes feuilles",
+   "version": 1,
+   "scale": null,
+   "engineScale": 1,
+   "engineHeightCm": 42,
+   "notes": [],
+   "valid": null,
+   "history": []
+  },
+  "dragon-cloisonne": {
+   "name": "Balustre noir au dragon",
+   "version": 1,
+   "scale": null,
+   "engineScale": 1,
+   "engineHeightCm": 51,
+   "notes": [],
+   "valid": null,
+   "history": []
+  },
+  "ronces-noires": {
+   "name": "Verre camée aux ronces",
+   "version": 1,
+   "scale": null,
+   "engineScale": 1,
+   "engineHeightCm": 42,
+   "notes": [],
+   "valid": null,
+   "history": []
+  },
+  "colonne-art-nouveau": {
+   "name": "Colonne Art nouveau",
+   "version": 1,
+   "scale": null,
+   "engineScale": 1,
+   "engineHeightCm": 54,
+   "notes": [],
+   "valid": null,
+   "history": []
+  }
+ },
+ "sends": []
+}
