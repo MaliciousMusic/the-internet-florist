@@ -107,3 +107,18 @@ Deux règles ajoutées :
 Planches :
 - `_apercu/compo2_avant_apres.jpg` : la deuxième série ;
 - `_apercu/compo/regle_bord.jpg` : la première série avant et après la règle de la lèvre.
+
+## Troisième série : dragon cloisonné, ronces noires, colonne Art nouveau (16 octobre, nuit)
+
+| Vase | Bouche | Constat |
+|---|---|---|
+| dragon cloisonné | creux du GLB (mh 331, mo 32) | la fleur tendue à l'horizontale au ras de la lèvre disparaît (règle de la lèvre) |
+| ronces noires | creux du GLB (mh 274, mo 39) | inchangé pour l'essentiel |
+| colonne Art nouveau | fond de la couronne, entre les deux cornes (mh 319, mo 25) | les tiges entrent entre les cornes, et les cornes sont solides |
+
+Aucun réglage par vase n'a été nécessaire.
+
+Réserve : à la graine 7, un pétale de lys déborde un peu sur le haut de la corne droite de la colonne. L'emprise mesurée
+du lys (`FOOT_SP`) est plus petite que son dessin.
+
+Planche : `_apercu/compo3_avant_apres.jpg`.
