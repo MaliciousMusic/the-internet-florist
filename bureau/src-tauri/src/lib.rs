@@ -5,6 +5,7 @@ mod bouquet;
 mod chaine;
 mod desk;
 mod lien;
+mod maintien;
 mod nft;
 mod peintre;
 mod store;
@@ -201,6 +202,62 @@ fn est_devant(app: &AppHandle, id: &str) -> bool {
         .bouquets
         .iter()
         .any(|b| b.id == id && b.devant)
+}
+
+/// The still bouquet under a point of the screen (fixed, or the desk locked), those in front of the windows first.
+fn immobile_sous(app: &AppHandle, x: i32, y: i32) -> Option<String> {
+    let st = app.state::<App>();
+    let d = st.desk.lock().unwrap();
+    let dedans = |b: &&Placed| {
+        (d.locked || b.fixe) && x >= b.x && x < b.x + b.w as i32 && y >= b.y && y < b.y + b.h as i32
+    };
+    let devant = d.bouquets.iter().rev().filter(|b| b.devant).find(dedans);
+    devant
+        .or_else(|| d.bouquets.iter().rev().filter(|b| !b.devant).find(dedans))
+        .map(|b| b.id.clone())
+}
+
+/// Shows (or hides, when `p` is below 0) the ring of a long press in a bouquet's window.
+fn anneau(app: &AppHandle, id: &str, p: f64, x: i32, y: i32) {
+    let (bx, by) = app
+        .state::<App>()
+        .desk
+        .lock()
+        .unwrap()
+        .bouquets
+        .iter()
+        .find(|b| b.id == id)
+        .map(|b| (b.x, b.y))
+        .unwrap_or((0, 0));
+    let l = label(id);
+    if let Some(w) = app.get_webview_window(&l) {
+        let _ = w.emit_to(l.as_str(), "maintien", (p, x - bx, y - by));
+    }
+}
+
+/// Watches the left button: held six seconds on a still bouquet, it makes it editable again.
+fn guetter(app: AppHandle) {
+    std::thread::spawn(move || {
+        let mut m = maintien::Maintien::default();
+        let debut = std::time::Instant::now();
+        loop {
+            std::thread::sleep(Duration::from_millis(80));
+            let (appui, x, y) = maintien::souris();
+            let t = debut.elapsed().as_millis() as u64;
+            match m.pas(appui, x, y, t, |x, y| immobile_sous(&app, x, y)) {
+                maintien::Pas::Rien => {}
+                maintien::Pas::Progres(id, p, x, y) => anneau(&app, &id, p, x, y),
+                maintien::Pas::Annule(id) => anneau(&app, &id, -1.0, 0, 0),
+                maintien::Pas::Libere(id) => {
+                    anneau(&app, &id, -1.0, 0, 0);
+                    fixer(&app, &id, false);
+                    if app.state::<App>().desk.lock().unwrap().locked {
+                        set_locked(&app, false);
+                    }
+                }
+            }
+        }
+    });
 }
 
 /// Fixes a bouquet where it stands, or frees it to be moved and sized again.
@@ -841,6 +898,7 @@ pub fn run() {
                 nft::lien_recu(&handle, &l);
             }
             nft::veiller(handle.clone());
+            guetter(handle.clone());
             let files = files_in(&args);
             for f in &files {
                 if let Err(e) = add(&handle, f) {

@@ -183,6 +183,17 @@ fix.addEventListener('click', () => void T.core.invoke('fixer_ici'));
 planBtn.addEventListener('mousedown', e => e.stopPropagation());
 planBtn.addEventListener('click', () => void T.core.invoke('basculer_plan'));
 void win.listen<boolean>('plan', e => setDevant(e.payload));
+// a long press on the bouquet once fixed: the ring fills under the pointer (a share below 0 hides it)
+const anneau = document.getElementById('anneau')!;
+const plein = anneau.querySelector<SVGCircleElement>('.plein')!;
+void win.listen<[number, number, number]>('maintien', e => {
+  const [p, x, y] = e.payload;
+  anneau.classList.toggle('vu', p >= 0);
+  if (p < 0) return;
+  anneau.style.left = `${x / devicePixelRatio}px`;
+  anneau.style.top = `${y / devicePixelRatio}px`;
+  plein.style.strokeDashoffset = String(100 - 100 * Math.min(1, p));
+});
 // the bouquet's own menu
 addEventListener('contextmenu', e => {
   e.preventDefault();

@@ -25,4 +25,11 @@ body.verrou #actions { display: none; }
 #plan .arriere { fill: #fff; }
 body.devant #plan .arriere { fill: none; }
 body.devant #plan .avant { fill: #fff; }
+/* the ring of a long press on a fixed bouquet: six seconds held, and it is editable again */
+#anneau { position: fixed; width: 48px; height: 48px; margin: -24px 0 0 -24px; display: none; pointer-events: none;
+  transform: rotate(-90deg); filter: drop-shadow(0 1px 3px rgba(0, 0, 0, .55)); }
+#anneau.vu { display: block; }
+#anneau circle { fill: none; stroke-width: 5; }
+#anneau .fond { stroke: rgba(255, 255, 255, .35); }
+#anneau .plein { stroke: rgb(60, 140, 90); stroke-linecap: round; stroke-dasharray: 100; stroke-dashoffset: 100; }
 #vase.vide { display: grid; place-items: center; font: 600 13px system-ui, sans-serif; color: #fff; text-shadow: 0 1px 2px #000; text-align: center; padding: 12px; }

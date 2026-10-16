@@ -94,3 +94,13 @@ souris : un calque par-dessus tout, sans gêner.
 Corrigé au déménagement : `bureau/` est un niveau moins profond que l'ancien `apps/bureau/`, le moteur se lit dans
 `../../packages/engine` ; `packages/engine/dist/` est ignoré par git. Installeur mis à jour dans `livrables/` et sur le
 PC du porteur.
+
+## F7 — Appui long pour libérer un bouquet fixé (16 octobre 2026, même branche)
+
+Demande du porteur : un clic maintenu 6 secondes rend un bouquet fixé de nouveau éditable. Un bouquet fixé laisse passer
+la souris, sa fenêtre n'entend donc aucun clic : l'appli lit elle-même le bouton gauche et le pointeur
+(`GetAsyncKeyState`, `GetCursorPos`, 12 fois par seconde). Appui commencé sur un bouquet immobile (fixé, ou bureau
+verrouillé ; ceux de devant d'abord), tenu 6 s sans bouger de plus de 12 px : le bouquet est libéré, et le verrou général
+levé s'il était mis. Après 0,5 s, un anneau vert se remplit sous le pointeur ; relâcher ou bouger l'annule. Le clic, lui,
+passe toujours au bureau ou à la fenêtre dessous. Machine d'états testée (`maintien.rs`, 3 tests : 27 tests Rust).
+Non essayé à la main sur le PC du porteur, pour ne pas cliquer dans ses fenêtres pendant qu'il travaillait.
