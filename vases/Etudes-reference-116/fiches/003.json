@@ -1,0 +1,117 @@
+{
+  "id": "003",
+  "label": "Verre rose à deux pointes asymétriques",
+  "referenceSha256": "bcb8a3278ebacbdfa92cdcebc6ac2105c8fbafbcf1aafe1c582aabbc2b476068",
+  "file": "svg/003.svg",
+  "reference": "references/003",
+  "sha256": "f0ed9a38ed8a3eaa70ed1097cba4b9bd52edef69d983a8924ff38b25edcaa4f8",
+  "bytes": 18203821,
+  "paths": 67886,
+  "width": 720,
+  "height": 960,
+  "memoryBefore": 6288683008,
+  "method": "Transcription de contours et nuances en courbes de Bézier natives",
+  "review": "Contrôle visuel à effectuer",
+  "guide": {
+    "box": [
+      0.14,
+      0.04,
+      0.79,
+      0.975
+    ],
+    "outline": [
+      [
+        0.52,
+        0.052
+      ],
+      [
+        0.397,
+        0.294
+      ],
+      [
+        0.424,
+        0.347
+      ],
+      [
+        0.478,
+        0.369
+      ],
+      [
+        0.54,
+        0.373
+      ],
+      [
+        0.568,
+        0.323
+      ],
+      [
+        0.57,
+        0.247
+      ],
+      [
+        0.538,
+        0.156
+      ],
+      [
+        0.566,
+        0.168
+      ],
+      [
+        0.648,
+        0.295
+      ],
+      [
+        0.707,
+        0.448
+      ],
+      [
+        0.752,
+        0.66
+      ],
+      [
+        0.74,
+        0.8
+      ],
+      [
+        0.695,
+        0.9
+      ],
+      [
+        0.639,
+        0.947
+      ],
+      [
+        0.54,
+        0.97
+      ],
+      [
+        0.415,
+        0.966
+      ],
+      [
+        0.3,
+        0.91
+      ],
+      [
+        0.22,
+        0.82
+      ],
+      [
+        0.193,
+        0.72
+      ],
+      [
+        0.196,
+        0.64
+      ],
+      [
+        0.25,
+        0.41
+      ],
+      [
+        0.34,
+        0.23
+      ]
+    ]
+  }
+}

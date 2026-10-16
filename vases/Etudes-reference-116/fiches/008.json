@@ -1,0 +1,23 @@
+{
+  "id": "008",
+  "label": "Tours géométriques en métal",
+  "referenceSha256": "e55701c6c379d2087728eb2c936e9cbd94c3cf89a5d3d77ed217eaec0124c319",
+  "file": "svg/008.svg",
+  "reference": "references/008",
+  "sha256": "ee8bd82e3ba042ecd852d1fb5c969fcae6c7b2faf14844aca6911f2cdb57a150",
+  "bytes": 8608358,
+  "paths": 35128,
+  "width": 348,
+  "height": 450,
+  "memoryBefore": 6095753216,
+  "method": "Transcription de contours et nuances en courbes de Bézier natives",
+  "review": "Contrôle visuel à effectuer",
+  "guide": {
+    "box": [
+      0.06,
+      0.075,
+      0.91,
+      0.939
+    ]
+  }
+}

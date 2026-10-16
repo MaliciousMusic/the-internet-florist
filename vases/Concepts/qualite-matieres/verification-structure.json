@@ -1,0 +1,133 @@
+{
+  "originalsUnchanged": 400,
+  "privatePhotosUnchanged": 116,
+  "beforeCopiesExact": 16,
+  "nativeFinishedSVGs": [
+    {
+      "id": "C040",
+      "bytes": 612491,
+      "paths": 274,
+      "sha256": "7f76d4ddb753630e6ada6823ae298bc4641306e07615d6a0a977173706f8467a"
+    },
+    {
+      "id": "C001",
+      "bytes": 62412,
+      "paths": 324,
+      "sha256": "e195ddd4ba31758496abf35da64dc3550d2a68f3d97441a891d39d84bce8c7c5"
+    },
+    {
+      "id": "C159",
+      "bytes": 38367,
+      "paths": 206,
+      "sha256": "ff1b52160c045a1877067297a6cf0881e039a0b990b02df313651ec8672ff30b"
+    },
+    {
+      "id": "C089",
+      "bytes": 621413,
+      "paths": 508,
+      "sha256": "85c17bace5cba2c904a083727ca8871cf90fbaad2b3097566824af7373e9f40b"
+    },
+    {
+      "id": "C253",
+      "bytes": 366937,
+      "paths": 570,
+      "sha256": "4eefe066813c8ee728a7430c29677ad28183bf383b2beab60c6364d6455ec520"
+    },
+    {
+      "id": "C003",
+      "bytes": 31500,
+      "paths": 118,
+      "sha256": "c254dc3ea6f7e466d19958ec32b0cafa84b06e24dbe7ab8f3567954ec55042b0"
+    },
+    {
+      "id": "C021",
+      "bytes": 22123,
+      "paths": 97,
+      "sha256": "60c2fe2a652d3b73213da9c3192e99627581ef5676bb71a545b80833cdc3831c"
+    },
+    {
+      "id": "C042",
+      "bytes": 66725,
+      "paths": 65,
+      "sha256": "affe764c22f227b97b9308c39447a39177f6f0cb825a3211222a5800b25019c4"
+    },
+    {
+      "id": "C295",
+      "bytes": 72623,
+      "paths": 378,
+      "sha256": "bfcc1d307e5d0c86e70e6bdeebae00b8130923f0f5a62d8f2b3a43835b7b698f"
+    },
+    {
+      "id": "C074",
+      "bytes": 616252,
+      "paths": 407,
+      "sha256": "beff69042549fbf454e1801769804c84ef92da5a910b58cc2c6b611690516e77"
+    },
+    {
+      "id": "C043",
+      "bytes": 609020,
+      "paths": 377,
+      "sha256": "1b721d726a927e3fe74aa3b89e78bb2292bd2a1e4e9a295d8590443e5f4a5d8d"
+    },
+    {
+      "id": "C136",
+      "bytes": 621735,
+      "paths": 360,
+      "sha256": "f8bc037b90779cbb17ab5cc7b88e0bc4668aaab44ca6944ce4ce42285e9965d2"
+    },
+    {
+      "id": "C076",
+      "bytes": 512328,
+      "paths": 1101,
+      "sha256": "648954c1bc305cb4fda9a1c4644f52fafeb985ec69bb8243b1f1c1086dde1bab"
+    },
+    {
+      "id": "C007",
+      "bytes": 718107,
+      "paths": 540,
+      "sha256": "767d8f699b17e4d86dbd37521ffd996678768caf0fe1799669ad58684a9ef9de"
+    },
+    {
+      "id": "C084",
+      "bytes": 28392,
+      "paths": 110,
+      "sha256": "e430d70b4274a5a0a3727398c7b9a974092db2ec94982b65681e93c6be066240"
+    },
+    {
+      "id": "C017",
+      "bytes": 17344,
+      "paths": 70,
+      "sha256": "8f14289d54a2c61e841d2a45d129e9761701be42f02566a7d09891c1132a5696"
+    }
+  ],
+  "checks": [
+    "16 matières distinctes et numéros de la passation",
+    "XML, identifiants uniques, références internes et cadrage",
+    "Aucune image, dépendance extérieure, animation ou code incorporé",
+    "400 originaux et 116 photographies inchangés",
+    "16 avant à l’octet près",
+    "Ajours construits par masque vectoriel"
+  ],
+  "painted2DWithoutHeightMaps": [
+    "C001",
+    "C003",
+    "C017",
+    "C021",
+    "C042",
+    "C084",
+    "C159",
+    "C253",
+    "C295"
+  ],
+  "smallFeetRemovedFrom": [
+    "C007",
+    "C017",
+    "C040",
+    "C043",
+    "C076",
+    "C084",
+    "C089",
+    "C253"
+  ],
+  "approvedSurfacesPreserved": 16
+}

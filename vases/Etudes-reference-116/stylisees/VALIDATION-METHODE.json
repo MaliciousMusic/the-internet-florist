@@ -1,0 +1,12 @@
+{
+  "date": "2026-10-05",
+  "methodApproved": true,
+  "humanFeedback": "ouais absolument nickel",
+  "scope": "Base graphique légère, stylisée et composable de l’étude 009 et des deux variations présentées",
+  "series116Status": "En pause à la demande humaine",
+  "samples": [
+    {"file": "009.svg", "bytes": 10788, "paths": 46, "sha256": "b53e2c5a822d9385f8dc40a0e1acbd68ec6028c764e632f64173948909f0d672"},
+    {"file": "variation-tube.svg", "bytes": 9937, "paths": 45, "sha256": "9b33a35398603fd058f18ac431017486a21159cfd055cecbe2186a4bd7637a5f"},
+    {"file": "variation-boule.svg", "bytes": 10459, "paths": 51, "sha256": "37ee1c952dd29a733b5e84702eb7cf1d6a30b89cd9b2047b5581fb2b9b9ed656"}
+  ]
+}

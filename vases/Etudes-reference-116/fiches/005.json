@@ -1,0 +1,23 @@
+{
+  "id": "005",
+  "label": "Feuilles vertes sculptées",
+  "referenceSha256": "e754f13fa41e6623cc6a83f31aecebeac2981fdfd2dc688d6dcae288b05fc7eb",
+  "file": "svg/005.svg",
+  "reference": "references/005",
+  "sha256": "5804534cec724d33fc9e7a18a96850845ccc96539e93e3e07d3bba4cc0538581",
+  "bytes": 10982406,
+  "paths": 41862,
+  "width": 564,
+  "height": 564,
+  "memoryBefore": 6094491648,
+  "method": "Transcription de contours et nuances en courbes de Bézier natives",
+  "review": "Contrôle visuel à effectuer",
+  "guide": {
+    "box": [
+      0.09,
+      0.12,
+      0.83,
+      0.92
+    ]
+  }
+}

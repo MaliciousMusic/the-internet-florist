@@ -1,0 +1,6 @@
+{
+  "sourcesIdentical": 44,
+  "privatePathsDenied": 8,
+  "loopback": "127.0.0.1:8791",
+  "onlyListedFiles": true
+}

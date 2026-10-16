@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-06",
+  "reference": "013",
+  "scope": "3 variations originales seulement",
+  "status": "mise de côté à la demande humaine : à perfectionner, croquis non validés",
+  "firstAttempt": "refuse : figures trop plates, pauvres et grandes",
+  "method": "corps et plis continus, courbes et lavis natifs 2D",
+  "preview": "http://127.0.0.1:8790/",
+  "inspectedRenders": 6,
+  "nativeSvgLoadingConfirmed": 3,
+  "zoomChecked": 200,
+  "themesChecked": [
+    "clair",
+    "sombre"
+  ],
+  "originalsUnchanged": 400,
+  "privatePhotosUnchanged": 116
+}

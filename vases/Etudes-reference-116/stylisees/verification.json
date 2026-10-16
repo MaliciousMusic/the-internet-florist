@@ -1,0 +1,44 @@
+[
+  {
+    "id": "009",
+    "title": "Étude 009 · magnolias en relief",
+    "file": "009.svg",
+    "bytes": 10788,
+    "paths": 46,
+    "instances": 9,
+    "sha256": "b53e2c5a822d9385f8dc40a0e1acbd68ec6028c764e632f64173948909f0d672",
+    "memoryBeforeRender": 5502320640,
+    "renders": [
+      "009-clair.png",
+      "009-sombre.png"
+    ]
+  },
+  {
+    "id": "variation-tube",
+    "title": "Variation · tube et boutons blancs",
+    "file": "variation-tube.svg",
+    "bytes": 9937,
+    "paths": 45,
+    "instances": 7,
+    "sha256": "9b33a35398603fd058f18ac431017486a21159cfd055cecbe2186a4bd7637a5f",
+    "memoryBeforeRender": 5498740736,
+    "renders": [
+      "variation-tube-clair.png",
+      "variation-tube-sombre.png"
+    ]
+  },
+  {
+    "id": "variation-boule",
+    "title": "Variation · boule et aigrette blanche",
+    "file": "variation-boule.svg",
+    "bytes": 10459,
+    "paths": 51,
+    "instances": 4,
+    "sha256": "37ee1c952dd29a733b5e84702eb7cf1d6a30b89cd9b2047b5581fb2b9b9ed656",
+    "memoryBeforeRender": 5499113472,
+    "renders": [
+      "variation-boule-clair.png",
+      "variation-boule-sombre.png"
+    ]
+  }
+]

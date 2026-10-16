@@ -1,0 +1,7 @@
+{
+  "checks": [
+    "Page, catalogue et 400 SVG accessibles",
+    "Sauvegarde atomique, notes, propriétés et relecture du fichier",
+    "Versions, identifiants, notes invalides et origine extérieure refusés ; références privées inaccessibles"
+  ]
+}

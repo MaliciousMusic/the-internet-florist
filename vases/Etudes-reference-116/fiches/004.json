@@ -1,0 +1,31 @@
+{
+  "id": "004",
+  "label": "Vase vert aux carpes dorées",
+  "referenceSha256": "466db5647fcd043ca69f2c75098d84ebee1740f094aaf2044ca80e43e5a7c5aa",
+  "file": "svg/004.svg",
+  "reference": "references/004",
+  "sha256": "92d5ee76cbfdd3c64f8f428c43b34e6ce94b67662a72c72f86111e6b112ffa0e",
+  "bytes": 15406049,
+  "paths": 63578,
+  "width": 393,
+  "height": 480,
+  "memoryBefore": 5973061632,
+  "method": "Transcription de contours et nuances en courbes de Bézier natives",
+  "review": "Contrôle visuel à effectuer",
+  "guide": {
+    "box": [
+      0.04,
+      0.05,
+      0.96,
+      0.917
+    ],
+    "foreground": [
+      [
+        0.34,
+        0.24,
+        0.69,
+        0.76
+      ]
+    ]
+  }
+}

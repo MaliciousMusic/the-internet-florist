@@ -1,0 +1,44 @@
+{
+  "checks": [
+    "16 paires, 32 véritables SVG chargés, cadrage et échelle identiques",
+    "16 agrandissements, zoom à 200 %, déplacement synchronisé et deux fonds",
+    "Reprise précédente archivée consultable en véritable SVG",
+    "Notes et avis locaux persistants, export de 16 retours, navigation et fermeture au clavier",
+    "Galerie et agrandissement mobiles sans débordement",
+    "Serveur sur loopback, liste explicite, photos et outils inaccessibles, aucune requête extérieure"
+  ],
+  "errors": [],
+  "externalRequests": [],
+  "memory": [
+    4450820096,
+    4405628928,
+    4273983488,
+    4199731200,
+    4216242176,
+    4214284288,
+    4206465024,
+    4117766144,
+    4176986112,
+    4233351168,
+    4267606016,
+    4263374848,
+    4266811392,
+    4260892672,
+    4260257792,
+    4252954624,
+    4255846400,
+    4260593664,
+    4250054656,
+    4244426752
+  ],
+  "screenshots": [
+    "preview-desktop.png",
+    "preview-desktop-sombre.png",
+    "detail-C001.png",
+    "detail-C089.png",
+    "detail-C042.png",
+    "detail-C084.png",
+    "detail-C017.png",
+    "preview-mobile.png"
+  ]
+}

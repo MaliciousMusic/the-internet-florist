@@ -1,0 +1,31 @@
+{
+  "id": "007",
+  "label": "Visage turquoise texturé",
+  "referenceSha256": "b4b8487b015a580bae3d122d32e80f69a159b526f3aaad1d5d8852dce39c9f94",
+  "file": "svg/007.svg",
+  "reference": "references/007",
+  "sha256": "40ed21a14f649d4d83104921049f109ec147506d981e42ac33bc6f5a435ab5e6",
+  "bytes": 19815010,
+  "paths": 83942,
+  "width": 800,
+  "height": 800,
+  "memoryBefore": 6107000832,
+  "method": "Transcription de contours et nuances en courbes de Bézier natives",
+  "review": "Contrôle visuel à effectuer",
+  "guide": {
+    "box": [
+      0.34,
+      0.25,
+      0.655,
+      0.891
+    ],
+    "foreground": [
+      [
+        0.42,
+        0.32,
+        0.56,
+        0.73
+      ]
+    ]
+  }
+}

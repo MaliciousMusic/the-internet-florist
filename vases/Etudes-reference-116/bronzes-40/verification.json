@@ -1,0 +1,405 @@
+{
+  "count": 40,
+  "items": [
+    {
+      "id": "B01-a",
+      "bytes": 7862,
+      "paths": 25,
+      "sha256": "45ef111d2dafe41e350f5caaf6fddc024f8aa0c7f3d20335ecbfab120ec54de5",
+      "xmlValid": true,
+      "selfContained": true,
+      "native2dOnly": true,
+      "mounted": false
+    },
+    {
+      "id": "B01-b",
+      "bytes": 11881,
+      "paths": 52,
+      "sha256": "b6f169160fc1a0884d790e9e786ab3c7407549723df39c3e8d9a7fbc9f70ef47",
+      "xmlValid": true,
+      "selfContained": true,
+      "native2dOnly": true,
+      "mounted": false
+    },
+    {
+      "id": "B01-c",
+      "bytes": 11137,
+      "paths": 42,
+      "sha256": "fb82a1729f61aeb4468a2381d28363298a7c0662b702571ebb1b7bc519e915b0",
+      "xmlValid": true,
+      "selfContained": true,
+      "native2dOnly": true,
+      "mounted": true
+    },
+    {
+      "id": "B01-d",
+      "bytes": 16110,
+      "paths": 74,
+      "sha256": "d21cf0000ffa518cb16bf1f04ed42577ab05fcb4515c4b4d25f9a3fe32895526",
+      "xmlValid": true,
+      "selfContained": true,
+      "native2dOnly": true,
+      "mounted": true
+    },
+    {
+      "id": "B02-a",
+      "bytes": 8338,
+      "paths": 28,
+      "sha256": "f7b0ca6175e47cd199c560ce82be6725bbad790126593b3e411f06e6864b2ad9",
+      "xmlValid": true,
+      "selfContained": true,
+      "native2dOnly": true,
+      "mounted": false
+    },
+    {
+      "id": "B02-b",
+      "bytes": 17576,
+      "paths": 91,
+      "sha256": "8ff21a010355faa981fc7770de4fbd760d13fc45c9fc518c92633013f9387481",
+      "xmlValid": true,
+      "selfContained": true,
+      "native2dOnly": true,
+      "mounted": false
+    },
+    {
+      "id": "B02-c",
+      "bytes": 11302,
+      "paths": 41,
+      "sha256": "2bd4296434b29407988ca48a23677ddd09872ceaa9c4e51dd25f5b4675c9c76a",
+      "xmlValid": true,
+      "selfContained": true,
+      "native2dOnly": true,
+      "mounted": true
+    },
+    {
+      "id": "B02-d",
+      "bytes": 21493,
+      "paths": 109,
+      "sha256": "c69c08dbd931a447eeddb047b42cc886f512757a1ccd2c75614bf2488d8a070e",
+      "xmlValid": true,
+      "selfContained": true,
+      "native2dOnly": true,
+      "mounted": true
+    },
+    {
+      "id": "B03-a",
+      "bytes": 8989,
+      "paths": 29,
+      "sha256": "276e3ce09960b9f60f0e54e35c49aba664c007e2f7ad196db460d40eab083abb",
+      "xmlValid": true,
+      "selfContained": true,
+      "native2dOnly": true,
+      "mounted": false
+    },
+    {
+      "id": "B03-b",
+      "bytes": 12329,
+      "paths": 51,
+      "sha256": "1cf3461f10aa0fa42a2dd70db03ff43c8971b6e11b91e7a79061de6b750171d8",
+      "xmlValid": true,
+      "selfContained": true,
+      "native2dOnly": true,
+      "mounted": false
+    },
+    {
+      "id": "B03-c",
+      "bytes": 12818,
+      "paths": 48,
+      "sha256": "5eb36b968dc8282c67afc5443a43b0e8b073e12dc7a205792b393e35516b76e6",
+      "xmlValid": true,
+      "selfContained": true,
+      "native2dOnly": true,
+      "mounted": true
+    },
+    {
+      "id": "B03-d",
+      "bytes": 17755,
+      "paths": 80,
+      "sha256": "fecd0bcf7ca7395620c17c38a289556c66287462185a18f8027318552dbabd20",
+      "xmlValid": true,
+      "selfContained": true,
+      "native2dOnly": true,
+      "mounted": true
+    },
+    {
+      "id": "B04-a",
+      "bytes": 8185,
+      "paths": 20,
+      "sha256": "bbdab94088853ae672a4d785071fc9aefd2014863c44468364e6ea6876bc7f24",
+      "xmlValid": true,
+      "selfContained": true,
+      "native2dOnly": true,
+      "mounted": false
+    },
+    {
+      "id": "B04-b",
+      "bytes": 10467,
+      "paths": 35,
+      "sha256": "0cb0f4dd33d6b9dfb9fb2cd4fa1363de167ff6d78737619ed66bfb0feab4783e",
+      "xmlValid": true,
+      "selfContained": true,
+      "native2dOnly": true,
+      "mounted": false
+    },
+    {
+      "id": "B04-c",
+      "bytes": 13431,
+      "paths": 49,
+      "sha256": "2238591c4b8ce5d5578488051ac03401775f52d5192238e8fab8e023d6be45dd",
+      "xmlValid": true,
+      "selfContained": true,
+      "native2dOnly": true,
+      "mounted": true
+    },
+    {
+      "id": "B04-d",
+      "bytes": 16663,
+      "paths": 69,
+      "sha256": "881fa6b57cd3da21fda19bf79b2436ac790416b9e1e767ceef4b29e26e6a1955",
+      "xmlValid": true,
+      "selfContained": true,
+      "native2dOnly": true,
+      "mounted": true
+    },
+    {
+      "id": "B05-a",
+      "bytes": 11097,
+      "paths": 48,
+      "sha256": "26a57cbd613cf674d74ebb16b8f94c4f1688004a3dda9fde1ebd6a5f50f70307",
+      "xmlValid": true,
+      "selfContained": true,
+      "native2dOnly": true,
+      "mounted": false
+    },
+    {
+      "id": "B05-b",
+      "bytes": 14705,
+      "paths": 70,
+      "sha256": "af0809113a9a2f0b98df177ee82d87a6abacc704e6ba9ee6c54f9561774f9329",
+      "xmlValid": true,
+      "selfContained": true,
+      "native2dOnly": true,
+      "mounted": false
+    },
+    {
+      "id": "B05-c",
+      "bytes": 14366,
+      "paths": 65,
+      "sha256": "0726d4323a779aee8b5f9e846b11106b1bd4fbfaf4b0078589cd45703dd103cd",
+      "xmlValid": true,
+      "selfContained": true,
+      "native2dOnly": true,
+      "mounted": true
+    },
+    {
+      "id": "B05-d",
+      "bytes": 18928,
+      "paths": 92,
+      "sha256": "54276db16e991a416b56f4a23cf1dd2156891a5529340aadce0ea815e34541e0",
+      "xmlValid": true,
+      "selfContained": true,
+      "native2dOnly": true,
+      "mounted": true
+    },
+    {
+      "id": "B06-a",
+      "bytes": 8338,
+      "paths": 28,
+      "sha256": "653d42f7a2f57f226b6c67ad52d1bdb9186c15b1f14e6b3cf9d2bc2c12bd0633",
+      "xmlValid": true,
+      "selfContained": true,
+      "native2dOnly": true,
+      "mounted": false
+    },
+    {
+      "id": "B06-b",
+      "bytes": 11379,
+      "paths": 47,
+      "sha256": "76e055310571f04c2d4b1a1c85d9158cee11fb9003a0ca2138d0d0d2e6f80787",
+      "xmlValid": true,
+      "selfContained": true,
+      "native2dOnly": true,
+      "mounted": false
+    },
+    {
+      "id": "B06-c",
+      "bytes": 11305,
+      "paths": 41,
+      "sha256": "8d6e25c7e76166e3343935c8bf5e90196d916bd3eeaa4aa53ac837ffdd32271b",
+      "xmlValid": true,
+      "selfContained": true,
+      "native2dOnly": true,
+      "mounted": true
+    },
+    {
+      "id": "B06-d",
+      "bytes": 15308,
+      "paths": 65,
+      "sha256": "34796d9e4fd04d9e99a531c0e4f18adb7d2f720dbfedf7f2bf34940a20b4f2d5",
+      "xmlValid": true,
+      "selfContained": true,
+      "native2dOnly": true,
+      "mounted": true
+    },
+    {
+      "id": "B07-a",
+      "bytes": 8829,
+      "paths": 27,
+      "sha256": "26600f89497b6d0e4bfe0d4c729e93c38e3d85ba3a790556ac63eaa00e3b63ed",
+      "xmlValid": true,
+      "selfContained": true,
+      "native2dOnly": true,
+      "mounted": false
+    },
+    {
+      "id": "B07-b",
+      "bytes": 10997,
+      "paths": 40,
+      "sha256": "24c0c75f9ccc428dac6ab6dd3a6d9b82564ef023c249a4b43a2b0786ade7138f",
+      "xmlValid": true,
+      "selfContained": true,
+      "native2dOnly": true,
+      "mounted": false
+    },
+    {
+      "id": "B07-c",
+      "bytes": 12673,
+      "paths": 46,
+      "sha256": "31e299279ac64e9019b4bed130c4790ff6a408204c109caad6aa98f0dfaa47e7",
+      "xmlValid": true,
+      "selfContained": true,
+      "native2dOnly": true,
+      "mounted": true
+    },
+    {
+      "id": "B07-d",
+      "bytes": 15789,
+      "paths": 64,
+      "sha256": "71a0bf334462bee75ea86ea1cbd34a1307a5ad9c5b5c6d0818a52804db67f803",
+      "xmlValid": true,
+      "selfContained": true,
+      "native2dOnly": true,
+      "mounted": true
+    },
+    {
+      "id": "B08-a",
+      "bytes": 7935,
+      "paths": 17,
+      "sha256": "1aed73a4bdef19832ca2462552dcb457d3eb4c28a41e8c435e26c7fd44270100",
+      "xmlValid": true,
+      "selfContained": true,
+      "native2dOnly": true,
+      "mounted": false
+    },
+    {
+      "id": "B08-b",
+      "bytes": 11086,
+      "paths": 37,
+      "sha256": "e15bcc0975e4da5dde9f944ec9a172709f3dc8101a0eee328c9c2f412db9058c",
+      "xmlValid": true,
+      "selfContained": true,
+      "native2dOnly": true,
+      "mounted": false
+    },
+    {
+      "id": "B08-c",
+      "bytes": 13181,
+      "paths": 46,
+      "sha256": "a5fd7d4b29ec910e8ef24edcaaff1bae4e91ebe98ea1170d502dfa058ca181d5",
+      "xmlValid": true,
+      "selfContained": true,
+      "native2dOnly": true,
+      "mounted": true
+    },
+    {
+      "id": "B08-d",
+      "bytes": 17931,
+      "paths": 76,
+      "sha256": "1e60cf0ce4646f158ce8a4cc06b0592492541710be33ac085f21f040aac52758",
+      "xmlValid": true,
+      "selfContained": true,
+      "native2dOnly": true,
+      "mounted": true
+    },
+    {
+      "id": "B09-a",
+      "bytes": 8443,
+      "paths": 26,
+      "sha256": "7480bc70db6c221607d7d02e2a99313c5cddb4b5e07b35a42f5fc5241b9bb214",
+      "xmlValid": true,
+      "selfContained": true,
+      "native2dOnly": true,
+      "mounted": false
+    },
+    {
+      "id": "B09-b",
+      "bytes": 10410,
+      "paths": 38,
+      "sha256": "dfe3da686c0265391ccbb8839837782618db63a5c290efce128aec7b3812861b",
+      "xmlValid": true,
+      "selfContained": true,
+      "native2dOnly": true,
+      "mounted": false
+    },
+    {
+      "id": "B09-c",
+      "bytes": 11718,
+      "paths": 43,
+      "sha256": "e2e7d2f79f9635e2e61e766c2b564e13198a1874dab392be5195380407cc5127",
+      "xmlValid": true,
+      "selfContained": true,
+      "native2dOnly": true,
+      "mounted": true
+    },
+    {
+      "id": "B09-d",
+      "bytes": 14639,
+      "paths": 60,
+      "sha256": "698a68b9253d854f11a646b8946119ed96b51a78134926faca45b552a003a1f0",
+      "xmlValid": true,
+      "selfContained": true,
+      "native2dOnly": true,
+      "mounted": true
+    },
+    {
+      "id": "B10-a",
+      "bytes": 7315,
+      "paths": 16,
+      "sha256": "b9a24207ba6dd80bbfd25d468246d8492babb1c91f325a1e7e2ebf05e0b90c51",
+      "xmlValid": true,
+      "selfContained": true,
+      "native2dOnly": true,
+      "mounted": false
+    },
+    {
+      "id": "B10-b",
+      "bytes": 11781,
+      "paths": 42,
+      "sha256": "07445f1586470cc9bba07fa3bcce2f368413ae7caf9d7369415945675ad558a8",
+      "xmlValid": true,
+      "selfContained": true,
+      "native2dOnly": true,
+      "mounted": false
+    },
+    {
+      "id": "B10-c",
+      "bytes": 10291,
+      "paths": 29,
+      "sha256": "bad86aee0adf1a833bb8d9cb67e4d3176120bd9e9da1e814a62f952ea9b42965",
+      "xmlValid": true,
+      "selfContained": true,
+      "native2dOnly": true,
+      "mounted": true
+    },
+    {
+      "id": "B10-d",
+      "bytes": 16361,
+      "paths": 65,
+      "sha256": "c3ee8e4bdc5062e6aa9e18af3792051219cdb525a3f817891661c2b64a575923",
+      "xmlValid": true,
+      "selfContained": true,
+      "native2dOnly": true,
+      "mounted": true
+    }
+  ]
+}

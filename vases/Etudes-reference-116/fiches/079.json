@@ -1,0 +1,39 @@
+{
+  "id": "079",
+  "label": "Céramique à trois petits pieds",
+  "referenceSha256": "6e622d2fa5306c971e0f8566789eb6f3618a9eefb8943743bca2bd63d5a1a991",
+  "file": "svg/079.svg",
+  "reference": "references/079",
+  "sha256": "98f8154e1cc876bfd7ecebfcb8ae0c777c439055b070cf7d8befcec8442375cd",
+  "bytes": 3378333,
+  "paths": 7244,
+  "width": 800,
+  "height": 800,
+  "memoryBefore": 4492812288,
+  "method": "Transcription de contours et nuances en courbes de Bézier natives",
+  "review": "Contrôle visuel à effectuer",
+  "guide": {
+    "box": [
+      0.12,
+      0.12,
+      0.86,
+      0.84
+    ],
+    "foreground": [
+      [
+        0.24,
+        0.35,
+        0.75,
+        0.76
+      ]
+    ],
+    "remove": [
+      [
+        0,
+        0.845,
+        1,
+        1
+      ]
+    ]
+  }
+}

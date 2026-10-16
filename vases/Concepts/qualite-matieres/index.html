@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Belai’s Flowers — Atelier des matières</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="comparaison.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <header class="masthead"><a class="brand" href="#">Belai’s Flowers<span>Atelier des vases</span></a><span class="edition">ÉTUDES DE MATIÈRE · 05 OCTOBRE 2026</span></header>
+  <main>
+    <section class="intro">
+      <div><p class="eyebrow">COLLECTION VALIDÉE · 400 CONCEPTS</p><h1>Seize matières,<br><em>seize finitions.</em></h1></div>
+      <div class="intro-note"><p>Un exemple par matière, du concept au volume sculpté. Examinez la lumière, les bords et les reliefs sur deux fonds.</p><p class="quiet">Les 400 concepts restent validés. Votre retour porte ici sur la finition de ces 16 exemples.</p></div>
+    </section>
+    <nav class="toolbar" aria-label="Commandes de comparaison">
+      <div class="backgrounds" role="group" aria-label="Fond des dessins"><span>Fond</span><button class="active" data-background="clair" aria-pressed="true"><i class="swatch light"></i>Clair</button><button data-background="sombre" aria-pressed="false"><i class="swatch dark"></i>Sombre</button></div>
+      <span id="progress" class="progress" aria-live="polite">16 matières à examiner</span><button id="export" class="text-button">Exporter mes retours <span aria-hidden="true">↗</span></button>
+    </nav>
+    <div id="gallery" class="gallery"></div>
+    <footer>16 exemples · Lumière en haut à gauche · Dessins vectoriels à fond transparent<br><span>Les notes sont conservées dans ce navigateur. Exportez-les pour les partager.</span></footer>
+  </main>
+  <dialog id="detail" aria-labelledby="detail-title">
+    <div class="dialog-top"><div><p class="eyebrow" id="detail-material"></p><h2 id="detail-title"></h2></div><button id="close" class="icon-button" aria-label="Fermer l’agrandissement">×</button></div>
+    <div class="detail-toolbar">
+      <div class="backgrounds" role="group" aria-label="Fond de l’agrandissement"><button data-background="clair" aria-pressed="true">Clair</button><button data-background="sombre" aria-pressed="false">Sombre</button></div>
+      <div class="zoom-controls"><button id="zoom-out" aria-label="Réduire">−</button><label for="zoom">Zoom <output id="zoom-value">100 %</output></label><input id="zoom" type="range" min="100" max="350" step="25" value="100"><button id="zoom-in" aria-label="Agrandir">+</button></div>
+      <div><button id="previous" aria-label="Matière précédente">←</button><span id="position"></span><button id="next" aria-label="Matière suivante">→</button></div>
+    </div>
+    <div class="detail-pair"><section><h3><label for="before-source">Avant</label><select id="before-source" aria-label="Version à comparer"><option value="concept">Concept validé</option><option value="previous">Reprise précédente</option></select></h3><div class="viewport" id="before-view"><div class="zoom-canvas"><img id="detail-before" alt=""></div></div></section><section><h3>Après <span>Reprise à examiner</span></h3><div class="viewport" id="after-view"><div class="zoom-canvas"><img id="detail-after" alt=""></div></div></section></div>
+    <div class="detail-bottom"><p id="detail-notes"></p><div class="review"><label for="verdict">Votre avis</label><select id="verdict"><option value="pending">À examiner</option><option value="approved">Matière validée</option><option value="revise">À reprendre</option></select><label for="note">Note</label><textarea id="note" rows="2" placeholder="Lumière, relief, transparence, point à reprendre…"></textarea><span id="saved" role="status">Conservé dans ce navigateur</span></div></div>
+  </dialog>
+</body>
+</html>

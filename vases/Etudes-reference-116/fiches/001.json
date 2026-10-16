@@ -1,0 +1,31 @@
+{
+  "id": "001",
+  "label": "Œuf sculpté et grenouilles",
+  "referenceSha256": "f7a55eb7a6f82ab6c0dc661018e1fdfc9550a8c85895dd0698b25c00f828d2ac",
+  "file": "svg/001.svg",
+  "reference": "references/001",
+  "sha256": "b77beaf0a204631ff4df6eaf448c2d5014497a840c89c0436c1075b32a6ab8ac",
+  "bytes": 57951346,
+  "paths": 236379,
+  "width": 950,
+  "height": 950,
+  "memoryBefore": 6186258432,
+  "method": "Transcription de contours et nuances en courbes de Bézier natives",
+  "review": "Contrôle visuel à effectuer",
+  "guide": {
+    "box": [
+      0.06,
+      0.08,
+      0.96,
+      0.92
+    ],
+    "foreground": [
+      [
+        0.35,
+        0.22,
+        0.65,
+        0.8
+      ]
+    ]
+  }
+}

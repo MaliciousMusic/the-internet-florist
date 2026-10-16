@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" width="800" height="1000" role="img" aria-labelledby="title desc">
+<title id="title">003 — Goutte asymétrique — Bronze patiné</title>
+<desc id="desc">Étude vectorielle indépendante. Fond transparent. Prototype privé à valider, sans statut de libre reproduction.</desc>
+<defs>
+<linearGradient id="surface" x1="0" y1="0.1" x2="1" y2="0.28"><stop offset="0%" stop-color="#193a32"/><stop offset="13%" stop-color="#374536"/><stop offset="28%" stop-color="#92754a"/><stop offset="39%" stop-color="#e1ba7d"/><stop offset="59%" stop-color="#6a5637"/><stop offset="75%" stop-color="#ac864c"/><stop offset="100%" stop-color="#2a4338"/></linearGradient>
+<linearGradient id="vertical" x2="0.1" y2="1"><stop stop-color="#e6e4b3" stop-opacity=".16"/><stop offset=".5" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#091913" stop-opacity=".44"/></linearGradient>
+<linearGradient id="edge" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#374536"/><stop offset=".4" stop-color="#e1ba7d"/><stop offset=".7" stop-color="#92754a"/><stop offset="1" stop-color="#193a32"/></linearGradient>
+<linearGradient id="shade" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#062317" stop-opacity=".68"/><stop offset=".3" stop-color="#a3f4bc" stop-opacity=".12"/><stop offset=".6" stop-color="#ecffe3" stop-opacity=".2"/><stop offset="1" stop-color="#041c12" stop-opacity=".7"/></linearGradient>
+<linearGradient id="inner" x1="0.3" y1="0" x2=".8" y2="1"><stop stop-color="#112d26"/><stop offset=".6" stop-color="#071812"/><stop offset="1" stop-color="#374536"/></linearGradient>
+<linearGradient id="frog" x1="0" y1="0" x2="1" y2=".4"><stop stop-color="#061f25"/><stop offset=".32" stop-color="#327576"/><stop offset=".5" stop-color="#739587"/><stop offset=".8" stop-color="#163b3c"/><stop offset="1" stop-color="#07181b"/></linearGradient>
+<linearGradient id="eye" x2="0.7" y2="1"><stop stop-color="#afb5a2"/><stop offset=".2" stop-color="#4b4738"/><stop offset=".45" stop-color="#060b09"/><stop offset="1" stop-color="#010603"/></linearGradient>
+<linearGradient id="rib" x1="0" x2="1"><stop offset="0%" stop-color="#193a32"/><stop offset="13%" stop-color="#374536"/><stop offset="28%" stop-color="#92754a"/><stop offset="39%" stop-color="#e1ba7d"/><stop offset="59%" stop-color="#6a5637"/><stop offset="75%" stop-color="#ac864c"/><stop offset="100%" stop-color="#2a4338"/></linearGradient>
+<filter id="grain" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".7" numOctaves="3" seed="23"/><feColorMatrix type="saturate" values="0"/><feComposite in2="SourceGraphic" operator="in"/><feBlend in="SourceGraphic" mode="soft-light"/></filter>
+<filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="7"/></filter>
+<filter id="relief" x="-40%" y="-30%" width="180%" height="170%"><feDropShadow dx="5" dy="8" stdDeviation="5" flood-color="#071c14" flood-opacity=".32"/></filter>
+</defs>
+<defs><clipPath id="dropBody"><path d="M394 92 C404 78 409 83 400 103 C349 188 315 260 315 329 C315 384 345 425 394 430 C438 434 461 390 461 338 C462 300 449 252 434 225 C430 215 437 211 445 222 C521 311 565 444 579 579 C597 732 558 874 488 904 C448 922 352 922 314 899 C234 852 209 741 218 611 C227 446 282 276 394 92 Z" fill="url(#surface)" /></clipPath></defs>
+<path d="M394 92 C404 78 409 83 400 103 C349 188 315 260 315 329 C315 384 345 425 394 430 C438 434 461 390 461 338 C462 300 449 252 434 225 C430 215 437 211 445 222 C521 311 565 444 579 579 C597 732 558 874 488 904 C448 922 352 922 314 899 C234 852 209 741 218 611 C227 446 282 276 394 92 Z" fill="url(#surface)" stroke="#445039" stroke-width="1" />
+<g clip-path="url(#dropBody)">
+<path d="M394 92 C404 78 409 83 400 103 C349 188 315 260 315 329 C315 384 345 425 394 430 C438 434 461 390 461 338 C462 300 449 252 434 225 C430 215 437 211 445 222 C521 311 565 444 579 579 C597 732 558 874 488 904 C448 922 352 922 314 899 C234 852 209 741 218 611 C227 446 282 276 394 92 Z" fill="url(#vertical)" />
+<path d="M354 194 C320 284 311 357 339 401 Q396 462 444 393 C461 358 451 281 438 240 C490 343 511 462 511 611 C511 760 469 837 401 847 C329 852 288 769 290 631 C289 492 310 321 354 194 Z" fill="url(#shade)" stroke="#d9b78a" stroke-width="1.2" />
+<path d="M347 214 C307 352 297 599 321 731 Q343 825 400 846 C323 849 287 760 291 621 C287 466 312 308 347 214Z" fill="#eee2b5" opacity=".12"/>
+<path d="M404 884 C341 884 287 836 272 782 C303 853 331 864 404 860 Q470 864 521 818 C507 865 467 890 404 884Z" fill="#142e25" opacity=".55"/>
+<rect x="190" y="80" width="420" height="850" fill="#85714b" filter="url(#grain)" opacity=".05"/>
+<path d="M264 440 C225 599 227 750 284 844" fill="none" stroke="#ecddaa" stroke-width="3" opacity=".5"/>
+<path d="M545 489 C583 667 553 824 506 865" fill="none" stroke="#c8ab74" stroke-width="1.5" opacity=".5"/>
+</g>
+<path d="M402 86 C368 143 334 208 325 252" fill="none" stroke="#e9dbb1" stroke-width="3" opacity=".8"/>
+<path d="M350 210 C310 311 309 373 339 404 Q398 459 444 394 C463 360 453 283 438 223" fill="none" stroke="#ebd8a9" stroke-width="3" opacity=".75"/>
+<path d="M441 222 Q485 284 502 340" fill="none" stroke="#384e36" stroke-width="2" opacity=".9"/>
+
+</svg>

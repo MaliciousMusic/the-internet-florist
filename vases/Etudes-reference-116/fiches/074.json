@@ -1,0 +1,23 @@
+{
+  "id": "074",
+  "label": "Arabesques noires ajourées",
+  "referenceSha256": "5a8b0b98584243baee88781517995124ae92153e9aeedd4226b088c7927bf0f8",
+  "file": "svg/074.svg",
+  "reference": "references/074",
+  "sha256": "8f111f874ed0513c2d3135aa44b6fd24fb85bf5bf0657600223f74664d9d4d05",
+  "bytes": 2835900,
+  "paths": 7058,
+  "width": 735,
+  "height": 1015,
+  "memoryBefore": 4476309504,
+  "method": "Transcription de contours et nuances en courbes de Bézier natives",
+  "review": "Contrôle visuel à effectuer",
+  "guide": {
+    "box": [
+      0.1,
+      0.04,
+      0.95,
+      0.93
+    ]
+  }
+}

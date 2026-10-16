@@ -1,0 +1,930 @@
+[
+  {
+    "id": "001",
+    "label": "Œuf sculpté et grenouilles",
+    "group": "Unsafe",
+    "path": "Unsafe/001/_data_prod_img_soprammobile-in-vetro-a-forma-di-uovo-con-ranocchi-made-in-italy-huevo_jpg_r_950_950.webp",
+    "sha256": "f7a55eb7a6f82ab6c0dc661018e1fdfc9550a8c85895dd0698b25c00f828d2ac",
+    "classification_reason": "Création récente ou piste contemporaine : droits non résolus."
+  },
+  {
+    "id": "002",
+    "label": "Trois blocs de verre décalés",
+    "group": "Unsafe",
+    "path": "Unsafe/002/0026369_the-rummikub-vase-dark-grey-l.webp",
+    "sha256": "8337c84260dc9d4457842fd405dd3006127b9b427b2800aa942c147a6eb483ee",
+    "classification_reason": "Création récente ou piste contemporaine : droits non résolus."
+  },
+  {
+    "id": "003",
+    "label": "Verre rose à deux pointes asymétriques",
+    "group": "Unsafe",
+    "path": "Unsafe/003/07a51fec958b034b5128f5a1aa79773c.jpg",
+    "sha256": "bcb8a3278ebacbdfa92cdcebc6ac2105c8fbafbcf1aafe1c582aabbc2b476068",
+    "classification_reason": "Origine non résolue : aucun fondement acquis pour une copie fidèle."
+  },
+  {
+    "id": "004",
+    "label": "Vase vert aux carpes dorées",
+    "group": "Unsafe",
+    "path": "Unsafe/004/0e10bbf3fa8430d797c9ed2a3ee2aa1a.jpg",
+    "sha256": "466db5647fcd043ca69f2c75098d84ebee1740f094aaf2044ca80e43e5a7c5aa",
+    "classification_reason": "Piste ancienne, mais modèle exact, auteur ou durée des droits non établis."
+  },
+  {
+    "id": "005",
+    "label": "Feuilles vertes sculptées",
+    "group": "Unsafe",
+    "path": "Unsafe/005/0eefa4b8b76cabaed6795aa49dde68d5.jpg",
+    "sha256": "e754f13fa41e6623cc6a83f31aecebeac2981fdfd2dc688d6dcae288b05fc7eb",
+    "classification_reason": "Origine non résolue : aucun fondement acquis pour une copie fidèle."
+  },
+  {
+    "id": "006",
+    "label": "Coupes de verre colorées empilées",
+    "group": "Unsafe",
+    "path": "Unsafe/006/14ac8c6e98fc58a6ca3982a855f2d5c5.jpg",
+    "sha256": "5d02736059d5eca853dfc2bc319d97edc1da00b22a4e8063b3ac5d894e7d47a5",
+    "classification_reason": "Création récente ou piste contemporaine : droits non résolus."
+  },
+  {
+    "id": "007",
+    "label": "Visage turquoise texturé",
+    "group": "Unsafe",
+    "path": "Unsafe/007/14d3c9a1a130b39547d98082ff55f45e.jpg",
+    "sha256": "b4b8487b015a580bae3d122d32e80f69a159b526f3aaad1d5d8852dce39c9f94",
+    "classification_reason": "Origine non résolue : aucun fondement acquis pour une copie fidèle."
+  },
+  {
+    "id": "008",
+    "label": "Tours géométriques en métal",
+    "group": "Unsafe",
+    "path": "Unsafe/008/15c2d8ccfb947a2903ff2439d529f5bd.jpg",
+    "sha256": "e55701c6c379d2087728eb2c936e9cbd94c3cf89a5d3d77ed217eaec0124c319",
+    "classification_reason": "Piste ancienne, mais modèle exact, auteur ou durée des droits non établis."
+  },
+  {
+    "id": "009",
+    "label": "Magnolias blancs sur fond bleu",
+    "group": "Unsafe",
+    "path": "Unsafe/009/15e99656d4b11a746b830d82311cba02.jpg",
+    "sha256": "926354b48d6fb8088d87dee8fc9e777ef57a6f8c6a684da60aedcd89154adf32",
+    "classification_reason": "Création récente ou piste contemporaine : droits non résolus."
+  },
+  {
+    "id": "010",
+    "label": "Chrysanthème rose en relief",
+    "group": "Unsafe",
+    "path": "Unsafe/010/19fec20fdeabeb3de2a3c25fe5ae3ac5.jpg",
+    "sha256": "8f71cb9580c470da667fd1d696ab7e14d507888a95e0becb9979039f65b44922",
+    "classification_reason": "Origine non résolue : aucun fondement acquis pour une copie fidèle."
+  },
+  {
+    "id": "011",
+    "label": "Lys mauves et pied vert",
+    "group": "Unsafe",
+    "path": "Unsafe/011/1b77c5bd12b0e32dec86eb6af3eaf778.jpg",
+    "sha256": "d2146833a0d7c4097c66cd0d5b457c42071d4cdb43d8548a19fe0401c27c5638",
+    "classification_reason": "Création récente ou piste contemporaine : droits non résolus."
+  },
+  {
+    "id": "012",
+    "label": "Briques de verre multicolores",
+    "group": "Unsafe",
+    "path": "Unsafe/012/1be2cf565e8f422674d180c846e0b4c7.jpg",
+    "sha256": "2353d84ef744f652dd557e2b16240c9da11e31b58edff78800f19ecc7c1f5bcb",
+    "classification_reason": "Origine non résolue : aucun fondement acquis pour une copie fidèle."
+  },
+  {
+    "id": "013",
+    "label": "Ronde de femmes en verre",
+    "group": "Safe",
+    "path": "Safe/013/1c6168708fe90b33982f77f25e1a0468.jpg",
+    "sha256": "30c1f8d7c7ff5fc553af04f805cb0eb44d501cf6f250292ed6c4ce9b39f99a64",
+    "classification_reason": "Dessin historique Bacchantes (1927), attribué à René Lalique par un musée ; décès 1945, durée ordinaire des droits patrimoniaux personnels achevée fin 2015."
+  },
+  {
+    "id": "014",
+    "label": "Carpes sur fond brun",
+    "group": "Unsafe",
+    "path": "Unsafe/014/1eee687496602534e0473a5ead35e017.jpg",
+    "sha256": "7d1f961515892b005088654b919abf11c3a9a9befd51b9e08f3d5528a7bd0338",
+    "classification_reason": "Piste ancienne, mais modèle exact, auteur ou durée des droits non établis."
+  },
+  {
+    "id": "015",
+    "label": "Lys blancs en relief",
+    "group": "Unsafe",
+    "path": "Unsafe/015/20e9de0104e8574a48bbcafa6e2673b6.jpg",
+    "sha256": "6c1a6b99064c9347242a65e7b66e3df344f5c8f7a287ab0e457dd1a55e79f2fd",
+    "classification_reason": "Piste ancienne, mais modèle exact, auteur ou durée des droits non établis."
+  },
+  {
+    "id": "016",
+    "label": "Spirale de petites perles noires",
+    "group": "Unsafe",
+    "path": "Unsafe/016/22e04f6a784ade9fc429b5a031d6ea87.jpg",
+    "sha256": "bb12fd735f1314a471943e398c39af983565ea8354f7dce6170e2713d1b4df8d",
+    "classification_reason": "Origine non résolue : aucun fondement acquis pour une copie fidèle."
+  },
+  {
+    "id": "017",
+    "label": "Porcelaine carrée aux bambous",
+    "group": "Unsafe",
+    "path": "Unsafe/017/243ac4f7b3dbf09bb6d0639010e89e84.jpg",
+    "sha256": "33ca83b3a386e2ca43965e3ec77fe73c69345e8733559aea38ef5347e4132718",
+    "classification_reason": "Piste ancienne, mais modèle exact, auteur ou durée des droits non établis."
+  },
+  {
+    "id": "018",
+    "label": "Femme adossée à un éventail opalescent",
+    "group": "Unsafe",
+    "path": "Unsafe/018/267d200dddd800cc7d8b9c7c88feb9b8.jpg",
+    "sha256": "c7585cca121bce17016da40fc60ba6615b53094dcf2a534fae69104fd461839c",
+    "classification_reason": "Origine non résolue : aucun fondement acquis pour une copie fidèle."
+  },
+  {
+    "id": "019",
+    "label": "Vase noir et orchidées sculptées",
+    "group": "Unsafe",
+    "path": "Unsafe/019/2b5e008110842bc65eea0af16cebb2f7.jpg",
+    "sha256": "ddb7dfcd6e2c347dae7559b7883077563adb62e0450389a31caab51c98a82ff1",
+    "classification_reason": "Création récente ou piste contemporaine : droits non résolus."
+  },
+  {
+    "id": "020",
+    "label": "Dragon turquoise sur vase noir",
+    "group": "Unsafe",
+    "path": "Unsafe/020/2f6b65a5e7c79e60e4af634b3e66479a.jpg",
+    "sha256": "fbf0ca0d521f4515798de2813ca434baba3b7e632a53662ea8dfb5d160ee73a6",
+    "classification_reason": "Piste ancienne, mais modèle exact, auteur ou durée des droits non établis."
+  },
+  {
+    "id": "021",
+    "label": "Métal sombre et narcisses",
+    "group": "Unsafe",
+    "path": "Unsafe/021/33314d4caaac18f952170572a68e25f4.jpg",
+    "sha256": "595d18b01f3079138cc0d0f8190e979628238da6c189513f43cf7c5af7637d87",
+    "classification_reason": "Origine non résolue : aucun fondement acquis pour une copie fidèle."
+  },
+  {
+    "id": "022",
+    "label": "Double coque spiralée verte",
+    "group": "Unsafe",
+    "path": "Unsafe/022/34db787fc517f414d161ecb0db557a71.jpg",
+    "sha256": "68f3766526eb96a0de17afc86979c68a8565a58d6d5cebd797bce44cd40046f5",
+    "classification_reason": "Origine non résolue : aucun fondement acquis pour une copie fidèle."
+  },
+  {
+    "id": "023",
+    "label": "Oiseaux et végétation sur fond crème",
+    "group": "Unsafe",
+    "path": "Unsafe/023/3885cf0a89705556876f93ea2950d402.jpg",
+    "sha256": "152f061e722ed77dda6254f92a55470cc00919716e173fe3f75b669a9a39b632",
+    "classification_reason": "Piste ancienne, mais modèle exact, auteur ou durée des droits non établis."
+  },
+  {
+    "id": "024",
+    "label": "Oiseaux blancs sur fond rose",
+    "group": "Unsafe",
+    "path": "Unsafe/024/3888afcb14831b4797912094a3fb69ba.jpg",
+    "sha256": "1fb2e0956a93ef0de1c2934481512300d13089365fe3b49e36b99da2973ed313",
+    "classification_reason": "Piste ancienne, mais modèle exact, auteur ou durée des droits non établis."
+  },
+  {
+    "id": "025",
+    "label": "Serpent en verre vert",
+    "group": "Unsafe",
+    "path": "Unsafe/025/425ec96e6a81beb8f84c36b23f584e1d.jpg",
+    "sha256": "e8fc7f32e810ec06eacf5604afd1015a1b7efe7b481571b88a5681f0afe3a6b7",
+    "classification_reason": "Création récente ou piste contemporaine : droits non résolus."
+  },
+  {
+    "id": "026",
+    "label": "Deux pointes et papillon",
+    "group": "Unsafe",
+    "path": "Unsafe/026/42f18e5df7a7b1153161838f35050604.jpg",
+    "sha256": "e58e0cdf7a513bf1b37770811a7bf36ec6e5958e46eed67033fb68c88e19766c",
+    "classification_reason": "Origine non résolue : aucun fondement acquis pour une copie fidèle."
+  },
+  {
+    "id": "027",
+    "label": "Anneaux de verre décalés",
+    "group": "Unsafe",
+    "path": "Unsafe/027/449733f766a167eee3bd13500df45700.jpg",
+    "sha256": "2b0513652bc51a7e4657d9998c5e08a2601d059c900dae3fea7738412f01c7d9",
+    "classification_reason": "Origine non résolue : aucun fondement acquis pour une copie fidèle."
+  },
+  {
+    "id": "028",
+    "label": "Branchages sculptés autour d’un vase",
+    "group": "Unsafe",
+    "path": "Unsafe/028/45a6c636af666d38d0bacd7a512c0c7a.jpg",
+    "sha256": "d74c40dcb949c3c9e59cab782cb5a17481388817d8826f14272139b5d106a1cf",
+    "classification_reason": "Origine non résolue : aucun fondement acquis pour une copie fidèle."
+  },
+  {
+    "id": "029",
+    "label": "Métal ajouré et verre rouge",
+    "group": "Unsafe",
+    "path": "Unsafe/029/4bb82f7df1e15d0ede5541bf3788fab4.jpg",
+    "sha256": "14ad389c73724d93c2ae92160705202bb463151111a2cc95f5b8b08e94c04e00",
+    "classification_reason": "Piste ancienne, mais modèle exact, auteur ou durée des droits non établis."
+  },
+  {
+    "id": "030",
+    "label": "Verre irisé et fleurs émaillées",
+    "group": "Unsafe",
+    "path": "Unsafe/030/4d189bf33c712f44129929163246f76f.jpg",
+    "sha256": "38a4da2914d16f751a37dd6092a4deaa43c58da7db398b754c1bf83eb52b79c7",
+    "classification_reason": "Piste ancienne, mais modèle exact, auteur ou durée des droits non établis."
+  },
+  {
+    "id": "031",
+    "label": "Fleurs et argent sur verre ambré",
+    "group": "Unsafe",
+    "path": "Unsafe/031/54ebce895da6f57f5b79b2ec95619ce7.jpg",
+    "sha256": "7d1ed153b3b70dfe15957a561a86385d8126e5e423a76cfe1f0bbde35f65198b",
+    "classification_reason": "Piste ancienne, mais modèle exact, auteur ou durée des droits non établis."
+  },
+  {
+    "id": "032",
+    "label": "Métal vert et gui sculpté",
+    "group": "Unsafe",
+    "path": "Unsafe/032/580bdf980b0ba2e2ead36b9fdeb34fa1.jpg",
+    "sha256": "a2ed40c6eb361cab611efe1ce15068a501dd1c1338c9f55063ec6159131100d0",
+    "classification_reason": "Piste ancienne, mais modèle exact, auteur ou durée des droits non établis."
+  },
+  {
+    "id": "033",
+    "label": "Cylindres violets à base épaisse",
+    "group": "Unsafe",
+    "path": "Unsafe/033/588ac07a933cc11257121bef5be59a52.jpg",
+    "sha256": "6378c3a6fd70fc249ef847bdbd56b9910e848424288a9789d30e89333f6ff6b2",
+    "classification_reason": "Type de forme courant ; copie exacte du modèle et du décor non autorisée par cette seule observation."
+  },
+  {
+    "id": "034",
+    "label": "Deux anses et entrelacs Art nouveau",
+    "group": "Unsafe",
+    "path": "Unsafe/034/5ab55ef4a338f2298e9143e8b00a6bdb.jpg",
+    "sha256": "1018a4432999cb95f6a53ca57f722c1199d4e0110c58f1a3750b79c113e3cfbc",
+    "classification_reason": "Piste ancienne, mais modèle exact, auteur ou durée des droits non établis."
+  },
+  {
+    "id": "035",
+    "label": "Dragons blancs en relief",
+    "group": "Unsafe",
+    "path": "Unsafe/035/5c42f725a574ed7be1874ba06951e0e9.jpg",
+    "sha256": "0cc2be8df698c3b763ef6ae1c64ff1d988cbc2086b167004ff4754d18b0bb7eb",
+    "classification_reason": "Piste ancienne, mais modèle exact, auteur ou durée des droits non établis."
+  },
+  {
+    "id": "036",
+    "label": "Métal et vagues à la base",
+    "group": "Unsafe",
+    "path": "Unsafe/036/5c655e3d1227adadabec13755302ec8d.jpg",
+    "sha256": "48ec80fe4ef469898852740b8e27bdaf41d261ba6c577aff435b4e2c69411de3",
+    "classification_reason": "Piste ancienne, mais modèle exact, auteur ou durée des droits non établis."
+  },
+  {
+    "id": "037",
+    "label": "Émail cristallin turquoise",
+    "group": "Unsafe",
+    "path": "Unsafe/037/5c70a78d2b328dfb5c9db7ca213520d1.jpg",
+    "sha256": "5a387e9a0356f611668bd52035fb304e2a62e6e80533a2b22217da441ad24970",
+    "classification_reason": "Type de forme courant ; copie exacte du modèle et du décor non autorisée par cette seule observation."
+  },
+  {
+    "id": "038",
+    "label": "Quatre nervures et pieds verts",
+    "group": "Unsafe",
+    "path": "Unsafe/038/5d417843989bca2f5aa3d43843970a60.jpg",
+    "sha256": "844dff9cc70a40e07f2c32c7dc14fc359cd316f1f926ba3ec95b9c78cde260ad",
+    "classification_reason": "Piste ancienne, mais modèle exact, auteur ou durée des droits non établis."
+  },
+  {
+    "id": "039",
+    "label": "Verre rose aux orchidées",
+    "group": "Unsafe",
+    "path": "Unsafe/039/601de9c853a6b534006807b647412104.jpg",
+    "sha256": "310104d7e5655ae0c7bc755ad96a87d677f2d84c6f91fc8c7cd11f903c7f4670",
+    "classification_reason": "Piste ancienne, mais modèle exact, auteur ou durée des droits non établis."
+  },
+  {
+    "id": "040",
+    "label": "Chardons noirs sur fond blanc",
+    "group": "Unsafe",
+    "path": "Unsafe/040/61a27cb66e330fb3b0fe0ed777353b2c.jpg",
+    "sha256": "86b05aec181035c6823fec3c9876f82f350a9532e2311e66f18489ec91c8bc20",
+    "classification_reason": "Piste ancienne, mais modèle exact, auteur ou durée des droits non établis."
+  },
+  {
+    "id": "041",
+    "label": "Feuilles ajourées vertes",
+    "group": "Unsafe",
+    "path": "Unsafe/041/61d833cf8794fed8b48cafc58d04a86c.jpg",
+    "sha256": "70567cf1e67d227a9746857ebb07caa6ba278b8997ebc98fbe84067f177ce71c",
+    "classification_reason": "Piste ancienne, mais modèle exact, auteur ou durée des droits non établis."
+  },
+  {
+    "id": "042",
+    "label": "Œuf à cristallisations bleues",
+    "group": "Unsafe",
+    "path": "Unsafe/042/61fe31d320d1bf888ad5ea64aa8af660.jpg",
+    "sha256": "4d9f5242d78d7cb7d863c53c32614006643686e9aea40839b046bb1e20a2700c",
+    "classification_reason": "Type de forme courant ; copie exacte du modèle et du décor non autorisée par cette seule observation."
+  },
+  {
+    "id": "043",
+    "label": "Hortensias sur fond jaune",
+    "group": "Unsafe",
+    "path": "Unsafe/043/68ee353bf5249331086421dc9b388a80.jpg",
+    "sha256": "5edb0f8f3e6e041cbfa8237d35ab7e41dba896bf3baa271872d6220d8c790458",
+    "classification_reason": "Piste ancienne, mais modèle exact, auteur ou durée des droits non établis."
+  },
+  {
+    "id": "044",
+    "label": "Cristal transparent facetté incliné",
+    "group": "Unsafe",
+    "path": "Unsafe/044/6988fe1cb012375afe5208ab4e032e9a.jpg",
+    "sha256": "149be8a001427c244cfde5d30959d1b69673ce3d8b9feff9c566419b7fb807c2",
+    "classification_reason": "Création récente ou piste contemporaine : droits non résolus."
+  },
+  {
+    "id": "045",
+    "label": "Oiseaux en métal ajouré",
+    "group": "Unsafe",
+    "path": "Unsafe/045/6e005575756b453cea6560ec0131f252.jpg",
+    "sha256": "42065ae41cd2aa6c5f54aaf587f81ea9b23d4b399f34001f3e48b78ac7bc830c",
+    "classification_reason": "Piste ancienne, mais modèle exact, auteur ou durée des droits non établis."
+  },
+  {
+    "id": "046",
+    "label": "Cristal violet gravé d’un poisson",
+    "group": "Unsafe",
+    "path": "Unsafe/046/7711d93a91cc1c24ea3721312e1ebd8d.jpg",
+    "sha256": "7cc894f98e99788828dcc80d6934baeec20e791591bb6449be0020cba33be71c",
+    "classification_reason": "Création récente ou piste contemporaine : droits non résolus."
+  },
+  {
+    "id": "047",
+    "label": "Bambous sur fond brun",
+    "group": "Unsafe",
+    "path": "Unsafe/047/78576482f68251876c55d4ec3ed503b4.jpg",
+    "sha256": "5b044783cb97e45216a22ef34aa56e76e8655648a9a09d4cc9e5d5b0a16360ed",
+    "classification_reason": "Piste ancienne, mais modèle exact, auteur ou durée des droits non établis."
+  },
+  {
+    "id": "048",
+    "label": "Émail sombre et fleur rose",
+    "group": "Unsafe",
+    "path": "Unsafe/048/79f137c88ef1f25090f71075b48bf88a.jpg",
+    "sha256": "b73c8b306aab09c16e9bb59c6f8245a007c066d35c32194b75ecd8df913bd126",
+    "classification_reason": "Piste ancienne, mais modèle exact, auteur ou durée des droits non établis."
+  },
+  {
+    "id": "049",
+    "label": "Métal brun et poussière d’or",
+    "group": "Unsafe",
+    "path": "Unsafe/049/7cf908eaf4976aacdb38950438ef7370.jpg",
+    "sha256": "e99d00c170671fe78edbb2bc008de255876fc118af9aa39b0cbd6d3cc5c7352f",
+    "classification_reason": "Type de forme courant ; copie exacte du modèle et du décor non autorisée par cette seule observation."
+  },
+  {
+    "id": "050",
+    "label": "Corolle asymétrique en céramique",
+    "group": "Unsafe",
+    "path": "Unsafe/050/7de3bbee8163a3d8c146e1eb8a56f7fd.jpg",
+    "sha256": "386bf81d2446c8f199c99d325d657f5e6e34c2adfcebfa2f2b364d9a8ce89240",
+    "classification_reason": "Piste ancienne, mais modèle exact, auteur ou durée des droits non établis."
+  },
+  {
+    "id": "051",
+    "label": "Grues blanches sur fond rouge",
+    "group": "Unsafe",
+    "path": "Unsafe/051/7f6d4c7aa88b0aca64fd5cbb30751a86.jpg",
+    "sha256": "88f08df54fb3f430fa5da4e27c2b30fadaad5a6ff1774927dd276b18742b1d83",
+    "classification_reason": "Piste ancienne, mais modèle exact, auteur ou durée des droits non établis."
+  },
+  {
+    "id": "052",
+    "label": "Lierre sombre sur verre jaune",
+    "group": "Unsafe",
+    "path": "Unsafe/052/8009cb8f7145f6d698c862e1a1616a45.jpg",
+    "sha256": "e7fe073bdfb2360d0f2c971a69d7ab911f6d3b84d6a44042dfcef5d9fde141e2",
+    "classification_reason": "Piste ancienne, mais modèle exact, auteur ou durée des droits non établis."
+  },
+  {
+    "id": "053",
+    "label": "Paysage bleu et violet",
+    "group": "Unsafe",
+    "path": "Unsafe/053/81009063cb5e47fd1e36faf123f1392e.jpg",
+    "sha256": "7b0926a66e27a8da2b3fd5701c7b371cf6ef190c95fee006f58d53b656197132",
+    "classification_reason": "Piste ancienne, mais modèle exact, auteur ou durée des droits non établis."
+  },
+  {
+    "id": "054",
+    "label": "Gouttes de verre violet",
+    "group": "Unsafe",
+    "path": "Unsafe/054/819ea4baa1e875163c485a55cf642a72.jpg",
+    "sha256": "ab559a3ac98788993d217d9823f87991618ac4f2b88689d1c9f401f0f87a17b3",
+    "classification_reason": "Origine non résolue : aucun fondement acquis pour une copie fidèle."
+  },
+  {
+    "id": "055",
+    "label": "Corolle de verre bleu et vert",
+    "group": "Unsafe",
+    "path": "Unsafe/055/82d82ed259f3eac94e08bf3ec6115bdb.jpg",
+    "sha256": "282db2fa8e6711ffd233f44948a7abfaa6a4c43359d399d7e73df1feb866dbf1",
+    "classification_reason": "Création récente ou piste contemporaine : droits non résolus."
+  },
+  {
+    "id": "056",
+    "label": "Grès ajouré à col ondulé",
+    "group": "Unsafe",
+    "path": "Unsafe/056/86c997ade32d1ad1c1a4ea5d28ebacb7.jpg",
+    "sha256": "6bc9686834df0129b63ad59cc31efcde8e8d43b026400326d54c6c77cc32300b",
+    "classification_reason": "Piste ancienne, mais modèle exact, auteur ou durée des droits non établis."
+  },
+  {
+    "id": "057",
+    "label": "Fleurs roses et col festonné",
+    "group": "Unsafe",
+    "path": "Unsafe/057/883763774a1dc7835b832baf2115bacd.jpg",
+    "sha256": "91f672c2e483772e96189c4717ac9fdfda2bebc39b0f7ae205b23797e26b15b2",
+    "classification_reason": "Piste ancienne, mais modèle exact, auteur ou durée des droits non établis."
+  },
+  {
+    "id": "058",
+    "label": "Dragons sur fond noir",
+    "group": "Unsafe",
+    "path": "Unsafe/058/8cdaff38995dbf5ad0048b1b2c704d24.jpg",
+    "sha256": "bf86f050dec75ddf2c203b2aaa5042c7358aae1e20258e6507721d176d74b70d",
+    "classification_reason": "Piste ancienne, mais modèle exact, auteur ou durée des droits non établis."
+  },
+  {
+    "id": "059",
+    "label": "Verre vert ovoïde marbré",
+    "group": "Unsafe",
+    "path": "Unsafe/059/8eb47aa0fb0a333dfe366ce4a7421818.jpg",
+    "sha256": "1ebd5cd9cb7cdb095be53f7c60e3c76d5b74c2991ae57a665fc1da3f18923253",
+    "classification_reason": "Type de forme courant ; copie exacte du modèle et du décor non autorisée par cette seule observation."
+  },
+  {
+    "id": "060",
+    "label": "Verre violet et orange à col fin",
+    "group": "Unsafe",
+    "path": "Unsafe/060/8fadd8123c448d3f8641fb8225d22b01.jpg",
+    "sha256": "1190c1144bae2fe6365d997be5ecfd35b19e3b327f7e124b2dec9708df202b4f",
+    "classification_reason": "Type de forme courant ; copie exacte du modèle et du décor non autorisée par cette seule observation."
+  },
+  {
+    "id": "061",
+    "label": "Fleurs roses en relief",
+    "group": "Unsafe",
+    "path": "Unsafe/061/96d6f5149d76210be644e63e1680b7b7.jpg",
+    "sha256": "d457e04a6efe1021d2bd729f8216fefd3bf9036dff9194c6004526062ffbfc11",
+    "classification_reason": "Piste ancienne, mais modèle exact, auteur ou durée des droits non établis."
+  },
+  {
+    "id": "062",
+    "label": "Iris violets et feuilles jaunes",
+    "group": "Unsafe",
+    "path": "Unsafe/062/9adfe9fe846494f56742bf98a9aaa436.jpg",
+    "sha256": "d9d1368e43f2f35d93b56ebc1047b9b44eda156280bea0435321d9d6cb098ed3",
+    "classification_reason": "Piste ancienne, mais modèle exact, auteur ou durée des droits non établis."
+  },
+  {
+    "id": "063",
+    "label": "Arums blancs et lignes vertes",
+    "group": "Unsafe",
+    "path": "Unsafe/063/9f7b80a5bb17a2e689b929e9fa390bea.jpg",
+    "sha256": "23d91c149703ff846cd95e89c12b682ce2854bf2f505dad974f2d22d5e46116a",
+    "classification_reason": "Piste ancienne, mais modèle exact, auteur ou durée des droits non établis."
+  },
+  {
+    "id": "064",
+    "label": "Nervures blanches et fenêtres brunes",
+    "group": "Unsafe",
+    "path": "Unsafe/064/a0a0caf2344bd3dbb3c0c28ecab6e3ed.jpg",
+    "sha256": "7b7247876290bce079364762dc3d71942d9d19c23051130574475de44cfb5fd4",
+    "classification_reason": "Origine non résolue : aucun fondement acquis pour une copie fidèle."
+  },
+  {
+    "id": "065",
+    "label": "Carpe et lignes d’eau en métal",
+    "group": "Unsafe",
+    "path": "Unsafe/065/a3f2f0ccd2cce872458b1c1223c8661a.jpg",
+    "sha256": "0bd1677621780efa119178fa8f1356b70d8c3916fec73ecb9ac8735b837a444a",
+    "classification_reason": "Piste ancienne, mais modèle exact, auteur ou durée des droits non établis."
+  },
+  {
+    "id": "066",
+    "label": "Libellule et corolle turquoise",
+    "group": "Unsafe",
+    "path": "Unsafe/066/a3fb14b9940cca220417136ea60b27c8.jpg",
+    "sha256": "b19d0f8d640552ff19436c9e8178ec5d2014fff500e02dc3ea3540561457be85",
+    "classification_reason": "Piste ancienne, mais modèle exact, auteur ou durée des droits non établis."
+  },
+  {
+    "id": "067",
+    "label": "Vase vert mat et lierre en relief",
+    "group": "Unsafe",
+    "path": "Unsafe/067/a40368b189feef4fe1231c45c20c65aa.jpg",
+    "sha256": "954b6e91d5b4fc5bce11341e373cb26608d647f5f05c05b09e165e6f74ca1ca1",
+    "classification_reason": "Piste ancienne, mais modèle exact, auteur ou durée des droits non établis."
+  },
+  {
+    "id": "068",
+    "label": "Ginkgo en relief sur vert pâle",
+    "group": "Unsafe",
+    "path": "Unsafe/068/a46d10dfb38df7436a4edae50591ab4d.jpg",
+    "sha256": "be9dcfef9548ca496ab3ae53b7bfd5565f3a659b6241921a405a5d9b3688ca9f",
+    "classification_reason": "Origine non résolue : aucun fondement acquis pour une copie fidèle."
+  },
+  {
+    "id": "069",
+    "label": "Coupe géométrique en bronze",
+    "group": "Unsafe",
+    "path": "Unsafe/069/a514399d29256dab61d03f410462b28f.jpg",
+    "sha256": "7bb7ca444586c0eed5f66468134bfc7ce2c0834e9a411964c820e07fafabac61",
+    "classification_reason": "Piste ancienne, mais modèle exact, auteur ou durée des droits non établis."
+  },
+  {
+    "id": "070",
+    "label": "Buste féminin et couronne de fleurs",
+    "group": "Unsafe",
+    "path": "Unsafe/070/a6f7630bc6d7e972930936522e56081c.jpg",
+    "sha256": "d7516248bfb4e852403808948716062cb60522209de5bffc0f8e5552a3c379e2",
+    "classification_reason": "Création récente ou piste contemporaine : droits non résolus."
+  },
+  {
+    "id": "071",
+    "label": "Clématites violettes sur verre rose",
+    "group": "Unsafe",
+    "path": "Unsafe/071/a707f550eaaa74ff6b69ca39b8258198.jpg",
+    "sha256": "15489768a2cc57f6e0aeaf9194409aa33043982bbe20cd749b8c9e828000c117",
+    "classification_reason": "Piste ancienne, mais modèle exact, auteur ou durée des droits non établis."
+  },
+  {
+    "id": "072",
+    "label": "Prisme jaune à cœur suspendu",
+    "group": "Unsafe",
+    "path": "Unsafe/072/ad26ed05b45fbf297d66163530b90ca5.jpg",
+    "sha256": "82714b0db5cae97856b0cde92ebdf795e4e8ba7d967a0dcfe085548f52e52499",
+    "classification_reason": "Origine non résolue : aucun fondement acquis pour une copie fidèle."
+  },
+  {
+    "id": "073",
+    "label": "Deux anses et feuilles de ginkgo",
+    "group": "Unsafe",
+    "path": "Unsafe/073/ae4595d4a15bb77d77d562c75c8a6e2a.jpg",
+    "sha256": "d8f695a8c2680e2bafaf7b360af77c0c0db6360316214a3c5642d3cd890c18dd",
+    "classification_reason": "Piste ancienne, mais modèle exact, auteur ou durée des droits non établis."
+  },
+  {
+    "id": "074",
+    "label": "Arabesques noires ajourées",
+    "group": "Unsafe",
+    "path": "Unsafe/074/afffae6c13ab7c7f297f4daab96921aa.jpg",
+    "sha256": "5a8b0b98584243baee88781517995124ae92153e9aeedd4226b088c7927bf0f8",
+    "classification_reason": "Origine non résolue : aucun fondement acquis pour une copie fidèle."
+  },
+  {
+    "id": "075",
+    "label": "Prisme violet allongé",
+    "group": "Unsafe",
+    "path": "Unsafe/075/b0edd68da93777d716cb6cd558499951.jpg",
+    "sha256": "246faf0f941937b33206296a21c6e93943fcf18bc13aa135ff915602ded5960f",
+    "classification_reason": "Origine non résolue : aucun fondement acquis pour une copie fidèle."
+  },
+  {
+    "id": "076",
+    "label": "Serpent rouge lové",
+    "group": "Safe",
+    "path": "Safe/076/b217d63685c5fc2755047910e9dc3301.jpg",
+    "sha256": "b63e6a274d19ea640be8e7857930119e0374984864818b9e0ada9266b1b05158",
+    "classification_reason": "Dessin historique Serpent (1924), attribué à René Lalique par un musée ; décès 1945, durée ordinaire des droits patrimoniaux personnels achevée fin 2015."
+  },
+  {
+    "id": "077",
+    "label": "Entrelacs orangés en relief",
+    "group": "Unsafe",
+    "path": "Unsafe/077/b25b3b6e38564fe843fee9df88e12244.jpg",
+    "sha256": "85298226c6c87e587066309a51c43837e34173059b83927628823a97fbb8dc00",
+    "classification_reason": "Création récente ou piste contemporaine : droits non résolus."
+  },
+  {
+    "id": "078",
+    "label": "Fleurs bleues et fond rose",
+    "group": "Unsafe",
+    "path": "Unsafe/078/b432862f54ec008536b95f3ea2bfcd03.jpg",
+    "sha256": "63366ece33dca2c1c5a3625e26834529dca3b9f9020f99b9cb511419e31592b4",
+    "classification_reason": "Piste ancienne, mais modèle exact, auteur ou durée des droits non établis."
+  },
+  {
+    "id": "079",
+    "label": "Céramique à trois petits pieds",
+    "group": "Unsafe",
+    "path": "Unsafe/079/ba1dff9563ba3cd1c026f3576fa4c714.jpg",
+    "sha256": "6e622d2fa5306c971e0f8566789eb6f3618a9eefb8943743bca2bd63d5a1a991",
+    "classification_reason": "Type de forme courant ; copie exacte du modèle et du décor non autorisée par cette seule observation."
+  },
+  {
+    "id": "080",
+    "label": "Métal vert et anses au col",
+    "group": "Unsafe",
+    "path": "Unsafe/080/ba3dc41778803a1334c84c0ebaff9e51.jpg",
+    "sha256": "9716821e95f62717c5c81829f301e5c70813ab0868e14f27da90932a2def654c",
+    "classification_reason": "Piste ancienne, mais modèle exact, auteur ou durée des droits non établis."
+  },
+  {
+    "id": "081",
+    "label": "Cygnes blancs en relief",
+    "group": "Unsafe",
+    "path": "Unsafe/081/be5f857625853629855e44dece853e29.jpg",
+    "sha256": "f01457da3a517db09aed228fdbfedc33fe898ca38ef4436e55657edf62cbc329",
+    "classification_reason": "Piste ancienne, mais modèle exact, auteur ou durée des droits non établis."
+  },
+  {
+    "id": "082",
+    "label": "Deux tours roses transparentes",
+    "group": "Unsafe",
+    "path": "Unsafe/082/bee07fabc60e7af34f83ea15d69d005e.jpg",
+    "sha256": "00489d5c8a65b25d5cac3e58116bc72bffa249fda630328d309a68c4c08c16cb",
+    "classification_reason": "Création récente ou piste contemporaine : droits non résolus."
+  },
+  {
+    "id": "083",
+    "label": "Fleurs bleues appliquées",
+    "group": "Unsafe",
+    "path": "Unsafe/083/c076f5be132ae132c3ef9afc12e33cf3.jpg",
+    "sha256": "6b917d2363edbb75c8d8d1d891f82af046a608222c4b087e952ba086c3ff91d4",
+    "classification_reason": "Création récente ou piste contemporaine : droits non résolus."
+  },
+  {
+    "id": "084",
+    "label": "Deux grandes anses argentées",
+    "group": "Unsafe",
+    "path": "Unsafe/084/c12391593841f02de8457389f1f6dea1.jpg",
+    "sha256": "0ef4943b8789b0cfdcc046c08461618fdbab918c111dc230c16e753466f79c31",
+    "classification_reason": "Piste ancienne, mais modèle exact, auteur ou durée des droits non établis."
+  },
+  {
+    "id": "085",
+    "label": "Métal martelé et pieds dorés",
+    "group": "Unsafe",
+    "path": "Unsafe/085/c14cf3ce51e551b44f167c5111fa9c33.jpg",
+    "sha256": "a22126380beb0e8e1468475ace6a925fb227d8f538c8e6eda745693b35f3e393",
+    "classification_reason": "Piste ancienne, mais modèle exact, auteur ou durée des droits non établis."
+  },
+  {
+    "id": "086",
+    "label": "Vases métalliques à anneaux",
+    "group": "Unsafe",
+    "path": "Unsafe/086/c2924fb0c11d47bf4ca7c678be683aeb.jpg",
+    "sha256": "4e4a34d010c524dc0fa34e1a52967481e5019966832628f5160d4bf7ab4d728c",
+    "classification_reason": "Origine non résolue : aucun fondement acquis pour une copie fidèle."
+  },
+  {
+    "id": "087",
+    "label": "Verre turquoise en torsade",
+    "group": "Unsafe",
+    "path": "Unsafe/087/c33a46639632934b7e5e61bc7f1a913b.jpg",
+    "sha256": "d4dd76d16e3759d0730b35187b4443e885a30e332d814396a51440dc33dd526d",
+    "classification_reason": "Origine non résolue : aucun fondement acquis pour une copie fidèle."
+  },
+  {
+    "id": "088",
+    "label": "Bambous en métal sur fond doré",
+    "group": "Unsafe",
+    "path": "Unsafe/088/c75f19bc5ab732ed987a463011fe9111.jpg",
+    "sha256": "3b270e5ae9e5cfd2ce6b2af169d912b4363da447003414044f6415068a1b8d91",
+    "classification_reason": "Piste ancienne, mais modèle exact, auteur ou durée des droits non établis."
+  },
+  {
+    "id": "089",
+    "label": "Trois bouteilles vertes à anse",
+    "group": "Unsafe",
+    "path": "Unsafe/089/cb7b9ef5d6926a3b6598f060345ba630.jpg",
+    "sha256": "7deae48cf7d09f3ad2b4a82018ac2715ab26a79b47b9a6fa28db3bcf53803cb4",
+    "classification_reason": "Type de forme courant ; copie exacte du modèle et du décor non autorisée par cette seule observation."
+  },
+  {
+    "id": "090",
+    "label": "Capucines blanches sur verre mauve",
+    "group": "Unsafe",
+    "path": "Unsafe/090/cc7d9550f863f8af8f894858c3759213.jpg",
+    "sha256": "25988cc2d7541ddae3add134a50b1fae237ff598127e3f1852940b3c2e97b7d1",
+    "classification_reason": "Piste ancienne, mais modèle exact, auteur ou durée des droits non établis."
+  },
+  {
+    "id": "091",
+    "label": "Pensées bleues et verre clair",
+    "group": "Unsafe",
+    "path": "Unsafe/091/d2cf1bd9067e369da3a956bb01f0ec95.jpg",
+    "sha256": "a5f80659ac4adb780136fc409efbe10e5efa9f857dfc1d2a7a6bfb78c8cc2866",
+    "classification_reason": "Origine non résolue : aucun fondement acquis pour une copie fidèle."
+  },
+  {
+    "id": "092",
+    "label": "Dahlia jaune sur fond sombre",
+    "group": "Unsafe",
+    "path": "Unsafe/092/d3bc89cd21e61c0e71e844e1f2ed72bf.jpg",
+    "sha256": "6b682a8e99d37042b3a07a6ff1de092e5efefdfb30f5f67474400de360093599",
+    "classification_reason": "Piste ancienne, mais modèle exact, auteur ou durée des droits non établis."
+  },
+  {
+    "id": "093",
+    "label": "Émail cristallin orange et vert",
+    "group": "Unsafe",
+    "path": "Unsafe/093/d47b4e48062137a8c8831aa48ee4fd2e.jpg",
+    "sha256": "5fa2f0b7ee1af1a3d7dfbce2c2eb84aca770be4bd52a4e29d10178126a16c4f7",
+    "classification_reason": "Type de forme courant ; copie exacte du modèle et du décor non autorisée par cette seule observation."
+  },
+  {
+    "id": "094",
+    "label": "Dragon bleu sur porcelaine blanche",
+    "group": "Unsafe",
+    "path": "Unsafe/094/dbbcd8f418571310b00a757b405d0877.jpg",
+    "sha256": "8f5ec6a23e43aa35f08e2844832e5cc2b4eb98cf76a8c41ebab18307ae9ea8e9",
+    "classification_reason": "Piste ancienne, mais modèle exact, auteur ou durée des droits non établis."
+  },
+  {
+    "id": "095",
+    "label": "Plusieurs visages blancs",
+    "group": "Unsafe",
+    "path": "Unsafe/095/dcd0028c102a61f0d926875b6a948bb4.jpg",
+    "sha256": "b71eca96bb5a3cd9149d56d5a44708bca1818ca277eddcc41bdafb42c62f7de6",
+    "classification_reason": "Création récente ou piste contemporaine : droits non résolus."
+  },
+  {
+    "id": "096",
+    "label": "Lapins blancs sur fond bleu",
+    "group": "Unsafe",
+    "path": "Unsafe/096/dd23ba926f15047b9de17f758d186af5.jpg",
+    "sha256": "a2d79f7ed4ea519ef628e8a64ed1cd0a42ffb3f2013d9c842228d78cc1849ef0",
+    "classification_reason": "Origine non résolue : aucun fondement acquis pour une copie fidèle."
+  },
+  {
+    "id": "097",
+    "label": "Prismes multicolores en verre",
+    "group": "Unsafe",
+    "path": "Unsafe/097/dd4d5d64237d4974b1f64c8a0cf7ea12.jpg",
+    "sha256": "6bcd16319ea9a84f02ec16b81874010516094843b0748ae584529e544662926f",
+    "classification_reason": "Type de forme courant ; copie exacte du modèle et du décor non autorisée par cette seule observation."
+  },
+  {
+    "id": "098",
+    "label": "Céramique rose et cristallisations",
+    "group": "Unsafe",
+    "path": "Unsafe/098/e12bb561f4b253a3f3257f656bfa58ce.jpg",
+    "sha256": "1513ac8e12b3a5e76082a2eb968770e0b7d8820b84c21c08b3c953970f9548c9",
+    "classification_reason": "Type de forme courant ; copie exacte du modèle et du décor non autorisée par cette seule observation."
+  },
+  {
+    "id": "099",
+    "label": "Verre rose et ombellifères noirs",
+    "group": "Unsafe",
+    "path": "Unsafe/099/e4c9cb8dcc19b5cadeac016db26d3d25.jpg",
+    "sha256": "7236944d595d15403534748a837f3f04c2705b9a611c24861877d173196fdb5d",
+    "classification_reason": "Piste ancienne, mais modèle exact, auteur ou durée des droits non établis."
+  },
+  {
+    "id": "100",
+    "label": "Dragon noir sur fond blanc",
+    "group": "Unsafe",
+    "path": "Unsafe/100/e5447e8b5a58e5cfaf1edf433bf181d3.jpg",
+    "sha256": "6488d2fe89e158b6f7c0752bb45520b64e2ce22586b164b5fe29ecac1993b007",
+    "classification_reason": "Piste ancienne, mais modèle exact, auteur ou durée des droits non établis."
+  },
+  {
+    "id": "101",
+    "label": "Deux femmes en verre opalescent",
+    "group": "Unsafe",
+    "path": "Unsafe/101/e5d3fb83570b846a69318f8a1daa25ed.jpg",
+    "sha256": "dfb57018bb44507393bac25cc993572c4719a546cb69e52fa2cdc97c3ccddca6",
+    "classification_reason": "Origine non résolue : aucun fondement acquis pour une copie fidèle."
+  },
+  {
+    "id": "102",
+    "label": "Chauve-souris sculptée et grès vert",
+    "group": "Unsafe",
+    "path": "Unsafe/102/ee41bca7a1ca02e1a62a4316edf492a5.jpg",
+    "sha256": "1e42bc784aaacc4893c8758cb24433da417421f5628121f54008941a6c5fcf1e",
+    "classification_reason": "Piste ancienne, mais modèle exact, auteur ou durée des droits non établis."
+  },
+  {
+    "id": "103",
+    "label": "Visage féminin et métal autour d’un vase",
+    "group": "Unsafe",
+    "path": "Unsafe/103/ee954abbd77f8c32bc5e397c9b88a67d.jpg",
+    "sha256": "bad75540a34253e35cf83affecae1725d5ff3192a6c84fd3326261105a76822c",
+    "classification_reason": "Piste ancienne, mais modèle exact, auteur ou durée des droits non établis."
+  },
+  {
+    "id": "104",
+    "label": "Verre rouge facetté ovoïde",
+    "group": "Unsafe",
+    "path": "Unsafe/104/eef3285437a201c3b15175756237b399.jpg",
+    "sha256": "681fa0952a8557e0da36b2745a99a3e7b046b6fa74018e601cbece1ae93d35db",
+    "classification_reason": "Création récente ou piste contemporaine : droits non résolus."
+  },
+  {
+    "id": "105",
+    "label": "Réseau craquelé vert",
+    "group": "Unsafe",
+    "path": "Unsafe/105/ef86dc9e815ddb1a80240862c23f4d54.jpg",
+    "sha256": "9ac11f3e9d8c55c4a0241e2df4b997c435101aa0e4d289870dbbbf54aa581453",
+    "classification_reason": "Type de forme courant ; copie exacte du modèle et du décor non autorisée par cette seule observation."
+  },
+  {
+    "id": "106",
+    "label": "Chardon clair sur fond sombre",
+    "group": "Unsafe",
+    "path": "Unsafe/106/f0f4d70bfb14e5328d3dbb5b5a0187a7.jpg",
+    "sha256": "16ce5342606f0301f013805a3db7ec590645221ce7255c17d12e2e7311c96634",
+    "classification_reason": "Piste ancienne, mais modèle exact, auteur ou durée des droits non établis."
+  },
+  {
+    "id": "107",
+    "label": "Céramique bordeaux et lézard",
+    "group": "Unsafe",
+    "path": "Unsafe/107/f10d4cef13c5c21e23894af97ebde650.jpg",
+    "sha256": "037de4b5126e7e440614e63d80f39788a04b20219567b25afb4de7d826626d61",
+    "classification_reason": "Piste ancienne, mais modèle exact, auteur ou durée des droits non établis."
+  },
+  {
+    "id": "108",
+    "label": "Cristal bleu à facettes rectangulaires",
+    "group": "Unsafe",
+    "path": "Unsafe/108/f197b79f3972433dcae238e1198c7fa2.jpg",
+    "sha256": "e97fdb7ae786efffe957dd28560cebb8017c96681567013eb1447cdd9eb867e2",
+    "classification_reason": "Création récente ou piste contemporaine : droits non résolus."
+  },
+  {
+    "id": "109",
+    "label": "Goutte de verre rose",
+    "group": "Unsafe",
+    "path": "Unsafe/109/f1a919b32f22eceaf9395cbea86e13a7.jpg",
+    "sha256": "b3eb629bd1c6f5a955144dc2cd875b2c92f6cc64873998334b198c2e0c22798c",
+    "classification_reason": "Type de forme courant ; copie exacte du modèle et du décor non autorisée par cette seule observation."
+  },
+  {
+    "id": "110",
+    "label": "Magnolias blancs sur sphère bleue",
+    "group": "Unsafe",
+    "path": "Unsafe/110/f1e317874791f695fec30f05a8319195.jpg",
+    "sha256": "00f16eaaa8aff8244771e9d81ed4d14f188bb04bd518fb24370919b26e99b6b7",
+    "classification_reason": "Création récente ou piste contemporaine : droits non résolus."
+  },
+  {
+    "id": "111",
+    "label": "Cristal carré à pans coupés",
+    "group": "Unsafe",
+    "path": "Unsafe/111/f87ca26f965babf6d16536529a955f0a.jpg",
+    "sha256": "126d652847d4733e0efef7d29f476d06d7552da7cfcbfac92c89c89a2c8a471d",
+    "classification_reason": "Origine non résolue : aucun fondement acquis pour une copie fidèle."
+  },
+  {
+    "id": "112",
+    "label": "Verre brun et branches argentées",
+    "group": "Unsafe",
+    "path": "Unsafe/112/f9209659ae9453883f978f8b95499876.jpg",
+    "sha256": "12ff893fa3b927de5b89fb9789a5b70963372f89080ab3e6a3224619832d046f",
+    "classification_reason": "Piste ancienne, mais modèle exact, auteur ou durée des droits non établis."
+  },
+  {
+    "id": "113",
+    "label": "Verre vert à oiseaux",
+    "group": "Unsafe",
+    "path": "Unsafe/113/f9c736c868c32693a8f9e1dbbd9ed199.jpg",
+    "sha256": "8090c35a4d887842c384e54da0fa8d1b008724bd56f444227a555965a5056a16",
+    "classification_reason": "Piste ancienne, mais modèle exact, auteur ou durée des droits non établis."
+  },
+  {
+    "id": "114",
+    "label": "Ginkgo jaune sur céramique brune",
+    "group": "Unsafe",
+    "path": "Unsafe/114/fe238c2d72ef74b2b223dd803e737fd8.jpg",
+    "sha256": "0adbfa967f6e25d10415c230a0034863c7de8dfbd949325f641690a9d6b43991",
+    "classification_reason": "Type de forme courant ; copie exacte du modèle et du décor non autorisée par cette seule observation."
+  },
+  {
+    "id": "115",
+    "label": "Bloc violet à cavité torsadée",
+    "group": "Unsafe",
+    "path": "Unsafe/115/ffb5eea494331855d96cbe3fea952dff.jpg",
+    "sha256": "fd24f0ba71680c8e1692d54e66a8df13ec38f7e795acb2742fd7b4a8f4cfe745",
+    "classification_reason": "Origine non résolue : aucun fondement acquis pour une copie fidèle."
+  },
+  {
+    "id": "116",
+    "label": "Porcelaine craquelée et oiseaux",
+    "group": "Unsafe",
+    "path": "Unsafe/116/il_1588xN.4680190158_t082.webp",
+    "sha256": "410c91e0f20a7851a301a23a0111fee8b6b3ddf1eeb4af6622f1ecc9469dc6e0",
+    "classification_reason": "Origine non résolue : aucun fondement acquis pour une copie fidèle."
+  }
+]

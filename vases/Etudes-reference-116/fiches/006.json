@@ -1,0 +1,93 @@
+{
+  "id": "006",
+  "label": "Coupes de verre colorées empilées",
+  "referenceSha256": "5d02736059d5eca853dfc2bc319d97edc1da00b22a4e8063b3ac5d894e7d47a5",
+  "file": "svg/006.svg",
+  "reference": "references/006",
+  "sha256": "32eacf12c812f74aeb7e97734c2c86a4f0ff9d2cb88583ad0a50a2ed14e8e269",
+  "bytes": 13483257,
+  "paths": 52264,
+  "width": 700,
+  "height": 933,
+  "memoryBefore": 6138515456,
+  "method": "Transcription de contours et nuances en courbes de Bézier natives",
+  "review": "Contrôle visuel à effectuer",
+  "guide": {
+    "box": [
+      0.14,
+      0.21,
+      0.84,
+      0.834
+    ],
+    "outline": [
+      [
+        0.17,
+        0.252
+      ],
+      [
+        0.816,
+        0.225
+      ],
+      [
+        0.828,
+        0.365
+      ],
+      [
+        0.73,
+        0.375
+      ],
+      [
+        0.721,
+        0.47
+      ],
+      [
+        0.69,
+        0.471
+      ],
+      [
+        0.711,
+        0.614
+      ],
+      [
+        0.77,
+        0.602
+      ],
+      [
+        0.76,
+        0.755
+      ],
+      [
+        0.68,
+        0.822
+      ],
+      [
+        0.44,
+        0.832
+      ],
+      [
+        0.327,
+        0.81
+      ],
+      [
+        0.27,
+        0.697
+      ],
+      [
+        0.25,
+        0.47
+      ],
+      [
+        0.348,
+        0.451
+      ],
+      [
+        0.29,
+        0.387
+      ],
+      [
+        0.22,
+        0.394
+      ]
+    ]
+  }
+}

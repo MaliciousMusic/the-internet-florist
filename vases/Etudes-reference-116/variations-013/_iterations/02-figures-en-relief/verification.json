@@ -1,0 +1,53 @@
+[
+  {
+    "id": "013-aurore",
+    "title": "Aurore · tube champagne",
+    "file": "013-aurore.svg",
+    "bytes": 22123,
+    "paths": 94,
+    "instances": 7,
+    "sha256": "69783378921d15eaf149d9190c8abc1b14631a7d8f67a9ceee0c081ff3a62d60",
+    "xmlValid": true,
+    "selfContained": true,
+    "native2dOnly": true,
+    "memoryBeforeRender": 5112483840,
+    "renders": [
+      "013-aurore-clair.png",
+      "013-aurore-sombre.png"
+    ]
+  },
+  {
+    "id": "013-onde",
+    "title": "Onde · boule opaline",
+    "file": "013-onde.svg",
+    "bytes": 22548,
+    "paths": 94,
+    "instances": 8,
+    "sha256": "dcdf7739bb5c6e1a2f4789fd9ce697a0eb4e5591c3b60dcbfca888c67164015c",
+    "xmlValid": true,
+    "selfContained": true,
+    "native2dOnly": true,
+    "memoryBeforeRender": 5107011584,
+    "renders": [
+      "013-onde-clair.png",
+      "013-onde-sombre.png"
+    ]
+  },
+  {
+    "id": "013-brise",
+    "title": "Brise · corolle fumée",
+    "file": "013-brise.svg",
+    "bytes": 15553,
+    "paths": 61,
+    "instances": 3,
+    "sha256": "a398a9a7282ba48715c34b8526a85c9edd1ea4ec4286d6e1510bac450916d2fb",
+    "xmlValid": true,
+    "selfContained": true,
+    "native2dOnly": true,
+    "memoryBeforeRender": 5115088896,
+    "renders": [
+      "013-brise-clair.png",
+      "013-brise-sombre.png"
+    ]
+  }
+]

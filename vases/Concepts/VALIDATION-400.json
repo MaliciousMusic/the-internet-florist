@@ -1,0 +1,2153 @@
+{
+  "schemaVersion": 1,
+  "catalogueVersion": "belai-vases-400-v1",
+  "recordedAt": "2026-10-05T13:59:12Z",
+  "decisionSource": "Instruction humaine du 5 octobre 2026 : considérer les 400 comme validés ; préparer ensuite un vase par matière, avec avant/après fini au maximum de qualité, réalisme et lumières.",
+  "conceptsApproved": true,
+  "finishedExamplesApproved": false,
+  "approvedConcepts": [
+    {
+      "id": "C001",
+      "file": "svg/C001.svg",
+      "sha256": "909d5c752a390dafabc644c5be29eb3ef335ae2d45679d84aa124861a982ead8"
+    },
+    {
+      "id": "C002",
+      "file": "svg/C002.svg",
+      "sha256": "75f5910492e535b790a2aceaece4610c8674089b63581ee4f1fabc536a3d2720"
+    },
+    {
+      "id": "C003",
+      "file": "svg/C003.svg",
+      "sha256": "94b9a8387bdce31fb11ce9db9f7c7f0fdd9587c4e4f5a7652bbcb3f106dc0662"
+    },
+    {
+      "id": "C004",
+      "file": "svg/C004.svg",
+      "sha256": "c8458434047cecdb828643cc3ba97759dbedaca690c5fbbaa0b62e7bdba4e98b"
+    },
+    {
+      "id": "C005",
+      "file": "svg/C005.svg",
+      "sha256": "5339c56e748175b2dc4e4c151e4c89d5f56ca6b0730e5c31a3fcab5ff82a94c6"
+    },
+    {
+      "id": "C006",
+      "file": "svg/C006.svg",
+      "sha256": "03936b64071c143fbf48e5fba18b31bf21cd6fbb49cd67e32a8c3dae7af0d79a"
+    },
+    {
+      "id": "C007",
+      "file": "svg/C007.svg",
+      "sha256": "357dff7119b2dbabdc90b1a7d1f3b195d389a57cd7ff2c6ab86186fd6f45eaa8"
+    },
+    {
+      "id": "C008",
+      "file": "svg/C008.svg",
+      "sha256": "8c84db46d778673b3130915819e6dd6c156064c11d9515b30619791d086ae12e"
+    },
+    {
+      "id": "C009",
+      "file": "svg/C009.svg",
+      "sha256": "42824f3c6d549af02f2a7f7629463c3cab0bce9924f5017abe3bb47420641e00"
+    },
+    {
+      "id": "C010",
+      "file": "svg/C010.svg",
+      "sha256": "583fb73b7ed492e8193eeb2b477e0d3dc1413401aef291e497e1968b86af531b"
+    },
+    {
+      "id": "C011",
+      "file": "svg/C011.svg",
+      "sha256": "fa19e1c3bcb3de720c0cf9ba9978b5bc55bb1959f936d02ef3a30e725d87ddaf"
+    },
+    {
+      "id": "C012",
+      "file": "svg/C012.svg",
+      "sha256": "71d7a47609c1f183671c281203a8b5cc44dff35d2c0ca8979344f6b44e20e182"
+    },
+    {
+      "id": "C013",
+      "file": "svg/C013.svg",
+      "sha256": "ce9639ed97b138faa0477905d439dbad803b0110914b757967abe810ec8f9814"
+    },
+    {
+      "id": "C014",
+      "file": "svg/C014.svg",
+      "sha256": "7459799e2413c0c9bf49b4209dfa0ac87af3644d38bbeafc4aa0d47df960cb9f"
+    },
+    {
+      "id": "C015",
+      "file": "svg/C015.svg",
+      "sha256": "76da5fc49bdfb3dd1a755a190cbf9cdb9c56a4cfdc5e8ed42d88d004bb8f8403"
+    },
+    {
+      "id": "C016",
+      "file": "svg/C016.svg",
+      "sha256": "f3029be883e564aabf0fc179b6432b088c281af94ac47e60dfe13552165c5e7e"
+    },
+    {
+      "id": "C017",
+      "file": "svg/C017.svg",
+      "sha256": "8646556abf6cf07eae10ee7e35f8dd07a85109d35e7cb9b08b2c1dcc120c34a1"
+    },
+    {
+      "id": "C018",
+      "file": "svg/C018.svg",
+      "sha256": "6d98cbc7f97afc96e9b6dc005a3fce46ce198d2069fa3d0302b7b7cf409748c3"
+    },
+    {
+      "id": "C019",
+      "file": "svg/C019.svg",
+      "sha256": "cb9b95cfd04f99e2993c613c3df4bde94d25d1b7312e0846fe9485b0f26985de"
+    },
+    {
+      "id": "C020",
+      "file": "svg/C020.svg",
+      "sha256": "4da1b817a93b5979d69edbee8ffdbb9ff43870bbe84be3d2f81a8fab59d8882e"
+    },
+    {
+      "id": "C021",
+      "file": "svg/C021.svg",
+      "sha256": "440667c1d0eca9ed75ac1cc76267bd231ea8e2c79d8de4454ee431cd9509fdb5"
+    },
+    {
+      "id": "C022",
+      "file": "svg/C022.svg",
+      "sha256": "aab19c2dc18d9a81e5ffe79e3fac60d60ecd9ee4cd6c6495473393e24bd0f592"
+    },
+    {
+      "id": "C023",
+      "file": "svg/C023.svg",
+      "sha256": "d989b5a64f5b317ef768d1e7ee3820e86ec52ed3ceaf8af6cbecf60d61ffc6b7"
+    },
+    {
+      "id": "C024",
+      "file": "svg/C024.svg",
+      "sha256": "8d170b94da20643cbed4d890a361df7bb9a95e728f7d574ed9946fb54d0b8b50"
+    },
+    {
+      "id": "C025",
+      "file": "svg/C025.svg",
+      "sha256": "b63b9f1a6c771c3846ed3052c7ac0824a09d5efd1d1f0bde829a7e3bd4547fb5"
+    },
+    {
+      "id": "C026",
+      "file": "svg/C026.svg",
+      "sha256": "a88aa64b1c4e95b4636e23f8eb68a097f334b67a02efa891e1726e516e6fe79c"
+    },
+    {
+      "id": "C027",
+      "file": "svg/C027.svg",
+      "sha256": "379a1443e24ee9a14c7a5461621762751e12d7e57789660124be5b37874a2a89"
+    },
+    {
+      "id": "C028",
+      "file": "svg/C028.svg",
+      "sha256": "076222c0442bcd4deb9432704ee34202fae30d89639a5582de9b15251ba722e3"
+    },
+    {
+      "id": "C029",
+      "file": "svg/C029.svg",
+      "sha256": "e6f6b5315b259a6637d8273b82395658ec9984a2ff16c15caf2963846c1407fb"
+    },
+    {
+      "id": "C030",
+      "file": "svg/C030.svg",
+      "sha256": "ae1e28a8f8cc284516debc7833342d5cddd0c22efbd42a0879ab6b3e04953afb"
+    },
+    {
+      "id": "C031",
+      "file": "svg/C031.svg",
+      "sha256": "f3a86f74456c920c42d121eda570a348e5476e5cc9bf9887730ecc40fc53be04"
+    },
+    {
+      "id": "C032",
+      "file": "svg/C032.svg",
+      "sha256": "bc97617eeb38cfbc24caddd366b5d910508478e9dbf44effdd1336049ce71c16"
+    },
+    {
+      "id": "C033",
+      "file": "svg/C033.svg",
+      "sha256": "6c958d1d480528eea4bca95a51b4c3193defa867c0e517caef3fb82ebb6350da"
+    },
+    {
+      "id": "C034",
+      "file": "svg/C034.svg",
+      "sha256": "cbb35f3d79e036423689e7a9183c25b682777eb429a185fd202c2eaad26c4b8c"
+    },
+    {
+      "id": "C035",
+      "file": "svg/C035.svg",
+      "sha256": "0169b953bbe3405199bc7d4d536a45ea648efb4acb2e86cbb1fd36e08e6556b8"
+    },
+    {
+      "id": "C036",
+      "file": "svg/C036.svg",
+      "sha256": "94f55aa20f8bb6fc80485df0e1360def88d0c82daa5a1e7de9a040c6085eb012"
+    },
+    {
+      "id": "C037",
+      "file": "svg/C037.svg",
+      "sha256": "9fc9fb1cea4f63208e9dfc330ca01f754aee4221061629e6fdc53203e06f4da1"
+    },
+    {
+      "id": "C038",
+      "file": "svg/C038.svg",
+      "sha256": "e9255e8a252edf327d3cd1cf927c681dc283bfa9be51fd3f9732ef61a9c859c5"
+    },
+    {
+      "id": "C039",
+      "file": "svg/C039.svg",
+      "sha256": "5fb2911f6534846bc9e12d71020e7e8fe1c8fcf50b80ddc3e8bffcab2faa4e36"
+    },
+    {
+      "id": "C040",
+      "file": "svg/C040.svg",
+      "sha256": "363d37105595570b008a1c8b3d0c7bc1609ef2f540c4bb3821f6a0945c839143"
+    },
+    {
+      "id": "C041",
+      "file": "svg/C041.svg",
+      "sha256": "5e2e945ebd1ff5d991e35fa94bd7f641ccc5433c814f39dfac9ccbb7e4c9ea64"
+    },
+    {
+      "id": "C042",
+      "file": "svg/C042.svg",
+      "sha256": "d2ee583715384317de4a8ec9a00e2a227839460dacbd315ba66dcab569d0b467"
+    },
+    {
+      "id": "C043",
+      "file": "svg/C043.svg",
+      "sha256": "af2cc682adc9651d655df88d093abeb123e84dc6d0db9b3c0d0a1080d2828e3f"
+    },
+    {
+      "id": "C044",
+      "file": "svg/C044.svg",
+      "sha256": "2c8e3bb04ada34576b69b65425098a626c0c465dc7d0de0657eceb92dabf6def"
+    },
+    {
+      "id": "C045",
+      "file": "svg/C045.svg",
+      "sha256": "cdee2ad7cd54b9505d41ac4800ac611ecfecbd8022f794fe47558513ca4d28bc"
+    },
+    {
+      "id": "C046",
+      "file": "svg/C046.svg",
+      "sha256": "a2557567ca3a6f938466c2dab3191705edd87c571732adad8a42da81c6293763"
+    },
+    {
+      "id": "C047",
+      "file": "svg/C047.svg",
+      "sha256": "3ff10dd7293a90ab33d913d3a75eb2b7028985c2814b627e74e906f2bd829754"
+    },
+    {
+      "id": "C048",
+      "file": "svg/C048.svg",
+      "sha256": "4e7f0cc1c16c56960b815c325f19fb1de474529698744961cda9db250b3a1c28"
+    },
+    {
+      "id": "C049",
+      "file": "svg/C049.svg",
+      "sha256": "17c7be6d33b3b55b2da87db6c05a83c18151d507871fce7e9603fc8bc4e19ad9"
+    },
+    {
+      "id": "C050",
+      "file": "svg/C050.svg",
+      "sha256": "8f8a01eb241814593eee2e867bae4afc0de1489ccd9ee6ec62b5d750efdcd65f"
+    },
+    {
+      "id": "C051",
+      "file": "svg/C051.svg",
+      "sha256": "711e4cf67dd64e04d4df81e54c7cb0843d917695729c000b83aab46a0fddfbd2"
+    },
+    {
+      "id": "C052",
+      "file": "svg/C052.svg",
+      "sha256": "212dc5c530ec87317af05906bbce86cc3fce22a5a3f93538ebf570b34647134f"
+    },
+    {
+      "id": "C053",
+      "file": "svg/C053.svg",
+      "sha256": "0f87d52c4138df81143dcbf9edb0087a0c08e8baf534030c1b99a5338ca777d9"
+    },
+    {
+      "id": "C054",
+      "file": "svg/C054.svg",
+      "sha256": "72e008e4280d1a675c93df632cb49c4ce873ad2ee7d06610ac09e4d702edd4df"
+    },
+    {
+      "id": "C055",
+      "file": "svg/C055.svg",
+      "sha256": "134e797a2dbc2f7996ab660cdb88717068de3dcd7cd5dc9138251710e42a18a8"
+    },
+    {
+      "id": "C056",
+      "file": "svg/C056.svg",
+      "sha256": "4f013429dda8b81414dda961f6335c29f9849129678b8a310a1b9d03113b59e0"
+    },
+    {
+      "id": "C057",
+      "file": "svg/C057.svg",
+      "sha256": "6dd68b0fb7d1e6a5b20797f720751052b3be289b9f954fdea0b4bb9b422699af"
+    },
+    {
+      "id": "C058",
+      "file": "svg/C058.svg",
+      "sha256": "0fb791188166518b45ee0584c01d390f60fc166618a966c33586403905c17573"
+    },
+    {
+      "id": "C059",
+      "file": "svg/C059.svg",
+      "sha256": "d9f180420e65229692a9ac4a04f220e5fe6bdca1b71cafd046200e867c87e738"
+    },
+    {
+      "id": "C060",
+      "file": "svg/C060.svg",
+      "sha256": "f160c7f0e9736c75d1431de4cf1558abfc1c3def148763c7ac81cc1949795ac4"
+    },
+    {
+      "id": "C061",
+      "file": "svg/C061.svg",
+      "sha256": "41b3642912ce85afdbc11e2ec413dd81baf3417cefb352b6181f48b6e33d2d4f"
+    },
+    {
+      "id": "C062",
+      "file": "svg/C062.svg",
+      "sha256": "c68fdb2bc662a099e1ebaa49d48725623ecdbfcb603920893c1453d488b0c28b"
+    },
+    {
+      "id": "C063",
+      "file": "svg/C063.svg",
+      "sha256": "8129fef2f9dc4b55c0e9889d2fb59eee7e2d7e7a62c1c0944c62a764b2e63458"
+    },
+    {
+      "id": "C064",
+      "file": "svg/C064.svg",
+      "sha256": "a1a2ba8adffc0bf0f90b676224931d61c77498953372843c3036999373bcec25"
+    },
+    {
+      "id": "C065",
+      "file": "svg/C065.svg",
+      "sha256": "3114c9377e145048f421b6bf29de6689ee65c3bf181d903246ba5cc211e3beb4"
+    },
+    {
+      "id": "C066",
+      "file": "svg/C066.svg",
+      "sha256": "a3b8452dce69a4a5291b3cfdc8c43930f88e409bba0e75c17e436e2812e3977a"
+    },
+    {
+      "id": "C067",
+      "file": "svg/C067.svg",
+      "sha256": "22127c15791abf5b61aace6134aaf2e01c519c3dbd7e87b445559eeb0c988215"
+    },
+    {
+      "id": "C068",
+      "file": "svg/C068.svg",
+      "sha256": "a8c0247fd2ba024d7f9b23bcbdf7ce7791569a72ae4c99207bf0c35d76328045"
+    },
+    {
+      "id": "C069",
+      "file": "svg/C069.svg",
+      "sha256": "874a4b159f1b5c8b5ea0a9ebb141353b9f88a9031d2e474e52b9f04cd19c3406"
+    },
+    {
+      "id": "C070",
+      "file": "svg/C070.svg",
+      "sha256": "3b8104b60a7f1b7d589330693b624d330d9a6aa746aeb46127c05235ebe455da"
+    },
+    {
+      "id": "C071",
+      "file": "svg/C071.svg",
+      "sha256": "f48c65a7c12cae6af6f004a1b61e627218779d1cef521290c7c80838a4047d42"
+    },
+    {
+      "id": "C072",
+      "file": "svg/C072.svg",
+      "sha256": "7c8eb960ebab2b32a0a7bf6fde20333c263aecc07a31a22fe3a0d5ab75141ae4"
+    },
+    {
+      "id": "C073",
+      "file": "svg/C073.svg",
+      "sha256": "bd29af7b148962c01732b127b64c99a993916b93bc51c0b17d8ef1d870099663"
+    },
+    {
+      "id": "C074",
+      "file": "svg/C074.svg",
+      "sha256": "afd1eeaf95dec8fcbf8b6bba6d47cd73a528a673acdfc9081dc0cd27f3814316"
+    },
+    {
+      "id": "C075",
+      "file": "svg/C075.svg",
+      "sha256": "0d86f3b33e804079a109b4bd0fc2648f0e44612e81e0bddaf144fd9e04abc716"
+    },
+    {
+      "id": "C076",
+      "file": "svg/C076.svg",
+      "sha256": "16186c6b0fa744991241cba0ac15ab4e5f6495e386f7b3254a25efec05999fe9"
+    },
+    {
+      "id": "C077",
+      "file": "svg/C077.svg",
+      "sha256": "3d288ee09c0292547899d84202ed4d6b14fa8bd3451dcd273b6e164d1e899224"
+    },
+    {
+      "id": "C078",
+      "file": "svg/C078.svg",
+      "sha256": "ff4254c11bf95ed39850470f9845ad333785cebc7537396e22d35fb79f9048ea"
+    },
+    {
+      "id": "C079",
+      "file": "svg/C079.svg",
+      "sha256": "fd3fa6851cfa6fbc318ce2e266e18a9b1cfaded8b2e0f6cec547ae89057db7f5"
+    },
+    {
+      "id": "C080",
+      "file": "svg/C080.svg",
+      "sha256": "00de6fdb8ece073418033f25dc4a2e75edb9b3d541ec7f7d4701634f6e06b48a"
+    },
+    {
+      "id": "C081",
+      "file": "svg/C081.svg",
+      "sha256": "bc186eb269731d3af4372806c2dbaeeb9ec3e98e9dd3cff6e039036b824e2ca3"
+    },
+    {
+      "id": "C082",
+      "file": "svg/C082.svg",
+      "sha256": "4dbf55b6e24c97a91102e61ba1c758fec5ed6e3ddb5fad820bc8305e1604ff19"
+    },
+    {
+      "id": "C083",
+      "file": "svg/C083.svg",
+      "sha256": "a9a3e6e734a8c3c8e041d757b3d18356a4db83dec08a2d0267194dac80c9c898"
+    },
+    {
+      "id": "C084",
+      "file": "svg/C084.svg",
+      "sha256": "9c70a36b8b44c96164af145c1c345542a734567d6e98716d8698d811e50543f3"
+    },
+    {
+      "id": "C085",
+      "file": "svg/C085.svg",
+      "sha256": "018a3e886956fa90f0c93e9e88c67d4d09af946ef77c611f8bebe2d9dbd13075"
+    },
+    {
+      "id": "C086",
+      "file": "svg/C086.svg",
+      "sha256": "e4d4fda854c73acc42197fb662061b233d7cf7e3a9fb275a42e190eeb2db119b"
+    },
+    {
+      "id": "C087",
+      "file": "svg/C087.svg",
+      "sha256": "ab8e2432540bc851043e4573af60387173e83326fd7a8e8e618870e630a0ea49"
+    },
+    {
+      "id": "C088",
+      "file": "svg/C088.svg",
+      "sha256": "516434b508ffedc944eb08f44d3182af3bb2f8f14692d82ba73d9b984f42d8ec"
+    },
+    {
+      "id": "C089",
+      "file": "svg/C089.svg",
+      "sha256": "1c72a05f039aa0f8bf4dcca41cd9daf4d7fa30040fb02a9c69883fabee43ea79"
+    },
+    {
+      "id": "C090",
+      "file": "svg/C090.svg",
+      "sha256": "8e93325ab05c73bd5f418cd18925dc15267a7e7b7d7923de90c9361f49fc5b67"
+    },
+    {
+      "id": "C091",
+      "file": "svg/C091.svg",
+      "sha256": "18ce35b0de3a6021a9241b269d92b1e0a997a20d5d90dd29c1def0c95a1e0133"
+    },
+    {
+      "id": "C092",
+      "file": "svg/C092.svg",
+      "sha256": "22257f04e3cb1578ac0a2dedaf90c150fa19aef8ce7b19198cc4f7f525d244ff"
+    },
+    {
+      "id": "C093",
+      "file": "svg/C093.svg",
+      "sha256": "738be64cd2be499e7333aadbc87b3ef66bbf5fd6a3340ab81a54baabf57ccfe1"
+    },
+    {
+      "id": "C094",
+      "file": "svg/C094.svg",
+      "sha256": "5a2b8349055db081d76178631bcb4240dc613ede1a5aba8fcf671b5c0712f996"
+    },
+    {
+      "id": "C095",
+      "file": "svg/C095.svg",
+      "sha256": "2538bf5ff41ec268abb2b38adb1cdb82003a893efd3c503e379068da31745bdd"
+    },
+    {
+      "id": "C096",
+      "file": "svg/C096.svg",
+      "sha256": "637a7ac0e13f9ecfdfe0dcf739d4779c5a36f02053740d43075391009710de1d"
+    },
+    {
+      "id": "C097",
+      "file": "svg/C097.svg",
+      "sha256": "715a40170191c44592b62cf10b83a77ba9bd72b78197100a83bd2d743c54da3c"
+    },
+    {
+      "id": "C098",
+      "file": "svg/C098.svg",
+      "sha256": "2fd545fa3b1fa9281051df6b8286c6fe8a5167957c7acf9f857fb8a72bd1d13b"
+    },
+    {
+      "id": "C099",
+      "file": "svg/C099.svg",
+      "sha256": "e873b0bd5398918fb6cf8e380f2792b00d0e7474efa1786ecb725b282d38cfcf"
+    },
+    {
+      "id": "C100",
+      "file": "svg/C100.svg",
+      "sha256": "886839bf5faad3bd4cdd527b79f9b8dfbd897c5a779058c8fd2f5159c8894d00"
+    },
+    {
+      "id": "C101",
+      "file": "svg/C101.svg",
+      "sha256": "bc89c8557aac231d99b82e73f66713c1362d9a3971b47aabe50aa3c2e2574b41"
+    },
+    {
+      "id": "C102",
+      "file": "svg/C102.svg",
+      "sha256": "4cca95c2683084086a31ca082146f25a8aaecc176778ffebae806f0ae1355824"
+    },
+    {
+      "id": "C103",
+      "file": "svg/C103.svg",
+      "sha256": "6009318e7fff53cb33f47206da2221f8dfb6670a912269abe5d543784dfd305a"
+    },
+    {
+      "id": "C104",
+      "file": "svg/C104.svg",
+      "sha256": "99e5625a6c561de2d821f1207cc8b508aba50ed891427e2c40fa00d6855f6f2a"
+    },
+    {
+      "id": "C105",
+      "file": "svg/C105.svg",
+      "sha256": "6abd647b3ead722d57468e66a1ab2ef784f74c452a24a55d32e94ca77f978cf6"
+    },
+    {
+      "id": "C106",
+      "file": "svg/C106.svg",
+      "sha256": "658a564cb3a9c263d101fd39934b666bd8ee45d4a259be8066a887c1797009e6"
+    },
+    {
+      "id": "C107",
+      "file": "svg/C107.svg",
+      "sha256": "fe8df3f3cee03a72084aa575bc9d70c9118c163fbbc9b7f193300d4077f4e515"
+    },
+    {
+      "id": "C108",
+      "file": "svg/C108.svg",
+      "sha256": "c1f0459c37b2566de0c4c705100b7bdb66e244a9434963ebda9498032e4ab11a"
+    },
+    {
+      "id": "C109",
+      "file": "svg/C109.svg",
+      "sha256": "d64a3ade59187c80549fa68d5b7afd72c8bf23d11b2516e93425bd5527a3d797"
+    },
+    {
+      "id": "C110",
+      "file": "svg/C110.svg",
+      "sha256": "1cd2fc0f7dee18531acdd0bd8cc9e02920c98348be6b6ecbe7c2b0e4d493db47"
+    },
+    {
+      "id": "C111",
+      "file": "svg/C111.svg",
+      "sha256": "54a41cccfa1f384f7504ccb0570e8ee2cb896debb14a44af31cf5e665266744d"
+    },
+    {
+      "id": "C112",
+      "file": "svg/C112.svg",
+      "sha256": "b0ef1006a6c9e8ca7ce3ee86928009c3268f2cdea393ccdf92c28008e698ec92"
+    },
+    {
+      "id": "C113",
+      "file": "svg/C113.svg",
+      "sha256": "662209adcb14a27e4baafbbc1287c086b1e1e2248648ef4a2bc5444f55bbd4c5"
+    },
+    {
+      "id": "C114",
+      "file": "svg/C114.svg",
+      "sha256": "db7ee797063ca5f6a6cde66165846608749d6e9b0130831e485b5452b370e42a"
+    },
+    {
+      "id": "C115",
+      "file": "svg/C115.svg",
+      "sha256": "e0eda8adfac93609c312ff1b09ce853921b27485cb03a4cfb4fc03be54f76fe2"
+    },
+    {
+      "id": "C116",
+      "file": "svg/C116.svg",
+      "sha256": "beae495c3575b44af3e4b0b17fb53c258506ba39ee5e38ca7b21e13c357a091b"
+    },
+    {
+      "id": "C117",
+      "file": "svg/C117.svg",
+      "sha256": "6ee670b7d986027ce560031d347156005baed8d034e92b0d2638209468c5425e"
+    },
+    {
+      "id": "C118",
+      "file": "svg/C118.svg",
+      "sha256": "cbc78625e8da929e07a7e9f55828d8f104489268726af0e79a0a85967380b296"
+    },
+    {
+      "id": "C119",
+      "file": "svg/C119.svg",
+      "sha256": "887a0349feb21b0a0630911f3073d73e310d81ff5e5fe9b4333ac0e8cc28f1ac"
+    },
+    {
+      "id": "C120",
+      "file": "svg/C120.svg",
+      "sha256": "f63096eac70d6fcd4b448ca0f545c374487f15c7df976b8702f2960678310c1f"
+    },
+    {
+      "id": "C121",
+      "file": "svg/C121.svg",
+      "sha256": "4d527b6dc0ae6f878d26ed8a5c88e6b9ba85af4135373a1c218d4913a7849541"
+    },
+    {
+      "id": "C122",
+      "file": "svg/C122.svg",
+      "sha256": "26cef80e4b0cd7d956147043f472ff9a2154beeb93d537f278f03e56be140284"
+    },
+    {
+      "id": "C123",
+      "file": "svg/C123.svg",
+      "sha256": "6d468a307c8b17a8f5d9e0880cabae655f970b4f61de0071c4396f8e64e8e554"
+    },
+    {
+      "id": "C124",
+      "file": "svg/C124.svg",
+      "sha256": "6befa88429e60a3bc41472e471dc7c5f607f9d68c53c2ca8d86245ccfe55bcc5"
+    },
+    {
+      "id": "C125",
+      "file": "svg/C125.svg",
+      "sha256": "a7699eec22e798874660faa132feb7ca7951973a74919ff7c4b9073bbef3a01c"
+    },
+    {
+      "id": "C126",
+      "file": "svg/C126.svg",
+      "sha256": "bc4d3706a711b3d4374872176c626ec28c9be62a5d7979899afa11e617efd0c5"
+    },
+    {
+      "id": "C127",
+      "file": "svg/C127.svg",
+      "sha256": "6314a4a307766ca0f05ab41bb527181c4ec461daf010f1029d2ee2f27d9dd125"
+    },
+    {
+      "id": "C128",
+      "file": "svg/C128.svg",
+      "sha256": "0b3c69d6acd6788c40114932f5b9915badf527577b53a29c4cbca36bf891efb4"
+    },
+    {
+      "id": "C129",
+      "file": "svg/C129.svg",
+      "sha256": "d10e06de86106cf8187bac14de7b2304ff5628dc0e5bace08eded8baeba72d8f"
+    },
+    {
+      "id": "C130",
+      "file": "svg/C130.svg",
+      "sha256": "eec2c28bc770fad5d30b6d7bc9f8d672b0a8531c7ba65c5873cc5eec37c8e6f3"
+    },
+    {
+      "id": "C131",
+      "file": "svg/C131.svg",
+      "sha256": "7842f633c04bec9230c7f905ee12cada5b4efcb09a301b060bfe96ac4fb7b8e7"
+    },
+    {
+      "id": "C132",
+      "file": "svg/C132.svg",
+      "sha256": "c0a5f83c471e982f2a6b9da5a80b2223e2a60280e5c2bffd16d9f65ba610bbf7"
+    },
+    {
+      "id": "C133",
+      "file": "svg/C133.svg",
+      "sha256": "6642e5fbd36bfea4cfdd20f16b9d7f597a3f33c8d515ec6d77f021550857f05f"
+    },
+    {
+      "id": "C134",
+      "file": "svg/C134.svg",
+      "sha256": "977e638b7a86aaa2a7f767a918068397378336709b5dee02a176a5e5bf4418a7"
+    },
+    {
+      "id": "C135",
+      "file": "svg/C135.svg",
+      "sha256": "d7c95ba50b9a9a0ddd63bc8c0c3c44627faf929f1ec6211b5961c97ce8c94f54"
+    },
+    {
+      "id": "C136",
+      "file": "svg/C136.svg",
+      "sha256": "c2121e28d3b73bba6dc3623b4ff5bffcbba9e0e192a28dac983e06d44e7ad953"
+    },
+    {
+      "id": "C137",
+      "file": "svg/C137.svg",
+      "sha256": "56a34b8f9403352c5ba3ece8bef5b4bf19d960e335e0e5a89f0a2d7e8eeb137f"
+    },
+    {
+      "id": "C138",
+      "file": "svg/C138.svg",
+      "sha256": "b8ca0f9982f248b74d69f953d947fae89c348c2ef595a6a1c09a13038817afb5"
+    },
+    {
+      "id": "C139",
+      "file": "svg/C139.svg",
+      "sha256": "3ff6dfd3bec46e9d0ebc4b5f25ab87ccdbea26f68081f7fa022112f36483719b"
+    },
+    {
+      "id": "C140",
+      "file": "svg/C140.svg",
+      "sha256": "75a89a4591c82afa7d4aa6ef9dbef76b0e669c7f833728986610976f67ee3fc0"
+    },
+    {
+      "id": "C141",
+      "file": "svg/C141.svg",
+      "sha256": "7b6c8a830d523439deaea37cb614c0775bd0ecf60706cef49d3dc00acc0f0c95"
+    },
+    {
+      "id": "C142",
+      "file": "svg/C142.svg",
+      "sha256": "c5fb85f4d6ff745445cd21acd39c780e85b90d87cfaf1ba95c2ba5b00ca60934"
+    },
+    {
+      "id": "C143",
+      "file": "svg/C143.svg",
+      "sha256": "c47a21d08aaf9c5c7764c1012fc29f5a537b3014393097757e39129e8263f157"
+    },
+    {
+      "id": "C144",
+      "file": "svg/C144.svg",
+      "sha256": "a66396a5a933212a8330b002f2be54be36eeb7151e44af5612808a6f4448ce8f"
+    },
+    {
+      "id": "C145",
+      "file": "svg/C145.svg",
+      "sha256": "c805384e97eee174dd8e34b3d2fbb58ce25af728249090e763b32fd37b3e9d46"
+    },
+    {
+      "id": "C146",
+      "file": "svg/C146.svg",
+      "sha256": "8fb6dd86029326938d5a1f32a281044fb96b0c7cefb054dfcb2599fe6105ec81"
+    },
+    {
+      "id": "C147",
+      "file": "svg/C147.svg",
+      "sha256": "882a75b23fe51dc7b864ba3443b0a8f9cefa3d4e5105a6182261c10a31640442"
+    },
+    {
+      "id": "C148",
+      "file": "svg/C148.svg",
+      "sha256": "2fe968308f52b6b54c852c4b48010dc90c15552fe1af7703e505a9cb54ffd838"
+    },
+    {
+      "id": "C149",
+      "file": "svg/C149.svg",
+      "sha256": "0d2e30578ce8aa17b51b9b3ae53071dc7dd19e551ce68f6bd6ea4f2acad15e53"
+    },
+    {
+      "id": "C150",
+      "file": "svg/C150.svg",
+      "sha256": "22dc601739953589b1d5c46739d3b920f28a5902db9fb77f903a24e6721e7bde"
+    },
+    {
+      "id": "C151",
+      "file": "svg/C151.svg",
+      "sha256": "b538c38a0c6f9e9f9162ea12a1633a16692ba72d42cba6e064f0e5aaeb62d9c0"
+    },
+    {
+      "id": "C152",
+      "file": "svg/C152.svg",
+      "sha256": "aa92cd2d5b59986ec1e017cc3dc6a95a346295360c2d5d663cc41a3ac38eb79d"
+    },
+    {
+      "id": "C153",
+      "file": "svg/C153.svg",
+      "sha256": "461e3eef5075b5df695afdf1faf0f990c4e089980f5ff3756d9a7836d5dc36e1"
+    },
+    {
+      "id": "C154",
+      "file": "svg/C154.svg",
+      "sha256": "a52ecd5eae5b0685b8c6e199769e4119eb4b76bb0b1d2d0ffc7b9a17044c230d"
+    },
+    {
+      "id": "C155",
+      "file": "svg/C155.svg",
+      "sha256": "61242f78e84f3e696f718a308a83636e2c35c7502107d764d762be20436b2afa"
+    },
+    {
+      "id": "C156",
+      "file": "svg/C156.svg",
+      "sha256": "0ff4c18a9dfa6b9de74e8aa3aa19b4ef994de4661ad278f9de0665108c4b10e7"
+    },
+    {
+      "id": "C157",
+      "file": "svg/C157.svg",
+      "sha256": "4f2f72941a071611b5e8c4d2b809ec8fc313840d183574777e98aa09198c38f8"
+    },
+    {
+      "id": "C158",
+      "file": "svg/C158.svg",
+      "sha256": "2fda10880f64550ab64001c90a9be50a0dea90aeb19abafb02d02fca4abe90b2"
+    },
+    {
+      "id": "C159",
+      "file": "svg/C159.svg",
+      "sha256": "d5d0b9d5e43e9283145516850451e01d74ad9a336181268f9a6c736f21268fe9"
+    },
+    {
+      "id": "C160",
+      "file": "svg/C160.svg",
+      "sha256": "730321638598bf13cd4bf0990c774e39586e1bda8e3e60d87e8f346a1c6eb3eb"
+    },
+    {
+      "id": "C161",
+      "file": "svg/C161.svg",
+      "sha256": "85ca9685b827758bba1fffb1551f2063e90fa16c6bd63b984592eaf2b86664cd"
+    },
+    {
+      "id": "C162",
+      "file": "svg/C162.svg",
+      "sha256": "4becfd3256eeee110d5028df54310ad5e3486e2c85621fa55cf9ad30ce70efb7"
+    },
+    {
+      "id": "C163",
+      "file": "svg/C163.svg",
+      "sha256": "ea497cd174e598764298355079a09dffab85e34d109d335ba9fd5d27b11713df"
+    },
+    {
+      "id": "C164",
+      "file": "svg/C164.svg",
+      "sha256": "9b13123067b6c0008903239ce1f7f7b17e3189593c181696c1db4b8831de8d33"
+    },
+    {
+      "id": "C165",
+      "file": "svg/C165.svg",
+      "sha256": "f4d99cd27c7b44106b917c9632ecb3b92a5bae05f4ed6ed827ff4dad50fe2153"
+    },
+    {
+      "id": "C166",
+      "file": "svg/C166.svg",
+      "sha256": "dfafc1ba0fef9bf0ed895666e944d92cc3f0eb504fd0a42a397c69caaa4e168d"
+    },
+    {
+      "id": "C167",
+      "file": "svg/C167.svg",
+      "sha256": "0adcc12d6bd9694c2e7f0c176b7dff61f3e2a03700a16f4532cc1f73267592cf"
+    },
+    {
+      "id": "C168",
+      "file": "svg/C168.svg",
+      "sha256": "a6ae48be333abe5c8ae37ec0297d927e24392f803979d94c795eaec4e80cacae"
+    },
+    {
+      "id": "C169",
+      "file": "svg/C169.svg",
+      "sha256": "af38afea84fadfde16faabd240a4237662aa50feb62ae78151c55898cb6cab24"
+    },
+    {
+      "id": "C170",
+      "file": "svg/C170.svg",
+      "sha256": "a78d0112adfc1af04703b9f6a07f70e4d974f60c87e82f9f4eb8e8d7964e1844"
+    },
+    {
+      "id": "C171",
+      "file": "svg/C171.svg",
+      "sha256": "ea71fe5a2983dddecba17c57517e9958886483ebbafa745ac28e1af43eb4bb43"
+    },
+    {
+      "id": "C172",
+      "file": "svg/C172.svg",
+      "sha256": "8cc3472246c04f7bcfbc9b0772f64370d8fa248da69dea3d10ceaddf57176ec2"
+    },
+    {
+      "id": "C173",
+      "file": "svg/C173.svg",
+      "sha256": "28200125dcbb440c0aae7abaead20ceb0e7305ca8e2c703796ce04dbb1f5c2af"
+    },
+    {
+      "id": "C174",
+      "file": "svg/C174.svg",
+      "sha256": "7faf503b9133af717c908b5587b2b57cddfc2eacb8a43f44b1f823ccb85efd3a"
+    },
+    {
+      "id": "C175",
+      "file": "svg/C175.svg",
+      "sha256": "dd87d2b3ac482af26920178a8cd054e186dd21780b6136237868d156c743ce74"
+    },
+    {
+      "id": "C176",
+      "file": "svg/C176.svg",
+      "sha256": "6b649f4becc920a177cdbb2ae4f1ebd5b53e4ca92ed197cd2a7f41b85b79560c"
+    },
+    {
+      "id": "C177",
+      "file": "svg/C177.svg",
+      "sha256": "4ca1d8f33527429b21b13f9a798a6787f5814710426e7e6d3155cd2cc588447b"
+    },
+    {
+      "id": "C178",
+      "file": "svg/C178.svg",
+      "sha256": "2bd32ef33b078c556bb904148e2934be80aaca3cbce5b2c15e8885d17ea39686"
+    },
+    {
+      "id": "C179",
+      "file": "svg/C179.svg",
+      "sha256": "a541c0f23a249da6292fa9f27596ca55fe3fdf94fa80b4d676dfd7c1ebb5ce7a"
+    },
+    {
+      "id": "C180",
+      "file": "svg/C180.svg",
+      "sha256": "36d83a92ab9e156a71f9d0dd3270b7d9d0fbeda04a996183b680260c83b8a89a"
+    },
+    {
+      "id": "C181",
+      "file": "svg/C181.svg",
+      "sha256": "9a18b0a6aa3b52222708867d7b61036693b652f691298eb9d64b217430495b5a"
+    },
+    {
+      "id": "C182",
+      "file": "svg/C182.svg",
+      "sha256": "a740365af7ba36a8e6a34fd58496c7f54e3e7fe2809886b324c2b2728493f5f1"
+    },
+    {
+      "id": "C183",
+      "file": "svg/C183.svg",
+      "sha256": "ca6ea3854ad4742cc89524cbada85d559875ba33625003f305b2ada1be26e53b"
+    },
+    {
+      "id": "C184",
+      "file": "svg/C184.svg",
+      "sha256": "7e88fb278159c22ad3e3042f59ec9dae24d6bd7893444b2f57eaa19208f3793d"
+    },
+    {
+      "id": "C185",
+      "file": "svg/C185.svg",
+      "sha256": "7b58fb7c5561733d2e30c5510578be95dc237508b78effd7c30b3499f67b6319"
+    },
+    {
+      "id": "C186",
+      "file": "svg/C186.svg",
+      "sha256": "913531f485dde78ba0ae394d6ef3759c7bbd01167f8eac39dd555e577c193de8"
+    },
+    {
+      "id": "C187",
+      "file": "svg/C187.svg",
+      "sha256": "2f5d30cc67e38e246ae53ee7de8b6eb450f8ffaf173b9975f170e6d674180720"
+    },
+    {
+      "id": "C188",
+      "file": "svg/C188.svg",
+      "sha256": "4c476767ada1a11bf39d3f02c7d402322f8ea11ad96156c8ee1f3c34d2011b80"
+    },
+    {
+      "id": "C189",
+      "file": "svg/C189.svg",
+      "sha256": "35c64b2de79e403e8637f29edbb0239c61f6c6328ba3f6a040a88180eab1cac6"
+    },
+    {
+      "id": "C190",
+      "file": "svg/C190.svg",
+      "sha256": "fcc70e88d57a3696961baa8dbb895bd286edf580da32a413b862821688f66ea3"
+    },
+    {
+      "id": "C191",
+      "file": "svg/C191.svg",
+      "sha256": "e343636d4cf20c8549c4195c62a54b2be32b82b26f4d6748a185117337b3926b"
+    },
+    {
+      "id": "C192",
+      "file": "svg/C192.svg",
+      "sha256": "d29e8d55eea5697b6914bd7eb5e6cf6db7b5614a19f496e4e7af6abad03deb48"
+    },
+    {
+      "id": "C193",
+      "file": "svg/C193.svg",
+      "sha256": "68ff671743fdb5f00143b4c8a76dfdb75586d01402daf6f822e2690c2fcff944"
+    },
+    {
+      "id": "C194",
+      "file": "svg/C194.svg",
+      "sha256": "427d38074df1fc69f6c326c66ebf6f2e62bf0c6d0ae998be9a3865e340c90407"
+    },
+    {
+      "id": "C195",
+      "file": "svg/C195.svg",
+      "sha256": "c3cddb0b5080bf72ea9bc0ccbb615e11908b12a9c8ace516e155404207e813eb"
+    },
+    {
+      "id": "C196",
+      "file": "svg/C196.svg",
+      "sha256": "98cce21a75ff92158ec675f9f25ba60e5677c71c33ff89a4458479cf0bc73c06"
+    },
+    {
+      "id": "C197",
+      "file": "svg/C197.svg",
+      "sha256": "98b7af9b8868496a0dc3c142ebce4ab61a1d18cdcb85b445bb8b52a801b51964"
+    },
+    {
+      "id": "C198",
+      "file": "svg/C198.svg",
+      "sha256": "1fc9a72358fe4f1891ab39eef034f50757a3931b20ff72291c131174261b5bd9"
+    },
+    {
+      "id": "C199",
+      "file": "svg/C199.svg",
+      "sha256": "4de183bd20207545fadcc7eedc99545c38f4fafe53f00977cec90a08e281405e"
+    },
+    {
+      "id": "C200",
+      "file": "svg/C200.svg",
+      "sha256": "e7b1b0ccdc9586480c8ce568034fb19444a02cd0db99fcbb2deb6ba1f0446ec2"
+    },
+    {
+      "id": "C201",
+      "file": "svg/C201.svg",
+      "sha256": "48ad618f8a0cf0e47d85aa6670b7ac7546c8122c3410fd1cec6f04ce2f364a34"
+    },
+    {
+      "id": "C202",
+      "file": "svg/C202.svg",
+      "sha256": "56c365835ac10c1eb2e4fc8eefa2c596c1a4a271f10c0a4f4f259ab5736790ee"
+    },
+    {
+      "id": "C203",
+      "file": "svg/C203.svg",
+      "sha256": "bf997544e0c9975a27f77eb12f02d32097de8f73026a933801d65485e765dc1c"
+    },
+    {
+      "id": "C204",
+      "file": "svg/C204.svg",
+      "sha256": "1ad1a95f693cbbc31b218f71abe7a9ce733ef00258f7573e26f778cbb33bb896"
+    },
+    {
+      "id": "C205",
+      "file": "svg/C205.svg",
+      "sha256": "eed0afe28712552c7e1f2fcaeec4b3766980bcd05ca8df37ad7942a32bf34714"
+    },
+    {
+      "id": "C206",
+      "file": "svg/C206.svg",
+      "sha256": "cb5c9b40cd75eefe221bf5b73912ab7093799c04e53e84f45a8592967f06da9a"
+    },
+    {
+      "id": "C207",
+      "file": "svg/C207.svg",
+      "sha256": "acb75758f1213108373871220c42a8cbbf0be7f21eb9c55ab83c343839f94a03"
+    },
+    {
+      "id": "C208",
+      "file": "svg/C208.svg",
+      "sha256": "c4e7981c914d74f8361462192c85dd83389aa0146564e22bce39425ec178473d"
+    },
+    {
+      "id": "C209",
+      "file": "svg/C209.svg",
+      "sha256": "42d1df2d358b612895ec59c28279e2767ff54f3d0eb88bbe935e6f6a96209b17"
+    },
+    {
+      "id": "C210",
+      "file": "svg/C210.svg",
+      "sha256": "afdf63d49a72ae43c2e6657189ffded25debfa339faa90ca188e091bfe2d8116"
+    },
+    {
+      "id": "C211",
+      "file": "svg/C211.svg",
+      "sha256": "3783b96af7b8147070d7fc26a770e1f888720d68cfe81140accc57b8c103ea7a"
+    },
+    {
+      "id": "C212",
+      "file": "svg/C212.svg",
+      "sha256": "5810d1590c8faab39c898959be5985d0f2b7cb419e5f9b86fc1e664c4c1d7205"
+    },
+    {
+      "id": "C213",
+      "file": "svg/C213.svg",
+      "sha256": "7d5ffc76d0de81dd9b5ea2e1a238f510aaba447f7c18b1eb9b3945d05e554962"
+    },
+    {
+      "id": "C214",
+      "file": "svg/C214.svg",
+      "sha256": "5ed15ee01721c16a4d7b0b1aad3e7d159b5a808ad1392ca5d5ea544f731db4cd"
+    },
+    {
+      "id": "C215",
+      "file": "svg/C215.svg",
+      "sha256": "4293f49e8fe5a668a63207430b8f83bcbdb94915658802bd3f84fc1327b461e9"
+    },
+    {
+      "id": "C216",
+      "file": "svg/C216.svg",
+      "sha256": "1e47eabb469bd336983153db359835ef77b5725b792630ca20f2ff745c6a33d7"
+    },
+    {
+      "id": "C217",
+      "file": "svg/C217.svg",
+      "sha256": "1f95a3669741b5adbd1456d584ae656a78f9abdc4bfd55226efc31742ec22715"
+    },
+    {
+      "id": "C218",
+      "file": "svg/C218.svg",
+      "sha256": "57af5dd8230268fb7bf0b30319c69c1aa8b0dae6e599a4f7de2ce4d32149ddb6"
+    },
+    {
+      "id": "C219",
+      "file": "svg/C219.svg",
+      "sha256": "3a42b545ef87d7f88c8822ba66c07644245f9179379cc2d93a2fc08d4246b719"
+    },
+    {
+      "id": "C220",
+      "file": "svg/C220.svg",
+      "sha256": "ee7003e53858620d2206dc9313d5b59a40f0331e2f84afeb7bcfbad0f1132e39"
+    },
+    {
+      "id": "C221",
+      "file": "svg/C221.svg",
+      "sha256": "3a1f5b06a37f21235b9fb9dd91f877b78622506c05125726db26a82ebeeb6089"
+    },
+    {
+      "id": "C222",
+      "file": "svg/C222.svg",
+      "sha256": "f1b5935b41b71ff952be694a19332213cc2304411c032a3ed427c07098405da3"
+    },
+    {
+      "id": "C223",
+      "file": "svg/C223.svg",
+      "sha256": "d0046af318be71761ffe1333b401285b9001457ba133abb0eca9421d698aced0"
+    },
+    {
+      "id": "C224",
+      "file": "svg/C224.svg",
+      "sha256": "dc9238be5bc6919af398e652108f9c9f2bf58607e216f3a212656d56298d1f21"
+    },
+    {
+      "id": "C225",
+      "file": "svg/C225.svg",
+      "sha256": "8962f9c448549f12cb64be636961431a760b8a94b9e768c33b0f80b1b867bc63"
+    },
+    {
+      "id": "C226",
+      "file": "svg/C226.svg",
+      "sha256": "849b117ac02bfdf32432fa611d4a7f3c983640a39c36259316cfc433c41b4793"
+    },
+    {
+      "id": "C227",
+      "file": "svg/C227.svg",
+      "sha256": "dc38217866479b1a78b17e0f4cd4f335bebf685dc8c9034ac71fb0dc750e709c"
+    },
+    {
+      "id": "C228",
+      "file": "svg/C228.svg",
+      "sha256": "1747c207a84140b95387439292cb376bd8bf71d96e0cc36b142a0853f0aa8e01"
+    },
+    {
+      "id": "C229",
+      "file": "svg/C229.svg",
+      "sha256": "413089c7d6e89ffb99f015583e3c511773bfe67ad42c6e8e8da3d9ddde3c3e2a"
+    },
+    {
+      "id": "C230",
+      "file": "svg/C230.svg",
+      "sha256": "f3cd76ba680049e2fc56794a68d6d209ba6dc79b420e07fd5dd5ec722420f997"
+    },
+    {
+      "id": "C231",
+      "file": "svg/C231.svg",
+      "sha256": "ab17b26255844f41541371189dec3089d4c4820bb4ff81adf9b36befb322b3d7"
+    },
+    {
+      "id": "C232",
+      "file": "svg/C232.svg",
+      "sha256": "8abab81baa3e46be10882e2500492ddef3276a6bbb377669b439434549b55466"
+    },
+    {
+      "id": "C233",
+      "file": "svg/C233.svg",
+      "sha256": "f810591c4d54b1eee0328de03045a2241dbb2da9735f26f9b2bd1d18fc77550b"
+    },
+    {
+      "id": "C234",
+      "file": "svg/C234.svg",
+      "sha256": "5d219cde0d7e9b17208a8d8406932ba7f0bcf238afd77975a2c0c3aa2a8d889f"
+    },
+    {
+      "id": "C235",
+      "file": "svg/C235.svg",
+      "sha256": "d9c4dbfd66146a3c2b4b6e01565b960f3db1db24e18ffdc3d6fd4ddf17c49315"
+    },
+    {
+      "id": "C236",
+      "file": "svg/C236.svg",
+      "sha256": "d8d9c3f4dde7e24549769c09e6eac1dc2de260cb0432bab7ef9a406885757dea"
+    },
+    {
+      "id": "C237",
+      "file": "svg/C237.svg",
+      "sha256": "2d69203b94129a34aa6a5c4b676671c6656df8941745889cba9605b30bb924fc"
+    },
+    {
+      "id": "C238",
+      "file": "svg/C238.svg",
+      "sha256": "3baad87e9d37ca7cc78fe5fce893692adc3253bcb6cb6d98914d2026adec94c3"
+    },
+    {
+      "id": "C239",
+      "file": "svg/C239.svg",
+      "sha256": "cb841ff35676da624e02e898c451f64e85b897ba9b4031742c2b0c225eff4f4e"
+    },
+    {
+      "id": "C240",
+      "file": "svg/C240.svg",
+      "sha256": "8fb39330e87754e4ac631d19adaa8869136f85d54e455fff22b8a983f78b9a03"
+    },
+    {
+      "id": "C241",
+      "file": "svg/C241.svg",
+      "sha256": "9f09a81d1a385c45d427d89518e42f77d1190716a9650de73a1611d577693c3d"
+    },
+    {
+      "id": "C242",
+      "file": "svg/C242.svg",
+      "sha256": "326a0b68447e95e470ae2cc0625ad06e6cdc10bf495eb5df95d13a2ef1b3b712"
+    },
+    {
+      "id": "C243",
+      "file": "svg/C243.svg",
+      "sha256": "df93a0e5769cd51c0562217fd23a3ca8ba98694a7d714bae7ad50f5a688162e3"
+    },
+    {
+      "id": "C244",
+      "file": "svg/C244.svg",
+      "sha256": "a6938c0f8afb101cabd21043062b631ad3bf18c6f75356091721a5178b145a62"
+    },
+    {
+      "id": "C245",
+      "file": "svg/C245.svg",
+      "sha256": "a4dcdf3d14d2854063b21568283f26f3cf4942af527e0e6e4cd18a0c4e5673e7"
+    },
+    {
+      "id": "C246",
+      "file": "svg/C246.svg",
+      "sha256": "d3e9c7f8a17c0b46c9a8471b4274cb1e0790499a8fedd75a8c22a1c585d65ef2"
+    },
+    {
+      "id": "C247",
+      "file": "svg/C247.svg",
+      "sha256": "7fda38869650b1e76b868a14df9d2c562000582cbddd343054b6ee53dd141ac5"
+    },
+    {
+      "id": "C248",
+      "file": "svg/C248.svg",
+      "sha256": "7ecc4833eb94c6fc930a5564d62e6d1d76e446367080ba8f916f1cd15ade42a2"
+    },
+    {
+      "id": "C249",
+      "file": "svg/C249.svg",
+      "sha256": "2dda7a5e013ce582d213479d8f725e87b90c1e99c08e24e7f7986e18f15e49e7"
+    },
+    {
+      "id": "C250",
+      "file": "svg/C250.svg",
+      "sha256": "bd877a6098d3b9f0e277ae59bc1e6a88eb919821da971193bd7ab9dcdf2b364f"
+    },
+    {
+      "id": "C251",
+      "file": "svg/C251.svg",
+      "sha256": "3fd88ad02d8318dda32824e3b858ea30475c37f312a41b1c2fb86fbc2f491362"
+    },
+    {
+      "id": "C252",
+      "file": "svg/C252.svg",
+      "sha256": "4bd13606822326c101b11aefb71c49b0d2814ae0a0e8592629c906907f8bc025"
+    },
+    {
+      "id": "C253",
+      "file": "svg/C253.svg",
+      "sha256": "092f21add700a3f60e97b2ea93269ce3e6afbee8fd6dd605bd78d54299ccbc11"
+    },
+    {
+      "id": "C254",
+      "file": "svg/C254.svg",
+      "sha256": "bc20e377eb3107274000c96c6938a758b3b6345f5c3263fe64f9845f9b419d7e"
+    },
+    {
+      "id": "C255",
+      "file": "svg/C255.svg",
+      "sha256": "8901cb5d8b6b8598b291cbdf5dfb787d76d929488ba19f66612de80aca2390f9"
+    },
+    {
+      "id": "C256",
+      "file": "svg/C256.svg",
+      "sha256": "1be5f336de4817ffa3f3e79fbfd44d3d2e76c2e32ed201909084f00bb482368c"
+    },
+    {
+      "id": "C257",
+      "file": "svg/C257.svg",
+      "sha256": "95077e35896e8b4d9d12c0a1dfb9120358752749bd9bc458cf7904c46609644a"
+    },
+    {
+      "id": "C258",
+      "file": "svg/C258.svg",
+      "sha256": "aa6df3f6bc7dc174ef959ccf694a222532c361024871eac36a449a8f97a962c9"
+    },
+    {
+      "id": "C259",
+      "file": "svg/C259.svg",
+      "sha256": "8679ba5106ccfdc79f98bc686c73e09598dae12872f3fb1bf1a0344f2df93a52"
+    },
+    {
+      "id": "C260",
+      "file": "svg/C260.svg",
+      "sha256": "708a9cc14be38141d1dd4306ae6eed31813119c3c12e4c432dea1399d3740f11"
+    },
+    {
+      "id": "C261",
+      "file": "svg/C261.svg",
+      "sha256": "fb4b0a46cac22e306724e4e11c90c2a0c47639a65bac1b4e91b89e04ebb89f70"
+    },
+    {
+      "id": "C262",
+      "file": "svg/C262.svg",
+      "sha256": "86298e338622b3b96001bab08441781a1a194471343fde6ab09d96937e3e24a5"
+    },
+    {
+      "id": "C263",
+      "file": "svg/C263.svg",
+      "sha256": "ff550cd6763cf982cd19728c8a57d6e520d6d91d51a720576aac01df7bfae1e4"
+    },
+    {
+      "id": "C264",
+      "file": "svg/C264.svg",
+      "sha256": "b706ff0d2506f5a0335055ef5f8665fc76867234e56483b5f9eb2e490eea0f16"
+    },
+    {
+      "id": "C265",
+      "file": "svg/C265.svg",
+      "sha256": "a2a98490ca17b99d48d14b8f15160816725cd52638dd08ae4641876c03879e78"
+    },
+    {
+      "id": "C266",
+      "file": "svg/C266.svg",
+      "sha256": "c8e7631c54c5f7f32f00b0b8f5e5ba35263bf33ad025a8d5d90756263edc0e61"
+    },
+    {
+      "id": "C267",
+      "file": "svg/C267.svg",
+      "sha256": "aaa27f02b6ca6b185be67e40674147c11def9ba6906ecec0b075a67797f3e9be"
+    },
+    {
+      "id": "C268",
+      "file": "svg/C268.svg",
+      "sha256": "3e43b09d7989c2eabe7d419b663fdcb4645547b80b2fb66265a34d9f4b92a907"
+    },
+    {
+      "id": "C269",
+      "file": "svg/C269.svg",
+      "sha256": "80ea54e3235606e64067b7befc08af89201e2ec690c4e4ac53d083b75a1f5229"
+    },
+    {
+      "id": "C270",
+      "file": "svg/C270.svg",
+      "sha256": "bb35376529c54d743fc120a55c8c8357d7120b2bf6425b19fda75f9e2b23b6e3"
+    },
+    {
+      "id": "C271",
+      "file": "svg/C271.svg",
+      "sha256": "c0028df938124004595f64a0ac2b5700d7f3fd8d3d8a4d66ab905298c0377644"
+    },
+    {
+      "id": "C272",
+      "file": "svg/C272.svg",
+      "sha256": "8d99adefa50a4edb4f363e212c1b09b4d61b8c89365439bab8b909c0b71bc598"
+    },
+    {
+      "id": "C273",
+      "file": "svg/C273.svg",
+      "sha256": "be01e9decab0fec237a9053e0226a756d0e13259f7b6f26d788fc3ae0f270330"
+    },
+    {
+      "id": "C274",
+      "file": "svg/C274.svg",
+      "sha256": "f19a3376fc2c68c7a94a1afffe87f338024fed0afdb8a0877478f9a3b56f7d9e"
+    },
+    {
+      "id": "C275",
+      "file": "svg/C275.svg",
+      "sha256": "0976afe1382dc5c64be23d5d72e8551a24d7df0202bf6c4c0c2e61ced4a63e02"
+    },
+    {
+      "id": "C276",
+      "file": "svg/C276.svg",
+      "sha256": "d53d8f6fcfbc8ac7dc42c7b6bdb5ca79fd7689af276d788389fbbac772a04392"
+    },
+    {
+      "id": "C277",
+      "file": "svg/C277.svg",
+      "sha256": "07095eda786148e8943e91d5ce27afe7f8660aa8c2990e3ef3b1f138083761e4"
+    },
+    {
+      "id": "C278",
+      "file": "svg/C278.svg",
+      "sha256": "da3f0caa242af17446bf4fc29fcd46a0fc1fe612bab27f0076836f349c228955"
+    },
+    {
+      "id": "C279",
+      "file": "svg/C279.svg",
+      "sha256": "ee2060ec2754cfa6bc41c8926fcc71e75ceb49f41e803331c3e44cca8a9f7389"
+    },
+    {
+      "id": "C280",
+      "file": "svg/C280.svg",
+      "sha256": "f89fcecd28392913a7743a67b1ded0361637b0664510bd4c78a63ae994f07f4d"
+    },
+    {
+      "id": "C281",
+      "file": "svg/C281.svg",
+      "sha256": "94de640bb2e0db8bf5ba4f17bd7659a61970690f6d43faf47b1b098fae389f99"
+    },
+    {
+      "id": "C282",
+      "file": "svg/C282.svg",
+      "sha256": "71656d241d7ec7057b9cf0cbdbacbeac327d76edba9b2d5b328c59066ab46952"
+    },
+    {
+      "id": "C283",
+      "file": "svg/C283.svg",
+      "sha256": "87e6edc02e016ef5d971d7fcaf0b5bd69c138379a6bb0c9889108fb6922fc209"
+    },
+    {
+      "id": "C284",
+      "file": "svg/C284.svg",
+      "sha256": "6315f69e8660601b02f6668a0b3243cc6f60205166e7d57536e73ef2ee4490e0"
+    },
+    {
+      "id": "C285",
+      "file": "svg/C285.svg",
+      "sha256": "9671853af173a0eb0ce8a80406ba2e1b890c683105ceec06bde7660652b7d81c"
+    },
+    {
+      "id": "C286",
+      "file": "svg/C286.svg",
+      "sha256": "f8e67d6767b5370599648a9ede1578fc4e137fa0521a07925052546e21aace0c"
+    },
+    {
+      "id": "C287",
+      "file": "svg/C287.svg",
+      "sha256": "30dca58ee7aa3519b64f32b6bfe70a2ec8473ba2643f730e5055d884511d146c"
+    },
+    {
+      "id": "C288",
+      "file": "svg/C288.svg",
+      "sha256": "89c740c5559bfd175d7c7329931a8438f72a40e85b41556b52a2ddcbad55a649"
+    },
+    {
+      "id": "C289",
+      "file": "svg/C289.svg",
+      "sha256": "80f8040256b369402fa5fb722435ef58efbae7a40c5b2421e897223b15933e3c"
+    },
+    {
+      "id": "C290",
+      "file": "svg/C290.svg",
+      "sha256": "6d6dd2f40c85e7c6de0f2d211a09583c552aeb013af2464b8201a7fbc3d915b9"
+    },
+    {
+      "id": "C291",
+      "file": "svg/C291.svg",
+      "sha256": "a33790205b4f328891a4ab9e3f299c8a214a1387ba7c4a6d48cab9d4251fc15c"
+    },
+    {
+      "id": "C292",
+      "file": "svg/C292.svg",
+      "sha256": "aa14a8f96b3221ce8656002a1eeb435fa75feb91227e51c73016bee10347c85a"
+    },
+    {
+      "id": "C293",
+      "file": "svg/C293.svg",
+      "sha256": "2fdca6958eff2afb0cd161efaeddc2a2de4c53cbf2f104990c9589559f5b8b36"
+    },
+    {
+      "id": "C294",
+      "file": "svg/C294.svg",
+      "sha256": "1ac1d45213501a0049d474c122251676b85f722e0d194a429b3c9414281ecdde"
+    },
+    {
+      "id": "C295",
+      "file": "svg/C295.svg",
+      "sha256": "b6810978fddc71127dddeba903c7ac0439af4874d7094ff579441908f963ee1b"
+    },
+    {
+      "id": "C296",
+      "file": "svg/C296.svg",
+      "sha256": "dc30ce452269d313dcbcec9133d2b0b4b8a962ea1fc05a7b2bf81a67070eec65"
+    },
+    {
+      "id": "C297",
+      "file": "svg/C297.svg",
+      "sha256": "28d56d052389dc073ca97cfe173700e44d610771c235ec344da98ffe1c62ae20"
+    },
+    {
+      "id": "C298",
+      "file": "svg/C298.svg",
+      "sha256": "7951a7e4e1c1dbd079951dd3f52514a40ebf4c4f79b237489de8e53bd8fd6a61"
+    },
+    {
+      "id": "C299",
+      "file": "svg/C299.svg",
+      "sha256": "079356a331ab35e38afbc3e487cd569794408c903bf7d1ec3bd439ef6114a2ca"
+    },
+    {
+      "id": "C300",
+      "file": "svg/C300.svg",
+      "sha256": "bc90097ea370b7da1366ba028cc4b966c262e6c37bf9cc8649edd4f4e7f5c731"
+    },
+    {
+      "id": "C301",
+      "file": "svg/C301.svg",
+      "sha256": "dc42e2d212478b223c499017e6c872066821ac49ab57aacdfa41072a47879691"
+    },
+    {
+      "id": "C302",
+      "file": "svg/C302.svg",
+      "sha256": "5e32e817eddf74ec77723572d988f05436fb80cdba6914bb2a441361728d59b8"
+    },
+    {
+      "id": "C303",
+      "file": "svg/C303.svg",
+      "sha256": "62857eddd250a4ab31104b377127a23baf593f1b0a953ca90dfca01f67b307f1"
+    },
+    {
+      "id": "C304",
+      "file": "svg/C304.svg",
+      "sha256": "fe2f610910d8c18badbad04056ec43b089a22ae6ee3ada3d8c27c611593152d9"
+    },
+    {
+      "id": "C305",
+      "file": "svg/C305.svg",
+      "sha256": "b8c5b4115b019a31817eec9d8fd6f82b2b66df9321d83967fd5ab8bb8cf0b602"
+    },
+    {
+      "id": "C306",
+      "file": "svg/C306.svg",
+      "sha256": "b4a682dbec02c0784ea6b0c553e72d26ed5a23dcead654cd04a76436d36615c1"
+    },
+    {
+      "id": "C307",
+      "file": "svg/C307.svg",
+      "sha256": "19341555f86a77225ab6be5c961b82a3d59c962dd3f59ef9bbb6b523aa5ddd65"
+    },
+    {
+      "id": "C308",
+      "file": "svg/C308.svg",
+      "sha256": "f3a0520c0e7077d6225b322d3af9e2195f0b2d9f412a76c17b9d41e94e8e162c"
+    },
+    {
+      "id": "C309",
+      "file": "svg/C309.svg",
+      "sha256": "254330a0cc01520f9209be8432322152c7a2e213d5bcca33ba5f8d7e52a90c1c"
+    },
+    {
+      "id": "C310",
+      "file": "svg/C310.svg",
+      "sha256": "f7ccc346e0ee09a256a8548139ffea2fcdc6d6467fa6312679c4e24d6f0988a3"
+    },
+    {
+      "id": "C311",
+      "file": "svg/C311.svg",
+      "sha256": "6b210480ba70f9b7564b56820a63bc1bfff07f2baaf096ed33663f6970b0b260"
+    },
+    {
+      "id": "C312",
+      "file": "svg/C312.svg",
+      "sha256": "025b70f9e1565d92a38f4f09b2b8a47e82dd2e23d5cbc5dc38719a3a625b132a"
+    },
+    {
+      "id": "C313",
+      "file": "svg/C313.svg",
+      "sha256": "869b2a0eefeb8feb70e98675ab0f06ac7935304638ac0e4f769d3da24460d4e0"
+    },
+    {
+      "id": "C314",
+      "file": "svg/C314.svg",
+      "sha256": "362ff0bacdf97f3d566a6e60f08f60e6065b643da64a742fe7ce8d0a1dbb28a2"
+    },
+    {
+      "id": "C315",
+      "file": "svg/C315.svg",
+      "sha256": "1224252ba06d1a0ea33b64a9613525bd384136aeca1b2944e7bba34686d2b636"
+    },
+    {
+      "id": "C316",
+      "file": "svg/C316.svg",
+      "sha256": "bcc9421d6ebb6063e05f47097f26729a0253553f639a198465ae7476f08fbd3f"
+    },
+    {
+      "id": "C317",
+      "file": "svg/C317.svg",
+      "sha256": "8b47b63a30d48640de5e9a1032f4df55167f221f2d1cc1fbdd32b0b1e977254b"
+    },
+    {
+      "id": "C318",
+      "file": "svg/C318.svg",
+      "sha256": "7fb8b88e0c6aa65149788e09e04fdedb3175d687cbcb269b9cc8eb6edd2f9c17"
+    },
+    {
+      "id": "C319",
+      "file": "svg/C319.svg",
+      "sha256": "e2cf59bae6a839422b42cd28191752200c0c6a5301778dc473a7ede86a387346"
+    },
+    {
+      "id": "C320",
+      "file": "svg/C320.svg",
+      "sha256": "acd86ae14ec9011feeb715243ab57d154b22c2cbd6645e0b2dc22e6f31d92d10"
+    },
+    {
+      "id": "C321",
+      "file": "svg/C321.svg",
+      "sha256": "44eb66fbf9abb88a1753b5d12e1495f1b8629cf34ccd043cfa90f47bb0ff3594"
+    },
+    {
+      "id": "C322",
+      "file": "svg/C322.svg",
+      "sha256": "ce961268b585428242912443b6246aad63b701cc30c32e69459077422b96c4b8"
+    },
+    {
+      "id": "C323",
+      "file": "svg/C323.svg",
+      "sha256": "729eb2885aafb0118317b530726e2e8ab2893ba567fc4f4643d390ae9ee2e668"
+    },
+    {
+      "id": "C324",
+      "file": "svg/C324.svg",
+      "sha256": "947152179a093d2b8a8759198e3778f84f92ea50c88415808fb937aea34eece2"
+    },
+    {
+      "id": "C325",
+      "file": "svg/C325.svg",
+      "sha256": "ed55434cb73a6feb128439ca48050c4e5590a52122565144d35faf1e903d539a"
+    },
+    {
+      "id": "C326",
+      "file": "svg/C326.svg",
+      "sha256": "9cd443ded21fdb71a6bdf6429c40b6a2ee49bfdc4e1445bec2118bc8431ee245"
+    },
+    {
+      "id": "C327",
+      "file": "svg/C327.svg",
+      "sha256": "72aaaa7a7daf1425ae41f3f0ff854c3d8000027a6b210ec9c045c581fc126078"
+    },
+    {
+      "id": "C328",
+      "file": "svg/C328.svg",
+      "sha256": "607416fe70edcdc21bfa6bfdbaca759dcc50deadf79ac9fd5574d03e5c2206d4"
+    },
+    {
+      "id": "C329",
+      "file": "svg/C329.svg",
+      "sha256": "4b2118a7c211f5cc31e55a25995a98cb56b79cf26fcd7cc2074c1fadd30ba3f5"
+    },
+    {
+      "id": "C330",
+      "file": "svg/C330.svg",
+      "sha256": "1b64f98bbb5df61b549873b48495a157932fd5b30376b7d413320877a02df6ff"
+    },
+    {
+      "id": "C331",
+      "file": "svg/C331.svg",
+      "sha256": "0913fecb9867c51e0a24c6e8f75d5fa7f196788446ccd001a6583ff6dfdc70b5"
+    },
+    {
+      "id": "C332",
+      "file": "svg/C332.svg",
+      "sha256": "724e29e3e2f8136a75e6ad11d9744285ac85004b3509d10b880d4d68c667f836"
+    },
+    {
+      "id": "C333",
+      "file": "svg/C333.svg",
+      "sha256": "56b5e807dbb1bc59a72ec928a3cbf9eb9fb2f15b02338c332ba4a6a89857fd76"
+    },
+    {
+      "id": "C334",
+      "file": "svg/C334.svg",
+      "sha256": "650de095d0c80969a059ae288ab8489e5e9f44cdea6f7332a72ca34e33a18a34"
+    },
+    {
+      "id": "C335",
+      "file": "svg/C335.svg",
+      "sha256": "68b413b2a7c3073f82e713b48f2837263e527dffb4b6be85c49686be11cf9ad1"
+    },
+    {
+      "id": "C336",
+      "file": "svg/C336.svg",
+      "sha256": "af58ccb70ec6fe8d69d3b078453a7f87e00f7340175f11e6ff883c8a59f76618"
+    },
+    {
+      "id": "C337",
+      "file": "svg/C337.svg",
+      "sha256": "299b4867ac634ef79eab5cff7570acaf8af032dec89a9c5a3602af24c5ca08cd"
+    },
+    {
+      "id": "C338",
+      "file": "svg/C338.svg",
+      "sha256": "456a639a6ee7d974c0fac078dbea6a327463541c364501a7cc8d25e1e00aa235"
+    },
+    {
+      "id": "C339",
+      "file": "svg/C339.svg",
+      "sha256": "da7a3b903ef567185af881255dae0f9351b017cdc44e1b5b1a2b484285792483"
+    },
+    {
+      "id": "C340",
+      "file": "svg/C340.svg",
+      "sha256": "ac8b97f2913bd86edc17ac6c626ff1ececb66da81bb957afb6690d3e155ea204"
+    },
+    {
+      "id": "C341",
+      "file": "svg/C341.svg",
+      "sha256": "4dbcc98dc58f5559922943a4b844a7d5adc693fa78d147e120fae79959392018"
+    },
+    {
+      "id": "C342",
+      "file": "svg/C342.svg",
+      "sha256": "f6e270761d727b091331aee91e1b1e090c2f7c9a8751019312bd2d593f11edfb"
+    },
+    {
+      "id": "C343",
+      "file": "svg/C343.svg",
+      "sha256": "171427d456e609089bed6dff25dbf6472937cdd30a12bb191e34259087dd8c64"
+    },
+    {
+      "id": "C344",
+      "file": "svg/C344.svg",
+      "sha256": "c09c8fe689e79575f3dd4f68fe0bc61032296c98e6b04646712d066067ac6508"
+    },
+    {
+      "id": "C345",
+      "file": "svg/C345.svg",
+      "sha256": "c1e30f28a5266b20cc10f9e93af3460c14eb84bc660f290633d8c1685a392134"
+    },
+    {
+      "id": "C346",
+      "file": "svg/C346.svg",
+      "sha256": "3a2923a17005662b24de3f30a468762068e4449cf5c87a88dfb9914f0c310b7e"
+    },
+    {
+      "id": "C347",
+      "file": "svg/C347.svg",
+      "sha256": "694829e01b7344be958b6c15aa48a6c3e5bca80f8ef7fbfc60313f828e4b8db6"
+    },
+    {
+      "id": "C348",
+      "file": "svg/C348.svg",
+      "sha256": "295df9de6c49486e4800ddc4719728206a7099df32cd80d78e656258cb051386"
+    },
+    {
+      "id": "C349",
+      "file": "svg/C349.svg",
+      "sha256": "3d0137aa3d6b1a4917bf891fa20fcefed107677fc71f2d2341dff57b170872e0"
+    },
+    {
+      "id": "C350",
+      "file": "svg/C350.svg",
+      "sha256": "14af8708ec05e44ae8d58a9c88e7f384a1fe5dffad055a8c19834c4ce09671ae"
+    },
+    {
+      "id": "C351",
+      "file": "svg/C351.svg",
+      "sha256": "ae211e5ad219d3c993eb5b28a0670d779b9fc549487aea98a138dd0b104f20d4"
+    },
+    {
+      "id": "C352",
+      "file": "svg/C352.svg",
+      "sha256": "d1daaa43a61c5151e8055eeab193311aba3aaea8aa26694cce9b80e14e2c4f54"
+    },
+    {
+      "id": "C353",
+      "file": "svg/C353.svg",
+      "sha256": "9750f003b5fea41c45efc0522ba5f17a1041d443ba278ed15d672fe466323f84"
+    },
+    {
+      "id": "C354",
+      "file": "svg/C354.svg",
+      "sha256": "8ef3f47d749abd8b6bd117bc65d233a98634a026307ed5e209c5b138d5c73c1e"
+    },
+    {
+      "id": "C355",
+      "file": "svg/C355.svg",
+      "sha256": "f862fe46e338bd6e09b8b7196d3e8c86913dfb8eb6ad62c2407f09243432bf6c"
+    },
+    {
+      "id": "C356",
+      "file": "svg/C356.svg",
+      "sha256": "0062e60e6920917497478bb31bc74331ad02512989de7b8ecd494063018b2e9a"
+    },
+    {
+      "id": "C357",
+      "file": "svg/C357.svg",
+      "sha256": "f0dce370e0d1cca008724ffcbaefc29491bec69c43782b41afa175f4cf13ee83"
+    },
+    {
+      "id": "C358",
+      "file": "svg/C358.svg",
+      "sha256": "2870726cd0d454335bcf5e1aed893d8831650ef525d5d2cd9083ad2f1c81779d"
+    },
+    {
+      "id": "C359",
+      "file": "svg/C359.svg",
+      "sha256": "66659d677729ce737abbbb492c0f426f31703fce4c6c47aa0309f41cd90cfe4c"
+    },
+    {
+      "id": "C360",
+      "file": "svg/C360.svg",
+      "sha256": "4d0605b51863baaf8eed96eb93cb33c9cbffb81d6d2be4ac5b38b51cb8de308f"
+    },
+    {
+      "id": "C361",
+      "file": "svg/C361.svg",
+      "sha256": "2f313cb17546cad3c1a47d720e3a0b5b46434a90ec92dcf0e2136d93c8e9fb8b"
+    },
+    {
+      "id": "C362",
+      "file": "svg/C362.svg",
+      "sha256": "5ca581ae57680f8f85d7f8d3856e91becc92fbcdc98741747a926a03084034b8"
+    },
+    {
+      "id": "C363",
+      "file": "svg/C363.svg",
+      "sha256": "fe7046574937fbc391f5fc0a717d2fbe16547cde622d477daf21dc3c1e3b1e36"
+    },
+    {
+      "id": "C364",
+      "file": "svg/C364.svg",
+      "sha256": "fabe59972294762ebac3b82dc2511fa3df36ddf6f0704fcf7c12b02a47f79cd6"
+    },
+    {
+      "id": "C365",
+      "file": "svg/C365.svg",
+      "sha256": "c5b696459418827d2013c7de9f3619d79a837101a7f58c8db1cfccdf9fe83c2f"
+    },
+    {
+      "id": "C366",
+      "file": "svg/C366.svg",
+      "sha256": "b4d62281dece3f2b21a8ea797a3e50639490704be7ed3f89e10a24706aaddfe8"
+    },
+    {
+      "id": "C367",
+      "file": "svg/C367.svg",
+      "sha256": "4d8b94ad54a91c451e93b010ee56b09083639fa03c0d91d3131bb605085927dd"
+    },
+    {
+      "id": "C368",
+      "file": "svg/C368.svg",
+      "sha256": "9064ca670e6d4c17dece5f6593420f98ddb6771f9f6c14ca669dae4bec6a9b34"
+    },
+    {
+      "id": "C369",
+      "file": "svg/C369.svg",
+      "sha256": "a9076fa99af5d5cc90f484ea02b92dc2f6b71034c5c52746e0c610fab3bed2ff"
+    },
+    {
+      "id": "C370",
+      "file": "svg/C370.svg",
+      "sha256": "d0bc66a2cf4a8d0a70eefb22add7918411e17cb4dfd260e0693cd2dc1a9c202c"
+    },
+    {
+      "id": "C371",
+      "file": "svg/C371.svg",
+      "sha256": "967c7f16c3580e050f198aec7d78fc43a2d4836d2d748ed229917408e0675716"
+    },
+    {
+      "id": "C372",
+      "file": "svg/C372.svg",
+      "sha256": "455092bc6b7e177670674415e44917a0023ed44247e690f46b3903501efdeb74"
+    },
+    {
+      "id": "C373",
+      "file": "svg/C373.svg",
+      "sha256": "37cd93ee677cbd30f922d92204b0a332afbf4600ce8e3aeae123558063347fd6"
+    },
+    {
+      "id": "C374",
+      "file": "svg/C374.svg",
+      "sha256": "bc761b8899a257472d5ddbb82e2a66f908f5267b06b5fc074d77770c7323f471"
+    },
+    {
+      "id": "C375",
+      "file": "svg/C375.svg",
+      "sha256": "e352e991cfdfbd6d88f1dd35d6909f49c3bd8e3b1d18f25de7dd3be261024382"
+    },
+    {
+      "id": "C376",
+      "file": "svg/C376.svg",
+      "sha256": "de51ab8e397c386234311c81f6eb80032d751e2159b73798ca4b7985f615c84d"
+    },
+    {
+      "id": "C377",
+      "file": "svg/C377.svg",
+      "sha256": "d0a90d7b24e0a22f86bdb21e4efbbdca53d19f41d6d13b1daa464cacf0dfd965"
+    },
+    {
+      "id": "C378",
+      "file": "svg/C378.svg",
+      "sha256": "a4886cb56478b0b0eba66a48acba10c037106109dcf4edb5833a7053b6b13c9e"
+    },
+    {
+      "id": "C379",
+      "file": "svg/C379.svg",
+      "sha256": "2fd4a70be63651ba245db436dcd7ab44f7beeb5087102d23bba8a1dc9fccd6d2"
+    },
+    {
+      "id": "C380",
+      "file": "svg/C380.svg",
+      "sha256": "c12a0d3e44ea06f74b322db0b8e67e95852b673e7fd1d3f5045c16112f653075"
+    },
+    {
+      "id": "C381",
+      "file": "svg/C381.svg",
+      "sha256": "dd5f8bc6b119c77e2c39ea18ea027bec4fa2265d0e5f61613cb58a4b9d253d23"
+    },
+    {
+      "id": "C382",
+      "file": "svg/C382.svg",
+      "sha256": "2c62e0dc766d92d55d6bad894bc6af029413f7e935b867f5c50914ab8e1397cc"
+    },
+    {
+      "id": "C383",
+      "file": "svg/C383.svg",
+      "sha256": "3a5967fe841ba6af6c8d1aa15825d3e879d905a7cc7e48bbe2edc25fc21da912"
+    },
+    {
+      "id": "C384",
+      "file": "svg/C384.svg",
+      "sha256": "5a1a7176833b34b07dcfd271ddd3d548b350f8d732b065564f4b8d82878a8cc2"
+    },
+    {
+      "id": "C385",
+      "file": "svg/C385.svg",
+      "sha256": "03b6989f55c1c49002b3cee4ad357c7fde8d01d6f7f3e4a0548cf2f5d0ae7de4"
+    },
+    {
+      "id": "C386",
+      "file": "svg/C386.svg",
+      "sha256": "769f6b4917f80f7597a48e7326c887cd79b50e1bc926bd0a76c5dd9f6bd8e11a"
+    },
+    {
+      "id": "C387",
+      "file": "svg/C387.svg",
+      "sha256": "fa7602846c0073aeffb0ecd6b0afe34fd95ada430993c58b7fd41c66c191e8b3"
+    },
+    {
+      "id": "C388",
+      "file": "svg/C388.svg",
+      "sha256": "9146f58b93cfc9345a4ec40a82ee5aae91326856ff2c0c7519d61d7c8529c8e3"
+    },
+    {
+      "id": "C389",
+      "file": "svg/C389.svg",
+      "sha256": "5e69e5a62f0923755b9475630508f0fa46a89ee4dee26c91f9b8b51da25941c4"
+    },
+    {
+      "id": "C390",
+      "file": "svg/C390.svg",
+      "sha256": "7ccab0d72070f6ea8a5c10d5d780c2a4bb133bf73c30fd80bc53eb8a5f9bae0a"
+    },
+    {
+      "id": "C391",
+      "file": "svg/C391.svg",
+      "sha256": "6560e669235be7b06cd8e4730f16d88be7bd792947d2c0e6783ce212c61a1b33"
+    },
+    {
+      "id": "C392",
+      "file": "svg/C392.svg",
+      "sha256": "bc2d24a03f1c2a1f3c4093a1cdf0b876f67bb851bfe872498e7bc19f0d3446a4"
+    },
+    {
+      "id": "C393",
+      "file": "svg/C393.svg",
+      "sha256": "916c8a54c43a1a326dd765e232373310f41c7c7ae22ded53f5c1bafb070ddb32"
+    },
+    {
+      "id": "C394",
+      "file": "svg/C394.svg",
+      "sha256": "dc247bb8294c51740a15208fef911d98d8098eeb92cbf9c9620322d509e9fbf9"
+    },
+    {
+      "id": "C395",
+      "file": "svg/C395.svg",
+      "sha256": "f91375988440badfa57b3f0121a1d3902decfb3a7e34d9b370e891adbdfb662b"
+    },
+    {
+      "id": "C396",
+      "file": "svg/C396.svg",
+      "sha256": "712b3cf0c49e4824f6bf369c6ce92548cf91e59ba88d6cf10d296fe555f7453b"
+    },
+    {
+      "id": "C397",
+      "file": "svg/C397.svg",
+      "sha256": "80a45629c293155e99aea110831ee879b30551eea03e15b963f247ccaaa854ee"
+    },
+    {
+      "id": "C398",
+      "file": "svg/C398.svg",
+      "sha256": "a6a1a5cebf1fc033fd0aeed66da054d8ae3c27e98f3a5f690756a8976e5577f8"
+    },
+    {
+      "id": "C399",
+      "file": "svg/C399.svg",
+      "sha256": "763101216319b1042b1a1c9de29b430fae2820f56bef71bfa109ebf75c21e269"
+    },
+    {
+      "id": "C400",
+      "file": "svg/C400.svg",
+      "sha256": "7f91a44f93e075b052e160d9d8c4cec4950a9fff8f1b28344468f4a59ba5fb16"
+    }
+  ],
+  "nextPhase": {
+    "scope": "Un exemple fini par matière, avant la finition générale",
+    "format": "SVG natif autonome",
+    "qualityTargets": [
+      "Réalisme",
+      "Sculpture et géométrie soignées",
+      "Lumière cohérente",
+      "Matières distinctes",
+      "Avant/après agrandissable sur fonds clair et sombre"
+    ],
+    "sampleCount": 16,
+    "samples": [
+      {
+        "id": "C040",
+        "name": "Volume pur · Amphore",
+        "material": "Verre teinté",
+        "beforeFile": "svg/C040.svg",
+        "plannedAfterFile": "qualite-matieres/apres/C040.svg",
+        "status": "planned"
+      },
+      {
+        "id": "C001",
+        "name": "Ginkgo · Ovoïde",
+        "material": "Verre satiné",
+        "beforeFile": "svg/C001.svg",
+        "plannedAfterFile": "qualite-matieres/apres/C001.svg",
+        "status": "planned"
+      },
+      {
+        "id": "C159",
+        "name": "Coques · Balustre",
+        "material": "Verre irisé",
+        "beforeFile": "svg/C159.svg",
+        "plannedAfterFile": "qualite-matieres/apres/C159.svg",
+        "status": "planned"
+      },
+      {
+        "id": "C089",
+        "name": "Cristal taillé · Poire",
+        "material": "Cristal taillé",
+        "beforeFile": "svg/C089.svg",
+        "plannedAfterFile": "qualite-matieres/apres/C089.svg",
+        "status": "planned"
+      },
+      {
+        "id": "C253",
+        "name": "Sous-bois · Ovoïde",
+        "material": "Verre camée",
+        "beforeFile": "svg/C253.svg",
+        "plannedAfterFile": "qualite-matieres/apres/C253.svg",
+        "status": "planned"
+      },
+      {
+        "id": "C003",
+        "name": "Gui · Coupe",
+        "material": "Porcelaine",
+        "beforeFile": "svg/C003.svg",
+        "plannedAfterFile": "qualite-matieres/apres/C003.svg",
+        "status": "planned"
+      },
+      {
+        "id": "C021",
+        "name": "Lierre · Bulbe",
+        "material": "Céladon",
+        "beforeFile": "svg/C021.svg",
+        "plannedAfterFile": "qualite-matieres/apres/C021.svg",
+        "status": "planned"
+      },
+      {
+        "id": "C042",
+        "name": "Arum · Asymétrique",
+        "material": "Grès émaillé",
+        "beforeFile": "svg/C042.svg",
+        "plannedAfterFile": "qualite-matieres/apres/C042.svg",
+        "status": "planned"
+      },
+      {
+        "id": "C295",
+        "name": "Craquelures · Ovoïde",
+        "material": "Émail cristallin",
+        "beforeFile": "svg/C295.svg",
+        "plannedAfterFile": "qualite-matieres/apres/C295.svg",
+        "status": "planned"
+      },
+      {
+        "id": "C074",
+        "name": "Médaillons · Ovoïde",
+        "material": "Émail cloisonné",
+        "beforeFile": "svg/C074.svg",
+        "plannedAfterFile": "qualite-matieres/apres/C074.svg",
+        "status": "planned"
+      },
+      {
+        "id": "C043",
+        "name": "Ramures · Ovoïde",
+        "material": "Bronze patiné",
+        "beforeFile": "svg/C043.svg",
+        "plannedAfterFile": "qualite-matieres/apres/C043.svg",
+        "status": "planned"
+      },
+      {
+        "id": "C136",
+        "name": "Stries · Bulbe",
+        "material": "Cuivre",
+        "beforeFile": "svg/C136.svg",
+        "plannedAfterFile": "qualite-matieres/apres/C136.svg",
+        "status": "planned"
+      },
+      {
+        "id": "C076",
+        "name": "Martelage · Coupe",
+        "material": "Laiton",
+        "beforeFile": "svg/C076.svg",
+        "plannedAfterFile": "qualite-matieres/apres/C076.svg",
+        "status": "planned"
+      },
+      {
+        "id": "C007",
+        "name": "Poisson-lune · Prisme",
+        "material": "Argent",
+        "beforeFile": "svg/C007.svg",
+        "plannedAfterFile": "qualite-matieres/apres/C007.svg",
+        "status": "planned"
+      },
+      {
+        "id": "C084",
+        "name": "Grues · Asymétrique",
+        "material": "Pierre / jade",
+        "beforeFile": "svg/C084.svg",
+        "plannedAfterFile": "qualite-matieres/apres/C084.svg",
+        "status": "planned"
+      },
+      {
+        "id": "C017",
+        "name": "Branches évidées · Cylindre",
+        "material": "Métal ajouré",
+        "beforeFile": "svg/C017.svg",
+        "plannedAfterFile": "qualite-matieres/apres/C017.svg",
+        "status": "planned"
+      }
+    ],
+    "handoff": "../../docs/passation-codex/PASSATION-VASES-2026-10-05.md"
+  }
+}

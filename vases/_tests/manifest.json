@@ -1,0 +1,62 @@
+[
+  {
+    "id": "001",
+    "title": "Œuf et dendrobates",
+    "caption": "Col ouvert, pied ajouté, trois poses redessinées.",
+    "variants": [
+      {
+        "file": "001-bronze.svg",
+        "label": "Bronze patiné"
+      },
+      {
+        "file": "001-celadon.svg",
+        "label": "Céladon"
+      }
+    ]
+  },
+  {
+    "id": "003",
+    "title": "Goutte asymétrique",
+    "caption": "Parois de verre épaisses et poche rose suspendue ; version bronze.",
+    "variants": [
+      {
+        "file": "003-glass.svg",
+        "label": "Verre rose / cristal"
+      },
+      {
+        "file": "003-bronze.svg",
+        "label": "Bronze patiné"
+      }
+    ]
+  },
+  {
+    "id": "005",
+    "title": "Feuillage sculpté",
+    "caption": "Huit feuilles à lobes et nervures, dessinées et superposées séparément.",
+    "variants": [
+      {
+        "file": "005-glass.svg",
+        "label": "Verre vert sculpté"
+      },
+      {
+        "file": "005-celadon.svg",
+        "label": "Céladon"
+      }
+    ]
+  },
+  {
+    "id": "038",
+    "title": "Colonne à nervures",
+    "caption": "Longue panse, col bulbeux et quatre appuis ; trois visibles de face.",
+    "variants": [
+      {
+        "file": "038-celadon.svg",
+        "label": "Céladon"
+      },
+      {
+        "file": "038-bronze.svg",
+        "label": "Bronze patiné"
+      }
+    ]
+  }
+]

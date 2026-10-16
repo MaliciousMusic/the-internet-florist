@@ -1,0 +1,57 @@
+{
+  "id": "010",
+  "label": "Chrysanthème rose en relief",
+  "referenceSha256": "8f71cb9580c470da667fd1d696ab7e14d507888a95e0becb9979039f65b44922",
+  "file": "svg/010.svg",
+  "reference": "references/010",
+  "sha256": "4ca996bece1eb3b9fe3f5e48c5b4ae7e276928d44f4c645e54656703edd3f496",
+  "bytes": 41731722,
+  "paths": 154584,
+  "width": 960,
+  "height": 960,
+  "memoryBefore": 6090334208,
+  "method": "Transcription de contours et nuances en courbes de Bézier natives",
+  "review": "Contrôle visuel à effectuer",
+  "guide": {
+    "box": [
+      0.045,
+      0.055,
+      0.987,
+      0.943
+    ],
+    "foreground": [
+      [
+        0.7,
+        0.26,
+        0.91,
+        0.68
+      ],
+      [
+        0.3,
+        0.37,
+        0.52,
+        0.64
+      ]
+    ],
+    "background": [
+      [
+        0,
+        0,
+        1,
+        0.055
+      ],
+      [
+        0,
+        0,
+        0.12,
+        0.3
+      ],
+      [
+        0.94,
+        0,
+        1,
+        0.19
+      ]
+    ]
+  }
+}

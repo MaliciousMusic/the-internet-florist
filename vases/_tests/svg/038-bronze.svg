@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" width="800" height="1000" role="img" aria-labelledby="title desc">
+<title id="title">038 — Colonne à nervures — Bronze patiné</title>
+<desc id="desc">Étude vectorielle indépendante. Fond transparent. Prototype privé à valider, sans statut de libre reproduction.</desc>
+<defs>
+<linearGradient id="surface" x1="0" y1="0.1" x2="1" y2="0.28"><stop offset="0%" stop-color="#193a32"/><stop offset="13%" stop-color="#374536"/><stop offset="28%" stop-color="#92754a"/><stop offset="39%" stop-color="#e1ba7d"/><stop offset="59%" stop-color="#6a5637"/><stop offset="75%" stop-color="#ac864c"/><stop offset="100%" stop-color="#2a4338"/></linearGradient>
+<linearGradient id="vertical" x2="0.1" y2="1"><stop stop-color="#e6e4b3" stop-opacity=".16"/><stop offset=".5" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#091913" stop-opacity=".44"/></linearGradient>
+<linearGradient id="edge" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#374536"/><stop offset=".4" stop-color="#e1ba7d"/><stop offset=".7" stop-color="#92754a"/><stop offset="1" stop-color="#193a32"/></linearGradient>
+<linearGradient id="shade" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#062317" stop-opacity=".68"/><stop offset=".3" stop-color="#a3f4bc" stop-opacity=".12"/><stop offset=".6" stop-color="#ecffe3" stop-opacity=".2"/><stop offset="1" stop-color="#041c12" stop-opacity=".7"/></linearGradient>
+<linearGradient id="inner" x1="0.3" y1="0" x2=".8" y2="1"><stop stop-color="#112d26"/><stop offset=".6" stop-color="#071812"/><stop offset="1" stop-color="#374536"/></linearGradient>
+<linearGradient id="frog" x1="0" y1="0" x2="1" y2=".4"><stop stop-color="#061f25"/><stop offset=".32" stop-color="#327576"/><stop offset=".5" stop-color="#739587"/><stop offset=".8" stop-color="#163b3c"/><stop offset="1" stop-color="#07181b"/></linearGradient>
+<linearGradient id="eye" x2="0.7" y2="1"><stop stop-color="#afb5a2"/><stop offset=".2" stop-color="#4b4738"/><stop offset=".45" stop-color="#060b09"/><stop offset="1" stop-color="#010603"/></linearGradient>
+<linearGradient id="rib" x1="0" x2="1"><stop offset="0%" stop-color="#193a32"/><stop offset="13%" stop-color="#374536"/><stop offset="28%" stop-color="#92754a"/><stop offset="39%" stop-color="#e1ba7d"/><stop offset="59%" stop-color="#6a5637"/><stop offset="75%" stop-color="#ac864c"/><stop offset="100%" stop-color="#2a4338"/></linearGradient>
+<filter id="grain" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".7" numOctaves="3" seed="23"/><feColorMatrix type="saturate" values="0"/><feComposite in2="SourceGraphic" operator="in"/><feBlend in="SourceGraphic" mode="soft-light"/></filter>
+<filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="7"/></filter>
+<filter id="relief" x="-40%" y="-30%" width="180%" height="170%"><feDropShadow dx="5" dy="8" stdDeviation="5" flood-color="#071c14" flood-opacity=".32"/></filter>
+</defs>
+<defs><clipPath id="column"><path d="M352 207 Q326 204 329 233 C345 322 331 538 296 665 C273 750 278 816 308 846 Q400 889 492 846 C522 816 527 750 504 665 C469 538 455 322 471 233 Q474 204 448 207Z" fill="url(#surface)" /></clipPath></defs>
+<path d="M391 230 L402 870 L439 886 L461 870 C425 640 428 398 424 229Z" fill="url(#shade)" />
+<path d="M352 207 Q326 204 329 233 C345 322 331 538 296 665 C273 750 278 816 308 846 Q400 889 492 846 C522 816 527 750 504 665 C469 538 455 322 471 233 Q474 204 448 207Z" fill="url(#surface)" stroke="#466052" stroke-width="1" />
+<g clip-path="url(#column)">
+<path d="M352 207 Q326 204 329 233 C345 322 331 538 296 665 C273 750 278 816 308 846 Q400 889 492 846 C522 816 527 750 504 665 C469 538 455 322 471 233 Q474 204 448 207Z" fill="url(#vertical)" />
+<path d="M350 274 C347 435 320 708 317 770 Q309 813 328 839" fill="none" stroke="#d9e9c2" stroke-width="5" opacity=".18"/>
+<path d="M464 277 C459 472 485 684 490 766" fill="none" stroke="#163a31" stroke-width="5" opacity=".27"/>
+<rect x="270" y="200" width="270" height="700" fill="#7a9b72" filter="url(#grain)" opacity=".07"/>
+</g>
+<path d="M344 218 C353 385 314 620 279 772 Q266 826 230 855 Q214 871 190 864 Q181 873 187 886 Q210 899 240 883 C278 866 301 832 311 786 C348 647 370 388 362 222Z" fill="url(#surface)" stroke="#44644e" stroke-width="1.3" />
+<path d="M456 218 C447 385 486 620 521 772 Q534 826 570 855 Q586 871 610 864 Q619 873 613 886 Q590 899 560 883 C522 866 499 832 489 786 C452 647 430 388 438 222Z" fill="url(#surface)" stroke="#365549" stroke-width="1.3" />
+<path d="M351 224 C361 383 321 628 289 772 Q273 847 235 867 Q211 882 191 875" fill="none" stroke="#cad9ab" stroke-width="2.2" opacity=".64"/>
+<path d="M445 227 C438 386 478 624 510 772 Q531 856 578 873" fill="none" stroke="#162e28" stroke-width="2.2" opacity=".48"/>
+<path d="M392 213 C405 373 397 571 389 720 L381 893 Q381 918 400 921 Q419 918 419 893 L411 720 C403 571 395 373 408 213Z" fill="url(#surface)" stroke="#345248" stroke-width="1.5" />
+<path d="M395 229 C405 412 394 658 390 884 Q388 900 395 905" fill="none" stroke="#e3edc7" stroke-width="2.8" opacity=".7"/>
+<path d="M405 245 C398 425 409 666 410 890" fill="none" stroke="#284436" stroke-width="1.4" opacity=".5"/>
+<path d="M383 902 Q400 910 417 902 L417 916 Q400 927 383 916Z" fill="url(#edge)" stroke="#304737" stroke-width="1" />
+<path d="M357 97 Q400 87 443 97 C470 102 488 132 487 157 C487 184 474 205 457 214 C447 232 430 221 423 226 Q401 238 381 226 C367 225 354 234 343 214 C325 207 313 184 313 157 C312 132 330 102 357 97Z" fill="url(#surface)" stroke="#4d7060" stroke-width="1" />
+<path d="M357 97 Q400 87 443 97 C470 102 488 132 487 157 C487 184 474 205 457 214 C447 232 430 221 423 226 Q401 238 381 226 C367 225 354 234 343 214 C325 207 313 184 313 157 C312 132 330 102 357 97Z" fill="url(#vertical)" />
+<path d="M335 141 Q330 167 346 187" fill="none" stroke="#eef3d6" stroke-width="6" opacity=".22" stroke-linecap="round"/>
+<ellipse cx="400" cy="99" rx="43" ry="12.5" fill="url(#edge)"/>
+<ellipse cx="400" cy="99" rx="34" ry="7.7" fill="url(#inner)"/>
+<path d="M362 101 Q400 117 438 101" fill="none" stroke="#dbe6ba" stroke-width="2" opacity=".76"/>
+<path d="M345 207 Q352 188 369 208 Q377 198 387 220 Q400 205 413 220 Q423 198 431 208 Q448 188 456 207" fill="none" stroke="#315343" stroke-width="3" opacity=".55"/>
+<path d="M347 204 Q354 190 369 205 Q378 198 388 216 Q400 204 412 216 Q423 198 431 205 Q445 190 453 204" fill="none" stroke="#c5d7b0" stroke-width="1.5" opacity=".6"/>
+
+</svg>

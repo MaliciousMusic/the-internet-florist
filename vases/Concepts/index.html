@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Belai — 400 pistes de vases</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="catalogue.js" defer></script>
+  <script src="references.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="masthead">
+    <div class="brand">BELAI’S FLOWERS <span>ATELIER DES CONTENANTS</span></div>
+    <div class="intro"><div><span class="eyebrow">400 concepts · 20 familles · 16 matières</span><h1>Choisir les formes<br>à faire vivre.</h1></div><div class="intro-copy"><p>Des silhouettes et des décors simples pour choisir les pistes qui méritent un dessin détaillé. Coche tes favoris ; ajoute une note si tu souhaites une modification.</p><button class="text-button" id="show-vocabulary">Voir les traits des 116 références ↗</button></div></div>
+    <div class="summary"><span><strong id="selected-count">0</strong> concepts sélectionnés</span><span id="save-state" role="status" aria-live="polite">Chargement de la sélection…</span><button id="export" class="primary">Exporter la sélection ↓</button></div>
+  </header>
+  <section class="controls" aria-label="Filtrer les concepts">
+    <div class="view-tabs" role="group" aria-label="Afficher"><button id="all-view" aria-pressed="true">Toutes les pistes</button><button id="selected-view" aria-pressed="false">Ma sélection <span id="tab-count">0</span></button></div>
+    <div class="filters"><label class="search">Rechercher<input id="search" type="search" placeholder="Ginkgo, bronze, C042…" autocomplete="off"></label><label>Famille<select id="family"><option value="">Toutes les familles</option></select></label><label>Matière<select id="material"><option value="">Toutes les matières</option></select></label><label>Influence<select id="style"><option value="">Toutes les influences</option></select></label><label>Silhouette<select id="shape"><option value="">Tous les profils</option></select></label></div>
+    <div class="toolbar"><div><span id="result-count">400 pistes</span><button id="clear-filters" class="text-button">Effacer les filtres</button></div><div class="bulk"><button id="select-results">Cocher les résultats</button><button id="unselect-results">Décocher les résultats</button><label class="page-size">Par page <select id="page-size"><option value="48">48</option><option value="96">96</option><option value="400">400</option></select></label></div></div>
+  </section>
+  <main><div id="grid" class="grid" aria-label="Concepts de vases"></div><div id="empty" hidden><h2>Aucune piste dans cette vue.</h2><p>Change les filtres ou coche un concept dans « Toutes les pistes ».</p></div><nav class="pagination" aria-label="Pages"><button id="previous">← Précédente</button><span id="page-info">Page 1 / 9</span><button id="next">Suivante →</button></nav></main>
+  <footer><p>Ébauches de composition et de matière. Le niveau de finition sera développé sur les concepts retenus.</p><p id="storage-note">La sélection reste sur cet appareil. L’export JSON permet d’en garder une copie.</p><label class="import">Reprendre une sélection <input type="file" id="import" accept="application/json,.json"></label></footer>
+  <dialog id="detail"><button class="close" id="close-detail" aria-label="Fermer">×</button><div class="detail-layout"><div class="detail-image"><img id="detail-img" alt="" src=""></div><div class="detail-copy"><span id="detail-number" class="eyebrow"></span><h2 id="detail-title"></h2><p id="detail-brief"></p><dl id="detail-spec"></dl><label class="detail-check"><input type="checkbox" id="detail-selected"> À développer</label><label class="notes">Mes indications<textarea id="detail-note" rows="4" maxlength="2000" placeholder="Garder le profil, élargir le col, essayer du bronze…"></textarea></label><a id="download-svg" download>Ouvrir / enregistrer le SVG ↗</a><div class="detail-nav"><button id="detail-previous">← Concept précédent</button><button id="detail-next">Concept suivant →</button></div></div></div></dialog>
+  <dialog id="vocabulary"><button class="close" id="close-vocabulary" aria-label="Fermer les traits">×</button><span class="eyebrow">Bibliothèque d’inspiration</span><h2>Les traits des 116 références</h2><p>Les matières incertaines sont indiquées comme telles. Les influences décrivent une lecture visuelle, sans authentifier l’époque de fabrication.</p><div id="vocabulary-content"><p>Chargement…</p></div><a href="EXTRACTION.md" download>Télécharger la synthèse ↓</a></dialog>
+</body>
+</html>

@@ -1,0 +1,31 @@
+{
+  "id": "011",
+  "label": "Lys mauves et pied vert",
+  "referenceSha256": "d2146833a0d7c4097c66cd0d5b457c42071d4cdb43d8548a19fe0401c27c5638",
+  "file": "svg/011.svg",
+  "reference": "references/011",
+  "sha256": "ad9c6658e632f78e4b701cb544597d1b3d886364eb4063f1530d1bb5ad303c87",
+  "bytes": 37710994,
+  "paths": 139407,
+  "width": 1200,
+  "height": 1478,
+  "memoryBefore": 6092480512,
+  "method": "Transcription de contours et nuances en courbes de Bézier natives",
+  "review": "Contrôle visuel à effectuer",
+  "guide": {
+    "box": [
+      0.055,
+      0.245,
+      0.9,
+      0.919
+    ],
+    "foreground": [
+      [
+        0.38,
+        0.57,
+        0.63,
+        0.84
+      ]
+    ]
+  }
+}

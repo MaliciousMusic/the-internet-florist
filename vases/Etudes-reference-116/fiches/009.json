@@ -1,0 +1,31 @@
+{
+  "id": "009",
+  "label": "Magnolias blancs sur fond bleu",
+  "referenceSha256": "926354b48d6fb8088d87dee8fc9e777ef57a6f8c6a684da60aedcd89154adf32",
+  "file": "svg/009.svg",
+  "reference": "references/009",
+  "sha256": "d17328a223ec9a0226ac93e0c6dde10151d73eaae91b09ed00b01204d1925abd",
+  "bytes": 14915672,
+  "paths": 56570,
+  "width": 600,
+  "height": 600,
+  "memoryBefore": 6100471808,
+  "method": "Transcription de contours et nuances en courbes de Bézier natives",
+  "review": "Contrôle visuel à effectuer",
+  "guide": {
+    "box": [
+      0.1,
+      0.07,
+      0.88,
+      0.95
+    ],
+    "foreground": [
+      [
+        0.3,
+        0.26,
+        0.7,
+        0.67
+      ]
+    ]
+  }
+}
