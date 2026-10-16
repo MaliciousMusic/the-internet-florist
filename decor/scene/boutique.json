@@ -1,6 +1,7 @@
 {
   "_lisez-moi": "Bouquets provisoires de la scène. tiges : [espèce, tiges, prix fleuriste d’une tige en centimes] ; les prix viennent de catalogue/recettes/sens_prix_0X.json (prix TTC d’un fleuriste en France en 2026, repris dans RECIPES.price de k0.js et dans skus.csv) ; les nombres sont les tiges que le moteur dessine vraiment pour cette graine (comptées sur sa composition) ; ecartModele : dessinées/prévues par le modèle quand elles diffèrent. recette : [SKU, tiges, place 1 (fond) à 10 (devant)] du bouquet de référence (flower-atelier/bronze/bq.py). modele : numéro du bouquet modèle du moteur (MODELS, k0.js/k2.js), dans son vase. Prix d’un bouquet = somme de ses tiges, vase offert ; prix ETH = cette somme / cours, à 3 chiffres ; ≈ € = prix ETH × cours. prix, bouquet, vignette : écrits par predessin.mjs (ne pas éditer à la main ; relancer l’outil après tout changement de tiges, de cours ou de bouquet).",
   "cours": { "eurParEth": 2171.44, "date": "2026-10-15T16:23Z", "source": "CoinGecko, api/v3/simple/price", "enDirect": false },
+  "coursUsd": { "usdParEth": 2470.85, "date": "2026-10-16T15:00Z", "source": "CoinGecko, api/v3/simple/price", "enDirect": false, "role": "repli de la page quand CoinGecko ne répond pas (prix affiché en dollars)" },
   "prix": { "regle": "somme des prix réels des tiges, vase offert", "chiffresEth": 3, "provisoire": true },
   "scene": {
     "pied": [1200,700],

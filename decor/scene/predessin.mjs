@@ -1321,7 +1321,7 @@ function pageCode() {
 
 // ---------- prices: the sum of the real prices of the stems (the vessel is offered), in ETH at the rate of configuration,
 // to 3 significant digits; the euros are that ETH price at the same rate (as the page computed them until 2026-10-15)
-const nEth = new Intl.NumberFormat('fr-FR', { maximumSignificantDigits: 3 });
+const nEth = new Intl.NumberFormat('en-US', { maximumSignificantDigits: 3 });
 const nEur = new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 });
 function priceOf(p, cfg) {
   const cts = p.tiges.reduce((a, [, n, c]) => a + n * c, 0);

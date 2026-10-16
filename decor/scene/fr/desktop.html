@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<base href="../">
+<title>Widget bouquet de fleurs pour le bureau Windows | Belai Bureau</title>
+<meta name="description" content="Belai Bureau, widget gratuit pour Windows 10 et 11 : posez sur votre bureau le bouquet de fleurs numérique que vous avez collectionné. Placez, ajustez, fixez.">
+<link rel="canonical" href="https://belai.garden/fr/desktop">
+<link rel="alternate" hreflang="en" href="https://belai.garden/desktop">
+<link rel="alternate" hreflang="fr" href="https://belai.garden/fr/desktop">
+<link rel="alternate" hreflang="es" href="https://belai.garden/es/desktop">
+<link rel="alternate" hreflang="zh" href="https://belai.garden/zh/desktop">
+<link rel="alternate" hreflang="de" href="https://belai.garden/de/desktop">
+<link rel="alternate" hreflang="x-default" href="https://belai.garden/desktop">
+<meta name="theme-color" content="#6c9bcf">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Belai's Garden">
+<meta property="og:title" content="Votre bouquet de fleurs sur votre bureau">
+<meta property="og:description" content="Un widget Windows gratuit pour votre bouquet numérique : placez-le, ajustez sa taille, fixez-le.">
+<meta property="og:url" content="https://belai.garden/fr/desktop">
+<meta property="og:image" content="https://belai.garden/share.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Le bouquet Ronde bleue : lilas, iris, anémones et jacinthes dans un vase en verre dépoli aux danseuses">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:video" content="https://belai.garden/videos/fond-ecran.mp4">
+<meta property="og:video:type" content="video/mp4">
+<meta property="og:video:width" content="720">
+<meta property="og:video:height" content="1280">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="scene.css">
+<link rel="stylesheet" href="entete.css">
+<style>
+  /* The desktop page: the shop's still decor behind (as the About page), one frosted-glass panel that scrolls between
+     the header and the footer's pill, with the how-to video and the app to download. */
+  .bureau {
+    position: fixed;
+    top: calc(var(--entete-bas) + 12px);
+    bottom: calc(env(safe-area-inset-bottom) + 40px);
+    left: 50%;
+    z-index: 40;
+    width: min(calc(100vw - 24px), 620px);
+    box-sizing: border-box;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: 22px clamp(18px, 5vw, 34px) 26px;
+    border: 1px solid var(--verre-bord);
+    border-radius: 20px;
+    background: linear-gradient(to bottom, rgb(255 255 255 / 0.22), rgb(16 48 86 / 0.16)), rgb(60 98 140 / 0.28);
+    -webkit-backdrop-filter: blur(20px) saturate(1.1);
+    backdrop-filter: blur(20px) saturate(1.1);
+    color: #fff;
+    font: 400 15px/1.6 var(--texte);
+    transform: translateX(-50%);
+  }
+
+  /* computer: the dock is at the bottom */
+  @media (min-width: 900px) and (min-aspect-ratio: 4/3) {
+    .bureau {
+      top: 24px;
+      bottom: var(--dessus-dock);
+      width: min(calc(100vw - 48px), 880px);
+    }
+  }
+
+  .bureau h1 {
+    margin: 0 0 4px;
+    font: 600 24px/1.2 var(--texte);
+  }
+
+  .bureau .chapeau {
+    margin: 0 0 18px;
+    color: rgb(255 255 255 / 0.9);
+    font-size: 16px;
+  }
+
+  .bureau h2 {
+    margin: 0 0 6px;
+    font: 600 16px/1.3 var(--texte);
+  }
+
+  .bureau p {
+    margin: 0;
+  }
+
+  /* the video beside the steps on a computer, above them on a phone */
+  .bureau-corps {
+    display: grid;
+    gap: 22px;
+    align-items: start;
+  }
+
+  @media (min-width: 760px) {
+    .bureau-corps {
+      grid-template-columns: minmax(0, 300px) 1fr;
+    }
+  }
+
+  .bureau-video {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    max-height: 64vh;
+    aspect-ratio: 9 / 16;
+    margin: 0 auto;
+    border-radius: 16px;
+    background: rgb(16 48 86 / 0.35);
+    box-shadow: 0 10px 30px rgb(10 30 60 / 0.35);
+    object-fit: contain;
+  }
+
+  .bureau ol {
+    margin: 0 0 18px;
+    padding-left: 22px;
+  }
+
+  .bureau li {
+    margin: 0 0 6px;
+  }
+
+  /* the download: one big glass button with its note */
+  .telecharger {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 13px 22px 13px 16px;
+    border: 1px solid rgb(255 255 255 / 0.7);
+    border-radius: 999px;
+    background: linear-gradient(to bottom, rgb(255 255 255 / 0.35), rgb(255 255 255 / 0.12)), #3c8c5a;
+    box-shadow: 0 6px 18px rgb(10 40 25 / 0.35);
+    color: #fff;
+    font: 600 17px/1.2 var(--texte);
+    text-decoration: none;
+    transition: transform 0.15s;
+  }
+
+  .telecharger:hover {
+    transform: translateY(-1px);
+  }
+
+  .telecharger:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 3px;
+  }
+
+  .telecharger svg {
+    flex: none;
+  }
+
+  .telecharger small {
+    display: block;
+    font-weight: 400;
+    font-size: 13px;
+    opacity: 0.9;
+  }
+
+  .note {
+    margin-top: 12px !important;
+    color: rgb(255 255 255 / 0.85);
+    font-size: 13.5px;
+  }
+
+  .bureau a:not(.telecharger) {
+    color: #fff;
+    font-weight: 600;
+    text-underline-offset: 3px;
+  }
+
+  .bureau .retour {
+    display: inline-block;
+    margin-top: 22px;
+  }
+
+  /* the installer's fingerprint: long, breaks anywhere */
+  .empreinte code {
+    font-size: 12px;
+    overflow-wrap: anywhere;
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://belai.garden/desktop#app",
+      "name": "Belai Bureau",
+      "applicationCategory": "DesktopEnhancementApplication",
+      "operatingSystem": "Windows 10, Windows 11",
+      "softwareVersion": "0.1.0",
+      "fileSize": "3 MB",
+      "downloadUrl": "https://belai.garden/telechargements/Belai-Bureau-0.1.0-x64-setup.exe",
+      "description": "Un widget de bureau gratuit pour Windows qui affiche sur votre bureau le bouquet de fleurs numérique que vous avez collectionné : placez-le, ajustez sa taille, fixez-le, devant ou derrière vos fenêtres.",
+      "inLanguage": "fr",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "publisher": {
+        "@id": "https://belai.garden/#org"
+      },
+      "screenshot": "https://belai.garden/videos/fond-ecran.jpg"
+    },
+    {
+      "@type": "VideoObject",
+      "name": "Comment poser votre bouquet sur votre bureau",
+      "description": "Une minute pour tout comprendre : téléchargez Belai Bureau, liez votre portefeuille, affichez votre bouquet, placez-le, ajustez sa taille et fixez-le, maintenez six secondes pour le déplacer.",
+      "thumbnailUrl": "https://belai.garden/videos/fond-ecran.jpg",
+      "contentUrl": "https://belai.garden/videos/fond-ecran.mp4",
+      "uploadDate": "2026-10-16T14:25:16+02:00",
+      "duration": "PT1M1S",
+      "width": 720,
+      "height": 1280
+    },
+    {
+      "@type": "HowTo",
+      "name": "Comment poser un bouquet de fleurs numérique sur votre bureau Windows",
+      "inLanguage": "fr",
+      "totalTime": "PT2M",
+      "tool": [
+        {
+          "@type": "HowToTool",
+          "name": "Belai Bureau (gratuit, Windows 10 et 11)"
+        },
+        {
+          "@type": "HowToTool",
+          "name": "Un portefeuille qui détient un bouquet"
+        }
+      ],
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "text": "Téléchargez et installez Belai Bureau."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "text": "Liez votre portefeuille depuis l’icône Belai, à côté de l’horloge."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "text": "Choisissez votre bouquet et affichez-le à l’écran : une signature, gratuite, sans transaction."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "text": "Placez-le, ajustez sa taille, mettez-le devant ou derrière vos fenêtres, puis fixez-le avec ✓."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 5,
+          "text": "Pour le déplacer à nouveau, maintenez le clic sur le bouquet pendant six secondes."
+        }
+      ]
+    }
+  ]
+}
+</script>
+<script type="application/json" id="i18n">{"code":"fr","locale":"fr-FR","page":"desktop","p":"fr/","langues":[{"code":"en","name":"English","href":"desktop.html"},{"code":"fr","name":"Français","href":"fr/desktop.html"},{"code":"es","name":"Español","href":"es/desktop.html"},{"code":"zh","name":"中文","href":"zh/desktop.html"},{"code":"de","name":"Deutsch","href":"de/desktop.html"}],"t":{"menu":"Menu","shelves":{"bouquets":"Bouquets du jour","soliflores":"Soliflores","vendus":"Bouquets collectionnés"},"desktopTitle":"Sur mon bureau","desktopLabel":"Votre bouquet sur votre bureau","openSeaTitle":"Notre collection sur OpenSea","openSeaLabel":"Notre collection sur OpenSea (nouvel onglet)","about":"À propos","legal":"Mentions légales","closeLegal":"Fermer le panneau des mentions légales","footer":"<p>Chaque bouquet est un objet de collection numérique unique (un NFT sur Base), dont le prix est fixé en ETH, sans TVA (TVA non applicable, art. 293 B du CGI) ; le montant en euros ou en dollars américains correspond au même prix au cours du moment. Il vit trois mois à compter de sa frappe, puis reste fané pour de bon. La livraison est immédiate : le droit de rétractation ne s’applique donc plus une fois votre achat confirmé. Nous ne percevons pas de royalties sur la revente (0 %).<\/p><p>Aucun pistage, aucune publicité : un cookie au plus, pour retenir la langue que vous avez choisie.<\/p>","links":{"notice":"Mentions légales","terms":"Conditions générales de vente","privacy":"Confidentialité","app":"Licence de Belai Bureau","accessibility":"Accessibilité","contact":"Contact"},"credit":"Cours de l’ETH fourni par {coingecko}.","language":"Langue","lookCloser":"Regarder le bouquet de plus près","stepBack":"Prendre du recul","planeLabel":"{name}, sur le pilier. {alt}","frameLabel":"{name}, {eth}, environ {fiat}, {life}. {alt}","buyLabel":"Acheter « {name} », {eth}, environ {fiat}","lifeLeft":"{h} h {m} min","fadesIn":"Fane dans {t}","fadesInLower":"fane dans {t}","faded":"Fané","fadedLower":"fané","fadedForGood":"Fané pour toujours","buy":"Acheter","soon":"Bientôt","soonMessage":"L’achat depuis le site arrive bientôt.","tickFirst":"Cochez d’abord la case : votre bouquet est livré immédiatement.","receipt":{"title":"Reçu","download":"Télécharger votre reçu","bouquet":"Bouquet","token":"Jeton","price":"Prix","date":"Date","buyer":"Portefeuille de l’acheteur","transaction":"Transaction","seller":"Vendeur","waiver":"Avant de payer, vous avez demandé la livraison immédiate et reconnu renoncer ainsi à votre droit de rétractation (Code de la consommation, article L221-28, 13°).","terms":"Conditions générales de vente acceptées à cette date : {url}","taxes":"TVA non applicable, art. 293 B du CGI."}},"alts":{"printemps-a-la-carpe":"Un bouquet numérique unique de 70 tiges dessinées à la main (renoncule, iris de Hollande, tulipe, pois de senteur, jacinthe, muscari et autres) dans un vase carpe en bronze coulé. Il vit trois mois, puis reste fané pour de bon.","ronde-bleue":"Un bouquet numérique unique de 37 tiges dessinées à la main (iris de Hollande, anémone, lilas, cognassier du Japon, viorne boule-de-neige, tulipe et autres) dans un vase en verre dépoli aux danseuses. Il vit trois mois, puis reste fané pour de bon.","printemps-cobalt":"Un bouquet numérique unique de 13 tiges dessinées à la main (tulipe, chatons de saule, forsythia, liriope, narcisse trompette, renoncule et autres) dans une coupe cobalt mouchetée. Il vit trois mois, puis reste fané pour de bon.","nuage-sorbet":"Un bouquet numérique unique de 19 tiges dessinées à la main (pois de senteur, sanguisorbe, orchidée cymbidium et rose de jardin) dans une coupe sur pied blanche mate. Il vit trois mois, puis reste fané pour de bon.","songe-amethyste":"Un bouquet numérique unique de 31 tiges dessinées à la main (anémone, pois de senteur, jasmin, œillet de poète, arum, orchidée phalaenopsis et autres) dans un cylindre en inox poli miroir. Il vit trois mois, puis reste fané pour de bon.","lune-d-orchidees":"Un bouquet numérique unique de 14 tiges dessinées à la main (cyclamen, orchidée phalaenopsis, tulipe et tulipe perroquet) dans un vase boule sur pied couleur sable. Il vit trois mois, puis reste fané pour de bon.","carnaval-de-corail":"Un bouquet numérique unique de 30 tiges dessinées à la main (ruscus teinté, freesia, renoncule, orchidée phalaenopsis, lisianthus, iris de Hollande et autres) dans un vase calice moucheté. Il vit trois mois, puis reste fané pour de bon."}}</script>
+</head>
+<body>
+<!--
+  TEMPLATE of build.mjs: the page of every language is written from it ({{ key }} = a text of langues/<code>.mjs).
+  Edit this file, never the generated pages; then run: node decor/scene/build.mjs
+-->
+<!--
+  Your bouquet on your computer: the how-to video (videos/fond-ecran.mp4, made in belai-studio, lot T10) and Belai Bureau
+  to download (telechargements/, a copy of bureau/livrables; its SHA-256 below must follow each new installer). Structured
+  data: the app (SoftwareApplication), the video (VideoObject) and the steps (HowTo). The header and the footer come from entete.js; the decor is
+  the shop's still layers (decor/out/), as on the About page.
+-->
+<div class="scene" id="scene" aria-hidden="true">
+  <div class="monde">
+    <img class="plan" style="--z:0" src="../out/ciel.svg" alt="" decoding="async">
+    <img class="plan" style="--z:3" src="../out/horizon.svg" alt="" decoding="async">
+    <img class="plan" style="--z:4" src="../out/sol-loin.svg" alt="" decoding="async">
+    <img class="plan" style="--z:5" src="../out/sol-milieu.svg" alt="" decoding="async">
+    <img class="plan" style="--z:7" src="../out/sol-pres.svg" alt="" decoding="async">
+  </div>
+</div>
+
+<main class="bureau">
+  <h1>Votre bouquet sur votre bureau</h1>
+  <p class="chapeau">Posez le bouquet que vous avez collectionné sur le bureau de votre ordinateur, avec Belai Bureau, un widget gratuit pour Windows.</p>
+
+  <div class="bureau-corps">
+    <video class="bureau-video" src="videos/fond-ecran.mp4" poster="videos/fond-ecran.jpg" controls autoplay muted loop playsinline
+      preload="metadata" width="720" height="1280" aria-label="Vidéo explicative : poser votre bouquet sur votre bureau, pas à pas (musique seule ; les étapes sont écrites à côté)"></video>
+
+    <div>
+      <h2>En cinq étapes</h2>
+      <ol>
+        <li>Téléchargez et installez Belai Bureau.</li>
+        <li>Liez votre portefeuille depuis l’icône Belai, à côté de l’horloge.</li>
+        <li>Choisissez votre bouquet et affichez-le à l’écran : une signature, gratuite, sans transaction.</li>
+        <li>Placez-le, ajustez sa taille, mettez-le devant ou derrière vos fenêtres, puis fixez-le avec ✓.</li>
+        <li>Pour le déplacer à nouveau, maintenez le clic sur le bouquet pendant six secondes.</li>
+      </ol>
+
+      <a class="telecharger" href="telechargements/Belai-Bureau-0.1.0-x64-setup.exe" download>
+        <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7.5 10.5 12 15l4.5-4.5M5 19.5h14"/></svg>
+        <span>Télécharger Belai Bureau<small>Windows 10 et 11 · 3 Mo · gratuit</small></span>
+      </a>
+      <p class="note">Seul le portefeuille qui détient un bouquet peut l’afficher. Au premier lancement, Windows peut signaler qu’il ne connaît pas encore l’application : « Informations complémentaires », puis « Exécuter quand même ». </p>
+      <p class="note empreinte">Version 0.1.0 · SHA-256 <code>276597f33e108c53056fbe27964aac390ecfa8afd28a2f17a50994bcd6cd9558</code>
+        · <a href="fr/legal.html#app">Licence et confidentialité</a></p>
+    </div>
+  </div>
+
+  <a class="retour" href="fr/index.html">← Retour aux bouquets</a>
+</main>
+
+<script src="entete.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<base href="../">
+<title>Acerca de: ramos digitales de flores reales | Belai's Garden</title>
+<meta name="description" content="Cómo se hacen nuestros ramos digitales: flores dibujadas en código a partir de fotos reales, jarrones reales, al precio de sus tallos, tres meses de vida.">
+<link rel="canonical" href="https://belai.garden/es/about">
+<link rel="alternate" hreflang="en" href="https://belai.garden/about">
+<link rel="alternate" hreflang="fr" href="https://belai.garden/fr/about">
+<link rel="alternate" hreflang="es" href="https://belai.garden/es/about">
+<link rel="alternate" hreflang="zh" href="https://belai.garden/zh/about">
+<link rel="alternate" hreflang="de" href="https://belai.garden/de/about">
+<link rel="alternate" hreflang="x-default" href="https://belai.garden/about">
+<meta name="theme-color" content="#6c9bcf">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Belai's Garden">
+<meta property="og:title" content="Acerca de nuestros ramos digitales">
+<meta property="og:description" content="Cada flor, dibujada en código a partir de fotos reales. Ramos únicos, en jarrones reales, que florecen y luego se marchitan.">
+<meta property="og:url" content="https://belai.garden/es/about">
+<meta property="og:image" content="https://belai.garden/share.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="El ramo Ronde bleue: lilas, iris, anémonas y jacintos en un jarrón de vidrio esmerilado con bailarinas">
+<meta property="og:locale" content="es_ES">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta property="og:locale:alternate" content="de_DE">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="scene.css">
+<link rel="stylesheet" href="entete.css">
+<style>
+  /* The About page: the shop's still decor behind (the same files as the shop page, already in the browser's cache), one
+     frosted-glass panel that scrolls between the header and the footer's pill. */
+  .apropos {
+    position: fixed;
+    top: calc(var(--entete-bas) + 12px);
+    bottom: calc(env(safe-area-inset-bottom) + 40px);
+    left: 50%;
+    z-index: 40;
+    width: min(calc(100vw - 24px), 620px);
+    box-sizing: border-box;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: 22px clamp(18px, 5vw, 34px) 26px;
+    border: 1px solid var(--verre-bord);
+    border-radius: 20px;
+    background: linear-gradient(to bottom, rgb(255 255 255 / 0.22), rgb(16 48 86 / 0.16)), rgb(60 98 140 / 0.28);
+    -webkit-backdrop-filter: blur(20px) saturate(1.1);
+    backdrop-filter: blur(20px) saturate(1.1);
+    color: #fff;
+    font: 400 15px/1.6 var(--texte);
+    transform: translateX(-50%);
+  }
+
+  /* computer: the dock is at the bottom */
+  @media (min-width: 900px) and (min-aspect-ratio: 4/3) {
+    .apropos {
+      top: 24px;
+      bottom: var(--dessus-dock);
+    }
+  }
+
+  .apropos h1 {
+    margin: 0 0 4px;
+    font: 600 24px/1.2 var(--texte);
+  }
+
+  .apropos .chapeau {
+    margin: 0 0 8px;
+    color: rgb(255 255 255 / 0.9);
+    font-size: 16px;
+  }
+
+  .apropos h2 {
+    margin: 20px 0 4px;
+    font: 600 16px/1.3 var(--texte);
+  }
+
+  .apropos p {
+    margin: 0;
+  }
+
+  .apropos a {
+    color: #fff;
+    font-weight: 600;
+    text-underline-offset: 3px;
+  }
+
+  .apropos a:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+  }
+
+  .apropos .retour {
+    display: inline-block;
+    margin-top: 22px;
+  }
+
+  .faq {
+    margin: 0;
+  }
+
+  .faq dt {
+    margin: 12px 0 2px;
+    font-weight: 600;
+  }
+
+  .faq dd {
+    margin: 0;
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "AboutPage",
+      "@id": "https://belai.garden/es/about",
+      "url": "https://belai.garden/es/about",
+      "name": "Acerca de nuestros ramos digitales",
+      "inLanguage": "es",
+      "isPartOf": {
+        "@id": "https://belai.garden/#site"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "inLanguage": "es",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Qué es un ramo digital?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Un ramo de flores dibujado en gráficos vectoriales a partir de fotos reales, tallo a tallo, en un jarrón real. Florece en la pantalla, se mece con la brisa y se marchita al cabo de tres meses. Cada uno es único y se colecciona como NFT en Base."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Puedo poner un ramo de flores en el escritorio de mi ordenador?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí. Descarga Belai Bureau (gratis, Windows 10 y 11), vincula tu monedero y el ramo que tienes se queda en tu escritorio como widget: lo colocas, ajustas su tamaño, lo fijas y lo pones delante o detrás de tus ventanas."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo se fija el precio de un ramo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Es la suma de lo que costarían sus tallos en una floristería de Francia, convertida a ETH, sin IVA (IVA no aplicable, art. 293 B del Código General de Impuestos francés). El jarrón es gratis. El importe mostrado en euros o dólares estadounidenses es orientativo, al cambio actual."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué pasa al cabo de tres meses?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "El ramo se marchita y queda marchito e inmóvil para siempre. Sigue siendo tuyo."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cobráis regalías en la reventa?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No: 0 %. Solo se aplican las comisiones propias del mercado y de la red."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Quién puede mostrar un ramo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Belai Bureau solo muestra un ramo que esté en el monedero que vinculas, tras una firma gratuita (sin transacción)."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<script type="application/json" id="i18n">{"code":"es","locale":"es-ES","page":"about","p":"es/","langues":[{"code":"en","name":"English","href":"about.html"},{"code":"fr","name":"Français","href":"fr/about.html"},{"code":"es","name":"Español","href":"es/about.html"},{"code":"zh","name":"中文","href":"zh/about.html"},{"code":"de","name":"Deutsch","href":"de/about.html"}],"t":{"menu":"Menú","shelves":{"bouquets":"Ramos del día","soliflores":"Floreros solitarios","vendus":"Ramos coleccionados"},"desktopTitle":"En mi escritorio","desktopLabel":"Tu ramo en tu escritorio","openSeaTitle":"Nuestra colección en OpenSea","openSeaLabel":"Nuestra colección en OpenSea (nueva pestaña)","about":"Acerca de","legal":"Legal","closeLegal":"Cerrar el panel legal","footer":"<p>Cada ramo es un objeto de colección digital único (un NFT en Base), con precio en ETH, sin IVA (IVA no aplicable, art. 293 B del Código General de Impuestos francés); el importe en euros o dólares estadounidenses es el mismo precio al cambio actual. Vive tres meses desde su acuñación y luego queda marchito para siempre. La entrega es inmediata, por lo que el derecho de desistimiento no se aplica una vez que confirmas. No cobramos regalías en la reventa (0 %).<\/p><p>Sin rastreo ni publicidad: como mucho una cookie, para recordar el idioma que elegiste.<\/p>","links":{"notice":"Aviso legal","terms":"Condiciones de venta","privacy":"Privacidad","app":"Licencia de Belai Bureau","accessibility":"Accesibilidad","contact":"Contacto"},"credit":"Cambio de ETH por {coingecko}.","language":"Idioma","lookCloser":"Ver el ramo más de cerca","stepBack":"Alejarse","planeLabel":"{name}, sobre el pilar. {alt}","frameLabel":"{name}, {eth}, unos {fiat}, {life}. {alt}","buyLabel":"Comprar «{name}», {eth}, unos {fiat}","lifeLeft":"{h} h {m} min","fadesIn":"Se marchita en {t}","fadesInLower":"se marchita en {t}","faded":"Marchito","fadedLower":"marchito","fadedForGood":"Marchito para siempre","buy":"Comprar","soon":"Pronto","soonMessage":"Pronto podrás comprar desde el sitio.","tickFirst":"Marca primero la casilla: tu ramo se entrega al instante.","receipt":{"title":"Recibo","download":"Descarga tu recibo","bouquet":"Ramo","token":"Token","price":"Precio","date":"Fecha","buyer":"Monedero del comprador","transaction":"Transacción","seller":"Vendedor","waiver":"Antes de pagar, solicitaste la entrega inmediata y reconociste que, por ello, pierdes tu derecho de desistimiento (Código de Consumo francés, artículo L221-28, 13.º).","terms":"Condiciones de venta aceptadas ese día: {url}","taxes":"IVA no aplicable, art. 293 B del Código General de Impuestos francés."}},"alts":{"printemps-a-la-carpe":"Un ramo digital único de 70 tallos dibujados a mano (ranúnculo, iris holandés, tulipán, guisante de olor, jacinto, nazareno y más) en un jarrón de carpa en bronce fundido. Vive tres meses y luego queda marchito para siempre.","ronde-bleue":"Un ramo digital único de 37 tallos dibujados a mano (iris holandés, anémona, lila, membrillero japonés, viburno bola de nieve, tulipán y más) en un jarrón de vidrio esmerilado con bailarinas. Vive tres meses y luego queda marchito para siempre.","printemps-cobalt":"Un ramo digital único de 13 tallos dibujados a mano (tulipán, sauce con amentos, forsitia, liriope, narciso trompeta, ranúnculo y más) en un cuenco cobalto moteado. Vive tres meses y luego queda marchito para siempre.","nuage-sorbet":"Un ramo digital único de 19 tallos dibujados a mano (guisante de olor, sanguisorba, orquídea cymbidium y rosa de jardín) en una copa con pie blanca mate. Vive tres meses y luego queda marchito para siempre.","songe-amethyste":"Un ramo digital único de 31 tallos dibujados a mano (anémona, guisante de olor, jazmín, clavel del poeta, cala, orquídea phalaenopsis y más) en un cilindro de acero pulido espejo. Vive tres meses y luego queda marchito para siempre.","lune-d-orchidees":"Un ramo digital único de 14 tallos dibujados a mano (ciclamen, orquídea phalaenopsis, tulipán y tulipán loro) en un jarrón bulboso con pie color arena. Vive tres meses y luego queda marchito para siempre.","carnaval-de-corail":"Un ramo digital único de 30 tallos dibujados a mano (rusco teñido, fresia, ranúnculo, orquídea phalaenopsis, lisianthus, iris holandés y más) en un jarrón cáliz moteado. Vive tres meses y luego queda marchito para siempre."}}</script>
+</head>
+<body>
+<!--
+  TEMPLATE of build.mjs: the page of every language is written from it ({{ key }} = a text of langues/<code>.mjs).
+  Edit this file, never the generated pages; then run: node decor/scene/build.mjs
+-->
+<!--
+  About page of the shop (a draft for the owner to rewrite): what the project is, how a bouquet is made and priced, how
+  it is bought, and the questions people ask (also as FAQPage structured data, for search engines and answer engines). The header and the footer come from entete.js. The decor is the shop's still layers (decor/out/), without
+  the bouquet, the clouds or the foreground.
+-->
+<div class="scene" id="scene" aria-hidden="true">
+  <div class="monde">
+    <img class="plan" style="--z:0" src="../out/ciel.svg" alt="" decoding="async">
+    <img class="plan" style="--z:3" src="../out/horizon.svg" alt="" decoding="async">
+    <img class="plan" style="--z:4" src="../out/sol-loin.svg" alt="" decoding="async">
+    <img class="plan" style="--z:5" src="../out/sol-milieu.svg" alt="" decoding="async">
+    <img class="plan" style="--z:7" src="../out/sol-pres.svg" alt="" decoding="async">
+  </div>
+</div>
+
+<main class="apropos">
+  <h1>Acerca de</h1>
+  <p class="chapeau">Ramos dibujados flor a flor, que florecen ante tus ojos.</p>
+
+  <h2>Flores dibujadas del natural</h2>
+  <p>Cada flor de este jardín está dibujada en código, trazo a trazo, a partir de fotos reales: la forma de los pétalos,
+    sus colores medidos en cada variedad, los capullos, la flor abierta y la flor marchita. En el jardín ya hay más de
+    quinientas especies.</p>
+
+  <h2>Ramos únicos cada día</h2>
+  <p>Cada día se componen ramos nuevos, cada uno en un jarrón real, como la carpa de bronce. Cada ramo es único:
+    la posición de cada tallo, de cada flor y de cada hoja no se repite en ningún otro.</p>
+
+  <h2>Un ramo que vive</h2>
+  <p>Un ramo vive tres meses desde su acuñación: una cuenta atrás, en horas y minutos, muestra cuánto tiempo le queda.
+    Después queda marchito e inmóvil, para siempre.</p>
+
+  <h2>El precio de los tallos reales</h2>
+  <p>El precio de un ramo es la suma de lo que cuestan sus tallos en una floristería de Francia. El jarrón es gratis.
+    En la reventa, no nos quedamos con nada: 0 % de regalías.</p>
+
+  <h2>Coleccionar un ramo</h2>
+  <p>Los ramos son NFT en la red Base, publicados en nuestra página de OpenSea. Los pagarás aquí mismo, desde tu
+    monedero, sin salir del sitio.</p>
+
+  <h2>En tu escritorio</h2>
+  <p>Con <a href="es/desktop.html">Belai Bureau</a>, un widget gratuito para Windows, el ramo que coleccionaste se queda
+    en el escritorio de tu ordenador, del tamaño que elijas, delante o detrás de tus ventanas.</p>
+
+  <h2>Hacer crecer el jardín</h2>
+  <p>Cada ramo coleccionado ayuda a que el jardín crezca: nuevas especies, nuevos jarrones, nuevos ramos.</p>
+
+  <h2 id="faq">Preguntas</h2>
+  <dl class="faq">
+    <dt>¿Qué es un ramo digital?</dt>
+    <dd>Un ramo de flores dibujado en gráficos vectoriales a partir de fotos reales, tallo a tallo, en un jarrón real. Florece en la pantalla, se mece con la brisa y se marchita al cabo de tres meses. Cada uno es único y se colecciona como NFT en Base.</dd>
+    <dt>¿Puedo poner un ramo de flores en el escritorio de mi ordenador?</dt>
+    <dd>Sí. Descarga Belai Bureau (gratis, Windows 10 y 11), vincula tu monedero y el ramo que tienes se queda en tu escritorio como widget: lo colocas, ajustas su tamaño, lo fijas y lo pones delante o detrás de tus ventanas.</dd>
+    <dt>¿Cómo se fija el precio de un ramo?</dt>
+    <dd>Es la suma de lo que costarían sus tallos en una floristería de Francia, convertida a ETH, sin IVA (IVA no aplicable, art. 293 B del Código General de Impuestos francés). El jarrón es gratis. El importe mostrado en euros o dólares estadounidenses es orientativo, al cambio actual.</dd>
+    <dt>¿Qué pasa al cabo de tres meses?</dt>
+    <dd>El ramo se marchita y queda marchito e inmóvil para siempre. Sigue siendo tuyo.</dd>
+    <dt>¿Cobráis regalías en la reventa?</dt>
+    <dd>No: 0 %. Solo se aplican las comisiones propias del mercado y de la red.</dd>
+    <dt>¿Quién puede mostrar un ramo?</dt>
+    <dd>Belai Bureau solo muestra un ramo que esté en el monedero que vinculas, tras una firma gratuita (sin transacción).</dd>
+  </dl>
+
+  <a class="retour" href="es/index.html">← Volver a los ramos</a>
+</main>
+
+<script src="entete.js" defer></script>
+</body>
+</html>

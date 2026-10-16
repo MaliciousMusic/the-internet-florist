@@ -1,0 +1,29 @@
+# Belai's Garden
+
+> Digital flower bouquets drawn stem by stem, in code, from photos of real flowers. New one-of-a-kind bouquets every day, each in a real vase, collected as NFTs on the Base network. Each bouquet lives three months, then stays faded for good. Belai Bureau, a free Windows widget, sets the bouquet you own on your computer's desktop.
+
+Key facts:
+- What it is: one-of-a-kind digital bouquets (vector artwork), more than five hundred flower species drawn from real photos, bud to faded.
+- Price: the sum of what the stems would cost at a florist in France, set in ETH, with no VAT (French micro-enterprise, art. 293 B of the General Tax Code); the vase comes free. 0% royalties on resale.
+- Lifespan: three months from minting, with a countdown; then the bouquet fades and stays still, for good.
+- Where: listed on OpenSea, paid from the buyer's own wallet on this site (Seaport), on Base.
+- Desktop widget: Belai Bureau, free, Windows 10 and 11, about 3 MB. It shows only bouquets held by the linked wallet; place, size, pin, in front of or behind windows; hold six seconds to move a pinned bouquet.
+- Languages: English (https://belai.garden/), Français (https://belai.garden/fr/), Español (https://belai.garden/es/), 中文 (https://belai.garden/zh/), Deutsch (https://belai.garden/de/).
+- Publisher: Hadrien Lonjaret (Agent 33), Clermont-Ferrand, France. No tracking, no advertising.
+
+## Pages
+
+- [Bouquets of the day](https://belai.garden/): the shop, a meadow where each bouquet blooms on a lava pillar
+- [Your bouquet on your desktop](https://belai.garden/desktop): the one-minute how-to video and the Belai Bureau download
+- [About](https://belai.garden/about): how the flowers are drawn, how a bouquet is priced, questions and answers
+- [Legal](https://belai.garden/legal): legal notice, terms of sale, privacy, app licence, accessibility
+
+## Bouquets of the day (2026-10-16)
+
+- Printemps à la carpe: A one-of-a-kind digital bouquet of 70 hand-drawn stems (ranunculus, Dutch iris, tulip, sweet pea, hyacinth, grape hyacinth and more) in a cast-bronze carp vase. It lives three months, then stays faded for good. Price 0.138 ETH (about $341 at 2470.85 USD per ETH).
+- Ronde bleue: A one-of-a-kind digital bouquet of 37 hand-drawn stems (Dutch iris, anemone, lilac, Japanese quince, snowball viburnum, tulip and more) in a frosted-glass vase with dancers. It lives three months, then stays faded for good. Price 0.0736 ETH (about $182 at 2470.85 USD per ETH).
+- Printemps cobalt: A one-of-a-kind digital bouquet of 13 hand-drawn stems (tulip, pussy willow, forsythia, lily grass, trumpet daffodil, ranunculus and more) in a speckled cobalt bowl. It lives three months, then stays faded for good. Price 0.0186 ETH (about $46 at 2470.85 USD per ETH).
+- Nuage sorbet: A one-of-a-kind digital bouquet of 19 hand-drawn stems (sweet pea, burnet, cymbidium orchid and garden rose) in a matte white footed bowl. It lives three months, then stays faded for good. Price 0.0664 ETH (about $164 at 2470.85 USD per ETH).
+- Songe améthyste: A one-of-a-kind digital bouquet of 31 hand-drawn stems (anemone, sweet pea, jasmine, sweet william, calla lily, phalaenopsis orchid and more) in a mirror steel cylinder. It lives three months, then stays faded for good. Price 0.0815 ETH (about $201 at 2470.85 USD per ETH).
+- Lune d'orchidées: A one-of-a-kind digital bouquet of 14 hand-drawn stems (cyclamen, phalaenopsis orchid, tulip and parrot tulip) in a sand-coloured footed bulb vase. It lives three months, then stays faded for good. Price 0.043 ETH (about $106 at 2470.85 USD per ETH).
+- Carnaval de corail: A one-of-a-kind digital bouquet of 30 hand-drawn stems (dyed ruscus, freesia, ranunculus, phalaenopsis orchid, lisianthus, Dutch iris and more) in a speckled chalice vase. It lives three months, then stays faded for good. Price 0.064 ETH (about $158 at 2470.85 USD per ETH).

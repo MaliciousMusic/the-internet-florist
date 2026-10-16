@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="{{htmlLang}}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+{{head}}
+<link rel="stylesheet" href="scene.css">
+<link rel="stylesheet" href="boutique.css">
+<link rel="stylesheet" href="entete.css">
+{{ld}}
+{{i18n}}
+</head>
+<body>
+<!--
+  TEMPLATE of build.mjs: the page of every language is written from it ({{ key }} = a text of langues/<code>.mjs).
+  Edit this file, never the generated pages; then run: node decor/scene/build.mjs
+-->
+<!--
+  Test bench of the shop scene: the layers of decor/PLAN.md stacked from the horizon to the foreground.
+  Static layers are SVG files drawn once by the browser (<img>); only the clouds, the bouquet and the foreground move,
+  and only through transforms. Layer files come from decor/out/; a missing one is simply skipped.
+  ?debug=1 outlines the phone column and the bouquet slot; ?perf=1 shows frames per second.
+
+  Added for the shop (boutique.js, boutique.css, boutique.json, eclosion.js; no flower engine in the page: the bouquets are
+  pre-drawn by predessin.mjs into bouquets/<id>/):
+  - .pilier-repere: the pillar's place (x 1100-1300, y 700-1040 of the world), drawn in grey under ?debug=1 only,
+    until decor/out/pilier.svg exists;
+  - #bouquet: the bouquet of the chosen card, its pre-drawn pieces grown in on the pillar by eclosion.js (plane z8);
+  - .cartes: the shelf under the header (soliflores, bouquets sold);
+  - .achat: the Buy button for the bouquet on the pillar, fixed at the bottom (the purchase is not wired yet);
+  - #perf-bq: the shop's measures under ?perf=1 (also in window.BOUTIQUE_MESURES).
+  - the header (dock of icons opening the shelves, OpenSea, About) and the footer (legal notice): entete.js, entete.css;
+  - .galerie: one glass frame per bouquet standing on the horizon behind the pillar, the chosen one in the middle, the
+    others left and right (a click, a swipe or the arrow keys bring one to the middle); "Open" (.bq-voir) in the middle
+    one; the price bubble (.achat) only shows in the close-up;
+  - a click on the bouquet or on "Open" brings the camera closer (the whole scene scaled by one transform); a click, Escape or another
+    shelf takes it back.
+  ?rayon=bouquets|soliflores|vendus|aucun opens that shelf first (default: the bouquets).
+  ?b=<product id or index> picks the first bouquet; the card thumbnails (bouquets/<id>/vignette.svg), the foreground and
+  the clouds load once it has grown (?vignettes=tot: the thumbnails at once).
+-->
+<!-- what the page is about, for screen readers and for the crawlers that do not run scripts (the scene says it in
+     pictures); the same words as the About page -->
+<div class="sr-only">
+  <h1>{{index.h1}}</h1>
+  <p>{{index.intro}}</p>
+</div>
+<noscript>
+  <p class="sans-script">{{index.noscript}}</p>
+</noscript>
+<main class="scene" id="scene">
+  <div class="monde" id="monde">
+    <img class="plan" style="--z:0" data-src="ciel.svg" alt="" decoding="async" fetchpriority="high">
+    <div class="plan nuages hauts" style="--z:1" id="nuages-hauts"></div>
+    <div class="plan nuages bas" style="--z:2" id="nuages-bas"></div>
+    <img class="plan" style="--z:3" data-src="horizon.svg" alt="" decoding="async" fetchpriority="high">
+    <!-- the gallery (boutique.js): one glass frame per bouquet on the horizon, under the ground's layers, so the pillar
+         and the meadow pass in front of the frames' feet; the chosen one in the middle, the others left and right -->
+    <div class="plan galerie" style="--z:3" id="galerie" aria-label="{{index.galleryLabel}}">
+      <div class="galerie-rail" id="galerie-rail"></div>
+    </div>
+    <!-- The flowered ground, composed by depth (sol.mjs + fleurs.mjs: meadow, path, slabs, pillar, flowers), split into
+         three files of similar drawing cost so the browser rasterises them in parallel. -->
+    <img class="plan" style="--z:4" data-src="sol-loin.svg" alt="" decoding="async">
+    <img class="plan" style="--z:5" data-src="sol-milieu.svg" alt="" decoding="async">
+    <div class="pilier-repere" aria-hidden="true"></div>
+    <img class="plan" style="--z:7" data-src="sol-pres.svg" alt="" decoding="async">
+    <div class="plan bouquet" style="--z:8" id="bouquet" role="img" aria-label=""></div>
+    <!-- the bouquet's place in the world (its manifest's box): a click brings the camera closer (boutique.js) -->
+    <button class="bq-cible" id="bq-cible" type="button" aria-pressed="false" aria-label="{{index.lookCloser}}" hidden></button>
+    <button class="bq-voir" id="bq-voir" type="button" hidden>{{index.open}}</button>
+    <div class="plan premier" style="--z:9" id="premier"></div>
+    <div class="colonne" aria-hidden="true"></div>
+  </div>
+  <div class="perf" id="perf" hidden></div>
+</main>
+
+<!-- the shelf under the header, opened by the dock's icons (entete.js): the soliflores, the bouquets already sold; one
+     at a time (the bouquets of the day are the gallery in the scene) -->
+<nav class="cartes" id="cartes" aria-label="{{index.shelvesLabel}}">
+  <div class="rayon" data-rayon="soliflores" hidden>
+    <p class="rayon-mot">{{index.budVases}}</p>
+  </div>
+  <div class="rayon" data-rayon="vendus" hidden>
+    <p class="rayon-mot">{{index.noneCollected}}
+      <a class="rayon-lien" id="lien-opensea" href="https://opensea.io/" target="_blank" rel="noopener">{{index.seeOpenSea}}</a></p>
+  </div>
+</nav>
+
+<!-- the close-up's bottom: the bouquet's lifespan and the wallpaper demo, the Buy button with its price (ETH, then
+     euros or US dollars by the visitor's country, every 5 s), the resale line; the purchase sheet (the express
+     waiver of the right of withdrawal) opens above the button -->
+<div class="achat loin" id="achat" hidden>
+  <div class="achat-haut">
+    <p class="achat-vie" id="achat-vie"></p>
+    <button class="achat-demo" id="achat-demo" type="button" aria-haspopup="dialog">
+      <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg>
+      <span>{{index.onDesktop}}</span>
+    </button>
+  </div>
+  <form class="accord" id="accord" aria-labelledby="accord-titre" hidden>
+    <p class="accord-titre" id="accord-titre">{{index.sheetTitle}}</p>
+    <label class="accord-case">
+      <input type="checkbox" id="renonce" name="renonce" required>
+      <span>{{index.waiver}}</span>
+    </label>
+    <p class="accord-cgv">{{index.accept}}</p>
+    <div class="accord-boutons">
+      <button class="accord-annuler" id="accord-annuler" type="button">{{index.cancel}}</button>
+      <button class="accord-payer" id="accord-payer" type="submit">{{index.confirm}}</button>
+    </div>
+  </form>
+  <button class="achat-bouton" id="acheter" type="button" aria-controls="accord" aria-expanded="false">
+    <span class="achat-mot" id="achat-mot">{{index.buy}}</span>
+    <span class="achat-prix" id="achat-prix" aria-hidden="true"></span>
+  </button>
+  <p class="achat-revente">{{index.royalties}}</p>
+  <p class="achat-etat" id="achat-etat" role="status" aria-live="polite"></p>
+</div>
+
+<!-- the demo video: how to set a bouquet on a computer's desktop with Belai Bureau (videos/fond-ecran.mp4, belai-studio
+     lot T10; desktop.html shows it too); if the file is missing the box says so -->
+<div class="demo" id="demo" role="dialog" aria-modal="true" aria-labelledby="demo-titre" hidden>
+  <div class="demo-boite">
+    <div class="demo-tete">
+      <h2 id="demo-titre">{{index.demoTitle}}</h2>
+      <button class="demo-fermer" id="demo-fermer" type="button" aria-label="{{index.closeVideo}}">
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M7 7l10 10M17 7 7 17"/></svg>
+      </button>
+    </div>
+    <video class="demo-video" id="demo-video" controls playsinline preload="none" data-src="videos/fond-ecran.mp4"></video>
+    <p class="demo-absente" id="demo-absente" hidden>{{index.videoMissing}}</p>
+  </div>
+</div>
+
+<pre class="perf perf-bq" id="perf-bq" hidden></pre>
+
+<script src="scene.js"></script>
+<script src="eclosion.js" defer></script>
+<script src="entete.js" defer></script>
+<script src="boutique.js" defer></script>
+</body>
+</html>

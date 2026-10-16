@@ -12,13 +12,20 @@
 // - The Buy button (bottom) for the bouquet on the pillar; the purchase (Seaport) is not wired yet: it only says "soon".
 // - The shelves under the header (entete.js): the bouquets are the gallery itself; the soliflores and the bouquets sold
 //   open a panel, one at a time, folded by their icon. ?rayon=<name> picks the first one (default: the bouquets).
-// - Far view: a "Voir" button in the middle frame; the price bubble stays hidden. Each frame shows its bouquet's
-//   lifespan: 3 months from its minting, counted down in hours and minutes, then "Fané" (shown still for good).
-// - The close-up: a click on "Voir" or on the bouquet brings the camera closer (the whole scene scaled by one transform so
+// - Far view: an "Open" button in the middle frame; the price bubble stays hidden. Each frame shows its bouquet's
+//   lifespan: 3 months from its minting, counted down in hours and minutes, then "Faded" (shown still for good).
+// - The close-up: a click on "Open" or on the bouquet brings the camera closer (the whole scene scaled by one transform so
 //   the bouquet's box fills the room between the header and the price bubble), and the price bubble rises at the bottom.
 //   A click anywhere on the scene, Escape or a header icon takes it back. The bubble's price: in ETH, then its exact
-//   value in euros at the live rate (CoinGecko, else the configured one), every 5 s. Above it, the lifespan and the
-//   wallpaper demo video; under it, "0 % de royalties à la revente".
+//   value in the visitor's currency (euros in the euro area, US dollars elsewhere; the country is set on <html
+//   data-pays> by _worker.js, else read from the browser's language) at the live rate (CoinGecko, else the configured
+//   one), every 5 s. Above it, the lifespan and the
+//   desktop demo video; under it, "0% royalties on resale".
+// - The purchase sheet: Buy opens it above the button; its box (unticked) asks for immediate delivery and the waiver of
+//   the right of withdrawal (French Consumer Code L221-28, 13°); "Confirm and pay" goes on only once it is ticked, with
+//   the consent's time kept for the receipt (Boutique.recu: a page to download, in the page's language). The payment
+//   itself (Seaport) is not wired yet: it says "soon".
+// - The words: the page's JSON block id="i18n" (build.mjs, langues/<code>.mjs), the bouquets' spoken descriptions too.
 // - ?perf=1: the measures (time to the first growth, frames per second while growing, while the thumbnails come and in
 //   the breeze, the weights transferred), also in window.BOUTIQUE_MESURES. ?debug=1: the pillar's place, the bouquet's box.
 //
@@ -38,6 +45,9 @@
   const scene = $('scene');
   const plane = $('bouquet');
   const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const I18N = JSON.parse($('i18n').textContent);
+  const T = I18N.t;
+  const fill = (str, o) => str.replace(/\{(\w+)\}/g, (m, k) => (k in o ? o[k] : m));
   let CFG = null;
   let chosen = -1;
   const cards = [];
@@ -123,7 +133,7 @@
     place(i);
     const c = cards[i];
     buyFor(c.p);
-    plane.setAttribute('aria-label', `Bouquet « ${c.p.nom} » sur le pilier`);
+    plane.setAttribute('aria-label', fill(T.planeLabel, { name: c.p.nom, alt: altOf(c.p) }));
     showBouquet(c.p);
   }
 
@@ -249,7 +259,7 @@
     near = on;
     scene.classList.toggle('proche', on);
     target.setAttribute('aria-pressed', String(on));
-    target.setAttribute('aria-label', on ? 'Reculer' : 'Approcher le bouquet');
+    target.setAttribute('aria-label', on ? T.stepBack : T.lookCloser);
     $('achat').classList.toggle('loin', !on);
     $('achat').inert = !on;
     if (on) {
@@ -272,28 +282,35 @@
   });
   scene.addEventListener('click', () => near && closeUp(false));
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && near) closeUp(false);
+    if (e.key === 'Escape' && near && sheet.hidden) closeUp(false);
   });
   addEventListener('resize', frameCloseUp);
 
-  // ---------- the price in the bubble: in ETH, then its exact value in euros, every 5 s. The new price comes down from
-  // above and crushes the shown one against the bubble's floor (transforms only).
-  const nEur = new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR', minimumFractionDigits: 2, maximumFractionDigits: 2 });
-  const nInt = new Intl.NumberFormat('fr-FR');
-  // ETH -> EUR: the live rate (CoinGecko, read at load and every 5 min), else the configured one of boutique.json
-  const RATE_URL = 'https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=eur';
+  // ---------- the price in the bubble: in ETH, then its exact value in the visitor's currency, every 5 s. The new price
+  // comes down from above and crushes the shown one against the bubble's floor (transforms only).
+  // The currency: euros in the euro area (French law asks for euros), US dollars elsewhere. The country comes from
+  // _worker.js (Cloudflare reads it from the IP address), else from the browser's language ("fr-FR" -> FR).
+  const EURO = new Set('AT BE CY DE EE ES FI FR GR HR IE IT LT LU LV MT NL PT SI SK AD MC SM VA ME XK GP MQ GF RE YT PM BL MF'.split(' '));
+  const country = (document.documentElement.dataset.pays || (/-([A-Z]{2})\b/.exec(navigator.language || '') || [])[1] || '').toUpperCase();
+  const CUR = EURO.has(country) ? 'eur' : 'usd';
+  const nFiat = new Intl.NumberFormat(I18N.locale, { style: 'currency', currency: CUR.toUpperCase(), minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  const nInt = new Intl.NumberFormat(I18N.locale);
+  const nEth = new Intl.NumberFormat(I18N.locale, { maximumSignificantDigits: 6 });
+  const ethTxt = (p) => `${nEth.format(p.prix.eth)} ETH`;
+  // ETH -> the currency: the live rate (CoinGecko, read at load and every 5 min), else the configured one of boutique.json
+  const RATE_URL = `https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=${CUR}`;
   let rate = 0;
-  const eurOf = (p) => nEur.format(Math.round(p.prix.eth * rate * 100) / 100);
+  const fiatOf = (p) => nFiat.format(Math.round(p.prix.eth * rate * 100) / 100);
   async function liveRate() {
     try {
       const j = await fetch(RATE_URL, { cache: 'no-store' }).then((r) => (r.ok ? r.json() : Promise.reject(r.status)));
-      const r = j && j.ethereum && j.ethereum.eur;
+      const r = j && j.ethereum && j.ethereum[CUR];
       if (!(r > 0)) return;
       rate = r;
-      M.cours = { eurParEth: r, enDirect: true, lu: new Date().toISOString() };
+      M.cours = { devise: CUR, parEth: r, pays: country, enDirect: true, lu: new Date().toISOString() };
       if (curP) {
         labelBuy(curP);
-        if (showEur) setPrice(eurOf(curP), false);
+        if (showFiat) setPrice(fiatOf(curP), false);
       }
       labelFrames();
     } catch (_) {}
@@ -301,7 +318,7 @@
   const priceBox = $('achat-prix');
   const buy = $('acheter');
   let curP = null;
-  let showEur = false;
+  let showFiat = false;
   let flipT = 0;
   function setPrice(text, roll) {
     const old = priceBox.querySelector('.prix-ligne:not(.part)');
@@ -318,13 +335,13 @@
   }
   function priceFor(p) {
     curP = p;
-    showEur = false;
-    setPrice(p.prix.ethTxt, false);
+    showFiat = false;
+    setPrice(ethTxt(p), false);
     clearInterval(flipT);
     flipT = setInterval(() => {
       if (document.hidden || !curP) return;
-      showEur = !showEur;
-      setPrice(showEur ? eurOf(curP) : curP.prix.ethTxt, true);
+      showFiat = !showFiat;
+      setPrice(showFiat ? fiatOf(curP) : ethTxt(curP), true);
     }, 5000);
   }
 
@@ -343,30 +360,32 @@
     const ms = lifeEnd(p) - Date.now();
     if (ms <= 0) return null;
     const m = Math.floor(ms / 60000);
-    return `${nInt.format(Math.floor(m / 60))} h ${String(m % 60).padStart(2, '0')} min`;
+    return fill(T.lifeLeft, { h: nInt.format(Math.floor(m / 60)), m: String(m % 60).padStart(2, '0') });
   }
   const HOURGLASS = '<svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3.5h10M7 20.5h10M8 3.5c0 4 4 5.5 4 8.5s-4 4.5-4 8.5M16 3.5c0 4-4 5.5-4 8.5s4 4.5 4 8.5"/></svg>';
   function showLives() {
     for (const c of cards) {
       const t = lifeTxt(c.p);
-      c.vie.innerHTML = `${HOURGLASS}<span>${t || 'Fané'}</span>`;
+      c.vie.innerHTML = `${HOURGLASS}<span>${t || T.faded}</span>`;
       c.vie.classList.toggle('fane', !t);
     }
     if (curP) {
       const t = lifeTxt(curP);
-      $('achat-vie').innerHTML = `${HOURGLASS}<span>${t ? `Fane dans ${t}` : 'Fané pour toujours'}</span>`;
+      $('achat-vie').innerHTML = `${HOURGLASS}<span>${t ? fill(T.fadesIn, { t }) : T.fadedForGood}</span>`;
     }
   }
   setInterval(showLives, 15000);
 
+  // the words for a bouquet, for screen readers: its flowers and its vase in the page's language (build.mjs)
+  const altOf = (p) => (I18N.alts && I18N.alts[p.id]) || '';
   function labelFrames() {
     for (const c of cards) {
       const t = lifeTxt(c.p);
-      c.b.setAttribute('aria-label', `${c.p.nom}, ${c.p.prix.tiges} tiges, ${c.p.prix.ethTxt}, soit ${eurOf(c.p)}, ${t ? `fane dans ${t}` : 'fané'}`);
+      c.b.setAttribute('aria-label', fill(T.frameLabel, { name: c.p.nom, eth: ethTxt(c.p), fiat: fiatOf(c.p), life: t ? fill(T.fadesInLower, { t }) : T.fadedLower, alt: altOf(c.p) }));
     }
   }
   function labelBuy(p) {
-    buy.setAttribute('aria-label', `Acheter « ${p.nom} », ${p.prix.ethTxt}, soit ${eurOf(p)}`);
+    buy.setAttribute('aria-label', fill(T.buyLabel, { name: p.nom, eth: ethTxt(p), fiat: fiatOf(p) }));
   }
 
   // ---------- the demo video: setting a bouquet as a widget or a wallpaper, on a phone and a computer
@@ -402,26 +421,104 @@
     true,
   );
 
-  // ---------- the Buy button: the bouquet on the pillar, its price; the purchase is not wired yet
-  let soonT = 0;
+  // ---------- the Buy button: the bouquet on the pillar, its price; it opens the purchase sheet
   function buyFor(p) {
     $('achat').hidden = false;
     $('achat').inert = !near;
     priceFor(p);
     labelBuy(p);
     showLives();
+    openSheet(false);
   }
-  buy.addEventListener('click', () => {
-    clearTimeout(soonT);
-    buy.dataset.etat = 'bientot';
-    $('achat-mot').textContent = 'Bientôt';
-    $('achat-etat').textContent = 'L’achat depuis le site arrive bientôt.';
-    soonT = setTimeout(() => {
-      delete buy.dataset.etat;
-      $('achat-mot').textContent = 'Acheter';
-      $('achat-etat').textContent = '';
-    }, 2600);
+
+  // ---------- the purchase sheet: the express waiver of the right of withdrawal, then the payment (not wired yet)
+  const sheet = $('accord');
+  const waiver = $('renonce');
+  const note = $('achat-etat');
+  let consent = null; // { at, bouquet, text, terms }: what the receipt will confirm
+  sheet.noValidate = true;
+  function openSheet(on) {
+    sheet.hidden = !on;
+    buy.setAttribute('aria-expanded', String(on));
+    $('achat').classList.toggle('accord-ouvert', on);
+    if (on) {
+      waiver.checked = false;
+      waiver.removeAttribute('aria-invalid');
+      note.textContent = '';
+      waiver.focus({ preventScroll: true });
+    }
+  }
+  buy.addEventListener('click', () => openSheet(sheet.hidden));
+  $('accord-annuler').addEventListener('click', () => {
+    openSheet(false);
+    buy.focus({ preventScroll: true });
   });
+  waiver.addEventListener('change', () => {
+    if (waiver.checked) {
+      waiver.removeAttribute('aria-invalid');
+      note.textContent = '';
+    }
+  });
+  sheet.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (!waiver.checked) {
+      waiver.setAttribute('aria-invalid', 'true');
+      note.textContent = T.tickFirst;
+      waiver.focus({ preventScroll: true });
+      return;
+    }
+    consent = {
+      at: new Date().toISOString(),
+      bouquet: curP && curP.id,
+      text: waiver.closest('label').textContent.trim(),
+      terms: new URL(`${I18N.p}legal.html#terms`, document.baseURI).href,
+    };
+    M.consentement = consent;
+    // the payment through Seaport comes here; then Boutique.recu({ p, token, tx, buyer }) gives the receipt
+    note.textContent = T.soonMessage;
+  });
+  document.addEventListener(
+    'keydown',
+    (e) => {
+      if (e.key !== 'Escape' || sheet.hidden) return;
+      openSheet(false);
+      buy.focus({ preventScroll: true });
+      e.stopPropagation();
+    },
+    true,
+  );
+
+  // the receipt, on a durable medium (Code de la consommation L221-13): a self-contained page to download, in the
+  // page's language, with the bouquet, its price, the transaction, the seller and the waiver given before paying
+  function receipt({ p, token, tx, buyer, at }) {
+    const R = T.receipt;
+    const e = (x) => String(x == null ? '' : x).replace(/&/g, '&amp;').replace(/</g, '&lt;');
+    const when = new Date(at || Date.now());
+    const rows = [
+      [R.bouquet, `${e(p.nom)} (${e(p.id)})`],
+      [R.token, e(token)],
+      [R.price, `${e(ethTxt(p))} · ${e(R.taxes)}`],
+      [R.date, e(when.toLocaleString(I18N.locale))],
+      [R.buyer, `<code>${e(buyer)}</code>`],
+      [R.transaction, `<code>${e(tx)}</code>`],
+      [R.seller, 'Hadrien Lonjaret (Agent 33), 35 cours Sablon, 63000 Clermont-Ferrand, France · SIREN 853 801 488 · lonjaret.hadrien@proton.me'],
+    ];
+    const c = consent && consent.bouquet === p.id ? consent : null;
+    const html = `<!doctype html><html lang="${I18N.code}"><meta charset="utf-8"><title>${e(R.title)} · ${e(p.nom)}</title>
+<style>body{font:15px/1.5 system-ui,sans-serif;max-width:640px;margin:40px auto;padding:0 16px;color:#1b2733}th{text-align:left;padding:4px 12px 4px 0;vertical-align:top}code{word-break:break-all}</style>
+<h1>${e(R.title)}</h1><table>${rows.map(([k, v]) => `<tr><th>${e(k)}</th><td>${v}</td></tr>`).join('')}</table>
+<p>${e(R.waiver)}${c ? ` (${e(new Date(c.at).toLocaleString(I18N.locale))}: “${e(c.text)}”)` : ''}</p>
+<p>${e(fill(R.terms, { url: c ? c.terms : new URL(`${I18N.p}legal.html#terms`, document.baseURI).href }))}</p></html>`;
+    const url = URL.createObjectURL(new Blob([html], { type: 'text/html' }));
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `receipt-${p.id}-${when.toISOString().slice(0, 10)}.html`;
+    a.textContent = R.download;
+    note.textContent = '';
+    note.append(a);
+    return url;
+  }
+  window.Boutique = { recu: receipt };
 
   // when each decor layer came in (?perf=1)
   const decorTimes = {};
@@ -630,7 +727,7 @@
   const thumbsDone = new Promise((r) => (thumbsDoneRes = r));
   async function start() {
     CFG = await fetch('boutique.json').then((r) => r.json());
-    rate = CFG.cours.eurParEth;
+    rate = CUR === 'eur' ? CFG.cours.eurParEth : CFG.coursUsd.usdParEth;
     liveRate();
     setInterval(liveRate, 5 * 60 * 1000);
     buildFrames();

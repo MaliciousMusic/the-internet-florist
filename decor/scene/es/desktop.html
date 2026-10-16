@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<base href="../">
+<title>Widget de escritorio para Windows: ramo de flores | Belai Bureau</title>
+<meta name="description" content="Belai Bureau, un widget gratis para Windows 10 y 11: pon en tu escritorio el ramo de flores digital que coleccionaste. Colócalo, ajústalo y fíjalo.">
+<link rel="canonical" href="https://belai.garden/es/desktop">
+<link rel="alternate" hreflang="en" href="https://belai.garden/desktop">
+<link rel="alternate" hreflang="fr" href="https://belai.garden/fr/desktop">
+<link rel="alternate" hreflang="es" href="https://belai.garden/es/desktop">
+<link rel="alternate" hreflang="zh" href="https://belai.garden/zh/desktop">
+<link rel="alternate" hreflang="de" href="https://belai.garden/de/desktop">
+<link rel="alternate" hreflang="x-default" href="https://belai.garden/desktop">
+<meta name="theme-color" content="#6c9bcf">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Belai's Garden">
+<meta property="og:title" content="Tu ramo de flores en tu escritorio">
+<meta property="og:description" content="Un widget gratuito para Windows para tu ramo digital: colócalo, ajusta su tamaño y fíjalo.">
+<meta property="og:url" content="https://belai.garden/es/desktop">
+<meta property="og:image" content="https://belai.garden/share.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="El ramo Ronde bleue: lilas, iris, anémonas y jacintos en un jarrón de vidrio esmerilado con bailarinas">
+<meta property="og:locale" content="es_ES">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:video" content="https://belai.garden/videos/fond-ecran.mp4">
+<meta property="og:video:type" content="video/mp4">
+<meta property="og:video:width" content="720">
+<meta property="og:video:height" content="1280">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="scene.css">
+<link rel="stylesheet" href="entete.css">
+<style>
+  /* The desktop page: the shop's still decor behind (as the About page), one frosted-glass panel that scrolls between
+     the header and the footer's pill, with the how-to video and the app to download. */
+  .bureau {
+    position: fixed;
+    top: calc(var(--entete-bas) + 12px);
+    bottom: calc(env(safe-area-inset-bottom) + 40px);
+    left: 50%;
+    z-index: 40;
+    width: min(calc(100vw - 24px), 620px);
+    box-sizing: border-box;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: 22px clamp(18px, 5vw, 34px) 26px;
+    border: 1px solid var(--verre-bord);
+    border-radius: 20px;
+    background: linear-gradient(to bottom, rgb(255 255 255 / 0.22), rgb(16 48 86 / 0.16)), rgb(60 98 140 / 0.28);
+    -webkit-backdrop-filter: blur(20px) saturate(1.1);
+    backdrop-filter: blur(20px) saturate(1.1);
+    color: #fff;
+    font: 400 15px/1.6 var(--texte);
+    transform: translateX(-50%);
+  }
+
+  /* computer: the dock is at the bottom */
+  @media (min-width: 900px) and (min-aspect-ratio: 4/3) {
+    .bureau {
+      top: 24px;
+      bottom: var(--dessus-dock);
+      width: min(calc(100vw - 48px), 880px);
+    }
+  }
+
+  .bureau h1 {
+    margin: 0 0 4px;
+    font: 600 24px/1.2 var(--texte);
+  }
+
+  .bureau .chapeau {
+    margin: 0 0 18px;
+    color: rgb(255 255 255 / 0.9);
+    font-size: 16px;
+  }
+
+  .bureau h2 {
+    margin: 0 0 6px;
+    font: 600 16px/1.3 var(--texte);
+  }
+
+  .bureau p {
+    margin: 0;
+  }
+
+  /* the video beside the steps on a computer, above them on a phone */
+  .bureau-corps {
+    display: grid;
+    gap: 22px;
+    align-items: start;
+  }
+
+  @media (min-width: 760px) {
+    .bureau-corps {
+      grid-template-columns: minmax(0, 300px) 1fr;
+    }
+  }
+
+  .bureau-video {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    max-height: 64vh;
+    aspect-ratio: 9 / 16;
+    margin: 0 auto;
+    border-radius: 16px;
+    background: rgb(16 48 86 / 0.35);
+    box-shadow: 0 10px 30px rgb(10 30 60 / 0.35);
+    object-fit: contain;
+  }
+
+  .bureau ol {
+    margin: 0 0 18px;
+    padding-left: 22px;
+  }
+
+  .bureau li {
+    margin: 0 0 6px;
+  }
+
+  /* the download: one big glass button with its note */
+  .telecharger {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 13px 22px 13px 16px;
+    border: 1px solid rgb(255 255 255 / 0.7);
+    border-radius: 999px;
+    background: linear-gradient(to bottom, rgb(255 255 255 / 0.35), rgb(255 255 255 / 0.12)), #3c8c5a;
+    box-shadow: 0 6px 18px rgb(10 40 25 / 0.35);
+    color: #fff;
+    font: 600 17px/1.2 var(--texte);
+    text-decoration: none;
+    transition: transform 0.15s;
+  }
+
+  .telecharger:hover {
+    transform: translateY(-1px);
+  }
+
+  .telecharger:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 3px;
+  }
+
+  .telecharger svg {
+    flex: none;
+  }
+
+  .telecharger small {
+    display: block;
+    font-weight: 400;
+    font-size: 13px;
+    opacity: 0.9;
+  }
+
+  .note {
+    margin-top: 12px !important;
+    color: rgb(255 255 255 / 0.85);
+    font-size: 13.5px;
+  }
+
+  .bureau a:not(.telecharger) {
+    color: #fff;
+    font-weight: 600;
+    text-underline-offset: 3px;
+  }
+
+  .bureau .retour {
+    display: inline-block;
+    margin-top: 22px;
+  }
+
+  /* the installer's fingerprint: long, breaks anywhere */
+  .empreinte code {
+    font-size: 12px;
+    overflow-wrap: anywhere;
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://belai.garden/desktop#app",
+      "name": "Belai Bureau",
+      "applicationCategory": "DesktopEnhancementApplication",
+      "operatingSystem": "Windows 10, Windows 11",
+      "softwareVersion": "0.1.0",
+      "fileSize": "3 MB",
+      "downloadUrl": "https://belai.garden/telechargements/Belai-Bureau-0.1.0-x64-setup.exe",
+      "description": "Un widget de escritorio gratuito para Windows que muestra en tu escritorio el ramo de flores digital que coleccionaste: colócalo, ajusta su tamaño y fíjalo, delante o detrás de tus ventanas.",
+      "inLanguage": "es",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "publisher": {
+        "@id": "https://belai.garden/#org"
+      },
+      "screenshot": "https://belai.garden/videos/fond-ecran.jpg"
+    },
+    {
+      "@type": "VideoObject",
+      "name": "Cómo poner tu ramo en tu escritorio",
+      "description": "Un tutorial de un minuto: descarga Belai Bureau, vincula tu monedero, pon tu ramo en pantalla, colócalo, ajusta su tamaño y fíjalo; mantén pulsado seis segundos para volver a moverlo.",
+      "thumbnailUrl": "https://belai.garden/videos/fond-ecran.jpg",
+      "contentUrl": "https://belai.garden/videos/fond-ecran.mp4",
+      "uploadDate": "2026-10-16T14:25:16+02:00",
+      "duration": "PT1M1S",
+      "width": 720,
+      "height": 1280
+    },
+    {
+      "@type": "HowTo",
+      "name": "Cómo poner un ramo de flores digital en tu escritorio de Windows",
+      "inLanguage": "es",
+      "totalTime": "PT2M",
+      "tool": [
+        {
+          "@type": "HowToTool",
+          "name": "Belai Bureau (gratis, Windows 10 y 11)"
+        },
+        {
+          "@type": "HowToTool",
+          "name": "Un monedero que tenga un ramo"
+        }
+      ],
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "text": "Descarga e instala Belai Bureau."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "text": "Vincula tu monedero desde el icono de Belai, junto al reloj."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "text": "Elige tu ramo y ponlo en la pantalla: una sola firma, gratuita, sin transacción."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "text": "Colócalo, ajusta su tamaño, ponlo delante o detrás de tus ventanas y fíjalo con ✓."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 5,
+          "text": "Para volver a moverlo, mantén pulsado el clic sobre el ramo durante seis segundos."
+        }
+      ]
+    }
+  ]
+}
+</script>
+<script type="application/json" id="i18n">{"code":"es","locale":"es-ES","page":"desktop","p":"es/","langues":[{"code":"en","name":"English","href":"desktop.html"},{"code":"fr","name":"Français","href":"fr/desktop.html"},{"code":"es","name":"Español","href":"es/desktop.html"},{"code":"zh","name":"中文","href":"zh/desktop.html"},{"code":"de","name":"Deutsch","href":"de/desktop.html"}],"t":{"menu":"Menú","shelves":{"bouquets":"Ramos del día","soliflores":"Floreros solitarios","vendus":"Ramos coleccionados"},"desktopTitle":"En mi escritorio","desktopLabel":"Tu ramo en tu escritorio","openSeaTitle":"Nuestra colección en OpenSea","openSeaLabel":"Nuestra colección en OpenSea (nueva pestaña)","about":"Acerca de","legal":"Legal","closeLegal":"Cerrar el panel legal","footer":"<p>Cada ramo es un objeto de colección digital único (un NFT en Base), con precio en ETH, sin IVA (IVA no aplicable, art. 293 B del Código General de Impuestos francés); el importe en euros o dólares estadounidenses es el mismo precio al cambio actual. Vive tres meses desde su acuñación y luego queda marchito para siempre. La entrega es inmediata, por lo que el derecho de desistimiento no se aplica una vez que confirmas. No cobramos regalías en la reventa (0 %).<\/p><p>Sin rastreo ni publicidad: como mucho una cookie, para recordar el idioma que elegiste.<\/p>","links":{"notice":"Aviso legal","terms":"Condiciones de venta","privacy":"Privacidad","app":"Licencia de Belai Bureau","accessibility":"Accesibilidad","contact":"Contacto"},"credit":"Cambio de ETH por {coingecko}.","language":"Idioma","lookCloser":"Ver el ramo más de cerca","stepBack":"Alejarse","planeLabel":"{name}, sobre el pilar. {alt}","frameLabel":"{name}, {eth}, unos {fiat}, {life}. {alt}","buyLabel":"Comprar «{name}», {eth}, unos {fiat}","lifeLeft":"{h} h {m} min","fadesIn":"Se marchita en {t}","fadesInLower":"se marchita en {t}","faded":"Marchito","fadedLower":"marchito","fadedForGood":"Marchito para siempre","buy":"Comprar","soon":"Pronto","soonMessage":"Pronto podrás comprar desde el sitio.","tickFirst":"Marca primero la casilla: tu ramo se entrega al instante.","receipt":{"title":"Recibo","download":"Descarga tu recibo","bouquet":"Ramo","token":"Token","price":"Precio","date":"Fecha","buyer":"Monedero del comprador","transaction":"Transacción","seller":"Vendedor","waiver":"Antes de pagar, solicitaste la entrega inmediata y reconociste que, por ello, pierdes tu derecho de desistimiento (Código de Consumo francés, artículo L221-28, 13.º).","terms":"Condiciones de venta aceptadas ese día: {url}","taxes":"IVA no aplicable, art. 293 B del Código General de Impuestos francés."}},"alts":{"printemps-a-la-carpe":"Un ramo digital único de 70 tallos dibujados a mano (ranúnculo, iris holandés, tulipán, guisante de olor, jacinto, nazareno y más) en un jarrón de carpa en bronce fundido. Vive tres meses y luego queda marchito para siempre.","ronde-bleue":"Un ramo digital único de 37 tallos dibujados a mano (iris holandés, anémona, lila, membrillero japonés, viburno bola de nieve, tulipán y más) en un jarrón de vidrio esmerilado con bailarinas. Vive tres meses y luego queda marchito para siempre.","printemps-cobalt":"Un ramo digital único de 13 tallos dibujados a mano (tulipán, sauce con amentos, forsitia, liriope, narciso trompeta, ranúnculo y más) en un cuenco cobalto moteado. Vive tres meses y luego queda marchito para siempre.","nuage-sorbet":"Un ramo digital único de 19 tallos dibujados a mano (guisante de olor, sanguisorba, orquídea cymbidium y rosa de jardín) en una copa con pie blanca mate. Vive tres meses y luego queda marchito para siempre.","songe-amethyste":"Un ramo digital único de 31 tallos dibujados a mano (anémona, guisante de olor, jazmín, clavel del poeta, cala, orquídea phalaenopsis y más) en un cilindro de acero pulido espejo. Vive tres meses y luego queda marchito para siempre.","lune-d-orchidees":"Un ramo digital único de 14 tallos dibujados a mano (ciclamen, orquídea phalaenopsis, tulipán y tulipán loro) en un jarrón bulboso con pie color arena. Vive tres meses y luego queda marchito para siempre.","carnaval-de-corail":"Un ramo digital único de 30 tallos dibujados a mano (rusco teñido, fresia, ranúnculo, orquídea phalaenopsis, lisianthus, iris holandés y más) en un jarrón cáliz moteado. Vive tres meses y luego queda marchito para siempre."}}</script>
+</head>
+<body>
+<!--
+  TEMPLATE of build.mjs: the page of every language is written from it ({{ key }} = a text of langues/<code>.mjs).
+  Edit this file, never the generated pages; then run: node decor/scene/build.mjs
+-->
+<!--
+  Your bouquet on your computer: the how-to video (videos/fond-ecran.mp4, made in belai-studio, lot T10) and Belai Bureau
+  to download (telechargements/, a copy of bureau/livrables; its SHA-256 below must follow each new installer). Structured
+  data: the app (SoftwareApplication), the video (VideoObject) and the steps (HowTo). The header and the footer come from entete.js; the decor is
+  the shop's still layers (decor/out/), as on the About page.
+-->
+<div class="scene" id="scene" aria-hidden="true">
+  <div class="monde">
+    <img class="plan" style="--z:0" src="../out/ciel.svg" alt="" decoding="async">
+    <img class="plan" style="--z:3" src="../out/horizon.svg" alt="" decoding="async">
+    <img class="plan" style="--z:4" src="../out/sol-loin.svg" alt="" decoding="async">
+    <img class="plan" style="--z:5" src="../out/sol-milieu.svg" alt="" decoding="async">
+    <img class="plan" style="--z:7" src="../out/sol-pres.svg" alt="" decoding="async">
+  </div>
+</div>
+
+<main class="bureau">
+  <h1>Tu ramo en tu escritorio</h1>
+  <p class="chapeau">Pon el ramo que coleccionaste en el escritorio de tu ordenador con Belai Bureau, un widget gratuito para Windows.</p>
+
+  <div class="bureau-corps">
+    <video class="bureau-video" src="videos/fond-ecran.mp4" poster="videos/fond-ecran.jpg" controls autoplay muted loop playsinline
+      preload="metadata" width="720" height="1280" aria-label="Vídeo tutorial: cómo poner tu ramo en el escritorio, paso a paso (solo música; los pasos están escritos al lado)"></video>
+
+    <div>
+      <h2>En cinco pasos</h2>
+      <ol>
+        <li>Descarga e instala Belai Bureau.</li>
+        <li>Vincula tu monedero desde el icono de Belai, junto al reloj.</li>
+        <li>Elige tu ramo y ponlo en la pantalla: una sola firma, gratuita, sin transacción.</li>
+        <li>Colócalo, ajusta su tamaño, ponlo delante o detrás de tus ventanas y fíjalo con ✓.</li>
+        <li>Para volver a moverlo, mantén pulsado el clic sobre el ramo durante seis segundos.</li>
+      </ol>
+
+      <a class="telecharger" href="telechargements/Belai-Bureau-0.1.0-x64-setup.exe" download>
+        <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7.5 10.5 12 15l4.5-4.5M5 19.5h14"/></svg>
+        <span>Descargar Belai Bureau<small>Windows 10 y 11 · 3 MB · gratis</small></span>
+      </a>
+      <p class="note">Solo el monedero que tiene un ramo puede mostrarlo. La primera vez que la abras, Windows puede avisarte de que aún no conoce la aplicación: «Más información» y después «Ejecutar de todas formas». Por ahora, la aplicación está en francés.</p>
+      <p class="note empreinte">Versión 0.1.0 · SHA-256 <code>276597f33e108c53056fbe27964aac390ecfa8afd28a2f17a50994bcd6cd9558</code>
+        · <a href="es/legal.html#app">Licencia y privacidad</a></p>
+    </div>
+  </div>
+
+  <a class="retour" href="es/index.html">← Volver a los ramos</a>
+</main>
+
+<script src="entete.js" defer></script>
+</body>
+</html>

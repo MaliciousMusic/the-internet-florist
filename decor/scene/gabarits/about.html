@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="{{htmlLang}}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+{{head}}
+<link rel="stylesheet" href="scene.css">
+<link rel="stylesheet" href="entete.css">
+<style>
+  /* The About page: the shop's still decor behind (the same files as the shop page, already in the browser's cache), one
+     frosted-glass panel that scrolls between the header and the footer's pill. */
+  .apropos {
+    position: fixed;
+    top: calc(var(--entete-bas) + 12px);
+    bottom: calc(env(safe-area-inset-bottom) + 40px);
+    left: 50%;
+    z-index: 40;
+    width: min(calc(100vw - 24px), 620px);
+    box-sizing: border-box;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: 22px clamp(18px, 5vw, 34px) 26px;
+    border: 1px solid var(--verre-bord);
+    border-radius: 20px;
+    background: linear-gradient(to bottom, rgb(255 255 255 / 0.22), rgb(16 48 86 / 0.16)), rgb(60 98 140 / 0.28);
+    -webkit-backdrop-filter: blur(20px) saturate(1.1);
+    backdrop-filter: blur(20px) saturate(1.1);
+    color: #fff;
+    font: 400 15px/1.6 var(--texte);
+    transform: translateX(-50%);
+  }
+
+  /* computer: the dock is at the bottom */
+  @media (min-width: 900px) and (min-aspect-ratio: 4/3) {
+    .apropos {
+      top: 24px;
+      bottom: var(--dessus-dock);
+    }
+  }
+
+  .apropos h1 {
+    margin: 0 0 4px;
+    font: 600 24px/1.2 var(--texte);
+  }
+
+  .apropos .chapeau {
+    margin: 0 0 8px;
+    color: rgb(255 255 255 / 0.9);
+    font-size: 16px;
+  }
+
+  .apropos h2 {
+    margin: 20px 0 4px;
+    font: 600 16px/1.3 var(--texte);
+  }
+
+  .apropos p {
+    margin: 0;
+  }
+
+  .apropos a {
+    color: #fff;
+    font-weight: 600;
+    text-underline-offset: 3px;
+  }
+
+  .apropos a:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+  }
+
+  .apropos .retour {
+    display: inline-block;
+    margin-top: 22px;
+  }
+
+  .faq {
+    margin: 0;
+  }
+
+  .faq dt {
+    margin: 12px 0 2px;
+    font-weight: 600;
+  }
+
+  .faq dd {
+    margin: 0;
+  }
+</style>
+{{ld}}
+{{i18n}}
+</head>
+<body>
+<!--
+  TEMPLATE of build.mjs: the page of every language is written from it ({{ key }} = a text of langues/<code>.mjs).
+  Edit this file, never the generated pages; then run: node decor/scene/build.mjs
+-->
+<!--
+  About page of the shop (a draft for the owner to rewrite): what the project is, how a bouquet is made and priced, how
+  it is bought, and the questions people ask (also as FAQPage structured data, for search engines and answer engines). The header and the footer come from entete.js. The decor is the shop's still layers (decor/out/), without
+  the bouquet, the clouds or the foreground.
+-->
+<div class="scene" id="scene" aria-hidden="true">
+  <div class="monde">
+    <img class="plan" style="--z:0" src="../out/ciel.svg" alt="" decoding="async">
+    <img class="plan" style="--z:3" src="../out/horizon.svg" alt="" decoding="async">
+    <img class="plan" style="--z:4" src="../out/sol-loin.svg" alt="" decoding="async">
+    <img class="plan" style="--z:5" src="../out/sol-milieu.svg" alt="" decoding="async">
+    <img class="plan" style="--z:7" src="../out/sol-pres.svg" alt="" decoding="async">
+  </div>
+</div>
+
+<main class="apropos">
+  <h1>{{about.h1}}</h1>
+  <p class="chapeau">{{about.lead}}</p>
+
+  {{about.body}}
+
+  <h2 id="faq">{{about.faqTitle}}</h2>
+  <dl class="faq">
+{{faq}}
+  </dl>
+
+  <a class="retour" href="{{p}}index.html">{{about.back}}</a>
+</main>
+
+<script src="entete.js" defer></script>
+</body>
+</html>

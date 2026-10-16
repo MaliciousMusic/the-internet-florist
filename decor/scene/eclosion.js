@@ -42,7 +42,7 @@
         });
 
   async function ouvre(parent, url, opt = {}) {
-    const base = new URL('.', new URL(url, location.href)).href;
+    const base = new URL('.', new URL(url, document.baseURI)).href;
     const m = await fetch(url).then((r) => {
       if (!r.ok) throw new Error(`manifeste ${r.status}`);
       return r.json();

@@ -245,3 +245,21 @@ l'identité de son éditeur dans ses mentions légales.
   belai-studio, lot T10, version qui sera mise à jour) et le bouton « Télécharger Belai Bureau »
   (`scene/telechargements/`, copie de `bureau/livrables`, 3 Mo, Windows 10 et 11). La même vidéo sert au bouton
   « En fond d'écran » de la boutique.
+- 2026-10-16 (porteur) : site en anglais (« Voir » devient « Open »), prix en ETH puis en dollars (cours CoinGecko,
+  repli `coursUsd` de `boutique.json`). Pages renommées `about.html` et `desktop.html`, nouvelle page `legal.html`
+  (mentions, CGV, confidentialité, licence de Belai Bureau, accessibilité ; brouillon à compléter), pied de page qui la
+  résume. Référencement et moteurs de réponse : métadonnées, JSON-LD, FAQ, `sitemap.xml`, `robots.txt`, `llms.txt`
+  (écrits par `scene/seo.mjs` après chaque `predessin.mjs`), `_headers` de sécurité, icônes, `share.jpg`. Audit et
+  décisions attendues : `decor/AUDIT-LEGAL.md` (identité de l'éditeur, médiateur, euros pour la France, TVA, droits du
+  bouquet, case de renonciation et reçu à l'achat, version française). Nom « Belai's Garden » et domaine
+  `belai.garden` provisoires.
+- 2026-10-16, suite (porteur) : site en cinq langues (anglais à la racine ; `fr/`, `es/`, `zh/`, `de/`), choisie
+  automatiquement par `scene/_worker.js` selon le pays de l'adresse IP (cookie `lang` pour un choix à la main, robots
+  jamais redirigés ; `worker-test.mjs`). Les pages sont écrites par `scene/build.mjs` depuis `scene/gabarits/` et
+  `scene/langues/<code>.mjs` (`seo.mjs` retiré). Prix en ETH TTC puis en euros dans la zone euro, en dollars ailleurs.
+  Mentions légales remplies (EI Hadrien Lonjaret, Agent 33), pas de licence : le bouquet appartient au détenteur du
+  jeton. Volet « Avant de payer » avec la case de renonciation, et reçu à télécharger (`Boutique.recu`), en attente
+  du paiement Seaport. Reste : médiateur de la consommation, activité à déclarer, TVA avec un comptable
+  (`decor/AUDIT-LEGAL.md`).
+- 2026-10-16, suite 2 (porteur) : micro-entreprise en franchise de TVA ; « toutes taxes comprises » devient « TVA non
+  applicable, art. 293 B du CGI » dans les cinq langues, le pied de page et le reçu.

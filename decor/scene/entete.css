@@ -219,10 +219,68 @@
   margin: 0;
 }
 
-.pied-texte .pied-brouillon {
-  margin-top: 2px;
-  font-style: italic;
+.pied-texte p + p {
+  margin-top: 8px;
+}
+
+.pied-texte a {
+  color: #fff;
+  font-weight: 600;
+  text-underline-offset: 3px;
+}
+
+.pied-texte a:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+/* the links to legal.html, two columns */
+.pied-liens {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px 16px;
+  margin: 12px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pied-texte .pied-credit {
+  margin-top: 12px;
   color: rgb(255 255 255 / 0.8);
+  font-size: 12px;
+}
+
+/* read by screen readers and crawlers, not shown */
+.sr-only {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* without scripts: one line on the sky, with the links to the text pages */
+.sans-script {
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  right: 16px;
+  z-index: 60;
+  margin: 0;
+  padding: 12px 16px;
+  border-radius: 14px;
+  background: rgb(16 48 86 / 0.75);
+  color: #fff;
+  font: 400 15px/1.5 var(--texte);
+}
+
+.sans-script a {
+  color: #fff;
+  font-weight: 600;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -243,4 +301,20 @@
   .pied.ouvert {
     z-index: 55;
   }
+}
+
+/* the language switch, in the footer's panel */
+.pied-langues ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 14px;
+  margin: 12px 0 0;
+  padding: 10px 0 0;
+  border-top: 1px solid rgb(255 255 255 / 0.25);
+  list-style: none;
+}
+
+.pied-langues a[aria-current='true'] {
+  text-decoration: none;
+  opacity: 0.7;
 }

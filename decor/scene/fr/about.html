@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<base href="../">
+<title>À propos : bouquets numériques d’après nature | Belai's Garden</title>
+<meta name="description" content="Comment naissent nos bouquets numériques : des fleurs dessinées en code d’après de vraies photos, de vrais vases, le prix des tiges, trois mois de vie.">
+<link rel="canonical" href="https://belai.garden/fr/about">
+<link rel="alternate" hreflang="en" href="https://belai.garden/about">
+<link rel="alternate" hreflang="fr" href="https://belai.garden/fr/about">
+<link rel="alternate" hreflang="es" href="https://belai.garden/es/about">
+<link rel="alternate" hreflang="zh" href="https://belai.garden/zh/about">
+<link rel="alternate" hreflang="de" href="https://belai.garden/de/about">
+<link rel="alternate" hreflang="x-default" href="https://belai.garden/about">
+<meta name="theme-color" content="#6c9bcf">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Belai's Garden">
+<meta property="og:title" content="À propos de nos bouquets numériques">
+<meta property="og:description" content="Chaque fleur dessinée en code d’après de vraies photos. Des bouquets uniques, dans de vrais vases, qui fleurissent puis fanent.">
+<meta property="og:url" content="https://belai.garden/fr/about">
+<meta property="og:image" content="https://belai.garden/share.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Le bouquet Ronde bleue : lilas, iris, anémones et jacinthes dans un vase en verre dépoli aux danseuses">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta property="og:locale:alternate" content="de_DE">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="scene.css">
+<link rel="stylesheet" href="entete.css">
+<style>
+  /* The About page: the shop's still decor behind (the same files as the shop page, already in the browser's cache), one
+     frosted-glass panel that scrolls between the header and the footer's pill. */
+  .apropos {
+    position: fixed;
+    top: calc(var(--entete-bas) + 12px);
+    bottom: calc(env(safe-area-inset-bottom) + 40px);
+    left: 50%;
+    z-index: 40;
+    width: min(calc(100vw - 24px), 620px);
+    box-sizing: border-box;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: 22px clamp(18px, 5vw, 34px) 26px;
+    border: 1px solid var(--verre-bord);
+    border-radius: 20px;
+    background: linear-gradient(to bottom, rgb(255 255 255 / 0.22), rgb(16 48 86 / 0.16)), rgb(60 98 140 / 0.28);
+    -webkit-backdrop-filter: blur(20px) saturate(1.1);
+    backdrop-filter: blur(20px) saturate(1.1);
+    color: #fff;
+    font: 400 15px/1.6 var(--texte);
+    transform: translateX(-50%);
+  }
+
+  /* computer: the dock is at the bottom */
+  @media (min-width: 900px) and (min-aspect-ratio: 4/3) {
+    .apropos {
+      top: 24px;
+      bottom: var(--dessus-dock);
+    }
+  }
+
+  .apropos h1 {
+    margin: 0 0 4px;
+    font: 600 24px/1.2 var(--texte);
+  }
+
+  .apropos .chapeau {
+    margin: 0 0 8px;
+    color: rgb(255 255 255 / 0.9);
+    font-size: 16px;
+  }
+
+  .apropos h2 {
+    margin: 20px 0 4px;
+    font: 600 16px/1.3 var(--texte);
+  }
+
+  .apropos p {
+    margin: 0;
+  }
+
+  .apropos a {
+    color: #fff;
+    font-weight: 600;
+    text-underline-offset: 3px;
+  }
+
+  .apropos a:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+  }
+
+  .apropos .retour {
+    display: inline-block;
+    margin-top: 22px;
+  }
+
+  .faq {
+    margin: 0;
+  }
+
+  .faq dt {
+    margin: 12px 0 2px;
+    font-weight: 600;
+  }
+
+  .faq dd {
+    margin: 0;
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "AboutPage",
+      "@id": "https://belai.garden/fr/about",
+      "url": "https://belai.garden/fr/about",
+      "name": "À propos de nos bouquets numériques",
+      "inLanguage": "fr",
+      "isPartOf": {
+        "@id": "https://belai.garden/#site"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "inLanguage": "fr",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Qu’est-ce qu’un bouquet numérique ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Un bouquet de fleurs dessiné en graphisme vectoriel d’après de vraies photos, tige à tige, dans un vrai vase. Il fleurit à l’écran, se balance dans la brise et fane au bout de trois mois. Chacun est unique et se collectionne sous la forme d’un NFT sur Base."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Puis-je mettre un bouquet de fleurs sur le bureau de mon ordinateur ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui. Téléchargez Belai Bureau (gratuit, Windows 10 et 11), liez votre portefeuille, et le bouquet que vous possédez se pose sur votre bureau en widget : vous le placez, ajustez sa taille, le fixez, devant ou derrière vos fenêtres."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Comment le prix d’un bouquet est-il fixé ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "À la somme de ce que coûteraient ses tiges chez un fleuriste en France, convertie en ETH, sans TVA (TVA non applicable, art. 293 B du CGI). Le vase est offert. Le montant affiché en euros ou en dollars américains est indicatif, au cours du moment."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Que se passe-t-il au bout de trois mois ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Le bouquet fane et reste fané, immobile, pour de bon. Il reste à vous."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Prenez-vous des royalties à la revente ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Non : 0 %. Seuls s’appliquent les frais propres à la place de marché et au réseau."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Qui peut afficher un bouquet ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Belai Bureau n’affiche qu’un bouquet détenu par le portefeuille que vous liez, après une signature gratuite (sans transaction)."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<script type="application/json" id="i18n">{"code":"fr","locale":"fr-FR","page":"about","p":"fr/","langues":[{"code":"en","name":"English","href":"about.html"},{"code":"fr","name":"Français","href":"fr/about.html"},{"code":"es","name":"Español","href":"es/about.html"},{"code":"zh","name":"中文","href":"zh/about.html"},{"code":"de","name":"Deutsch","href":"de/about.html"}],"t":{"menu":"Menu","shelves":{"bouquets":"Bouquets du jour","soliflores":"Soliflores","vendus":"Bouquets collectionnés"},"desktopTitle":"Sur mon bureau","desktopLabel":"Votre bouquet sur votre bureau","openSeaTitle":"Notre collection sur OpenSea","openSeaLabel":"Notre collection sur OpenSea (nouvel onglet)","about":"À propos","legal":"Mentions légales","closeLegal":"Fermer le panneau des mentions légales","footer":"<p>Chaque bouquet est un objet de collection numérique unique (un NFT sur Base), dont le prix est fixé en ETH, sans TVA (TVA non applicable, art. 293 B du CGI) ; le montant en euros ou en dollars américains correspond au même prix au cours du moment. Il vit trois mois à compter de sa frappe, puis reste fané pour de bon. La livraison est immédiate : le droit de rétractation ne s’applique donc plus une fois votre achat confirmé. Nous ne percevons pas de royalties sur la revente (0 %).<\/p><p>Aucun pistage, aucune publicité : un cookie au plus, pour retenir la langue que vous avez choisie.<\/p>","links":{"notice":"Mentions légales","terms":"Conditions générales de vente","privacy":"Confidentialité","app":"Licence de Belai Bureau","accessibility":"Accessibilité","contact":"Contact"},"credit":"Cours de l’ETH fourni par {coingecko}.","language":"Langue","lookCloser":"Regarder le bouquet de plus près","stepBack":"Prendre du recul","planeLabel":"{name}, sur le pilier. {alt}","frameLabel":"{name}, {eth}, environ {fiat}, {life}. {alt}","buyLabel":"Acheter « {name} », {eth}, environ {fiat}","lifeLeft":"{h} h {m} min","fadesIn":"Fane dans {t}","fadesInLower":"fane dans {t}","faded":"Fané","fadedLower":"fané","fadedForGood":"Fané pour toujours","buy":"Acheter","soon":"Bientôt","soonMessage":"L’achat depuis le site arrive bientôt.","tickFirst":"Cochez d’abord la case : votre bouquet est livré immédiatement.","receipt":{"title":"Reçu","download":"Télécharger votre reçu","bouquet":"Bouquet","token":"Jeton","price":"Prix","date":"Date","buyer":"Portefeuille de l’acheteur","transaction":"Transaction","seller":"Vendeur","waiver":"Avant de payer, vous avez demandé la livraison immédiate et reconnu renoncer ainsi à votre droit de rétractation (Code de la consommation, article L221-28, 13°).","terms":"Conditions générales de vente acceptées à cette date : {url}","taxes":"TVA non applicable, art. 293 B du CGI."}},"alts":{"printemps-a-la-carpe":"Un bouquet numérique unique de 70 tiges dessinées à la main (renoncule, iris de Hollande, tulipe, pois de senteur, jacinthe, muscari et autres) dans un vase carpe en bronze coulé. Il vit trois mois, puis reste fané pour de bon.","ronde-bleue":"Un bouquet numérique unique de 37 tiges dessinées à la main (iris de Hollande, anémone, lilas, cognassier du Japon, viorne boule-de-neige, tulipe et autres) dans un vase en verre dépoli aux danseuses. Il vit trois mois, puis reste fané pour de bon.","printemps-cobalt":"Un bouquet numérique unique de 13 tiges dessinées à la main (tulipe, chatons de saule, forsythia, liriope, narcisse trompette, renoncule et autres) dans une coupe cobalt mouchetée. Il vit trois mois, puis reste fané pour de bon.","nuage-sorbet":"Un bouquet numérique unique de 19 tiges dessinées à la main (pois de senteur, sanguisorbe, orchidée cymbidium et rose de jardin) dans une coupe sur pied blanche mate. Il vit trois mois, puis reste fané pour de bon.","songe-amethyste":"Un bouquet numérique unique de 31 tiges dessinées à la main (anémone, pois de senteur, jasmin, œillet de poète, arum, orchidée phalaenopsis et autres) dans un cylindre en inox poli miroir. Il vit trois mois, puis reste fané pour de bon.","lune-d-orchidees":"Un bouquet numérique unique de 14 tiges dessinées à la main (cyclamen, orchidée phalaenopsis, tulipe et tulipe perroquet) dans un vase boule sur pied couleur sable. Il vit trois mois, puis reste fané pour de bon.","carnaval-de-corail":"Un bouquet numérique unique de 30 tiges dessinées à la main (ruscus teinté, freesia, renoncule, orchidée phalaenopsis, lisianthus, iris de Hollande et autres) dans un vase calice moucheté. Il vit trois mois, puis reste fané pour de bon."}}</script>
+</head>
+<body>
+<!--
+  TEMPLATE of build.mjs: the page of every language is written from it ({{ key }} = a text of langues/<code>.mjs).
+  Edit this file, never the generated pages; then run: node decor/scene/build.mjs
+-->
+<!--
+  About page of the shop (a draft for the owner to rewrite): what the project is, how a bouquet is made and priced, how
+  it is bought, and the questions people ask (also as FAQPage structured data, for search engines and answer engines). The header and the footer come from entete.js. The decor is the shop's still layers (decor/out/), without
+  the bouquet, the clouds or the foreground.
+-->
+<div class="scene" id="scene" aria-hidden="true">
+  <div class="monde">
+    <img class="plan" style="--z:0" src="../out/ciel.svg" alt="" decoding="async">
+    <img class="plan" style="--z:3" src="../out/horizon.svg" alt="" decoding="async">
+    <img class="plan" style="--z:4" src="../out/sol-loin.svg" alt="" decoding="async">
+    <img class="plan" style="--z:5" src="../out/sol-milieu.svg" alt="" decoding="async">
+    <img class="plan" style="--z:7" src="../out/sol-pres.svg" alt="" decoding="async">
+  </div>
+</div>
+
+<main class="apropos">
+  <h1>À propos</h1>
+  <p class="chapeau">Des bouquets dessinés fleur par fleur, qui s’épanouissent sous vos yeux.</p>
+
+  <h2>Des fleurs dessinées d’après nature</h2>
+  <p>Chaque fleur de ce jardin est dessinée en code, trait par trait, d’après de vraies photos : la forme des pétales, leurs
+    couleurs mesurées sur chaque variété, les boutons, la fleur ouverte et la fleur fanée. Plus de cinq cents espèces
+    poussent déjà dans le jardin.</p>
+
+  <h2>Des bouquets uniques chaque jour</h2>
+  <p>Chaque jour, de nouveaux bouquets sont composés, chacun dans un vrai vase, comme la carpe en bronze. Chaque bouquet est
+    unique : la place de chaque tige, de chaque fleur et de chaque feuille ne se retrouve dans aucun autre.</p>
+
+  <h2>Un bouquet vivant</h2>
+  <p>Un bouquet vit trois mois à compter de sa frappe : un compte à rebours, en heures et en minutes, indique le temps
+    qu’il lui reste. Il reste ensuite fané et immobile, pour de bon.</p>
+
+  <h2>Le prix des vraies tiges</h2>
+  <p>Le prix d’un bouquet est la somme de ce que coûtent ses tiges chez un fleuriste en France. Le vase est offert. À la
+    revente, nous ne prenons rien : 0 % de royalties.</p>
+
+  <h2>Collectionner un bouquet</h2>
+  <p>Les bouquets sont des NFT sur le réseau Base, proposés sur notre page OpenSea. Vous les réglerez ici même, depuis
+    votre portefeuille, sans quitter le site.</p>
+
+  <h2>Sur votre bureau</h2>
+  <p>Avec <a href="fr/desktop.html">Belai Bureau</a>, un widget gratuit pour Windows, le bouquet que vous avez collectionné
+    trône sur le bureau de votre ordinateur, à la taille de votre choix, devant ou derrière vos fenêtres.</p>
+
+  <h2>Faire grandir le jardin</h2>
+  <p>Chaque bouquet collectionné aide le jardin à grandir : de nouvelles espèces, de nouveaux vases, de nouveaux bouquets.</p>
+
+  <h2 id="faq">Questions</h2>
+  <dl class="faq">
+    <dt>Qu’est-ce qu’un bouquet numérique ?</dt>
+    <dd>Un bouquet de fleurs dessiné en graphisme vectoriel d’après de vraies photos, tige à tige, dans un vrai vase. Il fleurit à l’écran, se balance dans la brise et fane au bout de trois mois. Chacun est unique et se collectionne sous la forme d’un NFT sur Base.</dd>
+    <dt>Puis-je mettre un bouquet de fleurs sur le bureau de mon ordinateur ?</dt>
+    <dd>Oui. Téléchargez Belai Bureau (gratuit, Windows 10 et 11), liez votre portefeuille, et le bouquet que vous possédez se pose sur votre bureau en widget : vous le placez, ajustez sa taille, le fixez, devant ou derrière vos fenêtres.</dd>
+    <dt>Comment le prix d’un bouquet est-il fixé ?</dt>
+    <dd>À la somme de ce que coûteraient ses tiges chez un fleuriste en France, convertie en ETH, sans TVA (TVA non applicable, art. 293 B du CGI). Le vase est offert. Le montant affiché en euros ou en dollars américains est indicatif, au cours du moment.</dd>
+    <dt>Que se passe-t-il au bout de trois mois ?</dt>
+    <dd>Le bouquet fane et reste fané, immobile, pour de bon. Il reste à vous.</dd>
+    <dt>Prenez-vous des royalties à la revente ?</dt>
+    <dd>Non : 0 %. Seuls s’appliquent les frais propres à la place de marché et au réseau.</dd>
+    <dt>Qui peut afficher un bouquet ?</dt>
+    <dd>Belai Bureau n’affiche qu’un bouquet détenu par le portefeuille que vous liez, après une signature gratuite (sans transaction).</dd>
+  </dl>
+
+  <a class="retour" href="fr/index.html">← Retour aux bouquets</a>
+</main>
+
+<script src="entete.js" defer></script>
+</body>
+</html>

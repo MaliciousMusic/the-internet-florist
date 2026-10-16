@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<base href="../">
+<title>Mentions légales, CGV et confidentialité | Belai's Garden</title>
+<meta name="description" content="Mentions légales, conditions générales de vente des bouquets numériques, politique de confidentialité, licence Belai Bureau et accessibilité de Belai's Garden.">
+<link rel="canonical" href="https://belai.garden/fr/legal">
+<link rel="alternate" hreflang="en" href="https://belai.garden/legal">
+<link rel="alternate" hreflang="fr" href="https://belai.garden/fr/legal">
+<link rel="alternate" hreflang="es" href="https://belai.garden/es/legal">
+<link rel="alternate" hreflang="zh" href="https://belai.garden/zh/legal">
+<link rel="alternate" hreflang="de" href="https://belai.garden/de/legal">
+<link rel="alternate" hreflang="x-default" href="https://belai.garden/legal">
+<meta name="theme-color" content="#6c9bcf">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Belai's Garden">
+<meta property="og:title" content="Mentions légales, CGV et confidentialité">
+<meta property="og:description" content="Qui nous sommes, comment un bouquet est vendu, ce que nous faisons des données.">
+<meta property="og:url" content="https://belai.garden/fr/legal">
+<meta property="og:image" content="https://belai.garden/share.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Le bouquet Ronde bleue : lilas, iris, anémones et jacinthes dans un vase en verre dépoli aux danseuses">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta property="og:locale:alternate" content="de_DE">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="scene.css">
+<link rel="stylesheet" href="entete.css">
+<style>
+  /* The legal page: the shop's still decor behind (as the About page), one frosted-glass panel that scrolls between the
+     header and the footer's pill, with a table of contents and one section per text. */
+  .legal {
+    position: fixed;
+    top: calc(var(--entete-bas) + 12px);
+    bottom: calc(env(safe-area-inset-bottom) + 40px);
+    left: 50%;
+    z-index: 40;
+    width: min(calc(100vw - 24px), 720px);
+    box-sizing: border-box;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: 22px clamp(18px, 5vw, 34px) 26px;
+    border: 1px solid var(--verre-bord);
+    border-radius: 20px;
+    background: linear-gradient(to bottom, rgb(255 255 255 / 0.22), rgb(16 48 86 / 0.16)), rgb(60 98 140 / 0.28);
+    -webkit-backdrop-filter: blur(20px) saturate(1.1);
+    backdrop-filter: blur(20px) saturate(1.1);
+    color: #fff;
+    font: 400 15px/1.6 var(--texte);
+    transform: translateX(-50%);
+    scroll-padding-top: 12px;
+  }
+
+  /* computer: the dock is at the bottom */
+  @media (min-width: 900px) and (min-aspect-ratio: 4/3) {
+    .legal {
+      top: 24px;
+      bottom: var(--dessus-dock);
+    }
+  }
+
+  .legal h1 {
+    margin: 0 0 4px;
+    font: 600 24px/1.2 var(--texte);
+  }
+
+  .legal h2 {
+    margin: 28px 0 4px;
+    font: 600 19px/1.3 var(--texte);
+  }
+
+  .legal h3 {
+    margin: 16px 0 2px;
+    font: 600 15px/1.3 var(--texte);
+  }
+
+  .legal p,
+  .legal ul {
+    margin: 0 0 8px;
+  }
+
+  .legal ul {
+    padding-left: 20px;
+  }
+
+  .legal a {
+    color: #fff;
+    font-weight: 600;
+    text-underline-offset: 3px;
+  }
+
+  .legal a:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+  }
+
+  /* what the owner still has to fill in before launch */
+  .a-remplir {
+    padding: 0 3px;
+    border-radius: 4px;
+    background: rgb(255 214 102 / 0.28);
+  }
+
+  .brouillon {
+    padding: 8px 12px;
+    border-radius: 10px;
+    background: rgb(255 214 102 / 0.18);
+    font-style: italic;
+  }
+
+  .sommaire {
+    columns: 2 180px;
+  }
+
+  .maj {
+    color: rgb(255 255 255 / 0.85);
+    font-size: 13.5px;
+  }
+
+  .legal .retour {
+    display: inline-block;
+    margin-top: 22px;
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://belai.garden/fr/legal",
+  "url": "https://belai.garden/fr/legal",
+  "name": "Mentions légales, CGV et confidentialité",
+  "inLanguage": "fr",
+  "isPartOf": {
+    "@id": "https://belai.garden/#site"
+  },
+  "dateModified": "2026-10-16"
+}
+</script>
+<script type="application/json" id="i18n">{"code":"fr","locale":"fr-FR","page":"legal","p":"fr/","langues":[{"code":"en","name":"English","href":"legal.html"},{"code":"fr","name":"Français","href":"fr/legal.html"},{"code":"es","name":"Español","href":"es/legal.html"},{"code":"zh","name":"中文","href":"zh/legal.html"},{"code":"de","name":"Deutsch","href":"de/legal.html"}],"t":{"menu":"Menu","shelves":{"bouquets":"Bouquets du jour","soliflores":"Soliflores","vendus":"Bouquets collectionnés"},"desktopTitle":"Sur mon bureau","desktopLabel":"Votre bouquet sur votre bureau","openSeaTitle":"Notre collection sur OpenSea","openSeaLabel":"Notre collection sur OpenSea (nouvel onglet)","about":"À propos","legal":"Mentions légales","closeLegal":"Fermer le panneau des mentions légales","footer":"<p>Chaque bouquet est un objet de collection numérique unique (un NFT sur Base), dont le prix est fixé en ETH, sans TVA (TVA non applicable, art. 293 B du CGI) ; le montant en euros ou en dollars américains correspond au même prix au cours du moment. Il vit trois mois à compter de sa frappe, puis reste fané pour de bon. La livraison est immédiate : le droit de rétractation ne s’applique donc plus une fois votre achat confirmé. Nous ne percevons pas de royalties sur la revente (0 %).<\/p><p>Aucun pistage, aucune publicité : un cookie au plus, pour retenir la langue que vous avez choisie.<\/p>","links":{"notice":"Mentions légales","terms":"Conditions générales de vente","privacy":"Confidentialité","app":"Licence de Belai Bureau","accessibility":"Accessibilité","contact":"Contact"},"credit":"Cours de l’ETH fourni par {coingecko}.","language":"Langue","lookCloser":"Regarder le bouquet de plus près","stepBack":"Prendre du recul","planeLabel":"{name}, sur le pilier. {alt}","frameLabel":"{name}, {eth}, environ {fiat}, {life}. {alt}","buyLabel":"Acheter « {name} », {eth}, environ {fiat}","lifeLeft":"{h} h {m} min","fadesIn":"Fane dans {t}","fadesInLower":"fane dans {t}","faded":"Fané","fadedLower":"fané","fadedForGood":"Fané pour toujours","buy":"Acheter","soon":"Bientôt","soonMessage":"L’achat depuis le site arrive bientôt.","tickFirst":"Cochez d’abord la case : votre bouquet est livré immédiatement.","receipt":{"title":"Reçu","download":"Télécharger votre reçu","bouquet":"Bouquet","token":"Jeton","price":"Prix","date":"Date","buyer":"Portefeuille de l’acheteur","transaction":"Transaction","seller":"Vendeur","waiver":"Avant de payer, vous avez demandé la livraison immédiate et reconnu renoncer ainsi à votre droit de rétractation (Code de la consommation, article L221-28, 13°).","terms":"Conditions générales de vente acceptées à cette date : {url}","taxes":"TVA non applicable, art. 293 B du CGI."}},"alts":{"printemps-a-la-carpe":"Un bouquet numérique unique de 70 tiges dessinées à la main (renoncule, iris de Hollande, tulipe, pois de senteur, jacinthe, muscari et autres) dans un vase carpe en bronze coulé. Il vit trois mois, puis reste fané pour de bon.","ronde-bleue":"Un bouquet numérique unique de 37 tiges dessinées à la main (iris de Hollande, anémone, lilas, cognassier du Japon, viorne boule-de-neige, tulipe et autres) dans un vase en verre dépoli aux danseuses. Il vit trois mois, puis reste fané pour de bon.","printemps-cobalt":"Un bouquet numérique unique de 13 tiges dessinées à la main (tulipe, chatons de saule, forsythia, liriope, narcisse trompette, renoncule et autres) dans une coupe cobalt mouchetée. Il vit trois mois, puis reste fané pour de bon.","nuage-sorbet":"Un bouquet numérique unique de 19 tiges dessinées à la main (pois de senteur, sanguisorbe, orchidée cymbidium et rose de jardin) dans une coupe sur pied blanche mate. Il vit trois mois, puis reste fané pour de bon.","songe-amethyste":"Un bouquet numérique unique de 31 tiges dessinées à la main (anémone, pois de senteur, jasmin, œillet de poète, arum, orchidée phalaenopsis et autres) dans un cylindre en inox poli miroir. Il vit trois mois, puis reste fané pour de bon.","lune-d-orchidees":"Un bouquet numérique unique de 14 tiges dessinées à la main (cyclamen, orchidée phalaenopsis, tulipe et tulipe perroquet) dans un vase boule sur pied couleur sable. Il vit trois mois, puis reste fané pour de bon.","carnaval-de-corail":"Un bouquet numérique unique de 30 tiges dessinées à la main (ruscus teinté, freesia, renoncule, orchidée phalaenopsis, lisianthus, iris de Hollande et autres) dans un vase calice moucheté. Il vit trois mois, puis reste fané pour de bon."}}</script>
+</head>
+<body>
+<!--
+  TEMPLATE of build.mjs: the page of every language is written from it ({{ key }} = a text of langues/<code>.mjs).
+  Edit this file, never the generated pages; then run: node decor/scene/build.mjs
+-->
+<!--
+  The legal texts of the shop, in one page with anchors (#notice, #terms, #privacy, #app, #ip, #accessibility, #contact),
+  linked from the footer of entete.js, written from decor/AUDIT-LEGAL.md: the parts marked .a-remplir are still the
+  owner's to fill in, and the whole should be read by a lawyer before launch. The French version prevails. The decor is the shop's still layers.
+-->
+<div class="scene" id="scene" aria-hidden="true">
+  <div class="monde">
+    <img class="plan" style="--z:0" src="../out/ciel.svg" alt="" decoding="async">
+    <img class="plan" style="--z:3" src="../out/horizon.svg" alt="" decoding="async">
+    <img class="plan" style="--z:4" src="../out/sol-loin.svg" alt="" decoding="async">
+    <img class="plan" style="--z:5" src="../out/sol-milieu.svg" alt="" decoding="async">
+    <img class="plan" style="--z:7" src="../out/sol-pres.svg" alt="" decoding="async">
+  </div>
+</div>
+
+<main class="legal">
+  <h1>Mentions légales</h1>
+  <p class="maj">Dernière mise à jour : 16 octobre 2026</p>
+
+  <nav aria-label="Sur cette page">
+    <ul class="sommaire">
+      <li><a href="fr/legal.html#notice">Mentions légales</a></li>
+      <li><a href="fr/legal.html#terms">Conditions générales de vente</a></li>
+      <li><a href="fr/legal.html#privacy">Politique de confidentialité</a></li>
+      <li><a href="fr/legal.html#app">Licence de Belai Bureau</a></li>
+      <li><a href="fr/legal.html#ip">Propriété intellectuelle</a></li>
+      <li><a href="fr/legal.html#accessibility">Accessibilité</a></li>
+      <li><a href="fr/legal.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section id="notice" aria-labelledby="t-notice">
+    <h2 id="t-notice">Mentions légales</h2>
+    <h3>Éditeur</h3>
+    <p>Hadrien Lonjaret, entrepreneur individuel, exerçant sous le nom commercial Agent 33<br>
+      35 cours Sablon, 63000 Clermont-Ferrand, France<br>
+      Courriel : <a href="mailto:lonjaret.hadrien@proton.me">lonjaret.hadrien@proton.me</a> · Téléphone : +33 6 18 55 81 22<br>
+      SIREN 853 801 488 · RCS Clermont-Ferrand · N° de TVA intracommunautaire FR69853801488</p>
+    <h3>Directeur de la publication</h3>
+    <p>Hadrien Lonjaret</p>
+    <h3>Hébergeur</h3>
+    <p>Cloudflare, Inc., 101 Townsend Street, San Francisco, CA 94107, États-Unis · +1 650 319 8930 ·
+      cloudflare.com</p>
+  </section>
+
+  <section id="terms" aria-labelledby="t-terms">
+    <h2 id="t-terms">Conditions générales de vente</h2>
+
+    <h3>1. Parties et champ d’application</h3>
+    <p>Les présentes conditions générales de vente s’appliquent à tout bouquet vendu sur ce site par l’éditeur désigné
+      dans les mentions légales (« nous ») à toute personne majeure (« vous »). Le paiement d’un bouquet emporte
+      acceptation des présentes conditions, dans leur version en vigueur au jour de l’achat. Elles existent en plusieurs
+      langues ; la version française prévaut.</p>
+
+    <h3>2. Objet : le bouquet</h3>
+    <p>Un bouquet est une œuvre numérique unique : des fleurs dessinées en graphisme vectoriel, dans un vase, enregistrées
+      sous la forme d’un jeton non fongible (NFT) sur le réseau Base. La page de chaque bouquet indique, avant l’achat,
+      son nom, son vase, son nombre de tiges et son prix.</p>
+    <p>Un bouquet vit trois mois à compter de sa frappe : il fleurit et se balance, et un compte à rebours indique le
+      temps restant. Il fane ensuite et demeure définitivement fané et immobile. Cette évolution fait partie de l’œuvre
+      et ne constitue pas un défaut.</p>
+    <p>Un bouquet est un objet de collection. Il ne confère aucun droit à un revenu ni à une quelconque part.</p>
+
+    <h3>3. Propriété du bouquet</h3>
+    <p>Détenteur de son jeton, vous êtes propriétaire du bouquet : vous pouvez l’exposer où bon vous semble, le conserver,
+      l’offrir ou le revendre, sans autre formalité. Comme pour un tableau, l’achat n’emporte pas cession des droits
+      d’auteur sur le dessin : la fabrication et la vente de copies ou de produits dérivés n’y sont pas comprises.</p>
+
+    <h3>4. Prix</h3>
+    <p>Le prix est fixé en ETH, sans TVA (TVA non applicable, art. 293 B du CGI), et affiché sur le bouquet avant l’achat. Le montant indiqué à côté
+      en euros ou en dollars américains correspond au même prix au cours du moment, relevé auprès de CoinGecko ; vous
+      payez le prix en ETH. Les frais du réseau Base (« gas ») sont ajoutés par votre portefeuille et versés au réseau,
+      et non à nous.</p>
+
+    <h3>5. Commande et paiement</h3>
+    <p>Vous payez depuis votre propre portefeuille, sur ce site, par l’intermédiaire de Seaport, le protocole de la place
+      de marché OpenSea où nos bouquets sont proposés. Avant de payer, vous cochez une case pour demander la livraison
+      immédiate (voir l’article 7), puis vous confirmez ; votre portefeuille affiche alors le montant exact, et la
+      confirmation dans votre portefeuille vaut commande avec obligation de paiement. Une transaction confirmée sur le
+      réseau ne peut pas être annulée.</p>
+    <p>Vous êtes responsable de votre portefeuille, de ses clés et de l’adresse avec laquelle vous achetez. Nous ne
+      détenons jamais vos clés ni vos fonds.</p>
+
+    <h3>6. Livraison et reçu</h3>
+    <p>Le bouquet est transféré dans votre portefeuille au cours de la même transaction, dès sa confirmation par le
+      réseau. Le site vous remet ensuite un reçu à télécharger, qui confirme l’achat, son prix, la transaction et votre
+      demande de livraison immédiate. L’inscription de la transaction sur le réseau Base constitue également une preuve
+      de l’achat.</p>
+
+    <h3>7. Droit de rétractation</h3>
+    <p>Si vous êtes un consommateur résidant dans l’Union européenne, vous disposez en principe d’un délai de 14 jours
+      pour exercer votre droit de rétractation à la suite d’un achat à distance. Un bouquet est un contenu numérique
+      non fourni sur un support matériel et livré immédiatement : avant de payer, vous demandez expressément sa
+      livraison immédiate et reconnaissez renoncer ainsi à votre droit de rétractation (Code de la consommation,
+      article L221-28, 13° ; Directive 2011/83/UE, article 16(m)).</p>
+
+    <h3>8. Conformité</h3>
+    <p>Si vous êtes un consommateur, vous bénéficiez de la garantie légale de conformité applicable aux contenus
+      numériques (Code de la consommation, articles L224-25-1 et suivants) : si le bouquet reçu ne correspond pas à sa
+      description, écrivez-nous et nous le mettrons en conformité ou, à défaut, nous vous rembourserons.</p>
+
+    <h3>9. Revente</h3>
+    <p>Nous ne percevons aucune redevance (royalties) sur la revente (0 %). Seuls s’appliquent les frais propres à la
+      place de marché et au réseau. Les prix des bouquets à la revente sont fixés librement par leurs détenteurs ; nous
+      ne prenons aucun engagement à leur sujet.</p>
+
+    <h3>10. Responsabilité</h3>
+    <p>Le réseau Base, les portefeuilles et la place de marché OpenSea sont exploités par des tiers. Nous ne sommes pas
+      responsables de leurs interruptions, de leurs frais ou de leurs modifications, ni d’une perte due à une clé
+      égarée ou à une erreur d’adresse. Aucune stipulation des présentes conditions ne limite les droits que les
+      consommateurs tiennent de la loi.</p>
+
+    <h3>11. Réclamations et médiation</h3>
+    <p>Écrivez-nous d’abord (voir <a href="fr/legal.html#contact">Contact</a>) ; nous répondons sous 30 jours. À défaut de
+      solution, le consommateur peut soumettre gratuitement le litige à notre médiateur de la consommation :
+      <span class="a-remplir">[nom, site internet et adresse postale du médiateur]</span>.</p>
+
+    <h3>12. Droit applicable</h3>
+    <p>Les présentes conditions sont soumises au droit français. Le consommateur conserve la protection que lui assurent
+      les dispositions impératives du droit du pays où il réside, et peut porter un litige devant les juridictions de
+      ce pays ou de la France.</p>
+  </section>
+
+  <section id="privacy" aria-labelledby="t-privacy">
+    <h2 id="t-privacy">Politique de confidentialité</h2>
+    <p>Le responsable du traitement est l’éditeur désigné dans les <a href="fr/legal.html#notice">mentions légales</a>. Nous
+      collectons le moins de données possible, et aucune pour vous profiler.</p>
+    <h3>Données traitées, finalités et bases légales</h3>
+    <ul>
+      <li><strong>Données de connexion</strong> (adresse IP, navigateur, pages demandées) : conservées par notre hébergeur
+        Cloudflare dans ses journaux techniques, pour fournir le site et le protéger contre les abus. Base légale : notre
+        intérêt légitime à disposer d’un site fonctionnel et sécurisé.</li>
+      <li><strong>Votre pays</strong>, déduit par Cloudflare de votre adresse IP à chaque visite, pour afficher le site
+        dans votre langue et le prix dans votre devise. Il est utilisé sur le moment et n’est jamais conservé. Base
+        légale : notre intérêt légitime à proposer un site que vous pouvez lire.</li>
+      <li><strong>Le cours de l’ETH :</strong> pour afficher le montant dans votre devise, votre navigateur demande le
+        cours du moment à CoinGecko (api.coingecko.com) ; CoinGecko voit alors votre adresse IP. Base légale : notre
+        intérêt légitime à afficher un montant à jour.</li>
+      <li><strong>Votre adresse de portefeuille</strong>, lorsque vous achetez ou liez un portefeuille : lue pour exécuter
+        l’achat ou afficher vos bouquets. Base légale : le contrat. Les transactions sur le réseau Base sont publiques et
+        permanentes : ni nous ni personne ne pouvons les effacer.</li>
+    </ul>
+    <h3>Cookies</h3>
+    <p>Si vous choisissez vous-même une langue, le site la retient dans un seul cookie, nommé <code>lang</code>, pendant
+      un an. C’est tout : aucun autre cookie, aucune mesure d’audience, aucune publicité. Ce cookie sert uniquement à
+      conserver votre choix ; il ne requiert donc pas de bandeau de consentement.</p>
+    <h3>Destinataires et lieux de traitement</h3>
+    <p>Cloudflare, Inc. (hébergement, États-Unis) et CoinGecko (cours, Singapour). Les transferts hors de l’Union
+      européenne reposent sur le cadre de protection des données UE–États-Unis (Data Privacy Framework) pour Cloudflare
+      et sur les clauses contractuelles types de la Commission européenne.</p>
+    <h3>Durées de conservation</h3>
+    <p>Journaux techniques de Cloudflare : selon les paramètres de Cloudflare, de quelques jours à quelques semaines.
+      Courriels que vous nous adressez : le temps nécessaire pour y répondre, puis trois ans. Nous ne conservons aucune
+      autre donnée.</p>
+    <h3>Vos droits</h3>
+    <p>Vous pouvez demander l’accès à vos données, leur rectification ou leur effacement, la limitation de leur
+      traitement, vous opposer à celui-ci et recevoir vos données dans un format portable, en nous écrivant (voir
+      <a href="fr/legal.html#contact">Contact</a>). Vous pouvez également introduire une réclamation auprès de la Commission
+      nationale de l’informatique et des libertés, la CNIL (cnil.fr).</p>
+  </section>
+
+  <section id="app" aria-labelledby="t-app">
+    <h2 id="t-app">Licence de Belai Bureau</h2>
+    <p>Belai Bureau est un logiciel gratuit pour Windows 10 et 11 qui affiche sur votre bureau les bouquets détenus par
+      un portefeuille que vous y liez. Nous vous concédons une licence gratuite, personnelle et non exclusive pour
+      l’installer et l’utiliser. Vous ne pouvez ni le vendre ni en distribuer des copies modifiées.</p>
+    <p><strong>Ce que l’application fait des données :</strong> elle conserve sur votre ordinateur un code aléatoire
+      propre à cet ordinateur, l’adresse du portefeuille que vous liez et vos réglages. Elle interroge le réseau Base
+      (mainnet.base.org, exploité par Base) pour savoir quels bouquets détient votre portefeuille, et ouvre ce site dans
+      votre navigateur lorsque vous liez un portefeuille. Elle ne nous envoie rien et ne mesure rien.</p>
+    <p>L’application est fournie en l’état. La désinstaller (Paramètres de Windows, Applications) la supprime ainsi que
+      ses réglages.</p>
+  </section>
+
+  <section id="ip" aria-labelledby="t-ip">
+    <h2 id="t-ip">Propriété intellectuelle</h2>
+    <p>Les fleurs, vases, bouquets, décors, textes, vidéo et code de ce site et de Belai Bureau sont des œuvres
+      originales. Toute reproduction sans autorisation est interdite, sauf dans les limites prévues par les
+      <a href="fr/legal.html#terms">conditions générales de vente</a>. OpenSea, Base et CoinGecko sont des noms appartenant
+      à leurs titulaires respectifs. Le cours de l’ETH est fourni par
+      <a href="https://www.coingecko.com/" target="_blank" rel="noopener">CoinGecko</a>.</p>
+  </section>
+
+  <section id="accessibility" aria-labelledby="t-accessibility">
+    <h2 id="t-accessibility">Accessibilité</h2>
+    <p>Nous visons le niveau AA des règles pour l’accessibilité des contenus web (WCAG) 2.1. Le site s’utilise au
+      clavier (flèches pour changer de bouquet, Échap pour prendre du recul), chaque bouton porte un nom pour les
+      lecteurs d’écran, et les animations s’arrêtent lorsque votre système demande à réduire les animations. Limites
+      connues : la prairie et les bouquets sont des œuvres, décrites par des mots plutôt que dans le détail ; la vidéo
+      explicative n’a pas de voix, et ses étapes sont écrites à côté. Si quelque chose vous bloque, écrivez-nous et
+      nous vous aiderons.</p>
+  </section>
+
+  <section id="contact" aria-labelledby="t-contact">
+    <h2 id="t-contact">Contact</h2>
+    <p>Courriel : <a href="mailto:lonjaret.hadrien@proton.me">lonjaret.hadrien@proton.me</a> · Téléphone : +33 6 18 55 81 22 ·
+      Courrier : Hadrien Lonjaret, 35 cours Sablon, 63000 Clermont-Ferrand, France</p>
+  </section>
+
+  <a class="retour" href="fr/index.html">← Retour aux bouquets</a>
+</main>
+
+<script src="entete.js" defer></script>
+</body>
+</html>

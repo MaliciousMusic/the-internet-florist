@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<base href="../">
+<title>关于我们：照着真实花朵绘制的数字花束 | Belai's Garden</title>
+<meta name="description" content="我们的电子花束是怎样做成的：每朵花都依照真实照片用代码绘制，花瓶真实存在，价格就是花枝的价钱，花束能活三个月。">
+<link rel="canonical" href="https://belai.garden/zh/about">
+<link rel="alternate" hreflang="en" href="https://belai.garden/about">
+<link rel="alternate" hreflang="fr" href="https://belai.garden/fr/about">
+<link rel="alternate" hreflang="es" href="https://belai.garden/es/about">
+<link rel="alternate" hreflang="zh" href="https://belai.garden/zh/about">
+<link rel="alternate" hreflang="de" href="https://belai.garden/de/about">
+<link rel="alternate" hreflang="x-default" href="https://belai.garden/about">
+<meta name="theme-color" content="#6c9bcf">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Belai's Garden">
+<meta property="og:title" content="关于我们的数字花束">
+<meta property="og:description" content="每一朵花都依照真实照片用代码绘制。独一无二的花束，插在真实的花瓶里，先绽放，后凋谢。">
+<meta property="og:url" content="https://belai.garden/zh/about">
+<meta property="og:image" content="https://belai.garden/share.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Ronde bleue 花束：丁香、鸢尾、银莲花和风信子，插在饰有舞者的磨砂玻璃花瓶里">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:locale:alternate" content="de_DE">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="scene.css">
+<link rel="stylesheet" href="entete.css">
+<style>
+  /* The About page: the shop's still decor behind (the same files as the shop page, already in the browser's cache), one
+     frosted-glass panel that scrolls between the header and the footer's pill. */
+  .apropos {
+    position: fixed;
+    top: calc(var(--entete-bas) + 12px);
+    bottom: calc(env(safe-area-inset-bottom) + 40px);
+    left: 50%;
+    z-index: 40;
+    width: min(calc(100vw - 24px), 620px);
+    box-sizing: border-box;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: 22px clamp(18px, 5vw, 34px) 26px;
+    border: 1px solid var(--verre-bord);
+    border-radius: 20px;
+    background: linear-gradient(to bottom, rgb(255 255 255 / 0.22), rgb(16 48 86 / 0.16)), rgb(60 98 140 / 0.28);
+    -webkit-backdrop-filter: blur(20px) saturate(1.1);
+    backdrop-filter: blur(20px) saturate(1.1);
+    color: #fff;
+    font: 400 15px/1.6 var(--texte);
+    transform: translateX(-50%);
+  }
+
+  /* computer: the dock is at the bottom */
+  @media (min-width: 900px) and (min-aspect-ratio: 4/3) {
+    .apropos {
+      top: 24px;
+      bottom: var(--dessus-dock);
+    }
+  }
+
+  .apropos h1 {
+    margin: 0 0 4px;
+    font: 600 24px/1.2 var(--texte);
+  }
+
+  .apropos .chapeau {
+    margin: 0 0 8px;
+    color: rgb(255 255 255 / 0.9);
+    font-size: 16px;
+  }
+
+  .apropos h2 {
+    margin: 20px 0 4px;
+    font: 600 16px/1.3 var(--texte);
+  }
+
+  .apropos p {
+    margin: 0;
+  }
+
+  .apropos a {
+    color: #fff;
+    font-weight: 600;
+    text-underline-offset: 3px;
+  }
+
+  .apropos a:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+  }
+
+  .apropos .retour {
+    display: inline-block;
+    margin-top: 22px;
+  }
+
+  .faq {
+    margin: 0;
+  }
+
+  .faq dt {
+    margin: 12px 0 2px;
+    font-weight: 600;
+  }
+
+  .faq dd {
+    margin: 0;
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "AboutPage",
+      "@id": "https://belai.garden/zh/about",
+      "url": "https://belai.garden/zh/about",
+      "name": "关于我们的数字花束",
+      "inLanguage": "zh",
+      "isPartOf": {
+        "@id": "https://belai.garden/#site"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "inLanguage": "zh",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "什么是数字花束？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "一束依照真实照片、以矢量图形一枝一枝绘制的花，插在真实的花瓶里。它在屏幕上绽放，随微风轻摆，三个月后凋谢。每一束都独一无二，以 Base 上的 NFT 形式收藏。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "我能把花束摆在电脑桌面上吗？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "可以。下载 Belai Bureau（免费，支持 Windows 10 和 11），关联你的钱包，你拥有的花束就会以小组件的形式立在桌面上：你可以随意摆放、调整大小、固定位置，并把它放在窗口前面或后面。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "花束如何定价？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "按其花枝在法国花店的价钱之和定价，换算成 ETH，不含增值税（依据法国《税法通则》第 293 B 条，免征增值税）。花瓶免费赠送。以欧元或美元显示的金额按当前汇率换算，仅供参考。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "三个月后会怎样？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "花束会凋谢，并永远保持凋谢、静止的模样。它依然属于你。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "转售时你们收取版税吗？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "不收：0%。只需支付平台和网络自身的费用。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "谁能展示一束花？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Belai Bureau 只展示你所关联的钱包持有的花束，关联时需一次免费签名（不产生任何转账）。"
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<script type="application/json" id="i18n">{"code":"zh","locale":"zh-CN","page":"about","p":"zh/","langues":[{"code":"en","name":"English","href":"about.html"},{"code":"fr","name":"Français","href":"fr/about.html"},{"code":"es","name":"Español","href":"es/about.html"},{"code":"zh","name":"中文","href":"zh/about.html"},{"code":"de","name":"Deutsch","href":"de/about.html"}],"t":{"menu":"菜单","shelves":{"bouquets":"今日花束","soliflores":"单枝花瓶","vendus":"已被收藏的花束"},"desktopTitle":"摆上我的桌面","desktopLabel":"把你的花束摆上桌面","openSeaTitle":"我们在 OpenSea 上的收藏系列","openSeaLabel":"我们在 OpenSea 上的收藏系列（新标签页）","about":"关于我们","legal":"法律信息","closeLegal":"关闭法律信息面板","footer":"<p>每一束花都是独一无二的数字收藏品（Base 上的 NFT），以 ETH 标价，不含增值税（依据法国《税法通则》第 293 B 条，免征增值税）；以欧元或美元显示的金额是按当前汇率换算的同一价格。它自铸造之日起能活三个月，之后便永远凋谢。花束即时交付，因此一经确认，撤回权即不再适用。转售时我们不收取任何版税（0%）。<\/p><p>没有追踪，没有广告：最多一个 Cookie，用于记住你选择的语言。<\/p>","links":{"notice":"法律声明","terms":"销售条款","privacy":"隐私","app":"Belai Bureau 使用许可","accessibility":"无障碍","contact":"联系方式"},"credit":"ETH 汇率由 {coingecko} 提供。","language":"语言","lookCloser":"凑近看看这束花","stepBack":"后退一步","planeLabel":"{name}，在石柱上。{alt}","frameLabel":"{name}，{eth}，约 {fiat}，{life}。{alt}","buyLabel":"购买“{name}”，{eth}，约 {fiat}","lifeLeft":"{h} 小时 {m} 分","fadesIn":"{t}后凋谢","fadesInLower":"{t}后凋谢","faded":"已凋谢","fadedLower":"已凋谢","fadedForGood":"已永久凋谢","buy":"购买","soon":"即将推出","soonMessage":"站内购买即将开放。","tickFirst":"请先勾选方框：你的花束将立即交付。","receipt":{"title":"收据","download":"下载你的收据","bouquet":"花束","token":"代币","price":"价格","date":"日期","buyer":"买方钱包","transaction":"转账","seller":"卖方","waiver":"付款前，你已要求立即交付，并确认你因此失去撤回权（法国《消费法典》第L221-28条第13项）。","terms":"当日接受的销售条款：{url}","taxes":"不含增值税（依据法国《税法通则》第 293 B 条，免征增值税）。"}},"alts":{"printemps-a-la-carpe":"一束独一无二的数字花束：70 枝手绘花枝（花毛茛、荷兰鸢尾、郁金香、香豌豆、风信子、葡萄风信子和其他花材），插在铸铜鲤鱼花瓶里。它会绽放三个月，之后便永远停留在凋谢的模样。","ronde-bleue":"一束独一无二的数字花束：37 枝手绘花枝（荷兰鸢尾、银莲花、丁香、贴梗海棠、雪球荚蒾、郁金香和其他花材），插在饰有舞者的磨砂玻璃花瓶里。它会绽放三个月，之后便永远停留在凋谢的模样。","printemps-cobalt":"一束独一无二的数字花束：13 枝手绘花枝（郁金香、银柳、连翘、山麦冬、喇叭水仙、花毛茛和其他花材），插在钴蓝斑点花钵里。它会绽放三个月，之后便永远停留在凋谢的模样。","nuage-sorbet":"一束独一无二的数字花束：19 枝手绘花枝（香豌豆、地榆、大花蕙兰和庭院玫瑰），插在哑光白色高脚花钵里。它会绽放三个月，之后便永远停留在凋谢的模样。","songe-amethyste":"一束独一无二的数字花束：31 枝手绘花枝（银莲花、香豌豆、素馨、须苞石竹、马蹄莲、蝴蝶兰和其他花材），插在镜面不锈钢圆筒花瓶里。它会绽放三个月，之后便永远停留在凋谢的模样。","lune-d-orchidees":"一束独一无二的数字花束：14 枝手绘花枝（仙客来、蝴蝶兰、郁金香和鹦鹉郁金香），插在沙色高脚球形花瓶里。它会绽放三个月，之后便永远停留在凋谢的模样。","carnaval-de-corail":"一束独一无二的数字花束：30 枝手绘花枝（染色假叶树、小苍兰、花毛茛、蝴蝶兰、洋桔梗、荷兰鸢尾和其他花材），插在斑点圣杯形花瓶里。它会绽放三个月，之后便永远停留在凋谢的模样。"}}</script>
+</head>
+<body>
+<!--
+  TEMPLATE of build.mjs: the page of every language is written from it ({{ key }} = a text of langues/<code>.mjs).
+  Edit this file, never the generated pages; then run: node decor/scene/build.mjs
+-->
+<!--
+  About page of the shop (a draft for the owner to rewrite): what the project is, how a bouquet is made and priced, how
+  it is bought, and the questions people ask (also as FAQPage structured data, for search engines and answer engines). The header and the footer come from entete.js. The decor is the shop's still layers (decor/out/), without
+  the bouquet, the clouds or the foreground.
+-->
+<div class="scene" id="scene" aria-hidden="true">
+  <div class="monde">
+    <img class="plan" style="--z:0" src="../out/ciel.svg" alt="" decoding="async">
+    <img class="plan" style="--z:3" src="../out/horizon.svg" alt="" decoding="async">
+    <img class="plan" style="--z:4" src="../out/sol-loin.svg" alt="" decoding="async">
+    <img class="plan" style="--z:5" src="../out/sol-milieu.svg" alt="" decoding="async">
+    <img class="plan" style="--z:7" src="../out/sol-pres.svg" alt="" decoding="async">
+  </div>
+</div>
+
+<main class="apropos">
+  <h1>关于我们</h1>
+  <p class="chapeau">一朵一朵绘制的花束，在你眼前绽放。</p>
+
+  <h2>写生而来的花朵</h2>
+  <p>这座花园里的每一朵花，都依照真实照片用代码一笔一笔绘制：花瓣的形状、在每个品种上实测的颜色、花苞、盛开的花朵和凋谢的花朵。
+    花园里已有五百多个品种。</p>
+
+  <h2>每天都有独一无二的花束</h2>
+  <p>每天都会搭配出新的花束，每一束都插在真实的花瓶里，比如那只铸铜鲤鱼花瓶。每一束花都独一无二：
+    每一枝花茎、每一朵花、每一片叶子的位置，都不会在别的花束里重复。</p>
+
+  <h2>有生命的花束</h2>
+  <p>一束花自铸造之日起能活三个月：倒计时以小时和分钟显示它剩下的时间。
+    之后，它便永远凋谢、静止。</p>
+
+  <h2>真实花枝的价格</h2>
+  <p>一束花的价格，就是它所有花枝在法国花店的价钱之和。花瓶免费赠送。转售时，我们分文不取：版税为 0%。</p>
+
+  <h2>收藏一束花</h2>
+  <p>这些花束是 Base 网络上的 NFT，在我们的 OpenSea 页面上架。你可以直接在本站用自己的钱包付款，
+    无需离开网站。</p>
+
+  <h2>摆上桌面</h2>
+  <p>借助免费的 Windows 桌面小组件 <a href="zh/desktop.html">Belai Bureau</a>，你收藏的花束就能立在
+    电脑桌面上，大小由你决定，可放在窗口前面或后面。</p>
+
+  <h2>让花园生长</h2>
+  <p>每收藏一束花，都在帮助花园生长：新的品种、新的花瓶、新的花束。</p>
+
+  <h2 id="faq">常见问题</h2>
+  <dl class="faq">
+    <dt>什么是数字花束？</dt>
+    <dd>一束依照真实照片、以矢量图形一枝一枝绘制的花，插在真实的花瓶里。它在屏幕上绽放，随微风轻摆，三个月后凋谢。每一束都独一无二，以 Base 上的 NFT 形式收藏。</dd>
+    <dt>我能把花束摆在电脑桌面上吗？</dt>
+    <dd>可以。下载 Belai Bureau（免费，支持 Windows 10 和 11），关联你的钱包，你拥有的花束就会以小组件的形式立在桌面上：你可以随意摆放、调整大小、固定位置，并把它放在窗口前面或后面。</dd>
+    <dt>花束如何定价？</dt>
+    <dd>按其花枝在法国花店的价钱之和定价，换算成 ETH，不含增值税（依据法国《税法通则》第 293 B 条，免征增值税）。花瓶免费赠送。以欧元或美元显示的金额按当前汇率换算，仅供参考。</dd>
+    <dt>三个月后会怎样？</dt>
+    <dd>花束会凋谢，并永远保持凋谢、静止的模样。它依然属于你。</dd>
+    <dt>转售时你们收取版税吗？</dt>
+    <dd>不收：0%。只需支付平台和网络自身的费用。</dd>
+    <dt>谁能展示一束花？</dt>
+    <dd>Belai Bureau 只展示你所关联的钱包持有的花束，关联时需一次免费签名（不产生任何转账）。</dd>
+  </dl>
+
+  <a class="retour" href="zh/index.html">← 返回花束</a>
+</main>
+
+<script src="entete.js" defer></script>
+</body>
+</html>

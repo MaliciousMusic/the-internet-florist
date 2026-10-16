@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<base href="../">
+<title>把花束摆上桌面的 Windows 桌面小组件 | Belai Bureau</title>
+<meta name="description" content="Belai Bureau 是一款免费的 Windows 10 和 11 桌面小组件：把你收藏的数字花束摆在电脑桌面上。随意摆放、调整大小、固定位置。">
+<link rel="canonical" href="https://belai.garden/zh/desktop">
+<link rel="alternate" hreflang="en" href="https://belai.garden/desktop">
+<link rel="alternate" hreflang="fr" href="https://belai.garden/fr/desktop">
+<link rel="alternate" hreflang="es" href="https://belai.garden/es/desktop">
+<link rel="alternate" hreflang="zh" href="https://belai.garden/zh/desktop">
+<link rel="alternate" hreflang="de" href="https://belai.garden/de/desktop">
+<link rel="alternate" hreflang="x-default" href="https://belai.garden/desktop">
+<meta name="theme-color" content="#6c9bcf">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Belai's Garden">
+<meta property="og:title" content="把你的花束摆上桌面">
+<meta property="og:description" content="一款为你的数字花束准备的免费 Windows 桌面小组件：随意摆放、调整大小、固定位置。">
+<meta property="og:url" content="https://belai.garden/zh/desktop">
+<meta property="og:image" content="https://belai.garden/share.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Ronde bleue 花束：丁香、鸢尾、银莲花和风信子，插在饰有舞者的磨砂玻璃花瓶里">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:video" content="https://belai.garden/videos/fond-ecran.mp4">
+<meta property="og:video:type" content="video/mp4">
+<meta property="og:video:width" content="720">
+<meta property="og:video:height" content="1280">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="scene.css">
+<link rel="stylesheet" href="entete.css">
+<style>
+  /* The desktop page: the shop's still decor behind (as the About page), one frosted-glass panel that scrolls between
+     the header and the footer's pill, with the how-to video and the app to download. */
+  .bureau {
+    position: fixed;
+    top: calc(var(--entete-bas) + 12px);
+    bottom: calc(env(safe-area-inset-bottom) + 40px);
+    left: 50%;
+    z-index: 40;
+    width: min(calc(100vw - 24px), 620px);
+    box-sizing: border-box;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: 22px clamp(18px, 5vw, 34px) 26px;
+    border: 1px solid var(--verre-bord);
+    border-radius: 20px;
+    background: linear-gradient(to bottom, rgb(255 255 255 / 0.22), rgb(16 48 86 / 0.16)), rgb(60 98 140 / 0.28);
+    -webkit-backdrop-filter: blur(20px) saturate(1.1);
+    backdrop-filter: blur(20px) saturate(1.1);
+    color: #fff;
+    font: 400 15px/1.6 var(--texte);
+    transform: translateX(-50%);
+  }
+
+  /* computer: the dock is at the bottom */
+  @media (min-width: 900px) and (min-aspect-ratio: 4/3) {
+    .bureau {
+      top: 24px;
+      bottom: var(--dessus-dock);
+      width: min(calc(100vw - 48px), 880px);
+    }
+  }
+
+  .bureau h1 {
+    margin: 0 0 4px;
+    font: 600 24px/1.2 var(--texte);
+  }
+
+  .bureau .chapeau {
+    margin: 0 0 18px;
+    color: rgb(255 255 255 / 0.9);
+    font-size: 16px;
+  }
+
+  .bureau h2 {
+    margin: 0 0 6px;
+    font: 600 16px/1.3 var(--texte);
+  }
+
+  .bureau p {
+    margin: 0;
+  }
+
+  /* the video beside the steps on a computer, above them on a phone */
+  .bureau-corps {
+    display: grid;
+    gap: 22px;
+    align-items: start;
+  }
+
+  @media (min-width: 760px) {
+    .bureau-corps {
+      grid-template-columns: minmax(0, 300px) 1fr;
+    }
+  }
+
+  .bureau-video {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    max-height: 64vh;
+    aspect-ratio: 9 / 16;
+    margin: 0 auto;
+    border-radius: 16px;
+    background: rgb(16 48 86 / 0.35);
+    box-shadow: 0 10px 30px rgb(10 30 60 / 0.35);
+    object-fit: contain;
+  }
+
+  .bureau ol {
+    margin: 0 0 18px;
+    padding-left: 22px;
+  }
+
+  .bureau li {
+    margin: 0 0 6px;
+  }
+
+  /* the download: one big glass button with its note */
+  .telecharger {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 13px 22px 13px 16px;
+    border: 1px solid rgb(255 255 255 / 0.7);
+    border-radius: 999px;
+    background: linear-gradient(to bottom, rgb(255 255 255 / 0.35), rgb(255 255 255 / 0.12)), #3c8c5a;
+    box-shadow: 0 6px 18px rgb(10 40 25 / 0.35);
+    color: #fff;
+    font: 600 17px/1.2 var(--texte);
+    text-decoration: none;
+    transition: transform 0.15s;
+  }
+
+  .telecharger:hover {
+    transform: translateY(-1px);
+  }
+
+  .telecharger:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 3px;
+  }
+
+  .telecharger svg {
+    flex: none;
+  }
+
+  .telecharger small {
+    display: block;
+    font-weight: 400;
+    font-size: 13px;
+    opacity: 0.9;
+  }
+
+  .note {
+    margin-top: 12px !important;
+    color: rgb(255 255 255 / 0.85);
+    font-size: 13.5px;
+  }
+
+  .bureau a:not(.telecharger) {
+    color: #fff;
+    font-weight: 600;
+    text-underline-offset: 3px;
+  }
+
+  .bureau .retour {
+    display: inline-block;
+    margin-top: 22px;
+  }
+
+  /* the installer's fingerprint: long, breaks anywhere */
+  .empreinte code {
+    font-size: 12px;
+    overflow-wrap: anywhere;
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://belai.garden/desktop#app",
+      "name": "Belai Bureau",
+      "applicationCategory": "DesktopEnhancementApplication",
+      "operatingSystem": "Windows 10, Windows 11",
+      "softwareVersion": "0.1.0",
+      "fileSize": "3 MB",
+      "downloadUrl": "https://belai.garden/telechargements/Belai-Bureau-0.1.0-x64-setup.exe",
+      "description": "一款免费的 Windows 桌面小组件，把你收藏的数字花束展示在电脑桌面上：随意摆放、调整大小、固定位置，可放在窗口前面或后面。",
+      "inLanguage": "zh",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "publisher": {
+        "@id": "https://belai.garden/#org"
+      },
+      "screenshot": "https://belai.garden/videos/fond-ecran.jpg"
+    },
+    {
+      "@type": "VideoObject",
+      "name": "如何把花束摆上桌面",
+      "description": "一分钟操作演示：下载 Belai Bureau，关联钱包，把花束放到屏幕上，摆放、调整大小并固定，按住六秒即可再次移动。",
+      "thumbnailUrl": "https://belai.garden/videos/fond-ecran.jpg",
+      "contentUrl": "https://belai.garden/videos/fond-ecran.mp4",
+      "uploadDate": "2026-10-16T14:25:16+02:00",
+      "duration": "PT1M1S",
+      "width": 720,
+      "height": 1280
+    },
+    {
+      "@type": "HowTo",
+      "name": "如何把数字花束摆上 Windows 桌面",
+      "inLanguage": "zh",
+      "totalTime": "PT2M",
+      "tool": [
+        {
+          "@type": "HowToTool",
+          "name": "Belai Bureau（免费，支持 Windows 10 和 11）"
+        },
+        {
+          "@type": "HowToTool",
+          "name": "一个持有花束的钱包"
+        }
+      ],
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "text": "下载并安装 Belai Bureau。"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "text": "点击时钟旁的 Belai 图标，关联你的钱包。"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "text": "选择你的花束，把它放到屏幕上：只需一次签名，免费，不产生任何转账。"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "text": "摆放、调整大小，放在窗口前面或后面，然后点击 ✓ 固定。"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 5,
+          "text": "如需再次移动，在花束上按住鼠标六秒钟。"
+        }
+      ]
+    }
+  ]
+}
+</script>
+<script type="application/json" id="i18n">{"code":"zh","locale":"zh-CN","page":"desktop","p":"zh/","langues":[{"code":"en","name":"English","href":"desktop.html"},{"code":"fr","name":"Français","href":"fr/desktop.html"},{"code":"es","name":"Español","href":"es/desktop.html"},{"code":"zh","name":"中文","href":"zh/desktop.html"},{"code":"de","name":"Deutsch","href":"de/desktop.html"}],"t":{"menu":"菜单","shelves":{"bouquets":"今日花束","soliflores":"单枝花瓶","vendus":"已被收藏的花束"},"desktopTitle":"摆上我的桌面","desktopLabel":"把你的花束摆上桌面","openSeaTitle":"我们在 OpenSea 上的收藏系列","openSeaLabel":"我们在 OpenSea 上的收藏系列（新标签页）","about":"关于我们","legal":"法律信息","closeLegal":"关闭法律信息面板","footer":"<p>每一束花都是独一无二的数字收藏品（Base 上的 NFT），以 ETH 标价，不含增值税（依据法国《税法通则》第 293 B 条，免征增值税）；以欧元或美元显示的金额是按当前汇率换算的同一价格。它自铸造之日起能活三个月，之后便永远凋谢。花束即时交付，因此一经确认，撤回权即不再适用。转售时我们不收取任何版税（0%）。<\/p><p>没有追踪，没有广告：最多一个 Cookie，用于记住你选择的语言。<\/p>","links":{"notice":"法律声明","terms":"销售条款","privacy":"隐私","app":"Belai Bureau 使用许可","accessibility":"无障碍","contact":"联系方式"},"credit":"ETH 汇率由 {coingecko} 提供。","language":"语言","lookCloser":"凑近看看这束花","stepBack":"后退一步","planeLabel":"{name}，在石柱上。{alt}","frameLabel":"{name}，{eth}，约 {fiat}，{life}。{alt}","buyLabel":"购买“{name}”，{eth}，约 {fiat}","lifeLeft":"{h} 小时 {m} 分","fadesIn":"{t}后凋谢","fadesInLower":"{t}后凋谢","faded":"已凋谢","fadedLower":"已凋谢","fadedForGood":"已永久凋谢","buy":"购买","soon":"即将推出","soonMessage":"站内购买即将开放。","tickFirst":"请先勾选方框：你的花束将立即交付。","receipt":{"title":"收据","download":"下载你的收据","bouquet":"花束","token":"代币","price":"价格","date":"日期","buyer":"买方钱包","transaction":"转账","seller":"卖方","waiver":"付款前，你已要求立即交付，并确认你因此失去撤回权（法国《消费法典》第L221-28条第13项）。","terms":"当日接受的销售条款：{url}","taxes":"不含增值税（依据法国《税法通则》第 293 B 条，免征增值税）。"}},"alts":{"printemps-a-la-carpe":"一束独一无二的数字花束：70 枝手绘花枝（花毛茛、荷兰鸢尾、郁金香、香豌豆、风信子、葡萄风信子和其他花材），插在铸铜鲤鱼花瓶里。它会绽放三个月，之后便永远停留在凋谢的模样。","ronde-bleue":"一束独一无二的数字花束：37 枝手绘花枝（荷兰鸢尾、银莲花、丁香、贴梗海棠、雪球荚蒾、郁金香和其他花材），插在饰有舞者的磨砂玻璃花瓶里。它会绽放三个月，之后便永远停留在凋谢的模样。","printemps-cobalt":"一束独一无二的数字花束：13 枝手绘花枝（郁金香、银柳、连翘、山麦冬、喇叭水仙、花毛茛和其他花材），插在钴蓝斑点花钵里。它会绽放三个月，之后便永远停留在凋谢的模样。","nuage-sorbet":"一束独一无二的数字花束：19 枝手绘花枝（香豌豆、地榆、大花蕙兰和庭院玫瑰），插在哑光白色高脚花钵里。它会绽放三个月，之后便永远停留在凋谢的模样。","songe-amethyste":"一束独一无二的数字花束：31 枝手绘花枝（银莲花、香豌豆、素馨、须苞石竹、马蹄莲、蝴蝶兰和其他花材），插在镜面不锈钢圆筒花瓶里。它会绽放三个月，之后便永远停留在凋谢的模样。","lune-d-orchidees":"一束独一无二的数字花束：14 枝手绘花枝（仙客来、蝴蝶兰、郁金香和鹦鹉郁金香），插在沙色高脚球形花瓶里。它会绽放三个月，之后便永远停留在凋谢的模样。","carnaval-de-corail":"一束独一无二的数字花束：30 枝手绘花枝（染色假叶树、小苍兰、花毛茛、蝴蝶兰、洋桔梗、荷兰鸢尾和其他花材），插在斑点圣杯形花瓶里。它会绽放三个月，之后便永远停留在凋谢的模样。"}}</script>
+</head>
+<body>
+<!--
+  TEMPLATE of build.mjs: the page of every language is written from it ({{ key }} = a text of langues/<code>.mjs).
+  Edit this file, never the generated pages; then run: node decor/scene/build.mjs
+-->
+<!--
+  Your bouquet on your computer: the how-to video (videos/fond-ecran.mp4, made in belai-studio, lot T10) and Belai Bureau
+  to download (telechargements/, a copy of bureau/livrables; its SHA-256 below must follow each new installer). Structured
+  data: the app (SoftwareApplication), the video (VideoObject) and the steps (HowTo). The header and the footer come from entete.js; the decor is
+  the shop's still layers (decor/out/), as on the About page.
+-->
+<div class="scene" id="scene" aria-hidden="true">
+  <div class="monde">
+    <img class="plan" style="--z:0" src="../out/ciel.svg" alt="" decoding="async">
+    <img class="plan" style="--z:3" src="../out/horizon.svg" alt="" decoding="async">
+    <img class="plan" style="--z:4" src="../out/sol-loin.svg" alt="" decoding="async">
+    <img class="plan" style="--z:5" src="../out/sol-milieu.svg" alt="" decoding="async">
+    <img class="plan" style="--z:7" src="../out/sol-pres.svg" alt="" decoding="async">
+  </div>
+</div>
+
+<main class="bureau">
+  <h1>把你的花束摆上桌面</h1>
+  <p class="chapeau">借助免费的 Windows 桌面小组件 Belai Bureau，把你收藏的花束摆上电脑桌面。</p>
+
+  <div class="bureau-corps">
+    <video class="bureau-video" src="videos/fond-ecran.mp4" poster="videos/fond-ecran.jpg" controls autoplay muted loop playsinline
+      preload="metadata" width="720" height="1280" aria-label="操作视频：一步一步把花束摆上桌面（仅有音乐，步骤以文字列在旁边）"></video>
+
+    <div>
+      <h2>五个步骤</h2>
+      <ol>
+        <li>下载并安装 Belai Bureau。</li>
+        <li>点击时钟旁的 Belai 图标，关联你的钱包。</li>
+        <li>选择你的花束，把它放到屏幕上：只需一次签名，免费，不产生任何转账。</li>
+        <li>摆放、调整大小，放在窗口前面或后面，然后点击 ✓ 固定。</li>
+        <li>如需再次移动，在花束上按住鼠标六秒钟。</li>
+      </ol>
+
+      <a class="telecharger" href="telechargements/Belai-Bureau-0.1.0-x64-setup.exe" download>
+        <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7.5 10.5 12 15l4.5-4.5M5 19.5h14"/></svg>
+        <span>下载 Belai Bureau<small>Windows 10 和 11 · 3 MB · 免费</small></span>
+      </a>
+      <p class="note">只有持有花束的钱包才能展示它。首次启动时，Windows 可能会提示尚不认识此应用：点击“更多信息”，再点击“仍要运行”。 应用本身目前仅提供法语版。</p>
+      <p class="note empreinte">版本 0.1.0 · SHA-256 <code>276597f33e108c53056fbe27964aac390ecfa8afd28a2f17a50994bcd6cd9558</code>
+        · <a href="zh/legal.html#app">使用许可与隐私</a></p>
+    </div>
+  </div>
+
+  <a class="retour" href="zh/index.html">← 返回花束</a>
+</main>
+
+<script src="entete.js" defer></script>
+</body>
+</html>

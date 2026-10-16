@@ -1,18 +1,25 @@
-// entete.js: the header and the footer shared by the shop's pages (index.html, apropos.html, bureau.html).
+// entete.js: the header and the footer shared by the shop's pages (index.html, about.html, desktop.html, legal.html).
 //
 // - The header is a dock of round frosted-glass icons, drawn here in SVG: a vase with flowers (the bouquets of the day), a
-//   bud vase (the soliflores), a vase with a seal (the bouquets already sold), a screen with a vase (bureau.html: your bouquet
+//   bud vase (the soliflores), a vase with a seal (the bouquets already sold), a screen with a vase (desktop.html: your bouquet
 //   on your computer, the video and the app to download), a sail (our collection on OpenSea) and an i (the About page). On the shop page the first three open and close their shelf under the header (one at a time; the
 //   same icon again folds it): entete.js only keeps the icons' state and tells the page with the event "entete:rayon"
 //   (detail: "bouquets" | "soliflores" | "vendus" | null). On any other page they lead back to the shop, shelf open.
-// - The footer is a small pill at the bottom edge that unfolds the legal notice (a draft: the publisher's identity is
-//   still to be filled in) and folds it back (the pill, the cross, Escape or a click outside).
+// - The footer is a small pill at the bottom edge that unfolds a short summary of the legal notice with the links to
+//   legal.html (notice, terms of sale, privacy, the app's licence, accessibility) and folds it back (the pill, the
+//   cross, Escape or a click outside). It also holds the language switch: the same page in each language; a choice
+//   is remembered in the cookie "lang" (one year), which _worker.js reads before guessing from the country.
+// The words come from the page's JSON block id="i18n" (build.mjs, langues/<code>.mjs); links carry its prefix ('' or
+//   'fr/'...), the pages of the other languages having <base href="../">.
 // Only transforms move. window.Entete.rayon(name) sets the open shelf from the page (null folds it), without an event.
 (() => {
   'use strict';
   // our collection on OpenSea: still to be created, the link leads to OpenSea until then
   const OPENSEA = 'https://opensea.io/';
   const SHOP = !!document.getElementById('cartes');
+  const I18N = JSON.parse(document.getElementById('i18n').textContent);
+  const T = I18N.t;
+  const P = I18N.p;
 
   const svg = (body) =>
     `<svg viewBox="0 0 24 24" width="25" height="25" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">${body}</svg>`;
@@ -44,11 +51,7 @@
     plier: svg('<path d="M6 15l6-6 6 6"/>'),
     fermer: svg('<path d="M7 7l10 10M17 7 7 17"/>'),
   };
-  const SHELVES = [
-    ['bouquets', 'Bouquets du jour'],
-    ['soliflores', 'Soliflores'],
-    ['vendus', 'Bouquets vendus'],
-  ];
+  const SHELVES = ['bouquets', 'soliflores', 'vendus'].map((n) => [n, T.shelves[n]]);
 
   // ---------- the header
   const head = document.createElement('header');
@@ -56,7 +59,7 @@
   head.id = 'entete';
   const dock = document.createElement('nav');
   dock.className = 'dock';
-  dock.setAttribute('aria-label', 'Menu');
+  dock.setAttribute('aria-label', T.menu);
   const shelfButtons = {};
   for (const [name, label] of SHELVES) {
     let el;
@@ -69,7 +72,7 @@
       shelfButtons[name] = el;
     } else {
       el = document.createElement('a');
-      el.href = `index.html?rayon=${name}`;
+      el.href = `${P}index.html?rayon=${name}`;
     }
     el.className = 'dock-bouton';
     el.title = label;
@@ -77,14 +80,14 @@
     el.innerHTML = ICONS[name];
     dock.append(el);
   }
-  // your bouquet on your computer: the how-to video and the desktop app (bureau.html)
+  // your bouquet on your computer: the how-to video and the desktop app (desktop.html)
   const desk = document.createElement('a');
   desk.className = 'dock-bouton';
-  desk.href = 'bureau.html';
-  desk.title = 'Sur mon bureau';
-  desk.setAttribute('aria-label', 'Votre bouquet sur votre bureau');
+  desk.href = `${P}desktop.html`;
+  desk.title = T.desktopTitle;
+  desk.setAttribute('aria-label', T.desktopLabel);
   desk.innerHTML = ICONS.bureau;
-  if (/bureau\.html$/.test(location.pathname)) desk.setAttribute('aria-current', 'page');
+  if (I18N.page === 'desktop') desk.setAttribute('aria-current', 'page');
   dock.append(desk);
   const sep = document.createElement('span');
   sep.className = 'dock-sep';
@@ -95,16 +98,16 @@
   sea.href = OPENSEA;
   sea.target = '_blank';
   sea.rel = 'noopener';
-  sea.title = 'Notre collection sur OpenSea';
-  sea.setAttribute('aria-label', 'Notre collection sur OpenSea (nouvel onglet)');
+  sea.title = T.openSeaTitle;
+  sea.setAttribute('aria-label', T.openSeaLabel);
   sea.innerHTML = ICONS.opensea;
   const about = document.createElement('a');
   about.className = 'dock-bouton';
-  about.href = 'apropos.html';
-  about.title = 'À propos';
-  about.setAttribute('aria-label', 'À propos');
+  about.href = `${P}about.html`;
+  about.title = T.about;
+  about.setAttribute('aria-label', T.about);
   about.innerHTML = ICONS.apropos;
-  if (/apropos\.html$/.test(location.pathname)) about.setAttribute('aria-current', 'page');
+  if (I18N.page === 'about') about.setAttribute('aria-current', 'page');
   dock.append(sea, about);
   head.append(dock);
   document.body.prepend(head);
@@ -120,46 +123,37 @@
       document.dispatchEvent(new CustomEvent('entete:rayon', { detail: open }));
     });
 
-  // ---------- the footer: the legal notice, folded
+  // ---------- the footer: the legal notice in short, folded; the full texts are on legal.html
   const foot = document.createElement('footer');
   foot.className = 'pied';
+  const links = ['notice', 'terms', 'privacy', 'app', 'accessibility', 'contact']
+    .map((id) => `<li><a href="${P}legal.html#${id}">${T.links[id]}</a></li>`)
+    .join('');
+  const langs = I18N.langues
+    .map((l) => `<li><a href="${l.href}" hreflang="${l.code}" lang="${l.code}" data-lang="${l.code}"${l.code === I18N.code ? ' aria-current="true"' : ''}>${l.name}</a></li>`)
+    .join('');
   foot.innerHTML = `
     <button class="pied-poignee" id="pied-poignee" type="button" aria-expanded="false" aria-controls="pied-panneau">
-      <span>Mentions légales</span>${ICONS.plier}
+      <span>${T.legal}</span>${ICONS.plier}
     </button>
     <section class="pied-panneau" id="pied-panneau" aria-labelledby="pied-titre" inert>
       <div class="pied-tete">
-        <h2 id="pied-titre">Mentions légales</h2>
-        <button class="pied-fermer" type="button" aria-label="Fermer les mentions légales">${ICONS.fermer}</button>
+        <h2 id="pied-titre">${T.legal}</h2>
+        <button class="pied-fermer" type="button" aria-label="${T.closeLegal}">${ICONS.fermer}</button>
       </div>
       <div class="pied-texte">
-        <p class="pied-brouillon">Brouillon : les informations entre crochets restent à compléter.</p>
-        <h3>Éditeur</h3>
-        <p>[Nom et prénom, ou raison sociale] — [adresse postale] — [adresse électronique de contact]<br>[Numéro SIREN, le cas échéant]</p>
-        <h3>Directeur de la publication</h3>
-        <p>[Nom et prénom]</p>
-        <h3>Hébergement</h3>
-        <p>Cloudflare, Inc., 101 Townsend Street, San Francisco, CA 94107, États-Unis.</p>
-        <h3>Les bouquets</h3>
-        <p>Chaque bouquet est un NFT de la chaîne Base, mis en vente sur notre page OpenSea et réglé depuis votre
-          portefeuille, sans quitter le site, par le protocole Seaport. Le prix est fixé en ETH ; son équivalent en
-          euros suit le cours du moment, lu chez CoinGecko. Les frais du réseau s’y ajoutent. Le bouquet est livré dès la transaction confirmée : en
-          validant l’achat, vous demandez cette livraison immédiate et renoncez au droit de rétractation
-          (article L221-28, 13°, du Code de la consommation).</p>
-        <p>Un bouquet vit trois mois à compter de sa frappe ; il reste ensuite fané, immobile, pour toujours.</p>
-        <p>Revente : nous ne prenons aucune royalty (0 %). Seuls les frais propres à la place de marché et au réseau
-          s’appliquent.</p>
-        <p>Droits attachés à un bouquet acquis : [à définir].</p>
-        <h3>Propriété intellectuelle</h3>
-        <p>Les fleurs, les vases, les bouquets, le décor et le code de ce site sont des créations originales. Toute
-          reproduction sans autorisation est interdite.</p>
-        <h3>Données personnelles</h3>
-        <p>Ce site ne dépose aucun cookie et ne mesure pas l’audience. Pour afficher le cours de l’ETH, votre
-          navigateur interroge CoinGecko (api.coingecko.com). Pour un achat, vous reliez votre portefeuille :
-          le site lit son adresse publique le temps de la transaction. Les transactions sont publiques sur la chaîne
-          Base.</p>
+        ${T.footer}
+        <ul class="pied-liens">${links}</ul>
+        <nav class="pied-langues" aria-label="${T.language}"><ul>${langs}</ul></nav>
+        <p class="pied-credit">${T.credit.replace('{coingecko}', '<a href="https://www.coingecko.com/" target="_blank" rel="noopener">CoinGecko</a>')}</p>
       </div>
     </section>`;
+  // a language chosen by hand is kept (the cookie "lang", read by _worker.js); nothing else is stored
+  foot.addEventListener('click', (e) => {
+    const a = e.target.closest('a[data-lang]');
+    if (!a) return;
+    document.cookie = `lang=${a.dataset.lang}; Max-Age=31536000; Path=/; SameSite=Lax${location.protocol === 'https:' ? '; Secure' : ''}`;
+  });
   document.body.append(foot);
   const handle = foot.querySelector('.pied-poignee');
   const panel = foot.querySelector('.pied-panneau');
@@ -182,5 +176,5 @@
     if (foot.classList.contains('ouvert') && !foot.contains(e.target)) fold(false);
   });
 
-  window.Entete = { rayon: show, opensea: OPENSEA };
+  window.Entete = { rayon: show, opensea: OPENSEA, i18n: I18N };
 })();

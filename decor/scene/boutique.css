@@ -546,3 +546,95 @@
     bottom: var(--dessus-dock);
   }
 }
+
+/* the purchase sheet above the Buy button: the express waiver of the right of withdrawal, then "Confirm and pay" */
+.accord {
+  width: min(calc(100vw - 32px), 360px);
+  box-sizing: border-box;
+  margin: 0 0 10px;
+  padding: 12px 14px 12px;
+  border: 1px solid var(--verre-bord);
+  border-radius: 16px;
+  background: linear-gradient(to bottom, rgb(255 255 255 / 0.24), rgb(16 48 86 / 0.2)), rgb(60 98 140 / 0.42);
+  -webkit-backdrop-filter: blur(18px) saturate(1.1);
+  backdrop-filter: blur(18px) saturate(1.1);
+  color: #fff;
+  font: 400 13px/1.45 system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+
+.accord[hidden] {
+  display: none;
+}
+
+.accord-titre {
+  margin: 0 0 6px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.accord-case {
+  display: flex;
+  gap: 9px;
+  align-items: flex-start;
+  cursor: pointer;
+}
+
+.accord-case input {
+  flex: none;
+  width: 20px;
+  height: 20px;
+  margin: 1px 0 0;
+  accent-color: #3c8c5a;
+}
+
+.accord-case input[aria-invalid='true'] {
+  outline: 2px solid #ffd666;
+  outline-offset: 2px;
+}
+
+.accord-cgv {
+  margin: 8px 0 0;
+  color: rgb(255 255 255 / 0.88);
+  font-size: 12px;
+}
+
+.accord a {
+  color: #fff;
+  font-weight: 600;
+}
+
+.accord-boutons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.accord-boutons button {
+  min-height: 40px;
+  padding: 0 16px;
+  border: 1px solid var(--verre-bord);
+  border-radius: 999px;
+  color: #fff;
+  font: 600 14px/1 system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  cursor: pointer;
+}
+
+.accord-annuler {
+  background: rgb(255 255 255 / 0.12);
+}
+
+.accord-payer {
+  background: linear-gradient(to bottom, rgb(255 255 255 / 0.3), rgb(255 255 255 / 0.08)), #3c8c5a;
+}
+
+.accord-boutons button:focus-visible,
+.accord-case input:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+.achat-etat a {
+  color: #fff;
+  font-weight: 600;
+}

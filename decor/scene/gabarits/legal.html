@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="{{htmlLang}}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+{{head}}
+<link rel="stylesheet" href="scene.css">
+<link rel="stylesheet" href="entete.css">
+<style>
+  /* The legal page: the shop's still decor behind (as the About page), one frosted-glass panel that scrolls between the
+     header and the footer's pill, with a table of contents and one section per text. */
+  .legal {
+    position: fixed;
+    top: calc(var(--entete-bas) + 12px);
+    bottom: calc(env(safe-area-inset-bottom) + 40px);
+    left: 50%;
+    z-index: 40;
+    width: min(calc(100vw - 24px), 720px);
+    box-sizing: border-box;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: 22px clamp(18px, 5vw, 34px) 26px;
+    border: 1px solid var(--verre-bord);
+    border-radius: 20px;
+    background: linear-gradient(to bottom, rgb(255 255 255 / 0.22), rgb(16 48 86 / 0.16)), rgb(60 98 140 / 0.28);
+    -webkit-backdrop-filter: blur(20px) saturate(1.1);
+    backdrop-filter: blur(20px) saturate(1.1);
+    color: #fff;
+    font: 400 15px/1.6 var(--texte);
+    transform: translateX(-50%);
+    scroll-padding-top: 12px;
+  }
+
+  /* computer: the dock is at the bottom */
+  @media (min-width: 900px) and (min-aspect-ratio: 4/3) {
+    .legal {
+      top: 24px;
+      bottom: var(--dessus-dock);
+    }
+  }
+
+  .legal h1 {
+    margin: 0 0 4px;
+    font: 600 24px/1.2 var(--texte);
+  }
+
+  .legal h2 {
+    margin: 28px 0 4px;
+    font: 600 19px/1.3 var(--texte);
+  }
+
+  .legal h3 {
+    margin: 16px 0 2px;
+    font: 600 15px/1.3 var(--texte);
+  }
+
+  .legal p,
+  .legal ul {
+    margin: 0 0 8px;
+  }
+
+  .legal ul {
+    padding-left: 20px;
+  }
+
+  .legal a {
+    color: #fff;
+    font-weight: 600;
+    text-underline-offset: 3px;
+  }
+
+  .legal a:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+  }
+
+  /* what the owner still has to fill in before launch */
+  .a-remplir {
+    padding: 0 3px;
+    border-radius: 4px;
+    background: rgb(255 214 102 / 0.28);
+  }
+
+  .brouillon {
+    padding: 8px 12px;
+    border-radius: 10px;
+    background: rgb(255 214 102 / 0.18);
+    font-style: italic;
+  }
+
+  .sommaire {
+    columns: 2 180px;
+  }
+
+  .maj {
+    color: rgb(255 255 255 / 0.85);
+    font-size: 13.5px;
+  }
+
+  .legal .retour {
+    display: inline-block;
+    margin-top: 22px;
+  }
+</style>
+{{ld}}
+{{i18n}}
+</head>
+<body>
+<!--
+  TEMPLATE of build.mjs: the page of every language is written from it ({{ key }} = a text of langues/<code>.mjs).
+  Edit this file, never the generated pages; then run: node decor/scene/build.mjs
+-->
+<!--
+  The legal texts of the shop, in one page with anchors (#notice, #terms, #privacy, #app, #ip, #accessibility, #contact),
+  linked from the footer of entete.js, written from decor/AUDIT-LEGAL.md: the parts marked .a-remplir are still the
+  owner's to fill in, and the whole should be read by a lawyer before launch. The French version prevails. The decor is the shop's still layers.
+-->
+<div class="scene" id="scene" aria-hidden="true">
+  <div class="monde">
+    <img class="plan" style="--z:0" src="../out/ciel.svg" alt="" decoding="async">
+    <img class="plan" style="--z:3" src="../out/horizon.svg" alt="" decoding="async">
+    <img class="plan" style="--z:4" src="../out/sol-loin.svg" alt="" decoding="async">
+    <img class="plan" style="--z:5" src="../out/sol-milieu.svg" alt="" decoding="async">
+    <img class="plan" style="--z:7" src="../out/sol-pres.svg" alt="" decoding="async">
+  </div>
+</div>
+
+<main class="legal">
+  <h1>{{legal.h1}}</h1>
+  <p class="maj">{{legal.updated}}</p>
+
+  <nav aria-label="{{legal.onThisPage}}">
+    <ul class="sommaire">
+{{toc}}
+    </ul>
+  </nav>
+
+  {{legal.body}}
+
+  <a class="retour" href="{{p}}index.html">{{legal.back}}</a>
+</main>
+
+<script src="entete.js" defer></script>
+</body>
+</html>

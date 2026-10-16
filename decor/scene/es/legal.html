@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<base href="../">
+<title>Aviso legal, condiciones de venta y privacidad | Belai's Garden</title>
+<meta name="description" content="Aviso legal, condiciones de venta de los ramos digitales, política de privacidad, licencia de Belai Bureau y accesibilidad de Belai's Garden.">
+<link rel="canonical" href="https://belai.garden/es/legal">
+<link rel="alternate" hreflang="en" href="https://belai.garden/legal">
+<link rel="alternate" hreflang="fr" href="https://belai.garden/fr/legal">
+<link rel="alternate" hreflang="es" href="https://belai.garden/es/legal">
+<link rel="alternate" hreflang="zh" href="https://belai.garden/zh/legal">
+<link rel="alternate" hreflang="de" href="https://belai.garden/de/legal">
+<link rel="alternate" hreflang="x-default" href="https://belai.garden/legal">
+<meta name="theme-color" content="#6c9bcf">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Belai's Garden">
+<meta property="og:title" content="Aviso legal, condiciones de venta y privacidad">
+<meta property="og:description" content="Quiénes somos, cómo se vende un ramo y qué hacemos con los datos.">
+<meta property="og:url" content="https://belai.garden/es/legal">
+<meta property="og:image" content="https://belai.garden/share.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="El ramo Ronde bleue: lilas, iris, anémonas y jacintos en un jarrón de vidrio esmerilado con bailarinas">
+<meta property="og:locale" content="es_ES">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta property="og:locale:alternate" content="de_DE">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="scene.css">
+<link rel="stylesheet" href="entete.css">
+<style>
+  /* The legal page: the shop's still decor behind (as the About page), one frosted-glass panel that scrolls between the
+     header and the footer's pill, with a table of contents and one section per text. */
+  .legal {
+    position: fixed;
+    top: calc(var(--entete-bas) + 12px);
+    bottom: calc(env(safe-area-inset-bottom) + 40px);
+    left: 50%;
+    z-index: 40;
+    width: min(calc(100vw - 24px), 720px);
+    box-sizing: border-box;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: 22px clamp(18px, 5vw, 34px) 26px;
+    border: 1px solid var(--verre-bord);
+    border-radius: 20px;
+    background: linear-gradient(to bottom, rgb(255 255 255 / 0.22), rgb(16 48 86 / 0.16)), rgb(60 98 140 / 0.28);
+    -webkit-backdrop-filter: blur(20px) saturate(1.1);
+    backdrop-filter: blur(20px) saturate(1.1);
+    color: #fff;
+    font: 400 15px/1.6 var(--texte);
+    transform: translateX(-50%);
+    scroll-padding-top: 12px;
+  }
+
+  /* computer: the dock is at the bottom */
+  @media (min-width: 900px) and (min-aspect-ratio: 4/3) {
+    .legal {
+      top: 24px;
+      bottom: var(--dessus-dock);
+    }
+  }
+
+  .legal h1 {
+    margin: 0 0 4px;
+    font: 600 24px/1.2 var(--texte);
+  }
+
+  .legal h2 {
+    margin: 28px 0 4px;
+    font: 600 19px/1.3 var(--texte);
+  }
+
+  .legal h3 {
+    margin: 16px 0 2px;
+    font: 600 15px/1.3 var(--texte);
+  }
+
+  .legal p,
+  .legal ul {
+    margin: 0 0 8px;
+  }
+
+  .legal ul {
+    padding-left: 20px;
+  }
+
+  .legal a {
+    color: #fff;
+    font-weight: 600;
+    text-underline-offset: 3px;
+  }
+
+  .legal a:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+  }
+
+  /* what the owner still has to fill in before launch */
+  .a-remplir {
+    padding: 0 3px;
+    border-radius: 4px;
+    background: rgb(255 214 102 / 0.28);
+  }
+
+  .brouillon {
+    padding: 8px 12px;
+    border-radius: 10px;
+    background: rgb(255 214 102 / 0.18);
+    font-style: italic;
+  }
+
+  .sommaire {
+    columns: 2 180px;
+  }
+
+  .maj {
+    color: rgb(255 255 255 / 0.85);
+    font-size: 13.5px;
+  }
+
+  .legal .retour {
+    display: inline-block;
+    margin-top: 22px;
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://belai.garden/es/legal",
+  "url": "https://belai.garden/es/legal",
+  "name": "Aviso legal, condiciones de venta y privacidad",
+  "inLanguage": "es",
+  "isPartOf": {
+    "@id": "https://belai.garden/#site"
+  },
+  "dateModified": "2026-10-16"
+}
+</script>
+<script type="application/json" id="i18n">{"code":"es","locale":"es-ES","page":"legal","p":"es/","langues":[{"code":"en","name":"English","href":"legal.html"},{"code":"fr","name":"Français","href":"fr/legal.html"},{"code":"es","name":"Español","href":"es/legal.html"},{"code":"zh","name":"中文","href":"zh/legal.html"},{"code":"de","name":"Deutsch","href":"de/legal.html"}],"t":{"menu":"Menú","shelves":{"bouquets":"Ramos del día","soliflores":"Floreros solitarios","vendus":"Ramos coleccionados"},"desktopTitle":"En mi escritorio","desktopLabel":"Tu ramo en tu escritorio","openSeaTitle":"Nuestra colección en OpenSea","openSeaLabel":"Nuestra colección en OpenSea (nueva pestaña)","about":"Acerca de","legal":"Legal","closeLegal":"Cerrar el panel legal","footer":"<p>Cada ramo es un objeto de colección digital único (un NFT en Base), con precio en ETH, sin IVA (IVA no aplicable, art. 293 B del Código General de Impuestos francés); el importe en euros o dólares estadounidenses es el mismo precio al cambio actual. Vive tres meses desde su acuñación y luego queda marchito para siempre. La entrega es inmediata, por lo que el derecho de desistimiento no se aplica una vez que confirmas. No cobramos regalías en la reventa (0 %).<\/p><p>Sin rastreo ni publicidad: como mucho una cookie, para recordar el idioma que elegiste.<\/p>","links":{"notice":"Aviso legal","terms":"Condiciones de venta","privacy":"Privacidad","app":"Licencia de Belai Bureau","accessibility":"Accesibilidad","contact":"Contacto"},"credit":"Cambio de ETH por {coingecko}.","language":"Idioma","lookCloser":"Ver el ramo más de cerca","stepBack":"Alejarse","planeLabel":"{name}, sobre el pilar. {alt}","frameLabel":"{name}, {eth}, unos {fiat}, {life}. {alt}","buyLabel":"Comprar «{name}», {eth}, unos {fiat}","lifeLeft":"{h} h {m} min","fadesIn":"Se marchita en {t}","fadesInLower":"se marchita en {t}","faded":"Marchito","fadedLower":"marchito","fadedForGood":"Marchito para siempre","buy":"Comprar","soon":"Pronto","soonMessage":"Pronto podrás comprar desde el sitio.","tickFirst":"Marca primero la casilla: tu ramo se entrega al instante.","receipt":{"title":"Recibo","download":"Descarga tu recibo","bouquet":"Ramo","token":"Token","price":"Precio","date":"Fecha","buyer":"Monedero del comprador","transaction":"Transacción","seller":"Vendedor","waiver":"Antes de pagar, solicitaste la entrega inmediata y reconociste que, por ello, pierdes tu derecho de desistimiento (Código de Consumo francés, artículo L221-28, 13.º).","terms":"Condiciones de venta aceptadas ese día: {url}","taxes":"IVA no aplicable, art. 293 B del Código General de Impuestos francés."}},"alts":{"printemps-a-la-carpe":"Un ramo digital único de 70 tallos dibujados a mano (ranúnculo, iris holandés, tulipán, guisante de olor, jacinto, nazareno y más) en un jarrón de carpa en bronce fundido. Vive tres meses y luego queda marchito para siempre.","ronde-bleue":"Un ramo digital único de 37 tallos dibujados a mano (iris holandés, anémona, lila, membrillero japonés, viburno bola de nieve, tulipán y más) en un jarrón de vidrio esmerilado con bailarinas. Vive tres meses y luego queda marchito para siempre.","printemps-cobalt":"Un ramo digital único de 13 tallos dibujados a mano (tulipán, sauce con amentos, forsitia, liriope, narciso trompeta, ranúnculo y más) en un cuenco cobalto moteado. Vive tres meses y luego queda marchito para siempre.","nuage-sorbet":"Un ramo digital único de 19 tallos dibujados a mano (guisante de olor, sanguisorba, orquídea cymbidium y rosa de jardín) en una copa con pie blanca mate. Vive tres meses y luego queda marchito para siempre.","songe-amethyste":"Un ramo digital único de 31 tallos dibujados a mano (anémona, guisante de olor, jazmín, clavel del poeta, cala, orquídea phalaenopsis y más) en un cilindro de acero pulido espejo. Vive tres meses y luego queda marchito para siempre.","lune-d-orchidees":"Un ramo digital único de 14 tallos dibujados a mano (ciclamen, orquídea phalaenopsis, tulipán y tulipán loro) en un jarrón bulboso con pie color arena. Vive tres meses y luego queda marchito para siempre.","carnaval-de-corail":"Un ramo digital único de 30 tallos dibujados a mano (rusco teñido, fresia, ranúnculo, orquídea phalaenopsis, lisianthus, iris holandés y más) en un jarrón cáliz moteado. Vive tres meses y luego queda marchito para siempre."}}</script>
+</head>
+<body>
+<!--
+  TEMPLATE of build.mjs: the page of every language is written from it ({{ key }} = a text of langues/<code>.mjs).
+  Edit this file, never the generated pages; then run: node decor/scene/build.mjs
+-->
+<!--
+  The legal texts of the shop, in one page with anchors (#notice, #terms, #privacy, #app, #ip, #accessibility, #contact),
+  linked from the footer of entete.js, written from decor/AUDIT-LEGAL.md: the parts marked .a-remplir are still the
+  owner's to fill in, and the whole should be read by a lawyer before launch. The French version prevails. The decor is the shop's still layers.
+-->
+<div class="scene" id="scene" aria-hidden="true">
+  <div class="monde">
+    <img class="plan" style="--z:0" src="../out/ciel.svg" alt="" decoding="async">
+    <img class="plan" style="--z:3" src="../out/horizon.svg" alt="" decoding="async">
+    <img class="plan" style="--z:4" src="../out/sol-loin.svg" alt="" decoding="async">
+    <img class="plan" style="--z:5" src="../out/sol-milieu.svg" alt="" decoding="async">
+    <img class="plan" style="--z:7" src="../out/sol-pres.svg" alt="" decoding="async">
+  </div>
+</div>
+
+<main class="legal">
+  <h1>Legal</h1>
+  <p class="maj">Última actualización: 16 de octubre de 2026</p>
+
+  <nav aria-label="En esta página">
+    <ul class="sommaire">
+      <li><a href="es/legal.html#notice">Aviso legal</a></li>
+      <li><a href="es/legal.html#terms">Condiciones de venta</a></li>
+      <li><a href="es/legal.html#privacy">Política de privacidad</a></li>
+      <li><a href="es/legal.html#app">Licencia de Belai Bureau</a></li>
+      <li><a href="es/legal.html#ip">Propiedad intelectual</a></li>
+      <li><a href="es/legal.html#accessibility">Accesibilidad</a></li>
+      <li><a href="es/legal.html#contact">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <section id="notice" aria-labelledby="t-notice">
+    <h2 id="t-notice">Aviso legal</h2>
+    <h3>Editor</h3>
+    <p>Hadrien Lonjaret, entrepreneur individuel (empresario individual conforme al derecho francés), con el nombre
+      comercial Agent 33<br>
+      35 cours Sablon, 63000 Clermont-Ferrand, Francia<br>
+      Correo electrónico: <a href="mailto:lonjaret.hadrien@proton.me">lonjaret.hadrien@proton.me</a> · Teléfono: +33 6 18 55 81 22<br>
+      SIREN 853 801 488 · RCS Clermont-Ferrand · Número de IVA FR69853801488</p>
+    <h3>Director de la publicación</h3>
+    <p>Hadrien Lonjaret</p>
+    <h3>Alojamiento</h3>
+    <p>Cloudflare, Inc., 101 Townsend Street, San Francisco, CA 94107, Estados Unidos · +1 650 319 8930 ·
+      cloudflare.com</p>
+  </section>
+
+  <section id="terms" aria-labelledby="t-terms">
+    <h2 id="t-terms">Condiciones de venta</h2>
+
+    <h3>1. Quién vende y a quién</h3>
+    <p>Las presentes condiciones se aplican a todo ramo vendido en este sitio por el editor identificado en el aviso
+      legal («nosotros») a cualquier persona mayor de edad («tú»). Pagar un ramo supone aceptar estas condiciones en la
+      redacción vigente el día de la compra. Existen en varios idiomas; en caso de discrepancia, prevalece la versión
+      francesa.</p>
+
+    <h3>2. Qué es un ramo</h3>
+    <p>Un ramo es una obra de arte digital única: flores dibujadas en gráficos vectoriales, en un jarrón, registradas
+      como token no fungible (NFT) en la red Base. La página de cada ramo muestra, antes de la compra, su nombre, su
+      jarrón, su número de tallos y su precio.</p>
+    <p>Un ramo vive tres meses desde su acuñación: florece y se mece, y una cuenta atrás muestra el tiempo restante.
+      Después se marchita y queda marchito e inmóvil para siempre. Esto forma parte de la obra y no constituye un
+      defecto.</p>
+    <p>Un ramo es un objeto de colección. No otorga derecho a ningún ingreso ni participación.</p>
+
+    <h3>3. El ramo es tuyo</h3>
+    <p>Quien posee su token es propietario del ramo: puedes mostrarlo donde quieras, conservarlo, regalarlo o revenderlo,
+      sin ninguna otra formalidad. Como ocurre con un cuadro, su compra no transmite los derechos de autor sobre el
+      dibujo: no incluye la facultad de fabricar ni vender copias o productos derivados.</p>
+
+    <h3>4. Precio</h3>
+    <p>El precio se fija en ETH, sin IVA (IVA no aplicable, art. 293 B del Código General de Impuestos francés), y se muestra en el ramo antes de la compra. El
+      importe que aparece al lado en euros o en dólares estadounidenses es el mismo precio al cambio actual, obtenido de
+      CoinGecko; pagas el precio en ETH. Las comisiones de la red Base («gas») las añade tu monedero y se pagan a la red,
+      no a nosotros.</p>
+
+    <h3>5. Pedido y pago</h3>
+    <p>Pagas desde tu propio monedero, en este sitio, a través de Seaport, el protocolo del mercado OpenSea en el que
+      están publicados nuestros ramos. Antes de pagar, marcas una casilla para solicitar la entrega inmediata (véase el
+      artículo 7) y después confirmas; tu monedero muestra entonces el importe exacto, y la confirmación en tu monedero
+      formaliza el pedido con obligación de pago. Una transacción confirmada en la red no puede anularse.</p>
+    <p>Eres responsable de tu monedero, de sus claves y de la dirección con la que compras. Nunca custodiamos tus claves
+      ni tus fondos.</p>
+
+    <h3>6. Entrega y recibo</h3>
+    <p>El ramo se transfiere a tu monedero en la misma transacción, en cuanto la red la confirma. A continuación, el
+      sitio te ofrece un recibo descargable que acredita la compra, su precio, la transacción y tu solicitud de entrega
+      inmediata. El registro de la transacción en la red Base también constituye prueba de la compra.</p>
+
+    <h3>7. Derecho de desistimiento</h3>
+    <p>Si eres consumidor en la Unión Europea, dispones en principio de 14 días para desistir de una compra a
+      distancia. Un ramo es un contenido digital que no se suministra en soporte material y se entrega de inmediato:
+      antes de pagar, solicitas expresamente su entrega inmediata y reconoces que, por ello, pierdes tu derecho de
+      desistimiento (Código de Consumo francés, artículo L221-28, 13.º; Directiva 2011/83/UE, artículo 16, letra m).</p>
+
+    <h3>8. Conformidad</h3>
+    <p>Si eres consumidor, te beneficias de la garantía legal de conformidad de los contenidos digitales (Código de
+      Consumo francés, artículos L224-25-1 y siguientes): si el ramo que has recibido no se ajusta a su descripción,
+      escríbenos y lo pondremos en conformidad o, en su defecto, te reembolsaremos.</p>
+
+    <h3>9. Reventa</h3>
+    <p>No cobramos ninguna regalía por la reventa (0 %). Solo se aplican las comisiones propias del mercado y de la red.
+      Los precios de los ramos en reventa los fijan libremente sus titulares; no asumimos ningún compromiso al
+      respecto.</p>
+
+    <h3>10. Responsabilidad</h3>
+    <p>La red Base, los monederos y el mercado OpenSea son gestionados por terceros. No somos responsables de sus
+      interrupciones, sus comisiones ni sus cambios, ni de las pérdidas causadas por la pérdida de una clave o por una
+      dirección errónea. Nada de lo dispuesto en estas condiciones limita los derechos que la ley reconoce a los
+      consumidores.</p>
+
+    <h3>11. Reclamaciones y mediación</h3>
+    <p>Escríbenos primero (véase <a href="es/legal.html#contact">Contacto</a>); respondemos en un plazo de 30 días. Si no se
+      encuentra una solución, el consumidor puede someter el litigio, de forma gratuita, a nuestro mediador de consumo:
+      <span class="a-remplir">[nombre, sitio web y dirección postal del mediador]</span>.</p>
+
+    <h3>12. Ley aplicable</h3>
+    <p>Estas condiciones se rigen por el derecho francés. El consumidor conserva la protección de las normas
+      imperativas del país en el que reside y puede presentar un litigio ante los tribunales de ese país o de
+      Francia.</p>
+  </section>
+
+  <section id="privacy" aria-labelledby="t-privacy">
+    <h2 id="t-privacy">Política de privacidad</h2>
+    <p>El responsable del tratamiento es el editor identificado en el <a href="es/legal.html#notice">aviso legal</a>.
+      Recogemos los menos datos posibles y ninguno para elaborar tu perfil.</p>
+    <h3>Qué se trata, con qué fin y con qué base jurídica</h3>
+    <ul>
+      <li><strong>Datos de conexión</strong> (dirección IP, navegador, páginas solicitadas): los conserva nuestro
+        proveedor de alojamiento, Cloudflare, en sus registros técnicos, para servir el sitio y protegerlo de abusos.
+        Base jurídica: nuestro interés legítimo en un sitio operativo y seguro.</li>
+      <li><strong>Tu país</strong>, que Cloudflare deduce de tu dirección IP en cada visita, para mostrarte el sitio en tu
+        idioma y el precio en tu moneda. Se usa en el momento y nunca se almacena. Base jurídica: nuestro interés
+        legítimo en un sitio que puedas leer.</li>
+      <li><strong>El cambio de ETH:</strong> para mostrar el importe en tu moneda, tu navegador consulta a CoinGecko
+        (api.coingecko.com) el cambio actual; CoinGecko ve tu dirección IP. Base jurídica: nuestro interés legítimo en
+        mostrar un importe actualizado.</li>
+      <li><strong>La dirección de tu monedero</strong>, cuando compras o vinculas un monedero: se lee para realizar la
+        compra o para mostrar tus ramos. Base jurídica: el contrato. Las transacciones en la red Base son públicas y
+        permanentes: ni nosotros ni nadie puede borrarlas.</li>
+    </ul>
+    <h3>Cookies</h3>
+    <p>Si eliges tú mismo un idioma, el sitio lo recuerda en una única cookie, llamada <code>lang</code>, durante un
+      año. Eso es todo: ninguna otra cookie, ninguna medición de audiencia, ninguna publicidad. Esta cookie solo guarda
+      tu elección, por lo que no requiere banner de consentimiento.</p>
+    <h3>Quién recibe los datos y dónde</h3>
+    <p>Cloudflare, Inc. (alojamiento, Estados Unidos) y CoinGecko (cambio, Singapur). Las transferencias fuera de la
+      Unión Europea se basan en el Marco de Privacidad de Datos UE-EE. UU. en el caso de Cloudflare y en las cláusulas
+      contractuales tipo de la Comisión Europea.</p>
+    <h3>Durante cuánto tiempo</h3>
+    <p>Registros técnicos de Cloudflare: según lo que establezca Cloudflare, de unos días a unas semanas. Correos
+      electrónicos que nos envíes: el tiempo necesario para responder y, después, tres años. No conservamos ningún otro
+      dato.</p>
+    <h3>Tus derechos</h3>
+    <p>Puedes solicitar el acceso, la rectificación o la supresión de tus datos, la limitación de su tratamiento u
+      oponerte a él, y recibirlos en un formato portable, escribiéndonos (véase <a href="es/legal.html#contact">Contacto</a>).
+      También puedes presentar una reclamación ante la autoridad francesa de protección de datos, la CNIL (cnil.fr).</p>
+  </section>
+
+  <section id="app" aria-labelledby="t-app">
+    <h2 id="t-app">Licencia de Belai Bureau</h2>
+    <p>Belai Bureau es un programa gratuito para Windows 10 y 11 que muestra en tu escritorio los ramos que tiene un
+      monedero que vinculas con él. Te concedemos una licencia gratuita, personal y no exclusiva para instalarlo y
+      usarlo. No puedes venderlo ni distribuir copias modificadas.</p>
+    <p><strong>Qué hace con los datos:</strong> guarda en tu ordenador un código aleatorio propio de ese ordenador, la
+      dirección del monedero que vinculas y tus ajustes. Consulta a la red Base (mainnet.base.org, gestionado por Base)
+      qué ramos tiene tu monedero y abre este sitio en tu navegador cuando vinculas un monedero. No nos envía nada ni
+      mide nada.</p>
+    <p>La aplicación se ofrece tal cual. Al desinstalarla (Configuración de Windows, Aplicaciones) se eliminan la
+      aplicación y sus ajustes.</p>
+  </section>
+
+  <section id="ip" aria-labelledby="t-ip">
+    <h2 id="t-ip">Propiedad intelectual</h2>
+    <p>Las flores, los jarrones, los ramos, el decorado, los textos, el vídeo y el código de este sitio y de Belai Bureau
+      son obras originales. Queda prohibida cualquier reproducción sin autorización, salvo en lo permitido por las
+      <a href="es/legal.html#terms">condiciones de venta</a>. OpenSea, Base y CoinGecko son nombres de sus respectivos
+      titulares. El cambio de ETH lo proporciona
+      <a href="https://www.coingecko.com/" target="_blank" rel="noopener">CoinGecko</a>.</p>
+  </section>
+
+  <section id="accessibility" aria-labelledby="t-accessibility">
+    <h2 id="t-accessibility">Accesibilidad</h2>
+    <p>Nuestro objetivo son las Pautas de Accesibilidad para el Contenido Web (WCAG) 2.1, nivel AA. El sitio funciona
+      con el teclado (flechas para cambiar de ramo, Escape para alejarse), cada botón tiene un nombre para los lectores
+      de pantalla y las animaciones se detienen cuando tu sistema pide reducir el movimiento. Limitaciones conocidas: el
+      prado y los ramos son obras de arte, descritas con palabras y no en detalle; el vídeo tutorial no tiene voz y sus
+      pasos están escritos al lado. Si algo te lo impide, escríbenos y te ayudaremos.</p>
+  </section>
+
+  <section id="contact" aria-labelledby="t-contact">
+    <h2 id="t-contact">Contacto</h2>
+    <p>Correo electrónico: <a href="mailto:lonjaret.hadrien@proton.me">lonjaret.hadrien@proton.me</a> · Teléfono: +33 6 18 55 81 22 ·
+      Correo postal: Hadrien Lonjaret, 35 cours Sablon, 63000 Clermont-Ferrand, Francia</p>
+  </section>
+
+  <a class="retour" href="es/index.html">← Volver a los ramos</a>
+</main>
+
+<script src="entete.js" defer></script>
+</body>
+</html>
