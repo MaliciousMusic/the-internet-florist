@@ -1,0 +1,34 @@
+{
+ "hcm": 26,
+ "materials": [
+  {
+   "name": "or",
+   "rule": "a < 14",
+   "heights": 2,
+   "slices": 2
+  },
+  {
+   "name": "patine",
+   "rule": "else",
+   "heights": 8,
+   "slices": 6
+  }
+ ],
+ "fiche": {
+  "id": "bronze-carpes-dorees",
+  "refs": [],
+  "n": "Jarre en bronze aux carpes dorées",
+  "m": "bronze patiné, carpes en haut-relief dorées",
+  "fam": "vase",
+  "shape": "lathe",
+  "p": 0,
+  "mat": "metal",
+  "fin": "",
+  "col": "#a0582a",
+  "col2": "#c9a764",
+  "lip": "rolled",
+  "lipw": 5.4,
+  "why": "Une jarre de bronze japonaise à la patine chocolat et caramel, où nage un banc de carpes dorées en haut-relief.",
+  "svgb": "carpes-dorees"
+ }
+}

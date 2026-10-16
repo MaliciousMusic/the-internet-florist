@@ -20,7 +20,7 @@ function frostBlur(){const id='fb'+(gid++),fl=E('filter',{id,x:'-10%',y:'-5%',wi
    direction, bending only near the bottom to stay inside it; drawn like the stems above (same shading, width and colours) */
 function stemsIn(par,feet,id){const v=VZ[id]||{},g=G(par);if(!v.prof)return g;const S=profSamples(v.prof,40),wall=2.6,I=S.map(([y,w])=>[y,Math.max(1,w-wall)]),sb=v.svgb&&typeof SVGB!=='undefined'?SVGB[v.svgb]:null,
     /* a sculpted vessel: the stems are cut to its cavity first, then softened by the frost (no crisp floating edge), unless its glass is clear */
-    k=sb&&sb.inner?G(sb.clear?G(g,{opacity:.92}):G(g,{opacity:.85,filter:`url(#${frostBlur()})`}),{'clip-path':`url(#${vClip(sb.inner)})`}):G(g,{'clip-path':`url(#${vClip(latheD(I))})`,opacity:.92}),
+    k=sb&&sb.inner?G(sb.clear?G(g,{opacity:v.mat==='glass'?sb.sover||.92:1}):G(g,{opacity:.85,filter:`url(#${frostBlur()})`}),{'clip-path':`url(#${vClip(sb.inner)})`}):G(g,{'clip-path':`url(#${vClip(latheD(I))})`,opacity:.92}),
     yb=sb&&sb.cavb?sb.cavb+3:FL-5,cx=VX+vMx(v),rb=sb&&sb.cavr?sb.cavr*.55:Math.max(3,sRad(I,8))*.82;
   for(const ft of feet){const[x0,y0]=ft.p,D0=yb-y0;if(D0<4)continue;let[dx,dy]=ft.d;const l=Math.hypot(dx,dy)||1;dx/=l;dy/=l;if(dy<.3){dy=.3;dx=Math.sign(dx||1)*.954}
     const s=dx/dy,x1=Math.max(cx-rb,Math.min(cx+rb,x0+s*D0)),c1=[x0+s*D0*.35,y0+D0*.35],c2=[(x0+s*D0*.7+x1)/2,y0+D0*.72];

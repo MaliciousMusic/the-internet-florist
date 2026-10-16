@@ -152,7 +152,9 @@ function buildBq(svg,ids,sv,vid,t0=150,occ,model,recipe){if(svg._alive)svg._aliv
   /* the cut stems in the glass (or on the pins) rise first, from their cut ends */
   let stShow=22;
   /* glass: the stems under the mouth are drawn last, each continuing its own stem (feet gathered while the bouquet is drawn) */
-  const GL=v.mat==='glass'&&!!v.prof&&v.kind!=='hand'&&v.kind!=='wrap',feet=[];
+  /* a glass that hides them under its own painting (SVGB sover) has them drawn over its body, faded to that opacity, tinted by it;
+     an opaque vessel open down its front (a slit, a spathe's throat: SVGB inner) shows them in that window the same way */
+  const SBW=v.svgb&&typeof SVGB!=='undefined'?SVGB[v.svgb]:null,GL=(v.mat==='glass'||!!(SBW&&SBW.inner&&SBW.fr))&&!!v.prof&&v.kind!=='hand'&&v.kind!=='wrap',feet=[];
   /* the vessel is there, whole, from the first frame (it never fades in); the stems seen inside it grow from the mouth downward */
   {const sg=stage(L.plinth,v);stShow=sg.show;vessel(L.vback,vid,0,{noPlinth:1,part:'back',shClip:sg.top});if(v.kind==='kenzan'||v.mat==='glass'&&!GL){WILT=LIFE?lifeWilt(lifeW(LIFE)*.85):null;try{growUp(inStems(stemsBelow(L.stems,12,vid)),BP[0],BP[1],t0+250,700)}finally{WILT=null}}vessel(L.vase,vid,0,{noPlinth:1,part:'front'})}
   let FWD=false;const SC=['#24401c','#3c6229','#5f8a3e','#a9c97a'],held=v.kind==='hand'||v.kind==='wrap',vTop=held?BP[1]:FL-vMh(v),mwV=vMouth(v)||26,mcx=VX+vMx(v);
@@ -251,7 +253,7 @@ function buildBq(svg,ids,sv,vid,t0=150,occ,model,recipe){if(svg._alive)svg._aliv
   /* then, in a fading bouquet, no stem seen running under a head painted behind its own head (stemsOver) */
   try{const ws=tw.slice(tw0);for(const w of ws)w.fn(1,1);try{heartsFree(L,list,c);if(LIFE&&LIFE.stage>=2)stemsOver(L,list,c,v)}finally{for(const w of ws)w.fn(0,0)}}catch(_){}
   /* in a glass vessel every stem goes on under the mouth: the continuation of its own stem, down to the bottom */
-  if(GL&&feet.length){WILT=LIFE?lifeWilt(lifeW(LIFE)*.85):null;try{growUp(inStems(stemsIn(L.stems,feet,vid)),BP[0],BP[1],t0+250,700)}finally{WILT=null}}
+  if(GL&&feet.length){WILT=LIFE?lifeWilt(lifeW(LIFE)*.85):null;try{growUp(inStems(stemsIn(SBW&&SBW.sover?L.vase:L.stems,feet,vid)),BP[0],BP[1],t0+250,700)}finally{WILT=null}}
   /* petals fallen on the table (not swayed by the breeze, outside the frame measure) */
   if(LIFE&&LIFE.stage>=2&&!held)lifeFallen(L.plinth,LIFE,list.filter(o=>o.kind==='head'),BP,mwV,stShow,sv);
   /* frame on the real silhouette */

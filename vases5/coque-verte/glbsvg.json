@@ -1,0 +1,29 @@
+{
+ "userough": "0",
+ "rough": ".85",
+ "ks": "0.03",
+ "kst": "0.15",
+ "hcm": "30",
+ "fiche": {
+  "id": "coque-verte",
+  "refs": [],
+  "n": "Coque verte",
+  "m": "grès mat vert sapin, grain fin",
+  "fam": "vase",
+  "shape": "lathe",
+  "p": 0,
+  "mat": "matte",
+  "fin": "",
+  "col": "#3d5a45",
+  "col2": null,
+  "lip": "plain",
+  "lipw": 2,
+  "why": "Une feuille de grès vert sapin enroulée en coque devant un disque dressé."
+ },
+ "envk": "0.08",
+ "lift": "0.15",
+ "kb": "0",
+ "mh_u": "180",
+ "mx_u": "0",
+ "mo_u": "40"
+}

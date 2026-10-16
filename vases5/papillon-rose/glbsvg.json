@@ -1,0 +1,25 @@
+{
+ "inner": "1",
+ "ink": ".6",
+ "hcm": "30",
+ "fiche": {
+  "id": "porcelaine-papillon",
+  "refs": [],
+  "n": "Porcelaine au papillon",
+  "m": "porcelaine émaillée, papillon en relief",
+  "fam": "vase",
+  "shape": "lathe",
+  "p": 0,
+  "mat": "gloss",
+  "fin": "",
+  "col": "#e4e3cf",
+  "col2": null,
+  "lip": "plain",
+  "lipw": 2.6,
+  "why": "Une porcelaine crème ouverte en fente entre deux crosses, un papillon orangé posé à sa base."
+ },
+ "mh_u": "236",
+ "mx_u": "-24",
+ "mo_u": "14",
+ "mouth_y": "0.75"
+}

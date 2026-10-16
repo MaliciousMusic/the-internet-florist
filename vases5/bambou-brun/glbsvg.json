@@ -1,0 +1,23 @@
+{
+ "kst": "1.2",
+ "hcm": "36",
+ "fiche": {
+  "id": "bronze-bambous",
+  "refs": [],
+  "n": "Bronze aux bambous",
+  "m": "bronze patiné brun, bambous incrustés",
+  "fam": "vase",
+  "shape": "lathe",
+  "p": 0,
+  "mat": "satin",
+  "fin": "",
+  "col": "#4d4440",
+  "col2": null,
+  "lip": "rolled",
+  "lipw": 3,
+  "why": "Un fuseau de bronze brun où montent des bambous d'argent, de cuivre et de patine sombre."
+ },
+ "mh_u": "350",
+ "mx_u": "-8",
+ "mo_u": "17"
+}

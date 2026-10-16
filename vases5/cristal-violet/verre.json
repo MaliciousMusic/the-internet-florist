@@ -1,0 +1,29 @@
+{
+ "tint": "#c784b8",
+ "tk": "1.6",
+ "aclear": ".62",
+ "refr": "60",
+ "edgek": ".5",
+ "s": "2",
+ "t0": ".08",
+ "hcm": "23",
+ "fiche": {
+  "id": "cristal-ginkgo",
+  "refs": [],
+  "n": "Cristal améthyste gravé",
+  "m": "cristal taillé teinté améthyste, gravure dépolie",
+  "fam": "vase",
+  "shape": "lathe",
+  "p": 0,
+  "mat": "glass",
+  "fin": "",
+  "col": "#c784b8",
+  "col2": null,
+  "lip": "plain",
+  "lipw": 3,
+  "why": "Un bloc de cristal améthyste taillé en tonneau, gravé d'une fleur de ginkgo et de longues feuilles dépolies."
+ },
+ "mh_u": "224",
+ "mx_u": "0",
+ "mo_u": "34"
+}

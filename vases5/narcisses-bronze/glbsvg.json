@@ -1,0 +1,25 @@
+{
+ "kst": "0.6",
+ "hcm": "30",
+ "fiche": {
+  "id": "narcisses-bronze",
+  "refs": [],
+  "n": "Bronze aux narcisses",
+  "m": "bronze patiné brun, narcisses en relief",
+  "fam": "vase",
+  "shape": "lathe",
+  "p": 0,
+  "mat": "satin",
+  "fin": "",
+  "col": "#4a4239",
+  "col2": null,
+  "lip": "rolled",
+  "lipw": 2.6,
+  "why": "Un fuseau de bronze brun où deux narcisses en haut-relief fleurissent au-dessus de leurs feuilles ciselées."
+ },
+ "userough": "0",
+ "rough": "0.55",
+ "ks": "0.12",
+ "envk": "0.15",
+ "lift": "0.25"
+}

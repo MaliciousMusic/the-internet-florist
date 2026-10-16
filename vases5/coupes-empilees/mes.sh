@@ -1,0 +1,3 @@
+#!/bin/sh
+# mes.sh [key=value ...]: quick measured comparison of the traced field (no SVG) in the photograph's framing, under the gate
+sh ../../ws/gate.sh python mk.py photo res=${MRES:-.5} ss=${MSS:-1} emit=0 $(cat out/lect/alphas.txt) "$@" >/dev/null && python spec.py | tail -1 && python ../mesure.py cmp out/ref.jpg out/field_full.png --mask out/lect/masque.png --out out/_mes | python -c "import json,sys;d=json.load(sys.stdin);print('dE %.2f ssim %.3f aretes %.2f/%.2f zones %s'%(d['dE2000_lisse_mean'],d['ssim'],d['aretes_precision'],d['aretes_rappel'],{k:v['dE'] for k,v in d['zones'].items()}))"

@@ -9,7 +9,11 @@ VASES = ['coque-verte', 'carpes-dorees', 'torsade-turquoise', 'ginkgo', 'prisme-
 sys.path.insert(0, os.path.join(HERE, '..', 'verre'))
 
 
-CLEAR = {'prisme-jaune'}                                                 # clear, unfrosted glass
+CLEAR = {'prisme-jaune'}
+OPT_SOVER = {'cristal-violet': .5}                              # glass whose painting hides the stems inside
+# vases drawn from their GLB (glbsvg.py, verrelys.py): the mouth and lip are part of the drawing, the engine adds none
+GLB_OWN = {'chauve-souris', 'dragon-turquoise', 'papillon-rose', 'calla-verte', 'bambou-brun', 'lys-mauves', 'cristal-violet',
+           'jardiniere-cristaux', 'prismes-bronze', 'narcisses-bronze', 'coque-verte', 'gui-argent', 'feuilles-vertes'}                                                 # clear, unfrosted glass
 
 
 def half_width(P, h):
@@ -69,10 +73,26 @@ def main():
             fiche['ol']['pts'] = P
             if not fiche.get('prof'):                                   # the stems inside need a profile: half widths of the outline
                 fiche['prof'] = [[round(fiche['h'] * i / 24, 1), round(half_width(P, fiche['h'] * i / 24), 1)] for i in range(25)]
+        oc = os.path.join(HERE, name, 'out', 'compo.json')
+        if os.path.exists(oc):
+            # where the bouquet goes, measured on the model (compo.py): the real mouth, the true top column by column, the front
+            # drawn over the stems, the window or cavity where the stems inside are seen
+            cp = json.load(open(oc, encoding='utf-8'))
+            for kk in ('mx', 'mh', 'mo', 'mry'):
+                fiche[kk] = cp[kk]
+            fiche['sil'] = cp['st']                                     # (st is the stage, the plinth)
+            if fiche.get('mat') != 'glass':
+                body['fr'] = cp['fr']
+            for kk in ('inner', 'cavb', 'cavr', 'clear'):
+                if kk in cp:
+                    body[kk] = cp[kk]
+            if fiche.get('mat') == 'glass' and 'inner' in cp:
+                body['clear'] = 1
+                body['sover'] = float(OPT_SOVER.get(name, .5))           # its painted glass covers them: drawn over it, faded
         if name in CLEAR:
             body['clear'] = 1                                           # clear glass: the stems inside are seen sharp
         fiche['svgb'] = key
-        body['own'] = 1 if body.get('mouth') else 0          # a vessel with its own mouth draws its own lip too
+        body['own'] = 1 if (body.get('mouth') or name in GLB_OWN) else 0          # a vessel with its own mouth draws its own lip too
         entries[key] = body
         put_entry(os.path.join(APP, 'v0.js'), fiche)
         print('%-18s %-12s body %6.1f Ko  %s' % (name, key, len(json.dumps(body)) / 1024, fiche['id']))

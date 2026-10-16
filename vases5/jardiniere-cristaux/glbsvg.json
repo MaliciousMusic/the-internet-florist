@@ -1,0 +1,27 @@
+{
+ "kst": ".7",
+ "hcm": "24",
+ "fiche": {
+  "id": "jardiniere-cristaux",
+  "refs": [],
+  "n": "Jardinière Art nouveau aux cristaux",
+  "m": "grès à cristallisations gris-vert, anses ajourées",
+  "fam": "vase",
+  "shape": "lathe",
+  "p": 0,
+  "mat": "satin",
+  "fin": "",
+  "col": "#8d8f86",
+  "col2": null,
+  "lip": "plain",
+  "lipw": 3,
+  "why": "Une jardinière Art nouveau aux anses ajourées et aux volutes en relief, sous une glaçure grise semée de cristallisations."
+ },
+ "userough": "0",
+ "rough": ".5",
+ "ks": ".12",
+ "bsoft": "24",
+ "mh_u": "215",
+ "mx_u": "0",
+ "mo_u": "115"
+}

@@ -1,0 +1,9 @@
+# Coupes empilées (réf. 006) : rapport
+
+## État à la pause (16 octobre 2026)
+
+1. **Où j'en suis** : la copie mesurée est en place (modèle à quatre anneaux séparés calé sur la photo, alésages par anneau, bol épais de la coupe, trois creux en goutte du dessus, studio blanc de la photo, teintes calibrées par spectrographie, lancer de rayons, puis écriture SVG). La vue boutique est rendue (`out/body.json`, `out/fiche.json`). La planche et le rapport complet restent à faire.
+2. **Derniers chiffres** (`mesure.py cmp`, rendu SVG au cadrage de la photo, masque `out/lect/masque.png`) : ΔE2000 adouci 13,46 (ombre 21,9, demi-teinte 10,1, lumière 8,5), SSIM brute 0,54, `ssim_lisse` 0,64, arêtes 0,55/0,26. Silhouette du modèle (`fit.py`) : IoU 0,986 ; l'IoU automatique de `cmp` vaut 0,865, car GrabCut prend le reflet sur la table dans la photo. **Ces chiffres sont loin des seuils** (ΔE ≤ 4, SSIM adoucie ≥ 0,80) : l'écart vient des stries sombres internes du verre fait main (anneau orange, flancs rose et ambre), que le modèle physique ne reproduit pas.
+3. **Poids** : `body.json` fait 530 Ko bruts et **140 Ko en gzip, au-dessus du budget de 120 Ko** (à réduire : `dy`, `rdp`, `amin`).
+4. **Fichiers clés** : `mk.py` (générateur), `lect.py`, `masque.py`, `fit.py`, `ajuste.py` (forme), `calib.py`, `opt.py`, `spec.py`, `mes.sh` (couleur et mesure), `out/lect/` (lignes, masques, paramètres ajustés), `out/coupes_*.svg`, `out/mesure_cmp.jpg`.
+5. **Prochaine étape** : réduire le poids sous 120 Ko, contrôler la vue boutique au navigateur (seule, avec des tiges, sur fond sombre), faire la planche et rédiger le rapport. Questions pour le porteur : l'anneau du haut n'a pas d'alésage visible sur la photo, alors que le moteur a besoin d'une bouche (j'ai mis un alésage de 1,8 cm de rayon). Les seuils supposent-ils qu'on ajoute un calque de stries tiré de la photo, ce qui irait contre la règle « ne pas décalquer » ?

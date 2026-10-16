@@ -6,8 +6,18 @@ let svgbN=0;
 function svgbPut(g,txt,tag){const k='_'+tag+(svgbN++).toString(36),
   fix=s=>s.replace(/id="([\w-]+)"/g,(m,a)=>'id="'+a+k+'"').replace(/url\(#([\w-]+)\)/g,(m,a)=>'url(#'+a+k+')');
   const w=G(g,{'data-svgb':tag});w.innerHTML=fix(txt);return w}
-function svgBody(g,v){const b=SVGB[v.svgb];if(!b)return vBody(g,v,profSamples(v.prof,LOD?28:90));return svgbPut(g,'<defs>'+b.defs+'</defs>'+b.body,v.svgb)}
+/* a vessel measured on its model (fr, vases5/compo.py): its whole body is drawn behind the stems (svgMouth), then only its front, what
+   stands nearer the eye than the mouth's axis (the front lip, a bat's head, a dragon's coil), over the stems and the flowers behind it:
+   a <use> of the same drawing clipped to fr, so the body is written once. Stems then leave through the opening and pass behind what is
+   in front, in front of what is behind */
+const SVGB_BACK=new Map();
+function svgBody(g,v){const b=SVGB[v.svgb];if(!b)return vBody(g,v,profSamples(v.prof,LOD?28:90));
+  const bk=b.fr&&SVGB_BACK.get(v.svgb);if(bk&&bk.ownerSVGElement&&bk.ownerSVGElement===g.ownerSVGElement){SVGB_BACK.delete(v.svgb);
+    const id='fk'+(gid++),cp=E('clipPath',{id},GDEF||defs);E('path',{d:b.fr,'clip-rule':'evenodd'},cp);
+    const u=E('use',{'clip-path':`url(#${id})`,'data-svgb':v.svgb+'-front'},g);u.setAttribute('href','#'+bk.id);return u}
+  return svgbPut(g,'<defs>'+b.defs+'</defs>'+b.body,v.svgb)}
 /* behind the stems: a wall standing behind the bouquet, then the inside of the mouth (over the plain one, inside the rim);
    a vessel drawing its own lip and mouth (own) brings its defs along */
 function svgMouth(g,v){const b=SVGB[v.svgb];if(!b)return;if(b.back)svgbPut(g,'<defs>'+b.defs+'</defs>'+b.back,'k');
+  if(b.fr&&v.mat!=='glass'){const w=svgbPut(g,'<defs>'+b.defs+'</defs>'+b.body,v.svgb);w.id='sbk'+(gid++);SVGB_BACK.set(v.svgb,w)}
   if(b.mouth)svgbPut(g,(b.own?'<defs>'+b.defs+'</defs>':'')+b.mouth,'m')}

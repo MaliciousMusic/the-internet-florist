@@ -152,7 +152,7 @@ const SET_K=.82,QS=typeof location!=='undefined'?location.search:'',SETTLE_OFF=/
    ?notall=1 without the products made for height (tallL, tallH) */
 function stemSamples(x,y,BP,mw,rx,rimY){const bx=BP[0]+Math.max(-1,Math.min(1,(x-BP[0])/Math.max(60,rx)))*mw*.45,by=BP[1]+8,dy=BP[1]-y,Lc=Math.hypot(x-bx,by-y),sh=Math.max(0,Math.min(1,1-(Lc-20)/50)),
     P1=[bx+(x-bx)*.22,BP[1]-dy*.33],P1s=[bx+(x-bx)*.33,by+(y-by)*.33],P=[[bx,by],[P1[0]+(P1s[0]-P1[0])*sh,P1[1]+(P1s[1]-P1[1])*sh],[x-(x-bx)*.3,y+dy*.35],[x,y]],n=Math.max(4,Math.ceil(Lc/6)),S=[];
-  let p=P[0];for(let i=1;i<=n;i++){const q=bz(P,i/n),l=Math.hypot(q[0]-p[0],q[1]-p[1]);p=q;if(q[1]<rimY(q[0])-1)S.push([q[0],q[1],l,0])}return{S,bx}}
+  let p=P[0];for(let i=1;i<=n;i++){const q=bz(P,i/n),l=Math.hypot(q[0]-p[0],q[1]-p[1]);p=q;if(q[1]<rimY(q[0])-1)S.push([q[0],q[1],l,0])}return{S,bx,P}}
 /* a head may come down its stem, but a low one stays over the mouth: the higher, the wider the fan (FAN: stems leave the mouth at most ~58°
    from upright); over the mouth a head may rest on the lip (c5 then draws it in front of the vessel), elsewhere it stays clear of it.
    1. the neck: every stem passes through the mouth, so the bundle just above it is the barest place of a bouquet; up to 8 times, a small or
@@ -238,12 +238,19 @@ function candidate(P,sv,vid,tk){sd(sv);const T=P.asp?Object.assign({},TPL[tk],{a
   /* three-lobed envelope: main mass, a lower lobe on the other side, a higher lobe toward the apex — never a ball */
   const lobes=[{cx:FP[0],cy:FP[1],rx,ry},{cx:FP[0]-s*rx*.72,cy:FP[1]+ry*.3,rx:rx*.48,ry:ry*.5},{cx:FP[0]+s*rx*.28,cy:FP[1]-ry*.62,rx:rx*.42,ry:ry*.48}];
   const inEnv=(x,y,k=1)=>lobes.some(l=>((x-l.cx)/(l.rx*k))**2+((y-l.cy)/(l.ry*k))**2<=1);
-  const AP=[BP[0]-s*rx*R(.05,.2),FP[1]-ry*R(1.5,1.9)],DP=[BP[0]+s*mw*R(.3,.85),BP[1]+2];
+  /* the drapes hang over the lip on the bouquet's side, or, on a sculpted vessel (v.sil), on the side of the lip where nothing rises (never
+     over a bat's body or a dragon's coil) */
+  const ds=v.sil?(vSilTop(v,BP[0]+mw*1.4)>=vSilTop(v,BP[0]-mw*1.4)?1:-1):s;
+  const AP=[BP[0]-s*rx*R(.05,.2),FP[1]-ry*R(1.5,1.9)],DP=[BP[0]+ds*mw*R(.3,.85),BP[1]+2];
   /* visibility, on the real footprints: a head may hide only part of what is behind it and never its heart, must stay visible itself, and
      no head in front of it may lie on its own heart */
   const vis=h=>{let occ=0;for(const o of heads)if(o!==h&&o.z>h.z)occ+=fOv(o.c,h.c);return 1-occ/fArea(h.c)};
   /* lip: the head will rest on the lip (in front of the vessel); any other stays 8 units clear of the vessel's silhouette, or c5 would
      raise it and bring it in front of everything */
+  /* a vessel measured on its model (v.sil): above the mouth its sculpture is solid (a bat's head, a horn, a spathe). A stem leaves through
+     the opening and never runs through it; a flower resting on the lip never lies on what rises higher than the lip */
+  const rock=(x,y,C,lip)=>{if(lip){for(const a of C)for(const dx of[-.7,0,.7]){const X=a[0]+a[2]*dx,top=vSilTop(v,X);if(top<BP[1]-6&&a[1]+a[2]*.8>top)return false}return true}
+    const Pq=stemSamples(x,y,BP,mw,rx,rimY).P;for(let i=1;i<=24;i++){const q=bz(Pq,i/24);if(q[1]<BP[1]-4&&q[1]>vSilTop(v,q[0])+3)return false}return true};
   const clear=C=>{if(hand||!v.prof)return true;for(const a of C){const lim=Math.min(vSilTop(v,a[0]-a[2]*.7),vSilTop(v,a[0]),vSilTop(v,a[0]+a[2]*.7));if(a[1]+a[2]>lim-8)return false}return true};
   /* stems: as c5 draws them, sampled above the vessel (a cluster: the foot of its own spine); every stem is drawn behind every head, so a stem
      may only pass behind flowers standing in front of its own head, or it seems to run through them: a head's depth lies between the
@@ -255,7 +262,7 @@ function candidate(P,sv,vid,tk){sd(sv);const T=P.asp?Object.assign({},TPL[tk],{a
      vessel, a stem through a flower, not visible enough, hiding too much or a heart */
   const FD=typeof window!=='undefined'&&window.FITDBG,no=k=>{if(FD)FD[k]=(FD[k]||0)+1;return null};/* lab: window.FITDBG={} counts the refusals */
   const fitz=(x,y,rr,z,need,sid,lip,q)=>{if(q&&!NOREACH&&Math.hypot(x-BP[0],y-BP[1])>reachOf(q)+.5)return no('reach');
-    const C=footCircles(sid,x,y,rr,BP,lip?[Math.sign(x-BP[0])||1,.06]:null);if(!lip&&!clear(C))return no('rim');
+    const C=footCircles(sid,x,y,rr,BP,lip?[Math.sign(x-BP[0])||1,.06]:null);if(!lip&&!clear(C))return no('rim');if(v.sil&&!hand&&!rock(x,y,C,lip))return no('vase');
     const S=lip?[]:SF(x,y);let lo=-9,hi=9;for(const o of heads){if(o.gar&&!o.dr)continue;if(o.ss&&o.ss.length&&crosses(o.ss,C))lo=Math.max(lo,o.z+.01);if(!o.dr&&crosses(S,o.c))hi=Math.min(hi,o.z-.01)}
     if(NOSTEMZ){lo=-9;hi=9}if(lo>hi)return no('stemz');z=Math.max(lo,Math.min(hi,z));if(vis({c:C,z})<need)return no('vis');
     for(const o of heads){if(o.z>=z){if((!o.gar&&!fBig(o.c,C)||o.dr)&&fCore(o.c,C))return no('heartF');continue}const ov=fOv(o.c,C)/fArea(o.c);if(!ov)continue;if(ov>(o.focal?.25:.5))return no('hide');if(vis(o)-ov<(o.focal?.72:.38))return no('hideV');if(!o.gar&&!fBig(C,o.c)&&fCore(C,o.c))return no('heartB')}return z},
@@ -275,7 +282,7 @@ function candidate(P,sv,vid,tk){sd(sv);const T=P.asp?Object.assign({},TPL[tk],{a
       Object.assign(o,{kind:'self',x:B[0],y:B[1],spine:spineFor(Math.atan2(T[0]-B[0],B[1]-T[1])/D,len,true),from:Math.max(.3,1-2.2*q.r/len)})}
     out.push(o);const h=footSet({r:q.r,it:q.it,sid:q.it.p.sid,z,focal:q.role==='focal',o,dir:o.rim?[Math.sign(o.ax[0])||1,.06]:null,reach:reachOf(q)},x,y,BP);h.ss=o.rim?[]:o.kind==='self'?spineS(o):SF(x,y);heads.push(h)};
   /* the clump the drapes leave at the lip (c5 draws them in front of everything): no heart under it */
-  if(r.drape.length&&v.kind!=='hand'&&v.kind!=='wrap'){let nd=0;for(const it of r.drape)nd+=cnt.get(it);const dx=DP[0]+s*Math.min(14,mw*.3),dy=BP[1]-8,dr=Math.min(34,16+6*nd);heads.push({x:dx,y:dy,X:dx,Y:dy,r:dr,c:[[dx,dy,dr]],gar:1,dr:1,z:2,it:{p:{id:'drape'},L:.3,S:.3}})}
+  if(r.drape.length&&v.kind!=='hand'&&v.kind!=='wrap'){let nd=0;for(const it of r.drape)nd+=cnt.get(it);const dx=DP[0]+ds*Math.min(14,mw*.3),dy=BP[1]-8,dr=Math.min(34,16+6*nd);heads.push({x:dx,y:dy,X:dx,Y:dy,r:dr,c:[[dx,dy,dr]],gar:1,dr:1,z:2,it:{p:{id:'drape'},L:.3,S:.3}})}
   /* lines first: the tallest to the apex, others fanned, never parallel */
   const lines=[];for(const it of r.line)for(let i=0;i<cnt.get(it);i++)lines.push(it);if(lines.some(it=>it.short))lines.sort((a,b)=>(a.short?1:0)-(b.short?1:0));const angs=[],hand=v.kind==='hand'||v.kind==='wrap',amax=hand?66:60;
   lines.forEach((it,i)=>{let th;if(i===0)th=Math.atan2(AP[0]-BP[0],BP[1]-AP[1])/D;else for(let k=0;k<40;k++){th=(rnd()<.65?-s:s)*R(8,tallL(it)?Math.min(amax,28):amax);if(angs.every(a=>Math.abs(a-th)>=12))break}
@@ -311,8 +318,10 @@ function candidate(P,sv,vid,tk){sd(sv);const T=P.asp?Object.assign({},TPL[tk],{a
      never a product made for height) */
   if(v.kind!=='hand'&&v.kind!=='wrap'){const rimF=q=>(GHI[q.it.p.sid]||{}).rim?1:0,rim=rest.filter(q=>q.skip&&PL(q.it)>3&&!tallH(q.it)).concat(pool.filter(q=>q.role==='focal'&&q.skip&&rimF(q)&&PL(q.it)>3)).sort((a,b)=>rimF(b)-rimF(a)).slice(0,3),extra=rest.filter(q=>!q.skip&&q.r<44);for(let i=0;!P.ex&&rim.length<2&&i<extra.length;i++)rim.push(Object.assign({},extra[i]));
     const U=[.78,.62,.22,.4],pl=[];rim.length=Math.min(rim.length,Math.max(2,Math.min(4,Math.round(mw/22))));
-    rim.forEach((q,i)=>{const sd2=i%2?-s:s;let x=0,y=0;for(let k=0;k<12;k++){x=BP[0]+sd2*mw*U[i%4]*R(.85,1.15);y=BP[1]-q.r*R(.12,.38);if(pl.every(p=>Math.hypot(p[0]-x,p[1]-y)>(p[2]+q.r)*.72))break}
-      pl.push([x,y,q.r]);push(q,x,y,.97+i*.002,{front:true,rim:true,ax:V3.nz([sd2*.8,.05,.6])});q.skip=0})}
+    /* on a sculpted vessel (v.sil) a rim flower never lies on what rises above the lip: it takes the other side, or is left out */
+    rim.forEach((q,i)=>{let sd2=i%2?-s:s,x=0,y=0,ok=false;for(let k=0;k<(v.sil?24:12);k++){if(k===12)sd2=-sd2;x=BP[0]+sd2*mw*U[i%4]*R(.85,1.15);y=BP[1]-q.r*R(.12,.38);const free=pl.every(p=>Math.hypot(p[0]-x,p[1]-y)>(p[2]+q.r)*.72);
+        if(!v.sil){if(free)break;continue}if(free&&rock(x,y,footCircles(q.it.p.sid,x,y,q.r,BP,[sd2,.06]),true)){ok=true;break}}
+      if(v.sil&&!ok)return;pl.push([x,y,q.r]);push(q,x,y,.97+i*.002,{front:true,rim:true,ax:V3.nz([sd2*.8,.05,.6])});q.skip=0})}
   if(P.ex)for(const q of pool){if(q.skip!==1)continue;let ok=false,x=FP[0],y=FP[1],z=.3;
     for(let k=0;k<160&&!ok;k++){const l=lobes[k%3],t=R(0,6.283),d=Math.sqrt(rnd())*(1+k*.006);[x,y]=inReach(q,l.cx+Math.cos(t)*l.rx*d,Math.min(l.cy+Math.sin(t)*l.ry*d,hand?BP[1]-q.r*.3:BP[1]-q.r*.95-2));z=pz(q,R(.1,.6));const zz=fitz(x,y,q.r,z,Math.max(.12,.45-k*.003),q.it.p.sid,false,q);ok=zz!==null;if(ok)z=zz}
     push(q,x,y,z);q.skip=0}
@@ -336,7 +345,7 @@ function candidate(P,sv,vid,tk){sd(sv);const T=P.asp?Object.assign({},TPL[tk],{a
     for(let k=0;k<(P.ex?24:9)&&!ok;k++){if(!chk(S)){ok=true;break}th*=.84;dr*=.72;S=spineFor(th,len,false,dr)}if(!ok&&!P.ex)continue;
     out.push({it,role:'foliage',kind:'self',x:B[0],y:B[1],spine:S,z:R(.01,.08)})}
   /* drapes on the mass side, opposite the apex, hanging from the lip */
-  const dl=(T.drape==='L'?1.1:.82)*(H+150);for(const it of r.drape)for(let i=0;i<cnt.get(it);i++)out.push({it,role:'drape',kind:'drape',x:BP[0]+Math.max(-mw*.85,Math.min(mw*.85,DP[0]-BP[0]+s*R(-6,22)+i*s*16)),y:DP[1]-R(2,6),len:R(.32,.5)*dl,sway:s*R(26,70),side:s,z:2});
+  const dl=(T.drape==='L'?1.1:.82)*(H+150);for(const it of r.drape)for(let i=0;i<cnt.get(it);i++)out.push({it,role:'drape',kind:'drape',x:BP[0]+Math.max(-mw*.85,Math.min(mw*.85,DP[0]-BP[0]+ds*R(-6,22)+i*ds*16)),y:DP[1]-R(2,6),len:R(.32,.5)*dl,sway:ds*R(26,70),side:ds,z:2});
   for(const o of out){if(o.kind!=='head')continue;o.behind=heads.some(h=>h.z<o.z-.05&&Math.hypot(h.x-o.x,h.y-o.y)<(h.r+o.rr)*.75);o.outer=!inEnv(o.x,o.y,.8)}
   return{out,heads,tk,T,s,H,W:rx*2,FP,AP,DP,BP,ell:{cx:FP[0],cy:FP[1],rx,ry},lobes,P,cnt,sett,clash}}
 function garnishKinds(items){const L=items.reduce((a,it)=>a+it.L,0)/Math.max(1,items.length),warm=items.filter(it=>it.S>.2&&(it.H<60||it.H>300)).length>=items.length/2;

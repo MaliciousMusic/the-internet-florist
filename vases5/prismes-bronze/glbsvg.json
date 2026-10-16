@@ -1,0 +1,26 @@
+{
+ "kst": "0.9",
+ "hcm": "40",
+ "fiche": {
+  "id": "prismes-bronze",
+  "refs": [],
+  "n": "Prismes de bronze",
+  "m": "bronze patiné vert-de-gris, prismes assemblés",
+  "fam": "vase",
+  "shape": "lathe",
+  "p": 0,
+  "mat": "metal",
+  "fin": "",
+  "col": "#4d5a58",
+  "col2": null,
+  "lip": "plain",
+  "lipw": 2,
+  "why": "Des prismes de bronze dressés comme des cristaux, patinés de vert-de-gris."
+ },
+ "userough": "0",
+ "rough": "0.45",
+ "ks": "0.15",
+ "mh_u": "392",
+ "mx_u": "-40",
+ "mo_u": "28"
+}

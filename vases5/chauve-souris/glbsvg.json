@@ -1,0 +1,23 @@
+{
+ "kst": "1.5",
+ "hcm": "35",
+ "fiche": {
+  "id": "gres-chauve-souris",
+  "refs": [],
+  "n": "Grès à la chauve-souris",
+  "m": "grès peint, chauve-souris émaillée en haut-relief",
+  "fam": "vase",
+  "shape": "lathe",
+  "p": 0,
+  "mat": "gloss",
+  "fin": "",
+  "col": "#6f8f5a",
+  "col2": null,
+  "lip": "rolled",
+  "lipw": 4,
+  "why": "Un grès vert peint de chardons, qu'une chauve-souris aux ailes déployées enveloppe depuis le col."
+ },
+ "mh_u": "240",
+ "mx_u": "-35",
+ "mo_u": "30"
+}

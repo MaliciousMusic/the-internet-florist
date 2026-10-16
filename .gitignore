@@ -49,6 +49,8 @@ ch/
 
 # the five vases of 2026-10-16: reference photos and renders stay local
 vases5/*/out/
+# vase workshops: scratch comparisons with the reference photographs
+vases5/*/work/
 vases5/_apercu/
 vases5/_eng/
 vases5/.venv-depth/

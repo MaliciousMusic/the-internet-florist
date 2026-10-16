@@ -38,18 +38,27 @@ class Model:
 VS = '''#version 330
 uniform mat4 mvp; uniform mat4 mv;
 in vec3 pos; in vec3 nrm; in vec2 uv;
-out vec3 vn; out vec2 vuv; out float vz; out vec3 vp;
-void main(){ vec4 p = mv * vec4(pos, 1.0); vz = -p.z; vn = mat3(mv) * nrm; vuv = uv; vp = pos; gl_Position = mvp * vec4(pos, 1.0); }'''
+out vec3 vn; out vec2 vuv; out float vz; out vec3 vp; out vec3 vpv;
+void main(){ vec4 p = mv * vec4(pos, 1.0); vz = -p.z; vpv = p.xyz; vn = mat3(mv) * nrm; vuv = uv; vp = pos; gl_Position = mvp * vec4(pos, 1.0); }'''
 FS = '''#version 330
-uniform sampler2D base; uniform sampler2D mr; uniform int mode;
-in vec3 vn; in vec2 vuv; in float vz; in vec3 vp;
+uniform sampler2D base; uniform sampler2D mr; uniform sampler2D nt; uniform int mode; uniform float bump;
+in vec3 vn; in vec2 vuv; in float vz; in vec3 vp; in vec3 vpv;
 out vec4 o;
+mat3 cotangent(vec3 N, vec3 p, vec2 uv){
+  vec3 dp1 = dFdx(p), dp2 = dFdy(p); vec2 du1 = dFdx(uv), du2 = dFdy(uv);
+  vec3 d2 = cross(dp2, N), d1 = cross(N, dp1);
+  vec3 T = d2 * du1.x + d1 * du2.x, B = d2 * du1.y + d1 * du2.y;
+  float im = inversesqrt(max(max(dot(T, T), dot(B, B)), 1e-20));
+  return mat3(T * im, B * im, N);
+}
 void main(){
   vec3 n = normalize(vn); if (!gl_FrontFacing) n = -n;
+  if (mode == 6) { vec3 t = texture(nt, vuv).rgb * 2.0 - 1.0; t.xy *= bump; o = vec4(normalize(cotangent(n, vpv, vuv) * t), 1.0); return; }
   if (mode == 0) o = vec4(texture(base, vuv).rgb, 1.0);
   else if (mode == 1) o = vec4(n, 1.0);
   else if (mode == 2) o = vec4(vz, vuv, 1.0);
   else if (mode == 3) o = vec4(texture(mr, vuv).rgb, 1.0);
+  else if (mode == 5) o = vec4(gl_FrontFacing ? 1.0 : 0.0, 0.0, 0.0, 1.0);
   else o = vec4(vp, 1.0);
 }'''
 
@@ -69,13 +78,20 @@ class Renderer:
             tx = self.ctx.texture((img.shape[1], img.shape[0]), 4, img.tobytes())
             tx.build_mipmaps(); tx.filter = (moderngl.LINEAR_MIPMAP_LINEAR, moderngl.LINEAR)
             tx.use(unit); return tx
-        self.tb, self.tm = t(model.base, 0), t(model.mr, 1)
-        self.prog['base'].value = 0; self.prog['mr'].value = 1
+        self.tb, self.tm, self.tn = t(model.base, 0), t(model.mr, 1), t(model.nt, 2)
+        self.prog['base'].value = 0; self.prog['mr'].value = 1; self.prog['nt'].value = 2
+        self.prog['bump'].value = 1.0
 
-    def render(self, cam, W, H, modes=(0, 1, 2)):
-        """cam: dict(yaw, pitch (deg, eye above), dist (model heights), fpx (focal, px), cx, cy (where the axis foot projects), roll)"""
-        fbo = self.ctx.framebuffer(self.ctx.texture((W, H), 4, dtype='f4'), self.ctx.depth_renderbuffer((W, H)))
+    def render(self, cam, W, H, modes=(0, 1, 2), cull=None):
+        """cam: dict(yaw, pitch (deg, eye above), dist (model heights), fpx (focal, px), cx, cy (where the axis foot projects), roll)
+        cull: None, or 'front' to see the nearest back faces (the far side of a glass wall: its thickness)"""
+        ct, dr = self.ctx.texture((W, H), 4, dtype='f4'), self.ctx.depth_renderbuffer((W, H))
+        fbo = self.ctx.framebuffer(ct, dr)
         fbo.use(); self.ctx.enable(moderngl.DEPTH_TEST)
+        if cull:
+            self.ctx.enable(moderngl.CULL_FACE); self.ctx.cull_face = cull
+        else:
+            self.ctx.disable(moderngl.CULL_FACE)
         mv, proj = view_matrices(cam, W, H)
         self.prog['mv'].write(mv.T.astype('f4').tobytes()); self.prog['mvp'].write((proj @ mv).T.astype('f4').tobytes())
         out = {}
@@ -85,12 +101,14 @@ class Renderer:
             self.vao.render()
             a = np.frombuffer(fbo.color_attachments[0].read(), np.float32).reshape(H, W, 4)[::-1].copy()
             out[md] = a
-        fbo.release()
+        fbo.release(); ct.release(); dr.release()            # the attachments too: a framebuffer does not own them
         res = dict(mask=out[next(iter(out))][..., 3] > .5)
         if 0 in out: res['albedo'] = out[0][..., :3]
         if 1 in out: res['normal'] = out[1][..., :3] * np.array([1, -1, 1], np.float32)   # screen frame: x right, y down, z to the eye
         if 2 in out: res['depth'] = out[2][..., 0]; res['uv'] = out[2][..., 1:3]
         if 3 in out: res['mr'] = out[3][..., :3]
+        if 6 in out: res['nmap'] = out[6][..., :3] * np.array([1, -1, 1], np.float32)
+        if 5 in out: res['front'] = out[5][..., 0]
         if 4 in out: res['pos'] = out[4][..., :3]                    # model space: y up from the foot, axis at x = z = 0
         return res
 
@@ -198,6 +216,9 @@ def fit(vase):
         x, y = x - x.mean(), y - y.mean()
         return float((x * y).sum() / (np.sqrt((x * x).sum() * (y * y).sum()) + 1e-9))
 
+    if kind == 'sil':
+        # an untextured model: the turn is the one whose silhouette, placed again, best covers the photograph's
+        score = lambda yaw, mirror=False: place(dict(cam, yaw=yaw))[1]
     sc = [(score(float(y)), float(y)) for y in range(0, 360, 4)]
     s, yaw = max(sc)
     for y in np.arange(yaw - 4, yaw + 4.01, .5):
@@ -205,6 +226,16 @@ def fit(vase):
         if s2 > s:
             s, yaw = s2, float(y)
     cam['yaw'] = yaw
+    # a vessel that is not turned (wings, spathe, dragon) changes outline with the turn: place it again at its turn, then
+    # refine pitch and stretch there
+    cam, iou = place(cam)
+    for key, vals in (('pitch', np.arange(cam['pitch'] - 3, cam['pitch'] + 3.1, .5)), ('sx', np.arange(cam.get('sx', 1) - .06, cam.get('sx', 1) + .061, .02)),
+                      ('yaw', np.arange(yaw - 3, yaw + 3.1, 1.0))):
+        for v_ in vals:
+            c2, i2 = place(dict(cam, **{key: float(v_)}))
+            if i2 > iou:
+                cam, iou = c2, i2
+    print('placed again at the turn: pitch %.1f, stretch %.2f, turn %.1f, IoU %.4f' % (cam['pitch'], cam.get('sx', 1), cam['yaw'], iou))
     print('turn: %.1f deg, decor correlation %.3f (%.0fs)' % (yaw, s, time.time() - t0))
     curve = [[round(y), round(v, 3)] for v, y in sc]
     json.dump(dict(cam=cam, silhouette_iou=iou, decor_corr=s, yaw_curve=curve, W=W, H=H), open(os.path.join(out, 'glb_pose.json'), 'w'), indent=1)

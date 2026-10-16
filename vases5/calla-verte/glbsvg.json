@@ -1,0 +1,27 @@
+{
+ "userough": "0",
+ "rough": ".78",
+ "ks": ".08",
+ "kst": ".5",
+ "hcm": "22",
+ "fiche": {
+  "id": "calla-gres",
+  "refs": [],
+  "n": "Calla de grès",
+  "m": "grès mat vert céladon, spathe moucheté de rouge",
+  "fam": "vase",
+  "shape": "lathe",
+  "p": 0,
+  "mat": "matte",
+  "fin": "",
+  "col": "#8fa595",
+  "col2": null,
+  "lip": "plain",
+  "lipw": 2.4,
+  "why": "Une panse de grès céladon d'où monte une spathe d'arum mouchetée de rouge, ourlée de bronze."
+ },
+ "mh_u": "160",
+ "mx_u": "22",
+ "mo_u": "12",
+ "mouth_y": "0.8"
+}

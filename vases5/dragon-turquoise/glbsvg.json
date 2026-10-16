@@ -1,0 +1,24 @@
+{
+ "kst": "1.6",
+ "bsoft": "12",
+ "hcm": "32",
+ "fiche": {
+  "id": "bouteille-dragon",
+  "refs": [],
+  "n": "Bouteille au dragon turquoise",
+  "m": "faïence émaillée bleu nuit, dragon turquoise en haut-relief",
+  "fam": "vase",
+  "shape": "lathe",
+  "p": 0,
+  "mat": "gloss",
+  "fin": "",
+  "col": "#141422",
+  "col2": null,
+  "lip": "rolled",
+  "lipw": 3.6,
+  "why": "Une bouteille côtelée bleu nuit autour de laquelle s'enroule un dragon turquoise."
+ },
+ "mh_u": "318",
+ "mx_u": "-8",
+ "mo_u": "30"
+}

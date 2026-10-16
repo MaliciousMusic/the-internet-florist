@@ -19,7 +19,10 @@ function profR(P,h){if(!P||!P.length)return 0;if(h<=P[0][0])return P[0][1];for(l
 /* half-width of the body at screen height y (0 above it) */
 function vBodyAt(v,y){if(!v||!v.prof)return 0;const h=FL-y;return h<0||h>v.h?0:profR(v.prof,h)}
 /* the highest point of the silhouette standing above x (FL where the vessel does not reach) */
-function vSilTop(v,x){if(!v||!v.prof)return FL;const dx=Math.abs(x-VX),P=v.prof;let top=FL;
+/* a vessel drawn from its model (vases5/compo.py) carries its true top, column by column (sil: x0 from the axis, every dx units, the
+   heights above the floor of what stands near the bouquet; its opening free down to the front lip): asymmetric, wings and horns included */
+function vStTop(st,x){const u=(x-VX-st.x0)/st.dx,n=st.h.length;if(u<0||u>n-1)return FL;const i=Math.min(n-2,Math.floor(u)),w=u-i;return FL-(n>1?st.h[i]+(st.h[i+1]-st.h[i])*w:st.h[0])}
+function vSilTop(v,x){if(!v||!v.prof)return FL;if(v.sil)return vStTop(v.sil,x);const dx=Math.abs(x-VX),P=v.prof;let top=FL;
   for(let i=P.length-1;i>0;i--){const a=P[i-1],b=P[i];if(b[1]>=dx){top=FL-b[0];break}if(a[1]>=dx){const u=(dx-a[1])/(b[1]-a[1]);top=FL-(a[0]+(b[0]-a[0])*u);break}}
   /* the handles stand out beyond the turned body and rise over its shoulder: they count in the silhouette too */
   if(v.hd){const hd=v.hd,rAt=h=>{for(let i=1;i<P.length;i++)if(P[i][0]>=h){const a=P[i-1],b=P[i],u=(h-a[0])/((b[0]-a[0])||1);return a[1]+(b[1]-a[1])*u}return P[P.length-1][1]},r1=rAt(hd.y1),r0=rAt(hd.y0);

@@ -1,0 +1,25 @@
+{
+ "userough": "0",
+ "rough": ".72",
+ "ks": ".1",
+ "kst": ".45",
+ "hcm": "28",
+ "fiche": {
+  "id": "feuilles-vertes",
+  "refs": [],
+  "n": "Vase aux grandes feuilles",
+  "m": "grès mat vert mousse, feuilles ajourées",
+  "fam": "vase",
+  "shape": "lathe",
+  "p": 0,
+  "mat": "matte",
+  "fin": "",
+  "col": "#4f8a3c",
+  "col2": null,
+  "lip": "plain",
+  "lipw": 3,
+  "why": "Un grès vert mousse enveloppé de grandes feuilles qui s'ouvrent en arches au pied."
+ },
+ "envk": "0.12",
+ "lift": "0.25"
+}

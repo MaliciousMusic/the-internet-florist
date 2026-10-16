@@ -1,0 +1,20 @@
+{
+ "kst": "1.6",
+ "hcm": "24",
+ "fiche": {
+  "id": "gui-argent",
+  "refs": [],
+  "n": "Céladon au gui d'argent",
+  "m": "porcelaine vert céladon craquelée, monture de gui en argent",
+  "fam": "vase",
+  "shape": "lathe",
+  "p": 0,
+  "mat": "gloss",
+  "fin": "",
+  "col": "#2f5a2c",
+  "col2": null,
+  "lip": "rolled",
+  "lipw": 2.4,
+  "why": "Une bouteille vert profond enlacée d'un rameau de gui en argent, perles de baies et trois pieds."
+ }
+}
