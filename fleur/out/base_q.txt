@@ -1,0 +1,1 @@
+grid=1&sid=anemone-coronaria&cws=rouge,bleu,blanc,tigre,bicolore,raisin&st=.06:0,.2:0,.4:0,.75:0,1:0,1:.35,1:.6,1:.75,1:.9&view=2,0,3&D=110

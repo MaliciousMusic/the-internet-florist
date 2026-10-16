@@ -1,0 +1,18 @@
+start
+pieces 74 anims 109
+frame 0/1800 3ms
+frame 150/1800 8421ms
+frame 300/1800 13599ms
+frame 450/1800 18602ms
+frame 600/1800 23393ms
+frame 750/1800 28230ms
+frame 900/1800 32998ms
+frame 1050/1800 38035ms
+frame 1200/1800 43000ms
+frame 1350/1800 47866ms
+frame 1500/1800 52863ms
+frame 1650/1800 58206ms
+video 1800 cfg 50
+audio 2813 cfg 17,144
+mp4 91511414 bytes, ctts 0
+DONE 15 parts

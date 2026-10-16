@@ -1,4 +1,4 @@
-# built pages and outputs (rebuilt by mkapp.sh, mkqa.sh, mkpl.sh, mksv.py, shot.sh)
+# built pages (rebuilt by mkapp.sh, mkqa.sh, mkpl.sh, mksv.py, shot.sh)
 demo7.html
 belais-flowers-demo.html
 pilote/sv.html
@@ -7,27 +7,36 @@ pilote/bqp.html
 lab/qa13.html
 lab/pl.html
 lab/u1part.js
-fleur/out/
-fleur/res/
-bronze/out/
-# third-party photos (never committed) and throwaway browser profiles
-refcache/
-chrome_g*/
-ws/locks/
-ch/
+# built by decor/scene/mkengine.sh and packages of the bureau
+decor/scene/engine.js
+node_modules/
+target/
+# stray output of a shell redirect
+decor/nul
 __pycache__/
 *.pyc
 
-# glass vase work: photo crops and renders stay private
+# third-party photos: never committed, they stay on the local disk only
+refcache/
+baybayin-refs/
+# the flower sheets of fleur/out/ are ours and kept; these few files set our drawing beside a reference photo
+fleur/out/*_p.png
+fleur/out/*_p[0-9]*.png
+fleur/out/*_pb.png
+fleur/out/*_pairs.*
+fleur/out/ref_*
+# glass vase work: photo crops mixed with the renders
 verre/out/
-
-# shop decor: review plates and raster renders may hold reference photos (never committed); they are rebuilt by the
-# planche_*.py / *_rendu.mjs tools. The site itself only uses the SVG layers of decor/out/.
+# shop decor: review plates of the reference photos (the raster renders of decor/out/ are ours and kept)
 decor/planches/
-decor/out/**/*.png
-decor/out/**/*.jpg
-decor/out/**/*.webp
-# built by decor/scene/mkengine.sh
-decor/scene/engine.js
-# stray output of a shell redirect
-decor/nul
+
+# throwaway browser profiles, locks and the chantier working copies (their branches carry the work)
+chrome_g*/
+ws/locks/
+ch/
+
+# greenhouse workspaces: generated pages and scratch renders (sheets/ is kept)
+/serre/.u1part.js
+/serre/ws/*/pl.html
+/serre/ws/*/qa13.html
+/serre/ws/_*/

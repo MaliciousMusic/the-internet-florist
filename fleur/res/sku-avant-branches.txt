@@ -1,0 +1,3823 @@
+1	rose-standard~0	blanc pur
+2	rose-standard~1	blanc crème
+3	rose-standard~2	ivoire champagne
+4	rose-standard~3	blanc à cœur pêche
+5	rose-standard~4	blanc aux pétales verdâtres
+6	rose-standard~5	rose blush
+7	rose-standard~6	rose poudré
+8	rose-standard~7	rose moyen
+9	rose-standard~8	vieux rose
+10	rose-standard~9	rose vif
+11	rose-standard~10	fuchsia
+12	rose-standard~11	cerise
+13	rose-standard~12	pêche
+14	rose-standard~13	abricot
+15	rose-standard~14	saumon
+16	rose-standard~15	corail
+17	rose-standard~16	orange
+18	rose-standard~17	jaune
+19	rose-standard~18	jaune pâle
+20	rose-standard~19	rouge
+21	rose-standard~20	rouge velours noir
+22	rose-standard~21	bordeaux
+23	rose-standard~22	lavande
+24	rose-standard~23	mauve
+25	rose-standard~24	vert
+26	rose-standard~25	brun caramel
+27	rose-standard~26	terracotta
+28	rose-standard~27	jaune bordé de rouge
+29	rose-standard~28	blanc bordé de rose
+30	rose-standard~29	blanc flammé de rose vif
+31	rose-intermediaire-kenya~0	blanc ivoire
+32	rose-intermediaire-kenya~1	crème
+33	rose-intermediaire-kenya~2	rose
+34	rose-intermediaire-kenya~3	rose vif
+35	rose-intermediaire-kenya~4	cerise
+36	rose-intermediaire-kenya~5	orange
+37	rose-intermediaire-kenya~6	jaune
+38	rose-intermediaire-kenya~7	rouge
+39	rose-intermediaire-kenya~8	rouge profond velouté
+40	rose-intermediaire-kenya~9	violet
+41	rose-intermediaire-kenya~10	lavande
+42	rose-intermediaire-kenya~11	brun
+43	rose-intermediaire-kenya~12	blanc bordé de rose vif
+44	rose-intermediaire-kenya~13	jaune bicolore
+45	rose-intermediaire-kenya~14	rose et crème
+46	rose-aspect-jardin~0	blanc nacré
+47	rose-aspect-jardin~1	crème
+48	rose-aspect-jardin~2	champagne (tons terre)
+49	rose-aspect-jardin~3	rose pâle
+50	rose-aspect-jardin~4	rose moyen
+51	rose-aspect-jardin~5	rose bonbon
+52	rose-aspect-jardin~6	rose vif
+53	rose-aspect-jardin~7	pêche
+54	rose-aspect-jardin~8	pêche à œil vert
+55	rose-aspect-jardin~9	abricot
+56	rose-aspect-jardin~10	corail
+57	rose-aspect-jardin~11	orange
+58	rose-aspect-jardin~12	orange à cœur jaune
+59	rose-aspect-jardin~13	jaune moutarde
+60	rose-aspect-jardin~14	jaune
+61	rose-aspect-jardin~15	rouge cramoisi
+62	rose-aspect-jardin~16	lavande
+63	rose-aspect-jardin~17	lilas froid
+64	rose-aspect-jardin~18	vert (Wasabi)
+65	rose-aspect-jardin~19	tons terre
+66	rose-aspect-jardin~20	cuivre multicolore
+67	rose-aspect-jardin~21	rose bordé de vert
+68	rose-de-jardin~0	blanc crème à cœur ivoire
+69	rose-de-jardin~1	ivoire
+70	rose-de-jardin~2	beurre
+71	rose-de-jardin~3	rose blush
+72	rose-de-jardin~4	rose pâle
+73	rose-de-jardin~5	rose dragée
+74	rose-de-jardin~6	rose moyen
+75	rose-de-jardin~7	vieux rose saumoné
+76	rose-de-jardin~8	magenta (Yves Piaget)
+77	rose-de-jardin~9	fuchsia
+78	rose-de-jardin~10	pêche
+79	rose-de-jardin~11	abricot
+80	rose-de-jardin~12	corail
+81	rose-de-jardin~13	orange
+82	rose-de-jardin~14	jaune citron dans une coupe verte
+83	rose-de-jardin~15	jaune moutarde
+84	rose-de-jardin~16	caramel
+85	rose-de-jardin~17	brun sable bordé de vert
+86	rose-de-jardin~18	rouge écarlate (Piano)
+87	rose-de-jardin~19	rouge cramoisi
+88	rose-de-jardin~20	rouge rouille
+89	rose-de-jardin~21	lavande
+90	rose-de-jardin~22	mauve moka (Café Latte)
+91	rose-de-jardin~23	crème bordé de rose
+92	rose-de-jardin~24	blanc bordé de vert
+93	rose-anglaise-david-austin~0	pêche à cœur abricot (Juliet)
+94	rose-anglaise-david-austin~1	blanc laiteux à cœur beurre
+95	rose-anglaise-david-austin~2	crème marbré de framboise
+96	rose-anglaise-david-austin~3	rose dragée à cœur cerise
+97	rose-anglaise-david-austin~4	rose ballerine à cœur crème
+98	rose-anglaise-david-austin~5	rose pêche à étamines vertes
+99	rose-anglaise-david-austin~6	fuchsia
+100	rose-anglaise-david-austin~7	rouge framboise
+101	rose-anglaise-david-austin~8	abricot au halo rose
+102	rose-anglaise-david-austin~9	crème à cœur jaune et orange
+103	rose-anglaise-david-austin~10	jaune beurre doré
+104	rose-anglaise-david-austin~11	ivoire crème à étamines dorées
+105	rose-anglaise-david-austin~12	rouge cramoisi-cassis
+106	rose-anglaise-david-austin~13	blanc nacré
+107	rose-anglaise-david-austin~14	crème et vert pistache
+108	rose-anglaise-david-austin~15	rose moyen nuancé de lilas
+109	rose-anglaise-david-austin~16	rose barbe à papa
+110	rose-anglaise-david-austin~17	rose saumon et abricot
+111	rose-anglaise-david-austin~18	rose flamant à cœur corail
+112	rose-japonaise~0	miyabi (beige rosé poudré)
+113	rose-japonaise~1	tsumugi (mauve brun poudré)
+114	rose-japonaise~2	senlitsu (crème rosé, extérieur vert)
+115	rose-japonaise~3	rose tendre frangé
+116	rose-japonaise~4	lavande grisée
+117	rose-japonaise~5	blanc vert
+118	rose-japonaise~6	abricot poudré
+119	rose-japonaise~7	vieux rose brun
+120	rose-japonaise~8	rose pêche pointu
+121	rose-japonaise~9	crème bordé de rose
+122	rose-japonaise~10	café au lait
+123	rose-branchue~0	lydia (rose lilas)
+124	rose-branchue~1	mimi Eden (bicolore rose, extérieur ivoire)
+125	rose-branchue~2	white Majolica (crème)
+126	rose-branchue~3	snowflake (blanc)
+127	rose-branchue~4	babe (rose cerise)
+128	rose-branchue~5	yellow Babe (jaune)
+129	rose-branchue~6	fire King (orange rouge)
+130	rose-branchue~7	rubicon (rouge)
+131	rose-branchue~8	odilia (pêche)
+132	rose-branchue~9	silver Shadow (lavande)
+133	rose-branchue~10	bombastic (rose tendre)
+134	rose-branchue~11	champagne
+135	rose-branchue~12	macarena (jaune bordé d’orange)
+136	rose-branchue~13	saumon
+137	rose-ancienne-parfumee~0	rose tendre (Constance Spry)
+138	rose-ancienne-parfumee~1	blanc rosé (Madame Alfred Carrière)
+139	rose-ancienne-parfumee~2	rose profond (Gertrude Jekyll)
+140	rose-ancienne-parfumee~3	rose strié de cramoisi (Ferdinand Pichard)
+141	rose-ancienne-parfumee~4	rose chair (Souvenir de la Malmaison)
+142	rose-ancienne-parfumee~5	fuchsia (Rose de Resht)
+143	rose-ancienne-parfumee~6	cramoisi pourpre (Charles de Mills)
+144	rose-ancienne-parfumee~7	mauve violacé (Reine des Violettes)
+145	rose-ancienne-parfumee~8	blanc pur à œil vert (Madame Hardy)
+146	rose-ancienne-parfumee~9	pourpre profond (Cardinal de Richelieu)
+147	rose-teintee~0	arc-en-ciel (Rainbow)
+148	rose-teintee~1	arc-en-ciel pastel
+149	rose-teintee~2	bleu roi
+150	rose-teintee~3	bleu ciel
+151	rose-teintee~4	noir
+152	rose-teintee~5	vert émeraude
+153	rose-teintee~6	violet
+154	rose-teintee~7	orange
+155	rose-teintee~8	jaune
+156	rose-teintee~9	rouge
+157	rose-teintee~10	bicolore bleu et blanc
+158	rose-teintee~11	bicolore rouge et jaune
+159	rose-teintee~12	bicolore rose et violet
+160	rose-teintee~13	bicolore bleu et vert
+161	rose-stabilisee~0	rouge passion
+162	rose-stabilisee~1	rouge vif
+163	rose-stabilisee~2	bordeaux
+164	rose-stabilisee~3	fuchsia
+165	rose-stabilisee~4	rose vif
+166	rose-stabilisee~5	rose pâle
+167	rose-stabilisee~6	rose poudré (vieux rose)
+168	rose-stabilisee~7	pêche
+169	rose-stabilisee~8	corail
+170	rose-stabilisee~9	blanc pur
+171	rose-stabilisee~10	ivoire
+172	rose-stabilisee~11	champagne
+173	rose-stabilisee~12	jaune soleil
+174	rose-stabilisee~13	or
+175	rose-stabilisee~14	vert d’eau (tiffany)
+176	rose-stabilisee~15	vert pomme
+177	rose-stabilisee~16	bleu ciel
+178	rose-stabilisee~17	bleu roi
+179	rose-stabilisee~18	lavande
+180	rose-stabilisee~19	violet
+181	rose-stabilisee~20	gris perle
+182	rose-stabilisee~21	noir
+183	rose-stabilisee~22	bicolore blanc bordé de rouge
+184	rose-stabilisee~23	bicolore rose, cœur blanc
+185	rose-stabilisee~24	bicolore bleu et blanc
+186	tulipe-simple~0	rouge (Ile de France)
+187	tulipe-simple~1	rouge feu (World’s Favourite)
+188	tulipe-simple~2	orange (Orange Juice)
+189	tulipe-simple~3	orange à base d’or (Sri Chinmoy)
+190	tulipe-simple~4	or (Strong Gold)
+191	tulipe-simple~5	abricot (Apricot Impression)
+192	tulipe-simple~6	corail (Princess Irene)
+193	tulipe-simple~7	jaune (Golden Parade)
+194	tulipe-simple~8	citron vert (Green Power)
+195	tulipe-simple~9	crème (Ivory Floradale)
+196	tulipe-simple~10	blanc (Maureen)
+197	tulipe-simple~11	rose pâle (Pink Diamond)
+198	tulipe-simple~12	rose (Pink Impression)
+199	tulipe-simple~13	fuchsia (Dynasty)
+200	tulipe-simple~14	mauve (Havran)
+201	tulipe-simple~15	lilas (Bleu Aimable)
+202	tulipe-simple~16	violet (Purple Prince)
+203	tulipe-simple~17	pourpre noir (Queen of Night)
+204	tulipe-simple~18	blanc liseré de pourpre (Shirley)
+205	tulipe-simple~19	blanc flammé de rose (Camargue)
+206	tulipe-francaise~0	blanc
+207	tulipe-francaise~1	crème
+208	tulipe-francaise~2	rose blush
+209	tulipe-francaise~3	rose abricot
+210	tulipe-francaise~4	saumon
+211	tulipe-francaise~5	abricot
+212	tulipe-francaise~6	rose
+213	tulipe-francaise~7	jaune
+214	tulipe-francaise~8	rouge
+215	tulipe-francaise~9	violet
+216	tulipe-francaise~10	pourpre noir
+217	tulipe-double~0	rose pâle (Angélique)
+218	tulipe-double~1	blanc crème verdâtre (Mount Tacoma)
+219	tulipe-double~2	abricot cuivré (Copper Image)
+220	tulipe-double~3	pêche (Zantucharme)
+221	tulipe-double~4	rose vif (Voque)
+222	tulipe-double~5	jaune (Yellow Pompenette)
+223	tulipe-double~6	orange plumeté de vert (Orange Princess)
+224	tulipe-double~7	rouge (Miranda)
+225	tulipe-double~8	lilas rosé (Katinka)
+226	tulipe-double~9	mauve rosé (Lilac Perfection)
+227	tulipe-double~10	bordeaux très sombre (Uncle Tom)
+228	tulipe-double~11	noir aubergine (Black Hero)
+229	tulipe-perroquet~0	abricot
+230	tulipe-perroquet~1	rouge
+231	tulipe-perroquet~2	blanc
+232	tulipe-perroquet~3	jaune d’or
+233	tulipe-perroquet~4	pourpre noir
+234	tulipe-perroquet~5	saumon
+235	tulipe-perroquet~6	rose
+236	tulipe-perroquet~7	orange (Amazing Parrot)
+237	tulipe-perroquet~8	violet (Blue Parrot)
+238	tulipe-perroquet~9	jaune flammé de rouge
+239	tulipe-perroquet~10	rouge et blanc (Estella Rijnveld)
+240	tulipe-perroquet~11	rose ondé de vert
+241	tulipe-frangee~0	rose à cœur blanc
+242	tulipe-frangee~1	blanc
+243	tulipe-frangee~2	jaune
+244	tulipe-frangee~3	rouge cramoisi
+245	tulipe-frangee~4	mauve à franges blanches
+246	tulipe-frangee~5	pourpre noir
+247	tulipe-frangee~6	rose fuchsia à cœur bleu
+248	tulipe-frangee~7	orange abricot à franges dorées
+249	tulipe-frangee~8	crème jaune frangé de rose
+250	tulipe-fleur-de-lys~0	magenta liseré de blanc (Ballade)
+251	tulipe-fleur-de-lys~1	jaune d’or (West Point)
+252	tulipe-fleur-de-lys~2	blanc (White Triumphator)
+253	tulipe-fleur-de-lys~3	orange mandarine (Ballerina)
+254	tulipe-fleur-de-lys~4	rouge à cœur bleu (Red Shine)
+255	tulipe-fleur-de-lys~5	blanc flammé de framboise (Marilyn)
+256	tulipe-fleur-de-lys~6	rose satiné (Mariette)
+257	tulipe-fleur-de-lys~7	rose tendre (China Pink)
+258	tulipe-fleur-de-lys~8	rouge liseré de jaune (Aladdin)
+259	tulipe-fleur-de-lys~9	pourpre liseré de blanc (Claudia)
+260	tulipe-fleur-de-lys~10	lilas pourpré (Purple Dream)
+261	tulipe-fleur-de-lys~11	pourpre (Burgundy)
+262	tulipe-fleur-de-lys~12	jaune pâle virant au blanc (Sapporo)
+263	tulipe-fleur-de-lys~13	crème liseré de rose (Elegant Lady)
+264	tulipe-viridiflora~0	ivoire flammé de vert (Spring Green)
+265	tulipe-viridiflora~1	rose flammé de vert (Groenland)
+266	tulipe-viridiflora~2	rose tendre flammé de vert (China Town)
+267	tulipe-viridiflora~3	saumon orangé flammé de vert (Artist)
+268	tulipe-viridiflora~4	orange doré flammé de vert (Golden Artist)
+269	tulipe-viridiflora~5	crème rosé flammé de vert (Florosa)
+270	tulipe-viridiflora~6	rouge flammé de vert (Esperanto)
+271	tulipe-viridiflora~7	pourpre flammé de vert (Night Rider)
+272	tulipe-viridiflora~8	magenta flammé de vert (Doll’s Minuet)
+273	tulipe-viridiflora~9	jaune flammé de vert (Formosa)
+274	tulipe-viridiflora~10	blanc flammé de vert et de rouge (Flaming Spring Green)
+275	tulipe-rembrandt~0	blanc flammé de rouge (Carnaval de Rio)
+276	tulipe-rembrandt~1	blanc flammé de pourpre (Zurel)
+277	tulipe-rembrandt~2	crème flammé de bordeaux (Grand Perfection)
+278	tulipe-rembrandt~3	blanc plumé de rose (Sorbet)
+279	tulipe-rembrandt~4	rose plumé de framboise
+280	tulipe-rembrandt~5	jaune flammé de rouge (Olympic Flame)
+281	tulipe-rembrandt~6	jaune flammé de brun (Absalon)
+282	tulipe-rembrandt~7	jaune flammé de pourpre (Insulinde)
+283	tulipe-rembrandt~8	orange flammé de pourpre (Princess Irene)
+284	tulipe-rembrandt~9	rouge flammé de jaune (bizarre)
+285	renoncule-classique~0	blanc
+286	renoncule-classique~1	crème
+287	renoncule-classique~2	rose pâle
+288	renoncule-classique~3	rose
+289	renoncule-classique~4	fuchsia
+290	renoncule-classique~5	rouge
+291	renoncule-classique~6	bordeaux
+292	renoncule-classique~7	orange
+293	renoncule-classique~8	orange brûlé
+294	renoncule-classique~9	jaune
+295	renoncule-classique~10	abricot
+296	renoncule-classique~11	pêche
+297	renoncule-classique~12	prune
+298	renoncule-classique~13	lilas
+299	renoncule-classique~14	blanc liseré de cramoisi
+300	renoncule-classique~15	jaune bordé de rouge
+301	renoncule-cloni~0	rose blush (Hanoi)
+302	renoncule-cloni~1	blanc
+303	renoncule-cloni~2	pêche
+304	renoncule-cloni~3	abricot
+305	renoncule-cloni~4	corail
+306	renoncule-cloni~5	fuchsia
+307	renoncule-cloni~6	rose
+308	renoncule-cloni~7	jaune pâle
+309	renoncule-cloni~8	rouge
+310	renoncule-cloni~9	picotée rose
+311	renoncule-pon-pon~0	blanc à cœur vert
+312	renoncule-pon-pon~1	rose pâle à cœur vert
+313	renoncule-pon-pon~2	rose à cœur vert
+314	renoncule-pon-pon~3	lilas à cœur vert
+315	renoncule-pon-pon~4	prune à cœur vert
+316	renoncule-pon-pon~5	jaune à cœur vert
+317	renoncule-pon-pon~6	corail à cœur vert
+318	renoncule-butterfly~0	rose (Hermione)
+319	renoncule-butterfly~1	crème (Ariadne)
+320	renoncule-butterfly~2	rose vif
+321	renoncule-butterfly~3	orange (Apollon)
+322	renoncule-butterfly~4	jaune (Ataraxie)
+323	renoncule-butterfly~5	pourpre (Kalya)
+324	renoncule-butterfly~6	lilas
+325	renoncule-butterfly~7	corail
+326	renoncule-butterfly~8	blanc
+327	renoncule-natura-moderna~0	blanc
+328	renoncule-natura-moderna~1	jaune
+329	renoncule-natura-moderna~2	orange
+330	renoncule-natura-moderna~3	pêche
+331	renoncule-natura-moderna~4	fuchsia
+332	renoncule-natura-moderna~5	prune
+333	renoncule-natura-moderna~6	rose
+334	anemone-coronaria~0	blanc à cœur noir
+335	anemone-coronaria~1	blanc à cœur vert (The Bride)
+336	anemone-coronaria~2	rouge à anneau blanc (Hollandia)
+337	anemone-coronaria~3	bleu violet (Mr Fokker, De Caen)
+338	anemone-coronaria~4	lilas
+339	anemone-coronaria~5	fuchsia (Sylphide)
+340	anemone-coronaria~6	rose pâle
+341	anemone-coronaria~7	rose saumon
+342	anemone-coronaria~8	bordeaux
+343	anemone-coronaria~9	prune noire
+344	anemone-coronaria~10	blanc cerclé de rouge (Bicolor)
+345	anemone-japonaise~0	blanc (Honorine Jobert)
+346	anemone-japonaise~1	blanc semi-double (Whirlwind)
+347	anemone-japonaise~2	rose argenté (September Charm)
+348	anemone-japonaise~3	rose pâle semi-double (Königin Charlotte)
+349	anemone-japonaise~4	rose (Serenade)
+350	anemone-japonaise~5	rose foncé (Hadspen Abundance)
+351	anemone-japonaise~6	rose vif (Pamina)
+352	anemone-japonaise~7	magenta (Prinz Heinrich)
+353	hellebore-orientalis~0	blanc
+354	hellebore-orientalis~1	blanc moucheté de pourpre
+355	hellebore-orientalis~2	jaune primevère
+356	hellebore-orientalis~3	vert anis
+357	hellebore-orientalis~4	rose pâle
+358	hellebore-orientalis~5	rose moucheté
+359	hellebore-orientalis~6	blanc liseré de rose (picotee)
+360	hellebore-orientalis~7	abricot
+361	hellebore-orientalis~8	vieux rose
+362	hellebore-orientalis~9	prune
+363	hellebore-orientalis~10	rouge vin
+364	hellebore-orientalis~11	ardoise (presque noir)
+365	hellebore-orientalis~12	double blanc moucheté
+366	hellebore-orientalis~13	double rose
+367	hellebore-orientalis~14	double prune
+368	hellebore-niger~0	blanc pur (Christmas Carol)
+369	hellebore-niger~1	blanc, grande fleur (Potter’s Wheel)
+370	hellebore-niger~2	blanc crème (Praecox)
+371	hellebore-niger~3	blanc au revers rosé (Josef Lemper)
+372	hellebore-niger~4	rose tendre (virant)
+373	hellebore-niger~5	vieux rose (fin de floraison)
+374	hellebore-niger~6	blanc verdissant (fin de floraison)
+375	hellebore-niger~7	rose poudré au revers pourpre (× ericsmithii Pink Frost)
+376	pivoine-herbacee-double~0	rose (Sarah Bernhardt)
+377	pivoine-herbacee-double~1	blanc (Duchesse de Nemours)
+378	pivoine-herbacee-double~2	blush (Shirley Temple)
+379	pivoine-herbacee-double~3	rouge (Red Charm)
+380	pivoine-herbacee-double~4	fuchsia (Karl Rosenfield)
+381	pivoine-herbacee-double~5	cerise (Kansas)
+382	pivoine-herbacee-double~6	bordeaux
+383	pivoine-herbacee-double~7	vieux rose
+384	pivoine-herbacee-double~8	rose lilas
+385	pivoine-herbacee-double~9	framboise
+386	pivoine-herbacee-double~10	pourpre noir
+387	pivoine-herbacee-simple~0	rose
+388	pivoine-herbacee-simple~1	blanc
+389	pivoine-herbacee-simple~2	magenta
+390	pivoine-herbacee-simple~3	rouge
+391	pivoine-herbacee-simple~4	corail
+392	pivoine-herbacee-simple~5	crème
+393	pivoine-herbacee-simple~6	rose à cœur crème (Bowl of Beauty)
+394	pivoine-herbacee-simple~7	rouge à cœur doré (japonaise)
+395	pivoine-corail~0	corail vif
+396	pivoine-corail~1	corail
+397	pivoine-corail~2	saumon
+398	pivoine-corail~3	pêche
+399	pivoine-corail~4	abricot
+400	pivoine-corail~5	crème (fanée)
+401	pivoine-itoh~0	jaune (Bartzella)
+402	pivoine-itoh~1	blanc à macule (Cora Louise)
+403	pivoine-itoh~2	orange cuivré
+404	pivoine-itoh~3	magenta
+405	pivoine-itoh~4	lilas rosé
+406	pivoine-itoh~5	rouge
+407	pivoine-arbustive~0	rose
+408	pivoine-arbustive~1	blanc à macule pourpre
+409	pivoine-arbustive~2	rouge
+410	pivoine-arbustive~3	pourpre
+411	pivoine-arbustive~4	jaune
+412	pivoine-arbustive~5	saumon
+413	pivoine-arbustive~6	lavande
+414	pois-de-senteur~0	blanc
+415	pois-de-senteur~1	crème
+416	pois-de-senteur~2	rose pâle
+417	pois-de-senteur~3	rose
+418	pois-de-senteur~4	saumon
+419	pois-de-senteur~5	corail
+420	pois-de-senteur~6	cerise
+421	pois-de-senteur~7	rouge
+422	pois-de-senteur~8	bordeaux
+423	pois-de-senteur~9	mauve
+424	pois-de-senteur~10	lavande
+425	pois-de-senteur~11	lilas bleuté
+426	pois-de-senteur~12	violet
+427	pois-de-senteur~13	bleu nuit
+428	pois-de-senteur~14	blanc flammé de rose
+429	pois-de-senteur~15	crème liseré de rose
+430	jacinthe~0	bleu (Delft Blue)
+431	jacinthe~1	bleu-violet (Blue Jacket)
+432	jacinthe~2	violet (Peter Stuyvesant)
+433	jacinthe~3	mauve (Splendid Cornelia)
+434	jacinthe~4	rose (Pink Pearl)
+435	jacinthe~5	rose pâle (Fondant)
+436	jacinthe~6	rouge cerise (Jan Bos)
+437	jacinthe~7	blanc (Carnegie)
+438	jacinthe~8	crème (City of Haarlem)
+439	jacinthe~9	saumon (Gipsy Queen)
+440	jacinthe~10	pourpre (Woodstock)
+441	muscari~0	bleu (armeniacum)
+442	muscari~1	bleu saphir (Saffier)
+443	muscari~2	bleu ciel (Valerie Finnis)
+444	muscari~3	bleu double (Blue Spike)
+445	muscari~4	bleu à tête blanche (Mount Hood)
+446	muscari~5	bleu nuit à tête claire (latifolium)
+447	muscari~6	blanc (Album)
+448	muscari~7	rose pâle (Pink Sunrise)
+449	narcisse-trompette~0	jaune (Dutch Master)
+450	narcisse-trompette~1	jaune d'or (Golden Harvest)
+451	narcisse-trompette~2	jaune pâle, trompette blanche (Galactic Star)
+452	narcisse-trompette~3	blanc (Mount Hood)
+453	narcisse-trompette~4	blanc, trompette citron (Bravoure)
+454	narcisse-trompette~5	bicolore blanc et jaune (Las Vegas)
+455	narcisse-double~0	jaune et orange (Tahiti)
+456	narcisse-double~1	jaune d’or (Golden Ducat)
+457	narcisse-double~2	jaune soufre étoilé (Rip van Winkle)
+458	narcisse-double~3	blanc à cœur jaune pâle (Ice King)
+459	narcisse-double~4	blanc et orange (Acropolis)
+460	narcisse-double~5	blanc à cœur rose abricot (Replete)
+461	narcisse-double~6	crème à cœur safran, multiflore (Bridal Crown)
+462	narcisse-double~7	jaune pâle multiflore (Yellow Cheerfulness)
+463	narcisse-bouquet~0	blanc pur (Ziva)
+464	narcisse-bouquet~1	blanc à coupe orange (Geranium)
+465	narcisse-bouquet~2	blanc à coupe jaune citron (Minnow)
+466	narcisse-bouquet~3	blanc à coupe jaune (Avalanche)
+467	narcisse-bouquet~4	jaune à coupe orange (Grand Soleil d’Or)
+468	narcisse-bouquet~5	blanc à coupe orange vif (Cragford)
+469	narcisse-bouquet~6	blanc à coupe jaune d’or (Chinese Sacred Lily)
+470	narcisse-bouquet~7	blanc à coupe blanche (Silver Chimes)
+471	narcisse-bouquet~8	jaune d’or à coupe orange (Martinette)
+472	muguet~0	blanc (majalis)
+473	muguet~1	blanc ivoire, grosses clochettes (Bordeaux)
+474	muguet~2	rose pâle (rosea)
+475	muguet~3	blanc double (Flore Pleno)
+476	muguet~4	blanc, feuilles liserées de crème (Hardwick Hall)
+477	violette~0	violet (Königin Charlotte)
+478	violette~1	violet profond (Czar)
+479	violette~2	blanc (Alba)
+480	violette~3	rose (Rosea)
+481	violette~4	pourpre rougeâtre (Red Charm)
+482	violette~5	abricot (Sulphurea)
+483	violette~6	rose saumoné (Cœur d’Alsace)
+484	violette~7	lavande double (Duchesse de Parme)
+485	violette~8	bleu lavande double à cœur blanc (Marie-Louise)
+486	ancolie~0	bleu et blanc (Origami Blue & White)
+487	ancolie~1	bleu lavande (vulgaris)
+488	ancolie~2	violet et blanc (Winky Purple-White)
+489	ancolie~3	rose et blanc (Origami Rose & White)
+490	ancolie~4	rose tendre (Swan Pink)
+491	ancolie~5	rouge et blanc (Origami Red & White)
+492	ancolie~6	rouge et jaune (Origami Red & Yellow)
+493	ancolie~7	bordeaux et blanc (Winky Red-White)
+494	ancolie~8	jaune (Origami Yellow)
+495	ancolie~9	blanc (Origami White)
+496	ancolie~10	pourpre noir liseré de blanc (William Guinness)
+497	lilas~0	lilas mauve (Ruhm von Horstenstein)
+498	lilas~1	blanc (Madame Florent Stepman)
+499	lilas~2	pourpre (Andenken an Ludwig Späth)
+500	lilas~3	pourpre double (Charles Joly)
+501	lilas~4	bleu lavande double (Président Grévy)
+502	lilas~5	lilas double (Michel Buchner)
+503	lilas~6	rose (Lucie Baltet)
+504	lilas~7	pourpre liseré de blanc (Sensation)
+505	lilas~8	blanc double (Madame Lemoine)
+506	freesia~0	blanc (Ambiance)
+507	freesia~1	crème (Maya)
+508	freesia~2	jaune (Gold River)
+509	freesia~3	orange
+510	freesia~4	rouge (Red Passion)
+511	freesia~5	rose pâle
+512	freesia~6	rose (Emily)
+513	freesia~7	fuchsia
+514	freesia~8	mauve (Delta River)
+515	freesia~9	lavande (Vera)
+516	freesia~10	violet (Blue Velvet)
+517	freesia~11	bleu lavande (Mercurius)
+518	viburnum-roseum~0	vert anis (boule verte)
+519	viburnum-roseum~1	vert tendre (virant au blanc)
+520	viburnum-roseum~2	blanc
+521	viburnum-roseum~3	blanc crème
+522	viburnum-roseum~4	blanc rosé (fin de saison)
+523	fritillaire-imperiale~0	orange (Aurora)
+524	fritillaire-imperiale~1	rouge orangé (Rubra Maxima)
+525	fritillaire-imperiale~2	jaune (Maxima Lutea)
+526	fritillaire-imperiale~3	orange vif (Garland Star)
+527	fritillaire-imperiale~4	orange pâle (Premier)
+528	fritillaire-imperiale~5	rouge brique (Rubra)
+529	fritillaire-meleagris~0	damier pourpre (meleagris)
+530	fritillaire-meleagris~1	damier bordeaux sombre (Charon)
+531	fritillaire-meleagris~2	damier rouge violacé (Saturnus)
+532	fritillaire-meleagris~3	damier lilas sur fond crème (Poseidon)
+533	fritillaire-meleagris~4	blanc veiné de vert (Alba)
+534	fritillaire-meleagris~5	blanc veiné de vert pâle, grande cloche (Aphrodite)
+535	fritillaire-persica~0	pourpre prune pruineux (Adiyaman)
+536	fritillaire-persica~1	aubergine (presque noir)
+537	fritillaire-persica~2	pourpre lie-de-vin
+538	fritillaire-persica~3	vert crème (Ivory Bells)
+539	fritillaire-persica~4	vert tendre
+540	fritillaire-michailovskyi~0	pourpre brun à bord jaune (michailovskyi)
+541	fritillaire-michailovskyi~1	prune pruineux liseré d’or (uva-vulpis)
+542	fritillaire-michailovskyi~2	vert et brun (acmopetala)
+543	fritillaire-michailovskyi~3	or tacheté de brun (aurea)
+544	fritillaire-michailovskyi~4	jaune primevère (pallidiflora)
+545	allium-grosse-tete~0	violet (Globemaster)
+546	allium-grosse-tete~1	pourpre profond (Ambassador)
+547	allium-grosse-tete~2	lilas à cœur vert (Gladiator)
+548	allium-grosse-tete~3	blanc (Mount Everest)
+549	allium-grosse-tete~4	lilas rosé (giganteum)
+550	allium-grosse-tete~5	lilas clair (His Excellency)
+551	allium-grosse-tete~6	lavande bleutée (Purple Rain)
+552	allium-grosse-tete~7	étoile de Perse (cristophii)
+553	allium-petit~0	bordeaux et vert (drumstick)
+554	allium-petit~1	bordeaux (drumstick mûr)
+555	allium-petit~2	vert (drumstick jeune)
+556	allium-petit~3	bordeaux à houppe blanche (Red Mohican)
+557	allium-petit~4	pourpre (Purple Sensation)
+558	allium-petit~5	bleu (caeruleum)
+559	allium-petit~6	rose (Pink Jewel)
+560	allium-petit~7	blanc étoilé (Graceful Beauty)
+561	allium-petit~8	blanc à cœur pourpre (Silver Spring)
+562	allium-petit~9	blanc (cowanii)
+563	allium-petit~10	jaune (moly)
+564	iris-hollandais~0	bleu (Blue Magic)
+565	iris-hollandais~1	bleu nuit (Professor Blaauw)
+566	iris-hollandais~2	violet (Purple Sensation)
+567	iris-hollandais~3	bleu ciel
+568	iris-hollandais~4	bleu pâle et blanc (Silvery Beauty)
+569	iris-hollandais~5	blanc (White Excelsior)
+570	iris-hollandais~6	jaune (Golden Harvest)
+571	iris-hollandais~7	blanc et jaune (Apollo)
+572	iris-hollandais~8	pourpre et bronze (Red Ember)
+573	iris-hollandais~9	pourpre noir
+574	iris-barbu~0	bleu violet (Victoria Falls)
+575	iris-barbu~1	pourpre noir (Superstition)
+576	iris-barbu~2	blanc (Immortality)
+577	iris-barbu~3	jaune (Harvest of Memories)
+578	iris-barbu~4	abricot (Orange Harvest)
+579	iris-barbu~5	rose (Beverly Sills)
+580	iris-barbu~6	jaune et violet (Edith Wolford)
+581	iris-barbu~7	jaune et brun rouge (Rajah)
+582	iris-barbu~8	blanc et bleu (Stairway to Heaven)
+583	iris-barbu~9	blanc liseré de violet (Going My Way)
+584	iris-barbu~10	rouge cuivré (Sultan's Palace)
+585	iris-barbu~11	bleu pâle (Blue Sapphire)
+586	ornithogale~0	blanc (thyrsoides)
+587	ornithogale~1	blanc crème (thyrsoides Mount Fuji)
+588	ornithogale~2	blanc à œil noir (arabicum)
+589	ornithogale~3	blanc à œil noir vert (saundersiae)
+590	ornithogale~4	orange (dubium)
+591	ornithogale~5	jaune (dubium)
+592	ornithogale~6	blanc verdâtre (thyrsoides)
+593	pavot-islande~0	orange
+594	pavot-islande~1	jaune
+595	pavot-islande~2	blanc
+596	pavot-islande~3	rose
+597	pavot-islande~4	saumon pêche
+598	pavot-islande~5	rouge écarlate
+599	pavot-islande~6	crème citron
+600	pavot-islande~7	abricot
+601	pavot-islande~8	corail
+602	pavot-islande~9	rose bordé crème (Champagne Bubbles)
+603	camassia~0	bleu violet (leichtlinii Caerulea)
+604	camassia~1	bleu indigo (quamash)
+605	camassia~2	bleu pâle (cusickii)
+606	camassia~3	lavande (Blue Heaven)
+607	camassia~4	blanc crème (Alba)
+608	eremurus~0	orange (Cleopatra)
+609	eremurus~1	orange doré (Pinokkio)
+610	eremurus~2	jaune (stenophyllus)
+611	eremurus~3	jaune pâle (Line Dance)
+612	eremurus~4	saumon (Romance)
+613	eremurus~5	abricot (Cleopatra clair)
+614	eremurus~6	rose (robustus)
+615	eremurus~7	blanc (himalaicus)
+616	triteleia~0	bleu violet (Queen Fabiola)
+617	triteleia~1	violet profond (Corrina)
+618	triteleia~2	blanc strié de violet (Rudy)
+619	triteleia~3	blanc argenté (Silver Queen)
+620	triteleia~4	bleu ciel (Aquarius)
+621	triteleia~5	jaune pâle (ixioides Starlight)
+622	jacinthe-des-bois~0	bleu violet (non-scripta)
+623	jacinthe-des-bois~1	bleu (hispanica Excelsior)
+624	jacinthe-des-bois~2	bleu porcelaine (hispanica Blue Queen)
+625	jacinthe-des-bois~3	blanc (hispanica White City)
+626	jacinthe-des-bois~4	rose (hispanica Queen of the Pinks)
+627	jacinthe-des-bois~5	blanc (non-scripta Alba)
+628	scille~0	bleu violet (peruviana)
+629	scille~1	blanc (peruviana Alba)
+630	scille~2	bleu lilas (peruviana Lilacina)
+631	scille~3	bleu gentiane (siberica Spring Beauty)
+632	scille~4	blanc (siberica Alba)
+633	scille~5	bleu pâle strié (mischtschenkoana Tubergeniana)
+634	niveole~0	blanc pointé de vert (aestivum)
+635	niveole~1	blanc pointé de vert, grandes clochettes (Gravetye Giant)
+636	niveole~2	blanc pointé de vert, nivéole de printemps (vernum)
+637	niveole~3	blanc pointé de jaune (vernum carpathicum)
+638	crocus~0	violet (Flower Record)
+639	crocus~1	pourpre (Remembrance)
+640	crocus~2	lavande (Ruby Giant)
+641	crocus~3	lilas argenté (Vanguard)
+642	crocus~4	blanc (Jeanne d’Arc)
+643	crocus~5	blanc strié de violet (Pickwick)
+644	crocus~6	blanc, dos bleu pâle (Blue Pearl)
+645	crocus~7	blanc, dos pourpre liseré (Ladykiller)
+646	crocus~8	blanc taché de bleu nuit (Prins Claus)
+647	crocus~9	jaune d’or (Yellow Mammoth)
+648	crocus~10	jaune crème (Cream Beauty)
+649	crocus~11	jaune plumé de bronze (Gipsy Girl)
+650	sparaxis~0	orange à cœur jaune cerclé de noir
+651	sparaxis~1	rouge à cœur jaune cerclé de noir
+652	sparaxis~2	rose vif à cœur jaune
+653	sparaxis~3	blanc crème à cœur jaune cerclé de pourpre
+654	sparaxis~4	jaune à cœur cerclé de noir
+655	sparaxis~5	pourpre à cœur jaune
+656	sparaxis~6	saumon à cœur jaune cerclé de noir
+657	ixia~0	blanc à cœur pourpre (Panorama)
+658	ixia~1	crème à cœur pourpre (Giant)
+659	ixia~2	rose cerise (Mabel)
+660	ixia~3	rose tendre (Rose Emperor)
+661	ixia~4	jaune à cœur brun (Yellow Emperor)
+662	ixia~5	rouge carmin (Castor)
+663	ixia~6	orange (Hogarth)
+664	ixia~7	bleu-vert à œil noir (viridiflora)
+665	glaieul-nain~0	blanc à macules crème bordées de rouge (Nymph)
+666	glaieul-nain~1	blanc pur (The Bride)
+667	glaieul-nain~2	blanc à macules carmin (Blushing Bride)
+668	glaieul-nain~3	blanc à macules pourpres (Prins Claus)
+669	glaieul-nain~4	rose pâle à macules rose vif (Impressive)
+670	glaieul-nain~5	rose lilas à gorge blanche (Charm)
+671	glaieul-nain~6	rose à macules rouges (Elvira)
+672	glaieul-nain~7	saumon à macules blanches tiquetées de violet (Amanda Mahy)
+673	glaieul-nain~8	rouge à macules jaunes bordées de violet (Spitfire)
+674	glaieul-nain~9	rouge cerise à macules blanches (Robinetta)
+675	glaieul-nain~10	fuchsia (Atom)
+676	amaryllis~0	rose (type)
+677	amaryllis~1	rose pâle
+678	amaryllis~2	rose vif à gorge blanche (Johannesburg)
+679	amaryllis~3	rose magenta (× Amarygia)
+680	amaryllis~4	blanc (Alba)
+681	amaryllis~5	blanc rosé (Hathor)
+682	nerine~0	rose vif
+683	nerine~1	rose
+684	nerine~2	rose pâle
+685	nerine~3	blanc
+686	nerine~4	rouge profond
+687	nerine~5	cerise
+688	nerine~6	rouge écarlate
+689	nerine~7	orange saumon
+690	nerine~8	blanc bordé de rose foncé
+691	nerine~9	blanc bordé de rose pâle
+692	dahlia-assiette~0	crème pêche (Café au Lait)
+693	dahlia-assiette~1	rose poudré (Café au Lait Rosé)
+694	dahlia-assiette~2	rose lilas (Café au Lait Royal)
+695	dahlia-assiette~3	ivoire crème
+696	dahlia-assiette~4	pêche saumon (Penhill Watermelon)
+697	dahlia-assiette~5	jaune pâle (Kelvin Floodlight)
+698	dahlia-assiette~6	orange bronze (Babylon Bronze)
+699	dahlia-assiette~7	rose (Otto’s Thrill)
+700	dahlia-assiette~8	framboise (Emory Paul)
+701	dahlia-assiette~9	pourpre sombre (Thomas Edison)
+702	dahlia-assiette~10	pourpre liseré blanc (Vancouver)
+703	dahlia-decoratif~0	blanc (Bridezilla)
+704	dahlia-decoratif~1	nacre rosé
+705	dahlia-decoratif~2	crème
+706	dahlia-decoratif~3	pêche abricot
+707	dahlia-decoratif~4	corail
+708	dahlia-decoratif~5	saumon et lavande
+709	dahlia-decoratif~6	rose profond
+710	dahlia-decoratif~7	fuchsia
+711	dahlia-decoratif~8	bleu lavande
+712	dahlia-decoratif~9	pourpre sombre
+713	dahlia-decoratif~10	rouge
+714	dahlia-decoratif~11	rouge noir velouté
+715	dahlia-decoratif~12	orange
+716	dahlia-decoratif~13	jaune tendre
+717	dahlia-decoratif~14	jaune et rose mauve
+718	dahlia-decoratif~15	blanc et rose lavande
+719	dahlia-decoratif~16	corail et jaune
+720	dahlia-decoratif~17	pourpre à pointes blanches
+721	dahlia-balle~0	blanc
+722	dahlia-balle~1	crème
+723	dahlia-balle~2	jaune
+724	dahlia-balle~3	abricot bronze
+725	dahlia-balle~4	saumon, mauve et pêche
+726	dahlia-balle~5	corail pêche
+727	dahlia-balle~6	orange
+728	dahlia-balle~7	bronze orangé
+729	dahlia-balle~8	caramel
+730	dahlia-balle~9	rose profond
+731	dahlia-balle~10	pourpre sombre
+732	dahlia-balle~11	rouge
+733	dahlia-balle~12	crème à cœur vin
+734	dahlia-balle~13	blanc marbré de pourpre
+735	dahlia-pompon~0	blanc
+736	dahlia-pompon~1	jaune
+737	dahlia-pompon~2	orange pêche
+738	dahlia-pompon~3	bronze ambré
+739	dahlia-pompon~4	saumon et jaune
+740	dahlia-pompon~5	rose
+741	dahlia-pompon~6	lavande liseré
+742	dahlia-pompon~7	pourpre
+743	dahlia-pompon~8	rouge très sombre
+744	dahlia-pompon~9	jaune liseré de rouge
+745	dahlia-pompon~10	rose poudré (Wizard of Oz)
+746	dahlia-pompon~11	lilas rosé (Franz Kafka)
+747	dahlia-pompon~12	framboise (Burlesca)
+748	dahlia-pompon~13	rouge (Little Robert)
+749	dahlia-cactus~0	blanc
+750	dahlia-cactus~1	jaune citron
+751	dahlia-cactus~2	jaune
+752	dahlia-cactus~3	orange
+753	dahlia-cactus~4	rose
+754	dahlia-cactus~5	rose et blanc
+755	dahlia-cactus~6	pourpre éclairci aux pointes
+756	dahlia-cactus~7	rouge
+757	dahlia-cactus~8	rouge cramoisi
+758	dahlia-cactus~9	pourpre noir
+759	dahlia-cactus~10	jaune et rouge
+760	dahlia-nenuphar~0	blanc crème (Le Castel)
+761	dahlia-nenuphar~1	jaune (Glorie van Heemstede)
+762	dahlia-nenuphar~2	rose tendre (Gerrie Hoek)
+763	dahlia-nenuphar~3	pêche abricot (Linda’s Baby)
+764	dahlia-nenuphar~4	orange cuivré (Brown Sugar)
+765	dahlia-nenuphar~5	lavande (Lauren Michele)
+766	dahlia-nenuphar~6	blanc lavé de rose (Sweet Nathalie)
+767	dahlia-nenuphar~7	rouge chocolat (Karma Choc)
+768	dahlia-collerette~0	rouge sombre à collerette blanche (Night Butterfly)
+769	dahlia-collerette~1	écarlate à collerette jaune (La Gioconda)
+770	dahlia-collerette~2	rouge à pointes jaunes (Pooh)
+771	dahlia-collerette~3	corail à collerette crème
+772	dahlia-collerette~4	orange à collerette jaune (Alstergruss)
+773	dahlia-collerette~5	crème à collerette blanche (Dentelle de Venise)
+774	dahlia-collerette~6	rose à collerette pâle (Teesbrooke Audrey)
+775	dahlia-collerette~7	pourpre rosé à collerette blanche (Bumble Rumble)
+776	dahlia-simple~0	écarlate, feuillage noir (Bishop of Llandaff)
+777	dahlia-simple~1	jaune, feuillage noir (Bishop of York)
+778	dahlia-simple~2	orange, feuillage noir (Bishop of Oxford)
+779	dahlia-simple~3	magenta, feuillage noir (Bishop of Canterbury)
+780	dahlia-simple~4	blanc, feuillage noir (Bishop of Dover)
+781	dahlia-simple~5	abricot à œil rouge, feuillage noir (Moonfire)
+782	dahlia-simple~6	rose (Mignon)
+783	dahlia-simple~7	rouge (Mignon)
+784	dahlia-anemone~0	lavande à coussin pourpre (Blue Bayou)
+785	dahlia-anemone~1	rose à coussin jaune (Boogie Woogie)
+786	dahlia-anemone~2	mandarine à coussin rose (Totally Tangerine)
+787	dahlia-anemone~3	rouge à coussin pourpre (Mambo)
+788	dahlia-anemone~4	rose lilas à coussin crème (Siemen Doorenbos)
+789	dahlia-anemone~5	blanc à coussin crème
+790	dahlia-anemone~6	crème à coussin jaune
+791	dahlia-anemone~7	pourpre à coussin sombre
+792	dahlia-anemone~8	rouge à coussin jaune
+793	dahlia-anemone~9	jaune à coussin orange
+794	dahlia-lacinie~0	rose à pointes blanches
+795	dahlia-lacinie~1	jaune lavé de rose
+796	dahlia-lacinie~2	mauve et orange
+797	dahlia-lacinie~3	jaune à pointes rouges
+798	dahlia-lacinie~4	rouge à pointes jaunes
+799	dahlia-lacinie~5	jaune d’or
+800	dahlia-lacinie~6	bronze doré
+801	dahlia-lacinie~7	blanc rosé
+802	cosmos~0	blanc (Purity)
+803	cosmos~1	rose pâle
+804	cosmos~2	rose
+805	cosmos~3	magenta (Dazzler)
+806	cosmos~4	rouge rubis
+807	cosmos~5	abricot
+808	cosmos~6	blanc liseré de rose
+809	cosmos~7	blanc rayé de cerise
+810	cosmos~8	orange (sulphureus)
+811	cosmos~9	jaune d’or (sulphureus)
+812	cosmos~10	chocolat
+813	zinnia~0	écarlate (Benary’s Giant Scarlet)
+814	zinnia~1	orange (Benary’s Giant Orange)
+815	zinnia~2	jaune d’or (Benary’s Giant Golden Yellow)
+816	zinnia~3	jaune citron (Benary’s Giant Lemon)
+817	zinnia~4	vert lime (Envy)
+818	zinnia~5	rose vif (Benary’s Giant Bright Pink)
+819	zinnia~6	rose carmin (Benary’s Giant Carmine Rose)
+820	zinnia~7	corail (Benary’s Giant Coral)
+821	zinnia~8	rose saumon (Benary’s Giant Salmon Rose)
+822	zinnia~9	pourpre (Benary’s Giant Purple)
+823	zinnia~10	lie-de-vin (Benary’s Giant Wine)
+824	zinnia~11	blanc (Benary’s Giant White)
+825	zinnia~12	vert lime rosé (Queen Lime Blush)
+826	zinnia~13	vieux rose à cœur lime (Queen Red Lime)
+827	zinnia~14	orange pêche à cœur lime (Queen Lime Orange)
+828	zinnia~15	cerise à pointes ivoire (Swizzle)
+829	zinnia~16	ivoire flammé de rouge (Peppermint Stick)
+830	zinnia~17	orange (cactus)
+831	zinnia~18	rose (cactus)
+832	zinnia~19	jaune (cactus)
+833	zinnia~20	rose saumon (semi-double, Oklahoma)
+834	zinnia~21	écarlate (semi-double, Oklahoma)
+835	zinnia~22	blanc (semi-double, Oklahoma)
+836	scabieuse~0	pourpre noir
+837	scabieuse~1	bordeaux
+838	scabieuse~2	lie-de-vin
+839	scabieuse~3	framboise
+840	scabieuse~4	rose
+841	scabieuse~5	rose poudré
+842	scabieuse~6	lavande
+843	scabieuse~7	bleu (Fama)
+844	scabieuse~8	blanc
+845	scabieuse~9	crème abricot
+846	scabieuse~10	saumon
+847	delphinium~0	bleu ciel à œil blanc
+848	delphinium~1	bleu azur teinté mauve
+849	delphinium~2	bleu moyen à œil noir
+850	delphinium~3	bleu roi à œil blanc
+851	delphinium~4	bleu nuit
+852	delphinium~5	bleu gentiane (belladonna)
+853	delphinium~6	bleu ciel (belladonna)
+854	delphinium~7	lavande
+855	delphinium~8	mauve à œil noir
+856	delphinium~9	violet profond
+857	delphinium~10	rose poudré
+858	delphinium~11	rose framboise
+859	delphinium~12	blanc pur
+860	delphinium~13	blanc à œil noir
+861	delphinium~14	blanc (belladonna)
+862	delphinium~15	blanc vert (Green Twist)
+863	delphinium~16	bleu teinté de rose
+864	pied-alouette-annuel~0	bleu foncé
+865	pied-alouette-annuel~1	bleu moyen
+866	pied-alouette-annuel~2	bleu clair
+867	pied-alouette-annuel~3	lavande bleutée
+868	pied-alouette-annuel~4	lilas
+869	pied-alouette-annuel~5	violet
+870	pied-alouette-annuel~6	rose clair
+871	pied-alouette-annuel~7	rose
+872	pied-alouette-annuel~8	rose saumon
+873	pied-alouette-annuel~9	carmin
+874	pied-alouette-annuel~10	blanc
+875	pied-alouette-annuel~11	blanc givré de bleu (Frosted Skies)
+876	digitale~0	pourpre rosé (purpurea)
+877	digitale~1	rose (Dalmatian Rose)
+878	digitale~2	pourpre (Dalmatian Purple)
+879	digitale~3	lavande (Camelot Lavender)
+880	digitale~4	abricot (Sutton’s Apricot)
+881	digitale~5	crème (Camelot Cream)
+882	digitale~6	blanc (Alba)
+883	digitale~7	blanc, gorge marron (Pam’s Choice)
+884	lisianthus~0	blanc
+885	lisianthus~1	champagne
+886	lisianthus~2	jaune pâle
+887	lisianthus~3	vert (Arena Green)
+888	lisianthus~4	rose pâle
+889	lisianthus~5	rose
+890	lisianthus~6	rose vif
+891	lisianthus~7	abricot
+892	lisianthus~8	lavande
+893	lisianthus~9	lilas
+894	lisianthus~10	violet profond
+895	lisianthus~11	blanc liseré de violet
+896	lisianthus~12	blanc liseré de rose
+897	muflier~0	blanc
+898	muflier~1	ivoire
+899	muflier~2	jaune citron
+900	muflier~3	jaune d’or
+901	muflier~4	pêche
+902	muflier~5	abricot
+903	muflier~6	corail
+904	muflier~7	orange
+905	muflier~8	bronze
+906	muflier~9	rose pommier (bicolore)
+907	muflier~10	rose clair
+908	muflier~11	rose
+909	muflier~12	cerise
+910	muflier~13	rouge
+911	muflier~14	bordeaux
+912	muflier~15	lavande
+913	muflier~16	pourpre
+914	giroflee-matthiole~0	blanc
+915	giroflee-matthiole~1	crème
+916	giroflee-matthiole~2	jaune pâle
+917	giroflee-matthiole~3	abricot
+918	giroflee-matthiole~4	cuivre ancien
+919	giroflee-matthiole~5	rose poudré
+920	giroflee-matthiole~6	rose
+921	giroflee-matthiole~7	rose mauve
+922	giroflee-matthiole~8	cerise
+923	giroflee-matthiole~9	cramoisi
+924	giroflee-matthiole~10	lilas
+925	giroflee-matthiole~11	lavande
+926	giroflee-matthiole~12	mauve
+927	giroflee-matthiole~13	pourpre
+928	giroflee-matthiole~14	prune
+929	hortensia-boule~0	blanc
+930	hortensia-boule~1	vert émeraude
+931	hortensia-boule~2	vert antique
+932	hortensia-boule~3	bleu
+933	hortensia-boule~4	bleu violet profond
+934	hortensia-boule~5	lavande
+935	hortensia-boule~6	lilas
+936	hortensia-boule~7	rose pâle
+937	hortensia-boule~8	rose
+938	hortensia-boule~9	rose foncé
+939	hortensia-boule~10	rouge profond
+940	hortensia-boule~11	pourpre
+941	hortensia-boule~12	aubergine
+942	hortensia-boule~13	rose à cœur blanc
+943	hortensia-boule~14	antique bleu-vert
+944	hortensia-boule~15	antique vert et bordeaux
+945	hortensia-lacecap~0	bleu
+946	hortensia-lacecap~1	blanc
+947	hortensia-lacecap~2	blanc liseré de rouge
+948	hortensia-lacecap~3	crème
+949	hortensia-lacecap~4	bleu vif
+950	hortensia-lacecap~5	lilas
+951	hortensia-lacecap~6	rose mauve
+952	hortensia-lacecap~7	rose
+953	hortensia-lacecap~8	rose rouge
+954	hortensia-lacecap~9	rouge profond et blanc
+955	hortensia-paniculata~0	blanc
+956	hortensia-paniculata~1	crème
+957	hortensia-paniculata~2	vert tilleul (Limelight)
+958	hortensia-paniculata~3	rose
+959	hortensia-paniculata~4	blanc virant au rose
+960	hortensia-paniculata~5	rouge framboise
+961	hortensia-paniculata~6	rose foncé
+962	hortensia-arborescens~0	blanc (Annabelle)
+963	hortensia-arborescens~1	vert tilleul
+964	hortensia-arborescens~2	crème
+965	hortensia-arborescens~3	rose (Invincibelle)
+966	astilbe~0	rose pâle (Europa)
+967	astilbe~1	blanc (Washington)
+968	astilbe~2	ivoire (Bridal Veil)
+969	astilbe~3	rose saumon (Peach Blossom)
+970	astilbe~4	rose (Rheinland)
+971	astilbe~5	rose vif (Gloria Purpurea)
+972	astilbe~6	rouge (Montgomery)
+973	astilbe~7	rouge sombre (Fanal)
+974	astilbe~8	lilas (Amethyst)
+975	astilbe~9	mauve framboise (chinensis Visions)
+976	astilbe~10	pourpre (chinensis Purpurlanze)
+977	campanule~0	bleu (Champion Blue)
+978	campanule~1	bleu violet profond
+979	campanule~2	lavande (Champion Lavender)
+980	campanule~3	mauve
+981	campanule~4	rose (Champion Pink)
+982	campanule~5	blanc (Champion White)
+983	campanule~6	bleu, tasse et soucoupe (calycanthema)
+984	campanule~7	rose, tasse et soucoupe (calycanthema)
+985	campanule~8	blanc, tasse et soucoupe (calycanthema)
+986	campanule~9	bleu ciel (persicifolia)
+987	campanule~10	blanc (persicifolia Alba)
+988	campanule~11	lilas (persicifolia)
+989	phlox~0	lilas bleuté (Blue Paradise)
+990	phlox~1	blanc (David)
+991	phlox~2	rose à œil rouge (Bright Eyes)
+992	phlox~3	rose cerise (Miss Pepper)
+993	phlox~4	saumon à œil carmin (Orange Perfection)
+994	phlox~5	lavande à œil pourpre (Franz Schubert)
+995	phlox~6	rouge cramoisi (Starfire)
+996	phlox~7	pourpre à œil blanc (Laura)
+997	gerbera~0	blanc à cœur vert
+998	gerbera~1	blanc à cœur noir
+999	gerbera~2	crème vanille
+1000	gerbera~3	jaune à cœur noir
+1001	gerbera~4	jaune citron à cœur vert
+1002	gerbera~5	orange à cœur noir
+1003	gerbera~6	abricot
+1004	gerbera~7	saumon
+1005	gerbera~8	corail
+1006	gerbera~9	rouge à cœur noir
+1007	gerbera~10	rouge à cœur vert
+1008	gerbera~11	bordeaux
+1009	gerbera~12	rose pâle
+1010	gerbera~13	rose à cœur vert
+1011	gerbera~14	fuchsia
+1012	gerbera~15	rouge à halo jaune
+1013	gerbera~16	blanc à pointes rose
+1014	gerbera~17	double rose saumon
+1015	gerbera~18	double orange
+1016	gerbera~19	spider orange
+1017	germini~0	blanc à cœur vert
+1018	germini~1	crème à cœur noir
+1019	germini~2	jaune à cœur noir
+1020	germini~3	orange
+1021	germini~4	pêche
+1022	germini~5	corail à cœur vert
+1023	germini~6	rouge à cœur noir
+1024	germini~7	cerise
+1025	germini~8	rose pâle
+1026	germini~9	rose vif
+1027	germini~10	fuchsia
+1028	germini~11	rose lilas
+1029	germini~12	orange à halo jaune
+1030	germini~13	double rose
+1031	tournesol~0	jaune d’or sans pollen (ProCut Gold)
+1032	tournesol~1	orange (ProCut Orange)
+1033	tournesol~2	jaune citron (ProCut Lemon)
+1034	tournesol~3	jaune à cœur vert (Sunrich)
+1035	tournesol~4	jaune d’or à pollen
+1036	tournesol~5	bicolore rouge et or (ProCut Bicolor)
+1037	tournesol~6	bordeaux (Moulin Rouge)
+1038	tournesol~7	rouge chocolat
+1039	tournesol~8	rose fraise et citron (Strawberry Blonde)
+1040	tournesol~9	crème (Italian White)
+1041	tournesol~10	double (Teddy Bear)
+1042	chrysantheme-disbud~0	blanc
+1043	chrysantheme-disbud~1	crème
+1044	chrysantheme-disbud~2	jaune
+1045	chrysantheme-disbud~3	vert (Feeling Green)
+1046	chrysantheme-disbud~4	rose
+1047	chrysantheme-disbud~5	rose poudré
+1048	chrysantheme-disbud~6	lilas
+1049	chrysantheme-disbud~7	violet
+1050	chrysantheme-disbud~8	prune
+1051	chrysantheme-disbud~9	bordeaux
+1052	chrysantheme-disbud~10	orange
+1053	chrysantheme-disbud~11	rouille
+1054	chrysantheme-disbud~12	bleu (teinté)
+1055	chrysantheme-disbud~13	pourpre noir
+1056	chrysantheme-araignee~0	blanc
+1057	chrysantheme-araignee~1	vert (Anastasia)
+1058	chrysantheme-araignee~2	jaune
+1059	chrysantheme-araignee~3	bronze
+1060	chrysantheme-araignee~4	lilas
+1061	chrysantheme-araignee~5	rose
+1062	chrysantheme-araignee~6	saumon
+1063	chrysantheme-araignee~7	violet
+1064	chrysantheme-santini-pompon~0	vert chartreuse (Kermit)
+1065	chrysantheme-santini-pompon~1	vert anis (Yoko Ono)
+1066	chrysantheme-santini-pompon~2	jaune à cœur vert (Maverick Sunny)
+1067	chrysantheme-santini-pompon~3	blanc (Madiba)
+1068	chrysantheme-santini-pompon~4	rose (Madiba)
+1069	chrysantheme-santini-pompon~5	lilas (Madiba)
+1070	chrysantheme-santini-pompon~6	rose fuchsia
+1071	chrysantheme-santini-pompon~7	crème (Madiba)
+1072	chrysantheme-marguerite-spray~0	blanc à cœur vert (Bacardi)
+1073	chrysantheme-marguerite-spray~1	crème à cœur vert (Bacardi Cream)
+1074	chrysantheme-marguerite-spray~2	jaune à cœur vert (Bacardi Sunny)
+1075	chrysantheme-marguerite-spray~3	blanc à cœur jaune
+1076	chrysantheme-marguerite-spray~4	rose à cœur jaune
+1077	chrysantheme-marguerite-spray~5	rose fuchsia à cœur jaune
+1078	chrysantheme-marguerite-spray~6	orange cuivré
+1079	chrysantheme-marguerite-spray~7	rouge à cœur jaune
+1080	oeillet-standard~0	blanc
+1081	oeillet-standard~1	crème
+1082	oeillet-standard~2	jaune
+1083	oeillet-standard~3	pêche
+1084	oeillet-standard~4	orange
+1085	oeillet-standard~5	rose clair
+1086	oeillet-standard~6	rose
+1087	oeillet-standard~7	cerise (Bizet)
+1088	oeillet-standard~8	fuchsia
+1089	oeillet-standard~9	rouge
+1090	oeillet-standard~10	cramoisi
+1091	oeillet-standard~11	lavande
+1092	oeillet-standard~12	violet
+1093	oeillet-standard~13	pourpre
+1094	oeillet-standard~14	vert (Goblin)
+1095	oeillet-standard~15	vert menthe
+1096	oeillet-standard~16	tons terre
+1097	oeillet-standard~17	blanc strié de rouge
+1098	oeillet-standard~18	jaune liseré de rouge
+1099	oeillet-standard~19	blanc liseré de pourpre
+1100	oeillet-standard~20	pourpre bicolore
+1101	oeillet-spray~0	blanc
+1102	oeillet-spray~1	champagne
+1103	oeillet-spray~2	jaune
+1104	oeillet-spray~3	orange
+1105	oeillet-spray~4	rose
+1106	oeillet-spray~5	cerise
+1107	oeillet-spray~6	rouge
+1108	oeillet-spray~7	pourpre
+1109	oeillet-spray~8	vert (Broccoli)
+1110	oeillet-spray~9	bicolore liseré
+1111	oeillet-de-poete-dianthus~0	blanc
+1112	oeillet-de-poete-dianthus~1	saumon
+1113	oeillet-de-poete-dianthus~2	corail
+1114	oeillet-de-poete-dianthus~3	rose
+1115	oeillet-de-poete-dianthus~4	blanc virant au rose
+1116	oeillet-de-poete-dianthus~5	cerise néon
+1117	oeillet-de-poete-dianthus~6	écarlate
+1118	oeillet-de-poete-dianthus~7	rouge
+1119	oeillet-de-poete-dianthus~8	rouge noir (Black Cherry)
+1120	oeillet-de-poete-dianthus~9	pourpre
+1121	oeillet-de-poete-dianthus~10	pourpre néon
+1122	oeillet-de-poete-dianthus~11	lavande
+1123	oeillet-de-poete-dianthus~12	pourpre et blanc
+1124	oeillet-de-poete-dianthus~13	vert mousse (Green Trick)
+1125	reine-marguerite~0	violet (Matsumoto)
+1126	reine-marguerite~1	bleu nuit (Matsumoto)
+1127	reine-marguerite~2	bleu lavande (Matsumoto)
+1128	reine-marguerite~3	rose (Matsumoto)
+1129	reine-marguerite~4	blanc (Matsumoto)
+1130	reine-marguerite~5	rouge écarlate (Matsumoto)
+1131	reine-marguerite~6	abricot (Matsumoto)
+1132	reine-marguerite~7	jaune pâle (Matsumoto)
+1133	reine-marguerite~8	rose (pompon)
+1134	reine-marguerite~9	blanc (pompon)
+1135	reine-marguerite~10	cramoisi (pompon)
+1136	reine-marguerite~11	violet (plume)
+1137	reine-marguerite~12	rose (plume)
+1138	reine-marguerite~13	blanc (plume)
+1139	reine-marguerite~14	bleu lavande (simple)
+1140	reine-marguerite~15	rose (simple)
+1141	aster-vivace-symphyotrichum~0	blanc (Monte Cassino)
+1142	aster-vivace-symphyotrichum~1	lavande
+1143	aster-vivace-symphyotrichum~2	mauve
+1144	aster-vivace-symphyotrichum~3	rose
+1145	aster-vivace-symphyotrichum~4	rose vif
+1146	aster-vivace-symphyotrichum~5	bleu violet
+1147	aster-vivace-symphyotrichum~6	violet
+1148	agapanthe~0	bleu
+1149	agapanthe~1	blanc
+1150	agapanthe~2	bleu profond
+1151	agapanthe~3	bleu pâle
+1152	agapanthe~4	bleu ciel
+1153	agapanthe~5	bleu vif
+1154	agapanthe~6	bleu violet
+1155	agapanthe~7	lavande
+1156	agapanthe~8	pourpre
+1157	agapanthe~9	bleu à strie sombre
+1158	agapanthe~10	blanc et pourpre
+1159	glaieul~0	blanc (White Prosperity)
+1160	glaieul~1	crème
+1161	glaieul~2	jaune (Nova Lux)
+1162	glaieul~3	vert (Green Star)
+1163	glaieul~4	pêche
+1164	glaieul~5	saumon (Peter Pears)
+1165	glaieul~6	orange
+1166	glaieul~7	corail
+1167	glaieul~8	rose clair
+1168	glaieul~9	rose (Rose Supreme)
+1169	glaieul~10	fuchsia
+1170	glaieul~11	rouge (Jessica)
+1171	glaieul~12	rouge flammé de blanc (Traderhorn)
+1172	glaieul~13	bordeaux velours (Black Star)
+1173	glaieul~14	prune (Plum Tart)
+1174	glaieul~15	pourpre
+1175	glaieul~16	lavande
+1176	glaieul~17	blanc liseré de rose (Priscilla)
+1177	glaieul~18	jaune liseré de rouge
+1178	arum-calla~0	blanc (grand arum)
+1179	arum-calla~1	blanc pointe verte
+1180	arum-calla~2	blanc rosé
+1181	arum-calla~3	crème
+1182	arum-calla~4	crème à gorge pourpre
+1183	arum-calla~5	jaune
+1184	arum-calla~6	jaune d’or
+1185	arum-calla~7	pêche
+1186	arum-calla~8	orange mangue
+1187	arum-calla~9	rose
+1188	arum-calla~10	rose grenat
+1189	arum-calla~11	rouge
+1190	arum-calla~12	bordeaux
+1191	arum-calla~13	pourpre
+1192	arum-calla~14	pourpre noir
+1193	arum-calla~15	chocolat
+1194	lis-oriental~0	blanc (Casa Blanca)
+1195	lis-oriental~1	blanc moucheté de rose
+1196	lis-oriental~2	cramoisi bordé de blanc (Stargazer)
+1197	lis-oriental~3	rose tendre
+1198	lis-oriental~4	rose à bord clair
+1199	lis-oriental~5	rose fuchsia
+1200	lis-oriental~6	rose saumoné
+1201	lis-oriental~7	rouge bordé de blanc
+1202	lis-oriental~8	blanc strié cramoisi
+1203	lis-ot-orienpet~0	jaune citron à bord crème (Conca d'Or)
+1204	lis-ot-orienpet~1	jaune primevère (Yelloween)
+1205	lis-ot-orienpet~2	fuchsia à cœur blanc (Robina)
+1206	lis-ot-orienpet~3	saumon orangé (Zelmira)
+1207	lis-ot-orienpet~4	rose à bord blanc (Anastasia)
+1208	lis-ot-orienpet~5	blanc rosé (Pretty Woman)
+1209	lis-ot-orienpet~6	blanc crème (Big Brother)
+1210	lis-ot-orienpet~7	jaune rosé (Boogie Woogie)
+1211	lis-ot-orienpet~8	pourpre grenat (Purple Prince)
+1212	lis-ot-orienpet~9	rouge carmin (Red Morning)
+1213	lis-asiatique-la~0	blanc
+1214	lis-asiatique-la~1	jaune
+1215	lis-asiatique-la~2	abricot
+1216	lis-asiatique-la~3	orange
+1217	lis-asiatique-la~4	rose
+1218	lis-asiatique-la~5	rouge
+1219	lis-asiatique-la~6	rouge noir
+1220	lis-asiatique-la~7	rouge à cœur noir
+1221	lis-asiatique-la~8	blanc à pointes rouges
+1222	lis-asiatique-la~9	orange à cœur pourpre
+1223	lis-longiflorum-trompette~0	blanc pur (White Heaven)
+1224	lis-longiflorum-trompette~1	blanc à gorge verte (White Fox)
+1225	lis-longiflorum-trompette~2	crème (trompette)
+1226	lis-longiflorum-trompette~3	abricot (African Queen)
+1227	lis-longiflorum-trompette~4	jaune (Golden Splendor)
+1228	lis-longiflorum-trompette~5	rose (Pink Perfection)
+1229	lis-longiflorum-trompette~6	blanc revers pourpre (L. regale)
+1230	alstroemere~0	blanc (Virginia)
+1231	alstroemere~1	blanc champagne (Prestige)
+1232	alstroemere~2	blanc à pointes roses
+1233	alstroemere~3	rose tendre
+1234	alstroemere~4	rose
+1235	alstroemere~5	fuchsia
+1236	alstroemere~6	lilas
+1237	alstroemere~7	pourpre
+1238	alstroemere~8	jaune
+1239	alstroemere~9	jaune bordé de rouge (Bali)
+1240	alstroemere~10	abricot
+1241	alstroemere~11	orange
+1242	alstroemere~12	saumon
+1243	alstroemere~13	rouge (Noize)
+1244	alstroemere~14	bordeaux
+1245	amaryllis-hippeastrum~0	rouge (Red Lion)
+1246	amaryllis-hippeastrum~1	rouge vif (Ferrari)
+1247	amaryllis-hippeastrum~2	bordeaux velouté (Benfica)
+1248	amaryllis-hippeastrum~3	blanc (Mont Blanc)
+1249	amaryllis-hippeastrum~4	blanc rosé (Apple Blossom)
+1250	amaryllis-hippeastrum~5	rose (Pink Surprise)
+1251	amaryllis-hippeastrum~6	saumon (Rilona)
+1252	amaryllis-hippeastrum~7	pêche (Terra Cotta Star)
+1253	amaryllis-hippeastrum~8	rouge à étoile blanche (Minerva)
+1254	amaryllis-hippeastrum~9	blanc liseré rouge (Picotee)
+1255	amaryllis-hippeastrum~10	double rouge (Double Dragon)
+1256	amaryllis-hippeastrum~11	double blanc (Alfresco)
+1257	amaryllis-hippeastrum~12	double rouge strié blanc (Dancing Queen)
+1258	tubereuse~0	blanc simple (Mexican Single)
+1259	tubereuse~1	blanc double (The Pearl)
+1260	tubereuse~2	crème ivoire
+1261	tubereuse~3	rosé (Pink Sapphire)
+1262	tubereuse~4	blanc à boutons rosés (Sensation)
+1263	rudbeckia~0	jaune d’or (Indian Summer)
+1264	rudbeckia~1	orange doré (Toto)
+1265	rudbeckia~2	or à anneau acajou (Denver Daisy)
+1266	rudbeckia~3	tons d’automne (Autumn Colors)
+1267	rudbeckia~4	rouge cerise (Cherry Brandy)
+1268	rudbeckia~5	acajou à pointes d’or (Cappuccino)
+1269	rudbeckia~6	or à pointes citron, cœur vert (Prairie Sun)
+1270	rudbeckia~7	jaune à cœur vert (Irish Eyes)
+1271	rudbeckia~8	rose cuivré (Sahara)
+1272	echinacea~0	rose pourpre
+1273	echinacea~1	blanc (White Swan)
+1274	echinacea~2	rose
+1275	echinacea~3	orange
+1276	echinacea~4	rouge
+1277	echinacea~5	jaune
+1278	echinacea~6	vert (Green Jewel)
+1279	echinacea~7	cône séché
+1280	nigelle~0	bleu ciel (Miss Jekyll)
+1281	nigelle~1	bleu profond (Oxford Blue)
+1282	nigelle~2	bleu pâle (Miss Jekyll Light Blue)
+1283	nigelle~3	blanc (Miss Jekyll Alba)
+1284	nigelle~4	rose (Mulberry Rose)
+1285	nigelle~5	rose soutenu (Persian Rose)
+1286	nigelle~6	mauve (Persian Jewels)
+1287	nigelle~7	violet (Delft Blue)
+1288	clematite~0	bleu violet
+1289	clematite~1	pourpre (Jackmanii)
+1290	clematite~2	blanc
+1291	clematite~3	rose barré (Nelly Moser)
+1292	clematite~4	rose
+1293	clematite~5	lilas
+1294	clematite~6	rouge sombre
+1295	clematite~7	lie-de-vin
+1296	clematite~8	mauve
+1297	clematite~9	vert tendre
+1298	clematite~10	lavande pâle
+1299	achillee~0	jaune soufre (Moonshine)
+1300	achillee~1	blanc
+1301	achillee~2	crème (Summer Pastels)
+1302	achillee~3	jaune d’or (filipendulina Cloth of Gold)
+1303	achillee~4	or vif (filipendulina Parker’s Variety)
+1304	achillee~5	terracotta
+1305	achillee~6	saumon (Salmon Beauty)
+1306	achillee~7	rose (Pink Grapefruit)
+1307	achillee~8	cerise (Cerise Queen)
+1308	achillee~9	rouge (Paprika)
+1309	achillee~10	lilas (Lilac Beauty)
+1310	trachelium~0	violet (Lake Michigan Purple)
+1311	trachelium~1	pourpre noir (Devotion Purple)
+1312	trachelium~2	bleu violet (Lake Louise Blue)
+1313	trachelium~3	lavande (Corporate Lavender)
+1314	trachelium~4	lilas gris (Lake Michigan)
+1315	trachelium~5	blanc (Lake Louise White)
+1316	trachelium~6	blanc verdi
+1317	trachelium~7	vert (boutons, Jade)
+1318	trachelium~8	rose pâle (Devotion Pink)
+1319	trachelium~9	bordeaux (Black Knight)
+1320	bleuet~0	bleu vif (Blue Boy)
+1321	bleuet~1	bleu ciel (Blue Diadem)
+1322	bleuet~2	blanc (Snowman)
+1323	bleuet~3	rose (Pinkie)
+1324	bleuet~4	blanc à cœur rose (Classic Romantic)
+1325	bleuet~5	lavande
+1326	bleuet~6	violet pourpre
+1327	bleuet~7	violet à pointes blanches (Classic Magic)
+1328	bleuet~8	bordeaux (Red Boy)
+1329	bleuet~9	pourpre noir (Black Ball)
+1330	godetia-clarkia~0	rose (Grace Rose Pink)
+1331	godetia-clarkia~1	saumon (Grace Salmon)
+1332	godetia-clarkia~2	blanc (Grace White)
+1333	godetia-clarkia~3	rouge carmin (Grace Red)
+1334	godetia-clarkia~4	lavande (Grace Lavender)
+1335	godetia-clarkia~5	corail
+1336	godetia-clarkia~6	rose coquillage (Grace Shell Pink)
+1337	godetia-clarkia~7	double rose (Apple Blossom)
+1338	godetia-clarkia~8	double saumon (Salmon Queen)
+1339	godetia-clarkia~9	double blanc
+1340	tagete-oeillet-d-inde~0	orange (erecta)
+1341	tagete-oeillet-d-inde~1	jaune d’or (erecta)
+1342	tagete-oeillet-d-inde~2	jaune citron (erecta)
+1343	tagete-oeillet-d-inde~3	orange foncé (erecta)
+1344	tagete-oeillet-d-inde~4	vanille (erecta)
+1345	tagete-oeillet-d-inde~5	acajou liseré d’or (patula)
+1346	tagete-oeillet-d-inde~6	acajou rayé d’or (Harlequin)
+1347	tagete-oeillet-d-inde~7	orange flammé d’acajou (patula)
+1348	tagete-oeillet-d-inde~8	jaune à cœur acajou (simple)
+1349	souci-calendula~0	orange à cœur brun (Pacific Beauty)
+1350	souci-calendula~1	orange à cœur orange (Orange King)
+1351	souci-calendula~2	jaune d’or (Pacific Beauty)
+1352	souci-calendula~3	jaune citron à cœur clair (Pacific Lemon)
+1353	souci-calendula~4	abricot (Sunset Buff)
+1354	souci-calendula~5	saumon (Pink Surprise)
+1355	souci-calendula~6	crème à cœur brun (Ivory Princess)
+1356	souci-calendula~7	orange au revers acajou (Indian Prince)
+1357	souci-calendula~8	orange à pointes rouges (Touch of Red)
+1358	souci-calendula~9	orange simple
+1359	souci-calendula~10	jaune simple
+1360	immortelle-xerochrysum~0	jaune d’or
+1361	immortelle-xerochrysum~1	jaune citron
+1362	immortelle-xerochrysum~2	orange
+1363	immortelle-xerochrysum~3	abricot
+1364	immortelle-xerochrysum~4	saumon
+1365	immortelle-xerochrysum~5	rose
+1366	immortelle-xerochrysum~6	rose pâle
+1367	immortelle-xerochrysum~7	rose pâle pointé de rouge
+1368	immortelle-xerochrysum~8	rouge
+1369	immortelle-xerochrysum~9	cramoisi
+1370	immortelle-xerochrysum~10	pourpre
+1371	immortelle-xerochrysum~11	blanc argenté
+1372	immortelle-xerochrysum~12	bronze
+1373	sauge-salvia~0	violet profond (Caradonna)
+1374	sauge-salvia~1	bleu violet (Ostfriesland)
+1375	sauge-salvia~2	bleu (farinacea Victoria Blue)
+1376	sauge-salvia~3	bleu à calice argent (farinacea Strata)
+1377	sauge-salvia~4	mauve (Amethyst)
+1378	sauge-salvia~5	rose (Sensation Rose)
+1379	sauge-salvia~6	blanc (Schneehügel)
+1380	bouvardia~0	blanc (Royal Daphne Supreme White)
+1381	bouvardia~1	blanc double
+1382	bouvardia~2	crème
+1383	bouvardia~3	rose pâle
+1384	bouvardia~4	rose (Royal Daphne)
+1385	bouvardia~5	rose double
+1386	bouvardia~6	rose à cœur foncé
+1387	bouvardia~7	rose vif
+1388	bouvardia~8	saumon
+1389	bouvardia~9	saumon double
+1390	bouvardia~10	rouge (Royal Daphne Red)
+1391	bouvardia~11	rouge double
+1392	liatris~0	pourpre violet (Floristan Violett)
+1393	liatris~1	pourpre profond (Kobold)
+1394	liatris~2	mauve rosé
+1395	liatris~3	blanc (Floristan Weiss)
+1396	aconit~0	bleu profond (carmichaelii Arendsii)
+1397	aconit~1	bleu violet (napellus)
+1398	aconit~2	bleu clair (carmichaelii)
+1399	aconit~3	gris bleuté (Stainless Steel)
+1400	aconit~4	bicolore blanc et bleu (× cammarum Bicolor)
+1401	aconit~5	ivoire (Ivorine)
+1402	aconit~6	rose pâle (napellus Carneum)
+1403	phalaenopsis~0	blanc
+1404	phalaenopsis~1	blanc à labelle rouge
+1405	phalaenopsis~2	blanc à labelle jaune
+1406	phalaenopsis~3	rose pâle
+1407	phalaenopsis~4	rose
+1408	phalaenopsis~5	fuchsia
+1409	phalaenopsis~6	lilas
+1410	phalaenopsis~7	pourpre
+1411	phalaenopsis~8	jaune
+1412	phalaenopsis~9	jaune citron
+1413	phalaenopsis~10	orange cuivré
+1414	phalaenopsis~11	rouge vin
+1415	phalaenopsis~12	vert tendre
+1416	phalaenopsis~13	strié pourpre
+1417	phalaenopsis~14	arlequin
+1418	phalaenopsis~15	blanc bordé de rose
+1419	phalaenopsis~16	rose à cœur orangé
+1420	phalaenopsis~17	moucheté
+1421	cymbidium-grandes-fleurs~0	blanc
+1422	cymbidium-grandes-fleurs~1	ivoire
+1423	cymbidium-grandes-fleurs~2	crème à labelle rose
+1424	cymbidium-grandes-fleurs~3	blanc à labelle rouge
+1425	cymbidium-grandes-fleurs~4	vert pomme
+1426	cymbidium-grandes-fleurs~5	vert menthe
+1427	cymbidium-grandes-fleurs~6	jaune
+1428	cymbidium-grandes-fleurs~7	rose pâle
+1429	cymbidium-grandes-fleurs~8	rose
+1430	cymbidium-grandes-fleurs~9	rose saumon
+1431	cymbidium-grandes-fleurs~10	orange bronze
+1432	cymbidium-grandes-fleurs~11	caramel
+1433	cymbidium-grandes-fleurs~12	rouge
+1434	cymbidium-grandes-fleurs~13	bordeaux
+1435	cymbidium-grandes-fleurs~14	brun
+1436	cymbidium-grandes-fleurs~15	pourpre noir
+1437	cymbidium-mini~0	blanc
+1438	cymbidium-mini~1	crème rosé
+1439	cymbidium-mini~2	jaune à labelle rouge
+1440	cymbidium-mini~3	vert
+1441	cymbidium-mini~4	vert à labelle bordeaux
+1442	cymbidium-mini~5	vert pastel
+1443	cymbidium-mini~6	rose
+1444	cymbidium-mini~7	rose pastel
+1445	cymbidium-mini~8	pêche
+1446	cymbidium-mini~9	orange
+1447	cymbidium-mini~10	rouge
+1448	cymbidium-mini~11	bordeaux
+1449	cymbidium-mini~12	brun
+1450	cymbidium-mini~13	pourpre noir
+1451	dendrobium-coupe~0	pourpre à cœur blanc (Sonia)
+1452	dendrobium-coupe~1	blanc pur
+1453	dendrobium-coupe~2	pourpre
+1454	dendrobium-coupe~3	vert-jaune strié
+1455	dendrobium-coupe~4	crème à labelle pourpre
+1456	dendrobium-coupe~5	blanc bordé de pourpre
+1457	dendrobium-coupe~6	blanc bordé de vert
+1458	dendrobium-coupe~7	rose à base blanche
+1459	dendrobium-coupe~8	rose pâle
+1460	dendrobium-coupe~9	blanc à labelle rose
+1461	dendrobium-coupe~10	vert lime
+1462	dendrobium-coupe~11	lavande
+1463	dendrobium-coupe~12	rose poudré
+1464	dendrobium-coupe~13	bordeaux
+1465	dendrobium-coupe~14	pourpre presque noir
+1466	dendrobium-nobile~0	blanc à pointes améthyste (nobile type)
+1467	dendrobium-nobile~1	blanc pur à gorge pourpre (Yukidaruma)
+1468	dendrobium-nobile~2	blanc à gorge jaune (Spring Dream Apollon)
+1469	dendrobium-nobile~3	rose tendre à pointes vives
+1470	dendrobium-nobile~4	rose vif (Akatsuki)
+1471	dendrobium-nobile~5	pourpre magenta (Comet King)
+1472	dendrobium-nobile~6	jaune d'or à gorge brune (Golden Blossom)
+1473	dendrobium-nobile~7	orangé à gorge rouge (Stardust)
+1474	dendrobium-nobile~8	lavande à pointes violettes
+1475	vanda~0	bleu indigo
+1476	vanda~1	mosaïque bleue sur blanc
+1477	vanda~2	bleu-violet en damier
+1478	vanda~3	blanc
+1479	vanda~4	crème bordé de pourpre, tacheté
+1480	vanda~5	pourpre aubergine
+1481	vanda~6	bordeaux velours
+1482	vanda~7	rose vif à sépales bordeaux
+1483	vanda~8	magenta tacheté
+1484	vanda~9	orange tacheté léopard
+1485	vanda~10	pêche tacheté léopard
+1486	vanda~11	orange
+1487	vanda~12	brun chocolat tacheté
+1488	vanda~13	lavande pâle et jaune
+1489	ascocenda~0	orange
+1490	ascocenda~1	mandarine réticulé
+1491	ascocenda~2	rouge
+1492	ascocenda~3	rose vif
+1493	ascocenda~4	magenta réticulé
+1494	ascocenda~5	pourpre
+1495	ascocenda~6	bleu-violet réticulé
+1496	ascocenda~7	jaune
+1497	ascocenda~8	jaune tacheté de rouge
+1498	ascocenda~9	rose pâle réticulé
+1499	ascocenda~10	corail
+1500	mokara~0	orange
+1501	mokara~1	rouge orangé
+1502	mokara~2	rouge
+1503	mokara~3	corail
+1504	mokara~4	jaune
+1505	mokara~5	jaune pâle tacheté
+1506	mokara~6	jaune or
+1507	mokara~7	pêche
+1508	mokara~8	rose pâle moucheté
+1509	mokara~9	rose vif
+1510	mokara~10	magenta
+1511	mokara~11	pourpre moucheté
+1512	mokara~12	bleu lavande
+1513	mokara~13	blanc tacheté
+1514	aranda~0	lilas moucheté de pourpre (Christine)
+1515	aranda~1	bleu-violet en damier (Noorah Alsagoff)
+1516	aranda~2	jaune moucheté de rouge
+1517	aranda~3	blanc moucheté de rose
+1518	aranda~4	orange tacheté
+1519	aranda~5	rouge
+1520	aranda~6	saumon pêche
+1521	aranda~7	rose vif (Chark Kuan Pink)
+1522	arachnis-aranthera~0	jaune barré de rouge (Maggie Oei Red Ribbon)
+1523	arachnis-aranthera~1	jaune barré de brun (Maggie Oei Yellow Ribbon)
+1524	arachnis-aranthera~2	rouge sang moucheté (Aranthera James Storie)
+1525	arachnis-aranthera~3	orange tacheté de rouge (Aranthera Anne Black)
+1526	arachnis-aranthera~4	vert-jaune barré de pourpre (flos-aeris)
+1527	arachnis-aranthera~5	crème tacheté de pourpre (hookeriana)
+1528	arachnis-aranthera~6	jaune or tacheté de rouge
+1529	arachnis-aranthera~7	brun acajou barré (Aranthera)
+1530	oncidium~0	jaune strié de brun
+1531	oncidium~1	jaune vif
+1532	oncidium~2	jaune citron
+1533	oncidium~3	brun chocolat
+1534	oncidium~4	bordeaux et blanc
+1535	oncidium~5	rouge
+1536	oncidium~6	pourpre
+1537	oncidium~7	rose (Twinkle)
+1538	oncidium~8	crème
+1539	oncidium~9	blanc
+1540	oncidium~10	jaune tigré de brun
+1541	oncidium~11	jaune (Sweet Sugar)
+1542	oncidium~12	blanc parfumé (Twinkle)
+1543	oncidium~13	rose poudré
+1544	oncidium~14	framboise à labelle blanc
+1545	oncidium~15	caramel doré
+1546	oncidium~16	jaune taché de rouge (Wildcat)
+1547	cambria~0	rouge velours à labelle blanc (Vuylstekeara Cambria Plush)
+1548	cambria~1	rouge orangé à cœur jaune (Burrageara Nelly Isler)
+1549	cambria~2	blanc moucheté de pourpre (Beallara Tahoma Glacier)
+1550	cambria~3	pourpre tacheté à labelle clair (Beallara Marfitch)
+1551	cambria~4	jaune marbré de brun-rouge (Colmanara Wildcat)
+1552	cambria~5	rose moucheté (Wilsonara)
+1553	cambria~6	rouge à labelle clair bordé de rouge (Odontioda)
+1554	cambria~7	blanc pur, labelle taché de rose
+1555	cambria~8	pourpre presque noir à labelle rosé (Oncostele)
+1556	odontoglossum~0	blanc moucheté de rouge (crispum)
+1557	odontoglossum~1	crème tacheté de brun
+1558	odontoglossum~2	jaune barré de brun (Oncidesa Gower Ramsey)
+1559	odontoglossum~3	jaune soleil (Oncidesa Sweet Sugar)
+1560	odontoglossum~4	rose moucheté de pourpre
+1561	odontoglossum~5	rouge bordé d’or (Odontioda)
+1562	odontoglossum~6	orange tacheté (Odontioda)
+1563	odontoglossum~7	brun cuivré bordé de jaune
+1564	brassia~0	vert pâle tacheté de brun (verrucosa)
+1565	brassia~1	jaune-vert tacheté de brun (Rex)
+1566	brassia~2	jaune d'or tacheté (Eternal Wind)
+1567	brassia~3	orange cuivré tacheté
+1568	brassia~4	pourpre prune (Miltassia)
+1569	brassia~5	vert pomme strié de brun
+1570	miltoniopsis~0	blanc à masque rouge (Herr Alexandre)
+1571	miltoniopsis~1	rose pâle à cascade rouge (Waterfall)
+1572	miltoniopsis~2	rose vif à masque pourpre
+1573	miltoniopsis~3	rose à labelle blanc (Pink Cadillac)
+1574	miltoniopsis~4	rouge velours à masque sombre
+1575	miltoniopsis~5	bordeaux liseré de blanc
+1576	miltoniopsis~6	blanc à masque jaune (Jean Sabourin)
+1577	miltoniopsis~7	lavande à masque violet
+1578	zygopetalum~0	vert taché de brun, labelle veiné de violet (Louisendorf)
+1579	zygopetalum~1	vert presque couvert de brun (Alan Greatwood)
+1580	zygopetalum~2	bordeaux, labelle violet (Titanic)
+1581	zygopetalum~3	pourpre à labelle bleu-violet (Zygonisia)
+1582	zygopetalum~4	vert tendre taché, labelle finement veiné
+1583	zygopetalum~5	brun chocolat, labelle blanc et violet
+1584	paphiopedilum~0	vert et blanc (Maudiae album)
+1585	paphiopedilum~1	pourpre vin (Maudiae coloratum)
+1586	paphiopedilum~2	jaune d’or (armeniacum)
+1587	paphiopedilum~3	blanc moucheté (niveum)
+1588	paphiopedilum~4	acajou tacheté (hybrides complexes)
+1589	paphiopedilum~5	rose tendre (delenatii)
+1590	paphiopedilum~6	vert-jaune et brun, sommet blanc (insigne)
+1591	phragmipedium~0	rouge (Hanne Popow, Jason Fischer)
+1592	phragmipedium~1	orange (Eric Young, Don Wimber)
+1593	phragmipedium~2	saumon (Fritz Schomburg)
+1594	phragmipedium~3	rose et blanc (Sedenii, Cardinale)
+1595	phragmipedium~4	jaune (besseae flavum)
+1596	phragmipedium~5	vert et brun à longs rubans (Grande, caudatum)
+1597	cattleya~0	lavande (labiata)
+1598	cattleya~1	fuchsia
+1599	cattleya~2	blanc à gorge jaune (alba)
+1600	cattleya~3	blanc à labelle pourpre (semi-alba)
+1601	cattleya~4	jaune à labelle orangé
+1602	cattleya~5	vert à labelle fuchsia
+1603	cattleya~6	orange corail
+1604	cattleya~7	lavande flammée de pourpre
+1605	epidendrum~0	orange
+1606	epidendrum~1	rouge
+1607	epidendrum~2	rouge orangé
+1608	epidendrum~3	jaune
+1609	epidendrum~4	rose
+1610	epidendrum~5	fuchsia
+1611	epidendrum~6	lavande
+1612	epidendrum~7	blanc
+1613	masdevallia~0	orange (M. veitchiana, Copper Angel)
+1614	masdevallia~1	rouge (Redwing)
+1615	masdevallia~2	magenta (M. coccinea)
+1616	masdevallia~3	jaune (Angel Frost, coccinea xanthina)
+1617	masdevallia~4	blanc crème (coccinea alba)
+1618	masdevallia~5	rose vif
+1619	disa~0	rouge écarlate (D. uniflora)
+1620	disa~1	rouge carmin (Kewensis)
+1621	disa~2	orange (Diores)
+1622	disa~3	rose (Watsonii)
+1623	disa~4	jaune (uniflora aurata)
+1624	disa~5	mauve
+1625	coelogyne~0	blanc à crêtes jaunes
+1626	coelogyne~1	blanc à crêtes citron
+1627	coelogyne~2	blanc à gorge orangée
+1628	coelogyne~3	crème à labelle brun
+1629	coelogyne~4	vert jade à labelle noir
+1630	coelogyne~5	blanc à yeux ocre
+1631	lycaste~0	blanc (virginalis alba)
+1632	lycaste~1	rose (skinneri)
+1633	lycaste~2	rose vif
+1634	lycaste~3	rouge
+1635	lycaste~4	jaune (aromatica)
+1636	lycaste~5	vert pomme
+1637	lycaste~6	olive à pétales blancs (macrophylla)
+1638	ludisia~0	pourpre à nervures cuivrées
+1639	ludisia~1	noir velours (Nigrescens)
+1640	ludisia~2	vert à nervures claires (Alba)
+1641	cypripedium~0	sabot jaune, tépales brun pourpre (C. parviflorum, Inge)
+1642	cypripedium~1	jaune pâle, tépales verts striés (C. kentuckiense, Hank Small)
+1643	cypripedium~2	sabot rose, tépales bruns (Gisela)
+1644	cypripedium~3	blanc à sabot rose (C. reginae, Ventricosum)
+1645	cypripedium~4	pourpre (Michael, Philipp)
+1646	cypripedium~5	blanc pur (Ulla Silkens)
+1647	rhynchostylis~0	blanc moucheté de pourpre
+1648	rhynchostylis~1	blanc pur
+1649	rhynchostylis~2	rose pâle moucheté
+1650	rhynchostylis~3	rouge carmin
+1651	rhynchostylis~4	bleu lavande (R. coelestis)
+1652	anthurium-andraeanum~0	rouge laqué
+1653	anthurium-andraeanum~1	rouge sang
+1654	anthurium-andraeanum~2	noir velours
+1655	anthurium-andraeanum~3	chocolat
+1656	anthurium-andraeanum~4	terracotta
+1657	anthurium-andraeanum~5	orange
+1658	anthurium-andraeanum~6	corail
+1659	anthurium-andraeanum~7	rose saumon
+1660	anthurium-andraeanum~8	rose vif
+1661	anthurium-andraeanum~9	rose tendre
+1662	anthurium-andraeanum~10	violet
+1663	anthurium-andraeanum~11	blanc pur
+1664	anthurium-andraeanum~12	crème
+1665	anthurium-andraeanum~13	blanc veiné de vert
+1666	anthurium-andraeanum~14	vert pomme
+1667	anthurium-obake~0	obake rouge
+1668	anthurium-obake~1	obake rose
+1669	anthurium-obake~2	obake rose vif
+1670	anthurium-obake~3	obake pêche
+1671	anthurium-obake~4	obake blanc
+1672	anthurium-obake~5	obake vert et rose
+1673	anthurium-obake~6	obake vert et rouge
+1674	anthurium-tulipe~0	tulipe rose
+1675	anthurium-tulipe~1	tulipe fuchsia
+1676	anthurium-tulipe~2	tulipe violette
+1677	anthurium-tulipe~3	tulipe lilas
+1678	anthurium-tulipe~4	tulipe blanche
+1679	anthurium-tulipe~5	tulipe rouge
+1680	anthurium-tulipe~6	tulipe saumon
+1681	heliconia-rostrata~0	pince de homard rouge et jaune
+1682	heliconia-wagneriana~0	rouge corail classique
+1683	heliconia-wagneriana~1	big Red
+1684	heliconia-wagneriana~2	rainbow rose
+1685	heliconia-wagneriana~3	turbo crème et rose
+1686	heliconia-wagneriana~4	verte
+1687	heliconia-bihai~0	lobster Claw rouge
+1688	heliconia-bihai~1	kamehameha rouge vif
+1689	heliconia-bihai~2	chocolate Dancer
+1690	heliconia-bihai~3	yellow Dancer
+1691	heliconia-bihai~4	emerald Forest
+1692	heliconia-bihai~5	balisier orange
+1693	heliconia-psittacorum~0	st. Vincent Red
+1694	heliconia-psittacorum~1	lady Di rouge
+1695	heliconia-psittacorum~2	andromeda orange
+1696	heliconia-psittacorum~3	golden Torch jaune
+1697	heliconia-psittacorum~4	sassy rose
+1698	heliconia-psittacorum~5	rouge sombre
+1699	heliconia-caribaea~0	purpurea rouge
+1700	heliconia-caribaea~1	black Magic bordeaux
+1701	heliconia-caribaea~2	gold jaune
+1702	heliconia-caribaea~3	jacquinii (× bihai) rouge à lèvre jaune
+1703	heliconia-caribaea~4	crème
+1704	heliconia-caribaea~5	chartreuse
+1705	heliconia-stricta~0	dwarf Jamaican rouge
+1706	heliconia-stricta~1	tagami rose
+1707	heliconia-stricta~2	fire Bird rouge orangé
+1708	heliconia-stricta~3	bucky orange
+1709	heliconia-stricta~4	jaune
+1710	heliconia-chartacea~0	sexy Pink rose bordé de vert
+1711	heliconia-chartacea~1	sexy Scarlet rouge bordé de vert
+1712	heliconia-orthotricha~0	she rose bordé de vert
+1713	heliconia-orthotricha~1	total Eclipse rouge rosé, liseré vert sombre
+1714	heliconia-orthotricha~2	eden Pink rose vif
+1715	heliconia-orthotricha~3	edge of Night orange rouge, liseré noir
+1716	heliconia-orthotricha~4	orange velours
+1717	heliconia-orthotricha~5	garden of Eden rouge sombre
+1718	heliconia-velues~0	vellerigera rouille velours
+1719	heliconia-velues~1	vellerigera orangé velours
+1720	heliconia-velues~2	xanthovillosa jaune velours
+1721	heliconia-velues~3	chartacea Sexy Pink
+1722	heliconia-velues~4	chartacea Sexy Scarlet
+1723	calathea-crotalifera~0	crotale jaune d’or
+1724	calathea-crotalifera~1	crotale jaune citron
+1725	calathea-crotalifera~2	crotale jaune-vert
+1726	calathea-crotalifera~3	crotale orangé à bord rouge
+1727	musa-fleur~0	musa coccinea écarlate
+1728	musa-fleur~1	musa ornata rose lilas
+1729	musa-fleur~2	musa ornata pourpre
+1730	musa-fleur~3	musa velutina rose
+1731	musa-fleur~4	musa ornata orange
+1732	strelitzia-reginae~0	oiseau de paradis orange
+1733	strelitzia-reginae~1	reginae orange vif
+1734	strelitzia-reginae~2	mandela’s Gold
+1735	strelitzia-reginae~3	reginae abricot
+1736	strelitzia-nicolai~0	strelitzia nicolai blanc et bleu
+1737	strelitzia-nicolai~1	nicolai spathe bordeaux
+1738	strelitzia-nicolai~2	nicolai spathe glauque
+1739	alpinia-purpurata~0	jungle King rouge
+1740	alpinia-purpurata~1	jungle Queen rose
+1741	alpinia-purpurata~2	eileen McDonald rose vif
+1742	alpinia-purpurata~3	rose tendre
+1743	alpinia-purpurata~4	tahitian rouge sombre (tête ronde)
+1744	etlingera-elatior~0	pink Torch rose
+1745	etlingera-elatior~1	red Torch rouge
+1746	etlingera-elatior~2	bloody Mary rouge sang bordé de blanc
+1747	etlingera-elatior~3	thai Queen rose tendre
+1748	etlingera-elatior~4	rose saumoné
+1749	etlingera-elatior~5	blanche rosée
+1750	zingiber~0	ruche dorée jaune
+1751	zingiber~1	ruche jaune virant au rouge
+1752	zingiber~2	ruche rouge
+1753	zingiber~3	pink Maraca rose
+1754	zingiber~4	shampoing vert (jeune)
+1755	zingiber~5	shampoing rouge
+1756	zingiber~6	pomme de pin chocolat
+1757	costus~0	costus barbatus rouge, fleurs jaunes
+1758	costus~1	costus comosus rouge orangé
+1759	costus~2	costus spiralis rose
+1760	costus~3	costus curvibracteatus orange
+1761	costus~4	costus woodsonii écarlate
+1762	costus~5	costus pictus vert rougi
+1763	tapeinochilos-ananassae~0	gingembre ananas rouge vif
+1764	tapeinochilos-ananassae~1	gingembre ananas carmin
+1765	tapeinochilos-ananassae~2	gingembre ananas rouge orangé
+1766	tapeinochilos-ananassae~3	gingembre ananas rose
+1767	curcuma~0	chiang Mai Pink rose
+1768	curcuma~1	siam Tulip rose tendre
+1769	curcuma~2	chiang Mai Snow blanc
+1770	curcuma~3	siam Ruby rubis
+1771	curcuma~4	siam Shadow violet
+1772	curcuma~5	laddawan rose à pointe verte
+1773	ananas-ornemental~0	rose (var. bracteatus)
+1774	ananas-ornemental~1	rose, feuilles panachées (Tricolor)
+1775	ananas-ornemental~2	rouge (Champaca)
+1776	ananas-ornemental~3	vert (var. nanus)
+1777	ananas-ornemental~4	doré (var. nanus mûr)
+1778	bromeliacees~0	guzmania rouge
+1779	bromeliacees~1	guzmania orange
+1780	bromeliacees~2	guzmania jaune
+1781	bromeliacees~3	guzmania rose
+1782	bromeliacees~4	guzmania pourpre
+1783	bromeliacees~5	guzmania bordeaux
+1784	bromeliacees~6	vriesea épée rouge
+1785	bromeliacees~7	vriesea épée jaune
+1786	bromeliacees~8	vriesea rouge à pointes jaunes
+1787	bromeliacees~9	aechmea fasciata rose
+1788	protea-cynaroides~0	rose argenté
+1789	protea-cynaroides~1	rose soutenu
+1790	protea-cynaroides~2	rouge (Red King)
+1791	protea-cynaroides~3	blanc crème (Arctic Ice)
+1792	protea-cynaroides~4	rose saumoné
+1793	protea-cynaroides~5	rose rouge, petite tête (Madiba)
+1794	protea-cynaroides~6	rouge à cœur blanc, petite tête (Little Prince)
+1795	protea-neriifolia~0	rose à barbe noire (Pink Mink)
+1796	protea-neriifolia~1	rose foncé à barbe noire
+1797	protea-neriifolia~2	blanc à barbe noire (White Mink)
+1798	protea-neriifolia~3	vert crème à barbe noire
+1799	protea-neriifolia~4	rose à barbe blanche
+1800	protea-neriifolia~5	saumon à barbe noire
+1801	protea-repens~0	rouge
+1802	protea-repens~1	rose
+1803	protea-repens~2	crème à pointes rouges
+1804	protea-repens~3	blanc crème
+1805	protea-repens~4	rose pâle
+1806	protea-magnifica~0	crème
+1807	protea-magnifica~1	vert pâle
+1808	protea-magnifica~2	rose pâle
+1809	protea-magnifica~3	rose
+1810	protea-magnifica~4	carmin
+1811	protea-eximia~0	rose saumoné
+1812	protea-eximia~1	rose carmin
+1813	protea-eximia~2	rose tendre
+1814	protea-eximia~3	rouge (Fiery Duchess)
+1815	protea-eximia~4	corail
+1816	protea-hybrides~0	rose givré (Pink Ice)
+1817	protea-hybrides~1	cerise (Sylvia)
+1818	protea-hybrides~2	crème à barbe pourpre (Niobe)
+1819	protea-hybrides~3	rouge (Cardinal)
+1820	protea-hybrides~4	rose crème (Susara)
+1821	protea-hybrides~5	rose framboise (Brenda)
+1822	protea-hybrides~6	petite protée vert crème (P. scolymocephala)
+1823	leucospermum~0	orange (Tango)
+1824	leucospermum~1	jaune d’or (High Gold)
+1825	leucospermum~2	orange rouge (Succession)
+1826	leucospermum~3	rouge écarlate (Scarlet Ribbon)
+1827	leucospermum~4	saumon
+1828	leucospermum~5	jaune à rubans rouges (Veldfire)
+1829	leucadendron~0	cône vert doré (L. platyspermum frais)
+1830	leucadendron~1	cône bronze (L. platyspermum mûr)
+1831	leucadendron~2	argenté (L. argenteum, arbre d’argent)
+1832	leucadendron~3	séché naturel
+1833	leucadendron~4	séché blanchi
+1834	serruria~0	blanc rosé nacré (Blushing Bride)
+1835	serruria~1	blanc à cœur rose soutenu (Sugar ’n’ Spice)
+1836	serruria~2	rose vif (Pretty in Pink)
+1837	serruria~3	blanc crème (S. florida)
+1838	mimetes~0	rouge et jaune (M. cucullatus)
+1839	mimetes~1	orange flamme
+1840	mimetes~2	jaune à pointes rouges (M. hirtus)
+1841	mimetes~3	saumon (forme claire)
+1842	mimetes~4	argenté rosé (M. argenteus)
+1843	aulax~0	coupe rouge (femelle)
+1844	aulax~1	coupe bordeaux (femelle)
+1845	aulax~2	coupe verte rougie (femelle)
+1846	aulax~3	épis jaunes plumeux (mâle)
+1847	aulax~4	épis jaune citron (mâle)
+1848	banksia~0	rouge écarlate (B. coccinea)
+1849	banksia~1	orange gland (B. prionotes)
+1850	banksia~2	jaune-vert (B. baxteri)
+1851	banksia~3	orange et crème (B. hookeriana)
+1852	banksia~4	crème jaune (B. speciosa)
+1853	banksia~5	bordeaux et or (B. menziesii)
+1854	telopea~0	rouge écarlate (T. speciosissima)
+1855	telopea~1	cramoisi (Shady Lady Crimson)
+1856	telopea~2	rose (Shady Lady Pink)
+1857	telopea~3	blanc (Shady Lady White)
+1858	telopea~4	jaune doré (Shady Lady Yellow)
+1859	anigozanthos~0	rouge (Big Red)
+1860	anigozanthos~1	jaune (Bush Gold)
+1861	anigozanthos~2	orange (Orange Cross)
+1862	anigozanthos~3	rose (Pink Joey)
+1863	anigozanthos~4	vert à tige rouge (A. manglesii)
+1864	anigozanthos~5	vert chartreuse (Kings Park)
+1865	anigozanthos~6	bordeaux (Bush Ruby)
+1866	isopogon~0	jaune (I. anemonifolius)
+1867	isopogon~1	jaune citron
+1868	isopogon~2	rose (I. formosus)
+1869	isopogon~3	rose magenta (I. dubius)
+1870	isopogon~4	cône séché naturel
+1871	isopogon~5	cône séché gris argent
+1872	grevillea~0	rouge rosé (Robyn Gordon)
+1873	grevillea~1	saumon et jaune (Superb)
+1874	grevillea~2	orange miel (Honey Gem)
+1875	grevillea~3	ivoire (Moonlight)
+1876	grevillea~4	rose et crème (Coconut Ice)
+1877	grevillea~5	orange rouge (Ned Kelly)
+1878	hakea~0	rouge à épingles crème
+1879	hakea~1	cramoisi à épingles dorées
+1880	hakea~2	rose à épingles blanches
+1881	hakea~3	rouge rosé à épingles roses
+1882	gloriosa~0	rouge bordé de jaune
+1883	gloriosa~1	jaune
+1884	gloriosa~2	orange
+1885	gloriosa~3	rouge
+1886	gloriosa~4	bordeaux
+1887	tillandsia~0	rose classique (cyanea)
+1888	tillandsia~1	rose vif (Anita)
+1889	tillandsia~2	rouge
+1890	tillandsia~3	rose pâle
+1891	nepenthes~0	vert taché de rouge (ventrata)
+1892	nepenthes~1	vert (alata Gaya)
+1893	nepenthes~2	vert citron (Lime)
+1894	nepenthes~3	jaune vert marbré (Miranda)
+1895	nepenthes~4	rouge (Bloody Mary)
+1896	nepenthes~5	bordeaux (Lady Luck)
+1897	nelumbo-nucifera~0	rose (Rosea)
+1898	nelumbo-nucifera~1	rose pâle
+1899	nelumbo-nucifera~2	rose foncé (Red Lotus)
+1900	nelumbo-nucifera~3	blanc (Alba Grandiflora)
+1901	nelumbo-nucifera~4	blanc liseré rose (Chawan Basu)
+1902	nelumbo-nucifera~5	jaune (N. lutea)
+1903	nelumbo-capsule~0	brun naturel (séchée)
+1904	nelumbo-capsule~1	brun clair (séchée)
+1905	nelumbo-capsule~2	vert (fraîche)
+1906	nelumbo-capsule~3	vert tendre (jeune)
+1907	nelumbo-capsule~4	blanchie
+1908	nelumbo-capsule~5	peinte argent
+1909	nelumbo-capsule~6	peinte or
+1910	nelumbo-capsule~7	teintée noire
+1911	nelumbo-capsule~8	teintée rouge
+1912	nelumbo-capsule~9	teintée rose
+1913	nelumbo-capsule~10	teintée bleue
+1914	passiflora~0	bleue (caerulea)
+1915	passiflora~1	blanche (Constance Elliott)
+1916	passiflora~2	lilas (Amethyst)
+1917	passiflora~3	pourpre (Purple Haze)
+1918	passiflora~4	rose (Lady Margaret)
+1919	passiflora~5	rouge (racemosa)
+1920	hibiscus~0	rouge (Brilliant)
+1921	hibiscus~1	rouge sang (Adonicus Red)
+1922	hibiscus~2	rose (Seminole Pink)
+1923	hibiscus~3	rose saumon (Adonicus Salmon)
+1924	hibiscus~4	orange à cœur blanc et rouge (Fiesta)
+1925	hibiscus~5	jaune à œil rouge (Hula Girl)
+1926	hibiscus~6	jaune d'or (Adonicus Yellow)
+1927	hibiscus~7	pêche (hybride tahitien)
+1928	hibiscus~8	blanc à cœur rouge
+1929	hibiscus~9	lavande (hybride tahitien)
+1930	hibiscus~10	bordeaux (Black Dragon)
+1931	plumeria~0	blanc à cœur jaune (Celadine)
+1932	plumeria~1	blanc pur à petit cœur jaune (Singapore, P. obtusa)
+1933	plumeria~2	blanc rosé au revers rose (Daisy Wilcox)
+1934	plumeria~3	jaune soleil (Kaneohe Sunburst)
+1935	plumeria~4	jaune d'or (Aztec Gold)
+1936	plumeria~5	coucher de soleil, orangé rosé (Sunset)
+1937	plumeria~6	rose tendre (Pink Pearl)
+1938	plumeria~7	rose vif (Vera Cruz Rose)
+1939	plumeria~8	rouge (Hilo Beauty)
+1940	plumeria~9	rouge sombre (Black Tiger)
+1941	bougainvillea~0	magenta (Glabra Sanderiana)
+1942	bougainvillea~1	rouge (Scarlett O'Hara)
+1943	bougainvillea~2	rouge fuchsia (Barbara Karst)
+1944	bougainvillea~3	rose (Pink Pixie)
+1945	bougainvillea~4	rose tendre (Thai Delight)
+1946	bougainvillea~5	pourpre (Purple Queen)
+1947	bougainvillea~6	mauve lilas (Blueberry Ice)
+1948	bougainvillea~7	orange (California Gold)
+1949	bougainvillea~8	saumon abricot (Rosenka)
+1950	bougainvillea~9	jaune d'or (Golden Glow)
+1951	bougainvillea~10	blanc (Alba)
+1952	gypsophile~0	blanc (Xlence)
+1953	gypsophile~1	blanc fin (Million Star)
+1954	gypsophile~2	rosé (Pink Xlence / Rosy)
+1955	gypsophile~3	teinté rose
+1956	gypsophile~4	teinté lilas
+1957	gypsophile~5	teinté caramel
+1958	gypsophile~6	teinté bleu ciel
+1959	gypsophile~7	teinté arc-en-ciel
+1960	waxflower~0	blanc (Snow Flakes)
+1961	waxflower~1	blanc crème, bouton pourpre (Blondie)
+1962	waxflower~2	rose perle (Esperance Pearl)
+1963	waxflower~3	rose (Lady Stephanie)
+1964	waxflower~4	rose vif double (Dancing Queen)
+1965	waxflower~5	mauve lilas
+1966	waxflower~6	pourpre (Purple Pride)
+1967	statice-sinuata~0	bleu foncé
+1968	statice-sinuata~1	bleu ciel
+1969	statice-sinuata~2	violet
+1970	statice-sinuata~3	lavande
+1971	statice-sinuata~4	rose
+1972	statice-sinuata~5	rose carmin
+1973	statice-sinuata~6	rouge (Sunset)
+1974	statice-sinuata~7	abricot
+1975	statice-sinuata~8	jaune
+1976	statice-sinuata~9	blanc
+1977	limonium-latifolium~0	lavande bleuté (type)
+1978	limonium-latifolium~1	bleu lavande (Blue Cloud)
+1979	limonium-latifolium~2	violet (Violetta)
+1980	limonium-latifolium~3	bleu nuit (teinté)
+1981	limonium-latifolium~4	blanc (Alba)
+1982	limonium-hybride~0	bleu brume (Misty Blue)
+1983	limonium-hybride~1	bleu (Diamond Blue)
+1984	limonium-hybride~2	bleu nuit (Blue Fantasia)
+1985	limonium-hybride~3	lavande
+1986	limonium-hybride~4	mauve
+1987	limonium-hybride~5	rose (Misty Pink)
+1988	limonium-hybride~6	blanc (Misty White)
+1989	limonium-hybride~7	jaune pâle (sinense)
+1990	statice-tatarica~0	blanc argenté (naturel)
+1991	statice-tatarica~1	blanc (blanchi)
+1992	statice-tatarica~2	teinté rose
+1993	statice-tatarica~3	teinté lilas
+1994	statice-tatarica~4	teinté bleu ciel
+1995	statice-tatarica~5	crème (vieilli)
+1996	statice-queue-de-rat~0	rose (type)
+1997	statice-queue-de-rat~1	rose mauve (Pink Pokers)
+1998	statice-queue-de-rat~2	rose carmin
+1999	statice-queue-de-rat~3	lilas (teinte claire)
+2000	astrantia~0	blanc verdâtre (Large White)
+2001	astrantia~1	blanc pointé de vert (Star of Billion)
+2002	astrantia~2	rose pâle (Buckland)
+2003	astrantia~3	rose (Roma)
+2004	astrantia~4	vieux rose (Sparkling Stars Pink)
+2005	astrantia~5	pourpre (Venice)
+2006	astrantia~6	bordeaux (Ruby Wedding)
+2007	astrantia~7	rouge vin (Claret)
+2008	astrantia~8	pourpre à pointes blanches (Star of Beauty)
+2009	solidago~0	jaune d'or (Tara)
+2010	solidago~1	jaune vif (Golden Glory)
+2011	solidago~2	jaune citron pâle (Solidaster Lemore)
+2012	solidago~3	or foncé (Strahlenkrone)
+2013	solidago~4	teinté orange
+2014	veronique~0	bleu (Marietta)
+2015	veronique~1	bleu violet (Blauriesin)
+2016	veronique~2	violet profond (Dark Martje)
+2017	veronique~3	lilas (Lila Karina)
+2018	veronique~4	rose (Pink Shades)
+2019	veronique~5	rose vif (Red Fox)
+2020	veronique~6	blanc (Schneeriesin)
+2021	bupleurum~0	vert acide (Green Gold)
+2022	bupleurum~1	jaune-vert (Griffithii)
+2023	bupleurum~2	vert tendre (Garden Green)
+2024	alchemille~0	vert acide
+2025	alchemille~1	jaune-vert
+2026	alchemille~2	vert tendre
+2027	ammi~0	blanc (majus Graceland)
+2028	ammi~1	ivoire (majus)
+2029	ammi~2	blanc verdi (majus, jeune)
+2030	ammi~3	blanc dense (visnaga)
+2031	ammi~4	vert (visnaga Green Mist)
+2032	daucus-carota~0	blanc à cœur pourpre (type sauvage)
+2033	daucus-carota~1	rose poudré (Dara)
+2034	daucus-carota~2	bordeaux (Dara)
+2035	daucus-carota~3	crème rosé (Dara)
+2036	daucus-carota~4	rose blush (Dara)
+2037	daucus-carota~5	rose (Dara)
+2038	daucus-carota~6	vieux rose mauve (Dara)
+2039	daucus-carota~7	prune (Dara)
+2040	daucus-carota~8	chocolat (Dara)
+2041	daucus-carota~9	pourpre noir (Black Knight)
+2042	daucus-carota~10	nid d’oiseau (ombelle en graines)
+2043	aneth~0	jaune verdâtre (Bouquet)
+2044	aneth~1	jaune vif (Mammoth)
+2045	aneth~2	jaune d’or (Dukat)
+2046	aneth~3	vert en graines
+2047	orlaya~0	blanc pur (White Lace)
+2048	orlaya~1	blanc verdi (jeune)
+2049	orlaya~2	en fruits (vert)
+2050	didiscus~0	bleu lavande (Lacy Blue)
+2051	didiscus~1	bleu ciel (Blue Madonna)
+2052	didiscus~2	lilas (Madonna Lavender)
+2053	didiscus~3	rose poudré (Lacy Pink)
+2054	didiscus~4	blanc (Lacy White)
+2055	eryngium~0	bleu acier (Orion)
+2056	eryngium~1	bleu profond (Magical Blue Lagoon)
+2057	eryngium~2	bleu ciel argenté (Sapphire Blue)
+2058	eryngium~3	argent (Silver Ghost)
+2059	eryngium~4	blanc (Sirius)
+2060	eryngium~5	vert à pointe verte (Supernova)
+2061	eryngium~6	bleu-vert (jeune)
+2062	eryngium~7	turquoise (teinté)
+2063	eryngium~8	rose (teinté)
+2064	eryngium~9	violet (teinté)
+2065	echinops~0	bleu acier (Veitch's Blue)
+2066	echinops~1	bleu violet (Taplow Blue)
+2067	echinops~2	gris bleuté métallique
+2068	echinops~3	blanc (Arctic Glow)
+2069	echinops~4	vert (boutons)
+2070	craspedia~0	jaune d’or (Billy Buttons)
+2071	craspedia~1	jaune soleil (Golden Drumstick)
+2072	craspedia~2	ocre doré (séché)
+2073	craspedia~3	blanc crème (blanchi)
+2074	craspedia~4	orange (teint)
+2075	craspedia~5	rouge (teint)
+2076	craspedia~6	rose fuchsia (teint)
+2077	craspedia~7	bleu (teint)
+2078	craspedia~8	vert pomme (teint)
+2079	nigelle-capsules~0	vert rayé pourpre (frais)
+2080	nigelle-capsules~1	vert olive rayé (mûrissant)
+2081	nigelle-capsules~2	pourpre noir (Albion Black Pod)
+2082	nigelle-capsules~3	vert (Albion Green Pod)
+2083	nigelle-capsules~4	beige séché
+2084	nigelle-capsules~5	brun séché
+2085	nigelle-capsules~6	blanchi
+2086	nigelle-capsules~7	teinté noir
+2087	nigelle-capsules~8	n. orientalis (Transformer)
+2088	pavot-capsules~0	vert glauque (frais)
+2089	pavot-capsules~1	vert (frais)
+2090	pavot-capsules~2	vert tendre (setigerum)
+2091	pavot-capsules~3	naturel séché
+2092	pavot-capsules~4	brun doré séché
+2093	pavot-capsules~5	blanchi
+2094	pavot-capsules~6	teinté noir
+2095	pavot-capsules~7	peint or
+2096	pavot-capsules~8	teinté rose
+2097	pavot-capsules~9	teinté lilas
+2098	pavot-capsules~10	teinté orange
+2099	scabieuse-etoilee-capsules~0	vert tendre (frais)
+2100	scabieuse-etoilee-capsules~1	crème naturel (séché)
+2101	scabieuse-etoilee-capsules~2	bronze (séché)
+2102	scabieuse-etoilee-capsules~3	beige doré (Sternkugel)
+2103	scabieuse-etoilee-capsules~4	blanchi
+2104	scabieuse-etoilee-capsules~5	teinté bleu
+2105	scabieuse-etoilee-capsules~6	teinté rose
+2106	lunaire~0	argent nacré (séché, valves tombées)
+2107	lunaire~1	blanc nacré (blanchi)
+2108	lunaire~2	beige (séché, valves en place)
+2109	lunaire~3	vert frais
+2110	lunaire~4	vert lavé de pourpre (frais)
+2111	lunaire~5	doré (peint)
+2112	lunaire~6	rose poudré (teint)
+2113	amour-en-cage~0	orange lanterne
+2114	amour-en-cage~1	orange-rouge (Gigantea)
+2115	amour-en-cage~2	vert (jeune)
+2116	amour-en-cage~3	squelette dentelle
+2117	amour-en-cage~4	jaune orangé (mûrissant)
+2118	coton~0	blanc naturel
+2119	coton~1	écru (crème)
+2120	asclepias~0	orange (A. tuberosa)
+2121	asclepias~1	jaune (Hello Yellow)
+2122	asclepias~2	rouge et or (A. curassavica)
+2123	asclepias~3	rose (A. incarnata Cinderella)
+2124	asclepias~4	mauve (A. incarnata Soulmate)
+2125	asclepias~5	blanc (Ice Ballet)
+2126	asclepias~6	jaune d’or (Silky Gold)
+2127	gomphocarpus~0	vert tendre
+2128	gomphocarpus~1	vert pomme
+2129	gomphocarpus~2	vert rosé (mûr)
+2130	sedum~0	vert (en boutons)
+2131	sedum~1	blanc verdi (Stardust)
+2132	sedum~2	rose pâle (Matrona)
+2133	sedum~3	rose (Brilliant)
+2134	sedum~4	rose tendre (Carmen)
+2135	sedum~5	rouge brique (Herbstfreude)
+2136	sedum~6	rouille (Herbstfreude tardif)
+2137	sedum~7	bronze olive (Herbstfreude en graines)
+2138	sedum~8	pourpre (Purple Emperor)
+2139	carthame~0	orange (Zanzibar)
+2140	carthame~1	jaune d’or (Lasting Yellow)
+2141	carthame~2	rouge orangé (Feuerschopf)
+2142	carthame~3	crème (Creme Weiss)
+2143	carthame~4	blanc ivoire (Lasting White)
+2144	celosie-plumeuse~0	rouge (Celway Red)
+2145	celosie-plumeuse~1	orange (Sunday Orange)
+2146	celosie-plumeuse~2	jaune d’or (Sunday Gold)
+2147	celosie-plumeuse~3	rose vif (Sunday Bright Pink)
+2148	celosie-plumeuse~4	cerise (Sunday Cherry)
+2149	celosie-plumeuse~5	rose foncé (Sunday Dark Pink)
+2150	celosie-plumeuse~6	pourpre (Celway Purple)
+2151	celosie-plumeuse~7	terracotta (Celway Terracotta)
+2152	celosie-plumeuse~8	crème argenté (Celway White)
+2153	celosie-plumeuse~9	vert tendre (Sunday Green)
+2154	celosie-crete-de-coq~0	rouge
+2155	celosie-crete-de-coq~1	bordeaux (Cramer’s Burgundy)
+2156	celosie-crete-de-coq~2	rose (Bombay Pink)
+2157	celosie-crete-de-coq~3	jaune d’or (Chief Gold)
+2158	celosie-crete-de-coq~4	orange (Chief Persimmon)
+2159	celosie-crete-de-coq~5	carmin (Chief Carmine)
+2160	celosie-crete-de-coq~6	fuchsia (Bombay Purple)
+2161	celosie-crete-de-coq~7	rose tendre
+2162	celosie-crete-de-coq~8	rose à reflets orange (Bombay Firosa)
+2163	celosie-crete-de-coq~9	pourpre sombre
+2164	celosie-crete-de-coq~10	vert citron (Cramer’s Lemon Lime)
+2165	celosie-a-epis~0	rose argenté (Flamingo Feather)
+2166	celosie-a-epis~1	rose vif (Asian Garden)
+2167	celosie-a-epis~2	pourpre (Flamingo Purple)
+2168	celosie-a-epis~3	rubis (Ruby Parfait)
+2169	celosie-a-epis~4	rose pourpre (Cramer’s Amazon)
+2170	celosie-a-epis~5	blanc argenté
+2171	celosie-a-epis~6	saumon
+2172	amarante-retombante~0	rouge cramoisi
+2173	amarante-retombante~1	rouge pourpre
+2174	amarante-retombante~2	bordeaux
+2175	amarante-retombante~3	vieux rose corail
+2176	amarante-retombante~4	bronze
+2177	amarante-retombante~5	vert
+2178	amarante-retombante~6	vert lime
+2179	amarante-retombante~7	vert à pointes roses
+2180	amarante-retombante~8	blanchi
+2181	amarante-retombante~9	rose poudré (stabilisé)
+2182	amarante-retombante~10	bleu nuit (stabilisé)
+2183	amarante-retombante~11	vert sapin (stabilisé)
+2184	amarante-dressee~0	rouge velours (Velvet Curtains)
+2185	amarante-dressee~1	bordeaux profond (Opopeo)
+2186	amarante-dressee~2	rouge chocolat (Red Spike)
+2187	amarante-dressee~3	rouge vif (Hopi Red Dye)
+2188	amarante-dressee~4	grenat framboise (Red Garnet)
+2189	amarante-dressee~5	lie-de-vin (Pygmy Torch)
+2190	amarante-dressee~6	prune
+2191	amarante-dressee~7	vieux rose
+2192	amarante-dressee~8	corail
+2193	amarante-dressee~9	cannelle cuivrée (Hot Biscuits)
+2194	amarante-dressee~10	orange doré (Golden Giant)
+2195	amarante-dressee~11	bronze
+2196	amarante-dressee~12	vert pistache et bronze (Autumn’s Touch)
+2197	amarante-dressee~13	vert pomme (Green Thumb)
+2198	amarante-dressee~14	vert anis
+2199	hypericum~0	rouge vif (Magical Red)
+2200	hypericum~1	rouge profond (Magical Red Flame)
+2201	hypericum~2	brun chocolat (Coco)
+2202	hypericum~3	rose (Magical Beauty)
+2203	hypericum~4	pêche orangé (Magical Pumpkin)
+2204	hypericum~5	ivoire (Magical Ivory)
+2205	hypericum~6	vert (Magical Greenfall)
+2206	symphorine~0	blanc (S. albus, Magical Snowflake)
+2207	symphorine~1	blanc nacré rosé (Mother of Pearl)
+2208	symphorine~2	rose tendre (Magical Sweet)
+2209	symphorine~3	rose vif (Magical Candy)
+2210	symphorine~4	rose pourpré (Magical Pride)
+2211	symphorine~5	rose profond (Magical Galaxy)
+2212	gomphrena~0	pourpre (Audray Purple)
+2213	gomphrena~1	fuchsia carmin (QIS Carmine)
+2214	gomphrena~2	rose (Audray Pink)
+2215	gomphrena~3	rose à cœur blanc (Audray Bicolor Rose)
+2216	gomphrena~4	rose tendre (Audray Pink Pastel)
+2217	gomphrena~5	blanc (Audray White)
+2218	gomphrena~6	vieux rose (séché)
+2219	gomphrena~7	lilas (QIS Lilac)
+2220	gomphrena~8	rouge fraise (Strawberry Fields)
+2221	gomphrena~9	orange (haageana)
+2222	gomphrena~10	rose à pointes jaunes (Fireworks)
+2223	matricaire~0	blanc simple (Vegmo Single)
+2224	matricaire~1	blanc double (Tetra White)
+2225	matricaire~2	crème double (Magic Snowball)
+2226	matricaire~3	vert anis double (Magic Lime Green)
+2227	matricaire~4	jaune d'or pompon (Golden Ball)
+2228	tanaisie~0	jaune d’or
+2229	tanaisie~1	jaune citron (jeune)
+2230	tanaisie~2	ocre doré (mûr)
+2231	tanaisie~3	jaune d’or, feuillage doré (Isla Gold)
+2232	camomille~0	blanc (Bodegold)
+2233	agerate~0	bleu lavande (Blue Horizon)
+2234	agerate~1	bleu (Timeless Blue)
+2235	agerate~2	mauve (Timeless Lavender)
+2236	agerate~3	rose (Timeless Pink)
+2237	agerate~4	blanc (Timeless White)
+2238	agerate~5	rouge pourpre (Red Sea)
+2239	lavande~0	violet profond (Hidcote)
+2240	lavande~1	bleu lavande (Maillette)
+2241	lavande~2	violet bleuté (lavandin Grosso)
+2242	lavande~3	bleu clair (lavandin Super)
+2243	lavande~4	bleu nuit (séchée en bouton)
+2244	lavande~5	rose (Rosea)
+2245	lavande~6	blanc (Edelweiss)
+2246	mimosa~0	jaune vif (Gaulois)
+2247	mimosa~1	jaune d’or (Mirandole)
+2248	mimosa~2	jaune citron pâle (Le Gaulois Astier)
+2249	mimosa~3	jaune vif à feuillage pourpre (baileyana Purpurea)
+2250	setaria~0	vert (Lowrey)
+2251	setaria~1	vert foncé
+2252	setaria~2	vert anis
+2253	setaria~3	doré (séché)
+2254	setaria~4	bronze (mûr)
+2255	setaria~5	pourpre fumé (Red Jewel)
+2256	setaria~6	teint bordeaux
+2257	panicum~0	vert tendre
+2258	panicum~1	vert bleuté (Heavy Metal)
+2259	panicum~2	argenté
+2260	panicum~3	blond (Frosted Explosion)
+2261	panicum~4	cuivré
+2262	panicum~5	pourpre (Shenandoah)
+2263	panicum~6	rouge vin
+2264	pennisetum~0	crème (Hameln)
+2265	pennisetum~1	blanc plumeux (villosum)
+2266	pennisetum~2	blond
+2267	pennisetum~3	vert tendre
+2268	pennisetum~4	rose (Karley Rose)
+2269	pennisetum~5	rose vif (Fireworks)
+2270	pennisetum~6	pourpre (Rubrum)
+2271	pennisetum~7	bronze
+2272	pennisetum~8	prune noir (millet Purple Majesty)
+2273	lagurus~0	crème (naturel séché)
+2274	lagurus~1	blanc (blanchi)
+2275	lagurus~2	vert tendre (frais)
+2276	lagurus~3	teint rose poudré
+2277	lagurus~4	teint fuchsia
+2278	lagurus~5	teint lilas
+2279	lagurus~6	teint bleu
+2280	lagurus~7	teint jaune
+2281	lagurus~8	teint orange
+2282	lagurus~9	teint bordeaux
+2283	lagurus~10	teint noir
+2284	phalaris~0	vert pâle (frais)
+2285	phalaris~1	naturel crème
+2286	phalaris~2	blanchi
+2287	phalaris~3	grège
+2288	phalaris~4	teint terracotta
+2289	phalaris~5	teint chocolat
+2290	briza~0	vert tendre (frais)
+2291	briza~1	vert olive
+2292	briza~2	vert teinté pourpre
+2293	briza~3	doré naturel (séché)
+2294	briza~4	blanchi
+2295	briza~5	teint framboise
+2296	miscanthus~0	argenté (Silberfeder)
+2297	miscanthus~1	blanc crème
+2298	miscanthus~2	crème doré (séché)
+2299	miscanthus~3	vieux rose (Rotsilber)
+2300	miscanthus~4	pêche (Flamingo)
+2301	miscanthus~5	rouge cuivré (Malepartus)
+2302	miscanthus~6	bordeaux
+2303	pampa~0	naturel crème
+2304	pampa~1	champagne beige
+2305	pampa~2	blanchi blanc
+2306	pampa~3	teint café
+2307	pampa~4	teint taupe
+2308	pampa~5	rose poudré (Rosea)
+2309	pampa~6	teint terracotta
+2310	pampa~7	teint noir
+2311	stipa~0	naturel argenté
+2312	stipa~1	blond paille
+2313	stipa~2	vert tendre (frais)
+2314	stipa~3	teint café
+2315	stipa~4	teint pêche
+2316	stipa~5	teint rose
+2317	stipa~6	teint fuchsia
+2318	stipa~7	teint bleu ciel
+2319	stipa~8	teint bleu marine
+2320	ble~0	doré barbu (séché)
+2321	ble~1	doré sans barbe (séché)
+2322	ble~2	paille naturel
+2323	ble~3	vert (frais)
+2324	ble~4	barbe noire (Black Beard)
+2325	ble~5	blanchi
+2326	ble~6	teint bordeaux
+2327	avoine~0	vert pâle (frais)
+2328	avoine~1	paille naturel
+2329	avoine~2	blanchi
+2330	avoine~3	teint jaune
+2331	avoine~4	teint orange
+2332	avoine~5	teint rouge
+2333	avoine~6	teint rose
+2334	orge~0	doré naturel
+2335	orge~1	vert (frais)
+2336	orge~2	blond pâle
+2337	orge~3	noir (Black Barley)
+2338	orge~4	blanchi
+2339	orge~5	stabilisé vert sauge
+2340	chasmanthium~0	vert (frais)
+2341	chasmanthium~1	vert bronze
+2342	chasmanthium~2	bronze cuivré
+2343	chasmanthium~3	brun doré
+2344	chasmanthium~4	paille (séché)
+2345	sorgho-a-balai~0	doré
+2346	sorgho-a-balai~1	rouge brique
+2347	sorgho-a-balai~2	bronze
+2348	sorgho-a-balai~3	bordeaux
+2349	sorgho-a-balai~4	brun chocolat
+2350	sorgho-a-balai~5	crème
+2351	sorgho-a-balai~6	vert (frais)
+2352	typha~0	brun chocolat (naturel)
+2353	typha~1	vert (frais, jeune)
+2354	typha~2	blanchi ivoire
+2355	typha~3	teint rose poudré
+2356	typha~4	teint prune
+2357	typha~5	teint noir
+2358	ozothamnus~0	blanc (Cook’s Tiara)
+2359	ozothamnus~1	crème ivoire
+2360	ozothamnus~2	rose pâle (Pink Champagne)
+2361	ozothamnus~3	rose (Radiance)
+2362	ozothamnus~4	rose vif (Sunset Pink)
+2363	ozothamnus~5	prune (teint)
+2364	brunia~0	argent (B. laevis séché)
+2365	brunia~1	gris perle (B. laevis frais)
+2366	brunia~2	vert (séché vert)
+2367	brunia~3	vert-de-gris (B. noduliflora)
+2368	brunia~4	rouge brique (peint)
+2369	brunia~5	vieux rose (peint)
+2370	brunia~6	or (peint)
+2371	brunia~7	argent métallisé (peint)
+2372	brunia~8	blanc crème (B. albiflora)
+2373	berzelia~0	vert (B. lanuginosa)
+2374	berzelia~1	vert-jaune (B. galpinii)
+2375	berzelia~2	jaune d’or (teint)
+2376	berzelia~3	crème (en fleur)
+2377	berzelia~4	blanc crème (blanchi)
+2378	berzelia~5	rouge (B. galpinii, fructifié)
+2379	berzelia~6	vert olive (séché)
+2380	phylica~0	crème doré (naturel)
+2381	phylica~1	doré (naturel)
+2382	phylica~2	caramel (séché)
+2383	phylica~3	vert doré (frais)
+2384	phylica~4	blanchi ivoire
+2385	ixodia~0	blanc papier (naturel)
+2386	ixodia~1	blanc pur (alata)
+2387	ixodia~2	crème (séché)
+2388	immortelle-helichrysum~0	jaune d’or (H. italicum)
+2389	immortelle-helichrysum~1	jaune citron (H. stoechas)
+2390	immortelle-helichrysum~2	jaune paille (séchée)
+2391	immortelle-helichrysum~3	orangé (H. arenarium aurantiacum)
+2392	immortelle-helichrysum~4	blanchie (séchée)
+2393	xeranthemum~0	violet
+2394	xeranthemum~1	pourpre
+2395	xeranthemum~2	lilas
+2396	xeranthemum~3	mauve rosé
+2397	xeranthemum~4	rose
+2398	xeranthemum~5	rose vif
+2399	xeranthemum~6	blanc argenté
+2400	xeranthemum~7	violet double (Superbissimum)
+2401	xeranthemum~8	rose double (Superbissimum)
+2402	xeranthemum~9	blanc double (Superbissimum)
+2403	ammobium~0	blanc (cœur jaune)
+2404	ammobium~1	blanc argenté (Bikini)
+2405	ammobium~2	crème
+2406	acroclinium~0	rose
+2407	acroclinium~1	rose pâle
+2408	acroclinium~2	rose carmin
+2409	acroclinium~3	blanc
+2410	acroclinium~4	blanc à cœur noir (Pierrot)
+2411	acroclinium~5	rose à cœur noir (Red Bonnie)
+2412	acroclinium~6	rose saumoné
+2413	stirlingia~0	naturel brun-gris
+2414	stirlingia~1	bleu (teint)
+2415	stirlingia~2	rose (teint)
+2416	stirlingia~3	rouge (teint)
+2417	stirlingia~4	blanchi
+2418	stirlingia~5	vert (teint)
+2419	stirlingia~6	violet (teint)
+2420	glixia~0	naturel crème
+2421	glixia~1	blanc (blanchi)
+2422	glixia~2	jaune
+2423	glixia~3	pêche
+2424	glixia~4	orange
+2425	glixia~5	rose pastel
+2426	glixia~6	rose
+2427	glixia~7	rouge
+2428	glixia~8	mauve
+2429	glixia~9	violet
+2430	glixia~10	bleu
+2431	glixia~11	gris
+2432	glixia~12	noir
+2433	palm-spear-seche~0	naturel paille
+2434	palm-spear-seche~1	blanchi
+2435	palm-spear-seche~2	noir
+2436	palm-spear-seche~3	bleu
+2437	palm-spear-seche~4	bordeaux
+2438	palm-spear-seche~5	doré
+2439	palm-spear-seche~6	rouille (cuivre)
+2440	palm-spear-seche~7	rose poudré
+2441	palm-spear-seche~8	vert sauge
+2442	sun-palm-seche~0	naturel paille
+2443	sun-palm-seche~1	blanchi
+2444	sun-palm-seche~2	crème
+2445	sun-palm-seche~3	noir
+2446	sun-palm-seche~4	rose poudré
+2447	sun-palm-seche~5	fuchsia
+2448	sun-palm-seche~6	rouge
+2449	sun-palm-seche~7	bordeaux
+2450	sun-palm-seche~8	terracotta
+2451	sun-palm-seche~9	orange brûlé
+2452	sun-palm-seche~10	lilas
+2453	sun-palm-seche~11	bleu nuit
+2454	sun-palm-seche~12	doré
+2455	ruscus-seche-teint~0	vert naturel
+2456	ruscus-seche-teint~1	vert sauge
+2457	ruscus-seche-teint~2	blanchi
+2458	ruscus-seche-teint~3	ivoire
+2459	ruscus-seche-teint~4	champagne
+2460	ruscus-seche-teint~5	rose poudré
+2461	ruscus-seche-teint~6	rose
+2462	ruscus-seche-teint~7	corail
+2463	ruscus-seche-teint~8	rouge
+2464	ruscus-seche-teint~9	bordeaux
+2465	ruscus-seche-teint~10	violet
+2466	ruscus-seche-teint~11	bleu
+2467	ruscus-seche-teint~12	noir
+2468	ruscus-seche-teint~13	or
+2469	hortensia-seche-stabilise~0	naturel vert antique
+2470	hortensia-seche-stabilise~1	naturel rose antique
+2471	hortensia-seche-stabilise~2	blanc
+2472	hortensia-seche-stabilise~3	crème
+2473	hortensia-seche-stabilise~4	noisette
+2474	hortensia-seche-stabilise~5	café
+2475	hortensia-seche-stabilise~6	merlot
+2476	hortensia-seche-stabilise~7	lavande
+2477	hortensia-seche-stabilise~8	bleu clair
+2478	hortensia-seche-stabilise~9	bleu océan
+2479	hortensia-seche-stabilise~10	vert pistache
+2480	hortensia-seche-stabilise~11	vert menthe
+2481	hortensia-seche-stabilise~12	rose bonbon
+2482	hortensia-seche-stabilise~13	orange corail
+2483	hortensia-seche-stabilise~14	noir
+2484	hortensia-seche-stabilise~15	automne
+2485	eucalyptus-stabilise~0	vert naturel
+2486	eucalyptus-stabilise~1	vert tendre
+2487	eucalyptus-stabilise~2	bleu
+2488	eucalyptus-stabilise~3	aigue-marine
+2489	eucalyptus-stabilise~4	blanc
+2490	eucalyptus-stabilise~5	rose poudré
+2491	eucalyptus-stabilise~6	vieux rose
+2492	eucalyptus-stabilise~7	lavande
+2493	eucalyptus-stabilise~8	jaune d’or
+2494	eucalyptus-stabilise~9	orange automne
+2495	eucalyptus-stabilise~10	rouge
+2496	eucalyptus-stabilise~11	grenat
+2497	eucalyptus-stabilise~12	brun vintage
+2498	eucalyptus-stabilise~13	cuivre
+2499	lichen-stabilise~0	naturel gris-vert (Iceland Moss Natural)
+2500	lichen-stabilise~1	blanc (blanchi)
+2501	lichen-stabilise~2	vert tendre
+2502	lichen-stabilise~3	vert mousse (Moss Green)
+2503	lichen-stabilise~4	vert menthe (Mint Green)
+2504	lichen-stabilise~5	vert foncé
+2505	lichen-stabilise~6	aigue-marine (Aquamarin)
+2506	lichen-stabilise~7	bleu glacier (Ice Blue)
+2507	lichen-stabilise~8	bleu roi (King Blue)
+2508	lichen-stabilise~9	lavande
+2509	lichen-stabilise~10	rose clair
+2510	lichen-stabilise~11	fuchsia
+2511	lichen-stabilise~12	rouge cramoisi (Crimson)
+2512	lichen-stabilise~13	orange mangue (Mango)
+2513	lichen-stabilise~14	jaune
+2514	lichen-stabilise~15	rouille sienne (Sienna)
+2515	lichen-stabilise~16	noir
+2516	broom-bloom~0	naturel vert olive
+2517	broom-bloom~1	blanchi
+2518	broom-bloom~2	teint jaune
+2519	broom-bloom~3	teint orange brûlé
+2520	broom-bloom~4	teint rouge
+2521	broom-bloom~5	teint rose
+2522	broom-bloom~6	teint lilas
+2523	broom-bloom~7	teint mauve
+2524	broom-bloom~8	teint bleu foncé
+2525	broom-bloom~9	teint vert
+2526	broom-bloom~10	naturel paille
+2527	feuille-strelitzia-sechee~0	naturel brun
+2528	feuille-strelitzia-sechee~1	beige
+2529	feuille-strelitzia-sechee~2	blanchi
+2530	feuille-strelitzia-sechee~3	doré
+2531	feuille-strelitzia-sechee~4	rose poudré (teint)
+2532	feuille-strelitzia-sechee~5	vert (stabilisé)
+2533	feuille-strelitzia-sechee~6	turquoise (teint)
+2534	stoebe~0	naturel gris argent (stabilisé)
+2535	stoebe~1	vert anis (teint)
+2536	stoebe~2	rose poudré (teint)
+2537	stoebe~3	bleu ciel (teint)
+2538	stoebe~4	aubergine (teint)
+2539	stoebe~5	rouille (teint)
+2540	stoebe~6	blanchi (stabilisé)
+2541	eucalyptus-cinerea~0	bleu-gris (Silver Dollar)
+2542	eucalyptus-cinerea~1	gris argenté
+2543	eucalyptus-cinerea~2	vert-de-gris
+2544	eucalyptus-pulverulenta-baby-blue~0	bleu argenté (Baby Blue)
+2545	eucalyptus-pulverulenta-baby-blue~1	bleu poudré
+2546	eucalyptus-pulverulenta-baby-blue~2	vert bleuté
+2547	eucalyptus-gunnii~0	bleu argenté
+2548	eucalyptus-gunnii~1	bleu-vert
+2549	eucalyptus-gunnii~2	vert-de-gris
+2550	eucalyptus-parvifolia~0	vert bleuté
+2551	eucalyptus-parvifolia~1	vert
+2552	eucalyptus-parvifolia~2	vert grisé
+2553	eucalyptus-nicholii~0	vert bleuté
+2554	eucalyptus-nicholii~1	vert grisé
+2555	eucalyptus-nicholii~2	pourpré (jeunes pousses)
+2556	eucalyptus-populus~0	baies vertes
+2557	eucalyptus-populus~1	baies vert-olive
+2558	eucalyptus-populus~2	baies brunes (mûres)
+2559	eucalyptus-populus~3	bordeaux (teinté)
+2560	eucalyptus-populus~4	doré (peint)
+2561	eucalyptus-populus~5	noir (teinté)
+2562	eucalyptus-stuartiana~0	bleu-gris doux
+2563	eucalyptus-stuartiana~1	vert sauge
+2564	eucalyptus-stuartiana~2	gris argenté
+2565	eucalyptus-polyanthemos~0	gris-vert argenté
+2566	eucalyptus-polyanthemos~1	bleu argenté
+2567	eucalyptus-polyanthemos~2	vert-gris (feuille adulte)
+2568	eucalyptus-polyanthemos~3	stabilisé vert
+2569	eucalyptus-polyanthemos~4	stabilisé bleu
+2570	eucalyptus-polyanthemos~5	stabilisé bordeaux
+2571	eucalyptus-kruseana~0	gris argenté poudré
+2572	eucalyptus-kruseana~1	bleu-gris
+2573	eucalyptus-kruseana~2	vert-de-gris
+2574	danae-racemosa-ruscus-italien~0	vert franc
+2575	danae-racemosa-ruscus-italien~1	vert profond
+2576	danae-racemosa-ruscus-italien~2	vert tendre (jeunes pousses)
+2577	ruscus-hypophyllum-israelien~0	vert profond lustré
+2578	ruscus-hypophyllum-israelien~1	vert franc (jeunes tiges)
+2579	ruscus-hypophyllum-israelien~2	vert bouteille
+2580	ruscus-aculeatus-petit-houx~0	vert à baies rouges
+2581	ruscus-aculeatus-petit-houx~1	vert (sans baies)
+2582	pittosporum-tenuifolium~0	vert brillant (type)
+2583	pittosporum-tenuifolium~1	vert tendre (Golf Ball)
+2584	pittosporum-tenuifolium~2	panaché argent (Silver Queen)
+2585	pittosporum-tenuifolium~3	liseré crème (Variegatum)
+2586	pittosporum-tenuifolium~4	pourpre bronze (Purpureum)
+2587	pittosporum-tenuifolium~5	pourpre noir (Tom Thumb)
+2588	pittosporum-tenuifolium~6	doré (Warnham Gold)
+2589	pittosporum-tobira~0	vert brillant (type)
+2590	pittosporum-tobira~1	panaché crème (Variegatum)
+2591	pittosporum-tobira~2	vert tendre (jeunes pousses)
+2592	gaultheria-shallon-salal~0	vert profond (lemon leaf)
+2593	gaultheria-shallon-salal~1	vert (salal)
+2594	gaultheria-shallon-salal~2	vert tendre (salal tips)
+2595	vaccinium-ovatum-huckleberry~0	vert brillant, tiges rouges
+2596	vaccinium-ovatum-huckleberry~1	vert à pousses bronze-rouge
+2597	vaccinium-ovatum-huckleberry~2	vert, baies noires
+2598	rumohra-adiantiformis-leatherleaf~0	vert sombre brillant
+2599	rumohra-adiantiformis-leatherleaf~1	vert profond (Costa Rica)
+2600	rumohra-adiantiformis-leatherleaf~2	vert vif (Floride)
+2601	rumohra-adiantiformis-leatherleaf~3	peint or
+2602	rumohra-adiantiformis-leatherleaf~4	peint argent
+2603	asparagus-setaceus-plumosus~0	vert tendre
+2604	asparagus-setaceus-plumosus~1	vert
+2605	asparagus-setaceus-plumosus~2	rose (teinté)
+2606	asparagus-setaceus-plumosus~3	framboise (teinté)
+2607	asparagus-setaceus-plumosus~4	magenta (teinté)
+2608	asparagus-setaceus-plumosus~5	rouge (teinté)
+2609	asparagus-setaceus-plumosus~6	lavande (teinté)
+2610	asparagus-setaceus-plumosus~7	jaune (teinté)
+2611	asparagus-setaceus-plumosus~8	pêche (teinté)
+2612	asparagus-setaceus-plumosus~9	or rose (teinté)
+2613	asparagus-virgatus-tree-fern~0	vert foncé
+2614	asparagus-virgatus-tree-fern~1	vert
+2615	asparagus-macowanii-ming-fern~0	vert profond
+2616	asparagus-macowanii-ming-fern~1	vert mousse
+2617	asparagus-densiflorus-sprengeri~0	vert tendre
+2618	asparagus-densiflorus-sprengeri~1	vert
+2619	asparagus-densiflorus-sprengeri~2	vert à baies rouges
+2620	asparagus-densiflorus-myersii~0	vert vif
+2621	asparagus-densiflorus-myersii~1	vert foncé
+2622	asparagus-asparagoides-smilax~0	vert brillant
+2623	asparagus-asparagoides-smilax~1	vert tendre (jeunes pousses)
+2624	asparagus-asparagoides-smilax~2	myrtifolius (baby smilax, petits cladodes)
+2625	asparagus-falcatus~0	vert lustré
+2626	asparagus-falcatus~1	vert
+2627	smilax-smallii-southern-smilax~0	vert foncé brillant
+2628	smilax-smallii-southern-smilax~1	vert franc
+2629	smilax-smallii-southern-smilax~2	vert olive (fin d'hiver)
+2630	monstera-deliciosa~0	vert foncé brillant
+2631	monstera-deliciosa~1	vert profond
+2632	monstera-deliciosa~2	panachée blanc (Albo Variegata)
+2633	monstera-deliciosa~3	constellation crème (Thai Constellation)
+2634	philodendron-bipinnatifidum-selloum~0	vert foncé luisant (Selloum)
+2635	philodendron-bipinnatifidum-selloum~1	vert franc (Pinnatifidum)
+2636	philodendron-bipinnatifidum-selloum~2	vert sombre ondulé (Hope)
+2637	philodendron-xanadu~0	vert foncé (Xanadu)
+2638	philodendron-xanadu~1	vert foncé (Winterbourn)
+2639	philodendron-xanadu~2	reflets bronze cuivré
+2640	philodendron-hybrides~0	vert lustré (Imperial Green)
+2641	philodendron-hybrides~1	vert lobé (Xanadu)
+2642	philodendron-hybrides~2	bordeaux (Imperial Red)
+2643	philodendron-hybrides~3	rouge vin, jeunes feuilles rouges (Rojo Congo)
+2644	philodendron-hybrides~4	noir pourpré (Black Cardinal)
+2645	philodendron-hybrides~5	chartreuse (Moonlight)
+2646	philodendron-hybrides~6	cuivre orangé (Prince of Orange)
+2647	aspidistra-elatior~0	vert foncé
+2648	aspidistra-elatior~1	mouchetée crème (Milky Way)
+2649	aspidistra-elatior~2	panachée crème (Variegata)
+2650	aspidistra-elatior~3	pointe blanche (Asahi)
+2651	aspidistra-elatior~4	rayée jaune (Okame)
+2652	aspidistra-elatior~5	teintée lilas
+2653	aspidistra-elatior~6	blanchie crème
+2654	dypsis-lutescens-areca~0	vert franc (rachis doré)
+2655	dypsis-lutescens-areca~1	vert jaune (plein soleil)
+2656	chamaedorea-chico~0	vert sombre (Chico)
+2657	chamaedorea-chico~1	vert franc
+2658	chamaedorea-chico~2	vert noir (Negrita)
+2659	phoenix-roebelenii~0	vert foncé
+2660	phoenix-roebelenii~1	vert bleuté
+2661	phoenix-roebelenii~2	peint cuivre
+2662	phoenix-roebelenii~3	peint or
+2663	licuala-grandis~0	vert émeraude brillant
+2664	licuala-grandis~1	vert profond
+2665	livistona-rotundifolia~0	vert brillant
+2666	livistona-rotundifolia~1	vert franc
+2667	cycas-revoluta~0	vert profond brillant
+2668	cycas-revoluta~1	vert olive
+2669	cycas-revoluta~2	séché blanchi
+2670	cycas-revoluta~3	peint or
+2671	cycas-revoluta~4	peint argent
+2672	rhapis-excelsa~0	vert foncé brillant
+2673	rhapis-excelsa~1	vert franc
+2674	caryota-mitis~0	vert franc
+2675	caryota-mitis~1	vert clair
+2676	caryota-mitis~2	vert profond
+2677	serenoa-repens-palmetto~0	vert (forme verte)
+2678	serenoa-repens-palmetto~1	bleu argenté (Silver)
+2679	serenoa-repens-palmetto~2	vert bleuté
+2680	serenoa-repens-palmetto~3	séché naturel
+2681	bismarckia-nobilis~0	bleu argenté
+2682	bismarckia-nobilis~1	gris bleuté
+2683	bismarckia-nobilis~2	vert (forme verte)
+2684	cordyline-fruticosa-ti~0	vert (ti vert)
+2685	cordyline-fruticosa-ti~1	bordeaux liseré rose (Red Sister)
+2686	cordyline-fruticosa-ti~2	rouge sang (Red Dragon)
+2687	cordyline-fruticosa-ti~3	bordeaux noir (Black Mystique)
+2688	cordyline-fruticosa-ti~4	rose vif (Pink Diamond)
+2689	cordyline-fruticosa-ti~5	chocolat (Chocolate Queen)
+2690	cordyline-fruticosa-ti~6	panachée crème et vert (Kiwi)
+2691	cordyline-fruticosa-ti~7	presque noir (Black Magic)
+2692	dracaena-reflexa-song-of-india~0	bordé jaune d’or (Song of India)
+2693	dracaena-reflexa-song-of-india~1	vert foncé, centre vert tendre (Song of Jamaica)
+2694	dracaena-reflexa-song-of-india~2	vert uni (Anita)
+2695	dracaena-marginata~0	vert liseré rouge (Marginata)
+2696	dracaena-marginata~1	bordeaux (Magenta)
+2697	dracaena-marginata~2	rose vif (Colorama)
+2698	dracaena-marginata~3	tricolore crème, vert et rouge (Tricolor)
+2699	dracaena-fragrans~0	vert foncé uni (Janet Craig)
+2700	dracaena-fragrans~1	bande centrale jaune (Massangeana)
+2701	dracaena-fragrans~2	citron vert liseré (Lemon Lime)
+2702	dracaena-fragrans~3	vert gris rayé blanc (Warneckii)
+2703	dracaena-sanderiana-lucky-bamboo~0	vert (canne droite)
+2704	dracaena-sanderiana-lucky-bamboo~1	doré (canne jaune)
+2705	dracaena-sanderiana-lucky-bamboo~2	panaché crème (Ribbon)
+2706	dracaena-sanderiana-lucky-bamboo~3	vert en spirale
+2707	dracaena-sanderiana-lucky-bamboo~4	doré en spirale
+2708	dracaena-surculosa~0	vert taché d’or (Gold Dust)
+2709	dracaena-surculosa~1	constellé crème (Florida Beauty)
+2710	dracaena-surculosa~2	strié or, taché (Juanita)
+2711	codiaeum-variegatum-croton~0	vert à nervures jaunes et orange (Petra)
+2712	codiaeum-variegatum-croton~1	pourpre spiralé, nervures rouges (Mammy)
+2713	codiaeum-variegatum-croton~2	vert piqueté d'or (Gold Dust)
+2714	codiaeum-variegatum-croton~3	lanières rouge, orange et jaune (Zanzibar)
+2715	codiaeum-variegatum-croton~4	feuille de chêne jaune d'or (Excellent)
+2716	codiaeum-variegatum-croton~5	rouge rosé taché de noir (Mrs Iceton)
+2717	alocasia~0	vert noir, nervures ivoire (Polly)
+2718	alocasia~1	vert noir, nervures blanches (Amazonica)
+2719	alocasia~2	vert velours, nervures blanches (Frydek)
+2720	alocasia~3	vert vif uni (odora)
+2721	alocasia~4	vert bronze (Black Velvet)
+2722	alocasia~5	panachée crème (Variegata)
+2723	goeppertia-calathea~0	médaillon argenté (Medallion)
+2724	goeppertia-calathea~1	bandes argentées (orbifolia)
+2725	goeppertia-calathea~2	plumes de paon (makoyana)
+2726	goeppertia-calathea~3	écailles sombres, bord ondulé (lancifolia)
+2727	goeppertia-calathea~4	zébrée velours (zebrina)
+2728	goeppertia-calathea~5	cœur rose (Rosy)
+2729	goeppertia-calathea~6	mosaïque vert tendre (Network)
+2730	anthurium-feuilles~0	vert foncé brillant (Andreanum)
+2731	anthurium-feuilles~1	vert franc
+2732	anthurium-feuilles~2	vert foncé, feuille longue ondulée (Jungle King)
+2733	anthurium-feuilles~3	jeune feuille bronze
+2734	musa-feuille-bananier~0	vert franc
+2735	musa-feuille-bananier~1	vert tendre (jeune feuille)
+2736	musa-feuille-bananier~2	vert tacheté de bordeaux (Zebrina)
+2737	musa-feuille-bananier~3	rouge rubis taché de vert (Siam Ruby)
+2738	musa-feuille-bananier~4	panachée de blanc (Ae Ae)
+2739	strelitzia-feuilles~0	vert bleuté
+2740	strelitzia-feuilles~1	gris-vert glauque
+2741	strelitzia-feuilles~2	vert sombre
+2742	pandanus~0	vert, épines rouges (utilis)
+2743	pandanus~1	panaché blanc crème (Veitchii)
+2744	pandanus~2	rayé jaune d'or (Sanderi)
+2745	pandanus~3	vert tendre sans épines (pandan)
+2746	alpinia-zerumbet-variegata~0	vert rayé de jaune (Variegata)
+2747	alpinia-zerumbet-variegata~1	vert rayé de crème (Variegata, lumière douce)
+2748	alpinia-zerumbet-variegata~2	jaune d'or rayé de vert (Variegata)
+2749	alpinia-zerumbet-variegata~3	vert marbré de vert tendre (Chinese Beauty)
+2750	fatsia-japonica-aralia~0	vert laqué
+2751	fatsia-japonica-aralia~1	moucheté de blanc (Spider's Web)
+2752	fatsia-japonica-aralia~2	bord crème (Variegata)
+2753	nephrolepis-exaltata-boston~0	vert tendre (Boston)
+2754	nephrolepis-exaltata-boston~1	vert franc
+2755	nephrolepis-exaltata-boston~2	vert pomme (Green Lady)
+2756	nephrolepis-exaltata-boston~3	vert dense (Dallas)
+2757	polystichum-munitum-sword-fern~0	vert sombre
+2758	polystichum-munitum-sword-fern~1	vert profond
+2759	polystichum-munitum-sword-fern~2	vert olive (fronde d'été)
+2760	adiantum-capillaire~0	vert tendre
+2761	adiantum-capillaire~1	vert franc
+2762	adiantum-capillaire~2	vert profond (Fritz Luth)
+2763	adiantum-capillaire~3	jeunes frondes rosées
+2764	sticherus-umbrella-fern~0	vert vif
+2765	sticherus-umbrella-fern~1	vert profond
+2766	dicranopteris-uluhe~0	vert (stabilisé)
+2767	dicranopteris-uluhe~1	prune (teinte)
+2768	dicranopteris-uluhe~2	brun naturel (séché)
+2769	thelypteris-kunthii-helecho~0	vert clair
+2770	thelypteris-kunthii-helecho~1	vert tendre
+2771	cyrtomium-falcatum-houx~0	vert foncé brillant (Cyrtomium Fern)
+2772	cyrtomium-falcatum-houx~1	vert foncé (Holly Fern)
+2773	cyrtomium-falcatum-houx~2	vert foncé, pennes frangées (Rochfordianum)
+2774	cyrtomium-falcatum-houx~3	vert bronze (jeunes frondes)
+2775	phlebodium-aureum-blue-star~0	bleu-vert glauque (Blue Star)
+2776	phlebodium-aureum-blue-star~1	bleu argenté ondulé (Davana)
+2777	phlebodium-aureum-blue-star~2	vert (type)
+2778	woodwardia-fimbriata~0	vert franc
+2779	woodwardia-fimbriata~1	vert tendre (jeunes frondes)
+2780	asplenium-nidus~0	vert pomme brillant
+2781	asplenium-nidus~1	vert profond
+2782	asplenium-nidus~2	ondulé (Crispy Wave)
+2783	asplenium-nidus~3	étroit ondulé (Osaka)
+2784	microsorum-musifolium-crocodile~0	vert pomme réticulé (Polypodium Musifolium)
+2785	microsorum-musifolium-crocodile~1	vert jaune réticulé (feuille au soleil)
+2786	zamia-integrifolia-coontie~0	vert foncé brillant (Coontie Fern)
+2787	zamia-integrifolia-coontie~1	vert franc (feuille de l'année)
+2788	lycopodium~0	vert franc (Lycopodium)
+2789	lycopodium~1	vert foncé (Princess Pine)
+2790	equisetum-preles~0	vert sapin (naturel)
+2791	xerophyllum-tenax-bear-grass~0	vert franc (frais)
+2792	xerophyllum-tenax-bear-grass~1	vert olive (frais)
+2793	xerophyllum-tenax-bear-grass~2	stabilisé vert
+2794	xerophyllum-tenax-bear-grass~3	blanchi (séché)
+2795	xerophyllum-tenax-bear-grass~4	stabilisé rouge
+2796	xerophyllum-tenax-bear-grass~5	stabilisé bleu
+2797	xanthorrhoea-steel-grass~0	vert brillant
+2798	xanthorrhoea-steel-grass~1	vert bleuté glauque
+2799	liriope-lily-grass~0	vert foncé brillant
+2800	liriope-lily-grass~1	panaché crème (Variegata)
+2801	phormium-lin-nz~0	vert (tenax)
+2802	phormium-lin-nz~1	bronze pourpré (Purpureum)
+2803	phormium-lin-nz~2	rayé rose et bronze (Maori Queen)
+2804	phormium-lin-nz~3	jaune or, rayures vertes (Yellow Wave)
+2805	phormium-lin-nz~4	panaché crème et vert (Variegatum)
+2806	phormium-lin-nz~5	presque noir (Platt’s Black)
+2807	astelia-silver-spear~0	argent métallique (Silver Spear)
+2808	astelia-silver-spear~1	argent blanc (Silver Shadow)
+2809	astelia-silver-spear~2	bronze rouge argenté (Red Gem)
+2810	astelia-silver-spear~3	vert argenté (banksii)
+2811	jacobaea-maritima-cineraire~0	blanc argenté (Silver Dust)
+2812	jacobaea-maritima-cineraire~1	gris argent (Silver Dust)
+2813	jacobaea-maritima-cineraire~2	argent lumineux (Cirrus)
+2814	jacobaea-maritima-cineraire~3	vert-de-gris (New Look)
+2815	stachys-byzantina-oreille-ours~0	gris argent (type)
+2816	stachys-byzantina-oreille-ours~1	fleuri, épis mauves
+2817	stachys-byzantina-oreille-ours~2	fleuri, épis rose pâle
+2818	stachys-byzantina-oreille-ours~3	vert-de-gris (Big Ears)
+2819	stachys-byzantina-oreille-ours~4	blanc argenté (Silver Carpet)
+2820	stachys-byzantina-oreille-ours~5	gris jaunâtre (Primrose Heron)
+2821	hosta-feuilles~0	vert brillant (Royal Standard)
+2822	hosta-feuilles~1	bleu glauque (Halcyon)
+2823	hosta-feuilles~2	chartreuse doré (Sum and Substance)
+2824	hosta-feuilles~3	vert liseré blanc (Francee)
+2825	hosta-feuilles~4	vert large liseré blanc (Patriot)
+2826	hosta-feuilles~5	bleu-vert liseré or (Frances Williams)
+2827	hosta-feuilles~6	cœur or, bord bleu-vert (June)
+2828	hosta-feuilles~7	cœur blanc ondulé (Undulata)
+2829	galax-urceolata~0	vert lustré
+2830	galax-urceolata~1	bronze rouge (hiver)
+2831	galax-urceolata~2	vert bordé de bronze
+2832	galax-urceolata~3	bordeaux (plein hiver)
+2833	heuchera~0	pourpre (Palace Purple)
+2834	heuchera~1	caramel
+2835	heuchera~2	lime (Lime Marmalade)
+2836	heuchera~3	argenté veiné (Silver Scrolls)
+2837	heuchera~4	pourpre noir (Obsidian)
+2838	heuchera~5	pêche (Georgia Peach)
+2839	heuchera~6	orange (Marmalade)
+2840	heuchera~7	rouge (Forever Red)
+2841	heuchera~8	prune argentée (Plum Pudding)
+2842	atriplex-hortensis-arroche~0	rouge pourpre (Rubra)
+2843	atriplex-hortensis-arroche~1	pourpre noir (Purple Plume)
+2844	atriplex-hortensis-arroche~2	rouge vif (Red Plume)
+2845	atriplex-hortensis-arroche~3	vert (type)
+2846	atriplex-hortensis-arroche~4	vert doré (Gold)
+2847	pelargonium-geranium-odorant~0	vert tendre (rosat)
+2848	pelargonium-geranium-odorant~1	vert acide (Mabel Grey)
+2849	pelargonium-geranium-odorant~2	panaché crème (Lady Plymouth)
+2850	pelargonium-geranium-odorant~3	vert sombre maculé (Chocolate Peppermint)
+2851	pelargonium-geranium-odorant~4	vert tendre fleuri rose
+2852	magnolia-grandiflora-feuillage~0	vert luisant, revers roux (M. grandiflora)
+2853	magnolia-grandiflora-feuillage~1	vert profond, revers brun roux (Brackens Brown Beauty)
+2854	magnolia-grandiflora-feuillage~2	petite feuille, revers roux (Little Gem)
+2855	magnolia-grandiflora-feuillage~3	stabilisé bronze (feuillage préservé)
+2856	olea-europaea-olivier~0	gris-vert argenté
+2857	olea-europaea-olivier~1	gris-vert, olives vertes
+2858	olea-europaea-olivier~2	gris-vert, olives noires
+2859	olea-europaea-olivier~3	vert sombre (Picual)
+2860	hedera-helix-lierre~0	vert foncé, nervures claires
+2861	hedera-helix-lierre~1	glacier (panaché gris-crème)
+2862	hedera-helix-lierre~2	goldchild (bordé doré)
+2863	hedera-helix-lierre~3	goldheart (cœur doré)
+2864	hedera-helix-lierre~4	arborescent en baies noires
+2865	hedera-helix-lierre~5	arborescent en baies vertes
+2866	jasminum-liane-jasmin~0	polyanthum fleuri
+2867	jasminum-liane-jasmin~1	polyanthum en boutons roses
+2868	jasminum-liane-jasmin~2	officinale blanc pur
+2869	jasminum-liane-jasmin~3	feuillage seul
+2870	jasminum-liane-jasmin~4	officinale Fiona Sunrise (doré)
+2871	trachelospermum-jasmin-etoile~0	fleuri blanc
+2872	trachelospermum-jasmin-etoile~1	en boutons
+2873	trachelospermum-jasmin-etoile~2	star of Toscana (fleurs crème)
+2874	trachelospermum-jasmin-etoile~3	feuillage vert sombre
+2875	trachelospermum-jasmin-etoile~4	variegatum (bordé crème)
+2876	trachelospermum-jasmin-etoile~5	rougi d'hiver
+2877	myrtus-communis-myrte~0	vert lustré (type)
+2878	myrtus-communis-myrte~1	petites feuilles (Tarentina)
+2879	myrtus-communis-myrte~2	liseré crème (Variegata)
+2880	myrtus-communis-myrte~3	vert fleuri blanc
+2881	myrtus-communis-myrte~4	à baies bleu-noir
+2882	buxus-sempervirens-buis~0	vert foncé lustré (type)
+2883	buxus-sempervirens-buis~1	vert tendre (pousses de printemps)
+2884	buxus-sempervirens-buis~2	panaché crème (Elegantissima)
+2885	buxus-sempervirens-buis~3	stabilisé vert mat
+2886	pistacia-lentiscus-pistachier~0	vert profond
+2887	pistacia-lentiscus-pistachier~1	vert olive (plein soleil)
+2888	pistacia-lentiscus-pistachier~2	vert, baies rouges
+2889	laurus-nobilis-laurier-sauce~0	vert sombre mat (L. nobilis)
+2890	laurus-nobilis-laurier-sauce~1	vert olive, feuille étroite (Angustifolia)
+2891	laurus-nobilis-laurier-sauce~2	vert doré (Aurea)
+2892	laurus-nobilis-laurier-sauce~3	vert sombre, en boutons floraux (mâle)
+2893	prunus-laurocerasus-laurier-cerise~0	vert profond luisant (P. laurocerasus)
+2894	prunus-laurocerasus-laurier-cerise~1	vert foncé, feuille étroite (Otto Luyken)
+2895	prunus-laurocerasus-laurier-cerise~2	vert profond, pousses bronze (Etna)
+2896	prunus-laurocerasus-laurier-cerise~3	marbré blanc crème (Castlewellan)
+2897	prunus-laurocerasus-laurier-cerise~4	vert profond, en grappes de fleurs blanches
+2898	viburnum-tinus-laurier-tin~0	boutons roses, fleurs blanches (V. tinus)
+2899	viburnum-tinus-laurier-tin~1	boutons carmin, fleurs rosées (Eve Price)
+2900	viburnum-tinus-laurier-tin~2	boutons rose pâle, fleurs blanches (French White)
+2901	viburnum-tinus-laurier-tin~3	baies bleu métallique
+2902	quercus-ilex-chene-vert~0	vert sombre
+2903	quercus-ilex-chene-vert~1	vert sombre à glands
+2904	quercus-ilex-chene-vert~2	jeunes pousses argentées
+2905	cotinus-coggygria-arbre-a-perruques~0	pourpre Royal Purple
+2906	cotinus-coggygria-arbre-a-perruques~1	pourpre noir Velvet Cloak
+2907	cotinus-coggygria-arbre-a-perruques~2	rouge vin Grace
+2908	cotinus-coggygria-arbre-a-perruques~3	vert bleuté
+2909	cotinus-coggygria-arbre-a-perruques~4	doré Golden Spirit
+2910	cotinus-coggygria-arbre-a-perruques~5	feu d'automne
+2911	physocarpus-opulifolius~0	pourpre noir (Diabolo)
+2912	physocarpus-opulifolius~1	bordeaux (Red Baron)
+2913	physocarpus-opulifolius~2	rouge cuivré (Lady in Red)
+2914	physocarpus-opulifolius~3	cuivre (Coppertina)
+2915	physocarpus-opulifolius~4	ambre (Amber Jubilee)
+2916	physocarpus-opulifolius~5	doré (Dart's Gold)
+2917	physocarpus-opulifolius~6	vert (type)
+2918	physocarpus-opulifolius~7	pourpre noir fleuri
+2919	physocarpus-opulifolius~8	doré fleuri
+2920	physocarpus-opulifolius~9	pourpre noir en fruits rouges
+2921	nandina-domestica-bambou-sacre~0	vert teinté de rouge
+2922	nandina-domestica-bambou-sacre~1	rouge d'hiver
+2923	nandina-domestica-bambou-sacre~2	bronze cuivré (Gulf Stream)
+2924	nandina-domestica-bambou-sacre~3	orange feu (Firepower, Obsessed)
+2925	photinia-red-robin~0	vert, pousses rouge vif (Red Robin)
+2926	photinia-red-robin~1	compact, pousses rouges (Little Red Robin)
+2927	photinia-red-robin~2	rouge carmin brillant (Carré Rouge)
+2928	photinia-red-robin~3	liseré blanc, pousses roses (Louise)
+2929	photinia-red-robin~4	marbré crème et rose (Pink Marble)
+2930	photinia-red-robin~5	red Robin en fleurs (corymbes blancs)
+2931	elaeagnus-chalef~0	vert sombre, revers argenté (E. × ebbingei)
+2932	elaeagnus-chalef~1	cœur doré et lime (Limelight)
+2933	elaeagnus-chalef~2	liseré or (Gilt Edge)
+2934	elaeagnus-chalef~3	vert argenté, petites feuilles (Compacta)
+2935	elaeagnus-chalef~4	vert, fleurs argentées d'automne
+2936	euonymus-japonicus-fusain~0	vert brillant (type)
+2937	euonymus-japonicus-fusain~1	liseré or (Aureomarginatus)
+2938	euonymus-japonicus-fusain~2	liseré blanc crème (Président Gauthier)
+2939	euonymus-japonicus-fusain~3	cœur doré (Aureopictus)
+2940	euonymus-japonicus-fusain~4	panaché crème irrégulier (Bravo)
+2941	euonymus-japonicus-fusain~5	petites feuilles liserées de blanc (Microphyllus Albovariegatus)
+2942	griselinia-littoralis~0	vert pomme brillant (type)
+2943	griselinia-littoralis~1	liseré crème (Variegata)
+2944	griselinia-littoralis~2	cœur crème éclaboussé (Dixon's Cream)
+2945	griselinia-littoralis~3	vert franc bordé lime (Green Jewel)
+2946	aucuba-japonica~0	vert sombre luisant (type)
+2947	aucuba-japonica~1	moucheté d’or (Variegata)
+2948	aucuba-japonica~2	éclaboussé d’or (Crotonifolia)
+2949	aucuba-japonica~3	cœur doré moucheté (Picturata)
+2950	aucuba-japonica~4	moucheté d’or à baies rouges (Variegata)
+2951	aucuba-japonica~5	vert à baies rouges (Rozannie)
+2952	choisya-ternata-oranger-du-mexique~0	vert brillant
+2953	choisya-ternata-oranger-du-mexique~1	doré (Sundance)
+2954	choisya-ternata-oranger-du-mexique~2	vert en fleurs blanches
+2955	choisya-ternata-oranger-du-mexique~3	aztec Pearl (folioles fines, en fleurs)
+2956	brachyglottis-sunshine~0	gris argenté
+2957	brachyglottis-sunshine~1	vert-de-gris (feuilles adultes)
+2958	brachyglottis-sunshine~2	argenté en boutons feutrés
+2959	brachyglottis-sunshine~3	fleuri jaune (capitules)
+2960	leucothoe~0	vert luisant
+2961	leucothoe~1	scarletta (rouge et vert)
+2962	leucothoe~2	rainbow (panaché crème et rose)
+2963	leucothoe~3	bordeaux d’hiver
+2964	skimmia-japonica~0	boutons rouges (Rubella)
+2965	skimmia-japonica~1	boutons pourpres foncés
+2966	skimmia-japonica~2	boutons rose crème (Magic Marlot)
+2967	skimmia-japonica~3	boutons verts (Kew Green)
+2968	skimmia-japonica~4	baies rouges (pied femelle)
+2969	ilex-aquifolium-houx~0	vert sombre à baies rouges
+2970	ilex-aquifolium-houx~1	vert sombre (sans baies)
+2971	ilex-aquifolium-houx~2	panaché crème à baies (Argentea Marginata)
+2972	ilex-aquifolium-houx~3	panaché doré (Aurea Marginata)
+2973	ilex-aquifolium-houx~4	vert à baies jaunes (Bacciflava)
+2974	camellia-japonica-feuillage~0	vert sombre luisant (C. japonica)
+2975	camellia-japonica-feuillage~1	vert sombre, boutons rouges
+2976	camellia-japonica-feuillage~2	vert sombre, boutons roses
+2977	camellia-japonica-feuillage~3	vert sombre, boutons blancs
+2978	gardenia-feuillage~0	vert sombre luisant (type)
+2979	gardenia-feuillage~1	vert profond (grandes feuilles, Mystery)
+2980	gardenia-feuillage~2	vert sombre, boutons blancs
+2981	gardenia-feuillage~3	panaché crème (Variegata)
+2982	ligustrum-troene~0	vert luisant (L. japonicum)
+2983	ligustrum-troene~1	panaché crème (Argenteum)
+2984	ligustrum-troene~2	doré (Aureum)
+2985	ligustrum-troene~3	vert, panicules blanches (en fleurs)
+2986	podocarpus-macrophyllus~0	vert sombre lustré (P. macrophyllus)
+2987	podocarpus-macrophyllus~1	vert franc (var. maki)
+2988	podocarpus-macrophyllus~2	vert sombre à jeunes pousses claires
+2989	nageia-nagi~0	vert sombre brillant (N. nagi)
+2990	nageia-nagi~1	vert clair (jeunes rameaux)
+2991	nageia-nagi~2	panaché crème (N. nagi Variegata)
+2992	cocculus-laurifolius~0	vert luisant (type)
+2993	cocculus-laurifolius~1	vert sombre
+2994	arbutus-arbousier~0	vert sombre luisant (A. unedo)
+2995	arbutus-arbousier~1	vert, grappes blanches (en fleurs)
+2996	arbutus-arbousier~2	vert, grappes rosées (Rubra)
+2997	arbutus-arbousier~3	vert, fleurs et fruits rouges
+2998	lophomyrtus~0	bordeaux (Red Dragon)
+2999	lophomyrtus~1	pourpre noir (Black Stallion)
+3000	lophomyrtus~2	pourpre bronze (Kathryn)
+3001	lophomyrtus~3	vert panaché crème et rose (Magic Dragon)
+3002	lophomyrtus~4	panaché crème, vert et rose (Little Star)
+3003	agonis-flexuosa~0	pourpre bordeaux (Burgundy)
+3004	agonis-flexuosa~1	pourpre noir (After Dark)
+3005	agonis-flexuosa~2	vert (type)
+3006	agonis-flexuosa~3	vert bronze (pousses cuivrées)
+3007	agonis-flexuosa~4	panaché doré (Lemon & Lime)
+3008	melaleuca-feuillage~0	vert vif, épis crème (en fleur)
+3009	melaleuca-feuillage~1	vert vif (Revolution Green)
+3010	melaleuca-feuillage~2	vert doré (Revolution Gold)
+3011	melaleuca-feuillage~3	gris-vert (alternifolia)
+3012	grevillea-feuillage~0	vert profond (Ivanhoe)
+3013	grevillea-feuillage~1	pousses bronze (Ivanhoe)
+3014	grevillea-feuillage~2	gris-vert argenté (Moonlight)
+3015	grevillea-feuillage~3	vert, revers doré (robusta)
+3016	leptospermum-arbre-a-the~0	blanc simple, cœur vert
+3017	leptospermum-arbre-a-the~1	blanc double (Snow White)
+3018	leptospermum-arbre-a-the~2	rose, cœur sombre (Martini)
+3019	leptospermum-arbre-a-the~3	rose pâle double (Apple Blossom)
+3020	leptospermum-arbre-a-the~4	rouge rubis simple (Nanum Ruby)
+3021	leptospermum-arbre-a-the~5	rouge double (Red Damask)
+3022	acacia-feuillage~0	gris-bleu (A. baileyana)
+3023	acacia-feuillage~1	gris-bleu aux pousses pourpres (A. baileyana Purpurea)
+3024	acacia-feuillage~2	argenté (A. podalyriifolia Pearl)
+3025	acacia-feuillage~3	gris-vert (A. cultriformis)
+3026	adenanthos-sericeus-woolly-bush~0	gris argenté soyeux
+3027	adenanthos-sericeus-woolly-bush~1	vert-gris (A. sericeus)
+3028	leucadendron-rouges~0	rouge vin (Safari Sunset)
+3029	leucadendron-rouges~1	rouge bronze (Red Gem)
+3030	leucadendron-rouges~2	cramoisi (Red Devil)
+3031	leucadendron-rouges~3	framboise, feuillage pourpre (Burgundy Sunset)
+3032	leucadendron-rouges~4	bordeaux profond
+3033	leucadendron-rouges~5	pourpre noir
+3034	leucadendron-rouges~6	rouge, feuillage panaché crème (Jester)
+3035	leucadendron-jaunes-verts~0	jaune d’or liseré de rouge (Inca Gold)
+3036	leucadendron-jaunes-verts~1	jaune vif (Safari Goldstrike)
+3037	leucadendron-jaunes-verts~2	crème à cœur rouge (Discolor)
+3038	leucadendron-jaunes-verts~3	vert à cône rubis (Jubilee Crown)
+3039	leucadendron-jaunes-verts~4	vert argenté (Pisa)
+3040	leucadendron-jaunes-verts~5	vert anis
+3041	leucadendron-jaunes-verts~6	jaune crème
+3042	leucadendron-argenteum-arbre-argent~0	argent satiné (type)
+3043	leucadendron-argenteum-arbre-argent~1	argent bleuté (vieux rameaux)
+3044	leucadendron-argenteum-arbre-argent~2	argent vert tendre (pousses)
+3045	leucadendron-argenteum-arbre-argent~3	avec cône femelle argenté
+3046	leucadendron-argenteum-arbre-argent~4	avec tête mâle jaune crème
+3047	lonicera-chevrefeuille~0	serotina (pourpre et crème)
+3048	lonicera-chevrefeuille~1	belgica (rose et crème)
+3049	lonicera-chevrefeuille~2	japonica Halliana (blanc puis jaune)
+3050	lonicera-chevrefeuille~3	graham Thomas (jaune)
+3051	lonicera-chevrefeuille~4	en baies rouges
+3052	lonicera-chevrefeuille~5	feuillage glauque
+3053	salvia-rosmarinus-romarin~0	vert sombre (type)
+3054	salvia-rosmarinus-romarin~1	vert gris (Arp)
+3055	salvia-rosmarinus-romarin~2	fleuri bleu pâle
+3056	salvia-rosmarinus-romarin~3	fleuri bleu soutenu (Tuscan Blue)
+3057	salvia-rosmarinus-romarin~4	fleuri rose (Majorca Pink)
+3058	salvia-rosmarinus-romarin~5	fleuri blanc (Albiflorus)
+3059	mentha-menthe~0	vert vif (menthe verte)
+3060	mentha-menthe~1	vert sombre (menthe poivrée)
+3061	mentha-menthe~2	panachée crème (menthe ananas)
+3062	mentha-menthe~3	bronze (menthe chocolat)
+3063	mentha-menthe~4	vert vif en épis mauves
+3064	mentha-menthe~5	poivrée en épis lilas
+3065	salvia-officinalis-sauge~0	gris-vert (type)
+3066	salvia-officinalis-sauge~1	gris argenté (Berggarten)
+3067	salvia-officinalis-sauge~2	pourpre (Purpurascens)
+3068	salvia-officinalis-sauge~3	panaché doré (Icterina)
+3069	salvia-officinalis-sauge~4	tricolore (Tricolor)
+3070	origanum-origan~0	vert (feuillage)
+3071	origanum-origan~1	fleuri rose pourpre
+3072	origanum-origan~2	doré (Aureum)
+3073	origanum-origan~3	pourpre (Herrenhausen)
+3074	origanum-origan~4	kent Beauty, bractées roses
+3075	origanum-origan~5	kent Beauty vert pâle
+3076	ocimum-basilic~0	vert (grand vert de Gênes)
+3077	ocimum-basilic~1	vert fleuri blanc
+3078	ocimum-basilic~2	pourpre (Dark Opal)
+3079	ocimum-basilic~3	pourpre fleuri (Dark Opal)
+3080	ocimum-basilic~4	thaï (Siam Queen), épis pourpres
+3081	ocimum-basilic~5	thaï feuillage
+3082	thymus-thym~0	vert gris (type)
+3083	thymus-thym~1	fleuri mauve pâle
+3084	thymus-thym~2	fleuri rose
+3085	thymus-thym~3	thym citron doré (Aureus)
+3086	thymus-thym~4	argenté (Silver Queen)
+3087	curio-rowleyanus-collier-de-perles~0	vert perle (classique)
+3088	curio-rowleyanus-collier-de-perles~1	vert bleuté
+3089	curio-rowleyanus-collier-de-perles~2	panaché crème et rose (Variegata)
+3090	rhipsalis~0	baccifera vert vif
+3091	rhipsalis~1	baccifera en baies blanches
+3092	rhipsalis~2	cassutha vert tendre
+3093	rhipsalis~3	cereuscula (cactus corail)
+3094	tillandsia-usneoides-mousse-espagnole~0	gris argenté (naturelle)
+3095	tillandsia-usneoides-mousse-espagnole~1	gris vert
+3096	tillandsia-usneoides-mousse-espagnole~2	beige naturel (préservée)
+3097	tillandsia-usneoides-mousse-espagnole~3	vert mousse (teintée)
+3098	tillandsia-plantes-de-l-air~0	xerographica argentée
+3099	tillandsia-plantes-de-l-air~1	xerographica rosée
+3100	tillandsia-plantes-de-l-air~2	ionantha vert argenté
+3101	tillandsia-plantes-de-l-air~3	ionantha rougissante (en fleur)
+3102	tillandsia-plantes-de-l-air~4	ionantha Fuego
+3103	tillandsia-plantes-de-l-air~5	aeranthos gris-vert
+3104	tillandsia-plantes-de-l-air~6	aeranthos en fleur (bractées roses)
+3105	succulentes-echeveria~0	bleu-gris poudré (E. secunda glauca)
+3106	succulentes-echeveria~1	vert menthe (E. elegans)
+3107	succulentes-echeveria~2	rose poudré (Perle von Nürnberg)
+3108	succulentes-echeveria~3	lilas nacré (Lola)
+3109	succulentes-echeveria~4	vert à pointes rouges (E. agavoides)
+3110	succulentes-echeveria~5	vert pâle liseré rouge (E. pulidonis)
+3111	succulentes-echeveria~6	pourpre noir (Black Prince)
+3112	succulentes-echeveria~7	pêche dorée (E. Orion)
+3113	mousses-fraiches~0	vert vif velouté (Leucobryum, bun moss)
+3114	mousses-fraiches~1	vert tendre glauque (Leucobryum glaucum)
+3115	mousses-fraiches~2	mousse plate (Hypnum, sheet moss)
+3116	mousses-fraiches~3	vert sapin (Dicranum, mood moss)
+3117	mousses-fraiches~4	vert olive (mousse plate des bois)
+3118	abies-procera-nobilis~0	bleu-vert glauque (Noble)
+3119	abies-procera-nobilis~1	bleu argenté (Noble Glauca)
+3120	abies-procera-nobilis~2	vert gris (Noble)
+3121	abies-nordmanniana-nordmann~0	vert sapin brillant (Nordmann)
+3122	abies-nordmanniana-nordmann~1	vert bleuté (Nordmann sélection)
+3123	abies-nordmanniana-nordmann~2	floqué blanc (Nordmann enneigé)
+3124	pseudotsuga-menziesii-douglas~0	vert franc (P. menziesii)
+3125	pseudotsuga-menziesii-douglas~1	bleu-vert (P. menziesii var. glauca)
+3126	pseudotsuga-menziesii-douglas~2	vert tendre, jeunes pousses
+3127	pinus-pins~0	pin sylvestre (P. sylvestris) vert bleuté
+3128	pinus-pins~1	pin de Weymouth (P. strobus) bleu-vert souple
+3129	pinus-pins~2	pin noir (P. nigra) vert foncé
+3130	pinus-pins~3	pin tordu (P. contorta) vert profond
+3131	cedrus-cedre~0	bleu argenté (C. atlantica Glauca)
+3132	cedrus-cedre~1	vert gris retombant (C. deodara)
+3133	cedrus-cedre~2	doré (C. deodara Aurea)
+3134	cedrus-cedre~3	bleu-vert (C. atlantica)
+3135	thuja-cedre-rouge~0	vert brillant (T. plicata)
+3136	thuja-cedre-rouge~1	vert émeraude (T. occidentalis « Smaragd »)
+3137	thuja-cedre-rouge~2	doré (« Zebrina », « Yellow Ribbon »)
+3138	thuja-cedre-rouge~3	bronze cuivré d'hiver
+3139	chamaecyparis-lawsoniana~0	vert (Lawson type)
+3140	chamaecyparis-lawsoniana~1	bleu (Pembury Blue)
+3141	chamaecyparis-lawsoniana~2	bleu-vert (Columnaris)
+3142	chamaecyparis-lawsoniana~3	doré (Stardust)
+3143	cupressus-cypres-bleus~0	bleu argenté (Blue Ice)
+3144	cupressus-cypres-bleus~1	bleu-vert (Carolina Sapphire)
+3145	cupressus-cypres-bleus~2	vert (× Cuprocyparis leylandii)
+3146	cupressus-cypres-bleus~3	doré (Castlewellan Gold)
+3147	juniperus-genevrier~0	bleu-vert à baies (J. virginiana)
+3148	juniperus-genevrier~1	gris-bleu argenté (J. scopulorum)
+3149	juniperus-genevrier~2	vert piquant (J. communis)
+3150	juniperus-genevrier~3	bleu glacier (J. squamata « Blue Star »)
+3151	taxus-baccata-if~0	vert sombre (T. baccata)
+3152	taxus-baccata-if~1	doré (T. baccata Aurea)
+3153	taxus-baccata-if~2	vert sombre à arilles rouges (if femelle)
+3154	cryptomeria-japonica~0	vert franc (C. japonica)
+3155	cryptomeria-japonica~1	vert bleuté (C. japonica « Glauca »)
+3156	cryptomeria-japonica~2	bronzé d'hiver (« Elegans »)
+3157	cryptomeria-japonica~3	pointes crème (« Sekkan-sugi »)
+3158	picea-epicea~0	bleu argenté (P. pungens « Hoopsii »)
+3159	picea-epicea~1	bleu-vert (P. pungens « Glauca »)
+3160	picea-epicea~2	vert sapin (P. abies)
+3161	picea-epicea~3	vert foncé brillant, aiguilles courtes (P. orientalis)
+3162	cerisier-du-japon-sato-zakura~0	rose vif (Kanzan)
+3163	cerisier-du-japon-sato-zakura~1	rose (Pink Perfection)
+3164	cerisier-du-japon-sato-zakura~2	rose tendre (Ichiyo)
+3165	cerisier-du-japon-sato-zakura~3	blanc (Shirotae, Mont Fuji)
+3166	cerisier-du-japon-sato-zakura~4	jaune verdâtre (Ukon)
+3167	cerisiers-hatifs-fleurs-simples~0	rose (Keio-zakura)
+3168	cerisiers-hatifs-fleurs-simples~1	rose tendre (Okame)
+3169	cerisiers-hatifs-fleurs-simples~2	ivoire rosé (Somei-yoshino)
+3170	cerisiers-hatifs-fleurs-simples~3	blanc (Prunus incisa)
+3171	abricotier-du-japon-ume~0	blanc (Ryokugaku, calice vert)
+3172	abricotier-du-japon-ume~1	rose tendre double (Dawn)
+3173	abricotier-du-japon-ume~2	rose vif double (Peggy Clarke)
+3174	abricotier-du-japon-ume~3	rouge carmin (Beni-chidori)
+3175	abricotier-du-japon-ume~4	blanc double (Alba Plena)
+3176	abricotier-du-japon-ume~5	rose simple (Omoi-no-mama)
+3177	amandier-en-fleurs~0	blanc à cœur rouge (Prunus dulcis)
+3178	amandier-en-fleurs~1	blanc rosé (Princesse)
+3179	amandier-en-fleurs~2	rose tendre (Robijn)
+3180	amandier-de-chine-cerisier-nain~0	rose vif (Prunus triloba Multiplex)
+3181	amandier-de-chine-cerisier-nain~1	rose tendre (Prunus glandulosa Sinensis)
+3182	amandier-de-chine-cerisier-nain~2	blanc (Prunus glandulosa Alba Plena)
+3183	pecher-a-fleurs~0	rose vif double (Klara Meyer)
+3184	pecher-a-fleurs~1	rose vif simple (Prunus persica)
+3185	pecher-a-fleurs~2	rouge cerise double (Russell's Red)
+3186	pecher-a-fleurs~3	rouge pourpre double (Melred)
+3187	pecher-a-fleurs~4	blanc double (Iceberg)
+3188	pecher-a-fleurs~5	blanc strié de rouge (Peppermint Stick)
+3189	pommier-pommetier-en-fleurs~0	blanc (Evereste)
+3190	pommier-pommetier-en-fleurs~1	blanc rosé (pommier domestique)
+3191	pommier-pommetier-en-fleurs~2	rose tendre (Malus floribunda)
+3192	pommier-pommetier-en-fleurs~3	rose vif (Rudolph)
+3193	pommier-pommetier-en-fleurs~4	pourpre (Royalty)
+3194	pommetier-a-fruits~0	rouge (Red Sentinel)
+3195	pommetier-a-fruits~1	jaune d'or (Golden Hornet)
+3196	pommetier-a-fruits~2	orange flammé (John Downie)
+3197	pommetier-a-fruits~3	pourpre (Royalty)
+3198	pommetier-a-fruits~4	rouge orangé (Evereste)
+3199	cognassier-du-japon~0	corail saumoné (Salmon Horizon)
+3200	cognassier-du-japon~1	rouge écarlate (Crimson and Gold)
+3201	cognassier-du-japon~2	rose (Pink Lady)
+3202	cognassier-du-japon~3	blanc (Nivalis)
+3203	cognassier-du-japon~4	saumon abricot (× superba)
+3204	cognassier-du-japon~5	orange vif (Orange Trail)
+3205	cognassier-du-japon~6	panaché blanc, rose et rouge (Toyo-Nishiki)
+3206	magnolia-branches~0	blanc lavé de rose pourpre (M. × soulangeana)
+3207	magnolia-branches~1	blanc (M. × soulangeana Alba Superba)
+3208	magnolia-branches~2	pourpre (M. liliiflora Nigra)
+3209	magnolia-branches~3	jaune primevère (Yellow Bird)
+3210	magnolia-branches~4	blanc étoilé (M. stellata)
+3211	magnolia-branches~5	rose tendre étoilé (M. stellata Rosea)
+3212	forsythia~0	jaune d'or (× intermedia Spectabilis)
+3213	forsythia~1	jaune vif (Lynwood Gold)
+3214	amelanchier~0	blanc, feuilles bronze (A. lamarckii)
+3215	amelanchier~1	blanc rosé (Robin Hill)
+3216	amelanchier~2	blanc pur, feuilles cuivrées (Ballerina)
+3217	cornouiller-a-fleurs~0	blanc (Cornus florida)
+3218	cornouiller-a-fleurs~1	rose (C. florida Rubra)
+3219	cornouiller-a-fleurs~2	rose rouge (Cherokee Chief)
+3220	cornouiller-a-fleurs~3	vert anis, bractées naissantes (C. kousa)
+3221	cornouiller-a-fleurs~4	blanc étoilé (C. kousa chinensis)
+3222	cornouiller-a-fleurs~5	rose (C. kousa Satomi)
+3223	hamamelis~0	jaune vif (Arnold Promise)
+3224	hamamelis~1	jaune soufre (Pallida)
+3225	hamamelis~2	jaune d'or (H. mollis)
+3226	hamamelis~3	orange cuivré (Jelena)
+3227	hamamelis~4	orange (Aphrodite)
+3228	hamamelis~5	rouge cuivré (Diane)
+3229	hamamelis~6	rouge orangé (Feuerzauber)
+3230	viorne-d-hiver~0	rose (Dawn)
+3231	viorne-d-hiver~1	rose vif (Charles Lamont)
+3232	viorne-d-hiver~2	blanc rosé (Deben)
+3233	viorne-d-hiver~3	blanc (V. farreri Candidissimum)
+3234	spiree~0	blanc (S. × vanhouttei)
+3235	spiree~1	blanc pur (S. × cinerea Grefsheim)
+3236	spiree~2	blanc neige (S. thunbergii)
+3237	spiree~3	blanc rosé (S. thunbergii Fujino Pink)
+3238	deutzia~0	blanc étoilé (D. gracilis Nikko)
+3239	deutzia~1	rose étoilé (Mont Rose)
+3240	deutzia~2	rose vif (Strawberry Fields)
+3241	deutzia~3	blanc double (Pride of Rochester)
+3242	deutzia~4	rose pâle en clochette (D. × rosea)
+3243	deutzia~5	rose carmin en clochette (Rosealind)
+3244	seringat~0	blanc crème (P. coronarius)
+3245	seringat~1	blanc à cœur pourpre (Belle Étoile)
+3246	seringat~2	blanc à cœur rose pourpre (Sybille)
+3247	seringat~3	blanc pur double (Virginal)
+3248	seringat~4	blanc double (Minnesota Snowflake)
+3249	seringat~5	blanc ivoire double (Manteau d'Hermine)
+3250	groseillier-a-fleurs~0	rouge cramoisi (King Edward VII)
+3251	groseillier-a-fleurs~1	rouge vif (Pulborough Scarlet)
+3252	groseillier-a-fleurs~2	rose rouge (Koja)
+3253	groseillier-a-fleurs~3	pourpre rouge (Atrorubens)
+3254	groseillier-a-fleurs~4	rose tendre (Pokey’s Pink)
+3255	groseillier-a-fleurs~5	blanc (White Icicle)
+3256	enkianthus-dodan~0	vert vif (feuillé, été)
+3257	enkianthus-dodan~1	vert tendre, clochettes blanches (printemps)
+3258	enkianthus-dodan~2	rouge écarlate (automne)
+3259	enkianthus-dodan~3	orange et rouge (automne)
+3260	glycine~0	mauve (Prolific)
+3261	glycine~1	violet bleuté (Kyushaku)
+3262	glycine~2	blanc (Shiro-noda)
+3263	glycine~3	rose (Hon-beni)
+3264	glycine~4	violet profond double (Yae-kokuryu)
+3265	mitsumata~0	blanchi (écorcé)
+3266	mitsumata~1	naturel (écorce brune, boutons argentés)
+3267	mitsumata~2	fleuri jaune (Edgeworthia chrysantha)
+3268	mitsumata~3	fleuri orange (Akebono, Red Dragon)
+3269	mitsumata~4	teint rose
+3270	mitsumata~5	teint rouge
+3271	mitsumata~6	teint violet
+3272	mitsumata~7	teint bleu
+3273	mitsumata~8	teint orange
+3274	saule-a-chatons~0	argent (Salix caprea)
+3275	saule-a-chatons~1	blanc soyeux (S. discolor)
+3276	saule-a-chatons~2	noir (S. gracilistyla Melanostachys)
+3277	saule-a-chatons~3	rose (S. gracilistyla Mount Aso)
+3278	saule-a-chatons~4	rouge (chatons teintés)
+3279	saule-a-chatons~5	jaune pollen (chatons mâles en fleur)
+3280	saule-fascie-sekka~0	brun-rouge luisant
+3281	saule-fascie-sekka~1	brun-rouge à chatons argentés
+3282	saule-fascie-sekka~2	acajou (bois foncé)
+3283	saule-fascie-sekka~3	peint blanc
+3284	saule-fascie-sekka~4	peint or
+3285	saule-tortueux~0	naturel brun olive
+3286	saule-tortueux~1	vert olive (jeunes rameaux)
+3287	saule-tortueux~2	doré orangé (Golden Curls)
+3288	saule-tortueux~3	rouge (Scarlet Curls)
+3289	saule-tortueux~4	peint blanc
+3290	saule-tortueux~5	peint or
+3291	saule-tortueux~6	peint argent
+3292	saule-tortueux~7	peint noir
+3293	cornouiller-a-bois-colore~0	rouge corail (C. alba Sibirica)
+3294	cornouiller-a-bois-colore~1	pourpre noir (C. alba Kesselringii)
+3295	cornouiller-a-bois-colore~2	jaune vert (C. sericea Flaviramea)
+3296	cornouiller-a-bois-colore~3	orange flamme (C. sanguinea Midwinter Fire)
+3297	bouleau~0	rameaux brun pourpré à chatons
+3298	bouleau~1	vert (rameaux feuillés)
+3299	bouleau~2	or (feuillage d’automne)
+3300	bouleau~3	écorce blanche (bouleau de l’Himalaya)
+3301	bouleau~4	gris argenté (écorce)
+3302	noisetier-tortueux-chatons~0	brun gris à chatons jaunes
+3303	noisetier-tortueux-chatons~1	pourpre à chatons pourpres (Red Majestic)
+3304	noisetier-tortueux-chatons~2	brun gris (rameaux nus)
+3305	houx-a-baies~0	rouge (J.C. van Tol)
+3306	houx-a-baies~1	rouge vif (Alaska)
+3307	houx-a-baies~2	jaune (Bacciflava)
+3308	houx-a-baies~3	orange (Amber)
+3309	houx-a-baies~4	panaché crème, baies rouges (Argentea Marginata)
+3310	houx-a-baies~5	panaché doré, baies rouges (Golden King)
+3311	houx-verticille-ilex~0	rouge (Winter Red)
+3312	houx-verticille-ilex~1	rouge orangé (Berry Heavy)
+3313	houx-verticille-ilex~2	orange (Winter Gold)
+3314	houx-verticille-ilex~3	saumon rosé (Winter Gold)
+3315	houx-verticille-ilex~4	jaune or (Berry Heavy Gold)
+3316	laurier-tin-a-baies~0	bleu métallique (type)
+3317	laurier-tin-a-baies~1	bleu nuit (Gwenllian)
+3318	laurier-tin-a-baies~2	bleu-noir (très mûr)
+3319	laurier-tin-a-baies~3	bleu, violet et vert (mi-mûr)
+3320	laurier-tin-a-baies~4	baies bleues et boutons roses (Eve Price)
+3321	laurier-tin-a-baies~5	baies bleues et boutons blancs (French White)
+3322	viornes-a-baies~0	rouge translucide (V. opulus)
+3323	viornes-a-baies~1	rouge cerise (V. opulus Compactum)
+3324	viornes-a-baies~2	orange corail (V. opulus Aurantiacum)
+3325	viornes-a-baies~3	jaune ambré (V. opulus Xanthocarpum)
+3326	viornes-a-baies~4	bleu (V. dentatum Blue Muffin)
+3327	viornes-a-baies~5	rose et bleu (V. nudum Brandywine)
+3328	viornes-a-baies~6	rose (V. nudum, en mûrissement)
+3329	rosier-a-cynorrhodons~0	rouge
+3330	rosier-a-cynorrhodons~1	rouge orangé
+3331	rosier-a-cynorrhodons~2	orange
+3332	rosier-a-cynorrhodons~3	bordeaux
+3333	rosier-a-cynorrhodons~4	vert (fruits verts)
+3334	cotoneaster~0	rouge (horizontalis)
+3335	cotoneaster~1	rouge vif (Coral Beauty)
+3336	cotoneaster~2	orange (franchetii)
+3337	cotoneaster~3	jaune crème (Rothschildianus)
+3338	cotoneaster~4	vert (baies vertes)
+3339	buisson-ardent~0	orange (Orange Glow)
+3340	buisson-ardent~1	orange vif (Saphyr Orange)
+3341	buisson-ardent~2	rouge (Saphyr Rouge)
+3342	buisson-ardent~3	rouge orangé (Red Column)
+3343	buisson-ardent~4	jaune (Soleil d'Or)
+3344	buisson-ardent~5	jaune or (Saphyr Jaune)
+3345	callicarpa~0	violet vif (Profusion)
+3346	callicarpa~1	violet profond (Issai)
+3347	callicarpa~2	lilas (C. dichotoma)
+3348	callicarpa~3	blanc nacré (Alba)
+3349	callicarpa~4	violet, feuillage d'automne
+3350	sorbier-baies~0	orange vif (aucuparia)
+3351	sorbier-baies~1	rouge (Autumn Spire)
+3352	sorbier-baies~2	rouge corail (Rossica Major)
+3353	sorbier-baies~3	rose (Pink Pagoda, hupehensis)
+3354	sorbier-baies~4	blanc (cashmiriana)
+3355	sorbier-baies~5	jaune (Joseph Rock)
+3356	celastre-bittersweet~0	orange, graines rouges (C. orbiculatus)
+3357	celastre-bittersweet~1	jaune d'or, graines rouges
+3358	celastre-bittersweet~2	orange vif (C. scandens Autumn Revolution)
+3359	celastre-bittersweet~3	vert (capsules fermées)
+3360	troene-a-baies~0	noir bleuté (baies mûres)
+3361	troene-a-baies~1	bleu-noir pruiné
+3362	troene-a-baies~2	vert (baies vertes)
+3363	troene-a-baies~3	vert et violine (mi-mûr)
+3364	nandina-a-baies~0	rouge vif (type)
+3365	nandina-a-baies~1	rouge corail
+3366	nandina-a-baies~2	rouge, feuillage d'hiver pourpré
+3367	nandina-a-baies~3	blanc crème (Alba)
+3368	nandina-a-baies~4	vert (baies vertes)
+3369	arbousier-a-fruits~0	fruits mêlés vert, jaune, orange et rouge
+3370	arbousier-a-fruits~1	rouge (fruits mûrs)
+3371	arbousier-a-fruits~2	orange
+3372	arbousier-a-fruits~3	jaune
+3373	arbousier-a-fruits~4	vert (fruits verts)
+3374	arbousier-a-fruits~5	fruits rouges et fleurs blanches
+3375	ronce-mures-en-fruits~0	mûres mêlées vertes, rouges et noires
+3376	ronce-mures-en-fruits~1	noires (mûres mûres)
+3377	ronce-mures-en-fruits~2	rouges (mûres qui tournent)
+3378	ronce-mures-en-fruits~3	vertes (mûres vertes)
+3379	ronce-mures-en-fruits~4	framboises (Rubus idaeus)
+3380	liane-de-kiwi~0	kiwis bruns duveteux (Hayward)
+3381	liane-de-kiwi~1	kiwis dorés (Actinidia chinensis Gold)
+3382	liane-de-kiwi~2	kiwaïs verts (A. arguta Issai)
+3383	liane-de-kiwi~3	kiwaïs rouges (Ken's Red)
+3384	liane-de-kiwi~4	sarment nu (liane sèche)
+3385	vigne-sarments~0	brun naturel (sarment sec)
+3386	vigne-sarments~1	blanchi (sarment écorcé)
+3387	vigne-sarments~2	gris argenté (vieux sarment)
+3388	vigne-sarments~3	vert (feuillé, petite grappe)
+3389	vigne-sarments~4	rouge d’automne (Vitis coignetiae)
+3390	erable-du-japon~0	vert (été)
+3391	erable-du-japon~1	rouge écarlate (automne, Osakazuki)
+3392	erable-du-japon~2	orange (automne)
+3393	erable-du-japon~3	jaune d’or (automne, Katsura)
+3394	erable-du-japon~4	pourpre foncé (Bloodgood, Atropurpureum)
+3395	erable-du-japon~5	mélange d’automne (vert, or, orange, rouge)
+3396	erable-du-japon~6	vert tendre, bois corail (Sango-kaku)
+3397	erable-du-japon~7	vert, feuilles en dentelle (Dissectum Viridis)
+3398	erable-du-japon~8	pourpre, feuilles en dentelle (Dissectum Garnet)
+3399	chene-branches-glands~0	vert (frais, glands verts)
+3400	chene-branches-glands~1	roux d’automne
+3401	chene-branches-glands~2	orangé cuivré (automne)
+3402	chene-branches-glands~3	or (automne)
+3403	chene-branches-glands~4	rouge (chêne rouge d’Amérique)
+3404	chene-branches-glands~5	brun (stabilisé)
+3405	chene-branches-glands~6	vert (stabilisé)
+3406	hetre-branches~0	vert (frais)
+3407	hetre-branches~1	vert tendre (jeunes feuilles)
+3408	hetre-branches~2	pourpre (hêtre pourpre)
+3409	hetre-branches~3	cuivré (stabilisé)
+3410	hetre-branches~4	brun (stabilisé)
+3411	hetre-branches~5	rouge (stabilisé)
+3412	hetre-branches~6	vert (stabilisé)
+3413	hetre-branches~7	orange d’automne
+3414	hetre-branches~8	jaune d’or (automne)
+3415	meleze-a-cones~0	brun naturel à cônes (rameaux nus)
+3416	meleze-a-cones~1	gris argenté (vieux rameaux, cônes anciens)
+3417	meleze-a-cones~2	vert tendre (aiguilles de printemps)
+3418	meleze-a-cones~3	or d’automne (aiguilles dorées)
+3419	meleze-a-cones~4	mélèze du Japon, rameaux pourpres (L. kaempferi)
+3420	pin-a-cones~0	pin sylvestre à cônes bruns
+3421	pin-a-cones~1	pin noir à cônes blonds
+3422	pin-a-cones~2	pin de Weymouth à longs cônes
+3423	pin-a-cones~3	givré blanc (cônes et aiguilles)
+3424	pin-a-cones~4	cônes dorés
+3425	gui~0	baies blanc nacré (naturel)
+3426	gui~1	baies ivoire (bien mûres)
+3427	gui~2	baies vert d'eau (cueillette précoce)
+3428	gui~3	rameau sans baies (pied mâle)
+3429	sanguisorbe~0	bordeaux (officinalis)
+3430	sanguisorbe~1	rouge rubis (Red Thunder)
+3431	sanguisorbe~2	pourpre noir (Chocolate Tip)
+3432	sanguisorbe~3	rose framboise (Pink Tanna)
+3433	sanguisorbe~4	framboise (Pink Elephant)
+3434	sanguisorbe~5	rose tendre (hakusanensis)
+3435	sanguisorbe~6	blanc crème (tenuifolia Alba)
+3436	pieris-japonica~0	blanc (Debutante)
+3437	pieris-japonica~1	blanc crème (Purity)
+3438	pieris-japonica~2	blanc, pousses rouges (Forest Flame)
+3439	pieris-japonica~3	rose (Passion)
+3440	pieris-japonica~4	rose, pousses pourpres (Katsura)
+3441	pieris-japonica~5	rose profond (Valley Valentine)
+3442	pigamon~0	mauve (aquilegiifolium)
+3443	pigamon~1	rose mauve
+3444	pigamon~2	pourpre (Thundercloud)
+3445	pigamon~3	violet (Black Stockings)
+3446	pigamon~4	blanc (Album)
+3447	pigamon~5	lilas à étamines jaunes (delavayi)
+3448	pigamon~6	lavande (rochebruneanum)
+3449	pigamon~7	blanc à étamines jaunes (Splendide White)
+3450	cyclamen-fleur-coupee~0	blanc pur
+3451	cyclamen-fleur-coupee~1	blanc à œil rose
+3452	cyclamen-fleur-coupee~2	rose pâle
+3453	cyclamen-fleur-coupee~3	rose
+3454	cyclamen-fleur-coupee~4	saumon
+3455	cyclamen-fleur-coupee~5	fuchsia
+3456	cyclamen-fleur-coupee~6	rouge
+3457	cyclamen-fleur-coupee~7	bordeaux
+3458	cyclamen-fleur-coupee~8	lilas
+3459	cyclamen-fleur-coupee~9	violet
+3460	cyclamen-fleur-coupee~10	blanc flammé de fuchsia
+3461	cyclamen-fleur-coupee~11	blanc liseré de rose (Victoria)
+3462	cyclamen-fleur-coupee~12	rose pâle à pointes fuchsia
+3463	kniphofia~0	rouge et jaune (Royal Castle)
+3464	kniphofia~1	flammé rouge orangé (Flamenco)
+3465	kniphofia~2	orange (Alcazar)
+3466	kniphofia~3	rouge vif (Redhot Popsicle)
+3467	kniphofia~4	orange mangue (Mango Popsicle)
+3468	kniphofia~5	pêche saumoné (Timothy)
+3469	kniphofia~6	jaune citron (Lemon Popsicle)
+3470	kniphofia~7	jaune vert (Percy's Pride)
+3471	kniphofia~8	ivoire vert (Ice Queen)
+3472	kniphofia~9	bronze et crème (Tawny King)
+3473	hymenocallis~0	hymenocallis festalis blanc
+3474	hymenocallis~1	hymenocallis littoralis crème
+3475	hymenocallis~2	hymenocallis blanc verdâtre
+3476	hymenocallis~3	ismene Sulphur Queen
+3477	crocosmia~0	rouge écarlate (Lucifer)
+3478	crocosmia~1	orange à macule acajou (Emily McKenzie)
+3479	crocosmia~2	orange (montbrétia)
+3480	crocosmia~3	orange rouge à gorge sombre (Babylon)
+3481	crocosmia~4	saumon orangé (Severn Sunrise)
+3482	crocosmia~5	abricot à cœur clair (Star of the East)
+3483	crocosmia~6	jaune d'or (George Davison)
+3484	crocosmia~7	jaune (Columbus)
+3485	crocosmia~8	jaune abricot (Solfatare)
+3486	crocosmia~9	rouge carmin (Carmin Brilliant)
+3487	bomarea~0	bomarea rouge corail
+3488	bomarea~1	bomarea multiflora orange
+3489	bomarea~2	bomarea edulis saumon
+3490	bomarea~3	bomarea salsilla magenta
+3491	bomarea~4	bomarea edulis rose
+3492	bomarea~5	bomarea jaune
+3493	ixora~0	rouge (Super King)
+3494	ixora~1	rouge orangé (coccinea)
+3495	ixora~2	orange (Thai Dwarf Orange)
+3496	ixora~3	saumon (Sunkist)
+3497	ixora~4	jaune d'or (Thai Dwarf Yellow)
+3498	ixora~5	jaune (Maui Yellow)
+3499	ixora~6	rose (Nora Grant)
+3500	ixora~7	rose vif (Dwarf Pink)
+3501	ixora~8	blanc (I. finlaysoniana)
+3502	cyrtanthus~0	rouge écarlate
+3503	cyrtanthus~1	rouge sang
+3504	cyrtanthus~2	orange
+3505	cyrtanthus~3	saumon
+3506	cyrtanthus~4	rose
+3507	cyrtanthus~5	crème
+3508	cyrtanthus~6	jaune
+3509	fraisier-des-bois~0	rouge (des bois)
+3510	fraisier-des-bois~1	rouge vermillon (Mara des bois)
+3511	fraisier-des-bois~2	blanc (White Soul)
+3512	fraisier-des-bois~3	jaune pâle (Yellow Wonder)
+3513	fraisier-des-bois~4	fruits verts et fleurs
+3514	tamaris~0	rose (Pink Cascade)
+3515	tamaris~1	rose soutenu (Rubra)
+3516	tamaris~2	rose pâle
+3517	tamaris~3	blanc (Alba)
+3518	ricin-capsules~0	rouge vif (Carmencita)
+3519	ricin-capsules~1	vert (Zanzibarensis)
+3520	ricin-capsules~2	bordeaux (Impala)
+3521	ricin-capsules~3	prune foncé
+3522	ricin-capsules~4	bronze (séché)
+3523	ricin-capsules~5	rose (Carmencita Pink)
+3524	caladium~0	blanc, nervures vertes (White Christmas)
+3525	caladium~1	blanc bordé de vert (Candidum)
+3526	caladium~2	rose, nervures rouges, bord vert (Pink Beauty)
+3527	caladium~3	rose soutenu, liseré vert (Florida Sweetheart)
+3528	caladium~4	vert, cœur rouge moucheté de rose (Red Flash)
+3529	caladium~5	rouge, bord vert (Freida Hemple)
+3530	caladium~6	chartreuse moucheté de bordeaux (Miss Muffet)
+3531	caladium~7	bordeaux, bord vert (Red Belly)
+3532	loropetalum~0	pourpre (Burgundy)
+3533	loropetalum~1	bordeaux, fleurs fuchsia (Fire Dance)
+3534	loropetalum~2	pourpre noir (Black Pearl)
+3535	loropetalum~3	rubis cuivré (Ruby)
+3536	loropetalum~4	pourpre, fleurs rouges (Ever Red)
+3537	loropetalum~5	vert (L. chinense, fleurs crème)
+3538	loropetalum~6	vert profond, fleurs blanches (Emerald Snow)
+3539	tweedia~0	bleu ciel (Blue Star)
+3540	tweedia~1	bleu poudré (Heaven Blue)
+3541	tweedia~2	bleu gris (Little Blue Star)
+3542	tweedia~3	lilas (fleurs mûres)
+3543	tweedia~4	blanc (Alba)
+3544	tweedia~5	rose (Rosea)
+3545	baptisia-gousses~0	noir mat (séché)
+3546	baptisia-gousses~1	gris anthracite (séché)
+3547	baptisia-gousses~2	gris ardoise poudré
+3548	baptisia-gousses~3	brun noir (séchant)
+3549	baptisia-gousses~4	brun (séchant)
+3550	baptisia-gousses~5	vert (frais)
+3551	baptisia-gousses~6	vert glauque (frais)
+3552	grenade-branche~0	rouge profond (Wonderful)
+3553	grenade-branche~1	rouge orangé (Mollar)
+3554	grenade-branche~2	jaune doré à joue rose (Mollar de Elche)
+3555	grenade-branche~3	vert (grenades vertes)
+3556	grenade-branche~4	bordeaux (Purple Heart)
+3557	grenade-branche~5	pourpre noir (Black, Kara Kalinsky)
+3558	figuier-branche~0	vertes (figues vertes)
+3559	figuier-branche~1	jaune-vert (Blanche d'Argenteuil)
+3560	figuier-branche~2	violettes (Violette Dauphine)
+3561	figuier-branche~3	brun violacé (Brown Turkey)
+3562	figuier-branche~4	noires (Noire de Caromb)
+3563	figuier-branche~5	panachées (Panachée, Tiger)
+3564	litchi-branche~0	rouge vif (Feizixiao)
+3565	litchi-branche~1	rouge carmin (Guiwei)
+3566	litchi-branche~2	rouge rosé (Brewster)
+3567	litchi-branche~3	rouge profond (Nuomici)
+3568	litchi-branche~4	rose épaulé de vert (Mauritius)
+3569	kumquat-branche~0	orange vif (Nagami, ovale)
+3570	kumquat-branche~1	orange doré (Meiwa, rond)
+3571	kumquat-branche~2	orange (Marumi, rond)
+3572	kumquat-branche~3	orange profond (Fukushu)
+3573	kumquat-branche~4	panaché vert et or (Centennial Variegated)
+3574	kumquat-branche~5	vert (fruits verts)
+3575	fil-aluminium-decoratif~0	argent
+3576	fil-aluminium-decoratif~1	or
+3577	fil-aluminium-decoratif~2	cuivre
+3578	fil-aluminium-decoratif~3	rose
+3579	fil-aluminium-decoratif~4	rouge
+3580	fil-aluminium-decoratif~5	noir
+3581	plume-autruche-teinte~0	blanc naturel
+3582	plume-autruche-teinte~1	ivoire
+3583	plume-autruche-teinte~2	naturel drab (gris-beige)
+3584	plume-autruche-teinte~3	noir
+3585	plume-autruche-teinte~4	rose poudré
+3586	plume-autruche-teinte~5	lavande
+3587	plume-autruche-teinte~6	fuchsia
+3588	plume-autruche-teinte~7	rouge
+3589	plume-autruche-teinte~8	corail
+3590	plume-autruche-teinte~9	bleu roi
+3591	plume-autruche-teinte~10	turquoise
+3592	plume-autruche-teinte~11	vert sauge
+3593	chaines-strass-perles~0	cristal et perles blanches, argent
+3594	chaines-strass-perles~1	strass argent et perles gris perle
+3595	chaines-strass-perles~2	cristal aurore boréale et perles lilas
+3596	chaines-strass-perles~3	perles ivoire, monture argent
+3597	chaines-strass-perles~4	perles champagne, monture or
+3598	chaines-strass-perles~5	strass péridot et perles crème, or
+3599	chaines-strass-perles~6	perles rose poudré, or rose
+3600	chaines-strass-perles~7	strass saphir et perles blanches
+3601	chaines-strass-perles~8	strass jais et perles noires
+3602	pensee~0	violet à face
+3603	pensee~1	jaune à face
+3604	pensee~2	jaune clair
+3605	pensee~3	bleu à face
+3606	pensee~4	bleu ciel
+3607	pensee~5	pourpre
+3608	pensee~6	blanc à face
+3609	pensee~7	blanc
+3610	pensee~8	lavande
+3611	pensee~9	orange
+3612	pensee~10	rouge à face
+3613	pensee~11	noir velours
+3614	pensee~12	violet et jaune
+3615	pensee~13	mauve rosé
+3616	rose-eglantine~0	rose pâle (Rosa canina)
+3617	rose-eglantine~1	rose dragée
+3618	rose-eglantine~2	blanc (canina alba)
+3619	rose-eglantine~3	rose vif à cœur blanc (R. rubiginosa)
+3620	rose-eglantine~4	cerise à cœur blanc
+3621	rose-eglantine~5	rouge géranium (R. moyesii)
+3622	rose-eglantine~6	abricot
+3623	rose-eglantine~7	crème (Sally Holmes)
+3624	rose-eglantine~8	jaune primevère (R. xanthina)
+3625	sandersonia~0	orange lanterne
+3626	sandersonia~1	abricot doré
+3627	sandersonia~2	jaune d’or
+3628	sandersonia~3	crème (Golden Lantern)
+3629	ail-serpent~0	vert glauque
+3630	ail-serpent~1	vert tendre
+3631	ail-serpent~2	vert tilleul (jeune)
+3632	ail-serpent~3	vert olive (rocambole)
+3633	ail-serpent~4	spathe violacée
+3634	ail-serpent~5	vert d'eau pruiné
+3635	lis-tigre~0	orange tigré
+3636	lis-tigre~1	jaune tigré
+3637	lis-tigre~2	rouge tigré
+3638	lis-tigre~3	rose tigré
+3639	lis-oriental-double~0	rose
+3640	lis-oriental-double~1	blanc
+3641	lis-oriental-double~2	crème jaune
+3642	lis-oriental-double~3	fuchsia
+3643	lis-oriental-double~4	rose pâle
+3644	clematite-clochettes~0	bleu violet (integrifolia)
+3645	clematite-clochettes~1	pourpre profond (Rooguchi)
+3646	clematite-clochettes~2	indigo (Amazing Blue)
+3647	clematite-clochettes~3	lavande (Arabella)
+3648	clematite-clochettes~4	rose (Amazing Pink)
+3649	clematite-clochettes~5	rose vif (texensis Princess Diana)
+3650	clematite-clochettes~6	rouge vineux (texensis Gravetye Beauty)
+3651	clematite-clochettes~7	blanc (integrifolia Alba)
+3652	pentas~0	rose vif (True Pink)
+3653	pentas~1	blanc (Graffiti White)
+3654	pentas~2	rose pâle (Appleblossom)
+3655	pentas~3	rose (Graffiti Pink)
+3656	pentas~4	fuchsia
+3657	pentas~5	rouge (Bright Red)
+3658	pentas~6	rouge cramoisi (Red Velvet)
+3659	pentas~7	rose lavande (Lavender Pink)
+3660	pentas~8	violet (Violet)
+3661	pentas~9	rose bicolore (Flirty Pink)
+3662	geranium-vivace~0	bleu violet, cœur blanc (Rozanne)
+3663	geranium-vivace~1	bleu lavande (Johnson’s Blue)
+3664	geranium-vivace~2	bleu violet profond (Orion)
+3665	geranium-vivace~3	violet (× magnificum)
+3666	geranium-vivace~4	magenta, œil noir (Patricia)
+3667	geranium-vivace~5	rose (× oxonianum Wargrave Pink)
+3668	geranium-vivace~6	rose pâle veiné (Rose Clair)
+3669	geranium-vivace~7	blanc veiné de violet (Kashmir White)
+3670	coreopsis~0	jaune d’or (grandiflora)
+3671	coreopsis~1	jaune d’or semi-double (Early Sunrise)
+3672	coreopsis~2	jaune d’or double (Sunray)
+3673	coreopsis~3	jaune soufre (Moonbeam)
+3674	coreopsis~4	or à cœur rouge (Sunfire)
+3675	coreopsis~5	jaune à cœur bordeaux (tinctoria)
+3676	coreopsis~6	orange cuivré à cœur acajou
+3677	coreopsis~7	rouge rubis (Limerock Ruby)
+3678	coreopsis~8	rouge cerise à cœur jaune (Mercury Rising)
+3679	coreopsis~9	crème à cœur bordeaux
+3680	coreopsis~10	rose (rosea)
+3681	bruyere~0	rose vif (Erica gracilis)
+3682	bruyere~1	blanc (gracilis Alba)
+3683	bruyere~2	violet mauve
+3684	bruyere~3	rose tendre
+3685	bruyere~4	rouge bordeaux (Calluna Garden Girls)
+3686	bruyere~5	lilas (Calluna)
+3687	bruyere~6	vieux rose (séché)
+3688	gerbera-araignee~0	blanc (Spider)
+3689	gerbera-araignee~1	crème (Pasta)
+3690	gerbera-araignee~2	jaune (Spider)
+3691	gerbera-araignee~3	orange (Pasta)
+3692	gerbera-araignee~4	abricot (Spider)
+3693	gerbera-araignee~5	corail (Pasta)
+3694	gerbera-araignee~6	rouge (Spider)
+3695	gerbera-araignee~7	rose vif (Pasta)
+3696	gerbera-araignee~8	rose tendre (Spider)
+3697	gerbera-araignee~9	jaune à pointes rouges (Pasta)
+3698	cosmos-chocolat~0	chocolat
+3699	cosmos-chocolat~1	brun moka (Chocamocha)
+3700	cosmos-chocolat~2	noir chocolat (Black Chocolate)
+3701	cosmos-chocolat~3	bordeaux velours
+3702	fustet-plumes~0	rose fumé
+3703	fustet-plumes~1	vieux rose
+3704	fustet-plumes~2	pourpre Royal Purple
+3705	fustet-plumes~3	beige rosé
+3706	fustet-plumes~4	vert tendre
+3707	branche-lichen~0	vert-de-gris pâle
+3708	branche-lichen~1	gris argenté
+3709	branche-lichen~2	vert sauge
+3710	branche-lichen~3	gris beige (bouleau)
+3711	branche-lichen~4	vert jaune (Flavoparmelia)
+3712	pivoine-feuillage~0	vert lustré
+3713	pivoine-feuillage~1	vert foncé
+3714	pivoine-feuillage~2	vert à pétioles rouges (jeune)
+3715	pivoine-feuillage~3	rougi d'automne
+3716	pivoine-feuillage~4	bronze cuivré (automne)
+3717	robinier~0	vert tendre (type)
+3718	robinier~1	doré (Frisia)
+3719	robinier~2	chartreuse (Frisia, été)
+3720	robinier~3	vert, grappes blanches (en fleurs)
+3721	robinier~4	vert, grappes rose pourpré (× margaretta Casque Rouge)
+3722	coleus~0	lime (Wasabi)
+3723	coleus~1	bordeaux bordé de lime (Wizard Velvet Red)
+3724	coleus~2	cœur rose, bord vert (Kong Rose)
+3725	coleus~3	cuivre, liseré doré (Rustic Orange)
+3726	coleus~4	noir pourpré, cœur cramoisi (Black Dragon)
+3727	coleus~5	chartreuse cuivré, revers bordeaux (Henna)
+3728	coleus~6	jaune ananas, nervure bordeaux (Pineapple)
+3729	coleus~7	chocolat bordé de vert (Chocolate Mint)
+3730	coleus~8	vert taché de bordeaux et crème (Wizard Mosaic)
+3731	begonia-feuillage~0	argent, cœur vert (Silver Queen)
+3732	begonia-feuillage~1	argent veiné de pourpre noir (Fireworks)
+3733	begonia-feuillage~2	spirale argent sur vert (Escargot)
+3734	begonia-feuillage~3	rouge braise, cœur noir (Inca Flame)
+3735	begonia-feuillage~4	pourpre et bande argent (Helen Lewis)
+3736	begonia-feuillage~5	bandes rouge, rose, argent et vert (Merry Christmas)
+3737	begonia-feuillage~6	rose argenté (Pink Champagne)
+3738	begonia-feuillage~7	vert moucheté argent
+3739	vigne-feuilles~0	vert (été)
+3740	vigne-feuilles~1	rouge automne
+3741	vigne-feuilles~2	orange cuivré
+3742	vigne-feuilles~3	bordeaux (Purpurea)
+3743	vigne-feuilles~4	or (vendanges)
+3744	vigne-feuilles~5	vert rougissant (automne)
+3745	vigne-feuilles~6	rouge sombre (coignetiae)
+3746	fusain-aile~0	rouge carmin (automne)
+3747	fusain-aile~1	écarlate
+3748	fusain-aile~2	rose fuchsia (automne)
+3749	fusain-aile~3	corail orangé (début d’automne)
+3750	fusain-aile~4	vieux rose
+3751	fusain-aile~5	vert (été)
+3752	fusain-aile~6	rameaux à capsules orangées
+3753	calla-feuilles~0	vert uni (aethiopica)
+3754	calla-feuilles~1	vert tendre
+3755	calla-feuilles~2	moucheté de blanc (hybrides)
+3756	anthurium-cristal~0	vert velours, nervures argent (crystallinum)
+3757	anthurium-cristal~1	vert noir, nervures ivoire (clarinervium)
+3758	anthurium-cristal~2	vert profond, nervures olive (magnificum)
+3759	anthurium-cristal~3	jeune feuille bronze rosé
+3760	anthurium-cristal~4	vert sombre velouté
+3761	hellebore-feuilles~0	vert foncé
+3762	hellebore-feuilles~1	vert lustré
+3763	hellebore-feuilles~2	vert moyen
+3764	hellebore-feuilles~3	marbré argent
+3765	hellebore-feuilles~4	veiné crème
+3766	chrysantheme-feuilles~0	vert
+3767	chrysantheme-feuilles~1	vert grisé
+3768	chrysantheme-feuilles~2	vert foncé
+3769	gloriosa-feuillage~0	vert franc
+3770	gloriosa-feuillage~1	vert profond
+3771	gloriosa-feuillage~2	vert tendre (jeunes pousses)
+3772	tulipe-simple~20	écarlate (Apeldoorn)	late
+3773	tulipe-simple~21	pourpre velours (Negrita)	late
+3774	tulipe-simple~22	pêche rosé (Blushing Lady)	late
+3775	tulipe-simple~23	blanc pur (Clearwater)	late
+3776	anemone-coronaria~11	bleu roi	late
+3777	anemone-coronaria~12	bleu lavande	late
+3778	anemone-coronaria~13	lavande à cœur blanc	late
+3779	anemone-coronaria~14	blanc à cœur bleu	late
+3780	anemone-coronaria~15	rose vif	late
+3781	anemone-coronaria~16	mauve rosé	late
+3782	anemone-coronaria~17	écarlate	late
+3783	anemone-coronaria~18	rouge et blanc	late
+3784	anemone-coronaria~19	blanc flammé de rouge	late
+3785	anemone-coronaria~20	blanc flammé de pourpre	late
+3786	anemone-coronaria~21	raisin à œil bleu	late
+3787	anemone-coronaria~22	blanc rosé	late
+3788	anemone-sauvage~0	blanc à cœur noir	late
+3789	anemone-sauvage~1	rose pâle	late
+3790	anemone-sauvage~2	lilas	late
+3791	anemone-sauvage~3	rose vif	late
+3792	anemone-sauvage~4	écarlate	late
+3793	anemone-sauvage~5	rouge et blanc	late
+3794	anemone-sauvage~6	blanc rosé	late
+3795	tulipe-double~12	blanc strié de rouge (Carnaval de Nice)	late
+3796	tulipe-double~13	blanc liseré de violet (Shirley Double)	late
+3797	tulipe-double~14	crème à bord rosé	late
+3798	tulipe-double~15	rose corail (Taiwan)	late
+3799	tulipe-double~16	orange à flammes rouges (Gudoshnik Double)	late
+3800	tulipe-double~17	violet (Blue Diamond)	late
+3801	tulipe-double~18	jaune à bord rosé (Akebono)	late
+3802	tulipe-double~19	rose vif à bords pâles (Britt)	late
+3803	renoncule-classique~16	corail	late
+3804	tulipe-perroquet~12	citron vert strié (Yellow Madonna)	late
+3805	tulipe-perroquet~13	crème et framboise (Cabanna)	late
+3806	tulipe-perroquet~14	blanc flammé de vert (Super Parrot)	late
+3807	tulipe-perroquet~15	blanc rosé (Silver Parrot)	late
+3808	tulipe-perroquet~16	jaune bordé d’orange (Caribbean Parrot)	late
+3809	tulipe-perroquet~17	prune magenta (Parrot Negrita)	late
+3810	tulipe-perroquet~18	fuchsia (Power Parrot)	late
+3811	tulipe-perroquet~19	jaune et rouge flammés (Rasta Parrot)	late
+3812	tulipe-perroquet~20	rouge sombre bordé crème (Seadov Parrot)	late
+3813	tulipe-frangee~9	blanc flammé de rouge	late
+3814	tulipe-frangee~10	rouge frangé de blanc	late
+3815	tulipe-frangee~11	prune pourpre frangé de mauve	late
+3816	tulipe-frangee~12	jaune doux à franges blanches	late
+3817	tulipe-frangee~13	rouge frangé de jaune	late
+3818	tulipe-frangee~14	crème à franges framboise	late
+3819	narcisse-bouquet~9	jaune d’or profond à coupe orange (Golden Dawn)	late
+3820	jacinthe~11	magenta (Miss Saigon)	late
+3821	jacinthe~12	violet pourpré (Purple Sensation)	late
+3822	muscari~8	blanc (White Magic)	late
+3823	muscari~9	bleu roi (Big Smile)	late

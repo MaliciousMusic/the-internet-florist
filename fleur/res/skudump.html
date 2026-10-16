@@ -1,0 +1,9 @@
+<!doctype html><meta charset="utf-8"><title>sku dump</title>
+<!-- skudump.html?p=/demo7.html : loads a built app in an iframe and lists its products in shop order (number -> sid~ci, name, late), then drops
+     the iframe so the headless dump ends quickly. Run: sh ws/gate.sh sh ws/chrome1.sh dom "http://localhost:8765/fleur/res/skudump.html?p=/demo7.html" out.txt -->
+<body><script>
+const p=new URLSearchParams(location.search).get('p')||'/demo7.html',f=document.createElement('iframe');f.style.cssText='width:1200px;height:900px';f.src=p+'?nc='+Date.now();document.body.append(f);
+let tries=0;const tick=()=>{let out=null;try{out=f.contentWindow.eval("typeof PRODUCTS!=='undefined'&&PRODUCTS.length?PRODUCTS.map((q,i)=>(i+1)+'\\t'+q.id+'\\t'+q.cn+((typeof CWS!=='undefined'&&CWS[q.sid]&&CWS[q.sid][+q.id.split('~')[1]]&&CWS[q.sid][+q.id.split('~')[1]].late)?'\\tlate':'')).join('\\n'):null")}catch(e){}
+  if(out||++tries>600){const pre=document.createElement('pre');pre.id='out';pre.textContent=out||'NO PRODUCTS';f.remove();document.body.append(pre)}else setTimeout(tick,100)};
+setTimeout(tick,500);
+</script></body>
