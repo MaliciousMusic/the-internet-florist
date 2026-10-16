@@ -36,6 +36,38 @@ function depthTint(lv){const P=DEPTH_LV[lv];if(!P)return null;const bg=DEPTH_BG,
     col=c=>{let x=memo.get(c);if(x)return x;const[r,g,b]=hx(c),y=.3*r+.59*g+.11*b;x=P.ds?hs([r+(y-r)*P.ds,g+(y-g)*P.ds,b+(y-b)*P.ds]):c;if(P.v)x=mix(x,bg,P.v);if(P.sh)x=mix(x,'#2b211c',P.sh);memo.set(c,x);return x},
     fn=a=>{let o=null;for(const k of LIFE_KEYS){const v=a[k];if(typeof v==='string'&&v.length===7&&v[0]==='#'){const nv=col(v);if(nv!==v){if(!o)o=Object.assign({},a);o[k]=nv}}}return o||a};
   fn.key='~d'+lv+bg;return fn}
+/* heartsFree: the last word on overlaps, on the shapes as drawn. Pieces: in the back, mass and front layers, a head's own groups (data-h)
+   make one piece with a heart (the middle of its box, a third of its smaller half-side: 5 points); every other group (a cluster, a drape, the
+   stem a rim flower lays over the lip) is a piece of its own. A heart is covered by a piece painted after it when that piece's geometry
+   (fill or stroke, <use> resolved) holds 3 of its 5 points: computed once, the order alone then decides. While some heart is covered, the
+   head is lifted just above the piece, or the piece sent just below the head (same layer; never a head the player set at the back out of
+   its layer), whichever leaves fewer hearts covered (three passes). Returns the hearts still covered (c.heartsLeft) */
+function heartsFree(L,list,c){const lay=[L.deep,L.back,L.mass,L.front],P=[],byEl=new Map();
+  lay.forEach((Ly,li)=>{for(const n of Ly.children){const i=+n.getAttribute('data-o');if(!(i>=0))continue;const o=list[i];
+    if(n.hasAttribute('data-h')&&o&&o.kind==='head'){let p=byEl.get(i);if(!p){p={i,o,gs:[],li,head:1};byEl.set(i,p);P.push(p)}p.gs.push(n)}else P.push({i,o,gs:[n],li})}});
+  const box=gs=>{let bb=null;for(const g of gs){const b=g.getBBox();if(!b.width&&!b.height)continue;bb=bb?[Math.min(bb[0],b.x),Math.min(bb[1],b.y),Math.max(bb[2],b.x+b.width),Math.max(bb[3],b.y+b.height)]:[b.x,b.y,b.x+b.width,b.y+b.height]}return bb};
+  const svg=L.mass.ownerSVGElement,ref=id=>svg.querySelector('#'+CSS.escape(id))||document.getElementById(id),GEO='path,ellipse,circle,rect,polygon,polyline,line';
+  /* the painted shapes of a piece: [element, matrix from the root to its own space] (a <use> resolved to what it shows, one level deep) */
+  const shapes=p=>{const S=[];for(const g of p.gs)for(const el of g.querySelectorAll(GEO+',use')){if(el.closest('clipPath,mask'))continue;const M=el.getCTM();if(!M)continue;
+      if(el.tagName!=='use'){S.push([el,M.inverse()]);continue}
+      const t=ref((el.getAttribute('href')||el.getAttribute('xlink:href')||'').slice(1));if(!t)continue;const m0=M.translate(+el.getAttribute('x')||0,+el.getAttribute('y')||0);
+      const add=(k,m)=>{const tf=k.transform&&k.transform.baseVal.consolidate(),mm=tf?m.multiply(tf.matrix):m;if(k.matches(GEO))S.push([k,mm.inverse(),el]);else for(const ch of k.children)add(ch,mm)};add(t,m0)}
+    return S};
+  const paints=(S,x,y)=>{for(const[el,Mi,u]of S){const q=new DOMPoint(x,y).matrixTransform(Mi),src=u||el,f=src.getAttribute('fill')??el.getAttribute('fill'),st=el.getAttribute('stroke');
+      try{if(f!=='none'&&el.isPointInFill(q))return true;if(st&&st!=='none'&&el.isPointInStroke(q))return true}catch(_){}}return false};
+  for(const p of P){p.bb=box(p.gs);if(p.head&&p.bb){const w=(p.bb[2]-p.bb[0])/2,h=(p.bb[3]-p.bb[1])/2,cx=p.bb[0]+w,cy=p.bb[1]+h,r=Math.min(w,h)*.35;p.k=[[cx,cy],[cx-r*.6,cy],[cx+r*.6,cy],[cx,cy-r*.6],[cx,cy+r*.6]]}}
+  /* a head clearly bigger (1.3 times its box) hiding a smaller one's heart is depth, not clipping */
+  const area=p=>p.bb?(p.bb[2]-p.bb[0])*(p.bb[3]-p.bb[1]):0;
+  const cov=new Map();for(const a of P){if(!a.bb)continue;let S=null;for(const b of P){if(!b.k||b===a||b.i===a.i||a.head&&area(a)>=area(b)*1.3)continue;const[x,y]=b.k[0];if(x<a.bb[0]||x>a.bb[2]||y<a.bb[1]||y>a.bb[3])continue;
+      S=S||shapes(a);let n=0;for(const[px,py]of b.k)if(paints(S,px,py)&&++n>=3)break;if(n>=3){if(!cov.has(a))cov.set(a,new Set());cov.get(a).add(b)}}}
+  const key=p=>p.li*1e6+[...p.gs[0].parentNode.children].indexOf(p.gs[0]),
+    covered=()=>{const K=new Map(P.map(p=>[p,key(p)])),R=[];for(const[a,B]of cov)for(const b of B)if(K.get(a)>K.get(b))R.push([a,b]);return R};
+  const at=gs=>gs.map(g=>[g,g.nextSibling,g.parentNode]),back=A=>{for(const[g,nx,par]of A.slice().reverse())par.insertBefore(g,nx)};
+  let R=covered();for(let pass=0;pass<3&&R.length;pass++){for(const[a,b]of R){if(!(key(a)>key(b)))continue;const n0=covered().length;
+      if(!(b.o.back&&a.li!==b.li)){const s=at(b.gs);a.gs[a.gs.length-1].after(...b.gs);if(covered().length<n0)continue;back(s)}
+      if(a.gs[0].parentNode===b.gs[0].parentNode){const s=at(a.gs);b.gs[0].before(...a.gs);if(covered().length<n0)continue;back(s)}}
+    R=covered()}
+  c.heartsLeft=R.length;return R.length}
 function buildBq(svg,ids,sv,vid,t0=150,occ,model,recipe){if(svg._alive)svg._alive.stop();const c=compose(ids,sv,occ||S.occ,vid,model,recipe),tw0=tw.length;sd(sv*7+3);WILT=null;svg.innerHTML='';GDEF=E('defs',{},svg);
   /* cast shadow: each flower throws its own silhouette down and to the right onto what lies behind it (no blurred halo) */
   /* one per plane: the front throws the longest, clearest shadow onto what lies behind it, the back the faintest */
@@ -43,7 +75,9 @@ function buildBq(svg,ids,sv,vid,t0=150,occ,model,recipe){if(svg._alive)svg._aliv
     E('feFlood',{'flood-color':'#2a160e','flood-opacity':op,result:'c'},cf);E('feComposite',{in:'c',in2:'SourceAlpha',operator:'in',result:'s'},cf);E('feOffset',{in:'s',dx,dy,result:'o'},cf);
     E('feGaussianBlur',{in:'o',stdDeviation:.6,result:'b'},cf);const fm=E('feMerge',{},cf);E('feMergeNode',{in:'b'},fm);E('feMergeNode',{in:'SourceGraphic'},fm);return id};
   const csF=mkCs(.28,6,10),csM=mkCs(.22,5,8),csB=mkCs(.13,4,6);let CUR_DD=0;
-  const cast=(par,rr)=>{const w=G(par);if(rr>(LOD?24:14))w.setAttribute('filter',`url(#${CUR_DD<.34?csF:CUR_DD<.67?csM:csB})`);return w};const L={};for(const k of['plinth','vback','stems','back','fst','mass','vase','front'])L[k]=G(svg,{'data-l':k});
+  /* layers, back to front: the plinth, the back of the vessel, deep (the lines and big leaves at the back of the bouquet: every stem passes in
+     front of them), the stems, back (heads the player set at the back), fst, the mass, the vessel, the front (what rests on the lip) */
+  const cast=(par,rr)=>{const w=G(par);if(rr>(LOD?24:14))w.setAttribute('filter',`url(#${CUR_DD<.34?csF:CUR_DD<.67?csM:csB})`);return w};const L={};for(const k of['plinth','vback','deep','stems','back','fst','mass','vase','front'])L[k]=G(svg,{'data-l':k});
   const v=VZ[vid]||VZ['coupe-blanche'],BP=c.BP,list=c.out.slice().sort((a,b)=>a.z-b.z);let n=0;list.forEach((o,i)=>{o.dd=list.length>1?1-i/(list.length-1):0});const TF=[0,1,2,3,4].map(depthTint);const step=Math.max(40,1500/list.length),T=i=>t0+380+i*step;
   const pl=model?(model.plinth==='none'?null:model.plinth||v.pl):v.pl;
   /* the cut stems in the glass (or on the pins) rise first, from their cut ends */
@@ -62,8 +96,9 @@ function buildBq(svg,ids,sv,vid,t0=150,occ,model,recipe){if(svg._alive)svg._aliv
         Lq=Math.hypot(ex-lx,ey-ly),A=[[bx,BP[1]+8],[bx+(lx-bx)*.2,ly-6],[lx-(lx-bx)*.25,ly-4],[lx,ly]],Bq=[[lx,ly],[lx+(ex-lx)*.45,ly-3],nd?[ex+nd[0]*Lq*.4,ey+nd[1]*Lq*.4]:[ex,ly+(ey-ly)*.4],[ex,ey]],
         s1=stem3(L.stems,A,w0,w0*.85,SCc,10),s2=stem3(L.front,Bq,w0*.85,w1,SCc,10);let hn=head;while(hn&&hn.parentNode!==L.front)hn=hn.parentNode;if(hn)L.front.insertBefore(s2,hn);
       growUp(s1,bx,BP[1]+8,Math.max(0,t-520),520);growUp(s2,lx,ly,Math.max(0,t-260),300);s1.P=Bq;s1.P0=A;s1.nk={par:L.front,before:hn,gu:[lx,ly,Math.max(0,t-260),300]};if(GL)feet.push({p:A[0],d:[A[0][0]-A[1][0],A[0][1]-A[1][1]],w:w0,c:SCc,tn:TINT});return s1}
-    /* a long stem rises from the mouth and arrives in its neck along the neck's direction; a short one (a head lying near the rim) goes almost straight, without overshooting */
-    const dy=BP[1]-ey,Lc=Math.hypot(ex-bx,BP[1]+8-ey),sh=Math.max(0,Math.min(1,1-(Lc-20)/50)),hk=Lc*(.38-.2*sh),P1=[bx+(ex-bx)*.06,BP[1]-dy*.35],P1s=[bx+(ex-bx)*.33,BP[1]+8+(ey-BP[1]-8)*.33],
+    /* a long stem leaves the mouth already leaning toward its head (stems pivot at the lip, they do not rise straight then turn) and arrives in its neck
+       along the neck's direction; a short one (a head lying near the rim) goes almost straight, without overshooting; c4 stemSamples is the same curve */
+    const dy=BP[1]-ey,Lc=Math.hypot(ex-bx,BP[1]+8-ey),sh=Math.max(0,Math.min(1,1-(Lc-20)/50)),hk=Lc*(.38-.2*sh),P1=[bx+(ex-bx)*.22,BP[1]-dy*.33],P1s=[bx+(ex-bx)*.33,BP[1]+8+(ey-BP[1]-8)*.33],
       P=[[bx,BP[1]+8],[P1[0]+(P1s[0]-P1[0])*sh,P1[1]+(P1s[1]-P1[1])*sh],nd?[ex+nd[0]*hk,ey+nd[1]*hk]:[ex-(ex-bx)*.3,ey+dy*.35],[ex,ey]],st=stem3(FWD?L.fst:L.stems,P,w0,w1,SCc,14);growUp(st,bx,BP[1]+8,Math.max(0,t-520),520);st.P=P;if(GL)feet.push({p:P[0],d:[P[0][0]-P[1][0],P[0][1]-P[1][1]],w:w0,c:SCc,tn:TINT});
     if(held)below(P[0][0],P[0][1],P[1][0]-P[0][0],P[1][1]-P[0][1],w0,SCc,t);st.nk={par:FWD?L.fst:L.stems,gu:[bx,BP[1]+8,Math.max(0,t-520),520]};return st}
   /* a head's neck, handed back by the head, drawn with the stems: continuous with its bouquet stem, behind every flower */
@@ -75,7 +110,7 @@ function buildBq(svg,ids,sv,vid,t0=150,occ,model,recipe){if(svg._alive)svg._aliv
   let mk=null;const mark=i=>{if(mk)for(const k in L){const ch=L[k].children;for(let j=mk[k];j<ch.length;j++)ch[j].setAttribute('data-o',mk.i)}mk={i};for(const k in L)mk[k]=L[k].children.length};
   /* a stage render (LIFE): each element draws from its own random stream, so a bouquet keeps the same details from bud to faded; its colours wilt with it */
   try{for(const o of list){mark(n);const t=T(n++);CUR_DD=o.dd;TINT=TF[depthLevel(o.dd)];if(LIFE){sd(sv*7+3+n*7919);WILT=lifeWilt(lifeWEl(LIFE,o.it&&o.it.p?lifeProfile(o.it.p):null),o.it&&o.it.p&&(GHI[o.it.p.sid]||{}).wilt,o.it&&o.it.p&&o.it.p.sid)}
-    if(o.kind==='leaf'){const g=G(L.back);xAnthLeaf(g,t,{c:o.dark?['#060e09','#10261a','#1f4430','#3f6e4a','#86b48a']:undefined,pl:30,rot:0});bloom(g,o.x,o.y+30,o.rot,o.scale,t,900,-12);continue}
+    if(o.kind==='leaf'){const g=G(L.deep);xAnthLeaf(g,t,{c:o.dark?['#060e09','#10261a','#1f4430','#3f6e4a','#86b48a']:undefined,pl:30,rot:0});bloom(g,o.x,o.y+30,o.rot,o.scale,t,900,-12);continue}
     if(o.kind==='drape'){const g=G(cast(L.front,30)),rec=o.it.p.rec,dr=rec.a==='drape'?rec:{a:'drape',cm:60,cols:[o.it.p.col],p:{type:'chenille'}};
       DRAPEX={x:o.x,y:o.y,side:o.side||1,held,top:vTop,mw:mwV,mcx,FL};try{[[1,0,0],[.8,-20,0],[.62,24,0]].forEach(([k,sw,dx],j)=>{const h=G(g,{transform:`translate(0,${j*1.5})`});drawRec(h,t+j*90,dr,{col:o.it.p.col,len:o.len*k,sway:o.sway+sw*(o.side||1)})})}finally{DRAPEX=null}
       bloom(g,o.x,o.y,0,1,t,1300,0);continue}
@@ -84,7 +119,7 @@ function buildBq(svg,ids,sv,vid,t0=150,occ,model,recipe){if(svg._alive)svg._aliv
     const sp=o.it.sp,rec=o.it.p.rec,cust=rec.a==='custom',c0=cmOf(o.it.p),col=o.it.p.col;
     if(o.kind==='self'){const clu=!(o.role==='line'&&!o.short||o.role==='foliage');let wrap=null;
       /* a bent stem: the element follows its spine from the mouth; the lower part of a cluster's stem joins the other stems */
-      const draw=()=>{wrap=(clu||o.fwd)&&!o.back?cast(o.front?L.front:L.mass,o.rr||20):null;const g=G(wrap||L.back);
+      const draw=()=>{wrap=(clu||o.fwd)&&!o.back?cast(o.front?L.front:L.mass,o.rr||20):null;const g=G(wrap||(clu?L.back:L.deep));
         if(o.spine){const rs=drawRec(g,t,rec,{col,spine:o.spine,from:o.from||0,short:o.short,op:LIFE&&LIFE.stage===0&&GH_BUDS.has(o.it.p.sid)?.2+.25*LIFE.u:undefined,life:LIFE?{stage:LIFE.stage,u:LIFE.u,w:lifeWEl(LIFE,lifeProfile(o.it.p))}:undefined});if(rs&&rs.bw)o.sb={w:rs.bw,bw1:rs.bw1,c:rs.bc};bloom(g,o.x,o.y,0,1,t,1000,-4)}
         else{drawRec(g,t,rec,{col,len:sp.self===0?o.len:undefined});bloom(g,o.x,o.y,o.rot,o.scale,t,1000,-10)}};
       const w0=tw.length;draw();
@@ -97,13 +132,13 @@ function buildBq(svg,ids,sv,vid,t0=150,occ,model,recipe){if(svg._alive)svg._aliv
       if(held&&o.spine){const sb=o.sb||{};below(o.x,o.y,o.spine[1][0]-o.spine[0][0],o.spine[1][1]-o.spine[0][1],o.from?3.4:sb.w||3.2,sb.c||SC,t)}
       continue}
     /* real-size head: 3D species are oriented along their stem; 2D drawings are rotated and scaled to their real size */
-    const rr=o.rr||(sp.r||40),ps=1+DEPTH_PS*(.5-(o.dd||0));let ex,ey,g,nd=null,np=null,nk=null,ext=null;
+    const rr=o.rr||(sp.r||40),ps=1+DEPTH_PS*(.5-(o.dd||0));let ex,ey,g,nd=null,np=null,nk=null,ext=null,kr=1;
     /* at Déclin and Fané a head nods outward and down from its neck; at Bourgeon it closes back */
     const LP=LIFE?lifeProfile(o.it.p):null,hN=LIFE?lifeH(sv,o.x,o.y):0,nod0=LIFE?lifeNod(LIFE,LP,hN)*(o.x>BP[0]+8?1:o.x<BP[0]-8?-1:lifeH(sv,o.y,3)<.5?-1:1):0;let nod=nod0;
-    const head=()=>{const par=cast(o.front?L.front:o.back?L.back:L.mass,rr);g=G(par);nod=nod0;
+    const head=()=>{const par=cast(o.front?L.front:o.back?L.back:L.mass,rr);par.setAttribute('data-h','');g=G(par);nod=nod0;
       if(o.it.d3){const a=o.ax||[0,0,1];ex=o.x;ey=o.y;nd=null;np=null;
         /* the head is held by its stem: its own down points at the stem's base (held bouquets: the tie), only a little roll; its neck bends into the stem */
-        const gh=!!CWS[o.it.p.sid],up=[o.x-BP[0],BP[1]-o.y,0];NECK_X=gh;EXT=gh?[]:null;let r;try{r=drawRec(g,t,rec,{col,ax:a,cm:o.cm,op:lifeOp(LIFE,o.st,o.st==='bud'?.14:o.st==='half'?.5:R(.86,1),hN,lifeBudOK(o.it)),roll:gh?R(-.12,.12):R(-.6,.6),up:Math.hypot(up[0],up[1])>6?up:undefined,rim:!!o.rim,dry:LIFE&&LIFE.stage===3&&LP.dry?1:undefined,life:LIFE?{stage:LIFE.stage,u:LIFE.u,w:lifeWEl(LIFE,LP)}:undefined})}finally{NECK_X=false;ext=EXT;EXT=null}
+        const gh=!!CWS[o.it.p.sid],up=[o.x-BP[0],BP[1]-o.y,0];NECK_X=gh;EXT=gh?[]:null;let r;try{r=drawRec(g,t,rec,{col,ax:a,cm:o.cm,op:lifeOp(LIFE,o.st,o.st==='bud'?.14:o.st==='half'?.5:R(.86,1),hN,lifeBudOK(o.it)),roll:gh?R(-.12,.12):R(-.6,.6),up:Math.hypot(up[0],up[1])>6?[up[0]*kr,up[1]*kr,0]:undefined,rim:!!o.rim,dry:LIFE&&LIFE.stage===3&&LP.dry?1:undefined,life:LIFE?{stage:LIFE.stage,u:LIFE.u,w:lifeWEl(LIFE,LP)}:undefined})}finally{NECK_X=false;ext=EXT;EXT=null}
         /* the nod never turns the neck more than 50 degrees away from the way its stem comes up (no broken stem) */
         if(nod&&r&&r.nd&&r.neck){const bx0=BP[0]-(o.x+r.neck[0]),by0=BP[1]+8-(o.y+r.neck[1]),d0=((Math.atan2(r.nd[1],r.nd[0])-Math.atan2(by0,bx0))/D+540)%360-180,na=Math.max(-50-d0,Math.min(50-d0,nod));nod=Math.sign(na)===Math.sign(nod)?na:0;
           /* and the head stays above the end of its neck: a nodding head never hangs below its own stem */
@@ -118,8 +153,13 @@ function buildBq(svg,ids,sv,vid,t0=150,occ,model,recipe){if(svg._alive)svg._aliv
         ex=o.x-dyA*sc*Math.sin(th);ey=o.y+dyA*sc*Math.cos(th);const inner=dyA?G(g,{transform:`translate(0,${f(dyA)})`}):g;if(cust&&vw!=='face')drawView(inner,t,fn,customOpts(fn,col,rec.c2),vw);else drawRec(inner,t,rec,{col});bloom(g,o.x,o.y,o.rot+nod,sc,t,1000,-20)}
       return par};
     const w0=tw.length;let hp=head();
-    /* a head whose own stem (neck, foot of its raceme) would reach more than 60% of the way to its base is moved away from the base along its stem, so its stem never has to turn back */
-    for(let k=0;k<3&&o.it.d3&&(ex!==o.x||ey!==o.y);k++){const hb=[BP[0]-o.x,BP[1]-o.y],L=Math.hypot(hb[0],hb[1])||1,pr=((ex-o.x)*hb[0]+(ey-o.y)*hb[1])/L;if(pr<=.6*L)break;
+    /* a head whose own stem (neck, foot of its raceme) would reach more than 60% of the way to its base is moved away from the base along its stem, so its stem never has to turn back
+       — unless that neck goes straight into the mouth of an opaque vessel (a low head over the mouth: its neck is its stem, the vessel hides the rest; c4 FOOT_SP knows) */
+    const intoMouth=()=>!held&&!GL&&v.kind!=='kenzan'&&v.mat!=='glass'&&Math.abs(ex-mcx)<=mwV*.8&&ey>=vTop-12;
+    /* first its neck gives way (the head drawn for a shorter reach: the bouquet stem takes over higher up), the head staying where c4 put it; only a
+       neck that cannot shrink enough moves the head */
+    for(let k=0;k<6&&o.it.d3&&(ex!==o.x||ey!==o.y);k++){const hb=[BP[0]-o.x,BP[1]-o.y],L=Math.hypot(hb[0],hb[1])||1,pr=((ex-o.x)*hb[0]+(ey-o.y)*hb[1])/L;if(pr<=.6*L||intoMouth())break;
+      if(k<3&&kr>.25){kr*=Math.max(.25,.57*L/pr);hp.remove();tw.length=w0;hp=head();continue}
       const s=pr/.6-L+2,ux=L>1?-hb[0]/L:0,uy=L>1?-hb[1]/L:-1;hp.remove();tw.length=w0;o.x+=ux*s;o.y+=uy*s;hp=head()}
     /* a head behind the vessel never dips below its rim: measured in full bloom, it is raised before its stem is drawn */
     if(!held&&!o.front&&Math.max(o.y+rr*(nk&&!nk.cp?9:4),ey+6)>FL-vH(v))try{const ws=tw.slice(w0);for(const w of ws)w.fn(1,1);const b=hp.getBBox();for(const w of ws)w.fn(0,0);const bot=b.y+b.height;
@@ -133,10 +173,12 @@ function buildBq(svg,ids,sv,vid,t0=150,occ,model,recipe){if(svg._alive)svg._aliv
         if(bot>lim+ok){hp.remove();tw.length=w0;o.y-=bot-(lim+ok);hp=head()}L.front.appendChild(hp);o.front=true}}}catch(_){}
     /* every head keeps its whole stem from the mouth to its receptacle */
     FWD=!!o.fwd&&!o.front&&!held;const nw1=nk?nk.w*1.12:2.4,st=stemTo(ex,ey,t,Math.max(o.role==='line'?3.2:4,nw1*1.1),nw1,!!o.front,g,nd,nk&&nk.cols);neckDraw(nk,st,ext,o.x,o.y,nod,ps);FWD=false;if(st&&st.P){o.stemP=st.P;o.stemP0=st.P0||null;o.nd=nd;o.np=np||(Math.hypot(ex-o.x,ey-o.y)>3?[[o.x,o.y],[ex,ey]]:null)}
-    /* the leaves its stem carries, on the part seen above the mouth (or above the tie) */
-    if(st&&st.P&&STEML[o.it.p.sid]){let lim=held?BP[1]:FL;if(!held)for(let i=0;i<=6;i++)lim=Math.min(lim,vSilTop(v,st.P[0][0]+(st.P[3][0]-st.P[0][0])*i/6));stemLeaves(L.stems,st.P,o.it.p.sid,lim-6,rr,t)}}
+    /* the leaves its stem carries, on the part seen above the mouth (or above the tie); tagged data-lf (leaves, not bare stem, for lab/nues.js) */
+    if(st&&st.P&&STEML[o.it.p.sid]){let lim=held?BP[1]:FL;if(!held)for(let i=0;i<=6;i++)lim=Math.min(lim,vSilTop(v,st.P[0][0]+(st.P[3][0]-st.P[0][0])*i/6));const n0=L.stems.children.length;stemLeaves(L.stems,st.P,o.it.p.sid,lim-6,rr,t);for(let j=n0;j<L.stems.children.length;j++)L.stems.children[j].setAttribute('data-lf',1)}}
   }finally{WILT=null;TINT=null}
   mark(-1);mk=null;
+  /* the last word on overlaps, on the shapes as drawn (every animation at its end): no flower's heart under something painted after it */
+  try{const ws=tw.slice(tw0);for(const w of ws)w.fn(1,1);try{heartsFree(L,list,c)}finally{for(const w of ws)w.fn(0,0)}}catch(_){}
   /* in a glass vessel every stem goes on under the mouth: the continuation of its own stem, down to the bottom */
   if(GL&&feet.length){WILT=LIFE?lifeWilt(lifeW(LIFE)*.85):null;try{growUp(stemsIn(L.stems,feet,vid),BP[0],FL-6,t0,560)}finally{WILT=null}}
   /* petals fallen on the table (not swayed by the breeze, outside the frame measure) */
@@ -152,4 +194,4 @@ function buildBq(svg,ids,sv,vid,t0=150,occ,model,recipe){if(svg._alive)svg._aliv
     for(const w of ws)w.fn(0,0);if(bb&&bb[2]-bb[0]>60){x0=bb[0];x1=bb[2];y0=bb[1];y1=v.kind==='hand'||v.kind==='wrap'?bb[3]:Math.max(bb[3],FL+stShow);mg=Math.max(x1-x0,y1-y0)*.035}}catch(_){}
   GDEF=null;const cx=(x0+x1)/2,w=x1-x0+2*mg,h=y1-y0+2*mg;svg.setAttribute('viewBox',`${f(cx-w/2)} ${f(y0-mg)} ${f(w)} ${f(h)}`);
   /* the breeze: the whole bouquet sways a third of a degree around the mouth; lines and leaves a little more and a beat later; a held bouquet sways as one */
-  for(const k of['stems','mass','front'])breeze(L[k],BP[0],BP[1],.32);breeze(L.back,BP[0],BP[1],held?.32:.55,held?0:420);svg.dataset.tpl=c.tk;c.list=list;svg.dataset.n=c.out.filter(o=>o.kind==='head'||o.kind==='self'||o.kind==='drape').length;return c}
+  for(const k of['stems','mass','front'])breeze(L[k],BP[0],BP[1],.32);for(const k of['deep','back'])breeze(L[k],BP[0],BP[1],held?.32:.55,held?0:420);svg.dataset.tpl=c.tk;c.list=list;svg.dataset.n=c.out.filter(o=>o.kind==='head'||o.kind==='self'||o.kind==='drape').length;return c}
