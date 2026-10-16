@@ -1,0 +1,28 @@
+{
+  "name": "@belai/music",
+  "version": "0.7.0",
+  "private": true,
+  "type": "module",
+  "description": "Musique générative des tiges et des bouquets",
+  "scripts": {
+    "check": "tsc --noEmit",
+    "test": "node tools/test.mjs",
+    "build": "node tools/build.mjs",
+    "serve": "node tools/serve.mjs",
+    "measure": "node --experimental-strip-types tools/measure.ts",
+    "catalogue": "node --expose-gc --experimental-strip-types tools/catalogue.ts",
+    "performance": "node --expose-gc --experimental-strip-types tools/performance.ts",
+    "studies": "node --expose-gc --experimental-strip-types tools/studies.ts",
+    "connected": "node --expose-gc --experimental-strip-types tools/connected.ts",
+    "genomes": "node --experimental-strip-types tools/genetic-database.ts",
+    "genetic": "node --expose-gc --experimental-strip-types tools/genetic.ts",
+    "signatures": "node --experimental-strip-types tools/signature-database.ts",
+    "live-performance": "node --expose-gc --experimental-strip-types tools/measure-live.ts",
+    "publish-static": "npm run build && node tools/publish-static.mjs && node tools/verify-static.mjs"
+  },
+  "devDependencies": {
+    "@types/node": "24.10.1",
+    "esbuild": "0.25.12",
+    "typescript": "7.0.2"
+  }
+}

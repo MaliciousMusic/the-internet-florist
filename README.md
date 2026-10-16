@@ -15,6 +15,8 @@ cette librairie en lecture seule. Le jeu Belai's Garden est en pause : il est ar
 | `bronze/`, `verre/`, `vases/` | Vases : rendu du bronze, verre dépoli, et l'étude des 116 références (fiches, méthode, concepts, essais, outils) |
 | `decor/` | Site de la boutique : la scène SVG (ciel, horizon, herbe, dalles, pilier), les bouquets pré-dessinés et les pages |
 | `bureau/` | Widget Windows (Tauri) et ses livrables d'essai |
+| `packages/engine` | Moteur de dessin empaqueté (`build.sh`), ponts vers la musique et placement des tiges |
+| `packages/music` | Moteur musical : outils, banque de sons (VCSL, VSCO), écriture et gènes. Le studio y lit sa banque de sons |
 | `docs/` | Standards de rendu et de sources |
 | `etude_compositions/`, `research_notes/`, `reports/` | Études de composition et notes sur le marché des bouquets numériques |
 
