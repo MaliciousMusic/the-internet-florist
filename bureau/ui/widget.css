@@ -10,4 +10,11 @@ body:hover:not(.verrou)::after { opacity: 1; }
   filter: drop-shadow(0 0 1px rgba(0, 0, 0, .5)); }
 body:hover:not(.verrou) #coin { opacity: 1; }
 body.verrou #coin { display: none; }
+/* the ✓ that fixes the bouquet where it stands */
+#fixer { position: fixed; top: 8px; right: 8px; width: 30px; height: 30px; border-radius: 50%; border: 0; padding: 0;
+  font: 700 16px/30px system-ui, sans-serif; color: #fff; background: rgba(60, 140, 90, .92); box-shadow: 0 1px 4px rgba(0, 0, 0, .45);
+  cursor: pointer; opacity: 0; transition: opacity .25s, transform .15s; }
+#fixer:hover { transform: scale(1.1); }
+body:hover:not(.verrou) #fixer { opacity: 1; }
+body.verrou #fixer { display: none; }
 #vase.vide { display: grid; place-items: center; font: 600 13px system-ui, sans-serif; color: #fff; text-shadow: 0 1px 2px #000; text-align: center; padding: 12px; }

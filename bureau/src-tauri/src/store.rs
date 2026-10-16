@@ -14,6 +14,9 @@ pub struct Placed {
     pub y: i32,
     pub w: u32,
     pub h: u32,
+    /// Fixed where it stands: no frame on hover, no moving, the mouse goes through to the desktop.
+    #[serde(default, skip_serializing_if = "std::ops::Not::not")]
+    pub fixe: bool,
     /// Set for a bouquet read from the chain: shown only while the linked wallet owns it.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub nft: Option<Jeton>,
@@ -184,6 +187,7 @@ mod tests {
             y,
             w: 400,
             h: 500,
+            fixe: false,
             nft: None,
         }
     }
@@ -204,6 +208,7 @@ mod tests {
             bouquets: vec![
                 placed("a", 10, 20),
                 Placed {
+                    fixe: true,
                     nft: Some(Jeton {
                         id: "7".into(),
                         adresse: "0xab".into(),

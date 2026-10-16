@@ -17,6 +17,7 @@ const T = (window as unknown as { __TAURI__: Tauri }).__TAURI__;
 const win = T.webviewWindow.getCurrentWebviewWindow();
 const vase = document.getElementById('vase')!;
 const corner = document.getElementById('coin')!;
+const fix = document.getElementById('fixer')!;
 
 function setLocked(locked: boolean): void {
   document.body.classList.toggle('verrou', locked);
@@ -167,12 +168,16 @@ addEventListener('resize', () => {
     if (pictures.length) setTimeout(() => void paint().catch(() => {}), 150);
   }, 400);
 });
+// the ✓: fixed where it stands (no frame, no moving, the mouse goes through); freed again from the tray menu
+fix.addEventListener('mousedown', e => e.stopPropagation());
+fix.addEventListener('click', () => void T.core.invoke('fixer_ici'));
 // the bouquet's own menu
 addEventListener('contextmenu', e => {
   e.preventDefault();
   void T.core.invoke('menu');
 });
-void T.event.listen<boolean>('verrou', e => setLocked(e.payload));
+// still (desk locked or bouquet fixed) or movable: addressed to this bouquet alone
+void win.listen<boolean>('verrou', e => setLocked(e.payload));
 // a bouquet NFT painted again at its new age (it opens, declines, fades)
 void win.listen('recharger', () => {
   stop();

@@ -111,7 +111,7 @@ fn area_of(app: &AppHandle, b: &Placed) -> Area {
 
 /// Opens the window of a bouquet, where it was left.
 fn open(app: &AppHandle, b: &Placed) -> tauri::Result<WebviewWindow> {
-    let locked = app.state::<App>().desk.lock().unwrap().locked;
+    let locked = app.state::<App>().desk.lock().unwrap().locked || b.fixe;
     let w = tauri::WebviewWindowBuilder::new(
         app,
         label(&b.id),
@@ -150,11 +150,30 @@ fn settle(w: &WebviewWindow) {
     let _ = w;
 }
 
-fn set_cursor_through(app: &AppHandle, locked: bool) {
-    for w in app.webview_windows().values() {
-        let _ = w.set_ignore_cursor_events(locked);
-        settle(w);
+/// Gives every bouquet window its state: still (the desk is locked, or the bouquet is fixed) or movable.
+/// A still bouquet shows no frame and lets the mouse through to the desktop.
+fn appliquer(app: &AppHandle) {
+    let d = app.state::<App>().desk.lock().unwrap().clone();
+    for b in &d.bouquets {
+        let l = label(&b.id);
+        if let Some(w) = app.get_webview_window(&l) {
+            let immobile = d.locked || b.fixe;
+            let _ = w.set_ignore_cursor_events(immobile);
+            settle(&w);
+            let _ = w.emit_to(l.as_str(), "verrou", immobile);
+        }
     }
+}
+
+/// Fixes a bouquet where it stands, or frees it to be moved and sized again.
+fn fixer(app: &AppHandle, id: &str, fixe: bool) {
+    let st = app.state::<App>();
+    if let Some(b) = st.desk.lock().unwrap().get_mut(id) {
+        b.fixe = fixe;
+    }
+    st.changed();
+    appliquer(app);
+    refresh_tray(app);
 }
 
 /// Takes a « Vase animé » file and sets its bouquet on the desktop.
@@ -197,19 +216,21 @@ fn placer(
             y,
             w: size.0,
             h: size.1,
+            fixe: false,
             nft,
         };
         std::fs::create_dir_all(&st.drawings).map_err(|e| e.to_string())?;
         std::fs::write(st.drawing(&p.id), b.svg).map_err(|e| e.to_string())?;
-        // a new bouquet is meant to be placed: the desk unlocks
-        if d.locked {
-            d.locked = false;
-            set_cursor_through(app, false);
-            let _ = app.emit("verrou", false);
-        }
+        // a new bouquet is meant to be placed: the desk unlocks (fixed bouquets stay fixed)
+        let unlock = d.locked;
+        d.locked = false;
         d.bouquets.push(p.clone());
-        p
+        (p, unlock)
     };
+    let (placed, unlock) = placed;
+    if unlock {
+        appliquer(app);
+    }
     st.changed();
     st.save_now();
     open(app, &placed).map_err(|e| e.to_string())?;
@@ -254,8 +275,7 @@ fn resize(app: &AppHandle, id: &str, share: f64) {
 fn set_locked(app: &AppHandle, locked: bool) {
     app.state::<App>().desk.lock().unwrap().locked = locked;
     app.state::<App>().changed();
-    set_cursor_through(app, locked);
-    let _ = app.emit("verrou", locked);
+    appliquer(app);
     refresh_tray(app);
 }
 
@@ -303,6 +323,15 @@ fn tray_menu(app: &AppHandle) -> tauri::Result<Menu<tauri::Wry>> {
     menu.append(&PredefinedMenuItem::separator(app)?)?;
     for b in &d.bouquets {
         let sub = Submenu::with_id(app, format!("menu:{}", b.id), &b.name, true)?;
+        sub.append(&CheckMenuItem::with_id(
+            app,
+            format!("fixe:{}", b.id),
+            "Fixé ici",
+            true,
+            b.fixe,
+            None::<&str>,
+        )?)?;
+        sub.append(&PredefinedMenuItem::separator(app)?)?;
         for (key, name, _) in store::SIZES {
             sub.append(&MenuItem::with_id(
                 app,
@@ -403,6 +432,14 @@ fn refresh_tray(app: &AppHandle) {
 /// The menu shown by a right click on a bouquet.
 fn bouquet_menu(app: &AppHandle, id: &str) -> tauri::Result<Menu<tauri::Wry>> {
     let menu = Menu::new(app)?;
+    menu.append(&MenuItem::with_id(
+        app,
+        format!("fixer:{id}"),
+        "Fixer ici",
+        true,
+        None::<&str>,
+    )?)?;
+    menu.append(&PredefinedMenuItem::separator(app)?)?;
     for (key, name, _) in store::SIZES {
         menu.append(&MenuItem::with_id(
             app,
@@ -462,7 +499,19 @@ fn on_menu(app: &AppHandle, e: MenuEvent) {
             app.exit(0);
         }
         _ => {
-            if let Some(j) = id.strip_prefix("poser:") {
+            if let Some(b) = id.strip_prefix("fixer:") {
+                fixer(app, b, true);
+            } else if let Some(b) = id.strip_prefix("fixe:") {
+                let fixe = app
+                    .state::<App>()
+                    .desk
+                    .lock()
+                    .unwrap()
+                    .bouquets
+                    .iter()
+                    .any(|x| x.id == b && x.fixe);
+                fixer(app, b, !fixe);
+            } else if let Some(j) = id.strip_prefix("poser:") {
                 let (handle, j) = (app.clone(), j.to_owned());
                 std::thread::spawn(move || nft::poser(&handle, &j));
             } else if let Some(b) = id.strip_prefix("retirer:") {
@@ -485,7 +534,10 @@ fn dessin(app: AppHandle, id: String) -> Result<(String, bool), String> {
         return Err("bouquet inconnu".into());
     }
     let st = app.state::<App>();
-    let locked = st.desk.lock().unwrap().locked;
+    let locked = {
+        let d = st.desk.lock().unwrap();
+        d.locked || d.bouquets.iter().any(|b| b.id == id && b.fixe)
+    };
     std::fs::read_to_string(st.drawing(&id))
         .map(|s| (s, locked))
         .map_err(|e| e.to_string())
@@ -497,6 +549,14 @@ fn menu(window: WebviewWindow) -> Result<(), String> {
     let id = id_of(window.label()).ok_or("pas un bouquet")?.to_owned();
     let m = bouquet_menu(window.app_handle(), &id).map_err(|e| e.to_string())?;
     window.popup_menu(&m).map_err(|e| e.to_string())
+}
+
+/// The ✓ button of a bouquet: fixed where it stands.
+#[tauri::command]
+fn fixer_ici(window: WebviewWindow) -> Result<(), String> {
+    let id = id_of(window.label()).ok_or("pas un bouquet")?.to_owned();
+    fixer(window.app_handle(), &id, true);
+    Ok(())
 }
 
 /// The end of a resize by the corner: the window hugs the bouquet again.
@@ -610,7 +670,9 @@ pub fn run() {
             MacosLauncher::LaunchAgent,
             Some(vec![AT_LOGIN]),
         ))
-        .invoke_handler(tauri::generate_handler![dessin, menu, ajuster, peint])
+        .invoke_handler(tauri::generate_handler![
+            dessin, menu, ajuster, peint, fixer_ici
+        ])
         // the engine page of a bouquet NFT, for its hidden painting window
         .register_uri_scheme_protocol("peintre", |ctx, req| {
             match nft::page(ctx.app_handle(), req.uri().path()) {
