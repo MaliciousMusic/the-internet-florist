@@ -5,7 +5,7 @@
 import sys, os, json, re
 HERE = os.path.dirname(os.path.abspath(__file__))
 APP = os.path.join(HERE, '..', 'app')
-VASES = ['coque-verte', 'carpes-dorees', 'torsade-turquoise', 'ginkgo', 'prisme-jaune']
+VASES = ['coque-verte', 'carpes-dorees', 'torsade-turquoise', 'ginkgo', 'prisme-jaune', 'perce-neige']
 sys.path.insert(0, os.path.join(HERE, '..', 'verre'))
 
 

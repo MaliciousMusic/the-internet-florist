@@ -51,3 +51,24 @@ Le porteur a fourni `carpes-dorees/out/model.glb`. Chaîne nouvelle, sans projet
 - À faire : faire valider les carpes ; appliquer la même chaîne aux autres vases à partir de leurs GLB ; reprendre les chantiers en pause.
 - **Prisme jaune publié (soir)** : version v1 validée (« MAGNIFIQUE »), générateur `prisme-jaune/mk_v1.py`, fiche `prisme-jaune`, verre clair.
 - **Clos et publié (soir)** : vase `jarre-carpes` (svgb `carpes-dorees`), carpes en terre cuite comme la panse (matière `or` = `patine`), version retenue par le porteur. `fixdecor.py` (bouchage des encoches, calage des bords sur l'arête du relief par ligne de partage des eaux) a servi avant ce choix.
+
+## 16 octobre (soir) : GLB des 15 vases, perce-neige (063) lancé
+
+- Le porteur a déposé 15 GLB dans `Vases/` et leurs photos : appariement dans [GLB.md](GLB.md). La carpe est finie (porteur).
+- **Règle du porteur** : le GLB donne la forme (et la pose), la photo placée par la pose donne la peinture. Ne jamais
+  empiler le tracé de la photo et celui du GLB (texture Meshy, relief des normales) : un seul tracé du décor.
+- `perce-neige/` (063, GLB Snowdrop) : pose IoU 0,980 ; chaîne `paint.py` (peinture depuis la photo sur le corps tourné
+  déroulé) + `mk.py` ; SVG boutique 102 Ko gzip ; SVG/photo ΔE 6,2, SSIM 0,77, arêtes 0,79/0,80. Point d'étape montré au
+  porteur, finition à faire (cernes en relief, lavis en dégradés, arches crème-pêche). Détails : `perce-neige/RAPPORT.md`.
+- `glbkit.py fit <vase> lab` : rotation calée sur un décor peint (corrélation CIELAB) au lieu de l'or des carpes.
+
+### Perce-neige (063) : retenu et prêt pour le catalogue (16 octobre, soir)
+
+- Version retenue : la texture du GLB vectorisée par vtracer, éclairée par la boutique (glaçure, col brillant).
+- Ombre portée vraie : `shadow.py`, et le moteur prend l'ombre fournie par un vase (`app/v1f.js`).
+- Fiche `balustre-perce-neige`. Modules recopiés dans `demo/src`, démo reconstruite. 245 Ko gzip.
+- Non commité, en attente de l'accord du porteur. Détails : `perce-neige/RAPPORT.md`.
+- Leçon pour les vases suivants (porteur) :
+  - quand le GLB a une texture, la reproduire à l'identique (vtracer), sans réinterpréter ;
+  - la photo sert à poser la vue ;
+  - ne jamais peindre les reflets du studio de la photo.

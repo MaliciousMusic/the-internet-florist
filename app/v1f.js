@@ -7,7 +7,7 @@ function vessel(par,id,t=0,o={}){const v=VZ[id]||VZ['coupe-pied-blanche'],g=G(pa
   else if(v.kind==='kenzan')vKenzan(g,v,back,front);
   else{const S=profSamples(v.prof,LOD?28:90),n=S.length-1,top=FL-S[n][0],mwO=S[n][1],ry=vRy(mwO),glass=v.mat==='glass',tp=v.tp||{};
     const own=v.svgb&&typeof SVGB!=='undefined'&&SVGB[v.svgb]&&SVGB[v.svgb].own;
-    if(back){vShadow(g,S,glass?.14:.3,o.shClip||(sg&&sg.top));if(!own)vMouthBack(g,v,top,mwO,ry);if(v.svgb&&typeof svgMouth==='function')svgMouth(g,v);if(glass)goldfish(g,v,S)}
+    if(back){const sb_=v.svgb&&typeof SVGB!=='undefined'&&SVGB[v.svgb];if(sb_&&sb_.shadow)svgbPut(g,sb_.shadow,'s');else vShadow(g,S,glass?.14:.3,o.shClip||(sg&&sg.top));if(!own)vMouthBack(g,v,top,mwO,ry);if(v.svgb&&typeof svgMouth==='function')svgMouth(g,v);if(glass)goldfish(g,v,S)}
     if(front){if(v.svgb&&typeof svgBody==='function')svgBody(g,v);else if(v.cast)castBody(g,v,S);else{vBody(g,v,S);vTextures(g,v,S)}
       if(tp.beadrow)for(const b of tp.beadrow){const h=b.h==='lip'?S[n][0]-b.r*UPC*1.2:b.h*UPC;beadRing(g,FL-h,sRad(S,h)+b.r*UPC*.3,Math.round(b.n/2),b.r*UPC,b.c)}
       if(tp.beadcol)beadCols(g,v,S,tp.beadcol);if(v.hd)vHandles(g,v,S);if(!own)vLip(g,v,top,mwO,ry);if(glass&&!v.svgb)glassFront(g,v,S);
