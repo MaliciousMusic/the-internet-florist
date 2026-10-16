@@ -1,0 +1,24 @@
+DONE seed=1 n=2 free-before=4.89 min=4.3 GB bouquets/floating/under=2 0 0 (lancé à la main)
+START seed=2 n=4 free=5.41789627075195 GB attempt=1
+DONE seed=2 n=4 free-before=5.41789627075195 min free RAM: 3.6 GB bouquets/floating/under=4 0 0
+WAIT 1 free=3.71610641479492 GB before seed 3
+WAIT 2 free=3.89354705810547 GB before seed 3
+START seed=3 n=4 free=5.16736602783203 GB attempt=1
+DONE seed=3 n=4 free-before=5.16736602783203 min free RAM: 4.3 GB bouquets/floating/under=4 0 0
+START seed=4 n=4 free=5.20775604248047 GB attempt=1
+DONE seed=4 n=4 free-before=5.20775604248047 min free RAM: 4.2 GB bouquets/floating/under=4 0 0
+START seed=5 n=4 free=5.19544982910156 GB attempt=1
+DONE seed=5 n=4 free-before=5.19544982910156 min free RAM: 4.4 GB bouquets/floating/under=4 0 0
+START seed=6 n=4 free=5.40446853637695 GB attempt=1
+DONE seed=6 n=4 free-before=5.40446853637695 min free RAM: 4.8 GB bouquets/floating/under=4 0 0
+START seed=7 n=2 free=4.82881546020508 GB attempt=1
+DONE seed=7 n=2 free-before=4.82881546020508 min free RAM: 3.8 GB bouquets/floating/under=2 0 0
+WAIT 1 free=4.14917755126953 GB before seed 8
+WAIT 2 free=4.02647399902344 GB before seed 8
+START seed=8 n=2 free=4.4744873046875 GB attempt=1
+DONE seed=8 n=2 free-before=4.4744873046875 min free RAM: 4.7 GB bouquets/floating/under=2 0 0
+START seed=9 n=2 free=4.80970001220703 GB attempt=1
+DONE seed=9 n=2 free-before=4.80970001220703 min free RAM: 4.1 GB bouquets/floating/under=2 0 0
+START seed=10 n=2 free=4.44606781005859 GB attempt=1
+DONE seed=10 n=2 free-before=4.44606781005859 min free RAM: 4.3 GB bouquets/floating/under=2 0 0
+END total=30 next_seed=11
