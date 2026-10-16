@@ -181,6 +181,12 @@ def main():
         if near.any() and rg.area > 40 * k * k:
             win[lab_ == rg.label] = True
     win = cv2.dilate(win.astype(np.uint8), ker).astype(bool) & free
+    # and only straight below the opening: what lies to its sides is outside the vessel's hollow (the foot of a shell wrapped
+    # behind a cup, say), where no stem can stand
+    cols_ = np.arange(W)[None, :]
+    win &= np.abs(cols_ - Mx) <= mouth['mo'] / .92 * F('winw', 1.15) * k
+    if F('win', 1) <= 0:                   # a vessel with no opening down its front (win=0 in its settings)
+        win[:] = False
     fr |= free & ~win
     solid = m & (dep < d_a + cb)
     # silhouette top of the solid, column by column, in shop units (h above the floor; 0 where nothing solid stands)

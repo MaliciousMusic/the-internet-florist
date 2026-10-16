@@ -80,3 +80,30 @@ Le script reprend la caméra de `glbsvg.py view=shop`. Il écrit `<vase>/out/com
 ## Résultats
 
 Les planches des bouquets se trouvent dans `_apercu/compo/`.
+
+## Deuxième série : six vases de plus (16 octobre, nuit)
+
+Vases traités : jardinière, prismes de bronze, narcisses, coque verte, gui d'argent, grandes feuilles. Ce sont les zones
+entourées par le porteur.
+
+| Vase | Bouche | Réglage, constat |
+|---|---|---|
+| jardinière | creux du GLB (mh 214, mo 106) | aucun : la large ouverture reçoit les tiges, la couronne arrière reste derrière |
+| prismes | relevé à la main, en haut du grand prisme (mh 392) | dessus du GLB fermé |
+| narcisses | creux du GLB (mh 290) | aucun |
+| coque | lèvre de la coupe avant (mh 121, et non 180) | `win=0` : la feuille enroulée est derrière la coupe, il n'y a pas de fenêtre. Les fleurs ne s'enfoncent plus dans le creux |
+| gui | col étroit (mh 229, mo 8) | aucun |
+| grandes feuilles | creux du GLB (mh 279) | aucun |
+
+Deux règles ajoutées :
+- `compo.py` : une fenêtre se limite aux colonnes de l'ouverture. Sur la coque, l'interstice entre la coupe et la feuille
+  passait pour une fenêtre.
+- `c4.js` : sur un vase sculpté, une fleur de bord doit tenir sur la lèvre (rayon au plus 1,2 fois la demi-bouche). Sinon,
+  elle n'est pas posée.
+  - Cause : l'anthurium couché sur le col du gui.
+  - Effet sur la première série : le bambou, le dragon et le cristal n'ont plus de fleur couchée sur leur col étroit ; le
+    calla perd un lys qui pendait.
+
+Planches :
+- `_apercu/compo2_avant_apres.jpg` : la deuxième série ;
+- `_apercu/compo/regle_bord.jpg` : la première série avant et après la règle de la lèvre.

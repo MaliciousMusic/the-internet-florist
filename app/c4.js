@@ -318,8 +318,9 @@ function candidate(P,sv,vid,tk){sd(sv);const T=P.asp?Object.assign({},TPL[tk],{a
      never a product made for height) */
   if(v.kind!=='hand'&&v.kind!=='wrap'){const rimF=q=>(GHI[q.it.p.sid]||{}).rim?1:0,rim=rest.filter(q=>q.skip&&PL(q.it)>3&&!tallH(q.it)).concat(pool.filter(q=>q.role==='focal'&&q.skip&&rimF(q)&&PL(q.it)>3)).sort((a,b)=>rimF(b)-rimF(a)).slice(0,3),extra=rest.filter(q=>!q.skip&&q.r<44);for(let i=0;!P.ex&&rim.length<2&&i<extra.length;i++)rim.push(Object.assign({},extra[i]));
     const U=[.78,.62,.22,.4],pl=[];rim.length=Math.min(rim.length,Math.max(2,Math.min(4,Math.round(mw/22))));
-    /* on a sculpted vessel (v.sil) a rim flower never lies on what rises above the lip: it takes the other side, or is left out */
-    rim.forEach((q,i)=>{let sd2=i%2?-s:s,x=0,y=0,ok=false;for(let k=0;k<(v.sil?24:12);k++){if(k===12)sd2=-sd2;x=BP[0]+sd2*mw*U[i%4]*R(.85,1.15);y=BP[1]-q.r*R(.12,.38);const free=pl.every(p=>Math.hypot(p[0]-x,p[1]-y)>(p[2]+q.r)*.72);
+    /* on a sculpted vessel (v.sil) a rim flower never lies on what rises above the lip: it takes the other side, or is left out; and it
+       must be one the lip can hold (a bottle's neck carries no anthurium lying on it) */
+    rim.forEach((q,i)=>{if(v.sil&&q.r>mw*1.2)return;let sd2=i%2?-s:s,x=0,y=0,ok=false;for(let k=0;k<(v.sil?24:12);k++){if(k===12)sd2=-sd2;x=BP[0]+sd2*mw*U[i%4]*R(.85,1.15);y=BP[1]-q.r*R(.12,.38);const free=pl.every(p=>Math.hypot(p[0]-x,p[1]-y)>(p[2]+q.r)*.72);
         if(!v.sil){if(free)break;continue}if(free&&rock(x,y,footCircles(q.it.p.sid,x,y,q.r,BP,[sd2,.06]),true)){ok=true;break}}
       if(v.sil&&!ok)return;pl.push([x,y,q.r]);push(q,x,y,.97+i*.002,{front:true,rim:true,ax:V3.nz([sd2*.8,.05,.6])});q.skip=0})}
   if(P.ex)for(const q of pool){if(q.skip!==1)continue;let ok=false,x=FP[0],y=FP[1],z=.3;
