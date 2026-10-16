@@ -147,7 +147,7 @@ function l97GlFlower(par,E0,fa,sz,ag,cw){if(ag<.3){const e=V3.add(E0,V3.sc(fa,sz
   if(fr){E('path',{d:smooth(kP),fill:toneAt(Pk,lightI(kd)*.95),stroke:shd(cw.k,-.45),'stroke-width':.3,'stroke-opacity':.45},par);stdD()}
   else{stdD();E('path',{d:smooth(kP),fill:toneAt(Pk,lightI(kd)*.95),stroke:shd(cw.k,-.45),'stroke-width':.3,'stroke-opacity':.45},par)}}
 /* a long raceme hanging from a spur: the rachis falls almost straight, flowers all round it on pedicels, open from the base (floribunda) down to the velvet buds at the tip */
-function l97GlRac(P0,d0,cw,op,lim,kl){const Lr=UPC*R(18,26)*kl*(.6+.4*op),sz=UPC*R(1.7,2)*Math.min(1,.8+.2*kl),Hh=l97Hang(P0,d0,Lr,.3,10,lim,sz*1.2,[1,.8,.62,.48,.36]);if(!Hh)return null;
+function l97GlRac(P0,d0,cw,op,lim,kl,nr){if(SV_ON&&typeof glySvRac==='function')return glySvRac(P0,d0,cw,op,lim,kl,nr);const Lr=UPC*R(18,26)*kl*(.6+.4*op),sz=UPC*R(1.7,2)*Math.min(1,.8+.2*kl),Hh=l97Hang(P0,d0,Lr,.3,10,lim,sz*1.2,[1,.8,.62,.48,.36]);if(!Hh)return null;
   const pts=Hh.pts,parts=[],n=Math.round((DET>=1.5?34:22)*(.6+.4*Hh.k)),rc='#6a7048',fl=[];let pd='';
   l97Rachis(pts,1.9,1.2,rc,parts);
   for(let i=0;i<n;i++){const q=i/(n-1),A=l97At(pts,.06+.92*q),[X,Y]=fgCross(A.T),a=i*2.39996+R(-.25,.25),rd=V3.add(V3.sc(X,Math.cos(a)),V3.sc(Y,Math.sin(a))),
@@ -168,14 +168,14 @@ function l97GlStrand(k,o,cw,op){const B=o.ax?frameOf(o,0):I3,X=typeof DRAPEX!=='
   if(X){hc=Math.max(5,X.y-(X.top-R(5,10)));if(!X.held){room=X.FL-3-X.y;Lh=Math.min(Lh,room)}dxc=side*Math.max(6,Math.min(26,X.mw-Math.abs(X.x-X.mcx)+R(4,10)))}
   Lh=Math.max(40,Lh);const C=[[0,0,0],[dxc*.45,hc*1.5,R(-3,3)],[dxc+(sw-dxc)*.12+side*Lh*.1,-Lh*.3,R(-8,8)],[sw-side*Lh*.02,-Lh,R(-12,12)]],cb=s=>{const a=(1-s)**3,b=3*(1-s)**2*s,c=3*(1-s)*s*s,d=s**3;return[0,1,2].map(i=>a*C[0][i]+b*C[1][i]+c*C[2][i]+d*C[3][i])};
   const NS=40,ph=R(0,6.28),tw=Lh/R(50,70),pts=[],ws=[];for(let i=0;i<=NS;i++){const s=i/NS,q=cb(s),a=ph+s*tw*6.28,am=2.6*Math.min(1,s*4);pts.push(toV(B,[q[0]+Math.cos(a)*am,q[1],q[2]+Math.sin(a)*am]));ws.push(UPC*(.95-.6*s))}
-  const parts=[],wood=l39Wood('#7e7a70'),lim=room==null?null:room,kl=Math.min(1,Lv0/(60*UPC))*.25+.75;
+  const parts=[],wood=SV_ON&&typeof GLY_WOOD!=='undefined'?GLY_WOOD:l39Wood('#7e7a70'),lim=room==null?null:room,kl=Math.min(1,Lv0/(60*UPC))*.25+.75;
   l39Bark([{pts,ws,ord:0}],parts,8,()=>wood,(P,W)=>DET>=1.5?l39Lenti(P,W,.05,'#c8c4b4',{l0:.15,l1:.3,w:.4,op:.5}):null);
   let nr=0;const nmax=Lh>120?3:2;
   for(let l=Lh*.1,i=0;l<Lh*.93;l+=UPC*R(6,8),i++){const A=l97At(pts,l/((l97At(pts,1).L)||1)),[Xx,Yy]=fgCross(A.T),a=i*2.4+R(-.3,.3),r=V3.nz(V3.add(V3.sc(Xx,Math.cos(a)),V3.sc(Yy,Math.sin(a)))),w=UPC*(.95-.6*l/Lh);
     parts.push(l39Ovoid(V3.add(A.p,V3.sc(r,w*.1)),V3.nz(V3.add(V3.sc(r,.8),V3.sc(A.T,.3))),UPC*.6,Math.max(1.6,w*.55),L39_EGG,'#6a6450',{scales:2,zb:.04}));
     if(op>.3&&i%2===0){const y=l97C((op-.3)/.7),sz=.5+.4*y,c=mix('#7a8a3e','#a8864a',.45*(1-y)),H=V3.nz(V3.add(V3.sc(r,.85),[0,.25,0])),U=V3.nz(V3s([0,1,0],V3.sc(H,H[1])));
-      const lf=l45RobLeaf({pos:A.p,H,U},UPC*9*sz*R(.85,1.1),DET>=1.5?4:3,UPC*3.2*sz*R(.9,1.08),mix(c,shd(c,R(-.06,.06)),.5),lim==null?null:-lim+2);if(lf)parts.push(...lf)}
-    if(nr<nmax&&i%2===1&&rnd()<.85){const rc=l97GlRac(V3.add(A.p,V3.sc(r,w*.4)),V3.nz(V3.add(V3.sc(r,.5),[0,-.4,0])),cw,op,lim,kl);if(rc){nr++;parts.push(...rc)}}}
+      const lf=(SV_ON&&typeof glySvLeaf==='function'?glySvLeaf:l45RobLeaf)({pos:A.p,H,U},UPC*9*sz*R(.85,1.1),DET>=1.5?4:3,UPC*3.2*sz*R(.9,1.08),mix(c,shd(c,R(-.06,.06)),.5),lim==null?null:-lim+2);if(lf)parts.push(...lf)}
+    if(nr<nmax&&i%2===1&&rnd()<.85){const rc=l97GlRac(V3.add(A.p,V3.sc(r,w*.4)),V3.nz(V3.add(V3.sc(r,.5),[0,-.4,0])),cw,op,lim,kl,nr);if(rc){nr++;parts.push(...rc)}}}
   const e=pts[NS],te=l97Twine(e,V3.nz(V3s(pts[NS],pts[NS-2])),UPC*R(4,6),'#8a8a58',lim);if(te)parts.push(te);
   drawParts(k,parts)}
 function l97GlycinePlant(g,t,o){if((typeof DRAPEX!=='undefined'&&DRAPEX)||o.len!=null){const k=G(g),cw=cwPick(CW_L97GL,o);l97GlStrand(k,o,cw,l97C(o.op??R(.8,1),.05,1));open(k,t,1100,0,0);return k}
@@ -183,13 +183,13 @@ const cw=cwPick(CW_L97GL,o),op=l97C(o.op??1,.05,1),wood=l39Wood('#7e7a70'),tw=l3
   return l39Sprig(g,t,o,{id:'gl-'+cw.id,len:80,leafy:.85,inter:[9,7],nl:1,div:180,ph0:R(60,120),ang:[58,46],w0:UPC*1.25,w1:UPC*.35,wp:.7,cols:wood,e:-.002,wig:.03,zig:10,twist:26,tip:1.2,clr:3,
     br:{zone:[.25,.8],p:.3,max:1,gap:2,n:[2,3],li:7,ang:40,eb:-.004,ls:.8,wk:.55},
     leaf:(og,lim)=>{if(op<.3||((og.p.i??1)%2&&!og.p.b))return null;const y=l97C((op-.3)/.7),sz=.55+.45*y,c=mix('#7a8a3e','#a8864a',.45*(1-y)),np=DET>=1.5?4:3;
-      return l45RobLeaf(og,UPC*9*sz*R(.85,1.1),np,UPC*3.2*sz*R(.9,1.08),mix(c,shd(c,R(-.06,.06)),.5),lim==null?null:-lim+2)},
+      return(SV_ON&&typeof glySvLeaf==='function'?glySvLeaf:l45RobLeaf)(og,UPC*9*sz*R(.85,1.1),np,UPC*3.2*sz*R(.9,1.08),mix(c,shd(c,R(-.06,.06)),.5),lim==null?null:-lim+2)},
     node:(og,lim)=>{const q=og.p.q??0,ph=(og.p.ph||0)*D,sd=V3.nz(V3.add(V3.sc(og.U,Math.cos(ph)),V3.sc(og.L,-Math.sin(ph)))),P=V3.add(og.pos,V3.sc(sd,og.w*.3)),H=og.H,pp=[];
       /* the spur: a short knob of the old wood the raceme hangs from */
       pp.push(l39Ovoid(V3.add(og.pos,V3.sc(sd,og.w*.1)),V3.nz(V3.add(V3.sc(sd,.8),V3.sc(H,.4))),UPC*.6,Math.max(1.6,og.w*.55),L39_EGG,'#6a6450',{scales:2,zb:.04}));
-      if(q<.08||rnd()>(nr<2?.95:.7)||nr>=(o.spine?3:5))return pp;const rc=l97GlRac(V3.add(P,V3.sc(sd,UPC*.3)),V3.nz(V3.add(V3.sc(sd,.6),[0,-.2,0])),cw,op,lim,kl);if(rc){nr++;pp.push(...rc)}return pp},
-    apex:(og,lim)=>{const tw2=l97Twine(og.pos,og.H,UPC*R(6,9),'#8a8a58',lim);return tw2?[tw2]:null},
-    bark:(chains,parts,sp)=>l39Bark(chains,parts,sp?14:8,ch=>ch.ord?tw:wood,(P,W)=>DET>=1.5?l39Lenti(P,W,.05,'#c8c4b4',{l0:.15,l1:.3,w:.4,op:.5}):null)})}
+      if(q<.08||rnd()>(nr<2?.95:.7)||nr>=(o.spine?3:5))return pp;const rc=l97GlRac(V3.add(P,V3.sc(sd,UPC*.3)),V3.nz(V3.add(V3.sc(sd,.6),[0,-.2,0])),cw,op,lim,kl,nr);if(rc){nr++;pp.push(...rc)}return pp},
+    apex:(og,lim)=>{const ln=UPC*R(6,9);if(SV_ON&&typeof glySvTip==='function')return glySvTip(og,lim,ln);const tw2=l97Twine(og.pos,og.H,ln,'#8a8a58',lim);return tw2?[tw2]:null},
+    bark:(chains,parts,sp)=>SV_ON&&typeof glySvBark==='function'?glySvBark(chains,parts,sp):l39Bark(chains,parts,sp?14:8,ch=>ch.ord?tw:wood,(P,W)=>DET>=1.5?l39Lenti(P,W,.05,'#c8c4b4',{l0:.15,l1:.3,w:.4,op:.5}):null)})}
 
 /* ---------- mitsumata (Edgeworthia chrysantha, Thymelaeaceae, « paperbush »): its name says it, « three forks » — every shoot ends in a fork of three nearly equal branches, again and again,
    so the bare branch spreads like a candelabrum; the bark smooth, olive to cinnamon brown with pale lenticels, so tough and flexible it makes Japanese paper; in late winter,

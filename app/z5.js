@@ -19,7 +19,7 @@ function aliveMotion(o){if(!o)return null;const it=o.it||{};
   if(o.kind==='self')return{A:1,T:4.5,j:[o.x,o.y]};
   return null}
 /* the layers that move element by element; the others are still */
-const ALIVE_DYN={back:1,mass:1,front:1};
+const ALIVE_DYN={deep:1,back:1,mass:1,front:1};
 async function aliveBq(svg,c,opt={}){if(!svg||!c||!c.list||(RM&&!opt.still))return null;svg._aliveArgs=[c,opt];if(svg._alive)svg._alive.stop();idleOn=false;
   const host=svg.parentNode,sr=svg.getBoundingClientRect(),M=svg.getScreenCTM();if(!host||!M)return null;
   /* not laid out yet (a hidden tab, a closed panel): it comes alive as soon as it has a size */

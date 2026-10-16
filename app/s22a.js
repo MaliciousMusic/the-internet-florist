@@ -105,9 +105,9 @@ function cycPlant(g,t,o){const cw=o.cw||cwNear(CW_CYC,o.col)||CW_CYC[0],op=Math.
 
 /* ---------- freesia (Freesia × hybrida): a wiry scape that turns at a right angle into a one-sided spike (the 'hand'); along its upper side, alternately a little left and right,
    funnel flowers in pairs of small bracts, open at the elbow, younger toward the tip where the buds lie tight and green, nearly along the axis; single (six tepals) or double ---------- */
-const CW_FRE=[{id:'blanc',n:'Blanc',c:'#f6f3ea',th:'#f2d860'},{id:'creme',n:'Crème',c:'#f4e6c4',th:'#f0c850'},{id:'jaune',n:'Jaune',c:'#f5d22c',th:'#f0a818'},{id:'orange',n:'Orange',c:'#f08a2a',th:'#f6c030'},
-  {id:'rouge',n:'Rouge',c:'#d8282e',th:'#f2b830'},{id:'rose-pale',n:'Rose pâle',c:'#f4c6d4',th:'#f6e2a0'},{id:'rose',n:'Rose',c:'#e88aac',th:'#f6dc90'},{id:'fuchsia',n:'Fuchsia',c:'#e04a8a',th:'#f4d870'},
-  {id:'mauve',n:'Mauve',c:'#a68ad0',th:'#f4e8b0'},{id:'lavande',n:'Lavande',c:'#c4b0e0',th:'#f4ecc0'},{id:'violet',n:'Violet',c:'#6a4aa8',th:'#f2e8c8'},{id:'bleu',n:'Bleu lavande (Blue Heaven)',c:'#8a92d4',th:'#f4ecc0'}];
+const CW_FRE=[{id:'blanc',n:'Blanc (Ambiance)',c:'#e8e6dc',th:'#ecd9a0'},{id:'creme',n:'Crème (Maya)',c:'#dfcf58',th:'#e6c030'},{id:'jaune',n:'Jaune (Gold River)',c:'#f0c40b',th:'#e0b00f'},{id:'orange',n:'Orange',c:'#f08a2a',th:'#f6c030'},
+  {id:'rouge',n:'Rouge (Red Passion)',c:'#c81a1a',th:'#c85a14'},{id:'rose-pale',n:'Rose pâle',c:'#f4c6d4',th:'#f6e2a0'},{id:'rose',n:'Rose (Emily)',c:'#a06280',th:'#d8cbbb'},{id:'fuchsia',n:'Fuchsia',c:'#e04a8a',th:'#f4d870'},
+  {id:'mauve',n:'Mauve (Delta River)',c:'#b192d0',th:'#d2c0cc'},{id:'lavande',n:'Lavande (Vera)',c:'#c6b3e8',th:'#e0d6e4'},{id:'violet',n:'Violet (Blue Velvet)',c:'#9a5fba',th:'#c8aebf'},{id:'bleu',n:'Bleu lavande (Mercurius)',c:'#9775d0',th:'#ddd0df'}];
 const FR_TEP=prof([[0,.4],[.3,.9],[.65,1],[.88,.72],[.97,.36],[1,.1]]);
 /* one flower in its frame (local Z its mouth): the narrow tube widening into a funnel, six (or twice six) rounded tepals, the throat flushed yellow */
 function freFlower(par,B,O,L,cw,op,dbl){const k=G(par),nz=B[2][2],o2=sm01((op-.1)/.9),it=[],rot=R(0,6.28),cache={},det=DET>=1.5,c=cw.c,cb=mix(c,'#e8e2c8',.18),tc=mix(c,'#e8e4b8',.3);
@@ -126,6 +126,8 @@ function frePlant(g,t,o){const cw=o.cw||cwNear(CW_FRE,o.col)||CW_FRE[0],op=Math.
   const res=lsTurtle(lsDerive([['S',{}]],rules,n+3),{p:[0,0,0],H:up,U:U0,wig:.02,seg:D*.12,T:[0,1,0],e:.01,w:w*1.3});for(const ch of res.chains)ch.c=sc;
   /* the bouquet stem ends at the elbow: the hand belongs to the head */
   const apex=res.organs.find(q=>q.t==='N0').pos;
+  /* native SVG (y-freesia.js): the spike by the kit y3-grappe.js, from the elbow; the chance above and the old flowers' draws are consumed as before */
+  if(typeof freSvPlant==='function'&&typeof SV_ON!=='undefined'&&SV_ON&&cw&&cw.id)return freSvPlant(k,t,o,{res,apex,cw,op,D,up,hd,n,nf,dbl,sx,U0,sheet:!B.reach&&!o.rim});
   lsPlant(k,res,{O:[0,0,0],apex,cols:sc,organ:(og,pos)=>{
     if(og.t==='Nd'){/* the two little bracts at the node */const Bn=frZ(V3.add(og.H,[0,.5,0]),up,0);return{parts:[{z:pos[2]-.2,fn:par=>{if(LOD)return;let d='';for(const ph of[70,110])d+=smooth(ligule(Bn,pos,{phi:ph*D2R,r0:0,z0:0,L:Lf*.16,W:Lf*.06,wp:prof([[0,1],[.5,.8],[1,.05]]),a0:.3,a1:.5,th:.8,tip:'point',n:3}).out);E('path',{d,fill:'#8a9a5a',stroke:'#4a5a28','stroke-width':.35,'stroke-opacity':.6},par)}}]}}
     if(og.t==='K'){const Bf=frZ(og.H,up,R(-.3,.3)),s=1-.1*og.p.i;return{parts:[{z:pos[2]+og.H[2]*Lf*.4,fn:par=>freFlower(par,Bf,pos,Lf*s,cw,Math.min(1,op*1.1)*(1-.12*og.p.i),dbl)}]}}
@@ -135,8 +137,8 @@ function frePlant(g,t,o){const cw=o.cw||cwNear(CW_FRE,o.col)||CW_FRE[0],op=Math.
 
 /* ---------- Dutch iris (Iris × hollandica): one flower out of two green spathes at the top of a stiff stem, two or three linear channelled leaves sheathing it;
    three falls (the outer tepals) rising on a narrow haft then hanging their blade, a yellow signal on it; three standards (the inner tepals) upright; three petaloid style arms arching over the hafts ---------- */
-const CW_IRIS=[{id:'bleu',n:'Bleu (Blue Magic)',c:'#4a44a8',sig:'#f2c21c'},{id:'bleu-nuit',n:'Bleu nuit (Professor Blaauw)',c:'#26307a',sig:'#f0b818'},{id:'violet',n:'Violet (Purple Sensation)',c:'#5a2a90',sig:'#f0c020'},
-  {id:'bleu-ciel',n:'Bleu ciel',c:'#8a9ad8',sig:'#f2c830'},{id:'silvery',n:'Bleu pâle et blanc (Silvery Beauty)',c:'#b0bce8',fc:'#f4f4f8',sig:'#f2c830'},{id:'blanc',n:'Blanc (White Excelsior)',c:'#f7f5ee',sig:'#f2d040'},
+const CW_IRIS=[{id:'bleu',n:'Bleu (Blue Magic)',c:'#4a44a8',sig:'#f2c21c'},{id:'bleu-nuit',n:'Bleu gentiane (Professor Blaauw)',c:'#26307a',sig:'#f0b818'},{id:'violet',n:'Violet (Purple Sensation)',c:'#5a2a90',sig:'#f0c020'},
+  {id:'bleu-ciel',n:'Bleu ciel (Wedgwood)',c:'#8a9ad8',sig:'#f2c830'},{id:'silvery',n:'Bleu pâle et blanc (Silvery Beauty)',c:'#b0bce8',fc:'#f4f4f8',sig:'#f2c830'},{id:'blanc',n:'Blanc (White Excelsior)',c:'#f7f5ee',sig:'#f2d040'},
   {id:'jaune',n:'Jaune (Golden Harvest)',c:'#f5d02a',sig:'#f09810'},{id:'apollo',n:'Blanc et jaune (Apollo)',c:'#f6f4ec',fc:'#f5d02a',sig:'#f0a018'},
   {id:'bronze',n:'Pourpre et bronze (Red Ember)',c:'#6a3a7a',fc:'#9a4a2e',sig:'#f0b020'},{id:'noir',n:'Pourpre noir',c:'#3a1a50',sig:'#f2c21c'}];
 const IR_FALL=prof([[0,.2],[.35,.32],[.55,.82],[.8,1],[.95,.72],[1,.24]]),IR_STD=prof([[0,.18],[.35,.5],[.75,1],[.95,.62],[1,.2]]),IR_STY=prof([[0,.5],[.5,.85],[.8,1],[1,.35]]);
@@ -177,9 +179,9 @@ function irisPlant(g,t,o){const cw=o.cw||cwNear(CW_IRIS,o.col)||CW_IRIS[0],op=Ma
 /* ---------- hyacinth (Hyacinthus orientalis): a fleshy scape carrying a dense spike of twenty to forty waxy florets, each a short bell opening into six star lobes curled back at their tips;
    they open from the bottom up, the top ones still tight green-tinted buds; cut with its bulb (on the sheet), the bulb in its papery tunic, roots and strap leaves.
    Light on purpose: a floret is three paths (lobes behind, bell, lobes in front), one blob when it turns its back, a bud one path ---------- */
-const CW_HYA=[{id:'bleu',n:'Bleu (Delft Blue)',c:'#6a86d0',tun:'#7a5a8a'},{id:'bleu-nuit',n:'Bleu nuit (Blue Jacket)',c:'#3a46a8',tun:'#5a3a6a'},{id:'violet',n:'Violet (Peter Stuyvesant)',c:'#4a3a9a',tun:'#5a3a6a'},
+const CW_HYA=[{id:'bleu',n:'Bleu (Delft Blue)',c:'#6a86d0',tun:'#7a5a8a'},{id:'bleu-nuit',n:'Bleu-violet (Blue Jacket)',c:'#3a46a8',tun:'#5a3a6a'},{id:'violet',n:'Violet (Peter Stuyvesant)',c:'#4a3a9a',tun:'#5a3a6a'},
   {id:'mauve',n:'Mauve (Splendid Cornelia)',c:'#b49ad6',tun:'#8a6a8a'},{id:'rose',n:'Rose (Pink Pearl)',c:'#ec9fbd',tun:'#9a6a7a'},{id:'rose-pale',n:'Rose pâle (Fondant)',c:'#f2c6d4',tun:'#a88a8a'},
-  {id:'fuchsia',n:'Fuchsia (Jan Bos)',c:'#d4306c',tun:'#7a3a4a'},{id:'blanc',n:'Blanc (Carnegie)',c:'#f7f4ec',tun:'#c8b8a0'},{id:'creme',n:'Crème (City of Haarlem)',c:'#f4e3a2',tun:'#c0a880'},
+  {id:'fuchsia',n:'Rouge cerise (Jan Bos)',c:'#d4306c',tun:'#7a3a4a'},{id:'blanc',n:'Blanc (Carnegie)',c:'#f7f4ec',tun:'#c8b8a0'},{id:'creme',n:'Crème (City of Haarlem)',c:'#f4e3a2',tun:'#c0a880'},
   {id:'saumon',n:'Saumon (Gipsy Queen)',c:'#f2b29a',tun:'#b08a7a'},{id:'pourpre',n:'Pourpre (Woodstock)',c:'#6a1e5a',tun:'#5a2a4a'}];
 /* one floret in its frame (local Z its mouth), length L, open a (0 bud … 1); cache holds the tones */
 function hyaFloret(par,B,O,L,cw,a,cache){const nz=B[2][2],c=cw.c;
@@ -197,13 +199,6 @@ function hyaFloret(par,B,O,L,cw,a,cache){const nz=B[2][2],c=cw.c;
   E('path',{d:smooth(hull2(bell)),fill:P(Ib),stroke:inkc,'stroke-width':sw,'stroke-opacity':.55},par);
   if(nz>.25&&!LOD){const m=spDisc(B,O,rr*.8,zr,8);E('path',{d:smooth(m),fill:shd(c,-.32),opacity:.85},par)}
   if(front.length)E('path',{d:front.map(q=>smooth(q)).join(''),fill:P(If),stroke:inkc,'stroke-width':sw,'stroke-opacity':.55},par)}
-/* the bulb (a cut hyacinth sold with it): a squat onion in its papery tunic, a tuft of roots under the basal plate */
-function hyaBulb(par,p,r,cw){const g=G(par,{transform:`translate(${f(p[0])},${f(p[1])})`}),tun=cw.tun||'#8a6a7a',P=pal7(tun);
-  let rd='';for(let i=0;i<9;i++){const x=(i/8-.5)*r*.9,l=r*R(.6,1.1);rd+=`M${f(x)},${f(r*.92)}q${f(R(-.3,.3)*l)},${f(l*.5)} ${f(R(-.25,.25)*l)},${f(l)}`}E('path',{d:rd,stroke:'#d8ccb4','stroke-width':f(Math.max(.5,r*.035)),fill:'none','stroke-linecap':'round'},g);
-  const q=[];for(let i=0;i<=24;i++){const t=i/24*6.283,x=Math.sin(t),y=-Math.cos(t),k=y<0?1-.45*Math.pow(-y,3):1;q.push([x*r*k*(y<0?1-.62*Math.pow(-y,1.6):1),y*r*(y<0?1.5:.95)])}
-  E('path',{d:smooth(q),fill:budFill(tun),stroke:P.ink,'stroke-width':.5,'stroke-opacity':.6},g);
-  if(!LOD){let d='';for(const u of[-.6,-.25,.15,.5]){d+=`M${f(u*r*.95)},${f(r*.8)}Q${f(u*r*1.05)},${f(-r*.4)} ${f(u*r*.25)},${f(-r*1.35)}`}E('path',{d,stroke:P.l1,'stroke-width':.5,'stroke-opacity':.5,fill:'none'},g);
-    E('path',{d:`M${f(-r*.55)},${f(r*.86)}Q0,${f(r*1.02)} ${f(r*.55)},${f(r*.86)}`,stroke:'#e2d8c0','stroke-width':f(Math.max(.6,r*.08)),fill:'none','stroke-linecap':'round'},g)}return g}
 function hyaPlant(g,t,o){const cw=o.cw||cwNear(CW_HYA,o.col)||CW_HYA[0],op=Math.max(.05,Math.min(1,o.op??1)),D=(o.cm||12)*UPC,k=G(g),sc=['#3a5a2a','#6a9a4a','#94bc6e','#c4dca4'],Lf=3.6*UPC*Math.pow(D/(12*UPC),.25),cache={};
   const B=frameOf(o,.3,true),up=B.upV?V3.nz([B.upV[0],B.upV[1],B.upV[2]||0]):[0,1,0],face=B[2];let U0=V3s(face,V3.sc(up,V3.dot(face,up)));if(V3l(U0)<1e-3)U0=[0,0,1];
   const sheet=!B.reach&&!o.rim,n=Math.round(R(30,36)),nOpen=Math.round(n*(op<.3?0:op<.7?.45:.82)),kr=B.reach?Math.min(1,Math.max(.12,B.reach*.4/(D*1.4))):1,w=D*.085,li=D/n,ph0=R(0,360);
@@ -213,12 +208,15 @@ function hyaPlant(g,t,o){const cw=o.cw||cwNear(CW_HYA,o.col)||CW_HYA[0],op=Math.
       return[['F',{l:li*R(.9,1.1),w1:w*(.55-.3*q),e:.004}],p.i?['Nd',{i:p.i}]:['N0',{}],['[',{w:w*.2}],['/',{a:ph0+p.i*137.5}],['&',{a:(p.i<nOpen?100-28*q:op<.3?52-30*q:64-40*q)+R(-6,6)}],['f',{l:w*(.26-.14*q)+Lf*.03}],['K',{i:p.i,q}],[']',{}],['A',{i:p.i+1}]]}};
   const res=lsTurtle(lsDerive([['S',{}]],rules,n+3),{p:[0,0,0],H:up,U:U0,wig:.006,seg:D*.1,T:[0,1,0],e:.004,w:w*1.15});for(const ch of res.chains)ch.c=sc;
   const apex=res.organs.find(q=>q.t==='N0').pos;
+  /* native SVG (y-hyacinthus.js): the raceme by the kit y3-grappe.js, the scape a lit cylinder; the chance above is consumed as before */
+  if(typeof hyaSvPlant==='function'&&typeof SV_ON!=='undefined'&&SV_ON&&cw&&cw.id)return hyaSvPlant(k,t,o,{res,apex,cw,op,D,sheet,up,face,n,ph0});
   lsPlant(k,res,{O:[0,0,0],apex,cols:sc,organ:(og,pos)=>{
     if(og.t==='K'){const i=og.p.i,a=i<nOpen?Math.min(1,.55+.45*(1-i/Math.max(1,nOpen))+(op>.9?.2:0)):Math.max(0,.3-.3*(i-nOpen)/Math.max(1,n-nOpen)),Bf=frZ(og.H,up,0),s=Lf*(1-.25*og.p.q);
       return{parts:[{z:pos[2]+og.H[2]*s*.4,fn:par=>hyaFloret(par,Bf,pos,s,cw,a,cache)}]}}
     if(og.t==='Lv'){const pp=[];lsLeafParts(Object.assign({},og,{pos}),D*R(.8,1),.13,'#4f7a3a',pp,{wp:LS_STRAP,droop:.18,arch:.06,fold:.35,face:.3,gloss:.3});return{ext:1,parts:pp}}
     return null}});
-  if(sheet){const c0=res.chains[0].pts[0],r=2.4*UPC,gb=hyaBulb(k,[c0[0]-apex[0],-(c0[1]-apex[1])+r*.9],r,cw);k.insertBefore(gb,k.firstChild)}
+  /* never a bulb (STANDARD-RENDU 8 ter): its roots' 27 draws are still made, the chance as before */
+  if(sheet)for(let i=0;i<27;i++)R();
   open(k,t,1000,4,.3);return lsNeck(res,[0,0,0],apex)}
 
 Object.assign(GH,{'jacinthe':hyaPlant,'iris-hollandais':irisPlant,'freesia':frePlant,'hellebore-orientalis':hellPlant,'cyclamen-fleur-coupee':cycPlant});

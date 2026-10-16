@@ -80,8 +80,8 @@ function l54CroPlant(g,t,o){const cw=cwPick(CW_CRO,o),op=Math.max(.05,Math.min(1
 /* snake's head fritillary (Fritillaria meleagris and 'Alba', 'Charon', 'Saturnus', 'Poseidon', 'Aphrodite'): a slender, glaucous stem, three to five narrow linear leaves alternate up it,
    one broad square-shouldered bell (sometimes two) hanging from its top; the tepals chequered in purple and pale mauve, or white with green veins */
 const CW_MEL=[{id:'damier',n:'Damier pourpre (meleagris)',c:'#7a3060',b:'#a0749a',k:'#4e1238'},{id:'bordeaux',n:'Damier bordeaux sombre (Charon)',c:'#5c1f3e',b:'#7a3a5a',k:'#3a0c24'},
-  {id:'rouge-violet',n:'Damier rouge violacé (Saturnus)',c:'#a0306a',b:'#b87094',k:'#6a1240'},{id:'lavande',n:'Damier lavande pâle (Poseidon)',c:'#c7a8d0',b:'#e8dce6',k:'#a87aa4'},
-  {id:'blanc',n:'Blanc veiné de vert (Alba)',c:'#f4f2ee',b:'#f4f2ea',vn:'#9ab47a'},{id:'creme',n:'Crème (Aphrodite)',c:'#efe8d2',b:'#efe8d4',vn:'#c4c890'}];
+  {id:'rouge-violet',n:'Damier rouge violacé (Saturnus)',c:'#a0306a',b:'#b87094',k:'#6a1240'},{id:'lavande',n:'Damier lilas sur fond crème (Poseidon)',c:'#c7a8d0',b:'#e8dce6',k:'#a87aa4'},
+  {id:'blanc',n:'Blanc veiné de vert (Alba)',c:'#f4f2ee',b:'#f4f2ea',vn:'#9ab47a'},{id:'creme',n:'Blanc veiné de vert pâle, grande cloche (Aphrodite)',c:'#efe8d2',b:'#efe8d4',vn:'#c4c890'}];
 /* Michailovsky's fritillary and its kin (F. michailovskyi, F. uva-vulpis, F. acmopetala, F. aurea, F. pallidiflora): a short stem, lanceolate grey-green leaves, an umbel of one to four
    small bells on arching pedicels — purple-brown with a waxy bloom, the tips bright yellow; plum with a thin gold rim; green and brown; golden with faint brown checks; pale primrose */
 const CW_MICH=[{id:'pourpre-jaune',n:'Pourpre brun à bord jaune (michailovskyi)',c:'#6b2a3e',b:'#6e3448',bl:'#9a8a9a',y:'#f2c21e',yv:.7},
@@ -105,11 +105,11 @@ function l54Bell(par,B,O,Lb,cw,a,kd){const F={k:G(par),B,O,parts:[],so:.14,sd:nu
         if(P.y.length&&!bud)l54Paint(g,front,X,P.y,cw.y,.95,.5);if(!front&&!cw.vn)E('path',{d:X.d,fill:l54Grad(X,0,.25,[[0,'#5a7a4a',.5],[1,'#5a7a4a',0]])},g)}}))}
   render3(F,Lb*.8);return F}
 /* the pedicel's last turn and the bell under it (a head resting on the lip leans out over it, its bell hanging plumb: never back toward its base) */
-function l54FritPlant(g,t,o,kd){const mel=kd==='mel',list=mel?CW_MEL:CW_MICH,cw=cwPick(list,o),op=Math.max(.05,Math.min(1,o.op??R(.6,1))),D=(o.cm||(mel?4:2.5))*UPC,k=G(g),B=frameOf(o,.3),up=l54Up(B),ax=B[2],U0=l54U0(ax,up),sc=L54_FSC;
-  const dn=o.rim?[0,-1,0]:V3.sc(up,-1),fax=V3.nz(V3.add(dn,V3.sc(ax,.35))),Ls=D*(mel?3.4:3.6)*(o.rim?.3:1),kr=B.reach?Math.min(1,Math.max(.22,B.reach*.42/Ls)):1,L=Ls*kr,w=Math.max(1.6,D*(mel?.055:.08)),ph=R(0,360),lc=mel?'#6c8a6a':'#71907e';
-  const nL=o.rim?0:mel?Math.round(R(3,5)):Math.round(R(3,5)),mods=[];
+function l54FritPlant(g,t,o,kd){const mel=kd==='mel',list=mel?CW_MEL:CW_MICH,cw=cwPick(list,o),op=Math.max(.05,Math.min(1,o.op??R(.6,1))),D=(o.cm||(mel?4:2.5))*UPC,k=G(g),B=frameOf(o,.3),up=l54Up(B),ax=B[2],U0=l54U0(ax,up),sv=mel&&typeof frmSvgPut==='function'&&typeof SV_ON!=='undefined'&&SV_ON,sc=sv?frmStemCols():L54_FSC;
+  const dn=o.rim?[0,-1,0]:V3.sc(up,-1),hgM=sv?svSm((op-.03)/.12):1,fax=V3.nz(V3.add(V3.sc(V3.nz(V3.add(dn,V3.sc(ax,.35))),hgM),V3.sc(up,1-hgM))),Ls=D*(mel?3.4:3.6)*(o.rim?.3:1),kr=B.reach?Math.min(1,Math.max(.22,B.reach*.42/Ls)):1,L=Ls*kr,w=sv?D*.066:Math.max(1.6,D*(mel?.055:.08)),ph=R(0,360),lc=mel?'#6c8a6a':'#71907e';
+  const nL=o.rim?0:mel?Math.round(R(3,5)):Math.round(R(3,5)),mods=[],pcs=sv&&DET<1.5?12:undefined;
   /* the leaves alternate up the stem: narrow and linear (meleagris) or lanceolate, the lowest longest (michailovskyi) */
-  for(let j=0;j<nL;j++){const u=j/Math.max(1,nL-1);mods.push(['F',{l:L*(mel?.62:.5)/nL,w1:w*(1.12-.08*u)}],['[',{}],['/',{a:ph+j*137.5}],['&',{a:mel?R(18,30):R(26,40)}],['Lv',{j,u}],[']',{}])}
+  for(let j=0;j<nL;j++){const u=j/Math.max(1,nL-1);mods.push(['F',{l:L*(mel?.62:.5)/nL,w1:w*(sv?1.22-.16*u:1.12-.08*u)}],['[',{}],['/',{a:ph+j*137.5}],['&',{a:mel?R(18,30):R(26,40)}],['Lv',{j,u}],[']',{}])}
   if(mel){/* a second flower now and then, from the top leaf's axil */
     if(!o.rim&&rnd()<.28)mods.push(['[',{w:w*.8}],['/',{a:ph+200}],['&',{a:R(24,34)}],['F',{l:D*R(.9,1.3)*kr,w1:w*.75,e:.03}],['F',{l:D*.42,w1:w*.7,aim:V3.nz(V3.add(dn,V3.sc(ax,-.2))),k:.4}],['Kb',{age:R(0,.6)}],[']',{}]);
     mods.push(['F',{l:L*(nL?.38:1),w1:w,e:.02}],['F',{l:D*(o.rim?.8:.55),w1:w*.9,aim:fax,k:o.rim?.24:.36}],['K',{}])}
@@ -117,11 +117,25 @@ function l54FritPlant(g,t,o,kd){const mel=kd==='mel',list=mel?CW_MEL:CW_MICH,cw=
       ages=Array.from({length:n},(_,i)=>i===0?op:Math.max(0,Math.min(1,op*R(.5,1.05)-.12*i)));
     for(let i=0;i<n;i++)mods.push(['[',{w:Math.max(1.2,w*.62)}],['/',{a:ph+i*(360/n)+R(-20,20)}],['&',{a:i===0&&n>1?R(10,22):R(34,56)}],['F',{l:D*R(.45,.62),w1:Math.max(1.15,w*.5),e:-.12}],['F',{l:D*.3,w1:Math.max(1.12,w*.48),aim:dn,k:.45}],[i?'Kb':'K',{age:ages[i]}],[']',{}])}
   const res=lsTurtle(mods,{p:[0,0,0],H:up,U:U0,wig:.03,seg:D*.16,T:[0,1,0],e:.02,w:w*1.15});for(const ch of res.chains)ch.c=sc;const main=res.organs.find(q=>q.t==='K'),apex=mel?main.pos:res.organs.find(q=>q.t==='Bt').pos;
-  const bell=(par,og,pos,a,s)=>{const Hd=V3.nz(V3.add(dn,V3.sc(og.H,.3))),Bf=l41Fr(Hd,V3.nz(V3.add(up,[0,0,.01])),R(-.3,.3));l54Bell(par,Bf,V3.add(pos,V3.sc(Hd,-D*.04)),D*s,cw,a,kd)};
-  lsPlant(k,res,{O:[0,0,0],apex,cols:sc,organ:(og,pos)=>{
-    if(og.t==='K')return{parts:[{z:pos[2]+og.H[2]*D*.4,fn:par=>bell(par,og,pos,mel?op:og.p.age,1)}]};
-    if(og.t==='Kb'){const a=Math.min(og.p.age,op*1.1);return{parts:[{z:pos[2]+og.H[2]*D*.3,fn:par=>bell(par,og,pos,a,.86+.14*a)}]}}
-    if(og.t==='Lv'){const pp=[],u=og.p.u;lsLeafParts(Object.assign({},og,{pos}),mel?D*R(1.9,2.6)*(1-.25*u):D*R(2.6,3.3)*(1-.35*u),mel?.055:.17,lc,pp,{wp:mel?LS_STRAP:LS_LANCE,droop:mel?.32:.22,arch:.06,fold:.3,face:.4});return{ext:1,parts:pp}}
+  /* the SVG head (y-fritillaria.js): the bud stands erect on its straight pedicel, then nods (65 to 68) */
+  /* the SVG bell hangs from a crook (79, 21, 68): the pedicel's end, drawn with the head (the turtle's chain, so the neck and the bouquet's chance,
+     stay the old drawing's), turns on from the end of the chain down to plumb; none in the erect bud (hg 0) nor on the rim. No R drawn */
+  const crook=(og,pos,a,pp)=>{const hg=svSm((a-.03)/.12),T0=V3.nz(og.H);if(!sv||o.rim||hg<.02)return{p:pos,T:T0,hg};const sd0=V3s(ax,V3.sc(up,V3.dot(ax,up))),
+      sd=V3l(sd0)>.05?V3.nz(sd0):V3.nz(V3.cr(up,[0,0,1]));let x2=V3.cr(T0,dn);if(V3l(x2)<.08)x2=V3.cr(T0,sd);x2=V3.nz(x2);
+    /* a round arc (79, 21: about half the bell wide), from the chain's heading over to plumb through the side of the picture (screen x), so that
+       it reads as an arc and not as a hairpin when the head nods toward the eye; the faded head sags a little (its pedicel longer). No R drawn */
+    const fn=svSm((frmLife(o)-.5)/.35),n=8,Lc=D*.95*hg*(1+.12*fn),sx=Math.abs(T0[0])>.05?Math.sign(T0[0]):Math.sign(ax[0]||1),Lx=V3s([sx,0,0],V3.sc(up,up[0]*sx)),
+      Ld=V3l(Lx)>.2?V3.nz(Lx):sd,dE=V3.nz(V3.add(V3.sc(dn,hg),V3.sc(T0,1-hg))),dir=t=>V3.nz(V3.add(V3.add(V3.sc(T0,(1-t)*(1-t)),V3.sc(Ld,2*t*(1-t)*1.5*hg)),V3.sc(dE,t*t))),
+      pts=[og.pos],ws=[w*.86],scC=frmStemCols(.3);let p=og.pos;
+    for(let i=1;i<=n;i++){p=V3.add(p,V3.sc(dir((i-.5)/n),Lc/n));pts.push(p);ws.push(w*(.86-.14*i/n))}
+    lsChainParts([{pts,ws,c:scC,ord:0}],V3s(pos,og.pos),scC,pp,{piece:pcs});return{p:V3.add(pos,V3s(p,og.pos)),T:dir(1),hg}};
+  const bell=(par,og,pos,a,s,c)=>{const hg=sv?svSm((a-.03)/.12):1,Hd=c&&c.hg>=.02?c.T:V3.nz(V3.add(V3.sc(V3.nz(V3.add(dn,V3.sc(og.H,.3))),hg),V3.sc(og.H,1-hg))),Bf=l41Fr(Hd,V3.nz(V3.add(up,[0,0,.01])),R(-.3,.3));
+    if(sv)frmSvgPut(par,Bf,V3.add(pos,V3.sc(Hd,-D*.04)),D*s,cw,a,o);else l54Bell(par,Bf,V3.add(pos,V3.sc(Hd,-D*.04)),D*s,cw,a,kd)};
+  lsPlant(k,res,{O:[0,0,0],apex,cols:sc,piece:pcs,organ:(og,pos)=>{
+    if(og.t==='K'){const pp=[],a=mel?op:og.p.age,c=crook(og,pos,a,pp);return{parts:[...pp,{z:c.p[2]+c.T[2]*D*.4,fn:par=>bell(par,og,c.p,a,1,c)}]}}
+    if(og.t==='Kb'){const a=Math.min(og.p.age,op*1.1),pp=[],c=crook(og,pos,a,pp);return{parts:[...pp,{z:c.p[2]+c.T[2]*D*.3,fn:par=>bell(par,og,c.p,a,.86+.14*a,c)}]}}
+    if(og.t==='Lv'){const pp=[],u=og.p.u,Ll=mel?D*R(1.9,2.6)*(1-.25*u):D*R(2.6,3.3)*(1-.35*u);if(sv)return{ext:1,parts:[{z:pos[2],fn:par=>frmLeafLs(par,og,pos,Ll*1.2,u,up,frmLife(o),w*(1.22-.16*u))}]};
+      lsLeafParts(Object.assign({},og,{pos}),Ll,mel?.055:.17,lc,pp,{wp:mel?LS_STRAP:LS_LANCE,droop:mel?.32:.22,arch:.06,fold:.3,face:.4});return{ext:1,parts:pp}}
     /* the bract under the umbel: a small leaf like the others */
     if(og.t==='Bt'){const pp=[];lsLeafParts(Object.assign({},og,{pos,H:V3.nz(V3.add(og.H,V3.sc(og.L,1.3)))}),D*R(.8,1.1),.16,lc,pp,{wp:LS_LANCE,droop:.4,arch:.05,fold:.3,face:.4});return{parts:pp}}
     return null}});

@@ -41,7 +41,7 @@ async function qaSvg(svg,c,vid,opt={}){const vb=svg.viewBox.baseVal,W=opt.W||480
   if(v.kind!=='hand'&&v.kind!=='wrap'){const V=await raster(svgXml(svg,W,H,{only:['vase']}),W,H),top=FL-vMh(v),mw=vMouth(v),ry=vRy(mw),mcx=VX+vMx(v);
     /* stems entering the mouth may pass behind what rises around it (the lobes of the heart): the highest silhouette over the mouth */
     let up=top;for(let i=-10;i<=10;i++)up=Math.min(up,vSilTop(v,mcx+mw*i/10));
-    for(const[i,b]of B){if(i<0||b[3]<top-1)continue;const o=(c.list||[])[i];if(!o)continue;const mm=await raster(svgXml(svg,W,H,{only:['mass','back'],oi:i,noShadow:1,noStem:1}),W,H);let n=0,px=[];
+    for(const[i,b]of B){if(i<0||b[3]<top-1)continue;const o=(c.list||[])[i];if(!o)continue;const mm=await raster(svgXml(svg,W,H,{only:['mass','back','deep'],oi:i,noShadow:1,noStem:1}),W,H);let n=0,px=[];
       for(let p=0;p<W*H;p++){if(mm[p*4+3]<30||V[p*4+3]<12)continue;const x=p%W,y=(p-x)/W,[X,Y]=toS(x,y);
         if((o.role==='line'||o.role==='foliage'||o.kind==='self')&&(((X-mcx)/mw)**2+((Y-top)/(ry*1.15))**2<=1.1||Math.abs(X-mcx)<mw*1.1&&Y>up-2&&Y<top+ry*1.2))continue;n++;if(px.length<400)px.push(p)}
       if(n>2){const p0=px[Math.floor(px.length/2)],[ux,uy]=toS(p0%W,(p0-p0%W)/W);res.under.push(Object.assign(desc(c,i),{px:n,pix:px,at:[Math.round(ux),Math.round(uy)]}))}}}

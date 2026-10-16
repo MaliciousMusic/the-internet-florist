@@ -52,7 +52,8 @@ function l67Pan(par,B,O,Lp,cw,op,cache){const k=G(par),sd=((O[0]*.13+O[1]*.29)%6
   if(eyes)E('path',{d:eyes,fill:shd(cw.c,-.45),opacity:.7},k);return k}
 function l67Lilac(g,t,o){const cw=o.cw||cwNear(L67_LIL,o.col)||L67_LIL[0],op=Math.max(.05,Math.min(1,o.op??1)),D=(o.cm||18)*UPC,k=G(g),sc=['#3a3328','#5e5444','#857a64','#aea48a'],cache={},lc='#4a7034';
   const B=frameOf(o,.35,true),up=B.upV?V3.nz([B.upV[0],B.upV[1],B.upV[2]||0]):[0,1,0],face=B[2];let U0=V3s(face,V3.sc(up,V3.dot(face,up)));if(V3l(U0)<1e-3)U0=[0,0,1];
-  const pan=(par,Bf,pos,Lp,a)=>l67Pan(par,Bf,pos,Lp,cw,a,cache);
+  /* native SVG (y-syringa.js): the panicle by the kit y3-grappe.js, the old panicle's draws consumed as before */
+  const SVL=typeof lilPanSv==='function'&&typeof SV_ON!=='undefined'&&SV_ON&&cw&&cw.id,pan=(par,Bf,pos,Lp,a)=>SVL?lilPanSv(par,Bf,pos,Lp,cw,a,o):l67Pan(par,Bf,pos,Lp,cw,a,cache);
   if(o.rim){const r=lsHeadS(k,o,{D:D*.5,w:D*.03,cols:sc,op,rr:.35,nodes:0,lp:.3,flower:(par,B2,O,D2,op2)=>pan(par,l67Fr(B2[2],up,0),O,D*.85,op2)});open(k,t,1000,6,.3);return r}
   const kr=B.reach?Math.min(1,Math.max(.15,B.reach*.4/(D*1.1))):1,w=D*.035,ph0=R(0,360),twin=rnd()<.55;
   /* the shoot: two leafy nodes (decussate pairs), then the leading panicle on its short peduncle; often its twin from the top axil, a little smaller and younger */
@@ -62,6 +63,7 @@ function l67Lilac(g,t,o){const cw=o.cw||cwNear(L67_LIL,o.col)||L67_LIL[0],op=Mat
       return out}};
   const res=lsTurtle(lsDerive([['S',{}]],rules,3),{p:[0,0,0],H:up,U:U0,wig:.035,seg:D*.07,T:[0,1,0],e:.02,w:w*1.3});for(const ch of res.chains)ch.c=sc;
   const main=res.organs.find(q=>q.t==='K'),apex=main.pos;
+  if(SVL&&typeof lilSvPlant==='function')return lilSvPlant(k,t,o,{res,apex,cw,op,D,up,face,pan,sheet:!B.reach&&!o.rim});
   lsPlant(k,res,{O:[0,0,0],apex,cols:sc,organ:(og,pos)=>{
     if(og.t==='K'){const Bf=l67Fr(V3.add(og.H,V3.sc(face,.12)),face,R(-.3,.3)),c=V3.add(pos,V3.sc(og.H,-D*.02));return{parts:[{z:c[2],fn:par=>pan(par,Bf,c,D,op)}]}}
     if(og.t==='Kb'){const a=og.p.age,Bf=l67Fr(V3.add(og.H,V3.sc(face,.2)),face,R(-.3,.3)),c=V3.add(pos,V3.sc(og.H,-D*.02));return{parts:[{z:c[2]-1e-3,fn:par=>pan(par,Bf,c,D*R(.62,.78),a)}]}}

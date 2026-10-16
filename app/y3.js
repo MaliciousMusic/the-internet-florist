@@ -14,7 +14,8 @@ const SVB_DEF={
   wA0:[.22,.25],wA1:[.5,.35],sag:[.12,.25,.25],limp:[.95,.15],wav:[.7,1.3,2.6],curl:[.22,.4],tw:[.6,.35],fanL:.1,fanW:.36,shedW:.42,
   edge:{light:'#e2cfa4',red:'#5e0a24',other:'#f2ecf2',a:[.18,.42]},trans:[.26,.2],rim:[.006,.012,.22,.25],
   /* the outline: a claw (its width, the rest) to the broadest point vb, then the tip (superellipse t.tip, notch); cupArc: the cupping across is a true arc
-     (a tepal wider than its whorl's radius still follows it), lap: each piece turned a little on its midrib, so neighbours lie one over the other */
+     (a tepal wider than its whorl's radius still follows it), lap: each piece turned a little on its midrib, so neighbours lie one over the other;
+     marg: a hook, none by default: P.marg(u,t,g) cuts the tip line's length at u (a lacerated or fringed margin, y3-marge.js) */
   vb:.64,claw:[.24,.76],clawK:1.15,
   /* the sheet: cupping across, the decline's revolute margins and crinkle */
   cup:.33,cupFan:.65,rev:[.35,.3],crk:[.05,.11],
@@ -77,7 +78,7 @@ function svBloom(par,B,O,D,S,cwx,op,seed,wl){const P=S._m||(S._m=Object.assign({
       if(j)p=V3.add(p,V3.sc(d,L/ns));sp.push(p);dv.push(d)}
     const at=(A,v)=>{const x=Math.max(0,Math.min(1,v))*ns,j=Math.min(ns-1,Math.floor(x)),f2=x-j;return V3.add(V3.sc(A[j],1-f2),V3.sc(A[j+1],f2))};
     /* outline: a narrow claw to the broadest point, then the tip, round to squarish (each line across is a copy of the tip's curve, so it never pinches) */
-    const vb=P.vb,half=l=>(l<vb?P.claw[0]+P.claw[1]*Math.pow(Math.sin(Math.min(1,l/vb)*Math.PI/2),P.clawK):1)*Wd/2,Lu=u=>vb+(1-vb)*Math.pow(Math.max(0,1-Math.pow(Math.abs(u),t.tip)),1/t.tip)-t.notch*Math.exp(-u*u/.012),
+    const vb=P.vb,half=l=>(l<vb?P.claw[0]+P.claw[1]*Math.pow(Math.sin(Math.min(1,l/vb)*Math.PI/2),P.clawK):1)*Wd/2,Lu=u=>vb+(1-vb)*Math.pow(Math.max(0,1-Math.pow(Math.abs(u),t.tip)),1/t.tip)-t.notch*Math.exp(-u*u/.012)-(P.marg?P.marg(u,t,g):0),
       cupK=P.cup*g.cup*t.cup*P.cupW[w]*(1-P.cupFan*fan);
     const Sf=(u,v)=>{const vv=v*Lu(u),c=at(sp,vv),d=V3.nz(at(dv,vv)),nrm=V3.cr(d,T),ca=Math.cos(tw*vv),sa=Math.sin(tw*vv),A=V3.add(V3.sc(T,ca),V3.sc(nrm,sa)),
         hw=half(vv)*(1+t.asym*Math.sign(u)),cf=cupK*(.12+.88*svSm(vv/.55)),ph=2*cf*u,arc=P.cupArc&&Math.abs(ph)>1e-4,tx=arc?hw*Math.sin(ph)/(2*cf):u*hw,lift=(arc?hw*(1-Math.cos(ph))/(2*cf):cf*u*u*hw)+P.lap*u*hw*svSm(vv/.3)+wav*hw*Math.pow(Math.abs(u),1.5)*Math.sin(t.wk*Math.PI*vv+t.wph+u*.8)*svSm(vv/.35)-curl*hw*.45*Math.pow(Math.abs(u),2)*svSm((vv-.55)/.45)-(P.rev[0]*dec+P.rev[1]*fan)*hw*Math.pow(Math.abs(u),4)+(P.crk[0]*dec+P.crk[1]*fan)*hw*Math.sin(u*Math.PI*(2.2+t.wk*.4)+t.wph*2+vv*5)*svSm(vv/.25);
@@ -144,7 +145,9 @@ function svHeart6(o0){const o=Object.assign({},SVH6_DEF,o0);
    Long, entire, parallel-veined; its foot a sheath clasping the stem, then a blade folded in a gutter along its midrib, the margins waved, the tip
    narrowing into a little hood; glaucous (bloom: a waxy veil silvers its lit side, the gloss low) or glossy. It leaves the stem at an angle (lean),
    then bends under its weight (droop), a little twisted. Wilting (wl), it goes limp and hangs, its gutter opens, the margins curl, it yellows from the
-   tip. pos: its foot on the stem's axis; H the stem, upward; Out the way it leaves the stem (view space, unit vectors). Widths x len. */
+   tip. pos: its foot on the stem's axis; H the stem, upward; Out the way it leaves the stem (view space, unit vectors). Widths x len.
+   Optional (not in SVL_DEF, off by default): shade / bshade (the shadow tones of the upper / lower face), veinLo (the parallel veins at DET 1 too),
+   dry 0..1 and dryC (a tip drying from its end: freesia). */
 const SVL_DEF={len:100,w:.2,wp:[[0,.5],[.1,.66],[.32,1],[.62,.82],[.88,.4],[1,0]],sheath:.1,sr:2,lean:.4,droop:.45,tw:.3,gut:.5,wav:.05,wavN:3,hood:.25,
   up:'#587f68',low:'#7a9a84',base:'#a8c09c',bloom:.6,nu:7,nv:16,wl:0,sd:1};
 function svStrapLeaf(par,pos,H,Out,o0){const o=Object.assign({},SVL_DEF,o0),r=svRng(o.sd),wl=o.wl||0,len=o.len,dn=[0,-1,0],limp=svSm((wl-.15)/.6),W=len*o.w,
@@ -156,7 +159,7 @@ function svStrapLeaf(par,pos,H,Out,o0){const o=Object.assign({},SVL_DEF,o0),r=sv
       k=dr*Math.pow(Math.max(0,(v-o.sheath)/(1-o.sheath)),1.6),d=V3.nz(V3.add(V3.sc(d0,1-k),V3.sc(dn,k)));if(j)p=V3.add(p,V3.sc(d,len/ns));sp.push(p);dv.push(d)}
   const at=(A,v)=>{const x=Math.max(0,Math.min(1,v))*ns,j=Math.min(ns-1,Math.floor(x)),f2=x-j;return V3.add(V3.sc(A[j],1-f2),V3.sc(A[j+1],f2))},
     gut=o.gut*(1-.55*limp),wav=o.wav*(1+.6*limp),sr=o.sr*1.08;
-  const S=(u,v)=>{const c=at(sp,v),d=V3.nz(at(dv,v)),s0=V3.nz(V3s(side0,V3.sc(d,V3.dot(side0,d)))),n0=V3.cr(s0,d),a=tw*v,s=V3.add(V3.sc(s0,Math.cos(a)),V3.sc(n0,Math.sin(a))),n=V3.cr(s,d),
+  const S=(u,v)=>{const c=at(sp,v),d=V3.nz(at(dv,v)),s0=V3.nz(V3s(side0,V3.sc(d,V3.dot(side0,d)))),n0=V3.cr(s0,d),a=tw*v+(o.roll?o.roll*svSm((v-o.sheath)/.3):0),s=V3.add(V3.sc(s0,Math.cos(a)),V3.sc(n0,Math.sin(a))),n=V3.cr(s,d),
       hw=W/2*prof(v),lift=gut*hw*u*u*(1-.5*svSm((v-.6)/.4))+wav*W*Math.pow(Math.abs(u),3)*Math.sin(Math.PI*o.wavN*v+ph+u*.6)*svSm((v-o.sheath)/.2)
         -.35*limp*hw*Math.pow(Math.abs(u),4)+o.hood*hw*u*u*svSm((v-.82)/.18),bl=V3.add(V3.add(c,V3.sc(s,u*hw)),V3.sc(n,lift));
     if(v>=o.sheath*1.8)return bl;
@@ -165,9 +168,13 @@ function svStrapLeaf(par,pos,H,Out,o0){const o=Object.assign({},SVL_DEF,o0),r=sv
     return V3.add(V3.sc(q,1-t),V3.sc(bl,t))};
   const tipY=mix(o.up,'#b8a85a',.5*limp),bloomL=mix('#d4e2d8',o.up,.25),
     m={stops:[[0,o.base],[o.sheath*1.2,mix(o.base,o.up,.55)],[.35,o.up],[.85,o.up],[1,tipY]],bstops:[[0,o.base],[o.sheath*1.3,mix(o.base,o.low,.6)],[.4,o.low],[1,mix(o.low,'#b8a85a',.4*limp)]],
-      shade:'#1a3224',lite:mix(bloomL,'#ffffff',.2*o.bloom),bshade:'#2c4632',blite:mix(o.low,'#e8f0e8',.5),rim:mix(o.up,'#d8e4d4',.45),cast:'#0e1c12',
+      shade:o.shade||'#1a3224',lite:mix(bloomL,'#ffffff',.2*o.bloom),bshade:o.bshade||'#2c4632',blite:mix(o.low,'#e8f0e8',.5),rim:mix(o.up,'#d8e4d4',.45),cast:'#0e1c12',
       wrap:.3,amb:.3,dif:.68,sky:.2,trans:.22,ks:.05+.1*(1-o.bloom),gloss:10+14*(1-o.bloom),dark:[.88,.72,.56],da:.22,lit:[1.06,1.14],la:.16+.22*o.bloom,darkLo:[.76],daLo:.3,litLo:[1.1],laLo:.25,rw:.006,ro:.3,soft:.05,
       veins:(sh,front)=>{const L=[];for(const u of[-.78,-.56,-.34,-.14,.14,.34,.56,.78])L.push([[u*.6,.02],[u,.25],[u,.6],[u*.9,.9],[u*.3,.99]]);
-        return[...(hi?[[L,hi?.0035:.005,front?mix(o.up,'#2a4a34',.35):mix(o.low,'#e0eadc',.4),front?.32:.3]]:[]),[[[[0,.02],[0,.4],[0,.8],[0,.98]]],.008,front?mix(o.up,'#24402c',.5):mix(o.low,'#f0f4ea',.5),front?.45:.5]]}};
-  if(!hi)Object.assign(m,{dark:[.8,.6],darkLo:[.8,.6],lit:[1.1],litLo:[1.1],rw:0});
+        return[...(hi||o.veinLo?[[L,hi?.0035:.005,front?mix(o.up,'#2a4a34',.35):mix(o.low,'#e0eadc',.4),front?.32:.3]]:[]),[[[[0,.02],[0,.4],[0,.8],[0,.98]]],.008,front?mix(o.up,'#24402c',.5):mix(o.low,'#f0f4ea',.5),front?.45:.5]]}};
+  if(!hi)Object.assign(m,{dark:[.8,.6],darkLo:[.8,.6],lit:[1.1],litLo:[1.1],rw:0},o.mLo);/* o.mLo (optional): the material's own changes below DET 1.5 (fewer washes) */
+  /* o.dry (0..1, optional): the tip dries from its end, straw then tan (o.dryC), the colour running down the blade */
+  if(o.dry>0){const z=Math.min(1,o.dry),dC=o.dryC||'#a68c5c',t0=.86-.4*z,t1=.95-.12*z;
+    m.stops=m.stops.filter(s=>s[0]<t0).concat([[t0,o.up],[t1,mix(tipY,dC,.55*z)],[1,mix(tipY,dC,z)]]);
+    m.bstops=m.bstops.filter(s=>s[0]<t0).concat([[t0,o.low],[t1,mix(o.low,dC,.5*z)],[1,mix(o.low,dC,z)]])}
   return svDraw(par,[svSheet(I3,[0,0,0],S,{nu:hi?o.nu+2:o.nu-2,nv:hi?o.nv+4:o.nv-4,mat:m})],{D:len*.55,sd:.02,sb:.02,so:.3,shadow:hi})}
