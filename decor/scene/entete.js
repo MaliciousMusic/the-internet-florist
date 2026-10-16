@@ -1,8 +1,8 @@
-// entete.js: the header and the footer shared by the shop's pages (index.html, apropos.html).
+// entete.js: the header and the footer shared by the shop's pages (index.html, apropos.html, bureau.html).
 //
 // - The header is a dock of round frosted-glass icons, drawn here in SVG: a vase with flowers (the bouquets of the day), a
-//   bud vase (the soliflores), a vase with a seal (the bouquets already sold), a sail (our collection on OpenSea) and an i
-//   (the About page). On the shop page the first three open and close their shelf under the header (one at a time; the
+//   bud vase (the soliflores), a vase with a seal (the bouquets already sold), a screen with a vase (bureau.html: your bouquet
+//   on your computer, the video and the app to download), a sail (our collection on OpenSea) and an i (the About page). On the shop page the first three open and close their shelf under the header (one at a time; the
 //   same icon again folds it): entete.js only keeps the icons' state and tells the page with the event "entete:rayon"
 //   (detail: "bouquets" | "soliflores" | "vendus" | null). On any other page they lead back to the shop, shelf open.
 // - The footer is a small pill at the bottom edge that unfolds the legal notice (a draft: the publisher's identity is
@@ -35,6 +35,10 @@
     opensea: svg(
       '<circle cx="12" cy="12" r="9.4"/><path d="M11.2 6.6 7.7 13.3h3.5z"/><path d="M12.6 5.6v7.7h4.1c-.4-3.2-1.8-6-4.1-7.7z"/>' +
         '<path d="M6.6 15.1h10.8c-.6 1.6-1.9 2.5-3.6 2.5h-3.6c-1.7 0-3-.9-3.6-2.5z"/>',
+    ),
+    bureau: svg(
+      '<rect x="2.6" y="3.4" width="18.8" height="13" rx="1.9"/><path d="M8.6 20.6h6.8M12 16.4v4.2"/>' +
+        '<path d="M10.5 10.6h3l-.45 3.1h-2.1z"/><path d="M12 10.6V8.3"/><circle cx="12" cy="7.2" r="1.25"/><path d="M12 9.4c.9-.1 1.6-.6 1.9-1.4-.9 0-1.6.5-1.9 1.4z"/>',
     ),
     apropos: svg('<circle cx="12" cy="12" r="9.4"/><path d="M12 10.8v5.8"/><circle cx="12" cy="7.5" r=".9" fill="currentColor" stroke="none"/>'),
     plier: svg('<path d="M6 15l6-6 6 6"/>'),
@@ -73,6 +77,15 @@
     el.innerHTML = ICONS[name];
     dock.append(el);
   }
+  // your bouquet on your computer: the how-to video and the desktop app (bureau.html)
+  const desk = document.createElement('a');
+  desk.className = 'dock-bouton';
+  desk.href = 'bureau.html';
+  desk.title = 'Sur mon bureau';
+  desk.setAttribute('aria-label', 'Votre bouquet sur votre bureau');
+  desk.innerHTML = ICONS.bureau;
+  if (/bureau\.html$/.test(location.pathname)) desk.setAttribute('aria-current', 'page');
+  dock.append(desk);
   const sep = document.createElement('span');
   sep.className = 'dock-sep';
   sep.setAttribute('aria-hidden', 'true');

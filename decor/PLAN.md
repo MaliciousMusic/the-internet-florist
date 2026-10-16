@@ -240,3 +240,8 @@ l'identité de son éditeur dans ses mentions légales.
   le plein écran (référence du porteur) et montre seulement moins de premier plan. Le « dixième de ciel en plus » de la
   veille est retiré (sa capture plein écran n'en avait pas : feuille de style en cache) ; il reste réglable par
   `--ciel-en-plus` dans scene.css.
+- 2026-10-16 (porteur) : une icône « Sur mon bureau » dans le dock (un écran avec un vase) ouvre `scene/bureau.html`,
+  sur le fond fleuri immobile comme « À propos » : la vidéo tuto du bureau (`scene/videos/fond-ecran.mp4`, faite dans
+  belai-studio, lot T10, version qui sera mise à jour) et le bouton « Télécharger Belai Bureau »
+  (`scene/telechargements/`, copie de `bureau/livrables`, 3 Mo, Windows 10 et 11). La même vidéo sert au bouton
+  « En fond d'écran » de la boutique.

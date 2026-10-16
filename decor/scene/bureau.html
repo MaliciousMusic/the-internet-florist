@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sur mon bureau</title>
+<link rel="stylesheet" href="scene.css">
+<link rel="stylesheet" href="entete.css">
+<style>
+  /* The desktop page: the shop's still decor behind (as the About page), one frosted-glass panel that scrolls between
+     the header and the footer's pill, with the how-to video and the app to download. */
+  .bureau {
+    position: fixed;
+    top: calc(var(--entete-bas) + 12px);
+    bottom: calc(env(safe-area-inset-bottom) + 40px);
+    left: 50%;
+    z-index: 40;
+    width: min(calc(100vw - 24px), 620px);
+    box-sizing: border-box;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: 22px clamp(18px, 5vw, 34px) 26px;
+    border: 1px solid var(--verre-bord);
+    border-radius: 20px;
+    background: linear-gradient(to bottom, rgb(255 255 255 / 0.22), rgb(16 48 86 / 0.16)), rgb(60 98 140 / 0.28);
+    -webkit-backdrop-filter: blur(20px) saturate(1.1);
+    backdrop-filter: blur(20px) saturate(1.1);
+    color: #fff;
+    font: 400 15px/1.6 var(--texte);
+    transform: translateX(-50%);
+  }
+
+  /* computer: the dock is at the bottom */
+  @media (min-width: 900px) and (min-aspect-ratio: 4/3) {
+    .bureau {
+      top: 24px;
+      bottom: var(--dessus-dock);
+      width: min(calc(100vw - 48px), 880px);
+    }
+  }
+
+  .bureau h1 {
+    margin: 0 0 4px;
+    font: 600 24px/1.2 var(--texte);
+  }
+
+  .bureau .chapeau {
+    margin: 0 0 18px;
+    color: rgb(255 255 255 / 0.9);
+    font-size: 16px;
+  }
+
+  .bureau h2 {
+    margin: 0 0 6px;
+    font: 600 16px/1.3 var(--texte);
+  }
+
+  .bureau p {
+    margin: 0;
+  }
+
+  /* the video beside the steps on a computer, above them on a phone */
+  .bureau-corps {
+    display: grid;
+    gap: 22px;
+    align-items: start;
+  }
+
+  @media (min-width: 760px) {
+    .bureau-corps {
+      grid-template-columns: minmax(0, 300px) 1fr;
+    }
+  }
+
+  .bureau-video {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    max-height: 64vh;
+    aspect-ratio: 9 / 16;
+    margin: 0 auto;
+    border-radius: 16px;
+    background: rgb(16 48 86 / 0.35);
+    box-shadow: 0 10px 30px rgb(10 30 60 / 0.35);
+    object-fit: contain;
+  }
+
+  .bureau ol {
+    margin: 0 0 18px;
+    padding-left: 22px;
+  }
+
+  .bureau li {
+    margin: 0 0 6px;
+  }
+
+  /* the download: one big glass button with its note */
+  .telecharger {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 13px 22px 13px 16px;
+    border: 1px solid rgb(255 255 255 / 0.7);
+    border-radius: 999px;
+    background: linear-gradient(to bottom, rgb(255 255 255 / 0.35), rgb(255 255 255 / 0.12)), #3c8c5a;
+    box-shadow: 0 6px 18px rgb(10 40 25 / 0.35);
+    color: #fff;
+    font: 600 17px/1.2 var(--texte);
+    text-decoration: none;
+    transition: transform 0.15s;
+  }
+
+  .telecharger:hover {
+    transform: translateY(-1px);
+  }
+
+  .telecharger:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 3px;
+  }
+
+  .telecharger svg {
+    flex: none;
+  }
+
+  .telecharger small {
+    display: block;
+    font-weight: 400;
+    font-size: 13px;
+    opacity: 0.9;
+  }
+
+  .note {
+    margin-top: 12px !important;
+    color: rgb(255 255 255 / 0.85);
+    font-size: 13.5px;
+  }
+
+  .bureau a:not(.telecharger) {
+    color: #fff;
+    font-weight: 600;
+    text-underline-offset: 3px;
+  }
+
+  .bureau .retour {
+    display: inline-block;
+    margin-top: 22px;
+  }
+</style>
+</head>
+<body>
+<!--
+  Your bouquet on your computer: the how-to video (videos/fond-ecran.mp4, made in belai-studio, lot T10) and Belai Bureau
+  to download (telechargements/, a copy of bureau/livrables). The header and the footer come from entete.js; the decor is
+  the shop's still layers (decor/out/), as on the About page.
+-->
+<main class="scene" id="scene" aria-hidden="true">
+  <div class="monde">
+    <img class="plan" style="--z:0" src="../out/ciel.svg" alt="" decoding="async">
+    <img class="plan" style="--z:3" src="../out/horizon.svg" alt="" decoding="async">
+    <img class="plan" style="--z:4" src="../out/sol-loin.svg" alt="" decoding="async">
+    <img class="plan" style="--z:5" src="../out/sol-milieu.svg" alt="" decoding="async">
+    <img class="plan" style="--z:7" src="../out/sol-pres.svg" alt="" decoding="async">
+  </div>
+</main>
+
+<article class="bureau">
+  <h1>Votre bouquet sur votre bureau</h1>
+  <p class="chapeau">Posez le bouquet que vous avez collectionné sur le bureau de votre ordinateur, avec Belai Bureau.</p>
+
+  <div class="bureau-corps">
+    <video class="bureau-video" src="videos/fond-ecran.mp4" poster="videos/fond-ecran.jpg" controls autoplay muted loop playsinline
+      preload="metadata" aria-label="Vidéo : poser son bouquet sur le bureau, étape par étape"></video>
+
+    <div>
+      <h2>En cinq étapes</h2>
+      <ol>
+        <li>Téléchargez et installez Belai Bureau.</li>
+        <li>Reliez votre portefeuille : l’icône près de l’horloge, puis « Relier mon portefeuille ».</li>
+        <li>Choisissez votre bouquet et mettez-le sur votre écran : une signature, gratuite, sans transaction.</li>
+        <li>Placez-le, donnez-lui sa taille, passez-le devant ou derrière vos fenêtres, puis fixez-le avec ✓.</li>
+        <li>Pour le déplacer à nouveau, gardez le clic enfoncé six secondes sur le bouquet.</li>
+      </ol>
+
+      <a class="telecharger" href="telechargements/Belai-Bureau-0.1.0-x64-setup.exe" download>
+        <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7.5 10.5 12 15l4.5-4.5M5 19.5h14"/></svg>
+        <span>Télécharger Belai Bureau<small>Windows 10 et 11 · 3 Mo · gratuit</small></span>
+      </a>
+      <p class="note">Seul le portefeuille qui possède un bouquet peut l’afficher. Au premier lancement, Windows peut
+        prévenir qu’il ne connaît pas encore l’application : « Informations complémentaires », puis « Exécuter quand
+        même ».</p>
+    </div>
+  </div>
+
+  <a class="retour" href="index.html">← Retour aux bouquets</a>
+</article>
+
+<script src="entete.js" defer></script>
+</body>
+</html>
