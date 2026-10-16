@@ -1,5 +1,5 @@
 {
- "kst": "0.6",
+ "kst": ".85",
  "hcm": "30",
  "fiche": {
   "id": "narcisses-bronze",
@@ -18,8 +18,28 @@
   "why": "Un fuseau de bronze brun où deux narcisses en haut-relief fleurissent au-dessus de leurs feuilles ciselées."
  },
  "userough": "0",
- "rough": "0.55",
- "ks": "0.12",
- "envk": "0.15",
- "lift": "0.25"
+ "rough": ".46",
+ "ks": ".34",
+ "envk": ".2",
+ "lift": "0.1",
+ "seam": "0",
+ "amb": ".12",
+ "diff": ".62",
+ "bsoft": "16",
+ "env": "#5c5142",
+ "tk": "1",
+ "shcol": "#120d06",
+ "contrast": "1.1",
+ "base": "#534a39",
+ "patina": ".7",
+ "aok": "1",
+ "hlcol": "#e4c991",
+ "stone": "1",
+ "stonegrey": "0",
+ "stoneop": ".22",
+ "stonemop": ".12",
+ "stonef": "1.6",
+ "stonepits": ".12",
+ "stonefl": ".08",
+ "pk": "1.3"
 }

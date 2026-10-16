@@ -100,6 +100,24 @@ def find_mouth(hm, pos, msk):
     cs = measure.find_contours(reg.astype(float), .5)
     c = max(cs, key=len)
     ij = np.clip(np.round(c).astype(int), 0, np.array(reg.shape) - 1)
+    if F('ridge', 0) > 0:
+        # a thin-walled bowl whose crown dips low somewhere (a jardiniere): the hollow below the spill level is far narrower
+        # than the opening. The opening reaches the crest of the walls: along each ray from the hollow's centre, the highest
+        # point before the model ends
+        ci, cj = np.array(np.nonzero(reg)).mean(1)
+        ij = []
+        for a in np.linspace(0, 2 * math.pi, 240, endpoint=False):
+            best_, hb = None, -1.0
+            for r_ in np.arange(1, max(reg.shape), .5):
+                i, j = int(round(ci + r_ * math.sin(a))), int(round(cj + r_ * math.cos(a)))
+                if not (0 <= i < reg.shape[0] and 0 <= j < reg.shape[1]) or not msk[i, j]:
+                    break
+                if hm[i, j] > hb:
+                    best_, hb = (i, j), hm[i, j]
+            if best_:
+                ij.append(best_)
+        ij = np.array(ij)
+        print('  ridge: %d points, crest heights p10 %.3f p50 %.3f p90 %.3f' % ((len(ij),) + tuple(np.percentile(hm[ij[:, 0], ij[:, 1]], [10, 50, 90]))))
     P = np.array([[pos[i, j, 0], rim, pos[i, j, 2]] for i, j in ij[::max(1, len(ij) // 200)] if msk[i, j]], float)
     return dict(rim=rim, edge=P, area=int(best.area), depth=float(best.intensity_max))
 
@@ -145,7 +163,7 @@ def main():
         mx = (xs.min() + xs.max()) / 2; my = (ys_.min() + ys_.max()) / 2
         mo = (xs.max() - xs.min()) / 2 / k; mry = (ys_.max() - ys_.min()) / 2 / k
         X0, Y0 = mapf(mx, my)
-        mouth = dict(mx=round(X0 - svgkit.VX, 1), mh=round(svgkit.FL - Y0, 1), mo=round(mo * .92, 1), mry=round(max(1.5, mry), 1))
+        mouth = dict(mx=round(X0 - svgkit.VX, 1), mh=round(svgkit.FL - Y0, 1), mo=round(mo * F('mok', .92), 1), mry=round(max(1.5, mry), 1))
         d_a = float(dc[0])
         log.append('mouth: rim %.3f, hollow %.3f deep, r %.3f; shop mx %.1f mh %.1f mo %.1f mry %.1f (hint %s %s %s)' % (
             mo_['rim'], mo_['depth'], r3, mouth['mx'], mouth['mh'], mouth['mo'], mouth['mry'], OPT.get('mx_u'), OPT.get('mh_u'), OPT.get('mo_u')))

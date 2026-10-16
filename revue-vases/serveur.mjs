@@ -133,6 +133,14 @@ const server = http.createServer(async (req, res) => {
       if ('valid' in o) { f.valid = o.valid ? { version: f.version, date: new Date().toISOString() } : null; f.validSent = false; }
       writeState(s); return json(res, 200, { sheet: f, status: statusOf(f) });
     }
+    // a working view saved for Claude (never part of the review state): _apercus/<name>.png
+    if (p === '/api/apercu' && req.method === 'POST') {
+      const { name, png } = await readBody(req);
+      if (!/^[\w-]+$/.test(name || '') || typeof png !== 'string' || !png.startsWith('data:image/png;base64,')) return json(res, 400, { error: 'name/png' });
+      const dir = path.join(HERE, '_apercus'); fs.mkdirSync(dir, { recursive: true });
+      fs.writeFileSync(path.join(dir, name + '.png'), Buffer.from(png.slice(22), 'base64'));
+      return json(res, 200, { file: rel(path.join(dir, name + '.png')) });
+    }
     if (p === '/api/envoyer' && req.method === 'POST') {
       const r = send(await readBody(req));
       return json(res, 200, r || { empty: true });

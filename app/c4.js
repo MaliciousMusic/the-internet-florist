@@ -99,7 +99,7 @@ function stiffOf(it){const r=it.p.rec||{},ty=(r.p||{}).type,gh=GHI[it.p.sid];if(
 /* a stem leaving the mouth upright then bending to its tip at angle th (degrees from vertical) and chord len; arching stems end leaning further out */
 function spineFor(th,len,stiff,droop=1){const a=th*D,ex=Math.sin(a)*len,ey=-Math.cos(a)*len,sg=Math.sign(th)||(rnd()<.5?-1:1),
     ea=(typeof stiff==='number'?th*stiff:stiff?th*1.06:th+sg*Math.min(32,6+Math.abs(th)*.38)*droop)*D,k1=len*.36,k2=len*.34;
-  return[[0,0],[Math.sin(a)*k1*.22,-k1],[ex-Math.sin(ea)*k2,ey+Math.cos(ea)*k2],[ex,ey]]}
+  return leanP([[0,0],[Math.sin(a)*k1*.22,-k1],[ex-Math.sin(ea)*k2,ey+Math.cos(ea)*k2],[ex,ey]])}
 /* where a stem enters the mouth: spread across the opening in the order of the stems' angles, so stems never cross at the neck */
 const baseAt=(BP,mw,th)=>[BP[0]+Math.max(-1,Math.min(1,th/65))*mw*.5+R(-2.5,2.5),BP[1]-3];
 /* clusters carried on their own stem (sprays, berries, leafy stems, smoke bush) are drawn along a bent stem from the mouth */
@@ -150,8 +150,19 @@ function footSet(h,X,Y,B){h.X=X;h.Y=Y;h.c=footCircles(h.sid,X,Y,h.r,B,h.dir);let
 const SET_K=.82,QS=typeof location!=='undefined'?location.search:'',SETTLE_OFF=/[?&]noset=1/.test(QS),NOREACH=/[?&]noreach=1/.test(QS),NOSTEMZ=/[?&]nostemz=1/.test(QS),NOTALL=/[?&]notall=1/.test(QS);
 /* to compare in the lab: ?noset=1 the bouquet before settling, ?noreach=1 without the stems' reach, ?nostemz=1 without the stems' depth rule,
    ?notall=1 without the products made for height (tallL, tallH) */
+/* a vessel whose inside shows (glass, a slit, a spathe's throat): a stem rests on the bottom and leans on the lip, so it leaves the
+   mouth no more tilted than the cavity lets it (the mouth's half width plus the bottom's over the depth); it bends above the lip,
+   never at it, and goes on straight inside. LEANMAX holds that angle for the vessel being composed (null: stems pivot at the lip) */
+let LEANMAX=null;
+function vLean(vid,BP){const v=VZ[vid]||{},sb=v.svgb&&typeof SVGB!=='undefined'?SVGB[v.svgb]:null,see=v.mat==='glass'||!!(sb&&sb.inner&&sb.fr);
+  if(!see||!v.prof||v.kind==='hand'||v.kind==='wrap'||v.kind==='kenzan')return null;const k=v.vs||1,
+    yb=sb&&sb.cavb?FL-(FL-sb.cavb)*k:FL-5,rb=sb&&sb.cavr?sb.cavr*k*.55:Math.max(3,sRad(profSamples(v.prof,40).map(([y,w])=>[y,Math.max(1,w-2.6)]),8))*.82;
+  return Math.atan2((vMouth(v)||26)*.45+rb,Math.max(20,yb-BP[1]))}
+const leanP=P=>{if(LEANMAX==null)return P;const[a,b]=P,dx=b[0]-a[0],dy=b[1]-a[1],l=Math.hypot(dx,dy)||1,t=Math.atan2(dx,-dy);
+  /* its handle lengthened to the stem's chord, so the bend spreads along the stem instead of gathering at the lip */
+  if(Math.abs(t)>LEANMAX){const u=Math.sign(t)*LEANMAX,L2=Math.max(l,.45*Math.hypot(P[3][0]-a[0],P[3][1]-a[1]));P[1]=[a[0]+Math.sin(u)*L2,a[1]-Math.cos(u)*L2]}return P};
 function stemSamples(x,y,BP,mw,rx,rimY){const bx=BP[0]+Math.max(-1,Math.min(1,(x-BP[0])/Math.max(60,rx)))*mw*.45,by=BP[1]+8,dy=BP[1]-y,Lc=Math.hypot(x-bx,by-y),sh=Math.max(0,Math.min(1,1-(Lc-20)/50)),
-    P1=[bx+(x-bx)*.22,BP[1]-dy*.33],P1s=[bx+(x-bx)*.33,by+(y-by)*.33],P=[[bx,by],[P1[0]+(P1s[0]-P1[0])*sh,P1[1]+(P1s[1]-P1[1])*sh],[x-(x-bx)*.3,y+dy*.35],[x,y]],n=Math.max(4,Math.ceil(Lc/6)),S=[];
+    P1=[bx+(x-bx)*.22,BP[1]-dy*.33],P1s=[bx+(x-bx)*.33,by+(y-by)*.33],P=leanP([[bx,by],[P1[0]+(P1s[0]-P1[0])*sh,P1[1]+(P1s[1]-P1[1])*sh],[x-(x-bx)*.3,y+dy*.35],[x,y]]),n=Math.max(4,Math.ceil(Lc/6)),S=[];
   let p=P[0];for(let i=1;i<=n;i++){const q=bz(P,i/n),l=Math.hypot(q[0]-p[0],q[1]-p[1]);p=q;if(q[1]<rimY(q[0])-1)S.push([q[0],q[1],l,0])}return{S,bx,P}}
 /* a head may come down its stem, but a low one stays over the mouth: the higher, the wider the fan (FAN: stems leave the mouth at most ~58°
    from upright); over the mouth a head may rest on the lip (c5 then draws it in front of the vessel), elsewhere it stays clear of it.
@@ -379,7 +390,18 @@ function planRecipe(rc,occ,vid){const O=OCCS[occ]||OCCS.juste,vs=vClass(vid),r={
   const heads=items.filter(it=>!r.drape.includes(it)&&!r.line.includes(it)&&!r.foliage.includes(it)).sort((a,b)=>b.size-a.size||(a.p.id<b.p.id?-1:a.p.id>b.p.id?1:0));
   const nf=Math.max(1,Math.min(3,heads.filter(h=>h.size>=2.5).length||1));r.focal=heads.slice(0,nf);for(const it of heads.slice(nf))(it.size>=1.9?r.second:r.filler).push(it);
   let tot=0;for(const v of cnt.values())tot+=v;return{O,items,r,cnt,N:tot,tot,gar:0,adds:[],notes:[`recette : ${tot} tiges`],tone:items.length?toneOf(items):'neutre',vs,recipe:1,ex:1,air:O.air||0}}
-function compose(ids,sv,occ,vid,model,recipe){const P=model?planModel(model):recipe?planRecipe(recipe,occ,vid):plan(ids,occ,vid);sd(sv*31+7);const tk=model&&TPL[model.tpl]?model.tpl:pickTpl(P,vid);let best=null;for(let k=0;k<8;k++){const c=candidate(P,sv*97+k*13+1,vid,tk),sc=scoreC(c);if(!best||sc>best.score){best=c;best.score=sc}}
+/* a vessel with more than one opening (v.m2: the other mouths, each with its share k of the stems): the bouquet is composed in the main
+   mouth as usual, then once more in each other mouth, thinned to its share (every n-th item, so that mouth holds a small bouquet of its
+   own, not one corner of a big one); every item of another mouth keeps it (o.mouth: its base point, width and lean) for its stem */
+let COMPOSE_SUB=false;
+function composeMouths(ids,sv,occ,vid,model,recipe){const v=VZ[vid],keep={mx:v.mx,mh:v.mh,mo:v.mo,mry:v.mry};COMPOSE_SUB=true;
+  try{const c=compose(ids,sv,occ,vid,model,recipe),lean0=LEANMAX;
+    v.m2.forEach((m,j)=>{Object.assign(v,{mx:m.mx,mh:m.mh,mo:m.mo,mry:m.mry});
+      try{const c2=compose(ids,sv*13+j*101+5,occ,vid,model,recipe),mo={BP:c2.BP,lean:LEANMAX,mx:m.mx,mh:m.mh,mo:m.mo,front:!!m.front},
+          its=c2.out.filter(o=>o.kind!=='leaf'&&o.kind!=='drape'),nk=Math.max(1,Math.round(its.length*(m.k||.3))),st=its.length/nk;
+        for(let i=0;i<nk;i++){const o=its[Math.floor(i*st)];o.mouth=mo;c.out.push(o)}}finally{Object.assign(v,keep)}});
+    LEANMAX=lean0;return c}finally{COMPOSE_SUB=false}}
+function compose(ids,sv,occ,vid,model,recipe){if(!COMPOSE_SUB&&VZ[vid]&&VZ[vid].m2&&VZ[vid].m2.length)return composeMouths(ids,sv,occ,vid,model,recipe);LEANMAX=vLean(vid,basePoint(vid));const P=model?planModel(model):recipe?planRecipe(recipe,occ,vid):plan(ids,occ,vid);sd(sv*31+7);const tk=model&&TPL[model.tpl]?model.tpl:pickTpl(P,vid);let best=null;for(let k=0;k<8;k++){const c=candidate(P,sv*97+k*13+1,vid,tk),sc=scoreC(c);if(!best||sc>best.score){best=c;best.score=sc}}
   /* a variety set forward or back by the player: its lines, leaves and drapes drawn after or before the others (its heads were placed
      at their depth); 1–3 goes into the back layer, behind every flower; 7–10 into the mass, where it can come in front of them */
   if(P.ex&&!P.recipe)for(const o of best.out){const s=o.it&&o.it.pos;if(!s||s===5)continue;if(o.role==='line'||o.role==='foliage'||o.kind==='drape')o.z+=(s-5)*.12;o.back=s<=3;o.fwd=s>=7}

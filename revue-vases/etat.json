@@ -6,7 +6,19 @@
    "scale": null,
    "engineScale": 1,
    "engineHeightCm": 4.1,
-   "notes": [],
+   "notes": [
+    {
+     "num": 1,
+     "u": -0.16879318352032424,
+     "w": 0.4332119360902255,
+     "text": "pas au niveau graphiquement",
+     "type": "",
+     "status": "open",
+     "date": "2026-10-16T21:46:30.639Z",
+     "scale": 1,
+     "v": 1
+    }
+   ],
    "valid": null,
    "history": []
   },
@@ -16,39 +28,90 @@
    "scale": null,
    "engineScale": 1,
    "engineHeightCm": 8.1,
-   "notes": [],
+   "notes": [
+    {
+     "num": 1,
+     "u": -0.0026276447020556083,
+     "w": 0.5029830642526141,
+     "text": "pas au niveau graphiquement",
+     "type": "",
+     "status": "open",
+     "date": "2026-10-16T21:46:25.025Z",
+     "scale": 1,
+     "v": 1
+    }
+   ],
    "valid": null,
    "history": []
   },
   "vase-ovoide-chocolat": {
    "name": "Vase ovoïde chocolat",
    "version": 1,
-   "scale": null,
+   "scale": 1.13,
    "engineScale": 1,
    "engineHeightCm": 15,
-   "notes": [],
+   "notes": [
+    {
+     "num": 1,
+     "u": 0.0015224358974358974,
+     "w": 0.5065335787259615,
+     "text": "pas au niveau graphiquement",
+     "type": "",
+     "status": "open",
+     "date": "2026-10-16T21:46:18.790Z",
+     "scale": 1,
+     "v": 1
+    }
+   ],
    "valid": null,
-   "history": []
+   "history": [],
+   "scaleSent": false
   },
   "vase-tete-veine-sable": {
    "name": "Vase tête veiné sable",
    "version": 1,
-   "scale": null,
+   "scale": 1.02,
    "engineScale": 1,
    "engineHeightCm": 22,
-   "notes": [],
+   "notes": [
+    {
+     "num": 1,
+     "u": 0.026931229171219404,
+     "w": 0.6110703261582168,
+     "text": "pas au niveau graphiquement",
+     "type": "",
+     "status": "open",
+     "date": "2026-10-16T21:46:05.683Z",
+     "scale": 1,
+     "v": 1
+    }
+   ],
    "valid": null,
-   "history": []
+   "history": [],
+   "scaleSent": false
   },
   "vase-conique-blanc": {
    "name": "Vase conique blanc",
    "version": 1,
-   "scale": null,
+   "scale": 0.99,
    "engineScale": 1,
    "engineHeightCm": 26,
-   "notes": [],
+   "notes": [
+    {
+     "num": 1,
+     "u": -0.005149164143398668,
+     "w": 0.577600603272929,
+     "text": "pas au niveau graphiquement",
+     "type": "",
+     "status": "open",
+     "date": "2026-10-16T21:45:54.449Z",
+     "scale": 1,
+     "v": 1
+    }
+   ],
    "valid": null,
-   "history": []
+   "history": [],
+   "scaleSent": false
   },
   "coupe-pied-rosee": {
    "name": "Coupe sur pied rosée",
@@ -56,7 +119,19 @@
    "scale": null,
    "engineScale": 1,
    "engineHeightCm": 14.5,
-   "notes": [],
+   "notes": [
+    {
+     "num": 1,
+     "u": -0.012541039987227972,
+     "w": 0.5837526746616242,
+     "text": "pas au niveau graphiquement",
+     "type": "",
+     "status": "open",
+     "date": "2026-10-16T21:45:49.833Z",
+     "scale": 1,
+     "v": 1
+    }
+   ],
    "valid": null,
    "history": []
   },
@@ -66,29 +141,67 @@
    "scale": null,
    "engineScale": 1,
    "engineHeightCm": 20,
-   "notes": [],
+   "notes": [
+    {
+     "num": 1,
+     "u": 0.025064791165865383,
+     "w": 0.5627878042367789,
+     "text": "pas au niveau graphiquement",
+     "type": "",
+     "status": "open",
+     "date": "2026-10-16T21:45:44.664Z",
+     "scale": 1,
+     "v": 1
+    }
+   ],
    "valid": null,
    "history": []
   },
   "coupe-pied-sable": {
    "name": "Coupe sur pied sable",
    "version": 1,
-   "scale": null,
+   "scale": 1.42,
    "engineScale": 1,
    "engineHeightCm": 8.2,
-   "notes": [],
+   "notes": [
+    {
+     "num": 1,
+     "u": 0.035350577692600846,
+     "w": 0.577138360401032,
+     "text": "pas au niveau graphiquement",
+     "type": "",
+     "status": "open",
+     "date": "2026-10-16T21:45:28.666Z",
+     "scale": 1,
+     "v": 1
+    }
+   ],
    "valid": null,
-   "history": []
+   "history": [],
+   "scaleSent": false
   },
   "pot-boule-blanc-perle": {
    "name": "Pot boule blanc perle",
    "version": 1,
-   "scale": null,
+   "scale": 1.11,
    "engineScale": 1,
    "engineHeightCm": 9.4,
-   "notes": [],
+   "notes": [
+    {
+     "num": 1,
+     "u": 0.05162465396762479,
+     "w": 0.39859553210668985,
+     "text": "pas au niveau graphiquement",
+     "type": "",
+     "status": "open",
+     "date": "2026-10-16T21:45:13.531Z",
+     "scale": 1,
+     "v": 1
+    }
+   ],
    "valid": null,
-   "history": []
+   "history": [],
+   "scaleSent": false
   },
   "bouteille-verre-fume": {
    "name": "Bouteille en verre fumé",
@@ -96,19 +209,44 @@
    "scale": null,
    "engineScale": 1,
    "engineHeightCm": 26,
-   "notes": [],
+   "notes": [
+    {
+     "num": 1,
+     "u": 0.0016033466045673077,
+     "w": 0.4107348199426775,
+     "text": "pas au niveau graphiquement",
+     "type": "",
+     "status": "open",
+     "date": "2026-10-16T21:45:09.128Z",
+     "scale": 1,
+     "v": 1
+    }
+   ],
    "valid": null,
    "history": []
   },
   "vase-coeur-anthracite": {
    "name": "Vase cœur anthracite",
    "version": 1,
-   "scale": null,
+   "scale": 0.79,
    "engineScale": 1,
    "engineHeightCm": 30.9,
-   "notes": [],
+   "notes": [
+    {
+     "num": 1,
+     "u": 0.04076209201280814,
+     "w": 0.6103351486631599,
+     "text": "pas au niveau graphiquement",
+     "type": "",
+     "status": "open",
+     "date": "2026-10-16T21:44:52.577Z",
+     "scale": 1,
+     "v": 1
+    }
+   ],
    "valid": null,
-   "history": []
+   "history": [],
+   "scaleSent": false
   },
   "coupe-pied-blanche": {
    "name": "Coupe sur pied blanche",
@@ -116,7 +254,19 @@
    "scale": null,
    "engineScale": 1,
    "engineHeightCm": 10.1,
-   "notes": [],
+   "notes": [
+    {
+     "num": 1,
+     "u": 0.03406012930521151,
+     "w": 0.6388408381764482,
+     "text": "pas au niveau graphiquement",
+     "type": "",
+     "status": "open",
+     "date": "2026-10-16T21:44:48.305Z",
+     "scale": 1,
+     "v": 1
+    }
+   ],
    "valid": null,
    "history": []
   },
@@ -126,89 +276,205 @@
    "scale": null,
    "engineScale": 1,
    "engineHeightCm": 21.2,
-   "notes": [],
+   "notes": [
+    {
+     "num": 1,
+     "u": -0.01475627658852281,
+     "w": 0.5337071401498009,
+     "text": "pas au niveau graphiquement",
+     "type": "",
+     "status": "open",
+     "date": "2026-10-16T21:44:42.132Z",
+     "scale": 1,
+     "v": 1
+    }
+   ],
    "valid": null,
    "history": []
   },
   "urne-medicis-noire": {
    "name": "Urne Médicis noire",
    "version": 1,
-   "scale": null,
+   "scale": 1.13,
    "engineScale": 1,
    "engineHeightCm": 18.9,
-   "notes": [],
+   "notes": [
+    {
+     "num": 1,
+     "u": -0.05716454322640981,
+     "w": 0.6886694097363599,
+     "text": "pas au niveau graphiquement",
+     "type": "",
+     "status": "open",
+     "date": "2026-10-16T21:44:30.694Z",
+     "scale": 1,
+     "v": 1
+    }
+   ],
    "valid": null,
-   "history": []
+   "history": [],
+   "scaleSent": false
   },
   "cylindre-chrome": {
    "name": "Cylindre chromé",
    "version": 1,
-   "scale": null,
+   "scale": 0.94,
    "engineScale": 1,
    "engineHeightCm": 13.4,
-   "notes": [],
+   "notes": [
+    {
+     "num": 1,
+     "u": 0.02726049467165899,
+     "w": 0.5999530844974078,
+     "text": "pas au niveau graphiquement",
+     "type": "",
+     "status": "open",
+     "date": "2026-10-16T21:44:20.547Z",
+     "scale": 1,
+     "v": 1
+    }
+   ],
    "valid": null,
-   "history": []
+   "history": [],
+   "scaleSent": false
   },
   "tube-acier-disque": {
    "name": "Soliflore tube acier",
    "version": 1,
-   "scale": null,
+   "scale": 0.9,
    "engineScale": 1,
    "engineHeightCm": 14.8,
-   "notes": [],
+   "notes": [
+    {
+     "num": 1,
+     "u": 0.002715842622339045,
+     "w": 0.47913294838720144,
+     "text": "pas au niveau graphiquement",
+     "type": "",
+     "status": "open",
+     "date": "2026-10-16T21:44:09.650Z",
+     "scale": 1,
+     "v": 1
+    }
+   ],
    "valid": null,
-   "history": []
+   "history": [],
+   "scaleSent": false
   },
   "coupe-pied-noire": {
    "name": "Coupe sur pied noire",
    "version": 1,
-   "scale": null,
+   "scale": 0.91,
    "engineScale": 1,
    "engineHeightCm": 11.7,
-   "notes": [],
+   "notes": [
+    {
+     "num": 1,
+     "u": 0.177022751474443,
+     "w": 0.7647353106057504,
+     "text": "pas au niveau graphiquement",
+     "type": "",
+     "status": "open",
+     "date": "2026-10-16T21:44:00.578Z",
+     "scale": 1,
+     "v": 1
+    }
+   ],
    "valid": null,
-   "history": []
+   "history": [],
+   "scaleSent": false
   },
   "coupe-cobalt-mouchetee": {
    "name": "Coupe soufflée cobalt",
    "version": 1,
-   "scale": null,
+   "scale": 1.17,
    "engineScale": 1,
    "engineHeightCm": 14.5,
-   "notes": [],
+   "notes": [
+    {
+     "num": 1,
+     "u": 0.011249992216558183,
+     "w": 0.6314356091425346,
+     "text": "pas au niveau graphiquement",
+     "type": "",
+     "status": "open",
+     "date": "2026-10-16T21:43:50.974Z",
+     "scale": 1,
+     "v": 1
+    }
+   ],
    "valid": null,
-   "history": []
+   "history": [],
+   "scaleSent": false
   },
   "balustre-argent-patine": {
    "name": "Vase balustre argenté",
    "version": 1,
-   "scale": null,
+   "scale": 1.01,
    "engineScale": 1,
    "engineHeightCm": 26.7,
-   "notes": [],
+   "notes": [
+    {
+     "num": 1,
+     "u": 0.03405969034479347,
+     "w": 0.540388477349597,
+     "text": "pas au niveau graphiquement",
+     "type": "",
+     "status": "open",
+     "date": "2026-10-16T21:43:40.859Z",
+     "scale": 1,
+     "v": 1
+    }
+   ],
    "valid": null,
-   "history": []
+   "history": [],
+   "scaleSent": false
   },
   "bulbe-pied-sable": {
    "name": "Bulbe sur pied sable",
    "version": 1,
-   "scale": null,
+   "scale": 1.29,
    "engineScale": 1,
    "engineHeightCm": 16.4,
-   "notes": [],
+   "notes": [
+    {
+     "num": 1,
+     "u": -0.043506978224149,
+     "w": 0.6858326022998114,
+     "text": "pas au niveau graphiquement",
+     "type": "",
+     "status": "open",
+     "date": "2026-10-16T21:43:37.061Z",
+     "scale": 1.29,
+     "v": 1
+    }
+   ],
    "valid": null,
-   "history": []
+   "history": [],
+   "scaleSent": false
   },
   "calice-celadon-pans": {
    "name": "Vase céladon à pans",
    "version": 1,
-   "scale": null,
+   "scale": 1.22,
    "engineScale": 1,
    "engineHeightCm": 20.5,
-   "notes": [],
+   "notes": [
+    {
+     "num": 1,
+     "u": 0.02688962016268242,
+     "w": 0.6659160284661998,
+     "text": "pas au niveau graphiquement",
+     "type": "",
+     "status": "open",
+     "date": "2026-10-16T21:43:20.736Z",
+     "scale": 1.09,
+     "v": 1
+    }
+   ],
    "valid": null,
-   "history": []
+   "history": [],
+   "scaleSent": false
   },
   "cylindre-verre-bouquet": {
    "name": "Cylindre de verre",
@@ -216,39 +482,90 @@
    "scale": null,
    "engineScale": 1,
    "engineHeightCm": 17.5,
-   "notes": [],
+   "notes": [
+    {
+     "num": 1,
+     "u": -0.004009655783172232,
+     "w": 0.46648129427998686,
+     "text": "il faut refaire ce vase completement pour qu'il soit au niveau de nos beau vase, faire un verre frosté gradient du bas et plus transparent vers le haut",
+     "type": "",
+     "status": "open",
+     "date": "2026-10-16T21:33:41.241Z",
+     "scale": 1,
+     "v": 1
+    }
+   ],
    "valid": null,
    "history": []
   },
   "colonne-blanche": {
    "name": "Colonne blanche",
    "version": 1,
-   "scale": null,
+   "scale": 0.42,
    "engineScale": 1,
    "engineHeightCm": 60,
-   "notes": [],
+   "notes": [
+    {
+     "num": 1,
+     "u": 0.014292212778540906,
+     "w": 0.49611334981208033,
+     "text": "pas au niveau graphique du haut du panier a refaire en bien mieux",
+     "type": "",
+     "status": "open",
+     "date": "2026-10-16T21:34:48.230Z",
+     "scale": 0.42,
+     "v": 1
+    }
+   ],
    "valid": null,
-   "history": []
+   "history": [],
+   "scaleSent": false
   },
   "pot-agate-rose": {
    "name": "Pot agate rosé",
    "version": 1,
-   "scale": null,
+   "scale": 1.09,
    "engineScale": 1,
    "engineHeightCm": 13.4,
-   "notes": [],
+   "notes": [
+    {
+     "num": 1,
+     "u": 0.07039653070761762,
+     "w": 0.5412611651917208,
+     "text": "pas au niveau graphiquement",
+     "type": "",
+     "status": "open",
+     "date": "2026-10-16T21:35:17.637Z",
+     "scale": 1.09,
+     "v": 1
+    }
+   ],
    "valid": null,
-   "history": []
+   "history": [],
+   "scaleSent": false
   },
   "coupe-cone-noire": {
    "name": "Coupe sur cône noire",
    "version": 1,
-   "scale": null,
+   "scale": 1.06,
    "engineScale": 1,
    "engineHeightCm": 20.4,
-   "notes": [],
+   "notes": [
+    {
+     "num": 1,
+     "u": -0.09420698392911729,
+     "w": 0.6358140470651721,
+     "text": "pas au niveau graphiquement",
+     "type": "",
+     "status": "open",
+     "date": "2026-10-16T21:35:54.450Z",
+     "scale": 1.06,
+     "v": 1
+    }
+   ],
    "valid": null,
-   "history": []
+   "history": [],
+   "scaleSent": false
   },
   "urne-sablier-noire": {
    "name": "Urne sablier noire",
@@ -256,19 +573,44 @@
    "scale": null,
    "engineScale": 1,
    "engineHeightCm": 20,
-   "notes": [],
+   "notes": [
+    {
+     "num": 1,
+     "u": 0.021986741286057692,
+     "w": 0.6972689115084134,
+     "text": "pas au niveau graphiquement",
+     "type": "",
+     "status": "open",
+     "date": "2026-10-16T21:36:09.013Z",
+     "scale": 1,
+     "v": 1
+    }
+   ],
    "valid": null,
    "history": []
   },
   "boule-perlee-porcelaine": {
    "name": "Boule perlée sur pied",
    "version": 1,
-   "scale": null,
+   "scale": 1.31,
    "engineScale": 1,
    "engineHeightCm": 9,
-   "notes": [],
+   "notes": [
+    {
+     "num": 1,
+     "u": 0.09868923228820055,
+     "w": 0.4679123047257291,
+     "text": "pas au niveau graphiquement",
+     "type": "",
+     "status": "open",
+     "date": "2026-10-16T21:36:23.165Z",
+     "scale": 1.31,
+     "v": 1
+    }
+   ],
    "valid": null,
-   "history": []
+   "history": [],
+   "scaleSent": false
   },
   "urne-ardoise-bleutee": {
    "name": "Urne ardoise bleutée",
@@ -276,7 +618,19 @@
    "scale": null,
    "engineScale": 1,
    "engineHeightCm": 16,
-   "notes": [],
+   "notes": [
+    {
+     "num": 1,
+     "u": 0.039247366098257214,
+     "w": 0.6082658034104568,
+     "text": "pas au niveau graphiquement",
+     "type": "",
+     "status": "open",
+     "date": "2026-10-16T21:36:28.773Z",
+     "scale": 1,
+     "v": 1
+    }
+   ],
    "valid": null,
    "history": []
   },
@@ -286,7 +640,19 @@
    "scale": null,
    "engineScale": 1,
    "engineHeightCm": 20.5,
-   "notes": [],
+   "notes": [
+    {
+     "num": 1,
+     "u": -0.003007081177857545,
+     "w": 0.6147399535766236,
+     "text": "pas au niveau graphiquement",
+     "type": "",
+     "status": "open",
+     "date": "2026-10-16T21:36:34.882Z",
+     "scale": 1,
+     "v": 1
+    }
+   ],
    "valid": null,
    "history": []
   },
@@ -296,19 +662,45 @@
    "scale": null,
    "engineScale": 1,
    "engineHeightCm": 15,
-   "notes": [],
+   "notes": [
+    {
+     "num": 1,
+     "u": -0.0773064351905574,
+     "w": 0.59285593448549,
+     "text": "pas au niveau graphiquement",
+     "type": "",
+     "status": "open",
+     "date": "2026-10-16T21:36:45.313Z",
+     "scale": 1.14,
+     "v": 1
+    }
+   ],
    "valid": null,
-   "history": []
+   "history": [],
+   "scaleSent": false
   },
   "pot-shino-marbre": {
    "name": "Pot shino sur marbre",
    "version": 1,
-   "scale": null,
+   "scale": 1.45,
    "engineScale": 1,
    "engineHeightCm": 6.4,
-   "notes": [],
+   "notes": [
+    {
+     "num": 1,
+     "u": -0.033767495505771135,
+     "w": 0.3561135898665748,
+     "text": "pas au niveau graphiquement",
+     "type": "",
+     "status": "open",
+     "date": "2026-10-16T21:36:57.617Z",
+     "scale": 1.45,
+     "v": 1
+    }
+   ],
    "valid": null,
-   "history": []
+   "history": [],
+   "scaleSent": false
   },
   "balustre-email-reticule": {
    "name": "Balustre émail réticulé",
@@ -316,59 +708,136 @@
    "scale": null,
    "engineScale": 1,
    "engineHeightCm": 21.4,
-   "notes": [],
+   "notes": [
+    {
+     "num": 1,
+     "u": -0.027055192267757724,
+     "w": 0.6182865712834501,
+     "text": "pas au niveau graphiquement",
+     "type": "",
+     "status": "open",
+     "date": "2026-10-16T21:37:02.651Z",
+     "scale": 1,
+     "v": 1
+    }
+   ],
    "valid": null,
    "history": []
   },
   "coupelle-argentee": {
    "name": "Coupelle argentée",
    "version": 1,
-   "scale": null,
+   "scale": 1.67,
    "engineScale": 1,
    "engineHeightCm": 5.9,
-   "notes": [],
+   "notes": [
+    {
+     "num": 1,
+     "u": 0.026333593798730664,
+     "w": 0.49956354076514936,
+     "text": "pas au niveau graphiquement",
+     "type": "",
+     "status": "open",
+     "date": "2026-10-16T21:37:11.580Z",
+     "scale": 1.67,
+     "v": 1
+    }
+   ],
    "valid": null,
-   "history": []
+   "history": [],
+   "scaleSent": false
   },
   "boule-aubergine": {
    "name": "Boule aubergine",
    "version": 1,
-   "scale": null,
+   "scale": 1.24,
    "engineScale": 1,
    "engineHeightCm": 11,
-   "notes": [],
+   "notes": [
+    {
+     "num": 1,
+     "u": -0.027222808693322807,
+     "w": 0.47835563661389013,
+     "text": "pas au niveau graphiquement",
+     "type": "",
+     "status": "open",
+     "date": "2026-10-16T21:37:20.197Z",
+     "scale": 1.24,
+     "v": 1
+    }
+   ],
    "valid": null,
-   "history": []
+   "history": [],
+   "scaleSent": false
   },
   "coupe-medicis-anses": {
    "name": "Coupe Médicis à anses",
    "version": 1,
-   "scale": null,
+   "scale": 1.52,
    "engineScale": 1,
    "engineHeightCm": 8.3,
-   "notes": [],
+   "notes": [
+    {
+     "num": 1,
+     "u": 0.08634154559576024,
+     "w": 0.677218818292748,
+     "text": "pas au niveau graphiquement",
+     "type": "",
+     "status": "open",
+     "date": "2026-10-16T21:37:31.696Z",
+     "scale": 1.52,
+     "v": 1
+    }
+   ],
    "valid": null,
-   "history": []
+   "history": [],
+   "scaleSent": false
   },
   "coupe-basse-anthracite": {
    "name": "Coupe basse anthracite",
    "version": 1,
-   "scale": null,
+   "scale": 0.86,
    "engineScale": 1,
    "engineHeightCm": 10,
-   "notes": [],
+   "notes": [
+    {
+     "num": 1,
+     "u": 0.23080460713886405,
+     "w": 1.861186837894119,
+     "text": "cette coupe est censé fonctionné comme un pique fleur ",
+     "type": "",
+     "status": "open",
+     "date": "2026-10-16T21:38:08.818Z",
+     "scale": 0.86,
+     "v": 1
+    }
+   ],
    "valid": null,
-   "history": []
+   "history": [],
+   "scaleSent": false
   },
   "calice-mouchete": {
    "name": "Calice moucheté",
    "version": 1,
-   "scale": null,
+   "scale": 1.18,
    "engineScale": 1,
    "engineHeightCm": 17,
-   "notes": [],
+   "notes": [
+    {
+     "num": 1,
+     "u": 0.032613950141762216,
+     "w": 0.6673882349346193,
+     "text": "pas au niveau graphiquement",
+     "type": "",
+     "status": "open",
+     "date": "2026-10-16T21:38:47.181Z",
+     "scale": 1.18,
+     "v": 1
+    }
+   ],
    "valid": null,
-   "history": []
+   "history": [],
+   "scaleSent": false
   },
   "suiban-lobe-rose": {
    "name": "Suiban lobé rose",
@@ -376,7 +845,19 @@
    "scale": null,
    "engineScale": 1,
    "engineHeightCm": 9.5,
-   "notes": [],
+   "notes": [
+    {
+     "num": 1,
+     "u": 0.08902512587510146,
+     "w": 0.6205590978845373,
+     "text": "pas au niveau graphiquement",
+     "type": "",
+     "status": "open",
+     "date": "2026-10-16T21:43:09.633Z",
+     "scale": 1,
+     "v": 1
+    }
+   ],
    "valid": null,
    "history": []
   },
@@ -386,7 +867,19 @@
    "scale": null,
    "engineScale": 1,
    "engineHeightCm": 15.4,
-   "notes": [],
+   "notes": [
+    {
+     "num": 1,
+     "u": 0.018915715632024228,
+     "w": 0.5016687414148352,
+     "text": "pas au niveau graphiquement",
+     "type": "",
+     "status": "open",
+     "date": "2026-10-16T21:43:05.164Z",
+     "scale": 1,
+     "v": 1
+    }
+   ],
    "valid": null,
    "history": []
   },
@@ -396,129 +889,297 @@
    "scale": null,
    "engineScale": 1,
    "engineHeightCm": 37,
-   "notes": [],
+   "notes": [
+    {
+     "num": 1,
+     "u": -0.005351425456405925,
+     "w": 0.6273695852553275,
+     "text": "pas au niveau graphiquement",
+     "type": "",
+     "status": "open",
+     "date": "2026-10-16T21:43:00.372Z",
+     "scale": 1,
+     "v": 1
+    }
+   ],
    "valid": null,
    "history": []
   },
   "calice-etain": {
    "name": "Calice en étain",
    "version": 1,
-   "scale": null,
+   "scale": 1.12,
    "engineScale": 1,
    "engineHeightCm": 16.5,
-   "notes": [],
+   "notes": [
+    {
+     "num": 1,
+     "u": 0.047100693432252795,
+     "w": 0.532088208554396,
+     "text": "pas au niveau graphiquement",
+     "type": "",
+     "status": "open",
+     "date": "2026-10-16T21:42:48.292Z",
+     "scale": 1,
+     "v": 1
+    }
+   ],
    "valid": null,
-   "history": []
+   "history": [],
+   "scaleSent": false
   },
   "cylindre-verre-clair": {
    "name": "Cylindre de verre",
    "version": 1,
-   "scale": null,
+   "scale": 1.25,
    "engineScale": 1,
    "engineHeightCm": 14.5,
-   "notes": [],
+   "notes": [
+    {
+     "num": 1,
+     "u": -0.042559710784069796,
+     "w": 0.6361159144440021,
+     "text": "pas au niveau graphiquement",
+     "type": "",
+     "status": "open",
+     "date": "2026-10-16T21:42:39.853Z",
+     "scale": 1,
+     "v": 1
+    }
+   ],
    "valid": null,
-   "history": []
+   "history": [],
+   "scaleSent": false
   },
   "petite-boule-taupe": {
    "name": "Petite boule taupe",
    "version": 1,
-   "scale": null,
+   "scale": 1.4,
    "engineScale": 1,
    "engineHeightCm": 8.6,
-   "notes": [],
+   "notes": [
+    {
+     "num": 1,
+     "u": 0.10003807171208154,
+     "w": 0.4070645611882667,
+     "text": "pas au niveau graphiquement",
+     "type": "",
+     "status": "open",
+     "date": "2026-10-16T21:42:35.028Z",
+     "scale": 1.4,
+     "v": 1
+    }
+   ],
    "valid": null,
-   "history": []
+   "history": [],
+   "scaleSent": false
   },
   "jarre-gres-chamotte": {
    "name": "Jarre en grès chamotté",
    "version": 1,
-   "scale": null,
+   "scale": 0.89,
    "engineScale": 1,
    "engineHeightCm": 21,
-   "notes": [],
+   "notes": [
+    {
+     "num": 1,
+     "u": 0.047156253577152016,
+     "w": 0.5193309294871795,
+     "text": "pas au niveau graphiquement",
+     "type": "",
+     "status": "open",
+     "date": "2026-10-16T21:42:21.723Z",
+     "scale": 1,
+     "v": 1
+    }
+   ],
    "valid": null,
-   "history": []
+   "history": [],
+   "scaleSent": false
   },
   "boule-cotelee-bleue": {
    "name": "Boule côtelée bleue",
    "version": 1,
-   "scale": null,
+   "scale": 0.89,
    "engineScale": 1,
    "engineHeightCm": 23,
-   "notes": [],
+   "notes": [
+    {
+     "num": 1,
+     "u": -0.0063003070423180265,
+     "w": 0.5865893428997877,
+     "text": "pas au niveau graphiquement",
+     "type": "",
+     "status": "open",
+     "date": "2026-10-16T21:42:17.009Z",
+     "scale": 0.89,
+     "v": 1
+    }
+   ],
    "valid": null,
-   "history": []
+   "history": [],
+   "scaleSent": false
   },
   "soliflore-balustre-noir": {
    "name": "Soliflore balustre noir",
    "version": 1,
-   "scale": null,
+   "scale": 0.97,
    "engineScale": 1,
    "engineHeightCm": 21.5,
-   "notes": [],
+   "notes": [
+    {
+     "num": 1,
+     "u": -0.008169842327565704,
+     "w": 0.5458020890368972,
+     "text": "pas au niveau graphiquement",
+     "type": "",
+     "status": "open",
+     "date": "2026-10-16T21:42:07.985Z",
+     "scale": 0.97,
+     "v": 1
+    }
+   ],
    "valid": null,
-   "history": []
+   "history": [],
+   "scaleSent": false
   },
   "coupe-pied-blanche-ciselee": {
    "name": "Vase sur pied ciselé",
    "version": 1,
-   "scale": null,
+   "scale": 1.25,
    "engineScale": 1,
    "engineHeightCm": 16.4,
-   "notes": [],
+   "notes": [
+    {
+     "num": 1,
+     "u": 0.0018654084339821764,
+     "w": 0.5556758572862922,
+     "text": "pas au niveau graphiquement",
+     "type": "",
+     "status": "open",
+     "date": "2026-10-16T21:41:45.508Z",
+     "scale": 1,
+     "v": 1
+    }
+   ],
    "valid": null,
-   "history": []
+   "history": [],
+   "scaleSent": false
   },
   "cylindre-inox-miroir": {
    "name": "Cylindre inox miroir",
    "version": 1,
-   "scale": null,
+   "scale": 0.9,
    "engineScale": 1,
    "engineHeightCm": 12.8,
-   "notes": [],
+   "notes": [
+    {
+     "num": 1,
+     "u": 0.02714083744929387,
+     "w": 0.6283055818997897,
+     "text": "pas au niveau graphiquement",
+     "type": "",
+     "status": "open",
+     "date": "2026-10-16T21:41:25.728Z",
+     "scale": 1,
+     "v": 1
+    }
+   ],
    "valid": null,
-   "history": []
+   "history": [],
+   "scaleSent": false
   },
   "compotier-noir-laque": {
    "name": "Compotier noir laqué",
    "version": 1,
-   "scale": null,
+   "scale": 1.3,
    "engineScale": 1,
    "engineHeightCm": 13.2,
-   "notes": [],
+   "notes": [
+    {
+     "num": 1,
+     "u": 0.11194484601936525,
+     "w": 0.6765183997192711,
+     "text": "pas au niveau graphiquement",
+     "type": "",
+     "status": "open",
+     "date": "2026-10-16T21:41:21.792Z",
+     "scale": 1.3,
+     "v": 1
+    }
+   ],
    "valid": null,
-   "history": []
+   "history": [],
+   "scaleSent": false
   },
   "coupe-pied-blanche-mate": {
    "name": "Petite coupe sur pied",
    "version": 1,
-   "scale": null,
+   "scale": 1.72,
    "engineScale": 1,
    "engineHeightCm": 9.5,
-   "notes": [],
+   "notes": [
+    {
+     "num": 1,
+     "u": 0.005153157313216161,
+     "w": 0.49342780401396813,
+     "text": "pas au niveau graphiquement",
+     "type": "",
+     "status": "open",
+     "date": "2026-10-16T21:41:14.246Z",
+     "scale": 1.72,
+     "v": 1
+    }
+   ],
    "valid": null,
-   "history": []
+   "history": [],
+   "scaleSent": false
   },
   "pique-fleurs-laiton": {
    "name": "Pique-fleurs en laiton",
    "version": 1,
-   "scale": null,
+   "scale": 1.22,
    "engineScale": 1,
    "engineHeightCm": 4.5,
-   "notes": [],
+   "notes": [
+    {
+     "num": 1,
+     "u": 0.15269582951012659,
+     "w": 0.4472456271798857,
+     "text": "pas au niveau graphiquement",
+     "type": "",
+     "status": "open",
+     "date": "2026-10-16T21:41:05.124Z",
+     "scale": 1.22,
+     "v": 1
+    }
+   ],
    "valid": null,
-   "history": []
+   "history": [],
+   "scaleSent": false
   },
   "coupelle-laiton-console": {
    "name": "Coupelle en laiton",
    "version": 1,
-   "scale": null,
+   "scale": 1.63,
    "engineScale": 1,
    "engineHeightCm": 5,
-   "notes": [],
+   "notes": [
+    {
+     "num": 1,
+     "u": 0.1636070550303799,
+     "w": 0.4310458850725578,
+     "text": "pas au niveau graphiquement",
+     "type": "",
+     "status": "open",
+     "date": "2026-10-16T21:40:51.313Z",
+     "scale": 1.63,
+     "v": 1
+    }
+   ],
    "valid": null,
-   "history": []
+   "history": [],
+   "scaleSent": false
   },
   "bronze-carpe": {
    "name": "Vase en bronze à la carpe",
@@ -527,38 +1188,57 @@
    "engineScale": 1,
    "engineHeightCm": 23.1,
    "notes": [],
-   "valid": null,
-   "history": []
+   "valid": {
+    "version": 1,
+    "date": "2026-10-16T21:40:38.414Z"
+   },
+   "history": [],
+   "validSent": false
   },
   "verre-danseuses": {
    "name": "Vase en verre aux danseuses",
    "version": 1,
-   "scale": null,
+   "scale": 0.7,
    "engineScale": 1,
    "engineHeightCm": 36.8,
    "notes": [],
-   "valid": null,
-   "history": []
+   "valid": {
+    "version": 1,
+    "date": "2026-10-16T21:40:33.353Z"
+   },
+   "history": [],
+   "scaleSent": false,
+   "validSent": false
   },
   "jarre-carpes": {
    "name": "Jarre aux carpes en relief",
    "version": 1,
-   "scale": null,
+   "scale": 0.78,
    "engineScale": 1,
    "engineHeightCm": 39,
    "notes": [],
-   "valid": null,
-   "history": []
+   "valid": {
+    "version": 1,
+    "date": "2026-10-16T21:40:16.121Z"
+   },
+   "history": [],
+   "scaleSent": false,
+   "validSent": false
   },
   "prisme-jaune": {
    "name": "Prisme jaune à cœur suspendu",
    "version": 1,
-   "scale": null,
+   "scale": 0.82,
    "engineScale": 1,
    "engineHeightCm": 37.5,
    "notes": [],
-   "valid": null,
-   "history": []
+   "valid": {
+    "version": 1,
+    "date": "2026-10-16T21:40:08.318Z"
+   },
+   "history": [],
+   "scaleSent": false,
+   "validSent": false
   },
   "balustre-perce-neige": {
    "name": "Balustre aux perce-neige",
@@ -567,170 +1247,473 @@
    "engineScale": 1,
    "engineHeightCm": 45,
    "notes": [],
-   "valid": null,
-   "history": []
+   "valid": {
+    "version": 1,
+    "date": "2026-10-16T21:39:44.879Z"
+   },
+   "history": [],
+   "validSent": false
   },
   "gres-chauve-souris": {
    "name": "Grès à la chauve-souris",
    "version": 1,
-   "scale": 1.11,
-   "engineScale": 1,
-   "engineHeightCm": 52.5,
+   "scale": null,
+   "engineScale": 0.96,
+   "engineHeightCm": 50.4,
    "notes": [],
-   "valid": null,
+   "valid": {
+    "version": 1,
+    "date": "2026-10-16T21:20:26.177Z"
+   },
    "history": [],
-   "scaleSent": false
+   "scaleSent": false,
+   "validSent": true
   },
   "bouteille-dragon": {
    "name": "Bouteille au dragon turquoise",
    "version": 1,
    "scale": null,
-   "engineScale": 1,
-   "engineHeightCm": 48,
+   "engineScale": 0.59,
+   "engineHeightCm": 28.3,
    "notes": [],
-   "valid": null,
-   "history": []
+   "valid": {
+    "version": 1,
+    "date": "2026-10-16T21:20:55.326Z"
+   },
+   "history": [],
+   "scaleSent": false,
+   "validSent": true
   },
   "porcelaine-papillon": {
    "name": "Porcelaine au papillon",
-   "version": 1,
+   "version": 2,
    "scale": null,
    "engineScale": 1,
    "engineHeightCm": 45,
-   "notes": [],
+   "notes": [
+    {
+     "num": 1,
+     "u": -0.028585916037087926,
+     "w": 0.7086246582968126,
+     "text": "la portion de tige vers le haut et celle vers le bas crée une cassure et des bug, le goulot resserer a un acceuil limité mais le corps ouvert au dessus du papillion peut egalement acceuillir des flerus peut etre deux zones de départ",
+     "type": "",
+     "status": "done",
+     "date": "2026-10-16T21:21:33.412Z",
+     "scale": 0.98,
+     "v": 1,
+     "sent": "2026-10-16_233158",
+     "doneIn": 2
+    }
+   ],
    "valid": null,
-   "history": []
+   "history": [
+    {
+     "version": 2,
+     "date": "2026-10-16T21:55:31.318Z",
+     "summary": "Plus de cassure : les tiges sortent du col presque droites et descendent sans coude dans la fente (même règle que le calla). Question ouverte : deux zones de départ (col + fente au-dessus du papillon) — le moteur sait composer dans plusieurs bouches, mais des fleurs sortant de la fente doivent se poser devant le vase, en bas ; à confirmer avant de le faire (rouvrir la note pour dire oui)",
+     "notes": [
+      1
+     ],
+     "scale": null,
+     "commit": "6265150"
+    }
+   ],
+   "scaleSent": false,
+   "validSent": false
   },
   "calla-gres": {
    "name": "Calla de grès",
-   "version": 1,
+   "version": 2,
    "scale": null,
-   "engineScale": 1,
-   "engineHeightCm": 33,
-   "notes": [],
+   "engineScale": 1.52,
+   "engineHeightCm": 50.2,
+   "notes": [
+    {
+     "num": 1,
+     "u": -0.005892726807868666,
+     "w": 0.8126901068024628,
+     "text": "brisure de la section centrale haut bas des tiges",
+     "type": "",
+     "status": "done",
+     "date": "2026-10-16T21:24:29.078Z",
+     "scale": 1.52,
+     "v": 1,
+     "sent": "2026-10-16_233158",
+     "doneIn": 2
+    }
+   ],
    "valid": null,
-   "history": []
+   "history": [
+    {
+     "version": 2,
+     "date": "2026-10-16T21:51:42.615Z",
+     "summary": "Plus de cassure des tiges à la gorge : dans un vase dont on voit l'intérieur, une tige repose au fond et s'appuie sur la lèvre, elle sort donc presque droite (angle limité par la largeur de la bouche et du fond sur la profondeur) et se courbe plus haut ; à l'intérieur elle continue sans coude",
+     "notes": [
+      1
+     ],
+     "scale": null,
+     "commit": "6265150"
+    }
+   ],
+   "scaleSent": false,
+   "validSent": false
   },
   "bronze-bambous": {
    "name": "Bronze aux bambous",
    "version": 1,
    "scale": null,
-   "engineScale": 1,
-   "engineHeightCm": 54,
+   "engineScale": 0.83,
+   "engineHeightCm": 44.8,
    "notes": [],
-   "valid": null,
-   "history": []
+   "valid": {
+    "version": 1,
+    "date": "2026-10-16T21:25:04.919Z"
+   },
+   "history": [],
+   "scaleSent": false,
+   "validSent": true
   },
   "bronze-lys": {
    "name": "Bronze aux lys",
    "version": 1,
    "scale": null,
-   "engineScale": 1,
-   "engineHeightCm": 33,
+   "engineScale": 0.97,
+   "engineHeightCm": 32,
    "notes": [],
-   "valid": null,
-   "history": []
+   "valid": {
+    "version": 1,
+    "date": "2026-10-16T21:26:04.014Z"
+   },
+   "history": [],
+   "scaleSent": false,
+   "validSent": true
   },
   "cristal-ginkgo": {
    "name": "Cristal améthyste gravé",
    "version": 1,
    "scale": null,
-   "engineScale": 1,
-   "engineHeightCm": 34.5,
+   "engineScale": 0.71,
+   "engineHeightCm": 24.5,
    "notes": [],
-   "valid": null,
-   "history": []
+   "valid": {
+    "version": 1,
+    "date": "2026-10-16T21:26:40.911Z"
+   },
+   "history": [],
+   "scaleSent": false,
+   "validSent": true
   },
   "jardiniere-cristaux": {
    "name": "Jardinière Art nouveau aux cristaux",
-   "version": 1,
+   "version": 2,
    "scale": null,
-   "engineScale": 1,
-   "engineHeightCm": 36,
-   "notes": [],
+   "engineScale": 0.8,
+   "engineHeightCm": 28.8,
+   "notes": [
+    {
+     "num": 1,
+     "u": 0.007443876347990117,
+     "w": 0.9519162952390491,
+     "text": "regarde le model 3D du glb l'ouverture est bien plus large est peut aceuillir un bien plus large bouquet",
+     "type": "",
+     "status": "done",
+     "date": "2026-10-16T21:27:04.096Z",
+     "scale": 0.8,
+     "v": 1,
+     "sent": "2026-10-16_233158",
+     "doneIn": 2
+    }
+   ],
    "valid": null,
-   "history": []
+   "history": [
+    {
+     "version": 2,
+     "date": "2026-10-16T21:46:54.569Z",
+     "summary": "Bouche mesurée sur la crête des parois du GLB (et non plus au niveau du creux sous l'échancrure avant) : demi-largeur 129 au lieu de 106, le bouquet s'étale sur toute l'ouverture",
+     "notes": [
+      1
+     ],
+     "scale": null,
+     "commit": "6265150"
+    }
+   ],
+   "scaleSent": false,
+   "validSent": false
   },
   "prismes-bronze": {
    "name": "Prismes de bronze",
-   "version": 1,
+   "version": 2,
    "scale": null,
-   "engineScale": 1,
-   "engineHeightCm": 60,
-   "notes": [],
+   "engineScale": 0.4,
+   "engineHeightCm": 24,
+   "notes": [
+    {
+     "num": 1,
+     "u": -0.09093275803786058,
+     "w": 1.0321221767327724,
+     "text": "faire une ouverture",
+     "type": "",
+     "status": "done",
+     "date": "2026-10-16T21:27:49.413Z",
+     "scale": 1,
+     "v": 1,
+     "sent": "2026-10-16_233158",
+     "doneIn": 2
+    },
+    {
+     "num": 2,
+     "u": 0.08797513521634616,
+     "w": 0.9569808568709935,
+     "text": "faire une ouverture créant deux entré pour les tiges",
+     "type": "",
+     "status": "done",
+     "date": "2026-10-16T21:27:56.796Z",
+     "scale": 1,
+     "v": 1,
+     "sent": "2026-10-16_233158",
+     "doneIn": 2
+    }
+   ],
    "valid": null,
-   "history": []
+   "history": [
+    {
+     "version": 2,
+     "date": "2026-10-16T21:54:47.947Z",
+     "summary": "Deux ouvertures en haut des deux prismes (creusées dans le dessus, bronze sombre) et deux entrées pour les tiges : le moteur sait maintenant composer dans plusieurs bouches (fiche m2, part des tiges par bouche), le grand prisme garde l'essentiel du bouquet, le petit un tiers",
+     "notes": [
+      1,
+      2
+     ],
+     "scale": null,
+     "commit": "6265150"
+    }
+   ],
+   "scaleSent": false,
+   "validSent": false
   },
   "narcisses-bronze": {
    "name": "Bronze aux narcisses",
-   "version": 1,
+   "version": 2,
    "scale": null,
-   "engineScale": 1,
-   "engineHeightCm": 45,
-   "notes": [],
+   "engineScale": 0.7,
+   "engineHeightCm": 31.5,
+   "notes": [
+    {
+     "num": 1,
+     "u": -0.020589192708333332,
+     "w": 0.5487056075434982,
+     "text": "retravailler le rendue bronze le même que sur le vase poisson",
+     "type": "",
+     "status": "done",
+     "date": "2026-10-16T21:29:01.407Z",
+     "scale": 0.7,
+     "v": 1,
+     "sent": "2026-10-16_233158",
+     "doneIn": 2
+    }
+   ],
    "valid": null,
-   "history": []
+   "history": [
+    {
+     "version": 2,
+     "date": "2026-10-16T21:57:46.240Z",
+     "summary": "Rendu bronze refait sur le modèle du vase à la carpe : une seule matière bronze patiné brun-olive (patine plus sombre dans les creux), satiné au lieu de brillant plastique, reflets laiton sur les reliefs des narcisses, grain fin de fonte",
+     "notes": [
+      1
+     ],
+     "scale": null,
+     "commit": "6265150"
+    }
+   ],
+   "scaleSent": false,
+   "validSent": false
   },
   "coque-verte": {
    "name": "Coque verte",
-   "version": 1,
+   "version": 2,
    "scale": null,
-   "engineScale": 1,
-   "engineHeightCm": 45,
-   "notes": [],
+   "engineScale": 1.3,
+   "engineHeightCm": 58.5,
+   "notes": [
+    {
+     "num": 2,
+     "u": 0.38295664088182113,
+     "w": 0.5259050699067225,
+     "text": "bug visuel",
+     "type": "",
+     "status": "done",
+     "date": "2026-10-16T21:30:01.939Z",
+     "scale": 1.3,
+     "v": 1,
+     "sent": "2026-10-16_233158",
+     "doneIn": 2
+    },
+    {
+     "num": 3,
+     "u": -0.03395416640984549,
+     "w": 0.2009598370212853,
+     "text": "fondue moyen et la texture globale doit etre plus grainy genre vase en beton/pierre grise",
+     "type": "",
+     "status": "done",
+     "date": "2026-10-16T21:30:21.769Z",
+     "scale": 1.3,
+     "v": 1,
+     "sent": "2026-10-16_233158",
+     "doneIn": 2
+    },
+    {
+     "num": 4,
+     "u": -0.06154382268039118,
+     "w": 0.4124808026175213,
+     "text": "le col d'entré n'est pas parfait",
+     "type": "",
+     "status": "done",
+     "date": "2026-10-16T21:30:26.141Z",
+     "scale": 1.3,
+     "v": 1,
+     "sent": "2026-10-16_233158",
+     "doneIn": 2
+    }
+   ],
    "valid": null,
-   "history": []
+   "history": [
+    {
+     "version": 2,
+     "date": "2026-10-16T21:44:17.967Z",
+     "summary": "Vraie ouverture en croissant d'ombre comme sur la photo (les tiges y descendent), lèvre avant nette ; grain de pierre fin (piqûres, paillettes, marbrure douce) ; plus de liseré pâle sur le bord du disque (le tracé s'arrêtait avant la silhouette) ; plus de ligne claire à hauteur de bouche (défaut de rendu de l'avant, corrigé pour tous les vases GLB)",
+     "notes": [
+      2,
+      3,
+      4
+     ],
+     "scale": null,
+     "commit": "6265150"
+    }
+   ],
+   "scaleSent": false,
+   "validSent": false
   },
   "gui-argent": {
    "name": "Céladon au gui d'argent",
    "version": 1,
    "scale": null,
-   "engineScale": 1,
-   "engineHeightCm": 36,
+   "engineScale": 0.56,
+   "engineHeightCm": 20.2,
    "notes": [],
-   "valid": null,
-   "history": []
+   "valid": {
+    "version": 1,
+    "date": "2026-10-16T21:31:24.708Z"
+   },
+   "history": [],
+   "scaleSent": false,
+   "validSent": true
   },
   "feuilles-vertes": {
    "name": "Vase aux grandes feuilles",
    "version": 1,
    "scale": null,
-   "engineScale": 1,
-   "engineHeightCm": 42,
+   "engineScale": 0.75,
+   "engineHeightCm": 31.5,
    "notes": [],
-   "valid": null,
-   "history": []
+   "valid": {
+    "version": 1,
+    "date": "2026-10-16T21:32:13.256Z"
+   },
+   "history": [],
+   "scaleSent": false,
+   "validSent": false
   },
   "dragon-cloisonne": {
    "name": "Balustre noir au dragon",
    "version": 1,
-   "scale": null,
+   "scale": 1.36,
    "engineScale": 1,
    "engineHeightCm": 51,
-   "notes": [],
+   "notes": [
+    {
+     "num": 1,
+     "u": -0.14772238522812972,
+     "w": 0.29401325208569007,
+     "text": "ajouter la pointe de la queue",
+     "type": "",
+     "status": "open",
+     "date": "2026-10-16T21:32:23.240Z",
+     "scale": 1,
+     "v": 1
+    },
+    {
+     "num": 2,
+     "u": 0.08794125748256033,
+     "w": 0.8404795098628394,
+     "text": "faire la continuité du decor pour compler le trou jusqu'au bord",
+     "type": "",
+     "status": "open",
+     "date": "2026-10-16T21:32:39.657Z",
+     "scale": 1,
+     "v": 1
+    }
+   ],
    "valid": null,
-   "history": []
+   "history": [],
+   "scaleSent": false
   },
   "ronces-noires": {
    "name": "Verre camée aux ronces",
    "version": 1,
-   "scale": null,
+   "scale": 0.8,
    "engineScale": 1,
    "engineHeightCm": 42,
    "notes": [],
-   "valid": null,
-   "history": []
+   "valid": {
+    "version": 1,
+    "date": "2026-10-16T21:39:23.063Z"
+   },
+   "history": [],
+   "scaleSent": false,
+   "validSent": false
   },
   "colonne-art-nouveau": {
    "name": "Colonne Art nouveau",
    "version": 1,
-   "scale": null,
+   "scale": 0.59,
    "engineScale": 1,
    "engineHeightCm": 54,
    "notes": [],
-   "valid": null,
-   "history": []
+   "valid": {
+    "version": 1,
+    "date": "2026-10-16T21:39:03.673Z"
+   },
+   "history": [],
+   "scaleSent": false,
+   "validSent": false
   }
  },
- "sends": []
+ "sends": [
+  {
+   "ts": "2026-10-16_233158",
+   "vases": [
+    "gres-chauve-souris",
+    "bouteille-dragon",
+    "porcelaine-papillon",
+    "calla-gres",
+    "bronze-bambous",
+    "bronze-lys",
+    "cristal-ginkgo",
+    "jardiniere-cristaux",
+    "prismes-bronze",
+    "narcisses-bronze",
+    "coque-verte",
+    "gui-argent",
+    "feuilles-vertes"
+   ],
+   "validated": [
+    "gres-chauve-souris (v1)",
+    "bouteille-dragon (v1)",
+    "bronze-bambous (v1)",
+    "bronze-lys (v1)",
+    "cristal-ginkgo (v1)",
+    "gui-argent (v1)"
+   ]
+  }
+ ]
 }

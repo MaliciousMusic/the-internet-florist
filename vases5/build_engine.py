@@ -52,6 +52,40 @@ def put_entry(path, v):
     open(path, 'w', encoding='utf-8', newline='\n').write(t)
 
 
+def add_hole(body, fiche, cfg, m=None, tag='h'):
+    """a model whose opening is only a shallow scoop (Meshy closed it): a real opening on the measured mouth, shaped like the
+    photograph's (a crescent of shadow under the notch of the lip, rising along the lip towards the far end). Its inside is drawn
+    over the body behind the stems (mouth); the part of it below the mouth's axis is cut out of the front (fr, even-odd), so the
+    stems are seen going down into it; the front lip, a soft light edge, is part of the body"""
+    VX_, FL_ = 500, 990
+    m = m or fiche                                          # the main mouth, or another one (m2)
+    cx, cy, rx, ry = VX_ + m['mx'], FL_ - m['mh'], m['mo'], m['mry']
+    f = lambda v: ('%.2f' % v).rstrip('0').rstrip('.')
+    dark, wall, rim = cfg.get('hole_dark', '#0b100d'), cfg.get('hole_wall', '#1d2620'), cfg.get('hole_rim', '#6f8272')
+    lift = float(cfg.get('hole_rise', 2.6)) * ry           # the far end of the lip stands higher (the lip rises along the cup)
+    sag, top = float(cfg.get('hole_sag', 2.0)) * ry, float(cfg.get('hole_top', 1.3)) * ry
+    L, R = (cx - rx, cy - .4 * ry), (cx + rx, cy - lift)
+    low = (L, (cx - .55 * rx, cy + sag), (cx + .45 * rx, cy + sag * 1.05), R)          # the front lip
+    up = (R, (cx + .35 * rx, cy - top - lift * .3), (cx - .5 * rx, cy - top), L)        # the far edge of the shadow
+    cub = lambda c: 'C%s %s %s %s %s %s' % tuple(f(v) for q in c[1:] for v in q)
+    hole = 'M%s %s%s%sZ' % (f(L[0]), f(L[1]), cub(low), cub(up))
+    def bez(c, t):
+        u = 1 - t
+        return [u**3 * c[0][i] + 3 * u * u * t * c[1][i] + 3 * u * t * t * c[2][i] + t**3 * c[3][i] for i in (0, 1)]
+    below = [q for q in (bez(low, i / 60) for i in range(61)) if q[1] > cy]
+    if below:
+        cut = 'M%s %s' % (f(below[0][0]), f(cy)) + ''.join('L%s %s' % (f(x), f(y)) for x, y in below) + 'L%s %sZ' % (f(below[-1][0]), f(cy))
+        body['fr'] = body['fr'] + cut
+    grad = ('<linearGradient id="{t}g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="{w}"/><stop offset=".5" stop-color="{d}"/>'
+            '<stop offset="1" stop-color="{d}"/></linearGradient>').format(t=tag, w=wall, d=dark)
+    blur = '<filter id="{t}gb" x="-10%" y="-30%" width="120%" height="160%"><feGaussianBlur stdDeviation="{s}"/></filter>'.format(t=tag, s=f(ry * .35))
+    body['mouth'] = body.get('mouth', '') + ('<defs>{g}{b}</defs><path d="{h}" fill="url(#{t}g)"/><path d="{h}" fill="{d}" filter="url(#{t}gb)" opacity=".8"/>'
+                                             .format(g=grad, b=blur, h=hole, t=tag, d=dark))
+    lipd = 'M%s %s%s' % (f(L[0]), f(L[1]), cub(low))
+    body['body'] += ('<path d="%s" fill="none" stroke="%s" stroke-width="%s" stroke-opacity=".55" stroke-linecap="round" transform="translate(0 %s)"/>' % (
+                         lipd, rim, f(float(cfg.get('hole_lip', 1.2))), f(.45)))
+
+
 def main():
     want = [a for a in sys.argv[1:] if not a.startswith('-')] or VASES
     entries = {}
@@ -92,6 +126,16 @@ def main():
                 body['sover'] = float(OPT_SOVER.get(name, .5))           # its painted glass covers them: drawn over it, faded
         if name in CLEAR:
             body['clear'] = 1                                           # clear glass: the stems inside are seen sharp
+        cfg = os.path.join(HERE, name, 'glbsvg.json')
+        if os.path.exists(cfg):
+            m2 = json.load(open(cfg, encoding='cp1252')).get('m2')
+            if m2:                                                      # the vessel's other mouths, each with its share of the stems
+                fiche['m2'] = [dict(mx=q[0], mh=q[1], mo=q[2], mry=q[3], k=q[4], front=int(len(q) > 5 and bool(q[5]))) for q in m2]
+        if os.path.exists(oc) and os.path.exists(cfg) and str(json.load(open(cfg, encoding='cp1252')).get('hole', '0')) != '0':
+            cf = json.load(open(cfg, encoding='cp1252'))
+            add_hole(body, fiche, cf)
+            for j, mm in enumerate(fiche.get('m2', [])):
+                add_hole(body, fiche, cf, mm, 'h%d' % (j + 2))
         fiche['svgb'] = key
         body['own'] = 1 if (body.get('mouth') or name in GLB_OWN) else 0          # a vessel with its own mouth draws its own lip too
         entries[key] = body

@@ -111,7 +111,8 @@ def trace(alb, m, s):
     if pre > 0:                                  # tame the texture's speckle before tracing (edges kept)
         a = cv2.bilateralFilter(a, 0, pre * 6, pre)
     # carry the colours a little past the silhouette so the clip, not the trace, makes the edge
-    ae, me = svgkit.extend(a.astype(np.float32), m, 4)
+    # (ext: vtracer may drop a thin edge band of the outermost colour; a wider margin keeps it under the clip)
+    ae, me = svgkit.extend(a.astype(np.float32), m, int(F('ext', 4)))
     rgba = np.dstack([np.clip(ae, 0, 255).astype(np.uint8)[..., ::-1], (me * 255).astype(np.uint8)])
     src = os.path.join(OUT, '_tex_%s.png' % TAG); dst = os.path.join(OUT, '_trace_%s.svg' % TAG)
     cv2.imwrite(src, rgba)
@@ -209,6 +210,34 @@ def grain(alb, sm8, m, mapf, step, q, k, W, H):
 def shop_out(body, defs, cam):
     import glbsvg_shop
     glbsvg_shop.shop_out(OUT, VASE, OPT, body, defs, cam, log)
+
+
+def stone(alb, m, mapf):
+    """a stone or concrete body (stone=1): fine pits and pale flecks over the whole surface, and a broad soft mottling, as SVG
+    noise; their colours come from the texture's median, drawn towards a neutral grey (stonegrey), their sizes in shop units"""
+    col = np.median(alb[m], 0)
+    grey = np.full(3, float(col @ LUM))
+    g = F('stonegrey', .35)
+    base = col * (1 - g) + grey * g
+    ys, xs = np.where(m)
+    x0, y0 = mapf(xs.min(), ys.min()); x1, y1 = mapf(xs.max() + 1, ys.max() + 1)
+    box = 'x="%s" y="%s" width="%s" height="%s"' % tuple(svgkit.fmt(round(v, 1)) for v in (x0 - 2, y0 - 2, x1 - x0 + 4, y1 - y0 + 4))
+    defs, layers = [], []
+    # (name, colour, base frequency per unit, coverage, sharpness, opacity, seed)
+    for nm, c, fq, cov, kk, op, seed in (('sd', base * .62, F('stonef', 1.1), F('stonepits', .16), 16, F('stoneop', .55), 11),
+                                         ('sl', np.clip(base * 1.32 + .04, 0, 1), F('stonef', 1.1) * .8, F('stonefl', .10), 16, F('stoneop', .55) * .7, 17),
+                                         ('sm', base * .8, F('stonemf', .045), .5, 2.2, F('stonemop', .22), 23)):
+        from statistics import NormalDist
+        t = .5 + .1 * NormalDist().inv_cdf(1 - cov)
+        defs.append('<filter id="%s" filterUnits="userSpaceOnUse" %s color-interpolation-filters="sRGB">'
+                    '<feTurbulence type="fractalNoise" baseFrequency="%s" numOctaves="%d" seed="%d"/>'
+                    '<feColorMatrix values="0 0 0 0 %s 0 0 0 0 %s 0 0 0 0 %s %s 0 0 0 %s"/></filter>' % (
+                        nm, box, svgkit.fmt(round(fq, 4)), 3 if nm == 'sm' else 2, seed,
+                        svgkit.fmt(round(c[0], 3)), svgkit.fmt(round(c[1], 3)), svgkit.fmt(round(c[2], 3)),
+                        svgkit.fmt(kk), svgkit.fmt(round(-kk * t, 3))))
+        layers.append('<rect %s filter="url(#%s)" opacity="%s"/>' % (box, nm, svgkit.fmt(round(op, 3))))
+    log('stone: base %s, pits %.2f, flecks %.2f' % (svgkit.hexc(base * 255), F('stonepits', .16), F('stonefl', .10)))
+    return ''.join(defs), ''.join(layers)
 
 
 def main():
@@ -332,9 +361,11 @@ def main():
     glaze = '<g fill="%s" fill-opacity="%s" filter="url(#hb)">%s</g>' % (OPT.get('hlcol', '#fbfaf6'), svgkit.fmt(b), ''.join(hl))
     gdefs, grn = grain(alb, a8, m, mapf, step, q, k, W, H) if F('grain', 0) > 0 else ('', '')
     defs.append(gdefs)
-    parts = dict(paint=tpath, grain=grn, shade=shade, env=envg, glaze=glaze)
-    only = OPT.get('only', 'paint,grain,shade,env,glaze').split(',')
-    body = '<g clip-path="url(#kb)">%s</g>' % ''.join(parts[p] for p in ('paint', 'grain', 'shade', 'env', 'glaze') if p in only)
+    sdefs, stn = stone(alb, m, mapf) if F('stone', 0) > 0 else ('', '')
+    defs.append(sdefs)
+    parts = dict(paint=tpath, grain=grn, stone=stn, shade=shade, env=envg, glaze=glaze)
+    only = OPT.get('only', 'paint,grain,stone,shade,env,glaze').split(',')
+    body = '<g clip-path="url(#kb)">%s</g>' % ''.join(parts[p] for p in ('paint', 'grain', 'stone', 'shade', 'env', 'glaze') if p in only)
     bg = OPT.get('bg', '')
     back = '<rect width="%d" height="%d" fill="%s"/>' % (W, H, bg) if bg else ''
     if VIEW == 'shop':

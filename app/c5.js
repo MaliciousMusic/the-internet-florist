@@ -144,7 +144,7 @@ function buildBq(svg,ids,sv,vid,t0=150,occ,model,recipe){if(svg._alive)svg._aliv
   /* layers, back to front: the plinth, the back of the vessel, deep (the lines and big leaves at the back of the bouquet: every stem passes in
      front of them), the stems, back (heads the player set at the back), fst, the mass, the vessel, the front (what rests on the lip) */
   const cast=(par,rr)=>{const w=G(par);if(rr>(LOD?24:14))w.setAttribute('filter',`url(#${CUR_DD<.34?csF:CUR_DD<.67?csM:csB})`);return w};const L={};for(const k of['plinth','vback','deep','stems','back','fst','mass','vase','front'])L[k]=G(svg,{'data-l':k});
-  const v=VZ[vid]||VZ['coupe-blanche'],BP=c.BP,list=c.out.slice().sort((a,b)=>a.z-b.z);
+  let BP=c.BP;const v=VZ[vid]||VZ['coupe-blanche'],list=c.out.slice().sort((a,b)=>a.z-b.z);
   /* one stage for every head (LIFE_ALL): a bud or a half-open head opens within its own footprint (its size kept), the composition untouched */
   if(LIFE_ALL)for(const o of list){if(!o.st||o.st==='open'||o.kind!=='head'&&o.kind!=='self')continue;if(o.kind==='head')o.cm=(o.cm||cmOf(o.it.p))*(o.st==='bud'?.62:.86);o.st='open'}
   let n=0;list.forEach((o,i)=>{o.dd=list.length>1?1-i/(list.length-1):0});const TF=[0,1,2,3,4].map(depthTint);const step=Math.max(40,1500/list.length),T=i=>t0+380+i*step;
@@ -157,7 +157,13 @@ function buildBq(svg,ids,sv,vid,t0=150,occ,model,recipe){if(svg._alive)svg._aliv
   const SBW=v.svgb&&typeof SVGB!=='undefined'?SVGB[v.svgb]:null,GL=(v.mat==='glass'||!!(SBW&&SBW.inner&&SBW.fr))&&!!v.prof&&v.kind!=='hand'&&v.kind!=='wrap',feet=[];
   /* the vessel is there, whole, from the first frame (it never fades in); the stems seen inside it grow from the mouth downward */
   {const sg=stage(L.plinth,v);stShow=sg.show;vessel(L.vback,vid,0,{noPlinth:1,part:'back',shClip:sg.top});if(v.kind==='kenzan'||v.mat==='glass'&&!GL){WILT=LIFE?lifeWilt(lifeW(LIFE)*.85):null;try{growUp(inStems(stemsBelow(L.stems,12,vid)),BP[0],BP[1],t0+250,700)}finally{WILT=null}}vessel(L.vase,vid,0,{noPlinth:1,part:'front'})}
-  let FWD=false;const SC=['#24401c','#3c6229','#5f8a3e','#a9c97a'],held=v.kind==='hand'||v.kind==='wrap',vTop=held?BP[1]:FL-vMh(v),mwV=vMouth(v)||26,mcx=VX+vMx(v);
+  let FWD=false;const SC=['#24401c','#3c6229','#5f8a3e','#a9c97a'],held=v.kind==='hand'||v.kind==='wrap';let vTop=held?BP[1]:FL-vMh(v),mwV=vMouth(v)||26,mcx=VX+vMx(v);
+  /* an item of another mouth (o.mouth, c4 composeMouths) draws its stem from there; useMouth(null) is the main one again */
+  /* a mouth opening on the vessel's front (m.front: a slit in the body) holds flowers that stand before the vessel: its items are drawn in
+     the front layer, their stems under their heads */
+  const M0={BP,vTop,mwV,mcx,lean:LEANMAX},L0=Object.assign({},L);let FS=null,FM=null;
+  const useMouth=m=>{Object.assign(L,L0);if(!m){({BP,vTop,mwV,mcx}=M0);LEANMAX=M0.lean;return}BP=m.BP;vTop=FL-m.mh;mwV=m.mo||26;mcx=VX+m.mx;LEANMAX=m.lean;
+    if(m.front){if(!FS){FS=G(L.front,{'data-m':'stems'});FM=G(L.front,{'data-m':'mass'})}L.deep=L.stems=FS;L.back=L.fst=L.mass=FM}};
   /* below the tie of a held bouquet every stem goes on straight in its own direction (the stems cross at the binding point and fan out below it) */
   const below=(x,y,tx,ty,w,cols,t)=>{let l=Math.hypot(tx,ty)||1,ux=tx/l,uy=ty/l;if(uy>-.2)return;const an=Math.max(-.32,Math.min(.32,Math.atan2(ux,-uy)))+R(-.05,.05);ux=Math.sin(an);uy=-Math.cos(an);const Lb=R(118,142),Q=[[x,y],[x-ux*Lb*.34,y-uy*Lb*.34],[x-ux*Lb*.67,y-uy*Lb*.67],[x-ux*Lb+R(-3,3),y-uy*Lb]];
     growUp(stem3(L.stems,Q,w,w*.96,cols,6),x,y,Math.max(0,t-520),520)};
@@ -171,7 +177,7 @@ function buildBq(svg,ids,sv,vid,t0=150,occ,model,recipe){if(svg._alive)svg._aliv
     /* a long stem leaves the mouth already leaning toward its head (stems pivot at the lip, they do not rise straight then turn) and arrives in its neck
        along the neck's direction; a short one (a head lying near the rim) goes almost straight, without overshooting; c4 stemSamples is the same curve */
     const dy=BP[1]-ey,Lc=Math.hypot(ex-bx,BP[1]+8-ey),sh=Math.max(0,Math.min(1,1-(Lc-20)/50)),hk=Lc*(.38-.2*sh),P1=[bx+(ex-bx)*.22,BP[1]-dy*.33],P1s=[bx+(ex-bx)*.33,BP[1]+8+(ey-BP[1]-8)*.33],
-      P=[[bx,BP[1]+8],[P1[0]+(P1s[0]-P1[0])*sh,P1[1]+(P1s[1]-P1[1])*sh],nd?[ex+nd[0]*hk,ey+nd[1]*hk]:[ex-(ex-bx)*.3,ey+dy*.35],[ex,ey]],st=stem3(FWD?L.fst:L.stems,P,w0,w1,SCc,14);growUp(st,bx,BP[1]+8,Math.max(0,t-520),520);st.P=P;if(GL)feet.push({p:P[0],d:[P[0][0]-P[1][0],P[0][1]-P[1][1]],w:w0,c:SCc,tn:TINT});
+      P=leanP([[bx,BP[1]+8],[P1[0]+(P1s[0]-P1[0])*sh,P1[1]+(P1s[1]-P1[1])*sh],nd?[ex+nd[0]*hk,ey+nd[1]*hk]:[ex-(ex-bx)*.3,ey+dy*.35],[ex,ey]]),st=stem3(FWD?L.fst:L.stems,P,w0,w1,SCc,14);growUp(st,bx,BP[1]+8,Math.max(0,t-520),520);st.P=P;if(GL)feet.push({p:P[0],d:[P[0][0]-P[1][0],P[0][1]-P[1][1]],w:w0,c:SCc,tn:TINT});
     if(held)below(P[0][0],P[0][1],P[1][0]-P[0][0],P[1][1]-P[0][1],w0,SCc,t);st.nk={par:FWD?L.fst:L.stems,gu:[bx,BP[1]+8,Math.max(0,t-520),520]};return st}
   /* a head's neck, handed back by the head, drawn with the stems: continuous with its bouquet stem, behind every flower */
   const neckDraw=(nk,st,ext,x,y,nod=0,ps=1)=>{if(!st||!st.nk)return;const put=el=>{if(st.nk.before)st.nk.par.insertBefore(el,st.nk.before);growUp(el,...st.nk.gu)};
@@ -181,7 +187,7 @@ function buildBq(svg,ids,sv,vid,t0=150,occ,model,recipe){if(svg._alive)svg._aliv
   /* every node an element draws is tagged with its index, whatever layer it lands in */
   let mk=null;const mark=i=>{if(mk)for(const k in L){const ch=L[k].children;for(let j=mk[k];j<ch.length;j++)ch[j].setAttribute('data-o',mk.i)}mk={i};for(const k in L)mk[k]=L[k].children.length};
   /* a stage render (LIFE): each element draws from its own random stream, so a bouquet keeps the same details from bud to faded; its colours wilt with it */
-  try{for(const o of list){mark(n);const t=T(n++);CUR_DD=o.dd;TINT=TF[depthLevel(o.dd)];if(LIFE){sd(sv*7+3+n*7919);WILT=lifeWilt(lifeWEl(LIFE,o.it&&o.it.p?lifeProfile(o.it.p):null),o.it&&o.it.p&&(GHI[o.it.p.sid]||{}).wilt,o.it&&o.it.p&&o.it.p.sid)}
+  try{for(const o of list){useMouth(o.mouth);mark(n);const t=T(n++);CUR_DD=o.dd;TINT=TF[depthLevel(o.dd)];if(LIFE){sd(sv*7+3+n*7919);WILT=lifeWilt(lifeWEl(LIFE,o.it&&o.it.p?lifeProfile(o.it.p):null),o.it&&o.it.p&&(GHI[o.it.p.sid]||{}).wilt,o.it&&o.it.p&&o.it.p.sid)}
     if(o.kind==='leaf'){const g=G(L.deep);xAnthLeaf(g,t,{c:o.dark?['#060e09','#10261a','#1f4430','#3f6e4a','#86b48a']:undefined,pl:30,rot:0});bloom(g,o.x,o.y+30,o.rot,o.scale,t,900,-12);continue}
     if(o.kind==='drape'){const g=G(cast(L.front,30)),rec=o.it.p.rec,dr=rec.a==='drape'?rec:{a:'drape',cm:60,cols:[o.it.p.col],p:{type:'chenille'}};
       DRAPEX={x:o.x,y:o.y,side:o.side||1,held,top:vTop,mw:mwV,mcx,FL};try{[[1,0,0],[.8,-20,0],[.62,24,0]].forEach(([k,sw,dx],j)=>{const h=G(g,{transform:`translate(0,${j*1.5})`});drawRec(h,t+j*90,dr,{col:o.it.p.col,len:o.len*k,sway:o.sway+sw*(o.side||1)})})}finally{DRAPEX=null}
@@ -253,6 +259,7 @@ function buildBq(svg,ids,sv,vid,t0=150,occ,model,recipe){if(svg._alive)svg._aliv
   /* then, in a fading bouquet, no stem seen running under a head painted behind its own head (stemsOver) */
   try{const ws=tw.slice(tw0);for(const w of ws)w.fn(1,1);try{heartsFree(L,list,c);if(LIFE&&LIFE.stage>=2)stemsOver(L,list,c,v)}finally{for(const w of ws)w.fn(0,0)}}catch(_){}
   /* in a glass vessel every stem goes on under the mouth: the continuation of its own stem, down to the bottom */
+  useMouth(null);
   if(GL&&feet.length){WILT=LIFE?lifeWilt(lifeW(LIFE)*.85):null;try{growUp(inStems(stemsIn(SBW&&SBW.sover?L.vase:L.stems,feet,vid)),BP[0],BP[1],t0+250,700)}finally{WILT=null}}
   /* petals fallen on the table (not swayed by the breeze, outside the frame measure) */
   if(LIFE&&LIFE.stage>=2&&!held)lifeFallen(L.plinth,LIFE,list.filter(o=>o.kind==='head'),BP,mwV,stShow,sv);

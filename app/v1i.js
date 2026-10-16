@@ -13,8 +13,10 @@ function svgbPut(g,txt,tag,vs){const k='_'+tag+(svgbN++).toString(36),T=svgbT(vs
 const SVGB_BACK=new Map();
 function svgBody(g,v){const b=SVGB[v.svgb];if(!b)return vBody(g,v,profSamples(v.prof,LOD?28:90));
   const bk=b.fr&&SVGB_BACK.get(v.svgb);if(bk&&bk.ownerSVGElement&&bk.ownerSVGElement===g.ownerSVGElement){SVGB_BACK.delete(v.svgb);
-    const id='fk'+(gid++),cp=E('clipPath',{id},GDEF||defs);const T=svgbT(v.vs);E('path',T?{d:b.fr,'clip-rule':'evenodd',transform:T}:{d:b.fr,'clip-rule':'evenodd'},cp);
-    const u=E('use',{'clip-path':`url(#${id})`,'data-svgb':v.svgb+'-front'},g);u.setAttribute('href','#'+bk.id);return u}
+    const id='fk'+(gid++),cp=E('clipPath',{id},GDEF||defs);const T=svgbT(v.vs);E('path',Object.assign({d:b.fr,'clip-rule':'evenodd'},T?{transform:T}:{}),cp);
+    /* a group (opacity < 1) is drawn whole, then clipped: clipped layer by layer, its translucent shading would show twice along the
+       edge of the front, a light hairline across the vessel */
+    const u=E('use',{'clip-path':`url(#${id})`,'data-svgb':v.svgb+'-front',opacity:.999},g);u.setAttribute('href','#'+bk.id);return u}
   return svgbPut(g,'<defs>'+b.defs+'</defs>'+b.body,v.svgb,v.vs)}
 /* behind the stems: a wall standing behind the bouquet, then the inside of the mouth (over the plain one, inside the rim);
    a vessel drawing its own lip and mouth (own) brings its defs along */

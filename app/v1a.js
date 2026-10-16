@@ -10,11 +10,12 @@ function vScaleBy(v,k){if(v.prof)v.prof=v.prof.map(q=>[q[0]*k,q[1]*k]);
   if(v.hd)v.hd=Object.assign({},v.hd,...['y0','y1','out','th'].filter(n=>typeof v.hd[n]==='number').map(n=>({[n]:v.hd[n]*k})));
   if(v.box)v.box=Object.assign({},v.box,{w:v.box.w*k,d:v.box.d*k});
   if(v.ol)v.ol=Object.assign({},v.ol,{pts:v.ol.pts.map(q=>[q[0]*k,q[1]*k]),mouth:v.ol.mouth&&v.ol.mouth.map(x=>x*k)},typeof v.ol.d==='number'?{d:v.ol.d*k}:{});
-  if(v.sil)v.sil=Object.assign({},v.sil,{x0:v.sil.x0*k,dx:v.sil.dx*k,h:v.sil.h.map(x=>x*k)});return v}
+  if(v.sil)v.sil=Object.assign({},v.sil,{x0:v.sil.x0*k,dx:v.sil.dx*k,h:v.sil.h.map(x=>x*k)});
+  if(v.m2)v.m2=v.m2.map(m=>Object.assign({},m,{mx:m.mx*k,mh:m.mh*k,mo:m.mo*k,mry:m.mry*k}));return v}
 /* a drawn body is written at scale 1 around the vessel's foot (VX, FL): a scaled vessel draws it through this transform */
 const svgbT=k=>k&&k!==1?`translate(${VX} ${FL}) scale(${k}) translate(${-VX} ${-FL})`:null;
 /* the scales the owner set in the vase review (revue-vases/etat.json, written here by revue-vases/version.mjs echelles) */
-const VSC={};
+const VSC={'bouteille-dragon':0.59,'bronze-bambous':0.83,'bronze-lys':0.97,'calla-gres':1.52,'coque-verte':1.3,'cristal-ginkgo':0.71,'feuilles-vertes':0.75,'gres-chauve-souris':0.96,'gui-argent':0.56,'jardiniere-cristaux':0.8,'narcisses-bronze':0.7,'prismes-bronze':0.4};
 const VZ={};for(const v of VZ0){if(VSC[v.id])v.vs=VSC[v.id];VZ[v.id]=vScale(v)}
 /* vessels of earlier versions: bouquets already sent keep a vessel close to theirs (the hand-tied and paper-wrapped ones stand in clear glass) */
 const VOLD={'coupe-blanche':'coupe-pied-blanche','coupe-noire':'coupe-pied-noire','boule-chocolat':'vase-ovoide-chocolat','boule-sapin':'boule-vert-sapin','verre':'cylindre-verre-clair','calice':'calice-mouchete',

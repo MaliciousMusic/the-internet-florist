@@ -154,6 +154,9 @@ $$('send').onclick=async()=>{const busy=$$('busy'),todo=IDS.filter(id=>sheetOf(i
   finally{cur=keep;frame=null;drawList();drawSide();draw(false)}};
 $$('copy').onclick=async()=>{try{await navigator.clipboard.writeText($$('dlgm').textContent);$$('copy').textContent='Copié ✓'}catch(e){$$('copy').textContent='Copie impossible'}setTimeout(()=>$$('copy').textContent='Copier le message',1600)};
 $$('close').onclick=()=>$$('dlg').close();
+/* for Claude's checks from another tab: draw a vessel off screen, frame a region, save the view (never touches the review state) */
+window.RV={drawInto,shot,async view(id,name,box,o={}){const h=document.createElement('div');h.style.cssText='position:fixed;left:-3000px;top:0;width:1000px;height:1000px';document.body.append(h);
+  const a0=alone;if(o.alone!=null)alone=o.alone;try{frame=null;const s=drawInto(h,id,false);if(box)s.setAttribute('viewBox',box.join(' '));const png=await shot(s);return await api('POST','/api/apercu',{name,png})}finally{alone=a0;h.remove();frame=null}}};
 
 /* ---------- start: declare the engine's vessels, then show the last one seen ---------- */
 (async()=>{try{state=await api('POST','/api/inventaire',{vases:VZ0.map(v=>({id:v.id,name:v.n||v.id,scale:v.vs||1,heightCm:Math.round(v.h/UPC*10)/10}))})}
