@@ -1,0 +1,535 @@
+rose-standard	Rose standard (hybride de thé à grosse tête)	Roses	focale
+rose-intermediaire-kenya	Rose intermédiaire et sweetheart (type Kenya)	Roses	focale
+rose-aspect-jardin	Rose d'aspect jardin (garden-look)	Roses	focale
+rose-de-jardin	Rose de jardin (garden rose)	Roses	focale
+rose-anglaise-david-austin	Rose anglaise David Austin (Wedding & Event)	Roses	focale
+rose-japonaise	Rose japonaise (Wabara et série Princess)	Roses	focale
+rose-branchue	Rose branchue (rose spray)	Roses	secondaire
+rose-ancienne-parfumee	Rose ancienne et rose parfumée	Roses	focale
+rose-teintee	Rose teintée et rose fantaisie (arc-en-ciel, bleue, noire)	Roses	focale
+rose-stabilisee	Rose stabilisée (rose éternelle)	Roses	focale
+tulipe-simple	Tulipe simple	Printemps & bulbes	focale
+tulipe-francaise	Tulipe française	Printemps & bulbes	focale
+tulipe-double	Tulipe double (tulipe pivoine)	Printemps & bulbes	focale
+tulipe-perroquet	Tulipe perroquet	Printemps & bulbes	focale
+tulipe-frangee	Tulipe frangée	Printemps & bulbes	focale
+tulipe-fleur-de-lys	Tulipe à fleur de lis	Printemps & bulbes	focale
+tulipe-viridiflora	Tulipe viridiflora	Printemps & bulbes	focale
+tulipe-rembrandt	Tulipe Rembrandt (flammée)	Printemps & bulbes	focale
+renoncule-classique	Renoncule	Printemps & bulbes	focale
+renoncule-cloni	Renoncule Cloni (Success, Hanoi)	Printemps & bulbes	focale
+renoncule-pon-pon	Renoncule Pon-Pon	Printemps & bulbes	focale
+renoncule-butterfly	Renoncule Butterfly	Printemps & bulbes	secondaire
+renoncule-natura-moderna	Renoncule Natura Moderna	Printemps & bulbes	secondaire
+anemone-coronaria	Anémone des fleuristes (anémone de Caen)	Printemps & bulbes	focale
+anemone-japonaise	Anémone du Japon	Printemps & bulbes	secondaire
+hellebore-orientalis	Hellébore d'Orient (rose de carême)	Printemps & bulbes	secondaire
+hellebore-niger	Rose de Noël (hellébore noir)	Printemps & bulbes	secondaire
+pivoine-herbacee-double	Pivoine herbacée double	Printemps & bulbes	focale
+pivoine-herbacee-simple	Pivoine simple, japonaise et anémone	Printemps & bulbes	focale
+pivoine-corail	Pivoine corail	Printemps & bulbes	focale
+pivoine-itoh	Pivoine intersectionnelle (Itoh)	Printemps & bulbes	focale
+pivoine-arbustive	Pivoine arbustive	Printemps & bulbes	focale
+pois-de-senteur	Pois de senteur	Printemps & bulbes	secondaire
+jacinthe	Jacinthe	Printemps & bulbes	secondaire
+muscari	Muscari	Printemps & bulbes	remplissage
+narcisse-trompette	Jonquille / narcisse trompette	Printemps & bulbes	secondaire
+narcisse-double	Narcisse double	Printemps & bulbes	secondaire
+narcisse-bouquet	Narcisse à bouquet (tazette, poète)	Printemps & bulbes	secondaire
+muguet	Muguet	Printemps & bulbes	secondaire
+violette	Violette (violette de Toulouse, de Parme)	Printemps & bulbes	secondaire
+ancolie	Ancolie	Printemps & bulbes	secondaire
+lilas	Lilas	Printemps & bulbes	focale
+freesia	Freesia	Printemps & bulbes	secondaire
+viburnum-roseum	Boule-de-neige (viorne obier 'Roseum')	Printemps & bulbes	secondaire
+fritillaire-imperiale	Fritillaire impériale (couronne impériale)	Printemps & bulbes	focale
+fritillaire-meleagris	Fritillaire pintade	Printemps & bulbes	texture
+fritillaire-persica	Fritillaire de Perse	Printemps & bulbes	secondaire
+fritillaire-michailovskyi	Fritillaire de Michailovski et petites fritillaires	Printemps & bulbes	texture
+allium-grosse-tete	Ail d'ornement à grosse tête	Printemps & bulbes	focale
+allium-petit	Ail d'ornement à petite tête	Printemps & bulbes	texture
+iris-hollandais	Iris de Hollande	Printemps & bulbes	secondaire
+iris-barbu	Iris barbu (iris des jardins)	Printemps & bulbes	focale
+ornithogale	Ornithogale (étoile de Bethléem)	Printemps & bulbes	secondaire
+pavot-islande	Pavot d'Islande	Printemps & bulbes	focale
+camassia	Camassia (camash)	Printemps & bulbes	secondaire
+eremurus	Eremurus (lis des steppes)	Printemps & bulbes	secondaire
+triteleia	Triteleia (brodiée)	Printemps & bulbes	remplissage
+jacinthe-des-bois	Jacinthe des bois	Printemps & bulbes	remplissage
+scille	Scille	Printemps & bulbes	remplissage
+niveole	Nivéole	Printemps & bulbes	remplissage
+crocus	Crocus	Printemps & bulbes	secondaire
+sparaxis	Sparaxis (fleur arlequin)	Printemps & bulbes	secondaire
+ixia	Ixia	Printemps & bulbes	remplissage
+glaieul-nain	Glaïeul nain (glaïeul de printemps)	Printemps & bulbes	secondaire
+amaryllis	Amaryllis	Printemps & bulbes	focale
+nerine	Nérine	Printemps & bulbes	secondaire
+dahlia-assiette	Dahlia géant 'assiette' (dinnerplate)	Été & classiques	focale
+dahlia-decoratif	Dahlia décoratif (formel et informel)	Été & classiques	focale
+dahlia-balle	Dahlia balle	Été & classiques	secondaire
+dahlia-pompon	Dahlia pompon	Été & classiques	secondaire
+dahlia-cactus	Dahlia cactus et semi-cactus	Été & classiques	focale
+dahlia-nenuphar	Dahlia nénuphar (waterlily)	Été & classiques	focale
+dahlia-collerette	Dahlia collerette	Été & classiques	secondaire
+dahlia-simple	Dahlia simple (simple, mignon, orchidée, pivoine)	Été & classiques	secondaire
+dahlia-anemone	Dahlia à fleur d'anémone	Été & classiques	secondaire
+dahlia-lacinie	Dahlia lacinié (frangé) et stellaire	Été & classiques	focale
+cosmos	Cosmos	Été & classiques	secondaire
+zinnia	Zinnia	Été & classiques	secondaire
+scabieuse	Scabieuse (fleur)	Été & classiques	secondaire
+delphinium	Delphinium (pied-d'alouette vivace)	Été & classiques	secondaire
+pied-alouette-annuel	Pied-d'alouette annuel (larkspur)	Été & classiques	secondaire
+digitale	Digitale	Été & classiques	secondaire
+lisianthus	Lisianthus (eustoma)	Été & classiques	secondaire
+muflier	Muflier (gueule-de-loup)	Été & classiques	secondaire
+giroflee-matthiole	Giroflée / matthiole (stock)	Été & classiques	secondaire
+hortensia-boule	Hortensia boule (macrophylla mophead, dont Hovaria et types japonais)	Été & classiques	focale
+hortensia-lacecap	Hortensia à fleurs plates (lacecap)	Été & classiques	focale
+hortensia-paniculata	Hortensia paniculé	Été & classiques	focale
+hortensia-arborescens	Hortensia arborescent (Annabelle)	Été & classiques	focale
+astilbe	Astilbe	Été & classiques	texture
+campanule	Campanule (dont campanule à grosses fleurs)	Été & classiques	secondaire
+phlox	Phlox	Été & classiques	secondaire
+gerbera	Gerbera	Été & classiques	focale
+germini	Germini (mini-gerbera)	Été & classiques	secondaire
+tournesol	Tournesol	Été & classiques	focale
+chrysantheme-disbud	Chrysanthème à grosse fleur (disbud, 'bloom', boule)	Été & classiques	focale
+chrysantheme-araignee	Chrysanthème araignée et japonais (spider, fuji, kiku)	Été & classiques	focale
+chrysantheme-santini-pompon	Chrysanthème santini, bouton, pompon et coussin	Été & classiques	remplissage
+chrysantheme-marguerite-spray	Chrysanthème spray marguerite et décoratif	Été & classiques	secondaire
+oeillet-standard	Œillet standard	Été & classiques	secondaire
+oeillet-spray	Œillet à petites fleurs (mini, spray)	Été & classiques	remplissage
+oeillet-de-poete-dianthus	Œillet de poète et dianthus de fleur coupée	Été & classiques	secondaire
+reine-marguerite	Reine-marguerite (aster de Chine)	Été & classiques	secondaire
+aster-vivace-symphyotrichum	Aster vivace de fleur coupée (aster spray)	Été & classiques	remplissage
+agapanthe	Agapanthe	Été & classiques	focale
+glaieul	Glaïeul	Été & classiques	secondaire
+arum-calla	Arum / calla (zantedeschia)	Été & classiques	focale
+lis-oriental	Lis oriental	Été & classiques	focale
+lis-ot-orienpet	Lis OT (orienpet)	Été & classiques	focale
+lis-asiatique-la	Lis asiatique et hybrides LA	Été & classiques	focale
+lis-longiflorum-trompette	Lis longiflorum et lis trompette	Été & classiques	focale
+alstroemere	Alstrœmère (lis des Incas)	Été & classiques	secondaire
+amaryllis-hippeastrum	Amaryllis (hippeastrum)	Été & classiques	focale
+tubereuse	Tubéreuse	Été & classiques	secondaire
+rudbeckia	Rudbeckia	Été & classiques	secondaire
+echinacea	Échinacée	Été & classiques	secondaire
+nigelle	Nigelle de Damas (fleur)	Été & classiques	secondaire
+clematite	Clématite (fleur coupée)	Été & classiques	secondaire
+achillee	Achillée	Été & classiques	remplissage
+trachelium	Trachélium	Été & classiques	remplissage
+bleuet	Bleuet (centaurée)	Été & classiques	remplissage
+godetia-clarkia	Godétia et clarkia	Été & classiques	secondaire
+tagete-oeillet-d-inde	Tagète (rose d'Inde, œillet d'Inde)	Été & classiques	secondaire
+souci-calendula	Souci (calendula)	Été & classiques	secondaire
+immortelle-xerochrysum	Immortelle à bractées (helichrysum)	Été & classiques	secondaire
+sauge-salvia	Sauge ornementale (salvia)	Été & classiques	secondaire
+bouvardia	Bouvardia	Été & classiques	secondaire
+liatris	Liatris (plume du Kansas)	Été & classiques	secondaire
+aconit	Aconit	Été & classiques	secondaire
+phalaenopsis	Phalaenopsis (orchidée papillon)	Orchidées	focale
+cymbidium-grandes-fleurs	Cymbidium à grandes fleurs	Orchidées	focale
+cymbidium-mini	Cymbidium mini (petites fleurs, cascade)	Orchidées	secondaire
+dendrobium-coupe	Dendrobium coupé (type phalaenopsis : Sonia, Pompadour, Big White…)	Orchidées	secondaire
+dendrobium-nobile	Dendrobium nobile et dendrobiums en pot	Orchidées	secondaire
+vanda	Vanda	Orchidées	focale
+ascocenda	Ascocenda et Ascocentrum (vanda miniature)	Orchidées	secondaire
+mokara	Mokara	Orchidées	secondaire
+aranda	Aranda	Orchidées	secondaire
+arachnis-aranthera	Arachnis, Aranthera et Renanthera (orchidées scorpion)	Orchidées	texture
+oncidium	Oncidium (dame qui danse)	Orchidées	remplissage
+cambria	Cambria et hybrides intergénériques (Vuylstekeara, Burrageara, Beallara…)	Orchidées	secondaire
+odontoglossum	Odontoglossum, Odontioda et Odontocidium	Orchidées	secondaire
+brassia	Brassia (orchidée araignée) et hybrides	Orchidées	texture
+miltoniopsis	Miltoniopsis et Miltonia (orchidée pensée)	Orchidées	focale
+zygopetalum	Zygopetalum	Orchidées	focale
+paphiopedilum	Paphiopedilum (sabot de Vénus)	Orchidées	focale
+phragmipedium	Phragmipedium	Orchidées	focale
+cattleya	Cattleya et hybrides (Rhyncholaeliocattleya, Brassolaeliocattleya…)	Orchidées	focale
+epidendrum	Epidendrum (orchidée crucifix)	Orchidées	remplissage
+masdevallia	Masdevallia	Orchidées	texture
+disa	Disa (fierté de la Montagne de la Table)	Orchidées	focale
+coelogyne	Coelogyne	Orchidées	secondaire
+lycaste	Lycaste	Orchidées	focale
+ludisia	Ludisia (orchidée-bijou)	Orchidées	feuillage
+cypripedium	Cypripedium (sabot de Vénus rustique)	Orchidées	focale
+rhynchostylis	Rhynchostylis (orchidée queue de renard)	Orchidées	secondaire
+anthurium-andraeanum	Anthurium (langue de feu)	Exotiques	focale
+anthurium-obake	Anthurium obake (bicolore)	Exotiques	focale
+anthurium-tulipe	Anthurium tulipe	Exotiques	secondaire
+heliconia-rostrata	Héliconia pendant (pince de homard pendante)	Exotiques	focale
+heliconia-wagneriana	Héliconia wagneriana (héliconia arc-en-ciel)	Exotiques	focale
+heliconia-bihai	Héliconia bihai (pince de homard dressée)	Exotiques	focale
+heliconia-psittacorum	Héliconia perroquet	Exotiques	secondaire
+heliconia-caribaea	Héliconia caribaea (balisier des Caraïbes)	Exotiques	focale
+heliconia-stricta	Héliconia stricta	Exotiques	secondaire
+heliconia-chartacea	Héliconia chartacea « Sexy Pink »	Exotiques	focale
+heliconia-orthotricha	Héliconia orthotricha	Exotiques	focale
+heliconia-velues	Héliconias pendants velus	Exotiques	focale
+calathea-crotalifera	Calathea crotalifera (calathéa serpent à sonnette)	Exotiques	secondaire
+musa-fleur	Fleur de bananier ornemental	Exotiques	focale
+strelitzia-reginae	Oiseau de paradis (strelitzia)	Exotiques	focale
+strelitzia-nicolai	Strelitzia blanc géant	Exotiques	focale
+alpinia-purpurata	Alpinia (gingembre rouge)	Exotiques	focale
+etlingera-elatior	Rose de porcelaine (gingembre torche)	Exotiques	focale
+zingiber	Gingembre ruche et gingembre shampoing	Exotiques	focale
+costus	Costus (gingembre spirale)	Exotiques	secondaire
+tapeinochilos-ananassae	Gingembre de cire (gingembre ananas)	Exotiques	focale
+curcuma	Curcuma (tulipe du Siam)	Exotiques	secondaire
+ananas-ornemental	Ananas ornemental sur tige	Exotiques	texture
+bromeliacees	Broméliacées à fleurs (guzmania, vriesea, aechmea)	Exotiques	focale
+protea-cynaroides	Protée royale (King protea)	Exotiques	focale
+protea-neriifolia	Protée à feuilles de laurier-rose (protée « mink »)	Exotiques	focale
+protea-repens	Protée sucrière (sugarbush)	Exotiques	secondaire
+protea-magnifica	Protée reine (Queen protea)	Exotiques	focale
+protea-eximia	Protée duchesse	Exotiques	focale
+protea-hybrides	Protées hybrides et petites protées	Exotiques	focale
+leucospermum	Leucospermum (protée pelote d'épingles)	Exotiques	focale
+leucadendron	Leucadendron (têtes colorées et cônes)	Exotiques	secondaire
+serruria	Serruria (mariée rougissante)	Exotiques	secondaire
+mimetes	Mimetes (pagode)	Exotiques	focale
+aulax	Aulax (buisson-plume)	Exotiques	texture
+banksia	Banksia	Exotiques	focale
+telopea	Waratah	Exotiques	focale
+anigozanthos	Patte de kangourou	Exotiques	secondaire
+isopogon	Isopogon (baguette de tambour)	Exotiques	secondaire
+grevillea	Grevillea (fleurs)	Exotiques	secondaire
+hakea	Hakea (pelote de Hakea)	Exotiques	secondaire
+gloriosa	Gloriosa (lis de Malabar, lis glorieux)	Exotiques	secondaire
+tillandsia	Tillandsia (fille de l'air)	Exotiques	texture
+nepenthes	Népenthès (plante carnivore à urnes)	Exotiques	texture
+nelumbo-nucifera	Fleur de lotus	Exotiques	focale
+nelumbo-capsule	Capsule de lotus	Exotiques	texture
+passiflora	Passiflore (fleur de la passion)	Exotiques	secondaire
+hibiscus	Hibiscus tropical	Exotiques	focale
+plumeria	Frangipanier (plumeria)	Exotiques	secondaire
+bougainvillea	Bougainvillier	Exotiques	remplissage
+gypsophile	Gypsophile (gypsophile paniculée)	Remplissage & textures	remplissage
+waxflower	Fleur de cire (waxflower)	Remplissage & textures	remplissage
+statice-sinuata	Statice (statice sinué)	Remplissage & textures	remplissage
+limonium-latifolium	Lavande de mer (limonium latifolium)	Remplissage & textures	remplissage
+limonium-hybride	Limonium hybride (type « Misty »)	Remplissage & textures	remplissage
+statice-tatarica	Statice tatarica (statice vivace)	Remplissage & textures	remplissage
+statice-queue-de-rat	Statice queue-de-rat (psylliostachys)	Remplissage & textures	texture
+astrantia	Astrance (grande astrance)	Remplissage & textures	secondaire
+solidago	Solidage (verge d'or)	Remplissage & textures	remplissage
+veronique	Véronique (véronique à longues feuilles)	Remplissage & textures	secondaire
+bupleurum	Buplèvre (bupleurum)	Remplissage & textures	remplissage
+alchemille	Alchémille (manteau de Notre-Dame)	Remplissage & textures	remplissage
+ammi	Ammi (grand ammi et ammi visnaga)	Remplissage & textures	remplissage
+daucus-carota	Carotte sauvage ornementale (daucus)	Remplissage & textures	remplissage
+aneth	Aneth (fleur d'aneth)	Remplissage & textures	remplissage
+orlaya	Orlaya (caucalis à grandes fleurs)	Remplissage & textures	remplissage
+didiscus	Didiscus bleu (trachymène)	Remplissage & textures	remplissage
+eryngium	Panicaut (eryngium, chardon bleu)	Remplissage & textures	texture
+echinops	Échinops (boule azurée)	Remplissage & textures	texture
+craspedia	Craspedia (billy button)	Remplissage & textures	secondaire
+nigelle-capsules	Nigelle (capsules)	Remplissage & textures	texture
+pavot-capsules	Pavot (capsules)	Remplissage & textures	texture
+scabieuse-etoilee-capsules	Scabieuse étoilée (capsules)	Remplissage & textures	texture
+lunaire	Monnaie-du-pape (lunaire)	Remplissage & textures	texture
+amour-en-cage	Amour-en-cage (physalis, lanterne chinoise)	Remplissage & textures	texture
+coton	Coton (branche de cotonnier)	Remplissage & textures	texture
+asclepias	Asclépiade	Remplissage & textures	secondaire
+gomphocarpus	Arbre à ballons (gomphocarpus)	Remplissage & textures	texture
+sedum	Orpin d'automne (sédum)	Remplissage & textures	texture
+carthame	Carthame des teinturiers	Remplissage & textures	texture
+celosie-plumeuse	Célosie plumeuse	Remplissage & textures	texture
+celosie-crete-de-coq	Célosie crête-de-coq (passe-velours)	Remplissage & textures	texture
+celosie-a-epis	Célosie à épis	Remplissage & textures	texture
+amarante-retombante	Amarante queue-de-renard (amarante retombante)	Remplissage & textures	texture
+amarante-dressee	Amarante dressée (amarante sanglante)	Remplissage & textures	texture
+hypericum	Millepertuis (baies d'hypericum)	Remplissage & textures	baie
+symphorine	Symphorine (arbre aux perles)	Remplissage & textures	baie
+gomphrena	Amarantine (gomphrène)	Remplissage & textures	remplissage
+matricaire	Matricaire (grande camomille)	Remplissage & textures	remplissage
+tanaisie	Tanaisie commune	Remplissage & textures	remplissage
+camomille	Camomille (matricaire camomille)	Remplissage & textures	remplissage
+agerate	Agérate du Mexique	Remplissage & textures	remplissage
+lavande	Lavande et lavandin	Remplissage & textures	texture
+mimosa	Mimosa (mimosa d'hiver)	Remplissage & textures	secondaire
+setaria	Sétaire d'Italie (millet des oiseaux)	Remplissage & textures	graminee
+panicum	Panic (millet ornemental)	Remplissage & textures	graminee
+pennisetum	Pennisetum (herbe aux écouvillons) et millet perle	Remplissage & textures	graminee
+lagurus	Lagure (queue-de-lièvre, bunny tail)	Remplissage & textures	graminee
+phalaris	Alpiste (phalaris)	Remplissage & textures	graminee
+briza	Grande brize (amourette)	Remplissage & textures	graminee
+miscanthus	Eulalie (miscanthus)	Remplissage & textures	graminee
+pampa	Herbe de la pampa (plumeau de pampa)	Remplissage & textures	graminee
+stipa	Stipe pennée (cheveux d'ange)	Remplissage & textures	graminee
+ble	Blé (blé barbu)	Remplissage & textures	graminee
+avoine	Avoine	Remplissage & textures	graminee
+orge	Orge	Remplissage & textures	graminee
+chasmanthium	Chasmanthium à larges feuilles	Remplissage & textures	graminee
+sorgho-a-balai	Sorgho à balai	Remplissage & textures	graminee
+typha	Massette (typha)	Remplissage & textures	texture
+ozothamnus	Ozothamnus (fleur de riz)	Remplissage & textures	remplissage
+brunia	Brunia (brunia argenté)	Remplissage & textures	texture
+berzelia	Berzelia (brunia vert)	Remplissage & textures	texture
+phylica	Phylica (plumeau du Cap)	Remplissage & textures	texture
+ixodia	Ixodia (marguerite des montagnes australienne)	Remplissage & textures	remplissage
+immortelle-helichrysum	Immortelle (hélichryse d'Italie, immortelle des dunes)	Remplissage & textures	remplissage
+xeranthemum	Xéranthème (immortelle annuelle)	Remplissage & textures	remplissage
+ammobium	Ammobium (immortelle ailée)	Remplissage & textures	remplissage
+acroclinium	Acroclinium (rhodanthe)	Remplissage & textures	remplissage
+stirlingia	Stirlingia (blueboy)	Remplissage & textures	texture
+glixia	Glixia (fleur étoilée séchée)	Remplissage & textures	remplissage
+palm-spear-seche	Lance de palmier séchée (palm spear)	Remplissage & textures	texture
+sun-palm-seche	Palmier soleil séché (sun palm)	Remplissage & textures	texture
+ruscus-seche-teint	Fragon (ruscus) séché, teint ou stabilisé	Remplissage & textures	feuillage
+hortensia-seche-stabilise	Hortensia séché ou stabilisé	Remplissage & textures	remplissage
+eucalyptus-stabilise	Eucalyptus stabilisé	Remplissage & textures	feuillage
+lichen-stabilise	Lichen stabilisé (« mousse d'Islande »)	Remplissage & textures	texture
+broom-bloom	Broom bloom (broomweed séché)	Remplissage & textures	remplissage
+feuille-strelitzia-sechee	Feuille de strelitzia séchée	Remplissage & textures	texture
+stoebe	Stoebe stabilisé	Remplissage & textures	texture
+eucalyptus-cinerea	Eucalyptus cinerea (Silver Dollar)	Feuillages	feuillage
+eucalyptus-pulverulenta-baby-blue	Eucalyptus 'Baby Blue'	Feuillages	feuillage
+eucalyptus-gunnii	Eucalyptus gunnii (gommier cidre)	Feuillages	feuillage
+eucalyptus-parvifolia	Eucalyptus parvifolia (gommier à petites feuilles)	Feuillages	feuillage
+eucalyptus-nicholii	Eucalyptus nicholii (eucalyptus saule)	Feuillages	feuillage
+eucalyptus-populus	Eucalyptus populus (eucalyptus à « baies »)	Feuillages	feuillage
+eucalyptus-stuartiana	Eucalyptus stuartiana	Feuillages	feuillage
+eucalyptus-polyanthemos	Eucalyptus polyanthemos (Silver Plate)	Feuillages	feuillage
+eucalyptus-kruseana	Eucalyptus kruseana (mallee « livre »)	Feuillages	feuillage
+danae-racemosa-ruscus-italien	Ruscus italien (laurier d'Alexandrie)	Feuillages	feuillage
+ruscus-hypophyllum-israelien	Ruscus israélien	Feuillages	feuillage
+ruscus-aculeatus-petit-houx	Petit houx / fragon (pungitopo)	Feuillages	feuillage
+pittosporum-tenuifolium	Pittosporum tenuifolium (pittosporum, « nigra »)	Feuillages	feuillage
+pittosporum-tobira	Pittosporum tobira (pittosporum panaché)	Feuillages	feuillage
+gaultheria-shallon-salal	Salal (feuille de citron)	Feuillages	feuillage
+vaccinium-ovatum-huckleberry	Huckleberry (myrtillier de Californie)	Feuillages	feuillage
+rumohra-adiantiformis-leatherleaf	Fougère cuir (leatherleaf)	Feuillages	feuillage
+asparagus-setaceus-plumosus	Asparagus plumosus (fougère asperge)	Feuillages	feuillage
+asparagus-virgatus-tree-fern	Asparagus virgatus (« tree fern »)	Feuillages	feuillage
+asparagus-macowanii-ming-fern	Asparagus myriocladus (« Ming fern »)	Feuillages	feuillage
+asparagus-densiflorus-sprengeri	Asparagus sprengeri	Feuillages	feuillage
+asparagus-densiflorus-myersii	Asparagus meyeri (queue de renard)	Feuillages	feuillage
+asparagus-asparagoides-smilax	Smilax (asparagus à feuilles de myrte)	Feuillages	feuillage
+asparagus-falcatus	Asparagus falcatus	Feuillages	feuillage
+smilax-smallii-southern-smilax	Smilax du Sud (southern smilax)	Feuillages	feuillage
+monstera-deliciosa	Monstera (feuille de monstera)	Feuillages	feuillage
+philodendron-bipinnatifidum-selloum	Philodendron selloum	Feuillages	feuillage
+philodendron-xanadu	Philodendron Xanadu	Feuillages	feuillage
+philodendron-hybrides	Philodendron (feuilles hybrides)	Feuillages	feuillage
+aspidistra-elatior	Aspidistra (plante des concierges)	Feuillages	feuillage
+dypsis-lutescens-areca	Palme areca	Feuillages	feuillage
+chamaedorea-chico	Chamaedorea (« Chico », palmier nain)	Feuillages	feuillage
+phoenix-roebelenii	Palme roebelenii (palmier dattier nain)	Feuillages	feuillage
+licuala-grandis	Licuala (palmier éventail plissé)	Feuillages	feuillage
+livistona-rotundifolia	Palme livistona (palmier tabouret)	Feuillages	feuillage
+cycas-revoluta	Cycas (feuille de cycas)	Feuillages	feuillage
+rhapis-excelsa	Rhapis (palmier bambou)	Feuillages	feuillage
+caryota-mitis	Palme queue de poisson (caryota)	Feuillages	feuillage
+serenoa-repens-palmetto	Palme éventail (palmetto)	Feuillages	feuillage
+bismarckia-nobilis	Palme bismarckia (palmier argenté)	Feuillages	feuillage
+cordyline-fruticosa-ti	Feuilles de ti (cordyline)	Feuillages	feuillage
+dracaena-reflexa-song-of-india	Dracaena « Song of India »	Feuillages	feuillage
+dracaena-marginata	Dracaena marginata	Feuillages	feuillage
+dracaena-fragrans	Dracaena fragrans (massangeana)	Feuillages	feuillage
+dracaena-sanderiana-lucky-bamboo	Bambou de la chance (dracaena sanderiana)	Feuillages	texture
+dracaena-surculosa	Dracaena surculosa (« Florida Beauty »)	Feuillages	feuillage
+codiaeum-variegatum-croton	Croton (feuilles de croton)	Feuillages	feuillage
+alocasia	Alocasia (oreille d'éléphant)	Feuillages	feuillage
+goeppertia-calathea	Calathea (feuilles de calathea)	Feuillages	feuillage
+anthurium-feuilles	Feuilles d'anthurium	Feuillages	feuillage
+musa-feuille-bananier	Feuille de bananier	Feuillages	feuillage
+strelitzia-feuilles	Feuilles de strelitzia (oiseau de paradis)	Feuillages	feuillage
+pandanus	Pandanus (feuilles de vacoa)	Feuillages	feuillage
+alpinia-zerumbet-variegata	Feuilles de gingembre panaché (alpinia)	Feuillages	feuillage
+fatsia-japonica-aralia	Aralia (fatsia du Japon)	Feuillages	feuillage
+nephrolepis-exaltata-boston	Fougère de Boston (néphrolépis)	Feuillages	feuillage
+polystichum-munitum-sword-fern	Fougère épée de l'Ouest (sword fern)	Feuillages	feuillage
+adiantum-capillaire	Capillaire (fougère cheveux de Vénus)	Feuillages	feuillage
+sticherus-umbrella-fern	Fougère parapluie (umbrella fern)	Feuillages	feuillage
+dicranopteris-uluhe	Fougère uluhe (crosses de fougère)	Feuillages	texture
+thelypteris-kunthii-helecho	Helecho (fougère bouclier du Sud)	Feuillages	feuillage
+cyrtomium-falcatum-houx	Fougère houx (cyrtomium)	Feuillages	feuillage
+phlebodium-aureum-blue-star	Fougère bleue (phlébodium)	Feuillages	feuillage
+woodwardia-fimbriata	Fougère chaîne géante (woodwardia)	Feuillages	feuillage
+asplenium-nidus	Fougère nid d'oiseau (asplénium)	Feuillages	feuillage
+microsorum-musifolium-crocodile	Fougère crocodile (microsorum)	Feuillages	feuillage
+zamia-integrifolia-coontie	Coontie (« fougère » de Floride)	Feuillages	feuillage
+lycopodium	Lycopode (princess pine)	Feuillages	texture
+equisetum-preles	Prêle d'hiver (equisetum)	Feuillages	texture
+xerophyllum-tenax-bear-grass	Herbe à l'ours (bear grass)	Feuillages	graminee
+xanthorrhoea-steel-grass	Herbe d'acier (steel grass)	Feuillages	graminee
+liriope-lily-grass	Liriope (lily grass)	Feuillages	graminee
+phormium-lin-nz	Phormium (lin de Nouvelle-Zélande)	Feuillages	feuillage
+astelia-silver-spear	Astelia 'Silver Spear'	Feuillages	feuillage
+jacobaea-maritima-cineraire	Cinéraire maritime (dusty miller)	Feuillages	feuillage
+stachys-byzantina-oreille-ours	Épiaire laineuse (oreille d'ours, oreille d'agneau)	Feuillages	feuillage
+hosta-feuilles	Feuilles d'hosta	Feuillages	feuillage
+galax-urceolata	Galax	Feuillages	feuillage
+heuchera	Feuilles d'heuchère	Feuillages	feuillage
+atriplex-hortensis-arroche	Arroche des jardins (atriplex)	Feuillages	feuillage
+pelargonium-geranium-odorant	Géranium odorant (feuilles de pélargonium)	Feuillages	feuillage
+magnolia-grandiflora-feuillage	Feuillage de magnolia (magnolia à grandes fleurs)	Feuillages	feuillage
+olea-europaea-olivier	Branches d'olivier	Feuillages	feuillage
+hedera-helix-lierre	Lierre	Feuillages	feuillage
+jasminum-liane-jasmin	Liane de jasmin	Feuillages	feuillage
+trachelospermum-jasmin-etoile	Jasmin étoilé (rhynchospermum)	Feuillages	feuillage
+myrtus-communis-myrte	Myrte	Feuillages	feuillage
+buxus-sempervirens-buis	Buis	Feuillages	feuillage
+pistacia-lentiscus-pistachier	Pistachier lentisque (pistache)	Feuillages	feuillage
+laurus-nobilis-laurier-sauce	Laurier-sauce	Feuillages	feuillage
+prunus-laurocerasus-laurier-cerise	Laurier-cerise (laurier palme)	Feuillages	feuillage
+viburnum-tinus-laurier-tin	Laurier-tin (viorne tin)	Feuillages	feuillage
+quercus-ilex-chene-vert	Chêne vert (yeuse)	Feuillages	feuillage
+cotinus-coggygria-arbre-a-perruques	Arbre à perruques (cotinus)	Feuillages	feuillage
+physocarpus-opulifolius	Physocarpe (physocarpus)	Feuillages	feuillage
+nandina-domestica-bambou-sacre	Nandina (bambou sacré)	Feuillages	feuillage
+photinia-red-robin	Photinia 'Red Robin'	Feuillages	feuillage
+elaeagnus-chalef	Chalef (elaeagnus)	Feuillages	feuillage
+euonymus-japonicus-fusain	Fusain du Japon	Feuillages	feuillage
+griselinia-littoralis	Griselinia	Feuillages	feuillage
+aucuba-japonica	Aucuba du Japon	Feuillages	feuillage
+choisya-ternata-oranger-du-mexique	Oranger du Mexique (choisya)	Feuillages	feuillage
+brachyglottis-sunshine	Brachyglottis 'Sunshine' (séneçon gris)	Feuillages	feuillage
+leucothoe	Leucothoé	Feuillages	feuillage
+skimmia-japonica	Skimmia du Japon	Feuillages	feuillage
+ilex-aquifolium-houx	Houx (feuillage)	Feuillages	feuillage
+camellia-japonica-feuillage	Feuillage de camélia	Feuillages	feuillage
+gardenia-feuillage	Feuillage de gardénia	Feuillages	feuillage
+ligustrum-troene	Troène (ligustrum)	Feuillages	feuillage
+podocarpus-macrophyllus	Podocarpus (if du Japon)	Feuillages	feuillage
+nageia-nagi	Nagi (podocarpus nagi)	Feuillages	feuillage
+cocculus-laurifolius	Cocculus (laurier-coque)	Feuillages	feuillage
+arbutus-arbousier	Arbousier (feuillage)	Feuillages	feuillage
+lophomyrtus	Lophomyrtus (myrte de Nouvelle-Zélande)	Feuillages	feuillage
+agonis-flexuosa	Agonis (myrte saule)	Feuillages	feuillage
+melaleuca-feuillage	Melaleuca (feuillage)	Feuillages	feuillage
+grevillea-feuillage	Grevillea (feuillage)	Feuillages	feuillage
+leptospermum-arbre-a-the	Leptospermum (arbre à thé)	Feuillages	feuillage
+acacia-feuillage	Acacia (feuillage de mimosa)	Feuillages	feuillage
+adenanthos-sericeus-woolly-bush	Adenanthos (woolly bush)	Feuillages	texture
+leucadendron-rouges	Leucadendron rouges et bordeaux (Safari Sunset, Silvan Red…)	Feuillages	feuillage
+leucadendron-jaunes-verts	Leucadendron jaunes et verts (Gold Strike, Inca Gold…)	Feuillages	feuillage
+leucadendron-argenteum-arbre-argent	Arbre d'argent (leucadendron argenté)	Feuillages	feuillage
+lonicera-chevrefeuille	Liane de chèvrefeuille	Feuillages	feuillage
+salvia-rosmarinus-romarin	Romarin	Feuillages	feuillage
+mentha-menthe	Menthe	Feuillages	feuillage
+salvia-officinalis-sauge	Sauge officinale	Feuillages	feuillage
+origanum-origan	Origan	Feuillages	feuillage
+ocimum-basilic	Basilic	Feuillages	feuillage
+thymus-thym	Thym	Feuillages	texture
+curio-rowleyanus-collier-de-perles	Collier de perles (senecio)	Feuillages	texture
+rhipsalis	Rhipsalis (cactus gui)	Feuillages	texture
+tillandsia-usneoides-mousse-espagnole	Mousse espagnole (tillandsia barbe-de-vieillard)	Feuillages	texture
+tillandsia-plantes-de-l-air	Tillandsia (fille de l'air)	Feuillages	texture
+succulentes-echeveria	Succulentes (echeveria)	Feuillages	texture
+mousses-fraiches	Mousses fraîches (mousse plate, mousse coussin)	Feuillages	texture
+abies-procera-nobilis	Sapin noble (nobilis)	Feuillages	feuillage
+abies-nordmanniana-nordmann	Sapin de Nordmann	Feuillages	feuillage
+pseudotsuga-menziesii-douglas	Douglas	Feuillages	feuillage
+pinus-pins	Pin (branches de pin)	Feuillages	feuillage
+cedrus-cedre	Cèdre (cèdre de l'Atlas, de l'Himalaya)	Feuillages	feuillage
+thuja-cedre-rouge	Thuya (cèdre rouge de l'Ouest)	Feuillages	feuillage
+chamaecyparis-lawsoniana	Faux-cyprès de Lawson (chamaecyparis)	Feuillages	feuillage
+cupressus-cypres-bleus	Cyprès (cyprès de l'Arizona, cyprès de Leyland)	Feuillages	feuillage
+juniperus-genevrier	Genévrier	Feuillages	feuillage
+taxus-baccata-if	If commun	Feuillages	feuillage
+cryptomeria-japonica	Cryptomeria (cèdre du Japon)	Feuillages	feuillage
+picea-epicea	Épicéa (épicéa bleu, épicéa d'Orient)	Feuillages	feuillage
+cerisier-du-japon-sato-zakura	Cerisier à fleurs du Japon (Sato-zakura)	Branches & baies	branche
+cerisiers-hatifs-fleurs-simples	Cerisiers hâtifs à fleurs simples (Keio-zakura, 'Accolade', 'Okamé')	Branches & baies	branche
+abricotier-du-japon-ume	Abricotier du Japon (ume, « fleur de prunier »)	Branches & baies	branche
+amandier-en-fleurs	Amandier (branches fleuries)	Branches & baies	branche
+amandier-de-chine-cerisier-nain	Amandier de Chine & cerisier nain du Japon (pompons doubles)	Branches & baies	branche
+pecher-a-fleurs	Pêcher à fleurs	Branches & baies	branche
+pommier-pommetier-en-fleurs	Pommier & pommetier à fleurs	Branches & baies	branche
+pommetier-a-fruits	Pommetier à fruits décoratifs (branches de pommettes)	Branches & baies	baie
+cognassier-du-japon	Cognassier du Japon	Branches & baies	branche
+magnolia-branches	Magnolia (branches fleuries et en bourgeons)	Branches & baies	branche
+forsythia	Forsythia	Branches & baies	branche
+amelanchier	Amélanchier	Branches & baies	branche
+cornouiller-a-fleurs	Cornouiller à fleurs (branches fleuries)	Branches & baies	branche
+hamamelis	Hamamélis (noisetier de sorcière)	Branches & baies	branche
+viorne-d-hiver	Viorne d’hiver (Viburnum × bodnantense)	Branches & baies	branche
+spiree	Spirée (couronne de mariée)	Branches & baies	branche
+deutzia	Deutzia	Branches & baies	branche
+seringat	Seringat (faux oranger)	Branches & baies	branche
+groseillier-a-fleurs	Groseillier à fleurs	Branches & baies	branche
+enkianthus-dodan	Enkianthus (dōdan-tsutsuji)	Branches & baies	branche
+glycine	Glycine	Branches & baies	branche
+mitsumata	Mitsumata (buisson à papier)	Branches & baies	branche
+saule-a-chatons	Saule à chatons	Branches & baies	branche
+saule-fascie-sekka	Saule fascié 'Sekka'	Branches & baies	branche
+saule-tortueux	Saule tortueux	Branches & baies	branche
+cornouiller-a-bois-colore	Cornouiller à bois coloré	Branches & baies	branche
+bouleau	Bouleau (rameaux, perches, chatons)	Branches & baies	branche
+noisetier-tortueux-chatons	Noisetier (tortueux et à chatons)	Branches & baies	branche
+houx-a-baies	Houx à baies	Branches & baies	baie
+houx-verticille-ilex	Houx verticillé (ilex à baies)	Branches & baies	baie
+laurier-tin-a-baies	Laurier-tin à baies (viorne tin)	Branches & baies	baie
+viornes-a-baies	Viornes à baies (obier, viorne nue, viorne dentée)	Branches & baies	baie
+rosier-a-cynorrhodons	Rosier à cynorrhodons (églantier)	Branches & baies	baie
+cotoneaster	Cotonéaster	Branches & baies	baie
+buisson-ardent	Buisson ardent (pyracantha)	Branches & baies	baie
+callicarpa	Arbuste aux bonbons (callicarpa)	Branches & baies	baie
+sorbier-baies	Sorbier (baies)	Branches & baies	baie
+celastre-bittersweet	Célastre (« bittersweet »)	Branches & baies	baie
+troene-a-baies	Troène à baies	Branches & baies	baie
+nandina-a-baies	Nandina (bambou sacré) à baies	Branches & baies	baie
+arbousier-a-fruits	Arbousier à fruits (arbre aux fraises)	Branches & baies	baie
+ronce-mures-en-fruits	Ronce à mûres en fruits	Branches & baies	baie
+liane-de-kiwi	Liane de kiwi	Branches & baies	branche
+vigne-sarments	Vigne (sarments, bois de vigne et grappes)	Branches & baies	branche
+erable-du-japon	Érable du Japon (branches)	Branches & baies	branche
+chene-branches-glands	Chêne (branches, feuilles et glands)	Branches & baies	feuillage
+hetre-branches	Hêtre (branches fraîches et préservées)	Branches & baies	feuillage
+meleze-a-cones	Mélèze à cônes	Branches & baies	branche
+pin-a-cones	Pin à cônes (rameaux et pommes de pin)	Branches & baies	texture
+gui	Gui	Branches & baies	baie
+sanguisorbe	Sanguisorbe (grande pimprenelle)	Remplissage & textures	texture
+pieris-japonica	Piéris (andromède du Japon)	Branches & baies	branche
+pigamon	Pigamon (thalictrum)	Été & classiques	texture
+cyclamen-fleur-coupee	Cyclamen de Perse (fleur coupée)	Printemps & bulbes	secondaire
+kniphofia	Tritoma (kniphofia, faux-aloès, tison du diable)	Été & classiques	ligne
+hymenocallis	Lis araignée (hyménocallis, ismène)	Exotiques	focale
+crocosmia	Crocosmia (montbrétia)	Été & classiques	ligne
+bomarea	Bomarea (alstroemère grimpante)	Exotiques	secondaire
+ixora	Ixora (flamme des bois)	Exotiques	secondaire
+cyrtanthus	Lis de feu (cyrtanthus, vallote)	Printemps & bulbes	focale
+fraisier-des-bois	Fraisier des bois et tiges de fraisier en fruits	Remplissage & textures	baie
+tamaris	Tamaris	Branches & baies	branche
+ricin-capsules	Ricin (grappes de capsules)	Remplissage & textures	texture
+caladium	Caladium (feuilles de caladium)	Feuillages	feuillage
+loropetalum	Loropetalum (fleur frangée de Chine, feuillage pourpre)	Feuillages	feuillage
+tweedia	Tweedia (étoile du Sud)	Remplissage & textures	remplissage
+baptisia-gousses	Baptisia (gousses de lupin indigo)	Remplissage & textures	texture
+grenade-branche	Grenadier (branches de grenades)	Branches & baies	baie
+figuier-branche	Figuier (branches de figues)	Branches & baies	baie
+litchi-branche	Litchi (grappes de litchis sur rameau)	Branches & baies	baie
+kumquat-branche	Kumquat (branches fruitées)	Branches & baies	baie
+fil-aluminium-decoratif	Fil d'aluminium décoratif	Accessoires & matières	accent
+plume-autruche-teinte	Plume d'autruche teinte	Accessoires & matières	accent
+chaines-strass-perles	Chaînes de strass et perles décoratives	Accessoires & matières	accent
+papier-emballage-floral	Papier d'emballage floral (papier coréen, crépon, cristal)	Accessoires & matières	accent
+ruban-soie-mousseline	Ruban de soie et de mousseline	Accessoires & matières	accent
+pensee	Pensée	Printemps & bulbes	secondaire
+rose-eglantine	Rose simple (églantine)	Roses	secondaire
+sandersonia	Sandersonia (clochette de Noël)	Exotiques	ligne
+ail-serpent	Ail serpent (Allium 'Snakeball')	Printemps & bulbes	ligne
+lis-tigre	Lis tigré	Été & classiques	focale
+lis-oriental-double	Lis oriental double	Été & classiques	focale
+clematite-clochettes	Clématite à clochettes	Été & classiques	secondaire
+pentas	Pentas (étoile d'Égypte)	Été & classiques	remplissage
+geranium-vivace	Géranium vivace	Été & classiques	remplissage
+coreopsis	Coréopsis	Été & classiques	secondaire
+bruyere	Bruyère	Remplissage & textures	texture
+gerbera-araignee	Gerbera araignée	Été & classiques	secondaire
+cosmos-chocolat	Cosmos chocolat	Été & classiques	accent
+fustet-plumes	Fustet en plumes (arbre à perruques)	Remplissage & textures	texture
+branche-lichen	Branche lichénée	Branches & baies	branche
+pivoine-feuillage	Feuillage de pivoine	Feuillages	feuillage
+robinier	Robinier (feuillage)	Feuillages	feuillage
+coleus	Coléus	Feuillages	feuillage
+begonia-feuillage	Bégonia rex (feuillage)	Feuillages	feuillage
+vigne-feuilles	Feuilles de vigne (automne)	Feuillages	feuillage
+fusain-aile	Fusain ailé (feuillage d'automne)	Feuillages	feuillage
+calla-feuilles	Feuilles de calla	Feuillages	feuillage
+anthurium-cristal	Anthurium cristal (feuille veloutée)	Feuillages	feuillage
+hellebore-feuilles	Feuilles d'hellébore	Feuillages	feuillage
+chrysantheme-feuilles	Feuillage de chrysanthème	Feuillages	feuillage
+gloriosa-feuillage	Liane de gloriosa (feuillage)	Feuillages	feuillage

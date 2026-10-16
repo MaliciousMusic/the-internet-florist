@@ -1,0 +1,9 @@
+Belai's Garden : afficher mes bouquets sur mon ordinateur
+
+Portefeuille : 0x70997970c51812dc3a010c7d01b50e0d17dc79c8
+Ordinateur : 0123456789abcdef0123456789abcdef
+Réseau : 31337
+Contrat : 0x5fbdb2315678afecb367f032d93f642f64180aa3
+Émis le : 2026-10-16T01:50:00Z
+
+Cette signature ne coûte rien et n'autorise aucune transaction.

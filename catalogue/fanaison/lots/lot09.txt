@@ -1,0 +1,28 @@
+houx-verticille-ilex;Houx verticillé;Branches & baies;berries;baie
+laurier-tin-a-baies;Laurier-tin à baies;Branches & baies;berries;baie
+viornes-a-baies;Viornes à baies;Branches & baies;berries;baie
+rosier-a-cynorrhodons;Rosier à cynorrhodons;Branches & baies;berries;baie
+cotoneaster;Cotonéaster;Branches & baies;berries;baie
+buisson-ardent;Buisson ardent;Branches & baies;berries;baie
+callicarpa;Arbuste aux bonbons;Branches & baies;berries;baie
+sorbier-baies;Sorbier;Branches & baies;berries;baie
+celastre-bittersweet;Célastre;Branches & baies;berries;baie
+troene-a-baies;Troène à baies;Branches & baies;berries;baie
+nandina-a-baies;Nandina;Branches & baies;berries;baie
+arbousier-a-fruits;Arbousier à fruits;Branches & baies;berries;baie
+ronce-mures-en-fruits;Ronce à mûres en fruits;Branches & baies;berries;baie
+liane-de-kiwi;Liane de kiwi;Branches & baies;line;branche
+vigne-sarments;Vigne;Branches & baies;line;branche
+erable-du-japon;Érable du Japon;Branches & baies;foliage;branche
+chene-branches-glands;Chêne;Branches & baies;foliage;feuillage
+hetre-branches;Hêtre;Branches & baies;foliage;feuillage
+meleze-a-cones;Mélèze à cônes;Branches & baies;line;branche
+pin-a-cones;Pin à cônes;Branches & baies;berries;texture
+gui;Gui;Branches & baies;berries;baie
+pieris-japonica;Piéris;Branches & baies;spray;branche
+tamaris;Tamaris;Branches & baies;spray;branche
+grenade-branche;Grenadier;Branches & baies;berries;baie
+figuier-branche;Figuier;Branches & baies;berries;baie
+litchi-branche;Litchi;Branches & baies;berries;baie
+kumquat-branche;Kumquat;Branches & baies;berries;baie
+branche-lichen;Branche lichénée;Branches & baies;custom/xLichen;branche

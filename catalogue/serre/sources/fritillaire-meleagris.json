@@ -1,0 +1,3996 @@
+{
+ "sid": "fritillaire-meleagris",
+ "schema": "STANDARD-SOURCES.md section 5",
+ "genre": "Fritillaria",
+ "famille": "Liliaceae",
+ "date_consultation": "2026-10-08",
+ "redige_par": "fleur-recensement (temps 1 : inventaire ; temps 2 : fusion, passe de recherche complémentaire)",
+ "perimetre": "Fritillaria meleagris L. et ses cultivars nommés ; les autres fritillaires (imperialis, persica, michailovskyi, pyrenaica, etc.) sont des sortes à part (voir inventaire.json, hors_sorte).",
+ "taxonomie": {
+  "nom_accepte": "Fritillaria meleagris L. (accepté GBIF/WCVP ; IPNI 535213-1 ; POWO urn:lsid:ipni.org:names:535213-1 non lu, 403 aux robots)",
+  "autorite_enregistrement": "KAVB, ICRA du genre Fritillaria (formulaire de recherche, à interroger par l orchestrateur)",
+  "groupe": "aucun groupe officiel connu pour F. meleagris (le registre KAVB sera lu par l orchestrateur)",
+  "nomenclature_horticole": "la forme blanche porte un nom botanique d usage horticole : Fritillaria meleagris var. unicolor subvar. alba, dite 'Alba' ; 'Aphrodite' en est une sélection (RHS Plants 99158, fritillaria.org.uk)",
+  "synonymes_botaniques": "F. contorta Baker, F. graminifolia Stokes, F. lutea Rchb., F. major Baker, F. montana Sanguin., F. pallida Salisb., F. praecox K.Koch, F. tesselata Salisb. (et ses var. alba, lutea, multiflora, serotina de Gray), Lilium meleagris (L.) E.H.L.Krause ; F. meleagris var. contorta (Baker) W.Mill. (GBIF)",
+  "melange": "La sorte est l espèce seule. Piège : le commerce de la fleur coupée vend surtout F. persica ('Ivory Bells') et F. imperialis, d autres sortes. Le « Fritillaria meleagris » coupé est un lot de semis (couleurs mêlées), non un cultivar ; seule la forme blanche 'Alba' y est cultivée à part (GIA Flowers).",
+  "formes_sans_cultivar": [
+   "plants à plusieurs fleurs par tige (jusqu à sept), probablement sélection de pépinière (fritillaria.org.uk), sans nom",
+   "forme jaune pur seulement « entendue dire » (fritillaria.org.uk), sans source",
+   "fleurs doubles : anomalie naturelle (UCC), une photo « Double Snake's head » sur Commons, pas un cultivar"
+  ]
+ },
+ "sources_trame": {
+  "KAVB": {
+   "niveau": "N1",
+   "nom": "KAVB, base des cultivars, formulaire en lecture seule (15 noms interrogés par l'orchestrateur le 2026-10-08 : 12 présents, 3 absents : Emperor, Eros, Triton)",
+   "url": "https://login.kavb.nl/siergewassen"
+  },
+  "GBIF": {
+   "niveau": "N1",
+   "nom": "GBIF Backbone (issu de WCVP, Kew) : Fritillaria meleagris L., nom accepté",
+   "url": "https://www.gbif.org/species/5300535"
+  },
+  "RHS": {
+   "niveau": "N3",
+   "nom": "RHS Plant Finder (société savante, pas l'autorité du genre)",
+   "url": "https://www.rhs.org.uk/plants/"
+  },
+  "Weijers": {
+   "niveau": "N3",
+   "nom": "C.S. Weijers & Zonen (grossiste) : liste de noms sans photo (Alba, Aphrodite, Artemis, Charon, Poseidon, Saturnus)",
+   "url": "https://www.csweijers.nl/en/assortment/fritillaria"
+  },
+  "Van Engelen": {
+   "niveau": "N3",
+   "nom": "Van Engelen (vendeur de bulbes en gros et au détail) : le lot-1 le classait N2 ; ici N3 comme Fluwel et Jansen's dans muscari.json ; question à l'orchestrateur"
+  },
+  "Pépinières": {
+   "niveau": "N3",
+   "nom": "Pottertons, Avon Bulbs, Kevock Garden, Rare Plants, Esker Farm Daffodils (pépinières spécialisées)"
+  },
+  "Sociétés": {
+   "niveau": "N3",
+   "nom": "Pacific Bulb Society, The Fritillaria Group (photos protégées : mesure seulement)"
+  },
+  "Commons": {
+   "niveau": "N4",
+   "nom": "Wikimedia Commons (noms de fichiers contenant le cultivar : seulement Alba)"
+  }
+ },
+ "sku_bouquet": {
+  "sku": "fritillaire-meleagris~0",
+  "coloris": "damier",
+  "nom_affiche": "Damier pourpre (meleagris)",
+  "tiges": 2,
+  "cultivar_reel": "Fritillaria meleagris L., forme type (plants de semis), pas un cultivar",
+  "verdict": "Nom exact (espèce acceptée GBIF/WCVP, RHS Plants 7403). C est ce que le commerce coupé vend : GIA décrit des couleurs « entre rouge et rose » avec 1 à 2 % de blancs, OZ Export « bicolore », Florabundance « bordeaux ». Pas de cultivar ni de marque à prouver ; le dessin se mesurera sur des photos de la forme type (Commons, iNaturalist, GIA).",
+  "marque": "aucune (nom botanique)"
+ },
+ "sku_bouquet_note": "lots.json cite aussi alba parmi les SKU du bouquet ; inventaire.json ne donne que fritillaire-meleagris~0 (damier) ; temps 3 : les SKU du bouquet revus sont meleagris-type (damier), alba (blanc), aphrodite (creme) et poseidon (lavande)",
+ "coloris": [
+  {
+   "id": "damier",
+   "sku": "fritillaire-meleagris~0",
+   "numero_skus_csv": 529,
+   "nom_affiche": "Damier pourpre (meleagris)",
+   "cultivar_reel": "meleagris-type",
+   "nom_enregistre": "Fritillaria meleagris L.",
+   "niveau_preuve": "B",
+   "statut": "en production possible (B)",
+   "nom_affiche_propose": "Damier pourpre (meleagris)",
+   "correction_motif": "nom conforme : forme type, plants de semis ; photos vues : rose-pourpre à pourpre, damier plus sombre",
+   "photos_designees": [
+    {
+     "url_image": "https://www.vanengelen.com/media/catalog/product/cache/56adb830892d957d56a625301cb4427e/f/_/f_meleagris_6.jpg",
+     "url_page": "https://www.vanengelen.com/flower-bulbs-index/fritillaria/fritillaria-meleagris.html",
+     "niveau": "N3",
+     "source": "Van Engelen, photo produit de la fiche espèce",
+     "auteur": null,
+     "licence": "image d'un exportateur, à vérifier avant tout usage",
+     "eclairage": "lumière du jour diffuse, bac ou plate-bande (image vue) ; bulbes de teinte rouge-pourpre rosé à damier foncé, mêlés à une fleur blanche ouverte d'une autre forme : ne mesurer que les cloches pourpres",
+     "fichier_controle": "refcache/fritillaire-meleagris/fusion/img/ve_type.jpg",
+     "role": null
+    },
+    {
+     "url_image": "https://images.pottertons-cdn.co.uk/products/fritillaria-meleagris-best-58c3d0c2-r1/1024.jpg",
+     "url_page": "https://www.pottertons.co.uk/shop/bulbs/fritillaria/fritillaria-meleagris",
+     "niveau": "N3",
+     "source": "Pottertons Nursery (pépinière spécialisée, Royaume-Uni)",
+     "auteur": null,
+     "licence": "photo de vendeur, droits à vérifier ; mesure seule",
+     "eclairage": "plein soleil latéral, reflets sur les carreaux clairs, fond sombre (image vue)",
+     "fichier_controle": "refcache/fritillaire-meleagris/fusion/img/pott_type.jpg",
+     "role": null
+    },
+    {
+     "url_image": "https://www.avonbulbs.co.uk/usercontent/img/col-3/6804.jpg",
+     "url_page": "https://www.avonbulbs.co.uk/autumn-planted-bulbs/fritillaria/fritillaria-meleagris",
+     "niveau": "N3",
+     "source": "Avon Bulbs (pépinière de bulbes, Royaume-Uni)",
+     "auteur": null,
+     "licence": "photo de vendeur, droits à vérifier ; mesure seule",
+     "eclairage": "gros plan en lumière diffuse d'ombre, fond flou (image vue)",
+     "fichier_controle": "refcache/fritillaire-meleagris/fusion/img/av_type.jpg",
+     "role": null
+    },
+    {
+     "url_image": "https://upload.wikimedia.org/wikipedia/commons/1/1f/Fritillaria_meleagris_Irrer_Alm_20210514.jpg",
+     "url_page": "https://commons.wikimedia.org/wiki/File:Fritillaria_meleagris_Irrer_Alm_20210514.jpg",
+     "niveau": "N4",
+     "source": "Wikimedia Commons, Fritillaria meleagris Irrer Alm 20210514 (Tigerente)",
+     "auteur": "Tigerente",
+     "licence": "CC BY-SA 4.0",
+     "eclairage": "plein jour sous ciel partiellement couvert, alpage (image vue)",
+     "fichier_controle": "refcache/fritillaire-meleagris/fusion/img/ce_irrer.jpg",
+     "role": "appoint : plante sauvage, couleur un peu plus rouge que le lot de semis du commerce"
+    }
+   ],
+   "mesures": {
+    "methode": "refs.py auto (balayage du fond) puis refs.py pal sur boites en fractions de l image ; valeur retenue = mediane par canal RGB des photos retenues ; ecart = ΔE76 (CIE Lab) entre photos",
+    "zones_retenues": {
+     "fond_clair": {
+      "valeur": "#d49ab4",
+      "par_photo": {
+       "ve_type (i=0)": "#d29497",
+       "pott_type (i=1)": "#e7b1b6",
+       "av_type (i=2)": "#d5a1b9",
+       "ce_irrer (i=3, appoint)": "#cc90b2"
+      },
+      "ecart_dE_max": 18.9,
+      "ecart_au_dessus_de_10": true
+     },
+     "carreau_sombre": {
+      "valeur": "#561e20",
+      "par_photo": {
+       "ve_type (i=0)": "#4a1f1d",
+       "pott_type (i=1)": "#541c24",
+       "av_type (i=2)": "#58333e",
+       "ce_irrer (i=3, appoint)": "#5a1e19"
+      },
+      "ecart_dE_max": 20.5,
+      "ecart_au_dessus_de_10": true
+     },
+     "contraste_dE_median_fond_vs_motif": 51.3,
+     "base": {
+      "valeur": "#9e726f",
+      "n": 4,
+      "ecart_dE_max": 21.4
+     },
+     "pointe": {
+      "valeur": "#884a52",
+      "n": 4,
+      "ecart_dE_max": 22.9
+     },
+     "dehors_corps": {
+      "valeur": "#995e6b",
+      "n": 4,
+      "ecart_dE_max": 18.9
+     },
+     "dedans_kept122": {
+      "fond": "#b685ab",
+      "sombre": "#501827",
+      "pointe": "#9b7386",
+      "etamines": "#c3bd6f",
+      "style": "#95835a",
+      "nectaire": "non identifié",
+      "source": "kept 122 (Kievitsbloem), hors médiane"
+     },
+     "dessous_kept123_approche": {
+      "fond": "#d4bec7",
+      "sombre": "#532526",
+      "source": "kept 123, approché, hors médiane"
+     }
+    },
+    "eclairage": "Soleil direct (pott_type, ce_irrer), ombre diffuse (av_type), bulbes melés à une fleur blanche (ve_type) : la photo d ombre est la plus fiable ; reflets sur les carreaux clairs signalés.",
+    "ecart_entre_sources": "ΔE76 entre photos : fond 18,9 ; carreau sombre 20,5 ; pointe 22,9 : au-dessus de 10. Troisième photo demandée (ombre, vue de face, fond neutre).",
+    "note": "à remplir par fleur-coloris (refs.py auto, puis ring ou pal ; médiane ; ΔE entre sources)",
+    "photos_mesurees": [
+     {
+      "refs_i": 0,
+      "photo": "ve_type (i=0)",
+      "role": "exterieur, cloches pourpres (bulbes et fleur blanche melees)",
+      "eclairage": "soleil diffus, bulbes et fleur blanche melees : base et pointe douteuses",
+      "mesures_hex": {
+       "fond": "#d29497",
+       "sombre": "#4a1f1d",
+       "base": "#9f6e6c",
+       "corps": "#a86c6f",
+       "pointe": "#b1767a"
+      }
+     },
+     {
+      "refs_i": 1,
+      "photo": "pott_type (i=1)",
+      "role": "exterieur",
+      "eclairage": "plein soleil lateral, reflets sur carreaux clairs : fond surexpose",
+      "mesures_hex": {
+       "fond": "#e7b1b6",
+       "sombre": "#541c24",
+       "base": "#aa776b",
+       "corps": "#8a4750",
+       "pointe": "#8c4c55"
+      }
+     },
+     {
+      "refs_i": 2,
+      "photo": "av_type (i=2)",
+      "role": "exterieur",
+      "eclairage": "ombre diffuse, gros plan : la plus fiable",
+      "mesures_hex": {
+       "fond": "#d5a1b9",
+       "sombre": "#58333e",
+       "base": "#9e7e93",
+       "corps": "#855367",
+       "pointe": "#6c4850"
+      }
+     },
+     {
+      "refs_i": 3,
+      "photo": "ce_irrer (i=3, appoint)",
+      "role": "exterieur, plante sauvage",
+      "eclairage": "plein jour, ciel couvert, alpage : herbe et ciel mêlés aux bords",
+      "mesures_hex": {
+       "fond": "#cc90b2",
+       "sombre": "#5a1e19",
+       "base": "#8e6472",
+       "corps": "#a96a87",
+       "pointe": "#844341"
+      }
+     },
+     {
+      "refs_i": 14,
+      "photo": "kept 122 (i=14)",
+      "role": "dedans, fleur ouverte a plat",
+      "eclairage": "diffus, sur bois : etamines jaunes, style vert-olive ; nectaire non identifie",
+      "mesures_hex": {
+       "fond": "#b685ab",
+       "sombre": "#501827",
+       "pointe": "#9b7386",
+       "etamines": "#c3bd6f",
+       "style": "#95835a"
+      }
+     },
+     {
+      "refs_i": 17,
+      "photo": "kept 123 (i=17, approche)",
+      "role": "dessous des cloches, approche",
+      "eclairage": "soleil, vue d en bas, ciel en fond : approche, hors mediane",
+      "mesures_hex": {
+       "fond": "#d4bec7",
+       "sombre": "#532526"
+      }
+     }
+    ],
+    "niveau_final": "B, valeur retenue malgré un écart ΔE > 10 : troisième photo demandée",
+    "remarques": "Ve_type (i=0) : bulbes et fleur blanche mêlés, base et pointe douteuses. Pott_type (i=1) : soleil, fond clair surexposé. Ce_irrer (i=3) : herbe et ciel dans les bords, appoint. Dedans (kept 122) : étamines jaunes, style vert-olive, nectaire non identifié. Dessous (kept 123) : approché, hors médiane. Dessous retouché (kept 120) : écarté. Nervures vertes : absentes sur cette sorte.",
+    "passe2": "Aucune photo de passe 2 attribuee a ce coloris. Mediane passe 1 recalculee : #d39ab4 (ecart 18.9, inchange)."
+   },
+   "sondage_temps3": {
+    "niveau_apres_sondage": "B",
+    "verdict": "confirmé. B juste : trois photos N3 de vendeurs indépendants + nom N1 (GBIF). A impossible : aucune photo N2 (Van Engelen reste N3 tant que l'orchestrateur ne tranche pas).",
+    "detail": "voir cultivars/meleagris-type/sondage_temps3"
+   },
+   "mesures_passe3": {
+    "passe": 3,
+    "date": "2026-10-09",
+    "agent": "fleur-coloris",
+    "regle": "une 3e photo si deux photos nommees ecartent de plus de dE 10 ; mediane ; neutre seulement si fiable ; concordance = teinte a 10 deg LCh et chroma du meme ordre",
+    "methode": "masque de classe de couleur par photo ; fond = mediane P50-P90 de L ; sombre = mediane L<=P15 ; Lab D65 ; boite pointe seulement pour les photos de passe 2",
+    "balance_des_blancs": "aucun neutre fiable : pas de correction",
+    "photos": [
+     {
+      "photo": "D1 ve_type",
+      "eclairage": "jour diffus, bac ; fleur blanche mêlée exclue par la teinte",
+      "fond_LCh": [
+       50.1,
+       25.2,
+       20.9
+      ],
+      "corps_LCh": [
+       42.1,
+       25.2,
+       21.8
+      ],
+      "sombre_LCh": [
+       23.2,
+       25.4,
+       23.5
+      ],
+      "pointe_LCh": null,
+      "veines_LCh_indicatif": null
+     },
+     {
+      "photo": "D2 pott_type",
+      "eclairage": "plein soleil latéral",
+      "fond_LCh": [
+       61.8,
+       28.4,
+       2.3
+      ],
+      "corps_LCh": [
+       45.8,
+       27.6,
+       7.2
+      ],
+      "sombre_LCh": [
+       23.5,
+       28.2,
+       11.3
+      ],
+      "pointe_LCh": null,
+      "veines_LCh_indicatif": null
+     },
+     {
+      "photo": "D3 av_type",
+      "eclairage": "ombre diffuse, gros plan",
+      "fond_LCh": [
+       54.2,
+       22.3,
+       345.3
+      ],
+      "corps_LCh": [
+       45.9,
+       20.2,
+       348.1
+      ],
+      "sombre_LCh": [
+       28.0,
+       16.8,
+       352.8
+      ],
+      "pointe_LCh": null,
+      "veines_LCh_indicatif": null
+     },
+     {
+      "photo": "D4 ce_irrer",
+      "eclairage": "plein jour, ciel en partie couvert, alpage",
+      "fond_LCh": [
+       57.1,
+       31.7,
+       345.4
+      ],
+      "corps_LCh": [
+       48.6,
+       31.1,
+       349.4
+      ],
+      "sombre_LCh": [
+       26.6,
+       31.9,
+       7.7
+      ],
+      "pointe_LCh": null,
+      "veines_LCh_indicatif": null
+     },
+     {
+      "photo": "D3e 34011 t487",
+      "eclairage": "plein jour, fond d'herbe (3e photo, non nommée)",
+      "fond_LCh": [
+       47.2,
+       10.8,
+       6.9
+      ],
+      "corps_LCh": [
+       41.8,
+       14.9,
+       2.0
+      ],
+      "sombre_LCh": [
+       26.3,
+       20.5,
+       5.4
+      ],
+      "pointe_LCh": null,
+      "veines_LCh_indicatif": null
+     }
+    ],
+    "troisieme_photo": {
+     "photo": "BioImages 34011 (cand 487), non nommee"
+    },
+    "mediane_fond_LCh": [
+     54.2,
+     23.6,
+     2.8
+    ],
+    "ecart_teinte_max_deg": 35.6,
+    "ecart_teinte_mediane_max_deg": 18.1,
+    "rapport_chroma": 2.94,
+    "ecart_dE_max": 24.1,
+    "veines_mediane_LCh_indicatif": null,
+    "niveau_passe3": "C",
+    "doutes": "Concordance non atteinte : teinte à 35,6° d'écart au maximum (D1 contre D3), chroma dans un rapport de 2,9. Sans neutre, pas de correction. L'écart suit l'éclairage (plein soleil h 2 ; ombre et ciel couvert h 345 ; diffus h 21), mais cela ne se corrige pas sans neutre. 3e photo non nommée (34011) : hors compte des nommées."
+   },
+   "mesures_passe4": {
+    "passe": 4,
+    "date": "2026-10-09",
+    "agent": "fleur-coloris",
+    "regle": "règle du chef : au moins 5 photos indépendantes (iNaturalist en fleur, qualité recherche, plus la photo N2/N3 Van Engelen) ; correction de balance seulement sur un neutre trouvé ; médiane LCh du fond clair et du carreau sombre ; concordance : teinte à 10 degrés au plus de la médiane ; 4 sur 5 dont la photo N2/N3 : passage en B",
+    "methode": "refs.py url + mesure locale : masque pourpre (C >= 10, teinte 285 à 30 deg, L >= 12) ; fond clair = médiane des pixels entre P50 et P90 de L ; carreau sombre = médiane des pixels L <= P15 ; Lab D65 ; image 640 px",
+    "balance_des_blancs": "aucun neutre fiable dans les cinq photos (gazon, sol, ciel bleu, feuillage) : aucune correction",
+    "ensemble_decision": [
+     "VE_damier",
+     "owen137_damier",
+     "naturelover_damier",
+     "tisli_damier",
+     "wouterkoch_damier"
+    ],
+    "photos_decision": [
+     {
+      "photo": "VE_damier",
+      "source": "Van Engelen, f_meleagris_6.jpg, photo de la fiche espèce (vendeur, N3)",
+      "observateur": "vendeur (non nommé)",
+      "date": "non datée",
+      "eclairage": "lumière du jour diffuse, bac ; bulbes pourpres mêlés à une fleur blanche (seules les cloches pourpres mesurées)",
+      "fond_LCh": [
+       52.6,
+       23.0,
+       14.8
+      ],
+      "sombre_LCh": [
+       19.2,
+       24.8,
+       22.9
+      ],
+      "n_pixels": 73836
+     },
+     {
+      "photo": "owen137_damier",
+      "source": "iNaturalist obs. 74359294, photo 121521545 (qualité recherche, N3)",
+      "observateur": "owen137",
+      "date": "2021-04-16",
+      "eclairage": "plein air, herbe vert vif, lumière vive (vue)",
+      "fond_LCh": [
+       61.8,
+       24.3,
+       347.0
+      ],
+      "sombre_LCh": [
+       22.6,
+       35.5,
+       15.5
+      ],
+      "n_pixels": 47147
+     },
+     {
+      "photo": "naturelover_damier",
+      "source": "iNaturalist obs. 10725638, photo 14985778 (qualité recherche, N3)",
+      "observateur": "naturelover991",
+      "date": "2018-04-08",
+      "eclairage": "plein air, herbe, lumière diffuse, fond sombre en bas (vue)",
+      "fond_LCh": [
+       63.9,
+       38.8,
+       8.6
+      ],
+      "sombre_LCh": [
+       17.1,
+       33.1,
+       18.6
+      ],
+      "n_pixels": 38763
+     },
+     {
+      "photo": "tisli_damier",
+      "source": "iNaturalist obs. 111645706, photo 188498665 (qualité recherche, N3)",
+      "observateur": "tisli",
+      "date": "2022-04-16",
+      "eclairage": "plein soleil, herbe, ciel bleu (vue)",
+      "fond_LCh": [
+       63.9,
+       32.3,
+       359.6
+      ],
+      "sombre_LCh": [
+       15.8,
+       23.0,
+       15.1
+      ],
+      "n_pixels": 20009
+     },
+     {
+      "photo": "wouterkoch_damier",
+      "source": "iNaturalist obs. 203997913, photo 360510172 (qualité recherche, N3)",
+      "observateur": "wouterkoch",
+      "date": "2024-03-25",
+      "eclairage": "sous-bois ombragé, feuillage sombre, sol gris (vue)",
+      "fond_LCh": [
+       57.5,
+       17.7,
+       325.2
+      ],
+      "sombre_LCh": [
+       19.7,
+       15.6,
+       343.7
+      ],
+      "n_pixels": 11389
+     }
+    ],
+    "photos_appoint_non_decisives": [
+     {
+      "photo": "tisrel_damier",
+      "source": "iNaturalist obs. 41532986, photo 65895685 (appoint)",
+      "observateur": "tisrel",
+      "date": "2020-04-06",
+      "eclairage": "plein air, feuillage vert (vue)",
+      "fond_LCh": [
+       61.9,
+       33.7,
+       319.3
+      ],
+      "sombre_LCh": [
+       23.1,
+       19.0,
+       328.8
+      ],
+      "n_pixels": 26629
+     },
+     {
+      "photo": "donald_damier",
+      "source": "iNaturalist obs. 111361230, photo 187982402 (appoint)",
+      "observateur": "donalddavesne",
+      "date": "2022-04-10",
+      "eclairage": "plein air, herbe, plusieurs cloches (vue)",
+      "fond_LCh": [
+       40.6,
+       26.7,
+       349.3
+      ],
+      "sombre_LCh": [
+       18.9,
+       31.2,
+       14.4
+      ],
+      "n_pixels": 30303
+     },
+     {
+      "photo": "craig_damier",
+      "source": "iNaturalist obs. 152518186, photo 263301097 (appoint)",
+      "observateur": "craig_mundy",
+      "date": "2023-03-27",
+      "eclairage": "plein air, fond vert sombre, feuilles sèches (vue)",
+      "fond_LCh": [
+       52.0,
+       31.8,
+       353.2
+      ],
+      "sombre_LCh": [
+       17.8,
+       31.3,
+       19.1
+      ],
+      "n_pixels": 10561
+     },
+     {
+      "photo": "Pott_damier",
+      "source": "Pottertons, photo produit de la fiche (vendeur, N3, appoint)",
+      "observateur": "vendeur (non nommé)",
+      "date": "non datée",
+      "eclairage": "plein soleil latéral, reflets sur les carreaux clairs (vue)",
+      "fond_LCh": [
+       58.1,
+       28.8,
+       3.2
+      ],
+      "sombre_LCh": [
+       17.6,
+       26.8,
+       12.0
+      ],
+      "n_pixels": 127981
+     },
+     {
+      "photo": "Avon_damier",
+      "source": "Avon Bulbs, photo 6804 (vendeur, N3, appoint)",
+      "observateur": "vendeur (non nommé)",
+      "date": "non datée",
+      "eclairage": "éclairage non vérifié (photo de vendeur)",
+      "fond_LCh": [
+       53.9,
+       22.5,
+       345.0
+      ],
+      "sombre_LCh": [
+       25.5,
+       16.5,
+       352.7
+      ],
+      "n_pixels": 43812
+     }
+    ],
+    "nombre_photos_decision": 5,
+    "mediane_fond_LCh": [
+     61.8,
+     24.3,
+     359.6
+    ],
+    "mediane_sombre_LCh": [
+     19.2,
+     24.8,
+     15.5
+    ],
+    "ecart_teinte_max_fond_deg": 49.6,
+    "ecart_dE_max_fond": 29.4,
+    "photos_concordantes_fond": 2,
+    "concordantes_fond": [
+     "naturelover_damier",
+     "tisli_damier"
+    ],
+    "discordantes_fond": [
+     "VE_damier",
+     "owen137_damier",
+     "wouterkoch_damier"
+    ],
+    "VE_concordante_fond": false,
+    "ecart_teinte_max_sombre_deg": 39.2,
+    "photos_concordantes_sombre": 4,
+    "concordantes_sombre": [
+     "VE_damier",
+     "owen137_damier",
+     "naturelover_damier",
+     "tisli_damier"
+    ],
+    "VE_concordante_sombre": true,
+    "niveau_passe4": "C maintenu sur le fond clair : 2 photos sur 5 concordent, dont pas la Van Engelen ; la règle de passage en B n'est pas remplie. Lecture par le carreau sombre : 4 sur 5 concordent, VE comprise ; si le chef retient le carreau sombre comme teinte de référence, le niveau est B. A arbitrer.",
+    "doutes": "la teinte du fond clair s'étend sur 49.6 degrés entre les cinq photos (VE 15, owen137 347, naturelover 9, tisli 360, wouterkoch 325). Le carreau sombre s'étend sur 39.2 degrés. Le damier varie donc naturellement d'une photo à l'autre ; la règle des 10 degrés ne tient pas sur le fond clair. Le json top-level dit B (sondage temps 3) alors que la passe 3 dit C. Passe 4 : pas de passage en B sur le fond clair."
+   }
+  },
+  {
+   "id": "bordeaux",
+   "sku": "fritillaire-meleagris~1",
+   "numero_skus_csv": 530,
+   "nom_affiche": "Damier bordeaux sombre (Charon)",
+   "cultivar_reel": "charon",
+   "nom_enregistre": "Fritillaria meleagris 'Charon'",
+   "niveau_preuve": "D",
+   "statut": "sans sources A ou B (D)",
+   "nom_affiche_propose": "Damier pourpre très sombre (Charon) : provisoire, source textuelle seule",
+   "correction_motif": "aucune photo nommée de Charon ; textes (garten-wissen : pourpre très sombre jusqu'au presque noir ; Plantura : rouge sombre à violet profond ; Dunedin Botanic Garden : fleurs pourpre foncé) : « bordeaux » est plus clair que « presque noir ». Correction proposée sans photo, donc non qualifiante.",
+   "photos_designees": [],
+   "mesures": {
+    "methode": null,
+    "zones_retenues": {},
+    "eclairage": null,
+    "ecart_entre_sources": null,
+    "note": "à remplir par fleur-coloris (refs.py auto, puis ring ou pal ; médiane ; ΔE entre sources)",
+    "passe2": "Aucune photo de passe 2 attribuee a ce coloris ; inchange (non mesure)."
+   },
+   "ret_question": "Charon n'a aucune photo nommée : retirer (ret:1) ou refonder le coloris sur la forme type en teintes bordeaux (le commerce de la fleur coupée vend un « Meleagris burgundy », Florabundance, et GIA « rouge-bordeaux ») ?",
+   "mesures_passe3": {
+    "passe": 3,
+    "date": "2026-10-09",
+    "non_mesure": true,
+    "raison": "aucune photo nommee ; indicatif seulement",
+    "niveau_passe3": "D (inchange)"
+   }
+  },
+  {
+   "id": "rouge-violet",
+   "sku": "fritillaire-meleagris~2",
+   "numero_skus_csv": 531,
+   "nom_affiche": "Damier rouge violacé (Saturnus)",
+   "cultivar_reel": "saturnus",
+   "nom_enregistre": "Fritillaria meleagris 'Saturnus'",
+   "niveau_preuve": "C",
+   "statut": "à confirmer (C)",
+   "nom_affiche_propose": "Damier rouge violacé (Saturnus)",
+   "correction_motif": "nom concordant avec les deux photos de Rare Plants (damier rouge-violet à magenta sur fond lilas clair) et avec le texte « strong red-purple colouring » ; une seule source photo, donc C",
+   "photos_designees": [],
+   "mesures": {
+    "methode": null,
+    "zones_retenues": {
+     "fond_clair": {
+      "valeur": null,
+      "valeur_indicative_non_retenue": "#9f6c89",
+      "methode": "moyenne de 2 photos (n=2) ; indicatif",
+      "par_photo": {
+       "134 Rare Plants Saturnus": "#b17ba1",
+       "135 Rare Plants Saturnus 2": "#8e5e72"
+      },
+      "ecart_dE_max": 15.6,
+      "ecart_au_dessus_de_10": true
+     },
+     "sombre_134": "#633848",
+     "sombre_135": "#4a2c2c"
+    },
+    "eclairage": "Passe 2 : 134 vif, trois quarts, fond mauve flou ; 135 vif, groupe, fond vert et rose.",
+    "ecart_entre_sources": "Passe 2 : ecart de fond 15.6 entre 134 et 135 (meme vendeur) ; valeur indicative #9f6c89, non retenue.",
+    "note": "à remplir par fleur-coloris (refs.py auto, puis ring ou pal ; médiane ; ΔE entre sources)",
+    "zones_retenues_passe1": {},
+    "photos_mesurees": [
+     {
+      "passe": 2,
+      "cand": 134,
+      "photo": "Rare Plants Saturnus (cand 134)",
+      "source": "Rare Plants, photo produit",
+      "niveau": "N3",
+      "role": "exterieur",
+      "eclairage": "vif, trois quarts, fond mauve flou",
+      "mesures_hex": {
+       "fond": "#b17ba1",
+       "sombre": "#633848",
+       "corps": "#906f7b",
+       "base": "#895c79",
+       "pointe": "#84646d"
+      },
+      "remarque": "fond et sombre mesures sur un seul bouquet ; chiffres indicatifs"
+     },
+     {
+      "passe": 2,
+      "cand": 135,
+      "photo": "Rare Plants Saturnus 2 (cand 135)",
+      "source": "Rare Plants, second fichier du meme vendeur",
+      "niveau": "N3",
+      "role": "exterieur",
+      "eclairage": "vif, groupe, fond vert et rose",
+      "mesures_hex": {
+       "fond": "#8e5e72",
+       "sombre": "#4a2c2c",
+       "corps": "#765b5e",
+       "base": "#606c4a",
+       "pointe": "#7b4d5f"
+      },
+      "remarque": "meme vendeur que 134 : pas independante au sens du standard ; base contaminee par le feuillage"
+     }
+    ],
+    "niveau_final": "C, sans preuve (inchange) : deux fichiers d'un meme vendeur (Rare Plants), donc non independants au sens du standard ; ecart de fond 15.6 ; aucune valeur retenue pour la production.",
+    "remarques": "Passe 2 : Saturnus magenta-mauve sur les deux photos ; mesure indicative seulement."
+   },
+   "ret_question": "Saturnus n'a qu'une source photo (C) : le garder en attente de la page AGS (403) ou le retirer (ret:1) ?",
+   "photos_provisoires_non_qualifiantes": [
+    {
+     "url_image": "https://www.rareplants.co.uk/wp-content/uploads/Fritillaria-meleagris-Saturnus-comp.jpg",
+     "url_page": "https://www.rareplants.co.uk/product/fritillaria-meleagris-saturnus/",
+     "niveau": "N3",
+     "eclairage": "plein air, lumière naturelle diffuse, filigrane rareplants.co.uk (image vue ; 400 x 400 px)",
+     "fichier_controle": "refcache/fritillaire-meleagris/fusion/img/rp_saturnus.jpg"
+    },
+    {
+     "url_image": "https://www.rareplants.co.uk/wp-content/uploads/Fritillaria-meleagris-Saturnus2-comp.jpg",
+     "url_page": "https://www.rareplants.co.uk/product/fritillaria-meleagris-saturnus/",
+     "niveau": "N3",
+     "eclairage": "plein air, lumière naturelle diffuse, filigrane (image vue ; 400 x 400 px)",
+     "fichier_controle": "refcache/fritillaire-meleagris/fusion/img/rp_saturnus2.jpg"
+    }
+   ],
+   "sondage_temps3": {
+    "niveau_apres_sondage": "C",
+    "verdict": "confirmé : C (une seule source photo). Nom affiché à revoir à la mesure : la photo est plutôt « rose magenta » que « rouge violacé ».",
+    "detail": "voir cultivars/saturnus/sondage_temps3"
+   },
+   "mesures_passe3": {
+    "passe": 3,
+    "date": "2026-10-09",
+    "non_mesure": true,
+    "raison": "aucune photo nommee ; indicatif seulement",
+    "niveau_passe3": "C (inchange)"
+   }
+  },
+  {
+   "id": "lavande",
+   "sku": "fritillaire-meleagris~3",
+   "numero_skus_csv": 532,
+   "nom_affiche": "Damier lavande pâle (Poseidon)",
+   "cultivar_reel": "poseidon",
+   "nom_enregistre": "Fritillaria meleagris 'Poseidon'",
+   "niveau_preuve": "B",
+   "statut": "en production possible (B fragile)",
+   "nom_affiche_propose": "Damier lilas sur fond crème (Poseidon)",
+   "correction_motif": "les deux photos nommées (Fritillaria Group N3 ; Garden Stew N4, vues) montrent un fond blanc crème à gris, marques lilas-pourpre : ni « lavande » (fond lavande) ni « rose pourpré » (textes de vendeurs). La photo prime ; à confirmer à la mesure.",
+   "photos_designees": [
+    {
+     "url_image": "https://www.fritillaria.org.uk/uploads/2/5/9/3/25937001/6842695_orig.jpg",
+     "url_page": "https://www.fritillaria.org.uk/fritillaria-species-m---n.html",
+     "niveau": "N3",
+     "source": "The Fritillaria Group (société savante, galerie des espèces M-N)",
+     "auteur": null,
+     "licence": "photo protégée (« All photos on this site are copyrighted and MUST NOT be taken for commercial use ») : mesure seulement, jamais publiée",
+     "eclairage": "fond gris foncé uniforme, éclairage de studio (image vue ; 650 x 488 px)",
+     "fichier_controle": "refcache/fritillaire-meleagris/fusion/img/fg_poseidon.jpg",
+     "role": null
+    },
+    {
+     "url_image": "https://www.gardenstew.com/plantstew/pimg/ps-l/9000658_0.jpg",
+     "url_page": "https://www.gardenstew.com/plantstew/9000658",
+     "niveau": "N4",
+     "source": "Garden Stew (base de plantes d'un forum de jardinage, photo du membre Vivasvat, 2008-12-14)",
+     "auteur": "Vivasvat (membre)",
+     "licence": "copyright du membre : mesure seulement, jamais publiée",
+     "eclairage": "plein air, ciel couvert (image vue ; 375 x 500 px)",
+     "fichier_controle": "refcache/fritillaire-meleagris/fusion/img/gs_poseidon.jpg",
+     "role": null
+    }
+   ],
+   "mesures": {
+    "methode": "refs.py auto (balayage du fond) puis refs.py pal sur boites en fractions de l image ; valeur retenue = mediane par canal RGB des photos retenues ; ecart = ΔE76 (CIE Lab) entre photos",
+    "zones_retenues": {
+     "fond_clair": {
+      "valeur": null,
+      "median_indicative_non_retenue": "#dcbeb6",
+      "par_photo": {
+       "fg_poseidon (i=4)": "#f4ddaa",
+       "gs_poseidon (i=5)": "#c39ec1"
+      },
+      "ecart_dE_max": 49.1,
+      "recalcul_passe2": "aucune valeur retenue ; mediane indicative #dbbdb5 (2 photos, identique a la passe 1) ; ecart 49.1"
+     },
+     "carreau_sombre": {
+      "valeur": null,
+      "median_indicative_non_retenue": "#75616c",
+      "par_photo": {
+       "fg_poseidon (i=4)": "#564d43",
+       "gs_poseidon (i=5)": "#947594"
+      },
+      "ecart_dE_max": 32.0
+     },
+     "etamines": {
+      "valeur": "#b18925",
+      "source": "fg_poseidon (i=4) seul"
+     },
+     "base": null,
+     "pointe": null,
+     "dehors_corps": {
+      "valeur": null,
+      "note": "non retenu (écart ΔE > 10)"
+     },
+     "nervures_vertes": null,
+     "etamines_note": "étamines jaunes sur fg_poseidon seulement"
+    },
+    "eclairage": "Studio sur fond gris (fg_poseidon) ; plein air, ciel couvert, herbe mêlée (gs_poseidon).",
+    "ecart_entre_sources": "ΔE76 entre photos : fond 49,1 ; carreau sombre 32,0. Les deux photos ne montrent pas la même teinte (crème-ochre contre lilas). Aucune valeur retenue. Troisième photo demandée.",
+    "note": "à remplir par fleur-coloris (refs.py auto, puis ring ou pal ; médiane ; ΔE entre sources)",
+    "photos_mesurees": [
+     {
+      "refs_i": 4,
+      "photo": "fg_poseidon (i=4)",
+      "role": "exterieur",
+      "eclairage": "studio, fond gris : creme-ochre, marges brun-pourpre, pas de lilas net",
+      "mesures_hex": {
+       "fond": "#f4ddaa",
+       "sombre": "#564d43",
+       "corps": "#d4bb7e",
+       "etamines": "#b18925"
+      }
+     },
+     {
+      "refs_i": 5,
+      "photo": "gs_poseidon (i=5)",
+      "role": "exterieur",
+      "eclairage": "plein air, ciel couvert, herbe melee : fond lilas",
+      "mesures_hex": {
+       "fond": "#c39ec1",
+       "sombre": "#947594",
+       "corps": "#b693b5"
+      }
+     }
+    ],
+    "niveau_final": "suspendu : ecart 49.1 (passe 1) et 43.6 (passe 2) entre 132 (creme-ochre) et 133 (lilas) ; la passe 2 n'apporte aucune photo nouvelle (132 et 133 sont les deux photos deja en passe 1) ; aucune valeur retenue. Question a l'orchestrateur : trancher entre 132 et 133, ou chercher une troisieme photo.",
+    "remarques": "Fg_poseidon (i=4) : fond crème-ochre, marges brun-pourpre, étamines jaunes, aucun lilas net : le nom « lilas sur fond crème » ne se vérifie pas sur cette photo. Gs_poseidon (i=5) : lilas-mauve sur fond clair, mouchetures mauves. La médiane de 4 et 5 n est pas une couleur réelle : non retenue. Rose-lilas (kept 62) : indicatif, à part dans coloris.md. || Passe 2 : re-mesure 132 #d6be7b (dE 14.4 vs passe 1), 133 #d3cbd9 (dE 20.8 vs passe 1) : la mesure depend de la boite, le desaccord persiste.",
+    "controle_passe2": [
+     {
+      "cand": 132,
+      "photo_passe1": "fg_poseidon (i=4)",
+      "fond_passe1": "#f4ddaa",
+      "fond_passe2": "#d6be7b",
+      "ecart_dE": 14.4
+     },
+     {
+      "cand": 133,
+      "photo_passe1": "gs_poseidon (i=5)",
+      "fond_passe1": "#c39ec1",
+      "fond_passe2": "#d3cbd9",
+      "ecart_dE": 20.8
+     }
+    ]
+   },
+   "sondage_temps3": {
+    "niveau_apres_sondage": "B",
+    "verdict": "B maintenu, fragile : formellement deux photos nommées (N3 titrée par une société savante + N4 identifiée par un membre de forum). Si l'orchestrateur juge l'identification du forum non fiable, c'est C. Les textes « purpur-rosa » (garten-wissen) et « rosapurpur » (bio-gaertner) donnent la même liste de noms dans le même ordre : probablement une seule source recopiée, pas deux. La photo prime. Statut conseillé : B, mesure suspendue (ΔE 49 entre les deux photos, fleur-coloris) jusqu à une troisième photo nommée.",
+    "detail": "voir cultivars/poseidon/sondage_temps3"
+   },
+   "mesures_passe3": {
+    "passe": 3,
+    "date": "2026-10-09",
+    "agent": "fleur-coloris",
+    "regle": "une 3e photo si deux photos nommees ecartent de plus de dE 10 ; mediane ; neutre seulement si fiable ; concordance = teinte a 10 deg LCh et chroma du meme ordre",
+    "methode": "masque de classe de couleur par photo ; fond = mediane P50-P90 de L ; sombre = mediane L<=P15 ; Lab D65 ; boite pointe seulement pour les photos de passe 2",
+    "balance_des_blancs": "aucun neutre fiable : pas de correction",
+    "photos": [
+     {
+      "photo": "L1 cand132",
+      "eclairage": "fond gris de studio (L 32, C 5 : pas un neutre fiable)",
+      "fond_LCh": [
+       78.7,
+       33.4,
+       88.8
+      ],
+      "corps_LCh": [
+       72.8,
+       32.5,
+       87.7
+      ],
+      "sombre_LCh": [
+       51.5,
+       28.9,
+       79.0
+      ],
+      "pointe_LCh": [
+       66.2,
+       33.8,
+       87.5
+      ],
+      "veines_LCh_indicatif": null
+     },
+     {
+      "photo": "L2 cand133",
+      "eclairage": "plein air, ciel couvert, sol sombre",
+      "fond_LCh": [
+       82.6,
+       7.5,
+       301.9
+      ],
+      "corps_LCh": [
+       77.9,
+       8.2,
+       305.6
+      ],
+      "sombre_LCh": [
+       63.1,
+       17.6,
+       323.5
+      ],
+      "pointe_LCh": [
+       73.5,
+       2.0,
+       288.9
+      ],
+      "veines_LCh_indicatif": null
+     }
+    ],
+    "troisieme_photo": null,
+    "mediane_fond_LCh": null,
+    "ecart_teinte_max_deg": 146.9,
+    "ecart_teinte_mediane_max_deg": 138.3,
+    "rapport_chroma": 4.43,
+    "ecart_dE_max": 40.1,
+    "veines_mediane_LCh_indicatif": null,
+    "niveau_passe3": "depend de la teinte : delta h 147 deg, non tranche",
+    "doutes": "Aucune 3e photo nommée. 132 (crème-ochre) et 133 (lilas) : Δh 147°, ΔE 40. La correction par le gris de studio de 132 (fond chaud, L 32, C 5) ramène 132 à h 91 : l'écart reste 149°. Selon la règle, le niveau dépend de la teinte (Δh > 10° : C). Non tranché.",
+    "mediane_non_calculee": "deux photos separees : 132 (L 78.7, C 33.4, h 88.8) et 133 (L 82.6, C 7.5, h 301.9) ; une moyenne de teinte n'aurait aucun sens"
+   }
+  },
+  {
+   "id": "blanc",
+   "sku": "fritillaire-meleagris~4",
+   "numero_skus_csv": 533,
+   "nom_affiche": "Blanc veiné de vert (Alba)",
+   "cultivar_reel": "alba",
+   "nom_enregistre": "Fritillaria meleagris 'Alba' au KAVB ; RHS : Fritillaria meleagris var. unicolor subvar. alba (119868)",
+   "niveau_preuve": "B",
+   "statut": "en production possible (B)",
+   "nom_affiche_propose": "Blanc veiné de vert (Alba)",
+   "correction_motif": "nom conforme : quatre photos vues, blanc à veines vert pâle, damier à peine visible",
+   "photos_designees": [
+    {
+     "url_image": "https://www.pacificbulbsociety.org/pbswiki/files/Fritillaria/Fritillaria_meleagris_DP.jpg",
+     "url_page": "https://www.pacificbulbsociety.org/pbswiki/index.php/Fritillaria_meleagris",
+     "niveau": "N3",
+     "source": "Pacific Bulb Society, David Pilling (« unicolor alba »)",
+     "auteur": "David Pilling",
+     "licence": "droits réservés au photographe : mesure seulement, jamais publiée",
+     "eclairage": "fond sombre, éclairage frontal vif (flash probable, non confirmé) (image vue)",
+     "fichier_controle": "refcache/fritillaire-meleagris/fusion/img/pbs_alba_dp.jpg",
+     "role": null
+    },
+    {
+     "url_image": "https://www.vanengelen.com/media/catalog/product/cache/56adb830892d957d56a625301cb4427e/f/_/f_meleagris_alba_1_1.jpg",
+     "url_page": "https://www.vanengelen.com/fritillaria-meleagris-alba.html",
+     "niveau": "N3",
+     "source": "Van Engelen (vendeur de bulbes en gros et au détail, Bantam, Connecticut)",
+     "auteur": null,
+     "licence": "photo de vendeur, droits à vérifier ; mesure seule",
+     "eclairage": "lumière du jour diffuse, massif de cloches blanches sur herbe (image vue)",
+     "fichier_controle": "refcache/fritillaire-meleagris/fusion/img/ve_alba.jpg",
+     "role": null
+    },
+    {
+     "url_image": "https://www.avonbulbs.co.uk/usercontent/img/col-3/1741.jpg",
+     "url_page": "https://www.avonbulbs.co.uk/autumn-planted-bulbs/fritillaria/fritillaria-meleagris-alba",
+     "niveau": "N3",
+     "source": "Avon Bulbs (pépinière de bulbes, Royaume-Uni)",
+     "auteur": null,
+     "licence": "photo de vendeur, droits à vérifier ; mesure seule",
+     "eclairage": "ombre claire, léger reflet vert du feuillage (image vue ; 280 x 420 px)",
+     "fichier_controle": "refcache/fritillaire-meleagris/fusion/img/av_alba.jpg",
+     "role": null
+    },
+    {
+     "url_image": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Fritillaria_meleagris_alba_01.JPG",
+     "url_page": "https://commons.wikimedia.org/wiki/File:Fritillaria_meleagris_alba_01.JPG",
+     "niveau": "N4",
+     "source": "Wikimedia Commons, Fritillaria meleagris alba 01 (Kor!An, jardin botanique de l'université de Moscou, 2011-05-09)",
+     "auteur": "Kor!An (Андрей Корзун)",
+     "licence": "CC BY-SA 3.0",
+     "eclairage": "ombre de jardin botanique, dominante verte sur le blanc (image vue)",
+     "fichier_controle": "refcache/fritillaire-meleagris/fusion/img/ce_alba01.jpg",
+     "role": null
+    }
+   ],
+   "mesures": {
+    "methode": "refs.py auto (balayage du fond) puis refs.py pal sur boites en fractions de l image ; valeur retenue = mediane par canal RGB des photos retenues ; ecart = ΔE76 (CIE Lab) entre photos",
+    "zones_retenues": {
+     "fond_clair": {
+      "valeur": "#e0dfd3",
+      "methode": "mediane des 7 photos distinctes (4 passe 1 + 3 passe 2) ; kept 119 exclu comme en passe 1",
+      "par_photo": {
+       "pbs_alba_dp (i=6)": "#c6c9bb",
+       "ve_alba (i=7)": "#e0e3d6",
+       "av_alba (i=8)": "#e0dcc8",
+       "ce_alba01 (i=9) = cand 110": "#e1ecc5",
+       "137 RHS Alba": "#d2e2d8",
+       "94 Meneerke Alba": "#e0dfd3",
+       "96 Ghislain Alba": "#d6ddd8"
+      },
+      "ecart_dE_max": 18.0,
+      "paire_ecart_max": "ce_alba01 (i=9) = cand 110 / 96 Ghislain Alba",
+      "ecart_au_dessus_de_10": true,
+      "sans_110": {
+       "valeur": "#dbded4",
+       "ecart_dE_max": 9.6,
+       "paire": "pbs_alba_dp (i=6) / 137 RHS Alba"
+      }
+     },
+     "nervures_vertes": {
+      "valeur": "#889362",
+      "par_photo": {
+       "pbs_alba_dp (i=6)": "#959e71",
+       "ve_alba (i=7)": "#9fa581",
+       "av_alba (i=8)": "#707c4e",
+       "ce_alba01 (i=9)": "#7a8852"
+      },
+      "ecart_dE_max": 17.9,
+      "ecart_au_dessus_de_10": true
+     },
+     "contraste_dE_median_fond_vs_motif": 32.7,
+     "base": null,
+     "pointe": null,
+     "dehors_corps": {
+      "valeur": "#c5caaa",
+      "n": 3,
+      "ecart_dE_max": 18.9
+     },
+     "dedans_kept119": {
+      "fond": "#8e9783",
+      "etamines": "#9e8a2f",
+      "style": "non mesuré",
+      "nectaire": "non mesuré",
+      "source": "kept 119, valeur faible, hors médiane"
+     },
+     "fond_clair_passe1": {
+      "valeur": "#e0e0c6",
+      "par_photo": {
+       "pbs_alba_dp (i=6)": "#c6c9bb",
+       "ve_alba (i=7)": "#e0e3d6",
+       "av_alba (i=8)": "#e0dcc8",
+       "ce_alba01 (i=9)": "#e1ecc5"
+      },
+      "ecart_dE_max": 17.2,
+      "ecart_au_dessus_de_10": true
+     }
+    },
+    "eclairage": "Fond sombre et flash probable (pbs_alba_dp), jour diffus et ombre (ve_alba, av_alba), ombre de jardin botanique à dominante verte (ce_alba01). || Passe 2 : 137 lumiere douce, fond sombre vert ; 94 exterieur, fond vert et fleurs bleues, lumiere diffuse ; 96 film ancien, fond de gravier gris, dominante froide, flou.",
+    "ecart_entre_sources": "ΔE76 entre photos : fond 17,2 ; veines 17,9 : au-dessus de 10. Troisième photo demandée (ombre claire, fond neutre, sans dominante verte). || Passe 2 (7 photos distinctes) : ecart maximal des fonds 18.0 (ce_alba01 (i=9) = cand 110 / 96 Ghislain Alba) ; sans 110 : 9.6. Fond median #e0dfd3 ; sans 110 #dbded4.",
+    "note": "Passe 2 faite (fleur-coloris, 2026-10-08) : zones_retenues.fond_clair et photos_mesurees (passe 2).",
+    "photos_mesurees": [
+     {
+      "refs_i": 6,
+      "photo": "pbs_alba_dp (i=6)",
+      "role": "exterieur",
+      "eclairage": "fond sombre, flash probable : veines vertes lisibles",
+      "mesures_hex": {
+       "fond": "#c6c9bb",
+       "veine": "#959e71"
+      }
+     },
+     {
+      "refs_i": 7,
+      "photo": "ve_alba (i=7)",
+      "role": "exterieur",
+      "eclairage": "lumiere diffuse, massif sur herbe : ombre melee au vert du feuillage",
+      "mesures_hex": {
+       "fond": "#e0e3d6",
+       "veine": "#9fa581",
+       "corps": "#bcc0ad"
+      }
+     },
+     {
+      "refs_i": 8,
+      "photo": "av_alba (i=8)",
+      "role": "exterieur",
+      "eclairage": "ombre claire : veines peu marquees",
+      "mesures_hex": {
+       "fond": "#e0dcc8",
+       "veine": "#707c4e",
+       "corps": "#cdcaaa"
+      }
+     },
+     {
+      "refs_i": 9,
+      "photo": "ce_alba01 (i=9)",
+      "role": "exterieur",
+      "eclairage": "ombre de jardin botanique, dominante verte : fond verdi",
+      "mesures_hex": {
+       "fond": "#e1ecc5",
+       "veine": "#7a8852",
+       "corps": "#c5d49f"
+      }
+     },
+     {
+      "refs_i": 15,
+      "photo": "kept 119 (i=15)",
+      "role": "dedans, etamines",
+      "eclairage": "fond sombre, tepales interieurs melees au vert : valeur faible",
+      "mesures_hex": {
+       "fond": "#8e9783",
+       "etamines": "#9e8a2f"
+      }
+     },
+     {
+      "passe": 2,
+      "cand": 137,
+      "photo": "RHS Alba (cand 137)",
+      "source": "RHS Plant Selector, visionspictures.com",
+      "niveau": "N3",
+      "role": "exterieur",
+      "eclairage": "fond sombre vert, lumiere douce ; dominante verte du fond",
+      "mesures_hex": {
+       "fond": "#d2e2d8",
+       "sombre": "#a9be9c",
+       "corps": "#c4d8c6",
+       "base": "#d6e7e1",
+       "pointe": "#b4c7a5"
+      },
+      "remarque": "corps et base clairs ; confiance auto 0,38 : mesure a la main"
+     },
+     {
+      "passe": 2,
+      "cand": 94,
+      "photo": "Commons Meneerke Alba (cand 94)",
+      "source": "Meneerke bloem, CC BY-SA 4.0",
+      "niveau": "N4",
+      "role": "exterieur",
+      "eclairage": "exterieur, fond vert et fleurs bleues, lumiere diffuse",
+      "mesures_hex": {
+       "fond": "#e0dfd3",
+       "sombre": "#314125",
+       "corps": "#c1bfab",
+       "base": "#cfd29f",
+       "pointe": "#a1a089"
+      },
+      "remarque": "un seul bouton ; boite sombre sur le feuillage : sombre non fiable"
+     },
+     {
+      "passe": 2,
+      "cand": 96,
+      "photo": "Commons Ghislain Alba (cand 96)",
+      "source": "Ghislain118 (AD), CC BY-SA 3.0",
+      "niveau": "N4",
+      "role": "exterieur",
+      "eclairage": "film ancien, fond de gravier gris, dominante froide, flou",
+      "mesures_hex": {
+       "fond": "#d6ddd8",
+       "sombre": "#36393a",
+       "corps": "#bdc6be",
+       "base": "#e9ece2",
+       "pointe": "#979f89"
+      },
+      "remarque": "dominante froide et fond gris : pas de neutre fiable pour corriger la balance ; sombre = ombre du fond, non fiable"
+     }
+    ],
+    "niveau_final": "B, inchange : 7 photos nommees distinctes (4 passe 1 + 3 passe 2). Ecart maximal des fonds 18.0, du a ce_alba01 (cand 110, dominante verte) ; sa re-mesure passe 2 n'est pas reproductible (dE 31,9). Sans 110 : 9.6 sur 6 photos. Fond retenu #e0dfd3 ; sans 110 #dbded4. Question a l'orchestrateur : garder 110 dans la mediane, ou l'ecarter.",
+    "remarques": "Ce_alba01 (i=9) : dominante verte, fond verdi. Pbs_alba_dp (i=6) : flash, fond sombre, veines lisibles. Dedans (kept 119) : valeur faible, étamines jaune-olive ; style et nectaire non mesurés. Base et pointe : non mesurées (confiance auto basse). || Passe 2 : 110 re-mesure avec une boite posee sur l'ombre et le feuillage : rejete, valeur passe 1 gardee (controle_passe2). kept 119 reste exclu de la mediane.",
+    "controle_passe2": [
+     {
+      "cand": 110,
+      "photo_passe1": "ce_alba01 (i=9)",
+      "fond_passe1": "#e1ecc5",
+      "fond_passe2": "#8a9867",
+      "ecart_dE": 31.9
+     }
+    ]
+   },
+   "sondage_temps3": {
+    "niveau_apres_sondage": "B",
+    "verdict": "confirmé. B juste (trois photos N3 indépendantes nommées, nom N1 au KAVB sans enregistrant).",
+    "detail": "voir cultivars/alba/sondage_temps3"
+   },
+   "mesures_passe3": {
+    "passe": 3,
+    "date": "2026-10-09",
+    "agent": "fleur-coloris",
+    "regle": "une 3e photo si deux photos nommees ecartent de plus de dE 10 ; mediane ; neutre seulement si fiable ; concordance = teinte a 10 deg LCh et chroma du meme ordre",
+    "methode": "masque de classe de couleur par photo ; fond = mediane P50-P90 de L ; sombre = mediane L<=P15 ; Lab D65 ; boite pointe seulement pour les photos de passe 2",
+    "balance_des_blancs": "aucun neutre fiable : pas de correction",
+    "photos": [
+     {
+      "photo": "B1 pbs_alba_dp",
+      "eclairage": "fond noir, lumière frontale vive (flash probable)",
+      "fond_LCh": [
+       81.2,
+       7.8,
+       119.9
+      ],
+      "corps_LCh": [
+       76.7,
+       9.0,
+       118.7
+      ],
+      "sombre_LCh": [
+       63.1,
+       11.6,
+       120.8
+      ],
+      "pointe_LCh": null,
+      "veines_LCh_indicatif": [
+       69.0,
+       14.5,
+       118.9
+      ]
+     },
+     {
+      "photo": "B2 ve_alba",
+      "eclairage": "jour diffus, massif",
+      "fond_LCh": [
+       83.3,
+       10.1,
+       121.4
+      ],
+      "corps_LCh": [
+       77.5,
+       11.4,
+       122.8
+      ],
+      "sombre_LCh": [
+       62.3,
+       15.3,
+       129.2
+      ],
+      "pointe_LCh": null,
+      "veines_LCh_indicatif": [
+       62.5,
+       24.2,
+       125.2
+      ]
+     },
+     {
+      "photo": "B3 av_alba",
+      "eclairage": "ombre claire",
+      "fond_LCh": [
+       87.5,
+       8.9,
+       99.0
+      ],
+      "corps_LCh": [
+       80.2,
+       11.4,
+       99.9
+      ],
+      "sombre_LCh": [
+       60.4,
+       15.2,
+       107.4
+      ],
+      "pointe_LCh": null,
+      "veines_LCh_indicatif": [
+       57.0,
+       19.7,
+       115.5
+      ]
+     },
+     {
+      "photo": "B4 cand110",
+      "eclairage": "dominante verte (feuillage), ombre de jardin",
+      "fond_LCh": [
+       90.2,
+       24.8,
+       118.8
+      ],
+      "corps_LCh": [
+       84.6,
+       22.7,
+       119.6
+      ],
+      "sombre_LCh": [
+       60.6,
+       21.4,
+       121.2
+      ],
+      "pointe_LCh": [
+       61.5,
+       20.2,
+       120.1
+      ],
+      "veines_LCh_indicatif": [
+       63.4,
+       30.6,
+       122.9
+      ]
+     },
+     {
+      "photo": "B5 cand137",
+      "eclairage": "ombre, feuillage vert foncé (RHS)",
+      "fond_LCh": [
+       87.6,
+       8.3,
+       154.8
+      ],
+      "corps_LCh": [
+       83.9,
+       12.3,
+       145.2
+      ],
+      "sombre_LCh": [
+       74.4,
+       19.7,
+       133.6
+      ],
+      "pointe_LCh": [
+       79.5,
+       20.9,
+       129.6
+      ],
+      "veines_LCh_indicatif": [
+       75.2,
+       20.1,
+       134.3
+      ]
+     },
+     {
+      "photo": "B6 cand94",
+      "eclairage": "fond vert sombre, ombre",
+      "fond_LCh": [
+       85.7,
+       7.0,
+       105.8
+      ],
+      "corps_LCh": [
+       81.4,
+       7.9,
+       104.4
+      ],
+      "sombre_LCh": [
+       67.1,
+       10.1,
+       108.4
+      ],
+      "pointe_LCh": [
+       67.9,
+       10.9,
+       105.4
+      ],
+      "veines_LCh_indicatif": [
+       54.2,
+       15.9,
+       124.7
+      ]
+     },
+     {
+      "photo": "B7 cand96",
+      "eclairage": "film, dominante froide, gravier gris",
+      "fond_LCh": [
+       87.9,
+       3.5,
+       156.6
+      ],
+      "corps_LCh": [
+       82.4,
+       4.3,
+       147.7
+      ],
+      "sombre_LCh": [
+       66.3,
+       8.7,
+       128.8
+      ],
+      "pointe_LCh": [
+       66.0,
+       10.1,
+       124.2
+      ],
+      "veines_LCh_indicatif": [
+       66.1,
+       11.5,
+       124.6
+      ]
+     },
+     {
+      "photo": "B3e 33684 t498",
+      "eclairage": "fond sombre, lumière frontale (3e photo, non nommée)",
+      "fond_LCh": [
+       94.3,
+       13.8,
+       113.4
+      ],
+      "corps_LCh": [
+       92.3,
+       16.7,
+       114.2
+      ],
+      "sombre_LCh": [
+       79.8,
+       22.5,
+       117.6
+      ],
+      "pointe_LCh": null,
+      "veines_LCh_indicatif": [
+       72.8,
+       26.7,
+       118.1
+      ]
+     }
+    ],
+    "troisieme_photo": {
+     "photo": "BioImages 33684 (cand 498), non nommee"
+    },
+    "mediane_fond_LCh": [
+     87.5,
+     9.0,
+     120.7
+    ],
+    "ecart_teinte_max_deg": 57.6,
+    "ecart_teinte_mediane_max_deg": 35.8,
+    "rapport_chroma": 7.14,
+    "ecart_dE_max": 22.3,
+    "veines_mediane_LCh_indicatif": [
+     64.7,
+     19.9,
+     123.7
+    ],
+    "niveau_passe3": "C",
+    "doutes": "Concordance non atteinte : 57,6° d'écart (B3 et B7 contre B5 et B7), chroma dans un rapport de 7,1. B7 (C 3,5) et B5 (C 8,3) ont une teinte peu fiable, mais sans elles l'écart reste de 22°. B4 (C 24,8) porte une dominante verte du feuillage. 3e photo non nommée : 33684."
+   },
+   "mesures_passe4": {
+    "passe": 4,
+    "date": "2026-10-09",
+    "agent": "fleur-coloris",
+    "regle": "règle du chef : au moins 5 photos (iNaturalist de la forme blanche plus les photos nommées Alba) ; pour un blanc la teinte n'a pas de sens : concordance lue sur L et C (écart au plus de 5 points de la médiane), teinte reportée pour information",
+    "methode": "refs.py url + mesure locale : masque clair (L >= 60, C <= 30, hors vert nervure) ; fond = médiane des pixels entre P50 et P90 de L ; Lab D65 ; image 640 px",
+    "balance_des_blancs": "aucun neutre fiable : fond sombre, feuillage, gravier bleu-gris non neutre. Test sur le gravier bleu-gris de Ghislain96 (C 8, h 273) : la correction ferait passer C de 3.6 à 10.9, donc on ne corrige pas",
+    "photos": [
+     {
+      "photo": "PBS_alba_DP",
+      "source": "Pacific Bulb Society, David Pilling, « unicolor alba » (N3)",
+      "observateur": "David Pilling",
+      "date": "non datée",
+      "eclairage": "fond sombre, flash probable (vue)",
+      "fond_LCh": [
+       82.3,
+       7.6,
+       118.3
+      ],
+      "n_pixels": 52874,
+      "ecart_LC_a_la_mediane": 6.0,
+      "concordante_L_C": false
+     },
+     {
+      "photo": "VE_alba",
+      "source": "Van Engelen, f_meleagris_alba_1_1.jpg (N3)",
+      "observateur": "vendeur (non nommé)",
+      "date": "non datée",
+      "eclairage": "jour diffus, massif de cloches blanches sur herbe (vue)",
+      "fond_LCh": [
+       86.5,
+       10.0,
+       122.4
+      ],
+      "n_pixels": 51026,
+      "ecart_LC_a_la_mediane": 1.7,
+      "concordante_L_C": true
+     },
+     {
+      "photo": "Avon_alba",
+      "source": "Avon Bulbs, photo 1741 (N3)",
+      "observateur": "vendeur (non nommé)",
+      "date": "non datée",
+      "eclairage": "ombre claire (vue)",
+      "fond_LCh": [
+       88.8,
+       8.4,
+       99.9
+      ],
+      "n_pixels": 30169,
+      "ecart_LC_a_la_mediane": 1.1,
+      "concordante_L_C": true
+     },
+     {
+      "photo": "Kor110_alba",
+      "source": "Wikimedia Commons, Fritillaria meleagris alba 01 (N4), jardin botanique de Moscou",
+      "observateur": "Kor!An (Андрей Корзун)",
+      "date": "2011-05-09",
+      "eclairage": "ombre de jardin, dominante verte (vue)",
+      "fond_LCh": [
+       91.6,
+       18.5,
+       120.4
+      ],
+      "n_pixels": 19675,
+      "ecart_LC_a_la_mediane": 9.8,
+      "concordante_L_C": false
+     },
+     {
+      "photo": "RHS137_alba",
+      "source": "RHS Plant Selector, visi05843 (autorité)",
+      "observateur": "RHS",
+      "date": "non datée",
+      "eclairage": "lumière douce, fond vert sombre (vue)",
+      "fond_LCh": [
+       85.9,
+       9.3,
+       155.1
+      ],
+      "n_pixels": 61825,
+      "ecart_LC_a_la_mediane": 2.2,
+      "concordante_L_C": true
+     },
+     {
+      "photo": "Meneerke94_alba",
+      "source": "Wikimedia Commons, Fritillaria meleagris Alba RHu (N4)",
+      "observateur": "Meneerke bloem",
+      "date": "non datée",
+      "eclairage": "extérieur, fond vert et fleurs bleues, lumière diffuse (vue)",
+      "fond_LCh": [
+       86.1,
+       7.4,
+       105.7
+      ],
+      "n_pixels": 46708,
+      "ecart_LC_a_la_mediane": 2.8,
+      "concordante_L_C": true
+     },
+     {
+      "photo": "Ghislain96_alba",
+      "source": "Wikimedia Commons, Fritillaria meleagris alba (N4), ancienne photo argentique",
+      "observateur": "Ghislain118",
+      "date": "non datée",
+      "eclairage": "fond de gravier gris-bleu, dominante froide, flou (vue) ; neutre non fiable",
+      "fond_LCh": [
+       88.1,
+       3.6,
+       150.3
+      ],
+      "n_pixels": 23524,
+      "ecart_LC_a_la_mediane": 5.7,
+      "concordante_L_C": false
+     },
+     {
+      "photo": "marco30_alba",
+      "source": "iNaturalist obs. 344407056, photo 627529711 (qualité recherche, forme alba décrite, N3)",
+      "observateur": "marco_zaccaria",
+      "date": "2026-03-22",
+      "eclairage": "sous feuilles mortes, petite cloche (vue)",
+      "fond_LCh": [
+       91.6,
+       10.7,
+       233.8
+      ],
+      "n_pixels": 7525,
+      "ecart_LC_a_la_mediane": 3.8,
+      "concordante_L_C": true
+     },
+     {
+      "photo": "engelra31_alba",
+      "source": "iNaturalist obs. 205524619, photo 363416156 (qualité recherche, « Forma alba », N3)",
+      "observateur": "engelra1",
+      "date": "2024-04-05",
+      "eclairage": "sol sombre et feuillage, ombre (vue)",
+      "fond_LCh": [
+       84.7,
+       15.6,
+       121.8
+      ],
+      "n_pixels": 20080,
+      "ecart_LC_a_la_mediane": 7.2,
+      "concordante_L_C": false
+     },
+     {
+      "photo": "adrian33_alba",
+      "source": "iNaturalist obs. 111345752, photo 187955256 (qualité recherche, « f. alba », N3)",
+      "observateur": "adriankreft",
+      "date": "2022-04-13",
+      "eclairage": "au bord de l eau, fleurs jaunes, lumière diffuse (vue)",
+      "fond_LCh": [
+       90.4,
+       7.8,
+       103.4
+      ],
+      "n_pixels": 4256,
+      "ecart_LC_a_la_mediane": 2.7,
+      "concordante_L_C": true
+     },
+     {
+      "photo": "rosie34_alba",
+      "source": "iNaturalist obs. 273266596, photo 491516229 (qualité recherche, cloche blanche, N3)",
+      "observateur": "rosiebibby",
+      "date": "2025-04-25",
+      "eclairage": "herbe verte, lumière du jour (vue)",
+      "fond_LCh": [
+       89.7,
+       12.2,
+       231.9
+      ],
+      "n_pixels": 21725,
+      "ecart_LC_a_la_mediane": 3.3,
+      "concordante_L_C": true
+     }
+    ],
+    "nombre_photos": 11,
+    "mediane_fond_LCh": [
+     88.1,
+     9.3,
+     121.8
+    ],
+    "ecart_teinte_max_deg_information_seulement": 133.9,
+    "photos_concordantes_L_C": 7,
+    "concordantes_L_C": [
+     "VE_alba",
+     "Avon_alba",
+     "RHS137_alba",
+     "Meneerke94_alba",
+     "marco30_alba",
+     "adrian33_alba",
+     "rosie34_alba"
+    ],
+    "sous_ensemble_5_VE_plus_iNat": {
+     "photos": [
+      "VE_alba",
+      "marco30_alba",
+      "engelra31_alba",
+      "adrian33_alba",
+      "rosie34_alba"
+     ],
+     "concordantes": [
+      "VE_alba",
+      "marco30_alba",
+      "adrian33_alba",
+      "rosie34_alba"
+     ],
+     "VE_concordante": true
+    },
+    "bruit_median_distance_LC": 3.3,
+    "niveau_passe4": "B, passage de C à B : sur le sous-ensemble de 5 (VE + 4 iNaturalist), 4 concordent dont la VE (règle 4 sur 5 remplie) ; sur les 11 photos, 7 sont dans 5 points de L et de C de la médiane.",
+    "doutes": "Les photos sous fond vert (Kor!An 22, engelra1 31) et bleu-gris (Ghislain 25) font varier la chroma de 3.6 à 18.5 : la balance des blancs n'est pas corrigeable faute de neutre fiable. Les observations 32 et 36 (cloche minuscule dans le cadre) sont écartées. Sur la photo de Kor!An la teinte est verte."
+   }
+  },
+  {
+   "id": "creme",
+   "sku": "fritillaire-meleagris~5",
+   "numero_skus_csv": 534,
+   "nom_affiche": "crème (Aphrodite)",
+   "cultivar_reel": "aphrodite",
+   "nom_enregistre": "Fritillaria meleagris 'Aphrodite' au KAVB ; RHS : var. unicolor subvar. alba 'Aphrodite' (99158)",
+   "niveau_preuve": "B",
+   "statut": "en production possible (B) ; doublon possible avec le coloris blanc",
+   "nom_affiche_propose": "Blanc veiné de vert pâle, grande cloche (Aphrodite)",
+   "correction_motif": "aucune source ne dit « crème » : Pottertons « white, very lightly chequered in pale green », PBS « white and green veined and lightly chequered », NC State « White petals with green veining ». Seule la photo Kevock (200 px, lumière chaude) tire vers le crème. Doublon possible avec Alba (sélection de la même forme blanche) : à trancher à la mesure.",
+   "photos_designees": [
+    {
+     "url_image": "https://images.pottertons-cdn.co.uk/products/fritillaria-meleagris-alba-d060ef69-r1/1024.jpg",
+     "url_page": "https://www.pottertons.co.uk/shop/bulbs/fritillaria/fritillaria-meleagris-alba-aphrodite",
+     "niveau": "N3",
+     "source": "Pottertons, photo produit de la fiche Aphrodite",
+     "auteur": null,
+     "licence": "vendeur, à vérifier",
+     "eclairage": "lumière diffuse d'ombre ou de serre, fond de caisses (image vue)",
+     "fichier_controle": "refcache/fritillaire-meleagris/fusion/img/pott_aphro.jpg",
+     "role": null
+    },
+    {
+     "url_image": "https://www.kevockgarden.co.uk/plantlist/media/Fritillaria%20meleagris%20Alba%20250613%201.jpg",
+     "url_page": "https://www.kevockgarden.co.uk/plantlist/plant.asp?SKU=FMH&PlantName=Fritillaria_meleagris_var._unicolor_subvar._Alba_%28%27Aphrodite%27%29&PlantorBulb=Plants",
+     "niveau": "N3",
+     "source": "Kevock Garden, fiche Aphrodite (images de la fiche)",
+     "auteur": null,
+     "licence": "pépinière, droits à vérifier ; mesure seule",
+     "eclairage": "lumière chaude, dominante jaune-crème (image vue, 200 x 200 px)",
+     "fichier_controle": "refcache/fritillaire-meleagris/fusion/img/kev_alba.jpg",
+     "role": null
+    },
+    {
+     "url_image": "https://www.kevockgarden.co.uk/plantlist/media/fritillaria_meleagris_alba2.jpg",
+     "url_page": "https://www.kevockgarden.co.uk/plantlist/plant.asp?SKU=FMH&PlantName=Fritillaria_meleagris_var._unicolor_subvar._Alba_%28%27Aphrodite%27%29&PlantorBulb=Plants",
+     "niveau": "N3",
+     "source": "Kevock Garden, autres images de la même fiche (fritillaria_meleagris_alba2.jpg, alba3.jpg)",
+     "auteur": null,
+     "licence": "pépinière, à vérifier",
+     "eclairage": "serre ou tunnel, lumière diffuse (image vue, 200 x 200 px)",
+     "fichier_controle": "refcache/fritillaire-meleagris/fusion/img/kev_alba2.jpg",
+     "role": null
+    },
+    {
+     "url_image": "https://www.pacificbulbsociety.org/pbswiki/files/Fritillaria/Fritillaria_meleagris_aphrodite_mjc_1.jpg",
+     "url_page": "https://www.pacificbulbsociety.org/pbswiki/index.php/Fritillaria_meleagris",
+     "niveau": "N3",
+     "source": "Pacific Bulb Society, Michael J. Campbell (légende « 'Aphrodite' »)",
+     "auteur": "Michael J. Campbell",
+     "licence": "droits réservés au photographe : mesure seulement, jamais publiée",
+     "eclairage": "fond noir, éclairage frontal (flash probable, non confirmé) (image vue)",
+     "fichier_controle": "refcache/fritillaire-meleagris/fusion/img/pbs_aphro.jpg",
+     "role": null
+    }
+   ],
+   "mesures": {
+    "methode": "refs.py auto (balayage du fond) puis refs.py pal sur boites en fractions de l image ; valeur retenue = mediane par canal RGB des photos retenues ; ecart = ΔE76 (CIE Lab) entre photos",
+    "zones_retenues": {
+     "fond_clair": {
+      "valeur": "#bdc4a6",
+      "par_photo": {
+       "pott_aphro (i=10)": "#c5c7b1",
+       "kev_alba (i=11)": "#eaebb7",
+       "kev_alba2 (i=12)": "#afb99a",
+       "pbs_aphro (i=13)": "#b5c292"
+      },
+      "ecart_dE_max": 21.1,
+      "ecart_au_dessus_de_10": true,
+      "recalcul_passe2": "mediane inchangee #bdc4a5 (4 photos distinctes) : aucune photo nouvelle ; ecart 21.1 (kev_alba (i=11) / kev_alba2 (i=12)) inchange"
+     },
+     "nervures_vertes": {
+      "valeur": "#87905e",
+      "par_photo": {
+       "pott_aphro (i=10)": "#8f8f63",
+       "pbs_aphro (i=13)": "#7f9159"
+      },
+      "ecart_dE_max": 9.9,
+      "ecart_au_dessus_de_10": false
+     },
+     "contraste_dE_median_fond_vs_motif": 22.3,
+     "base": null,
+     "pointe": null,
+     "dehors_corps": {
+      "valeur": "#a6ad78",
+      "n": 4,
+      "ecart_dE_max": 25.4
+     }
+    },
+    "eclairage": "Soleil avec jonquilles en fond (pott_aphro), lumière chaude et petite image (kev_alba), serre ou tunnel (kev_alba2), fond noir et flash (pbs_aphro).",
+    "ecart_entre_sources": "ΔE76 entre photos : fond 21,1 ; corps 25,4 : au-dessus de 10. Veines : 9,9 entre pott_aphro et pbs_aphro seulement. Troisième photo demandée. || Passe 2 : ecart inchange 21.1. Ecart de fond avec Alba (blanc) : 15.1 entre medianes (#bdc4a5 et #e0dfd3) ; inferieur aux ecarts internes de chaque coloris (21.1 et 18.0) : non distinguables de facon robuste sur les fonds.",
+    "note": "à remplir par fleur-coloris (refs.py auto, puis ring ou pal ; médiane ; ΔE entre sources)",
+    "photos_mesurees": [
+     {
+      "refs_i": 10,
+      "photo": "pott_aphro (i=10)",
+      "role": "exterieur",
+      "eclairage": "plein soleil, jonquilles en fond : reflets, fond creme-jaune",
+      "mesures_hex": {
+       "fond": "#c5c7b1",
+       "veine": "#8f8f63",
+       "corps": "#939369"
+      }
+     },
+     {
+      "refs_i": 11,
+      "photo": "kev_alba (i=11)",
+      "role": "exterieur",
+      "eclairage": "lumiere chaude, image 200 px : veines non separees des tiges",
+      "mesures_hex": {
+       "fond": "#eaebb7",
+       "corps": "#c1c786"
+      }
+     },
+     {
+      "refs_i": 12,
+      "photo": "kev_alba2 (i=12)",
+      "role": "exterieur",
+      "eclairage": "serre ou tunnel, image 200 px : fond mele au feuillage",
+      "mesures_hex": {
+       "fond": "#afb99a",
+       "corps": "#798a5d"
+      }
+     },
+     {
+      "refs_i": 13,
+      "photo": "pbs_aphro (i=13)",
+      "role": "exterieur",
+      "eclairage": "fond noir, flash probable : vert-creme net, veines faibles",
+      "mesures_hex": {
+       "fond": "#b5c292",
+       "veine": "#7f9159",
+       "corps": "#b9ca93"
+      }
+     }
+    ],
+    "niveau_final": "B, inchange : ecart de fond 21.1 persiste ; la passe 2 n'apporte aucune photo nouvelle (136 et 138 sont deja en passe 1) : troisieme photo toujours demandee.",
+    "remarques": "Kev_alba (i=11) et kev_alba2 (i=12) : petites images (200 px), veines non séparées des tiges et du feuillage, teinte seulement. Pott_aphro (i=10) : jonquilles et reflets. Pbs_aphro (i=13) : fond noir, teinte crème-vert nette. Base et pointe : non mesurées (confiance auto basse). || Passe 2 : 136 et 138 sont pott_aphro et pbs_aphro (memes adresses) ; re-mesures proches de la passe 1 (controle_passe2).",
+    "controle_passe2": [
+     {
+      "cand": 136,
+      "photo_passe1": "pott_aphro (i=10)",
+      "fond_passe1": "#c5c7b1",
+      "fond_passe2": "#dcddc7",
+      "ecart_dE": 8.0
+     },
+     {
+      "cand": 138,
+      "photo_passe1": "pbs_aphro (i=13)",
+      "fond_passe1": "#b5c292",
+      "fond_passe2": "#afc08b",
+      "ecart_dE": 3.3
+     }
+    ]
+   },
+   "ret_question": "Aphrodite double Alba (même forme blanche, grandes fleurs) : garder les deux, ou retirer le coloris creme (ret:1) si la mesure ne les sépare pas ?",
+   "sondage_temps3": {
+    "niveau_apres_sondage": "B",
+    "verdict": "confirmé. B juste (trois pépinières ou sociétés N3 indépendantes, nom N1 au KAVB).",
+    "detail": "voir cultivars/aphrodite/sondage_temps3"
+   },
+   "mesures_passe3": {
+    "passe": 3,
+    "date": "2026-10-09",
+    "agent": "fleur-coloris",
+    "regle": "une 3e photo si deux photos nommees ecartent de plus de dE 10 ; mediane ; neutre seulement si fiable ; concordance = teinte a 10 deg LCh et chroma du meme ordre",
+    "methode": "masque de classe de couleur par photo ; fond = mediane P50-P90 de L ; sombre = mediane L<=P15 ; Lab D65 ; boite pointe seulement pour les photos de passe 2",
+    "balance_des_blancs": "aucun neutre fiable : pas de correction",
+    "photos": [
+     {
+      "photo": "C1 cand136",
+      "eclairage": "soleil, jonquilles en fond",
+      "fond_LCh": [
+       84.1,
+       12.8,
+       111.9
+      ],
+      "corps_LCh": [
+       75.4,
+       16.9,
+       111.6
+      ],
+      "sombre_LCh": [
+       60.2,
+       20.7,
+       111.1
+      ],
+      "pointe_LCh": [
+       64.2,
+       17.5,
+       134.7
+      ],
+      "veines_LCh_indicatif": [
+       62.1,
+       24.3,
+       110.7
+      ]
+     },
+     {
+      "photo": "C2 kev_alba",
+      "eclairage": "lumière chaude, dominante jaune-crème (200 px)",
+      "fond_LCh": [
+       91.8,
+       25.4,
+       112.1
+      ],
+      "corps_LCh": [
+       84.7,
+       22.5,
+       114.5
+      ],
+      "sombre_LCh": [
+       59.7,
+       16.6,
+       99.1
+      ],
+      "pointe_LCh": null,
+      "veines_LCh_indicatif": [
+       67.1,
+       31.8,
+       115.1
+      ]
+     },
+     {
+      "photo": "C3 kev_alba2",
+      "eclairage": "serre ou tunnel, diffus (200 px)",
+      "fond_LCh": [
+       75.4,
+       14.8,
+       122.6
+      ],
+      "corps_LCh": [
+       72.4,
+       15.3,
+       122.7
+      ],
+      "sombre_LCh": [
+       60.0,
+       16.8,
+       122.1
+      ],
+      "pointe_LCh": null,
+      "veines_LCh_indicatif": [
+       62.9,
+       20.8,
+       122.5
+      ]
+     },
+     {
+      "photo": "C4 cand138",
+      "eclairage": "fond noir, lumière frontale",
+      "fond_LCh": [
+       86.2,
+       23.9,
+       123.8
+      ],
+      "corps_LCh": [
+       81.0,
+       24.0,
+       123.7
+      ],
+      "sombre_LCh": [
+       69.5,
+       23.4,
+       124.7
+      ],
+      "pointe_LCh": [
+       87.3,
+       19.6,
+       123.4
+      ],
+      "veines_LCh_indicatif": [
+       71.8,
+       29.1,
+       123.5
+      ]
+     },
+     {
+      "photo": "C3e 33684 t498",
+      "eclairage": "même photo que B3e (3e photo non nommée, prêtée au crème)",
+      "fond_LCh": [
+       94.3,
+       13.8,
+       113.4
+      ],
+      "corps_LCh": [
+       92.3,
+       16.7,
+       114.2
+      ],
+      "sombre_LCh": [
+       79.8,
+       22.5,
+       117.6
+      ],
+      "pointe_LCh": null,
+      "veines_LCh_indicatif": [
+       72.8,
+       26.7,
+       118.1
+      ]
+     }
+    ],
+    "troisieme_photo": {
+     "photo": "BioImages 33684 (cand 498), non nommee"
+    },
+    "mediane_fond_LCh": [
+     86.2,
+     15.0,
+     122.2
+    ],
+    "ecart_teinte_max_deg": 12.0,
+    "ecart_teinte_mediane_max_deg": 10.3,
+    "rapport_chroma": 1.98,
+    "ecart_dE_max": 19.9,
+    "veines_mediane_LCh_indicatif": [
+     67.1,
+     26.7,
+     118.1
+    ],
+    "niveau_passe3": "C (limite : 12,0 deg)",
+    "doutes": "Limite : écart maximum de 12,0° (C1 contre C4), soit 10,3° pour C1 par rapport à la médiane : au-dessus de 10° de justesse, à la limite du bruit de mesure (environ 5° en passe 2). Chroma dans un rapport de 2,0. Sans une 4e photo nommée, la règle stricte donne C. 3e photo 33684 : prêtée au crème (même photo que le blanc, non nommée)."
+   },
+   "mesures_passe4": {
+    "passe": 4,
+    "date": "2026-10-09",
+    "agent": "fleur-coloris",
+    "regle": "règle du chef : au moins 5 photos nommées si elles existent ; crème comparé au blanc sur C et L",
+    "methode": "refs.py url + mesure locale comme pour le blanc",
+    "balance_des_blancs": "aucun neutre fiable : aucune correction",
+    "photos": [
+     {
+      "photo": "Pott136_aphro",
+      "source": "Pottertons, photo produit « Aphrodite » (N3)",
+      "observateur": "vendeur (non nommé)",
+      "date": "non datée",
+      "eclairage": "plein soleil, jonquilles en fond (vue)",
+      "fond_LCh": [
+       90.4,
+       9.4,
+       110.1
+      ],
+      "n_pixels": 60424,
+      "ecart_LC_a_la_mediane": 8.4,
+      "concordante_L_C": false
+     },
+     {
+      "photo": "PBS138_aphro",
+      "source": "Pacific Bulb Society, légende « Aphrodite », fichier aphrodite_mjc_1 (la même image que PBS 240, comptée une fois) (N3)",
+      "observateur": "Michael J. Campbell",
+      "date": "non datée",
+      "eclairage": "fond noir, flash probable (vue)",
+      "fond_LCh": [
+       89.5,
+       19.7,
+       130.5
+      ],
+      "n_pixels": 25607,
+      "ecart_LC_a_la_mediane": 2.0,
+      "concordante_L_C": true
+     },
+     {
+      "photo": "Kev1_aphro",
+      "source": "Kevock Garden, fiche Aphrodite, « Alba 250613 1 » (N3), image 200 px",
+      "observateur": "vendeur (non nommé)",
+      "date": "2025-06-13 (nom de fichier)",
+      "eclairage": "lumière chaude, dominante jaune-crème (vue)",
+      "fond_LCh": [
+       93.3,
+       23.9,
+       110.0
+      ],
+      "n_pixels": 2145,
+      "ecart_LC_a_la_mediane": 6.9,
+      "concordante_L_C": false
+     },
+     {
+      "photo": "Kev2_aphro",
+      "source": "Kevock Garden, fiche Aphrodite, « alba2 » (N3), image 200 px",
+      "observateur": "vendeur (non nommé)",
+      "date": "non datée",
+      "eclairage": "serre ou tunnel, lumière diffuse (vue)",
+      "fond_LCh": [
+       77.4,
+       15.8,
+       120.6
+      ],
+      "n_pixels": 6788,
+      "ecart_LC_a_la_mediane": 12.8,
+      "concordante_L_C": false
+     }
+    ],
+    "nombre_photos": 4,
+    "nombre_photos_nommees_disponibles": "4 distinctes : PBS 138 et PBS 240 sont le même fichier, 33684 t498 n est pas nommée (exclue). Moins de 5 : la règle des 5 ne peut pas être remplie.",
+    "mediane_fond_LCh": [
+     90.0,
+     17.8,
+     null
+    ],
+    "photos_concordantes_L_C": 1,
+    "concordantes_L_C": [
+     "PBS138_aphro"
+    ],
+    "bruit_median_distance_LC": 7.7,
+    "niveau_passe4": "B par la nomination (4 photos N3 distinctes, nom N1 au KAVB) ; la passe 3 disait C sur la teinte, que la passe 4 n'utilise pas pour un crème. La couleur n'a pas de médiane robuste sur 4 photos : chroma de 9 à 24, dont une photo de 200 px à L 77.",
+    "doutes": "Comparaison au blanc : voir le bloc comparaison_blanc_creme."
+   }
+  }
+ ],
+ "cultivars": [
+  {
+   "id": "meleagris-type",
+   "coloris_catalogue": "damier",
+   "nom_affiche": "Damier pourpre (meleagris)",
+   "nom_enregistre": "Fritillaria meleagris L.",
+   "synonymes": [],
+   "groupe": "espèce (le genre n'a pas de groupes au registre KAVB)",
+   "nature": "espèce botanique ; le damier pourpre est la teinte d'un lot de plants de semis (assortiment de fleur coupée), pas un cultivar",
+   "obtenteur": null,
+   "annee": null,
+   "registre": {
+    "autorite": "GBIF Backbone (issu de WCVP, Kew)",
+    "url": "https://www.gbif.org/species/5300535",
+    "consulte": "2026-10-08",
+    "statut": "accepté",
+    "rhs": {
+     "autorite": "RHS Plant Finder (société savante, N3 : pas l'autorité du genre)",
+     "id": 7403,
+     "statut": "Correct",
+     "url": "https://www.rhs.org.uk/plants/7403/fritillaria-meleagris/details"
+    }
+   },
+   "marque": null,
+   "marque_preuve": "nom d'espèce de Linné, non marquable ; aucun ® ni ™ vu",
+   "couleur_selon_sources": {
+    "Van Engelen (fiche espèce)": "either maroon or ivory-white",
+    "GIA (inventaire)": "entre rouge et rose",
+    "OZ Export (inventaire)": "bicolore",
+    "Florabundance (inventaire)": "rouge-bordeaux (burgundy)",
+    "Floret, lot mixte (résumé de recherche, page non ouverte)": "dark pink, maroon, purple checkering",
+    "Wikipedia": "damier pourpre, parfois blanc pur"
+   },
+   "sources": [
+    {
+     "type": "nom",
+     "niveau": "N3",
+     "consulte": "2026-10-08",
+     "source": "RHS Plants 7403 (statut Correct)",
+     "url_page": "https://www.rhs.org.uk/plants/7403/fritillaria-meleagris/details",
+     "constat": "nom accepté, page vérifiée",
+     "niveau_lot": "N1 (lot)",
+     "niveau_note": "RHS Plant Finder n'est pas l'autorité d'enregistrement du genre (c'est le KAVB) : N3, société savante, comme dans muscari.json"
+    },
+    {
+     "type": "nom",
+     "niveau": "N1",
+     "consulte": "2026-10-08",
+     "source": "GBIF / WCVP / POWO (via inventaire)",
+     "url_page": null,
+     "constat": "nom accepté (non relu ici)"
+    },
+    {
+     "type": "photo",
+     "niveau": "N3",
+     "consulte": "2026-10-08",
+     "source": "Van Engelen, photo produit de la fiche espèce",
+     "url_page": "https://www.vanengelen.com/flower-bulbs-index/fritillaria/fritillaria-meleagris.html",
+     "url_image": "https://www.vanengelen.com/media/catalog/product/cache/56adb830892d957d56a625301cb4427e/f/_/f_meleagris_6.jpg",
+     "auteur": null,
+     "licence": null,
+     "vue": true,
+     "eclairage": "lumière du jour diffuse, bac ou plate-bande (image vue) ; bulbes de teinte rouge-pourpre rosé à damier foncé, mêlés à une fleur blanche ouverte d'une autre forme : ne mesurer que les cloches pourpres",
+     "constat": "image vue : cloches rose-brun à pourpre, damier sombre net ; la fiche annonce « either maroon or ivory-white »",
+     "designee_pour_mesure": true,
+     "fichier_controle": "refcache/fritillaire-meleagris/fusion/img/ve_type.jpg",
+     "niveau_lot": "N2 (lot)",
+     "niveau_note": "Van Engelen = vendeur de bulbes en gros et au détail : classé N3 comme Fluwel et Jansen's dans muscari.json (seul Jan de Wit en Zonen y est N2) ; question à l'orchestrateur",
+     "droits": "image d'un exportateur, à vérifier avant tout usage"
+    },
+    {
+     "type": "photo",
+     "niveau": "N3",
+     "consulte": "2026-10-08",
+     "source": "RHS Rosemoor (RHS Plant Selector, JI_0421)",
+     "url_page": "https://www.rhs.org.uk/plants/7403/fritillaria-meleagris/details",
+     "url_image": "https://apps.rhs.org.uk/plantselectorimages/detail/JI_0421_RHSRosemoor_064.jpg",
+     "auteur": null,
+     "licence": null,
+     "vue": true,
+     "eclairage": "prairie en plein jour (image vue)",
+     "constat": "nombreuses petites cloches pourpres dans l'herbe : trop petites pour une mesure, appoint « approché » seulement",
+     "designee_pour_mesure": false,
+     "fichier_controle": "refcache/fritillaire-meleagris/fusion/img/rhs_JI0421.jpg",
+     "droits": "RHS, à vérifier"
+    },
+    {
+     "type": "photo",
+     "niveau": "N4",
+     "consulte": "2026-10-08",
+     "source": "Wikimedia Commons, Kievitsbloem (Fritillaria meleagris) 01 (Dominicus Johannes Bergsma, 2014)",
+     "url_page": "https://commons.wikimedia.org/wiki/File:Kievitsbloem_(Fritillaria_meleagris)_01.JPG",
+     "url_image": "https://upload.wikimedia.org/wikipedia/commons/d/d2/Kievitsbloem_%28Fritillaria_meleagris%29_01.JPG",
+     "auteur": null,
+     "licence": null,
+     "vue": false,
+     "eclairage": "inconnu (image non vue)",
+     "constat": "annoncé : non précisé",
+     "designee_pour_mesure": false,
+     "fichier_controle": null,
+     "droits": "CC BY-SA 3.0"
+    },
+    {
+     "type": "photo",
+     "niveau": "N4",
+     "consulte": "2026-10-08",
+     "source": "Wikimedia Commons, Fritillaria meleagris0 (Kurt Stüber, 2004)",
+     "url_page": "https://commons.wikimedia.org/wiki/File:Fritillaria_meleagris0.jpg",
+     "url_image": "https://upload.wikimedia.org/wikipedia/commons/6/68/Fritillaria_meleagris0.jpg",
+     "auteur": null,
+     "licence": null,
+     "vue": false,
+     "eclairage": "inconnu (image non vue)",
+     "constat": "annoncé : non précisé",
+     "designee_pour_mesure": false,
+     "fichier_controle": null,
+     "droits": "CC BY-SA 3.0"
+    },
+    {
+     "type": "photo",
+     "niveau": "N3",
+     "consulte": "2026-10-08",
+     "source": "Pottertons Nursery (pépinière spécialisée, Royaume-Uni)",
+     "url_page": "https://www.pottertons.co.uk/shop/bulbs/fritillaria/fritillaria-meleagris",
+     "url_image": "https://images.pottertons-cdn.co.uk/products/fritillaria-meleagris-best-58c3d0c2-r1/1024.jpg",
+     "auteur": null,
+     "licence": null,
+     "vue": true,
+     "eclairage": "plein soleil latéral, reflets sur les carreaux clairs, fond sombre (image vue)",
+     "constat": "une douzaine de cloches rose-pourpre à damier plus sombre ; texte de la fiche : « variable chequered maroon-purple flowers »",
+     "designee_pour_mesure": true,
+     "fichier_controle": "refcache/fritillaire-meleagris/fusion/img/pott_type.jpg",
+     "droits": "photo de vendeur, droits à vérifier ; mesure seule"
+    },
+    {
+     "type": "photo",
+     "niveau": "N3",
+     "consulte": "2026-10-08",
+     "source": "Avon Bulbs (pépinière de bulbes, Royaume-Uni)",
+     "url_page": "https://www.avonbulbs.co.uk/autumn-planted-bulbs/fritillaria/fritillaria-meleagris",
+     "url_image": "https://www.avonbulbs.co.uk/usercontent/img/col-3/6804.jpg",
+     "auteur": null,
+     "licence": null,
+     "vue": true,
+     "eclairage": "gros plan en lumière diffuse d'ombre, fond flou (image vue)",
+     "constat": "cloche prune à pourpre, damier rose clair ; image petite (280 x 420 px)",
+     "designee_pour_mesure": true,
+     "fichier_controle": "refcache/fritillaire-meleagris/fusion/img/av_type.jpg",
+     "droits": "photo de vendeur, droits à vérifier ; mesure seule"
+    },
+    {
+     "type": "photo",
+     "niveau": "N4",
+     "consulte": "2026-10-08",
+     "source": "Wikimedia Commons, Fritillaria meleagris Irrer Alm 20210514 (Tigerente)",
+     "url_page": "https://commons.wikimedia.org/wiki/File:Fritillaria_meleagris_Irrer_Alm_20210514.jpg",
+     "url_image": "https://upload.wikimedia.org/wikipedia/commons/1/1f/Fritillaria_meleagris_Irrer_Alm_20210514.jpg",
+     "auteur": "Tigerente",
+     "licence": "CC BY-SA 4.0",
+     "vue": true,
+     "eclairage": "plein jour sous ciel partiellement couvert, alpage (image vue)",
+     "constat": "forme sauvage, cloche pourpre-rouge à damier ; déjà mesurée au brief (pal #9a4d6e / #c088a3, photo 74)",
+     "designee_pour_mesure": true,
+     "fichier_controle": "refcache/fritillaire-meleagris/fusion/img/ce_irrer.jpg",
+     "role": "appoint : plante sauvage, couleur un peu plus rouge que le lot de semis du commerce"
+    }
+   ],
+   "niveau_preuve": "B",
+   "niveau_motif": "N1 pour le nom (GBIF/WCVP) ; photos N3 concordantes (Van Engelen, Pottertons, Avon Bulbs) : toutes vues, cloches rose-pourpre à pourpre à damier plus sombre ; le lot-1 disait A en classant Van Engelen N2 : ici Van Engelen est N3 (comme Fluwel et Jansen's dans muscari.json) donc B ; aucune photo N2 n'existe pour le genre (Jan de Wit n'a pas de Fritillaria, Weijers sans photo). Production possible : A ou B suffisent.",
+   "statut": "en production possible (B ; mesure par fleur-coloris puis sondage de 10 %)",
+   "doutes": [
+    "Le damier pourpre est la teinte d'un lot de semis : la couleur annoncée va du rouge au rose, avec environ 1 à 2 % de blanc (GIA).",
+    "Aucune couleur n'est annoncée sur la fiche RHS 7403 ; les photos n'ont pas été regardées, seul le texte des pages l'a été.",
+    "Floret (lot mixte) : lu dans un résumé de recherche seulement ; la redirection vers library.floretflowers.com n'a pas été suivie.",
+    "La teinte du lot de semis varie du rouge au rose et au pourpre (GIA : « entre rouge et rose », 1 à 2 % de blancs) ; la médiane des photos n'est qu'un type moyen."
+   ],
+   "sondage_temps3": {
+    "date": "2026-10-08",
+    "fait_par": "fleur-recensement, temps 3",
+    "pages_ouvertes": [
+     "https://www.vanengelen.com/flower-bulbs-index/fritillaria/fritillaria-meleagris.html",
+     "https://www.pottertons.co.uk/shop/bulbs/fritillaria/fritillaria-meleagris",
+     "https://www.avonbulbs.co.uk/autumn-planted-bulbs/fritillaria/fritillaria-meleagris"
+    ],
+    "nom_sur_la_page": "Van Engelen : titre « Fritillaria meleagris », photo « main product photo » ; Pottertons et Avon Bulbs : image dont l'alt est « Fritillaria meleagris »",
+    "photo_conforme": true,
+    "constat": "les trois images montrent bien la forme type : cloches rose-brun à pourpre, damier plus sombre. Van Engelen mêle à gauche une fleur blanche ouverte, étamines jaunes saillantes : ne pas la mesurer (probablement une forme blanche épanouie, non certaine).",
+    "niveau_avant": "B",
+    "niveau_apres": "B",
+    "verdict": "confirmé. B juste : trois photos N3 de vendeurs indépendants + nom N1 (GBIF). A impossible : aucune photo N2 (Van Engelen reste N3 tant que l'orchestrateur ne tranche pas)."
+   }
+  },
+  {
+   "id": "alba",
+   "coloris_catalogue": "blanc",
+   "nom_affiche": "Blanc veiné de vert (Alba)",
+   "nom_enregistre": "Fritillaria meleagris 'Alba' au KAVB ; RHS : Fritillaria meleagris var. unicolor subvar. alba (119868)",
+   "synonymes": [
+    "f. alba",
+    "unicolor alba",
+    "var. alba",
+    "Fritillaria tesselata var. alba Gray (ancien synonyme américain)"
+   ],
+   "groupe": "forme blanche de l'espèce (aucun groupe au registre KAVB)",
+   "obtenteur": null,
+   "annee": null,
+   "registre": {
+    "kavb": {
+     "autorite": "KAVB",
+     "url": "https://login.kavb.nl/siergewassen",
+     "consulte": "2026-10-08",
+     "present": true,
+     "genus": "Fritillaria",
+     "species": "meleagris",
+     "group": null,
+     "cultivar": "'Alba'",
+     "registrant": null,
+     "registered": null,
+     "no_cultivation_since": null
+    },
+    "rhs": {
+     "autorite": "RHS Plant Finder (société savante, N3 : pas l'autorité du genre)",
+     "id": 119868,
+     "statut": "Correct",
+     "url": "https://www.rhs.org.uk/plants/119868/fritillaria-meleagris-var-unicolor-subvar-alba/details"
+    }
+   },
+   "marque": null,
+   "marque_preuve": "aucun ® ni ™ vu sur ce nom de fritillaire dans les pages lues ; registre des marques (TMview, EUIPO, INPI, WIPO) non consulté : à faire par l'orchestrateur. Nom inscrit au KAVB = dénomination de variété (STANDARD-SOURCES.md, section 2).",
+   "couleur_selon_sources": {
+    "GIA (inventaire)": "blanc pur (zuiver wit)",
+    "NC State (inventaire)": "pure white, faint check pattern",
+    "Van Engelen (inventaire)": "green-veined ivory-white",
+    "HortFlora (inventaire)": "white",
+    "Wisconsin (inventaire)": "marques vertes à peine visibles"
+   },
+   "sources": [
+    {
+     "type": "nom",
+     "niveau": "N1",
+     "consulte": "2026-10-08",
+     "source": "KAVB, base des cultivars (lecture seule)",
+     "url_page": "https://login.kavb.nl/siergewassen",
+     "constat": "'Alba' trouvé : Fritillaria meleagris, sans obtenteur ni date"
+    },
+    {
+     "type": "nom",
+     "niveau": "N3",
+     "consulte": "2026-10-08",
+     "source": "RHS Plants 119868 (Correct)",
+     "url_page": "https://www.rhs.org.uk/plants/119868/fritillaria-meleagris-var-unicolor-subvar-alba/details",
+     "constat": "nom accepté ; page vérifiée",
+     "niveau_lot": "N1 (lot)",
+     "niveau_note": "RHS Plant Finder n'est pas l'autorité d'enregistrement du genre (c'est le KAVB) : N3, société savante, comme dans muscari.json"
+    },
+    {
+     "type": "nom",
+     "niveau": "N3",
+     "consulte": "2026-10-08",
+     "source": "C.S. Weijers, liste Fritillaria",
+     "url_page": "https://www.csweijers.nl/en/assortment/fritillaria",
+     "constat": "« meleagris - Alba » listé, sans photo",
+     "niveau_lot": "N2 (lot)",
+     "niveau_note": "C.S. Weijers = grossiste, liste de noms sans photo : N3, comme dans muscari.json"
+    },
+    {
+     "type": "photo",
+     "niveau": "N3",
+     "consulte": "2026-10-08",
+     "source": "RHS Plant Selector, visi05843 (crédit visionspictures.com, données de la fiche RHS)",
+     "url_page": "https://www.rhs.org.uk/plants/119868/fritillaria-meleagris-var-unicolor-subvar-alba/details",
+     "url_image": "https://apps.rhs.org.uk/plantselectorimages/detail/visi05843.jpg",
+     "auteur": null,
+     "licence": null,
+     "vue": true,
+     "eclairage": "inconnu (image non vue)",
+     "constat": "image vue : fleurs blanches en étoile ouverte, étamines jaunes saillantes, pas la cloche fermée de F. meleagris (autre plante, rattachée par erreur à la fiche RHS 119868) : rejetée",
+     "designee_pour_mesure": false,
+     "fichier_controle": "refcache/fritillaire-meleagris/fusion/img/rhs_visi05843.jpg",
+     "droits": "crédit visionspictures.com, à vérifier",
+     "statut": "rejetée"
+    },
+    {
+     "type": "photo",
+     "niveau": "N3",
+     "consulte": "2026-10-08",
+     "source": "RHS Plant Selector, visi26470 (même fiche RHS)",
+     "url_page": "https://www.rhs.org.uk/plants/119868/fritillaria-meleagris-var-unicolor-subvar-alba/details",
+     "url_image": "https://apps.rhs.org.uk/plantselectorimages/detail/visi26470.jpg",
+     "auteur": null,
+     "licence": null,
+     "vue": true,
+     "eclairage": "inconnu (image non vue)",
+     "constat": "image vue : fleurs blanches en étoile ouverte, étamines jaunes saillantes, pas la cloche fermée de F. meleagris (autre plante, rattachée par erreur à la fiche RHS 119868) : rejetée",
+     "designee_pour_mesure": false,
+     "fichier_controle": "refcache/fritillaire-meleagris/fusion/img/rhs_visi26470.jpg",
+     "droits": "à vérifier",
+     "statut": "rejetée"
+    },
+    {
+     "type": "photo",
+     "niveau": "N3",
+     "consulte": "2026-10-08",
+     "source": "Kevock Garden, fiche d'une forme alba (intitulée 'Aphrodite' sur la page)",
+     "url_page": "https://www.kevockgarden.co.uk/plantlist/plant.asp?SKU=FMH&PlantName=Fritillaria_meleagris_var._unicolor_subvar._Alba_%28%27Aphrodite%27%29&PlantorBulb=Plants",
+     "url_image": "https://www.kevockgarden.co.uk/plantlist/media/Fritillaria%20meleagris%20Alba%20250613%201.jpg",
+     "auteur": null,
+     "licence": null,
+     "vue": true,
+     "eclairage": "lumière chaude, dominante jaune-crème (image vue, 200 x 200 px)",
+     "constat": "cloches blanc-crème à vert pâle ; cette image est celle de la fiche Kevock intitulée Alba ('Aphrodite') : elle sert Aphrodite, pas Alba",
+     "designee_pour_mesure": false,
+     "fichier_controle": "refcache/fritillaire-meleagris/fusion/img/kev_alba.jpg",
+     "droits": "pépinière, à vérifier",
+     "statut": "rattachée à la fiche Aphrodite"
+    },
+    {
+     "type": "photo",
+     "niveau": "N4",
+     "consulte": "2026-10-08",
+     "source": "Wikimedia Commons, Fritillaria meleagris alba (Meneerke bloem, 2011-03-30, « f. alba »)",
+     "url_page": "https://commons.wikimedia.org/wiki/File:Fritillaria_meleagris_alba.jpg",
+     "url_image": "https://upload.wikimedia.org/wikipedia/commons/8/8f/Fritillaria_meleagris_alba.jpg",
+     "auteur": "Meneerke bloem",
+     "licence": "CC BY-SA 3.0",
+     "vue": true,
+     "eclairage": "plein jour, prairie (image vue)",
+     "constat": "petite cloche blanc-vert dans l'herbe, à côté de fleurs pourpres : trop petite pour la mesure, appoint",
+     "designee_pour_mesure": false,
+     "fichier_controle": "refcache/fritillaire-meleagris/fusion/img/ce_alba_mb2011.jpg",
+     "droits": "CC BY-SA 3.0"
+    },
+    {
+     "type": "photo",
+     "niveau": "N3",
+     "consulte": "2026-10-08",
+     "source": "Pacific Bulb Society, David Pilling (« unicolor alba »)",
+     "url_page": "https://www.pacificbulbsociety.org/pbswiki/index.php/Fritillaria_meleagris",
+     "url_image": "https://www.pacificbulbsociety.org/pbswiki/files/Fritillaria/Fritillaria_meleagris_DP.jpg",
+     "auteur": "David Pilling",
+     "licence": "droits réservés au photographe : mesure seulement, jamais publiée",
+     "vue": true,
+     "eclairage": "fond sombre, éclairage frontal vif (flash probable, non confirmé) (image vue)",
+     "constat": "cloche blanche, veines vert très pâle, fond noir : bonne séparation du fond",
+     "designee_pour_mesure": true,
+     "fichier_controle": "refcache/fritillaire-meleagris/fusion/img/pbs_alba_dp.jpg",
+     "droits": "photo de tiers : réutilisation non autorisée, à demander"
+    },
+    {
+     "type": "photo",
+     "niveau": "N3",
+     "consulte": "2026-10-08",
+     "source": "Van Engelen (vendeur de bulbes en gros et au détail, Bantam, Connecticut)",
+     "url_page": "https://www.vanengelen.com/fritillaria-meleagris-alba.html",
+     "url_image": "https://www.vanengelen.com/media/catalog/product/cache/56adb830892d957d56a625301cb4427e/f/_/f_meleagris_alba_1_1.jpg",
+     "auteur": null,
+     "licence": null,
+     "vue": true,
+     "eclairage": "lumière du jour diffuse, massif de cloches blanches sur herbe (image vue)",
+     "constat": "cloches blanches, base verte, sans damier visible ; la fiche dit « green-veined ivory-white »",
+     "designee_pour_mesure": true,
+     "fichier_controle": "refcache/fritillaire-meleagris/fusion/img/ve_alba.jpg",
+     "droits": "photo de vendeur, droits à vérifier ; mesure seule"
+    },
+    {
+     "type": "photo",
+     "niveau": "N3",
+     "consulte": "2026-10-08",
+     "source": "Avon Bulbs (pépinière de bulbes, Royaume-Uni)",
+     "url_page": "https://www.avonbulbs.co.uk/autumn-planted-bulbs/fritillaria/fritillaria-meleagris-alba",
+     "url_image": "https://www.avonbulbs.co.uk/usercontent/img/col-3/1741.jpg",
+     "auteur": null,
+     "licence": null,
+     "vue": true,
+     "eclairage": "ombre claire, léger reflet vert du feuillage (image vue ; 280 x 420 px)",
+     "constat": "cloches blanches bien nettes, veines vert pâle",
+     "designee_pour_mesure": true,
+     "fichier_controle": "refcache/fritillaire-meleagris/fusion/img/av_alba.jpg",
+     "droits": "photo de vendeur, droits à vérifier ; mesure seule"
+    },
+    {
+     "type": "photo",
+     "niveau": "N4",
+     "consulte": "2026-10-08",
+     "source": "Wikimedia Commons, Fritillaria meleagris alba 01 (Kor!An, jardin botanique de l'université de Moscou, 2011-05-09)",
+     "url_page": "https://commons.wikimedia.org/wiki/File:Fritillaria_meleagris_alba_01.JPG",
+     "url_image": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Fritillaria_meleagris_alba_01.JPG",
+     "auteur": "Kor!An (Андрей Корзун)",
+     "licence": "CC BY-SA 3.0",
+     "vue": true,
+     "eclairage": "ombre de jardin botanique, dominante verte sur le blanc (image vue)",
+     "constat": "deux grandes cloches blanc-vert, veines vertes marquées ; la dominante verte est celle de l'ombre",
+     "designee_pour_mesure": true,
+     "fichier_controle": "refcache/fritillaire-meleagris/fusion/img/ce_alba01.jpg"
+    },
+    {
+     "type": "photo",
+     "niveau": "N4",
+     "consulte": "2026-10-08",
+     "source": "Wikimedia Commons, Fritillaria meleagris alba 02 (Meneerke bloem, 2013-04-20)",
+     "url_page": "https://commons.wikimedia.org/wiki/File:Fritillaria_meleagris_alba_02.jpg",
+     "url_image": "https://upload.wikimedia.org/wikipedia/commons/a/a3/Fritillaria_meleagris_alba_02.jpg",
+     "auteur": "Meneerke bloem",
+     "licence": "CC BY-SA 3.0",
+     "vue": true,
+     "eclairage": "gros plan, fond sombre, lumière douce (image vue)",
+     "constat": "cloche blanche à veines vert tendre, damier à peine visible",
+     "designee_pour_mesure": false,
+     "fichier_controle": "refcache/fritillaire-meleagris/fusion/img/ce_alba02.jpg",
+     "role": "réserve : à mesurer seulement si une des quatre désignées échoue"
+    },
+    {
+     "type": "photo",
+     "niveau": "N4",
+     "consulte": "2026-10-08",
+     "source": "Wikimedia Commons, Fritillaria meleagris 'Alba' RHu (Meneerke bloem, 2017-04-03)",
+     "url_page": "https://commons.wikimedia.org/wiki/File:Fritillaria_meleagris_%27Alba%27_RHu.JPG",
+     "url_image": "https://upload.wikimedia.org/wikipedia/commons/0/0a/Fritillaria_meleagris_%27Alba%27_RHu.JPG",
+     "auteur": "Meneerke bloem",
+     "licence": "CC BY-SA 4.0",
+     "vue": true,
+     "eclairage": "ombre claire, fond de feuillage (image vue)",
+     "constat": "cloche blanc franc, nervures vert pâle",
+     "designee_pour_mesure": false,
+     "fichier_controle": "refcache/fritillaire-meleagris/fusion/img/ce_RHu.jpg",
+     "role": "réserve : à mesurer seulement si une des quatre désignées échoue"
+    },
+    {
+     "type": "photo",
+     "niveau": "N4",
+     "consulte": "2026-10-08",
+     "source": "Wikimedia Commons, Fritillaria meleagris 'Alba' kz01 (Krzysztof Ziarnek, jardin botanique de Varsovie, 2017-05-06)",
+     "url_page": "https://commons.wikimedia.org/wiki/File:Fritillaria_meleagris_%27Alba%27_kz01.jpg",
+     "url_image": "https://upload.wikimedia.org/wikipedia/commons/9/9e/Fritillaria_meleagris_%27Alba%27_kz01.jpg",
+     "auteur": "Krzysztof Ziarnek, Kenraiz",
+     "licence": "CC BY-SA 4.0",
+     "vue": true,
+     "eclairage": "plein jour, paillis au sol (image vue)",
+     "constat": "cloches blanches petites dans le cadre",
+     "designee_pour_mesure": false,
+     "fichier_controle": "refcache/fritillaire-meleagris/fusion/img/ce_kz01.jpg",
+     "role": "réserve : à mesurer seulement si une des quatre désignées échoue"
+    }
+   ],
+   "niveau_preuve": "B",
+   "niveau_motif": "N1 (KAVB) pour le nom ; quatre photos désignées, toutes vues : Van Engelen N3, Avon Bulbs N3, Pacific Bulb Society N3, Commons N4 : cloches blanches à veines vert pâle, concordantes ; Alba est une forme botanique reprise comme nom commercial, le damier est à peine visible. Le lot-1 notait B ; les deux images de la fiche RHS Plant Selector sont rejetées (autre plante).",
+   "statut": "en production possible (B ; mesure par fleur-coloris puis sondage de 10 %)",
+   "doutes": [
+    "Alba est le blanc de la forme type ; Aphrodite (sélection de la même forme) lui ressemble : voir doublon dans coloris/creme.",
+    "Les deux images RHS Plant Selector de la fiche 119868 (visi05843, visi26470) montrent une autre plante : à signaler à l'orchestrateur, non retenues."
+   ],
+   "sondage_temps3": {
+    "date": "2026-10-08",
+    "fait_par": "fleur-recensement, temps 3",
+    "pages_ouvertes": [
+     "https://www.vanengelen.com/fritillaria-meleagris-alba.html",
+     "https://www.avonbulbs.co.uk/autumn-planted-bulbs/fritillaria/fritillaria-meleagris-alba",
+     "https://www.pacificbulbsociety.org/pbswiki/index.php/Fritillaria_meleagris",
+     "https://www.rhs.org.uk/plants/119868/fritillaria-meleagris-var-unicolor-subvar-alba/details"
+    ],
+    "nom_sur_la_page": "Van Engelen : titre « Fritillaria meleagris alba », photo principale, texte « the white-only selection » ; Avon Bulbs : titre « Fritillaria meleagris 'Alba' », alt « Alba » ; PBS : alt « Fritillaria meleagris unicolor alba, David Pilling »",
+    "photo_conforme": true,
+    "constat": "cloches blanches à veines vert pâle, damier à peine visible, concordantes entre les trois sources ; PBS (fond noir) donne la meilleure séparation du fond.",
+    "niveau_avant": "B",
+    "niveau_apres": "B",
+    "verdict": "confirmé. B juste (trois photos N3 indépendantes nommées, nom N1 au KAVB sans enregistrant).",
+    "fiche_rhs": "une seule fiche RHS « Alba » existe : 119868, « Fritillaria meleagris var. unicolor subvar. alba », synonymes « Fritillaria meleagris 'Alba' » et « F. meleagris alba », texte « nodding, bell-shaped flowers 3-4cm ... white » : c'est bien la fritillaire (les fiches voisines sont Aphrodite 99158 et Poseidon 46132). Ses deux photos (visi05843, visi26470, crédit visionspictures.com) montrent des fleurs blanches aux tépales écartés, étamines jaunes visibles, boutons ovoïdes vert pâle, feuilles étroites en herbe : c'est compatible avec F. meleagris alba grande ouverte (les tépales s'écartent aussi sur Commons alba 02 et Kevock). Le rejet du temps 2 (« autre plante ») n'est donc pas établi : plutôt un stade ouvert probable, à confirmer par l'orchestrateur au navigateur. Inutilisables pour la mesure (fond vert saturé, droits réservés), utiles comme référence du stade ouvert."
+   }
+  },
+  {
+   "id": "charon",
+   "coloris_catalogue": "bordeaux",
+   "nom_affiche": "Damier bordeaux sombre (Charon)",
+   "nom_enregistre": "Fritillaria meleagris 'Charon'",
+   "synonymes": [],
+   "groupe": "aucun groupe au registre KAVB",
+   "obtenteur": "J. Eckhart (KAVB)",
+   "annee": null,
+   "registre": {
+    "kavb": {
+     "autorite": "KAVB",
+     "url": "https://login.kavb.nl/siergewassen",
+     "consulte": "2026-10-08",
+     "present": true,
+     "genus": "Fritillaria",
+     "species": "meleagris",
+     "group": null,
+     "cultivar": "'Charon'",
+     "registrant": "J. Eckhart",
+     "registered": null,
+     "no_cultivation_since": null
+    },
+    "rhs": {
+     "autorite": "RHS Plant Finder (société savante, N3 : pas l'autorité du genre)",
+     "id": 223505,
+     "statut": "Accepted",
+     "url": "https://www.rhs.org.uk/plants/223505/fritillaria-meleagris-charon/details"
+    }
+   },
+   "marque": null,
+   "marque_preuve": "aucun ® ni ™ vu sur ce nom de fritillaire dans les pages lues ; registre des marques (TMview, EUIPO, INPI, WIPO) non consulté : à faire par l'orchestrateur. Nom inscrit au KAVB = dénomination de variété (STANDARD-SOURCES.md, section 2).",
+   "couleur_selon_sources": {
+    "Plantura (N4, guide, texte)": "dark red to deep purple flower with a light purple chessboard pattern",
+    "garten-wissen (inventaire)": "pourpre très sombre jusqu'au presque noir, taches violet clair",
+    "Plantura (inventaire, autre passage)": "rouge sombre à violet profond, damier violet clair",
+    "English blog (résumé de recherche)": "deep purple"
+   },
+   "sources": [
+    {
+     "type": "nom",
+     "niveau": "N1",
+     "consulte": "2026-10-08",
+     "source": "KAVB, base des cultivars (lecture seule)",
+     "url_page": "https://login.kavb.nl/siergewassen",
+     "constat": "'Charon' trouvé, registrant J. Eckhart"
+    },
+    {
+     "type": "nom",
+     "niveau": "N4",
+     "consulte": "2026-10-08",
+     "source": "Dunedin Botanic Garden, article « Woodland garden has subtleties » (résumé de moteur ; page en 403 aux robots)",
+     "url_page": "https://www.dunedin.govt.nz/bg/collections/garden-life-article/woodland-garden-has-subtleties",
+     "constat": "'Charon' décrit comme forme sombre, fleurs pourpre foncé à damier (résumé : texte, photo non vue) : piste à ouvrir par l'orchestrateur"
+    },
+    {
+     "type": "nom",
+     "niveau": "N3",
+     "consulte": "2026-10-08",
+     "source": "RHS Plants 223505 (Accepted)",
+     "url_page": "https://www.rhs.org.uk/plants/223505/fritillaria-meleagris-charon/details",
+     "constat": "nom accepté ; aucune photo dans la page",
+     "niveau_lot": "N1 (lot)",
+     "niveau_note": "RHS Plant Finder n'est pas l'autorité d'enregistrement du genre (c'est le KAVB) : N3, société savante, comme dans muscari.json"
+    },
+    {
+     "type": "nom",
+     "niveau": "N3",
+     "consulte": "2026-10-08",
+     "source": "C.S. Weijers, liste Fritillaria",
+     "url_page": "https://www.csweijers.nl/en/assortment/fritillaria",
+     "constat": "« meleagris - Charon » listé, sans photo",
+     "niveau_lot": "N2 (lot)",
+     "niveau_note": "C.S. Weijers = grossiste, liste de noms sans photo : N3, comme dans muscari.json"
+    }
+   ],
+   "doutes": [
+    "Aucune photo nommée : la fiche RHS n'en a pas, les recherches Commons ne donnent rien ; pistes non tentées : pépinières néerlandaises, Flickr CC.",
+    "volkoomen (l'obtenteur Eckhart y est cité) est en erreur 500 aujourd'hui ; la description de Charon y était coupée dans la recherche.",
+    "Brouillon seulement : D n'entre pas en boutique.",
+    "Passe de recherche du temps 2 : aucune photo nommée de Charon trouvée (15 recherches générales et spécialisées, Commons par titre, Fritillaria Group, PBS, Kevock, Pottertons, Avon, Esker, Rare Plants)."
+   ],
+   "niveau_preuve": "D",
+   "niveau_motif": "nom N1 + N3 (liste Weijers) ; aucune photo nommée ; couleur seulement par des textes (pourpre très sombre jusqu'au presque noir, damier violet clair).",
+   "statut": "sans preuve (D : brouillon, pas de production)"
+  },
+  {
+   "id": "saturnus",
+   "coloris_catalogue": "rouge-violet",
+   "nom_affiche": "Damier rouge violacé (Saturnus)",
+   "nom_enregistre": "Fritillaria meleagris 'Saturnus'",
+   "synonymes": [],
+   "groupe": "aucun groupe au registre KAVB",
+   "obtenteur": "J. Eckhart (KAVB ; Rare Plants : obtention datée de 1947 à 1956, date exacte au registre)",
+   "annee": null,
+   "registre": {
+    "kavb": {
+     "autorite": "KAVB",
+     "url": "https://login.kavb.nl/siergewassen",
+     "consulte": "2026-10-08",
+     "present": true,
+     "genus": "Fritillaria",
+     "species": "meleagris",
+     "group": null,
+     "cultivar": "'Saturnus'",
+     "registrant": "J. Eckhart",
+     "registered": null,
+     "no_cultivation_since": null
+    },
+    "rhs": {
+     "autorite": "RHS Plant Finder (société savante, N3 : pas l'autorité du genre)",
+     "id": 97641,
+     "statut": "Accepted",
+     "url": "https://www.rhs.org.uk/plants/97641/fritillaria-meleagris-saturnus/details"
+    }
+   },
+   "marque": null,
+   "marque_preuve": "aucun ® ni ™ vu sur ce nom de fritillaire dans les pages lues ; registre des marques (TMview, EUIPO, INPI, WIPO) non consulté : à faire par l'orchestrateur. Nom inscrit au KAVB = dénomination de variété (STANDARD-SOURCES.md, section 2).",
+   "couleur_selon_sources": {
+    "Rare Plants (N3)": "large flowers, pale background, very good strong red-purple colouring (red-violet à l'introduction)",
+    "NC State (N3, université)": "pale violet and burgundy",
+    "Backyard Gardener (N4, texte de 2016)": "reddish violet flowers, strongly checkered with purplish-pink",
+    "Dave's Garden (N4, note de jardinier, inventaire)": "violet red, markings slightly lighter",
+    "volkoomen (N2 ?, résumé de moteur, page en erreur 500)": "violet-pink with pink grains (divergent, non vérifié)"
+   },
+   "sources": [
+    {
+     "type": "nom",
+     "niveau": "N1",
+     "consulte": "2026-10-08",
+     "source": "KAVB, base des cultivars (lecture seule)",
+     "url_page": "https://login.kavb.nl/siergewassen",
+     "constat": "'Saturnus' trouvé, registrant J. Eckhart"
+    },
+    {
+     "type": "nom",
+     "niveau": "N3",
+     "consulte": "2026-10-08",
+     "source": "RHS Plants 97641 (Accepted)",
+     "url_page": "https://www.rhs.org.uk/plants/97641/fritillaria-meleagris-saturnus/details",
+     "constat": "nom accepté ; aucune photo sur la fiche (lue dans le code de la page)",
+     "niveau_lot": "N1 (lot)",
+     "niveau_note": "RHS Plant Finder n'est pas l'autorité d'enregistrement du genre (c'est le KAVB) : N3, société savante, comme dans muscari.json"
+    },
+    {
+     "type": "nom",
+     "niveau": "N3",
+     "consulte": "2026-10-08",
+     "source": "C.S. Weijers, liste Fritillaria",
+     "url_page": "https://www.csweijers.nl/en/assortment/fritillaria",
+     "constat": "« meleagris - Saturnus » listé, sans photo",
+     "niveau_lot": "N2 (lot)",
+     "niveau_note": "C.S. Weijers = grossiste, liste de noms sans photo : N3, comme dans muscari.json"
+    },
+    {
+     "type": "nom",
+     "niveau": "N3",
+     "consulte": "2026-10-08",
+     "source": "Rare Plants (fiche de vente)",
+     "url_page": "https://www.rareplants.co.uk/product/fritillaria-meleagris-saturnus/",
+     "constat": "introduit par J. Eckhart aux Pays-Bas vers 1947-1956 ; multiplication végétative seule pour garder le nom"
+    },
+    {
+     "type": "nom",
+     "niveau": "N3",
+     "consulte": "2026-10-08",
+     "source": "NC State Extension, Plant Toolbox (université)",
+     "url_page": "https://plants.ces.ncsu.edu/plants/fritillaria-meleagris/",
+     "constat": "'Saturnus' : « Pale violet and burgundy flowers » (texte lu)"
+    },
+    {
+     "type": "nom",
+     "niveau": "N4",
+     "consulte": "2026-10-08",
+     "source": "Plantura (guide, résumé de moteur, page non ouverte)",
+     "url_page": "https://plantura.garden/uk/flowers-perennials/snakes-head-fritillary/snakes-head-fritillary-overview",
+     "constat": "'Saturnus' : red-purple flower with a clear chessboard pattern (résumé)"
+    },
+    {
+     "type": "photo",
+     "niveau": "N3",
+     "consulte": "2026-10-08",
+     "source": "Rare Plants, photo produit (version comp)",
+     "url_page": "https://www.rareplants.co.uk/product/fritillaria-meleagris-saturnus/",
+     "url_image": "https://www.rareplants.co.uk/wp-content/uploads/Fritillaria-meleagris-Saturnus-comp.jpg",
+     "auteur": null,
+     "licence": null,
+     "vue": true,
+     "eclairage": "plein air, lumière naturelle diffuse, filigrane rareplants.co.uk (image vue ; 400 x 400 px)",
+     "constat": "cloche à fond lilas clair, damier rouge-violet à magenta, deux tépales visibles, fond flou : concorde avec « strong red-purple colouring »",
+     "designee_pour_mesure": false,
+     "fichier_controle": "refcache/fritillaire-meleagris/fusion/img/rp_saturnus.jpg",
+     "droits": "vendeur, à vérifier"
+    },
+    {
+     "type": "photo",
+     "niveau": "N3",
+     "consulte": "2026-10-08",
+     "source": "Rare Plants, seconde photo de la fiche (Saturnus2-comp-medium.jpg et Saturnus2-comp.jpg)",
+     "url_page": "https://www.rareplants.co.uk/product/fritillaria-meleagris-saturnus/",
+     "url_image": "https://www.rareplants.co.uk/wp-content/uploads/Fritillaria-meleagris-Saturnus2-comp.jpg",
+     "auteur": null,
+     "licence": null,
+     "vue": true,
+     "eclairage": "plein air, lumière naturelle diffuse, filigrane (image vue ; 400 x 400 px)",
+     "constat": "trois cloches à damier fin rouge-violet sur fond rose-lilas clair",
+     "designee_pour_mesure": false,
+     "fichier_controle": "refcache/fritillaire-meleagris/fusion/img/rp_saturnus2.jpg",
+     "droits": "vendeur, à vérifier ; même fournisseur que la première : non indépendante"
+    },
+    {
+     "type": "photo",
+     "niveau": "N4",
+     "consulte": "2026-10-08",
+     "source": "garden.org (NGA, base de plantes, photo de membre « mattsmom »)",
+     "url_page": "https://garden.org/plants/view/527254/Snakes-Head-Fritillary-Fritillaria-meleagris-Saturnus/",
+     "url_image": "https://garden.org/pics/2010-11-11/mattsmom/f6b393-500.jpg",
+     "auteur": null,
+     "licence": null,
+     "vue": true,
+     "eclairage": null,
+     "constat": "image vue : lis jaune (Hemerocallis) pourpre à bord frangé, pas une fritillaire : rejetée",
+     "designee_pour_mesure": false,
+     "fichier_controle": "refcache/fritillaire-meleagris/fusion/img/go_saturnus.jpg",
+     "statut": "rejetée"
+    }
+   ],
+   "niveau_preuve": "C",
+   "niveau_motif": "nom N1 ; une seule source photo (Rare Plants N3, deux fichiers du même vendeur, vus et concordants avec le texte). Pas de deuxième photo nommée indépendante après la passe de recherche : garden.org rejetée (lis jaune), Esker renvoie son adresse Saturnus vers la fiche Eros. Piste : le Alpine Garden Society montre un pot de Saturnus (Don Peace) dans ses comptes rendus de salons 2025 et 2026 (résumé de moteur ; pages en 403 aux robots : à ouvrir par l'orchestrateur).",
+   "statut": "à confirmer (C : sans preuve A ou B ; n'entre pas en boutique)",
+   "doutes": [
+    "Couleur divergente selon les sources : rouge-violet (Rare Plants), violet-rose à grains roses (volkoomen, non vérifié), pâle violet et bordeaux (NC State). Une seule photo nommée : à confirmer, pas en production.",
+    "Les fichiers « comp » peuvent être des compositions : à vérifier avant mesure.",
+    "Disponibilité contradictoire : « in stock » à la lecture de la page, « out of stock » dans un résultat de recherche.",
+    "Les images garden.org rattachées à plusieurs fritillaires (Saturnus, Poseidon, Pomona, Pink Eveline) sont des lis jaunes : cette base n'est pas fiable pour les photos de ces noms."
+   ],
+   "sondage_temps3": {
+    "date": "2026-10-08",
+    "fait_par": "fleur-recensement, temps 3",
+    "pages_ouvertes": [
+     "https://www.rareplants.co.uk/product/fritillaria-meleagris-saturnus/"
+    ],
+    "nom_sur_la_page": "Rare Plants : titre « Fritillaria meleagris Saturnus », deux images alt « Fritillaria meleagris Saturnus » (filigrane rareplants.co.uk, 400 x 400 px) ; texte « bred and introduced as part of a range by J. Eckhart »",
+    "photo_conforme": true,
+    "constat": "damier rose-magenta à mauve sur fond rose très pâle, plus proche du rose-pourpre que du « rouge violacé » du nom affiché. Une seule boutique : les deux images ne comptent que pour une source.",
+    "niveau_avant": "C",
+    "niveau_apres": "C",
+    "verdict": "confirmé : C (une seule source photo). Nom affiché à revoir à la mesure : la photo est plutôt « rose magenta » que « rouge violacé »."
+   }
+  },
+  {
+   "id": "poseidon",
+   "coloris_catalogue": "lavande",
+   "nom_affiche": "Damier lavande pâle (Poseidon)",
+   "nom_enregistre": "Fritillaria meleagris 'Poseidon'",
+   "synonymes": [],
+   "groupe": "aucun groupe au registre KAVB",
+   "obtenteur": "J. Eckhart (KAVB, champ registrant)",
+   "annee": null,
+   "registre": {
+    "kavb": {
+     "autorite": "KAVB",
+     "url": "https://login.kavb.nl/siergewassen",
+     "consulte": "2026-10-08",
+     "present": true,
+     "genus": "Fritillaria",
+     "species": "meleagris",
+     "group": null,
+     "cultivar": "'Poseidon'",
+     "registrant": "J. Eckhart",
+     "registered": null,
+     "no_cultivation_since": null
+    },
+    "rhs": {
+     "autorite": "RHS Plant Finder (société savante, N3 : pas l'autorité du genre)",
+     "id": 46132,
+     "statut": "Accepted",
+     "url": "https://www.rhs.org.uk/plants/46132/fritillaria-meleagris-poseidon/details"
+    }
+   },
+   "marque": null,
+   "marque_preuve": "aucun ® ni ™ vu sur la fritillaire ; un « Poseidon™ » existe sur un ROSIER (Grace Rose Farm, autre genre) : ligne déjà dans marques-a-verifier.txt, à voir à TMview/EUIPO (classe des plantes). Nom inscrit au KAVB = dénomination de variété.",
+   "couleur_selon_sources": {
+    "garten-wissen (inventaire)": "pourpre rosé (purpur-rosa)",
+    "bio-gaertner (inventaire)": "rosapurpur",
+    "boutique japonaise (inventaire)": "rose-pourpre doux",
+    "English blog (résumé de recherche)": "soft red-purple",
+    "volkoomen (résumé de moteur, page en erreur 500)": "large white flowers with purple markings (CONTRADICTOIRE, non vérifié)",
+    "Fritillaria Group, photo (N3, vue)": "fond blanc crème à vert, lavé de gris-violet, veines pourpres fines",
+    "Garden Stew, photo (N4, vue)": "fond blanc-gris, damier et bord rose-lilas"
+   },
+   "sources": [
+    {
+     "type": "nom",
+     "niveau": "N1",
+     "consulte": "2026-10-08",
+     "source": "KAVB, base des cultivars (lecture seule)",
+     "url_page": "https://login.kavb.nl/siergewassen",
+     "constat": "'Poseidon' trouvé, registrant J. Eckhart"
+    },
+    {
+     "type": "nom",
+     "niveau": "N3",
+     "consulte": "2026-10-08",
+     "source": "RHS Plants 46132 (Accepted)",
+     "url_page": "https://www.rhs.org.uk/plants/46132/fritillaria-meleagris-poseidon/details",
+     "constat": "nom accepté ; aucune photo dans la page",
+     "niveau_lot": "N1 (lot)",
+     "niveau_note": "RHS Plant Finder n'est pas l'autorité d'enregistrement du genre (c'est le KAVB) : N3, société savante, comme dans muscari.json"
+    },
+    {
+     "type": "nom",
+     "niveau": "N3",
+     "consulte": "2026-10-08",
+     "source": "C.S. Weijers, liste Fritillaria",
+     "url_page": "https://www.csweijers.nl/en/assortment/fritillaria",
+     "constat": "« meleagris - Poseidon » listé, sans photo",
+     "niveau_lot": "N2 (lot)",
+     "niveau_note": "C.S. Weijers = grossiste, liste de noms sans photo : N3, comme dans muscari.json"
+    },
+    {
+     "type": "nom",
+     "niveau": "N3",
+     "consulte": "2026-10-08",
+     "source": "NC State Extension, Plant Toolbox (université)",
+     "url_page": "https://plants.ces.ncsu.edu/plants/fritillaria-meleagris/",
+     "constat": "ne cite pas Poseidon"
+    },
+    {
+     "type": "photo",
+     "niveau": "N3",
+     "consulte": "2026-10-08",
+     "source": "The Fritillaria Group (société savante, galerie des espèces M-N)",
+     "url_page": "https://www.fritillaria.org.uk/fritillaria-species-m---n.html",
+     "url_image": "https://www.fritillaria.org.uk/uploads/2/5/9/3/25937001/6842695_orig.jpg",
+     "auteur": null,
+     "licence": "photo protégée (« All photos on this site are copyrighted and MUST NOT be taken for commercial use ») : mesure seulement, jamais publiée",
+     "vue": true,
+     "eclairage": "fond gris foncé uniforme, éclairage de studio (image vue ; 650 x 488 px)",
+     "constat": "titre de la galerie : « Fritillaria meleagris 'Poseidon' » ; grande cloche fond blanc crème à vert, tépales extérieurs lavés de gris-violet à bord pourpre, veines pourpres fines : PAS rose-pourpre ni lavande franche",
+     "designee_pour_mesure": true,
+     "fichier_controle": "refcache/fritillaire-meleagris/fusion/img/fg_poseidon.jpg"
+    },
+    {
+     "type": "photo",
+     "niveau": "N4",
+     "consulte": "2026-10-08",
+     "source": "Garden Stew (base de plantes d'un forum de jardinage, photo du membre Vivasvat, 2008-12-14)",
+     "url_page": "https://www.gardenstew.com/plantstew/9000658",
+     "url_image": "https://www.gardenstew.com/plantstew/pimg/ps-l/9000658_0.jpg",
+     "auteur": "Vivasvat (membre)",
+     "licence": "copyright du membre : mesure seulement, jamais publiée",
+     "vue": true,
+     "eclairage": "plein air, ciel couvert (image vue ; 375 x 500 px)",
+     "constat": "entrée « Fritillaria meleagris 'Poseidon' » (type Cultivar) : cloche fond blanc-gris à damier et bord rose-lilas ; une cloche blanche (autre fleur) à gauche : mesurer seulement la cloche à damier",
+     "designee_pour_mesure": true,
+     "fichier_controle": "refcache/fritillaire-meleagris/fusion/img/gs_poseidon.jpg"
+    },
+    {
+     "type": "photo",
+     "niveau": "N4",
+     "consulte": "2026-10-08",
+     "source": "garden.org (NGA, base de plantes, photo du membre Calif_Sue, 2010-12-16)",
+     "url_page": "https://garden.org/plants/view/751835/Snakes-Head-Fritillary-Fritillaria-meleagris-Poseidon/",
+     "url_image": "https://garden.org/pics/2010-12-16/Calif_Sue/94aa4c-500.jpg",
+     "auteur": null,
+     "licence": null,
+     "vue": true,
+     "eclairage": null,
+     "constat": "image vue : lis jaune (Hemerocallis) orange-rouge, pas une fritillaire : rejetée",
+     "designee_pour_mesure": false,
+     "fichier_controle": "refcache/fritillaire-meleagris/fusion/img/go_poseidon.jpg",
+     "statut": "rejetée"
+    }
+   ],
+   "niveau_preuve": "B",
+   "niveau_motif": "nom N1 (KAVB) ; deux photos nommées indépendantes et concordantes entre elles, vues : Fritillaria Group (N3, société savante, studio) et Garden Stew (N4) : fond blanc crème à gris, marques lilas-pourpre. Les textes de vendeurs (garten-wissen « pourpre rosé », bio-gaertner « rosapurpur », boutique japonaise « rose-pourpre doux », blog « soft red-purple ») divergent des photos ; le résumé de volkoomen (page morte, non lue) dit « large white flowers with purple markings » et va dans le sens des photos. La photo prime. B fragile : deux photos seulement, une N4.",
+   "statut": "en production possible (B fragile) ; nom affiché à corriger ; à revoir en priorité au sondage",
+   "doutes": [
+    "Contradiction entre photos (pâle, marques lilas) et textes de vendeurs (rose-pourpre) : une troisième photo nommée la lèverait.",
+    "Le « Poseidon™ » vu est un rosier (autre genre) : registre des marques à consulter.",
+    "L'entrée garden.org de Poseidon porte une image de lis jaune : rejetée."
+   ],
+   "sondage_temps3": {
+    "date": "2026-10-08",
+    "fait_par": "fleur-recensement, temps 3",
+    "pages_ouvertes": [
+     "https://www.fritillaria.org.uk/fritillaria-species-m---n.html",
+     "https://www.gardenstew.com/plantstew/9000658"
+    ],
+    "nom_sur_la_page": "Fritillaria Group : titre de l'image dans la galerie « Fritillaria meleagris 'Poseidon' » (lien 6842695_orig.jpg), seule image de la page ainsi nommée pour un cultivar ; Garden Stew : titre « Fritillaria meleagris 'Poseidon' (Snake's Head Fritillary) », type Cultivar, image du membre Vivasvat",
+    "photo_conforme": true,
+    "constat": "Fritillaria Group : grande cloche à fond crème-jaune-vert, marques gris-violet et pourpre en lavis et ponctuation surtout vers le bord des tépales. Garden Stew : fond blanc lilacé, damier et nervures rose-lilas à pourpre, une cloche blanche à côté (autre fleur). Les deux photos s'accordent sur « fond pâle à marques lilas-pourpre » et contredisent « rose pourpré » ; elles diffèrent par la teinte du fond (crème-vert contre blanc lilacé) et la densité du damier.",
+    "niveau_avant": "B",
+    "niveau_apres": "B",
+    "verdict": "B maintenu, fragile : formellement deux photos nommées (N3 titrée par une société savante + N4 identifiée par un membre de forum). Si l'orchestrateur juge l'identification du forum non fiable, c'est C. Les textes « purpur-rosa » (garten-wissen) et « rosapurpur » (bio-gaertner) donnent la même liste de noms dans le même ordre : probablement une seule source recopiée, pas deux. La photo prime. Après la mesure de fleur-coloris (ΔE76 49 sur le fond entre les deux photos, aucune valeur retenue) : B tient pour la nature de la fleur (fond pâle, marques pourpre-lilas, ni lavande ni rose pourpré), pas pour sa teinte exacte. Le texte de la page morte volkoomen (« large white flowers with purple markings », non lu) va dans le même sens. Statut conseillé : « B, mesure suspendue » jusqu'à une troisième photo nommée ; pas de production avant.",
+    "nom_affiche": "proposition affinée : « Crème à marques lilas (Poseidon) » (le fond est crème sur la photo de la société savante, blanc lilacé sur celle du forum ; ni lavande ni rose pourpré). À confirmer à la mesure."
+   }
+  },
+  {
+   "id": "aphrodite",
+   "coloris_catalogue": "creme",
+   "nom_affiche": "crème (Aphrodite)",
+   "nom_enregistre": "Fritillaria meleagris 'Aphrodite' au KAVB ; RHS : var. unicolor subvar. alba 'Aphrodite' (99158)",
+   "synonymes": [
+    "Alba 'Aphrodite'",
+    "var. unicolor subvar. alba 'Aphrodite'"
+   ],
+   "groupe": "sélection de la forme blanche (aucun groupe au registre KAVB)",
+   "obtenteur": "J. Eckhart (KAVB, champ registrant ; Uitgeest selon le lot-1)",
+   "annee": null,
+   "registre": {
+    "kavb": {
+     "autorite": "KAVB",
+     "url": "https://login.kavb.nl/siergewassen",
+     "consulte": "2026-10-08",
+     "present": true,
+     "genus": "Fritillaria",
+     "species": "meleagris",
+     "group": null,
+     "cultivar": "'Aphrodite'",
+     "registrant": "J. Eckhart",
+     "registered": null,
+     "no_cultivation_since": null
+    },
+    "rhs": {
+     "autorite": "RHS Plant Finder (société savante, N3 : pas l'autorité du genre)",
+     "id": 99158,
+     "statut": "Accepted",
+     "url": "https://www.rhs.org.uk/plants/99158/fritillaria-meleagris-aphrodite/details"
+    }
+   },
+   "marque": null,
+   "marque_preuve": "aucun ® ni ™ vu sur ce nom de fritillaire dans les pages lues ; registre des marques (TMview, EUIPO, INPI, WIPO) non consulté : à faire par l'orchestrateur. Nom inscrit au KAVB = dénomination de variété (STANDARD-SOURCES.md, section 2).",
+   "couleur_selon_sources": {
+    "Pottertons (N3)": "white, very lightly chequered in pale green, large flowers",
+    "Kevock (N3)": "white, only a faint grey-green chequering",
+    "Pacific Bulb Society (N3)": "white flowers with green veins and light chequering",
+    "bio-gaertner (inventaire)": "grandes fleurs blanches sans motif (divergent)",
+    "Japon, boutique (inventaire)": "blanc légèrement crème-verdâtre"
+   },
+   "sources": [
+    {
+     "type": "nom",
+     "niveau": "N1",
+     "consulte": "2026-10-08",
+     "source": "KAVB, base des cultivars (lecture seule)",
+     "url_page": "https://login.kavb.nl/siergewassen",
+     "constat": "'Aphrodite' trouvé, registrant J. Eckhart, date vide"
+    },
+    {
+     "type": "nom",
+     "niveau": "N3",
+     "consulte": "2026-10-08",
+     "source": "RHS Plants 99158 (Accepted)",
+     "url_page": "https://www.rhs.org.uk/plants/99158/fritillaria-meleagris-aphrodite/details",
+     "constat": "titre de la fiche : var. unicolor subvar. alba 'Aphrodite' ; statut Accepted",
+     "niveau_lot": "N1 (lot)",
+     "niveau_note": "RHS Plant Finder n'est pas l'autorité d'enregistrement du genre (c'est le KAVB) : N3, société savante, comme dans muscari.json"
+    },
+    {
+     "type": "nom",
+     "niveau": "N3",
+     "consulte": "2026-10-08",
+     "source": "C.S. Weijers, liste Fritillaria",
+     "url_page": "https://www.csweijers.nl/en/assortment/fritillaria",
+     "constat": "« meleagris - Aphrodite » listé, sans photo",
+     "niveau_lot": "N2 (lot)",
+     "niveau_note": "C.S. Weijers = grossiste, liste de noms sans photo : N3, comme dans muscari.json"
+    },
+    {
+     "type": "nom",
+     "niveau": "N3",
+     "consulte": "2026-10-08",
+     "source": "Pottertons et Kevock (fiches de vente)",
+     "url_page": "https://www.pottertons.co.uk/shop/bulbs/fritillaria/fritillaria-meleagris-alba-aphrodite",
+     "constat": "nom de cultivar donné par deux pépinières spécialisées"
+    },
+    {
+     "type": "nom",
+     "niveau": "N3",
+     "consulte": "2026-10-08",
+     "source": "NC State Extension, Plant Toolbox (université)",
+     "url_page": "https://plants.ces.ncsu.edu/plants/fritillaria-meleagris/",
+     "constat": "'Aphrodite' : « White petals with green veining » (texte)"
+    },
+    {
+     "type": "nom",
+     "niveau": "N3",
+     "consulte": "2026-10-08",
+     "source": "Royal Botanic Gardens Victoria, HortFlora",
+     "url_page": "https://hortflora.rbg.vic.gov.au/taxon/ada73026-5340-11e7-b82b-005056b0018f",
+     "constat": "'Aphrodite' : « Flowers large and white » (texte lu dans le cache du temps 1)"
+    },
+    {
+     "type": "photo",
+     "niveau": "N3",
+     "consulte": "2026-10-08",
+     "source": "Pottertons, photo produit de la fiche Aphrodite",
+     "url_page": "https://www.pottertons.co.uk/shop/bulbs/fritillaria/fritillaria-meleagris-alba-aphrodite",
+     "url_image": "https://images.pottertons-cdn.co.uk/products/fritillaria-meleagris-alba-d060ef69-r1/1024.jpg",
+     "auteur": null,
+     "licence": null,
+     "vue": true,
+     "eclairage": "lumière diffuse d'ombre ou de serre, fond de caisses (image vue)",
+     "constat": "deux grandes cloches blanches, veines vert pâle fines, damier à peine visible ; texte : « very lightly chequered in pale green, large flowers »",
+     "designee_pour_mesure": true,
+     "fichier_controle": "refcache/fritillaire-meleagris/fusion/img/pott_aphro.jpg",
+     "droits": "vendeur, à vérifier"
+    },
+    {
+     "type": "photo",
+     "niveau": "N3",
+     "consulte": "2026-10-08",
+     "source": "Kevock Garden, fiche Aphrodite (images de la fiche)",
+     "url_page": "https://www.kevockgarden.co.uk/plantlist/plant.asp?SKU=FMH&PlantName=Fritillaria_meleagris_var._unicolor_subvar._Alba_%28%27Aphrodite%27%29&PlantorBulb=Plants",
+     "url_image": "https://www.kevockgarden.co.uk/plantlist/media/Fritillaria%20meleagris%20Alba%20250613%201.jpg",
+     "auteur": null,
+     "licence": null,
+     "vue": true,
+     "eclairage": "lumière chaude, dominante jaune-crème (image vue, 200 x 200 px)",
+     "constat": "cloches blanc-crème à vert pâle : plus crème que les autres photos, probablement l'effet de la lumière (200 px, mesure « approchée »)",
+     "designee_pour_mesure": true,
+     "fichier_controle": "refcache/fritillaire-meleagris/fusion/img/kev_alba.jpg",
+     "droits": "pépinière, droits à vérifier ; mesure seule"
+    },
+    {
+     "type": "photo",
+     "niveau": "N3",
+     "consulte": "2026-10-08",
+     "source": "Kevock Garden, autres images de la même fiche (fritillaria_meleagris_alba2.jpg, alba3.jpg)",
+     "url_page": "https://www.kevockgarden.co.uk/plantlist/plant.asp?SKU=FMH&PlantName=Fritillaria_meleagris_var._unicolor_subvar._Alba_%28%27Aphrodite%27%29&PlantorBulb=Plants",
+     "url_image": "https://www.kevockgarden.co.uk/plantlist/media/fritillaria_meleagris_alba2.jpg",
+     "auteur": null,
+     "licence": null,
+     "vue": true,
+     "eclairage": "serre ou tunnel, lumière diffuse (image vue, 200 x 200 px)",
+     "constat": "nombreuses cloches blanc-crème à reflet vert dans des pots ; mesure « approchée »",
+     "designee_pour_mesure": true,
+     "fichier_controle": "refcache/fritillaire-meleagris/fusion/img/kev_alba2.jpg",
+     "droits": "pépinière, à vérifier"
+    },
+    {
+     "type": "photo",
+     "niveau": "N3",
+     "consulte": "2026-10-08",
+     "source": "Pacific Bulb Society, Michael J. Campbell (légende « 'Aphrodite' »)",
+     "url_page": "https://www.pacificbulbsociety.org/pbswiki/index.php/Fritillaria_meleagris",
+     "url_image": "https://www.pacificbulbsociety.org/pbswiki/files/Fritillaria/Fritillaria_meleagris_aphrodite_mjc_1.jpg",
+     "auteur": "Michael J. Campbell",
+     "licence": "droits réservés au photographe : mesure seulement, jamais publiée",
+     "vue": true,
+     "eclairage": "fond noir, éclairage frontal (flash probable, non confirmé) (image vue)",
+     "constat": "cloches blanc-vert tendre à veines vertes, fond noir : légende « 'Aphrodite' » ; texte PBS : « white and green veined and lightly chequered »",
+     "designee_pour_mesure": true,
+     "fichier_controle": "refcache/fritillaire-meleagris/fusion/img/pbs_aphro.jpg",
+     "droits": "photo de tiers : non réutilisable (inventaire), à demander"
+    }
+   ],
+   "niveau_preuve": "B",
+   "niveau_motif": "N1 (KAVB) pour le nom ; trois sources de photos indépendantes et vues : Pottertons N3, Pacific Bulb Society N3, Kevock N3 (deux images de la même fiche) ; toutes montrent un blanc à veines vert pâle, plus verdâtre ou crème que l'Alba sous une lumière chaude (Kevock). Aucune photo N2.",
+   "statut": "en production possible (B) ; doublon possible avec Alba, à trancher par l'orchestrateur",
+   "doutes": [
+    "Aphrodite est une sélection de l'Alba (RHS : var. unicolor subvar. alba 'Aphrodite') à grandes fleurs : à l'échelle du dessin, la teinte et le motif sont presque les mêmes (comparer à la mesure).",
+    "Une fiche (bio-gaertner) dit « sans motif », les autres « damier vert très pâle » : à lire sur la mesure.",
+    "Les images de Kevock font 200 x 200 px : mesure « approchée »."
+   ],
+   "sondage_temps3": {
+    "date": "2026-10-08",
+    "fait_par": "fleur-recensement, temps 3",
+    "pages_ouvertes": [
+     "https://www.pottertons.co.uk/shop/bulbs/fritillaria/fritillaria-meleagris-alba-aphrodite",
+     "https://www.pacificbulbsociety.org/pbswiki/index.php/Fritillaria_meleagris",
+     "https://www.kevockgarden.co.uk/plantlist/plant.asp?SKU=FMH&PlantName=Fritillaria_meleagris_var._unicolor_subvar._Alba_%28%27Aphrodite%27%29&PlantorBulb=Plants"
+    ],
+    "nom_sur_la_page": "Pottertons : titre « Fritillaria meleagris alba 'Aphrodite' », « large flowers » ; PBS : légende « Fritillaria meleagris 'Aphrodite' is a form with white and green veined and lightly chequered flowers. Photo by Michael J. Campbell » ; Kevock : titre « var. unicolor subvar. Alba ('Aphrodite') »",
+    "photo_conforme": true,
+    "constat": "grandes cloches blanches à veines vert pâle fines (Pottertons), blanc verdâtre sur fond noir (PBS), blanc crème-vert (Kevock, 200 px). Aucune ne dit crème.",
+    "niveau_avant": "B",
+    "niveau_apres": "B",
+    "verdict": "confirmé. B juste (trois pépinières ou sociétés N3 indépendantes, nom N1 au KAVB).",
+    "contre_alba": "pas distinguable à l'oeil de façon fiable. Aphrodite tire un peu plus vers le crème-vert et a de plus grandes cloches (Pottertons, HortFlora), mais Kevock, Pottertons et la RHS la rangent sous « alba » (Kevock : « Alba ('Aphrodite') ») et garten-wissen comme bio-gaertner disent « blanc » pour les deux. Mesure indicative non corrigée du blanc (ordre de grandeur, pas une mesure) : b* médian de l'ordre de +16 pour Aphrodite contre +8 sur les trois photos de vendeurs d'Alba, mais les quatre photos Commons d'Alba couvrent b* de +7 à +17 : l'écart est dans le bruit d'éclairage. Conseil : fondre en un seul coloris « blanc veiné de vert », Aphrodite en variante grande cloche ; ou garder les deux seulement si fleur-coloris trouve un écart constant supérieur à ΔE 10."
+   }
+  },
+  {
+   "id": "artemis",
+   "coloris_catalogue": null,
+   "nom_affiche": "Artemis (hors catalogue)",
+   "nom_enregistre": "Fritillaria meleagris 'Artemis'",
+   "synonymes": [],
+   "groupe": "aucun groupe au registre KAVB",
+   "obtenteur": "J. Eckhart (KAVB)",
+   "annee": null,
+   "registre": {
+    "kavb": {
+     "autorite": "KAVB",
+     "url": "https://login.kavb.nl/siergewassen",
+     "consulte": "2026-10-08",
+     "present": true,
+     "genus": "Fritillaria",
+     "species": "meleagris",
+     "group": null,
+     "cultivar": "'Artemis'",
+     "registrant": "J. Eckhart",
+     "registered": null,
+     "no_cultivation_since": null
+    },
+    "rhs": {
+     "autorite": "RHS Plant Finder (société savante, N3 : pas l'autorité du genre)",
+     "id": 7399,
+     "statut": "Accepted",
+     "url": "https://www.rhs.org.uk/plants/7399/fritillaria-meleagris-artemis/details"
+    }
+   },
+   "marque": null,
+   "marque_preuve": "aucun ® ni ™ vu sur ce nom de fritillaire dans les pages lues ; registre des marques (TMview, EUIPO, INPI, WIPO) non consulté : à faire par l'orchestrateur. Nom inscrit au KAVB = dénomination de variété (STANDARD-SOURCES.md, section 2).",
+   "couleur_selon_sources": {
+    "garten-wissen et bio-gaertner (inventaire)": "pourpre à damier vert",
+    "Bauernblatt (inventaire)": "pourpre noirâtre",
+    "volkoomen (résumé de moteur, page en erreur 500)": "green spotting on a modest dark purple ground (non vérifié)",
+    "boutique japonaise (inventaire)": "gris-pourpre rouge à grille blanche (divergent)"
+   },
+   "sources": [
+    {
+     "type": "nom",
+     "niveau": "N1",
+     "consulte": "2026-10-08",
+     "source": "KAVB, base des cultivars (lecture seule)",
+     "url_page": "https://login.kavb.nl/siergewassen",
+     "constat": "'Artemis' trouvé, registrant J. Eckhart"
+    },
+    {
+     "type": "nom",
+     "niveau": "N3",
+     "consulte": "2026-10-08",
+     "source": "RHS Plants 7399 (Accepted)",
+     "url_page": "https://www.rhs.org.uk/plants/7399/fritillaria-meleagris-artemis/details",
+     "constat": "nom accepté ; aucune photo dans la page",
+     "niveau_lot": "N1 (lot)",
+     "niveau_note": "RHS Plant Finder n'est pas l'autorité d'enregistrement du genre (c'est le KAVB) : N3, société savante, comme dans muscari.json"
+    },
+    {
+     "type": "nom",
+     "niveau": "N3",
+     "consulte": "2026-10-08",
+     "source": "C.S. Weijers, liste Fritillaria",
+     "url_page": "https://www.csweijers.nl/en/assortment/fritillaria",
+     "constat": "« meleagris - Artemis » listé, sans photo",
+     "niveau_lot": "N2 (lot)",
+     "niveau_note": "C.S. Weijers = grossiste, liste de noms sans photo : N3, comme dans muscari.json"
+    }
+   ],
+   "doutes": [
+    "Aucune photo nommée : la fiche RHS n'en a pas ; les recherches Commons et les recherches Web ne donnent rien de précis.",
+    "Le damier est vert sur pourpre sombre pour certains, blanc pour un autre : à trancher à la photo.",
+    "Brouillon seulement : D n'entre pas en boutique."
+   ],
+   "niveau_preuve": "D",
+   "niveau_motif": "nom N1 + N3 (Weijers) ; aucune photo nommée ; couleur par textes seulement et divergente (pourpre à damier vert, pourpre noirâtre, gris-pourpre à grille blanche).",
+   "statut": "sans photo (D)"
+  },
+  {
+   "id": "mars",
+   "coloris_catalogue": null,
+   "nom_affiche": "Mars (hors catalogue)",
+   "nom_enregistre": "Fritillaria meleagris 'Mars'",
+   "synonymes": [],
+   "groupe": "aucun groupe au registre KAVB",
+   "obtenteur": "J. Eckhart (KAVB)",
+   "annee": null,
+   "registre": {
+    "kavb": {
+     "autorite": "KAVB",
+     "url": "https://login.kavb.nl/siergewassen",
+     "consulte": "2026-10-08",
+     "present": true,
+     "genus": "Fritillaria",
+     "species": "meleagris",
+     "group": null,
+     "cultivar": "'Mars'",
+     "registrant": "J. Eckhart",
+     "registered": null,
+     "no_cultivation_since": null
+    }
+   },
+   "marque": null,
+   "marque_preuve": "aucun ® ni ™ vu sur ce nom de fritillaire dans les pages lues ; registre des marques (TMview, EUIPO, INPI, WIPO) non consulté : à faire par l'orchestrateur. Nom inscrit au KAVB = dénomination de variété (STANDARD-SOURCES.md, section 2).",
+   "couleur_selon_sources": {
+    "Rare Plants (inventaire, résumé)": "grandes fleurs, pourpre profond teinté de rouge, feuillage bleu-vert",
+    "NC State (inventaire)": "purple",
+    "Plantura (résumé de recherche)": "deep red to purple",
+    "Wikipédia polonaise (inventaire)": "rouge",
+    "volkoomen (résumé de moteur, page en erreur 500)": "deep purple, inflated (non vérifié)"
+   },
+   "sources": [
+    {
+     "type": "nom",
+     "niveau": "N1",
+     "consulte": "2026-10-08",
+     "source": "KAVB, base des cultivars (lecture seule)",
+     "url_page": "https://login.kavb.nl/siergewassen",
+     "constat": "'Mars' trouvé, registrant J. Eckhart, date vide"
+    },
+    {
+     "type": "nom",
+     "niveau": "N3",
+     "consulte": "2026-10-08",
+     "source": "NC State Extension, Plant Toolbox (université)",
+     "url_page": "https://plants.ces.ncsu.edu/plants/fritillaria-meleagris/",
+     "constat": "'Mars' : « Purple flowers » (texte lu)"
+    },
+    {
+     "type": "nom",
+     "niveau": "N3",
+     "consulte": "2026-10-08",
+     "source": "C.S. Weijers, liste Fritillaria",
+     "url_page": "https://www.csweijers.nl/en/assortment/fritillaria",
+     "constat": "absent de la liste (lue aujourd'hui)",
+     "niveau_lot": "N2 (lot)",
+     "niveau_note": "C.S. Weijers = grossiste, liste de noms sans photo : N3, comme dans muscari.json"
+    },
+    {
+     "type": "nom",
+     "niveau": "N3",
+     "consulte": "2026-10-08",
+     "source": "Rare Plants (fiche Mars)",
+     "url_page": null,
+     "constat": "d'après l'inventaire : la page renvoie aujourd'hui vers la connexion, donc plante probablement retirée ; non revérifiée ici"
+    }
+   ],
+   "doutes": [
+    "Probablement retiré de la vente : la fiche Rare Plants renvoie vers la connexion, et aucune fiche RHS n'existe.",
+    "Aucune photo nommée trouvée. Brouillon seulement : D n'entre pas en boutique.",
+    "Le nom Mars pourrait appartenir à la série Eckhart des années 1947-1958 (planètes, mythologie) : non confirmé."
+   ],
+   "niveau_preuve": "D",
+   "niveau_motif": "nom N1 seulement (aucune fiche RHS, absent de Weijers) ; aucune photo nommée ; probablement retiré de la vente.",
+   "statut": "sans photo (D)"
+  },
+  {
+   "id": "jupiter",
+   "coloris_catalogue": null,
+   "nom_affiche": "Jupiter (hors catalogue)",
+   "nom_enregistre": "Fritillaria meleagris 'Jupiter'",
+   "synonymes": [],
+   "groupe": "aucun groupe au registre KAVB",
+   "obtenteur": "J. Eckhart (KAVB)",
+   "annee": null,
+   "registre": {
+    "kavb": {
+     "autorite": "KAVB",
+     "url": "https://login.kavb.nl/siergewassen",
+     "consulte": "2026-10-08",
+     "present": true,
+     "genus": "Fritillaria",
+     "species": "meleagris",
+     "group": null,
+     "cultivar": "'Jupiter'",
+     "registrant": "J. Eckhart",
+     "registered": null,
+     "no_cultivation_since": null
+    },
+    "rhs": {
+     "autorite": "RHS Plant Finder (société savante, N3 : pas l'autorité du genre)",
+     "id": 46131,
+     "statut": "Unresolved",
+     "url": "https://www.rhs.org.uk/plants/46131/fritillaria-meleagris-jupiter/details"
+    }
+   },
+   "marque": null,
+   "marque_preuve": "aucun ® ni ™ vu sur ce nom de fritillaire dans les pages lues ; registre des marques (TMview, EUIPO, INPI, WIPO) non consulté : à faire par l'orchestrateur. Nom inscrit au KAVB = dénomination de variété (STANDARD-SOURCES.md, section 2).",
+   "couleur_selon_sources": "rouge (VOLK, résumé de moteur ; page Dutch volkoomen.nl en HTTP 500, non lue) ; « large reddish » (NC State, N3) ; rouge à réseau plus sombre (Wikipédia polonaise, N4).",
+   "sources": [
+    {
+     "type": "nom",
+     "niveau": "N1",
+     "consulte": "2026-10-08",
+     "source": "KAVB, base des cultivars (lecture seule)",
+     "url_page": "https://login.kavb.nl/siergewassen",
+     "constat": "'Jupiter' trouvé, registrant J. Eckhart, date vide"
+    },
+    {
+     "type": "nom",
+     "niveau": "N3",
+     "consulte": "2026-10-08",
+     "source": "NC State Extension, Plant Toolbox (université)",
+     "url_page": "https://plants.ces.ncsu.edu/plants/fritillaria-meleagris/",
+     "constat": "'Jupiter' : « Large reddish cultival » (sic, texte lu)"
+    },
+    {
+     "type": "nom",
+     "niveau": "N3",
+     "consulte": "2026-10-08",
+     "source": "RHS Plants (fiche de nom)",
+     "url_page": "https://www.rhs.org.uk/plants/46131/fritillaria-meleagris-jupiter/details",
+     "constat": "nom et statut seulement ; images = visuels promotionnels, aucune photo de la plante"
+    },
+    {
+     "type": "nom",
+     "niveau": "N3",
+     "consulte": "2026-10-08",
+     "source": "NC State Extension Plant Toolbox",
+     "url_page": "https://plants.ces.ncsu.edu/plants/fritillaria-meleagris/",
+     "constat": "résumé : « Jupiter : large reddish »"
+    }
+   ],
+   "doutes": [
+    "Nom et obtenteur prouvés par le KAVB (N1). Couleur seulement par des textes. Aucune photo nommée trouvée : ni pépinière, ni Fritillaria Group (galerie meleagris : seul Poseidon est nommé), ni Commons (5 fichiers de la catégorie cultivars, aucun nommé).",
+    "garden.org a une entrée 'Jupiter' (751828) dont les données seraient fausses (fougère, bisannuelle, éteinte, selon un résumé de moteur ; page non ouverte) : non utilisée."
+   ],
+   "niveau_preuve": "D",
+   "niveau_motif": "nom N1 (KAVB) ; couleur « rouge, grande fleur » par textes (NC State N3, Wikipédia polonaise) ; aucune photo nommée.",
+   "statut": "sans photo (D)"
+  },
+  {
+   "id": "orion",
+   "coloris_catalogue": null,
+   "nom_affiche": "Orion (hors catalogue)",
+   "nom_enregistre": "Fritillaria meleagris 'Orion'",
+   "synonymes": [],
+   "groupe": "aucun groupe au registre KAVB",
+   "obtenteur": "J. Eckhart (KAVB)",
+   "annee": null,
+   "registre": {
+    "kavb": {
+     "autorite": "KAVB",
+     "url": "https://login.kavb.nl/siergewassen",
+     "consulte": "2026-10-08",
+     "present": true,
+     "genus": "Fritillaria",
+     "species": "meleagris",
+     "group": null,
+     "cultivar": "'Orion'",
+     "registrant": "J. Eckhart",
+     "registered": null,
+     "no_cultivation_since": null
+    },
+    "rhs": {
+     "autorite": "RHS Plant Finder (société savante, N3 : pas l'autorité du genre)",
+     "id": 223507,
+     "statut": "Accepted",
+     "url": "https://www.rhs.org.uk/plants/223507/fritillaria-meleagris-orion/details"
+    }
+   },
+   "marque": null,
+   "marque_preuve": "aucun ® ni ™ vu sur ce nom de fritillaire dans les pages lues ; registre des marques (TMview, EUIPO, INPI, WIPO) non consulté : à faire par l'orchestrateur. Nom inscrit au KAVB = dénomination de variété (STANDARD-SOURCES.md, section 2).",
+   "couleur_selon_sources": "pourpre (klus-info, N4) ; « dull purple checkered with pink » (VOLK, résumé de moteur, non lu) ; sans couleur (bio-gaertner, N4).",
+   "sources": [
+    {
+     "type": "nom",
+     "niveau": "N1",
+     "consulte": "2026-10-08",
+     "source": "KAVB, base des cultivars (lecture seule)",
+     "url_page": "https://login.kavb.nl/siergewassen",
+     "constat": "'Orion' trouvé, registrant J. Eckhart"
+    },
+    {
+     "type": "nom",
+     "niveau": "N3",
+     "consulte": "2026-10-08",
+     "source": "RHS Plants (fiche de nom)",
+     "url_page": "https://www.rhs.org.uk/plants/223507/fritillaria-meleagris-orion/details",
+     "constat": "statut Accepted ; pas d'image relevée"
+    },
+    {
+     "type": "nom",
+     "niveau": "N4",
+     "consulte": "2026-10-08",
+     "source": "klus-info.nl",
+     "url_page": "https://klus-info.nl/tuinieren/bloemen-en-planten/bollen-knollen/fritillaria",
+     "constat": "lu : « pourpre » pour Orion"
+    }
+   ],
+   "doutes": [
+    "Le seul des huit à être Accepted à la RHS et présent au KAVB. Aucune photo nommée trouvée. Absent des listes des exportateurs lus (inventaire) : à confirmer si un exportateur le vend."
+   ],
+   "niveau_preuve": "D",
+   "niveau_motif": "nom N1 + RHS Accepted ; aucune photo nommée ; couleur par textes (pourpre).",
+   "statut": "sans photo (D)"
+  },
+  {
+   "id": "pomona",
+   "coloris_catalogue": null,
+   "nom_affiche": "Pomona (hors catalogue)",
+   "nom_enregistre": "Fritillaria meleagris 'Pomona'",
+   "synonymes": [],
+   "groupe": "aucun groupe au registre KAVB",
+   "obtenteur": null,
+   "annee": null,
+   "registre": {
+    "kavb": {
+     "autorite": "KAVB",
+     "url": "https://login.kavb.nl/siergewassen",
+     "consulte": "2026-10-08",
+     "present": true,
+     "genus": "Fritillaria",
+     "species": "meleagris",
+     "group": null,
+     "cultivar": "'Pomona'",
+     "registrant": null,
+     "registered": null,
+     "no_cultivation_since": null
+    },
+    "rhs": {
+     "autorite": "RHS Plant Finder (société savante, N3 : pas l'autorité du genre)",
+     "id": 7404,
+     "statut": "Unresolved",
+     "url": "https://www.rhs.org.uk/plants/7404/fritillaria-meleagris-pomona/details"
+    }
+   },
+   "marque": null,
+   "marque_preuve": "aucun ® ni ™ vu sur ce nom de fritillaire dans les pages lues ; registre des marques (TMview, EUIPO, INPI, WIPO) non consulté : à faire par l'orchestrateur. Nom inscrit au KAVB = dénomination de variété (STANDARD-SOURCES.md, section 2).",
+   "couleur_selon_sources": "fond blanc à damier pourpre-violet (garten-wissen, bio-gaertner, VOLK) ; réseau rose (PLW).",
+   "sources": [
+    {
+     "type": "nom",
+     "niveau": "N1",
+     "consulte": "2026-10-08",
+     "source": "KAVB, base des cultivars (lecture seule)",
+     "url_page": "https://login.kavb.nl/siergewassen",
+     "constat": "'Pomona' trouvé, sans registrant ni date"
+    },
+    {
+     "type": "nom",
+     "niveau": "N3",
+     "consulte": "2026-10-08",
+     "source": "RHS Plants (fiche de nom)",
+     "url_page": "https://www.rhs.org.uk/plants/7404/fritillaria-meleagris-pomona/details",
+     "constat": "statut Unresolved ; pas d'image relevée"
+    },
+    {
+     "type": "nom",
+     "niveau": "N4",
+     "consulte": "2026-10-08",
+     "source": "garten-wissen.com",
+     "url_page": "https://www.garten-wissen.com/pflanzen/schachbrettblume/",
+     "constat": "lu : « weiß und purpur-violett gefleckt »"
+    },
+    {
+     "type": "nom",
+     "niveau": "N4",
+     "consulte": "2026-10-08",
+     "source": "bio-gaertner.de",
+     "url_page": "https://bio-gaertner.de/pflanzen/Schachblume/Alle",
+     "constat": "lu : « weiß und violett »"
+    },
+    {
+     "type": "nom",
+     "niveau": "N4",
+     "consulte": "2026-10-08",
+     "source": "Wikipédia polonaise",
+     "url_page": "https://pl.wikipedia.org/wiki/Szachownica_kostkowata",
+     "constat": "lu : « blanc à réseau rose »"
+    }
+   ],
+   "doutes": [
+    "Nom présent au KAVB (N1) sans registrant : l'attribution à Eckhart reste non confirmée par le registre. Aucune photo nommée trouvée.",
+    "Damier violet (garten-wissen, bio-gaertner) contre réseau rose (Wikipédia polonaise).",
+    "L'entrée garden.org 'Pomona' (751834) porte l'image d'un lis jaune : rejetée."
+   ],
+   "niveau_preuve": "D",
+   "niveau_motif": "nom N1 (KAVB, sans registrant) ; aucune photo nommée ; couleur par textes, divergente (fond blanc à damier violet, ou réseau rose).",
+   "statut": "sans photo (D)"
+  },
+  {
+   "id": "eros",
+   "coloris_catalogue": null,
+   "nom_affiche": "Eros (hors catalogue)",
+   "nom_enregistre": "Fritillaria meleagris 'Eros'",
+   "synonymes": [],
+   "groupe": "aucun groupe au registre KAVB",
+   "obtenteur": "Antoine Hoog (« raised and named by Antoine Hoog », Rare Plants) ; « Selected by A.M.D. Hoog » (résumé de moteur d'une fiche Nijssen, page en 404 à la relecture)",
+   "annee": null,
+   "registre": {
+    "kavb": {
+     "autorite": "KAVB",
+     "url": "https://login.kavb.nl/siergewassen",
+     "consulte": "2026-10-08",
+     "present": false,
+     "note": "absent du registre ('absent' ; 12 noms proches renvoyés par le formulaire)"
+    },
+    "cpvo": {
+     "consulte": "2026-10-08",
+     "resultat": "non trouvé : 4 recherches générales sans résultat ; CPVO Variety Finder non interrogeable avec ces outils"
+    }
+   },
+   "marque": null,
+   "marque_preuve": "aucun ® ni ™ vu sur ce nom de fritillaire dans les pages lues ; registre des marques (TMview, EUIPO, INPI, WIPO) non consulté : à faire par l'orchestrateur. Nom inscrit au KAVB = dénomination de variété (STANDARD-SOURCES.md, section 2).",
+   "couleur_selon_sources": "Rare Plants : fleur qui s'ouvre gris-vert et blanc bordé de rose, puis rose pâle uniforme ; damier gris-blanc ; nectaire vert bouteille ; teinte variable d'une année à l'autre (plus blanche ou plus rose). Kevock (résumé) : « light purple chequered ». Esker : « rich reddish-purple ».",
+   "sources": [
+    {
+     "type": "nom",
+     "niveau": "N1",
+     "consulte": "2026-10-08",
+     "source": "KAVB, base des cultivars (lecture seule)",
+     "url_page": "https://login.kavb.nl/siergewassen",
+     "constat": "'Eros' ABSENT (12 noms proches renvoyés) : le registre ne prouve pas le nom"
+    },
+    {
+     "type": "nom",
+     "niveau": "N3",
+     "consulte": "2026-10-08",
+     "source": "Nijssen Tuin & Bulbs, Heemstede (résumé de moteur ; l'adresse répond 404 à la relecture)",
+     "url_page": "https://www.nijssenbulbs.com/fritillaria/5901747-12484-fritillaria-meleagris-eros-7409.html",
+     "constat": "fiche « Eros » créditée A.M.D. Hoog, ouverture gris-vert et blanc à bord rose puis rose plus foncé, souvent deux fleurs par tige (résumé, non vérifié)"
+    },
+    {
+     "type": "nom",
+     "niveau": "N3",
+     "consulte": "2026-10-08",
+     "source": "Rare Plants",
+     "url_page": "https://www.rareplants.co.uk/product/fritillaria-meleagris-eros/",
+     "constat": "fiche lue ; obtenteur A. Hoog ; pas d'auteur de photo"
+    },
+    {
+     "type": "nom",
+     "niveau": "N3",
+     "consulte": "2026-10-08",
+     "source": "Kevock Garden",
+     "url_page": "https://www.kevockgarden.co.uk/plantlist/plant.asp?SKU=FMT&PlantName=Fritillaria_meleagris_%27Eros%27&PlantorBulb=Bulbs",
+     "constat": "fiche tronquée à la lecture : texte connu par résumé (« light purple chequered », photos crédités A. Hoog) ; images non extraites"
+    },
+    {
+     "type": "nom",
+     "niveau": "N3",
+     "consulte": "2026-10-08",
+     "source": "Esker Farm Daffodils",
+     "url_page": "https://www.eskerfarmdaffodils.com/garden-selection-autumn-delivery/fritillaria-meleagris-eros",
+     "constat": "fiche lue ; « rich reddish-purple » ; l'adresse ...-saturnus de ce site renvoie à cette fiche Eros (étiquetage à surveiller)"
+    },
+    {
+     "type": "photo",
+     "niveau": "N3",
+     "consulte": "2026-10-08",
+     "source": "Rare Plants",
+     "url_page": "https://www.rareplants.co.uk/product/fritillaria-meleagris-eros/",
+     "url_image": "https://www.rareplants.co.uk/wp-content/uploads/Fritillaria-meleagris-Eros2-comp-medium.jpg",
+     "auteur": null,
+     "licence": null,
+     "vue": true,
+     "eclairage": "champ (plein air, lumière naturelle, pas de studio)",
+     "constat": "feuillage vert flou; gris-blanc sur rose-lilas pâle, bords pourpres ; 4 clochettes",
+     "designee_pour_mesure": false,
+     "fichier_controle": null,
+     "droits": "filigrane rareplants.co.uk ; pas d'auteur nommé"
+    },
+    {
+     "type": "photo",
+     "niveau": "N3",
+     "consulte": "2026-10-08",
+     "source": "Rare Plants",
+     "url_page": "https://www.rareplants.co.uk/product/fritillaria-meleagris-eros/",
+     "url_image": "https://www.rareplants.co.uk/wp-content/uploads/Fritillaria-meleagris-Eros-comp.jpg",
+     "auteur": null,
+     "licence": null,
+     "vue": true,
+     "eclairage": "champ (plein air, lumière naturelle, pas de studio)",
+     "constat": "deux cloches blanc-gris à vert très pâle, damier gris-blanc, bord rose-pourpre fin : stade d'ouverture décrit par la fiche",
+     "designee_pour_mesure": false,
+     "fichier_controle": "refcache/fritillaire-meleagris/fusion/img/rp_eros.jpg",
+     "droits": "filigrane rareplants.co.uk ; pas d'auteur nommé"
+    },
+    {
+     "type": "photo",
+     "niveau": "N3",
+     "consulte": "2026-10-08",
+     "source": "Rare Plants",
+     "url_page": "https://www.rareplants.co.uk/product/fritillaria-meleagris-eros/",
+     "url_image": "https://www.rareplants.co.uk/wp-content/uploads/Fritillaria-meleagris-Eros3-comp.jpg",
+     "auteur": null,
+     "licence": null,
+     "vue": true,
+     "eclairage": "champ (plein air, lumière naturelle, pas de studio)",
+     "constat": "feuillage gris-brun flou; blanc-gris teinté de vert, bords pourpres",
+     "designee_pour_mesure": false,
+     "fichier_controle": null,
+     "droits": "filigrane rareplants.co.uk ; pas d'auteur nommé"
+    },
+    {
+     "type": "photo",
+     "niveau": "N3",
+     "consulte": "2026-10-08",
+     "source": "Esker Farm Daffodils",
+     "url_page": "https://www.eskerfarmdaffodils.com/garden-selection-autumn-delivery/fritillaria-meleagris-eros",
+     "url_image": "https://eskerfarmdaffodils-static.symphonycommerce.io/images/2023/01/contain/512x512/32b5533be976c561f749cc6a4f74e442.jpg",
+     "auteur": null,
+     "licence": null,
+     "vue": true,
+     "eclairage": "champ (plein air, lumière naturelle, pas de studio)",
+     "constat": "une cloche rouge-pourpre à damier rose-blanc, fond brun flou ; la fiche Esker est la seule du site pour Eros (son adresse « -saturnus » renvoie à cette fiche), donc l'image est bien celle d'Eros",
+     "designee_pour_mesure": false,
+     "fichier_controle": "refcache/fritillaire-meleagris/fusion/img/es_eros.jpg",
+     "droits": "aucun ; image produit"
+    },
+    {
+     "type": "photo",
+     "niveau": "N3",
+     "consulte": "2026-10-08",
+     "source": "Kevock Garden (pépinière, Écosse) ; photo créditée « A. Hoog » (l'obtenteur)",
+     "url_page": "https://www.kevockgarden.co.uk/plantlist/plant.asp?SKU=FMT&PlantName=Fritillaria_meleagris_%27Eros%27&PlantorBulb=Bulbs",
+     "url_image": "https://www.kevockgarden.co.uk/plantlist/media/996-112%20Fritillaria%20meleagris%20%27Eros%27%2025.4.15%203.jpg",
+     "auteur": "A. Hoog (légende de la fiche : « Photo: A. Hoog »)",
+     "licence": "pépinière, droits à vérifier",
+     "vue": true,
+     "eclairage": "plein air, lumière diffuse (image vue ; 200 x 200 px ; photo du 25-04-2015 d'après le nom du fichier)",
+     "constat": "cloches rose-lilas à pourpre, damier plus clair : plus foncé que les photos de Rare Plants, ce qui concorde avec le virage « puis rose pâle uniforme »",
+     "designee_pour_mesure": false,
+     "fichier_controle": "refcache/fritillaire-meleagris/fusion/img/kev_eros.jpg"
+    }
+   ],
+   "niveau_preuve": "C",
+   "niveau_motif": "photos : trois sources de pépinière N3 indépendantes (Rare Plants, Kevock avec photo créditée à l'obtenteur, Esker), toutes vues, concordantes si l'on admet le changement de teinte du bouton à la fleur ouverte décrit par Rare Plants ; mais le NOM n'est prouvé ni par le KAVB (absent), ni par une fiche de l'obtenteur lui-même, ni par le CPVO (non interrogeable) : seulement par des pépinières. Donc C pour la production, en attendant la preuve du nom.",
+   "statut": "à confirmer (C : preuve du nom manquante ; proposé en late:1 seulement si l'orchestrateur accepte les pépinières comme preuve du nom)",
+   "doutes": [
+    "Teinte variable d'une année à l'autre et au cours de l'ouverture (blanc gris-vert, puis rose pâle uniforme) : la mesure dépend du stade photographié.",
+    "L'adresse Saturnus d'Esker renvoie à Eros : étiquetage à surveiller."
+   ],
+   "sondage_temps3": {
+    "date": "2026-10-08",
+    "fait_par": "fleur-recensement, temps 3",
+    "pages_ouvertes": [
+     "https://www.rareplants.co.uk/product/fritillaria-meleagris-eros/"
+    ],
+    "nom_sur_la_page": "Rare Plants : titre « Fritillaria meleagris Eros », cinq images alt « Eros », texte « raised and named by Antoine Hoog »",
+    "photo_conforme": true,
+    "constat": "page et nom lus ; images non regardées de nouveau au temps 3 (vues au temps 2).",
+    "niveau_avant": "C",
+    "niveau_apres": "C",
+    "verdict": "confirmé : C (nom absent du KAVB, preuve du nom par pépinières seulement)."
+   }
+  },
+  {
+   "id": "pink-eveline",
+   "coloris_catalogue": null,
+   "nom_affiche": "Pink Eveline (hors catalogue)",
+   "nom_enregistre": "Fritillaria meleagris 'Pink Eveline'",
+   "synonymes": [],
+   "groupe": "aucun groupe au registre KAVB",
+   "obtenteur": null,
+   "annee": null,
+   "registre": {
+    "kavb": {
+     "autorite": "KAVB",
+     "url": "https://login.kavb.nl/siergewassen",
+     "consulte": "2026-10-08",
+     "present": true,
+     "genus": "Fritillaria",
+     "species": "meleagris",
+     "group": null,
+     "cultivar": "'Pink Eveline'",
+     "registrant": null,
+     "registered": null,
+     "no_cultivation_since": null
+    }
+   },
+   "marque": null,
+   "marque_preuve": "aucun ® ni ™ vu sur ce nom de fritillaire dans les pages lues ; registre des marques (TMview, EUIPO, INPI, WIPO) non consulté : à faire par l'orchestrateur. Nom inscrit au KAVB = dénomination de variété (STANDARD-SOURCES.md, section 2).",
+   "couleur_selon_sources": "forme rose pâle vigoureuse (fritillaria.org.uk, N3, texte sans observation directe de l'auteur).",
+   "sources": [
+    {
+     "type": "nom",
+     "niveau": "N1",
+     "consulte": "2026-10-08",
+     "source": "KAVB, base des cultivars (lecture seule)",
+     "url_page": "https://login.kavb.nl/siergewassen",
+     "constat": "'Pink Eveline' trouvé, sans registrant ni date"
+    },
+    {
+     "type": "nom",
+     "niveau": "N3",
+     "consulte": "2026-10-08",
+     "source": "Fritillaria Group (fritillaria.org.uk)",
+     "url_page": "https://www.fritillaria.org.uk/growing--selecting-fritillaries.html",
+     "constat": "« Pink Eveline » : forme rose pâle vigoureuse, plus récente ; l'auteur ne l'a pas vue en culture"
+    },
+    {
+     "type": "nom",
+     "niveau": "N4",
+     "consulte": "2026-10-08",
+     "source": "garden.org",
+     "url_page": "https://garden.org/plants/view/751833/Snakes-Head-Fritillary-Fritillaria-meleagris-Pink-Eveline/",
+     "constat": "fiche sans couleur ni obtenteur : existence seulement"
+    }
+   ],
+   "doutes": [
+    "Existence prouvée par le KAVB (N1) sans obtenteur. La couleur repose sur un seul texte N3 dont l'auteur n'a pas vu la plante. Aucune photo nommée trouvée (la galerie du Fritillaria Group ne contient pas ce nom).",
+    "L'entrée garden.org 'Pink Eveline' (751833) porte l'image d'un lis jaune : rejetée.",
+    "Homonyme hors sorte : Veronica 'Pink Eveline', brevet US PP18743 (autre plante)."
+   ],
+   "niveau_preuve": "D",
+   "niveau_motif": "nom N1 (KAVB) ; couleur « rose pâle » par un seul texte N3 (Fritillaria Group) dont l'auteur n'a pas vu la plante ; aucune photo nommée.",
+   "statut": "sans photo (D)"
+  },
+  {
+   "id": "adonis",
+   "coloris_catalogue": null,
+   "nom_affiche": "Adonis (hors catalogue)",
+   "nom_enregistre": "Fritillaria meleagris 'Adonis'",
+   "synonymes": [],
+   "groupe": "aucun groupe au registre KAVB",
+   "obtenteur": "J. Eckhart (KAVB)",
+   "annee": "1958 (enregistrement KAVB : 31-12-1958)",
+   "registre": {
+    "kavb": {
+     "autorite": "KAVB",
+     "url": "https://login.kavb.nl/siergewassen",
+     "consulte": "2026-10-08",
+     "present": true,
+     "genus": "Fritillaria",
+     "species": "meleagris",
+     "group": null,
+     "cultivar": "'Adonis'",
+     "registrant": "J. Eckhart",
+     "registered": "31-12-1958",
+     "no_cultivation_since": null
+    }
+   },
+   "marque": null,
+   "marque_preuve": "aucun ® ni ™ vu sur ce nom de fritillaire dans les pages lues ; registre des marques (TMview, EUIPO, INPI, WIPO) non consulté : à faire par l'orchestrateur. Nom inscrit au KAVB = dénomination de variété (STANDARD-SOURCES.md, section 2).",
+   "couleur_selon_sources": "« devait être rouge, finalement blanc à taches pourpres » (VOLK, résumé de moteur seulement).",
+   "sources": [
+    {
+     "type": "nom",
+     "niveau": "N1",
+     "consulte": "2026-10-08",
+     "source": "KAVB, base des cultivars (lecture seule)",
+     "url_page": "https://login.kavb.nl/siergewassen",
+     "constat": "'Adonis' trouvé, registrant J. Eckhart, enregistré le 31-12-1958, pas de fin de culture"
+    },
+    {
+     "type": "nom",
+     "niveau": "N4",
+     "consulte": "2026-10-08",
+     "source": "volkoomen.nl, page Fritillaria",
+     "url_page": "http://www.volkoomen.nl/f/Fritillaria.htm",
+     "constat": "NON LUE (HTTP 500) : résumé de moteur seulement ; preuve faible"
+    }
+   ],
+   "doutes": [
+    "Nom, obtenteur et date prouvés par le KAVB (N1). La couleur ne repose que sur un résumé d'une page morte aujourd'hui : preuve faible, à ne pas citer seule. Aucune photo nommée trouvée."
+   ],
+   "niveau_preuve": "D",
+   "niveau_motif": "nom, obtenteur et date N1 (KAVB) ; couleur seulement par le résumé d'une page morte (volkoomen) : « devait être rouge, finalement blanc à taches pourpres » ; aucune photo nommée.",
+   "statut": "sans photo (D)"
+  }
+ ],
+ "existence_non_prouvee": [
+  {
+   "id": "emperor",
+   "nom_affiche": "Emperor",
+   "nom_enregistre": "Fritillaria meleagris 'Emperor'",
+   "registre": {
+    "kavb": {
+     "autorite": "KAVB",
+     "url": "https://login.kavb.nl/siergewassen",
+     "consulte": "2026-10-08",
+     "present": false,
+     "note": "absent du registre ('absent' ; 12 noms proches renvoyés par le formulaire)"
+    },
+    "rhs": {
+     "autorite": "RHS Plant Finder (société savante, N3 : pas l'autorité du genre)",
+     "id": 7401,
+     "statut": "Unresolved",
+     "url": "https://www.rhs.org.uk/plants/7401/fritillaria-meleagris-emperor/details"
+    }
+   },
+   "couleur_selon_sources": "damier gris-violet (garten-wissen, N4 ; klus-info, N4). Candidat pour une vraie teinte gris-lavande (inventaire), à mesurer.",
+   "sources": [
+    {
+     "type": "nom",
+     "niveau": "N3",
+     "consulte": "2026-10-08",
+     "source": "RHS Plants (fiche de nom)",
+     "url_page": "https://www.rhs.org.uk/plants/7401/fritillaria-meleagris-emperor/details",
+     "constat": "statut Unresolved ; pas d'image relevée"
+    },
+    {
+     "type": "nom",
+     "niveau": "N4",
+     "consulte": "2026-10-08",
+     "source": "garten-wissen.com",
+     "url_page": "https://www.garten-wissen.com/pflanzen/schachbrettblume/",
+     "constat": "lu : « violett-grau kariert »"
+    },
+    {
+     "type": "nom",
+     "niveau": "N4",
+     "consulte": "2026-10-08",
+     "source": "klus-info.nl",
+     "url_page": "https://klus-info.nl/tuinieren/bloemen-en-planten/bollen-knollen/fritillaria",
+     "constat": "lu : « grijsviolet »"
+    }
+   ],
+   "niveau_preuve": "D",
+   "statut": "existence non prouvée (absent du KAVB, RHS non résolu) : gardé à part, ni dessiné ni proposé",
+   "doutes": [
+    "Absent du KAVB et fiche RHS non résolue : l'existence du nom n'est pas prouvée par N1 ou N2. Question pour l'orchestrateur : à retenir ou à écarter. Une recherche de photos nommées (moteur généraliste, pépinières, Commons) n'a rien donné ; le nom « Emperor » renvoie surtout à Fritillaria imperialis."
+   ],
+   "marque": null,
+   "marque_preuve": "aucun ® ni ™ vu sur ce nom de fritillaire dans les pages lues ; registre des marques (TMview, EUIPO, INPI, WIPO) non consulté : à faire par l'orchestrateur. Nom inscrit au KAVB = dénomination de variété (STANDARD-SOURCES.md, section 2)."
+  },
+  {
+   "id": "triton",
+   "nom_affiche": "Triton",
+   "nom_enregistre": "Fritillaria meleagris 'Triton'",
+   "registre": {
+    "kavb": {
+     "autorite": "KAVB",
+     "url": "https://login.kavb.nl/siergewassen",
+     "consulte": "2026-10-08",
+     "present": false,
+     "note": "absent du registre ('absent' ; 12 noms proches renvoyés par le formulaire)"
+    },
+    "rhs": {
+     "autorite": "RHS Plant Finder (société savante, N3 : pas l'autorité du genre)",
+     "id": 7405,
+     "statut": "Unresolved",
+     "url": "https://www.rhs.org.uk/plants/7405/fritillaria-meleagris-triton/details"
+    }
+   },
+   "couleur_selon_sources": "inconnue : aucune source ne décrit la couleur.",
+   "sources": [
+    {
+     "type": "nom",
+     "niveau": "N3",
+     "consulte": "2026-10-08",
+     "source": "RHS Plants (fiche de nom)",
+     "url_page": "https://www.rhs.org.uk/plants/7405/fritillaria-meleagris-triton/details",
+     "constat": "statut Unresolved ; aucune description ; pas d'image relevée"
+    }
+   ],
+   "niveau_preuve": "D",
+   "statut": "existence non prouvée (absent du KAVB, RHS non résolu) : gardé à part, ni dessiné ni proposé",
+   "doutes": [
+    "Absent du KAVB, fiche RHS non résolue sans description : aucune preuve N1 ou N2 de l'existence. Question pour l'orchestrateur : retirer ce nom ou le garder en brouillon. Aucun ® ni ™ vu. Le nom apparaît en niche dans l'inventaire."
+   ],
+   "marque": null,
+   "marque_preuve": "aucun ® ni ™ vu sur ce nom de fritillaire dans les pages lues ; registre des marques (TMview, EUIPO, INPI, WIPO) non consulté : à faire par l'orchestrateur. Nom inscrit au KAVB = dénomination de variété (STANDARD-SOURCES.md, section 2)."
+  }
+ ],
+ "manquants_proposes_late": [],
+ "manquants_conditionnels": [
+  {
+   "id": "eros",
+   "motif": "seul cultivar documenté au-delà du catalogue (3 pépinières N3 + photo créditée à l'obtenteur), mais niveau C faute de preuve du nom (KAVB absent, pas de fiche de l'obtenteur, CPVO non interrogé) : late:1 seulement si la preuve du nom est acceptée"
+  }
+ ],
+ "couverture": {
+  "cultivars_inventoriés": 16,
+  "entrées_cultivars": 14,
+  "niveaux": {
+   "B": 4,
+   "D": 8,
+   "C": 2
+  },
+  "existence_non_prouvee": 2,
+  "kavb": "12 des 15 noms présents (Adonis, Alba, Aphrodite, Artemis, Charon, Jupiter, Mars, Orion, Pink Eveline, Pomona, Poseidon, Saturnus) ; absents : Emperor, Eros, Triton ; le formulaire renvoie 12 lignes pour un nom absent : le registre du genre ne semble compter que ces 12 noms",
+  "avec_photo_nommee_vue": [
+   "meleagris-type",
+   "alba",
+   "aphrodite",
+   "poseidon",
+   "saturnus",
+   "eros"
+  ],
+  "prouves_A_ou_B": [
+   "meleagris-type",
+   "alba",
+   "aphrodite",
+   "poseidon"
+  ],
+  "au_catalogue": {
+   "total": 6,
+   "A_ou_B": 4,
+   "sans_preuve": [
+    "bordeaux (Charon, D)",
+    "rouge-violet (Saturnus, C)"
+   ]
+  },
+  "manque_pourquoi": "aucun cultivar de Fritillaria meleagris n'a de photo N2 (Jan de Wit n'a pas de Fritillaria ; Weijers sans photo ; Floricode et CPVO fermés) : A est impossible pour le genre ; huit noms du registre n'ont aucune photo nommée en ligne (galeries des pépinières absentes, Commons ne nomme que Alba)"
+ },
+ "recherche_complementaire_temps2": {
+  "appels": "37 appels de recherche ou de lecture (15 recherches web, 5 WebFetch, 17 lectures par script, dont 8 en échec : 2 x 404, 1 x DNS, 5 x 403) ; 33 images de contrôle téléchargées dans refcache/fritillaire-meleagris/fusion/img/ (hors dépôt) et regardées",
+  "promus": {
+   "poseidon": "D -> B (deux photos nommées vues, Fritillaria Group N3 et Garden Stew N4)"
+  },
+  "inchanges": {
+   "saturnus": "C : pas de deuxième photo indépendante",
+   "eros": "C : preuve du nom seulement N3",
+   "charon artemis mars jupiter orion pomona adonis pink-eveline": "D : aucune photo nommée trouvée"
+  },
+  "rejets": [
+   "garden.org : les images des entrées Saturnus (527254), Pink Eveline (751833), Pomona (751834) et Poseidon (751835) sont des lis jaunes (Hemerocallis), pas des fritillaires ; l'entrée Jupiter (751828) porterait des données fausses (fougère, éteinte ; résumé de moteur, page non ouverte) : cette base n'est pas retenue pour les photos",
+   "RHS Plant Selector, fiche 119868 (Alba) : visi05843 et visi26470 montrent une autre plante (étoiles blanches ouvertes à étamines jaunes) : rejetées",
+   "Commons : aucun fichier dont le titre contienne un cultivar sauf Alba (recherche intitle sur 13 noms)"
+  ],
+  "pistes_pour_l_orchestrateur": [
+   "Alpine Garden Society : pages « AGS Cleveland Show 2025 Trophies » et « AGS North Midland Show 2026 » (résumé de moteur : pot de Saturnus de Don Peace, avec photos) ; 403 aux robots, à ouvrir au navigateur",
+   "Dunedin Botanic Garden : article « Woodland garden has subtleties » (Charon décrit comme forme sombre à fleurs pourpre foncé, résumé de moteur) ; 403 aux robots",
+   "Nijssen (Heemstede) : fiche Eros créditée A.M.D. Hoog, adresse du résumé de moteur en 404 ; fiche Alba https://www.nijssenbulbs.com/fritillaria/673-8286-fritillaria-meleagris-alba-673.html non ouverte",
+   "CPVO Variety Finder : nom Eros (obtenteur A. Hoog) à chercher à la main ; Nordgen / GRIN (accessions 56230 à 56234 de F. meleagris, Aphrodite 1964 aux États-Unis) non ouverts"
+  ]
+ },
+ "marques": {
+  "vues": "aucun ® ni ™ sur un nom de fritillaire meleagris",
+  "a_verifier": [
+   "Poseidon : « Poseidon™ » sur un rosier (Grace Rose Farm, autre genre), ligne dans marques-a-verifier.txt"
+  ],
+  "registre_des_marques": "TMview, EUIPO, INPI, WIPO non consultés pour les 15 noms (kavb-noms.txt) : à l'orchestrateur"
+ },
+ "questions_orchestrateur": [
+  "Marques : TMview/EUIPO pour les noms de kavb-noms.txt (Poseidon en premier : un Poseidon™ existe sur un rosier).",
+  "Van Engelen : N2 (lot-1 : meleagris-type A) ou N3 (ici : B, comme Fluwel et Jansen's dans muscari.json) ? Sans effet sur la production, A et B suffisant.",
+  "Noms à corriger : lavande -> « Damier lilas sur fond crème (Poseidon) » (photos) ; creme -> « Blanc veiné de vert pâle, grande cloche (Aphrodite) » ; bordeaux -> « pourpre très sombre » (source textuelle seule).",
+  "Sans preuve : bordeaux (Charon D) et rouge-violet (Saturnus C) : ret:1, ou refonder bordeaux sur la forme type bordeaux (Florabundance « burgundy »), ou attendre les pages AGS/Dunedin (403) ?",
+  "Aphrodite double Alba : garder les deux coloris ou ret:1 sur creme ?",
+  "Eros : late:1 si les pépinières suffisent comme preuve du nom (KAVB absent, CPVO non interrogé) ; Emperor et Triton : écartés (existence non prouvée).",
+  "Sondage (temps 3) : fondre aphrodite (creme) dans alba (blanc), en variante grande cloche, ou garder les deux ? Avis : fondre ; ret:1 sur creme si fleur-coloris ne trouve pas d'écart constant supérieur à ΔE 10.",
+  "Sondage (temps 3) : Poseidon reste B pour la nature de la fleur (photo N3 de la Fritillaria Group + photo N4 de forum), mais fleur-coloris trouve ΔE 49 entre les deux photos (crème-ochre contre lilas) : suspendre la production jusqu'à une troisième photo nommée (pages à ouvrir au navigateur : voir recensement.md), ou accepter ?",
+  "Sondage (temps 3) : RHS Alba 119868, photos visi05843 et visi26470 : à regarder en pleine résolution au navigateur ; si ce sont bien des fleurs d'Alba épanouies, les reprendre comme référence du stade ouvert (non mesurables).",
+  "Sondage (temps 3) : Saturnus, nom affiché « rouge violacé » contre photos rose magenta : renommer après mesure ?"
+ ],
+ "limites": [
+  "KAVB non interrogé par l agent (consigne) ; lu ensuite par l orchestrateur (kavb.json). Floricode et UPOV PLUTO fermés (compte). CPVO Variety Finder non interrogeable avec ces outils : aucun droit d obtenteur européen connu pour un cultivar de F. meleagris, mais non vérifié.",
+  "POWO et la recherche de la RHS (JavaScript) illisibles pour les robots : GBIF (WCVP) remplace POWO ; les fiches RHS Plants ont été trouvées par sondage des numéros, donc incomplet pour les noms placés ailleurs (Mars, Eros, Pink Eveline, Adonis non trouvés).",
+  "La fleur coupée n a pas de liste publique d assortiment par cultivar (Floricode fermé). Sources lues : GIA Flowers (producteur), OZ Export, Triangle Nursery, Florabundance, Floret, Holex (page vide) : toutes disent « meleagris » ou « alba », aucun clone nommé.",
+  "Jan de Wit en Zonen : la page d assortiment ne contient pas de groupe Fritillaria (allium, crocus, hippeastrum, hyacinth, iris, lily, muscari, narcissus, tulip seulement).",
+  "Pages non lues : volkoomen.nl (HTTP 500, copie web.archive.org hors service), Peter Nyssen (403), Warentuin (403), Rare Plants Mars (renvoie à la connexion), Holex Alba (« No Results »), Jacques Amand, Walkers, Bloms (DNS ou certificat).",
+  "Hortus Bulborum : la page Fritillaria de la boutique liste des impérialis et pallidiflora, aucun meleagris.",
+  "L API de Commons a répondu 429 (limite de débit) : les recherches par nom ont abouti à la relance, mais le relevé fichier par fichier (auteur, licence) reste à faire au temps 2.",
+  "La monographie de Brian Mathew (The Genus Fritillaria, 1999) n a pas été lue : elle donne sans doute la liste historique des clones.",
+  "Dates : rien d établi. Le registre donnera dates et enregistrants ; l hypothèse d Eckhart (série mythologique, années 1947-1958) vient d un vendeur (Rare Plants) et d une page morte (volkoomen), et une piste de catalogues de 1936 la contredirait peut-être.",
+  "Passe de recherche du temps 2 : moteur de recherche web limité aux États-Unis et peu fiable pour les noms de cultivars ; plusieurs pages en 403 ou 404 (AGS, Dunedin, Nijssen, Peter Nyssen).",
+  "Les images ont été regardées une à une pour les cultivars A, B et C ; aucune n'est mesurée : fleur-coloris le fera.",
+  "Photos de la Fritillaria Group, du Pacific Bulb Society et de Garden Stew : droits réservés, mesure seulement, jamais publiées ni stockées dans le dépôt.",
+  "Temps 3 : le budget de recherche web de la session (200 appels par tour, partagé) s'est trouvé épuisé après une seule recherche ; la vérification de Poseidon s'appuie donc sur les pages déjà connues, sans source de texte nouvelle."
+ ],
+ "mesures_disponibles": "Aucune mesure de ce fichier. Brief du temps 1 : refcache/fritillaire-meleagris/brief.md (pal et ring sur 25 photos Commons). Copies de contrôle des photos désignées : refcache/fritillaire-meleagris/fusion/img/ (hors dépôt).",
+ "sondage_10_pourcent": {
+  "date": "2026-10-08",
+  "fait_par": "fleur-recensement, temps 3",
+  "part": "6 fiches sur 16 (37 %) : les 4 SKU du bouquet (meleagris-type, alba, aphrodite, poseidon) + Saturnus (C) + Eros (C)",
+  "methode": "pages rouvertes par requête GET, sans compte ni formulaire ; images téléchargées dans refcache/fritillaire-meleagris/sondage/ (hors dépôt) et regardées une à une ; le nom est lu sur la page (titre, alt, légende, titre de lightbox) ; les textes sont lus dans le HTML",
+  "resultat": "aucun niveau contredit : B pour type, alba, aphrodite, poseidon ; C pour saturnus et eros. A reste impossible (aucune photo N2).",
+  "corrections": [
+   "poseidon : B fragile (une photo N3 + une photo N4 de forum) ; nom affiché affiné en « Crème à marques lilas (Poseidon) » ; « rose pourpré » repose sur une source de texte allemande répétée",
+   "aphrodite contre alba : pas distinguables de façon fiable ; fusion conseillée",
+   "RHS Alba 119868 : bien la fritillaire ; ses deux photos ne sont pas démontrablement « une autre plante » (stade ouvert probable) : rejet du temps 2 non établi",
+   "saturnus : photo rose magenta plutôt que rouge violacé"
+  ],
+  "non_verifie": "Charon, Artemis, Mars, Jupiter, Orion, Pomona, Pink Eveline, Adonis (D, sans photo nommée) ; Emperor et Triton (existence non prouvée) ; registre KAVB relu seulement dans kavb.json (formulaire non rouvert) ; budget de recherche web de la session épuisé après une recherche au temps 3"
+ },
+ "statut_fichier": "temps 2 terminé, avant fleur-coloris ; temps 3 (sondage) terminé le 2026-10-08 : voir sondage_10_pourcent"
+}

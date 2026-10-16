@@ -1,0 +1,3339 @@
+{
+ "nb_images": 82,
+ "nb_bouquets_reels": 76,
+ "type": [
+  [
+   "bouquet en vase",
+   30,
+   37
+  ],
+  [
+   "bouquet tenu en main",
+   27,
+   33
+  ],
+  [
+   "composition sur socle",
+   16,
+   20
+  ],
+  [
+   "bouquet emballé",
+   4,
+   5
+  ],
+  [
+   "ikebana",
+   2,
+   2
+  ],
+  [
+   "illustration",
+   2,
+   2
+  ],
+  [
+   "scène de jardin",
+   1,
+   1
+  ]
+ ],
+ "silhouette": [
+  [
+   "éventail",
+   18,
+   24
+  ],
+  [
+   "libre/sauvage",
+   15,
+   20
+  ],
+  [
+   "triangle",
+   12,
+   16
+  ],
+  [
+   "cascade",
+   9,
+   12
+  ],
+  [
+   "dôme",
+   8,
+   11
+  ],
+  [
+   "vertical aérien",
+   6,
+   8
+  ],
+  [
+   "asymétrique en L",
+   4,
+   5
+  ],
+  [
+   "croissant",
+   3,
+   4
+  ],
+  [
+   "horizontale",
+   1,
+   1
+  ]
+ ],
+ "symetrie": [
+  [
+   "équilibre asymétrique",
+   67,
+   88
+  ],
+  [
+   "très asymétrique",
+   7,
+   9
+  ],
+  [
+   "symétrique",
+   2,
+   3
+  ]
+ ],
+ "espace_negatif": [
+  [
+   "moyen",
+   49,
+   64
+  ],
+  [
+   "fort",
+   17,
+   22
+  ],
+  [
+   "faible",
+   10,
+   13
+  ]
+ ],
+ "debordement_bas": [
+  [
+   "léger",
+   39,
+   51
+  ],
+  [
+   "cascade longue",
+   28,
+   37
+  ],
+  [
+   "aucun",
+   9,
+   12
+  ]
+ ],
+ "schema_couleur": [
+  [
+   "analogue",
+   30,
+   39
+  ],
+  [
+   "tonal",
+   15,
+   20
+  ],
+  [
+   "complémentaire",
+   9,
+   12
+  ],
+  [
+   "multicolore",
+   9,
+   12
+  ],
+  [
+   "monochrome",
+   6,
+   8
+  ],
+  [
+   "neutres + accent",
+   4,
+   5
+  ],
+  [
+   "triade",
+   3,
+   4
+  ]
+ ],
+ "temperature": [
+  [
+   "mixte",
+   35,
+   46
+  ],
+  [
+   "chaude",
+   28,
+   37
+  ],
+  [
+   "froide",
+   13,
+   17
+  ]
+ ],
+ "feuillage": [
+  [
+   "aucun",
+   44,
+   58
+  ],
+  [
+   "rare",
+   17,
+   22
+  ],
+  [
+   "moyen",
+   11,
+   14
+  ],
+  [
+   "abondant",
+   4,
+   5
+  ]
+ ],
+ "largeur_sur_hauteur": {
+  "mediane": 0.83,
+  "q1": 0.72,
+  "q3": 1.0,
+  "n": 76
+ },
+ "hauteur_bouquet_sur_contenant": {
+  "mediane": 3.4,
+  "q1": 2.7,
+  "q3": 4.9,
+  "n": 51
+ },
+ "fleurs": [
+  {
+   "nom": "anthurium",
+   "genre": "Anthurium",
+   "bouquets": 40,
+   "roles": [
+    [
+     "focale",
+     39
+    ],
+    [
+     "secondaire",
+     6
+    ],
+    [
+     "accent",
+     4
+    ]
+   ],
+   "latin": "Anthurium",
+   "couleurs": [
+    "rouge bordeaux",
+    "pêche-saumon cuivré",
+    "corail-saumon",
+    "beige rosé"
+   ]
+  },
+  {
+   "nom": "amarante queue-de-renard",
+   "genre": "Amaranthus",
+   "bouquets": 29,
+   "roles": [
+    [
+     "retombée",
+     29
+    ],
+    [
+     "ligne",
+     5
+    ],
+    [
+     "remplissage",
+     1
+    ]
+   ],
+   "latin": "Amaranthus",
+   "couleurs": [
+    "bordeaux",
+    "vieux rose / beige rosé",
+    "framboise / magenta sombre",
+    "rouge bordeaux"
+   ]
+  },
+  {
+   "nom": "calla",
+   "genre": "Zantedeschia",
+   "bouquets": 28,
+   "roles": [
+    [
+     "secondaire",
+     19
+    ],
+    [
+     "ligne",
+     12
+    ],
+    [
+     "accent",
+     3
+    ]
+   ],
+   "latin": "Zantedeschia",
+   "couleurs": [
+    "aubergine presque noir",
+    "noir prune",
+    "aubergine noir",
+    "orange-pêche à base verte"
+   ]
+  },
+  {
+   "nom": "orchidée papillon",
+   "genre": "Phalaenopsis",
+   "bouquets": 21,
+   "roles": [
+    [
+     "focale",
+     12
+    ],
+    [
+     "retombée",
+     5
+    ],
+    [
+     "secondaire",
+     5
+    ]
+   ],
+   "latin": "Phalaenopsis",
+   "couleurs": [
+    "prune-framboise réticulé de veines bordeaux",
+    "blanc à cœur lilas",
+    "rose orchidée, labelle magenta",
+    "blanc pur, cœur jaune"
+   ]
+  },
+  {
+   "nom": "cymbidium",
+   "genre": "Cymbidium",
+   "bouquets": 19,
+   "roles": [
+    [
+     "focale",
+     12
+    ],
+    [
+     "secondaire",
+     8
+    ],
+    [
+     "ligne",
+     2
+    ]
+   ],
+   "latin": "Cymbidium",
+   "couleurs": [
+    "cuivre-saumon, labelle bordeaux tacheté crème",
+    "pêche saumon, labelle ivoire",
+    "bordeaux-framboise, labelle crème moucheté",
+    "rose framboise, labelle crème moucheté rouge"
+   ]
+  },
+  {
+   "nom": "rose de jardin",
+   "genre": "Rosa",
+   "bouquets": 18,
+   "roles": [
+    [
+     "secondaire",
+     14
+    ],
+    [
+     "focale",
+     8
+    ],
+    [
+     "ligne",
+     2
+    ]
+   ],
+   "latin": "Rosa",
+   "couleurs": [
+    "baies rouge-orangé sur bois brun",
+    "crème à cœur pêche",
+    "crème ivoire",
+    "fuchsia"
+   ]
+  },
+  {
+   "nom": "hortensia",
+   "genre": "Hydrangea",
+   "bouquets": 15,
+   "roles": [
+    [
+     "remplissage",
+     11
+    ],
+    [
+     "secondaire",
+     3
+    ],
+    [
+     "focale",
+     3
+    ]
+   ],
+   "latin": "Hydrangea",
+   "couleurs": [
+    "vert-mauve passé",
+    "jaune safran",
+    "crème ivoire",
+    "rose pâle lilas"
+   ]
+  },
+  {
+   "nom": "lis oriental",
+   "genre": "Lilium",
+   "bouquets": 15,
+   "roles": [
+    [
+     "focale",
+     13
+    ],
+    [
+     "secondaire",
+     5
+    ],
+    [
+     "ligne",
+     3
+    ]
+   ],
+   "latin": "Lilium",
+   "couleurs": [
+    "rose moucheté, étamines brun-rouge",
+    "rose-vert",
+    "rose saumon veiné",
+    "bordeaux profond"
+   ]
+  },
+  {
+   "nom": "ail à tête ronde",
+   "genre": "Allium",
+   "bouquets": 14,
+   "roles": [
+    [
+     "ligne",
+     10
+    ],
+    [
+     "accent",
+     4
+    ],
+    [
+     "secondaire",
+     2
+    ]
+   ],
+   "latin": "Allium",
+   "couleurs": [
+    "violet profond",
+    "vert et pourpre",
+    "vert",
+    "vert-jaune"
+   ]
+  },
+  {
+   "nom": "dahlia décoratif",
+   "genre": "Dahlia",
+   "bouquets": 14,
+   "roles": [
+    [
+     "focale",
+     14
+    ],
+    [
+     "secondaire",
+     4
+    ],
+    [
+     "accent",
+     1
+    ]
+   ],
+   "latin": "Dahlia",
+   "couleurs": [
+    "bordeaux",
+    "rose lilas pâle",
+    "bordeaux-noir aubergine",
+    "pêche-jaune, jaune beurre, corail-saumon"
+   ]
+  },
+  {
+   "nom": "œillet",
+   "genre": "Dianthus",
+   "bouquets": 13,
+   "roles": [
+    [
+     "secondaire",
+     7
+    ],
+    [
+     "remplissage",
+     4
+    ],
+    [
+     "accent",
+     2
+    ]
+   ],
+   "latin": "Dianthus",
+   "couleurs": [
+    "rose pâle",
+    "corail-saumon",
+    "magenta",
+    "blanc bordé fuchsia"
+   ]
+  },
+  {
+   "nom": "tulipe",
+   "genre": "Tulipa",
+   "bouquets": 12,
+   "roles": [
+    [
+     "secondaire",
+     10
+    ],
+    [
+     "focale",
+     3
+    ],
+    [
+     "ligne",
+     1
+    ]
+   ],
+   "latin": "Tulipa",
+   "couleurs": [
+    "rose vif strié vert et blanc",
+    "violet-magenta",
+    "jaune-abricot",
+    "blanc flammé rose-rouge, cœur jaune"
+   ]
+  },
+  {
+   "nom": "chrysanthème araignée",
+   "genre": "Chrysanthemum",
+   "bouquets": 11,
+   "roles": [
+    [
+     "secondaire",
+     6
+    ],
+    [
+     "remplissage",
+     5
+    ],
+    [
+     "focale",
+     3
+    ]
+   ],
+   "latin": "Chrysanthemum",
+   "couleurs": [
+    "mauve-rose",
+    "mauve-prune",
+    "pêche rosé",
+    "noir-aubergine"
+   ]
+  },
+  {
+   "nom": "pois de senteur",
+   "genre": "Lathyrus",
+   "bouquets": 10,
+   "roles": [
+    [
+     "remplissage",
+     5
+    ],
+    [
+     "secondaire",
+     2
+    ],
+    [
+     "accent",
+     2
+    ]
+   ],
+   "latin": "Lathyrus",
+   "couleurs": [
+    "magenta-lilas",
+    "rose poudré-lilas",
+    "rose-lilas pâle",
+    "lavande pâle"
+   ]
+  },
+  {
+   "nom": "nérine",
+   "genre": "Nerine",
+   "bouquets": 10,
+   "roles": [
+    [
+     "secondaire",
+     5
+    ],
+    [
+     "ligne",
+     3
+    ],
+    [
+     "focale",
+     1
+    ]
+   ],
+   "latin": "Nerine",
+   "couleurs": [
+    "rose",
+    "corail-rose vif",
+    "cerise framboise vif",
+    "rouge vermillon"
+   ]
+  },
+  {
+   "nom": "renoncule",
+   "genre": "Ranunculus",
+   "bouquets": 9,
+   "roles": [
+    [
+     "secondaire",
+     9
+    ],
+    [
+     "focale",
+     1
+    ]
+   ],
+   "latin": "Ranunculus",
+   "couleurs": [
+    "orange vif",
+    "rose pâle",
+    "saumon-orange et pêche",
+    "rouge-orange"
+   ]
+  },
+  {
+   "nom": "scabieuse",
+   "genre": "Scabiosa",
+   "bouquets": 9,
+   "roles": [
+    [
+     "secondaire",
+     4
+    ],
+    [
+     "accent",
+     3
+    ],
+    [
+     "remplissage",
+     1
+    ]
+   ],
+   "latin": "Scabiosa",
+   "couleurs": [
+    "bordeaux-noir",
+    "bleu lavande",
+    "lilas pâle",
+    "framboise à bordeaux"
+   ]
+  },
+  {
+   "nom": "eucalyptus teinté",
+   "genre": "Eucalyptus",
+   "bouquets": 8,
+   "roles": [
+    [
+     "feuillage",
+     5
+    ],
+    [
+     "remplissage",
+     2
+    ],
+    [
+     "retombée",
+     1
+    ]
+   ],
+   "latin": "Eucalyptus",
+   "couleurs": [
+    "vert-gris",
+    "olive doré",
+    "jaune ocre à orange",
+    "bordeaux-prune"
+   ]
+  },
+  {
+   "nom": "gloriosa",
+   "genre": "Gloriosa",
+   "bouquets": 8,
+   "roles": [
+    [
+     "accent",
+     5
+    ],
+    [
+     "secondaire",
+     4
+    ],
+    [
+     "focale",
+     2
+    ]
+   ],
+   "latin": "Gloriosa",
+   "couleurs": [
+    "fuchsia-cramoisi à bord jaune ondulé",
+    "rouge framboise bordé de jaune",
+    "corail-rouge à base jaune",
+    "vert pâle-jaune"
+   ]
+  },
+  {
+   "nom": "cosmos",
+   "genre": "Cosmos",
+   "bouquets": 7,
+   "roles": [
+    [
+     "accent",
+     4
+    ],
+    [
+     "secondaire",
+     2
+    ],
+    [
+     "focale",
+     1
+    ]
+   ],
+   "latin": "Cosmos",
+   "couleurs": [
+    "rose",
+    "blanc",
+    "bordeaux velours",
+    "blanc, rose vif, blush, crème"
+   ]
+  },
+  {
+   "nom": "lisianthus double",
+   "genre": "Eustoma",
+   "bouquets": 7,
+   "roles": [
+    [
+     "secondaire",
+     3
+    ],
+    [
+     "remplissage",
+     3
+    ],
+    [
+     "focale",
+     1
+    ]
+   ],
+   "latin": "Eustoma",
+   "couleurs": [
+    "jaune crème",
+    "blanc",
+    "abricot",
+    "rose poudré"
+   ]
+  },
+  {
+   "nom": "muflier",
+   "genre": "Antirrhinum",
+   "bouquets": 6,
+   "roles": [
+    [
+     "remplissage",
+     3
+    ],
+    [
+     "ligne",
+     2
+    ],
+    [
+     "accent",
+     1
+    ]
+   ],
+   "latin": "Antirrhinum",
+   "couleurs": [
+    "rose pâle à boutons verts",
+    "pêche-orange, épis en boutons vert tendre",
+    "corail-saumon et orange",
+    "rouge vif"
+   ]
+  },
+  {
+   "nom": "leucadendron",
+   "genre": "Leucadendron",
+   "bouquets": 6,
+   "roles": [
+    [
+     "ligne",
+     3
+    ],
+    [
+     "remplissage",
+     2
+    ],
+    [
+     "feuillage",
+     1
+    ]
+   ],
+   "latin": "Leucadendron",
+   "couleurs": [
+    "rouge bordeaux",
+    "bordeaux-noir",
+    "bordeaux",
+    "pourpre-bordeaux"
+   ]
+  },
+  {
+   "nom": "delphinium",
+   "genre": "Delphinium",
+   "bouquets": 6,
+   "roles": [
+    [
+     "ligne",
+     3
+    ],
+    [
+     "remplissage",
+     3
+    ],
+    [
+     "secondaire",
+     2
+    ]
+   ],
+   "latin": "Delphinium",
+   "couleurs": [
+    "bleu poudré-lilas",
+    "bleu ciel et blanc",
+    "bleu ciel pervenche",
+    "blanc à œil verdâtre, boutons vert tendre"
+   ]
+  },
+  {
+   "nom": "célosie crête-de-coq",
+   "genre": "Celosia",
+   "bouquets": 5,
+   "roles": [
+    [
+     "remplissage",
+     3
+    ],
+    [
+     "focale",
+     2
+    ],
+    [
+     "secondaire",
+     1
+    ]
+   ],
+   "latin": "Celosia",
+   "couleurs": [
+    "rouge sang",
+    "rose poudré à mauve",
+    "bordeaux velours",
+    "rouge cramoisi"
+   ]
+  },
+  {
+   "nom": "oncidium",
+   "genre": "Oncidium",
+   "bouquets": 5,
+   "roles": [
+    [
+     "ligne",
+     5
+    ],
+    [
+     "accent",
+     1
+    ]
+   ],
+   "latin": "Oncidium",
+   "couleurs": [
+    "brun-ocre et rose",
+    "rose lilas tacheté, centre jaune",
+    "bordeaux",
+    "framboise à cœur jaune"
+   ]
+  },
+  {
+   "nom": "sanguisorbe",
+   "genre": "Sanguisorba",
+   "bouquets": 5,
+   "roles": [
+    [
+     "ligne",
+     3
+    ],
+    [
+     "accent",
+     2
+    ]
+   ],
+   "latin": "Sanguisorba",
+   "couleurs": [
+    "bordeaux à rose crème",
+    "bordeaux foncé",
+    "crème",
+    "bordeaux presque noir"
+   ]
+  },
+  {
+   "nom": "clématite à grandes fleurs",
+   "genre": "Clematis",
+   "bouquets": 5,
+   "roles": [
+    [
+     "ligne",
+     3
+    ],
+    [
+     "secondaire",
+     2
+    ],
+    [
+     "accent",
+     1
+    ]
+   ],
+   "latin": "Clematis",
+   "couleurs": [
+    "lavande",
+    "blanc veiné lilas",
+    "lilas",
+    "vert tendre"
+   ]
+  },
+  {
+   "nom": "saule (jeunes pousses)",
+   "genre": "Salix",
+   "bouquets": 5,
+   "roles": [
+    [
+     "ligne",
+     5
+    ]
+   ],
+   "latin": "Salix",
+   "couleurs": [
+    "bois brun-rouge, feuilles vert tendre",
+    "orange",
+    "tiges brun-rouge, jeunes feuilles chartreuse",
+    "noir charbon #2b2b2e"
+   ]
+  },
+  {
+   "nom": "herbe d'ours",
+   "genre": "Xerophyllum",
+   "bouquets": 5,
+   "roles": [
+    [
+     "ligne",
+     4
+    ],
+    [
+     "remplissage",
+     1
+    ]
+   ],
+   "latin": "Xerophyllum",
+   "couleurs": [
+    "noir",
+    "vert foncé",
+    "vert sombre",
+    "bordeaux #6a1018"
+   ]
+  },
+  {
+   "nom": "pivoine",
+   "genre": "Paeonia",
+   "bouquets": 5,
+   "roles": [
+    [
+     "focale",
+     5
+    ],
+    [
+     "feuillage",
+     1
+    ]
+   ],
+   "latin": "Paeonia",
+   "couleurs": [
+    "rose tendre au cœur, pétales externes crème",
+    "blanc pur à macule cramoisie-magenta rayonnante, étamines or",
+    "vert moyen",
+    "rouge cramoisi, étamines or"
+   ]
+  },
+  {
+   "nom": "glaïeul",
+   "genre": "Gladiolus",
+   "bouquets": 4,
+   "roles": [
+    [
+     "ligne",
+     3
+    ],
+    [
+     "secondaire",
+     1
+    ]
+   ],
+   "latin": "Gladiolus",
+   "couleurs": [
+    "rose saumon, boutons vert acide",
+    "saumon pâle",
+    "cramoisi",
+    "rouge vif, pointes vertes"
+   ]
+  },
+  {
+   "nom": "giroflée",
+   "genre": "Matthiola",
+   "bouquets": 4,
+   "roles": [
+    [
+     "remplissage",
+     3
+    ],
+    [
+     "secondaire",
+     1
+    ]
+   ],
+   "latin": "Matthiola",
+   "couleurs": [
+    "rose (1) et lilas (2)",
+    "lilas",
+    "magenta-violet #9a2a90",
+    "mauve rosé et prune foncé"
+   ]
+  },
+  {
+   "nom": "statice",
+   "genre": "Limonium",
+   "bouquets": 4,
+   "roles": [
+    [
+     "remplissage",
+     4
+    ]
+   ],
+   "latin": "Limonium",
+   "couleurs": [
+    "violet",
+    "mauve",
+    "violet et rose poudré",
+    "bleu lavande"
+   ]
+  },
+  {
+   "nom": "anémone (ou renoncule)",
+   "genre": "Anemone",
+   "bouquets": 4,
+   "roles": [
+    [
+     "secondaire",
+     4
+    ],
+    [
+     "accent",
+     1
+    ]
+   ],
+   "latin": "Anemone",
+   "couleurs": [
+    "rose pâle à cœur sombre",
+    "blanc, cœur bordeaux",
+    "noir, cœur perlé noir",
+    "bordeaux noir, halo blanc-bleuté autour du cœur noir"
+   ]
+  },
+  {
+   "nom": "orchidée vanda tachetée léopard",
+   "genre": "Vanda",
+   "bouquets": 4,
+   "roles": [
+    [
+     "focale",
+     3
+    ],
+    [
+     "accent",
+     1
+    ],
+    [
+     "secondaire",
+     1
+    ]
+   ],
+   "latin": "Vanda",
+   "couleurs": [
+    "crème verdâtre moucheté aubergine",
+    "violet bleuté tessellé #6a4aa0",
+    "violet lilas",
+    "bleu-violet tessellé"
+   ]
+  },
+  {
+   "nom": "panicaut teint",
+   "genre": "Eryngium",
+   "bouquets": 4,
+   "roles": [
+    [
+     "remplissage",
+     3
+    ],
+    [
+     "accent",
+     1
+    ]
+   ],
+   "latin": "Eryngium",
+   "couleurs": [
+    "bleu acier",
+    "turquoise",
+    "bleu acier #5a6a80"
+   ]
+  },
+  {
+   "nom": "sandersonia (clochette de Noël)",
+   "genre": "Sandersonia",
+   "bouquets": 3,
+   "roles": [
+    [
+     "ligne",
+     2
+    ],
+    [
+     "accent",
+     1
+    ]
+   ],
+   "latin": "Sandersonia",
+   "couleurs": [
+    "orange abricot",
+    "orange",
+    "jaune d'or orangé"
+   ]
+  },
+  {
+   "nom": "fustet (arbre à perruques)",
+   "genre": "Cotinus",
+   "bouquets": 3,
+   "roles": [
+    [
+     "remplissage",
+     1
+    ],
+    [
+     "ligne",
+     1
+    ],
+    [
+     "feuillage",
+     1
+    ]
+   ],
+   "latin": "Cotinus",
+   "couleurs": [
+    "mauve poudré",
+    "bordeaux rosé",
+    "pourpre-noir"
+   ]
+  },
+  {
+   "nom": "orchidées miniatures lilas (Dendrobium ?)",
+   "genre": "Dendrobium",
+   "bouquets": 3,
+   "roles": [
+    [
+     "secondaire",
+     2
+    ],
+    [
+     "accent",
+     1
+    ]
+   ],
+   "latin": "Dendrobium",
+   "couleurs": [
+    "lilas moucheté",
+    "blanc rosé",
+    "magenta fuchsia"
+   ]
+  },
+  {
+   "nom": "jasmin (liane)",
+   "genre": "Jasminum",
+   "bouquets": 3,
+   "roles": [
+    [
+     "ligne",
+     2
+    ],
+    [
+     "feuillage",
+     1
+    ]
+   ],
+   "latin": "Jasminum",
+   "couleurs": [
+    "vert tendre",
+    "fleurs jaune vif, feuillage vert"
+   ]
+  },
+  {
+   "nom": "orchidée Mokara",
+   "genre": "Mokara",
+   "bouquets": 3,
+   "roles": [
+    [
+     "remplissage",
+     2
+    ],
+    [
+     "ligne",
+     1
+    ]
+   ],
+   "latin": "Mokara",
+   "couleurs": [
+    "orange-jaune",
+    "rouge brique corail",
+    "rouge magenta"
+   ]
+  },
+  {
+   "nom": "skimmia en boutons",
+   "genre": "Skimmia",
+   "bouquets": 3,
+   "roles": [
+    [
+     "remplissage",
+     3
+    ]
+   ],
+   "latin": "Skimmia",
+   "couleurs": [
+    "crème-vert",
+    "bordeaux en boutons",
+    "bordeaux #5a1e2a"
+   ]
+  },
+  {
+   "nom": "gerbera araignée",
+   "genre": "Gerbera",
+   "bouquets": 3,
+   "roles": [
+    [
+     "secondaire",
+     2
+    ],
+    [
+     "accent",
+     1
+    ]
+   ],
+   "latin": "Gerbera",
+   "couleurs": [
+    "pêche et saumon, cœur vert ou sombre",
+    "rouge et bordeaux",
+    "rouge #c00f16"
+   ]
+  },
+  {
+   "nom": "millet ornemental",
+   "genre": "Pennisetum",
+   "bouquets": 3,
+   "roles": [
+    [
+     "ligne",
+     3
+    ]
+   ],
+   "latin": "Pennisetum",
+   "couleurs": [
+    "fuchsia",
+    "brun-noir velouté",
+    "brun"
+   ]
+  },
+  {
+   "nom": "asparagus stabilisé teint",
+   "genre": "Asparagus",
+   "bouquets": 3,
+   "roles": [
+    [
+     "remplissage",
+     2
+    ],
+    [
+     "retombée",
+     1
+    ]
+   ],
+   "latin": "Asparagus",
+   "couleurs": [
+    "rose, rouge, lavande, jaune, pêche",
+    "framboise",
+    "magenta fuchsia (teinte)"
+   ]
+  },
+  {
+   "nom": "protée pincushion",
+   "genre": "Leucospermum",
+   "bouquets": 3,
+   "roles": [
+    [
+     "focale",
+     2
+    ],
+    [
+     "secondaire",
+     1
+    ]
+   ],
+   "latin": "Leucospermum",
+   "couleurs": [
+    "orange",
+    "rouge-orangé",
+    "corail-orange"
+   ]
+  },
+  {
+   "nom": "carotte 'Dara'",
+   "genre": "Daucus",
+   "bouquets": 3,
+   "roles": [
+    [
+     "remplissage",
+     2
+    ],
+    [
+     "secondaire",
+     1
+    ]
+   ],
+   "latin": "Daucus",
+   "couleurs": [
+    "rose-beige",
+    "blanc rosé à mauve",
+    "prune-bordeaux à rose sourd"
+   ]
+  },
+  {
+   "nom": "feuille de palmier séchée teinte",
+   "genre": "Arecaceae",
+   "bouquets": 3,
+   "roles": [
+    [
+     "ligne",
+     1
+    ],
+    [
+     "focale",
+     1
+    ],
+    [
+     "accent",
+     1
+    ]
+   ],
+   "latin": "Arecaceae",
+   "couleurs": [
+    "bordeaux",
+    "rouge carmin profond #741a25",
+    "noir #1e1e22"
+   ]
+  },
+  {
+   "nom": "rose d'Inde (tagète)",
+   "genre": "Tagetes",
+   "bouquets": 3,
+   "roles": [
+    [
+     "focale",
+     1
+    ],
+    [
+     "secondaire",
+     1
+    ],
+    [
+     "remplissage",
+     1
+    ]
+   ],
+   "latin": "Tagetes",
+   "couleurs": [
+    "orange vif",
+    "orange-jaune, bords jaune citron",
+    "orange"
+   ]
+  },
+  {
+   "nom": "tiges fines vertes",
+   "genre": "Xanthorrhoea",
+   "bouquets": 3,
+   "roles": [
+    [
+     "ligne",
+     3
+    ]
+   ],
+   "latin": "Xanthorrhoea",
+   "couleurs": [
+    "vert",
+    "beige doré"
+   ]
+  },
+  {
+   "nom": "petites fleurs étoilées en ombelle (Pentas ou Kalanchoe)",
+   "genre": "Pentas",
+   "bouquets": 2,
+   "roles": [
+    [
+     "remplissage",
+     1
+    ],
+    [
+     "accent",
+     1
+    ]
+   ],
+   "latin": "Pentas",
+   "couleurs": [
+    "pêche à cœur jaune",
+    "framboise"
+   ]
+  },
+  {
+   "nom": "physocarpe pourpre",
+   "genre": "Physocarpus",
+   "bouquets": 2,
+   "roles": [
+    [
+     "feuillage",
+     2
+    ]
+   ],
+   "latin": "Physocarpus",
+   "couleurs": [
+    "pourpre-noir",
+    "pourpre bronze"
+   ]
+  },
+  {
+   "nom": "pompons rouge-rose (achillée ou trachélium)",
+   "genre": "Achillea",
+   "bouquets": 2,
+   "roles": [
+    [
+     "secondaire",
+     1
+    ],
+    [
+     "remplissage",
+     1
+    ]
+   ],
+   "latin": "Achillea",
+   "couleurs": [
+    "rouge rosé",
+    "vieux rose-mauve"
+   ]
+  },
+  {
+   "nom": "fil d'aluminium décoratif",
+   "genre": "fil d",
+   "bouquets": 2,
+   "roles": [
+    [
+     "accent",
+     1
+    ],
+    [
+     "ligne",
+     1
+    ]
+   ],
+   "latin": "",
+   "couleurs": [
+    "bordeaux métallisé",
+    "noir mat"
+   ]
+  },
+  {
+   "nom": "héliconia pendante velue",
+   "genre": "Heliconia",
+   "bouquets": 2,
+   "roles": [
+    [
+     "ligne",
+     2
+    ]
+   ],
+   "latin": "Heliconia",
+   "couleurs": [
+    "rouille-brun velouté",
+    "rouge vif"
+   ]
+  },
+  {
+   "nom": "feuille de doublure dans le vase (aspidistra ?)",
+   "genre": "Aspidistra",
+   "bouquets": 2,
+   "roles": [
+    [
+     "feuillage",
+     1
+    ],
+    [
+     "ligne",
+     1
+    ]
+   ],
+   "latin": "Aspidistra",
+   "couleurs": [
+    "vert foncé",
+    "lilas gris"
+   ]
+  },
+  {
+   "nom": "aster",
+   "genre": "Symphyotrichum",
+   "bouquets": 2,
+   "roles": [
+    [
+     "remplissage",
+     2
+    ]
+   ],
+   "latin": "Symphyotrichum",
+   "couleurs": [
+    "lilas à cœur jaune",
+    "lilas"
+   ]
+  },
+  {
+   "nom": "graminée fine (lily grass ou steel grass)",
+   "genre": "Liriope",
+   "bouquets": 2,
+   "roles": [
+    [
+     "ligne",
+     1
+    ],
+    [
+     "feuillage",
+     1
+    ]
+   ],
+   "latin": "Liriope",
+   "couleurs": [
+    "vert pâle",
+    "vert à liseré crème"
+   ]
+  },
+  {
+   "nom": "échinacée",
+   "genre": "Echinacea",
+   "bouquets": 2,
+   "roles": [
+    [
+     "ligne",
+     1
+    ],
+    [
+     "remplissage",
+     1
+    ]
+   ],
+   "latin": "Echinacea",
+   "couleurs": [
+    "rose mauve, cœur brun-bordeaux",
+    "cône brun-orangé"
+   ]
+  },
+  {
+   "nom": "échinops (boule azurée)",
+   "genre": "Echinops",
+   "bouquets": 2,
+   "roles": [
+    [
+     "secondaire",
+     2
+    ]
+   ],
+   "latin": "Echinops",
+   "couleurs": [
+    "lilas grisé",
+    "noir bleuté"
+   ]
+  },
+  {
+   "nom": "hellébore double",
+   "genre": "Helleborus",
+   "bouquets": 2,
+   "roles": [
+    [
+     "ligne",
+     1
+    ],
+    [
+     "accent",
+     1
+    ]
+   ],
+   "latin": "Helleborus",
+   "couleurs": [
+    "prune-ardoise à liseré crème-vert",
+    "crème-chartreuse"
+   ]
+  },
+  {
+   "nom": "ammi / carotte sauvage",
+   "genre": "Ammi",
+   "bouquets": 2,
+   "roles": [
+    [
+     "remplissage",
+     2
+    ]
+   ],
+   "latin": "Ammi",
+   "couleurs": [
+    "blanc",
+    "blanc verdâtre #e6ead8"
+   ]
+  },
+  {
+   "nom": "astilbe",
+   "genre": "Astilbe",
+   "bouquets": 2,
+   "roles": [
+    [
+     "ligne",
+     1
+    ],
+    [
+     "remplissage",
+     1
+    ]
+   ],
+   "latin": "Astilbe",
+   "couleurs": [
+    "bordeaux",
+    "rouge framboise"
+   ]
+  },
+  {
+   "nom": "jacinthe",
+   "genre": "Hyacinthus",
+   "bouquets": 2,
+   "roles": [
+    [
+     "remplissage",
+     2
+    ]
+   ],
+   "latin": "Hyacinthus",
+   "couleurs": [
+    "bleu violet",
+    "rose orchidée"
+   ]
+  },
+  {
+   "nom": "immortelle",
+   "genre": "Xerochrysum",
+   "bouquets": 2,
+   "roles": [
+    [
+     "accent",
+     1
+    ],
+    [
+     "remplissage",
+     1
+    ]
+   ],
+   "latin": "Xerochrysum",
+   "couleurs": [
+    "jaune paille et rouille",
+    "magenta, cerise et bordeaux à cœur jaune"
+   ]
+  },
+  {
+   "nom": "graminée plumeuse séchée teinte",
+   "genre": "Stipa",
+   "bouquets": 2,
+   "roles": [
+    [
+     "accent",
+     3
+    ]
+   ],
+   "latin": "Stipa",
+   "couleurs": [
+    "rose bonbon",
+    "blanc bleuté",
+    "bleu glacier"
+   ]
+  },
+  {
+   "nom": "panic élégant",
+   "genre": "Panicum",
+   "bouquets": 2,
+   "roles": [
+    [
+     "remplissage",
+     2
+    ]
+   ],
+   "latin": "Panicum",
+   "couleurs": [
+    "vert-beige translucide",
+    "vert doré translucide"
+   ]
+  },
+  {
+   "nom": "pied-d'alouette",
+   "genre": "Consolida",
+   "bouquets": 2,
+   "roles": [
+    [
+     "accent",
+     1
+    ],
+    [
+     "ligne",
+     1
+    ]
+   ],
+   "latin": "Consolida",
+   "couleurs": [
+    "violet",
+    "lavande-violet"
+   ]
+  },
+  {
+   "nom": "Ruscus italien teint",
+   "genre": "Danae",
+   "bouquets": 2,
+   "roles": [
+    [
+     "ligne",
+     1
+    ],
+    [
+     "feuillage",
+     1
+    ]
+   ],
+   "latin": "Danae",
+   "couleurs": [
+    "rouge bordeaux #782029",
+    "rouge corail #eb3a4a"
+   ]
+  },
+  {
+   "nom": "Liane/vrille ligneuse sèche",
+   "genre": "Vitis",
+   "bouquets": 2,
+   "roles": [
+    [
+     "ligne",
+     1
+    ],
+    [
+     "accent",
+     1
+    ]
+   ],
+   "latin": "Vitis",
+   "couleurs": [
+    "gris-beige #9a8a7a",
+    "rouge bordeaux #6e2030"
+   ]
+  },
+  {
+   "nom": "feuillage d'automne rouge-rose (fusain ailé ou cornouiller, possiblement teinté)",
+   "genre": "Euonymus",
+   "bouquets": 1,
+   "roles": [
+    [
+     "feuillage",
+     1
+    ]
+   ],
+   "latin": "Euonymus",
+   "couleurs": [
+    "rouge carmin à rose corail, bordeaux en haut à droite"
+   ]
+  },
+  {
+   "nom": "boules texturées vert sombre (mousse ou célosie verte)",
+   "genre": "boules texturees",
+   "bouquets": 1,
+   "roles": [
+    [
+     "remplissage",
+     1
+    ]
+   ],
+   "latin": "",
+   "couleurs": [
+    "vert mousse"
+   ]
+  },
+  {
+   "nom": "clochettes / baies pendantes bordeaux (type Bomarea ou Crinodendron)",
+   "genre": "clochettes baies",
+   "bouquets": 1,
+   "roles": [
+    [
+     "secondaire",
+     1
+    ]
+   ],
+   "latin": "",
+   "couleurs": [
+    "bordeaux luisant"
+   ]
+  },
+  {
+   "nom": "lis de feu (fleurs tubulaires)",
+   "genre": "Cyrtanthus",
+   "bouquets": 1,
+   "roles": [
+    [
+     "remplissage",
+     1
+    ]
+   ],
+   "latin": "Cyrtanthus",
+   "couleurs": [
+    "corail saumon"
+   ]
+  },
+  {
+   "nom": "pompons perlés (amarante en boule ou brunia teinté)",
+   "genre": "pompons perles",
+   "bouquets": 1,
+   "roles": [
+    [
+     "remplissage",
+     1
+    ]
+   ],
+   "latin": "",
+   "couleurs": [
+    "vieux rose-terracotta"
+   ]
+  },
+  {
+   "nom": "feuillage pourpre pointu (type Loropetalum, ou teinté)",
+   "genre": "Loropetalum",
+   "bouquets": 1,
+   "roles": [
+    [
+     "feuillage",
+     1
+    ]
+   ],
+   "latin": "Loropetalum",
+   "couleurs": [
+    "bordeaux à rose translucide"
+   ]
+  },
+  {
+   "nom": "grandes feuilles rouges dentelées (type bégonia ou feuillage d'automne)",
+   "genre": "grandes feuilles",
+   "bouquets": 1,
+   "roles": [
+    [
+     "feuillage",
+     1
+    ]
+   ],
+   "latin": "",
+   "couleurs": [
+    "rouge sang à rose saumon"
+   ]
+  },
+  {
+   "nom": "grande feuille lancéolée pourpre-noir (coleus ou bégonia ?)",
+   "genre": "grande feuille",
+   "bouquets": 1,
+   "roles": [
+    [
+     "feuillage",
+     1
+    ]
+   ],
+   "latin": "",
+   "couleurs": [
+    "pourpre-noir"
+   ]
+  },
+  {
+   "nom": "bâtons bruns plats (bambou ou feuilles de phormium séchées)",
+   "genre": "batons bruns",
+   "bouquets": 1,
+   "roles": [
+    [
+     "ligne",
+     1
+    ]
+   ],
+   "latin": "",
+   "couleurs": [
+    "brun rouille"
+   ]
+  },
+  {
+   "nom": "feuillage vert dentelé (ronce ou spirée ?)",
+   "genre": "feuillage vert",
+   "bouquets": 1,
+   "roles": [
+    [
+     "feuillage",
+     1
+    ]
+   ],
+   "latin": "",
+   "couleurs": [
+    "vert moyen"
+   ]
+  },
+  {
+   "nom": "fougère fine (capillaire ou asparagus ?)",
+   "genre": "fougere fine",
+   "bouquets": 1,
+   "roles": [
+    [
+     "feuillage",
+     1
+    ]
+   ],
+   "latin": "",
+   "couleurs": [
+    "vert clair"
+   ]
+  },
+  {
+   "nom": "alstroemère",
+   "genre": "Alstroemeria",
+   "bouquets": 1,
+   "roles": [
+    [
+     "secondaire",
+     1
+    ]
+   ],
+   "latin": "Alstroemeria",
+   "couleurs": [
+    "rose pâle strié"
+   ]
+  },
+  {
+   "nom": "pompon blanc (trachymène ou scabieuse blanche)",
+   "genre": "Trachymene",
+   "bouquets": 1,
+   "roles": [
+    [
+     "remplissage",
+     1
+    ]
+   ],
+   "latin": "Trachymene",
+   "couleurs": [
+    "blanc"
+   ]
+  },
+  {
+   "nom": "géranium (feuillage et petites fleurs blanches)",
+   "genre": "Pelargonium",
+   "bouquets": 1,
+   "roles": [
+    [
+     "ligne",
+     1
+    ]
+   ],
+   "latin": "Pelargonium",
+   "couleurs": [
+    "vert, fleurettes blanches"
+   ]
+  },
+  {
+   "nom": "forsythia",
+   "genre": "Forsythia",
+   "bouquets": 1,
+   "roles": [
+    [
+     "ligne",
+     1
+    ]
+   ],
+   "latin": "Forsythia",
+   "couleurs": [
+    "jaune vif"
+   ]
+  },
+  {
+   "nom": "narcisse à grande couronne",
+   "genre": "Narcissus",
+   "bouquets": 1,
+   "roles": [
+    [
+     "focale",
+     1
+    ]
+   ],
+   "latin": "Narcissus",
+   "couleurs": [
+    "jaune, couronne orange"
+   ]
+  },
+  {
+   "nom": "bouton de pavot",
+   "genre": "Papaver",
+   "bouquets": 1,
+   "roles": [
+    [
+     "ligne",
+     1
+    ]
+   ],
+   "latin": "Papaver",
+   "couleurs": [
+    "vert"
+   ]
+  },
+  {
+   "nom": "sedum (orpin) en boutons",
+   "genre": "Hylotelephium",
+   "bouquets": 1,
+   "roles": [
+    [
+     "remplissage",
+     1
+    ]
+   ],
+   "latin": "Hylotelephium",
+   "couleurs": [
+    "vert-olive et vert-de-gris"
+   ]
+  },
+  {
+   "nom": "baies brunes (troène ou eucalyptus à baies)",
+   "genre": "Ligustrum",
+   "bouquets": 1,
+   "roles": [
+    [
+     "remplissage",
+     1
+    ]
+   ],
+   "latin": "Ligustrum",
+   "couleurs": [
+    "brun chocolat"
+   ]
+  },
+  {
+   "nom": "pétales violets lancéolés (orchidée ou iris)",
+   "genre": "Dendrobium/Vanda",
+   "bouquets": 1,
+   "roles": [
+    [
+     "secondaire",
+     1
+    ]
+   ],
+   "latin": "Dendrobium/Vanda",
+   "couleurs": [
+    "violet"
+   ]
+  },
+  {
+   "nom": "petits pétales noirs (pensée ou calla noir)",
+   "genre": "petits petales",
+   "bouquets": 1,
+   "roles": [
+    [
+     "accent",
+     1
+    ]
+   ],
+   "latin": "indéterminé",
+   "couleurs": [
+    "aubergine-noir"
+   ]
+  },
+  {
+   "nom": "fleurs blanches froissées sur rameau (lisianthus, rose blanche ou camélia)",
+   "genre": "fleurs blanches",
+   "bouquets": 1,
+   "roles": [
+    [
+     "secondaire",
+     1
+    ]
+   ],
+   "latin": "indéterminé",
+   "couleurs": [
+    "blanc"
+   ]
+  },
+  {
+   "nom": "fleur ébouriffée bordeaux (pivoine, œillet ou dahlia)",
+   "genre": "fleur ebouriffee",
+   "bouquets": 1,
+   "roles": [
+    [
+     "remplissage",
+     1
+    ]
+   ],
+   "latin": "indéterminé",
+   "couleurs": [
+    "bordeaux profond"
+   ]
+  },
+  {
+   "nom": "rameau nu",
+   "genre": "rameau nu",
+   "bouquets": 1,
+   "roles": [
+    [
+     "ligne",
+     1
+    ]
+   ],
+   "latin": "indéterminé (cerisier/bouleau)",
+   "couleurs": [
+    "brun"
+   ]
+  },
+  {
+   "nom": "piéris (andromède du Japon)",
+   "genre": "Pieris",
+   "bouquets": 1,
+   "roles": [
+    [
+     "remplissage",
+     1
+    ]
+   ],
+   "latin": "Pieris",
+   "couleurs": [
+    "crème rosé"
+   ]
+  },
+  {
+   "nom": "fleur crème mouchetée (œillet ou chrysanthème)",
+   "genre": "fleur creme",
+   "bouquets": 1,
+   "roles": [
+    [
+     "remplissage",
+     1
+    ]
+   ],
+   "latin": "indéterminé",
+   "couleurs": [
+    "crème moucheté mauve"
+   ]
+  },
+  {
+   "nom": "calathea (feuille)",
+   "genre": "Goeppertia",
+   "bouquets": 1,
+   "roles": [
+    [
+     "feuillage",
+     1
+    ]
+   ],
+   "latin": "Goeppertia",
+   "couleurs": [
+    "vert foncé rayé argent"
+   ]
+  },
+  {
+   "nom": "feuillage fin bordeaux-noir (agonis ou graminée pourpre)",
+   "genre": "Agonis",
+   "bouquets": 1,
+   "roles": [
+    [
+     "feuillage",
+     1
+    ]
+   ],
+   "latin": "Agonis",
+   "couleurs": [
+    "bordeaux-noir"
+   ]
+  },
+  {
+   "nom": "ruscus teint",
+   "genre": "Ruscus",
+   "bouquets": 1,
+   "roles": [
+    [
+     "ligne",
+     1
+    ]
+   ],
+   "latin": "Ruscus",
+   "couleurs": [
+    "bleu pervenche"
+   ]
+  },
+  {
+   "nom": "plume d'autruche teinte",
+   "genre": "plume d",
+   "bouquets": 1,
+   "roles": [
+    [
+     "secondaire",
+     1
+    ]
+   ],
+   "latin": "-",
+   "couleurs": [
+    "lilas rosé"
+   ]
+  },
+  {
+   "nom": "gypsophile teinte",
+   "genre": "Gypsophila",
+   "bouquets": 1,
+   "roles": [
+    [
+     "remplissage",
+     1
+    ]
+   ],
+   "latin": "Gypsophila",
+   "couleurs": [
+    "turquoise"
+   ]
+  },
+  {
+   "nom": "herbe de la pampa",
+   "genre": "Cortaderia",
+   "bouquets": 1,
+   "roles": [
+    [
+     "accent",
+     1
+    ]
+   ],
+   "latin": "Cortaderia",
+   "couleurs": [
+    "beige naturel"
+   ]
+  },
+  {
+   "nom": "gousses séchées (baptisia)",
+   "genre": "Baptisia",
+   "bouquets": 1,
+   "roles": [
+    [
+     "remplissage",
+     1
+    ]
+   ],
+   "latin": "Baptisia",
+   "couleurs": [
+    "gris ardoise"
+   ]
+  },
+  {
+   "nom": "feuilles en boucle (lily grass ou aspidistra teint)",
+   "genre": "feuilles en",
+   "bouquets": 1,
+   "roles": [
+    [
+     "accent",
+     1
+    ]
+   ],
+   "latin": "indéterminé",
+   "couleurs": [
+    "noir"
+   ]
+  },
+  {
+   "nom": "rameau lichéné",
+   "genre": "rameau lichene",
+   "bouquets": 1,
+   "roles": [
+    [
+     "ligne",
+     1
+    ]
+   ],
+   "latin": "indéterminé (prunellier/bouleau)",
+   "couleurs": [
+    "brun à lichen gris-vert"
+   ]
+  },
+  {
+   "nom": "mousse espagnole",
+   "genre": "Tillandsia",
+   "bouquets": 1,
+   "roles": [
+    [
+     "remplissage",
+     1
+    ]
+   ],
+   "latin": "Tillandsia",
+   "couleurs": [
+    "gris-beige"
+   ]
+  },
+  {
+   "nom": "capsule de lotus",
+   "genre": "Nelumbo",
+   "bouquets": 1,
+   "roles": [
+    [
+     "accent",
+     1
+    ]
+   ],
+   "latin": "Nelumbo",
+   "couleurs": [
+    "vert"
+   ]
+  },
+  {
+   "nom": "feuilles de chêne séchées",
+   "genre": "Quercus",
+   "bouquets": 1,
+   "roles": [
+    [
+     "remplissage",
+     1
+    ]
+   ],
+   "latin": "Quercus",
+   "couleurs": [
+    "rouille"
+   ]
+  },
+  {
+   "nom": "cornouiller (tiges)",
+   "genre": "Cornus",
+   "bouquets": 1,
+   "roles": [
+    [
+     "ligne",
+     1
+    ]
+   ],
+   "latin": "Cornus",
+   "couleurs": [
+    "jaune et rouge"
+   ]
+  },
+  {
+   "nom": "zinnia",
+   "genre": "Zinnia",
+   "bouquets": 1,
+   "roles": [
+    [
+     "focale",
+     1
+    ]
+   ],
+   "latin": "Zinnia",
+   "couleurs": [
+    "rose"
+   ]
+  },
+  {
+   "nom": "matricaire",
+   "genre": "Tanacetum",
+   "bouquets": 1,
+   "roles": [
+    [
+     "remplissage",
+     1
+    ]
+   ],
+   "latin": "Tanacetum",
+   "couleurs": [
+    "blanc à cœur jaune"
+   ]
+  },
+  {
+   "nom": "étoiles bleues (bourrache ou tweedia)",
+   "genre": "Borago",
+   "bouquets": 1,
+   "roles": [
+    [
+     "accent",
+     1
+    ]
+   ],
+   "latin": "Borago",
+   "couleurs": [
+    "bleu ciel"
+   ]
+  },
+  {
+   "nom": "géranium vivace",
+   "genre": "Geranium",
+   "bouquets": 1,
+   "roles": [
+    [
+     "accent",
+     1
+    ]
+   ],
+   "latin": "Geranium",
+   "couleurs": [
+    "rose-lilas veiné"
+   ]
+  },
+  {
+   "nom": "fleur double rose-lilas (chrysanthème ou aster)",
+   "genre": "fleur double",
+   "bouquets": 1,
+   "roles": [
+    [
+     "secondaire",
+     1
+    ]
+   ],
+   "latin": "indéterminé",
+   "couleurs": [
+    "rose-lilas"
+   ]
+  },
+  {
+   "nom": "fleurs de prunus",
+   "genre": "Prunus",
+   "bouquets": 1,
+   "roles": [
+    [
+     "ligne",
+     1
+    ]
+   ],
+   "latin": "Prunus",
+   "couleurs": [
+    "rose pâle"
+   ]
+  },
+  {
+   "nom": "viorne boule-de-neige (ou hortensia vert)",
+   "genre": "Viburnum",
+   "bouquets": 1,
+   "roles": [
+    [
+     "remplissage",
+     1
+    ]
+   ],
+   "latin": "Viburnum",
+   "couleurs": [
+    "vert tendre"
+   ]
+  },
+  {
+   "nom": "rice flower",
+   "genre": "Ozothamnus",
+   "bouquets": 1,
+   "roles": [
+    [
+     "remplissage",
+     1
+    ]
+   ],
+   "latin": "Ozothamnus",
+   "couleurs": [
+    "rose"
+   ]
+  },
+  {
+   "nom": "queue-de-lièvre teinte",
+   "genre": "Lagurus",
+   "bouquets": 1,
+   "roles": [
+    [
+     "accent",
+     1
+    ]
+   ],
+   "latin": "Lagurus",
+   "couleurs": [
+    "lilas pâle"
+   ]
+  },
+  {
+   "nom": "rameau en boutons",
+   "genre": "Chaenomeles",
+   "bouquets": 1,
+   "roles": [
+    [
+     "accent",
+     1
+    ]
+   ],
+   "latin": "Chaenomeles",
+   "couleurs": [
+    "beige rosé"
+   ]
+  },
+  {
+   "nom": "cinéraire maritime",
+   "genre": "Jacobaea",
+   "bouquets": 1,
+   "roles": [
+    [
+     "feuillage",
+     1
+    ]
+   ],
+   "latin": "Jacobaea",
+   "couleurs": [
+    "gris argent"
+   ]
+  },
+  {
+   "nom": "reine-marguerite / aster",
+   "genre": "Callistephus",
+   "bouquets": 1,
+   "roles": [
+    [
+     "accent",
+     1
+    ]
+   ],
+   "latin": "Callistephus",
+   "couleurs": [
+    "violet vif, cœur jaune"
+   ]
+  },
+  {
+   "nom": "pigamon",
+   "genre": "Thalictrum",
+   "bouquets": 1,
+   "roles": [
+    [
+     "ligne",
+     1
+    ]
+   ],
+   "latin": "Thalictrum",
+   "couleurs": [
+    "lilas, étamines crème"
+   ]
+  },
+  {
+   "nom": "cyclamen (fleur coupée)",
+   "genre": "Cyclamen",
+   "bouquets": 1,
+   "roles": [
+    [
+     "secondaire",
+     1
+    ],
+    [
+     "ligne",
+     1
+    ],
+    [
+     "accent",
+     1
+    ]
+   ],
+   "latin": "Cyclamen",
+   "couleurs": [
+    "magenta",
+    "rose",
+    "blanc"
+   ]
+  },
+  {
+   "nom": "kniphofia (tritoma)",
+   "genre": "Kniphofia",
+   "bouquets": 1,
+   "roles": [
+    [
+     "secondaire",
+     1
+    ]
+   ],
+   "latin": "Kniphofia",
+   "couleurs": [
+    "orange à jaune"
+   ]
+  },
+  {
+   "nom": "fritillaire de Perse",
+   "genre": "Fritillaria",
+   "bouquets": 1,
+   "roles": [
+    [
+     "secondaire",
+     1
+    ]
+   ],
+   "latin": "Fritillaria",
+   "couleurs": [
+    "prune bronzé"
+   ]
+  },
+  {
+   "nom": "ammi visnaga",
+   "genre": "Visnaga",
+   "bouquets": 1,
+   "roles": [
+    [
+     "remplissage",
+     1
+    ]
+   ],
+   "latin": "Visnaga",
+   "couleurs": [
+    "vert tendre et blanc"
+   ]
+  },
+  {
+   "nom": "petites feuilles vertes",
+   "genre": "Smilax",
+   "bouquets": 1,
+   "roles": [
+    [
+     "feuillage",
+     1
+    ]
+   ],
+   "latin": "Smilax",
+   "couleurs": [
+    "vert"
+   ]
+  },
+  {
+   "nom": "lis araignée",
+   "genre": "Hymenocallis",
+   "bouquets": 1,
+   "roles": [
+    [
+     "secondaire",
+     1
+    ]
+   ],
+   "latin": "Hymenocallis",
+   "couleurs": [
+    "blanc"
+   ]
+  },
+  {
+   "nom": "tamaris",
+   "genre": "Tamarix",
+   "bouquets": 1,
+   "roles": [
+    [
+     "remplissage",
+     1
+    ]
+   ],
+   "latin": "Tamarix",
+   "couleurs": [
+    "rose pâle"
+   ]
+  },
+  {
+   "nom": "bruyère / fleur de cire en boutons",
+   "genre": "Erica",
+   "bouquets": 1,
+   "roles": [
+    [
+     "ligne",
+     1
+    ]
+   ],
+   "latin": "Erica",
+   "couleurs": [
+    "rose-brun"
+   ]
+  },
+  {
+   "nom": "ricin (capsules)",
+   "genre": "Ricinus",
+   "bouquets": 1,
+   "roles": [
+    [
+     "accent",
+     1
+    ]
+   ],
+   "latin": "Ricinus",
+   "couleurs": [
+    "brun chocolat"
+   ]
+  },
+  {
+   "nom": "gousses de nigelle",
+   "genre": "Nigella",
+   "bouquets": 1,
+   "roles": [
+    [
+     "retombée",
+     1
+    ]
+   ],
+   "latin": "Nigella",
+   "couleurs": [
+    "vert olive, cloutées de perles argent"
+   ]
+  },
+  {
+   "nom": "chaînes de strass",
+   "genre": "chaines de",
+   "bouquets": 1,
+   "roles": [
+    [
+     "accent",
+     1
+    ]
+   ],
+   "latin": "",
+   "couleurs": [
+    "argent cristal"
+   ]
+  },
+  {
+   "nom": "ixora",
+   "genre": "Ixora",
+   "bouquets": 1,
+   "roles": [
+    [
+     "secondaire",
+     1
+    ]
+   ],
+   "latin": "Ixora",
+   "couleurs": [
+    "jaune d'or"
+   ]
+  },
+  {
+   "nom": "houx verticillé (baies)",
+   "genre": "Ilex",
+   "bouquets": 1,
+   "roles": [
+    [
+     "ligne",
+     1
+    ]
+   ],
+   "latin": "Ilex",
+   "couleurs": [
+    "baies rouges sur bois sombre"
+   ]
+  },
+  {
+   "nom": "bleuet",
+   "genre": "Centaurea",
+   "bouquets": 1,
+   "roles": [
+    [
+     "remplissage",
+     1
+    ]
+   ],
+   "latin": "Centaurea",
+   "couleurs": [
+    "bleu-violet"
+   ]
+  },
+  {
+   "nom": "fraisier des bois (tiges fruitées)",
+   "genre": "Fragaria",
+   "bouquets": 1,
+   "roles": [
+    [
+     "ligne",
+     1
+    ],
+    [
+     "accent",
+     1
+    ]
+   ],
+   "latin": "Fragaria",
+   "couleurs": [
+    "tiges rouge-vert, boutons et calices verts",
+    "rouge vif (≈70 %), vert-blanc et rosé (≈30 %)"
+   ]
+  },
+  {
+   "nom": "crocosmia (boutons)",
+   "genre": "Crocosmia",
+   "bouquets": 1,
+   "roles": [
+    [
+     "ligne",
+     1
+    ]
+   ],
+   "latin": "Crocosmia",
+   "couleurs": [
+    "boutons vert-orangé"
+   ]
+  },
+  {
+   "nom": "astrance",
+   "genre": "Astrantia",
+   "bouquets": 1,
+   "roles": [
+    [
+     "accent",
+     1
+    ]
+   ],
+   "latin": "Astrantia",
+   "couleurs": [
+    "rose pâle"
+   ]
+  },
+  {
+   "nom": "tournesol à bractées vertes",
+   "genre": "Helianthus",
+   "bouquets": 1,
+   "roles": [
+    [
+     "focale",
+     1
+    ]
+   ],
+   "latin": "Helianthus",
+   "couleurs": [
+    "cœur brun-orangé, bractées vert anis"
+   ]
+  },
+  {
+   "nom": "érémurus (lis des steppes)",
+   "genre": "Eremurus",
+   "bouquets": 1,
+   "roles": [
+    [
+     "ligne",
+     1
+    ]
+   ],
+   "latin": "Eremurus",
+   "couleurs": [
+    "jaune moutarde, en boutons"
+   ]
+  },
+  {
+   "nom": "élément velouté teint (massette ou plumeau)",
+   "genre": "Typha",
+   "bouquets": 1,
+   "roles": [
+    [
+     "accent",
+     1
+    ]
+   ],
+   "latin": "Typha",
+   "couleurs": [
+    "fuchsia électrique"
+   ]
+  },
+  {
+   "nom": "bananier ornemental (inflorescence)",
+   "genre": "Musa",
+   "bouquets": 1,
+   "roles": [
+    [
+     "ligne",
+     1
+    ]
+   ],
+   "latin": "Musa",
+   "couleurs": [
+    "rose-mauve"
+   ]
+  },
+  {
+   "nom": "fleur de cire",
+   "genre": "Chamelaucium",
+   "bouquets": 1,
+   "roles": [
+    [
+     "remplissage",
+     1
+    ]
+   ],
+   "latin": "Chamelaucium",
+   "couleurs": [
+    "pourpre foncé"
+   ]
+  },
+  {
+   "nom": "grandes feuilles sombres",
+   "genre": "Philodendron",
+   "bouquets": 1,
+   "roles": [
+    [
+     "feuillage",
+     1
+    ]
+   ],
+   "latin": "Philodendron",
+   "couleurs": [
+    "bordeaux-chocolat"
+   ]
+  },
+  {
+   "nom": "echeveria",
+   "genre": "Echeveria",
+   "bouquets": 1,
+   "roles": [
+    [
+     "accent",
+     1
+    ]
+   ],
+   "latin": "Echeveria",
+   "couleurs": [
+    "gris-pourpre"
+   ]
+  },
+  {
+   "nom": "hêtre stabilisé",
+   "genre": "Fagus",
+   "bouquets": 1,
+   "roles": [
+    [
+     "feuillage",
+     1
+    ]
+   ],
+   "latin": "Fagus",
+   "couleurs": [
+    "orange vif"
+   ]
+  },
+  {
+   "nom": "rudbeckia",
+   "genre": "Rudbeckia",
+   "bouquets": 1,
+   "roles": [
+    [
+     "remplissage",
+     1
+    ]
+   ],
+   "latin": "Rudbeckia",
+   "couleurs": [
+    "bordeaux à cœur noir"
+   ]
+  },
+  {
+   "nom": "oiseau de paradis",
+   "genre": "Strelitzia",
+   "bouquets": 1,
+   "roles": [
+    [
+     "focale",
+     1
+    ],
+    [
+     "feuillage",
+     1
+    ]
+   ],
+   "latin": "Strelitzia",
+   "couleurs": [
+    "orange vif, bractée vert-gris à bord rose",
+    "vert sombre"
+   ]
+  },
+  {
+   "nom": "pensée",
+   "genre": "Viola",
+   "bouquets": 1,
+   "roles": [
+    [
+     "focale",
+     1
+    ],
+    [
+     "secondaire",
+     1
+    ],
+    [
+     "remplissage",
+     1
+    ]
+   ],
+   "latin": "Viola",
+   "couleurs": [
+    "multicolore : jaune, violet, bleu, blanc, rouge, orange, bordeaux, crème, noir ; bicolores à macule",
+    "jaune et crème",
+    "bleu, lavande, blanc, jaune",
+    "vert moyen"
+   ]
+  },
+  {
+   "nom": "Freesia orange",
+   "genre": "Freesia",
+   "bouquets": 1,
+   "roles": [
+    [
+     "accent",
+     1
+    ],
+    [
+     "remplissage",
+     1
+    ]
+   ],
+   "latin": "Freesia",
+   "couleurs": [
+    "orange #e8601a, pointes pêche #efad83",
+    "violet #7a5ac0"
+   ]
+  },
+  {
+   "nom": "Iris de Hollande",
+   "genre": "Iris",
+   "bouquets": 1,
+   "roles": [
+    [
+     "secondaire",
+     1
+    ]
+   ],
+   "latin": "Iris",
+   "couleurs": [
+    "bleu-violet #4b2a9a, signal jaune #e8c030"
+   ]
+  },
+  {
+   "nom": "Bractée de broméliacée",
+   "genre": "Guzmania",
+   "bouquets": 1,
+   "roles": [
+    [
+     "accent",
+     1
+    ]
+   ],
+   "latin": "Guzmania",
+   "couleurs": [
+    "magenta #d90055"
+   ]
+  },
+  {
+   "nom": "Rameau ramifié rouge (feuillage teint)",
+   "genre": "Grevillea",
+   "bouquets": 1,
+   "roles": [
+    [
+     "ligne",
+     1
+    ]
+   ],
+   "latin": "Grevillea",
+   "couleurs": [
+    "rouge brique rosé #9d4e51"
+   ]
+  },
+  {
+   "nom": "Souci",
+   "genre": "Calendula",
+   "bouquets": 1,
+   "roles": [
+    [
+     "accent",
+     1
+    ]
+   ],
+   "latin": "Calendula",
+   "couleurs": [
+    "jaune orangé #f0a030"
+   ]
+  },
+  {
+   "nom": "Coréopsis / cosmos jaune",
+   "genre": "Coreopsis",
+   "bouquets": 1,
+   "roles": [
+    [
+     "accent",
+     1
+    ]
+   ],
+   "latin": "Coreopsis",
+   "couleurs": [
+    "jaune #f2c230"
+   ]
+  },
+  {
+   "nom": "Campanule",
+   "genre": "Campanula",
+   "bouquets": 1,
+   "roles": [
+    [
+     "secondaire",
+     1
+    ]
+   ],
+   "latin": "Campanula",
+   "couleurs": [
+    "lavande #b3a0dd"
+   ]
+  },
+  {
+   "nom": "Orchidée blanche tachetée",
+   "genre": "Odontoglossum",
+   "bouquets": 1,
+   "roles": [
+    [
+     "accent",
+     1
+    ]
+   ],
+   "latin": "Odontoglossum",
+   "couleurs": [
+    "blanc #f3f0ea à macules bordeaux #5a1a20"
+   ]
+  },
+  {
+   "nom": "Orchidée en grappe rouge",
+   "genre": "Renanthera",
+   "bouquets": 1,
+   "roles": [
+    [
+     "secondaire",
+     1
+    ]
+   ],
+   "latin": "Renanthera",
+   "couleurs": [
+    "rouge cramoisi #b0102e"
+   ]
+  },
+  {
+   "nom": "Rameaux fins brun-rouge",
+   "genre": "rameaux fins",
+   "bouquets": 1,
+   "roles": [
+    [
+     "ligne",
+     1
+    ]
+   ],
+   "latin": "indéterminé (Cornus ? hampe séchée ?)",
+   "couleurs": [
+    "brun rouge #6a3a30"
+   ]
+  },
+  {
+   "nom": "Caladium",
+   "genre": "Caladium",
+   "bouquets": 1,
+   "roles": [
+    [
+     "feuillage",
+     1
+    ]
+   ],
+   "latin": "Caladium",
+   "couleurs": [
+    "rose-rouge veiné bordeaux #a85a64"
+   ]
+  },
+  {
+   "nom": "Feuille sombre (cordyline ou aspidistra teinte ?)",
+   "genre": "Cordyline",
+   "bouquets": 1,
+   "roles": [
+    [
+     "ligne",
+     1
+    ]
+   ],
+   "latin": "Cordyline",
+   "couleurs": [
+    "brun-noir #2a2220"
+   ]
+  },
+  {
+   "nom": "pin à longues aiguilles",
+   "genre": "Pinus",
+   "bouquets": 1,
+   "roles": [
+    [
+     "feuillage",
+     1
+    ]
+   ],
+   "latin": "Pinus",
+   "couleurs": [
+    "vert pin"
+   ]
+  },
+  {
+   "nom": "protéa (bouton)",
+   "genre": "Protea",
+   "bouquets": 1,
+   "roles": [
+    [
+     "secondaire",
+     1
+    ]
+   ],
+   "latin": "Protea",
+   "couleurs": [
+    "rose argenté"
+   ]
+  },
+  {
+   "nom": "solidago (verge d'or)",
+   "genre": "Solidago",
+   "bouquets": 1,
+   "roles": [
+    [
+     "remplissage",
+     1
+    ]
+   ],
+   "latin": "Solidago",
+   "couleurs": [
+    "jaune d'or"
+   ]
+  },
+  {
+   "nom": "feuillage à folioles ovales",
+   "genre": "Robinia",
+   "bouquets": 1,
+   "roles": [
+    [
+     "feuillage",
+     1
+    ]
+   ],
+   "latin": "Robinia",
+   "couleurs": [
+    "vert moyen"
+   ]
+  }
+ ],
+ "palette_calc": {
+  "part_fonce_moy": 0.269,
+  "part_chaude_moy": 0.884,
+  "type": [
+   [
+    "analogue",
+    32,
+    42
+   ],
+   [
+    "multicolore",
+    26,
+    34
+   ],
+   [
+    "tonale",
+    18,
+    24
+   ]
+  ]
+ },
+ "themes_regles": [
+  [
+   "espace négatif / air",
+   112
+  ],
+  [
+   "lignes qui dépassent",
+   110
+  ],
+  [
+   "clair/foncé, profondeur",
+   92
+  ],
+  [
+   "contenant / socle",
+   64
+  ],
+  [
+   "peu de feuillage",
+   60
+  ],
+  [
+   "retombée / cascade",
+   43
+  ],
+  [
+   "orientations variées",
+   34
+  ],
+  [
+   "palette tonale + accent",
+   31
+  ],
+  [
+   "nombres impairs",
+   25
+  ],
+  [
+   "asymétrie",
+   11
+  ]
+ ],
+ "nb_regles": 384
+}

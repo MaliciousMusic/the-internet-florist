@@ -1,0 +1,1427 @@
+[
+ {
+  "id": "boule-inox-brossee",
+  "refs": [
+   64
+  ],
+  "n": "Boule en inox brossé",
+  "m": "inox brossé",
+  "family": "boule",
+  "shape": "lathe",
+  "h_cm": 15.4,
+  "prof": [
+   [
+    0,
+    3.0
+   ],
+   [
+    0.15,
+    3.3
+   ],
+   [
+    1.0,
+    5.0
+   ],
+   [
+    1.9,
+    6.0
+   ],
+   [
+    2.8,
+    6.9
+   ],
+   [
+    3.7,
+    7.45
+   ],
+   [
+    4.6,
+    7.85
+   ],
+   [
+    5.5,
+    8.15
+   ],
+   [
+    6.4,
+    8.45
+   ],
+   [
+    8.0,
+    8.6
+   ],
+   [
+    10.0,
+    8.35
+   ],
+   [
+    11.8,
+    7.7
+   ],
+   [
+    13.6,
+    6.5
+   ],
+   [
+    14.5,
+    5.6
+   ],
+   [
+    15.1,
+    4.8
+   ],
+   [
+    15.4,
+    4.35
+   ]
+  ],
+  "mouth_cm": 4.1,
+  "lip": "thin",
+  "lip_cm": 0.25,
+  "mat": "metal",
+  "finish": "brushed",
+  "col": "#a9a59e",
+  "col2": "#2b2621",
+  "tex": [
+   "brushed"
+  ],
+  "tex_notes": "Fine lathe-spun brushing: concentric horizontal hairlines all around the ball (1 px streaks every 2-3 px at render scale, opacity ~0.08), no vertical scratches. Satin sheen, reflections blurred, never mirror-sharp.",
+  "handles": null,
+  "stand": {
+   "type": "counter",
+   "w_cm": 140,
+   "h_cm": 90,
+   "col": "#79716a",
+   "mat": "inox brossé",
+   "notes": "Kitchen-island counter: brushed stainless-steel worktop (lit #88857b, shade #6e665c, a cool silvery glare #c1c2b9 on the right where the window light hits), thin square steel front edge about 1.5 cm, the front face clad in tall vertical glossy tiles about 6 cm wide in mixed deep oxblood, chocolate and near-black (#4a1a10 / #2e0a04 / #1b1210 in this dim light). The ball stands about 25 cm back from the front edge. Linen curtain and pale greige plaster wall (#aa9c91) behind."
+  },
+  "surface": "none",
+  "glass": null,
+  "outline": null,
+  "price_eur": 49,
+  "why": "La sphère d'inox brossé des cuisines d'architecte, qui renvoie la lumière des fleurs en reflets voilés.",
+  "details": "Measured: max diameter 17.2 cm at 8.0 cm height (sphere radius 8.6 cm centred 8 cm above the base), flat base disc ~6.4 cm diameter: a sphere truncated at both ends. The opening and lip are completely hidden by flowers (steel visible up to 13.7 cm on the left); mouth radius ~4.1 cm and total height 15.4 cm are inferred from the sphere curvature and typical steel ball vases (uncertain by +-1 cm). Scale from garden-rose heads ~9.5 cm. Reflections are vertical bands following the meridians (narrowing toward top and bottom): left silhouette edge a thin dark warm rim #695e54; then warm light grey #9a8e81; a narrow bright highlight band #d2c7c0 at 18 % of the width from the left edge; a cool blue-grey band #80818d at 26 %; a second broad cream highlight #cfcab7 at 38-40 %; the tone then drops fast through #776b5b (47 %) to deep warm charcoal #282420-#3c3834 over the whole right half, with a faint lighter band at ~77 % and a very thin pale rim light along the right edge in the upper half (window light). The lower fifth of the ball darkens by ~30 % (it reflects the steel worktop). A blurred dark reflection of the ball (#1e1d1a, ~2 cm tall) lies on the worktop right under it, plus a soft contact line. Bouquet: a large asymmetric arrangement (anthurium, calla, nerine, garden roses, sweet peas, hanging amaranthus) springs from the mouth and spills over both sides down to the worktop; flowers sit right on the lip."
+ },
+ {
+  "id": "calice-souffle-col-tube",
+  "refs": [
+   66
+  ],
+  "n": "Calice soufflé à col",
+  "m": "verre soufflé bleuté",
+  "family": "calice",
+  "shape": "lathe",
+  "h_cm": 37.0,
+  "prof": [
+   [
+    0,
+    6.55
+   ],
+   [
+    0.6,
+    6.45
+   ],
+   [
+    1.35,
+    5.4
+   ],
+   [
+    2.1,
+    4.3
+   ],
+   [
+    2.85,
+    2.8
+   ],
+   [
+    3.4,
+    1.3
+   ],
+   [
+    4.4,
+    1.15
+   ],
+   [
+    5.4,
+    1.85
+   ],
+   [
+    6.4,
+    2.0
+   ],
+   [
+    7.6,
+    1.2
+   ],
+   [
+    8.6,
+    1.8
+   ],
+   [
+    10.0,
+    3.1
+   ],
+   [
+    11.85,
+    4.3
+   ],
+   [
+    14.85,
+    5.5
+   ],
+   [
+    18.6,
+    6.1
+   ],
+   [
+    24.6,
+    6.35
+   ],
+   [
+    25.5,
+    5.9
+   ],
+   [
+    25.9,
+    3.0
+   ],
+   [
+    26.0,
+    1.7
+   ],
+   [
+    33.6,
+    1.7
+   ],
+   [
+    35.5,
+    2.1
+   ],
+   [
+    37.0,
+    2.55
+   ]
+  ],
+  "mouth_cm": 2.25,
+  "lip": "flared",
+  "lip_cm": 0.3,
+  "mat": "glass",
+  "finish": "blown",
+  "col": "#a9c2cf",
+  "col2": "#7f9fb2",
+  "tex": [],
+  "tex_notes": "",
+  "handles": null,
+  "stand": null,
+  "surface": "noir",
+  "glass": {
+   "tint": "#9fbccb",
+   "opacity": 0.22,
+   "water_cm": 33.6,
+   "extra": "Live goldfish (fancy fantail, orange-red #e8742a with pale gold fins, ~9 cm with tail) swimming inside the body at mid height, tail fanned toward the right wall. Water fills the whole body and rises into the neck tube up to ~33.6 cm (a fine horizontal meniscus line where the neck starts to flare). A small round air bubble ~0.9 cm is trapped under the flat shoulder just right of the axis, with a bright white specular dot. The thick glass of the knop and domed foot reads pale aqua-blue (#7f9fb2 over the black table); the thin body wall is almost colourless with a darker grey edge line ~0.6 cm wide on the left silhouette (#5e5e5d)."
+  },
+  "outline": null,
+  "price_eur": 89,
+  "why": "Un calice de verre soufflé à long col où nage un poisson rouge, entre cabinet de curiosités et vase d'apothicaire.",
+  "details": "From the bottom: a wide domed foot (diameter 13.1 cm, rounded rim ~0.6 cm thick, dome rising to 3.2 cm), a short stem (diameter 2.3 cm), a ball knop (diameter 4 cm at 6 cm height), a waist (2.4 cm) at 7.6 cm, then a tall U-shaped body: narrow rounded bottom, sides almost straight and slightly tapering downward, max diameter 12.7 cm from 18 to 25 cm height, a nearly flat shoulder with tight rounded corners (radius ~0.8 cm) at 25.5-26 cm, and a narrow cylindrical neck tube (diameter 3.4 cm) rising 7.6 cm, its last 3.4 cm flaring gently to a 5.1 cm lip at 37 cm (partly hidden by a pink gloriosa petal). Along the right side of the neck runs a beaded/twisted glass cane (a vertical chain of ~8 small beads, 0.7 cm each) from 29 to 35 cm; it may also be a stem with clinging air bubbles seen through the water, so render it subtle. Hand-blown asymmetry: the body axis sits ~0.8 cm right of the foot and neck axis. Scale from the white anthurium spathe (~13 cm) and the goldfish. Surface: a round matt black table (#222429) seen slightly from above, its far edge a soft curve behind the foot; pale powder-blue backdrop (#93a9b6 top to #a3a7a7 behind the vase). The stems of the huge bouquet (dark 'Black Out'-type lilies, gloriosa, white anthurium, wild carrot) all enter the narrow neck tube; the bouquet is far wider than the vessel."
+ },
+ {
+  "id": "calice-etain",
+  "refs": [
+   67
+  ],
+  "n": "Calice en étain",
+  "m": "étain satiné",
+  "family": "calice",
+  "shape": "lathe",
+  "h_cm": 16.5,
+  "prof": [
+   [
+    0,
+    3.8
+   ],
+   [
+    0.4,
+    3.8
+   ],
+   [
+    0.5,
+    3.35
+   ],
+   [
+    0.9,
+    3.25
+   ],
+   [
+    1.5,
+    2.5
+   ],
+   [
+    2.2,
+    1.7
+   ],
+   [
+    2.65,
+    1.5
+   ],
+   [
+    3.3,
+    1.85
+   ],
+   [
+    4.0,
+    1.85
+   ],
+   [
+    4.3,
+    1.65
+   ],
+   [
+    4.55,
+    1.92
+   ],
+   [
+    4.85,
+    1.92
+   ],
+   [
+    5.0,
+    1.95
+   ],
+   [
+    5.2,
+    2.25
+   ],
+   [
+    5.55,
+    2.75
+   ],
+   [
+    5.9,
+    3.05
+   ],
+   [
+    6.5,
+    3.2
+   ],
+   [
+    10.8,
+    3.22
+   ],
+   [
+    14.5,
+    3.28
+   ],
+   [
+    16.2,
+    3.37
+   ],
+   [
+    16.5,
+    3.38
+   ]
+  ],
+  "mouth_cm": 3.15,
+  "lip": "thin",
+  "lip_cm": 0.2,
+  "mat": "metal",
+  "finish": "polished",
+  "col": "#9a948e",
+  "col2": "#3e3632",
+  "tex": [],
+  "tex_notes": "",
+  "handles": null,
+  "stand": {
+   "type": "console",
+   "w_cm": 160,
+   "h_cm": 50,
+   "col": "#2f2b2c",
+   "mat": "chêne teinté noir",
+   "notes": "Low black-stained oak media sideboard with a faint wood grain (top #322f31, lit patches #514740), open shelf below with a woven rattan basket at the far left; the top's front edge reads as a lighter grey band (#68615e). A vintage speaker with a beige grille cloth and a black leather-look case stands behind on the left. Warm taupe plaster wall (#605347)."
+  },
+  "surface": "noir",
+  "glass": null,
+  "outline": null,
+  "price_eur": 55,
+  "why": "Le calice d'étain des tables d'antan, tourné à l'ancienne avec ses bagues et son pied à gradins.",
+  "details": "A trophy-like goblet: a tall straight cylindrical cup (diameter 6.4 cm at the base of the cup, flaring very slightly to 6.75 cm at the lip) with a tightly rounded bottom (from 5.0 to 6.5 cm height), a turned stem made of a thin collar ring (diameter 3.85 cm at 4.7 cm), a shallow groove, a fat baluster knop with two soft rings (diameter 3.7 cm, 3.3-4.0 cm height), a narrow waist (3.0 cm at 2.65 cm) and a stepped foot: a domed upper step (diameter 6.5 cm) on a flat base disc (diameter 7.6 cm, 0.4 cm thick) with a crisp highlight on each step edge. Scale from the tiger-lily flowers (~8.5 cm across). Satin pewter, soft blurred reflections (not mirror): on the cup, from left to right, a thin warm edge line #665a57, a narrow bright vertical highlight #b7a79f at 7 % of the width, a dark band #4a403b at 20-25 %, a broad soft mid-highlight #7e6c65 at 40-48 %, then a slow fall through #5c5049 and #463c37 to a near-black right edge #1b1716. The foot catches two sharp white highlights on its steps (front-left), the stem rings show thin bright rims. Contact: a dark crisp shadow of the lilies falls on the sideboard to the right. Bouquet: a light, airy cascade of tiger lilies (Lilium lancifolium) with buds, flowers hanging low over the lip on both sides."
+ },
+ {
+  "id": "cylindre-verre-clair",
+  "refs": [
+   68
+  ],
+  "n": "Cylindre de verre",
+  "m": "verre clair épais",
+  "family": "cylindre",
+  "shape": "lathe",
+  "h_cm": 14.5,
+  "prof": [
+   [
+    0,
+    6.55
+   ],
+   [
+    0.2,
+    6.75
+   ],
+   [
+    1.0,
+    6.75
+   ],
+   [
+    2.0,
+    6.75
+   ],
+   [
+    4.0,
+    6.75
+   ],
+   [
+    6.0,
+    6.75
+   ],
+   [
+    8.0,
+    6.75
+   ],
+   [
+    10.0,
+    6.75
+   ],
+   [
+    12.0,
+    6.75
+   ],
+   [
+    14.3,
+    6.75
+   ],
+   [
+    14.5,
+    6.7
+   ]
+  ],
+  "mouth_cm": 6.25,
+  "lip": "plain",
+  "lip_cm": 0.5,
+  "mat": "glass",
+  "finish": "clear",
+  "col": "#dfe6e1",
+  "col2": "#7f7873",
+  "tex": [],
+  "tex_notes": "",
+  "handles": null,
+  "stand": null,
+  "surface": "marbre",
+  "glass": {
+   "tint": "#dfe8e2",
+   "opacity": 0.12,
+   "water_cm": 9.5,
+   "extra": "Thick heavy base about 1.8 cm, which catches bright broken white highlights along its front edge; through the wall the stems are visible, magnified by the water: green orchid and allium stems and brown amaranthus stems, crossing slightly. Water level not visible (hidden), assume about two thirds."
+  },
+  "outline": null,
+  "price_eur": 25,
+  "why": "Le cylindre de verre épais des fleuristes, qui s'efface pour laisser cascader l'amarante.",
+  "details": "Mostly hidden behind long hanging bordeaux amaranthus chains: only the thick base (left lower corner) and a vertical strip of the right wall are visible, so the diameter (~13.5 cm, measured between the base corner and the right wall) is reliable but the height is inferred (rim hidden under the lowest phalaenopsis; glass visible up to at least 13 cm): uncertain, 14-18 cm. Scale from phalaenopsis flowers (~9 cm) and the anthurium. Surface: a beige travertine table top (#cec4ba lit, #c1b3a7 mid, darker #a19484 in front-left shade) with fine horizontal veins and pores; matt off-white wall (#d6d8da); a large expressionist painting in rose, wine and terracotta tones hangs behind the bouquet. The amaranthus pools on the travertine in front of the vase, in loose loops."
+ },
+ {
+  "id": "console-marbre-laiton",
+  "refs": [
+   69
+  ],
+  "n": "Console marbre et laiton",
+  "m": "marbre blanc, laiton",
+  "family": "none",
+  "shape": "lathe",
+  "h_cm": 6,
+  "prof": [],
+  "mouth_cm": null,
+  "lip": "plain",
+  "lip_cm": 0,
+  "mat": "stone",
+  "finish": "marble",
+  "col": "#e4e0d9",
+  "col2": "#b08d5c",
+  "tex": [
+   "marble"
+  ],
+  "tex_notes": "Marble top: warm white with very soft diffuse grey clouding and a few faint thin grey veins running diagonally; honed, low sheen.",
+  "handles": null,
+  "stand": {
+   "type": "console",
+   "w_cm": 90,
+   "h_cm": 80,
+   "col": "#e4e0d9",
+   "mat": "marbre blanc et laiton",
+   "notes": "Slim console table: a racetrack-shaped (straight sides, fully rounded ends) white marble top about 35 cm deep and 2 cm thick (front edge a pale band #b2aba5 in this light), resting on a thin brushed-brass frame: a square-section brass apron rail ~1 cm just under the top edge and very slender square brass legs (~1.5 cm) set in from the rounded end; at the far left a brass end frame rises above the top like a towel-rail upright. Brass reads #ae8c5f lit, #63523e in shade."
+  },
+  "surface": "marbre",
+  "glass": null,
+  "outline": null,
+  "price_eur": 0,
+  "why": "Une composition posée à même le marbre, sans vase apparent : les boucles d'herbe d'ours cachent le contenant.",
+  "details": "The container is completely hidden: a dense mound of looped bear grass (Xerophyllum) and fanned leaves sits directly on the marble near the right rounded end of the console, so the mechanic is a low dish or pin-frog no taller than ~6 cm (inferred, not visible). Bouquet: dark wine anthuriums on long stems radiating up to 75 cm, wine-purple phalaenopsis sprays cascading over the front edge of the marble, red caladium leaves, all bunched low and wide. Scale ~0.1 cm/px from anthurium spathes (~13 cm). Background: dark walnut wall panelling with raised moulded panels (#2e1e0f to #412c1b, varnish sheen #888b90 on the upper left panel), dim warm light from the front-left; the marble top is the brightest surface in the frame."
+ },
+ {
+  "id": "petite-boule-taupe",
+  "refs": [
+   70
+  ],
+  "n": "Petite boule taupe",
+  "m": "céramique mate",
+  "family": "boule",
+  "shape": "lathe",
+  "h_cm": 8.6,
+  "prof": [
+   [
+    0,
+    2.1
+   ],
+   [
+    0.25,
+    2.2
+   ],
+   [
+    0.45,
+    2.25
+   ],
+   [
+    0.72,
+    2.65
+   ],
+   [
+    1.0,
+    3.0
+   ],
+   [
+    1.26,
+    3.3
+   ],
+   [
+    1.53,
+    3.55
+   ],
+   [
+    1.8,
+    3.78
+   ],
+   [
+    2.34,
+    4.14
+   ],
+   [
+    2.88,
+    4.41
+   ],
+   [
+    3.42,
+    4.6
+   ],
+   [
+    4.23,
+    4.8
+   ],
+   [
+    5.04,
+    4.8
+   ],
+   [
+    5.85,
+    4.75
+   ],
+   [
+    6.5,
+    4.56
+   ],
+   [
+    7.5,
+    4.1
+   ],
+   [
+    8.2,
+    3.45
+   ],
+   [
+    8.6,
+    3.2
+   ]
+  ],
+  "mouth_cm": 2.85,
+  "lip": "plain",
+  "lip_cm": 0.35,
+  "mat": "matte",
+  "finish": "",
+  "col": "#b09a80",
+  "col2": "#3a2e22",
+  "tex": [],
+  "tex_notes": "",
+  "handles": null,
+  "stand": null,
+  "surface": "noir",
+  "glass": null,
+  "outline": null,
+  "price_eur": 29,
+  "why": "Une petite boule de céramique sable, mate et douce, qui disparaît sous un bouquet spectaculaire.",
+  "details": "Measured: max diameter 9.6 cm held from 4.2 to at least 5.9 cm height (slightly ovoid, fuller in its upper half), a smooth rounded belly narrowing to a small recessed foot ring 4.3 cm wide and ~0.25 cm high (a thin slightly lighter edge line at the base). The upper part and the rim are hidden under hanging cymbidiums, eryngium and gloriosa: rim height 8.6 cm and opening radius ~3.2 cm (outer) are inferred from the curvature, uncertain by +-1 cm. Scale ~0.09 cm/px from the anthurium spathes and gloriosa. Low-key studio photo: the vase sits in the shadow of the bouquet, lit only on its right flank (#4e3e2f in the photo, i.e. a warm sand-taupe matt glaze in neutral light), the left side falls to #2c251b; no shine at all, very soft gradient. Surface and backdrop: seamless matt black (floor #232121, wall #1c191a), the floor/wall line barely visible just behind the vase. A crisp soft-edged shadow of the vase and bouquet falls to the lower left on the floor. The bouquet (about 65 cm tall, very vertical: dark cordyline leaf, purple and red anthuriums, gloriosa, cymbidium, eryngium, sweet peas, vanda) rests directly on the rim, its lowest flowers covering the shoulder."
+ },
+ {
+  "id": "jarre-gres-chamotte",
+  "refs": [
+   74
+  ],
+  "n": "Jarre en grès chamotté",
+  "m": "grès chamotté brut",
+  "family": "jarre",
+  "shape": "lathe",
+  "h_cm": 21.0,
+  "prof": [
+   [
+    0,
+    4.75
+   ],
+   [
+    0.3,
+    4.85
+   ],
+   [
+    1.1,
+    5.3
+   ],
+   [
+    1.9,
+    5.55
+   ],
+   [
+    2.7,
+    5.85
+   ],
+   [
+    3.5,
+    5.95
+   ],
+   [
+    4.3,
+    6.2
+   ],
+   [
+    5.1,
+    6.55
+   ],
+   [
+    5.9,
+    6.8
+   ],
+   [
+    6.7,
+    7.1
+   ],
+   [
+    8.3,
+    7.4
+   ],
+   [
+    9.9,
+    7.6
+   ],
+   [
+    11.5,
+    7.75
+   ],
+   [
+    13.1,
+    7.8
+   ],
+   [
+    14.7,
+    7.4
+   ],
+   [
+    15.5,
+    7.1
+   ],
+   [
+    16.3,
+    6.75
+   ],
+   [
+    17.1,
+    6.5
+   ],
+   [
+    18.3,
+    5.8
+   ],
+   [
+    19.3,
+    5.1
+   ],
+   [
+    20.3,
+    4.6
+   ],
+   [
+    21.0,
+    4.5
+   ]
+  ],
+  "mouth_cm": 3.9,
+  "lip": "plain",
+  "lip_cm": 0.6,
+  "mat": "matte",
+  "finish": "",
+  "col": "#b27c55",
+  "col2": "#4a2a18",
+  "tex": [
+   "speck",
+   "grooves"
+  ],
+  "tex_notes": "Raw chamotte stoneware, unglazed: dense irregular dark brown blotches and speckles (0.2-1 cm, #4a2a18) and paler sandy flecks (#d9b48c) over an ochre-terracotta body; shallow horizontal throwing rings every 1.5-2 cm, most visible in the lower half, with one pronounced ridge at ~3.2 cm height; rough, slightly pitted, completely matte.",
+  "handles": null,
+  "stand": {
+   "type": "stand",
+   "w_cm": 47,
+   "h_cm": 65,
+   "col": "#151110",
+   "mat": "bois laqué noir",
+   "notes": "Round black pedestal side table (gueridon): a 47 cm disc top about 3.5 cm thick with a softly rounded edge, satin black (top surface reflects the warm wall as #413428-#524c49, the edge reads #130d0b), on a thick round black column (~14 cm) topped by a slightly wider collar block just under the top. The jar stands a little left of the table centre."
+  },
+  "surface": "noir",
+  "glass": null,
+  "outline": null,
+  "price_eur": 65,
+  "why": "Une jarre de grès chamotté tournée à la main, brute et mouchetée comme une poterie de fouille.",
+  "details": "Measured: an ovoid jar with a high belly: base 9.5 cm wide on a flat bottom with a slightly rounded edge, flanks widening steadily to a max diameter of 15.6 cm at 11.5-13 cm height (62 % of the height), then a rounded shoulder closing to a ~9 cm opening at 21 cm. The rim is hidden behind lily petals and gloriosa: its exact form (short collar or plain cut) and height are inferred, +-1 cm. Scale ~0.1 cm/px from the double lilies (~16 cm) and gloriosa (~10 cm). Light: low warm sun from the right: the right flank glows tan-orange (#c68d67), the centre and left fall to deep reddish brown (#5c2917 to #381c0f); the throwing rings catch thin light lines on the lit side. Warm taupe plaster wall (#7c644f lit, #483a2f in the corner shadow on the right). Bouquet: pink double lilies ('Roselily'-type) piled high to the right, gloriosa in orange, red and yellow on long arching stems to the left, a few green leaves; the lowest lily hangs over the rim and covers the upper right of the jar."
+ },
+ {
+  "id": "boule-cotelee-bleue",
+  "refs": [
+   76
+  ],
+  "n": "Boule côtelée bleue",
+  "m": "faïence éclaboussée",
+  "family": "boule",
+  "shape": "lathe",
+  "h_cm": 23.0,
+  "prof": [
+   [
+    0,
+    4.1
+   ],
+   [
+    0.54,
+    4.95
+   ],
+   [
+    1.08,
+    5.67
+   ],
+   [
+    1.62,
+    6.12
+   ],
+   [
+    2.7,
+    6.84
+   ],
+   [
+    3.78,
+    7.65
+   ],
+   [
+    4.86,
+    8.6
+   ],
+   [
+    5.94,
+    8.9
+   ],
+   [
+    7.0,
+    9.8
+   ],
+   [
+    8.1,
+    10.15
+   ],
+   [
+    9.2,
+    10.2
+   ],
+   [
+    10.3,
+    10.55
+   ],
+   [
+    12.3,
+    11.1
+   ],
+   [
+    14.4,
+    11.45
+   ],
+   [
+    16.5,
+    11.1
+   ],
+   [
+    18.5,
+    10.2
+   ],
+   [
+    20.5,
+    8.7
+   ],
+   [
+    21.8,
+    7.3
+   ],
+   [
+    22.6,
+    6.5
+   ],
+   [
+    23.0,
+    6.3
+   ]
+  ],
+  "mouth_cm": 5.7,
+  "lip": "lobed",
+  "lip_cm": 0.6,
+  "mat": "satin",
+  "finish": "",
+  "col": "#6f8fcf",
+  "col2": "#f1f3f5",
+  "tex": [
+   "ribs",
+   "speck",
+   "painted"
+  ],
+  "tex_notes": "7 soft vertical lobes (melon/pumpkin shape): each groove between two lobes carries a thin hand-drawn white line (0.3-0.4 cm wide, slightly wavy and a little slanted, converging toward the base); seen from the front, the two central lines sit at about +-26 deg of the axis. Glaze: light cornflower-cobalt blue sponged/splattered with irregular white flecks and clouds (white covers ~25-30 % of the surface, flecks 0.2-1.2 cm, deep cobalt #2f55a8 pooling between them), soft satin sheen, slightly uneven hand-made surface; the lobes give gentle bulges on the silhouette.",
+  "handles": null,
+  "stand": {
+   "type": "column",
+   "w_cm": 42,
+   "h_cm": 90,
+   "col": "#e6e0d6",
+   "mat": "plâtre blanc",
+   "notes": "Square white plinth (matt off-white, cast plaster or lacquered wood), seen slightly from above: its top is a light warm white (#d2cbc3 lit), the front face shades from warm grey (#554b42) on the left to cream (#e9e3d3) on the right where the window light hits. The vase stands centred, slightly to the back."
+  },
+  "surface": "blanc",
+  "glass": null,
+  "outline": null,
+  "price_eur": 85,
+  "why": "Une boule côtelée en faïence bleu bleuet éclaboussée de blanc, chaque côte soulignée d'un trait peint à la main.",
+  "details": "Measured on the lower half (centre axis reliable): flat base ~8.2 cm wide (seen from ~15 deg above, the base front dips 1 cm below the side points), flanks widening quickly to 20 cm at 7 cm height, max diameter ~22.9 cm at ~14 cm height (left flank, partly behind a clematis), then the shoulder rounds in. The shoulder above 16 cm, the neck and the rim are hidden by roses, clematis and delphinium: rim height ~23 cm, opening ~11.5 cm and a lobed rim are inferred (uncertain +-1.5 cm). Scale ~0.09 cm/px from the plinth width and the roses/anthuriums. Light from a window on the right: the right flank is bright (#809dc6), the front mid (#40536e), the left flank deep navy-grey (#393b44) in shadow; white lines stay visible even in the shadow. A soft-edged cast shadow falls to the left on the plinth top. Background: warm greige plaster wall (#ac9f8e left, #d1c9b8 right), a wall corner/pilaster on the right. Bouquet: tall and airy, very wide (allium, delphinium, hydrangea, clematis, lavender roses, lime anthuriums, fritillaria-like bells), flowers resting on and hanging over the rim."
+ },
+ {
+  "id": "soliflore-balustre-noir",
+  "refs": [
+   77
+  ],
+  "n": "Soliflore balustre noir",
+  "m": "verre noir laqué",
+  "family": "vase",
+  "shape": "lathe",
+  "h_cm": 21.5,
+  "prof": [
+   [
+    0,
+    5.9
+   ],
+   [
+    0.35,
+    5.85
+   ],
+   [
+    0.6,
+    4.6
+   ],
+   [
+    1.2,
+    2.2
+   ],
+   [
+    2.2,
+    1.3
+   ],
+   [
+    2.96,
+    1.6
+   ],
+   [
+    3.76,
+    2.12
+   ],
+   [
+    4.56,
+    2.0
+   ],
+   [
+    5.36,
+    1.32
+   ],
+   [
+    5.76,
+    1.08
+   ],
+   [
+    6.2,
+    1.6
+   ],
+   [
+    6.96,
+    3.48
+   ],
+   [
+    7.76,
+    4.4
+   ],
+   [
+    8.56,
+    4.92
+   ],
+   [
+    10.16,
+    5.32
+   ],
+   [
+    11.36,
+    5.16
+   ],
+   [
+    12.56,
+    4.68
+   ],
+   [
+    13.76,
+    3.4
+   ],
+   [
+    14.4,
+    2.3
+   ],
+   [
+    15.6,
+    1.64
+   ],
+   [
+    18.96,
+    2.48
+   ],
+   [
+    21.5,
+    3.2
+   ]
+  ],
+  "mouth_cm": 2.95,
+  "lip": "flared",
+  "lip_cm": 0.2,
+  "mat": "gloss",
+  "finish": "",
+  "col": "#141214",
+  "col2": "#ffffff",
+  "tex": [],
+  "tex_notes": "",
+  "handles": null,
+  "stand": null,
+  "surface": "blanc",
+  "glass": null,
+  "outline": null,
+  "price_eur": 39,
+  "why": "Un soliflore balustre en verre noir brillant, silhouette de flacon ancien sur un pied festonné.",
+  "details": "Opaque jet-black glass, mirror gloss. From the bottom: a thin round foot disc (diameter 11.8 cm, ~0.35 cm thick) with a softly ruffled/scalloped edge (about 10 shallow waves around), a low cone rising to a short stem (diameter 2.6 cm), a squat knop (diameter 4.2 cm at 3.5-4 cm), a pinched waist (2.2 cm at 5.8 cm), then an onion-shaped belly (max diameter 10.6 cm at 10.2 cm height, rounder at the bottom, sloping shoulder), a narrow neck (diameter 3.3 cm at 15.6 cm) opening into a long trumpet that flares to a 6.4 cm lip at 21.5 cm (the rim touches the lowest lily petals). Scale ~0.08 cm/px from the lilies (~17 cm). Reflections: the body is near-black #0e0d0f; a crisp bright window reflection (white #ffffff core, soft-edged, ~1.2 x 1.5 cm) on the belly right of centre at 60 % of the belly height, a few small secondary specks along its right edge, a long thin vertical highlight line down the centre of the neck, a faint grey sheen (#313131) on the foot top; the left flank of the belly shows a dim grey rim light. Surface: a white painted side table with a chamfered front corner (top #c4bbc2 in shade, edge #dde5ec), warm off-white wall (#c6bcb1). Fallen petals of pink and dark wine lilies lie on the table around the foot. Bouquet: pink and dark burgundy lilies held low on the trumpet mouth, a dried wild-carrot head, sanguisorba buds on long thin wiry stems radiating out."
+ },
+ {
+  "id": "coupe-pied-blanche-ciselee",
+  "refs": [
+   78
+  ],
+  "n": "Vase sur pied ciselé",
+  "m": "céramique mate",
+  "family": "vase",
+  "shape": "lathe",
+  "h_cm": 16.4,
+  "prof": [
+   [
+    0,
+    4.6
+   ],
+   [
+    0.25,
+    4.76
+   ],
+   [
+    1.68,
+    4.76
+   ],
+   [
+    2.64,
+    4.52
+   ],
+   [
+    3.6,
+    4.44
+   ],
+   [
+    4.08,
+    4.76
+   ],
+   [
+    4.56,
+    5.4
+   ],
+   [
+    5.04,
+    5.96
+   ],
+   [
+    5.52,
+    6.28
+   ],
+   [
+    6.0,
+    6.52
+   ],
+   [
+    6.48,
+    6.64
+   ],
+   [
+    7.44,
+    6.88
+   ],
+   [
+    8.4,
+    7.0
+   ],
+   [
+    10.8,
+    6.95
+   ],
+   [
+    12.7,
+    7.0
+   ],
+   [
+    15.2,
+    6.9
+   ],
+   [
+    16.4,
+    6.7
+   ]
+  ],
+  "mouth_cm": 6.1,
+  "lip": "plain",
+  "lip_cm": 0.6,
+  "mat": "matte",
+  "finish": "",
+  "col": "#e8e6e3",
+  "col2": "#8a8580",
+  "tex": [
+   "relief",
+   "hammered"
+  ],
+  "tex_notes": "Hand-carved scallop facets all over the bowl and the foot: shallow oval dimples ~1.6 cm wide x 0.85 cm tall, in staggered horizontal rows (brick bond, each row offset by half a facet), about 27 facets around the circumference and ~19 rows up the bowl, 4 rows on the foot; each facet has a soft shadow on its upper edge and a light lip on its lower edge (light from the right), giving a fish-scale / chiselled-stone look. The silhouette edge is slightly bumpy (+-0.1 cm).",
+  "handles": null,
+  "stand": {
+   "type": "cube",
+   "w_cm": 48,
+   "h_cm": 80,
+   "col": "#e2e1de",
+   "mat": "bois laqué blanc",
+   "notes": "Square matt white plinth seen slightly from above (top #bcbbb8 lit on the right, #918b8b in the shade on the left; front face #bfc0c4 right, #7a6c69 left). The vase stands near the back right of the plinth top. Rough white stucco wall behind; a framed abstract painting in lilac and acid yellow stripes hangs at the top right."
+  },
+  "surface": "blanc",
+  "glass": null,
+  "outline": null,
+  "price_eur": 45,
+  "why": "Une coupe sur pied en céramique blanche ciselée d'écailles à la main, qui accroche la lumière comme une pierre taillée.",
+  "details": "Measured on the visible lower 3/4: a short cylindrical foot (diameter 9.5 cm at the bottom, slight waist 8.9 cm at 3.6 cm height, 4 cm tall) then the bowl swells out in a quick rounded undercut (from 4 to 7.5 cm height) to a straight, very slightly barrel-shaped body of 14 cm diameter. The top of the bowl and the rim are hidden behind a green anthurium spathe (vase visible up to 15.2 cm): rim height ~16.4 cm and a slightly closing rim are inferred (+-1.5 cm). Scale ~0.08 cm/px from the anthuriums and the plinth. Light soft from the right: lit side #aeafb0 (white in neutral light), left side falls to warm grey #4c433b, facets keep a strong small-scale relief everywhere. Bouquet: giant purple alliums on tall stems, glossy lime-green anthuriums (one leaning over the front of the vase), dark green dianthus balls, pink hanging Pieris/rhodo-like sprays."
+ },
+ {
+  "id": "cylindre-inox-miroir",
+  "refs": [
+   79
+  ],
+  "n": "Cylindre inox miroir",
+  "m": "inox poli miroir",
+  "family": "cylindre",
+  "shape": "lathe",
+  "h_cm": 12.8,
+  "prof": [
+   [
+    0,
+    6.4
+   ],
+   [
+    0.1,
+    6.5
+   ],
+   [
+    1.0,
+    6.5
+   ],
+   [
+    2.5,
+    6.5
+   ],
+   [
+    4.0,
+    6.5
+   ],
+   [
+    5.5,
+    6.5
+   ],
+   [
+    7.0,
+    6.5
+   ],
+   [
+    8.5,
+    6.5
+   ],
+   [
+    10.0,
+    6.5
+   ],
+   [
+    11.5,
+    6.5
+   ],
+   [
+    12.7,
+    6.5
+   ],
+   [
+    12.8,
+    6.48
+   ]
+  ],
+  "mouth_cm": 6.4,
+  "lip": "thin",
+  "lip_cm": 0.1,
+  "mat": "metal",
+  "finish": "polished",
+  "col": "#c9c6c0",
+  "col2": "#060504",
+  "tex": [],
+  "tex_notes": "",
+  "handles": null,
+  "stand": {
+   "type": "column",
+   "w_cm": 32,
+   "h_cm": 55,
+   "col": "#d6d7d0",
+   "mat": "plâtre cannelé blanc",
+   "notes": "Round white pedestal side table with a softly rounded top edge and a reeded side (narrow vertical flutes about 1.2 cm apart, cream-white #d6d7d0 with fine grey groove shadows). The cylinder stands centred, slightly back; a few cut dianthus heads and jasmine sprigs lie on the pedestal top around it."
+  },
+  "surface": "blanc",
+  "glass": null,
+  "outline": null,
+  "price_eur": 39,
+  "why": "Un cylindre d'inox poli miroir, net et architectural, qui reflète le bouquet comme une eau immobile.",
+  "details": "A straight cylinder as tall as it is wide (13 cm diameter x 12.8 cm; the top rim sits just under the foliage at the left and is hidden on the right; rim height +-0.8 cm), thin sharp rim, flat base with a tiny rounded edge. Scale ~0.055 cm/px from the anemones (~9 cm) and the phalaenopsis. Mirror reflections, all vertical and sharp: lower ~42 % of the height reflects the white pedestal top as a bright cream-white zone (#e2dac8 / #d5d0bd) with dark distorted streaks where stems and fallen dianthus are mirrored; a soft horizon line at ~42 % height; upper part reflects the room: left 10 % a light warm-grey band (#cac6bd, the wall), then olive-grey and green streaks (reflected jasmine leaves, #7b7858 / #58602f), a dark brown band at 62-66 % (#302414), a grey-mauve band at 70-76 % (#8e8177), a broad near-black band at 80-94 % (#030202) and a thin dull grey rim on the extreme right edge (#685c50). The bottom edge is a crisp thin dark line, and a faint mirrored image of the base appears on the pedestal top. Jasmine sprigs drape across the front of the cylinder; anemones, phalaenopsis, mini callas, sweet peas, hydrangea and a dark anthurium leaf sit on the rim."
+ },
+ {
+  "id": "compotier-noir-laque",
+  "refs": [
+   80
+  ],
+  "n": "Compotier noir laqué",
+  "m": "céramique laquée",
+  "family": "coupe",
+  "shape": "lathe",
+  "h_cm": 13.2,
+  "prof": [
+   [
+    0,
+    5.0
+   ],
+   [
+    0.3,
+    5.26
+   ],
+   [
+    1.4,
+    5.24
+   ],
+   [
+    1.68,
+    5.15
+   ],
+   [
+    1.96,
+    4.87
+   ],
+   [
+    2.24,
+    4.31
+   ],
+   [
+    3.36,
+    4.09
+   ],
+   [
+    5.04,
+    3.89
+   ],
+   [
+    6.16,
+    3.75
+   ],
+   [
+    7.0,
+    3.67
+   ],
+   [
+    7.28,
+    4.0
+   ],
+   [
+    7.56,
+    5.1
+   ],
+   [
+    7.84,
+    6.13
+   ],
+   [
+    8.4,
+    7.22
+   ],
+   [
+    8.96,
+    8.26
+   ],
+   [
+    9.8,
+    9.07
+   ],
+   [
+    10.64,
+    9.46
+   ],
+   [
+    11.2,
+    9.63
+   ],
+   [
+    12.0,
+    9.8
+   ],
+   [
+    13.2,
+    9.8
+   ]
+  ],
+  "mouth_cm": 9.3,
+  "lip": "plain",
+  "lip_cm": 0.5,
+  "mat": "satin",
+  "finish": "",
+  "col": "#18181a",
+  "col2": "#4f4e53",
+  "tex": [],
+  "tex_notes": "",
+  "handles": null,
+  "stand": {
+   "type": "cube",
+   "w_cm": 35,
+   "h_cm": 90,
+   "col": "#d8d4d1",
+   "mat": "bois laqué blanc",
+   "notes": "Square white plinth with crisp edges, matt (top #b6b2b0, front #a5a1a1 in this soft light, slightly darker on the right half of the front face). The coupe stands centred. Off-white textured plaster wall (#b4afaa) framed by tall white mouldings/pilasters on both sides."
+  },
+  "surface": "blanc",
+  "glass": null,
+  "outline": null,
+  "price_eur": 69,
+  "why": "Le compotier noir des natures mortes, haut sur son pied conique, qui fait flotter les orchidées.",
+  "details": "Measured: a wide shallow bowl (19.6 cm diameter, straight vertical upper wall from 11.2 cm up, then a flattish rounded underside curving into the stem), a tall slightly flared conical pedestal (7.3 cm diameter under the bowl, 8.6 cm at the bottom, 4.8 cm tall) with a small fillet under the bowl, standing on a thick round base disc (10.5 cm diameter, ~2 cm thick, rounded top and bottom edges, a crisp little step where the cone meets it). The rim is hidden under the vanda orchids resting on it (bowl visible up to 12.4 cm): rim height 13.2 cm inferred (+-0.6 cm). Scale ~0.056 cm/px from the vanda flowers (~11 cm) and the 35 cm plinth. Finish: deep black (#151517) satin-gloss lacquer, no texture; light from the right: a soft broad grey sheen on the right fifth of the bowl and the cone (#4f4e53 to #3d3c40), the right edges pick a pale rim light (#777474 / #aaa6a5), a faint horizontal sheen line on the underside of the bowl and on the base disc top. Bouquet: deep violet-blue spotted vanda orchids massed low and wide over the rim, dancing yellow oncidium sprays on long thin stems."
+ },
+ {
+  "id": "coupe-pied-blanche-mate",
+  "refs": [
+   81
+  ],
+  "n": "Petite coupe sur pied",
+  "m": "céramique mate",
+  "family": "coupe",
+  "shape": "lathe",
+  "h_cm": 9.5,
+  "prof": [
+   [
+    0,
+    4.5
+   ],
+   [
+    0.2,
+    4.59
+   ],
+   [
+    1.9,
+    4.42
+   ],
+   [
+    4.3,
+    4.25
+   ],
+   [
+    4.9,
+    4.3
+   ],
+   [
+    5.1,
+    4.45
+   ],
+   [
+    5.5,
+    5.98
+   ],
+   [
+    5.9,
+    7.1
+   ],
+   [
+    6.3,
+    7.92
+   ],
+   [
+    6.7,
+    8.57
+   ],
+   [
+    7.1,
+    8.9
+   ],
+   [
+    7.5,
+    9.04
+   ],
+   [
+    8.0,
+    8.97
+   ],
+   [
+    8.6,
+    8.6
+   ],
+   [
+    9.1,
+    8.0
+   ],
+   [
+    9.5,
+    7.3
+   ]
+  ],
+  "mouth_cm": 6.9,
+  "lip": "rolled",
+  "lip_cm": 2.0,
+  "mat": "matte",
+  "finish": "",
+  "col": "#ebe9e4",
+  "col2": "#6b6a66",
+  "tex": [],
+  "tex_notes": "",
+  "handles": null,
+  "stand": {
+   "type": "cube",
+   "w_cm": 48,
+   "h_cm": 90,
+   "col": "#e6e6ea",
+   "mat": "bois laqué blanc",
+   "notes": "Square matt white plinth with crisp edges, seen almost at eye level (only a thin strip of its top is visible behind the coupe; top #a3a3af, front #a2a1af in this cool grey light). The coupe stands centred near the front edge. Plain mid-grey wall (#787773 upper left to #a3a7b1 lower right, soft vignette)."
+  },
+  "surface": "blanc",
+  "glass": null,
+  "outline": null,
+  "price_eur": 39,
+  "why": "Une petite coupe sur pied en céramique blanche mate, ronde comme un champignon, qui hisse le bouquet sur un socle net.",
+  "details": "Measured: a shallow mushroom-like coupe: a short, slightly tapered cylindrical foot (9.2 cm at the bottom, 8.5 cm at the top, 4.9 cm tall, flat crisp bottom edge), a small fillet, then a flattish rounded underside flaring fast to a thick bullnose rim: max diameter 18.1 cm at 7.5 cm height, the rim rolling up and inward to an opening of ~13.8 cm at 9.5 cm; the inside is hidden by solidago, peonies and delphinium spilling over the edge. Scale ~0.068 cm/px from the peonies (~14 cm) and the anthurium. Matt white, chalky, no shine; soft light from the left: the left side of foot and rim are bright white (#d8d7e4), the right side falls to warm grey (#8a8682), the underside of the bowl casts a darker band on the top of the foot. Tall, airy, asymmetric bouquet (gloriosa, peonies, scabiosa, pink anthurium, delphinium, dahlia, solidago, a corkscrew allium stem, sweet-pea vine) rising from the coupe; foliage and solidago hang over the rim on both sides."
+ },
+ {
+  "id": "pique-fleurs-laiton",
+  "refs": [
+   82
+  ],
+  "n": "Pique-fleurs en laiton",
+  "m": "laiton et plomb",
+  "family": "pique-fleurs",
+  "shape": "lathe",
+  "h_cm": 4.5,
+  "prof": [
+   [
+    0,
+    6.3
+   ],
+   [
+    0.15,
+    6.4
+   ],
+   [
+    0.6,
+    6.42
+   ],
+   [
+    1.0,
+    6.4
+   ],
+   [
+    1.2,
+    6.3
+   ],
+   [
+    1.3,
+    6.05
+   ],
+   [
+    1.35,
+    6.0
+   ],
+   [
+    2.0,
+    6.0
+   ],
+   [
+    3.0,
+    6.0
+   ],
+   [
+    4.0,
+    6.0
+   ],
+   [
+    4.5,
+    6.0
+   ]
+  ],
+  "mouth_cm": 6.0,
+  "lip": "plain",
+  "lip_cm": 0,
+  "mat": "metal",
+  "finish": "patina",
+  "col": "#b39a62",
+  "col2": "#9fa3a6",
+  "tex": [],
+  "tex_notes": "Pin field: dense upright brass pins (~0.12 cm thick, 3.2 cm tall, sharp tips) set in concentric rings about 0.4 cm apart, filling a 12 cm disc; each pin has a pale gold lit side (#d8c48e, white glints at the tips) and a dark gap behind it (#3a3020), so the field reads as a fine vertical comb with a darker interior. Base: a round lead tray 12.8 cm wide and 1.3 cm thick with a softly rounded edge, dull satin grey (#a7a9a5 lit, #60666f in shade) with a slightly worn, mottled patina and a thin lighter line on the upper edge.",
+  "handles": null,
+  "stand": {
+   "type": "block",
+   "w_cm": 45,
+   "h_cm": 70,
+   "col": "#8f969f",
+   "mat": "béton brut",
+   "notes": "Rough cast-concrete plinth (square column), cool blue-grey (#959ba4 lit top, #5a5d64 in the left shadow, front #8797a7-#9eaebd), with pits, air holes, darker damp-looking blotches and slightly irregular, chipped edges. The kenzan sits near the centre of the top, a little toward the back. Background: warm cream-ochre trowelled plaster wall (#b59e89 / #988c84) with visible horizontal trowel strokes and relief."
+  },
+  "surface": "beton",
+  "glass": null,
+  "outline": null,
+  "price_eur": 45,
+  "why": "Le kenzan de laiton des ikebanistes, sur lequel le bouquet tient debout tout seul, tiges à nu.",
+  "details": "No vase: a hand-tied bouquet stands upright, its bare stems pushed into a round kenzan (pin frog). Measured: base diameter ~12.8 cm (scale ~0.058 cm/px from the phalaenopsis ~9.5 cm and the plinth), pins 3.2 cm, total 4.5 cm; seen from ~10 deg above, so the far pins appear higher than the near ones and the tray shows as an ellipse. About 14 straight green stems (calla, anthurium, allium, phalaenopsis) rise vertically in a tight 5 cm bundle from the centre of the pin field, wrapped higher up (from ~9 to ~14 cm above the pins) in a wide bronze-brown satin ribbon (#544133 in shade, warm metallic sheen #8a6a48 on its lit folds) with a smooth spiral wrap; above the binding the bouquet opens wide and asymmetric (phalaenopsis, mango callas, coral anthuriums, bleeding-heart-like red bells, orange campanula-like bells, oncidium sprays, tulips, kalanchoe). The pins stay visible all around the stems."
+ }
+]

@@ -1,0 +1,2223 @@
+[
+  {
+    "id": "sanguisorbe",
+    "nom_fr": "Sanguisorbe (grande pimprenelle)",
+    "nom_en": "Great burnet",
+    "latin": "Sanguisorba officinalis et hybrides (aussi S. tenuifolia, S. hakusanensis)",
+    "famille": "Rosaceae",
+    "categorie": "Remplissage & textures",
+    "role": "texture",
+    "couleurs": [
+      "rouge sang",
+      "rouge profond",
+      "bordeaux",
+      "pourpre presque noir",
+      "rose",
+      "framboise",
+      "blanc",
+      "ivoire"
+    ],
+    "varietes": [
+      {
+        "nom": "Red Dream",
+        "couleur": "rouge profond",
+        "note": "S. officinalis obtenue par Jan Star (BD Flowers, Rijnsburg) et cultivée par Marginpar en Afrique de l'Est ; récoltée à 75–90 cm quand les têtes sont entièrement rouges, tenue annoncée jusqu'à 2–3 semaines ; 2e prix Glazen Tulp 2021/2022 (Thursd) ; 100 cm, Pays-Bas (Holex)"
+      },
+      {
+        "nom": "Orient Dream",
+        "couleur": "rouge",
+        "note": "S. officinalis, tiges de 100 cm (Holex)"
+      },
+      {
+        "nom": "Arnhem",
+        "couleur": "rouge",
+        "note": "tiges de 100 cm (Holex)"
+      },
+      {
+        "nom": "S. officinalis (vendue sous le nom d'espèce)",
+        "couleur": "bordeaux",
+        "note": "100 cm (Holex) ; rouge profond selon le Floral Design Institute"
+      },
+      {
+        "nom": "Sanguisorba pink (forme commerciale)",
+        "couleur": "rose",
+        "note": "bottes d'environ 10 tiges (Florabundance)"
+      },
+      {
+        "nom": "Pink September",
+        "couleur": "rose (d'après le nom)",
+        "note": "AGM RHS"
+      },
+      {
+        "nom": "Raspberry Coulis",
+        "couleur": "framboise (d'après le nom)",
+        "note": "AGM RHS"
+      },
+      {
+        "nom": "Cangshan Cranberry",
+        "couleur": "rouge canneberge (d'après le nom)",
+        "note": "AGM RHS"
+      },
+      {
+        "nom": "Maartjes Merlot",
+        "couleur": "rouge vin (d'après le nom)",
+        "note": "AGM RHS"
+      },
+      {
+        "nom": "White Tanna",
+        "couleur": "blanc (d'après le nom)",
+        "note": "S. tenuifolia ; AGM RHS"
+      },
+      {
+        "nom": "Ivory Towers",
+        "couleur": "ivoire (d'après le nom)",
+        "note": "AGM RHS"
+      },
+      {
+        "nom": "Burr Blanc",
+        "couleur": "blanc (d'après le nom)",
+        "note": "AGM RHS"
+      }
+    ],
+    "formes": "Tiges longues (jusqu'à 100 cm), fines et ramifiées, vendues fraîches en bottes d'environ 10 tiges ; la plante peut atteindre 2 m au champ. Sensible à l'éthylène.",
+    "saison": "Été–automne en plein champ (floraison juin–septembre) ; disponible toute l'année grâce aux fermes d'Afrique de l'Est (Kenya, Éthiopie, Tanzanie, Zimbabwe).",
+    "tenue_vase": "7–10 jours (Floral Design Institute) ; jusqu'à 2–3 semaines pour 'Red Dream' en conditions idéales (Thursd).",
+    "gamme_prix": "€€",
+    "rarete_jeu": "rare",
+    "notes_dessin": "Tiges grêles et raides, presque nues, qui se ramifient en fourches et portent chacune à leur extrémité un petit épi ovoïde à cylindrique de 1 à 4 cm, dressé ou légèrement penché, comme un pompon de laine ou une mûre allongée. L'épi est un agglomérat très serré de minuscules fleurs sans pétales : quatre sépales en petite coupe rouge sang à bordeaux presque noir (rose, framboise ou blanc crème selon les cultivars) et de courtes étamines, d'où une surface granuleuse et mate. Les feuilles basales, pennées à 7–25 folioles ovales régulièrement dentées, gris-vert, sont rarement présentes sur la tige vendue. Dans le bouquet, les têtes flottent au-dessus de la masse et bougent au moindre souffle : tracer des lignes fines et irrégulières ponctuées de points sombres veloutés, sans brillance.",
+    "wiki": "Sanguisorba officinalis",
+    "img_queries": [
+      "Sanguisorba officinalis flower",
+      "Sanguisorba officinalis inflorescence",
+      "Sanguisorba tenuifolia"
+    ],
+    "sources": [
+      "https://www.floraldesigninstitute.com/blogs/resources-flower-library/sanguisorba",
+      "https://thursd.com/articles/marginpar-jan-star-bd-flowers-sanguisorba",
+      "https://shop.holex.com/en_US/search?text=sanguisorba",
+      "https://florabundance.com/flowers/sangiusorba-pink/",
+      "https://www.rhs.org.uk/plants/pdfs/rhs-recommended-award-of-garden-merit-ornamentals.pdf"
+    ]
+  },
+  {
+    "id": "pieris-japonica",
+    "nom_fr": "Piéris (andromède du Japon)",
+    "nom_en": "Japanese andromeda, pieris",
+    "latin": "Pieris japonica et hybrides (dont Pieris 'Forest Flame')",
+    "famille": "Ericaceae",
+    "categorie": "Branches & baies",
+    "role": "branche",
+    "couleurs": [
+      "blanc crème",
+      "rose pâle",
+      "rose soutenu",
+      "rose foncé",
+      "marron-bordeaux",
+      "jeunes pousses rouge vif",
+      "bronze",
+      "rose saumon",
+      "vert foncé brillant"
+    ],
+    "varietes": [
+      {
+        "nom": "Valley Valentine",
+        "couleur": "rouge à marron-bordeaux",
+        "note": "grandes grappes de clochettes rouges (Wikipedia) ou bordeaux (MBG), jeunes feuilles orange-bronze ; AGM RHS"
+      },
+      {
+        "nom": "Mountain Fire",
+        "couleur": "fleurs blanches, jeunes feuilles rouge feu",
+        "note": "grappes lourdes et pendantes ; AGM RHS (Wikipedia, MBG)"
+      },
+      {
+        "nom": "Forest Flame",
+        "couleur": "fleurs blanches, pousses rouge flamme puis rose crème",
+        "note": "hybride ; feuilles en verticilles, boutons roses en hiver (MBG) ; AGM RHS"
+      },
+      {
+        "nom": "Shojo",
+        "couleur": "rose foncé",
+        "note": "clochettes issues de boutons rouge-noir, jeunes feuilles rouge doux (MBG)"
+      },
+      {
+        "nom": "Blush",
+        "couleur": "rose à rouge",
+        "note": "AGM RHS (Wikipedia)"
+      },
+      {
+        "nom": "Bonfire",
+        "couleur": "rose et blanc",
+        "note": "1 m ; AGM RHS (Wikipedia)"
+      },
+      {
+        "nom": "Firecrest",
+        "couleur": "fleurs roses, feuillage rouge virant au vert",
+        "note": "AGM RHS (Wikipedia)"
+      },
+      {
+        "nom": "Pink Delight",
+        "couleur": "fleurs rose à blanc, feuillage bronze virant au vert",
+        "note": "AGM RHS (Wikipedia)"
+      },
+      {
+        "nom": "Debutante",
+        "couleur": "crème",
+        "note": "1 m ; AGM RHS (Wikipedia)"
+      },
+      {
+        "nom": "Prelude",
+        "couleur": "crème à blanc",
+        "note": "compact ; jeunes feuilles et boutons roses (MBG) ; AGM RHS"
+      },
+      {
+        "nom": "Purity",
+        "couleur": "blanc",
+        "note": "AGM RHS (Wikipedia)"
+      },
+      {
+        "nom": "Sarabande",
+        "couleur": "blanc",
+        "note": "AGM RHS (Wikipedia)"
+      },
+      {
+        "nom": "Red Mill",
+        "couleur": "blanc",
+        "note": "jeunes feuilles rouge vif puis acajou (MBG)"
+      },
+      {
+        "nom": "Flaming Silver",
+        "couleur": "jeunes feuilles rouges puis vertes bordées d'argent",
+        "note": "AGM RHS (Wikipedia)"
+      },
+      {
+        "nom": "Carnaval",
+        "couleur": "feuilles rouges-roses puis vertes bordées de blanc, fleurs blanches",
+        "note": "AGM RHS (Wikipedia)"
+      },
+      {
+        "nom": "Pieris en boutons (Andromeda buds, forme commerciale)",
+        "couleur": "boutons bruns, blancs ou roses",
+        "note": "tiges courtes, bottes de 5 ; très demandé en mariage (Florabundance)"
+      }
+    ],
+    "formes": "Rameaux courts (env. 30 cm) en bottes de 5 tiges : en boutons perlés, en fleurs, ou feuillage à jeunes pousses colorées. Toute la plante est toxique (grayanotoxines).",
+    "saison": "Boutons de décembre à mai puis de nouveau dès octobre ; floraison février–avril ; feuillage toute l'année.",
+    "tenue_vase": "7–10 jours (Floral Design Institute) ; recouper la base ligneuse au couteau, sensible à l'éthylène.",
+    "gamme_prix": "€€",
+    "rarete_jeu": "commune",
+    "notes_dessin": "Rameau ligneux brun portant aux extrémités des rosettes de feuilles en verticilles : feuilles oblancéolées de 5 à 9 cm, coriaces, finement dentées, vert foncé très brillant comme laquées. De chaque rosette retombent des grappes de 10–15 cm chargées de dizaines de clochettes en urne de 5–6 mm, ventrues et resserrées à la bouche, alignées comme des perles de cire ; en hiver ce sont des boutons ronds et serrés, verts, roses ou rouge-noir. Au printemps, les jeunes pousses forment un plumet de feuilles rouge vif, bronze ou rose saumon au-dessus des fleurs ('Mountain Fire', 'Forest Flame'). Dans le bouquet, faire cascader les grappes sur le bord ou en ligne retombante ; reflets nacrés sur les clochettes, brillance laquée sur les feuilles.",
+    "wiki": "Pieris japonica",
+    "img_queries": [
+      "Pieris japonica flowers",
+      "Pieris japonica 'Mountain Fire'",
+      "Pieris 'Forest Flame'"
+    ],
+    "sources": [
+      "https://www.floraldesigninstitute.com/blogs/resources-flower-library/pieris-japonica-andromeda",
+      "https://florabundance.com/flowers/pieris-buds-andromeda/",
+      "https://en.wikipedia.org/wiki/Pieris_japonica",
+      "https://plantfinder.mobot.org/PlantFinderDetails.aspx?taxonid=256548",
+      "https://www.rhs.org.uk/plants/pdfs/rhs-recommended-award-of-garden-merit-ornamentals.pdf"
+    ]
+  },
+  {
+    "id": "pigamon",
+    "nom_fr": "Pigamon (thalictrum)",
+    "nom_en": "Meadow rue",
+    "latin": "Thalictrum spp. (T. delavayi, T. rochebruneanum, T. aquilegiifolium et hybrides)",
+    "famille": "Ranunculaceae",
+    "categorie": "Été & classiques",
+    "role": "texture",
+    "couleurs": [
+      "lilas",
+      "lavande",
+      "lavande-pourpre",
+      "lilas-rose",
+      "magenta-lavande",
+      "blanc",
+      "jaune (étamines, T. flavum)"
+    ],
+    "varietes": [
+      {
+        "nom": "Hewitt's Double",
+        "couleur": "lilas-rose, double",
+        "note": "T. delavayi ; minuscules fleurs doubles en pompons ; noté « bon pour la coupe » (MBG)"
+      },
+      {
+        "nom": "Black Stockings",
+        "couleur": "lavande-magenta",
+        "note": "tiges presque noires, grosses panicules, 1,2–1,8 m (MBG) ; AGM RHS"
+      },
+      {
+        "nom": "Cotton Candy",
+        "couleur": "lilas-rose",
+        "note": "hybride dressé à panicules vaporeuses, env. 1,2 m (MBG)"
+      },
+      {
+        "nom": "T. rochebruneanum",
+        "couleur": "lavande-pourpre à étamines jaunes",
+        "note": "tiges pourpres, 1,2–1,8 m, juillet–septembre (MBG) ; AGM RHS"
+      },
+      {
+        "nom": "T. aquilegiifolium",
+        "couleur": "lilas-pourpre",
+        "note": "houppes d'étamines duveteuses en panicules aplaties, mai–juillet (MBG)"
+      },
+      {
+        "nom": "Splendide White ('Fr21034')",
+        "couleur": "blanc",
+        "note": "AGM RHS"
+      },
+      {
+        "nom": "Elin",
+        "couleur": "non précisée",
+        "note": "AGM RHS"
+      },
+      {
+        "nom": "Ankum",
+        "couleur": "non précisée",
+        "note": "T. delavayi ; AGM RHS"
+      },
+      {
+        "nom": "Tukker Princess",
+        "couleur": "non précisée",
+        "note": "AGM RHS"
+      },
+      {
+        "nom": "Ruth Lynden-Bell",
+        "couleur": "non précisée (T. flavum : pigamon jaune)",
+        "note": "T. flavum subsp. glaucum ; AGM RHS"
+      }
+    ],
+    "formes": "Tiges florales légères de 0,6 à 1,8 m, ramifiées en panicules aériennes. Non trouvé chez Holex, Florabundance, FiftyFlowers ni Sierra Flower Finder : plutôt cueillette de jardin ou producteurs locaux.",
+    "saison": "Mai–septembre selon l'espèce : T. aquilegiifolium mai–juillet, T. delavayi juillet–août, T. rochebruneanum juillet–septembre (MBG).",
+    "tenue_vase": "Non documentée dans les sources consultées (fleurs fines qui s'égrènent ; estimation 5–7 jours).",
+    "gamme_prix": "€€€",
+    "rarete_jeu": "precieuse",
+    "notes_dessin": "Grandes panicules très aérées sur des tiges fines et raides, pourpres ou presque noires ('Black Stockings'), qui se ramifient en fils : l'ensemble forme un nuage diffus au-dessus du bouquet. Chez T. delavayi et T. rochebruneanum, chaque petite fleur pendante est une clochette ouverte de sépales pétaloïdes lilas d'où pend un pinceau d'étamines jaune vif ; 'Hewitt's Double' remplace ces clochettes par de minuscules pompons doubles lilas-rose. Chez T. aquilegiifolium, pas de pétales visibles : la couleur vient de houppes d'étamines duveteuses lilas groupées en panicules aplaties. Le feuillage, découpé en petites folioles arrondies et lobées comme l'ancolie ou le capillaire, est bleu-vert mat ; le rendre par de petites taches trilobées, et les fleurs par une pluie de points colorés en suspension.",
+    "wiki": "Thalictrum delavayi",
+    "img_queries": [
+      "Thalictrum delavayi 'Hewitt's Double'",
+      "Thalictrum aquilegiifolium flowers",
+      "Thalictrum rochebruneanum"
+    ],
+    "sources": [
+      "https://plantfinder.mobot.org/PlantFinderDetails.aspx?taxonid=253983",
+      "https://plantfinder.mobot.org/PlantFinderDetails.aspx?taxonid=371080",
+      "https://en.wikipedia.org/wiki/Thalictrum",
+      "https://en.wikipedia.org/wiki/Thalictrum_delavayi",
+      "https://www.rhs.org.uk/plants/pdfs/rhs-recommended-award-of-garden-merit-ornamentals.pdf"
+    ]
+  },
+  {
+    "id": "cyclamen-fleur-coupee",
+    "nom_fr": "Cyclamen de Perse (fleur coupée)",
+    "nom_en": "Florist's cyclamen (cut stems)",
+    "latin": "Cyclamen persicum (hybrides de fleuriste)",
+    "famille": "Primulaceae",
+    "categorie": "Printemps & bulbes",
+    "role": "secondaire",
+    "couleurs": [
+      "blanc",
+      "rose",
+      "rose vif",
+      "rouge",
+      "rouge cerise",
+      "violet",
+      "lavande",
+      "pourpre",
+      "blanc à œil rouge",
+      "strié",
+      "magenta"
+    ],
+    "varietes": [
+      {
+        "nom": "Halios Bright Fuchsia",
+        "couleur": "fuchsia vif",
+        "note": "série Halios (Wikipedia en)"
+      },
+      {
+        "nom": "Halios White",
+        "couleur": "blanc",
+        "note": "série Halios (Wikipedia en)"
+      },
+      {
+        "nom": "Laser Salmon with Eye",
+        "couleur": "saumon à œil foncé",
+        "note": "série Laser (Wikipedia en)"
+      },
+      {
+        "nom": "Laser Scarlet",
+        "couleur": "écarlate",
+        "note": "série Laser (Wikipedia en)"
+      },
+      {
+        "nom": "Miracle Deep Rose",
+        "couleur": "rose foncé",
+        "note": "série Miracle (Wikipedia en)"
+      },
+      {
+        "nom": "Sierra Light Purple",
+        "couleur": "violet clair",
+        "note": "série Sierra (Wikipedia en)"
+      },
+      {
+        "nom": "Sierra White with Eye",
+        "couleur": "blanc à œil coloré",
+        "note": "série Sierra (Wikipedia en)"
+      },
+      {
+        "nom": "Concerto Apollo",
+        "couleur": "non précisée",
+        "note": "(Wikipedia en)"
+      },
+      {
+        "nom": "Latinia",
+        "couleur": "du rouge cyclamen au violet, rose et blanc",
+        "note": "série (Wikipedia de)"
+      },
+      {
+        "nom": "Petit Moulin",
+        "couleur": "blanc, lilas, magenta, pourpre",
+        "note": "Morel ; fleurs doubles à pétales supplémentaires (Thursd)"
+      },
+      {
+        "nom": "Macaron",
+        "couleur": "rose Bengale, pourpre, blanc pur",
+        "note": "Morel ; mini compact (Thursd)"
+      },
+      {
+        "nom": "Super Serie Crayon",
+        "couleur": "pétales striés « au crayon »",
+        "note": "Schoneveld Breeding (Thursd)"
+      },
+      {
+        "nom": "Super Serie Petticoat / Djix",
+        "couleur": "divers",
+        "note": "pétales tournés vers le bas au lieu d'être relevés (Schoneveld, Thursd)"
+      },
+      {
+        "nom": "Odora",
+        "couleur": "divers",
+        "note": "mini parfumé (Schoneveld, Thursd)"
+      },
+      {
+        "nom": "Tilebarn Karpathos",
+        "couleur": "rouge cerise",
+        "note": "cultivar de C. persicum (Wikipedia fr)"
+      },
+      {
+        "nom": "Silver leaf",
+        "couleur": "feuillage argenté",
+        "note": "feuilles argentées à motif « sapin de Noël » (Wikipedia fr)"
+      }
+    ],
+    "formes": "Fleurs solitaires sur pédoncules nus de 15–23 cm qui partent directement du tubercule : petites tiges pour bouquets ronds, mini-bouquets et soliflores. Aucune offre de cyclamen en fleur coupée trouvée chez Holex, Florabundance, FiftyFlowers ni Sierra Flower Finder : à sourcer chez des producteurs spécialisés ou à prélever sur des plantes en pot.",
+    "saison": "Novembre–mars pour les cyclamens de fleuriste (MBG) ; plantes en pot de septembre à mars en Europe centrale.",
+    "tenue_vase": "Non documentée dans les sources consultées (estimation prudente : environ 1 semaine au frais ; les cyclamens fleuris préfèrent moins de 20 °C).",
+    "gamme_prix": "€€",
+    "rarete_jeu": "precieuse",
+    "notes_dessin": "Fleur pendante au bout d'un pédoncule nu et charnu, recourbé à 150–180° au sommet : les cinq pétales, soudés en courte coupe à la base, se retroussent brusquement vers le haut et se tordent légèrement, comme des ailes de papillon ou une flamme. La gorge (le « nez ») porte souvent un œil carmin à pourpre, et le style dépasse de 1–3 mm au centre. Selon les séries, pétales lisses, ondulés ou frangés, striés ('Crayon'), doubles ('Petit Moulin') ou tournés vers le bas ('Petticoat'). Feuilles en cœur, épaisses, jusqu'à 14 cm, vert sombre marbré d'argent en motif de sapin de Noël, revers vert pâle ou rougeâtre ; dans un bouquet, regrouper les fleurs comme un vol de papillons au-dessus d'un col de feuilles.",
+    "wiki": "Cyclamen persicum",
+    "img_queries": [
+      "Cyclamen persicum flower",
+      "Cyclamen persicum cultivar",
+      "Florist's cyclamen"
+    ],
+    "sources": [
+      "https://en.wikipedia.org/wiki/Cyclamen_persicum",
+      "https://en.wikipedia.org/wiki/Cyclamen",
+      "https://plantfinder.mobot.org/PlantFinderDetails.aspx?taxonid=285595",
+      "https://thursd.com/articles/cyclamen-care-and-types",
+      "https://de.wikipedia.org/wiki/Zimmer-Alpenveilchen"
+    ]
+  },
+  {
+    "id": "kniphofia",
+    "nom_fr": "Tritoma (kniphofia, faux-aloès, tison du diable)",
+    "nom_en": "Red hot poker, torch lily",
+    "latin": "Kniphofia uvaria et hybrides",
+    "famille": "Asphodelaceae",
+    "categorie": "Été & classiques",
+    "role": "ligne",
+    "couleurs": [
+      "rouge",
+      "rouge cannelle",
+      "rouge corail",
+      "orange",
+      "orange doré",
+      "orange mangue",
+      "abricot",
+      "rose pêche",
+      "jaune",
+      "jaune soufre",
+      "jaune ananas",
+      "crème",
+      "crème et brun",
+      "blanc verdâtre",
+      "rose",
+      "bicolore rouge et jaune"
+    ],
+    "varietes": [
+      {
+        "nom": "Royal Standard",
+        "couleur": "rouge en haut, jaune en bas",
+        "note": "épis bicolores, 90 cm–1,2 m ; AGM RHS (MBG, Wikipedia)"
+      },
+      {
+        "nom": "Shining Sceptre",
+        "couleur": "orange doré",
+        "note": "60–90 cm (MBG)"
+      },
+      {
+        "nom": "Mango Popsicle",
+        "couleur": "orange mangue",
+        "note": "série Popsicle, 45–75 cm (MBG) ; AGM RHS"
+      },
+      {
+        "nom": "Lemon Popsicle",
+        "couleur": "jaune",
+        "note": "série Popsicle ; noté « bon pour la coupe » (MBG)"
+      },
+      {
+        "nom": "Redhot Popsicle",
+        "couleur": "rouge cannelle",
+        "note": "série Popsicle ; noté « bon pour la coupe » (MBG)"
+      },
+      {
+        "nom": "Pineapple Popsicle",
+        "couleur": "jaune ananas",
+        "note": "série Popsicle (MBG)"
+      },
+      {
+        "nom": "Echo Mango",
+        "couleur": "orange-jaune (abricot, mangue)",
+        "note": "K. uvaria remontant, hampes jusqu'à 1 m (MBG)"
+      },
+      {
+        "nom": "Brimstone",
+        "couleur": "jaune soufre",
+        "note": "90 cm ; AGM RHS (Wikipedia)"
+      },
+      {
+        "nom": "Buttercup",
+        "couleur": "jaune clair",
+        "note": "75 cm ; AGM RHS (Wikipedia)"
+      },
+      {
+        "nom": "Fiery Fred",
+        "couleur": "orange",
+        "note": "130 cm ; AGM RHS (Wikipedia)"
+      },
+      {
+        "nom": "Coral Flame",
+        "couleur": "rouge corail",
+        "note": "90 cm ; AGM RHS (Wikipedia)"
+      },
+      {
+        "nom": "Safranvogel",
+        "couleur": "rose pêche",
+        "note": "80 cm ; AGM RHS (Wikipedia)"
+      },
+      {
+        "nom": "Toffee Nosed",
+        "couleur": "crème et brun",
+        "note": "100 cm ; AGM RHS (Wikipedia)"
+      },
+      {
+        "nom": "Tawny King",
+        "couleur": "crème et brun",
+        "note": "120 cm ; AGM RHS (Wikipedia)"
+      },
+      {
+        "nom": "Sunningdale Yellow",
+        "couleur": "orange et jaune",
+        "note": "60 cm ; AGM RHS (Wikipedia)"
+      },
+      {
+        "nom": "Nobilis",
+        "couleur": "orange et jaune",
+        "note": "persistant, plus de 1,5 m ; AGM RHS (Wikipedia)"
+      },
+      {
+        "nom": "Samuel's Sensation",
+        "couleur": "rouge et jaune",
+        "note": "150 cm ; AGM RHS (Wikipedia)"
+      },
+      {
+        "nom": "K. uvaria (espèce)",
+        "couleur": "boutons rouges, fleurs jaunes",
+        "note": "épis bicolores de 15–25 cm, mai–juin (MBG)"
+      }
+    ],
+    "formes": "Hampes nues et épaisses de 45 cm à 1,5 m terminées par un épi dense ; le feuillage reste à la base de la plante.",
+    "saison": "Juin–septembre selon les cultivars (mai–juin pour K. uvaria) ; floraison de plein champ en été (août dans le guide néerlandais).",
+    "tenue_vase": "Non documentée dans les sources consultées (estimation ~1 semaine) ; couper en biais au couteau, eau propre, à l'abri des courants d'air et de la chaleur.",
+    "gamme_prix": "€€",
+    "rarete_jeu": "rare",
+    "notes_dessin": "Hampe florale épaisse, ronde, nue et vert glauque, terminée par un épi dense de 15 à 25 cm en forme de torche ou de fusée : des dizaines de fleurs tubulaires étroites, pendantes, serrées comme les poils d'un goupillon et de plus en plus petites vers la pointe. Les boutons du sommet sont dressés et rouge vif, les fleurs ouvertes de la base retombent et virent au jaune : l'épi passe ainsi du rouge (haut) au jaune (bas) chez K. uvaria et 'Royal Standard', et s'ouvre de bas en haut. Chaque tube est lisse et cireux, avec de petites étamines qui pointent à l'extrémité ; les feuilles basales en ruban, bleu-vert, ne sont pas sur la tige coupée. Dans le bouquet, c'est une ligne verticale très graphique : jouer sur le dégradé chaud et la texture en écailles de l'épi.",
+    "wiki": "Kniphofia uvaria",
+    "img_queries": [
+      "Kniphofia uvaria",
+      "Kniphofia 'Royal Standard'",
+      "Kniphofia flower spike"
+    ],
+    "sources": [
+      "https://www.plantsandflowersfoundationholland.org/bloemengids/kniphofia/",
+      "https://plantfinder.mobot.org/PlantFinderDetails.aspx?taxonid=281892",
+      "https://plantfinder.mobot.org/PlantFinderDetails.aspx?taxonid=439177",
+      "https://en.wikipedia.org/wiki/Kniphofia",
+      "https://www.rhs.org.uk/plants/pdfs/rhs-recommended-award-of-garden-merit-ornamentals.pdf"
+    ]
+  },
+  {
+    "id": "hymenocallis",
+    "nom_fr": "Lis araignée (hyménocallis, ismène)",
+    "nom_en": "Spider lily, Peruvian daffodil",
+    "latin": "Hymenocallis spp. (H. × festalis, H. littoralis, H. caroliniana)",
+    "famille": "Amaryllidaceae",
+    "categorie": "Exotiques",
+    "role": "focale",
+    "couleurs": [
+      "blanc pur",
+      "blanc crème",
+      "blanc verdâtre",
+      "jaune soufre"
+    ],
+    "varietes": [
+      {
+        "nom": "H. × festalis (Ismene)",
+        "couleur": "blanc",
+        "note": "ombelle de 2–5 fleurs parfumées jusqu'à 12,5 cm, hampe pleine jusqu'à 75 cm (MBG) ; juillet–septembre (Peter Nyssen)"
+      },
+      {
+        "nom": "Zwanenburg",
+        "couleur": "blanc",
+        "note": "H. × festalis à grandes fleurs et coupe festonnée (MBG)"
+      },
+      {
+        "nom": "Sulphur Queen",
+        "couleur": "jaune",
+        "note": "Ismene 'Sulphur Queen', AGM RHS ; non parfumée selon Peter Nyssen"
+      },
+      {
+        "nom": "H. longipetala",
+        "couleur": "blanc",
+        "note": "parfumée, juillet–septembre (Peter Nyssen)"
+      },
+      {
+        "nom": "H. littoralis",
+        "couleur": "blanc",
+        "note": "tube floral de 14–17 cm, parfum vanillé, du milieu de l'été à la fin de l'automne (Wikipedia)"
+      },
+      {
+        "nom": "H. caroliniana",
+        "couleur": "blanc",
+        "note": "ombelle de 5–10 fleurs jusqu'à 15 cm (MBG)"
+      }
+    ],
+    "formes": "Hampe portant une ombelle de grandes fleurs blanches parfumées. Très peu présente dans le commerce de fleurs coupées (Thursd : le marché lui préfère la nérine) : cueillette de jardin, culture en pot ou producteur spécialisé.",
+    "saison": "Juillet–septembre pour les bulbes plantés au printemps (H. × festalis) ; jusqu'à la fin de l'automne pour H. littoralis.",
+    "tenue_vase": "Non documentée (fleurs individuelles éphémères qui s'ouvrent en succession ; estimation 2–4 jours par fleur).",
+    "gamme_prix": "€€€",
+    "rarete_jeu": "legendaire",
+    "notes_dessin": "Hampe pleine, lisse et vert franc, couronnée d'une ombelle de 2 à 10 fleurs blanches, à la fois spectaculaires et fragiles, de 12 à 15 cm de large. Chaque fleur associe six tépales extrêmement étroits, en longues lanières étalées puis recourbées vers l'arrière comme des pattes d'araignée, et une coupe centrale membraneuse en entonnoir (couronne staminale) semblable à celle d'un narcisse, au bord denté ou festonné ('Zwanenburg'). Du bord de la coupe partent six longs filets d'étamines blancs, courbés vers l'extérieur et terminés par de petites anthères ; un long tube floral relie chaque fleur au sommet de la hampe. Dans le bouquet, la placer en point focal isolé en respectant le vide autour des lanières ; blanc cireux et translucide sur les bords, sans brillance métallique.",
+    "wiki": "Hymenocallis",
+    "img_queries": [
+      "Hymenocallis festalis",
+      "Hymenocallis littoralis flower",
+      "Ismene Sulphur Queen"
+    ],
+    "sources": [
+      "https://plantfinder.mobot.org/PlantFinderDetails.aspx?taxonid=256880",
+      "https://www.peternyssen.com/festalis-ismene.html",
+      "https://thursd.com/articles/spider-lily-meaning-types-and-how-to-grow-them",
+      "https://en.wikipedia.org/wiki/Hymenocallis",
+      "https://en.wikipedia.org/wiki/Hymenocallis_littoralis"
+    ]
+  },
+  {
+    "id": "crocosmia",
+    "nom_fr": "Crocosmia (montbrétia)",
+    "nom_en": "Crocosmia, montbretia, coppertip",
+    "latin": "Crocosmia × crocosmiiflora et hybrides",
+    "famille": "Iridaceae",
+    "categorie": "Été & classiques",
+    "role": "ligne",
+    "couleurs": [
+      "rouge écarlate",
+      "orange",
+      "orange brûlé",
+      "corail",
+      "abricot",
+      "jaune d'or",
+      "jaune abricot pâle",
+      "vert (capsules)",
+      "rouge et vert (capsules)",
+      "orange (capsules)",
+      "brun (capsules sèches)"
+    ],
+    "varietes": [
+      {
+        "nom": "Lucifer",
+        "couleur": "rouge écarlate",
+        "note": "fleurs tubulaires penchées d'un seul côté de hampes arquées, jusqu'à 1,2 m ; bonne fleur coupée (MBG) ; AGM RHS"
+      },
+      {
+        "nom": "Emily McKenzie",
+        "couleur": "orange corail marqué de rouge et de jaune",
+        "note": "AGM RHS (MBG) ; 60 cm (Holex)"
+      },
+      {
+        "nom": "George Davison",
+        "couleur": "abricot à jaune d'or",
+        "note": "fleurs larges, précoce, excellente en coupe (MBG)"
+      },
+      {
+        "nom": "Solfatare",
+        "couleur": "jaune abricot pâle",
+        "note": "feuillage bronze, obtenu en France en 1897 (MBG)"
+      },
+      {
+        "nom": "Emberglow",
+        "couleur": "orange brûlé",
+        "note": "AGM RHS (MBG)"
+      },
+      {
+        "nom": "Prince of Orange",
+        "couleur": "orange à gorge jaune flamme",
+        "note": "20 fleurs ou plus par hampe arquée ; Marginpar (Thursd)"
+      },
+      {
+        "nom": "Berry Green",
+        "couleur": "capsules vertes",
+        "note": "tiges en fruits, 90 cm (Holex)"
+      },
+      {
+        "nom": "Berry Carmine Brilliant",
+        "couleur": "capsules rouges et vertes",
+        "note": "75 cm (Holex)"
+      },
+      {
+        "nom": "Berry Fire King",
+        "couleur": "capsules vertes et rouges",
+        "note": "75 cm (Holex)"
+      },
+      {
+        "nom": "Montbretia pods (forme commerciale)",
+        "couleur": "orange",
+        "note": "capsules sur le tiers supérieur de la tige défeuillée, août–décembre, 60 cm, bottes de 10 (Sierra Flower Finder)"
+      }
+    ],
+    "formes": "En fleur (hampes ramifiées) ou en « berries » : tiges de capsules vertes, rouges ou orange puis brunes. Les fleurs peuvent laisser couler une sève incolore et collante.",
+    "saison": "Fleurs juin–novembre (Floral Design Institute) ; capsules d'août à décembre (Sierra Flower Finder).",
+    "tenue_vase": "7–14 jours (Floral Design Institute) ; acheter quand moins de la moitié des fleurs sont ouvertes.",
+    "gamme_prix": "€",
+    "rarete_jeu": "commune",
+    "notes_dessin": "Tige fine et raide qui se divise souvent en quelques rameaux arqués, presque horizontaux et en léger zigzag, chacun portant d'un seul côté une rangée de fleurs tubulaires penchées, évasées en petite étoile à six tépales (2–7 cm), qui s'ouvrent de la base vers la pointe ; l'extrémité reste une échelle de boutons serrés et pointus. Couleurs franches et lumineuses (rouge écarlate, orange, abricot), souvent avec une gorge plus claire ou tachée. Les feuilles basales sont des glaives étroits à nervures parallèles marquées, vert vif ou bronze ('Solfatare'). En capsules, les rameaux portent des perles rondes à trois lobes, vertes puis orangées ou brunes, alignées comme les grains d'un chapelet ; dans le bouquet, utiliser les courbes des rameaux pour créer des lignes dynamiques qui sortent du dôme.",
+    "wiki": "Crocosmia",
+    "img_queries": [
+      "Crocosmia 'Lucifer'",
+      "Crocosmia × crocosmiiflora",
+      "Crocosmia seed pods"
+    ],
+    "sources": [
+      "https://www.floraldesigninstitute.com/blogs/resources-flower-library/crocosmia",
+      "https://shop.holex.com/en_US/search?text=crocosmia",
+      "https://plantfinder.mobot.org/PlantFinderDetails.aspx?taxonid=244061",
+      "https://thursd.com/products/cut-flowers/other-flowers/crocosmia-prince-of-orange",
+      "https://www.sierraflowerfinder.com/en/d/montbretia-pods/3789"
+    ]
+  },
+  {
+    "id": "bomarea",
+    "nom_fr": "Bomarea (alstroemère grimpante)",
+    "nom_en": "Bomarea, climbing alstroemeria",
+    "latin": "Bomarea spp. (B. edulis, B. multiflora, B. salsilla, B. patacoensis)",
+    "famille": "Alstroemeriaceae",
+    "categorie": "Exotiques",
+    "role": "secondaire",
+    "couleurs": [
+      "rouge écarlate",
+      "orange-rouge",
+      "saumon",
+      "rose magenta",
+      "rose",
+      "jaune",
+      "vert",
+      "intérieur jaune moucheté de rouge"
+    ],
+    "varietes": [
+      {
+        "nom": "B. edulis (salsilla)",
+        "couleur": "rose, jaune et vert, tacheté ; saumon à magenta",
+        "note": "liane de 2,5 m ; trompettes à ponctuations variables (Wikipedia, Pacific Bulb Society) ; AGM RHS"
+      },
+      {
+        "nom": "B. multiflora",
+        "couleur": "non précisée",
+        "note": "« trailing lily » de Colombie et d'Équateur ; AGM RHS (Wikipedia)"
+      },
+      {
+        "nom": "B. salsilla",
+        "couleur": "non précisée",
+        "note": "liane caduque du Chili, fin de printemps–début d'été (PBS) ; AGM RHS"
+      },
+      {
+        "nom": "B. patacoensis",
+        "couleur": "tépales externes écarlates, internes jaunes virant au rouge foncé, très tachetés",
+        "note": "Colombie, Pérou ; 2,5–3,5 m (PBS)"
+      },
+      {
+        "nom": "B. petraea (syn. B. dulcis)",
+        "couleur": "orange-rouge à marques marron",
+        "note": "touffes denses, env. 1,2 m, Pérou (PBS)"
+      },
+      {
+        "nom": "B. caldasii",
+        "couleur": "non précisée",
+        "note": "grimpante persistante du nord de l'Amérique du Sud (PBS) ; Wikipedia la rattache à B. multiflora"
+      }
+    ],
+    "formes": "Tiges volubiles coupées avec leur ombelle terminale. Wikipedia indique seulement que « certaines espèces sont cultivées comme plantes ornementales » : usage en fleur coupée non confirmé par les sources consultées et aucune offre trouvée chez Holex ni Florabundance (à sourcer auprès de jardins ou de producteurs spécialisés).",
+    "saison": "Fin de printemps–été (B. edulis fleurit tout l'été ; B. caldasii et B. salsilla fin de printemps–début d'été selon la Pacific Bulb Society).",
+    "tenue_vase": "Non documentée dans les sources consultées (estimation ~1 semaine).",
+    "gamme_prix": "€€€",
+    "rarete_jeu": "precieuse",
+    "notes_dessin": "Liane à tige fine et volubile, garnie de feuilles lancéolées tordues à la base (résupinées : le revers regarde vers le haut). Au sommet, une ombelle pendante et dense de 10 à 45 fleurs sur de longs pédicelles arqués, chaque fleur une clochette tubulaire à six tépales libres, trois externes et trois internes parfois de couleurs contrastées : externes écarlates et internes jaunes virant au rouge foncé, très mouchetés, chez B. patacoensis ; saumon à rose magenta tacheté dedans comme dehors chez B. edulis. L'ensemble évoque un lustre ou une gerbe d'alstroemères retournées. Après floraison, les capsules s'ouvrent sur des graines enrobées d'une chair rouge vif ; dans le bouquet, laisser l'ombelle pendre sur le bord, avec des tépales satinés et des mouchetures nettes.",
+    "wiki": "Bomarea",
+    "img_queries": [
+      "Bomarea edulis",
+      "Bomarea multiflora",
+      "Bomarea caldasii flowers"
+    ],
+    "sources": [
+      "https://en.wikipedia.org/wiki/Bomarea",
+      "https://www.pacificbulbsociety.org/pbswiki/index.php/Bomarea",
+      "https://en.wikipedia.org/wiki/Bomarea_edulis",
+      "https://en.wikipedia.org/wiki/Bomarea_multiflora",
+      "https://www.rhs.org.uk/plants/pdfs/rhs-recommended-award-of-garden-merit-ornamentals.pdf"
+    ]
+  },
+  {
+    "id": "ixora",
+    "nom_fr": "Ixora (flamme des bois)",
+    "nom_en": "Ixora, jungle geranium, flame of the woods",
+    "latin": "Ixora coccinea et hybrides",
+    "famille": "Rubiaceae",
+    "categorie": "Exotiques",
+    "role": "secondaire",
+    "couleurs": [
+      "rouge écarlate",
+      "rouge vif",
+      "orange",
+      "jaune",
+      "rose"
+    ],
+    "varietes": [
+      {
+        "nom": "I. coccinea (espèce)",
+        "couleur": "rouge vif à écarlate",
+        "note": "corymbes de 5 à 12,5 cm presque toute l'année (Wikipedia, MBG)"
+      },
+      {
+        "nom": "Super King",
+        "couleur": "non précisée",
+        "note": "hybride populaire à corymbes beaucoup plus grands (Wikipedia)"
+      },
+      {
+        "nom": "Nora Grant",
+        "couleur": "non précisée",
+        "note": "forme naine populaire (Wikipedia)"
+      },
+      {
+        "nom": "cultivars jaunes, roses et orange",
+        "couleur": "jaune, rose, orange",
+        "note": "nombreux cultivars nommés différant par la couleur et la taille (Wikipedia)"
+      }
+    ],
+    "formes": "Rameaux feuillés coupés avec leur corymbe terminal ; fleurs rouges utilisées dans le culte hindou (Wikipedia fr).",
+    "saison": "Floraison presque toute l'année sous climat tropical (Wikipedia, MBG).",
+    "tenue_vase": "Non documentée dans les sources consultées (estimation 5–7 jours).",
+    "gamme_prix": "€€",
+    "rarete_jeu": "rare",
+    "notes_dessin": "Corymbe arrondi et dense de 5 à 12 cm, en dôme légèrement aplati, fait de dizaines de petites fleurs tubulaires : un tube très fin qui s'ouvre en étoile plate à quatre lobes pointus, comme de minuscules croix serrées les unes contre les autres. Les boutons du centre sont de petits bâtonnets de la même couleur ; rouge écarlate saturé chez l'espèce, orange, jaune ou rose chez les cultivars. Le corymbe repose sur une collerette de feuilles opposées, elliptiques à oblongues (jusqu'à 10 cm), coriaces, vert foncé brillant ; il peut être suivi de petites drupes rondes pourpre-noir. Dans le bouquet, il joue le rôle d'une boule de couleur intense : dessiner les étoiles en couronne régulière sur le pourtour du dôme.",
+    "wiki": "Ixora coccinea",
+    "img_queries": [
+      "Ixora coccinea flowers",
+      "Ixora coccinea inflorescence",
+      "Ixora cultivar yellow"
+    ],
+    "sources": [
+      "https://en.wikipedia.org/wiki/Ixora_coccinea",
+      "https://en.wikipedia.org/wiki/Ixora",
+      "https://fr.wikipedia.org/wiki/Ixora",
+      "https://plantfinder.mobot.org/PlantFinderDetails.aspx?taxonid=286675"
+    ]
+  },
+  {
+    "id": "cyrtanthus",
+    "nom_fr": "Lis de feu (cyrtanthus, vallote)",
+    "nom_en": "Fire lily, Scarborough lily",
+    "latin": "Cyrtanthus elatus (syn. Vallota speciosa) et autres Cyrtanthus",
+    "famille": "Amaryllidaceae",
+    "categorie": "Printemps & bulbes",
+    "role": "focale",
+    "couleurs": [
+      "rouge écarlate",
+      "rouge foncé",
+      "orange",
+      "rose",
+      "blanc",
+      "crème",
+      "jaune",
+      "jaune canari"
+    ],
+    "varietes": [
+      {
+        "nom": "C. elatus « Amaryllis Vallota » (Scarborough lily)",
+        "couleur": "rouge foncé",
+        "note": "tiges de 30–50 cm, 3 fleurs ou plus par tige, non parfumé (Sierra Flower Finder) ; AGM RHS"
+      },
+      {
+        "nom": "C. elatus, formes rose et blanche",
+        "couleur": "rose, blanc",
+        "note": "l'écarlate reste la couleur la plus cultivée ; plantes jusqu'à 60 cm, floraison surtout estivale (Pacific Bulb Society)"
+      },
+      {
+        "nom": "C. mackenii (lis d'Ifafa)",
+        "couleur": "blanc, crème, jaune, rouge",
+        "note": "2 à 6 fleurs dressées en entonnoir à bande médiane colorée, toutes parfumées (Pacific Bulb Society)"
+      },
+      {
+        "nom": "Christina",
+        "couleur": "non précisée",
+        "note": "forme colorée de C. mackenii (Pacific Bulb Society)"
+      },
+      {
+        "nom": "C. brachyscyphus",
+        "couleur": "orange",
+        "note": "petite espèce facile, 30 cm (Pacific Bulb Society)"
+      },
+      {
+        "nom": "C. breviflorus",
+        "couleur": "jaune canari",
+        "note": "jusqu'à 14 fleurs par plante, 10–30 cm (Pacific Bulb Society)"
+      },
+      {
+        "nom": "C. falcatus",
+        "couleur": "rouge ou rose-vert",
+        "note": "inflorescence en crosse de berger (PBS) ; AGM RHS"
+      }
+    ],
+    "formes": "Hampe nue portant une ombelle de trompettes ; vendu en fleur coupée sous le nom « Amaryllis Vallota » / Scarborough lily (Sierra Flower Finder). Les cultivars de C. elatus peuvent être rouge vif, orange, jaune, parfois rose ou blanc (Wikipedia).",
+    "saison": "Fin d'été–début d'automne pour C. elatus (Wikipedia), floraison surtout estivale (PBS) ; C. mackenii fleurit de façon opportuniste en culture.",
+    "tenue_vase": "Jusqu'à ~10 jours si acheté en bouton serré (indication de Sierra Flower Finder pour le groupe amaryllis, à confirmer pour Cyrtanthus).",
+    "gamme_prix": "€€€",
+    "rarete_jeu": "precieuse",
+    "notes_dessin": "Hampe lisse et nue, verte, de 30 à 60 cm, terminée par une ombelle de quelques grandes trompettes (3 ou plus chez C. elatus) légèrement inclinées vers l'extérieur. Chez C. elatus, chaque fleur est un large entonnoir évasé à six tépales égaux et arrondis, rouge écarlate brillant (rose ou blanc pour les formes rares), à gorge plus claire, d'où sortent les étamines. Chez C. mackenii, les fleurs sont plus petites, tubulaires et légèrement courbées, dressées, crème, blanches, jaunes ou rouges avec une bande médiane plus colorée sur chaque tépale, et très parfumées. Les feuilles en lanières vert foncé ne sont généralement pas sur la tige coupée ; dans le bouquet, traiter l'ombelle comme une petite amaryllis aérienne, couleurs saturées et satinées.",
+    "wiki": "Cyrtanthus elatus",
+    "img_queries": [
+      "Cyrtanthus elatus",
+      "Cyrtanthus mackenii",
+      "Vallota speciosa"
+    ],
+    "sources": [
+      "https://www.sierraflowerfinder.com/en/d/amaryllis-vallota/6301",
+      "https://www.pacificbulbsociety.org/pbswiki/index.php/CyrtanthusSpeciesTwo",
+      "https://www.pacificbulbsociety.org/pbswiki/index.php/CyrtanthusSpeciesThree",
+      "https://en.wikipedia.org/wiki/Cyrtanthus_elatus",
+      "https://en.wikipedia.org/wiki/Cyrtanthus"
+    ]
+  },
+  {
+    "id": "fraisier-des-bois",
+    "nom_fr": "Fraisier des bois et tiges de fraisier en fruits",
+    "nom_en": "Woodland (alpine) strawberry and fruiting strawberry stems",
+    "latin": "Fragaria vesca (et Fragaria × ananassa)",
+    "famille": "Rosaceae",
+    "categorie": "Remplissage & textures",
+    "role": "baie",
+    "couleurs": [
+      "rouge",
+      "rouge vermillon",
+      "blanc",
+      "jaune blanchâtre",
+      "blanc rosé à akènes rouges",
+      "vert (fruits immatures)",
+      "fleurs blanches",
+      "fleurs rose vif"
+    ],
+    "varietes": [
+      {
+        "nom": "Alexandria",
+        "couleur": "rouge",
+        "note": "F. vesca des quatre-saisons (Park Seed, 1964), peu de stolons, fruits environ deux fois plus gros que les sauvages, 100–120 jours jusqu'aux fruits (Johnny's, Wikipedia)"
+      },
+      {
+        "nom": "Golden Alexandria",
+        "couleur": "fruits rouges, feuillage doré",
+        "note": "(Wikipedia en)"
+      },
+      {
+        "nom": "Reine des Vallées",
+        "couleur": "rouge",
+        "note": "floraison continue, fruits très parfumés (Wikipedia fr)"
+      },
+      {
+        "nom": "Mignonette",
+        "couleur": "rouge",
+        "note": "floraison continue (Wikipedia fr)"
+      },
+      {
+        "nom": "Baron Solemacher",
+        "couleur": "rouge",
+        "note": "floraison continue, obtenu en Allemagne en 1935 (Wikipedia fr, en)"
+      },
+      {
+        "nom": "Rügen",
+        "couleur": "rouge",
+        "note": "premier cultivar moderne sans stolons, remontant et à gros fruits, 1920 (Wikipedia en)"
+      },
+      {
+        "nom": "Weisse Solemacher",
+        "couleur": "blanc",
+        "note": "forme à fruits blancs (Wikipedia en, fr)"
+      },
+      {
+        "nom": "Blanc Amélioré",
+        "couleur": "blanc",
+        "note": "fruits blancs, très gros (Wikipedia fr, en)"
+      },
+      {
+        "nom": "Yellow Wonder",
+        "couleur": "fruits blancs selon Wikipedia fr (jaune blanchâtre)",
+        "note": "floraison continue, feuilles vert clair (Wikipedia fr)"
+      },
+      {
+        "nom": "Illa Martin",
+        "couleur": "blanc",
+        "note": "vendu comme ornemental, à fruits blancs (Wikipedia en)"
+      },
+      {
+        "nom": "Semperflorens",
+        "couleur": "rouge",
+        "note": "fleurit tout l'été, fleurs et fruits en même temps (MBG)"
+      },
+      {
+        "nom": "Wonderful (pineberry)",
+        "couleur": "blanc lavé de rose ou d'orange pâle, akènes rouges",
+        "note": "hybride remontant F. virginiana × F. chiloensis (MBG)"
+      },
+      {
+        "nom": "Pink Panda ('Frel')",
+        "couleur": "fleurs rose vif à cœur jaune",
+        "note": "fraisier ornemental, fleurs jusqu'à 3,8 cm (MBG)"
+      },
+      {
+        "nom": "Mara des Bois",
+        "couleur": "rouge",
+        "note": "F. × ananassa remontant, obtenu par Jacques Marionnet en 1991 (MBG)"
+      }
+    ],
+    "formes": "Tiges florales et fructifères avec grappes de fraises à différents stades (vertes, blanches, rouges), fleurs ouvertes et feuilles trifoliées.",
+    "saison": "Mai–octobre pour les fraisiers des quatre-saisons et remontants ; F. vesca fleurit d'avril à juillet, les variétés à floraison continue ont quatre vagues (printemps, début d'été, fin d'été, début d'automne).",
+    "tenue_vase": "Courte : fruits mûrs fragiles (estimation 2–4 jours) ; préférer des fruits juste colorés et des fraises vertes.",
+    "gamme_prix": "€€",
+    "rarete_jeu": "rare",
+    "notes_dessin": "Tige florale fine et duveteuse qui se ramifie en cymes lâches portant à la fois de petites fleurs blanches à cinq pétales arrondis et cœur jaune bombé, des fraises vertes et des fruits mûrs pendants. Le fruit des bois est petit (souvent 1 à 2 cm), conique à ovoïde, rouge vermillon brillant, entièrement constellé de minuscules akènes posés en surface, et coiffé d'une collerette de sépales verts étoilés ; les formes blanches ou jaunes ('Weisse Solemacher', 'Yellow Wonder') sont plus pâles et plus mates. Feuilles trifoliées à longs pétioles, folioles ovales à grosses dents, un peu plissées le long des nervures, vert vif dessus, plus pâles dessous. Dans le bouquet, faire pendre les grappes de fruits en bordure et garder quelques fleurs ouvertes pour l'effet « jardin ».",
+    "wiki": "Fragaria vesca",
+    "img_queries": [
+      "Fragaria vesca fruit",
+      "Fragaria vesca flowers and fruit",
+      "Alpine strawberry white fruit"
+    ],
+    "sources": [
+      "https://fr.wikipedia.org/wiki/Fraisier_des_bois",
+      "https://en.wikipedia.org/wiki/Fragaria_vesca",
+      "https://plantfinder.mobot.org/PlantFinderDetails.aspx?taxonid=286348",
+      "https://www.johnnyseeds.com/fruits/strawberry/strawberry-seeds/alexandria-strawberry-seed-697.html",
+      "https://plantfinder.mobot.org/PlantFinderDetails.aspx?taxonid=358497"
+    ]
+  },
+  {
+    "id": "tamaris",
+    "nom_fr": "Tamaris",
+    "nom_en": "Tamarisk, salt cedar",
+    "latin": "Tamarix spp. (T. tetrandra, T. parviflora, T. ramosissima, T. gallica)",
+    "famille": "Tamaricaceae",
+    "categorie": "Branches & baies",
+    "role": "branche",
+    "couleurs": [
+      "rose",
+      "rose foncé",
+      "rose pâle",
+      "blanchâtre",
+      "feuillage gris-vert",
+      "rameaux brun-rouge"
+    ],
+    "varietes": [
+      {
+        "nom": "Pink Cascade",
+        "couleur": "rose foncé",
+        "note": "T. ramosissima ; panaches retombants de fin de printemps à l'été, 3–4,5 m (MBG) ; AGM RHS"
+      },
+      {
+        "nom": "T. ramosissima (espèce)",
+        "couleur": "rose",
+        "note": "panaches denses de fleurs à cinq pétales, mai–août (MBG)"
+      },
+      {
+        "nom": "T. tetrandra",
+        "couleur": "rose à blanchâtre",
+        "note": "floraison printanière (mars–avril) ; AGM RHS"
+      },
+      {
+        "nom": "T. parviflora",
+        "couleur": "non précisée",
+        "note": "printanier ; AGM RHS"
+      },
+      {
+        "nom": "T. gallica",
+        "couleur": "non précisée",
+        "note": "tamaris des côtes atlantiques et méditerranéennes (Wikipedia fr)"
+      }
+    ],
+    "formes": "Branches fines, souples et arquées, en fleurs (panaches roses) ou en feuillage plumeux seul.",
+    "saison": "Printemps (mars–avril) pour T. tetrandra et T. parviflora ; mai–août pour T. ramosissima.",
+    "tenue_vase": "Non documentée dans les sources consultées (estimation 5–7 jours ; les minuscules fleurs tombent vite).",
+    "gamme_prix": "€€",
+    "rarete_jeu": "rare",
+    "notes_dessin": "Rameaux très fins, souples et arqués, à écorce lisse brun-rouge, divisés en ramilles plumeuses gris-vert couvertes de feuilles en écailles de 1–2 mm qui se chevauchent comme chez un genévrier : de loin, un feuillage de plumes vaporeuses. Les fleurs, minuscules, à cinq pétales, sont serrées en épis cylindriques de 5–10 cm, rose pâle à rose vif, qui couvrent les rameaux de manchons mousseux ou forment des panaches retombants ('Pink Cascade'). Aucune feuille large : toute la texture vient des écailles et des grappes duveteuses. Dans le bouquet, utiliser les rameaux comme lignes souples et voiles légers qui débordent de la masse ; rendre la texture par une hachure fine et douce, couleur poudrée.",
+    "wiki": "Tamarix",
+    "img_queries": [
+      "Tamarix ramosissima flowers",
+      "Tamarix tetrandra",
+      "Tamarix gallica"
+    ],
+    "sources": [
+      "https://en.wikipedia.org/wiki/Tamarix",
+      "https://fr.wikipedia.org/wiki/Tamarix",
+      "https://plantfinder.mobot.org/PlantFinderDetails.aspx?taxonid=253936",
+      "https://plantfinder.mobot.org/PlantFinderDetails.aspx?taxonid=287294",
+      "https://www.rhs.org.uk/plants/pdfs/rhs-recommended-award-of-garden-merit-ornamentals.pdf"
+    ]
+  },
+  {
+    "id": "ricin-capsules",
+    "nom_fr": "Ricin (grappes de capsules)",
+    "nom_en": "Castor bean seed pods",
+    "latin": "Ricinus communis",
+    "famille": "Euphorbiaceae",
+    "categorie": "Remplissage & textures",
+    "role": "texture",
+    "couleurs": [
+      "vert",
+      "écarlate",
+      "rouge vif",
+      "rouge-pourpre",
+      "prune",
+      "brun-rouge",
+      "bronze",
+      "rose"
+    ],
+    "varietes": [
+      {
+        "nom": "Carmencita",
+        "couleur": "non précisée",
+        "note": "AGM RHS (Wikipedia en, fr)"
+      },
+      {
+        "nom": "Carmencita Bright Red",
+        "couleur": "capsules écarlates, tiges rouges, feuillage pourpre foncé",
+        "note": "(Wikipedia fr)"
+      },
+      {
+        "nom": "Carmencita Pink",
+        "couleur": "capsules roses, feuilles vertes",
+        "note": "(Wikipedia en, fr)"
+      },
+      {
+        "nom": "Gibsonii",
+        "couleur": "capsules écarlate vif, feuilles teintées de rouge à nervures rougeâtres",
+        "note": "(Wikipedia en)"
+      },
+      {
+        "nom": "New Zealand Purple",
+        "couleur": "capsules prune virant au rouge, feuilles prune teintées de rouge",
+        "note": "(Wikipedia en)"
+      },
+      {
+        "nom": "Impala",
+        "couleur": "feuillage et tiges rougeâtres",
+        "note": "compact, 1,2 m ; AGM RHS (Wikipedia en)"
+      },
+      {
+        "nom": "New Zealand Black",
+        "couleur": "non précisée",
+        "note": "AGM RHS"
+      },
+      {
+        "nom": "Zanzibarensis",
+        "couleur": "feuilles vert moyen à nervure médiane blanche",
+        "note": "2–3 m, feuilles de 50 cm (Wikipedia en) ; AGM RHS ('Zanzibariensis')"
+      },
+      {
+        "nom": "Red Spire",
+        "couleur": "tiges rouges, feuillage bronze",
+        "note": "2–3 m (Wikipedia fr)"
+      },
+      {
+        "nom": "Sanguineus",
+        "couleur": "feuilles et tiges rouges à bordeaux",
+        "note": "(MBG)"
+      }
+    ],
+    "formes": "Grappes terminales de capsules épineuses utilisées fraîches, vertes ou rouges, avec ou sans feuilles. ATTENTION : les graines sont extrêmement toxiques (ricine) et toute la plante est vénéneuse.",
+    "saison": "Fin d'été–automne (floraison juin–octobre, capsules en fin de saison).",
+    "tenue_vase": "Non documentée dans les sources consultées (estimation 1–2 semaines pour les capsules ; feuilles plus fragiles).",
+    "gamme_prix": "€€",
+    "rarete_jeu": "rare",
+    "notes_dessin": "SÉCURITÉ : les graines de ricin sont extrêmement toxiques (ricine ; selon Wikipédia, trois graines peuvent être fatales à un enfant et quatre à huit à un adulte) et toute la plante est vénéneuse — manipuler avec des gants, ne jamais utiliser de capsules mûres ou ouvertes, ni laisser de graines à portée d'enfants ou d'animaux. Épi terminal dressé : en haut, des fleurs femelles sans pétales à stigmates rouges plumeux qui deviennent des capsules rondes à trois lobes bien marqués, hérissées de pointes molles comme une petite châtaigne ou un oursin doux, vertes, rouge vif ou bronze ; plus bas, des fleurs mâles jaune verdâtre en houppes d'étamines. Les capsules sont serrées en grappe conique, à surface mate et légèrement cireuse ; à maturité elles brunissent et s'ouvrent en trois coques sur des graines ovales, luisantes, marbrées de brun et de crème. Grande feuille palmée à 5–11 lobes pointus et dentés sur long pétiole, verte, rouge ou pourpre-bronze selon le cultivar ; dans le bouquet, la grappe de capsules apporte un relief épineux et une couleur sourde.",
+    "wiki": "Ricinus communis",
+    "img_queries": [
+      "Ricinus communis seed capsules",
+      "Ricinus communis 'Carmencita'",
+      "Ricinus communis fruit"
+    ],
+    "sources": [
+      "https://plantfinder.mobot.org/PlantFinderDetails.aspx?taxonid=280095",
+      "https://en.wikipedia.org/wiki/Ricinus",
+      "https://fr.wikipedia.org/wiki/Ricin_commun",
+      "https://www.rhs.org.uk/plants/pdfs/rhs-recommended-award-of-garden-merit-ornamentals.pdf",
+      "https://plantfinder.mobot.org/PlantFinderDetails.aspx?taxonid=445895"
+    ]
+  },
+  {
+    "id": "caladium",
+    "nom_fr": "Caladium (feuilles de caladium)",
+    "nom_en": "Caladium leaves, angel wings",
+    "latin": "Caladium bicolor et cultivars",
+    "famille": "Araceae",
+    "categorie": "Feuillages",
+    "role": "feuillage",
+    "couleurs": [
+      "blanc",
+      "rose",
+      "rouge",
+      "bordeaux",
+      "vert",
+      "vert clair",
+      "chartreuse",
+      "bronze",
+      "crème",
+      "vert presque noir"
+    ],
+    "varietes": [
+      {
+        "nom": "White Queen",
+        "couleur": "blanc à nervures rose sang",
+        "note": "feuille « fancy » grande ; devient presque entièrement rose au soleil (Classic Caladiums)"
+      },
+      {
+        "nom": "White Christmas",
+        "couleur": "blanc, cœur rougissant, nervures vertes",
+        "note": "(Thursd)"
+      },
+      {
+        "nom": "Florida Clown",
+        "couleur": "vert moucheté de rose, rouge et blanc",
+        "note": "feuilles en cœur (Thursd)"
+      },
+      {
+        "nom": "Carolyn Whorton",
+        "couleur": "rose dominant",
+        "note": "l'un des plus connus (Classic Caladiums)"
+      },
+      {
+        "nom": "Miss Muffet",
+        "couleur": "chartreuse à points rouges",
+        "note": "fancy, court (Classic Caladiums)"
+      },
+      {
+        "nom": "Red Glamour",
+        "couleur": "centre rouge foncé, nervures sombres, bordure vert foncé",
+        "note": "(Classic Caladiums)"
+      },
+      {
+        "nom": "Heart to Heart Raspberry Moon",
+        "couleur": "vert clair à taches framboise",
+        "note": "fancy, haut (Classic Caladiums)"
+      },
+      {
+        "nom": "Heart to Heart Burning Heart",
+        "couleur": "fond bronze à taches rose-orange",
+        "note": "fancy, haut (Classic Caladiums ; MBG)"
+      },
+      {
+        "nom": "Heart to Heart Crème Brûlée",
+        "couleur": "centre vert clair, large marge rouge-bronze",
+        "note": "fancy, 35–40 cm (Classic Caladiums)"
+      },
+      {
+        "nom": "Heart to Heart Midnight Oil",
+        "couleur": "vert profond et rouge, nervures noires",
+        "note": "feuille en lanière (« strap ») ondulée, 25–30 cm (Classic Caladiums)"
+      },
+      {
+        "nom": "Heart to Heart White Star",
+        "couleur": "blanc rosissant, flamme cramoisie près du pétiole",
+        "note": "(Classic Caladiums)"
+      },
+      {
+        "nom": "Florida Sweetheart",
+        "couleur": "non précisée",
+        "note": "cité par Wikipedia (Caladium bicolor)"
+      }
+    ],
+    "formes": "Feuilles individuelles sur long pétiole ; types « fancy-leaved » (larges, en cœur, les plus courants) et « lance-leaved » ou « strap » (en fer de lance, étroits). Toutes les parties de la plante sont toxiques et peuvent irriter les peaux sensibles (Wikipedia).",
+    "saison": "Feuillage estival (tubercules plantés au printemps ; la culture en extérieur demande des nuits chaudes) ; disponible plus largement sous serre.",
+    "tenue_vase": "Non documentée (feuille fine qui flétrit vite hors de l'eau ; estimation 4–7 jours).",
+    "gamme_prix": "€€",
+    "rarete_jeu": "rare",
+    "notes_dessin": "Feuille en fer de flèche ou en cœur allongé, de 15 à 45 cm, au limbe très fin, presque de papier, souple et légèrement translucide à contre-jour, portée par un long pétiole lisse. Le décor fait tout : fond blanc, rose, rouge ou chartreuse, nervures principales soulignées d'une autre couleur (rouge, vert, noir), mouchetures et éclaboussures irrégulières, marge souvent verte. Les types « strap » ont des feuilles étroites et ondulées ; les « fancy » sont larges, avec deux lobes basaux arrondis et une pointe. Surface mate à satinée ; dans le bouquet, les placer en col ou en éventail derrière les fleurs en laissant voir le dessin des nervures.",
+    "wiki": "Caladium bicolor",
+    "img_queries": [
+      "Caladium bicolor leaves",
+      "Caladium 'White Christmas'",
+      "Caladium cultivars"
+    ],
+    "sources": [
+      "https://plantfinder.mobot.org/PlantFinderDetails.aspx?taxonid=276330",
+      "https://en.wikipedia.org/wiki/Caladium",
+      "https://www.classiccaladiums.com/",
+      "https://www.classiccaladiums.com/products/white_queen_caladiums",
+      "https://thursd.com/products/plants/indoor-green-plants/caladium-white-christmas"
+    ]
+  },
+  {
+    "id": "loropetalum",
+    "nom_fr": "Loropetalum (fleur frangée de Chine, feuillage pourpre)",
+    "nom_en": "Chinese fringe flower (purple-leaved)",
+    "latin": "Loropetalum chinense f. rubrum et cultivars",
+    "famille": "Hamamelidaceae",
+    "categorie": "Feuillages",
+    "role": "feuillage",
+    "couleurs": [
+      "pourpre",
+      "bordeaux",
+      "marron-noir",
+      "bronze-rouge",
+      "vert olive",
+      "vert foncé",
+      "fleurs rose fuchsia",
+      "fleurs rose clair",
+      "fleurs rouge foncé",
+      "fleurs blanches"
+    ],
+    "varietes": [
+      {
+        "nom": "Zhuzhou Fuchsia",
+        "couleur": "feuillage marron-noir, fleurs rose foncé",
+        "note": "port érigé, l'un des plus hauts ; couleur stable toute la saison, écorce qui pèle (MBG)"
+      },
+      {
+        "nom": "Red Diamond ('Shang-Red')",
+        "couleur": "feuillage bordeaux foncé, fleurs rouge foncé",
+        "note": "compact ; remontées sporadiques en été et automne (MBG)"
+      },
+      {
+        "nom": "Purple Diamond",
+        "couleur": "fleurs rose-pourpre",
+        "note": "presque identique à Red Diamond (MBG)"
+      },
+      {
+        "nom": "Rubrum",
+        "couleur": "fleurs rose à rouge",
+        "note": "(MBG)"
+      },
+      {
+        "nom": "Razzle-Dazzle",
+        "couleur": "fleurs roses",
+        "note": "(MBG)"
+      },
+      {
+        "nom": "Pizazz",
+        "couleur": "fleurs rose clair",
+        "note": "(MBG)"
+      },
+      {
+        "nom": "Burgundy",
+        "couleur": "non précisée",
+        "note": "(Wikipedia)"
+      },
+      {
+        "nom": "Ruby",
+        "couleur": "non précisée",
+        "note": "(Wikipedia)"
+      },
+      {
+        "nom": "Purple Pixie",
+        "couleur": "non précisée",
+        "note": "(Wikipedia)"
+      },
+      {
+        "nom": "Ever Red",
+        "couleur": "non précisée",
+        "note": "(Wikipedia)"
+      },
+      {
+        "nom": "Hines Purpleleaf",
+        "couleur": "feuillage pourpre (d'après le nom)",
+        "note": "(Wikipedia)"
+      },
+      {
+        "nom": "Black Pearl",
+        "couleur": "non précisée",
+        "note": "PBR (Wikipedia)"
+      },
+      {
+        "nom": "Purple Majesty",
+        "couleur": "non précisée",
+        "note": "(Wikipedia)"
+      },
+      {
+        "nom": "Raspberry Fringe",
+        "couleur": "non précisée",
+        "note": "(Wikipedia)"
+      },
+      {
+        "nom": "L. chinense (forme verte)",
+        "couleur": "feuillage vert foncé, fleurs blanches",
+        "note": "(MBG)"
+      }
+    ],
+    "formes": "Rameaux feuillés persistants, en feuillage seul ou fleuris au printemps. La forme pourpre est une variété à fleurs roses dont les feuilles passent du bronze-rouge (jeunes) au vert olive ou au bordeaux (adultes) selon la sélection et les conditions de culture (Wikipedia).",
+    "saison": "Feuillage toute l'année (persistant) ; floraison mars–avril.",
+    "tenue_vase": "Non documentée (feuillage persistant et coriace ; estimation 10–14 jours).",
+    "gamme_prix": "€€",
+    "rarete_jeu": "rare",
+    "notes_dessin": "Rameaux fins et ramifiés qui s'étagent en couches presque horizontales, garnis de petites feuilles alternes ovales de 2,5 à 5 cm, à base asymétrique, au toucher légèrement rugueux. Chez les formes pourpres, les jeunes feuilles sont bronze-rouge brillant puis mûrissent en bordeaux, pourpre profond, marron-noir ou vert olive, avec un reflet satiné. Au printemps, des bouquets de fleurs « araignées » au bout des rameaux : quatre pétales en lanières très étroites (environ 2 cm sur 1–2 mm), tortillés et pendants, rose fuchsia, rouge ou blancs, comme des rubans froissés. Dans le bouquet, il sert de fond sombre et velouté qui fait ressortir les fleurs pâles ; dessiner l'étagement des feuilles en écailles et laisser dépasser quelques rameaux en éventail.",
+    "wiki": "Loropetalum chinense",
+    "img_queries": [
+      "Loropetalum chinense rubrum",
+      "Loropetalum chinense 'Zhuzhou Fuchsia'",
+      "Loropetalum chinense flowers"
+    ],
+    "sources": [
+      "https://en.wikipedia.org/wiki/Loropetalum_chinense",
+      "https://plantfinder.mobot.org/PlantFinderDetails.aspx?taxonid=281039",
+      "https://plantfinder.mobot.org/PlantFinderDetails.aspx?taxonid=361339",
+      "https://plantfinder.mobot.org/PlantFinderDetails.aspx?taxonid=366274",
+      "https://plantfinder.mobot.org/PlantFinderDetails.aspx?taxonid=263296"
+    ]
+  },
+  {
+    "id": "tweedia",
+    "nom_fr": "Tweedia (étoile du Sud)",
+    "nom_en": "Tweedia, southern star, blue star flower",
+    "latin": "Oxypetalum coeruleum (syn. Tweedia caerulea)",
+    "famille": "Apocynaceae",
+    "categorie": "Remplissage & textures",
+    "role": "remplissage",
+    "couleurs": [
+      "bleu ciel",
+      "bleu clair",
+      "bleu poudré",
+      "mauve (fleurs âgées)",
+      "violet (fleurs âgées)",
+      "blanc",
+      "rose"
+    ],
+    "varietes": [
+      {
+        "nom": "Heavenbor",
+        "couleur": "bleu clair",
+        "note": "nom tel qu'affiché (apparemment tronqué) par Holex, peut-être 'Heaven Born' — non vérifié ; 50 cm, Pays-Bas"
+      },
+      {
+        "nom": "Alba",
+        "couleur": "blanc",
+        "note": "50 cm, Pays-Bas (Holex) ; cité par Wikipedia"
+      },
+      {
+        "nom": "Rosea",
+        "couleur": "rose",
+        "note": "(Wikipedia)"
+      },
+      {
+        "nom": "Tweedia blue (forme commerciale)",
+        "couleur": "bleu clair",
+        "note": "bottes de 10 tiges, parfum moyen à fort, cultivée aux États-Unis (Florabundance)"
+      },
+      {
+        "nom": "Tweedia white (forme commerciale)",
+        "couleur": "blanc",
+        "note": "bottes de 10 tiges (Florabundance)"
+      }
+    ],
+    "formes": "Tiges florales d'environ 50 cm, souples, portant des cymes de 2 à 4 étoiles à l'aisselle des feuilles ; fleurs « durables et bonnes en coupe » (Wikipedia) ; la tige exsude un latex blanc à la coupe (MBG). Choisir des tiges avec peu de fleurs ouvertes et des boutons déjà colorés.",
+    "saison": "Printemps–été (Floral Design Institute) ; floraison de l'été à l'automne en culture (MBG).",
+    "tenue_vase": "7–10 jours (Floral Design Institute) ; sensible à l'éthylène.",
+    "gamme_prix": "€€",
+    "rarete_jeu": "rare",
+    "notes_dessin": "Petites fleurs étoilées (environ 1,5–2,5 cm) à cinq pétales épais et pointus, bleu ciel poudré, avec au centre une petite couronne saillante plus claire ; la fleur vire au mauve puis au violet en vieillissant, si bien qu'une même tige montre plusieurs tons de bleu. Les fleurs vont par 2 à 4 à l'aisselle des feuilles, sur des tiges volubiles et souples couvertes d'un fin duvet. Feuilles opposées ovales à cordées, jusqu'à 7,5 cm, veloutées, vert grisâtre. Dans le bouquet, la placer en touches de bleu pastel entre les fleurs principales ; rendre le velouté par un léger halo clair sur les contours.",
+    "wiki": "Oxypetalum coeruleum",
+    "img_queries": [
+      "Oxypetalum coeruleum",
+      "Tweedia caerulea flower",
+      "Oxypetalum coeruleum white"
+    ],
+    "sources": [
+      "https://www.floraldesigninstitute.com/blogs/resources-flower-library/tweedia",
+      "https://florabundance.com/flowers/tweedia-blue/",
+      "https://shop.holex.com/en_US/search?text=tweedia",
+      "https://plantfinder.mobot.org/PlantFinderDetails.aspx?taxonid=445960",
+      "https://en.wikipedia.org/wiki/Oxypetalum_coeruleum"
+    ]
+  },
+  {
+    "id": "baptisia-gousses",
+    "nom_fr": "Baptisia (gousses de lupin indigo)",
+    "nom_en": "Baptisia seed pods (false indigo)",
+    "latin": "Baptisia australis et hybrides (aussi B. alba, B. sphaerocarpa)",
+    "famille": "Fabaceae",
+    "categorie": "Remplissage & textures",
+    "role": "texture",
+    "couleurs": [
+      "vert bleuté",
+      "vert",
+      "anthracite",
+      "noir charbon",
+      "brun",
+      "beige",
+      "tiges gris argenté"
+    ],
+    "varietes": [
+      {
+        "nom": "B. australis",
+        "couleur": "gousses vertes puis noir charbon",
+        "note": "gousses gonflées jusqu'à 6,5 cm ; tiges à gousses prisées en bouquets secs (MBG) ; AGM RHS"
+      },
+      {
+        "nom": "B. australis var. minor",
+        "couleur": "id.",
+        "note": "forme naine de 30–60 cm (Wikipedia)"
+      },
+      {
+        "nom": "Purple Smoke",
+        "couleur": "fleurs violet fumé ; gousses cylindriques",
+        "note": "hybride (B. alba) à tiges anthracite ; gousses jusqu'à 6,5 cm utilisées en bouquets secs (MBG)"
+      },
+      {
+        "nom": "Dutch Chocolate",
+        "couleur": "fleurs brun-pourpre",
+        "note": "série Decadence (Walters Gardens), suivie de gousses gonflées (MBG)"
+      },
+      {
+        "nom": "Lemon Meringue",
+        "couleur": "fleurs jaune vif",
+        "note": "têtes de graines décoratives jusqu'à l'automne (MBG)"
+      },
+      {
+        "nom": "Carolina Moonlight",
+        "couleur": "fleurs jaune beurre",
+        "note": "B. sphaerocarpa × B. alba (MBG)"
+      },
+      {
+        "nom": "Pink Lemonade",
+        "couleur": "fleurs jaune pâle virant au rose framboise-mauve",
+        "note": "Decadence Deluxe (MBG)"
+      },
+      {
+        "nom": "B. alba",
+        "couleur": "gousses brun à noir",
+        "note": "gousses jusqu'à 4,5 cm ; fleurs blanc crème (MBG)"
+      },
+      {
+        "nom": "B. sphaerocarpa",
+        "couleur": "gousses sphériques beige à brun",
+        "note": "gousses rondes d'environ 2 cm (MBG)"
+      }
+    ],
+    "formes": "Tiges de gousses fraîches (vertes, en été) ou sèches (noircies, en fin d'été et automne) ; les tiges à gousses sont appréciées en bouquets secs.",
+    "saison": "Fleurs avril–juin ; gousses vertes en été, noires à maturité en fin d'été et à l'automne (les feuilles tombent environ un mois après la formation des gousses).",
+    "tenue_vase": "Gousses sèches : plusieurs mois (matériau sec, sans eau) ; tiges fraîches : non documentée.",
+    "gamme_prix": "€€",
+    "rarete_jeu": "rare",
+    "notes_dessin": "Tige raide et lisse, glauque puis gris argenté ou anthracite, portant dans sa partie haute des gousses gonflées comme de petites cosses de pois soufflées : ovoïdes à oblongues, 2,5 à 7,5 cm de long, terminées par un bec fin et courbé. Fraîches, elles sont vert bleuté et mates ; mûres, elles noircissent en charbon avec un léger lustre, deviennent dures, et les graines libres font hochet à l'intérieur. Chez B. sphaerocarpa, ce sont de petites sphères beige à brun d'environ 2 cm. Les gousses s'espacent le long de l'axe, chacune sur un court pédicelle, souvent un peu relevées ; dans le bouquet elles apportent un rythme graphique sombre et des volumes ronds, à dessiner avec un reflet mat et la couture longitudinale visible.",
+    "wiki": "Baptisia australis",
+    "img_queries": [
+      "Baptisia australis seed pods",
+      "Baptisia australis fruit",
+      "Baptisia seed pods black"
+    ],
+    "sources": [
+      "https://plantfinder.mobot.org/PlantFinderDetails.aspx?taxonid=280580",
+      "https://plantfinder.mobot.org/PlantFinderDetails.aspx?taxonid=254224",
+      "https://plantfinder.mobot.org/PlantFinderDetails.aspx?taxonid=280582",
+      "https://en.wikipedia.org/wiki/Baptisia_australis",
+      "https://fr.wikipedia.org/wiki/Baptisia_australis"
+    ]
+  },
+  {
+    "id": "grenade-branche",
+    "nom_fr": "Grenadier (branches de grenades)",
+    "nom_en": "Pomegranate branches",
+    "latin": "Punica granatum",
+    "famille": "Lythraceae",
+    "categorie": "Branches & baies",
+    "role": "baie",
+    "couleurs": [
+      "vert",
+      "jaune lavé de rouge",
+      "rouge-orangé",
+      "rouge",
+      "rouge foncé",
+      "rouge-bordeaux (séché)"
+    ],
+    "varietes": [
+      {
+        "nom": "Branches de grenadier (forme commerciale)",
+        "couleur": "vert puis coloré à l'automne",
+        "note": "plusieurs grenades de la taille d'une pomme par tige, fin d'été–début d'automne ; bottes de producteur de 4–7 tiges (Florabundance)"
+      },
+      {
+        "nom": "Pomegranate branches (Sierra Flower Finder)",
+        "couleur": "orange",
+        "note": "gros fruits verts « de la taille d'une balle de baseball » rougissant en saison, septembre–novembre"
+      },
+      {
+        "nom": "Grenade séchée sur tige",
+        "couleur": "rouge, rouge-bordeaux, rouge foncé",
+        "note": "grenades stabilisées sur tige, bottes de 5 (Florabundance)"
+      },
+      {
+        "nom": "Wonderful",
+        "couleur": "rouge",
+        "note": "gros fruits aplatis de 13–15 cm à pulpe rouge foncé (MBG) ; originaire de Floride, variété à jus très fertile (Wikipedia fr)"
+      },
+      {
+        "nom": "Nana (P. granatum var. nana)",
+        "couleur": "fruits de 5 cm, fleurs écarlates",
+        "note": "naine, environ 90 cm, utilisée en bonsaï (MBG, Wikipedia fr) ; AGM RHS"
+      },
+      {
+        "nom": "Dwarf Red",
+        "couleur": "fleurs rouge-orangé pendantes",
+        "note": "naine, petits fruits non comestibles (MBG)"
+      },
+      {
+        "nom": "Red Russian",
+        "couleur": "rouge-orangé",
+        "note": "fruits de taille normale mûrs au début de l'automne, rustique (MBG)"
+      },
+      {
+        "nom": "Sweet",
+        "couleur": "reste un peu verte à maturité",
+        "note": "très sucrée (Wikipedia fr)"
+      }
+    ],
+    "formes": "Branches fruitées fraîches (fruits verts à rouges, avec ou sans feuilles) ; grenades séchées ou stabilisées sur tige.",
+    "saison": "Fin d'été–automne : branches de fin d'été au début de l'automne (Florabundance), septembre–novembre (Sierra Flower Finder) ; grenades séchées toute l'année.",
+    "tenue_vase": "Fruits : plusieurs semaines ; feuillage plus fragile (estimation 7–10 jours pour la branche feuillée).",
+    "gamme_prix": "€€€",
+    "rarete_jeu": "rare",
+    "notes_dessin": "Rameaux gris-brun, raides et un peu anguleux, souvent épineux, garnis de feuilles opposées étroites, oblongues (jusqu'à 10 cm), vert brillant, qui jaunissent à l'automne. Les fruits, sphériques et un peu aplatis, de 5 à 12 cm, pendent lourdement au bout des rameaux : peau épaisse et coriace, lisse et satinée, du vert au jaune lavé de rouge puis rouge profond, souvent plus colorée côté soleil. Au sommet, le calice persistant forme une petite couronne de dents pointues dressées. Dans le bouquet, un fruit massif sert de point focal bas ; on peut montrer une grenade ouverte, avec ses graines entourées d'arilles rouge rubis translucides serrées en loges séparées par des cloisons crème.",
+    "wiki": "Punica granatum",
+    "img_queries": [
+      "Punica granatum fruit on tree",
+      "Pomegranate branch fruit",
+      "Punica granatum var. nana fruit"
+    ],
+    "sources": [
+      "https://florabundance.com/flowers/pomegranate-branch/",
+      "https://www.sierraflowerfinder.com/en/d/pomegrante-branches/3175",
+      "https://plantfinder.mobot.org/PlantFinderDetails.aspx?taxonid=286059",
+      "https://plantfinder.mobot.org/PlantFinderDetails.aspx?taxonid=253038",
+      "https://fr.wikipedia.org/wiki/Grenadier_commun"
+    ]
+  },
+  {
+    "id": "figuier-branche",
+    "nom_fr": "Figuier (branches de figues)",
+    "nom_en": "Fig branches",
+    "latin": "Ficus carica",
+    "famille": "Moraceae",
+    "categorie": "Branches & baies",
+    "role": "baie",
+    "couleurs": [
+      "vert",
+      "vert-jaune",
+      "jaune doré",
+      "marron-rouge",
+      "violet",
+      "pourpre-brun",
+      "noir violacé",
+      "rayé vert et blanc-jaune"
+    ],
+    "varietes": [
+      {
+        "nom": "Branches de figuier vertes (forme commerciale)",
+        "couleur": "vert",
+        "note": "plusieurs figues vertes par tige, avec ou sans feuilles, en été ; 3–4 tiges par botte de producteur (Florabundance)"
+      },
+      {
+        "nom": "Branches de figuier rayées « Striped » (forme commerciale)",
+        "couleur": "rayé vert et blanc",
+        "note": "printemps–été (Florabundance) ; « Striped » est un synonyme de la 'Panachée' (Wikipedia fr)"
+      },
+      {
+        "nom": "Panachée",
+        "couleur": "fruit strié",
+        "note": "synonymes : Bourjassotte panachée, Rayonne, Limone, Striped (Wikipedia fr)"
+      },
+      {
+        "nom": "Brown Turkey",
+        "couleur": "pourpre-brun, chair rose ambré",
+        "note": "plus rustique que l'espèce (MBG)"
+      },
+      {
+        "nom": "Celeste",
+        "couleur": "peau pourpre, chair rose",
+        "note": "petites figues en goutte de 2,5–5 cm à œil fermé (MBG)"
+      },
+      {
+        "nom": "Chicago Hardy",
+        "couleur": "brun clair à pourpre foncé, chair rose",
+        "note": "très rustique (MBG)"
+      },
+      {
+        "nom": "Violette de Solliès",
+        "couleur": "violet foncé (d'après le nom)",
+        "note": "synonyme de la Bourjassotte noire (Wikipedia fr)"
+      },
+      {
+        "nom": "Noire de Caromb",
+        "couleur": "noire (d'après le nom)",
+        "note": "synonymes : Perroquine, Péruquière (Wikipedia fr)"
+      },
+      {
+        "nom": "Goutte d'Or (Dorée)",
+        "couleur": "jaune doré (d'après le nom)",
+        "note": "synonymes : Fique d'Or, Goldtropfen (Wikipedia fr)"
+      },
+      {
+        "nom": "Ronde de Bordeaux",
+        "couleur": "foncée (synonyme « Black of Bordeaux »)",
+        "note": "(Wikipedia fr)"
+      },
+      {
+        "nom": "Ice Crystal",
+        "couleur": "non précisée",
+        "note": "AGM RHS ; cité par Wikipedia en"
+      }
+    ],
+    "formes": "Branches feuillées ou défeuillées portant des figues vertes à colorées ; toutes les parties contiennent un latex blanc (« lait de figuier ») irritant.",
+    "saison": "Printemps–été (figues-fleurs, branches rayées) et été–automne pour la récolte principale (figues fraîches d'août à début octobre dans l'hémisphère Nord).",
+    "tenue_vase": "Non documentée dans les sources consultées (estimation 5–7 jours ; grandes feuilles qui flétrissent vite, fruits mûrs fragiles).",
+    "gamme_prix": "€€€",
+    "rarete_jeu": "rare",
+    "notes_dessin": "Rameau épais, lisse, gris clair, avec de grosses cicatrices foliaires et un bourgeon terminal pointu. Les figues, en goutte ou en petite poire de 3 à 5 cm, sortent une à une à l'aisselle des feuilles sur un court pédoncule : peau mate, verte puis jaunâtre, violette ou brun-pourpre à maturité, parcourue de fines côtes, avec un petit œil (ostiole) au sommet ; la 'Panachée' est rayée de vert et de jaune pâle. Les feuilles, de 20 à 35 cm, sont palmées à 3–5 lobes profonds, épaisses, rugueuses et vert foncé dessus, plus claires et lisses dessous. Dans le bouquet, la branche fruitée fait une ligne graphique : dessiner les fruits en grappes clairsemées et une ou deux grandes feuilles pour l'échelle ; une goutte de latex blanc perle à la coupe.",
+    "wiki": "Ficus carica",
+    "img_queries": [
+      "Ficus carica fruit on branch",
+      "Ficus carica Panachee",
+      "Common fig unripe fruit"
+    ],
+    "sources": [
+      "https://florabundance.com/flowers/fig-branches/",
+      "https://florabundance.com/flowers/fig-branches-striped/",
+      "https://fr.wikipedia.org/wiki/Figuier_commun",
+      "https://plantfinder.mobot.org/PlantFinderDetails.aspx?taxonid=367794",
+      "https://en.wikipedia.org/wiki/Common_fig"
+    ]
+  },
+  {
+    "id": "litchi-branche",
+    "nom_fr": "Litchi (grappes de litchis sur rameau)",
+    "nom_en": "Lychee fruit clusters on the branch",
+    "latin": "Litchi chinensis",
+    "famille": "Sapindaceae",
+    "categorie": "Branches & baies",
+    "role": "baie",
+    "couleurs": [
+      "rouge",
+      "rose-rouge",
+      "rose",
+      "vert (immature)",
+      "brun-rouge (en séchant)",
+      "jeunes feuilles rouge cuivré"
+    ],
+    "varietes": [
+      {
+        "nom": "Guiwei (桂味, « parfum d'osmanthe »)",
+        "couleur": "non précisée",
+        "note": "cultivar chinois réputé (Wikipedia fr, en)"
+      },
+      {
+        "nom": "Nuomici (糯米糍, « galette de riz gluant »)",
+        "couleur": "non précisée",
+        "note": "(Wikipedia fr, en)"
+      },
+      {
+        "nom": "Feizixiao (妃子笑, « sourire de la concubine »)",
+        "couleur": "non précisée",
+        "note": "(Wikipedia fr, en)"
+      },
+      {
+        "nom": "Kwai Mai",
+        "couleur": "non précisée",
+        "note": "cultivar chinois populaire (Wikipedia en)"
+      },
+      {
+        "nom": "Mauritius",
+        "couleur": "non précisée",
+        "note": "cultivé aux États-Unis (Wikipedia en)"
+      },
+      {
+        "nom": "Brewster",
+        "couleur": "non précisée",
+        "note": "cultivé aux États-Unis (Wikipedia en)"
+      },
+      {
+        "nom": "Early Large Red",
+        "couleur": "rouge (d'après le nom)",
+        "note": "cultivar indien (Wikipedia en)"
+      }
+    ],
+    "formes": "Rameaux fruitiers coupés avec leur grappe pendante de litchis et quelques feuilles composées. Usage floral rare : aucune offre trouvée chez les grossistes en fleurs consultés, à sourcer via le circuit des fruits.",
+    "saison": "Mai–juillet en Asie ; novembre–février pour l'hémisphère Sud (Madagascar, La Réunion), avec un pic de consommation aux fêtes de fin d'année et au Nouvel An lunaire en Europe (Madagascar ≈ 80 % des importations européennes en 2018–2019).",
+    "tenue_vase": "Non documentée (estimation 3–5 jours : la peau brunit et sèche vite une fois cueillie).",
+    "gamme_prix": "€€€",
+    "rarete_jeu": "precieuse",
+    "notes_dessin": "Grappe pendante et lâche, de quelques fruits à plusieurs dizaines, sur des pédicelles fins et ligneux ramifiés au bout d'un rameau feuillé. Chaque litchi fait 3–4 cm (jusqu'à 5 × 4 cm), rond, ovoïde ou en cœur, à peau fine, coriace et sèche couverte de petites protubérances pointues en écailles (une mosaïque de tuiles), rose vif à rouge framboise, verte avant maturité. Feuilles composées paripennées de 15–25 cm à 2–8 folioles elliptiques-lancéolées, pointues, vert foncé luisant ; les jeunes pousses sont rouge cuivré brillant. Dans le bouquet, faire retomber la grappe sur le bord du vase ; on peut montrer un fruit ouvert : chair blanc vitreux, translucide et nacrée, autour d'un noyau brun brillant.",
+    "wiki": "Litchi chinensis",
+    "img_queries": [
+      "Litchi chinensis fruit cluster",
+      "Lychee fruits on tree",
+      "Litchi chinensis branch"
+    ],
+    "sources": [
+      "https://fr.wikipedia.org/wiki/Litchi",
+      "https://en.wikipedia.org/wiki/Lychee",
+      "https://plantfinder.mobot.org/PlantFinderDetails.aspx?taxonid=286819"
+    ]
+  },
+  {
+    "id": "kumquat-branche",
+    "nom_fr": "Kumquat (branches fruitées)",
+    "nom_en": "Kumquat branches",
+    "latin": "Citrus japonica (syn. Fortunella spp.)",
+    "famille": "Rutaceae",
+    "categorie": "Branches & baies",
+    "role": "baie",
+    "couleurs": [
+      "orange",
+      "orange profond",
+      "jaune-orange",
+      "vert (immature)",
+      "rayé vert clair et jaune (Centennial Variegated)"
+    ],
+    "varietes": [
+      {
+        "nom": "Nagami (kumquat ovale, F. margarita)",
+        "couleur": "orange profond",
+        "note": "fruit ovale d'environ 3 cm, 2–5 pépins, le plus courant (Thursd, Wikipedia)"
+      },
+      {
+        "nom": "Meiwa (C. crassifolia)",
+        "couleur": "orange",
+        "note": "plus gros, pulpe plus sucrée, presque sans pépins (Thursd, Wikipedia)"
+      },
+      {
+        "nom": "Marumi (kumquat rond)",
+        "couleur": "jaune-orange",
+        "note": "petit, rond, très juteux, peau épaisse (Thursd, Wikipedia)"
+      },
+      {
+        "nom": "Centennial Variegated",
+        "couleur": "rayé vert clair et jaune, puis orange",
+        "note": "feuillage panaché blanc et vert, fruits ~3,8 cm ; rayures orange-rouge à maturité selon MBG, effacées selon Wikipedia"
+      },
+      {
+        "nom": "Hong Kong (C. hindsii)",
+        "couleur": "non précisée",
+        "note": "kumquat sauvage de Hong Kong à petits fruits immangeables (Wikipedia)"
+      }
+    ],
+    "formes": "Branches feuillées chargées de petits fruits orange ; arbustes en pot offerts couverts de fruits pour le Nouvel An lunaire (Wikipedia fr). Les branches de kumquat sont aussi offertes comme porte-bonheur et se marient aux œillets d'Inde dans les compositions festives (Thursd).",
+    "saison": "Fruits de novembre à avril, au mieux en décembre–janvier (Thursd) ; floraison en été (juillet–août, Wikipedia fr).",
+    "tenue_vase": "Non documentée (estimation 1–2 semaines : feuillage persistant et fruits fermes).",
+    "gamme_prix": "€€€",
+    "rarete_jeu": "rare",
+    "notes_dessin": "Rameaux fins et denses garnis de feuilles elliptiques de 3 à 5 cm, épaisses, vert foncé très brillant dessus. Les fruits, de 2,5 à 5 cm, ovales (Nagami) ou ronds (Marumi), pendent seuls ou par deux ou trois au bout de courts pédoncules, avec une petite collerette de sépales verts à la base. Peau lisse et luisante, orange vif à orange doré, finement piquetée de glandes à huile qui accrochent la lumière ; 'Centennial Variegated' montre des rayures vert clair et jaunes avant maturité. Petites fleurs blanches parfumées à l'aisselle des feuilles en saison ; dans le bouquet, les fruits font des touches de couleur nettes : dessiner des ellipses brillantes avec un reflet ponctuel.",
+    "wiki": "Citrus japonica",
+    "img_queries": [
+      "Kumquat fruit on branch",
+      "Fortunella margarita fruit",
+      "Citrus japonica fruit"
+    ],
+    "sources": [
+      "https://thursd.com/articles/what-is-the-kumquat-tree-heres-a-full-scoop-on-everything-to-know-about-it",
+      "https://en.wikipedia.org/wiki/Kumquat",
+      "https://fr.wikipedia.org/wiki/Kumquat",
+      "https://plantfinder.mobot.org/PlantFinderDetails.aspx?taxonid=273471",
+      "https://www.rhs.org.uk/plants/pdfs/rhs-recommended-award-of-garden-merit-ornamentals.pdf"
+    ]
+  },
+  {
+    "id": "fil-aluminium-decoratif",
+    "nom_fr": "Fil d'aluminium décoratif",
+    "nom_en": "Decorative aluminium wire",
+    "latin": null,
+    "famille": null,
+    "categorie": "Accessoires & matières",
+    "role": "accent",
+    "couleurs": [
+      "argent",
+      "or",
+      "or clair",
+      "cuivre",
+      "noir",
+      "rouge",
+      "rose",
+      "rose vif",
+      "violet",
+      "vert pomme"
+    ],
+    "varietes": [
+      {
+        "nom": "OASIS Aluminium Wire 2 mm – 100 g",
+        "couleur": "argent, or, or clair, cuivre, noir, rouge, rose, rose vif, violet, vert pomme",
+        "note": "environ 11,7 m par bobine ; fil d'aluminium à finition métallisée colorée, malléable mais assez rigide pour tenir une forme (OASIS Floral Products)"
+      },
+      {
+        "nom": "OASIS Aluminium Wire 2 mm – 500 g",
+        "couleur": "selon stock",
+        "note": "environ 58 m (OASIS Floral Products)"
+      },
+      {
+        "nom": "Fils décoratifs apparentés",
+        "couleur": "variés",
+        "note": "le même fournisseur propose aussi du fil métallique (« metallic wire »), du fil « bullion » et du « bindwire » (OASIS Floral Products)"
+      }
+    ],
+    "formes": "Bobines de fil plein et rond de 2 mm ; se façonne à la main en spirales, boucles, vagues ou structures autour du bouquet.",
+    "saison": "Toute l'année.",
+    "tenue_vase": "Sans objet (matériau inaltérable, ne demande pas d'eau).",
+    "gamme_prix": "€",
+    "rarete_jeu": "commune",
+    "notes_dessin": "Fil plein et rond d'environ 2 mm de diamètre, à surface colorée brillante comme un métal laqué, avec un reflet spéculaire continu le long de chaque courbe. Il se plie à la main en spirales serrées, en boucles libres, en vagues ou en ressorts enroulés autour des tiges ; les courbes restent nettes et régulières, avec de légers méplats aux points de pliage. Dans le bouquet, il sort de la masse en lignes graphiques, s'enroule autour du col ou forme un cadre-structure : dessiner un trait d'épaisseur constante, une bande de lumière sur le dessus et un liseré plus sombre dessous. Les teintes (argent, or, cuivre, noir, rouge, rose, violet, vert pomme) restent saturées et uniformes, sans dégradé.",
+    "wiki": "Aluminium wire floral",
+    "img_queries": [
+      "Coloured aluminium wire",
+      "Aluminium craft wire",
+      "Floral wire"
+    ],
+    "sources": [
+      "https://www.oasisfloral.co.uk/aluminium-wire-11-7m",
+      "https://www.oasisfloral.co.uk/wires"
+    ]
+  },
+  {
+    "id": "plume-autruche-teinte",
+    "nom_fr": "Plume d'autruche teinte",
+    "nom_en": "Dyed ostrich feather",
+    "latin": null,
+    "famille": null,
+    "categorie": "Accessoires & matières",
+    "role": "accent",
+    "couleurs": [
+      "blanc",
+      "naturel",
+      "ivoire",
+      "beige",
+      "champagne",
+      "cannelle",
+      "or",
+      "argent",
+      "jaune",
+      "souci",
+      "orange",
+      "rouge",
+      "bordeaux",
+      "rose bonbon",
+      "rose shocking",
+      "rose oriental",
+      "lavande",
+      "violet",
+      "bleu roi",
+      "bleu canard",
+      "vert anis",
+      "noir"
+    ],
+    "varietes": [
+      {
+        "nom": "Femina « prime » 20–25 po (51–64 cm)",
+        "couleur": "blanc, noir, cannelle, vert anis, rouge, argent…",
+        "note": "grandes plumes de qualité supérieure (Zucker Feather Products)"
+      },
+      {
+        "nom": "Femina « prime » 24–30 po (61–76 cm)",
+        "couleur": "beige, champagne, or, ivoire, lavande, souci, naturel, rose oriental, violet, rouge, bleu roi, rose shocking, argent, bleu canard, jaune, rose bonbon, noir, blanc",
+        "note": "(Zucker Feather Products)"
+      },
+      {
+        "nom": "Drabs 4–8, 9–12, 13–16 et 17 po et plus (10 à 43 cm et plus)",
+        "couleur": "noir, blanc, ivoire, beige, bordeaux, rose bonbon, champagne, or, lavande, orange, violet, rouge, bleu roi, rose shocking, argent, bleu canard",
+        "note": "plumes plus petites, classées par longueur (Zucker Feather Products)"
+      },
+      {
+        "nom": "Spads, queues, nandus, boas, éventails",
+        "couleur": "selon gamme",
+        "note": "autres catégories d'autruche du même fournisseur (Zucker Feather Products)"
+      }
+    ],
+    "formes": "Plumes à l'unité ou en paquets, naturelles ou teintes, à fixer sur une tige ou un pique pour les insérer dans le bouquet.",
+    "saison": "Toute l'année.",
+    "tenue_vase": "Sans objet ; à garder au sec (les barbes s'agglutinent à l'humidité).",
+    "gamme_prix": "€€€",
+    "rarete_jeu": "rare",
+    "notes_dessin": "Rachis central fin, lisse et légèrement arqué, d'où partent de très longues barbes souples et libres : dépourvues des petits crochets qui soudent les plumes des oiseaux volants, elles ne forment pas de surface fermée mais un panache vaporeux, doux et ébouriffé, qui ondule et retombe. Les femina sont grandes, larges et pleines, à pointe arrondie retombante ; les drabs sont plus petites, plus étroites et plus irrégulières. La teinture donne des couleurs saturées et assez uniformes ; texture mate, presque de fourrure, avec un liseré lumineux à contre-jour. Dans le bouquet, la plume crée un volume léger qui déborde du dôme ou un voile vaporeux derrière les fleurs : dessiner des mèches fines et ondulées, jamais un contour net.",
+    "wiki": "Ostrich feather",
+    "img_queries": [
+      "Ostrich feather",
+      "Dyed ostrich feathers",
+      "Ostrich plume"
+    ],
+    "sources": [
+      "https://zuckerfeather.com/collections/ostrich_femina",
+      "https://zuckerfeather.com/collections/ostrich_drabs",
+      "https://en.wikipedia.org/wiki/Common_ostrich"
+    ]
+  },
+  {
+    "id": "chaines-strass-perles",
+    "nom_fr": "Chaînes de strass et perles décoratives",
+    "nom_en": "Rhinestone chains and pearl strands",
+    "latin": null,
+    "famille": null,
+    "categorie": "Accessoires & matières",
+    "role": "accent",
+    "couleurs": [
+      "cristal transparent",
+      "argent",
+      "aurore boréale (irisé)",
+      "blanc perle",
+      "ivoire",
+      "vert et blanc (guirlandes perlées)"
+    ],
+    "varietes": [
+      {
+        "nom": "Ruban de strass (« Artificial Diamonds Rhinestone »)",
+        "couleur": "argent",
+        "note": "strass artificiels métallisés en 2, 5 ou 8 rangs (5 rangs = 2,5 cm de large), bobine de 3 yards (≈ 2,7 m) ; pour centres de table, gâteaux, nœuds (BBCrafts)"
+      },
+      {
+        "nom": "Épingles diamant (Diamante Pins)",
+        "couleur": "tête cristal transparent, tige argent",
+        "note": "têtes de 6 ou 8 mm, longueurs 38 ou 50 mm, sachets de 100 (OASIS)"
+      },
+      {
+        "nom": "Épingles à tête perle ronde",
+        "couleur": "blanc, ivoire",
+        "note": "têtes de 4 à 6 mm, longueurs de 40 à 65 mm, sachets de 144 ; servent à fixer et à décorer (OASIS)"
+      },
+      {
+        "nom": "Guirlandes et couronnes en fil perlé",
+        "couleur": "vert, vert et blanc",
+        "note": "structures en fil perlé façonnables : couronnes de 30 et 40 cm, guirlandes de 180 cm × 5 cm (OASIS)"
+      },
+      {
+        "nom": "Strass aurore boréale (AB)",
+        "couleur": "irisé",
+        "note": "revêtement irisé déposé sous vide sur le cristal (Wikipedia)"
+      }
+    ],
+    "formes": "Rubans et chaînes de strass, fils perlés, épingles à tête strass ou perle, guirlandes ; à enrouler autour du manche, piquer au cœur des fleurs ou laisser pendre.",
+    "saison": "Toute l'année.",
+    "tenue_vase": "Sans objet (matériau inaltérable).",
+    "gamme_prix": "€€",
+    "rarete_jeu": "commune",
+    "notes_dessin": "Les strass sont de petites pierres à facettes (verre ou acrylique, imitation de diamant) alignées côte à côte en un ou plusieurs rangs dans une monture argentée : chaque pierre renvoie un éclat blanc vif ponctuel, avec parfois des reflets arc-en-ciel (finition aurore boréale). Les perles sont des sphères lisses (4 à 6 mm pour les épingles), blanc nacré ou ivoire, au reflet doux et diffus, avec un point de lumière et une légère irisation sur le pourtour. Dans le bouquet, la chaîne de strass s'enroule en spirale autour du manche ou souligne le col ; les épingles perles se piquent au cœur des roses comme des gouttes de rosée. Dessiner les strass en rangées régulières de petits losanges étincelants, et les perles en cercles dégradés avec une ombre portée minuscule.",
+    "wiki": "Rhinestone",
+    "img_queries": [
+      "Rhinestone chain",
+      "Rhinestone",
+      "Pearl pin"
+    ],
+    "sources": [
+      "https://www.bbcrafts.com/products/diamond-wraps-artificial-rhinestone-5-rows-x-3-yards",
+      "https://www.oasisfloral.co.uk/diamante-pins",
+      "https://www.oasisfloral.co.uk/round-headed-pearl-pins",
+      "https://www.oasisfloral.co.uk/timeless-tidings-beaded-wreath",
+      "https://en.wikipedia.org/wiki/Rhinestone"
+    ]
+  },
+  {
+    "id": "papier-emballage-floral",
+    "nom_fr": "Papier d'emballage floral (papier coréen, crépon, cristal)",
+    "nom_en": "Floral wrapping paper (Korean-style wrap, crepe paper, cellophane)",
+    "latin": null,
+    "famille": null,
+    "categorie": "Accessoires & matières",
+    "role": "accent",
+    "couleurs": [
+      "transparent",
+      "givré",
+      "nacré",
+      "blanc",
+      "crème",
+      "rose pâle",
+      "rose",
+      "rose vif",
+      "pêche",
+      "lilas",
+      "violet",
+      "aubergine",
+      "bleu pâle",
+      "bleu ciel",
+      "bleu roi",
+      "bleu nuit",
+      "turquoise",
+      "vert sauge",
+      "vert menthe",
+      "vert pomme",
+      "vert mousse",
+      "vert forêt",
+      "jaune",
+      "orange",
+      "rouge",
+      "rouge carmin",
+      "bordeaux",
+      "brun",
+      "gris",
+      "noir",
+      "or",
+      "argent",
+      "cuivre"
+    ],
+    "varietes": [
+      {
+        "nom": "Papier coréen (film imperméable mat-satiné)",
+        "couleur": "20 coloris chez OASIS : aubergine, vert pomme, bleu, noir, bordeaux, crème, lilas, mousse, orange, rose, violet, rose vif, rose pâle, bleu pâle, bleu roi, rouge, blanc, jaune, or/blanc, argent/blanc",
+        "note": "équivalent documenté : « Pearlised Waterproof Film Wrap » OASIS, film BOPP imperméable au toucher soyeux et léger reflet, rouleau 60 cm × 25 m ; l'appellation « papier coréen » (emballage en couches superposées) n'a pas été vérifiée sur une fiche de fournisseur coréen"
+      },
+      {
+        "nom": "Papier crépon fleuriste 180 g (144 g/m²)",
+        "couleur": "≈ 40 teintes : rouges (cardinal, carmin, titien, écarlate), orange fluo, jaunes, crème, blanc, verts (forêt, feuille, menthe, sauge, Tiffany…), turquoise, bleus (ciel, azur, nuit), noir…",
+        "note": "Cartotecnica Rossi « Superior Florist », rouleaux de 50 × 250 cm ; existe aussi en 40, 60, 90 et 140 g, en versions métallisées, résistantes à l'eau et dégradées"
+      },
+      {
+        "nom": "Papier cristal (cellophane / film transparent)",
+        "couleur": "transparent, givré, imprimé",
+        "note": "vraie cellophane (cellulose) ou, le plus souvent, film BOPP polypropylène, en feuilles ou rouleaux, imprimable (Carccu)"
+      },
+      {
+        "nom": "Film givré Classic Colour Palette",
+        "couleur": "24 coloris dont or, argent, cuivre, sauge, pêche, gris, noir",
+        "note": "BOPP imperméable 35 µm, rouleaux 80 cm × 80 m (60 m pour les métallisés) (OASIS)"
+      }
+    ],
+    "formes": "Feuilles ou rouleaux ; superposition de plusieurs couches en éventail (style coréen), cornet, col plissé ; le crépon s'étire et se fronce pour onduler les bords.",
+    "saison": "Toute l'année.",
+    "tenue_vase": "Sans objet ; le crépon déteint facilement une fois mouillé (Wikipedia).",
+    "gamme_prix": "€",
+    "rarete_jeu": "commune",
+    "notes_dessin": "Papier coréen : feuilles fines mais tenues, mates à satinées au toucher soyeux, souvent de deux couleurs recto-verso, superposées en éventail de deux ou trois couches décalées dont les bords dépassent en V ; plis souples et arrondis, ombres douces. Crépon : papier gaufré de fines stries parallèles (crêpage) qui accrochent la lumière en rayures ; étiré, il ondule en bordure comme un volant, couleurs denses et mates. Cristal : film transparent et brillant, presque invisible, révélé seulement par des reflets blancs vifs le long des plis cassés et par une légère déformation des tiges vues au travers ; les versions givrées sont translucides et laiteuses. Dessiner l'emballage comme un cornet ouvert qui encadre les fleurs, avec un ruban au point de serrage.",
+    "wiki": "Flower wrapping paper",
+    "img_queries": [
+      "Crepe paper",
+      "Cellophane",
+      "Bouquet wrapping paper"
+    ],
+    "sources": [
+      "https://www.oasisfloral.co.uk/pearlised-film-wrap",
+      "https://www.cartotecnicarossi.it/en/paper-shop/crepe-papers/crepe-papers-solid-colour.html",
+      "https://fr.wikipedia.org/wiki/Papier_crépon",
+      "https://carccu.com/products/cellophane/",
+      "https://www.oasisfloral.co.uk/ccp-frosted-film"
+    ]
+  },
+  {
+    "id": "ruban-soie-mousseline",
+    "nom_fr": "Ruban de soie et de mousseline",
+    "nom_en": "Silk and chiffon ribbon",
+    "latin": null,
+    "famille": null,
+    "categorie": "Accessoires & matières",
+    "role": "accent",
+    "couleurs": [
+      "blanc antique",
+      "ivoire",
+      "crème",
+      "coton",
+      "sable",
+      "champagne",
+      "blush",
+      "rose pétale",
+      "vieux rose",
+      "mauve",
+      "prune",
+      "lie-de-vin",
+      "merlot",
+      "rouge",
+      "pêche",
+      "or rose",
+      "miel",
+      "or antique",
+      "moka",
+      "gris galet",
+      "gris lilas",
+      "sauge",
+      "vert camomille",
+      "bleu ciel",
+      "bleu cobalt",
+      "bleu canard",
+      "jaune",
+      "violet",
+      "noir"
+    ],
+    "varietes": [
+      {
+        "nom": "Ruban de soie coupé en biais (Silk & Willow)",
+        "couleur": "ex. Antique White ; nombreuses teintes végétales (Antique Gold, Blush, Camomile Green, Merlot, Mocha, Pebble Gray…)",
+        "note": "100 % soie 12 momme, teinte aux plantes (noix de galle pour Antique White), coupe en biais pour un drapé fluide ; largeurs 1,9 / 3,8 / 6,4 / 10 cm, longueurs 3, 5 ou 10 yards (une couture par bobine de 3 yards)"
+      },
+      {
+        "nom": "Ruban de soie organza légère (Silk & Willow)",
+        "couleur": "ex. Antique White",
+        "note": "100 % soie organza transparente, coupe en biais, largeurs 2,5 à 10 cm"
+      },
+      {
+        "nom": "Silk Crinkle Ribbon (Tono + Co)",
+        "couleur": "Cotton, Sand, Blush, Dusk, Rose Gold, Honey, Sage, Sky",
+        "note": "100 % soie de mûrier teinte à la main, texture froissée, largeurs 1,3 / 2,5 / 5 / 7,6 cm, 2,5 yards"
+      },
+      {
+        "nom": "Ruban mousseline à bords effilochés (OASIS)",
+        "couleur": "noir, crème, vert, pêche, rose, violet, rouge, bleu canard, blanc, jaune",
+        "note": "30 mm × 10 m, aspect rustique « fait main »"
+      }
+    ],
+    "formes": "Bobines ou longueurs ; nœuds lâches à longues traînes, enroulement du manche, liens de col.",
+    "saison": "Toute l'année.",
+    "tenue_vase": "Sans objet ; éviter le contact avec l'eau du vase (soie lavable à la main seulement ; les teintures végétales réagissent aux changements de pH).",
+    "gamme_prix": "€€€",
+    "rarete_jeu": "rare",
+    "notes_dessin": "Ruban fin et fluide coupé en biais : il tombe en plis souples et vrillés, se froisse facilement et garde des ondulations naturelles ; les bords bruts s'effilochent en petits fils. La soie a un lustre doux et nacré ; la mousseline et l'organza sont translucides et laissent voir les tiges en dessous (zones de superposition plus foncées) ; le « crinkle » est plissé de fines rides. Les teintes végétales sont nuancées, légèrement marbrées, jamais parfaitement uniformes. Dans le bouquet, un nœud lâche au point de liage laisse deux longues traînes qui flottent et s'enroulent : dessiner des boucles molles, des retournements montrant l'envers plus mat et des extrémités effilées.",
+    "wiki": "Silk ribbon",
+    "img_queries": [
+      "Silk ribbon",
+      "Chiffon ribbon",
+      "Hand dyed silk ribbon"
+    ],
+    "sources": [
+      "https://www.silkandwillow.com/products/antique-white-silk-ribbon",
+      "https://www.silkandwillow.com/products/antique-white-light-organza-silk-ribbon",
+      "https://tonoandco.com/products/silk-crinkle-ribbon",
+      "https://www.oasisfloral.co.uk/chiffon-frayed-edge-ribbon"
+    ]
+  }
+]

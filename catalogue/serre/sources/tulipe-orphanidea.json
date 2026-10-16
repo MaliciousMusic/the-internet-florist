@@ -1,0 +1,359 @@
+{
+ "sid": "tulipe-orphanidea",
+ "schema": "STANDARD-SOURCES.md section 5",
+ "legende_entrees": "« cultivars » = entrées de la sorte : cultivars, formes botaniques ou espèce type ; « sans_photo » = nom prouvé (N1 ou N3) mais aucune photo nommée retenue ; « ecartes » = rejetés avec la raison",
+ "rattachement_catalogue": "aucun coloris existant du catalogue ne correspond à cette sorte (catalogue.json, inventaire_fleurs.csv et skus.csv relus le 2026-10-08 : aucune tulipe botanique) ; coloris_catalogue est donc vide",
+ "genre": "Tulipa",
+ "recensement": {
+  "date": "2026-10-08",
+  "agent": "fleur-recensement",
+  "portee": "tulipes botaniques : groupes Kaufmanniana (12), Fosteriana (13), Greigii (14) du KAVB et espèces / hybrides de la division 15 (« Overige Groep » = Miscellaneous) ; tout ce qui est documenté par une photo nommée fiable",
+  "limites": [
+   "N1 : la base de cultivars du KAVB (login.kavb.nl/siergewassen) n'est interrogeable que par un formulaire de recherche, non utilisé (règle « aucun formulaire »). Le N1 des cultivars repose donc sur les listes annuelles « Registraties » du KAVB (PDF, 2004-07 à 2013, huit documents) et sur les mentions « Mutant van » qui prouvent l'existence d'un parent. Les cultivars plus anciens ou postérieurs à 2013 n'ont pas de N1 lu.",
+   "N1 espèces : POWO (Kew) renvoie une erreur 403 (protection Cloudflare, non contournée). Les noms d'espèces sont recoupés avec le GBIF Backbone (API), iNaturalist et les textes de la Pacific Bulb Society ; à revérifier sur POWO.",
+   "N2 : Floricode (codes et photos des variétés vendues) est sur abonnement et n'a pas été consulté ; aucune fiche d'obtenteur à photo exploitable n'a été trouvée pour ces tulipes. Aucun cultivar n'est donc au niveau A.",
+   "Nouveautés 2014-2026 : les listes d'enregistrement KAVB de ces années ne sont pas publiées en PDF libre ; la fenêtre des cinq dernières années n'est pas couverte.",
+   "Les photos ne sont jamais stockées dans le dépôt : seules les adresses, auteurs, licences et niveaux sont écrits. Les vignettes regardées sont dans le cache de l'atelier (refcache/tulipe-botanique/).",
+   "Photos PBS : droits réservés aux photographes (consultation et mesure seulement, jamais publiées). Photos iNaturalist : licences CC BY-NC en majorité, mêmes usages."
+  ],
+  "statuts": "en production = niveau A ou B (à mesurer par fleur-coloris puis sondage de 10 % par l'orchestrateur) ; à confirmer = niveau C ou D ; écarté = avec la raison"
+ },
+ "nom": "Tulipe d'Orphanidès (groupe Whittallii)",
+ "latin": "Tulipa orphanidea Boiss. ex Heldr. (T. hageri, T. whittallii) ; cultivar 'Little Princess'",
+ "priorite": "P2",
+ "pourquoi_cette_priorite": "teinte cuivre-bronze unique, tépales pointus, AGM (Whittallii, Little Princess)",
+ "groupe_registre": {
+  "autorite": "KAVB",
+  "division": 15,
+  "nom_registre": "Overige Groep (Miscellaneous)",
+  "preuve": "RHS « Tulipa 'Little Princess' (15) »"
+ },
+ "taxonomie": {
+  "espece_mere": "Tulipa orphanidea Boiss. ex Heldr., accepté (GBIF usageKey 5299398) ; T. hageri synonyme ; T. whittallii Elwes accepté séparément par GBIF (PBS : synonyme selon les autorités)",
+  "nom_accepte_source": "GBIF ; POWO non consulté"
+ },
+ "melange": "Espèce + Whittallii Group (bronze orangé) + 'Little Princess' (parenté hageri × aucheriana incertaine).",
+ "forme": {
+  "resume": "petite fleur en entonnoir à tépales pointus, 1 à 3 par tige, orange cuivré à bronze ou rouge terne ; macule noir-vert (ou brune) cernée de jaune ; revers verdâtre ; s'ouvre en étoile au soleil",
+  "details": [
+   "PBS : « funnel shaped flowers open wide in the sun »",
+   "RHS (Little Princess) : centre brun-noir étoilé cerclé de jaune vif"
+  ],
+  "sources": [
+   "PBS TulipaSpeciesThree ; RHS Little Princess ; RHS tulipes spécialisées"
+  ]
+ },
+ "feuilles": {
+  "resume": "étroites, couchées, vertes à reflet rouge",
+  "details": [
+   "RHS Little Princess : « narrow, nearly prostrate leaves, green with a slight red tinge »"
+  ]
+ },
+ "hauteur_cm": "10 à 30 (Little Princess 10-12,5 ; Whittallii 20-25 ; orphanidea 15-30)",
+ "floraison": "avril (fin avril-mai pour Whittallii)",
+ "distinction": {
+  "vs_linifolia": "entonnoir cuivré à tépales pointus, feuilles non ondulées"
+ },
+ "coloris_catalogue": [],
+ "cultivars": [
+  {
+   "id": "orphanidea",
+   "nom_affiche": "Tulipe d'Orphanidès (T. orphanidea)",
+   "nom_enregistre": "Tulipa orphanidea Boiss. ex Heldr.",
+   "synonymes": [],
+   "groupe": "Espèce (KAVB Div. 15, « Overige Groep » / Miscellaneous)",
+   "obtenteur": null,
+   "annee": null,
+   "numeros": {},
+   "couleur_registre": "orange cuivré à rouge terne, macule noir-vert",
+   "motif": "tépales pointus ; revers verdâtre",
+   "sources": [
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaSpeciesThree",
+     "consulte": "2026-10-08",
+     "note": "Pacific Bulb Society : 1 à 3 fleurs rouge terne, rouge orangé ou jaune orangé à macule noirâtre ou vert foncé, extérieur lavé de vert/jaune ; anthères brunes ou vert foncé ; 15-30 cm ; en entonnoir, s'ouvre au soleil"
+    },
+    {
+     "role": "taxonomie",
+     "niveau": "N4",
+     "url": "https://api.gbif.org/v1/species/match?kingdom=Plantae&name=Tulipa%20orphanidea",
+     "consulte": "2026-10-08",
+     "note": "accepté : Tulipa orphanidea Boiss. ex Heldr. (usageKey 5299398) ; T. hageri en synonyme ; T. whittallii accepté séparément par GBIF"
+    }
+   ],
+   "photos": [
+    {
+     "url": "https://pacificbulbsociety.org/pbswiki/files/Tulipa/Tulipa_orphanidea_msi.jpg",
+     "page": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaSpeciesThree",
+     "niveau": "N3",
+     "auteur": "Mary Sue Ittner",
+     "licence": "© photographe ; Pacific Bulb Society (reproduction non libre : consultation et mesure seulement)",
+     "legende": "Tulipa orphanidea, Mary Sue Ittner",
+     "consulte": "2026-10-08",
+     "vue": "bouton",
+     "eclairage": null,
+     "balance_blancs": null
+    },
+    {
+     "url": "https://pacificbulbsociety.org/pbswiki/files/Tulipa/Tulipa_orphanidea_msi2.jpg",
+     "page": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaSpeciesThree",
+     "niveau": "N3",
+     "auteur": "Mary Sue Ittner",
+     "licence": "© photographe ; Pacific Bulb Society (reproduction non libre : consultation et mesure seulement)",
+     "legende": "Tulipa orphanidea, Mary Sue Ittner",
+     "consulte": "2026-10-08",
+     "vue": "dessus",
+     "eclairage": null,
+     "balance_blancs": null
+    },
+    {
+     "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/326381204/original.jpg",
+     "page": "https://www.inaturalist.org/observations/186745833",
+     "niveau": "N3",
+     "auteur": "thibaudaronson",
+     "licence": "iNaturalist CC-BY-SA (observation de qualité recherche)",
+     "legende": "Tulipa orphanidea, Gious Kampos, Spili, Crete, 2023-04-01",
+     "consulte": "2026-10-08",
+     "vue": "spontané (Crète)",
+     "date_prise": "2023-04-01",
+     "eclairage": null,
+     "balance_blancs": null
+    },
+    {
+     "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/114629023/original.jpeg",
+     "page": "https://www.inaturalist.org/observations/70502897",
+     "niveau": "N3",
+     "auteur": "fotis-samaritakis",
+     "licence": "iNaturalist CC-BY-NC (observation de qualité recherche)",
+     "legende": "Tulipa orphanidea, Κρήτη, Ελλάδα, 2015-04-01",
+     "consulte": "2026-10-08",
+     "vue": "spontané (Crète)",
+     "date_prise": "2015-04-01",
+     "eclairage": null,
+     "balance_blancs": null
+    }
+   ],
+   "mesures": {},
+   "niveau_preuve": "B",
+   "existence_n1_n2": false,
+   "statut": "en production",
+   "doutes": [
+    "PBS : les plantes photographiées avaient été achetées comme 'Flava' mais ne correspondaient pas à la description : identification de cultivar non garantie ; le type est tenu par iNaturalist"
+   ],
+   "coloris_catalogue": null,
+   "familles_de_sources": [
+    "pacificbulbsociety.org",
+    "www.inaturalist.org"
+   ]
+  },
+  {
+   "id": "whittallii",
+   "nom_affiche": "Whittallii (T. orphanidea Whittallii Group)",
+   "nom_enregistre": "Tulipa orphanidea Whittallii Group (T. whittallii A.D.Hall)",
+   "synonymes": [],
+   "groupe": "Espèce (KAVB Div. 15, « Overige Groep » / Miscellaneous)",
+   "obtenteur": null,
+   "annee": null,
+   "numeros": {},
+   "couleur_registre": "orange bronzé, centre brun chocolat sur halo jaune (RHS)",
+   "motif": null,
+   "sources": [
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://www.rhs.org.uk/plants/tulip/specialist",
+     "consulte": "2026-10-08",
+     "note": "RHS, tulipes spécialisées : Whittallii Group, orange bronzé, centre presque chocolat sur halo jaune, 20-25 cm, fin avril à mai, AGM"
+    },
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaSpeciesFour",
+     "consulte": "2026-10-08",
+     "note": "Pacific Bulb Society : T. whittallii : clone tétraploïde trouvé près d'Izmir ; photo Jim McKenney"
+    },
+    {
+     "role": "taxonomie",
+     "niveau": "N4",
+     "url": "https://api.gbif.org/v1/species/match?kingdom=Plantae&name=Tulipa%20whittallii",
+     "consulte": "2026-10-08",
+     "note": "accepté : Tulipa whittallii Elwes (usageKey 8508314)"
+    }
+   ],
+   "photos": [
+    {
+     "url": "https://pacificbulbsociety.org/pbswiki/files/Tulipa/Tulipa_whittallii_jmck1.jpg",
+     "page": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaSpeciesFour",
+     "niveau": "N3",
+     "auteur": "Jim McKenney",
+     "licence": "© photographe ; Pacific Bulb Society (reproduction non libre : consultation et mesure seulement)",
+     "legende": "Tulipa whittallii, Jim McKenney",
+     "consulte": "2026-10-08",
+     "vue": "dessus",
+     "eclairage": null,
+     "balance_blancs": null
+    }
+   ],
+   "mesures": {},
+   "niveau_preuve": "C",
+   "existence_n1_n2": false,
+   "statut": "à confirmer",
+   "doutes": [
+    "une seule photo PBS ; la fiche RHS de ce groupe n'a pas été lue directement (article RHS)"
+   ],
+   "coloris_catalogue": null,
+   "familles_de_sources": [
+    "pacificbulbsociety.org",
+    "www.rhs.org.uk"
+   ]
+  },
+  {
+   "id": "little-princess",
+   "nom_affiche": "Little Princess",
+   "nom_enregistre": "Little Princess",
+   "synonymes": [],
+   "groupe": "Espèce (KAVB Div. 15, « Overige Groep » / Miscellaneous)",
+   "obtenteur": null,
+   "annee": null,
+   "numeros": {},
+   "couleur_registre": "orange cuivré, centre brun-noir cerclé de jaune (RHS)",
+   "motif": "macule étoilée brun-noir cerclée de jaune ; tépales pointus",
+   "sources": [
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://www.rhs.org.uk/plants/197864/tulipa-little-princess-15/details",
+     "consulte": "2026-10-08",
+     "note": "RHS (société savante) : fiche (15) AGM : 10-12,5 cm ; grappes de 3-4 fleurs orange cuivré à tépales pointus ; centre brun-noir étoilé cerclé de jaune vif ; légèrement parfumée ; avril ; feuilles étroites presque couchées, vertes à reflet rouge"
+    },
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaHybrids",
+     "consulte": "2026-10-08",
+     "note": "Pacific Bulb Society : Div. 15 : « 'Little Princess' : brilliant copper-orange with a yellow center ; said to be a cross of T. hageri and T. aucheriana, though both parent identities are uncertain »"
+    }
+   ],
+   "photos": [
+    {
+     "url": "https://pacificbulbsociety.org/pbswiki/files/Tulipa/Tulipa_Little_Princess_1.jpg",
+     "page": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaHybrids",
+     "niveau": "N3",
+     "auteur": "Mark McDonough",
+     "licence": "© photographe ; Pacific Bulb Society (reproduction non libre : consultation et mesure seulement)",
+     "legende": "Tulipa 'Little Princess', Mark McDonough",
+     "consulte": "2026-10-08",
+     "vue": "groupe",
+     "eclairage": null,
+     "balance_blancs": null
+    },
+    {
+     "url": "https://pacificbulbsociety.org/pbswiki/files/Tulipa/Tulipa_Little_Princess_close1.jpg",
+     "page": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaHybrids",
+     "niveau": "N3",
+     "auteur": "Mark McDonough",
+     "licence": "© photographe ; Pacific Bulb Society (reproduction non libre : consultation et mesure seulement)",
+     "legende": "Tulipa 'Little Princess', Mark McDonough",
+     "consulte": "2026-10-08",
+     "vue": "gros plan",
+     "eclairage": null,
+     "balance_blancs": null
+    },
+    {
+     "url": "https://pacificbulbsociety.org/pbswiki/files/Tulipa/Tulipa_Little_Princess_msi2.jpg",
+     "page": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaHybrids",
+     "niveau": "N3",
+     "auteur": "Mary Sue Ittner",
+     "licence": "© photographe ; Pacific Bulb Society (reproduction non libre : consultation et mesure seulement)",
+     "legende": "Tulipa 'Little Princess', Mary Sue Ittner",
+     "consulte": "2026-10-08",
+     "vue": "gros plan",
+     "eclairage": null,
+     "balance_blancs": null
+    },
+    {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/b/bf/Tulip_-_Flickr_-_S._Rae_%281%29.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Tulip_-_Flickr_-_S._Rae_%281%29.jpg",
+     "niveau": "N4",
+     "auteur": "S. Rae from Scotland, UK",
+     "licence": "CC BY 2.0",
+     "legende": "File:Tulip - Flickr - S. Rae (1).jpg",
+     "consulte": "2026-10-08",
+     "vue": "dessus",
+     "date_prise": "2014-04-29 12:03",
+     "eclairage": null,
+     "balance_blancs": null,
+     "miniature": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bf/Tulip_-_Flickr_-_S._Rae_%281%29.jpg/960px-Tulip_-_Flickr_-_S._Rae_%281%29.jpg"
+    },
+    {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/5/5d/Tulipa_%27Little_Princess%27_1.JPG",
+     "page": "https://commons.wikimedia.org/wiki/File:Tulipa_%27Little_Princess%27_1.JPG",
+     "niveau": "N4",
+     "auteur": "Ghislain118   http://www.fleurs-des-montagnes.net",
+     "licence": "CC BY-SA 3.0",
+     "legende": "File:Tulipa 'Little Princess' 1.JPG",
+     "consulte": "2026-10-08",
+     "vue": "dessus",
+     "date_prise": "2008-03-29 12:32:29",
+     "eclairage": null,
+     "balance_blancs": null,
+     "miniature": "https://upload.wikimedia.org/wikipedia/commons/5/5d/Tulipa_%27Little_Princess%27_1.JPG"
+    }
+   ],
+   "mesures": {},
+   "niveau_preuve": "B",
+   "existence_n1_n2": false,
+   "statut": "en production",
+   "doutes": [
+    "existence N1/N2 non établie : base KAVB (formulaire) non interrogée et Floricode non consulté ; à valider au sondage de 10 %",
+    "parenté incertaine (PBS) ; la couleur fonce en vieillissant (RHS)"
+   ],
+   "coloris_catalogue": null,
+   "familles_de_sources": [
+    "commons.wikimedia.org",
+    "pacificbulbsociety.org",
+    "www.rhs.org.uk"
+   ]
+  }
+ ],
+ "sans_photo": [],
+ "ecartes": [],
+ "couverture": {
+  "cultivars_retenus_avec_photo": 3,
+  "niveau_A": 0,
+  "niveau_B": 2,
+  "niveau_C": 1,
+  "niveau_D": 0,
+  "prouves_A_ou_B": 2,
+  "sans_photo": 0,
+  "ecartes": 0,
+  "au_catalogue": 0,
+  "existence_N1_lue": 0,
+  "remarque": "« enregistrés » du KAVB : total inconnu (base non interrogée). Les nombres ci-dessus portent sur ce qui a été recensé dans les sources consultées"
+ },
+ "vues_deja_photographiees": {
+  "face (dessus, intérieur)": 4,
+  "trois-quarts": 0,
+  "profil": 0,
+  "dos (revers, extérieur)": 0,
+  "bouton": 1,
+  "fané ou déclin": 0,
+  "feuilles": 0,
+  "tige, pied": 0,
+  "plante entière ou massif": 1
+ },
+ "vues_manquantes": [
+  "trois-quarts",
+  "profil",
+  "dos (revers, extérieur)",
+  "fané ou déclin",
+  "feuilles",
+  "tige, pied",
+  "dessous et attache des feuilles",
+  "épaisseur et surface de la tige",
+  "stades intermédiaires (goblet, coupe, déclin)"
+ ],
+ "vues_note": "comptage des photos retenues par mot-clé de la rubrique « vue » ; les photos de forme par angle et par stade sont à compléter par fleur-refs (STANDARD-SOURCES, exhaustivité)"
+}

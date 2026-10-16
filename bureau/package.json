@@ -1,0 +1,19 @@
+{
+  "name": "belai-bureau",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Belai's Flowers on the desktop: living bouquets set on the wallpaper, anywhere, at any size",
+  "type": "module",
+  "scripts": {
+    "build:ui": "tsc -p tsconfig.json && tsc -p tsconfig.web.json",
+    "check": "tsc -p tsconfig.json --noEmit && tsc -p tsconfig.web.json --noEmit",
+    "test": "npm run build:ui && node --test \"test/*.test.js\"",
+    "tauri": "tauri",
+    "dev": "npm run build:ui && tauri dev",
+    "build": "npm run build:ui && tauri build"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "2.12.3",
+    "typescript": "5.9.3"
+  }
+}

@@ -1,0 +1,929 @@
+[
+ {
+  "id": "pensee",
+  "nom_fr": "Pensée",
+  "latin": "Viola × wittrockiana",
+  "categorie": "Printemps & bulbes",
+  "role": "secondaire",
+  "recette": {
+   "a": "radial",
+   "cm": 6.5,
+   "stem": {
+    "cm": 18,
+    "w": 3,
+    "col": "#5a7a3a",
+    "leaf": "ovate"
+   },
+   "cols": [
+    "#5a2a9a",
+    "#ecd21e",
+    "#4f62c0",
+    "#8a1a5a",
+    "#f2f0ec",
+    "#e0661e"
+   ],
+   "c2": "#f4d23c",
+   "p": {
+    "n": 5,
+    "w": 0.95,
+    "tip": "round",
+    "a0": 84,
+    "a1": 96,
+    "cup": -0.05,
+    "layers": 1,
+    "blotch": 1,
+    "disc": {
+     "r": 0.12,
+     "h": 0,
+     "type": "eye",
+     "col": "#f4d23c"
+    }
+   },
+   "price": 20
+  }
+ },
+ {
+  "id": "rose-eglantine",
+  "nom_fr": "Rose simple (églantine)",
+  "latin": "Rosa canina et hybrides à fleurs simples",
+  "categorie": "Roses",
+  "role": "secondaire",
+  "recette": {
+   "a": "radial",
+   "cm": 7,
+   "stem": {
+    "cm": 45,
+    "w": 4,
+    "col": "#4f7a34",
+    "leaf": "compound"
+   },
+   "cols": [
+    "#f2b6cc",
+    "#f7f2ea",
+    "#e8558a",
+    "#f4a98a",
+    "#c41e3a",
+    "#f3d9a4"
+   ],
+   "c2": "#e8b923",
+   "p": {
+    "n": 5,
+    "w": 0.95,
+    "tip": "round",
+    "a0": 66,
+    "a1": 94,
+    "cup": -0.3,
+    "layers": 1,
+    "disc": {
+     "r": 0.2,
+     "h": 0.08,
+     "type": "stamens",
+     "col": "#e8b923"
+    }
+   },
+   "price": 40
+  }
+ },
+ {
+  "id": "sandersonia",
+  "nom_fr": "Sandersonia (clochette de Noël)",
+  "latin": "Sandersonia aurantiaca",
+  "categorie": "Exotiques",
+  "role": "ligne",
+  "recette": {
+   "a": "custom",
+   "cm": 45,
+   "stem": {
+    "cm": 50,
+    "w": 3,
+    "col": "#5d8a3a",
+    "leaf": "lanceolate"
+   },
+   "cols": [
+    "#ef9a2a",
+    "#f4c24a",
+    "#f2dfa8"
+   ],
+   "p": {
+    "fn": "xSanders"
+   },
+   "price": 75
+  }
+ },
+ {
+  "id": "ail-serpent",
+  "nom_fr": "Ail serpent (Allium 'Snakeball')",
+  "latin": "Allium sativum var. ophioscorodon",
+  "categorie": "Printemps & bulbes",
+  "role": "ligne",
+  "recette": {
+   "a": "custom",
+   "cm": 50,
+   "stem": {
+    "cm": 55,
+    "w": 4,
+    "col": "#7a9a5a",
+    "leaf": "none"
+   },
+   "cols": [
+    "#8aa860",
+    "#b6c27a",
+    "#6f8f6a"
+   ],
+   "p": {
+    "fn": "xSnake"
+   },
+   "price": 40
+  }
+ },
+ {
+  "id": "lis-tigre",
+  "nom_fr": "Lis tigré",
+  "latin": "Lilium lancifolium (syn. L. tigrinum)",
+  "categorie": "Été & classiques",
+  "role": "focale",
+  "recette": {
+   "a": "star",
+   "cm": 12,
+   "stem": {
+    "cm": 80,
+    "w": 8,
+    "col": "#4a6a2e",
+    "leaf": "lanceolate"
+   },
+   "cols": [
+    "#e8742a",
+    "#f2c41e",
+    "#d8402a",
+    "#ec9a8a"
+   ],
+   "c2": "#2a0c08",
+   "p": {
+    "n": 6,
+    "w": 0.28,
+    "a0": 45,
+    "a1": 150,
+    "ruf": 0.05,
+    "spots": "#2a0c08",
+    "stamens": 6,
+    "anther": "#5a1a0c",
+    "cluster": 3,
+    "nod": 1
+   },
+   "price": 60
+  }
+ },
+ {
+  "id": "lis-oriental-double",
+  "nom_fr": "Lis oriental double",
+  "latin": "Lilium (hybrides orientaux doubles, série Roselily)",
+  "categorie": "Été & classiques",
+  "role": "focale",
+  "recette": {
+   "a": "star",
+   "cm": 17,
+   "stem": {
+    "cm": 75,
+    "w": 9,
+    "col": "#4a7a35",
+    "leaf": "whorl"
+   },
+   "cols": [
+    "#f2a6c4",
+    "#faf6ee",
+    "#f6e6b8",
+    "#d8508a",
+    "#f6d0dc"
+   ],
+   "p": {
+    "n": 6,
+    "w": 0.3,
+    "a0": 42,
+    "a1": 122,
+    "ruf": 0.08,
+    "spots": null,
+    "stamens": 0,
+    "cluster": 1,
+    "nod": 0,
+    "layers": 3
+   },
+   "price": 140
+  }
+ },
+ {
+  "id": "clematite-clochettes",
+  "nom_fr": "Clématite à clochettes",
+  "latin": "Clematis integrifolia et hybrides ('Amazing', 'Rooguchi')",
+  "categorie": "Été & classiques",
+  "role": "secondaire",
+  "recette": {
+   "a": "star",
+   "cm": 4.5,
+   "stem": {
+    "cm": 50,
+    "w": 2.5,
+    "col": "#4f6e34",
+    "leaf": "lanceolate"
+   },
+   "cols": [
+    "#6a3e8a",
+    "#4a4aa0",
+    "#c06a9a",
+    "#f2eef0",
+    "#8a2a5a"
+   ],
+   "c2": "#f0e8d0",
+   "p": {
+    "n": 4,
+    "w": 0.26,
+    "a0": 8,
+    "a1": 50,
+    "ruf": 0.2,
+    "spots": null,
+    "stamens": 0,
+    "anther": "#efe6c8",
+    "cluster": 1,
+    "nod": 1
+   },
+   "price": 75
+  }
+ },
+ {
+  "id": "pentas",
+  "nom_fr": "Pentas (étoile d'Égypte)",
+  "latin": "Pentas lanceolata",
+  "categorie": "Été & classiques",
+  "role": "remplissage",
+  "recette": {
+   "a": "globe",
+   "cm": 8,
+   "stem": {
+    "cm": 35,
+    "w": 3.5,
+    "col": "#4f7a34",
+    "leaf": "ovate"
+   },
+   "cols": [
+    "#e8507a",
+    "#f4f2f0",
+    "#c0284a",
+    "#e89ab8",
+    "#9a5aa8"
+   ],
+   "p": {
+    "shape": "flat",
+    "n": 36,
+    "fl": {
+     "a": "star",
+     "cm": 1.3,
+     "n": 5
+    }
+   },
+   "price": 40
+  }
+ },
+ {
+  "id": "geranium-vivace",
+  "nom_fr": "Géranium vivace",
+  "latin": "Geranium (G. × oxonianum, G. 'Rozanne'…)",
+  "categorie": "Été & classiques",
+  "role": "remplissage",
+  "recette": {
+   "a": "spray",
+   "cm": 20,
+   "stem": {
+    "cm": 40,
+    "w": 2.5,
+    "col": "#5a7a3a",
+    "leaf": "palmate"
+   },
+   "cols": [
+    "#7a6ac8",
+    "#e88aac",
+    "#f4f0f2",
+    "#a04aa0",
+    "#5a5ab8"
+   ],
+   "c2": "#f2eef6",
+   "p": {
+    "branches": 4,
+    "n": 9,
+    "fl": {
+     "a": "radial",
+     "cm": 3.6,
+     "n": 5
+    },
+    "shape": "airy",
+    "len": 20
+   },
+   "price": 40
+  }
+ },
+ {
+  "id": "coreopsis",
+  "nom_fr": "Coréopsis",
+  "latin": "Coreopsis grandiflora et C. verticillata",
+  "categorie": "Été & classiques",
+  "role": "secondaire",
+  "recette": {
+   "a": "radial",
+   "cm": 5,
+   "stem": {
+    "cm": 45,
+    "w": 2.5,
+    "col": "#4f7a34",
+    "leaf": "lanceolate"
+   },
+   "cols": [
+    "#f2c21e",
+    "#f6dc6a",
+    "#e8902a",
+    "#c0302a"
+   ],
+   "c2": "#9a6a18",
+   "p": {
+    "n": 8,
+    "w": 0.42,
+    "tip": "teeth",
+    "a0": 84,
+    "a1": 96,
+    "cup": -0.05,
+    "layers": 1,
+    "disc": {
+     "r": 0.2,
+     "h": 0.12,
+     "type": "dome",
+     "col": "#9a6a18"
+    }
+   },
+   "price": 25
+  }
+ },
+ {
+  "id": "bruyere",
+  "nom_fr": "Bruyère",
+  "latin": "Erica (E. gracilis, E. carnea)",
+  "categorie": "Remplissage & textures",
+  "role": "texture",
+  "recette": {
+   "a": "spike",
+   "cm": 15,
+   "stem": {
+    "cm": 35,
+    "w": 3,
+    "col": "#4a5a32",
+    "leaf": "needle"
+   },
+   "cols": [
+    "#d0507a",
+    "#f4f0ee",
+    "#a04a8a",
+    "#e89ab8"
+   ],
+   "p": {
+    "n": 64,
+    "fl": {
+     "a": "bell",
+     "cm": 0.8,
+     "n": 4
+    },
+    "taper": 0.25,
+    "buds": 4,
+    "dense": 1,
+    "side": 0
+   },
+   "price": 25
+  }
+ },
+ {
+  "id": "gerbera-araignee",
+  "nom_fr": "Gerbera araignée",
+  "latin": "Gerbera jamesonii (type spider, 'Pasta')",
+  "categorie": "Été & classiques",
+  "role": "secondaire",
+  "recette": {
+   "a": "radial",
+   "cm": 11,
+   "stem": {
+    "cm": 50,
+    "w": 5,
+    "col": "#5f8a3e",
+    "leaf": "none"
+   },
+   "cols": [
+    "#f2a07a",
+    "#f4e8d8",
+    "#f6c22a",
+    "#e05a8a",
+    "#d8302a",
+    "#f2b8c8"
+   ],
+   "c2": "#3a2a1e",
+   "p": {
+    "n": 46,
+    "w": 0.07,
+    "tip": "point",
+    "a0": 78,
+    "a1": 104,
+    "cup": -0.55,
+    "layers": 2,
+    "disc": {
+     "r": 0.24,
+     "h": 0.08,
+     "type": "flat",
+     "col": "#3a2a1e"
+    }
+   },
+   "price": 40
+  }
+ },
+ {
+  "id": "cosmos-chocolat",
+  "nom_fr": "Cosmos chocolat",
+  "latin": "Cosmos atrosanguineus",
+  "categorie": "Été & classiques",
+  "role": "accent",
+  "recette": {
+   "a": "radial",
+   "cm": 4,
+   "stem": {
+    "cm": 40,
+    "w": 2,
+    "col": "#4a5a2a",
+    "leaf": "none"
+   },
+   "cols": [
+    "#4a0a14",
+    "#6a1a1e",
+    "#2a0a10"
+   ],
+   "c2": "#2a0a0a",
+   "p": {
+    "n": 8,
+    "w": 0.45,
+    "tip": "teeth",
+    "a0": 80,
+    "a1": 95,
+    "cup": -0.15,
+    "layers": 1,
+    "disc": {
+     "r": 0.22,
+     "h": 0.12,
+     "type": "dome",
+     "col": "#2a0a0a"
+    }
+   },
+   "price": 75
+  }
+ },
+ {
+  "id": "fustet-plumes",
+  "nom_fr": "Fustet en plumes (arbre à perruques)",
+  "latin": "Cotinus coggygria (inflorescences)",
+  "categorie": "Remplissage & textures",
+  "role": "texture",
+  "recette": {
+   "a": "custom",
+   "cm": 25,
+   "stem": {
+    "cm": 50,
+    "w": 4,
+    "col": "#6a3a2a",
+    "leaf": "none"
+   },
+   "cols": [
+    "#c9a0a6",
+    "#8a4a5a",
+    "#d8c8aa",
+    "#b8b88a"
+   ],
+   "p": {
+    "fn": "xSmoke"
+   },
+   "price": 75
+  }
+ },
+ {
+  "id": "branche-lichen",
+  "nom_fr": "Branche lichénée",
+  "latin": "Prunus spinosa ou Betula (rameau couvert de lichen)",
+  "categorie": "Branches & baies",
+  "role": "branche",
+  "recette": {
+   "a": "custom",
+   "cm": 55,
+   "stem": {
+    "cm": 60,
+    "w": 6,
+    "col": "#6c655c",
+    "leaf": "none"
+   },
+   "cols": [
+    "#b9c4a6",
+    "#d6dcc8",
+    "#9aa88a"
+   ],
+   "p": {
+    "fn": "xLichen"
+   },
+   "price": 40
+  }
+ },
+ {
+  "id": "pivoine-feuillage",
+  "nom_fr": "Feuillage de pivoine",
+  "latin": "Paeonia lactiflora (feuilles)",
+  "categorie": "Feuillages",
+  "role": "feuillage",
+  "recette": {
+   "a": "foliage",
+   "cm": 14,
+   "stem": {
+    "cm": 35,
+    "w": 4,
+    "col": "#7a3a2a",
+    "leaf": "palmate"
+   },
+   "cols": [
+    "#3e5e2a",
+    "#5a3a2a"
+   ],
+   "p": {
+    "leaf": {
+     "shape": "palmate",
+     "cm": 14,
+     "gloss": 0.3
+    },
+    "arr": "alternate",
+    "n": 4,
+    "len": 35
+   },
+   "price": 20
+  }
+ },
+ {
+  "id": "robinier",
+  "nom_fr": "Robinier (feuillage)",
+  "latin": "Robinia pseudoacacia",
+  "categorie": "Feuillages",
+  "role": "feuillage",
+  "recette": {
+   "a": "foliage",
+   "cm": 3.5,
+   "stem": {
+    "cm": 45,
+    "w": 4,
+    "col": "#5a4a32",
+    "leaf": "pinnate"
+   },
+   "cols": [
+    "#6a9a3a",
+    "#c8b43a"
+   ],
+   "p": {
+    "leaf": {
+     "shape": "elliptic",
+     "cm": 3.5,
+     "w": 0.55
+    },
+    "arr": "opposite",
+    "n": 9,
+    "len": 28
+   },
+   "price": 20
+  }
+ },
+ {
+  "id": "coleus",
+  "nom_fr": "Coléus",
+  "latin": "Plectranthus scutellarioides (Solenostemon)",
+  "categorie": "Feuillages",
+  "role": "feuillage",
+  "recette": {
+   "a": "foliage",
+   "cm": 9,
+   "stem": {
+    "cm": 25,
+    "w": 4,
+    "col": "#5a2a3a",
+    "leaf": "ovate"
+   },
+   "cols": [
+    "#a8c43a",
+    "#6a1a3a",
+    "#d0507a",
+    "#b0582a",
+    "#2a1420"
+   ],
+   "p": {
+    "leaf": {
+     "shape": "ovate",
+     "cm": 9,
+     "teeth": 1,
+     "inner": "#5a1a32"
+    },
+    "arr": "opposite",
+    "n": 5,
+    "len": 25
+   },
+   "price": 40
+  }
+ },
+ {
+  "id": "begonia-feuillage",
+  "nom_fr": "Bégonia rex (feuillage)",
+  "latin": "Begonia rex-cultorum",
+  "categorie": "Feuillages",
+  "role": "feuillage",
+  "recette": {
+   "a": "foliage",
+   "cm": 16,
+   "stem": {
+    "cm": 25,
+    "w": 4,
+    "col": "#7a2a30",
+    "leaf": "cordate"
+   },
+   "cols": [
+    "#6a2a3a",
+    "#4a5a3a",
+    "#9a3a4a",
+    "#3a2a30"
+   ],
+   "p": {
+    "leaf": {
+     "shape": "cordate",
+     "cm": 16,
+     "w": 0.75,
+     "teeth": 1,
+     "inner": "#c8c4cc"
+    },
+    "arr": "rosette",
+    "n": 3,
+    "len": 25
+   },
+   "price": 75
+  }
+ },
+ {
+  "id": "vigne-feuilles",
+  "nom_fr": "Feuilles de vigne (automne)",
+  "latin": "Vitis vinifera (feuillage rougi)",
+  "categorie": "Feuillages",
+  "role": "feuillage",
+  "recette": {
+   "a": "foliage",
+   "cm": 12,
+   "stem": {
+    "cm": 45,
+    "w": 4,
+    "col": "#7a3a2a",
+    "leaf": "lobed"
+   },
+   "cols": [
+    "#b0242a",
+    "#d0602a",
+    "#8a1a3a",
+    "#4a6a2a"
+   ],
+   "p": {
+    "leaf": {
+     "shape": "lobed",
+     "cm": 12,
+     "teeth": 1
+    },
+    "arr": "alternate",
+    "n": 6,
+    "len": 45
+   },
+   "price": 25
+  }
+ },
+ {
+  "id": "fusain-aile",
+  "nom_fr": "Fusain ailé (feuillage d'automne)",
+  "latin": "Euonymus alatus",
+  "categorie": "Feuillages",
+  "role": "feuillage",
+  "recette": {
+   "a": "foliage",
+   "cm": 5,
+   "stem": {
+    "cm": 45,
+    "w": 4,
+    "col": "#6a5a4a",
+    "leaf": "elliptic"
+   },
+   "cols": [
+    "#d0405a",
+    "#b0202a",
+    "#e07a5a",
+    "#c86a8a"
+   ],
+   "p": {
+    "leaf": {
+     "shape": "elliptic",
+     "cm": 5,
+     "teeth": 1
+    },
+    "arr": "opposite",
+    "n": 12,
+    "len": 45
+   },
+   "price": 40
+  }
+ },
+ {
+  "id": "calla-feuilles",
+  "nom_fr": "Feuilles de calla",
+  "latin": "Zantedeschia (feuilles maculées)",
+  "categorie": "Feuillages",
+  "role": "feuillage",
+  "recette": {
+   "a": "foliage",
+   "cm": 24,
+   "stem": {
+    "cm": 45,
+    "w": 4,
+    "col": "#4e7a34",
+    "leaf": "cordate"
+   },
+   "cols": [
+    "#3e6a2e",
+    "#2e5a2a"
+   ],
+   "p": {
+    "leaf": {
+     "shape": "cordate",
+     "cm": 24,
+     "w": 0.52,
+     "spots": "#e4ecd8",
+     "gloss": 0.3
+    },
+    "arr": "single",
+    "n": 1,
+    "len": 45
+   },
+   "price": 25
+  }
+ },
+ {
+  "id": "anthurium-cristal",
+  "nom_fr": "Anthurium cristal (feuille veloutée)",
+  "latin": "Anthurium crystallinum et A. clarinervium",
+  "categorie": "Feuillages",
+  "role": "feuillage",
+  "recette": {
+   "a": "foliage",
+   "cm": 28,
+   "stem": {
+    "cm": 45,
+    "w": 4,
+    "col": "#3a4a2a",
+    "leaf": "cordate"
+   },
+   "cols": [
+    "#1f3a26",
+    "#2e4a2a"
+   ],
+   "p": {
+    "leaf": {
+     "shape": "cordate",
+     "cm": 28,
+     "w": 0.8,
+     "c2": "#e4ecdc"
+    },
+    "arr": "single",
+    "n": 1,
+    "len": 45
+   },
+   "price": 140
+  }
+ },
+ {
+  "id": "hellebore-feuilles",
+  "nom_fr": "Feuilles d'hellébore",
+  "latin": "Helleborus × hybridus (feuilles)",
+  "categorie": "Feuillages",
+  "role": "feuillage",
+  "recette": {
+   "a": "foliage",
+   "cm": 15,
+   "stem": {
+    "cm": 30,
+    "w": 4,
+    "col": "#4a5a2a",
+    "leaf": "palmate"
+   },
+   "cols": [
+    "#2e4a26",
+    "#3e5a2e"
+   ],
+   "p": {
+    "leaf": {
+     "shape": "palmate",
+     "cm": 15,
+     "teeth": 1,
+     "gloss": 0.5
+    },
+    "arr": "rosette",
+    "n": 3,
+    "len": 30
+   },
+   "price": 25
+  }
+ },
+ {
+  "id": "chrysantheme-feuilles",
+  "nom_fr": "Feuillage de chrysanthème",
+  "latin": "Chrysanthemum × morifolium (feuilles)",
+  "categorie": "Feuillages",
+  "role": "feuillage",
+  "recette": {
+   "a": "foliage",
+   "cm": 8,
+   "stem": {
+    "cm": 40,
+    "w": 4,
+    "col": "#4a6a34",
+    "leaf": "lobed"
+   },
+   "cols": [
+    "#4e6a3a",
+    "#5a6a4a"
+   ],
+   "p": {
+    "leaf": {
+     "shape": "lobed",
+     "cm": 8,
+     "teeth": 1
+    },
+    "arr": "alternate",
+    "n": 12,
+    "len": 40
+   },
+   "price": 20
+  }
+ },
+ {
+  "id": "gloriosa-feuillage",
+  "nom_fr": "Liane de gloriosa (feuillage)",
+  "latin": "Gloriosa superba (tiges feuillées à vrilles)",
+  "categorie": "Feuillages",
+  "role": "feuillage",
+  "recette": {
+   "a": "foliage",
+   "cm": 12,
+   "stem": {
+    "cm": 55,
+    "w": 4,
+    "col": "#4a7a34",
+    "leaf": "lanceolate"
+   },
+   "cols": [
+    "#3e6a2a",
+    "#5a7a2a"
+   ],
+   "p": {
+    "leaf": {
+     "shape": "lanceolate",
+     "cm": 12,
+     "gloss": 0.5
+    },
+    "arr": "alternate",
+    "n": 10,
+    "len": 55
+   },
+   "price": 25
+  }
+ },
+ {
+  "id": "anemone-sauvage",
+  "nom_fr": "Anémone sauvage",
+  "latin": "Anemone coronaria (formes sauvages)",
+  "categorie": "Printemps & bulbes",
+  "role": "secondaire",
+  "recette": {
+   "a": "custom",
+   "cm": 4.5,
+   "stem": {
+    "cm": 30,
+    "w": 2.5,
+    "col": "#5f8a3e",
+    "leaf": "lobed"
+   },
+   "cols": [
+    "#f7f5f0",
+    "#f2c4cf",
+    "#b8a2d8",
+    "#e577bd",
+    "#ee1414",
+    "#e91047"
+   ],
+   "c2": "#1e1628",
+   "p": {
+    "fn": "anemone"
+   }
+  }
+ }
+]

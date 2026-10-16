@@ -1,0 +1,2067 @@
+[
+  {
+    "id": "ancolie",
+    "nom": "Ancolie",
+    "saison_vente": {
+      "mois": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "pic": [
+        5,
+        6
+      ],
+      "toute_annee": false,
+      "note": "floraison de mi-avril à mi-juillet, en fin de printemps et début d'été (mai-juin) ; fleur coupée surtout de producteurs locaux, peu présente au cadran",
+      "sources": [
+        "https://webwoordenboek.nl/kenniscentrum/is-akelei-tweejarig",
+        "https://www.gardeningetc.com/advice/columbine-care-and-growing-guide"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 3,
+      "max": 5,
+      "sources": [
+        "https://www.canr.msu.edu/news/garden_flowers_for_cutting_part_2"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "chute-petales",
+        "recroqueville",
+        "decolore"
+      ],
+      "ordre": "les sépales colorés et les pétales à éperon pâlissent et ramollissent, puis se détachent un à un du réceptacle ; il reste les étamines puis le jeune fruit dressé",
+      "tete": "la fleur pendante ou penchée garde son port ; après la chute des pièces florales, le jeune fruit (5 follicules) se redresse",
+      "petales": "pâlissent, se fripent légèrement sur les bords et tombent entiers plutôt que de sécher sur place",
+      "feuilles": "feuillage fin, glauque, qui se ramollit et jaunit",
+      "tige": "fine mais raide, reste droite",
+      "couleurs": {
+        "blanc": {
+          "declin": "blanc crème, un peu transparent",
+          "fane": "beige pâle, pièces tombées"
+        },
+        "rose": {
+          "declin": "rose délavé",
+          "fane": "rose sale tirant sur le beige"
+        },
+        "violet": {
+          "declin": "violet pâli, un peu bleuté",
+          "fane": "mauve grisâtre"
+        },
+        "bleu": {
+          "declin": "bleu lavande délavé",
+          "fane": "bleu-gris terne"
+        },
+        "jaune": {
+          "declin": "jaune pâle",
+          "fane": "jaune paille"
+        },
+        "bicolore": {
+          "declin": "contraste qui s'atténue, éperons plus pâles",
+          "fane": "tons ternes et mêlés"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Vase life courte (3-5 j selon MSU) ; un site de jardinage annonce « environ deux semaines », jugé optimiste et non retenu. La chute des sépales et pétales par zone d'abscission est documentée chez Aquilegia coerulea (core.ac.uk) ; la décoloration et le friper avant chute sont extrapolés d'observation générale, non sourcés pour la fleur coupée. Couleurs vendues d'après MSU (blanc, rose, jaune, bleu, violet) ; bicolore ajouté (variétés à éperons contrastés courantes).",
+      "sources": [
+        "https://www.canr.msu.edu/news/garden_flowers_for_cutting_part_2",
+        "https://core.ac.uk/works/294229136",
+        "https://www.gardeningetc.com/advice/columbine-care-and-growing-guide"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "lilas",
+    "nom": "Lilas",
+    "saison_vente": {
+      "mois": [
+        10,
+        11,
+        12,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "pic": [
+        3,
+        4,
+        5
+      ],
+      "toute_annee": false,
+      "note": "lilas forcé aux Pays-Bas (Aalsmeer, surtout 'Madame Florent Stepman' blanc) d'octobre à début juin ; autres producteurs mi-décembre à fin avril ; lilas de plein air en mai en France. Le pic de mars-mai est estimé (rencontre forcé tardif + plein air), non chiffré par une source",
+      "sources": [
+        "https://thursd.com/articles/kramer-seringen-lilacs-with-heart-and-soil",
+        "https://thursd.com/growers/de-seringen-specialist",
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/lilac",
+        "https://www.youschool.fr/fleuriste/calendrier-fleurs-saison/"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 4,
+      "max": 10,
+      "sources": [
+        "https://www.phtnet.org/research/download/pdf/re2269.pdf",
+        "https://www.chrysal.com/tips/flower-of-the-month/syringa-care-tips",
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/lilac"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "penche-tete",
+        "recroqueville",
+        "brunit-bords",
+        "feuilles-recroquevillees"
+      ],
+      "ordre": "flétrissement rapide de toute la panicule (vaisseaux bouchés par des thylles) : les feuilles mollissent d'abord, la grappe s'affaisse, puis les fleurons se fripent et brunissent sur place ; ils finissent par tomber",
+      "tete": "la panicule entière s'incline et pend, parfois en quelques heures si la tige boit mal",
+      "petales": "fleurons qui se fripent, brunissent par les bords et sèchent ; la grappe se dégarnit en fin de vie",
+      "feuilles": "flétrissent et pendent très vite (on les retire pour cette raison), puis brunissent",
+      "tige": "ligneuse, reste droite ; c'est le haut de la grappe qui s'affaisse",
+      "couleurs": {
+        "blanc": {
+          "declin": "ivoire, fleurons beige clair aux bords",
+          "fane": "brun rouille et beige, fleurons secs"
+        },
+        "violet": {
+          "declin": "mauve plus gris, perte d'éclat",
+          "fane": "brun violacé, gris-brun"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Flétrissement causé surtout par des thylles bloquant le xylème (phtnet) ; 4 j dans l'eau, 10,7 j avec Chrysal Professional. FDI : plus le parfum est fort, plus la tenue est courte. Le brunissement et la chute finale des fleurons sont extrapolés d'observation générale (non sourcés précisément). Couleurs : blanc (90 % du forcé néerlandais) et mauve/violet ; le rose existe en jardin mais n'a pas été vu comme famille commerciale.",
+      "sources": [
+        "https://www.phtnet.org/research/download/pdf/re2269.pdf",
+        "https://www.epicgardening.com/cut-lilac-blooms/",
+        "https://thursd.com/articles/kramer-seringen-lilacs-with-heart-and-soil",
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/lilac"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "freesia",
+    "nom": "Freesia",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [
+        3,
+        4,
+        5
+      ],
+      "toute_annee": true,
+      "note": "produit sous serre aux Pays-Bas toute l'année ; en France de plein air/serre froide d'avril à septembre. Pic printanier estimé, non chiffré par une source",
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/freesia",
+        "https://www.euroflorist.pl/en/flower-encyclopedia/freesia",
+        "https://www.youschool.fr/fleuriste/calendrier-fleurs-saison/"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 6,
+      "max": 10,
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/freesia",
+        "https://acikerisim.uludag.edu.tr/handle/11452/24421"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "fane-du-bas",
+        "recroqueville",
+        "transparence",
+        "bourgeons-avortent"
+      ],
+      "ordre": "les fleurons s'ouvrent du bas vers la pointe de l'épi unilatéral ; les plus bas fanent pendant que les suivants s'ouvrent, si bien qu'à tout moment l'épi porte fleurs fanées en bas, fleurs ouvertes au milieu, boutons en haut ; en fin de vie, les derniers boutons n'ouvrent pas",
+      "tete": "l'épi coudé à l'horizontale garde son angle ; pas de pliure du col",
+      "petales": "fins comme du papier : ils se ramollissent, deviennent un peu translucides puis se fripent et se ferment en cornet sec sur place",
+      "feuilles": "souvent absentes de la tige vendue ; sinon jaunissent du bout",
+      "tige": "fine, reste droite",
+      "couleurs": {
+        "blanc": {
+          "declin": "blanc crème translucide",
+          "fane": "beige brunâtre, papier froissé"
+        },
+        "jaune": {
+          "declin": "jaune pâle",
+          "fane": "jaune paille à brun clair"
+        },
+        "orange": {
+          "declin": "orange délavé",
+          "fane": "brun orangé"
+        },
+        "rose": {
+          "declin": "rose pâli, un peu violacé",
+          "fane": "mauve sale"
+        },
+        "rouge": {
+          "declin": "rouge assombri",
+          "fane": "bordeaux brun"
+        },
+        "violet": {
+          "declin": "violet plus bleu, translucide",
+          "fane": "violet grisâtre sombre"
+        },
+        "bicolore": {
+          "declin": "gorge jaune qui reste plus vive que les bords",
+          "fane": "tons brunis mêlés"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Ouverture séquentielle bas→haut et retrait des fleurons fanés documentés (Floralife, MSU Extension) ; un épi qui cesse de s'ouvrir a manqué d'eau (Moyses). Très sensible à l'éthylène (FDI, WUR) : boutons qui avortent. Les teintes du déclin sont une description générale, non sourcée fleur par fleur.",
+      "sources": [
+        "https://floralife.com/article/freesia-troubleshooting/",
+        "https://extension.msstate.edu/publications/freesia-freesia-hybrida-for-the-farmer-florist",
+        "https://moysesflowers.co.uk/flower-care/freesia",
+        "https://research.wur.nl/en/publications/effect-of-ethylene-on-flower-abscission-a-survey/",
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/freesia"
+      ]
+    },
+    "confiance": "haute"
+  },
+  {
+    "id": "viburnum-roseum",
+    "nom": "Boule-de-neige",
+    "saison_vente": {
+      "mois": [
+        11,
+        12,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "pic": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "toute_annee": false,
+      "note": "Viburnum opulus 'Roseum' forcé : disponible de novembre à juin, pic de janvier à mai ; un gros producteur néerlandais livre de janvier à mi-avril via Royal FloraHolland ; plein air en mai",
+      "sources": [
+        "https://www.floristrytradeclub.co.uk/post/viburnum-a-versatile-spring-foliage",
+        "https://sarahraven.com/products/viburnum-opulus-roseum"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 4,
+      "max": 7,
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/viburnum",
+        "https://www.sarahraven.com/viburnum-opulus-roseum.htm"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "decolore",
+        "penche-tete",
+        "fleurons-tombent",
+        "feuilles-recroquevillees"
+      ],
+      "ordre": "la boule vendue vert pomme blanchit puis rosit légèrement ; si la tige ligneuse boit mal, la tête s'affaisse vite ; en fin de vie, les fleurons stériles brunissent par les bords et tombent, la boule se dégarnit",
+      "tete": "boule qui s'alourdit et penche sur son pédoncule quand elle manque d'eau",
+      "petales": "fleurons stériles plats qui passent de vert à blanc puis rosé, puis brunissent et se détachent",
+      "feuilles": "feuilles lobées très gourmandes en eau : flétrissent et se recroquevillent tôt",
+      "tige": "ligneuse, reste droite",
+      "couleurs": {
+        "vert": {
+          "declin": "vert qui pâlit vers le blanc crème",
+          "fane": "blanc crème taché de brun"
+        },
+        "blanc": {
+          "declin": "blanc teinté de rose",
+          "fane": "rose beige puis brun clair"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Changement vert→blanc→rose documenté (Sarah Raven, NC State) ; tige très assoiffée, fane vite si à sec (Moyses) ; 4-7 j (FDI), jusqu'à 2 semaines si on saisit la tige à l'eau bouillante (Sarah Raven). Brunissement et chute des fleurons : déduit des conseils de soin, non décrit précisément par une source.",
+      "sources": [
+        "https://sarahraven.com/products/viburnum-opulus-roseum",
+        "https://plants.ces.ncsu.edu/plants/viburnum-opulus-roseum/common-name/european-snowball-viburnum/",
+        "https://moysesflowers.co.uk/flower-care/viburnum-care",
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/viburnum"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "fritillaire-imperiale",
+    "nom": "Fritillaire impériale",
+    "saison_vente": {
+      "mois": [
+        3,
+        4,
+        5
+      ],
+      "pic": [
+        4
+      ],
+      "toute_annee": false,
+      "note": "floraison mi-printemps (avril) ; fleur coupée de niche, peu de producteurs ; FDI donne le genre de novembre à mai (marché US), non retenu pour l'Europe",
+      "sources": [
+        "https://gardeningexpress.co.uk/fritillaria-imperialis-aurora-crown-imperial-fritillary",
+        "https://thursd.com/articles/fritillaria-cut-flower-season-all-i-am",
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/fritillaria"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 3,
+      "max": 7,
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/fritillaria"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "chute-petales",
+        "transparence",
+        "feuilles-jaunissent"
+      ],
+      "ordre": "les cloches pendantes sous la couronne de feuilles ramollissent et perdent leur éclat, puis les tépales tombent ; les pédicelles se redressent et le fruit à six ailes pointe vers le haut ; la touffe de feuilles du sommet jaunit",
+      "tete": "couronne de cloches pendantes ; après chute des tépales, les jeunes capsules se dressent vers le haut",
+      "petales": "tépales épais et cireux qui deviennent mous, un peu translucides, puis tombent entiers",
+      "feuilles": "couronne verte au sommet et feuilles sur la tige jaunissent et ramollissent",
+      "tige": "épaisse et creuse, reste droite",
+      "couleurs": {
+        "orange": {
+          "declin": "orange qui s'assombrit vers le brique",
+          "fane": "brun rouille"
+        },
+        "jaune": {
+          "declin": "jaune pâli, translucide",
+          "fane": "jaune paille brunâtre"
+        },
+        "rouge": {
+          "declin": "rouge brique terne",
+          "fane": "brun rougeâtre"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Tenue 3-7 j donnée pour le genre Fritillaria (FDI), pas pour l'espèce ; sensible à l'éthylène. Chute des tépales puis capsules dressées : botanique de l'espèce au jardin (KPU), transposée au vase. Transparence des tépales : extrapolée (bulbe à tépales charnus). Odeur « de renard » marquée, utile en note de jeu (Wikipedia).",
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/fritillaria",
+        "https://plantdatabase.kpu.ca/Plant/frim",
+        "https://en.wikipedia.org/wiki/Fritillaria_imperialis"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "fritillaire-meleagris",
+    "nom": "Fritillaire pintade",
+    "saison_vente": {
+      "mois": [
+        3,
+        4,
+        5
+      ],
+      "pic": [
+        4
+      ],
+      "toute_annee": false,
+      "note": "fleurit en avril ; vendue surtout en petits pots de 3-4 bulbes fleuris, rarement en tige coupée",
+      "sources": [
+        "https://plants.ces.ncsu.edu/plants/fritillaria-meleagris",
+        "https://enclosuretakerefuge.com/2016/02/29/in-a-vase-on-monday-fritillarias/"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 3,
+      "max": 7,
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/fritillaria"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "transparence",
+        "chute-petales",
+        "penche-tete"
+      ],
+      "ordre": "la cloche à damier se ramollit, son damier s'estompe, la tige fine fléchit davantage ; les tépales finissent par tomber",
+      "tete": "cloche déjà pendante qui pend plus bas quand la tige fine mollit",
+      "petales": "tépales minces qui deviennent mous et translucides, damier moins net, puis chute",
+      "feuilles": "feuilles fines et glauques qui jaunissent",
+      "tige": "très fine, s'arque sous la cloche",
+      "couleurs": {
+        "violet": {
+          "declin": "damier pourpre qui se brouille et s'assombrit",
+          "fane": "brun violacé terne"
+        },
+        "blanc": {
+          "declin": "blanc verdâtre translucide",
+          "fane": "beige verdâtre"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Tenue en vase non trouvée pour l'espèce : valeur du genre (FDI). Façon de faner entièrement extrapolée du genre (chute des tépales chez F. imperialis) et d'observation générale des bulbes à tépales fins. Couleurs : forme pourpre à damier et forme blanche (NC State).",
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/fritillaria",
+        "https://plants.ces.ncsu.edu/plants/fritillaria-meleagris",
+        "https://plantdatabase.kpu.ca/Plant/frim"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "fritillaire-persica",
+    "nom": "Fritillaire de Perse",
+    "saison_vente": {
+      "mois": [
+        3,
+        4,
+        5
+      ],
+      "pic": [
+        4,
+        5
+      ],
+      "toute_annee": false,
+      "note": "floraison mi à fin printemps ; tige coupée de niche ('Ivory Bells' cultivé pour la coupe)",
+      "sources": [
+        "https://www.gardenia.net/plant/fritillaria-persica-ivory-bells",
+        "https://thursd.com/articles/fritillaria-cut-flower-season-all-i-am"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 3,
+      "max": 7,
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/fritillaria"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "fane-du-bas",
+        "decolore",
+        "chute-petales"
+      ],
+      "ordre": "grappe de dizaines de clochettes qui s'ouvrent du bas vers le haut ; les clochettes du bas fanent et tombent les premières ; la couleur fonce avec l'âge (prune vers presque noir) ; la forme crème vire de vert-blanc à ivoire",
+      "tete": "épi dressé de clochettes pendantes, qui se dégarnit par le bas",
+      "petales": "clochettes cireuses qui foncent (forme pourpre) ou jaunissent (forme ivoire), puis tombent",
+      "feuilles": "feuilles gris-vert lancéolées, souvent vrillées, qui jaunissent",
+      "tige": "robuste, reste droite",
+      "couleurs": {
+        "violet": {
+          "declin": "prune qui fonce vers le pourpre-noir",
+          "fane": "noir brunâtre mat"
+        },
+        "creme": {
+          "declin": "blanc verdâtre devenu ivoire crème",
+          "fane": "beige brun clair"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Le noircissement avec l'âge est sourcé (Bluestone : « becoming purple-black with age ») ; le passage vert-blanc → ivoire de 'Ivory Bells' aussi (Gardenia). Tenue du genre (FDI). Ouverture et fanaison de bas en haut extrapolées de la structure en grappe ; chute des clochettes extrapolée du genre.",
+      "sources": [
+        "https://www.bluestoneperennials.com/BFRPE.html",
+        "https://www.gardenia.net/plant/fritillaria-persica-ivory-bells",
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/fritillaria"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "fritillaire-michailovskyi",
+    "nom": "Fritillaire de Michailovski et pet",
+    "saison_vente": {
+      "mois": [
+        4,
+        5
+      ],
+      "pic": [
+        4
+      ],
+      "toute_annee": false,
+      "note": "floraison avril-mai ; espèce de collection, rare en tige coupée (petites fritillaires vendues aussi en pot)",
+      "sources": [
+        "https://www.bulbi.nl/en/fritillaria-michailovskyi",
+        "https://gardenersdream.co.uk/products/fritillaria-michailovskyi"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 3,
+      "max": 7,
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/fritillaria"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "transparence",
+        "chute-petales",
+        "decolore"
+      ],
+      "ordre": "les 1 à 5 clochettes pourpre-brun à bord jaune ramollissent, la bande jaune pâlit, puis les tépales tombent",
+      "tete": "petites cloches pendantes en tête de tige courte",
+      "petales": "tépales qui deviennent mous et translucides ; le liseré jaune d'or pâlit avant la chute",
+      "feuilles": "feuilles étroites glauques qui jaunissent",
+      "tige": "courte, fine, reste à peu près droite",
+      "couleurs": {
+        "bicolore": {
+          "declin": "pourpre-brun qui fonce, liseré jaune qui pâlit vers le crème",
+          "fane": "brun sombre uniforme, bord jaune paille"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Les fleurs sont dites « très durables » au jardin (Gardener's Dream), mais aucune tenue en vase chiffrée pour l'espèce : valeur du genre (FDI). Façon de faner entièrement extrapolée du genre. « et pet » du nom catalogue interprété comme « et petites fritillaires » ; la fiche décrit F. michailovskyi.",
+      "sources": [
+        "https://gardenersdream.co.uk/products/fritillaria-michailovskyi",
+        "https://www.bulbi.nl/en/fritillaria-michailovskyi",
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/fritillaria"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "allium-grosse-tete",
+    "nom": "Ail d'ornement à grosse tête",
+    "saison_vente": {
+      "mois": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "pic": [
+        5,
+        6
+      ],
+      "toute_annee": false,
+      "note": "surtout produit aux Pays-Bas en plein champ ; 'Gladiator' et 'Mount Everest' fleurissent de mai à juin ; FDI donne le genre d'avril à septembre",
+      "sources": [
+        "https://www.nijssenbulbs.com/allium/151-allium-gladiator-151.html",
+        "https://www.nijssenbulbs.com/allium/201-allium-039mount-everest039-201.html",
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/allium"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 5,
+      "max": 24,
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/allium",
+        "https://repository.iuls.ro/signposting/describedby/cf33ba7a-fc7d-44b8-b5b2-88de00ced279"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "seche-sur-place",
+        "decolore"
+      ],
+      "ordre": "la sphère garde sa forme : les centaines de petites étoiles pâlissent, deviennent papier, puis la tête vire du pourpre au rose puis au paille ; les fruits verts se forment au centre de chaque fleuron",
+      "tete": "sphère qui reste ronde et dressée ; elle devient seulement moins dense et plus sèche",
+      "petales": "petites étoiles qui pâlissent et sèchent en papier sur place, sans tomber",
+      "feuilles": "pas de feuilles sur la tige vendue",
+      "tige": "épaisse, lisse, reste droite ; peut s'amollir à la base et sentir l'oignon dans l'eau",
+      "couleurs": {
+        "violet": {
+          "declin": "pourpre qui pâlit vers le rose lilas",
+          "fane": "paille, beige blé légèrement rosé"
+        },
+        "blanc": {
+          "declin": "blanc teinté de vert (ovaires verts visibles)",
+          "fane": "crème paille"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Décoloration pourpre → rose → paille et très bon séchage documentés (Tesselaar, Laidback Gardener). Tenue : 5-7 j pour le genre (FDI) mais 23,9 j en moyenne pour A. giganteum (Roșca et al.) — large écart selon le stade de coupe. Odeur d'oignon à la coupe (FDI).",
+      "sources": [
+        "https://www.tesselaar.net.au/product/allium-giganteum",
+        "https://laidbackgardener.blog/2019/07/25/extending-the-beauty-of-alliums/",
+        "https://repository.iuls.ro/signposting/describedby/cf33ba7a-fc7d-44b8-b5b2-88de00ced279",
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/allium"
+      ]
+    },
+    "confiance": "haute"
+  },
+  {
+    "id": "allium-petit",
+    "nom": "Ail d'ornement à petite tête",
+    "saison_vente": {
+      "mois": [
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "pic": [
+        6,
+        7
+      ],
+      "toute_annee": false,
+      "note": "petits alliums (type A. sphaerocephalon) de fin de printemps à l'été, têtes mûres en juillet-août ; FDI donne le genre d'avril à septembre",
+      "sources": [
+        "https://plants.ces.ncsu.edu/plants/allium-sphaerocephalon",
+        "https://www.dewilde.nl/en/bulbsen-tubers/de-wilde/allium-sphaerocephalon--per-20/1954",
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/allium"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 5,
+      "max": 14,
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/allium",
+        "https://www.calyxflowers.com/floral-library/drumstick"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "seche-sur-place",
+        "decolore"
+      ],
+      "ordre": "la petite tête ovoïde s'ouvre du haut vers le bas en virant du vert au pourpre ; en fin de vie elle sèche en gardant sa forme et sa couleur sombre, qui ternit",
+      "tete": "petit œuf ou petite boule dressée, qui garde sa forme",
+      "petales": "fleurons minuscules qui sèchent en place",
+      "feuilles": "pas de feuilles sur la tige vendue",
+      "tige": "fine et raide, reste droite",
+      "couleurs": {
+        "bordeaux": {
+          "declin": "pourpre-bordeaux qui ternit",
+          "fane": "bordeaux brunâtre mat, base parfois encore verte"
+        },
+        "violet": {
+          "declin": "violet qui pâlit",
+          "fane": "mauve grisé, paille"
+        },
+        "blanc": {
+          "declin": "blanc crème",
+          "fane": "crème paille"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Pour A. sphaerocephalon : tête verte puis pourpre, tenue décorative de 14 j, excellent séchage (Calyx, NC State). « Petite tête » couvre plusieurs espèces ; violet et blanc viennent de la liste de couleurs du genre (FDI), pas d'une espèce précise.",
+      "sources": [
+        "https://www.calyxflowers.com/floral-library/drumstick",
+        "https://plants.ces.ncsu.edu/plants/allium-sphaerocephalon",
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/allium"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "iris-hollandais",
+    "nom": "Iris de Hollande",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [],
+      "toute_annee": true,
+      "note": "produit toute l'année sous serre aux Pays-Bas (ex. Middenweg Flowers, 4 à 5 millions de tiges par an) ; floraison de plein champ en mai-juin. Pic européen non sourcé, laissé vide.",
+      "sources": [
+        "https://thursd.com/growers/middenweg-flowers",
+        "https://www.rhs.org.uk/plants/261604/iris-dutch/details"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 3,
+      "max": 9,
+      "sources": [
+        "https://www.chrysal.com/node/5100",
+        "https://floralife.com/flowers/iris/",
+        "https://floralife.com/wp-content/uploads/2021/09/Vase-Life-Improvement-in-Cut-Iris-Flowers_Oct-2007.pdf"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "recroqueville",
+        "decolore",
+        "transparence",
+        "feuilles-jaunissent",
+        "bourgeons-avortent"
+      ],
+      "ordre": "premiers signes environ 4 jours après l'ouverture : la couleur change et les bords des tépales s'enroulent vers l'intérieur ; le flétrissement part de l'extrémité des tépales et gagne vite la base ; le tépale finit entièrement décoloré, en une masse molle enroulée sur la fleur",
+      "tete": "reste droite sur la tige ; la fleur ne tombe pas, elle se ratatine sur place en un cornet enroulé ; un bouton mal conservé peut rester fermé",
+      "petales": "bords qui s'enroulent, aspect mouillé et fondant (type « enroulement et fonte »), puis décoloration totale",
+      "feuilles": "les feuilles engainantes jaunissent facilement, surtout en mousse florale",
+      "tige": "reste droite et ferme",
+      "couleurs": {
+        "bleu": {
+          "declin": "bleu violacé qui se ternit, bords enroulés plus sombres",
+          "fane": "violet grisâtre délavé, translucide par endroits"
+        },
+        "violet": {
+          "declin": "violet qui bleuit et se ternit",
+          "fane": "mauve gris terne, aspect fripé et humide"
+        },
+        "blanc": {
+          "declin": "blanc qui devient crème, bords translucides",
+          "fane": "beige pâle translucide, brunâtre aux pointes"
+        },
+        "jaune": {
+          "declin": "jaune qui pâlit, bords enroulés",
+          "fane": "jaune paille terne à brunâtre"
+        },
+        "bicolore": {
+          "declin": "les deux teintes se ternissent, bords enroulés",
+          "fane": "teintes délavées et grisées"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Sénescence de l'iris non déclenchée par l'éthylène (études sur Iris x hollandica 'Blue Magic'). Deux types de fanaison décrits dans le genre : « enroulement et fonte » et « enroulement en tire-bouchon et dessiccation ». La description des couleurs fanées par famille est une extrapolation à partir de « décoloration totale du tépale ». Fleur coupée parmi les plus éphémères ; ouvre mal si stockée trop froide (0,5 °C).",
+      "sources": [
+        "https://avesis.omu.edu.tr/yayin/594f597a-0e74-4e81-9367-7916b77f3d14/delay-of-iris-flower-senescence-by-cytokinins-and-jasmonates",
+        "https://avesis.omu.edu.tr/yayin/01fa9de1-51bb-4be5-8c9e-4dad6a781f8b/solute-leakage-lipid-peroxidation-and-protein-degradation-during-the-senescence-of-iris-tepals",
+        "https://acikerisim.omu.edu.tr/entities/publication/6cc5ef22-4307-4339-aa62-f9081a17ca2c/full",
+        "https://floralife.com/flowers/iris/"
+      ]
+    },
+    "confiance": "haute"
+  },
+  {
+    "id": "iris-barbu",
+    "nom": "Iris barbu",
+    "saison_vente": {
+      "mois": [
+        5,
+        6
+      ],
+      "pic": [
+        5
+      ],
+      "toute_annee": false,
+      "note": "rarement vendu en fleur coupée (trop fragile une fois ouvert) ; offre limitée aux producteurs locaux pendant la floraison, mai-juin",
+      "sources": [
+        "https://library.floretflowers.com/products/iris-on-thin-ice",
+        "https://library.floretflowers.com/products/iris-magical"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 3,
+      "max": 7,
+      "sources": [
+        "https://library.floretflowers.com/products/iris-on-thin-ice",
+        "https://biologyinsights.com/how-long-do-iris-flowers-last/"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "recroqueville",
+        "transparence",
+        "decolore"
+      ],
+      "ordre": "chaque fleur ne dure que 1 à 3 jours puis s'enroule et fond ; le bouton suivant de la hampe s'ouvre pendant ce temps, si bien que la tige porte à la fois des fleurs fanées et des fleurs fraîches ; en fin de vie, plus de bouton et toutes les fleurs sont flétries",
+      "tete": "les sépales retombants (« falls ») s'affaissent et les pétales dressés (« standards ») s'enroulent les uns dans les autres ; la fleur fanée reste accrochée en petit paquet mou et humide",
+      "petales": "se froissent et marquent au moindre choc une fois ouverts, deviennent translucides et collants, se tordent ; la barbe garde plus longtemps sa couleur",
+      "feuilles": "peu ou pas de feuilles sur la hampe coupée ; la spathe à la base des fleurs brunit et devient parcheminée",
+      "tige": "reste droite et rigide",
+      "couleurs": {
+        "bleu": {
+          "declin": "bleu ciel qui se ternit, veines plus visibles",
+          "fane": "bleu gris translucide, puis brunâtre"
+        },
+        "violet": {
+          "declin": "violet qui fonce et se ternit",
+          "fane": "pourpre sombre presque noir, aspect mouillé"
+        },
+        "blanc": {
+          "declin": "blanc qui devient crème, translucide aux bords",
+          "fane": "beige brunâtre transparent"
+        },
+        "jaune": {
+          "declin": "jaune qui pâlit",
+          "fane": "paille puis brun clair"
+        },
+        "orange": {
+          "declin": "orange qui se délave",
+          "fane": "brun roux translucide"
+        },
+        "peche": {
+          "declin": "pêche qui pâlit vers le crème",
+          "fane": "beige rosé sale"
+        },
+        "rose": {
+          "declin": "rose qui se ternit vers le mauve",
+          "fane": "mauve brunâtre délavé"
+        },
+        "bordeaux": {
+          "declin": "bordeaux qui fonce",
+          "fane": "brun noirâtre"
+        },
+        "brun": {
+          "declin": "brun cuivré qui se ternit",
+          "fane": "brun foncé terne"
+        },
+        "bicolore": {
+          "declin": "les deux teintes se ternissent, les sépales s'affaissent en premier",
+          "fane": "teintes sombres et délavées, paquet fripé"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Le mode « enroulement et fonte » est décrit pour le genre Iris (recherche sur Iris x hollandica) ; son application à l'iris barbu et les couleurs fanées par famille sont extrapolées d'observation générale. Les couleurs listées reflètent la gamme des obtentions de grands iris barbus cultivés pour la coupe chez Floret.",
+      "sources": [
+        "https://library.floretflowers.com/products/iris-on-thin-ice",
+        "https://library.floretflowers.com/products/iris-great-smokey-dawn",
+        "https://library.floretflowers.com/products/iris-downtown-brown",
+        "https://avesis.omu.edu.tr/yayin/594f597a-0e74-4e81-9367-7916b77f3d14/delay-of-iris-flower-senescence-by-cytokinins-and-jasmonates"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "ornithogale",
+    "nom": "Ornithogale",
+    "saison_vente": {
+      "mois": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "pic": [
+        7,
+        8
+      ],
+      "toute_annee": false,
+      "note": "Ornithogalum thyrsoides fleurit de juin à septembre en culture tempérée et est décrit comme un produit de fin d'été et d'automne ; une production néerlandaise sous serre plus étalée (O. arabicum, O. dubium, O. saundersiae) est probable mais non sourcée",
+      "sources": [
+        "https://plants.ces.ncsu.edu/plants/ornithogalum-thyrsoides/common-name/chincherinchee/",
+        "https://www.gardenia.net/plant/ornithogalum-thyrsoides"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 14,
+      "max": 21,
+      "sources": [
+        "https://www.scielo.br/j/oh/a/WgbfQ5pzksYjhSzkcZPFy9k/abstract/?lang=en",
+        "https://www.gardenia.net/guide/learn-how-to-plant-care-and-grow-splendid-ornithogalum",
+        "https://floralife.com/wp-content/uploads/2024/11/FloraLife_LivRio_Star-of-Bethlehem_11.2024.pdf"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "fane-du-bas",
+        "recroqueville",
+        "seche-sur-place",
+        "bourgeons-avortent"
+      ],
+      "ordre": "les fleurons s'ouvrent du bas vers le haut de la grappe pendant toute la vie en vase ; les fleurons du bas fanent et sèchent pendant que le sommet fleurit encore ; environ 13-14 % des boutons du haut ne s'ouvrent jamais",
+      "tete": "la grappe reste dressée ; elle s'allonge un peu en s'ouvrant ; le sommet garde une pointe de boutons verts fermés",
+      "petales": "les tépales des fleurons fanés se referment et se fripent en petites étoiles parcheminées qui restent sur la tige ; l'ovaire central (noir chez O. saundersiae et O. arabicum) reste bien visible",
+      "feuilles": "pas de feuilles sur la hampe vendue",
+      "tige": "reste droite et ferme, très solide",
+      "couleurs": {
+        "blanc": {
+          "declin": "fleurons du bas crème, sommet encore blanc pur",
+          "fane": "étoiles beige paille parcheminées, pointe de boutons verdâtres"
+        },
+        "jaune": {
+          "declin": "jaune qui pâlit sur les fleurons du bas",
+          "fane": "paille brunâtre"
+        },
+        "orange": {
+          "declin": "orange qui se délave vers l'abricot",
+          "fane": "brun roux sec"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Tenue réputée exceptionnelle (essais : 14,5 à 16,7 jours ; jusqu'à un mois selon gardenia.net, car de nouveaux fleurons s'ouvrent). Historiquement expédiée à sec, cire au pied : supporte même un temps sans eau. Ordre bas-vers-haut sourcé ; l'aspect parcheminé des fleurons fanés et les teintes fanées sont extrapolés d'observation générale. Couleurs : blanc (O. thyrsoides, saundersiae, arabicum), jaune à orange (O. dubium).",
+      "sources": [
+        "https://www.scielo.br/j/oh/a/WgbfQ5pzksYjhSzkcZPFy9k/abstract/?lang=en",
+        "https://www.farmersweekly.co.za/archive/ornithogalum-the-popular-chincherinchees/",
+        "https://pza.sanbi.org/node/10670",
+        "https://pza.sanbi.org/node/10671",
+        "https://idtools.org/id/cutflowers/key/Cut_Flower_Exports_of_Africa/Media/Html/Fact_sheets/Ornithogalum.htm"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "pavot-islande",
+    "nom": "Pavot d'Islande",
+    "saison_vente": {
+      "mois": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "pic": [
+        5
+      ],
+      "toute_annee": false,
+      "note": "en production allemande de plein air, boutons dès mi-avril et floraison mai-juillet ; des séries italiennes (Colibri) sont cultivées pour la coupe en Italie et peuvent avancer l'offre au cœur du printemps, sans calendrier sourcé",
+      "sources": [
+        "https://www.gartenbau.sachsen.de/download/ID77_Papaver_nudicaule_FLSchnitt2020.pdf",
+        "https://thesherman.org/2021/04/23/papaver-nudicaule-iceland-poppies",
+        "https://www.ishs.org/ishs-article/246_44"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 3,
+      "max": 7,
+      "sources": [
+        "https://library.floretflowers.com/products/iceland-poppies-giant-peach",
+        "https://www.masterclass.com/articles/iceland-poppy-guide",
+        "https://thesherman.org/2021/04/23/papaver-nudicaule-iceland-poppies"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "chute-petales",
+        "recroqueville",
+        "brunit-bords",
+        "penche-tete"
+      ],
+      "ordre": "le bouton poilu se fend, les pétales froissés comme du papier crépon se déplient ; après quelques jours les pétales se fripent, se décolorent ou brunissent puis se détachent d'un coup ; il reste la capsule verte coiffée de son disque stigmatique ; si la tige s'effondre, la tête bascule",
+      "tete": "coupe ouverte qui s'aplatit puis se dégarnit ; reste la capsule nue au bout de la tige ; une tige mal hydratée peut s'affaisser et faire pencher la tête",
+      "petales": "papier crépon qui se froisse davantage, bords qui brunissent, puis chute",
+      "feuilles": "pas de feuilles sur la tige (feuilles en rosette basale)",
+      "tige": "fine, poilue, souvent courbe ; peut s'effondrer en fin de vie",
+      "couleurs": {
+        "blanc": {
+          "declin": "blanc qui devient ivoire froissé",
+          "fane": "pétales tombés, capsule verte puis brun clair"
+        },
+        "jaune": {
+          "declin": "jaune qui pâlit",
+          "fane": "pétales tombés ; les derniers paille brunâtre"
+        },
+        "orange": {
+          "declin": "orange qui se délave",
+          "fane": "pétales tombés ; les derniers saumon terne"
+        },
+        "peche": {
+          "declin": "pêche qui pâlit vers le crème",
+          "fane": "beige rosé sale, pétales tombés"
+        },
+        "rose": {
+          "declin": "rose qui pâlit, bords plus sombres",
+          "fane": "rose fané grisâtre, pétales tombés"
+        },
+        "rouge": {
+          "declin": "rouge qui fonce et se ternit",
+          "fane": "rouge brique sombre, pétales tombés"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Définition de la fin de vie en vase (NCSU) : pétale qui tombe, se fripe, se décolore ou brunit, ou tige qui s'effondre. Tenue 3 jours sans traitement, 5-7 jours tige saisie à la flamme ou à l'eau bouillante. La capsule restante est décorative et sèche bien, mais pas la fleur. Teintes de déclin par famille extrapolées.",
+      "sources": [
+        "https://hortscans.ces.ncsu.edu/uploads/o/p/optimizi_51cb0ea41f610.pdf",
+        "https://www.masterclass.com/articles/iceland-poppy-guide",
+        "https://www.epicgardening.com/iceland-poppies/",
+        "https://library.floretflowers.com/products/iceland-poppies-giant-peach"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "camassia",
+    "nom": "Camassia",
+    "saison_vente": {
+      "mois": [
+        5,
+        6
+      ],
+      "pic": [
+        5
+      ],
+      "toute_annee": false,
+      "note": "floraison mai-juin ; offre de coupe limitée et saisonnière",
+      "sources": [
+        "https://www.aol.com/plant-grow-camassia-stunning-spring-165441348.html",
+        "https://hardingandbloom.co.uk/collections/autumn-cut-flower-camassia"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 5,
+      "max": 8,
+      "sources": [
+        "https://www.aol.com/plant-grow-camassia-stunning-spring-165441348.html"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "fane-du-bas",
+        "recroqueville"
+      ],
+      "ordre": "les étoiles s'ouvrent de bas en haut sur environ une semaine ; les fleurs du bas fanent pendant que celles du haut s'ouvrent ; à la fin, l'épi est entièrement couvert de fleurs fanées",
+      "tete": "épi dressé qui reste droit",
+      "petales": "les tépales des fleurs fanées se tordent et s'enroulent ensemble en spirale au-dessus de l'ovaire, formant de petits fuseaux secs qui restent sur l'épi",
+      "feuilles": "peu ou pas de feuilles sur la tige vendue",
+      "tige": "reste droite",
+      "couleurs": {
+        "bleu": {
+          "declin": "bleu qui se ternit sur les fleurs du bas",
+          "fane": "fuseaux bleu-gris puis brunâtres"
+        },
+        "violet": {
+          "declin": "violet qui pâlit vers le mauve",
+          "fane": "fuseaux mauve sale à brun"
+        },
+        "blanc": {
+          "declin": "crème sur les fleurs du bas",
+          "fane": "fuseaux beige paille"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Tenue en vase extrapolée (« les fleurs restantes s'ouvrent en vase pendant la semaine suivante ») ; une étude polonaise montre que l'eau claire vaut mieux que les solutions conservatrices. La torsion en spirale des tépales fanés est une observation générale du genre, non sourcée ici. Teintes fanées extrapolées.",
+      "sources": [
+        "https://www.aol.com/plant-grow-camassia-stunning-spring-165441348.html",
+        "https://npt.up-poznan.net/volume7/issue3/abstract-38.html"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "eremurus",
+    "nom": "Eremurus",
+    "saison_vente": {
+      "mois": [
+        5,
+        6,
+        7
+      ],
+      "pic": [
+        6
+      ],
+      "toute_annee": false,
+      "note": "saison courte de fin de printemps : mai-juin pour la plupart des cultivars, certaines espèces jusqu'à fin juillet",
+      "sources": [
+        "https://www.dutchbulbs.com/product/Bungei_Eremurus",
+        "https://perishablenews.com/?p=107814",
+        "https://www.gardensillustrated.com/plants/flowers/eremurus-planting-grow-guide"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 5,
+      "max": 14,
+      "sources": [
+        "https://floraldesigninstitute.com/blogs/resources-flower-library/eremurus",
+        "https://etemadi.iut.ac.ir/fa/content/sensitivity-consequences-ethylene-determining-vase-life-eremurus-spectabilis-and-e-persicus",
+        "https://www.mdpi.com/2311-7524/9/9/978"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "fane-du-bas",
+        "fleurons-tombent",
+        "recroqueville"
+      ],
+      "ordre": "les centaines de petits fleurons s'ouvrent en anneaux du bas vers le haut ; les anneaux du bas fanent pendant que le haut est encore en bouton : l'épi montre une bande fanée en bas, une bande fleurie au milieu et une pointe de boutons ; sous l'effet de l'éthylène les pétales flétrissent (E. spectabilis) ou tombent (E. persicus)",
+      "tete": "très long épi dressé ; la pointe peut se courber vers la lumière",
+      "petales": "minuscules fleurons étoilés qui se fripent en brun ; les étamines saillantes persistent un temps, donnant un aspect duveteux ; selon l'espèce les fleurons tombent",
+      "feuilles": "pas de feuilles sur la hampe",
+      "tige": "reste droite et rigide",
+      "couleurs": {
+        "blanc": {
+          "declin": "bas de l'épi crème rosé",
+          "fane": "bas de l'épi brun clair, haut beige"
+        },
+        "jaune": {
+          "declin": "jaune qui pâlit vers le paille en bas",
+          "fane": "brun paille, pointe verdâtre"
+        },
+        "orange": {
+          "declin": "orange cuivré qui se ternit en bas",
+          "fane": "brun rouille"
+        },
+        "peche": {
+          "declin": "saumon qui pâlit",
+          "fane": "beige rosé brunâtre"
+        },
+        "rose": {
+          "declin": "rose pastel qui se délave",
+          "fane": "beige brunâtre"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Sensible à l'éthylène : STS fait passer E. spectabilis de 5 à 7 jours ; 1-MCP ajoute environ 2 jours. Récolter avec 0 fleuron ouvert donne la meilleure tenue. Couleurs : blanc, jaune vif, cuivré/orange ('Cleopatra', 'Pinokkio'), saumon ('Romance'), rose pastel. Teintes fanées extrapolées.",
+      "sources": [
+        "https://etemadi.iut.ac.ir/fa/content/sensitivity-consequences-ethylene-determining-vase-life-eremurus-spectabilis-and-e-persicus",
+        "https://doaj.org/article/d1b037880d854a5d87d9fa2fba4c388b",
+        "https://investigadores.anid.cl/en/public_search/work?id=318473",
+        "https://hayloft.co.uk/eremurus-x-isabellinus-cleopatra-g-k43989"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "triteleia",
+    "nom": "Triteleia",
+    "saison_vente": {
+      "mois": [
+        5,
+        6,
+        7
+      ],
+      "pic": [
+        6
+      ],
+      "toute_annee": false,
+      "note": "floraison début d'été (juin-juillet) ; fleur coupée appréciée aux Pays-Bas. Mai ajouté pour les cultures sous abri, sans source précise",
+      "sources": [
+        "https://nijssenbulbs.com/home/7162-triteleia-blues-7162.html",
+        "https://dutch-bulbs.com/triteleia-aquarius/",
+        "https://www.rhs.org.uk/Plants/18431/i-Triteleia-laxa-i/Details"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 10,
+      "max": 14,
+      "sources": [
+        "https://www.tesselaar.net.au/product/475-queen-fabiola",
+        "https://www.longfield-gardens.com/plantname/Brodiaea-Queen-Fabiola",
+        "https://www.gardenia.net/guides/genera/triteleia"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "fleurons-tombent",
+        "recroqueville",
+        "seche-sur-place"
+      ],
+      "ordre": "les trompettes de l'ombelle s'ouvrent les unes après les autres ; les premières se referment et se fripent en tubes secs pendant que les boutons restants s'ouvrent ; l'ombelle finit clairsemée de tubes secs",
+      "tete": "ombelle lâche qui reste dressée sur une tige fine",
+      "petales": "tépales qui se referment en tube et se dessèchent en papier",
+      "feuilles": "pas de feuilles sur la tige vendue",
+      "tige": "fine et raide, reste droite",
+      "couleurs": {
+        "bleu": {
+          "declin": "bleu lavande qui pâlit",
+          "fane": "tubes gris bleuté à brun clair"
+        },
+        "violet": {
+          "declin": "violet qui se délave vers le mauve",
+          "fane": "mauve grisâtre papier"
+        },
+        "blanc": {
+          "declin": "blanc crème",
+          "fane": "beige paille"
+        },
+        "bicolore": {
+          "declin": "blanc à rayure bleue ('Rudy') qui se ternit",
+          "fane": "beige rayé de gris"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Saison et tenue sourcées ; la façon de faner (fleurons qui se referment en tubes secs, ombelle clairsemée) est extrapolée d'observation générale des bulbeux à ombelle (Brodiaea, Allium) faute de source. Teintes fanées extrapolées.",
+      "sources": [
+        "https://www.tesselaar.net.au/product/475-queen-fabiola",
+        "https://www.brecks.com/products/rudy_triteleia",
+        "https://nijssenbulbs.com/home/1045-triteleia-hyacinthina-1045.html"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "jacinthe-des-bois",
+    "nom": "Jacinthe des bois",
+    "saison_vente": {
+      "mois": [],
+      "pic": [],
+      "toute_annee": false,
+      "note": "pratiquement pas vendue en fleur coupée : fane presque aussitôt cueillie et espèce protégée au Royaume-Uni. Floraison sauvage d'avril à mai (hors calendrier commercial)",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Hyacinthoides_non-scripta",
+        "https://www.first-nature.com/flowers/hyacinthoides-non-scripta.php"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 1,
+      "max": 3,
+      "sources": [
+        "https://www.gardenia.net/plant/hyacinthoides-non-scripta",
+        "https://www.first-nature.com/flowers/hyacinthoides-non-scripta.php"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "penche-tete",
+        "recroqueville",
+        "fane-du-bas"
+      ],
+      "ordre": "flétrit presque immédiatement après la cueillette : la hampe, déjà arquée d'un seul côté, s'affaisse ; les clochettes se fripent, celles du bas d'abord",
+      "tete": "la grappe unilatérale, naturellement penchée au sommet, retombe davantage jusqu'à pendre",
+      "petales": "clochettes à pointes recourbées qui se fripent et se referment",
+      "feuilles": "pas de feuilles sur la hampe",
+      "tige": "molle, s'affaisse ; sève visqueuse",
+      "couleurs": {
+        "bleu": {
+          "declin": "bleu violacé qui se ternit",
+          "fane": "mauve grisâtre, puis brun pâle"
+        },
+        "blanc": {
+          "declin": "blanc qui devient crème translucide",
+          "fane": "beige pâle"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Rarement vendue en fleur coupée. Tenue en vase de 1 à 3 jours extrapolée de « fane presque immédiatement » (aucune mesure trouvée). Couleurs : bleu violacé type, forme blanche (alba) connue ; la forme rose, rare, n'est pas retenue. Teintes fanées extrapolées.",
+      "sources": [
+        "https://www.gardenia.net/plant/hyacinthoides-non-scripta",
+        "https://www.gardenia.net/plant/hyacinthoides-non-scripta-alba",
+        "https://en.wikipedia.org/wiki/Hyacinthoides_non-scripta",
+        "https://www.rhs.org.uk/advice/profile?pid=426"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "scille",
+    "nom": "Scille",
+    "saison_vente": {
+      "mois": [],
+      "pic": [],
+      "toute_annee": false,
+      "note": "pas de marché de fleur coupée identifié ; la RHS la cite seulement pour de petits vases. Floraison au jardin en mars-avril (avril-mai selon la RHS), hors calendrier commercial",
+      "sources": [
+        "https://www.rhs.org.uk/plants/16868/Scilla-siberica/Details",
+        "https://naturblick.museumfuernaturkunde.berlin/species/portrait/592?lang=en"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 2,
+      "max": 4,
+      "sources": [
+        "https://www.rhs.org.uk/plants/16868/Scilla-siberica/Details"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "recroqueville",
+        "transparence",
+        "decolore"
+      ],
+      "ordre": "les 2 à 5 clochettes pendantes se fripent et deviennent translucides ; elles restent accrochées à la tige courte",
+      "tete": "les clochettes, déjà pendantes, pendent plus mollement",
+      "petales": "minces, se fripent et deviennent translucides",
+      "feuilles": "pas de feuilles sur la tige coupée",
+      "tige": "courte, s'amollit",
+      "couleurs": {
+        "bleu": {
+          "declin": "bleu vif qui pâlit et se ternit",
+          "fane": "bleu grisâtre translucide puis brun clair"
+        },
+        "blanc": {
+          "declin": "blanc translucide",
+          "fane": "beige pâle"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Rarement vendue en fleur coupée. Aucune donnée de tenue ni de fanaison trouvée : tenue (2-4 jours) et mode de fanaison extrapolés d'observation générale des petits bulbeux printaniers. Couleurs : bleu (type), blanc ('Alba') ; extrapolées pour le blanc.",
+      "sources": [
+        "https://www.rhs.org.uk/plants/16868/Scilla-siberica/Details",
+        "https://www.rhs.org.uk/plants/trials-awards/using-award-winning-plants/10-award-winning-bulbs-with-blue-flowers"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "niveole",
+    "nom": "Nivéole",
+    "saison_vente": {
+      "mois": [],
+      "pic": [],
+      "toute_annee": false,
+      "note": "rarement vendue en fleur coupée ; floraison au jardin de février-mars (L. vernum) à avril-mai (L. aestivum, cultivée pour la coupe par quelques petits producteurs), hors calendrier commercial",
+      "sources": [
+        "https://plants.ces.ncsu.edu/plants/leucojum-vernum/",
+        "https://library.floretflowers.com/products/leucojum-gravetye-giant"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 7,
+      "max": 10,
+      "sources": [
+        "https://library.floretflowers.com/products/leucojum-gravetye-giant"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "transparence",
+        "brunit-bords",
+        "recroqueville"
+      ],
+      "ordre": "les clochettes pendantes deviennent translucides et molles, les pointes vertes brunissent, puis elles se fripent sur place",
+      "tete": "les clochettes restent pendantes au sommet de la tige",
+      "petales": "six tépales blancs à pointe verte qui deviennent translucides puis brunissent à la pointe",
+      "feuilles": "pas de feuilles sur la tige vendue",
+      "tige": "creuse et charnue, laisse couler une sève claire ; reste droite",
+      "couleurs": {
+        "blanc": {
+          "declin": "blanc qui devient translucide, pointes vertes ternies",
+          "fane": "beige translucide, pointes brunes"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Tenue de 7-10 jours mesurée chez L. aestivum 'Gravetye Giant' (nivéole d'été), extrapolée à la nivéole en général ; à conditionner seule car la sève claire gêne les autres fleurs. Mode de fanaison extrapolé d'observation générale (amaryllidacées voisines comme le perce-neige), non sourcé.",
+      "sources": [
+        "https://library.floretflowers.com/products/leucojum-gravetye-giant",
+        "https://en.wikipedia.org/wiki/Leucojum",
+        "https://www.chicagobotanic.org/plantcollections/plantfinder/leucojum_vernum--spring_snowflake"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "crocus",
+    "nom": "Crocus",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3
+      ],
+      "pic": [
+        2,
+        3
+      ],
+      "toute_annee": false,
+      "note": "extrapolé : aucun calendrier de criée trouvé pour le crocus coupé, qui se vend surtout en pot ou en bulbes forcés ; mois déduits de la floraison de fin d'hiver et de début de printemps",
+      "sources": [
+        "https://plants.ces.ncsu.edu/plants/crocus/common-name/dutch-crocus/"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 3,
+      "max": 7,
+      "sources": [
+        "https://windflowerflorist.com/blogs/news/how-long-crocus-blooms-last"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "se-referme",
+        "transparence",
+        "recroqueville"
+      ],
+      "ordre": "la fleur s'ouvre à la lumière et à la chaleur, puis se referme la nuit (nyctinastie) ; en déclin, elle ne se rouvre plus qu'à moitié, les tépales ramollissent et deviennent translucides, puis la coupe refermée s'affaisse et se fripe en pointe",
+      "tete": "coupe dressée qui reste fermée en bouton allongé ; en fin de vie, le tube mou se couche",
+      "petales": "tépales qui deviennent mous et translucides, se plissent et se replient sur eux-mêmes, façon papier mouillé",
+      "feuilles": "feuilles linéaires à nervure blanche, rarement présentes en vase ; elles jaunissent par la pointe",
+      "tige": "le tube floral, court et pâle, se ramollit et plie",
+      "couleurs": {
+        "blanc": {
+          "declin": "blanc translucide, veiné de gris",
+          "fane": "beige grisâtre, papier froissé"
+        },
+        "jaune": {
+          "declin": "jaune pâli, translucide",
+          "fane": "jaune paille brunâtre"
+        },
+        "violet": {
+          "declin": "mauve délavé, bords bleuis",
+          "fane": "violet terne tirant au gris-brun"
+        },
+        "bicolore": {
+          "declin": "les stries violettes ressortent sur un fond qui pâlit",
+          "fane": "stries brunâtres sur fond beige"
+        }
+      },
+      "seche_bien": false,
+      "notes": "fiche surtout extrapolée. Seuls la tenue (une à deux semaines selon un fleuriste, ramenée ici à 3-7 jours en vase, car il parle de la fleur sur pied comme coupée), la sensibilité à la chaleur et la fermeture nocturne sont sourcés. 'se-referme' est un terme ajouté : la fleur fane en se refermant au lieu de s'ouvrir. La transparence est extrapolée des autres bulbes à tépales fins.",
+      "sources": [
+        "https://windflowerflorist.com/blogs/news/how-long-crocus-blooms-last",
+        "https://gardeninacity.com/2016/03/22/why-crocus-flowers-open-for-the-sun/"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "sparaxis",
+    "nom": "Sparaxis",
+    "saison_vente": {
+      "mois": [
+        3,
+        4,
+        5,
+        6
+      ],
+      "pic": [
+        4,
+        5
+      ],
+      "toute_annee": false,
+      "note": "extrapolé : aucun calendrier de grossiste trouvé ; floraison de printemps et début d'été (cultures sous abri plantées à l'automne). En plantation de printemps au jardin, la floraison tombe en juillet-août",
+      "sources": [
+        "https://www.highcountrygardens.com/flower-bulbs/unique-spring-planted-bulbs/harlequin-flower-sparaxis-tricolor-bulbs",
+        "https://dutch-bulbs.com/sparaxis-wandflower/"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 5,
+      "max": 10,
+      "sources": [
+        "https://hadeco.co.za/blogs/blogs/how-to-care-for-spring-flowering-sparaxis"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "fane-du-bas",
+        "recroqueville",
+        "se-referme"
+      ],
+      "ordre": "les fleurs d'un épi lâche de 3 à 5 étoiles s'ouvrent du bas vers le haut ; la plus basse fane d'abord en se refermant et se tortillant sur elle-même, tandis que les boutons du haut s'ouvrent encore",
+      "tete": "épi lâche, légèrement arqué ; les fleurs fanées restent accrochées, roulées en cornet",
+      "petales": "tépales qui se referment en spirale autour du cœur, puis se fripent et deviennent parcheminés",
+      "feuilles": "feuilles en lame, plissées ; elles jaunissent par la pointe",
+      "tige": "fine et souple, elle a tendance à se coucher (cultures souvent tuteurées)",
+      "couleurs": {
+        "bicolore": {
+          "declin": "le cœur jaune et l'anneau noir restent nets, le pourtour pâlit",
+          "fane": "cornet tordu brun-violacé, cœur jaune sale"
+        },
+        "orange": {
+          "declin": "orange qui pâlit vers le saumon",
+          "fane": "brun rouille"
+        },
+        "rouge": {
+          "declin": "rouge assombri",
+          "fane": "bordeaux brunâtre"
+        },
+        "rose": {
+          "declin": "rose délavé mauve",
+          "fane": "mauve-brun"
+        },
+        "jaune": {
+          "declin": "jaune crème",
+          "fane": "paille brune"
+        },
+        "blanc": {
+          "declin": "blanc cassé",
+          "fane": "beige, bords brun clair"
+        }
+      },
+      "seche_bien": false,
+      "notes": "tenue en jours non chiffrée par les sources (« longue tenue en vase ») : fourchette 5-10 jours extrapolée de l'ixia et du freesia, autres Iridacées. La façon de faner (fleurs qui se roulent sur elles-mêmes, épi qui fane du bas) est extrapolée des Iridacées voisines (ixia, freesia). Couleurs sourcées : orange, rose, rouge, blanc, jaune, centre noir et doré. 'se-referme' est un terme ajouté.",
+      "sources": [
+        "https://hadeco.co.za/blogs/blogs/how-to-care-for-spring-flowering-sparaxis",
+        "https://www.gardenia.net/plant/sparaxis-tricolor-mars-harlequin-flower",
+        "https://hartley-botanic.co.uk/magazine/harlequin-or-wand-flower-sparaxis/"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "ixia",
+    "nom": "Ixia",
+    "saison_vente": {
+      "mois": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "pic": [
+        4,
+        5,
+        6
+      ],
+      "toute_annee": false,
+      "note": "disponible de février à août selon une fiche de fleuristerie ; pic de fin de printemps et début d'été (pic extrapolé de la floraison naturelle)",
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/ixia",
+        "https://gardenexpress.com.au/pages/ixia-growing-guide"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 5,
+      "max": 7,
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/ixia"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "fane-du-bas",
+        "se-referme",
+        "recroqueville",
+        "bourgeons-avortent"
+      ],
+      "ordre": "les étoiles s'ouvrent du bas de l'épi vers le haut et se referment la nuit ; les plus basses fanent les premières en se roulant en cornet, puis l'épi se dégarnit vers le haut ; sous l'éthylène, les derniers boutons du haut ne s'ouvrent pas",
+      "tete": "épi serré d'étoiles à six tépales sur une tige fine et raide ; le haut reste en boutons colorés quand l'éthylène les fait avorter",
+      "petales": "tépales qui se referment et se tortillent, puis se fripent et brunissent en petits cornets secs",
+      "feuilles": "peu ou pas de feuilles sur la tige vendue",
+      "tige": "fine, raide, très droite ; elle reste droite",
+      "couleurs": {
+        "blanc": {
+          "declin": "blanc cassé, l'œil sombre ressort",
+          "fane": "beige papier"
+        },
+        "creme": {
+          "declin": "crème jaunissante",
+          "fane": "paille brune"
+        },
+        "jaune": {
+          "declin": "jaune pâli",
+          "fane": "jaune brunâtre"
+        },
+        "orange": {
+          "declin": "orange délavé",
+          "fane": "rouille"
+        },
+        "rouge": {
+          "declin": "rouge assombri",
+          "fane": "bordeaux brun"
+        },
+        "rose": {
+          "declin": "rose pâli vers le mauve",
+          "fane": "mauve-brun"
+        },
+        "violet": {
+          "declin": "lavande grisée",
+          "fane": "violet terne, gris-brun"
+        }
+      },
+      "seche_bien": false,
+      "notes": "sourcés : tenue de 5-7 jours, saison février-août, couleurs (rouge, rose, lavande, orange, jaune, crème, blanc), ouverture du bas vers le haut, fermeture la nuit et par temps couvert, sensibilité à l'éthylène (stockage à 2-3 °C). Extrapolés : la façon dont chaque fleur fane (en se roulant, comme les autres Iridacées) et les teintes du fané. 'se-referme' est un terme ajouté.",
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/ixia",
+        "https://en.jardineriaon.com/characteristics-and-care-of-ixia.html"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "glaieul-nain",
+    "nom": "Glaïeul nain",
+    "saison_vente": {
+      "mois": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "pic": [
+        5,
+        6
+      ],
+      "toute_annee": false,
+      "note": "les glaïeuls nains (Gladiolus nanus, × colvillei) fleurissent de la fin du printemps au début de l'été ; avril est extrapolé (cultures sous abri). Les grands glaïeuls hybrides, eux, se vendent presque toute l'année",
+      "sources": [
+        "https://www.dutchgrown.co.uk/products/gladiolus-nanus-mixed",
+        "https://bulbsdirect.co.nz/blogs/spring-ideas-and-inspiration/gladioli-nanus-small-in-size-big-on-colour"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 7,
+      "max": 10,
+      "sources": [
+        "https://www.longfield-gardens.com/blogs/gladiola-care/are-gladiolus-good-cut-flowers-best-tips-for-home-bouquets"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "fane-du-bas",
+        "recroqueville",
+        "bourgeons-avortent"
+      ],
+      "ordre": "les fleurs s'ouvrent du bas de l'épi vers la pointe sur plusieurs jours ; les plus basses fanent les premières pendant que celles du milieu sont ouvertes et que la pointe est encore en boutons ; à la fin, les boutons de la pointe restent fermés (éthylène, chaleur, air sec)",
+      "tete": "épi court d'une poignée de fleurs en entonnoir, tournées d'un même côté ; la pointe garde des boutons verts ou colorés qui avortent",
+      "petales": "les fleurs fanées se replient sur elles-mêmes, deviennent molles puis parcheminées et restent accrochées à l'épi, enveloppées dans leurs bractées vertes",
+      "feuilles": "feuilles en glaive, raides ; elles jaunissent puis brunissent par la pointe",
+      "tige": "plus courte et plus fine que celle du grand glaïeul (40-60 cm) ; elle reste droite",
+      "couleurs": {
+        "blanc": {
+          "declin": "blanc ivoire, bords transparents",
+          "fane": "beige-brun papier"
+        },
+        "rose": {
+          "declin": "rose délavé, bords mauves",
+          "fane": "mauve-brun"
+        },
+        "rouge": {
+          "declin": "rouge bleui",
+          "fane": "bordeaux noirâtre"
+        },
+        "jaune": {
+          "declin": "jaune crème",
+          "fane": "paille brune"
+        },
+        "bicolore": {
+          "declin": "les macules en losange de la gorge restent nettes, le fond pâlit",
+          "fane": "brun avec macules plus sombres"
+        }
+      },
+      "seche_bien": false,
+      "notes": "tenue en vase et ordre de fanaison (du bas vers le haut, avortement des boutons sous l'éthylène) sourcés pour le glaïeul en général et appliqués au glaïeul nain par extrapolation. Saison et couleurs sourcées chez des vendeurs de bulbes de Gladiolus nanus, non chez des grossistes de fleurs coupées.",
+      "sources": [
+        "https://www.longfield-gardens.com/blogs/gladiola-care/are-gladiolus-good-cut-flowers-best-tips-for-home-bouquets",
+        "https://floralife.com/flowers/gladiolus/",
+        "https://www.dutchgrown.co.uk/products/gladiolus-nanus-mixed"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "amaryllis",
+    "nom": "Amaryllis",
+    "saison_vente": {
+      "mois": [
+        9,
+        10,
+        11,
+        12,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "pic": [
+        11,
+        12
+      ],
+      "toute_annee": false,
+      "note": "production néerlandaise (Westland) de fin septembre à mai, avec un pic en novembre-décembre pour Noël",
+      "sources": [
+        "https://thursd.com/posts/quest-for-the-astounding-amaryllis",
+        "https://www.hortidaily.com/article/6013444/floraholland-amazing-amaryllis-on-the-flower-calendar/",
+        "https://floralife.com/2024/11/27/amaryllis-star-of-the-festive-season/"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 10,
+      "max": 21,
+      "sources": [
+        "https://floralife.com/2024/11/27/amaryllis-star-of-the-festive-season/",
+        "https://www.longfield-gardens.com/article/Amaryllis-for-Cut-Flowers"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "transparence",
+        "recroqueville",
+        "penche-tete"
+      ],
+      "ordre": "les 2 à 4 grandes trompettes de l'ombelle s'ouvrent l'une après l'autre et fanent de même ; chaque fleur fanée ramollit, devient translucide et se replie, tandis que la base de la tige creuse se fend et s'enroule vers l'extérieur ; la tige, affaiblie, finit par plier sous le poids de la tête",
+      "tete": "les trompettes horizontales retombent l'une après l'autre ; la hampe peut casser ou plier sous la tête si elle n'est pas tuteurée",
+      "petales": "tépales qui ramollissent, deviennent translucides par le bord, se plissent et pendent, façon tissu mouillé",
+      "feuilles": "aucune feuille sur la hampe vendue",
+      "tige": "hampe creuse et épaisse : la base se fend en lanières qui s'enroulent vers l'extérieur ; la hampe plie ou casse sous la tête en fin de vie",
+      "couleurs": {
+        "rouge": {
+          "declin": "rouge assombri, bords bleuis translucides",
+          "fane": "bordeaux très sombre, presque noir"
+        },
+        "blanc": {
+          "declin": "blanc translucide, veines vertes visibles",
+          "fane": "beige-brun, bords bruns"
+        },
+        "rose": {
+          "declin": "rose délavé, translucide",
+          "fane": "mauve sale, bords brun clair"
+        },
+        "peche": {
+          "declin": "saumon pâli",
+          "fane": "brun orangé terne"
+        },
+        "orange": {
+          "declin": "orange délavé",
+          "fane": "rouille brunâtre"
+        },
+        "jaune": {
+          "declin": "jaune crème translucide",
+          "fane": "paille brune"
+        },
+        "violet": {
+          "declin": "pourpre grisé",
+          "fane": "violet brun très sombre"
+        },
+        "bicolore": {
+          "declin": "stries ou liserés qui se brouillent, fond qui pâlit",
+          "fane": "brun avec stries plus sombres"
+        }
+      },
+      "seche_bien": false,
+      "notes": "sourcés : saison, couleurs (dont saumon et bicolore), tenue jusqu'à 3 semaines, base de la tige qui se fend et s'enroule, tête lourde qui fait plier la tige creuse. Extrapolée : la transparence des tépales, d'après les observations publiées sur les autres monocotylédones à bulbe (lis, iris), non spécifiques à l'Hippeastrum.",
+      "sources": [
+        "https://www.longfield-gardens.com/a/blog/how-to-use-amaryllis-as-cut-flowers",
+        "https://www.sarahraven.com/articles/amaryllis-flowers-for-christmas",
+        "https://thursd.com/posts/quest-for-the-astounding-amaryllis",
+        "https://floralife.com/2024/11/27/amaryllis-star-of-the-festive-season/"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "nerine",
+    "nom": "Nérine",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [
+        9,
+        10,
+        11
+      ],
+      "toute_annee": true,
+      "note": "cultivée sous serre aux Pays-Bas toute l'année ; pic à la floraison naturelle, de septembre à novembre",
+      "sources": [
+        "https://jury.co.nz/2012/06/01/plant-collector-nerine-bowdenii/",
+        "https://www.karensgardentips.com/?p=15815",
+        "https://www.dutchgrown.eu/products/nerine-bowdenii-breeders-blend"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 10,
+      "max": 14,
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/nerine-lily",
+        "https://www.calyxflowers.com/floral-library/nerine/"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "decolore",
+        "recroqueville"
+      ],
+      "ordre": "les 6 à 12 fleurs de l'ombelle fanent l'une après l'autre ; chaque fleur pâlit vite puis ses tépales étroits et ondulés se fripent et se recroquevillent, tandis que les étamines arquées restent saillantes un moment ; l'ombelle prend un air ébouriffé, mêlant fleurs fraîches et fleurs fripées",
+      "tete": "ombelle ronde au sommet d'une hampe nue ; elle se dégarnit par fleurs isolées",
+      "petales": "tépales étroits, ondulés et retroussés, aux reflets scintillants ; ils perdent leur couleur, se plissent et s'enroulent en lanières fines",
+      "feuilles": "aucune feuille sur la hampe vendue",
+      "tige": "hampe nue, ferme ; elle reste droite. Sensible à la déshydratation : la tête mollit si l'eau manque",
+      "couleurs": {
+        "rose": {
+          "declin": "rose qui pâlit vers le rose poudré, perd son scintillement",
+          "fane": "mauve sale, lanières brun clair"
+        },
+        "rouge": {
+          "declin": "rouge éteint",
+          "fane": "bordeaux brun"
+        },
+        "peche": {
+          "declin": "saumon délavé",
+          "fane": "brun orangé terne"
+        },
+        "blanc": {
+          "declin": "blanc grisé, légèrement translucide",
+          "fane": "beige papier"
+        }
+      },
+      "seche_bien": false,
+      "notes": "sourcés : tenue de 10-14 jours, couleurs (rose, rouge, saumon, blanc), fleurs qui fanent et perdent leur couleur une à une (à retirer au fur et à mesure), sensibilité au froid (au moins 5 °C) et à la déshydratation, saison. La façon dont les tépales s'enroulent est extrapolée de leur forme étroite. Archétype custom/xNerine : dessiner une ombelle irrégulière où se mêlent fleurs fraîches et fleurs fripées.",
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/nerine-lily",
+        "https://www.calyxflowers.com/floral-library/nerine/",
+        "https://hortscans.ces.ncsu.edu/uploads/p/r/proefsta_51a6344671691.pdf",
+        "https://ishs.org/ishs-article/847_47/"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "cyclamen-fleur-coupee",
+    "nom": "Cyclamen de Perse",
+    "saison_vente": {
+      "mois": [
+        9,
+        10,
+        11,
+        12,
+        1,
+        2,
+        3
+      ],
+      "pic": [
+        11,
+        12
+      ],
+      "toute_annee": false,
+      "note": "le cyclamen fleurit de septembre à fin février et se vend surtout avant Noël ; des essais allemands sur le cyclamen coupé (variétés 'Lucky') portent sur la saison automne-hiver. Mars est extrapolé",
+      "sources": [
+        "https://www.yorkshirepost.co.uk/lifestyle/i-predict-a-riot-of-colour-this-winter-1812588",
+        "https://www.hswt.de/forschung/forschungsprofil/publikationen/detail/effect-of-time-of-harvest-water-quality-and-cut-flower-food-on-vase-life-of-cyclamen-cut-flowers"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 7,
+      "max": 16,
+      "sources": [
+        "https://ishs.org/ishs-article/847_35/",
+        "https://www.hswt.de/forschung/forschungsprofil/publikationen/detail/effect-of-time-of-harvest-water-quality-and-cut-flower-food-on-vase-life-of-cyclamen-cut-flowers"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "recroqueville",
+        "penche-tete",
+        "decolore"
+      ],
+      "ordre": "les pétales relevés vers le haut, comme des ailes, perdent leur tenue, se tordent et retombent ; la couleur pâlit, puis le pédoncule charnu ramollit et la fleur pendante s'affaisse",
+      "tete": "fleur déjà penchée vers le bas (nez vers le sol, pétales relevés) ; en déclin, le pédoncule se courbe davantage et la fleur pend",
+      "petales": "les cinq pétales retroussés se vrillent, se fripent et retombent mollement, avec des bords transparents ; ils finissent par se détacher",
+      "feuilles": "les tiges coupées n'ont pas de feuilles (fleurs tirées de la plante)",
+      "tige": "pédoncule charnu, non ramifié ; il ramollit et se courbe, parfois en crosse",
+      "couleurs": {
+        "blanc": {
+          "declin": "blanc transparent, base rosée",
+          "fane": "beige grisâtre"
+        },
+        "rose": {
+          "declin": "rose délavé vers le mauve",
+          "fane": "mauve-brun"
+        },
+        "rouge": {
+          "declin": "rouge bleui",
+          "fane": "bordeaux sombre"
+        },
+        "violet": {
+          "declin": "magenta grisé",
+          "fane": "pourpre brun"
+        },
+        "bicolore": {
+          "declin": "l'œil sombre à la base reste net, les pointes pâlissent",
+          "fane": "pointes brunes, base pourpre sombre"
+        }
+      },
+      "seche_bien": false,
+      "notes": "sourcés : tenue jusqu'à 16 jours avec traitement (nitrate d'argent), dégradée par les solutions sucrées ; flétrissement mesuré à 7, 14 et 21 jours ; tiges plus courtes et plus faibles en fin de saison ; pas d'ouverture complète si la fleur est cueillie trop tôt ; couleurs (magenta, rouge, rose, blanc, violet, bicolore). Extrapolés du cyclamen en pot : la façon dont les pétales se vrillent, la courbure du pédoncule et la chute des pétales.",
+      "sources": [
+        "https://ishs.org/ishs-article/847_35/",
+        "https://agris.fao.org/search/en/records/64774fbef2e6fe92b3645b1e",
+        "https://www.yorkshirepost.co.uk/lifestyle/i-predict-a-riot-of-colour-this-winter-1812588"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "cyrtanthus",
+    "nom": "Lis de feu",
+    "saison_vente": {
+      "mois": [
+        7,
+        8,
+        9,
+        10
+      ],
+      "pic": [
+        8,
+        9
+      ],
+      "toute_annee": false,
+      "note": "extrapolé : aucun calendrier de criée trouvé pour le Cyrtanthus coupé ; mois déduits de la floraison naturelle de Cyrtanthus elatus (fin d'été et début d'automne)",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Cyrtanthus_elatus",
+        "https://pza.sanbi.org/node/12391"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 10,
+      "max": 15,
+      "sources": [
+        "https://www.phtnet.org/research/download/pdf/mh486.pdf"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "recroqueville",
+        "transparence",
+        "decolore"
+      ],
+      "ordre": "les 4 à 9 grandes fleurs en entonnoir de l'ombelle fanent l'une après l'autre ; chaque fleur pâlit, ses tépales ramollissent et deviennent translucides, puis l'entonnoir se referme et se fripe ; la hampe creuse reste dressée",
+      "tete": "ombelle d'entonnoirs largement ouverts, tournés vers l'extérieur ; elle se dégarnit fleur par fleur",
+      "petales": "tépales qui deviennent translucides puis se froissent ; l'entonnoir se resserre en se fanant",
+      "feuilles": "aucune feuille sur la hampe vendue",
+      "tige": "hampe creuse, d'environ 60 cm ; elle reste droite",
+      "couleurs": {
+        "rouge": {
+          "declin": "écarlate qui s'assombrit, bords translucides",
+          "fane": "rouge brun sombre"
+        },
+        "orange": {
+          "declin": "orange délavé",
+          "fane": "rouille"
+        },
+        "rose": {
+          "declin": "rose pâli",
+          "fane": "mauve-brun"
+        },
+        "blanc": {
+          "declin": "blanc transparent",
+          "fane": "beige papier"
+        }
+      },
+      "seche_bien": false,
+      "notes": "sourcés : tenue moyenne de 14-15 jours dans des essais de cultivars pour la fleur coupée, couleurs (écarlate, rouge, orange, jaune, rose, blanc rare), floraison. Extrapolée : la façon de faner, d'après les Amaryllidacées voisines (Hippeastrum, Nerine). Le marché européen de cette fleur coupée est confidentiel.",
+      "sources": [
+        "https://www.phtnet.org/research/download/pdf/mh486.pdf",
+        "https://en.wikipedia.org/wiki/Cyrtanthus_elatus"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "pensee",
+    "nom": "Pensée",
+    "saison_vente": {
+      "mois": [
+        3,
+        4,
+        5,
+        6
+      ],
+      "pic": [
+        4,
+        5
+      ],
+      "toute_annee": false,
+      "note": "extrapolé : plante de saison fraîche, récoltée en coupe surtout au printemps (tiges plus longues en fin de printemps) ; aucun calendrier de grossiste européen trouvé",
+      "sources": [
+        "https://www.floretflowers.com/pansies-and-violas-for-cut-flowers/"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 4,
+      "max": 10,
+      "sources": [
+        "https://www.floretflowers.com/pansies-and-violas-for-cut-flowers/",
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/pansy"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "recroqueville",
+        "penche-tete",
+        "decolore"
+      ],
+      "ordre": "la fleur plate perd sa tenue : les pétales du haut se replient vers l'avant et les bords ondulent, la couleur pâlit, puis le pédoncule fin ramollit et la face s'incline ; pendant ce temps, les boutons latéraux continuent à s'ouvrir lentement",
+      "tete": "la face plate, tournée vers l'avant, s'incline puis pend au bout du pédoncule",
+      "petales": "pétales veloutés qui se plissent, s'enroulent par le bord et se replient sur le cœur, comme un tissu froissé",
+      "feuilles": "petites feuilles crénelées ; elles ramollissent et jaunissent",
+      "tige": "fine et cassante, de 20 à 35 cm ; elle ramollit et se courbe",
+      "couleurs": {
+        "blanc": {
+          "declin": "blanc cassé, l'œil sombre ressort",
+          "fane": "beige papier"
+        },
+        "jaune": {
+          "declin": "jaune pâli",
+          "fane": "paille brunâtre"
+        },
+        "orange": {
+          "declin": "orange délavé",
+          "fane": "brun rouille"
+        },
+        "bordeaux": {
+          "declin": "vin assombri",
+          "fane": "brun-noir"
+        },
+        "violet": {
+          "declin": "violet grisé",
+          "fane": "pourpre brun"
+        },
+        "bleu": {
+          "declin": "bleu qui vire au mauve",
+          "fane": "gris-mauve terne"
+        },
+        "bicolore": {
+          "declin": "le « masque » sombre reste net, le pourtour pâlit",
+          "fane": "pourtour brun, masque presque noir"
+        }
+      },
+      "seche_bien": false,
+      "notes": "sourcés : tenue de 4-10 jours (jusqu'à deux semaines selon Floret), tiges de 20 à 35 cm, boutons qui continuent à s'ouvrir en vase. Extrapolés : la façon de faner et la saison européenne. La pensée se conserve très bien pressée (à plat), mais pas séchée à l'air, d'où seche_bien à false.",
+      "sources": [
+        "https://www.floretflowers.com/pansies-and-violas-for-cut-flowers/",
+        "https://windflowerflorist.com/blogs/news/pansy-flower-care"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "ail-serpent",
+    "nom": "Ail serpent",
+    "saison_vente": {
+      "mois": [
+        5,
+        6,
+        7
+      ],
+      "pic": [
+        6
+      ],
+      "toute_annee": false,
+      "note": "hampes récoltées de mi-mai à mi-juin, quand elles font leur boucle, avant qu'elles se redressent ; juillet est extrapolé. Sources nord-américaines et britanniques, transposées à l'Europe",
+      "sources": [
+        "https://www.homesandgardens.com/gardens/how-to-harvest-garlic-scapes",
+        "https://www.farmersalmanac.com/what-the-heck-are-garlic-scapes"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 5,
+      "max": 7,
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/garlic-scapes"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "se-deroule",
+        "decolore",
+        "feuilles-jaunissent"
+      ],
+      "ordre": "la hampe continue de pousser dans l'eau ; ses boucles se relâchent et tendent à se redresser, le vert bleuté vire au vert jaune, puis la tige ramollit, se ride et jaunit à partir de la pointe et du bas",
+      "tete": "bouton floral pointu, enveloppé d'une spathe en bec ; il peut gonfler, et la spathe sèche et devient papier",
+      "petales": null,
+      "feuilles": "pas de feuille : la hampe, lisse et cireuse, tient lieu de feuillage ; elle jaunit et se ride en fin de vie",
+      "tige": "ronde, pleine, enroulée en boucle ou en spirale ; elle s'allonge, se déroule un peu, puis ramollit et s'affaisse",
+      "couleurs": {
+        "vert": {
+          "declin": "vert bleuté qui jaunit, perd son aspect cireux",
+          "fane": "jaune paille terne, spathe beige papier, tige ridée"
+        }
+      },
+      "seche_bien": false,
+      "notes": "sourcés : tenue de 5-7 jours, sensibilité à l'éthylène (stockage à 1-2 °C), forte odeur d'ail, hampe qui continue de pousser en vase (parfois jusqu'à tripler, selon un jardinier), boucle qui se forme début juin et se redresse si la hampe n'est pas récoltée. Extrapolés : le redressement des boucles en vase, transposé de l'observation au champ, et le jaunissement final. 'se-deroule' est un terme ajouté : les boucles se relâchent et se redressent. Archétype custom/xSnake : en déclin, ouvrir la spirale.",
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/garlic-scapes",
+        "https://florissa.com/garlic-scapes-culinary-treasure-2018-06-06/",
+        "https://spice.alibaba.com/spice-basics/when-to-harvest-garlic-scapes"
+      ]
+    },
+    "confiance": "moyenne"
+  }
+]

@@ -1,0 +1,22 @@
+:root { --fond: #f4efe7; --encre: #2a2622; --doux: #6f665c; --accent: #b4553f; --carte: #fffdf9; --trait: #e3d9cc; }
+@media (prefers-color-scheme: dark) { :root { --fond: #1c1a17; --encre: #f1ebe2; --doux: #a89f94; --accent: #e08a6f; --carte: #26231f; --trait: #3a352f; } }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--fond); color: var(--encre); font: 16px/1.5 system-ui, sans-serif; }
+main { max-width: 640px; margin: 0 auto; padding: 40px 16px 64px; }
+h1 { font-size: 28px; margin: 0 0 6px; }
+h2 { font-size: 18px; margin: 28px 0 10px; }
+h2 small { color: var(--doux); font-weight: 400; margin-left: 6px; }
+.sous { color: var(--doux); margin: 0; }
+#portefeuilles { display: flex; flex-wrap: wrap; gap: 10px; }
+button { font: inherit; cursor: pointer; border-radius: 10px; }
+.portefeuille { display: flex; align-items: center; gap: 10px; padding: 10px 16px; background: var(--carte); color: var(--encre); border: 1px solid var(--trait); }
+.portefeuille img { width: 24px; height: 24px; }
+#liste { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+#liste li { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 14px; background: var(--carte); border: 1px solid var(--trait); border-radius: 12px; }
+#liste span { display: flex; flex-direction: column; }
+#liste small { color: var(--doux); }
+.cta { padding: 9px 14px; background: var(--accent); color: #fff; border: 0; white-space: nowrap; }
+.lien { margin-top: 14px; padding: 0; background: none; border: 0; color: var(--accent); text-decoration: underline; }
+.note { color: var(--doux); font-size: 14px; margin-top: 18px; }
+#etat { min-height: 1.5em; margin-top: 22px; color: var(--doux); }
+#etat.alerte { color: var(--accent); }

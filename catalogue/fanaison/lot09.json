@@ -1,0 +1,1672 @@
+[
+  {
+    "id": "houx-verticille-ilex",
+    "nom": "Houx verticillé",
+    "saison_vente": {
+      "mois": [
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [
+        11,
+        12
+      ],
+      "toute_annee": false,
+      "note": "baies mûres de septembre à novembre ; vente en fleuristerie surtout en novembre et décembre (branches défeuillées). Septembre-octobre : confiance basse (extrapolé de la maturité des baies)",
+      "sources": [
+        "https://edis.ifas.ufl.edu/pdf/ST/ST30900.pdf",
+        "https://www.floristrytradeclub.co.uk/post/ilex-verticillata-winterberry"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 5,
+      "max": 21,
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/ilex-berries-winterberry",
+        "https://www.floristrytradeclub.co.uk/post/ilex-verticillata-winterberry"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "baies-rident",
+        "seche-sur-place"
+      ],
+      "ordre": "branche vendue sans feuilles ; les baies perdent leur brillant, se rident à la chaleur puis tombent une à une (chute accélérée par l'éthylène et la chaleur) ; hors de l'eau, la branche sèche et garde ses baies plusieurs semaines",
+      "tete": null,
+      "petales": null,
+      "feuilles": "aucune (vendue défeuillée)",
+      "tige": "rameaux gris-brun lisses, droits, restent rigides en séchant",
+      "couleurs": {
+        "rouge": {
+          "declin": "rouge vif devenu mat",
+          "fane": "rouge sombre ridé, tirant sur le bordeaux"
+        },
+        "orange": {
+          "declin": "orange mat",
+          "fane": "orange brunâtre ridé (confiance basse)"
+        },
+        "jaune": {
+          "declin": "jaune d'or mat",
+          "fane": "jaune ocre ridé (confiance basse)"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Particularité : en vase avec eau les baies tombent davantage ; présentée à sec, la branche dure des semaines. Teintes de déclin des cultivars orange et jaune extrapolées des rouges (confiance basse).",
+      "sources": [
+        "https://chestertelegraph.org/?p=41814",
+        "https://hgic.clemson.edu/factsheet/rain-garden-plants-winterberry-ilex-verticillata/",
+        "https://florist20.com/community/goto/post?id=272640"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "laurier-tin-a-baies",
+    "nom": "Laurier-tin à baies",
+    "saison_vente": {
+      "mois": [
+        9,
+        10,
+        11,
+        12,
+        1,
+        2
+      ],
+      "pic": [
+        10,
+        11
+      ],
+      "toute_annee": false,
+      "note": "baies bleu métallique d'automne, persistantes en hiver ; mois de vente extrapolés de la maturité des baies (confiance basse), aucun calendrier de grossiste trouvé",
+      "sources": [
+        "https://www.rhs.org.uk/plants/18950/viburnum-tinus/details",
+        "https://sikito.com/en/blogs/magazine/viburnum_tinus"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 10,
+      "max": 15,
+      "sources": [
+        "https://repository.lib.ncsu.edu/items/bd16af2c-e7f6-4001-b16e-881ef52ea761",
+        "https://ishs.org/ishs-article/1060_10/"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "feuilles-recroquevillees",
+        "baies-rident",
+        "feuilles-brunissent"
+      ],
+      "ordre": "les feuilles persistantes flétrissent et pendent en premier (l'espèce boit beaucoup et fane vite si elle manque d'eau) ; puis les feuilles brunissent et s'enroulent ; les baies bleu métal ternissent et se rident en dernier",
+      "tete": null,
+      "petales": null,
+      "feuilles": "vert foncé luisant, coriaces : mollissent et pendent, puis bord brun et enroulement ; tombent tard",
+      "tige": "rameaux bruns ligneux, droits ; extrémités tendres qui s'affaissent",
+      "couleurs": {
+        "bleu": {
+          "declin": "bleu métallique terni, plus gris",
+          "fane": "bleu-noir mat, baies ridées"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Les baies passent naturellement du bleu métallique au noir. Témoin des essais de l'université d'État de Caroline du Nord : 10 jours, 15 jours avec un trempage sucré. Ordre de fanaison des feuilles d'après les conseils d'entretien (flétrit vite), détail du brunissement : confiance basse.",
+      "sources": [
+        "https://sikito.com/en/blogs/magazine/viburnum_tinus",
+        "https://www.rhs.org.uk/plants/18950/viburnum-tinus/details"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "viornes-a-baies",
+    "nom": "Viornes à baies",
+    "saison_vente": {
+      "mois": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "pic": [
+        9,
+        10
+      ],
+      "toute_annee": false,
+      "note": "baies rouges de Viburnum opulus de la fin de l'été à l'automne ; mois de vente extrapolés de la maturité (confiance basse)",
+      "sources": [
+        "https://farmerbailey.com/pages/viburnum-growing-guide",
+        "https://www.arboretum.purdue.edu/explorer/plants/723"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 7,
+      "max": 12,
+      "sources": [
+        "https://fiftyflowers.com/products/viburnum-berries-wholesale-flowers"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "baies-rident",
+        "feuilles-recroquevillees",
+        "feuilles-jaunissent"
+      ],
+      "ordre": "les feuilles lobées mollissent et s'enroulent d'abord (les viornes boivent beaucoup) ; elles prennent des teintes jaunes à rougeâtres ; les grappes de baies translucides perdent leur éclat puis se rident comme des raisins secs",
+      "tete": null,
+      "petales": null,
+      "feuilles": "lobées, vertes virant au rouge ou jaune d'automne, puis se flétrissent et s'enroulent",
+      "tige": "tiges ligneuses gris-brun, droites ; grappes pendantes au bout",
+      "couleurs": {
+        "rouge": {
+          "declin": "rouge translucide qui ternit",
+          "fane": "rouge brique sombre, baies ridées comme des raisins secs"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Au jardin, les baies de V. opulus 'Compactum' se rident comme des raisins de l'automne à l'hiver : c'est le modèle retenu pour le fané. Ordre feuilles puis baies : confiance basse.",
+      "sources": [
+        "https://www.arboretum.purdue.edu/explorer/plants/723",
+        "https://moysesflowers.co.uk/flower-care/viburnum-care",
+        "https://florist20.com/community/goto/post?id=272640"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "rosier-a-cynorrhodons",
+    "nom": "Rosier à cynorrhodons",
+    "saison_vente": {
+      "mois": [
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [
+        9,
+        10
+      ],
+      "toute_annee": false,
+      "note": "production néerlandaise (Verhoeven, De Ruiter, Adomex) de fin août à octobre ; quelques lots en novembre-décembre",
+      "sources": [
+        "https://thursd.com/articles/rosehips-adomex-are-back",
+        "https://www.daera-ni.gov.uk/sites/default/files/publications/dard/rosa.pdf",
+        "https://www.moysesflowers.co.uk/journal/seasonal-fruits-rosehips"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 7,
+      "max": 26,
+      "sources": [
+        "https://fiftyflowers.com/products/red-rose-hips",
+        "https://hortscans.ces.ncsu.edu/file/../uploads/e/v/evaluati_5203b56fafd06.pdf"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "feuilles-jaunissent",
+        "feuilles-brunissent",
+        "seche-sur-place"
+      ],
+      "ordre": "les feuilles jaunissent et tombent en premier ; les cynorrhodons restent fermes longtemps puis sèchent en gardant leur forme et une bonne part de leur couleur, en se ridant légèrement",
+      "tete": null,
+      "petales": null,
+      "feuilles": "pennées, jaunissent puis brunissent et tombent ; souvent retirées par le fleuriste",
+      "tige": "tige ligneuse épineuse, reste droite",
+      "couleurs": {
+        "rouge": {
+          "declin": "rouge vif devenu mat",
+          "fane": "rouge foncé légèrement ridé, peau plissée"
+        },
+        "orange": {
+          "declin": "orange mat",
+          "fane": "orange-rouge brunâtre (confiance basse)"
+        },
+        "vert": {
+          "declin": "vert jaunâtre",
+          "fane": "vert olive brunâtre (confiance basse)"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Un producteur néerlandais indique que les cynorrhodons tiennent en séchant et gardent couleur et structure. Les gros fruits de 'Kolster' ont tenu 24 à 26 jours en essai NCSU. Teintes des variétés orange et verte : confiance basse.",
+      "sources": [
+        "https://thursd.com/articles/rosehips-adomex-are-back",
+        "https://cotswoldherbcentre.uk/?p=4751"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "cotoneaster",
+    "nom": "Cotonéaster",
+    "saison_vente": {
+      "mois": [
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [
+        10,
+        11
+      ],
+      "toute_annee": false,
+      "note": "fruits d'automne persistants en hiver ; pas de calendrier de grossiste trouvé : mois extrapolés de la fructification (confiance basse)",
+      "sources": [
+        "https://www.promessedefleurs.ie/gardening-tips/familysheet/cotoneaster-planting-pruning-and-care"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 14,
+      "max": 21,
+      "sources": [
+        "https://gardening.yardener.com/Using-Cranberry-Cotoneaster"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "baies-rident",
+        "feuilles-jaunissent",
+        "feuilles-brunissent"
+      ],
+      "ordre": "les petites feuilles caduques ou semi-persistantes jaunissent ou rougissent puis tombent ; les petits fruits rouges, alignés sur les rameaux en arêtes de poisson, se rident ensuite et tombent un à un",
+      "tete": null,
+      "petales": null,
+      "feuilles": "petites, ovales, vert foncé : rougissent ou jaunissent, puis tombent ou sèchent",
+      "tige": "rameaux en arêtes de poisson, rigides, gardent leur forme",
+      "couleurs": {
+        "rouge": {
+          "declin": "rouge vif devenu mat",
+          "fane": "rouge sombre ridé"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Le Yardener donne 3 à 12 semaines de décor selon l'espèce ; fourchette de vase ramenée à 2-3 semaines par prudence et par analogie avec les autres baies de Rosacées (confiance basse).",
+      "sources": [
+        "https://gardening.yardener.com/Using-Cranberry-Cotoneaster",
+        "https://florist20.com/community/goto/post?id=272640"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "buisson-ardent",
+    "nom": "Buisson ardent",
+    "saison_vente": {
+      "mois": [
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [
+        10,
+        11
+      ],
+      "toute_annee": false,
+      "note": "baies d'automne, branches coupées pour les décors de fin d'année ; mois extrapolés de la fructification (confiance basse)",
+      "sources": [
+        "https://www.rhs.org.uk/plants/pyracantha/growing-guide",
+        "https://www.carolinacountry.com/story/pyracantha-autumn-fire"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 14,
+      "max": 21,
+      "sources": [
+        "https://www.phtnet.org/research/download/pdf/re2229.pdf"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "baies-rident",
+        "feuilles-brunissent"
+      ],
+      "ordre": "les feuilles persistantes coriaces tiennent longtemps puis ternissent et brunissent ; les baies en bouquets serrés perdent leur brillant, se rident et finissent par tomber",
+      "tete": null,
+      "petales": null,
+      "feuilles": "petites, vert foncé luisant, persistantes : ternissent puis brunissent, tombent peu",
+      "tige": "rameaux épineux rigides, restent droits",
+      "couleurs": {
+        "rouge": {
+          "declin": "rouge mat",
+          "fane": "rouge brique sombre, ridé"
+        },
+        "orange": {
+          "declin": "orange mat",
+          "fane": "orange brûlé ridé"
+        },
+        "jaune": {
+          "declin": "jaune d'or mat",
+          "fane": "jaune ocre ridé"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Essai néo-zélandais (phtnet) : se conserve 3 semaines à 5 °C, le sucre ne change rien, la mousse florale raccourcit la tenue. Durée en vase et teintes du fané extrapolées (confiance basse).",
+      "sources": [
+        "https://www.phtnet.org/research/download/pdf/re2229.pdf",
+        "https://www.rhs.org.uk/plants/pyracantha/growing-guide"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "callicarpa",
+    "nom": "Arbuste aux bonbons",
+    "saison_vente": {
+      "mois": [
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [
+        10,
+        11
+      ],
+      "toute_annee": false,
+      "note": "baies prêtes à couper dès mi-septembre ; vendu d'octobre à décembre",
+      "sources": [
+        "https://www.flowers.nl/contents/en-us/d415_Callicarpa.html",
+        "https://growingformarket.com/?p=1015"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 5,
+      "max": 14,
+      "sources": [
+        "https://www.flowers.nl/contents/en-us/d415_Callicarpa.html",
+        "https://fiftyflowers.com/products/purple-callicarpa-wedding-flower"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "feuilles-jaunissent",
+        "baies-rident",
+        "decolore"
+      ],
+      "ordre": "les feuilles jaunissent et tombent vite (souvent coupé déjà défeuillé) ; les grappes de baies violettes serrées autour des nœuds restent plusieurs semaines puis pâlissent et se rident",
+      "tete": null,
+      "petales": null,
+      "feuilles": "jaunissent puis tombent ; souvent retirées",
+      "tige": "rameaux fins et arqués, brun clair",
+      "couleurs": {
+        "violet": {
+          "declin": "violet lilas qui pâlit",
+          "fane": "mauve grisé, baies ridées"
+        },
+        "blanc": {
+          "declin": "blanc nacré terni (confiance basse)",
+          "fane": "blanc cassé jaunâtre ridé (confiance basse)"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Le pourpre pâlit à la lumière et à la chaleur, d'où le conseil de garder au frais et à l'ombre. Les baies durent plusieurs semaines sur les branches défeuillées. Callicarpa à baies blanches : extrapolé (confiance basse).",
+      "sources": [
+        "https://edis.ifas.ufl.edu/publication/FP090/pdf",
+        "https://www.flowers.nl/contents/en-us/d415_Callicarpa.html"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "sorbier-baies",
+    "nom": "Sorbier",
+    "saison_vente": {
+      "mois": [
+        8,
+        9,
+        10
+      ],
+      "pic": [
+        9
+      ],
+      "toute_annee": false,
+      "note": "baies mûres d'août à octobre ; vente des branches aux mêmes mois extrapolée (confiance basse)",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Sorbus_aucuparia",
+        "https://vertigrow.substack.com/p/spotlight-on-sorbus"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 7,
+      "max": 14,
+      "sources": [
+        "https://florist20.com/community/goto/post?id=272640"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "feuilles-recroquevillees",
+        "baies-rident",
+        "feuilles-brunissent"
+      ],
+      "ordre": "les feuilles pennées fines flétrissent et s'enroulent en premier, puis brunissent ; les gros corymbes de baies orange-écarlate ramollissent ou se rident, et des baies tombent",
+      "tete": null,
+      "petales": null,
+      "feuilles": "pennées à folioles fines, flétrissent vite, puis brunissent et tombent",
+      "tige": "rameau ligneux ; les corymbes pendants s'affaissent",
+      "couleurs": {
+        "orange": {
+          "declin": "orange terni",
+          "fane": "orange brunâtre ridé"
+        },
+        "rouge": {
+          "declin": "écarlate mat",
+          "fane": "rouge brique sombre ridé"
+        },
+        "blanc": {
+          "declin": "blanc rosé terni (confiance basse)",
+          "fane": "crème brunâtre (confiance basse)"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Chute et ramollissement des baies : symptômes d'éthylène décrits pour les branches à baies en général. Durée en vase extrapolée des branches à baies (confiance basse). Cultivars à baies blanches ou roses existent (Vertigrow).",
+      "sources": [
+        "https://florist20.com/community/goto/post?id=272640",
+        "https://vertigrow.substack.com/p/spotlight-on-sorbus"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "celastre-bittersweet",
+    "nom": "Célastre",
+    "saison_vente": {
+      "mois": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "pic": [
+        9,
+        10
+      ],
+      "toute_annee": false,
+      "note": "producteurs néerlandais : mi-août à mi-octobre ; aux États-Unis, récolte de septembre à fin novembre",
+      "sources": [
+        "https://thursd.com/posts/celastrus-the-tree-strangler-grabs-your-attention",
+        "https://florist20.com/community/goto/post?id=272640"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 60,
+      "max": 180,
+      "sources": [
+        "https://thursd.com/posts/celastrus-the-tree-strangler-grabs-your-attention",
+        "https://projects.sare.org/sare_project/fnc97-195/"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "seche-sur-place",
+        "feuilles-brunissent"
+      ],
+      "ordre": "cueilli capsules fermées ; après 2 à 3 jours les capsules jaune-orange s'ouvrent en trois et montrent les arilles rouges ; la branche sèche ensuite sans eau en gardant capsules et graines des mois",
+      "tete": null,
+      "petales": null,
+      "feuilles": "souvent retirées ; si présentes, sèchent et brunissent",
+      "tige": "liane ligneuse sinueuse, se tord librement, garde sa forme en séchant",
+      "couleurs": {
+        "orange": {
+          "declin": "capsules jaune-orange ouvertes sur arilles rouges",
+          "fane": "capsules ocre pâle, arilles rouge brique sèches"
+        },
+        "jaune": {
+          "declin": "capsules jaune paille",
+          "fane": "capsules beige doré, arilles rouge sombre (confiance basse)"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Surprise : le fruit s'ouvre en vieillissant au lieu de se fermer (déhiscence). Pas besoin d'eau : séchage direct, tient d'une saison à l'autre. Durée en jours exprimée en mois de tenue sèche.",
+      "sources": [
+        "https://thursd.com/posts/celastrus-the-tree-strangler-grabs-your-attention",
+        "https://www.fs.usda.gov/nsl/Wpsm/Celastrus.pdf",
+        "https://florist20.com/community/goto/post?id=272640"
+      ]
+    },
+    "confiance": "haute"
+  },
+  {
+    "id": "troene-a-baies",
+    "nom": "Troène à baies",
+    "saison_vente": {
+      "mois": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "pic": [
+        9,
+        10
+      ],
+      "toute_annee": false,
+      "note": "fin d'été et automne",
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/privet-berry"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 7,
+      "max": 10,
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/privet-berry"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "baies-rident",
+        "feuilles-jaunissent",
+        "feuilles-recroquevillees"
+      ],
+      "ordre": "les feuilles semi-persistantes ramollissent et jaunissent ; les grappes de baies passent du vert au noir-violet puis se rident et s'égrènent",
+      "tete": null,
+      "petales": null,
+      "feuilles": "elliptiques vert foncé, jaunissent puis s'enroulent",
+      "tige": "rameau fin ligneux, droit",
+      "couleurs": {
+        "vert": {
+          "declin": "vert olive",
+          "fane": "vert olive brunâtre, baies ridées"
+        },
+        "violet": {
+          "declin": "violet-noir",
+          "fane": "noir mat ridé"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Choisir des branches aux baies bien attachées : la chute (égrenage) est le principal défaut. Les baies mûrissent du vert au noir : une branche verte peut noircir en vase (confiance basse).",
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/privet-berry",
+        "https://florist20.com/community/goto/post?id=272640"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "nandina-a-baies",
+    "nom": "Nandina",
+    "saison_vente": {
+      "mois": [
+        10,
+        11,
+        12,
+        1,
+        2
+      ],
+      "pic": [
+        11,
+        12
+      ],
+      "toute_annee": false,
+      "note": "feuillage vendu toute l'année, branches à baies seulement en saison : baies dès novembre, persistantes l'hiver (décor du Nouvel An japonais). Octobre et février : confiance basse",
+      "sources": [
+        "https://sikito.com/en/blogs/magazine/nanten",
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/nandina-foliage",
+        "https://fiftyflowers.com/products/nandina-fall-fresh-cut-branches-with-berries"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 10,
+      "max": 16,
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/nandina-foliage"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "feuilles-recroquevillees",
+        "feuilles-brunissent",
+        "baies-rident"
+      ],
+      "ordre": "les folioles fines flétrissent et s'enroulent les premières, puis brunissent et tombent ; les grappes lâches de baies rouges gardent longtemps leur rondeur avant de se rider en dernier",
+      "tete": null,
+      "petales": null,
+      "feuilles": "composées, folioles lancéolées vertes à rouge cuivré : s'enroulent puis brunissent",
+      "tige": "tiges dressées, peu ramifiées, comme des cannes ; restent droites",
+      "couleurs": {
+        "rouge": {
+          "declin": "rouge vif devenu mat",
+          "fane": "rouge sombre légèrement ridé"
+        },
+        "blanc": {
+          "declin": "blanc crème terni (confiance basse)",
+          "fane": "crème jaunâtre ridé (confiance basse)"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Les baies de nandina gardent leur rondeur plus longtemps que celles du houx ou du buisson ardent, qui se rident en quelques jours en intérieur. Non sensible à l'éthylène. Ordre de fanaison des feuilles : confiance basse.",
+      "sources": [
+        "https://develop.pressdemocrat.com/2008/11/13/holiday-decor-from-the-garden-2",
+        "https://sikito.com/en/blogs/magazine/nanten"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "arbousier-a-fruits",
+    "nom": "Arbousier à fruits",
+    "saison_vente": {
+      "mois": [
+        10,
+        11,
+        12
+      ],
+      "pic": [
+        11
+      ],
+      "toute_annee": false,
+      "note": "fruits rouges mûrs d'octobre à décembre, en même temps que les fleurs ; aucune source de vente en fleuristerie trouvée : mois de vente extrapolés de la maturité (confiance basse)",
+      "sources": [
+        "https://botanicgardens.uw.edu/about/blog/2016/11/26/december-2016-plant-profile-arbutus-unedo/",
+        "https://pfaf.org/plants/strawberry-tree-arbutus-unedo/"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 5,
+      "max": 10,
+      "sources": [
+        "https://botanicgardens.uw.edu/about/blog/2016/11/26/december-2016-plant-profile-arbutus-unedo/"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "baies-rident",
+        "feuilles-brunissent"
+      ],
+      "ordre": "les fruits mûrs, mous, se tachent et pourrissent ou tombent en quelques jours ; les fruits encore jaunes ou orange tiennent plus longtemps ; les feuilles persistantes coriaces ternissent puis brunissent sur les bords en dernier",
+      "tete": null,
+      "petales": null,
+      "feuilles": "persistantes, coriaces, vert foncé luisant, dentées ; tiennent longtemps puis bords bruns",
+      "tige": "rameaux rougeâtres, écorce brun-rouge qui s'exfolie ; rigides",
+      "couleurs": {
+        "rouge": {
+          "declin": "rouge fraise mat, fruits ramollis",
+          "fane": "rouge brun taché, fruits affaissés ou tombés"
+        },
+        "orange": {
+          "declin": "orange mat",
+          "fane": "orange brunâtre ridé"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Particularité : la même branche porte fruits verts, jaunes, orange et rouges (12 mois de maturation) et des fleurs en clochettes blanches. Le fruit mûr se gâte en 24 h une fois cueilli : la tenue en vase est extrapolée (confiance basse).",
+      "sources": [
+        "https://botanicgardens.uw.edu/about/blog/2016/11/26/december-2016-plant-profile-arbutus-unedo/",
+        "https://plants.ces.ncsu.edu/plants/arbutus-unedo"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "ronce-mures-en-fruits",
+    "nom": "Ronce à mûres en fruits",
+    "saison_vente": {
+      "mois": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "pic": [
+        8,
+        9
+      ],
+      "toute_annee": false,
+      "note": "ronce sans épines vendue en fleuristerie de juin à octobre",
+      "sources": [
+        "https://floraldesigninstitute.com/blogs/resources-flower-library/blackberry-thornless"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 10,
+      "max": 14,
+      "sources": [
+        "https://floraldesigninstitute.com/blogs/resources-flower-library/blackberry-thornless"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "feuilles-recroquevillees",
+        "baies-rident",
+        "feuilles-jaunissent"
+      ],
+      "ordre": "les feuilles composées sous la grappe mollissent et jaunissent ; les mûres perdent leur brillant, les drupéoles se rident ; les fruits mûrs noirs peuvent tacher et tomber",
+      "tete": null,
+      "petales": null,
+      "feuilles": "trifoliées ou à 5 folioles, vertes : mollissent, jaunissent et s'enroulent",
+      "tige": "tige arquée, se courbe sous le poids de la grappe",
+      "couleurs": {
+        "vert": {
+          "declin": "vert pâle à rougeâtre, mûres non mûres",
+          "fane": "vert-brun ridé (confiance basse)"
+        },
+        "rouge": {
+          "declin": "rouge terne",
+          "fane": "rouge-brun ridé (confiance basse)"
+        },
+        "violet": {
+          "declin": "pourpre noir mat",
+          "fane": "noir ridé, terne"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Les fruits passent du rouge au pourpre puis au noir en mûrissant : une même grappe mélange les trois teintes. Description du fané extrapolée des petits fruits charnus (confiance basse).",
+      "sources": [
+        "https://floraldesigninstitute.com/blogs/resources-flower-library/blackberry-thornless"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "liane-de-kiwi",
+    "nom": "Liane de kiwi",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [
+        10,
+        11,
+        12
+      ],
+      "toute_annee": true,
+      "note": "aucune source de vente trouvée ; liane taillée en hiver, souvent vendue sèche comme le sarment : mois et pic extrapolés (confiance basse)",
+      "sources": [
+        "https://www.promessedefleurs.ie/gardening-tips/tutorial/when-and-how-to-prune-kiwi-plants"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 7,
+      "max": 14,
+      "sources": [
+        "https://www.promessedefleurs.ie/gardening-tips/tutorial/when-and-how-to-prune-kiwi-plants"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "feuilles-recroquevillees",
+        "feuilles-jaunissent",
+        "seche-sur-place"
+      ],
+      "ordre": "si feuillée : les grandes feuilles rondes flétrissent et pendent vite, puis jaunissent ; la liane elle-même sèche en gardant ses volutes",
+      "tete": null,
+      "petales": null,
+      "feuilles": "grandes, arrondies, vert foncé (rosées et blanches chez A. kolomikta) ; flétrissent, jaunissent à l'automne",
+      "tige": "liane ligneuse brune, très sinueuse et vrillée, garde sa forme sèche",
+      "couleurs": {
+        "vert": {
+          "declin": "vert mou, pendant",
+          "fane": "jaune paille puis brun"
+        },
+        "brun": {
+          "declin": "brun",
+          "fane": "brun gris inchangé"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Fiche entièrement extrapolée de la biologie de la plante (Actinidia) et du comportement des lianes sèches (confiance basse). Les petits fruits d'A. arguta, s'ils sont présents, se rident.",
+      "sources": [
+        "https://www.fassadengruen.de/en/ornamental-kiwi-vine.html",
+        "https://harvesttotable.com/how-to-grow-actinidia-kiwi/"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "vigne-sarments",
+    "nom": "Vigne",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [
+        9,
+        10
+      ],
+      "toute_annee": true,
+      "note": "sarments secs disponibles toute l'année (taille d'hiver) ; branches feuillées avec grappes en septembre-octobre ; mois extrapolés (confiance basse)",
+      "sources": [
+        "https://www.thisoldhouse.com/holiday/how-to-make-a-grapevine-wreath",
+        "https://www.sunset.com/?p=11257"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 5,
+      "max": 7,
+      "sources": [
+        "https://wpcdn.web.wsu.edu/extension/uploads/sites/57/2020/07/Making-Lasting-Bouquets.pdf"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "feuilles-recroquevillees",
+        "feuilles-brunissent",
+        "baies-rident",
+        "seche-sur-place"
+      ],
+      "ordre": "les grandes feuilles palmées flétrissent en premier et s'enroulent, puis brunissent ; les raisins se rident et peuvent s'égrener ; le sarment nu, lui, ne change pas",
+      "tete": null,
+      "petales": null,
+      "feuilles": "palmées, vert tendre ou rougies d'automne : s'enroulent, sèchent en brun cassant",
+      "tige": "sarment brun à écorce fibreuse, vrilles enroulées, garde sa forme",
+      "couleurs": {
+        "vert": {
+          "declin": "vert jauni, feuilles molles",
+          "fane": "brun tabac, feuilles roulées"
+        },
+        "rouge": {
+          "declin": "rouge d'automne terni",
+          "fane": "brun rouille"
+        },
+        "brun": {
+          "declin": "brun (sarment sec)",
+          "fane": "brun gris inchangé"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Les sarments secs (couronnes) ne fanent pas. La tenue en vase de 5 à 7 jours vient d'une moyenne générale de l'extension universitaire et non d'une mesure sur la vigne (confiance basse).",
+      "sources": [
+        "https://www.sunset.com/?p=11257",
+        "https://www.thisoldhouse.com/holiday/how-to-make-a-grapevine-wreath"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "erable-du-japon",
+    "nom": "Érable du Japon",
+    "saison_vente": {
+      "mois": [
+        4,
+        5,
+        6,
+        9,
+        10,
+        11
+      ],
+      "pic": [
+        10,
+        11
+      ],
+      "toute_annee": false,
+      "note": "branches de printemps (jeunes feuilles) et surtout d'automne (couleurs rouges et orange) ; mois extrapolés de la phénologie et de l'usage en ikebana (confiance basse)",
+      "sources": [
+        "https://plants.ces.ncsu.edu/plants/acer-palmatum/common-name/japanese-maple",
+        "https://sikito.com/en/blogs/magazine/eda_howtocare"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 3,
+      "max": 7,
+      "sources": [
+        "https://sikito.com/en/blogs/magazine/eda_howtocare"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "feuilles-recroquevillees",
+        "feuilles-brunissent",
+        "decolore"
+      ],
+      "ordre": "les feuilles fines palmées se recroquevillent très vite (bords d'abord) puis sèchent sur la branche ; les couleurs d'automne ternissent et virent au brun",
+      "tete": null,
+      "petales": null,
+      "feuilles": "palmées, fines et découpées : bords qui s'enroulent vers le haut, puis feuille sèche et cassante, en partie tombée",
+      "tige": "rameaux fins, souvent rouges ou verts, gracieux ; restent rigides",
+      "couleurs": {
+        "rouge": {
+          "declin": "rouge éteint, bords roulés",
+          "fane": "brun rouge sombre, sec"
+        },
+        "orange": {
+          "declin": "orange terni",
+          "fane": "brun cuivré"
+        },
+        "vert": {
+          "declin": "vert mat, bords roulés",
+          "fane": "brun paille"
+        },
+        "bordeaux": {
+          "declin": "pourpre éteint",
+          "fane": "brun chocolat"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Les jeunes feuilles ne supportent pas la sécheresse : en vase, flétrissement rapide. Fendre la base et ôter l'écorce aide l'absorption. Durée en vase extrapolée (confiance basse).",
+      "sources": [
+        "https://plants.ces.ncsu.edu/plants/acer-palmatum/common-name/japanese-maple",
+        "https://sikito.com/en/blogs/magazine/eda_howtocare",
+        "https://hilltop.indiana.edu/news-events/_news/news9j.html"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "chene-branches-glands",
+    "nom": "Chêne",
+    "saison_vente": {
+      "mois": [
+        9,
+        10,
+        11
+      ],
+      "pic": [
+        10
+      ],
+      "toute_annee": false,
+      "note": "branches à glands et feuilles d'automne ; mois extrapolés de la maturité des glands (confiance basse)",
+      "sources": [
+        "https://hilltop.indiana.edu/news-events/_news/news9j.html"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 7,
+      "max": 14,
+      "sources": [
+        "https://hilltop.indiana.edu/news-events/_news/news9j.html"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "feuilles-brunissent",
+        "seche-sur-place",
+        "feuilles-recroquevillees"
+      ],
+      "ordre": "les feuilles lobées sèchent sur la branche sans tomber : elles brunissent, se gondolent légèrement et restent accrochées ; les glands se détachent de leur cupule et tombent",
+      "tete": null,
+      "petales": null,
+      "feuilles": "lobées, coriaces : vert puis brun cuir, restent sur le rameau (feuilles marcescentes)",
+      "tige": "rameau noueux, rigide",
+      "couleurs": {
+        "vert": {
+          "declin": "vert olive mat",
+          "fane": "brun cuir, bords gondolés"
+        },
+        "rouge": {
+          "declin": "rouge brique (chênes d'Amérique)",
+          "fane": "brun roux"
+        },
+        "brun": {
+          "declin": "brun doré",
+          "fane": "brun tabac"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Surprise utile au dessin : « une feuille d'érable tombe en pleine couleur, une feuille de chêne ne tombe que complètement sèche » ; le chêne est marcescent. Les glands tombent (observation courante, confiance basse).",
+      "sources": [
+        "https://hilltop.indiana.edu/news-events/_news/news9j.html",
+        "https://extension.umd.edu/resource/mystery-marcescence"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "hetre-branches",
+    "nom": "Hêtre",
+    "saison_vente": {
+      "mois": [
+        4,
+        5,
+        9,
+        10,
+        11
+      ],
+      "pic": [
+        10,
+        11
+      ],
+      "toute_annee": false,
+      "note": "jeunes feuilles au printemps, feuillage d'automne doré ou cuivré (aussi stabilisé à la glycérine) ; mois extrapolés de la phénologie (confiance basse)",
+      "sources": [
+        "https://www.walterreeves.com/gardening-q-and-a/beech-tree-leaves-in-winter/"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 5,
+      "max": 10,
+      "sources": [
+        "https://bookstore.ksre.ksu.edu/download/preserving-flowers-and-decorative-foliages-with-glycerin-and-dye_MF2446"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "feuilles-brunissent",
+        "seche-sur-place"
+      ],
+      "ordre": "les feuilles ovales passent du vert à l'orangé doré puis au brun clair, sèchent et restent accrochées au rameau (marcescence) ; les jeunes feuilles de printemps, tendres, flétrissent vite",
+      "tete": null,
+      "petales": null,
+      "feuilles": "ovales à bord ondulé, fines ; sèchent en papier brun clair sans tomber",
+      "tige": "rameaux fins en zigzag, bourgeons longs et pointus ; restent droits",
+      "couleurs": {
+        "vert": {
+          "declin": "vert jaunissant",
+          "fane": "brun clair papier, orangé"
+        },
+        "bordeaux": {
+          "declin": "pourpre cuivré terni (hêtre pourpre)",
+          "fane": "brun chocolat"
+        },
+        "brun": {
+          "declin": "orangé doré",
+          "fane": "beige brun"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Le hêtre garde ses feuilles sèches tout l'hiver : le fané ressemble au déclin, sans chute. Traité à la glycérine, il devient brun chocolat et souple pendant des années. Durée en vase frais : confiance basse.",
+      "sources": [
+        "https://www.walterreeves.com/gardening-q-and-a/beech-tree-leaves-in-winter/",
+        "https://extension.msstate.edu/publications/glycerin-preserved-foliage"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "meleze-a-cones",
+    "nom": "Mélèze à cônes",
+    "saison_vente": {
+      "mois": [
+        10,
+        11,
+        12,
+        1,
+        2
+      ],
+      "pic": [
+        11,
+        12
+      ],
+      "toute_annee": false,
+      "note": "branches nues à petits cônes pour les décors d'hiver et de Noël ; mois extrapolés (confiance basse)",
+      "sources": [
+        "https://looduskalender.ee/vana/en/node/6092.html",
+        "https://www.promessedefleurs.ie/gardening-tips/familysheet/larch-emlarix-em-planting-pruning-and-care/"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 60,
+      "max": 365,
+      "sources": [
+        "https://looduskalender.ee/vana/en/node/6092.html"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "aiguilles-tombent",
+        "seche-sur-place"
+      ],
+      "ordre": "conifère caduc : les aiguilles, si présentes, jaunissent d'or puis tombent ; la branche nue garde ses petits cônes ovoïdes, qui ne changent presque pas en séchant",
+      "tete": null,
+      "petales": null,
+      "feuilles": "aiguilles souples en bouquets : vert bleuté, or à l'automne, puis tombent",
+      "tige": "rameau noueux, bosselé de courts rameaux ; rigide et sec",
+      "couleurs": {
+        "brun": {
+          "declin": "cônes beige brun, rameau gris",
+          "fane": "inchangé, un peu plus gris"
+        },
+        "vert": {
+          "declin": "aiguilles or",
+          "fane": "aiguilles tombées, branche nue"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Vendue surtout nue : quasi inerte en vase. Durée exprimée comme tenue sèche, extrapolée (confiance basse).",
+      "sources": [
+        "https://www.recorder.com/speaking-of-nature-nov-27-53131237",
+        "https://dc.cod.edu/horticulture-2242-larix-decidua/larix-decidua.pdf"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "pin-a-cones",
+    "nom": "Pin à cônes",
+    "saison_vente": {
+      "mois": [
+        11,
+        12,
+        1
+      ],
+      "pic": [
+        12
+      ],
+      "toute_annee": false,
+      "note": "branches de pin pour les fêtes de fin d'année ; mois extrapolés (confiance basse)",
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/evergreen-branches"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 7,
+      "max": 21,
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/evergreen-branches"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "aiguilles-tombent",
+        "decolore",
+        "seche-sur-place"
+      ],
+      "ordre": "les aiguilles ternissent, jaunissent ou brunissent et se détachent peu à peu ; les cônes, eux, s'ouvrent davantage au sec et se referment à l'humidité, sans faner",
+      "tete": null,
+      "petales": null,
+      "feuilles": "aiguilles en faisceaux, longues : vert vif à vert grisé, puis jaune-brun, chute",
+      "tige": "rameau résineux rigide",
+      "couleurs": {
+        "vert": {
+          "declin": "vert grisé, mat",
+          "fane": "jaune paille à brun roux, aiguilles clairsemées"
+        },
+        "brun": {
+          "declin": "cône brun, écailles ouvertes",
+          "fane": "cône inchangé"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Les écailles des cônes s'écartent au sec et se ferment à l'humide (mécanisme passif, cellules mortes) : un cône peut se refermer si la branche est en eau. Le pin est parmi les conifères qui gardent le mieux leurs aiguilles.",
+      "sources": [
+        "https://www.nature.com/articles/37745.pdf",
+        "https://asknature.org/strategy/cone-scales-are-humidity-sensitive",
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/evergreen-branches"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "gui",
+    "nom": "Gui",
+    "saison_vente": {
+      "mois": [
+        11,
+        12
+      ],
+      "pic": [
+        12
+      ],
+      "toute_annee": false,
+      "note": "ventes aux enchères de Tenbury Wells (Royaume-Uni) fin novembre et début décembre ; vente pour Noël et le Nouvel An",
+      "sources": [
+        "https://britishheritage.com/tenbury-wellsmistletoe-festival",
+        "https://visitthemalverns.org/event/holly-mistletoe-auction/2024-11-26"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 7,
+      "max": 14,
+      "sources": [
+        "https://www.homesandgardens.com/gardens/how-to-care-for-mistletoe-indoors"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "baies-rident",
+        "feuilles-jaunissent",
+        "decolore"
+      ],
+      "ordre": "le gui se dessèche peu à peu à la chaleur : les feuilles vert-jaune pâlissent et jaunissent, les baies blanches translucides se rident puis tombent",
+      "tete": null,
+      "petales": null,
+      "feuilles": "en paires, oblongues, épaisses, vert-jaune : pâlissent, jaunissent puis deviennent brun-olive et cassantes",
+      "tige": "rameaux verts fourchus en boule, cassants en séchant",
+      "couleurs": {
+        "blanc": {
+          "declin": "baies blanc nacré ternies",
+          "fane": "baies jaunâtres ridées ou tombées"
+        },
+        "vert": {
+          "declin": "vert-jaune pâli",
+          "fane": "jaune olive à brun doré"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Une semaine environ en intérieur chauffé, jusqu'à un mois au frais. Les baies tombent en séchant. Teintes du fané d'après l'observation courante (confiance basse).",
+      "sources": [
+        "https://www.homesandgardens.com/gardens/how-to-care-for-mistletoe-indoors",
+        "https://www.rhs.org.uk/plants/138826/wd/details"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "pieris-japonica",
+    "nom": "Piéris",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [
+        2,
+        3,
+        4
+      ],
+      "toute_annee": true,
+      "note": "feuillage disponible toute l'année ; branches fleuries de février à avril",
+      "sources": [
+        "https://floraldesigninstitute.com/blogs/resources-flower-library/pieris-japonica-andromeda"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 7,
+      "max": 10,
+      "sources": [
+        "https://floraldesigninstitute.com/blogs/resources-flower-library/pieris-japonica-andromeda"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "fleurons-tombent",
+        "brunit-bords",
+        "feuilles-brunissent"
+      ],
+      "ordre": "les petites clochettes des grappes pendantes brunissent et tombent en premier ; les jeunes pousses rouges ou bronze flétrissent ; les feuilles adultes coriaces tiennent le plus longtemps puis ternissent",
+      "tete": null,
+      "petales": null,
+      "feuilles": "lancéolées, vert foncé luisant, en rosettes ; jeunes pousses rouges à bronze plus fragiles",
+      "tige": "rameaux ligneux, rigides",
+      "couleurs": {
+        "blanc": {
+          "declin": "clochettes crème à bord beige",
+          "fane": "brun clair, clochettes tombées"
+        },
+        "rose": {
+          "declin": "rose pâli",
+          "fane": "rose brunâtre, clochettes tombées"
+        },
+        "rouge": {
+          "declin": "pousses rouges ternies, molles (feuillage)",
+          "fane": "brun rouille"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Il faut éviter les tiges dont les fleurs tombent déjà : la chute des clochettes est le premier signe de déclin. Teintes du fané : confiance basse.",
+      "sources": [
+        "https://floraldesigninstitute.com/blogs/resources-flower-library/pieris-japonica-andromeda",
+        "https://plants.ces.ncsu.edu/plants/pieris-japonica"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "tamaris",
+    "nom": "Tamaris",
+    "saison_vente": {
+      "mois": [
+        4,
+        5,
+        8,
+        9
+      ],
+      "pic": [
+        5
+      ],
+      "toute_annee": false,
+      "note": "floraison d'avril-mai (espèces de printemps) et d'août-septembre (espèces d'été) ; vente en fleuristerie aux mêmes mois extrapolée (confiance basse)",
+      "sources": [
+        "https://nature-and-garden.com/gardening/tamarisk-shrub-flower.html"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 5,
+      "max": 7,
+      "sources": [
+        "https://nature-and-garden.com/gardening/tamarisk-shrub-flower.html"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "fleurons-tombent",
+        "decolore",
+        "feuilles-brunissent"
+      ],
+      "ordre": "les minuscules fleurs roses des épis plumeux pâlissent et tombent en pluie fine ; les petites feuilles en écailles grisonnent et sèchent sur les rameaux",
+      "tete": null,
+      "petales": null,
+      "feuilles": "minuscules, en écailles, vert glauque : grisonnent puis brunissent",
+      "tige": "rameaux fins et arqués, plumeux ; se courbent en séchant",
+      "couleurs": {
+        "rose": {
+          "declin": "rose poudré pâli",
+          "fane": "beige rosé, épis dégarnis"
+        },
+        "blanc": {
+          "declin": "blanc grisé",
+          "fane": "beige paille (confiance basse)"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Aucune donnée de tenue en vase trouvée : 5 à 7 jours par analogie avec les arbustes à fleurs fines (confiance basse).",
+      "sources": [
+        "https://nature-and-garden.com/gardening/tamarisk-shrub-flower.html"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "grenade-branche",
+    "nom": "Grenadier",
+    "saison_vente": {
+      "mois": [
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [
+        10,
+        11
+      ],
+      "toute_annee": false,
+      "note": "fruits mûrs à l'automne ; branches fraîches à fruits vendues surtout pour les décors d'automne et de fêtes ; mois extrapolés (confiance basse)",
+      "sources": [
+        "https://www.deseret.com/2000/11/24/19539410/pomegranates-add-exotic-touch-to-holiday-decor/"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 14,
+      "max": 60,
+      "sources": [
+        "https://www.blesserhouse.com/how-to-dry-fruit-and-preserve-leaves-for-christmas-decor"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "feuilles-recroquevillees",
+        "feuilles-jaunissent",
+        "seche-sur-place"
+      ],
+      "ordre": "les feuilles étroites flétrissent, jaunissent et tombent les premières ; le fruit à écorce dure sèche lentement en gardant sa forme : il rétrécit, durcit et perd son éclat",
+      "tete": null,
+      "petales": null,
+      "feuilles": "étroites, luisantes : s'enroulent, jaunissent, tombent",
+      "tige": "rameaux fins, un peu épineux, arqués sous le poids du fruit",
+      "couleurs": {
+        "rouge": {
+          "declin": "rouge grenat terni",
+          "fane": "rouge brun mat, écorce ridée et durcie"
+        },
+        "orange": {
+          "declin": "orange rosé terni",
+          "fane": "brun orangé ridé"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Le fruit séché tient jusqu'à deux ans, mais pâlit à la lumière et s'abîme à l'humidité. Durée en vase de la branche fraîche extrapolée (confiance basse).",
+      "sources": [
+        "https://www.blesserhouse.com/how-to-dry-fruit-and-preserve-leaves-for-christmas-decor",
+        "https://www.deseret.com/2000/11/24/19539410/pomegranates-add-exotic-touch-to-holiday-decor/"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "figuier-branche",
+    "nom": "Figuier",
+    "saison_vente": {
+      "mois": [
+        7,
+        8,
+        9,
+        10
+      ],
+      "pic": [
+        8,
+        9
+      ],
+      "toute_annee": false,
+      "note": "figues mûres de l'été au début de l'automne selon les cultivars ; vente des branches extrapolée (confiance basse)",
+      "sources": [
+        "https://hort.ifas.ufl.edu/database/lppi/sp153.shtml"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 3,
+      "max": 7,
+      "sources": [
+        "https://hort.ifas.ufl.edu/database/lppi/sp153.shtml"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "feuilles-recroquevillees",
+        "baies-rident",
+        "feuilles-jaunissent"
+      ],
+      "ordre": "la tige coupée saigne un latex blanc ; les grandes feuilles lobées flétrissent vite et pendent, puis jaunissent ; les figues ramollissent, se fendent ou se rident",
+      "tete": null,
+      "petales": null,
+      "feuilles": "grandes, épaisses, profondément lobées : pendent, se roulent, jaunissent",
+      "tige": "rameaux gris lisses, épais ; restent droits",
+      "couleurs": {
+        "vert": {
+          "declin": "figues vert pâle ramollies",
+          "fane": "vert-jaune ridé, fendu"
+        },
+        "violet": {
+          "declin": "pourpre terni, peau fendillée",
+          "fane": "brun violacé ridé"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Les boutures « doivent saigner une nuit » : laisser le latex s'écouler avant mise en eau. Tenue en vase extrapolée (confiance basse).",
+      "sources": [
+        "https://hort.ifas.ufl.edu/database/lppi/sp153.shtml",
+        "https://christophercollection.com/products/fig-branches-arrangement-in-vase"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "litchi-branche",
+    "nom": "Litchi",
+    "saison_vente": {
+      "mois": [
+        11,
+        12,
+        1
+      ],
+      "pic": [
+        12
+      ],
+      "toute_annee": false,
+      "note": "litchis de Madagascar et d'Afrique du Sud en Europe de novembre à janvier, pic à Noël ; litchis en branche aux mêmes mois",
+      "sources": [
+        "https://www.freshplaza.com/europe/article/9496651/south-africa-finishes-with-an-earlier-but-stronger-lychee-season/",
+        "https://www.itfnet.org/v1/2014/12/madagascar-difficult-economic-context-for-malagasy-lychees/"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 2,
+      "max": 5,
+      "sources": [
+        "https://atr.vsu.edu.ph/article/view/863",
+        "https://www.phtnet.org/research/download/pdf/wz097.pdf"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "brunit-bords",
+        "baies-rident",
+        "feuilles-brunissent"
+      ],
+      "ordre": "la peau rouge brunit en 24 à 48 h hors du froid (dessèchement et oxydation des pigments), en partant des bosses ; puis le fruit se ride et durcit ; les feuilles du rameau sèchent et brunissent",
+      "tete": null,
+      "petales": null,
+      "feuilles": "composées, coriaces : ternissent puis brunissent",
+      "tige": "rameau fin, brun, rigide",
+      "couleurs": {
+        "rouge": {
+          "declin": "rouge rosé taché de brun",
+          "fane": "brun cannelle, peau sèche et dure"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Point important pour le dessin : le litchi ne pâlit pas, il brunit vite. Pas de tenue en vase mesurée : 2 à 5 jours déduits du brunissement post-récolte (confiance basse).",
+      "sources": [
+        "https://atr.vsu.edu.ph/article/view/863",
+        "https://research.usc.edu.au/esploro/outputs/journalArticle/Lychee-Litchi-chinensis-Sonn-pericarp-desiccation/99449994102621"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "kumquat-branche",
+    "nom": "Kumquat",
+    "saison_vente": {
+      "mois": [
+        11,
+        12,
+        1,
+        2,
+        3
+      ],
+      "pic": [
+        1,
+        2
+      ],
+      "toute_annee": false,
+      "note": "fruits mûrs d'octobre à mars ; branches surtout pour le Nouvel An chinois (janvier-février). Mois de vente des branches extrapolés (confiance basse)",
+      "sources": [
+        "https://gardeningsolutions.ifas.ufl.edu/plants/edibles/fruits/kumquat",
+        "https://www.travelofchina.com/chinese-new-year-floral-arrangement/"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 10,
+      "max": 21,
+      "sources": [
+        "https://gardeningsolutions.ifas.ufl.edu/plants/edibles/fruits/kumquat"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "feuilles-recroquevillees",
+        "baies-rident"
+      ],
+      "ordre": "les feuilles persistantes coriaces ternissent et s'enroulent lentement ; les petits fruits orange restent fermes longtemps puis se rident et ternissent",
+      "tete": null,
+      "petales": null,
+      "feuilles": "persistantes, vert foncé luisant, coriaces : tiennent, puis s'enroulent et pâlissent",
+      "tige": "rameaux verts puis bruns, rigides",
+      "couleurs": {
+        "orange": {
+          "declin": "orange vif devenu mat",
+          "fane": "orange brunâtre ridé"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Aucune tenue en vase publiée : estimée par analogie avec les agrumes à peau épaisse (confiance basse).",
+      "sources": [
+        "https://www.travelofchina.com/chinese-new-year-floral-arrangement/",
+        "https://gardeningsolutions.ifas.ufl.edu/plants/edibles/fruits/kumquat"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "branche-lichen",
+    "nom": "Branche lichénée",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [
+        11,
+        12
+      ],
+      "toute_annee": true,
+      "note": "branches mortes ramassées, sèches, disponibles toute l'année ; pic pour les décors d'hiver (extrapolé, confiance basse)",
+      "sources": [
+        "https://www.gardensillustrated.com/christmas/lichen-covered-branch-with-crab-apple-baubles/"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 180,
+      "max": 730,
+      "sources": [
+        "https://floraldesigninstitute.com/blogs/flower-school-video-library/woodlands-tablescape"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "aucune-fanaison-visible",
+        "decolore"
+      ],
+      "ordre": "aucune fanaison : matière sèche ; avec le temps, le lichen vert-chartreuse peut pâlir vers le gris et s'effriter ; humidifié, il reprend souplesse et couleur",
+      "tete": null,
+      "petales": null,
+      "feuilles": "aucune",
+      "tige": "bois mort gris, couvert de lichens foliacés ou fruticuleux vert pâle à gris",
+      "couleurs": {
+        "vert": {
+          "declin": "vert-chartreuse pâle",
+          "fane": "gris vert, plus terne (confiance basse)"
+        },
+        "brun": {
+          "declin": "bois gris-brun",
+          "fane": "inchangé"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Pas d'eau : le lichen s'abîme au contact de l'eau et à forte humidité. Le lichen sec dormant reprend sa couleur s'il est réhumidifié, donc le pâlissement est réversible.",
+      "sources": [
+        "https://floraldesigninstitute.com/blogs/flower-school-video-library/woodlands-tablescape",
+        "https://www.gardensillustrated.com/christmas/lichen-covered-branch-with-crab-apple-baubles/"
+      ]
+    },
+    "confiance": "moyenne"
+  }
+]

@@ -1,0 +1,278 @@
+{
+ "sid": "tulipe-sylvestris",
+ "schema": "STANDARD-SOURCES.md section 5",
+ "legende_entrees": "« cultivars » = entrées de la sorte : cultivars, formes botaniques ou espèce type ; « sans_photo » = nom prouvé (N1 ou N3) mais aucune photo nommée retenue ; « ecartes » = rejetés avec la raison",
+ "rattachement_catalogue": "aucun coloris existant du catalogue ne correspond à cette sorte (catalogue.json, inventaire_fleurs.csv et skus.csv relus le 2026-10-08 : aucune tulipe botanique) ; coloris_catalogue est donc vide",
+ "genre": "Tulipa",
+ "recensement": {
+  "date": "2026-10-08",
+  "agent": "fleur-recensement",
+  "portee": "tulipes botaniques : groupes Kaufmanniana (12), Fosteriana (13), Greigii (14) du KAVB et espèces / hybrides de la division 15 (« Overige Groep » = Miscellaneous) ; tout ce qui est documenté par une photo nommée fiable",
+  "limites": [
+   "N1 : la base de cultivars du KAVB (login.kavb.nl/siergewassen) n'est interrogeable que par un formulaire de recherche, non utilisé (règle « aucun formulaire »). Le N1 des cultivars repose donc sur les listes annuelles « Registraties » du KAVB (PDF, 2004-07 à 2013, huit documents) et sur les mentions « Mutant van » qui prouvent l'existence d'un parent. Les cultivars plus anciens ou postérieurs à 2013 n'ont pas de N1 lu.",
+   "N1 espèces : POWO (Kew) renvoie une erreur 403 (protection Cloudflare, non contournée). Les noms d'espèces sont recoupés avec le GBIF Backbone (API), iNaturalist et les textes de la Pacific Bulb Society ; à revérifier sur POWO.",
+   "N2 : Floricode (codes et photos des variétés vendues) est sur abonnement et n'a pas été consulté ; aucune fiche d'obtenteur à photo exploitable n'a été trouvée pour ces tulipes. Aucun cultivar n'est donc au niveau A.",
+   "Nouveautés 2014-2026 : les listes d'enregistrement KAVB de ces années ne sont pas publiées en PDF libre ; la fenêtre des cinq dernières années n'est pas couverte.",
+   "Les photos ne sont jamais stockées dans le dépôt : seules les adresses, auteurs, licences et niveaux sont écrits. Les vignettes regardées sont dans le cache de l'atelier (refcache/tulipe-botanique/).",
+   "Photos PBS : droits réservés aux photographes (consultation et mesure seulement, jamais publiées). Photos iNaturalist : licences CC BY-NC en majorité, mêmes usages."
+  ],
+  "statuts": "en production = niveau A ou B (à mesurer par fleur-coloris puis sondage de 10 % par l'orchestrateur) ; à confirmer = niveau C ou D ; écarté = avec la raison"
+ },
+ "nom": "Tulipe sauvage (tulipe des bois)",
+ "latin": "Tulipa sylvestris L.",
+ "priorite": "P2",
+ "pourquoi_cette_priorite": "forme à part (tige longue, bouton penché, tépales étroits tordus), espèce européenne naturalisée donc très photographiée (iNaturalist : plus de 6 800 observations de qualité recherche)",
+ "groupe_registre": {
+  "autorite": "KAVB",
+  "division": 15,
+  "nom_registre": "Overige Groep (Miscellaneous)",
+  "preuve": "aucune fiche RHS cultivar trouvée"
+ },
+ "taxonomie": {
+  "espece_mere": "Tulipa sylvestris L., accepté (GBIF usageKey 5299536 ; Wikipédia : L. 1753 ; sous-espèces australis, primulina, sylvestris)",
+  "nom_accepte_source": "GBIF ; POWO non consulté"
+ },
+ "melange": "Espèce sauvage, avec la sous-espèce australis (syn. T. celsiana) plus petite et rougeâtre dehors.",
+ "forme": {
+  "resume": "tige fine jusqu'à 50 cm, bouton penché (à vérifier sur les photos de profil PBS), 1 à 2 fleurs jaunes parfumées, tépales étroits, pointus, qui se tordent en s'ouvrant en étoile ; revers lavé de rouge ou de vert",
+  "details": [
+   "Wikipédia : « yellow flowers sometimes tinged red on the outside » ; PBS : multi-têtes fréquentes en champ de blé",
+   "posture du bouton penché non écrite par les sources : à relever sur photos"
+  ],
+  "sources": [
+   "Wikipédia ; PBS TulipaSpeciesFour (photos Angelo Porcelli, Hans Joschko)"
+  ]
+ },
+ "feuilles": {
+  "resume": "2 à 3 feuilles étroites, longues, bleu-gris, souples",
+  "details": [
+   "Wikipédia : « narrow blue-grey leaves »"
+  ]
+ },
+ "hauteur_cm": "jusqu'à 50 (Wikipédia) ; 20-40 typique",
+ "floraison": "avril à mai (Wikipédia)",
+ "distinction": {
+  "vs_clusiana": "jaune uni, tépales tordus, tige beaucoup plus longue, bouton penché"
+ },
+ "coloris_catalogue": [],
+ "cultivars": [
+  {
+   "id": "sylvestris",
+   "nom_affiche": "Tulipe sauvage (T. sylvestris)",
+   "nom_enregistre": "Tulipa sylvestris L.",
+   "synonymes": [],
+   "groupe": "Espèce (KAVB Div. 15, « Overige Groep » / Miscellaneous)",
+   "obtenteur": null,
+   "annee": null,
+   "numeros": {},
+   "couleur_registre": "jaune vif",
+   "motif": "tépales étroits, pointus, tordus ; revers lavé de vert/rouge",
+   "sources": [
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaSpeciesFour",
+     "consulte": "2026-10-08",
+     "note": "Pacific Bulb Society : naturalisée dans les champs de blé, bulbes à plus de 50 cm de profondeur, multiflore quand nourrie ; photos Angelo Porcelli, Hans Joschko, Kathleen Sayce, Mary Sue Ittner, Janos Agoston"
+    },
+    {
+     "role": "nom",
+     "niveau": "N4",
+     "url": "https://en.wikipedia.org/wiki/Tulipa_sylvestris",
+     "consulte": "2026-10-08",
+     "note": "Wikipédia : jusqu'à 50 cm, feuilles étroites bleu-gris, 1 à 2 fleurs jaunes parfumées parfois teintées de rouge dehors ; L. 1753"
+    },
+    {
+     "role": "taxonomie",
+     "niveau": "N4",
+     "url": "https://api.gbif.org/v1/species/match?kingdom=Plantae&name=Tulipa%20sylvestris",
+     "consulte": "2026-10-08",
+     "note": "accepté : Tulipa sylvestris L. (usageKey 5299536)"
+    }
+   ],
+   "photos": [
+    {
+     "url": "https://pacificbulbsociety.org/pbswiki/files/Tulipa/Tulipa_sylvestris1_AP.jpg",
+     "page": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaSpeciesFour",
+     "niveau": "N3",
+     "auteur": "Angelo Porcelli",
+     "licence": "© photographe ; Pacific Bulb Society (reproduction non libre : consultation et mesure seulement)",
+     "legende": "Tulipa sylvestris, Angelo Porcelli",
+     "consulte": "2026-10-08",
+     "vue": "dessus",
+     "eclairage": null,
+     "balance_blancs": null
+    },
+    {
+     "url": "https://pacificbulbsociety.org/pbswiki/files/Tulipa/Tulipa_sylvestris_HJ.jpg",
+     "page": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaSpeciesFour",
+     "niveau": "N3",
+     "auteur": "Hans Joschko",
+     "licence": "© photographe ; Pacific Bulb Society (reproduction non libre : consultation et mesure seulement)",
+     "legende": "Tulipa sylvestris, Hans Joschko",
+     "consulte": "2026-10-08",
+     "vue": "groupe",
+     "eclairage": null,
+     "balance_blancs": null
+    },
+    {
+     "url": "https://pacificbulbsociety.org/pbswiki/files/Tulipa/Tulipa_sylvestris2_AP.jpg",
+     "page": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaSpeciesFour",
+     "niveau": "N3",
+     "auteur": "Angelo Porcelli",
+     "licence": "© photographe ; Pacific Bulb Society (reproduction non libre : consultation et mesure seulement)",
+     "legende": "Tulipa sylvestris, Angelo Porcelli",
+     "consulte": "2026-10-08",
+     "eclairage": null,
+     "balance_blancs": null
+    },
+    {
+     "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/69671210/original.jpg",
+     "page": "https://www.inaturalist.org/observations/43935346",
+     "niveau": "N3",
+     "auteur": "vadim66",
+     "licence": "iNaturalist CC-BY-NC (observation de qualité recherche)",
+     "legende": "Tulipa sylvestris australis, Sudats'ka, UA-KR, UA, 2012-04-21",
+     "consulte": "2026-10-08",
+     "vue": "dessus (subsp. australis, Ukraine)",
+     "date_prise": "2012-04-21",
+     "eclairage": null,
+     "balance_blancs": null
+    },
+    {
+     "url": "https://static.inaturalist.org/photos/474377122/original.jpg",
+     "page": "https://www.inaturalist.org/observations/264006041",
+     "niveau": "N3",
+     "auteur": "elisagaillard",
+     "licence": "iNaturalist NONE (observation de qualité recherche)",
+     "legende": "Tulipa sylvestris sylvestris, 26150 Die, France, 2022-04-14",
+     "consulte": "2026-10-08",
+     "vue": "dessus, spontané (France)",
+     "date_prise": "2022-04-14",
+     "eclairage": null,
+     "balance_blancs": null
+    }
+   ],
+   "mesures": {},
+   "niveau_preuve": "B",
+   "existence_n1_n2": false,
+   "statut": "en production",
+   "doutes": [
+    "la RHS n'a pas de fiche cultivar (herbier seulement) : nom prouvé par PBS, Wikipédia, GBIF",
+    "taxons infra-spécifiques à ne pas mélanger : subsp. australis (plus petite, rougeâtre dehors, syn. T. celsiana), subsp. primulina, subsp. sylvestris"
+   ],
+   "coloris_catalogue": null,
+   "familles_de_sources": [
+    "en.wikipedia.org",
+    "pacificbulbsociety.org",
+    "www.inaturalist.org"
+   ]
+  },
+  {
+   "id": "sylvestris-australis",
+   "nom_affiche": "Tulipe sauvage du Sud (subsp. australis)",
+   "nom_enregistre": "Tulipa sylvestris subsp. australis (Link) Pamp. (syn. T. celsiana Redouté)",
+   "synonymes": [],
+   "groupe": "Espèce (KAVB Div. 15, « Overige Groep » / Miscellaneous)",
+   "obtenteur": null,
+   "annee": null,
+   "numeros": {},
+   "couleur_registre": "jaune, revers rouge",
+   "motif": "plus petite que le type ; revers infusé de rouge",
+   "sources": [
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaSpeciesFour",
+     "consulte": "2026-10-08",
+     "note": "Pacific Bulb Society : « smaller flowers infused red on the outside » ; photos Chantal Tasson et Colin Barker"
+    }
+   ],
+   "photos": [
+    {
+     "url": "https://pacificbulbsociety.org/pbswiki/files/Tulipa/Tulipa_sylvestris_ssp_australis_PD2.jpg",
+     "page": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaSpeciesFour",
+     "niveau": "N3",
+     "auteur": "Chantal Tasson",
+     "licence": "© photographe ; Pacific Bulb Society (reproduction non libre : consultation et mesure seulement)",
+     "legende": "Tulipa sylvestris ssp. australis, Chantal Tasson",
+     "consulte": "2026-10-08",
+     "vue": "dessus",
+     "eclairage": null,
+     "balance_blancs": null
+    },
+    {
+     "url": "https://pacificbulbsociety.org/pbswiki/files/Tulipa/Tulipa_sylvestris_ssp_australis_CB.jpg",
+     "page": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaSpeciesFour",
+     "niveau": "N3",
+     "auteur": "Colin Barker",
+     "licence": "© photographe ; Pacific Bulb Society (reproduction non libre : consultation et mesure seulement)",
+     "legende": "Tulipa sylvestris ssp. australis, Colin Barker",
+     "consulte": "2026-10-08",
+     "vue": "profil, revers rouge",
+     "eclairage": null,
+     "balance_blancs": null
+    },
+    {
+     "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/119850963/original.jpg",
+     "page": "https://www.inaturalist.org/observations/73418038",
+     "niveau": "N3",
+     "auteur": "sapsan",
+     "licence": "iNaturalist CC-BY-NC (observation de qualité recherche)",
+     "legende": "Tulipa sylvestris australis, Alushtyns'ka, UA-KR, UA, 2021-04-06",
+     "consulte": "2026-10-08",
+     "vue": "dessus, spontané (Ukraine)",
+     "date_prise": "2021-04-06",
+     "eclairage": null,
+     "balance_blancs": null
+    }
+   ],
+   "mesures": {},
+   "niveau_preuve": "B",
+   "existence_n1_n2": false,
+   "statut": "en production",
+   "coloris_catalogue": null,
+   "familles_de_sources": [
+    "pacificbulbsociety.org",
+    "www.inaturalist.org"
+   ]
+  }
+ ],
+ "sans_photo": [],
+ "ecartes": [],
+ "couverture": {
+  "cultivars_retenus_avec_photo": 2,
+  "niveau_A": 0,
+  "niveau_B": 2,
+  "niveau_C": 0,
+  "niveau_D": 0,
+  "prouves_A_ou_B": 2,
+  "sans_photo": 0,
+  "ecartes": 0,
+  "au_catalogue": 0,
+  "existence_N1_lue": 0,
+  "remarque": "« enregistrés » du KAVB : total inconnu (base non interrogée). Les nombres ci-dessus portent sur ce qui a été recensé dans les sources consultées"
+ },
+ "vues_deja_photographiees": {
+  "face (dessus, intérieur)": 5,
+  "trois-quarts": 0,
+  "profil": 1,
+  "dos (revers, extérieur)": 1,
+  "bouton": 0,
+  "fané ou déclin": 0,
+  "feuilles": 0,
+  "tige, pied": 0,
+  "plante entière ou massif": 1
+ },
+ "vues_manquantes": [
+  "trois-quarts",
+  "bouton",
+  "fané ou déclin",
+  "feuilles",
+  "tige, pied",
+  "dessous et attache des feuilles",
+  "épaisseur et surface de la tige",
+  "stades intermédiaires (goblet, coupe, déclin)"
+ ],
+ "vues_note": "comptage des photos retenues par mot-clé de la rubrique « vue » ; les photos de forme par angle et par stade sont à compléter par fleur-refs (STANDARD-SOURCES, exhaustivité)"
+}

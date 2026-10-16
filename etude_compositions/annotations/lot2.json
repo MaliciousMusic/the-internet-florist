@@ -1,0 +1,2766 @@
+[
+  {
+    "n": 15,
+    "fichier": "2645da8ec1d84860922bed8761df275f.jpg",
+    "type": "bouquet emballé",
+    "doublon_de": null,
+    "silhouette": {
+      "forme": "dôme",
+      "description": "Dôme large et bas niché dans un cône de papier blanc très ouvert; quelques tiges s'échappent du dôme: pois de senteur et bouton de pavot au sommet, échinacées projetées à gauche, amarante verte qui tombe en diagonale vers le bas-gauche. Ratio mesuré sur la masse végétale hors papier (tête seule ≈ 1,3). Fleurs très probablement artificielles haut de gamme (rendu 'real touch').",
+      "largeur_sur_hauteur": 1.0,
+      "hauteur_bouquet_sur_contenant": 1.0,
+      "centre_de_masse": "centre légèrement à gauche (≈ 47 % de la largeur), tiers inférieur de la tête, porté par le dahlia noir juste au-dessus du point de liage",
+      "debordement_bas": "léger",
+      "espace_negatif": "moyen",
+      "symetrie": "équilibre asymétrique"
+    },
+    "couches": [
+      {
+        "couche": "lignes & structure",
+        "elements": [
+          "pois de senteur",
+          "bouton de pavot sur tige arquée",
+          "échinacées sur tiges fines"
+        ],
+        "placement": "au-dessus et sur les flancs du dôme: pois de senteur au sommet (≈ 5 % au-dessus du bord du papier), pavot en arc côté droit, échinacées projetées à 30-40° vers la gauche",
+        "nb_estime": 5
+      },
+      {
+        "couche": "focale",
+        "elements": [
+          "dahlia bordeaux-noir",
+          "fleur double lilas striée violet",
+          "cymbidium chartreuse"
+        ],
+        "placement": "triangle focal: dahlia en bas-gauche (le plus gros, Ø ≈ 25 % de la largeur), fleur lilas au centre-droit, cymbidium au centre-haut",
+        "nb_estime": 3
+      },
+      {
+        "couche": "secondaire",
+        "elements": [
+          "tulipe double vieux rose",
+          "anthurium bordeaux",
+          "échinops lilas grisé",
+          "cosmos chocolat"
+        ],
+        "placement": "autour des focales en profondeur intermédiaire; anthurium vu de dos/profil sur le bord droit; cosmos chocolat en grappe au centre-haut",
+        "nb_estime": 8
+      },
+      {
+        "couche": "remplissage/texture",
+        "elements": [
+          "sedum vert-olive",
+          "boutons crème (skimmia)",
+          "baies brunes",
+          "hortensia vert antique"
+        ],
+        "placement": "bas du dôme et flanc droit, en retrait, pour masquer le liage et donner du grain",
+        "nb_estime": 7
+      },
+      {
+        "couche": "retombées",
+        "elements": [
+          "amarante verte retombante"
+        ],
+        "placement": "une seule touffe sortant du bas-gauche, tombant à ≈ 45° jusqu'à ≈ 35 % de la hauteur de la tête sous celle-ci",
+        "nb_estime": 2
+      },
+      {
+        "couche": "feuillage",
+        "elements": [
+          "feuilles rondes (eucalyptus/pittosporum)",
+          "feuilles lobées type géranium"
+        ],
+        "placement": "petites touches au cœur, entre les têtes, jamais en collerette",
+        "nb_estime": 5
+      },
+      {
+        "couche": "accents",
+        "elements": [
+          "papier blanc cassé",
+          "ruban satin crème"
+        ],
+        "placement": "papier en cône derrière les fleurs; ruban long qui pend sous la main",
+        "nb_estime": 2
+      }
+    ],
+    "fleurs": [
+      {
+        "nom_fr": "dahlia décoratif",
+        "latin": "Dahlia × hortensis",
+        "variete_probable": "'Karma Choc' ou 'Rip City' (probable)",
+        "couleur": "bordeaux-noir aubergine",
+        "role": "focale",
+        "quantite_estimee": 1,
+        "orientation": "face",
+        "certitude": "haute"
+      },
+      {
+        "nom_fr": "orchidée cymbidium",
+        "latin": "Cymbidium sp.",
+        "variete_probable": null,
+        "couleur": "chartreuse, labelle crème taché rouge",
+        "role": "focale",
+        "quantite_estimee": 1,
+        "orientation": "face",
+        "certitude": "haute"
+      },
+      {
+        "nom_fr": "fleur double lilas striée (tulipe double flammée ou renoncule)",
+        "latin": "Tulipa ou Ranunculus asiaticus (indéterminé)",
+        "variete_probable": null,
+        "couleur": "lilas pâle strié violet",
+        "role": "focale",
+        "quantite_estimee": 1,
+        "orientation": "face",
+        "certitude": "faible"
+      },
+      {
+        "nom_fr": "pois de senteur",
+        "latin": "Lathyrus odoratus",
+        "variete_probable": null,
+        "couleur": "rose poudré-lilas",
+        "role": "ligne",
+        "quantite_estimee": 2,
+        "orientation": "trois-quarts",
+        "certitude": "haute"
+      },
+      {
+        "nom_fr": "échinacée",
+        "latin": "Echinacea purpurea",
+        "variete_probable": null,
+        "couleur": "rose mauve, cœur brun-bordeaux",
+        "role": "ligne",
+        "quantite_estimee": 2,
+        "orientation": "trois-quarts",
+        "certitude": "haute"
+      },
+      {
+        "nom_fr": "échinops (boule azurée)",
+        "latin": "Echinops ritro",
+        "variete_probable": null,
+        "couleur": "lilas grisé",
+        "role": "secondaire",
+        "quantite_estimee": 1,
+        "orientation": "face",
+        "certitude": "moyenne"
+      },
+      {
+        "nom_fr": "tulipe double (type pivoine)",
+        "latin": "Tulipa",
+        "variete_probable": null,
+        "couleur": "vieux rose",
+        "role": "secondaire",
+        "quantite_estimee": 1,
+        "orientation": "trois-quarts",
+        "certitude": "haute"
+      },
+      {
+        "nom_fr": "anthurium",
+        "latin": "Anthurium andraeanum",
+        "variete_probable": null,
+        "couleur": "rouge bordeaux",
+        "role": "secondaire",
+        "quantite_estimee": 1,
+        "orientation": "profil",
+        "certitude": "haute"
+      },
+      {
+        "nom_fr": "cosmos chocolat",
+        "latin": "Cosmos atrosanguineus",
+        "variete_probable": null,
+        "couleur": "bordeaux velours",
+        "role": "accent",
+        "quantite_estimee": 5,
+        "orientation": "variée",
+        "certitude": "faible"
+      },
+      {
+        "nom_fr": "bouton de pavot",
+        "latin": "Papaver sp.",
+        "variete_probable": null,
+        "couleur": "vert",
+        "role": "ligne",
+        "quantite_estimee": 1,
+        "orientation": "profil",
+        "certitude": "haute"
+      },
+      {
+        "nom_fr": "amarante queue-de-renard verte",
+        "latin": "Amaranthus caudatus 'Viridis'",
+        "variete_probable": "'Viridis'",
+        "couleur": "vert tendre",
+        "role": "retombée",
+        "quantite_estimee": 2,
+        "orientation": "variée",
+        "certitude": "haute"
+      },
+      {
+        "nom_fr": "sedum (orpin) en boutons",
+        "latin": "Hylotelephium spectabile",
+        "variete_probable": null,
+        "couleur": "vert-olive et vert-de-gris",
+        "role": "remplissage",
+        "quantite_estimee": 3,
+        "orientation": "face",
+        "certitude": "moyenne"
+      },
+      {
+        "nom_fr": "skimmia en boutons",
+        "latin": "Skimmia japonica",
+        "variete_probable": "'Kew Green' (probable)",
+        "couleur": "crème-vert",
+        "role": "remplissage",
+        "quantite_estimee": 1,
+        "orientation": "face",
+        "certitude": "faible"
+      },
+      {
+        "nom_fr": "baies brunes (troène ou eucalyptus à baies)",
+        "latin": "Ligustrum sp. ? (indéterminé)",
+        "variete_probable": null,
+        "couleur": "brun chocolat",
+        "role": "remplissage",
+        "quantite_estimee": 1,
+        "orientation": "variée",
+        "certitude": "faible"
+      },
+      {
+        "nom_fr": "hortensia vert antique",
+        "latin": "Hydrangea macrophylla",
+        "variete_probable": null,
+        "couleur": "vert pâle bordé blanc",
+        "role": "remplissage",
+        "quantite_estimee": 1,
+        "orientation": "face",
+        "certitude": "faible"
+      }
+    ],
+    "couleurs": {
+      "schema": "analogue",
+      "dominantes": [
+        "bordeaux-aubergine #3a1220",
+        "bordeaux velours #5c0f22",
+        "rose poudré-lilas #d8b8d0",
+        "mauve-lilas #c9a6c4",
+        "vieux rose #96505e"
+      ],
+      "accents": [
+        "chartreuse #c4c45a",
+        "vert amarante #7f8f3e",
+        "olive sedum #6e6a45",
+        "violet strié #8a6aa8"
+      ],
+      "valeurs": "Foncés (dahlia, cosmos chocolat, anthurium) ≈ 30 % de la surface, concentrés en bas-gauche et au centre; tons moyens (rose, lilas) au milieu; clairs (pois de senteur, cymbidium, papier) en haut et autour: dégradé foncé → clair du bas vers le haut.",
+      "temperature": "mixte",
+      "notes": "Le papier blanc cassé et le ruban crème neutralisent l'ensemble; le chartreuse (cymbidium, amarante) est le complémentaire du rouge-violet et fait vibrer la palette prune."
+    },
+    "groupements": "Pas d'amas massifs: chaque variété en 1-2 exemplaires, sauf le cosmos chocolat en grappe de 4-6 petites fleurs au centre-haut et le sedum en 3 têtes groupées sur le flanc droit. Les fleurs sombres forment une traînée diagonale (dahlia → cosmos chocolat → anthurium) du bas-gauche au haut-droit.",
+    "profondeur": "Dahlia au premier plan bas, contre le bord du papier; tulipe semi-ouverte légèrement en avant; échinops et cymbidium un cran en retrait; sedum, skimmia et feuillage enfoncés pour créer de l'ombre; anthurium montré de dos comme s'il était derrière. Le papier clair détache les silhouettes.",
+    "mouvement": "Diagonale principale de l'amarante (bas-gauche) au bouton de pavot (haut-droit); les échinacées pointent vers la gauche; l'œil circule du dahlia sombre au cymbidium chartreuse puis à la fleur lilas.",
+    "feuillage": "rare — quelques feuilles rondes vert moyen (eucalyptus/pittosporum, feuilles lobées) glissées entre les têtes; rôle de séparation et de respiration, pas de collerette.",
+    "contenant": {
+      "type": "papier d'emballage (papier coréen/non-tissé) + ruban satin",
+      "couleur": "blanc cassé / gris perle, ruban crème",
+      "matiere": "papier mat semi-translucide, satin",
+      "rapport_au_bouquet": "Cône très ouvert, plus large que les fleurs (≈ 1,2× la largeur de la tête) et dont le bord arrive à hauteur des têtes: les fleurs affleurent, seules les lignes (pois, pavot) dépassent de ≈ 5 %. Ruban pendant ≈ 0,5× la hauteur de la tête."
+    },
+    "pourquoi_ca_marche": "Le contraste de valeur entre le dahlia quasi noir et les pastels (pois de senteur, lilas) crée un point focal bas et lourd qui stabilise le bouquet. Le chartreuse du cymbidium et de l'amarante apporte la tension complémentaire qui empêche la palette prune d'être terne. Les tiges qui s'échappent (pavot, échinacées, amarante) cassent le dôme et lui donnent une allure cueillie. Le papier blanc sert de fond neutre et de cadre.",
+    "regles": [
+      "Placer la fleur la plus foncée et la plus grosse en bas, décalée de ≈ 15 % du centre, juste au-dessus du point de liage: elle ancre le bouquet.",
+      "Dans une palette prune/rose, ajouter 1-2 touches chartreuse (≤ 10 % de la surface) pour faire vibrer les complémentaires.",
+      "Faire sortir 3 à 5 tiges légères (boutons, fleurs simples) de 10-30 % hors du dôme, dans des directions différentes.",
+      "Une seule retombée végétale, du côté opposé à la ligne la plus haute, crée une diagonale traversante.",
+      "Montrer 1-2 fleurs de dos ou de profil (anthurium) pour suggérer la profondeur.",
+      "Emballage: papier clair plus large que le bouquet, bord à hauteur des têtes, ruban long et pendant."
+    ]
+  },
+  {
+    "n": 16,
+    "fichier": "269877b75623256b41c4c0d158055461.jpg",
+    "type": "bouquet en vase",
+    "doublon_de": null,
+    "silhouette": {
+      "forme": "croissant",
+      "description": "Étude de tige unique: une tige verte nue sort du col d'une bouteille en verre fumé (bas-gauche, coupée par le cadre), monte en arc régulier vers la droite et porte une seule tête composite (fleur assemblée à partir de pétales de plusieurs espèces) tournée face au spectateur, à ≈ 55 % de la hauteur de l'image. Énorme vide autour. Ratio mesuré sur la partie au-dessus du col.",
+      "largeur_sur_hauteur": 1.2,
+      "hauteur_bouquet_sur_contenant": 1.4,
+      "centre_de_masse": "droite du centre (≈ 56 % de la largeur, ≈ 52 % de la hauteur de l'image), décalé de ≈ 0,45 largeur d'image par rapport au col; le vase en bas-gauche fait contrepoids",
+      "debordement_bas": "aucun",
+      "espace_negatif": "fort",
+      "symetrie": "très asymétrique"
+    },
+    "couches": [
+      {
+        "couche": "lignes & structure",
+        "elements": [
+          "tige unique verte et nue"
+        ],
+        "placement": "arc de ≈ 70° sortant du col vers la droite, longueur ≈ 1,6× la hauteur visible du vase, aucune feuille",
+        "nb_estime": 1
+      },
+      {
+        "couche": "focale",
+        "elements": [
+          "tête composite: cœur de célosie crête-de-coq rouge, pétales de gloriosa, spadice d'anthurium"
+        ],
+        "placement": "en bout d'arc, face, Ø ≈ 35 % de la largeur de l'image",
+        "nb_estime": 1
+      },
+      {
+        "couche": "secondaire",
+        "elements": [
+          "pétales violets lancéolés",
+          "pétales rose saumon",
+          "pétales pêche",
+          "pétale picoté blanc/fuchsia"
+        ],
+        "placement": "couronne de 12-15 pétales de tailles inégales rayonnant autour du cœur, 3 anneaux superposés (arrière violet/pêche, milieu rose, avant gloriosa)",
+        "nb_estime": 15
+      },
+      {
+        "couche": "accents",
+        "elements": [
+          "étamines et style de gloriosa (filaments verts courbes, anthère orange)",
+          "spadice vert-jaune",
+          "petits pétales aubergine-noir"
+        ],
+        "placement": "filaments qui débordent en haut-droit et bas-droit; noir en 2 petites touches au cœur",
+        "nb_estime": 5
+      }
+    ],
+    "fleurs": [
+      {
+        "nom_fr": "gloriosa (pétales et étamines)",
+        "latin": "Gloriosa superba 'Rothschildiana'",
+        "variete_probable": "'Rothschildiana'",
+        "couleur": "fuchsia-cramoisi à bord jaune ondulé",
+        "role": "focale",
+        "quantite_estimee": 1,
+        "orientation": "face",
+        "certitude": "haute"
+      },
+      {
+        "nom_fr": "célosie crête-de-coq (cœur)",
+        "latin": "Celosia argentea var. cristata",
+        "variete_probable": null,
+        "couleur": "rouge sang",
+        "role": "focale",
+        "quantite_estimee": 1,
+        "orientation": "face",
+        "certitude": "moyenne"
+      },
+      {
+        "nom_fr": "spadice d'anthurium",
+        "latin": "Anthurium andraeanum",
+        "variete_probable": null,
+        "couleur": "vert-jaune",
+        "role": "accent",
+        "quantite_estimee": 1,
+        "orientation": "profil",
+        "certitude": "moyenne"
+      },
+      {
+        "nom_fr": "pétale picoté (œillet bicolore ou labelle de Cattleya)",
+        "latin": "Dianthus caryophyllus ou Cattleya (indéterminé)",
+        "variete_probable": null,
+        "couleur": "blanc bordé fuchsia",
+        "role": "secondaire",
+        "quantite_estimee": 2,
+        "orientation": "face",
+        "certitude": "faible"
+      },
+      {
+        "nom_fr": "pétales violets lancéolés (orchidée ou iris)",
+        "latin": "Dendrobium/Vanda ou Iris (indéterminé)",
+        "variete_probable": null,
+        "couleur": "violet",
+        "role": "secondaire",
+        "quantite_estimee": 3,
+        "orientation": "profil",
+        "certitude": "faible"
+      },
+      {
+        "nom_fr": "pétales rose saumon (lis ou tulipe)",
+        "latin": "Lilium ou Tulipa (indéterminé)",
+        "variete_probable": null,
+        "couleur": "rose saumon veiné",
+        "role": "secondaire",
+        "quantite_estimee": 4,
+        "orientation": "variée",
+        "certitude": "faible"
+      },
+      {
+        "nom_fr": "pétales pêche (tulipe ou rose)",
+        "latin": "Tulipa ou Rosa (indéterminé)",
+        "variete_probable": null,
+        "couleur": "pêche-abricot",
+        "role": "secondaire",
+        "quantite_estimee": 2,
+        "orientation": "variée",
+        "certitude": "faible"
+      },
+      {
+        "nom_fr": "petits pétales noirs (pensée ou calla noir)",
+        "latin": "indéterminé",
+        "variete_probable": null,
+        "couleur": "aubergine-noir",
+        "role": "accent",
+        "quantite_estimee": 2,
+        "orientation": "profil",
+        "certitude": "faible"
+      }
+    ],
+    "couleurs": {
+      "schema": "multicolore",
+      "dominantes": [
+        "fuchsia-cramoisi #b8124f",
+        "violet #7d45b0",
+        "rose saumon #d98aa0",
+        "pêche #f2b46e",
+        "rouge sang #a3161a"
+      ],
+      "accents": [
+        "chartreuse #b9d24a",
+        "aubergine-noir #2a0f22",
+        "orange anthère #f2a43c",
+        "vert tige #4f7a2a"
+      ],
+      "valeurs": "Tête de valeur moyenne-foncée isolée sur un fond très clair (#dcdcd8): contraste maximal en un seul point; le cœur rouge sombre est la zone la plus foncée, les pointes pêche/rose les plus claires.",
+      "temperature": "chaude",
+      "notes": "Palette volontairement surchargée mais concentrée dans un disque; ≈ 90 % de l'image reste neutre (mur blanc cassé, verre fumé gris #9a9f9c), ce qui rend la saturation acceptable."
+    },
+    "groupements": "Aucun groupement de fleurs: un seul objet. Dans la tête, les couleurs alternent autour du cœur (rose, violet, pêche, fuchsia), jamais deux pétales identiques côte à côte; tous les éléments filiformes (étamines, spadice) sont rejetés à droite.",
+    "profondeur": "Trois anneaux de pétales superposés (arrière violet/pêche, milieu rose/fuchsia, avant gloriosa ondulée) autour d'un cœur rouge en relief; pétales du bas recourbés vers l'avant, ceux du haut redressés. La tige passe devant le mur vide sans aucun chevauchement.",
+    "mouvement": "La courbe de la tige guide l'œil du vase (bas-gauche) à la tête (centre-droit); étamines et spadice pointent vers la droite et prolongent le mouvement; les pétales rayonnent comme un feu d'artifice.",
+    "feuillage": "aucun",
+    "contenant": {
+      "type": "vase bouteille à col cylindrique",
+      "couleur": "verre fumé gris #9a9f9c",
+      "matiere": "verre",
+      "rapport_au_bouquet": "Vase montré en partie (coupé en bas-gauche) et servant de contrepoids; tige ≈ 1,6× la hauteur visible du vase; tête placée loin du col (décalage horizontal ≈ 1,8× la largeur du vase)."
+    },
+    "pourquoi_ca_marche": "Une seule ligne et un seul point: la simplicité de la structure autorise une tête extrêmement complexe et saturée. La longue courbe nue crée de l'attente et met la fleur en scène dans le vide. Le décalage vase/tête en diagonale produit un équilibre asymétrique dynamique. Les filaments qui débordent de la tête évitent l'effet boule.",
+    "regles": [
+      "Étude de tige unique: tige nue ≥ 1,5× la hauteur du vase, courbée en arc régulier, aucune feuille.",
+      "Placer la tête dans la moitié opposée au vase (décalage horizontal ≈ 0,4-0,5 de la largeur du cadre), tournée face au spectateur.",
+      "Une fleur composite peut combiner 5-7 couleurs si 85-90 % du cadre reste neutre.",
+      "Ajouter 2-3 éléments filiformes (étamines, spadice) qui dépassent la tête du même côté pour donner une direction.",
+      "Alterner les couleurs de pétales en anneaux autour d'un cœur foncé et texturé."
+    ]
+  },
+  {
+    "n": 17,
+    "fichier": "278c61fc448e6e34fd5cd86bcb3851f6.jpg",
+    "type": "bouquet en vase",
+    "doublon_de": null,
+    "silhouette": {
+      "forme": "vertical aérien",
+      "description": "Flamme verticale en losange: base dense et sombre logée dans l'échancrure d'un vase-cœur noir, colonne de blancs au centre, puis deux pointes hautes — rameau nu à gauche (point le plus haut) et anthurium bordeaux sur longue tige nue à droite; rameaux à feuilles bordeaux en éventail des deux côtés à mi-hauteur. Image vraisemblablement générée par IA (fleurs blanches et spadices peu réalistes): à utiliser pour la composition, pas pour la botanique.",
+      "largeur_sur_hauteur": 0.66,
+      "hauteur_bouquet_sur_contenant": 1.9,
+      "centre_de_masse": "centre légèrement à gauche, à ≈ 45 % de la hauteur de la masse florale depuis le col (colonne blanche), avec contrepoids sombre en bas-droit (anthurium couché sur le bord)",
+      "debordement_bas": "léger",
+      "espace_negatif": "moyen",
+      "symetrie": "équilibre asymétrique"
+    },
+    "couches": [
+      {
+        "couche": "lignes & structure",
+        "elements": [
+          "rameau nu brun",
+          "anthurium bordeaux sur tige nue",
+          "rameaux à petites feuilles bordeaux"
+        ],
+        "placement": "rameau nu = point le plus haut (≈ 1,9× la hauteur du vase au-dessus du col) côté gauche; anthurium haut à ≈ 85 % de cette hauteur côté droit; rameaux bordeaux projetés horizontalement à gauche et à droite à mi-hauteur",
+        "nb_estime": 6
+      },
+      {
+        "couche": "focale",
+        "elements": [
+          "orchidées Phalaenopsis blanches",
+          "anthurium bordeaux bas"
+        ],
+        "placement": "orchidées au centre de la colonne (35-55 % de la hauteur); anthurium bas posé sur le rebord droit, pointe vers le bas-droit",
+        "nb_estime": 4
+      },
+      {
+        "couche": "secondaire",
+        "elements": [
+          "roses de jardin crème",
+          "fleurs blanches froissées le long du rameau"
+        ],
+        "placement": "deux roses en bas-gauche contre le col; fleurs blanches étagées le long du rameau gauche jusqu'aux 3/4 de la hauteur",
+        "nb_estime": 7
+      },
+      {
+        "couche": "remplissage/texture",
+        "elements": [
+          "chrysanthème/dahlia noir-aubergine",
+          "fleur ébouriffée bordeaux (pivoine/œillet)"
+        ],
+        "placement": "au col, entre les roses et l'anthurium, légèrement en retrait: masse sombre de liaison avec le vase",
+        "nb_estime": 2
+      },
+      {
+        "couche": "accents",
+        "elements": [
+          "spadices bordeaux allongés"
+        ],
+        "placement": "traits graphiques qui prolongent les deux anthuriums vers le haut-droit",
+        "nb_estime": 2
+      }
+    ],
+    "fleurs": [
+      {
+        "nom_fr": "anthurium",
+        "latin": "Anthurium andraeanum",
+        "variete_probable": null,
+        "couleur": "bordeaux sang-de-bœuf laqué",
+        "role": "focale",
+        "quantite_estimee": 2,
+        "orientation": "trois-quarts",
+        "certitude": "haute"
+      },
+      {
+        "nom_fr": "orchidée phalaenopsis",
+        "latin": "Phalaenopsis (hybride blanc)",
+        "variete_probable": null,
+        "couleur": "blanc pur, cœur jaune",
+        "role": "focale",
+        "quantite_estimee": 3,
+        "orientation": "face",
+        "certitude": "haute"
+      },
+      {
+        "nom_fr": "rose de jardin",
+        "latin": "Rosa (type anglaise)",
+        "variete_probable": "type 'Patience'/'Keira' (crème)",
+        "couleur": "crème ivoire",
+        "role": "secondaire",
+        "quantite_estimee": 2,
+        "orientation": "face",
+        "certitude": "moyenne"
+      },
+      {
+        "nom_fr": "fleurs blanches froissées sur rameau (lisianthus, rose blanche ou camélia)",
+        "latin": "indéterminé",
+        "variete_probable": null,
+        "couleur": "blanc",
+        "role": "secondaire",
+        "quantite_estimee": 5,
+        "orientation": "variée",
+        "certitude": "faible"
+      },
+      {
+        "nom_fr": "chrysanthème ou dahlia noir",
+        "latin": "Chrysanthemum ou Dahlia (indéterminé)",
+        "variete_probable": null,
+        "couleur": "noir-aubergine",
+        "role": "remplissage",
+        "quantite_estimee": 1,
+        "orientation": "face",
+        "certitude": "faible"
+      },
+      {
+        "nom_fr": "fleur ébouriffée bordeaux (pivoine, œillet ou dahlia)",
+        "latin": "indéterminé",
+        "variete_probable": null,
+        "couleur": "bordeaux profond",
+        "role": "remplissage",
+        "quantite_estimee": 1,
+        "orientation": "trois-quarts",
+        "certitude": "faible"
+      },
+      {
+        "nom_fr": "rameaux à feuilles/fleurettes bordeaux (cotinus pourpre ou oncidium bordeaux)",
+        "latin": "Cotinus coggygria 'Royal Purple' ou Oncidium (indéterminé)",
+        "variete_probable": null,
+        "couleur": "bordeaux rosé",
+        "role": "ligne",
+        "quantite_estimee": 4,
+        "orientation": "variée",
+        "certitude": "faible"
+      },
+      {
+        "nom_fr": "rameau nu",
+        "latin": "indéterminé (cerisier/bouleau)",
+        "variete_probable": null,
+        "couleur": "brun",
+        "role": "ligne",
+        "quantite_estimee": 1,
+        "orientation": "profil",
+        "certitude": "moyenne"
+      }
+    ],
+    "couleurs": {
+      "schema": "neutres + accent",
+      "dominantes": [
+        "blanc pur #f3f4f0",
+        "crème ivoire #ddd6bd",
+        "bordeaux sang-de-bœuf #5e0f1c",
+        "noir anthracite #2a2d30"
+      ],
+      "accents": [
+        "bordeaux rosé #6e2a35",
+        "jaune cœur d'orchidée #e8c860",
+        "vert-olive tige #8a8a3a"
+      ],
+      "valeurs": "Colonne claire au centre (≈ 30 % de la masse) encadrée de foncés: anthuriums, rameaux et cœur sombre au col; vase noir mat dessous: clair-obscur, la lumière est au centre.",
+      "temperature": "mixte",
+      "notes": "Fond taupe chaud (#908d86) et vase noir minéral; seulement trois familles de valeurs (blanc, bordeaux, noir): palette gothique élégante."
+    },
+    "groupements": "Blancs regroupés en une colonne continue (orchidées + fleurs du rameau) du col jusqu'aux 3/4 de la hauteur; bordeaux aux extrémités (2 anthuriums en diagonale haut-droit/bas-droit, rameaux à gauche et à droite); roses crème en paire au col.",
+    "profondeur": "Anthurium bas au tout premier plan, débordant sur le vase; roses crème devant; orchidées un plan derrière; rameaux bordeaux en arrière-plan, en silhouette; l'anthurium haut, isolé sur sa tige, flotte devant le fond.",
+    "mouvement": "Montée verticale le long du rameau gauche, contre-mouvement en Z vers l'anthurium haut-droit, puis descente vers l'anthurium bas-droit: zigzag autour de la colonne blanche.",
+    "feuillage": "rare — aucun feuillage vert; les rameaux à feuilles bordeaux en tiennent lieu (texture fine, ton sur ton avec les anthuriums).",
+    "contenant": {
+      "type": "vase sculptural en forme de cœur facetté",
+      "couleur": "noir anthracite mat #2a2d30",
+      "matiere": "pierre taillée ou céramique effet pierre",
+      "rapport_au_bouquet": "Vase massif (≈ 0,7× la largeur de la masse florale) dont l'échancrure du cœur sert de col; bouquet ≈ 1,9× la hauteur du vase; le poids du vase noir équilibre la colonne blanche."
+    },
+    "pourquoi_ca_marche": "Le contraste blanc/bordeaux/noir est maximal mais limité à trois couleurs: lecture immédiate et luxueuse. Les deux anthuriums répètent la même forme à deux hauteurs et deux échelles, créant un rythme diagonal. Le vase sculptural noir donne une base très lourde qui autorise une partie haute aérienne. Le fond taupe chaud adoucit le contraste.",
+    "regles": [
+      "Limiter la palette à blanc + une couleur profonde + noir, et placer le blanc au centre de la masse.",
+      "Répéter la fleur-signature 2 fois: une haute sur tige nue, une basse qui déborde du col, en diagonale.",
+      "Ligne la plus haute = rameau nu ≈ 2× la hauteur du vase; seconde ligne à ≈ 85 % de cette hauteur du côté opposé.",
+      "Placer une masse sombre de liaison au col pour fondre le bouquet dans un vase foncé.",
+      "Avec un vase très lourd et sombre, la partie haute peut garder ≥ 40 % de vide."
+    ]
+  },
+  {
+    "n": 18,
+    "fichier": "291ad42746f06ef3b7980147f309b4f5.jpg",
+    "type": "composition sur socle",
+    "doublon_de": null,
+    "silhouette": {
+      "forme": "triangle",
+      "description": "Triangle asymétrique monochrome très sombre: base dense et arrondie (chrysanthèmes, vandas, anthuriums) posée sur une petite coupe blanche sur pied, d'où s'élèvent des hellébores doubles sur tiges fines jusqu'à ≈ 5× la hauteur de la coupe; un calla noir file horizontalement vers la gauche à mi-hauteur, des hellébores isolés s'échappent à droite.",
+      "largeur_sur_hauteur": 0.71,
+      "hauteur_bouquet_sur_contenant": 5.1,
+      "centre_de_masse": "centre, légèrement à gauche, dans le tiers inférieur de la masse, juste au-dessus du col de la coupe",
+      "debordement_bas": "léger",
+      "espace_negatif": "moyen",
+      "symetrie": "équilibre asymétrique"
+    },
+    "couches": [
+      {
+        "couche": "lignes & structure",
+        "elements": [
+          "hellébores doubles sur longues tiges",
+          "calla noir"
+        ],
+        "placement": "hellébores étagés de 45 % à 100 % de la hauteur, côté centre/droit, chacun à une hauteur différente; calla horizontal à gauche à ≈ 55 % de la hauteur, ouverture vers l'extérieur",
+        "nb_estime": 6
+      },
+      {
+        "couche": "focale",
+        "elements": [
+          "vandas léopard",
+          "anthuriums chocolat"
+        ],
+        "placement": "3 vandas en triangle (centre, bas-gauche débordant sur la coupe, droite); 2 anthuriums en profil sur le flanc gauche, l'un au-dessus de l'autre",
+        "nb_estime": 5
+      },
+      {
+        "couche": "secondaire",
+        "elements": [
+          "hellébores bas"
+        ],
+        "placement": "en bord de masse: à droite et en bas-gauche sous le col",
+        "nb_estime": 3
+      },
+      {
+        "couche": "remplissage/texture",
+        "elements": [
+          "chrysanthèmes pompon aubergine"
+        ],
+        "placement": "masse compacte au cœur, 6-7 têtes jointives formant un dôme sous les lignes",
+        "nb_estime": 7
+      },
+      {
+        "couche": "feuillage",
+        "elements": [
+          "feuilles vert tendre (hellébore)"
+        ],
+        "placement": "quelques feuilles dépassant à gauche du col et aux bouts des tiges hautes",
+        "nb_estime": 7
+      }
+    ],
+    "fleurs": [
+      {
+        "nom_fr": "hellébore double",
+        "latin": "Helleborus × hybridus (forme double)",
+        "variete_probable": "série 'Double Ellen' / 'Onyx Odyssey' (probable)",
+        "couleur": "prune-ardoise à liseré crème-vert",
+        "role": "ligne",
+        "quantite_estimee": 8,
+        "orientation": "variée",
+        "certitude": "haute"
+      },
+      {
+        "nom_fr": "chrysanthème pompon à pétales tubulés",
+        "latin": "Chrysanthemum × morifolium",
+        "variete_probable": null,
+        "couleur": "aubergine-bordeaux",
+        "role": "remplissage",
+        "quantite_estimee": 7,
+        "orientation": "face",
+        "certitude": "moyenne"
+      },
+      {
+        "nom_fr": "orchidée vanda tachetée léopard",
+        "latin": "Vanda (hybride)",
+        "variete_probable": "type 'Black Spot' (probable)",
+        "couleur": "crème verdâtre moucheté aubergine",
+        "role": "focale",
+        "quantite_estimee": 3,
+        "orientation": "face",
+        "certitude": "haute"
+      },
+      {
+        "nom_fr": "anthurium noir",
+        "latin": "Anthurium andraeanum",
+        "variete_probable": "'Black Love' ou 'Black Queen' (probable)",
+        "couleur": "chocolat noir laqué",
+        "role": "focale",
+        "quantite_estimee": 2,
+        "orientation": "profil",
+        "certitude": "haute"
+      },
+      {
+        "nom_fr": "calla noir",
+        "latin": "Zantedeschia",
+        "variete_probable": "'Black Star' ou 'Schwarzwalder' (probable)",
+        "couleur": "aubergine noir",
+        "role": "ligne",
+        "quantite_estimee": 1,
+        "orientation": "profil",
+        "certitude": "haute"
+      }
+    ],
+    "couleurs": {
+      "schema": "monochrome",
+      "dominantes": [
+        "aubergine-noir #2a0f1e",
+        "prune #4d2340",
+        "bordeaux sombre #4a0f2a",
+        "chocolat noir #2a1418"
+      ],
+      "accents": [
+        "crème-vert vanda #d8d2a8",
+        "vert tendre #6fae4a",
+        "liseré ardoise-crème #b9b39a",
+        "blanc de la coupe #e6e4df"
+      ],
+      "valeurs": "≈ 85 % de valeurs très foncées; les seules plages claires (vandas mouchetés, coupe blanche) sont en bas: le clair ancre, le foncé s'élève; silhouette sombre découpée sur fond blanc cassé (#c9c9c1).",
+      "temperature": "froide",
+      "notes": "Monochrome noir réussi grâce à la variété des textures (pompon, pétale lisse, laqué, moucheté) et au vert tendre qui empêche l'effet bloc."
+    },
+    "groupements": "Chrysanthèmes en un seul amas central de 6-7 têtes jointives; hellébores dispersés en nombre impair, tous à des hauteurs différentes; vandas répartis en triangle; anthuriums en paire sur le même flanc gauche, décalés en hauteur.",
+    "profondeur": "Anthurium et vanda bas au premier plan, débordant sur la coupe; chrysanthèmes en plan médian; hellébores hauts en arrière-plan aérien avec orientations variées (face, nutante, dos); la brillance laquée des anthuriums capte la lumière au premier plan.",
+    "mouvement": "Spirale ascendante: du vanda bas-gauche au calla gauche, puis zigzag des hellébores jusqu'au sommet centre-droit; le calla horizontal crée un contre-mouvement latéral.",
+    "feuillage": "rare — 5 à 8 petites feuilles vert tendre (#6fae4a) aux bouts des tiges et au col; accent de couleur et allègement.",
+    "contenant": {
+      "type": "coupe sur pied (compotier) posée sur un socle-cube",
+      "couleur": "blanc mat #e6e4df",
+      "matiere": "céramique mate, socle en plâtre/béton blanc",
+      "rapport_au_bouquet": "Coupe minuscule (≈ 1/5 de la hauteur et ≈ 1/3 de la largeur de la composition): la masse paraît flotter; le blanc du contenant répond au fond et isole la masse sombre."
+    },
+    "pourquoi_ca_marche": "Le monochrome très sombre reste lisible grâce à la diversité des textures et à la répétition de quelques taches claires (vandas, liserés d'hellébores). Le contraste entre une base compacte et des lignes hautes aériennes donne une silhouette élégante. La petite coupe blanche sur socle donne de la hauteur et un contraste net. Les hellébores nutants à hauteurs toutes différentes rendent la partie haute naturelle.",
+    "regles": [
+      "Pour un monochrome foncé, multiplier les textures (pompon, laqué, moucheté, pétale fin) et ajouter 5-10 % de vert tendre.",
+      "Base dense = 40-50 % de la hauteur totale; lignes aériennes au-dessus jusqu'à ≈ 5× la hauteur d'une coupe basse.",
+      "Fleurs de ligne en nombre impair (5-7), chacune à une hauteur différente, orientations variées.",
+      "Distribuer la fleur contrastée (vanda) en triangle, un exemplaire débordant du bord du contenant.",
+      "Contenant clair et petit sous une composition sombre: contraste de valeur maximal au point d'ancrage."
+    ]
+  },
+  {
+    "n": 19,
+    "fichier": "2b3a8a590d17dbfdec0dfe8a52fc3c8f.jpg",
+    "type": "bouquet en vase",
+    "doublon_de": null,
+    "silhouette": {
+      "forme": "éventail",
+      "description": "Grand éventail asymétrique de hall d'hôtel: nérines au sommet sur tiges longues (la plus haute en diagonale à droite), callas projetés horizontalement à gauche à mi-hauteur, masse d'orchidées/fleurs roses, gerberas et anthurium au-dessus du col, amarante bordeaux qui tombe des deux côtés jusqu'à la table.",
+      "largeur_sur_hauteur": 0.74,
+      "hauteur_bouquet_sur_contenant": 3.6,
+      "centre_de_masse": "centre, à ≈ 1,1 hauteur de vase au-dessus du col, légèrement à gauche de l'axe du vase",
+      "debordement_bas": "cascade longue",
+      "espace_negatif": "moyen",
+      "symetrie": "équilibre asymétrique"
+    },
+    "couches": [
+      {
+        "couche": "lignes & structure",
+        "elements": [
+          "nérines sur tiges hautes",
+          "tiges vertes droites apparentes",
+          "tige ondulée vert-jaune"
+        ],
+        "placement": "nérines entre 60 et 100 % de la hauteur: la plus haute en diagonale à droite (≈ 3,6× la hauteur du vase au-dessus du col), un groupe de 3 en haut-gauche; tiges nues graphiques visibles au centre",
+        "nb_estime": 8
+      },
+      {
+        "couche": "focale",
+        "elements": [
+          "anthurium vert pistache bordé rose",
+          "grappe de fleurs roses (orchidées/lis)"
+        ],
+        "placement": "anthurium à droite à ≈ 1 hauteur de vase au-dessus du col, face; grappe rose au centre-gauche, légèrement plus haut",
+        "nb_estime": 3
+      },
+      {
+        "couche": "secondaire",
+        "elements": [
+          "gerberas araignée pêche/saumon",
+          "callas crème rosé"
+        ],
+        "placement": "gerberas en grappe de 3-4 au centre-droit; callas pointés vers la gauche, horizontaux, sur 2 hauteurs",
+        "nb_estime": 7
+      },
+      {
+        "couche": "remplissage/texture",
+        "elements": [
+          "mufliers rose pâle",
+          "hortensia bordeaux antique",
+          "hortensia vert"
+        ],
+        "placement": "bas du bouquet, au col, pour masquer l'ouverture",
+        "nb_estime": 5
+      },
+      {
+        "couche": "retombées",
+        "elements": [
+          "amarante retombante bordeaux"
+        ],
+        "placement": "4-5 chutes: 2 à gauche (une jusqu'à la table), 1 au centre-gauche, 1-2 à droite le long de l'anthurium; longueur 0,5 à 1× la hauteur du vase sous le col",
+        "nb_estime": 5
+      }
+    ],
+    "fleurs": [
+      {
+        "nom_fr": "nérine",
+        "latin": "Nerine sarniensis / N. bowdenii (hybride)",
+        "variete_probable": null,
+        "couleur": "corail-rose vif",
+        "role": "ligne",
+        "quantite_estimee": 6,
+        "orientation": "variée",
+        "certitude": "haute"
+      },
+      {
+        "nom_fr": "amarante queue-de-renard",
+        "latin": "Amaranthus caudatus",
+        "variete_probable": null,
+        "couleur": "bordeaux-vin",
+        "role": "retombée",
+        "quantite_estimee": 5,
+        "orientation": "variée",
+        "certitude": "haute"
+      },
+      {
+        "nom_fr": "calla",
+        "latin": "Zantedeschia",
+        "variete_probable": "'Crystal Blush' (probable)",
+        "couleur": "crème à pointe rosée",
+        "role": "ligne",
+        "quantite_estimee": 3,
+        "orientation": "profil",
+        "certitude": "haute"
+      },
+      {
+        "nom_fr": "fleurs roses à tépales pointus (cymbidium rose, lis rose ou tulipe à fleur de lis)",
+        "latin": "Cymbidium / Lilium / Tulipa (indéterminé)",
+        "variete_probable": null,
+        "couleur": "rose orchidée",
+        "role": "focale",
+        "quantite_estimee": 7,
+        "orientation": "variée",
+        "certitude": "faible"
+      },
+      {
+        "nom_fr": "gerbera araignée",
+        "latin": "Gerbera jamesonii (type 'Pasta'/spider)",
+        "variete_probable": null,
+        "couleur": "pêche et saumon, cœur vert ou sombre",
+        "role": "secondaire",
+        "quantite_estimee": 4,
+        "orientation": "trois-quarts",
+        "certitude": "haute"
+      },
+      {
+        "nom_fr": "anthurium",
+        "latin": "Anthurium andraeanum",
+        "variete_probable": null,
+        "couleur": "vert pistache bordé et veiné rose, spadice rose",
+        "role": "focale",
+        "quantite_estimee": 1,
+        "orientation": "face",
+        "certitude": "haute"
+      },
+      {
+        "nom_fr": "muflier",
+        "latin": "Antirrhinum majus",
+        "variete_probable": null,
+        "couleur": "rose pâle à boutons verts",
+        "role": "remplissage",
+        "quantite_estimee": 3,
+        "orientation": "profil",
+        "certitude": "haute"
+      },
+      {
+        "nom_fr": "hortensia antique",
+        "latin": "Hydrangea macrophylla",
+        "variete_probable": null,
+        "couleur": "bordeaux-vert",
+        "role": "remplissage",
+        "quantite_estimee": 2,
+        "orientation": "face",
+        "certitude": "moyenne"
+      },
+      {
+        "nom_fr": "hortensia vert (ou chou ornemental)",
+        "latin": "Hydrangea / Brassica (indéterminé)",
+        "variete_probable": null,
+        "couleur": "vert tendre",
+        "role": "remplissage",
+        "quantite_estimee": 1,
+        "orientation": "face",
+        "certitude": "faible"
+      },
+      {
+        "nom_fr": "tige ondulée (allium spiralé ou jonc)",
+        "latin": "Allium 'Snakeball' ou Juncus effusus 'Spiralis' (indéterminé)",
+        "variete_probable": null,
+        "couleur": "vert-jaune",
+        "role": "accent",
+        "quantite_estimee": 1,
+        "orientation": "profil",
+        "certitude": "faible"
+      }
+    ],
+    "couleurs": {
+      "schema": "analogue",
+      "dominantes": [
+        "corail-rose #ee5f6e",
+        "rose orchidée #d9789a",
+        "pêche #f2b48e",
+        "bordeaux-vin #7a1f35"
+      ],
+      "accents": [
+        "vert pistache #d6e3a2",
+        "vert tige #4f8f3a",
+        "vert sapin émaillé #1f3326",
+        "crème #f0deab"
+      ],
+      "valeurs": "Clairs et moyens dans le haut (nérines, gerberas, callas), foncés en bas et en périphérie (amarante, hortensia, vase vert sombre): le poids sombre descend vers la table.",
+      "temperature": "chaude",
+      "notes": "Le vase vert sapin et l'anthurium pistache jouent la complémentarité rose/vert; décor beige-doré et lumière chaude du hall unifient l'ensemble."
+    },
+    "groupements": "Nérines en 2 groupes (3 serrées en haut-gauche, 1 isolée tout en haut à droite, 1-2 à droite à mi-hauteur); gerberas en grappe de 3-4 au centre-droit; fleurs roses en un amas à gauche; amarante en 5 chutes de longueurs différentes; callas en paire à gauche.",
+    "profondeur": "Anthurium et mufliers au premier plan, larges et de face; gerberas et fleurs roses au plan médian; nérines et tiges nues en arrière-plan, plus petites; l'amarante passe devant et derrière le vase; les callas en profil semblent partir vers l'extérieur.",
+    "mouvement": "Grande diagonale montante vers la droite (nérine la plus haute) opposée aux callas horizontaux vers la gauche; les amarantes tirent vers le bas; la tige ondulée crée un petit contrepoint ludique au centre.",
+    "feuillage": "rare — pratiquement aucune feuille: les tiges vertes nues font office de vert graphique.",
+    "contenant": {
+      "type": "vase boule à épaule et col étroit",
+      "couleur": "vert sapin émaillé brillant #1f3326",
+      "matiere": "céramique émaillée",
+      "rapport_au_bouquet": "Vase ≈ 1/4,5 de la hauteur totale; bouquet ≈ 3,6× le vase au-dessus du col; amarante qui déborde jusqu'au plateau; vase sombre = ancrage visuel du bas."
+    },
+    "pourquoi_ca_marche": "Palette analogue chaude (corail, rose, pêche, bordeaux) unifiée et relevée par le vert pistache de l'anthurium et le vert sombre du vase. Les lignes dans trois directions (verticales des nérines, horizontales des callas, chutes d'amarante) créent un mouvement lisible de loin, idéal pour un hall. Les gros volumes restent près du col, les éléments fins en périphérie.",
+    "regles": [
+      "Composer en 3 directions: lignes hautes (≥ 3× le vase), lignes horizontales latérales (callas) et chutes sous le col (amarante).",
+      "Garder les fleurs les plus grosses (anthurium, hortensia) à moins d'une hauteur de vase au-dessus du col.",
+      "Palette analogue chaude + un vert froid (pistache ou vase) comme complémentaire.",
+      "Répartir 4-5 retombées de longueurs différentes (0,3 à 1× la hauteur du vase) des deux côtés, la plus longue du côté opposé à la ligne la plus haute.",
+      "Laisser les tiges nues visibles comme éléments graphiques plutôt que d'ajouter du feuillage."
+    ]
+  },
+  {
+    "n": 20,
+    "fichier": "2e2bb20715b47b0e8975b068cc4abeb5.jpg",
+    "type": "bouquet en vase",
+    "doublon_de": null,
+    "silhouette": {
+      "forme": "éventail",
+      "description": "Étoile rayonnante d'inspiration chinoise: noyau dense et vertical de lys rouges/bordeaux posé sur une urne noire sur pied, d'où rayonnent 6 callas sur tiges fines dans 6 directions (haut, haut-gauche, droite horizontale, bas-gauche, bas-gauche court, chute sous le col).",
+      "largeur_sur_hauteur": 0.86,
+      "hauteur_bouquet_sur_contenant": 2.3,
+      "centre_de_masse": "centre-gauche, juste au-dessus du col (noyau de lys entre 0 et 1,5 hauteur de vase au-dessus du col)",
+      "debordement_bas": "léger",
+      "espace_negatif": "moyen",
+      "symetrie": "équilibre asymétrique"
+    },
+    "couches": [
+      {
+        "couche": "lignes & structure",
+        "elements": [
+          "callas bicolores sur tiges vertes nues"
+        ],
+        "placement": "6 rayons: le plus haut ≈ 2,3× la hauteur du vase au-dessus du col (centre-droit), un en haut-gauche plus court, un horizontal à droite (≈ 1,3× la largeur du noyau), deux vers le bas-gauche à 30-45°, un pendant sous le col",
+        "nb_estime": 6
+      },
+      {
+        "couche": "focale",
+        "elements": [
+          "lys asiatiques bordeaux"
+        ],
+        "placement": "5 fleurs en colonne décalée à gauche du centre, faces vers l'avant et vers le bas, la plus grosse en bas au-dessus du col",
+        "nb_estime": 5
+      },
+      {
+        "couche": "secondaire",
+        "elements": [
+          "lys asiatiques rouge-corail"
+        ],
+        "placement": "2 fleurs plus claires en périphérie haute du noyau (haut-gauche et droite)",
+        "nb_estime": 2
+      },
+      {
+        "couche": "accents",
+        "elements": [
+          "étamines brunes des lys",
+          "gorges violet-rose des callas"
+        ],
+        "placement": "au cœur des fleurs; petites touches qui relient lys et callas",
+        "nb_estime": 13
+      }
+    ],
+    "fleurs": [
+      {
+        "nom_fr": "lys asiatique",
+        "latin": "Lilium (hybride asiatique)",
+        "variete_probable": "type 'Mapira' / 'Landini' (probable)",
+        "couleur": "bordeaux profond",
+        "role": "focale",
+        "quantite_estimee": 5,
+        "orientation": "face",
+        "certitude": "haute"
+      },
+      {
+        "nom_fr": "lys asiatique",
+        "latin": "Lilium (hybride asiatique)",
+        "variete_probable": null,
+        "couleur": "rouge corail à bords orangés",
+        "role": "secondaire",
+        "quantite_estimee": 2,
+        "orientation": "face",
+        "certitude": "haute"
+      },
+      {
+        "nom_fr": "calla bicolore",
+        "latin": "Zantedeschia",
+        "variete_probable": "'Picasso' (probable)",
+        "couleur": "crème à gorge violet-rose, pointe rosée",
+        "role": "ligne",
+        "quantite_estimee": 6,
+        "orientation": "profil",
+        "certitude": "moyenne"
+      }
+    ],
+    "couleurs": {
+      "schema": "analogue",
+      "dominantes": [
+        "bordeaux #5e0b1c",
+        "rouge cramoisi #8a1520",
+        "rouge corail #c8483f"
+      ],
+      "accents": [
+        "crème #efe9d0",
+        "violet-rose #b06aa8",
+        "vert tige #6b8f3a",
+        "noir urne #121414"
+      ],
+      "valeurs": "Noyau foncé (bordeaux) au centre-bas, lys corail plus clairs en périphérie haute, callas très clairs aux extrémités: gradient foncé (centre) → clair (bords).",
+      "temperature": "chaude",
+      "notes": "Fond beige-gris (#baad9c) et sellette en bois brun sombre: cadrage muséal qui fait ressortir la saturation des lys."
+    },
+    "groupements": "Lys concentrés en un seul noyau compact (≈ 7 fleurs sur 3-4 tiges); callas toujours isolés, jamais deux dans la même direction; les deux lys corail encadrent le noyau bordeaux de part et d'autre.",
+    "profondeur": "Lys bordeaux du bas au premier plan, débordant devant l'urne; lys du haut en retrait; callas en profil qui partent vers l'avant ou l'arrière; une calla pend devant le pied de l'urne.",
+    "mouvement": "Rayonnement centrifuge depuis le col: l'œil part du noyau et suit chaque calla vers l'extérieur; la calla la plus haute et celle de droite dessinent un L inversé qui équilibre la masse décalée à gauche.",
+    "feuillage": "aucun — feuilles de lys retirées; seules les tiges vertes des callas apportent du vert.",
+    "contenant": {
+      "type": "urne Médicis sur pied posée sur une sellette de style chinois",
+      "couleur": "noir mat #121414, bois brun sombre #3a2a22",
+      "matiere": "céramique ou résine noire à reliefs, bois massif",
+      "rapport_au_bouquet": "Urne étroite ≈ 1/3 de la hauteur totale; noyau floral ≈ 2,5× la largeur du col; la sellette surélève et donne un cadre architecturé."
+    },
+    "pourquoi_ca_marche": "Contraste de densité: un noyau très plein et sombre contre des lignes très fines et claires. Les callas crème répètent la même forme dans toutes les directions et créent un rythme. La palette rouge, limitée à deux valeurs plus un crème, reste noble. L'urne noire et la sellette donnent une base solennelle.",
+    "regles": [
+      "Noyau dense d'une seule espèce (5-7 fleurs) + 5-7 lignes fines d'une autre espèce qui rayonnent hors du noyau.",
+      "Rayons de longueurs toutes différentes (0,5 à 1,5× le diamètre du noyau), angles espacés d'au moins 40°.",
+      "Faire plonger une ligne sous le col pour casser la base.",
+      "Associer une couleur saturée sombre (bordeaux), son ton plus clair (corail) et un neutre clair pour les lignes.",
+      "Retirer le feuillage quand les lignes sont des tiges nues graphiques."
+    ]
+  },
+  {
+    "n": 21,
+    "fichier": "2ec3993214ddacc8fa8d420cde9152b1.jpg",
+    "type": "bouquet en vase",
+    "doublon_de": null,
+    "silhouette": {
+      "forme": "horizontale",
+      "description": "Masse compacte et basse (orchidées mouchetées, callas, piéris) posée sur un court cylindre chromé, prolongée par des lignes calligraphiques: tiges d'allium qui bouclent au-dessus et s'étirent jusqu'aux bords du cadre, tige d'orchidée en boutons vers la gauche, calla horizontal à gauche.",
+      "largeur_sur_hauteur": 1.35,
+      "hauteur_bouquet_sur_contenant": 3.8,
+      "centre_de_masse": "centre-droit, juste au-dessus du col (le vase est lui-même décalé à droite du cadre); les lignes de gauche font contrepoids",
+      "debordement_bas": "léger",
+      "espace_negatif": "fort",
+      "symetrie": "équilibre asymétrique"
+    },
+    "couches": [
+      {
+        "couche": "lignes & structure",
+        "elements": [
+          "alliums à tiges bouclées",
+          "tige d'orchidée en boutons",
+          "calla crème horizontal"
+        ],
+        "placement": "boucle la plus haute ≈ 3,8× la hauteur du vase au-dessus du col, à droite du centre; une tige file horizontalement à gauche jusqu'à ≈ 0,5 largeur du cadre et finit par une tête ronde; deux autres bouclent à droite et en bas-droit",
+        "nb_estime": 6
+      },
+      {
+        "couche": "focale",
+        "elements": [
+          "phalaenopsis bordeaux mouchetés"
+        ],
+        "placement": "deux groupes: 2-3 fleurs au sommet de la masse (centre), 2 fleurs devant au centre-bas, au-dessus du col",
+        "nb_estime": 5
+      },
+      {
+        "couche": "secondaire",
+        "elements": [
+          "callas bicolores crème/violet",
+          "calla violet foncé"
+        ],
+        "placement": "callas crème à gauche (horizontal) et à droite (montant), calla violet en profil en haut-droit",
+        "nb_estime": 4
+      },
+      {
+        "couche": "remplissage/texture",
+        "elements": [
+          "piéris (grappes de clochettes crème)"
+        ],
+        "placement": "jupe continue autour du col, qui retombe devant et sur les côtés du cylindre",
+        "nb_estime": 12
+      },
+      {
+        "couche": "feuillage",
+        "elements": [
+          "feuilles de calathea rayées"
+        ],
+        "placement": "1-2 feuilles sombres au cœur, derrière les orchidées",
+        "nb_estime": 2
+      },
+      {
+        "couche": "accents",
+        "elements": [
+          "hellébores crème",
+          "fleur blanche à cœur bordeaux",
+          "fleur crème mouchetée"
+        ],
+        "placement": "petites touches claires en périphérie: gauche (fleur blanche), centre-droit et bas-droit (hellébores), derrière les orchidées (fleur mouchetée)",
+        "nb_estime": 4
+      }
+    ],
+    "fleurs": [
+      {
+        "nom_fr": "orchidée phalaenopsis mouchetée",
+        "latin": "Phalaenopsis (hybride type Harlequin)",
+        "variete_probable": null,
+        "couleur": "bordeaux-vin moucheté sur blanc",
+        "role": "focale",
+        "quantite_estimee": 5,
+        "orientation": "face",
+        "certitude": "haute"
+      },
+      {
+        "nom_fr": "calla bicolore",
+        "latin": "Zantedeschia",
+        "variete_probable": "'Picasso' (probable)",
+        "couleur": "crème à gorge violette",
+        "role": "secondaire",
+        "quantite_estimee": 3,
+        "orientation": "profil",
+        "certitude": "moyenne"
+      },
+      {
+        "nom_fr": "calla violet",
+        "latin": "Zantedeschia",
+        "variete_probable": null,
+        "couleur": "aubergine-lilas",
+        "role": "secondaire",
+        "quantite_estimee": 1,
+        "orientation": "profil",
+        "certitude": "moyenne"
+      },
+      {
+        "nom_fr": "piéris (andromède du Japon)",
+        "latin": "Pieris japonica",
+        "variete_probable": null,
+        "couleur": "crème rosé",
+        "role": "remplissage",
+        "quantite_estimee": 12,
+        "orientation": "variée",
+        "certitude": "haute"
+      },
+      {
+        "nom_fr": "allium à tige spiralée",
+        "latin": "Allium 'Snakeball'",
+        "variete_probable": "'Snakeball'",
+        "couleur": "tiges vert sombre, têtes vertes",
+        "role": "ligne",
+        "quantite_estimee": 5,
+        "orientation": "variée",
+        "certitude": "moyenne"
+      },
+      {
+        "nom_fr": "hellébore crème",
+        "latin": "Helleborus × hybridus",
+        "variete_probable": null,
+        "couleur": "crème-chartreuse",
+        "role": "accent",
+        "quantite_estimee": 2,
+        "orientation": "trois-quarts",
+        "certitude": "moyenne"
+      },
+      {
+        "nom_fr": "fleur blanche à cœur bordeaux (anémone 'Panda' ou cosmos)",
+        "latin": "Anemone coronaria ou Cosmos bipinnatus (indéterminé)",
+        "variete_probable": null,
+        "couleur": "blanc, cœur bordeaux",
+        "role": "accent",
+        "quantite_estimee": 1,
+        "orientation": "trois-quarts",
+        "certitude": "faible"
+      },
+      {
+        "nom_fr": "fleur crème mouchetée (œillet ou chrysanthème)",
+        "latin": "indéterminé",
+        "variete_probable": null,
+        "couleur": "crème moucheté mauve",
+        "role": "remplissage",
+        "quantite_estimee": 1,
+        "orientation": "face",
+        "certitude": "faible"
+      },
+      {
+        "nom_fr": "calathea (feuille)",
+        "latin": "Goeppertia sp.",
+        "variete_probable": null,
+        "couleur": "vert foncé rayé argent",
+        "role": "feuillage",
+        "quantite_estimee": 2,
+        "orientation": "variée",
+        "certitude": "moyenne"
+      }
+    ],
+    "couleurs": {
+      "schema": "neutres + accent",
+      "dominantes": [
+        "bordeaux-vin #7a2038",
+        "crème ivoire #e2dac6",
+        "vert sombre #3e4a32"
+      ],
+      "accents": [
+        "aubergine-lilas #5e4a6a",
+        "argent chromé #b8b4ae",
+        "chartreuse pâle #dfe2a8"
+      ],
+      "valeurs": "Foncés (orchidées, calathea, calla violet) au centre et en haut de la masse; clairs (piéris, callas crème) en bas et en périphérie: base lumineuse et cœur sombre, sur fond beige clair (#dacdbc).",
+      "temperature": "mixte",
+      "notes": "Le chrome reflète les couleurs et ajoute une note contemporaine; les tiges vert sombre dessinent sur le mur comme de l'encre."
+    },
+    "groupements": "Orchidées en deux paires/triplets; piéris en couronne continue autour du col (jupe); alliums dispersés en 4-5 lignes isolées de longueurs différentes; callas orientés dans 3 directions différentes.",
+    "profondeur": "Orchidées du bas et piéris au premier plan; calathea et cœur sombre au fond; callas tournés en profil; les tiges d'allium passent devant et derrière les fleurs et créent des plans dans le vide.",
+    "mouvement": "Lignes ondulantes et boucles qui sortent de la masse puis y ramènent l'œil; diagonale de la gauche (tige en boutons, calla) vers le haut-droit (calla violet, grande boucle).",
+    "feuillage": "rare — 2 feuilles de calathea vert foncé/argent comme fond texturé; le piéris joue le rôle de feuillage fleuri.",
+    "contenant": {
+      "type": "cylindre bas",
+      "couleur": "argent chromé miroir",
+      "matiere": "métal poli (inox/chrome)",
+      "rapport_au_bouquet": "Vase étroit et bas (≈ 0,2 de la largeur de la composition, ≈ 1/4,5 de la hauteur), en partie masqué par la jupe de piéris; posé sur un socle-cube blanc."
+    },
+    "pourquoi_ca_marche": "Contraste fort entre une masse compacte et des lignes calligraphiques très libres. Le piéris retombant adoucit le cylindre métallique et relie la masse au contenant. Les orchidées mouchetées apportent une texture graphique qui répond aux points des têtes d'allium. La palette restreinte (bordeaux, crème, vert sombre) laisse les lignes dominer.",
+    "regles": [
+      "Ajouter 3-5 lignes très souples (boucles, S) qui sortent de la masse jusqu'à 1-1,5× sa largeur, chacune terminée par un petit point (tête ronde).",
+      "Habiller le col d'une jupe retombante à petites clochettes sur 20-30 % de la hauteur du vase.",
+      "Placer la fleur la plus sombre et la plus texturée au centre, les claires en couronne.",
+      "Un contenant métallique bas convient aux compositions horizontales (L/H ≈ 1,3-1,5).",
+      "Orienter les callas dans des directions différentes (gauche, haut-droit, profil) pour créer du mouvement."
+    ]
+  },
+  {
+    "n": 22,
+    "fichier": "31205100a98397f3eb952d38dbf84df3.jpg",
+    "type": "bouquet tenu en main",
+    "doublon_de": null,
+    "silhouette": {
+      "forme": "cascade",
+      "description": "Bouquet de mariée en cascade tenu à l'horizontale (main à droite): tête dense et arrondie dans la moitié supérieure, lignes légères qui s'échappent vers le haut (calla rose, oncidium pâle), spray d'oncidium bordeaux en diagonale vers le bas-gauche, chute d'amarante verticale sous la tête jusqu'au bord du cadre (≥ 1,2× la hauteur de la tête).",
+      "largeur_sur_hauteur": 0.66,
+      "hauteur_bouquet_sur_contenant": null,
+      "centre_de_masse": "centre légèrement à droite, à ≈ 45 % de la hauteur depuis le haut, au niveau de la prise en main",
+      "debordement_bas": "cascade longue",
+      "espace_negatif": "moyen",
+      "symetrie": "équilibre asymétrique"
+    },
+    "couches": [
+      {
+        "couche": "lignes & structure",
+        "elements": [
+          "calla rose pâle sur tige verte arquée",
+          "oncidium rose pâle tacheté",
+          "sprays d'oncidium bordeaux"
+        ],
+        "placement": "calla vers le haut-gauche à ≈ 45°; oncidium pâle au sommet; sprays bordeaux en diagonales haut-droit et bas-gauche qui prolongent la tête de ≈ 50 %",
+        "nb_estime": 5
+      },
+      {
+        "couche": "focale",
+        "elements": [
+          "anthuriums vieux rose veinés",
+          "cymbidiums framboise"
+        ],
+        "placement": "anthurium haut au centre-droit (plus gros élément, ≈ 30 % de la largeur), second anthurium à droite en profil; grappe de cymbidiums au centre-gauche",
+        "nb_estime": 4
+      },
+      {
+        "couche": "secondaire",
+        "elements": [
+          "phalaenopsis blancs",
+          "calla blanc",
+          "callas noirs/aubergine",
+          "phalaenopsis blanc à labelle moucheté"
+        ],
+        "placement": "blancs groupés en bas-droit de la tête et au centre; callas sombres enfoncés entre les focales",
+        "nb_estime": 9
+      },
+      {
+        "couche": "remplissage/texture",
+        "elements": [
+          "mini-oncidiums blancs",
+          "lisianthus blanc"
+        ],
+        "placement": "entre les grosses têtes, autour de l'anthurium haut",
+        "nb_estime": 4
+      },
+      {
+        "couche": "retombées",
+        "elements": [
+          "amarante retombante framboise"
+        ],
+        "placement": "3-4 chutes sous le centre de la tête, longueurs différentes, la plus longue ≥ 1,2× la hauteur de la tête",
+        "nb_estime": 4
+      }
+    ],
+    "fleurs": [
+      {
+        "nom_fr": "anthurium",
+        "latin": "Anthurium andraeanum",
+        "variete_probable": null,
+        "couleur": "vieux rose/pêche veiné",
+        "role": "focale",
+        "quantite_estimee": 2,
+        "orientation": "variée",
+        "certitude": "haute"
+      },
+      {
+        "nom_fr": "orchidée cymbidium",
+        "latin": "Cymbidium",
+        "variete_probable": null,
+        "couleur": "framboise-bordeaux, labelle blanc taché",
+        "role": "focale",
+        "quantite_estimee": 7,
+        "orientation": "variée",
+        "certitude": "haute"
+      },
+      {
+        "nom_fr": "cymbidium rose-mauve",
+        "latin": "Cymbidium",
+        "variete_probable": null,
+        "couleur": "rose mauve",
+        "role": "secondaire",
+        "quantite_estimee": 1,
+        "orientation": "profil",
+        "certitude": "moyenne"
+      },
+      {
+        "nom_fr": "phalaenopsis blanc (mini)",
+        "latin": "Phalaenopsis",
+        "variete_probable": null,
+        "couleur": "blanc",
+        "role": "secondaire",
+        "quantite_estimee": 5,
+        "orientation": "face",
+        "certitude": "haute"
+      },
+      {
+        "nom_fr": "orchidée blanche à labelle moucheté",
+        "latin": "Phalaenopsis ou Oncidium (indéterminé)",
+        "variete_probable": null,
+        "couleur": "blanc moucheté magenta",
+        "role": "secondaire",
+        "quantite_estimee": 1,
+        "orientation": "face",
+        "certitude": "moyenne"
+      },
+      {
+        "nom_fr": "oncidium rose pâle tacheté",
+        "latin": "Oncidium",
+        "variete_probable": "type 'Twinkle' (probable)",
+        "couleur": "rose lilas tacheté, centre jaune",
+        "role": "ligne",
+        "quantite_estimee": 2,
+        "orientation": "variée",
+        "certitude": "moyenne"
+      },
+      {
+        "nom_fr": "oncidium bordeaux",
+        "latin": "Oncidium",
+        "variete_probable": "type 'Sharry Baby' (probable)",
+        "couleur": "bordeaux",
+        "role": "ligne",
+        "quantite_estimee": 3,
+        "orientation": "variée",
+        "certitude": "moyenne"
+      },
+      {
+        "nom_fr": "calla rose pâle",
+        "latin": "Zantedeschia",
+        "variete_probable": null,
+        "couleur": "rose poudré",
+        "role": "ligne",
+        "quantite_estimee": 2,
+        "orientation": "profil",
+        "certitude": "haute"
+      },
+      {
+        "nom_fr": "calla blanc",
+        "latin": "Zantedeschia aethiopica",
+        "variete_probable": null,
+        "couleur": "blanc, spadice jaune",
+        "role": "secondaire",
+        "quantite_estimee": 1,
+        "orientation": "face",
+        "certitude": "haute"
+      },
+      {
+        "nom_fr": "calla noir",
+        "latin": "Zantedeschia",
+        "variete_probable": "'Black Star' (probable)",
+        "couleur": "aubergine noir",
+        "role": "secondaire",
+        "quantite_estimee": 3,
+        "orientation": "profil",
+        "certitude": "moyenne"
+      },
+      {
+        "nom_fr": "lisianthus blanc",
+        "latin": "Eustoma grandiflorum",
+        "variete_probable": null,
+        "couleur": "blanc",
+        "role": "remplissage",
+        "quantite_estimee": 1,
+        "orientation": "trois-quarts",
+        "certitude": "faible"
+      },
+      {
+        "nom_fr": "amarante queue-de-renard",
+        "latin": "Amaranthus caudatus",
+        "variete_probable": null,
+        "couleur": "framboise-bordeaux",
+        "role": "retombée",
+        "quantite_estimee": 4,
+        "orientation": "variée",
+        "certitude": "haute"
+      }
+    ],
+    "couleurs": {
+      "schema": "tonal",
+      "dominantes": [
+        "framboise-bordeaux #8b1d45",
+        "vieux rose pêche #c98a86",
+        "blanc #f4f3f0"
+      ],
+      "accents": [
+        "aubergine noir #3a0f22",
+        "jaune oncidium #e2b93b",
+        "vert tige #8bc34a",
+        "rose poudré #e3c3cc"
+      ],
+      "valeurs": "Blancs groupés en bas-droit de la tête et au centre; foncés (cymbidiums, callas noirs, amarante) au centre-gauche et dans la chute; extrémités hautes très claires et transparentes (oncidium pâle, calla rose): le bouquet s'allège vers le haut et s'assombrit vers le bas.",
+      "temperature": "mixte",
+      "notes": "Les veines pêche de l'anthurium font le lien entre les roses et les bordeaux; fond blanc froid (#e3e4dc)."
+    },
+    "groupements": "Cymbidiums en un amas central-gauche; phalaenopsis blancs en grappe compacte de 4-5 en bas-droit; anthuriums en paire (un haut, un bas-droit, orientations différentes); oncidiums en traînées linéaires aux extrémités; amarante en un faisceau unique.",
+    "profondeur": "Anthurium haut au premier plan, de face, l'autre en profil au bord; callas noirs enfoncés entre les têtes (trous sombres = profondeur); oncidiums fins en arrière-plan qui dépassent; phalaenopsis blancs en avant sur le bas.",
+    "mouvement": "Mouvement principal vertical vers le bas (amarante) contrebalancé par l'envol haut-gauche du calla et la diagonale bas-gauche du spray d'oncidium; parcours du regard: anthurium → cymbidiums → blancs → chute.",
+    "feuillage": "aucun — seules les tiges vertes des callas et les hampes des orchidées.",
+    "contenant": {
+      "type": "aucun — bouquet tenu à la main, tiges masquées",
+      "couleur": "-",
+      "matiere": "-",
+      "rapport_au_bouquet": "La main tient le bouquet à l'horizontale au niveau du centre de masse; aucun liage visible; la chute d'amarante sert de traîne."
+    },
+    "pourquoi_ca_marche": "Des fleurs exotiques (anthuriums, orchidées) dans une palette tonale framboise/vieux rose/blanc donnent un bouquet luxueux mais cohérent. La tête compacte contraste avec des sorties légères dans 4 directions et une cascade verticale qui allonge la silhouette. Les callas noirs créent des trous d'ombre qui donnent de la profondeur sans sortir de la palette.",
+    "regles": [
+      "Bouquet cascade: tête ≈ 45 % de la hauteur totale, chute ≥ 1× la hauteur de la tête, alignée sous le centre de masse.",
+      "Insérer 2-3 fleurs presque noires au cœur pour creuser la profondeur d'une palette tonale.",
+      "Faire sortir des sprays d'orchidées fines en diagonale (haut-droit, bas-gauche) sur 30-50 % de la taille de la tête.",
+      "Grouper les blancs en un seul amas décentré (bas-droit) plutôt que de les éparpiller.",
+      "Répéter la fleur focale 2 fois avec deux orientations (face et profil)."
+    ]
+  },
+  {
+    "n": 23,
+    "fichier": "31c091b113ea36a081a366911f5fa714.jpg",
+    "type": "bouquet tenu en main",
+    "doublon_de": null,
+    "silhouette": {
+      "forme": "éventail",
+      "description": "Bouquet en losange rayonnant tenu à l'horizontale par un bras (manchette blanche, veste noire) devant un mur en acier corten: un calla dressé forme la pointe haute, les pois de senteur s'écartent à gauche et à droite, un feuillage fin bordeaux-noir rayonne sur les côtés, ruban rose poudré qui pend sous le liage.",
+      "largeur_sur_hauteur": 1.0,
+      "hauteur_bouquet_sur_contenant": null,
+      "centre_de_masse": "centre, à ≈ 50 % de la hauteur du bouquet, juste au-dessus du poignet",
+      "debordement_bas": "léger",
+      "espace_negatif": "moyen",
+      "symetrie": "équilibre asymétrique"
+    },
+    "couches": [
+      {
+        "couche": "lignes & structure",
+        "elements": [
+          "calla dressé au sommet",
+          "feuillage fin bordeaux-noir",
+          "pois de senteur sur tiges"
+        ],
+        "placement": "calla vertical au sommet, ≈ 25 % au-dessus de la masse; feuillage fin en éventail à gauche et à droite à mi-hauteur; pois de senteur à 10 h et à 3 h",
+        "nb_estime": 10
+      },
+      {
+        "couche": "focale",
+        "elements": [
+          "cymbidiums kaki tachetés à labelle bordeaux"
+        ],
+        "placement": "colonne centrale du haut vers le centre, 2 hampes",
+        "nb_estime": 10
+      },
+      {
+        "couche": "secondaire",
+        "elements": [
+          "callas crème-vert à gorge prune"
+        ],
+        "placement": "grappe de 3 callas ouverts face/trois-quarts en bas-gauche du centre + 1 à droite",
+        "nb_estime": 4
+      },
+      {
+        "couche": "remplissage/texture",
+        "elements": [
+          "limonium mauve"
+        ],
+        "placement": "nuages légers en haut-gauche et en bas autour du ruban",
+        "nb_estime": 5
+      },
+      {
+        "couche": "accents",
+        "elements": [
+          "pois de senteur rose-lilas",
+          "ruban satin rose poudré"
+        ],
+        "placement": "pois aux extrémités horizontales; ruban à deux pans pendant ≈ 0,15-0,2 de la hauteur",
+        "nb_estime": 5
+      }
+    ],
+    "fleurs": [
+      {
+        "nom_fr": "orchidée cymbidium",
+        "latin": "Cymbidium (hybride)",
+        "variete_probable": null,
+        "couleur": "olive-kaki tacheté bordeaux, labelle prune",
+        "role": "focale",
+        "quantite_estimee": 10,
+        "orientation": "variée",
+        "certitude": "haute"
+      },
+      {
+        "nom_fr": "calla bicolore",
+        "latin": "Zantedeschia",
+        "variete_probable": "type 'Picasso' crème-vert (probable)",
+        "couleur": "chartreuse pâle à gorge prune",
+        "role": "secondaire",
+        "quantite_estimee": 5,
+        "orientation": "variée",
+        "certitude": "haute"
+      },
+      {
+        "nom_fr": "pois de senteur",
+        "latin": "Lathyrus odoratus",
+        "variete_probable": null,
+        "couleur": "rose-lilas pâle",
+        "role": "accent",
+        "quantite_estimee": 3,
+        "orientation": "variée",
+        "certitude": "haute"
+      },
+      {
+        "nom_fr": "statice / lavande de mer",
+        "latin": "Limonium sp.",
+        "variete_probable": null,
+        "couleur": "mauve",
+        "role": "remplissage",
+        "quantite_estimee": 5,
+        "orientation": "variée",
+        "certitude": "moyenne"
+      },
+      {
+        "nom_fr": "feuillage fin bordeaux-noir (agonis ou graminée pourpre)",
+        "latin": "Agonis flexuosa 'After Dark' ou Pennisetum pourpre (indéterminé)",
+        "variete_probable": null,
+        "couleur": "bordeaux-noir",
+        "role": "feuillage",
+        "quantite_estimee": 7,
+        "orientation": "variée",
+        "certitude": "faible"
+      }
+    ],
+    "couleurs": {
+      "schema": "complémentaire",
+      "dominantes": [
+        "chartreuse pâle #dfe3a8",
+        "olive-kaki #9a8f4a",
+        "prune-bordeaux #5a1a2e"
+      ],
+      "accents": [
+        "rose-lilas #e2b0d8",
+        "mauve #a85a8e",
+        "rose poudré #f2b8cc",
+        "bordeaux-noir #3a1a22"
+      ],
+      "valeurs": "Clairs (callas, pois de senteur) en couronne, foncés (labelles, feuillage) au centre et sur les bords; fond très foncé (corten brun #3a2219): le bouquet entier se lit comme une tache claire.",
+      "temperature": "mixte",
+      "notes": "Le fond rouille sombre et le sol en béton gris font ressortir le chartreuse; les pastels (pois de senteur, limonium, ruban) adoucissent le contraste complémentaire."
+    },
+    "groupements": "Cymbidiums en une colonne centrale; callas en grappe de 3 en bas-gauche + 2 isolés (sommet, droite); pois de senteur en 3 touffes aux extrémités (haut-gauche, gauche, droite); limonium en nuages diffus.",
+    "profondeur": "Callas du bas au premier plan, ouverts de face; cymbidiums au plan médian; feuillage fin sombre derrière, qui se fond dans le fond; calla du sommet en profil, en arrière.",
+    "mouvement": "Axe vertical (calla) croisé par un axe horizontal (pois de senteur, feuillage fin): croix/losange; le ruban prolonge l'axe vertical vers le bas.",
+    "feuillage": "moyen — feuillage très fin bordeaux-noir en rayons sur les côtés; halo texturé qui fait la transition avec le fond sombre.",
+    "contenant": {
+      "type": "aucun — bouquet tenu à la main, liage noué d'un ruban",
+      "couleur": "ruban rose poudré #f2b8cc",
+      "matiere": "satin",
+      "rapport_au_bouquet": "Ruban à deux pans pendant ≈ 0,15-0,2 de la hauteur du bouquet; tiges cachées; tenu à l'horizontale par un bras venant de la gauche."
+    },
+    "pourquoi_ca_marche": "Le couple chartreuse/prune est présent à la fois dans les callas et dans les cymbidiums: la palette est complexe mais unifiée par la répétition. Les pastels adoucissent l'ensemble. La pointe verticale du calla et les sorties latérales créent une silhouette en losange dynamique. Le fond sombre rouillé révèle la luminosité des chartreuses.",
+    "regles": [
+      "Choisir 2 fleurs qui portent chacune le même couple de couleurs (ex.: chartreuse + prune) pour unifier.",
+      "Une ligne verticale unique au sommet (≈ 20-25 % au-dessus de la masse) + 2 sorties latérales légères = silhouette en losange.",
+      "Entourer la masse d'un halo de feuillage fin et sombre qui se fond dans le fond.",
+      "Ajouter un pastel (rose-lilas) en 2-3 touches aux extrémités pour adoucir un contraste complémentaire.",
+      "Ruban d'une couleur reprise du bouquet, pans longs et inégaux."
+    ]
+  },
+  {
+    "n": 24,
+    "fichier": "34a21795f854948e2a70367783a1d4f5.jpg",
+    "type": "bouquet en vase",
+    "doublon_de": null,
+    "silhouette": {
+      "forme": "libre/sauvage",
+      "description": "Composition 100 % stabilisée et teinte: explosion verticale désordonnée posée sur un soliflore tube chromé; nuage dense à mi-hauteur, panache de graminées fuchsia et ruscus bleus vers le haut, deux anthuriums à deux hauteurs, asparagus qui retombent latéralement et amarante corail qui coule jusqu'à la table, au-delà du pied du vase.",
+      "largeur_sur_hauteur": 0.56,
+      "hauteur_bouquet_sur_contenant": 3.4,
+      "centre_de_masse": "centre, haut: masse perchée à ≈ 1,3 hauteur de vase au-dessus du col (effet nuage sur tige), contrebalancée par la chute d'amarante",
+      "debordement_bas": "cascade longue",
+      "espace_negatif": "faible",
+      "symetrie": "très asymétrique"
+    },
+    "couches": [
+      {
+        "couche": "lignes & structure",
+        "elements": [
+          "graminées plumeuses teintes fuchsia",
+          "ruscus teint bleu pervenche",
+          "asparagus teint rose"
+        ],
+        "placement": "panache vertical en haut-centre-gauche (point le plus haut, coupé par le cadre); ruscus en diagonales vers le haut-gauche et vers la droite; asparagus rose en haut-gauche",
+        "nb_estime": 8
+      },
+      {
+        "couche": "focale",
+        "elements": [
+          "anthurium dégradé violet→rose",
+          "rose stabilisée fuchsia ouverte"
+        ],
+        "placement": "anthurium en haut-droit (point haut côté droit); rose fuchsia au centre légèrement à droite",
+        "nb_estime": 2
+      },
+      {
+        "couche": "secondaire",
+        "elements": [
+          "anthurium magenta",
+          "rose stabilisée bleu glacier",
+          "plume d'autruche lilas"
+        ],
+        "placement": "anthurium magenta au centre-gauche; rose bleue en bord gauche à mi-hauteur; plume derrière la rose fuchsia à droite",
+        "nb_estime": 3
+      },
+      {
+        "couche": "remplissage/texture",
+        "elements": [
+          "asparagus teints jaune et pêche",
+          "hortensias stabilisés rose et vert anis",
+          "gypsophile turquoise",
+          "eryngium turquoise",
+          "eucalyptus vert"
+        ],
+        "placement": "masse centrale autour des focales; gypsophile en bas-gauche; hortensias au col",
+        "nb_estime": 12
+      },
+      {
+        "couche": "retombées",
+        "elements": [
+          "amarante stabilisée corail",
+          "asparagus lavande",
+          "asparagus rouge"
+        ],
+        "placement": "amarante en chute centrale jusqu'à la table (≈ 0,3 de la hauteur totale sous le col); asparagus lavande à droite et rouge à gauche jusqu'au plateau",
+        "nb_estime": 4
+      },
+      {
+        "couche": "accents",
+        "elements": [
+          "herbe de la pampa beige",
+          "petites baies vertes"
+        ],
+        "placement": "touches neutres en bord gauche et au centre-droit",
+        "nb_estime": 2
+      }
+    ],
+    "fleurs": [
+      {
+        "nom_fr": "anthurium stabilisé teint",
+        "latin": "Anthurium andraeanum",
+        "variete_probable": null,
+        "couleur": "dégradé violet → rose",
+        "role": "focale",
+        "quantite_estimee": 1,
+        "orientation": "face",
+        "certitude": "haute"
+      },
+      {
+        "nom_fr": "anthurium stabilisé teint",
+        "latin": "Anthurium andraeanum",
+        "variete_probable": null,
+        "couleur": "magenta",
+        "role": "secondaire",
+        "quantite_estimee": 1,
+        "orientation": "trois-quarts",
+        "certitude": "haute"
+      },
+      {
+        "nom_fr": "rose stabilisée ouverte",
+        "latin": "Rosa",
+        "variete_probable": null,
+        "couleur": "fuchsia",
+        "role": "focale",
+        "quantite_estimee": 1,
+        "orientation": "face",
+        "certitude": "haute"
+      },
+      {
+        "nom_fr": "rose stabilisée",
+        "latin": "Rosa",
+        "variete_probable": null,
+        "couleur": "bleu glacier",
+        "role": "secondaire",
+        "quantite_estimee": 1,
+        "orientation": "face",
+        "certitude": "haute"
+      },
+      {
+        "nom_fr": "graminées plumeuses teintes",
+        "latin": "Pennisetum ou Phalaris (indéterminé)",
+        "variete_probable": null,
+        "couleur": "fuchsia",
+        "role": "ligne",
+        "quantite_estimee": 9,
+        "orientation": "variée",
+        "certitude": "moyenne"
+      },
+      {
+        "nom_fr": "ruscus teint",
+        "latin": "Ruscus aculeatus / Danae racemosa",
+        "variete_probable": null,
+        "couleur": "bleu pervenche",
+        "role": "ligne",
+        "quantite_estimee": 2,
+        "orientation": "variée",
+        "certitude": "haute"
+      },
+      {
+        "nom_fr": "asparagus stabilisé teint",
+        "latin": "Asparagus setaceus / A. plumosus",
+        "variete_probable": null,
+        "couleur": "rose, rouge, lavande, jaune, pêche",
+        "role": "remplissage",
+        "quantite_estimee": 7,
+        "orientation": "variée",
+        "certitude": "moyenne"
+      },
+      {
+        "nom_fr": "plume d'autruche teinte",
+        "latin": "-",
+        "variete_probable": null,
+        "couleur": "lilas rosé",
+        "role": "secondaire",
+        "quantite_estimee": 1,
+        "orientation": "variée",
+        "certitude": "haute"
+      },
+      {
+        "nom_fr": "gypsophile teinte",
+        "latin": "Gypsophila paniculata",
+        "variete_probable": null,
+        "couleur": "turquoise",
+        "role": "remplissage",
+        "quantite_estimee": 2,
+        "orientation": "variée",
+        "certitude": "haute"
+      },
+      {
+        "nom_fr": "panicaut teint",
+        "latin": "Eryngium planum",
+        "variete_probable": null,
+        "couleur": "turquoise",
+        "role": "accent",
+        "quantite_estimee": 4,
+        "orientation": "face",
+        "certitude": "moyenne"
+      },
+      {
+        "nom_fr": "hortensia stabilisé",
+        "latin": "Hydrangea macrophylla",
+        "variete_probable": null,
+        "couleur": "rose et vert anis",
+        "role": "remplissage",
+        "quantite_estimee": 2,
+        "orientation": "face",
+        "certitude": "haute"
+      },
+      {
+        "nom_fr": "eucalyptus stabilisé",
+        "latin": "Eucalyptus sp.",
+        "variete_probable": null,
+        "couleur": "vert anis",
+        "role": "feuillage",
+        "quantite_estimee": 2,
+        "orientation": "variée",
+        "certitude": "moyenne"
+      },
+      {
+        "nom_fr": "amarante stabilisée teinte",
+        "latin": "Amaranthus caudatus",
+        "variete_probable": null,
+        "couleur": "rose corail",
+        "role": "retombée",
+        "quantite_estimee": 2,
+        "orientation": "variée",
+        "certitude": "haute"
+      },
+      {
+        "nom_fr": "herbe de la pampa",
+        "latin": "Cortaderia selloana",
+        "variete_probable": null,
+        "couleur": "beige naturel",
+        "role": "accent",
+        "quantite_estimee": 1,
+        "orientation": "variée",
+        "certitude": "moyenne"
+      }
+    ],
+    "couleurs": {
+      "schema": "multicolore",
+      "dominantes": [
+        "fuchsia #e0245e",
+        "rose bonbon #f08ab2",
+        "violet-lilas #b07ad0",
+        "bleu pervenche #6a8ee6",
+        "jaune citron pâle #e8dc78"
+      ],
+      "accents": [
+        "turquoise #1fbcc8",
+        "vert anis #9ed46a",
+        "corail #f29a9a",
+        "bleu glacier #cfe9e6"
+      ],
+      "valeurs": "Presque tout en valeurs claires/moyennes très saturées; très peu de foncés (asparagus rouge); la lisibilité vient des contrastes de teinte et non de valeur.",
+      "temperature": "mixte",
+      "notes": "Végétaux stabilisés et teints (aspect mat, couleurs non naturelles, style pop/festif). Fond béton gris (#7a7976) et vase chromé neutres indispensables."
+    },
+    "groupements": "Chaque couleur en 1-3 taches dispersées en diagonales (bleu: haut-centre, droite, turquoise en bas-gauche; rose: haut, centre, chute basse): effet confetti contrôlé par la répétition; les panaches linéaires groupés en un faisceau unique en haut.",
+    "profondeur": "Rose fuchsia et hortensias au premier plan; anthuriums en plan médian; plume et asparagus derrière, vaporeux; les retombées passent devant le vase.",
+    "mouvement": "Jaillissement vertical vers le haut-gauche (graminées) + chutes vers le bas (amarante, asparagus): mouvement vertical bidirectionnel; ruscus en diagonales.",
+    "feuillage": "rare — eucalyptus vert anis et ruscus teint bleu; les asparagus teints tiennent le rôle de feuillage texturé.",
+    "contenant": {
+      "type": "soliflore tube sur disque (vase éprouvette)",
+      "couleur": "inox/chrome",
+      "matiere": "métal poli",
+      "rapport_au_bouquet": "Vase très étroit (≈ 1/8 de la largeur de la composition); masse ≈ 3,4× sa hauteur, perchée au-dessus: contraste masse/tige volontaire; l'amarante tombe à côté du vase jusqu'à la table."
+    },
+    "pourquoi_ca_marche": "La saturation arc-en-ciel fonctionne parce que chaque couleur est répétée 2-3 fois et que les textures vaporeuses (plume, asparagus, gypsophile) fondent les transitions. Le vase minimaliste et le fond gris neutralisent l'excès. La verticalité est équilibrée par des chutes au sol. Référence de style pop/festif, pas de sobriété.",
+    "regles": [
+      "Palette multicolore: répéter chaque teinte au moins 2 fois en triangle et fondre les transitions avec des textures vaporeuses.",
+      "Masse perchée haut sur un contenant étroit: compenser par une chute jusqu'au sol côté opposé au plus haut panache.",
+      "Utiliser plumes et graminées comme lignes hautes pour un rendu stabilisé/pop.",
+      "Prévoir contenant et fond neutres dès que la palette dépasse 5 teintes saturées.",
+      "Deux fleurs-signatures de couleurs différentes à deux hauteurs (haut-droit, centre-gauche) structurent le chaos."
+    ]
+  },
+  {
+    "n": 25,
+    "fichier": "38a2ea8ba04307a69753bc69c97e9ab1.jpg",
+    "type": "composition sur socle",
+    "doublon_de": null,
+    "silhouette": {
+      "forme": "éventail",
+      "description": "Large éventail gothique (Halloween): rameaux lichénés, gousses grises et herbes d'ours noires rayonnent en V depuis une coupe noire sur pied; masse dense de cymbidiums aubergine, rose et anémones noires dans le tiers inférieur; amarante noire drapée sur les rameaux latéraux, qui pend en fils jusqu'à la table. Majorité de fleurs artificielles/teintes et d'éléments séchés.",
+      "largeur_sur_hauteur": 0.82,
+      "hauteur_bouquet_sur_contenant": 5.1,
+      "centre_de_masse": "centre, légèrement à droite, dans le tiers inférieur, juste au-dessus de la coupe",
+      "debordement_bas": "cascade longue",
+      "espace_negatif": "moyen",
+      "symetrie": "équilibre asymétrique"
+    },
+    "couches": [
+      {
+        "couche": "lignes & structure",
+        "elements": [
+          "rameau nu lichéné",
+          "rameaux fins diagonaux",
+          "herbe d'ours teinte noire",
+          "feuilles noires en boucle"
+        ],
+        "placement": "rameau lichéné = point le plus haut (≈ 5× la coupe), légèrement à droite; rameaux fins à ±50-60° jusqu'aux bords du cadre; herbes noires en faisceaux droits au centre-gauche et centre-droit; boucles noires à mi-hauteur",
+        "nb_estime": 12
+      },
+      {
+        "couche": "focale",
+        "elements": [
+          "cymbidiums aubergine à labelle magenta",
+          "rose noire"
+        ],
+        "placement": "hampe haute de cymbidiums à droite (60-80 % de la hauteur), grappes basses à gauche et à droite; rose noire au centre-bas sur le col",
+        "nb_estime": 15
+      },
+      {
+        "couche": "secondaire",
+        "elements": [
+          "anémones noires",
+          "échinops noirs"
+        ],
+        "placement": "anémones à mi-hauteur au centre et à droite; échinops sphériques à toutes les hauteurs, 2 très hauts à gauche sur tiges fines",
+        "nb_estime": 9
+      },
+      {
+        "couche": "remplissage/texture",
+        "elements": [
+          "statice violet",
+          "statice rose",
+          "gousses gris ardoise",
+          "mousse espagnole"
+        ],
+        "placement": "statice en petites touches de couleur dans la masse; gousses le long des rameaux gauche et droit; mousse au col",
+        "nb_estime": 15
+      },
+      {
+        "couche": "retombées",
+        "elements": [
+          "amarante noire"
+        ],
+        "placement": "fils noirs drapés sur les rameaux à gauche, à droite et devant la coupe, longueur 0,3-0,6 de la hauteur totale",
+        "nb_estime": 7
+      }
+    ],
+    "fleurs": [
+      {
+        "nom_fr": "orchidée cymbidium (probablement artificielle)",
+        "latin": "Cymbidium",
+        "variete_probable": null,
+        "couleur": "aubergine-prune, labelle magenta",
+        "role": "focale",
+        "quantite_estimee": 14,
+        "orientation": "variée",
+        "certitude": "haute"
+      },
+      {
+        "nom_fr": "rose noire (artificielle/teinte) — une au centre-bas, une seconde à demi cachée derrière les échinops",
+        "latin": "Rosa",
+        "variete_probable": null,
+        "couleur": "noir velours",
+        "role": "focale",
+        "quantite_estimee": 2,
+        "orientation": "face",
+        "certitude": "moyenne"
+      },
+      {
+        "nom_fr": "anémone noire (artificielle)",
+        "latin": "Anemone coronaria",
+        "variete_probable": null,
+        "couleur": "noir, cœur perlé noir",
+        "role": "secondaire",
+        "quantite_estimee": 2,
+        "orientation": "face",
+        "certitude": "moyenne"
+      },
+      {
+        "nom_fr": "échinops teint",
+        "latin": "Echinops ritro",
+        "variete_probable": null,
+        "couleur": "noir bleuté",
+        "role": "secondaire",
+        "quantite_estimee": 7,
+        "orientation": "face",
+        "certitude": "haute"
+      },
+      {
+        "nom_fr": "statice séché",
+        "latin": "Limonium sinuatum",
+        "variete_probable": null,
+        "couleur": "violet et rose poudré",
+        "role": "remplissage",
+        "quantite_estimee": 9,
+        "orientation": "variée",
+        "certitude": "haute"
+      },
+      {
+        "nom_fr": "gousses séchées (baptisia)",
+        "latin": "Baptisia australis (probable)",
+        "variete_probable": null,
+        "couleur": "gris ardoise",
+        "role": "remplissage",
+        "quantite_estimee": 4,
+        "orientation": "variée",
+        "certitude": "faible"
+      },
+      {
+        "nom_fr": "herbe d'ours teinte",
+        "latin": "Xerophyllum tenax",
+        "variete_probable": null,
+        "couleur": "noir",
+        "role": "ligne",
+        "quantite_estimee": 2,
+        "orientation": "variée",
+        "certitude": "moyenne"
+      },
+      {
+        "nom_fr": "feuilles en boucle (lily grass ou aspidistra teint)",
+        "latin": "indéterminé",
+        "variete_probable": null,
+        "couleur": "noir",
+        "role": "accent",
+        "quantite_estimee": 6,
+        "orientation": "variée",
+        "certitude": "faible"
+      },
+      {
+        "nom_fr": "amarante teinte",
+        "latin": "Amaranthus caudatus",
+        "variete_probable": null,
+        "couleur": "noir",
+        "role": "retombée",
+        "quantite_estimee": 7,
+        "orientation": "variée",
+        "certitude": "haute"
+      },
+      {
+        "nom_fr": "rameau lichéné",
+        "latin": "indéterminé (prunellier/bouleau)",
+        "variete_probable": null,
+        "couleur": "brun à lichen gris-vert",
+        "role": "ligne",
+        "quantite_estimee": 2,
+        "orientation": "profil",
+        "certitude": "moyenne"
+      },
+      {
+        "nom_fr": "mousse espagnole",
+        "latin": "Tillandsia usneoides",
+        "variete_probable": null,
+        "couleur": "gris-beige",
+        "role": "remplissage",
+        "quantite_estimee": 2,
+        "orientation": "variée",
+        "certitude": "faible"
+      }
+    ],
+    "couleurs": {
+      "schema": "analogue",
+      "dominantes": [
+        "noir #121014",
+        "aubergine #4a1530",
+        "prune #6a1f45",
+        "gris ardoise #6c7178"
+      ],
+      "accents": [
+        "violet statice #8a5ce6",
+        "rose poudré #e6a0b8",
+        "magenta labelle #c8287a",
+        "vert tige #5cae3a",
+        "brun lichen #a08a6a"
+      ],
+      "valeurs": "Masse à ≈ 80 % très foncée devant un mur en béton clair (#c4c6c2): lecture en silhouette; quelques taches moyennes (gris des gousses, violet du statice) éclaircissent le haut et les côtés.",
+      "temperature": "froide",
+      "notes": "Le violet du statice et le magenta des labelles sont les seules couleurs vives: elles empêchent l'ensemble d'être éteint. Thème Halloween/gothique."
+    },
+    "groupements": "Échinops dispersés en nombre impair (7) sur trois niveaux de hauteur; statice en petites touffes répétées; cymbidiums en 3 groupes (haut-droit, bas-gauche, bas-droit); amarante en fils isolés suspendus à intervalles.",
+    "profondeur": "Rose noire et cymbidiums bas au premier plan; anémones et échinops au plan médian; gousses et herbes noires derrière, en éventail; rameau lichéné tout au fond; les fils d'amarante passent devant la coupe.",
+    "mouvement": "Rayonnement en V depuis la coupe (rameaux à ±55°) + verticales rigides des herbes noires + fils pendants: double mouvement ascendant/descendant; les boucles noires ajoutent des courbes.",
+    "feuillage": "moyen — aucun vert: feuilles en boucle noires, herbes noires et gousses grises remplacent le feuillage; seule une tige d'orchidée verte apparaît.",
+    "contenant": {
+      "type": "coupe sur pied (compotier)",
+      "couleur": "noir mat #121014",
+      "matiere": "céramique",
+      "rapport_au_bouquet": "Coupe petite (≈ 1/5 de la hauteur, ≈ 1/6 de la largeur), presque cachée par la masse et les fils d'amarante; posée sur une table en bois sombre."
+    },
+    "pourquoi_ca_marche": "Le monochrome sombre est rendu vivant par la variété des textures (velours, sphères hérissées, gousses lisses, fils pendants, herbes rigides) et par quelques touches violettes/magenta. L'éventail très large et les fils suspendus donnent une silhouette théâtrale. Le mur clair fait ressortir la silhouette.",
+    "regles": [
+      "Composition sombre: au moins 5 textures différentes et 2 couleurs vives à ≤ 10 % (violet, magenta).",
+      "Rameaux en V à ±50-60° jusqu'à ≈ 1,2× la largeur de la masse, un rameau vertical comme point le plus haut.",
+      "Draper des retombées sur les rameaux latéraux (pas seulement au col) pour suspendre des verticales dans le vide.",
+      "Sphères (échinops) en nombre impair sur 3 niveaux de hauteur.",
+      "Garder la masse dense dans le tiers inférieur, juste au-dessus du contenant."
+    ]
+  },
+  {
+    "n": 26,
+    "fichier": "3a3599e6d9ddec38314b2f890640cf41.jpg",
+    "type": "bouquet tenu en main",
+    "doublon_de": null,
+    "silhouette": {
+      "forme": "éventail",
+      "description": "Gerbe XXL tenue à bras devant un bardage métallique anthracite: halo de saule tortueux orange qui jaillit en éventail au-dessus, masse dense et chaude d'anthuriums, eucalyptus et hortensias stabilisés orange au centre, cascade d'asparagus framboise en bas-gauche et spray orange qui retombe à droite; faisceau de tiges de cornouiller jaunes et rouges visibles sous les mains. Mélange de frais, stabilisé/teint et séché.",
+      "largeur_sur_hauteur": 0.86,
+      "hauteur_bouquet_sur_contenant": null,
+      "centre_de_masse": "centre légèrement à gauche, à ≈ 55 % de la hauteur depuis le haut, juste au-dessus des mains",
+      "debordement_bas": "léger",
+      "espace_negatif": "moyen",
+      "symetrie": "équilibre asymétrique"
+    },
+    "couches": [
+      {
+        "couche": "lignes & structure",
+        "elements": [
+          "saule tortueux teint orange",
+          "leucadendrons rouges",
+          "tiges de cornouiller jaunes et rouges"
+        ],
+        "placement": "saule en halo de ≈ 120° au-dessus de la masse (dépasse de ≈ 0,8× la hauteur de la masse); leucadendrons pointés vers le haut au centre; tiges de cornouiller en faisceau évasé sous les mains",
+        "nb_estime": 15
+      },
+      {
+        "couche": "focale",
+        "elements": [
+          "anthuriums vieux rose/vert"
+        ],
+        "placement": "4-5 anthuriums en traînée diagonale du centre-gauche au haut-centre, faces ouvertes vers l'avant",
+        "nb_estime": 5
+      },
+      {
+        "couche": "secondaire",
+        "elements": [
+          "leucospermums orange",
+          "capsules de lotus vertes"
+        ],
+        "placement": "au centre-droit, en plan médian, dispersés par 1-2",
+        "nb_estime": 6
+      },
+      {
+        "couche": "remplissage/texture",
+        "elements": [
+          "eucalyptus stabilisé orange",
+          "hortensia stabilisé orange",
+          "feuilles de chêne séchées rouille",
+          "baies rouges"
+        ],
+        "placement": "nappe orange continue qui forme la masse; feuilles de chêne en haut-gauche; baies en grappes fines au bord droit",
+        "nb_estime": 20
+      },
+      {
+        "couche": "retombées",
+        "elements": [
+          "asparagus teint framboise",
+          "spray d'eucalyptus orange"
+        ],
+        "placement": "framboise: bloc qui tombe en bas-gauche jusqu'à ≈ 0,25 de la hauteur sous la masse; orange: longe le bras droit",
+        "nb_estime": 4
+      }
+    ],
+    "fleurs": [
+      {
+        "nom_fr": "anthurium",
+        "latin": "Anthurium andraeanum",
+        "variete_probable": null,
+        "couleur": "vieux rose à reflets verts",
+        "role": "focale",
+        "quantite_estimee": 5,
+        "orientation": "variée",
+        "certitude": "haute"
+      },
+      {
+        "nom_fr": "leucospermum (protée pelote d'épingles)",
+        "latin": "Leucospermum cordifolium",
+        "variete_probable": null,
+        "couleur": "orange",
+        "role": "secondaire",
+        "quantite_estimee": 3,
+        "orientation": "face",
+        "certitude": "haute"
+      },
+      {
+        "nom_fr": "capsule de lotus",
+        "latin": "Nelumbo nucifera",
+        "variete_probable": null,
+        "couleur": "vert",
+        "role": "accent",
+        "quantite_estimee": 4,
+        "orientation": "variée",
+        "certitude": "haute"
+      },
+      {
+        "nom_fr": "leucadendron",
+        "latin": "Leucadendron",
+        "variete_probable": "'Safari Sunset' (probable)",
+        "couleur": "rouge bordeaux",
+        "role": "ligne",
+        "quantite_estimee": 4,
+        "orientation": "profil",
+        "certitude": "moyenne"
+      },
+      {
+        "nom_fr": "saule tortueux teint",
+        "latin": "Salix matsudana 'Tortuosa'",
+        "variete_probable": "'Tortuosa'",
+        "couleur": "orange",
+        "role": "ligne",
+        "quantite_estimee": 14,
+        "orientation": "variée",
+        "certitude": "haute"
+      },
+      {
+        "nom_fr": "eucalyptus stabilisé teint",
+        "latin": "Eucalyptus cinerea / E. populus",
+        "variete_probable": null,
+        "couleur": "orange vif",
+        "role": "remplissage",
+        "quantite_estimee": 9,
+        "orientation": "variée",
+        "certitude": "moyenne"
+      },
+      {
+        "nom_fr": "hortensia stabilisé teint",
+        "latin": "Hydrangea macrophylla",
+        "variete_probable": null,
+        "couleur": "orange",
+        "role": "remplissage",
+        "quantite_estimee": 4,
+        "orientation": "face",
+        "certitude": "moyenne"
+      },
+      {
+        "nom_fr": "feuilles de chêne séchées",
+        "latin": "Quercus sp.",
+        "variete_probable": null,
+        "couleur": "rouille",
+        "role": "remplissage",
+        "quantite_estimee": 3,
+        "orientation": "variée",
+        "certitude": "moyenne"
+      },
+      {
+        "nom_fr": "asparagus/fougère teint",
+        "latin": "Asparagus setaceus / A. plumosus",
+        "variete_probable": null,
+        "couleur": "framboise",
+        "role": "retombée",
+        "quantite_estimee": 3,
+        "orientation": "variée",
+        "certitude": "moyenne"
+      },
+      {
+        "nom_fr": "petites baies rouges (églantier ou viorne)",
+        "latin": "Rosa multiflora ou Viburnum (indéterminé)",
+        "variete_probable": null,
+        "couleur": "rouge",
+        "role": "accent",
+        "quantite_estimee": 5,
+        "orientation": "variée",
+        "certitude": "faible"
+      },
+      {
+        "nom_fr": "cornouiller (tiges)",
+        "latin": "Cornus sericea 'Flaviramea' et Cornus alba 'Sibirica'",
+        "variete_probable": null,
+        "couleur": "jaune et rouge",
+        "role": "ligne",
+        "quantite_estimee": 9,
+        "orientation": "profil",
+        "certitude": "moyenne"
+      }
+    ],
+    "couleurs": {
+      "schema": "analogue",
+      "dominantes": [
+        "orange vif #ef6a1c",
+        "rouille #b2541f",
+        "framboise #c93a5c",
+        "vieux rose #d9958f"
+      ],
+      "accents": [
+        "vert lotus #8fae5a",
+        "rouge baie #d0312d",
+        "jaune cornouiller #e2b23a"
+      ],
+      "valeurs": "Masse de valeur moyenne très saturée sur fond anthracite très foncé (#2e3133): contraste maximal en périphérie; les reflets clairs des anthuriums ponctuent le centre.",
+      "temperature": "chaude",
+      "notes": "Palette automnale poussée au néon par la teinture; le vert des lotus et des reflets d'anthurium est le seul froid."
+    },
+    "groupements": "Anthuriums en traînée diagonale; orange en une grande nappe continue; framboise concentré en un seul bloc bas-gauche; lotus dispersés par 1-2; baies en grappes fines au bord droit.",
+    "profondeur": "Anthuriums au premier plan; leucospermums et lotus au plan médian; feuilles de chêne et leucadendrons derrière; saule en arrière-plan, en silhouette fine contre le mur sombre.",
+    "mouvement": "Explosion radiale vers le haut (saule) + gravité vers le bas (framboise à gauche, orange à droite): lecture en feu d'artifice; le faisceau de tiges graphiques prolonge l'axe vers le bas.",
+    "feuillage": "abondant — mais non vert: eucalyptus et hortensias orange, feuilles de chêne rouille, asparagus framboise; ce 'feuillage' fait l'essentiel de la masse colorée.",
+    "contenant": {
+      "type": "aucun — gerbe tenue à deux mains, tiges apparentes",
+      "couleur": "tiges jaunes, rouges et vertes",
+      "matiere": "tiges nues",
+      "rapport_au_bouquet": "Tiges visibles ≈ 0,3 de la hauteur de la masse sous les mains, en faisceau évasé; la gerbe est plus large que le porteur."
+    },
+    "pourquoi_ca_marche": "Le fond anthracite fait exploser la palette orange/framboise. Le halo de saule tortueux ajoute du volume sans poids et rend la silhouette spectaculaire. Le contraste entre lignes fines en haut et masses colorées au centre crée une hiérarchie claire. Les tiges colorées visibles deviennent un élément de design à part entière.",
+    "regles": [
+      "Halo de lignes fines (saule) au-dessus de la masse sur ≈ 120°, dépassant de 50-80 % la hauteur de la masse.",
+      "Palette analogue orange → framboise + un vert froid en petites touches (lotus) pour la profondeur.",
+      "Laisser apparaître les tiges colorées sous la prise et les traiter comme un élément graphique.",
+      "Placer la couleur secondaire en un seul bloc retombant d'un côté, et la couleur principale retombant de l'autre.",
+      "Sur fond sombre, privilégier des valeurs moyennes saturées plutôt que des blancs."
+    ]
+  },
+  {
+    "n": 27,
+    "fichier": "3a8088397234387eb67572b4fdc3bcc2.jpg",
+    "type": "bouquet tenu en main",
+    "doublon_de": null,
+    "silhouette": {
+      "forme": "libre/sauvage",
+      "description": "Bouquet champêtre pastel tenu en main (main en bas-gauche, tissu imprimé floral), lâche et aérien, qui s'ouvre en diagonale vers le haut-droit: dahlias et cosmos de face au centre, delphiniums bleus qui montent en haut-droit et retombent en bas-droit, cosmos isolés sur longues tiges qui s'échappent à droite, boutons pendants. Cadrage serré qui coupe le haut (ratio minimal).",
+      "largeur_sur_hauteur": 0.78,
+      "hauteur_bouquet_sur_contenant": null,
+      "centre_de_masse": "centre-gauche (≈ 43 % de la largeur), à mi-hauteur, au-dessus de la main",
+      "debordement_bas": "léger",
+      "espace_negatif": "moyen",
+      "symetrie": "équilibre asymétrique"
+    },
+    "couches": [
+      {
+        "couche": "lignes & structure",
+        "elements": [
+          "delphinium/pied-d'alouette bleu pâle",
+          "cosmos sur longues tiges"
+        ],
+        "placement": "delphinium en flèche vers le haut-droit (point le plus haut, coupé); cosmos haut-gauche sur tige nue verticale; cosmos isolés qui s'échappent à droite à 30-45°",
+        "nb_estime": 6
+      },
+      {
+        "couche": "focale",
+        "elements": [
+          "cosmos blanc",
+          "dahlia pêche-jaune",
+          "dahlia jaune beurre",
+          "zinnia rose"
+        ],
+        "placement": "cosmos blanc au centre exact; dahlias en périphérie gauche et droite à mi-hauteur; zinnia au centre-droit haut",
+        "nb_estime": 4
+      },
+      {
+        "couche": "secondaire",
+        "elements": [
+          "cosmos roses",
+          "dahlia corail-saumon",
+          "lisianthus abricot",
+          "fleur double rose-lilas"
+        ],
+        "placement": "cosmos roses en haut-centre et en bas-gauche (diagonale); dahlia corail et lisianthus au cœur, en retrait",
+        "nb_estime": 7
+      },
+      {
+        "couche": "remplissage/texture",
+        "elements": [
+          "ammi blanc",
+          "carotte 'Dara' rose",
+          "achillée vieux rose",
+          "matricaire"
+        ],
+        "placement": "dentelles blanches semées côté gauche et centre-droit; achillée en bord gauche; matricaire en grappe bas-gauche",
+        "nb_estime": 12
+      },
+      {
+        "couche": "retombées",
+        "elements": [
+          "delphinium bleu",
+          "boutons de cosmos pendants"
+        ],
+        "placement": "bas-droit: delphiniums qui tombent jusqu'à ≈ 0,25 de la hauteur sous la masse, 2 boutons au bout de tiges arquées",
+        "nb_estime": 4
+      },
+      {
+        "couche": "accents",
+        "elements": [
+          "étoiles bleues (bourrache/tweedia)",
+          "géranium vivace veiné",
+          "scabieuse lilas"
+        ],
+        "placement": "petites étoiles bleues au centre; géranium au centre-droit; scabieuse en bord droit",
+        "nb_estime": 5
+      }
+    ],
+    "fleurs": [
+      {
+        "nom_fr": "cosmos",
+        "latin": "Cosmos bipinnatus",
+        "variete_probable": "'Purity' (blanc), 'Sensation' (rose), 'Xanthos' (crème) — probables",
+        "couleur": "blanc, rose vif, blush, crème",
+        "role": "focale",
+        "quantite_estimee": 9,
+        "orientation": "variée",
+        "certitude": "haute"
+      },
+      {
+        "nom_fr": "dahlia",
+        "latin": "Dahlia (hybride)",
+        "variete_probable": "type 'Peaches n' Cream' (probable)",
+        "couleur": "pêche-jaune, jaune beurre, corail-saumon",
+        "role": "focale",
+        "quantite_estimee": 4,
+        "orientation": "face",
+        "certitude": "haute"
+      },
+      {
+        "nom_fr": "zinnia",
+        "latin": "Zinnia elegans",
+        "variete_probable": null,
+        "couleur": "rose",
+        "role": "focale",
+        "quantite_estimee": 1,
+        "orientation": "face",
+        "certitude": "haute"
+      },
+      {
+        "nom_fr": "delphinium / pied-d'alouette",
+        "latin": "Delphinium elatum / Consolida ajacis",
+        "variete_probable": null,
+        "couleur": "bleu poudré-lilas",
+        "role": "ligne",
+        "quantite_estimee": 4,
+        "orientation": "variée",
+        "certitude": "moyenne"
+      },
+      {
+        "nom_fr": "ammi / carotte sauvage",
+        "latin": "Ammi majus / Daucus carota",
+        "variete_probable": null,
+        "couleur": "blanc",
+        "role": "remplissage",
+        "quantite_estimee": 6,
+        "orientation": "face",
+        "certitude": "haute"
+      },
+      {
+        "nom_fr": "carotte 'Dara'",
+        "latin": "Daucus carota 'Dara'",
+        "variete_probable": "'Dara'",
+        "couleur": "rose-beige",
+        "role": "remplissage",
+        "quantite_estimee": 1,
+        "orientation": "face",
+        "certitude": "moyenne"
+      },
+      {
+        "nom_fr": "achillée",
+        "latin": "Achillea millefolium",
+        "variete_probable": null,
+        "couleur": "vieux rose-mauve",
+        "role": "remplissage",
+        "quantite_estimee": 2,
+        "orientation": "face",
+        "certitude": "haute"
+      },
+      {
+        "nom_fr": "matricaire",
+        "latin": "Tanacetum parthenium",
+        "variete_probable": null,
+        "couleur": "blanc à cœur jaune",
+        "role": "remplissage",
+        "quantite_estimee": 1,
+        "orientation": "face",
+        "certitude": "haute"
+      },
+      {
+        "nom_fr": "lisianthus (ou rose) abricot",
+        "latin": "Eustoma grandiflorum ou Rosa (indéterminé)",
+        "variete_probable": null,
+        "couleur": "abricot",
+        "role": "secondaire",
+        "quantite_estimee": 1,
+        "orientation": "face",
+        "certitude": "faible"
+      },
+      {
+        "nom_fr": "étoiles bleues (bourrache ou tweedia)",
+        "latin": "Borago officinalis ou Tweedia caerulea (indéterminé)",
+        "variete_probable": null,
+        "couleur": "bleu ciel",
+        "role": "accent",
+        "quantite_estimee": 3,
+        "orientation": "face",
+        "certitude": "faible"
+      },
+      {
+        "nom_fr": "géranium vivace",
+        "latin": "Geranium sp.",
+        "variete_probable": null,
+        "couleur": "rose-lilas veiné",
+        "role": "accent",
+        "quantite_estimee": 1,
+        "orientation": "face",
+        "certitude": "faible"
+      },
+      {
+        "nom_fr": "scabieuse",
+        "latin": "Scabiosa atropurpurea",
+        "variete_probable": null,
+        "couleur": "lilas pâle",
+        "role": "accent",
+        "quantite_estimee": 1,
+        "orientation": "profil",
+        "certitude": "moyenne"
+      },
+      {
+        "nom_fr": "fleur double rose-lilas (chrysanthème ou aster)",
+        "latin": "indéterminé",
+        "variete_probable": null,
+        "couleur": "rose-lilas",
+        "role": "secondaire",
+        "quantite_estimee": 1,
+        "orientation": "face",
+        "certitude": "faible"
+      }
+    ],
+    "couleurs": {
+      "schema": "multicolore",
+      "dominantes": [
+        "blanc #fbfaf6",
+        "rose cosmos #f08cc0",
+        "pêche-abricot #f2b07c",
+        "jaune beurre #f6d98e",
+        "bleu poudré #b9c6ea"
+      ],
+      "accents": [
+        "jaune d'or des cœurs #f2c21b",
+        "vieux rose achillée #b46f85",
+        "corail #ef8a72",
+        "lilas #d6b7e6",
+        "vert tige #6aa84f"
+      ],
+      "valeurs": "Clé haute: tout est clair; les tons moyens (achillée, dahlia corail, cœurs dorés) sont regroupés au centre-gauche, les plus clairs (bleus, blancs) à droite et aux extrémités.",
+      "temperature": "mixte",
+      "notes": "Dégradé de température de gauche à droite: chauds (pêche, jaune, corail) à gauche, froids (bleu, lilas) à droite; le blanc et le rose des cosmos font le pont. Fond rose-crème très clair."
+    },
+    "groupements": "Groupements lâches de 2-3 par variété, répartis en diagonale (cosmos roses en haut-centre et bas-gauche; cosmos crème empilés à droite); ombelles semées entre les têtes; delphiniums massés côté droit; couleurs chaudes massées côté gauche.",
+    "profondeur": "Cosmos blanc et dahlias au premier plan, de face; dahlia corail et lisianthus enfoncés au cœur; ombelles et achillée en arrière-plan à gauche; tiges longues qui partent vers l'avant et l'arrière; flou doux qui accentue la profondeur.",
+    "mouvement": "Diagonale ascendante du bas-gauche (main) vers le haut-droit (delphinium), puis retombée à droite: mouvement en vague; les cosmos sur tiges fines dansent hors de la masse.",
+    "feuillage": "rare — presque aucune feuille; seules les tiges vertes fines et quelques folioles de cosmos/delphinium.",
+    "contenant": {
+      "type": "aucun — bouquet tenu en main, tissu imprimé floral autour de la main",
+      "couleur": "écru à motifs jaune et vert",
+      "matiere": "tissu",
+      "rapport_au_bouquet": "Prise en bas à gauche du cadre; aucun liage visible; le tissu imprimé fait écho aux fleurs."
+    },
+    "pourquoi_ca_marche": "La palette pastel multicolore reste harmonieuse car toutes les couleurs ont une valeur claire et une saturation douce. La répartition chaud à gauche / froid à droite donne une logique de couleur lisible. Les fleurs simples à cœur jaune (cosmos, matricaire) répètent un motif qui unifie. Les tiges longues et les boutons pendants donnent l'air cueilli au jardin.",
+    "regles": [
+      "Palette multicolore: garder toutes les teintes en clé haute (pastel) et répéter un motif commun (cœurs jaunes des fleurs simples).",
+      "Ranger la température: chauds d'un côté, froids de l'autre, blanc/rose au centre comme pont.",
+      "Laisser 3-5 fleurs sur tiges fines dépasser la masse de 20-40 % dans la direction du mouvement.",
+      "Semer des ombelles blanches entre les têtes pour l'air et la lumière.",
+      "Ajouter 2-3 boutons fermés pendants en bout de tige pour la naturalité."
+    ]
+  },
+  {
+    "n": 28,
+    "fichier": "3e8e3cf29406db30c24b5278347a95f8.jpg",
+    "type": "bouquet tenu en main",
+    "doublon_de": null,
+    "silhouette": {
+      "forme": "cascade",
+      "description": "Bouquet de mariée posé debout sur ses tiges: tête verticale ovale (L/H ≈ 0,84) adossée à un grand anthurium bordeaux en fond, liage enrubanné et tiges coupées net; énorme chute d'amarante framboise qui sort du flanc droit dans le tiers inférieur de la tête, coule jusqu'à la table et serpente vers le bas-gauche (longueur > 1,5× la hauteur de la tête). Ratio global mesuré avec la cascade (coupée par le cadre).",
+      "largeur_sur_hauteur": 0.69,
+      "hauteur_bouquet_sur_contenant": null,
+      "centre_de_masse": "tête: centre-gauche au-dessus du liage; poids visuel global qui glisse vers le bas-droit avec la cascade",
+      "debordement_bas": "cascade longue",
+      "espace_negatif": "moyen",
+      "symetrie": "très asymétrique"
+    },
+    "couches": [
+      {
+        "couche": "lignes & structure",
+        "elements": [
+          "plumes d'astilbe bordeaux",
+          "callas sur tiges"
+        ],
+        "placement": "plumes d'astilbe qui dépassent en haut-gauche (point le plus haut) et traversent la tête en diagonale; callas étagés pointant vers la gauche et vers le haut",
+        "nb_estime": 4
+      },
+      {
+        "couche": "focale",
+        "elements": [
+          "anthurium bordeaux"
+        ],
+        "placement": "en arrière-plan haut-centre, de face, comme un écran derrière les autres fleurs (≈ 45 % de la largeur de la tête)",
+        "nb_estime": 1
+      },
+      {
+        "couche": "secondaire",
+        "elements": [
+          "callas vieux rose"
+        ],
+        "placement": "4-5 callas en éventail devant l'anthurium, ouvertures vers la gauche et vers l'avant",
+        "nb_estime": 5
+      },
+      {
+        "couche": "remplissage/texture",
+        "elements": [
+          "lisianthus doubles rose poudré",
+          "skimmia bordeaux"
+        ],
+        "placement": "lisianthus en couronne sur les bords gauche, droit et bas; skimmia en 2-3 grappes au centre-bas",
+        "nb_estime": 9
+      },
+      {
+        "couche": "retombées",
+        "elements": [
+          "amarante framboise"
+        ],
+        "placement": "faisceau unique qui sort à droite au tiers inférieur de la tête, tombe jusqu'au sol puis traîne",
+        "nb_estime": 3
+      },
+      {
+        "couche": "accents",
+        "elements": [
+          "ruban satin mauve",
+          "spadice crème-jaune"
+        ],
+        "placement": "ruban enroulé sur la moitié haute des tiges; spadice vertical au centre de l'anthurium",
+        "nb_estime": 2
+      }
+    ],
+    "fleurs": [
+      {
+        "nom_fr": "anthurium",
+        "latin": "Anthurium andraeanum",
+        "variete_probable": null,
+        "couleur": "bordeaux sang-de-bœuf, spadice crème",
+        "role": "focale",
+        "quantite_estimee": 1,
+        "orientation": "face",
+        "certitude": "haute"
+      },
+      {
+        "nom_fr": "calla",
+        "latin": "Zantedeschia",
+        "variete_probable": "'Captain Romance' (probable)",
+        "couleur": "vieux rose-framboise",
+        "role": "secondaire",
+        "quantite_estimee": 5,
+        "orientation": "trois-quarts",
+        "certitude": "haute"
+      },
+      {
+        "nom_fr": "lisianthus double",
+        "latin": "Eustoma grandiflorum",
+        "variete_probable": null,
+        "couleur": "rose poudré",
+        "role": "remplissage",
+        "quantite_estimee": 6,
+        "orientation": "face",
+        "certitude": "haute"
+      },
+      {
+        "nom_fr": "astilbe",
+        "latin": "Astilbe × arendsii",
+        "variete_probable": "'Fanal' (probable)",
+        "couleur": "bordeaux",
+        "role": "ligne",
+        "quantite_estimee": 4,
+        "orientation": "variée",
+        "certitude": "haute"
+      },
+      {
+        "nom_fr": "skimmia",
+        "latin": "Skimmia japonica 'Rubella'",
+        "variete_probable": "'Rubella'",
+        "couleur": "bordeaux en boutons",
+        "role": "remplissage",
+        "quantite_estimee": 3,
+        "orientation": "face",
+        "certitude": "haute"
+      },
+      {
+        "nom_fr": "amarante queue-de-renard",
+        "latin": "Amaranthus caudatus",
+        "variete_probable": null,
+        "couleur": "framboise-fuchsia",
+        "role": "retombée",
+        "quantite_estimee": 3,
+        "orientation": "variée",
+        "certitude": "haute"
+      }
+    ],
+    "couleurs": {
+      "schema": "tonal",
+      "dominantes": [
+        "rose poudré #f0b4c4",
+        "vieux rose #cf6f82",
+        "framboise #a8234f",
+        "bordeaux #5c0c1a"
+      ],
+      "accents": [
+        "crème spadice #f0e2a0",
+        "vert tige #6b9a3c",
+        "mauve ruban #b996a8"
+      ],
+      "valeurs": "Inversion: le plus foncé (anthurium) en haut et au fond, le plus clair (lisianthus) au milieu et en périphérie, le foncé-moyen (amarante) en bas: lecture en sandwich.",
+      "temperature": "chaude",
+      "notes": "Ton sur ton rose → bordeaux; fond gris (#9c958d) et table gris-bleu froids qui rafraîchissent l'ensemble."
+    },
+    "groupements": "Callas en éventail serré de 5 au centre; lisianthus en couronne périphérique; astilbe en 3-4 plumes qui traversent; skimmia en petits amas en bas; une seule chute massive d'amarante.",
+    "profondeur": "Anthurium à l'arrière comme toile de fond; callas devant; lisianthus au premier plan sur les bords; astilbe qui passe devant et derrière; la cascade avance vers le spectateur au sol.",
+    "mouvement": "Verticale stricte de la tête et des tiges, rompue par la grande courbe en S de l'amarante qui part à droite puis revient vers la gauche au sol.",
+    "feuillage": "aucun — aucune feuille; seules les tiges vertes nues sous le ruban apportent du vert.",
+    "contenant": {
+      "type": "aucun — liage nu enrubanné, bouquet posé debout sur ses tiges",
+      "couleur": "ruban mauve-rose #b996a8, tiges vertes",
+      "matiere": "satin",
+      "rapport_au_bouquet": "Tiges visibles ≈ 0,35 de la hauteur de la tête (rapport tête/tiges ≈ 2,8); ruban sur la moitié haute des tiges; la cascade sert de traîne."
+    },
+    "pourquoi_ca_marche": "Le grand anthurium foncé en fond agit comme un écrin qui fait ressortir les roses clairs devant. La palette tonale rose-bordeaux est riche grâce aux textures (laqué, volants, plumes, grappes, chenilles). La cascade d'amarante, démesurée et asymétrique, transforme un bouquet compact en pièce spectaculaire.",
+    "regles": [
+      "Utiliser une grande fleur plate et foncée (anthurium) en fond de bouquet comme écran contrasté.",
+      "Palette tonale: au moins 4 valeurs du même rose → bordeaux et 4 textures différentes.",
+      "Une seule retombée massive, sortant d'un flanc entre 60 et 70 % de la hauteur de la tête (depuis le haut), longueur ≥ 1,5× la tête.",
+      "Regrouper les callas en éventail, toutes ouvertures orientées dans le même demi-plan.",
+      "Tiges nettes et enrubannées visibles sur ≈ 1/4 à 1/3 de la hauteur totale pour un bouquet de mariée moderne."
+    ]
+  }
+]

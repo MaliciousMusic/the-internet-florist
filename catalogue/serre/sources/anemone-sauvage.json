@@ -1,0 +1,505 @@
+{
+ "sid": "anemone-sauvage",
+ "sorte": "formes sauvages d'Anemone coronaria L. (fleurs simples, 35 à 75 mm ; nom accepté GBIF, KAVB non interrogé)",
+ "consulte": "2026-10-08",
+ "agent": "fleur-coloris (Haiku), reprise du 2026-10-08",
+ "niveau_plafond": "B (pas de KAVB)",
+ "regle": "Aucun nom de série déposée. Les noms affichés sont des noms de couleur. Photos à droits réservés exclues du json ; seules les photos libres sont citées.",
+ "coloris": [
+  {
+   "id": "blanc",
+   "nom_affiche": "Blanc à cœur noir",
+   "forme": "forme blanche sauvage (var. alba)",
+   "sauvage": true,
+   "mesures": {
+    "base": {
+     "retenu": "#eef6fa",
+     "valeurs": [
+      "#eef6fa"
+     ],
+     "ecart_dE": null,
+     "note": "une seule photo nette, plein jour : 40 (ida_gabler, obs. 294086638). Sur 20 (anniet39), la base n'est pas séparée du reste du tépale (voir corps). Reste prov."
+    },
+    "corps": {
+     "retenu": "#dee4ea",
+     "valeurs": [
+      "#e2e1e3",
+      "#dae7f1"
+     ],
+     "ecart_dE": 6.4,
+     "note": "médiane de deux observateurs distincts : 20 (anniet39, tépale inférieur au soleil, #e2e1e3) et 40 (ida_gabler, #dae7f1) ; ΔE 6,4, L 89 et 91, donc concordants et au-dessus de L 80. Balance : 20 neutre, 40 légèrement bleutée ; pas de référence neutre mesurée dans les photos."
+    },
+    "pointe": {
+     "retenu": "#eef7fc",
+     "valeurs": [
+      "#eef7fc"
+     ],
+     "ecart_dE": null,
+     "note": "40 seule (tépale au bord, #eef7fc). Reste prov."
+    },
+    "revers": null,
+    "centre": "dôme violet-noir, filets sombres (40 ; 20)",
+    "etamines": "filets sombres, anthères sombres",
+    "motif": "aucun, blanc uni"
+   },
+   "eclairage": "20 : soleil direct, tépales partiellement à l'ombre (dispersion forte dans la fleur) ; 40 : plein jour, plante en place, pierres chaudes à côté ; 18 : ombre avec reflet vert, écartée ; 35 : bouton en ombre, écartée ; 26 : tépales rosés, écartée ; 19 : fleur à cinq pétales tenue à la main, pas une anémone coronaire, écartée",
+   "niveau": "B pour le corps (deux observateurs concordants, ΔE 6,4, L 89-91) ; base et pointe : une seule photo, reste prov",
+   "statut": "B partiel : corps concordant ; base et pointe reste prov ; 3e photo nette à obtenir pour base et pointe (seulement deux photos nettes trouvées sur 36 candidats iNaturalist)",
+   "sources": [
+    {
+     "index_refcache": 140,
+     "meta_inat": 983,
+     "image": "https://inaturalist-open-data.s3.amazonaws.com/photos/628446392/medium.jpg",
+     "page": "https://www.inaturalist.org/observations/344885028",
+     "auteur": "aress",
+     "licence": "CC BY",
+     "date": "2026-03-24",
+     "lieu": "Kıtılbıl, Sur/Diyarbakır, Türkiye",
+     "niveau": "N3 (recherche, iNaturalist)"
+    },
+    {
+     "index_refcache": 142,
+     "meta_inat": 466,
+     "image": "https://inaturalist-open-data.s3.amazonaws.com/photos/347433279/medium.jpg",
+     "page": "https://www.inaturalist.org/observations/197285426",
+     "auteur": "marios10",
+     "licence": "CC BY",
+     "date": "2024-01-20",
+     "lieu": "Pissouri, Chypre",
+     "niveau": "N3 (recherche, iNaturalist)"
+    },
+    {
+     "index_refcache": 141,
+     "meta_inat": 654,
+     "image": "https://inaturalist-open-data.s3.amazonaws.com/photos/471575908/medium.jpg",
+     "page": "https://www.inaturalist.org/observations/262539144",
+     "auteur": "peter_gabler",
+     "licence": "CC0",
+     "date": "2025-02-20",
+     "lieu": "Paphos, Chypre (non retenue pour la médiane)",
+     "niveau": "N3 (recherche, iNaturalist)"
+    },
+    {
+     "index_refcache": 20,
+     "meta_inat": null,
+     "image": "https://inaturalist-open-data.s3.amazonaws.com/photos/590389045/medium.jpg",
+     "page": "https://www.inaturalist.org/observations/326021750",
+     "auteur": "anniet39",
+     "licence": "CC0",
+     "date": null,
+     "lieu": null,
+     "niveau": "N3 (recherche, iNaturalist)"
+    },
+    {
+     "index_refcache": 40,
+     "meta_inat": null,
+     "image": "https://inaturalist-open-data.s3.amazonaws.com/photos/529311286/medium.jpg",
+     "page": "https://www.inaturalist.org/observations/294086638",
+     "auteur": "ida_gabler",
+     "licence": "CC BY, CC BY-SA ou CC0 (filtre de la requête ; licence exacte à relire sur la page)",
+     "date": null,
+     "lieu": null,
+     "niveau": "N3 (recherche, iNaturalist)"
+    },
+    {
+     "index_refcache": 18,
+     "image": "https://inaturalist-open-data.s3.amazonaws.com/photos/467609205/medium.jpeg",
+     "page": "https://www.inaturalist.org/observations/260388372",
+     "auteur": "pantazi1",
+     "licence": "CC BY",
+     "niveau": "écartée (ombre, reflet vert, L 77-79)"
+    }
+   ],
+   "remarques": "Nom de couleur seulement. Photos iNaturalist recherche, licences libres. Photo 143 (shachar8) en ombre, écartée. Reprise 2026-10-08 par fleur-coloris : 36 candidats iNaturalist visionnés (cands 18 à 41), 2 photos nettes retenues (20, 40), 18 et 35 en ombre, 19 et 26 hors sujet pour le blanc.",
+   "anciennes_mesures_grises": {
+    "statut": "écartées (2026-10-08, reprise)",
+    "photos": "140 (aress), 142 (marios10), 141/654 (peter_gabler)",
+    "base_retenu": "#beb8b8",
+    "corps_retenu": "#bdb7b6",
+    "pointe_retenu": "#c7bdb4",
+    "raison": "L 75 à 77, très en dessous des photos plein jour 20 et 40 (L 89 à 97) : écart ΔE ~15 avec 20 et 40 ; mesures jugées faussées par l'exposition ou la balance des blancs ; conservées pour mémoire."
+   }
+  },
+  {
+   "id": "rose-pale",
+   "nom_affiche": "Rose pâle",
+   "forme": "forme rose sauvage",
+   "sauvage": true,
+   "mesures": {
+    "base": {
+     "retenu": "#d0b5ca",
+     "valeurs": [
+      "#d0b5ca",
+      "#b28fa8"
+     ],
+     "ecart_dE": 13.9,
+     "note": "photo 17 retenue (plus nette, lumière franche) ; la 18 donne #b28fa8"
+    },
+    "corps": {
+     "retenu": "#e8d1e5",
+     "valeurs": [
+      "#e4cee1",
+      "#ecd3ea"
+     ],
+     "ecart_dE": 3.1,
+     "note": "médiane 17 et 18"
+    },
+    "pointe": {
+     "retenu": "#e2cedf",
+     "valeurs": [
+      "#e2cedf",
+      "#c4a9b1"
+     ],
+     "ecart_dE": 14.2,
+     "note": "photo 17 retenue ; la 18 plus ombrée donne #c4a9b1"
+    },
+    "revers": null,
+    "centre": "dôme violet foncé #5e2350 (17)",
+    "etamines": "filets violet-noir, anthères sombres (17, 18)",
+    "motif": "anneau pâle léger autour du dôme (18)"
+   },
+   "eclairage": "17 : plein jour ; 18 : plein jour, sous-bois",
+   "niveau": "B",
+   "statut": "mesuré, deux photos concordantes sur le corps",
+   "sources": [
+    {
+     "index_refcache": 17,
+     "page": "https://commons.wikimedia.org/wiki/File:Anemone_coronaria_in_Troodos_Mountains,_Cyprus_02.jpg",
+     "auteur": "Michal Klajban",
+     "licence": "CC BY-SA 4.0",
+     "niveau": "N4"
+    },
+    {
+     "index_refcache": 18,
+     "page": "https://commons.wikimedia.org/wiki/File:Anemone_coronaria_kz1.jpg",
+     "auteur": "Krzysztof Ziarnek, Kenraiz",
+     "licence": "CC BY-SA 4.0",
+     "niveau": "N4"
+    }
+   ],
+   "remarques": "Base et pointe écartées de plus de ΔE 10 : garde la photo la mieux éclairée (17). Une troisième photo de face reste utile."
+  },
+  {
+   "id": "lilas",
+   "nom_affiche": "Lilas",
+   "forme": "forme violet-bleu pâle sauvage",
+   "sauvage": true,
+   "mesures": {
+    "base": {
+     "retenu": "#9785d7",
+     "valeurs": [
+      "#a29de7",
+      "#9785c6",
+      "#847ed7"
+     ],
+     "ecart_dE": 14.8,
+     "note": "médiane des trois observateurs ; écarts 10,2 (marios10 / kristofz), 14,8 (marios10 / aissadjamelfilali), 14,3 (kristofz / aissadjamelfilali) : au-delà de ΔE 10"
+    },
+    "corps": {
+     "retenu": "#9c8eda",
+     "valeurs": [
+      "#b0abf1",
+      "#9c8ed0",
+      "#8a86da"
+     ],
+     "ecart_dE": 16.3,
+     "note": "médiane ; écarts de 10,8 à 16,3"
+    },
+    "pointe": {
+     "retenu": "#9689cc",
+     "valeurs": [
+      "#b1adf0",
+      "#9689c8",
+      "#7d7fcc"
+     ],
+     "ecart_dE": null,
+     "note": "médiane ; pointe mesurée à f0.8"
+    },
+    "revers": null,
+    "centre": "dôme violet-noir, filets violet-noir",
+    "etamines": "filets violet-noir",
+    "motif": "aucun net"
+   },
+   "eclairage": "plein jour, plantes en place (146, 148, 147)",
+   "niveau": "provisoire (trois observateurs, écarts au-delà de ΔE 10)",
+   "statut": "provisoire : concordance insuffisante entre les trois observateurs",
+   "sources": [
+    {
+     "index_refcache": 146,
+     "meta_inat": 955,
+     "image": "https://inaturalist-open-data.s3.amazonaws.com/photos/623955596/medium.jpg",
+     "page": "https://www.inaturalist.org/observations/342615067",
+     "auteur": "marios10",
+     "licence": "CC BY",
+     "date": "2024-12-28",
+     "lieu": "Tuzla, Turquie",
+     "niveau": "N3 (recherche, iNaturalist)"
+    },
+    {
+     "index_refcache": 148,
+     "meta_inat": 164,
+     "image": "https://inaturalist-open-data.s3.amazonaws.com/photos/121132134/medium.jpg",
+     "page": "https://www.inaturalist.org/observations/74138712",
+     "auteur": "kristofz",
+     "licence": "CC BY",
+     "date": "2021-04-04",
+     "lieu": "Akyaka, Muğla, Turquie",
+     "niveau": "N3 (recherche, iNaturalist)"
+    },
+    {
+     "index_refcache": 147,
+     "meta_inat": 26,
+     "image": "https://inaturalist-open-data.s3.amazonaws.com/photos/24805391/medium.jpg",
+     "page": "https://www.inaturalist.org/observations/16481943",
+     "auteur": "aissadjamelfilali",
+     "licence": "CC BY-SA",
+     "date": "2011-04-02",
+     "lieu": "Ibn Ziad, Algérie",
+     "niveau": "N3 (recherche, iNaturalist)"
+    }
+   ],
+   "remarques": "Photo 147 porte une signature du photographe. Une quatrième photo lilas est à chercher."
+  },
+  {
+   "id": "rose-vif",
+   "nom_affiche": "Rose vif",
+   "forme": "forme rose-magenta sauvage",
+   "sauvage": true,
+   "mesures": {
+    "base": {
+     "retenu": "#c20684",
+     "valeurs": [
+      "#c80680",
+      "#bc0588"
+     ],
+     "ecart_dE": 8.7,
+     "note": "deux observateurs (kristofz, photo 60 ; denis190, photo 499) ; ΔE 8,7 : concordants"
+    },
+    "corps": {
+     "retenu": "#c81c91",
+     "valeurs": [
+      "#c81084",
+      "#c8289e"
+     ],
+     "ecart_dE": 12.0,
+     "note": "ΔE 12 > 10 : une troisième photo est à demander"
+    },
+    "pointe": {
+     "retenu": "#c13282",
+     "valeurs": [
+      "#cf3789",
+      "#b32d7b"
+     ],
+     "ecart_dE": null,
+     "note": "médiane des deux"
+    },
+    "revers": null,
+    "centre": "dôme violet-noir",
+    "etamines": "filets violet-noir",
+    "motif": "aucun net"
+   },
+   "eclairage": "plein jour, plantes en place",
+   "niveau": "provisoire (base concordante, corps à ΔE 12 : troisième photo nécessaire)",
+   "statut": "provisoire : corps discordant ; photo 687 (leosouillard) délavée par le soleil (ΔE 35), écartée",
+   "sources": [
+    {
+     "index_refcache": 150,
+     "meta_inat": 60,
+     "image": "https://inaturalist-open-data.s3.amazonaws.com/photos/36094266/medium.jpg",
+     "page": "https://www.inaturalist.org/observations/23294367",
+     "auteur": "kristofz",
+     "licence": "CC BY",
+     "date": "2019-03-26",
+     "lieu": "Nov Meadow, Golan, Israël/Syrie",
+     "niveau": "N3 (recherche, iNaturalist)"
+    },
+    {
+     "index_refcache": 153,
+     "meta_inat": 499,
+     "image": "https://inaturalist-open-data.s3.amazonaws.com/photos/349666439/medium.jpg",
+     "page": "https://www.inaturalist.org/observations/198392841",
+     "auteur": "denis190",
+     "licence": "CC BY",
+     "date": "2024-02-04",
+     "lieu": "Akrotiri, Chypre",
+     "niveau": "N3 (recherche, iNaturalist)"
+    }
+   ],
+   "remarques": "Rose-magenta franc."
+  },
+  {
+   "id": "ecarlate",
+   "nom_affiche": "Écarlate",
+   "forme": "forme rouge sauvage",
+   "sauvage": true,
+   "mesures": {
+    "base": {
+     "retenu": "#b81a10",
+     "valeurs": [
+      "#aa0817",
+      "#c11f13"
+     ],
+     "ecart_dE": 10.0,
+     "note": "médiane 11 et 58 (ΔE 10,0, limite)"
+    },
+    "corps": {
+     "retenu": "#d80f0b",
+     "valeurs": [
+      "#d80102",
+      "#f10e0b",
+      "#c81a0e"
+     ],
+     "note": "médiane de 11, 16 et 58 ; la 58 plus sombre dans le fond"
+    },
+    "pointe": {
+     "retenu": "#be0405",
+     "valeurs": [
+      "#be0405"
+     ],
+     "note": "photo 11 seule (bord plus sombre)"
+    },
+    "revers": null,
+    "centre": "dôme violet-noir #2b1c42 (58, 54)",
+    "etamines": "filets sombres, anthères violet-noir (54, 58)",
+    "motif": "anneau blanc-lilas net autour du dôme (54) ; base des tépales pâle sur la 58"
+   },
+   "eclairage": "11, 16, 58, 54 : plein jour, en place",
+   "niveau": "B",
+   "statut": "mesuré sur quatre photos",
+   "sources": [
+    {
+     "index_refcache": 11,
+     "page": "https://commons.wikimedia.org/wiki/File:Anemone_coronaria_(108034009).jpg",
+     "auteur": "Muhtesemozcinar",
+     "licence": "CC BY 3.0",
+     "niveau": "N4"
+    },
+    {
+     "index_refcache": 16,
+     "page": "https://commons.wikimedia.org/wiki/File:Anemone_coronaria_in_Palestine.jpg",
+     "auteur": "Aseel zm",
+     "licence": "CC BY-SA 4.0",
+     "niveau": "N4"
+    },
+    {
+     "index_refcache": 58,
+     "page": "https://commons.wikimedia.org/wiki/File:%CE%A0%CE%91%CE%A1%CE%9D%CE%91%CE%A3%CE%A3%CE%9F%CE%A3_135.jpg",
+     "auteur": "Capostolo",
+     "licence": "CC BY-SA 4.0",
+     "niveau": "N4"
+    },
+    {
+     "index_refcache": 54,
+     "page": "https://commons.wikimedia.org/wiki/File:Red_Anemone_coronaria_in_Jordan.jpg",
+     "auteur": "JeedaGhazal",
+     "licence": "CC BY-SA 4.0",
+     "niveau": "N4"
+    }
+   ],
+   "remarques": "Base : ΔE 10 entre 11 et 58, médiane retenue. Corps et pointe concordants (ΔE 8 à 10)."
+  },
+  {
+   "id": "rouge-blanc",
+   "nom_affiche": "Rouge et blanc",
+   "forme": "forme rouge panachée de blanc sauvage",
+   "sauvage": true,
+   "mesures": {
+    "base": {
+     "retenu": null,
+     "valeurs": null,
+     "note": "non mesurée : la base blanche ne se mesure pas au ring"
+    },
+    "corps": {
+     "retenu": "#c62242",
+     "valeurs": [
+      "#eb2260",
+      "#a82237",
+      "#c62542"
+     ],
+     "ecart_dE": 25.1,
+     "note": "médiane des trois pétales rouges ; écarts 10,8 à 25,1 : discordant"
+    },
+    "pointe": {
+     "retenu": null,
+     "valeurs": null,
+     "note": "non mesurée"
+    },
+    "revers": null,
+    "centre": "dôme sombre, anneau blanc autour du cœur (155, 156, 157)",
+    "etamines": "filets sombres",
+    "motif": "anneau blanc autour du cœur ; panachure pétale par pétale non mesurée"
+   },
+   "eclairage": "plein jour, plantes en place",
+   "niveau": "provisoire (anneau vu, blanc non mesuré, corps discordant)",
+   "statut": "provisoire : aucune mesure fiable du blanc ; trois photos rouges à ΔE 10 et plus",
+   "sources": [
+    {
+     "index_refcache": 155,
+     "meta_inat": 619,
+     "image": "https://inaturalist-open-data.s3.amazonaws.com/photos/465441137/medium.jpg",
+     "page": "https://www.inaturalist.org/observations/259300537",
+     "auteur": "cos-",
+     "licence": "CC BY-SA",
+     "date": "2018-03-22",
+     "lieu": "Haïfa, Israël",
+     "niveau": "N3 (recherche, iNaturalist)"
+    },
+    {
+     "index_refcache": 156,
+     "meta_inat": 133,
+     "image": "https://inaturalist-open-data.s3.amazonaws.com/photos/112108864/medium.jpg",
+     "page": "https://www.inaturalist.org/observations/69133136",
+     "auteur": "eleftherioskats",
+     "licence": "CC BY",
+     "date": "2021-02-04",
+     "lieu": "Région Égée-Sud, Grèce",
+     "niveau": "N3 (recherche, iNaturalist)"
+    },
+    {
+     "index_refcache": 157,
+     "meta_inat": 431,
+     "image": "https://inaturalist-open-data.s3.amazonaws.com/photos/268144001/medium.jpg",
+     "page": "https://www.inaturalist.org/observations/155145162",
+     "auteur": "amzamz",
+     "licence": "CC0",
+     "date": "2023-04-01",
+     "lieu": "Crète, Grèce",
+     "niveau": "N3 (recherche, iNaturalist)"
+    }
+   ],
+   "remarques": "Panachure à chercher (blanc et rouge sur un même pétale)."
+  },
+  {
+   "id": "blush",
+   "nom_affiche": "Blanc légèrement rosé",
+   "forme": "forme blanche à reflet rosé sauvage",
+   "sauvage": true,
+   "mesures": {
+    "base": {
+     "retenu": null,
+     "valeurs": null,
+     "note": "non mesuré"
+    },
+    "corps": {
+     "retenu": null,
+     "valeurs": null,
+     "note": "non mesuré"
+    },
+    "pointe": {
+     "retenu": null,
+     "valeurs": null,
+     "note": "non mesuré"
+    },
+    "revers": null,
+    "centre": "non mesuré",
+    "etamines": "non mesuré",
+    "motif": "non mesuré"
+   },
+   "eclairage": "aucune photo utilisable",
+   "niveau": "aucun (non mesuré)",
+   "statut": "aucune photo : les candidats trouvés (740, 990 : lilas pâle ; 974, 975 : rose pâle en gros plan) ne sont pas un blanc rosé",
+   "sources": [],
+   "remarques": "À chercher : blanc à peine rosé, de face, plein jour."
+  }
+ ]
+}

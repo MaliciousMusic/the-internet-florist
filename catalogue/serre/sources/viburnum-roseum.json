@@ -1,0 +1,1571 @@
+{
+ "sid": "viburnum-roseum",
+ "schema": "STANDARD-SOURCES.md section 5",
+ "genre": "Viburnum",
+ "famille": "Adoxaceae",
+ "date_consultation": "2026-10-08",
+ "redige_par": "fleur-recensement (temps 1, puis temps 2 et 3 reunis ; budget web reduit : WebSearch epuise, WebFetch de pages precises et API Commons / iNaturalist seulement)",
+ "etat": "temps 1, 2 et 3 faits pour la sorte ; lot 2 (niche) NON traite ; aucune mesure de couleur (fleur-coloris ajoutera le champ `mesures` de chaque coloris, non cree ici)",
+ "legende_entrees": "« cultivars » = representant de la sorte et voisins a boule sterile ; « coloris_catalogue » = les cinq coloris du catalogue rattaches a leur realite ; « sans_photo » = non traites ; « ecartes » = rejetes avec la raison",
+ "rattachement_catalogue": "sorte viburnum-roseum, SKU du bouquet viburnum-roseum~0 = coloris 'vert' ; ids du catalogue : vert, vert-tendre, blanc, blanc-creme, blanc-rose ; aucune renumerotation",
+ "recensement": {
+  "date": "2026-10-08",
+  "agent": "fleur-recensement",
+  "portee": "boules de fleurons steriles de fleur coupee (Viburnum opulus 'Roseum' et ses voisins macrocephalum et plicatum) ; tout ce qui est documente",
+  "limites": [
+   "N1 : l'ICRA de Viburnum est l'American Public Gardens Association (registrar : Stefan Lura, US National Arboretum) ; elle n'a AUCUN registre en ligne, nouvelles inscriptions dans HortScience ; la page V de l'ISHS (relue le 2026-10-08) confirme l'APGA mais ne donne aucune liste. Aucun cultivar ne peut donc etre au niveau A.",
+   "N2 : Floricode (compte professionnel, non cree), UPOV PLUTO et CPVO non consultes ; aucune fiche d'obtenteur a photo trouvee ; le vendeur FiftyFlowers (non nominatif) est le seul indice de fleur coupee.",
+   "WebSearch epuise pour ce tour : le lot 2 (Chyverton, Grandiflorum, Rotundifolium, Popcorn, Nantucket) n'a pas ete traite ; recherche par pages precises seulement.",
+   "Les photos ne sont jamais stockees dans le depot : seules adresses, auteurs, licences et niveaux ; les vignettes regardees sont dans refcache/viburnum-roseum/img/. Licences CC BY-NC (iNaturalist) : mesure seulement."
+  ],
+  "statuts": "en production = niveau A ou B apres mesure ; C = a confirmer ; D = brouillon"
+ },
+ "nom": "Boule-de-neige",
+ "latin": "Viburnum opulus 'Roseum'",
+ "taxonomie": {
+  "nom_accepte": "Viburnum L. (Adoxaceae), IPNI 30000738-2 ; V. opulus 'Roseum' = boule a fleurons steriles ; voisins : V. macrocephalum f. macrocephalum, V. plicatum f. plicatum",
+  "melange": "la sorte du catalogue 'viburnum-roseum' est la boule sterile ; les formes a cyme plate (f. keteleeri, lacecaps de V. plicatum var. tomentosum) et les hybrides fertiles ('Eskimo', V. x carlcephalum) sont hors sorte"
+ },
+ "question_du_vert": {
+  "fait_etabli": "FAIT ETABLI : le vert est un STADE de 'Roseum' (la boule jeune, verte, qui blanchit puis rosit), pas un coloris distinct. Sources : NC State Plant Toolbox, N3, « green to white, aging to light pink » et « green flowers that mature to white and then pink » (page 'Roseum', relue le 2026-10-08) ; meme editeur, page V. opulus : « turn from green to white » ; photos de plantes nommees 'Roseum' : Stang, Commons (2006-04-22, boules vert citron ; 2008-05-02, creme-vert ; 2008-05-07, blanches), Consultaplantas (2018-04-23, deux tetes de teintes differentes sur le meme jeune plant : vert citron et creme-vert), Ziarnek (2016-05-16, jardin botanique de Cracovie, boules vert pale et blanc-vert melees) ; la meme transition vert puis blanc est ecrite pour le voisin V. macrocephalum par NC State et Trees and Shrubs Online (N3). Les photos vertes ont ete regardees ce tour sur une planche de vignettes.",
+  "ce_qui_n_est_pas_etabli": [
+   "Aucune sequence datee d'un MEME arbuste montrant vert, puis blanc, puis rose : les trois dates de Stang viennent de trois pepinieres differentes (Bethesda 2006, Beltsville 2008-05-02, Potomac 2008-05-07) ; l'observation iNaturalist 194523650 (2019-06-06) et 194523744 (2022-05-26), meme plant, ne montre que du blanc.",
+   "Le rose du fane n'est ecrit que par NC State et Trees and Shrubs Online ; aucune photo d'une boule rosie n'a ete trouvee (les photos Commons de juin vues ce tour, Wroclaw 2021-06-02, Minsk 2025-06-01, Grodno 2026-06-02, Saint-Petersbourg 2026-06-05, sont blanches ; les caches iNaturalist 'pink', 'fade', 'blush' n'en donnent aucune pour un cultivar).",
+   "Aucun cultivar qui RESTE vert n'a ete trouve ('Eskimo' = fertile, blanc pur ; aucun viburnum a boule chez Proven Winners ; 'Green Ball' non trouve) : l'absence dans les sources ouvertes n'est pas une preuve qu'il n'existe pas (Floricode, PLUTO et un registre de l'APGA n'ont pas ete consultables).",
+   "Le vendeur de fleur coupee FiftyFlowers vend une boule « verte » sans nommer la variete : elle est probablement coupee au stade vert, ce que sa page ne dit pas.",
+   "Le nom « Vert anis » vient du catalogue, d'aucune source."
+  ],
+  "question_au_porteur": "Le SKU viburnum-roseum~0 (coloris 'vert') s'appelle-t-il « Vert anis » pour designer un stade de 'Roseum' ? Faut-il le garder comme coloris de boutique (boule coupee verte, comme la vend FiftyFlowers) ou le traiter comme un stade d'un seul coloris ?",
+  "reponse_courte": "le vert est un stade de 'Roseum' (fait etabli) ; il n'est pas tranche si le jeu le vend comme coloris de boutique (boule coupee verte) ; aucun cultivar qui reste vert n'a ete trouve."
+ },
+ "coloris_catalogue": [
+  {
+   "id": "vert",
+   "nom_affiche": "Vert anis (boule verte)",
+   "sku_bouquet": true,
+   "sku": "viburnum-roseum~0",
+   "nature": "STADE (boule jeune) de Viburnum opulus 'Roseum' ; aucun coloris distinct trouve",
+   "cultivar_id": "viburnum-opulus-roseum",
+   "nom_enregistre": "Viburnum opulus 'Roseum' (stade jeune)",
+   "niveau_preuve": "B (provisoire, avant mesure)",
+   "raison_niveau": "Texte N3 (NC State, deux pages du meme editeur) + trois photographes independants sur des plantes nommees 'Roseum' (Stang, Consultaplantas, Ziarnek) ; A impossible : aucun registre N1 en ligne ni photo N2. Le vert de Trees and Shrubs Online n'existe que pour macrocephalum.",
+   "statut": "en production apres mesure (B), sous reserve de la question au porteur",
+   "photos_a_mesurer": [
+    "stang-0zz",
+    "consultaplantas-2a",
+    "ziarnek-roseum-kz01",
+    "stang-1zz"
+   ],
+   "nom_affiche_propose": "Vert anis (boule jeune)",
+   "doutes": [
+    "kz01 melange vert pale et blanc-vert : mesurer la zone la plus verte seulement",
+    "0zz et 1zz viennent du meme site et du meme jour : une seule source de couleur, pas deux"
+   ],
+   "mesures": {
+    "methode": "refs.py pal --box sur les miniatures 640 px ; cadres poses a l'oeil (auto non utilise : il exclut le vert) ; dominante de chaque cadre, moyenne Lab par photo, mediane entre photos ; LCh en CIE D65 ; dE76",
+    "zones_mesurees": [
+     "centre",
+     "feuille",
+     "fond",
+     "ombre"
+    ],
+    "photos": {
+     "stang-0zz": {
+      "eclairage": "exterieur, lumiere du jour, fond de feuillage, cote eclaire",
+      "zones": {
+       "centre": {
+        "L": 83.6,
+        "C": 57.3,
+        "h": 117.7,
+        "hex": [
+         "#bedc6d"
+        ]
+       },
+       "ombre": {
+        "L": 62.4,
+        "C": 57.8,
+        "h": 118.2,
+        "hex": [
+         "#82a235"
+        ]
+       },
+       "fond": {
+        "L": 76.2,
+        "C": 54.7,
+        "h": 118.0,
+        "hex": [
+         "#aac75f"
+        ]
+       },
+       "feuille": {
+        "L": 54.8,
+        "C": 58.7,
+        "h": 126.3,
+        "hex": [
+         "#5d9129"
+        ]
+       }
+      }
+     },
+     "consultaplantas-2a": {
+      "eclairage": "exterieur, plein soleil (jaunit les tons)",
+      "zones": {
+       "centre": {
+        "L": 62.3,
+        "C": 57.6,
+        "h": 109.3,
+        "hex": [
+         "#929e2d"
+        ]
+       },
+       "ombre": {
+        "L": 49.1,
+        "C": 51.7,
+        "h": 111.9,
+        "hex": [
+         "#6c7c19"
+        ]
+       }
+      }
+     },
+     "ziarnek-kz01": {
+      "eclairage": "exterieur, plein jour sous couvert, contre-jour partiel",
+      "zones": {
+       "centre": {
+        "L": 49.9,
+        "C": 41.7,
+        "h": 123.8,
+        "hex": [
+         "#628039"
+        ]
+       },
+       "ombre": {
+        "L": 46.1,
+        "C": 29.8,
+        "h": 124.6,
+        "hex": [
+         "#5f7443"
+        ]
+       }
+      }
+     },
+     "stang-1zz": {
+      "eclairage": "exterieur, lumiere du jour (non precisee)",
+      "zones": {
+       "centre": {
+        "L": 75.2,
+        "C": 62.6,
+        "h": 116.2,
+        "hex": [
+         "#a7c54b"
+        ]
+       },
+       "ombre": {
+        "L": 54.4,
+        "C": 61.9,
+        "h": 124.8,
+        "hex": [
+         "#5c901e"
+        ]
+       }
+      }
+     }
+    },
+    "valeur_retenue": {
+     "centre": {
+      "L": 68.8,
+      "C": 58.2,
+      "h": 115.4,
+      "n": 4
+     },
+     "feuille": {
+      "L": 54.8,
+      "C": 58.7,
+      "h": 126.3,
+      "n": 1
+     },
+     "fond": {
+      "L": 76.2,
+      "C": 54.7,
+      "h": 118.0,
+      "n": 1
+     },
+     "ombre": {
+      "L": 51.7,
+      "C": 54.6,
+      "h": 115.2,
+      "n": 4
+     }
+    },
+    "ecarts_de_stade": {
+     "vert-tendre": "dE76 32.2, teinte 1.2 deg, chroma 58 contre 27",
+     "blanc": "dE76 59.5, teinte 16.1 deg (chroma trop faible pour compter), chroma 58 contre 4",
+     "blanc-creme": "dE76 35.2, teinte 9.4 deg, chroma 58 contre 27"
+    },
+    "niveau_mesure": "B",
+    "remarques": "Quatre photos nommees (N4), dont trois independantes ; la source texte N3 et les quatre photos concordent sur la teinte : toutes a 8,4 deg ou moins de la mediane (115 deg environ). Chroma de 57 a 63, sauf kz01 (42) : kz01 est un melange vert pale et blanc-vert, a contre-jour, sa zone d'ombre est peu fiable. Clarte libre : de 50 a 84 selon l'eclairage. Cinq paires sur six depassent dE 10 : la mediane porte sur les quatre photos, sans correction de balance (aucun neutre). Niveau B tenu.",
+    "ecarts": {
+     "a_la_mediane_teinte_max_deg": 8.4,
+     "entre_photos_teinte_max_deg": 14.5,
+     "dE76_max": 37.5,
+     "chroma": "57 a 63 ; kz01 42"
+    }
+   },
+   "mesures_passe2": {
+    "passe": 2,
+    "methode": "Cercle sur la boule (ball_p2.py) : pixels de fleuron (L>=55, C<=80, teinte 85-150 deg, ou C<20) ; plein = moitie haute de L, ombre = quart bas des fleurons retenus ; moyenne plein/ombre par photo ; mediane entre photos ; LCh en D65 ; pas de correction de balance (aucun neutre vu sur les photos). Photos passe 1 (pal --box) reprises telles quelles : Commons bloque en HTTP 429.",
+    "nombre_photos": 6,
+    "nombre_sessions_independantes": 6,
+    "photos": [
+     {
+      "photo": "s0",
+      "session": "S06a",
+      "source": "mesure passe 2 (cercle)",
+      "L": 73.2,
+      "C": 58.2,
+      "h": 117.2
+     },
+     {
+      "photo": "U20",
+      "session": "U20",
+      "source": "mesure passe 2 (cercle)",
+      "L": 89.7,
+      "C": 57.1,
+      "h": 111.0
+     },
+     {
+      "photo": "P21",
+      "session": "P21",
+      "source": "mesure passe 2 (cercle)",
+      "L": 70.65,
+      "C": 50.8,
+      "h": 122.55
+     },
+     {
+      "photo": "M20",
+      "session": "M20",
+      "source": "mesure passe 2 (cercle)",
+      "L": 71.3,
+      "C": 57.85,
+      "h": 139.4
+     },
+     {
+      "photo": "ziarnek-kz01",
+      "session": "K16",
+      "source": "passe 1 (pal, non refaite)",
+      "L": 48.0,
+      "C": 35.75,
+      "h": 124.2
+     },
+     {
+      "photo": "consultaplantas-2a",
+      "session": "C18",
+      "source": "passe 1 (pal, non refaite)",
+      "L": 55.7,
+      "C": 54.65,
+      "h": 110.6
+     }
+    ],
+    "mediane": {
+     "L": 71.0,
+     "C": 55.9,
+     "h": 119.9
+    },
+    "ecart_teinte_max_deg": 19.5,
+    "ecart_teinte_max_photo": "M20",
+    "concordantes_10deg": [
+     "s0",
+     "U20",
+     "P21",
+     "ziarnek-kz01",
+     "consultaplantas-2a"
+    ],
+    "discordantes_10deg": [
+     "M20"
+    ],
+    "concordance": "5 sur 6 (seuil 4 sur 5 atteint)",
+    "source_n2_n3_nommee": "s0 (pepiniere, Stang 2006) ; kz01 (jardin botanique de Cracovie, 2016)",
+    "niveau_mesure": "B",
+    "session_commune": "s1 meme session que s0 (non comptee) ; c2 meme session que c1 (C18, passe 1, vert-tendre)",
+    "doutes": [
+     "M20 : teinte 139 deg (boule froide), pas de neutre pour corriger ; a regarder avant production"
+    ]
+   }
+  },
+  {
+   "id": "vert-tendre",
+   "nom_affiche": "Vert tendre (virant au blanc)",
+   "sku_bouquet": false,
+   "nature": "STADE intermediaire de 'Roseum' ; aucun coloris distinct",
+   "cultivar_id": "viburnum-opulus-roseum",
+   "nom_enregistre": "Viburnum opulus 'Roseum' (stade intermediaire)",
+   "niveau_preuve": "C",
+   "raison_niveau": "Aucun texte ne decrit une teinte intermediaire (« green to white » la suppose) ; deux photographes (Stang 2008-05-02, Consultaplantas 2018-04-23) montrent des tetes creme-vert. Une teinte du continuum vert-blanc, pas un jalon decrit.",
+   "statut": "a confirmer (n'entre pas en boutique tant que C)",
+   "photos_a_mesurer": [
+    "stang-2zz",
+    "stang-3zz",
+    "consultaplantas-1a"
+   ],
+   "doutes": [
+    "3zz est deja blanc creme : peut servir aussi a blanc-creme"
+   ],
+   "mesures": {
+    "methode": "refs.py pal --box sur les miniatures 640 px ; cadres poses a l'oeil (auto non utilise : il exclut le vert) ; dominante de chaque cadre, moyenne Lab par photo, mediane entre photos ; LCh en CIE D65 ; dE76",
+    "zones_mesurees": [
+     "centre"
+    ],
+    "photos": {
+     "stang-2zz": {
+      "eclairage": "exterieur, lumiere du jour ombree, fond violet sombre : pas de neutre, balance non corrigeable",
+      "zones": {
+       "centre": {
+        "L": 66.7,
+        "C": 46.1,
+        "h": 104.0,
+        "hex": [
+         "#b5af52",
+         "#9c9d4c"
+        ]
+       }
+      }
+     },
+     "stang-3zz": {
+      "eclairage": "exterieur, lumiere du jour (non precisee) : pas de neutre, balance non corrigeable",
+      "zones": {
+       "centre": {
+        "L": 77.5,
+        "C": 27.3,
+        "h": 114.7,
+        "hex": [
+         "#d2d6b1",
+         "#a6b372"
+        ]
+       }
+      }
+     },
+     "consultaplantas-1a": {
+      "eclairage": "exterieur, plein soleil : tetes delavees",
+      "zones": {
+       "centre": {
+        "L": 97.7,
+        "C": 14.5,
+        "h": 111.1,
+        "hex": [
+         "#f6f8d2",
+         "#fcfdea"
+        ]
+       }
+      }
+     }
+    },
+    "valeur_retenue": {
+     "centre": {
+      "L": 77.5,
+      "C": 27.2,
+      "h": 114.2,
+      "n": 3
+     }
+    },
+    "ecarts_de_stade": {
+     "vert": "dE76 32.2, teinte 1.2 deg",
+     "blanc": "dE76 28.0, teinte 17.3 deg, chroma 27 contre 4",
+     "blanc-creme": "dE76 6.8, teinte 8.3 deg, chroma 27 contre 27 ; photo stang-3zz commune aux deux"
+    },
+    "niveau_mesure": "C",
+    "remarques": "Trois photos (N4). Teinte : stang-2zz a 104,0 deg, les deux autres a 111 et 115 deg. Ecart a la mediane 10,2 deg, ecart maximal 10,7 deg : au seuil, et stang-2zz est une photo chaude (fond violet sombre, pas de neutre pour corriger la balance). Divergence tenue : niveau C, a confirmer, hors boutique. Chroma 46 / 27 / 15 : pas du meme ordre. consultaplantas-1a est tres delavee (C 14,5) : sa teinte est peu fiable. stang-3zz est partagee avec blanc-creme : pas une source independante entre les deux. Une troisieme photo nette (face, sans fond sombre) est a chercher.",
+    "ecarts": {
+     "a_la_mediane_teinte_max_deg": 10.2,
+     "entre_photos_teinte_max_deg": 10.7,
+     "dE76_max": 44.4,
+     "chroma": "46 / 27 / 15"
+    }
+   },
+   "mesures_passe2": {
+    "passe": 2,
+    "methode": "Cercle sur la boule (ball_p2.py) : pixels de fleuron (L>=55, C<=80, teinte 85-150 deg, ou C<20) ; plein = moitie haute de L, ombre = quart bas des fleurons retenus ; moyenne plein/ombre par photo ; mediane entre photos ; LCh en D65 ; pas de correction de balance (aucun neutre vu sur les photos). Photos passe 1 (pal --box) reprises telles quelles : Commons bloque en HTTP 429.",
+    "nombre_photos": 4,
+    "nombre_sessions_independantes": 4,
+    "photos": [
+     {
+      "photo": "s2",
+      "session": "S08a",
+      "source": "mesure passe 2 (cercle)",
+      "L": 72.7,
+      "C": 38.5,
+      "h": 106.65
+     },
+     {
+      "photo": "consultaplantas-1a",
+      "session": "C18",
+      "source": "passe 1 (pal, non refaite)",
+      "L": 97.7,
+      "C": 14.5,
+      "h": 111.1
+     },
+     {
+      "photo": "B23",
+      "session": "B23",
+      "source": "mesure passe 2 (cercle)",
+      "L": 83.7,
+      "C": 23.7,
+      "h": 116.0
+     },
+     {
+      "photo": "Ma25",
+      "session": "Ma25",
+      "source": "mesure passe 2 (cercle)",
+      "L": 64.25,
+      "C": 16.85,
+      "h": 109.5
+     }
+    ],
+    "mediane": {
+     "L": 78.2,
+     "C": 20.3,
+     "h": 110.3
+    },
+    "ecart_teinte_max_deg": 5.7,
+    "ecart_teinte_max_photo": "B23",
+    "concordantes_10deg": [
+     "s2",
+     "consultaplantas-1a",
+     "B23",
+     "Ma25"
+    ],
+    "discordantes_10deg": [],
+    "concordance": "4 sur 4 en teinte, mais seulement 4 sessions independantes (s3 partage la session de s2, wpc est un appoint approche)",
+    "ecart_entre_photos": "dE mediane photo-mediane 16,7 (L de 64 a 98) : une cinquieme photo nette est demandee",
+    "source_n2_n3_nommee": "s2 (pepiniere, Stang 2008)",
+    "niveau_mesure": "C (a confirmer)",
+    "demande": "une 5e photo nommee et independante (boule verte virant au blanc, face, fond neutre)",
+    "fusion_proposee": "blanc-creme (dE 5,8 ; L +3,8 ; C +3,9 : ecart non visible) : proposition seulement",
+    "doutes": [
+     "c1 et c2 : meme plante et meme jour (2018-04-23)"
+    ]
+   }
+  },
+  {
+   "id": "blanc",
+   "nom_affiche": "Blanc",
+   "sku_bouquet": false,
+   "nature": "STADE mature de 'Roseum' (le coloris de reference de la sorte)",
+   "cultivar_id": "viburnum-opulus-roseum",
+   "nom_enregistre": "Viburnum opulus 'Roseum'",
+   "niveau_preuve": "B (provisoire, avant mesure)",
+   "raison_niveau": "Textes N3 independants (« a globose head of white, closely packed blossoms », Trees and Shrubs Online ; « green to white », NC State) + photos de Stang (2008-05-07), du jardin botanique de Wroclaw (2021-06-02, lieu N3) et de l'observateur iNaturalist (2019-06-06). A impossible : pas de registre N1 ni de photo N2.",
+   "statut": "en production apres mesure (B)",
+   "photos_a_mesurer": [
+    "stang-4zz",
+    "stang-6zz",
+    "wroclaw-2021-01",
+    "inat-194523650-341950747"
+   ],
+   "nom_affiche_propose": "Blanc (boule ouverte)",
+   "doutes": [
+    "les blancs sont faussés en plein soleil (STANDARD-SOURCES §8) : mesurer les ombres et les flancs, noter l'eclairage ; la photo iNaturalist est en plein soleil"
+   ],
+   "mesures": {
+    "methode": "refs.py pal --box sur les miniatures 640 px ; cadres poses a l'oeil (auto non utilise : il exclut le vert) ; dominante de chaque cadre, moyenne Lab par photo, mediane entre photos ; LCh en CIE D65 ; dE76",
+    "zones_mesurees": [
+     "centre",
+     "ombre"
+    ],
+    "photos": {
+     "inat-194523650": {
+      "eclairage": "exterieur, plein soleil : surexposition possible sur les blancs",
+      "zones": {
+       "centre": {
+        "L": 96.6,
+        "C": 7.1,
+        "h": 112.5,
+        "hex": [
+         "#f5f6e8",
+         "#f6f7e9"
+        ]
+       }
+      }
+     },
+     "stang-4zz": {
+      "eclairage": "exterieur, lumiere du jour, ombres bleutees sur les tetes ; cadre centre = partie lit, cadre ombre = partie ombree",
+      "zones": {
+       "centre": {
+        "L": 92.1,
+        "C": 1.1,
+        "h": 309.0,
+        "hex": [
+         "#e9e8ea"
+        ]
+       },
+       "ombre": {
+        "L": 70.1,
+        "C": 1.2,
+        "h": 309.0,
+        "hex": [
+         "#acabad"
+        ]
+       }
+      }
+     },
+     "stang-6zz": {
+      "eclairage": "exterieur, lumiere du jour, teinte creme (pas de neutre dans la photo, balance non corrigee)",
+      "zones": {
+       "centre": {
+        "L": 93.2,
+        "C": 11.4,
+        "h": 101.8,
+        "hex": [
+         "#f0ecd6"
+        ]
+       }
+      }
+     },
+     "wroclaw-2021-01": {
+      "eclairage": "exterieur, plein jour, reflets bleutes, fond vert sombre (pas de neutre)",
+      "zones": {
+       "centre": {
+        "L": 91.4,
+        "C": 3.7,
+        "h": 211.3,
+        "hex": [
+         "#e0eaea",
+         "#dce7ea"
+        ]
+       }
+      }
+     }
+    },
+    "valeur_retenue": {
+     "centre": {
+      "L": 92.6,
+      "C": 3.8,
+      "h": 131.4,
+      "n": 4
+     },
+     "ombre": {
+      "L": 70.1,
+      "C": 1.2,
+      "h": 309.0,
+      "n": 1
+     }
+    },
+    "ecarts_de_stade": {
+     "vert": "dE76 59.5, teinte 16.1 deg",
+     "vert-tendre": "dE76 28.0, teinte 17.3 deg",
+     "blanc-creme": "dE76 25.2, teinte 25.5 deg, chroma 4 contre 27"
+    },
+    "niveau_mesure": "C",
+    "remarques": "Quatre photos N4 (Stang 4zz et 6zz, Wroclaw 2021, iNaturalist) : blancs quasi neutres, clarte 91 a 97, chroma 1 a 11. La teinte n'est pas concordante a 10 deg : les quatre teintes s'ecartent de 19 a 178 deg de la mediane. A chroma si basse, la teinte est surtout du bruit de balance des blancs. La regle donne donc une divergence, niveau C. A trancher par le porteur : si la blancheur neutre suffit comme concordance, le niveau serait B (textes N3 et quatre photos). iNaturalist est en plein soleil (surexposition possible). Ombre de stang-6zz rejetee (feuillage sombre). Aucune correction de balance des blancs (pas de neutre fiable dans les photos).",
+    "ecarts": {
+     "photos_mesurees": 4,
+     "entre_photos_teinte_max_deg": 177.5,
+     "ecarts_teinte_a_la_mediane_deg": [
+      18.9,
+      177.5,
+      29.6,
+      79.9
+     ],
+     "chroma": "1 a 11",
+     "dE76_max": 13.2,
+     "remarque": "teinte non interpretable a C < 11 : regle de 10 deg non applicable en l etat"
+    }
+   },
+   "mesures_passe2": {
+    "passe": 2,
+    "methode": "Cercle sur la boule (ball_p2.py) : pixels de fleuron (L>=55, C<=80, teinte 85-150 deg, ou C<20) ; plein = moitie haute de L, ombre = quart bas des fleurons retenus ; moyenne plein/ombre par photo ; mediane entre photos ; LCh en D65 ; pas de correction de balance (aucun neutre vu sur les photos). Photos passe 1 (pal --box) reprises telles quelles : Commons bloque en HTTP 429. Test de teinte non applique : chroma mediane 11, regle 4 (clarte et chroma).",
+    "nombre_photos": 12,
+    "nombre_sessions_independantes": 11,
+    "photos": [
+     {
+      "photo": "s4",
+      "session": "S08b",
+      "source": "mesure passe 2 (cercle)",
+      "L": 76.8,
+      "C": 0.6,
+      "h": 325.9
+     },
+     {
+      "photo": "s6",
+      "session": "S08b",
+      "source": "mesure passe 2 (cercle)",
+      "L": 77.4,
+      "C": 7.95,
+      "h": 98.15
+     },
+     {
+      "photo": "i19",
+      "session": "Q19",
+      "source": "mesure passe 2 (cercle)",
+      "L": 78.75,
+      "C": 20.15,
+      "h": 111.8
+     },
+     {
+      "photo": "Ess15",
+      "session": "E15",
+      "source": "mesure passe 2 (cercle)",
+      "L": 84.9,
+      "C": 9.5,
+      "h": 134.75
+     },
+     {
+      "photo": "Ken08",
+      "session": "K08",
+      "source": "mesure passe 2 (cercle)",
+      "L": 74.4,
+      "C": 19.65,
+      "h": 114.55
+     },
+     {
+      "photo": "Sar15",
+      "session": "Sa15",
+      "source": "mesure passe 2 (cercle)",
+      "L": 77.2,
+      "C": 8.05,
+      "h": 130.6
+     },
+     {
+      "photo": "Min25",
+      "session": "M25",
+      "source": "mesure passe 2 (cercle)",
+      "L": 70.4,
+      "C": 35.4,
+      "h": 123.5
+     },
+     {
+      "photo": "Min26",
+      "session": "M26",
+      "source": "mesure passe 2 (cercle)",
+      "L": 69.65,
+      "C": 25.65,
+      "h": 124.25
+     },
+     {
+      "photo": "Grd26",
+      "session": "G26",
+      "source": "mesure passe 2 (cercle)",
+      "L": 69.45,
+      "C": 23.1,
+      "h": 110.9
+     },
+     {
+      "photo": "Spb26",
+      "session": "SP26",
+      "source": "mesure passe 2 (cercle)",
+      "L": 75.55,
+      "C": 12.8,
+      "h": 122.95
+     },
+     {
+      "photo": "T19",
+      "session": "T19",
+      "source": "mesure passe 2 (cercle)",
+      "L": 72.95,
+      "C": 5.3,
+      "h": 86.5
+     },
+     {
+      "photo": "wroclaw-2021-01",
+      "session": "WR21",
+      "source": "passe 1 (pal, non refaite)",
+      "L": 91.4,
+      "C": 3.7,
+      "h": 211.3
+     }
+    ],
+    "mediane": {
+     "L": 76.2,
+     "C": 11.2,
+     "h": "non significative (C < 12)"
+    },
+    "dispersion": "dE median photo-mediane 9,5 ; C de 0,6 a 35",
+    "ecart_avec_vert_tendre": "dE 9,9 ; C 11 contre 20 (ecart de 9, au-dela de 5) ; L 76 contre 78 : ecart a la limite du bruit de la phase (9,5)",
+    "source_n2_n3_nommee": "s4/s6 (pepiniere, Stang 2008) ; Ess15 et Ken08 (noms Roseum/sterilis)",
+    "niveau_mesure": "B propose (a trancher : dispersion de C)",
+    "fusion_proposee": "aucune proposition ferme ; l ecart avec vert-tendre est marginal, a trancher par le porteur",
+    "doutes": [
+     "s4 : chroma 0,6, teinte inexploitable ; T19 : une seule vue, teinte mediane 87 deg a faible chroma",
+     "Ess15 : cercle place sur une zone peu sure, plein presque blanc (L 100)"
+    ]
+   }
+  },
+  {
+   "id": "blanc-creme",
+   "nom_affiche": "Blanc crème",
+   "sku_bouquet": false,
+   "nature": "aucune source ne le distingue du blanc : STADE intermediaire (entre vert tendre et blanc) ou DOUBLON du blanc, a trancher",
+   "cultivar_id": "viburnum-opulus-roseum",
+   "nom_enregistre": "Viburnum opulus 'Roseum' (non distinct)",
+   "niveau_preuve": "D",
+   "raison_niveau": "Ni texte ni cultivar : seules des teintes creme sur des photos de stade (Stang 3zz, WayneRay 2010-04-10 ; le voisin macrocephalum de Bolognini est aussi creme). Peut etre un effet d'eclairage ou de stade.",
+   "statut": "a confirmer ; proposition : le tenir pour un stade intermediaire sans SKU propre, ou le retirer comme doublon du blanc si la mesure le confond avec le blanc (ΔE < 10)",
+   "photos_a_mesurer": [
+    "stang-3zz",
+    "wpc-2010-04-10"
+   ],
+   "photos_partagees_avec": [
+    "vert-tendre",
+    "blanc"
+   ],
+   "doutes": [
+    "WPC est un petit plan d'arbuste : appoint 'approche' seulement"
+   ],
+   "mesures": {
+    "methode": "refs.py pal --box sur les miniatures 640 px ; cadres poses a l'oeil (auto non utilise : il exclut le vert) ; dominante de chaque cadre, moyenne Lab par photo, mediane entre photos ; LCh en CIE D65 ; dE76",
+    "zones_mesurees": [
+     "centre"
+    ],
+    "photos": {
+     "stang-3zz": {
+      "eclairage": "exterieur, lumiere du jour (non precisee) : meme photo que vert-tendre",
+      "zones": {
+       "centre": {
+        "L": 77.5,
+        "C": 27.3,
+        "h": 114.7,
+        "hex": [
+         "#d2d6b1",
+         "#a6b372"
+        ]
+       }
+      }
+     },
+     "wpc-2010-04-10": {
+      "eclairage": "exterieur, plein jour : plan d arbuste trop petit, appoint approche seulement",
+      "zones": {
+       "centre": {
+        "L": 88.7,
+        "C": 26.8,
+        "h": 97.0,
+        "hex": [
+         "#ecdfac"
+        ]
+       }
+      }
+     }
+    },
+    "valeur_retenue": {
+     "centre": {
+      "L": 83.1,
+      "C": 26.7,
+      "h": 105.9,
+      "n": 2
+     }
+    },
+    "ecarts_de_stade": {
+     "vert": "dE76 35.2, teinte 9.4 deg",
+     "vert-tendre": "dE76 6.8, teinte 8.3 deg ; photo stang-3zz commune aux deux",
+     "blanc": "dE76 25.2, teinte 25.5 deg"
+    },
+    "niveau_mesure": "C",
+    "remarques": "Deux photos seulement : stang-3zz (deja utilisee pour vert-tendre) et wpc-2010-04-10 (plan d'arbuste trop petit, appoint approche). Ecart de teinte entre les deux : 17,6 deg (au-dela de 10) ; pas de troisieme photo nommee disponible : divergence, niveau C. Blanc-creme est plus proche de vert-tendre (dE76 6,8, meme chroma 27) que du blanc (dE76 25,2) : doublon de vert-tendre possible, a trancher.",
+    "ecarts": {
+     "photos_mesurees": 2,
+     "entre_photos_teinte_max_deg": 17.6,
+     "dE76": 13.9,
+     "chroma": "27 / 27",
+     "remarque": "deux photos seulement ; wpc est un appoint approche"
+    }
+   },
+   "mesures_passe2": {
+    "passe": 2,
+    "methode": "Cercle sur la boule (ball_p2.py) : pixels de fleuron (L>=55, C<=80, teinte 85-150 deg, ou C<20) ; plein = moitie haute de L, ombre = quart bas des fleurons retenus ; moyenne plein/ombre par photo ; mediane entre photos ; LCh en D65 ; pas de correction de balance (aucun neutre vu sur les photos). Photos passe 1 (pal --box) reprises telles quelles : Commons bloque en HTTP 429.",
+    "nombre_photos": 2,
+    "nombre_sessions_independantes": 2,
+    "photos": [
+     {
+      "photo": "wpc-2010-04-10",
+      "session": "W10",
+      "source": "passe 1 (pal, non refaite)",
+      "L": 88.7,
+      "C": 26.8,
+      "h": 97.0
+     },
+     {
+      "photo": "s3",
+      "session": "S08a",
+      "source": "mesure passe 2 (cercle)",
+      "L": 75.35,
+      "C": 21.55,
+      "h": 113.8
+     }
+    ],
+    "mediane": {
+     "L": 82.0,
+     "C": 24.2,
+     "h": 105.4
+    },
+    "ecart_avec_vert_tendre": "dE 5,8 ; L +3,8 ; C +3,9 : sous le seuil de 5 points et sous le bruit de phase",
+    "niveau_mesure": "C (2 sessions seulement)",
+    "fusion_proposee": "dans vert-tendre, ret:1 sur blanc-creme (PROPOSITION, rien n est applique ; numeros conserves)",
+    "doutes": [
+     "wpc-2010-04-10 : appoint approche (arbuste entier), non compte dans le niveau"
+    ]
+   }
+  },
+  {
+   "id": "blanc-rose",
+   "nom_affiche": "Blanc rosé (fin de saison)",
+   "sku_bouquet": false,
+   "nature": "STADE fane de 'Roseum' (la tete rosit en vieillissant) ; aucun coloris distinct",
+   "cultivar_id": "viburnum-opulus-roseum",
+   "nom_enregistre": "Viburnum opulus 'Roseum' (stade fane)",
+   "niveau_preuve": "D",
+   "raison_niveau": "Deux textes N3 (NC State : « aging to light pink » ; Trees and Shrubs Online : « The blush of pink as the sterile flowers age ») mais AUCUNE photo : fane rose, texte seul. Pas de teinte mesurable.",
+   "statut": "a confirmer, hors boutique tant qu'aucune photo n'existe",
+   "photos_a_mesurer": [],
+   "nom_affiche_propose": "Blanc rosé (boule fanée)",
+   "doutes": [
+    "pas de photo d'une boule rosie dans Commons (juin 2015 a 2026 vu), ni dans les caches iNaturalist : a chercher au navigateur (voir recensement.md)"
+   ],
+   "mesures": {
+    "mesure": null,
+    "raison": "aucune photo designee dans le json : rien n'a ete mesure",
+    "valeur_indicative_texte": "rose pale en vieillissant (NC State et Trees and Shrubs Online, texte seul, pas de mesure)",
+    "niveau_mesure": "non mesure",
+    "remarques": "Ne pas entrer en boutique sans photo."
+   },
+   "mesures_passe2": {
+    "passe": 2,
+    "mesure": null,
+    "raison": "aucune photo de boule rosie trouvee : aucune note decrivant une fleur rose, rosissante ou fanee dans les trois jeux iNaturalist (regex pink, rosé, blush, fading, aging) ; aucune photo Commons de boule rosie vue",
+    "statut_texte": "fane rose : texte seul",
+    "niveau_mesure": null
+   }
+  }
+ ],
+ "cultivars": [
+  {
+   "id": "viburnum-opulus-roseum",
+   "nom_affiche": "Boule-de-neige (Viburnum opulus 'Roseum')",
+   "nom_enregistre": "Viburnum opulus 'Roseum'",
+   "synonymes": [
+    "'Sterile'",
+    "'Sterilis'",
+    "'Rosea' (graphie vue sur nl.wikipedia)",
+    "Snowball Tree",
+    "European Snowball Viburnum",
+    "Sambucus rosea (nom ancien)",
+    "boule-de-neige",
+    "rose de Gueldre"
+   ],
+   "groupe": "cultivar a boule de fleurons steriles de V. opulus (propage par bouture) ; ICRA : American Public Gardens Association",
+   "obtenteur": null,
+   "annee": "connu dans les jardins europeens depuis le XVIe siecle (Trees and Shrubs Online) ; « 1594 » selon de.wikipedia, non recoupe",
+   "numeros": {},
+   "couleur_registre": "aucune description officielle (pas de registre en ligne) ; NC State : vert puis blanc puis rose pale ; T&S : blanc, lavis rose en vieillissant",
+   "motif": "boule globuleuse de fleurons steriles, 5-6 cm (T&S 2-2,5 in) a 10 cm (NC State « up to 4 inches »)",
+   "marque": null,
+   "marque_note": "aucun ® ni ™ vu sur 'Roseum', 'Sterile' ou 'Sterilis' ; aucun registre des marques consulte (a faire par l'orchestrateur)",
+   "sources": [
+    {
+     "role": "nom et stades",
+     "niveau": "N3",
+     "url": "https://plants.ces.ncsu.edu/plants/viburnum-opulus-roseum/",
+     "consulte": "2026-10-08",
+     "note": "NC State Extension Plant Toolbox. Relu le 2026-10-08 : « sterile green flowers that mature to white and then pink » ; « Individual 1 inch sterile flowers are green to white, aging to light pink » ; cyme globuleuse « up to 4 inches across ». Aucun obtenteur, aucune date, aucun synonyme sur la page. La legende d'une de ses photos, « Green first opened flowers », est creditee a David J. Stang (meme photographe que les photos Commons 0zz a 7zz : les deux ne sont pas independants)."
+    },
+    {
+     "role": "stades",
+     "niveau": "N3",
+     "url": "https://plants.ces.ncsu.edu/plants/viburnum-opulus/",
+     "consulte": "2026-10-08",
+     "note": "Meme editeur que la page precedente (independance partielle) : « Huge, long-lasting flowers produced in mid-spring and turn from green to white » (cite 'Roseum'). Lu par le temps 2, non relu ce tour."
+    },
+    {
+     "role": "nom, anciennete, taille, rose du fane",
+     "niveau": "N3",
+     "url": "https://www.treesandshrubsonline.org/articles/viburnum/viburnum-opulus/",
+     "consulte": "2026-10-08",
+     "note": "Trees and Shrubs Online (International Dendrology Society). Relu le 2026-10-08 : 'Roseum' « has been known in European gardens since the 16th century » sous le nom 'Sambucus rosea' ou Rose Elder ; tete globuleuse « of white, closely packed blossoms, 2 to 2 1/2 in. across » ; « The blush of pink as the sterile flowers age is presumably the source of the name 'Roseum' ». Le synonyme 'Sterile' figure comme etiquette sous 'Roseum'. Aucun vert cite, aucun obtenteur."
+    },
+    {
+     "role": "ICRA",
+     "niveau": "N1 (autorite, sans registre en ligne)",
+     "url": "https://ishs.org/sci/taxlist/vtaxlist.htm",
+     "consulte": "2026-10-08",
+     "note": "Page V de la liste ISHS relue le 2026-10-08 : « Viburnum L. », reference ICRA 3 (icralist/3.htm) = American Public Gardens Association. Elle confirme l'autorite ; elle ne donne aucun registre consultable."
+    },
+    {
+     "role": "observation",
+     "niveau": "N4",
+     "url": "https://api.inaturalist.org/v1/observations/194523650",
+     "consulte": "2026-10-08",
+     "note": "Observations 194523650 (2019-06-06) et 194523744 (2022-05-26), meme observateur, memes coordonnees a 2-3 m, qualite 'casual', taxon Viburnum opulus opulus, description « Cultivar 'roseum' (= 'sterilis') » ; identifications concordantes au niveau variete, pas de cultivar."
+    },
+    {
+     "role": "appui de stade (non nominatif)",
+     "niveau": "N2 vendeur de fleur coupee (non nominatif)",
+     "url": "https://fiftyflowers.com/products/green-viburnum-flower",
+     "consulte": "2026-10-08",
+     "note": "Vend des « Green Viburnum Flowers » (chartreuse et vert) sans nom de variete dans le texte ; le nom de fichier d'une image contient 'viburum_roseum' (indice seulement, non confirme). Preuve d'une boule verte vendue en fleur coupee, pas preuve de nom ; non relu ce tour."
+    }
+   ],
+   "photos": [
+    {
+     "id_photo": "stang-0zz",
+     "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Viburnum_opulus_Roseum_0zz.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Viburnum_opulus_Roseum_0zz.jpg",
+     "niveau": "N4 (Commons ; lieu : pepiniere ; nom confirme par NCSU et T&S, N3)",
+     "auteur": "Photo by David J. Stang",
+     "licence": "CC BY-SA 4.0",
+     "date_prise": "2006-04-22",
+     "legende": "Location taken: American Plant Food Company, 7405 River Road, Bethesda MD.. Names: Viburnum opulus 'Roseum' Linnaeus, European Cranberrybush, European Snowball,",
+     "consulte": "2026-10-08",
+     "lieu": "American Plant Food Company, Bethesda MD",
+     "vue": "face, tete isolee",
+     "stade": "jeune",
+     "vu_par_moi_2026_10_08": "boule vert citron franc, fond de feuillage",
+     "eclairage": "exterieur, lumiere du jour (non precisee)",
+     "balance_blancs": "aucune correction"
+    },
+    {
+     "id_photo": "stang-1zz",
+     "url": "https://upload.wikimedia.org/wikipedia/commons/7/7b/Viburnum_opulus_Roseum_1zz.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Viburnum_opulus_Roseum_1zz.jpg",
+     "niveau": "N4 (Commons ; lieu : pepiniere ; nom confirme par NCSU et T&S, N3)",
+     "auteur": "Photo by David J. Stang",
+     "licence": "CC BY-SA 4.0",
+     "date_prise": "2006-04-22",
+     "legende": "Location taken: American Plant Food Company, 7405 River Road, Bethesda MD.. Names: Viburnum opulus 'Roseum' Linnaeus, European Cranberrybush, European Snowball,",
+     "consulte": "2026-10-08",
+     "lieu": "American Plant Food Company, Bethesda MD",
+     "vue": "plan large, branche",
+     "stade": "jeune",
+     "vu_par_moi_2026_10_08": "boules vert citron, plusieurs tetes dont des boutons",
+     "eclairage": "exterieur, lumiere du jour (non precisee)",
+     "balance_blancs": "aucune correction"
+    },
+    {
+     "id_photo": "stang-2zz",
+     "url": "https://upload.wikimedia.org/wikipedia/commons/e/e8/Viburnum_opulus_Roseum_2zz.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Viburnum_opulus_Roseum_2zz.jpg",
+     "niveau": "N4 (Commons ; lieu : pepiniere ; nom confirme par NCSU et T&S, N3)",
+     "auteur": "Photo by David J. Stang",
+     "licence": "CC BY-SA 4.0",
+     "date_prise": "2008-05-02",
+     "legende": "Location taken: Behnke Nurseries, Beltsville, MD USA. Names: Viburnum opulus 'Roseum' Linnaeus, European Cranberrybush, European Snowball, European Snowball Vib",
+     "consulte": "2026-10-08",
+     "lieu": "Behnke Nurseries, Beltsville MD",
+     "vue": "trois-quarts, deux tetes",
+     "stade": "intermediaire",
+     "vu_par_moi_2026_10_08": "creme-vert, bords plus verts, fond sombre",
+     "eclairage": "exterieur, lumiere du jour (non precisee)",
+     "balance_blancs": "aucune correction"
+    },
+    {
+     "id_photo": "stang-3zz",
+     "url": "https://upload.wikimedia.org/wikipedia/commons/d/d6/Viburnum_opulus_Roseum_3zz.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Viburnum_opulus_Roseum_3zz.jpg",
+     "niveau": "N4 (Commons ; lieu : pepiniere ; nom confirme par NCSU et T&S, N3)",
+     "auteur": "Photo by David J. Stang",
+     "licence": "CC BY-SA 4.0",
+     "date_prise": "2008-05-02",
+     "legende": "Location taken: Behnke Nurseries, Beltsville, MD USA. Names: Viburnum opulus 'Roseum' Linnaeus, European Cranberrybush, European Snowball, European Snowball Vib",
+     "consulte": "2026-10-08",
+     "lieu": "Behnke Nurseries, Beltsville MD",
+     "vue": "face, tete",
+     "stade": "intermediaire a mature",
+     "vu_par_moi_2026_10_08": "blanc creme a reflets verts, tete dense",
+     "eclairage": "exterieur, lumiere du jour (non precisee)",
+     "balance_blancs": "aucune correction"
+    },
+    {
+     "id_photo": "stang-4zz",
+     "url": "https://upload.wikimedia.org/wikipedia/commons/1/16/Viburnum_opulus_Roseum_4zz.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Viburnum_opulus_Roseum_4zz.jpg",
+     "niveau": "N4 (Commons ; lieu : pepiniere ; nom confirme par NCSU et T&S, N3)",
+     "auteur": "Photo by David J. Stang",
+     "licence": "CC BY-SA 4.0",
+     "date_prise": "2008-05-07",
+     "legende": "Location taken: Behnke Nurseries, Potomac MD USA. Names: Viburnum opulus 'Roseum' Linnaeus, European Cranberrybush, European Snowball, European Snowball Viburnu",
+     "consulte": "2026-10-08",
+     "lieu": "Behnke Nurseries, Potomac MD",
+     "vue": "face, plusieurs tetes",
+     "stade": "mature",
+     "vu_par_moi_2026_10_08": "blanc franc, ombres bleutees",
+     "eclairage": "exterieur, lumiere du jour (non precisee)",
+     "balance_blancs": "aucune correction"
+    },
+    {
+     "id_photo": "stang-5zz",
+     "url": "https://upload.wikimedia.org/wikipedia/commons/8/82/Viburnum_opulus_Roseum_5zz.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Viburnum_opulus_Roseum_5zz.jpg",
+     "niveau": "N4 (Commons ; lieu : pepiniere ; nom confirme par NCSU et T&S, N3)",
+     "auteur": "Photo by David J. Stang",
+     "licence": "CC BY-SA 4.0",
+     "date_prise": "2008-05-07",
+     "legende": "Location taken: Behnke Nurseries, Potomac MD USA. Names: Viburnum opulus 'Roseum' Linnaeus, European Cranberrybush, European Snowball, European Snowball Viburnu",
+     "consulte": "2026-10-08",
+     "lieu": "Behnke Nurseries, Potomac MD",
+     "vue": "dessous, tetes pendantes",
+     "stade": "mature",
+     "vu_par_moi_2026_10_08": "blanc, quelques bords creme",
+     "eclairage": "exterieur, lumiere du jour (non precisee)",
+     "balance_blancs": "aucune correction"
+    },
+    {
+     "id_photo": "stang-6zz",
+     "url": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Viburnum_opulus_Roseum_6zz.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Viburnum_opulus_Roseum_6zz.jpg",
+     "niveau": "N4 (Commons ; lieu : pepiniere ; nom confirme par NCSU et T&S, N3)",
+     "auteur": "Photo by David J. Stang",
+     "licence": "CC BY-SA 4.0",
+     "date_prise": "2008-05-07",
+     "legende": "Location taken: Behnke Nurseries, Potomac MD USA. Names: Viburnum opulus 'Roseum' Linnaeus, European Cranberrybush, European Snowball, European Snowball Viburnu",
+     "consulte": "2026-10-08",
+     "lieu": "Behnke Nurseries, Potomac MD",
+     "vue": "face, grosse tete",
+     "stade": "mature",
+     "vu_par_moi_2026_10_08": "blanc, tete dense, etiquette de pepiniere visible",
+     "eclairage": "exterieur, lumiere du jour (non precisee)",
+     "balance_blancs": "aucune correction"
+    },
+    {
+     "id_photo": "stang-7zz",
+     "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Viburnum_opulus_Roseum_7zz.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Viburnum_opulus_Roseum_7zz.jpg",
+     "niveau": "N4 (Commons ; lieu : pepiniere ; nom confirme par NCSU et T&S, N3)",
+     "auteur": "Photo by David J. Stang",
+     "licence": "CC BY-SA 4.0",
+     "date_prise": "2008-05-07",
+     "legende": "Location taken: Behnke Nurseries, Potomac MD USA. Names: Viburnum opulus 'Roseum' Linnaeus, European Cranberrybush, European Snowball, European Snowball Viburnu",
+     "consulte": "2026-10-08",
+     "lieu": "Behnke Nurseries, Potomac MD",
+     "vue": "plan large, plantes en pot",
+     "stade": "mature",
+     "vu_par_moi_2026_10_08": "blanc",
+     "eclairage": "exterieur, lumiere du jour (non precisee)",
+     "balance_blancs": "aucune correction"
+    },
+    {
+     "id_photo": "ziarnek-roseum-kz01",
+     "url": "https://upload.wikimedia.org/wikipedia/commons/1/15/Viburnum_opulus_%27Roseum%27_kz01.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Viburnum_opulus_%27Roseum%27_kz01.jpg",
+     "niveau": "N4 (Commons ; lieu : jardin botanique de Cracovie, N3)",
+     "auteur": "Krzysztof Ziarnek, Kenraiz",
+     "licence": "CC BY-SA 4.0",
+     "date_prise": "2016-05-16",
+     "legende": "Viburnum opulus 'Roseum' in botanical garden in Kraków",
+     "consulte": "2026-10-08",
+     "lieu": "Jardin botanique de Cracovie",
+     "vue": "arbuste en developpement, contre-jour partiel",
+     "stade": "jeune a intermediaire",
+     "vu_par_moi_2026_10_08": "boules vert pale a blanc-vert melees, aucune rosie",
+     "eclairage": "exterieur, plein jour sous couvert",
+     "balance_blancs": "aucune correction"
+    },
+    {
+     "id_photo": "consultaplantas-1a",
+     "url": "https://upload.wikimedia.org/wikipedia/commons/4/43/Viburnum_opulus_roseum_1a.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Viburnum_opulus_roseum_1a.jpg",
+     "niveau": "N4 (Commons)",
+     "auteur": "Consultaplantas",
+     "licence": "CC BY-SA 4.0",
+     "date_prise": "2018-04-23",
+     "legende": "Joven ejemplar de Viburnum opulus Roseum.",
+     "consulte": "2026-10-08",
+     "lieu": "non precise",
+     "vue": "jeune plant, deux tetes",
+     "stade": "intermediaire",
+     "vu_par_moi_2026_10_08": "deux tetes creme-vert",
+     "eclairage": "exterieur, plein soleil",
+     "balance_blancs": "aucune correction"
+    },
+    {
+     "id_photo": "consultaplantas-2a",
+     "url": "https://upload.wikimedia.org/wikipedia/commons/0/0b/Viburnum_opulus_roseum_2a.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Viburnum_opulus_roseum_2a.jpg",
+     "niveau": "N4 (Commons)",
+     "auteur": "Consultaplantas",
+     "licence": "CC BY-SA 4.0",
+     "date_prise": "2018-04-23",
+     "legende": "Inflorescencias de Viburnum opulus Roseum.",
+     "consulte": "2026-10-08",
+     "lieu": "non precise",
+     "vue": "gros plan, trois tetes",
+     "stade": "jeune",
+     "vu_par_moi_2026_10_08": "tetes vert citron a creme, meme jour que 1a",
+     "eclairage": "exterieur, plein soleil",
+     "balance_blancs": "aucune correction"
+    },
+    {
+     "id_photo": "wpc-2010-04-10",
+     "url": "https://upload.wikimedia.org/wikipedia/commons/f/f8/Viburnum_opulus_roseum_WPC.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Viburnum_opulus_roseum_WPC.jpg",
+     "niveau": "N4 (Commons)",
+     "auteur": "WayneRay",
+     "licence": "CC BY-SA 4.0",
+     "date_prise": "2010-04-10",
+     "legende": "Viburnum opulus",
+     "consulte": "2026-10-08",
+     "lieu": "jardin prive (non precise)",
+     "vue": "arbuste entier, petit plan",
+     "stade": "intermediaire ?",
+     "vu_par_moi_2026_10_08": "boules jaune pale a creme sur arbuste ; plan trop petit pour mesurer : appoint 'approche'",
+     "eclairage": "exterieur, plein jour",
+     "balance_blancs": "aucune correction"
+    },
+    {
+     "id_photo": "diako-roseum-vase",
+     "url": "https://upload.wikimedia.org/wikipedia/commons/c/c1/Roseum.JPG",
+     "page": "https://commons.wikimedia.org/wiki/File:Roseum.JPG",
+     "niveau": "N4 (Commons)",
+     "auteur": "Diako1971",
+     "licence": "CC BY-SA 3.0",
+     "date_prise": "2014-04-25",
+     "legende": "گل بوداغ",
+     "consulte": "2026-10-08",
+     "lieu": "interieur",
+     "vue": "tiges coupees en vase",
+     "stade": "mature",
+     "vu_par_moi_2026_10_08": "blanc, eclairage interieur : appoint 'approche', non utilisable en reference de teinte",
+     "eclairage": "interieur",
+     "balance_blancs": "aucune correction"
+    },
+    {
+     "id_photo": "wroclaw-2021-01",
+     "url": "https://upload.wikimedia.org/wikipedia/commons/c/ca/Viburnum_opulus_%27Roseum%27_Kalina_koralowa_odm._p%C5%82onna_2021-06-02_01.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Viburnum_opulus_%27Roseum%27_Kalina_koralowa_odm._p%C5%82onna_2021-06-02_01.jpg",
+     "niveau": "N4 (Commons ; lieu : jardin botanique de l'universite de Wroclaw, N3)",
+     "auteur": "Agnieszka Kwiecień, Nova",
+     "licence": "CC BY-SA 4.0",
+     "date_prise": "2021-06-02",
+     "legende": "Viburnum opulus 'Roseum' cultivated in Wrocław University Botanical Garden, Wrocław, Poland.",
+     "consulte": "2026-10-08",
+     "lieu": "Jardin botanique de l'universite de Wroclaw",
+     "vue": "quatre tetes, face et trois-quarts",
+     "stade": "mature",
+     "vu_par_moi_2026_10_08": "blanc franc sur fond sombre, aucune boule rosie",
+     "eclairage": "exterieur, plein jour",
+     "balance_blancs": "aucune correction"
+    },
+    {
+     "id_photo": "inat-194523650-341950747",
+     "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/341950747/large.jpeg",
+     "page": "https://www.inaturalist.org/observations/194523650",
+     "niveau": "N4 (observateur ; nom 'roseum (= sterilis)' donne par l'auteur, qualite 'casual')",
+     "auteur": "chasseurdeplantes (Jacques Ranger)",
+     "licence": "CC BY-NC (mesure seulement, jamais publiee)",
+     "date_prise": "2019-06-06",
+     "lieu": "Saint-Mathias-sur-Richelieu, Quebec",
+     "vue": "arbuste entier",
+     "stade": "mature",
+     "vu_par_moi_2026_10_08": "boules blanches, quelques teintes creme-vert, aucune rosie (image vue par le temps 2 ; observation reverifiee par l'API : taxon Viburnum opulus opulus, description « Cultivar 'roseum' (= 'sterilis') »)",
+     "eclairage": "exterieur, plein soleil",
+     "balance_blancs": "aucune correction",
+     "consulte": "2026-10-08"
+    }
+   ],
+   "photos_autres_disponibles_non_vues": [
+    "Wroclaw 2021-06-02 02 et 03 (CC BY-SA 4.0, meme jardin)",
+    "iNaturalist 194523744 (2022-05-26, photo 341951872, meme plant que 194523650)",
+    "Consultaplantas 3a (2018-04-23)",
+    "Commons : Minsk 2024-05-19 et 2025-06-01 ; Grodno 2026-06-02 ; Saint-Petersbourg 2026-06-05 (vues en planche : blanches)"
+   ],
+   "niveau_preuve": "B pour le nom (deux sources N3 independantes ; aucun N1 en ligne) ; couleur : vert B, vert-tendre C, blanc B, blanc-creme D, blanc-rose D (provisoire, avant mesure) ; A impossible : ni registre N1 consultable ni photo N2",
+   "existence_n1_n2": false,
+   "statut": "en production (vert, blanc apres mesure) ; vert-tendre, blanc-creme, blanc-rose a confirmer",
+   "representant_de": [
+    "vert",
+    "vert-tendre",
+    "blanc",
+    "blanc-creme",
+    "blanc-rose"
+   ],
+   "doutes": [
+    "taille de la boule : 5-6 cm (T&S), 10 cm (NC State), 7-9 cm (pepiniere australienne citee dans SOURCES.md, non revue)",
+    "annee : XVIe siecle ou 1594, non tranche",
+    "les photos par stade viennent de pepinieres et de jardins differents : ce n'est pas une serie d'un seul arbuste"
+   ],
+   "coloris_catalogue": [
+    "vert",
+    "vert-tendre",
+    "blanc",
+    "blanc-creme",
+    "blanc-rose"
+   ],
+   "familles_de_sources": [
+    "plants.ces.ncsu.edu",
+    "www.treesandshrubsonline.org",
+    "commons.wikimedia.org",
+    "www.inaturalist.org",
+    "ishs.org"
+   ]
+  },
+  {
+   "id": "viburnum-macrocephalum-f-macrocephalum",
+   "nom_affiche": "Boule-de-neige de Chine (V. macrocephalum)",
+   "nom_enregistre": "Viburnum macrocephalum Fortune f. macrocephalum",
+   "synonymes": [
+    "'Sterile' (Viburnum macrocephalum 'Sterile')",
+    "Chinese snowball",
+    "Chinese sneeuwbal"
+   ],
+   "groupe": "forme a boule de fleurons steriles de V. macrocephalum ; ICRA : APGA",
+   "obtenteur": "introduit de Chine par Robert Fortune",
+   "annee": "1844 (T&S)",
+   "numeros": {},
+   "couleur_registre": "NC State : « emerge chartreuse », « apple green » puis blanc ; T&S : vert puis « pure white » ; aucun rose",
+   "motif": "boule globuleuse de 7,5-15 cm (T&S 3-6 in ; NC State 3-8 in) : deux a trois fois la boule de 'Roseum'",
+   "marque": null,
+   "sources": [
+    {
+     "role": "nom et stades du voisin macrocephalum",
+     "niveau": "N3",
+     "url": "https://www.treesandshrubsonline.org/articles/viburnum/viburnum-macrocephalum/",
+     "consulte": "2026-10-08",
+     "note": "Relu le 2026-10-08 : f. macrocephalum, synonyme « Viburnum macrocephalum 'Sterile' » ; « Fortune's type... introduced by him from China in 1844 » ; « Flowers pure white, all sterile, 1 to 1 1/4 in. across » ; tete « huge, globular truss 3 to 6 in. wide opening in May » ; legende d'une photo RBG Kew (avril 2025) : « a beautiful green, fading to white as they mature ». Aucun rose cite."
+    },
+    {
+     "role": "stades du voisin macrocephalum",
+     "niveau": "N3",
+     "url": "https://plants.ces.ncsu.edu/plants/viburnum-macrocephalum/",
+     "consulte": "2026-10-08",
+     "note": "Relu le 2026-10-08 : « The flowers emerge chartreuse, then quickly turn to white and are sterile with no fragrance » ; « Apple green flowers mature to white in rounded, cymose inflorescences 3 to 8 inches in diameter » ; aucun rose ; liste de cultivars vide."
+    }
+   ],
+   "photos": [
+    {
+     "id_photo": "bolognini-macro-2008",
+     "url": "https://upload.wikimedia.org/wikipedia/commons/e/ed/Viburnum_macrocephalum_by_Stefano_Bolognini_1.JPG",
+     "page": "https://commons.wikimedia.org/wiki/File:Viburnum_macrocephalum_by_Stefano_Bolognini_1.JPG",
+     "niveau": "N4 (Commons ; lieu : Orto botanico de Rome, N3 ; legende « Cv. sterile, palle di neve »)",
+     "auteur": "Stefano Bolognini",
+     "licence": "Attribution",
+     "date_prise": "2008-04-19",
+     "legende": "Viburnum macrocephalum Fort. Cv. sterile, palle di neve. Orto botanico di Roma, Italia.",
+     "consulte": "2026-10-08",
+     "lieu": "Orto botanico di Roma",
+     "vue": "grosse tete de face, plan serre",
+     "stade": "mature",
+     "vu_par_moi_2026_10_08": "blanc creme, tetes tres grosses",
+     "eclairage": "exterieur, plein jour",
+     "balance_blancs": "aucune correction"
+    },
+    {
+     "id_photo": "lalupa-macro-2014",
+     "url": "https://upload.wikimedia.org/wikipedia/commons/b/b0/OB_Viburnum_macrocephalum_P1000593.JPG",
+     "page": "https://commons.wikimedia.org/wiki/File:OB_Viburnum_macrocephalum_P1000593.JPG",
+     "niveau": "N4 (Commons ; lieu : Orto botanico de Rome, N3)",
+     "auteur": "Lalupa",
+     "licence": "CC BY-SA 3.0",
+     "date_prise": "2014-04-07",
+     "legende": "Roma, Orto botanico, viburnum macrocephalum",
+     "consulte": "2026-10-08",
+     "lieu": "Orto botanico di Roma",
+     "vue": "arbuste en fleur, ensoleille",
+     "stade": "mature",
+     "vu_par_moi_2026_10_08": "boules blanches",
+     "eclairage": "exterieur, plein soleil",
+     "balance_blancs": "aucune correction"
+    },
+    {
+     "id_photo": "isola-bella-96",
+     "url": "https://upload.wikimedia.org/wikipedia/commons/a/aa/Isola_Bella_%2896%29.JPG",
+     "page": "https://commons.wikimedia.org/wiki/File:Isola_Bella_(96).JPG",
+     "niveau": "N4 (Commons)",
+     "auteur": "JoJan",
+     "licence": "CC BY 3.0",
+     "date_prise": "2013-03-20",
+     "legende": "Viburnum macrocephalum; family Adoxaceae; botanical gardens of the Palazzo Borromeo, Isola Bella, Italy",
+     "consulte": "2026-10-08",
+     "lieu": "jardin botanique de l'Isola Bella",
+     "vue": "jeune sujet, petit plan",
+     "stade": "jeune ?",
+     "vu_par_moi_2026_10_08": "tetes blanc-vert trop petites dans le cadre : non mesurable sans recadrage de l'original",
+     "eclairage": "exterieur, ombre",
+     "balance_blancs": "aucune correction"
+    },
+    {
+     "id_photo": "fanghong-chinese-snowball-EXCLUE",
+     "url": "https://upload.wikimedia.org/wikipedia/commons/c/c5/Chinese_snowball.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Chinese_snowball.jpg",
+     "niveau": "N4 EXCLUE",
+     "auteur": "Fanghong",
+     "licence": "CC BY-SA 4.0",
+     "date_prise": "2017-04-10",
+     "legende": "Chinese snowball flowers(琼花） in Yangzhou,China.",
+     "consulte": "2026-10-08",
+     "lieu": "Yangzhou, Chine",
+     "vue": "branche",
+     "stade": "mature",
+     "vu_par_moi_2026_10_08": "PIEGE : cyme plate a fleurons fertiles au centre (type f. keteleeri), pas une boule sterile ; ne pas mesurer pour la sorte",
+     "eclairage": "exterieur",
+     "balance_blancs": "aucune correction"
+    }
+   ],
+   "niveau_preuve": "B pour le nom et le blanc ; vert : D (deux textes N3, aucune photo exploitable du stade) ; rose : aucun",
+   "existence_n1_n2": false,
+   "statut": "a confirmer : voisin a boule sterile, en question (nouveaux coloris late:1 ou sorte a part)",
+   "photos_a_mesurer_si_retenu": {
+    "blanc": [
+     "bolognini-macro-2008",
+     "lalupa-macro-2014"
+    ],
+    "vert": []
+   },
+   "doutes": [
+    "la photo « Chinese snowball.jpg » (Fanghong, 2017-04-10) montre une cyme plate : f. keteleeri, hors sorte, exclue",
+    "f. keteleeri (centre fertile, cyme plate) est une autre forme, hors sorte",
+    "la photo verte de la page T&S (RBG Kew, avril 2025) n'est pas accessible hors navigateur"
+   ],
+   "rattachement_catalogue": "voisin ; aucun coloris du catalogue ne lui est rattache",
+   "familles_de_sources": [
+    "www.treesandshrubsonline.org",
+    "plants.ces.ncsu.edu",
+    "commons.wikimedia.org"
+   ]
+  },
+  {
+   "id": "viburnum-plicatum-f-plicatum",
+   "nom_affiche": "Boule-de-neige du Japon (V. plicatum f. plicatum)",
+   "nom_enregistre": "Viburnum plicatum Thunb. f. plicatum",
+   "synonymes": [
+    "'Sterile' (nom vu sur des photos Commons seulement ; T&S : aucun cultivar 'Sterile')",
+    "Viburnum tomentosum var. sterile K. Koch (synonyme T&S)",
+    "Japanese snowball",
+    "odemari"
+   ],
+   "groupe": "forme a boule de fleurons steriles de V. plicatum ; ICRA : APGA",
+   "obtenteur": "forme de jardin d'Extreme-Orient, introduite par Fortune",
+   "annee": "1846 (T&S, introduction en Occident)",
+   "numeros": {},
+   "couleur_registre": "aucune description de couleur propre a f. plicatum dans T&S ni NC State",
+   "motif": "boule sterile ; feuillage plisse ; ni vert ni rose documentes",
+   "marque": null,
+   "sources": [
+    {
+     "role": "nom du voisin plicatum",
+     "niveau": "N3",
+     "url": "https://www.treesandshrubsonline.org/articles/viburnum/viburnum-plicatum/",
+     "consulte": "2026-10-08",
+     "note": "Relu le 2026-10-08 : f. plicatum = « the garden plants with the snowball type of inflorescence », introduite par Fortune en 1846 ; AUCUN cultivar nomme 'Sterile' : le mot n'apparait que dans le synonyme « Viburnum tomentosum var. sterile K. Koch » et une legende (« The sterile form of Viburnum plicatum »). Ni vert ni rose cites pour f. plicatum."
+    }
+   ],
+   "photos": [
+    {
+     "id_photo": "ramsey-plicatum-flower1",
+     "url": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Snowball_Viburnum_Viburnum_plicatum_Flower_1.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Snowball_Viburnum_Viburnum_plicatum_Flower_1.jpg",
+     "niveau": "N4 (Commons ; lieu : Tyler Arboretum, N3, plante identifiee sur place, sans nom de cultivar)",
+     "auteur": "Photo by and (c)2010 Derek Ramsey (Ram-Man)",
+     "licence": "GFDL 1.2",
+     "date_prise": "2008-05-15",
+     "legende": "Picture of the flowers of the Snowball Viburnum Viburnum plicatum en   . Photo taken at the Tyler Arboretum where it was identified. ",
+     "consulte": "2026-10-08",
+     "lieu": "Tyler Arboretum, Pennsylvanie",
+     "vue": "face, tete isolee",
+     "stade": "mature",
+     "vu_par_moi_2026_10_08": "boule blanche dense, fond sombre",
+     "eclairage": "exterieur, ombre",
+     "balance_blancs": "aucune correction"
+    },
+    {
+     "id_photo": "ramsey-plicatum-flowers2",
+     "url": "https://upload.wikimedia.org/wikipedia/commons/0/02/Snowball_Viburnum_Viburnum_plicatum_Flowers_2.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Snowball_Viburnum_Viburnum_plicatum_Flowers_2.jpg",
+     "niveau": "N4 (Commons ; lieu : Tyler Arboretum, N3, sans nom de cultivar)",
+     "auteur": "Photo by and (c)2010 Derek Ramsey (Ram-Man)",
+     "licence": "GFDL 1.2",
+     "date_prise": "2008-05-15",
+     "legende": "Picture of the flowers of the Snowball Viburnum Viburnum plicatum en   . Photo taken at the Tyler Arboretum where it was identified. ",
+     "consulte": "2026-10-08",
+     "lieu": "Tyler Arboretum, Pennsylvanie",
+     "vue": "face, plusieurs tetes",
+     "stade": "mature",
+     "vu_par_moi_2026_10_08": "boules blanches",
+     "eclairage": "exterieur, ombre",
+     "balance_blancs": "aucune correction"
+    },
+    {
+     "id_photo": "ibaraki-plicatum-f-plicatum-01",
+     "url": "https://upload.wikimedia.org/wikipedia/commons/2/28/Viburnum_plicatum_var._plicatum_f._plicatum_%28Ibaraki_Prefectural_Botanical_Garden%29_01.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Viburnum_plicatum_var._plicatum_f._plicatum_(Ibaraki_Prefectural_Botanical_Garden)_01.jpg",
+     "niveau": "N4 (Commons ; lieu : jardin botanique prefectoral d'Ibaraki, N3 ; legende « f. plicatum »)",
+     "auteur": "小石川人晃",
+     "licence": "CC BY-SA 4.0",
+     "date_prise": "2023-04-23",
+     "legende": "オオデマリ（茨城県植物園）",
+     "consulte": "2026-10-08",
+     "lieu": "Jardin botanique prefectoral d'Ibaraki",
+     "vue": "arbuste entier",
+     "stade": "mature",
+     "vu_par_moi_2026_10_08": "boules blanches sur arbuste etale",
+     "eclairage": "exterieur, plein jour",
+     "balance_blancs": "aucune correction"
+    },
+    {
+     "id_photo": "ziarnek-plicatum-sterile-kz01",
+     "url": "https://upload.wikimedia.org/wikipedia/commons/6/6c/Viburnum_plicatum_%27Sterile%27_kz01.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Viburnum_plicatum_%27Sterile%27_kz01.jpg",
+     "niveau": "N4 (Commons ; lieu : jardin dendrologique de Przelewice, N3)",
+     "auteur": "Krzysztof Ziarnek, Kenraiz",
+     "licence": "CC BY-SA 4.0",
+     "date_prise": "2020-05-06",
+     "legende": "Viburnum plicatum 'Sterile' in Dendrological Garden in Przelewice",
+     "consulte": "2026-10-08",
+     "lieu": "Jardin dendrologique de Przelewice",
+     "vue": "branche en bouton",
+     "stade": "bouton vert (tetes fermees)",
+     "vu_par_moi_2026_10_08": "amas de boutons verts, pas de boule ouverte : la forme en boule n'est pas demontree a ce stade",
+     "eclairage": "exterieur, ombre",
+     "balance_blancs": "aucune correction"
+    },
+    {
+     "id_photo": "ziarnek-plicatum-sterile-kz02",
+     "url": "https://upload.wikimedia.org/wikipedia/commons/d/d2/Viburnum_plicatum_%27Sterile%27_kz02.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Viburnum_plicatum_%27Sterile%27_kz02.jpg",
+     "niveau": "N4 (Commons ; lieu : jardin dendrologique de Przelewice, N3)",
+     "auteur": "Krzysztof Ziarnek, Kenraiz",
+     "licence": "CC BY-SA 4.0",
+     "date_prise": "2020-05-06",
+     "legende": "Viburnum plicatum 'Sterile' in Dendrological Garden in Przelewice",
+     "consulte": "2026-10-08",
+     "lieu": "Jardin dendrologique de Przelewice",
+     "vue": "gros plan de boutons",
+     "stade": "bouton vert (tetes fermees)",
+     "vu_par_moi_2026_10_08": "amas de boutons verts, pas de boule ouverte : la forme en boule n'est pas demontree a ce stade",
+     "eclairage": "exterieur, ombre",
+     "balance_blancs": "aucune correction"
+    },
+    {
+     "id_photo": "ziarnek-plicatum-sterile-kz03",
+     "url": "https://upload.wikimedia.org/wikipedia/commons/4/48/Viburnum_plicatum_%27Sterile%27_kz03.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Viburnum_plicatum_%27Sterile%27_kz03.jpg",
+     "niveau": "N4 (Commons ; lieu : jardin dendrologique de Przelewice, N3)",
+     "auteur": "Krzysztof Ziarnek, Kenraiz",
+     "licence": "CC BY-SA 4.0",
+     "date_prise": "2020-05-06",
+     "legende": "Viburnum plicatum 'Sterile' in Dendrological Garden in Przelewice",
+     "consulte": "2026-10-08",
+     "lieu": "Jardin dendrologique de Przelewice",
+     "vue": "branche en bouton",
+     "stade": "bouton vert (tetes fermees)",
+     "vu_par_moi_2026_10_08": "amas de boutons verts, pas de boule ouverte : la forme en boule n'est pas demontree a ce stade",
+     "eclairage": "exterieur, ombre",
+     "balance_blancs": "aucune correction"
+    },
+    {
+     "id_photo": "ziarnek-plicatum-sterile-kz04",
+     "url": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Viburnum_plicatum_%27Sterile%27_kz04.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Viburnum_plicatum_%27Sterile%27_kz04.jpg",
+     "niveau": "N4 (Commons ; lieu : jardin dendrologique de Przelewice, N3)",
+     "auteur": "Krzysztof Ziarnek, Kenraiz",
+     "licence": "CC BY-SA 4.0",
+     "date_prise": "2020-05-06",
+     "legende": "Viburnum plicatum 'Sterile' in Dendrological Garden in Przelewice",
+     "consulte": "2026-10-08",
+     "lieu": "Jardin dendrologique de Przelewice",
+     "vue": "arbuste entier",
+     "stade": "bouton vert (tetes fermees)",
+     "vu_par_moi_2026_10_08": "amas de boutons verts, pas de boule ouverte : la forme en boule n'est pas demontree a ce stade",
+     "eclairage": "exterieur, ombre",
+     "balance_blancs": "aucune correction"
+    }
+   ],
+   "niveau_preuve": "f. plicatum : B pour le nom (T&S) ; le nom de cultivar 'Sterile' : C (T&S dit qu'aucun cultivar ne s'appelle ainsi ; seules des legendes de photos Commons l'emploient) ; blanc : C ; vert : aucun (les boutons verts de Przelewice ne montrent pas la boule)",
+   "existence_n1_n2": false,
+   "statut": "a confirmer : voisin a boule sterile, en question",
+   "photos_a_mesurer_si_retenu": {
+    "blanc": [
+     "ramsey-plicatum-flower1",
+     "ibaraki-plicatum-f-plicatum-01"
+    ]
+   },
+   "doutes": [
+    "les photos de boutons kz01 a kz04 (Przelewice, 2020-05-06) ne prouvent pas la forme en boule ; Commons « Viburnum plicatum (cultivars) » melange boules et lacecaps"
+   ],
+   "rattachement_catalogue": "voisin ; aucun coloris du catalogue ne lui est rattache",
+   "familles_de_sources": [
+    "www.treesandshrubsonline.org",
+    "commons.wikimedia.org"
+   ]
+  }
+ ],
+ "voisins_a_boule_sterile": {
+  "note": "V. macrocephalum f. macrocephalum et V. plicatum f. plicatum sont notes « voisins a boule sterile », comme variantes possibles de la sorte ; leurs boules different : macrocephalum 7,5-15 cm (NC State jusqu'a 20 cm), plicatum a feuilles plissees",
+  "question": "nouveaux coloris late:1 de la sorte (la boule de Chine verte puis blanche, la boule du Japon blanche) ou sortes a part avec leur propre fiche de dessin ? Proposition : sortes a part (taille, feuillage et port differents), sans coloris du catalogue rattache.",
+  "ids": [
+   "viburnum-macrocephalum-f-macrocephalum",
+   "viburnum-plicatum-f-plicatum"
+  ]
+ },
+ "sans_photo": [
+  {
+   "nom": "V. plicatum 'Chyverton'",
+   "raison": "sans photo, non traite faute de recherche web (lot 2) ; T&S : Chyverton, Cornwall, multiplie 1964, AM Chelsea 1985, port bas"
+  },
+  {
+   "nom": "V. plicatum 'Grandiflorum'",
+   "raison": "sans photo, non traite faute de recherche web (lot 2) ; T&S : Hesse, Kew 1898"
+  },
+  {
+   "nom": "V. plicatum 'Rotundifolium'",
+   "raison": "sans photo, non traite faute de recherche web (lot 2) ; T&S : Meehan / Parsons, Etats-Unis"
+  },
+  {
+   "nom": "V. plicatum 'Popcorn'",
+   "raison": "sans photo, non traite faute de recherche web (lot 2) ; type de tete non verifie ; deux photos Commons de Stang (2008-05-02, Behnke Nurseries Potomac) vues dans la liste, non evaluees"
+  },
+  {
+   "nom": "V. 'Nantucket'",
+   "raison": "sans photo, non traite faute de recherche web (lot 2) ; indique comme descendant d''Eskimo' (US National Arboretum) : peut etre une boule fertile, hors sorte"
+  }
+ ],
+ "ecartes": [
+  {
+   "nom": "V. 'Eskimo' (V. x carlcephalum 'Cayuga' x V. utile)",
+   "raison": "boule de fleurons tubulaires FERTILES, fruits : pas une boule sterile ; US National Arboretum, nomme et diffuse en 1981"
+  },
+  {
+   "nom": "V. x carlcephalum",
+   "raison": "hybride fertile et parfume, cyme jusqu'a 6 in : hors sorte"
+  },
+  {
+   "nom": "V. macrocephalum f. keteleeri",
+   "raison": "cyme plate a centre fertile : hors sorte"
+  },
+  {
+   "nom": "Photo Commons « Chinese snowball.jpg » (Fanghong 2017)",
+   "raison": "cyme plate (type keteleeri), legende trompeuse"
+  },
+  {
+   "nom": "V. plicatum f. tomentosum (Mariesii, Cascade, Pink Beauty, Summer Snowflake, Shasta, Mary Milton, Molly Schroeder, Watanabe...)",
+   "raison": "lacecaps : une autre sorte ; le rose de 'Pink Beauty' et de 'Mary Milton' ne se transpose pas a 'Roseum'"
+  }
+ ],
+ "ecartes_marque": [],
+ "marques_note": "aucun cultivar de la sorte ne porte de ® ni de ™ dans les sources consultees ; noms hors sorte vus chez Proven Winners dans refcache/viburnum-roseum/marques-a-verifier.txt (rien a dessiner) ; aucun registre des marques consulte (TMview, EUIPO, INPI : a faire par l'orchestrateur)",
+ "couverture": {
+  "cultivars_inventories_temps_1": 10,
+  "cultivars_retenus_avec_photo": 3,
+  "representants_de_la_sorte": 1,
+  "voisins": 2,
+  "niveau_A": 0,
+  "nom_B": 1,
+  "coloris_catalogue": 5,
+  "coloris_B": 2,
+  "coloris_C": 1,
+  "coloris_D": 2,
+  "prouves_A_ou_B": 2,
+  "sans_photo_non_traites": 5,
+  "ecartes": 5,
+  "ecartes_marque": 0,
+  "au_catalogue": 5,
+  "remarque": "« enregistres » : total inconnu (aucun registre en ligne) ; les nombres portent sur ce qui a ete recense. Un coloris D ou C n'entre pas en boutique."
+ },
+ "questions_orchestrateur": [
+  "Le SKU ~0 s'appelle-t-il « Vert anis » (un stade) ? Garder la boule verte coupee comme coloris de boutique ?",
+  "blanc-creme : stade intermediaire sans SKU propre, ou doublon du blanc a retirer ? (a trancher par la mesure : ΔE entre 3zz, WPC et le blanc)",
+  "blanc-rose : garder en « a confirmer » hors boutique, texte seul (deux sources N3, aucune photo) ?",
+  "V. macrocephalum f. macrocephalum et V. plicatum f. plicatum : nouveaux coloris late:1 ou sortes a part ? Proposition : sortes a part.",
+  "Rouvrir le lot 2 (Chyverton, Grandiflorum, Rotundifolium, Popcorn, Nantucket) quand la recherche web revient."
+ ],
+ "vues_manquantes": [
+  "tete rosie (fane), toute photo datee",
+  "revers et dessous de la boule",
+  "feuilles (dessus, dessous, attache) et tige coupee de 'Roseum' : photos non designees ici (fleur-refs)",
+  "sequence datee d'un seul arbuste du vert au blanc"
+ ]
+}

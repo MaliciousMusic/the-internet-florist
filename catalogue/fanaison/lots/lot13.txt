@@ -1,0 +1,54 @@
+fatsia-japonica-aralia;Aralia;Feuillages;foliage;feuillage
+nephrolepis-exaltata-boston;Fougère de Boston;Feuillages;foliage;feuillage
+polystichum-munitum-sword-fern;Fougère épée de l'Ouest;Feuillages;foliage;feuillage
+adiantum-capillaire;Capillaire;Feuillages;foliage;feuillage
+sticherus-umbrella-fern;Fougère parapluie;Feuillages;foliage;feuillage
+dicranopteris-uluhe;Fougère uluhe;Feuillages;line;texture
+thelypteris-kunthii-helecho;Helecho;Feuillages;foliage;feuillage
+cyrtomium-falcatum-houx;Fougère houx;Feuillages;foliage;feuillage
+phlebodium-aureum-blue-star;Fougère bleue;Feuillages;foliage;feuillage
+woodwardia-fimbriata;Fougère chaîne géante;Feuillages;foliage;feuillage
+asplenium-nidus;Fougère nid d'oiseau;Feuillages;foliage;feuillage
+microsorum-musifolium-crocodile;Fougère crocodile;Feuillages;foliage;feuillage
+zamia-integrifolia-coontie;Coontie;Feuillages;foliage;feuillage
+lycopodium;Lycopode;Feuillages;drape;texture
+equisetum-preles;Prêle d'hiver;Feuillages;line;texture
+xerophyllum-tenax-bear-grass;Herbe à l'ours;Feuillages;line;graminee
+xanthorrhoea-steel-grass;Herbe d'acier;Feuillages;line;graminee
+liriope-lily-grass;Liriope;Feuillages;line;graminee
+phormium-lin-nz;Phormium;Feuillages;foliage;feuillage
+astelia-silver-spear;Astelia 'Silver Spear';Feuillages;foliage;feuillage
+jacobaea-maritima-cineraire;Cinéraire maritime;Feuillages;foliage;feuillage
+stachys-byzantina-oreille-ours;Épiaire laineuse;Feuillages;foliage;feuillage
+hosta-feuilles;Feuilles d'hosta;Feuillages;foliage;feuillage
+galax-urceolata;Galax;Feuillages;foliage;feuillage
+heuchera;Feuilles d'heuchère;Feuillages;foliage;feuillage
+atriplex-hortensis-arroche;Arroche des jardins;Feuillages;foliage;feuillage
+pelargonium-geranium-odorant;Géranium odorant;Feuillages;foliage;feuillage
+magnolia-grandiflora-feuillage;Feuillage de magnolia;Feuillages;foliage;feuillage
+olea-europaea-olivier;Branches d'olivier;Feuillages;foliage;feuillage
+hedera-helix-lierre;Lierre;Feuillages;drape;feuillage
+jasminum-liane-jasmin;Liane de jasmin;Feuillages;drape;feuillage
+trachelospermum-jasmin-etoile;Jasmin étoilé;Feuillages;drape;feuillage
+myrtus-communis-myrte;Myrte;Feuillages;foliage;feuillage
+buxus-sempervirens-buis;Buis;Feuillages;foliage;feuillage
+pistacia-lentiscus-pistachier;Pistachier lentisque;Feuillages;foliage;feuillage
+laurus-nobilis-laurier-sauce;Laurier-sauce;Feuillages;foliage;feuillage
+prunus-laurocerasus-laurier-cerise;Laurier-cerise;Feuillages;foliage;feuillage
+viburnum-tinus-laurier-tin;Laurier-tin;Feuillages;berries;feuillage
+quercus-ilex-chene-vert;Chêne vert;Feuillages;foliage;feuillage
+cotinus-coggygria-arbre-a-perruques;Arbre à perruques;Feuillages;foliage;feuillage
+physocarpus-opulifolius;Physocarpe;Feuillages;foliage;feuillage
+nandina-domestica-bambou-sacre;Nandina;Feuillages;foliage;feuillage
+photinia-red-robin;Photinia 'Red Robin';Feuillages;foliage;feuillage
+elaeagnus-chalef;Chalef;Feuillages;foliage;feuillage
+euonymus-japonicus-fusain;Fusain du Japon;Feuillages;foliage;feuillage
+griselinia-littoralis;Griselinia;Feuillages;foliage;feuillage
+aucuba-japonica;Aucuba du Japon;Feuillages;foliage;feuillage
+choisya-ternata-oranger-du-mexique;Oranger du Mexique;Feuillages;foliage;feuillage
+brachyglottis-sunshine;Brachyglottis 'Sunshine';Feuillages;foliage;feuillage
+leucothoe;Leucothoé;Feuillages;foliage;feuillage
+skimmia-japonica;Skimmia du Japon;Feuillages;berries;feuillage
+ilex-aquifolium-houx;Houx;Feuillages;foliage;feuillage
+camellia-japonica-feuillage;Feuillage de camélia;Feuillages;foliage;feuillage
+gardenia-feuillage;Feuillage de gardénia;Feuillages;foliage;feuillage

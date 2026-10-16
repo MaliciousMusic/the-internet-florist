@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Étude des compositions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Fraunces:ital,opsz,wght@0,9..144,500..700;1,9..144,400..600&display=swap" rel="stylesheet">
+<style>
+/* Layout: long-form study — findings first, then numbers, then the algorithm, then the 82 annotated references */
+:root{--paper:#fbf7f1;--card:#fffdf9;--ink:#2b1d24;--ink2:#6b5a63;--berry:#c2185b;--leaf:#3f6b3a;--leafbg:#eef4e8;--line:rgba(43,29,36,.12);--f-d:"Fraunces",Georgia,serif;--f-u:"Bricolage Grotesque",system-ui,-apple-system,"Segoe UI",sans-serif;color-scheme:light}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:var(--f-u);font-size:16px;line-height:1.55}
+.wrap{max-width:1180px;margin:0 auto;padding:0 18px}
+header{padding:40px 0 18px}
+h1{font-family:var(--f-d);font-size:clamp(30px,4vw,48px);font-weight:600;letter-spacing:-.015em;line-height:1.08;text-wrap:balance}
+h1 em{color:var(--berry)}
+.lead{color:var(--ink2);max-width:68ch;margin-top:10px}
+nav{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+nav a{font-size:14px;font-weight:700;color:var(--ink);text-decoration:none;border:1px solid var(--line);background:#fff;border-radius:999px;padding:7px 13px}
+section{padding:28px 0;border-top:1px solid var(--line)}
+h2{font-family:var(--f-d);font-size:30px;font-weight:600;margin-bottom:14px;text-wrap:balance}
+h3{font-size:15px}
+.prose{max-width:76ch}
+.prose p,.prose li{margin:8px 0}
+.prose h3{font-family:var(--f-d);font-size:21px;margin:22px 0 6px}
+.prose code,.prose pre{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:13.5px}
+.prose pre{background:#f3ede4;border-radius:12px;padding:12px 14px;overflow-x:auto;line-height:1.45}
+.prose table{border-collapse:collapse;width:100%;font-size:14px;margin:10px 0}
+.prose th,.prose td{border-bottom:1px solid var(--line);padding:6px 8px;text-align:left;vertical-align:top}
+.charts{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr));gap:16px}
+.chart{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px}
+.chart h3{margin-bottom:8px}
+.row{display:grid;grid-template-columns:minmax(0,1.3fr) 1fr auto;gap:8px;align-items:center;font-size:13.5px;margin:4px 0}
+.lab{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.bar{height:10px;background:#f1ebe3;border-radius:5px;overflow:hidden}.bar i{display:block;height:100%;background:var(--berry);border-radius:5px}
+.val{font-variant-numeric:tabular-nums;font-size:13px}.val small{color:var(--ink2)}
+.tbl{overflow-x:auto}
+table.top{border-collapse:collapse;width:100%;font-size:14px;background:var(--card);border-radius:14px;overflow:hidden}
+table.top th,table.top td{padding:7px 10px;border-bottom:1px solid var(--line);text-align:left}
+table.top .num{font-variant-numeric:tabular-nums;text-align:right}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,360px),1fr));gap:16px}
+.b{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;min-width:0}
+.b img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;background:#eae3d8}
+.bb{padding:12px 14px 14px;display:grid;gap:8px}
+.bb h3{font-family:var(--f-d);font-size:20px;font-weight:600}
+.meta,.small{font-size:13.5px;color:var(--ink2)}
+.small b{color:var(--ink)}
+.sw{display:flex;height:22px;border-radius:7px;overflow:hidden}.sw i{display:block}
+.fl{display:flex;flex-wrap:wrap;gap:5px}
+.fl span{font-size:12px;padding:3px 8px;border-radius:999px;background:#f6f0e8;border-left:4px solid var(--c)}
+.bb ul{padding-left:18px;font-size:13.5px}
+.legend{display:flex;flex-wrap:wrap;gap:10px;font-size:13px;color:var(--ink2);margin-bottom:12px}
+.legend span{border-left:4px solid var(--c);padding-left:6px}
+.todo{color:var(--ink2);font-style:italic}
+footer{color:var(--ink2);font-size:13px;padding:30px 0 50px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+ <h1>Étude des compositions <em>Belai's Flowers</em></h1>
+ <p class="lead">__N__ images de référence analysées une à une (__NREAL__ bouquets réels, hors doublons et illustrations), __NREGLES__ règles relevées, palettes extraites par calcul. Cette étude sert de base à l’algorithme qui compose les bouquets de l’application.</p>
+ <nav><a href="#synthese">Ce qui fait un beau bouquet</a><a href="#chiffres">Les chiffres</a><a href="#fleurs">Fleurs les plus utilisées</a><a href="#algo">L’algorithme</a><a href="#refs">Les 82 références</a></nav>
+</header>
+<section id="synthese"><h2>Ce qui fait un beau bouquet</h2><div class="prose">__SYNTHESE__</div></section>
+<section id="chiffres"><h2>Les chiffres</h2><div class="charts">__CHARTS__</div></section>
+<section id="fleurs"><h2>Fleurs et éléments les plus utilisés</h2><div class="tbl"><table class="top"><thead><tr><th>Élément</th><th>Nom latin</th><th class="num">Bouquets</th><th>Rôles</th><th>Couleurs vues</th></tr></thead><tbody>__TOP__</tbody></table></div></section>
+<section id="algo"><h2>L’algorithme de composition</h2><div class="prose">__ALGO__</div></section>
+<section id="refs"><h2>Les 82 références annotées</h2>
+ <div class="legend"><span style="--c:#3f6b3a">ligne</span><span style="--c:#c2185b">focale</span><span style="--c:#e07a9a">secondaire</span><span style="--c:#b49a6a">remplissage</span><span style="--c:#7a2a8a">retombée</span><span style="--c:#5f8f4a">feuillage</span><span style="--c:#e08a00">accent</span></div>
+ <div class="grid">__CARDS__</div></section>
+<footer>Photos : tes références (dossier « Composition reference »), affichées localement, non publiées. Palettes extraites automatiquement des pixels colorés de chaque photo.</footer>
+</div>
+</body>
+</html>

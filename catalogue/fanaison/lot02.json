@@ -1,0 +1,3230 @@
+[
+  {
+    "id": "dahlia-assiette",
+    "nom": "Dahlia géant 'assiette'",
+    "saison_vente": {
+      "mois": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "pic": [
+        8,
+        9
+      ],
+      "toute_annee": false,
+      "note": "fleur de saison, production européenne de plein champ et sous abri de juillet aux premières gelées (juin et novembre en marge) ; pic août-septembre ; quasi absente de décembre à mai. Pas de calendrier Royal FloraHolland consulté (pages inaccessibles).",
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/dahlia",
+        "https://www.webbsdirect.co.uk/wholesale-british-grown-dahlias-flora-fields-/",
+        "https://www.poppyflowers.com/help/articles/dahlia-wedding-flowers-complete-guide-season-cost-varieties",
+        "https://www.bricomarche.com/p/dahlia-balle-sylvia-i-x1/3360899548258"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 2,
+      "max": 5,
+      "sources": [
+        "https://www.longfield-gardens.com/blogs/dahlia-care/how-long-will-cut-dahlias-last-a-guide-to-vase-life",
+        "https://www.longfield-gardens.com/blogs/dahlia-care/how-long-do-cut-dahlias-last-tips-for-a-longer-vase-life"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "penche-tete",
+        "brunit-bords",
+        "recroqueville",
+        "chute-petales",
+        "feuilles-recroquevillees"
+      ],
+      "ordre": "c'est le dahlia qui tient le moins : la tête énorme demande beaucoup d'eau ; les pétales extérieurs (arrière) ramollissent, brunissent et deviennent parcheminés, la tête s'alourdit et penche ; le cœur se découvre ; enfin les pétales se flétrissent et tombent par couronnes",
+      "tete": "très lourde, elle penche puis pend par affaissement de la tige sous la tête ; la fleur s'aplatit et le cœur jaune devient visible",
+      "petales": "pétales de l'arrière mous puis bruns et papyracés, se recroquevillant sur place ; chute en fin de vie",
+      "feuilles": "les feuilles (souvent retirées au conditionnement) flétrissent et pendent vite par transpiration ; celles restées dans l'eau pourrissent ; elles jaunissent puis brunissent en séchant",
+      "tige": "tige creuse : si elle s'embolise (bulles d'air, bactéries), elle ramollit sous la tête qui s'affaisse ; c'est le premier dahlia à plier",
+      "couleurs": {
+        "blanc": {
+          "declin": "blanc qui ternit vers l'ivoire, marques brunes aux plis et meurtrissures (le blanc marque facilement) (confiance basse : nuance déduite, non sourcée)",
+          "fane": "beige à brun clair parcheminé, pétales extérieurs brunis (confiance basse : nuance déduite, non sourcée)"
+        },
+        "creme": {
+          "declin": "crème qui ternit, bords des pétales extérieurs beige (confiance basse : nuance déduite, non sourcée)",
+          "fane": "beige-brun parcheminé (confiance basse : nuance déduite, non sourcée)"
+        },
+        "peche": {
+          "declin": "pêche qui pâlit vers un rose-beige délavé (confiance basse : nuance déduite, non sourcée)",
+          "fane": "beige rosé terne, bords bruns (confiance basse : nuance déduite, non sourcée)"
+        },
+        "rose": {
+          "declin": "rose qui pâlit et se délave (confiance basse : nuance déduite, non sourcée)",
+          "fane": "rose sale tirant au beige-brun (confiance basse : nuance déduite, non sourcée)"
+        },
+        "jaune": {
+          "declin": "jaune qui pâlit et se délave (confiance basse : nuance déduite, non sourcée)",
+          "fane": "jaune paille terne virant au brun clair (confiance basse : nuance déduite, non sourcée)"
+        },
+        "orange": {
+          "declin": "orange qui pâlit, pointes plus claires (confiance basse : nuance déduite, non sourcée)",
+          "fane": "orange brunâtre terne, bords bruns (confiance basse : nuance déduite, non sourcée)"
+        },
+        "rouge": {
+          "declin": "rouge vif qui pâlit nettement (les rouges vifs décolorent vite à la lumière) (confiance basse : nuance déduite, non sourcée)",
+          "fane": "rouge terne brunâtre, pétales extérieurs bruns et secs (confiance basse : nuance déduite, non sourcée)"
+        },
+        "bordeaux": {
+          "declin": "bordeaux qui s'assombrit et perd son velouté (confiance basse : nuance déduite, non sourcée)",
+          "fane": "brun-bordeaux très sombre, sec (confiance basse : nuance déduite, non sourcée)"
+        },
+        "violet": {
+          "declin": "violet qui pâlit vers le mauve (confiance basse : nuance déduite, non sourcée)",
+          "fane": "mauve sale tirant au brun (confiance basse : nuance déduite, non sourcée)"
+        },
+        "bicolore": {
+          "declin": "le contraste s'atténue, la couleur la plus claire se ternit (confiance basse : nuance déduite, non sourcée)",
+          "fane": "tons brouillés beige-brun, bords bruns (confiance basse : nuance déduite, non sourcée)"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Tenue (2 à 5 j) et tête lourde qui penche : sources propres aux formes 'dinnerplate'. Mode de flétrissement des pétales repris du dahlia en général (études sur 10 cultivars : abscission, abscission avec dessèchement, ou flétrissement selon le cultivar). Séchage à l'air déconseillé pour les grosses fleurs (source : séchage à l'air réservé aux petites formes). Couleurs : seuls sont sourcés la décoloration avec l'âge et la chaleur (accumulation de flavones dans les pétales décolorés), le brunissement et l'aspect parcheminé des pétales de l'arrière, et la facilité avec laquelle le blanc marque ; les nuances par famille sont déduites de ces mécanismes, pas observées famille par famille.",
+      "sources": [
+        "https://www.longfield-gardens.com/blogs/dahlia-care/how-long-will-cut-dahlias-last-a-guide-to-vase-life",
+        "https://www.longfield-gardens.com/blogs/dahlia-care/how-long-do-cut-dahlias-last-tips-for-a-longer-vase-life",
+        "https://biologyinsights.com/how-to-dry-dahlias-air-drying-and-silica-gel/",
+        "https://www.mdpi.com/2311-7524/8/10/922",
+        "https://repository.kulib.kyoto-u.ac.jp/dspace/bitstream/2433/286476/1/hortj.utd-367.pdf",
+        "https://www.longfield-gardens.com/blogs/dahlia-care/why-are-my-cut-dahlias-wilting-simple-tips-for-fresh-blooms",
+        "https://www.longfield-gardens.com/blogs/dahlia-care/how-to-keep-cut-dahlias-from-wilting",
+        "https://triplewrenfarms.com/heat-can-affect-dahlia-color/",
+        "https://ousar.lib.okayama-u.ac.jp/en/list/recent_additions/item/69016",
+        "https://forum.dahliaaddict.com/d/65-white-dahlias/115"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "dahlia-decoratif",
+    "nom": "Dahlia décoratif",
+    "saison_vente": {
+      "mois": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "pic": [
+        8,
+        9
+      ],
+      "toute_annee": false,
+      "note": "fleur de saison, production européenne de plein champ et sous abri de juillet aux premières gelées (juin et novembre en marge) ; pic août-septembre ; quasi absente de décembre à mai. Pas de calendrier Royal FloraHolland consulté (pages inaccessibles).",
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/dahlia",
+        "https://www.webbsdirect.co.uk/wholesale-british-grown-dahlias-flora-fields-/",
+        "https://www.poppyflowers.com/help/articles/dahlia-wedding-flowers-complete-guide-season-cost-varieties",
+        "https://www.bricomarche.com/p/dahlia-balle-sylvia-i-x1/3360899548258"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 4,
+      "max": 9,
+      "sources": [
+        "https://www.longfield-gardens.com/blogs/dahlia-care/how-long-will-cut-dahlias-last-a-guide-to-vase-life",
+        "https://cutflowers.ces.ncsu.edu/2019/03/extending-cut-dahlia-vase-life/",
+        "https://www.promessedefleurs.ie/summer-flowering-bulbs/dahlias/ornamental-dahlias/dahlia-karma-serena.html",
+        "https://chrysal.com/node/5110"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "brunit-bords",
+        "recroqueville",
+        "chute-petales",
+        "penche-tete",
+        "decolore"
+      ],
+      "ordre": "les pétales extérieurs (les plus vieux) se fanent d'abord : ils ramollissent, se décolorent et brunissent, puis se dessèchent ; le cœur s'ouvre et montre le disque jaune ; selon le cultivar les pétales tombent (abscission) ou se flétrissent sur place ; la tête finit par pencher si la tige s'embolise",
+      "tete": "reste d'abord droite (variétés de coupe à fleur tournée vers le haut, type Karma) puis s'incline ; la fleur s'aplatit et s'ouvre au centre",
+      "petales": "pétales plats extérieurs mous, bords et pointes qui brunissent, aspect parcheminé ; chute ou dessèchement sur place selon cultivar",
+      "feuilles": "les feuilles (souvent retirées au conditionnement) flétrissent et pendent vite par transpiration ; celles restées dans l'eau pourrissent ; elles jaunissent puis brunissent en séchant",
+      "tige": "tige creuse : si elle s'embolise (bulles d'air, bactéries), elle ramollit sous la tête qui s'affaisse",
+      "couleurs": {
+        "blanc": {
+          "declin": "blanc qui ternit vers l'ivoire, marques brunes aux plis et meurtrissures (le blanc marque facilement) (confiance basse : nuance déduite, non sourcée)",
+          "fane": "beige à brun clair parcheminé, pétales extérieurs brunis (confiance basse : nuance déduite, non sourcée)"
+        },
+        "creme": {
+          "declin": "crème qui ternit, bords des pétales extérieurs beige (confiance basse : nuance déduite, non sourcée)",
+          "fane": "beige-brun parcheminé (confiance basse : nuance déduite, non sourcée)"
+        },
+        "jaune": {
+          "declin": "jaune qui pâlit et se délave (confiance basse : nuance déduite, non sourcée)",
+          "fane": "jaune paille terne virant au brun clair (confiance basse : nuance déduite, non sourcée)"
+        },
+        "orange": {
+          "declin": "orange qui pâlit, pointes plus claires (confiance basse : nuance déduite, non sourcée)",
+          "fane": "orange brunâtre terne, bords bruns (confiance basse : nuance déduite, non sourcée)"
+        },
+        "peche": {
+          "declin": "pêche qui pâlit vers un rose-beige délavé (confiance basse : nuance déduite, non sourcée)",
+          "fane": "beige rosé terne, bords bruns (confiance basse : nuance déduite, non sourcée)"
+        },
+        "rose": {
+          "declin": "rose qui pâlit et se délave (confiance basse : nuance déduite, non sourcée)",
+          "fane": "rose sale tirant au beige-brun (confiance basse : nuance déduite, non sourcée)"
+        },
+        "rouge": {
+          "declin": "rouge vif qui pâlit nettement (les rouges vifs décolorent vite à la lumière) (confiance basse : nuance déduite, non sourcée)",
+          "fane": "rouge terne brunâtre, pétales extérieurs bruns et secs (confiance basse : nuance déduite, non sourcée)"
+        },
+        "bordeaux": {
+          "declin": "bordeaux qui s'assombrit et perd son velouté (confiance basse : nuance déduite, non sourcée)",
+          "fane": "brun-bordeaux très sombre, sec (confiance basse : nuance déduite, non sourcée)"
+        },
+        "violet": {
+          "declin": "violet qui pâlit vers le mauve (confiance basse : nuance déduite, non sourcée)",
+          "fane": "mauve sale tirant au brun (confiance basse : nuance déduite, non sourcée)"
+        },
+        "bicolore": {
+          "declin": "le contraste s'atténue, la couleur la plus claire se ternit (confiance basse : nuance déduite, non sourcée)",
+          "fane": "tons brouillés beige-brun, bords bruns (confiance basse : nuance déduite, non sourcée)"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Tenue : 4-6 j (guide par forme), 6-9 j pour la série Karma (obtenteur Verwer, NC State), jusqu'à 10-11 j avec solution de conservation. Les études japonaises (10 cultivars) montrent que la fin de vie passe par le flétrissement et la décoloration des pétales extérieurs. Couleurs : seuls sont sourcés la décoloration avec l'âge et la chaleur (accumulation de flavones dans les pétales décolorés), le brunissement et l'aspect parcheminé des pétales de l'arrière, et la facilité avec laquelle le blanc marque ; les nuances par famille sont déduites de ces mécanismes, pas observées famille par famille.",
+      "sources": [
+        "https://www.longfield-gardens.com/blogs/dahlia-care/how-long-will-cut-dahlias-last-a-guide-to-vase-life",
+        "https://cutflowers.ces.ncsu.edu/2019/03/extending-cut-dahlia-vase-life/",
+        "https://www.promessedefleurs.ie/summer-flowering-bulbs/dahlias/ornamental-dahlias/dahlia-karma-serena.html",
+        "https://chrysal.com/node/5110",
+        "https://www.mdpi.com/2311-7524/8/10/922",
+        "https://repository.kulib.kyoto-u.ac.jp/dspace/bitstream/2433/286476/1/hortj.utd-367.pdf",
+        "https://www.longfield-gardens.com/blogs/dahlia-care/why-are-my-cut-dahlias-wilting-simple-tips-for-fresh-blooms",
+        "https://www.longfield-gardens.com/blogs/dahlia-care/how-to-keep-cut-dahlias-from-wilting",
+        "https://triplewrenfarms.com/heat-can-affect-dahlia-color/",
+        "https://ousar.lib.okayama-u.ac.jp/en/list/recent_additions/item/69016",
+        "https://forum.dahliaaddict.com/d/65-white-dahlias/115"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "dahlia-balle",
+    "nom": "Dahlia balle",
+    "saison_vente": {
+      "mois": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "pic": [
+        8,
+        9
+      ],
+      "toute_annee": false,
+      "note": "fleur de saison, production européenne de plein champ et sous abri de juillet aux premières gelées (juin et novembre en marge) ; pic août-septembre ; quasi absente de décembre à mai. Pas de calendrier Royal FloraHolland consulté (pages inaccessibles).",
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/dahlia",
+        "https://www.webbsdirect.co.uk/wholesale-british-grown-dahlias-flora-fields-/",
+        "https://www.poppyflowers.com/help/articles/dahlia-wedding-flowers-complete-guide-season-cost-varieties",
+        "https://www.bricomarche.com/p/dahlia-balle-sylvia-i-x1/3360899548258"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 5,
+      "max": 7,
+      "sources": [
+        "https://www.longfield-gardens.com/blogs/dahlia-care/how-long-will-cut-dahlias-last-a-guide-to-vase-life",
+        "https://www.bricomarche.com/p/dahlia-balle-faro-i-x1/3505390110881"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "brunit-bords",
+        "recroqueville",
+        "decolore",
+        "seche-sur-place"
+      ],
+      "ordre": "forme la plus durable avec le pompon : les pétales enroulés et serrés résistent au flétrissement ; ce sont les rangs extérieurs de la boule (dos de la fleur) qui ramollissent, brunissent et deviennent parcheminés en premier ; la boule s'ouvre un peu, se relâche et s'aplatit légèrement ; la tête reste globalement droite",
+      "tete": "garde sa forme de boule plus longtemps que les autres ; se relâche et s'aplatit en fin de vie, penche peu (tête compacte)",
+      "petales": "pétales en cornet serrés ; ceux du dos se fripent, brunissent et sèchent sur place",
+      "feuilles": "les feuilles (souvent retirées au conditionnement) flétrissent et pendent vite par transpiration ; celles restées dans l'eau pourrissent ; elles jaunissent puis brunissent en séchant",
+      "tige": "tige creuse : si elle s'embolise (bulles d'air, bactéries), elle ramollit sous la tête qui s'affaisse (moins marqué que chez les grosses formes)",
+      "couleurs": {
+        "blanc": {
+          "declin": "blanc qui ternit vers l'ivoire, marques brunes aux plis et meurtrissures (le blanc marque facilement) (confiance basse : nuance déduite, non sourcée)",
+          "fane": "beige à brun clair parcheminé, pétales extérieurs brunis (confiance basse : nuance déduite, non sourcée)"
+        },
+        "jaune": {
+          "declin": "jaune qui pâlit et se délave (confiance basse : nuance déduite, non sourcée)",
+          "fane": "jaune paille terne virant au brun clair (confiance basse : nuance déduite, non sourcée)"
+        },
+        "orange": {
+          "declin": "orange qui pâlit, pointes plus claires (confiance basse : nuance déduite, non sourcée)",
+          "fane": "orange brunâtre terne, bords bruns (confiance basse : nuance déduite, non sourcée)"
+        },
+        "peche": {
+          "declin": "pêche qui pâlit vers un rose-beige délavé (confiance basse : nuance déduite, non sourcée)",
+          "fane": "beige rosé terne, bords bruns (confiance basse : nuance déduite, non sourcée)"
+        },
+        "rose": {
+          "declin": "rose qui pâlit et se délave (confiance basse : nuance déduite, non sourcée)",
+          "fane": "rose sale tirant au beige-brun (confiance basse : nuance déduite, non sourcée)"
+        },
+        "rouge": {
+          "declin": "rouge vif qui pâlit nettement (les rouges vifs décolorent vite à la lumière) (confiance basse : nuance déduite, non sourcée)",
+          "fane": "rouge terne brunâtre, pétales extérieurs bruns et secs (confiance basse : nuance déduite, non sourcée)"
+        },
+        "bordeaux": {
+          "declin": "bordeaux qui s'assombrit et perd son velouté (confiance basse : nuance déduite, non sourcée)",
+          "fane": "brun-bordeaux très sombre, sec (confiance basse : nuance déduite, non sourcée)"
+        },
+        "violet": {
+          "declin": "violet qui pâlit vers le mauve (confiance basse : nuance déduite, non sourcée)",
+          "fane": "mauve sale tirant au brun (confiance basse : nuance déduite, non sourcée)"
+        },
+        "bicolore": {
+          "declin": "le contraste s'atténue, la couleur la plus claire se ternit (confiance basse : nuance déduite, non sourcée)",
+          "fane": "tons brouillés beige-brun, bords bruns (confiance basse : nuance déduite, non sourcée)"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Tenue 6-7 j et résistance due aux pétales serrés et fermes : source par forme. Séchage à l'air recommandé pour les petites formes balle et pompon, avec forme un peu aplatie et couleur atténuée. Ordre de fanaison (dos d'abord) issu des signes généraux de fanaison du dahlia. Couleurs : seuls sont sourcés la décoloration avec l'âge et la chaleur (accumulation de flavones dans les pétales décolorés), le brunissement et l'aspect parcheminé des pétales de l'arrière, et la facilité avec laquelle le blanc marque ; les nuances par famille sont déduites de ces mécanismes, pas observées famille par famille.",
+      "sources": [
+        "https://www.longfield-gardens.com/blogs/dahlia-care/how-long-will-cut-dahlias-last-a-guide-to-vase-life",
+        "https://www.bricomarche.com/p/dahlia-balle-faro-i-x1/3505390110881",
+        "https://biologyinsights.com/how-to-dry-dahlias-air-drying-and-silica-gel/",
+        "https://www.mdpi.com/2311-7524/8/10/922",
+        "https://repository.kulib.kyoto-u.ac.jp/dspace/bitstream/2433/286476/1/hortj.utd-367.pdf",
+        "https://www.longfield-gardens.com/blogs/dahlia-care/why-are-my-cut-dahlias-wilting-simple-tips-for-fresh-blooms",
+        "https://www.longfield-gardens.com/blogs/dahlia-care/how-to-keep-cut-dahlias-from-wilting",
+        "https://triplewrenfarms.com/heat-can-affect-dahlia-color/",
+        "https://ousar.lib.okayama-u.ac.jp/en/list/recent_additions/item/69016",
+        "https://forum.dahliaaddict.com/d/65-white-dahlias/115"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "dahlia-pompon",
+    "nom": "Dahlia pompon",
+    "saison_vente": {
+      "mois": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "pic": [
+        8,
+        9
+      ],
+      "toute_annee": false,
+      "note": "fleur de saison, production européenne de plein champ et sous abri de juillet aux premières gelées (juin et novembre en marge) ; pic août-septembre ; quasi absente de décembre à mai. Pas de calendrier Royal FloraHolland consulté (pages inaccessibles).",
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/dahlia",
+        "https://www.webbsdirect.co.uk/wholesale-british-grown-dahlias-flora-fields-/",
+        "https://www.poppyflowers.com/help/articles/dahlia-wedding-flowers-complete-guide-season-cost-varieties",
+        "https://www.bricomarche.com/p/dahlia-balle-sylvia-i-x1/3360899548258"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 5,
+      "max": 7,
+      "sources": [
+        "https://www.longfield-gardens.com/blogs/dahlia-care/how-long-will-cut-dahlias-last-a-guide-to-vase-life",
+        "https://library.floretflowers.com/products/dahlia-moor-place"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "brunit-bords",
+        "recroqueville",
+        "decolore",
+        "seche-sur-place"
+      ],
+      "ordre": "comme le dahlia balle : les petits pétales enroulés très serrés tiennent bien ; le dos de la sphère brunit et se parchemine d'abord ; la petite boule se dessèche en gardant largement sa forme",
+      "tete": "petite sphère compacte qui reste droite ; légère perte de rondeur en fin de vie",
+      "petales": "pétales tubulaires serrés qui se fripent, brunissent et sèchent sur place plutôt que de tomber",
+      "feuilles": "les feuilles (souvent retirées au conditionnement) flétrissent et pendent vite par transpiration ; celles restées dans l'eau pourrissent ; elles jaunissent puis brunissent en séchant",
+      "tige": "tige fine et creuse qui reste droite (tête légère) ; ramollit si elle s'embolise",
+      "couleurs": {
+        "blanc": {
+          "declin": "blanc qui ternit vers l'ivoire, marques brunes aux plis et meurtrissures (le blanc marque facilement) (confiance basse : nuance déduite, non sourcée)",
+          "fane": "beige à brun clair parcheminé, pétales extérieurs brunis (confiance basse : nuance déduite, non sourcée)"
+        },
+        "jaune": {
+          "declin": "jaune qui pâlit et se délave (confiance basse : nuance déduite, non sourcée)",
+          "fane": "jaune paille terne virant au brun clair (confiance basse : nuance déduite, non sourcée)"
+        },
+        "orange": {
+          "declin": "orange qui pâlit, pointes plus claires (confiance basse : nuance déduite, non sourcée)",
+          "fane": "orange brunâtre terne, bords bruns (confiance basse : nuance déduite, non sourcée)"
+        },
+        "rose": {
+          "declin": "rose qui pâlit et se délave (confiance basse : nuance déduite, non sourcée)",
+          "fane": "rose sale tirant au beige-brun (confiance basse : nuance déduite, non sourcée)"
+        },
+        "rouge": {
+          "declin": "rouge vif qui pâlit nettement (les rouges vifs décolorent vite à la lumière) (confiance basse : nuance déduite, non sourcée)",
+          "fane": "rouge terne brunâtre, pétales extérieurs bruns et secs (confiance basse : nuance déduite, non sourcée)"
+        },
+        "bordeaux": {
+          "declin": "bordeaux qui s'assombrit et perd son velouté (confiance basse : nuance déduite, non sourcée)",
+          "fane": "brun-bordeaux très sombre, sec (confiance basse : nuance déduite, non sourcée)"
+        },
+        "violet": {
+          "declin": "violet qui pâlit vers le mauve (confiance basse : nuance déduite, non sourcée)",
+          "fane": "mauve sale tirant au brun (confiance basse : nuance déduite, non sourcée)"
+        },
+        "bicolore": {
+          "declin": "le contraste s'atténue, la couleur la plus claire se ternit (confiance basse : nuance déduite, non sourcée)",
+          "fane": "tons brouillés beige-brun, bords bruns (confiance basse : nuance déduite, non sourcée)"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Tenue : 6-7 j (guide par forme), 5 j annoncés par Floret pour 'Moor Place'. Bon séchage à l'air (petite forme), couleur atténuée. Fanaison sur place déduite de la structure serrée décrite par les sources, non observée directement. Couleurs : seuls sont sourcés la décoloration avec l'âge et la chaleur (accumulation de flavones dans les pétales décolorés), le brunissement et l'aspect parcheminé des pétales de l'arrière, et la facilité avec laquelle le blanc marque ; les nuances par famille sont déduites de ces mécanismes, pas observées famille par famille.",
+      "sources": [
+        "https://www.longfield-gardens.com/blogs/dahlia-care/how-long-will-cut-dahlias-last-a-guide-to-vase-life",
+        "https://library.floretflowers.com/products/dahlia-moor-place",
+        "https://biologyinsights.com/how-to-dry-dahlias-air-drying-and-silica-gel/",
+        "https://www.mdpi.com/2311-7524/8/10/922",
+        "https://repository.kulib.kyoto-u.ac.jp/dspace/bitstream/2433/286476/1/hortj.utd-367.pdf",
+        "https://www.longfield-gardens.com/blogs/dahlia-care/why-are-my-cut-dahlias-wilting-simple-tips-for-fresh-blooms",
+        "https://www.longfield-gardens.com/blogs/dahlia-care/how-to-keep-cut-dahlias-from-wilting",
+        "https://triplewrenfarms.com/heat-can-affect-dahlia-color/",
+        "https://ousar.lib.okayama-u.ac.jp/en/list/recent_additions/item/69016",
+        "https://forum.dahliaaddict.com/d/65-white-dahlias/115"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "dahlia-cactus",
+    "nom": "Dahlia cactus et semi-cactus",
+    "saison_vente": {
+      "mois": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "pic": [
+        8,
+        9
+      ],
+      "toute_annee": false,
+      "note": "fleur de saison, production européenne de plein champ et sous abri de juillet aux premières gelées (juin et novembre en marge) ; pic août-septembre ; quasi absente de décembre à mai. Pas de calendrier Royal FloraHolland consulté (pages inaccessibles).",
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/dahlia",
+        "https://www.webbsdirect.co.uk/wholesale-british-grown-dahlias-flora-fields-/",
+        "https://www.poppyflowers.com/help/articles/dahlia-wedding-flowers-complete-guide-season-cost-varieties",
+        "https://www.bricomarche.com/p/dahlia-balle-sylvia-i-x1/3360899548258"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 4,
+      "max": 5,
+      "sources": [
+        "https://www.longfield-gardens.com/blogs/dahlia-care/how-long-will-cut-dahlias-last-a-guide-to-vase-life",
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/dahlia"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "brunit-bords",
+        "recroqueville",
+        "chute-petales",
+        "penche-tete",
+        "decolore"
+      ],
+      "ordre": "pétales extérieurs d'abord : leurs pointes effilées ramollissent, brunissent et se tordent ; le cœur s'ouvre ; puis flétrissement ou chute des pétales selon le cultivar ; la tête penche si la tige s'embolise",
+      "tete": "s'incline en fin de vie ; la fleur perd son aspect hérissé et s'ouvre au centre",
+      "petales": "pétales roulés en tube pointu ; on peut supposer que les pointes fines sèchent et brunissent en premier, sans source spécifique",
+      "feuilles": "les feuilles (souvent retirées au conditionnement) flétrissent et pendent vite par transpiration ; celles restées dans l'eau pourrissent ; elles jaunissent puis brunissent en séchant",
+      "tige": "tige creuse : si elle s'embolise (bulles d'air, bactéries), elle ramollit sous la tête qui s'affaisse",
+      "couleurs": {
+        "blanc": {
+          "declin": "blanc qui ternit vers l'ivoire, marques brunes aux plis et meurtrissures (le blanc marque facilement) (confiance basse : nuance déduite, non sourcée)",
+          "fane": "beige à brun clair parcheminé, pétales extérieurs brunis (confiance basse : nuance déduite, non sourcée)"
+        },
+        "jaune": {
+          "declin": "jaune qui pâlit et se délave (confiance basse : nuance déduite, non sourcée)",
+          "fane": "jaune paille terne virant au brun clair (confiance basse : nuance déduite, non sourcée)"
+        },
+        "orange": {
+          "declin": "orange qui pâlit, pointes plus claires (confiance basse : nuance déduite, non sourcée)",
+          "fane": "orange brunâtre terne, bords bruns (confiance basse : nuance déduite, non sourcée)"
+        },
+        "peche": {
+          "declin": "pêche qui pâlit vers un rose-beige délavé (confiance basse : nuance déduite, non sourcée)",
+          "fane": "beige rosé terne, bords bruns (confiance basse : nuance déduite, non sourcée)"
+        },
+        "rose": {
+          "declin": "rose qui pâlit et se délave (confiance basse : nuance déduite, non sourcée)",
+          "fane": "rose sale tirant au beige-brun (confiance basse : nuance déduite, non sourcée)"
+        },
+        "rouge": {
+          "declin": "rouge vif qui pâlit nettement (les rouges vifs décolorent vite à la lumière) (confiance basse : nuance déduite, non sourcée)",
+          "fane": "rouge terne brunâtre, pétales extérieurs bruns et secs (confiance basse : nuance déduite, non sourcée)"
+        },
+        "bordeaux": {
+          "declin": "bordeaux qui s'assombrit et perd son velouté (confiance basse : nuance déduite, non sourcée)",
+          "fane": "brun-bordeaux très sombre, sec (confiance basse : nuance déduite, non sourcée)"
+        },
+        "violet": {
+          "declin": "violet qui pâlit vers le mauve (confiance basse : nuance déduite, non sourcée)",
+          "fane": "mauve sale tirant au brun (confiance basse : nuance déduite, non sourcée)"
+        },
+        "bicolore": {
+          "declin": "le contraste s'atténue, la couleur la plus claire se ternit (confiance basse : nuance déduite, non sourcée)",
+          "fane": "tons brouillés beige-brun, bords bruns (confiance basse : nuance déduite, non sourcée)"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Tenue 4-5 j propre aux cactus/semi-cactus (tenue proche des décoratifs). Aucune source ne décrit une fanaison propre aux pétales enroulés : ordre et aspect extrapolés du dahlia en général (pétales extérieurs qui flétrissent et se décolorent). Couleurs : seuls sont sourcés la décoloration avec l'âge et la chaleur (accumulation de flavones dans les pétales décolorés), le brunissement et l'aspect parcheminé des pétales de l'arrière, et la facilité avec laquelle le blanc marque ; les nuances par famille sont déduites de ces mécanismes, pas observées famille par famille.",
+      "sources": [
+        "https://www.longfield-gardens.com/blogs/dahlia-care/how-long-will-cut-dahlias-last-a-guide-to-vase-life",
+        "https://www.mdpi.com/2311-7524/8/10/922",
+        "https://repository.kulib.kyoto-u.ac.jp/dspace/bitstream/2433/286476/1/hortj.utd-367.pdf",
+        "https://www.longfield-gardens.com/blogs/dahlia-care/why-are-my-cut-dahlias-wilting-simple-tips-for-fresh-blooms",
+        "https://www.longfield-gardens.com/blogs/dahlia-care/how-to-keep-cut-dahlias-from-wilting",
+        "https://triplewrenfarms.com/heat-can-affect-dahlia-color/",
+        "https://ousar.lib.okayama-u.ac.jp/en/list/recent_additions/item/69016",
+        "https://forum.dahliaaddict.com/d/65-white-dahlias/115"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "dahlia-nenuphar",
+    "nom": "Dahlia nénuphar",
+    "saison_vente": {
+      "mois": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "pic": [
+        8,
+        9
+      ],
+      "toute_annee": false,
+      "note": "fleur de saison, production européenne de plein champ et sous abri de juillet aux premières gelées (juin et novembre en marge) ; pic août-septembre ; quasi absente de décembre à mai. Pas de calendrier Royal FloraHolland consulté (pages inaccessibles).",
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/dahlia",
+        "https://www.webbsdirect.co.uk/wholesale-british-grown-dahlias-flora-fields-/",
+        "https://www.poppyflowers.com/help/articles/dahlia-wedding-flowers-complete-guide-season-cost-varieties",
+        "https://www.bricomarche.com/p/dahlia-balle-sylvia-i-x1/3360899548258"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 4,
+      "max": 5,
+      "sources": [
+        "https://www.longfield-gardens.com/blogs/dahlia-care/how-long-will-cut-dahlias-last-a-guide-to-vase-life",
+        "https://ashridgetrees.co.uk/p/dahlias/waterlily/gerrie-hoek"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "brunit-bords",
+        "recroqueville",
+        "chute-petales",
+        "decolore"
+      ],
+      "ordre": "la fleur plate continue un peu de s'ouvrir en vase, puis les pétales extérieurs larges et cireux ramollissent, se décolorent et brunissent aux bords ; le cœur se découvre ; chute ou flétrissement des pétales selon le cultivar",
+      "tete": "fleur plate tournée vers l'extérieur, tige droite (variétés de coupe) ; s'aplatit encore et s'ouvre au centre, penche peu",
+      "petales": "pétales larges à texture un peu cireuse (retient mieux l'eau) ; bords bruns puis flétrissement",
+      "feuilles": "les feuilles (souvent retirées au conditionnement) flétrissent et pendent vite par transpiration ; celles restées dans l'eau pourrissent ; elles jaunissent puis brunissent en séchant",
+      "tige": "tige creuse : si elle s'embolise (bulles d'air, bactéries), elle ramollit sous la tête qui s'affaisse",
+      "couleurs": {
+        "blanc": {
+          "declin": "blanc qui ternit vers l'ivoire, marques brunes aux plis et meurtrissures (le blanc marque facilement) (confiance basse : nuance déduite, non sourcée)",
+          "fane": "beige à brun clair parcheminé, pétales extérieurs brunis (confiance basse : nuance déduite, non sourcée)"
+        },
+        "jaune": {
+          "declin": "jaune qui pâlit et se délave (confiance basse : nuance déduite, non sourcée)",
+          "fane": "jaune paille terne virant au brun clair (confiance basse : nuance déduite, non sourcée)"
+        },
+        "orange": {
+          "declin": "orange qui pâlit, pointes plus claires (confiance basse : nuance déduite, non sourcée)",
+          "fane": "orange brunâtre terne, bords bruns (confiance basse : nuance déduite, non sourcée)"
+        },
+        "peche": {
+          "declin": "pêche qui pâlit vers un rose-beige délavé (confiance basse : nuance déduite, non sourcée)",
+          "fane": "beige rosé terne, bords bruns (confiance basse : nuance déduite, non sourcée)"
+        },
+        "rose": {
+          "declin": "rose qui pâlit et se délave (confiance basse : nuance déduite, non sourcée)",
+          "fane": "rose sale tirant au beige-brun (confiance basse : nuance déduite, non sourcée)"
+        },
+        "rouge": {
+          "declin": "rouge vif qui pâlit nettement (les rouges vifs décolorent vite à la lumière) (confiance basse : nuance déduite, non sourcée)",
+          "fane": "rouge terne brunâtre, pétales extérieurs bruns et secs (confiance basse : nuance déduite, non sourcée)"
+        },
+        "violet": {
+          "declin": "violet qui pâlit vers le mauve (confiance basse : nuance déduite, non sourcée)",
+          "fane": "mauve sale tirant au brun (confiance basse : nuance déduite, non sourcée)"
+        },
+        "bicolore": {
+          "declin": "le contraste s'atténue, la couleur la plus claire se ternit (confiance basse : nuance déduite, non sourcée)",
+          "fane": "tons brouillés beige-brun, bords bruns (confiance basse : nuance déduite, non sourcée)"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Tenue 4-5 j et pétales cireux : sources par forme ; une source signale que le nénuphar continue de s'ouvrir en vase (les autres non). Déroulé de la fanaison extrapolé du dahlia en général. Couleurs : seuls sont sourcés la décoloration avec l'âge et la chaleur (accumulation de flavones dans les pétales décolorés), le brunissement et l'aspect parcheminé des pétales de l'arrière, et la facilité avec laquelle le blanc marque ; les nuances par famille sont déduites de ces mécanismes, pas observées famille par famille.",
+      "sources": [
+        "https://www.longfield-gardens.com/blogs/dahlia-care/how-long-will-cut-dahlias-last-a-guide-to-vase-life",
+        "https://ashridgetrees.co.uk/p/dahlias/waterlily/gerrie-hoek",
+        "https://www.longfield-gardens.com/blogs/dahlia-care/are-dahlias-good-cut-flowers-best-varieties-and-care",
+        "https://www.mdpi.com/2311-7524/8/10/922",
+        "https://repository.kulib.kyoto-u.ac.jp/dspace/bitstream/2433/286476/1/hortj.utd-367.pdf",
+        "https://www.longfield-gardens.com/blogs/dahlia-care/why-are-my-cut-dahlias-wilting-simple-tips-for-fresh-blooms",
+        "https://www.longfield-gardens.com/blogs/dahlia-care/how-to-keep-cut-dahlias-from-wilting",
+        "https://triplewrenfarms.com/heat-can-affect-dahlia-color/",
+        "https://ousar.lib.okayama-u.ac.jp/en/list/recent_additions/item/69016",
+        "https://forum.dahliaaddict.com/d/65-white-dahlias/115"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "dahlia-collerette",
+    "nom": "Dahlia collerette",
+    "saison_vente": {
+      "mois": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "pic": [
+        8,
+        9
+      ],
+      "toute_annee": false,
+      "note": "fleur de saison, production européenne de plein champ et sous abri de juillet aux premières gelées (juin et novembre en marge) ; pic août-septembre ; quasi absente de décembre à mai. Pas de calendrier Royal FloraHolland consulté (pages inaccessibles).",
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/dahlia",
+        "https://www.webbsdirect.co.uk/wholesale-british-grown-dahlias-flora-fields-/",
+        "https://www.poppyflowers.com/help/articles/dahlia-wedding-flowers-complete-guide-season-cost-varieties",
+        "https://www.bricomarche.com/p/dahlia-balle-sylvia-i-x1/3360899548258"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 3,
+      "max": 5,
+      "sources": [
+        "https://www.floretflowers.com/an-ode-to-collarettes/",
+        "https://library.floretflowers.com/collections/single-flowered-types/products/dahlia-nanas-petals"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "chute-petales",
+        "capitule-se-ferme",
+        "brunit-bords"
+      ],
+      "ordre": "le cœur jaune ouvert mûrit (pollen) ; les grands pétales extérieurs et la collerette tombent proprement (variété « autonettoyante ») au lieu de pourrir sur la tige ; il reste le disque central qui brunit",
+      "tete": "le capitule se dégarnit ; reste un disque central bombé qui brunit",
+      "petales": "grands pétales plats et collerette de petits pétales frisés ; tombent entiers plutôt que de se flétrir sur place",
+      "feuilles": "les feuilles (souvent retirées au conditionnement) flétrissent et pendent vite par transpiration ; celles restées dans l'eau pourrissent ; elles jaunissent puis brunissent en séchant",
+      "tige": "reste droite (tête légère)",
+      "couleurs": {
+        "blanc": {
+          "declin": "blanc qui ternit vers l'ivoire, marques brunes aux plis et meurtrissures (le blanc marque facilement) (confiance basse : nuance déduite, non sourcée)",
+          "fane": "beige à brun clair parcheminé, pétales extérieurs brunis (confiance basse : nuance déduite, non sourcée)"
+        },
+        "jaune": {
+          "declin": "jaune qui pâlit et se délave (confiance basse : nuance déduite, non sourcée)",
+          "fane": "jaune paille terne virant au brun clair (confiance basse : nuance déduite, non sourcée)"
+        },
+        "orange": {
+          "declin": "orange qui pâlit, pointes plus claires (confiance basse : nuance déduite, non sourcée)",
+          "fane": "orange brunâtre terne, bords bruns (confiance basse : nuance déduite, non sourcée)"
+        },
+        "rose": {
+          "declin": "rose qui pâlit et se délave (confiance basse : nuance déduite, non sourcée)",
+          "fane": "rose sale tirant au beige-brun (confiance basse : nuance déduite, non sourcée)"
+        },
+        "rouge": {
+          "declin": "rouge vif qui pâlit nettement (les rouges vifs décolorent vite à la lumière) (confiance basse : nuance déduite, non sourcée)",
+          "fane": "rouge terne brunâtre, pétales extérieurs bruns et secs (confiance basse : nuance déduite, non sourcée)"
+        },
+        "bordeaux": {
+          "declin": "bordeaux qui s'assombrit et perd son velouté (confiance basse : nuance déduite, non sourcée)",
+          "fane": "brun-bordeaux très sombre, sec (confiance basse : nuance déduite, non sourcée)"
+        },
+        "violet": {
+          "declin": "violet qui pâlit vers le mauve (confiance basse : nuance déduite, non sourcée)",
+          "fane": "mauve sale tirant au brun (confiance basse : nuance déduite, non sourcée)"
+        },
+        "bicolore": {
+          "declin": "le contraste s'atténue, la couleur la plus claire se ternit (confiance basse : nuance déduite, non sourcée)",
+          "fane": "tons brouillés beige-brun, bords bruns (confiance basse : nuance déduite, non sourcée)"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Floret : tenue en vase souvent plus courte que la moyenne, certaines variétés gardent bien leurs pétales ; fleurs autonettoyantes qui lâchent leurs pétales. Le disque restant brun est une déduction (structure du capitule). Couleurs : seuls sont sourcés la décoloration avec l'âge et la chaleur (accumulation de flavones dans les pétales décolorés), le brunissement et l'aspect parcheminé des pétales de l'arrière, et la facilité avec laquelle le blanc marque ; les nuances par famille sont déduites de ces mécanismes, pas observées famille par famille.",
+      "sources": [
+        "https://www.floretflowers.com/an-ode-to-collarettes/",
+        "https://library.floretflowers.com/collections/single-flowered-types/products/dahlia-nanas-petals",
+        "https://www.mdpi.com/2311-7524/8/10/922",
+        "https://repository.kulib.kyoto-u.ac.jp/dspace/bitstream/2433/286476/1/hortj.utd-367.pdf",
+        "https://www.longfield-gardens.com/blogs/dahlia-care/why-are-my-cut-dahlias-wilting-simple-tips-for-fresh-blooms",
+        "https://www.longfield-gardens.com/blogs/dahlia-care/how-to-keep-cut-dahlias-from-wilting",
+        "https://triplewrenfarms.com/heat-can-affect-dahlia-color/",
+        "https://ousar.lib.okayama-u.ac.jp/en/list/recent_additions/item/69016",
+        "https://forum.dahliaaddict.com/d/65-white-dahlias/115"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "dahlia-simple",
+    "nom": "Dahlia simple",
+    "saison_vente": {
+      "mois": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "pic": [
+        8,
+        9
+      ],
+      "toute_annee": false,
+      "note": "fleur de saison, production européenne de plein champ et sous abri de juillet aux premières gelées (juin et novembre en marge) ; pic août-septembre ; quasi absente de décembre à mai. Pas de calendrier Royal FloraHolland consulté (pages inaccessibles).",
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/dahlia",
+        "https://www.webbsdirect.co.uk/wholesale-british-grown-dahlias-flora-fields-/",
+        "https://www.poppyflowers.com/help/articles/dahlia-wedding-flowers-complete-guide-season-cost-varieties",
+        "https://www.bricomarche.com/p/dahlia-balle-sylvia-i-x1/3360899548258"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 1,
+      "max": 4,
+      "sources": [
+        "https://www.longfield-gardens.com/blogs/dahlia-care/how-long-do-dahlias-last-as-cut-flowers"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "chute-petales",
+        "capitule-se-ferme",
+        "brunit-bords"
+      ],
+      "ordre": "forme la plus éphémère : le cœur ouvert libère son pollen, la fleur passe vite à la graine et les pétales (une seule couronne) tombent rapidement ; il reste le disque central",
+      "tete": "le capitule se dégarnit et ne garde que son disque central bombé, qui brunit",
+      "petales": "une seule rangée de pétales plats qui tombent vite, parfois après un léger brunissement des bords",
+      "feuilles": "les feuilles (souvent retirées au conditionnement) flétrissent et pendent vite par transpiration ; celles restées dans l'eau pourrissent ; elles jaunissent puis brunissent en séchant",
+      "tige": "reste droite (tête légère)",
+      "couleurs": {
+        "blanc": {
+          "declin": "blanc qui ternit vers l'ivoire, marques brunes aux plis et meurtrissures (le blanc marque facilement) (confiance basse : nuance déduite, non sourcée)",
+          "fane": "beige à brun clair parcheminé, pétales extérieurs brunis (confiance basse : nuance déduite, non sourcée)"
+        },
+        "jaune": {
+          "declin": "jaune qui pâlit et se délave (confiance basse : nuance déduite, non sourcée)",
+          "fane": "jaune paille terne virant au brun clair (confiance basse : nuance déduite, non sourcée)"
+        },
+        "orange": {
+          "declin": "orange qui pâlit, pointes plus claires (confiance basse : nuance déduite, non sourcée)",
+          "fane": "orange brunâtre terne, bords bruns (confiance basse : nuance déduite, non sourcée)"
+        },
+        "rose": {
+          "declin": "rose qui pâlit et se délave (confiance basse : nuance déduite, non sourcée)",
+          "fane": "rose sale tirant au beige-brun (confiance basse : nuance déduite, non sourcée)"
+        },
+        "rouge": {
+          "declin": "rouge vif qui pâlit nettement (les rouges vifs décolorent vite à la lumière) (confiance basse : nuance déduite, non sourcée)",
+          "fane": "rouge terne brunâtre, pétales extérieurs bruns et secs (confiance basse : nuance déduite, non sourcée)"
+        },
+        "bordeaux": {
+          "declin": "bordeaux qui s'assombrit et perd son velouté (confiance basse : nuance déduite, non sourcée)",
+          "fane": "brun-bordeaux très sombre, sec (confiance basse : nuance déduite, non sourcée)"
+        },
+        "violet": {
+          "declin": "violet qui pâlit vers le mauve (confiance basse : nuance déduite, non sourcée)",
+          "fane": "mauve sale tirant au brun (confiance basse : nuance déduite, non sourcée)"
+        },
+        "bicolore": {
+          "declin": "le contraste s'atténue, la couleur la plus claire se ternit (confiance basse : nuance déduite, non sourcée)",
+          "fane": "tons brouillés beige-brun, bords bruns (confiance basse : nuance déduite, non sourcée)"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Source : dahlias simples les plus courts en vase (1-2 j à 3-4 j selon le passage), chute rapide des pétales une fois pollinisés. Même schéma que la collerette. Couleurs : seuls sont sourcés la décoloration avec l'âge et la chaleur (accumulation de flavones dans les pétales décolorés), le brunissement et l'aspect parcheminé des pétales de l'arrière, et la facilité avec laquelle le blanc marque ; les nuances par famille sont déduites de ces mécanismes, pas observées famille par famille.",
+      "sources": [
+        "https://www.longfield-gardens.com/blogs/dahlia-care/how-long-do-dahlias-last-as-cut-flowers",
+        "https://www.mdpi.com/2311-7524/8/10/922",
+        "https://repository.kulib.kyoto-u.ac.jp/dspace/bitstream/2433/286476/1/hortj.utd-367.pdf",
+        "https://www.longfield-gardens.com/blogs/dahlia-care/why-are-my-cut-dahlias-wilting-simple-tips-for-fresh-blooms",
+        "https://www.longfield-gardens.com/blogs/dahlia-care/how-to-keep-cut-dahlias-from-wilting",
+        "https://triplewrenfarms.com/heat-can-affect-dahlia-color/",
+        "https://ousar.lib.okayama-u.ac.jp/en/list/recent_additions/item/69016",
+        "https://forum.dahliaaddict.com/d/65-white-dahlias/115"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "dahlia-anemone",
+    "nom": "Dahlia à fleur d'anémone",
+    "saison_vente": {
+      "mois": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "pic": [
+        8,
+        9
+      ],
+      "toute_annee": false,
+      "note": "fleur de saison, production européenne de plein champ et sous abri de juillet aux premières gelées (juin et novembre en marge) ; pic août-septembre ; quasi absente de décembre à mai. Pas de calendrier Royal FloraHolland consulté (pages inaccessibles).",
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/dahlia",
+        "https://www.webbsdirect.co.uk/wholesale-british-grown-dahlias-flora-fields-/",
+        "https://www.poppyflowers.com/help/articles/dahlia-wedding-flowers-complete-guide-season-cost-varieties",
+        "https://www.bricomarche.com/p/dahlia-balle-sylvia-i-x1/3360899548258"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 3,
+      "max": 5,
+      "sources": [
+        "https://www.adeneflowers.co.za/products/cut-flowers/dahlia-anemoned-flowered?id=769"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "chute-petales",
+        "brunit-bords",
+        "capitule-se-ferme"
+      ],
+      "ordre": "les pétales plats de la couronne extérieure fanent d'abord (ramollissent, brunissent, puis tombent ou se flétrissent) ; le coussin central de fleurons tubulaires se ternit et brunit",
+      "tete": "couronne extérieure qui se dégarnit autour du coussin central bombé",
+      "petales": "couronne de pétales plats : bords bruns puis chute ou flétrissement ; fleurons tubulaires centraux qui brunissent sur place",
+      "feuilles": "les feuilles (souvent retirées au conditionnement) flétrissent et pendent vite par transpiration ; celles restées dans l'eau pourrissent ; elles jaunissent puis brunissent en séchant",
+      "tige": "reste droite",
+      "couleurs": {
+        "blanc": {
+          "declin": "blanc qui ternit vers l'ivoire, marques brunes aux plis et meurtrissures (le blanc marque facilement) (confiance basse : nuance déduite, non sourcée)",
+          "fane": "beige à brun clair parcheminé, pétales extérieurs brunis (confiance basse : nuance déduite, non sourcée)"
+        },
+        "jaune": {
+          "declin": "jaune qui pâlit et se délave (confiance basse : nuance déduite, non sourcée)",
+          "fane": "jaune paille terne virant au brun clair (confiance basse : nuance déduite, non sourcée)"
+        },
+        "orange": {
+          "declin": "orange qui pâlit, pointes plus claires (confiance basse : nuance déduite, non sourcée)",
+          "fane": "orange brunâtre terne, bords bruns (confiance basse : nuance déduite, non sourcée)"
+        },
+        "rose": {
+          "declin": "rose qui pâlit et se délave (confiance basse : nuance déduite, non sourcée)",
+          "fane": "rose sale tirant au beige-brun (confiance basse : nuance déduite, non sourcée)"
+        },
+        "rouge": {
+          "declin": "rouge vif qui pâlit nettement (les rouges vifs décolorent vite à la lumière) (confiance basse : nuance déduite, non sourcée)",
+          "fane": "rouge terne brunâtre, pétales extérieurs bruns et secs (confiance basse : nuance déduite, non sourcée)"
+        },
+        "bordeaux": {
+          "declin": "bordeaux qui s'assombrit et perd son velouté (confiance basse : nuance déduite, non sourcée)",
+          "fane": "brun-bordeaux très sombre, sec (confiance basse : nuance déduite, non sourcée)"
+        },
+        "violet": {
+          "declin": "violet qui pâlit vers le mauve (confiance basse : nuance déduite, non sourcée)",
+          "fane": "mauve sale tirant au brun (confiance basse : nuance déduite, non sourcée)"
+        },
+        "bicolore": {
+          "declin": "le contraste s'atténue, la couleur la plus claire se ternit (confiance basse : nuance déduite, non sourcée)",
+          "fane": "tons brouillés beige-brun, bords bruns (confiance basse : nuance déduite, non sourcée)"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Tenue 3-5 j (grossiste sud-africain). Aucune source sur la fanaison propre à cette forme : extrapolée du dahlia en général (pétales extérieurs d'abord) et de la structure du capitule. Couleurs : seuls sont sourcés la décoloration avec l'âge et la chaleur (accumulation de flavones dans les pétales décolorés), le brunissement et l'aspect parcheminé des pétales de l'arrière, et la facilité avec laquelle le blanc marque ; les nuances par famille sont déduites de ces mécanismes, pas observées famille par famille.",
+      "sources": [
+        "https://www.adeneflowers.co.za/products/cut-flowers/dahlia-anemoned-flowered?id=769",
+        "https://www.mdpi.com/2311-7524/8/10/922",
+        "https://repository.kulib.kyoto-u.ac.jp/dspace/bitstream/2433/286476/1/hortj.utd-367.pdf",
+        "https://www.longfield-gardens.com/blogs/dahlia-care/why-are-my-cut-dahlias-wilting-simple-tips-for-fresh-blooms",
+        "https://www.longfield-gardens.com/blogs/dahlia-care/how-to-keep-cut-dahlias-from-wilting",
+        "https://triplewrenfarms.com/heat-can-affect-dahlia-color/",
+        "https://ousar.lib.okayama-u.ac.jp/en/list/recent_additions/item/69016",
+        "https://forum.dahliaaddict.com/d/65-white-dahlias/115"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "dahlia-lacinie",
+    "nom": "Dahlia lacinié",
+    "saison_vente": {
+      "mois": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "pic": [
+        8,
+        9
+      ],
+      "toute_annee": false,
+      "note": "fleur de saison, production européenne de plein champ et sous abri de juillet aux premières gelées (juin et novembre en marge) ; pic août-septembre ; quasi absente de décembre à mai. Pas de calendrier Royal FloraHolland consulté (pages inaccessibles).",
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/dahlia",
+        "https://www.webbsdirect.co.uk/wholesale-british-grown-dahlias-flora-fields-/",
+        "https://www.poppyflowers.com/help/articles/dahlia-wedding-flowers-complete-guide-season-cost-varieties",
+        "https://www.bricomarche.com/p/dahlia-balle-sylvia-i-x1/3360899548258"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 4,
+      "max": 5,
+      "sources": [
+        "https://library.floretflowers.com/products/dahlia-ac-thornbird",
+        "https://library.floretflowers.com/products/dahlia-citron-du-cap"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "brunit-bords",
+        "recroqueville",
+        "chute-petales",
+        "penche-tete",
+        "decolore"
+      ],
+      "ordre": "pétales extérieurs d'abord : les pointes fendues ramollissent, brunissent et se fripent ; le cœur s'ouvre ; flétrissement ou chute selon le cultivar ; la tête penche si la tige s'embolise",
+      "tete": "s'incline en fin de vie ; la fleur perd son aspect frangé et s'ouvre au centre",
+      "petales": "pétales à pointes fendues (comme découpées aux ciseaux cranteurs) ; on peut supposer que les franges fines sèchent et brunissent les premières, sans source spécifique",
+      "feuilles": "les feuilles (souvent retirées au conditionnement) flétrissent et pendent vite par transpiration ; celles restées dans l'eau pourrissent ; elles jaunissent puis brunissent en séchant",
+      "tige": "tige creuse : si elle s'embolise (bulles d'air, bactéries), elle ramollit sous la tête qui s'affaisse",
+      "couleurs": {
+        "blanc": {
+          "declin": "blanc qui ternit vers l'ivoire, marques brunes aux plis et meurtrissures (le blanc marque facilement) (confiance basse : nuance déduite, non sourcée)",
+          "fane": "beige à brun clair parcheminé, pétales extérieurs brunis (confiance basse : nuance déduite, non sourcée)"
+        },
+        "jaune": {
+          "declin": "jaune qui pâlit et se délave (confiance basse : nuance déduite, non sourcée)",
+          "fane": "jaune paille terne virant au brun clair (confiance basse : nuance déduite, non sourcée)"
+        },
+        "orange": {
+          "declin": "orange qui pâlit, pointes plus claires (confiance basse : nuance déduite, non sourcée)",
+          "fane": "orange brunâtre terne, bords bruns (confiance basse : nuance déduite, non sourcée)"
+        },
+        "peche": {
+          "declin": "pêche qui pâlit vers un rose-beige délavé (confiance basse : nuance déduite, non sourcée)",
+          "fane": "beige rosé terne, bords bruns (confiance basse : nuance déduite, non sourcée)"
+        },
+        "rose": {
+          "declin": "rose qui pâlit et se délave (confiance basse : nuance déduite, non sourcée)",
+          "fane": "rose sale tirant au beige-brun (confiance basse : nuance déduite, non sourcée)"
+        },
+        "rouge": {
+          "declin": "rouge vif qui pâlit nettement (les rouges vifs décolorent vite à la lumière) (confiance basse : nuance déduite, non sourcée)",
+          "fane": "rouge terne brunâtre, pétales extérieurs bruns et secs (confiance basse : nuance déduite, non sourcée)"
+        },
+        "violet": {
+          "declin": "violet qui pâlit vers le mauve (confiance basse : nuance déduite, non sourcée)",
+          "fane": "mauve sale tirant au brun (confiance basse : nuance déduite, non sourcée)"
+        },
+        "bicolore": {
+          "declin": "le contraste s'atténue, la couleur la plus claire se ternit (confiance basse : nuance déduite, non sourcée)",
+          "fane": "tons brouillés beige-brun, bords bruns (confiance basse : nuance déduite, non sourcée)"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Tenue 5 j (Floret, 'AC Thornbird', 'Citron du Cap'). Fanaison propre aux pétales frangés non documentée : extrapolée du dahlia en général et du cactus. Couleurs : seuls sont sourcés la décoloration avec l'âge et la chaleur (accumulation de flavones dans les pétales décolorés), le brunissement et l'aspect parcheminé des pétales de l'arrière, et la facilité avec laquelle le blanc marque ; les nuances par famille sont déduites de ces mécanismes, pas observées famille par famille.",
+      "sources": [
+        "https://library.floretflowers.com/products/dahlia-ac-thornbird",
+        "https://library.floretflowers.com/products/dahlia-citron-du-cap",
+        "https://www.mdpi.com/2311-7524/8/10/922",
+        "https://repository.kulib.kyoto-u.ac.jp/dspace/bitstream/2433/286476/1/hortj.utd-367.pdf",
+        "https://www.longfield-gardens.com/blogs/dahlia-care/why-are-my-cut-dahlias-wilting-simple-tips-for-fresh-blooms",
+        "https://www.longfield-gardens.com/blogs/dahlia-care/how-to-keep-cut-dahlias-from-wilting",
+        "https://triplewrenfarms.com/heat-can-affect-dahlia-color/",
+        "https://ousar.lib.okayama-u.ac.jp/en/list/recent_additions/item/69016",
+        "https://forum.dahliaaddict.com/d/65-white-dahlias/115"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "cosmos",
+    "nom": "Cosmos",
+    "saison_vente": {
+      "mois": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "pic": [
+        8,
+        9
+      ],
+      "toute_annee": false,
+      "note": "fleur d'été de production locale ; en France de juillet à octobre, au Royaume-Uni fin d'été jusqu'en septembre-octobre ; pas d'import significatif repéré",
+      "sources": [
+        "https://www.synonyme-du-mot.com/les-articles/quelles-sont-les-fleurs-de-juillet",
+        "https://www.floristrytradeclub.co.uk/post/british-grown-flowers-for-september-october",
+        "https://www.linfodurable.fr/conso/quelles-sont-les-fleurs-du-mois-de-novembre-35149"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 5,
+      "max": 7,
+      "sources": [
+        "https://www.ashridgetrees.co.uk/blogs/bedding/cosmos-cut-flowers",
+        "https://www.threeacrefarm.net/blog/2020/1/8/how-to-grow-cosmos",
+        "https://cutflowers.ces.ncsu.edu/postharvest-trials-by-year/2012-postharvest-trials/"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "chute-petales",
+        "capitule-se-ferme",
+        "decolore"
+      ],
+      "ordre": "une fois pollinisé, le capitule laisse tomber ses ligules d'un coup pour former ses graines ; il reste le cœur jaune qui brunit sur une tige fine",
+      "tete": "reste droite sur la tige fine ; le disque central brunit et s'allonge en tête de graines (akènes en aiguilles)",
+      "petales": "ligules qui ternissent puis tombent entières, rapidement si la fleur a été pollinisée avant la coupe",
+      "feuilles": "feuillage très fin, plumeux, qui se dessèche et jaunit",
+      "tige": "fine, reste droite",
+      "couleurs": {
+        "blanc": {
+          "declin": "blanc terne, cœur jaune qui fonce (confiance basse : nuance déduite, non sourcée)",
+          "fane": "ligules tombées, cœur brun (confiance basse : nuance déduite, non sourcée)"
+        },
+        "rose": {
+          "declin": "rose pâli, un peu délavé (confiance basse : nuance déduite, non sourcée)",
+          "fane": "ligules tombées ou rose fané grisâtre, cœur brun (confiance basse : nuance déduite, non sourcée)"
+        },
+        "bordeaux": {
+          "declin": "pourpre assombri (confiance basse : nuance déduite, non sourcée)",
+          "fane": "brun pourpré, cœur brun (confiance basse : nuance déduite, non sourcée)"
+        },
+        "orange": {
+          "declin": "orange pâli (C. sulphureus) (confiance basse : nuance déduite, non sourcée)",
+          "fane": "ocre-brun, cœur brun (confiance basse : nuance déduite, non sourcée)"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Fanaison par chute des ligules, déclenchée par la pollinisation (sources producteurs). Le dessin Fané doit montrer un cœur nu avec peu ou pas de ligules. Les teintes de déclin/fané par couleur sont déduites des règles générales de séchage (le bleu et le jaune tiennent, le rose pâlit : extension UNL/Missouri) et du brunissement décrit, pas d'une source spécifique à l'espèce.",
+      "sources": [
+        "https://www.ashridgetrees.co.uk/blogs/bedding/cosmos-cut-flowers",
+        "https://www.threeacrefarm.net/blog/2020/1/8/how-to-grow-cosmos",
+        "https://library.floretflowers.com/products/cosmos-cupcakes-white"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "zinnia",
+    "nom": "Zinnia",
+    "saison_vente": {
+      "mois": [
+        7,
+        8,
+        9,
+        10
+      ],
+      "pic": [
+        8,
+        9
+      ],
+      "toute_annee": false,
+      "note": "fleur d'été de plein champ, floraison de juillet aux premières gelées ; offre britannique de fin d'été",
+      "sources": [
+        "https://www.bloomling.ch/en-CH/bingenheimer/zinnia-summer-in-orange",
+        "https://www.floristrytradeclub.co.uk/post/british-grown-flowers-for-september-october",
+        "https://www.bricomarche.com/p/melange-de-fleurs-cueillette-estivale/3539829810899"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 7,
+      "max": 12,
+      "sources": [
+        "https://lifetips.alibaba.com/plant-care/make-cut-zinnias-last",
+        "https://cutflowers.ces.ncsu.edu/postharvest-trials-by-year/2009-postharvest-trials/",
+        "https://hortscans.ces.ncsu.edu/file/../uploads/o/p/optimizi_51cb122429a7c.pdf"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "recroqueville",
+        "brunit-bords",
+        "penche-tete"
+      ],
+      "ordre": "les pétales se recourbent et brunissent à la pointe ; ou bien la tige s'effondre sous la tête (critère de fin de vie des essais NC State)",
+      "tete": "garde sa forme double ; peut basculer si la tige creuse se plie juste sous la tête",
+      "petales": "se recourbent, pointes brunes et sèches ; pas de chute massive",
+      "feuilles": "rugueuses, se flétrissent et pourrissent si immergées ; à retirer",
+      "tige": "creuse ; s'effondre parfois sous le capitule",
+      "couleurs": {
+        "rose": {
+          "declin": "rose qui pâlit, pointes beige (confiance basse : nuance déduite, non sourcée)",
+          "fane": "rose sale grisé, pointes brunes (confiance basse : nuance déduite, non sourcée)"
+        },
+        "rouge": {
+          "declin": "rouge assombri, pointes brunes (confiance basse : nuance déduite, non sourcée)",
+          "fane": "rouge brique brunâtre (confiance basse : nuance déduite, non sourcée)"
+        },
+        "orange": {
+          "declin": "orange un peu terni (confiance basse : nuance déduite, non sourcée)",
+          "fane": "orange rouillé, pointes brunes (confiance basse : nuance déduite, non sourcée)"
+        },
+        "jaune": {
+          "declin": "jaune qui ternit (confiance basse : nuance déduite, non sourcée)",
+          "fane": "jaune moutarde, pointes brunes (confiance basse : nuance déduite, non sourcée)"
+        },
+        "blanc": {
+          "declin": "blanc crème (confiance basse : nuance déduite, non sourcée)",
+          "fane": "beige, pointes brunes (confiance basse : nuance déduite, non sourcée)"
+        },
+        "vert": {
+          "declin": "vert-jaune (type 'Envy') (confiance basse : nuance déduite, non sourcée)",
+          "fane": "vert olive brunâtre (confiance basse : nuance déduite, non sourcée)"
+        },
+        "bicolore": {
+          "declin": "contraste qui s'atténue (confiance basse : nuance déduite, non sourcée)",
+          "fane": "tons brun-rouille, pointes brunes (confiance basse : nuance déduite, non sourcée)"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Le séchage à l'air convient mal (silice nécessaire selon les extensions). Les teintes de déclin/fané par couleur sont déduites des règles générales de séchage (le bleu et le jaune tiennent, le rose pâlit : extension UNL/Missouri) et du brunissement décrit, pas d'une source spécifique à l'espèce.",
+      "sources": [
+        "https://hortscans.ces.ncsu.edu/file/../uploads/o/p/optimizi_51cb122429a7c.pdf",
+        "https://cutflowers.ces.ncsu.edu/postharvest-trials-by-year/2009-postharvest-trials/",
+        "https://extension.missouri.edu/publications/g6540"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "scabieuse",
+    "nom": "Scabieuse",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "toute_annee": true,
+      "note": "disponible toute l'année (Pays-Bas, Kenya), meilleure de mai à octobre ; production britannique début et fin d'été",
+      "sources": [
+        "https://specialtyproduce.com/produce/Scabiosa_Flowers_23157.php",
+        "https://shop.holex.com/en_US/scabiosa",
+        "https://www.floristrytradeclub.co.uk/post/british-flowers-and-foliage-early-summer"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 7,
+      "max": 10,
+      "sources": [
+        "https://www.floristrytradeclub.co.uk/post/scabiosa-flowers-explained-care-colours-vase-life-and-wedding-uses",
+        "https://moysesflowers.co.uk/flower-care/scabiosa-care",
+        "https://floralife.com/wp-content/uploads/2021/12/Article-Scabiosa-_LivRio_July_2019.pdf"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "fleurons-tombent",
+        "chute-petales",
+        "seche-sur-place"
+      ],
+      "ordre": "les fleurons du capitule tombent (sensibles à l'éthylène) ; il reste une tête de graines ronde à collerettes papyracées, d'abord vert pâle puis beige-brun",
+      "tete": "reste dressée au bout de la tige grêle ; se transforme en boule de graines ('Starflower') qui sèche sur place",
+      "petales": "fleurons qui tombent ; les bractées de la tête de graines restent",
+      "feuilles": "peu de feuilles sur la tige ; se fanent vite",
+      "tige": "grêle et sinueuse, reste droite",
+      "couleurs": {
+        "bleu": {
+          "declin": "lavande pâli (confiance basse : nuance déduite, non sourcée)",
+          "fane": "fleurons tombés, tête de graines beige-brun (confiance basse : nuance déduite, non sourcée)"
+        },
+        "violet": {
+          "declin": "mauve délavé (confiance basse : nuance déduite, non sourcée)",
+          "fane": "tête de graines brun clair (confiance basse : nuance déduite, non sourcée)"
+        },
+        "bordeaux": {
+          "declin": "prune assombri (confiance basse : nuance déduite, non sourcée)",
+          "fane": "brun prune, tête de graines brune (confiance basse : nuance déduite, non sourcée)"
+        },
+        "blanc": {
+          "declin": "blanc crème (confiance basse : nuance déduite, non sourcée)",
+          "fane": "tête de graines vert pâle puis beige (confiance basse : nuance déduite, non sourcée)"
+        },
+        "rose": {
+          "declin": "rose pâli (confiance basse : nuance déduite, non sourcée)",
+          "fane": "tête de graines brun clair (confiance basse : nuance déduite, non sourcée)"
+        }
+      },
+      "seche_bien": true,
+      "notes": "seche_bien concerne la tête de graines (S. stellata, 'Starflower'), pas les fleurons. Les teintes de déclin/fané par couleur sont déduites des règles générales de séchage (le bleu et le jaune tiennent, le rose pâlit : extension UNL/Missouri) et du brunissement décrit, pas d'une source spécifique à l'espèce.",
+      "sources": [
+        "https://library.floretflowers.com/products/pincushion-flower-starflower",
+        "https://moysesflowers.co.uk/flower-care/scabiosa-care",
+        "https://floralife.com/wp-content/uploads/2021/12/Article-Scabiosa-_LivRio_July_2019.pdf"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "delphinium",
+    "nom": "Delphinium",
+    "saison_vente": {
+      "mois": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "pic": [
+        6,
+        7
+      ],
+      "toute_annee": false,
+      "note": "floraison de plein air juin-juillet, remontée possible fin d'été ; des serres néerlandaises sous éclairage étendent l'offre hors saison, mais l'offre reste saisonnière",
+      "sources": [
+        "https://www.euroflorist.se/en/flowers/larkspur",
+        "https://thursd.com/posts/visiting-steef-meewisse-flowers"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 5,
+      "max": 7,
+      "sources": [
+        "https://edepot.wur.nl/407687",
+        "https://hortscans.ces.ncsu.edu/file/../uploads/b/e/best_pra_51cb21d9b149a.pdf",
+        "https://www.chrysal.com/node/5554"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "fleurons-tombent",
+        "fane-du-bas",
+        "chute-petales"
+      ],
+      "ordre": "les fleurons du bas, les plus vieux, tombent pendant que ceux du haut s'ouvrent ; à l'éthylène ou au chaud, tout l'épi s'égrène d'un coup",
+      "tete": "épi qui reste dressé mais se dégarnit par le bas ; la pointe garde des boutons",
+      "petales": "sépales colorés qui tombent entiers, encore colorés, sans brunir longuement",
+      "feuilles": "découpées, jaunissent",
+      "tige": "creuse, droite",
+      "couleurs": {
+        "bleu": {
+          "declin": "bleu intact sur les fleurons restants, sépales tombés au pied du vase (confiance basse : nuance déduite, non sourcée)",
+          "fane": "épi dégarni ; fleurons séchés bleu tenu (confiance basse : nuance déduite, non sourcée)"
+        },
+        "violet": {
+          "declin": "violet intact, fleurons qui tombent (confiance basse : nuance déduite, non sourcée)",
+          "fane": "épi dégarni, restes violet terne (confiance basse : nuance déduite, non sourcée)"
+        },
+        "blanc": {
+          "declin": "blanc légèrement crème (confiance basse : nuance déduite, non sourcée)",
+          "fane": "épi dégarni, restes beige (confiance basse : nuance déduite, non sourcée)"
+        },
+        "rose": {
+          "declin": "rose qui pâlit (confiance basse : nuance déduite, non sourcée)",
+          "fane": "épi dégarni, restes rose délavé (confiance basse : nuance déduite, non sourcée)"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Vie terminée par la chute des pétales (WUR) ; Belladonna seulement ~4 jours. Très sensible à l'éthylène, STS efficace. Sèche bien en gardant le bleu si séché vite au chaud. Les teintes de déclin/fané par couleur sont déduites des règles générales de séchage (le bleu et le jaune tiennent, le rose pâlit : extension UNL/Missouri) et du brunissement décrit, pas d'une source spécifique à l'espèce. Confiance ramenée de haute à moyenne : pages sources connues par leurs extraits de recherche seulement, et nuances de couleur déduites.",
+      "sources": [
+        "https://edepot.wur.nl/407687",
+        "https://repository.naro.go.jp/records/1438",
+        "https://moysesflowers.co.uk/flower-care/delphinium",
+        "https://lancaster.unl.edu/hort/factsheets/091dryfl.pdf",
+        "https://extension.missouri.edu/publications/g6540"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "pied-alouette-annuel",
+    "nom": "Pied-d'alouette annuel",
+    "saison_vente": {
+      "mois": [
+        6,
+        7,
+        8,
+        9
+      ],
+      "pic": [
+        6,
+        7
+      ],
+      "toute_annee": false,
+      "note": "Consolida ajacis : floraison de juin à septembre, très présent en juillet en France",
+      "sources": [
+        "https://www.bingenheimersaatgut.de/en/organic-seeds/flowers/summer-flowers/larkspur-b200",
+        "https://projects.sare.org/media/pdf/L/a/r/Larkspur-Cut-Flower-Production-in-Utah.pdf",
+        "https://www.synonyme-du-mot.com/les-articles/quelles-sont-les-fleurs-de-juillet"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 5,
+      "max": 7,
+      "sources": [
+        "https://library.floretflowers.com/products/larkspur-pink-perfection",
+        "https://www.johnnyseeds.com/flowers/larkspur/qis-dark-blue-larkspur-seed-3339.html"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "fleurons-tombent",
+        "fane-du-bas",
+        "seche-sur-place"
+      ],
+      "ordre": "comme le delphinium : les fleurons du bas s'égrènent en premier ; à l'éthylène tout l'épi 'shatter' d'un coup",
+      "tete": "épi fin et dense qui se dégarnit par le bas",
+      "petales": "tombent encore colorés",
+      "feuilles": "très fines, filiformes, se dessèchent",
+      "tige": "droite, fine",
+      "couleurs": {
+        "bleu": {
+          "declin": "bleu intact, fleurons qui tombent (confiance basse : nuance déduite, non sourcée)",
+          "fane": "épi dégarni ; si séché, bleu conservé (confiance basse : nuance déduite, non sourcée)"
+        },
+        "violet": {
+          "declin": "violet intact (confiance basse : nuance déduite, non sourcée)",
+          "fane": "violet terne, épi dégarni (confiance basse : nuance déduite, non sourcée)"
+        },
+        "rose": {
+          "declin": "rose qui pâlit (confiance basse : nuance déduite, non sourcée)",
+          "fane": "rose délavé (confiance basse : nuance déduite, non sourcée)"
+        },
+        "blanc": {
+          "declin": "blanc crème (confiance basse : nuance déduite, non sourcée)",
+          "fane": "beige crème (confiance basse : nuance déduite, non sourcée)"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Extrêmement sensible à l'éthylène. Excellente fleur séchée qui garde sa couleur : un bouquet laissé hors de l'eau sécherait plutôt qu'il ne pourrirait. Tenue annoncée de 4 à 12 jours selon variété. Les teintes de déclin/fané par couleur sont déduites des règles générales de séchage (le bleu et le jaune tiennent, le rose pâlit : extension UNL/Missouri) et du brunissement décrit, pas d'une source spécifique à l'espèce.",
+      "sources": [
+        "https://library.floretflowers.com/products/larkspur-pink-perfection",
+        "https://www.johnnyseeds.com/flowers/larkspur/qis-dark-blue-larkspur-seed-3339.html",
+        "https://lancaster.unl.edu/hort/factsheets/091dryfl.pdf"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "digitale",
+    "nom": "Digitale",
+    "saison_vente": {
+      "mois": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "pic": [
+        5,
+        6
+      ],
+      "toute_annee": false,
+      "note": "grossiste : du 1er avril au 31 juillet environ ; pleine floraison en juin avec les pivoines",
+      "sources": [
+        "https://fiftyflowers.com/products/7507",
+        "https://threeacrefarm.net/blog/2025/1/8/how-to-grow-foxglove"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 4,
+      "max": 7,
+      "sources": [
+        "https://fiftyflowers.com/products/7507",
+        "https://cutflowers.ces.ncsu.edu/digitalis-camelot-cream"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "fane-du-bas",
+        "fleurons-tombent"
+      ],
+      "ordre": "les clochettes du bas tombent dès ~5 jours, pendant que les boutons du haut continuent à s'ouvrir",
+      "tete": "hampe unilatérale qui se dégarnit par le bas ; la pointe garde des boutons verts",
+      "petales": "clochettes tubulaires qui tombent entières (éthylène)",
+      "feuilles": "feuilles basses duveteuses, à retirer ; se flétrissent",
+      "tige": "robuste, droite",
+      "couleurs": {
+        "violet": {
+          "declin": "pourpre un peu terni (confiance basse : nuance déduite, non sourcée)",
+          "fane": "clochettes tombées, quelques restes pourpre brunâtre (confiance basse : nuance déduite, non sourcée)"
+        },
+        "rose": {
+          "declin": "rose pâli (confiance basse : nuance déduite, non sourcée)",
+          "fane": "restes rose brunâtre (confiance basse : nuance déduite, non sourcée)"
+        },
+        "blanc": {
+          "declin": "crème (confiance basse : nuance déduite, non sourcée)",
+          "fane": "restes beige (confiance basse : nuance déduite, non sourcée)"
+        },
+        "creme": {
+          "declin": "crème jauni (confiance basse : nuance déduite, non sourcée)",
+          "fane": "restes beige (confiance basse : nuance déduite, non sourcée)"
+        },
+        "peche": {
+          "declin": "abricot pâli (type 'Sutton's Apricot') (confiance basse : nuance déduite, non sourcée)",
+          "fane": "restes beige rosé (confiance basse : nuance déduite, non sourcée)"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Chute des fleurons due à l'éthylène, freinée par STS/1-MCP. Les teintes de déclin/fané par couleur sont déduites des règles générales de séchage (le bleu et le jaune tiennent, le rose pâlit : extension UNL/Missouri) et du brunissement décrit, pas d'une source spécifique à l'espèce.",
+      "sources": [
+        "https://cutflowers.ces.ncsu.edu/digitalis-camelot-cream",
+        "https://www.canr.msu.edu/news/garden_flowers_for_cutting_part_2",
+        "https://cutflowers.ces.ncsu.edu/digitalis-camelot-lavender"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "lisianthus",
+    "nom": "Lisianthus",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "toute_annee": true,
+      "note": "cultivé toute l'année aux Pays-Bas (Royal FloraHolland) ; meilleure offre et demande de mai à septembre (mariages)",
+      "sources": [
+        "https://thursd.com/growers/waalzicht",
+        "https://corporate.sakataseed.co.jp/en/news/2022/20220920.html",
+        "https://www.euroflorist.pl/en/flower-encyclopedia/lisianthus"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 14,
+      "max": 21,
+      "sources": [
+        "https://www.epicgardening.com/lisianthus/",
+        "https://moysesflowers.co.uk/flower-care/lisianthus"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "recroqueville",
+        "penche-tete",
+        "decolore",
+        "bourgeons-avortent"
+      ],
+      "ordre": "fleur par fleur sur la tige ramifiée : la fleur ouverte se flétrit, pâlit et se referme pendant que les boutons voisins s'ouvrent ; une partie des boutons n'éclôt jamais",
+      "tete": "chaque fleur peut piquer du nez (bent neck) ; les fleurs fanées se referment en cornet",
+      "petales": "satinés, se flétrissent, pâlissent et se referment ; jaunissement et brunissement",
+      "feuilles": "glauques, assez résistantes, finissent par jaunir",
+      "tige": "ferme, ramifiée, reste droite",
+      "couleurs": {
+        "blanc": {
+          "declin": "blanc ivoire (confiance basse : nuance déduite, non sourcée)",
+          "fane": "crème jauni, bords brunâtres, fleurs refermées (confiance basse : nuance déduite, non sourcée)"
+        },
+        "violet": {
+          "declin": "violet qui pâlit (confiance basse : nuance déduite, non sourcée)",
+          "fane": "mauve terne refermé (confiance basse : nuance déduite, non sourcée)"
+        },
+        "rose": {
+          "declin": "rose pâli (confiance basse : nuance déduite, non sourcée)",
+          "fane": "rose sale beige refermé (confiance basse : nuance déduite, non sourcée)"
+        },
+        "vert": {
+          "declin": "vert pâle (confiance basse : nuance déduite, non sourcée)",
+          "fane": "vert-jaune brunâtre (confiance basse : nuance déduite, non sourcée)"
+        },
+        "bicolore": {
+          "declin": "liseré qui s'estompe (confiance basse : nuance déduite, non sourcée)",
+          "fane": "tons pâles refermés, bords bruns (confiance basse : nuance déduite, non sourcée)"
+        },
+        "creme": {
+          "declin": "crème (confiance basse : nuance déduite, non sourcée)",
+          "fane": "beige jauni (confiance basse : nuance déduite, non sourcée)"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Stade 8 des études : la fleur flétrit, pâlit et se referme ; problème connu : mauvaise ouverture des boutons (seulement ~46 % sans conservateur). Au Fané, laisser des boutons verts fermés à côté des fleurs refermées. Les teintes de déclin/fané par couleur sont déduites des règles générales de séchage (le bleu et le jaune tiennent, le rose pâlit : extension UNL/Missouri) et du brunissement décrit, pas d'une source spécifique à l'espèce.",
+      "sources": [
+        "https://ishs.org/ishs-article/1077_4/",
+        "https://journals.ub.bw/index.php/bojaas/article/view/183",
+        "https://new.scielo.br/j/brag/a/HzP9Bbw5zGmrWCwbrB38cTG/?lang=en",
+        "https://moysesflowers.co.uk/flower-care/lisianthus"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "muflier",
+    "nom": "Muflier",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [
+        6,
+        7,
+        8
+      ],
+      "toute_annee": true,
+      "note": "groupes de variétés néerlandais permettant des plantations sous serre presque toute l'année ; en France, pic en juillet-août en plein air",
+      "sources": [
+        "https://pakbs.org/pjbot/papers/1751990405.pdf",
+        "https://www.synonyme-du-mot.com/les-articles/quelles-sont-les-fleurs-de-juillet",
+        "https://www.floristrytradeclub.co.uk/post/british-flowers-and-foliage-early-summer"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 5,
+      "max": 10,
+      "sources": [
+        "https://floralife.com/flowers/snapdragon",
+        "https://extension.msstate.edu/publications/snapdragon-antirrhinum-majus-for-the-farmer-florist"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "fane-du-bas",
+        "fleurons-tombent",
+        "decolore",
+        "penche-tete"
+      ],
+      "ordre": "les fleurons du bas meurent pendant que le haut continue à s'ouvrir ; les couleurs vives pâlissent vers le 5e jour ; la pointe de l'épi se redresse vers le haut si la tige est penchée (gravitropisme)",
+      "tete": "épi dont la pointe se courbe vers le haut ; les fleurons du bas flétrissent, brunissent, laissant parfois de petites capsules",
+      "petales": "fleurons qui se flétrissent et brunissent, ou tombent d'un coup sous éthylène",
+      "feuilles": "étroites, jaunissent sous l'eau",
+      "tige": "droite si le vase est vertical ; sinon pointe recourbée en crosse vers le haut",
+      "couleurs": {
+        "blanc": {
+          "declin": "blanc crème (confiance basse : nuance déduite, non sourcée)",
+          "fane": "beige brun en bas d'épi (confiance basse : nuance déduite, non sourcée)"
+        },
+        "rose": {
+          "declin": "rose pâli (confiance basse : nuance déduite, non sourcée)",
+          "fane": "rose sale à brun (confiance basse : nuance déduite, non sourcée)"
+        },
+        "jaune": {
+          "declin": "jaune pâli (confiance basse : nuance déduite, non sourcée)",
+          "fane": "jaune brunâtre (confiance basse : nuance déduite, non sourcée)"
+        },
+        "orange": {
+          "declin": "orange pâli (confiance basse : nuance déduite, non sourcée)",
+          "fane": "rouille (confiance basse : nuance déduite, non sourcée)"
+        },
+        "rouge": {
+          "declin": "rouge terne (confiance basse : nuance déduite, non sourcée)",
+          "fane": "brun rougeâtre (confiance basse : nuance déduite, non sourcée)"
+        },
+        "bordeaux": {
+          "declin": "bordeaux assombri (confiance basse : nuance déduite, non sourcée)",
+          "fane": "brun foncé (confiance basse : nuance déduite, non sourcée)"
+        },
+        "peche": {
+          "declin": "pêche délavé (confiance basse : nuance déduite, non sourcée)",
+          "fane": "beige brun (confiance basse : nuance déduite, non sourcée)"
+        },
+        "bicolore": {
+          "declin": "contrastes estompés (confiance basse : nuance déduite, non sourcée)",
+          "fane": "brun en bas d'épi (confiance basse : nuance déduite, non sourcée)"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Courbure gravitropique en 20 min à l'horizontale, non empêchée par STS/1-MCP ; chute des fleurons 100 % sous éthylène. Pour le dessin : pointe d'épi relevée en crosse dans un bouquet incliné. Les teintes de déclin/fané par couleur sont déduites des règles générales de séchage (le bleu et le jaune tiennent, le rose pâlit : extension UNL/Missouri) et du brunissement décrit, pas d'une source spécifique à l'espèce. Confiance ramenée de haute à moyenne : pages sources connues par leurs extraits de recherche seulement, et nuances de couleur déduites.",
+      "sources": [
+        "https://acikerisim.omu.edu.tr/entities/publication/947a44df-650b-4525-9fbc-0e8f1e823bc8",
+        "https://floralife.com/article/snapdragon-troubleshooting",
+        "https://www.karensgardentips.com/?p=15746",
+        "https://extension.msstate.edu/publications/snapdragon-antirrhinum-majus-for-the-farmer-florist"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "giroflee-matthiole",
+    "nom": "Giroflée",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "toute_annee": true,
+      "note": "Matthiola incana (giroflée quarantaine) : disponible presque toute l'année ; production britannique la plus forte de mai à septembre ; plein air en France de juin à septembre",
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/stock",
+        "https://www.floristrytradeclub.co.uk/post/british-flowers-and-foliage-early-summer",
+        "https://www.jardiner-malin.fr/fiche/giroflee.html"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 5,
+      "max": 8,
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/stock",
+        "https://moysesflowers.co.uk/flower-care/stock"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "fane-du-bas",
+        "brunit-bords",
+        "recroqueville",
+        "penche-tete"
+      ],
+      "ordre": "l'eau se gâte d'abord (feuilles et tige pourrissent, odeur soufrée) ; l'épi s'affaisse ; les fleurons du bas brunissent aux bords, se fripent et pâlissent avant ceux du haut",
+      "tete": "épi dense qui s'affaisse quand l'eau est gâtée",
+      "petales": "fleurons doubles qui brunissent aux bords, se fripent, pâlissent",
+      "feuilles": "grises et feutrées ; pourrissent très vite sous l'eau",
+      "tige": "épaisse ; la base pourrit vite et devient molle",
+      "couleurs": {
+        "blanc": {
+          "declin": "crème, bords beige (confiance basse : nuance déduite, non sourcée)",
+          "fane": "beige-brun fripé (confiance basse : nuance déduite, non sourcée)"
+        },
+        "rose": {
+          "declin": "rose pâli (confiance basse : nuance déduite, non sourcée)",
+          "fane": "rose brunâtre fripé (confiance basse : nuance déduite, non sourcée)"
+        },
+        "violet": {
+          "declin": "mauve terne (confiance basse : nuance déduite, non sourcée)",
+          "fane": "brun violacé (confiance basse : nuance déduite, non sourcée)"
+        },
+        "creme": {
+          "declin": "crème jauni (confiance basse : nuance déduite, non sourcée)",
+          "fane": "beige brun (confiance basse : nuance déduite, non sourcée)"
+        },
+        "peche": {
+          "declin": "abricot pâli (confiance basse : nuance déduite, non sourcée)",
+          "fane": "beige brun (confiance basse : nuance déduite, non sourcée)"
+        },
+        "bordeaux": {
+          "declin": "pourpre sombre (confiance basse : nuance déduite, non sourcée)",
+          "fane": "brun pourpre très sombre (confiance basse : nuance déduite, non sourcée)"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Ici giroflée = Matthiola incana (stock), pas Erysimum. Critères de déclin des fleurons bas (bords bruns, fripés, pâlis) tirés des conseils de sélection des fleuristes. Les teintes de déclin/fané par couleur sont déduites des règles générales de séchage (le bleu et le jaune tiennent, le rose pâlit : extension UNL/Missouri) et du brunissement décrit, pas d'une source spécifique à l'espèce.",
+      "sources": [
+        "https://moysesflowers.co.uk/flower-care/stock",
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/stock",
+        "https://hortscans.ces.ncsu.edu/file/../uploads/m/e/mechanic_51ba2c3021444.pdf"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "hortensia-boule",
+    "nom": "Hortensia boule",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [
+        6,
+        7,
+        8,
+        9
+      ],
+      "toute_annee": true,
+      "note": "hortensia (H. macrophylla) coupé disponible toute l'année ; offre la plus forte de mai à novembre (serres chauffées néerlandaises dès avril-mai, serres froides de mi-août à novembre) ; la Colombie couvre l'hiver (mi-octobre à avril), quand la production européenne est insignifiante",
+      "sources": [
+        "https://www.heemskerkflowers.com/en/blog/cut-hydrangea",
+        "https://shop.holex.com/en_US/dutch-hydrangea-season",
+        "https://www.cbi.eu/news/opportunities-exporting-colombian-hydrangeas-hortensia-european-market"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 7,
+      "max": 14,
+      "sources": [
+        "https://www.longfield-gardens.com/a/blog/get-longest-vase-life-hydrangeas",
+        "https://www.epicgardening.com/cut-hydrangea/"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "fletrit-soif",
+        "penche-tete",
+        "feuilles-recroquevillees",
+        "seche-sur-place"
+      ],
+      "ordre": "les grandes feuilles transpirent et flanchent d'abord ; si l'eau ne monte plus, toute la boule s'affaisse brusquement d'un coup (récupérable par immersion complète de la tête 30-60 min) ; une tête mûre qui ne flétrit pas vieillit lentement : sépales qui verdissent puis prennent des tons bordeaux/mauves, et finissent par sécher sur place en papier",
+      "tete": "boule molle qui s'affaisse et penche quand elle manque d'eau ; tête mûre « antique » qui garde sa forme ronde en séchant",
+      "petales": "les sépales (fausses pétales) ramollissent et pendent en cas de soif ; en fin de vie, ils deviennent parcheminés, papier, sans tomber",
+      "feuilles": "flétrissent et pendent avant la fleur (grande surface de transpiration), puis brunissent et se recroquevillent",
+      "tige": "ligneuse, reste droite ; c'est la tête qui retombe",
+      "couleurs": {
+        "blanc": {
+          "declin": "blanc qui vire au crème verdâtre (confiance basse : nuance déduite, non sourcée)",
+          "fane": "vert pâle à beige papier, brun clair si exposé au soleil (confiance basse : nuance déduite, non sourcée)"
+        },
+        "rose": {
+          "declin": "rose qui se ternit et prend des reflets verts (confiance basse : nuance déduite, non sourcée)",
+          "fane": "vieux rose mêlé de vert et de bordeaux, terne et papier (confiance basse : nuance déduite, non sourcée)"
+        },
+        "bleu": {
+          "declin": "bleu qui se mêle de vert (confiance basse : nuance déduite, non sourcée)",
+          "fane": "bleu-vert grisé, parfois teinté de mauve, papier (confiance basse : nuance déduite, non sourcée)"
+        },
+        "violet": {
+          "declin": "violet qui se ternit, reflets verts (confiance basse : nuance déduite, non sourcée)",
+          "fane": "mauve sourd et bordeaux mêlé de vert (confiance basse : nuance déduite, non sourcée)"
+        },
+        "vert": {
+          "declin": "vert pomme qui fonce, reflets rosés ou bordeaux (confiance basse : nuance déduite, non sourcée)",
+          "fane": "vert sourd et bordeaux, papier (confiance basse : nuance déduite, non sourcée)"
+        }
+      },
+      "seche_bien": true,
+      "notes": "mode 'fletrit-soif' ajouté : flétrissement brutal de toute la tête par déséquilibre hydrique, réversible (immersion). FloraLife : enlever les feuilles allonge la tenue d'environ 1,5 jour, 33 % des tiges feuillues flétries au jour 10 contre 0 % sans feuilles. Les têtes immatures flétrissent toujours et ne se récupèrent pas. Évolution vers le vert puis rose/bordeaux en vieillissant documentée pour les roses et bleus ; les teintes de fané par couleur sont une synthèse de ces descriptions, pas une source par couleur.",
+      "sources": [
+        "https://www.longfield-gardens.com/a/blog/get-longest-vase-life-hydrangeas",
+        "https://www.waysidegardens.com/blogs/plant-care/how-to-revive-hydrangea-cut-flowers",
+        "https://floralife.com/?p=27237",
+        "https://www.chicagobotanic.org/blog/how_to/secret_long_lasting_cut_hydrangeas",
+        "https://www.epicgardening.com/hydrangea-colors/",
+        "https://www.promptzone.com/alberttanner/late-summer-hydrangeas-how-to-dry-them-on-the-stem-for-stunning-fall-arrangements-1bk4"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "hortensia-lacecap",
+    "nom": "Hortensia à fleurs plates",
+    "saison_vente": {
+      "mois": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "pic": [
+        6,
+        7,
+        8
+      ],
+      "toute_annee": false,
+      "note": "forme « lacecap » de H. macrophylla/serrata, surtout production européenne d'été ; saison alignée sur celle de l'hortensia coupé néerlandais (offre max mai-novembre) ; pas de calendrier spécifique trouvé pour les lacecaps ; mois : confiance moyenne à basse (calendrier propre à la forme non trouvé, repris de sources voisines)",
+      "sources": [
+        "https://www.heemskerkflowers.com/en/blog/cut-hydrangea",
+        "https://shop.holex.com/en_US/dutch-hydrangea-season"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 7,
+      "max": 14,
+      "sources": [
+        "https://www.jstage.jst.go.jp/article/hortj/86/2/86_MI-160/_html",
+        "https://www.epicgardening.com/cut-hydrangea/"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "fletrit-soif",
+        "penche-tete",
+        "feuilles-recroquevillees",
+        "seche-sur-place"
+      ],
+      "ordre": "comme l'hortensia boule : flétrissement par perte d'eau, d'abord des feuilles et de la couronne de grands fleurons stériles (qui transpirent beaucoup), puis affaissement de toute l'ombelle plate ; les petites fleurs fertiles du centre brunissent et sèchent ; une tête mûre sèche sur place",
+      "tete": "ombelle plate qui s'affaisse et retombe sur les bords ; le disque central de fleurons fertiles devient terne et grenu",
+      "petales": "les sépales de la couronne ramollissent, pendent, puis deviennent papier ; les minuscules fleurs fertiles du centre brunissent",
+      "feuilles": "flétrissent avant la fleur, puis brunissent et se recroquevillent",
+      "tige": "ligneuse, reste droite",
+      "couleurs": {
+        "blanc": {
+          "declin": "couronne crème verdâtre, centre beige (confiance basse : nuance déduite, non sourcée)",
+          "fane": "vert pâle-beige papier, centre brun (confiance basse : nuance déduite, non sourcée)"
+        },
+        "rose": {
+          "declin": "rose terne avec reflets verts (confiance basse : nuance déduite, non sourcée)",
+          "fane": "vieux rose et bordeaux sur fond vert, centre brun (confiance basse : nuance déduite, non sourcée)"
+        },
+        "bleu": {
+          "declin": "bleu qui verdit (confiance basse : nuance déduite, non sourcée)",
+          "fane": "bleu-vert grisé, centre brun (confiance basse : nuance déduite, non sourcée)"
+        },
+        "violet": {
+          "declin": "violet terne (confiance basse : nuance déduite, non sourcée)",
+          "fane": "mauve sourd et bordeaux, centre brun (confiance basse : nuance déduite, non sourcée)"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Étude japonaise (Horticulture Journal) : les fleurons décoratifs (stériles) des lacecaps 'Blue Sky' et 'Fairy Eye' assurent ~40-62 % de la transpiration de la tige ; leur retrait prolonge la tenue à 18-22 jours. Le reste (ordre, couleurs) est extrapolé depuis l'hortensia macrophylla en général. Mode 'fletrit-soif' : voir hortensia-boule.",
+      "sources": [
+        "https://www.jstage.jst.go.jp/article/hortj/86/2/86_MI-160/_html",
+        "https://jury.co.nz/2012/01/06/plant-collector-hydrangea-libelle/",
+        "https://floralife.com/?p=27237",
+        "https://www.epicgardening.com/hydrangea-colors/"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "hortensia-paniculata",
+    "nom": "Hortensia paniculé",
+    "saison_vente": {
+      "mois": [
+        7,
+        8,
+        9,
+        10
+      ],
+      "pic": [
+        8,
+        9
+      ],
+      "toute_annee": false,
+      "note": "floraison de juillet à octobre-novembre (ex. 'Vanille Fraise', 'Limelight') ; fiches RHS/pépinières, pas de calendrier grossiste spécifique trouvé",
+      "sources": [
+        "https://www.gardenia.net/plant/hydrangea-paniculata-Vanille-Fraise",
+        "https://provendernurseries.co.uk/factsheets/hydrangea-paniculata-vanille-fraise",
+        "https://provenwinnersdirect.com/collections/hydrangeas/products/limelight-panicle-hydrangea"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 7,
+      "max": 14,
+      "sources": [
+        "https://www.longfield-gardens.com/a/blog/get-longest-vase-life-hydrangeas"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "fletrit-soif",
+        "seche-sur-place",
+        "decolore",
+        "feuilles-recroquevillees"
+      ],
+      "ordre": "le cône de fleurs vire progressivement de crème à rose puis rose foncé/bordeaux en vieillissant (ou vert citron → crème → rose pour 'Limelight') ; une panicule mûre sèche en gardant sa forme ; une panicule coupée trop jeune flétrit",
+      "tete": "cône (panicule) qui garde sa silhouette en séchant ; pointe parfois molle si coupé jeune",
+      "petales": "sépales qui rosissent puis deviennent papier, sans tomber",
+      "feuilles": "flétrissent et brunissent avant le cône",
+      "tige": "ligneuse, droite",
+      "couleurs": {
+        "blanc": {
+          "declin": "crème qui rosit (confiance basse : nuance déduite, non sourcée)",
+          "fane": "rose poudré à vieux rose papier, puis beige rosé (confiance basse : nuance déduite, non sourcée)"
+        },
+        "vert": {
+          "declin": "vert citron qui passe au crème (confiance basse : nuance déduite, non sourcée)",
+          "fane": "rose, rouge et bordeaux sourds, papier (confiance basse : nuance déduite, non sourcée)"
+        },
+        "rose": {
+          "declin": "rose qui s'intensifie (confiance basse : nuance déduite, non sourcée)",
+          "fane": "rose foncé à pourpre bordeaux sourd, papier (confiance basse : nuance déduite, non sourcée)"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Changements de couleur décrits sur la plante (vieillissement en automne), pas mesurés en vase ; 'Limelight' décrit comme excellente fleur coupée fraîche ou séchée, qui « tient bien ». Aucune donnée de tenue en vase propre à H. paniculata : chiffre repris de l'hortensia en général. 'decolore' est ici impropre : la couleur fonce (rosit) plutôt qu'elle ne pâlit, sauf le vert qui passe au crème.",
+      "sources": [
+        "https://provenwinnersdirect.com/collections/hydrangeas/products/limelight-panicle-hydrangea",
+        "https://www.bluestoneperennials.com/HYLL",
+        "https://southernhospitalityblog.com/how-to-dry-limelight-hydrangeas/",
+        "https://www.gardenia.net/plant/hydrangea-paniculata-Vanille-Fraise",
+        "https://www.rhs.org.uk/plants/articles/graham-rice/shrubs-and-climbers/shrubs-to-grow-for-cut-flowers"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "hortensia-arborescens",
+    "nom": "Hortensia arborescent",
+    "saison_vente": {
+      "mois": [
+        6,
+        7,
+        8,
+        9
+      ],
+      "pic": [
+        7,
+        8
+      ],
+      "toute_annee": false,
+      "note": "floraison estivale de 'Annabelle' ; saison déduite des fiches de culture et de séchage, pas de calendrier grossiste trouvé",
+      "sources": [
+        "https://hayloft.co.uk/hydrangea-arborescens-annabelle-g-k19447",
+        "https://missmustardseed.com/how-to-dry-annabelle-hydrangeas/"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 7,
+      "max": 14,
+      "sources": [
+        "https://www.longfield-gardens.com/a/blog/get-longest-vase-life-hydrangeas"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "fletrit-soif",
+        "seche-sur-place",
+        "feuilles-recroquevillees"
+      ],
+      "ordre": "la grosse boule blanche passe au vert tendre en vieillissant, puis sèche en vert-écru et enfin brun papier ; coupée jeune (encore blanche et molle), elle flétrit par perte d'eau",
+      "tete": "boule ronde qui garde sa forme en séchant ; s'affaisse si elle manque d'eau",
+      "petales": "sépales blancs qui deviennent vert pâle, secs au toucher, puis papier brun",
+      "feuilles": "flétrissent et brunissent avant la tête",
+      "tige": "assez fine pour la taille de la tête ; droite",
+      "couleurs": {
+        "blanc": {
+          "declin": "blanc crème qui vire au vert citron tendre (confiance basse : nuance déduite, non sourcée)",
+          "fane": "vert-écru papier, puis brun papier clair (plus vite au soleil) (confiance basse : nuance déduite, non sourcée)"
+        },
+        "rose": {
+          "declin": "rose qui pâlit et verdit (confiance basse : nuance déduite, non sourcée)",
+          "fane": "vieux rose verdâtre papier (confiance basse : nuance déduite, non sourcée)"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Séquence blanc → vert citron → brun papier documentée pour 'Annabelle' (séchage), le soleil fait brunir. Tenue en vase non trouvée pour l'espèce : reprise de l'hortensia en général. La famille rose (type 'Invincibelle') est une extrapolation.",
+      "sources": [
+        "https://missmustardseed.com/how-to-dry-annabelle-hydrangeas/",
+        "https://hayloft.co.uk/hydrangea-arborescens-annabelle-g-k19447",
+        "https://hgic.clemson.edu/how-to-make-a-dried-hydrangea-wreath/"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "astilbe",
+    "nom": "Astilbe",
+    "saison_vente": {
+      "mois": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "pic": [
+        6,
+        7,
+        8
+      ],
+      "toute_annee": false,
+      "note": "disponible en fleur coupée de mai à août selon les grossistes US, de juin à octobre chez certains fournisseurs européens",
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/astilbe",
+        "https://fiftyflowers.com/products/white-astilbe-flower-may-to-october"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 4,
+      "max": 7,
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/astilbe",
+        "https://www.euroflorist.pl/en/flower-encyclopedia/astilbe",
+        "https://fiftyflowers.com/products/white-astilbe-flower-may-to-october"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "fletrit-soif",
+        "penche-tete",
+        "seche-sur-place"
+      ],
+      "ordre": "très assoiffée : c'est la première tige à flancher dans un bouquet mixte si l'eau baisse ; le plumet se ramollit et la pointe retombe ; les plumets mûrs sèchent en gardant leur forme plumeuse et passent aux tons antiques puis bruns",
+      "tete": "plumet dont la pointe s'incline quand il manque d'eau",
+      "petales": "minuscules fleurs qui ternissent, puis sèchent sur l'épi",
+      "feuilles": "feuillage fin, flétrit vite",
+      "tige": "fine mais rigide ; reste droite, la pointe du plumet plie",
+      "couleurs": {
+        "blanc": {
+          "declin": "blanc crème (confiance basse : nuance déduite, non sourcée)",
+          "fane": "beige à brun clair (confiance basse : nuance déduite, non sourcée)"
+        },
+        "rose": {
+          "declin": "rose qui pâlit, tons antiques (confiance basse : nuance déduite, non sourcée)",
+          "fane": "vieux rose brunâtre puis brun (confiance basse : nuance déduite, non sourcée)"
+        },
+        "rouge": {
+          "declin": "rouge qui fonce et se ternit (confiance basse : nuance déduite, non sourcée)",
+          "fane": "brun rougeâtre (confiance basse : nuance déduite, non sourcée)"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Tenue annoncée variable selon les sources (4-7 j, min. 5 j, jusqu'à 7-14 j chez un fleuriste) ; on retient 4-7. Mode 'fletrit-soif' : un plumet flétri se récupère parfois (recoupe + eau froide profonde 1-2 h) mais moins bien que les tiges ligneuses. RHS : les vieux plumets bruns restent décoratifs. Couleurs du fané : seule « tons antiques puis bruns » est sourcée, le détail par couleur est déduit.",
+      "sources": [
+        "https://moysesflowers.co.uk/flower-care/astilbe-care",
+        "https://www.rhs.org.uk/plants/94757/astilbe-professor-van-der-wielen-thunbergii-hybrid/details",
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/astilbe"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "campanule",
+    "nom": "Campanule",
+    "saison_vente": {
+      "mois": [
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "pic": [
+        5,
+        6
+      ],
+      "toute_annee": false,
+      "note": "Campanula medium 'Champion' cultivée sous serre aux Pays-Bas de mars à juin (Luiten Flowers) ; Flower Council of Holland en a fait la fleur du mois de mai ; production de plein champ jusqu'en juillet",
+      "sources": [
+        "https://thursd.com/growers/luiten-flowers",
+        "https://www.fruitnet.com/fresh-produce-journal/flowers-for-may-revealed/103490.article",
+        "https://thursd.com/growers/jp-kouwenhoven"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 7,
+      "max": 14,
+      "sources": [
+        "https://blogs.cornell.edu/hightunnels/flowers/cut-flowers/cut-flower-crops/campanula-canterbury-bells",
+        "https://www.calyxflowers.com/floral-library/bellflower/"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "recroqueville",
+        "decolore",
+        "fane-du-bas"
+      ],
+      "ordre": "les cloches s'ouvrent en séquence du bas vers le haut ; chaque cloche fanée perd sa couleur et se fripe sur place pendant que les boutons du haut s'ouvrent ; sensible à l'éthylène qui fait se ratatiner les fleurs",
+      "tete": "épi de cloches ; pas de tête unique qui penche",
+      "petales": "cloche qui pâlit, se ramollit et se fripe en se refermant, reste accrochée",
+      "feuilles": "tige molle sensible au botrytis ; feuilles qui jaunissent",
+      "tige": "tige tendre, reste dressée",
+      "couleurs": {
+        "bleu": {
+          "declin": "bleu qui pâlit vers le lilas grisé (confiance basse : nuance déduite, non sourcée)",
+          "fane": "mauve grisâtre, cloches fripées brunâtres (confiance basse : nuance déduite, non sourcée)"
+        },
+        "violet": {
+          "declin": "lavande pâlie (confiance basse : nuance déduite, non sourcée)",
+          "fane": "mauve sale à brun (confiance basse : nuance déduite, non sourcée)"
+        },
+        "rose": {
+          "declin": "rose pâli (confiance basse : nuance déduite, non sourcée)",
+          "fane": "rose beige fripé (confiance basse : nuance déduite, non sourcée)"
+        },
+        "blanc": {
+          "declin": "blanc ivoire (confiance basse : nuance déduite, non sourcée)",
+          "fane": "beige à brun clair, translucide (confiance basse : nuance déduite, non sourcée)"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Tenue : 7-14 j (Cornell), jusqu'à 20 j avec nourriture selon un producteur, beaucoup moins en mousse florale (3,3 j contre 10 j en vase). Fanaison individuelle des cloches « qui se fripent et perdent leur couleur » documentée côté jardin ; les couleurs par famille sont déduites. Floraison séquentielle bas → haut : 'fane-du-bas' au sens où les cloches basses fanent en premier.",
+      "sources": [
+        "https://blogs.cornell.edu/hightunnels/flowers/cut-flowers/cut-flower-crops/campanula-canterbury-bells",
+        "https://www.flower.style/flowers-we-love/campanula",
+        "https://www.rhs.org.uk/plants/29191/campanula-medium/details",
+        "https://hortscans.ces.ncsu.edu/uploads/e/v/evaluati_5202b307e71cd.pdf"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "phlox",
+    "nom": "Phlox",
+    "saison_vente": {
+      "mois": [
+        6,
+        7,
+        8,
+        9
+      ],
+      "pic": [
+        7,
+        8
+      ],
+      "toute_annee": false,
+      "note": "fleur d'été et de début d'automne, floraison juillet-septembre",
+      "sources": [
+        "https://www.thursd.com/articles/versatile-phlox-with-its-romantic-charm/",
+        "https://floraldesigninstitute.com/blogs/resources-flower-library/phlox"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 5,
+      "max": 7,
+      "sources": [
+        "https://floraldesigninstitute.com/blogs/resources-flower-library/phlox",
+        "https://ishs.org/ishs-article/669_51/"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "fleurons-tombent",
+        "feuilles-jaunissent"
+      ],
+      "ordre": "les corolles tombent encore fraîches et colorées (abscission, aggravée par l'éthylène) pendant que d'autres boutons de la panicule s'ouvrent ; la panicule se dégarnit ; les feuilles de l'axe se dégradent et salissent vite l'eau",
+      "tete": "panicule bombée qui se dégarnit, les tiges florales nues apparaissent",
+      "petales": "corolles entières qui tombent turgescentes, sans faner sur place ; tapis de petites fleurs colorées au pied du vase",
+      "feuilles": "jaunissent et ramollissent ; troublent l'eau",
+      "tige": "droite",
+      "couleurs": {
+        "blanc": {
+          "declin": "blanc, fleurons qui tombent (confiance basse : nuance déduite, non sourcée)",
+          "fane": "panicule dégarnie, quelques fleurons crème brunis (confiance basse : nuance déduite, non sourcée)"
+        },
+        "rose": {
+          "declin": "rose intact, fleurons qui tombent (confiance basse : nuance déduite, non sourcée)",
+          "fane": "panicule clairsemée, restes rose terne (confiance basse : nuance déduite, non sourcée)"
+        },
+        "violet": {
+          "declin": "lilas intact, fleurons qui tombent (confiance basse : nuance déduite, non sourcée)",
+          "fane": "panicule dégarnie, restes mauve terne (confiance basse : nuance déduite, non sourcée)"
+        },
+        "rouge": {
+          "declin": "rouge intact, fleurons qui tombent (confiance basse : nuance déduite, non sourcée)",
+          "fane": "restes rouge sombre terne (confiance basse : nuance déduite, non sourcée)"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Surprise utile : la corolle tombe encore turgescente et colorée (ISHS / phtnet), donc au déclin la couleur reste vive et c'est la densité qui diminue. Les teintes des derniers restes sont déduites.",
+      "sources": [
+        "https://ishs.org/ishs-article/669_51/",
+        "https://www.phtnet.org/research/download/pdf/wz120.pdf",
+        "https://moysesflowers.co.uk/flower-care/phlox-care",
+        "https://floraldesigninstitute.com/blogs/resources-flower-library/phlox"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "gerbera",
+    "nom": "Gerbera",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "toute_annee": true,
+      "note": "culture sous serre aux Pays-Bas toute l'année (ex. de Zuidplas, Holstein Flowers) ; aucun pic net documenté, le pic indiqué correspond à la période de plus forte luminosité/production estivale et reste une hypothèse ; pic : confiance basse (non sourcé, déduit de la luminosité estivale)",
+      "sources": [
+        "https://thursd.com/growers/de-zuidplas",
+        "https://thursd.com/growers/holstein-flowers",
+        "https://www.ludvigsvensson.com/en-us/climate-screens/crop-cultivation-tips/gerbera"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 7,
+      "max": 14,
+      "sources": [
+        "https://mro.massey.ac.nz/handle/10179/11546",
+        "https://phytojournal.com/archives/2020/vol9issue4/PartM/9-3-78-398.pdf"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "penche-tete",
+        "capitule-se-ferme",
+        "decolore",
+        "chute-petales"
+      ],
+      "ordre": "d'abord la tige plie juste sous le capitule (bent neck, vers le jour 11 dans une étude) parce que des bactéries bouchent le xylème ; puis la prise d'eau chute (j13-15), les ligules flétrissent, pâlissent (j15-20) et finissent par tomber",
+      "tete": "capitule qui bascule à 90° ou plus au bout de la tige, puis pend",
+      "petales": "ligules qui ramollissent, se replient, pâlissent puis tombent ; le cœur reste",
+      "feuilles": "vendu sans feuilles",
+      "tige": "longue tige creuse et poilue qui plie net sous la tête (col), parfois plus bas",
+      "couleurs": {
+        "blanc": {
+          "declin": "blanc ivoire mou (confiance basse : nuance déduite, non sourcée)",
+          "fane": "beige à brun clair, ligules molles (confiance basse : nuance déduite, non sourcée)"
+        },
+        "jaune": {
+          "declin": "jaune qui pâlit (confiance basse : nuance déduite, non sourcée)",
+          "fane": "jaune paille brunâtre (confiance basse : nuance déduite, non sourcée)"
+        },
+        "orange": {
+          "declin": "orange qui pâlit (confiance basse : nuance déduite, non sourcée)",
+          "fane": "orange terne à brun rouille (confiance basse : nuance déduite, non sourcée)"
+        },
+        "rose": {
+          "declin": "rose qui pâlit (confiance basse : nuance déduite, non sourcée)",
+          "fane": "rose fané, bords brunâtres (confiance basse : nuance déduite, non sourcée)"
+        },
+        "rouge": {
+          "declin": "rouge qui se ternit (confiance basse : nuance déduite, non sourcée)",
+          "fane": "rouge brique sombre à bordeaux brunâtre (confiance basse : nuance déduite, non sourcée)"
+        },
+        "peche": {
+          "declin": "pêche délavé (confiance basse : nuance déduite, non sourcée)",
+          "fane": "beige rosé brunâtre (confiance basse : nuance déduite, non sourcée)"
+        },
+        "creme": {
+          "declin": "crème pâle (confiance basse : nuance déduite, non sourcée)",
+          "fane": "beige (confiance basse : nuance déduite, non sourcée)"
+        },
+        "bicolore": {
+          "declin": "contraste qui s'estompe (confiance basse : nuance déduite, non sourcée)",
+          "fane": "teintes ternes et brunâtres (confiance basse : nuance déduite, non sourcée)"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Bent neck bactérien bien documenté (recherche universitaire, Massey). Une à quatre semaines selon cultivar et solution ; 7-14 j est la plage courante avec soins. Décoloration et chute des ligules sourcées en général ; les couleurs par famille sont déduites. Le pic de saison n'est pas sourcé.",
+      "sources": [
+        "https://mro.massey.ac.nz/handle/10179/11546",
+        "https://mro.massey.ac.nz/bitstreams/cc4e974c-f545-4eb8-8a53-ff500e3eccf4/download",
+        "https://www.phytojournal.com/archives/2021/vol10issue1/PartAJ/10-2-45-533.pdf",
+        "https://ibl.kb.nl/article/0000000140002/3/3/9"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "germini",
+    "nom": "Germini",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "toute_annee": true,
+      "note": "mini-gerbera, même culture sous serre que le gerbera, toute l'année ; pic non documenté ; pic : confiance basse (non sourcé, déduit de la luminosité estivale)",
+      "sources": [
+        "https://thursd.com/growers/de-zuidplas",
+        "https://fiftyflowers.com/products/vixen-mini-gerbera-daisy"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 5,
+      "max": 14,
+      "sources": [
+        "https://fiftyflowers.com/products/vixen-mini-gerbera-daisy",
+        "https://fiftyflowers.com/products/bone-white-mini-gerber-daisies"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "penche-tete",
+        "capitule-se-ferme",
+        "decolore",
+        "chute-petales"
+      ],
+      "ordre": "comme le gerbera : pliure sous la tête par blocage bactérien de la tige, puis ligules qui flétrissent, pâlissent et tombent",
+      "tete": "petit capitule qui bascule sous son poids, moins lourd que le gerbera",
+      "petales": "ligules qui se replient, pâlissent puis tombent",
+      "feuilles": "vendu sans feuilles",
+      "tige": "plus fine que le gerbera, plie sous la tête",
+      "couleurs": {
+        "blanc": {
+          "declin": "ivoire (confiance basse : nuance déduite, non sourcée)",
+          "fane": "beige brunâtre (confiance basse : nuance déduite, non sourcée)"
+        },
+        "jaune": {
+          "declin": "jaune pâli (confiance basse : nuance déduite, non sourcée)",
+          "fane": "paille brunâtre (confiance basse : nuance déduite, non sourcée)"
+        },
+        "orange": {
+          "declin": "orange pâli (confiance basse : nuance déduite, non sourcée)",
+          "fane": "rouille terne (confiance basse : nuance déduite, non sourcée)"
+        },
+        "rose": {
+          "declin": "rose pâli (confiance basse : nuance déduite, non sourcée)",
+          "fane": "rose fané brunâtre (confiance basse : nuance déduite, non sourcée)"
+        },
+        "rouge": {
+          "declin": "rouge terni (confiance basse : nuance déduite, non sourcée)",
+          "fane": "bordeaux brunâtre (confiance basse : nuance déduite, non sourcée)"
+        },
+        "violet": {
+          "declin": "violet pâli (confiance basse : nuance déduite, non sourcée)",
+          "fane": "mauve terne (confiance basse : nuance déduite, non sourcée)"
+        },
+        "peche": {
+          "declin": "pêche délavé (confiance basse : nuance déduite, non sourcée)",
+          "fane": "beige rosé (confiance basse : nuance déduite, non sourcée)"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Extrapolé du gerbera (même espèce, cultivars à petit capitule) : aucune source spécifique sur la fanaison des germinis. Tenue : min. 5 j (grossiste), 12-14 j selon un obtenteur.",
+      "sources": [
+        "https://fiftyflowers.com/products/vixen-mini-gerbera-daisy",
+        "https://mro.massey.ac.nz/handle/10179/11546"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "tournesol",
+    "nom": "Tournesol",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [
+        7,
+        8,
+        9
+      ],
+      "toute_annee": true,
+      "note": "disponible toute l'année grâce aux serres et aux importations ; meilleure saison européenne de juillet à septembre-octobre",
+      "sources": [
+        "https://www.floraprima.de/en/blumen/1672_sunflowers.html?page=2",
+        "https://moysesflowers.co.uk/flower-care/sunflower-care",
+        "https://teagasc.ie/wp-content/uploads/media/website/crops/horticulture/cut-foliage/2221-Sunflowers.pdf"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 5,
+      "max": 12,
+      "sources": [
+        "https://www.scielo.br/j/oh/a/kTzZ7jRBVL3FF56jKGP3r5B/?lang=en",
+        "https://hortscans.ces.ncsu.edu/file/../uploads/p/o/postharv_5405f711abf79.pdf"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "penche-tete",
+        "capitule-se-ferme",
+        "chute-petales",
+        "feuilles-recroquevillees"
+      ],
+      "ordre": "les feuilles flétrissent tôt, puis les ligules jaunes flétrissent et se recourbent ; la tête lourde penche (tige qui ramollit, manque d'eau, éthylène) ; les ligules finissent par tomber, laissant le gros disque central",
+      "tete": "capitule lourd qui s'incline puis pend ; le disque central perd son pollen et brunit au dos",
+      "petales": "ligules qui ramollissent, se recourbent vers le cœur ou pendent, puis tombent",
+      "feuilles": "flétrissent avant la fleur (limite majeure de la tenue), pendent puis se dessèchent",
+      "tige": "épaisse et velue ; ramollit sous la tête et plie",
+      "couleurs": {
+        "jaune": {
+          "declin": "jaune d'or qui ternit, ligules recourbées (confiance basse : nuance déduite, non sourcée)",
+          "fane": "jaune paille à brun doré, disque brun foncé (confiance basse : nuance déduite, non sourcée)"
+        },
+        "orange": {
+          "declin": "orangé qui ternit (confiance basse : nuance déduite, non sourcée)",
+          "fane": "rouille brun (confiance basse : nuance déduite, non sourcée)"
+        },
+        "bordeaux": {
+          "declin": "bordeaux qui fonce (confiance basse : nuance déduite, non sourcée)",
+          "fane": "brun chocolat (confiance basse : nuance déduite, non sourcée)"
+        },
+        "creme": {
+          "declin": "crème pâle (confiance basse : nuance déduite, non sourcée)",
+          "fane": "beige brunâtre (confiance basse : nuance déduite, non sourcée)"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Études : tenue 4-13 j selon cultivar (5 j à 50 cm, 9 j à 70 cm de tige), limitée par la pliure de la tige, l'abscission et le flétrissement précoce des ligules et des feuilles ; l'éthylène provoque pliure et chute des ligules. Séchage possible tête en bas, quand le dos de la tête brunit et que les ligules commencent à se recourber. Les couleurs hors jaune (orange, bordeaux, crème) sont déduites.",
+      "sources": [
+        "https://www.scielo.br/j/oh/a/kTzZ7jRBVL3FF56jKGP3r5B/?lang=en",
+        "https://ishs.org/ishs-article/669_28/",
+        "https://moysesflowers.co.uk/flower-care/sunflower-care",
+        "https://www.bloomandwild.com/care-for-your-sunflowers",
+        "https://windflowerflorist.com/blogs/news/how-to-dry-sunflowers"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "chrysantheme-disbud",
+    "nom": "Chrysanthème à grosse fleur",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [
+        10,
+        11
+      ],
+      "toute_annee": true,
+      "note": "produit toute l'année (serres néerlandaises et belges en jours courts artificiels, Colombie) ; pic européen de mi-octobre à la Toussaint, surtout en France, Belgique et Italie",
+      "sources": [
+        "https://www.hortidaily.com/article/6004503/chrysanthemum-as-the-flower-for-all-saints-day/",
+        "https://ishs.org/ishs-article/197_1/",
+        "https://www.jardiner-malin.fr/fiche/bonny-fleur-bouquet.html",
+        "https://www.omroepbrabant.nl/nieuws/4170569/witte-chrysanten-met-allerheiligen-en-allerzielen-is-uitstervende-traditie"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 15,
+      "max": 25,
+      "sources": [
+        "https://floralife.com/flowers/chrysanthemum-disbud",
+        "https://www.futura-sciences.com/maison/questions-reponses/jardin-conserver-bouquet-fleurs-15889/"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "feuilles-jaunissent",
+        "recroqueville",
+        "decolore",
+        "feuilles-recroquevillees"
+      ],
+      "ordre": "les feuilles jaunissent et flétrissent en premier, alors que la fleur est encore décorative ; puis les ligules perdent leur turgescence, se fripent et se recroquevillent sur place ; elles ne tombent pas spontanément mais restent accrochées en séchant ; un choc sur une grosse tête mûre peut toutefois la faire s'égrener d'un coup (shattering)",
+      "tete": "reste droite ou s'affaisse légèrement par manque d'eau ; garde sa forme générale",
+      "petales": "ligules qui se ramollissent, se fripent et se replient sur place sans tomber ; les blanches et roses rougissent ou mauvissent en vieillissant",
+      "feuilles": "jaunissent avant la fleur (principal défaut post-récolte), puis flétrissent, pendent et brunissent sur la tige",
+      "tige": "ligneuse et rigide, reste droite ; la base peut noircir si l'eau est sale",
+      "couleurs": {
+        "blanc": {
+          "declin": "blanc qui vire au rose pâle ou rosé lilas (accumulation d'anthocyanes à la sénescence), ligules ternes (confiance basse : nuance déduite, non sourcée)",
+          "fane": "rose-mauve sale puis beige brunâtre, ligules fripées restées en place (confiance basse : nuance déduite, non sourcée)"
+        },
+        "jaune": {
+          "declin": "jaune terni, base des ligules qui roussit (confiance basse : nuance déduite, non sourcée)",
+          "fane": "jaune moutarde à brun, ligules sèches recroquevillées (confiance basse : nuance déduite, non sourcée)"
+        },
+        "rose": {
+          "declin": "rose qui fonce vers le mauve (confiance basse : nuance déduite, non sourcée)",
+          "fane": "mauve sale à brun violacé (confiance basse : nuance déduite, non sourcée)"
+        },
+        "violet": {
+          "declin": "violet plus sombre, légèrement rougi (confiance basse : nuance déduite, non sourcée)",
+          "fane": "prune brunâtre, mat (confiance basse : nuance déduite, non sourcée)"
+        },
+        "vert": {
+          "declin": "vert anis qui jaunit (confiance basse : nuance déduite, non sourcée)",
+          "fane": "jaune-brun paille (confiance basse : nuance déduite, non sourcée)"
+        },
+        "orange": {
+          "declin": "orange cuivré qui fonce (confiance basse : nuance déduite, non sourcée)",
+          "fane": "brun rouille (confiance basse : nuance déduite, non sourcée)"
+        },
+        "bordeaux": {
+          "declin": "bordeaux plus sombre (confiance basse : nuance déduite, non sourcée)",
+          "fane": "brun-noir mat (confiance basse : nuance déduite, non sourcée)"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Comportement feuilles-avant-fleur et ligules qui sèchent sans tomber : sources genre Chrysanthemum (UC Davis, études vase life). Rougissement des blancs à la sénescence : études CmNAC25/anthocyanes. Couleurs du fané par famille : déduites du mécanisme général (anthocyanes, dessiccation), non décrites famille par famille dans les sources. Grosse fleur mûre sensible au 'shattering' sur choc (SAF). Ne sèche pas bien en vase (non sourcé spécifiquement).",
+      "sources": [
+        "https://postharvest.ucdavis.edu/produce-facts-sheets/chrysanthemum",
+        "https://journal.iahs.org.in/index.php/ijh/article/download/1646/1140",
+        "https://or.niscpr.res.in/index.php/IJEB/article/view/1942",
+        "https://doaj.org/article/5be0b48dbdf342be99c09183cee9b13d",
+        "https://bmcbiol.biomedcentral.com/counter/pdf/10.1186/s12915-023-01719-7.pdf",
+        "https://archived.safnow.org/wp-content/uploads/2020/05/FM-AprilMay20-Quality.pdf"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "chrysantheme-araignee",
+    "nom": "Chrysanthème araignée et japonais",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [
+        10,
+        11
+      ],
+      "toute_annee": true,
+      "note": "produit toute l'année (serres néerlandaises et belges en jours courts artificiels, Colombie) ; pic européen de mi-octobre à la Toussaint, surtout en France, Belgique et Italie",
+      "sources": [
+        "https://www.hortidaily.com/article/6004503/chrysanthemum-as-the-flower-for-all-saints-day/",
+        "https://ishs.org/ishs-article/197_1/",
+        "https://www.jardiner-malin.fr/fiche/bonny-fleur-bouquet.html",
+        "https://www.omroepbrabant.nl/nieuws/4170569/witte-chrysanten-met-allerheiligen-en-allerzielen-is-uitstervende-traditie"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 14,
+      "max": 21,
+      "sources": [
+        "https://www.hgtv.com/gardening/flowers-and-plants/spider-mums",
+        "https://bloomingmore.com/pages/chrysanthemum-care-guide"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "feuilles-jaunissent",
+        "recroqueville",
+        "decolore",
+        "feuilles-recroquevillees"
+      ],
+      "ordre": "les feuilles jaunissent et flétrissent en premier, alors que la fleur est encore décorative ; puis les ligules perdent leur turgescence, se fripent et se recroquevillent sur place ; elles ne tombent pas spontanément mais restent accrochées en séchant",
+      "tete": "la tête reste droite mais les longs fleurons tubulaires extérieurs pendent et s'emmêlent (extrapolé)",
+      "petales": "fleurons tubulaires qui se ramollissent, pendent et se recroquevillent sur place sans tomber (extrapolé du genre)",
+      "feuilles": "jaunissent avant la fleur (principal défaut post-récolte), puis flétrissent, pendent et brunissent sur la tige",
+      "tige": "ligneuse et rigide, reste droite ; la base peut noircir si l'eau est sale",
+      "couleurs": {
+        "blanc": {
+          "declin": "blanc qui vire au rose pâle ou rosé lilas (accumulation d'anthocyanes à la sénescence), ligules ternes (confiance basse : nuance déduite, non sourcée)",
+          "fane": "rose-mauve sale puis beige brunâtre, ligules fripées restées en place (confiance basse : nuance déduite, non sourcée)"
+        },
+        "jaune": {
+          "declin": "jaune terni, base des ligules qui roussit (confiance basse : nuance déduite, non sourcée)",
+          "fane": "jaune moutarde à brun, ligules sèches recroquevillées (confiance basse : nuance déduite, non sourcée)"
+        },
+        "rose": {
+          "declin": "rose qui fonce vers le mauve (confiance basse : nuance déduite, non sourcée)",
+          "fane": "mauve sale à brun violacé (confiance basse : nuance déduite, non sourcée)"
+        },
+        "violet": {
+          "declin": "violet plus sombre, légèrement rougi (confiance basse : nuance déduite, non sourcée)",
+          "fane": "prune brunâtre, mat (confiance basse : nuance déduite, non sourcée)"
+        },
+        "vert": {
+          "declin": "vert anis qui jaunit (confiance basse : nuance déduite, non sourcée)",
+          "fane": "jaune-brun paille (confiance basse : nuance déduite, non sourcée)"
+        },
+        "orange": {
+          "declin": "orange cuivré qui fonce (confiance basse : nuance déduite, non sourcée)",
+          "fane": "brun rouille (confiance basse : nuance déduite, non sourcée)"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Tenue en vase sourcée (14-21 j). Fanaison extrapolée du genre (sources générales chrysanthème) : aucune source spécifique sur la façon dont les fleurons tubulaires longs des araignées fanent. Hypothèse plausible mais non vérifiée : les tubes s'affaissent, pendent et se tordent davantage que des ligules plates. Couleurs déduites comme pour le disbud.",
+      "sources": [
+        "https://postharvest.ucdavis.edu/produce-facts-sheets/chrysanthemum",
+        "https://journal.iahs.org.in/index.php/ijh/article/download/1646/1140",
+        "https://or.niscpr.res.in/index.php/IJEB/article/view/1942",
+        "https://doaj.org/article/5be0b48dbdf342be99c09183cee9b13d",
+        "https://bmcbiol.biomedcentral.com/counter/pdf/10.1186/s12915-023-01719-7.pdf",
+        "https://archived.safnow.org/wp-content/uploads/2020/05/FM-AprilMay20-Quality.pdf"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "chrysantheme-santini-pompon",
+    "nom": "Chrysanthème santini",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [
+        10,
+        11
+      ],
+      "toute_annee": true,
+      "note": "produit toute l'année (serres néerlandaises et belges en jours courts artificiels, Colombie) ; pic européen de mi-octobre à la Toussaint, surtout en France, Belgique et Italie",
+      "sources": [
+        "https://www.hortidaily.com/article/6004503/chrysanthemum-as-the-flower-for-all-saints-day/",
+        "https://ishs.org/ishs-article/197_1/",
+        "https://www.jardiner-malin.fr/fiche/bonny-fleur-bouquet.html",
+        "https://www.omroepbrabant.nl/nieuws/4170569/witte-chrysanten-met-allerheiligen-en-allerzielen-is-uitstervende-traditie"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 10,
+      "max": 22,
+      "sources": [
+        "https://www.danzigeronline.com/?p=35415",
+        "https://www.danzigeronline.com/?p=35439",
+        "https://www.danzigeronline.com/?p=35424"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "feuilles-jaunissent",
+        "recroqueville",
+        "decolore",
+        "feuilles-recroquevillees"
+      ],
+      "ordre": "les feuilles jaunissent et flétrissent en premier, alors que la fleur est encore décorative ; puis les ligules perdent leur turgescence, se fripent et se recroquevillent sur place ; elles ne tombent pas spontanément mais restent accrochées en séchant",
+      "tete": "petits capitules en pompon qui gardent leur forme ronde mais se tassent et ternissent",
+      "petales": "ligules serrées qui se fripent sur place sans tomber",
+      "feuilles": "jaunissent avant la fleur (principal défaut post-récolte), puis flétrissent, pendent et brunissent sur la tige",
+      "tige": "ligneuse et rigide, reste droite ; la base peut noircir si l'eau est sale",
+      "couleurs": {
+        "blanc": {
+          "declin": "blanc qui vire au rose pâle ou rosé lilas (accumulation d'anthocyanes à la sénescence), ligules ternes (confiance basse : nuance déduite, non sourcée)",
+          "fane": "rose-mauve sale puis beige brunâtre, ligules fripées restées en place (confiance basse : nuance déduite, non sourcée)"
+        },
+        "jaune": {
+          "declin": "jaune terni, base des ligules qui roussit (confiance basse : nuance déduite, non sourcée)",
+          "fane": "jaune moutarde à brun, ligules sèches recroquevillées (confiance basse : nuance déduite, non sourcée)"
+        },
+        "rose": {
+          "declin": "rose qui fonce vers le mauve (confiance basse : nuance déduite, non sourcée)",
+          "fane": "mauve sale à brun violacé (confiance basse : nuance déduite, non sourcée)"
+        },
+        "violet": {
+          "declin": "violet plus sombre, légèrement rougi (confiance basse : nuance déduite, non sourcée)",
+          "fane": "prune brunâtre, mat (confiance basse : nuance déduite, non sourcée)"
+        },
+        "vert": {
+          "declin": "vert anis qui jaunit (confiance basse : nuance déduite, non sourcée)",
+          "fane": "jaune-brun paille (confiance basse : nuance déduite, non sourcée)"
+        },
+        "orange": {
+          "declin": "orange cuivré qui fonce (confiance basse : nuance déduite, non sourcée)",
+          "fane": "brun rouille (confiance basse : nuance déduite, non sourcée)"
+        },
+        "bordeaux": {
+          "declin": "bordeaux plus sombre (confiance basse : nuance déduite, non sourcée)",
+          "fane": "brun-noir mat (confiance basse : nuance déduite, non sourcée)"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Tenue en vase d'après les fiches obtenteur Danziger (gamme Energía, 10 à 22 j selon variété et transport). Fanaison : comportement général du genre (feuilles avant fleur, ligules qui sèchent sur place). Les petits pompons serrés gardent leur forme ronde en se fripant (déduit). Couleurs du fané déduites.",
+      "sources": [
+        "https://postharvest.ucdavis.edu/produce-facts-sheets/chrysanthemum",
+        "https://journal.iahs.org.in/index.php/ijh/article/download/1646/1140",
+        "https://or.niscpr.res.in/index.php/IJEB/article/view/1942",
+        "https://doaj.org/article/5be0b48dbdf342be99c09183cee9b13d",
+        "https://bmcbiol.biomedcentral.com/counter/pdf/10.1186/s12915-023-01719-7.pdf",
+        "https://archived.safnow.org/wp-content/uploads/2020/05/FM-AprilMay20-Quality.pdf"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "chrysantheme-marguerite-spray",
+    "nom": "Chrysanthème spray marguerite et d",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [
+        10,
+        11
+      ],
+      "toute_annee": true,
+      "note": "produit toute l'année (serres néerlandaises et belges en jours courts artificiels, Colombie) ; pic européen de mi-octobre à la Toussaint, surtout en France, Belgique et Italie",
+      "sources": [
+        "https://www.hortidaily.com/article/6004503/chrysanthemum-as-the-flower-for-all-saints-day/",
+        "https://ishs.org/ishs-article/197_1/",
+        "https://www.jardiner-malin.fr/fiche/bonny-fleur-bouquet.html",
+        "https://www.omroepbrabant.nl/nieuws/4170569/witte-chrysanten-met-allerheiligen-en-allerzielen-is-uitstervende-traditie"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 15,
+      "max": 25,
+      "sources": [
+        "https://floralife.com/flowers/chrysanthemum-spray",
+        "https://revistas.unal.edu.co/index.php/agrocol/article/download/29448/39768/165677"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "feuilles-jaunissent",
+        "recroqueville",
+        "decolore",
+        "feuilles-recroquevillees"
+      ],
+      "ordre": "les feuilles jaunissent et flétrissent en premier, alors que la fleur est encore décorative ; puis les ligules perdent leur turgescence, se fripent et se recroquevillent sur place ; elles ne tombent pas spontanément mais restent accrochées en séchant ; sur les types marguerite, le cœur (fleurons du disque) jaune ou vert s'ouvre, se bombe puis brunit",
+      "tete": "capitules qui restent droits sur leurs pédicelles ; le cœur se bombe et brunit (types marguerite)",
+      "petales": "ligules qui se fripent, se recourbent vers l'arrière ou vers le cœur et sèchent sur place",
+      "feuilles": "jaunissent avant la fleur (principal défaut post-récolte), puis flétrissent, pendent et brunissent sur la tige",
+      "tige": "ligneuse et rigide, reste droite ; la base peut noircir si l'eau est sale",
+      "couleurs": {
+        "blanc": {
+          "declin": "blanc qui vire au rose pâle ou rosé lilas (accumulation d'anthocyanes à la sénescence), ligules ternes (confiance basse : nuance déduite, non sourcée)",
+          "fane": "rose-mauve sale puis beige brunâtre, ligules fripées restées en place (confiance basse : nuance déduite, non sourcée)"
+        },
+        "jaune": {
+          "declin": "jaune terni, base des ligules qui roussit (confiance basse : nuance déduite, non sourcée)",
+          "fane": "jaune moutarde à brun, ligules sèches recroquevillées (confiance basse : nuance déduite, non sourcée)"
+        },
+        "rose": {
+          "declin": "rose qui fonce vers le mauve (confiance basse : nuance déduite, non sourcée)",
+          "fane": "mauve sale à brun violacé (confiance basse : nuance déduite, non sourcée)"
+        },
+        "violet": {
+          "declin": "violet plus sombre, légèrement rougi (confiance basse : nuance déduite, non sourcée)",
+          "fane": "prune brunâtre, mat (confiance basse : nuance déduite, non sourcée)"
+        },
+        "vert": {
+          "declin": "vert anis qui jaunit (confiance basse : nuance déduite, non sourcée)",
+          "fane": "jaune-brun paille (confiance basse : nuance déduite, non sourcée)"
+        },
+        "orange": {
+          "declin": "orange cuivré qui fonce (confiance basse : nuance déduite, non sourcée)",
+          "fane": "brun rouille (confiance basse : nuance déduite, non sourcée)"
+        },
+        "bordeaux": {
+          "declin": "bordeaux plus sombre (confiance basse : nuance déduite, non sourcée)",
+          "fane": "brun-noir mat (confiance basse : nuance déduite, non sourcée)"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Feuilles qui jaunissent avant la fleur : documenté justement pour les sprays (la tige est limitée par le jaunissement du feuillage alors que la fleur reste décorative). Brunissement du disque des types marguerite : déduit, non décrit explicitement. Couleurs du fané déduites du mécanisme général.",
+      "sources": [
+        "https://postharvest.ucdavis.edu/produce-facts-sheets/chrysanthemum",
+        "https://journal.iahs.org.in/index.php/ijh/article/download/1646/1140",
+        "https://or.niscpr.res.in/index.php/IJEB/article/view/1942",
+        "https://doaj.org/article/5be0b48dbdf342be99c09183cee9b13d",
+        "https://bmcbiol.biomedcentral.com/counter/pdf/10.1186/s12915-023-01719-7.pdf",
+        "https://archived.safnow.org/wp-content/uploads/2020/05/FM-AprilMay20-Quality.pdf"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "oeillet-standard",
+    "nom": "Œillet standard",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [
+        2,
+        3,
+        5
+      ],
+      "toute_annee": true,
+      "note": "importé toute l'année (Colombie en tête, puis Turquie, Kenya, Maroc, Éthiopie ; Pays-Bas plaque tournante) ; pics de demande à la Saint-Valentin, à la Journée des femmes (8 mars) et à la fête des mères",
+      "sources": [
+        "https://www.cbi.eu/sites/default/files/pdf/research/712.pdf",
+        "https://aircargoweek.com/af-kl-mp-flies-5000t-flowers-valentines-womens-day/",
+        "https://knowledge.wharton.upenn.edu/?p=11565"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 6,
+      "max": 18,
+      "sources": [
+        "https://academic.oup.com/view-large/9710826",
+        "https://biologyinsights.com/how-long-do-cut-carnations-last-in-a-vase/"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "recroqueville",
+        "capitule-se-ferme",
+        "brunit-bords",
+        "feuilles-brunissent"
+      ],
+      "ordre": "la fleur atteint sa pleine ouverture puis, sous l'effet de l'éthylène qu'elle produit, les pétales s'enroulent vers l'intérieur par leur bord (sleepiness) : la fleur se referme en boule molle au lieu de s'ouvrir davantage, puis l'ensemble des pétales flétrit d'un coup ; chez les variétés à longue tenue (peu d'éthylène), c'est au contraire le bord des pétales qui se dessèche, se décolore et nécrose, et cela gagne le reste du pétale",
+      "tete": "se referme : la fleur ébouriffée devient une boule plus petite et molle, le calice reste vert ; la tête peut s'incliner légèrement quand la tige se ramollit",
+      "petales": "bords qui s'enroulent vers le cœur puis pétales mous et flétris (type éthylène) ; ou bords secs, décolorés et bruns, parcheminés (type sans éthylène) ; ils ne tombent pas, restent dans le calice",
+      "feuilles": "étroites et glauques, se dessèchent et brunissent lentement, sans jaunissement marqué (non sourcé précisément)",
+      "tige": "noueuse et rigide, reste droite ; casse aux nœuds si manipulée",
+      "couleurs": {
+        "blanc": {
+          "declin": "blanc qui devient crème, bords des pétales beiges (confiance basse : nuance déduite, non sourcée)",
+          "fane": "beige-brun, bords bruns et parcheminés (confiance basse : nuance déduite, non sourcée)"
+        },
+        "creme": {
+          "declin": "crème terni (confiance basse : nuance déduite, non sourcée)",
+          "fane": "beige paille, bords bruns (confiance basse : nuance déduite, non sourcée)"
+        },
+        "rose": {
+          "declin": "rose qui fonce et bleuit légèrement (confiance basse : nuance déduite, non sourcée)",
+          "fane": "mauve sale, bords brun foncé (confiance basse : nuance déduite, non sourcée)"
+        },
+        "rouge": {
+          "declin": "rouge qui s'assombrit (confiance basse : nuance déduite, non sourcée)",
+          "fane": "bordeaux brunâtre presque noir (confiance basse : nuance déduite, non sourcée)"
+        },
+        "peche": {
+          "declin": "pêche terni (confiance basse : nuance déduite, non sourcée)",
+          "fane": "saumon-beige brunâtre (confiance basse : nuance déduite, non sourcée)"
+        },
+        "jaune": {
+          "declin": "jaune terni, bords roussis (confiance basse : nuance déduite, non sourcée)",
+          "fane": "brun paille (confiance basse : nuance déduite, non sourcée)"
+        },
+        "orange": {
+          "declin": "orange qui fonce (confiance basse : nuance déduite, non sourcée)",
+          "fane": "brun rouille (confiance basse : nuance déduite, non sourcée)"
+        },
+        "violet": {
+          "declin": "violet assombri (confiance basse : nuance déduite, non sourcée)",
+          "fane": "prune brunâtre (confiance basse : nuance déduite, non sourcée)"
+        },
+        "vert": {
+          "declin": "vert pâle jaunissant (confiance basse : nuance déduite, non sourcée)",
+          "fane": "jaune-brun (confiance basse : nuance déduite, non sourcée)"
+        },
+        "bicolore": {
+          "declin": "liseré qui fonce, fond terni (confiance basse : nuance déduite, non sourcée)",
+          "fane": "fond beige, liseré brun foncé (confiance basse : nuance déduite, non sourcée)"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Mode 'capitule-se-ferme' utilisé au sens large : l'œillet n'est pas un capitule, mais sa fleur se referme par enroulement des pétales (sleepiness). Deux patrons de sénescence documentés selon le cultivar (enroulement + flétrissement vs dessiccation marginale + nécrose). Couleurs du déclin et du fané déduites de ces mécanismes, non décrites famille par famille. Sèche moyennement : perd une part de sa couleur selon Promesse de fleurs (seche_bien false). Pics de saison : Valentin et 8 mars documentés pour le fret de fleurs, fête des mères surtout documentée pour les USA ; à confirmer pour l'Europe.",
+      "sources": [
+        "https://academic.oup.com/view-large/9710826",
+        "https://www.jircas.go.jp/sites/default/files/publication/jarq/jarq59-3_219-226.pdf",
+        "https://hortscans.ces.ncsu.edu/uploads/e/f/effect_o_51a62b78de66b.pdf",
+        "https://researchportalplus.anu.edu.au/en/publications/inhibition-of-carnation-petal-inrolling-by-growth-retardants-and-/",
+        "https://www.promessedefleurs.ie/gardening-tips/tutorial/drying-carnations/"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "oeillet-spray",
+    "nom": "Œillet à petites fleurs",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [
+        2,
+        3,
+        5
+      ],
+      "toute_annee": true,
+      "note": "disponible toute l'année (Colombie, Kenya, Turquie…) ; mêmes pics que l'œillet standard",
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/carnation-mini",
+        "https://www.cbi.eu/sites/default/files/pdf/research/712.pdf"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 8,
+      "max": 14,
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/carnation-mini",
+        "https://fiftyflowers.com/products/white-carnation-flowers-spray"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "recroqueville",
+        "capitule-se-ferme",
+        "brunit-bords",
+        "bourgeons-avortent"
+      ],
+      "ordre": "les fleurs ouvertes en premier sur la ramification fanent d'abord par enroulement des pétales (sleepiness), pendant que les boutons plus jeunes s'ouvrent encore ; en fin de vie les derniers boutons peuvent ne jamais s'ouvrir ; les fleurs fanées restent sur la tige",
+      "tete": "chaque petite fleur se referme en boule molle ; la gerbe garde sa forme",
+      "petales": "bords enroulés vers l'intérieur, puis flétris, ou bords secs et bruns selon la variété ; pas de chute",
+      "feuilles": "se dessèchent et brunissent lentement",
+      "tige": "reste droite, ramifiée",
+      "couleurs": {
+        "blanc": {
+          "declin": "blanc qui devient crème, bords des pétales beiges (confiance basse : nuance déduite, non sourcée)",
+          "fane": "beige-brun, bords bruns et parcheminés (confiance basse : nuance déduite, non sourcée)"
+        },
+        "rose": {
+          "declin": "rose qui fonce et bleuit légèrement (confiance basse : nuance déduite, non sourcée)",
+          "fane": "mauve sale, bords brun foncé (confiance basse : nuance déduite, non sourcée)"
+        },
+        "rouge": {
+          "declin": "rouge qui s'assombrit (confiance basse : nuance déduite, non sourcée)",
+          "fane": "bordeaux brunâtre presque noir (confiance basse : nuance déduite, non sourcée)"
+        },
+        "jaune": {
+          "declin": "jaune terni, bords roussis (confiance basse : nuance déduite, non sourcée)",
+          "fane": "brun paille (confiance basse : nuance déduite, non sourcée)"
+        },
+        "orange": {
+          "declin": "orange qui fonce (confiance basse : nuance déduite, non sourcée)",
+          "fane": "brun rouille (confiance basse : nuance déduite, non sourcée)"
+        },
+        "violet": {
+          "declin": "violet assombri (confiance basse : nuance déduite, non sourcée)",
+          "fane": "prune brunâtre (confiance basse : nuance déduite, non sourcée)"
+        },
+        "vert": {
+          "declin": "vert pâle jaunissant (confiance basse : nuance déduite, non sourcée)",
+          "fane": "jaune-brun (confiance basse : nuance déduite, non sourcée)"
+        },
+        "peche": {
+          "declin": "pêche terni (confiance basse : nuance déduite, non sourcée)",
+          "fane": "saumon-beige brunâtre (confiance basse : nuance déduite, non sourcée)"
+        },
+        "bicolore": {
+          "declin": "liseré qui fonce, fond terni (confiance basse : nuance déduite, non sourcée)",
+          "fane": "fond beige, liseré brun foncé (confiance basse : nuance déduite, non sourcée)"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Même genre et même mécanisme (éthylène, enroulement des pétales) que l'œillet standard : extrapolé de D. caryophyllus standard. Le décalage d'ouverture entre fleurs d'une même tige et l'avortement des derniers boutons sont déduits de la structure en spray (3 à 5 fleurs par tige), non sourcés.",
+      "sources": [
+        "https://academic.oup.com/view-large/9710826",
+        "https://www.jircas.go.jp/sites/default/files/publication/jarq/jarq59-3_219-226.pdf",
+        "https://hortscans.ces.ncsu.edu/uploads/e/f/effect_o_51a62b78de66b.pdf",
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/carnation-mini"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "oeillet-de-poete-dianthus",
+    "nom": "Œillet de poète et dianthus de fle",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [
+        5,
+        6,
+        7
+      ],
+      "toute_annee": true,
+      "note": "œillet de poète de plein champ en mai-août en Europe ; les dianthus de fleuriste en serre (ex. 'Green Trick') sont disponibles toute l'année",
+      "sources": [
+        "https://www.rhs.org.uk/education-learning/children-young-people/family-activities/grow-it/sweet-williams",
+        "https://www.sarahraven.com/products/dianthus-barbatus-sooty",
+        "https://floraldesigninstitute.com/blogs/resources-flower-library/green-trick-dianthus"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 5,
+      "max": 14,
+      "sources": [
+        "https://postharvest.ucdavis.edu/produce-facts-sheets/sweet-william",
+        "https://floraldesigninstitute.com/blogs/resources-flower-library/dianthus-barbatus",
+        "https://floraldesigninstitute.com/blogs/resources-flower-library/green-trick-dianthus"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "fleurons-tombent",
+        "recroqueville",
+        "capitule-se-ferme",
+        "feuilles-jaunissent"
+      ],
+      "ordre": "les fleurettes de la couronne extérieure, ouvertes en premier, fanent d'abord : pétales qui s'enroulent et flétrissent (sensibilité forte à l'éthylène), pendant que celles du centre s'ouvrent encore ; la tête en dôme se mite de fleurettes fripées ; les feuilles fanent ensuite",
+      "tete": "le dôme garde sa forme mais se creuse et se tache de fleurettes flétries, d'abord sur le pourtour",
+      "petales": "fleurettes qui s'enroulent vers l'intérieur et se flétrissent (« sleepy »), puis sèchent ; restent en grande partie en place",
+      "feuilles": "jaunissent puis brunissent, surtout celles laissées dans l'eau",
+      "tige": "reste droite",
+      "couleurs": {
+        "blanc": {
+          "declin": "blanc terni, fleurettes extérieures crème (confiance basse : nuance déduite, non sourcée)",
+          "fane": "beige-brun (confiance basse : nuance déduite, non sourcée)"
+        },
+        "rose": {
+          "declin": "rose qui fonce vers le mauve (confiance basse : nuance déduite, non sourcée)",
+          "fane": "mauve sale à brun (confiance basse : nuance déduite, non sourcée)"
+        },
+        "rouge": {
+          "declin": "rouge assombri (confiance basse : nuance déduite, non sourcée)",
+          "fane": "bordeaux brun (confiance basse : nuance déduite, non sourcée)"
+        },
+        "bordeaux": {
+          "declin": "bordeaux presque noir (confiance basse : nuance déduite, non sourcée)",
+          "fane": "brun-noir mat (confiance basse : nuance déduite, non sourcée)"
+        },
+        "violet": {
+          "declin": "pourpre plus sombre (confiance basse : nuance déduite, non sourcée)",
+          "fane": "prune brunâtre (confiance basse : nuance déduite, non sourcée)"
+        },
+        "bicolore": {
+          "declin": "œil central qui fonce, bords ternis (confiance basse : nuance déduite, non sourcée)",
+          "fane": "fond beige, œil brun (confiance basse : nuance déduite, non sourcée)"
+        },
+        "vert": {
+          "declin": "('Green Trick', boules de bractées vertes) vert qui pâlit et jaunit (confiance basse : nuance déduite, non sourcée)",
+          "fane": "vert-jaune paille, la boule garde sa forme (confiance basse : nuance déduite, non sourcée)"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Sensibilité à l'éthylène et fleurettes flétries/enroulées (« withered or sleepy florets », « petal in-rolling ») : UC Davis. Fanaison de l'extérieur vers le centre du dôme déduite de l'ordre de récolte (couronne extérieure ouverte en premier). 'Green Trick' n'a pas de vraies fleurs (boules de bractées vertes) : il fane surtout par jaunissement lent, non sourcé précisément. Mode 'fleurons-tombent' plausible mais non confirmé : les fleurettes semblent plutôt se flétrir sur place.",
+      "sources": [
+        "https://postharvest.ucdavis.edu/produce-facts-sheets/sweet-william",
+        "https://floralife.com/flowers/dianthus-sweet-william/",
+        "https://floraldesigninstitute.com/blogs/resources-flower-library/dianthus-barbatus",
+        "https://hortscans.ces.ncsu.edu/uploads/e/f/effects__51a6240a5aa3b.pdf"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "reine-marguerite",
+    "nom": "Reine-marguerite",
+    "saison_vente": {
+      "mois": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "pic": [
+        8,
+        9
+      ],
+      "toute_annee": false,
+      "note": "annuelle de plein champ et de serre, de fin juin à fin octobre ; pic en août-septembre",
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/callistephus",
+        "https://www.seedaholic.com/callistephus-chinensis-chrysantella-sakura.html",
+        "https://www.plantsofdistinction.co.uk/cutting-flowers/cutting-flowers/aster-matsumoto-apricot-1150c"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 5,
+      "max": 10,
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/callistephus",
+        "https://www.johnnyseeds.com/flowers/aster"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "penche-tete",
+        "recroqueville",
+        "feuilles-recroquevillees",
+        "feuilles-jaunissent"
+      ],
+      "ordre": "le plus souvent par mauvaise alimentation en eau (bactéries dans le vase) : le feuillage flétrit et la tête se ramollit et penche ; les ligules se fripent et sèchent sur place sans tomber ; le cœur jaune (types simples) brunit",
+      "tete": "se ramollit et s'incline quand la tige est bouchée par les bactéries ; garde sa forme de capitule",
+      "petales": "ligules qui se fripent, se recourbent et sèchent en restant attachées (ne tombent pas)",
+      "feuilles": "flétrissent vite, jaunissent puis brunissent, surtout si laissées dans l'eau",
+      "tige": "rigide, reste droite ; peut plier sous la tête en cas de flétrissement",
+      "couleurs": {
+        "blanc": {
+          "declin": "blanc terni crème (confiance basse : nuance déduite, non sourcée)",
+          "fane": "beige brunâtre (confiance basse : nuance déduite, non sourcée)"
+        },
+        "rose": {
+          "declin": "rose pâli (confiance basse : nuance déduite, non sourcée)",
+          "fane": "rose-beige sale (confiance basse : nuance déduite, non sourcée)"
+        },
+        "violet": {
+          "declin": "violet pâli, légèrement bleui (confiance basse : nuance déduite, non sourcée)",
+          "fane": "lilas grisâtre à brun (confiance basse : nuance déduite, non sourcée)"
+        },
+        "bleu": {
+          "declin": "bleu-violet pâli (confiance basse : nuance déduite, non sourcée)",
+          "fane": "gris-bleu terne (confiance basse : nuance déduite, non sourcée)"
+        },
+        "rouge": {
+          "declin": "rouge cerise assombri (confiance basse : nuance déduite, non sourcée)",
+          "fane": "bordeaux brun (confiance basse : nuance déduite, non sourcée)"
+        },
+        "peche": {
+          "declin": "abricot terni (confiance basse : nuance déduite, non sourcée)",
+          "fane": "beige-brun (confiance basse : nuance déduite, non sourcée)"
+        },
+        "jaune": {
+          "declin": "jaune beurre pâli (confiance basse : nuance déduite, non sourcée)",
+          "fane": "paille (confiance basse : nuance déduite, non sourcée)"
+        },
+        "creme": {
+          "declin": "crème terni (confiance basse : nuance déduite, non sourcée)",
+          "fane": "beige paille (confiance basse : nuance déduite, non sourcée)"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Tenue (5-10 j), insensibilité à l'éthylène, sensibilité aux bactéries et flétrissement par mauvais apport d'eau : sources fleuristes/producteurs. 'Ne perd pas ses pétales' : Seedaholic. Ordre détaillé, tête qui penche et couleurs du déclin/fané : déduits, non décrits explicitement par les sources. Aucune source européenne de saison de vente (Royal FloraHolland) trouvée : saison tirée de sources fleuristes et producteurs de semences.",
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/callistephus",
+        "https://postharvest.ucdavis.edu/node/8221",
+        "https://www.seedaholic.com/callistephus-chinensis-chrysantella-sakura.html"
+      ]
+    },
+    "confiance": "basse"
+  }
+]

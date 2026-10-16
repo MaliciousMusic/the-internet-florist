@@ -1,0 +1,30 @@
+ancolie;Ancolie;Printemps & bulbes;star;secondaire
+lilas;Lilas;Printemps & bulbes;spray;focale
+freesia;Freesia;Printemps & bulbes;spike;secondaire
+viburnum-roseum;Boule-de-neige;Printemps & bulbes;globe;secondaire
+fritillaire-imperiale;Fritillaire impériale;Printemps & bulbes;star;focale
+fritillaire-meleagris;Fritillaire pintade;Printemps & bulbes;cup;texture
+fritillaire-persica;Fritillaire de Perse;Printemps & bulbes;spike;secondaire
+fritillaire-michailovskyi;Fritillaire de Michailovski et pet;Printemps & bulbes;cup;texture
+allium-grosse-tete;Ail d'ornement à grosse tête;Printemps & bulbes;custom/xAllium;focale
+allium-petit;Ail d'ornement à petite tête;Printemps & bulbes;globe;texture
+iris-hollandais;Iris de Hollande;Printemps & bulbes;star;secondaire
+iris-barbu;Iris barbu;Printemps & bulbes;star;focale
+ornithogale;Ornithogale;Printemps & bulbes;spike;secondaire
+pavot-islande;Pavot d'Islande;Printemps & bulbes;cup;focale
+camassia;Camassia;Printemps & bulbes;spike;secondaire
+eremurus;Eremurus;Printemps & bulbes;spike;secondaire
+triteleia;Triteleia;Printemps & bulbes;globe;remplissage
+jacinthe-des-bois;Jacinthe des bois;Printemps & bulbes;spike;remplissage
+scille;Scille;Printemps & bulbes;spike;remplissage
+niveole;Nivéole;Printemps & bulbes;star;remplissage
+crocus;Crocus;Printemps & bulbes;cup;secondaire
+sparaxis;Sparaxis;Printemps & bulbes;radial;secondaire
+ixia;Ixia;Printemps & bulbes;spike;remplissage
+glaieul-nain;Glaïeul nain;Printemps & bulbes;spike;secondaire
+amaryllis;Amaryllis;Printemps & bulbes;star;focale
+nerine;Nérine;Printemps & bulbes;custom/xNerine;secondaire
+cyclamen-fleur-coupee;Cyclamen de Perse;Printemps & bulbes;star;secondaire
+cyrtanthus;Lis de feu;Printemps & bulbes;star;focale
+pensee;Pensée;Printemps & bulbes;radial;secondaire
+ail-serpent;Ail serpent;Printemps & bulbes;custom/xSnake;ligne

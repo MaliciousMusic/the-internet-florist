@@ -1,0 +1,1348 @@
+[
+ {
+  "id": "boule-vert-sapin",
+  "refs": [
+   19
+  ],
+  "n": "Boule vert sapin",
+  "m": "grès émaillé brillant",
+  "family": "boule",
+  "shape": "lathe",
+  "h_cm": 21.2,
+  "prof": [
+   [
+    0.0,
+    5.16
+   ],
+   [
+    0.78,
+    5.16
+   ],
+   [
+    0.84,
+    5.34
+   ],
+   [
+    1.37,
+    5.34
+   ],
+   [
+    2.62,
+    5.88
+   ],
+   [
+    3.86,
+    6.66
+   ],
+   [
+    5.11,
+    7.26
+   ],
+   [
+    6.36,
+    8.04
+   ],
+   [
+    7.61,
+    8.7
+   ],
+   [
+    8.86,
+    9.36
+   ],
+   [
+    10.1,
+    9.96
+   ],
+   [
+    11.35,
+    10.26
+   ],
+   [
+    12.72,
+    10.44
+   ],
+   [
+    14.52,
+    10.38
+   ],
+   [
+    16.32,
+    10.14
+   ],
+   [
+    17.59,
+    9.66
+   ],
+   [
+    18.84,
+    8.64
+   ],
+   [
+    19.8,
+    7.2
+   ],
+   [
+    20.52,
+    5.4
+   ],
+   [
+    20.88,
+    4.08
+   ],
+   [
+    21.0,
+    3.9
+   ],
+   [
+    21.24,
+    3.78
+   ]
+  ],
+  "mouth_cm": 3.4,
+  "lip": "plain",
+  "lip_cm": 0.4,
+  "mat": "gloss",
+  "finish": "",
+  "col": "#2f3d29",
+  "col2": "#5a4334",
+  "tex": [],
+  "tex_notes": "Émail vert sapin très foncé, uni, épais et miroitant ; il s'arrête en léger bourrelet à 0,8 cm du sol et laisse voir un anneau de pied en grès brun chocolat non émaillé (col2), haut de 0,8 cm.",
+  "handles": null,
+  "stand": {
+   "type": "counter",
+   "w_cm": 95,
+   "h_cm": 105,
+   "col": "#3b3a37",
+   "mat": "chêne teinté anthracite",
+   "notes": "Comptoir d'accueil d'hôtel : plateau ovale en goutte d'environ 4 cm d'épaisseur, bois teinté gris anthracite au fil bien visible, posé sur un fût cylindrique en métal champagne brossé ; une sonnette de réception chromée posée devant le vase."
+  },
+  "surface": "noir",
+  "glass": null,
+  "outline": null,
+  "price_eur": 95,
+  "why": "La boule tournée à la main au grand émail vert sapin, comme une pierre polie par l'eau.",
+  "details": "Panse ovoïde à épaule haute : diamètre maximal 20,9 cm vers 61 % de la hauteur, H ≈ D (vase aussi haut que large). Le galbe se resserre vers un pied étroit (Ø 10,3 cm, environ la moitié du diamètre max) et, en haut, l'épaule plonge en arrondi vers un petit col court (ouverture Ø ≈ 7 cm), caché par les fleurs dans la photo. Pièce tournée main légèrement irrégulière : l'épaule gauche est plus haute et plus droite que la droite (on garde un profil moyen). Brillance forte : reflet blanc net de la suspension lumineuse en arc sur le haut de l'épaule gauche, fines bandes claires verticales en fuseau sur le flanc droit (reflet des lambris cannelés), quelques points spéculaires ; le bas de la panse est presque noir (ombre). Le bouquet très haut (≈ 1 m) jaillit du col, des amarantes retombantes cachent le flanc gauche."
+ },
+ {
+  "id": "urne-medicis-noire",
+  "refs": [
+   20
+  ],
+  "n": "Urne Médicis noire",
+  "m": "céramique satinée",
+  "family": "urne",
+  "shape": "lathe",
+  "h_cm": 18.9,
+  "prof": [
+   [
+    0.0,
+    4.68
+   ],
+   [
+    0.45,
+    4.91
+   ],
+   [
+    0.99,
+    4.59
+   ],
+   [
+    1.08,
+    3.69
+   ],
+   [
+    1.53,
+    3.6
+   ],
+   [
+    2.16,
+    2.52
+   ],
+   [
+    2.7,
+    1.8
+   ],
+   [
+    3.42,
+    1.53
+   ],
+   [
+    5.04,
+    2.34
+   ],
+   [
+    6.3,
+    2.52
+   ],
+   [
+    6.66,
+    3.24
+   ],
+   [
+    8.1,
+    4.41
+   ],
+   [
+    8.82,
+    5.04
+   ],
+   [
+    9.72,
+    5.26
+   ],
+   [
+    10.62,
+    5.22
+   ],
+   [
+    10.98,
+    4.68
+   ],
+   [
+    11.34,
+    4.09
+   ],
+   [
+    15.3,
+    4.14
+   ],
+   [
+    16.56,
+    5.04
+   ],
+   [
+    17.64,
+    6.66
+   ],
+   [
+    18.72,
+    8.1
+   ],
+   [
+    18.9,
+    7.83
+   ]
+  ],
+  "mouth_cm": 7.2,
+  "lip": "flared",
+  "lip_cm": 0.6,
+  "mat": "satin",
+  "finish": "",
+  "col": "#2b2e33",
+  "col2": "#5a6878",
+  "tex": [
+   "facets",
+   "relief",
+   "beads"
+  ],
+  "tex_notes": "Section octogonale : 8 pans verticaux nets sur le pied, la tige et la paroi haute. Ceinture basse (h 6,7–11 cm) bombée en 8 godrons arrondis séparés par des rangs verticaux de 4–5 perles en relief (Ø ≈ 0,5 cm). Pied à deux gradins octogonaux, le gradin bas à bord arrondi. col2 = reflet gris bleuté des pans éclairés.",
+  "handles": null,
+  "stand": {
+   "type": "stand",
+   "w_cm": 41,
+   "h_cm": 80,
+   "col": "#3a2a27",
+   "mat": "bois de rose laqué",
+   "notes": "Sellette chinoise traditionnelle (huaji) en bois de rose très foncé : plateau carré à chant mouluré d'environ 3,5 cm, ceinture et entretoises ajourées en treillis géométrique, pieds carrés droits ; le plateau verni reflète la fenêtre (gris clair)."
+  },
+  "surface": "none",
+  "glass": null,
+  "outline": null,
+  "price_eur": 260,
+  "why": "Une urne Médicis octogonale en noir profond, perchée sur une sellette de lettré chinois.",
+  "details": "Silhouette de cratère classique : pied octogonal à deux gradins (Ø 9,8 cm), tige étranglée très fine (Ø 3 cm au plus étroit) surmontée d'une bague, ceinture godronnée et perlée (Ø 10,5 cm), puis paroi haute droite et étroite (Ø 8,3 cm) qui s'évase brusquement dans le dernier quart en large lèvre ourlée (Ø 16,2 cm, plus large que tout le reste). Le haut et la lèvre sont presque entièrement cachés par les lys ; seule la pointe droite de la lèvre est visible, son diamètre est donc la mesure la moins sûre (±1 cm). Lumière froide venant de la droite : pans droits gris bleuté, pans gauches noirs. Lys rouge sang et callas blanc-rose retombent devant la ceinture."
+ },
+ {
+  "id": "cylindre-chrome",
+  "refs": [
+   21
+  ],
+  "n": "Cylindre chromé",
+  "m": "métal chromé poli",
+  "family": "cylindre",
+  "shape": "lathe",
+  "h_cm": 13.3,
+  "prof": [
+   [
+    0.0,
+    7.91
+   ],
+   [
+    0.13,
+    8.08
+   ],
+   [
+    0.26,
+    8.1
+   ],
+   [
+    1.7,
+    8.1
+   ],
+   [
+    3.4,
+    8.1
+   ],
+   [
+    5.1,
+    8.1
+   ],
+   [
+    6.8,
+    8.1
+   ],
+   [
+    8.5,
+    8.1
+   ],
+   [
+    10.2,
+    8.1
+   ],
+   [
+    11.9,
+    8.1
+   ],
+   [
+    13.09,
+    8.1
+   ],
+   [
+    13.26,
+    8.08
+   ],
+   [
+    13.35,
+    8.02
+   ]
+  ],
+  "mouth_cm": 7.95,
+  "lip": "thin",
+  "lip_cm": 0.15,
+  "mat": "metal",
+  "finish": "polished",
+  "col": "#9b9894",
+  "col2": "#f5f5f3",
+  "tex": [],
+  "tex_notes": "Aucune texture : miroir parfait. Reflets en bandes verticales nettes : une bande blanche éclatante large de 1,8 cm à 25 % de la largeur depuis la gauche (fenêtre), bandes grises et brun-gris foncé ailleurs, plus le reflet rose-crème des fleurs en haut ; liseré clair au pied (reflet du socle blanc).",
+  "handles": null,
+  "stand": {
+   "type": "block",
+   "w_cm": 80,
+   "h_cm": 90,
+   "col": "#ebe8e3",
+   "mat": "bois peint blanc",
+   "notes": "Grand socle-meuble en bois peint blanc mat légèrement patiné (petites éraflures), plateau débordant de 2 cm à chant droit, façade à panneau encadré ; il dépasse du cadre en largeur et en bas."
+  },
+  "surface": "blanc",
+  "glass": null,
+  "outline": null,
+  "price_eur": 45,
+  "why": "Un cylindre bas en chrome miroir qui renvoie toute la pièce et fait flotter le bouquet.",
+  "details": "Cylindre droit large et bas (Ø 16,2 cm × H 13,3 cm, rapport H/D 0,82), paroi verticale parfaitement droite, arête du fond très légèrement arrondie (r ≈ 0,2 cm), bord supérieur fin sans lèvre (caché par les grappes de pieris et les phalaenopsis qui débordent). Le rendu doit être un miroir : pas de couleur propre, uniquement des reflets en bandes verticales qui suivent la courbure (bande blanche franche côté gauche, partie droite plus sombre), ombre de contact fine et sombre sous le fond. Composition débordante : grappes de pieris retombant sur le flanc gauche, hellébore crème devant le flanc droit."
+ },
+ {
+  "id": "tube-acier-disque",
+  "refs": [
+   24
+  ],
+  "n": "Soliflore tube acier",
+  "m": "inox poli",
+  "family": "cylindre",
+  "shape": "lathe",
+  "h_cm": 14.8,
+  "prof": [
+   [
+    0.0,
+    2.66
+   ],
+   [
+    0.11,
+    2.84
+   ],
+   [
+    0.46,
+    2.84
+   ],
+   [
+    0.67,
+    2.73
+   ],
+   [
+    0.77,
+    2.45
+   ],
+   [
+    0.81,
+    2.1
+   ],
+   [
+    0.88,
+    1.47
+   ],
+   [
+    0.95,
+    1.35
+   ],
+   [
+    14.7,
+    1.35
+   ],
+   [
+    14.81,
+    1.32
+   ]
+  ],
+  "mouth_cm": 1.25,
+  "lip": "thin",
+  "lip_cm": 0.1,
+  "mat": "metal",
+  "finish": "polished",
+  "col": "#a3a19d",
+  "col2": "#f2f2f0",
+  "tex": [],
+  "tex_notes": "Inox poli miroir : fine bande spéculaire blanche verticale (0,5 cm) un peu à gauche de l'axe, flanc droit gris moyen ; disque de base bombé avec un reflet en croissant clair sur l'arête avant.",
+  "handles": null,
+  "stand": null,
+  "surface": "beton",
+  "glass": null,
+  "outline": null,
+  "price_eur": 29,
+  "why": "Le tube à essai d'acier sur son galet de métal : un trait de lumière qui porte tout un bouquet sec.",
+  "details": "Tube cylindrique fin (Ø 2,7 cm, H ≈ 14 cm au-dessus du disque) planté au centre d'un disque de base massif (Ø 5,7 cm, épaisseur 0,8 cm) à bord arrondi en tore et dessus légèrement bombé ; congé discret entre tube et disque. Proportion clé : le disque fait environ 2 × le diamètre du tube, le tube environ 5 × son diamètre en hauteur. Le haut du tube est caché par des hortensias stabilisés verts et roses. Posé sur une table ronde à plateau gris effet béton/compact. Le bouquet (fleurs séchées et stabilisées : anthuriums roses et violets, rose fuchsia, amarante rose retombant devant le tube) est très volumineux par rapport au tube."
+ },
+ {
+  "id": "coupe-pied-noire",
+  "refs": [
+   25
+  ],
+  "n": "Coupe sur pied noire",
+  "m": "céramique mate",
+  "family": "coupe",
+  "shape": "lathe",
+  "h_cm": 11.7,
+  "prof": [
+   [
+    0.0,
+    4.02
+   ],
+   [
+    0.19,
+    4.05
+   ],
+   [
+    1.24,
+    3.96
+   ],
+   [
+    2.47,
+    3.84
+   ],
+   [
+    3.71,
+    3.75
+   ],
+   [
+    5.07,
+    3.66
+   ],
+   [
+    5.19,
+    3.78
+   ],
+   [
+    5.31,
+    4.08
+   ],
+   [
+    5.56,
+    4.26
+   ],
+   [
+    5.87,
+    4.62
+   ],
+   [
+    6.18,
+    4.92
+   ],
+   [
+    6.49,
+    5.22
+   ],
+   [
+    7.11,
+    5.76
+   ],
+   [
+    7.73,
+    6.03
+   ],
+   [
+    8.65,
+    6.6
+   ],
+   [
+    9.27,
+    6.9
+   ],
+   [
+    10.2,
+    7.02
+   ],
+   [
+    11.12,
+    6.96
+   ],
+   [
+    11.74,
+    6.84
+   ]
+  ],
+  "mouth_cm": 6.3,
+  "lip": "plain",
+  "lip_cm": 0.5,
+  "mat": "matte",
+  "finish": "",
+  "col": "#1d1e22",
+  "col2": null,
+  "tex": [],
+  "tex_notes": "Noir mat uni, très légère pointe de bleu ; quelques fines stries de tournage horizontales visibles seulement sur le pied.",
+  "handles": null,
+  "stand": null,
+  "surface": "bois",
+  "glass": null,
+  "outline": null,
+  "price_eur": 45,
+  "why": "Une coupe ronde perchée sur un pied cylindrique, noire et mate comme une pièce d'atelier.",
+  "details": "Deux volumes nets : un pied cylindrique trapu (H 5 cm, Ø 7,3 cm en haut, 8 cm en bas, léger évasement) et, posé dessus avec un ressaut franc, un bol profond hémisphérique (Ø max 14 cm) dont le dessous arrondi déborde largement du pied ; la paroi devient presque verticale dans le dernier tiers, bord simple. Le haut du bol est caché par une rose noire et de la mousse espagnole ; la hauteur du bord est la cote la moins sûre (±0,6 cm). Reflet doux vertical sur le pied, bol très sombre. Table en bois gris-brun foncé au fil marqué, mur en béton brut gris taché ; bouquet gothique (cymbidiums prune, chardons noirs, amarante noire retombante qui pend devant la coupe)."
+ },
+ {
+  "id": "coupe-cobalt-mouchetee",
+  "refs": [
+   29
+  ],
+  "n": "Coupe soufflée cobalt",
+  "m": "verre soufflé moucheté",
+  "family": "coupe",
+  "shape": "lathe",
+  "h_cm": 14.5,
+  "prof": [
+   [
+    0.0,
+    3.4
+   ],
+   [
+    0.17,
+    4.0
+   ],
+   [
+    0.52,
+    4.8
+   ],
+   [
+    0.96,
+    5.4
+   ],
+   [
+    1.4,
+    5.82
+   ],
+   [
+    1.83,
+    6.25
+   ],
+   [
+    2.27,
+    6.76
+   ],
+   [
+    2.7,
+    7.06
+   ],
+   [
+    3.14,
+    7.4
+   ],
+   [
+    3.58,
+    7.78
+   ],
+   [
+    4.45,
+    8.46
+   ],
+   [
+    5.32,
+    8.8
+   ],
+   [
+    6.19,
+    9.22
+   ],
+   [
+    7.06,
+    9.52
+   ],
+   [
+    7.94,
+    9.78
+   ],
+   [
+    8.81,
+    10.2
+   ],
+   [
+    9.68,
+    10.71
+   ],
+   [
+    10.55,
+    11.05
+   ],
+   [
+    12.3,
+    11.56
+   ],
+   [
+    13.95,
+    11.86
+   ],
+   [
+    14.48,
+    11.82
+   ]
+  ],
+  "mouth_cm": 11.5,
+  "lip": "plain",
+  "lip_cm": 0.4,
+  "mat": "glass",
+  "finish": "blown",
+  "col": "#3a62cc",
+  "col2": "#d3dcf4",
+  "tex": [
+   "speck"
+  ],
+  "tex_notes": "Fond bleu cobalt (#2b52c0 à #1a3896 à l'ombre) couvert de tirets blancs et bleu pâle très serrés, longs de 0,3 à 1,5 cm, épais de 1–2 mm, tous orientés à l'horizontale (ils suivent le tour de la coupe avec une légère ondulation), couvrant environ 40 % de la surface ; plus clairs et plus denses sur le flanc gauche éclairé.",
+  "handles": null,
+  "stand": null,
+  "surface": "marbre",
+  "glass": {
+   "tint": "#2f5bc8",
+   "opacity": 0.97,
+   "water_cm": 0,
+   "extra": "Verre opaque (couche cobalt + éclats blancs), on ne voit ni l'eau ni les tiges ; reflet bleu net sur le marbre poli sous la coupe."
+  },
+  "outline": null,
+  "price_eur": 75,
+  "why": "Une coupe de verre soufflé à la bouche, bleu cobalt balayé de blanc comme une mer agitée.",
+  "details": "Coupe évasée large et basse : Ø ≈ 23,7 cm au bord pour H 14,5 cm ; fond étroit (Ø 6,8 cm) très arrondi, sans pied, la paroi monte en courbe rapide puis presque droite à ~60° et se redresse vers la verticale dans le dernier quart. Pièce soufflée un peu irrégulière : le flanc droit s'évase plus que le gauche (jusqu'à 1,5 cm d'écart en haut). Bord caché par les hortensias mauves et les renoncules. Surface brillante avec reflets doux. Posée sur un plateau de marbre blanc veiné de gris (type Calacatta), mur gris anthracite."
+ },
+ {
+  "id": "balustre-argent-patine",
+  "refs": [
+   30
+  ],
+  "n": "Vase balustre argenté",
+  "m": "métal argenté patiné",
+  "family": "vase",
+  "shape": "lathe",
+  "h_cm": 26.7,
+  "prof": [
+   [
+    0.0,
+    3.96
+   ],
+   [
+    0.79,
+    3.78
+   ],
+   [
+    1.88,
+    2.62
+   ],
+   [
+    2.76,
+    1.48
+   ],
+   [
+    3.94,
+    0.77
+   ],
+   [
+    6.12,
+    0.56
+   ],
+   [
+    6.34,
+    1.01
+   ],
+   [
+    6.69,
+    1.01
+   ],
+   [
+    6.82,
+    0.75
+   ],
+   [
+    8.31,
+    1.29
+   ],
+   [
+    9.62,
+    2.58
+   ],
+   [
+    11.37,
+    3.61
+   ],
+   [
+    13.12,
+    4.28
+   ],
+   [
+    14.87,
+    4.49
+   ],
+   [
+    16.62,
+    4.28
+   ],
+   [
+    17.93,
+    3.85
+   ],
+   [
+    18.8,
+    3.01
+   ],
+   [
+    19.29,
+    2.15
+   ],
+   [
+    21.65,
+    1.59
+   ],
+   [
+    23.18,
+    1.83
+   ],
+   [
+    25.36,
+    2.21
+   ],
+   [
+    26.72,
+    3.18
+   ]
+  ],
+  "mouth_cm": 3.0,
+  "lip": "wavy",
+  "lip_cm": 0.15,
+  "mat": "metal",
+  "finish": "patina",
+  "col": "#a7a196",
+  "col2": "#6f6247",
+  "tex": [],
+  "tex_notes": "Métal argenté terni : fond gris-argent lumineux avec grandes plages miroir claires sur la panse (reflets déformés), voile gris foncé dans les creux et taches de patine ambrée/olive (col2) surtout à l'épaule et au col ; quelques petites bosses qui cassent les reflets. Lèvre ondulée à 6 festons d'environ 0,3 cm d'amplitude.",
+  "handles": null,
+  "stand": null,
+  "surface": "noir",
+  "glass": null,
+  "outline": null,
+  "price_eur": 65,
+  "why": "Le vase balustre d'argenterie ancienne, terni juste ce qu'il faut, chiné pour un seul bouquet.",
+  "details": "Silhouette de balustre classique très élancée (H 26,7 cm) : pied rond en dôme (Ø 7,9 cm) à petite jupe verticale de 0,5 cm, tige en trompette très fine (Ø 1,1 cm) avec une bague plate saillante (Ø 2 cm, épaisse 0,35 cm) à 6,3 cm du sol, panse ovoïde (Ø max 9 cm à 55 % de la hauteur) qui se resserre en épaule vers un anneau mouluré à la base du col, col long et étroit (Ø 3,2 cm au plus fin) qui s'évase en corolle jusqu'à la lèvre festonnée (Ø 6,4 cm). Pièce ancienne légèrement déformée : le col est un peu décalé vers la droite. Posé près du bord d'une table en bois très sombre presque noire (lustrée), devant un mur taupe ; lys tigrés jaunes, hortensia violet, asters, pigamon."
+ },
+ {
+  "id": "bulbe-pied-sable",
+  "refs": [
+   32
+  ],
+  "n": "Bulbe sur pied sable",
+  "m": "grès moucheté brut",
+  "family": "boule",
+  "shape": "lathe",
+  "h_cm": 16.4,
+  "prof": [
+   [
+    0.0,
+    2.55
+   ],
+   [
+    0.1,
+    2.68
+   ],
+   [
+    4.4,
+    2.68
+   ],
+   [
+    4.65,
+    2.8
+   ],
+   [
+    4.85,
+    3.1
+   ],
+   [
+    5.25,
+    3.38
+   ],
+   [
+    5.75,
+    4.38
+   ],
+   [
+    6.25,
+    5.18
+   ],
+   [
+    6.75,
+    5.6
+   ],
+   [
+    7.25,
+    6.1
+   ],
+   [
+    7.75,
+    6.5
+   ],
+   [
+    8.75,
+    6.95
+   ],
+   [
+    9.75,
+    7.18
+   ],
+   [
+    10.5,
+    7.25
+   ],
+   [
+    11.25,
+    7.18
+   ],
+   [
+    12.25,
+    6.95
+   ],
+   [
+    13.25,
+    6.5
+   ],
+   [
+    14.25,
+    5.6
+   ],
+   [
+    15.25,
+    4.38
+   ],
+   [
+    15.9,
+    3.1
+   ],
+   [
+    16.3,
+    2.1
+   ],
+   [
+    16.4,
+    1.9
+   ]
+  ],
+  "mouth_cm": 1.7,
+  "lip": "plain",
+  "lip_cm": 0.4,
+  "mat": "matte",
+  "finish": "",
+  "col": "#d9d2c6",
+  "col2": "#6b5e52",
+  "tex": [
+   "speck"
+  ],
+  "tex_notes": "Grès sableux non émaillé à grain visible (aspect sucre/papier de verre) et fines mouchetures brun foncé de 0,5–1 mm, environ 15 par 10 cm², réparties au hasard.",
+  "handles": null,
+  "stand": {
+   "type": "block",
+   "w_cm": 45,
+   "h_cm": 90,
+   "col": "#efeeec",
+   "mat": "bois laqué blanc",
+   "notes": "Socle de galerie blanc mat à arêtes vives ; le vase est posé près de son bord avant gauche, le socle sort du cadre à droite et en bas."
+  },
+  "surface": "blanc",
+  "glass": null,
+  "outline": null,
+  "price_eur": 65,
+  "why": "Une sphère de grès sablé posée sur un pied colonne, la silhouette sculpturale des céramistes danois.",
+  "details": "Sphère légèrement aplatie (Ø 14,5 cm, hauteur de la boule ≈ 12 cm, équateur à 10,5 cm du sol) posée sur un pied cylindrique droit étroit (Ø 5,3 cm, H 4,5 cm) ; raccord en congé concave très court entre le pied et le dessous de la boule. Le dessus de la sphère et l'ouverture sont cachés par les phalaenopsis et tulipes : on suppose une petite ouverture ronde affleurante (Ø ≈ 3,5 cm) au sommet, à confirmer. Lumière douce de gauche, côté droit ombré gris-brun. Mur blanc légèrement texturé."
+ },
+ {
+  "id": "calice-celadon-pans",
+  "refs": [
+   33
+  ],
+  "n": "Vase céladon à pans",
+  "m": "porcelaine céladon",
+  "family": "calice",
+  "shape": "lathe",
+  "h_cm": 20.5,
+  "prof": [
+   [
+    0.0,
+    3.02
+   ],
+   [
+    0.22,
+    3.13
+   ],
+   [
+    0.65,
+    3.13
+   ],
+   [
+    0.76,
+    2.81
+   ],
+   [
+    1.46,
+    2.24
+   ],
+   [
+    2.59,
+    2.02
+   ],
+   [
+    4.21,
+    1.75
+   ],
+   [
+    4.64,
+    1.81
+   ],
+   [
+    4.75,
+    1.94
+   ],
+   [
+    5.29,
+    2.27
+   ],
+   [
+    5.83,
+    2.7
+   ],
+   [
+    6.37,
+    3.02
+   ],
+   [
+    6.91,
+    3.24
+   ],
+   [
+    7.45,
+    3.4
+   ],
+   [
+    7.99,
+    3.51
+   ],
+   [
+    8.96,
+    3.7
+   ],
+   [
+    9.94,
+    3.83
+   ],
+   [
+    11.23,
+    3.94
+   ],
+   [
+    12.85,
+    4.05
+   ],
+   [
+    16.09,
+    4.13
+   ],
+   [
+    20.41,
+    4.32
+   ],
+   [
+    20.52,
+    4.29
+   ]
+  ],
+  "mouth_cm": 3.9,
+  "lip": "plain",
+  "lip_cm": 0.35,
+  "mat": "gloss",
+  "finish": "",
+  "col": "#6f998c",
+  "col2": "#e9eee9",
+  "tex": [
+   "facets",
+   "beads"
+  ],
+  "tex_notes": "Section octogonale sur toute la hauteur : 8 pans, chaque arête soulignée d'un filet blanc net de 1–2 mm (col2) là où l'émail céladon s'amincit ; un pan fait face à l'observateur (largeur visible 3,4 cm). Pied octogonal plat dont la tranche porte une frise de petites perles blanches serrées (≈ 2 mm, une rangée). Émail céladon glacé, plus clair sur les pans éclairés (#79a499), vert profond côté ombre (#26372f).",
+  "handles": null,
+  "stand": {
+   "type": "stool",
+   "w_cm": 38,
+   "h_cm": 45,
+   "col": "#d9d2c8",
+   "mat": "bois cérusé",
+   "notes": "Petit tabouret / sellette en bois blanchi à la chaux, plateau usé à nœuds visibles, chant avant légèrement arrondi."
+  },
+  "surface": "bois",
+  "glass": null,
+  "outline": null,
+  "price_eur": 79,
+  "why": "Un calice octogonal au céladon coréen, dont chaque arête s'illumine d'un filet blanc.",
+  "details": "Forme de calice haut et étroit (H 20,5 cm, Ø 8,3 cm au bord) : pied octogonal plat (Ø 6,3 cm, épais 0,7 cm), tige octogonale tronconique un peu plus large en bas (Ø 4,5 → 3,5 cm), coupe à fond arrondi qui s'élargit vite puis monte presque droite en s'évasant à peine jusqu'au bord. Bord octogonal caché par les feuilles de jasmin, la cote du bord est extrapolée (±0,5 cm). Arrangement ikebana haut : pivoines rose poudré, lys jaunes, jasmin, delphinium bleu ; mur gris clair avec retour gris plus foncé à droite."
+ },
+ {
+  "id": "cylindre-verre-bouquet",
+  "refs": [
+   34
+  ],
+  "n": "Cylindre de verre",
+  "m": "verre clair",
+  "family": "cylindre",
+  "shape": "lathe",
+  "h_cm": 17.5,
+  "prof": [
+   [
+    0,
+    8.3
+   ],
+   [
+    0.3,
+    8.5
+   ],
+   [
+    2,
+    8.5
+   ],
+   [
+    4,
+    8.5
+   ],
+   [
+    6,
+    8.5
+   ],
+   [
+    8,
+    8.5
+   ],
+   [
+    10,
+    8.5
+   ],
+   [
+    12,
+    8.5
+   ],
+   [
+    14,
+    8.5
+   ],
+   [
+    16,
+    8.5
+   ],
+   [
+    17.2,
+    8.5
+   ],
+   [
+    17.5,
+    8.4
+   ]
+  ],
+  "mouth_cm": 8.0,
+  "lip": "plain",
+  "lip_cm": 0.5,
+  "mat": "glass",
+  "finish": "clear",
+  "col": "#e8eef0",
+  "col2": null,
+  "tex": [],
+  "tex_notes": "",
+  "handles": null,
+  "stand": null,
+  "surface": "none",
+  "glass": {
+   "tint": "#e8eef0",
+   "opacity": 0.1,
+   "water_cm": 10,
+   "extra": "Fond épais (≈ 1,5 cm) dont seule l'arête accroche la lumière ; tiges du bouquet rond lié en spirale visibles à travers le verre, écartées en éventail jusqu'aux parois ; rubans de satin (vieux rose et framboise) qui pendent devant le vase depuis le nœud posé sur le bord."
+  },
+  "outline": null,
+  "price_eur": 35,
+  "why": "Le cylindre de verre clair du fleuriste, qui laisse le bouquet lié et ses rubans faire tout le spectacle.",
+  "details": "Mesure incertaine : sur fond noir le verre est presque invisible, seules l'arête lumineuse du fond (largeur ≈ 12,5 cm) et des tiges qui s'écartent jusqu'à ≈ 16 cm de large sont lisibles. On retient un cylindre droit Ø 17 × H 17,5 cm, le nœud du bouquet (ligature + nœud de ruban) reposant sur le bord. Scène sur fond noir total, pas de table visible. Bouquet tropical lié : héliconias rouges, anthuriums mauves, gloriosas, kniphofias, asparagus teinté fuchsia, feuilles violettes."
+ },
+ {
+  "id": "colonne-blanche",
+  "refs": [
+   35
+  ],
+  "n": "Colonne blanche",
+  "m": "laque blanche mate",
+  "family": "vase",
+  "shape": "box",
+  "h_cm": 60,
+  "prof": [
+   [
+    0,
+    15
+   ],
+   [
+    60,
+    15
+   ]
+  ],
+  "mouth_cm": 13.8,
+  "lip": "square",
+  "lip_cm": 1.2,
+  "mat": "matte",
+  "finish": "",
+  "col": "#f2eee8",
+  "col2": null,
+  "tex": [],
+  "tex_notes": "Surface lisse sans aucun motif ; arêtes verticales vives (rayon < 2 mm).",
+  "handles": null,
+  "stand": null,
+  "surface": "none",
+  "glass": null,
+  "outline": {
+   "w_cm": 30,
+   "d_cm": 30
+  },
+  "price_eur": 149,
+  "why": "La colonne blanche des grandes compositions : un monolithe net qui laisse les lys déborder en cascade.",
+  "details": "Parallélépipède à section carrée vu de face (largeur 30 cm mesurée d'après les lys orientaux de ≈ 18 cm ; profondeur supposée égale). Le bas sort du cadre : hauteur visible ≥ 43 cm, 60 cm retenus par estimation. Le dessus n'est pas visible (caméra au niveau du bord supérieur), l'ouverture est supposée carrée à parois de 1,2 cm. Blanc chaud mat, face avant uniformément éclairée, ombre portée douce sur le mur à gauche. Les lys roses et les lis tigrés orangés débordent largement de l'angle supérieur gauche et retombent devant la face jusqu'à mi-hauteur visible."
+ },
+ {
+  "id": "pot-agate-rose",
+  "refs": [
+   36
+  ],
+  "n": "Pot agate rosé",
+  "m": "grès marbré (agate)",
+  "family": "pot",
+  "shape": "lathe",
+  "h_cm": 13.4,
+  "prof": [
+   [
+    0.0,
+    2.42
+   ],
+   [
+    0.22,
+    2.61
+   ],
+   [
+    0.99,
+    2.94
+   ],
+   [
+    1.59,
+    3.38
+   ],
+   [
+    2.15,
+    3.71
+   ],
+   [
+    2.69,
+    4.04
+   ],
+   [
+    3.25,
+    4.37
+   ],
+   [
+    3.79,
+    4.7
+   ],
+   [
+    4.4,
+    5.09
+   ],
+   [
+    4.95,
+    5.42
+   ],
+   [
+    5.5,
+    5.69
+   ],
+   [
+    6.05,
+    5.97
+   ],
+   [
+    6.71,
+    6.13
+   ],
+   [
+    7.81,
+    6.13
+   ],
+   [
+    8.42,
+    6.05
+   ],
+   [
+    8.96,
+    5.86
+   ],
+   [
+    9.4,
+    5.53
+   ],
+   [
+    10.84,
+    5.42
+   ],
+   [
+    11.38,
+    5.25
+   ],
+   [
+    11.94,
+    5.03
+   ],
+   [
+    12.81,
+    4.92
+   ],
+   [
+    13.37,
+    4.84
+   ]
+  ],
+  "mouth_cm": 4.2,
+  "lip": "plain",
+  "lip_cm": 0.6,
+  "mat": "satin",
+  "finish": "",
+  "col": "#cbb9ad",
+  "col2": "#8a6a5a",
+  "tex": [
+   "agate"
+  ],
+  "tex_notes": "Terre marbrée (agateware) : volutes et veines horizontales ondulées mêlant beige rosé (col), taupe-brun (col2), brun chocolat et blanc crème ; bandes de 0,3 à 1,5 cm qui s'enroulent et se replient en arcs, plus contrastées sur le haut du pot, plus fondues vers le pied.",
+  "handles": null,
+  "stand": null,
+  "surface": "bois",
+  "glass": null,
+  "outline": null,
+  "price_eur": 55,
+  "why": "Un petit pot en terre marbrée où chaque volute est unique, comme une pierre d'agate polie.",
+  "details": "Pot trapu et ventru (H 13,4 cm, Ø max 12,3 cm à 45 % de la hauteur) : petit pied (Ø 4,8 cm) à talon arrondi, bas de panse qui se gonfle régulièrement, épaule qui rentre puis col large et court presque droit (Ø ≈ 10 cm) jusqu'au bord. Le bord est caché par les hyménocallis blanches dont les longs tépales pendent devant le pot ; le flanc droit est masqué par la carotte sauvage. Lumière de gauche, côté droit dans l'ombre brun rosé. Table en bois rouge-brun (acajou) griffée de traces blanchâtres, mur enduit à la chaux beige rosé."
+ },
+ {
+  "id": "coupe-cone-noire",
+  "refs": [
+   37
+  ],
+  "n": "Coupe sur cône noire",
+  "m": "céramique mate",
+  "family": "calice",
+  "shape": "lathe",
+  "h_cm": 20.4,
+  "prof": [
+   [
+    0.0,
+    5.46
+   ],
+   [
+    0.13,
+    5.59
+   ],
+   [
+    0.4,
+    5.56
+   ],
+   [
+    7.9,
+    3.9
+   ],
+   [
+    7.95,
+    6.17
+   ],
+   [
+    8.17,
+    7.02
+   ],
+   [
+    8.5,
+    7.38
+   ],
+   [
+    9.17,
+    7.77
+   ],
+   [
+    10.04,
+    7.93
+   ],
+   [
+    11.05,
+    7.96
+   ],
+   [
+    15.53,
+    7.96
+   ],
+   [
+    20.02,
+    7.96
+   ],
+   [
+    20.42,
+    7.9
+   ]
+  ],
+  "mouth_cm": 7.4,
+  "lip": "plain",
+  "lip_cm": 0.6,
+  "mat": "matte",
+  "finish": "",
+  "col": "#2b2b2a",
+  "col2": null,
+  "tex": [],
+  "tex_notes": "Noir mat uni, très légèrement bleuté sur le cône éclairé.",
+  "handles": null,
+  "stand": {
+   "type": "column",
+   "w_cm": 32,
+   "h_cm": 90,
+   "col": "#ebe6e1",
+   "mat": "bois laqué blanc",
+   "notes": "Colonne-socle de galerie blanche à section carrée, arêtes vives ; le vase est centré dessus, les orchidées retombent sur sa face avant."
+  },
+  "surface": "blanc",
+  "glass": null,
+  "outline": null,
+  "price_eur": 59,
+  "why": "Un cylindre noir posé sur un cône renversé : une silhouette graphique, presque architecturale.",
+  "details": "Deux volumes géométriques superposés : en bas un cône tronqué plein qui s'élargit vers le sol (Ø 7,8 cm en haut, 11,2 cm en bas, H 7,9 cm), en haut un cylindre droit large (Ø 15,9 cm, H 12,3 cm) à arête inférieure arrondie (r ≈ 1,5 cm) et dessous plat qui déborde nettement du cône (ressaut de 4 cm de chaque côté). Bord supérieur simple, caché par les œillets d'Inde. Ombres d'arbre en contre-jour projetées sur le mur crème, lumière chaude de fin de journée venant de gauche."
+ }
+]

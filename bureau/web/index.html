@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; connect-src 'none'">
+<title>Mes bouquets sur mon ordinateur · Belai's Garden</title>
+<link rel="stylesheet" href="style.css">
+<script type="module" src="js/web/app.js"></script>
+</head>
+<body>
+<main>
+  <h1>Mes bouquets sur mon ordinateur</h1>
+  <p class="sous">Relie ton portefeuille à Belai Bureau : tes bouquets vivront sur ton bureau, et seulement chez toi.</p>
+
+  <section id="depuis-appli" hidden>
+    <p>Ouvre cette page depuis <b>Belai Bureau</b> : clic sur l’icône Belai près de l’horloge, puis
+      « Relier mon portefeuille… ». Elle saura alors de quel ordinateur il s’agit.</p>
+  </section>
+
+  <section id="etape-portefeuille">
+    <h2>1. Choisis ton portefeuille</h2>
+    <div id="portefeuilles"></div>
+    <p id="sansportefeuille" hidden>Aucun portefeuille trouvé dans ce navigateur. Installe une extension de portefeuille,
+      puis recharge la page.</p>
+  </section>
+
+  <section id="etape-bouquets" hidden>
+    <h2>2. Tes bouquets <small id="adresse"></small></h2>
+    <ul id="liste"></ul>
+    <button id="relier" class="lien" hidden>Relier sans poser de bouquet</button>
+    <p class="note">Ton portefeuille te demandera une signature, une seule fois pour cet ordinateur.
+      Elle ne coûte rien et n’autorise aucune transaction. Si un bouquet quitte ton portefeuille, il quitte aussi ton bureau.</p>
+  </section>
+
+  <p id="etat" role="status"></p>
+</main>
+</body>
+</html>

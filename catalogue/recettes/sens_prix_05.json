@@ -1,0 +1,1248 @@
+[
+ {
+  "id": "cupressus-cypres-bleus",
+  "prix": 4.0,
+  "sens": "Éternité et mémoire",
+  "occ": [
+   "courage"
+  ],
+  "eviter": [
+   "amour",
+   "anniv",
+   "bravo"
+  ],
+  "note": "Cyparissos, changé en cyprès par Apollon pour pleurer à jamais ; arbre des cimetières"
+ },
+ {
+  "id": "juniperus-genevrier",
+  "prix": 4.2,
+  "sens": "Secours et refuge bienveillant",
+  "occ": [
+   "courage",
+   "merci",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "« Secours et protection » (victorien) ; il aurait abrité la Sainte Famille"
+ },
+ {
+  "id": "taxus-baccata-if",
+  "prix": 3.0,
+  "sens": "Immortalité et recueillement",
+  "occ": [
+   "courage"
+  ],
+  "eviter": [
+   "amour",
+   "anniv",
+   "bravo"
+  ],
+  "note": "« Tristesse » au XIXe ; arbre des cimetières, millénaire et toxique"
+ },
+ {
+  "id": "cryptomeria-japonica",
+  "prix": 3.8,
+  "sens": "Longévité et paix intérieure",
+  "occ": [
+   "courage",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Sugi, arbre sacré des sanctuaires shintō, réputé vivre des millénaires"
+ },
+ {
+  "id": "picea-epicea",
+  "prix": 4.4,
+  "sens": "Espoir tenace dans l'adversité",
+  "occ": [
+   "courage",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "« Espoir dans l'adversité » (victorien) ; l'épicéa, sapin de Noël classique"
+ },
+ {
+  "id": "cerisier-du-japon-sato-zakura",
+  "prix": 10.5,
+  "sens": "Beauté éphémère et émerveillement",
+  "occ": [
+   "amour",
+   "anniv",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Sakura : la vie fugace, célébrée chaque printemps au Japon par le hanami"
+ },
+ {
+  "id": "cerisiers-hatifs-fleurs-simples",
+  "prix": 12.5,
+  "sens": "Promesse d'un printemps précoce",
+  "occ": [
+   "courage",
+   "bravo",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Keio-zakura forcé pour le Nouvel An au Japon : le printemps avant l'heure"
+ },
+ {
+  "id": "abricotier-du-japon-ume",
+  "prix": 13.0,
+  "sens": "Endurance fleurie sous la neige",
+  "occ": [
+   "courage",
+   "bravo"
+  ],
+  "eviter": [],
+  "note": "Un des « trois amis de l'hiver » chinois, avec le pin et le bambou"
+ },
+ {
+  "id": "amandier-en-fleurs",
+  "prix": 10.0,
+  "sens": "Renouveau et vie qui commence",
+  "occ": [
+   "bravo",
+   "courage",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Van Gogh l'a peint pour la naissance de son neveu ; « étourderie » au XIXe"
+ },
+ {
+  "id": "amandier-de-chine-cerisier-nain",
+  "prix": 9.0,
+  "sens": "Allégresse en pompons roses",
+  "occ": [
+   "anniv",
+   "amour",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "sens d'usage ; rameaux fins entièrement vêtus de pompons doubles"
+ },
+ {
+  "id": "pecher-a-fleurs",
+  "prix": 10.0,
+  "sens": "Amour naissant et heureux présage",
+  "occ": [
+   "amour",
+   "anniv"
+  ],
+  "eviter": [],
+  "note": "En Chine, la « chance des fleurs de pêcher » désigne la chance en amour"
+ },
+ {
+  "id": "pommier-pommetier-en-fleurs",
+  "prix": 9.5,
+  "sens": "Préférence et tendre promesse",
+  "occ": [
+   "amour",
+   "anniv",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "« Préférence » dans le langage des fleurs du XIXe ; promesse des fruits"
+ },
+ {
+  "id": "pommetier-a-fruits",
+  "prix": 8.0,
+  "sens": "Récolte heureuse des vergers",
+  "occ": [
+   "merci",
+   "anniv",
+   "bravo"
+  ],
+  "eviter": [],
+  "note": "La pomme, fruit d'abondance ; pommes d'or du jardin des Hespérides"
+ },
+ {
+  "id": "cognassier-du-japon",
+  "prix": 8.5,
+  "sens": "Vivacité des premières fleurs",
+  "occ": [
+   "bravo",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "sens d'usage ; fleurs vives plaquées sur le bois nu dès janvier"
+ },
+ {
+  "id": "magnolia-branches",
+  "prix": 16.0,
+  "sens": "Noblesse et persévérance",
+  "occ": [
+   "bravo",
+   "anniv",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "L'une des plus anciennes fleurs ; le yulan blanc est l'emblème de Shanghai"
+ },
+ {
+  "id": "forsythia",
+  "prix": 3.8,
+  "sens": "Élan impatient vers le printemps",
+  "occ": [
+   "juste",
+   "anniv",
+   "bravo"
+  ],
+  "eviter": [],
+  "note": "Fleurit avant ses feuilles ; « anticipation » dans l'usage moderne"
+ },
+ {
+  "id": "amelanchier",
+  "prix": 6.8,
+  "sens": "Nuée blanche d'un matin d'avril",
+  "occ": [
+   "juste",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "sens d'usage ; fleurs étoilées mêlées de jeunes feuilles cuivrées"
+ },
+ {
+  "id": "cornouiller-a-fleurs",
+  "prix": 12.0,
+  "sens": "Constance et grâce durable",
+  "occ": [
+   "amour",
+   "anniv",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "« Durée » au XIXe ; la lance de Romulus, en cornouiller, prit racine"
+ },
+ {
+  "id": "hamamelis",
+  "prix": 12.5,
+  "sens": "Sortilège lumineux de l'hiver",
+  "occ": [
+   "courage",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Ses rameaux servaient de baguettes de sourcier ; fleurit en plein hiver"
+ },
+ {
+  "id": "viorne-d-hiver",
+  "prix": 6.2,
+  "sens": "Douceur parfumée en plein froid",
+  "occ": [
+   "courage",
+   "merci",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "sens d'usage ; bouquets roses au parfum sucré de novembre à mars"
+ },
+ {
+  "id": "spiree",
+  "prix": 3.6,
+  "sens": "Pureté joyeuse des noces",
+  "occ": [
+   "amour",
+   "bravo"
+  ],
+  "eviter": [],
+  "note": "Surnommée « couronne de mariée » pour ses arceaux de fleurs blanches"
+ },
+ {
+  "id": "deutzia",
+  "prix": 6.0,
+  "sens": "Délicatesse en pluie d'étoiles",
+  "occ": [
+   "merci",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "sens d'usage ; dédié par Thunberg à son mécène Johan van der Deutz"
+ },
+ {
+  "id": "seringat",
+  "prix": 6.5,
+  "sens": "Tendresse fraternelle parfumée",
+  "occ": [
+   "merci",
+   "anniv",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Philadelphus, « qui aime son frère » en grec : l'amour fraternel"
+ },
+ {
+  "id": "groseillier-a-fleurs",
+  "prix": 6.0,
+  "sens": "Entrain printanier en grappes",
+  "occ": [
+   "juste",
+   "anniv"
+  ],
+  "eviter": [],
+  "note": "sens d'usage ; introduit d'Amérique du Nord par David Douglas"
+ },
+ {
+  "id": "enkianthus-dodan",
+  "prix": 19.5,
+  "sens": "Harmonie épurée à la japonaise",
+  "occ": [
+   "bravo",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "sens d'usage ; branche reine de l'ikebana, rouge vif à l'automne"
+ },
+ {
+  "id": "glycine",
+  "prix": 18.5,
+  "sens": "Tendre attachement, bienvenue",
+  "occ": [
+   "amour",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "Au Japon (fuji), accueil et amour qui ne se défait jamais"
+ },
+ {
+  "id": "mitsumata",
+  "prix": 8.5,
+  "sens": "Équilibre et force tranquille",
+  "occ": [
+   "juste",
+   "bravo"
+  ],
+  "eviter": [],
+  "note": "sens d'usage ; rameaux en trois, écorce du papier des billets japonais"
+ },
+ {
+  "id": "saule-a-chatons",
+  "prix": 3.2,
+  "sens": "Caresse soyeuse et liberté",
+  "occ": [
+   "juste",
+   "courage"
+  ],
+  "eviter": [],
+  "note": "Saule : liberté ; en Europe du Nord et de l'Est, il fait les Rameaux"
+ },
+ {
+  "id": "saule-fascie-sekka",
+  "prix": 4.8,
+  "sens": "Liberté aux lignes sculptées",
+  "occ": [
+   "bravo",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Saule : liberté ; la fasciation aplatit et enroule ses tiges"
+ },
+ {
+  "id": "saule-tortueux",
+  "prix": 3.5,
+  "sens": "Liberté qui trace sa propre voie",
+  "occ": [
+   "courage",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Saule : liberté dans le langage des fleurs ; tiges en tire-bouchon"
+ },
+ {
+  "id": "cornouiller-a-bois-colore",
+  "prix": 3.2,
+  "sens": "Vigueur colorée des jours gris",
+  "occ": [
+   "courage",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Cornouiller : « durée » ; son bois rouge illumine les jardins d'hiver"
+ },
+ {
+  "id": "bouleau",
+  "prix": 4.2,
+  "sens": "Nouveaux départs, page blanche",
+  "occ": [
+   "bravo",
+   "courage",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Beith, première lettre de l'alphabet oghamique : l'arbre des commencements"
+ },
+ {
+  "id": "noisetier-tortueux-chatons",
+  "prix": 7.5,
+  "sens": "Réconciliation et sagesse",
+  "occ": [
+   "merci",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "« Réconciliation » au XIXe ; la noisette donnait la sagesse chez les Celtes"
+ },
+ {
+  "id": "houx-a-baies",
+  "prix": 6.0,
+  "sens": "Prévoyance et garde du foyer",
+  "occ": [
+   "courage",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "« Prévoyance » au XIXe ; toujours vert, on le disait gardien des maisons"
+ },
+ {
+  "id": "houx-verticille-ilex",
+  "prix": 9.5,
+  "sens": "Baies vives pour fêter l'hiver",
+  "occ": [
+   "anniv",
+   "bravo",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "sens d'usage ; baies serrées sur bois nu, de l'automne à Noël"
+ },
+ {
+  "id": "laurier-tin-a-baies",
+  "prix": 3.5,
+  "sens": "Sollicitude et attention",
+  "occ": [
+   "amour",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "« Je meurs si l'on me néglige » : langage des fleurs victorien"
+ },
+ {
+  "id": "viornes-a-baies",
+  "prix": 5.2,
+  "sens": "Attachement à la terre natale",
+  "occ": [
+   "amour",
+   "merci",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Kalyna, emblème de l'Ukraine, chantée pour sa beauté et l'amour"
+ },
+ {
+  "id": "rosier-a-cynorrhodons",
+  "prix": 6.0,
+  "sens": "Fruits fidèles après les roses",
+  "occ": [
+   "courage",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Fruit de l'églantier, fleur de la poésie ; riche en vitamine C"
+ },
+ {
+  "id": "cotoneaster",
+  "prix": 3.2,
+  "sens": "Petits bonheurs généreux",
+  "occ": [
+   "juste",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "sens d'usage ; baies rouges qui nourrissent merles et grives l'hiver"
+ },
+ {
+  "id": "buisson-ardent",
+  "prix": 3.5,
+  "sens": "Ardeur et vigilance",
+  "occ": [
+   "courage",
+   "bravo"
+  ],
+  "eviter": [],
+  "note": "Pyracantha, « épine de feu » en grec ; haie défensive aux baies vives"
+ },
+ {
+  "id": "callicarpa",
+  "prix": 5.5,
+  "sens": "Bel automne aux perles violettes",
+  "occ": [
+   "juste",
+   "anniv"
+  ],
+  "eviter": [],
+  "note": "Callicarpa signifie « beau fruit » en grec ; sens d'usage"
+ },
+ {
+  "id": "sorbier-baies",
+  "prix": 5.0,
+  "sens": "Protection contre le mauvais sort",
+  "occ": [
+   "courage",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Arbre gardien des Celtes : croix de sorbier contre les sortilèges"
+ },
+ {
+  "id": "celastre-bittersweet",
+  "prix": 5.8,
+  "sens": "Doux-amer de l'arrière-saison",
+  "occ": [
+   "juste"
+  ],
+  "eviter": [],
+  "note": "sens d'usage ; capsules orange ouvertes sur des arilles écarlates"
+ },
+ {
+  "id": "troene-a-baies",
+  "prix": 3.0,
+  "sens": "Discrétion et sobriété",
+  "occ": [
+   "juste"
+  ],
+  "eviter": [],
+  "note": "« Interdiction » dans le langage victorien, comme une haie ; baies toxiques"
+ },
+ {
+  "id": "nandina-a-baies",
+  "prix": 6.0,
+  "sens": "Obstacles détournés, bonne fortune",
+  "occ": [
+   "courage",
+   "bravo",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Au Japon, nanten évoque « détourner les difficultés » : porte-bonheur"
+ },
+ {
+  "id": "arbousier-a-fruits",
+  "prix": 6.5,
+  "sens": "Estime et amour sincère",
+  "occ": [
+   "amour",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "« Estime et amour » (victorien) ; arbre emblème de Madrid avec l'ours"
+ },
+ {
+  "id": "ronce-mures-en-fruits",
+  "prix": 5.0,
+  "sens": "Gourmandise des fins d'été",
+  "occ": [
+   "juste",
+   "anniv"
+  ],
+  "eviter": [],
+  "note": "sens d'usage ; souvenir des mûres cueillies au bord des chemins"
+ },
+ {
+  "id": "liane-de-kiwi",
+  "prix": 6.5,
+  "sens": "Volutes enlacées, complicité",
+  "occ": [
+   "amour",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "sens d'usage ; liane séchée tout en boucles, nouée en couronnes"
+ },
+ {
+  "id": "vigne-sarments",
+  "prix": 7.0,
+  "sens": "Convivialité et abondance",
+  "occ": [
+   "anniv",
+   "bravo",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "Attribut de Dionysos ; la vigne dit l'abondance et la fête"
+ },
+ {
+  "id": "erable-du-japon",
+  "prix": 5.5,
+  "sens": "Contemplation des couleurs d'automne",
+  "occ": [
+   "juste",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "Au Japon, le momijigari célèbre ses feuilles rougies d'automne"
+ },
+ {
+  "id": "chene-branches-glands",
+  "prix": 3.5,
+  "sens": "Force et hospitalité",
+  "occ": [
+   "bravo",
+   "courage",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "Philémon fut changé en chêne pour prix de son hospitalité (Ovide)"
+ },
+ {
+  "id": "hetre-branches",
+  "prix": 4.0,
+  "sens": "Prospérité et savoir",
+  "occ": [
+   "bravo",
+   "merci",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "« Prospérité » (victorien) ; en allemand, Buche (hêtre) a donné Buch (livre)"
+ },
+ {
+  "id": "meleze-a-cones",
+  "prix": 5.0,
+  "sens": "Audace et franchise",
+  "occ": [
+   "bravo",
+   "courage"
+  ],
+  "eviter": [],
+  "note": "« Audace » dans le langage victorien ; conifère qui perd ses aiguilles"
+ },
+ {
+  "id": "pin-a-cones",
+  "prix": 3.8,
+  "sens": "Constance toujours verte",
+  "occ": [
+   "courage",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "En Asie, le pin dit la longévité ; la pigne, symbole antique de fécondité"
+ },
+ {
+  "id": "gui",
+  "prix": 5.5,
+  "sens": "Baiser porte-bonheur du Nouvel An",
+  "occ": [
+   "amour",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "« Au gui l'an neuf » : s'embrasser dessous promet un an de bonheur"
+ },
+ {
+  "id": "sanguisorbe",
+  "prix": 4.0,
+  "sens": "Cœur gai et vitalité",
+  "occ": [
+   "juste",
+   "anniv"
+  ],
+  "eviter": [],
+  "note": "« Cœur joyeux » (victorien) ; Sanguisorba, la plante qui étanche le sang"
+ },
+ {
+  "id": "pieris-japonica",
+  "prix": 4.5,
+  "sens": "Dévotion et âme pure",
+  "occ": [
+   "amour",
+   "merci",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Au Japon (asebi), dévotion ; plante toxique qui « enivre les chevaux »"
+ },
+ {
+  "id": "pigamon",
+  "prix": 5.2,
+  "sens": "Grâce aérienne et rêveuse",
+  "occ": [
+   "juste",
+   "amour"
+  ],
+  "eviter": [],
+  "note": "sens d'usage ; nuages de fleurs minuscules au bout de tiges fines"
+ },
+ {
+  "id": "cyclamen-fleur-coupee",
+  "prix": 4.0,
+  "sens": "Affection pudique et sincère",
+  "occ": [
+   "amour",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "« Timidité » dans le langage victorien ; fleur d'hiver aux pétales retroussés"
+ },
+ {
+  "id": "kniphofia",
+  "prix": 4.0,
+  "sens": "Enthousiasme incandescent",
+  "occ": [
+   "bravo",
+   "anniv"
+  ],
+  "eviter": [],
+  "note": "sens d'usage ; épis ardents surnommés « tison du diable » ou « faux-aloès »"
+ },
+ {
+  "id": "hymenocallis",
+  "prix": 11.5,
+  "sens": "Élégance immaculée",
+  "occ": [
+   "amour",
+   "merci",
+   "bravo"
+  ],
+  "eviter": [],
+  "note": "sens d'usage ; couronne blanche frangée au parfum suave"
+ },
+ {
+  "id": "crocosmia",
+  "prix": 2.6,
+  "sens": "Gerbe d'étincelles estivales",
+  "occ": [
+   "juste",
+   "anniv",
+   "bravo"
+  ],
+  "eviter": [],
+  "note": "Crocosmia, « odeur de safran » : ses fleurs séchées en dégagent l'arôme"
+ },
+ {
+  "id": "bomarea",
+  "prix": 3.5,
+  "sens": "Joie vagabonde et colorée",
+  "occ": [
+   "juste",
+   "anniv"
+  ],
+  "eviter": [],
+  "note": "sens d'usage ; cousine grimpante de l'alstroemère, venue des Andes"
+ },
+ {
+  "id": "ixora",
+  "prix": 3.8,
+  "sens": "Ferveur et offrande sacrée",
+  "occ": [
+   "merci",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Nom tiré d'Ishvara (Shiva) ; ses fleurs sont offertes aux dieux en Inde"
+ },
+ {
+  "id": "cyrtanthus",
+  "prix": 6.5,
+  "sens": "Renaissance après l'épreuve",
+  "occ": [
+   "courage",
+   "bravo"
+  ],
+  "eviter": [],
+  "note": "Certains cyrtanthus ne fleurissent qu'après le passage des feux de brousse"
+ },
+ {
+  "id": "fraisier-des-bois",
+  "prix": 4.5,
+  "sens": "Bonté parfaite et innocente",
+  "occ": [
+   "amour",
+   "merci",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Dans l'art médiéval, la fraise évoque la Vierge et la bonté parfaite"
+ },
+ {
+  "id": "tamaris",
+  "prix": 5.0,
+  "sens": "Brume rose des rivages",
+  "occ": [
+   "juste",
+   "courage"
+  ],
+  "eviter": [],
+  "note": "sens d'usage ; arbuste des côtes qui résiste au sel et aux embruns"
+ },
+ {
+  "id": "ricin-capsules",
+  "prix": 4.0,
+  "sens": "Exubérance aux reliefs piquants",
+  "occ": [
+   "juste"
+  ],
+  "eviter": [
+   "amour",
+   "courage"
+  ],
+  "note": "« Palma Christi » pour sa feuille en main ; graines très toxiques"
+ },
+ {
+  "id": "caladium",
+  "prix": 5.5,
+  "sens": "Cœur ouvert et fantaisie",
+  "occ": [
+   "amour",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Surnommé « cœur-de-Jésus » ou « ailes d'ange » pour ses feuilles"
+ },
+ {
+  "id": "loropetalum",
+  "prix": 3.8,
+  "sens": "Raffinement pourpre et profond",
+  "occ": [
+   "juste",
+   "amour"
+  ],
+  "eviter": [],
+  "note": "Loropetalum, « pétale en lanière » en grec ; sens d'usage"
+ },
+ {
+  "id": "tweedia",
+  "prix": 4.5,
+  "sens": "Sérénité bleu ciel",
+  "occ": [
+   "bravo",
+   "amour",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "sens d'usage ; bleu poudré rare, prisé des mariages et des naissances"
+ },
+ {
+  "id": "baptisia-gousses",
+  "prix": 4.2,
+  "sens": "Patience qui porte ses fruits",
+  "occ": [
+   "courage",
+   "bravo"
+  ],
+  "eviter": [],
+  "note": "Baptisia, du grec « teindre » : le faux indigo des colons ; sens d'usage"
+ },
+ {
+  "id": "grenade-branche",
+  "prix": 10.0,
+  "sens": "Fécondité et générosité",
+  "occ": [
+   "amour",
+   "bravo",
+   "anniv"
+  ],
+  "eviter": [],
+  "note": "Grains de Perséphone ; symbole antique de vie et d'abondance"
+ },
+ {
+  "id": "figuier-branche",
+  "prix": 9.5,
+  "sens": "Douceur nourricière du Sud",
+  "occ": [
+   "merci",
+   "anniv",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Romulus et Rémus furent recueillis sous le figuier Ruminal (Tite-Live)"
+ },
+ {
+  "id": "litchi-branche",
+  "prix": 11.0,
+  "sens": "Délice rare et faveur impériale",
+  "occ": [
+   "amour",
+   "merci",
+   "bravo"
+  ],
+  "eviter": [],
+  "note": "Fruit chéri de Yang Guifei, apporté à cheval jusqu'au palais (Du Mu)"
+ },
+ {
+  "id": "kumquat-branche",
+  "prix": 9.0,
+  "sens": "Chance dorée et réussite",
+  "occ": [
+   "bravo",
+   "anniv",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "Jin ju, « orange d'or » : porte-bonheur du Nouvel An lunaire"
+ },
+ {
+  "id": "fil-aluminium-decoratif",
+  "prix": 2.0,
+  "sens": "Lignes modernes et inventives",
+  "occ": [
+   "juste",
+   "bravo"
+  ],
+  "eviter": [],
+  "note": "sens d'usage ; fil façonné en spirales et volutes autour des tiges"
+ },
+ {
+  "id": "plume-autruche-teinte",
+  "prix": 4.5,
+  "sens": "Légèreté glamour et festive",
+  "occ": [
+   "anniv",
+   "bravo"
+  ],
+  "eviter": [],
+  "note": "Plume de Maât, vérité et justice en Égypte ; star des revues de music-hall"
+ },
+ {
+  "id": "chaines-strass-perles",
+  "prix": 3.0,
+  "sens": "Éclat précieux des grands jours",
+  "occ": [
+   "anniv",
+   "amour",
+   "bravo"
+  ],
+  "eviter": [],
+  "note": "sens d'usage ; en France, les noces de perle fêtent trente ans de mariage"
+ },
+ {
+  "id": "papier-emballage-floral",
+  "prix": 2.0,
+  "sens": "Présent joliment enveloppé",
+  "occ": [
+   "juste",
+   "merci",
+   "anniv"
+  ],
+  "eviter": [],
+  "note": "sens d'usage ; feuilles superposées en éventail, à la coréenne"
+ },
+ {
+  "id": "ruban-soie-mousseline",
+  "prix": 4.5,
+  "sens": "Lien délicat noué avec soin",
+  "occ": [
+   "amour",
+   "anniv",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "sens d'usage ; soie teinte, nouée en longues traînes autour du bouquet"
+ },
+ {
+  "id": "pensee",
+  "prix": 1.8,
+  "sens": "Je pense à toi",
+  "occ": [
+   "amour",
+   "courage",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Son nom vient de « pensée » ; chez Shakespeare, elle sert de filtre d'amour"
+ },
+ {
+  "id": "rose-eglantine",
+  "prix": 5.0,
+  "sens": "Poésie et simplicité sauvage",
+  "occ": [
+   "amour",
+   "juste",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "L'églantine d'or récompensait les poètes aux Jeux floraux de Toulouse"
+ },
+ {
+  "id": "sandersonia",
+  "prix": 6.5,
+  "sens": "Gaieté en clochettes d'or",
+  "occ": [
+   "anniv",
+   "bravo",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "« Clochette de Noël » d'Afrique du Sud, où elle fleurit en décembre"
+ },
+ {
+  "id": "ail-serpent",
+  "prix": 3.5,
+  "sens": "Espièglerie en boucles vertes",
+  "occ": [
+   "juste"
+  ],
+  "eviter": [
+   "amour"
+  ],
+  "note": "Hampe d'ail qui s'enroule ; l'ail éloignait le mauvais œil (folklore)"
+ },
+ {
+  "id": "lis-tigre",
+  "prix": 6.0,
+  "sens": "Fierté et éclat sauvage",
+  "occ": [
+   "bravo",
+   "anniv"
+  ],
+  "eviter": [],
+  "note": "« Orgueil » et « richesse » au XIXe ; lis sauvage d'Asie orientale"
+ },
+ {
+  "id": "lis-oriental-double",
+  "prix": 11.0,
+  "sens": "Majesté et pureté épanouies",
+  "sens_couleur": {
+   "blanc": "Pureté solennelle",
+   "rose": "Admiration et tendresse"
+  },
+  "occ": [
+   "amour",
+   "anniv",
+   "bravo"
+  ],
+  "eviter": [],
+  "note": "Lis : majesté et pureté dans le langage des fleurs ; doubles et sans pollen"
+ },
+ {
+  "id": "clematite-clochettes",
+  "prix": 6.0,
+  "sens": "Charme de l'esprit, ingéniosité",
+  "occ": [
+   "bravo",
+   "merci",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "« Beauté de l'esprit » (victorien) ; clochettes penchées en étoile"
+ },
+ {
+  "id": "pentas",
+  "prix": 3.5,
+  "sens": "Étoiles de gaieté tropicale",
+  "occ": [
+   "juste",
+   "anniv"
+  ],
+  "eviter": [],
+  "note": "sens d'usage ; ombelles d'étoiles qui attirent les papillons"
+ },
+ {
+  "id": "geranium-vivace",
+  "prix": 3.0,
+  "sens": "Bonheur simple des jardins",
+  "occ": [
+   "juste",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "Du grec geranos, la grue, pour son fruit en bec ; sens d'usage"
+ },
+ {
+  "id": "coreopsis",
+  "prix": 2.7,
+  "sens": "Bonne humeur de tous les instants",
+  "occ": [
+   "juste",
+   "anniv",
+   "courage"
+  ],
+  "eviter": [],
+  "note": "« Toujours joyeux » (victorien) ; graines en forme de punaise"
+ },
+ {
+  "id": "bruyere",
+  "prix": 2.5,
+  "sens": "Solitude paisible des landes",
+  "sens_couleur": {
+   "blanc": "Porte-bonheur et vœux exaucés"
+  },
+  "occ": [
+   "courage",
+   "juste"
+  ],
+  "eviter": [
+   "amour"
+  ],
+  "note": "« Solitude » au XIXe ; la bruyère blanche porte chance en Écosse"
+ },
+ {
+  "id": "gerbera-araignee",
+  "prix": 3.2,
+  "sens": "Joie pétillante et décoiffée",
+  "occ": [
+   "anniv",
+   "bravo",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Dédié à Traugott Gerber ; gaieté dans l'usage moderne, pétales effilés"
+ },
+ {
+  "id": "cosmos-chocolat",
+  "prix": 4.8,
+  "sens": "Désir gourmand et velouté",
+  "occ": [
+   "amour",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Parfum de chocolat ; éteint à l'état sauvage, multiplié par bouture"
+ },
+ {
+  "id": "fustet-plumes",
+  "prix": 5.0,
+  "sens": "Mystère vaporeux et enveloppant",
+  "occ": [
+   "juste",
+   "anniv"
+  ],
+  "eviter": [],
+  "note": "sens d'usage ; plumets dits « perruques » ; son bois teignait en jaune"
+ },
+ {
+  "id": "branche-lichen",
+  "prix": 4.5,
+  "sens": "Sagesse du temps qui passe",
+  "occ": [
+   "juste",
+   "courage"
+  ],
+  "eviter": [],
+  "note": "sens d'usage ; le lichen ne prospère qu'en air pur"
+ },
+ {
+  "id": "pivoine-feuillage",
+  "prix": 2.2,
+  "sens": "Écrin de prospérité",
+  "occ": [
+   "juste",
+   "anniv"
+  ],
+  "eviter": [],
+  "note": "Feuille de la pivoine, fleur de la richesse et de l'honneur en Chine"
+ },
+ {
+  "id": "robinier",
+  "prix": 2.3,
+  "sens": "Amitié et élégance",
+  "occ": [
+   "merci",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Faux acacia dédié à Jean Robin ; le plus vieil arbre de Paris en est un"
+ },
+ {
+  "id": "coleus",
+  "prix": 3.0,
+  "sens": "Fantaisie haute en couleur",
+  "occ": [
+   "juste",
+   "anniv"
+  ],
+  "eviter": [],
+  "note": "sens d'usage ; feuillage bigarré, surnommé « ortie peinte » en anglais"
+ },
+ {
+  "id": "begonia-feuillage",
+  "prix": 6.5,
+  "sens": "Préciosité finement ciselée",
+  "occ": [
+   "juste",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "Dédié à Michel Bégon, intendant de la Marine ; sens d'usage"
+ },
+ {
+  "id": "vigne-feuilles",
+  "prix": 2.8,
+  "sens": "Flamboyance des vendanges",
+  "occ": [
+   "juste",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "Feuilles de Dionysos ; rougies, elles annoncent la fin des vendanges"
+ },
+ {
+  "id": "fusain-aile",
+  "prix": 3.5,
+  "sens": "Ton image gravée en moi",
+  "occ": [
+   "amour",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "« Vos charmes sont gravés dans mon cœur » ; son bois donne le fusain"
+ },
+ {
+  "id": "calla-feuilles",
+  "prix": 3.0,
+  "sens": "Distinction aux courbes souples",
+  "occ": [
+   "juste",
+   "amour"
+  ],
+  "eviter": [],
+  "note": "Feuille de la calla, fleur de la « beauté magnifique » (victorien)"
+ },
+ {
+  "id": "anthurium-cristal",
+  "prix": 8.5,
+  "sens": "Luxe feutré aux reflets d'argent",
+  "occ": [
+   "bravo",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "sens d'usage ; feuille de velours aux nervures argentées"
+ },
+ {
+  "id": "hellebore-feuilles",
+  "prix": 2.5,
+  "sens": "Apaisement des inquiétudes",
+  "occ": [
+   "courage",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Rose de Noël : « délivre-moi de mon anxiété » ; plante toxique"
+ },
+ {
+  "id": "chrysantheme-feuilles",
+  "prix": 2.0,
+  "sens": "Fidélité du souvenir",
+  "occ": [
+   "courage",
+   "juste"
+  ],
+  "eviter": [
+   "amour",
+   "anniv",
+   "bravo"
+  ],
+  "note": "Feuille du chrysanthème, fleur de Toussaint en France, de longévité en Asie"
+ },
+ {
+  "id": "gloriosa-feuillage",
+  "prix": 2.8,
+  "sens": "Élan conquérant et gloire",
+  "occ": [
+   "bravo",
+   "courage"
+  ],
+  "eviter": [],
+  "note": "Liane de la gloriosa, fleur nationale du Zimbabwe ; plante toxique"
+ },
+ {
+  "id": "anemone-sauvage",
+  "prix": 3.0,
+  "sens": "Beauté libre qui revient chaque printemps",
+  "occ": [
+   "juste",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "Forme sauvage de l'anémone des fleuristes : elle refleurit chaque printemps dans les prés et au pied des haies"
+ }
+]

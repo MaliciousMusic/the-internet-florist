@@ -1,0 +1,1254 @@
+[
+ {
+  "id": "lis-oriental",
+  "prix": 10.5,
+  "sens": "Majesté parfumée et séduction",
+  "sens_couleur": {
+   "blanc": "Pureté royale",
+   "rose": "Tendre admiration",
+   "rouge": "Passion brûlante"
+  },
+  "occ": [
+   "amour",
+   "anniv",
+   "bravo"
+  ],
+  "eviter": [],
+  "note": "« Majesté » au XIXe siècle ; la fleur de lys héraldique, emblème des rois de France."
+ },
+ {
+  "id": "lis-ot-orienpet",
+  "prix": 11.5,
+  "sens": "Grandeur rayonnante",
+  "sens_couleur": {
+   "blanc": "Respect et sérénité",
+   "jaune": "Gratitude lumineuse",
+   "rose": "Affection radieuse",
+   "rouge": "Amour vibrant"
+  },
+  "occ": [
+   "bravo",
+   "anniv",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "Hérite du sens noble du lis ; hybride récent d'oriental et de trompette."
+ },
+ {
+  "id": "lis-asiatique-la",
+  "prix": 5.5,
+  "sens": "Joie franche tournée vers le ciel",
+  "sens_couleur": {
+   "blanc": "Candeur et innocence",
+   "jaune": "Gaieté solaire",
+   "orange": "Confiance et fierté",
+   "rose": "Tendresse enjouée",
+   "rouge": "Amour déclaré"
+  },
+  "occ": [
+   "anniv",
+   "merci",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Sens des couleurs du lis selon l'usage moderne des fleuristes."
+ },
+ {
+  "id": "lis-longiflorum-trompette",
+  "prix": 8.8,
+  "sens": "Pureté, espérance et renouveau",
+  "occ": [
+   "courage",
+   "merci",
+   "bravo"
+  ],
+  "eviter": [],
+  "note": "Dit lis de Pâques : la tradition chrétienne y voit pureté et résurrection."
+ },
+ {
+  "id": "alstroemere",
+  "prix": 2.6,
+  "sens": "Amitié fidèle et dévouement",
+  "occ": [
+   "merci",
+   "anniv",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Dédiée à Clas Alströmer, élève de Linné ; amitié durable dans l'usage moderne."
+ },
+ {
+  "id": "amaryllis-hippeastrum",
+  "prix": 10.0,
+  "sens": "Fierté et beauté éclatante",
+  "occ": [
+   "bravo",
+   "anniv",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "« Fierté » au XIXe siècle ; nom de la bergère des Bucoliques de Virgile."
+ },
+ {
+  "id": "tubereuse",
+  "prix": 6.5,
+  "sens": "Volupté au parfum enivrant",
+  "occ": [
+   "amour",
+   "anniv"
+  ],
+  "eviter": [
+   "courage"
+  ],
+  "note": "« Volupté » au XIXe siècle ; longtemps cultivée à Grasse pour la parfumerie."
+ },
+ {
+  "id": "rudbeckia",
+  "prix": 2.6,
+  "sens": "Justice et encouragement solaire",
+  "occ": [
+   "courage",
+   "bravo",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "« Justice » dans le langage victorien ; dédiée aux Rudbeck, savants d'Uppsala."
+ },
+ {
+  "id": "echinacea",
+  "prix": 3.5,
+  "sens": "Force intérieure et vitalité",
+  "occ": [
+   "courage",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; plante médicinale des Amérindiens, réputée fortifiante."
+ },
+ {
+  "id": "nigelle",
+  "prix": 2.5,
+  "sens": "Amour voilé de mystère",
+  "occ": [
+   "amour",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Dite « cheveux de Vénus » ; les Anglais la nomment « l'amour dans la brume »."
+ },
+ {
+  "id": "clematite",
+  "prix": 7.5,
+  "sens": "Beauté de l'esprit, charme ingénieux",
+  "occ": [
+   "merci",
+   "bravo",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "« Artifice » au XIXe s. (herbe aux gueux) ; beauté de l'esprit chez les Victoriens."
+ },
+ {
+  "id": "achillee",
+  "prix": 3.0,
+  "sens": "Soin, guérison et courage",
+  "occ": [
+   "courage",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "Achille en aurait pansé ses guerriers, d'où son nom ; plante vulnéraire."
+ },
+ {
+  "id": "trachelium",
+  "prix": 3.0,
+  "sens": "Nuage d'apaisement",
+  "occ": [
+   "courage",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; du grec trachelos, « cou », pour d'anciens remèdes de la gorge."
+ },
+ {
+  "id": "bleuet",
+  "prix": 2.3,
+  "sens": "Délicatesse et sentiment timide",
+  "occ": [
+   "juste",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "« Délicatesse » au XIXe siècle ; le Bleuet de France honore les combattants."
+ },
+ {
+  "id": "godetia-clarkia",
+  "prix": 2.8,
+  "sens": "Grâce satinée de l'été",
+  "occ": [
+   "juste",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; pétales de satin, d'où son nom anglais de « satin flower »."
+ },
+ {
+  "id": "tagete-oeillet-d-inde",
+  "prix": 2.2,
+  "sens": "Ferveur festive et dorée",
+  "occ": [
+   "anniv",
+   "juste"
+  ],
+  "eviter": [
+   "amour"
+  ],
+  "note": "Fleur d'offrande en Inde et pour le Día de Muertos ; « jalousie » chez les Victoriens."
+ },
+ {
+  "id": "souci-calendula",
+  "prix": 2.4,
+  "sens": "Compassion et chaleur partagée",
+  "occ": [
+   "courage",
+   "juste"
+  ],
+  "eviter": [
+   "amour"
+  ],
+  "note": "Du latin solsequia, « qui suit le soleil » ; « peine » au XIXe siècle."
+ },
+ {
+  "id": "immortelle-xerochrysum",
+  "prix": 2.8,
+  "sens": "Attachement qui ne fane jamais",
+  "occ": [
+   "amour",
+   "anniv"
+  ],
+  "eviter": [],
+  "note": "Garde forme et couleur une fois séchée, d'où l'éternité qu'on lui prête."
+ },
+ {
+  "id": "sauge-salvia",
+  "prix": 2.6,
+  "sens": "Estime sincère et sagesse",
+  "occ": [
+   "merci",
+   "bravo"
+  ],
+  "eviter": [],
+  "note": "« Estime » au XIXe siècle ; du latin salvare, « sauver », plante qui soigne."
+ },
+ {
+  "id": "bouvardia",
+  "prix": 4.2,
+  "sens": "Enthousiasme et joie de vivre",
+  "occ": [
+   "anniv",
+   "bravo",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Dédiée à Charles Bouvard, médecin de Louis XIII ; « enthousiasme » selon les fleuristes."
+ },
+ {
+  "id": "liatris",
+  "prix": 2.7,
+  "sens": "Persévérance joyeuse",
+  "occ": [
+   "courage",
+   "bravo"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; épi plumeux qui fleurit du sommet vers la base, d'un seul élan."
+ },
+ {
+  "id": "aconit",
+  "prix": 4.6,
+  "sens": "Bravoure chevaleresque",
+  "occ": [
+   "bravo",
+   "juste"
+  ],
+  "eviter": [
+   "amour",
+   "courage"
+  ],
+  "note": "Chevalerie chez les Victoriens (fleur en casque) ; né de l'écume de Cerbère (Ovide)."
+ },
+ {
+  "id": "phalaenopsis",
+  "prix": 24.0,
+  "sens": "Amour raffiné, grâce de papillon",
+  "sens_couleur": {
+   "blanc": "Élégance pure",
+   "rose": "Grâce et tendresse",
+   "violet": "Admiration et dignité"
+  },
+  "occ": [
+   "amour",
+   "merci",
+   "anniv"
+  ],
+  "eviter": [],
+  "note": "Du grec phalaina, « phalène » ; luxe et raffinement dans l'usage moderne."
+ },
+ {
+  "id": "cymbidium-grandes-fleurs",
+  "prix": 28.0,
+  "sens": "Noblesse d'âme et vertu",
+  "occ": [
+   "bravo",
+   "merci",
+   "anniv"
+  ],
+  "eviter": [],
+  "note": "Le « lan » chinois loué par Confucius, symbole de vertu et de noblesse d'âme."
+ },
+ {
+  "id": "cymbidium-mini",
+  "prix": 14.0,
+  "sens": "Distinction discrète et durable",
+  "occ": [
+   "merci",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "L'orchidée des « quatre gentilshommes » de la peinture chinoise ; très durable."
+ },
+ {
+  "id": "dendrobium-coupe",
+  "prix": 6.5,
+  "sens": "Affection légère et joyeuse",
+  "occ": [
+   "juste",
+   "anniv",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; l'orchidée des colliers d'accueil d'Hawaï et de Thaïlande."
+ },
+ {
+  "id": "dendrobium-nobile",
+  "prix": 7.5,
+  "sens": "Largesse et noblesse simple",
+  "occ": [
+   "merci",
+   "anniv"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; nobile, « noble » en latin, pour ses cannes couvertes de fleurs."
+ },
+ {
+  "id": "vanda",
+  "prix": 20.0,
+  "sens": "Admiration pour un être rare",
+  "occ": [
+   "amour",
+   "bravo",
+   "anniv"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; nom sanskrit ; la Vanda Miss Joaquim, fleur nationale de Singapour."
+ },
+ {
+  "id": "ascocenda",
+  "prix": 10.0,
+  "sens": "Petit feu de joie coloré",
+  "occ": [
+   "juste",
+   "anniv"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; vanda miniature aux couleurs vives et à la longue tenue."
+ },
+ {
+  "id": "mokara",
+  "prix": 7.0,
+  "sens": "Optimisme ensoleillé",
+  "occ": [
+   "anniv",
+   "bravo",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; hybride d'orchidées d'Asie du Sud-Est aux tons chauds."
+ },
+ {
+  "id": "aranda",
+  "prix": 6.2,
+  "sens": "Simplicité généreuse",
+  "occ": [
+   "juste",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; croisement d'arachnis et de vanda, pilier des fleurs d'Asie."
+ },
+ {
+  "id": "arachnis-aranthera",
+  "prix": 7.8,
+  "sens": "Audace graphique et singularité",
+  "occ": [
+   "bravo",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; pétales effilés en pattes d'araignée ou de scorpion (arachnis)."
+ },
+ {
+  "id": "oncidium",
+  "prix": 7.3,
+  "sens": "Pas de danse et cœur léger",
+  "occ": [
+   "anniv",
+   "juste",
+   "bravo"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; chaque fleur évoque une danseuse en jupe, d'où « dame qui danse »."
+ },
+ {
+  "id": "cambria",
+  "prix": 10.0,
+  "sens": "Raffinement inattendu",
+  "occ": [
+   "merci",
+   "anniv"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; hybrides modernes aux fleurs marbrées, tachetées comme un léopard."
+ },
+ {
+  "id": "odontoglossum",
+  "prix": 12.0,
+  "sens": "Engouement passionné",
+  "occ": [
+   "bravo",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "Star de l'orchidomanie victorienne : un O. crispum se payait une fortune."
+ },
+ {
+  "id": "brassia",
+  "prix": 13.0,
+  "sens": "Fantaisie hors des sentiers battus",
+  "occ": [
+   "juste",
+   "bravo"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; longs sépales filiformes, d'où son nom d'orchidée araignée."
+ },
+ {
+  "id": "miltoniopsis",
+  "prix": 15.0,
+  "sens": "Je pense tendrement à vous",
+  "occ": [
+   "amour",
+   "courage",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Son masque de pensée lui prête le « je pense à vous » de cette fleur."
+ },
+ {
+  "id": "zygopetalum",
+  "prix": 14.0,
+  "sens": "Caractère affirmé, parfum envoûtant",
+  "occ": [
+   "bravo",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; fleurs veinées de pourpre au parfum de jacinthe."
+ },
+ {
+  "id": "paphiopedilum",
+  "prix": 21.0,
+  "sens": "Beauté capricieuse, à conquérir",
+  "occ": [
+   "amour",
+   "bravo"
+  ],
+  "eviter": [],
+  "note": "De Paphos, cité d'Aphrodite, et pedilon, sandale ; « beauté capricieuse » victorienne."
+ },
+ {
+  "id": "phragmipedium",
+  "prix": 24.0,
+  "sens": "Ardeur rare et lumineuse",
+  "occ": [
+   "amour",
+   "bravo"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; le P. besseae rouge vif, découvert au Pérou en 1981, fit sensation."
+ },
+ {
+  "id": "cattleya",
+  "prix": 22.0,
+  "sens": "Charme épanoui et désir",
+  "occ": [
+   "amour",
+   "anniv"
+  ],
+  "eviter": [
+   "merci",
+   "courage"
+  ],
+  "note": "Chez Proust, « faire catleya » désigne les amours de Swann et d'Odette."
+ },
+ {
+  "id": "epidendrum",
+  "prix": 6.8,
+  "sens": "Foisonnement de petites joies",
+  "occ": [
+   "juste",
+   "anniv"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; labelle en forme de petite croix, d'où « orchidée crucifix »."
+ },
+ {
+  "id": "masdevallia",
+  "prix": 12.0,
+  "sens": "Malice vive et précieuse",
+  "occ": [
+   "juste",
+   "bravo"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; dédiée au médecin espagnol José Masdeval ; fleurs en cerf-volant."
+ },
+ {
+  "id": "disa",
+  "prix": 25.0,
+  "sens": "Fierté farouche des sommets",
+  "occ": [
+   "bravo",
+   "amour"
+  ],
+  "eviter": [],
+  "note": "« Fierté de la Montagne de la Table » ; emblème floral du Cap-Occidental."
+ },
+ {
+  "id": "coelogyne",
+  "prix": 12.5,
+  "sens": "Candeur d'une neige fleurie",
+  "occ": [
+   "merci",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; grappes blanc neige venues de l'Himalaya, en plein hiver."
+ },
+ {
+  "id": "lycaste",
+  "prix": 15.0,
+  "sens": "Paix intérieure et douceur",
+  "occ": [
+   "merci",
+   "courage"
+  ],
+  "eviter": [],
+  "note": "La Monja Blanca (L. skinneri alba), fleur nationale du Guatemala, dit la paix."
+ },
+ {
+  "id": "ludisia",
+  "prix": 6.0,
+  "sens": "Trésor caché à découvrir",
+  "occ": [
+   "juste",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; orchidée-bijou aux feuilles de velours veinées de cuivre."
+ },
+ {
+  "id": "cypripedium",
+  "prix": 25.0,
+  "sens": "Rareté sauvage préservée",
+  "occ": [
+   "amour",
+   "bravo"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; sabot de Vénus protégé en France, seul le cultivé se vend."
+ },
+ {
+  "id": "rhynchostylis",
+  "prix": 12.0,
+  "sens": "Amour de fête et de printemps",
+  "occ": [
+   "amour",
+   "anniv"
+  ],
+  "eviter": [],
+  "note": "Kopou phool de l'Assam, portée au Bihu de printemps : amour et fécondité."
+ },
+ {
+  "id": "anthurium-andraeanum",
+  "prix": 8.5,
+  "sens": "Cœur ardent et généreux",
+  "occ": [
+   "amour",
+   "merci",
+   "anniv"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; spathe en cœur vernissée et spadix dressé, dit « langue de feu »."
+ },
+ {
+  "id": "anthurium-obake",
+  "prix": 11.0,
+  "sens": "Harmonie des contraires",
+  "occ": [
+   "juste",
+   "anniv",
+   "bravo"
+  ],
+  "eviter": [],
+  "note": "Obake, « qui se métamorphose » en japonais, nom hawaïen des spathes bicolores."
+ },
+ {
+  "id": "anthurium-tulipe",
+  "prix": 8.0,
+  "sens": "Élégance sobre et réservée",
+  "occ": [
+   "amour",
+   "juste",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; spathe en coupe dressée qui évoque une petite tulipe."
+ },
+ {
+  "id": "heliconia-rostrata",
+  "prix": 15.0,
+  "sens": "Inspiration et exubérance",
+  "occ": [
+   "bravo",
+   "anniv",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Du mont Hélicon, séjour des Muses ; le patujú est fleur nationale de Bolivie."
+ },
+ {
+  "id": "heliconia-wagneriana",
+  "prix": 14.0,
+  "sens": "Promesse de beaux jours",
+  "occ": [
+   "anniv",
+   "courage",
+   "bravo"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; bractées dégradées rouge, crème et vert, d'où « arc-en-ciel »."
+ },
+ {
+  "id": "heliconia-bihai",
+  "prix": 13.0,
+  "sens": "Assurance conquérante",
+  "occ": [
+   "bravo",
+   "courage"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; bractées dressées comme des pinces de homard, port altier."
+ },
+ {
+  "id": "heliconia-psittacorum",
+  "prix": 10.0,
+  "sens": "Bonne humeur multicolore",
+  "occ": [
+   "juste",
+   "anniv"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; psittacorum signifie « des perroquets », pour ses tons vifs."
+ },
+ {
+  "id": "heliconia-caribaea",
+  "prix": 15.5,
+  "sens": "Chaleur créole et panache",
+  "occ": [
+   "bravo",
+   "anniv"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; le balisier, plante emblématique des jardins créoles des Antilles."
+ },
+ {
+  "id": "heliconia-stricta",
+  "prix": 11.0,
+  "sens": "Droiture et franc-parler",
+  "occ": [
+   "courage",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; stricta, « dressée » en latin : inflorescence droite et compacte."
+ },
+ {
+  "id": "heliconia-chartacea",
+  "prix": 17.0,
+  "sens": "Éblouissement en cascade",
+  "occ": [
+   "amour",
+   "anniv",
+   "bravo"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; longue grappe pendante rose aux bractées de papier (chartacea)."
+ },
+ {
+  "id": "heliconia-orthotricha",
+  "prix": 13.5,
+  "sens": "Sincérité au toucher de velours",
+  "occ": [
+   "merci",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; bractées veloutées de poils droits, d'où orthotricha."
+ },
+ {
+  "id": "heliconia-velues",
+  "prix": 18.0,
+  "sens": "Merveille rare et chaleureuse",
+  "occ": [
+   "bravo",
+   "anniv"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; bractées couvertes d'une toison, raretés de collection en Europe."
+ },
+ {
+  "id": "calathea-crotalifera",
+  "prix": 7.5,
+  "sens": "Rythme festif et entraînant",
+  "occ": [
+   "anniv",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; épi aplati en sonnette de crotale, d'où crotalifera."
+ },
+ {
+  "id": "musa-fleur",
+  "prix": 12.0,
+  "sens": "Prospérité et abondance",
+  "occ": [
+   "bravo",
+   "anniv"
+  ],
+  "eviter": [],
+  "note": "Le bananier, signe d'abondance en Asie, orne l'entrée des mariages en Inde du Sud."
+ },
+ {
+  "id": "strelitzia-reginae",
+  "prix": 7.8,
+  "sens": "Envol joyeux et magnificence",
+  "occ": [
+   "bravo",
+   "anniv",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; genre dédié à la reine Charlotte de Mecklembourg-Strelitz."
+ },
+ {
+  "id": "strelitzia-nicolai",
+  "prix": 10.0,
+  "sens": "Envergure sereine",
+  "occ": [
+   "bravo",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; dédiée au grand-duc Nicolas de Russie ; tête d'oiseau géant."
+ },
+ {
+  "id": "alpinia-purpurata",
+  "prix": 9.0,
+  "sens": "Fougue tropicale",
+  "occ": [
+   "amour",
+   "bravo"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; genre dédié au botaniste italien Prospero Alpini ; bractées rouges."
+ },
+ {
+  "id": "etlingera-elatior",
+  "prix": 11.0,
+  "sens": "Perfection délicate de porcelaine",
+  "occ": [
+   "merci",
+   "anniv",
+   "amour"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; bractées cireuses ; ses boutons aromatisent le laksa malaisien."
+ },
+ {
+  "id": "zingiber",
+  "prix": 9.5,
+  "sens": "Zèle d'abeille récompensé",
+  "occ": [
+   "bravo",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; épi en ruche ; à Hawaï, le gingembre shampoing lave les cheveux."
+ },
+ {
+  "id": "costus",
+  "prix": 8.5,
+  "sens": "Élan qui monte en spirale",
+  "occ": [
+   "bravo",
+   "courage"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; tiges qui s'élèvent en spirale, image d'un progrès continu."
+ },
+ {
+  "id": "tapeinochilos-ananassae",
+  "prix": 11.5,
+  "sens": "Passion durable, comme sculptée",
+  "occ": [
+   "amour",
+   "anniv"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; cône rouge aux bractées de cire, d'une tenue remarquable."
+ },
+ {
+  "id": "curcuma",
+  "prix": 5.5,
+  "sens": "Bienveillance tranquille",
+  "occ": [
+   "merci",
+   "juste",
+   "courage"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; dite tulipe du Siam, elle fleurit à la saison des pluies en Thaïlande."
+ },
+ {
+  "id": "ananas-ornemental",
+  "prix": 9.5,
+  "sens": "Bienvenue et hospitalité",
+  "occ": [
+   "merci",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Fruit de luxe des tables d'Europe au XVIIIe siècle, devenu symbole d'hospitalité."
+ },
+ {
+  "id": "bromeliacees",
+  "prix": 9.0,
+  "sens": "Résilience colorée",
+  "occ": [
+   "courage",
+   "juste",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; rosette qui garde l'eau, inflorescence colorée durant des semaines."
+ },
+ {
+  "id": "protea-cynaroides",
+  "prix": 22.0,
+  "sens": "Courage et transformation",
+  "occ": [
+   "bravo",
+   "courage",
+   "anniv"
+  ],
+  "eviter": [],
+  "note": "Fleur nationale d'Afrique du Sud ; nommée d'après Protée, dieu aux mille formes."
+ },
+ {
+  "id": "protea-neriifolia",
+  "prix": 11.0,
+  "sens": "Caresse feutrée, cœur tenace",
+  "occ": [
+   "merci",
+   "courage"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; bractées frangées de poils noirs comme une fourrure de vison."
+ },
+ {
+  "id": "protea-repens",
+  "prix": 9.0,
+  "sens": "Douceur de miel et générosité",
+  "occ": [
+   "merci",
+   "anniv"
+  ],
+  "eviter": [],
+  "note": "Les colons du Cap tiraient de son nectar un sirop, le bossiestroop."
+ },
+ {
+  "id": "protea-magnifica",
+  "prix": 14.0,
+  "sens": "Splendeur souveraine",
+  "occ": [
+   "bravo",
+   "anniv"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; protée reine des hauteurs du Cap, aux bractées barbues."
+ },
+ {
+  "id": "protea-eximia",
+  "prix": 11.5,
+  "sens": "Prestance hors du commun",
+  "occ": [
+   "bravo",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; eximia signifie « remarquable » en latin."
+ },
+ {
+  "id": "protea-hybrides",
+  "prix": 10.5,
+  "sens": "Diversité et métamorphose",
+  "occ": [
+   "anniv",
+   "juste",
+   "bravo"
+  ],
+  "eviter": [],
+  "note": "Comme Protée, dieu marin aux mille formes, ces hybrides changent sans cesse d'aspect."
+ },
+ {
+  "id": "leucospermum",
+  "prix": 7.5,
+  "sens": "Joie pétillante, feu d'artifice",
+  "occ": [
+   "anniv",
+   "bravo"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; longs styles dressés comme les épingles d'une pelote."
+ },
+ {
+  "id": "leucadendron",
+  "prix": 4.2,
+  "sens": "Constance chaleureuse",
+  "occ": [
+   "merci",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; du grec « arbre blanc » ; tient des semaines en vase."
+ },
+ {
+  "id": "serruria",
+  "prix": 8.0,
+  "sens": "Pudeur tendre et émoi amoureux",
+  "occ": [
+   "amour",
+   "bravo"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; ses bractées pâles rosissent, d'où « mariée rougissante »."
+ },
+ {
+  "id": "mimetes",
+  "prix": 14.0,
+  "sens": "Élévation et accomplissement",
+  "occ": [
+   "bravo",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; épi étagé en pagode, espèces rares du fynbos du Cap."
+ },
+ {
+  "id": "aulax",
+  "prix": 4.8,
+  "sens": "Légèreté vagabonde",
+  "occ": [
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; chatons plumeux et cônes du fynbos sud-africain."
+ },
+ {
+  "id": "banksia",
+  "prix": 12.0,
+  "sens": "Esprit d'aventure et ténacité",
+  "occ": [
+   "bravo",
+   "courage"
+  ],
+  "eviter": [],
+  "note": "Dédiée à Joseph Banks, botaniste du voyage de Cook en Australie (1770)."
+ },
+ {
+  "id": "telopea",
+  "prix": 14.0,
+  "sens": "Éclat qui se voit de loin",
+  "occ": [
+   "bravo",
+   "amour",
+   "anniv"
+  ],
+  "eviter": [],
+  "note": "Du grec telopos, « vu de loin » ; emblème floral de la Nouvelle-Galles du Sud."
+ },
+ {
+  "id": "anigozanthos",
+  "prix": 4.8,
+  "sens": "Originalité attachante",
+  "occ": [
+   "juste",
+   "anniv"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; fleurs veloutées en patte, emblème de l'Australie-Occidentale."
+ },
+ {
+  "id": "isopogon",
+  "prix": 5.2,
+  "sens": "Gaieté qui bat la mesure",
+  "occ": [
+   "juste",
+   "anniv"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; têtes rondes sur tiges fines, comme des baguettes de tambour."
+ },
+ {
+  "id": "grevillea",
+  "prix": 5.5,
+  "sens": "Curiosité émerveillée",
+  "occ": [
+   "juste",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; dédiée à Charles Greville, cofondateur de la Royal Horticultural Society."
+ },
+ {
+  "id": "hakea",
+  "prix": 5.0,
+  "sens": "Loyauté à toute épreuve",
+  "occ": [
+   "courage",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; dédiée au baron von Hake ; pelotes rouge et crème d'Australie."
+ },
+ {
+  "id": "gloriosa",
+  "prix": 6.5,
+  "sens": "Gloire flamboyante",
+  "occ": [
+   "bravo",
+   "amour"
+  ],
+  "eviter": [],
+  "note": "Son nom signifie « glorieuse » ; lis de flamme, fleur nationale du Zimbabwe."
+ },
+ {
+  "id": "tillandsia",
+  "prix": 6.0,
+  "sens": "Liberté aérienne",
+  "occ": [
+   "juste",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; « fille de l'air » qui vit sans terre, de l'humidité ambiante."
+ },
+ {
+  "id": "nepenthes",
+  "prix": 10.0,
+  "sens": "Remède contre le chagrin",
+  "occ": [
+   "courage",
+   "juste"
+  ],
+  "eviter": [
+   "amour"
+  ],
+  "note": "Le népenthès de l'Odyssée, breuvage d'Hélène qui apaise toute douleur."
+ },
+ {
+  "id": "nelumbo-nucifera",
+  "prix": 12.0,
+  "sens": "Éveil et pureté de l'âme",
+  "sens_couleur": {
+   "blanc": "Pureté de l'esprit",
+   "rose": "Éveil, fleur du Bouddha",
+   "rouge": "Amour et compassion"
+  },
+  "occ": [
+   "courage",
+   "bravo",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "Fleur sacrée du bouddhisme et de l'hindouisme, pure malgré la vase où elle naît."
+ },
+ {
+  "id": "nelumbo-capsule",
+  "prix": 3.5,
+  "sens": "Fécondité et vœux d'avenir",
+  "occ": [
+   "bravo",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "En Chine, ses graines souhaitent aux mariés une descendance nombreuse."
+ },
+ {
+  "id": "passiflora",
+  "prix": 5.5,
+  "sens": "Foi profonde et dévotion",
+  "occ": [
+   "courage",
+   "merci",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Les missionnaires espagnols y virent les instruments de la Passion, d'où son nom."
+ },
+ {
+  "id": "hibiscus",
+  "prix": 3.5,
+  "sens": "Bonheur éphémère, cœur à prendre",
+  "occ": [
+   "amour",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Fleur d'un jour ; en Polynésie, portée à l'oreille, elle dit si le cœur est pris."
+ },
+ {
+  "id": "plumeria",
+  "prix": 2.0,
+  "sens": "Accueil parfumé, cœur ouvert",
+  "occ": [
+   "merci",
+   "amour",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Fleur nationale du Laos (dok champa), reine des colliers d'accueil polynésiens."
+ },
+ {
+  "id": "bougainvillea",
+  "prix": 6.5,
+  "sens": "Insouciance ensoleillée du Sud",
+  "occ": [
+   "juste",
+   "anniv"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; rapporté du voyage de Bougainville par Commerson et Jeanne Baret."
+ },
+ {
+  "id": "gypsophile",
+  "prix": 5.5,
+  "sens": "Innocence et amour pur",
+  "occ": [
+   "amour",
+   "anniv",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Nuage des bouquets de mariée ; innocence et sincérité dans l'usage moderne."
+ },
+ {
+  "id": "waxflower",
+  "prix": 4.6,
+  "sens": "Réussite et bonheur durables",
+  "occ": [
+   "bravo",
+   "anniv"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; fleurs cireuses d'Australie qui durent longtemps en vase."
+ },
+ {
+  "id": "statice-sinuata",
+  "prix": 3.1,
+  "sens": "Mémoire fidèle et sympathie",
+  "occ": [
+   "courage",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "Dit immortelle bleue : garde ses couleurs une fois séché, d'où le souvenir."
+ },
+ {
+  "id": "limonium-latifolium",
+  "prix": 3.4,
+  "sens": "Sérénité marine et rêverie",
+  "occ": [
+   "juste",
+   "courage"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; nuage lavande des steppes salées, qui reste bleu une fois séché."
+ },
+ {
+  "id": "limonium-hybride",
+  "prix": 3.2,
+  "sens": "Tendresse légère comme une brume",
+  "occ": [
+   "amour",
+   "juste",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; nuée de minuscules fleurs qui adoucit tout bouquet."
+ },
+ {
+  "id": "statice-tatarica",
+  "prix": 3.0,
+  "sens": "Sobriété au reflet d'argent",
+  "occ": [
+   "juste",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; statice vivace des steppes, surtout employé séché."
+ },
+ {
+  "id": "statice-queue-de-rat",
+  "prix": 3.8,
+  "sens": "Espièglerie tout en souplesse",
+  "occ": [
+   "juste",
+   "anniv"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; épis roses fins et ondulants, dits « queue-de-rat »."
+ },
+ {
+  "id": "astrantia",
+  "prix": 4.8,
+  "sens": "Protection et vaillance",
+  "occ": [
+   "courage",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; étoile à collerette de papier, dite « grande radiaire »."
+ }
+]

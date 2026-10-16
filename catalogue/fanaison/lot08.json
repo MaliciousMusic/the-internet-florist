@@ -1,0 +1,1781 @@
+[
+  {
+    "id": "cerisier-du-japon-sato-zakura",
+    "nom": "Cerisier à fleurs du Japon",
+    "saison_vente": {
+      "mois": [
+        2,
+        3,
+        4
+      ],
+      "pic": [
+        3,
+        4
+      ],
+      "toute_annee": false,
+      "note": "branches de Prunus serrulata (sato-zakura : 'Kanzan', 'Shirotae'…) en vente de février à avril ; branches forcées en début de période, branches de plein air en avril",
+      "sources": [
+        "https://www.floristrytradeclub.co.uk/post/march-seasonal-foliage-cherry-blossom",
+        "https://calyxflowers.com/?p=7121"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 5,
+      "max": 14,
+      "sources": [
+        "https://calyxflowers.com/?p=7121",
+        "https://hortscans.ces.ncsu.edu/uploads/f/o/forcing__51e6ca017ca1b.pdf",
+        "https://www.floristrytradeclub.co.uk/post/march-seasonal-foliage-cherry-blossom"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "chute-petales",
+        "decolore",
+        "feuilles-naissent"
+      ],
+      "ordre": "les fleurs ouvertes pâlissent, le cœur des fleurs rougit, puis les pétales tombent un à un encore frais (pluie de pétales) ; sur la branche restent calices et étamines, et de jeunes feuilles vert bronze se déplient aux nœuds",
+      "tete": "les corymbes ne penchent pas ; ils se dégarnissent et il reste des grappes de calices et d'étamines",
+      "petales": "pétales encore souples et peu brunis au moment de tomber ; chez les doubles roses, ils pâlissent avant de tomber",
+      "feuilles": "jeunes feuilles bronze puis vert tendre qui sortent des bourgeons après la fleur",
+      "tige": "rameau ligneux, reste droit",
+      "couleurs": {
+        "blanc": {
+          "declin": "blanc avec un cœur qui vire au rose puis au rouge",
+          "fane": "pétales tombés ; calices rouge brun et étamines brunes sur la branche"
+        },
+        "rose": {
+          "declin": "rose qui pâlit vers le blanc rosé (cas de 'Fugenzo')",
+          "fane": "rose sale tirant sur le beige, pétales au pied du vase"
+        }
+      },
+      "seche_bien": false,
+      "notes": "terme ajouté « feuilles-naissent » : après la chute des fleurs, les bourgeons foliaires s'ouvrent dans le vase (constaté sur les branches de cerisier forcées). Ne pas brumiser les fleurs (taches). Les sources donnent des tenues de 3-5 j à 1-2 semaines : la fourchette retenue couvre les sources professionnelles.",
+      "sources": [
+        "https://sake-museum.jp/en/?p=1720",
+        "https://www.timeout.com/tokyo/things-to-do/types-of-sakura-to-look-out-for-during-cherry-blossom-season",
+        "https://sikito.com/en/blogs/magazine/keio-sakura",
+        "https://www.floristrytradeclub.co.uk/post/march-seasonal-foliage-cherry-blossom"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "cerisiers-hatifs-fleurs-simples",
+    "nom": "Cerisiers hâtifs à fleurs simples",
+    "saison_vente": {
+      "mois": [
+        11,
+        12,
+        1,
+        2,
+        3
+      ],
+      "pic": [
+        1,
+        2,
+        3
+      ],
+      "toute_annee": false,
+      "note": "groupe des cerisiers précoces à fleurs simples (Prunus × subhirtella 'Autumnalis', keio-zakura et kawazu-zakura au Japon) : floraison de novembre à mars au jardin ; les mois de vente européens sont extrapolés de la floraison",
+      "sources": [
+        "https://www.rhs.org.uk/plants/94024/prunus-x-subhirtella-autumnalis/details",
+        "https://www.vdberk.co.uk/en_GB/pdf/tree/2680/prunus-subhirtella-autumnalis.pdf",
+        "https://sikito.com/en/blogs/magazine/keio-sakura",
+        "https://sikito.com/en/blogs/magazine/kawazu-zakura"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 5,
+      "max": 14,
+      "sources": [
+        "https://calyxflowers.com/?p=7121",
+        "https://hortscans.ces.ncsu.edu/uploads/f/o/forcing__51e6ca017ca1b.pdf"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "chute-petales",
+        "decolore",
+        "feuilles-naissent"
+      ],
+      "ordre": "les boutons rose foncé s'ouvrent en quelques jours au chaud en fleurs simples plus pâles ; le cœur rougit, les cinq pétales tombent vite, puis les jeunes feuilles sortent",
+      "tete": "petites fleurs à cinq pétales, isolées ou en petits bouquets ; elles se dégarnissent sans pencher",
+      "petales": "pétales tombent frais, sans brunir beaucoup",
+      "feuilles": "jeunes feuilles vert tendre après la chute des fleurs (keio-zakura)",
+      "tige": "rameau fin et droit",
+      "couleurs": {
+        "blanc": {
+          "declin": "blanc rosé, cœur qui rougit",
+          "fane": "calices rouge brun sur rameau nu"
+        },
+        "rose": {
+          "declin": "rose pâlissant presque au blanc",
+          "fane": "pétales tombés, calices rouge brun"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Les boutons sont plus foncés que la fleur ouverte : un rameau en bouton paraît plus rose qu'en pleine floraison. Tenue en vase reprise du cerisier à fleurs (même genre) : non mesurée pour ces cultivars.",
+      "sources": [
+        "https://www.rhs.org.uk/plants/94024/prunus-x-subhirtella-autumnalis/details",
+        "https://www.vdberk.co.uk/en_GB/pdf/tree/2680/prunus-subhirtella-autumnalis.pdf",
+        "https://sikito.com/en/blogs/magazine/keio-sakura",
+        "https://sake-museum.jp/en/?p=1720"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "abricotier-du-japon-ume",
+    "nom": "Abricotier du Japon",
+    "saison_vente": {
+      "mois": [
+        12,
+        1,
+        2,
+        3
+      ],
+      "pic": [
+        1,
+        2
+      ],
+      "toute_annee": false,
+      "note": "Prunus mume fleurit de janvier à février sur bois nu ; branches à forcer coupées dès décembre-début février ; disponibilité en Europe rare (fleuristes spécialisés, ikebana)",
+      "sources": [
+        "https://sikito.com/en/blogs/magazine/ume",
+        "https://plants.ces.ncsu.edu/plants/prunus-mume"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 5,
+      "max": 14,
+      "sources": [
+        "https://calyxflowers.com/?p=7121",
+        "https://hortscans.ces.ncsu.edu/uploads/f/o/forcing__51e6ca017ca1b.pdf"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "chute-petales",
+        "feuilles-naissent"
+      ],
+      "ordre": "les boutons ronds en chapelet s'ouvrent un à un le long du rameau ; chaque fleur dure peu et laisse tomber ses pétales ronds, pendant que d'autres boutons s'ouvrent plus haut",
+      "tete": "fleurs sessiles plaquées sur le rameau, ne penchent pas",
+      "petales": "pétales ronds qui tombent sans se friper",
+      "feuilles": "pas de feuilles à la floraison ; petites feuilles possibles en fin de vase",
+      "tige": "rameaux raides, droits, en baguettes (bois de l'année)",
+      "couleurs": {
+        "blanc": {
+          "declin": "blanc ivoire, étamines jaunes qui brunissent",
+          "fane": "calices brun rouge sur rameau nu"
+        },
+        "rose": {
+          "declin": "rose qui pâlit",
+          "fane": "calices bruns, pétales tombés"
+        },
+        "rouge": {
+          "declin": "rouge carmin qui s'éteint vers le rose foncé",
+          "fane": "calices rouge sombre"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Tenue et fanaison extrapolées du genre Prunus (cerisier) ; aucune mesure de vase trouvée pour P. mume. Floraison échelonnée le long du rameau : on peut dessiner boutons, fleurs et calices nus sur la même branche.",
+      "sources": [
+        "https://sikito.com/en/blogs/magazine/ume",
+        "https://plants.ces.ncsu.edu/plants/prunus-mume",
+        "https://calyxflowers.com/?p=7121"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "amandier-en-fleurs",
+    "nom": "Amandier",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "pic": [
+        2,
+        3
+      ],
+      "toute_annee": false,
+      "note": "fleurs d'amandier (Prunus dulcis) disponibles de fin janvier à début avril dans l'hémisphère nord",
+      "sources": [
+        "https://specialtyproduce.com/produce/Almond_Blossoms_10156.php"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 6,
+      "max": 14,
+      "sources": [
+        "https://ishs.org/ishs-article/847_49/"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "chute-petales",
+        "decolore"
+      ],
+      "ordre": "les fleurs blanches à cœur rose s'ouvrent sur bois nu, puis les pétales tombent en neige ; le cœur rose s'assombrit pendant que les pétales blanchissent",
+      "tete": "fleurs solitaires ou par deux, plaquées sur le rameau",
+      "petales": "pétales fins qui tombent encore blancs",
+      "feuilles": "aucune à la floraison",
+      "tige": "rameau droit, gris brun",
+      "couleurs": {
+        "blanc": {
+          "declin": "blanc pur, cœur rose qui fonce vers le rouge",
+          "fane": "calices rouge brun, étamines brunes"
+        },
+        "rose": {
+          "declin": "rose très pâle qui blanchit",
+          "fane": "calices brun rouge sur rameau nu"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Tenue en vase extrapolée du pêcher (même sous-genre Amygdalus, mesure ISHS 6-7 j pour des branches coupées tôt, environ le double plus tard). Les vergers paraissent enneigés par les pétales tombés : chute nette, sans flétrissement préalable marqué.",
+      "sources": [
+        "https://specialtyproduce.com/produce/Almond_Blossoms_10156.php",
+        "https://ishs.org/ishs-article/847_49/"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "amandier-de-chine-cerisier-nain",
+    "nom": "Amandier de Chine & cerisier nain",
+    "saison_vente": {
+      "mois": [
+        3,
+        4
+      ],
+      "pic": [
+        4
+      ],
+      "toute_annee": false,
+      "note": "Prunus triloba 'Multiplex' fleurit en mars-avril sur les rameaux de l'an passé ; branches coupées et forcées en serre au début du printemps",
+      "sources": [
+        "https://www.promessedefleurs.ie/shrubs/shrubs-by-variety/prunus/prunus-triloba-multiplex-flowering-almond.html",
+        "https://www.treesandshrubsonline.org/articles/prunus/prunus-triloba/"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 6,
+      "max": 14,
+      "sources": [
+        "https://ishs.org/ishs-article/847_49/"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "chute-petales",
+        "decolore",
+        "brunit-bords"
+      ],
+      "ordre": "les pompons doubles rose frais s'ouvrent serrés le long des rameaux, pâlissent, brunissent un peu aux bords puis s'effeuillent",
+      "tete": "pompons doubles de 2,5 cm, plaqués sur le rameau",
+      "petales": "nombreux pétales en pompon, pâlissent puis tombent",
+      "feuilles": "aucune ou très jeunes à la floraison",
+      "tige": "rameaux fins, droits ou arqués",
+      "couleurs": {
+        "rose": {
+          "declin": "rose frais qui pâlit vers le rose poudré",
+          "fane": "rose sale beige, bords brunis, pétales au pied du vase"
+        },
+        "blanc": {
+          "declin": "blanc qui jaunit légèrement",
+          "fane": "beige, pétales tombés"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Le « cerisier nain » regroupé ici (Prunus glandulosa, autre pompon nain) suit sans doute le même schéma : extrapolation. Tenue en vase extrapolée du pêcher (même sous-genre).",
+      "sources": [
+        "https://www.promessedefleurs.ie/shrubs/shrubs-by-variety/prunus/prunus-triloba-multiplex-flowering-almond.html",
+        "https://www.treesandshrubsonline.org/articles/prunus/prunus-triloba/",
+        "https://ishs.org/ishs-article/847_49/"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "pecher-a-fleurs",
+    "nom": "Pêcher à fleurs",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "pic": [
+        1,
+        2,
+        3
+      ],
+      "toute_annee": false,
+      "note": "branches de pêcher forcées pour le Nouvel An chinois (janvier-février) ; floraison de plein air en mars-avril en Europe",
+      "sources": [
+        "https://ishs.org/ishs-article/847_49/",
+        "https://ishs.org/ishs-article/1000_26/"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 6,
+      "max": 14,
+      "sources": [
+        "https://ishs.org/ishs-article/847_49/"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "chute-petales",
+        "decolore",
+        "bourgeons-avortent"
+      ],
+      "ordre": "les fleurs s'ouvrent du bas vers le haut du rameau, pâlissent puis perdent leurs pétales ; les branches coupées trop tôt (décembre) donnent des boutons qui n'ouvrent pas tous",
+      "tete": "fleurs sessiles plaquées sur le rameau",
+      "petales": "pétales qui pâlissent puis tombent",
+      "feuilles": "fines feuilles lancéolées possibles en fin de vase",
+      "tige": "rameau droit, rougeâtre",
+      "couleurs": {
+        "rose": {
+          "declin": "rose vif qui pâlit vers le rose clair",
+          "fane": "rose sale, pétales tombés, calices bruns"
+        },
+        "rouge": {
+          "declin": "rouge carmin qui s'éteint",
+          "fane": "carmin sombre, calices bruns"
+        },
+        "blanc": {
+          "declin": "blanc ivoire",
+          "fane": "beige, pétales tombés"
+        },
+        "bicolore": {
+          "declin": "panaché rose et blanc qui s'adoucit",
+          "fane": "beige rosé, pétales tombés"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Étude ISHS : des branches récoltées en décembre-début janvier tiennent 6-7 jours avec faible ouverture, celles coupées fin mars environ deux fois plus.",
+      "sources": [
+        "https://ishs.org/ishs-article/847_49/",
+        "https://ishs.org/ishs-article/1000_26/"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "pommier-pommetier-en-fleurs",
+    "nom": "Pommier & pommetier à fleurs",
+    "saison_vente": {
+      "mois": [
+        3,
+        4,
+        5
+      ],
+      "pic": [
+        4,
+        5
+      ],
+      "toute_annee": false,
+      "note": "branches de pommier et de Malus en fleurs au printemps (avril-mai), forçables dès mars",
+      "sources": [
+        "https://flowersfromthefarm.co.uk/british-spring-flowers-blossom-and-flowering-shrubs/",
+        "https://extension.colostate.edu/topic-areas/yard-garden/flowering-crabapple-trees-7-424"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 5,
+      "max": 10,
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/blooming-spring-branches"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "chute-petales",
+        "decolore",
+        "feuilles-jaunissent"
+      ],
+      "ordre": "les boutons rose foncé s'ouvrent en fleurs plus claires ; les pétales pâlissent puis tombent ensemble ; les jeunes feuilles qui accompagnent les fleurs jaunissent et mollissent",
+      "tete": "corymbes de 4-6 fleurs, ne penchent pas",
+      "petales": "cinq pétales (doubles chez certains), qui blanchissent puis tombent",
+      "feuilles": "jeunes feuilles vertes qui mollissent et jaunissent",
+      "tige": "rameau ligneux droit",
+      "couleurs": {
+        "blanc": {
+          "declin": "blanc, étamines jaunes qui brunissent",
+          "fane": "pétales tombés, étamines brunes"
+        },
+        "rose": {
+          "declin": "rose qui pâlit au blanc rosé",
+          "fane": "pétales tombés, cœur brun"
+        },
+        "rouge": {
+          "declin": "rouge rosé qui pâlit",
+          "fane": "rose terne, pétales tombés"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Les boutons sont plus colorés que les fleurs ouvertes (bouton rose, fleur blanc rosé) : beau contraste au stade Éclosion. Floraison d'environ 10 jours au jardin.",
+      "sources": [
+        "https://extension.colostate.edu/topic-areas/yard-garden/flowering-crabapple-trees-7-424",
+        "https://flowersfromthefarm.co.uk/british-spring-flowers-blossom-and-flowering-shrubs/",
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/blooming-spring-branches"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "pommetier-a-fruits",
+    "nom": "Pommetier à fruits décoratifs",
+    "saison_vente": {
+      "mois": [
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [
+        10,
+        11
+      ],
+      "toute_annee": false,
+      "note": "rameaux de Malus à fruits (ex. 'Red Sentinel') en arrangements d'automne ; fruits persistants sur le bois jusqu'à la fin de l'hiver",
+      "sources": [
+        "https://flowersfromthefarm.co.uk/british-spring-flowers-blossom-and-flowering-shrubs/",
+        "https://www.hillier.co.uk/online-shop/plants/ornamental-trees/malus-x-robusta-red-sentinel-crab-apple-tree/",
+        "https://www.gardenersworld.com/plants/malus-x-robusta-red-sentinel/"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 7,
+      "max": 21,
+      "sources": [
+        "https://www.hillier.co.uk/online-shop/plants/ornamental-trees/malus-x-robusta-red-sentinel-crab-apple-tree/"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "baies-rident",
+        "feuilles-jaunissent",
+        "feuilles-brunissent"
+      ],
+      "ordre": "les feuilles jaunissent puis tombent en premier ; les petites pommes restent longtemps, puis se rident, ternissent et se plissent",
+      "tete": null,
+      "petales": null,
+      "feuilles": "jaunes et or, puis brunes ; tombent vite dans le vase",
+      "tige": "rameau ligneux, reste droit ; pédoncules fins qui laissent pendre les fruits",
+      "couleurs": {
+        "rouge": {
+          "declin": "rouge brillant qui devient mat",
+          "fane": "rouge sombre ridé, taches brunes"
+        },
+        "jaune": {
+          "declin": "jaune doré qui fonce",
+          "fane": "ocre brun, peau plissée"
+        },
+        "orange": {
+          "declin": "orange qui se ternit",
+          "fane": "orange brun ridé"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Tenue en vase non mesurée : la fourchette est déduite de la persistance des fruits sur l'arbre, ce qui est une extrapolation (confiance basse). Retirer les feuilles allonge la présentation.",
+      "sources": [
+        "https://www.hillier.co.uk/online-shop/plants/ornamental-trees/malus-x-robusta-red-sentinel-crab-apple-tree/",
+        "https://www.gardenersworld.com/plants/malus-x-robusta-red-sentinel/",
+        "https://flowersfromthefarm.co.uk/british-spring-flowers-blossom-and-flowering-shrubs/"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "cognassier-du-japon",
+    "nom": "Cognassier du Japon",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "pic": [
+        3,
+        4
+      ],
+      "toute_annee": false,
+      "note": "Chaenomeles en saison de mars à avril ; floraison sporadique dès janvier sur mur abrité ; branches forcées en début d'année",
+      "sources": [
+        "https://www.calyxflowers.com/?p=7578",
+        "https://flowersfromthefarm.co.uk/british-spring-flowers-blossom-and-flowering-shrubs/"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 4,
+      "max": 14,
+      "sources": [
+        "https://www.calyxflowers.com/?p=7578",
+        "https://floristsreview.com/?p=874897"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "chute-petales",
+        "brunit-bords"
+      ],
+      "ordre": "les boutons s'ouvrent progressivement le long des rameaux épineux ; chaque fleur cireuse tient quelques jours, ses pétales brunissent aux bords puis tombent, tandis que d'autres boutons s'ouvrent",
+      "tete": "fleurs en coupe, plaquées sur le bois, ne penchent pas",
+      "petales": "pétales ronds et cireux, bords bruns puis chute",
+      "feuilles": "petites feuilles vert bronze naissantes, qui peuvent noircir",
+      "tige": "rameaux anguleux et épineux, restent droits",
+      "couleurs": {
+        "rouge": {
+          "declin": "rouge écarlate qui fonce",
+          "fane": "rouge brun, bords noircis"
+        },
+        "orange": {
+          "declin": "orange saumon qui pâlit",
+          "fane": "saumon brun"
+        },
+        "rose": {
+          "declin": "rose qui se délave",
+          "fane": "rose beige, bords bruns"
+        },
+        "blanc": {
+          "declin": "blanc crème",
+          "fane": "beige brun"
+        },
+        "bicolore": {
+          "declin": "blanc et rose qui s'estompent",
+          "fane": "beige rosé taché de brun"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Les sources varient de 4-7 jours à 7-14 jours : la floraison échelonnée des boutons prolonge la branche bien au-delà de la vie d'une fleur.",
+      "sources": [
+        "https://www.calyxflowers.com/?p=7578",
+        "https://floristsreview.com/?p=874897",
+        "https://flowersfromthefarm.co.uk/british-spring-flowers-blossom-and-flowering-shrubs/"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "magnolia-branches",
+    "nom": "Magnolia",
+    "saison_vente": {
+      "mois": [
+        2,
+        3,
+        4
+      ],
+      "pic": [
+        3,
+        4
+      ],
+      "toute_annee": false,
+      "note": "magnolias caducs (Magnolia × soulangeana, M. stellata) fleurissent dès la fin de l'hiver ; branches coupées en bouton en février-avril",
+      "sources": [
+        "https://floristsreview.com/?p=874897",
+        "https://floraldesigninstitute.com/blogs/resources-flower-library/magnolia-foliage-bloom"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 2,
+      "max": 7,
+      "sources": [
+        "https://floraldesigninstitute.com/blogs/resources-flower-library/magnolia-foliage-bloom",
+        "https://floristsreview.com/?p=874897"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "brunit-bords",
+        "chute-petales"
+      ],
+      "ordre": "la fleur s'ouvre en tulipe puis s'étale à plat ; les tépales se marquent de brun au moindre choc, ramollissent et tombent d'un coup",
+      "tete": "fleur dressée au bout du rameau, ne penche pas ; s'ouvre trop puis se défait",
+      "petales": "tépales charnus qui brunissent aux bords et aux meurtrissures, puis tombent entiers",
+      "feuilles": "aucune à la floraison ; écailles duveteuses des boutons sur le rameau",
+      "tige": "rameau gris, droit",
+      "couleurs": {
+        "blanc": {
+          "declin": "blanc crème taché de brun",
+          "fane": "brun cuir"
+        },
+        "rose": {
+          "declin": "rose et blanc qui se délave, taches brunes",
+          "fane": "brun rosé, tépales tombés"
+        },
+        "violet": {
+          "declin": "pourpre qui s'éteint",
+          "fane": "brun violacé"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Très fragile : 2-3 jours selon certaines sources, 5-7 jours si coupé en bouton et tenu au frais. Les tépales tombés restent entiers et brunissent au sol.",
+      "sources": [
+        "https://floraldesigninstitute.com/blogs/resources-flower-library/magnolia-foliage-bloom",
+        "https://floristsreview.com/?p=874897",
+        "https://floristrytradeclub.co.uk/post/let-loose-with-scissors-magnificent-magnolias"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "forsythia",
+    "nom": "Forsythia",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "pic": [
+        2,
+        3
+      ],
+      "toute_annee": false,
+      "note": "branches forcées de janvier à mars, floraison de plein air en mars-avril ; parmi les premières branches à forcer (dès janvier)",
+      "sources": [
+        "https://www.uvm.edu/extension/news/forcing-branches-winter-flowers",
+        "https://almanac.com/forcing-branches-bloom-indoors",
+        "https://www.promessedefleurs.ie/gardening-tips/tutorial/how-to-force-emforsythia-em-branches-for-bright-and-colourful-bouquets"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 4,
+      "max": 10,
+      "sources": [
+        "https://westmountflorist.com/blogs/flower-dictionary/forsythia"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "chute-petales",
+        "feuilles-naissent"
+      ],
+      "ordre": "les clochettes jaunes s'ouvrent en une à deux semaines, tiennent peu, puis tombent vite et entières ; les jeunes feuilles vertes sortent ensuite le long des rameaux",
+      "tete": "petites clochettes à quatre lobes, serrées le long des rameaux ; elles tombent sans pencher",
+      "petales": "lobes jaunes qui se fripent légèrement puis tombent entiers (la corolle part d'un bloc)",
+      "feuilles": "feuilles vert tendre qui apparaissent après les fleurs",
+      "tige": "rameaux droits ou arqués, brun clair",
+      "couleurs": {
+        "jaune": {
+          "declin": "jaune d'or qui pâlit vers le jaune paille",
+          "fane": "corolles tombées ; rameau garni de petites feuilles vertes et de calices bruns"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Selon l'Almanac, le forsythia fleurit vite et fane puis tombe aussi vite. Terme ajouté « feuilles-naissent » : feuilles qui sortent des bourgeons dans le vase. Le rameau peut même s'enraciner dans l'eau.",
+      "sources": [
+        "https://almanac.com/forcing-branches-bloom-indoors",
+        "https://windflowerflorist.com/blogs/news/forsythia-care",
+        "https://www.promessedefleurs.ie/gardening-tips/tutorial/how-to-force-emforsythia-em-branches-for-bright-and-colourful-bouquets"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "amelanchier",
+    "nom": "Amélanchier",
+    "saison_vente": {
+      "mois": [
+        3,
+        4
+      ],
+      "pic": [
+        4
+      ],
+      "toute_annee": false,
+      "note": "floraison au début du printemps ; branches à forcer citées par les guides (Chicago Botanic, Almanac) ; vente de fleuristes locale et rare",
+      "sources": [
+        "https://almanac.com/forcing-branches-bloom-indoors",
+        "https://torontogardens.com/?p=1177"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 4,
+      "max": 7,
+      "sources": [
+        "https://floraldesigninstitute.com/blogs/resources-flower-library/spirea"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "chute-petales",
+        "feuilles-naissent"
+      ],
+      "ordre": "les grappes lâches de fleurs blanches étoilées s'ouvrent avec les jeunes feuilles bronze ; les pétales fins et étroits tombent très vite, puis les feuilles verdissent",
+      "tete": "grappes lâches et légères, un peu retombantes",
+      "petales": "pétales étroits en lanières qui tombent sans brunir",
+      "feuilles": "jeunes feuilles duveteuses bronze rosé qui verdissent",
+      "tige": "rameaux fins, gris",
+      "couleurs": {
+        "blanc": {
+          "declin": "blanc pur, étamines qui jaunissent",
+          "fane": "pétales tombés ; rameau vert bronze avec calices"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Aucune mesure de tenue en vase trouvée : fourchette extrapolée des petites fleurs de Rosacées en grappe (spirée, 4-7 j). La chute des pétales est réputée rapide au jardin.",
+      "sources": [
+        "https://torontogardens.com/?p=1177",
+        "https://hort.ifas.ufl.edu/trees/AMELAEA.pdf",
+        "https://almanac.com/forcing-branches-bloom-indoors"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "cornouiller-a-fleurs",
+    "nom": "Cornouiller à fleurs",
+    "saison_vente": {
+      "mois": [
+        3,
+        4,
+        5,
+        6
+      ],
+      "pic": [
+        4,
+        5
+      ],
+      "toute_annee": false,
+      "note": "Cornus florida fleurit en avril-mai (bractées 10 j à 2 semaines), C. kousa en juin (jusqu'à 6 semaines) ; branches rarement vendues en Europe",
+      "sources": [
+        "https://horticulture.ca.uky.edu/sites/horticulture.ca.uky.edu/files/Flowering%20Dogwood%20-%20Cornus%20florida.pdf",
+        "https://hort.ifas.ufl.edu/trees/CORFLOA.pdf",
+        "https://woodyplants.nres.uiuc.edu/plant/corko43"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 5,
+      "max": 10,
+      "sources": [
+        "https://horticulture.ca.uky.edu/sites/horticulture.ca.uky.edu/files/Flowering%20Dogwood%20-%20Cornus%20florida.pdf"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "spathe-persiste",
+        "brunit-bords",
+        "chute-petales"
+      ],
+      "ordre": "les quatre bractées tiennent pendant que le petit capitule central de vraies fleurs vertes fane ; les bractées brunissent à la pointe puis tombent ; chez kousa, elles rosissent en vieillissant",
+      "tete": "« fleurs » à quatre bractées posées à plat au-dessus du rameau, ne penchent pas",
+      "petales": "bractées : pointe brune (florida, à l'encoche) puis chute ; vraies fleurs minuscules qui brunissent au centre",
+      "feuilles": "feuilles opposées aux nervures arquées, qui mollissent et pendent si la branche boit mal",
+      "tige": "rameaux étagés, horizontaux",
+      "couleurs": {
+        "blanc": {
+          "declin": "blanc crème, pointes brunes ; rosé chez kousa",
+          "fane": "beige brun, bractées tombées"
+        },
+        "rose": {
+          "declin": "rose qui se délave",
+          "fane": "rose brun"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Tenue en vase non mesurée : extrapolée de la durée des bractées au jardin (10 j à 2 semaines). Le cornouiller mâle (Cornus mas), vendu en branches jaunes en hiver, est une autre espèce.",
+      "sources": [
+        "https://horticulture.ca.uky.edu/sites/horticulture.ca.uky.edu/files/Flowering%20Dogwood%20-%20Cornus%20florida.pdf",
+        "https://woodyplants.nres.uiuc.edu/plant/corko43",
+        "https://sikito.com/en/blogs/magazine/yamaboushi"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "hamamelis",
+    "nom": "Hamamélis",
+    "saison_vente": {
+      "mois": [
+        12,
+        1,
+        2,
+        3
+      ],
+      "pic": [
+        1,
+        2
+      ],
+      "toute_annee": false,
+      "note": "floraison de janvier à février (dès décembre selon cultivars) ; branches coupées en janvier et forcées",
+      "sources": [
+        "https://whiteflowerfarm.com/hamamelis",
+        "https://bbg.org/news/witch_hazels_winter_flowers_fall_foliage_and_lovely_form"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 5,
+      "max": 10,
+      "sources": [
+        "https://whiteflowerfarm.com/hamamelis"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "recroqueville",
+        "seche-sur-place"
+      ],
+      "ordre": "les pétales en rubans se recroquevillent puis sèchent sur place, en gardant la touffe ; les calices restent longtemps sur le bois",
+      "tete": "petites houppes de 4 rubans plaquées sur le rameau",
+      "petales": "rubans fins qui s'enroulent et se fripent, sans tomber tout de suite",
+      "feuilles": "aucune à la floraison ; parfois de vieilles feuilles sèches brunes accrochées",
+      "tige": "rameaux en zigzag, horizontaux",
+      "couleurs": {
+        "jaune": {
+          "declin": "jaune soufre qui pâlit",
+          "fane": "rubans fripés jaune paille brunâtre"
+        },
+        "orange": {
+          "declin": "orange cuivré",
+          "fane": "brun rouille"
+        },
+        "rouge": {
+          "declin": "rouge cuivre qui fonce",
+          "fane": "brun rouge sombre"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Au jardin les rubans s'enroulent par le froid et se déroulent au dégel (jusqu'à six semaines) : au chaud la fleur dure environ une semaine. Fanaison par enroulement, pas par chute.",
+      "sources": [
+        "https://www.nybg.org/blogs/plant-talk/2012/11/around-the-garden/witch-hazels",
+        "https://bbg.org/news/witch_hazels_winter_flowers_fall_foliage_and_lovely_form",
+        "https://whiteflowerfarm.com/hamamelis"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "viorne-d-hiver",
+    "nom": "Viorne d’hiver",
+    "saison_vente": {
+      "mois": [
+        11,
+        12,
+        1,
+        2,
+        3
+      ],
+      "pic": [
+        12,
+        1,
+        2
+      ],
+      "toute_annee": false,
+      "note": "Viburnum × bodnantense 'Dawn' fleurit de novembre à mars sur bois nu ; parmi les premières branches à couper l'hiver",
+      "sources": [
+        "https://oxfordgardendesign.co.uk/?p=3357",
+        "https://pithandvigor.com/2025/01/viburnum-bodnantense-dawn/",
+        "https://www.countrylife.co.uk/gardens/gardening-tips/winter-flowers-44977"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 10,
+      "max": 15,
+      "sources": [
+        "https://repository.lib.ncsu.edu/items/bd16af2c-e7f6-4001-b16e-881ef52ea761",
+        "https://www.countrylife.co.uk/gardens/gardening-tips/winter-flowers-44977"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "decolore",
+        "fleurons-tombent"
+      ],
+      "ordre": "les petits bouquets de fleurs tubulaires passent du rose foncé au blanc en s'ouvrant, puis les fleurons tombent un à un",
+      "tete": "petites ombelles rondes au bout des rameaux nus",
+      "petales": "fleurons tubulaires rose foncé qui blanchissent, puis tombent ou brunissent",
+      "feuilles": "aucune à la floraison",
+      "tige": "rameaux raides, dressés",
+      "couleurs": {
+        "rose": {
+          "declin": "boutons rose foncé, fleurs ouvertes qui blanchissent",
+          "fane": "blanc sale à beige, fleurons tombés, bouquets clairsemés"
+        },
+        "blanc": {
+          "declin": "blanc rosé",
+          "fane": "beige, fleurons tombés"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Essai NCSU sur Viburnum : 10 j en eau, 13,5-15 j avec 1-MCP ou sucre. Le genre est sensible à l'éthylène ; en Hollande, la nourriture Chrysal est obligatoire pour les Viburnum livrés au cadran. Variante possible du produit vendu : Viburnum tinus (laurier-tin), non traité ici.",
+      "sources": [
+        "https://pithandvigor.com/2025/01/viburnum-bodnantense-dawn/",
+        "https://oxfordgardendesign.co.uk/?p=3357",
+        "https://royalbrinkman.com/crop-care/conditioning/chrysal-clear-shruberry-900-black-gat-150403216"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "spiree",
+    "nom": "Spirée",
+    "saison_vente": {
+      "mois": [
+        3,
+        4,
+        5,
+        6
+      ],
+      "pic": [
+        4,
+        5
+      ],
+      "toute_annee": false,
+      "note": "spirées de printemps (S. thunbergii, 'Bridal Wreath') au printemps, S. japonica en été ; disponibilité printemps-été",
+      "sources": [
+        "https://floraldesigninstitute.com/blogs/resources-flower-library/spirea",
+        "https://sikito.com/en/blogs/magazine/yukiyanagi"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 4,
+      "max": 11,
+      "sources": [
+        "https://floraldesigninstitute.com/blogs/resources-flower-library/spirea",
+        "https://www.ishs.org/ishs-article/934_63"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "fleurons-tombent",
+        "brunit-bords"
+      ],
+      "ordre": "les minuscules fleurs blanches s'égrènent et tombent en neige ; les fleurs restantes brunissent au centre ; les feuilles fines jaunissent",
+      "tete": "rameaux arqués couverts de petits bouquets ; ils ne penchent pas davantage",
+      "petales": "minuscules pétales blancs qui tombent en pluie",
+      "feuilles": "petites feuilles qui jaunissent",
+      "tige": "rameaux fins et arqués",
+      "couleurs": {
+        "blanc": {
+          "declin": "blanc crème, cœurs brunissants",
+          "fane": "rameau dégarni, restes beige brun"
+        },
+        "rose": {
+          "declin": "rose (S. japonica) qui se délave",
+          "fane": "brun rosé, sec"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Tenue : 4-7 j pour la spirée de printemps (Floral Design Institute), 10,8 j en moyenne pour S. japonica (ISHS).",
+      "sources": [
+        "https://floraldesigninstitute.com/blogs/resources-flower-library/spirea",
+        "https://www.ishs.org/ishs-article/934_63",
+        "https://sikito.com/en/blogs/magazine/yukiyanagi"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "deutzia",
+    "nom": "Deutzia",
+    "saison_vente": {
+      "mois": [
+        4,
+        5,
+        6
+      ],
+      "pic": [
+        5
+      ],
+      "toute_annee": false,
+      "note": "floraison de mi-printemps au début de l'été, surtout en mai",
+      "sources": [
+        "https://farmerbailey.com/pages/deutzia-growing-guide",
+        "https://plants.ces.ncsu.edu/plants/deutzia/"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 4,
+      "max": 7,
+      "sources": [
+        "https://floraldesigninstitute.com/blogs/resources-flower-library/spirea"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "fleurons-tombent",
+        "brunit-bords"
+      ],
+      "ordre": "les grappes de petites fleurs en étoile s'ouvrent du haut vers le bas ; les premières ouvertes brunissent puis tombent pendant que les boutons du bas s'ouvrent",
+      "tete": "panicules dressées ou un peu arquées",
+      "petales": "petits pétales qui brunissent aux bords puis tombent",
+      "feuilles": "feuilles rugueuses qui mollissent et pendent si la branche boit mal",
+      "tige": "tige creuse, droite",
+      "couleurs": {
+        "blanc": {
+          "declin": "blanc qui jaunit légèrement",
+          "fane": "beige brun, grappes clairsemées"
+        },
+        "rose": {
+          "declin": "rose et blanc qui pâlit",
+          "fane": "rose brun"
+        }
+      },
+      "seche_bien": false,
+      "notes": "« Tient bien en vase » selon les producteurs, mais aucune durée chiffrée trouvée : la fourchette est extrapolée de la spirée (petites fleurs en grappes). À couper en boutons ou grappes à demi ouvertes.",
+      "sources": [
+        "https://farmerbailey.com/pages/deutzia-growing-guide",
+        "https://plants.ces.ncsu.edu/plants/deutzia/"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "seringat",
+    "nom": "Seringat",
+    "saison_vente": {
+      "mois": [
+        5,
+        6
+      ],
+      "pic": [
+        6
+      ],
+      "toute_annee": false,
+      "note": "Philadelphus fleurit en fin de printemps et début d'été (mai-juin)",
+      "sources": [
+        "https://www.rhs.org.uk/plants/popular/philadelphus/growing-guide",
+        "https://garden.org/learn/howto/grow/mockoranges/"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 4,
+      "max": 7,
+      "sources": [
+        "https://floraldesigninstitute.com/blogs/resources-flower-library/spirea"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "chute-petales",
+        "feuilles-recroquevillees",
+        "brunit-bords"
+      ],
+      "ordre": "les feuilles mollissent et se recroquevillent en premier si on les garde ; les fleurs blanches brunissent aux bords puis lâchent leurs quatre pétales",
+      "tete": "fleurs en coupe par petits groupes, au bout des rameaux",
+      "petales": "quatre pétales blancs (doubles chez certains) qui jaunissent et brunissent aux bords puis tombent",
+      "feuilles": "feuilles qui fanent vite : les fleuristes les retirent presque toutes",
+      "tige": "rameaux arqués",
+      "couleurs": {
+        "blanc": {
+          "declin": "blanc crème, étamines jaunes qui brunissent",
+          "fane": "beige brun, pétales tombés"
+        },
+        "creme": {
+          "declin": "crème qui jaunit",
+          "fane": "beige brun"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Aucune tenue chiffrée trouvée pour Philadelphus : fourchette extrapolée des arbustes à fleurs de printemps (spirée). Le conditionnement classique (effeuiller, recouper) vient du guide RHS.",
+      "sources": [
+        "https://www.rhs.org.uk/advice/profile?pid=668",
+        "https://www.rhs.org.uk/plants/popular/philadelphus/growing-guide"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "groseillier-a-fleurs",
+    "nom": "Groseillier à fleurs",
+    "saison_vente": {
+      "mois": [
+        2,
+        3,
+        4
+      ],
+      "pic": [
+        3,
+        4
+      ],
+      "toute_annee": false,
+      "note": "Ribes sanguineum fleurit en mars-avril, avec la sortie des feuilles ; rameaux forçables en fin d'hiver",
+      "sources": [
+        "https://promessedefleurs.ie/shrubs/shrubs-by-variety/ribes-flowering-currants/ribes-sanguineum-flowering-currant.html",
+        "https://www.treesandshrubsonline.org/articles/ribes/ribes-sanguineum/"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 4,
+      "max": 7,
+      "sources": [
+        "https://floraldesigninstitute.com/blogs/resources-flower-library/spirea"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "fleurons-tombent",
+        "decolore",
+        "feuilles-naissent"
+      ],
+      "ordre": "les grappes pendantes de 10 à 30 petites fleurs s'ouvrent de la base vers la pointe ; les fleurs de la base pâlissent et tombent pendant que les jeunes feuilles se déplient",
+      "tete": "grappes de 8 cm pendantes",
+      "petales": "petites fleurs tubulaires qui pâlissent puis tombent",
+      "feuilles": "jeunes feuilles vert tendre plissées, à odeur de cassis",
+      "tige": "rameaux droits, brun rouge",
+      "couleurs": {
+        "rose": {
+          "declin": "rose carmin qui pâlit",
+          "fane": "rose terne, grappes dégarnies"
+        },
+        "rouge": {
+          "declin": "rouge qui s'éteint vers le rose foncé",
+          "fane": "rouge brun"
+        },
+        "blanc": {
+          "declin": "blanc ('Elkington's White')",
+          "fane": "beige"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Aucune donnée de vase trouvée : tenue et ordre de fanaison extrapolés des autres arbustes à grappes. Les fleurs ont un œil blanc.",
+      "sources": [
+        "https://promessedefleurs.ie/shrubs/shrubs-by-variety/ribes-flowering-currants/ribes-sanguineum-flowering-currant.html",
+        "https://www.treesandshrubsonline.org/articles/ribes/ribes-sanguineum/"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "enkianthus-dodan",
+    "nom": "Enkianthus",
+    "saison_vente": {
+      "mois": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "pic": [
+        5,
+        6,
+        7,
+        8
+      ],
+      "toute_annee": false,
+      "note": "au Japon, les branches de dodan-tsutsuji circulent de mai à septembre (fleurs au printemps, feuilles fraîches l'été, feuillage rouge à l'automne) ; présentes chez les grossistes européens",
+      "sources": [
+        "https://sikito.com/en/blogs/magazine/dodan-tsutsuji",
+        "https://thursd.com/articles/aucnet-japan-enkianthus-perulatus",
+        "https://sikito.com/en/blogs/magazine/edamono-interior"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 14,
+      "max": 30,
+      "sources": [
+        "https://sikito.com/en/blogs/magazine/dodan-tsutsuji",
+        "https://sikito.com/en/blogs/magazine/edamono-interior"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "feuilles-recroquevillees",
+        "feuilles-jaunissent"
+      ],
+      "ordre": "branche de feuillage très durable ; en fin de vie les feuilles en verticilles s'enroulent et pendent, puis jaunissent ou rougissent et tombent",
+      "tete": null,
+      "petales": null,
+      "feuilles": "feuilles en rosettes au bout des rameaux ; vert frais l'été, rouge vif à l'automne ; s'enroulent et se dessèchent en fin de vie",
+      "tige": "rameaux fins disposés en étages, restent droits",
+      "couleurs": {
+        "vert": {
+          "declin": "vert qui ternit, feuilles qui s'enroulent",
+          "fane": "vert jaune ou rougeâtre, feuilles sèches pendantes"
+        },
+        "rouge": {
+          "declin": "rouge vif (automne) qui fonce",
+          "fane": "rouge brun, feuilles tombantes"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Note de longévité 5/5 chez le grossiste japonais Sikito, mais aucun nombre de jours : 2 à 4 semaines est une estimation (confiance basse). Petites clochettes blanches au printemps.",
+      "sources": [
+        "https://sikito.com/en/blogs/magazine/dodan-tsutsuji",
+        "https://sikito.com/en/blogs/magazine/edamono-interior",
+        "https://www.rhs.org.uk/plants/6395/wd/details"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "glycine",
+    "nom": "Glycine",
+    "saison_vente": {
+      "mois": [
+        4,
+        5,
+        6
+      ],
+      "pic": [
+        5
+      ],
+      "toute_annee": false,
+      "note": "floraison d'avril à juin, de début mai à début juin pour Wisteria floribunda ; branches coupées rares, surtout en fleuristerie de saison",
+      "sources": [
+        "https://plantura.garden/uk/trees-shrubs/wisteria/wisteria-overview",
+        "https://www.seattlejapanesegarden.org/blog/2018/5/3/japanese-wisteria-brings-late-spring-beauty-to-the-seattle-japanese-garden"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 2,
+      "max": 8,
+      "sources": [
+        "https://gardenista.com/posts/mysterious-wisteria-an-irresistible-purple-flower-goes-from-vine-to-vase"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "penche-tete",
+        "fleurons-tombent",
+        "bourgeons-avortent"
+      ],
+      "ordre": "les grappes pendantes ramollissent puis s'affaissent ; les fleurons tombent en pluie depuis la base de la grappe ; les boutons de la pointe ne s'ouvrent jamais",
+      "tete": "grappes pendantes de 30 à 70 cm qui s'affaissent davantage et se recroquevillent en fin de vie",
+      "petales": "petites fleurs papilionacées qui pâlissent puis tombent",
+      "feuilles": "feuilles composées qui pendent et se recroquevillent vite",
+      "tige": "rameau volubile, souple ; la grappe peut casser à son attache",
+      "couleurs": {
+        "violet": {
+          "declin": "lilas qui pâlit vers le mauve gris",
+          "fane": "mauve sale, grappe dégarnie"
+        },
+        "blanc": {
+          "declin": "blanc qui jaunit",
+          "fane": "beige brun"
+        },
+        "rose": {
+          "declin": "rose lilas qui se délave",
+          "fane": "rose terne beige"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Environ 8 jours sur la branche, 2 jours seulement pour une grappe détachée (Gardenista). Les boutons coupés fermés ne s'ouvrent pas. Grappes lourdes et fragiles.",
+      "sources": [
+        "https://gardenista.com/posts/mysterious-wisteria-an-irresistible-purple-flower-goes-from-vine-to-vase",
+        "https://plantura.garden/uk/trees-shrubs/wisteria/wisteria-overview"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "mitsumata",
+    "nom": "Mitsumata",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [
+        11,
+        12,
+        1
+      ],
+      "toute_annee": true,
+      "note": "branches écorcées (blanchies, souvent teintes) de Edgeworthia, matière sèche disponible toute l'année ; récolte de novembre à janvier après la chute des feuilles ; branches fraîches fleuries (fin d'hiver) surtout au Japon",
+      "sources": [
+        "https://paper.gatech.edu/node/1161",
+        "https://plants.ces.ncsu.edu/plants/edgeworthia-chrysantha/common-name/paperbush-plant"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 60,
+      "max": 365,
+      "sources": [
+        "https://paper.gatech.edu/node/1161"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "aucune-fanaison-visible"
+      ],
+      "ordre": "matière sèche : aucune fanaison ; la branche écorcée garde sa forme et peut seulement jaunir ou se salir avec le temps",
+      "tete": null,
+      "petales": null,
+      "feuilles": "aucune (branches défeuillées)",
+      "tige": "rameaux qui se divisent par trois à chaque nœud ; trempés, ils deviennent souples et se cintrent",
+      "couleurs": {
+        "blanc": {
+          "declin": "blanc qui jaunit légèrement",
+          "fane": "ivoire terne"
+        },
+        "rose": {
+          "declin": "teinte qui pâlit à la lumière",
+          "fane": "rose délavé"
+        },
+        "bicolore": {
+          "declin": "teintes qui pâlissent à la lumière",
+          "fane": "couleurs délavées"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Fiche faite pour la branche écorcée et sèche vendue en fleuristerie ; la décoloration à la lumière des branches teintes est une extrapolation. La branche fraîche porte en fin d'hiver des boules de fleurs jaunes duveteuses, non traitées ici. Tenue « en vase » conventionnelle (matière inerte).",
+      "sources": [
+        "https://paper.gatech.edu/node/1161",
+        "https://plants.ces.ncsu.edu/plants/edgeworthia-chrysantha/common-name/paperbush-plant",
+        "https://tu-dresden.de/bg/standorte/dresden/pflanze-der-woche/edgeworthia_chrysantha"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "saule-a-chatons",
+    "nom": "Saule à chatons",
+    "saison_vente": {
+      "mois": [
+        12,
+        1,
+        2,
+        3,
+        4
+      ],
+      "pic": [
+        2,
+        3
+      ],
+      "toute_annee": false,
+      "note": "chatons argentés de la fin de l'hiver au début du printemps (de janvier à avril selon le climat) ; vente surtout avant Pâques, dès décembre chez les grossistes pour certains Salix",
+      "sources": [
+        "https://www.themarthablog.com/2023/04/pussy-willow-arrangements-for-easter.html",
+        "https://sikito.com/en/blogs/magazine/nekoyanagi",
+        "https://www.bbg.org/article/what_are_pussy_willows_anyway"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 14,
+      "max": 60,
+      "sources": [
+        "https://sikito.com/en/blogs/magazine/nekoyanagi",
+        "https://www.themarthablog.com/2023/04/pussy-willow-arrangements-for-easter.html"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "seche-sur-place",
+        "fleurons-tombent"
+      ],
+      "ordre": "dans un vase sec, les chatons argentés restent tels quels des semaines et sèchent en gardant leur forme ; dans l'eau, ils s'allongent, sortent des étamines jaunes chargées de pollen (pieds mâles), puis se dessèchent et tombent ; les feuilles et parfois des racines apparaissent",
+      "tete": "chatons ovoïdes duveteux plaqués le long des rameaux",
+      "petales": "pas de pétales : duvet argenté puis houppes d'étamines jaunes",
+      "feuilles": "petites feuilles vert tendre qui sortent si la branche est dans l'eau",
+      "tige": "rameaux droits, brun rouge ou noirâtres",
+      "couleurs": {
+        "blanc": {
+          "declin": "gris argenté soyeux, ou houppes jaune soufre dans l'eau",
+          "fane": "gris terne, chatons qui tombent ou brunissent"
+        },
+        "bicolore": {
+          "declin": "noir ('Melanostachys') puis rouge et jaune à l'ouverture",
+          "fane": "brun terne"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Seul cas où l'eau abrège le décor : sans eau, les chatons ne s'ouvrent pas et sèchent intacts. Note de longévité 5/5 (Sikito) ; la fourchette en jours est une estimation à partir de « des semaines ».",
+      "sources": [
+        "https://www.themarthablog.com/2023/04/pussy-willow-arrangements-for-easter.html",
+        "https://sikito.com/en/blogs/magazine/nekoyanagi",
+        "https://www.bbg.org/article/what_are_pussy_willows_anyway",
+        "https://floraccess.com/en/product/92052/salix-gracilistyla-melanostachys"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "saule-fascie-sekka",
+    "nom": "Saule fascié 'Sekka'",
+    "saison_vente": {
+      "mois": [
+        11,
+        12,
+        1,
+        2,
+        3
+      ],
+      "pic": [
+        12,
+        1,
+        2
+      ],
+      "toute_annee": false,
+      "note": "branches disponibles dès fin novembre, dormantes et défeuillées ; à partir de fin janvier, forcées pour faire sortir des chatons blancs ; existe aussi en sec",
+      "sources": [
+        "https://starvalleyflowers.com/?p=277",
+        "https://deborahsilver.com/blog/bold-branches/"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 21,
+      "max": 90,
+      "sources": [
+        "https://deborahsilver.com/blog/bold-branches/",
+        "https://plants.ces.ncsu.edu/plants/salix-udensis-sekka"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "seche-sur-place",
+        "feuilles-naissent"
+      ],
+      "ordre": "la branche aplatie et recourbée ne fane pas : elle sèche lentement en gardant sa forme ; dans l'eau, des chatons blancs puis de jeunes feuilles peuvent sortir",
+      "tete": "pas de fleur ; petits chatons blancs le long des tiges plates si la branche est forcée",
+      "petales": null,
+      "feuilles": "absentes à la vente ; jeunes feuilles possibles dans l'eau",
+      "tige": "tiges plates en ruban, élargies et enroulées en crosse au sommet (fasciation)",
+      "couleurs": {
+        "brun": {
+          "declin": "brun rouge luisant",
+          "fane": "brun gris mat"
+        },
+        "vert": {
+          "declin": "vert olive et rouge",
+          "fane": "brun olive mat"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Seuls 20 % des tiges sont fasciées. Les branches gardent longtemps leur couleur ; vendues aussi séchées. Terme ajouté « feuilles-naissent ». Durée en jours estimée (aucune mesure).",
+      "sources": [
+        "https://starvalleyflowers.com/?p=277",
+        "https://deborahsilver.com/blog/bold-branches/",
+        "https://plants.ces.ncsu.edu/plants/salix-udensis-sekka"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "saule-tortueux",
+    "nom": "Saule tortueux",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [
+        1,
+        2,
+        3
+      ],
+      "toute_annee": true,
+      "note": "« curly willow » des fleuristes, disponible toute l'année ; tiges stockables 6 à 10 semaines au froid ; branches vertes feuillées et branches nues",
+      "sources": [
+        "https://extension.msstate.edu/sites/default/files/publications/P3383_web.pdf",
+        "https://www.epicgardening.com/corkscrew-willow/"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 21,
+      "max": 90,
+      "sources": [
+        "https://extension.msstate.edu/sites/default/files/publications/P3383_web.pdf"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "feuilles-naissent",
+        "seche-sur-place"
+      ],
+      "ordre": "la branche ne fane pas : dans l'eau elle s'enracine et se couvre de petites feuilles vertes ; hors de l'eau, elle sèche en gardant ses spirales",
+      "tete": null,
+      "petales": null,
+      "feuilles": "petites feuilles étroites vert tendre qui sortent le long des spirales dans l'eau ; jaunissent si la branche sèche",
+      "tige": "rameaux tordus en tire-bouchon, jaune verdâtre à brun",
+      "couleurs": {
+        "vert": {
+          "declin": "vert jaune, nouvelles feuilles",
+          "fane": "brun clair sec, feuilles jaunes tombées"
+        },
+        "brun": {
+          "declin": "brun luisant",
+          "fane": "brun gris mat"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Les tiges peuvent durer des années si on les laisse sécher ; dans l'eau, racines et feuilles apparaissent (Mississippi State Extension).",
+      "sources": [
+        "https://extension.msstate.edu/sites/default/files/publications/P3383_web.pdf",
+        "https://www.epicgardening.com/corkscrew-willow/"
+      ]
+    },
+    "confiance": "haute"
+  },
+  {
+    "id": "cornouiller-a-bois-colore",
+    "nom": "Cornouiller à bois coloré",
+    "saison_vente": {
+      "mois": [
+        10,
+        11,
+        12,
+        1,
+        2,
+        3
+      ],
+      "pic": [
+        11,
+        12,
+        1
+      ],
+      "toute_annee": false,
+      "note": "tiges rouges ou jaunes (Cornus alba, C. sericea) utilisées en hiver, quand la couleur est la plus vive",
+      "sources": [
+        "https://woodyplants.cals.cornell.edu/plant/61"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 21,
+      "max": 60,
+      "sources": [
+        "https://woodyplants.cals.cornell.edu/plant/61"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "decolore",
+        "feuilles-naissent"
+      ],
+      "ordre": "les tiges gardent leur couleur longtemps, même sans eau ; en séchant elles se rident légèrement et ternissent ; dans l'eau, les bourgeons peuvent débourrer",
+      "tete": null,
+      "petales": null,
+      "feuilles": "absentes à la vente ; bourgeons opposés qui peuvent s'ouvrir en petites feuilles dans l'eau",
+      "tige": "tiges droites et lisses, rouge corail, rouge sang ou jaune vert",
+      "couleurs": {
+        "rouge": {
+          "declin": "rouge vif qui devient mat",
+          "fane": "rouge brun terne, écorce un peu ridée"
+        },
+        "jaune": {
+          "declin": "jaune vert ('Flaviramea')",
+          "fane": "vert olive terne"
+        },
+        "orange": {
+          "declin": "orange corail ('Midwinter Fire')",
+          "fane": "orange brun terne"
+        }
+      },
+      "seche_bien": true,
+      "notes": "« Gardent leur couleur longtemps sans eau » (Cornell) : la durée en jours est une estimation. Le forçage en eau (feuilles, voire fleurs) prend environ 5 semaines selon la Pennsylvania Horticultural Society.",
+      "sources": [
+        "https://woodyplants.cals.cornell.edu/plant/61",
+        "https://phsonline.org/for-gardeners/gardeners-blog/forcing-branches-indoors"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "bouleau",
+    "nom": "Bouleau",
+    "saison_vente": {
+      "mois": [
+        11,
+        12,
+        1,
+        2,
+        3,
+        4
+      ],
+      "pic": [
+        12,
+        1,
+        2,
+        3
+      ],
+      "toute_annee": false,
+      "note": "rameaux de bouleau en décor d'hiver et de printemps ; chatons qui apparaissent en 2 à 3 semaines de forçage ; mois de vente extrapolés",
+      "sources": [
+        "https://homegarden-cahnr.media.uconn.edu/wp-content/uploads/sites/3479/2022/08/Articles_120_2921085124.pdf",
+        "https://b2b.fleurop.ch/en/s/flowering-branches"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 14,
+      "max": 30,
+      "sources": [
+        "https://b2b.fleurop.ch/en/s/flowering-branches"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "feuilles-naissent",
+        "fleurons-tombent",
+        "feuilles-jaunissent"
+      ],
+      "ordre": "dans l'eau, les chatons mâles s'allongent, pendent et libèrent leur pollen puis tombent ; de petites feuilles vert vif sortent, puis jaunissent ; les fins rameaux secs deviennent cassants",
+      "tete": "chatons pendants or, brun ou vert",
+      "petales": null,
+      "feuilles": "petites feuilles triangulaires vert tendre qui jaunissent et tombent",
+      "tige": "rameaux fins, brun pourpre, sur tiges à écorce blanche",
+      "couleurs": {
+        "brun": {
+          "declin": "brun pourpre avec chatons dorés",
+          "fane": "brun gris, chatons tombés"
+        },
+        "vert": {
+          "declin": "vert tendre des jeunes feuilles",
+          "fane": "feuilles jaunes puis brunes"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Tenue en jours estimée (aucune mesure) ; le soin conseillé (fendre les tiges, brumiser) vient de Fleurop. Les troncs à écorce blanche se vendent aussi en déco sèche.",
+      "sources": [
+        "https://homegarden-cahnr.media.uconn.edu/wp-content/uploads/sites/3479/2022/08/Articles_120_2921085124.pdf",
+        "https://b2b.fleurop.ch/en/s/flowering-branches"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "noisetier-tortueux-chatons",
+    "nom": "Noisetier",
+    "saison_vente": {
+      "mois": [
+        12,
+        1,
+        2,
+        3
+      ],
+      "pic": [
+        1,
+        2
+      ],
+      "toute_annee": false,
+      "note": "rameaux de noisetier (dont 'Contorta') avec chatons en fin d'hiver, avant les feuilles ; utiles aux arrangements d'hiver",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Corylus_avellana",
+        "https://hort.ifas.ufl.edu/database/documents/pdf/shrub_fact_sheets/coravea.pdf"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 14,
+      "max": 30,
+      "sources": [
+        "https://hort.ifas.ufl.edu/database/documents/pdf/shrub_fact_sheets/coravea.pdf"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "fleurons-tombent",
+        "feuilles-naissent",
+        "seche-sur-place"
+      ],
+      "ordre": "les chatons s'allongent et pendent, libèrent un pollen jaune puis brunissent et tombent ; les rameaux tortueux restent et peuvent sécher sans changer de forme",
+      "tete": "chatons mâles jaune pâle de 5 à 12 cm, pendants ; fleurs femelles minuscules aux styles rouges",
+      "petales": null,
+      "feuilles": "feuilles rondes et gaufrées qui peuvent sortir dans l'eau",
+      "tige": "rameaux tordus en zigzag et spirales ('Contorta') ou droits",
+      "couleurs": {
+        "jaune": {
+          "declin": "chatons jaune pâle poudrés de pollen",
+          "fane": "chatons brun gris tombés"
+        },
+        "brun": {
+          "declin": "rameaux brun luisant",
+          "fane": "rameaux brun gris secs, inchangés"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Tenue en jours estimée (aucune mesure). La perte de pollen et la chute des chatons sont déduites de la biologie des chatons et de l'analogie avec le saule.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Corylus_avellana",
+        "https://hort.ifas.ufl.edu/database/documents/pdf/shrub_fact_sheets/coravea.pdf"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "houx-a-baies",
+    "nom": "Houx à baies",
+    "saison_vente": {
+      "mois": [
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [
+        11,
+        12
+      ],
+      "toute_annee": false,
+      "note": "Ilex verticillata : récolte dès mi-septembre ('Golden Verboom'), ventes aux cadrans d'Aalsmeer et Rijnsburg, offre pleine en novembre-décembre ; houx commun (Ilex aquifolium) pour Noël",
+      "sources": [
+        "https://thursd.com/posts/ilex-grower-emiel-de-jong",
+        "https://www.floristrytradeclub.co.uk/post/ilex-verticillata-winterberry"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 5,
+      "max": 14,
+      "sources": [
+        "https://www.floristrytradeclub.co.uk/post/ilex-verticillata-winterberry",
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/ilex-berries-winterberry",
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/holly"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "baies-rident",
+        "feuilles-brunissent"
+      ],
+      "ordre": "les baies ternissent puis se rident et tombent si la pièce est chaude ou dans un courant d'air ; chez le houx commun, l'éthylène fait d'abord tomber les feuilles, les baies tenant mieux",
+      "tete": null,
+      "petales": null,
+      "feuilles": "Ilex verticillata vendu défeuillé ; houx commun : feuilles piquantes luisantes qui tombent à l'éthylène et brunissent en séchant",
+      "tige": "rameaux droits, gris",
+      "couleurs": {
+        "rouge": {
+          "declin": "rouge vif qui devient mat",
+          "fane": "rouge sombre ridé, baies tombées"
+        },
+        "orange": {
+          "declin": "orange qui ternit",
+          "fane": "orange brun ridé"
+        },
+        "jaune": {
+          "declin": "jaune doré ('Golden Verboom')",
+          "fane": "ocre brun ridé"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Les rameaux de verticillata sont défeuillés sous bâche noire avant la vente. L'Ilex émet de l'éthylène et peut abréger la vie des fleurs voisines.",
+      "sources": [
+        "https://www.floristrytradeclub.co.uk/post/ilex-verticillata-winterberry",
+        "https://thursd.com/posts/ilex-grower-emiel-de-jong",
+        "https://agris.fao.org/search/en/providers/122535/records/65df64540f3e94b9e5d81041",
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/holly"
+      ]
+    },
+    "confiance": "haute"
+  }
+]

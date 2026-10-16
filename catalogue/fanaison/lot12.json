@@ -1,0 +1,3423 @@
+[
+  {
+    "id": "eucalyptus-cinerea",
+    "nom": "Eucalyptus cinerea",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [],
+      "toute_annee": true,
+      "note": "importé d'Italie et de France toute l'année (cueilli à la main), mai-juin difficiles à obtenir ; pic non documenté (pic laissé vide)",
+      "sources": [
+        "https://wbe.nl/en/product/eucalyptus-cinerea/"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 14,
+      "max": 21,
+      "sources": [
+        "https://floralife.com/flowers/eucalyptus-silver-dollar",
+        "https://fiftyflowers.com/products/silver-dollar-eucalyptus-greens"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "pointes-flechissent",
+        "decolore",
+        "seche-sur-place",
+        "feuilles-recroquevillees",
+        "chute-feuilles"
+      ],
+      "ordre": "les jeunes pointes de tige ramollissent et retombent les premières, puis les feuilles les plus âgées se ternissent ; la branche sèche ensuite sur place en gardant sa forme, quelques feuilles se recourbent ou tombent",
+      "tete": null,
+      "petales": null,
+      "feuilles": "feuilles juvéniles opposées, sans pétiole, rondes à ovales-cordées (2-8 cm), embrassant la tige, glauques gris-bleu argenté ; en déclin les feuilles du haut s'amollissent, les plus âgées se ternissent ; une fois sèches, elles deviennent cassantes, gris-vert éteint, parfois légèrement recourbées",
+      "tige": "tige droite et raide, glauque ; les extrémités tendres peuvent s'affaisser ; sèche sans plier",
+      "couleurs": {
+        "bleu": {
+          "declin": "gris-bleu argenté qui se ternit, perd un peu de son éclat poudré",
+          "fane": "gris-vert éteint à vert olive grisé ; jaune-brun si exposé au soleil"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Sources consultées via extraits de recherche (WebFetch bloqué par le proxy). Symptômes de sénescence documentés pour l'eucalyptus coupé (étude Univ. Milan sur E. parvifolia) : flétrissement des jeunes pousses, décoloration des feuilles âgées, chute de feuilles ; l'éthylène accélère la sénescence. En séchant, la feuille passe à un gris-vert plus doux / vert olive grisé, devient cassante et peut se recourber ; au soleil elle jaunit ou brunit. Termes ajoutés : « pointes-flechissent » = les jeunes extrémités de tige ramollissent et retombent ; « chute-feuilles » = chute de feuilles en fin de vie. Floralife (« Silver Dollar », nom commercial couramment appliqué à E. cinerea) annonce 20 jours et plus ; FiftyFlowers 14 jours et plus ; je retiens 14-21. Fanaison décrite à partir de l'étude sur E. parvifolia et des guides de séchage génériques (extrapolation au genre).",
+      "sources": [
+        "https://keys.lucidcentral.com/euclid/text/entities/eucalyptus_cinerea_subsp._cinerea.htm",
+        "https://wbe.nl/en/product/eucalyptus-cinerea/",
+        "https://air.unimi.it/handle/2434/235315",
+        "https://www.livingetc.com/advice/dried-eucalyptus",
+        "https://www.burlapandblue.com/drying-eucalyptus-two-ways-to-preserve-eucalyptus-branches/",
+        "https://digital.library.adelaide.edu.au/dspace/handle/2440/16961"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "eucalyptus-pulverulenta-baby-blue",
+    "nom": "Eucalyptus 'Baby Blue'",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [],
+      "toute_annee": true,
+      "note": "E. pulverulenta 'Baby Blue' importé d'Italie toute l'année, mai-juin difficiles ; pic non documenté",
+      "sources": [
+        "https://wbe.nl/en/product/eucalyptus-baby-blue/"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 14,
+      "max": 21,
+      "sources": [
+        "https://floralife.com/flowers/eucalyptus-baby-blue",
+        "https://library.floretflowers.com/products/eucalyptus-baby-blue"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "pointes-flechissent",
+        "decolore",
+        "seche-sur-place",
+        "feuilles-recroquevillees",
+        "chute-feuilles"
+      ],
+      "ordre": "les jeunes pointes de tige ramollissent et retombent les premières, puis les feuilles les plus âgées se ternissent ; la branche sèche ensuite sur place en gardant sa forme, quelques feuilles se recourbent ou tombent",
+      "tete": null,
+      "petales": null,
+      "feuilles": "petites feuilles rondes (env. 2,5 cm) opposées par paires serrées le long d'une tige très droite, sans pétiole, très glauques bleu argenté ; en déclin, ternissement et pointes molles ; sèches, gris-vert, cassantes",
+      "tige": "tige très droite et rigide, entièrement garnie de paires de feuilles ; ne plie pas",
+      "couleurs": {
+        "bleu": {
+          "declin": "bleu argenté qui se ternit vers le gris-bleu",
+          "fane": "gris-vert doux à vert olive grisé, jamais très brun à l'ombre"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Sources consultées via extraits de recherche (WebFetch bloqué par le proxy). Symptômes de sénescence documentés pour l'eucalyptus coupé (étude Univ. Milan sur E. parvifolia) : flétrissement des jeunes pousses, décoloration des feuilles âgées, chute de feuilles ; l'éthylène accélère la sénescence. En séchant, la feuille passe à un gris-vert plus doux / vert olive grisé, devient cassante et peut se recourber ; au soleil elle jaunit ou brunit. Termes ajoutés : « pointes-flechissent » = les jeunes extrémités de tige ramollissent et retombent ; « chute-feuilles » = chute de feuilles en fin de vie. Floralife : 20 jours et plus, disponible toute l'année ; Floret classe la variété parmi les « driables » (séchables). Fanaison extrapolée au genre.",
+      "sources": [
+        "https://floralife.com/flowers/eucalyptus-baby-blue",
+        "https://keys.lucidcentral.com/euclid/pdf/entities/eucalyptus_pulverulenta.pdf",
+        "https://library.floretflowers.com/collections/driables/products/eucalyptus-baby-blue",
+        "https://air.unimi.it/handle/2434/235315",
+        "https://www.livingetc.com/advice/dried-eucalyptus"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "eucalyptus-gunnii",
+    "nom": "Eucalyptus gunnii",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [],
+      "toute_annee": true,
+      "note": "importé d'Italie toute l'année (VBN 3508), mai-juin difficiles ; pic non documenté",
+      "sources": [
+        "https://wbe.nl/en/product/eucalyptus-gunny/"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 14,
+      "max": 21,
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/ecualyptus",
+        "https://floralife.com/flowers/eucalyptus-baby-blue"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "pointes-flechissent",
+        "decolore",
+        "seche-sur-place",
+        "feuilles-recroquevillees",
+        "chute-feuilles"
+      ],
+      "ordre": "les jeunes pointes de tige ramollissent et retombent les premières, puis les feuilles les plus âgées se ternissent ; la branche sèche ensuite sur place en gardant sa forme, quelques feuilles se recourbent ou tombent",
+      "tete": null,
+      "petales": null,
+      "feuilles": "feuilles juvéniles rondes à cordées (1,3-4,5 cm), opposées, sans pétiole, gris-vert à glauques ; les tiges plus âgées portent des feuilles adultes alternes, lancéolées, gris-vert à bleu-vert ; en déclin, pointes molles puis feuilles ternes ; sèches, gris-vert éteint et cassantes",
+      "tige": "tige droite ; extrémités tendres pouvant s'affaisser",
+      "couleurs": {
+        "bleu": {
+          "declin": "gris-bleu qui se ternit",
+          "fane": "gris-vert éteint à vert olive grisé ; jaune-brun au soleil"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Sources consultées via extraits de recherche (WebFetch bloqué par le proxy). Symptômes de sénescence documentés pour l'eucalyptus coupé (étude Univ. Milan sur E. parvifolia) : flétrissement des jeunes pousses, décoloration des feuilles âgées, chute de feuilles ; l'éthylène accélère la sénescence. En séchant, la feuille passe à un gris-vert plus doux / vert olive grisé, devient cassante et peut se recourber ; au soleil elle jaunit ou brunit. Termes ajoutés : « pointes-flechissent » = les jeunes extrémités de tige ramollissent et retombent ; « chute-feuilles » = chute de feuilles en fin de vie. Aucune tenue en vase propre à E. gunnii trouvée (seule une étude indiquant que le STS ou l'HQC n'allongent pas sa tenue) : valeur 14-21 extrapolée des autres eucalyptus. Fanaison extrapolée au genre. Attention au dessin : feuilles rondes (juvéniles) ou lancéolées (adultes) selon le lot.",
+      "sources": [
+        "https://wbe.nl/en/product/eucalyptus-gunny/",
+        "https://keys.lucidcentral.com/euclid/pdf/entities/eucalyptus_gunnii.pdf",
+        "https://digital.library.adelaide.edu.au/dspace/handle/2440/16961",
+        "https://air.unimi.it/handle/2434/235315",
+        "https://www.livingetc.com/advice/dried-eucalyptus"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "eucalyptus-parvifolia",
+    "nom": "Eucalyptus parvifolia",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [],
+      "toute_annee": true,
+      "note": "E. parvifolia (= E. parvula) importé d'Italie toute l'année, mai-juin difficiles ; pic non documenté",
+      "sources": [
+        "https://wbe.nl/es/producto/eucalipto-parvifolia"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 14,
+      "max": 21,
+      "sources": [
+        "https://library.floretflowers.com/collections/driables/products/eucalyptus-small-leaved-gum",
+        "https://fiftyflowers.com/products/parvifolia-fresh-eucalyptus-greenery"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "pointes-flechissent",
+        "decolore",
+        "seche-sur-place",
+        "feuilles-recroquevillees",
+        "chute-feuilles"
+      ],
+      "ordre": "les jeunes pointes de tige ramollissent et retombent les premières, puis les feuilles les plus âgées se ternissent ; la branche sèche ensuite sur place en gardant sa forme, quelques feuilles se recourbent ou tombent",
+      "tete": null,
+      "petales": null,
+      "feuilles": "petites feuilles juvéniles opposées, sans pétiole, elliptiques à lancéolées (1,6-4 cm × 1 cm), vert sauge légèrement bleuté ; en déclin les jeunes feuilles flétrissent, les plus âgées se décolorent, puis chute de feuilles ; sèches, elles peuvent se recourber",
+      "tige": "tiges fines et vaporeuses, rouge canneberge ; les extrémités souples retombent en déclin",
+      "couleurs": {
+        "vert": {
+          "declin": "vert sauge qui pâlit, pointes molles",
+          "fane": "gris-vert olive éteint, quelques feuilles jaunies ou brunies, tige rouge brunie"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Sources consultées via extraits de recherche (WebFetch bloqué par le proxy). Symptômes de sénescence documentés pour l'eucalyptus coupé (étude Univ. Milan sur E. parvifolia) : flétrissement des jeunes pousses, décoloration des feuilles âgées, chute de feuilles ; l'éthylène accélère la sénescence. En séchant, la feuille passe à un gris-vert plus doux / vert olive grisé, devient cassante et peut se recourber ; au soleil elle jaunit ou brunit. Termes ajoutés : « pointes-flechissent » = les jeunes extrémités de tige ramollissent et retombent ; « chute-feuilles » = chute de feuilles en fin de vie. Seule espèce du lot dont la sénescence est directement étudiée (Univ. Milan : flétrissement des jeunes pousses, décoloration des vieilles feuilles, chute ; l'éthylène réduit la tenue). Tenue 14 j et plus (Floret), au moins 8 j (FiftyFlowers). Couleurs du fané extrapolées des guides de séchage génériques.",
+      "sources": [
+        "https://air.unimi.it/handle/2434/235315",
+        "https://air.unimi.it/handle/2434/52992",
+        "https://keys.lucidcentral.com/euclid/pdf/entities/eucalyptus_parvula.pdf",
+        "https://wbe.nl/es/producto/eucalipto-parvifolia",
+        "https://library.floretflowers.com/collections/driables/products/eucalyptus-small-leaved-gum",
+        "https://www.livingetc.com/advice/dried-eucalyptus"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "eucalyptus-nicholii",
+    "nom": "Eucalyptus nicholii",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [],
+      "toute_annee": true,
+      "note": "E. nicholii importé d'Italie toute l'année (VBN 10172), mai-juin difficiles ; pic non documenté",
+      "sources": [
+        "https://wbe.nl/en/products"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 14,
+      "max": 21,
+      "sources": [
+        "https://library.floretflowers.com/products/eucalyptus-nichols-willow"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "pointes-flechissent",
+        "decolore",
+        "seche-sur-place",
+        "feuilles-recroquevillees",
+        "chute-feuilles"
+      ],
+      "ordre": "les jeunes pointes de tige ramollissent et retombent les premières, puis les feuilles les plus âgées se ternissent ; la branche sèche ensuite sur place en gardant sa forme, quelques feuilles se recourbent ou tombent",
+      "tete": null,
+      "petales": null,
+      "feuilles": "feuilles étroites, linéaires à étroitement lancéolées (2-6,5 cm × 0,2-1 cm chez les juvéniles, jusqu'à 14 cm chez les adultes), gris-vert à bleu-vert, allure de saule, retombantes ; en déclin elles pendent davantage et se ternissent ; sèches, elles peuvent s'enrouler",
+      "tige": "tiges souples rouge canneberge, port retombant ; pliables même sèches",
+      "couleurs": {
+        "vert": {
+          "declin": "bleu-vert qui se ternit en gris-vert",
+          "fane": "gris olive terne, feuilles fines enroulées, tige rouge brunie"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Sources consultées via extraits de recherche (WebFetch bloqué par le proxy). Symptômes de sénescence documentés pour l'eucalyptus coupé (étude Univ. Milan sur E. parvifolia) : flétrissement des jeunes pousses, décoloration des feuilles âgées, chute de feuilles ; l'éthylène accélère la sénescence. En séchant, la feuille passe à un gris-vert plus doux / vert olive grisé, devient cassante et peut se recourber ; au soleil elle jaunit ou brunit. Termes ajoutés : « pointes-flechissent » = les jeunes extrémités de tige ramollissent et retombent ; « chute-feuilles » = chute de feuilles en fin de vie. Floret : 14 jours et plus, séchable ; WBE : toute l'année d'Italie. Fanaison extrapolée au genre. Surprise utile : feuillage étroit retombant de type saule, contrairement aux eucalyptus à feuilles rondes.",
+      "sources": [
+        "https://keys.lucidcentral.com/euclid/text/entities/eucalyptus_nicholii.htm",
+        "https://library.floretflowers.com/products/eucalyptus-nichols-willow",
+        "https://wbe.nl/en/products",
+        "https://air.unimi.it/handle/2434/235315",
+        "https://www.livingetc.com/advice/dried-eucalyptus"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "eucalyptus-populus",
+    "nom": "Eucalyptus populus",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [
+        9,
+        10,
+        11,
+        12
+      ],
+      "toute_annee": true,
+      "note": "toute l'année (Italie, France, cueilli sur arbres sauvages), mai-juin difficiles ; la version à « baies » marque le début de l'automne, version teinte en rouge en fin d'année ; baies un an sur deux",
+      "sources": [
+        "https://wbe.nl/en/product/eucalyptus-populus/",
+        "https://wbe.nl/en/populus-bes-het-begin-van-een-nieuwe-periode/"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 7,
+      "max": 21,
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/ecualyptus",
+        "https://bloomingmore.com/pages/eucalyptus-care-guide"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "pointes-flechissent",
+        "decolore",
+        "seche-sur-place",
+        "baies-rident",
+        "chute-feuilles"
+      ],
+      "ordre": "les jeunes pointes de tige ramollissent et retombent les premières, puis les feuilles les plus âgées se ternissent ; la branche sèche ensuite sur place en gardant sa forme, quelques feuilles se recourbent ou tombent",
+      "tete": null,
+      "petales": null,
+      "feuilles": "feuilles rondes à ovales, pétiolées, alternes, vert assez vif et luisant à gris-vert ; en déclin, pointes molles puis feuilles ternes ; sèches, gris-vert à olive",
+      "tige": "tige ramifiée, souple ; porte des grappes de « baies » vertes rondes, qui sont en réalité des boutons floraux encore coiffés de leur opercule",
+      "couleurs": {
+        "vert": {
+          "declin": "vert qui pâlit et se ternit, baies vert mat",
+          "fane": "vert olive grisé, baies brun-vert ridées"
+        },
+        "rouge": {
+          "declin": "rouge teint qui fonce",
+          "fane": "rouge sombre bruni (teinture)"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Sources consultées via extraits de recherche (WebFetch bloqué par le proxy). Symptômes de sénescence documentés pour l'eucalyptus coupé (étude Univ. Milan sur E. parvifolia) : flétrissement des jeunes pousses, décoloration des feuilles âgées, chute de feuilles ; l'éthylène accélère la sénescence. En séchant, la feuille passe à un gris-vert plus doux / vert olive grisé, devient cassante et peut se recourber ; au soleil elle jaunit ou brunit. Termes ajoutés : « pointes-flechissent » = les jeunes extrémités de tige ramollissent et retombent ; « chute-feuilles » = chute de feuilles en fin de vie. Le nom commercial « populus » recouvre E. populnea et/ou E. polyanthemos selon les fournisseurs. Les « baies » sont des boutons floraux (WBE). Aucune tenue en vase propre trouvée : 7-21 j = fourchette générique eucalyptus. Le ridement des boutons en séchant (mode « baies-rident ») est une hypothèse non sourcée. « baies-rident » appliqué aux boutons floraux par hypothèse.",
+      "sources": [
+        "https://wbe.nl/en/populus-bes-het-begin-van-een-nieuwe-periode/",
+        "https://sproutsofbristol.co.uk/products/eucalyptus-populus-stems-green-with-berries-christmas-craft-wreath-florist-festive-decoration-fresh-foliage",
+        "https://keys.lucidcentral.com/euclid/pdf/entities/eucalyptus_populnea.pdf",
+        "https://air.unimi.it/handle/2434/235315",
+        "https://www.livingetc.com/advice/dried-eucalyptus"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "eucalyptus-stuartiana",
+    "nom": "Eucalyptus stuartiana",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [],
+      "toute_annee": true,
+      "note": "aucun calendrier trouvé pour cette espèce ; extrapolé des autres eucalyptus importés d'Italie toute l'année (mai-juin difficiles)",
+      "sources": [
+        "https://wbe.nl/en/a-large-assortment-from-europe/",
+        "https://wbe.nl/en/product/eucalyptus-cinerea/"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 7,
+      "max": 21,
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/ecualyptus"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "pointes-flechissent",
+        "decolore",
+        "seche-sur-place",
+        "feuilles-recroquevillees",
+        "chute-feuilles"
+      ],
+      "ordre": "les jeunes pointes de tige ramollissent et retombent les premières, puis les feuilles les plus âgées se ternissent ; la branche sèche ensuite sur place en gardant sa forme, quelques feuilles se recourbent ou tombent",
+      "tete": null,
+      "petales": null,
+      "feuilles": "feuilles ovales à cordées, gris-vert à bleu-vert glauque (juvéniles d'E. bridgesiana jusqu'à 10 × 8 cm, embrassant la tige, bord crénelé) ; en déclin, ternissement ; sèches, gris-vert, cassantes",
+      "tige": "tige droite ; extrémités tendres pouvant s'affaisser",
+      "couleurs": {
+        "vert": {
+          "declin": "gris-vert qui se ternit",
+          "fane": "vert olive grisé, jaune-brun au soleil"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Sources consultées via extraits de recherche (WebFetch bloqué par le proxy). Symptômes de sénescence documentés pour l'eucalyptus coupé (étude Univ. Milan sur E. parvifolia) : flétrissement des jeunes pousses, décoloration des feuilles âgées, chute de feuilles ; l'éthylène accélère la sénescence. En séchant, la feuille passe à un gris-vert plus doux / vert olive grisé, devient cassante et peut se recourber ; au soleil elle jaunit ou brunit. Termes ajoutés : « pointes-flechissent » = les jeunes extrémités de tige ramollissent et retombent ; « chute-feuilles » = chute de feuilles en fin de vie. E. stuartiana est un synonyme d'E. bridgesiana (apple box) ; le produit frais n'a pas de fiche de grossiste trouvée (seulement une version stabilisée, preuve qu'il sèche bien). Saison, tenue et fanaison extrapolées au genre.",
+      "sources": [
+        "https://essentiallyhops.co.uk/product/dried-flower-decoration/dried-flowers/eucalyptus-stuartiana-green-preserved-leaves/",
+        "https://keys.lucidcentral.com/euclid/pdf/entities/eucalyptus_bridgesiana.pdf",
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/ecualyptus",
+        "https://air.unimi.it/handle/2434/235315",
+        "https://www.livingetc.com/advice/dried-eucalyptus"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "eucalyptus-polyanthemos",
+    "nom": "Eucalyptus polyanthemos",
+    "saison_vente": {
+      "mois": [
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [],
+      "toute_annee": false,
+      "note": "saison de septembre à décembre selon un fleuriste japonais ; aucun calendrier européen trouvé",
+      "sources": [
+        "https://sikito.com/en/blogs/magazine/eucaly-popolus"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 14,
+      "max": 21,
+      "sources": [
+        "https://library.floretflowers.com/collections/driables/products/eucalyptus-silver-dollar"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "pointes-flechissent",
+        "decolore",
+        "seche-sur-place",
+        "feuilles-recroquevillees",
+        "chute-feuilles"
+      ],
+      "ordre": "les jeunes pointes de tige ramollissent et retombent les premières, puis les feuilles les plus âgées se ternissent ; la branche sèche ensuite sur place en gardant sa forme, quelques feuilles se recourbent ou tombent",
+      "tete": null,
+      "petales": null,
+      "feuilles": "feuilles juvéniles rondes, souvent échancrées au sommet (forme de pièce ou de cœur, type ginkgo), pétiolées, alternes après quelques paires, gris-vert à bleu-gris ; jeunes pousses bronzées ; sèches, elles gardent texture et parfum",
+      "tige": "tiges pourpre-rouge, souples, port naturellement retombant",
+      "couleurs": {
+        "bleu": {
+          "declin": "gris-bleu qui se ternit",
+          "fane": "gris-vert olive, jaune-brun au soleil"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Sources consultées via extraits de recherche (WebFetch bloqué par le proxy). Symptômes de sénescence documentés pour l'eucalyptus coupé (étude Univ. Milan sur E. parvifolia) : flétrissement des jeunes pousses, décoloration des feuilles âgées, chute de feuilles ; l'éthylène accélère la sénescence. En séchant, la feuille passe à un gris-vert plus doux / vert olive grisé, devient cassante et peut se recourber ; au soleil elle jaunit ou brunit. Termes ajoutés : « pointes-flechissent » = les jeunes extrémités de tige ramollissent et retombent ; « chute-feuilles » = chute de feuilles en fin de vie. Floret vend cette espèce sous le nom « Silver Dollar » (nom aussi appliqué à E. cinerea) : 14 j et plus, séchable. Saison issue d'une source japonaise, pas européenne. Fanaison extrapolée au genre. Surprise utile : feuilles pétiolées alternes (non embrassantes) et échancrées, contrairement à cinerea.",
+      "sources": [
+        "https://keys.lucidcentral.com/euclid/pdf/entities/eucalyptus_polyanthemos_subsp._polyanthemos.pdf",
+        "https://library.floretflowers.com/collections/driables/products/eucalyptus-silver-dollar",
+        "https://sikito.com/en/blogs/magazine/eucaly-popolus",
+        "https://air.unimi.it/handle/2434/235315",
+        "https://www.livingetc.com/advice/dried-eucalyptus"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "eucalyptus-kruseana",
+    "nom": "Eucalyptus kruseana",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [],
+      "toute_annee": true,
+      "note": "aucun calendrier trouvé pour cette espèce ; extrapolé des autres eucalyptus importés toute l'année",
+      "sources": [
+        "https://wbe.nl/en/a-large-assortment-from-europe/"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 7,
+      "max": 21,
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/ecualyptus"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "pointes-flechissent",
+        "decolore",
+        "seche-sur-place",
+        "feuilles-recroquevillees",
+        "chute-feuilles"
+      ],
+      "ordre": "les jeunes pointes de tige ramollissent et retombent les premières, puis les feuilles les plus âgées se ternissent ; la branche sèche ensuite sur place en gardant sa forme, quelques feuilles se recourbent ou tombent",
+      "tete": null,
+      "petales": null,
+      "feuilles": "petites feuilles juvéniles (1-2,5 cm) rondes à cordées, sans pétiole, opposées et très serrées comme des pages, gris terne à glauques des deux côtés ; boutons floraux ovales glauques ; sèches, gris-bleu terne",
+      "tige": "tige fine portant les paires de feuilles empilées ; extrémités pouvant s'affaisser",
+      "couleurs": {
+        "bleu": {
+          "declin": "gris-bleu poudré qui se ternit",
+          "fane": "gris-vert éteint"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Sources consultées via extraits de recherche (WebFetch bloqué par le proxy). Symptômes de sénescence documentés pour l'eucalyptus coupé (étude Univ. Milan sur E. parvifolia) : flétrissement des jeunes pousses, décoloration des feuilles âgées, chute de feuilles ; l'éthylène accélère la sénescence. En séchant, la feuille passe à un gris-vert plus doux / vert olive grisé, devient cassante et peut se recourber ; au soleil elle jaunit ou brunit. Termes ajoutés : « pointes-flechissent » = les jeunes extrémités de tige ramollissent et retombent ; « chute-feuilles » = chute de feuilles en fin de vie. Johnny's Seeds la donne pour les bouquets frais et secs. Aucune tenue, saison ou fanaison propre trouvées : extrapolées au genre. Surprise utile : feuilles en paires serrées « comme les pages d'un livre » (book-leaf mallee).",
+      "sources": [
+        "https://keys.lucidcentral.com/euclid/text/entities/eucalyptus_kruseana.htm",
+        "https://www.johnnyseeds.com/flowers/eucalyptus/book-leaf-mallee-eucalyptus-seed-4606.html",
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/ecualyptus",
+        "https://air.unimi.it/handle/2434/235315",
+        "https://www.livingetc.com/advice/dried-eucalyptus"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "danae-racemosa-ruscus-italien",
+    "nom": "Ruscus italien",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [
+        9,
+        10,
+        11,
+        12,
+        1,
+        2
+      ],
+      "toute_annee": true,
+      "note": "vendu comme produit de toute l'année, mais la vraie saison italienne commence en juin et dure jusqu'à avril-mai de l'année suivante ; pénurie régulière d'avril à juin. Baies rouge orangé en automne-hiver.",
+      "sources": [
+        "https://thursd.com/products/cut-flowers/greens/ruscus-racemosa",
+        "https://thursd.com/articles/playing-with-italian-ruscus"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 14,
+      "max": 35,
+      "sources": [
+        "https://oaj.fupress.net/index.php/ahs/article/view/3025",
+        "https://air.unimi.it/handle/2434/291148",
+        "https://floraldesigninstitute.com/blogs/resources-flower-library/ruscus-foliage-italian"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "feuilles-jaunissent",
+        "feuilles-recroquevillees",
+        "chute-feuilles"
+      ],
+      "ordre": "les « feuilles » (cladodes) pâlissent puis jaunissent, la branche perd du poids et se ramollit, puis les cladodes se détachent de la tige",
+      "tete": null,
+      "petales": null,
+      "feuilles": "cladodes lancéolés, alternes, vert brillant ; jaunissement progressif, perte de turgescence et de brillant, puis abscission",
+      "tige": "tiges longues, fines et souples, arquées ; restent vertes longtemps puis se dessèchent",
+      "couleurs": {
+        "vert": {
+          "declin": "vert pâli, terne, avec des cladodes jaune-vert",
+          "fane": "jaune paille à beige, cladodes tombés ou secs"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Danae racemosa n'est pas un vrai Ruscus (genre voisin). Recherches italiennes (Univ. Milan) : 34-35 j de vase life juste après récolte, encore 15-30 j après 1-2 mois de stockage ; symptômes de fin : jaunissement, perte de poids, chute des cladodes. Le 14 j est le minimum garanti fleuriste. Mode ajouté « chute-feuilles » : les cladodes se détachent. Sèche à l'air en gardant sa forme et un vert atténué (vendu aussi séché/teinté). Baies rouge orangé en grappes terminales en automne (rarement présentes sur les tiges commerciales). Le stade feuilles-recroquevillees correspond à la perte de turgescence/poids, déduit des symptômes « weight loss ». Sources consultées via les extraits du moteur de recherche (WebFetch bloqué par le proxy réseau pour ces domaines). Confiance ramenée de haute à moyenne : sources lues seulement par extraits de recherche, sans lecture intégrale (WebFetch bloqué).",
+      "sources": [
+        "https://oaj.fupress.net/index.php/ahs/article/view/3025",
+        "https://air.unimi.it/handle/2434/291148",
+        "https://fiftyflowers.com/products/white-dried-italian-ruscus",
+        "https://thursd.com/products/cut-flowers/greens/ruscus-racemosa"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "ruscus-hypophyllum-israelien",
+    "nom": "Ruscus israélien",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [],
+      "toute_annee": true,
+      "note": "production surtout en Israël et au Moyen-Orient, disponible 12 mois sur 12 ; pas de pic européen documenté",
+      "sources": [
+        "https://www.chamber.org.il/37679/40433/52076/?id=99273",
+        "https://fiftyflowers.com/products/israeli-ruscus-greenery",
+        "https://jeh.kglmeridian.com/downloadpdf/view/journals/jenh/10/3/article-p150.pdf"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 14,
+      "max": 28,
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/ruscus-foliage-israeli",
+        "https://bloomingmore.com/pages/ruscus-care-guide"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "feuilles-jaunissent",
+        "chute-feuilles"
+      ],
+      "ordre": "très lente : les cladodes perdent leur brillant et jaunissent, la branche perd de l'eau, puis certains cladodes se détachent",
+      "tete": null,
+      "petales": null,
+      "feuilles": "cladodes larges, lancéolés, vert foncé brillant, rigides (2,5-5 cm) ; jaunissement lent puis chute",
+      "tige": "raide, dressée, un peu ligneuse ; reste droite jusqu'au bout",
+      "couleurs": {
+        "vert": {
+          "declin": "vert foncé qui ternit, quelques cladodes jaune-vert",
+          "fane": "jaune-brun terne, cladodes secs, la tige raide reste debout"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Vase life annoncée 2 à 4 semaines ou plus par les fournisseurs. Les symptômes (jaunissement, perte de poids, chute des feuilles) sont décrits par la littérature postrécolte sur les Ruscus coupés, avec mention explicite de R. hypophyllum, mais pas d'étude dédiée consultée en entier. Mode « chute-feuilles » ajouté (abscission des cladodes). Comportement au séchage non sourcé (false par prudence). Sources consultées via les extraits du moteur de recherche (WebFetch bloqué par le proxy réseau pour ces domaines).",
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/ruscus-foliage-israeli",
+        "https://oaj.fupress.net/index.php/ahs/article/view/3025",
+        "https://jeh.kglmeridian.com/downloadpdf/view/journals/jenh/10/3/article-p150.pdf"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "ruscus-aculeatus-petit-houx",
+    "nom": "Petit houx",
+    "saison_vente": {
+      "mois": [
+        10,
+        11,
+        12,
+        1,
+        2
+      ],
+      "pic": [
+        11,
+        12
+      ],
+      "toute_annee": false,
+      "note": "baies rouges sur pieds femelles de l'automne à l'hiver ; rameaux surtout recherchés pour Noël. Cueillette sauvage réglementable par arrêté préfectoral en France. Les mois de vente sont déduits de la période des baies, pas d'un calendrier de grossiste.",
+      "sources": [
+        "https://calanques-parcnational.fr/fr/fragon",
+        "https://beaupreauenmauges.fr/app/uploads/2025/01/EspeceFevrier_Fragon.pdf",
+        "https://www.occitanie.developpement-durable.gouv.fr/IMG/pdf/especes_vegetales_pouvant_faire_l_objet_de_reglementation_permanente_ou_temporaire_cle7edb85-2.pdf"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 14,
+      "max": 21,
+      "sources": [
+        "https://www.calyxflowers.com/?p=7359"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "feuilles-jaunissent",
+        "baies-rident"
+      ],
+      "ordre": "les cladodes piquants, très coriaces, tiennent longtemps puis ternissent et jaunissent ; les baies rouges se rident et peuvent tomber",
+      "tete": null,
+      "petales": null,
+      "feuilles": "cladodes petits, ovales, rigides, terminés par une épine ; la baie (pieds femelles) est posée au milieu du cladode ; jaunissement lent, puis brunissement sec",
+      "tige": "raide, striée, vert foncé, buissonnante ; reste droite",
+      "couleurs": {
+        "vert": {
+          "declin": "vert sombre qui ternit, quelques cladodes jaunâtres",
+          "fane": "vert olive à brun paille, sec et piquant"
+        },
+        "rouge": {
+          "declin": "baies rouge vif qui perdent leur brillant",
+          "fane": "baies rouge sombre ridées, certaines tombées"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Confiance basse : peu de données de tenue en vase propres à R. aculeatus. Le chiffre 14 j+ vient d'un guide fleuriste (Calyx) qui nomme « Italian Ruscus – Ruscus aculeatus », confusion fréquente avec Danae racemosa ; les symptômes (jaunissement, chute) sont extrapolés des études sur Danae/Ruscus coupés ; le ridement des baies est un raisonnement, non sourcé. Surprise utile au dessin : fleurs et baies naissent au centre des « feuilles » (cladodes = tiges aplaties). Baies toxiques. Espèce dioïque : seuls les pieds femelles portent des baies. Sources consultées via les extraits du moteur de recherche (WebFetch bloqué par le proxy réseau pour ces domaines).",
+      "sources": [
+        "https://www.calyxflowers.com/?p=7359",
+        "https://calanques-parcnational.fr/fr/fragon",
+        "https://landscapeplants.aub.edu.lb/Plants/PlantProfile/2387de09-05b2-49ab-bdcc-6739d65ccb77",
+        "https://oaj.fupress.net/index.php/ahs/article/view/3025"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "pittosporum-tenuifolium",
+    "nom": "Pittosporum tenuifolium",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [
+        10,
+        11,
+        12,
+        1,
+        2,
+        3
+      ],
+      "toute_annee": true,
+      "note": "disponible toute l'année ; grosse production de plein air en Irlande (export vers Royaume-Uni et Pays-Bas), culture de feuillage présentée comme culture d'hiver ; pic hivernal déduit de cette mention, non chiffré",
+      "sources": [
+        "https://floraldesigninstitute.com/blogs/resources-flower-library/pittosporum",
+        "https://teagasc.ie/wp-content/uploads/media/website/publications/2012/PittosporumWeb.pdf",
+        "https://teagasc.ie/wp-content/uploads/media/website/crops/horticulture/cut-foliage/1_20-Cut-Foliage-Production-.pdf"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 7,
+      "max": 21,
+      "sources": [
+        "https://floralife.com/flowers/pittosporum/",
+        "https://fiftyflowers.com/products/pittosporum-greenery"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "feuilles-brunissent",
+        "feuilles-recroquevillees",
+        "chute-feuilles"
+      ],
+      "ordre": "les petites feuilles ondulées perdent leur brillant, se dessèchent et brunissent (bords d'abord), puis tombent",
+      "tete": null,
+      "petales": null,
+      "feuilles": "petites feuilles ovales à bord ondulé, brillantes ; dessèchement, brunissement, flétrissement et chute",
+      "tige": "tiges fines, noires ou brun foncé, ligneuses ; restent raides",
+      "couleurs": {
+        "vert": {
+          "declin": "vert pomme terni, bords qui sèchent",
+          "fane": "brun-vert sec, feuilles tombées"
+        },
+        "bicolore": {
+          "declin": "vert grisé à marge crème qui jaunit",
+          "fane": "brun sec, la marge crème devient beige"
+        },
+        "bordeaux": {
+          "declin": "pourpre foncé qui ternit",
+          "fane": "brun sombre presque noir, sec"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Floralife (fiche Pittosporum, genre) liste comme problèmes : brunissement prématuré, dessèchement, flétrissement, chute des feuilles, brûlures. Ces symptômes valent pour le genre, pas spécifiquement pour P. tenuifolium. Familles de couleur : cultivars 'Silver Queen' (panaché crème) et 'Tom Thumb' (pourpre) d'après la RHS ; leur vente en fleur coupée n'est confirmée que pour 'Silver Queen' (« dure longtemps en bouquet »). Mode « chute-feuilles » ajouté. Tiges noires caractéristiques, utiles au dessin. Sources consultées via les extraits du moteur de recherche (WebFetch bloqué par le proxy réseau pour ces domaines).",
+      "sources": [
+        "https://floralife.com/flowers/pittosporum/",
+        "https://www.rhs.org.uk/plants/46330/pittosporum-tenuifolium-silver-queen-fv/details",
+        "https://www.rhs.org.uk/plants/77301/pittosporum-tenuifolium-tom-thumb/details",
+        "https://teagasc.ie/wp-content/uploads/media/website/crops/horticulture/cut-foliage/3_20-Pittosporum-for-Cut-Foliage.pdf"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "pittosporum-tobira",
+    "nom": "Pittosporum tobira",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [],
+      "toute_annee": true,
+      "note": "le « pittosporum panaché » des fleuristes (P. tobira 'Variegata') est disponible toute l'année, cultivé notamment au Guatemala et au Costa Rica et importé en Europe ; aussi produit en Floride",
+      "sources": [
+        "https://thursd.com/articles/variegated-pittosporum-elevating-floral-design",
+        "https://theproducenews.com/where-green-fern-and-foliage-grow"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 7,
+      "max": 21,
+      "sources": [
+        "https://edis.ifas.ufl.edu/publication/FP484/pdf",
+        "https://floralife.com/flowers/pittosporum/"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "feuilles-brunissent",
+        "feuilles-jaunissent",
+        "chute-feuilles"
+      ],
+      "ordre": "les feuilles coriaces ternissent, sèchent et brunissent, puis tombent ; très lent",
+      "tete": null,
+      "petales": null,
+      "feuilles": "feuilles obovales, épaisses, coriaces, en rosette au bout des rameaux, bords légèrement enroulés en dessous ; brunissement et chute en fin de vie",
+      "tige": "rameaux ligneux gris-vert, raides",
+      "couleurs": {
+        "vert": {
+          "declin": "vert foncé terne, quelques feuilles jaunies",
+          "fane": "brun olive sec"
+        },
+        "bicolore": {
+          "declin": "vert grisé à marge crème qui jaunit",
+          "fane": "brun, marge beige sale"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Vase life 7-21 j et non sensible à l'éthylène (fiche UF/IFAS et Floralife, pour le genre). Les symptômes de fin (brunissement, dessèchement, chute des feuilles) sont ceux de la fiche Floralife pour le genre Pittosporum, pas une étude propre à P. tobira. Feuilles en rosettes groupées au bout des rameaux : forme très différente de P. tenuifolium. Les fruits secs (capsules) peuvent aussi servir en composition (UF). Mode « chute-feuilles » ajouté. Sources consultées via les extraits du moteur de recherche (WebFetch bloqué par le proxy réseau pour ces domaines).",
+      "sources": [
+        "https://edis.ifas.ufl.edu/publication/FP484/pdf",
+        "https://floralife.com/flowers/pittosporum/",
+        "https://www.rhs.org.uk/plants/92045/pittosporum-tobira-variegatum-(v)/details",
+        "https://woodlanders.net/collections/limited-availability/products/pittosporum-tobira-variegata"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "gaultheria-shallon-salal",
+    "nom": "Salal",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [
+        1,
+        2,
+        12
+      ],
+      "toute_annee": true,
+      "note": "cueilli à l'état sauvage dans le Nord-Ouest Pacifique (USA) ; sur les forêts fédérales, pas de récolte en été (repousse, floraison) ; produit clé pour les bouquets de Saint-Valentin. Disponibilité annuelle déduite des fournisseurs, pic d'hiver déduit des sources sur la Saint-Valentin.",
+      "sources": [
+        "https://fs.usda.gov/r06/olympic/forest-products/salal-brocha",
+        "https://thedailyworld.com/?p=95932",
+        "https://thursd.com/articles/this-is-where-salal-comes-from"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 10,
+      "max": 21,
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/salal-foliage",
+        "https://www.calyxflowers.com/?p=7612"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "feuilles-brunissent",
+        "feuilles-recroquevillees"
+      ],
+      "ordre": "les grandes feuilles coriaces perdent leur brillant, sèchent par les bords puis se recourbent légèrement en brunissant ; elles restent souvent sur la tige",
+      "tete": null,
+      "petales": null,
+      "feuilles": "feuilles ovales coriaces, 5-12 cm, vert foncé brillant dessus, plus claires dessous, finement dentées ; dessèchement et brunissement",
+      "tige": "tiges en zigzag, un peu rougeâtres, ligneuses ; restent droites",
+      "couleurs": {
+        "vert": {
+          "declin": "vert foncé terni, bords secs",
+          "fane": "vert olive à brun, feuilles cartonnées"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Tenue 14-21 j (Floral Design Institute), « jusqu'à 21 j » (Calyx). Aucune source consultée ne décrit précisément la fanaison du salal : les signes « feuilles sèches » (critère d'achat à éviter) et les symptômes généraux des feuillages coupés (jaunissement, dessèchement, chute) ont servi de base ; l'ordre décrit est donc en partie déduit. Le salal se sèche suspendu et garde sa forme (aussi vendu stabilisé). Appelé « lemon leaf » aux USA (à ne pas confondre avec d'autres « citronniers »). Sources consultées via les extraits du moteur de recherche (WebFetch bloqué par le proxy réseau pour ces domaines).",
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/salal-foliage",
+        "https://iifiir.org/en/fridoc/recommendations-for-maintaining-postharvest-quality-lemonleaf-salal-130974",
+        "https://www.walmart.com/ip/1-Bunch-Basil-Green-Dried-Salal-Lemon-Leaf-Plant-Leaves-Wreaths-Flower-Arrangements-Table-Centerpieces-Mantel-Decorations-Bouquets/2395684787",
+        "https://www.santadorotea.es/en/?p=13993"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "vaccinium-ovatum-huckleberry",
+    "nom": "Huckleberry",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [
+        12,
+        1,
+        2,
+        3
+      ],
+      "toute_annee": true,
+      "note": "feuillage vert disponible toute l'année ; le « red huckleberry » des fleuristes est la même espèce : jeunes pousses de plantes en plein soleil, rougies par le froid, récoltées après les premières gelées (généralement décembre à mars)",
+      "sources": [
+        "https://www.calyxflowers.com/?p=7342",
+        "https://corpora.tika.apache.org/base/docs/govdocs1/117/117656.pdf"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 14,
+      "max": 21,
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/huckleberry",
+        "https://www.calyxflowers.com/?p=7342"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "feuilles-recroquevillees",
+        "chute-feuilles",
+        "feuilles-brunissent"
+      ],
+      "ordre": "les petites feuilles dentées perdent leur brillant, se dessèchent et se recourbent ; elles finissent par tomber des rameaux",
+      "tete": null,
+      "petales": null,
+      "feuilles": "petites feuilles ovales (2-5 cm), dentées, vert foncé brillant, alternes en rangées serrées sur les rameaux ; jeunes pousses rouges ou bronze en hiver",
+      "tige": "rameaux fins, ligneux, rougeâtres, en éventail",
+      "couleurs": {
+        "vert": {
+          "declin": "vert foncé terne, feuilles qui se recourbent",
+          "fane": "vert olive à brun, feuilles sèches qui tombent"
+        },
+        "rouge": {
+          "declin": "rouge bronze qui fonce et perd son éclat",
+          "fane": "brun rougeâtre sec"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Tenue 2-3 semaines et disponibilité annuelle sourcées (FDI, Calyx). Aucune source consultée ne décrit la fanaison de V. ovatum coupé : ordre et modes déduits des symptômes généraux des feuillages coupés (dessèchement, chute). Attention : une fiche fleuriste évoque un rougissement automnal puis une chute des feuilles, ce qui concerne des myrtilles caduques et non V. ovatum, persistant. La couleur rouge vendue vient des jeunes pousses exposées au froid. Séchage non sourcé. Sources consultées via les extraits du moteur de recherche (WebFetch bloqué par le proxy réseau pour ces domaines). Mode ajouté « chute-feuilles » : les feuilles se détachent de la tige.",
+      "sources": [
+        "https://www.calyxflowers.com/?p=7342",
+        "https://nativeplantspnw.com/?p=1490",
+        "https://plants.usda.gov/DocumentLibrary/plantguide/pdf/pg_vaov2.pdf",
+        "https://corpora.tika.apache.org/base/docs/govdocs1/117/117656.pdf"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "rumohra-adiantiformis-leatherleaf",
+    "nom": "Fougère cuir",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [],
+      "toute_annee": true,
+      "note": "importée chaque semaine toute l'année (Floride, Costa Rica), exportée vers les Pays-Bas, l'Allemagne, la France, etc.",
+      "sources": [
+        "https://floralife.com/flowers/leatherleaf/",
+        "https://uses.plantnet-project.org/en/Rumohra_adiantiformis_(PROSEA)",
+        "https://wbe.nl/en/product/Leather-leaf-fern"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 7,
+      "max": 21,
+      "sources": [
+        "https://floralife.com/flowers/leatherleaf/",
+        "https://postharvest.ucdavis.edu/node/9326"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "feuilles-recroquevillees",
+        "feuilles-jaunissent"
+      ],
+      "ordre": "deux voies : soit flétrissement (les pinnules se plient en deux le long de leur nervure et la fronde perd sa rigidité), soit jaunissement qui part de la nervure centrale des segments et gagne les bords ; enfin dessèchement",
+      "tete": null,
+      "petales": null,
+      "feuilles": "fronde triangulaire, très découpée, coriace et vert foncé brillant ; en déclin les segments se replient le long de la nervure, ou jaunissent depuis le milieu vers les bords",
+      "tige": "pétiole (stipe) raide qui perd sa tenue : la fronde s'affaisse",
+      "couleurs": {
+        "vert": {
+          "declin": "vert foncé avec des segments pliés et des traînées jaunes le long des nervures",
+          "fane": "jaune paille à brun, fronde molle puis sèche et cassante"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Fanaison très bien documentée par l'Université de Floride (MREC) : « fern wilt » = pliage des pinnules le long de la nervure médiane et perte de rigidité ; jaunissement qui commence le long des nervures médianes et progresse vers les marges. Surprise utile au dessin : le jaune part du centre de chaque segment, pas du bord. Peut se presser pour les compositions sèches, mais pas sourcée comme séchant bien à l'air. Sources consultées via les extraits du moteur de recherche (WebFetch bloqué par le proxy réseau pour ces domaines). Confiance ramenée de haute à moyenne : sources lues seulement par extraits de recherche, sans lecture intégrale (WebFetch bloqué).",
+      "sources": [
+        "https://mrec.ifas.ufl.edu/foliage/resrpts/rh_92_21.htm",
+        "https://mrec.ifas.ufl.edu/foliage/resrpts/rh_92_2.htm",
+        "https://floralife.com/flowers/leatherleaf/",
+        "https://home.howstuffworks.com/leatherleaf-fern.htm"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "asparagus-setaceus-plumosus",
+    "nom": "Asparagus plumosus",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [],
+      "toute_annee": true,
+      "note": "disponible toute l'année ; culture historique de Floride (depuis 1893), aussi produite ailleurs",
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/plumosa-foliage",
+        "https://theproducenews.com/where-green-fern-and-foliage-grow"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 14,
+      "max": 20,
+      "sources": [
+        "https://journals.flvc.org/fshs/article/view/86044",
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/asparagus-fern"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "feuilles-jaunissent",
+        "aiguilles-tombent"
+      ],
+      "ordre": "les fines aiguilles (cladophylles) jaunissent puis se détachent en pluie ; très sensible au dessèchement, qui accélère la chute",
+      "tete": null,
+      "petales": null,
+      "feuilles": "cladophylles en aiguilles très fines, groupées, formant des plans horizontaux plumeux ; chlorose puis chute des aiguilles",
+      "tige": "tiges fines, souples, un peu épineuses, ramifiées en plateaux ; se dénudent",
+      "couleurs": {
+        "vert": {
+          "declin": "vert tendre qui pâlit en jaune-vert",
+          "fane": "jaune paille, aiguilles tombées, squelette de tiges nues"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Fin de vase life = chlorose et chute des cladophylles (Proc. Florida State Hort. Soc. 2005, sur A. setaceus 'Pyramidalis') ; très sensible à la déshydratation qui fait tomber les aiguilles (FDI). Ce ne sont ni des feuilles ni une fougère : les « aiguilles » sont des tiges modifiées ; le mode « aiguilles-tombent » est employé par analogie visuelle. Les chiffres 14-20 j viennent du cultivar 'Pyramidalis' ; plumosus standard supposé proche. Sources consultées via les extraits du moteur de recherche (WebFetch bloqué par le proxy réseau pour ces domaines). Confiance ramenée de haute à moyenne : sources lues seulement par extraits de recherche, sans lecture intégrale (WebFetch bloqué).",
+      "sources": [
+        "https://journals.flvc.org/fshs/article/view/86044",
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/asparagus-fern",
+        "https://plants.ces.ncsu.edu/plants/asparagus-setaceus"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "asparagus-virgatus-tree-fern",
+    "nom": "Asparagus virgatus",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [],
+      "toute_annee": true,
+      "note": "« tree fern » proposé toute l'année par un grossiste néerlandais (WBE) ; producteurs : Afrique du Sud, Amérique centrale, Floride, Israël. Aucun pic européen trouvé.",
+      "sources": [
+        "https://wbe.nl/en/product/tree-fern",
+        "https://en.wikipedia.org/wiki/Asparagus_virgatus"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 7,
+      "max": 14,
+      "sources": [
+        "https://floralife.com/?p=22010",
+        "https://journals.flvc.org/fshs/article/view/86044"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "feuilles-jaunissent",
+        "cladodes-tombent"
+      ],
+      "ordre": "les fines cladodes en aiguilles pâlissent et jaunissent, puis se détachent de la tige (surtout si la tige manque d'eau) ; la tige finit nue et sèche",
+      "tete": null,
+      "petales": null,
+      "feuilles": "cladodes en aiguilles (10-15 mm, en touffes de 3 à 6) le long de tiges fines et ramifiées, formant un « petit sapin » vaporeux ; elles virent au vert jaune, puis au paille, et tombent en pluie",
+      "tige": "tige raide, fine, sans épines, très ramifiée ; reste droite, se dégarnit en vieillissant ; des baies orange (5 mm) existent sur la plante mais ne sont pas décrites dans le commerce",
+      "couleurs": {
+        "vert": {
+          "declin": "vert tendre qui pâlit vers le vert jaune",
+          "fane": "jaune paille à beige, aiguilles tombées, squelette de tiges brun clair"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Accès direct aux pages bloqué par le proxy réseau (WebFetch refusé sur tous les domaines) : les valeurs proviennent des extraits de ces pages restitués par WebSearch, pas d'une lecture intégrale. Tenue : 7-14 jours (Floralife) ; l'étude UF/IFAS 2005 (Proc. Fla. State Hort. Soc. 118) le classe dans le groupe moyen avec A. falcatus et A. retrofractus. Les symptômes de fanaison ne sont pas décrits pour cette espèce : jaunissement et chute des cladodes à la déshydratation sont sourcés pour les asparagus de fleuristerie en général (Floral Design Institute, ISHS sur A. densiflorus) et extrapolés ici. Mode ajouté « cladodes-tombent » : les cladodes (rameaux en forme d'aiguilles) se détachent, analogue d'« aiguilles-tombent » hors conifères. seche_bien=false non sourcé (déduit de la chute des cladodes). Morphologie : SANBI / Kwantlen (extraits).",
+      "sources": [
+        "https://floralife.com/?p=22010",
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/asparagus-fern",
+        "https://journals.flvc.org/fshs/article/view/86044",
+        "https://plantdatabase.kpu.ca/PlantPrint/asvi",
+        "https://pza.sanbi.org/asparagus-virgatus"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "asparagus-macowanii-ming-fern",
+    "nom": "Asparagus myriocladus",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [],
+      "toute_annee": true,
+      "note": "aucun calendrier européen trouvé ; feuillage de culture pérenne sous abri (Floride, Italie en hors-sol), considéré disponible toute l'année par déduction, non sourcé directement",
+      "sources": [
+        "https://air.unimi.it/handle/2434/938311",
+        "https://usretailflowers.com/usrf.cfm?campaign=%2C&floral_id=243&funfacts=floraldisplaypage"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 10,
+      "max": 28,
+      "sources": [
+        "https://www.chemijournal.com/archives/2020/vol8issue6/PartAJ/8-6-337-396.pdf",
+        "https://ishs.org/ishs-article/847_46/",
+        "https://www.journalssystem.com/agb/pdf-176280-103512?filename=The+longevity+of+cut.pdf",
+        "https://www.calyxflowers.com/floral-library/ming-fern/",
+        "https://usretailflowers.com/usrf.cfm?campaign=%2C&floral_id=243&funfacts=floraldisplaypage"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "feuilles-jaunissent",
+        "cladodes-tombent"
+      ],
+      "ordre": "les pompons de cladodes jaunissent progressivement (perte de chlorophylle mesurée en vase), puis les cladodes sèches se détachent ; la tige en zigzag reste debout",
+      "tete": null,
+      "petales": null,
+      "feuilles": "cladodes filiformes (8-15 mm) groupées par 20-30 en pompons denses étagés le long de la tige (« poodled ») ; vert foncé, deviennent vert jaune puis jaune paille",
+      "tige": "tige ligneuse en zigzag, grisâtre, avec petites épines recourbées ; très rigide, ne plie pas ; baies rouge-violet à noires sur la plante, non vendues",
+      "couleurs": {
+        "vert": {
+          "declin": "vert profond qui s'éclaircit en vert jaune, pompons moins denses",
+          "fane": "jaune paille puis beige, pompons dégarnis sur tige grise"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Accès direct aux pages bloqué par le proxy réseau (WebFetch refusé sur tous les domaines) : les valeurs proviennent des extraits de ces pages restitués par WebSearch, pas d'une lecture intégrale. Nom : vendu comme « ming fern », A. densiflorus 'Myriocladus' ou A. macowanii (les deux noms circulent dans le commerce). Tenue : 10,1 j (essai indien) et 10,44 j avec GA3 (Acta Agrobotanica) ; 21-28 j selon les fiches fleuristes Calyx/US Retail Flowers. Le jaunissement des cladodes comme symptôme principal de sénescence est sourcé (ISHS 847_46 : la GA3 et Chrysal SVB retardent le jaunissement). La chute des cladodes est extrapolée des asparagus en général. Saison non sourcée directement. Mode ajouté « cladodes-tombent » : les cladodes en aiguilles se détachent de la tige, comme « aiguilles-tombent » hors conifères.",
+      "sources": [
+        "https://ishs.org/ishs-article/847_46/",
+        "https://www.journalssystem.com/agb/pdf-176280-103512?filename=The+longevity+of+cut.pdf",
+        "https://www.chemijournal.com/archives/2020/vol8issue6/PartAJ/8-6-337-396.pdf",
+        "https://mrec.ifas.ufl.edu/cutfol/cutpubs/CFRN_99A_foliage_as_cuts.pdf",
+        "https://weeds.dpi.nsw.gov.au/Weeds/MingAsparagusFern",
+        "https://www.calyxflowers.com/floral-library/ming-fern/"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "asparagus-densiflorus-sprengeri",
+    "nom": "Asparagus sprengeri",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [],
+      "toute_annee": true,
+      "note": "disponible toute l'année selon les fiches fleuristes américaines ; aucun calendrier européen ni pic trouvé",
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/sprengeri-fern",
+        "https://fiftyflowers.com/products/springeri-green-filler"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 8,
+      "max": 20,
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/sprengeri-fern",
+        "https://fiftyflowers.com/products/springeri-green-filler",
+        "https://krishikosh.egranth.ac.in/handle/1/5810151807"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "feuilles-jaunissent",
+        "cladodes-tombent"
+      ],
+      "ordre": "les aiguilles jaunissent et tombent, en commençant quand la tige se déshydrate ; les longues tiges retombantes se dégarnissent",
+      "tete": null,
+      "petales": null,
+      "feuilles": "cladodes plates en aiguilles courtes (par 3) le long de tiges souples et arquées, vert émeraude vif ; jaunissent puis tombent",
+      "tige": "tige fine, souple et retombante, un peu épineuse ; reste arquée ; baies rouges possibles sur la plante, rarement présentes en coupe",
+      "couleurs": {
+        "vert": {
+          "declin": "vert émeraude qui ternit et jaunit par plaques",
+          "fane": "jaune paille, aiguilles tombées, tige nue brun clair"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Accès direct aux pages bloqué par le proxy réseau (WebFetch refusé sur tous les domaines) : les valeurs proviennent des extraits de ces pages restitués par WebSearch, pas d'une lecture intégrale. Tenue 14-20 j (Floral Design Institute), minimum 8 j (FiftyFlowers), 11,87 j avec pulsing sucrose + 8-HQC (thèse indienne). Fanaison sourcée : « éviter le feuillage jaunissant qui perd ses aiguilles » (Floral Design Institute) ; l'étude UF 2005 le place dans le groupe moyen. Mode ajouté « cladodes-tombent » (cf. virgatus). seche_bien=false non sourcé.",
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/sprengeri-fern",
+        "https://journals.flvc.org/fshs/article/view/86044",
+        "https://edis.ifas.ufl.edu/publication/FP051/pdf"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "asparagus-densiflorus-myersii",
+    "nom": "Asparagus meyeri",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [],
+      "toute_annee": true,
+      "note": "disponible toute l'année selon les fiches fleuristes ; aucun calendrier européen ni pic trouvé",
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/meyeri-fern-foxtail-fern"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 10,
+      "max": 24,
+      "sources": [
+        "https://www.chemijournal.com/archives/2020/vol8issue6/PartAJ/8-6-337-396.pdf",
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/meyeri-fern-foxtail-fern",
+        "https://journals.flvc.org/fshs/article/view/86044"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "feuilles-jaunissent",
+        "cladodes-tombent"
+      ],
+      "ordre": "tenue très longue ; en fin de vie, les cladodes du plumeau pâlissent et jaunissent puis se détachent, le plumeau s'éclaircit sans perdre sa forme conique dressée",
+      "tete": null,
+      "petales": null,
+      "feuilles": "cladodes en aiguilles très denses tout autour de la tige, formant un plumeau conique « queue de renard » vert clair ; jaunissent puis tombent",
+      "tige": "tige dressée et raide (plumeau d'environ 60 cm sur la plante), ne plie pas ; baies rouges possibles sur la plante, non vendues",
+      "couleurs": {
+        "vert": {
+          "declin": "vert clair qui pâlit vers le vert jaune",
+          "fane": "jaune paille à beige, plumeau clairsemé"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Accès direct aux pages bloqué par le proxy réseau (WebFetch refusé sur tous les domaines) : les valeurs proviennent des extraits de ces pages restitués par WebSearch, pas d'une lecture intégrale. Meilleure tenue du genre dans l'étude UF/IFAS 2005 : 24,4 j en moyenne (après 2 semaines de stockage à 4 °C) ; 10,2 j dans l'essai indien ; 14-20 j (Floral Design Institute). Symptômes (jaunissement, chute des aiguilles) extrapolés des asparagus de fleuristerie en général. seche_bien=false non sourcé. Mode ajouté « cladodes-tombent » : les cladodes en aiguilles se détachent de la tige, comme « aiguilles-tombent » hors conifères.",
+      "sources": [
+        "https://journals.flvc.org/fshs/article/view/86044",
+        "https://www.chemijournal.com/archives/2020/vol8issue6/PartAJ/8-6-337-396.pdf",
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/meyeri-fern-foxtail-fern",
+        "https://edis.ifas.ufl.edu/publication/FP052/pdf",
+        "https://mrec.ifas.ufl.edu/cutfol/cutpubs/CFRN_99A_foliage_as_cuts.pdf"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "asparagus-asparagoides-smilax",
+    "nom": "Smilax",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [
+        6,
+        7,
+        8,
+        9
+      ],
+      "toute_annee": true,
+      "note": "disponible toute l'année, pic de juin à septembre selon les fiches fleuristes américaines ; aucun calendrier européen trouvé",
+      "sources": [
+        "https://www.calyxflowers.com/floral-library/smilax/",
+        "https://lacybird.com/encyclopedia/smilax",
+        "https://fiftyflowers.com/products/smilax-greenery-wedding-vine"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 5,
+      "max": 10,
+      "sources": [
+        "https://www.calyxflowers.com/floral-library/smilax/",
+        "https://fiftyflowers.com/products/smilax-greenery-wedding-vine"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "feuilles-recroquevillees",
+        "feuilles-jaunissent"
+      ],
+      "ordre": "se déshydrate vite une fois coupé : les petites feuilles ovales ramollissent et se recroquevillent, puis jaunissent et sèchent sur la liane",
+      "tete": null,
+      "petales": null,
+      "feuilles": "cladodes plates ovales-pointues (1-3 cm), vert brillant, alternes sur une liane fine ; elles s'enroulent et pâlissent en séchant",
+      "tige": "liane très fine et volubile (jusqu'à 3 m), vendue en guirlandes ; reste retombante et devient molle puis sèche",
+      "couleurs": {
+        "vert": {
+          "declin": "vert brillant qui ternit, feuilles molles",
+          "fane": "vert jaune à paille, feuilles enroulées et sèches"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Accès direct aux pages bloqué par le proxy réseau (WebFetch refusé sur tous les domaines) : les valeurs proviennent des extraits de ces pages restitués par WebSearch, pas d'une lecture intégrale. Tenue 7-10 j décoratifs, minimum 5 j, environ 8 j au frais (Calyx, FiftyFlowers). La déshydratation rapide après coupe est sourcée (« dehydrates fast once cut ») ; l'aspect précis (enroulement, jaunissement) est extrapolé. Le pic juin-septembre vient de lacybird.com, site agrégateur de fiabilité incertaine. À ne pas confondre avec le smilax du Sud (Smilax smallii, autre famille).",
+      "sources": [
+        "https://www.calyxflowers.com/floral-library/smilax/",
+        "https://www.rhs.org.uk/plants/78953/asparagus-asparagoides/details",
+        "https://en.wikipedia.org/wiki/Asparagus_asparagoides"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "asparagus-falcatus",
+    "nom": "Asparagus falcatus",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [],
+      "toute_annee": true,
+      "note": "aucune source de disponibilité trouvée ; feuillage vivace persistant cultivé en Floride, supposé disponible toute l'année par analogie avec les autres asparagus, non sourcé",
+      "sources": [
+        "https://journals.flvc.org/fshs/article/view/86044"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 7,
+      "max": 14,
+      "sources": [
+        "https://journals.flvc.org/fshs/article/view/86044",
+        "https://floralife.com/?p=22010"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "feuilles-jaunissent",
+        "cladodes-tombent"
+      ],
+      "ordre": "supposé comme les autres asparagus : les cladodes jaunissent puis tombent, la tige épineuse reste raide",
+      "tete": null,
+      "petales": null,
+      "feuilles": "cladodes vert foncé, étroites (3-9 cm × 3-7 mm), légèrement en faucille, en bouquets le long de la tige ; plus larges et plus « feuilles » que les autres asparagus",
+      "tige": "tige ligneuse, grise sur le bois âgé, avec épines dures recourbées vers l'arrière ; baies rouges (7-10 mm) sur la plante, non vendues",
+      "couleurs": {
+        "vert": {
+          "declin": "vert foncé qui pâlit vers le vert olive à jaune",
+          "fane": "jaune paille à brun clair, cladodes tombées, tige grise épineuse"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Accès direct aux pages bloqué par le proxy réseau (WebFetch refusé sur tous les domaines) : les valeurs proviennent des extraits de ces pages restitués par WebSearch, pas d'une lecture intégrale. Aucune tenue chiffrée trouvée pour l'espèce : l'étude UF/IFAS 2005 la place dans le même groupe que A. virgatus et A. retrofractus ; on reprend donc les 7-14 j de virgatus (extrapolation). Fanaison extrapolée du genre, saison non sourcée. Morphologie sourcée (Wikipedia, SANBI, RHS, extraits). Mode ajouté « cladodes-tombent » : les cladodes en aiguilles se détachent de la tige, comme « aiguilles-tombent » hors conifères.",
+      "sources": [
+        "https://journals.flvc.org/fshs/article/view/86044",
+        "https://en.wikipedia.org/wiki/Asparagus_falcatus",
+        "https://pza.sanbi.org/node/9776",
+        "https://www.rhs.org.uk/Plants/50478/wd/Details"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "smilax-smallii-southern-smilax",
+    "nom": "Smilax du Sud",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [],
+      "toute_annee": false,
+      "note": "cueilli à l'état sauvage dans le sud-est des États-Unis, disponible de juillet à mars ; indisponible d'avril à juin car les jeunes pousses sont trop tendres pour l'expédition. Pas de source de vente européenne trouvée.",
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/southern-smilax"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 5,
+      "max": 10,
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/southern-smilax",
+        "https://fiftyflowers.com/products/smilax-wedding-vine"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "feuilles-recroquevillees",
+        "feuilles-brunissent",
+        "chute-feuilles"
+      ],
+      "ordre": "les feuilles coriaces perdent leur brillant, s'enroulent par les bords et finissent par tomber de la liane si elle sèche",
+      "tete": null,
+      "petales": null,
+      "feuilles": "feuilles persistantes, coriaces, luisantes, lancéolées à elliptiques et pointues, bords entiers ; ternissent, s'enroulent, puis virent au vert olive à brun avant de tomber",
+      "tige": "longue liane légère, presque sans épines dans sa partie haute ; reste souple ; baies vert pâle à blanchâtres l'hiver, mûrissant rouge terne à noirâtre (rarement présentes sur les guirlandes)",
+      "couleurs": {
+        "vert": {
+          "declin": "vert brillant qui devient mat, bords enroulés",
+          "fane": "vert olive à brun, feuilles sèches et en partie tombées"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Accès direct aux pages bloqué par le proxy réseau (WebFetch refusé sur tous les domaines) : les valeurs proviennent des extraits de ces pages restitués par WebSearch, pas d'une lecture intégrale. Famille des Smilacacées (vrai Smilax), sans lien avec le smilax des fleuristes (Asparagus asparagoides). Tenue 7-10 j (Floral Design Institute), minimum 5 j. La chute des feuilles est sourcée indirectement (« éviter les tiges qui perdent leurs feuilles », Floral Design Institute) ; l'enroulement et le brunissement sont extrapolés. Mode ajouté « chute-feuilles » : les feuilles se détachent de la liane. seche_bien=false non sourcé.",
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/southern-smilax",
+        "https://plants.ces.ncsu.edu/plants/smilax-smallii",
+        "https://edis.ifas.ufl.edu/publication/FR375/pdf"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "monstera-deliciosa",
+    "nom": "Monstera",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [],
+      "toute_annee": true,
+      "note": "disponible toute l'année (feuilles produites sous serre ou importées du Costa Rica) ; aucun pic saisonnier trouvé",
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/monstera-foliage",
+        "https://ishs.org/ishs-article/1397_9/"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 7,
+      "max": 14,
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/monstera-foliage",
+        "https://fiftyflowers.com/product/monstera-leaves-tropical-greenery.htm",
+        "https://journal.iahs.org.in/index.php/ijh/article/view/1830"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "feuilles-jaunissent",
+        "feuilles-brunissent"
+      ],
+      "ordre": "le limbe perd son vert profond et jaunit (souvent par plages), puis des zones brunes sèches apparaissent, surtout sur les bords ; par manque d'eau la feuille ramollit et le pétiole peut plier",
+      "tete": null,
+      "petales": null,
+      "feuilles": "grande feuille cordée, découpée et perforée ; en déclin jaunissement par plages et taches (maladies), puis brunissement et dessèchement des bords ; le limbe épais reste globalement à plat",
+      "tige": "long pétiole charnu, droit ; en manque d'eau il ramollit et peut plier",
+      "couleurs": {
+        "vert": {
+          "declin": "vert qui pâlit, plages jaune-vert, bords qui jaunissent",
+          "fane": "jaune paille et brun sec, bords bruns parcheminés"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Tenue : 5-7 j (témoin de l'étude glycérol IAHS : ~7 j), ~8 j (FiftyFlowers), 10-14 j (Floral Design Institute). Étude Univ. Costa Rica : jaunissement et maladies en vase, moindres sur feuilles mûres. Chrysal Viva n'allonge pas la vie des feuilles de Monstera (ISHS 1397_9), l'atmosphère modifiée si. Brunissement des bords et pliure du pétiole : sources de culture en pot (manque d'eau), transposés au vase. Sensible au froid (stocker au-dessus de 12-13 °C) : un coup de froid donne des taches translucides « détrempées » qui pâlissent puis jaunissent (symptômes génériques du chilling injury des plantes tropicales, IFAS EP530). seche_bien=false par défaut, non sourcé. Pages consultées via les extraits du moteur de recherche : l'accès direct (WebFetch) aux sites était bloqué par le proxy réseau de la session, donc les chiffres n'ont pas pu être relus dans le texte intégral.",
+      "sources": [
+        "https://www.kerwa.ucr.ac.cr/items/e6bb9b39-4c8e-4dc0-83e5-7bb2d3c0a8d7/full",
+        "https://ishs.org/ishs-article/1397_9/",
+        "https://www.epicgardening.com/monstera-wilting/",
+        "https://edis.ifas.ufl.edu/publication/EP530"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "philodendron-bipinnatifidum-selloum",
+    "nom": "Philodendron selloum",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [],
+      "toute_annee": true,
+      "note": "aucun calendrier propre trouvé ; supposé toute l'année comme les autres feuilles tropicales de serre (Floral Design Institute indique toute l'année pour Monstera et Xanadu)",
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/xanadu-foliage",
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/monstera-foliage"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 10,
+      "max": 21,
+      "sources": [
+        "https://deeplysouthernhome.com/a-new-plant-to-love-fiddle-leaf-fig-vs-split-leaf-philodendron/",
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/xanadu-foliage"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "feuilles-jaunissent",
+        "feuilles-brunissent"
+      ],
+      "ordre": "extrapolé : jaunissement progressif du limbe, puis brunissement sec des pointes des lobes",
+      "tete": null,
+      "petales": null,
+      "feuilles": "très grande feuille profondément pennatilobée (lobes ondulés) ; en déclin, lobes qui jaunissent puis brunissent depuis les pointes (extrapolé)",
+      "tige": "long pétiole robuste ; peut émettre des racines dans l'eau (Costa Farms, pour les philodendrons)",
+      "couleurs": {
+        "vert": {
+          "declin": "vert qui ternit, pointes des lobes jaunâtres",
+          "fane": "jaune paille puis brun sec aux pointes"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Seule source de tenue spécifique : un blog (Deeply Southern Home) annonçant jusqu'à 4 mois en vase, invraisemblable pour l'usage fleuriste ; la fourchette 10-21 j est un ajustement prudent sur Xanadu (même genre, 10-14 j) et n'est pas sourcée pour selloum. Le nom accepté est Thaumatophyllum bipinnatifidum. Symptômes extrapolés du Philodendron 'Xantal' (Univ. Costa Rica : jaunissement, maladies). Les tiges de philodendron peuvent raciner en vase (Costa Farms), ce qui allonge la vie. Sensible au froid (stocker au-dessus de 12-13 °C) : un coup de froid donne des taches translucides « détrempées » qui pâlissent puis jaunissent (symptômes génériques du chilling injury des plantes tropicales, IFAS EP530). Pages consultées via les extraits du moteur de recherche : l'accès direct (WebFetch) aux sites était bloqué par le proxy réseau de la session, donc les chiffres n'ont pas pu être relus dans le texte intégral.",
+      "sources": [
+        "https://www.kerwa.ucr.ac.cr/items/e6bb9b39-4c8e-4dc0-83e5-7bb2d3c0a8d7/full",
+        "https://costafarms.com/blogs/get-growing/houseplant-stems-as-cut-flowers",
+        "https://www.depts.ttu.edu/plantresources/Pages/directories/landscape-info-sheets/interior-info/Philodendron-selloum.php",
+        "https://edis.ifas.ufl.edu/publication/EP530"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "philodendron-xanadu",
+    "nom": "Philodendron Xanadu",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [],
+      "toute_annee": true,
+      "note": "disponible toute l'année ; aucun pic trouvé",
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/xanadu-foliage"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 10,
+      "max": 14,
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/xanadu-foliage"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "feuilles-jaunissent",
+        "feuilles-brunissent"
+      ],
+      "ordre": "extrapolé du Philodendron 'Xantal' : le limbe jaunit, puis des taches et bords bruns secs apparaissent",
+      "tete": null,
+      "petales": null,
+      "feuilles": "feuille vert foncé profondément lobée, aux reflets bronze ou cuivre ; en déclin, jaunissement puis brunissement (extrapolé)",
+      "tige": "pétiole ferme ; peut raciner dans l'eau",
+      "couleurs": {
+        "vert": {
+          "declin": "vert foncé qui ternit, reflets bronze plus marqués, zones jaunâtres",
+          "fane": "jaune-brun, bords bruns secs"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Tenue et saison sourcées (Floral Design Institute : 10-14 j, toute l'année, stocker au-dessus de 13 °C). La façon de faner n'est pas décrite pour Xanadu : extrapolée de Philodendron 'Xantal' (étude Univ. Costa Rica) et de l'effet du Chrysal Viva sur les feuilles de Philodendron (ISHS). Nom accepté : Thaumatophyllum xanadu. Sensible au froid (stocker au-dessus de 12-13 °C) : un coup de froid donne des taches translucides « détrempées » qui pâlissent puis jaunissent (symptômes génériques du chilling injury des plantes tropicales, IFAS EP530). Pages consultées via les extraits du moteur de recherche : l'accès direct (WebFetch) aux sites était bloqué par le proxy réseau de la session, donc les chiffres n'ont pas pu être relus dans le texte intégral.",
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/xanadu-foliage",
+        "https://www.kerwa.ucr.ac.cr/items/e6bb9b39-4c8e-4dc0-83e5-7bb2d3c0a8d7/full",
+        "https://ishs.org/ishs-article/1397_9/",
+        "https://costafarms.com/blogs/get-growing/houseplant-stems-as-cut-flowers",
+        "https://edis.ifas.ufl.edu/publication/EP530"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "philodendron-hybrides",
+    "nom": "Philodendron",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [],
+      "toute_annee": true,
+      "note": "non sourcé pour les hybrides : supposé toute l'année comme Monstera/Xanadu (production tropicale, Costa Rica)",
+      "sources": [
+        "https://ishs.org/ishs-article/1397_9/",
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/xanadu-foliage"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 7,
+      "max": 14,
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/xanadu-foliage",
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/monstera-foliage"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "feuilles-jaunissent",
+        "feuilles-brunissent"
+      ],
+      "ordre": "jaunissement du limbe et apparition de taches de maladie, puis brunissement sec",
+      "tete": null,
+      "petales": null,
+      "feuilles": "feuille entière, cordée ou sagittée, épaisse et brillante ; en déclin jaunit et se tache, puis brunit",
+      "tige": "pétiole droit ; peut raciner dans l'eau",
+      "couleurs": {
+        "vert": {
+          "declin": "vert qui pâlit, plages jaunes, quelques taches",
+          "fane": "jaune paille et brun"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Seul l'hybride 'Xantal' est étudié (Univ. Costa Rica : jaunissement, maladies, dégâts mécaniques en vase, moindres sur feuilles mûres) ; Chrysal Viva retarde la sénescence des feuilles de Philodendron (ISHS 1397_9). Aucune tenue chiffrée pour les hybrides : 7-14 j repris de Monstera/Xanadu. Des hybrides à feuilles pourpres ou rouges existent en pot, mais leur vente en feuille coupée n'a pas été vérifiée : seule la famille vert est retenue. Sensible au froid (stocker au-dessus de 12-13 °C) : un coup de froid donne des taches translucides « détrempées » qui pâlissent puis jaunissent (symptômes génériques du chilling injury des plantes tropicales, IFAS EP530). Pages consultées via les extraits du moteur de recherche : l'accès direct (WebFetch) aux sites était bloqué par le proxy réseau de la session, donc les chiffres n'ont pas pu être relus dans le texte intégral.",
+      "sources": [
+        "https://www.kerwa.ucr.ac.cr/items/e6bb9b39-4c8e-4dc0-83e5-7bb2d3c0a8d7/full",
+        "https://ishs.org/ishs-article/1397_9/",
+        "https://costafarms.com/blogs/get-growing/houseplant-stems-as-cut-flowers",
+        "https://edis.ifas.ufl.edu/publication/EP530"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "aspidistra-elatior",
+    "nom": "Aspidistra",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [],
+      "toute_annee": true,
+      "note": "disponible toute l'année ; aucun pic trouvé",
+      "sources": [
+        "https://floraldesigninstitute.com/blogs/resources-flower-library/aspidistra"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 21,
+      "max": 34,
+      "sources": [
+        "https://jeh.kglmeridian.com/downloadpdf/view/journals/jenh/13/3/article-p137.pdf",
+        "https://extension.msstate.edu/publications/aspidistra-aspidistra-elatior-for-the-farmer-florist"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "feuilles-jaunissent",
+        "feuilles-brunissent"
+      ],
+      "ordre": "très lente : le vert profond perd en intensité, la feuille jaunit, puis se dessèche (bords et pointe d'abord, par raisonnement)",
+      "tete": null,
+      "petales": null,
+      "feuilles": "une seule feuille lancéolée par tige, coriace et brillante (30-60 cm × 7-10 cm) ; reste rigide très longtemps, puis jaunit et se dessèche",
+      "tige": "long pétiole raide et droit, qui ne plie pas",
+      "couleurs": {
+        "vert": {
+          "declin": "vert qui pâlit vers le vert-jaune",
+          "fane": "jaune paille puis beige-brun sec"
+        },
+        "bicolore": {
+          "declin": "stries crème qui virent au jaune, vert qui pâlit",
+          "fane": "paille et brun clair, stries à peine visibles"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Tenue très sourcée : 22-34 j selon la récolte (R.H. Stamps, Univ. Floride, J. Environ. Hort. 13(3):137), 3-4 semaines et des mois au froid (Mississippi State Extension P4138). Symptômes de fin de vie : jaunissement, dessèchement et chute des feuilles, cités par Stamps de façon générale pour les feuillages coupés, pas précisément pour l'aspidistra. Formes vendues : vert, 'Variegata' (stries crème) et 'Milky Way' (ponctué) ; la clé bicolore les regroupe et leurs couleurs de fané sont extrapolées. Surprise utile : sur 30 jours l'aspidistra reste quasi intacte, le déclin du jeu ne doit être que léger. Pages consultées via les extraits du moteur de recherche : l'accès direct (WebFetch) aux sites était bloqué par le proxy réseau de la session, donc les chiffres n'ont pas pu être relus dans le texte intégral.",
+      "sources": [
+        "https://jeh.kglmeridian.com/downloadpdf/view/journals/jenh/13/3/article-p137.pdf",
+        "https://extension.msstate.edu/publications/aspidistra-aspidistra-elatior-for-the-farmer-florist",
+        "https://floraldesigninstitute.com/blogs/resources-flower-library/aspidistra"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "dypsis-lutescens-areca",
+    "nom": "Palme areca",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [],
+      "toute_annee": true,
+      "note": "toute l'année ; producteurs en Malaisie, au Sri Lanka, aux Pays-Bas et aux Émirats",
+      "sources": [
+        "https://floraldesigninstitute.com/blogs/resources-flower-library/palm-foliage",
+        "https://btfgroup.com/?p=6146"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 7,
+      "max": 12,
+      "sources": [
+        "https://btfgroup.com/?p=6146",
+        "https://floraldesigninstitute.com/blogs/resources-flower-library/palm-foliage"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "feuilles-jaunissent",
+        "feuilles-recroquevillees",
+        "feuilles-brunissent"
+      ],
+      "ordre": "extrapolé de Chamaedorea : les pointes des folioles brunissent, les folioles s'enroulent sur elles-mêmes et jaunissent, puis la palme se dessèche",
+      "tete": null,
+      "petales": null,
+      "feuilles": "palme pennée arquée, folioles fines ; en déclin, pointes brunes, folioles qui s'enroulent en long et jaunissent (extrapolé)",
+      "tige": "pétiole et rachis restent raides ; teinte jaunâtre possible (les stipes de l espèce sont jaunes), non vérifiée sur la palme coupée",
+      "couleurs": {
+        "vert": {
+          "declin": "vert-jaune, pointes des folioles brunes",
+          "fane": "paille et brun sec, folioles enroulées"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Tenue 7-12 j (BTF Group) et toute l'année sourcées ; sensible au froid (stocker au-dessus de 13 °C) et à l'éthylène (Floral Design Institute). Aucune description de la fanaison de l'areca coupé n'a été trouvée : modes extrapolés de Chamaedorea (UC Davis : nécrose des pointes, jaunissement, enroulement des pinnules par stress hydrique), d'où la confiance basse. Pour le dessin : les tiges (stipes) sont jaunâtres et les palmes arquées (fiches de culture, extrait de recherche) ; la couleur jaune du pétiole coupé reste à vérifier. Pages consultées via les extraits du moteur de recherche : l'accès direct (WebFetch) aux sites était bloqué par le proxy réseau de la session, donc les chiffres n'ont pas pu être relus dans le texte intégral.",
+      "sources": [
+        "https://floraldesigninstitute.com/blogs/resources-flower-library/palm-foliage",
+        "https://btfgroup.com/?p=6146",
+        "https://postharvest.ucdavis.edu/node/9171",
+        "https://journals.flvc.org/edis/article/view/137991"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "chamaedorea-chico",
+    "nom": "Chamaedorea",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [],
+      "toute_annee": true,
+      "note": "« Chico » = Chamaedorea elegans récolté au Mexique et au Guatemala, disponible toute l'année ; aucun pic trouvé",
+      "sources": [
+        "https://thursd.com/products/cut-flowers/greens/chico-jumbo",
+        "https://wbe.nl/en/product/chico",
+        "https://floraldesigninstitute.com/blogs/resources-flower-library/palm-foliage"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 7,
+      "max": 25,
+      "sources": [
+        "https://floraldesigninstitute.com/blogs/resources-flower-library/palm-foliage",
+        "https://www.calyxflowers.com/floral-library/emerald-palm/",
+        "https://postharvest.ucdavis.edu/node/9171"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "feuilles-brunissent",
+        "feuilles-recroquevillees",
+        "feuilles-jaunissent"
+      ],
+      "ordre": "nécrose sèche des pointes et des bords des folioles, puis jaunissement de la palme ; par manque d'eau, les folioles (pinnules) s'enroulent et la palme sèche prématurément",
+      "tete": null,
+      "petales": null,
+      "feuilles": "petite palme pennée souple, folioles fines vert foncé ; en déclin, pointes nécrosées brunes, puis folioles qui jaunissent et s'enroulent",
+      "tige": "pétiole fin et souple, reste vert ; recouper la tige peut quadrupler la tenue",
+      "couleurs": {
+        "vert": {
+          "declin": "vert foncé qui pâlit, pointes brunes",
+          "fane": "vert-jaune à paille, folioles enroulées et sèches"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Fanaison sourcée UC Davis (Postharvest Technology Center, Chamaedorea) : nécrose marginale des pointes, jaunissement, enroulement des pinnules par stress hydrique ; insensible à l'éthylène, sensible au froid (stockage 1-2 semaines à 12,5 °C). Tenue 7-25 j (Floral Design Institute / Calyx) ; un fournisseur cite jusqu'à 40 j, et une étude avec conservateur 84 j (Scientific Journal of Flowers and Ornamental Plants, 2018), écartés du max courant. Le « chico » du commerce est Chamaedorea elegans (Thursd, WBE). Pages consultées via les extraits du moteur de recherche : l'accès direct (WebFetch) aux sites était bloqué par le proxy réseau de la session, donc les chiffres n'ont pas pu être relus dans le texte intégral.",
+      "sources": [
+        "https://postharvest.ucdavis.edu/node/9171",
+        "https://floraldesigninstitute.com/blogs/resources-flower-library/palm-foliage",
+        "https://doaj.org/article/50334af9cfec445b8c52b9755d4507b0",
+        "https://thursd.com/articles/orcagreen-chico-doro-chico-jumbo-teepee"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "phoenix-roebelenii",
+    "nom": "Palme roebelenii",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [],
+      "toute_annee": true,
+      "note": "importée chaque semaine du Costa Rica, disponible toute l'année en 50 à 120 cm (WBE) ; aucun pic européen trouvé",
+      "sources": [
+        "https://wbe.nl/en/product/phoenix/"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 3,
+      "max": 15,
+      "sources": [
+        "https://www.phtnet.org/research/download/pdf/wx067.pdf"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "feuilles-recroquevillees",
+        "feuilles-jaunissent",
+        "feuilles-brunissent"
+      ],
+      "ordre": "sans réhydratation, les folioles flétrissent dès le 3e jour après la coupe ; bien hydratée, la palme reste fraîche 2 semaines environ, puis les folioles se replient, perdent leur vert et sèchent de la pointe vers la base",
+      "tete": null,
+      "petales": null,
+      "feuilles": "palme pennée : folioles fines, étroites, luisantes et pointues, souples, de part et d'autre du rachis ; au déclin elles se replient en gouttière et pendent un peu, puis jaunissent et brunissent depuis la pointe",
+      "tige": "rachis et pétiole fermes mais flexibles, restent droits ; épines possibles à la base des folioles inférieures (non sourcé)",
+      "couleurs": {
+        "vert": {
+          "declin": "vert terne, folioles légèrement jaunies à la pointe",
+          "fane": "vert-jaune paille, pointes brun clair et sèches"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Tenue sourcée par une étude Sri Lanka (Tropiflora) : flétrissement 3 jours après récolte sans traitement ; 13 j en conservateur (sucre 5 %, Phyzan, acide citrique) ; 14,75 j avec hydratation + cire ; 19 j GA3+BAP ; 27 j avec hydratation Chrysal Professional 1 + cire. Le max de 15 j correspond à un traitement simple. Le mode exact de déclin (repliement puis jaunissement) est déduit du terme « wilting » et du comportement général des palmes : non décrit pas à pas par la source. seche_bien non sourcé. Limite de session : WebFetch bloqué par le proxy et quota WebSearch épuisé ; les sources ont été lues via les extraits des résultats de recherche, pas en texte intégral.",
+      "sources": [
+        "https://www.phtnet.org/research/download/pdf/wx067.pdf",
+        "https://wbe.nl/en/product/phoenix/"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "licuala-grandis",
+    "nom": "Licuala",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [],
+      "toute_annee": true,
+      "note": "supposée importée toute l'année comme les autres palmes tropicales ; aucun calendrier de grossiste trouvé pour la feuille coupée de Licuala",
+      "sources": [
+        "https://floraldesigninstitute.com/blogs/resources-flower-library/palm-foliage"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 14,
+      "max": 28,
+      "sources": [
+        "https://floraldesigninstitute.com/blogs/resources-flower-library/palm-foliage"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "feuilles-brunissent",
+        "feuilles-recroquevillees"
+      ],
+      "ordre": "extrapolé : les bords crantés du limbe brunissent et sèchent d'abord, puis les plis se referment et le limbe se gondole ; le pétiole reste droit",
+      "tete": null,
+      "petales": null,
+      "feuilles": "limbe rond, plissé en accordéon et non divisé (en éventail entier), extrémités crantées sur tout le pourtour ; au déclin, bords crantés bruns et secs, plis plus serrés",
+      "tige": "long pétiole fin, reste droit",
+      "couleurs": {
+        "vert": {
+          "declin": "vert moins brillant, liseré brun sur les dents du bord",
+          "fane": "vert olive pâle tirant sur le paille, bord brun"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Morphologie sourcée (NParks : feuilles plissées, circulaires, non divisées, à pointes crantées). Tenue « plusieurs semaines » prise du guide général Floral Design Institute sur les palmes (traduite en 14-28 j par moi) ; ordre de fanaison et couleurs extrapolés des autres palmes en éventail. Aucune source sur la feuille coupée de Licuala elle-même. seche_bien non sourcé. Limite de session : WebFetch bloqué par le proxy et quota WebSearch épuisé ; les sources ont été lues via les extraits des résultats de recherche, pas en texte intégral.",
+      "sources": [
+        "https://www.nparks.gov.sg/florafaunaweb/flora/5/1/5102",
+        "https://floraldesigninstitute.com/blogs/resources-flower-library/palm-foliage"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "livistona-rotundifolia",
+    "nom": "Palme livistona",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [],
+      "toute_annee": true,
+      "note": "disponible toute l'année en 25-30 cm chez le grossiste néerlandais WBE ; surtout utilisée en bouquets en Europe de l'Ouest",
+      "sources": [
+        "https://wbe.nl/en/product/livistona/"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 7,
+      "max": 10,
+      "sources": [
+        "https://btfgroup.com/?p=6146"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "feuilles-brunissent",
+        "feuilles-recroquevillees",
+        "feuilles-jaunissent"
+      ],
+      "ordre": "extrapolé : les pointes des segments brunissent et se fendillent, puis l'éventail se gondole et pâlit",
+      "tete": null,
+      "petales": null,
+      "feuilles": "petit éventail rond, vert luisant, segments soudés sur une grande partie de leur longueur puis libres et pointus au bord ; au déclin, pointes des segments brunes et sèches, éventail qui se creuse",
+      "tige": "pétiole fin, reste droit",
+      "couleurs": {
+        "vert": {
+          "declin": "vert moins luisant, pointes jaunies",
+          "fane": "vert-jaune pâle, pointes et bords brun paille"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Saison et format sourcés (WBE). Tenue 7-10 j : la fiche BTF Group cite « Finger leaves / Livingstonia / Queens palm » ; « Livingstonia » est vraisemblablement Livistona, mais l'identification est mon interprétation. Mode de fanaison extrapolé (aucune description trouvée). seche_bien non sourcé. Limite de session : WebFetch bloqué par le proxy et quota WebSearch épuisé ; les sources ont été lues via les extraits des résultats de recherche, pas en texte intégral.",
+      "sources": [
+        "https://wbe.nl/en/product/livistona/",
+        "https://btfgroup.com/?p=6146"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "cycas-revoluta",
+    "nom": "Cycas",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [],
+      "toute_annee": true,
+      "note": "importée du Costa Rica, disponible toute l'année (WBE)",
+      "sources": [
+        "https://wbe.nl/en/products"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 57,
+      "max": 89,
+      "sources": [
+        "https://plantproduction.scu.ac.ir/article_10611.html?lang=en"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "feuilles-jaunissent",
+        "seche-sur-place"
+      ],
+      "ordre": "très lente : la palme reste verte bien au-delà des 30 jours du jeu (57 j en témoin) ; en fin de vie, les folioles perdent leur chlorophylle et jaunissent, puis sèchent en gardant leur forme raide",
+      "tete": null,
+      "petales": null,
+      "feuilles": "palme pennée raide ; folioles linéaires, vert foncé, luisantes dessus, pointues et piquantes, bords enroulés vers le dessous ; au déclin elles jaunissent sans se ramollir",
+      "tige": "rachis rigide, reste droit",
+      "couleurs": {
+        "vert": {
+          "declin": "vert foncé qui ternit légèrement, quasi inchangé à 30 jours",
+          "fane": "vert-jaune puis jaune paille, forme intacte"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Tenue sourcée par une étude iranienne : 57 j en témoin, 89 j avec jus de citron 100 ppm + eau de coco 50 % ; une autre étude donne 101 j avec GA 50 ppm (magiran). Le suivi a mesuré la perte de chlorophylle et caroténoïdes, d'où le jaunissement ; les vieilles palmes jaunissent aussi sur la plante (Promesse de Fleurs). Feuilles sèches utilisées en art floral (Virginia Tech dendrologie). Pour le jeu : quasi aucun changement visible avant 30 jours. Confiance moyenne car l'ordre visuel de fanaison n'est pas décrit pas à pas. Limite de session : WebFetch bloqué par le proxy et quota WebSearch épuisé ; les sources ont été lues via les extraits des résultats de recherche, pas en texte intégral.",
+      "sources": [
+        "https://plantproduction.scu.ac.ir/article_10611.html?lang=en",
+        "https://magiran.com/paper/1148764/?lang=en",
+        "https://dendro.cnre.vt.edu/dendrology/carddetail.cfm?ID=1067",
+        "https://www.promessedefleurs.ie/gardening-tips/advicesheet/cycas-10-questions-reponses/",
+        "https://wbe.nl/en/products"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "rhapis-excelsa",
+    "nom": "Rhapis",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [],
+      "toute_annee": true,
+      "note": "importée du Sri Lanka (WBE) ; la disponibilité toute l'année est supposée, non confirmée",
+      "sources": [
+        "https://wbe.nl/en/product/raphis/"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 14,
+      "max": 28,
+      "sources": [
+        "https://floraldesigninstitute.com/blogs/resources-flower-library/palm-foliage"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "feuilles-brunissent",
+        "feuilles-recroquevillees"
+      ],
+      "ordre": "extrapolé : les pointes tronquées des segments brunissent d'abord, puis les segments se replient en gouttière et pâlissent",
+      "tete": null,
+      "petales": null,
+      "feuilles": "éventail profondément divisé en quelques segments larges, plissés, aux bouts tronqués et dentés ; au déclin, bouts bruns et secs",
+      "tige": "pétiole fin, reste droit",
+      "couleurs": {
+        "vert": {
+          "declin": "vert moyen terni, bouts des segments brunis",
+          "fane": "vert-jaune pâle, segments bruns au bout"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Attention : le grossiste WBE vend sous le nom « Raphis » le Rhapis humilis (slender lady palm), pas forcément R. excelsa. Tenue « plusieurs semaines » prise du guide général des palmes (Floral Design Institute), chiffrée par moi ; mode de fanaison et morphologie extrapolés (fiche IFAS Rhapis excelsa trouvée mais non lisible). seche_bien non sourcé. Limite de session : WebFetch bloqué par le proxy et quota WebSearch épuisé ; les sources ont été lues via les extraits des résultats de recherche, pas en texte intégral.",
+      "sources": [
+        "https://wbe.nl/en/product/raphis/",
+        "https://floraldesigninstitute.com/blogs/resources-flower-library/palm-foliage",
+        "https://hort.ifas.ufl.edu/database/documents/pdf/shrub_fact_sheets/rhaexca.pdf"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "caryota-mitis",
+    "nom": "Palme queue de poisson",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [],
+      "toute_annee": true,
+      "note": "importée du Sri Lanka (WBE) ; disponibilité toute l'année supposée, non confirmée",
+      "sources": [
+        "https://wbe.nl/en/products"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 14,
+      "max": 28,
+      "sources": [
+        "https://floraldesigninstitute.com/blogs/resources-flower-library/palm-foliage"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "feuilles-brunissent",
+        "feuilles-recroquevillees"
+      ],
+      "ordre": "extrapolé : les bords déchiquetés des folioles brunissent et se dessèchent, puis les folioles minces se gondolent",
+      "tete": null,
+      "petales": null,
+      "feuilles": "palme bipennée ; folioles en forme de queue de poisson (triangulaires, bord supérieur déchiqueté), minces ; au déclin, bord déchiqueté brun et folioles gondolées",
+      "tige": "rachis ramifié, reste droit",
+      "couleurs": {
+        "vert": {
+          "declin": "vert mat, bords déchiquetés brunis",
+          "fane": "vert-jaune grisé, folioles brunes et sèches au bord"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Seule la provenance (Sri Lanka, WBE) est sourcée. La morphologie (bipennée, folioles en queue de poisson) vient de connaissances botaniques générales que je n'ai pas pu revérifier dans une source pendant cette session. Tenue extrapolée du guide général des palmes. Fanaison entièrement extrapolée. seche_bien non sourcé. Limite de session : WebFetch bloqué par le proxy et quota WebSearch épuisé ; les sources ont été lues via les extraits des résultats de recherche, pas en texte intégral.",
+      "sources": [
+        "https://wbe.nl/en/products",
+        "https://floraldesigninstitute.com/blogs/resources-flower-library/palm-foliage"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "serenoa-repens-palmetto",
+    "nom": "Palme éventail",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [],
+      "toute_annee": true,
+      "note": "récoltée dans le sud-est des États-Unis (Floride), proposée presque toute l'année par Adomex (label OrcaGreen), y compris sous vide, en 55-90 cm",
+      "sources": [
+        "https://thursd.com/articles/adomex-orcagreen-palm-and-galax"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 7,
+      "max": 28,
+      "sources": [
+        "https://archives.themiscellany.org/2015/03/26/the-fronds-and-foliage-of-palm-sunday/",
+        "https://floraldesigninstitute.com/blogs/resources-flower-library/palm-foliage"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "feuilles-brunissent",
+        "feuilles-recroquevillees"
+      ],
+      "ordre": "extrapolé : les pointes fendues des segments brunissent et se fendent davantage, puis l'éventail se replie un peu et pâlit",
+      "tete": null,
+      "petales": null,
+      "feuilles": "éventail rond, raide, cireux, légèrement plié, divisé profondément en plusieurs dizaines de segments fendus à la pointe ; vert à reflet argenté ; au déclin, pointes brunes et effilochées",
+      "tige": "pétiole solide bordé de petites dents en scie, reste droit",
+      "couleurs": {
+        "vert": {
+          "declin": "vert argenté qui ternit, pointes jaunies",
+          "fane": "vert-gris paille, pointes brunes effilochées"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Morphologie sourcée (IFAS : feuilles cireuses vert clair à vert foncé ou vert bleuté argenté, segments fendus à la pointe ; dents sur le pétiole, Post and Courier). Commerce sourcé (Adomex/Thursd : vert à reflet argenté, 55-90 cm, toute saison). Tenue : « au moins une semaine » pour des palmes coupées en général (The Miscellany) et « plusieurs semaines » (Floral Design Institute) ; pas de chiffre propre à Serenoa. Des formes argentées existent (« Silver ») mais aucune vente en feuille coupée bleue confirmée, donc une seule couleur. Fanaison extrapolée. Limite de session : WebFetch bloqué par le proxy et quota WebSearch épuisé ; les sources ont été lues via les extraits des résultats de recherche, pas en texte intégral.",
+      "sources": [
+        "https://thursd.com/articles/adomex-orcagreen-palm-and-galax",
+        "https://gardeningsolutions.ifas.ufl.edu/plants/trees-and-shrubs/palms-and-cycads/saw-palmetto",
+        "https://www.postandcourier.com/features/home_and_garden/gardening-column-identifying-three-native-lowcountry-palms/article_61dd197a-716c-474f-9770-6d90d59ebdc1.html",
+        "https://archives.themiscellany.org/2015/03/26/the-fronds-and-foliage-of-palm-sunday/",
+        "https://floraldesigninstitute.com/blogs/resources-flower-library/palm-foliage"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "bismarckia-nobilis",
+    "nom": "Palme bismarckia",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [],
+      "toute_annee": true,
+      "note": "aucune source de disponibilité trouvée pour la feuille coupée ; toute l'année supposée comme pour les autres palmes tropicales importées",
+      "sources": [
+        "https://floraldesigninstitute.com/blogs/resources-flower-library/palm-foliage"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 14,
+      "max": 28,
+      "sources": [
+        "https://floraldesigninstitute.com/blogs/resources-flower-library/palm-foliage"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "feuilles-brunissent",
+        "decolore"
+      ],
+      "ordre": "extrapolé : les pointes des segments brunissent et sèchent, l'argenté cireux se ternit",
+      "tete": null,
+      "petales": null,
+      "feuilles": "grand éventail costapalmé, raide, cireux, segments soudés jusqu'à mi-longueur ; au déclin pointes brunes, cire moins brillante",
+      "tige": "pétiole épais, reste droit",
+      "couleurs": {
+        "bleu": {
+          "declin": "bleu argenté qui ternit vers le gris-vert",
+          "fane": "gris paille, pointes brunes"
+        },
+        "vert": {
+          "declin": "vert terne, pointes jaunies",
+          "fane": "vert-jaune paille, pointes brunes"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Aucune source consultable sur Bismarckia en feuille coupée (quota de recherche épuisé avant cette espèce). Morphologie (costapalmée, argentée bleutée ; forme verte existante), couleurs, saison et fanaison sont des connaissances générales ou des extrapolations depuis les autres palmes en éventail ; la seule source est le guide général des palmes du Floral Design Institute (tenue de plusieurs semaines). À revérifier en priorité. Limite de session : WebFetch bloqué par le proxy et quota WebSearch épuisé ; les sources ont été lues via les extraits des résultats de recherche, pas en texte intégral.",
+      "sources": [
+        "https://floraldesigninstitute.com/blogs/resources-flower-library/palm-foliage"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "cordyline-fruticosa-ti",
+    "nom": "Feuilles de ti",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [],
+      "toute_annee": true,
+      "note": "feuillage tropical disponible toute l'année chez les grossistes (sources américaines) ; aucun calendrier européen/Rungis trouvé, pas de pic documenté",
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/ti-leaf",
+        "https://www.calyxflowers.com/floral-library/ti-leaves/",
+        "https://fiftyflowers.com/products/7385"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 8,
+      "max": 25,
+      "sources": [
+        "https://fiftyflowers.com/products/7385",
+        "https://floralife.com/?p=22008",
+        "https://mrec.ifas.ufl.edu/cutfol/cutpubs/CFRN_99A_foliage_as_cuts.pdf",
+        "https://acervodigital.unesp.br/handle/11449/17325?mode=full",
+        "https://scholarspace.manoa.hawaii.edu/server/api/core/bitstreams/7ef33ea7-8651-4660-941b-87481d4ab18b/content"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "brunit-bords",
+        "feuilles-jaunissent",
+        "feuilles-brunissent"
+      ],
+      "ordre": "la pointe de la feuille brunit d'abord (brûlure de pointe, surtout avec une eau fluorée ou après un coup de froid), puis le limbe perd son éclat, jaunit ou ternit et se dessèche depuis la pointe et les bords vers le pétiole",
+      "tete": null,
+      "petales": null,
+      "feuilles": "longues feuilles en lame d'épée (30-60 cm), lisses et brillantes, portées par un court pétiole cannelé ; en fin de vie : pointe brune et sèche, bords qui brunissent, limbe qui jaunit puis devient parcheminé ; la feuille reste rigide longtemps avant de se ramollir",
+      "tige": "vendue en feuille isolée avec son pétiole (parfois en tête de tige) ; le pétiole reste ferme, peut noircir à la base dans l'eau",
+      "couleurs": {
+        "vert": {
+          "declin": "vert qui ternit, pointe brun clair",
+          "fane": "jaune paille puis brun beige, pointe et bords bruns secs"
+        },
+        "rouge": {
+          "declin": "rouge qui fonce et perd son brillant, pointe brune",
+          "fane": "rouge brique brunâtre, bords bruns secs"
+        },
+        "bordeaux": {
+          "declin": "pourpre foncé mat, pointe brune",
+          "fane": "brun chocolat presque noir, parcheminé"
+        },
+        "rose": {
+          "declin": "rose qui pâlit, marges qui brunissent",
+          "fane": "rose sale tirant au beige-brun"
+        },
+        "bicolore": {
+          "declin": "le centre vert ternit, la marge rouge ou rose fonce",
+          "fane": "centre jaune-brun et marges brun rougeâtre"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Recherche limitée : WebFetch bloqué par le proxy réseau pour tous les domaines testés ; les valeurs proviennent des extraits des résultats WebSearch (pages non lues en entier). Tenue : 5-14 j (Floralife), 8 j en moyenne (FiftyFlowers), 21 j en eau (étude UNESP sur cultivars rouge et vert), 25 j pour 'Norma', 'Gold Dust', 'Petra' (UF/IFAS CFREC), ~1 mois (CTAHR Hawaï). Couleurs vendues : vert émeraude, vert foncé à marges roses, rouge-pourpre, bronze, rose (sources florales). Sensibilité au fluor (brûlure de pointe) et au froid (stocker au-dessus de 13 °C) sourcées ; la progression jaunissement/brunissement et les teintes de déclin par couleur sont extrapolées du mécanisme général de sénescence foliaire et des symptômes de froid décrits pour d'autres feuillages tropicaux (UF/IFAS EP530) : à confirmer.",
+      "sources": [
+        "https://floralife.com/?p=22008",
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/ti-leaf",
+        "https://ask.ifas.ufl.edu/publication/EP530",
+        "https://hort.ifas.ufl.edu/database/documents/pdf/shrub_fact_sheets/cortera.pdf"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "dracaena-reflexa-song-of-india",
+    "nom": "Dracaena « Song of India »",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [],
+      "toute_annee": true,
+      "note": "les feuillages de dracaena sont disponibles toute l'année (bibliothèque florale) ; importés notamment du Sri Lanka vers les Pays-Bas ; pas de calendrier européen spécifique au cultivar",
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/dracaena-foliage",
+        "https://www.srilankabusiness.com/exporters-directory/company-profiles/decor-foliage/"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 14,
+      "max": 21,
+      "sources": [
+        "https://journals.sjp.ac.lk/index.php/fesympo/article/view/1250",
+        "https://phytojournal.com/archives/2021.v10.i1.13689/effect-of-pre-harvest-spray-and-vase-solutions-under-different-growing-environment-on-the-vase-life-of-cut-foliage-dracaena-d-reflexa"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "feuilles-jaunissent",
+        "decolore",
+        "feuilles-recroquevillees"
+      ],
+      "ordre": "les feuilles du bas de la rosette jaunissent et s'affaissent d'abord ; les feuilles flétrissent et changent de couleur (la marge jaune pâlit vers le crème) ; en fin de vie, la base de la tige peut pourrir et noircir",
+      "tete": null,
+      "petales": null,
+      "feuilles": "courtes feuilles en lanière (10-20 cm), serrées en spirale autour de la tige, légèrement réfléchies (retombantes), vert brillant bordé de jaune crème ; au déclin, les marges jaunes pâlissent en crème, le vert s'éclaircit, puis les feuilles basses jaunissent, ramollissent et retombent",
+      "tige": "tige ligneuse fine, souvent un peu sinueuse, portant la rosette en tête ; reste droite ; la base dans l'eau peut ramollir et noircir (pourriture bactérienne si blessée)",
+      "couleurs": {
+        "bicolore": {
+          "declin": "marges jaune crème qui pâlissent, vert qui s'éclaircit",
+          "fane": "feuilles jaune pâle uniforme puis brun paille"
+        },
+        "vert": {
+          "declin": "vert clair un peu terne ('Song of Jamaica', bordé de vert clair)",
+          "fane": "jaune verdâtre puis brun paille"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Recherche limitée : WebFetch bloqué par le proxy réseau pour tous les domaines testés ; les valeurs proviennent des extraits des résultats WebSearch (pages non lues en entier). Sourcé pour D. reflexa coupé : flétrissement et changement de couleur des feuilles = principaux problèmes post-récolte ; pourriture (Erwinia) après 10-12 j sur les boutures blessées ; 17,4 j en eau distillée, 21 j avec CaCl2+sucre ou pour 'Song of Jamaica' en eau du robinet. Le pâlissement des marges avec l'âge est décrit sur la plante (Stabroek News). Ordre « feuilles du bas d'abord » extrapolé depuis D. marginata coupé (jaunissement à la base de la tête, bibliothèque florale) : à confirmer.",
+      "sources": [
+        "https://journals.sjp.ac.lk/index.php/fesympo/article/view/1250",
+        "https://phytojournal.com/archives/2021.v10.i1.13689/effect-of-pre-harvest-spray-and-vase-solutions-under-different-growing-environment-on-the-vase-life-of-cut-foliage-dracaena-d-reflexa",
+        "https://stabroeknews.com/2016/07/31/features/song-of-india",
+        "https://www.nparks.gov.sg/FloraFaunaWeb/Flora/1/9/1964",
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/dracaena-foliage"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "dracaena-marginata",
+    "nom": "Dracaena marginata",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [],
+      "toute_annee": true,
+      "note": "feuillages de dracaena (dont marginata) disponibles toute l'année ; pas de calendrier européen spécifique trouvé",
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/dracaena-foliage",
+        "https://www.calyxflowers.com/floral-library/dragon-tree-dracaena/"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 5,
+      "max": 14,
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/dracaena-foliage"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "feuilles-jaunissent",
+        "brunit-bords"
+      ],
+      "ordre": "les feuilles du bas de la touffe jaunissent d'abord (normal sur les longues têtes coupées) ; les pointes et les marges brunissent (sensibilité au fluor du genre) ; puis la touffe s'éclaircit par le bas",
+      "tete": null,
+      "petales": null,
+      "feuilles": "touffe terminale (« pompon ») de feuilles très étroites et raides, en lanière, vert sombre bordées d'un fin liseré rouge-bordeaux ('Tricolor' : rayures crème et rose) ; au déclin, les feuilles basses jaunissent et pendent, les pointes deviennent brunes et sèches",
+      "tige": "canne ligneuse fine et grise, souvent courbe, marquée des cicatrices foliaires ; ne se plie pas ; peut faire des racines dans l'eau",
+      "couleurs": {
+        "bicolore": {
+          "declin": "vert qui ternit, liseré rouge qui fonce, pointes brunes",
+          "fane": "lanières jaune paille à liseré brun"
+        },
+        "rose": {
+          "declin": "rayures roses et crème ('Tricolor') qui pâlissent",
+          "fane": "crème jaunâtre et brun clair"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Recherche limitée : WebFetch bloqué par le proxy réseau pour tous les domaines testés ; les valeurs proviennent des extraits des résultats WebSearch (pages non lues en entier). Tenue 5-14 j : chiffre donné pour l'ensemble des feuillages de dracaena (bibliothèque florale), pas spécifique ; des études indiennes citent des tenues bien plus longues avec traitements (jusqu'à ~50 j). Jaunissement des feuilles à la base de la tête sourcé (bibliothèque florale) ; brunissement des marges par le fluor sourcé pour le genre (UF/IFAS). Les teintes par couleur sont extrapolées. Note botanique : D. marginata est aujourd'hui rattaché à D. reflexa var. angustifolia.",
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/dracaena-foliage",
+        "https://mrec.ifas.ufl.edu/lso/ipm/224_tifs/sp224pdf.pdf",
+        "https://hort.ifas.ufl.edu/shrubs/DRAMARA.PDF",
+        "https://cjsbs.sljol.info/articles/3932"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "dracaena-fragrans",
+    "nom": "Dracaena fragrans",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [],
+      "toute_annee": true,
+      "note": "disponible toute l'année ; 'Massangeana' est l'un des feuillages coupés les plus exportés d'Inde ; pas de calendrier européen spécifique trouvé",
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/dracaena-foliage",
+        "https://jtropag.kau.in/index.php/ojs2/article/view/1407",
+        "https://www.calyxflowers.com/floral-library/corn-plant/"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 14,
+      "max": 21,
+      "sources": [
+        "https://jtropag.kau.in/index.php/ojs2/article/view/1407",
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/dracaena-foliage"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "feuilles-jaunissent",
+        "brunit-bords",
+        "feuilles-recroquevillees"
+      ],
+      "ordre": "la feuille perd de la chlorophylle et de l'eau : elle pâlit et jaunit, la pointe et les marges brunissent, puis le limbe mollit et se gondole",
+      "tete": null,
+      "petales": null,
+      "feuilles": "larges feuilles en ruban (40-80 cm, 5-10 cm de large), arquées, brillantes ; 'Massangeana' porte une large bande centrale jaune-vert sur fond vert foncé ; au déclin, elles pâlissent, les pointes et bords brunissent, le limbe se ramollit et retombe",
+      "tige": "vendue en feuille isolée ou en tête de tige ; la canne est épaisse, ligneuse, annelée de cicatrices foliaires",
+      "couleurs": {
+        "vert": {
+          "declin": "vert foncé qui ternit, pointe brune",
+          "fane": "jaune-vert puis brun paille"
+        },
+        "bicolore": {
+          "declin": "bande centrale jaune qui pâlit vers le crème, vert qui s'éclaircit",
+          "fane": "jaune pâle uniforme, bords bruns secs"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Recherche limitée : WebFetch bloqué par le proxy réseau pour tous les domaines testés ; les valeurs proviennent des extraits des résultats WebSearch (pages non lues en entier). Sourcé pour 'Massangeana' coupé : tenue 20,5 j après emballage polypropylène et chambre froide ; la perte de chlorophylle et de poids mesurées indiquent jaunissement et flétrissement. 5-14 j : chiffre général des feuillages de dracaena (bibliothèque florale). Brunissement des marges par le fluor sourcé pour le genre (UF/IFAS). Ordre exact et teintes extrapolés.",
+      "sources": [
+        "https://jtropag.kau.in/index.php/ojs2/article/view/1407",
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/dracaena-foliage",
+        "https://mrec.ifas.ufl.edu/lso/ipm/224_tifs/sp224pdf.pdf",
+        "https://hort.ifas.ufl.edu/database/documents/pdf/shrub_fact_sheets/drafraa.pdf"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "dracaena-sanderiana-lucky-bamboo",
+    "nom": "Bambou de la chance",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [],
+      "toute_annee": true,
+      "note": "cultivé toute l'année en hydroponie (Taïwan, Chine) et importé aux Pays-Bas ; réglementation néerlandaise spécifique à l'import (moustique tigre)",
+      "sources": [
+        "https://eng.moa.gov.tw/ws.php?id=9465",
+        "https://zoek.officielebekendmakingen.nl/stb-2014-338.pdf",
+        "https://www.calyxflowers.com/floral-library/good-luck-plant/"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 30,
+      "max": 60,
+      "sources": [
+        "https://ishs.org/ishs-article/989_7/",
+        "https://cjsbs.sljol.info/articles/3932",
+        "https://plants.ces.ncsu.edu/plants/dracaena-sanderiana/"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "feuilles-jaunissent",
+        "brunit-bords",
+        "tige-jaunit"
+      ],
+      "ordre": "les feuilles les plus basses jaunissent puis tombent ; les pointes des feuilles brunissent (fluor, chlore, sels de l'eau) ; en fin de vie la canne elle-même jaunit et la base ramollit et pourrit",
+      "tete": null,
+      "petales": null,
+      "feuilles": "petites feuilles lancéolées (10-20 cm), souples, un peu tordues, vert vif, groupées au sommet de la canne ou sur de courts rameaux ; au déclin, pointes brunes à liseré jaune, feuilles basses jaunes qui se détachent",
+      "tige": "canne verte, lisse, segmentée par des nœuds (aspect de bambou), droite ou dressée en spirale/boucle (forme obtenue en culture) ; reste dans l'eau et y fait des racines orange-rouge ; au déclin la canne passe du vert au jaune, puis la base devient molle et brune",
+      "couleurs": {
+        "vert": {
+          "declin": "vert qui jaunit par plaques, pointes brunes",
+          "fane": "canne et feuilles jaune paille, base brune et molle"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Recherche limitée : WebFetch bloqué par le proxy réseau pour tous les domaines testés ; les valeurs proviennent des extraits des résultats WebSearch (pages non lues en entier). Mode ajouté « tige-jaunit » : la canne jaunit sur toute sa longueur, phénomène propre à cette espèce vendue en tige nue. Sourcé : feuillage coupé encore « visuellement désirable » après 32 j dans tous les traitements (ISHS) ; tenue de plusieurs mois en eau (vit et s'enracine) ; brûlure de pointe par fluor/sels (Arkansas Extension), jaunissement des feuilles basses normal, jaunissement et pourriture des tiges par excès d'eau (NC State, UF/IFAS). La borne 60 j est une estimation prudente pour le jeu, la canne pouvant survivre bien plus longtemps. Les racines orange-rouge relèvent d'une observation courante non sourcée ici. Couleur : seul le vert est documenté (formes panachées crème/jaune existent mais non sourcées).",
+      "sources": [
+        "https://www.uaex.uada.edu/yard-garden/resource-library/plant-week/lucky-bamboo.aspx",
+        "https://blogs.ifas.ufl.edu/nassauco/2017/06/19/q-leaves-lucky-bamboo-turning-yellow-wrong/",
+        "https://plants.ces.ncsu.edu/plants/dracaena-sanderiana/",
+        "https://www.ourhouseplants.com/plants/lucky-bamboo-dracaena-sanderiana",
+        "https://ishs.org/ishs-article/989_7/"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "dracaena-surculosa",
+    "nom": "Dracaena surculosa",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [],
+      "toute_annee": true,
+      "note": "extrapolé : les feuillages de dracaena sont disponibles toute l'année ; aucune source de vente en coupé spécifique à D. surculosa trouvée",
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/dracaena-foliage"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 14,
+      "max": 30,
+      "sources": [
+        "https://ishs.org/ishs-article/989_7/",
+        "https://cjsbs.sljol.info/articles/3932"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "feuilles-jaunissent",
+        "decolore",
+        "brunit-bords"
+      ],
+      "ordre": "extrapolé du genre : les mouchetures jaunes pâlissent vers le crème, les feuilles basses jaunissent puis tombent, les pointes brunissent",
+      "tete": null,
+      "petales": null,
+      "feuilles": "petites feuilles ovales-elliptiques (~8 cm), opposées ou en verticilles de 2-3, vert foncé brillant criblées de points jaune doré à crème ('Florida Beauty' très moucheté) ; les jeunes feuilles sortent roulées en cornet ; la panachure jaune passe au crème ou blanc en vieillissant",
+      "tige": "tiges fines, raides et filiformes (aspect de bambou miniature), brunes ou vert-brun, dressées puis parfois retombantes",
+      "couleurs": {
+        "bicolore": {
+          "declin": "mouchetures jaunes qui blanchissent en crème, vert qui ternit",
+          "fane": "feuilles jaune pâle tachées de brun, pointes brunes"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Recherche limitée : WebFetch bloqué par le proxy réseau pour tous les domaines testés ; les valeurs proviennent des extraits des résultats WebSearch (pages non lues en entier). Seule la morphologie est sourcée (NParks, NC State, UF/IFAS Santa Rosa), y compris le passage des taches jaunes au crème/blanc avec l'âge. Aucune donnée de tenue en vase ni de fanaison en coupé trouvée : tenue extrapolée des études sur D. sanderiana et autres dracaenas coupés ; modes de fanaison extrapolés du genre. Saison extrapolée.",
+      "sources": [
+        "https://www.nparks.gov.sg/florafaunaweb/flora/1/9/1967",
+        "https://plants.ces.ncsu.edu/plants/dracaena-surculosa/",
+        "https://sfyl.ifas.ufl.edu/media/sfylifasufledu/santa-rosa/docs/pdfs/demo-garden-4/Gold-Dust-Dracaena.pdf"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "codiaeum-variegatum-croton",
+    "nom": "Croton",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [],
+      "toute_annee": true,
+      "note": "feuillage tropical exporté (notamment du Sri Lanka vers les Pays-Bas) ; « toute l'année » non confirmé par un calendrier de grossiste européen",
+      "sources": [
+        "https://www.srilankabusiness.com/exporters-directory/company-profiles/decor-foliage/"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 17,
+      "max": 21,
+      "sources": [
+        "https://journals.sjp.ac.lk/index.php/fesympo/article/view/1254",
+        "https://dl.nsf.gov.lk/items/f963248f-cb46-4cc2-99b5-cd6bf9c698dc/full",
+        "https://jnsfsl.sljol.info/en/articles/10.4038/jnsfsr.v35i3.2013"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "feuilles-recroquevillees",
+        "feuilles-brunissent",
+        "chute-feuilles"
+      ],
+      "ordre": "non sourcé en détail : perte de fraîcheur des feuilles (critère des études), qui ramollissent et se recourbent, puis brunissent et tombent",
+      "tete": null,
+      "petales": null,
+      "feuilles": "feuilles épaisses, coriaces et très brillantes, de forme variable selon le cultivar (ovales, lobées en trois, étroites en lanière ou spiralées), veinées et maculées de jaune, orange, rouge, rose ou pourpre sur fond vert ; au déclin, elles perdent leur brillant, mollissent, se recourbent puis brunissent",
+      "tige": "tige verte assez épaisse, à sève blanche laiteuse (latex) quand on la coupe ; reste droite",
+      "couleurs": {
+        "bicolore": {
+          "declin": "vert qui ternit, nervures jaunes qui pâlissent",
+          "fane": "brun-vert mat, taches jaunes délavées"
+        },
+        "jaune": {
+          "declin": "jaune qui pâlit",
+          "fane": "jaune paille bruni"
+        },
+        "orange": {
+          "declin": "orange qui fonce et perd son éclat",
+          "fane": "orange brun rouille"
+        },
+        "rouge": {
+          "declin": "rouge qui fonce vers le bordeaux, mat",
+          "fane": "brun rougeâtre sombre"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Recherche limitée : WebFetch bloqué par le proxy réseau pour tous les domaines testés ; les valeurs proviennent des extraits des résultats WebSearch (pages non lues en entier). Mode ajouté « chute-feuilles » : les feuilles se détachent de la tige. Tenue sourcée : 21 j pour 'Pictum' et 'Gold Star' avec sucre, 17 j pour 'Batik' ; jusqu'à ~31 j avec 8-HQS (études sri-lankaises) ; « leaf freshness » comme critère. L'ordre de fanaison, la chute des feuilles, la sève laiteuse, la diversité des formes et les teintes de déclin par couleur ne viennent pas d'une source consultée (connaissance générale de l'espèce) : confiance basse.",
+      "sources": [
+        "https://journals.sjp.ac.lk/index.php/fesympo/article/view/1254",
+        "https://dl.nsf.gov.lk/items/f963248f-cb46-4cc2-99b5-cd6bf9c698dc/full",
+        "https://journals.flvc.org/edis/article/download/108744/103911"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "alocasia",
+    "nom": "Alocasia",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [],
+      "toute_annee": true,
+      "note": "grossiste américain (FiftyFlowers, 'Elephant Ear') : disponible toute l'année ; aucun calendrier européen (Rungis, Pays-Bas) trouvé pour ce feuillage ; 'toute l'année' déduit de l'importation tropicale (Costa Rica → Pays-Bas, où les feuillages pour bouquets représentent ~10,8 M$ d'exportations en 2024) et/ou d'une fiche grossiste américaine ; pic européen inconnu",
+      "sources": [
+        "https://fiftyflowers.com/products/elephant-ear-tropical-greenery",
+        "https://tradingeconomics.com/costa-rica/exports/netherlands/live-trees-plants-bulbs-roots-cut-flowers",
+        "https://ishs.org/ishs-article/1397_9/"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 5,
+      "max": null,
+      "sources": [
+        "https://fiftyflowers.com/products/elephant-ear-tropical-greenery"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "feuilles-recroquevillees",
+        "penche-tete",
+        "feuilles-jaunissent",
+        "brunit-bords"
+      ],
+      "ordre": "(extrapolé) le grand limbe sagitté perd sa turgescence : il s'affaisse sur le pétiole et ses bords s'enroulent, puis le vert pâlit et jaunit, enfin les bords brunissent et sèchent",
+      "tete": null,
+      "petales": null,
+      "feuilles": "limbe sagitté (en fer de flèche) brillant, nervures principales saillantes partant du point d'attache ; en déclin, le limbe mollit, s'enroule par les bords et jaunit ; fané : brun, parcheminé, recroquevillé",
+      "tige": "long pétiole charnu, souple ; en fin de vie il ramollit et peut plier, laissant le limbe pendre (extrapolé)",
+      "couleurs": {
+        "vert": {
+          "declin": "vert terne qui pâlit, plages jaune-vert",
+          "fane": "jaune paille puis brun sec sur les bords"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Confiance basse : aucune description directe de la fanaison des feuilles coupées d'Alocasia trouvée. Les symptômes (perte de turgescence, enroulement, baisse de l'angle limbe/pétiole, jaunissement) sont extrapolés des études sur Calathea et Alpinia en feuillage coupé. L'étude ISHS 1397_9 confirme seulement que Chrysal Viva et l'emballage sous atmosphère modifiée prolongent la tenue des feuilles d'Alocasia (Costa Rica → Pays-Bas), sans chiffres dans l'extrait. Tenue : 'minimum 5 jours' chez FiftyFlowers, produit vendu sous 'Elephant Ear' (le genre exact, Alocasia ou Colocasia, n'est pas précisé). Pas de max sourcé. 'penche-tete' est ici utilisé pour la chute du limbe sur le pétiole. Sources consultées uniquement via les extraits de WebSearch (WebFetch bloqué par le proxy pour tous les domaines testés : ctahr.hawaii.edu, scholarspace, phtnet, ncsu, wikipedia).",
+      "sources": [
+        "https://ishs.org/ishs-article/1397_9/",
+        "https://fiftyflowers.com/products/elephant-ear-tropical-greenery",
+        "https://cjsbs.sljol.info/articles/1856",
+        "https://ishs.org/ishs-article/1087_33/",
+        "https://plants.ces.ncsu.edu/plants/alocasia"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "goeppertia-calathea",
+    "nom": "Calathea",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [],
+      "toute_annee": true,
+      "note": "aucun calendrier européen (Rungis, Pays-Bas) trouvé pour ce feuillage ; 'toute l'année' déduit de l'importation tropicale (Costa Rica → Pays-Bas, où les feuillages pour bouquets représentent ~10,8 M$ d'exportations en 2024) et/ou d'une fiche grossiste américaine ; pic européen inconnu",
+      "sources": [
+        "https://tradingeconomics.com/costa-rica/exports/netherlands/live-trees-plants-bulbs-roots-cut-flowers",
+        "https://procomer.com/wp-content/uploads/1.-OP.Plantsflowers-and-foliages.pdf"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 6,
+      "max": 58,
+      "sources": [
+        "https://repositorio.unesp.br/items/38921a77-3d7b-4a55-bd2c-f96feb4c5aeb",
+        "https://cjsbs.sljol.info/articles/1856",
+        "https://erepo.lib.uwu.ac.lk/items/b1d49469-dbe0-445c-9a4e-ddb9eefbd5f0"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "feuilles-recroquevillees",
+        "penche-tete",
+        "feuilles-jaunissent"
+      ],
+      "ordre": "le limbe s'enroule sur lui-même le long de la nervure médiane (leaf rolling, critère de fin de vie) et la feuille s'abaisse sur le pétiole (l'angle limbe/pétiole diminue) ; le vert perd son éclat et pâlit",
+      "tete": null,
+      "petales": null,
+      "feuilles": "limbe ovale à elliptique, face supérieure à motifs (vert foncé et taches ou stries vert clair à blanc verdâtre), revers souvent pourpre ; en déclin le limbe s'enroule en cornet et ternit ; fané : enroulé serré, vert grisé à jaune, bords secs",
+      "tige": "pétiole fin ; la feuille s'incline de plus en plus sur le pétiole avec la perte d'eau",
+      "couleurs": {
+        "vert": {
+          "declin": "vert à motifs qui ternit, le revers pourpre devient plus visible car le limbe s'enroule",
+          "fane": "vert grisé jaunâtre, bords beige sec"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Fanaison sourcée directement : l'enroulement des feuilles (leaf rolling) est le facteur qui termine la vie en vase de C. aemula, C. lietzei et C. zebrina ; flétrissement + enroulement limitent l'export de C. zebrina ; chez C. louisae, les témoins perdent plus vite le vert brillant et l'angle limbe/pétiole. Tenue : la combinaison GA3+BAP donne 58 jours chez C. zebrina, soit 9,6 fois le témoin (≈6 jours sans traitement, calculé). Le max 58 j correspond donc à une feuille traitée. Saison non sourcée pour l'Europe (confiance moyenne pour cette raison). Revers pourpre sourcé via la description FiftyFlowers. Sources consultées uniquement via les extraits de WebSearch (WebFetch bloqué par le proxy pour tous les domaines testés : ctahr.hawaii.edu, scholarspace, phtnet, ncsu, wikipedia).",
+      "sources": [
+        "https://cjsbs.sljol.info/articles/1856",
+        "https://repositorio.unesp.br/items/38921a77-3d7b-4a55-bd2c-f96feb4c5aeb",
+        "https://ishs.org/ishs-article/755_52/",
+        "https://erepo.lib.uwu.ac.lk/items/b1d49469-dbe0-445c-9a4e-ddb9eefbd5f0",
+        "https://fiftyflowers.com/products/calathea-leaves-tropical-greenery"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "anthurium-feuilles",
+    "nom": "Feuilles d'anthurium",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [],
+      "toute_annee": true,
+      "note": "aucun calendrier européen (Rungis, Pays-Bas) trouvé pour ce feuillage ; 'toute l'année' déduit de l'importation tropicale (Costa Rica → Pays-Bas, où les feuillages pour bouquets représentent ~10,8 M$ d'exportations en 2024) et/ou d'une fiche grossiste américaine ; pic européen inconnu ; la production d'anthurium coupé sous serre aux Pays-Bas existe (guide de culture Anthura) mais l'extrait ne parle pas des feuilles",
+      "sources": [
+        "https://tradingeconomics.com/costa-rica/exports/netherlands/live-trees-plants-bulbs-roots-cut-flowers",
+        "https://www.anthura.nl/wp-content/uploads/2024/04/Anthura-teelthandleiding-Snijanthurium-binnen-EU-NL.pdf"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 5,
+      "max": null,
+      "sources": [
+        "https://fiftyflowers.com/blogs/diy-flowers/blooming-beauties-a-complete-guide-to-anthuriums"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "feuilles-jaunissent",
+        "brunit-bords",
+        "penche-tete"
+      ],
+      "ordre": "(extrapolé) la feuille coriace garde longtemps sa forme, puis le vert ternit et jaunit, les bords brunissent et le limbe s'abaisse sur le pétiole",
+      "tete": null,
+      "petales": null,
+      "feuilles": "limbe cordé (en cœur) épais, coriace et luisant, nervures principales rayonnant du point d'attache ; en déclin terne puis jaunissant ; fané : brun, sec, bords repliés",
+      "tige": "long pétiole fin et ferme avec un renflement (géniculum) sous le limbe ; plie en fin de vie (extrapolé)",
+      "couleurs": {
+        "vert": {
+          "declin": "vert profond qui perd son brillant, plages jaune-vert",
+          "fane": "jaune brunâtre puis brun sec"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Confiance basse : seule la tenue (5 jours pour les feuilles d'anthurium, FiftyFlowers) et l'aspect « luisant et coriace » sont sourcés. Le mode de fanaison n'est pas décrit : extrapolé des autres feuillages tropicaux coupés (Calathea, Alpinia). Le géniculum sous le limbe est une connaissance botanique générale du genre, non vérifiée en ligne ici. Sources consultées uniquement via les extraits de WebSearch (WebFetch bloqué par le proxy pour tous les domaines testés : ctahr.hawaii.edu, scholarspace, phtnet, ncsu, wikipedia).",
+      "sources": [
+        "https://fiftyflowers.com/blogs/diy-flowers/blooming-beauties-a-complete-guide-to-anthuriums",
+        "https://cjsbs.sljol.info/articles/1856",
+        "https://ishs.org/ishs-article/1087_33/"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "musa-feuille-bananier",
+    "nom": "Feuille de bananier",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [],
+      "toute_annee": true,
+      "note": "grossiste américain (FiftyFlowers) : disponible toute l'année ; pas de calendrier européen trouvé, pic inconnu",
+      "sources": [
+        "https://fiftyflowers.com/products/banana-leaves-tropical-greenery"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 3,
+      "max": 5,
+      "sources": [
+        "https://fiftyflowers.com/products/banana-leaves-tropical-greenery"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "dechire-nervures",
+        "feuilles-recroquevillees",
+        "brunit-bords",
+        "feuilles-brunissent"
+      ],
+      "ordre": "le limbe se fend entre les nervures parallèles en lanières (dès la manipulation, plus encore en séchant) ; les bords sèchent et brunissent, la feuille se plisse et s'enroule ; fanée, elle devient brun clair, ridée, craquelée et cassante",
+      "tete": null,
+      "petales": null,
+      "feuilles": "très grand limbe oblong (≈ 90-120 cm × 10-15 cm chez le grossiste), cireux, nervure médiane épaisse d'où partent de nombreuses nervures parallèles non ramifiées en S jusqu'au bord ; le limbe se déchire le long de ces nervures en franges ; fané : brun clair, ridé, craquelé, bords enroulés",
+      "tige": "pétiole/nervure médiane robuste et souple, reste en place comme une arête qui porte les lanières",
+      "couleurs": {
+        "vert": {
+          "declin": "vert qui pâlit, bords secs brun-jaune, déchirures plus nombreuses",
+          "fane": "brun clair à havane, avec des zones jaune paille"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Déchirure vérifiée : les nervures du limbe sont parallèles et non ramifiées, d'où une déchirure facile entre elles ; une vieille feuille finit en « deux rangées de rubans et de lambeaux » le long d'un pétiole abîmé (ProMusa, Kwize, GNA). Terme hors vocabulaire ajouté : 'dechire-nervures' = le limbe se fend en lanières parallèles. Tenue : FiftyFlowers donne 4 jours en moyenne (min 3/max 5 = arrondi autour de cette moyenne, non sourcé tel quel). L'aspect séché (brun clair, ridé, craquelé, bords enroulés) vient de descriptions de feuilles de bananier séchées (usage alimentaire/artisanal). Le dessèchement rapide des bords sur la plante vivante par manque d'humidité (jardinage) sert d'appui : extrapolation partielle, d'où moyenne. seche_bien = false : garde sa silhouette mais perd toute sa couleur verte. Sources consultées uniquement via les extraits de WebSearch (WebFetch bloqué par le proxy pour tous les domaines testés : ctahr.hawaii.edu, scholarspace, phtnet, ncsu, wikipedia).",
+      "sources": [
+        "https://promusa.org/Banana+leaf",
+        "https://kwize.com/en/themes/banana-leaf/",
+        "https://gna.it.com/banana-leaves-size-dimensions",
+        "https://fiftyflowers.com/products/banana-leaves-tropical-greenery",
+        "https://www.sidechef.com/wikis/295/banana_leaf/",
+        "https://ovcre.uplb.edu.ph/journals-uplb/index.php/PJABE/article/view/1110",
+        "https://en.jardineriaon.com/Why-does-my-banana-tree-have-burnt-leaves%3F.html"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "strelitzia-feuilles",
+    "nom": "Feuilles de strelitzia",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [],
+      "toute_annee": true,
+      "note": "feuillage persistant disponible toute l'année (fiche plante) ; pas de calendrier grossiste européen trouvé pour les feuilles coupées, pic inconnu",
+      "sources": [
+        "https://www.nature-and-garden.com/gardening/strelitzia.html"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 12,
+      "max": 59,
+      "sources": [
+        "https://journals.tabrizu.ac.ir/article_3785.html"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "feuilles-jaunissent",
+        "dechire-nervures"
+      ],
+      "ordre": "la feuille ferme et coriace tient longtemps ; la chlorophylle diminue et le vert gris-vert jaunit progressivement ; le limbe peut se fendre entre ses nervures parallèles",
+      "tete": null,
+      "petales": null,
+      "feuilles": "limbe oblong à lancéolé, épais, coriace, vert grisâtre, nervure médiane marquée et nervures latérales parallèles ; fentes naturelles possibles le long des nervures (surtout S. nicolai) ; en déclin jaunissement, fané : jaune paille puis brun",
+      "tige": "long pétiole rigide, reste droit",
+      "couleurs": {
+        "vert": {
+          "declin": "gris-vert qui pâlit et jaunit",
+          "fane": "jaune paille à brun clair"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Tenue sourcée pour les feuilles coupées de strelitzia (Univ. Tabriz) : 12 jours en conditions non contrôlées, 59 jours en conditions contrôlées (lumière, température, humidité), jusqu'à 112 jours avec GA3+BA ; la perte de chlorophylle (jaunissement) est le marqueur suivi. Fentes : S. nicolai a un feuillage « qui se déchire avec l'âge » et des fentes naturelles par le vent (TreeSA, NC State) ; pour S. reginae le fendillement n'est pas sourcé ici, à prendre comme extrapolation. 'dechire-nervures' = terme ajouté (cf. bananier). Description du feuillage gris-vert et usage en fleuristerie : Floral Design Institute. Sources consultées uniquement via les extraits de WebSearch (WebFetch bloqué par le proxy pour tous les domaines testés : ctahr.hawaii.edu, scholarspace, phtnet, ncsu, wikipedia).",
+      "sources": [
+        "https://journals.tabrizu.ac.ir/article_3785.html",
+        "https://treesa.org/strelitzia-nicolai/",
+        "https://plants.ces.ncsu.edu/plants/strelitzia-nicolai/common-name/wild-banana/",
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/bird-of-paradise",
+        "https://www.nature-and-garden.com/gardening/strelitzia.html"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "pandanus",
+    "nom": "Pandanus",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [],
+      "toute_annee": true,
+      "note": "non sourcé pour l'Europe ; 'toute l'année' supposé (feuillage tropical importé), pic inconnu",
+      "sources": [
+        "https://fiftyflowers.com/products/variegated-pandanus-leaves"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 8,
+      "max": null,
+      "sources": [
+        "https://fiftyflowers.com/products/variegated-pandanus-leaves"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "brunit-bords",
+        "feuilles-brunissent",
+        "decolore"
+      ],
+      "ordre": "(extrapolé) la longue lanière garde sa forme ; la pointe et les bords sèchent et brunissent d'abord, les rayures claires jaunissent, puis toute la feuille devient paille",
+      "tete": null,
+      "petales": null,
+      "feuilles": "feuille en longue lanière (jusqu'à ~150 × 7 cm), disposée en spirale sur la plante, pliée en gouttière le long de la nervure médiane ; rayures blanches ou vert-lime ; bords finement épineux chez P. veitchii (rayures près du bord), sans épines chez P. baptistii (rayures centrales) ; fané : paille brun clair, sèche, raide",
+      "tige": "pas de pétiole : base engainante large",
+      "couleurs": {
+        "vert": {
+          "declin": "vert foncé qui ternit, pointe brune",
+          "fane": "paille à brun clair"
+        },
+        "bicolore": {
+          "declin": "rayures blanc/lime qui jaunissent, bords bruns",
+          "fane": "rayures crème sale sur fond paille brun"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Confiance basse : seules la tenue (minimum 8 jours, FiftyFlowers) et la morphologie (Bishop Museum, Top Tropicals) sont sourcées ; aucune description de fanaison trouvée, l'ordre est un raisonnement (feuilles coriaces en lanière). L'espèce vendue n'est pas précisée : FiftyFlowers vend un pandanus panaché vert foncé à rayures vert-lime. La gouttière le long de la nervure est une connaissance générale non vérifiée ici. Sources consultées uniquement via les extraits de WebSearch (WebFetch bloqué par le proxy pour tous les domaines testés : ctahr.hawaii.edu, scholarspace, phtnet, ncsu, wikipedia).",
+      "sources": [
+        "https://fiftyflowers.com/products/variegated-pandanus-leaves",
+        "https://data.bishopmuseum.org/PBS/cookislands/species.asp?id=6473",
+        "https://data.bishopmuseum.org/PBS/cookislands/species.asp?id=6470",
+        "https://toptropicals.com/catalog/uid/pandanus_baptistii.htm"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "alpinia-zerumbet-variegata",
+    "nom": "Feuilles de gingembre panaché",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [],
+      "toute_annee": true,
+      "note": "non sourcé : aucun calendrier trouvé ; 'toute l'année' supposé pour un feuillage tropical persistant importé, pic inconnu",
+      "sources": [
+        "https://hort.ifas.ufl.edu/shrubs/ALPZERB.PDF"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 6,
+      "max": 49,
+      "sources": [
+        "https://ishs.org/ishs-article/1087_33/"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "feuilles-recroquevillees",
+        "penche-tete",
+        "feuilles-jaunissent"
+      ],
+      "ordre": "perte progressive de qualité et de poids frais : le limbe s'enroule par stress hydrique et s'abaisse sur la tige (angle limbe/pétiole qui diminue), puis jaunit et se dessèche",
+      "tete": null,
+      "petales": null,
+      "feuilles": "grandes feuilles lancéolées (45-60 cm), alternes, à stries jaune-crème irrégulières parallèles aux nervures sur fond vert, nervures latérales fines et parallèles ; en déclin enroulées et inclinées ; fané : jaune paille à brun, desséchées",
+      "tige": "feuilles portées sur une gaine qui embrasse la tige (pseudo-tige) ; courte partie pétiolaire",
+      "couleurs": {
+        "bicolore": {
+          "declin": "stries jaunes qui s'élargissent sur un vert qui pâlit",
+          "fane": "jaune paille et brun, panachure à peine lisible"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Tenue sourcée au niveau du genre : 6 à 49 jours selon le génotype et la position de la feuille sur la tige ; les génotypes d'A. zerumbet sont les meilleurs feuillages coupés (ISHS 1087_33). Le chiffre exact pour 'Variegata' n'est pas donné. Symptômes : enroulement du limbe et baisse de l'angle limbe/pétiole par stress hydrique, plus jaunissement et dessèchement rapportés pour les feuillages coupés (extrait combinant l'étude Alpinia et des études voisines). Panachure jaune et taille des feuilles : UF/IFAS. Saison non sourcée, d'où moyenne. Sources consultées uniquement via les extraits de WebSearch (WebFetch bloqué par le proxy pour tous les domaines testés : ctahr.hawaii.edu, scholarspace, phtnet, ncsu, wikipedia).",
+      "sources": [
+        "https://ishs.org/ishs-article/1087_33/",
+        "https://www.scielo.br/j/oh/a/kgB38N4Bw6CbLqrrNqhbpHM/?lang=en",
+        "https://hort.ifas.ufl.edu/shrubs/ALPZERB.PDF"
+      ]
+    },
+    "confiance": "moyenne"
+  }
+]

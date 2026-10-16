@@ -1,0 +1,3064 @@
+[
+ {
+  "id": "rose-standard",
+  "a": "double",
+  "cm": 7,
+  "stem": {
+   "cm": 60,
+   "w": 5,
+   "col": "#4f7a34",
+   "leaf": "compound"
+  },
+  "cols": [
+   "#b0122a",
+   "#f6f1e4",
+   "#f0b8c4",
+   "#e2457a",
+   "#f6c49e",
+   "#f4d03c"
+  ],
+  "p": {
+   "n": 45,
+   "w": 0.6,
+   "tip": "round",
+   "a0out": 60,
+   "a1out": 100,
+   "a0in": 10,
+   "a1in": -10,
+   "cup": -0.6,
+   "center": "closed"
+  },
+  "price": 25
+ },
+ {
+  "id": "rose-intermediaire-kenya",
+  "a": "double",
+  "cm": 5,
+  "stem": {
+   "cm": 50,
+   "w": 4,
+   "col": "#4f7a34",
+   "leaf": "compound"
+  },
+  "cols": [
+   "#c41e2e",
+   "#f6f1e4",
+   "#e8558a",
+   "#f6d23a",
+   "#f07c2a",
+   "#7d0a1c"
+  ],
+  "p": {
+   "n": 35,
+   "w": 0.6,
+   "tip": "round",
+   "a0out": 50,
+   "a1out": 85,
+   "a0in": 8,
+   "a1in": -8,
+   "cup": -0.65,
+   "center": "closed"
+  },
+  "price": 20
+ },
+ {
+  "id": "rose-aspect-jardin",
+  "a": "custom",
+  "cm": 8,
+  "stem": {
+   "cm": 60,
+   "w": 5,
+   "col": "#4f7a34",
+   "leaf": "compound"
+  },
+  "cols": [
+   "#f4c2a1",
+   "#f6efe0",
+   "#e07f9c",
+   "#f3a66d",
+   "#a77ab0",
+   "#ecd6b8"
+  ],
+  "p": {
+   "fn": "xRose"
+  },
+  "price": 65
+ },
+ {
+  "id": "rose-de-jardin",
+  "a": "custom",
+  "cm": 10,
+  "stem": {
+   "cm": 50,
+   "w": 4,
+   "col": "#4f7a34",
+   "leaf": "compound"
+  },
+  "cols": [
+   "#f6ecd9",
+   "#f2b9c4",
+   "#e07f9c",
+   "#f4b98e",
+   "#c64d8a",
+   "#c9965f"
+  ],
+  "p": {
+   "fn": "xRose"
+  },
+  "price": 75
+ },
+ {
+  "id": "rose-anglaise-david-austin",
+  "a": "custom",
+  "cm": 10,
+  "stem": {
+   "cm": 50,
+   "w": 4,
+   "col": "#4f7a34",
+   "leaf": "compound"
+  },
+  "cols": [
+   "#f6c8a8",
+   "#f6efe2",
+   "#f2c9cf",
+   "#f2a96e",
+   "#e7a0b0",
+   "#efe0a8"
+  ],
+  "p": {
+   "fn": "xRose"
+  },
+  "price": 140
+ },
+ {
+  "id": "rose-japonaise",
+  "a": "double",
+  "cm": 8,
+  "stem": {
+   "cm": 50,
+   "w": 3.5,
+   "col": "#4f7a34",
+   "leaf": "compound"
+  },
+  "cols": [
+   "#efd3d0",
+   "#e3cdb9",
+   "#c3aecb",
+   "#f4eee3",
+   "#e8bf9c",
+   "#b48f86"
+  ],
+  "p": {
+   "n": 60,
+   "w": 0.55,
+   "tip": "round",
+   "a0out": 70,
+   "a1out": 100,
+   "a0in": 25,
+   "a1in": 5,
+   "cup": -0.45,
+   "ruf": 0.18,
+   "center": "closed"
+  },
+  "price": 290
+ },
+ {
+  "id": "rose-branchue",
+  "a": "spray",
+  "cm": 18,
+  "stem": {
+   "cm": 55,
+   "w": 4,
+   "col": "#4f7a34",
+   "leaf": "compound"
+  },
+  "cols": [
+   "#f2bfc6",
+   "#f6f2e6",
+   "#e0457b",
+   "#f2a77a",
+   "#f4d03a",
+   "#c41e2e"
+  ],
+  "p": {
+   "branches": 7,
+   "n": 10,
+   "fl": {
+    "a": "double",
+    "cm": 4,
+    "n": 30
+   },
+   "shape": "corymb",
+   "len": 18
+  },
+  "price": 20
+ },
+ {
+  "id": "rose-ancienne-parfumee",
+  "a": "double",
+  "cm": 8,
+  "stem": {
+   "cm": 40,
+   "w": 4,
+   "col": "#5b7a3e",
+   "leaf": "compound"
+  },
+  "cols": [
+   "#ec9fbc",
+   "#f6eee2",
+   "#8a1f4e",
+   "#c2347a",
+   "#f6cdd2",
+   "#a46aa2"
+  ],
+  "c2": "#a5bf6c",
+  "p": {
+   "n": 110,
+   "w": 0.45,
+   "tip": "round",
+   "a0out": 85,
+   "a1out": 115,
+   "a0in": 40,
+   "a1in": 20,
+   "cup": -0.35,
+   "ruf": 0.12,
+   "center": "button",
+   "eye": "#a5bf6c"
+  },
+  "price": 140
+ },
+ {
+  "id": "rose-teintee",
+  "a": "double",
+  "cm": 7,
+  "stem": {
+   "cm": 55,
+   "w": 5,
+   "col": "#4f7a34",
+   "leaf": "compound"
+  },
+  "cols": [
+   "#d8232a",
+   "#f07c1e",
+   "#f4d21c",
+   "#3fa34d",
+   "#2b5fc4",
+   "#7a3fa8"
+  ],
+  "p": {
+   "n": 45,
+   "w": 0.6,
+   "tip": "round",
+   "a0out": 60,
+   "a1out": 100,
+   "a0in": 10,
+   "a1in": -10,
+   "cup": -0.6,
+   "center": "closed"
+  },
+  "price": 75
+ },
+ {
+  "id": "rose-stabilisee",
+  "a": "double",
+  "cm": 6,
+  "stem": {
+   "cm": 40,
+   "w": 4,
+   "col": "#3d5a2c",
+   "leaf": "compound"
+  },
+  "cols": [
+   "#a50f22",
+   "#f2c4cf",
+   "#f7f3ea",
+   "#e0457b",
+   "#6a0f24",
+   "#1f3a7a"
+  ],
+  "p": {
+   "n": 40,
+   "w": 0.6,
+   "tip": "round",
+   "a0out": 45,
+   "a1out": 70,
+   "a0in": 8,
+   "a1in": -10,
+   "cup": -0.7,
+   "center": "closed"
+  },
+  "price": 160
+ },
+ {
+  "id": "tulipe-simple",
+  "a": "custom",
+  "cm": 6,
+  "stem": {
+   "cm": 40,
+   "w": 7,
+   "col": "#7b9a72",
+   "leaf": "lanceolate"
+  },
+  "cols": [
+   "#d82a32",
+   "#ef8fb0",
+   "#f6d025",
+   "#f7f4ec",
+   "#f07a28",
+   "#6b2f86"
+  ],
+  "c2": "#2a2430",
+  "p": {
+   "fn": "tulip"
+  },
+  "price": 20
+ },
+ {
+  "id": "tulipe-francaise",
+  "a": "custom",
+  "cm": 8,
+  "stem": {
+   "cm": 60,
+   "w": 6,
+   "col": "#7b9a72",
+   "leaf": "lanceolate"
+  },
+  "cols": [
+   "#f7f3ea",
+   "#f3c3cf",
+   "#f6d84a",
+   "#f39a7e",
+   "#d8302a",
+   "#f7c7a6"
+  ],
+  "c2": "#2a2430",
+  "p": {
+   "fn": "tulip"
+  },
+  "price": 65
+ },
+ {
+  "id": "tulipe-double",
+  "a": "double",
+  "cm": 9,
+  "stem": {
+   "cm": 35,
+   "w": 7,
+   "col": "#7b9a72",
+   "leaf": "lanceolate"
+  },
+  "cols": [
+   "#f3bccb",
+   "#f6f2e8",
+   "#f3c2a2",
+   "#e2457e",
+   "#f4d23c",
+   "#c41e3a"
+  ],
+  "p": {
+   "n": 22,
+   "w": 0.75,
+   "tip": "round",
+   "a0out": 45,
+   "a1out": 70,
+   "a0in": 15,
+   "a1in": 5,
+   "cup": -0.75,
+   "ruf": 0.08,
+   "center": "closed"
+  },
+  "price": 65
+ },
+ {
+  "id": "tulipe-perroquet",
+  "a": "star",
+  "cm": 13,
+  "stem": {
+   "cm": 40,
+   "w": 7,
+   "col": "#7b9a72",
+   "leaf": "lanceolate"
+  },
+  "cols": [
+   "#f4a873",
+   "#c41f2c",
+   "#f6f1e2",
+   "#f5cf2e",
+   "#3f1030",
+   "#f28a6e"
+  ],
+  "p": {
+   "n": 6,
+   "w": 0.55,
+   "a0": 35,
+   "a1": 85,
+   "ruf": 0.25,
+   "stamens": 6,
+   "anther": "#2a2430",
+   "cluster": 1,
+   "nod": 0
+  },
+  "price": 65
+ },
+ {
+  "id": "tulipe-frangee",
+  "a": "radial",
+  "cm": 7,
+  "stem": {
+   "cm": 40,
+   "w": 6,
+   "col": "#7b9a72",
+   "leaf": "lanceolate"
+  },
+  "cols": [
+   "#e99ab6",
+   "#f7f3ea",
+   "#f6d02a",
+   "#c41e2e",
+   "#5b2a7a",
+   "#3a0f2c"
+  ],
+  "c2": "#2a2430",
+  "p": {
+   "n": 6,
+   "w": 0.6,
+   "tip": "fringe",
+   "a0": 15,
+   "a1": 40,
+   "cup": -0.6,
+   "layers": 2,
+   "disc": {
+    "r": 0.15,
+    "h": 0.1,
+    "type": "stamens",
+    "col": "#2a2430"
+   }
+  },
+  "price": 65
+ },
+ {
+  "id": "tulipe-fleur-de-lys",
+  "a": "star",
+  "cm": 8,
+  "stem": {
+   "cm": 45,
+   "w": 5,
+   "col": "#7b9a72",
+   "leaf": "lanceolate"
+  },
+  "cols": [
+   "#f7f3ea",
+   "#f4d02a",
+   "#c41e2e",
+   "#c2367e",
+   "#f07a28",
+   "#f2a48a"
+  ],
+  "p": {
+   "n": 6,
+   "w": 0.3,
+   "a0": 12,
+   "a1": 60,
+   "stamens": 6,
+   "anther": "#2a2430",
+   "cluster": 1,
+   "nod": 0
+  },
+  "price": 20
+ },
+ {
+  "id": "tulipe-viridiflora",
+  "a": "star",
+  "cm": 7,
+  "stem": {
+   "cm": 40,
+   "w": 6,
+   "col": "#7b9a72",
+   "leaf": "lanceolate"
+  },
+  "cols": [
+   "#f2ecd6",
+   "#ec9ab0",
+   "#93ad5c",
+   "#e0457b",
+   "#f2a06a",
+   "#7a2a6a"
+  ],
+  "p": {
+   "n": 6,
+   "w": 0.42,
+   "a0": 18,
+   "a1": 48,
+   "stamens": 6,
+   "anther": "#2a2430",
+   "cluster": 1,
+   "nod": 0
+  },
+  "price": 65
+ },
+ {
+  "id": "tulipe-rembrandt",
+  "a": "custom",
+  "cm": 6,
+  "stem": {
+   "cm": 40,
+   "w": 6,
+   "col": "#7b9a72",
+   "leaf": "lanceolate"
+  },
+  "cols": [
+   "#f6f0e4",
+   "#6e1f5c",
+   "#f4d23c",
+   "#b3182b",
+   "#e98fa8",
+   "#7a4a2c"
+  ],
+  "c2": "#2a2430",
+  "p": {
+   "fn": "tulip"
+  },
+  "price": 235
+ },
+ {
+  "id": "renoncule-classique",
+  "a": "custom",
+  "cm": 6,
+  "stem": {
+   "cm": 40,
+   "w": 5,
+   "col": "#5f8a3e",
+   "leaf": "lobed"
+  },
+  "cols": [
+   "#f7f3ea",
+   "#f3b8c4",
+   "#f07a2a",
+   "#c41e2e",
+   "#f5d02e",
+   "#e2457b"
+  ],
+  "p": {
+   "fn": "xRanunc"
+  },
+  "price": 25
+ },
+ {
+  "id": "renoncule-cloni",
+  "a": "custom",
+  "cm": 10,
+  "stem": {
+   "cm": 50,
+   "w": 6,
+   "col": "#5f8a3e",
+   "leaf": "lobed"
+  },
+  "cols": [
+   "#efc4c8",
+   "#f7f3ea",
+   "#f6c4a6",
+   "#f2a46e",
+   "#f2765e",
+   "#d81f7a"
+  ],
+  "p": {
+   "fn": "xRanunc"
+  },
+  "price": 140
+ },
+ {
+  "id": "renoncule-pon-pon",
+  "a": "custom",
+  "cm": 6,
+  "stem": {
+   "cm": 45,
+   "w": 5,
+   "col": "#5f8a3e",
+   "leaf": "lobed"
+  },
+  "cols": [
+   "#f7f3ea",
+   "#f2c4d0",
+   "#e98fb0",
+   "#b48ab8",
+   "#7a2a6a",
+   "#f2b33a"
+  ],
+  "c2": "#a9c35a",
+  "p": {
+   "fn": "xRanunc"
+  },
+  "price": 75
+ },
+ {
+  "id": "renoncule-butterfly",
+  "a": "spray",
+  "cm": 25,
+  "stem": {
+   "cm": 50,
+   "w": 3,
+   "col": "#5f8a3e",
+   "leaf": "lobed"
+  },
+  "cols": [
+   "#f3c4cc",
+   "#f7eedb",
+   "#e98fa8",
+   "#f2a06a",
+   "#f2e04a",
+   "#7a2a6a"
+  ],
+  "c2": "#9cb24c",
+  "p": {
+   "branches": 6,
+   "n": 10,
+   "fl": {
+    "a": "radial",
+    "cm": 5,
+    "n": 6
+   },
+   "shape": "airy",
+   "len": 25
+  },
+  "price": 140
+ },
+ {
+  "id": "renoncule-natura-moderna",
+  "a": "spray",
+  "cm": 25,
+  "stem": {
+   "cm": 50,
+   "w": 3.5,
+   "col": "#5f8a3e",
+   "leaf": "lobed"
+  },
+  "cols": [
+   "#f6efe0",
+   "#f5cf3a",
+   "#f08a3a",
+   "#f4c09a",
+   "#e0457b",
+   "#5a1a4a"
+  ],
+  "c2": "#8fae4a",
+  "p": {
+   "branches": 5,
+   "n": 10,
+   "fl": {
+    "a": "radial",
+    "cm": 5.5,
+    "n": 10
+   },
+   "shape": "airy",
+   "len": 25
+  },
+  "price": 140
+ },
+ {
+  "id": "anemone-coronaria",
+  "a": "custom",
+  "cm": 7,
+  "stem": {
+   "cm": 35,
+   "w": 4,
+   "col": "#5f8a3e",
+   "leaf": "lobed"
+  },
+  "cols": [
+   "#f7f5f0",
+   "#c8102e",
+   "#5b4aa8",
+   "#d81f7a",
+   "#f2c4cf",
+   "#6b0f2a"
+  ],
+  "c2": "#1e1628",
+  "p": {
+   "fn": "anemone"
+  },
+  "price": 25
+ },
+ {
+  "id": "anemone-japonaise",
+  "a": "radial",
+  "cm": 6,
+  "stem": {
+   "cm": 50,
+   "w": 3,
+   "col": "#4f7a34",
+   "leaf": "lobed"
+  },
+  "cols": [
+   "#f7f5ee",
+   "#efc2d2",
+   "#e08fb2",
+   "#c8457a"
+  ],
+  "c2": "#e3b52a",
+  "p": {
+   "n": 6,
+   "w": 0.6,
+   "tip": "round",
+   "a0": 70,
+   "a1": 92,
+   "cup": -0.25,
+   "layers": 1,
+   "disc": {
+    "r": 0.3,
+    "h": 0.35,
+    "type": "stamens",
+    "col": "#e3b52a"
+   }
+  },
+  "price": 65
+ },
+ {
+  "id": "hellebore-orientalis",
+  "a": "cup",
+  "cm": 6.5,
+  "stem": {
+   "cm": 35,
+   "w": 5,
+   "col": "#5d7a3e",
+   "leaf": "palmate"
+  },
+  "cols": [
+   "#f4efe0",
+   "#d99ab4",
+   "#7a2a5a",
+   "#4a1a38",
+   "#c9d6a6",
+   "#9b2a42"
+  ],
+  "c2": "#efe6b0",
+  "p": {
+   "n": 5,
+   "w": 0.75,
+   "a0": 40,
+   "a1": 70,
+   "cup": -0.35,
+   "open": 0.7,
+   "center": "stamens",
+   "nod": 1
+  },
+  "price": 65
+ },
+ {
+  "id": "hellebore-niger",
+  "a": "radial",
+  "cm": 6.5,
+  "stem": {
+   "cm": 30,
+   "w": 5,
+   "col": "#5d7a3e",
+   "leaf": "palmate"
+  },
+  "cols": [
+   "#fbfaf5",
+   "#f3dfe3",
+   "#e7eed8",
+   "#8e1f3a"
+  ],
+  "c2": "#f2c41c",
+  "p": {
+   "n": 5,
+   "w": 0.7,
+   "tip": "round",
+   "a0": 55,
+   "a1": 80,
+   "cup": -0.3,
+   "layers": 1,
+   "disc": {
+    "r": 0.3,
+    "h": 0.2,
+    "type": "stamens",
+    "col": "#f2c41c"
+   }
+  },
+  "price": 65
+ },
+ {
+  "id": "pivoine-herbacee-double",
+  "a": "custom",
+  "cm": 15,
+  "stem": {
+   "cm": 50,
+   "w": 7,
+   "col": "#5b6a35",
+   "leaf": "compound"
+  },
+  "cols": [
+   "#f0a6c0",
+   "#f7f1e6",
+   "#f6cfd6",
+   "#c81f4c",
+   "#d2357e",
+   "#7a0f2a"
+  ],
+  "p": {
+   "fn": "peony"
+  },
+  "price": 140
+ },
+ {
+  "id": "pivoine-herbacee-simple",
+  "a": "cup",
+  "cm": 12,
+  "stem": {
+   "cm": 50,
+   "w": 6,
+   "col": "#5b6a35",
+   "leaf": "compound"
+  },
+  "cols": [
+   "#ec8fb4",
+   "#f7f3ea",
+   "#e0457b",
+   "#d6212f",
+   "#f2836a",
+   "#f1dcc0"
+  ],
+  "c2": "#ecc23a",
+  "p": {
+   "n": 7,
+   "w": 0.7,
+   "a0": 35,
+   "a1": 65,
+   "cup": -0.5,
+   "open": 0.8,
+   "center": "stamens",
+   "nod": 0
+  },
+  "price": 140
+ },
+ {
+  "id": "pivoine-corail",
+  "a": "double",
+  "cm": 15,
+  "stem": {
+   "cm": 50,
+   "w": 6,
+   "col": "#5b6a35",
+   "leaf": "compound"
+  },
+  "cols": [
+   "#f2715a",
+   "#f49a82",
+   "#f4b3a0",
+   "#f6c49e",
+   "#f3a46a",
+   "#f4ebd8"
+  ],
+  "c2": "#e9b72a",
+  "p": {
+   "n": 20,
+   "w": 0.8,
+   "tip": "round",
+   "a0out": 35,
+   "a1out": 60,
+   "a0in": 15,
+   "a1in": 25,
+   "cup": -0.8,
+   "ruf": 0.1,
+   "center": "disc",
+   "eye": "#e9b72a"
+  },
+  "price": 140
+ },
+ {
+  "id": "pivoine-itoh",
+  "a": "cup",
+  "cm": 17,
+  "stem": {
+   "cm": 50,
+   "w": 6,
+   "col": "#4f7a34",
+   "leaf": "lobed"
+  },
+  "cols": [
+   "#f2d73a",
+   "#f3ead8",
+   "#f2a35e",
+   "#c63c7e",
+   "#d9a3c4",
+   "#c0272e"
+  ],
+  "c2": "#e8b52a",
+  "p": {
+   "n": 9,
+   "w": 0.75,
+   "a0": 45,
+   "a1": 78,
+   "cup": -0.35,
+   "open": 0.85,
+   "center": "stamens",
+   "nod": 0
+  },
+  "price": 280
+ },
+ {
+  "id": "pivoine-arbustive",
+  "a": "double",
+  "cm": 20,
+  "stem": {
+   "cm": 40,
+   "w": 9,
+   "col": "#6b5a44",
+   "leaf": "lobed"
+  },
+  "cols": [
+   "#e9a4c0",
+   "#f7f3ec",
+   "#c8203a",
+   "#7a2a6e",
+   "#f5d23e",
+   "#f2a08a"
+  ],
+  "c2": "#e5b52a",
+  "p": {
+   "n": 30,
+   "w": 0.8,
+   "tip": "round",
+   "a0out": 55,
+   "a1out": 85,
+   "a0in": 25,
+   "a1in": 40,
+   "cup": -0.5,
+   "ruf": 0.22,
+   "center": "disc",
+   "eye": "#e5b52a"
+  },
+  "price": 300
+ },
+ {
+  "id": "pois-de-senteur",
+  "a": "custom",
+  "cm": 12,
+  "stem": {
+   "cm": 40,
+   "w": 3,
+   "col": "#7a9a5a",
+   "leaf": "none"
+  },
+  "cols": [
+   "#c9a6dc",
+   "#f2b6c8",
+   "#f7f3ec",
+   "#e2457e",
+   "#7a1f3a",
+   "#f2a08a"
+  ],
+  "p": {
+   "fn": "xPea"
+  },
+  "price": 65
+ },
+ {
+  "id": "jacinthe",
+  "a": "spike",
+  "cm": 12,
+  "stem": {
+   "cm": 30,
+   "w": 10,
+   "col": "#5f8a3e",
+   "leaf": "lanceolate"
+  },
+  "cols": [
+   "#4b5fbf",
+   "#ef9fbd",
+   "#f7f4ec",
+   "#6a3c9c",
+   "#f4e3a2",
+   "#f2b29a"
+  ],
+  "p": {
+   "n": 40,
+   "fl": {
+    "a": "star",
+    "cm": 2.5,
+    "n": 6
+   },
+   "taper": 0.3,
+   "buds": 4,
+   "dense": 0.95,
+   "side": 0
+  },
+  "price": 25
+ },
+ {
+  "id": "muscari",
+  "a": "spike",
+  "cm": 3.5,
+  "stem": {
+   "cm": 22,
+   "w": 3,
+   "col": "#6f9a4a",
+   "leaf": "grass"
+  },
+  "cols": [
+   "#2f4bb0",
+   "#8fb0e0",
+   "#f7f5ee",
+   "#273a8a",
+   "#e9c8c8",
+   "#c7d7b0"
+  ],
+  "c2": "#f7f5ee",
+  "p": {
+   "n": 30,
+   "fl": {
+    "a": "ball",
+    "cm": 0.5,
+    "n": 6
+   },
+   "taper": 0.6,
+   "buds": 3,
+   "dense": 1,
+   "side": 0
+  },
+  "price": 20
+ },
+ {
+  "id": "narcisse-trompette",
+  "a": "star",
+  "cm": 8,
+  "stem": {
+   "cm": 35,
+   "w": 6,
+   "col": "#6f9a5a",
+   "leaf": "none"
+  },
+  "cols": [
+   "#f5d22c",
+   "#f8f5ea",
+   "#f1e05a",
+   "#f2e8cc"
+  ],
+  "c2": "#f0b41c",
+  "p": {
+   "n": 6,
+   "w": 0.45,
+   "a0": 80,
+   "a1": 95,
+   "ruf": 0.05,
+   "corona": {
+    "cm": 3.5,
+    "w": 0.85,
+    "col": "#f0b41c"
+   },
+   "stamens": 6,
+   "anther": "#f2d06a",
+   "cluster": 1,
+   "nod": 1
+  },
+  "price": 20
+ },
+ {
+  "id": "narcisse-double",
+  "a": "double",
+  "cm": 7,
+  "stem": {
+   "cm": 35,
+   "w": 6,
+   "col": "#6f9a5a",
+   "leaf": "none"
+  },
+  "cols": [
+   "#f5d22c",
+   "#f6eedb",
+   "#f8f5ea",
+   "#f2e6a8"
+  ],
+  "c2": "#f08a28",
+  "p": {
+   "n": 30,
+   "w": 0.6,
+   "tip": "round",
+   "a0out": 80,
+   "a1out": 95,
+   "a0in": 35,
+   "a1in": 55,
+   "cup": -0.25,
+   "ruf": 0.18,
+   "center": "eye",
+   "eye": "#f08a28"
+  },
+  "price": 50
+ },
+ {
+  "id": "narcisse-bouquet",
+  "a": "star",
+  "cm": 3,
+  "stem": {
+   "cm": 40,
+   "w": 6,
+   "col": "#6f9a5a",
+   "leaf": "none"
+  },
+  "cols": [
+   "#fbfaf4",
+   "#f5d22c",
+   "#f6eedb",
+   "#f2e36a"
+  ],
+  "c2": "#f3c21e",
+  "p": {
+   "n": 6,
+   "w": 0.5,
+   "a0": 85,
+   "a1": 95,
+   "corona": {
+    "cm": 0.5,
+    "w": 2,
+    "col": "#f3c21e"
+   },
+   "stamens": 6,
+   "anther": "#f2d06a",
+   "cluster": 8,
+   "nod": 0
+  },
+  "price": 50
+ },
+ {
+  "id": "muguet",
+  "a": "spike",
+  "cm": 8,
+  "stem": {
+   "cm": 20,
+   "w": 2.5,
+   "col": "#6a9a4a",
+   "leaf": "ovate"
+  },
+  "cols": [
+   "#fbfaf4",
+   "#f4ead8",
+   "#efd3d8"
+  ],
+  "p": {
+   "n": 10,
+   "fl": {
+    "a": "bell",
+    "cm": 0.8,
+    "n": 6
+   },
+   "taper": 0.4,
+   "buds": 3,
+   "dense": 0.4,
+   "side": 1
+  },
+  "price": 140
+ },
+ {
+  "id": "violette",
+  "a": "radial",
+  "cm": 2,
+  "stem": {
+   "cm": 15,
+   "w": 2,
+   "col": "#6a8a4a",
+   "leaf": "cordate"
+  },
+  "cols": [
+   "#5a2a8a",
+   "#a98ac9",
+   "#5a4fb0",
+   "#b9c6ec",
+   "#f7f5ee",
+   "#d9a0c0"
+  ],
+  "c2": "#f2eef4",
+  "p": {
+   "n": 5,
+   "w": 0.65,
+   "tip": "round",
+   "a0": 80,
+   "a1": 95,
+   "cup": -0.1,
+   "layers": 1,
+   "disc": {
+    "r": 0.18,
+    "h": 0,
+    "type": "eye",
+    "col": "#f2eef4"
+   }
+  },
+  "price": 50
+ },
+ {
+  "id": "ancolie",
+  "a": "star",
+  "cm": 4,
+  "stem": {
+   "cm": 45,
+   "w": 3,
+   "col": "#6f8f5a",
+   "leaf": "lobed"
+  },
+  "cols": [
+   "#5d52ad",
+   "#341630",
+   "#f6f3ea",
+   "#e59ab8",
+   "#b8243a",
+   "#7a1a32"
+  ],
+  "c2": "#f2d23a",
+  "p": {
+   "n": 5,
+   "w": 0.35,
+   "a0": 55,
+   "a1": 85,
+   "stamens": 12,
+   "anther": "#f2d23a",
+   "cluster": 3,
+   "nod": 1
+  },
+  "price": 65
+ },
+ {
+  "id": "lilas",
+  "a": "spray",
+  "cm": 20,
+  "stem": {
+   "cm": 50,
+   "w": 9,
+   "col": "#6e5a44",
+   "leaf": "cordate"
+  },
+  "cols": [
+   "#c3a2d6",
+   "#f7f5ee",
+   "#7a3a8a",
+   "#a99ad8",
+   "#9a5aa8",
+   "#e8c6d6"
+  ],
+  "p": {
+   "branches": 10,
+   "n": 200,
+   "fl": {
+    "a": "star",
+    "cm": 1,
+    "n": 4
+   },
+   "shape": "panicle",
+   "len": 20
+  },
+  "price": 140
+ },
+ {
+  "id": "freesia",
+  "a": "spike",
+  "cm": 8,
+  "stem": {
+   "cm": 45,
+   "w": 3,
+   "col": "#5f8a3e",
+   "leaf": "none"
+  },
+  "cols": [
+   "#f6f3ea",
+   "#f5d22c",
+   "#a68ad0",
+   "#e04a8a",
+   "#e8402e",
+   "#f4e6c4"
+  ],
+  "c2": "#f2d23a",
+  "p": {
+   "n": 9,
+   "fl": {
+    "a": "cup",
+    "cm": 4,
+    "n": 6
+   },
+   "taper": 0.5,
+   "buds": 4,
+   "dense": 0.5,
+   "side": 1
+  },
+  "price": 20
+ },
+ {
+  "id": "viburnum-roseum",
+  "a": "globe",
+  "cm": 8,
+  "stem": {
+   "cm": 50,
+   "w": 7,
+   "col": "#6a5a3e",
+   "leaf": "lobed"
+  },
+  "cols": [
+   "#c5d86a",
+   "#f7f5ee",
+   "#dbe6a0",
+   "#efc8d4"
+  ],
+  "p": {
+   "shape": "ball",
+   "n": 70,
+   "fl": {
+    "a": "radial",
+    "cm": 1.5,
+    "n": 5
+   }
+  },
+  "price": 75
+ },
+ {
+  "id": "fritillaire-imperiale",
+  "a": "star",
+  "cm": 5,
+  "stem": {
+   "cm": 80,
+   "w": 14,
+   "col": "#5a6a3a",
+   "leaf": "whorl"
+  },
+  "cols": [
+   "#e8691e",
+   "#f2c21c",
+   "#c23a1e",
+   "#9a3a20",
+   "#f2a35e"
+  ],
+  "c2": "#f2d23a",
+  "p": {
+   "n": 6,
+   "w": 0.45,
+   "a0": 12,
+   "a1": 32,
+   "stamens": 6,
+   "anther": "#f2d23a",
+   "cluster": 6,
+   "nod": 1
+  },
+  "price": 160
+ },
+ {
+  "id": "fritillaire-meleagris",
+  "a": "cup",
+  "cm": 3,
+  "stem": {
+   "cm": 30,
+   "w": 2,
+   "col": "#7a8f6a",
+   "leaf": "grass"
+  },
+  "cols": [
+   "#7a3060",
+   "#f4f2ee",
+   "#5c1f3e",
+   "#c7a8d0",
+   "#efe8d2"
+  ],
+  "p": {
+   "n": 6,
+   "w": 0.6,
+   "a0": 10,
+   "a1": 25,
+   "cup": -0.4,
+   "open": 0.3,
+   "center": "none",
+   "nod": 1
+  },
+  "price": 65
+ },
+ {
+  "id": "fritillaire-persica",
+  "a": "spike",
+  "cm": 30,
+  "stem": {
+   "cm": 80,
+   "w": 8,
+   "col": "#6f8a6a",
+   "leaf": "lanceolate"
+  },
+  "cols": [
+   "#46263e",
+   "#ece6cf",
+   "#a3b066",
+   "#5a2a4a"
+  ],
+  "p": {
+   "n": 25,
+   "fl": {
+    "a": "bell",
+    "cm": 2,
+    "n": 6
+   },
+   "taper": 0.5,
+   "buds": 5,
+   "dense": 0.7,
+   "side": 0
+  },
+  "price": 140
+ },
+ {
+  "id": "fritillaire-michailovskyi",
+  "a": "cup",
+  "cm": 2.5,
+  "stem": {
+   "cm": 20,
+   "w": 2,
+   "col": "#6f8a5a",
+   "leaf": "lanceolate"
+  },
+  "cols": [
+   "#6b2a3e",
+   "#f0c21e",
+   "#8a8f4a",
+   "#e9e48a"
+  ],
+  "p": {
+   "n": 6,
+   "w": 0.55,
+   "a0": 8,
+   "a1": 22,
+   "cup": -0.4,
+   "open": 0.25,
+   "center": "none",
+   "nod": 1
+  },
+  "price": 140
+ },
+ {
+  "id": "allium-grosse-tete",
+  "a": "custom",
+  "cm": 15,
+  "stem": {
+   "cm": 80,
+   "w": 10,
+   "col": "#5f8a3e",
+   "leaf": "none"
+  },
+  "cols": [
+   "#7b3fa6",
+   "#b06aa8",
+   "#f4f2ea",
+   "#c4a6d8",
+   "#5e2a7e",
+   "#8e78c0"
+  ],
+  "p": {
+   "fn": "xAllium"
+  },
+  "price": 65
+ },
+ {
+  "id": "allium-petit",
+  "a": "globe",
+  "cm": 3.5,
+  "stem": {
+   "cm": 50,
+   "w": 3,
+   "col": "#5f8a3e",
+   "leaf": "none"
+  },
+  "cols": [
+   "#7d1f45",
+   "#f4f2ea",
+   "#e6b422",
+   "#9ab8e0",
+   "#d58fb0",
+   "#9aaa5a"
+  ],
+  "c2": "#8aa25a",
+  "p": {
+   "shape": "ball",
+   "n": 100,
+   "fl": {
+    "a": "star",
+    "cm": 0.4,
+    "n": 6
+   }
+  },
+  "price": 20
+ },
+ {
+  "id": "iris-hollandais",
+  "a": "star",
+  "cm": 9,
+  "stem": {
+   "cm": 55,
+   "w": 6,
+   "col": "#5f8a5a",
+   "leaf": "grass"
+  },
+  "cols": [
+   "#4a44a8",
+   "#f7f5ee",
+   "#f5d02a",
+   "#26307a",
+   "#a9b8e8",
+   "#3a1a50"
+  ],
+  "c2": "#f2c21c",
+  "p": {
+   "n": 6,
+   "w": 0.35,
+   "a0": 30,
+   "a1": 100,
+   "ruf": 0.05,
+   "spots": "#f2c21c",
+   "stamens": 0,
+   "cluster": 1,
+   "nod": 0
+  },
+  "price": 20
+ },
+ {
+  "id": "iris-barbu",
+  "a": "star",
+  "cm": 14,
+  "stem": {
+   "cm": 60,
+   "w": 9,
+   "col": "#6a8a6a",
+   "leaf": "lanceolate"
+  },
+  "cols": [
+   "#5c5fb5",
+   "#2e1a3a",
+   "#f7f5ee",
+   "#f2c22a",
+   "#f2b080",
+   "#e9b2c4"
+  ],
+  "c2": "#f0a020",
+  "p": {
+   "n": 6,
+   "w": 0.55,
+   "a0": 25,
+   "a1": 110,
+   "ruf": 0.22,
+   "spots": "#f0a020",
+   "stamens": 0,
+   "cluster": 1,
+   "nod": 0
+  },
+  "price": 140
+ },
+ {
+  "id": "ornithogale",
+  "a": "spike",
+  "cm": 10,
+  "stem": {
+   "cm": 55,
+   "w": 7,
+   "col": "#5f8a3e",
+   "leaf": "none"
+  },
+  "cols": [
+   "#f8f6ee",
+   "#f3ead2",
+   "#f07a1e",
+   "#f2c41e",
+   "#eef0dc"
+  ],
+  "c2": "#a3b862",
+  "p": {
+   "n": 30,
+   "fl": {
+    "a": "star",
+    "cm": 2.5,
+    "n": 6
+   },
+   "taper": 0.6,
+   "buds": 8,
+   "dense": 0.85,
+   "side": 0
+  },
+  "price": 25
+ },
+ {
+  "id": "pavot-islande",
+  "a": "cup",
+  "cm": 8,
+  "stem": {
+   "cm": 45,
+   "w": 4,
+   "col": "#7a9a5a",
+   "leaf": "none"
+  },
+  "cols": [
+   "#f07a2a",
+   "#f6d23a",
+   "#f7f3ea",
+   "#ef8a8e",
+   "#f6c2a0",
+   "#e0302a"
+  ],
+  "c2": "#f2c22e",
+  "p": {
+   "n": 4,
+   "w": 0.8,
+   "a0": 40,
+   "a1": 72,
+   "cup": -0.5,
+   "open": 0.85,
+   "center": "stamens",
+   "nod": 0
+  },
+  "price": 140
+ },
+ {
+  "id": "camassia",
+  "a": "spike",
+  "cm": 30,
+  "stem": {
+   "cm": 70,
+   "w": 5,
+   "col": "#5f8a3e",
+   "leaf": "none"
+  },
+  "cols": [
+   "#4f4aa8",
+   "#f3eedb",
+   "#9fb8e6",
+   "#b9a6d8"
+  ],
+  "c2": "#f2d23a",
+  "p": {
+   "n": 30,
+   "fl": {
+    "a": "star",
+    "cm": 4.5,
+    "n": 6
+   },
+   "taper": 0.5,
+   "buds": 6,
+   "dense": 0.5,
+   "side": 0
+  },
+  "price": 65
+ },
+ {
+  "id": "eremurus",
+  "a": "spike",
+  "cm": 60,
+  "stem": {
+   "cm": 90,
+   "w": 12,
+   "col": "#5f8a3e",
+   "leaf": "none"
+  },
+  "cols": [
+   "#f08c2a",
+   "#f5d22a",
+   "#f4a88a",
+   "#f7f5ee",
+   "#efb0c0",
+   "#f2a87a"
+  ],
+  "c2": "#f3d27a",
+  "p": {
+   "n": 80,
+   "fl": {
+    "a": "star",
+    "cm": 1.5,
+    "n": 6
+   },
+   "taper": 0.4,
+   "buds": 10,
+   "dense": 1,
+   "side": 0
+  },
+  "price": 140
+ },
+ {
+  "id": "triteleia",
+  "a": "globe",
+  "cm": 10,
+  "stem": {
+   "cm": 50,
+   "w": 2.5,
+   "col": "#6a8a4a",
+   "leaf": "none"
+  },
+  "cols": [
+   "#5a5ab8",
+   "#a9a6e0",
+   "#f7f5ee",
+   "#c3a6d8",
+   "#2a3a8a",
+   "#eab2c8"
+  ],
+  "p": {
+   "shape": "dome",
+   "n": 20,
+   "fl": {
+    "a": "cup",
+    "cm": 3,
+    "n": 6
+   },
+   "rays": 1
+  },
+  "price": 20
+ },
+ {
+  "id": "jacinthe-des-bois",
+  "a": "spike",
+  "cm": 12,
+  "stem": {
+   "cm": 35,
+   "w": 3,
+   "col": "#5f8a3e",
+   "leaf": "none"
+  },
+  "cols": [
+   "#5a4fb0",
+   "#f7f5ee",
+   "#e0a6c8",
+   "#6f7fd0"
+  ],
+  "c2": "#f2ead0",
+  "p": {
+   "n": 10,
+   "fl": {
+    "a": "bell",
+    "cm": 1.8,
+    "n": 6
+   },
+   "taper": 0.4,
+   "buds": 3,
+   "dense": 0.4,
+   "side": 1
+  },
+  "price": 65
+ },
+ {
+  "id": "scille",
+  "a": "spike",
+  "cm": 6,
+  "stem": {
+   "cm": 15,
+   "w": 2,
+   "col": "#7a5a4a",
+   "leaf": "grass"
+  },
+  "cols": [
+   "#3f5fd0",
+   "#f7f5ee",
+   "#d6def4",
+   "#9a9ad8",
+   "#efd3dc"
+  ],
+  "p": {
+   "n": 8,
+   "fl": {
+    "a": "star",
+    "cm": 1.5,
+    "n": 6
+   },
+   "taper": 0.2,
+   "buds": 2,
+   "dense": 0.25,
+   "side": 1
+  },
+  "price": 65
+ },
+ {
+  "id": "niveole",
+  "a": "star",
+  "cm": 1.8,
+  "stem": {
+   "cm": 40,
+   "w": 4,
+   "col": "#5f8a3e",
+   "leaf": "none"
+  },
+  "cols": [
+   "#fbfaf4"
+  ],
+  "c2": "#7fae3a",
+  "p": {
+   "n": 6,
+   "w": 0.55,
+   "a0": 10,
+   "a1": 30,
+   "spots": "#7fae3a",
+   "stamens": 6,
+   "anther": "#e8c84a",
+   "cluster": 4,
+   "nod": 1
+  },
+  "price": 65
+ },
+ {
+  "id": "crocus",
+  "a": "cup",
+  "cm": 4,
+  "stem": {
+   "cm": 10,
+   "w": 4,
+   "col": "#dfe6cc",
+   "leaf": "grass"
+  },
+  "cols": [
+   "#7a4fb0",
+   "#f7f5ee",
+   "#f4c21e",
+   "#b9a6d8",
+   "#c8aee0",
+   "#5a2a7a"
+  ],
+  "c2": "#f07a1a",
+  "p": {
+   "n": 6,
+   "w": 0.45,
+   "a0": 15,
+   "a1": 35,
+   "cup": -0.6,
+   "open": 0.5,
+   "center": "pistil",
+   "nod": 0
+  },
+  "price": 65
+ },
+ {
+  "id": "sparaxis",
+  "a": "radial",
+  "cm": 4.5,
+  "stem": {
+   "cm": 40,
+   "w": 2.5,
+   "col": "#5f8a3e",
+   "leaf": "grass"
+  },
+  "cols": [
+   "#f0602a",
+   "#e98ab0",
+   "#f6eedb",
+   "#c8202e",
+   "#f4d02a",
+   "#7a2a7a"
+  ],
+  "c2": "#24161a",
+  "p": {
+   "n": 6,
+   "w": 0.5,
+   "tip": "round",
+   "a0": 80,
+   "a1": 92,
+   "cup": -0.1,
+   "layers": 1,
+   "disc": {
+    "r": 0.35,
+    "h": 0,
+    "type": "eye",
+    "col": "#f2c41c"
+   }
+  },
+  "price": 50
+ },
+ {
+  "id": "ixia",
+  "a": "spike",
+  "cm": 12,
+  "stem": {
+   "cm": 50,
+   "w": 2,
+   "col": "#5f8a3e",
+   "leaf": "none"
+  },
+  "cols": [
+   "#f6efe0",
+   "#e2457e",
+   "#f2e05a",
+   "#c2307e",
+   "#f2b4c4",
+   "#c8202e"
+  ],
+  "c2": "#5a1e44",
+  "p": {
+   "n": 12,
+   "fl": {
+    "a": "star",
+    "cm": 3,
+    "n": 6
+   },
+   "taper": 0.5,
+   "buds": 5,
+   "dense": 0.6,
+   "side": 0
+  },
+  "price": 20
+ },
+ {
+  "id": "glaieul-nain",
+  "a": "spike",
+  "cm": 25,
+  "stem": {
+   "cm": 50,
+   "w": 4,
+   "col": "#5f8a3e",
+   "leaf": "grass"
+  },
+  "cols": [
+   "#f6eef0",
+   "#f2bccb",
+   "#f7f5ee",
+   "#d8287e",
+   "#e8402e",
+   "#e98fb0"
+  ],
+  "c2": "#c22a6a",
+  "p": {
+   "n": 8,
+   "fl": {
+    "a": "star",
+    "cm": 6,
+    "n": 6
+   },
+   "taper": 0.3,
+   "buds": 3,
+   "dense": 0.5,
+   "side": 1
+  },
+  "price": 65
+ },
+ {
+  "id": "amaryllis",
+  "a": "star",
+  "cm": 16,
+  "stem": {
+   "cm": 60,
+   "w": 15,
+   "col": "#5f8a3e",
+   "leaf": "none"
+  },
+  "cols": [
+   "#c8141e",
+   "#f7f5ee",
+   "#f1b6c4",
+   "#f2a08a",
+   "#cfd89a",
+   "#6e0f1e"
+  ],
+  "c2": "#b9c96a",
+  "p": {
+   "n": 6,
+   "w": 0.5,
+   "a0": 35,
+   "a1": 82,
+   "ruf": 0.05,
+   "stamens": 6,
+   "anther": "#efe3c0",
+   "cluster": 4,
+   "nod": 0
+  },
+  "price": 140
+ },
+ {
+  "id": "nerine",
+  "a": "custom",
+  "cm": 13,
+  "stem": {
+   "cm": 50,
+   "w": 6,
+   "col": "#5f8a3e",
+   "leaf": "none"
+  },
+  "cols": [
+   "#e8578a",
+   "#f19bbb",
+   "#a8122f",
+   "#f7f4ee",
+   "#f6c9d8",
+   "#f07a6a"
+  ],
+  "p": {
+   "fn": "xNerine"
+  },
+  "price": 140
+ },
+ {
+  "id": "dahlia-assiette",
+  "a": "custom",
+  "cm": 25,
+  "stem": {
+   "cm": 60,
+   "w": 9,
+   "col": "#4f7a34",
+   "leaf": "compound"
+  },
+  "cols": [
+   "#f2d4c0",
+   "#efbcc4",
+   "#f7f4ee",
+   "#a3305e",
+   "#6e1a4a",
+   "#e2602e"
+  ],
+  "p": {
+   "fn": "xDahlia"
+  },
+  "price": 140
+ },
+ {
+  "id": "dahlia-decoratif",
+  "a": "custom",
+  "cm": 14,
+  "stem": {
+   "cm": 55,
+   "w": 7,
+   "col": "#4f7a34",
+   "leaf": "compound"
+  },
+  "cols": [
+   "#f6ebe8",
+   "#5c0f26",
+   "#c62a6c",
+   "#b7a6d8",
+   "#f2957a",
+   "#ef8c2a"
+  ],
+  "p": {
+   "fn": "xDahlia"
+  },
+  "price": 65
+ },
+ {
+  "id": "dahlia-balle",
+  "a": "double",
+  "cm": 9,
+  "stem": {
+   "cm": 50,
+   "w": 6,
+   "col": "#4f7a34",
+   "leaf": "compound"
+  },
+  "cols": [
+   "#c41f2e",
+   "#d2742c",
+   "#f29a7c",
+   "#f4ecd8",
+   "#5e1b3e",
+   "#f2c23a"
+  ],
+  "p": {
+   "n": 110,
+   "w": 0.5,
+   "tip": "round",
+   "a0out": 105,
+   "a1out": 125,
+   "a0in": 0,
+   "a1in": -15,
+   "cup": -1,
+   "center": "closed"
+  },
+  "price": 65
+ },
+ {
+  "id": "dahlia-pompon",
+  "a": "double",
+  "cm": 4,
+  "stem": {
+   "cm": 45,
+   "w": 4,
+   "col": "#4f7a34",
+   "leaf": "compound"
+  },
+  "cols": [
+   "#f7f4ee",
+   "#7a1f5a",
+   "#e09a4a",
+   "#ec8fb0",
+   "#f5d02a",
+   "#b9a6d8"
+  ],
+  "p": {
+   "n": 90,
+   "w": 0.55,
+   "tip": "round",
+   "a0out": 110,
+   "a1out": 130,
+   "a0in": 5,
+   "a1in": -15,
+   "cup": -1,
+   "center": "closed"
+  },
+  "price": 65
+ },
+ {
+  "id": "dahlia-cactus",
+  "a": "double",
+  "cm": 15,
+  "stem": {
+   "cm": 55,
+   "w": 7,
+   "col": "#4f7a34",
+   "leaf": "compound"
+  },
+  "cols": [
+   "#7a1f6a",
+   "#c41f2e",
+   "#f07a1e",
+   "#f5d02a",
+   "#f7f4ee",
+   "#4a0c22"
+  ],
+  "p": {
+   "n": 70,
+   "w": 0.22,
+   "tip": "point",
+   "a0out": 85,
+   "a1out": 105,
+   "a0in": 20,
+   "a1in": 10,
+   "cup": -0.2,
+   "quill": 1,
+   "center": "closed"
+  },
+  "price": 65
+ },
+ {
+  "id": "dahlia-nenuphar",
+  "a": "double",
+  "cm": 11,
+  "stem": {
+   "cm": 55,
+   "w": 5,
+   "col": "#4f7a34",
+   "leaf": "compound"
+  },
+  "cols": [
+   "#f4ecd8",
+   "#f2c22a",
+   "#f2b8c8",
+   "#f6c4a4",
+   "#e88a3a",
+   "#5a1e1e"
+  ],
+  "p": {
+   "n": 40,
+   "w": 0.55,
+   "tip": "round",
+   "a0out": 85,
+   "a1out": 92,
+   "a0in": 40,
+   "a1in": 25,
+   "cup": -0.4,
+   "center": "closed"
+  },
+  "price": 65
+ },
+ {
+  "id": "dahlia-collerette",
+  "a": "radial",
+  "cm": 8,
+  "stem": {
+   "cm": 50,
+   "w": 4,
+   "col": "#3f6a2e",
+   "leaf": "compound"
+  },
+  "cols": [
+   "#c41f2e",
+   "#f2724e",
+   "#f08a2a",
+   "#f4ead2",
+   "#e98fb0",
+   "#7a0f22"
+  ],
+  "c2": "#e8b21e",
+  "p": {
+   "n": 8,
+   "w": 0.45,
+   "tip": "round",
+   "a0": 85,
+   "a1": 92,
+   "cup": -0.15,
+   "layers": 2,
+   "disc": {
+    "r": 0.25,
+    "h": 0.3,
+    "type": "dome",
+    "col": "#e8b21e"
+   }
+  },
+  "price": 65
+ },
+ {
+  "id": "dahlia-simple",
+  "a": "radial",
+  "cm": 8,
+  "stem": {
+   "cm": 45,
+   "w": 4,
+   "col": "#3e3a2c",
+   "leaf": "compound"
+  },
+  "cols": [
+   "#d8281e",
+   "#e98fb0",
+   "#f08a2a",
+   "#f7f4ee",
+   "#c22a7a",
+   "#f5d02a"
+  ],
+  "c2": "#e3a91c",
+  "p": {
+   "n": 8,
+   "w": 0.45,
+   "tip": "round",
+   "a0": 85,
+   "a1": 95,
+   "cup": -0.2,
+   "layers": 1,
+   "disc": {
+    "r": 0.3,
+    "h": 0.25,
+    "type": "dome",
+    "col": "#e3a91c"
+   }
+  },
+  "price": 65
+ },
+ {
+  "id": "dahlia-anemone",
+  "a": "radial",
+  "cm": 10,
+  "stem": {
+   "cm": 45,
+   "w": 5,
+   "col": "#4f7a34",
+   "leaf": "compound"
+  },
+  "cols": [
+   "#c3b3dc",
+   "#d9a3c4",
+   "#f7f4ee",
+   "#f3e6c4",
+   "#7a2a6e",
+   "#c41f2e"
+  ],
+  "c2": "#5a2a5e",
+  "p": {
+   "n": 12,
+   "w": 0.45,
+   "tip": "round",
+   "a0": 85,
+   "a1": 95,
+   "cup": -0.2,
+   "layers": 2,
+   "disc": {
+    "r": 0.45,
+    "h": 0.45,
+    "type": "dome",
+    "col": "#5a2a5e"
+   }
+  },
+  "price": 65
+ },
+ {
+  "id": "dahlia-lacinie",
+  "a": "double",
+  "cm": 16,
+  "stem": {
+   "cm": 55,
+   "w": 7,
+   "col": "#4f7a34",
+   "leaf": "compound"
+  },
+  "cols": [
+   "#ef8fb8",
+   "#f5df8a",
+   "#b48ab8",
+   "#f08a2a",
+   "#c9873a",
+   "#f6ebe6"
+  ],
+  "p": {
+   "n": 60,
+   "w": 0.4,
+   "tip": "fringe",
+   "a0out": 85,
+   "a1out": 105,
+   "a0in": 25,
+   "a1in": 10,
+   "cup": -0.3,
+   "ruf": 0.2,
+   "center": "closed"
+  },
+  "price": 140
+ },
+ {
+  "id": "cosmos",
+  "a": "custom",
+  "cm": 8,
+  "stem": {
+   "cm": 50,
+   "w": 3,
+   "col": "#5f8a3e",
+   "leaf": "needle"
+  },
+  "cols": [
+   "#f7f5ee",
+   "#ec8fb4",
+   "#c8205a",
+   "#f4c9d2",
+   "#f2b48e",
+   "#a8183a"
+  ],
+  "c2": "#e8b416",
+  "p": {
+   "fn": "cosmos"
+  },
+  "price": 25
+ },
+ {
+  "id": "zinnia",
+  "a": "double",
+  "cm": 10,
+  "stem": {
+   "cm": 50,
+   "w": 6,
+   "col": "#5f8a3e",
+   "leaf": "lanceolate"
+  },
+  "cols": [
+   "#e2457e",
+   "#c8d86a",
+   "#f08a2a",
+   "#f2c21c",
+   "#c41f2e",
+   "#f2725a"
+  ],
+  "c2": "#e8c02a",
+  "p": {
+   "n": 60,
+   "w": 0.55,
+   "tip": "round",
+   "a0out": 85,
+   "a1out": 95,
+   "a0in": 40,
+   "a1in": 30,
+   "cup": -0.15,
+   "center": "disc",
+   "eye": "#e8c02a"
+  },
+  "price": 20
+ },
+ {
+  "id": "scabieuse",
+  "a": "custom",
+  "cm": 5,
+  "stem": {
+   "cm": 50,
+   "w": 3,
+   "col": "#6a8a5a",
+   "leaf": "lobed"
+  },
+  "cols": [
+   "#5a1030",
+   "#a29bd2",
+   "#f6f1e6",
+   "#c63a6e",
+   "#f0b8cc",
+   "#efe3a6"
+  ],
+  "c2": "#f2ecf0",
+  "p": {
+   "fn": "xScab"
+  },
+  "price": 25
+ },
+ {
+  "id": "delphinium",
+  "a": "custom",
+  "cm": 50,
+  "stem": {
+   "cm": 80,
+   "w": 9,
+   "col": "#7a9a5a",
+   "leaf": "palmate"
+  },
+  "cols": [
+   "#5a7ad0",
+   "#b9a6dc",
+   "#f7f5ee",
+   "#2f3f9a",
+   "#a9c4ec",
+   "#5a2a7a"
+  ],
+  "c2": "#2e2440",
+  "p": {
+   "fn": "xDelph"
+  },
+  "price": 25
+ },
+ {
+  "id": "pied-alouette-annuel",
+  "a": "spike",
+  "cm": 40,
+  "stem": {
+   "cm": 80,
+   "w": 5,
+   "col": "#6a9a4a",
+   "leaf": "needle"
+  },
+  "cols": [
+   "#3f52b0",
+   "#f2bccb",
+   "#f7f5ee",
+   "#c3a6d8",
+   "#c8285a",
+   "#a9c4ec"
+  ],
+  "p": {
+   "n": 25,
+   "fl": {
+    "a": "radial",
+    "cm": 2.5,
+    "n": 8
+   },
+   "taper": 0.6,
+   "buds": 6,
+   "dense": 0.45,
+   "side": 0
+  },
+  "price": 20
+ },
+ {
+  "id": "digitale",
+  "a": "spike",
+  "cm": 45,
+  "stem": {
+   "cm": 90,
+   "w": 8,
+   "col": "#6a8a5a",
+   "leaf": "lanceolate"
+  },
+  "cols": [
+   "#b5559a",
+   "#f4ead6",
+   "#f8f6ef",
+   "#f2c09e",
+   "#c7a6d6",
+   "#eaa2c2"
+  ],
+  "c2": "#7a2a5a",
+  "p": {
+   "n": 30,
+   "fl": {
+    "a": "bell",
+    "cm": 5,
+    "n": 5
+   },
+   "taper": 0.5,
+   "buds": 8,
+   "dense": 0.7,
+   "side": 1
+  },
+  "price": 65
+ },
+ {
+  "id": "lisianthus",
+  "a": "double",
+  "cm": 6,
+  "stem": {
+   "cm": 60,
+   "w": 4,
+   "col": "#6f8f6a",
+   "leaf": "ovate"
+  },
+  "cols": [
+   "#f7f5ee",
+   "#f2c4d2",
+   "#5e2a7e",
+   "#c5b2e0",
+   "#ecdcc2",
+   "#d6e3a6"
+  ],
+  "p": {
+   "n": 25,
+   "w": 0.8,
+   "tip": "round",
+   "a0out": 45,
+   "a1out": 70,
+   "a0in": 20,
+   "a1in": 10,
+   "cup": -0.6,
+   "ruf": 0.15,
+   "center": "closed"
+  },
+  "price": 25
+ },
+ {
+  "id": "muflier",
+  "a": "spike",
+  "cm": 30,
+  "stem": {
+   "cm": 60,
+   "w": 6,
+   "col": "#4f7a34",
+   "leaf": "lanceolate"
+  },
+  "cols": [
+   "#f7f3e6",
+   "#ee8fb0",
+   "#f5d22e",
+   "#f2a07a",
+   "#c41f3a",
+   "#b9a6d8"
+  ],
+  "c2": "#f2d23a",
+  "p": {
+   "n": 25,
+   "fl": {
+    "a": "lip",
+    "cm": 4,
+    "n": 5
+   },
+   "taper": 0.5,
+   "buds": 8,
+   "dense": 0.7,
+   "side": 0
+  },
+  "price": 20
+ },
+ {
+  "id": "giroflee-matthiole",
+  "a": "spike",
+  "cm": 25,
+  "stem": {
+   "cm": 55,
+   "w": 9,
+   "col": "#7d9078",
+   "leaf": "lanceolate"
+  },
+  "cols": [
+   "#f7f5ee",
+   "#f2b8c8",
+   "#b9a6dc",
+   "#c8285a",
+   "#f6e6a8",
+   "#f2c2a0"
+  ],
+  "p": {
+   "n": 30,
+   "fl": {
+    "a": "radial",
+    "cm": 3.5,
+    "n": 10
+   },
+   "taper": 0.4,
+   "buds": 6,
+   "dense": 0.9,
+   "side": 0
+  },
+  "price": 20
+ },
+ {
+  "id": "hortensia-boule",
+  "a": "custom",
+  "cm": 18,
+  "stem": {
+   "cm": 50,
+   "w": 9,
+   "col": "#5f7a3a",
+   "leaf": "ovate"
+  },
+  "cols": [
+   "#6f8ee0",
+   "#f5f3ec",
+   "#ec9ab8",
+   "#a8c47a",
+   "#7a3a7a",
+   "#c3a6dc"
+  ],
+  "p": {
+   "fn": "hydrangea"
+  },
+  "price": 75
+ },
+ {
+  "id": "hortensia-lacecap",
+  "a": "globe",
+  "cm": 15,
+  "stem": {
+   "cm": 45,
+   "w": 8,
+   "col": "#5f7a3a",
+   "leaf": "ovate"
+  },
+  "cols": [
+   "#6f8ee0",
+   "#f5f3ec",
+   "#e990b4",
+   "#b9a6dc",
+   "#c8305a",
+   "#3f5fc8"
+  ],
+  "c2": "#4f63b8",
+  "p": {
+   "shape": "flat",
+   "n": 150,
+   "fl": {
+    "a": "dot",
+    "cm": 0.4,
+    "n": 5
+   },
+   "bracts": {
+    "n": 12,
+    "cm": 3.5,
+    "col": "#a9bcef"
+   },
+   "rays": 0
+  },
+  "price": 75
+ },
+ {
+  "id": "hortensia-paniculata",
+  "a": "spike",
+  "cm": 22,
+  "stem": {
+   "cm": 60,
+   "w": 8,
+   "col": "#7a4a3a",
+   "leaf": "ovate"
+  },
+  "cols": [
+   "#f4f2e6",
+   "#dbe6a8",
+   "#f0c4cf",
+   "#d8708e",
+   "#b8304e"
+  ],
+  "p": {
+   "n": 80,
+   "fl": {
+    "a": "radial",
+    "cm": 2,
+    "n": 4
+   },
+   "taper": 0.75,
+   "buds": 0,
+   "dense": 1,
+   "side": 0
+  },
+  "price": 75
+ },
+ {
+  "id": "hortensia-arborescens",
+  "a": "globe",
+  "cm": 22,
+  "stem": {
+   "cm": 50,
+   "w": 6,
+   "col": "#5f8a3e",
+   "leaf": "ovate"
+  },
+  "cols": [
+   "#f7f6ee",
+   "#d5e3a0",
+   "#f2ecd6"
+  ],
+  "p": {
+   "shape": "dome",
+   "n": 250,
+   "fl": {
+    "a": "radial",
+    "cm": 1,
+    "n": 4
+   }
+  },
+  "price": 65
+ },
+ {
+  "id": "astilbe",
+  "a": "spike",
+  "cm": 25,
+  "stem": {
+   "cm": 50,
+   "w": 3,
+   "col": "#7a4a3a",
+   "leaf": "compound"
+  },
+  "cols": [
+   "#f0b2c8",
+   "#f7f5ee",
+   "#c8305a",
+   "#c9a6d6",
+   "#e47aa6",
+   "#8e1a3a"
+  ],
+  "p": {
+   "n": 80,
+   "fl": {
+    "a": "ball",
+    "cm": 0.3,
+    "n": 5
+   },
+   "taper": 0.8,
+   "buds": 0,
+   "dense": 1,
+   "side": 0
+  },
+  "price": 25
+ },
+ {
+  "id": "campanule",
+  "a": "spike",
+  "cm": 30,
+  "stem": {
+   "cm": 60,
+   "w": 6,
+   "col": "#5f8a3e",
+   "leaf": "lanceolate"
+  },
+  "cols": [
+   "#7a8ad8",
+   "#c6b2e0",
+   "#f2bccb",
+   "#f7f5ee",
+   "#3f3fa0",
+   "#6a3a9a"
+  ],
+  "p": {
+   "n": 10,
+   "fl": {
+    "a": "bell",
+    "cm": 4.5,
+    "n": 5
+   },
+   "taper": 0.3,
+   "buds": 3,
+   "dense": 0.5,
+   "side": 0
+  },
+  "price": 25
+ },
+ {
+  "id": "phlox",
+  "a": "spray",
+  "cm": 15,
+  "stem": {
+   "cm": 60,
+   "w": 5,
+   "col": "#4f7a34",
+   "leaf": "lanceolate"
+  },
+  "cols": [
+   "#b6a6e0",
+   "#f7f5ee",
+   "#e98fb0",
+   "#d8287e",
+   "#f2836a",
+   "#c3a6dc"
+  ],
+  "c2": "#7a4a90",
+  "p": {
+   "branches": 6,
+   "n": 40,
+   "fl": {
+    "a": "radial",
+    "cm": 2.5,
+    "n": 5
+   },
+   "shape": "panicle",
+   "len": 15
+  },
+  "price": 25
+ },
+ {
+  "id": "gerbera",
+  "a": "radial",
+  "cm": 11,
+  "stem": {
+   "cm": 50,
+   "w": 5,
+   "col": "#5f8a3e",
+   "leaf": "none"
+  },
+  "cols": [
+   "#ec6f96",
+   "#f07a1e",
+   "#f6c81e",
+   "#d01e2a",
+   "#f6f1e4",
+   "#f29a7a"
+  ],
+  "c2": "#6e7a2e",
+  "p": {
+   "n": 32,
+   "w": 0.18,
+   "tip": "round",
+   "a0": 85,
+   "a1": 92,
+   "cup": -0.1,
+   "layers": 2,
+   "disc": {
+    "r": 0.3,
+    "h": 0.1,
+    "type": "flat",
+    "col": "#6e7a2e"
+   }
+  },
+  "price": 25
+ },
+ {
+  "id": "germini",
+  "a": "radial",
+  "cm": 6,
+  "stem": {
+   "cm": 40,
+   "w": 4,
+   "col": "#5f8a3e",
+   "leaf": "none"
+  },
+  "cols": [
+   "#ec6f96",
+   "#f6c81e",
+   "#f07a1e",
+   "#d01e2a",
+   "#f6f1e4",
+   "#f2725a"
+  ],
+  "c2": "#3a2a1e",
+  "p": {
+   "n": 24,
+   "w": 0.2,
+   "tip": "notch",
+   "a0": 85,
+   "a1": 92,
+   "cup": -0.25,
+   "layers": 1,
+   "disc": {
+    "r": 0.35,
+    "h": 0.1,
+    "type": "flat",
+    "col": "#3a2a1e"
+   }
+  },
+  "price": 20
+ },
+ {
+  "id": "tournesol",
+  "a": "custom",
+  "cm": 14,
+  "stem": {
+   "cm": 70,
+   "w": 12,
+   "col": "#5f7a34",
+   "leaf": "cordate"
+  },
+  "cols": [
+   "#f2b80c",
+   "#f07a1e",
+   "#f5d84a",
+   "#7a1f2a",
+   "#f3e6c0",
+   "#f2c49a"
+  ],
+  "c2": "#3a2414",
+  "p": {
+   "fn": "sunflower"
+  },
+  "price": 25
+ },
+ {
+  "id": "chrysantheme-disbud",
+  "a": "double",
+  "cm": 15,
+  "stem": {
+   "cm": 70,
+   "w": 7,
+   "col": "#5a7a46",
+   "leaf": "lobed"
+  },
+  "cols": [
+   "#f7f5ee",
+   "#f5d22c",
+   "#c8d86a",
+   "#c3a6dc",
+   "#7a2a6a",
+   "#f08a2a"
+  ],
+  "p": {
+   "n": 120,
+   "w": 0.4,
+   "tip": "round",
+   "a0out": 60,
+   "a1out": 25,
+   "a0in": 10,
+   "a1in": -10,
+   "cup": -0.7,
+   "center": "closed"
+  },
+  "price": 25
+ },
+ {
+  "id": "chrysantheme-araignee",
+  "a": "custom",
+  "cm": 14,
+  "stem": {
+   "cm": 70,
+   "w": 7,
+   "col": "#5a7a46",
+   "leaf": "lobed"
+  },
+  "cols": [
+   "#f7f5ee",
+   "#b8cf5a",
+   "#f5d22c",
+   "#c8823a",
+   "#c3a6dc",
+   "#ec9fb8"
+  ],
+  "p": {
+   "fn": "xMum"
+  },
+  "price": 140
+ },
+ {
+  "id": "chrysantheme-santini-pompon",
+  "a": "spray",
+  "cm": 15,
+  "stem": {
+   "cm": 60,
+   "w": 5,
+   "col": "#5a7a46",
+   "leaf": "lobed"
+  },
+  "cols": [
+   "#a8c84a",
+   "#f7f5ee",
+   "#f5d22c",
+   "#c3a6dc",
+   "#d8508a",
+   "#7a8a3a"
+  ],
+  "p": {
+   "branches": 8,
+   "n": 12,
+   "fl": {
+    "a": "double",
+    "cm": 3,
+    "n": 40
+   },
+   "shape": "corymb",
+   "len": 15
+  },
+  "price": 20
+ },
+ {
+  "id": "chrysantheme-marguerite-spray",
+  "a": "spray",
+  "cm": 20,
+  "stem": {
+   "cm": 60,
+   "w": 5,
+   "col": "#5a7a46",
+   "leaf": "lobed"
+  },
+  "cols": [
+   "#f7f5ee",
+   "#ec8fb0",
+   "#f5d22c",
+   "#f08a2a",
+   "#c41f2e",
+   "#e2457e"
+  ],
+  "c2": "#e8b923",
+  "p": {
+   "branches": 8,
+   "n": 10,
+   "fl": {
+    "a": "radial",
+    "cm": 5,
+    "n": 20
+   },
+   "shape": "corymb",
+   "len": 20
+  },
+  "price": 20
+ },
+ {
+  "id": "oeillet-standard",
+  "a": "custom",
+  "cm": 7,
+  "stem": {
+   "cm": 60,
+   "w": 5,
+   "col": "#7a9a8a",
+   "leaf": "grass"
+  },
+  "cols": [
+   "#ec7fa0",
+   "#c41f2e",
+   "#f7f5ee",
+   "#b5cf6a",
+   "#f4e0b0",
+   "#7a2a6a"
+  ],
+  "p": {
+   "fn": "xCarn"
+  },
+  "price": 20
+ },
+ {
+  "id": "oeillet-spray",
+  "a": "spray",
+  "cm": 15,
+  "stem": {
+   "cm": 55,
+   "w": 4,
+   "col": "#7a9a8a",
+   "leaf": "grass"
+  },
+  "cols": [
+   "#e2457e",
+   "#f2b8c8",
+   "#f7f5ee",
+   "#f5d22c",
+   "#f08a2a",
+   "#b5cf6a"
+  ],
+  "p": {
+   "branches": 5,
+   "n": 10,
+   "fl": {
+    "a": "double",
+    "cm": 3.5,
+    "n": 25
+   },
+   "shape": "corymb",
+   "len": 15
+  },
+  "price": 20
+ },
+ {
+  "id": "oeillet-de-poete-dianthus",
+  "a": "globe",
+  "cm": 10,
+  "stem": {
+   "cm": 45,
+   "w": 4,
+   "col": "#4f7a34",
+   "leaf": "lanceolate"
+  },
+  "cols": [
+   "#c8204a",
+   "#4a0c1e",
+   "#f7f5ee",
+   "#e98fb0",
+   "#9a2a7a",
+   "#a8c86a"
+  ],
+  "c2": "#5a0a22",
+  "p": {
+   "shape": "flat",
+   "n": 40,
+   "fl": {
+    "a": "radial",
+    "cm": 1.7,
+    "n": 5
+   }
+  },
+  "price": 20
+ }
+]

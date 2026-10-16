@@ -1,0 +1,3727 @@
+[
+  {
+    "id": "rose-standard",
+    "nom": "Rose standard",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [
+        2,
+        5
+      ],
+      "toute_annee": true,
+      "note": "importée toute l'année (Kenya, Éthiopie, Équateur, Colombie) via les Pays-Bas ; pics d'importation en janvier-février (Saint-Valentin) et avril-mai (fête des Mères)",
+      "sources": [
+        "https://www.spglobal.com/market-intelligence/en/news-insights/research/festival-favour-and-freight-global-rose-trade"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 7,
+      "max": 14,
+      "sources": [
+        "https://floralife.com/flowers/rose-standard/",
+        "https://edepot.wur.nl/330338",
+        "https://thursd.com/articles/chrysal-rose-care"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "penche-tete",
+        "brunit-bords",
+        "recroqueville",
+        "chute-petales",
+        "feuilles-jaunissent"
+      ],
+      "ordre": "la tête s'ouvre largement ; les pétales extérieurs ramollissent et brunissent sur les bords ; souvent le col plie sous la tête (bent neck) ; les rouges bleuissent ; en fin de vie, les pétales se fripent puis tombent",
+      "tete": "s'ouvre trop et montre le cœur ; peut pencher de 30 à 90° quand le col plie juste sous la fleur",
+      "petales": "bords bruns, mous puis parcheminés ; les pétales extérieurs se retournent vers l'arrière puis tombent ; parfois taches brunes rondes (botrytis)",
+      "feuilles": "jaunissent puis brunissent et sèchent sur la tige, avant ou en même temps que la fleur",
+      "tige": "reste droite et verte ; la pliure se fait juste sous la tête",
+      "couleurs": {
+        "blanc": {
+          "declin": "blanc qui jaunit en ivoire, bords des pétales extérieurs beige rosé puis brun clair",
+          "fane": "beige grisé, bords brun foncé parcheminés, petites taches brunes"
+        },
+        "creme": {
+          "declin": "crème terni, plus jaune beurre, bords beige",
+          "fane": "beige ocre, bords brun clair froissés"
+        },
+        "jaune": {
+          "declin": "jaune qui pâlit vers le jaune crème, bords qui brunissent",
+          "fane": "jaune paille terne, bords brun doré"
+        },
+        "orange": {
+          "declin": "orange qui se ternit vers le brique ou le saumon foncé",
+          "fane": "orange rouillé, bords brun roux"
+        },
+        "peche": {
+          "declin": "pêche qui pâlit vers un crème saumoné",
+          "fane": "beige rosé sale, bords brun clair"
+        },
+        "rose": {
+          "declin": "rose qui pâlit et tire vers le mauve, bords plus sombres",
+          "fane": "vieux rose mauve terne, bords brun violacé"
+        },
+        "rouge": {
+          "declin": "rouge qui bleuit, reflets pourpres sur les bords",
+          "fane": "bordeaux très sombre, presque noir, bords noircis et secs"
+        },
+        "bordeaux": {
+          "declin": "bordeaux qui fonce et bleuit",
+          "fane": "brun-noir violacé, aspect velours sec"
+        },
+        "violet": {
+          "declin": "lavande ou mauve qui grisaille",
+          "fane": "mauve gris, puis gris-brun beige sur les bords"
+        },
+        "vert": {
+          "declin": "vert pâle qui jaunit vers le vert olive",
+          "fane": "kaki beige, bords bruns"
+        },
+        "brun": {
+          "declin": "caramel ou café au lait qui se ternit, plus rosé-gris",
+          "fane": "brun tabac terne, bords plus foncés"
+        },
+        "bicolore": {
+          "declin": "la couleur du bord fonce (les rouges et roses bleuissent), le fond pâlit",
+          "fane": "bord brun-violet sombre sur fond beige sale"
+        }
+      },
+      "seche_bien": true,
+      "notes": "La fin de vie en vase est définie par le flétrissement, le brunissement ou le bleuissement des pétales, la chute des pétales, le botrytis ou la pliure du col (étude Frontiers 2022). Bleuissement des rouges : symptôme de sénescence lié à la hausse du pH des pétales (étude sur 'Baccara'). Les blancs brunissent plus vite aux bords. Les teintes de déclin des jaunes, oranges, pêche, verts et bruns sont déduites (oxydation, décoloration), pas mesurées. Séchée, la rose garde sa forme : rouges foncés presque noirs, blancs grisâtres ou ivoire, roses et jaunes gardent bien leur couleur. Tenue : 4 à 16 jours selon Floralife, 3,5 à 17,7 jours dans une étude néerlandaise ; 7 à 14 jours est la plage courante avec nourriture florale.",
+      "sources": [
+        "https://www.frontiersin.org/journals/plant-science/articles/10.3389/fpls.2022.874590/full",
+        "https://floralife.com/flowers/rose-standard/",
+        "https://www.chrysal.com/sites/default/files/VOL%206%20-%20Why%20Do%20Roses%20Bend.pdf",
+        "https://cris.huji.ac.il/en/publications/factors-determining-petal-colour-of-baccara-roses-ii-the-effect-o/",
+        "https://questions.gardeningknowhow.com/bluing-rose-petals/",
+        "https://www.regionsflorist.de/en/blog/how-to-care-for-white-roses",
+        "https://questions.gardeningknowhow.com/brown-edges-on-roses/",
+        "https://www.gertens.com/learn/shrubs-vines/drying-roses.htm"
+      ]
+    },
+    "confiance": "haute"
+  },
+  {
+    "id": "rose-intermediaire-kenya",
+    "nom": "Rose intermédiaire et sweetheart",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [
+        2,
+        5
+      ],
+      "toute_annee": true,
+      "note": "importée toute l'année du Kenya (serres d'altitude, Naivasha, mont Kenya) ; mêmes pics que les roses en général : Saint-Valentin et fête des Mères",
+      "sources": [
+        "https://www.spglobal.com/market-intelligence/en/news-insights/research/festival-favour-and-freight-global-rose-trade",
+        "https://thursd.com/articles/trending-wedding-flowers-east-africa"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 7,
+      "max": 14,
+      "sources": [
+        "https://btfgroup.com/product/sweetsara/",
+        "https://thursd.com/articles/de-ruiter-east-africa-rose-bahati"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "penche-tete",
+        "brunit-bords",
+        "recroqueville",
+        "chute-petales",
+        "feuilles-jaunissent"
+      ],
+      "ordre": "la petite tête s'ouvre en coupe ; les bords des pétales extérieurs brunissent ; les rouges bleuissent ; le col peut plier ; les pétales se fripent puis tombent",
+      "tete": "petite tête (3-5 cm) qui s'ouvre à plat ; peut pencher par pliure du col, moins fréquemment que les grosses têtes",
+      "petales": "bords bruns et secs, pétales extérieurs retournés puis tombés",
+      "feuilles": "jaunissent puis brunissent sur la tige",
+      "tige": "courte (40-60 cm), reste droite",
+      "couleurs": {
+        "blanc": {
+          "declin": "blanc qui jaunit en ivoire, bords des pétales extérieurs beige rosé puis brun clair",
+          "fane": "beige grisé, bords brun foncé parcheminés, petites taches brunes"
+        },
+        "creme": {
+          "declin": "crème terni, plus jaune beurre, bords beige",
+          "fane": "beige ocre, bords brun clair froissés"
+        },
+        "jaune": {
+          "declin": "jaune qui pâlit vers le jaune crème, bords qui brunissent",
+          "fane": "jaune paille terne, bords brun doré"
+        },
+        "orange": {
+          "declin": "orange qui se ternit vers le brique ou le saumon foncé",
+          "fane": "orange rouillé, bords brun roux"
+        },
+        "rose": {
+          "declin": "rose qui pâlit et tire vers le mauve, bords plus sombres",
+          "fane": "vieux rose mauve terne, bords brun violacé"
+        },
+        "rouge": {
+          "declin": "rouge qui bleuit, reflets pourpres sur les bords",
+          "fane": "bordeaux très sombre, presque noir, bords noircis et secs"
+        },
+        "violet": {
+          "declin": "lavande ou mauve qui grisaille",
+          "fane": "mauve gris, puis gris-brun beige sur les bords"
+        },
+        "brun": {
+          "declin": "caramel ou café au lait qui se ternit, plus rosé-gris",
+          "fane": "brun tabac terne, bords plus foncés"
+        },
+        "bicolore": {
+          "declin": "la couleur du bord fonce (les rouges et roses bleuissent), le fond pâlit",
+          "fane": "bord brun-violet sombre sur fond beige sale"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Même hybride (Rosa × hybrida) que la rose standard : la manière de faner est reprise de la rose standard, pas observée spécifiquement sur les intermédiaires. L'idée qu'une petite tête plie moins souvent est une déduction. Tenue sourcée pour des variétés kényanes (7-14 j, 10-14 j grâce à l'altitude). Couleurs du déclin déduites comme pour la rose standard.",
+      "sources": [
+        "https://www.frontiersin.org/journals/plant-science/articles/10.3389/fpls.2022.874590/full",
+        "https://floralife.com/flowers/rose-standard/",
+        "https://cris.huji.ac.il/en/publications/factors-determining-petal-colour-of-baccara-roses-ii-the-effect-o/",
+        "https://thursd.com/articles/trending-wedding-flowers-east-africa"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "rose-aspect-jardin",
+    "nom": "Rose d'aspect jardin",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [
+        2,
+        5
+      ],
+      "toute_annee": true,
+      "note": "cultivée toute l'année en Équateur, Colombie et Afrique de l'Est (séries X-pression, Country…) ; le pic indiqué est celui des roses en général, pas spécifique à ce type",
+      "sources": [
+        "https://thursd.com/articles/xpression-effect-de-ruiter-ecuador",
+        "https://www.spglobal.com/market-intelligence/en/news-insights/research/festival-favour-and-freight-global-rose-trade"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 7,
+      "max": 12,
+      "sources": [
+        "https://thursd.com/products/cut-flowers/roses/rose-candy-x-pression",
+        "https://bloomingmore.com/products/cream-xpression-rose-garden-36-stems"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "chute-petales",
+        "brunit-bords",
+        "recroqueville",
+        "penche-tete"
+      ],
+      "ordre": "la fleur s'ouvre en coupe pleine puis s'aplatit en rosette ; les pétales extérieurs se relâchent et brunissent ; la fleur se défait d'un coup (pétales qui tombent en pluie) ; le col peut pencher",
+      "tete": "très ouverte, plate, cœur visible ; s'alourdit et peut pencher",
+      "petales": "nombreux pétales qui ramollissent, bords bruns, puis tombent en masse",
+      "feuilles": "jaunissent puis brunissent",
+      "tige": "droite",
+      "couleurs": {
+        "blanc": {
+          "declin": "blanc qui jaunit en ivoire, bords des pétales extérieurs beige rosé puis brun clair",
+          "fane": "beige grisé, bords brun foncé parcheminés, petites taches brunes"
+        },
+        "creme": {
+          "declin": "crème terni, plus jaune beurre, bords beige",
+          "fane": "beige ocre, bords brun clair froissés"
+        },
+        "jaune": {
+          "declin": "jaune qui pâlit vers le jaune crème, bords qui brunissent",
+          "fane": "jaune paille terne, bords brun doré"
+        },
+        "orange": {
+          "declin": "orange qui se ternit vers le brique ou le saumon foncé",
+          "fane": "orange rouillé, bords brun roux"
+        },
+        "peche": {
+          "declin": "pêche qui pâlit vers un crème saumoné",
+          "fane": "beige rosé sale, bords brun clair"
+        },
+        "rose": {
+          "declin": "rose qui pâlit et tire vers le mauve, bords plus sombres",
+          "fane": "vieux rose mauve terne, bords brun violacé"
+        },
+        "rouge": {
+          "declin": "rouge qui bleuit, reflets pourpres sur les bords",
+          "fane": "bordeaux très sombre, presque noir, bords noircis et secs"
+        },
+        "violet": {
+          "declin": "lavande ou mauve qui grisaille",
+          "fane": "mauve gris, puis gris-brun beige sur les bords"
+        },
+        "vert": {
+          "declin": "vert pâle qui jaunit vers le vert olive",
+          "fane": "kaki beige, bords bruns"
+        },
+        "brun": {
+          "declin": "caramel ou café au lait qui se ternit, plus rosé-gris",
+          "fane": "brun tabac terne, bords plus foncés"
+        },
+        "bicolore": {
+          "declin": "la couleur du bord fonce (les rouges et roses bleuissent), le fond pâlit",
+          "fane": "bord brun-violet sombre sur fond beige sale"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Roses modernes de serre à forme « jardin ». Floralife indique pour les roses de jardin une sensibilité à l'éthylène : mauvaise ouverture, chute des pétales (shattering), flétrissement. L'ordre précis de fanaison est extrapolé des roses de jardin et des roses standard. Couleurs du déclin déduites.",
+      "sources": [
+        "https://floralife.com/flowers/rose-garden/",
+        "https://thursd.com/articles/xpression-effect-de-ruiter-ecuador",
+        "https://www.frontiersin.org/journals/plant-science/articles/10.3389/fpls.2022.874590/full",
+        "https://eu.davidaustinroses.com/blogs/news/rose-bloom-shapes-a-guide-to-the-different-types-of-rose-flowers"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "rose-de-jardin",
+    "nom": "Rose de jardin",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [
+        6,
+        7,
+        8,
+        9
+      ],
+      "toute_annee": true,
+      "note": "importée toute l'année (Colombie, Équateur, Kenya) ; roses de jardin de plein champ européennes (obtentions Tantau) en été, environ de juin à septembre-octobre",
+      "sources": [
+        "https://www.rosen-tantau.com/en/cat/index/sCategory/312",
+        "https://www.dewilde.nl/en/information/about-de-wilde",
+        "https://thursd.com/articles/timing-is-everything-when-it-comes-to-harvesting-garden-roses"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 7,
+      "max": 14,
+      "sources": [
+        "https://thursd.com/articles/timing-is-everything-when-it-comes-to-harvesting-garden-roses",
+        "https://flirtyfleurs.com/white-garden-rose-study-alexandra-farms/"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "chute-petales",
+        "brunit-bords",
+        "decolore",
+        "recroqueville",
+        "penche-tete"
+      ],
+      "ordre": "la fleur s'ouvre en coupe puis en rosette plate ; la couleur pâlit ; les pétales extérieurs brunissent et se relâchent ; elle se défait en perdant ses pétales",
+      "tete": "grande rosette très pleine qui s'aplatit ; peut pencher sous son poids",
+      "petales": "pétales fins qui pâlissent, bords bruns, puis tombent en pluie",
+      "feuilles": "jaunissent puis brunissent",
+      "tige": "droite",
+      "couleurs": {
+        "blanc": {
+          "declin": "blanc qui jaunit en ivoire, bords des pétales extérieurs beige rosé puis brun clair",
+          "fane": "beige grisé, bords brun foncé parcheminés, petites taches brunes"
+        },
+        "creme": {
+          "declin": "crème terni, plus jaune beurre, bords beige",
+          "fane": "beige ocre, bords brun clair froissés"
+        },
+        "jaune": {
+          "declin": "jaune qui pâlit vers le jaune crème, bords qui brunissent",
+          "fane": "jaune paille terne, bords brun doré"
+        },
+        "orange": {
+          "declin": "orange qui se ternit vers le brique ou le saumon foncé",
+          "fane": "orange rouillé, bords brun roux"
+        },
+        "peche": {
+          "declin": "pêche qui pâlit vers un crème saumoné",
+          "fane": "beige rosé sale, bords brun clair"
+        },
+        "rose": {
+          "declin": "rose qui pâlit et tire vers le mauve, bords plus sombres",
+          "fane": "vieux rose mauve terne, bords brun violacé"
+        },
+        "rouge": {
+          "declin": "rouge qui bleuit, reflets pourpres sur les bords",
+          "fane": "bordeaux très sombre, presque noir, bords noircis et secs"
+        },
+        "violet": {
+          "declin": "lavande ou mauve qui grisaille",
+          "fane": "mauve gris, puis gris-brun beige sur les bords"
+        },
+        "brun": {
+          "declin": "caramel ou café au lait qui se ternit, plus rosé-gris",
+          "fane": "brun tabac terne, bords plus foncés"
+        },
+        "bicolore": {
+          "declin": "la couleur du bord fonce (les rouges et roses bleuissent), le fond pâlit",
+          "fane": "bord brun-violet sombre sur fond beige sale"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Alexandra Farms exige au moins 10 jours de tenue ; variétés de 7-8 j (Alabaster) à 12-14 j (White Cloud). Floralife : les roses de jardin tiennent moins que les roses standard et perdent leurs pétales (shattering) sous l'éthylène. David Austin note que la plupart des fleurs pâlissent en vieillissant. Le pic estival correspond à la production de plein champ (Tantau, De Wilde) ; il est peu sourcé en mois précis. Couleurs du déclin en partie déduites.",
+      "sources": [
+        "https://floralife.com/flowers/rose-garden/",
+        "https://eu.davidaustinroses.com/blogs/news/rose-bloom-shapes-a-guide-to-the-different-types-of-rose-flowers",
+        "https://thursd.com/articles/timing-is-everything-when-it-comes-to-harvesting-garden-roses",
+        "https://www.frontiersin.org/journals/plant-science/articles/10.3389/fpls.2022.874590/full"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "rose-anglaise-david-austin",
+    "nom": "Rose anglaise David Austin",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [
+        2,
+        5
+      ],
+      "toute_annee": true,
+      "note": "roses de fleuristerie David Austin cultivées sous abri en climat équatorial (Colombie, Kenya), disponibles 12 mois sur 12 ; le pic indiqué est celui des roses en général",
+      "sources": [
+        "https://www.davidaustinroses.co.uk/wedding-roses",
+        "https://eu.davidaustinroses.com/pages/wedding-roses",
+        "https://www.spglobal.com/market-intelligence/en/news-insights/research/festival-favour-and-freight-global-rose-trade"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 3,
+      "max": 12,
+      "sources": [
+        "https://www.slideshare.net/slideshow/david-austin-cut-rose-collection-2015/49308045",
+        "https://bloomingmore.com/products/garden-rose-keira",
+        "https://farmgirlflowers.com/p/david-austin-roses-care"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "decolore",
+        "chute-petales",
+        "brunit-bords",
+        "recroqueville"
+      ],
+      "ordre": "le bouton en coupe se relâche jour après jour en rosette ; la couleur pâlit nettement ; les pétales extérieurs brunissent et se retournent ; la fleur se défait en perdant ses pétales d'un coup",
+      "tete": "coupe ronde qui s'ouvre en rosette large et plate, cœur en « quartiers » visible",
+      "petales": "très nombreux, fins ; pâlissent, bords bruns puis chute en pluie",
+      "feuilles": "jaunissent puis brunissent",
+      "tige": "droite",
+      "couleurs": {
+        "blanc": {
+          "declin": "blanc qui jaunit en ivoire, bords des pétales extérieurs beige rosé puis brun clair",
+          "fane": "beige grisé, bords brun foncé parcheminés, petites taches brunes"
+        },
+        "creme": {
+          "declin": "crème terni, plus jaune beurre, bords beige",
+          "fane": "beige ocre, bords brun clair froissés"
+        },
+        "jaune": {
+          "declin": "jaune qui pâlit vers le jaune crème, bords qui brunissent",
+          "fane": "jaune paille terne, bords brun doré"
+        },
+        "peche": {
+          "declin": "abricot qui pâlit vers un crème rosé (ex. Juliet)",
+          "fane": "beige rosé, bords brun clair"
+        },
+        "rose": {
+          "declin": "rose qui pâlit fortement, presque blanc rosé au bord",
+          "fane": "rose poudré sale, bords brun mauve"
+        },
+        "rouge": {
+          "declin": "rouge qui bleuit, reflets pourpres sur les bords",
+          "fane": "bordeaux très sombre, presque noir, bords noircis et secs"
+        },
+        "bicolore": {
+          "declin": "la couleur du bord fonce (les rouges et roses bleuissent), le fond pâlit",
+          "fane": "bord brun-violet sombre sur fond beige sale"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Tenue très variable selon la variété : Charity 3-4 j, Beatrice 7 j, Juliet et Keira 7-10 j, jusqu'à 10-12 j annoncés pour la collection. Certaines variétés « shatter » (perdent leurs pétales) vite. David Austin indique que la plupart des fleurs pâlissent en vieillissant et que la chaleur et le soleil les décolorent. Couleurs du fané déduites.",
+      "sources": [
+        "https://eu.davidaustinroses.com/blogs/news/rose-bloom-shapes-a-guide-to-the-different-types-of-rose-flowers",
+        "https://farmgirlflowers.com/p/david-austin-roses-care",
+        "https://floralife.com/flowers/rose-garden/"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "rose-japonaise",
+    "nom": "Rose japonaise",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [
+        2,
+        5
+      ],
+      "toute_annee": true,
+      "note": "quantités limitées toute l'année depuis le Japon (Rose Farm Keiji) ; Miyabi aussi cultivée en Colombie et au Kenya ; certaines variétés non expédiées en hiver ; pic = celui des roses en général",
+      "sources": [
+        "https://thursd.com/growers/rose-farm-keiji",
+        "https://belle-epoque.nl/en/products/japanese-rose-miyabi-gen",
+        "https://www.spglobal.com/market-intelligence/en/news-insights/research/festival-favour-and-freight-global-rose-trade"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 8,
+      "max": 10,
+      "sources": [
+        "https://gracerosefarm.com/products/miyabi-1"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "chute-petales",
+        "brunit-bords",
+        "recroqueville",
+        "decolore"
+      ],
+      "ordre": "la fleur met 2 à 4 jours à s'ouvrir en étoile ; elle montre de plus en plus son cœur jusqu'aux étamines vertes ; puis les pétales pâlissent, brunissent aux bords et tombent",
+      "tete": "forme ouverte en étoile ou en coupe, qui finit grande ouverte, étamines visibles",
+      "petales": "pétales souples et légèrement ondulés ; bords qui brunissent, puis chute",
+      "feuilles": "jaunissent puis brunissent",
+      "tige": "fine et souple, légèrement courbée dès le départ (mouvement naturel)",
+      "couleurs": {
+        "blanc": {
+          "declin": "blanc qui jaunit en ivoire, bords des pétales extérieurs beige rosé puis brun clair",
+          "fane": "beige grisé, bords brun foncé parcheminés, petites taches brunes"
+        },
+        "creme": {
+          "declin": "crème terni, plus jaune beurre, bords beige",
+          "fane": "beige ocre, bords brun clair froissés"
+        },
+        "jaune": {
+          "declin": "jaune qui pâlit vers le jaune crème, bords qui brunissent",
+          "fane": "jaune paille terne, bords brun doré"
+        },
+        "peche": {
+          "declin": "pêche qui pâlit vers un crème saumoné",
+          "fane": "beige rosé sale, bords brun clair"
+        },
+        "rose": {
+          "declin": "rose qui pâlit et tire vers le mauve, bords plus sombres",
+          "fane": "vieux rose mauve terne, bords brun violacé"
+        },
+        "rouge": {
+          "declin": "rouge qui bleuit, reflets pourpres sur les bords",
+          "fane": "bordeaux très sombre, presque noir, bords noircis et secs"
+        },
+        "violet": {
+          "declin": "lavande poussiéreuse qui grisaille",
+          "fane": "gris mauve, bords brun"
+        },
+        "brun": {
+          "declin": "brun nude ou beige rosé qui se ternit vers le gris-beige",
+          "fane": "brun sable sec, bords plus foncés"
+        },
+        "bicolore": {
+          "declin": "la couleur du bord fonce (les rouges et roses bleuissent), le fond pâlit",
+          "fane": "bord brun-violet sombre sur fond beige sale"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Sourcé pour la variété Miyabi : ouverture en 2-4 jours, cœur et étamines vertes visibles en vieillissant, tenue 8-10 jours. Les Wabara sont présentées comme durables et à tiges souples. Le reste (brunissement, chute, couleurs du fané) est extrapolé des autres roses ; aucune description de la fin de vie spécifique trouvée.",
+      "sources": [
+        "https://gracerosefarm.com/products/miyabi-1",
+        "https://thursd.com/articles/extraordinary-wabara-roses-from-japan",
+        "https://www.frontiersin.org/journals/plant-science/articles/10.3389/fpls.2022.874590/full"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "rose-branchue",
+    "nom": "Rose branchue",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [
+        2,
+        5
+      ],
+      "toute_annee": true,
+      "note": "importée toute l'année (Kenya, Équateur, Colombie, Pays-Bas) ; branchues de plein champ en Europe (gamme Rokoko de Tantau) de mai à octobre",
+      "sources": [
+        "https://www.spglobal.com/market-intelligence/en/news-insights/research/festival-favour-and-freight-global-rose-trade",
+        "https://cutroses.rosen-tantau.com/en/produkt/champagne-rokoko/",
+        "https://btfgroup.com/product/sweetsara/"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 5,
+      "max": 14,
+      "sources": [
+        "https://floralife.com/flowers/roses-spray/",
+        "https://btfgroup.com/product/mirabel/"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "fleurons-tombent",
+        "chute-petales",
+        "brunit-bords",
+        "bourgeons-avortent",
+        "penche-tete"
+      ],
+      "ordre": "sur une même tige, les fleurs du bas sont ouvertes et les boutons du haut serrés ; les fleurs les plus vieilles fanent et perdent leurs pétales en premier ; certains petits boutons ne s'ouvrent jamais ; les petites têtes peuvent pencher",
+      "tete": "plusieurs petites têtes (3-5 cm) à des stades différents ; les plus ouvertes s'aplatissent et se dégarnissent",
+      "petales": "bords bruns, pétales qui tombent ou fleurettes entières qui se détachent",
+      "feuilles": "jaunissent puis brunissent sur la ramification",
+      "tige": "ramifiée ; reste droite, les petits pédicelles fléchissent",
+      "couleurs": {
+        "blanc": {
+          "declin": "blanc qui jaunit en ivoire, bords des pétales extérieurs beige rosé puis brun clair",
+          "fane": "beige grisé, bords brun foncé parcheminés, petites taches brunes"
+        },
+        "creme": {
+          "declin": "crème terni, plus jaune beurre, bords beige",
+          "fane": "beige ocre, bords brun clair froissés"
+        },
+        "jaune": {
+          "declin": "jaune qui pâlit vers le jaune crème, bords qui brunissent",
+          "fane": "jaune paille terne, bords brun doré"
+        },
+        "orange": {
+          "declin": "orange qui se ternit vers le brique ou le saumon foncé",
+          "fane": "orange rouillé, bords brun roux"
+        },
+        "peche": {
+          "declin": "pêche qui pâlit vers un crème saumoné",
+          "fane": "beige rosé sale, bords brun clair"
+        },
+        "rose": {
+          "declin": "rose qui pâlit et tire vers le mauve, bords plus sombres",
+          "fane": "vieux rose mauve terne, bords brun violacé"
+        },
+        "rouge": {
+          "declin": "rouge qui bleuit, reflets pourpres sur les bords",
+          "fane": "bordeaux très sombre, presque noir, bords noircis et secs"
+        },
+        "violet": {
+          "declin": "lavande ou mauve qui grisaille",
+          "fane": "mauve gris, puis gris-brun beige sur les bords"
+        },
+        "vert": {
+          "declin": "vert pâle qui jaunit vers le vert olive",
+          "fane": "kaki beige, bords bruns"
+        },
+        "brun": {
+          "declin": "caramel ou café au lait qui se ternit, plus rosé-gris",
+          "fane": "brun tabac terne, bords plus foncés"
+        },
+        "bicolore": {
+          "declin": "la couleur du bord fonce (les rouges et roses bleuissent), le fond pâlit",
+          "fane": "bord brun-violet sombre sur fond beige sale"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Floralife : tenue 4-12 j (minimum 5 j bien soignée) ; les fleurs mûrissent du bas vers le haut, il y a toujours un mélange de fleurs ouvertes et de boutons ; chute prématurée des fleurettes et mauvaise ouverture liées à l'éthylène ; boutons qui ne s'ouvrent pas après stockage. Couleurs du déclin déduites comme pour la rose standard.",
+      "sources": [
+        "https://floralife.com/flowers/roses-spray/",
+        "https://floralife.com/article/rose-spray-troubleshooting",
+        "https://cris.huji.ac.il/en/publications/factors-determining-petal-colour-of-baccara-roses-ii-the-effect-o/"
+      ]
+    },
+    "confiance": "haute"
+  },
+  {
+    "id": "rose-ancienne-parfumee",
+    "nom": "Rose ancienne et rose parfumée",
+    "saison_vente": {
+      "mois": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "pic": [
+        6
+      ],
+      "toute_annee": false,
+      "note": "plein champ en Europe ; Gallica, Damas, Alba, Centifolia ne fleurissent qu'une fois, en début ou milieu d'été (fin mai-juillet, pic en juin) ; les remontantes (Bourbon, Portland, roses de plein champ Tantau) refleurissent jusqu'en septembre-octobre",
+      "sources": [
+        "https://www.rhs.org.uk/plants/97997/rosa-gallica-versicolor-g/details",
+        "https://www.rhs.org.uk/plants/269915/rosa-x-damascena-versicolor-d/details",
+        "https://heirloomroses.com/blogs/all-about-roses/what-are-heirloom-roses",
+        "https://www.rosen-tantau.com/en/cat/index/sCategory/312"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 3,
+      "max": 7,
+      "sources": [
+        "https://floralife.com/flowers/rose-garden/",
+        "https://www.karensgardentips.com/garden-types-styles-and-designs/rose-garden/characteristics-of-old-garden-roses-damask-rose/"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "chute-petales",
+        "decolore",
+        "brunit-bords",
+        "recroqueville"
+      ],
+      "ordre": "la fleur s'ouvre vite à plat, souvent en quartiers autour d'un bouton central ; la couleur pâlit ; les pétales fins se fripent et brunissent aux bords ; elle s'effeuille d'un coup en laissant le cœur et les sépales",
+      "tete": "rosette plate très pleine, cœur à bouton vert ou étamines visibles ; se dégarnit vite",
+      "petales": "fins et soyeux, se fripent, bords bruns, puis tombent en pluie ; restent parfumés en séchant",
+      "feuilles": "mates, jaunissent puis brunissent",
+      "tige": "souple, épineuse ; reste droite, la tête peut pencher",
+      "couleurs": {
+        "blanc": {
+          "declin": "blanc qui jaunit en ivoire, bords des pétales extérieurs beige rosé puis brun clair",
+          "fane": "beige grisé, bords brun foncé parcheminés, petites taches brunes"
+        },
+        "creme": {
+          "declin": "crème terni, plus jaune beurre, bords beige",
+          "fane": "beige ocre, bords brun clair froissés"
+        },
+        "orange": {
+          "declin": "orange qui se ternit vers le brique ou le saumon foncé",
+          "fane": "orange rouillé, bords brun roux"
+        },
+        "peche": {
+          "declin": "pêche qui pâlit vers un crème saumoné",
+          "fane": "beige rosé sale, bords brun clair"
+        },
+        "rose": {
+          "declin": "rose qui pâlit et tire vers le mauve, bords plus sombres",
+          "fane": "vieux rose mauve terne, bords brun violacé"
+        },
+        "rouge": {
+          "declin": "cramoisi qui bleuit vers le pourpre",
+          "fane": "pourpre très sombre presque noir ; séchés, les pétales gardent du rouge"
+        },
+        "bordeaux": {
+          "declin": "bordeaux qui fonce et bleuit",
+          "fane": "brun-noir violacé, aspect velours sec"
+        },
+        "violet": {
+          "declin": "pourpre ou violet parme qui grisaille et passe au lilas fané",
+          "fane": "mauve gris ardoise, bords brun"
+        },
+        "vert": {
+          "declin": "vert pâle qui jaunit vers le vert olive",
+          "fane": "kaki beige, bords bruns"
+        },
+        "bicolore": {
+          "declin": "stries cramoisies ou pourpres qui bleuissent, fond blanc qui jaunit",
+          "fane": "stries violettes sombres sur fond beige"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Aucune mesure de tenue en vase trouvée pour ces roses : 3-7 jours est extrapolé des roses de jardin (Floralife : tenue plus courte que les roses standard, chute des pétales sous l'éthylène) et des roses David Austin les plus fragiles (Charity 3-4 j). La substance des pétales de Damas est dite fragile à moyenne. Rosa gallica 'Officinalis' (rose de Provins) garde couleur et parfum une fois séchée. Les gallicas pourpres virent souvent au violet-gris en vieillissant : déduit du bleuissement des anthocyanes, non sourcé.",
+      "sources": [
+        "https://floralife.com/flowers/rose-garden/",
+        "https://therosarianlibrary.co.uk/stories/provins-and-the-provins-rose/",
+        "https://www.karensgardentips.com/garden-types-styles-and-designs/rose-garden/characteristics-of-old-garden-roses-damask-rose/",
+        "https://cris.huji.ac.il/en/publications/factors-determining-petal-colour-of-baccara-roses-ii-the-effect-o/"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "rose-teintee",
+    "nom": "Rose teintée et rose fantaisie",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [
+        2,
+        5
+      ],
+      "toute_annee": true,
+      "note": "toute l'année sur commande (teinture aux Pays-Bas sur roses blanches importées) ; pic = celui des roses en général",
+      "sources": [
+        "https://www.spglobal.com/market-intelligence/en/news-insights/research/festival-favour-and-freight-global-rose-trade",
+        "https://floralife.com/2023/10/25/tinted-roses/"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 6,
+      "max": 9,
+      "sources": [
+        "https://ir-library.kabianga.ac.ke/items/567c87d7-13b4-4a56-a5e6-2a0ef00dad11",
+        "https://sciencenotes.org/how-to-make-rainbow-roses/"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "decolore",
+        "brunit-bords",
+        "penche-tete",
+        "recroqueville",
+        "chute-petales",
+        "feuilles-brunissent"
+      ],
+      "ordre": "la teinte est la plus forte à l'arrivée et s'atténue quand la fleur s'ouvre ; puis la rose fane comme une rose blanche : bords qui brunissent, col qui peut plier, pétales qui se fripent et tombent ; l'eau du vase se colore",
+      "tete": "comme une rose standard : s'ouvre, peut pencher par pliure du col",
+      "petales": "couleur inégale (certains pétales plus foncés), concentrée dans les nervures et les bords ; dans les arc-en-ciel, bandes ou secteurs de couleurs ; les bords brunissent et la couleur devient sale",
+      "feuilles": "un peu abîmées par la teinture, se tachent de colorant aux cassures, brunissent vite",
+      "tige": "bas de tige souvent fendu (arc-en-ciel) et coloré ; la teinture suinte aux coupes",
+      "couleurs": {
+        "bleu": {
+          "declin": "bleu qui s'éclaircit sur le fond blanc devenu ivoire, nervures bleu foncé",
+          "fane": "bleu gris terne mêlé de beige-brun, bords brun-vert sombre"
+        },
+        "vert": {
+          "declin": "vert qui pâlit et jaunit",
+          "fane": "vert olive sale, bords brun"
+        },
+        "violet": {
+          "declin": "violet qui pâlit, plus grisé",
+          "fane": "mauve gris, bords brun violacé"
+        },
+        "rose": {
+          "declin": "fuchsia qui s'atténue en rose",
+          "fane": "rose sale, bords brun"
+        },
+        "bicolore": {
+          "declin": "bandes de couleur qui s'atténuent ; là où deux teintes se touchent, mélange (bleu+rouge = violet, bleu+jaune = vert)",
+          "fane": "bandes ternes et salies de brun sur fond beige"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Floralife : la teinte est plus forte à l'arrivée et diminue une fois la fleur épanouie ; elle ne déteint pas au toucher mais suinte aux coupes et aux feuilles arrachées ; le colorant colore l'eau ; le feuillage est un peu fragilisé. Étude kényane (Ice Breaker) : une teinture concentrée limite l'ouverture des pétales et réduit la tenue à 6 jours contre 9. Mélange des couleurs aux jonctions dans les arc-en-ciel : sourcé. Couleurs exactes du fané déduites (la base est une rose blanche qui brunit).",
+      "sources": [
+        "https://floralife.com/2023/10/25/tinted-roses/",
+        "https://bloomingmore.com/pages/tintes-and-painted-roses-care-guide",
+        "https://ir-library.kabianga.ac.ke/items/567c87d7-13b4-4a56-a5e6-2a0ef00dad11",
+        "https://sciencenotes.org/how-to-make-rainbow-roses/",
+        "https://www.regionsflorist.de/en/blog/how-to-care-for-white-roses"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "rose-stabilisee",
+    "nom": "Rose stabilisée",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [
+        2
+      ],
+      "toute_annee": true,
+      "note": "produit stable vendu toute l'année ; forte mise en avant pour la Saint-Valentin (« mois de l'amour » chez Verdissimo)",
+      "sources": [
+        "https://thursd.com/articles/preserved-roses-verdissimo-month-of-love",
+        "https://www.hgtv.com/shopping/gift-guides/what-is-a-preserved-rose"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 365,
+      "max": 1825,
+      "sources": [
+        "https://rosaholics.com/blogs/rosaholics-bloggers/the-secret-behind-preserved-roses-how-long-do-they-really-last",
+        "https://be.green/en/care/guide/preserved-natural-rose",
+        "https://www.hgtv.com/shopping/gift-guides/what-is-a-preserved-rose"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "aucune-fanaison-visible",
+        "decolore",
+        "suinte",
+        "cassant"
+      ],
+      "ordre": "pas de fanaison sur 30 jours : la fleur reste identique ; sur des mois ou des années, la poussière se dépose, la couleur pâlit à la lumière ; en air humide les pétales suintent et deviennent translucides et mous ; en air trop sec ils deviennent cassants",
+      "tete": "garde sa forme ouverte figée, ne penche jamais (pas d'eau)",
+      "petales": "souples et légèrement cireux ; avec le temps : couleur délavée côté lumière, voile de poussière grise dans les creux, gouttelettes colorées sur les bords si humidité, fissures et bords cassés si air sec",
+      "feuilles": "souvent retirées ou stabilisées aussi ; même vieillissement (décoloration, poussière)",
+      "tige": "courte ou absente (boîte, dôme) ; inerte",
+      "couleurs": {
+        "blanc": {
+          "declin": "identique au neuf",
+          "fane": "identique ; après des années, blanc cassé jaunâtre et poussiéreux"
+        },
+        "creme": {
+          "declin": "identique au neuf",
+          "fane": "identique ; à long terme beige terne"
+        },
+        "jaune": {
+          "declin": "identique au neuf",
+          "fane": "identique ; à la lumière, jaune pâli"
+        },
+        "orange": {
+          "declin": "identique au neuf",
+          "fane": "identique ; à la lumière, orange délavé"
+        },
+        "peche": {
+          "declin": "identique au neuf",
+          "fane": "identique ; à la lumière, crème rosé délavé"
+        },
+        "rose": {
+          "declin": "identique au neuf",
+          "fane": "identique ; à la lumière, rose délavé, plus pâle côté fenêtre"
+        },
+        "rouge": {
+          "declin": "identique au neuf",
+          "fane": "identique ; à la lumière, rouge un peu délavé ; en air humide, gouttelettes rouges aux bords"
+        },
+        "bordeaux": {
+          "declin": "identique au neuf",
+          "fane": "identique ; à long terme, bordeaux un peu terni"
+        },
+        "violet": {
+          "declin": "identique au neuf",
+          "fane": "identique ; à la lumière, lilas délavé"
+        },
+        "bleu": {
+          "declin": "identique au neuf",
+          "fane": "identique ; à la lumière, bleu délavé grisé"
+        },
+        "vert": {
+          "declin": "identique au neuf",
+          "fane": "identique ; à la lumière, vert pâli"
+        },
+        "brun": {
+          "declin": "identique au neuf",
+          "fane": "identique ; à long terme, brun terne"
+        },
+        "bicolore": {
+          "declin": "identique au neuf",
+          "fane": "identique ; à la lumière, contrastes adoucis"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Rose fraîche dont la sève est remplacée par une solution à base de glycérine, puis colorée : elle ne fane pas comme une fraîche. Durée annoncée : 1 à 3 ans en conditions normales, 2 à 5 ans en conditions optimales, jusqu'à 5-10 ans selon certains vendeurs ; ici 365-1825 jours (ce n'est pas une tenue en vase, il ne faut pas d'eau). La lumière directe décolore le plus, puis l'humidité : au-dessus d'environ 60 % la glycérine, hygroscopique, attire l'eau, la fleur « sue » des gouttelettes colorées, devient translucide et molle. Les pétales finissent par devenir cassants. Entretien : dépoussiérer au pinceau doux. Modes ajoutés : « suinte » (gouttelettes de glycérine et de teinture sur les bords en air humide) et « cassant » (pétales secs qui se fendent). Pour le jeu (30 jours), dessiner la fleur inchangée ; seul un voile de poussière est plausible. Les couleurs « gris, noir, or, argent » du catalogue suivent la même règle. Sources commerciales ou blogs : pas d'étude indépendante.",
+      "sources": [
+        "https://rosaholics.com/blogs/rosaholics-bloggers/the-secret-behind-preserved-roses-how-long-do-they-really-last",
+        "https://be.green/en/care/guide/preserved-natural-rose",
+        "https://www.hgtv.com/shopping/gift-guides/what-is-a-preserved-rose",
+        "https://thursd.com/articles/verdissimo-preserved-nature"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "rose-eglantine",
+    "nom": "Rose simple",
+    "saison_vente": {
+      "mois": [
+        5,
+        6,
+        7,
+        8
+      ],
+      "pic": [
+        6,
+        7
+      ],
+      "toute_annee": false,
+      "note": "floraison de plein air en Europe de mai à août, au mieux en juin-juillet ; pas d'import toute l'année trouvé pour ce type de rose",
+      "sources": [
+        "https://www.woodlandtrust.org.uk/trees-woods-and-wildlife/plants/wild-flowers/dog-rose/",
+        "https://www.rhsplants.co.uk/plants/_/rosa-canina/classid.2000025243/"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 2,
+      "max": 5,
+      "sources": [
+        "https://herbaria.plants.ox.ac.uk/bol/plants400/Profiles/QR/Rosacanina"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "chute-petales",
+        "decolore",
+        "recroqueville"
+      ],
+      "ordre": "la fleur à 5 pétales s'ouvre à plat autour d'un gros bouquet d'étamines jaunes ; les pétales pâlissent et se fripent légèrement ; ils tombent vite, un par un ; il reste le réceptacle vert, les étamines qui brunissent et les 5 sépales",
+      "tete": "coupe plate de 4-6 cm ; après la chute des pétales, reste un petit cœur avec étamines brunes et sépales étalés (future cynorrhodon)",
+      "petales": "5 pétales fins, échancrés en cœur ; pâlissent, plissent puis tombent entiers sans beaucoup brunir",
+      "feuilles": "petites folioles dentées qui jaunissent",
+      "tige": "souple, arquée, avec aiguillons crochus",
+      "couleurs": {
+        "rose": {
+          "declin": "rose qui pâlit vers le rose très clair, presque blanc au centre",
+          "fane": "pétales tombés ; reste un cœur jaune-brun"
+        },
+        "blanc": {
+          "declin": "blanc qui devient ivoire, légèrement froissé",
+          "fane": "pétales tombés ; étamines brun-jaune"
+        },
+        "peche": {
+          "declin": "pêche qui pâlit vers le crème",
+          "fane": "pétales tombés ; cœur jaune-brun"
+        },
+        "rouge": {
+          "declin": "rouge qui bleuit légèrement vers le rose framboise",
+          "fane": "pétales tombés ou fripés rouge violacé sombre"
+        },
+        "creme": {
+          "declin": "crème qui pâlit en blanc cassé",
+          "fane": "pétales tombés ; cœur jaune-brun"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Sources botaniques : chez Rosa canina, les pétales tombent vite et les sépales persistent pendant que le fruit (cynorrhodon) se forme ; floraison brève. Aucune donnée de tenue en vase trouvée : 2-5 jours est une estimation déduite de la chute rapide des pétales. Le pâlissement des pétales roses et le brunissement des étamines sont déduits, non sourcés. Les hybrides commerciaux à fleurs simples peuvent tenir un peu plus longtemps (non sourcé).",
+      "sources": [
+        "https://herbaria.plants.ox.ac.uk/bol/plants400/Profiles/QR/Rosacanina",
+        "https://en.wikipedia.org/wiki/Rosa_canina",
+        "https://www.first-nature.com/flowers/rosa-canina.php"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "phalaenopsis",
+    "nom": "Phalaenopsis",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [
+        10,
+        11,
+        12,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "toute_annee": true,
+      "note": "tiges coupées produites toute l'année sous serre aux Pays-Bas (Ichtus, Pulcher, éclairage d'appoint l'hiver) ; offre plus abondante d'octobre à mai selon le catalogue (pic non confirmé par une source vue)",
+      "sources": [
+        "https://thursd.com/posts/a-visit-to-ichtus-flowers",
+        "https://thursd.com/growers/pulcher-orchids"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 8,
+      "max": 27,
+      "sources": [
+        "https://floralife.com/wp-content/uploads/2021/12/FloralifeResearchUpdate_Orchid_Food_Sept_2014.pdf",
+        "https://anthura.nl/en/products/phalaenopsis-cut/montreux/",
+        "https://anthura.nl/en/products/phalaenopsis-cut/hong-kong/",
+        "https://anthura.nl/en/products/phalaenopsis-cut/manila/",
+        "https://thursd.com/articles/which-flowers-last-longest"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "transparence",
+        "recroqueville",
+        "brunit-bords",
+        "chute-petales",
+        "fleurons-tombent"
+      ],
+      "ordre": "chaque fleur fane seule, en général d'abord les plus anciennes, en bas de la hampe arquée ; les pétales et sépales perdent leur eau, deviennent mous et translucides par plages, se replient vers l'avant ; le labelle fonce ; puis la fleur entière se détache de la hampe",
+      "tete": "fleurs en papillon sur une hampe arquée ; la fleur fanée se referme à moitié, pétales repliés vers le centre, et finit par tomber entière",
+      "petales": "taches translucides ou sèches sur pétales et sépales, texture de papier mouillé, bords qui brunissent ; pétales qui se replient vers l'avant au lieu de rester à plat",
+      "feuilles": null,
+      "tige": "la hampe reste raide ; elle peut noircir ou se nécroser vers le bas en fin de vie",
+      "couleurs": {
+        "blanc": {
+          "declin": "blanc devenu translucide par plages, aspect cire mouillée",
+          "fane": "beige jaunâtre transparent, bords bruns"
+        },
+        "creme": {
+          "declin": "crème grisée, translucide",
+          "fane": "beige-brun parcheminé"
+        },
+        "jaune": {
+          "declin": "jaune terni, plages translucides",
+          "fane": "jaune brunâtre, bords bruns"
+        },
+        "orange": {
+          "declin": "orange ou cuivre assourdi",
+          "fane": "brun-roux translucide"
+        },
+        "rose": {
+          "declin": "rose délavé, veines plus visibles",
+          "fane": "rose sale tirant au beige-brun"
+        },
+        "violet": {
+          "declin": "lilas ou pourpre plus sombre, translucide",
+          "fane": "mauve brunâtre, presque grisé"
+        },
+        "rouge": {
+          "declin": "rouge assombri",
+          "fane": "bordeaux brunâtre, translucide"
+        },
+        "bordeaux": {
+          "declin": "rouge vin plus sombre",
+          "fane": "brun-violet presque noir"
+        },
+        "vert": {
+          "declin": "vert pâle jauni",
+          "fane": "jaune-brun"
+        },
+        "bleu": {
+          "declin": "bleu de teinture qui reste, mais fleur translucide et molle",
+          "fane": "bleu sale sur fond beige-brun"
+        },
+        "bicolore": {
+          "declin": "motifs (stries, taches, liseré) toujours visibles mais fond translucide ; labelle plus foncé",
+          "fane": "motifs brouillés sur fond beige-brun"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Très sensible à l'éthylène : il provoque des taches translucides ou sèches et un labelle et une colonne qui foncent ; après pollinisation la fleur fane en 24 h environ. En vieillissant, les cellules du dessus du pétale perdent leur eau, ce qui replie le pétale vers le haut. Les études classent aussi les fanaisons en brunissement du labelle, brunissement des pétales, fanaison du labelle et nécrose ou cassure du pédoncule. Tenue très variable selon la variété (Manila 7 j, Hong Kong 12 j, Montreux 27 j). Couleurs du déclin et du fané déduites de la translucidité et du brunissement décrits, non sourcées couleur par couleur. Aussi vendu en pot (non décrit ici). Le bleu est une fleur blanche teinte.",
+      "sources": [
+        "https://floralife.com/article/orchid-phalaenopsis-troubleshooting/",
+        "https://www.mdpi.com/2311-7524/7/10/382/html",
+        "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5983659/",
+        "https://www.jstage.jst.go.jp/article/ecb2005/43/2/43_2_121/_article"
+      ]
+    },
+    "confiance": "haute"
+  },
+  {
+    "id": "cymbidium-grandes-fleurs",
+    "nom": "Cymbidium à grandes fleurs",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [
+        10,
+        11,
+        12,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "toute_annee": true,
+      "note": "surtout d'octobre à mai (production néerlandaise, Ronald Ammerlaan, Alain Poot), un peu d'offre les autres mois ; variétés précoces en septembre-novembre, tardives jusqu'en mai",
+      "sources": [
+        "https://shop.holex.com/en_US/cymbidium",
+        "https://thursd.com/growers/ronald-ammerlaan"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 14,
+      "max": 42,
+      "sources": [
+        "https://floralife.com/flowers/orchid-cymbidium/",
+        "https://thursd.com/articles/cymbidiums-are-forever"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "decolore",
+        "transparence",
+        "recroqueville",
+        "fleurons-tombent"
+      ],
+      "ordre": "le premier signe est le labelle qui rougit (pollinisation, chapeau de pollinies tombé ou éthylène) ; ensuite pétales et sépales pâlissent, ramollissent et deviennent translucides ; les fleurs les plus vieilles, en bas de la hampe, fanent avant celles du haut ; la fleur finit par se détacher",
+      "tete": "grosses fleurs cireuses en grappe dressée ou arquée ; une fleur fanée se ramollit, pend et ferme à demi ses sépales",
+      "petales": "sépales et pétales épais et cireux qui perdent leur brillant, se décolorent, deviennent mous, translucides par plages, puis se plissent ; le labelle se tache de rouge ou de brun-rouge",
+      "feuilles": null,
+      "tige": "hampe épaisse, reste droite ; le bout coupé se bouche (recouper de 2 cm conseillé)",
+      "couleurs": {
+        "blanc": {
+          "declin": "blanc ivoire, labelle blanc qui se teinte de rouge-brun",
+          "fane": "beige translucide, labelle brun-rouge"
+        },
+        "creme": {
+          "declin": "crème grisée, labelle rougissant",
+          "fane": "beige-brun"
+        },
+        "jaune": {
+          "declin": "jaune terni, labelle taché de rouge",
+          "fane": "jaune-brun ocre"
+        },
+        "vert": {
+          "declin": "vert pomme qui jaunit, labelle rougi",
+          "fane": "jaune-brun verdâtre"
+        },
+        "rose": {
+          "declin": "rose délavé, labelle plus sombre",
+          "fane": "rose-brun sale"
+        },
+        "peche": {
+          "declin": "saumon terni",
+          "fane": "beige rosé brunâtre"
+        },
+        "orange": {
+          "declin": "orange bronze assourdi",
+          "fane": "brun-roux"
+        },
+        "rouge": {
+          "declin": "rouge assombri",
+          "fane": "brun-rouge"
+        },
+        "bordeaux": {
+          "declin": "bordeaux plus sombre et mat",
+          "fane": "brun-noir violacé"
+        },
+        "brun": {
+          "declin": "caramel ou bronze terni",
+          "fane": "brun foncé mat"
+        },
+        "violet": {
+          "declin": "pourpre assombri",
+          "fane": "brun violacé presque noir"
+        },
+        "bleu": {
+          "declin": "bleu de teinture qui reste sur fleur ramollie",
+          "fane": "bleu sale sur fond beige"
+        },
+        "bicolore": {
+          "declin": "labelle (rouge, rose ou tacheté) qui fonce encore, pétales pâlissent",
+          "fane": "labelle brun-rouge, pétales beige-brun"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Surprise utile au dessin : chez le cymbidium, le premier signe de vieillissement est le labelle qui vire du blanc au rouge-brun (anthocyanes produites après retrait des pollinies ou exposition à l'éthylène), parfois en 24 h. Fleur non pollinisée : environ 18-20 jours ; pollinisée : fanée en 7-8 jours. L'éthylène donne aussi des taches translucides ou sèches. Tenue en vase : 2-3 semaines sans nutritif (Chrysal/Alain Poot via Thursd), 3-6 semaines protégé de l'éthylène (Floralife). Couleurs du fané des pétales déduites ; seul le rougissement du labelle est sourcé. Aussi vendu en pot (non décrit ici). Le bleu est teint.",
+      "sources": [
+        "https://floralife.com/flowers/orchid-cymbidium/",
+        "https://floralife.com/article/orchid-cymbidium-troubleshooting",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC1062377",
+        "https://bp.ueb.cas.cz/artkey/bpl-200804-0035_Post-pollination-changes-in-the-floral-organs-of-two-Cymbidium-species.php",
+        "https://www.orchids.org/articles/lips-discoloration",
+        "https://bioone.org/journals/Zoological-Science/volume-27/issue-12/zsj.27.901/Apis-Cerana-Japonica-Discriminates-between-Floral-Color-Phases-of-the/10.2108/zsj.27.901.full"
+      ]
+    },
+    "confiance": "haute"
+  },
+  {
+    "id": "cymbidium-mini",
+    "nom": "Cymbidium mini",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "toute_annee": true,
+      "note": "minis néerlandais disponibles toute l'année, offre la plus large d'août à mai selon le catalogue ; seule la saison générale du cymbidium (octobre-mai) est confirmée par une source vue",
+      "sources": [
+        "https://shop.holex.com/en_US/cymbidium"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 14,
+      "max": 21,
+      "sources": [
+        "https://fiftyflowers.com/products/mini-cymbidium-orchid-exotic-rose",
+        "https://fiftyflowers.com/products/mini-cymbidium-orchids-lovely"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "decolore",
+        "transparence",
+        "recroqueville",
+        "fleurons-tombent"
+      ],
+      "ordre": "comme le grand cymbidium : labelle qui rougit d'abord, puis pétales qui pâlissent, ramollissent et deviennent translucides ; les fleurs du bas de la grappe fanent avant celles du haut, puis tombent",
+      "tete": "petites fleurs (moins de 6 cm environ) nombreuses sur une grappe arquée ; fleur fanée molle, pendante, à demi fermée",
+      "petales": "perte du brillant cireux, plages translucides, plissement ; labelle taché de rouge-brun",
+      "feuilles": null,
+      "tige": "hampe fine, souvent arquée, qui reste en place",
+      "couleurs": {
+        "blanc": {
+          "declin": "ivoire, labelle rougissant",
+          "fane": "beige translucide, labelle brun-rouge"
+        },
+        "creme": {
+          "declin": "crème grisée",
+          "fane": "beige-brun"
+        },
+        "jaune": {
+          "declin": "jaune terni",
+          "fane": "ocre brunâtre"
+        },
+        "vert": {
+          "declin": "vert pastel qui jaunit",
+          "fane": "jaune-brun"
+        },
+        "rose": {
+          "declin": "rose pastel délavé",
+          "fane": "rose-brun sale"
+        },
+        "peche": {
+          "declin": "pêche terni",
+          "fane": "beige rosé brunâtre"
+        },
+        "orange": {
+          "declin": "orange assourdi",
+          "fane": "brun-roux"
+        },
+        "rouge": {
+          "declin": "rouge assombri",
+          "fane": "brun-rouge"
+        },
+        "bordeaux": {
+          "declin": "bordeaux mat",
+          "fane": "brun-noir"
+        },
+        "brun": {
+          "declin": "brun terni",
+          "fane": "brun foncé mat"
+        },
+        "violet": {
+          "declin": "noir pourpré plus mat",
+          "fane": "brun-noir"
+        },
+        "bicolore": {
+          "declin": "labelle rouge ou tacheté qui fonce",
+          "fane": "labelle brun, pétales beige-brun"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Mode de fanaison extrapolé du cymbidium à grandes fleurs (même genre ; rougissement du labelle sourcé pour Cymbidium en général). Tenue de 2-3 semaines donnée par un détaillant américain (FiftyFlowers). Couleurs du déclin et du fané déduites. Aussi vendu en pot (non décrit ici).",
+      "sources": [
+        "https://fiftyflowers.com/products/mini-cymbidium-orchid-exotic-rose",
+        "https://floralife.com/flowers/orchid-cymbidium/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC1062377"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "dendrobium-coupe",
+    "nom": "Dendrobium coupé",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [],
+      "toute_annee": true,
+      "note": "importé toute l'année, surtout de Thaïlande (90-99 % des dendrobiums et mokaras coupés du monde) ; aucun pic européen trouvé",
+      "sources": [
+        "https://www.fao.org/4/ac452e/ac452e09.htm",
+        "https://hortidaily.com/article/6014975/thai-growers-expaning-cut-orchid-acreage"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 13,
+      "max": 20,
+      "sources": [
+        "https://ajol.info/index.php/ajb/article/view/100919",
+        "https://ishs.org/ishs-article/970_31/",
+        "https://floralife.com/flowers/orchid-dendrobium/"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "fleurons-tombent",
+        "bourgeons-avortent",
+        "fane-du-bas",
+        "recroqueville"
+      ],
+      "ordre": "les boutons du haut jaunissent et tombent sans s'ouvrir ; les fleurs ouvertes, d'abord celles du bas de la tige, montrent des veines plus marquées, puis pendent, se fripent et se détachent ; la tige se dégarnit de bas en haut",
+      "tete": "grappe arquée de fleurs plates de 5 à 8 cm ; une fleur qui fane pend sur son pédicelle puis tombe entière, souvent encore colorée",
+      "petales": "veines plus visibles, pétales qui ramollissent et se recroquevillent vers l'avant ; les boutons verts ou colorés jaunissent",
+      "feuilles": null,
+      "tige": "tige verte et fine qui reste droite ; les pédicelles vides et les boutons tombés laissent une tige clairsemée",
+      "couleurs": {
+        "blanc": {
+          "declin": "blanc légèrement translucide, veines vertes visibles",
+          "fane": "crème jaunie, bords bruns"
+        },
+        "creme": {
+          "declin": "crème grisée",
+          "fane": "beige jauni"
+        },
+        "vert": {
+          "declin": "vert lime qui jaunit",
+          "fane": "jaune-brun"
+        },
+        "rose": {
+          "declin": "rose délavé aux veines plus foncées",
+          "fane": "rose-beige sale"
+        },
+        "violet": {
+          "declin": "pourpre ou lavande aux veines marquées, plus sombre",
+          "fane": "mauve brunâtre"
+        },
+        "bordeaux": {
+          "declin": "bordeaux mat",
+          "fane": "brun-violet presque noir"
+        },
+        "bicolore": {
+          "declin": "pointes pourpres qui foncent, base blanche qui jaunit",
+          "fane": "pourpre brunâtre sur fond crème jauni"
+        },
+        "bleu": {
+          "declin": "teinture bleue qui reste, fleur molle",
+          "fane": "bleu sale sur fond beige"
+        },
+        "jaune": {
+          "declin": "teinture jaune ternie",
+          "fane": "jaune-brun"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Les fleurs et boutons tombent (abscission) : c'est le symptôme principal, lié à l'éthylène accumulé pendant le transport, et l'éthylène vient surtout des boutons. Premier signe visible après éthylène : veines plus marquées, puis fleurs qui pendent en un jour. Le jaunissement des boutons non ouverts est un défaut courant. Floralife le dit pourtant l'orchidée la moins sensible à l'éthylène : contradiction entre sources. Tenue : 13 j sans traitement, 20 j pour le témoin de 'Sonia' (32 j avec 1-MCP). L'ordre de bas en haut est déduit de l'ouverture acropète, non sourcé pour le genre. Couleurs du fané déduites. Bleu, jaune et coloris « dragonfruit » sont teints.",
+      "sources": [
+        "https://www.redalyc.org/pdf/908/90842568013.pdf",
+        "https://li01.tci-thaijo.org/index.php/TJAS/article/download/246027/168184",
+        "https://ishs.org/ishs-article/970_31/",
+        "https://li01.tci-thaijo.org/index.php/thaiagriculturalresearch/article/view/90522",
+        "https://floralife.com/flowers/orchid-dendrobium/"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "dendrobium-nobile",
+    "nom": "Dendrobium nobile et dendrobiums e",
+    "saison_vente": {
+      "mois": [
+        12,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "pic": [
+        2,
+        3,
+        4
+      ],
+      "toute_annee": false,
+      "note": "floraison naturelle de la fin de l'hiver au début du printemps ; le catalogue indique décembre-mai, certaines lignées toute l'année ; vendu surtout en pot, le pic de février-avril est déduit de la floraison",
+      "sources": [
+        "https://www.orchidweb.com/orchids/dendrobium/hybrids/dendrobium-nobile-orchid-hybrid",
+        "https://www.gardenia.net/plant/dendrobium-nobile",
+        "https://www.rhs.org.uk/plants/31363/dendrobium-nobile-virginale/details"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 10,
+      "max": 21,
+      "sources": [
+        "https://www.gardenia.net/plant/dendrobium-nobile",
+        "https://floralife.com/flowers/orchid-dendrobium/"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "recroqueville",
+        "transparence",
+        "fleurons-tombent",
+        "feuilles-jaunissent"
+      ],
+      "ordre": "les fleurs, collées par deux ou trois le long de la canne, fanent une à une ; elles ramollissent, se plissent et deviennent translucides, puis se détachent ; les feuilles de la canne peuvent jaunir et tomber",
+      "tete": "pas de tête : fleurs de 5 à 7 cm alignées tout le long d'une canne épaisse et articulée ; la fleur fanée pend puis tombe",
+      "petales": "pétales larges qui perdent leur tenue, se plissent vers l'avant, deviennent translucides, bords qui brunissent ; l'œil sombre du labelle reste visible",
+      "feuilles": "feuilles alternes sur la canne, qui jaunissent, peuvent se tacher de sombre puis tombent",
+      "tige": "canne épaisse et rigide, reste droite ; peut se rider en se desséchant",
+      "couleurs": {
+        "blanc": {
+          "declin": "blanc translucide, cœur jaune qui reste vif",
+          "fane": "beige jauni, bords bruns"
+        },
+        "rose": {
+          "declin": "rose tendre délavé",
+          "fane": "rose-beige sale"
+        },
+        "violet": {
+          "declin": "pourpre ou mauve assombri",
+          "fane": "mauve brunâtre"
+        },
+        "jaune": {
+          "declin": "jaune terni",
+          "fane": "jaune-brun"
+        },
+        "bicolore": {
+          "declin": "pointes roses ou pourpres plus sombres, base blanche translucide, œil bordeaux net",
+          "fane": "beige-brun, œil sombre encore visible"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Aucune donnée de tenue en vase trouvée pour le nobile en tige coupée : la fourchette 10-21 j est extrapolée de la tenue des fleurs sur la plante (3-6 semaines, Gardenia) et du dendrobium coupé (Floralife, 14 j et plus). Le mode de fanaison (translucidité, plissement, chute) est extrapolé des autres orchidées. Le jaunissement et la chute des feuilles pendant ou après la floraison est normal chez le nobile sur la plante. Couleurs du fané déduites. Surtout vendu en pot : si c'est le cas, la canne garde ses fleurs plus longtemps.",
+      "sources": [
+        "https://www.orchidweb.com/orchids/dendrobium/hybrids/dendrobium-nobile-orchid-hybrid",
+        "https://www.gardenia.net/plant/dendrobium-nobile",
+        "https://floralife.com/flowers/orchid-dendrobium/"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "vanda",
+    "nom": "Vanda",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [],
+      "toute_annee": true,
+      "note": "cultivée aux Pays-Bas par Ansu Vanda (Wateringen) en fleur coupée et en plante, et importée de Thaïlande ; disponibilité toute l'année non dite explicitement par une source vue, aucun pic trouvé",
+      "sources": [
+        "https://www.heemskerkflowers.com/en/blog/grower-ansu-vanda",
+        "https://uk.heemskerkflowers.com/shop/BLOEM/6VIA/ALL?Aanbod=3"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 11,
+      "max": 19,
+      "sources": [
+        "https://ishs.org/ishs-article/1213_88/",
+        "https://agris.fao.org/search/en/records/65dfc2f34c5aef494fe529bb",
+        "https://eurekamag.com/research/104/021/104021189.php"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "decolore",
+        "recroqueville",
+        "penche-tete",
+        "fleurons-tombent"
+      ],
+      "ordre": "la couleur pâlit d'abord, surtout le bleu et le violet, tandis que les veines deviennent plus visibles ; puis les fleurs ramollissent, leurs pétales s'incurvent vers le bas (épinastie), des zones nécrosées apparaissent, et enfin les fleurs tombent",
+      "tete": "grandes fleurs plates et rondes (8 à 10 cm) en grappe courte ; la fleur fanée s'affaisse, pétales recourbés vers l'arrière, puis se détache",
+      "petales": "pétales épais qui se décolorent (le damier ou les points deviennent plus contrastés sur un fond pâle), puis se fripent, avec des taches brunes de nécrose",
+      "feuilles": null,
+      "tige": "tige épaisse qui reste droite",
+      "couleurs": {
+        "bleu": {
+          "declin": "bleu qui blanchit vers un bleu-gris pâle, veines et damier plus nets",
+          "fane": "gris bleuté sale, taches brunes"
+        },
+        "violet": {
+          "declin": "violet ou lavande délavé, veines marquées",
+          "fane": "mauve grisâtre et brun"
+        },
+        "bordeaux": {
+          "declin": "bordeaux un peu éclairci, mat",
+          "fane": "brun-violet sombre"
+        },
+        "brun": {
+          "declin": "brun chocolat mat",
+          "fane": "brun foncé presque noir"
+        },
+        "rouge": {
+          "declin": "rouge éclairci et terne",
+          "fane": "rouge-brun"
+        },
+        "rose": {
+          "declin": "rose ou magenta pâli, points plus visibles",
+          "fane": "rose-beige sale, taches brunes"
+        },
+        "orange": {
+          "declin": "orange ou corail pâli",
+          "fane": "orange-brun"
+        },
+        "peche": {
+          "declin": "pêche délavé",
+          "fane": "beige rosé brunâtre"
+        },
+        "jaune": {
+          "declin": "jaune pâli",
+          "fane": "jaune-brun"
+        },
+        "blanc": {
+          "declin": "blanc un peu translucide, damier blanc plus visible",
+          "fane": "crème jaunie, taches brunes"
+        },
+        "creme": {
+          "declin": "crème grisée",
+          "fane": "beige-brun"
+        },
+        "bicolore": {
+          "declin": "fond qui pâlit, damier ou léopard qui ressort davantage",
+          "fane": "motifs brouillés sur fond beige-brun"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Surprise utile au dessin : chez Vanda 'Sansai Blue', l'éthylène détruit les anthocyanes et fait blanchir la fleur très tôt, avant toute autre fanaison ; les fleurs décolorées ne fanent pas pendant les 7 jours suivants. Donc une vanda bleue en déclin est surtout pâle, pas encore flétrie. Symptômes notés : décoloration, veines marquées, nécrose, flétrissement, épinastie, chute. Tenue : 11-12 j sans traitement, jusqu'à 19 j avec STS. Couleurs du déclin déduites de la décoloration sourcée pour une variété bleue ; autres familles déduites. Aussi vendue en plante racines nues ou en vase de verre (non décrit ici).",
+      "sources": [
+        "https://www.frontiersin.org/article/10.3389/fpls.2019.01004/full",
+        "https://ishs.org/ishs-article/1213_88/",
+        "https://agris.fao.org/search/fr/records/65de506e6eef00c2cea062e7"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "ascocenda",
+    "nom": "Ascocenda et Ascocentrum",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [
+        4,
+        5,
+        6
+      ],
+      "toute_annee": true,
+      "note": "importé toute l'année selon le catalogue (« mini vanda ») ; l'Ascocentrum miniatum fleurit naturellement de la fin du printemps au début de l'été (parfois en novembre-décembre sous nos latitudes) ; pic déduit de cette floraison",
+      "sources": [
+        "https://orchideeen-shop.nl/en/products/ascocentrum-miniatum-big-plant",
+        "https://www.orchideen.de/ascocentrum-miniatum-p-232.html",
+        "https://www.orchideen-wichmann.de/en/orchids-a-z/ascocenda.html"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 10,
+      "max": 19,
+      "sources": [
+        "https://ishs.org/ishs-article/1213_88/",
+        "https://journal.ugm.ac.id/jbp/article/view/4000"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "decolore",
+        "recroqueville",
+        "fleurons-tombent"
+      ],
+      "ordre": "comme chez Vanda (parent) : la couleur pâlit, les veines ressortent, puis les fleurs ramollissent, se recourbent et tombent une à une",
+      "tete": "grappe dressée et dense de petites fleurs plates (2 à 5 cm) ; la fleur fanée se ferme à demi, pend et tombe",
+      "petales": "pétales qui pâlissent puis se fripent ; petites taches brunes",
+      "feuilles": null,
+      "tige": "tige courte et raide, reste droite",
+      "couleurs": {
+        "orange": {
+          "declin": "orange vif qui pâlit vers l'abricot",
+          "fane": "orange-brun"
+        },
+        "rouge": {
+          "declin": "rouge-orangé éclairci",
+          "fane": "rouille brunâtre"
+        },
+        "jaune": {
+          "declin": "jaune pâli",
+          "fane": "jaune-brun"
+        },
+        "rose": {
+          "declin": "rose délavé",
+          "fane": "rose-beige sale"
+        },
+        "violet": {
+          "declin": "magenta ou bleu-violet délavé",
+          "fane": "mauve grisâtre"
+        },
+        "bleu": {
+          "declin": "bleu-violet qui blanchit",
+          "fane": "gris bleuté sale"
+        },
+        "blanc": {
+          "declin": "blanc un peu translucide",
+          "fane": "crème jaunie"
+        },
+        "bicolore": {
+          "declin": "damier qui ressort sur fond plus pâle",
+          "fane": "motifs brouillés sur fond beige-brun"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Aucune étude de tenue ou de fanaison trouvée pour Ascocenda ou Ascocentrum en tige coupée : tout est extrapolé de Vanda (parent, même culture selon Wichmann) — tenue 11-19 j, décoloration par l'éthylène, épinastie, chute. Couleurs déduites. Se vend aussi en plante, en vase de verre (non décrit ici).",
+      "sources": [
+        "https://www.orchideen-wichmann.de/en/orchids-a-z/ascocenda.html",
+        "https://www.frontiersin.org/article/10.3389/fpls.2019.01004/full",
+        "https://ishs.org/ishs-article/1213_88/"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "mokara",
+    "nom": "Mokara",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [],
+      "toute_annee": true,
+      "note": "importé de Thaïlande (90-99 % des mokaras coupés du monde), de Malaisie et Singapour ; mokara rose parmi les grands produits d'export ; aucun pic européen trouvé",
+      "sources": [
+        "https://www.fao.org/4/ac452e/ac452e09.htm",
+        "https://hortidaily.com/article/6014975/thai-growers-expaning-cut-orchid-acreage"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 11,
+      "max": 16,
+      "sources": [
+        "https://kirim.kmutt.ac.th/converis/portal/detail/Publication/600355130?lang=en_GB",
+        "https://kirim.kmutt.ac.th/converis/portal/detail/Publication/627172059?lang=en_GB",
+        "https://agro.icm.edu.pl/agro/element/bwmeta1.element.agro-516ad2d1-27ed-4429-b791-3662349d298b/c/WNOFNS-26-2019-11-19.pdf"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "recroqueville",
+        "fleurons-tombent",
+        "bourgeons-avortent",
+        "decolore"
+      ],
+      "ordre": "les fleurs ouvertes fanent une à une (fin de vie compté à 50 % des fleurs fanées) : elles ramollissent, se plissent et pâlissent, puis tombent ; les boutons du bout peuvent ne jamais s'ouvrir",
+      "tete": "grappe de 10 à 20 fleurs étoilées plates (5 à 8 cm), cireuses et souvent tachetées ; fleur fanée qui se replie et pend avant de tomber",
+      "petales": "pétales épais et cireux qui perdent leur tenue, se plissent et se recourbent, puis brunissent par taches",
+      "feuilles": null,
+      "tige": "tige raide, reste droite ; le bout coupé se bouche (bactéries)",
+      "couleurs": {
+        "orange": {
+          "declin": "orange terni",
+          "fane": "orange-brun"
+        },
+        "rouge": {
+          "declin": "rouge-orangé assombri",
+          "fane": "brun-rouge"
+        },
+        "jaune": {
+          "declin": "jaune pâli, taches plus visibles",
+          "fane": "jaune moutarde brunâtre"
+        },
+        "peche": {
+          "declin": "pêche ou corail délavé",
+          "fane": "beige rosé brunâtre"
+        },
+        "rose": {
+          "declin": "rose délavé, points plus marqués",
+          "fane": "rose-beige sale"
+        },
+        "violet": {
+          "declin": "magenta ou pourpre assombri",
+          "fane": "brun violacé"
+        },
+        "bleu": {
+          "declin": "bleu (teint ou lavande) délavé",
+          "fane": "gris bleuté sale"
+        },
+        "blanc": {
+          "declin": "blanc un peu translucide",
+          "fane": "crème jaunie, taches brunes"
+        },
+        "bicolore": {
+          "declin": "taches et mouchetures plus contrastées sur fond pâli",
+          "fane": "taches brouillées sur fond beige-brun"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Le principal défaut des grappes coupées est la fanaison ou la chute des fleurs. La tenue varie selon l'hybride (11,6 à 13 j ; 14 j pour le témoin de 'Chao Praya Pink', 21 j avec 1-MCP ; ~16 j pour 'Bloonlong') et dépend de la production d'éthylène. L'aspect détaillé (plissement, décoloration) est extrapolé de Vanda, parent du mokara ; couleurs déduites. Le bleu mokara vendu par Mayesh est probablement teint (non vérifié).",
+      "sources": [
+        "https://kirim.kmutt.ac.th/converis/portal/detail/Publication/627172059?lang=en_GB",
+        "https://www.phtnet.org/research/download/pdf/mh443.pdf",
+        "https://kirim.kmutt.ac.th/converis/portal/detail/Publication/600355130?lang=en_GB"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "aranda",
+    "nom": "Aranda",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [],
+      "toute_annee": true,
+      "note": "hybrides d'export de Singapour et de Thaïlande (aranda rose parmi les grands exports thaïlandais) ; disponibles toute l'année selon le catalogue, aucun pic trouvé",
+      "sources": [
+        "https://hortidaily.com/article/6014975/thai-growers-expaning-cut-orchid-acreage",
+        "https://www.fao.org/4/ac452e/ac452e09.htm"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 18,
+      "max": 28,
+      "sources": [
+        "https://nrco.icar.gov.in/files/PDF/Post_Harvest_Technology_in_Orchids (2).pdf"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "recroqueville",
+        "fleurons-tombent",
+        "decolore"
+      ],
+      "ordre": "les fleurs fanent une à une le long de la longue tige : elles se plissent et pâlissent, puis tombent ; à l'arrivée d'un transport mal géré, des fleurs peuvent déjà être flétries ou tombées",
+      "tete": "longue grappe (jusqu'à 75 cm) de 10 à 15 fleurs étoilées à pétales étroits ; fleur fanée qui se replie et pend",
+      "petales": "pétales étroits et cireux qui s'enroulent ou se plissent, puis brunissent",
+      "feuilles": null,
+      "tige": "tige longue et raide, reste droite",
+      "couleurs": {
+        "blanc": {
+          "declin": "blanc un peu translucide",
+          "fane": "crème jaunie, bords bruns"
+        },
+        "jaune": {
+          "declin": "jaune qui fonce ou ternit, taches brunes plus visibles",
+          "fane": "jaune-brun"
+        },
+        "orange": {
+          "declin": "orange terni",
+          "fane": "orange-brun"
+        },
+        "rouge": {
+          "declin": "vermillon assombri",
+          "fane": "brun-rouge"
+        },
+        "rose": {
+          "declin": "rose orangé délavé",
+          "fane": "beige rosé brunâtre"
+        },
+        "violet": {
+          "declin": "bleu-pourpre délavé",
+          "fane": "mauve grisâtre"
+        },
+        "bicolore": {
+          "declin": "taches plus contrastées sur fond pâli",
+          "fane": "taches brouillées sur fond beige-brun"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Tenue de 18-28 j selon une synthèse indienne (ICAR-NRCO). L'aranda produit beaucoup d'éthylène dans les boutons et les fleurs à demi ouvertes, puis de nouveau en sénescence ; le STS prolonge la tenue. Les réclamations à l'export concernent surtout des fleurs flétries (64 %) et tombées (36 %). L'aspect précis de la fleur fanée est extrapolé des genres voisins (Vanda, Mokara) ; couleurs déduites. 'Bangkok Gold' fonce en mûrissant (catalogue).",
+      "sources": [
+        "https://nrco.icar.gov.in/files/PDF/Post_Harvest_Technology_in_Orchids (2).pdf",
+        "https://so04.tci-thaijo.org/index.php/kjss/article/view/243833",
+        "https://www.nparks.gov.sg/florafaunaweb/flora/5/3/5326"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "arachnis-aranthera",
+    "nom": "Arachnis",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [],
+      "toute_annee": true,
+      "note": "Arachnis Maggie Oei fleurit à tout moment de l'année ; importé d'Asie du Sud-Est ; aucun pic trouvé",
+      "sources": [
+        "https://secretgarden.ro/en/products/arachnis-maggie-oei-variegata",
+        "https://www.nparks.gov.sg/florafaunaweb/flora/6/2/6222"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 7,
+      "max": 21,
+      "sources": [
+        "https://fiftyflowers.com/products/james-storie-red-aranthera-orchids",
+        "https://ciari.icar.gov.in/FC-Spider%20orchid.html",
+        "https://www.aos.org/orchids/articles/the-scorpion-orchids-arachnis-blume"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "recroqueville",
+        "fleurons-tombent",
+        "decolore"
+      ],
+      "ordre": "les fleurs en araignée fanent une à une le long de la grappe ; leurs sépales étroits s'enroulent ou se replient, pâlissent, puis la fleur tombe",
+      "tete": "grappe de fleurs en araignée ou en scorpion, sépales longs et étroits, recourbés en griffes ; fleur fanée aux « pattes » repliées vers l'intérieur",
+      "petales": "sépales et pétales étroits et cireux qui s'enroulent sur eux-mêmes, taches marron qui fondent dans un fond terni",
+      "feuilles": null,
+      "tige": "tige longue et raide, reste droite",
+      "couleurs": {
+        "jaune": {
+          "declin": "jaune verdâtre terni",
+          "fane": "jaune-brun"
+        },
+        "brun": {
+          "declin": "marron plus mat",
+          "fane": "brun foncé"
+        },
+        "rouge": {
+          "declin": "rouge (Aranthera) assombri",
+          "fane": "brun-rouge"
+        },
+        "orange": {
+          "declin": "orange terni",
+          "fane": "orange-brun"
+        },
+        "bicolore": {
+          "declin": "barres marron plus sombres sur fond jaune pâli",
+          "fane": "brun sur fond beige-brun"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Tenue : au moins 7 j pour Aranthera James Storie (FiftyFlowers) ; un résultat de recherche indique que les grappes d'Arachnis gardent leur valeur ornementale 2-3 semaines, sans que la page exacte ait pu être ouverte. Aucune description de la fanaison trouvée : le mode (enroulement, chute, décoloration) est extrapolé des orchidées vandées voisines (Vanda, Aranda, Mokara). Couleurs déduites. L'enroulement des sépales étroits est une déduction de dessin, non sourcée.",
+      "sources": [
+        "https://fiftyflowers.com/products/james-storie-red-aranthera-orchids",
+        "https://www.aos.org/orchids/articles/the-scorpion-orchids-arachnis-blume",
+        "https://www.nparks.gov.sg/florafaunaweb/flora/6/2/6222"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "oncidium",
+    "nom": "Oncidium",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [],
+      "toute_annee": true,
+      "note": "disponible toute l'année en fleur coupée (Taïwan, Thaïlande ; importé aux Pays-Bas par Ter Haar) ; aucun pic trouvé",
+      "sources": [
+        "https://fiftyflowers.com/products/oncidium-orchids-yellow-flower",
+        "https://thursd.com/products/cut-flowers/orchids/oncidium-golden-shower"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 7,
+      "max": 16,
+      "sources": [
+        "https://scholars.lib.ntu.edu.tw/entities/publication/cb0b60c8-3459-4bcf-ac64-0fe70cb2885a",
+        "https://doaj.org/article/0439a33e9a334835b2791fa0f26e7ccc",
+        "https://hortscans.ces.ncsu.edu/file/../uploads/t/r/tropical_5136502a99ab3.pdf"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "fleurons-tombent",
+        "bourgeons-avortent",
+        "recroqueville",
+        "feuilles-jaunissent"
+      ],
+      "ordre": "les petites fleurs se rétractent dès le 6e jour environ, puis tombent en grand nombre (près de la moitié vers le 16e jour pour 'Gower Ramsey') ; les boutons tombent ; les pédicelles jaunissent ; la panicule se dégarnit",
+      "tete": "panicule ramifiée et arquée de dizaines de petites fleurs en « danseuse » (labelle en jupe) ; les fleurs fanées se recroquevillent, les jupes se froissent, puis tombent",
+      "petales": "petits pétales et grand labelle qui se rétractent, se froissent et pâlissent, puis se dessèchent",
+      "feuilles": "pas de feuilles sur la tige vendue ; les pédicelles et les petites bractées jaunissent",
+      "tige": "tige fine et ramifiée qui reste arquée ; les rameaux dégarnis paraissent maigres",
+      "couleurs": {
+        "jaune": {
+          "declin": "jaune vif qui pâlit, stries brunes plus visibles",
+          "fane": "jaune paille brunâtre"
+        },
+        "brun": {
+          "declin": "brun chocolat mat",
+          "fane": "brun foncé sec"
+        },
+        "bordeaux": {
+          "declin": "bordeaux terni",
+          "fane": "brun-violet"
+        },
+        "rouge": {
+          "declin": "rouge terni",
+          "fane": "brun-rouge"
+        },
+        "violet": {
+          "declin": "pourpre assombri",
+          "fane": "brun violacé"
+        },
+        "rose": {
+          "declin": "rose délavé",
+          "fane": "rose-beige sale"
+        },
+        "creme": {
+          "declin": "crème grisée",
+          "fane": "beige-brun"
+        },
+        "blanc": {
+          "declin": "blanc jauni",
+          "fane": "beige-brun"
+        },
+        "bicolore": {
+          "declin": "motif bordeaux et blanc (Sharry Baby) dont le blanc jaunit",
+          "fane": "brun sur fond beige"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Très sensible à l'éthylène : le chapeau de pollinies se détache au tri et à l'emballage, la fleur produit de l'éthylène en quelques heures. L'éthylène accélère la chute des boutons, la fanaison des fleurs et le jaunissement des feuilles et des pédicelles, et la perte de couleur. Tenue : 7-10 j en général, jusqu'à 21 j pour certaines variétés ; 'Gower Ramsey' : fleurs rétractées dès le 6e jour, 45,5 % tombées au 16e. Couleurs du fané déduites (la décoloration est sourcée, pas les teintes exactes). Aussi vendu en pot (non décrit ici).",
+      "sources": [
+        "https://scholars.lib.ntu.edu.tw/entities/publication/cb0b60c8-3459-4bcf-ac64-0fe70cb2885a",
+        "https://scielo.br/j/cr/a/HCZzf6kxskZ6hLYdSjGTCLh/abstract/?lang=en",
+        "https://www.mdpi.com/2311-7524/11/4/386",
+        "https://doaj.org/article/0439a33e9a334835b2791fa0f26e7ccc"
+      ]
+    },
+    "confiance": "haute"
+  },
+  {
+    "id": "cambria",
+    "nom": "Cambria et hybrides intergénérique",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [
+        10,
+        11,
+        12,
+        1,
+        2,
+        3,
+        4
+      ],
+      "toute_annee": true,
+      "note": "vendu toute l'année surtout en pot ; floraison possible en toute saison, pic de l'automne au printemps (catalogue). Tiges coupées rares en Europe, pas de calendrier de criée trouvé",
+      "sources": [
+        "https://secretgarden.ro/en/blogs/plant-care/cambria",
+        "https://ashs.confex.com/ashs/2014/webprogram/Paper19274.html"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 8,
+      "max": 15,
+      "sources": [
+        "https://scielo.br/j/cagro/a/z33Cf8fzcQQpZyBB8CXcP3M/?lang=en",
+        "https://en.wikipedia.org/wiki/Vase_life"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "transparence",
+        "recroqueville",
+        "fleurons-tombent",
+        "fane-du-bas",
+        "decolore"
+      ],
+      "ordre": "les fleurs de la grappe fanent une à une, d'abord les plus vieilles en bas de la hampe : elles ramollissent, deviennent translucides et se fripent, puis certaines se détachent ; les boutons du haut peuvent tomber sans s'ouvrir ; les pédicelles jaunissent",
+      "tete": "pas de tête unique : une grappe ou panicule d'étoiles de 5 à 10 cm ; la grappe se dégarnit par le bas et l'extrémité garde parfois des boutons verts",
+      "petales": "sépales et pétales en étoile qui perdent leur raideur, deviennent minces et translucides, se replient vers l'avant ; le labelle large se froisse et pend ; les macules restent visibles mais ternes",
+      "feuilles": "tige coupée en général sans feuille ; les petites bractées et les pédicelles jaunissent",
+      "tige": "hampe fine et arquée qui reste ferme ; les ramifications vides restent en place",
+      "couleurs": {
+        "rouge": {
+          "declin": "rouge qui se ternit et s'assombrit, zones translucides",
+          "fane": "rouge brique sombre, froissé, bords brunâtres"
+        },
+        "bordeaux": {
+          "declin": "bordeaux plus sombre, aspect mouillé",
+          "fane": "brun-bordeaux presque noir, papier froissé"
+        },
+        "rose": {
+          "declin": "rose fuchsia qui pâlit et bleuit légèrement",
+          "fane": "mauve sale, bords beige-brun"
+        },
+        "violet": {
+          "declin": "pourpre éteint, un peu translucide",
+          "fane": "violet-brun terne"
+        },
+        "blanc": {
+          "declin": "blanc qui devient ivoire et transparent",
+          "fane": "beige-crème à bords bruns"
+        },
+        "jaune": {
+          "declin": "jaune plus pâle, translucide",
+          "fane": "jaune paille à brun clair"
+        },
+        "brun": {
+          "declin": "bronze plus terne",
+          "fane": "brun-tabac foncé"
+        },
+        "bicolore": {
+          "declin": "le fond pâlit tandis que les macules et marbrures restent plus foncées, ce qui accentue le contraste",
+          "fane": "fond beige-brun et taches brun foncé"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Groupe surtout vendu en pot ; aucune donnée de tenue en vase propre aux Cambria trouvée. Les chiffres et la façon de faner (rétrécissement et chute des fleurs, jaunissement des pédicelles sous l'éthylène) sont extrapolés d'études sur les grappes coupées d'Oncidium (genre parent, 12 à 15 jours en vase) et de la fourchette générale des orchidées (6 à 14 jours). L'ordre de fanaison du bas vers le haut est déduit de l'ouverture des fleurs de bas en haut. Couleurs du déclin et du fané déduites.",
+      "sources": [
+        "https://www.redalyc.org/pdf/331/33122919023.pdf",
+        "https://scielo.br/j/cagro/a/z33Cf8fzcQQpZyBB8CXcP3M/?lang=en",
+        "https://bp.ueb.cas.cz/pdfs/bpl/2008/04/35.pdf"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "odontoglossum",
+    "nom": "Odontoglossum",
+    "saison_vente": {
+      "mois": [
+        10,
+        11,
+        12,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "pic": [
+        11,
+        12,
+        1,
+        2,
+        3
+      ],
+      "toute_annee": false,
+      "note": "fleurit en toute saison, surtout de la fin de l'automne au printemps ; orchidée de culture fraîche vendue surtout en pot",
+      "sources": [
+        "https://www.rhs.org.uk/plants/oncidium/cool/growing-guide",
+        "https://www.orchideen-wichmann.de/en/orchids-a-z/odontoglossum.html",
+        "https://gardentags.com/plant-encyclopedia/odontoglossum/3347"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 10,
+      "max": 15,
+      "sources": [
+        "https://scielo.br/j/cagro/a/z33Cf8fzcQQpZyBB8CXcP3M/?lang=en",
+        "https://www.orchideen-wichmann.de/en/orchids-a-z/odontoglossum.html"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "transparence",
+        "recroqueville",
+        "fleurons-tombent",
+        "fane-du-bas",
+        "decolore"
+      ],
+      "ordre": "les fleurs les plus anciennes, en bas de la grappe, ramollissent et deviennent translucides, se fripent puis tombent une à une ; le haut de la grappe reste frais plus longtemps",
+      "tete": "grappe arquée de fleurs étoilées à bords souvent ondulés ou dentelés ; elle se dégarnit par le bas",
+      "petales": "pétales ondulés qui perdent leur tenue, se replient et se froissent ; le labelle frangé pend",
+      "feuilles": "tige coupée sans feuille ; pédicelles qui jaunissent",
+      "tige": "hampe fine arquée qui reste ferme",
+      "couleurs": {
+        "jaune": {
+          "declin": "jaune d'or qui pâlit, aspect cireux mouillé",
+          "fane": "jaune paille à brun clair"
+        },
+        "rouge": {
+          "declin": "rouge écarlate qui s'assombrit",
+          "fane": "rouge brique-brun"
+        },
+        "bordeaux": {
+          "declin": "bordeaux orangé plus sombre",
+          "fane": "brun-rouge foncé"
+        },
+        "orange": {
+          "declin": "orange qui se ternit",
+          "fane": "roux-brun"
+        },
+        "brun": {
+          "declin": "or et bronze plus ternes",
+          "fane": "brun tabac"
+        },
+        "bicolore": {
+          "declin": "fond jaune qui pâlit, taches acajou qui restent nettes",
+          "fane": "fond beige-brun, taches brun foncé"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Odontoglossum est aujourd'hui inclus dans Oncidium ; vendu surtout en pot. Un vendeur allemand indique que les fleurs tiennent longtemps, même coupées, sans chiffre : la fourchette de 10 à 15 jours vient d'études sur les grappes coupées d'Oncidium (genre voisin). La façon de faner est extrapolée d'Oncidium ; l'ordre bas-haut est déduit ; couleurs du déclin et du fané déduites.",
+      "sources": [
+        "https://www.redalyc.org/pdf/331/33122919023.pdf",
+        "https://scielo.br/j/cagro/a/z33Cf8fzcQQpZyBB8CXcP3M/?lang=en",
+        "https://www.orchideen-wichmann.de/en/orchids-a-z/odontoglossum.html"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "brassia",
+    "nom": "Brassia",
+    "saison_vente": {
+      "mois": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "pic": [
+        5,
+        6,
+        7,
+        8
+      ],
+      "toute_annee": false,
+      "note": "floraison surtout en été ; Brassia verrucosa du printemps à l'automne ; disponible ponctuellement toute l'année en pot",
+      "sources": [
+        "https://www.orchideen-wichmann.de/en/orchids-a-z/brassia.html",
+        "https://www.rhs.org.uk/plants/2391/brassia-verrucosa/details"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 6,
+      "max": 14,
+      "sources": [
+        "https://en.wikipedia.org/wiki/Vase_life"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "transparence",
+        "recroqueville",
+        "fleurons-tombent",
+        "fane-du-bas"
+      ],
+      "ordre": "les longs sépales en fils perdent leur raideur en premier, s'enroulent et pendent ; la fleur devient translucide puis se détache ; la grappe se dégarnit par le bas",
+      "tete": "grappe arquée de fleurs « araignées » disposées en rang le long de la hampe",
+      "petales": "sépales très longs et étroits (jusqu'à 20-25 cm de fleur) qui ramollissent, se tortillent et s'enroulent comme des rubans ; le labelle pâle se froisse ; les taches brunes restent visibles",
+      "feuilles": "tige coupée sans feuille ; pédicelles qui jaunissent",
+      "tige": "hampe arquée qui reste ferme",
+      "couleurs": {
+        "vert": {
+          "declin": "vert pâle qui jaunit et devient translucide",
+          "fane": "jaune paille à brun clair"
+        },
+        "bicolore": {
+          "declin": "fond vert-jaune qui pâlit, barres brunes qui restent sombres",
+          "fane": "fond brun clair, taches brun foncé"
+        },
+        "brun": {
+          "declin": "acajou plus terne",
+          "fane": "brun très foncé"
+        },
+        "violet": {
+          "declin": "pourpre éteint",
+          "fane": "brun violacé"
+        },
+        "orange": {
+          "declin": "corail qui pâlit vers le saumon",
+          "fane": "beige rosé à brun"
+        },
+        "creme": {
+          "declin": "crème qui devient translucide",
+          "fane": "beige-brun"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Brassia se vend surtout en pot ; aucune donnée de tenue en vase ni de description de fanaison propre au genre trouvée. La tenue (6 à 14 jours) est la fourchette générale des orchidées coupées ; la fanaison est extrapolée des Oncidium (même sous-tribu). L'enroulement des longs sépales est une déduction de leur forme. Couleurs du déclin et du fané déduites. La clé orange regroupe le coloris corail (Tarantula).",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Vase_life",
+        "https://www.redalyc.org/pdf/331/33122919023.pdf",
+        "https://www.rhs.org.uk/plants/2391/brassia-verrucosa/details"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "miltoniopsis",
+    "nom": "Miltoniopsis et Miltonia",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [
+        4,
+        5,
+        6
+      ],
+      "toute_annee": true,
+      "note": "en pot toute l'année (catalogue : Floricultura) ; dans l'hémisphère nord la floraison naturelle va surtout d'avril à début juin, parfois une remontée à l'automne",
+      "sources": [
+        "https://orchidculture.com/COD/FREE/Miltoniopsis_Art.html",
+        "https://www.gardenia.net/genus/miltoniopsis"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 1,
+      "max": 3,
+      "sources": [
+        "https://uaex.uada.edu/yard-garden/resource-library/plant-week/Miltoniopsis-Pansy-Faced-Orchid-05-05-2017.aspx",
+        "https://www.mcdonaldgardencenter.com/sites/default/files/pdf-files/garden_guide_orchids_miltonias.pdf"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "transparence",
+        "recroqueville",
+        "decolore"
+      ],
+      "ordre": "coupée, la fleur flétrit très vite : les grands pétales plats deviennent mous et translucides, s'affaissent et se fripent en un ou deux jours ; sur la plante, la fleur tient 3 à 5 semaines puis fane de la même manière",
+      "tete": "grappe de 3 à 7 fleurs plates en forme de pensée ; les fleurs penchent vers l'avant en s'amollissant",
+      "petales": "pétales larges et fins qui se plissent, se rabattent vers l'avant et pendent ; le grand labelle se froisse ; le masque central (cascade) reste visible",
+      "feuilles": "tige coupée sans feuille ; sur la plante, feuilles fines vert-gris inchangées",
+      "tige": "hampe fine qui peut ployer sous les fleurs molles",
+      "couleurs": {
+        "blanc": {
+          "declin": "blanc qui devient transparent, gris-ivoire",
+          "fane": "beige-brun froissé"
+        },
+        "rose": {
+          "declin": "rose qui pâlit et prend un ton mauve",
+          "fane": "mauve sale à brun"
+        },
+        "rouge": {
+          "declin": "rouge qui s'assombrit, aspect mouillé",
+          "fane": "bordeaux brunâtre"
+        },
+        "violet": {
+          "declin": "pourpre qui se ternit",
+          "fane": "brun violacé"
+        },
+        "jaune": {
+          "declin": "jaune qui pâlit",
+          "fane": "paille brunâtre"
+        },
+        "bicolore": {
+          "declin": "le fond pâlit, le masque en cascade du labelle reste plus foncé",
+          "fane": "fond beige-brun, masque brun-bordeaux"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Surprise utile : c'est la plus mauvaise fleur coupée du lot. L'extension de l'Université d'Arkansas écrit qu'une orchidée à forte part de Miltoniopsis « flétrit et fane sous vos yeux » une fois coupée, et que les fleurs tiennent 3 à 5 semaines sur la plante. Le chiffre de 1 à 3 jours en vase est une traduction de cette phrase, pas une mesure. Dans le jeu, le Déclin dès le stade Éclosion serait réaliste ; dessiner plutôt la fleur sur une tige en pot si le jeu le permet. Couleurs du déclin et du fané déduites.",
+      "sources": [
+        "https://uaex.uada.edu/yard-garden/resource-library/plant-week/Miltoniopsis-Pansy-Faced-Orchid-05-05-2017.aspx",
+        "https://www.mcdonaldgardencenter.com/sites/default/files/pdf-files/garden_guide_orchids_miltonias.pdf",
+        "https://bp.ueb.cas.cz/pdfs/bpl/2008/04/35.pdf"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "zygopetalum",
+    "nom": "Zygopetalum",
+    "saison_vente": {
+      "mois": [
+        10,
+        11,
+        12,
+        1,
+        2,
+        3
+      ],
+      "pic": [
+        11,
+        12,
+        1,
+        2
+      ],
+      "toute_annee": false,
+      "note": "floraison de la fin de l'automne au début du printemps (hiver surtout) ; vendu en pot et parfois en tige coupée (un fleuriste français le propose en livraison)",
+      "sources": [
+        "https://www.gardenia.net/plants/genera/zygopetalum-orchid",
+        "https://plants.ces.ncsu.edu/plants/zygopetalum/",
+        "https://sunset.com/garden/flowers-plants/winter-orchids",
+        "https://www.aquarelle.com/product/l-orchidee-zygopetalum-41056"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 6,
+      "max": 14,
+      "sources": [
+        "https://en.wikipedia.org/wiki/Vase_life",
+        "https://www.gardenia.net/plants/genera/zygopetalum-orchid"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "transparence",
+        "brunit-bords",
+        "recroqueville",
+        "fane-du-bas"
+      ],
+      "ordre": "les fleurs les plus basses de l'épi fanent d'abord : les sépales et pétales cireux perdent leur brillant, deviennent translucides, brunissent à la pointe puis se fripent ; le grand labelle se froisse en dernier",
+      "tete": "épi dressé de 60 cm environ portant 4 à 10 fleurs étoilées de 5 à 8 cm, toutes tournées du même côté",
+      "petales": "pétales et sépales épais et cireux, verts tachés de brun ou de pourpre : ils ternissent, s'amincissent et brunissent depuis les pointes ; le labelle large en éventail, blanc veiné ou pourpre, se plisse et pend",
+      "feuilles": "tige coupée sans feuille ; sur la plante, feuilles longues et souples inchangées",
+      "tige": "hampe droite et ferme qui ne plie pas",
+      "couleurs": {
+        "vert": {
+          "declin": "vert pomme qui jaunit et devient translucide",
+          "fane": "jaune-brun, pointes brunes"
+        },
+        "bicolore": {
+          "declin": "fond vert qui jaunit, taches brunes ou pourpres qui foncent ; labelle blanc veiné qui devient ivoire",
+          "fane": "fond brun clair taché de brun foncé, labelle beige à veines violet-brun"
+        },
+        "violet": {
+          "declin": "pourpre ou indigo qui se ternit",
+          "fane": "violet-brun très sombre"
+        },
+        "bordeaux": {
+          "declin": "bordeaux ou framboise plus sombre",
+          "fane": "brun-bordeaux presque noir"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Fleurs réputées très durables sur la plante (2 à 3 mois selon NC State, 1 à 3 mois selon un vendeur) et recherchées comme fleurs coupées, mais aucune durée en vase chiffrée trouvée : la fourchette 6-14 jours est celle des orchidées en général. Aucune description de fanaison propre au genre trouvée : le brunissement, la translucidité et l'ordre bas-haut sont déduits de la sénescence générale des orchidées et de l'ouverture de l'épi de bas en haut. Couleurs du déclin et du fané déduites. La famille framboise est rangée dans bordeaux, indigo dans violet, le labelle blanc veiné de violet dans bicolore.",
+      "sources": [
+        "https://bp.ueb.cas.cz/pdfs/bpl/2008/04/35.pdf",
+        "https://plants.ces.ncsu.edu/plants/zygopetalum/",
+        "https://www.gardenia.net/plants/genera/zygopetalum-orchid"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "paphiopedilum",
+    "nom": "Paphiopedilum",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [
+        11,
+        12,
+        1,
+        2,
+        3,
+        4
+      ],
+      "toute_annee": true,
+      "note": "en pot toute l'année ; floraison surtout de l'automne au printemps, tiges coupées surtout de l'hiver au printemps (catalogue)",
+      "sources": [
+        "https://missouribotanicalgarden.org/gardens-gardening/your-garden/help-for-the-home-gardener/advice-tips-resources/visual-guides/paphiopedilum",
+        "https://www.logees.com/venus-slipper-orchid-paphiopedilum-maudiae.html"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 8,
+      "max": 13,
+      "sources": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC8200665",
+        "https://www.frontiersin.org/journals/plant-science/articles/10.3389/fpls.2021.637236/epub"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "transparence",
+        "brunit-bords",
+        "recroqueville"
+      ],
+      "ordre": "d'abord le sépale dorsal, les pétales ou le sabot ramollissent par endroits, s'amincissent, deviennent transparents et brunissent légèrement ; ensuite la fleur perd son eau, les pièces brunissent fortement et se ratatinent ; les bords se plissent en premier",
+      "tete": "une seule grosse fleur cireuse (parfois 2 à 4 chez les multiflores) au sommet d'une tige raide et souvent velue ; elle reste en place et ne penche presque pas",
+      "petales": "sépale dorsal en étendard, deux pétales latéraux et un sabot en poche : les surfaces cireuses deviennent mates et translucides par plaques, brunissent, puis se rident en commençant par les bords ; le sabot garde sa forme de poche plus longtemps que les pétales",
+      "feuilles": "tige coupée sans feuille ; sur la plante, feuilles en éventail souvent marbrées, inchangées",
+      "tige": "tige raide, droite, velue, brun-pourpre, qui ne plie pas",
+      "couleurs": {
+        "vert": {
+          "declin": "vert pomme qui jaunit, plaques translucides",
+          "fane": "jaune-brun, bords bruns ridés"
+        },
+        "blanc": {
+          "declin": "blanc du dorsal qui devient ivoire transparent",
+          "fane": "beige-brun ridé"
+        },
+        "jaune": {
+          "declin": "jaune d'or plus pâle et translucide",
+          "fane": "brun ocre"
+        },
+        "brun": {
+          "declin": "brun acajou qui perd son vernis",
+          "fane": "brun foncé mat"
+        },
+        "bordeaux": {
+          "declin": "bordeaux qui perd son brillant, plus sombre",
+          "fane": "brun-noir mat"
+        },
+        "rouge": {
+          "declin": "rouge vineux qui s'assombrit",
+          "fane": "brun-bordeaux presque noir"
+        },
+        "violet": {
+          "declin": "pourpre presque noir qui devient mat",
+          "fane": "noir-brun ridé"
+        },
+        "rose": {
+          "declin": "rose qui pâlit et devient translucide",
+          "fane": "beige rosé à brun"
+        },
+        "bicolore": {
+          "declin": "fond (vert, blanc ou jaune) qui jaunit, stries et points qui restent nets",
+          "fane": "fond brun clair, stries et points brun foncé"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Fleur coupée vendue (Mayesh, d'après le catalogue). Tenue mesurée sur trois espèces coupées à température ambiante : 8-9 jours (P. delenatii, P. callosum) et 13 jours (P. esquirolei). Les stades de fanaison (ramollissement partiel, léger brunissement, amincissement et transparence, puis brunissement fort et ratatinement, rides depuis les bords) viennent de la même étude. Sur la plante la fleur tient 6 à 8 semaines ; une fleur pollinisée fane en moins de 3 semaines au lieu de 3 mois. La saison commerciale européenne des tiges coupées n'est pas sourcée (seule la période de floraison l'est). Couleurs du déclin et du fané déduites.",
+      "sources": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC8200665",
+        "https://www.frontiersin.org/journals/plant-science/articles/10.3389/fpls.2021.637236/epub",
+        "https://bp.ueb.cas.cz/pdfs/bpl/2008/04/35.pdf",
+        "https://missouribotanicalgarden.org/gardens-gardening/your-garden/help-for-the-home-gardener/advice-tips-resources/visual-guides/paphiopedilum"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "phragmipedium",
+    "nom": "Phragmipedium",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [],
+      "toute_annee": true,
+      "note": "plante de spécialistes, floraison successive pendant des mois et à toute saison (catalogue) ; pas de pic européen trouvé ; quasi absent des criées en tige coupée",
+      "sources": [
+        "https://orchid-care-tips.com/phragmipedium-besseae.html",
+        "https://slippertalk.com/threads/phrag-mem-dick-clements.33282"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 6,
+      "max": 14,
+      "sources": [
+        "https://en.wikipedia.org/wiki/Vase_life",
+        "https://orchid-care-tips.com/phragmipedium-besseae.html"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "chute-fleur-entiere"
+      ],
+      "ordre": "la fleur tombe entière d'un coup, alors qu'elle paraît encore parfaite ; souvent au moment où le bouton suivant s'ouvre au bout de la même hampe ; une fleur tient en général 10 à 15 jours, parfois moins d'une semaine",
+      "tete": "une fleur ouverte à la fois au bout de la hampe (fleurs successives) ; au stade Fané il ne reste que la tige, parfois avec un bouton ou une jeune fleur au sommet",
+      "petales": "pas de flétrissement visible avant la chute : pétales, sépales et sabot restent frais et colorés ; une fois tombée au pied du vase, la fleur se fripe ensuite comme une fleur cueillie",
+      "feuilles": "tige coupée sans feuille ; sur la plante, longues feuilles en lanière inchangées",
+      "tige": "hampe fine et droite qui reste verte ; une petite bractée et la cicatrice restent à la place de la fleur tombée",
+      "couleurs": {
+        "orange": {
+          "declin": "inchangé sur la tige (orange, rouge-orangé, cuivre) ; la fleur tombée pâlit",
+          "fane": "fleur tombée orange terne à brun-roux"
+        },
+        "rouge": {
+          "declin": "inchangé sur la tige",
+          "fane": "fleur tombée rouge brique foncé"
+        },
+        "peche": {
+          "declin": "inchangé sur la tige (saumon, pêche)",
+          "fane": "fleur tombée beige rosé à brun clair"
+        },
+        "rose": {
+          "declin": "inchangé sur la tige (rose, fuchsia)",
+          "fane": "fleur tombée mauve sale"
+        },
+        "jaune": {
+          "declin": "inchangé sur la tige",
+          "fane": "fleur tombée jaune paille à brun"
+        },
+        "vert": {
+          "declin": "inchangé sur la tige ; longs pétales verts",
+          "fane": "fleur tombée vert-jaune puis brune"
+        },
+        "brun": {
+          "declin": "inchangé sur la tige (acajou)",
+          "fane": "fleur tombée brun foncé"
+        },
+        "bicolore": {
+          "declin": "inchangé sur la tige (rose et blanc)",
+          "fane": "fleur tombée beige à taches mauves"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Nouveau mode « chute-fleur-entiere » : la fleur entière (sabot compris) se détache fraîche, sans faner sur la tige ; c'est un trait bien connu du genre, signalé par les vendeurs et les amateurs. Aucune donnée de tenue en vase trouvée : la fourchette 6-14 jours est celle des orchidées coupées, cohérente avec les 10-15 jours d'une fleur de P. besseae sur la plante. Sur une tige coupée, on ignore si le bouton suivant s'ouvre : c'est une déduction. Les couleurs du fané décrivent la fleur tombée et sont déduites. Le sabot persistant n'est pas un trait des Phragmipedium (contrairement à ce qu'on pourrait croire en dessinant à partir des Paphiopedilum).",
+      "sources": [
+        "https://www.ukhouseplants.com/plants/phragmipedilum-lady-slippers",
+        "https://www.orchidplantcare.info/?p=3339",
+        "https://orchid-care-tips.com/phragmipedium-besseae.html",
+        "https://www.slippertalk.com/threads/bud-blasting-on-my-phragmipedium-lindleyanum.47231/"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "cattleya",
+    "nom": "Cattleya et hybrides",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [
+        10,
+        11,
+        12,
+        1,
+        2,
+        3,
+        4
+      ],
+      "toute_annee": true,
+      "note": "fleur coupée disponible toute l'année selon les espèces et hybrides (une espèce par mois chez les grossistes), pic de l'automne au printemps ; C. trianae en hiver (catalogue)",
+      "sources": [
+        "https://akatsukaorchid.com/wholesale-orchids",
+        "https://akatsukaorchid.com/wholesale-orders"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 4,
+      "max": 10,
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/cattleya-orchid",
+        "https://www.ahs.ac.cn/EN/Y2022/V49/I12/2743",
+        "https://doi.org/10.2503/jjshs.73.128"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "transparence",
+        "recroqueville",
+        "decolore",
+        "brunit-bords"
+      ],
+      "ordre": "les pointes des sépales flétrissent d'abord et la couleur pâlit ; puis sépales et pétales s'amollissent, se replient vers l'arrière et pendent ; enfin toute la corolle s'effondre, le grand labelle frisé se froisse et brunit sur les bords",
+      "tete": "une à quelques très grandes fleurs (7 à 18 cm) ; la fleur reste attachée mais perd son volume et s'affaisse vers le bas",
+      "petales": "pétales larges et ondulés qui perdent leur raideur, deviennent minces et translucides, se recourbent et se fripent ; sépales étroits qui flétrissent par la pointe ; labelle en trompette frisé qui se froisse et pend",
+      "feuilles": "tige coupée courte, sans feuille",
+      "tige": "tige courte et ferme ; peu visible en vase",
+      "couleurs": {
+        "violet": {
+          "declin": "lavande ou mauve qui pâlit et bleuit",
+          "fane": "gris-mauve sale, bords brun clair"
+        },
+        "rose": {
+          "declin": "rose ou magenta qui pâlit, aspect mouillé",
+          "fane": "mauve-brun froissé"
+        },
+        "blanc": {
+          "declin": "blanc qui devient ivoire translucide",
+          "fane": "beige-brun, bords bruns"
+        },
+        "vert": {
+          "declin": "vert lime qui jaunit",
+          "fane": "jaune-brun"
+        },
+        "jaune": {
+          "declin": "jaune qui pâlit",
+          "fane": "paille brunâtre"
+        },
+        "orange": {
+          "declin": "orange qui se ternit",
+          "fane": "roux-brun"
+        },
+        "rouge": {
+          "declin": "rouge qui s'assombrit",
+          "fane": "brun-rouge sombre"
+        },
+        "bleu": {
+          "declin": "bleu lavande qui grisaille",
+          "fane": "gris-bleu sale à brun"
+        },
+        "bicolore": {
+          "declin": "pétales qui pâlissent tandis que le labelle sombre et la gorge jaune restent marqués plus longtemps",
+          "fane": "pétales beige-brun, labelle brun-pourpre froissé"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Vraie fleur coupée de fleuriste (corsage). Tenue de 7 à 10 jours en vase selon le Floral Design Institute (1 à 5 jours en corsage sans eau) ; une étude signale des symptômes dès le 4e jour et une sénescence complète au 5e jour à 25 °C, d'où le minimum de 4. Très sensible à l'éthylène : décoloration, flétrissement des pointes de sépales, puis flétrissement complet de la corolle. Sur la plante, 2 à 3 semaines (5 à 6 pour certains hybrides). Saison sourcée chez un grossiste américain, pas européen. Couleurs du déclin et du fané déduites.",
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/cattleya-orchid",
+        "https://bp.ueb.cas.cz/pdfs/bpl/2008/04/35.pdf",
+        "https://www.ahs.ac.cn/EN/Y2022/V49/I12/2743",
+        "https://www.ukhouseplants.com/plants/cattleya"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "epidendrum",
+    "nom": "Epidendrum",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [],
+      "toute_annee": true,
+      "note": "importé toute l'année (Colombie, Japon, Brésil, Pays-Bas) ; refleurit plusieurs fois par an ; au Brésil la production de tiges culmine en juillet (mois frais). Pic européen non documenté.",
+      "sources": [
+        "https://www.ishs.org/ishs-article/813_78",
+        "https://www.epicgardening.com/epidendrum-orchids/"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 5,
+      "max": 7,
+      "sources": [
+        "https://www.redalyc.org/pdf/3030/303026595023.pdf",
+        "https://scielo.br/j/babt/a/bdWxRcYnkttjTjkQXspJjFm/?lang=en",
+        "https://www.ishs.org/ishs-article/813_78"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "fleurons-tombent",
+        "recroqueville",
+        "bourgeons-avortent"
+      ],
+      "ordre": "les petites fleurs de la boule se fanent et se ramollissent, puis tombent une à une (la tige est jugée finie quand la moitié des fleurs est tombée) ; les boutons du sommet s'ouvrent rarement en vase",
+      "tete": "la boule de fleurs se dégarnit par le bas et les côtés ; il reste un épi nu avec quelques fleurs fripées et des boutons verts fermés au sommet",
+      "petales": "fleurs de 2-3 cm qui flétrissent, se plissent et pendent, puis se détachent entières sans brunir beaucoup",
+      "feuilles": "souvent absentes de la tige coupée ; si présentes, petites feuilles alternes qui jaunissent lentement",
+      "tige": "tige fine et raide, reste droite",
+      "couleurs": {
+        "orange": {
+          "declin": "orange qui ternit, fleurs molles",
+          "fane": "orange sale brunâtre, fleurs tombées au pied du vase"
+        },
+        "rouge": {
+          "declin": "rouge qui fonce légèrement",
+          "fane": "rouge brun, fleurs flétries et tombées"
+        },
+        "jaune": {
+          "declin": "jaune qui pâlit",
+          "fane": "jaune paille brunâtre"
+        },
+        "rose": {
+          "declin": "rose qui pâlit",
+          "fane": "rose fané tirant sur le beige"
+        },
+        "violet": {
+          "declin": "mauve ou pourpre qui se ternit",
+          "fane": "pourpre sombre, fleurs racornies"
+        },
+        "blanc": {
+          "declin": "blanc qui devient ivoire et un peu translucide",
+          "fane": "beige crème, bords bruns"
+        },
+        "vert": {
+          "declin": "vert qui jaunit",
+          "fane": "vert-jaune terne"
+        }
+      },
+      "seche_bien": false,
+      "notes": "La tenue (5-7 jours, eau seule) vient d'études brésiliennes sur E. ibaguense ; l'éthylène y provoque flétrissement et chute rapide des fleurs, et seulement environ 7 % des boutons s'ouvrent après la coupe. Les couleurs de déclin et de fané sont déduites de la fanaison générale des orchidées (non décrites précisément).",
+      "sources": [
+        "https://www.ishs.org/ishs-article/813_78",
+        "https://www.redalyc.org/pdf/3030/303026595023.pdf",
+        "https://agris.fao.org/search/en/records/67484a3e7625988a3719ed33"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "masdevallia",
+    "nom": "Masdevallia",
+    "saison_vente": {
+      "mois": [
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "pic": [],
+      "toute_annee": false,
+      "note": "surtout vendue en pot ; floraison de printemps-été, certains hybrides refleurissent plusieurs fois par an. Pas de calendrier de fleur coupée trouvé.",
+      "sources": [
+        "https://www.orchidplantcare.info/fairly-easy-orchids-masdevallia-mary-staal"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 14,
+      "max": 21,
+      "sources": [
+        "https://www.orchidplantcare.info/fairly-easy-orchids-masdevallia-mary-staal"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "transparence",
+        "recroqueville",
+        "chute-petales"
+      ],
+      "ordre": "les longues queues des sépales se ramollissent d'abord, puis le triangle se replie et devient translucide ; la fleur finit par tomber entière",
+      "tete": "fleur unique en triangle sur une tige fine ; elle s'incline et se referme à demi",
+      "petales": "ce sont surtout les trois sépales soudés qui se voient : ils perdent leur raideur, se plissent, deviennent vitreux puis brunissent aux pointes",
+      "feuilles": "pas de feuille sur la tige coupée (feuilles en rosette à la base de la plante)",
+      "tige": "pédoncule fin, peut se courber sous la fleur",
+      "couleurs": {
+        "orange": {
+          "declin": "orange qui ternit, reflets pourpres moins visibles",
+          "fane": "orange brunâtre, translucide"
+        },
+        "rouge": {
+          "declin": "rouge qui fonce",
+          "fane": "rouge brun presque noir aux pointes"
+        },
+        "rose": {
+          "declin": "magenta qui se ternit",
+          "fane": "mauve sale, translucide"
+        },
+        "jaune": {
+          "declin": "jaune qui pâlit",
+          "fane": "jaune paille brunâtre"
+        },
+        "creme": {
+          "declin": "ivoire un peu translucide",
+          "fane": "beige, pointes brunes"
+        },
+        "brun": {
+          "declin": "marron plus terne",
+          "fane": "brun foncé, sépales ridés"
+        },
+        "bicolore": {
+          "declin": "ponctuations et veines qui se brouillent",
+          "fane": "fond bruni, motifs à peine lisibles"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Genre vendu presque uniquement en pot ; aucune donnée de tenue en vase trouvée. La durée 14-21 jours est celle de la fleur sur la plante (Masdevallia Mary Staal, en été). La manière de faner est extrapolée de la fanaison générale des orchidées (transparence, flétrissement, chute) : à dessiner comme une fleur sur la plante.",
+      "sources": [
+        "https://www.orchidplantcare.info/fairly-easy-orchids-masdevallia-mary-staal",
+        "https://en.wikipedia.org/wiki/Masdevallia",
+        "https://bp.ueb.cas.cz/pdfs/bpl/2008/04/35.pdf"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "disa",
+    "nom": "Disa",
+    "saison_vente": {
+      "mois": [
+        6,
+        7,
+        8
+      ],
+      "pic": [],
+      "toute_annee": false,
+      "note": "saison courte. En Afrique du Sud, D. uniflora fleurit de décembre à mars (pic mi-février) ; en serre dans l'hémisphère nord, en été. La Nouvelle-Zélande exporte des tiges coupées d'hybrides sur une courte saison (son été). Offre européenne très confidentielle, mois exacts non documentés.",
+      "sources": [
+        "https://pza.sanbi.org/node/10071",
+        "https://longwoodgardens.org/blog/2022-06-29/disa-redefined",
+        "https://ishs.org/ishs-article/755_38/"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 14,
+      "max": 14,
+      "sources": [
+        "https://ishs.org/ishs-article/755_38/"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "transparence",
+        "recroqueville",
+        "penche-tete"
+      ],
+      "ordre": "les pétales latéraux et le casque se ramollissent, deviennent translucides et se replient ; la fleur s'affaisse sur sa tige ; les fleurs du bas fanent avant celles du haut",
+      "tete": "grande fleur de 10 cm, plate, dominée par trois sépales rouges ; elle s'incline et se replie",
+      "petales": "sépales larges qui perdent leur tension, se gondolent et deviennent vitreux ; le casque veiné s'écrase",
+      "feuilles": "feuilles étroites le long de la base de la tige, jaunissent",
+      "tige": "tige florale droite, peut ployer sous la tête quand elle se ramollit",
+      "couleurs": {
+        "rouge": {
+          "declin": "écarlate qui fonce vers le carmin",
+          "fane": "rouge brun, translucide, bords sombres"
+        },
+        "rose": {
+          "declin": "rose qui pâlit et devient mauve",
+          "fane": "mauve sale, translucide"
+        },
+        "blanc": {
+          "declin": "blanc qui devient ivoire translucide",
+          "fane": "beige brun"
+        },
+        "jaune": {
+          "declin": "jaune doré qui pâlit",
+          "fane": "jaune paille brunâtre"
+        }
+      },
+      "seche_bien": false,
+      "notes": "La tenue d'environ deux semaines en vase n'a été vue que dans un extrait de recherche sur les Disa coupées de Nouvelle-Zélande (article ISHS 755_38, page non consultable en entier). La manière de faner n'est pas décrite pour Disa : elle est extrapolée de la fanaison générale des orchidées (flétrissement, transparence, affaissement).",
+      "sources": [
+        "https://ishs.org/ishs-article/755_38/",
+        "https://bp.ueb.cas.cz/pdfs/bpl/2008/04/35.pdf",
+        "https://pza.sanbi.org/node/10071"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "coelogyne",
+    "nom": "Coelogyne",
+    "saison_vente": {
+      "mois": [
+        12,
+        1,
+        2,
+        3
+      ],
+      "pic": [
+        1,
+        2
+      ],
+      "toute_annee": false,
+      "note": "C. cristata ouvre de décembre à mars, surtout janvier-février ; les espèces vertes (pandurata, mayeriana) fleurissent plutôt au printemps-été. Vendue surtout en pot.",
+      "sources": [
+        "https://www.aos.org/orchids/additional-resources/coelogyne-culture.aspx"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 21,
+      "max": 35,
+      "sources": [
+        "https://aos.org/orchids/additional-resources/coelogyne-culture.aspx",
+        "https://secretgarden.ro/en/blogs/plant-care/coelogyne-cristata"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "transparence",
+        "recroqueville",
+        "fleurons-tombent"
+      ],
+      "ordre": "chaque fleur blanche se ramollit, devient vitreuse et se froisse, puis tombe ; la grappe retombante se dégarnit",
+      "tete": "grappe pendante de 5 à 8 grandes fleurs blanches ; les fleurs fanées pendent puis tombent",
+      "petales": "pétales fins et ondulés qui deviennent translucides, se froissent comme du papier mouillé, puis brunissent par les bords",
+      "feuilles": "pas de feuille sur la hampe coupée",
+      "tige": "hampe fine et arquée, garde sa courbe",
+      "couleurs": {
+        "blanc": {
+          "declin": "blanc neige qui devient ivoire translucide, crêtes jaunes intactes",
+          "fane": "beige crème, taches brunes, bords bruns"
+        },
+        "vert": {
+          "declin": "vert pomme qui jaunit, labelle noir intact",
+          "fane": "vert-jaune terne, bords bruns"
+        },
+        "jaune": {
+          "declin": "jaune verdâtre qui pâlit",
+          "fane": "jaune paille"
+        },
+        "bicolore": {
+          "declin": "fond blanc ou vert qui ternit, labelle noir ou chocolat qui reste net",
+          "fane": "fond brunâtre, labelle sombre"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Autrefois très employée en fleur coupée (AOS), mais aucune durée en vase n'a été trouvée : 21-35 jours est la durée de la fleur sur la plante (3 à 5 semaines). En vase c'est sans doute plus court. La manière de faner est extrapolée de la fanaison générale des orchidées.",
+      "sources": [
+        "https://www.aos.org/orchids/additional-resources/coelogyne-culture.aspx",
+        "https://secretgarden.ro/en/blogs/plant-care/coelogyne-cristata",
+        "https://bp.ueb.cas.cz/pdfs/bpl/2008/04/35.pdf"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "lycaste",
+    "nom": "Lycaste",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "pic": [],
+      "toute_annee": false,
+      "note": "floraison d'hiver-printemps ; vendue surtout en pot, rare en fleur coupée (Japon). Pic européen non documenté.",
+      "sources": [
+        "https://botanic.jp/plants-ra/lyccil.htm",
+        "https://orchidspecies.com/lycskinneri.htm"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 42,
+      "max": 56,
+      "sources": [
+        "https://orchidspecies.com/lycskinneri.htm",
+        "https://secretgarden.ro/en/blogs/plant-care/lycaste-skinnerii"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "transparence",
+        "recroqueville",
+        "chute-petales"
+      ],
+      "ordre": "la fleur cireuse garde longtemps sa forme, puis les sépales se ramollissent, deviennent vitreux et se replient vers l'avant ; la fleur tombe ensuite entière",
+      "tete": "une grande fleur triangulaire de 10-15 cm par tige ; en fin de vie elle se referme à demi et pend",
+      "petales": "trois grands sépales cireux qui perdent leur raideur, se plissent, deviennent translucides puis brunissent aux pointes ; les deux petits pétales se rabattent sur la colonne",
+      "feuilles": "pas de feuille sur la tige florale",
+      "tige": "tige florale courte et dressée, partant de la base du pseudobulbe",
+      "couleurs": {
+        "blanc": {
+          "declin": "blanc cristallin qui devient ivoire translucide",
+          "fane": "beige, pointes brunes"
+        },
+        "rose": {
+          "declin": "rose qui pâlit",
+          "fane": "rose beige, translucide"
+        },
+        "rouge": {
+          "declin": "rouge foncé qui se ternit",
+          "fane": "rouge brun, bords noirâtres"
+        },
+        "jaune": {
+          "declin": "jaune qui pâlit",
+          "fane": "jaune paille brunâtre"
+        },
+        "vert": {
+          "declin": "vert émeraude qui jaunit",
+          "fane": "vert olive brunâtre"
+        },
+        "brun": {
+          "declin": "bronze cuivré plus terne",
+          "fane": "brun foncé"
+        },
+        "bicolore": {
+          "declin": "bord rose et labelle rouge encore nets sur fond qui ternit",
+          "fane": "fond beige, labelle rouge brun"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Aucune durée en vase trouvée : 42-56 jours est la durée sur la plante (fleurs jusqu'à 6 semaines au frais selon orchidspecies, floraison de 6 à 8 semaines). En vase c'est certainement plus court ; à dessiner comme une fleur sur la plante. Les formes roses durent nettement plus que les blanches. La manière de faner est extrapolée de la fanaison générale des orchidées.",
+      "sources": [
+        "https://orchidspecies.com/lycskinneri.htm",
+        "https://secretgarden.ro/en/blogs/plant-care/lycaste-skinnerii",
+        "https://bp.ueb.cas.cz/pdfs/bpl/2008/04/35.pdf"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "ludisia",
+    "nom": "Ludisia",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [],
+      "toute_annee": true,
+      "note": "plante en pot vendue toute l'année pour son feuillage ; épi floral blanc en hiver.",
+      "sources": [
+        "https://www.rhs.org.uk/plants/10545/ludisia-discolor/details",
+        "https://plants.ces.ncsu.edu/plants/ludisia-discolor"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 14,
+      "max": 21,
+      "sources": [
+        "https://secretgarden.ro/en-pl/products/ludisia-discolor-d12",
+        "https://orchids-shop.com/products/ludisia-discolor"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "feuilles-jaunissent",
+        "transparence",
+        "recroqueville"
+      ],
+      "ordre": "la tige feuillée tient longtemps dans l'eau (elle y fait même des racines) ; ce sont les feuilles du bas qui jaunissent d'abord, puis la tige charnue peut devenir molle et vitreuse à la base si l'eau croupit",
+      "tete": null,
+      "petales": null,
+      "feuilles": "feuilles ovales veloutées, bordeaux presque noir ou vertes, à nervures rouges à rose cuivré ; en déclin, les feuilles basses jaunissent puis brunissent et se ramollissent, les nervures restent visibles longtemps",
+      "tige": "tige charnue et rampante, rouge-brun, articulée ; se redresse dans le vase ; base qui peut devenir molle, translucide et noircir",
+      "couleurs": {
+        "bordeaux": {
+          "declin": "bordeaux velouté qui perd son reflet, feuilles basses rougeâtres puis jaunâtres",
+          "fane": "brun mat, feuilles molles, nervures cuivrées encore visibles"
+        },
+        "vert": {
+          "declin": "vert qui jaunit par les feuilles du bas",
+          "fane": "jaune brun, mou"
+        },
+        "blanc": {
+          "declin": "petites fleurs blanches de l'épi qui deviennent ivoire et translucides",
+          "fane": "beige, fleurs ratatinées qui tombent"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Feuillage (orchidée bijou). Tenue 14-21 jours = durée de l'épi floral blanc (fleurs blanches à centre jaune, épi d'environ 30 cm, en hiver). La tige feuillée coupée vit bien plus longtemps : posée dans l'eau elle s'enracine en quelques semaines et peut même fleurir (NC State). Le jaunissement des feuilles basses et la tige molle et vitreuse sont décrits pour la plante en excès d'eau, transposés au vase.",
+      "sources": [
+        "https://plants.ces.ncsu.edu/plants/ludisia-discolor",
+        "https://ohiotropics.com/?p=4405",
+        "https://www.bloomingexpert.com/indoor-plants/jewel-orchid-care/",
+        "https://www.rhs.org.uk/plants/10545/ludisia-discolor/details"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "cypripedium",
+    "nom": "Cypripedium",
+    "saison_vente": {
+      "mois": [
+        3,
+        4,
+        5,
+        6
+      ],
+      "pic": [
+        5
+      ],
+      "toute_annee": false,
+      "note": "orchidée de jardin rustique, vendue en pot ou racines nues au printemps ; floraison au jardin en mai-juin. Pas de filière de fleur coupée connue.",
+      "sources": [
+        "https://www.phoenixperennials.com/how-to-grow-hardy-cypripedium-ladys-slipper-orchids/",
+        "https://www.cypripedium.de/English/plants/henric-e.html"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 7,
+      "max": 21,
+      "sources": [
+        "https://www.phoenixperennials.com/?p=11986",
+        "https://www.gardenia.net/genus/cypripedium"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "transparence",
+        "recroqueville",
+        "brunit-bords"
+      ],
+      "ordre": "les pétales vrillés et les sépales se ramollissent et brunissent par la pointe, puis le sabot perd sa tension, se plisse et s'affaisse ; la fleur sèche sur la tige",
+      "tete": "une ou deux fleurs à sabot gonflé par tige ; le sabot se dégonfle et se ride, la fleur s'incline",
+      "petales": "pétales longs, souvent vrillés, qui se tordent davantage et brunissent ; le sabot devient vitreux puis parcheminé",
+      "feuilles": "grandes feuilles plissées le long de la tige, restent vertes longtemps (sur la plante elles jaunissent à l'automne)",
+      "tige": "tige feuillée droite et velue",
+      "couleurs": {
+        "jaune": {
+          "declin": "sabot jaune qui pâlit, pétales bruns qui foncent",
+          "fane": "jaune paille ridé, pétales brun sombre"
+        },
+        "blanc": {
+          "declin": "blanc qui devient ivoire",
+          "fane": "beige brun, bords bruns"
+        },
+        "creme": {
+          "declin": "crème qui jaunit",
+          "fane": "beige brun"
+        },
+        "rose": {
+          "declin": "rose ou magenta qui pâlit et bleuit",
+          "fane": "mauve sale, sabot ridé"
+        },
+        "bordeaux": {
+          "declin": "bordeaux qui fonce",
+          "fane": "brun-rouge presque noir"
+        },
+        "brun": {
+          "declin": "brun-pourpre plus terne",
+          "fane": "brun foncé sec"
+        },
+        "bicolore": {
+          "declin": "veines et points encore lisibles, fond qui ternit",
+          "fane": "fond beige brun, veines sombres brouillées"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Vendu en jardinerie (plante), pas en fleur coupée : 7-21 jours est la durée de la fleur sur la plante (une semaine pour certaines espèces, jusqu'à 3 semaines pour des hybrides comme 'Inge'). À dessiner comme une fleur sur la plante. La manière de faner (pointes qui brunissent, sabot qui se ride) n'est pas décrite par une source : extrapolée de la fanaison générale des orchidées. C. calceolus est protégé en Europe.",
+      "sources": [
+        "https://www.phoenixperennials.com/?p=11986",
+        "https://www.gardenia.net/genus/cypripedium",
+        "https://plants.ces.ncsu.edu/plants/all/cypripedium-spp/",
+        "https://bp.ueb.cas.cz/pdfs/bpl/2008/04/35.pdf"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "rhynchostylis",
+    "nom": "Rhynchostylis",
+    "saison_vente": {
+      "mois": [
+        11,
+        12,
+        1,
+        2,
+        3
+      ],
+      "pic": [
+        1,
+        2
+      ],
+      "toute_annee": false,
+      "note": "orchidée « queue de renard » vendue surtout en plante ; floraison de fin d'hiver à début de printemps, souvent en janvier-février (R. gigantea de novembre à février).",
+      "sources": [
+        "https://www.gardenia.net/plant/rhynchostylis-gigantea",
+        "https://secretgarden.ro/en/blogs/plant-care/rhynchostylis-gigantea"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 14,
+      "max": 24,
+      "sources": [
+        "https://www.gardenia.net/plant/rhynchostylis-gigantea",
+        "https://bp.ueb.cas.cz/pdfs/bpl/2008/04/35.pdf"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "recroqueville",
+        "transparence",
+        "fleurons-tombent"
+      ],
+      "ordre": "les petites fleurs cireuses de l'épi dense se plissent, deviennent vitreuses et prennent des veines plus marquées, puis tombent ; l'épi se dégarnit",
+      "tete": "épi dense et arqué en queue de renard, jusqu'à 50 fleurs de 2,5 cm ; il se dégarnit et devient clairsemé",
+      "petales": "fleurs cireuses qui se froissent, s'enroulent vers l'arrière, se gorgent d'eau puis se détachent",
+      "feuilles": "pas de feuille sur l'épi coupé",
+      "tige": "hampe arquée à pendante, garde sa courbe",
+      "couleurs": {
+        "blanc": {
+          "declin": "blanc qui devient ivoire translucide",
+          "fane": "beige, fleurs ratatinées"
+        },
+        "bicolore": {
+          "declin": "points pourpres qui foncent et se brouillent sur fond ivoire",
+          "fane": "fond beige, taches violacées sombres"
+        },
+        "rose": {
+          "declin": "rose qui pâlit, veines plus visibles",
+          "fane": "rose beige terne"
+        },
+        "rouge": {
+          "declin": "rouge foncé qui noircit un peu",
+          "fane": "rouge brun"
+        },
+        "orange": {
+          "declin": "orange qui ternit",
+          "fane": "orange brunâtre"
+        },
+        "bleu": {
+          "declin": "bleu-violet qui pâlit",
+          "fane": "gris mauve"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Pas de donnée de tenue en vase trouvée : les fleurs durent environ 2 semaines sur la plante (R. gigantea) ; chez R. retusa, les fleurs non pollinisées restent fraîches 24 jours, mais fanent en 3-4 jours après pollinisation. Les symptômes de fanaison (flétrissement, retombée, changement de couleur, veines marquées, aspect gorgé d'eau, chute) sont décrits pour les orchidées dont R. retusa dans l'étude citée ; le détail des couleurs est déduit.",
+      "sources": [
+        "https://bp.ueb.cas.cz/pdfs/bpl/2008/04/35.pdf",
+        "https://www.gardenia.net/plant/rhynchostylis-gigantea",
+        "https://agris.fao.org/search/en/records/65df2b9563b8185d9cab3160"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "fil-aluminium-decoratif",
+    "nom": "Fil d'aluminium décoratif",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [],
+      "toute_annee": true,
+      "note": "accessoire de fleuriste vendu toute l'année",
+      "sources": [
+        "https://www.walmart.com/ip/Mandala-Crafts-12-14-16-18-20-22-Gauge-Anodized-Jewelry-Making-Beading-Floral-Colored-Aluminum-Craft-Wire/584513264"
+      ]
+    },
+    "tenue_vase_jours": null,
+    "fanaison": {
+      "modes": [
+        "aucune-fanaison-visible",
+        "decolore"
+      ],
+      "ordre": "aucun changement visible en 30 jours d'intérieur ; à long terme, la couleur anodisée peut pâlir à la lumière et le métal se marque de plis",
+      "tete": null,
+      "petales": null,
+      "feuilles": null,
+      "tige": "fil rond de 2 mm, souple, garde la forme qu'on lui donne ; peut porter des plis et petites cassures de couleur aux endroits pliés",
+      "couleurs": {
+        "blanc": {
+          "declin": "argent inchangé",
+          "fane": "argent un peu mat, gris"
+        },
+        "jaune": {
+          "declin": "or inchangé",
+          "fane": "or légèrement pâli"
+        },
+        "orange": {
+          "declin": "cuivre inchangé",
+          "fane": "cuivre pâli, plus argenté"
+        },
+        "brun": {
+          "declin": "noir inchangé",
+          "fane": "noir un peu mat"
+        },
+        "rouge": {
+          "declin": "rouge inchangé",
+          "fane": "rouge légèrement pâli"
+        },
+        "rose": {
+          "declin": "rose inchangé",
+          "fane": "rose légèrement pâli"
+        },
+        "violet": {
+          "declin": "violet inchangé",
+          "fane": "violet légèrement pâli"
+        },
+        "vert": {
+          "declin": "vert pomme inchangé",
+          "fane": "vert légèrement pâli"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Matière inerte : tenue en vase sans objet (null). Le fil d'aluminium anodisé résiste à la rouille et au ternissement ; il est fait pour l'intérieur, une longue exposition aux intempéries peut altérer sa couleur ; l'anodisation cuivre n'est pas stable aux UV et pâlit avec le temps. Clés de couleur : argent rangé en blanc, or en jaune, cuivre en orange, noir en brun (pas de clé noir). Pas de vraie oxydation visible à l'échelle de 30 jours.",
+      "sources": [
+        "https://www.walmart.com/ip/Mandala-Crafts-12-14-16-18-20-22-Gauge-Anodized-Jewelry-Making-Beading-Floral-Colored-Aluminum-Craft-Wire/584513264",
+        "https://patents.google.com/patent/US8580101"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "plume-autruche-teinte",
+    "nom": "Plume d'autruche teinte",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [],
+      "toute_annee": true,
+      "note": "accessoire vendu toute l'année",
+      "sources": [
+        "https://www.houseofadorn.com/blogs/diy-projects/feathers-rejuvenated"
+      ]
+    },
+    "tenue_vase_jours": null,
+    "fanaison": {
+      "modes": [
+        "aucune-fanaison-visible",
+        "decolore"
+      ],
+      "ordre": "aucun changement net en 30 jours ; avec le temps les barbes sèchent et perdent leur gonflant, et à l'humidité elles collent entre elles et la plume s'aplatit ; au soleil la teinture pâlit",
+      "tete": null,
+      "petales": null,
+      "feuilles": null,
+      "tige": "rachis (tuyau) blanc rigide qui reste droit ; les longues barbes souples retombent davantage quand la plume s'aplatit",
+      "couleurs": {
+        "blanc": {
+          "declin": "blanc ou argent inchangé",
+          "fane": "blanc un peu jauni, plume moins gonflée"
+        },
+        "creme": {
+          "declin": "naturel, beige ou champagne inchangé",
+          "fane": "beige plus terne"
+        },
+        "jaune": {
+          "declin": "jaune ou or inchangé",
+          "fane": "jaune pâli"
+        },
+        "orange": {
+          "declin": "orange ou souci inchangé",
+          "fane": "orange pâli"
+        },
+        "rouge": {
+          "declin": "rouge inchangé",
+          "fane": "rouge pâli, un peu rosé"
+        },
+        "bordeaux": {
+          "declin": "bordeaux inchangé",
+          "fane": "bordeaux pâli"
+        },
+        "rose": {
+          "declin": "rose inchangé",
+          "fane": "rose délavé"
+        },
+        "violet": {
+          "declin": "violet ou lavande inchangé",
+          "fane": "lavande délavée"
+        },
+        "bleu": {
+          "declin": "bleu roi ou bleu canard inchangé",
+          "fane": "bleu délavé"
+        },
+        "vert": {
+          "declin": "vert anis inchangé",
+          "fane": "vert pâli"
+        },
+        "brun": {
+          "declin": "cannelle ou noir inchangé",
+          "fane": "cannelle pâlie, noir un peu roussi"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Matière inerte : tenue en vase sans objet (null). Sources : les plumes naturelles sont sensibles aux UV (décoloration, plume cassante, vire au brun terne avec le temps) ; elles sèchent et perdent leur gonflant ; l'humidité et la chaleur les déforment ; si les barbes collent après l'humidité, on les regonfle à la vapeur ; les plumes teintes ne sont pas toujours grand teint. Noir et cannelle rangés en brun, argent en blanc. Les nuances précises de décoloration sont déduites.",
+      "sources": [
+        "https://www.houseofadorn.com/blogs/diy-projects/feathers-rejuvenated",
+        "https://us.yves-salomon.com/pages/feather-guide",
+        "https://americanduchess.com/blogs/historical-footwear/v277-working-with-ostrich-feathers",
+        "https://www.serpentfeathers.com/kas-feather-care-tips-tricks/"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "chaines-strass-perles",
+    "nom": "Chaînes de strass et perles décora",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [],
+      "toute_annee": true,
+      "note": "accessoire vendu toute l'année",
+      "sources": [
+        "https://www.mh-chine.com/products/plastic-rhinestone-chain-white-ab-glass-6706-0671"
+      ]
+    },
+    "tenue_vase_jours": null,
+    "fanaison": {
+      "modes": [
+        "aucune-fanaison-visible"
+      ],
+      "ordre": "aucun changement visible en 30 jours au sec ; si l'eau du vase les touche, la feuille d'argent au dos des strass s'abîme et les pierres se ternissent ou noircissent, et le revêtement nacré des perles d'imitation s'écaille près des trous",
+      "tete": null,
+      "petales": null,
+      "feuilles": null,
+      "tige": "chaîne ou fil perlé qui garde sa forme",
+      "couleurs": {
+        "blanc": {
+          "declin": "cristal et argent brillants",
+          "fane": "strass ternis, gris laiteux, quelques pierres noircies ; monture argentée un peu jaunie"
+        },
+        "creme": {
+          "declin": "perles ivoire inchangées",
+          "fane": "perles ivoire dont la nacre s'écaille, laissant voir la bille blanche ou le verre"
+        },
+        "bicolore": {
+          "declin": "reflets irisés aurore boréale intacts",
+          "fane": "irisé moins vif"
+        },
+        "vert": {
+          "declin": "guirlande vert et blanc inchangée",
+          "fane": "vert un peu terne"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Matière inerte : tenue en vase sans objet (null). Les strass ont souvent une feuille réfléchissante au dos : l'humidité piégée derrière la pierre dégrade cette feuille et la pierre se ternit ou devient noire. Les perles d'imitation sont des billes de verre, plastique ou nacre recouvertes d'une fine laque nacrée qui s'écaille, surtout près des trous et au contact de l'eau. Les montures sont annoncées comme électroplaquées résistantes au ternissement. Cristal et argent rangés en blanc, irisé en bicolore.",
+      "sources": [
+        "https://www.firemountaingems.com/learn/categories/ask-the-experts/B247-ask-the-experts.html",
+        "https://planetrhinestone.com/blogs/news/how-to-clean-rhinestone-jewelry",
+        "https://skyjems.ca/pages/encyclopedia-coated-pearls",
+        "https://hongkong.gia.edu/gems-gemology/summer-2014-labnotes-shell-pearl",
+        "https://www.mh-chine.com/products/plastic-rhinestone-chain-white-ab-glass-6706-0671"
+      ]
+    },
+    "confiance": "moyenne"
+  }
+]

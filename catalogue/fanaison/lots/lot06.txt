@@ -1,0 +1,27 @@
+anthurium-andraeanum;Anthurium;Exotiques;custom/xAnth;focale
+anthurium-obake;Anthurium obake;Exotiques;spathe;focale
+anthurium-tulipe;Anthurium tulipe;Exotiques;spathe;secondaire
+heliconia-rostrata;Héliconia pendant;Exotiques;exotic;focale
+heliconia-wagneriana;Héliconia wagneriana;Exotiques;exotic;focale
+heliconia-bihai;Héliconia bihai;Exotiques;exotic;focale
+heliconia-psittacorum;Héliconia perroquet;Exotiques;exotic;secondaire
+heliconia-caribaea;Héliconia caribaea;Exotiques;exotic;focale
+heliconia-stricta;Héliconia stricta;Exotiques;exotic;secondaire
+heliconia-chartacea;Héliconia chartacea « Sexy Pink »;Exotiques;exotic;focale
+heliconia-orthotricha;Héliconia orthotricha;Exotiques;exotic;focale
+heliconia-velues;Héliconias pendants velus;Exotiques;exotic;focale
+calathea-crotalifera;Calathea crotalifera;Exotiques;exotic;secondaire
+musa-fleur;Fleur de bananier ornemental;Exotiques;exotic;focale
+strelitzia-reginae;Oiseau de paradis;Exotiques;custom/strelitzia;focale
+strelitzia-nicolai;Strelitzia blanc géant;Exotiques;exotic;focale
+alpinia-purpurata;Alpinia;Exotiques;exotic;focale
+etlingera-elatior;Rose de porcelaine;Exotiques;exotic;focale
+zingiber;Gingembre ruche et gingembre shamp;Exotiques;exotic;focale
+costus;Costus;Exotiques;exotic;secondaire
+tapeinochilos-ananassae;Gingembre de cire;Exotiques;exotic;focale
+curcuma;Curcuma;Exotiques;exotic;secondaire
+ananas-ornemental;Ananas ornemental sur tige;Exotiques;exotic;texture
+bromeliacees;Broméliacées à fleurs;Exotiques;exotic;focale
+protea-cynaroides;Protée royale;Exotiques;protea;focale
+protea-neriifolia;Protée à feuilles de laurier-rose;Exotiques;protea;focale
+protea-repens;Protée sucrière;Exotiques;protea;secondaire

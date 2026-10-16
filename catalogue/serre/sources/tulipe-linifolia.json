@@ -1,0 +1,353 @@
+{
+ "sid": "tulipe-linifolia",
+ "schema": "STANDARD-SOURCES.md section 5",
+ "legende_entrees": "« cultivars » = entrées de la sorte : cultivars, formes botaniques ou espèce type ; « sans_photo » = nom prouvé (N1 ou N3) mais aucune photo nommée retenue ; « ecartes » = rejetés avec la raison",
+ "rattachement_catalogue": "aucun coloris existant du catalogue ne correspond à cette sorte (catalogue.json, inventaire_fleurs.csv et skus.csv relus le 2026-10-08 : aucune tulipe botanique) ; coloris_catalogue est donc vide",
+ "genre": "Tulipa",
+ "recensement": {
+  "date": "2026-10-08",
+  "agent": "fleur-recensement",
+  "portee": "tulipes botaniques : groupes Kaufmanniana (12), Fosteriana (13), Greigii (14) du KAVB et espèces / hybrides de la division 15 (« Overige Groep » = Miscellaneous) ; tout ce qui est documenté par une photo nommée fiable",
+  "limites": [
+   "N1 : la base de cultivars du KAVB (login.kavb.nl/siergewassen) n'est interrogeable que par un formulaire de recherche, non utilisé (règle « aucun formulaire »). Le N1 des cultivars repose donc sur les listes annuelles « Registraties » du KAVB (PDF, 2004-07 à 2013, huit documents) et sur les mentions « Mutant van » qui prouvent l'existence d'un parent. Les cultivars plus anciens ou postérieurs à 2013 n'ont pas de N1 lu.",
+   "N1 espèces : POWO (Kew) renvoie une erreur 403 (protection Cloudflare, non contournée). Les noms d'espèces sont recoupés avec le GBIF Backbone (API), iNaturalist et les textes de la Pacific Bulb Society ; à revérifier sur POWO.",
+   "N2 : Floricode (codes et photos des variétés vendues) est sur abonnement et n'a pas été consulté ; aucune fiche d'obtenteur à photo exploitable n'a été trouvée pour ces tulipes. Aucun cultivar n'est donc au niveau A.",
+   "Nouveautés 2014-2026 : les listes d'enregistrement KAVB de ces années ne sont pas publiées en PDF libre ; la fenêtre des cinq dernières années n'est pas couverte.",
+   "Les photos ne sont jamais stockées dans le dépôt : seules les adresses, auteurs, licences et niveaux sont écrits. Les vignettes regardées sont dans le cache de l'atelier (refcache/tulipe-botanique/).",
+   "Photos PBS : droits réservés aux photographes (consultation et mesure seulement, jamais publiées). Photos iNaturalist : licences CC BY-NC en majorité, mêmes usages."
+  ],
+  "statuts": "en production = niveau A ou B (à mesurer par fleur-coloris puis sondage de 10 % par l'orchestrateur) ; à confirmer = niveau C ou D ; écarté = avec la raison"
+ },
+ "nom": "Tulipe à feuilles de lin (groupe Batalinii)",
+ "latin": "Tulipa linifolia Regel (syn. T. batalinii) ; cultivars 'Bright Gem', 'Bronze Charm', 'Red Hunter'",
+ "priorite": "P2",
+ "pourquoi_cette_priorite": "coupe écarlate à base noire, feuilles très ondulées à bord rouge : forme à part ; groupe Batalinii très vendu en jaune pâle",
+ "groupe_registre": {
+  "autorite": "KAVB",
+  "division": 15,
+  "nom_registre": "Overige Groep (Miscellaneous)",
+  "preuve": "RHS « Tulipa linifolia (Batalinii Group) ... (15) »"
+ },
+ "taxonomie": {
+  "espece_mere": "Tulipa linifolia Regel, accepté ; T. batalinii Regel synonyme (GBIF usageKey 5299508/5299509 ; PBS cite POWO)",
+  "nom_accepte_source": "GBIF ; POWO non consulté"
+ },
+ "melange": "Espèce rouge + groupe Batalinii jaune ; 'Red Gem', 'Red Hunter' (rouges), 'Bright Gem', 'Bronze Charm', 'Yellow Jewel' (jaunes).",
+ "forme": {
+  "resume": "coupe évasée rouge vif (ou jaune pâle pour Batalinii) à base noire, jusqu'à 8 cm, s'ouvrant à plat au soleil",
+  "details": [
+   "RHS (Batalinii) : « solitary pale yellow bowl-shaped flowers up to 8 cm » ; PBS : « gorgeous brilliant red flowers that open wide to catch the sun »"
+  ],
+  "sources": [
+   "RHS ; PBS TulipaSpeciesThree et One"
+  ]
+ },
+ "feuilles": {
+  "resume": "étroites, linéaires, gris-vert, très ondulées, à bord rouge, en rosette couchée",
+  "details": [
+   "PBS : « strongly undulate leaves » ; Commons/PBS : rosette étalée"
+  ]
+ },
+ "hauteur_cm": "10 à 30 (Batalinii Group 20 ; Bright Gem 30 selon RHS)",
+ "floraison": "début à mi-printemps",
+ "distinction": {
+  "vs_vvedenskyi": "plus petite, feuilles plus étroites"
+ },
+ "coloris_catalogue": [],
+ "cultivars": [
+  {
+   "id": "linifolia",
+   "nom_affiche": "Tulipe à feuilles de lin (T. linifolia)",
+   "nom_enregistre": "Tulipa linifolia Regel",
+   "synonymes": [],
+   "groupe": "Espèce (KAVB Div. 15, « Overige Groep » / Miscellaneous)",
+   "obtenteur": null,
+   "annee": null,
+   "numeros": {},
+   "couleur_registre": "rouge vif à base noire",
+   "motif": "coupe évasée, bord des feuilles rouge et très ondulé (PBS : « strongly undulate leaves »)",
+   "sources": [
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaSpeciesThree",
+     "consulte": "2026-10-08",
+     "note": "Pacific Bulb Society : rouge vif ; feuilles étroites ; AGM ; inclut T. batalinii (jaune) selon Brian Mathew et POWO (cité par PBS)"
+    },
+    {
+     "role": "taxonomie",
+     "niveau": "N4",
+     "url": "https://api.gbif.org/v1/species/match?kingdom=Plantae&name=Tulipa%20linifolia",
+     "consulte": "2026-10-08",
+     "note": "accepté : Tulipa linifolia Regel (usageKey 5299508) ; T. batalinii en synonyme"
+    }
+   ],
+   "photos": [
+    {
+     "url": "https://pacificbulbsociety.org/pbswiki/files/Tulipa/Tulipa_linifolia_and_chrysantha.jpg",
+     "page": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaSpeciesThree",
+     "niveau": "N3",
+     "auteur": "Mark McDonough",
+     "licence": "© photographe ; Pacific Bulb Society (reproduction non libre : consultation et mesure seulement)",
+     "legende": "Tulipa linifolia, Mark McDonough",
+     "consulte": "2026-10-08",
+     "vue": "groupe, avec chrysantha",
+     "eclairage": null,
+     "balance_blancs": null
+    },
+    {
+     "url": "https://pacificbulbsociety.org/pbswiki/files/Tulipa/Tulipa_linifolia_MMW.jpg",
+     "page": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaSpeciesThree",
+     "niveau": "N3",
+     "auteur": "Max Withers",
+     "licence": "© photographe ; Pacific Bulb Society (reproduction non libre : consultation et mesure seulement)",
+     "legende": "Tulipa linifolia, Max Withers",
+     "consulte": "2026-10-08",
+     "vue": "dessus",
+     "eclairage": null,
+     "balance_blancs": null
+    },
+    {
+     "url": "https://pacificbulbsociety.org/pbswiki/files/Tulipa/Tulipa_linifolia_2008_msi.jpg",
+     "page": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaSpeciesThree",
+     "niveau": "N3",
+     "auteur": "Mary Sue Ittner",
+     "licence": "© photographe ; Pacific Bulb Society (reproduction non libre : consultation et mesure seulement)",
+     "legende": "Tulipa linifolia, Mary Sue Ittner",
+     "consulte": "2026-10-08",
+     "vue": "groupe",
+     "eclairage": null,
+     "balance_blancs": null
+    },
+    {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/2/2e/2021-04-13_12_49_41_Flax-leaved_Tulip_and_Siberian_Squill_blooming_along_Tranquility_Court_in_the_Franklin_Farm_section_of_Oak_Hill%2C_Fairfax_County%2C_Virginia.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:2021-04-13_12_49_41_Flax-leaved_Tulip_and_Siberian_Squill_blooming_along_Tranquility_Court_in_the_Franklin_Farm_section_of_Oak_Hill%2C_Fairfax_County%2C_Virginia.jpg",
+     "niveau": "N4",
+     "auteur": "Famartin",
+     "licence": "CC BY-SA 4.0",
+     "legende": "File:2021-04-13 12 49 41 Flax-leaved Tulip and Siberian Squill blooming along Tranquility Court in the Franklin Farm section of Oak Hill, Fairfax County, Virginia.jpg",
+     "consulte": "2026-10-08",
+     "vue": "groupe en fleurs (jardin)",
+     "date_prise": "2021-04-13 12:49:41",
+     "eclairage": null,
+     "balance_blancs": null,
+     "miniature": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2e/2021-04-13_12_49_41_Flax-leaved_Tulip_and_Siberian_Squill_blooming_along_Tranquility_Court_in_the_Franklin_Farm_section_of_Oak_Hill%2C_Fairfax_County%2C_Virginia.jpg/960px-thumbnail.jpg"
+    }
+   ],
+   "mesures": {},
+   "niveau_preuve": "B",
+   "existence_n1_n2": false,
+   "statut": "en production",
+   "doutes": [
+    "pas de fiche RHS lue pour le type ; iNaturalist ne compte qu'une observation de qualité recherche (jardin) : pas de photo sauvage"
+   ],
+   "coloris_catalogue": null,
+   "familles_de_sources": [
+    "commons.wikimedia.org",
+    "pacificbulbsociety.org"
+   ]
+  },
+  {
+   "id": "batalinii-bronze-charm",
+   "nom_affiche": "Bronze Charm (groupe Batalinii)",
+   "nom_enregistre": "Bronze Charm",
+   "synonymes": [],
+   "groupe": "Espèce (KAVB Div. 15, « Overige Groep » / Miscellaneous)",
+   "obtenteur": null,
+   "annee": null,
+   "numeros": {},
+   "couleur_registre": "jaune doux lavé de bronze orangé",
+   "motif": null,
+   "sources": [
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://www.rhs.org.uk/plants/54117/tulipa-linifolia-batalinii-group-bronze-charm-15/details",
+     "consulte": "2026-10-08",
+     "note": "RHS (société savante) : fiche (15)"
+    },
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaSpeciesOne",
+     "consulte": "2026-10-08",
+     "note": "Pacific Bulb Society : « soft yellow flowers slightly kissed with bronze-orange » ; photos Mark McDonough"
+    }
+   ],
+   "photos": [
+    {
+     "url": "https://pacificbulbsociety.org/pbswiki/files/Tulipa/Tulipa_batalinii_Bronze_Charm_1.jpg",
+     "page": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaSpeciesOne",
+     "niveau": "N3",
+     "auteur": "Mark McDonough",
+     "licence": "© photographe ; Pacific Bulb Society (reproduction non libre : consultation et mesure seulement)",
+     "legende": "Tulipa batalinii 'Bronze Charm', Mark McDonough",
+     "consulte": "2026-10-08",
+     "vue": "groupe",
+     "eclairage": null,
+     "balance_blancs": null
+    },
+    {
+     "url": "https://pacificbulbsociety.org/pbswiki/files/Tulipa/Tulipa_batalinii_Bronze_Charm_2.jpg",
+     "page": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaSpeciesOne",
+     "niveau": "N3",
+     "auteur": "Mark McDonough",
+     "licence": "© photographe ; Pacific Bulb Society (reproduction non libre : consultation et mesure seulement)",
+     "legende": "Tulipa batalinii 'Bronze Charm', Mark McDonough",
+     "consulte": "2026-10-08",
+     "vue": "groupe",
+     "eclairage": null,
+     "balance_blancs": null
+    }
+   ],
+   "mesures": {},
+   "niveau_preuve": "C",
+   "existence_n1_n2": false,
+   "statut": "à confirmer",
+   "doutes": [
+    "PBS : un seul auteur"
+   ],
+   "coloris_catalogue": null,
+   "familles_de_sources": [
+    "pacificbulbsociety.org",
+    "www.rhs.org.uk"
+   ]
+  },
+  {
+   "id": "batalinii-yellow-jewel",
+   "nom_affiche": "Yellow Jewel (groupe Batalinii)",
+   "nom_enregistre": "Yellow Jewel",
+   "synonymes": [],
+   "groupe": "Espèce (KAVB Div. 15, « Overige Groep » / Miscellaneous)",
+   "obtenteur": null,
+   "annee": null,
+   "numeros": {},
+   "couleur_registre": null,
+   "motif": null,
+   "sources": [
+    {
+     "role": "nom",
+     "niveau": "N4",
+     "url": "https://commons.wikimedia.org/wiki/Category:Tulipa_%27Yellow_Jewel%27",
+     "consulte": "2026-10-08",
+     "note": "catégorie Commons (5 fichiers du même auteur)"
+    }
+   ],
+   "photos": [
+    {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/f/ff/Tulipa_batalinii_%27Yellow_Jewel%27_1.JPG",
+     "page": "https://commons.wikimedia.org/wiki/File:Tulipa_batalinii_%27Yellow_Jewel%27_1.JPG",
+     "niveau": "N4",
+     "auteur": "Ghislain118   https://www.fleurs-des-montagnes.net",
+     "licence": "CC BY-SA 3.0",
+     "legende": "File:Tulipa batalinii 'Yellow Jewel' 1.JPG",
+     "consulte": "2026-10-08",
+     "vue": "dessus",
+     "date_prise": "2009-04-06 09:53:28",
+     "eclairage": null,
+     "balance_blancs": null,
+     "miniature": "https://upload.wikimedia.org/wikipedia/commons/f/ff/Tulipa_batalinii_%27Yellow_Jewel%27_1.JPG"
+    }
+   ],
+   "mesures": {},
+   "niveau_preuve": "C",
+   "existence_n1_n2": false,
+   "statut": "à confirmer",
+   "doutes": [
+    "aucune source N1-N3 trouvée pour ce nom ; photo Commons non contrôlée visuellement"
+   ],
+   "coloris_catalogue": null,
+   "familles_de_sources": [
+    "commons.wikimedia.org"
+   ]
+  }
+ ],
+ "sans_photo": [
+  {
+   "id": "bright-gem",
+   "nom_affiche": "Bright Gem (groupe Batalinii)",
+   "nom_enregistre": "Bright Gem",
+   "groupe": "Div. 15 (Batalinii)",
+   "niveau_preuve": "D",
+   "statut": "à confirmer",
+   "source": {
+    "niveau": "N3",
+    "url": "https://www.rhs.org.uk/plants/79455/tulipa-linifolia-batalinii-group-bright-gem-15/details",
+    "document": "RHS (société savante) : fiche (15) AGM ; syn. Tulipa batalinii 'Bright Gem', 'Yellow Gem' ; 30 cm, fleurs jaune soufre lavées d'orange",
+    "consulte": "2026-10-08"
+   },
+   "raison": "aucune photo nommée : la photo PBS 'batalinii' ne porte pas le nom du cultivar",
+   "mesures": {}
+  },
+  {
+   "id": "red-hunter",
+   "nom_affiche": "Red Hunter",
+   "nom_enregistre": "Red Hunter",
+   "groupe": "Div. 15 (Batalinii)",
+   "niveau_preuve": "D",
+   "statut": "à confirmer",
+   "source": {
+    "niveau": "N3",
+    "url": "https://rhs.org.uk/plants/177302/tulipa-linifolia-(batalinii-group)-red-hunter-(15)-tulip-red-hunter-wisley-tulip/details",
+    "document": "RHS fiche (15)",
+    "consulte": "2026-10-08"
+   },
+   "raison": "aucune photo relevée",
+   "mesures": {}
+  },
+  {
+   "id": "red-gem",
+   "nom_affiche": "Red Gem",
+   "nom_enregistre": "Red Gem",
+   "groupe": "Div. 15 (Batalinii)",
+   "niveau_preuve": "D",
+   "statut": "à confirmer",
+   "source": {
+    "niveau": "N3",
+    "url": "https://www.rhs.org.uk/plants/55496/tulipa-linifolia-(batalinii-group)-red-gem-(15)/details",
+    "document": "RHS fiche (15)",
+    "consulte": "2026-10-08"
+   },
+   "raison": "aucune photo relevée",
+   "mesures": {}
+  }
+ ],
+ "ecartes": [],
+ "couverture": {
+  "cultivars_retenus_avec_photo": 3,
+  "niveau_A": 0,
+  "niveau_B": 1,
+  "niveau_C": 2,
+  "niveau_D": 0,
+  "prouves_A_ou_B": 1,
+  "sans_photo": 3,
+  "ecartes": 0,
+  "au_catalogue": 0,
+  "existence_N1_lue": 0,
+  "remarque": "« enregistrés » du KAVB : total inconnu (base non interrogée). Les nombres ci-dessus portent sur ce qui a été recensé dans les sources consultées"
+ },
+ "vues_deja_photographiees": {
+  "face (dessus, intérieur)": 2,
+  "trois-quarts": 0,
+  "profil": 0,
+  "dos (revers, extérieur)": 0,
+  "bouton": 0,
+  "fané ou déclin": 0,
+  "feuilles": 0,
+  "tige, pied": 0,
+  "plante entière ou massif": 5
+ },
+ "vues_manquantes": [
+  "trois-quarts",
+  "profil",
+  "dos (revers, extérieur)",
+  "bouton",
+  "fané ou déclin",
+  "feuilles",
+  "tige, pied",
+  "dessous et attache des feuilles",
+  "épaisseur et surface de la tige",
+  "stades intermédiaires (goblet, coupe, déclin)"
+ ],
+ "vues_note": "comptage des photos retenues par mot-clé de la rubrique « vue » ; les photos de forme par angle et par stade sont à compléter par fleur-refs (STANDARD-SOURCES, exhaustivité)"
+}

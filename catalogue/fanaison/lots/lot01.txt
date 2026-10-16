@@ -1,0 +1,41 @@
+rose-standard;Rose standard;Roses;double;focale
+rose-intermediaire-kenya;Rose intermédiaire et sweetheart;Roses;double;focale
+rose-aspect-jardin;Rose d'aspect jardin;Roses;custom/xRose;focale
+rose-de-jardin;Rose de jardin;Roses;custom/xRose;focale
+rose-anglaise-david-austin;Rose anglaise David Austin;Roses;custom/xRose;focale
+rose-japonaise;Rose japonaise;Roses;double;focale
+rose-branchue;Rose branchue;Roses;spray;secondaire
+rose-ancienne-parfumee;Rose ancienne et rose parfumée;Roses;double;focale
+rose-teintee;Rose teintée et rose fantaisie;Roses;double;focale
+rose-stabilisee;Rose stabilisée;Roses;double;focale
+rose-eglantine;Rose simple;Roses;radial;secondaire
+phalaenopsis;Phalaenopsis;Orchidées;custom/xPhalCluster;focale
+cymbidium-grandes-fleurs;Cymbidium à grandes fleurs;Orchidées;custom/xCymbCluster;focale
+cymbidium-mini;Cymbidium mini;Orchidées;orchid;secondaire
+dendrobium-coupe;Dendrobium coupé;Orchidées;orchid;secondaire
+dendrobium-nobile;Dendrobium nobile et dendrobiums e;Orchidées;orchid;secondaire
+vanda;Vanda;Orchidées;orchid;focale
+ascocenda;Ascocenda et Ascocentrum;Orchidées;orchid;secondaire
+mokara;Mokara;Orchidées;orchid;secondaire
+aranda;Aranda;Orchidées;orchid;secondaire
+arachnis-aranthera;Arachnis;Orchidées;orchid;texture
+oncidium;Oncidium;Orchidées;custom/oncidium;remplissage
+cambria;Cambria et hybrides intergénérique;Orchidées;orchid;secondaire
+odontoglossum;Odontoglossum;Orchidées;orchid;secondaire
+brassia;Brassia;Orchidées;orchid;texture
+miltoniopsis;Miltoniopsis et Miltonia;Orchidées;orchid;focale
+zygopetalum;Zygopetalum;Orchidées;orchid;focale
+paphiopedilum;Paphiopedilum;Orchidées;custom/paphio;focale
+phragmipedium;Phragmipedium;Orchidées;orchid;focale
+cattleya;Cattleya et hybrides;Orchidées;custom/cattleya;focale
+epidendrum;Epidendrum;Orchidées;globe;remplissage
+masdevallia;Masdevallia;Orchidées;orchid;texture
+disa;Disa;Orchidées;orchid;focale
+coelogyne;Coelogyne;Orchidées;orchid;secondaire
+lycaste;Lycaste;Orchidées;orchid;focale
+ludisia;Ludisia;Orchidées;foliage;feuillage
+cypripedium;Cypripedium;Orchidées;orchid;focale
+rhynchostylis;Rhynchostylis;Orchidées;spike;secondaire
+fil-aluminium-decoratif;Fil d'aluminium décoratif;Accessoires & matières;accessory;accent
+plume-autruche-teinte;Plume d'autruche teinte;Accessoires & matières;accessory;accent
+chaines-strass-perles;Chaînes de strass et perles décora;Accessoires & matières;accessory;accent

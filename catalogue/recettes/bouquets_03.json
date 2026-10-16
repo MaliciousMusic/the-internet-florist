@@ -1,0 +1,1999 @@
+[
+  {
+    "ref": "75f80065fc23982242ffd357b0b9f6fb.jpg",
+    "n": 43,
+    "nom": "Rivière de porcelaine",
+    "occ": [
+      "merci",
+      "juste"
+    ],
+    "tpl": "libre",
+    "asp": 0.84,
+    "vase": "cobalt",
+    "vcol": "#9fb4c8",
+    "bg": "#b8bcb5",
+    "plinth": "noir",
+    "side": -1,
+    "els": [
+      {
+        "id": "pivoine-arbustive",
+        "col": "#f7f3ef",
+        "n": 3,
+        "role": "focal",
+        "pos": "core",
+        "h": 0.4,
+        "ang": "face"
+      },
+      {
+        "id": "delphinium",
+        "col": "#8fa8d8",
+        "n": 3,
+        "role": "second",
+        "pos": "core",
+        "h": 0.45,
+        "ang": "mixed"
+      },
+      {
+        "id": "phalaenopsis",
+        "col": "#dfa6c6",
+        "n": 1,
+        "role": "line",
+        "pos": "top",
+        "h": 0.95,
+        "ang": "tq"
+      },
+      {
+        "id": "dahlia-decoratif",
+        "col": "#de8570",
+        "n": 1,
+        "role": "accent",
+        "pos": "core",
+        "h": 0.35,
+        "ang": "face"
+      },
+      {
+        "id": "bleuet",
+        "col": "#5a4fae",
+        "n": 7,
+        "role": "filler",
+        "pos": "around",
+        "h": 0.45,
+        "ang": "face"
+      },
+      {
+        "id": "pied-alouette-annuel",
+        "col": "#9387c9",
+        "n": 2,
+        "role": "line",
+        "pos": "right",
+        "h": 0.9,
+        "ang": "side"
+      },
+      {
+        "id": "delphinium",
+        "col": "#eef1ea",
+        "n": 2,
+        "role": "filler",
+        "pos": "top",
+        "h": 0.7,
+        "ang": "mixed"
+      },
+      {
+        "id": "scabieuse",
+        "col": "#ece4e2",
+        "n": 2,
+        "role": "drape",
+        "pos": "around",
+        "h": 0.0,
+        "ang": "side"
+      },
+      {
+        "id": "phalaenopsis",
+        "col": "#d895c2",
+        "n": 1,
+        "role": "drape",
+        "pos": "left",
+        "h": 0.0,
+        "ang": "tq"
+      },
+      {
+        "id": "scabieuse",
+        "col": "#e8c9d3",
+        "n": 3,
+        "role": "accent",
+        "pos": "right",
+        "h": 0.35,
+        "ang": "face"
+      },
+      {
+        "id": "pivoine-feuillage",
+        "col": "#4d6b26",
+        "n": 2,
+        "role": "foliage",
+        "pos": "right",
+        "h": 0.2,
+        "ang": "side"
+      }
+    ],
+    "notes": "Trois pivoines arbustives blanches en zigzag traversées par une rivière de delphinium bleu ciel, un unique dahlia corail au cœur, orchidées roses en écho sommet/retombée et tiges arquées de scabieuse en parenthèses jusque sous le col."
+  },
+  {
+    "ref": "77568bb9ad2429db5d805c4f23225c3f.jpg",
+    "n": 44,
+    "nom": "Églantine gourmande",
+    "occ": [
+      "anniv",
+      "juste"
+    ],
+    "tpl": "libre",
+    "asp": 0.78,
+    "vase": "jarre",
+    "vcol": "#a16f69",
+    "bg": "#f0ebe5",
+    "plinth": "beton",
+    "side": 1,
+    "els": [
+      {
+        "id": "rose-eglantine",
+        "col": "#f9bcdb",
+        "n": 12,
+        "role": "focal",
+        "pos": "core",
+        "h": 0.35,
+        "ang": "mixed"
+      },
+      {
+        "id": "rose-eglantine",
+        "col": "#ef4a8b",
+        "n": 4,
+        "role": "second",
+        "pos": "core",
+        "h": 0.25,
+        "ang": "mixed"
+      },
+      {
+        "id": "fraisier-des-bois",
+        "col": "#e0302b",
+        "n": 3,
+        "role": "accent",
+        "pos": "core",
+        "h": 0.3,
+        "ang": "mixed"
+      },
+      {
+        "id": "fraisier-des-bois",
+        "col": "#d8332c",
+        "n": 4,
+        "role": "line",
+        "pos": "left",
+        "h": 1.0,
+        "ang": "side"
+      },
+      {
+        "id": "fraisier-des-bois",
+        "col": "#cf2c26",
+        "n": 4,
+        "role": "drape",
+        "pos": "right",
+        "h": 0.0,
+        "ang": "side"
+      },
+      {
+        "id": "fraisier-des-bois",
+        "col": "#b5b676",
+        "n": 3,
+        "role": "line",
+        "pos": "around",
+        "h": 0.55,
+        "ang": "side"
+      }
+    ],
+    "notes": "Dôme serré de roses simples rose bonbon à cœur blanc posé sur un pot minuscule, d'où jaillissent en fontaine des tiges de fraisier des bois : montée vers le haut-gauche, arcs latéraux et fruits rouges qui retombent sous la lèvre."
+  },
+  {
+    "ref": "77bdd2bb80895cc3c08620a672d44290.jpg",
+    "n": 45,
+    "nom": "Velours de minuit",
+    "occ": [
+      "amour",
+      "bravo"
+    ],
+    "tpl": "cascade",
+    "asp": 0.6,
+    "vase": "noue",
+    "vcol": "#4f6b2c",
+    "bg": "#c0c1bc",
+    "plinth": "none",
+    "side": -1,
+    "els": [
+      {
+        "id": "anthurium-andraeanum",
+        "col": "#7d2230",
+        "n": 1,
+        "role": "focal",
+        "pos": "right",
+        "h": 0.7,
+        "ang": "face"
+      },
+      {
+        "id": "dahlia-balle",
+        "col": "#c25a6e",
+        "n": 2,
+        "role": "focal",
+        "pos": "core",
+        "h": 0.35,
+        "ang": "face"
+      },
+      {
+        "id": "delphinium",
+        "col": "#5a4fbd",
+        "n": 3,
+        "role": "second",
+        "pos": "left",
+        "h": 0.55,
+        "ang": "mixed"
+      },
+      {
+        "id": "arum-calla",
+        "col": "#5f1a33",
+        "n": 3,
+        "role": "second",
+        "pos": "rim",
+        "h": 0.15,
+        "ang": "side"
+      },
+      {
+        "id": "nerine",
+        "col": "#f3e2ea",
+        "n": 1,
+        "role": "line",
+        "pos": "top",
+        "h": 1.0,
+        "ang": "mixed"
+      },
+      {
+        "id": "leucadendron-rouges",
+        "col": "#3e141c",
+        "n": 2,
+        "role": "line",
+        "pos": "left",
+        "h": 0.75,
+        "ang": "side"
+      },
+      {
+        "id": "oeillet-standard",
+        "col": "#b07f86",
+        "n": 3,
+        "role": "filler",
+        "pos": "core",
+        "h": 0.35,
+        "ang": "face"
+      },
+      {
+        "id": "nerine",
+        "col": "#f1dfe7",
+        "n": 1,
+        "role": "accent",
+        "pos": "core",
+        "h": 0.3,
+        "ang": "mixed"
+      },
+      {
+        "id": "amarante-retombante",
+        "col": "#1a2440",
+        "n": 2,
+        "role": "drape",
+        "pos": "bottom",
+        "h": 0.0,
+        "ang": "side"
+      }
+    ],
+    "notes": "Tête compacte bordeaux et framboise hérissée de trois pointes (leucadendron, nérines, anthurium), éclairée de nérines pâles sur l'axe, d'où tombe à la verticale une longue queue d'amarante bleu nuit."
+  },
+  {
+    "ref": "79a621390f1854cc8c134c325d9c81da.jpg",
+    "n": 46,
+    "nom": "Braises et perles",
+    "occ": [
+      "anniv",
+      "bravo"
+    ],
+    "tpl": "libre",
+    "asp": 0.6,
+    "vase": "noue",
+    "vcol": "#6f8a3a",
+    "bg": "#b3a48e",
+    "plinth": "none",
+    "side": 1,
+    "els": [
+      {
+        "id": "dahlia-balle",
+        "col": "#e2602f",
+        "n": 4,
+        "role": "focal",
+        "pos": "core",
+        "h": 0.5,
+        "ang": "face"
+      },
+      {
+        "id": "leucospermum",
+        "col": "#d8452a",
+        "n": 2,
+        "role": "focal",
+        "pos": "core",
+        "h": 0.12,
+        "ang": "face"
+      },
+      {
+        "id": "tagete-oeillet-d-inde",
+        "col": "#ec9306",
+        "n": 3,
+        "role": "second",
+        "pos": "core",
+        "h": 0.55,
+        "ang": "face"
+      },
+      {
+        "id": "muflier",
+        "col": "#f07850",
+        "n": 4,
+        "role": "line",
+        "pos": "right",
+        "h": 0.85,
+        "ang": "side"
+      },
+      {
+        "id": "amarante-dressee",
+        "col": "#b8c06c",
+        "n": 3,
+        "role": "line",
+        "pos": "left",
+        "h": 1.0,
+        "ang": "side"
+      },
+      {
+        "id": "amarante-retombante",
+        "col": "#b9b874",
+        "n": 1,
+        "role": "drape",
+        "pos": "right",
+        "h": 0.0,
+        "ang": "side"
+      },
+      {
+        "id": "oeillet-standard",
+        "col": "#8e1a52",
+        "n": 3,
+        "role": "accent",
+        "pos": "around",
+        "h": 0.45,
+        "ang": "tq"
+      },
+      {
+        "id": "cosmos",
+        "col": "#b81d6c",
+        "n": 2,
+        "role": "accent",
+        "pos": "left",
+        "h": 0.6,
+        "ang": "face"
+      },
+      {
+        "id": "scabieuse",
+        "col": "#7a1f3c",
+        "n": 1,
+        "role": "accent",
+        "pos": "right",
+        "h": 0.35,
+        "ang": "side"
+      }
+    ],
+    "notes": "Cœur orange saturé de dahlias boule, protéas pincushion et tagètes ponctué de points magenta, entre des cordons d'amarante perlée vert anis dressés en crosse à gauche et pendants à droite."
+  },
+  {
+    "ref": "7c8f0b8fae2308267073ddf4b5714b2a.jpg",
+    "n": 47,
+    "nom": "Immortelles d'orage",
+    "occ": [
+      "anniv",
+      "bravo"
+    ],
+    "tpl": "libre",
+    "asp": 0.6,
+    "vase": "noue",
+    "vcol": "#55663a",
+    "bg": "#7a766c",
+    "plinth": "none",
+    "side": -1,
+    "els": [
+      {
+        "id": "anthurium-obake",
+        "col": "#d2df9c",
+        "n": 3,
+        "role": "focal",
+        "pos": "left",
+        "h": 0.45,
+        "ang": "tq"
+      },
+      {
+        "id": "hortensia-boule",
+        "col": "#8ea59f",
+        "n": 1,
+        "role": "focal",
+        "pos": "right",
+        "h": 0.5,
+        "ang": "face"
+      },
+      {
+        "id": "hortensia-boule",
+        "col": "#4a2a45",
+        "n": 1,
+        "role": "focal",
+        "pos": "right",
+        "h": 0.17,
+        "ang": "face"
+      },
+      {
+        "id": "pennisetum",
+        "col": "#1a1a1f",
+        "n": 3,
+        "role": "line",
+        "pos": "top",
+        "h": 1.0,
+        "ang": "side"
+      },
+      {
+        "id": "nerine",
+        "col": "#e45cae",
+        "n": 4,
+        "role": "second",
+        "pos": "around",
+        "h": 0.45,
+        "ang": "mixed"
+      },
+      {
+        "id": "immortelle-xerochrysum",
+        "col": "#b8195a",
+        "n": 10,
+        "role": "filler",
+        "pos": "around",
+        "h": 0.4,
+        "ang": "face"
+      },
+      {
+        "id": "amarante-retombante",
+        "col": "#94435a",
+        "n": 1,
+        "role": "drape",
+        "pos": "left",
+        "h": 0.0,
+        "ang": "side"
+      },
+      {
+        "id": "amarante-retombante",
+        "col": "#8b8a52",
+        "n": 1,
+        "role": "drape",
+        "pos": "left",
+        "h": 0.05,
+        "ang": "side"
+      },
+      {
+        "id": "crocosmia",
+        "col": "#8c8f45",
+        "n": 4,
+        "role": "line",
+        "pos": "right",
+        "h": 0.45,
+        "ang": "side"
+      },
+      {
+        "id": "eucalyptus-stabilise",
+        "col": "#9a1f2e",
+        "n": 4,
+        "role": "foliage",
+        "pos": "bottom",
+        "h": 0.05,
+        "ang": "mixed"
+      },
+      {
+        "id": "leucadendron-rouges",
+        "col": "#6b1a2a",
+        "n": 2,
+        "role": "foliage",
+        "pos": "core",
+        "h": 0.55,
+        "ang": "side"
+      },
+      {
+        "id": "astrantia",
+        "col": "#e6cdd5",
+        "n": 2,
+        "role": "accent",
+        "pos": "right",
+        "h": 0.25,
+        "ang": "face"
+      },
+      {
+        "id": "liriope-lily-grass",
+        "col": "#2c3326",
+        "n": 2,
+        "role": "line",
+        "pos": "left",
+        "h": 0.3,
+        "ang": "side"
+      }
+    ],
+    "notes": "Tête dense bordeaux et magenta éclairée d'anthuriums vert anis et d'hortensias anciens bleu-vert et aubergine, dominée par trois épis de millet noir et prolongée en bas à gauche par une longue cascade d'amarante rose et olive."
+  },
+  {
+    "ref": "833d2baa5b1c219f40bf30e7e3259260.jpg",
+    "n": 48,
+    "nom": "Dentelle de lys",
+    "occ": [
+      "amour",
+      "anniv"
+    ],
+    "tpl": "triangle",
+    "asp": 0.95,
+    "vase": "balustre",
+    "vcol": "#7a6a35",
+    "bg": "#c9c6bf",
+    "plinth": "bois",
+    "side": 1,
+    "els": [
+      {
+        "id": "lis-oriental-double",
+        "col": "#dc7fa0",
+        "n": 6,
+        "role": "focal",
+        "pos": "rim",
+        "h": 0.12,
+        "ang": "mixed"
+      },
+      {
+        "id": "lis-oriental-double",
+        "col": "#e3a0b5",
+        "n": 4,
+        "role": "second",
+        "pos": "core",
+        "h": 0.45,
+        "ang": "tq"
+      },
+      {
+        "id": "lis-oriental-double",
+        "col": "#d97898",
+        "n": 2,
+        "role": "line",
+        "pos": "top",
+        "h": 0.9,
+        "ang": "tq"
+      },
+      {
+        "id": "lis-oriental-double",
+        "col": "#dda2bb",
+        "n": 2,
+        "role": "drape",
+        "pos": "right",
+        "h": 0.0,
+        "ang": "tq"
+      }
+    ],
+    "notes": "Bouquet monofloral de lys orientaux doubles rose fuchsia à flamme crème en triangle scalène : sommet décalé à gauche avec boutons verts, couronne de grosses fleurs sur la lèvre et aile droite qui retombe sous le col."
+  },
+  {
+    "ref": "844dd7a6db2af5f4c027e8afc3d6cfd3.jpg",
+    "n": 49,
+    "nom": "Fontaine de corail",
+    "occ": [
+      "anniv",
+      "bravo"
+    ],
+    "tpl": "libre",
+    "asp": 0.7,
+    "vase": "noue",
+    "vcol": "#9ca449",
+    "bg": "#4a4545",
+    "plinth": "none",
+    "side": 1,
+    "els": [
+      {
+        "id": "pivoine-herbacee-simple",
+        "col": "#e0103f",
+        "n": 5,
+        "role": "focal",
+        "pos": "core",
+        "h": 0.4,
+        "ang": "face"
+      },
+      {
+        "id": "tournesol",
+        "col": "#b2c447",
+        "n": 4,
+        "role": "focal",
+        "pos": "core",
+        "h": 0.35,
+        "ang": "face"
+      },
+      {
+        "id": "amarante-retombante",
+        "col": "#d4646e",
+        "n": 4,
+        "role": "drape",
+        "pos": "around",
+        "h": 0.0,
+        "ang": "side"
+      },
+      {
+        "id": "eremurus",
+        "col": "#dcb24c",
+        "n": 2,
+        "role": "line",
+        "pos": "right",
+        "h": 1.0,
+        "ang": "side"
+      },
+      {
+        "id": "ail-serpent",
+        "col": "#9cb36a",
+        "n": 3,
+        "role": "line",
+        "pos": "right",
+        "h": 0.9,
+        "ang": "side"
+      },
+      {
+        "id": "nerine",
+        "col": "#f7c0cc",
+        "n": 3,
+        "role": "second",
+        "pos": "left",
+        "h": 0.75,
+        "ang": "mixed"
+      },
+      {
+        "id": "clematite",
+        "col": "#dea0c0",
+        "n": 3,
+        "role": "second",
+        "pos": "right",
+        "h": 0.45,
+        "ang": "face"
+      },
+      {
+        "id": "typha",
+        "col": "#f5068f",
+        "n": 2,
+        "role": "accent",
+        "pos": "right",
+        "h": 0.55,
+        "ang": "side"
+      },
+      {
+        "id": "ruban-soie-mousseline",
+        "col": "#efe0f5",
+        "n": 1,
+        "role": "line",
+        "pos": "right",
+        "h": 0.75,
+        "ang": "side"
+      },
+      {
+        "id": "atriplex-hortensis-arroche",
+        "col": "#7fb24a",
+        "n": 3,
+        "role": "foliage",
+        "pos": "left",
+        "h": 0.65,
+        "ang": "mixed"
+      }
+    ],
+    "notes": "Cœur rond de pivoines rouges autour d'une colonne de tournesols verts, érémurus jaunes, hampes d'ail en spirale et ruban lilas filant vers le haut-droit, et une fontaine de cordons d'amarante corail qui pendent bien sous la main."
+  },
+  {
+    "ref": "85acfa4f389b48751f63f53dfcad219d.jpg",
+    "n": 50,
+    "nom": "Ombres tropicales",
+    "occ": [
+      "bravo",
+      "anniv"
+    ],
+    "tpl": "libre",
+    "asp": 0.89,
+    "vase": "noue",
+    "vcol": "#1c1c1f",
+    "bg": "#1c1c1e",
+    "plinth": "none",
+    "side": -1,
+    "els": [
+      {
+        "id": "anthurium-andraeanum",
+        "col": "#e7b2a0",
+        "n": 1,
+        "role": "focal",
+        "pos": "core",
+        "h": 0.6,
+        "ang": "face"
+      },
+      {
+        "id": "anthurium-andraeanum",
+        "col": "#952c3b",
+        "n": 1,
+        "role": "focal",
+        "pos": "core",
+        "h": 0.75,
+        "ang": "face"
+      },
+      {
+        "id": "anthurium-andraeanum",
+        "col": "#b48b66",
+        "n": 1,
+        "role": "focal",
+        "pos": "core",
+        "h": 0.5,
+        "ang": "tq"
+      },
+      {
+        "id": "anthurium-andraeanum",
+        "col": "#97b535",
+        "n": 1,
+        "role": "focal",
+        "pos": "core",
+        "h": 0.3,
+        "ang": "face"
+      },
+      {
+        "id": "leucospermum",
+        "col": "#e06a45",
+        "n": 1,
+        "role": "focal",
+        "pos": "left",
+        "h": 0.2,
+        "ang": "face"
+      },
+      {
+        "id": "gloriosa",
+        "col": "#e8875c",
+        "n": 3,
+        "role": "second",
+        "pos": "core",
+        "h": 0.5,
+        "ang": "mixed"
+      },
+      {
+        "id": "phalaenopsis",
+        "col": "#bb93e6",
+        "n": 2,
+        "role": "drape",
+        "pos": "left",
+        "h": 0.1,
+        "ang": "mixed"
+      },
+      {
+        "id": "phalaenopsis",
+        "col": "#d9cdbf",
+        "n": 1,
+        "role": "second",
+        "pos": "left",
+        "h": 0.45,
+        "ang": "mixed"
+      },
+      {
+        "id": "musa-fleur",
+        "col": "#93587a",
+        "n": 1,
+        "role": "line",
+        "pos": "left",
+        "h": 1.0,
+        "ang": "side"
+      },
+      {
+        "id": "allium-petit",
+        "col": "#7d8f3a",
+        "n": 2,
+        "role": "line",
+        "pos": "top",
+        "h": 1.0,
+        "ang": "side"
+      },
+      {
+        "id": "gloriosa",
+        "col": "#aab857",
+        "n": 3,
+        "role": "accent",
+        "pos": "right",
+        "h": 0.75,
+        "ang": "mixed"
+      },
+      {
+        "id": "gloriosa",
+        "col": "#e88cb0",
+        "n": 2,
+        "role": "accent",
+        "pos": "right",
+        "h": 0.15,
+        "ang": "face"
+      },
+      {
+        "id": "tulipe-perroquet",
+        "col": "#3a2a45",
+        "n": 5,
+        "role": "filler",
+        "pos": "right",
+        "h": 0.4,
+        "ang": "mixed"
+      },
+      {
+        "id": "waxflower",
+        "col": "#4a2440",
+        "n": 1,
+        "role": "filler",
+        "pos": "right",
+        "h": 0.35,
+        "ang": "mixed"
+      },
+      {
+        "id": "eryngium",
+        "col": "#6f7f9a",
+        "n": 1,
+        "role": "filler",
+        "pos": "core",
+        "h": 0.55,
+        "ang": "face"
+      }
+    ],
+    "notes": "Colonne de quatre anthuriums de couleurs toutes différentes en clair-obscur sur fond noir, cascade d'orchidées lilas et bananier rose à gauche, constellation de gloriosas et d'alliums sur tiges serpentines qui s'ouvre vers le haut-droit."
+  },
+  {
+    "ref": "88f311e20484fe400f7b6c5b50af3cf9.jpg",
+    "n": 51,
+    "nom": "Orchidées en apesanteur",
+    "occ": [
+      "bravo",
+      "merci"
+    ],
+    "tpl": "eventail",
+    "asp": 0.74,
+    "vase": "coupe-blanche",
+    "vcol": "#bdb5b8",
+    "bg": "#c2bcbb",
+    "plinth": "blanc",
+    "side": 1,
+    "els": [
+      {
+        "id": "cymbidium-grandes-fleurs",
+        "col": "#b67597",
+        "n": 2,
+        "role": "second",
+        "pos": "core",
+        "h": 0.35,
+        "ang": "mixed"
+      },
+      {
+        "id": "oeillet-standard",
+        "col": "#a2224f",
+        "n": 3,
+        "role": "focal",
+        "pos": "core",
+        "h": 0.3,
+        "ang": "face"
+      },
+      {
+        "id": "oncidium",
+        "col": "#a5465f",
+        "n": 4,
+        "role": "line",
+        "pos": "top",
+        "h": 0.9,
+        "ang": "mixed"
+      },
+      {
+        "id": "arum-calla",
+        "col": "#6a2449",
+        "n": 2,
+        "role": "line",
+        "pos": "right",
+        "h": 0.7,
+        "ang": "side"
+      },
+      {
+        "id": "arum-calla",
+        "col": "#6e2850",
+        "n": 3,
+        "role": "accent",
+        "pos": "rim",
+        "h": 0.25,
+        "ang": "side"
+      },
+      {
+        "id": "oncidium",
+        "col": "#a64c66",
+        "n": 1,
+        "role": "drape",
+        "pos": "right",
+        "h": 0.0,
+        "ang": "mixed"
+      }
+    ],
+    "notes": "Bloc serré d'œillets framboise couronné de cymbidiums rose-mauve sur une petite coupe argentée à pied, d'où rayonnent en éventail des branches d'oncidium et des callas prune, une branche retombant par-dessus l'arête du socle blanc."
+  },
+  {
+    "ref": "913e0312d4eab77955303d689f7b78ea.jpg",
+    "n": 52,
+    "nom": "Lys et cacao",
+    "occ": [
+      "amour",
+      "bravo"
+    ],
+    "tpl": "dome",
+    "asp": 0.99,
+    "vase": "boule-chocolat",
+    "vcol": "#511942",
+    "bg": "#d8d9d0",
+    "plinth": "bois",
+    "side": -1,
+    "els": [
+      {
+        "id": "anthurium-andraeanum",
+        "col": "#a3132f",
+        "n": 1,
+        "role": "focal",
+        "pos": "left",
+        "h": 0.7,
+        "ang": "face"
+      },
+      {
+        "id": "dahlia-decoratif",
+        "col": "#5a0a22",
+        "n": 2,
+        "role": "focal",
+        "pos": "core",
+        "h": 0.35,
+        "ang": "face"
+      },
+      {
+        "id": "arum-calla",
+        "col": "#22141f",
+        "n": 9,
+        "role": "second",
+        "pos": "core",
+        "h": 0.45,
+        "ang": "mixed"
+      },
+      {
+        "id": "lis-ot-orienpet",
+        "col": "#9c1426",
+        "n": 4,
+        "role": "filler",
+        "pos": "around",
+        "h": 0.65,
+        "ang": "mixed"
+      },
+      {
+        "id": "philodendron-hybrides",
+        "col": "#3a2427",
+        "n": 3,
+        "role": "foliage",
+        "pos": "around",
+        "h": 0.6,
+        "ang": "face"
+      },
+      {
+        "id": "anthurium-andraeanum",
+        "col": "#f3d3d3",
+        "n": 1,
+        "role": "accent",
+        "pos": "bottom",
+        "h": 0.0,
+        "ang": "tq"
+      },
+      {
+        "id": "arum-calla",
+        "col": "#7e3a84",
+        "n": 1,
+        "role": "line",
+        "pos": "left",
+        "h": 0.95,
+        "ang": "side"
+      },
+      {
+        "id": "allium-petit",
+        "col": "#8c9a45",
+        "n": 1,
+        "role": "line",
+        "pos": "right",
+        "h": 1.0,
+        "ang": "side"
+      },
+      {
+        "id": "phalaenopsis",
+        "col": "#dfc3e6",
+        "n": 1,
+        "role": "drape",
+        "pos": "left",
+        "h": 0.05,
+        "ang": "mixed"
+      }
+    ],
+    "notes": "Dôme sombre de callas noires et de dahlias bordeaux adossé à de grandes feuilles chocolat, ailes de lys cramoisis récurvés, anthurium rouge en haut à gauche et anthurium blanc moucheté qui déborde sous la lèvre avec une hampe d'orchidée pâle."
+  },
+  {
+    "ref": "992c6eaa074041f793f7807a5302d254.jpg",
+    "n": 53,
+    "nom": "Feux d'églantier",
+    "occ": [
+      "anniv",
+      "bravo"
+    ],
+    "tpl": "eventail",
+    "asp": 1.0,
+    "vase": "noue",
+    "vcol": "#7d8f34",
+    "bg": "#7c766a",
+    "plinth": "none",
+    "side": 1,
+    "els": [
+      {
+        "id": "dahlia-balle",
+        "col": "#9e1232",
+        "n": 4,
+        "role": "focal",
+        "pos": "core",
+        "h": 0.5,
+        "ang": "face"
+      },
+      {
+        "id": "cymbidium-grandes-fleurs",
+        "col": "#c4508a",
+        "n": 1,
+        "role": "focal",
+        "pos": "top",
+        "h": 0.95,
+        "ang": "mixed"
+      },
+      {
+        "id": "rosier-a-cynorrhodons",
+        "col": "#e0352e",
+        "n": 5,
+        "role": "line",
+        "pos": "around",
+        "h": 0.8,
+        "ang": "mixed"
+      },
+      {
+        "id": "dahlia-decoratif",
+        "col": "#5e0a1c",
+        "n": 3,
+        "role": "second",
+        "pos": "core",
+        "h": 0.3,
+        "ang": "face"
+      },
+      {
+        "id": "rose-de-jardin",
+        "col": "#cf0b45",
+        "n": 4,
+        "role": "second",
+        "pos": "core",
+        "h": 0.25,
+        "ang": "face"
+      },
+      {
+        "id": "arum-calla",
+        "col": "#c4506c",
+        "n": 5,
+        "role": "second",
+        "pos": "rim",
+        "h": 0.1,
+        "ang": "side"
+      },
+      {
+        "id": "xanthorrhoea-steel-grass",
+        "col": "#7a9a4a",
+        "n": 8,
+        "role": "line",
+        "pos": "around",
+        "h": 0.55,
+        "ang": "side"
+      },
+      {
+        "id": "pennisetum",
+        "col": "#4a3a30",
+        "n": 4,
+        "role": "line",
+        "pos": "top",
+        "h": 0.95,
+        "ang": "side"
+      },
+      {
+        "id": "cotinus-coggygria-arbre-a-perruques",
+        "col": "#3a2024",
+        "n": 3,
+        "role": "foliage",
+        "pos": "right",
+        "h": 0.6,
+        "ang": "mixed"
+      },
+      {
+        "id": "chrysantheme-araignee",
+        "col": "#8a4048",
+        "n": 3,
+        "role": "filler",
+        "pos": "left",
+        "h": 0.4,
+        "ang": "face"
+      },
+      {
+        "id": "amarante-retombante",
+        "col": "#5c0a22",
+        "n": 1,
+        "role": "drape",
+        "pos": "left",
+        "h": 0.0,
+        "ang": "side"
+      },
+      {
+        "id": "succulentes-echeveria",
+        "col": "#6e5658",
+        "n": 1,
+        "role": "accent",
+        "pos": "core",
+        "h": 0.45,
+        "ang": "face"
+      }
+    ],
+    "notes": "Grand éventail rouge-bordeaux : cœur dense de dahlias, roses de jardin et callas, cymbidium magenta au sommet, rayons de branches de cynorrhodons et de fils d'herbe raide sur 180°, bloc de cotinus pourpre-noir à droite et amarante pendante à gauche."
+  },
+  {
+    "ref": "9ab0f7e4e60b5701c47cbc9d9f77d3e0.jpg",
+    "n": 54,
+    "nom": "Flammes d'octobre",
+    "occ": [
+      "bravo",
+      "anniv"
+    ],
+    "tpl": "eventail",
+    "asp": 0.85,
+    "vase": "noue",
+    "vcol": "#ece6d8",
+    "bg": "#1e1e1c",
+    "plinth": "none",
+    "side": -1,
+    "els": [
+      {
+        "id": "anthurium-andraeanum",
+        "col": "#dc3a30",
+        "n": 4,
+        "role": "focal",
+        "pos": "around",
+        "h": 0.45,
+        "ang": "face"
+      },
+      {
+        "id": "glaieul",
+        "col": "#d41c16",
+        "n": 3,
+        "role": "line",
+        "pos": "top",
+        "h": 1.0,
+        "ang": "side"
+      },
+      {
+        "id": "hetre-branches",
+        "col": "#d8482c",
+        "n": 4,
+        "role": "foliage",
+        "pos": "around",
+        "h": 0.7,
+        "ang": "side"
+      },
+      {
+        "id": "hortensia-boule",
+        "col": "#6e4a46",
+        "n": 2,
+        "role": "second",
+        "pos": "core",
+        "h": 0.35,
+        "ang": "face"
+      },
+      {
+        "id": "rose-standard",
+        "col": "#7a0a16",
+        "n": 3,
+        "role": "second",
+        "pos": "right",
+        "h": 0.3,
+        "ang": "face"
+      },
+      {
+        "id": "dahlia-decoratif",
+        "col": "#6a1520",
+        "n": 2,
+        "role": "second",
+        "pos": "left",
+        "h": 0.6,
+        "ang": "face"
+      },
+      {
+        "id": "leucadendron-rouges",
+        "col": "#4a1e22",
+        "n": 3,
+        "role": "filler",
+        "pos": "core",
+        "h": 0.65,
+        "ang": "side"
+      },
+      {
+        "id": "rudbeckia",
+        "col": "#6a1820",
+        "n": 1,
+        "role": "filler",
+        "pos": "core",
+        "h": 0.5,
+        "ang": "face"
+      },
+      {
+        "id": "celosie-crete-de-coq",
+        "col": "#5e0d1e",
+        "n": 1,
+        "role": "filler",
+        "pos": "core",
+        "h": 0.4,
+        "ang": "face"
+      },
+      {
+        "id": "amarante-retombante",
+        "col": "#7a2a3c",
+        "n": 2,
+        "role": "drape",
+        "pos": "around",
+        "h": 0.05,
+        "ang": "side"
+      }
+    ],
+    "notes": "Éventail flamboyant : trois glaïeuls rouges en V au sommet, bras de hêtre orange de part et d'autre, anthuriums écarlates en C autour d'un cœur sombre d'hortensias anciens, de roses velours et de dahlias bordeaux, amarantes et long ruban blanc qui tombent sous les mains."
+  },
+  {
+    "ref": "9fd0013517d96c3df3d32b677658b162.jpg",
+    "n": 55,
+    "nom": "Envol de paradis",
+    "occ": [
+      "bravo",
+      "merci"
+    ],
+    "tpl": "vertical",
+    "asp": 0.75,
+    "vase": "papier",
+    "vcol": "#4f7cc4",
+    "bg": "#9a9a93",
+    "plinth": "none",
+    "side": -1,
+    "els": [
+      {
+        "id": "strelitzia-reginae",
+        "col": "#f8820e",
+        "n": 2,
+        "role": "focal",
+        "pos": "top",
+        "h": 0.75,
+        "ang": "side"
+      },
+      {
+        "id": "cymbidium-grandes-fleurs",
+        "col": "#c4c85e",
+        "n": 1,
+        "role": "focal",
+        "pos": "core",
+        "h": 0.1,
+        "ang": "face"
+      },
+      {
+        "id": "lisianthus",
+        "col": "#4b2c8c",
+        "n": 3,
+        "role": "second",
+        "pos": "around",
+        "h": 0.6,
+        "ang": "tq"
+      },
+      {
+        "id": "strelitzia-feuilles",
+        "col": "#1a3424",
+        "n": 1,
+        "role": "foliage",
+        "pos": "core",
+        "h": 1.0,
+        "ang": "face"
+      },
+      {
+        "id": "limonium-hybride",
+        "col": "#8a90d0",
+        "n": 3,
+        "role": "filler",
+        "pos": "right",
+        "h": 0.6,
+        "ang": "mixed"
+      },
+      {
+        "id": "xerophyllum-tenax-bear-grass",
+        "col": "#2a3328",
+        "n": 5,
+        "role": "line",
+        "pos": "around",
+        "h": 0.55,
+        "ang": "side"
+      },
+      {
+        "id": "lisianthus",
+        "col": "#dbe6a1",
+        "n": 2,
+        "role": "accent",
+        "pos": "right",
+        "h": 0.75,
+        "ang": "side"
+      },
+      {
+        "id": "eucalyptus-cinerea",
+        "col": "#5a7350",
+        "n": 1,
+        "role": "foliage",
+        "pos": "left",
+        "h": 0.15,
+        "ang": "mixed"
+      }
+    ],
+    "notes": "Bouquet frontal vertical dans un papier pervenche : grande feuille sombre en dossier, deux strelitzias dos à dos en ligne presque horizontale, trois fleurs de cymbidium vert anis posées sur le col, lisianthus violets, limonium lavande et boucles d'herbe d'ours."
+  },
+  {
+    "ref": "a563c13641ae737e2ca0779abdf21c48.jpg",
+    "n": 56,
+    "nom": "Mosaïque de pensées",
+    "occ": [
+      "merci",
+      "juste"
+    ],
+    "tpl": "dome",
+    "asp": 1.0,
+    "vase": "coupe-blanche",
+    "vcol": "#eceef0",
+    "bg": "#9f9fa1",
+    "plinth": "blanc",
+    "side": -1,
+    "els": [
+      {
+        "id": "pensee",
+        "col": "#5a2a9a",
+        "n": 8,
+        "role": "focal",
+        "pos": "core",
+        "h": 0.5,
+        "ang": "face"
+      },
+      {
+        "id": "pensee",
+        "col": "#ecd21e",
+        "n": 7,
+        "role": "second",
+        "pos": "around",
+        "h": 0.5,
+        "ang": "face"
+      },
+      {
+        "id": "pensee",
+        "col": "#4f62c0",
+        "n": 5,
+        "role": "second",
+        "pos": "around",
+        "h": 0.45,
+        "ang": "face"
+      },
+      {
+        "id": "pensee",
+        "col": "#8a1a5a",
+        "n": 5,
+        "role": "second",
+        "pos": "core",
+        "h": 0.45,
+        "ang": "face"
+      },
+      {
+        "id": "pensee",
+        "col": "#f2f0ec",
+        "n": 5,
+        "role": "second",
+        "pos": "around",
+        "h": 0.45,
+        "ang": "face"
+      },
+      {
+        "id": "pensee",
+        "col": "#a99ee0",
+        "n": 6,
+        "role": "filler",
+        "pos": "rim",
+        "h": 0.2,
+        "ang": "face"
+      },
+      {
+        "id": "pensee",
+        "col": "#e0661e",
+        "n": 3,
+        "role": "accent",
+        "pos": "around",
+        "h": 0.55,
+        "ang": "face"
+      },
+      {
+        "id": "pensee",
+        "col": "#b81a1e",
+        "n": 2,
+        "role": "accent",
+        "pos": "around",
+        "h": 0.6,
+        "ang": "face"
+      },
+      {
+        "id": "pensee",
+        "col": "#2a1e30",
+        "n": 1,
+        "role": "accent",
+        "pos": "top",
+        "h": 0.85,
+        "ang": "face"
+      },
+      {
+        "id": "heuchera",
+        "col": "#5f7a3a",
+        "n": 3,
+        "role": "foliage",
+        "pos": "rim",
+        "h": 0.25,
+        "ang": "mixed"
+      }
+    ],
+    "notes": "Dôme régulier façon nature morte hollandaise : une cinquantaine de pensées multicolores en mosaïque rayonnent d'une coupe blanche à pied, grosses fleurs à macule au centre, petites violas et tiges fines festonnant le contour."
+  },
+  {
+    "ref": "a98ef67b27b67a524f37ffebdbe1c40f.jpg",
+    "n": 57,
+    "nom": "Cérémonie écarlate",
+    "occ": [
+      "bravo",
+      "amour"
+    ],
+    "tpl": "cascade",
+    "asp": 0.73,
+    "vase": "coupe-noire",
+    "vcol": "#161615",
+    "bg": "#8f8e86",
+    "plinth": "blanc",
+    "side": -1,
+    "els": [
+      {
+        "id": "sun-palm-seche",
+        "col": "#7a1c26",
+        "n": 4,
+        "role": "focal",
+        "pos": "left",
+        "h": 0.3,
+        "ang": "face"
+      },
+      {
+        "id": "sun-palm-seche",
+        "col": "#661018",
+        "n": 3,
+        "role": "focal",
+        "pos": "core",
+        "h": 0.6,
+        "ang": "tq"
+      },
+      {
+        "id": "amarante-dressee",
+        "col": "#6e1420",
+        "n": 8,
+        "role": "line",
+        "pos": "top",
+        "h": 1.0,
+        "ang": "side"
+      },
+      {
+        "id": "ruscus-seche-teint",
+        "col": "#7c2029",
+        "n": 4,
+        "role": "line",
+        "pos": "left",
+        "h": 1.0,
+        "ang": "side"
+      },
+      {
+        "id": "ruscus-seche-teint",
+        "col": "#7a1e28",
+        "n": 3,
+        "role": "line",
+        "pos": "right",
+        "h": 0.6,
+        "ang": "side"
+      },
+      {
+        "id": "amarante-retombante",
+        "col": "#860a14",
+        "n": 2,
+        "role": "drape",
+        "pos": "bottom",
+        "h": 0.0,
+        "ang": "side"
+      },
+      {
+        "id": "amarante-retombante",
+        "col": "#8a0c16",
+        "n": 1,
+        "role": "drape",
+        "pos": "right",
+        "h": 0.25,
+        "ang": "side"
+      },
+      {
+        "id": "amarante-retombante",
+        "col": "#800a14",
+        "n": 1,
+        "role": "drape",
+        "pos": "left",
+        "h": 0.75,
+        "ang": "side"
+      },
+      {
+        "id": "xerophyllum-tenax-bear-grass",
+        "col": "#6a1018",
+        "n": 6,
+        "role": "filler",
+        "pos": "left",
+        "h": 0.5,
+        "ang": "side"
+      },
+      {
+        "id": "leucadendron-rouges",
+        "col": "#8a1420",
+        "n": 3,
+        "role": "filler",
+        "pos": "core",
+        "h": 0.4,
+        "ang": "mixed"
+      }
+    ],
+    "notes": "Installation monochrome rouge carmin au bord d'un comptoir de marbre : éventails de palmier teints en chevauchement, faisceau d'épis d'amarante dressés, ruscus teint arqué vers le haut-gauche et tendu à l'horizontale à droite, cordons d'amarante qui tombent le long de la façade."
+  },
+  {
+    "ref": "aaf0c74c1232bba5ba4aa031fef44639.jpg",
+    "n": 58,
+    "nom": "Carnaval de corail",
+    "occ": [
+      "anniv",
+      "bravo"
+    ],
+    "tpl": "eventail",
+    "asp": 1.19,
+    "vase": "calice",
+    "vcol": "#e4e0e3",
+    "bg": "#bab1b1",
+    "plinth": "blanc",
+    "side": -1,
+    "els": [
+      {
+        "id": "phalaenopsis",
+        "col": "#d81f92",
+        "n": 2,
+        "role": "focal",
+        "pos": "left",
+        "h": 0.5,
+        "ang": "face"
+      },
+      {
+        "id": "ruscus-seche-teint",
+        "col": "#ec3c4a",
+        "n": 12,
+        "role": "foliage",
+        "pos": "around",
+        "h": 0.5,
+        "ang": "mixed"
+      },
+      {
+        "id": "lisianthus",
+        "col": "#b46ad0",
+        "n": 1,
+        "role": "focal",
+        "pos": "core",
+        "h": 0.05,
+        "ang": "face"
+      },
+      {
+        "id": "lisianthus",
+        "col": "#b07ad6",
+        "n": 1,
+        "role": "line",
+        "pos": "top",
+        "h": 0.95,
+        "ang": "tq"
+      },
+      {
+        "id": "renoncule-classique",
+        "col": "#c80a0e",
+        "n": 1,
+        "role": "second",
+        "pos": "core",
+        "h": 0.35,
+        "ang": "face"
+      },
+      {
+        "id": "renoncule-classique",
+        "col": "#c41258",
+        "n": 2,
+        "role": "second",
+        "pos": "core",
+        "h": 0.7,
+        "ang": "mixed"
+      },
+      {
+        "id": "iris-hollandais",
+        "col": "#5428ae",
+        "n": 2,
+        "role": "second",
+        "pos": "left",
+        "h": 0.35,
+        "ang": "tq"
+      },
+      {
+        "id": "tulipe-simple",
+        "col": "#d2501a",
+        "n": 1,
+        "role": "second",
+        "pos": "right",
+        "h": 0.55,
+        "ang": "tq"
+      },
+      {
+        "id": "germini",
+        "col": "#b81216",
+        "n": 1,
+        "role": "line",
+        "pos": "right",
+        "h": 0.85,
+        "ang": "tq"
+      },
+      {
+        "id": "freesia",
+        "col": "#e2602a",
+        "n": 3,
+        "role": "accent",
+        "pos": "right",
+        "h": 0.55,
+        "ang": "side"
+      },
+      {
+        "id": "freesia",
+        "col": "#8a5cb0",
+        "n": 1,
+        "role": "filler",
+        "pos": "core",
+        "h": 0.75,
+        "ang": "side"
+      },
+      {
+        "id": "giroflee-matthiole",
+        "col": "#8e2a6a",
+        "n": 2,
+        "role": "filler",
+        "pos": "left",
+        "h": 0.25,
+        "ang": "mixed"
+      },
+      {
+        "id": "reine-marguerite",
+        "col": "#5b3d8f",
+        "n": 1,
+        "role": "filler",
+        "pos": "core",
+        "h": 0.2,
+        "ang": "face"
+      },
+      {
+        "id": "bromeliacees",
+        "col": "#c8205a",
+        "n": 1,
+        "role": "accent",
+        "pos": "core",
+        "h": 0.1,
+        "ang": "side"
+      }
+    ],
+    "notes": "Large éventail de ruscus teint corail qui dessine toute la silhouette, orchidées magenta en diagonale à gauche, lisianthus lavande posé sur la lèvre et au sommet, et à droite gerbera, tulipe et freesias sur tiges nues courbes qui s'échappent."
+  },
+  {
+    "ref": "b4ba71fd4d0fecb0fae4d4e261201e65.jpg",
+    "n": 60,
+    "nom": "Romance gothique",
+    "occ": [
+      "amour"
+    ],
+    "tpl": "libre",
+    "asp": 0.71,
+    "vase": "noue",
+    "vcol": "#b80c30",
+    "bg": "#d0cfbe",
+    "plinth": "none",
+    "side": -1,
+    "els": [
+      {
+        "id": "pivoine-herbacee-double",
+        "col": "#6a0c2c",
+        "n": 7,
+        "role": "focal",
+        "pos": "core",
+        "h": 0.4,
+        "ang": "mixed"
+      },
+      {
+        "id": "anthurium-andraeanum",
+        "col": "#d84c64",
+        "n": 2,
+        "role": "focal",
+        "pos": "top",
+        "h": 0.8,
+        "ang": "tq"
+      },
+      {
+        "id": "scabieuse",
+        "col": "#7d3d52",
+        "n": 4,
+        "role": "second",
+        "pos": "core",
+        "h": 0.35,
+        "ang": "face"
+      },
+      {
+        "id": "allium-petit",
+        "col": "#3d2729",
+        "n": 3,
+        "role": "line",
+        "pos": "left",
+        "h": 0.6,
+        "ang": "side"
+      },
+      {
+        "id": "saule-tortueux",
+        "col": "#2b2b2e",
+        "n": 1,
+        "role": "line",
+        "pos": "left",
+        "h": 0.95,
+        "ang": "side"
+      },
+      {
+        "id": "grevillea-feuillage",
+        "col": "#8a3238",
+        "n": 1,
+        "role": "line",
+        "pos": "right",
+        "h": 0.85,
+        "ang": "side"
+      },
+      {
+        "id": "amarante-retombante",
+        "col": "#a02a40",
+        "n": 1,
+        "role": "drape",
+        "pos": "bottom",
+        "h": 0.0,
+        "ang": "side"
+      },
+      {
+        "id": "amarante-retombante",
+        "col": "#9a2a3c",
+        "n": 1,
+        "role": "drape",
+        "pos": "left",
+        "h": 0.6,
+        "ang": "side"
+      },
+      {
+        "id": "allium-petit",
+        "col": "#7d6b6c",
+        "n": 2,
+        "role": "accent",
+        "pos": "top",
+        "h": 0.95,
+        "ang": "tq"
+      },
+      {
+        "id": "renoncule-classique",
+        "col": "#741338",
+        "n": 1,
+        "role": "second",
+        "pos": "left",
+        "h": 0.45,
+        "ang": "side"
+      },
+      {
+        "id": "vigne-sarments",
+        "col": "#9a8a7a",
+        "n": 2,
+        "role": "line",
+        "pos": "around",
+        "h": 0.4,
+        "ang": "side"
+      },
+      {
+        "id": "sun-palm-seche",
+        "col": "#1a1729",
+        "n": 1,
+        "role": "accent",
+        "pos": "core",
+        "h": 0.45,
+        "ang": "face"
+      },
+      {
+        "id": "ruban-soie-mousseline",
+        "col": "#121214",
+        "n": 1,
+        "role": "drape",
+        "pos": "bottom",
+        "h": 0.0,
+        "ang": "side"
+      }
+    ],
+    "notes": "Cœur serré de pivoines et de scabieuses bordeaux éclairé d'un anthurium corail, d'où fusent des alliums tambour sur tiges arquées, une branche noire tortueuse et un rameau rouge, tandis que l'amarante cramoisie et des rubans rouge et noir tombent sous le liage."
+  },
+  {
+    "ref": "b90f228533ae3f6b63ca1ab2ee90f8ca.jpg",
+    "n": 61,
+    "nom": "Confettis de jardin",
+    "occ": [
+      "anniv",
+      "merci"
+    ],
+    "tpl": "dome",
+    "asp": 0.81,
+    "vase": "noue",
+    "vcol": "#e8eaf2",
+    "bg": "#363638",
+    "plinth": "none",
+    "side": 1,
+    "els": [
+      {
+        "id": "dahlia-balle",
+        "col": "#a3306c",
+        "n": 3,
+        "role": "focal",
+        "pos": "core",
+        "h": 0.45,
+        "ang": "face"
+      },
+      {
+        "id": "anthurium-andraeanum",
+        "col": "#d58a78",
+        "n": 1,
+        "role": "focal",
+        "pos": "top",
+        "h": 0.75,
+        "ang": "face"
+      },
+      {
+        "id": "dahlia-cactus",
+        "col": "#f0d8a2",
+        "n": 2,
+        "role": "focal",
+        "pos": "right",
+        "h": 0.2,
+        "ang": "face"
+      },
+      {
+        "id": "dahlia-lacinie",
+        "col": "#eeac86",
+        "n": 1,
+        "role": "focal",
+        "pos": "left",
+        "h": 0.75,
+        "ang": "tq"
+      },
+      {
+        "id": "dahlia-decoratif",
+        "col": "#d9579a",
+        "n": 1,
+        "role": "focal",
+        "pos": "left",
+        "h": 0.15,
+        "ang": "face"
+      },
+      {
+        "id": "cosmos",
+        "col": "#f07a1e",
+        "n": 9,
+        "role": "accent",
+        "pos": "around",
+        "h": 0.6,
+        "ang": "mixed"
+      },
+      {
+        "id": "campanule",
+        "col": "#b3a0dd",
+        "n": 2,
+        "role": "second",
+        "pos": "core",
+        "h": 0.35,
+        "ang": "tq"
+      },
+      {
+        "id": "rose-standard",
+        "col": "#dcb050",
+        "n": 1,
+        "role": "second",
+        "pos": "left",
+        "h": 0.3,
+        "ang": "tq"
+      },
+      {
+        "id": "rose-de-jardin",
+        "col": "#efe0b0",
+        "n": 1,
+        "role": "second",
+        "pos": "bottom",
+        "h": 0.0,
+        "ang": "face"
+      },
+      {
+        "id": "rose-de-jardin",
+        "col": "#f2efe4",
+        "n": 1,
+        "role": "second",
+        "pos": "left",
+        "h": 0.6,
+        "ang": "side"
+      },
+      {
+        "id": "chrysantheme-araignee",
+        "col": "#e8b0b0",
+        "n": 1,
+        "role": "second",
+        "pos": "left",
+        "h": 0.45,
+        "ang": "face"
+      },
+      {
+        "id": "pois-de-senteur",
+        "col": "#f0c0c8",
+        "n": 5,
+        "role": "filler",
+        "pos": "left",
+        "h": 0.5,
+        "ang": "mixed"
+      },
+      {
+        "id": "souci-calendula",
+        "col": "#f0a030",
+        "n": 2,
+        "role": "accent",
+        "pos": "right",
+        "h": 0.7,
+        "ang": "side"
+      },
+      {
+        "id": "coreopsis",
+        "col": "#f2c230",
+        "n": 1,
+        "role": "accent",
+        "pos": "left",
+        "h": 0.35,
+        "ang": "face"
+      },
+      {
+        "id": "phalaenopsis",
+        "col": "#b25bb0",
+        "n": 1,
+        "role": "accent",
+        "pos": "top",
+        "h": 0.9,
+        "ang": "side"
+      }
+    ],
+    "notes": "Bouquet rond « tout fleurs » vu de dessus : dahlias magenta, pêche et crème autour d'un grand anthurium saumon, roses jaune et beurre, campanules lavande et pois de senteur, avec une pluie de cosmos orange qui pétillent sur le pourtour."
+  }
+]

@@ -1,0 +1,4759 @@
+[
+  {
+    "id": "anthurium-andraeanum",
+    "nom_fr": "Anthurium (langue de feu)",
+    "nom_en": "Anthurium, flamingo flower",
+    "latin": "Anthurium andraeanum (hybrides, A. × andraeanum)",
+    "famille": "Araceae",
+    "categorie": "Exotiques",
+    "role": "focale",
+    "couleurs": [
+      "rouge",
+      "rouge foncé",
+      "rose",
+      "rose saumon",
+      "corail",
+      "orange",
+      "blanc",
+      "crème",
+      "vert",
+      "violet",
+      "chocolat",
+      "brun",
+      "noir",
+      "jaune"
+    ],
+    "varietes": [
+      {
+        "nom": "Rambla",
+        "couleur": "rouge",
+        "note": "Anthura ; spathe 13–15 cm, spadix blanc à pointe verte ; ~35 j en vase (essai)"
+      },
+      {
+        "nom": "Calisto",
+        "couleur": "rouge",
+        "note": "Anthura ; grande spathe 15–17 cm"
+      },
+      {
+        "nom": "Cantello",
+        "couleur": "rouge",
+        "note": "Anthura ; spathe nervurée 15–17 cm, spadix brun"
+      },
+      {
+        "nom": "Carisma",
+        "couleur": "rouge",
+        "note": "Anthura ; 13–15 cm"
+      },
+      {
+        "nom": "Eterno",
+        "couleur": "rouge",
+        "note": "Anthura ; 15–17 cm"
+      },
+      {
+        "nom": "Arena",
+        "couleur": "rouge",
+        "note": "Anthura ; 13–15 cm"
+      },
+      {
+        "nom": "Ritma",
+        "couleur": "rouge",
+        "note": "Anthura, nouveauté du catalogue 2026–2027 ; 11–13 cm"
+      },
+      {
+        "nom": "Cerato",
+        "couleur": "rouge foncé",
+        "note": "Anthura ; 11–13 cm"
+      },
+      {
+        "nom": "Caldonia",
+        "couleur": "rouge veiné",
+        "note": "Anthura ; mini 7–11 cm à nervures marquées"
+      },
+      {
+        "nom": "Naranja",
+        "couleur": "orange",
+        "note": "Anthura ; spathe cordiforme 13–15 cm"
+      },
+      {
+        "nom": "Terrasol",
+        "couleur": "brun terracotta",
+        "note": "Anthura ; 15–17 cm"
+      },
+      {
+        "nom": "Nero",
+        "couleur": "chocolat",
+        "note": "Anthura ; spadix pourpre"
+      },
+      {
+        "nom": "Showtime",
+        "couleur": "noir",
+        "note": "Anthura ; rouge très sombre presque noir"
+      },
+      {
+        "nom": "Caribo",
+        "couleur": "rose",
+        "note": "Anthura ; 11–13 cm"
+      },
+      {
+        "nom": "Candy",
+        "couleur": "rose",
+        "note": "Anthura ; spadix rose"
+      },
+      {
+        "nom": "Farao",
+        "couleur": "rose corail",
+        "note": "Anthura ; spadix blanc à pointe jaune"
+      },
+      {
+        "nom": "Kuduro",
+        "couleur": "rose saumon",
+        "note": "Anthura ; spathe cordiforme 13–15 cm"
+      },
+      {
+        "nom": "Impreza",
+        "couleur": "violet",
+        "note": "Anthura ; spathe cordiforme 13–15 cm"
+      },
+      {
+        "nom": "Kaleo",
+        "couleur": "violet",
+        "note": "Anthura ; 11–13 cm"
+      },
+      {
+        "nom": "Previa",
+        "couleur": "violet profond",
+        "note": "Anthura ; spathe étroite « en ruban » 7–11 cm, spadix violet"
+      },
+      {
+        "nom": "Graciosa",
+        "couleur": "blanc",
+        "note": "Anthura ; 13–15 cm"
+      },
+      {
+        "nom": "Moments",
+        "couleur": "blanc crème",
+        "note": "Anthura ; 13–15 cm"
+      },
+      {
+        "nom": "Facetto",
+        "couleur": "blanc rosé",
+        "note": "Anthura ; 11–13 cm"
+      },
+      {
+        "nom": "Extase",
+        "couleur": "blanc veiné de vert",
+        "note": "Anthura ; 13–15 cm, nervures vertes"
+      },
+      {
+        "nom": "Whisper",
+        "couleur": "blanc",
+        "note": "Anthura ; mini 4–6 cm"
+      },
+      {
+        "nom": "Marysia",
+        "couleur": "jaune crème",
+        "note": "Anthura ; 15–17 cm"
+      },
+      {
+        "nom": "Grand Slam",
+        "couleur": "vert",
+        "note": "Anthura ; 15–17 cm"
+      },
+      {
+        "nom": "Olivius",
+        "couleur": "vert olive",
+        "note": "Anthura ; 13–15 cm"
+      },
+      {
+        "nom": "Pistache",
+        "couleur": "vert",
+        "note": "Anthura ; spadix rose"
+      },
+      {
+        "nom": "Lucardi",
+        "couleur": "vert veiné",
+        "note": "Anthura ; 13–15 cm"
+      },
+      {
+        "nom": "Tropical",
+        "couleur": "rouge",
+        "note": "classique hollandais"
+      },
+      {
+        "nom": "Midori",
+        "couleur": "vert",
+        "note": "grand anthurium vert, toutes tailles"
+      },
+      {
+        "nom": "Acropolis",
+        "couleur": "blanc",
+        "note": "blanc pur"
+      },
+      {
+        "nom": "Champion",
+        "couleur": "blanc"
+      },
+      {
+        "nom": "Sumi",
+        "couleur": "blanc"
+      },
+      {
+        "nom": "Alexis",
+        "couleur": "rouge foncé",
+        "note": "tailles mini à moyenne"
+      },
+      {
+        "nom": "Red Toro",
+        "couleur": "rouge foncé",
+        "note": "spadix à pointe verte"
+      },
+      {
+        "nom": "Fuego",
+        "couleur": "rouge"
+      },
+      {
+        "nom": "Heredia",
+        "couleur": "rouge"
+      },
+      {
+        "nom": "Equinox",
+        "couleur": "rose fuchsia"
+      },
+      {
+        "nom": "Palmares",
+        "couleur": "rose rouge clair"
+      },
+      {
+        "nom": "Sonata",
+        "couleur": "rose"
+      },
+      {
+        "nom": "Lorena",
+        "couleur": "rose"
+      },
+      {
+        "nom": "Gitte",
+        "couleur": "orange pêche"
+      },
+      {
+        "nom": "Hawaiian Sun",
+        "couleur": "orange pêche"
+      },
+      {
+        "nom": "Limon",
+        "couleur": "vert"
+      },
+      {
+        "nom": "Tilleul",
+        "couleur": "vert tilleul"
+      },
+      {
+        "nom": "Choco",
+        "couleur": "chocolat",
+        "note": "brun rougeâtre (photo)"
+      },
+      {
+        "nom": "Vibe",
+        "couleur": "cuivre"
+      },
+      {
+        "nom": "Miami Beauty Red",
+        "couleur": "rouge sang",
+        "note": "cultivar hawaïen, spadix jaune-blanc"
+      },
+      {
+        "nom": "Maunakea White",
+        "couleur": "blanc",
+        "note": "cultivar hawaïen, spadix jaune canari"
+      },
+      {
+        "nom": "Haiti Pink",
+        "couleur": "rose",
+        "note": "cultivar hawaïen"
+      }
+    ],
+    "formes": "Tige simple (40–90 cm) portant une seule spathe ; classes de taille de spathe mini (4–11 cm), standard (11–15 cm) et grande (15–17 cm et plus) ; formes cordiforme, standard ou étroite « en ruban » ; vendu aussi en plante en pot.",
+    "saison": "Toute l'année (serres des Pays-Bas, Maurice, Costa Rica, Colombie, Hawaï) ; pics autour de la Saint-Valentin et de Noël.",
+    "tenue_vase": "14–28 jours",
+    "gamme_prix": "€€",
+    "rarete_jeu": "commune",
+    "notes_dessin": "Spathe cordiforme de 8 à 17 cm, plate à légèrement creusée, terminée en pointe et munie de deux lobes basaux arrondis qui se touchent ou s'écartent en V au point d'attache. Surface vernissée, très brillante, comme laquée, gaufrée de petites cloques entre des nervures en relief qui rayonnent depuis la base : jouer sur des reflets blancs nets. Spadix cylindrique de 5 à 9 cm, dressé à 30–60° au-dessus de la spathe, souvent légèrement arqué, au dégradé de couleur de la base (blanc, rose ou violet) vers la pointe (vert, jaune ou violet), finement granuleux. De profil, la spathe s'incline vers l'avant au sommet d'une longue tige verte cylindrique et lisse qui la rejoint par un petit coude ; feuilles (souvent absentes en fleur coupée) en cœur vert foncé mat sur de longs pétioles.",
+    "wiki": "Anthurium andraeanum",
+    "img_queries": [
+      "Anthurium andraeanum",
+      "Anthurium andraeanum flower",
+      "Anthurium red spathe spadix"
+    ],
+    "sources": [
+      "https://mindcms-main.s3.eu-west-2.amazonaws.com/dXBkYXRlLW1pbmRjbXMtbmw%3D/6a32b4161c3ef/2026anthura-4luiksaasbpj01web.pdf",
+      "https://anthura.nl/producten/anthurium-snijrassen/",
+      "https://www.sierraflowerfinder.com/en/f/exotic-blooms-and-foliages/anthurium/93?page=1&flt=0",
+      "https://alohatropicals.com/product/anthurium-miami-beauty-red/",
+      "https://en.wikipedia.org/wiki/Anthurium_andraeanum"
+    ]
+  },
+  {
+    "id": "anthurium-obake",
+    "nom_fr": "Anthurium obake (bicolore)",
+    "nom_en": "Obake anthurium",
+    "latin": "Anthurium andraeanum (groupe obake / bicolores)",
+    "famille": "Araceae",
+    "categorie": "Exotiques",
+    "role": "focale",
+    "couleurs": [
+      "bicolore rose et vert",
+      "bicolore rouge et vert",
+      "bicolore pêche et vert",
+      "bicolore blanc et vert",
+      "bicolore blanc et rouge",
+      "bicolore crème et rouge",
+      "bicolore vert et rouge",
+      "bicolore blanc et violet",
+      "vert"
+    ],
+    "varietes": [
+      {
+        "nom": "Zafira",
+        "couleur": "bicolore blanc, rose et vert",
+        "note": "Anthura ; oreilles vertes, pointe rose, spadix rose"
+      },
+      {
+        "nom": "Festino",
+        "couleur": "bicolore rose et vert",
+        "note": "Anthura ; oreilles vertes ; ~44 j en vase (essai)"
+      },
+      {
+        "nom": "Alero",
+        "couleur": "bicolore rose, blanc et vert",
+        "note": "Anthura ; 7–11 cm, oreilles vertes"
+      },
+      {
+        "nom": "Licosa",
+        "couleur": "bicolore rose et vert",
+        "note": "Anthura ; nervures et lobes verts"
+      },
+      {
+        "nom": "Kaseko",
+        "couleur": "bicolore crème et rouge",
+        "note": "Anthura ; pointe colorée, spadix rose"
+      },
+      {
+        "nom": "Absolute",
+        "couleur": "bicolore vert et rouge",
+        "note": "Anthura ; cœur rouge sur spathe verte"
+      },
+      {
+        "nom": "Tequila",
+        "couleur": "bicolore vert et orange-rouge",
+        "note": "Anthura ; nervures marquées, spadix pourpre"
+      },
+      {
+        "nom": "Maxima Violeta",
+        "couleur": "bicolore blanc et violet",
+        "note": "Anthura ; pointe lavée de violet, spadix violet"
+      },
+      {
+        "nom": "Cumbia",
+        "couleur": "bicolore blanc et rouge",
+        "note": "Anthura ; pointe rouge, spadix rouge"
+      },
+      {
+        "nom": "Peach Obake",
+        "couleur": "bicolore pêche et vert",
+        "note": "« oreilles » vertes ; Costa Rica"
+      },
+      {
+        "nom": "Pink Obake",
+        "couleur": "bicolore rose et vert",
+        "note": "« oreilles » vertes"
+      },
+      {
+        "nom": "Red Obake",
+        "couleur": "bicolore rouge et vert",
+        "note": "« oreilles » vertes"
+      },
+      {
+        "nom": "Praline Obake",
+        "couleur": "bicolore orange brun et vert",
+        "note": "(photo)"
+      },
+      {
+        "nom": "Amanda Green",
+        "couleur": "bicolore rose et vert"
+      },
+      {
+        "nom": "Kalapana",
+        "couleur": "vert (type Midori)",
+        "note": "cultivar hawaïen « type Midori »"
+      }
+    ],
+    "formes": "Tige simple ; spathes souvent grandes (11–17 cm), à « oreilles » (lobes) vertes ou à pointe colorée ; aussi en mélanges obake chez les exportateurs du Costa Rica.",
+    "saison": "Toute l'année (Pays-Bas, Costa Rica, Hawaï), volumes plus réduits que les anthuriums unis.",
+    "tenue_vase": "21–35 jours",
+    "gamme_prix": "€€€",
+    "rarete_jeu": "precieuse",
+    "notes_dessin": "Même silhouette cordiforme que l'anthurium standard, mais la spathe est bicolore : la couleur (rose, rouge, pêche ou blanc) occupe le cœur et la pointe, tandis que les deux lobes basaux, les « oreilles », virent au vert tendre en fondu progressif, parfois aussi le long des bords. Les nervures en relief sont plus marquées et souvent teintées de vert, ce qui donne un aspect côtelé et gaufré sous un vernis brillant. Spadix de 6 à 9 cm, assorti (rose, pourpre, rouge) ou blanc à pointe verte, incliné vers l'avant. De face, peindre un dégradé doux couleur vers vert à partir du sinus basal ; de profil, la spathe légèrement creusée s'avance comme une langue au bout d'une longue tige verte lisse.",
+    "wiki": "Anthurium andraeanum",
+    "img_queries": [
+      "Anthurium obake",
+      "Anthurium andraeanum green pink",
+      "Anthurium andraeanum green"
+    ],
+    "sources": [
+      "https://mindcms-main.s3.eu-west-2.amazonaws.com/dXBkYXRlLW1pbmRjbXMtbmw%3D/6a32b4161c3ef/2026anthura-4luiksaasbpj01web.pdf",
+      "https://anthura.nl/producten/anthurium-snijrassen/zafira/",
+      "https://www.sierraflowerfinder.com/en/d/anthurium-pink-obake/7495",
+      "https://www.sierraflowerfinder.com/en/d/anthurium-obake-assorted-mix/7488",
+      "https://florabundance.com/flowers/anthurium-obake-large/"
+    ]
+  },
+  {
+    "id": "anthurium-tulipe",
+    "nom_fr": "Anthurium tulipe",
+    "nom_en": "Tulip anthurium",
+    "latin": "Anthurium amnicola et hybrides (A. × andraeanum à spathe en tulipe)",
+    "famille": "Araceae",
+    "categorie": "Exotiques",
+    "role": "secondaire",
+    "couleurs": [
+      "rose",
+      "fuchsia",
+      "violet",
+      "rouge",
+      "saumon",
+      "bicolore vert et rose",
+      "bicolore vert et rouge"
+    ],
+    "varietes": [
+      {
+        "nom": "Fortezza",
+        "couleur": "bicolore vert et rose",
+        "note": "Anthura ; forme tulipe, spadix pourpre"
+      },
+      {
+        "nom": "Barika",
+        "couleur": "bicolore vert et rouge",
+        "note": "Anthura ; forme tulipe nervurée, spadix rose"
+      },
+      {
+        "nom": "Xavia",
+        "couleur": "rose",
+        "note": "Anthura ; forme tulipe 7–11 cm, spadix rose"
+      },
+      {
+        "nom": "Tulip Red",
+        "couleur": "rouge"
+      },
+      {
+        "nom": "Tulip Salmon",
+        "couleur": "saumon"
+      },
+      {
+        "nom": "Tulip Purple",
+        "couleur": "violet"
+      },
+      {
+        "nom": "Tulip Fushia",
+        "couleur": "fuchsia",
+        "note": "orthographe du négociant"
+      }
+    ],
+    "formes": "Petites spathes (7–13 cm) dressées et creusées en coupe autour d'un spadix érigé ; tiges plus fines ; vendu en fleur coupée et en plante en pot.",
+    "saison": "Toute l'année (Pays-Bas, Costa Rica, Hawaï), offre plus restreinte que l'anthurium standard.",
+    "tenue_vase": "14–21 jours",
+    "gamme_prix": "€€",
+    "rarete_jeu": "rare",
+    "notes_dessin": "Spathe ovale et étroite de 7 à 12 cm, tenue presque verticale et repliée en cornet ou en coupe, sans lobes basaux étalés, qui évoque un pétale de tulipe enveloppant. Le spadix, droit et assez court (4–7 cm), se dresse au centre de la coupe, dans le prolongement de la tige, souvent de la même couleur que la spathe (rose, violet). Texture satinée, moins gaufrée que l'anthurium classique, avec une nervure médiane visible. De face on voit l'intérieur de la coupe et le spadix ; de profil, une silhouette de tulipe fermée au sommet d'une tige fine et droite.",
+    "wiki": "Anthurium amnicola",
+    "img_queries": [
+      "Anthurium amnicola",
+      "Tulip anthurium",
+      "Anthurium lilacinum"
+    ],
+    "sources": [
+      "https://anthura.nl/producten/anthurium-snijrassen/xavia/",
+      "https://anthura.nl/producten/anthurium-snijrassen/fortezza/",
+      "https://www.sierraflowerfinder.com/en/d/anthurium-tulip-red/8854",
+      "https://en.wikipedia.org/wiki/Anthurium_amnicola",
+      "https://florabundance.com/flowers/anthurium-tulip-purple/"
+    ]
+  },
+  {
+    "id": "heliconia-rostrata",
+    "nom_fr": "Héliconia pendant (pince de homard pendante)",
+    "nom_en": "Hanging lobster claw",
+    "latin": "Heliconia rostrata",
+    "famille": "Heliconiaceae",
+    "categorie": "Exotiques",
+    "role": "focale",
+    "couleurs": [
+      "rouge, jaune et vert"
+    ],
+    "varietes": [
+      {
+        "nom": "Peru",
+        "couleur": "rouge, lèvre jaune et pointe verte",
+        "note": "synonyme commercial Five Day ; semi-rustique"
+      },
+      {
+        "nom": "Dwarf",
+        "couleur": "rouge, jaune et vert",
+        "note": "forme naine (HSI : 4 à 15 bractées) ; inflorescence plus courte"
+      },
+      {
+        "nom": "Dwarf Rostrata",
+        "couleur": "rouge, jaune et vert",
+        "note": "sélection naine obtenue à Hawaï, fleurit dès 1 m"
+      }
+    ],
+    "formes": "Tige portant une inflorescence pendante de 30 à 60 cm (jusqu'à 1 m) ; vendue par longueur de tige (90–150 cm) et par nombre de bractées ; parfois en version naine.",
+    "saison": "Toute l'année en import (Costa Rica, Colombie, Équateur, Barbade, Surinam, Hawaï), plus abondant de mai à octobre ; très sensible au froid (jamais sous 13–15 °C).",
+    "tenue_vase": "7–14 jours",
+    "gamme_prix": "€€€",
+    "rarete_jeu": "precieuse",
+    "notes_dessin": "Inflorescence pendante formée de 4 à 35 bractées en forme de nacelle, alternées sur un même plan de part et d'autre d'un rachis rouge en zigzag, ouvertures tournées vers le bas, de plus en plus petites vers la pointe. Chaque bractée est rouge écarlate sur la joue, bordée d'une large lèvre jaune vif puis d'un fin liseré et d'une pointe verts ; de petites fleurs tubulaires jaune verdâtre dépassent à peine de l'intérieur. Surface cireuse, mate à satinée. De face, on voit une chaîne de V rouges et jaunes emboîtés ; de profil, une échelle plate et étroite qui pend sous une tige verte robuste coudée au sommet, avec de grandes feuilles oblongues de type bananier, vert moyen, souvent déchirées entre les nervures.",
+    "wiki": "Heliconia rostrata",
+    "img_queries": [
+      "Heliconia rostrata",
+      "Heliconia rostrata inflorescence",
+      "Hanging lobster claw heliconia"
+    ],
+    "sources": [
+      "https://alohatropicals.com/product/heliconia-rostrata/",
+      "https://alohatropicals.com/product/heliconia-rostrata-peru/",
+      "https://www.heliconia.org/_files/ugd/ef1aa2_1e02557e18b44bd2a0f1134427cd05f6.pdf",
+      "https://www.sierraflowerfinder.com/en/d/heliconia-rostrata/1941",
+      "https://en.wikipedia.org/wiki/Heliconia_rostrata"
+    ]
+  },
+  {
+    "id": "heliconia-wagneriana",
+    "nom_fr": "Héliconia wagneriana (héliconia arc-en-ciel)",
+    "nom_en": "Wagneriana heliconia, Easter heliconia",
+    "latin": "Heliconia wagneriana",
+    "famille": "Heliconiaceae",
+    "categorie": "Exotiques",
+    "role": "focale",
+    "couleurs": [
+      "rouge orangé",
+      "rose, crème et vert",
+      "vert"
+    ],
+    "varietes": [
+      {
+        "nom": "Wagneriana Red",
+        "couleur": "rouge orangé",
+        "note": "dénomination commerciale"
+      },
+      {
+        "nom": "Wagneriana Green",
+        "couleur": "vert",
+        "note": "dénomination commerciale"
+      },
+      {
+        "nom": "Wagneriana Yellow",
+        "couleur": "jaune",
+        "note": "héliconia dressé (grossiste)"
+      }
+    ],
+    "formes": "Inflorescence dressée et large (20–35 cm) sur tige de 1 à 1,5 m ; vendue à l'unité, souvent en grande taille pour les compositions monumentales.",
+    "saison": "Toute l'année en import (Costa Rica, Colombie, Équateur, Barbade, Surinam, Hawaï), plus abondant de mai à octobre ; très sensible au froid (jamais sous 13–15 °C). Floraison naturelle surtout au printemps (d'où « Easter heliconia »).",
+    "tenue_vase": "7–12 jours",
+    "gamme_prix": "€€€",
+    "rarete_jeu": "rare",
+    "notes_dessin": "Inflorescence dressée, large et aplatie, composée de 6 à 12 bractées en nacelle très évasées, alternées sur un seul plan et se chevauchant fortement à la base. Chaque bractée est rose à rouge sur la joue, s'éclaircit en crème ou jaune pâle vers la base et porte un large liseré vert vif le long de la lèvre et à la pointe, ce qui donne l'effet « arc-en-ciel ». Surface lisse, cireuse et brillante ; de petites fleurs pâles dépassent à peine des bractées. De face, une grande flamme symétrique en éventail ; de profil, un empilement de coupes épaisses ; la tige verte porte de grandes feuilles de bananier vert franc, à nervure médiane épaisse.",
+    "wiki": "Heliconia wagneriana",
+    "img_queries": [
+      "Heliconia wagneriana",
+      "Heliconia wagneriana flower"
+    ],
+    "sources": [
+      "https://www.sierraflowerfinder.com/en/d/heliconia-wagneriana-red/1942",
+      "https://florabundance.com/flowers/heliconia-upright-wagneriana-yellow/",
+      "https://www.heliconia.org/_files/ugd/ef1aa2_1e02557e18b44bd2a0f1134427cd05f6.pdf",
+      "https://fr.wikipedia.org/wiki/Heliconia_wagneriana"
+    ]
+  },
+  {
+    "id": "heliconia-bihai",
+    "nom_fr": "Héliconia bihai (pince de homard dressée)",
+    "nom_en": "Lobster claw heliconia, macaw flower",
+    "latin": "Heliconia bihai",
+    "famille": "Heliconiaceae",
+    "categorie": "Exotiques",
+    "role": "focale",
+    "couleurs": [
+      "rouge et vert",
+      "rouge, jaune et vert",
+      "rouge foncé",
+      "chocolat",
+      "jaune",
+      "vert",
+      "rose"
+    ],
+    "varietes": [
+      {
+        "nom": "Lobster Claw One",
+        "couleur": "rouge à pointe verte",
+        "note": "lèvre vert foncé soulignée de blanc ; 7 à 12 bractées"
+      },
+      {
+        "nom": "Lobster Claw Two",
+        "couleur": "rouge orangé, lèvre et pointe vertes",
+        "note": "fine ligne jaune sous la lèvre ; 7 à 13 bractées"
+      },
+      {
+        "nom": "Giant Lobster Claw",
+        "couleur": "rouge, lèvre et pointe vertes",
+        "note": "grande pince ; 8 à 14 bractées, brillante et lisse"
+      },
+      {
+        "nom": "Kamehameha",
+        "couleur": "rouge et jaune, pointe verte",
+        "note": "environ 6 bractées, rachis jaune"
+      },
+      {
+        "nom": "Chocolate Dancer",
+        "couleur": "chocolat (terre de Sienne)",
+        "note": "lèvre bordée de jaune et de vert clair"
+      },
+      {
+        "nom": "Yellow Dancer",
+        "couleur": "jaune à carène verte",
+        "note": "grandes bractées jaune d'or"
+      },
+      {
+        "nom": "Emerald Forest",
+        "couleur": "vert, base jaune ou blanche"
+      },
+      {
+        "nom": "Balisier",
+        "couleur": "rouge à lèvre verte étroite",
+        "note": "8 à 22 bractées renflées à la base"
+      },
+      {
+        "nom": "Arawak",
+        "couleur": "rouge, liseré jaune pâle, pointe verte"
+      },
+      {
+        "nom": "Purple Throat",
+        "couleur": "rouge vif à rouge foncé, pointe verte",
+        "note": "bractées distiques à légèrement spiralées"
+      },
+      {
+        "nom": "Manoa Sunrise",
+        "couleur": "rouge, lèvre dorée, pointe verte"
+      },
+      {
+        "nom": "Kuma Negro",
+        "couleur": "rouge foncé, lèvre verte, base jaune"
+      },
+      {
+        "nom": "Barbados Flat",
+        "couleur": "rouge à lèvre jaune",
+        "note": "bractées aplaties latéralement"
+      },
+      {
+        "nom": "Lone Lover",
+        "couleur": "rouge"
+      },
+      {
+        "nom": "Peachy Pink",
+        "couleur": "rose pêche"
+      },
+      {
+        "nom": "Shaneana Gran Mama",
+        "couleur": "rouge",
+        "note": "grande taille ; HSI : Schneana Grand Mama"
+      }
+    ],
+    "formes": "Inflorescence dressée de 20 à 45 cm sur tige de 1 à 1,8 m ; tailles petite, moyenne et grande ; vendue à l'unité.",
+    "saison": "Toute l'année en import (Costa Rica, Colombie, Équateur, Barbade, Surinam, Hawaï), plus abondant de mai à octobre ; très sensible au froid (jamais sous 13–15 °C).",
+    "tenue_vase": "10–14 jours",
+    "gamme_prix": "€€€",
+    "rarete_jeu": "rare",
+    "notes_dessin": "Inflorescence dressée de 5 à 22 bractées en forme de pince de homard (nacelles profondes, pointues et recourbées vers le haut), alternées sur un même plan de part et d'autre d'un rachis rouge ou jaune presque droit, la plus basse souvent verte. Coloris typique : joue rouge, carène et pointe vertes, lèvre soulignée d'un trait jaune ou vert ; variantes chocolat, jaunes ou vertes. Surface épaisse, lisse, cireuse et brillante ; des fleurs tubulaires blanches à sépales verts pointent à l'ouverture des bractées. De face, un épi en zigzag de crochets alternés ; de profil, une échelle de cuillers dressées au sommet d'une tige verte épaisse, entourée de grandes feuilles de bananier à nervure médiane parfois rayée de bordeaux.",
+    "wiki": "Heliconia bihai",
+    "img_queries": [
+      "Heliconia bihai",
+      "Heliconia bihai Lobster Claw",
+      "Heliconia bihai flower"
+    ],
+    "sources": [
+      "https://www.heliconia.org/_files/ugd/ef1aa2_1e02557e18b44bd2a0f1134427cd05f6.pdf",
+      "https://alohatropicals.com/product/heliconia-bihai-yellow-dancer/",
+      "https://alohatropicals.com/product/heliconia-bihai-arawak/",
+      "https://www.sierraflowerfinder.com/en/f/exotic-blooms-and-foliages/heliconia/40?page=1&flt=0",
+      "https://en.wikipedia.org/wiki/Heliconia_bihai"
+    ]
+  },
+  {
+    "id": "heliconia-psittacorum",
+    "nom_fr": "Héliconia perroquet",
+    "nom_en": "Parrot heliconia, parakeet flower",
+    "latin": "Heliconia psittacorum et hybrides (H. psittacorum × H. spathocircinata)",
+    "famille": "Heliconiaceae",
+    "categorie": "Exotiques",
+    "role": "secondaire",
+    "couleurs": [
+      "rouge",
+      "rouge foncé",
+      "orange",
+      "jaune doré",
+      "rose",
+      "rose et crème",
+      "bicolore rouge et jaune"
+    ],
+    "varietes": [
+      {
+        "nom": "Andromeda",
+        "couleur": "orange à rouge",
+        "note": "3 à 5 bractées ; sépales orange à bande noire"
+      },
+      {
+        "nom": "Lady Di",
+        "couleur": "rouge foncé",
+        "note": "5 à 8 bractées ; rachis rouge ou rose"
+      },
+      {
+        "nom": "Sassy",
+        "couleur": "rose et crème",
+        "note": "bractées vert pâle ou crème à la base, rose-rouge au bout"
+      },
+      {
+        "nom": "St. Vincent Red",
+        "couleur": "rouge vif",
+        "note": "dégradé vers l'orange à la base"
+      },
+      {
+        "nom": "Strawberries and Cream",
+        "couleur": "rose-rouge et crème"
+      },
+      {
+        "nom": "Petra",
+        "couleur": "rouge",
+        "note": "rachis orange ; proche d'Andromeda mais plus grand"
+      },
+      {
+        "nom": "Kathy",
+        "couleur": "rouge foncé",
+        "note": "petite tache crème à la base de la lèvre"
+      },
+      {
+        "nom": "Lillian",
+        "couleur": "rose à rouge"
+      },
+      {
+        "nom": "Choconiana",
+        "couleur": "orange"
+      },
+      {
+        "nom": "Suriname Sassy",
+        "couleur": "jaune pâle lavé de rose"
+      },
+      {
+        "nom": "Flamingo",
+        "couleur": "orange",
+        "note": "dénomination commerciale"
+      },
+      {
+        "nom": "Golden Torch",
+        "couleur": "jaune doré",
+        "note": "hybride psittacorum × spathocircinata ; fleurit presque toute l'année"
+      },
+      {
+        "nom": "Alan Carle",
+        "couleur": "rouge et jaune",
+        "note": "hybride psittacorum × spathocircinata"
+      },
+      {
+        "nom": "Tropics",
+        "couleur": "orange pâle à rouge clair",
+        "note": "hybride psittacorum × spathocircinata"
+      },
+      {
+        "nom": "Guyana",
+        "couleur": "rouge orangé",
+        "note": "hybride ; bractées spiralées"
+      },
+      {
+        "nom": "Keanae Red",
+        "couleur": "rouge et orange",
+        "note": "hybride psittacorum × spathocircinata"
+      },
+      {
+        "nom": "Fire Opal",
+        "couleur": "jaune orangé",
+        "note": "nom commercial ; petites bractées, tiges 40–120 cm"
+      },
+      {
+        "nom": "Golden Opal",
+        "couleur": "orange doré",
+        "note": "nom commercial"
+      },
+      {
+        "nom": "Nickeriensis",
+        "couleur": "rose-rouge et jaune doré",
+        "note": "hybride H. marginata × H. psittacorum"
+      }
+    ],
+    "formes": "Petite inflorescence dressée (10–20 cm) sur tige fine de 40 à 120 cm ; vendue en bottes ou à la tige, idéale en complément de bouquets tropicaux.",
+    "saison": "Toute l'année (Costa Rica, Colombie, Surinam, Barbade, Hawaï, aussi serres néerlandaises) ; l'héliconia le plus courant en Europe.",
+    "tenue_vase": "10–14 jours",
+    "gamme_prix": "€",
+    "rarete_jeu": "commune",
+    "notes_dessin": "Inflorescence dressée et légère : 3 à 8 bractées étroites, lancéolées et pointues, alternées sur un rachis droit et écartées à environ 45°, la plus basse munie d'une carène verte. Les fleurs sont très visibles : tubes arqués jaunes ou orange, terminés par une bande vert-noir et une petite pointe blanche, qui jaillissent de chaque bractée comme des becs de perruche. Surface lisse et satinée, couleurs vives (rouge, orange, rose, jaune d'or, rose et crème). Tige fine, verte, d'aspect roseau, avec quelques feuilles lancéolées étroites, dressées, rappelant celles du balisier (canna).",
+    "wiki": "Heliconia psittacorum",
+    "img_queries": [
+      "Heliconia psittacorum",
+      "Heliconia psittacorum Lady Di",
+      "Heliconia Golden Torch"
+    ],
+    "sources": [
+      "https://www.heliconia.org/_files/ugd/ef1aa2_1e02557e18b44bd2a0f1134427cd05f6.pdf",
+      "https://alohatropicals.com/product/heliconia-spathocircinata-golden-torch/",
+      "https://www.sierraflowerfinder.com/en/d/heliconia-psittacorum-fire-opal/1935",
+      "https://www.sierraflowerfinder.com/en/d/heliconia-psittiacorum-sassy/1945",
+      "https://en.wikipedia.org/wiki/Heliconia_psittacorum"
+    ]
+  },
+  {
+    "id": "heliconia-caribaea",
+    "nom_fr": "Héliconia caribaea (balisier des Caraïbes)",
+    "nom_en": "Wild plantain, Caribbean heliconia",
+    "latin": "Heliconia caribaea et hybrides H. bihai × H. caribaea",
+    "famille": "Heliconiaceae",
+    "categorie": "Exotiques",
+    "role": "focale",
+    "couleurs": [
+      "rouge",
+      "bordeaux",
+      "jaune d'or",
+      "crème",
+      "jaune-vert",
+      "bicolore rouge et jaune"
+    ],
+    "varietes": [
+      {
+        "nom": "Black Magic",
+        "couleur": "bordeaux foncé",
+        "note": "base rouge, lèvre et pointe vertes ; 10 à 14 bractées"
+      },
+      {
+        "nom": "Purpurea",
+        "couleur": "rouge",
+        "note": "très grandes bractées, jusqu'à 22"
+      },
+      {
+        "nom": "Gold",
+        "couleur": "jaune d'or",
+        "note": "effet bicolore doré et jaune ; tiges poudrées de blanc"
+      },
+      {
+        "nom": "Cream",
+        "couleur": "or et crème",
+        "note": "taches rouges possibles au milieu de la lèvre"
+      },
+      {
+        "nom": "Flash",
+        "couleur": "rouge-rose, jaune et vert"
+      },
+      {
+        "nom": "Chartreuse",
+        "couleur": "jaune-vert"
+      },
+      {
+        "nom": "Prince of Darkness",
+        "couleur": "rouge sang foncé",
+        "note": "grande taille, 70–120 cm"
+      },
+      {
+        "nom": "Kawauchi",
+        "couleur": "rouge à lèvre jaune d'or",
+        "note": "hybride bihai × caribaea"
+      },
+      {
+        "nom": "Carib Flame",
+        "couleur": "rouge lavé d'orange",
+        "note": "hybride bihai × caribaea"
+      },
+      {
+        "nom": "Jacquinii",
+        "couleur": "rouge et jaune",
+        "note": "hybride bihai × caribaea"
+      },
+      {
+        "nom": "Yellow Dolly",
+        "couleur": "rouge et jaune",
+        "note": "hybride bihai × caribaea"
+      },
+      {
+        "nom": "Criswick",
+        "couleur": "rouge",
+        "note": "hybride bihai × caribaea ; 8 à 16 bractées"
+      },
+      {
+        "nom": "Richmond Red",
+        "couleur": "rouge à bordeaux",
+        "note": "hybride bihai × caribaea"
+      },
+      {
+        "nom": "Volcano",
+        "couleur": "rouge",
+        "note": "hybride bihai × caribaea (HSI)"
+      }
+    ],
+    "formes": "Grande inflorescence dressée (25–50 cm) sur tige épaisse de 1,2 à 2 m ; vendue à l'unité, plutôt pour les grandes compositions.",
+    "saison": "Toute l'année en import (Costa Rica, Colombie, Équateur, Barbade, Surinam, Hawaï), plus abondant de mai à octobre ; très sensible au froid (jamais sous 13–15 °C).",
+    "tenue_vase": "10–14 jours",
+    "gamme_prix": "€€€",
+    "rarete_jeu": "rare",
+    "notes_dessin": "Inflorescence dressée massive de 5 à 22 bractées larges et épaisses, en pinces de homard profondes, alternées sur un rachis rouge ou jaune et serrées les unes contre les autres. Bractées très cireuses, brillantes et rigides, d'un seul ton (rouge, bordeaux presque noir, or, crème) ou bicolores rouge et jaune, la pointe et la lèvre souvent vertes. Les tiges, gaines et revers des feuilles sont couverts d'une pruine blanche cireuse qui leur donne un aspect givré. De face, un grand épi en chevrons ; de profil, des coupes lourdes et profondes ; feuilles de bananier immenses, vert bleuté.",
+    "wiki": "Heliconia caribaea",
+    "img_queries": [
+      "Heliconia caribaea",
+      "Heliconia caribaea Black Magic",
+      "Heliconia caribaea x Heliconia bihai"
+    ],
+    "sources": [
+      "https://www.heliconia.org/_files/ugd/ef1aa2_1e02557e18b44bd2a0f1134427cd05f6.pdf",
+      "https://alohatropicals.com/product/heliconia-caribaea-black-magic/",
+      "https://alohatropicals.com/product/heliconia-caribaea-gold/",
+      "https://www.sierraflowerfinder.com/en/d/heliconia-prince-of-darkness/1934"
+    ]
+  },
+  {
+    "id": "heliconia-stricta",
+    "nom_fr": "Héliconia stricta",
+    "nom_en": "Dwarf Jamaican heliconia, Firebird heliconia",
+    "latin": "Heliconia stricta",
+    "famille": "Heliconiaceae",
+    "categorie": "Exotiques",
+    "role": "secondaire",
+    "couleurs": [
+      "rouge",
+      "rose",
+      "rouge orangé",
+      "jaune",
+      "orange"
+    ],
+    "varietes": [
+      {
+        "nom": "Dwarf Jamaican",
+        "couleur": "rouge ou rose, carène verte",
+        "note": "3 à 5 bractées ; plante naine"
+      },
+      {
+        "nom": "Bucky",
+        "couleur": "rouge",
+        "note": "fin liseré vert et jaune sur la lèvre"
+      },
+      {
+        "nom": "Fire Bird",
+        "couleur": "rouge, carène et lèvre vertes",
+        "note": "fine ligne bordeaux entre vert et rouge"
+      },
+      {
+        "nom": "Sharonii",
+        "couleur": "rouge orangé clair et jaune"
+      },
+      {
+        "nom": "Tagami",
+        "couleur": "rouge vif à base jaune ou dorée",
+        "note": "5 à 10 bractées"
+      },
+      {
+        "nom": "Tagami Red",
+        "couleur": "rouge",
+        "note": "dénomination commerciale"
+      },
+      {
+        "nom": "Iris",
+        "couleur": "rouge à lèvre verte fine"
+      },
+      {
+        "nom": "Lee Moore",
+        "couleur": "rouge",
+        "note": "3 à 5 bractées"
+      },
+      {
+        "nom": "Dorado Gold",
+        "couleur": "jaune à touche rose",
+        "note": "synonyme Quito Gold"
+      },
+      {
+        "nom": "Oriole Orange",
+        "couleur": "orange, lèvre verte",
+        "note": "hybride H. orthotricha × H. stricta selon HSI"
+      }
+    ],
+    "formes": "Inflorescence dressée compacte (10–25 cm) sur tige de 50 à 120 cm ; nombreuses formes naines.",
+    "saison": "Toute l'année en import (Costa Rica, Colombie, Équateur, Barbade, Surinam, Hawaï), plus abondant de mai à octobre ; très sensible au froid (jamais sous 13–15 °C).",
+    "tenue_vase": "10–14 jours",
+    "gamme_prix": "€€",
+    "rarete_jeu": "rare",
+    "notes_dessin": "Petite inflorescence dressée de 3 à 10 bractées en nacelles assez courtes et ouvertes, alternées sur un rachis droit rouge ou jaune. Bractées rouges ou roses à la carène et à la pointe vertes, la lèvre soulignée de fines lignes vertes, jaunes ou bordeaux ; variantes jaunes à joue rosée. Surface cireuse et lisse ; fleurs à sépales verts à pointe blanche dépassant des bractées. Silhouette compacte de petit homard au sommet d'une tige verte ; feuilles de type bananier de taille moyenne, souvent à nervure médiane rougeâtre.",
+    "wiki": "Heliconia stricta",
+    "img_queries": [
+      "Heliconia stricta",
+      "Heliconia stricta Dwarf Jamaican",
+      "Heliconia stricta Firebird"
+    ],
+    "sources": [
+      "https://www.heliconia.org/_files/ugd/ef1aa2_1e02557e18b44bd2a0f1134427cd05f6.pdf",
+      "https://www.sierraflowerfinder.com/en/d/heliconia-jamaican-dwarf/1984",
+      "https://alohatropicals.com/product/heliconia-orthotricha-stricta-dorado-gold/"
+    ]
+  },
+  {
+    "id": "heliconia-chartacea",
+    "nom_fr": "Héliconia chartacea « Sexy Pink »",
+    "nom_en": "Sexy Pink heliconia",
+    "latin": "Heliconia chartacea",
+    "famille": "Heliconiaceae",
+    "categorie": "Exotiques",
+    "role": "focale",
+    "couleurs": [
+      "rose et vert",
+      "écarlate et vert"
+    ],
+    "varietes": [
+      {
+        "nom": "Sexy Pink",
+        "couleur": "rose carmin, lèvre et pointe vert pâle",
+        "note": "4 à 28 bractées spiralées ; rachis rouge mandarine"
+      },
+      {
+        "nom": "Sexy Scarlet",
+        "couleur": "écarlate, lèvre vert pâle",
+        "note": "4 à 13 bractées spiralées"
+      }
+    ],
+    "formes": "Longue inflorescence pendante (40 à plus de 90 cm) sur tige de 1,2 à 1,5 m ; vendue à l'unité, souvent en très grande longueur.",
+    "saison": "Disponible presque toute l'année en petites quantités (Costa Rica, Hawaï, Barbade) ; présente aussi chez les grossistes néerlandais.",
+    "tenue_vase": "10–14 jours",
+    "gamme_prix": "€€€€",
+    "rarete_jeu": "precieuse",
+    "notes_dessin": "Longue inflorescence pendante dont les 4 à 28 bractées en nacelle sont disposées en spirale autour d'un rachis rouge orangé ondulé, si bien que la chaîne tourne sur elle-même au lieu de rester plane. Chaque bractée est rose bonbon (ou écarlate) sur la joue et porte une épaisse lèvre et une pointe vert pâle à vert foncé, très contrastées. Texture fine et papyracée (« chartacea »), un peu poudrée, mate. De face comme de profil, une guirlande torsadée rose et verte de plus en plus fine vers le bas, suspendue à une tige verte cireuse, avec de grandes feuilles de bananier.",
+    "wiki": "Heliconia chartacea",
+    "img_queries": [
+      "Heliconia chartacea",
+      "Heliconia chartacea Sexy Pink"
+    ],
+    "sources": [
+      "https://www.heliconia.org/_files/ugd/ef1aa2_1e02557e18b44bd2a0f1134427cd05f6.pdf",
+      "https://alohatropicals.com/product/heliconia-chartacea-sexy-pink/",
+      "https://www.sierraflowerfinder.com/en/d/heliconia-sexy-pink-/6253",
+      "https://shop.holex.com/en_US/All-products/Flowers/Tropicals/c/Flowers-Tropicals"
+    ]
+  },
+  {
+    "id": "heliconia-orthotricha",
+    "nom_fr": "Héliconia orthotricha",
+    "nom_en": "Orthotricha heliconia, She heliconia",
+    "latin": "Heliconia orthotricha",
+    "famille": "Heliconiaceae",
+    "categorie": "Exotiques",
+    "role": "focale",
+    "couleurs": [
+      "rose",
+      "rouge cramoisi",
+      "rouge"
+    ],
+    "varietes": [
+      {
+        "nom": "She",
+        "couleur": "rose soutenu, lèvre bordée de noir et de vert",
+        "note": "surface veloutée ; 5 à 7 bractées"
+      },
+      {
+        "nom": "Edge of Night",
+        "couleur": "rouge cramoisi, lèvre vert foncé",
+        "note": "bractées souvent couvertes de poils veloutés ; HSI préfère Edge of Nite"
+      },
+      {
+        "nom": "Eden Pink",
+        "couleur": "rose, base crème",
+        "note": "épaisse ligne vert foncé ou bordeaux sur la lèvre ; veloutée"
+      },
+      {
+        "nom": "Imperial",
+        "couleur": "rose vif, base blanche",
+        "note": "8 à 9 bractées"
+      },
+      {
+        "nom": "Kauai Christmas",
+        "couleur": "rouge vif, lèvre verte",
+        "note": "pubescente"
+      }
+    ],
+    "formes": "Inflorescence dressée de 15 à 30 cm sur tige de 1 à 1,5 m ; vendue à l'unité.",
+    "saison": "Toute l'année en import (Costa Rica, Colombie, Équateur, Barbade, Surinam, Hawaï), plus abondant de mai à octobre ; très sensible au froid (jamais sous 13–15 °C).",
+    "tenue_vase": "10–14 jours",
+    "gamme_prix": "€€€",
+    "rarete_jeu": "rare",
+    "notes_dessin": "Inflorescence dressée de 5 à 9 bractées en nacelle, alternées sur un même plan le long d'un rachis rose ou crème. Bractées rose vif à rouge cramoisi, la lèvre soulignée d'un trait noir-bordeaux doublé d'une ligne verte et d'un très fin bord translucide, la base parfois crème ou blanche. Toute la surface est couverte d'un fin duvet velouté qui adoucit la couleur et donne un reflet mat et soyeux. De profil, une pince élancée et régulière sur une tige verte ; feuilles de type bananier.",
+    "wiki": "Heliconia orthotricha",
+    "img_queries": [
+      "Heliconia orthotricha",
+      "Heliconia orthotricha flower"
+    ],
+    "sources": [
+      "https://www.heliconia.org/_files/ugd/ef1aa2_1e02557e18b44bd2a0f1134427cd05f6.pdf",
+      "https://alohatropicals.com/product/heliconia-orthotricha-edge-of-night/",
+      "https://www.sierraflowerfinder.com/en/d/heliconia-orthotricha-edge-of-night/1929"
+    ]
+  },
+  {
+    "id": "heliconia-velues",
+    "nom_fr": "Héliconias pendants velus",
+    "nom_en": "Woolly hanging heliconias",
+    "latin": "Heliconia vellerigera, H. xanthovillosa, H. regalis",
+    "famille": "Heliconiaceae",
+    "categorie": "Exotiques",
+    "role": "focale",
+    "couleurs": [
+      "rouge cannelle",
+      "jaune",
+      "jaune-vert",
+      "rouge et jaune"
+    ],
+    "varietes": [
+      {
+        "nom": "She Kong",
+        "couleur": "rouge couvert de poils cannelle",
+        "note": "H. vellerigera ; inflorescence pendante laineuse"
+      },
+      {
+        "nom": "Shogun",
+        "couleur": "jaune à jaune-vert, poils jaune argenté",
+        "note": "H. xanthovillosa ; pendante, entièrement laineuse"
+      },
+      {
+        "nom": "Barnum & Bailey",
+        "couleur": "jaune et rouge",
+        "note": "H. regalis ; bractée pendante duveteuse « en flammes »"
+      }
+    ],
+    "formes": "Inflorescence pendante de 40 à 80 cm, vendue à l'unité par quelques producteurs spécialisés.",
+    "saison": "Très rare en Europe ; quelques arrivages de Colombie, du Costa Rica ou d'Hawaï, sur commande.",
+    "tenue_vase": "7–12 jours",
+    "gamme_prix": "€€€€",
+    "rarete_jeu": "legendaire",
+    "notes_dessin": "Inflorescence pendante dont les bractées en nacelle s'enroulent en spirale lâche autour d'un rachis souvent velu lui aussi. Toute la surface est couverte d'une épaisse toison de poils laineux (cannelle sur fond rouge pour She Kong, jaune argenté sur fond jaune-vert pour Shogun) qui floute les contours et accroche la lumière en halo. Les couleurs paraissent veloutées et mates, avec des pointes plus sombres. Dessiner une guirlande duveteuse torsadée pendant d'une tige verte arquée, entourée de grandes feuilles de bananier.",
+    "wiki": "Heliconia vellerigera",
+    "img_queries": [
+      "Heliconia vellerigera",
+      "Heliconia vellerigera She Kong",
+      "Heliconia xanthovillosa"
+    ],
+    "sources": [
+      "https://alohatropicals.com/product/heliconia-vellerigera-she-kong/",
+      "https://alohatropicals.com/product/heliconia-xanthovillosa-shogun/",
+      "https://www.sierraflowerfinder.com/en/d/heliconia-she-kong/1944",
+      "https://www.sierraflowerfinder.com/en/d/heliconia-shogun/2004",
+      "https://florabundance.com/flowers/heliconia-hanging-she-kong-red/"
+    ]
+  },
+  {
+    "id": "calathea-crotalifera",
+    "nom_fr": "Calathea crotalifera (calathéa serpent à sonnette)",
+    "nom_en": "Rattlesnake plant, rattle shaker",
+    "latin": "Calathea crotalifera (syn. Goeppertia) et calathéas à fleurs coupées",
+    "famille": "Marantaceae",
+    "categorie": "Exotiques",
+    "role": "secondaire",
+    "couleurs": [
+      "jaune",
+      "orange saumon",
+      "vert"
+    ],
+    "varietes": [
+      {
+        "nom": "Rattle Snake",
+        "couleur": "jaune",
+        "note": "nom commercial du calathéa « serpent à sonnette »"
+      },
+      {
+        "nom": "Calathea Yellow",
+        "couleur": "jaune",
+        "note": "nom commercial"
+      },
+      {
+        "nom": "Calathea Salmon",
+        "couleur": "orange saumon",
+        "note": "nom commercial"
+      },
+      {
+        "nom": "Green Ice",
+        "couleur": "vert forêt",
+        "note": "Calathea cylindrica selon le pépiniériste ; bractée en ruche douce au toucher, petites fleurs jaunes"
+      }
+    ],
+    "formes": "Inflorescence terminale sur tige nue de 60 à 120 cm ; épi aplati de 10 à 25 cm (crotalifera) ou cône en ruche (Green Ice) ; vendu à la tige.",
+    "saison": "Toute l'année en import (Costa Rica, Équateur, Hawaï), quantités limitées en Europe.",
+    "tenue_vase": "14–21 jours",
+    "gamme_prix": "€€",
+    "rarete_jeu": "rare",
+    "notes_dessin": "Épi aplati en fer de lance, de 10 à 25 cm, formé de deux rangées de bractées carénées très serrées qui se chevauchent comme les écailles d'une crécelle de serpent à sonnette. Bractées jaune citron cireuses et brillantes (aussi saumon ou orange), dont le bord libre forme un petit bec ; de minuscules fleurs jaunes ou blanches pointent entre elles. De face, un losange étroit en écailles alternées ; de profil, une lame fine et dure. Tige verte rigide, sans feuilles en fleur coupée ; la plante porte de grandes feuilles en pagaie, vert franc, à nervures parallèles.",
+    "wiki": "Calathea crotalifera",
+    "img_queries": [
+      "Calathea crotalifera",
+      "Calathea crotalifera flower",
+      "Calathea lutea flower"
+    ],
+    "sources": [
+      "https://www.sierraflowerfinder.com/en/d/calathea-rattle-snake/5614",
+      "https://www.sierraflowerfinder.com/en/d/calathea-green-ice/2045",
+      "https://alohatropicals.com/product/calathea-green-ice/",
+      "https://www.sierraflowerfinder.com/en/f/exotic-blooms-and-foliages/novelties/152?page=1&flt=0"
+    ]
+  },
+  {
+    "id": "musa-fleur",
+    "nom_fr": "Fleur de bananier ornemental",
+    "nom_en": "Ornamental banana flower",
+    "latin": "Musa coccinea, M. ornata, M. velutina et autres Musa ornementaux",
+    "famille": "Musaceae",
+    "categorie": "Exotiques",
+    "role": "focale",
+    "couleurs": [
+      "orange",
+      "rouge orangé",
+      "violet",
+      "rose",
+      "jaune"
+    ],
+    "varietes": [
+      {
+        "nom": "Musa coccinea",
+        "couleur": "orange",
+        "note": "espèce vendue en fleur coupée"
+      },
+      {
+        "nom": "Musa ornata",
+        "couleur": "violet",
+        "note": "espèce vendue en fleur coupée"
+      },
+      {
+        "nom": "Musa Orange",
+        "couleur": "orange",
+        "note": "dénomination commerciale"
+      },
+      {
+        "nom": "Musa becarrii",
+        "couleur": "orange-rouge foncé à pointes jaunes",
+        "note": "orthographe du pépiniériste (M. beccarii) ; « excellente fleur coupée »"
+      },
+      {
+        "nom": "Musa velutina",
+        "couleur": "rose (petites bananes veloutées)",
+        "note": "inflorescence suivie de petites bananes roses"
+      },
+      {
+        "nom": "Okanaiwa",
+        "couleur": "rouge orangé bordé de jaune",
+        "note": "Musa ornemental rare"
+      },
+      {
+        "nom": "Siam Yellow",
+        "couleur": "jaune",
+        "note": "bractées jaunes, petits fruits ornementaux"
+      }
+    ],
+    "formes": "Inflorescence dressée de 15 à 40 cm sur tige de 50 à 100 cm, parfois avec les premières « mains » de mini-bananes ; vendue à l'unité.",
+    "saison": "Toute l'année en import (Costa Rica, Équateur, Thaïlande), en petites quantités.",
+    "tenue_vase": "7–14 jours",
+    "gamme_prix": "€€€",
+    "rarete_jeu": "rare",
+    "notes_dessin": "Inflorescence dressée en forme de fuseau ou de bougie : de grandes bractées en nacelle, épaisses et cireuses, s'enroulent en spirale et se recouvrent jusqu'à une pointe conique fermée. Les bractées inférieures se soulèvent l'une après l'autre en se recourbant vers l'arrière et découvrent une rangée de petites fleurs tubulaires jaune-orangé puis de minuscules bananes (roses et veloutées chez M. velutina). Couleurs saturées (orange vif, rouge, violet, rose) avec un léger reflet pruineux. De profil, la bractée ouverte forme une languette arquée au-dessus d'une rangée de fleurs ; tige épaisse et lisse, verte.",
+    "wiki": "Musa coccinea",
+    "img_queries": [
+      "Musa coccinea",
+      "Musa ornata",
+      "Musa velutina"
+    ],
+    "sources": [
+      "https://www.sierraflowerfinder.com/en/d/musa-coccinea/2051",
+      "https://www.sierraflowerfinder.com/en/d/musa-ornata/2053",
+      "https://alohatropicals.com/product/musa-becarrii/",
+      "https://alohatropicals.com/product/musa-velutina/",
+      "https://en.wikipedia.org/wiki/Musa_coccinea"
+    ]
+  },
+  {
+    "id": "strelitzia-reginae",
+    "nom_fr": "Oiseau de paradis (strelitzia)",
+    "nom_en": "Bird of paradise",
+    "latin": "Strelitzia reginae",
+    "famille": "Strelitziaceae",
+    "categorie": "Exotiques",
+    "role": "focale",
+    "couleurs": [
+      "orange et bleu",
+      "jaune et bleu"
+    ],
+    "varietes": [
+      {
+        "nom": "Mandela's Gold",
+        "couleur": "jaune et bleu",
+        "note": "cultivar à fleurs jaunes"
+      },
+      {
+        "nom": "subsp. mzimvubuensis",
+        "couleur": "orange à pétales blancs",
+        "note": "sous-espèce découverte en 2002, pétales internes blancs au lieu de bleus"
+      },
+      {
+        "nom": "Strelitzia juncea",
+        "couleur": "orange et bleu",
+        "note": "espèce voisine aux feuilles en jonc sans limbe, fleur identique"
+      },
+      {
+        "nom": "Select Bird of Paradise",
+        "couleur": "orange, bleu et vert",
+        "note": "qualité « select », tiges 70–75 cm"
+      }
+    ],
+    "formes": "Tige rigide de 60 à 100 cm portant une spathe fermée ou ouverte ; plusieurs fleurs sortent successivement de la même spathe ; aussi en plante en pot.",
+    "saison": "Toute l'année (Afrique du Sud, Israël, Espagne, Portugal, Californie, serres néerlandaises), pic de l'automne au printemps.",
+    "tenue_vase": "10–14 jours",
+    "gamme_prix": "€€",
+    "rarete_jeu": "commune",
+    "notes_dessin": "La spathe, bec dur et horizontal de 12 à 20 cm, vert lavé de pourpre et bordé de rouge, est posée à angle droit au sommet de la tige comme la tête d'un oiseau. De sa fente supérieure sortent en éventail trois sépales orange vif, étroits et pointus, dressés comme une crête, et deux pétales bleu outremer soudés en flèche, d'où dépasse le style blanc. Texture cireuse et lisse, la spathe un peu poudrée ; plusieurs fleurs successives forment une crête de plus en plus fournie. De profil, une silhouette d'oiseau à tête huppée ; tige cylindrique gris-vert ; feuilles (rarement vendues avec) oblongues, coriaces, gris-vert, sur de longs pétioles.",
+    "wiki": "Strelitzia reginae",
+    "img_queries": [
+      "Strelitzia reginae",
+      "Strelitzia reginae Mandela's Gold",
+      "Strelitzia juncea"
+    ],
+    "sources": [
+      "https://en.wikipedia.org/wiki/Strelitzia_reginae",
+      "https://www.sierraflowerfinder.com/en/d/birds-of-paradise/2741",
+      "https://alohatropicals.com/product/strelitizia-reginae-bird-of-paradise/",
+      "https://shop.holex.com/en_US/All-products/Flowers/Tropicals/c/Flowers-Tropicals"
+    ]
+  },
+  {
+    "id": "strelitzia-nicolai",
+    "nom_fr": "Strelitzia blanc géant",
+    "nom_en": "Giant white bird of paradise",
+    "latin": "Strelitzia nicolai",
+    "famille": "Strelitziaceae",
+    "categorie": "Exotiques",
+    "role": "focale",
+    "couleurs": [
+      "blanc et bleu",
+      "bleu nuit"
+    ],
+    "varietes": [
+      {
+        "nom": "Strelitzia nicolai",
+        "couleur": "blanc et bleu nuit",
+        "note": "spathe bleu foncé, sépales blancs, langue bleu violacé ; fleur jusqu'à 45 cm de long"
+      },
+      {
+        "nom": "Strelitzia alba",
+        "couleur": "blanc",
+        "note": "espèce voisine « white bird of paradise »"
+      }
+    ],
+    "formes": "Grosse tête florale (jusqu'à 45 cm de long) sur tige courte et épaisse, vendue à l'unité pour les grandes compositions ; surtout connu en plante d'intérieur.",
+    "saison": "Disponibilité irrégulière toute l'année (Afrique du Sud, Floride, Californie), très rare en fleur coupée en Europe.",
+    "tenue_vase": "7–10 jours",
+    "gamme_prix": "€€€€",
+    "rarete_jeu": "precieuse",
+    "notes_dessin": "Grande spathe en forme de bateau, bleu nuit à pourpre ardoise, poudrée, longue de 30 à 45 cm, d'où sortent plusieurs fleurs superposées. Chaque fleur montre trois sépales blancs larges et pointus, ouverts en éventail, et une langue (pétales soudés) bleu violacé ; l'ensemble évoque un oiseau blanc à crête ébouriffée. Matière épaisse et cireuse, la spathe mate et légèrement striée. De profil, la spathe horizontale repose au bout d'un pédoncule court et massif ; les feuilles, immenses et gris-vert, sont disposées en éventail comme celles d'un bananier.",
+    "wiki": "Strelitzia nicolai",
+    "img_queries": [
+      "Strelitzia nicolai",
+      "Strelitzia nicolai flower",
+      "Strelitzia alba"
+    ],
+    "sources": [
+      "https://en.wikipedia.org/wiki/Strelitzia_nicolai",
+      "https://en.wikipedia.org/wiki/Strelitzia",
+      "https://alohatropicals.com/product/strelitzia-nicolai-giant-bird-of-paradise/"
+    ]
+  },
+  {
+    "id": "alpinia-purpurata",
+    "nom_fr": "Alpinia (gingembre rouge)",
+    "nom_en": "Red ginger, ostrich plume",
+    "latin": "Alpinia purpurata",
+    "famille": "Zingiberaceae",
+    "categorie": "Exotiques",
+    "role": "focale",
+    "couleurs": [
+      "rouge",
+      "rose",
+      "blanc rosé"
+    ],
+    "varietes": [
+      {
+        "nom": "Jungle King",
+        "couleur": "rouge",
+        "note": "grande inflorescence ; cultivar cité par Wikipédia"
+      },
+      {
+        "nom": "Jungle Queen",
+        "couleur": "rose",
+        "note": "cultivar cité par Wikipédia"
+      },
+      {
+        "nom": "Tahitian Ginger",
+        "couleur": "rouge",
+        "note": "forme double et ramifiée"
+      },
+      {
+        "nom": "Kimi",
+        "couleur": "rose"
+      },
+      {
+        "nom": "Red King",
+        "couleur": "rouge",
+        "note": "dénomination commerciale"
+      }
+    ],
+    "formes": "Inflorescence terminale de 15 à 40 cm sur tige feuillée de 60 à 150 cm ; tailles small, medium, large ; vendue à la tige.",
+    "saison": "Toute l'année (Costa Rica, Hawaï, Antilles, Surinam) ; disponible chez les grossistes néerlandais.",
+    "tenue_vase": "10–14 jours",
+    "gamme_prix": "€€",
+    "rarete_jeu": "rare",
+    "notes_dessin": "Épi conique dressé de 15 à 40 cm composé de dizaines de bractées en nacelle, cireuses et brillantes, disposées en spirale serrée et légèrement écartées vers le haut, rouge vif ou rose. De petites fleurs blanches tubulaires apparaissent entre les bractées ; sur les vieilles inflorescences poussent parfois de petites plantules vertes. La forme double ramifiée ressemble à un panache de plumes. De profil, une flamme pointue au sommet d'une tige verte portant des feuilles lancéolées alternes, vert brillant, à nervure médiane marquée.",
+    "wiki": "Alpinia purpurata",
+    "img_queries": [
+      "Alpinia purpurata",
+      "Alpinia purpurata pink",
+      "Alpinia purpurata red ginger"
+    ],
+    "sources": [
+      "https://en.wikipedia.org/wiki/Alpinia_purpurata",
+      "https://www.sierraflowerfinder.com/en/d/ginger-red-alpinia/1989",
+      "https://www.sierraflowerfinder.com/en/d/ginger-kimi/3659",
+      "https://shop.holex.com/en_US/All-products/Flowers/Tropicals/c/Flowers-Tropicals"
+    ]
+  },
+  {
+    "id": "etlingera-elatior",
+    "nom_fr": "Rose de porcelaine (gingembre torche)",
+    "nom_en": "Torch ginger",
+    "latin": "Etlingera elatior",
+    "famille": "Zingiberaceae",
+    "categorie": "Exotiques",
+    "role": "focale",
+    "couleurs": [
+      "rouge",
+      "rouge foncé",
+      "rose",
+      "rose saumon",
+      "rose très pâle",
+      "chocolat"
+    ],
+    "varietes": [
+      {
+        "nom": "Red Torch",
+        "couleur": "rouge",
+        "note": "forme standard : boule à bractées externes très réfléchies"
+      },
+      {
+        "nom": "Bloody Mary",
+        "couleur": "rouge très foncé, bords blancs"
+      },
+      {
+        "nom": "Frilly Pink",
+        "couleur": "rose saumon",
+        "note": "bractées externes très réfléchies, cône qui s'ouvre en chrysanthème"
+      },
+      {
+        "nom": "Almost White",
+        "couleur": "rose très pâle",
+        "note": "bractées étroites roulées"
+      },
+      {
+        "nom": "Pink Torch",
+        "couleur": "rose"
+      },
+      {
+        "nom": "Torch Chocolate",
+        "couleur": "chocolat",
+        "note": "orthographe du négociant : Chocalate"
+      },
+      {
+        "nom": "Porcelain Red",
+        "couleur": "rouge",
+        "note": "fleur et tige rouges"
+      }
+    ],
+    "formes": "Tête florale de 8 à 20 cm sur tige nue de 80 à 150 cm ; vendue en bouton (torche fermée) ou ouverte.",
+    "saison": "Toute l'année (Costa Rica, Hawaï, Malaisie, Thaïlande), plus abondante en été.",
+    "tenue_vase": "7–12 jours",
+    "gamme_prix": "€€€",
+    "rarete_jeu": "rare",
+    "notes_dessin": "Tête en forme de torche ou de rose géante : une collerette de grandes bractées externes cireuses, larges et arrondies, s'ouvre et se rabat vers l'arrière autour d'un cône central de petites bractées serrées comme des écailles. Sur le pourtour du cône apparaît un anneau de minuscules fleurs rouge sombre bordées de jaune. Surface très lisse et brillante, d'aspect porcelaine, bords parfois liserés de blanc. De profil, une coupe évasée posée sur une longue tige nue, verte ou rougeâtre, sans feuilles (les feuilles naissent sur d'autres tiges).",
+    "wiki": "Etlingera elatior",
+    "img_queries": [
+      "Etlingera elatior",
+      "Etlingera elatior torch ginger",
+      "Etlingera elatior pink"
+    ],
+    "sources": [
+      "https://www.heliconia.org/_files/ugd/ef1aa2_32f6722bf655448ba33385a1748d2f30.pdf",
+      "https://www.heliconia.org/etlinerga",
+      "https://www.sierraflowerfinder.com/en/d/ginger-red-torch/1993",
+      "https://en.wikipedia.org/wiki/Etlingera_elatior"
+    ]
+  },
+  {
+    "id": "zingiber",
+    "nom_fr": "Gingembre ruche et gingembre shampoing",
+    "nom_en": "Beehive ginger, shampoo ginger",
+    "latin": "Zingiber spectabile, Z. zerumbet et autres Zingiber",
+    "famille": "Zingiberaceae",
+    "categorie": "Exotiques",
+    "role": "focale",
+    "couleurs": [
+      "jaune et rouge",
+      "rose et jaune",
+      "doré",
+      "rouge",
+      "vert",
+      "blanc rosé"
+    ],
+    "varietes": [
+      {
+        "nom": "Beehive",
+        "couleur": "jaune et rouge",
+        "note": "Z. spectabile, très longue tenue"
+      },
+      {
+        "nom": "Pink Maraca",
+        "couleur": "rose-rouge à la base, jaune doré au sommet",
+        "note": "Z. spectabile, précoce"
+      },
+      {
+        "nom": "Jungle Drum",
+        "couleur": "base jaune translucide, sommet rose",
+        "note": "Z. spectabile compact, vire au rose foncé"
+      },
+      {
+        "nom": "Early Gold",
+        "couleur": "doré",
+        "note": "Z. spectabile élancé"
+      },
+      {
+        "nom": "Awapuhi",
+        "couleur": "vert virant au rouge",
+        "note": "Z. zerumbet, gingembre shampoing"
+      },
+      {
+        "nom": "Ginger Shampoo",
+        "couleur": "rouge",
+        "note": "nom commun Maracas"
+      },
+      {
+        "nom": "Yellow Maraca",
+        "couleur": "jaune vif",
+        "note": "gingembre shampoing jaune, 60 cm"
+      },
+      {
+        "nom": "Darcyi",
+        "couleur": "vert virant au rouge",
+        "note": "Z. zerumbet à feuilles panachées"
+      },
+      {
+        "nom": "Pagoda Jewel",
+        "couleur": "pointes rouge rubis, base vert lime",
+        "note": "Z. neglectum"
+      },
+      {
+        "nom": "Milky Way",
+        "couleur": "blanc lavé de rose",
+        "note": "Z. niveum ; « excellente fleur coupée »"
+      },
+      {
+        "nom": "Beehive Chocolate",
+        "couleur": "chocolat",
+        "note": "gingembre ruche chocolat (grossiste)"
+      },
+      {
+        "nom": "Beehive Gold",
+        "couleur": "jaune d'or",
+        "note": "gingembre ruche jaune (grossiste)"
+      }
+    ],
+    "formes": "Inflorescence en ruche (15–30 cm) ou en pomme de pin (5–12 cm) sur tige courte à moyenne (40–80 cm) issue directement du rhizome.",
+    "saison": "Toute l'année en import (Costa Rica, Hawaï, Thaïlande), meilleure offre en été et automne.",
+    "tenue_vase": "14–21 jours",
+    "gamme_prix": "€€",
+    "rarete_jeu": "rare",
+    "notes_dessin": "Gingembre ruche : cylindre dressé de 15 à 30 cm fait de bractées arrondies en coupelles, empilées en spirale serrée, dont le bord se retourne vers l'extérieur comme les anneaux d'une ruche de paille ; de petites fleurs violet-noir tachées de jaune sortent des coupelles. Gingembre shampoing : cône ovoïde compact de 5 à 12 cm, aux écailles imbriquées comme une pomme de pin, vert puis rouge, gorgé d'un liquide visqueux. Surfaces cireuses et brillantes, bords parfois translucides. Ces cônes sont portés par une tige courte et nue sortant du sol ; les feuilles, lancéolées et alternes, sont sur des tiges séparées.",
+    "wiki": "Zingiber spectabile",
+    "img_queries": [
+      "Zingiber spectabile",
+      "Zingiber zerumbet",
+      "Beehive ginger"
+    ],
+    "sources": [
+      "https://alohatropicals.com/product/zingiber-spectablis-beehive-ginger/",
+      "https://alohatropicals.com/product/zingiber-zerumbet-shampoo-ginger/",
+      "https://www.sierraflowerfinder.com/en/d/yellow-maraca-shampoo-ginger/5828",
+      "https://en.wikipedia.org/wiki/Zingiber_spectabile",
+      "https://florabundance.com/flowers/ginger-beehive-chocolate/"
+    ]
+  },
+  {
+    "id": "costus",
+    "nom_fr": "Costus (gingembre spirale)",
+    "nom_en": "Spiral ginger",
+    "latin": "Costus spp. (C. barbatus, C. scaber, C. curvibracteatus, C. pictus…)",
+    "famille": "Costaceae",
+    "categorie": "Exotiques",
+    "role": "secondaire",
+    "couleurs": [
+      "rouge",
+      "rouge et jaune",
+      "orange",
+      "jaune",
+      "bordeaux et vert"
+    ],
+    "varietes": [
+      {
+        "nom": "French Kiss",
+        "couleur": "rouge",
+        "note": "C. scaber selon HSI ; surnom Besito"
+      },
+      {
+        "nom": "Kiss of Death",
+        "couleur": "bordeaux et vert",
+        "note": "C. longibracteatus, grande inflorescence alternée"
+      },
+      {
+        "nom": "Costus barbatus",
+        "couleur": "bractées rouges, fleurs jaunes",
+        "note": "fleur coupée très populaire, tient un mois sur pied"
+      },
+      {
+        "nom": "Red Yellow Waxy",
+        "couleur": "rouge orangé et jaune",
+        "note": "C. curvibracteatus, 2 à 3 semaines en vase"
+      },
+      {
+        "nom": "Hieroglyphics",
+        "couleur": "orange-rouge",
+        "note": "C. pictus, tiges striées et tachetées très utilisées en fleuristerie"
+      },
+      {
+        "nom": "Costus scaber",
+        "couleur": "bractée rouge, fleurs jaunes",
+        "note": "bractée cireuse de 20–30 cm"
+      },
+      {
+        "nom": "Tulip Orange",
+        "couleur": "orange",
+        "note": "C. curvibracteatus, petite inflorescence en crêpe"
+      },
+      {
+        "nom": "Peru Yellow",
+        "couleur": "jaune canari, fleurs orange-rouge",
+        "note": "cône de 7–8 cm"
+      },
+      {
+        "nom": "Razzberry Yogurt",
+        "couleur": "bractées rouge vif",
+        "note": "C. vargasii ; HSI : Raspberry Yogurt"
+      },
+      {
+        "nom": "Maldonado",
+        "couleur": "fleurs jaunes virant au rouge",
+        "note": "C. varzearum"
+      },
+      {
+        "nom": "Morning Sun",
+        "couleur": "jaune à capuchon rose-blanc",
+        "note": "grand cône vert"
+      }
+    ],
+    "formes": "Cône terminal de 8 à 30 cm au sommet d'une canne feuillée de 60 à 150 cm ; tiges coupées vendues à l'unité ou en botte.",
+    "saison": "Toute l'année en import (Costa Rica, Équateur, Hawaï), moins en plein été selon les fermes.",
+    "tenue_vase": "14–21 jours",
+    "gamme_prix": "€€",
+    "rarete_jeu": "rare",
+    "notes_dessin": "Inflorescence en cône ovoïde ou en épi (8 à 30 cm), faite de bractées dures, cireuses, parfois veloutées, imbriquées en spirale comme une pomme de pin ou un ananas. D'entre les bractées sortent une ou deux fleurs à la fois, tubulaires, à grand labelle froissé comme du papier crépon (jaune, orange, rouge ou blanc). La tige (canne) est caractéristique : les feuilles elliptiques y sont insérées en spirale ascendante, comme un escalier en colimaçon. De profil, un cône compact au bout d'une canne torsadée ; tiges parfois rayées ou mouchetées (Hieroglyphics).",
+    "wiki": "Costus",
+    "img_queries": [
+      "Costus barbatus",
+      "Costus scaber",
+      "Costus pictus"
+    ],
+    "sources": [
+      "https://www.heliconia.org/costus",
+      "https://alohatropicals.com/product/costus-barbatus/",
+      "https://alohatropicals.com/product/costus-sp-hieroglyphics/",
+      "https://www.sierraflowerfinder.com/en/f/exotic-blooms-and-foliages/novelties/152?page=1&flt=0"
+    ]
+  },
+  {
+    "id": "tapeinochilos-ananassae",
+    "nom_fr": "Gingembre de cire (gingembre ananas)",
+    "nom_en": "Indonesian wax ginger, pineapple ginger",
+    "latin": "Tapeinochilos ananassae",
+    "famille": "Costaceae",
+    "categorie": "Exotiques",
+    "role": "focale",
+    "couleurs": [
+      "rouge",
+      "rouge foncé"
+    ],
+    "varietes": [
+      {
+        "nom": "Tapeinochilos ananassae",
+        "couleur": "rouge foncé, fleurs jaunes",
+        "note": "cône colossal « en ananas renversé »"
+      },
+      {
+        "nom": "Ginger Indonesian",
+        "couleur": "rouge",
+        "note": "dénomination commerciale"
+      }
+    ],
+    "formes": "Cône de 10 à 20 cm sur tige nue de 60 à 120 cm ; vendu à l'unité.",
+    "saison": "Toute l'année en petites quantités (Hawaï, Costa Rica, Australie du Nord).",
+    "tenue_vase": "14–28 jours",
+    "gamme_prix": "€€€",
+    "rarete_jeu": "precieuse",
+    "notes_dessin": "Cône ovoïde de 10 à 20 cm qui ressemble à un ananas tête en bas : des dizaines de bractées dures, épaisses et pointues, recourbées vers l'extérieur, se recouvrent en spirale régulière. Rouge écarlate à rouge sang, d'un brillant laqué, comme sculpté dans la cire ; de petites fleurs jaunes apparaissent à peine à la base. Le cône est porté par une tige nue, droite et rigide, sortie directement du sol ; les feuilles, sur d'autres tiges, sont disposées en spirale comme chez les costus.",
+    "wiki": "Tapeinochilos ananassae",
+    "img_queries": [
+      "Tapeinochilos ananassae",
+      "Tapeinochilos ananassae flower"
+    ],
+    "sources": [
+      "https://alohatropicals.com/product/tapeinochilus-ananassae-indonesian-wax-ginger/",
+      "https://www.sierraflowerfinder.com/en/d/ginger-indonesian/1992",
+      "https://en.wikipedia.org/wiki/Tapeinochilos_ananassae"
+    ]
+  },
+  {
+    "id": "curcuma",
+    "nom_fr": "Curcuma (tulipe du Siam)",
+    "nom_en": "Siam tulip, curcuma",
+    "latin": "Curcuma alismatifolia et hybrides",
+    "famille": "Zingiberaceae",
+    "categorie": "Exotiques",
+    "role": "secondaire",
+    "couleurs": [
+      "rose",
+      "rose foncé",
+      "rose vif",
+      "rouge",
+      "blanc",
+      "vert",
+      "bicolore blanc et rose",
+      "orange",
+      "blanc rayé de brun"
+    ],
+    "varietes": [
+      {
+        "nom": "Chiang Mai Red",
+        "couleur": "rose",
+        "note": "origine Costa Rica"
+      },
+      {
+        "nom": "Siam Sunset",
+        "couleur": "rose foncé",
+        "note": "tiges de 60 cm"
+      },
+      {
+        "nom": "UB Snow",
+        "couleur": "blanc",
+        "note": "référence UB Snow 701"
+      },
+      {
+        "nom": "Green Doi Tung",
+        "couleur": "vert",
+        "note": "référence Doi Tung 585"
+      },
+      {
+        "nom": "Hot Pink",
+        "couleur": "rose vif",
+        "note": "Israël, juillet à fin septembre"
+      },
+      {
+        "nom": "Dark Pink",
+        "couleur": "rose foncé",
+        "note": "Israël, juillet–août"
+      },
+      {
+        "nom": "White Pink",
+        "couleur": "bicolore blanc et rose",
+        "note": "Israël, juillet–août"
+      },
+      {
+        "nom": "Curcuma Pink",
+        "couleur": "rose",
+        "note": "nom commun Pink Tulip Ginger"
+      },
+      {
+        "nom": "Curcuma Red",
+        "couleur": "rouge"
+      },
+      {
+        "nom": "Curcuma White",
+        "couleur": "blanc"
+      },
+      {
+        "nom": "Chocolate Zebra",
+        "couleur": "blanc rayé de brun-rouge",
+        "note": "Maejo Elite, introduit de Thaïlande"
+      },
+      {
+        "nom": "Manee Siam",
+        "couleur": "bractées orange, sommet blanc crème"
+      },
+      {
+        "nom": "Manee Sweet Memory",
+        "couleur": "rose vif, base rose-pourpre"
+      },
+      {
+        "nom": "Baan Rai Red",
+        "couleur": "orange-rouge",
+        "note": "longues tiges"
+      }
+    ],
+    "formes": "Tige nue de 40 à 70 cm portant une inflorescence de 6 à 15 cm ; vendue en botte de 10 ; aussi en plante en pot.",
+    "saison": "Surtout de juin à octobre (Pays-Bas, Israël, Thaïlande), complétée toute l'année par le Costa Rica.",
+    "tenue_vase": "14–21 jours",
+    "gamme_prix": "€",
+    "rarete_jeu": "commune",
+    "notes_dessin": "Inflorescence en forme de petite tulipe posée sur une pomme de pin : en haut, une couronne de 6 à 10 grandes bractées stériles, ovales et pointues, roses, blanches ou rouges, satinées, qui s'évasent comme des pétales. En dessous, un épi de bractées vertes arrondies en poches, imbriquées, d'où sortent de petites fleurs à lèvre violette et gorge jaune. De face, une corolle rose étoilée ; de profil, un calice vert écailleux surmonté d'une flamme de couleur. Tige verte nue, longue et fine ; feuilles lancéolées plissées (rarement présentes en fleur coupée).",
+    "wiki": "Curcuma alismatifolia",
+    "img_queries": [
+      "Curcuma alismatifolia",
+      "Siam tulip curcuma",
+      "Curcuma alismatifolia flower"
+    ],
+    "sources": [
+      "https://www.sierraflowerfinder.com/en/f/exotic-blooms-and-foliages/novelties/152?page=1&flt=0",
+      "https://www.sierraflowerfinder.com/en/d/curcuma-siam-sunset/5747",
+      "https://alohatropicals.com/product/curcuma-manee-siam/",
+      "https://en.wikipedia.org/wiki/Curcuma_alismatifolia"
+    ]
+  },
+  {
+    "id": "ananas-ornemental",
+    "nom_fr": "Ananas ornemental sur tige",
+    "nom_en": "Ornamental pineapple on stem",
+    "latin": "Ananas comosus (formes ornementales, dont var. bracteatus)",
+    "famille": "Bromeliaceae",
+    "categorie": "Exotiques",
+    "role": "texture",
+    "couleurs": [
+      "rose",
+      "vert",
+      "vert et jaune",
+      "rose et panaché"
+    ],
+    "varietes": [
+      {
+        "nom": "Pineapple Baby Pink",
+        "couleur": "rose",
+        "note": "mini-ananas sur tige de 40–50 cm"
+      },
+      {
+        "nom": "Pineapple Baby Green",
+        "couleur": "couronne verte, fruit vert-jaune",
+        "note": "tige de 40–50 cm, longue tenue"
+      },
+      {
+        "nom": "Pineapple Large",
+        "couleur": "fruit rose, couronne panachée"
+      },
+      {
+        "nom": "Pineapple Medium",
+        "couleur": "vert"
+      },
+      {
+        "nom": "Pineapple Small",
+        "couleur": "vert"
+      }
+    ],
+    "formes": "Petit fruit (5–12 cm) avec sa couronne de feuilles, sur tige rigide de 40 à 60 cm ; tailles small, medium, large ; aussi en plante en pot.",
+    "saison": "Toute l'année (Costa Rica, Équateur, Thaïlande).",
+    "tenue_vase": "21–30 jours",
+    "gamme_prix": "€€€",
+    "rarete_jeu": "rare",
+    "notes_dessin": "Petit fruit ovoïde de 5 à 12 cm composé d'écailles hexagonales (fruitlets) disposées en deux spirales croisées, chacune ornée d'une petite pointe ; teinte rose fuchsia, rouge ou verte, brillante. Au sommet, une couronne de feuilles raides et pointues en rosette, vertes ou panachées de crème et de rose, à bords dentés. Sous le fruit, une collerette de bractées roses épineuses entoure le pédoncule. De profil, une petite grenade d'écailles coiffée d'un panache, au bout d'une tige droite et ferme.",
+    "wiki": "Pineapple",
+    "img_queries": [
+      "Ananas comosus var. bracteatus",
+      "Ornamental pineapple pink",
+      "Ananas nanus"
+    ],
+    "sources": [
+      "https://www.sierraflowerfinder.com/en/d/pineapple-baby-pink/4529",
+      "https://www.sierraflowerfinder.com/en/d/pineapple-large/2050",
+      "https://en.wikipedia.org/wiki/Pineapple",
+      "https://florabundance.com/flowers/pineapple-ornamental-baby-pink/"
+    ]
+  },
+  {
+    "id": "bromeliacees",
+    "nom_fr": "Broméliacées à fleurs (guzmania, vriesea, aechmea)",
+    "nom_en": "Bromeliads (guzmania, vriesea, aechmea)",
+    "latin": "Guzmania, Vriesea, Aechmea (hybrides)",
+    "famille": "Bromeliaceae",
+    "categorie": "Exotiques",
+    "role": "focale",
+    "couleurs": [
+      "rouge",
+      "jaune",
+      "orange",
+      "rose",
+      "violet",
+      "bordeaux",
+      "blanc",
+      "brun"
+    ],
+    "varietes": [
+      {
+        "nom": "Yeltix",
+        "couleur": "jaune",
+        "note": "Guzmania, jaune vif"
+      },
+      {
+        "nom": "Tempo",
+        "couleur": "rouge",
+        "note": "Guzmania"
+      },
+      {
+        "nom": "Crown",
+        "couleur": "rouge",
+        "note": "Guzmania, grande fleur conique très ramifiée"
+      },
+      {
+        "nom": "Nextara",
+        "couleur": "bordeaux",
+        "note": "Guzmania, couleur bordeaux unique"
+      },
+      {
+        "nom": "Choco",
+        "couleur": "brun à pointes jaunes",
+        "note": "Guzmania"
+      },
+      {
+        "nom": "Dance",
+        "couleur": "violet",
+        "note": "Guzmania violet vif"
+      },
+      {
+        "nom": "Dream",
+        "couleur": "rose",
+        "note": "Guzmania"
+      },
+      {
+        "nom": "Froozen",
+        "couleur": "blanc",
+        "note": "Guzmania blanc pur"
+      },
+      {
+        "nom": "Glow",
+        "couleur": "orange",
+        "note": "Guzmania"
+      },
+      {
+        "nom": "Variada",
+        "couleur": "orange",
+        "note": "Guzmania, coloris original"
+      },
+      {
+        "nom": "Misty",
+        "couleur": "jaune",
+        "note": "Guzmania, forme et coloris originaux"
+      },
+      {
+        "nom": "Ostara",
+        "couleur": "rouge",
+        "note": "Guzmania"
+      },
+      {
+        "nom": "Allura",
+        "couleur": "rouge",
+        "note": "Guzmania à grande fleur"
+      },
+      {
+        "nom": "Splenriet",
+        "couleur": "rouge",
+        "note": "Vriesea en épée"
+      },
+      {
+        "nom": "Vision",
+        "couleur": "jaune",
+        "note": "Vriesea jaune vif"
+      },
+      {
+        "nom": "Electric",
+        "couleur": "jaune",
+        "note": "Vriesea à grande fleur"
+      },
+      {
+        "nom": "Stream",
+        "couleur": "rouge vif",
+        "note": "Vriesea"
+      },
+      {
+        "nom": "Style",
+        "couleur": "rouge",
+        "note": "Vriesea ramifiée"
+      },
+      {
+        "nom": "Happy Yellow",
+        "couleur": "jaune",
+        "note": "Vriesea richement ramifiée"
+      },
+      {
+        "nom": "Primera",
+        "couleur": "rose",
+        "note": "Aechmea sans épines"
+      },
+      {
+        "nom": "Prontoo",
+        "couleur": "blanc",
+        "note": "Aechmea sans épines, fleur blanche unique"
+      },
+      {
+        "nom": "Aechmea distichantha",
+        "couleur": "rouge",
+        "note": "espèce vendue en fleur coupée"
+      }
+    ],
+    "formes": "Surtout en plante en pot (rosette avec inflorescence), mais l'inflorescence se vend aussi coupée sur sa hampe (30–60 cm) pour les compositions tropicales.",
+    "saison": "Toute l'année (serres néerlandaises et belges ; Équateur, Costa Rica pour la fleur coupée).",
+    "tenue_vase": "21–30 jours",
+    "gamme_prix": "€€",
+    "rarete_jeu": "rare",
+    "notes_dessin": "Guzmania : au centre d'une rosette de feuilles en lanières vert brillant s'élève une hampe portant une étoile ou un cône de bractées lancéolées, rigides et laquées (rouge, jaune, orange, violet), d'où émergent de petites fleurs tubulaires blanches ou jaunes. Vriesea : épi plat en forme d'épée ou de plume, simple ou ramifié, aux bractées distiques imbriquées comme des tuiles. Aechmea : inflorescence en pyramide de bractées roses épineuses piquée de petites fleurs bleu-violet. Surfaces très lisses et cireuses ; feuilles souvent zébrées de bandes argentées ou bordeaux.",
+    "wiki": "Guzmania",
+    "img_queries": [
+      "Guzmania",
+      "Vriesea splendens",
+      "Aechmea fasciata"
+    ],
+    "sources": [
+      "https://anthura.nl/producten/bromelia-potplanten/yeltix/",
+      "https://anthura.nl/producten/bromelia-potplanten/splenriet/",
+      "https://anthura.nl/producten/bromelia-potplanten/primera/",
+      "https://www.sierraflowerfinder.com/en/d/bromeliad-red/2044"
+    ]
+  },
+  {
+    "id": "protea-cynaroides",
+    "nom_fr": "Protée royale (King protea)",
+    "nom_en": "King protea",
+    "latin": "Protea cynaroides",
+    "famille": "Proteaceae",
+    "categorie": "Exotiques",
+    "role": "focale",
+    "couleurs": [
+      "rose",
+      "rose pâle",
+      "rose argenté",
+      "rouge",
+      "rouge cramoisi",
+      "blanc",
+      "crème",
+      "saumon",
+      "rose lavande"
+    ],
+    "varietes": [
+      {
+        "nom": "Arctic Ice",
+        "couleur": "blanc pur",
+        "note": "grande tête crème-blanc ; Afrique du Sud fin printemps–début été"
+      },
+      {
+        "nom": "Madiba",
+        "couleur": "rouge cramoisi",
+        "note": "sélection compacte nommée en l'honneur de Nelson Mandela"
+      },
+      {
+        "nom": "Little Prince",
+        "couleur": "rose foncé à cœur blanc",
+        "note": "King compacte ; « compact red King » selon Arnelia"
+      },
+      {
+        "nom": "Red Rex",
+        "couleur": "rouge",
+        "note": "production très limitée, automne depuis l'Australie"
+      },
+      {
+        "nom": "Clare",
+        "couleur": "rose lavande",
+        "note": "noms communs : Lavender King, Madiba pink"
+      },
+      {
+        "nom": "Coronet",
+        "couleur": "rose"
+      },
+      {
+        "nom": "Full Moon",
+        "couleur": "blanc",
+        "note": "aussi appelée White Moon King ; début mai depuis l'Afrique du Sud"
+      },
+      {
+        "nom": "Red Madiba",
+        "couleur": "rouge",
+        "note": "septembre à novembre depuis l'Afrique du Sud"
+      },
+      {
+        "nom": "King Pink Sunset",
+        "couleur": "rouge orangé à cœur rose pâle",
+        "note": "(photo du producteur)"
+      },
+      {
+        "nom": "King Sylver Pink",
+        "couleur": "rose argenté",
+        "note": "(photo du producteur)"
+      },
+      {
+        "nom": "King East Cape",
+        "couleur": "rose très pâle",
+        "note": "(photo du producteur)"
+      },
+      {
+        "nom": "King Summer Pink",
+        "couleur": "rose pâle",
+        "note": "(photo du producteur)"
+      },
+      {
+        "nom": "Autumn Prince",
+        "couleur": "saumon à rose",
+        "note": "sélection de P. cynaroides à floraison automnale"
+      },
+      {
+        "nom": "Frosted King",
+        "couleur": "rouge givré d'argent",
+        "note": "très grandes têtes"
+      },
+      {
+        "nom": "King White",
+        "couleur": "blanc crème, cœur blanc à rosé"
+      },
+      {
+        "nom": "King Pink",
+        "couleur": "rose",
+        "note": "têtes jusqu'à 30 cm de diamètre"
+      }
+    ],
+    "formes": "Tige ligneuse de 40 à 80 cm portant une seule tête de 12 à 30 cm ; vendue en tête mi-ouverte ou ouverte ; se sèche très bien.",
+    "saison": "Presque toute l'année grâce aux deux hémisphères : Afrique du Sud (Cap occidental), Australie, Nouvelle-Zélande, Hawaï, Californie, puis Portugal et Israël ; offre maximale de l'automne au printemps européens.",
+    "tenue_vase": "14–21 jours",
+    "gamme_prix": "€€€€",
+    "rarete_jeu": "precieuse",
+    "notes_dessin": "Tête en large coupe de 12 à 30 cm : plusieurs rangs de bractées involucrales pointues, rigides et satinées, rose, rouge ou crème, s'ouvrent en couronne autour d'un dôme central. Ce dôme, haut et conique comme un cœur d'artichaut, est formé de centaines de fleurons serrés couverts de poils soyeux blanc argenté, à styles rosés. Les bractées sont finement duveteuses et nacrées, plus foncées à la pointe ; de profil, la tête forme un bol profond légèrement incliné. La tige est épaisse, ligneuse et rougeâtre ; les feuilles coriaces, ovales en cuillère, vert foncé brillant à pétiole long et rouge, entourent la base de la tête.",
+    "wiki": "Protea cynaroides",
+    "img_queries": [
+      "Protea cynaroides",
+      "King protea flower head",
+      "Protea cynaroides white"
+    ],
+    "sources": [
+      "https://www.sierraflowerfinder.com/en/d/protea-king-arctic-ice/8668",
+      "https://resendizbrothers.com/flora/protea/",
+      "https://www.proteaflora.com.au/products/proteaflora-plants-protea-madiba",
+      "https://arnelia.co.za/product/king-white/",
+      "https://en.wikipedia.org/wiki/Protea_cynaroides"
+    ]
+  },
+  {
+    "id": "protea-neriifolia",
+    "nom_fr": "Protée à feuilles de laurier-rose (protée « mink »)",
+    "nom_en": "Oleanderleaf protea, mink protea",
+    "latin": "Protea neriifolia",
+    "famille": "Proteaceae",
+    "categorie": "Exotiques",
+    "role": "focale",
+    "couleurs": [
+      "rose",
+      "rose saumon",
+      "rouge rubis",
+      "blanc",
+      "crème",
+      "vert",
+      "jaune crème"
+    ],
+    "varietes": [
+      {
+        "nom": "Pink Mink",
+        "couleur": "rose, pointes sombres veloutées"
+      },
+      {
+        "nom": "White Mink",
+        "couleur": "blanc"
+      },
+      {
+        "nom": "Red Mink",
+        "couleur": "rouge"
+      },
+      {
+        "nom": "Cream Mink",
+        "couleur": "crème vert lime à franges noires"
+      },
+      {
+        "nom": "Green Mink",
+        "couleur": "vert crème à barbe noire",
+        "note": "(photo du producteur)"
+      },
+      {
+        "nom": "Green Black Mink",
+        "couleur": "vert à barbe noire",
+        "note": "(photo du producteur)"
+      },
+      {
+        "nom": "Silver Tip Mink",
+        "couleur": "rose saumon à pointes argentées et noires",
+        "note": "(photo du producteur)"
+      },
+      {
+        "nom": "Summer Yellow Mink",
+        "couleur": "jaune crème à barbe noire",
+        "note": "(photo du producteur)"
+      },
+      {
+        "nom": "White Eagle Mink",
+        "couleur": "blanc à barbe pourpre",
+        "note": "(photo du producteur)"
+      },
+      {
+        "nom": "Blue Mink",
+        "couleur": "rose-rouge sombre à franges noires",
+        "note": "(photo du producteur)"
+      },
+      {
+        "nom": "Nerifolia Ruby",
+        "couleur": "rouge rubis à franges noires",
+        "note": "orthographe du producteur"
+      },
+      {
+        "nom": "Australis Ruby",
+        "couleur": "rouge rubis, pointes blanches et noires"
+      },
+      {
+        "nom": "Frosted Fire",
+        "couleur": "rouge vif givré, pointes sombres veloutées"
+      }
+    ],
+    "formes": "Tête en gobelet de 10 à 13 cm sur tige feuillée de 50 à 80 cm ; vendue fermée ou entrouverte ; se sèche bien.",
+    "saison": "Presque toute l'année grâce aux deux hémisphères : Afrique du Sud (Cap occidental), Australie, Nouvelle-Zélande, Hawaï, Californie, puis Portugal et Israël ; offre maximale de l'automne au printemps européens. Surtout en automne-hiver austral.",
+    "tenue_vase": "10–14 jours",
+    "gamme_prix": "€€€",
+    "rarete_jeu": "rare",
+    "notes_dessin": "Tête oblongue en gobelet, 10 à 13 cm de haut, dont les bractées en cuillère s'emboîtent comme des écailles et se referment au sommet en se recourbant vers l'intérieur. L'extrémité de chaque bractée porte une frange dense de poils noirs ou pourpres (blancs sur certaines formes), comme un col de fourrure : c'est la « barbe » de vison. Les bractées sont satinées, rose, rouge, crème ou vert pâle, plus claires à la base ; de face on voit un anneau de fourrure sombre autour d'un cœur soyeux. La tige est garnie de longues feuilles étroites (10–18 cm) rappelant le laurier-rose, sans pétiole, qui se redressent le long de la tige.",
+    "wiki": "Protea neriifolia",
+    "img_queries": [
+      "Protea neriifolia",
+      "Protea neriifolia flower"
+    ],
+    "sources": [
+      "https://www.proteaflora.com.au/products/proteaflora-plants-protea-pink-mink",
+      "https://resendizbrothers.com/flora/protea/",
+      "https://www.sierraflowerfinder.com/en/d/white-mink/1642",
+      "https://en.wikipedia.org/wiki/Protea_neriifolia"
+    ]
+  },
+  {
+    "id": "protea-repens",
+    "nom_fr": "Protée sucrière (sugarbush)",
+    "nom_en": "Sugarbush",
+    "latin": "Protea repens",
+    "famille": "Proteaceae",
+    "categorie": "Exotiques",
+    "role": "secondaire",
+    "couleurs": [
+      "rouge",
+      "rose",
+      "blanc",
+      "crème",
+      "bicolore rose et blanc",
+      "miel"
+    ],
+    "varietes": [
+      {
+        "nom": "Guerna",
+        "couleur": "rouge",
+        "note": "aussi vendue Repen Sugar Bush Guerna"
+      },
+      {
+        "nom": "Helen White",
+        "couleur": "blanc",
+        "note": "aussi vendue Repens White Helen"
+      },
+      {
+        "nom": "Repen Pink & White",
+        "couleur": "bicolore rose et blanc",
+        "note": "(photo du producteur)"
+      },
+      {
+        "nom": "Honeyglow",
+        "couleur": "miel doré",
+        "note": "sélection de P. repens à floraison automnale"
+      },
+      {
+        "nom": "Pink Sugarbush",
+        "couleur": "rose",
+        "note": "noms communs Repen, Repens"
+      }
+    ],
+    "formes": "Tête en cornet de 7 à 10 cm sur tige fine de 40 à 70 cm ; souvent vendue en botte ; aussi séchée.",
+    "saison": "Presque toute l'année grâce aux deux hémisphères : Afrique du Sud (Cap occidental), Australie, Nouvelle-Zélande, Hawaï, Californie, puis Portugal et Israël ; offre maximale de l'automne au printemps européens.",
+    "tenue_vase": "10–14 jours",
+    "gamme_prix": "€€",
+    "rarete_jeu": "rare",
+    "notes_dessin": "Tête étroite en cornet ou en V, de 7 à 10 cm, formée de bractées lisses et glabres, luisantes et un peu collantes de nectar, imbriquées et pointues, blanc crème à rose ou rouge, souvent plus foncées à la pointe. Les bractées internes restent dressées et serrées autour d'un cœur de fleurons crème, les externes s'écartent légèrement. De profil, un cornet effilé ; de face, une petite étoile à cœur crème. Tige mince à feuilles linéaires étroites, gris-vert, insérées en spirale serrée.",
+    "wiki": "Protea repens",
+    "img_queries": [
+      "Protea repens",
+      "Protea repens white",
+      "Sugarbush protea"
+    ],
+    "sources": [
+      "https://www.sierraflowerfinder.com/en/d/repens-guerna/2262",
+      "https://resendizbrothers.com/flora/protea/",
+      "https://www.proteaflora.com.au/products/proteaflora-plants-protea-honeyglow",
+      "https://en.wikipedia.org/wiki/Protea_repens"
+    ]
+  },
+  {
+    "id": "protea-magnifica",
+    "nom_fr": "Protée reine (Queen protea)",
+    "nom_en": "Queen protea",
+    "latin": "Protea magnifica (syn. P. barbigera)",
+    "famille": "Proteaceae",
+    "categorie": "Exotiques",
+    "role": "focale",
+    "couleurs": [
+      "rose",
+      "rose pâle",
+      "blanc",
+      "blanc à cœur noir",
+      "rose et blanc"
+    ],
+    "varietes": [
+      {
+        "nom": "Barbigera Ice Queen White",
+        "couleur": "blanc à cœur noir",
+        "note": "nom commun White Queen ; très limitée, fin d'été–début d'automne depuis l'Afrique du Sud"
+      },
+      {
+        "nom": "Barbigera Queen",
+        "couleur": "rose",
+        "note": "Afrique du Sud, août à décembre"
+      },
+      {
+        "nom": "Queen Pink",
+        "couleur": "rose"
+      },
+      {
+        "nom": "Queen Light Pink",
+        "couleur": "rose pâle"
+      },
+      {
+        "nom": "Queen White",
+        "couleur": "blanc à pointes velues brun-noir, cœur noir",
+        "note": "production limitée"
+      },
+      {
+        "nom": "Queen Atlantic",
+        "couleur": "rose à cœur pourpre foncé",
+        "note": "(photo du producteur)"
+      },
+      {
+        "nom": "Queen Pink Koo",
+        "couleur": "rose et blanc à cœur noir",
+        "note": "(photo du producteur)"
+      }
+    ],
+    "formes": "Grosse tête de 12 à 20 cm sur tige ligneuse de 40 à 70 cm ; vendue à l'unité.",
+    "saison": "Arrivages limités, surtout d'Afrique du Sud (fin d'été à début d'automne austral) et de Californie au printemps.",
+    "tenue_vase": "14–21 jours",
+    "gamme_prix": "€€€€",
+    "rarete_jeu": "legendaire",
+    "notes_dessin": "Grande tête en coupe profonde de 12 à 20 cm, plus haute que large avant l'ouverture complète. Les bractées, en plusieurs rangs, sont roses, crème ou blanches et bordées d'une épaisse frange de poils laineux blancs à brun-noir qui forme une couronne de fourrure. Au centre, le dôme de fleurons est couvert de poils pourpre-noir veloutés : le « cœur noir » caractéristique. Les feuilles larges, ondulées et coriaces, gris-bleu à bord rouge, embrassent la tige jusque sous la tête.",
+    "wiki": "Protea magnifica",
+    "img_queries": [
+      "Protea magnifica",
+      "Queen protea",
+      "Protea magnifica flower"
+    ],
+    "sources": [
+      "https://www.sierraflowerfinder.com/en/d/barbigera-ice-queen-white/9150",
+      "https://www.sierraflowerfinder.com/en/d/protea-queen-white/5584",
+      "https://www.proteaflora.com.au/products/proteaflora-plants-protea-queen",
+      "https://resendizbrothers.com/flora/protea/",
+      "https://en.wikipedia.org/wiki/Protea_magnifica"
+    ]
+  },
+  {
+    "id": "protea-eximia",
+    "nom_fr": "Protée duchesse",
+    "nom_en": "Duchess protea, broad-leaf sugarbush",
+    "latin": "Protea eximia",
+    "famille": "Proteaceae",
+    "categorie": "Exotiques",
+    "role": "focale",
+    "couleurs": [
+      "rose",
+      "rose vif",
+      "rose-rouge"
+    ],
+    "varietes": [
+      {
+        "nom": "Fire Duchess",
+        "couleur": "rose-rouge vif",
+        "note": "(photo du producteur)"
+      },
+      {
+        "nom": "Rosespoon",
+        "couleur": "rose moyen à cœur rose foncé",
+        "note": "vendue aussi Rosespoon Eximia ; fin d'été–début d'automne en Californie"
+      },
+      {
+        "nom": "Pink Duke",
+        "couleur": "rose vif à base crème",
+        "note": "nom commun Rose Spoon ; printemps"
+      },
+      {
+        "nom": "Eximia",
+        "couleur": "rose-rouge à cœur sombre",
+        "note": "forme type vendue sous le nom d'espèce"
+      }
+    ],
+    "formes": "Tête de 9 à 14 cm, d'abord en gobelet puis largement ouverte, sur tige de 50 à 80 cm.",
+    "saison": "Presque toute l'année grâce aux deux hémisphères : Afrique du Sud (Cap occidental), Australie, Nouvelle-Zélande, Hawaï, Californie, puis Portugal et Israël ; offre maximale de l'automne au printemps européens.",
+    "tenue_vase": "10–14 jours",
+    "gamme_prix": "€€€",
+    "rarete_jeu": "rare",
+    "notes_dessin": "Tête ovale qui s'ouvre en large coupe : les bractées internes, longues et étroites en forme de cuillère, rose vif à rouge, se dressent puis s'évasent vers l'extérieur comme des pétales spatulés, tandis que les bractées externes, courtes, restent serrées à la base. Au centre, un dôme de fleurons aux pointes velues pourpre-noir forme un œil sombre. Bractées satinées, un peu argentées sur les bords. La tige porte des feuilles en cœur, larges, gris-vert à bord rougeâtre, qui embrassent la tige sans pétiole.",
+    "wiki": "Protea eximia",
+    "img_queries": [
+      "Protea eximia",
+      "Protea eximia flower"
+    ],
+    "sources": [
+      "https://resendizbrothers.com/flora/protea/",
+      "https://www.sierraflowerfinder.com/en/d/rosespoon/1638",
+      "https://www.sierraflowerfinder.com/en/d/protea-pink-duke/1637",
+      "https://en.wikipedia.org/wiki/Protea_eximia"
+    ]
+  },
+  {
+    "id": "protea-hybrides",
+    "nom_fr": "Protées hybrides et petites protées",
+    "nom_en": "Hybrid and other proteas (Pink Ice & co)",
+    "latin": "Protea hybrides (P. compacta, P. susannae, P. magnifica, P. longifolia…) et espèces secondaires (P. grandiceps, P. obtusifolia, P. nana, P. scolymocephala)",
+    "famille": "Proteaceae",
+    "categorie": "Exotiques",
+    "role": "focale",
+    "couleurs": [
+      "rose argenté",
+      "rose",
+      "rose vif",
+      "rouge",
+      "rouge cerise",
+      "saumon",
+      "crème",
+      "blanc",
+      "vert lime",
+      "prune"
+    ],
+    "varietes": [
+      {
+        "nom": "Pink Ice",
+        "couleur": "rose à reflet argenté",
+        "note": "l'hybride de protée le plus cultivé ; très rustique"
+      },
+      {
+        "nom": "Special Pink Ice",
+        "couleur": "rose profond"
+      },
+      {
+        "nom": "Sylvia",
+        "couleur": "rose-rouge à cœur crème"
+      },
+      {
+        "nom": "Susara",
+        "couleur": "rose tendre et crème (saumon)",
+        "note": "hybride"
+      },
+      {
+        "nom": "Brenda",
+        "couleur": "rose-rouge",
+        "note": "hybride ; longues tiges"
+      },
+      {
+        "nom": "Christine",
+        "couleur": "rose pâle",
+        "note": "hybride"
+      },
+      {
+        "nom": "Venus",
+        "couleur": "rose et crème virant au rouge"
+      },
+      {
+        "nom": "Sheila",
+        "couleur": "rouge brillant",
+        "note": "tient longtemps en vase"
+      },
+      {
+        "nom": "Cardinal",
+        "couleur": "rose vif"
+      },
+      {
+        "nom": "Red Baron",
+        "couleur": "rouge à cœur rose-rouge",
+        "note": "novembre à février depuis la Californie"
+      },
+      {
+        "nom": "Lady Di",
+        "couleur": "rose"
+      },
+      {
+        "nom": "Robyn",
+        "couleur": "rose-rouge à pointes rouge foncé",
+        "note": "nom commun Red Robin"
+      },
+      {
+        "nom": "Andrea",
+        "couleur": "rose vif à cœur rose"
+      },
+      {
+        "nom": "Niobe",
+        "couleur": "crème à reflets pourpres",
+        "note": "hybride P. magnifica × P. laurifolia"
+      },
+      {
+        "nom": "Possum Magic",
+        "couleur": "rose tendre",
+        "note": "hybride P. magnifica × P. longifolia"
+      },
+      {
+        "nom": "Pixie",
+        "couleur": "rose",
+        "note": "hybride P. pudens × P. longifolia"
+      },
+      {
+        "nom": "Pink Princess",
+        "couleur": "rose tendre argenté",
+        "note": "hybride P. compacta × P. magnifica"
+      },
+      {
+        "nom": "Mayday",
+        "couleur": "rose",
+        "note": "hybride"
+      },
+      {
+        "nom": "Southern Cross",
+        "couleur": "rose",
+        "note": "hybride à floraison hivernale"
+      },
+      {
+        "nom": "Queen Ceres",
+        "couleur": "rose-rouge à frange blanche",
+        "note": "nom commun Queen Protea Hybrid"
+      },
+      {
+        "nom": "Hybrid Pinita",
+        "couleur": "rose à cœur noir",
+        "note": "(photo du producteur)"
+      },
+      {
+        "nom": "Lieben Cherry",
+        "couleur": "rouge cerise bordé de blanc",
+        "note": "(photo du producteur)"
+      },
+      {
+        "nom": "Australis Passion",
+        "couleur": "rose vif à cœur sombre",
+        "note": "hybride"
+      },
+      {
+        "nom": "Australis Ice",
+        "couleur": "blanc crème",
+        "note": "hybride issu de P. neriifolia et P. susannae"
+      },
+      {
+        "nom": "Limelight",
+        "couleur": "vert lime crème à touffes pourpres"
+      },
+      {
+        "nom": "Ruby Blush",
+        "couleur": "rose et crème, tête allongée"
+      },
+      {
+        "nom": "Starlight",
+        "couleur": "crème",
+        "note": "petites têtes"
+      },
+      {
+        "nom": "Grandiceps",
+        "couleur": "rose vif à rouge, pointes velues sombres",
+        "note": "P. grandiceps (princess protea)"
+      },
+      {
+        "nom": "Grandicolour",
+        "couleur": "crème à franges rose-fuchsia"
+      },
+      {
+        "nom": "Holiday Red",
+        "couleur": "rouge",
+        "note": "P. obtusifolia"
+      },
+      {
+        "nom": "Protea Nana",
+        "couleur": "prune à rose fuchsia",
+        "note": "P. nana, petites fleurs pendantes"
+      },
+      {
+        "nom": "Scoly",
+        "couleur": "crème et vert",
+        "note": "P. scolymocephala, mini-protée"
+      },
+      {
+        "nom": "Trish Compacta",
+        "couleur": "rose",
+        "note": "sélection de P. compacta"
+      }
+    ],
+    "formes": "Têtes de 4 à 15 cm selon l'espèce, sur tiges ligneuses de 40 à 90 cm ; mini-protées (nana, scolymocephala) vendues en botte ; toutes se sèchent bien.",
+    "saison": "Presque toute l'année grâce aux deux hémisphères : Afrique du Sud (Cap occidental), Australie, Nouvelle-Zélande, Hawaï, Californie, puis Portugal et Israël ; offre maximale de l'automne au printemps européens.",
+    "tenue_vase": "14–21 jours",
+    "gamme_prix": "€€€",
+    "rarete_jeu": "rare",
+    "notes_dessin": "Têtes en gobelet ou en coupe de 8 à 15 cm faites de bractées serrées, imbriquées et recourbées vers l'intérieur, à surface satinée et finement duveteuse ; chez Pink Ice elles sont roses à reflet argenté, chez Niobe, Ceres ou Pinita la pointe est frangée de poils blancs ou noirs autour d'un cœur sombre. Le centre est un dôme de fleurons soyeux, blanc, rose ou noir velouté. Les petites espèces changent la silhouette : P. nana pend comme une clochette prune de 4–5 cm entre des feuilles en aiguilles, P. scolymocephala forme de petites coupes crème-vert ouvertes. Tiges ligneuses garnies de feuilles coriaces vert à gris-vert, ovales à lancéolées, souvent bordées de rouge.",
+    "wiki": "Protea",
+    "img_queries": [
+      "Protea Pink Ice",
+      "Protea compacta",
+      "Protea nana",
+      "Protea grandiceps"
+    ],
+    "sources": [
+      "https://www.proteaflora.com.au/products/proteaflora-plants-protea-pink-ice",
+      "https://www.proteaflora.com.au/products/proteaflora-plants-protea-niobe",
+      "https://www.sierraflowerfinder.com/en/d/protea-red-baron/6008",
+      "https://resendizbrothers.com/flora/protea/",
+      "https://arnelia.co.za/product/sheila/"
+    ]
+  },
+  {
+    "id": "leucospermum",
+    "nom_fr": "Leucospermum (protée pelote d'épingles)",
+    "nom_en": "Pincushion protea",
+    "latin": "Leucospermum cordifolium et hybrides (L. reflexum, L. catherinae…)",
+    "famille": "Proteaceae",
+    "categorie": "Exotiques",
+    "role": "focale",
+    "couleurs": [
+      "orange",
+      "rouge orangé",
+      "rouge",
+      "jaune",
+      "jaune d'or",
+      "saumon",
+      "rose",
+      "crème",
+      "bicolore jaune et rouge"
+    ],
+    "varietes": [
+      {
+        "nom": "Tango",
+        "couleur": "orange vif"
+      },
+      {
+        "nom": "High Gold",
+        "couleur": "jaune d'or",
+        "note": "hybride issu de L. cordifolium"
+      },
+      {
+        "nom": "Flame Giant",
+        "couleur": "orange foncé"
+      },
+      {
+        "nom": "Succession",
+        "couleur": "orange foncé presque rouge"
+      },
+      {
+        "nom": "Veldfire",
+        "couleur": "jaune et rouge"
+      },
+      {
+        "nom": "Sunrise",
+        "couleur": "rouge orangé"
+      },
+      {
+        "nom": "Scarlet Ribbon",
+        "couleur": "rouge écarlate",
+        "note": "hybride issu de L. glabrum"
+      },
+      {
+        "nom": "Yellow Bird",
+        "couleur": "jaune"
+      },
+      {
+        "nom": "Rigoletto",
+        "couleur": "rouge",
+        "note": "hybride L. cordifolium × L. glabrum"
+      },
+      {
+        "nom": "Carnival Red",
+        "couleur": "rouge",
+        "note": "hybride L. glabrum × L. tottum"
+      },
+      {
+        "nom": "Carnival Coast",
+        "couleur": "orange virant au rose"
+      },
+      {
+        "nom": "Carnival Copper",
+        "couleur": "orange cuivré"
+      },
+      {
+        "nom": "Carnival Yellow",
+        "couleur": "jaune"
+      },
+      {
+        "nom": "Ayoba Red",
+        "couleur": "rouge vif",
+        "note": "série Ayoba (Afrique du Sud)"
+      },
+      {
+        "nom": "Ayoba Gold",
+        "couleur": "jaune d'or",
+        "note": "série Ayoba"
+      },
+      {
+        "nom": "Ayoba Pink",
+        "couleur": "rose clair à stigmates rose foncé",
+        "note": "série Ayoba"
+      },
+      {
+        "nom": "Ayoba Tangerine Twist",
+        "couleur": "orange",
+        "note": "série Ayoba"
+      },
+      {
+        "nom": "Hawaii Gold",
+        "couleur": "jaune orangé"
+      },
+      {
+        "nom": "Catherinae",
+        "couleur": "rouge, orange et or",
+        "note": "L. catherinae, « pelote feu d'artifice »"
+      },
+      {
+        "nom": "Red Rocket",
+        "couleur": "rouge",
+        "note": "forme en fusée (type L. reflexum)"
+      },
+      {
+        "nom": "Reflexum Yellow",
+        "couleur": "jaune",
+        "note": "L. reflexum"
+      },
+      {
+        "nom": "Red Phantom",
+        "couleur": "rouge intense",
+        "note": "hybride de L. reflexum, styles réfléchis"
+      },
+      {
+        "nom": "So Exquisite",
+        "couleur": "rouge",
+        "note": "fleurs réfléchies"
+      },
+      {
+        "nom": "Calypso Red",
+        "couleur": "crème-jaune virant au cramoisi"
+      },
+      {
+        "nom": "Hullabaloo",
+        "couleur": "blanc crème virant au rose foncé"
+      },
+      {
+        "nom": "Erubescens",
+        "couleur": "orange, saumon et jaune",
+        "note": "L. erubescens"
+      },
+      {
+        "nom": "Ballerina",
+        "couleur": "saumon",
+        "note": "(photo du producteur)"
+      },
+      {
+        "nom": "Vlam",
+        "couleur": "orange feu, rouge et jaune",
+        "note": "issu de L. cordifolium"
+      }
+    ],
+    "formes": "Tête de 6 à 15 cm sur tige ligneuse feuillée de 40 à 70 cm ; tige simple ou à plusieurs têtes ; se sèche.",
+    "saison": "Afrique du Sud, Australie, Californie, Hawaï, Portugal, Espagne et Israël ; surtout de l'automne au printemps en Europe. Pic d'août à décembre depuis l'hémisphère sud, de mars à juin depuis la Californie et le Portugal.",
+    "tenue_vase": "10–21 jours",
+    "gamme_prix": "€€",
+    "rarete_jeu": "rare",
+    "notes_dessin": "Tête hémisphérique de 6 à 15 cm hérissée de centaines de longs styles raides (4–6 cm), légèrement arqués vers le centre, qui rayonnent comme des épingles plantées dans une pelote. Chaque style se termine par un petit renflement en bouton (présentoir à pollen) plus clair ou plus foncé, ce qui crée un semis de points réguliers à la surface. À la base, les tubes de périanthe velus et enroulés forment un coussin dense ; la couleur passe souvent du jaune au rouge en vieillissant. Formes en fusée (L. reflexum) aux styles rabattus vers le bas. Tige ligneuse garnie de feuilles grises ou vertes, ovales, sessiles, munies de 3 à 6 petites dents rouges au sommet.",
+    "wiki": "Leucospermum cordifolium",
+    "img_queries": [
+      "Leucospermum cordifolium",
+      "Leucospermum reflexum",
+      "Leucospermum catherinae"
+    ],
+    "sources": [
+      "https://resendizbrothers.com/flora/leucospermum/",
+      "https://www.proteaflora.com.au/products/proteaflora-plants-leucospermum-high-gold",
+      "https://arnelia.co.za/product/tango/",
+      "https://www.sierraflowerfinder.com/en/d/pincushion-tango/565",
+      "https://en.wikipedia.org/wiki/Leucospermum_cordifolium"
+    ]
+  },
+  {
+    "id": "leucadendron",
+    "nom_fr": "Leucadendron (têtes colorées et cônes)",
+    "nom_en": "Leucadendron, conebush",
+    "latin": "Leucadendron spp. et hybrides (L. salignum × L. laureolum, L. argenteum, L. galpinii…)",
+    "famille": "Proteaceae",
+    "categorie": "Exotiques",
+    "role": "secondaire",
+    "couleurs": [
+      "rouge bordeaux",
+      "rouge",
+      "jaune d'or",
+      "crème",
+      "bicolore crème et rouge",
+      "rose",
+      "argent",
+      "vert",
+      "brun"
+    ],
+    "varietes": [
+      {
+        "nom": "Safari Sunset",
+        "couleur": "rouge bordeaux, bicolore jaune et rouge en hiver",
+        "note": "hybride, fleur coupée star"
+      },
+      {
+        "nom": "Inca Gold",
+        "couleur": "jaune d'or",
+        "note": "hybride"
+      },
+      {
+        "nom": "Jester",
+        "couleur": "panaché rouge, rose et crème"
+      },
+      {
+        "nom": "Safari Goldstrike",
+        "couleur": "jaune crème"
+      },
+      {
+        "nom": "Red Gem",
+        "couleur": "rouge rubis",
+        "note": "hybride issu de L. salignum"
+      },
+      {
+        "nom": "Burgundy Sunset",
+        "couleur": "bordeaux"
+      },
+      {
+        "nom": "Maui Sunset",
+        "couleur": "crème à pointes rouges"
+      },
+      {
+        "nom": "Harvest",
+        "couleur": "crème et rose",
+        "note": "sélection de L. stelligerum"
+      },
+      {
+        "nom": "Jubilee Crown",
+        "couleur": "petits cônes rouges",
+        "note": "cônes de la taille d'une bille, début d'été"
+      },
+      {
+        "nom": "Cream Delight",
+        "couleur": "crème"
+      },
+      {
+        "nom": "Strawberry Fair",
+        "couleur": "petits cônes rose fraise"
+      },
+      {
+        "nom": "Golden Tulip",
+        "couleur": "jaune crème en tulipe"
+      },
+      {
+        "nom": "Cream Bun",
+        "couleur": "crème bordé de bronze"
+      },
+      {
+        "nom": "African Surprise",
+        "couleur": "cônes jaunes à cœur rouge cerise",
+        "note": "hybride mâle"
+      },
+      {
+        "nom": "Silvan Red",
+        "couleur": "rouge"
+      },
+      {
+        "nom": "Lennox Red",
+        "couleur": "crème à cône rouge"
+      },
+      {
+        "nom": "Discolour",
+        "couleur": "crème à cône rouge",
+        "note": "cône de L. discolor"
+      },
+      {
+        "nom": "Pom Pom",
+        "couleur": "crème à cœur rouge-orangé"
+      },
+      {
+        "nom": "Red Eye",
+        "couleur": "crème à cœur orange-rouge"
+      },
+      {
+        "nom": "Duet",
+        "couleur": "rouge et crème",
+        "note": "(photo du producteur)"
+      },
+      {
+        "nom": "Tinctum",
+        "couleur": "vert pâle à cœur rose-rouge"
+      },
+      {
+        "nom": "Silver Galpinii",
+        "couleur": "cônes gris argenté",
+        "note": "L. galpinii"
+      },
+      {
+        "nom": "Argentum Silver Tree",
+        "couleur": "cône argenté",
+        "note": "L. argenteum, arbre d'argent"
+      },
+      {
+        "nom": "Rubrum",
+        "couleur": "cônes brun-rouge",
+        "note": "L. rubrum (cônes femelles)"
+      },
+      {
+        "nom": "Plumosum Female Cone",
+        "couleur": "brun",
+        "note": "cône femelle"
+      },
+      {
+        "nom": "Macowanii",
+        "couleur": "rouge foncé à pourpre"
+      },
+      {
+        "nom": "Ebony",
+        "couleur": "noir ébène",
+        "note": "dénomination commerciale (grossiste)"
+      },
+      {
+        "nom": "Jade Pearl",
+        "couleur": "cônes argentés",
+        "note": "cône (Leuca Cone Jade Pearl)"
+      }
+    ],
+    "formes": "Tiges ramifiées ou simples de 40 à 90 cm terminées par une coupe de feuilles colorées (bractées) autour d'un cône ; aussi cônes seuls argentés ou bruns ; se sèche.",
+    "saison": "Toute l'année (Afrique du Sud, Israël, Portugal, Australie, Nouvelle-Zélande, Équateur) ; couleurs les plus vives de l'automne au printemps.",
+    "tenue_vase": "14–21 jours",
+    "gamme_prix": "€",
+    "rarete_jeu": "commune",
+    "notes_dessin": "Au sommet de chaque tige, les feuilles supérieures colorées (rouge bordeaux, jaune d'or, crème) se redressent et se recourbent en coupe ou en tulipe autour d'un cône central de 2 à 4 cm, fait d'écailles serrées, rouge, jaune, vert ou argent. Ces bractées sont lisses, coriaces et luisantes, souvent plus pâles à la base et plus intenses vers la pointe ; vue de dessus, la tête forme une étoile ou une rosette ouverte. Les cônes « secs » (galpinii, argenteum, plumosum) sont des pommes argentées ou brunes aux écailles imbriquées, parfois soyeuses. La tige est droite et feuillée sur toute sa longueur de feuilles étroites, alternes, qui prennent la même couleur près du sommet.",
+    "wiki": "Leucadendron",
+    "img_queries": [
+      "Leucadendron Safari Sunset",
+      "Leucadendron argenteum",
+      "Leucadendron Inca Gold"
+    ],
+    "sources": [
+      "https://resendizbrothers.com/flora/leucadendron/",
+      "https://www.proteaflora.com.au/products/proteaflora-plants-leucadendron-inca-gold",
+      "https://arnelia.co.za/product/safari-sunset/",
+      "https://www.sierraflowerfinder.com/en/d/leuca-safari-sunset/792",
+      "https://en.wikipedia.org/wiki/Leucadendron"
+    ]
+  },
+  {
+    "id": "serruria",
+    "nom_fr": "Serruria (mariée rougissante)",
+    "nom_en": "Blushing bride",
+    "latin": "Serruria florida et hybrides",
+    "famille": "Proteaceae",
+    "categorie": "Exotiques",
+    "role": "secondaire",
+    "couleurs": [
+      "blanc rosé",
+      "rose",
+      "blanc crème",
+      "rose pâle"
+    ],
+    "varietes": [
+      {
+        "nom": "Blushing Bride",
+        "couleur": "blanc rosé",
+        "note": "S. florida, espèce en danger critique"
+      },
+      {
+        "nom": "Blushing Bride Pink",
+        "couleur": "rose, blanc et vert",
+        "note": "courte saison depuis l'Afrique (fin mai–fin juin)"
+      },
+      {
+        "nom": "Bride White",
+        "couleur": "blanc crème lavé de rose",
+        "note": "mai à septembre depuis l'Australie"
+      },
+      {
+        "nom": "Pretty n Pink",
+        "couleur": "rose",
+        "note": "obtention Proteaflora ; aussi vendue Pretty in Pink"
+      },
+      {
+        "nom": "Sugar and Spice",
+        "couleur": "rose"
+      },
+      {
+        "nom": "Carmen",
+        "couleur": "rose",
+        "note": "hybride de Blushing Bride, floraison hivernale"
+      },
+      {
+        "nom": "Raspberry Burst",
+        "couleur": "blanc virant au rose chaud"
+      }
+    ],
+    "formes": "Tiges fines et ramifiées de 30 à 60 cm portant plusieurs petites têtes de 3 à 5 cm ; vendue en botte.",
+    "saison": "Courte saison : fin d'automne à printemps austral (Afrique du Sud mai–juin, Australie mai–septembre), aussi Californie en hiver-printemps.",
+    "tenue_vase": "10–14 jours",
+    "gamme_prix": "€€€",
+    "rarete_jeu": "precieuse",
+    "notes_dessin": "Petites têtes de 3 à 5 cm en coupelle, formées de bractées papyracées, fines et translucides, ovales et pointues, blanc ivoire lavé de rose, disposées en étoile autour d'un cœur. Le centre est une petite houppe soyeuse et plumeuse de fleurons couverts de poils argentés, rose pâle. Texture de papier de soie, mate et délicate, avec des nervures à peine visibles. Les têtes, un peu penchées, sont portées par des tiges grêles et ramifiées garnies de feuilles finement découpées en aiguilles, vert grisâtre.",
+    "wiki": "Serruria florida",
+    "img_queries": [
+      "Serruria florida",
+      "Blushing bride Serruria"
+    ],
+    "sources": [
+      "https://www.proteaflora.com.au/products/proteaflora-plants-serruria-blushing-bride",
+      "https://www.sierraflowerfinder.com/en/d/serruria-bride-white/2283",
+      "https://arnelia.co.za/product/carmen/",
+      "https://resendizbrothers.com/flora/speciality-flora/",
+      "https://florabundance.com/flowers/blushing-bride-white/"
+    ]
+  },
+  {
+    "id": "mimetes",
+    "nom_fr": "Mimetes (pagode)",
+    "nom_en": "Pagoda, mimetes",
+    "latin": "Mimetes spp. (M. cucullatus, M. hirtus, M. fimbriifolius…)",
+    "famille": "Proteaceae",
+    "categorie": "Exotiques",
+    "role": "focale",
+    "couleurs": [
+      "rouge écarlate",
+      "orange",
+      "jaune et rouge",
+      "rose orangé",
+      "argent et rouge"
+    ],
+    "varietes": [
+      {
+        "nom": "Mimetes cucullatus",
+        "couleur": "écarlate virant au jaune et vert",
+        "note": "feuilles florales en violon, « pagode commune »"
+      },
+      {
+        "nom": "Mimetes hirtus",
+        "couleur": "bractées jaunes à pointes rouges, styles rouges"
+      },
+      {
+        "nom": "Mimetes fimbriifolius",
+        "couleur": "rouge et jaune",
+        "note": "petit arbre fleurissant toute l'année"
+      },
+      {
+        "nom": "Mimetes splendidus",
+        "couleur": "rose orangé, crête rose argenté"
+      },
+      {
+        "nom": "Mimetes capitulatus",
+        "couleur": "orange à styles écarlates"
+      },
+      {
+        "nom": "Crackerjack Red",
+        "couleur": "feuillage rouge et vert, fleurs blanches duveteuses"
+      },
+      {
+        "nom": "Crackerjack Silver",
+        "couleur": "feuilles argentées veloutées, fleurs rouges"
+      },
+      {
+        "nom": "Mimetes",
+        "couleur": "rouge",
+        "note": "vendu en fleur coupée"
+      }
+    ],
+    "formes": "Tige feuillée de 40 à 70 cm terminée par un épi étagé de 6 à 12 cm ; vendue à l'unité, très peu cultivée.",
+    "saison": "Très rare : quelques tiges d'Afrique du Sud et de Californie de l'hiver au printemps austral.",
+    "tenue_vase": "10–14 jours",
+    "gamme_prix": "€€€€",
+    "rarete_jeu": "legendaire",
+    "notes_dessin": "Épi cylindrique de 6 à 12 cm qui ressemble à une pagode : à chaque étage, une feuille florale en forme de capuchon ou de violon renversé, écarlate au sommet, jaune puis verte vers la base, s'avance au-dessus d'un capitule de fleurs. De chaque capitule jaillissent des styles longs et droits, rouges à pointe jaune, qui dépassent comme des allumettes. Feuilles du haut veloutées ou argentées selon l'espèce, bords parfois poilus ; le tout forme une tour colorée et étagée. La tige raide est couverte de feuilles ovales, serrées, imbriquées, vert à gris-vert.",
+    "wiki": "Mimetes cucullatus",
+    "img_queries": [
+      "Mimetes cucullatus",
+      "Mimetes hirtus",
+      "Mimetes fimbriifolius"
+    ],
+    "sources": [
+      "https://en.wikipedia.org/wiki/Mimetes_cucullatus",
+      "https://en.wikipedia.org/wiki/Mimetes_hirtus",
+      "https://www.proteaflora.com.au/products/proteaflora-plants-mimetes-crackerjack-red",
+      "https://arnelia.co.za/product/splendidus/",
+      "https://resendizbrothers.com/flora/speciality-flora/"
+    ]
+  },
+  {
+    "id": "aulax",
+    "nom_fr": "Aulax (buisson-plume)",
+    "nom_en": "Featherbush",
+    "latin": "Aulax cancellata, A. umbellata, A. pallasia",
+    "famille": "Proteaceae",
+    "categorie": "Exotiques",
+    "role": "texture",
+    "couleurs": [
+      "jaune",
+      "bronze",
+      "vert",
+      "brun"
+    ],
+    "varietes": [
+      {
+        "nom": "Bronze Haze",
+        "couleur": "feuillage bronze, fleurs jaunes plumeuses",
+        "note": "sélection d'Aulax cancellata"
+      },
+      {
+        "nom": "Aulax cancellata",
+        "couleur": "jaune (mâle), cônes (femelle)",
+        "note": "channel-leaf featherbush"
+      },
+      {
+        "nom": "Aulax umbellata",
+        "couleur": "jaune (mâle), cônes (femelle)",
+        "note": "broad-leaf ou fluffy featherbush"
+      },
+      {
+        "nom": "Aulax pallasia",
+        "couleur": "jaune (mâle), cônes (femelle)",
+        "note": "needle-leaf featherbush"
+      }
+    ],
+    "formes": "Tiges ramifiées de 40 à 70 cm : plants mâles à chatons jaunes plumeux, plants femelles à têtes en entonnoir puis cônes ; aussi séchés.",
+    "saison": "Printemps et été austral (Afrique du Sud, Australie), arrivages rares en Europe.",
+    "tenue_vase": "10–14 jours",
+    "gamme_prix": "€€",
+    "rarete_jeu": "rare",
+    "notes_dessin": "Plants mâles : grappes de chatons allongés jaune vif, très plumeux et mousseux, au bout de rameaux fins, comme des plumets. Plants femelles : têtes en entonnoir rappelant un petit leucospermum, qui deviennent des cônes ovoïdes brun-vert aux écailles serrées, entourés de feuilles qui se teintent de bronze en hiver. Texture légère et duveteuse pour les fleurs, mate et ligneuse pour les cônes. Feuillage fin en aiguilles (pallasia) ou en lanières étroites et creusées (cancellata), insérées tout autour de la tige.",
+    "wiki": "Aulax",
+    "img_queries": [
+      "Aulax umbellata",
+      "Aulax pallasia",
+      "Aulax umbellata female"
+    ],
+    "sources": [
+      "https://www.proteaflora.com.au/products/proteaflora-plants-aulax-bronze-haze",
+      "https://arnelia.co.za/product/bronze-haze/",
+      "https://en.wikipedia.org/wiki/Aulax"
+    ]
+  },
+  {
+    "id": "banksia",
+    "nom_fr": "Banksia",
+    "nom_en": "Banksia",
+    "latin": "Banksia spp. (y compris l'ancien genre Dryandra)",
+    "famille": "Proteaceae",
+    "categorie": "Exotiques",
+    "role": "focale",
+    "couleurs": [
+      "orange",
+      "rouge et blanc",
+      "jaune",
+      "jaune-vert",
+      "crème",
+      "bordeaux et or",
+      "vert",
+      "brun",
+      "pourpre foncé"
+    ],
+    "varietes": [
+      {
+        "nom": "Banksia coccinea",
+        "couleur": "rouge et blanc",
+        "note": "mars à mai depuis l'Afrique (cultures)"
+      },
+      {
+        "nom": "Scarlet Honey Possum",
+        "couleur": "orange vif",
+        "note": "sélection de B. coccinea"
+      },
+      {
+        "nom": "Banksia menziesii",
+        "couleur": "bordeaux et or",
+        "note": "(photo du producteur : épi bordeaux s'ouvrant doré)"
+      },
+      {
+        "nom": "Banksia baxteri",
+        "couleur": "jaune-vert",
+        "note": "épi en dôme ; mai à juillet"
+      },
+      {
+        "nom": "Banksia hookeriana",
+        "couleur": "orange",
+        "note": "boutons laineux blancs s'ouvrant en orange"
+      },
+      {
+        "nom": "Banksia prionotes",
+        "couleur": "orange et blanc",
+        "note": "juin à septembre"
+      },
+      {
+        "nom": "Banksia speciosa",
+        "couleur": "crème à pointes blanches, vert lime",
+        "note": "décembre à février depuis l'Australie"
+      },
+      {
+        "nom": "Banksia ashbyi",
+        "couleur": "orange"
+      },
+      {
+        "nom": "Banksia burdettii",
+        "couleur": "orange",
+        "note": "mai à juillet"
+      },
+      {
+        "nom": "Banksia integrifolia",
+        "couleur": "jaune pâle",
+        "note": "mars à juin"
+      },
+      {
+        "nom": "Banksia ericifolia",
+        "couleur": "orange",
+        "note": "novembre à mars"
+      },
+      {
+        "nom": "Banksia sceptrum",
+        "couleur": "jaune à orangé",
+        "note": "juin à août ; aussi vendu sous l'orthographe Septrum"
+      },
+      {
+        "nom": "Banksia grandis",
+        "couleur": "jaune",
+        "note": "mars à mai"
+      },
+      {
+        "nom": "Banksia praemorsa",
+        "couleur": "jaune",
+        "note": "mars à juin"
+      },
+      {
+        "nom": "Banksia media",
+        "couleur": "vert"
+      },
+      {
+        "nom": "Banksia occidentalis",
+        "couleur": "orange"
+      },
+      {
+        "nom": "Banksia victoriae",
+        "couleur": "orange",
+        "note": "orthographe du négociant : Banskia"
+      },
+      {
+        "nom": "Banksia attenuata",
+        "couleur": "jaune",
+        "note": "grand épi"
+      },
+      {
+        "nom": "Banksia plagiocarpa",
+        "couleur": "vert"
+      },
+      {
+        "nom": "Dryandra quercifolia",
+        "couleur": "brun à vert lime",
+        "note": "petite tête, 40–50 cm ; mars à août"
+      },
+      {
+        "nom": "Banksia Candles",
+        "couleur": "orange",
+        "note": "dénomination commerciale ; septembre à décembre"
+      },
+      {
+        "nom": "Banksia Robin",
+        "couleur": "pourpre foncé",
+        "note": "dénomination commerciale ; mai à août"
+      },
+      {
+        "nom": "Birthday Candles",
+        "couleur": "jaune d'or",
+        "note": "sélection compacte"
+      }
+    ],
+    "formes": "Épi cylindrique ou en dôme de 6 à 30 cm sur tige ligneuse feuillée de 40 à 80 cm ; aussi en cônes ligneux secs (« nuts ») et teintés.",
+    "saison": "Australie occidentale (été–automne austral), Afrique du Sud, Californie, Israël, Portugal ; présente en Europe surtout de l'automne au printemps.",
+    "tenue_vase": "14–21 jours",
+    "gamme_prix": "€€€",
+    "rarete_jeu": "rare",
+    "notes_dessin": "Épi cylindrique ou en gland (6 à 30 cm de haut) formé de centaines de fleurs tubulaires serrées en rangées verticales et en spirales régulières, comme les poils d'une brosse. Chaque fleur porte un long style crochu qui se libère de bas en haut : la partie ouverte est hérissée de styles, la partie fermée reste lisse, d'où des épis bicolores (orange et gris laineux, rouge et blanc). Texture duveteuse et feutrée, couleurs chaudes et mates. Les feuilles, rigides et coriaces, souvent en dents de scie ou en lanières, entourent la base de l'épi sur une tige ligneuse épaisse.",
+    "wiki": "Banksia",
+    "img_queries": [
+      "Banksia coccinea",
+      "Banksia menziesii",
+      "Banksia prionotes",
+      "Banksia speciosa"
+    ],
+    "sources": [
+      "https://www.sierraflowerfinder.com/en/f/proteas-and-leucadendrons/banksia/145?page=1&flt=0",
+      "https://resendizbrothers.com/flora/banksia/",
+      "https://www.proteaflora.com.au/products/proteaflora-plants-banksia-scarlet-honey-possum",
+      "https://en.wikipedia.org/wiki/Banksia"
+    ]
+  },
+  {
+    "id": "telopea",
+    "nom_fr": "Waratah",
+    "nom_en": "Waratah",
+    "latin": "Telopea speciosissima et hybrides",
+    "famille": "Proteaceae",
+    "categorie": "Exotiques",
+    "role": "focale",
+    "couleurs": [
+      "rouge",
+      "rouge cramoisi",
+      "rose",
+      "rose prune",
+      "rose saumon",
+      "blanc crème",
+      "jaune crème"
+    ],
+    "varietes": [
+      {
+        "nom": "Shady Lady Red",
+        "couleur": "rouge vif",
+        "note": "hybride, floraison fin d'hiver–printemps"
+      },
+      {
+        "nom": "Shady Lady White",
+        "couleur": "blanc crème",
+        "note": "nom d'obtention Bridal Gown"
+      },
+      {
+        "nom": "Shady Lady Pink",
+        "couleur": "rose",
+        "note": "grandes têtes"
+      },
+      {
+        "nom": "Shady Lady Crimson",
+        "couleur": "rouge cramoisi"
+      },
+      {
+        "nom": "Shady Lady Yellow",
+        "couleur": "jaune crème",
+        "note": "nom d'obtention Golden Globe ; extrêmement rare"
+      },
+      {
+        "nom": "Enchanted Rose",
+        "couleur": "rouge",
+        "note": "grandes têtes"
+      },
+      {
+        "nom": "Enchanted Red",
+        "couleur": "rouge cramoisi"
+      },
+      {
+        "nom": "Enchanted Pink",
+        "couleur": "rose vif"
+      },
+      {
+        "nom": "Enchanted Flame",
+        "couleur": "rouge cramoisi"
+      },
+      {
+        "nom": "Corrakee",
+        "couleur": "rouge"
+      },
+      {
+        "nom": "Braidwood Brilliant",
+        "couleur": "rouge cerise profond",
+        "note": "hybride compact"
+      },
+      {
+        "nom": "Sugar Plum",
+        "couleur": "rose prune"
+      },
+      {
+        "nom": "Georgie Girl",
+        "couleur": "jaune crème"
+      },
+      {
+        "nom": "Digger",
+        "couleur": "rose saumon"
+      },
+      {
+        "nom": "Champagne",
+        "couleur": "jaune crème",
+        "note": "été austral, très limitée"
+      },
+      {
+        "nom": "Wirrimbirra",
+        "couleur": "blanc pur, cœur blanc verdâtre",
+        "note": "waratah blanc (Wirrimbirra White) ; très limitée"
+      },
+      {
+        "nom": "Gembrook",
+        "couleur": "rouge fuchsia à rouge foncé",
+        "note": "vendu comme Telopea speciosissima « Gembrook »"
+      },
+      {
+        "nom": "Pink Parfait",
+        "couleur": "rose",
+        "note": "(photo du producteur)"
+      }
+    ],
+    "formes": "Tête de 7 à 12 cm sur tige ligneuse de 50 à 100 cm ; vendue à l'unité, en bouton entouré de ses bractées ou ouverte.",
+    "saison": "Courte saison de printemps austral (septembre à novembre en Australie), quelques arrivages de Nouvelle-Zélande, Californie et Hawaï.",
+    "tenue_vase": "10–14 jours",
+    "gamme_prix": "€€€€",
+    "rarete_jeu": "precieuse",
+    "notes_dessin": "Tête en dôme de 7 à 10 cm de diamètre (plus chez certains hybrides) formée de jusqu'à 250 fleurons tubulaires serrés, recourbés en crosse, qui dessinent un cône bombé et texturé, cramoisi. À la base, une collerette de bractées foliacées rouges, lancéolées, de 5 à 7 cm, s'ouvre en corolle et donne l'aspect d'une fleur géante. Les fleurons s'ouvrent du bord vers le centre en libérant styles et stigmates (parfois à pointe blanchâtre), si bien que le dôme devient plus sombre et plus hérissé en mûrissant ; texture mate et veloutée, bractées plus lisses. Tige épaisse et droite ; feuilles alternes, coriaces, vert foncé, de 13 à 25 cm, grossièrement dentées.",
+    "wiki": "Telopea speciosissima",
+    "img_queries": [
+      "Telopea speciosissima",
+      "Waratah flower",
+      "Telopea Shady Lady"
+    ],
+    "sources": [
+      "https://www.proteaflora.com.au/products/proteaflora-plants-telopea-shady-lady-red",
+      "https://arnelia.co.za/product/shady-lady-white/",
+      "https://www.sierraflowerfinder.com/en/d/waratah-wirrimbirra/3041",
+      "https://en.wikipedia.org/wiki/Telopea_speciosissima"
+    ]
+  },
+  {
+    "id": "anigozanthos",
+    "nom_fr": "Patte de kangourou",
+    "nom_en": "Kangaroo paw",
+    "latin": "Anigozanthos spp. et hybrides",
+    "famille": "Haemodoraceae",
+    "categorie": "Exotiques",
+    "role": "secondaire",
+    "couleurs": [
+      "rouge",
+      "rouge et vert",
+      "jaune",
+      "jaune-vert",
+      "orange",
+      "rose",
+      "pourpre",
+      "bordeaux",
+      "blanc",
+      "bleu-vert",
+      "corail"
+    ],
+    "varietes": [
+      {
+        "nom": "Bush Flamingo",
+        "couleur": "rose",
+        "note": "série Bush Gems / Ramm Botanicals ; usage fleur coupée"
+      },
+      {
+        "nom": "Valentine",
+        "couleur": "rose bicolore",
+        "note": "série Bush Gems Celebrations"
+      },
+      {
+        "nom": "Bush Merlot",
+        "couleur": "pourpre profond",
+        "note": "apprécié en fleur coupée"
+      },
+      {
+        "nom": "Bush Sunburst",
+        "couleur": "jaune",
+        "note": "série Bush Gems / Ramm Botanicals ; usage fleur coupée"
+      },
+      {
+        "nom": "Kings Park Royale",
+        "couleur": "pourpre et rouge",
+        "note": "obtenu au Kings Park Botanic Garden (Australie-Occidentale)"
+      },
+      {
+        "nom": "Bush Pearl",
+        "couleur": "rose bonbon",
+        "note": "série Bush Gems / Ramm Botanicals ; usage fleur coupée"
+      },
+      {
+        "nom": "Landscape Tangerine",
+        "couleur": "orange",
+        "note": "série Bush Gems / Ramm Botanicals ; usage fleur coupée"
+      },
+      {
+        "nom": "Landscape Scarlet",
+        "couleur": "rouge",
+        "note": "série Bush Gems / Ramm Botanicals ; usage fleur coupée"
+      },
+      {
+        "nom": "Landscape Gold",
+        "couleur": "jaune d'or",
+        "note": "série Bush Gems / Ramm Botanicals ; usage fleur coupée"
+      },
+      {
+        "nom": "Regal Velvet",
+        "couleur": "rouge et vert",
+        "note": "série Bush Gems / Ramm Botanicals ; usage fleur coupée"
+      },
+      {
+        "nom": "Ruby Velvet",
+        "couleur": "rouge rubis",
+        "note": "série Bush Gems / Ramm Botanicals ; usage fleur coupée"
+      },
+      {
+        "nom": "Bush Crystal",
+        "couleur": "rose irisé",
+        "note": "série Bush Gems / Ramm Botanicals ; usage fleur coupée"
+      },
+      {
+        "nom": "Amber Velvet",
+        "couleur": "rouge et jaune",
+        "note": "série Bush Gems / Ramm Botanicals ; usage fleur coupée"
+      },
+      {
+        "nom": "Gold Velvet",
+        "couleur": "jaune et rouge",
+        "note": "série Bush Gems / Ramm Botanicals ; usage fleur coupée"
+      },
+      {
+        "nom": "Masquerade",
+        "couleur": "bleu-vert et pourpre",
+        "note": "premier anigozanthos « bleu » au monde"
+      },
+      {
+        "nom": "Jazz",
+        "couleur": "pourpre profond et rouge",
+        "note": "série Bush Gems / Ramm Botanicals ; usage fleur coupée"
+      },
+      {
+        "nom": "Fireworks",
+        "couleur": "rose et bleu",
+        "note": "série Bush Gems / Ramm Botanicals ; usage fleur coupée"
+      },
+      {
+        "nom": "Carnivale",
+        "couleur": "pourpre",
+        "note": "série Bush Gems / Ramm Botanicals ; usage fleur coupée"
+      },
+      {
+        "nom": "Aussie Spirit",
+        "couleur": "jaune et vert",
+        "note": "série Bush Gems / Ramm Botanicals ; usage fleur coupée"
+      },
+      {
+        "nom": "Bush Princess",
+        "couleur": "rose nacré",
+        "note": "série Bush Gems / Ramm Botanicals ; usage fleur coupée"
+      },
+      {
+        "nom": "Bush Fury",
+        "couleur": "rouge",
+        "note": "série Bush Gems / Ramm Botanicals ; usage fleur coupée"
+      },
+      {
+        "nom": "Bush Coral",
+        "couleur": "corail",
+        "note": "série Bush Gems / Ramm Botanicals ; usage fleur coupée"
+      },
+      {
+        "nom": "Bush Zest",
+        "couleur": "jaune vif",
+        "note": "série Bush Gems / Ramm Botanicals ; usage fleur coupée"
+      },
+      {
+        "nom": "Bush Tenacity",
+        "couleur": "jaune d'or et orange",
+        "note": "série Bush Gems / Ramm Botanicals ; usage fleur coupée"
+      },
+      {
+        "nom": "Bush Surprise",
+        "couleur": "orange et rouge",
+        "note": "série Bush Gems / Ramm Botanicals ; usage fleur coupée"
+      },
+      {
+        "nom": "Bush Inferno",
+        "couleur": "rouge feu",
+        "note": "série Bush Gems / Ramm Botanicals ; usage fleur coupée"
+      },
+      {
+        "nom": "Bush Glow",
+        "couleur": "or et orange",
+        "note": "série Bush Gems / Ramm Botanicals ; usage fleur coupée"
+      },
+      {
+        "nom": "Bush Flare",
+        "couleur": "orange brûlé et vermillon",
+        "note": "série Bush Gems / Ramm Botanicals ; usage fleur coupée"
+      },
+      {
+        "nom": "Bush Fire",
+        "couleur": "or et orange",
+        "note": "série Bush Gems / Ramm Botanicals ; usage fleur coupée"
+      },
+      {
+        "nom": "Bush Elegance",
+        "couleur": "bordeaux",
+        "note": "série Bush Gems / Ramm Botanicals ; usage fleur coupée"
+      },
+      {
+        "nom": "Bush Diamond",
+        "couleur": "blanc",
+        "note": "série Bush Gems / Ramm Botanicals ; usage fleur coupée"
+      },
+      {
+        "nom": "Bush Dance",
+        "couleur": "vert et rouge",
+        "note": "série Bush Gems / Ramm Botanicals ; usage fleur coupée"
+      },
+      {
+        "nom": "Bush Bonanza",
+        "couleur": "jaune vif sur tiges rouges",
+        "note": "série Bush Gems / Ramm Botanicals ; usage fleur coupée"
+      },
+      {
+        "nom": "Bush Blitz",
+        "couleur": "orange foncé et bordeaux",
+        "note": "série Bush Gems / Ramm Botanicals ; usage fleur coupée"
+      },
+      {
+        "nom": "Bush Ballad",
+        "couleur": "rouge",
+        "note": "série Bush Gems / Ramm Botanicals ; usage fleur coupée"
+      },
+      {
+        "nom": "Anigozanthos flavidus",
+        "couleur": "jaune-vert",
+        "note": "espèce"
+      },
+      {
+        "nom": "Anigozanthos manglesii",
+        "couleur": "rouge et vert",
+        "note": "espèce emblème de l'Australie-Occidentale ; orthographe du producteur : Manglessi"
+      },
+      {
+        "nom": "Anigozanthos rufus",
+        "couleur": "rouge profond",
+        "note": "espèce"
+      },
+      {
+        "nom": "Christmas Red",
+        "couleur": "rouge",
+        "note": "(photo du producteur)"
+      },
+      {
+        "nom": "Red Cross",
+        "couleur": "rouge",
+        "note": "(photo du producteur)"
+      },
+      {
+        "nom": "Pink Joy",
+        "couleur": "rose",
+        "note": "(photo du producteur)"
+      },
+      {
+        "nom": "Tequila Sunrise",
+        "couleur": "orange-rouge",
+        "note": "(photo du producteur)"
+      },
+      {
+        "nom": "Yellow Gem",
+        "couleur": "jaune",
+        "note": "(photo du producteur)"
+      },
+      {
+        "nom": "Burgundy",
+        "couleur": "bordeaux",
+        "note": "(photo du producteur)"
+      }
+    ],
+    "formes": "Hampes ramifiées de 40 cm à 1,8 m portant des grappes de fleurs tubulaires ; vendues en botte ; aussi en plante en pot.",
+    "saison": "Toute l'année (Australie, Israël, Californie, Pays-Bas en serre), pic du printemps à l'automne.",
+    "tenue_vase": "10–21 jours",
+    "gamme_prix": "€€",
+    "rarete_jeu": "rare",
+    "notes_dessin": "Hampe ramifiée en candélabre portant des grappes unilatérales de fleurs tubulaires de 3 à 8 cm, légèrement arquées, entièrement recouvertes d'un épais duvet velouté. Chaque fleur s'ouvre au sommet en six petits lobes recourbés vers l'arrière, comme une patte griffue, laissant voir l'intérieur plus clair et des étamines. Le velours change de teinte entre la fleur et la tige (fleur jaune sur tige rouge velue, fleur rouge à base verte chez manglesii). Tiges fines, laineuses, sans feuilles en fleur coupée ; feuilles basales en lanières vert franc, raides, comme celles d'un iris.",
+    "wiki": "Anigozanthos",
+    "img_queries": [
+      "Anigozanthos manglesii",
+      "Anigozanthos flavidus",
+      "Kangaroo paw flower"
+    ],
+    "sources": [
+      "https://www.ramm.com.au/kangaroo-paw/",
+      "https://www.ramm.com.au/product/kangaroo-paw-bush-pearl/",
+      "https://resendizbrothers.com/flora/kangaroo-paws/",
+      "https://en.wikipedia.org/wiki/Anigozanthos",
+      "https://florabundance.com/flowers/kangaroo-paws-green/"
+    ]
+  },
+  {
+    "id": "isopogon",
+    "nom_fr": "Isopogon (baguette de tambour)",
+    "nom_en": "Drumsticks, coneflower",
+    "latin": "Isopogon spp.",
+    "famille": "Proteaceae",
+    "categorie": "Exotiques",
+    "role": "secondaire",
+    "couleurs": [
+      "jaune",
+      "rose",
+      "rose pourpré",
+      "rose rougeâtre"
+    ],
+    "varietes": [
+      {
+        "nom": "Isopogon anethifolius",
+        "couleur": "jaune",
+        "note": "suivi de cônes gris ronds (« drumsticks »)"
+      },
+      {
+        "nom": "Isopogon formosus",
+        "couleur": "rose ou rouge",
+        "note": "têtes sphériques à ovales"
+      },
+      {
+        "nom": "Isopogon latifolius",
+        "couleur": "rose",
+        "note": "utilisé dans l'industrie de la fleur coupée"
+      },
+      {
+        "nom": "Isopogon cuneatus",
+        "couleur": "rose pâle à rose pourpré",
+        "note": "têtes sphériques aplaties"
+      },
+      {
+        "nom": "Isopogon dubius",
+        "couleur": "rose à rose rougeâtre"
+      },
+      {
+        "nom": "Isopogon anemonifolius",
+        "couleur": "jaune"
+      }
+    ],
+    "formes": "Tiges feuillées de 30 à 60 cm portant des têtes sphériques de 3 à 6 cm, puis des cônes gris ; aussi séchés.",
+    "saison": "Printemps austral (septembre à décembre), arrivages d'Australie et de Californie.",
+    "tenue_vase": "10–14 jours",
+    "gamme_prix": "€€",
+    "rarete_jeu": "rare",
+    "notes_dessin": "Tête sphérique de 3 à 6 cm d'où rayonnent de nombreuses fleurs fines et droites (environ 1,2 cm) disposées en spirale autour d'un globe central ligneux, comme une petite pelote hérissée. Les fleurs, jaune vif ou rose, ont des extrémités plus claires et légèrement duveteuses ; après la floraison il reste un cône gris rond, la « baguette de tambour ». Texture fine et soyeuse sur un cœur dur et écailleux. Tige raide garnie de feuilles finement découpées en lanières cylindriques (anethifolius) ou plates et coriaces (latifolius), souvent teintées de pourpre en hiver.",
+    "wiki": "Isopogon",
+    "img_queries": [
+      "Isopogon anethifolius",
+      "Isopogon formosus",
+      "Isopogon latifolius"
+    ],
+    "sources": [
+      "https://resendizbrothers.com/flora/speciality-flora/",
+      "https://en.wikipedia.org/wiki/Isopogon_latifolius",
+      "https://en.wikipedia.org/wiki/Isopogon_anethifolius"
+    ]
+  },
+  {
+    "id": "grevillea",
+    "nom_fr": "Grevillea (fleurs)",
+    "nom_en": "Grevillea, spider flower",
+    "latin": "Grevillea spp. et hybrides (G. banksii × G. bipinnatifida…)",
+    "famille": "Proteaceae",
+    "categorie": "Exotiques",
+    "role": "secondaire",
+    "couleurs": [
+      "rouge",
+      "rouge profond",
+      "orange",
+      "jaune orangé",
+      "abricot",
+      "rose",
+      "blanc crème",
+      "rouge et jaune"
+    ],
+    "varietes": [
+      {
+        "nom": "Robyn Gordon",
+        "couleur": "rouge profond",
+        "note": "inflorescences de 15 × 9 cm ; hybride G. banksii × G. bipinnatifida"
+      },
+      {
+        "nom": "Moonlight",
+        "couleur": "blanc crème",
+        "note": "grappes jusqu'à 25 cm, toute l'année"
+      },
+      {
+        "nom": "Honey Gem",
+        "couleur": "jaune orangé",
+        "note": "grappes de 16 × 8 cm ; hybride G. banksii × G. pteridifolia"
+      },
+      {
+        "nom": "Superb",
+        "couleur": "orange, rouge et jaune",
+        "note": "inflorescences de 15 × 9 cm"
+      },
+      {
+        "nom": "Mason's Hybrid",
+        "couleur": "abricot à styles rouges",
+        "note": "aussi vendu Ned Kelly ; inflorescences de 12 × 10 cm"
+      },
+      {
+        "nom": "Grevillea banksii",
+        "couleur": "rouge",
+        "note": "espèce (photo du producteur)"
+      },
+      {
+        "nom": "Grevillea hookeriana",
+        "couleur": "rouge",
+        "note": "grappes en brosse à dents (photo du producteur)"
+      },
+      {
+        "nom": "Grevillea johnsonii",
+        "couleur": "rose orangé",
+        "note": "(photo du producteur)"
+      },
+      {
+        "nom": "Sylvia",
+        "couleur": "rose",
+        "note": "(photo du producteur)"
+      },
+      {
+        "nom": "Mount Tamboritha",
+        "couleur": "rose-rouge et crème"
+      },
+      {
+        "nom": "Lady O",
+        "couleur": "rouge"
+      },
+      {
+        "nom": "Fireworks",
+        "couleur": "rouge et jaune",
+        "note": "feuillage bleu-vert"
+      }
+    ],
+    "formes": "Tiges ramifiées de 30 à 70 cm portant des grappes terminales (araignée, brosse à dents ou pinceau) de 5 à 25 cm.",
+    "saison": "Une grande partie de l'année (Australie, Californie, Afrique du Sud), surtout de l'hiver au printemps.",
+    "tenue_vase": "7–12 jours",
+    "gamme_prix": "€€",
+    "rarete_jeu": "rare",
+    "notes_dessin": "Inflorescence en grappe dense (5 à 25 cm) composée de dizaines de petites fleurs tubulaires dont le style, très long et recourbé en boucle, se libère et se redresse : l'ensemble ressemble à une brosse ou à une araignée aux pattes fines terminées par un petit bouton. Périanthes souvent veloutés, styles lisses et brillants, couleurs vives (rouge, orange abricot, crème). Selon le type, la grappe est cylindrique et dressée (brosse), unilatérale (brosse à dents) ou en boule lâche. Feuillage profondément découpé, fougère ou en aiguilles, vert à gris-vert, revers argenté.",
+    "wiki": "Grevillea",
+    "img_queries": [
+      "Grevillea 'Robyn Gordon'",
+      "Grevillea 'Moonlight'",
+      "Grevillea 'Honey Gem'"
+    ],
+    "sources": [
+      "https://en.wikipedia.org/wiki/Grevillea_%27Robyn_Gordon%27",
+      "https://en.wikipedia.org/wiki/Grevillea_%27Moonlight%27",
+      "https://resendizbrothers.com/flora/grevillea/",
+      "https://arnelia.co.za/product/fireworks/"
+    ]
+  },
+  {
+    "id": "hakea",
+    "nom_fr": "Hakea (pelote de Hakea)",
+    "nom_en": "Pincushion hakea",
+    "latin": "Hakea laurina et autres Hakea à fleurs",
+    "famille": "Proteaceae",
+    "categorie": "Exotiques",
+    "role": "secondaire",
+    "couleurs": [
+      "rose rouge et crème",
+      "rouge",
+      "orange",
+      "rose",
+      "crème et pourpre"
+    ],
+    "varietes": [
+      {
+        "nom": "Hakea laurina",
+        "couleur": "rose-rouge à styles crème",
+        "note": "pelotes globuleuses ; vendu en fleur coupée"
+      },
+      {
+        "nom": "Hakea bucculenta",
+        "couleur": "orange ou rouge vif",
+        "note": "grappes de 250 à 450 fleurs, jusqu'à 15 cm"
+      },
+      {
+        "nom": "Hakea francisiana",
+        "couleur": "rose-rouge",
+        "note": "grappes jusqu'à 10 cm, juillet à octobre"
+      },
+      {
+        "nom": "Hakea multilineata",
+        "couleur": "rose vif",
+        "note": "juin à septembre"
+      },
+      {
+        "nom": "Hakea petiolaris",
+        "couleur": "crème et rose ou pourpre",
+        "note": "« hakea oursin », fruits ligneux"
+      },
+      {
+        "nom": "Hakea orthorrhyncha",
+        "couleur": "rouge vif",
+        "note": "fleurs en grappes à l'aisselle des feuilles"
+      }
+    ],
+    "formes": "Rameaux ligneux de 40 à 80 cm garnis de pelotes ou d'épis le long de la tige ; aussi fruits ligneux décoratifs.",
+    "saison": "Hiver et printemps austral (juin à octobre en Australie) ; rare en Europe.",
+    "tenue_vase": "10–14 jours",
+    "gamme_prix": "€€",
+    "rarete_jeu": "rare",
+    "notes_dessin": "Hakea laurina : boules de 4 à 6 cm à l'aisselle des feuilles, faites de 120 à 190 petites fleurs rose-rouge d'où sortent de longs styles crème, raides et légèrement courbés, qui rayonnent comme les épingles d'une pelote ou les piquants d'un oursin. Les styles clairs se détachent sur le cœur rouge, créant un halo lumineux. D'autres espèces forment des épis cylindriques rouges ou orangés (bucculenta) ou roses (francisiana, multilineata). Tiges ligneuses à feuilles coriaces lancéolées, plates, gris-bleu, à nervures longitudinales.",
+    "wiki": "Hakea laurina",
+    "img_queries": [
+      "Hakea laurina",
+      "Hakea bucculenta",
+      "Hakea francisiana"
+    ],
+    "sources": [
+      "https://www.sierraflowerfinder.com/en/d/pincushion-hakea-laurina/6338",
+      "https://resendizbrothers.com/flora/speciality-flora/",
+      "https://en.wikipedia.org/wiki/Hakea_laurina",
+      "https://en.wikipedia.org/wiki/Hakea_bucculenta"
+    ]
+  },
+  {
+    "id": "gloriosa",
+    "nom_fr": "Gloriosa (lis de Malabar, lis glorieux)",
+    "nom_en": "Flame lily, glory lily",
+    "latin": "Gloriosa superba (syn. G. rothschildiana, G. lutea)",
+    "famille": "Colchicaceae",
+    "categorie": "Exotiques",
+    "role": "secondaire",
+    "couleurs": [
+      "rouge bordé de jaune",
+      "jaune",
+      "orange",
+      "rouge",
+      "bordeaux"
+    ],
+    "varietes": [
+      {
+        "nom": "Rothschildiana",
+        "couleur": "rouge bordé de jaune",
+        "note": "ancien nom d'espèce (G. rothschildiana O'Brien, 1903), forme la plus vendue en fleur coupée"
+      },
+      {
+        "nom": "Lutea",
+        "couleur": "jaune",
+        "note": "ancien nom d'espèce (G. lutea Masters, 1901)"
+      },
+      {
+        "nom": "Gloriosa superba",
+        "couleur": "jaune virant au rouge",
+        "note": "forme type ; variantes crème, orange, bordeaux et pourpre-brun signalées"
+      },
+      {
+        "nom": "Gloriosa Lily Tall Red",
+        "couleur": "rouge",
+        "note": "qualité « tall », importée (grossiste)"
+      },
+      {
+        "nom": "Gloriosa Lily Tall Orange",
+        "couleur": "orange",
+        "note": "qualité « tall », importée (grossiste)"
+      },
+      {
+        "nom": "Gloriosa Lily Short Yellow",
+        "couleur": "jaune",
+        "note": "qualité « short » (grossiste)"
+      }
+    ],
+    "formes": "Tige grimpante coupée de 40 à 80 cm portant 2 à 6 fleurs et boutons, terminée par des feuilles à vrille ; aussi en fleurs détachées pour la composition.",
+    "saison": "Toute l'année (serres néerlandaises, Kenya, Zimbabwe), pic au printemps et en été.",
+    "tenue_vase": "7–14 jours",
+    "gamme_prix": "€€",
+    "rarete_jeu": "rare",
+    "notes_dessin": "Six tépales étroits et longs (5 à 8 cm), en forme de cuillère, aux bords fortement ondulés, entièrement rabattus vers le haut et l'arrière comme des flammes. Ils sont rouges bordés de jaune (Rothschildiana) ou jaunes, et passent du vert au jaune puis au rouge en vieillissant. Au centre, six étamines rayonnent à l'horizontale et le style se coude à angle droit vers le côté : la fleur pend, tête en bas, sur un long pédicelle. Surface satinée, légèrement translucide. Tige grimpante fine à feuilles lancéolées alternes dont la pointe s'allonge en vrille.",
+    "wiki": "Gloriosa superba",
+    "img_queries": [
+      "Gloriosa superba",
+      "Gloriosa superba Rothschildiana",
+      "Gloriosa lutea"
+    ],
+    "sources": [
+      "https://en.wikipedia.org/wiki/Gloriosa_superba",
+      "https://en.wikipedia.org/wiki/Gloriosa_(plant)",
+      "https://florabundance.com/flowers/gloriosa-lily-tall-red/",
+      "https://florabundance.com/flowers/gloriosa-lily-short-yellow/"
+    ]
+  },
+  {
+    "id": "tillandsia",
+    "nom_fr": "Tillandsia (fille de l'air)",
+    "nom_en": "Air plant, tillandsia",
+    "latin": "Tillandsia spp. (et Wallisia cyanea)",
+    "famille": "Bromeliaceae",
+    "categorie": "Exotiques",
+    "role": "texture",
+    "couleurs": [
+      "gris argenté",
+      "vert",
+      "rouge",
+      "rose",
+      "violet",
+      "pourpre",
+      "orange",
+      "jaune",
+      "blanc"
+    ],
+    "varietes": [
+      {
+        "nom": "Tillandsia xerographica",
+        "couleur": "rosette gris argenté, hampe saumon à rose",
+        "note": "grande rosette spiralée"
+      },
+      {
+        "nom": "Tillandsia ionantha 'Fuego'",
+        "couleur": "vert virant au rouge feu"
+      },
+      {
+        "nom": "Tillandsia ionantha 'Rubra'",
+        "couleur": "vert lime à pointes rose-rouge"
+      },
+      {
+        "nom": "Tillandsia ionantha 'Mexico'",
+        "couleur": "vert virant au rouge vif"
+      },
+      {
+        "nom": "Tillandsia ionantha 'Druid'",
+        "couleur": "pêche, fleurs blanches"
+      },
+      {
+        "nom": "Tillandsia ionantha 'Heart's Blood'",
+        "couleur": "rouge cramoisi intense"
+      },
+      {
+        "nom": "Tillandsia caput-medusae",
+        "couleur": "gris argenté, gaines pourpres, bractées rouge cerise",
+        "note": "feuilles serpentines « tête de Méduse »"
+      },
+      {
+        "nom": "Tillandsia stricta",
+        "couleur": "vert tendre, épi rouge vif, fleurs bleues"
+      },
+      {
+        "nom": "Tillandsia streptophylla",
+        "couleur": "vert argenté teinté de rose, fleurs rose et pourpre",
+        "note": "feuilles en rubans qui s'enroulent"
+      },
+      {
+        "nom": "Tillandsia bulbosa",
+        "couleur": "vert, inflorescence rouge cerise, fleurs lavande",
+        "note": "base bulbeuse"
+      },
+      {
+        "nom": "Tillandsia tectorum 'Fuzzball'",
+        "couleur": "blanc argenté duveteux",
+        "note": "trichomes très denses"
+      },
+      {
+        "nom": "Tillandsia aeranthos",
+        "couleur": "vert vif, fleurs bleu-violet"
+      },
+      {
+        "nom": "Tillandsia harrisii",
+        "couleur": "feuilles blanc argenté, inflorescence rouge"
+      },
+      {
+        "nom": "Tillandsia funckiana",
+        "couleur": "écarlate en pleine lumière, fleurs écarlates",
+        "note": "feuilles en aiguilles de pin"
+      },
+      {
+        "nom": "Tillandsia brachycaulos",
+        "couleur": "vert virant au rouge feu"
+      },
+      {
+        "nom": "Tillandsia juncea",
+        "couleur": "vert à bordeaux, fleurs pourpre royal"
+      },
+      {
+        "nom": "Tillandsia duratii",
+        "couleur": "vert pâle argenté"
+      },
+      {
+        "nom": "Tillandsia tenuifolia 'Amethyst'",
+        "couleur": "pourpre presque noir, épi rose à fleurs blanches"
+      },
+      {
+        "nom": "Tillandsia usneoides 'El Normal'",
+        "couleur": "gris argenté",
+        "note": "barbe de vieillard (Spanish moss) en rideaux"
+      },
+      {
+        "nom": "Tillandsia cyanea",
+        "couleur": "épi rose en éventail, fleurs violettes",
+        "note": "Wallisia cyanea, « pink quill »"
+      },
+      {
+        "nom": "Anita",
+        "couleur": "rose",
+        "note": "T. cyanea (Anthura)"
+      },
+      {
+        "nom": "Josee",
+        "couleur": "rose",
+        "note": "T. cyanea ramifiée (Anthura)"
+      },
+      {
+        "nom": "Biancini",
+        "couleur": "blanc",
+        "note": "seule T. cyanea blanche du marché (Anthura)"
+      },
+      {
+        "nom": "Camina",
+        "couleur": "rose",
+        "note": "T. cyanea à bractée rose très ramifiée (Anthura)"
+      },
+      {
+        "nom": "Tillandsia dyeriana",
+        "couleur": "orange",
+        "note": "inflorescence pendante (Anthura)"
+      },
+      {
+        "nom": "Tillandsia flabellata",
+        "couleur": "rouge",
+        "note": "(Anthura)"
+      },
+      {
+        "nom": "Luminosa",
+        "couleur": "jaune",
+        "note": "Tillandsia (Anthura)"
+      },
+      {
+        "nom": "Mora",
+        "couleur": "pourpre",
+        "note": "Tillandsia à inflorescence originale (Anthura)"
+      }
+    ],
+    "formes": "Plantes entières sans racines (5 à 40 cm), en rosette, en touffe ou en rideau ; Tillandsia cyanea vendue en pot avec son épi ; utilisées en bijou floral, couronne et composition.",
+    "saison": "Toute l'année (Guatemala, Mexique, Floride, serres néerlandaises).",
+    "tenue_vase": "plusieurs mois (plante vivante)",
+    "gamme_prix": "€€",
+    "rarete_jeu": "commune",
+    "notes_dessin": "Rosette de feuilles rigides, effilées ou en lanières recourbées, couvertes de minuscules écailles (trichomes) qui leur donnent un aspect gris argenté, poudré ou duveteux ; sous la lumière, le bord des feuilles prend un liseré clair. Selon l'espèce : grande spirale de feuilles larges qui s'enroulent (xerographica), petite étoile compacte qui rougit au cœur (ionantha), tentacules ondulés partant d'une base bulbeuse (caput-medusae), barbe filiforme pendante (usneoides). L'inflorescence est un épi ou une palette de bractées roses, rouges ou orange d'où sortent de petites fleurs tubulaires violettes à trois pétales. Pas de tige : la plante se pose ou se suspend.",
+    "wiki": "Tillandsia",
+    "img_queries": [
+      "Tillandsia xerographica",
+      "Tillandsia ionantha",
+      "Tillandsia caput-medusae",
+      "Tillandsia cyanea"
+    ],
+    "sources": [
+      "https://www.rainforestflora.com/products/tillandsia-xerographica",
+      "https://www.rainforestflora.com/products/tillandsia-ionantha-fuego",
+      "https://anthura.nl/producten/bromelia-potplanten/biancini/",
+      "https://en.wikipedia.org/wiki/Tillandsia",
+      "https://florabundance.com/flowers/tillandsia-xerographica-mini-airplant/"
+    ]
+  },
+  {
+    "id": "nepenthes",
+    "nom_fr": "Népenthès (plante carnivore à urnes)",
+    "nom_en": "Pitcher plant, monkey cup",
+    "latin": "Nepenthes spp. et hybrides",
+    "famille": "Nepenthaceae",
+    "categorie": "Exotiques",
+    "role": "texture",
+    "couleurs": [
+      "vert",
+      "rouge",
+      "bordeaux",
+      "vert moucheté de rouge",
+      "vert lime"
+    ],
+    "varietes": [
+      {
+        "nom": "Nepenthes × ventrata",
+        "couleur": "vert lavé de rouge",
+        "note": "hybride naturel N. alata × N. ventricosa, le plus courant en jardinerie"
+      },
+      {
+        "nom": "Nepenthes ventricosa",
+        "couleur": "vert pâle à rouge, péristome rouge",
+        "note": "forme rouge, urnes pansues étranglées à la taille"
+      },
+      {
+        "nom": "Rebecca Soper",
+        "couleur": "bordeaux prune",
+        "note": "feuilles et urnes rouge merlot"
+      },
+      {
+        "nom": "St Gaya",
+        "couleur": "rouge moucheté, intérieur vert lime",
+        "note": "grandes urnes, croissance rapide"
+      },
+      {
+        "nom": "Nepenthes ampullaria",
+        "couleur": "vert",
+        "note": "urnes rondes et trapues à petit opercule (forme verte)"
+      },
+      {
+        "nom": "Nepenthes jamban",
+        "couleur": "péristome rouge vif",
+        "note": "urnes supérieures à bouche ronde en forme de cuvette"
+      }
+    ],
+    "formes": "Surtout en plante suspendue (panier) ou en pot ; tiges à urnes coupées utilisées ponctuellement en composition événementielle. En plante, les urnes restent décoratives plusieurs mois.",
+    "saison": "Toute l'année (serres néerlandaises, Asie du Sud-Est).",
+    "tenue_vase": "7–14 jours",
+    "gamme_prix": "€€€",
+    "rarete_jeu": "precieuse",
+    "notes_dessin": "Chaque urne (5 à 25 cm) pend au bout d'une vrille qui prolonge la nervure de la feuille : corps tubulaire ou pansu, parfois étranglé à la taille, muni de deux ailes frangées sur le devant. L'ouverture est bordée d'un péristome côtelé, brillant et lisse comme de la porcelaine (souvent rouge), surmonté d'un opercule ovale qui reste ouvert comme un couvercle. Surface cireuse, mouchetée ou veinée de rouge sur fond vert, intérieur plus clair. Les feuilles sont lancéolées, vert vif, alternes sur une tige grimpante ; de profil, l'urne forme une gourde suspendue en crochet.",
+    "wiki": "Nepenthes",
+    "img_queries": [
+      "Nepenthes × ventrata",
+      "Nepenthes ventricosa",
+      "Nepenthes pitcher"
+    ],
+    "sources": [
+      "https://en.wikipedia.org/wiki/Nepenthes",
+      "https://www.californiacarnivores.com/products/nepenthes-x-st-gaya-potted",
+      "https://www.californiacarnivores.com/products/nepenthes-ventricosa",
+      "https://en.wikipedia.org/wiki/Nepenthes_%C3%97_ventrata"
+    ]
+  },
+  {
+    "id": "nelumbo-nucifera",
+    "nom_fr": "Fleur de lotus",
+    "nom_en": "Lotus flower",
+    "latin": "Nelumbo nucifera (et N. lutea)",
+    "famille": "Nelumbonaceae",
+    "categorie": "Exotiques",
+    "role": "focale",
+    "couleurs": [
+      "rose",
+      "blanc",
+      "jaune",
+      "rouge",
+      "bicolore blanc à pointes roses"
+    ],
+    "varietes": [
+      {
+        "nom": "Nelumbo nucifera",
+        "couleur": "rose ou blanc",
+        "note": "lotus sacré, fleurs jusqu'à 35 cm de diamètre"
+      },
+      {
+        "nom": "Qian Ban Lian",
+        "couleur": "rose",
+        "note": "« lotus aux mille pétales », 3 000 à 4 000 pétales"
+      },
+      {
+        "nom": "Wanlian",
+        "couleur": "divers",
+        "note": "« lotus-bol » : groupe de cultivars miniatures de 5 à 8 cm"
+      },
+      {
+        "nom": "Nelumbo lutea",
+        "couleur": "jaune",
+        "note": "lotus américain (yellow lotus)"
+      }
+    ],
+    "formes": "Boutons fermés et fleurs ouvertes sur longue tige (40–80 cm), vendus en Asie et chez quelques importateurs ; feuilles et capsules vendues séparément.",
+    "saison": "Été (juin à septembre) ; importations d'Asie du Sud-Est (Thaïlande, Vietnam) le reste de l'année.",
+    "tenue_vase": "3–5 jours",
+    "gamme_prix": "€€€",
+    "rarete_jeu": "precieuse",
+    "notes_dessin": "Fleur en coupe de 15 à 35 cm : une vingtaine de grands pétales ovales, concaves, aux nervures fines et parallèles, rose tendre dégradé vers une base blanche ou crème (ou entièrement blancs, jaunes, rouges), disposés en plusieurs rangs. Au centre, le réceptacle jaune vert en forme de pomme d'arrosoir, plat sur le dessus et percé de petits trous, est entouré d'une couronne d'étamines jaunes aux filaments fins. Pétales satinés et légèrement translucides ; le bouton fermé est une goutte pointue rose. La fleur se dresse au-dessus de l'eau sur une tige ronde, rugueuse et piquetée ; feuilles rondes, peltées, bleu-vert, hydrophobes, en coupe.",
+    "wiki": "Nelumbo nucifera",
+    "img_queries": [
+      "Nelumbo nucifera",
+      "Nelumbo nucifera flower",
+      "Nelumbo lutea"
+    ],
+    "sources": [
+      "https://en.wikipedia.org/wiki/Nelumbo_nucifera",
+      "https://en.wikipedia.org/wiki/Nelumbo",
+      "https://en.wikipedia.org/wiki/Nelumbo_lutea"
+    ]
+  },
+  {
+    "id": "nelumbo-capsule",
+    "nom_fr": "Capsule de lotus",
+    "nom_en": "Lotus seed pod",
+    "latin": "Nelumbo nucifera (réceptacle fructifère)",
+    "famille": "Nelumbonaceae",
+    "categorie": "Exotiques",
+    "role": "texture",
+    "couleurs": [
+      "naturel brun",
+      "blanc",
+      "argent",
+      "platine",
+      "or antique",
+      "abricot",
+      "noir",
+      "cerise",
+      "bleu clair",
+      "jaune",
+      "vert (frais)"
+    ],
+    "varietes": [
+      {
+        "nom": "Stick Nelumbo Natural",
+        "couleur": "naturel brun",
+        "note": "capsule séchée sur tige"
+      },
+      {
+        "nom": "Stick Nelumbo White",
+        "couleur": "blanc"
+      },
+      {
+        "nom": "Stick Nelumbo Silver",
+        "couleur": "argent"
+      },
+      {
+        "nom": "Stick Nelumbo Platinum",
+        "couleur": "platine"
+      },
+      {
+        "nom": "Stick Nelumbo Antique Gold",
+        "couleur": "or antique"
+      },
+      {
+        "nom": "Stick Nelumbo Apricot",
+        "couleur": "abricot"
+      },
+      {
+        "nom": "Stick Nelumbo Black",
+        "couleur": "noir"
+      },
+      {
+        "nom": "Stick Nelumbo Cerise",
+        "couleur": "cerise"
+      },
+      {
+        "nom": "Stick Nelumbo Light Blue",
+        "couleur": "bleu clair"
+      },
+      {
+        "nom": "Stick Nelumbo Yellow",
+        "couleur": "jaune"
+      },
+      {
+        "nom": "Dried Lotus Pods",
+        "couleur": "naturel brun",
+        "note": "capsules séchées (grossiste)"
+      },
+      {
+        "nom": "Dried Lotus Pods Mossed",
+        "couleur": "brun habillé de mousse verte",
+        "note": "capsules séchées recouvertes de mousse"
+      }
+    ],
+    "formes": "Capsule fraîche verte ou séchée (naturelle, blanchie, peinte ou métallisée), montée sur tige ou vendue en vrac ; diamètre 5 à 12 cm.",
+    "saison": "Toute l'année en séché ; capsules fraîches vertes en fin d'été.",
+    "tenue_vase": "illimitée (séchée)",
+    "gamme_prix": "€",
+    "rarete_jeu": "commune",
+    "notes_dessin": "Cône renversé de 5 à 12 cm, à sommet plat et légèrement bombé, percé de 10 à 30 alvéoles rondes où sont logées les graines, comme une pomme d'arrosoir. Fraîche, la capsule est vert tendre et lisse, les graines vertes affleurant dans chaque trou ; séchée, elle devient brun chocolat, ridée et ligneuse, les alvéoles se creusent et les graines brunes s'y voient en relief. De profil, un entonnoir évasé dont les flancs strient finement vers la tige. Tige cylindrique, droite, brune et rugueuse ; les versions teintées gardent la même texture sous une couleur opaque ou métallisée.",
+    "wiki": "Nelumbo nucifera",
+    "img_queries": [
+      "Lotus seed pod",
+      "Nelumbo nucifera seed head",
+      "Dried lotus pod"
+    ],
+    "sources": [
+      "https://shop.holex.com/en_US/All-products/Dried-Products/c/Dried-Deco",
+      "https://florabundance.com/flowers/lotus-pods/",
+      "https://en.wikipedia.org/wiki/Nelumbo_nucifera"
+    ]
+  },
+  {
+    "id": "passiflora",
+    "nom_fr": "Passiflore (fleur de la passion)",
+    "nom_en": "Passion flower",
+    "latin": "Passiflora spp.",
+    "famille": "Passifloraceae",
+    "categorie": "Exotiques",
+    "role": "secondaire",
+    "couleurs": [
+      "blanc et bleu",
+      "blanc",
+      "rouge",
+      "rose",
+      "lavande",
+      "pourpre",
+      "blanc et pourpre"
+    ],
+    "varietes": [
+      {
+        "nom": "Passiflora caerulea",
+        "couleur": "blanc bleuté, couronne bleu, blanc, jaune et brun",
+        "note": "passiflore bleue, fleur d'environ 10 cm"
+      },
+      {
+        "nom": "Constance Elliott",
+        "couleur": "blanc pur",
+        "note": "cultivar de P. caerulea (1884), parfumé ; Award of Garden Merit de la RHS"
+      },
+      {
+        "nom": "Chinensis",
+        "couleur": "couronne bleu pâle",
+        "note": "cultivar de P. caerulea"
+      },
+      {
+        "nom": "Pierre Pomie",
+        "couleur": "rose pâle",
+        "note": "cultivar de P. caerulea"
+      },
+      {
+        "nom": "Passiflora incarnata",
+        "couleur": "pétales blanc bleuté, couronne blanche et pourpre"
+      },
+      {
+        "nom": "Passiflora quadrangularis",
+        "couleur": "rouge, filaments blancs et pourpres",
+        "note": "fleurs pendantes"
+      },
+      {
+        "nom": "Passiflora vitifolia",
+        "couleur": "rouge cramoisi profond, couronne pourpre et blanche",
+        "note": "grande fleur"
+      },
+      {
+        "nom": "Star of Bristol",
+        "couleur": "pétales lavande, sépales blancs lavés de lavande",
+        "note": "floraison abondante en roue"
+      },
+      {
+        "nom": "Passiflora edulis Frederick",
+        "couleur": "blanc à couronne pourpre",
+        "note": "fruit de la passion pourpre ; orthographe du pépiniériste : Fredrick"
+      },
+      {
+        "nom": "Passiflora edulis flavicarpa",
+        "couleur": "blanc, filaments frisés blancs, centre pourpre foncé",
+        "note": "lilikoi à fruit jaune"
+      },
+      {
+        "nom": "Passiflora sanguinolenta",
+        "couleur": "rose foncé",
+        "note": "petites fleurs de 4 cm"
+      },
+      {
+        "nom": "Passiflora nephrodes",
+        "couleur": "pétales roses, filaments lavande et blancs"
+      },
+      {
+        "nom": "Passiflora subpeltata",
+        "couleur": "blanc pur, couronne jaune d'or"
+      },
+      {
+        "nom": "Passiflora morifolia",
+        "couleur": "blanc à filaments pourpres"
+      }
+    ],
+    "formes": "Rameaux de liane coupés (50–150 cm) avec fleurs, boutons et vrilles, utilisés en guirlande ou en cascade ; fleur isolée pour la composition ; aussi en pot. Chaque fleur ne dure qu'un à trois jours, mais le rameau garni de boutons se renouvelle pendant 5 à 7 jours.",
+    "saison": "De juin à octobre en Europe (serres et jardins), toute l'année en serre.",
+    "tenue_vase": "1–3 jours",
+    "gamme_prix": "€€",
+    "rarete_jeu": "rare",
+    "notes_dessin": "Fleur plate de 5 à 12 cm : dix tépales (cinq sépales et cinq pétales presque semblables) étalés en étoile, au-dessus desquels rayonne une couronne de filaments fins, ondulés ou frisés, souvent zébrés de bandes (bleu, blanc, pourpre). Au centre se dresse un androgynophore en colonne qui porte cinq étamines jaune-vert pendantes et trois styles pourpres en croix, très graphiques. Texture cireuse pour les pétales, filaments soyeux. La tige est une liane fine à vrilles spiralées et feuilles palmées à 3–5 lobes, vert foncé luisant.",
+    "wiki": "Passiflora caerulea",
+    "img_queries": [
+      "Passiflora caerulea",
+      "Passiflora Constance Elliott",
+      "Passiflora vitifolia"
+    ],
+    "sources": [
+      "https://en.wikipedia.org/wiki/Passiflora_caerulea",
+      "https://alohatropicals.com/product/passiflora-vitifolia-red-passion-flower/",
+      "https://alohatropicals.com/product/passiflora-star-of-bristol/",
+      "https://en.wikipedia.org/wiki/Passiflora_incarnata",
+      "https://florabundance.com/flowers/passion-flower-vine/"
+    ]
+  },
+  {
+    "id": "hibiscus",
+    "nom_fr": "Hibiscus tropical",
+    "nom_en": "Tropical hibiscus",
+    "latin": "Hibiscus rosa-sinensis et autres Hibiscus",
+    "famille": "Malvaceae",
+    "categorie": "Exotiques",
+    "role": "focale",
+    "couleurs": [
+      "rouge",
+      "orange abricot",
+      "blanc",
+      "mauve",
+      "rouge foncé",
+      "lilas bleu"
+    ],
+    "varietes": [
+      {
+        "nom": "El Capitolio",
+        "couleur": "rouge, fleur double « en queue de caniche »",
+        "note": "petite fleur frisée au bout de la colonne staminale"
+      },
+      {
+        "nom": "Orange El Capitolio",
+        "couleur": "orange abricot à cœur rougeâtre",
+        "note": "vendu comme Peachy Poodle Tail"
+      },
+      {
+        "nom": "Swan Lake",
+        "couleur": "blanc neige, anthères orange",
+        "note": "H. rosa-sinensis à pétales recourbés"
+      },
+      {
+        "nom": "Red Carnation",
+        "couleur": "rouge foncé, double « œillet »",
+        "note": "H. rosa-sinensis"
+      },
+      {
+        "nom": "Fiji Island",
+        "couleur": "mauve étoilé à cœur plus foncé"
+      },
+      {
+        "nom": "Aloalo Ko'akoa",
+        "couleur": "rouge, pétales frangés retroussés",
+        "note": "Hibiscus schizopetalus, fleur pendante"
+      },
+      {
+        "nom": "Kokia Keokeo",
+        "couleur": "blanc pur",
+        "note": "Hibiscus arnottianus, espèce hawaïenne"
+      },
+      {
+        "nom": "Alyogyne huegelii",
+        "couleur": "lilas bleu à pourpre",
+        "note": "« hibiscus bleu » australien, genre voisin"
+      }
+    ],
+    "formes": "Fleurs isolées (8–20 cm) piquées en composition, couronne ou lei, rameaux en bouton ; surtout plante en pot ; fleurs fermant en fin de journée.",
+    "saison": "Mai à octobre (serres européennes), toute l'année sous les tropiques.",
+    "tenue_vase": "1 jour",
+    "gamme_prix": "€",
+    "rarete_jeu": "commune",
+    "notes_dessin": "Cinq grands pétales larges et arrondis (fleur de 8 à 20 cm), légèrement froissés et ondulés au bord, se chevauchant en entonnoir évasé, avec souvent un œil plus foncé à la base. Du centre jaillit une longue colonne staminale tubulaire, couverte d'étamines jaunes ou orange et terminée par cinq stigmates veloutés en boutons : c'est le trait le plus reconnaissable de profil. Pétales soyeux, fins, avec de fines nervures en éventail ; formes doubles ébouriffées comme un œillet. Feuilles ovales dentées, vert foncé très brillant, sur des rameaux ligneux.",
+    "wiki": "Hibiscus rosa-sinensis",
+    "img_queries": [
+      "Hibiscus rosa-sinensis",
+      "Hibiscus schizopetalus",
+      "Hibiscus rosa-sinensis double"
+    ],
+    "sources": [
+      "https://alohatropicals.com/product/hibiscus-malvaceae-swan-lake/",
+      "https://alohatropicals.com/product/hibiscus-el-capitolio-red-poodle-tail/",
+      "https://alohatropicals.com/product/hibiscus-schizopetalus-aloalo-koakoa/",
+      "https://en.wikipedia.org/wiki/Hibiscus_rosa-sinensis"
+    ]
+  },
+  {
+    "id": "plumeria",
+    "nom_fr": "Frangipanier (plumeria)",
+    "nom_en": "Frangipani, plumeria",
+    "latin": "Plumeria rubra, P. obtusa, P. pudica",
+    "famille": "Apocynaceae",
+    "categorie": "Exotiques",
+    "role": "secondaire",
+    "couleurs": [
+      "blanc à cœur jaune",
+      "jaune bordé de blanc",
+      "rose",
+      "rouge",
+      "jaune"
+    ],
+    "varietes": [
+      {
+        "nom": "Celadine",
+        "couleur": "jaune à large bordure blanche",
+        "note": "« Hawaiian Yellow », fleur de 9 cm ; cultivar enregistré par la Plumeria Society of America"
+      },
+      {
+        "nom": "Plumeria obtusa",
+        "couleur": "blanc à gorge jaune",
+        "note": "« Singapore », persistant, cinq pétales"
+      },
+      {
+        "nom": "Plumeria rubra",
+        "couleur": "rose, blanc ou jaune",
+        "note": "espèce type des frangipaniers, très parfumée"
+      },
+      {
+        "nom": "Plumeria pudica",
+        "couleur": "blanc à cœur jaune",
+        "note": "feuilles en capuchon de cobra"
+      }
+    ],
+    "formes": "Fleurs détachées (5–10 cm) vendues en sachet pour leis, bijoux floraux et décors flottants ; bouquets de rameaux en zone tropicale.",
+    "saison": "Été (mai à octobre) ; arrivages d'Hawaï et d'Asie du Sud-Est sur commande.",
+    "tenue_vase": "1–3 jours",
+    "gamme_prix": "€",
+    "rarete_jeu": "rare",
+    "notes_dessin": "Cinq pétales épais et cireux, ovales, qui se recouvrent en spirale comme les pales d'une hélice, formant une étoile de 5 à 10 cm légèrement creusée. Le centre forme un petit tube étroit, jaune d'or chez les fleurs blanches, d'où la couleur rayonne en dégradé vers les bords (blanc, rose, jaune, rouge). Surface lisse et mate, très légèrement veloutée, bords parfois retroussés. Les fleurs sont groupées en bouquets au bout de rameaux épais et charnus, entourés de grandes feuilles lancéolées à nervures parallèles marquées.",
+    "wiki": "Plumeria",
+    "img_queries": [
+      "Plumeria rubra",
+      "Plumeria obtusa",
+      "Plumeria Celadine"
+    ],
+    "sources": [
+      "https://alohatropicals.com/product/celadine/",
+      "https://theplumeriasociety.org/plumeria-registration/registered-plumeria/",
+      "https://en.wikipedia.org/wiki/Plumeria_obtusa",
+      "https://en.wikipedia.org/wiki/Plumeria_rubra"
+    ]
+  },
+  {
+    "id": "bougainvillea",
+    "nom_fr": "Bougainvillier",
+    "nom_en": "Bougainvillea",
+    "latin": "Bougainvillea glabra, B. spectabilis et hybrides (B. × buttiana)",
+    "famille": "Nyctaginaceae",
+    "categorie": "Exotiques",
+    "role": "remplissage",
+    "couleurs": [
+      "magenta",
+      "rouge",
+      "rose vif",
+      "pourpre",
+      "lilas",
+      "orange",
+      "jaune",
+      "blanc",
+      "bicolore rose et blanc"
+    ],
+    "varietes": [
+      {
+        "nom": "Barbara Karst",
+        "couleur": "magenta-rouge vif"
+      },
+      {
+        "nom": "Sharon Wesley",
+        "couleur": "rouge orangé mûrissant en rose vif"
+      },
+      {
+        "nom": "Silhouette",
+        "couleur": "lilas, bractées allongées"
+      },
+      {
+        "nom": "Elizabeth Angus",
+        "couleur": "pourpre foncé"
+      },
+      {
+        "nom": "Topaz Gold",
+        "couleur": "jaune"
+      },
+      {
+        "nom": "Fire Opal",
+        "couleur": "orange profond"
+      },
+      {
+        "nom": "Vera White",
+        "couleur": "blanc"
+      },
+      {
+        "nom": "Vera Purple",
+        "couleur": "pourpre fluorescent"
+      },
+      {
+        "nom": "Thai Delight",
+        "couleur": "blanc virant au rose"
+      },
+      {
+        "nom": "Surprise",
+        "couleur": "rose et blanc"
+      },
+      {
+        "nom": "Sundown Orange",
+        "couleur": "orange virant au rose"
+      },
+      {
+        "nom": "Ruby",
+        "couleur": "rubis"
+      },
+      {
+        "nom": "RijnStar White",
+        "couleur": "blanc, bractées allongées"
+      },
+      {
+        "nom": "RijnStar Pink",
+        "couleur": "rose vif, bractées allongées"
+      },
+      {
+        "nom": "Philippine Parade",
+        "couleur": "rose vif, double"
+      },
+      {
+        "nom": "Golden Doubloon",
+        "couleur": "orange brûlé double virant au rose"
+      },
+      {
+        "nom": "Flame",
+        "couleur": "rouge flamme et orange"
+      },
+      {
+        "nom": "Cherise Double",
+        "couleur": "rose cerise, double"
+      },
+      {
+        "nom": "California Gold",
+        "couleur": "jaune soleil"
+      },
+      {
+        "nom": "Rasberry Ice",
+        "couleur": "framboise, feuillage panaché vert et blanc",
+        "note": "orthographe du pépiniériste"
+      },
+      {
+        "nom": "Imperial Thai Delight",
+        "couleur": "blanc lavé de fraise, prune et pêche",
+        "note": "semi-nain"
+      },
+      {
+        "nom": "Delta Dawn",
+        "couleur": "orange mandarine translucide lavé de rose",
+        "note": "cultivar thaï panaché"
+      },
+      {
+        "nom": "Bougainvillea Gold",
+        "couleur": "doré"
+      }
+    ],
+    "formes": "Rameaux fleuris coupés (30–80 cm) pour arches et guirlandes d'événement ; surtout plante en pot ou grimpante.",
+    "saison": "Printemps à automne (Méditerranée, serres) ; toute l'année sous les tropiques.",
+    "tenue_vase": "3–7 jours",
+    "gamme_prix": "€€",
+    "rarete_jeu": "rare",
+    "notes_dessin": "Ce qui colore la plante, ce sont trois bractées papyracées en forme de cœur ou d'ovale pointu (2 à 5 cm), fines comme du papier de soie et veinées en réseau, qui entourent trois minuscules fleurs tubulaires blanc crème à bouche étoilée. Les bractées sont groupées en grappes denses et retombantes au bout des rameaux ; chez les formes doubles elles se multiplient en pompons froissés. Couleurs vives et translucides en contre-jour (magenta, orange, blanc), surface mate. Rameaux souples et épineux, feuilles ovales alternes vert franc, parfois panachées de crème.",
+    "wiki": "Bougainvillea",
+    "img_queries": [
+      "Bougainvillea",
+      "Bougainvillea glabra",
+      "Bougainvillea spectabilis bracts"
+    ],
+    "sources": [
+      "https://arnelia.co.za/product/barbara-karst/",
+      "https://arnelia.co.za/product/rijnstar-pink/",
+      "https://alohatropicals.com/product/bougainvillea-delta-dawn/",
+      "https://en.wikipedia.org/wiki/Bougainvillea"
+    ]
+  }
+]

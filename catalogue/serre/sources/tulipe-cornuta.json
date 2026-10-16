@@ -1,0 +1,174 @@
+{
+ "sid": "tulipe-cornuta",
+ "schema": "STANDARD-SOURCES.md section 5",
+ "legende_entrees": "« cultivars » = entrées de la sorte : cultivars, formes botaniques ou espèce type ; « sans_photo » = nom prouvé (N1 ou N3) mais aucune photo nommée retenue ; « ecartes » = rejetés avec la raison",
+ "rattachement_catalogue": "aucun coloris existant du catalogue ne correspond à cette sorte (catalogue.json, inventaire_fleurs.csv et skus.csv relus le 2026-10-08 : aucune tulipe botanique) ; coloris_catalogue est donc vide",
+ "genre": "Tulipa",
+ "recensement": {
+  "date": "2026-10-08",
+  "agent": "fleur-recensement",
+  "portee": "tulipes botaniques : groupes Kaufmanniana (12), Fosteriana (13), Greigii (14) du KAVB et espèces / hybrides de la division 15 (« Overige Groep » = Miscellaneous) ; tout ce qui est documenté par une photo nommée fiable",
+  "limites": [
+   "N1 : la base de cultivars du KAVB (login.kavb.nl/siergewassen) n'est interrogeable que par un formulaire de recherche, non utilisé (règle « aucun formulaire »). Le N1 des cultivars repose donc sur les listes annuelles « Registraties » du KAVB (PDF, 2004-07 à 2013, huit documents) et sur les mentions « Mutant van » qui prouvent l'existence d'un parent. Les cultivars plus anciens ou postérieurs à 2013 n'ont pas de N1 lu.",
+   "N1 espèces : POWO (Kew) renvoie une erreur 403 (protection Cloudflare, non contournée). Les noms d'espèces sont recoupés avec le GBIF Backbone (API), iNaturalist et les textes de la Pacific Bulb Society ; à revérifier sur POWO.",
+   "N2 : Floricode (codes et photos des variétés vendues) est sur abonnement et n'a pas été consulté ; aucune fiche d'obtenteur à photo exploitable n'a été trouvée pour ces tulipes. Aucun cultivar n'est donc au niveau A.",
+   "Nouveautés 2014-2026 : les listes d'enregistrement KAVB de ces années ne sont pas publiées en PDF libre ; la fenêtre des cinq dernières années n'est pas couverte.",
+   "Les photos ne sont jamais stockées dans le dépôt : seules les adresses, auteurs, licences et niveaux sont écrits. Les vignettes regardées sont dans le cache de l'atelier (refcache/tulipe-botanique/).",
+   "Photos PBS : droits réservés aux photographes (consultation et mesure seulement, jamais publiées). Photos iNaturalist : licences CC BY-NC en majorité, mêmes usages."
+  ],
+  "statuts": "en production = niveau A ou B (à mesurer par fleur-coloris puis sondage de 10 % par l'orchestrateur) ; à confirmer = niveau C ou D ; écarté = avec la raison"
+ },
+ "nom": "Tulipe cornue",
+ "latin": "Tulipa 'Cornuta' (nom RHS ; T. acuminata Vahl ex Hornem. « misapplied »)",
+ "priorite": "P2",
+ "pourquoi_cette_priorite": "forme à part (tépales en longues cornes rubanées), très vendue en fleur de jardin ; sans équivalent dans la sélection",
+ "groupe_registre": {
+  "autorite": "RHS (le nom « Cornuta » est celui de la RHS) ; KAVB division 15",
+  "division": 15,
+  "nom_registre": "Overige Groep (Miscellaneous)",
+  "preuve": "RHS « Tulipa 'Cornuta' (15) »"
+ },
+ "taxonomie": {
+  "espece_mere": "le nom T. acuminata est synonyme de T. agenensis Redouté selon POWO (cité par PBS) et GBIF (usageKey 5299694) ; la RHS retient « Cornuta » comme nom accepté de la plante de jardin",
+  "nom_accepte_source": "RHS, PBS (cite POWO), GBIF"
+ },
+ "melange": "Plante de jardin (peut-être un hybride venu de Turquie selon Wilford, cité par PBS) ; ne pas confondre avec l'espèce T. agenensis (rouge cramoisi à tache jaune, sauvage en Méditerranée orientale).",
+ "forme": {
+  "resume": "tépales très longs, étroits, pointus et tordus (les « cornes »), jusqu'à 10 cm, jaune pâle flammé de rouge, nuances vertes ; fleur solitaire",
+  "details": [
+   "RHS : « single flowers with long, pointed petals about 10 cm »",
+   "PBS : « narrow pointed red streaked with yellow petals »"
+  ],
+  "sources": [
+   "RHS ; PBS TulipaSpeciesOne"
+  ]
+ },
+ "feuilles": {
+  "resume": "2 à 7 feuilles gris-vert de 30 cm, linéaires à lancéolées, bord parfois ondulé",
+  "details": [
+   "RHS"
+  ]
+ },
+ "hauteur_cm": "jusqu'à 50 (RHS ; PBS 40-50)",
+ "floraison": "début à mi-printemps (RHS) ; fin de printemps (PBS)",
+ "distinction": {
+  "vs_agenensis": "tépales étroits tordus contre coupe cramoisie"
+ },
+ "coloris_catalogue": [],
+ "cultivars": [
+  {
+   "id": "cornuta",
+   "nom_affiche": "Tulipe cornue (Tulipa 'Cornuta')",
+   "nom_enregistre": "Tulipa 'Cornuta' (nom RHS ; T. acuminata Vahl ex Hornem. est « misapplied »)",
+   "synonymes": [],
+   "groupe": "Espèce (KAVB Div. 15, « Overige Groep » / Miscellaneous)",
+   "obtenteur": null,
+   "annee": null,
+   "numeros": {},
+   "couleur_registre": "jaune pâle strié de rouge, nuances vertes (RHS)",
+   "motif": "tépales très longs, étroits, tordus (« cornes »), flammés de rouge",
+   "sources": [
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://www.rhs.org.uk/plants/520711/tulipa-cornuta-(15)/details",
+     "consulte": "2026-10-08",
+     "note": "RHS (société savante) : fiche (15) : 50 cm max, clumps ; fleurs simples à pétales longs et pointus d'environ 10 cm, jaune pâle et rouge, souvent teintés de vert ; 2 à 7 feuilles gris-vert de 30 cm, linéaires à lancéolées, bord parfois ondulé ; syn. T. acuminata (misapplied)"
+    },
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaSpeciesOne",
+     "consulte": "2026-10-08",
+     "note": "Pacific Bulb Society : T. acuminata Vahl ex Hornem. « horned tulip » : pétales étroits pointus rouges striés de jaune ; 40-50 cm ; peut-être un hybride venu de Turquie (Wilford) ; POWO le met en synonyme de T. agenensis"
+    },
+    {
+     "role": "taxonomie",
+     "niveau": "N4",
+     "url": "https://api.gbif.org/v1/species/match?kingdom=Plantae&name=Tulipa%20acuminata",
+     "consulte": "2026-10-08",
+     "note": "synonyme de Tulipa agenensis (usageKey 5299694)"
+    }
+   ],
+   "photos": [
+    {
+     "url": "https://pacificbulbsociety.org/pbswiki/files/Tulipa/Tulipa_acuminata.jpg",
+     "page": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaSpeciesOne",
+     "niveau": "N3",
+     "auteur": "Arnold Trachtenberg",
+     "licence": "© photographe ; Pacific Bulb Society (reproduction non libre : consultation et mesure seulement)",
+     "legende": "Tulipa acuminata, Arnold Trachtenberg",
+     "consulte": "2026-10-08",
+     "vue": "dessus",
+     "eclairage": null,
+     "balance_blancs": null
+    },
+    {
+     "url": "https://pacificbulbsociety.org/pbswiki/files/Tulipa/Tulipa_acuminata_MBt1.jpg",
+     "page": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaSpeciesOne",
+     "niveau": "N3",
+     "auteur": "Martin Bohnet",
+     "licence": "© photographe ; Pacific Bulb Society (reproduction non libre : consultation et mesure seulement)",
+     "legende": "Tulipa acuminata, Martin Bohnet",
+     "consulte": "2026-10-08",
+     "vue": "dessus",
+     "eclairage": null,
+     "balance_blancs": null
+    }
+   ],
+   "mesures": {},
+   "niveau_preuve": "B",
+   "existence_n1_n2": false,
+   "statut": "en production",
+   "doutes": [
+    "nom contesté : RHS « Cornuta » (nom retenu), PBS/POWO « acuminata » synonyme de T. agenensis ; origine possiblement hybride",
+    "deux photos de deux auteurs (Trachtenberg, Bohnet) ; pas de fiche KAVB lue"
+   ],
+   "coloris_catalogue": null,
+   "familles_de_sources": [
+    "pacificbulbsociety.org",
+    "www.rhs.org.uk"
+   ]
+  }
+ ],
+ "sans_photo": [],
+ "ecartes": [],
+ "couverture": {
+  "cultivars_retenus_avec_photo": 1,
+  "niveau_A": 0,
+  "niveau_B": 1,
+  "niveau_C": 0,
+  "niveau_D": 0,
+  "prouves_A_ou_B": 1,
+  "sans_photo": 0,
+  "ecartes": 0,
+  "au_catalogue": 0,
+  "existence_N1_lue": 0,
+  "remarque": "« enregistrés » du KAVB : total inconnu (base non interrogée). Les nombres ci-dessus portent sur ce qui a été recensé dans les sources consultées"
+ },
+ "vues_deja_photographiees": {
+  "face (dessus, intérieur)": 2,
+  "trois-quarts": 0,
+  "profil": 0,
+  "dos (revers, extérieur)": 0,
+  "bouton": 0,
+  "fané ou déclin": 0,
+  "feuilles": 0,
+  "tige, pied": 0,
+  "plante entière ou massif": 0
+ },
+ "vues_manquantes": [
+  "trois-quarts",
+  "profil",
+  "dos (revers, extérieur)",
+  "bouton",
+  "fané ou déclin",
+  "feuilles",
+  "tige, pied",
+  "plante entière ou massif",
+  "dessous et attache des feuilles",
+  "épaisseur et surface de la tige",
+  "stades intermédiaires (goblet, coupe, déclin)"
+ ],
+ "vues_note": "comptage des photos retenues par mot-clé de la rubrique « vue » ; les photos de forme par angle et par stade sont à compléter par fleur-refs (STANDARD-SOURCES, exhaustivité)"
+}

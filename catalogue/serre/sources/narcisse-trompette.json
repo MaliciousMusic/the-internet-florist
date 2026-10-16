@@ -1,0 +1,4498 @@
+{
+ "sid": "narcisse-trompette",
+ "genre": "Narcissus",
+ "famille": "Amaryllidaceae",
+ "consulte": "2026-10-08",
+ "agent": "fleur-recensement (temps 2 et 3)",
+ "portee": "tout ce qui est documenté de la division 1 (Trumpet) ; assortiment de fleur coupée d'abord",
+ "taxonomie": {
+  "nom_accepte": "Narcissus L. (nom repris de catalogue/serre/methode/SOURCES.md, section 5 : accepté par POWO ; page POWO non relue, elle bloque les robots)",
+  "autorite_enregistrement": "RHS (ICRA ; registrar Melanie Underwood), The International Daffodil Register and Classified List",
+  "groupe": "Division 1, Trumpet : une seule fleur par tige, trompette (corolle) aussi longue ou plus longue que les tépales (formulation reprise des fiches de Jacques Amand)",
+  "sous_divisions_couleur": "code périanthe-couronne : Y-Y, W-Y, W-W, Y-W, plus W-P (Rosy Trumpet, OHG) ; la couleur est portée par le code du registre",
+  "melange": "La sorte du catalogue est la division 1 seule. Les catégories 'trumpet' des vendeurs mêlent d'autres divisions : Van Engelen range 'January Silver' dans 'trumpet' alors que sa fiche s'intitule 'Large Cupped' (division 2) ; Van Engelen y met aussi Narcissus pseudo-narcissus ssp. obvallaris (forme sauvage, relevant de la division 13 d'après la classification RHS : exclue de cette sorte). Les noms Marieke, Sabatini, Primeur, Exception, Gold Medal, Attraction ne sont classés 'Trumpet' que par des vendeurs : division à confirmer au registre."
+ },
+ "couverture": {
+  "cultivars_inventories": 54,
+  "registre_RHS_lu_par_nom": 54,
+  "division_1_confirmee_au_registre": 53,
+  "autre_sorte": [
+   "january-silver"
+  ],
+  "niveaux_de_preuve": {
+   "A": 19,
+   "B": 2,
+   "C": 14,
+   "D": 19
+  },
+  "prouves_A_ou_B": 21,
+  "au_catalogue": 6,
+  "au_catalogue_A_ou_B": 5,
+  "sans_photo_exploitable": [
+   "spellbinder",
+   "rosie-emily",
+   "classic-garden",
+   "ice-baby",
+   "january-silver",
+   "king-alfred",
+   "pistachio",
+   "teal",
+   "queen-beatrix",
+   "little-gem",
+   "small-talk",
+   "barnum",
+   "bell-rock",
+   "chanson",
+   "goldfinger",
+   "patrick-hacket",
+   "sint-victor",
+   "tyrone-gold",
+   "viking"
+  ],
+  "nombre_division_1_enregistres": "inconnu : le registre se cherche par nom, il ne liste pas par division",
+  "marques_vues": "aucune marque, aucun symbole de marque ni série vus dans les pages lues"
+ },
+ "coloris": [
+  {
+   "id": "jaune",
+   "nom_affiche": "Jaune (Dutch Master)",
+   "cultivar": "dutch-master",
+   "nom_registre": "Dutch Master",
+   "division_registre": "1",
+   "code_couleur_registre": "Y-Y",
+   "niveau_preuve": "A",
+   "photos_comptees": 3,
+   "nom_affiche_propose": null,
+   "correspondance": "exacte",
+   "statut": "en production (après mesure des couleurs)",
+   "raison": "SKU du bouquet. Registre RHS : division 1, Y-Y, enregistré 1948 par M. Zandbergen, AGM. Photos concordantes : vignette Jan de Wit (N2), Jacques Amand (N3), fiche RHS Plants (N1). Aucune marque vue.",
+   "mesure_couleur": {
+    "perianthe": {
+     "base": "non isolée (paroi #dfbb00 à #e2bf01)",
+     "corps": "#e7c802",
+     "pointe": "#e8cf08"
+    },
+    "trompette": {
+     "gorge": "#e6be01",
+     "paroi": "#dfbb00",
+     "bord": "non isolé (frisé visible)"
+    },
+    "revers": "non visible",
+    "spathe": "non visible"
+   },
+   "eclairage": "JDW : fond clair, lumière vive ; RHS (plante) : plein jour, plusieurs fleurs ; JA : ombre partielle",
+   "photos_mesurees_utiles": [
+    "JDW N2 (lumière vive)",
+    "RHS N1 (plusieurs fleurs, fleur de droite retenue, doute)"
+   ],
+   "photo_ecartee": "JA N3 : ombre, gorge #bb8c03 (dE 24 de JDW)",
+   "ecart_entre_sources": "gorge JDW #e6be01 / RHS #fad011 : dE 7,6 ; pointe JDW #e8cf08 / RHS #e9bc05 : dE 11,6",
+   "ecart_vs_catalogue": "pointe mesurée à dE 6,5 du périanthe catalogue #f5d22c ; gorge à dE 4,3 de la trompette catalogue #f2c21c",
+   "niveau_couleur": "B",
+   "remarques_couleur": "Trois photos nommées, deux exploitables ; la troisième, dans l'ombre, rend la trompette brune. Teinte jaune franc. Ne se distingue de Golden Harvest que de dE 3,9 à la gorge."
+  },
+  {
+   "id": "jaune-or",
+   "nom_affiche": "Jaune d'or (Golden Harvest)",
+   "cultivar": "golden-harvest",
+   "nom_registre": "Golden Harvest",
+   "division_registre": "1",
+   "code_couleur_registre": "Y-Y",
+   "niveau_preuve": "A",
+   "photos_comptees": 4,
+   "nom_affiche_propose": null,
+   "correspondance": "exacte",
+   "statut": "en production (après mesure des couleurs)",
+   "raison": "Registre RHS : division 1, Y-Y. Photos : Jan de Wit (N2), Jacques Amand (N3), Commons 'Golden Harvest 1' (N4, jardin botanique de Madrid, légende « div. 1 », auteur Cillas, CC BY-SA). Même code Y-Y que Dutch Master : l'écart « or » contre « jaune » ne viendra que de la mesure.",
+   "mesure_couleur": {
+    "perianthe": {
+     "base": "non isolée",
+     "corps": "#edcb02 (JDW)",
+     "pointe": "#ecce03 (JDW) ; #b9a008 (Commons, ombre)"
+    },
+    "trompette": {
+     "gorge": "#f0c001 (JDW)",
+     "paroi": "#f0c301 (JDW)",
+     "bord": "non isolé (frisé visible)"
+    },
+    "revers": "non visible",
+    "spathe": "non visible"
+   },
+   "eclairage": "JDW : lumière vive ; Commons Madrid (Cillas, CC BY-SA) : lumière de jardin, ombre sur la pointe",
+   "photos_mesurees_utiles": [
+    "JDW N2",
+    "Commons Golden Harvest 1 (N4, une fleur)"
+   ],
+   "photo_ecartee": "JA N3 et Commons Golden Harvest 2 (massifs)",
+   "ecart_entre_sources": "gorge JDW #f0c001 / Commons #d8b606 : dE 8,7 ; pointe : dE 22,5 (ombre)",
+   "ecart_vs_catalogue": "gorge à dE 3,9 de Dutch Master : pas de différence de couleur mesurable entre jaune et jaune-or",
+   "niveau_couleur": "B",
+   "remarques_couleur": "Le nom « or » n'est pas soutenu par la mesure : décision à prendre (nom seul, ou fusion avec jaune)."
+  },
+  {
+   "id": "citron",
+   "nom_affiche": "Citron, trompette blanchissante (Spellbinder)",
+   "cultivar": "spellbinder",
+   "nom_registre": "Spellbinder",
+   "division_registre": "1",
+   "code_couleur_registre": "Y-WWY",
+   "niveau_preuve": "D",
+   "photos_comptees": 0,
+   "nom_affiche_propose": "Jaune pâle, trompette blanche (Galactic Star)",
+   "correspondance": "a_remplacer",
+   "statut": "à confirmer",
+   "raison": "Spellbinder existe au registre RHS (division 1, code Y-WWY : périanthe jaune, couronne à centre blanc et bord jaune) mais aucune photo nommée n'a été trouvée (Jan de Wit, Jacques Amand, Van Engelen, Peter Nyssen, Bloms, Commons, liste AGM) : niveau D, hors production. Remplaçant libre le plus proche, avec photo : Galactic Star (division 1, YYW-W : périanthe jaune qui pâlit, couronne blanche ; niveau A).",
+   "remplacant_propose": "galactic-star",
+   "autres_pales": [
+    "elka (1 W-W, B, naine)",
+    "teal (1 Y-W, D : sa seule photo Van Engelen est une image de remplacement)"
+   ],
+   "eclairage": "aucune photo nommée de Spellbinder : non mesurée",
+   "ecart_vs_catalogue": "remplaçant Galactic Star mesuré (voir propositions) : gorge #e2e088, dE 39 du jaune citron du catalogue #f4c61c",
+   "niveau_couleur": "D",
+   "remarques_couleur": "Spellbinder introuvable en photo : hors production tant qu'aucune photo nommée n'est trouvée. Remplaçant proposé mesuré (Galactic Star)."
+  },
+  {
+   "id": "blanc",
+   "nom_affiche": "Blanc (Mount Hood)",
+   "cultivar": "mount-hood",
+   "nom_registre": "Mount Hood",
+   "division_registre": "1",
+   "code_couleur_registre": "W-W",
+   "niveau_preuve": "A",
+   "photos_comptees": 6,
+   "nom_affiche_propose": null,
+   "correspondance": "exacte",
+   "statut": "en production (après mesure des couleurs)",
+   "raison": "Registre RHS : division 1, W-W, AGM. Cinq photos nommées (Jan de Wit N2 ; Jacques Amand, Van Engelen, Peter Nyssen, Bloms N3 ; Commons N4). Trompette ivoire (Jacques Amand : « ivory white trumpet »).",
+   "mesure_couleur": {
+    "perianthe": {
+     "base": "non isolée",
+     "corps": "#c1beb0 (PN) ; #c5bea4 (JA, ombre)",
+     "pointe": "#bbb8b8 (JA, ombre) ; pointe PN contaminée par le feuillage"
+    },
+    "trompette": {
+     "gorge": "#ede9dc (PN)",
+     "paroi": "#d7d3c6 (PN)",
+     "bord": "ivoire, frisé visible"
+    },
+    "revers": "non visible",
+    "spathe": "non visible"
+   },
+   "eclairage": "PN et JA : lumière de jardin ombragée ; les blancs sont lus gris, la teinte reste neutre",
+   "photos_mesurees_utiles": [
+    "PN N3 (corolle isolée)",
+    "JA N3 (corolle isolée, ombre)"
+   ],
+   "photo_ecartee": "JDW N2 (fond vert-jaune, teinte faussée) ; VE N3 et BL N3 (massifs) ; Commons N4 (trop loin)",
+   "ecart_entre_sources": "corps PN #c1beb0 / JA #c5bea4 : dE 6,6 ; gorge PN / paroi JA : dE 17 (ombre)",
+   "ecart_vs_catalogue": "pas de référence catalogue pour le blanc mesurée ici ; une photo sur fond neutre et en plein jour est nécessaire",
+   "niveau_couleur": "B",
+   "remarques_couleur": "Corolle blanche neutre, trompette ivoire. Photos sombres : la clarté réelle reste à confirmer."
+  },
+  {
+   "id": "creme",
+   "nom_affiche": "Crème, trompette citron (Bravoure)",
+   "cultivar": "bravoure",
+   "nom_registre": "Bravoure",
+   "division_registre": "1",
+   "code_couleur_registre": "W-Y",
+   "niveau_preuve": "A",
+   "photos_comptees": 1,
+   "nom_affiche_propose": "Blanc, trompette jaune (Bravoure)",
+   "correspondance": "nom_affiche_a_corriger",
+   "statut": "en production (après mesure des couleurs)",
+   "raison": "Registre RHS : division 1, W-Y (périanthe blanc, couronne jaune) ; liste AGM : white / yellow, 45 cm ; vignette Jan de Wit : périanthe blanc pur, trompette jaune franc. Le nom « Crème, trompette citron » est faux : ni périanthe crème, ni trompette citron. Une seule photo nommée (vignette N2) : niveau A tenu par le registre.",
+   "doute": "même code W-Y que Las Vegas : les deux coloris risquent de se confondre ; à départager à la mesure (Las Vegas : périanthe plus crème-citron sur la vignette Jan de Wit)",
+   "mesure_couleur": {
+    "perianthe": {
+     "base": "non isolée",
+     "corps": "#ddc973 (JDW, dernier cercle)",
+     "pointe": "blanc pur à l'œil ; lu crème (#cec77b, lumière chaude)"
+    },
+    "trompette": {
+     "gorge": "#ebe11d (JDW)",
+     "paroi": "#e2da19 (JDW)",
+     "bord": "jaune franc (JDW)"
+    },
+    "revers": "non visible",
+    "spathe": "non visible"
+   },
+   "eclairage": "JDW : lumière vive, dominante chaude sur les blancs",
+   "photos_mesurees_utiles": [
+    "JDW N2 (une seule photo)"
+   ],
+   "photo_ecartee": "—",
+   "ecart_entre_sources": "une seule photo",
+   "ecart_vs_catalogue": "trompette #ebe11d : jaune citron, dE 19 du jaune catalogue #f4c61c ; à dE 3,8 de Las Vegas",
+   "niveau_couleur": "C",
+   "remarques_couleur": "Périanthe blanc, trompette jaune citron : « Crème » ne convient pas ; « Blanc, trompette jaune (Bravoure) » est meilleur. Une seule photo : à refaire."
+  },
+  {
+   "id": "bicolore",
+   "nom_affiche": "Bicolore blanc et jaune (Las Vegas)",
+   "cultivar": "las-vegas",
+   "nom_registre": "Las Vegas",
+   "division_registre": "1",
+   "code_couleur_registre": "W-Y",
+   "niveau_preuve": "A",
+   "photos_comptees": 3,
+   "nom_affiche_propose": null,
+   "correspondance": "exacte",
+   "statut": "en production (après mesure des couleurs)",
+   "raison": "Registre RHS : division 1, W-Y. Photos : Jan de Wit (N2, périanthe blanc crème), Van Engelen (N3, périanthe blanc), Commons (N4). Nom conforme au code.",
+   "mesure_couleur": {
+    "perianthe": {
+     "base": "non isolée",
+     "corps": "#e1da32 (JDW)",
+     "pointe": "#e0dd6a (JDW) : jaune pâle"
+    },
+    "trompette": {
+     "gorge": "#efe201 (JDW)",
+     "paroi": "#dfcf03 (JDW)",
+     "bord": "frisé jaune franc (VE, massif)"
+    },
+    "revers": "non visible",
+    "spathe": "non visible"
+   },
+   "eclairage": "JDW : lumière vive, fond pâle ; VE : massif, qualitatif seulement",
+   "photos_mesurees_utiles": [
+    "JDW N2 (une seule fleur isolée)"
+   ],
+   "photo_ecartee": "VE N3 (massif, qualitatif) ; Commons Madrid N4 (feuillage dans la pointe)",
+   "ecart_entre_sources": "une seule photo exploitable",
+   "ecart_vs_catalogue": "trompette #efe201 à dE 3,8 de Bravoure (même code W-Y) : les deux se confondent",
+   "niveau_couleur": "C",
+   "remarques_couleur": "Une photo exploitable de 160 px : à refaire sur photo grande. À départager de Bravoure ou à fusionner."
+  }
+ ],
+ "propositions_late1": [
+  {
+   "late": 1,
+   "cultivar": "british-gamble",
+   "nom_registre": "British Gamble",
+   "division_registre": "1",
+   "code_couleur_registre": "W-YPP",
+   "niveau_preuve": "A",
+   "nom_affiche_propose": "Blanc, trompette rose corail (British Gamble)",
+   "raison": "couleur absente du catalogue : trompette rose corail à bord frisé sur périanthe blanc ; registre 1 W-YPP ; photos Jan de Wit (N2), Jacques Amand et Bloms (N3), concordantes à l'œil",
+   "rang": 1,
+   "mesure_couleur": {
+    "perianthe": {
+     "base": "blanc",
+     "corps": "blanc",
+     "pointe": "blanc"
+    },
+    "trompette": {
+     "gorge": "#cea06a (BL, couronne)",
+     "paroi": "#b88a41 (BL)",
+     "bord": "frisé, corail rosé sur le bord (JA, BL)"
+    },
+    "revers": "non visible",
+    "spathe": "non visible"
+   },
+   "eclairage": "JA : studio sur fond gris ; BL : jardin ; JDW : lumière vive (teinte jaune faussée)",
+   "photos_mesurees_utiles": [
+    "JA N3 (studio gris)",
+    "BL N3 (jardin)"
+   ],
+   "photo_ecartee": "JDW N2 : couronne #dec361, teinte jaune faussée",
+   "ecart_entre_sources": "couronne JA #aa8562 / BL #cea06a : dE 15 ; JDW à dE 24 : désaccord sur la teinte, à trancher",
+   "niveau_couleur": "C",
+   "remarques_couleur": "Corail rosé sur le bord, trompette pêche-ocre dans les deux photos utiles : le rose corail n'est pas confirmé à la mesure. Troisième photo nécessaire."
+  },
+  {
+   "late": 1,
+   "cultivar": "pink-parasol",
+   "nom_registre": "Pink Parasol",
+   "division_registre": "1",
+   "code_couleur_registre": "W-P",
+   "niveau_preuve": "A",
+   "nom_affiche_propose": "Blanc, trompette rose pêche (Pink Parasol)",
+   "raison": "variante de la précédente, trompette plus orangée à bord frisé ; registre 1 W-P ; une photo Jan de Wit (N2)",
+   "rang": 2,
+   "mesure_couleur": {
+    "perianthe": {
+     "base": "crème",
+     "corps": "#ddc973 (JDW)",
+     "pointe": "#d2cc8c (JDW)"
+    },
+    "trompette": {
+     "gorge": "#eba247 (JDW)",
+     "paroi": "#e8b637 (JDW)",
+     "bord": "frisé, abricot-pêche"
+    },
+    "revers": "non visible",
+    "spathe": "non visible"
+   },
+   "eclairage": "JDW : lumière vive",
+   "photos_mesurees_utiles": [
+    "JDW N2 (une seule photo)"
+   ],
+   "photo_ecartee": "—",
+   "ecart_entre_sources": "une seule photo",
+   "niveau_couleur": "C",
+   "remarques_couleur": "Couronne abricot-pêche plutôt que rose : « rose pêche » du nom proposé est justifié. Une seule photo."
+  },
+  {
+   "late": 1,
+   "cultivar": "galactic-star",
+   "nom_registre": "Galactic Star",
+   "division_registre": "1",
+   "code_couleur_registre": "YYW-W",
+   "niveau_preuve": "A",
+   "nom_affiche_propose": "Jaune pâle, trompette blanche (Galactic Star)",
+   "raison": "bicolore inversé absent du catalogue ; registre 1 YYW-W ; photo Jan de Wit (N2) ; sert aussi de remplaçant au coloris « citron »",
+   "rang": 1,
+   "mesure_couleur": {
+    "perianthe": {
+     "base": "non isolée",
+     "corps": "#dad62f (JDW)",
+     "pointe": "#dad72b (JDW) : jaune"
+    },
+    "trompette": {
+     "gorge": "#e2e088 (JDW)",
+     "paroi": "#ded855 (JDW)",
+     "bord": "pâle, crème"
+    },
+    "revers": "non visible",
+    "spathe": "non visible"
+   },
+   "eclairage": "JDW : lumière vive",
+   "photos_mesurees_utiles": [
+    "JDW N2 (une seule photo)"
+   ],
+   "photo_ecartee": "—",
+   "ecart_entre_sources": "une seule photo",
+   "niveau_couleur": "C",
+   "remarques_couleur": "Périanthe jaune, trompette crème pâle : cohérent avec le remplaçant du citron. Une seule photo."
+  },
+  {
+   "late": 1,
+   "cultivar": "topolino",
+   "nom_registre": "Topolino",
+   "division_registre": "1",
+   "code_couleur_registre": "W-Y",
+   "niveau_preuve": "A",
+   "nom_affiche_propose": "Bicolore nain (Topolino)",
+   "raison": "variante de taille, 15 cm, absente du catalogue ; registre 1 W-Y ; liste AGM : périanthe crème, couronne jaune citron ; une photo Jan de Wit (N2)",
+   "rang": 3,
+   "mesure_couleur": {
+    "perianthe": {
+     "base": "non isolée",
+     "corps": "#e7ea91 (JDW)",
+     "pointe": "#e7e994 (JDW) : crème pâle"
+    },
+    "trompette": {
+     "gorge": "#efe30b (JDW)",
+     "paroi": "#e6e268 (JDW)",
+     "bord": "jaune citron"
+    },
+    "revers": "non visible",
+    "spathe": "non visible"
+   },
+   "eclairage": "JDW : lumière vive, naine 15 cm",
+   "photos_mesurees_utiles": [
+    "JDW N2 (une seule photo)"
+   ],
+   "photo_ecartee": "—",
+   "ecart_entre_sources": "une seule photo",
+   "niveau_couleur": "C",
+   "remarques_couleur": "Trompette jaune citron à dE 3,2 de Bravoure : même couleur, seule la taille change. Une seule photo."
+  }
+ ],
+ "autre_sorte": [
+  {
+   "id": "january-silver",
+   "nom": "January Silver",
+   "division": "2",
+   "code": "W-Y",
+   "raison": "classé « trumpet » par Van Engelen mais inscrit au registre RHS en division 2 (grande coupe) : à écarter de la sorte, sorte voisine narcisse-grande-coupe"
+  }
+ ],
+ "hors_sorte": [
+  {
+   "nom": "Narcissus pseudo-narcissus ssp. obvallaris",
+   "raison": "forme sauvage (division 13 d'après la RHS) rangée en 'trumpet' par Van Engelen",
+   "source": "VE"
+  }
+ ],
+ "sortes_voisines_sans_sorte": [
+  {
+   "sid": "narcisse-grande-coupe",
+   "division": 2,
+   "indice": "Longfield : 'Large Cupped' Ice Follies, Red Devon, Sempre Avanti, Pink Charm ; Van Engelen : January Silver"
+  },
+  {
+   "sid": "narcisse-petite-coupe",
+   "division": 3,
+   "indice": "Longfield : 'Small Cupped' Barrett Browning"
+  },
+  {
+   "sid": "narcisse-triandrus",
+   "division": 5,
+   "indice": "aucun exemple lu"
+  },
+  {
+   "sid": "narcisse-cyclamineus",
+   "division": 6,
+   "indice": "Longfield : Tete a Tete, Jetfire, Tete Boucle"
+  },
+  {
+   "sid": "narcisse-jonquille",
+   "division": 7,
+   "indice": "Longfield : 'Jonquilla' Pipit, Pueblo, Golden Echo, Sun Disc"
+  },
+  {
+   "sid": "narcisse-poeticus",
+   "division": 9,
+   "indice": "Longfield : Actaea"
+  },
+  {
+   "sid": "narcisse-bulbocodium",
+   "division": 10,
+   "indice": "Jan de Wit : groupe Bulbocodium"
+  },
+  {
+   "sid": "narcisse-coupe-fendue",
+   "division": 11,
+   "indice": "Longfield : 'Split Corona' Cassata, Cum Laude, Love Call, Bella Estrella"
+  },
+  {
+   "sid": "narcisse-especes",
+   "division": 13,
+   "indice": "Van Engelen : N. pseudo-narcissus ssp. obvallaris (formes sauvages, hors de cette sorte)"
+  }
+ ],
+ "cultivars": [
+  {
+   "id": "dutch-master",
+   "nom": "Dutch Master",
+   "nom_enregistre": "Dutch Master",
+   "synonymes": [
+    "Dutch Master AGM"
+   ],
+   "coloris_rattache": "jaune",
+   "division_registre": "1",
+   "code_couleur_registre": "Y-Y",
+   "lecture_code": "périanthe jaune ; couronne (du fond vers le bord, zones du code) jaune",
+   "registre": {
+    "requete": "Dutch Master",
+    "nb_resultats_requete": 1,
+    "url_recherche": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Dutch%20Master",
+    "statut": "lu : recherche par nom, 2026-10-08",
+    "id": "216736",
+    "nom_registre": "Dutch Master",
+    "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffdetails.asp?ID=216736",
+    "homonymes": [],
+    "fiche_detail": "lue"
+   },
+   "division_annoncee_vendeurs": "1 Y-Y",
+   "obtenteur": "M. Zandbergen (enregistrant ; la fiche ne donne pas d'obtenteur distinct)",
+   "annee": 1948,
+   "origine_obtenteur_annee": "fiche du registre RHS (daffdetails.asp?ID=216736) lue par WebFetch le 2026-10-08 ; la page répond 504 à Python",
+   "couleur_annoncee": "périanthe jaune, couronne jaune (RHS Y-Y ; JdW Yellow 50 cm, JA 'large golden perianth and trumpet')",
+   "hauteur_fiche_jdw": "50 cm",
+   "couleur_fiche_jdw": "Yellow",
+   "sources_existence": [
+    {
+     "niveau": "N1",
+     "source": "RHSREG",
+     "nom_source": "RHS, International Daffodil Register (recherche par nom)",
+     "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Dutch%20Master"
+    },
+    {
+     "niveau": "N2",
+     "source": "JDW",
+     "nom_source": "Jan de Wit en Zonen, assortiment Narcissus, groupe Trumpet (19 fiches)",
+     "url": "https://www.jandewitenzonen.com/en/assortment/narcissus/"
+    },
+    {
+     "niveau": "N3",
+     "source": "JA",
+     "nom_source": "Jacques Amand International, collection Narcissi Division 1 Trumpet (12 fiches)",
+     "url": "https://www.jacquesamand.com/collections/narcissi-division-1-trumpet-narcissi"
+    },
+    {
+     "niveau": "N3",
+     "source": "PN",
+     "nom_source": "Peter Nyssen, Trumpet Daffodils (4 fiches)",
+     "url": "https://www.peternyssen.com/autumn-planting/daffodils-narcissi/trumpet-daffodils.html"
+    },
+    {
+     "niveau": "N3",
+     "source": "BL",
+     "nom_source": "Bloms Bulbs, Trumpet Daffodils (12 fiches)",
+     "url": "https://blomsbulbs.com/product-category/autumn/daffodils-narcissi/trumpet-daffodils/"
+    },
+    {
+     "niveau": "N3",
+     "source": "LF",
+     "nom_source": "Longfield Gardens, collection Narcissus (libellés 'Daffodil Trumpet ...')",
+     "url": "https://www.longfield-gardens.com/collections/narcissus"
+    },
+    {
+     "niveau": "N4",
+     "source": "WP",
+     "nom_source": "Wikipédia, List of Award of Garden Merit narcissus (colonne Div.)",
+     "url": "https://en.wikipedia.org/wiki/List_of_Award_of_Garden_Merit_narcissus"
+    },
+    {
+     "niveau": "N1",
+     "source": "RHSP",
+     "nom_source": "RHS Plants, fiche Narcissus 'Dutch Master' (1)",
+     "url": "https://www.rhs.org.uk/plants/99309/narcissus-dutch-master-1/details"
+    }
+   ],
+   "photos": [
+    {
+     "niveau": "N2",
+     "auteur": "Jan de Wit en Zonen",
+     "image": "https://www.jandewitenzonen.com/img/products/narcissus/thumbs/Dutch_Master.jpg",
+     "page": "https://www.jandewitenzonen.com/en/assortment/narcissus/",
+     "licence": "usage du site, non relevée",
+     "note": "vignette basse résolution (environ 160 px) ; fiche : Yellow, 50 cm"
+    },
+    {
+     "niveau": "N3",
+     "auteur": "Jacques Amand International",
+     "image": "https://cdn.shopify.com/s/files/1/0711/1586/6390/products/Narcissus-Dutch-Master_0276-3-scaled-e1626176812837.jpg?v=1749652308",
+     "page": "https://www.jacquesamand.com/collections/narcissi-division-1-trumpet-narcissi",
+     "licence": "usage du vendeur, non relevée"
+    },
+    {
+     "niveau": "N1",
+     "auteur": "RHS Plants (fiche 99309)",
+     "image": "https://apps.rhs.org.uk/plantselectorimages/detail/WSY0039366_5221.jpg",
+     "page": "https://www.rhs.org.uk/plants/99309/narcissus-dutch-master-1/details",
+     "licence": "droits RHS, non relevée"
+    }
+   ],
+   "concordance_photos": "vue à l'œil (vignette JDW et photo JA) : jaune uni, trompette jaune, concordantes",
+   "niveau_preuve": "A",
+   "raison_niveau": "registre RHS lu (N1) + photo nommée N2 (Jan de Wit)",
+   "niveau_provisoire_preuves": "B",
+   "marque": null,
+   "marque_verifiee": false,
+   "marque_note": "aucun ®, ™ ni série commerciale vu aux pages lues ; registre des marques (TMview/EUIPO/INPI) non consulté : à faire par l'orchestrateur. Nom de cultivar au registre RHS = dénomination variétale",
+   "statut": "en production (après mesure des couleurs)",
+   "statut_raison": null,
+   "priorite": "assortiment_fleur_coupee",
+   "notes": [
+    "AM(p) 1948, FCC(p) 1976, AGM 1995 selon le résumé du registre ; AGM confirmé par RHS Plants et JA. JdW le marque 'Popular'.",
+    "Date de mise en marché 1938 selon des détaillants (non retenue). Non vérifié : enregistrant (résumé de registre)."
+   ],
+   "description_registre": "fleur de 109 mm ; segments du périanthe ovales, jaune verdâtre vif (5A) ; couronne cylindrique lisse, jaune vif, bord roulé et profondément denté ; 2n=28. Division affichée « 1(a) » sur la fiche"
+  },
+  {
+   "id": "golden-harvest",
+   "nom": "Golden Harvest",
+   "nom_enregistre": "Golden Harvest",
+   "synonymes": [],
+   "coloris_rattache": "jaune-or",
+   "division_registre": "1",
+   "code_couleur_registre": "Y-Y",
+   "lecture_code": "périanthe jaune ; couronne (du fond vers le bord, zones du code) jaune",
+   "registre": {
+    "requete": "Golden Harvest",
+    "nb_resultats_requete": 1,
+    "url_recherche": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Golden%20Harvest",
+    "statut": "lu : recherche par nom, 2026-10-08",
+    "id": "222558",
+    "nom_registre": "Golden Harvest",
+    "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffdetails.asp?ID=222558",
+    "homonymes": []
+   },
+   "division_annoncee_vendeurs": "1 (collection Division 1 de JA ; JdW Trumpet) ; absent de la liste AGM",
+   "obtenteur": null,
+   "annee": null,
+   "origine_obtenteur_annee": null,
+   "couleur_annoncee": "jaune (JdW Yellow 40 cm ; JA 'One of the best yellows')",
+   "hauteur_fiche_jdw": "40 cm",
+   "couleur_fiche_jdw": "Yellow",
+   "sources_existence": [
+    {
+     "niveau": "N1",
+     "source": "RHSREG",
+     "nom_source": "RHS, International Daffodil Register (recherche par nom)",
+     "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Golden%20Harvest"
+    },
+    {
+     "niveau": "N2",
+     "source": "JDW",
+     "nom_source": "Jan de Wit en Zonen, assortiment Narcissus, groupe Trumpet (19 fiches)",
+     "url": "https://www.jandewitenzonen.com/en/assortment/narcissus/"
+    },
+    {
+     "niveau": "N3",
+     "source": "JA",
+     "nom_source": "Jacques Amand International, collection Narcissi Division 1 Trumpet (12 fiches)",
+     "url": "https://www.jacquesamand.com/collections/narcissi-division-1-trumpet-narcissi"
+    }
+   ],
+   "photos": [
+    {
+     "niveau": "N2",
+     "auteur": "Jan de Wit en Zonen",
+     "image": "https://www.jandewitenzonen.com/img/products/narcissus/thumbs/Golden_Harvest.jpg",
+     "page": "https://www.jandewitenzonen.com/en/assortment/narcissus/",
+     "licence": "usage du site, non relevée",
+     "note": "vignette basse résolution (environ 160 px) ; fiche : Yellow, 40 cm"
+    },
+    {
+     "niveau": "N3",
+     "auteur": "Jacques Amand International",
+     "image": "https://cdn.shopify.com/s/files/1/0711/1586/6390/products/Narcissus-Golden-Harvest_1028-4-scaled-e1626177247806.jpg?v=1749652316",
+     "page": "https://www.jacquesamand.com/collections/narcissi-division-1-trumpet-narcissi",
+     "licence": "usage du site, non relevée"
+    },
+    {
+     "niveau": "N4",
+     "auteur": "Commons (voir page)",
+     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Golden_Harvest_1.JPG?width=400",
+     "page": "https://commons.wikimedia.org/wiki/File:Golden_Harvest_1.JPG",
+     "licence": "Commons (voir page)"
+    },
+    {
+     "niveau": "N4",
+     "auteur": "Commons (voir page)",
+     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Golden_Harvest_2.JPG?width=400",
+     "page": "https://commons.wikimedia.org/wiki/File:Golden_Harvest_2.JPG",
+     "licence": "Commons (voir page)"
+    }
+   ],
+   "concordance_photos": "vue à l'œil (vignette JDW et photo JA) : jaune uni, concordantes",
+   "niveau_preuve": "A",
+   "raison_niveau": "registre RHS lu (N1) + photo nommée N2 (Jan de Wit)",
+   "niveau_provisoire_preuves": "B",
+   "marque": null,
+   "marque_verifiee": false,
+   "marque_note": "aucun ®, ™ ni série commerciale vu aux pages lues ; registre des marques (TMview/EUIPO/INPI) non consulté : à faire par l'orchestrateur. Nom de cultivar au registre RHS = dénomination variétale",
+   "statut": "en production (après mesure des couleurs)",
+   "statut_raison": null,
+   "priorite": "assortiment_fleur_coupee",
+   "notes": [
+    "Division et année à confirmer au registre RHS (indisponible).",
+    "Absent de la liste AGM."
+   ]
+  },
+  {
+   "id": "spellbinder",
+   "nom": "Spellbinder",
+   "nom_enregistre": "Spellbinder",
+   "synonymes": [],
+   "coloris_rattache": "citron",
+   "division_registre": "1",
+   "code_couleur_registre": "Y-WWY",
+   "lecture_code": "périanthe jaune ; couronne (du fond vers le bord, zones du code) blanc puis blanc puis jaune",
+   "registre": {
+    "requete": "Spellbinder",
+    "nb_resultats_requete": 1,
+    "url_recherche": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Spellbinder",
+    "statut": "lu : recherche par nom, 2026-10-08",
+    "id": "221176",
+    "nom_registre": "Spellbinder",
+    "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffdetails.asp?ID=221176",
+    "homonymes": []
+   },
+   "division_annoncee_vendeurs": "inconnue",
+   "obtenteur": null,
+   "annee": null,
+   "origine_obtenteur_annee": null,
+   "couleur_annoncee": "non retrouvée",
+   "hauteur_fiche_jdw": null,
+   "couleur_fiche_jdw": null,
+   "sources_existence": [
+    {
+     "niveau": "N1",
+     "source": "RHSREG",
+     "nom_source": "RHS, International Daffodil Register (recherche par nom)",
+     "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Spellbinder"
+    }
+   ],
+   "photos": [],
+   "concordance_photos": null,
+   "niveau_preuve": "D",
+   "raison_niveau": "nom prouvé par le registre RHS, aucune photo nommée",
+   "niveau_provisoire_preuves": "D",
+   "marque": null,
+   "marque_verifiee": false,
+   "marque_note": "aucun ®, ™ ni série commerciale vu aux pages lues ; registre des marques (TMview/EUIPO/INPI) non consulté : à faire par l'orchestrateur. Nom de cultivar au registre RHS = dénomination variétale",
+   "statut": "à confirmer",
+   "statut_raison": null,
+   "priorite": "assortiment_fleur_coupee",
+   "notes": [
+    "Nom du catalogue (coloris citron). Absent de JdW, JA, VE, PN, BL, LF et de la liste AGM. Existence, division et couleur non prouvées. Voir rattachement_coloris_preliminaire.citron.",
+    "Absent de JDW, JA, VE, PN, BL, LF, de la liste AGM et de Commons. Existence non prouvée. Repli à proposer : Galactic Star (sans photo pour l'instant)."
+   ]
+  },
+  {
+   "id": "mount-hood",
+   "nom": "Mount Hood",
+   "nom_enregistre": "Mount Hood",
+   "synonymes": [],
+   "coloris_rattache": "blanc",
+   "division_registre": "1",
+   "code_couleur_registre": "W-W",
+   "lecture_code": "périanthe blanc ; couronne (du fond vers le bord, zones du code) blanc",
+   "registre": {
+    "requete": "Mount Hood",
+    "nb_resultats_requete": 1,
+    "url_recherche": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Mount%20Hood",
+    "statut": "lu : recherche par nom, 2026-10-08",
+    "id": "205379",
+    "nom_registre": "Mount Hood",
+    "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffdetails.asp?ID=205379",
+    "homonymes": []
+   },
+   "division_annoncee_vendeurs": "1 W-W (WP)",
+   "obtenteur": null,
+   "annee": null,
+   "origine_obtenteur_annee": null,
+   "couleur_annoncee": "blanc / blanc (WP 1 W-W 45 cm ; JdW White 40 cm ; JA 'broad pure white perianth with an ivory white trumpet')",
+   "hauteur_fiche_jdw": "40 cm",
+   "couleur_fiche_jdw": "White",
+   "sources_existence": [
+    {
+     "niveau": "N1",
+     "source": "RHSREG",
+     "nom_source": "RHS, International Daffodil Register (recherche par nom)",
+     "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Mount%20Hood"
+    },
+    {
+     "niveau": "N2",
+     "source": "JDW",
+     "nom_source": "Jan de Wit en Zonen, assortiment Narcissus, groupe Trumpet (19 fiches)",
+     "url": "https://www.jandewitenzonen.com/en/assortment/narcissus/"
+    },
+    {
+     "niveau": "N3",
+     "source": "JA",
+     "nom_source": "Jacques Amand International, collection Narcissi Division 1 Trumpet (12 fiches)",
+     "url": "https://www.jacquesamand.com/collections/narcissi-division-1-trumpet-narcissi"
+    },
+    {
+     "niveau": "N3",
+     "source": "VE",
+     "nom_source": "Van Engelen, Trumpet Daffodils (19 fiches)",
+     "url": "https://www.vanengelen.com/flower-bulbs-index/narcissi/trumpet-daffodils.html"
+    },
+    {
+     "niveau": "N3",
+     "source": "PN",
+     "nom_source": "Peter Nyssen, Trumpet Daffodils (4 fiches)",
+     "url": "https://www.peternyssen.com/autumn-planting/daffodils-narcissi/trumpet-daffodils.html"
+    },
+    {
+     "niveau": "N3",
+     "source": "BL",
+     "nom_source": "Bloms Bulbs, Trumpet Daffodils (12 fiches)",
+     "url": "https://blomsbulbs.com/product-category/autumn/daffodils-narcissi/trumpet-daffodils/"
+    },
+    {
+     "niveau": "N3",
+     "source": "LF",
+     "nom_source": "Longfield Gardens, collection Narcissus (libellés 'Daffodil Trumpet ...')",
+     "url": "https://www.longfield-gardens.com/collections/narcissus"
+    },
+    {
+     "niveau": "N4",
+     "source": "WP",
+     "nom_source": "Wikipédia, List of Award of Garden Merit narcissus (colonne Div.)",
+     "url": "https://en.wikipedia.org/wiki/List_of_Award_of_Garden_Merit_narcissus"
+    }
+   ],
+   "photos": [
+    {
+     "niveau": "N2",
+     "auteur": "Jan de Wit en Zonen",
+     "image": "https://www.jandewitenzonen.com/img/products/narcissus/thumbs/Mount_Hood.jpg",
+     "page": "https://www.jandewitenzonen.com/en/assortment/narcissus/",
+     "licence": "usage du site, non relevée",
+     "note": "vignette basse résolution (environ 160 px) ; fiche : White, 40 cm"
+    },
+    {
+     "niveau": "N3",
+     "auteur": "Jacques Amand International",
+     "image": "https://cdn.shopify.com/s/files/1/0711/1586/6390/files/NarcissusMountHood_5231_2_square.jpg?v=1751895748",
+     "page": "https://www.jacquesamand.com/collections/narcissi-division-1-trumpet-narcissi",
+     "licence": "usage du site, non relevée"
+    },
+    {
+     "niveau": "N3",
+     "auteur": "Van Engelen",
+     "image": "https://www.vanengelen.com/media/catalog/product/cache/ae5a6ea9a5f2aff03513e6f42df29704/n/_/n_mount_hood_z.jpg",
+     "page": "https://www.vanengelen.com/flower-bulbs-index/narcissi/trumpet-daffodils.html",
+     "licence": "usage du site, non relevée",
+     "niveau_declare_preuves": "N2"
+    },
+    {
+     "niveau": "N3",
+     "auteur": "Peter Nyssen",
+     "image": "https://www.peternyssen.com/media/catalog/product/cache/c243bc2267b838a48b4508f4125c71c8/d/b/dbe83bafd25be4d6af03bcce2374218f04e203ba_mount_hood_0230.jpg",
+     "page": "https://www.peternyssen.com/autumn-planting/daffodils-narcissi/trumpet-daffodils.html",
+     "licence": "usage du site, non relevée"
+    },
+    {
+     "niveau": "N3",
+     "auteur": "Bloms Bulbs",
+     "image": "https://blomsbulbs.com/wp-content/uploads/2023/04/Mount-Hood-420x454.jpg",
+     "page": "https://blomsbulbs.com/product-category/autumn/daffodils-narcissi/trumpet-daffodils/",
+     "licence": "usage du site, non relevée"
+    },
+    {
+     "niveau": "N4",
+     "auteur": "Commons (voir page)",
+     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Narcissus_'Mount_Hood'.jpg?width=400",
+     "page": "https://commons.wikimedia.org/wiki/File:Narcissus_%27Mount_Hood%27.jpg",
+     "licence": "Commons (voir page)"
+    }
+   ],
+   "concordance_photos": "vue à l'œil (JDW, JA, VE) : périanthe blanc, trompette ivoire, concordantes",
+   "niveau_preuve": "A",
+   "raison_niveau": "registre RHS lu (N1) + photo nommée N2 (Jan de Wit)",
+   "niveau_provisoire_preuves": "B",
+   "marque": null,
+   "marque_verifiee": false,
+   "marque_note": "aucun ®, ™ ni série commerciale vu aux pages lues ; registre des marques (TMview/EUIPO/INPI) non consulté : à faire par l'orchestrateur. Nom de cultivar au registre RHS = dénomination variétale",
+   "statut": "en production (après mesure des couleurs)",
+   "statut_raison": null,
+   "priorite": "assortiment_fleur_coupee",
+   "notes": [
+    "JdW le marque 'Popular'. AGM.",
+    "Le plus documenté du lot. AGM."
+   ]
+  },
+  {
+   "id": "bravoure",
+   "nom": "Bravoure",
+   "nom_enregistre": "Bravoure",
+   "synonymes": [],
+   "coloris_rattache": "creme",
+   "division_registre": "1",
+   "code_couleur_registre": "W-Y",
+   "lecture_code": "périanthe blanc ; couronne (du fond vers le bord, zones du code) jaune",
+   "registre": {
+    "requete": "Bravoure",
+    "nb_resultats_requete": 1,
+    "url_recherche": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Bravoure",
+    "statut": "lu : recherche par nom, 2026-10-08",
+    "id": "210694",
+    "nom_registre": "Bravoure",
+    "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffdetails.asp?ID=210694",
+    "homonymes": []
+   },
+   "division_annoncee_vendeurs": "1 (WP) ; registre non lu",
+   "obtenteur": null,
+   "annee": null,
+   "origine_obtenteur_annee": null,
+   "couleur_annoncee": "périanthe blanc, couronne jaune (WP 1 white/yellow 45 cm ; JdW White/Yellow 55 cm)",
+   "hauteur_fiche_jdw": "55 cm",
+   "couleur_fiche_jdw": "White/Yellow",
+   "sources_existence": [
+    {
+     "niveau": "N1",
+     "source": "RHSREG",
+     "nom_source": "RHS, International Daffodil Register (recherche par nom)",
+     "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Bravoure"
+    },
+    {
+     "niveau": "N2",
+     "source": "JDW",
+     "nom_source": "Jan de Wit en Zonen, assortiment Narcissus, groupe Trumpet (19 fiches)",
+     "url": "https://www.jandewitenzonen.com/en/assortment/narcissus/"
+    },
+    {
+     "niveau": "N4",
+     "source": "WP",
+     "nom_source": "Wikipédia, List of Award of Garden Merit narcissus (colonne Div.)",
+     "url": "https://en.wikipedia.org/wiki/List_of_Award_of_Garden_Merit_narcissus"
+    }
+   ],
+   "photos": [
+    {
+     "niveau": "N2",
+     "auteur": "Jan de Wit en Zonen",
+     "image": "https://www.jandewitenzonen.com/img/products/narcissus/thumbs/Bravoure.jpg",
+     "page": "https://www.jandewitenzonen.com/en/assortment/narcissus/",
+     "licence": "usage du site, non relevée",
+     "note": "vignette basse résolution (environ 160 px) ; fiche : White/Yellow, 55 cm"
+    }
+   ],
+   "concordance_photos": "vue à l'œil (vignette JDW) : périanthe blanc pur, trompette jaune franc",
+   "niveau_preuve": "A",
+   "raison_niveau": "registre RHS lu (N1) + photo nommée N2 (Jan de Wit)",
+   "niveau_provisoire_preuves": "D",
+   "marque": null,
+   "marque_verifiee": false,
+   "marque_note": "aucun ®, ™ ni série commerciale vu aux pages lues ; registre des marques (TMview/EUIPO/INPI) non consulté : à faire par l'orchestrateur. Nom de cultivar au registre RHS = dénomination variétale",
+   "statut": "en production (après mesure des couleurs)",
+   "statut_raison": null,
+   "priorite": "assortiment_fleur_coupee",
+   "notes": [
+    "AGM. Le catalogue dit 'crème, trompette citron' : à mesurer sur photos.",
+    "Le catalogue dit 'crème, trompette citron' ; le périanthe est blanc (inventaire à corriger). Aucune photo : pas de mesure."
+   ]
+  },
+  {
+   "id": "las-vegas",
+   "nom": "Las Vegas",
+   "nom_enregistre": "Las Vegas",
+   "synonymes": [],
+   "coloris_rattache": "bicolore",
+   "division_registre": "1",
+   "code_couleur_registre": "W-Y",
+   "lecture_code": "périanthe blanc ; couronne (du fond vers le bord, zones du code) jaune",
+   "registre": {
+    "requete": "Las Vegas",
+    "nb_resultats_requete": 1,
+    "url_recherche": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Las%20Vegas",
+    "statut": "lu : recherche par nom, 2026-10-08",
+    "id": "212394",
+    "nom_registre": "Las Vegas",
+    "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffdetails.asp?ID=212394",
+    "homonymes": []
+   },
+   "division_annoncee_vendeurs": "1 (JdW Trumpet ; VE trumpet) ; absent de la liste AGM",
+   "obtenteur": null,
+   "annee": null,
+   "origine_obtenteur_annee": null,
+   "couleur_annoncee": "blanc / jaune (JdW White/Yellow 40 cm)",
+   "hauteur_fiche_jdw": "40 cm",
+   "couleur_fiche_jdw": "White/Yellow",
+   "sources_existence": [
+    {
+     "niveau": "N1",
+     "source": "RHSREG",
+     "nom_source": "RHS, International Daffodil Register (recherche par nom)",
+     "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Las%20Vegas"
+    },
+    {
+     "niveau": "N2",
+     "source": "JDW",
+     "nom_source": "Jan de Wit en Zonen, assortiment Narcissus, groupe Trumpet (19 fiches)",
+     "url": "https://www.jandewitenzonen.com/en/assortment/narcissus/"
+    },
+    {
+     "niveau": "N3",
+     "source": "VE",
+     "nom_source": "Van Engelen, Trumpet Daffodils (19 fiches)",
+     "url": "https://www.vanengelen.com/flower-bulbs-index/narcissi/trumpet-daffodils.html"
+    }
+   ],
+   "photos": [
+    {
+     "niveau": "N2",
+     "auteur": "Jan de Wit en Zonen",
+     "image": "https://www.jandewitenzonen.com/img/products/narcissus/thumbs/Las_Vegas.jpg",
+     "page": "https://www.jandewitenzonen.com/en/assortment/narcissus/",
+     "licence": "usage du site, non relevée",
+     "note": "vignette basse résolution (environ 160 px) ; fiche : White/Yellow, 40 cm"
+    },
+    {
+     "niveau": "N3",
+     "auteur": "Van Engelen",
+     "image": "https://www.vanengelen.com/media/catalog/product/cache/ae5a6ea9a5f2aff03513e6f42df29704/n/_/n_las_vegas_1_2.jpg",
+     "page": "https://www.vanengelen.com/flower-bulbs-index/narcissi/trumpet-daffodils.html",
+     "licence": "usage du site, non relevée",
+     "niveau_declare_preuves": "N2"
+    },
+    {
+     "niveau": "N4",
+     "auteur": "Commons (voir page)",
+     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Narcissus_'Las_Vegas'_Narcyz_2023-04-23_04.jpg?width=400",
+     "page": "https://commons.wikimedia.org/wiki/File:Narcissus_%27Las_Vegas%27_Narcyz_2023-04-23_04.jpg",
+     "licence": "Commons (voir page)"
+    },
+    {
+     "niveau": "N4",
+     "auteur": "Commons (voir page)",
+     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Narcissus_(Las_Vegas_cultivar),_Real_Jardín_Botánico,_Madrid.jpg?width=400",
+     "page": "https://commons.wikimedia.org/wiki/File:Narcissus_%28Las_Vegas_cultivar%29%2C_Real_Jard%C3%ADn_Bot%C3%A1nico%2C_Madrid.jpg",
+     "licence": "Commons (voir page)",
+     "note": "URL à accents : n'a pas répondu au test du 2026-10-08, à ré-encoder",
+     "exclue": "URL sans réponse ou image vide le 2026-10-08 (statut -1)"
+    }
+   ],
+   "concordance_photos": "vue à l'œil (JDW, VE) : périanthe blanc crème à jaune très pâle, trompette jaune ; la vignette JDW est plus jaune que la photo VE",
+   "niveau_preuve": "A",
+   "raison_niveau": "registre RHS lu (N1) + photo nommée N2 (Jan de Wit)",
+   "niveau_provisoire_preuves": "B",
+   "marque": null,
+   "marque_verifiee": false,
+   "marque_note": "aucun ®, ™ ni série commerciale vu aux pages lues ; registre des marques (TMview/EUIPO/INPI) non consulté : à faire par l'orchestrateur. Nom de cultivar au registre RHS = dénomination variétale",
+   "statut": "en production (après mesure des couleurs)",
+   "statut_raison": null,
+   "priorite": "assortiment_fleur_coupee",
+   "notes": [
+    "Division au registre à confirmer.",
+    "Photos Commons à revérifier une à une."
+   ]
+  },
+  {
+   "id": "galactic-star",
+   "nom": "Galactic Star",
+   "nom_enregistre": "Galactic Star",
+   "synonymes": [],
+   "coloris_rattache": null,
+   "division_registre": "1",
+   "code_couleur_registre": "YYW-W",
+   "lecture_code": "périanthe jaune / jaune / blanc ; couronne (du fond vers le bord, zones du code) blanc",
+   "registre": {
+    "requete": "Galactic Star",
+    "nb_resultats_requete": 1,
+    "url_recherche": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Galactic%20Star",
+    "statut": "lu : recherche par nom, 2026-10-08",
+    "id": "902724",
+    "nom_registre": "Galactic Star",
+    "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffdetails.asp?ID=902724",
+    "homonymes": []
+   },
+   "division_annoncee_vendeurs": "Trumpet (JdW)",
+   "obtenteur": null,
+   "annee": null,
+   "origine_obtenteur_annee": null,
+   "couleur_annoncee": "périanthe jaune, couronne blanche (JdW Yellow/White 50 cm)",
+   "hauteur_fiche_jdw": "50 cm",
+   "couleur_fiche_jdw": "Yellow/White",
+   "sources_existence": [
+    {
+     "niveau": "N1",
+     "source": "RHSREG",
+     "nom_source": "RHS, International Daffodil Register (recherche par nom)",
+     "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Galactic%20Star"
+    },
+    {
+     "niveau": "N2",
+     "source": "JDW",
+     "nom_source": "Jan de Wit en Zonen, assortiment Narcissus, groupe Trumpet (19 fiches)",
+     "url": "https://www.jandewitenzonen.com/en/assortment/narcissus/"
+    }
+   ],
+   "photos": [
+    {
+     "niveau": "N2",
+     "auteur": "Jan de Wit en Zonen",
+     "image": "https://www.jandewitenzonen.com/img/products/narcissus/thumbs/Galactic_Star.jpg",
+     "page": "https://www.jandewitenzonen.com/en/assortment/narcissus/",
+     "licence": "usage du site, non relevée",
+     "note": "vignette basse résolution (environ 160 px) ; fiche : Yellow/White, 50 cm"
+    }
+   ],
+   "concordance_photos": "vue à l'œil (vignette JDW) : périanthe jaune, trompette blanc crème",
+   "niveau_preuve": "A",
+   "raison_niveau": "registre RHS lu (N1) + photo nommée N2 (Jan de Wit)",
+   "niveau_provisoire_preuves": "D",
+   "marque": null,
+   "marque_verifiee": false,
+   "marque_note": "aucun ®, ™ ni série commerciale vu aux pages lues ; registre des marques (TMview/EUIPO/INPI) non consulté : à faire par l'orchestrateur. Nom de cultivar au registre RHS = dénomination variétale",
+   "statut": "en production (après mesure des couleurs)",
+   "statut_raison": null,
+   "priorite": "assortiment_fleur_coupee",
+   "notes": [
+    "Candidat libre pour 'citron, trompette blanchissante' (Spellbinder) ; division, marque et photos à vérifier.",
+    "JdW : périanthe jaune, couronne blanche. Ce n'est pas un citron prouvé ; à confirmer avant de le proposer."
+   ]
+  },
+  {
+   "id": "topolino",
+   "nom": "Topolino",
+   "nom_enregistre": "Topolino",
+   "synonymes": [],
+   "coloris_rattache": null,
+   "division_registre": "1",
+   "code_couleur_registre": "W-Y",
+   "lecture_code": "périanthe blanc ; couronne (du fond vers le bord, zones du code) jaune",
+   "registre": {
+    "requete": "Topolino",
+    "nb_resultats_requete": 1,
+    "url_recherche": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Topolino",
+    "statut": "lu : recherche par nom, 2026-10-08",
+    "id": "214357",
+    "nom_registre": "Topolino",
+    "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffdetails.asp?ID=214357",
+    "homonymes": []
+   },
+   "division_annoncee_vendeurs": "1 (WP)",
+   "obtenteur": null,
+   "annee": null,
+   "origine_obtenteur_annee": null,
+   "couleur_annoncee": "crème / jaune citron (WP) ; JdW White/Yellow 15 cm",
+   "hauteur_fiche_jdw": "15 cm",
+   "couleur_fiche_jdw": "White/Yellow",
+   "sources_existence": [
+    {
+     "niveau": "N1",
+     "source": "RHSREG",
+     "nom_source": "RHS, International Daffodil Register (recherche par nom)",
+     "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Topolino"
+    },
+    {
+     "niveau": "N2",
+     "source": "JDW",
+     "nom_source": "Jan de Wit en Zonen, assortiment Narcissus, groupe Trumpet (19 fiches)",
+     "url": "https://www.jandewitenzonen.com/en/assortment/narcissus/"
+    },
+    {
+     "niveau": "N4",
+     "source": "WP",
+     "nom_source": "Wikipédia, List of Award of Garden Merit narcissus (colonne Div.)",
+     "url": "https://en.wikipedia.org/wiki/List_of_Award_of_Garden_Merit_narcissus"
+    }
+   ],
+   "photos": [
+    {
+     "niveau": "N2",
+     "auteur": "Jan de Wit en Zonen",
+     "image": "https://www.jandewitenzonen.com/img/products/narcissus/thumbs/Topolino.jpg",
+     "page": "https://www.jandewitenzonen.com/en/assortment/narcissus/",
+     "licence": "usage du site, non relevée",
+     "note": "vignette basse résolution (environ 160 px) ; fiche : White/Yellow, 15 cm"
+    }
+   ],
+   "concordance_photos": "vue à l'œil (vignette JDW) : périanthe blanc crème, trompette jaune, naine",
+   "niveau_preuve": "A",
+   "raison_niveau": "registre RHS lu (N1) + photo nommée N2 (Jan de Wit)",
+   "niveau_provisoire_preuves": "D",
+   "marque": null,
+   "marque_verifiee": false,
+   "marque_note": "aucun ®, ™ ni série commerciale vu aux pages lues ; registre des marques (TMview/EUIPO/INPI) non consulté : à faire par l'orchestrateur. Nom de cultivar au registre RHS = dénomination variétale",
+   "statut": "en production (après mesure des couleurs)",
+   "statut_raison": null,
+   "priorite": "assortiment_fleur_coupee",
+   "notes": [
+    "Nain (15 cm). Alternative pour 'crème, trompette citron'.",
+    "Nain. Alternative pour 'crème, trompette citron'."
+   ]
+  },
+  {
+   "id": "arctic-gold",
+   "nom": "Arctic Gold",
+   "nom_enregistre": "Arctic Gold",
+   "synonymes": [],
+   "coloris_rattache": null,
+   "division_registre": "1",
+   "code_couleur_registre": "Y-Y",
+   "lecture_code": "périanthe jaune ; couronne (du fond vers le bord, zones du code) jaune",
+   "registre": {
+    "requete": "Arctic Gold",
+    "nb_resultats_requete": 1,
+    "url_recherche": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Arctic%20Gold",
+    "statut": "lu : recherche par nom, 2026-10-08",
+    "id": "215432",
+    "nom_registre": "Arctic Gold",
+    "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffdetails.asp?ID=215432",
+    "homonymes": []
+   },
+   "division_annoncee_vendeurs": "1 (WP)",
+   "obtenteur": null,
+   "annee": null,
+   "origine_obtenteur_annee": null,
+   "couleur_annoncee": "jaune / jaune (WP ; JdW Yellow 45 cm ; JA 'pure golden yellow trumpet')",
+   "hauteur_fiche_jdw": "45 cm",
+   "couleur_fiche_jdw": "Yellow",
+   "sources_existence": [
+    {
+     "niveau": "N1",
+     "source": "RHSREG",
+     "nom_source": "RHS, International Daffodil Register (recherche par nom)",
+     "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Arctic%20Gold"
+    },
+    {
+     "niveau": "N2",
+     "source": "JDW",
+     "nom_source": "Jan de Wit en Zonen, assortiment Narcissus, groupe Trumpet (19 fiches)",
+     "url": "https://www.jandewitenzonen.com/en/assortment/narcissus/"
+    },
+    {
+     "niveau": "N3",
+     "source": "JA",
+     "nom_source": "Jacques Amand International, collection Narcissi Division 1 Trumpet (12 fiches)",
+     "url": "https://www.jacquesamand.com/collections/narcissi-division-1-trumpet-narcissi"
+    },
+    {
+     "niveau": "N3",
+     "source": "BL",
+     "nom_source": "Bloms Bulbs, Trumpet Daffodils (12 fiches)",
+     "url": "https://blomsbulbs.com/product-category/autumn/daffodils-narcissi/trumpet-daffodils/"
+    },
+    {
+     "niveau": "N4",
+     "source": "WP",
+     "nom_source": "Wikipédia, List of Award of Garden Merit narcissus (colonne Div.)",
+     "url": "https://en.wikipedia.org/wiki/List_of_Award_of_Garden_Merit_narcissus"
+    }
+   ],
+   "photos": [
+    {
+     "niveau": "N2",
+     "auteur": "Jan de Wit en Zonen",
+     "image": "https://www.jandewitenzonen.com/img/products/narcissus/thumbs/Arctic_Gold.jpg",
+     "page": "https://www.jandewitenzonen.com/en/assortment/narcissus/",
+     "licence": "usage du site, non relevée",
+     "note": "vignette basse résolution (environ 160 px) ; fiche : Yellow, 45 cm"
+    },
+    {
+     "niveau": "N3",
+     "auteur": "Jacques Amand International",
+     "image": "https://cdn.shopify.com/s/files/1/0711/1586/6390/products/Narcissus-Arctic-Gold_0290-1-1.jpg?v=1749652319",
+     "page": "https://www.jacquesamand.com/collections/narcissi-division-1-trumpet-narcissi",
+     "licence": "usage du site, non relevée"
+    },
+    {
+     "niveau": "N3",
+     "auteur": "Bloms Bulbs",
+     "image": "https://blomsbulbs.com/wp-content/uploads/2023/04/Arctic-Gold-420x454.jpg",
+     "page": "https://blomsbulbs.com/product-category/autumn/daffodils-narcissi/trumpet-daffodils/",
+     "licence": "usage du site, non relevée"
+    }
+   ],
+   "concordance_photos": "vue à l'œil (JDW, JA, Bloms) : jaune soutenu uni",
+   "niveau_preuve": "A",
+   "raison_niveau": "registre RHS lu (N1) + photo nommée N2 (Jan de Wit)",
+   "niveau_provisoire_preuves": "B",
+   "marque": null,
+   "marque_verifiee": false,
+   "marque_note": "aucun ®, ™ ni série commerciale vu aux pages lues ; registre des marques (TMview/EUIPO/INPI) non consulté : à faire par l'orchestrateur. Nom de cultivar au registre RHS = dénomination variétale",
+   "statut": "en production (après mesure des couleurs)",
+   "statut_raison": null,
+   "priorite": "assortiment_fleur_coupee",
+   "notes": [
+    "AGM.",
+    "AGM. Coloris non rattaché."
+   ]
+  },
+  {
+   "id": "arkle",
+   "nom": "Arkle",
+   "nom_enregistre": "Arkle",
+   "synonymes": [],
+   "coloris_rattache": null,
+   "division_registre": "1",
+   "code_couleur_registre": "Y-Y",
+   "lecture_code": "périanthe jaune ; couronne (du fond vers le bord, zones du code) jaune",
+   "registre": {
+    "requete": "Arkle",
+    "nb_resultats_requete": 5,
+    "url_recherche": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Arkle",
+    "statut": "lu : recherche par nom, 2026-10-08",
+    "id": "210387",
+    "nom_registre": "Arkle",
+    "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffdetails.asp?ID=210387",
+    "homonymes": []
+   },
+   "division_annoncee_vendeurs": "1 (WP)",
+   "obtenteur": null,
+   "annee": null,
+   "origine_obtenteur_annee": null,
+   "couleur_annoncee": "jaune / jaune (WP ; JdW Yellow)",
+   "hauteur_fiche_jdw": null,
+   "couleur_fiche_jdw": "Yellow",
+   "sources_existence": [
+    {
+     "niveau": "N1",
+     "source": "RHSREG",
+     "nom_source": "RHS, International Daffodil Register (recherche par nom)",
+     "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Arkle"
+    },
+    {
+     "niveau": "N2",
+     "source": "JDW",
+     "nom_source": "Jan de Wit en Zonen, assortiment Narcissus, groupe Trumpet (19 fiches)",
+     "url": "https://www.jandewitenzonen.com/en/assortment/narcissus/"
+    },
+    {
+     "niveau": "N3",
+     "source": "VE",
+     "nom_source": "Van Engelen, Trumpet Daffodils (19 fiches)",
+     "url": "https://www.vanengelen.com/flower-bulbs-index/narcissi/trumpet-daffodils.html"
+    },
+    {
+     "niveau": "N3",
+     "source": "BL",
+     "nom_source": "Bloms Bulbs, Trumpet Daffodils (12 fiches)",
+     "url": "https://blomsbulbs.com/product-category/autumn/daffodils-narcissi/trumpet-daffodils/"
+    },
+    {
+     "niveau": "N4",
+     "source": "WP",
+     "nom_source": "Wikipédia, List of Award of Garden Merit narcissus (colonne Div.)",
+     "url": "https://en.wikipedia.org/wiki/List_of_Award_of_Garden_Merit_narcissus"
+    }
+   ],
+   "photos": [
+    {
+     "niveau": "N2",
+     "auteur": "Jan de Wit en Zonen",
+     "image": "https://www.jandewitenzonen.com/img/products/narcissus/thumbs/Arkle.jpg",
+     "page": "https://www.jandewitenzonen.com/en/assortment/narcissus/",
+     "licence": "usage du site, non relevée",
+     "note": "vignette basse résolution (environ 160 px) ; fiche : Yellow, None"
+    },
+    {
+     "niveau": "N3",
+     "auteur": "Van Engelen",
+     "image": "https://www.vanengelen.com/media/catalog/product/cache/ae5a6ea9a5f2aff03513e6f42df29704/n/_/n_arkle_1.jpg",
+     "page": "https://www.vanengelen.com/flower-bulbs-index/narcissi/trumpet-daffodils.html",
+     "licence": "usage du site, non relevée",
+     "niveau_declare_preuves": "N2"
+    },
+    {
+     "niveau": "N3",
+     "auteur": "Bloms Bulbs",
+     "image": "https://blomsbulbs.com/wp-content/uploads/2023/04/Arkle-420x454.jpg",
+     "page": "https://blomsbulbs.com/product-category/autumn/daffodils-narcissi/trumpet-daffodils/",
+     "licence": "usage du site, non relevée"
+    }
+   ],
+   "concordance_photos": null,
+   "niveau_preuve": "A",
+   "raison_niveau": "registre RHS lu (N1) + photo nommée N2 (Jan de Wit)",
+   "niveau_provisoire_preuves": "B",
+   "marque": null,
+   "marque_verifiee": false,
+   "marque_note": "aucun ®, ™ ni série commerciale vu aux pages lues ; registre des marques (TMview/EUIPO/INPI) non consulté : à faire par l'orchestrateur. Nom de cultivar au registre RHS = dénomination variétale",
+   "statut": "en production (après mesure des couleurs)",
+   "statut_raison": null,
+   "priorite": "assortiment_fleur_coupee",
+   "notes": [
+    "Coloris non rattaché."
+   ]
+  },
+  {
+   "id": "exception",
+   "nom": "Exception",
+   "nom_enregistre": "Exception",
+   "synonymes": [],
+   "coloris_rattache": null,
+   "division_registre": "1",
+   "code_couleur_registre": "Y-Y",
+   "lecture_code": "périanthe jaune ; couronne (du fond vers le bord, zones du code) jaune",
+   "registre": {
+    "requete": "Exception",
+    "nb_resultats_requete": 1,
+    "url_recherche": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Exception",
+    "statut": "lu : recherche par nom, 2026-10-08",
+    "id": "211497",
+    "nom_registre": "Exception",
+    "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffdetails.asp?ID=211497",
+    "homonymes": []
+   },
+   "division_annoncee_vendeurs": "Trumpet (JdW)",
+   "obtenteur": null,
+   "annee": null,
+   "origine_obtenteur_annee": null,
+   "couleur_annoncee": "jaune (JdW Yellow 60 cm)",
+   "hauteur_fiche_jdw": "60 cm",
+   "couleur_fiche_jdw": "Yellow",
+   "sources_existence": [
+    {
+     "niveau": "N1",
+     "source": "RHSREG",
+     "nom_source": "RHS, International Daffodil Register (recherche par nom)",
+     "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Exception"
+    },
+    {
+     "niveau": "N2",
+     "source": "JDW",
+     "nom_source": "Jan de Wit en Zonen, assortiment Narcissus, groupe Trumpet (19 fiches)",
+     "url": "https://www.jandewitenzonen.com/en/assortment/narcissus/"
+    }
+   ],
+   "photos": [
+    {
+     "niveau": "N2",
+     "auteur": "Jan de Wit en Zonen",
+     "image": "https://www.jandewitenzonen.com/img/products/narcissus/thumbs/Exception.jpg",
+     "page": "https://www.jandewitenzonen.com/en/assortment/narcissus/",
+     "licence": "usage du site, non relevée",
+     "note": "vignette basse résolution (environ 160 px) ; fiche : Yellow, 60 cm"
+    }
+   ],
+   "concordance_photos": null,
+   "niveau_preuve": "A",
+   "raison_niveau": "registre RHS lu (N1) + photo nommée N2 (Jan de Wit)",
+   "niveau_provisoire_preuves": "D",
+   "marque": null,
+   "marque_verifiee": false,
+   "marque_note": "aucun ®, ™ ni série commerciale vu aux pages lues ; registre des marques (TMview/EUIPO/INPI) non consulté : à faire par l'orchestrateur. Nom de cultivar au registre RHS = dénomination variétale",
+   "statut": "en production (après mesure des couleurs)",
+   "statut_raison": null,
+   "priorite": "assortiment_fleur_coupee",
+   "notes": [
+    "Division à confirmer.",
+    "Division à confirmer."
+   ]
+  },
+  {
+   "id": "goblet",
+   "nom": "Goblet",
+   "nom_enregistre": "Goblet",
+   "synonymes": [],
+   "coloris_rattache": null,
+   "division_registre": "1",
+   "code_couleur_registre": "W-Y",
+   "lecture_code": "périanthe blanc ; couronne (du fond vers le bord, zones du code) jaune",
+   "registre": {
+    "requete": "Goblet",
+    "nb_resultats_requete": 7,
+    "url_recherche": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Goblet",
+    "statut": "lu : recherche par nom, 2026-10-08",
+    "id": "203245",
+    "nom_registre": "Goblet",
+    "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffdetails.asp?ID=203245",
+    "homonymes": []
+   },
+   "division_annoncee_vendeurs": "Trumpet (JdW, VE, PN, LF)",
+   "obtenteur": null,
+   "annee": null,
+   "origine_obtenteur_annee": null,
+   "couleur_annoncee": "blanc / jaune (JdW White/Yellow 40 cm)",
+   "hauteur_fiche_jdw": "40 cm",
+   "couleur_fiche_jdw": "White/Yellow",
+   "sources_existence": [
+    {
+     "niveau": "N1",
+     "source": "RHSREG",
+     "nom_source": "RHS, International Daffodil Register (recherche par nom)",
+     "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Goblet"
+    },
+    {
+     "niveau": "N2",
+     "source": "JDW",
+     "nom_source": "Jan de Wit en Zonen, assortiment Narcissus, groupe Trumpet (19 fiches)",
+     "url": "https://www.jandewitenzonen.com/en/assortment/narcissus/"
+    },
+    {
+     "niveau": "N3",
+     "source": "VE",
+     "nom_source": "Van Engelen, Trumpet Daffodils (19 fiches)",
+     "url": "https://www.vanengelen.com/flower-bulbs-index/narcissi/trumpet-daffodils.html"
+    },
+    {
+     "niveau": "N3",
+     "source": "PN",
+     "nom_source": "Peter Nyssen, Trumpet Daffodils (4 fiches)",
+     "url": "https://www.peternyssen.com/autumn-planting/daffodils-narcissi/trumpet-daffodils.html"
+    },
+    {
+     "niveau": "N3",
+     "source": "LF",
+     "nom_source": "Longfield Gardens, collection Narcissus (libellés 'Daffodil Trumpet ...')",
+     "url": "https://www.longfield-gardens.com/collections/narcissus"
+    }
+   ],
+   "photos": [
+    {
+     "niveau": "N2",
+     "auteur": "Jan de Wit en Zonen",
+     "image": "https://www.jandewitenzonen.com/img/products/narcissus/thumbs/Goblet.jpg",
+     "page": "https://www.jandewitenzonen.com/en/assortment/narcissus/",
+     "licence": "usage du site, non relevée",
+     "note": "vignette basse résolution (environ 160 px) ; fiche : White/Yellow, 40 cm"
+    },
+    {
+     "niveau": "N3",
+     "auteur": "Van Engelen",
+     "image": "https://www.vanengelen.com/media/catalog/product/cache/ae5a6ea9a5f2aff03513e6f42df29704/n/_/n_goblet_1-th_1.jpg",
+     "page": "https://www.vanengelen.com/flower-bulbs-index/narcissi/trumpet-daffodils.html",
+     "licence": "usage du site, non relevée",
+     "niveau_declare_preuves": "N2"
+    },
+    {
+     "niveau": "N3",
+     "auteur": "Peter Nyssen",
+     "image": "https://www.peternyssen.com/media/catalog/product/cache/c243bc2267b838a48b4508f4125c71c8/a/8/a8b5fbb30cd33b5576ee1aacf864c75bed0f642e_Narcissus_goblet_9132.jpg",
+     "page": "https://www.peternyssen.com/autumn-planting/daffodils-narcissi/trumpet-daffodils.html",
+     "licence": "usage du site, non relevée"
+    }
+   ],
+   "concordance_photos": null,
+   "niveau_preuve": "A",
+   "raison_niveau": "registre RHS lu (N1) + photo nommée N2 (Jan de Wit)",
+   "niveau_provisoire_preuves": "B",
+   "marque": null,
+   "marque_verifiee": false,
+   "marque_note": "aucun ®, ™ ni série commerciale vu aux pages lues ; registre des marques (TMview/EUIPO/INPI) non consulté : à faire par l'orchestrateur. Nom de cultivar au registre RHS = dénomination variétale",
+   "statut": "en production (après mesure des couleurs)",
+   "statut_raison": null,
+   "priorite": "assortiment_fleur_coupee",
+   "notes": [
+    "Division à confirmer.",
+    "Périanthe blanc crème selon PN ; couronne à mesurer."
+   ]
+  },
+  {
+   "id": "marieke",
+   "nom": "Marieke",
+   "nom_enregistre": "Marieke",
+   "synonymes": [],
+   "coloris_rattache": null,
+   "division_registre": "1",
+   "code_couleur_registre": "Y-GYY",
+   "lecture_code": "périanthe jaune ; couronne (du fond vers le bord, zones du code) vert puis jaune puis jaune",
+   "registre": {
+    "requete": "Marieke",
+    "nb_resultats_requete": 1,
+    "url_recherche": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Marieke",
+    "statut": "lu : recherche par nom, 2026-10-08",
+    "id": "212672",
+    "nom_registre": "Marieke",
+    "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffdetails.asp?ID=212672",
+    "homonymes": []
+   },
+   "division_annoncee_vendeurs": "Trumpet (JdW, VE)",
+   "obtenteur": null,
+   "annee": null,
+   "origine_obtenteur_annee": null,
+   "couleur_annoncee": "jaune (JdW Yellow 40 cm)",
+   "hauteur_fiche_jdw": "40 cm",
+   "couleur_fiche_jdw": "Yellow",
+   "sources_existence": [
+    {
+     "niveau": "N1",
+     "source": "RHSREG",
+     "nom_source": "RHS, International Daffodil Register (recherche par nom)",
+     "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Marieke"
+    },
+    {
+     "niveau": "N2",
+     "source": "JDW",
+     "nom_source": "Jan de Wit en Zonen, assortiment Narcissus, groupe Trumpet (19 fiches)",
+     "url": "https://www.jandewitenzonen.com/en/assortment/narcissus/"
+    },
+    {
+     "niveau": "N3",
+     "source": "VE",
+     "nom_source": "Van Engelen, Trumpet Daffodils (19 fiches)",
+     "url": "https://www.vanengelen.com/flower-bulbs-index/narcissi/trumpet-daffodils.html"
+    }
+   ],
+   "photos": [
+    {
+     "niveau": "N2",
+     "auteur": "Jan de Wit en Zonen",
+     "image": "https://www.jandewitenzonen.com/img/products/narcissus/thumbs/Marieke.jpg",
+     "page": "https://www.jandewitenzonen.com/en/assortment/narcissus/",
+     "licence": "usage du site, non relevée",
+     "note": "vignette basse résolution (environ 160 px) ; fiche : Yellow, 40 cm"
+    },
+    {
+     "niveau": "N3",
+     "auteur": "Van Engelen",
+     "image": "https://www.vanengelen.com/media/catalog/product/cache/ae5a6ea9a5f2aff03513e6f42df29704/n/_/n_marieke_1-th.jpg",
+     "page": "https://www.vanengelen.com/flower-bulbs-index/narcissi/trumpet-daffodils.html",
+     "licence": "usage du site, non relevée",
+     "niveau_declare_preuves": "N2"
+    }
+   ],
+   "concordance_photos": null,
+   "niveau_preuve": "A",
+   "raison_niveau": "registre RHS lu (N1) + photo nommée N2 (Jan de Wit)",
+   "niveau_provisoire_preuves": "C",
+   "marque": null,
+   "marque_verifiee": false,
+   "marque_note": "aucun ®, ™ ni série commerciale vu aux pages lues ; registre des marques (TMview/EUIPO/INPI) non consulté : à faire par l'orchestrateur. Nom de cultivar au registre RHS = dénomination variétale",
+   "statut": "en production (après mesure des couleurs)",
+   "statut_raison": null,
+   "priorite": "assortiment_fleur_coupee",
+   "notes": [
+    "Division à confirmer : les catégories 'trumpet' des vendeurs peuvent mêler la division 2.",
+    "Division à confirmer (les catégories 'trumpet' des vendeurs peuvent mêler la division 2)."
+   ]
+  },
+  {
+   "id": "primeur",
+   "nom": "Primeur",
+   "nom_enregistre": "Primeur",
+   "synonymes": [],
+   "coloris_rattache": null,
+   "division_registre": "1",
+   "code_couleur_registre": "Y-Y",
+   "lecture_code": "périanthe jaune ; couronne (du fond vers le bord, zones du code) jaune",
+   "registre": {
+    "requete": "Primeur",
+    "nb_resultats_requete": 1,
+    "url_recherche": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Primeur",
+    "statut": "lu : recherche par nom, 2026-10-08",
+    "id": "213403",
+    "nom_registre": "Primeur",
+    "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffdetails.asp?ID=213403",
+    "homonymes": []
+   },
+   "division_annoncee_vendeurs": "Trumpet (JdW)",
+   "obtenteur": null,
+   "annee": null,
+   "origine_obtenteur_annee": null,
+   "couleur_annoncee": "jaune (JdW Yellow 40 cm)",
+   "hauteur_fiche_jdw": "40 cm",
+   "couleur_fiche_jdw": "Yellow",
+   "sources_existence": [
+    {
+     "niveau": "N1",
+     "source": "RHSREG",
+     "nom_source": "RHS, International Daffodil Register (recherche par nom)",
+     "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Primeur"
+    },
+    {
+     "niveau": "N2",
+     "source": "JDW",
+     "nom_source": "Jan de Wit en Zonen, assortiment Narcissus, groupe Trumpet (19 fiches)",
+     "url": "https://www.jandewitenzonen.com/en/assortment/narcissus/"
+    }
+   ],
+   "photos": [
+    {
+     "niveau": "N2",
+     "auteur": "Jan de Wit en Zonen",
+     "image": "https://www.jandewitenzonen.com/img/products/narcissus/thumbs/Primeur.jpg",
+     "page": "https://www.jandewitenzonen.com/en/assortment/narcissus/",
+     "licence": "usage du site, non relevée",
+     "note": "vignette basse résolution (environ 160 px) ; fiche : Yellow, 40 cm"
+    }
+   ],
+   "concordance_photos": null,
+   "niveau_preuve": "A",
+   "raison_niveau": "registre RHS lu (N1) + photo nommée N2 (Jan de Wit)",
+   "niveau_provisoire_preuves": "D",
+   "marque": null,
+   "marque_verifiee": false,
+   "marque_note": "aucun ®, ™ ni série commerciale vu aux pages lues ; registre des marques (TMview/EUIPO/INPI) non consulté : à faire par l'orchestrateur. Nom de cultivar au registre RHS = dénomination variétale",
+   "statut": "en production (après mesure des couleurs)",
+   "statut_raison": null,
+   "priorite": "assortiment_fleur_coupee",
+   "notes": [
+    "Division à confirmer.",
+    "Division à confirmer."
+   ]
+  },
+  {
+   "id": "sabatini",
+   "nom": "Sabatini",
+   "nom_enregistre": "Sabatini",
+   "synonymes": [],
+   "coloris_rattache": null,
+   "division_registre": "1",
+   "code_couleur_registre": "Y-Y",
+   "lecture_code": "périanthe jaune ; couronne (du fond vers le bord, zones du code) jaune",
+   "registre": {
+    "requete": "Sabatini",
+    "nb_resultats_requete": 1,
+    "url_recherche": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Sabatini",
+    "statut": "lu : recherche par nom, 2026-10-08",
+    "id": "970820",
+    "nom_registre": "Sabatini",
+    "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffdetails.asp?ID=970820",
+    "homonymes": []
+   },
+   "division_annoncee_vendeurs": "Trumpet (JdW, VE)",
+   "obtenteur": null,
+   "annee": null,
+   "origine_obtenteur_annee": null,
+   "couleur_annoncee": "jaune (JdW Yellow 40 cm)",
+   "hauteur_fiche_jdw": "40 cm",
+   "couleur_fiche_jdw": "Yellow",
+   "sources_existence": [
+    {
+     "niveau": "N1",
+     "source": "RHSREG",
+     "nom_source": "RHS, International Daffodil Register (recherche par nom)",
+     "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Sabatini"
+    },
+    {
+     "niveau": "N2",
+     "source": "JDW",
+     "nom_source": "Jan de Wit en Zonen, assortiment Narcissus, groupe Trumpet (19 fiches)",
+     "url": "https://www.jandewitenzonen.com/en/assortment/narcissus/"
+    },
+    {
+     "niveau": "N3",
+     "source": "VE",
+     "nom_source": "Van Engelen, Trumpet Daffodils (19 fiches)",
+     "url": "https://www.vanengelen.com/flower-bulbs-index/narcissi/trumpet-daffodils.html"
+    }
+   ],
+   "photos": [
+    {
+     "niveau": "N2",
+     "auteur": "Jan de Wit en Zonen",
+     "image": "https://www.jandewitenzonen.com/img/products/narcissus/thumbs/Sabatini.jpg",
+     "page": "https://www.jandewitenzonen.com/en/assortment/narcissus/",
+     "licence": "usage du site, non relevée",
+     "note": "vignette basse résolution (environ 160 px) ; fiche : Yellow, 40 cm"
+    },
+    {
+     "niveau": "N3",
+     "auteur": "Van Engelen",
+     "image": "https://www.vanengelen.com/media/catalog/product/cache/ae5a6ea9a5f2aff03513e6f42df29704/n/_/n_sabatini_1-w.jpg",
+     "page": "https://www.vanengelen.com/flower-bulbs-index/narcissi/trumpet-daffodils.html",
+     "licence": "usage du site, non relevée",
+     "niveau_declare_preuves": "N2"
+    }
+   ],
+   "concordance_photos": null,
+   "niveau_preuve": "A",
+   "raison_niveau": "registre RHS lu (N1) + photo nommée N2 (Jan de Wit)",
+   "niveau_provisoire_preuves": "C",
+   "marque": null,
+   "marque_verifiee": false,
+   "marque_note": "aucun ®, ™ ni série commerciale vu aux pages lues ; registre des marques (TMview/EUIPO/INPI) non consulté : à faire par l'orchestrateur. Nom de cultivar au registre RHS = dénomination variétale",
+   "statut": "en production (après mesure des couleurs)",
+   "statut_raison": null,
+   "priorite": "assortiment_fleur_coupee",
+   "notes": [
+    "Division à confirmer.",
+    "Division à confirmer."
+   ]
+  },
+  {
+   "id": "gold-medal",
+   "nom": "Gold Medal",
+   "nom_enregistre": "Gold Medal",
+   "synonymes": [],
+   "coloris_rattache": null,
+   "division_registre": "1",
+   "code_couleur_registre": "Y-Y",
+   "lecture_code": "périanthe jaune ; couronne (du fond vers le bord, zones du code) jaune",
+   "registre": {
+    "requete": "Gold Medal",
+    "nb_resultats_requete": 3,
+    "url_recherche": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Gold%20Medal",
+    "statut": "lu : recherche par nom, 2026-10-08",
+    "id": "203278",
+    "nom_registre": "Gold Medal",
+    "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffdetails.asp?ID=203278",
+    "homonymes": []
+   },
+   "division_annoncee_vendeurs": "Trumpet (JdW)",
+   "obtenteur": null,
+   "annee": null,
+   "origine_obtenteur_annee": null,
+   "couleur_annoncee": "jaune (JdW Yellow 35 cm)",
+   "hauteur_fiche_jdw": "35 cm",
+   "couleur_fiche_jdw": "Yellow",
+   "sources_existence": [
+    {
+     "niveau": "N1",
+     "source": "RHSREG",
+     "nom_source": "RHS, International Daffodil Register (recherche par nom)",
+     "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Gold%20Medal"
+    },
+    {
+     "niveau": "N2",
+     "source": "JDW",
+     "nom_source": "Jan de Wit en Zonen, assortiment Narcissus, groupe Trumpet (19 fiches)",
+     "url": "https://www.jandewitenzonen.com/en/assortment/narcissus/"
+    }
+   ],
+   "photos": [
+    {
+     "niveau": "N2",
+     "auteur": "Jan de Wit en Zonen",
+     "image": "https://www.jandewitenzonen.com/img/products/narcissus/thumbs/Gold_Medal.jpg",
+     "page": "https://www.jandewitenzonen.com/en/assortment/narcissus/",
+     "licence": "usage du site, non relevée",
+     "note": "vignette basse résolution (environ 160 px) ; fiche : Yellow, 35 cm"
+    }
+   ],
+   "concordance_photos": null,
+   "niveau_preuve": "A",
+   "raison_niveau": "registre RHS lu (N1) + photo nommée N2 (Jan de Wit)",
+   "niveau_provisoire_preuves": "D",
+   "marque": null,
+   "marque_verifiee": false,
+   "marque_note": "aucun ®, ™ ni série commerciale vu aux pages lues ; registre des marques (TMview/EUIPO/INPI) non consulté : à faire par l'orchestrateur. Nom de cultivar au registre RHS = dénomination variétale",
+   "statut": "en production (après mesure des couleurs)",
+   "statut_raison": null,
+   "priorite": "assortiment_fleur_coupee",
+   "notes": [
+    "Division à confirmer.",
+    "Division à confirmer."
+   ]
+  },
+  {
+   "id": "attraction",
+   "nom": "Attraction",
+   "nom_enregistre": "Attraction",
+   "synonymes": [],
+   "coloris_rattache": null,
+   "division_registre": "1",
+   "code_couleur_registre": "W-Y",
+   "lecture_code": "périanthe blanc ; couronne (du fond vers le bord, zones du code) jaune",
+   "registre": {
+    "requete": "Attraction",
+    "nb_resultats_requete": 9,
+    "url_recherche": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Attraction",
+    "statut": "lu : recherche par nom, 2026-10-08",
+    "id": "215481",
+    "nom_registre": "Attraction",
+    "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffdetails.asp?ID=215481",
+    "homonymes": [
+     {
+      "id": "215482",
+      "division": "9",
+      "code": "W"
+     }
+    ]
+   },
+   "division_annoncee_vendeurs": "Trumpet (JdW)",
+   "obtenteur": null,
+   "annee": null,
+   "origine_obtenteur_annee": null,
+   "couleur_annoncee": "blanc / jaune (JdW White/Yellow 40 cm)",
+   "hauteur_fiche_jdw": "40 cm",
+   "couleur_fiche_jdw": "White/Yellow",
+   "sources_existence": [
+    {
+     "niveau": "N1",
+     "source": "RHSREG",
+     "nom_source": "RHS, International Daffodil Register (recherche par nom)",
+     "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Attraction"
+    },
+    {
+     "niveau": "N2",
+     "source": "JDW",
+     "nom_source": "Jan de Wit en Zonen, assortiment Narcissus, groupe Trumpet (19 fiches)",
+     "url": "https://www.jandewitenzonen.com/en/assortment/narcissus/"
+    }
+   ],
+   "photos": [
+    {
+     "niveau": "N2",
+     "auteur": "Jan de Wit en Zonen",
+     "image": "https://www.jandewitenzonen.com/img/products/narcissus/thumbs/Attraction.jpg",
+     "page": "https://www.jandewitenzonen.com/en/assortment/narcissus/",
+     "licence": "usage du site, non relevée",
+     "note": "vignette basse résolution (environ 160 px) ; fiche : White/Yellow, 40 cm"
+    }
+   ],
+   "concordance_photos": null,
+   "niveau_preuve": "A",
+   "raison_niveau": "registre RHS lu (N1) + photo nommée N2 (Jan de Wit)",
+   "niveau_provisoire_preuves": "D",
+   "marque": null,
+   "marque_verifiee": false,
+   "marque_note": "aucun ®, ™ ni série commerciale vu aux pages lues ; registre des marques (TMview/EUIPO/INPI) non consulté : à faire par l'orchestrateur. Nom de cultivar au registre RHS = dénomination variétale",
+   "statut": "en production (après mesure des couleurs)",
+   "statut_raison": null,
+   "priorite": "assortiment_fleur_coupee",
+   "notes": [
+    "Division à confirmer.",
+    "Division à confirmer."
+   ]
+  },
+  {
+   "id": "pink-parasol",
+   "nom": "Pink Parasol",
+   "nom_enregistre": "Pink Parasol",
+   "synonymes": [],
+   "coloris_rattache": null,
+   "division_registre": "1",
+   "code_couleur_registre": "W-P",
+   "lecture_code": "périanthe blanc ; couronne (du fond vers le bord, zones du code) rose",
+   "registre": {
+    "requete": "Pink Parasol",
+    "nb_resultats_requete": 1,
+    "url_recherche": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Pink%20Parasol",
+    "statut": "lu : recherche par nom, 2026-10-08",
+    "id": "224412",
+    "nom_registre": "Pink Parasol",
+    "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffdetails.asp?ID=224412",
+    "homonymes": []
+   },
+   "division_annoncee_vendeurs": "Trumpet (JdW)",
+   "obtenteur": null,
+   "annee": null,
+   "origine_obtenteur_annee": null,
+   "couleur_annoncee": "blanc / rose (JdW White/Pink)",
+   "hauteur_fiche_jdw": null,
+   "couleur_fiche_jdw": "White/Pink",
+   "sources_existence": [
+    {
+     "niveau": "N1",
+     "source": "RHSREG",
+     "nom_source": "RHS, International Daffodil Register (recherche par nom)",
+     "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Pink%20Parasol"
+    },
+    {
+     "niveau": "N2",
+     "source": "JDW",
+     "nom_source": "Jan de Wit en Zonen, assortiment Narcissus, groupe Trumpet (19 fiches)",
+     "url": "https://www.jandewitenzonen.com/en/assortment/narcissus/"
+    }
+   ],
+   "photos": [
+    {
+     "niveau": "N2",
+     "auteur": "Jan de Wit en Zonen",
+     "image": "https://www.jandewitenzonen.com/img/products/narcissus/thumbs/Pink_Parasol.jpg",
+     "page": "https://www.jandewitenzonen.com/en/assortment/narcissus/",
+     "licence": "usage du site, non relevée",
+     "note": "vignette basse résolution (environ 160 px) ; fiche : White/Pink, None"
+    }
+   ],
+   "concordance_photos": null,
+   "niveau_preuve": "A",
+   "raison_niveau": "registre RHS lu (N1) + photo nommée N2 (Jan de Wit)",
+   "niveau_provisoire_preuves": "D",
+   "marque": null,
+   "marque_verifiee": false,
+   "marque_note": "aucun ®, ™ ni série commerciale vu aux pages lues ; registre des marques (TMview/EUIPO/INPI) non consulté : à faire par l'orchestrateur. Nom de cultivar au registre RHS = dénomination variétale",
+   "statut": "en production (après mesure des couleurs)",
+   "statut_raison": null,
+   "priorite": "assortiment_fleur_coupee",
+   "notes": [
+    "Division à confirmer ; nom pouvant être commercial.",
+    "Nom pouvant être commercial : à vérifier au registre."
+   ]
+  },
+  {
+   "id": "rijnveld-s-early-sensation",
+   "nom": "Rijnveld's Early Sensation",
+   "nom_enregistre": "Rijnveld's Early Sensation",
+   "synonymes": [],
+   "coloris_rattache": null,
+   "division_registre": "1",
+   "code_couleur_registre": "Y-Y",
+   "lecture_code": "périanthe jaune ; couronne (du fond vers le bord, zones du code) jaune",
+   "registre": {
+    "requete": "Early Sensation",
+    "nb_resultats_requete": 3,
+    "url_recherche": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Early%20Sensation",
+    "statut": "lu : recherche par nom, 2026-10-08",
+    "id": "222842",
+    "nom_registre": "Rijnveld's Early Sensation",
+    "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffdetails.asp?ID=222842",
+    "homonymes": []
+   },
+   "division_annoncee_vendeurs": "1 (WP, JA)",
+   "obtenteur": null,
+   "annee": null,
+   "origine_obtenteur_annee": null,
+   "couleur_annoncee": "JA : 'bright yellow' ; WP : périanthe blanc, couronne rose (CONTRADICTION)",
+   "hauteur_fiche_jdw": null,
+   "couleur_fiche_jdw": null,
+   "sources_existence": [
+    {
+     "niveau": "N1",
+     "source": "RHSREG",
+     "nom_source": "RHS, International Daffodil Register (recherche par nom)",
+     "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Early%20Sensation"
+    },
+    {
+     "niveau": "N3",
+     "source": "JA",
+     "nom_source": "Jacques Amand International, collection Narcissi Division 1 Trumpet (12 fiches)",
+     "url": "https://www.jacquesamand.com/collections/narcissi-division-1-trumpet-narcissi"
+    },
+    {
+     "niveau": "N3",
+     "source": "VE",
+     "nom_source": "Van Engelen, Trumpet Daffodils (19 fiches)",
+     "url": "https://www.vanengelen.com/flower-bulbs-index/narcissi/trumpet-daffodils.html"
+    },
+    {
+     "niveau": "N3",
+     "source": "PN",
+     "nom_source": "Peter Nyssen, Trumpet Daffodils (4 fiches)",
+     "url": "https://www.peternyssen.com/autumn-planting/daffodils-narcissi/trumpet-daffodils.html"
+    },
+    {
+     "niveau": "N3",
+     "source": "BL",
+     "nom_source": "Bloms Bulbs, Trumpet Daffodils (12 fiches)",
+     "url": "https://blomsbulbs.com/product-category/autumn/daffodils-narcissi/trumpet-daffodils/"
+    },
+    {
+     "niveau": "N4",
+     "source": "WP",
+     "nom_source": "Wikipédia, List of Award of Garden Merit narcissus (colonne Div.)",
+     "url": "https://en.wikipedia.org/wiki/List_of_Award_of_Garden_Merit_narcissus"
+    }
+   ],
+   "photos": [
+    {
+     "niveau": "N3",
+     "auteur": "Jacques Amand International",
+     "image": "https://cdn.shopify.com/s/files/1/0711/1586/6390/files/NarcissusRijnveldsEarlySensation_4922_2_sq.jpg?v=1751895889",
+     "page": "https://www.jacquesamand.com/collections/narcissi-division-1-trumpet-narcissi",
+     "licence": "usage du site, non relevée"
+    },
+    {
+     "niveau": "N3",
+     "auteur": "Van Engelen",
+     "image": "https://www.vanengelen.com/media/catalog/product/cache/ae5a6ea9a5f2aff03513e6f42df29704/n/_/n_rijnvelds_early_sensation_1.jpg",
+     "page": "https://www.vanengelen.com/flower-bulbs-index/narcissi/trumpet-daffodils.html",
+     "licence": "usage du site, non relevée",
+     "niveau_declare_preuves": "N2"
+    },
+    {
+     "niveau": "N3",
+     "auteur": "Peter Nyssen",
+     "image": "https://www.peternyssen.com/media/catalog/product/cache/c243bc2267b838a48b4508f4125c71c8/6/1/6167913205834fee8f17d4be8c7ad7f0d0d39838_early_sensation.jpg",
+     "page": "https://www.peternyssen.com/autumn-planting/daffodils-narcissi/trumpet-daffodils.html",
+     "licence": "usage du site, non relevée"
+    }
+   ],
+   "concordance_photos": null,
+   "niveau_preuve": "B",
+   "raison_niveau": "nom prouvé (N1) + 3 sources de photo indépendantes dont une N2 ou N3",
+   "niveau_provisoire_preuves": "B",
+   "marque": null,
+   "marque_verifiee": false,
+   "marque_note": "aucun ®, ™ ni série commerciale vu aux pages lues ; registre des marques (TMview/EUIPO/INPI) non consulté : à faire par l'orchestrateur. Nom de cultivar au registre RHS = dénomination variétale",
+   "statut": "en production (après mesure des couleurs)",
+   "statut_raison": null,
+   "priorite": "classique_jardin",
+   "notes": [
+    "Contradiction de couleur entre WP et JA : le registre tranche (indisponible). Très précoce. AGM.",
+    "Très précoce. AGM. Le registre tranche : inaccessible."
+   ]
+  },
+  {
+   "id": "elka",
+   "nom": "Elka",
+   "nom_enregistre": "Elka",
+   "synonymes": [],
+   "coloris_rattache": null,
+   "division_registre": "1",
+   "code_couleur_registre": "W-W",
+   "lecture_code": "périanthe blanc ; couronne (du fond vers le bord, zones du code) blanc",
+   "registre": {
+    "requete": "Elka",
+    "nb_resultats_requete": 3,
+    "url_recherche": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Elka",
+    "statut": "lu : recherche par nom, 2026-10-08",
+    "id": "223372",
+    "nom_registre": "Elka",
+    "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffdetails.asp?ID=223372",
+    "homonymes": []
+   },
+   "division_annoncee_vendeurs": "1 (WP, JA)",
+   "obtenteur": null,
+   "annee": null,
+   "origine_obtenteur_annee": null,
+   "couleur_annoncee": "JA : périanthe jaune pâle qui blanchit ; WP : périanthe blanc, couronne jaune/blanc ; 26 cm",
+   "hauteur_fiche_jdw": null,
+   "couleur_fiche_jdw": null,
+   "sources_existence": [
+    {
+     "niveau": "N1",
+     "source": "RHSREG",
+     "nom_source": "RHS, International Daffodil Register (recherche par nom)",
+     "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Elka"
+    },
+    {
+     "niveau": "N3",
+     "source": "JA",
+     "nom_source": "Jacques Amand International, collection Narcissi Division 1 Trumpet (12 fiches)",
+     "url": "https://www.jacquesamand.com/collections/narcissi-division-1-trumpet-narcissi"
+    },
+    {
+     "niveau": "N3",
+     "source": "VE",
+     "nom_source": "Van Engelen, Trumpet Daffodils (19 fiches)",
+     "url": "https://www.vanengelen.com/flower-bulbs-index/narcissi/trumpet-daffodils.html"
+    },
+    {
+     "niveau": "N4",
+     "source": "WP",
+     "nom_source": "Wikipédia, List of Award of Garden Merit narcissus (colonne Div.)",
+     "url": "https://en.wikipedia.org/wiki/List_of_Award_of_Garden_Merit_narcissus"
+    }
+   ],
+   "photos": [
+    {
+     "niveau": "N3",
+     "auteur": "Jacques Amand International",
+     "image": "https://cdn.shopify.com/s/files/1/0711/1586/6390/products/Narcissus-Elka_3423-1-scaled-e1626176939143.jpg?v=1749652314",
+     "page": "https://www.jacquesamand.com/collections/narcissi-division-1-trumpet-narcissi",
+     "licence": "usage du site, non relevée"
+    },
+    {
+     "niveau": "N3",
+     "auteur": "Van Engelen",
+     "image": "https://www.vanengelen.com/media/catalog/product/cache/ae5a6ea9a5f2aff03513e6f42df29704/n/_/n_elka_2-w.jpg",
+     "page": "https://www.vanengelen.com/flower-bulbs-index/narcissi/trumpet-daffodils.html",
+     "licence": "usage du site, non relevée",
+     "niveau_declare_preuves": "N2"
+    }
+   ],
+   "concordance_photos": null,
+   "niveau_preuve": "B",
+   "raison_niveau": "nom prouvé (N1) + 2 sources de photo indépendantes dont une N2 ou N3",
+   "niveau_provisoire_preuves": "B",
+   "marque": null,
+   "marque_verifiee": false,
+   "marque_note": "aucun ®, ™ ni série commerciale vu aux pages lues ; registre des marques (TMview/EUIPO/INPI) non consulté : à faire par l'orchestrateur. Nom de cultivar au registre RHS = dénomination variétale",
+   "statut": "en production (après mesure des couleurs)",
+   "statut_raison": null,
+   "priorite": "classique_jardin",
+   "notes": [
+    "Nain, précoce. AGM.",
+    "Nain, précoce. AGM."
+   ]
+  },
+  {
+   "id": "british-gamble",
+   "nom": "British Gamble",
+   "nom_enregistre": "British Gamble",
+   "synonymes": [],
+   "coloris_rattache": null,
+   "division_registre": "1",
+   "code_couleur_registre": "W-YPP",
+   "lecture_code": "périanthe blanc ; couronne (du fond vers le bord, zones du code) jaune puis rose puis rose",
+   "registre": {
+    "requete": "British Gamble",
+    "nb_resultats_requete": 1,
+    "url_recherche": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=British%20Gamble",
+    "statut": "lu : recherche par nom, 2026-10-08",
+    "id": "1000591",
+    "nom_registre": "British Gamble",
+    "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffdetails.asp?ID=1000591",
+    "homonymes": []
+   },
+   "division_annoncee_vendeurs": "Trumpet (JdW, JA, BL, LF)",
+   "obtenteur": null,
+   "annee": null,
+   "origine_obtenteur_annee": "rapporté par fleur-preuves (lot 2 ou 3), non revérifié ; le registre RHS n'a pas donné de fiche de détail (504)",
+   "couleur_annoncee": "périanthe blanc, trompette rose (JA ; JdW White/Pink 50 cm)",
+   "hauteur_fiche_jdw": "50 cm",
+   "couleur_fiche_jdw": "White/Pink",
+   "sources_existence": [
+    {
+     "niveau": "N1",
+     "source": "RHSREG",
+     "nom_source": "RHS, International Daffodil Register (recherche par nom)",
+     "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=British%20Gamble"
+    },
+    {
+     "niveau": "N2",
+     "source": "JDW",
+     "nom_source": "Jan de Wit en Zonen, assortiment Narcissus, groupe Trumpet (19 fiches)",
+     "url": "https://www.jandewitenzonen.com/en/assortment/narcissus/"
+    },
+    {
+     "niveau": "N3",
+     "source": "JA",
+     "nom_source": "Jacques Amand International, collection Narcissi Division 1 Trumpet (12 fiches)",
+     "url": "https://www.jacquesamand.com/collections/narcissi-division-1-trumpet-narcissi"
+    },
+    {
+     "niveau": "N3",
+     "source": "BL",
+     "nom_source": "Bloms Bulbs, Trumpet Daffodils (12 fiches)",
+     "url": "https://blomsbulbs.com/product-category/autumn/daffodils-narcissi/trumpet-daffodils/"
+    },
+    {
+     "niveau": "N3",
+     "source": "LF",
+     "nom_source": "Longfield Gardens, collection Narcissus (libellés 'Daffodil Trumpet ...')",
+     "url": "https://www.longfield-gardens.com/collections/narcissus"
+    }
+   ],
+   "photos": [
+    {
+     "niveau": "N2",
+     "auteur": "Jan de Wit en Zonen",
+     "image": "https://www.jandewitenzonen.com/img/products/narcissus/thumbs/British_Gamble.jpg",
+     "page": "https://www.jandewitenzonen.com/en/assortment/narcissus/",
+     "licence": "usage du site, non relevée",
+     "note": "vignette basse résolution (environ 160 px) ; fiche : White/Pink, 50 cm"
+    },
+    {
+     "niveau": "N3",
+     "auteur": "Jacques Amand International",
+     "image": "https://cdn.shopify.com/s/files/1/0711/1586/6390/files/N0207NarcissusBritishGamble.jpg?v=1783947023",
+     "page": "https://www.jacquesamand.com/collections/narcissi-division-1-trumpet-narcissi",
+     "licence": "usage du vendeur, non relevé"
+    },
+    {
+     "niveau": "N3",
+     "auteur": "Bloms Bulbs",
+     "image": "https://blomsbulbs.com/wp-content/uploads/2023/04/British-Gamble-420x454.jpg",
+     "page": "https://blomsbulbs.com/catalogue/british-gamble/",
+     "licence": "usage du vendeur, non relevé"
+    }
+   ],
+   "concordance_photos": null,
+   "niveau_preuve": "A",
+   "raison_niveau": "registre RHS lu (N1) + photo nommée N2 (Jan de Wit)",
+   "niveau_provisoire_preuves": "B",
+   "marque": null,
+   "marque_verifiee": false,
+   "marque_note": "aucun ®, ™ ni série commerciale vu aux pages lues ; registre des marques (TMview/EUIPO/INPI) non consulté : à faire par l'orchestrateur. Nom de cultivar au registre RHS = dénomination variétale",
+   "statut": "en production (après mesure des couleurs)",
+   "statut_raison": null,
+   "priorite": "recent",
+   "notes": [
+    "JdW l'étiquette 'New'. Marque ou droits d'obtenteur possibles (CPVO non consulté).",
+    "Nouveauté récente selon JdW (étiquette New). Droits d'obtenteur possibles, CPVO non consulté."
+   ]
+  },
+  {
+   "id": "cornish-king",
+   "nom": "Cornish King",
+   "nom_enregistre": "Cornish King",
+   "synonymes": [],
+   "coloris_rattache": null,
+   "division_registre": "1",
+   "code_couleur_registre": "W-Y",
+   "lecture_code": "périanthe blanc ; couronne (du fond vers le bord, zones du code) jaune",
+   "registre": {
+    "requete": "Cornish King",
+    "nb_resultats_requete": 1,
+    "url_recherche": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Cornish%20King",
+    "statut": "lu : recherche par nom, 2026-10-08",
+    "id": "991014",
+    "nom_registre": "Cornish King",
+    "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffdetails.asp?ID=991014",
+    "homonymes": []
+   },
+   "division_annoncee_vendeurs": "Trumpet (JdW, BL)",
+   "obtenteur": null,
+   "annee": null,
+   "origine_obtenteur_annee": "rapporté par fleur-preuves (lot 2 ou 3), non revérifié ; le registre RHS n'a pas donné de fiche de détail (504)",
+   "couleur_annoncee": "crème / jaune (JdW Cream/Yellow 40 cm) ; BL 'bicolour'",
+   "hauteur_fiche_jdw": "40 cm",
+   "couleur_fiche_jdw": "Cream/Yellow",
+   "sources_existence": [
+    {
+     "niveau": "N1",
+     "source": "RHSREG",
+     "nom_source": "RHS, International Daffodil Register (recherche par nom)",
+     "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Cornish%20King"
+    },
+    {
+     "niveau": "N2",
+     "source": "JDW",
+     "nom_source": "Jan de Wit en Zonen, assortiment Narcissus, groupe Trumpet (19 fiches)",
+     "url": "https://www.jandewitenzonen.com/en/assortment/narcissus/"
+    },
+    {
+     "niveau": "N3",
+     "source": "BL",
+     "nom_source": "Bloms Bulbs, Trumpet Daffodils (12 fiches)",
+     "url": "https://blomsbulbs.com/product-category/autumn/daffodils-narcissi/trumpet-daffodils/"
+    }
+   ],
+   "photos": [
+    {
+     "niveau": "N2",
+     "auteur": "Jan de Wit en Zonen",
+     "image": "https://www.jandewitenzonen.com/img/products/narcissus/thumbs/Cornish_King.jpg",
+     "page": "https://www.jandewitenzonen.com/en/assortment/narcissus/",
+     "licence": "usage du site, non relevée",
+     "note": "vignette basse résolution (environ 160 px) ; fiche : Cream/Yellow, 40 cm"
+    },
+    {
+     "niveau": "N3",
+     "auteur": "Bloms Bulbs",
+     "image": "https://blomsbulbs.com/wp-content/uploads/2023/04/Cornish-King-420x454.jpg",
+     "page": "https://blomsbulbs.com/catalogue/cornish-king/",
+     "licence": "usage du vendeur, non relevé"
+    }
+   ],
+   "concordance_photos": null,
+   "niveau_preuve": "A",
+   "raison_niveau": "registre RHS lu (N1) + photo nommée N2 (Jan de Wit)",
+   "niveau_provisoire_preuves": "C",
+   "marque": null,
+   "marque_verifiee": false,
+   "marque_note": "aucun ®, ™ ni série commerciale vu aux pages lues ; registre des marques (TMview/EUIPO/INPI) non consulté : à faire par l'orchestrateur. Nom de cultivar au registre RHS = dénomination variétale",
+   "statut": "en production (après mesure des couleurs)",
+   "statut_raison": null,
+   "priorite": "recent",
+   "notes": [
+    "JdW l'étiquette 'New'. Droits d'obtenteur possibles.",
+    "JdW l'étiquette New, pas d'image lue sur JdW. Division à trouver au registre (non lu)."
+   ]
+  },
+  {
+   "id": "rosie-emily",
+   "nom": "Rosie Emily",
+   "nom_enregistre": "Rosie Emily",
+   "synonymes": [],
+   "coloris_rattache": null,
+   "division_registre": "1",
+   "code_couleur_registre": "Y-P",
+   "lecture_code": "périanthe jaune ; couronne (du fond vers le bord, zones du code) rose",
+   "registre": {
+    "requete": "Rosie Emily",
+    "nb_resultats_requete": 1,
+    "url_recherche": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Rosie%20Emily",
+    "statut": "lu : recherche par nom, 2026-10-08",
+    "id": "957798",
+    "nom_registre": "Rosie Emily",
+    "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffdetails.asp?ID=957798",
+    "homonymes": []
+   },
+   "division_annoncee_vendeurs": "Division 1 (JA)",
+   "obtenteur": null,
+   "annee": null,
+   "origine_obtenteur_annee": "rapporté par fleur-preuves (lot 2 ou 3), non revérifié ; le registre RHS n'a pas donné de fiche de détail (504)",
+   "couleur_annoncee": "périanthe jaune, couronne rose (JA)",
+   "hauteur_fiche_jdw": null,
+   "couleur_fiche_jdw": null,
+   "sources_existence": [
+    {
+     "niveau": "N1",
+     "source": "RHSREG",
+     "nom_source": "RHS, International Daffodil Register (recherche par nom)",
+     "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Rosie%20Emily"
+    },
+    {
+     "niveau": "N3",
+     "source": "JA",
+     "nom_source": "Jacques Amand International, collection Narcissi Division 1 Trumpet (12 fiches)",
+     "url": "https://www.jacquesamand.com/collections/narcissi-division-1-trumpet-narcissi"
+    }
+   ],
+   "photos": [],
+   "concordance_photos": null,
+   "niveau_preuve": "D",
+   "raison_niveau": "nom prouvé par le registre RHS, aucune photo nommée",
+   "niveau_provisoire_preuves": "D",
+   "marque": null,
+   "marque_verifiee": false,
+   "marque_note": "aucun ®, ™ ni série commerciale vu aux pages lues ; registre des marques (TMview/EUIPO/INPI) non consulté : à faire par l'orchestrateur. Nom de cultivar au registre RHS = dénomination variétale",
+   "statut": "à confirmer",
+   "statut_raison": null,
+   "priorite": "recent",
+   "notes": [
+    "JA l'étiquette 'new'.",
+    "L'image JA est une vignette « Photo coming soon » : pas une photo, non retenue. Nouveauté récente (JA 'new')."
+   ]
+  },
+  {
+   "id": "lorikeet",
+   "nom": "Lorikeet",
+   "nom_enregistre": "Lorikeet",
+   "synonymes": [],
+   "coloris_rattache": null,
+   "division_registre": "1",
+   "code_couleur_registre": "Y-P",
+   "lecture_code": "périanthe jaune ; couronne (du fond vers le bord, zones du code) rose",
+   "registre": {
+    "requete": "Lorikeet",
+    "nb_resultats_requete": 1,
+    "url_recherche": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Lorikeet",
+    "statut": "lu : recherche par nom, 2026-10-08",
+    "id": "212524",
+    "nom_registre": "Lorikeet",
+    "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffdetails.asp?ID=212524",
+    "homonymes": []
+   },
+   "division_annoncee_vendeurs": "Division 1 (JA)",
+   "obtenteur": null,
+   "annee": null,
+   "origine_obtenteur_annee": "rapporté par fleur-preuves (lot 2 ou 3), non revérifié ; le registre RHS n'a pas donné de fiche de détail (504)",
+   "couleur_annoncee": "périanthe jaune citron tendre, couronne évasée abricot-rose (JA)",
+   "hauteur_fiche_jdw": null,
+   "couleur_fiche_jdw": null,
+   "sources_existence": [
+    {
+     "niveau": "N1",
+     "source": "RHSREG",
+     "nom_source": "RHS, International Daffodil Register (recherche par nom)",
+     "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Lorikeet"
+    },
+    {
+     "niveau": "N3",
+     "source": "JA",
+     "nom_source": "Jacques Amand International, collection Narcissi Division 1 Trumpet (12 fiches)",
+     "url": "https://www.jacquesamand.com/collections/narcissi-division-1-trumpet-narcissi"
+    }
+   ],
+   "photos": [
+    {
+     "niveau": "N3",
+     "auteur": "Jacques Amand International",
+     "image": "https://cdn.shopify.com/s/files/1/0711/1586/6390/products/Narcissus-Lorikeet-kkf-06-vk.-e1626177662231.jpg?v=1749652311",
+     "page": "https://www.jacquesamand.com/collections/narcissi-division-1-trumpet-narcissi",
+     "licence": "usage du vendeur, non relevé"
+    }
+   ],
+   "concordance_photos": null,
+   "niveau_preuve": "C",
+   "raison_niveau": "nom prouvé (N1), une seule source de photo exploitable",
+   "niveau_provisoire_preuves": "C",
+   "marque": null,
+   "marque_verifiee": false,
+   "marque_note": "aucun ®, ™ ni série commerciale vu aux pages lues ; registre des marques (TMview/EUIPO/INPI) non consulté : à faire par l'orchestrateur. Nom de cultivar au registre RHS = dénomination variétale",
+   "statut": "à confirmer",
+   "statut_raison": null,
+   "priorite": "recent",
+   "notes": [
+    "À confirmer au registre : couronne évasée.",
+    "Couronne évasée à confirmer au registre. Droits d'obtenteur possibles."
+   ]
+  },
+  {
+   "id": "llanfair",
+   "nom": "Llanfair",
+   "nom_enregistre": "Llanfair",
+   "synonymes": [],
+   "coloris_rattache": null,
+   "division_registre": "1",
+   "code_couleur_registre": "W/Y-P",
+   "lecture_code": "périanthe blanc / / / jaune ; couronne (du fond vers le bord, zones du code) rose",
+   "registre": {
+    "requete": "Llanfair",
+    "nb_resultats_requete": 1,
+    "url_recherche": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Llanfair",
+    "statut": "lu : recherche par nom, 2026-10-08",
+    "id": "924518",
+    "nom_registre": "Llanfair",
+    "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffdetails.asp?ID=924518",
+    "homonymes": []
+   },
+   "division_annoncee_vendeurs": "Division 1 (JA)",
+   "obtenteur": null,
+   "annee": null,
+   "origine_obtenteur_annee": "rapporté par fleur-preuves (lot 2 ou 3), non revérifié ; le registre RHS n'a pas donné de fiche de détail (504)",
+   "couleur_annoncee": "s'ouvre jaune verdâtre puis blanc verdâtre (JA)",
+   "hauteur_fiche_jdw": null,
+   "couleur_fiche_jdw": null,
+   "sources_existence": [
+    {
+     "niveau": "N1",
+     "source": "RHSREG",
+     "nom_source": "RHS, International Daffodil Register (recherche par nom)",
+     "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Llanfair"
+    },
+    {
+     "niveau": "N3",
+     "source": "JA",
+     "nom_source": "Jacques Amand International, collection Narcissi Division 1 Trumpet (12 fiches)",
+     "url": "https://www.jacquesamand.com/collections/narcissi-division-1-trumpet-narcissi"
+    },
+    {
+     "niveau": "N3",
+     "source": "VE",
+     "nom_source": "Van Engelen, Trumpet Daffodils (19 fiches)",
+     "url": "https://www.vanengelen.com/flower-bulbs-index/narcissi/trumpet-daffodils.html"
+    }
+   ],
+   "photos": [
+    {
+     "niveau": "N3",
+     "auteur": "Jacques Amand International",
+     "image": "https://cdn.shopify.com/s/files/1/0711/1586/6390/files/NarcissusLlanfair-joskuiper_0224_2.jpg?v=1781024463",
+     "page": "https://www.jacquesamand.com/collections/narcissi-division-1-trumpet-narcissi",
+     "licence": "photo créditée Jos Kuiper (via JA), licence non relevée"
+    }
+   ],
+   "concordance_photos": null,
+   "niveau_preuve": "C",
+   "raison_niveau": "nom prouvé (N1), une seule source de photo exploitable",
+   "niveau_provisoire_preuves": "C",
+   "marque": null,
+   "marque_verifiee": false,
+   "marque_note": "aucun ®, ™ ni série commerciale vu aux pages lues ; registre des marques (TMview/EUIPO/INPI) non consulté : à faire par l'orchestrateur. Nom de cultivar au registre RHS = dénomination variétale",
+   "statut": "à confirmer",
+   "statut_raison": null,
+   "priorite": "classique_jardin",
+   "notes": [
+    "Parfumé selon JA.",
+    "Parfumé selon JA. Van Engelen liste aussi 'Llanfair' (fiche non lue)."
+   ]
+  },
+  {
+   "id": "snow-baby",
+   "nom": "Snow Baby",
+   "nom_enregistre": "Snow Baby",
+   "synonymes": [],
+   "coloris_rattache": null,
+   "division_registre": "1",
+   "code_couleur_registre": "W-W",
+   "lecture_code": "périanthe blanc ; couronne (du fond vers le bord, zones du code) blanc",
+   "registre": {
+    "requete": "Snow Baby",
+    "nb_resultats_requete": 1,
+    "url_recherche": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Snow%20Baby",
+    "statut": "lu : recherche par nom, 2026-10-08",
+    "id": "975221",
+    "nom_registre": "Snow Baby",
+    "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffdetails.asp?ID=975221",
+    "homonymes": []
+   },
+   "division_annoncee_vendeurs": "Division 1 (JA)",
+   "obtenteur": null,
+   "annee": null,
+   "origine_obtenteur_annee": "rapporté par fleur-preuves (lot 2 ou 3), non revérifié ; le registre RHS n'a pas donné de fiche de détail (504)",
+   "couleur_annoncee": "blanc pur, nain (JA)",
+   "hauteur_fiche_jdw": null,
+   "couleur_fiche_jdw": null,
+   "sources_existence": [
+    {
+     "niveau": "N1",
+     "source": "RHSREG",
+     "nom_source": "RHS, International Daffodil Register (recherche par nom)",
+     "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Snow%20Baby"
+    },
+    {
+     "niveau": "N3",
+     "source": "JA",
+     "nom_source": "Jacques Amand International, collection Narcissi Division 1 Trumpet (12 fiches)",
+     "url": "https://www.jacquesamand.com/collections/narcissi-division-1-trumpet-narcissi"
+    },
+    {
+     "niveau": "N3",
+     "source": "FL",
+     "nom_source": "Fluwel, narcissen (la description mentionne 'trompet')",
+     "url": "https://www.fluwel.nl/collections/narcissen"
+    }
+   ],
+   "photos": [
+    {
+     "niveau": "N3",
+     "auteur": "Jacques Amand International",
+     "image": "https://cdn.shopify.com/s/files/1/0711/1586/6390/files/NarcissusSnowBaby_2013_7_sq.jpg?v=1751896173",
+     "page": "https://www.jacquesamand.com/collections/narcissi-division-1-trumpet-narcissi",
+     "licence": "usage du vendeur, non relevé"
+    }
+   ],
+   "concordance_photos": null,
+   "niveau_preuve": "C",
+   "raison_niveau": "nom prouvé (N1), une seule source de photo exploitable",
+   "niveau_provisoire_preuves": "C",
+   "marque": null,
+   "marque_verifiee": false,
+   "marque_note": "aucun ®, ™ ni série commerciale vu aux pages lues ; registre des marques (TMview/EUIPO/INPI) non consulté : à faire par l'orchestrateur. Nom de cultivar au registre RHS = dénomination variétale",
+   "statut": "à confirmer",
+   "statut_raison": null,
+   "priorite": "classique_jardin",
+   "notes": [
+    "Fluwel listé (non lu). Pas de N1 lu."
+   ]
+  },
+  {
+   "id": "w-p-milner",
+   "nom": "W. P. Milner",
+   "nom_enregistre": "W.P.Milner",
+   "synonymes": [],
+   "coloris_rattache": null,
+   "division_registre": "1",
+   "code_couleur_registre": "W-W",
+   "lecture_code": "périanthe blanc ; couronne (du fond vers le bord, zones du code) blanc",
+   "registre": {
+    "requete": "Milner",
+    "nb_resultats_requete": 7,
+    "url_recherche": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Milner",
+    "statut": "lu : recherche par nom, 2026-10-08",
+    "id": "222943",
+    "nom_registre": "W.P.Milner",
+    "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffdetails.asp?ID=222943",
+    "homonymes": []
+   },
+   "division_annoncee_vendeurs": "1 W-W (OHG)",
+   "obtenteur": null,
+   "annee": "1869 (JA, OHG)",
+   "origine_obtenteur_annee": "rapporté par fleur-preuves (lot 2 ou 3), non revérifié ; le registre RHS n'a pas donné de fiche de détail (504)",
+   "couleur_annoncee": "blanc crème / blanc (JA 'creamy white with whitish trumpet' ; OHG W-W)",
+   "hauteur_fiche_jdw": null,
+   "couleur_fiche_jdw": null,
+   "sources_existence": [
+    {
+     "niveau": "N1",
+     "source": "RHSREG",
+     "nom_source": "RHS, International Daffodil Register (recherche par nom)",
+     "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Milner"
+    },
+    {
+     "niveau": "N3",
+     "source": "JA",
+     "nom_source": "Jacques Amand International, collection Narcissi Division 1 Trumpet (12 fiches)",
+     "url": "https://www.jacquesamand.com/collections/narcissi-division-1-trumpet-narcissi"
+    },
+    {
+     "niveau": "N3",
+     "source": "OHG",
+     "nom_source": "Old House Gardens, narcisses anciens (code de division en tête de chaque code)",
+     "url": "https://oldhousegardens.com/store/category/Daffodil"
+    }
+   ],
+   "photos": [
+    {
+     "niveau": "N3",
+     "auteur": "Jacques Amand International",
+     "image": "https://cdn.shopify.com/s/files/1/0711/1586/6390/products/Narcissus-W-P-Milner-377-e1559999630833.jpg?v=1749652317",
+     "page": "https://www.jacquesamand.com/collections/narcissi-division-1-trumpet-narcissi",
+     "licence": "usage du vendeur, non relevé"
+    }
+   ],
+   "concordance_photos": null,
+   "niveau_preuve": "C",
+   "raison_niveau": "nom prouvé (N1), une seule source de photo exploitable",
+   "niveau_provisoire_preuves": "C",
+   "marque": null,
+   "marque_verifiee": false,
+   "marque_note": "aucun ®, ™ ni série commerciale vu aux pages lues ; registre des marques (TMview/EUIPO/INPI) non consulté : à faire par l'orchestrateur. Nom de cultivar au registre RHS = dénomination variétale",
+   "statut": "à confirmer",
+   "statut_raison": null,
+   "priorite": "classique_jardin",
+   "notes": [
+    "Nain.",
+    "Nain, ancien (1869). Registre non lu."
+   ]
+  },
+  {
+   "id": "classic-garden",
+   "nom": "Classic Garden",
+   "nom_enregistre": "Classic Garden",
+   "synonymes": [],
+   "coloris_rattache": null,
+   "division_registre": "1",
+   "code_couleur_registre": "Y-O",
+   "lecture_code": "périanthe jaune ; couronne (du fond vers le bord, zones du code) orange",
+   "registre": {
+    "requete": "Classic Garden",
+    "nb_resultats_requete": 1,
+    "url_recherche": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Classic%20Garden",
+    "statut": "lu : recherche par nom, 2026-10-08",
+    "id": "960111",
+    "nom_registre": "Classic Garden",
+    "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffdetails.asp?ID=960111",
+    "homonymes": []
+   },
+   "division_annoncee_vendeurs": "Trumpet (VE)",
+   "obtenteur": null,
+   "annee": null,
+   "origine_obtenteur_annee": "rapporté par fleur-preuves (lot 2 ou 3), non revérifié ; le registre RHS n'a pas donné de fiche de détail (504)",
+   "couleur_annoncee": "non indiquée",
+   "hauteur_fiche_jdw": null,
+   "couleur_fiche_jdw": null,
+   "sources_existence": [
+    {
+     "niveau": "N1",
+     "source": "RHSREG",
+     "nom_source": "RHS, International Daffodil Register (recherche par nom)",
+     "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Classic%20Garden"
+    },
+    {
+     "niveau": "N3",
+     "source": "VE",
+     "nom_source": "Van Engelen, Trumpet Daffodils (19 fiches)",
+     "url": "https://www.vanengelen.com/flower-bulbs-index/narcissi/trumpet-daffodils.html"
+    }
+   ],
+   "photos": [
+    {
+     "niveau": "N3",
+     "auteur": "Van Engelen",
+     "image": "https://www.vanengelen.com/media/catalog/product/cache/56adb830892d957d56a625301cb4427e/n/n_classic_garden_a-w.jpg",
+     "page": "https://www.vanengelen.com/flower-bulbs-index/narcissi/trumpet-daffodils/narcissus-classic-garden.html",
+     "licence": "usage du vendeur, non relevé",
+     "niveau_declare_preuves": "N2",
+     "exclue": "image de remplacement du site (même fichier que 5 autres fiches) : ne compte pas comme photo"
+    }
+   ],
+   "concordance_photos": null,
+   "niveau_preuve": "D",
+   "raison_niveau": "nom prouvé par le registre RHS, aucune photo nommée",
+   "niveau_provisoire_preuves": "C",
+   "marque": null,
+   "marque_verifiee": false,
+   "marque_note": "aucun ®, ™ ni série commerciale vu aux pages lues ; registre des marques (TMview/EUIPO/INPI) non consulté : à faire par l'orchestrateur. Nom de cultivar au registre RHS = dénomination variétale",
+   "statut": "à confirmer",
+   "statut_raison": null,
+   "priorite": "classique_jardin",
+   "notes": [
+    "Division et couleur à trouver.",
+    "Obtenteur non trouvé."
+   ]
+  },
+  {
+   "id": "ice-baby",
+   "nom": "Ice Baby",
+   "nom_enregistre": "Ice Baby",
+   "synonymes": [],
+   "coloris_rattache": null,
+   "division_registre": "1",
+   "code_couleur_registre": "W-W",
+   "lecture_code": "périanthe blanc ; couronne (du fond vers le bord, zones du code) blanc",
+   "registre": {
+    "requete": "Ice Baby",
+    "nb_resultats_requete": 1,
+    "url_recherche": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Ice%20Baby",
+    "statut": "lu : recherche par nom, 2026-10-08",
+    "id": "1021528",
+    "nom_registre": "Ice Baby",
+    "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffdetails.asp?ID=1021528",
+    "homonymes": []
+   },
+   "division_annoncee_vendeurs": "Trumpet (VE, fiche intitulée 'Trumpet Daffodil Ice Baby')",
+   "obtenteur": null,
+   "annee": null,
+   "origine_obtenteur_annee": "rapporté par fleur-preuves (lot 2 ou 3), non revérifié ; le registre RHS n'a pas donné de fiche de détail (504)",
+   "couleur_annoncee": "non indiquée",
+   "hauteur_fiche_jdw": null,
+   "couleur_fiche_jdw": null,
+   "sources_existence": [
+    {
+     "niveau": "N1",
+     "source": "RHSREG",
+     "nom_source": "RHS, International Daffodil Register (recherche par nom)",
+     "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Ice%20Baby"
+    },
+    {
+     "niveau": "N3",
+     "source": "VE",
+     "nom_source": "Van Engelen, Trumpet Daffodils (19 fiches)",
+     "url": "https://www.vanengelen.com/flower-bulbs-index/narcissi/trumpet-daffodils.html"
+    }
+   ],
+   "photos": [
+    {
+     "niveau": "N3",
+     "auteur": "Van Engelen",
+     "image": "https://www.vanengelen.com/media/catalog/product/cache/56adb830892d957d56a625301cb4427e/n/n_ice_baby_2.jpg",
+     "page": "https://www.vanengelen.com/flower-bulbs-index/narcissi/trumpet-daffodils/narcissus-ice-baby.html",
+     "licence": "usage du vendeur, non relevé",
+     "niveau_declare_preuves": "N2",
+     "exclue": "image de remplacement du site (même fichier que 5 autres fiches) : ne compte pas comme photo"
+    }
+   ],
+   "concordance_photos": null,
+   "niveau_preuve": "D",
+   "raison_niveau": "nom prouvé par le registre RHS, aucune photo nommée",
+   "niveau_provisoire_preuves": "C",
+   "marque": null,
+   "marque_verifiee": false,
+   "marque_note": "aucun ®, ™ ni série commerciale vu aux pages lues ; registre des marques (TMview/EUIPO/INPI) non consulté : à faire par l'orchestrateur. Nom de cultivar au registre RHS = dénomination variétale",
+   "statut": "à confirmer",
+   "statut_raison": null,
+   "priorite": "classique_jardin",
+   "notes": [
+    "Obtenteur non trouvé."
+   ]
+  },
+  {
+   "id": "january-silver",
+   "nom": "January Silver",
+   "nom_enregistre": "January Silver",
+   "synonymes": [],
+   "coloris_rattache": null,
+   "division_registre": "2",
+   "code_couleur_registre": "W-Y",
+   "lecture_code": "périanthe blanc ; couronne (du fond vers le bord, zones du code) jaune",
+   "registre": {
+    "requete": "January Silver",
+    "nb_resultats_requete": 1,
+    "url_recherche": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=January%20Silver",
+    "statut": "lu : recherche par nom, 2026-10-08",
+    "id": "229135",
+    "nom_registre": "January Silver",
+    "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffdetails.asp?ID=229135",
+    "homonymes": []
+   },
+   "division_annoncee_vendeurs": "DOUTE : VE le range dans 'trumpet' mais sa fiche s'intitule 'Large Cupped Narcissus January Silver'",
+   "obtenteur": null,
+   "annee": null,
+   "origine_obtenteur_annee": "rapporté par fleur-preuves (lot 2 ou 3), non revérifié ; le registre RHS n'a pas donné de fiche de détail (504)",
+   "couleur_annoncee": "non indiquée",
+   "hauteur_fiche_jdw": null,
+   "couleur_fiche_jdw": null,
+   "sources_existence": [
+    {
+     "niveau": "N1",
+     "source": "RHSREG",
+     "nom_source": "RHS, International Daffodil Register (recherche par nom)",
+     "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=January%20Silver"
+    },
+    {
+     "niveau": "N3",
+     "source": "VE",
+     "nom_source": "Van Engelen, Trumpet Daffodils (19 fiches)",
+     "url": "https://www.vanengelen.com/flower-bulbs-index/narcissi/trumpet-daffodils.html"
+    }
+   ],
+   "photos": [
+    {
+     "niveau": "N3",
+     "auteur": "Van Engelen",
+     "image": "https://www.vanengelen.com/media/catalog/product/cache/56adb830892d957d56a625301cb4427e/n/n/a/narcissus-januarysilver1-w.jpg",
+     "page": "https://www.vanengelen.com/flower-bulbs-index/narcissi/trumpet-daffodils/narcissus-january-silver.html",
+     "licence": "usage du vendeur, non relevé",
+     "niveau_declare_preuves": "N2",
+     "exclue": "image de remplacement du site (même fichier que 5 autres fiches) : ne compte pas comme photo"
+    }
+   ],
+   "concordance_photos": null,
+   "niveau_preuve": "D",
+   "raison_niveau": "nom prouvé par le registre RHS, aucune photo nommée",
+   "niveau_provisoire_preuves": "C",
+   "marque": null,
+   "marque_verifiee": false,
+   "marque_note": "aucun ®, ™ ni série commerciale vu aux pages lues ; registre des marques (TMview/EUIPO/INPI) non consulté : à faire par l'orchestrateur. Nom de cultivar au registre RHS = dénomination variétale",
+   "statut": "autre_sorte",
+   "statut_raison": "division 2 : à écarter de la sorte trompette (division 1)",
+   "priorite": "classique_jardin",
+   "notes": [
+    "Probablement division 2 : preuve que la catégorie 'trumpet' des vendeurs mêle les divisions.",
+    "Division 2 selon la source. Une seule photo."
+   ]
+  },
+  {
+   "id": "king-alfred",
+   "nom": "King Alfred",
+   "nom_enregistre": "King Alfred",
+   "synonymes": [],
+   "coloris_rattache": null,
+   "division_registre": "1",
+   "code_couleur_registre": "Y-Y",
+   "lecture_code": "périanthe jaune ; couronne (du fond vers le bord, zones du code) jaune",
+   "registre": {
+    "requete": "King Alfred",
+    "nb_resultats_requete": 1,
+    "url_recherche": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=King%20Alfred",
+    "statut": "lu : recherche par nom, 2026-10-08",
+    "id": "218505",
+    "nom_registre": "King Alfred",
+    "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffdetails.asp?ID=218505",
+    "homonymes": []
+   },
+   "division_annoncee_vendeurs": "1 Y-Y (OHG)",
+   "obtenteur": null,
+   "annee": "1899 (OHG)",
+   "origine_obtenteur_annee": "rapporté par fleur-preuves (lot 2 ou 3), non revérifié ; le registre RHS n'a pas donné de fiche de détail (504)",
+   "couleur_annoncee": "jaune / jaune (OHG 1899 Y-Y)",
+   "hauteur_fiche_jdw": null,
+   "couleur_fiche_jdw": null,
+   "sources_existence": [
+    {
+     "niveau": "N1",
+     "source": "RHSREG",
+     "nom_source": "RHS, International Daffodil Register (recherche par nom)",
+     "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=King%20Alfred"
+    },
+    {
+     "niveau": "N3",
+     "source": "OHG",
+     "nom_source": "Old House Gardens, narcisses anciens (code de division en tête de chaque code)",
+     "url": "https://oldhousegardens.com/store/category/Daffodil"
+    },
+    {
+     "niveau": "N3",
+     "source": "VE",
+     "nom_source": "Van Engelen, Trumpet Daffodils (19 fiches)",
+     "url": "https://www.vanengelen.com/flower-bulbs-index/narcissi/trumpet-daffodils.html"
+    }
+   ],
+   "photos": [],
+   "concordance_photos": null,
+   "niveau_preuve": "D",
+   "raison_niveau": "nom prouvé par le registre RHS, aucune photo nommée",
+   "niveau_provisoire_preuves": "D",
+   "marque": null,
+   "marque_verifiee": false,
+   "marque_note": "aucun ®, ™ ni série commerciale vu aux pages lues ; registre des marques (TMview/EUIPO/INPI) non consulté : à faire par l'orchestrateur. Nom de cultivar au registre RHS = dénomination variétale",
+   "statut": "à confirmer",
+   "statut_raison": null,
+   "priorite": "classique_jardin",
+   "notes": [
+    "Vendu sous des calibres 'Jumbo/DN1' et 'DNII' chez VE : nom de type pouvant couvrir plusieurs clones.",
+    "Nom de type pouvant couvrir plusieurs clones (VE). Aucune photo lue."
+   ]
+  },
+  {
+   "id": "orange-sunset",
+   "nom": "Orange Sunset",
+   "nom_enregistre": "Orange Sunset",
+   "synonymes": [],
+   "coloris_rattache": null,
+   "division_registre": "1",
+   "code_couleur_registre": "W-YYO",
+   "lecture_code": "périanthe blanc ; couronne (du fond vers le bord, zones du code) jaune puis jaune puis orange",
+   "registre": {
+    "requete": "Orange Sunset",
+    "nb_resultats_requete": 1,
+    "url_recherche": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Orange%20Sunset",
+    "statut": "lu : recherche par nom, 2026-10-08",
+    "id": "958418",
+    "nom_registre": "Orange Sunset",
+    "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffdetails.asp?ID=958418",
+    "homonymes": []
+   },
+   "division_annoncee_vendeurs": "Trumpet (VE, BL)",
+   "obtenteur": null,
+   "annee": null,
+   "origine_obtenteur_annee": "rapporté par fleur-preuves (lot 2 ou 3), non revérifié ; le registre RHS n'a pas donné de fiche de détail (504)",
+   "couleur_annoncee": "bicolore (BL)",
+   "hauteur_fiche_jdw": null,
+   "couleur_fiche_jdw": null,
+   "sources_existence": [
+    {
+     "niveau": "N1",
+     "source": "RHSREG",
+     "nom_source": "RHS, International Daffodil Register (recherche par nom)",
+     "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Orange%20Sunset"
+    },
+    {
+     "niveau": "N3",
+     "source": "VE",
+     "nom_source": "Van Engelen, Trumpet Daffodils (19 fiches)",
+     "url": "https://www.vanengelen.com/flower-bulbs-index/narcissi/trumpet-daffodils.html"
+    },
+    {
+     "niveau": "N3",
+     "source": "BL",
+     "nom_source": "Bloms Bulbs, Trumpet Daffodils (12 fiches)",
+     "url": "https://blomsbulbs.com/product-category/autumn/daffodils-narcissi/trumpet-daffodils/"
+    }
+   ],
+   "photos": [
+    {
+     "niveau": "N3",
+     "auteur": "Van Engelen",
+     "image": "https://www.vanengelen.com/media/catalog/product/cache/56adb830892d957d56a625301cb4427e/n/n_orange_sunset_1-w_1.jpg",
+     "page": "https://www.vanengelen.com/flower-bulbs-index/narcissi/trumpet-daffodils/narcissus-orange-sunset.html",
+     "licence": "usage du vendeur, non relevé",
+     "niveau_declare_preuves": "N2",
+     "exclue": "image de remplacement du site (même fichier que 5 autres fiches) : ne compte pas comme photo"
+    },
+    {
+     "niveau": "N3",
+     "auteur": "Bloms Bulbs",
+     "image": "https://blomsbulbs.com/wp-content/uploads/2023/04/Orange-Sunset-420x454.jpg",
+     "page": "https://blomsbulbs.com/catalogue/orange-sunset/",
+     "licence": "usage du vendeur, non relevé"
+    }
+   ],
+   "concordance_photos": null,
+   "niveau_preuve": "C",
+   "raison_niveau": "nom prouvé (N1), une seule source de photo exploitable",
+   "niveau_provisoire_preuves": "B",
+   "marque": null,
+   "marque_verifiee": false,
+   "marque_note": "aucun ®, ™ ni série commerciale vu aux pages lues ; registre des marques (TMview/EUIPO/INPI) non consulté : à faire par l'orchestrateur. Nom de cultivar au registre RHS = dénomination variétale",
+   "statut": "à confirmer",
+   "statut_raison": null,
+   "priorite": "recent",
+   "notes": [
+    "Division à confirmer.",
+    "Nouveauté récente selon l'inventaire, droits possibles, non vérifiés."
+   ]
+  },
+  {
+   "id": "pistachio",
+   "nom": "Pistachio",
+   "nom_enregistre": "Pistachio",
+   "synonymes": [],
+   "coloris_rattache": null,
+   "division_registre": "1",
+   "code_couleur_registre": "Y-Y",
+   "lecture_code": "périanthe jaune ; couronne (du fond vers le bord, zones du code) jaune",
+   "registre": {
+    "requete": "Pistachio",
+    "nb_resultats_requete": 1,
+    "url_recherche": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Pistachio",
+    "statut": "lu : recherche par nom, 2026-10-08",
+    "id": "259137",
+    "nom_registre": "Pistachio",
+    "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffdetails.asp?ID=259137",
+    "homonymes": []
+   },
+   "division_annoncee_vendeurs": "Trumpet (VE, BL)",
+   "obtenteur": null,
+   "annee": null,
+   "origine_obtenteur_annee": "rapporté par fleur-preuves (lot 2 ou 3), non revérifié ; le registre RHS n'a pas donné de fiche de détail (504)",
+   "couleur_annoncee": "bicolore (BL)",
+   "hauteur_fiche_jdw": null,
+   "couleur_fiche_jdw": null,
+   "sources_existence": [
+    {
+     "niveau": "N1",
+     "source": "RHSREG",
+     "nom_source": "RHS, International Daffodil Register (recherche par nom)",
+     "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Pistachio"
+    },
+    {
+     "niveau": "N3",
+     "source": "VE",
+     "nom_source": "Van Engelen, Trumpet Daffodils (19 fiches)",
+     "url": "https://www.vanengelen.com/flower-bulbs-index/narcissi/trumpet-daffodils.html"
+    },
+    {
+     "niveau": "N3",
+     "source": "BL",
+     "nom_source": "Bloms Bulbs, Trumpet Daffodils (12 fiches)",
+     "url": "https://blomsbulbs.com/product-category/autumn/daffodils-narcissi/trumpet-daffodils/"
+    }
+   ],
+   "photos": [
+    {
+     "niveau": "N3",
+     "auteur": "Van Engelen",
+     "image": "https://www.vanengelen.com/media/catalog/product/cache/56adb830892d957d56a625301cb4427e/n/n_pistachio_1-w.jpg",
+     "page": "https://www.vanengelen.com/flower-bulbs-index/narcissi/trumpet-daffodils/narcissus-pistachio.html",
+     "licence": "usage du vendeur, non relevé",
+     "niveau_declare_preuves": "N2",
+     "exclue": "image de remplacement du site (même fichier que 5 autres fiches) : ne compte pas comme photo"
+    },
+    {
+     "niveau": "N3",
+     "auteur": "Bloms Bulbs",
+     "image": "https://blomsbulbs.com/wp-content/uploads/2023/04/Pistachio-420x454.jpg",
+     "page": "https://blomsbulbs.com/catalogue/pistachio/",
+     "licence": "usage du vendeur, non relevé",
+     "exclue": "photo discordante avec le registre (couronne courte à bord orange sur périanthe jaune pâle ; registre : 1 Y-Y) : ne compte pas"
+    }
+   ],
+   "concordance_photos": null,
+   "niveau_preuve": "D",
+   "raison_niveau": "nom prouvé par le registre RHS, aucune photo nommée",
+   "niveau_provisoire_preuves": "B",
+   "marque": null,
+   "marque_verifiee": false,
+   "marque_note": "aucun ®, ™ ni série commerciale vu aux pages lues ; registre des marques (TMview/EUIPO/INPI) non consulté : à faire par l'orchestrateur. Nom de cultivar au registre RHS = dénomination variétale",
+   "statut": "à confirmer",
+   "statut_raison": null,
+   "priorite": "recent",
+   "notes": [
+    "Division à confirmer.",
+    "Nouveauté récente, droits possibles, non vérifiés."
+   ]
+  },
+  {
+   "id": "teal",
+   "nom": "Teal",
+   "nom_enregistre": "Teal",
+   "synonymes": [],
+   "coloris_rattache": null,
+   "division_registre": "1",
+   "code_couleur_registre": "Y-W",
+   "lecture_code": "périanthe jaune ; couronne (du fond vers le bord, zones du code) blanc",
+   "registre": {
+    "requete": "Teal",
+    "nb_resultats_requete": 2,
+    "url_recherche": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Teal",
+    "statut": "lu : recherche par nom, 2026-10-08",
+    "id": "214261",
+    "nom_registre": "Teal",
+    "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffdetails.asp?ID=214261",
+    "homonymes": []
+   },
+   "division_annoncee_vendeurs": "Trumpet (VE)",
+   "obtenteur": "Grant Mitsch (selon Van Engelen)",
+   "annee": "1975 (VE)",
+   "origine_obtenteur_annee": "rapporté par fleur-preuves (lot 2 ou 3), non revérifié ; le registre RHS n'a pas donné de fiche de détail (504)",
+   "couleur_annoncee": "non indiquée",
+   "hauteur_fiche_jdw": null,
+   "couleur_fiche_jdw": null,
+   "sources_existence": [
+    {
+     "niveau": "N1",
+     "source": "RHSREG",
+     "nom_source": "RHS, International Daffodil Register (recherche par nom)",
+     "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Teal"
+    },
+    {
+     "niveau": "N3",
+     "source": "VE",
+     "nom_source": "Van Engelen, Trumpet Daffodils (19 fiches)",
+     "url": "https://www.vanengelen.com/flower-bulbs-index/narcissi/trumpet-daffodils.html"
+    }
+   ],
+   "photos": [
+    {
+     "niveau": "N3",
+     "auteur": "Van Engelen",
+     "image": "https://www.vanengelen.com/media/catalog/product/cache/56adb830892d957d56a625301cb4427e/n/n_teal_e-w.jpg",
+     "page": "https://www.vanengelen.com/flower-bulbs-index/narcissi/trumpet-daffodils/narcissus-teal.html",
+     "licence": "usage du vendeur, non relevé",
+     "niveau_declare_preuves": "N2",
+     "exclue": "image de remplacement du site (même fichier que 5 autres fiches) : ne compte pas comme photo"
+    }
+   ],
+   "concordance_photos": null,
+   "niveau_preuve": "D",
+   "raison_niveau": "nom prouvé par le registre RHS, aucune photo nommée",
+   "niveau_provisoire_preuves": "C",
+   "marque": null,
+   "marque_verifiee": false,
+   "marque_note": "aucun ®, ™ ni série commerciale vu aux pages lues ; registre des marques (TMview/EUIPO/INPI) non consulté : à faire par l'orchestrateur. Nom de cultivar au registre RHS = dénomination variétale",
+   "statut": "à confirmer",
+   "statut_raison": null,
+   "priorite": "recent",
+   "notes": [
+    "Obtenteur Grant Mitsch selon VE (à confirmer au registre)."
+   ]
+  },
+  {
+   "id": "watch-up",
+   "nom": "Watch Up",
+   "nom_enregistre": "Watch Up",
+   "synonymes": [],
+   "coloris_rattache": null,
+   "division_registre": "1",
+   "code_couleur_registre": "W-W",
+   "lecture_code": "périanthe blanc ; couronne (du fond vers le bord, zones du code) blanc",
+   "registre": {
+    "requete": "Watch Up",
+    "nb_resultats_requete": 1,
+    "url_recherche": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Watch%20Up",
+    "statut": "lu : recherche par nom, 2026-10-08",
+    "id": "993982",
+    "nom_registre": "Watch Up",
+    "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffdetails.asp?ID=993982",
+    "homonymes": []
+   },
+   "division_annoncee_vendeurs": "Trumpet (VE, BL)",
+   "obtenteur": null,
+   "annee": null,
+   "origine_obtenteur_annee": "rapporté par fleur-preuves (lot 2 ou 3), non revérifié ; le registre RHS n'a pas donné de fiche de détail (504)",
+   "couleur_annoncee": "non indiquée",
+   "hauteur_fiche_jdw": null,
+   "couleur_fiche_jdw": null,
+   "sources_existence": [
+    {
+     "niveau": "N1",
+     "source": "RHSREG",
+     "nom_source": "RHS, International Daffodil Register (recherche par nom)",
+     "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Watch%20Up"
+    },
+    {
+     "niveau": "N3",
+     "source": "VE",
+     "nom_source": "Van Engelen, Trumpet Daffodils (19 fiches)",
+     "url": "https://www.vanengelen.com/flower-bulbs-index/narcissi/trumpet-daffodils.html"
+    },
+    {
+     "niveau": "N3",
+     "source": "BL",
+     "nom_source": "Bloms Bulbs, Trumpet Daffodils (12 fiches)",
+     "url": "https://blomsbulbs.com/product-category/autumn/daffodils-narcissi/trumpet-daffodils/"
+    }
+   ],
+   "photos": [
+    {
+     "niveau": "N3",
+     "auteur": "Bloms Bulbs",
+     "image": "https://blomsbulbs.com/wp-content/uploads/2023/04/Watch-Up-420x454.jpg",
+     "page": "https://blomsbulbs.com/catalogue/watch-up/",
+     "licence": "usage du vendeur, non relevé"
+    }
+   ],
+   "concordance_photos": null,
+   "niveau_preuve": "C",
+   "raison_niveau": "nom prouvé (N1), une seule source de photo exploitable",
+   "niveau_provisoire_preuves": "C",
+   "marque": null,
+   "marque_verifiee": false,
+   "marque_note": "aucun ®, ™ ni série commerciale vu aux pages lues ; registre des marques (TMview/EUIPO/INPI) non consulté : à faire par l'orchestrateur. Nom de cultivar au registre RHS = dénomination variétale",
+   "statut": "à confirmer",
+   "statut_raison": null,
+   "priorite": "recent",
+   "notes": [
+    "VE vend aussi une version 'Landscape-Sized'.",
+    "VE vend aussi une version 'Landscape-Sized' (à ne pas confondre). Nouveauté récente, droits possibles."
+   ]
+  },
+  {
+   "id": "mando",
+   "nom": "Mando",
+   "nom_enregistre": "Mando",
+   "synonymes": [],
+   "coloris_rattache": null,
+   "division_registre": "1",
+   "code_couleur_registre": "Y-Y",
+   "lecture_code": "périanthe jaune ; couronne (du fond vers le bord, zones du code) jaune",
+   "registre": {
+    "requete": "Mando",
+    "nb_resultats_requete": 4,
+    "url_recherche": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Mando",
+    "statut": "lu : recherche par nom, 2026-10-08",
+    "id": "212641",
+    "nom_registre": "Mando",
+    "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffdetails.asp?ID=212641",
+    "homonymes": []
+   },
+   "division_annoncee_vendeurs": "Trumpet (BL)",
+   "obtenteur": null,
+   "annee": null,
+   "origine_obtenteur_annee": "rapporté par fleur-preuves (lot 2 ou 3), non revérifié ; le registre RHS n'a pas donné de fiche de détail (504)",
+   "couleur_annoncee": "non indiquée (BL : floraison tardive)",
+   "hauteur_fiche_jdw": null,
+   "couleur_fiche_jdw": null,
+   "sources_existence": [
+    {
+     "niveau": "N1",
+     "source": "RHSREG",
+     "nom_source": "RHS, International Daffodil Register (recherche par nom)",
+     "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Mando"
+    },
+    {
+     "niveau": "N3",
+     "source": "BL",
+     "nom_source": "Bloms Bulbs, Trumpet Daffodils (12 fiches)",
+     "url": "https://blomsbulbs.com/product-category/autumn/daffodils-narcissi/trumpet-daffodils/"
+    }
+   ],
+   "photos": [
+    {
+     "niveau": "N3",
+     "auteur": "Bloms Bulbs",
+     "image": "https://blomsbulbs.com/wp-content/uploads/2023/06/Mando-420x454.jpg",
+     "page": "https://blomsbulbs.com/catalogue/mando/",
+     "licence": "usage du vendeur, non relevé"
+    }
+   ],
+   "concordance_photos": null,
+   "niveau_preuve": "C",
+   "raison_niveau": "nom prouvé (N1), une seule source de photo exploitable",
+   "niveau_provisoire_preuves": "C",
+   "marque": null,
+   "marque_verifiee": false,
+   "marque_note": "aucun ®, ™ ni série commerciale vu aux pages lues ; registre des marques (TMview/EUIPO/INPI) non consulté : à faire par l'orchestrateur. Nom de cultivar au registre RHS = dénomination variétale",
+   "statut": "à confirmer",
+   "statut_raison": null,
+   "priorite": "recent",
+   "notes": [
+    "VE vend 'Landscape-Sized Mando'. Nouveauté récente, droits possibles."
+   ]
+  },
+  {
+   "id": "yellow-river",
+   "nom": "Yellow River",
+   "nom_enregistre": "Yellow River",
+   "synonymes": [],
+   "coloris_rattache": null,
+   "division_registre": "1",
+   "code_couleur_registre": "Y-Y",
+   "lecture_code": "périanthe jaune ; couronne (du fond vers le bord, zones du code) jaune",
+   "registre": {
+    "requete": "Yellow River",
+    "nb_resultats_requete": 1,
+    "url_recherche": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Yellow%20River",
+    "statut": "lu : recherche par nom, 2026-10-08",
+    "id": "219655",
+    "nom_registre": "Yellow River",
+    "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffdetails.asp?ID=219655",
+    "homonymes": []
+   },
+   "division_annoncee_vendeurs": "Trumpet (BL)",
+   "obtenteur": null,
+   "annee": null,
+   "origine_obtenteur_annee": "rapporté par fleur-preuves (lot 2 ou 3), non revérifié ; le registre RHS n'a pas donné de fiche de détail (504)",
+   "couleur_annoncee": "non indiquée",
+   "hauteur_fiche_jdw": null,
+   "couleur_fiche_jdw": null,
+   "sources_existence": [
+    {
+     "niveau": "N1",
+     "source": "RHSREG",
+     "nom_source": "RHS, International Daffodil Register (recherche par nom)",
+     "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Yellow%20River"
+    },
+    {
+     "niveau": "N3",
+     "source": "BL",
+     "nom_source": "Bloms Bulbs, Trumpet Daffodils (12 fiches)",
+     "url": "https://blomsbulbs.com/product-category/autumn/daffodils-narcissi/trumpet-daffodils/"
+    }
+   ],
+   "photos": [
+    {
+     "niveau": "N3",
+     "auteur": "Bloms Bulbs",
+     "image": "https://blomsbulbs.com/wp-content/uploads/2023/04/Yellow-River-420x454.jpg",
+     "page": "https://blomsbulbs.com/catalogue/yellow-river/",
+     "licence": "usage du vendeur, non relevé"
+    }
+   ],
+   "concordance_photos": null,
+   "niveau_preuve": "C",
+   "raison_niveau": "nom prouvé (N1), une seule source de photo exploitable",
+   "niveau_provisoire_preuves": "C",
+   "marque": null,
+   "marque_verifiee": false,
+   "marque_note": "aucun ®, ™ ni série commerciale vu aux pages lues ; registre des marques (TMview/EUIPO/INPI) non consulté : à faire par l'orchestrateur. Nom de cultivar au registre RHS = dénomination variétale",
+   "statut": "à confirmer",
+   "statut_raison": null,
+   "priorite": "recent",
+   "notes": [
+    "Le nom évoque une série : vérifier.",
+    "Le nom évoque une série commerciale : marque à vérifier (registre des marques non consulté)."
+   ]
+  },
+  {
+   "id": "queen-beatrix",
+   "nom": "Queen Beatrix",
+   "nom_enregistre": "Queen Beatrix",
+   "synonymes": [],
+   "coloris_rattache": null,
+   "division_registre": "1",
+   "code_couleur_registre": "Y-Y",
+   "lecture_code": "périanthe jaune ; couronne (du fond vers le bord, zones du code) jaune",
+   "registre": {
+    "requete": "Queen Beatrix",
+    "nb_resultats_requete": 1,
+    "url_recherche": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Queen%20Beatrix",
+    "statut": "lu : recherche par nom, 2026-10-08",
+    "id": "259968",
+    "nom_registre": "Queen Beatrix",
+    "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffdetails.asp?ID=259968",
+    "homonymes": []
+   },
+   "division_annoncee_vendeurs": "1 (WP)",
+   "obtenteur": null,
+   "annee": null,
+   "origine_obtenteur_annee": "rapporté par fleur-preuves (lot 2 ou 3), non revérifié ; le registre RHS n'a pas donné de fiche de détail (504)",
+   "couleur_annoncee": "jaune / jaune (WP 50 cm)",
+   "hauteur_fiche_jdw": null,
+   "couleur_fiche_jdw": null,
+   "sources_existence": [
+    {
+     "niveau": "N1",
+     "source": "RHSREG",
+     "nom_source": "RHS, International Daffodil Register (recherche par nom)",
+     "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Queen%20Beatrix"
+    },
+    {
+     "niveau": "N4",
+     "source": "WP",
+     "nom_source": "Wikipédia, List of Award of Garden Merit narcissus (colonne Div.)",
+     "url": "https://en.wikipedia.org/wiki/List_of_Award_of_Garden_Merit_narcissus"
+    },
+    {
+     "niveau": "N3",
+     "source": "FL",
+     "nom_source": "Fluwel, narcissen (la description mentionne 'trompet')",
+     "url": "https://www.fluwel.nl/collections/narcissen"
+    }
+   ],
+   "photos": [],
+   "concordance_photos": null,
+   "niveau_preuve": "D",
+   "raison_niveau": "nom prouvé par le registre RHS, aucune photo nommée",
+   "niveau_provisoire_preuves": "D",
+   "marque": null,
+   "marque_verifiee": false,
+   "marque_note": "aucun ®, ™ ni série commerciale vu aux pages lues ; registre des marques (TMview/EUIPO/INPI) non consulté : à faire par l'orchestrateur. Nom de cultivar au registre RHS = dénomination variétale",
+   "statut": "à confirmer",
+   "statut_raison": null,
+   "priorite": "classique_jardin",
+   "notes": [
+    "AGM.",
+    "AGM. Sources N4 et N2 sans photo lue (Fluwel non lu)."
+   ]
+  },
+  {
+   "id": "little-gem",
+   "nom": "Little Gem",
+   "nom_enregistre": "Little Gem",
+   "synonymes": [],
+   "coloris_rattache": null,
+   "division_registre": "1",
+   "code_couleur_registre": "Y-Y",
+   "lecture_code": "périanthe jaune ; couronne (du fond vers le bord, zones du code) jaune",
+   "registre": {
+    "requete": "Little Gem",
+    "nb_resultats_requete": 3,
+    "url_recherche": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Little%20Gem",
+    "statut": "lu : recherche par nom, 2026-10-08",
+    "id": "212485",
+    "nom_registre": "Little Gem",
+    "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffdetails.asp?ID=212485",
+    "homonymes": [
+     {
+      "id": "204604",
+      "division": "3",
+      "code": ""
+     },
+     {
+      "id": "260120",
+      "division": "3",
+      "code": "W-YYO"
+     }
+    ]
+   },
+   "division_annoncee_vendeurs": "1 (WP)",
+   "obtenteur": null,
+   "annee": null,
+   "origine_obtenteur_annee": "rapporté par fleur-preuves (lot 2 ou 3), non revérifié ; le registre RHS n'a pas donné de fiche de détail (504)",
+   "couleur_annoncee": "jaune / jaune (WP 15 cm)",
+   "hauteur_fiche_jdw": null,
+   "couleur_fiche_jdw": null,
+   "sources_existence": [
+    {
+     "niveau": "N1",
+     "source": "RHSREG",
+     "nom_source": "RHS, International Daffodil Register (recherche par nom)",
+     "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Little%20Gem"
+    },
+    {
+     "niveau": "N4",
+     "source": "WP",
+     "nom_source": "Wikipédia, List of Award of Garden Merit narcissus (colonne Div.)",
+     "url": "https://en.wikipedia.org/wiki/List_of_Award_of_Garden_Merit_narcissus"
+    }
+   ],
+   "photos": [],
+   "concordance_photos": null,
+   "niveau_preuve": "D",
+   "raison_niveau": "nom prouvé par le registre RHS, aucune photo nommée",
+   "niveau_provisoire_preuves": "D",
+   "marque": null,
+   "marque_verifiee": false,
+   "marque_note": "aucun ®, ™ ni série commerciale vu aux pages lues ; registre des marques (TMview/EUIPO/INPI) non consulté : à faire par l'orchestrateur. Nom de cultivar au registre RHS = dénomination variétale",
+   "statut": "à confirmer",
+   "statut_raison": null,
+   "priorite": "niche",
+   "notes": [
+    "Nain. AGM.",
+    "Nain. AGM. Aucune photo lue."
+   ]
+  },
+  {
+   "id": "small-talk",
+   "nom": "Small Talk",
+   "nom_enregistre": "Small Talk",
+   "synonymes": [],
+   "coloris_rattache": null,
+   "division_registre": "1",
+   "code_couleur_registre": "Y-Y",
+   "lecture_code": "périanthe jaune ; couronne (du fond vers le bord, zones du code) jaune",
+   "registre": {
+    "requete": "Small Talk",
+    "nb_resultats_requete": 1,
+    "url_recherche": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Small%20Talk",
+    "statut": "lu : recherche par nom, 2026-10-08",
+    "id": "213945",
+    "nom_registre": "Small Talk",
+    "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffdetails.asp?ID=213945",
+    "homonymes": []
+   },
+   "division_annoncee_vendeurs": "1 (WP)",
+   "obtenteur": null,
+   "annee": null,
+   "origine_obtenteur_annee": "rapporté par fleur-preuves (lot 2 ou 3), non revérifié ; le registre RHS n'a pas donné de fiche de détail (504)",
+   "couleur_annoncee": "jaune / jaune (WP 15 cm)",
+   "hauteur_fiche_jdw": null,
+   "couleur_fiche_jdw": null,
+   "sources_existence": [
+    {
+     "niveau": "N1",
+     "source": "RHSREG",
+     "nom_source": "RHS, International Daffodil Register (recherche par nom)",
+     "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Small%20Talk"
+    },
+    {
+     "niveau": "N4",
+     "source": "WP",
+     "nom_source": "Wikipédia, List of Award of Garden Merit narcissus (colonne Div.)",
+     "url": "https://en.wikipedia.org/wiki/List_of_Award_of_Garden_Merit_narcissus"
+    }
+   ],
+   "photos": [],
+   "concordance_photos": null,
+   "niveau_preuve": "D",
+   "raison_niveau": "nom prouvé par le registre RHS, aucune photo nommée",
+   "niveau_provisoire_preuves": "D",
+   "marque": null,
+   "marque_verifiee": false,
+   "marque_note": "aucun ®, ™ ni série commerciale vu aux pages lues ; registre des marques (TMview/EUIPO/INPI) non consulté : à faire par l'orchestrateur. Nom de cultivar au registre RHS = dénomination variétale",
+   "statut": "à confirmer",
+   "statut_raison": null,
+   "priorite": "niche",
+   "notes": [
+    "Nain. AGM.",
+    "Nain. AGM. Aucune photo lue."
+   ]
+  },
+  {
+   "id": "barnum",
+   "nom": "Barnum",
+   "nom_enregistre": "Barnum",
+   "synonymes": [],
+   "coloris_rattache": null,
+   "division_registre": "1",
+   "code_couleur_registre": "Y-Y",
+   "lecture_code": "périanthe jaune ; couronne (du fond vers le bord, zones du code) jaune",
+   "registre": {
+    "requete": "Barnum",
+    "nb_resultats_requete": 1,
+    "url_recherche": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Barnum",
+    "statut": "lu : recherche par nom, 2026-10-08",
+    "id": "210524",
+    "nom_registre": "Barnum",
+    "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffdetails.asp?ID=210524",
+    "homonymes": []
+   },
+   "division_annoncee_vendeurs": "1 (WP)",
+   "obtenteur": null,
+   "annee": null,
+   "origine_obtenteur_annee": "rapporté par fleur-preuves (lot 2 ou 3), non revérifié ; le registre RHS n'a pas donné de fiche de détail (504)",
+   "couleur_annoncee": "jaune / jaune (WP 50 cm)",
+   "hauteur_fiche_jdw": null,
+   "couleur_fiche_jdw": null,
+   "sources_existence": [
+    {
+     "niveau": "N1",
+     "source": "RHSREG",
+     "nom_source": "RHS, International Daffodil Register (recherche par nom)",
+     "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Barnum"
+    },
+    {
+     "niveau": "N4",
+     "source": "WP",
+     "nom_source": "Wikipédia, List of Award of Garden Merit narcissus (colonne Div.)",
+     "url": "https://en.wikipedia.org/wiki/List_of_Award_of_Garden_Merit_narcissus"
+    }
+   ],
+   "photos": [],
+   "concordance_photos": null,
+   "niveau_preuve": "D",
+   "raison_niveau": "nom prouvé par le registre RHS, aucune photo nommée",
+   "niveau_provisoire_preuves": "D",
+   "marque": null,
+   "marque_verifiee": false,
+   "marque_note": "aucun ®, ™ ni série commerciale vu aux pages lues ; registre des marques (TMview/EUIPO/INPI) non consulté : à faire par l'orchestrateur. Nom de cultivar au registre RHS = dénomination variétale",
+   "statut": "à confirmer",
+   "statut_raison": null,
+   "priorite": "niche",
+   "notes": [
+    "AGM.",
+    "Annoncé AGM dans l'inventaire ; pas de source lue."
+   ]
+  },
+  {
+   "id": "bell-rock",
+   "nom": "Bell Rock",
+   "nom_enregistre": "Bell Rock",
+   "synonymes": [],
+   "coloris_rattache": null,
+   "division_registre": "1",
+   "code_couleur_registre": "W-Y",
+   "lecture_code": "périanthe blanc ; couronne (du fond vers le bord, zones du code) jaune",
+   "registre": {
+    "requete": "Bell Rock",
+    "nb_resultats_requete": 1,
+    "url_recherche": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Bell%20Rock",
+    "statut": "lu : recherche par nom, 2026-10-08",
+    "id": "256085",
+    "nom_registre": "Bell Rock",
+    "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffdetails.asp?ID=256085",
+    "homonymes": []
+   },
+   "division_annoncee_vendeurs": "1 (WP)",
+   "obtenteur": null,
+   "annee": null,
+   "origine_obtenteur_annee": "rapporté par fleur-preuves (lot 2 ou 3), non revérifié ; le registre RHS n'a pas donné de fiche de détail (504)",
+   "couleur_annoncee": "blanc / jaune citron (WP 42 cm)",
+   "hauteur_fiche_jdw": null,
+   "couleur_fiche_jdw": null,
+   "sources_existence": [
+    {
+     "niveau": "N1",
+     "source": "RHSREG",
+     "nom_source": "RHS, International Daffodil Register (recherche par nom)",
+     "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Bell%20Rock"
+    },
+    {
+     "niveau": "N4",
+     "source": "WP",
+     "nom_source": "Wikipédia, List of Award of Garden Merit narcissus (colonne Div.)",
+     "url": "https://en.wikipedia.org/wiki/List_of_Award_of_Garden_Merit_narcissus"
+    }
+   ],
+   "photos": [],
+   "concordance_photos": null,
+   "niveau_preuve": "D",
+   "raison_niveau": "nom prouvé par le registre RHS, aucune photo nommée",
+   "niveau_provisoire_preuves": "D",
+   "marque": null,
+   "marque_verifiee": false,
+   "marque_note": "aucun ®, ™ ni série commerciale vu aux pages lues ; registre des marques (TMview/EUIPO/INPI) non consulté : à faire par l'orchestrateur. Nom de cultivar au registre RHS = dénomination variétale",
+   "statut": "à confirmer",
+   "statut_raison": null,
+   "priorite": "niche",
+   "notes": [
+    "AGM.",
+    "Annoncé AGM dans l'inventaire ; pas de source lue."
+   ]
+  },
+  {
+   "id": "chanson",
+   "nom": "Chanson",
+   "nom_enregistre": "Chanson",
+   "synonymes": [],
+   "coloris_rattache": null,
+   "division_registre": "1",
+   "code_couleur_registre": "W-P",
+   "lecture_code": "périanthe blanc ; couronne (du fond vers le bord, zones du code) rose",
+   "registre": {
+    "requete": "Chanson",
+    "nb_resultats_requete": 2,
+    "url_recherche": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Chanson",
+    "statut": "lu : recherche par nom, 2026-10-08",
+    "id": "256095",
+    "nom_registre": "Chanson",
+    "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffdetails.asp?ID=256095",
+    "homonymes": []
+   },
+   "division_annoncee_vendeurs": "1 (WP)",
+   "obtenteur": null,
+   "annee": null,
+   "origine_obtenteur_annee": "rapporté par fleur-preuves (lot 2 ou 3), non revérifié ; le registre RHS n'a pas donné de fiche de détail (504)",
+   "couleur_annoncee": "blanc / rose pêche (WP 50 cm)",
+   "hauteur_fiche_jdw": null,
+   "couleur_fiche_jdw": null,
+   "sources_existence": [
+    {
+     "niveau": "N1",
+     "source": "RHSREG",
+     "nom_source": "RHS, International Daffodil Register (recherche par nom)",
+     "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Chanson"
+    },
+    {
+     "niveau": "N4",
+     "source": "WP",
+     "nom_source": "Wikipédia, List of Award of Garden Merit narcissus (colonne Div.)",
+     "url": "https://en.wikipedia.org/wiki/List_of_Award_of_Garden_Merit_narcissus"
+    }
+   ],
+   "photos": [],
+   "concordance_photos": null,
+   "niveau_preuve": "D",
+   "raison_niveau": "nom prouvé par le registre RHS, aucune photo nommée",
+   "niveau_provisoire_preuves": "D",
+   "marque": null,
+   "marque_verifiee": false,
+   "marque_note": "aucun ®, ™ ni série commerciale vu aux pages lues ; registre des marques (TMview/EUIPO/INPI) non consulté : à faire par l'orchestrateur. Nom de cultivar au registre RHS = dénomination variétale",
+   "statut": "à confirmer",
+   "statut_raison": null,
+   "priorite": "niche",
+   "notes": [
+    "AGM.",
+    "Annoncé AGM dans l'inventaire ; pas de source lue."
+   ]
+  },
+  {
+   "id": "goldfinger",
+   "nom": "Goldfinger",
+   "nom_enregistre": "Goldfinger",
+   "synonymes": [],
+   "coloris_rattache": null,
+   "division_registre": "1",
+   "code_couleur_registre": "Y-Y",
+   "lecture_code": "périanthe jaune ; couronne (du fond vers le bord, zones du code) jaune",
+   "registre": {
+    "requete": "Goldfinger",
+    "nb_resultats_requete": 1,
+    "url_recherche": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Goldfinger",
+    "statut": "lu : recherche par nom, 2026-10-08",
+    "id": "217807",
+    "nom_registre": "Goldfinger",
+    "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffdetails.asp?ID=217807",
+    "homonymes": []
+   },
+   "division_annoncee_vendeurs": "1 (WP)",
+   "obtenteur": null,
+   "annee": null,
+   "origine_obtenteur_annee": "rapporté par fleur-preuves (lot 2 ou 3), non revérifié ; le registre RHS n'a pas donné de fiche de détail (504)",
+   "couleur_annoncee": "jaune / jaune (WP 43 cm)",
+   "hauteur_fiche_jdw": null,
+   "couleur_fiche_jdw": null,
+   "sources_existence": [
+    {
+     "niveau": "N1",
+     "source": "RHSREG",
+     "nom_source": "RHS, International Daffodil Register (recherche par nom)",
+     "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Goldfinger"
+    },
+    {
+     "niveau": "N4",
+     "source": "WP",
+     "nom_source": "Wikipédia, List of Award of Garden Merit narcissus (colonne Div.)",
+     "url": "https://en.wikipedia.org/wiki/List_of_Award_of_Garden_Merit_narcissus"
+    }
+   ],
+   "photos": [],
+   "concordance_photos": null,
+   "niveau_preuve": "D",
+   "raison_niveau": "nom prouvé par le registre RHS, aucune photo nommée",
+   "niveau_provisoire_preuves": "D",
+   "marque": null,
+   "marque_verifiee": false,
+   "marque_note": "aucun ®, ™ ni série commerciale vu aux pages lues ; registre des marques (TMview/EUIPO/INPI) non consulté : à faire par l'orchestrateur. Nom de cultivar au registre RHS = dénomination variétale",
+   "statut": "à confirmer",
+   "statut_raison": null,
+   "priorite": "niche",
+   "notes": [
+    "AGM.",
+    "Annoncé AGM dans l'inventaire ; pas de source lue."
+   ]
+  },
+  {
+   "id": "patrick-hacket",
+   "nom": "Patrick Hacket",
+   "nom_enregistre": "Patrick Hacket",
+   "synonymes": [],
+   "coloris_rattache": null,
+   "division_registre": "1",
+   "code_couleur_registre": "Y-Y",
+   "lecture_code": "périanthe jaune ; couronne (du fond vers le bord, zones du code) jaune",
+   "registre": {
+    "requete": "Patrick Hacket",
+    "nb_resultats_requete": 1,
+    "url_recherche": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Patrick%20Hacket",
+    "statut": "lu : recherche par nom, 2026-10-08",
+    "id": "258648",
+    "nom_registre": "Patrick Hacket",
+    "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffdetails.asp?ID=258648",
+    "homonymes": []
+   },
+   "division_annoncee_vendeurs": "1 (WP)",
+   "obtenteur": null,
+   "annee": null,
+   "origine_obtenteur_annee": "rapporté par fleur-preuves (lot 2 ou 3), non revérifié ; le registre RHS n'a pas donné de fiche de détail (504)",
+   "couleur_annoncee": "jaune / jaune (WP 42 cm)",
+   "hauteur_fiche_jdw": null,
+   "couleur_fiche_jdw": null,
+   "sources_existence": [
+    {
+     "niveau": "N1",
+     "source": "RHSREG",
+     "nom_source": "RHS, International Daffodil Register (recherche par nom)",
+     "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Patrick%20Hacket"
+    },
+    {
+     "niveau": "N4",
+     "source": "WP",
+     "nom_source": "Wikipédia, List of Award of Garden Merit narcissus (colonne Div.)",
+     "url": "https://en.wikipedia.org/wiki/List_of_Award_of_Garden_Merit_narcissus"
+    }
+   ],
+   "photos": [],
+   "concordance_photos": null,
+   "niveau_preuve": "D",
+   "raison_niveau": "nom prouvé par le registre RHS, aucune photo nommée",
+   "niveau_provisoire_preuves": "D",
+   "marque": null,
+   "marque_verifiee": false,
+   "marque_note": "aucun ®, ™ ni série commerciale vu aux pages lues ; registre des marques (TMview/EUIPO/INPI) non consulté : à faire par l'orchestrateur. Nom de cultivar au registre RHS = dénomination variétale",
+   "statut": "à confirmer",
+   "statut_raison": null,
+   "priorite": "niche",
+   "notes": [
+    "AGM.",
+    "Annoncé AGM dans l'inventaire ; pas de source lue."
+   ]
+  },
+  {
+   "id": "sint-victor",
+   "nom": "Sint Victor",
+   "nom_enregistre": "Sint Victor",
+   "synonymes": [],
+   "coloris_rattache": null,
+   "division_registre": "1",
+   "code_couleur_registre": "Y-Y",
+   "lecture_code": "périanthe jaune ; couronne (du fond vers le bord, zones du code) jaune",
+   "registre": {
+    "requete": "Sint Victor",
+    "nb_resultats_requete": 1,
+    "url_recherche": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Sint%20Victor",
+    "statut": "lu : recherche par nom, 2026-10-08",
+    "id": "924532",
+    "nom_registre": "Sint Victor",
+    "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffdetails.asp?ID=924532",
+    "homonymes": []
+   },
+   "division_annoncee_vendeurs": "1 (WP)",
+   "obtenteur": null,
+   "annee": null,
+   "origine_obtenteur_annee": "rapporté par fleur-preuves (lot 2 ou 3), non revérifié ; le registre RHS n'a pas donné de fiche de détail (504)",
+   "couleur_annoncee": "jaune / jaune (WP 50 cm, parfumé)",
+   "hauteur_fiche_jdw": null,
+   "couleur_fiche_jdw": null,
+   "sources_existence": [
+    {
+     "niveau": "N1",
+     "source": "RHSREG",
+     "nom_source": "RHS, International Daffodil Register (recherche par nom)",
+     "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Sint%20Victor"
+    },
+    {
+     "niveau": "N4",
+     "source": "WP",
+     "nom_source": "Wikipédia, List of Award of Garden Merit narcissus (colonne Div.)",
+     "url": "https://en.wikipedia.org/wiki/List_of_Award_of_Garden_Merit_narcissus"
+    }
+   ],
+   "photos": [],
+   "concordance_photos": null,
+   "niveau_preuve": "D",
+   "raison_niveau": "nom prouvé par le registre RHS, aucune photo nommée",
+   "niveau_provisoire_preuves": "D",
+   "marque": null,
+   "marque_verifiee": false,
+   "marque_note": "aucun ®, ™ ni série commerciale vu aux pages lues ; registre des marques (TMview/EUIPO/INPI) non consulté : à faire par l'orchestrateur. Nom de cultivar au registre RHS = dénomination variétale",
+   "statut": "à confirmer",
+   "statut_raison": null,
+   "priorite": "niche",
+   "notes": [
+    "AGM.",
+    "Annoncé AGM dans l'inventaire ; pas de source lue."
+   ]
+  },
+  {
+   "id": "tyrone-gold",
+   "nom": "Tyrone Gold",
+   "nom_enregistre": "Tyrone Gold",
+   "synonymes": [],
+   "coloris_rattache": null,
+   "division_registre": "1",
+   "code_couleur_registre": "Y-Y",
+   "lecture_code": "périanthe jaune ; couronne (du fond vers le bord, zones du code) jaune",
+   "registre": {
+    "requete": "Tyrone Gold",
+    "nb_resultats_requete": 1,
+    "url_recherche": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Tyrone%20Gold",
+    "statut": "lu : recherche par nom, 2026-10-08",
+    "id": "221729",
+    "nom_registre": "Tyrone Gold",
+    "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffdetails.asp?ID=221729",
+    "homonymes": []
+   },
+   "division_annoncee_vendeurs": "1 (WP)",
+   "obtenteur": null,
+   "annee": null,
+   "origine_obtenteur_annee": "rapporté par fleur-preuves (lot 2 ou 3), non revérifié ; le registre RHS n'a pas donné de fiche de détail (504)",
+   "couleur_annoncee": "jaune / jaune (WP 45 cm)",
+   "hauteur_fiche_jdw": null,
+   "couleur_fiche_jdw": null,
+   "sources_existence": [
+    {
+     "niveau": "N1",
+     "source": "RHSREG",
+     "nom_source": "RHS, International Daffodil Register (recherche par nom)",
+     "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Tyrone%20Gold"
+    },
+    {
+     "niveau": "N4",
+     "source": "WP",
+     "nom_source": "Wikipédia, List of Award of Garden Merit narcissus (colonne Div.)",
+     "url": "https://en.wikipedia.org/wiki/List_of_Award_of_Garden_Merit_narcissus"
+    }
+   ],
+   "photos": [],
+   "concordance_photos": null,
+   "niveau_preuve": "D",
+   "raison_niveau": "nom prouvé par le registre RHS, aucune photo nommée",
+   "niveau_provisoire_preuves": "D",
+   "marque": null,
+   "marque_verifiee": false,
+   "marque_note": "aucun ®, ™ ni série commerciale vu aux pages lues ; registre des marques (TMview/EUIPO/INPI) non consulté : à faire par l'orchestrateur. Nom de cultivar au registre RHS = dénomination variétale",
+   "statut": "à confirmer",
+   "statut_raison": null,
+   "priorite": "niche",
+   "notes": [
+    "AGM.",
+    "Annoncé AGM dans l'inventaire ; pas de source lue."
+   ]
+  },
+  {
+   "id": "viking",
+   "nom": "Viking",
+   "nom_enregistre": "Viking",
+   "synonymes": [],
+   "coloris_rattache": null,
+   "division_registre": "1",
+   "code_couleur_registre": "Y-Y",
+   "lecture_code": "périanthe jaune ; couronne (du fond vers le bord, zones du code) jaune",
+   "registre": {
+    "requete": "Viking",
+    "nb_resultats_requete": 3,
+    "url_recherche": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Viking",
+    "statut": "lu : recherche par nom, 2026-10-08",
+    "id": "214541",
+    "nom_registre": "Viking",
+    "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffdetails.asp?ID=214541",
+    "homonymes": [
+     {
+      "id": "208317",
+      "division": "5",
+      "code": ""
+     }
+    ]
+   },
+   "division_annoncee_vendeurs": "1 (WP)",
+   "obtenteur": null,
+   "annee": null,
+   "origine_obtenteur_annee": "rapporté par fleur-preuves (lot 2 ou 3), non revérifié ; le registre RHS n'a pas donné de fiche de détail (504)",
+   "couleur_annoncee": "jaune / jaune (WP 45 cm)",
+   "hauteur_fiche_jdw": null,
+   "couleur_fiche_jdw": null,
+   "sources_existence": [
+    {
+     "niveau": "N1",
+     "source": "RHSREG",
+     "nom_source": "RHS, International Daffodil Register (recherche par nom)",
+     "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Viking"
+    },
+    {
+     "niveau": "N4",
+     "source": "WP",
+     "nom_source": "Wikipédia, List of Award of Garden Merit narcissus (colonne Div.)",
+     "url": "https://en.wikipedia.org/wiki/List_of_Award_of_Garden_Merit_narcissus"
+    }
+   ],
+   "photos": [],
+   "concordance_photos": null,
+   "niveau_preuve": "D",
+   "raison_niveau": "nom prouvé par le registre RHS, aucune photo nommée",
+   "niveau_provisoire_preuves": "D",
+   "marque": null,
+   "marque_verifiee": false,
+   "marque_note": "aucun ®, ™ ni série commerciale vu aux pages lues ; registre des marques (TMview/EUIPO/INPI) non consulté : à faire par l'orchestrateur. Nom de cultivar au registre RHS = dénomination variétale",
+   "statut": "à confirmer",
+   "statut_raison": null,
+   "priorite": "niche",
+   "notes": [
+    "AGM.",
+    "Annoncé AGM dans l'inventaire ; pas de source lue."
+   ]
+  },
+  {
+   "id": "beersheba",
+   "nom": "Beersheba",
+   "nom_enregistre": "Beersheba",
+   "synonymes": [],
+   "coloris_rattache": null,
+   "division_registre": "1",
+   "code_couleur_registre": "W-W",
+   "lecture_code": "périanthe blanc ; couronne (du fond vers le bord, zones du code) blanc",
+   "registre": {
+    "requete": "Beersheba",
+    "nb_resultats_requete": 1,
+    "url_recherche": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Beersheba",
+    "statut": "lu : recherche par nom, 2026-10-08",
+    "id": "200865",
+    "nom_registre": "Beersheba",
+    "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffdetails.asp?ID=200865",
+    "homonymes": []
+   },
+   "division_annoncee_vendeurs": "1 W-W (OHG)",
+   "obtenteur": null,
+   "annee": "1923",
+   "origine_obtenteur_annee": "rapporté par fleur-preuves (lot 2 ou 3), non revérifié ; le registre RHS n'a pas donné de fiche de détail (504)",
+   "couleur_annoncee": "blanc / blanc (OHG)",
+   "hauteur_fiche_jdw": null,
+   "couleur_fiche_jdw": null,
+   "sources_existence": [
+    {
+     "niveau": "N1",
+     "source": "RHSREG",
+     "nom_source": "RHS, International Daffodil Register (recherche par nom)",
+     "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Beersheba"
+    },
+    {
+     "niveau": "N3",
+     "source": "OHG",
+     "nom_source": "Old House Gardens, narcisses anciens (code de division en tête de chaque code)",
+     "url": "https://oldhousegardens.com/store/category/Daffodil"
+    }
+   ],
+   "photos": [
+    {
+     "niveau": "N3",
+     "auteur": "Old House Gardens (vendeur)",
+     "image": "https://oldhousegardens.com/img/bulbs/DA04/lead.jpg",
+     "page": "https://oldhousegardens.com/store/bulb-info/DA04/Beersheba-Daffodil",
+     "licence": "usage du vendeur, non relevé"
+    }
+   ],
+   "concordance_photos": null,
+   "niveau_preuve": "C",
+   "raison_niveau": "nom prouvé (N1), une seule source de photo exploitable",
+   "niveau_provisoire_preuves": "C",
+   "marque": null,
+   "marque_verifiee": false,
+   "marque_note": "aucun ®, ™ ni série commerciale vu aux pages lues ; registre des marques (TMview/EUIPO/INPI) non consulté : à faire par l'orchestrateur. Nom de cultivar au registre RHS = dénomination variétale",
+   "statut": "à confirmer",
+   "statut_raison": null,
+   "priorite": "niche",
+   "notes": [
+    "Ancien.",
+    "Ancien, OHG seul ; photo vendeur unique."
+   ]
+  },
+  {
+   "id": "broughshane",
+   "nom": "Broughshane",
+   "nom_enregistre": "Broughshane",
+   "synonymes": [],
+   "coloris_rattache": null,
+   "division_registre": "1",
+   "code_couleur_registre": "W-W",
+   "lecture_code": "périanthe blanc ; couronne (du fond vers le bord, zones du code) blanc",
+   "registre": {
+    "requete": "Broughshane",
+    "nb_resultats_requete": 1,
+    "url_recherche": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Broughshane",
+    "statut": "lu : recherche par nom, 2026-10-08",
+    "id": "215861",
+    "nom_registre": "Broughshane",
+    "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffdetails.asp?ID=215861",
+    "homonymes": []
+   },
+   "division_annoncee_vendeurs": "1 W-W (OHG)",
+   "obtenteur": null,
+   "annee": "1938",
+   "origine_obtenteur_annee": "rapporté par fleur-preuves (lot 2 ou 3), non revérifié ; le registre RHS n'a pas donné de fiche de détail (504)",
+   "couleur_annoncee": "blanc / blanc (OHG)",
+   "hauteur_fiche_jdw": null,
+   "couleur_fiche_jdw": null,
+   "sources_existence": [
+    {
+     "niveau": "N1",
+     "source": "RHSREG",
+     "nom_source": "RHS, International Daffodil Register (recherche par nom)",
+     "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Broughshane"
+    },
+    {
+     "niveau": "N3",
+     "source": "OHG",
+     "nom_source": "Old House Gardens, narcisses anciens (code de division en tête de chaque code)",
+     "url": "https://oldhousegardens.com/store/category/Daffodil"
+    }
+   ],
+   "photos": [
+    {
+     "niveau": "N3",
+     "auteur": "Old House Gardens (vendeur)",
+     "image": "https://oldhousegardens.com/img/bulbs/DA75/lead.jpg",
+     "page": "https://oldhousegardens.com/store/bulb-info/DA75/Broughshane-Daffodil",
+     "licence": "usage du vendeur, non relevé"
+    }
+   ],
+   "concordance_photos": null,
+   "niveau_preuve": "C",
+   "raison_niveau": "nom prouvé (N1), une seule source de photo exploitable",
+   "niveau_provisoire_preuves": "C",
+   "marque": null,
+   "marque_verifiee": false,
+   "marque_note": "aucun ®, ™ ni série commerciale vu aux pages lues ; registre des marques (TMview/EUIPO/INPI) non consulté : à faire par l'orchestrateur. Nom de cultivar au registre RHS = dénomination variétale",
+   "statut": "à confirmer",
+   "statut_raison": null,
+   "priorite": "niche",
+   "notes": [
+    "Ancien.",
+    "Ancien, OHG seul ; photo vendeur unique."
+   ]
+  },
+  {
+   "id": "golden-spur",
+   "nom": "Golden Spur",
+   "nom_enregistre": "Golden Spur",
+   "synonymes": [],
+   "coloris_rattache": null,
+   "division_registre": "1",
+   "code_couleur_registre": "Y-Y",
+   "lecture_code": "périanthe jaune ; couronne (du fond vers le bord, zones du code) jaune",
+   "registre": {
+    "requete": "Golden Spur",
+    "nb_resultats_requete": 1,
+    "url_recherche": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Golden%20Spur",
+    "statut": "lu : recherche par nom, 2026-10-08",
+    "id": "217763",
+    "nom_registre": "Golden Spur",
+    "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffdetails.asp?ID=217763",
+    "homonymes": []
+   },
+   "division_annoncee_vendeurs": "1 Y-Y (OHG)",
+   "obtenteur": null,
+   "annee": "1885",
+   "origine_obtenteur_annee": "rapporté par fleur-preuves (lot 2 ou 3), non revérifié ; le registre RHS n'a pas donné de fiche de détail (504)",
+   "couleur_annoncee": "jaune / jaune (OHG)",
+   "hauteur_fiche_jdw": null,
+   "couleur_fiche_jdw": null,
+   "sources_existence": [
+    {
+     "niveau": "N1",
+     "source": "RHSREG",
+     "nom_source": "RHS, International Daffodil Register (recherche par nom)",
+     "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Golden%20Spur"
+    },
+    {
+     "niveau": "N3",
+     "source": "OHG",
+     "nom_source": "Old House Gardens, narcisses anciens (code de division en tête de chaque code)",
+     "url": "https://oldhousegardens.com/store/category/Daffodil"
+    }
+   ],
+   "photos": [
+    {
+     "niveau": "N3",
+     "auteur": "Old House Gardens (vendeur)",
+     "image": "https://oldhousegardens.com/img/bulbs/DA17/lead.jpg",
+     "page": "https://oldhousegardens.com/store/bulb-info/DA17/Golden-Spur-Daffodil",
+     "licence": "usage du vendeur, non relevé"
+    }
+   ],
+   "concordance_photos": null,
+   "niveau_preuve": "C",
+   "raison_niveau": "nom prouvé (N1), une seule source de photo exploitable",
+   "niveau_provisoire_preuves": "C",
+   "marque": null,
+   "marque_verifiee": false,
+   "marque_note": "aucun ®, ™ ni série commerciale vu aux pages lues ; registre des marques (TMview/EUIPO/INPI) non consulté : à faire par l'orchestrateur. Nom de cultivar au registre RHS = dénomination variétale",
+   "statut": "à confirmer",
+   "statut_raison": null,
+   "priorite": "niche",
+   "notes": [
+    "Ancien.",
+    "Épuisé chez OHG au moment de la lecture ; photo vendeur unique."
+   ]
+  },
+  {
+   "id": "maximus",
+   "nom": "Maximus (Trumpet Major)",
+   "nom_enregistre": "Maximus",
+   "synonymes": [],
+   "coloris_rattache": null,
+   "division_registre": "1",
+   "code_couleur_registre": "Y-Y",
+   "lecture_code": "périanthe jaune ; couronne (du fond vers le bord, zones du code) jaune",
+   "registre": {
+    "requete": "Maximus",
+    "nb_resultats_requete": 25,
+    "url_recherche": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Maximus",
+    "statut": "lu : recherche par nom, 2026-10-08",
+    "id": "205009",
+    "nom_registre": "Maximus",
+    "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffdetails.asp?ID=205009",
+    "homonymes": [
+     {
+      "id": "205012",
+      "division": "8",
+      "code": "Y-Y"
+     },
+     {
+      "id": "205011",
+      "division": "2",
+      "code": "Y-Y"
+     },
+     {
+      "id": "246702",
+      "division": "2",
+      "code": "W-W"
+     },
+     {
+      "id": "246700",
+      "division": "1",
+      "code": "W-Y"
+     },
+     {
+      "id": "246701",
+      "division": "1",
+      "code": "W-Y"
+     },
+     {
+      "id": "205010",
+      "division": "1",
+      "code": "Y-Y"
+     }
+    ]
+   },
+   "division_annoncee_vendeurs": "1 Y-Y (OHG)",
+   "obtenteur": null,
+   "annee": "1576 (OHG)",
+   "origine_obtenteur_annee": "rapporté par fleur-preuves (lot 2 ou 3), non revérifié ; le registre RHS n'a pas donné de fiche de détail (504)",
+   "couleur_annoncee": "jaune / jaune (OHG)",
+   "hauteur_fiche_jdw": null,
+   "couleur_fiche_jdw": null,
+   "sources_existence": [
+    {
+     "niveau": "N1",
+     "source": "RHSREG",
+     "nom_source": "RHS, International Daffodil Register (recherche par nom)",
+     "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Maximus"
+    },
+    {
+     "niveau": "N3",
+     "source": "OHG",
+     "nom_source": "Old House Gardens, narcisses anciens (code de division en tête de chaque code)",
+     "url": "https://oldhousegardens.com/store/category/Daffodil"
+    }
+   ],
+   "photos": [
+    {
+     "niveau": "N3",
+     "auteur": "Old House Gardens (vendeur)",
+     "image": "https://oldhousegardens.com/img/bulbs/DA88/lead.jpg",
+     "page": "https://oldhousegardens.com/store/bulb-info/DA88/Maximus,-Trumpet-Major-Daffodil",
+     "licence": "usage du vendeur, non relevé"
+    }
+   ],
+   "concordance_photos": null,
+   "niveau_preuve": "C",
+   "raison_niveau": "nom prouvé (N1), une seule source de photo exploitable",
+   "niveau_provisoire_preuves": "C",
+   "marque": null,
+   "marque_verifiee": false,
+   "marque_note": "aucun ®, ™ ni série commerciale vu aux pages lues ; registre des marques (TMview/EUIPO/INPI) non consulté : à faire par l'orchestrateur. Nom de cultivar au registre RHS = dénomination variétale",
+   "statut": "à confirmer",
+   "statut_raison": null,
+   "priorite": "niche",
+   "notes": [
+    "Très ancien ; nom populaire 'Trumpet Major'.",
+    "Nom usuel 'Trumpet Major' ; OHG seul ; photo vendeur unique."
+   ]
+  },
+  {
+   "id": "princeps",
+   "nom": "Princeps",
+   "nom_enregistre": "Princeps",
+   "synonymes": [],
+   "coloris_rattache": null,
+   "division_registre": "1",
+   "code_couleur_registre": "W-Y",
+   "lecture_code": "périanthe blanc ; couronne (du fond vers le bord, zones du code) jaune",
+   "registre": {
+    "requete": "Princeps",
+    "nb_resultats_requete": 7,
+    "url_recherche": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Princeps",
+    "statut": "lu : recherche par nom, 2026-10-08",
+    "id": "223119",
+    "nom_registre": "Princeps",
+    "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffdetails.asp?ID=223119",
+    "homonymes": []
+   },
+   "division_annoncee_vendeurs": "1 W-Y (OHG)",
+   "obtenteur": null,
+   "annee": "1830",
+   "origine_obtenteur_annee": "rapporté par fleur-preuves (lot 2 ou 3), non revérifié ; le registre RHS n'a pas donné de fiche de détail (504)",
+   "couleur_annoncee": "blanc / jaune (OHG)",
+   "hauteur_fiche_jdw": null,
+   "couleur_fiche_jdw": null,
+   "sources_existence": [
+    {
+     "niveau": "N1",
+     "source": "RHSREG",
+     "nom_source": "RHS, International Daffodil Register (recherche par nom)",
+     "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Princeps"
+    },
+    {
+     "niveau": "N3",
+     "source": "OHG",
+     "nom_source": "Old House Gardens, narcisses anciens (code de division en tête de chaque code)",
+     "url": "https://oldhousegardens.com/store/category/Daffodil"
+    }
+   ],
+   "photos": [
+    {
+     "niveau": "N3",
+     "auteur": "Old House Gardens (vendeur)",
+     "image": "https://oldhousegardens.com/img/bulbs/DA31/lead.jpg",
+     "page": "https://oldhousegardens.com/store/bulb-info/DA31/Princeps-Daffodil",
+     "licence": "usage du vendeur, non relevé"
+    }
+   ],
+   "concordance_photos": null,
+   "niveau_preuve": "C",
+   "raison_niveau": "nom prouvé (N1), une seule source de photo exploitable",
+   "niveau_provisoire_preuves": "C",
+   "marque": null,
+   "marque_verifiee": false,
+   "marque_note": "aucun ®, ™ ni série commerciale vu aux pages lues ; registre des marques (TMview/EUIPO/INPI) non consulté : à faire par l'orchestrateur. Nom de cultivar au registre RHS = dénomination variétale",
+   "statut": "à confirmer",
+   "statut_raison": null,
+   "priorite": "niche",
+   "notes": [
+    "Ancien.",
+    "Narcissus gayi mentionné par OHG ; photo vendeur unique."
+   ]
+  },
+  {
+   "id": "rosy-trumpet",
+   "nom": "Rosy Trumpet",
+   "nom_enregistre": "Rosy Trumpet",
+   "synonymes": [],
+   "coloris_rattache": null,
+   "division_registre": "1",
+   "code_couleur_registre": "W-P",
+   "lecture_code": "périanthe blanc ; couronne (du fond vers le bord, zones du code) rose",
+   "registre": {
+    "requete": "Rosy Trumpet",
+    "nb_resultats_requete": 1,
+    "url_recherche": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Rosy%20Trumpet",
+    "statut": "lu : recherche par nom, 2026-10-08",
+    "id": "223004",
+    "nom_registre": "Rosy Trumpet",
+    "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffdetails.asp?ID=223004",
+    "homonymes": []
+   },
+   "division_annoncee_vendeurs": "1 W-P (OHG)",
+   "obtenteur": null,
+   "annee": "avant 1952",
+   "origine_obtenteur_annee": "rapporté par fleur-preuves (lot 2 ou 3), non revérifié ; le registre RHS n'a pas donné de fiche de détail (504)",
+   "couleur_annoncee": "blanc / rose (OHG)",
+   "hauteur_fiche_jdw": null,
+   "couleur_fiche_jdw": null,
+   "sources_existence": [
+    {
+     "niveau": "N1",
+     "source": "RHSREG",
+     "nom_source": "RHS, International Daffodil Register (recherche par nom)",
+     "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Rosy%20Trumpet"
+    },
+    {
+     "niveau": "N3",
+     "source": "OHG",
+     "nom_source": "Old House Gardens, narcisses anciens (code de division en tête de chaque code)",
+     "url": "https://oldhousegardens.com/store/category/Daffodil"
+    }
+   ],
+   "photos": [
+    {
+     "niveau": "N3",
+     "auteur": "Old House Gardens (vendeur)",
+     "image": "https://oldhousegardens.com/img/bulbs/DA968/lead.jpg",
+     "page": "https://oldhousegardens.com/store/bulb-info/DA968/Rosy-Trumpet-Daffodil",
+     "licence": "usage du vendeur, non relevé"
+    }
+   ],
+   "concordance_photos": null,
+   "niveau_preuve": "C",
+   "raison_niveau": "nom prouvé (N1), une seule source de photo exploitable",
+   "niveau_provisoire_preuves": "C",
+   "marque": null,
+   "marque_verifiee": false,
+   "marque_note": "aucun ®, ™ ni série commerciale vu aux pages lues ; registre des marques (TMview/EUIPO/INPI) non consulté : à faire par l'orchestrateur. Nom de cultivar au registre RHS = dénomination variétale",
+   "statut": "à confirmer",
+   "statut_raison": null,
+   "priorite": "niche",
+   "notes": [
+    "Ancien.",
+    "Épuisé chez OHG au moment de la lecture ; photo vendeur unique."
+   ]
+  }
+ ],
+ "sources_generales": {
+  "RHSREG": {
+   "niveau": "N1",
+   "nom": "RHS, International Daffodil Register : recherche par nom (daffsearch.asp?name=), division et code couleur lus le 2026-10-08",
+   "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/"
+  },
+  "RHSP": {
+   "niveau": "N1",
+   "nom": "RHS Plants, fiche Narcissus 'Dutch Master' (1)",
+   "url": "https://www.rhs.org.uk/plants/99309/narcissus-dutch-master-1/details",
+   "note": "code de classement (1), AGM ; ni enregistrant ni année",
+   "niveau_ancien": null
+  },
+  "JDW": {
+   "niveau": "N2",
+   "nom": "Jan de Wit en Zonen, assortiment Narcissus, groupe Trumpet (19 fiches)",
+   "url": "https://www.jandewitenzonen.com/en/assortment/narcissus/",
+   "note": "liste obtenue par le chargeur de la page (products_filter_db.php, filtre GROEP=TRUMPET) ; couleur et hauteur du catalogue",
+   "niveau_ancien": null
+  },
+  "JA": {
+   "niveau": "N3",
+   "nom": "Jacques Amand International, collection Narcissi Division 1 Trumpet (12 fiches)",
+   "url": "https://www.jacquesamand.com/collections/narcissi-division-1-trumpet-narcissi",
+   "note": "lecture du flux products.json public de la collection",
+   "niveau_ancien": null
+  },
+  "VE": {
+   "niveau": "N3",
+   "nom": "Van Engelen, Trumpet Daffodils (19 fiches)",
+   "url": "https://www.vanengelen.com/flower-bulbs-index/narcissi/trumpet-daffodils.html",
+   "note": "noms de la catégorie ; fiches produit sans description exploitable",
+   "niveau_ancien": "N2"
+  },
+  "PN": {
+   "niveau": "N3",
+   "nom": "Peter Nyssen, Trumpet Daffodils (4 fiches)",
+   "url": "https://www.peternyssen.com/autumn-planting/daffodils-narcissi/trumpet-daffodils.html",
+   "note": "",
+   "niveau_ancien": null
+  },
+  "BL": {
+   "niveau": "N3",
+   "nom": "Bloms Bulbs, Trumpet Daffodils (12 fiches)",
+   "url": "https://blomsbulbs.com/product-category/autumn/daffodils-narcissi/trumpet-daffodils/",
+   "note": "",
+   "niveau_ancien": null
+  },
+  "LF": {
+   "niveau": "N3",
+   "nom": "Longfield Gardens, collection Narcissus (libellés 'Daffodil Trumpet ...')",
+   "url": "https://www.longfield-gardens.com/collections/narcissus",
+   "note": "détaillant, fiabilité C",
+   "niveau_ancien": null
+  },
+  "FL": {
+   "niveau": "N3",
+   "nom": "Fluwel, narcissen (la description mentionne 'trompet')",
+   "url": "https://www.fluwel.nl/collections/narcissen",
+   "note": "division non lue",
+   "niveau_ancien": null
+  },
+  "WP": {
+   "niveau": "N4",
+   "nom": "Wikipédia, List of Award of Garden Merit narcissus (colonne Div.)",
+   "url": "https://en.wikipedia.org/wiki/List_of_Award_of_Garden_Merit_narcissus",
+   "note": "liste des narcisses primés AGM par la RHS ; fiabilité C ; lue par WebFetch",
+   "niveau_ancien": null
+  },
+  "OHG": {
+   "niveau": "N3",
+   "nom": "Old House Gardens, narcisses anciens (code de division en tête de chaque code)",
+   "url": "https://oldhousegardens.com/store/category/Daffodil",
+   "note": "années et couleurs écrites par le vendeur",
+   "niveau_ancien": null
+  },
+  "JDWDUMP": {
+   "niveau": "N2",
+   "nom": "Jan de Wit en Zonen : liste Narcissus (93 fiches dont 19 Trumpet) avec vignette par variété, lue par le chargeur de la page",
+   "url": "https://www.jandewitenzonen.com/en/assortment/narcissus/"
+  },
+  "COMMONS_GH": {
+   "niveau": "N4",
+   "nom": "Commons, File:Golden Harvest 1.JPG (Cillas, CC BY-SA 4.0 / GFDL, jardin botanique de Madrid, légende div. 1)",
+   "url": "https://commons.wikimedia.org/wiki/File:Golden_Harvest_1.JPG"
+  }
+ },
+ "marques_a_verifier": [],
+ "marques_note": "Aucune marque vue chez les vendeurs ; le registre des marques (TMview, EUIPO, INPI) n'a pas été consulté : à faire par l'orchestrateur. Aucun nom ne part dans marques-a-verifier.txt.",
+ "limites": [
+  "Registre RHS (apps.rhs.org.uk/horticulturaldatabase/daffodilregister/) : la recherche par nom (GET ?name=) répond 'no matches' même pour 'Golden', les pages de détail (daffdetails.asp?ID=) répondent 504 ou expirent (curl et WebFetch, 2026-10-08). N1 non lu ; seule trace : un résumé de moteur de recherche pour 'Dutch Master' (ID 216736) et la fiche RHS Plants 99309.",
+  "Le registre ne se cherche que par nom, obtenteur ou enregistrant : pas de liste par division. Même fonctionnel, il ne permet pas d'énumérer la division 1.",
+  "DaffSeek (daffseek.org) : pages d'aide lisibles avec un agent de navigateur (WebFetch : 403), mais la requête par division est un formulaire POST (action list-page) : non utilisé, conformément à la consigne 'sans remplir de formulaire'. À faire : fournir un export de la division 1 ou autoriser la requête.",
+  "Jan de Wit : la liste a été lue par le chargeur de la page elle-même (requête de filtre en POST sans donnée personnelle, comme le fait la page à son ouverture). À signaler au chef, la consigne disait 'aucun formulaire'.",
+  "Non lus : Walkers Bulbs (délai dépassé), Vertuco (aucune liste de narcisses trouvée dans la page), Broadleigh (liste spéciale : 502), Floret, Colorblends (403), Dutch Gardens, Quality Daffodils (délai dépassé), Hortus Bulborum (boutique sans liste par division), producteurs de narcisses coupés.",
+  "Wikipédia (API) répond 429 ; la liste AGM a été lue par WebFetch (niveau N4, fiabilité C). Le budget de recherche web est épuisé : aucune requête de moteur n'a pu être refaite.",
+  "Photos non vérifiées à ce temps : le niveau de preuve et les photos nommées viendront des agents fleur-preuves.",
+  "Obtenteur et année non trouvés pour presque tous les cultivars (aucune invention) ; seuls Dutch Master (enregistrant et année, par résumé du registre) et les années des narcisses anciens d'Old House Gardens sont donnés.",
+  "Registre RHS (2026-10-08, temps 2) : la recherche par nom répond, lentement (3 à 70 s) et avec de faux « no matches » ; relancée jusqu'à 4 fois, elle a donné la division et le code couleur des 54 noms. Les fiches de détail (daffdetails.asp) répondent 504 à Python et expirent à WebFetch en parallèle ; seule celle de Dutch Master a été lue : obtenteur et année manquent pour les autres.",
+  "Photos Jan de Wit : vignettes d'environ 160 px, suffisantes pour reconnaître le type de couleur mais pas pour la mesure ; photos de Jacques Amand, Bloms et Peter Nyssen : usage du vendeur, licence non relevée.",
+  "Six images Van Engelen (Classic Garden, Ice Baby, January Silver, Orange Sunset, Pistachio, Teal) sont l'image de remplacement du site (même fichier) : écartées. Une URL Commons à accents (Las Vegas) ne répond pas : écartée.",
+  "La recherche web est épuisée pour ce tour : aucune requête de moteur n'a pu être faite pour Spellbinder ; les recherches par site (Van Engelen, Jacques Amand, Peter Nyssen, Bloms, Commons) n'ont rien donné.",
+  "Aucune mesure de couleur (ΔE) faite ici : la concordance des photos est jugée à l'œil sur les vignettes et photos du 2026-10-08."
+ ],
+ "doutes": [
+  "Spellbinder : nom prouvé N1 mais aucune photo : le coloris citron reste à trancher (remplacer par Galactic Star, ou attendre une photo).",
+  "Bravoure et Las Vegas : même code W-Y, périanthes proches : deux coloris à départager par la mesure ou à fusionner.",
+  "Dutch Master, Golden Harvest et Arctic Gold : même code Y-Y : jaune et jaune d'or ne se distinguent que par la mesure.",
+  "Orange Sunset (1 W-YYO) : la photo Bloms montre une couronne courte à bord orange, plus proche d'une grande coupe ; division 1 d'après le registre, forme à revoir avant dessin. Photo unique : niveau C.",
+  "Pistachio (1 Y-Y) : la photo Bloms ne correspond pas au code (couronne orange sur périanthe pâle) : écartée ; niveau D.",
+  "Llanfair : code du registre W/Y-P (périanthe jaune verdâtre qui blanchit, trompette rose d'après Jacques Amand) : photo unique, niveau C.",
+  "Maximus : le registre a plusieurs entrées (Y-Y division 1 ID 205010, autres divisions) ; l'ancien Trumpet Major est retenu en division 1 Y-Y, sans photo vendeur contrôlée.",
+  "Attraction : le registre a aussi une Attraction de division 9 ; la division 1 W-Y est retenue (accord avec Jan de Wit, White/Yellow).",
+  "Obtenteur et année : seule la fiche de Dutch Master (Zandbergen, 1948) est lue au registre ; les autres valeurs (Teal, Grant Mitsch 1975 selon Van Engelen ; années d'Old House Gardens) viennent des vendeurs."
+ ],
+ "pieges_rencontres": [
+  "les catégories trumpet des vendeurs mêlent d'autres divisions (January Silver est de division 2) ; les images de remplacement des boutiques comptent pour des photos si on ne compare pas les fichiers ; certains noms ont des homonymes de division différente (Attraction, Viking, Little Gem, Maximus)."
+ ],
+ "decisions_orchestrateur_2026-10-09": {
+  "niveaux": "Règle des deux photos : les A (registre RHS + fiche N2 de Jan de Wit) tiennent ; les 2 B (deux domaines de photos, dont un N3) tiennent. Aucun coloris du catalogue sous B : aucun ret:1.",
+  "bravoure_las_vegas": "Écart de couleur mesuré entre les deux variantes (matières de y-narcissus.js) : périanthe #f3f5ea / #f2eec8, ΔE76 14,3 et ΔE2000 9,2 ; coupe #f0e422 / #f2d618, ΔE76 8,4 et ΔE2000 4,6. Le périanthe dépasse ΔE 6 (et la moyenne, 6,9, aussi) : les deux variantes restent en jeu, sans ret:1.",
+  "galilee": "Aucun coloris de ce nom dans cette sorte."
+ }
+}

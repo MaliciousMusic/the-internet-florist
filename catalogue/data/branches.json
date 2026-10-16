@@ -1,0 +1,3472 @@
+[
+  {
+    "id": "cerisier-du-japon-sato-zakura",
+    "nom_fr": "Cerisier à fleurs du Japon (Sato-zakura)",
+    "nom_en": "Japanese flowering cherry",
+    "latin": "Prunus serrulata (groupe Sato-zakura)",
+    "famille": "Rosaceae",
+    "categorie": "Branches & baies",
+    "role": "branche",
+    "couleurs": [
+      "rose",
+      "rose soutenu",
+      "rose pâle",
+      "blanc",
+      "blanc crème"
+    ],
+    "varietes": [
+      {
+        "nom": "'Kanzan' (syn. 'Sekiyama')",
+        "couleur": "rose soutenu",
+        "note": "double, 20 à 30 pétales, jeunes feuilles bronze ; le cerisier coupé le plus courant"
+      },
+      {
+        "nom": "'Amanogawa'",
+        "couleur": "rose pâle",
+        "note": "semi-double, port colonnaire"
+      },
+      {
+        "nom": "'Shirotae' (syn. 'Mount Fuji')",
+        "couleur": "blanc pur",
+        "note": "semi-double, rosit avant la chute des pétales"
+      },
+      {
+        "nom": "'Fugenzō' (souvent vendu sous le nom 'Shirofugen')",
+        "couleur": "boutons roses, fleurs blanc rosé",
+        "note": "double ; nomenclature confuse selon les sources"
+      },
+      {
+        "nom": "'Ichiyo'",
+        "couleur": "rose pâle virant au blanc",
+        "note": "double"
+      },
+      {
+        "nom": "'Ukon'",
+        "couleur": "blanc crème verdâtre à cœur rosé",
+        "note": "semi-double, jeunes feuilles bronze"
+      },
+      {
+        "nom": "'Shōgetsu'",
+        "couleur": "blanc, boutons rosés",
+        "note": "double, longs pédicelles retombants"
+      },
+      {
+        "nom": "'Kiku-shidare'",
+        "couleur": "rose",
+        "note": "double, rameaux pleureurs"
+      },
+      {
+        "nom": "'Pink Perfection'",
+        "couleur": "rose",
+        "note": "double, issu de 'Kanzan'"
+      },
+      {
+        "nom": "'Royal Burgundy'",
+        "couleur": "rose foncé",
+        "note": "double, feuillage pourpre"
+      },
+      {
+        "nom": "'Tai-haku'",
+        "couleur": "blanc pur",
+        "note": "simple, très grande fleur (≈8 cm)"
+      }
+    ],
+    "formes": "branche fleurie en bouton ou ouverte, fleurs doubles en bouquets pendants",
+    "saison": "mars–mai (branches forcées dès février)",
+    "tenue_vase": "7–12 jours",
+    "gamme_prix": "€€",
+    "rarete_jeu": "rare",
+    "notes_dessin": "Écorce brun acajou lustrée, barrée de lenticelles horizontales bien visibles ; rameaux trapus portant de courts éperons noueux. Les fleurs naissent en bouquets de 2 à 5 sur ces éperons, suspendues à de longs pédicelles (jusqu’à 4 cm) qui les font pendre en grappes. Chez 'Kanzan', chaque fleur double d’environ 5 cm compte 20 à 30 pétales roses légèrement froissés, plus foncés au cœur, et les boutons sont ronds et carminés. Les jeunes feuilles dentées, cuivrées à bronze, sortent en même temps que les fleurs : les dessiner repliées en pointe à la base des bouquets.",
+    "wiki": "Prunus serrulata",
+    "img_queries": [
+      "Prunus serrulata 'Kanzan'",
+      "Prunus 'Shirotae'",
+      "Prunus 'Ukon'",
+      "Prunus 'Amanogawa'"
+    ],
+    "sources": [
+      "https://en.wikipedia.org/wiki/Prunus_serrulata",
+      "https://plants.ces.ncsu.edu/plants/prunus-serrulata/",
+      "https://www.keele.ac.uk/arboretum/nationalcollectionoffloweringcherries/listofofcherries/list%20of%20cherries%20April2026.pdf",
+      "https://www.sierraflowerfinder.com/en/d/cherry-blossom-branches/9772",
+      "https://www.rhs.org.uk/plants/pdfs/rhs-recommended-award-of-garden-merit-ornamentals.pdf"
+    ]
+  },
+  {
+    "id": "cerisiers-hatifs-fleurs-simples",
+    "nom_fr": "Cerisiers hâtifs à fleurs simples (Keio-zakura, 'Accolade', 'Okamé')",
+    "nom_en": "Early single-flowered cherries (Keio cherry, Yoshino cherry)",
+    "latin": "Prunus spp. (× yedoensis, × incam, incisa, × subhirtella, 'Keio')",
+    "famille": "Rosaceae",
+    "categorie": "Branches & baies",
+    "role": "branche",
+    "couleurs": [
+      "rose",
+      "rose pâle",
+      "blanc rosé",
+      "blanc"
+    ],
+    "varietes": [
+      {
+        "nom": "'Keio' (Keio-zakura)",
+        "couleur": "rose",
+        "note": "cerisier japonais de forçage (Yamagata) exporté par Aucnet, tiges de 125 à 165 cm"
+      },
+      {
+        "nom": "'Accolade'",
+        "couleur": "boutons rouges, fleurs rose tendre",
+        "note": "semi-double (12 à 15 pétales), P. sargentii × P. subhirtella"
+      },
+      {
+        "nom": "× incam 'Okamé'",
+        "couleur": "rose carmin",
+        "note": "très précoce, petites fleurs simples"
+      },
+      {
+        "nom": "× yedoensis 'Somei-Yoshino'",
+        "couleur": "blanc à rose très pâle",
+        "note": "5 pétales, 3–3,5 cm, en bouquets de 5 à 6"
+      },
+      {
+        "nom": "incisa 'Kojo-no-mai'",
+        "couleur": "blanc rosé",
+        "note": "rameaux en zigzag, port nain"
+      },
+      {
+        "nom": "× subhirtella 'Autumnalis Rosea'",
+        "couleur": "rose pâle",
+        "note": "floraison hivernale par vagues"
+      },
+      {
+        "nom": "× kanzakura 'Kawazu'",
+        "couleur": "rose",
+        "note": "cerisier japonais précoce"
+      }
+    ],
+    "formes": "branche fleurie forcée, fleurs simples à 5 pétales, souvent livrée en bouton",
+    "saison": "décembre–mars (Keio : de la fin d’année à mi-mars, pic au Nouvel An lunaire)",
+    "tenue_vase": "14–21 jours (une fleur ouverte tient ≈7 jours)",
+    "gamme_prix": "€€€",
+    "rarete_jeu": "precieuse",
+    "notes_dessin": "Rameaux plus fins et plus droits que chez les cerisiers doubles, écorce brun-rouge brillante à lenticelles horizontales argentées. Fleurs simples de 2,5 à 3,5 cm à 5 pétales arrondis, légèrement échancrés au sommet, réunies par 2 à 6 en ombelles sur de courts pédicelles. Le calice tubulaire rouge sombre et la couronne d’étamines filiformes à anthères jaunes ressortent au centre. La floraison précède les feuilles : la branche est nue, ponctuée de boutons ovoïdes rose foncé sortant d’écailles brunes.",
+    "wiki": "Prunus × yedoensis",
+    "img_queries": [
+      "Prunus × yedoensis 'Somei-yoshino'",
+      "Prunus 'Accolade'",
+      "Prunus 'Okame'",
+      "Kawazuzakura"
+    ],
+    "sources": [
+      "https://thursd.com/articles/aucnet-ja-shonai-midori-cherry-blossoms",
+      "https://www.keele.ac.uk/arboretum/nationalcollectionoffloweringcherries/listofofcherries/list%20of%20cherries%20April2026.pdf",
+      "https://www.rhs.org.uk/plants/pdfs/rhs-recommended-award-of-garden-merit-ornamentals.pdf",
+      "https://en.wikipedia.org/wiki/Prunus_%C3%97_yedoensis"
+    ]
+  },
+  {
+    "id": "abricotier-du-japon-ume",
+    "nom_fr": "Abricotier du Japon (ume, « fleur de prunier »)",
+    "nom_en": "Japanese apricot / plum blossom (ume)",
+    "latin": "Prunus mume",
+    "famille": "Rosaceae",
+    "categorie": "Branches & baies",
+    "role": "branche",
+    "couleurs": [
+      "blanc",
+      "rose",
+      "rose soutenu",
+      "rouge carmin"
+    ],
+    "varietes": [
+      {
+        "nom": "'Beni-chidori'",
+        "couleur": "rouge carmin",
+        "note": "simple, très parfumé"
+      },
+      {
+        "nom": "'Kobai'",
+        "couleur": "rouge profond",
+        "note": "semi-double"
+      },
+      {
+        "nom": "'Peggy Clarke'",
+        "couleur": "rose soutenu",
+        "note": "double"
+      },
+      {
+        "nom": "'Bonita'",
+        "couleur": "rose-rouge",
+        "note": "semi-double"
+      },
+      {
+        "nom": "'Dawn'",
+        "couleur": "rose",
+        "note": "double, grandes fleurs ondulées"
+      },
+      {
+        "nom": "'Alba'",
+        "couleur": "blanc",
+        "note": "simple"
+      },
+      {
+        "nom": "'Albo-plena'",
+        "couleur": "blanc",
+        "note": "double"
+      },
+      {
+        "nom": "'Rosemary Clarke'",
+        "couleur": "blanc à calice rouge",
+        "note": "double"
+      },
+      {
+        "nom": "'Matsubara Red'",
+        "couleur": "rouge foncé",
+        "note": "double"
+      },
+      {
+        "nom": "'Contorta'",
+        "couleur": "blanc",
+        "note": "simple, rameaux tortueux"
+      },
+      {
+        "nom": "'W.B. Clarke'",
+        "couleur": "rose",
+        "note": "double, port pleureur"
+      }
+    ],
+    "formes": "branche nue fleurie, boutons ronds serrés le long des rameaux",
+    "saison": "janvier–mars (forcé pour le Nouvel An lunaire)",
+    "tenue_vase": "7–12 jours",
+    "gamme_prix": "€€€",
+    "rarete_jeu": "precieuse",
+    "notes_dessin": "Rameaux de l’année vert lisse et brillant, longs et droits comme des baguettes, qui contrastent avec le vieux bois gris-noir noueux et fissuré. Fleurs de 2 à 2,5 cm presque sessiles, isolées ou par deux le long des rameaux, à 5 pétales parfaitement ronds dans les formes simples. Une couronne de très nombreuses étamines longues et fines rayonne autour du pistil ; le calice est rouge pourpre chez la plupart des variétés, même sous les fleurs blanches. Les boutons sphériques comme des perles précèdent les fleurs ; aucune feuille n’est visible pendant la floraison.",
+    "wiki": "Prunus mume",
+    "img_queries": [
+      "Prunus mume 'Beni-chidori'",
+      "Prunus mume flowers",
+      "Prunus mume 'Peggy Clarke'"
+    ],
+    "sources": [
+      "https://plants.ces.ncsu.edu/plants/prunus-mume/",
+      "https://en.wikipedia.org/wiki/Prunus_mume",
+      "https://www.sierraflowerfinder.com/en/d/apricot-blossom/3849",
+      "https://fiftyflowers.com/products/blooming-pink-apricot-blossom-branches",
+      "https://www.rhs.org.uk/plants/pdfs/rhs-recommended-award-of-garden-merit-ornamentals.pdf"
+    ]
+  },
+  {
+    "id": "amandier-en-fleurs",
+    "nom_fr": "Amandier (branches fleuries)",
+    "nom_en": "Almond blossom",
+    "latin": "Prunus dulcis",
+    "famille": "Rosaceae",
+    "categorie": "Branches & baies",
+    "role": "branche",
+    "couleurs": [
+      "blanc",
+      "rose très pâle",
+      "rose lavande"
+    ],
+    "varietes": [
+      {
+        "nom": "Amandier « blush » (forme commerciale)",
+        "couleur": "rose très pâle",
+        "note": "Mayesh"
+      },
+      {
+        "nom": "Amandier rose (forme commerciale)",
+        "couleur": "rose lavande",
+        "note": "FiftyFlowers, branches de 90–120 cm"
+      },
+      {
+        "nom": "Amandier blanc (forme commerciale)",
+        "couleur": "blanc à cœur rose",
+        "note": "Continental Floral Greens"
+      }
+    ],
+    "formes": "branche nue fleurie, fleurs simples en coupe",
+    "saison": "février–avril",
+    "tenue_vase": "7–12 jours",
+    "gamme_prix": "€€",
+    "rarete_jeu": "rare",
+    "notes_dessin": "Jeunes rameaux verts, rougissant au soleil puis gris dès la deuxième année ; ramification droite et aérée. Fleurs simples de 3 à 5 cm à 5 pétales ovales, blanc à rose très pâle, plus rosés à la base, posées isolément ou par paires presque sans pédicelle. Le cœur est carminé, garni d’étamines nombreuses à anthères jaunes, et le calice est rougeâtre. La floraison précède les feuilles : seules quelques jeunes feuilles lancéolées vert tendre pointent parfois au bout des rameaux.",
+    "wiki": "Prunus dulcis",
+    "img_queries": [
+      "Prunus dulcis flowers",
+      "Almond blossom branch",
+      "Prunus dulcis blossom"
+    ],
+    "sources": [
+      "https://thursd.com/articles/flowering-branches-continental-floral-greens",
+      "https://www.mayesh.com/blossom-almond-blush-long",
+      "https://fiftyflowers.com/products/blooming-pink-almond-blossom-branches",
+      "https://en.wikipedia.org/wiki/Almond"
+    ]
+  },
+  {
+    "id": "amandier-de-chine-cerisier-nain",
+    "nom_fr": "Amandier de Chine & cerisier nain du Japon (pompons doubles)",
+    "nom_en": "Flowering almond & dwarf flowering cherry",
+    "latin": "Prunus triloba ; Prunus glandulosa",
+    "famille": "Rosaceae",
+    "categorie": "Branches & baies",
+    "role": "branche",
+    "couleurs": [
+      "rose soutenu",
+      "rose pâle",
+      "blanc"
+    ],
+    "varietes": [
+      {
+        "nom": "P. triloba 'Multiplex'",
+        "couleur": "rose",
+        "note": "fleurs doubles en rosettes (syn. 'Plena')"
+      },
+      {
+        "nom": "P. triloba (sélection Maurits Keppel)",
+        "couleur": "rose soutenu",
+        "note": "branche coupée bio des Pays-Bas"
+      },
+      {
+        "nom": "P. glandulosa 'Rosea Plena' (syn. 'Sinensis')",
+        "couleur": "rose pâle",
+        "note": "double, pompons"
+      },
+      {
+        "nom": "P. glandulosa 'Alba Plena'",
+        "couleur": "blanc pur",
+        "note": "double, pompons"
+      },
+      {
+        "nom": "P. glandulosa 'Alba'",
+        "couleur": "blanc",
+        "note": "simple"
+      }
+    ],
+    "formes": "rameaux fins couverts de pompons doubles",
+    "saison": "mars–avril",
+    "tenue_vase": "7–12 jours",
+    "gamme_prix": "€€",
+    "rarete_jeu": "rare",
+    "notes_dessin": "Rameaux fins, droits et souples, brun-rouge à gris, garnis sur toute leur longueur de fleurs serrées presque sans espace entre elles. Chaque fleur double de 2 à 3,5 cm forme un petit pompon de nombreux pétales arrondis en rosette, sur un pédicelle très court, souvent par paires à chaque nœud. Chez P. glandulosa les pompons sont plus globuleux et légèrement pendants ; chez P. triloba ils sont plus plats et plus serrés. Les petites feuilles (trilobées au sommet chez P. triloba) n’apparaissent qu’en fin de floraison, vert tendre à la pointe des rameaux.",
+    "wiki": "Prunus triloba",
+    "img_queries": [
+      "Prunus triloba 'Multiplex'",
+      "Prunus glandulosa 'Rosea Plena'",
+      "Prunus glandulosa 'Alba Plena'"
+    ],
+    "sources": [
+      "https://thursd.com/articles/maurits-keppels-scoops-prunus",
+      "https://en.wikipedia.org/wiki/Prunus_triloba",
+      "https://en.wikipedia.org/wiki/Prunus_glandulosa",
+      "https://fiftyflowers.com/products/hot-pink-prunus-blooming-branches"
+    ]
+  },
+  {
+    "id": "pecher-a-fleurs",
+    "nom_fr": "Pêcher à fleurs",
+    "nom_en": "Ornamental peach blossom",
+    "latin": "Prunus persica",
+    "famille": "Rosaceae",
+    "categorie": "Branches & baies",
+    "role": "branche",
+    "couleurs": [
+      "rose",
+      "rouge bordeaux",
+      "blanc",
+      "bicolore rouge et blanc"
+    ],
+    "varietes": [
+      {
+        "nom": "'Genpei' (Genpei-momo)",
+        "couleur": "blanc et cramoisi sur le même rameau",
+        "note": "pêcher d’ornement japonais"
+      },
+      {
+        "nom": "Pêchers pleureurs (groupe Shidare-momo)",
+        "couleur": "rose, rouge ou blanc",
+        "note": "rameaux retombants"
+      },
+      {
+        "nom": "Pêcher rouge (forme commerciale)",
+        "couleur": "bordeaux",
+        "note": "FiftyFlowers"
+      },
+      {
+        "nom": "Pêcher rose (forme commerciale)",
+        "couleur": "rose clair à nuances blanches",
+        "note": "FiftyFlowers"
+      }
+    ],
+    "formes": "branche nue fleurie, fleurs simples ou doubles",
+    "saison": "février–avril (forcé en janvier–février pour le Nouvel An lunaire ; fête Hinamatsuri le 3 mars au Japon)",
+    "tenue_vase": "7–12 jours",
+    "gamme_prix": "€€",
+    "rarete_jeu": "rare",
+    "notes_dessin": "Rameaux verts à rougeâtres, lisses et raides, portant à chaque nœud deux boutons floraux qui encadrent un bourgeon foliaire. Fleurs de 3 à 5 cm, simples à 5 pétales ou doubles en rosettes très pleines, presque sessiles et plaquées contre le rameau. Le rose est plus saturé que celui du cerisier, avec un cœur plus foncé ; chez 'Genpei', fleurs blanches, rouges et panachées coexistent sur la même branche. Les feuilles étroites et lancéolées, pliées en gouttière, n’apparaissent qu’à la fin de la floraison.",
+    "wiki": "Prunus persica",
+    "img_queries": [
+      "Prunus persica 'Genpei'",
+      "Hanamomo",
+      "Prunus persica double flowers"
+    ],
+    "sources": [
+      "https://www.sierraflowerfinder.com/en/d/peach-blossom/1834",
+      "https://ja.wikipedia.org/wiki/%E3%83%8F%E3%83%8A%E3%83%A2%E3%83%A2",
+      "https://ja.wikipedia.org/wiki/%E3%83%A2%E3%83%A2",
+      "https://fiftyflowers.com/products/blooming-red-peach-blossom-branches",
+      "https://thursd.com/articles/flowering-branches-continental-floral-greens"
+    ]
+  },
+  {
+    "id": "pommier-pommetier-en-fleurs",
+    "nom_fr": "Pommier & pommetier à fleurs",
+    "nom_en": "Apple & crabapple blossom",
+    "latin": "Malus spp. (Malus domestica, pommetiers hybrides)",
+    "famille": "Rosaceae",
+    "categorie": "Branches & baies",
+    "role": "branche",
+    "couleurs": [
+      "blanc",
+      "rose",
+      "rose soutenu",
+      "rouge pourpre"
+    ],
+    "varietes": [
+      {
+        "nom": "'Evereste'",
+        "couleur": "boutons roses, fleurs blanches"
+      },
+      {
+        "nom": "× robusta 'Red Sentinel'",
+        "couleur": "boutons roses, fleurs blanches"
+      },
+      {
+        "nom": "'John Downie'",
+        "couleur": "boutons roses, fleurs blanc pur"
+      },
+      {
+        "nom": "'Golden Hornet'",
+        "couleur": "boutons rose pâle, fleurs blanc pur"
+      },
+      {
+        "nom": "'Royalty'",
+        "couleur": "pourpre cramoisi",
+        "note": "feuillage pourpre"
+      },
+      {
+        "nom": "'Rudolph'",
+        "couleur": "boutons rouge foncé, fleurs rose-rouge"
+      },
+      {
+        "nom": "'Directeur Moerlands'",
+        "couleur": "rose profond"
+      },
+      {
+        "nom": "'Hillieri'",
+        "couleur": "rose vif"
+      },
+      {
+        "nom": "'Adirondack'",
+        "couleur": "boutons carmin, fleurs ivoire"
+      },
+      {
+        "nom": "'Indian Magic'",
+        "couleur": "rose"
+      },
+      {
+        "nom": "'Donald Wyman'",
+        "couleur": "blanc lavé de rose"
+      }
+    ],
+    "formes": "branche fleurie en corymbes, boutons et fleurs ouvertes mêlés",
+    "saison": "avril–mai",
+    "tenue_vase": "5–8 jours",
+    "gamme_prix": "€€",
+    "rarete_jeu": "rare",
+    "notes_dessin": "Branches noueuses brun-gris à écorce finement fissurée, avec de courts rameaux-éperons trapus d’où partent les bouquets. Chaque corymbe réunit 4 à 7 fleurs en coupe de 3 à 5 cm à 5 pétales arrondis, entourées d’une rosette de jeunes feuilles ovales dentées. Les boutons sont nettement plus colorés (rose à carmin) que les fleurs ouvertes, ce qui crée un dégradé dans chaque bouquet ; la fleur centrale s’ouvre en premier. Le cœur est garni d’étamines à anthères jaunes autour de 5 styles soudés à la base.",
+    "wiki": "Malus",
+    "img_queries": [
+      "Malus 'Evereste'",
+      "Malus 'Royalty'",
+      "Malus floribunda flowers",
+      "Apple blossom branch"
+    ],
+    "sources": [
+      "https://www.sierraflowerfinder.com/en/d/apple-blossom-branch/10420",
+      "https://www.mayesh.com/blossom-crabapple-pink-long",
+      "https://www.treesandshrubsonline.org/articles/malus/malus-cultivars-d-f/",
+      "https://www.treesandshrubsonline.org/articles/malus/malus-cultivars-r/",
+      "https://plants.ces.ncsu.edu/plants/malus/"
+    ]
+  },
+  {
+    "id": "pommetier-a-fruits",
+    "nom_fr": "Pommetier à fruits décoratifs (branches de pommettes)",
+    "nom_en": "Crabapple fruit branches",
+    "latin": "Malus spp. (pommetiers d’ornement)",
+    "famille": "Rosaceae",
+    "categorie": "Branches & baies",
+    "role": "baie",
+    "couleurs": [
+      "rouge",
+      "jaune d’or",
+      "orange",
+      "pourpre",
+      "rouge et jaune"
+    ],
+    "varietes": [
+      {
+        "nom": "× robusta 'Red Sentinel'",
+        "couleur": "rouge vif",
+        "note": "moins de 3 cm, reste sur l’arbre tout l’hiver"
+      },
+      {
+        "nom": "'Evereste'",
+        "couleur": "rouge et jaune striés",
+        "note": "moins de 2 cm"
+      },
+      {
+        "nom": "'John Downie'",
+        "couleur": "orange-rouge",
+        "note": "moins de 3 cm, conique, tombe vite"
+      },
+      {
+        "nom": "'Golden Hornet'",
+        "couleur": "jaune d’or",
+        "note": "moins de 2 cm"
+      },
+      {
+        "nom": "'Butterball'",
+        "couleur": "jaune lavé d’orange",
+        "note": "moins de 3 cm"
+      },
+      {
+        "nom": "'Red Jade'",
+        "couleur": "rouge vif",
+        "note": "ovale, moins de 2 cm"
+      },
+      {
+        "nom": "'Royalty'",
+        "couleur": "pourpre foncé",
+        "note": "moins de 2 cm"
+      },
+      {
+        "nom": "'Harvest Gold'",
+        "couleur": "jaune d’or",
+        "note": "très persistant"
+      },
+      {
+        "nom": "'Donald Wyman'",
+        "couleur": "rouge vif",
+        "note": "tardif et persistant"
+      },
+      {
+        "nom": "'Dolgo'",
+        "couleur": "rouge",
+        "note": "gros fruits de plus de 3 cm, précoce"
+      },
+      {
+        "nom": "'Indian Magic'",
+        "couleur": "rouge virant à l’orange",
+        "note": "moins de 1 cm"
+      },
+      {
+        "nom": "'Adirondack'",
+        "couleur": "orange-rouge",
+        "note": "moins de 1 cm, tient jusqu’en décembre"
+      }
+    ],
+    "formes": "branche fruitée, pommettes pendantes en grappes",
+    "saison": "septembre–décembre",
+    "tenue_vase": "10–14 jours",
+    "gamme_prix": "€€€",
+    "rarete_jeu": "rare",
+    "notes_dessin": "Rameaux brun-gris à éperons courts portant des grappes de 3 à 8 pommettes sur de longs pédicelles fins et souples, qui les font pendre comme des cerises. Fruits de 1 à 3 cm, ronds ou ovoïdes selon la variété, à peau lisse et cireuse très brillante, marqués à l’opposé du pédoncule par un petit œil brun (reste du calice). Les couleurs vont du rouge laqué au jaune d’or, souvent avec une joue plus colorée côté soleil ('Evereste' strié de rouge sur fond jaune). Quelques feuilles ovales dentées jaunissantes peuvent subsister, mais les fleuristes les retirent souvent.",
+    "wiki": "Malus",
+    "img_queries": [
+      "Malus 'Red Sentinel'",
+      "Malus 'Golden Hornet'",
+      "Malus 'John Downie'",
+      "Crabapple fruit"
+    ],
+    "sources": [
+      "https://florabundance.com/flowers/crabapple-branches-red/",
+      "https://www.mayesh.com/fruiting-branches-crabapple-red",
+      "https://www.treesandshrubsonline.org/articles/malus/malus-cultivars-r/",
+      "https://www.treesandshrubsonline.org/articles/malus/malus-cultivars-g-i/",
+      "https://www.treesandshrubsonline.org/articles/malus/malus-cultivars-j-k/"
+    ]
+  },
+  {
+    "id": "cognassier-du-japon",
+    "nom_fr": "Cognassier du Japon",
+    "nom_en": "Japanese flowering quince",
+    "latin": "Chaenomeles speciosa ; Chaenomeles × superba",
+    "famille": "Rosaceae",
+    "categorie": "Branches & baies",
+    "role": "branche",
+    "couleurs": [
+      "corail",
+      "rouge écarlate",
+      "rose",
+      "blanc",
+      "rose saumon"
+    ],
+    "varietes": [
+      {
+        "nom": "'Nivalis'",
+        "couleur": "blanc pur",
+        "note": "vigoureux, le meilleur blanc"
+      },
+      {
+        "nom": "'Moerloosei'",
+        "couleur": "blanc nuancé de rose et de carmin",
+        "note": "grandes fleurs, parfois vendu comme 'Apple Blossom'"
+      },
+      {
+        "nom": "'Geisha Girl'",
+        "couleur": "rose saumon",
+        "note": "double"
+      },
+      {
+        "nom": "'Falconnet Charlet'",
+        "couleur": "rose saumon",
+        "note": "double"
+      },
+      {
+        "nom": "'Cardinalis'",
+        "couleur": "cramoisi écarlate"
+      },
+      {
+        "nom": "× superba 'Crimson and Gold'",
+        "couleur": "cramoisi à étamines dorées"
+      },
+      {
+        "nom": "× superba 'Pink Lady'",
+        "couleur": "rose"
+      },
+      {
+        "nom": "× superba 'Nicoline'",
+        "couleur": "rouge écarlate"
+      },
+      {
+        "nom": "× superba 'Rowallane'",
+        "couleur": "rouge sang"
+      }
+    ],
+    "formes": "branche fleurie épineuse, fleurs en coupe plaquées sur le bois",
+    "saison": "janvier–avril",
+    "tenue_vase": "7–12 jours",
+    "gamme_prix": "€€",
+    "rarete_jeu": "rare",
+    "notes_dessin": "Rameaux brun foncé, raides et anguleux, ramifiés en zigzag et armés de courtes épines. Les fleurs en coupe de 3 à 4,5 cm, à 5 pétales ronds un peu concaves, sont presque sessiles et serrées en petits groupes directement sur le vieux bois, comme collées à la branche. Le cœur est un pompon dense d’étamines jaune d’or, et des boutons ronds comme des perles colorées s’alignent entre les fleurs ouvertes. Petites feuilles ovales vert brillant, souvent rougeâtres au débourrement, avec de larges stipules en forme de rein à la base des pousses.",
+    "wiki": "Chaenomeles speciosa",
+    "img_queries": [
+      "Chaenomeles speciosa 'Nivalis'",
+      "Chaenomeles × superba 'Crimson and Gold'",
+      "Chaenomeles speciosa 'Moerloosei'",
+      "Chaenomeles × superba 'Pink Lady'"
+    ],
+    "sources": [
+      "https://www.treesandshrubsonline.org/articles/chaenomeles/chaenomeles-speciosa/",
+      "https://www.rhs.org.uk/plants/pdfs/rhs-recommended-award-of-garden-merit-ornamentals.pdf",
+      "https://www.mayesh.com/blossom-quince-coral-long",
+      "https://www.sierraflowerfinder.com/en/d/quince-blossom/3633",
+      "https://thursd.com/articles/flowering-branches-continental-floral-greens"
+    ]
+  },
+  {
+    "id": "magnolia-branches",
+    "nom_fr": "Magnolia (branches fleuries et en bourgeons)",
+    "nom_en": "Magnolia branches",
+    "latin": "Magnolia × soulangeana ; M. stellata ; M. liliiflora et hybrides",
+    "famille": "Magnoliaceae",
+    "categorie": "Branches & baies",
+    "role": "branche",
+    "couleurs": [
+      "blanc",
+      "rose",
+      "pourpre",
+      "blanc lavé de rose",
+      "jaune primevère"
+    ],
+    "varietes": [
+      {
+        "nom": "'Susan'",
+        "couleur": "pourpre rosé"
+      },
+      {
+        "nom": "liliiflora 'Nigra'",
+        "couleur": "pourpre foncé"
+      },
+      {
+        "nom": "stellata 'Royal Star'",
+        "couleur": "blanc",
+        "note": "fleur étoilée"
+      },
+      {
+        "nom": "stellata 'Jane Platt'",
+        "couleur": "rose",
+        "note": "fleur étoilée"
+      },
+      {
+        "nom": "× soulangeana 'Brozzonii'",
+        "couleur": "blanc lavé de rose à la base"
+      },
+      {
+        "nom": "× soulangeana 'Étienne Soulange-Bodin'",
+        "couleur": "blanc teinté de pourpre"
+      },
+      {
+        "nom": "× loebneri 'Leonard Messel'",
+        "couleur": "rose lilas",
+        "note": "fleur étoilée"
+      },
+      {
+        "nom": "'Heaven Scent'",
+        "couleur": "rose"
+      },
+      {
+        "nom": "denudata",
+        "couleur": "blanc ivoire"
+      },
+      {
+        "nom": "'Yellow Lantern'",
+        "couleur": "jaune citron"
+      },
+      {
+        "nom": "'Elizabeth'",
+        "couleur": "jaune primevère"
+      },
+      {
+        "nom": "Magnolia en bourgeons (forme commerciale)",
+        "couleur": "bourgeons gris-brun veloutés",
+        "note": "Mayesh"
+      }
+    ],
+    "formes": "branche fleurie, gros boutons veloutés, fleurs en tulipe ou en étoile",
+    "saison": "février–avril (branches en bourgeons dès janvier)",
+    "tenue_vase": "5–8 jours",
+    "gamme_prix": "€€€",
+    "rarete_jeu": "precieuse",
+    "notes_dessin": "Bois gris argenté lisse, rameaux épais à nœuds marqués ; chaque bouton floral terminal est enfermé dans une écaille (pérule) duveteuse gris-vert argenté, comme un petit bourgeon de velours de 2 à 4 cm. Chez M. × soulangeana, la fleur en tulipe dressée compte 9 tépales épais et cireux, blancs à l’intérieur et lavés de rose-pourpre à la base extérieure. Chez M. stellata, 12 à 18 tépales étroits en rubans forment une étoile blanche ou rose de 7 à 10 cm. Au centre, un cône vert de pistils en spirale entouré d’étamines charnues ; les feuilles ne sont pas encore sorties.",
+    "wiki": "Magnolia × soulangeana",
+    "img_queries": [
+      "Magnolia × soulangeana flower",
+      "Magnolia stellata 'Royal Star'",
+      "Magnolia 'Susan'",
+      "Magnolia liliiflora 'Nigra'"
+    ],
+    "sources": [
+      "https://www.mayesh.com/blossom-tulip-magnolia-pink-long",
+      "https://www.mayesh.com/branches-magnolia-bud-brown",
+      "https://www.mayesh.com/blossom-star-magnolia-white-short",
+      "https://thursd.com/articles/flowering-branches-continental-floral-greens",
+      "https://www.rhs.org.uk/plants/pdfs/rhs-recommended-award-of-garden-merit-ornamentals.pdf"
+    ]
+  },
+  {
+    "id": "forsythia",
+    "nom_fr": "Forsythia",
+    "nom_en": "Forsythia",
+    "latin": "Forsythia × intermedia",
+    "famille": "Oleaceae",
+    "categorie": "Branches & baies",
+    "role": "branche",
+    "couleurs": [
+      "jaune d’or",
+      "jaune vif"
+    ],
+    "varietes": [
+      {
+        "nom": "'Golden Fantasy'",
+        "couleur": "jaune profond",
+        "note": "grandes fleurs sur toute la tige (bois d’un an), mars–avril — sélection pour la fleur coupée (Kolster)"
+      },
+      {
+        "nom": "× intermedia 'Spectabilis'",
+        "couleur": "jaune d’or",
+        "note": "très florifère, février–mars (Kolster)"
+      },
+      {
+        "nom": "× intermedia 'Lynwood Variety'",
+        "couleur": "jaune d’or",
+        "note": "grandes fleurs"
+      },
+      {
+        "nom": "× intermedia Week End ('Courtalyn')",
+        "couleur": "jaune vif"
+      },
+      {
+        "nom": "Marée d’Or ('Courtasol')",
+        "couleur": "jaune d’or",
+        "note": "port étalé"
+      },
+      {
+        "nom": "Forsythia double (forme commerciale)",
+        "couleur": "jaune",
+        "note": "Mayesh"
+      }
+    ],
+    "formes": "longues tiges arquées couvertes de clochettes, en bouton ou ouvertes",
+    "saison": "janvier–avril (forcé dès décembre pour le Nouvel An chinois)",
+    "tenue_vase": "10–14 jours",
+    "gamme_prix": "€",
+    "rarete_jeu": "commune",
+    "notes_dessin": "Longues tiges droites à arquées, brun-jaune à gris, ponctuées de lenticelles claires et de nœuds opposés réguliers. À chaque nœud pendent 1 à 3 fleurs en clochette à 4 lobes étroits (2–3 cm), jaune d’or, sur un pédicelle très court, si bien que la tige paraît gainée de jaune de la base à la pointe. Les boutons sont de petits fuseaux jaune-vert pointus ; les 2 étamines restent cachées dans la gorge rayée d’orange. Pas de feuilles à la floraison, sauf parfois quelques pousses vert vif au sommet.",
+    "wiki": "Forsythia × intermedia",
+    "img_queries": [
+      "Forsythia × intermedia 'Spectabilis'",
+      "Forsythia × intermedia 'Lynwood'",
+      "Forsythia flowers branch"
+    ],
+    "sources": [
+      "https://www.kolster.nl/nl/producten/snijheesters/overige-snijheesters-en-vaste-planten/2516-forsythia-golden-fantasy.html",
+      "https://www.kolster.nl/nl/producten/snijheesters/overige-snijheesters-en-vaste-planten/2519-forsythia-int-spectabilis.html",
+      "https://thursd.com/articles/forsythia-care-tips-by-chrysal",
+      "https://fiftyflowers.com/products/35-inch-yellow-forsythia-blooming-branches",
+      "https://www.rhs.org.uk/plants/pdfs/rhs-recommended-award-of-garden-merit-ornamentals.pdf"
+    ]
+  },
+  {
+    "id": "amelanchier",
+    "nom_fr": "Amélanchier",
+    "nom_en": "Serviceberry / Juneberry",
+    "latin": "Amelanchier lamarckii",
+    "famille": "Rosaceae",
+    "categorie": "Branches & baies",
+    "role": "branche",
+    "couleurs": [
+      "blanc",
+      "blanc rosé",
+      "cuivre (jeunes feuilles)"
+    ],
+    "varietes": [
+      {
+        "nom": "lamarckii",
+        "couleur": "blanc",
+        "note": "jeunes feuilles cuivrées"
+      },
+      {
+        "nom": "× grandiflora 'Robin Hill'",
+        "couleur": "boutons roses, fleurs blanc rosé"
+      },
+      {
+        "nom": "× grandiflora 'Princess Diana'",
+        "couleur": "blanc"
+      },
+      {
+        "nom": "laevis 'R.J. Hilton'",
+        "couleur": "blanc"
+      },
+      {
+        "nom": "'La Paloma'",
+        "couleur": "blanc"
+      },
+      {
+        "nom": "'Ballerina'",
+        "couleur": "blanc",
+        "note": "grandes fleurs"
+      }
+    ],
+    "formes": "branche fleurie à grappes étoilées et jeunes feuilles cuivrées",
+    "saison": "mars–avril",
+    "tenue_vase": "4–7 jours",
+    "gamme_prix": "€€",
+    "rarete_jeu": "rare",
+    "notes_dessin": "Rameaux fins gris-brun et lisses, aux longs bourgeons effilés et pointus caractéristiques. Les fleurs blanches en étoile (2–3 cm) ont 5 pétales étroits en lanières, bien espacés comme des rubans, et forment des grappes lâches et pendantes de 6 à 12 fleurs. Elles s’ouvrent en même temps que les jeunes feuilles ovales repliées, d’un cuivre-bronze soyeux qui contraste avec le blanc. Quelques étamines jaunes au cœur ; l’ensemble est léger et aérien, à dessiner avec beaucoup de vide.",
+    "wiki": "Amelanchier lamarckii",
+    "img_queries": [
+      "Amelanchier lamarckii flowers",
+      "Amelanchier 'Robin Hill'",
+      "Amelanchier 'Ballerina'"
+    ],
+    "sources": [
+      "https://www.treesandshrubsonline.org/articles/amelanchier/amelanchier-lamarckii/",
+      "https://www.rhs.org.uk/plants/pdfs/rhs-recommended-award-of-garden-merit-ornamentals.pdf"
+    ]
+  },
+  {
+    "id": "cornouiller-a-fleurs",
+    "nom_fr": "Cornouiller à fleurs (branches fleuries)",
+    "nom_en": "Flowering dogwood",
+    "latin": "Cornus florida ; Cornus kousa",
+    "famille": "Cornaceae",
+    "categorie": "Branches & baies",
+    "role": "branche",
+    "couleurs": [
+      "blanc",
+      "rose",
+      "rouge",
+      "vert tendre"
+    ],
+    "varietes": [
+      {
+        "nom": "florida 'Cherokee Chief'",
+        "couleur": "rouge"
+      },
+      {
+        "nom": "florida 'Cherokee Princess'",
+        "couleur": "blanc",
+        "note": "référence des blancs"
+      },
+      {
+        "nom": "florida 'Cherokee Brave'",
+        "couleur": "rouge foncé"
+      },
+      {
+        "nom": "florida 'Cherokee Sunset'",
+        "couleur": "rouge pourpré"
+      },
+      {
+        "nom": "florida 'Plena'",
+        "couleur": "blanc",
+        "note": "bractées doubles"
+      },
+      {
+        "nom": "florida 'Appalachian Spring'",
+        "couleur": "blanc",
+        "note": "grandes bractées"
+      },
+      {
+        "nom": "kousa 'Miss Satomi'",
+        "couleur": "rose"
+      },
+      {
+        "nom": "kousa var. chinensis 'China Girl'",
+        "couleur": "blanc"
+      },
+      {
+        "nom": "kousa var. chinensis 'Wisley Queen'",
+        "couleur": "blanc"
+      },
+      {
+        "nom": "'Eddie's White Wonder'",
+        "couleur": "blanc"
+      },
+      {
+        "nom": "Cornouiller vert (forme commerciale)",
+        "couleur": "vert tendre",
+        "note": "bractées en bouton, Mayesh"
+      }
+    ],
+    "formes": "branche fleurie à bractées étalées, parfois en bouton vert",
+    "saison": "avril–juin (C. florida avril–mai, C. kousa mai–juin)",
+    "tenue_vase": "5–8 jours",
+    "gamme_prix": "€€€",
+    "rarete_jeu": "precieuse",
+    "notes_dessin": "Rameaux gris-brun à ramification étagée et horizontale ; feuilles opposées ovales aux nervures arquées très nettes qui convergent vers la pointe. Ce que l’on prend pour une fleur est un ensemble de 4 bractées pétaloïdes : larges, arrondies et échancrées d’une encoche brunâtre au sommet chez C. florida, étroites et pointues en étoile chez C. kousa. Au centre, un bouton de minuscules fleurs vert-jaune serrées en tête sphérique. En bouton, les bractées vert pâle restent refermées en petite coupe, puis blanchissent ou rosissent en s’ouvrant.",
+    "wiki": "Cornus florida",
+    "img_queries": [
+      "Cornus florida 'Cherokee Chief'",
+      "Cornus florida flower",
+      "Cornus kousa flower",
+      "Cornus kousa 'China Girl'"
+    ],
+    "sources": [
+      "https://www.mayesh.com/blossom-dogwood-white-long",
+      "https://www.mayesh.com/blossom-dogwood-pink-long",
+      "https://en.wikipedia.org/wiki/Cornus_florida",
+      "https://www.rhs.org.uk/plants/pdfs/rhs-recommended-award-of-garden-merit-ornamentals.pdf"
+    ]
+  },
+  {
+    "id": "hamamelis",
+    "nom_fr": "Hamamélis (noisetier de sorcière)",
+    "nom_en": "Witch hazel",
+    "latin": "Hamamelis × intermedia",
+    "famille": "Hamamelidaceae",
+    "categorie": "Branches & baies",
+    "role": "branche",
+    "couleurs": [
+      "jaune",
+      "jaune soufre",
+      "orange cuivré",
+      "rouge"
+    ],
+    "varietes": [
+      {
+        "nom": "'Jelena'",
+        "couleur": "orange cuivré"
+      },
+      {
+        "nom": "'Arnold Promise'",
+        "couleur": "jaune"
+      },
+      {
+        "nom": "'Diane'",
+        "couleur": "rouge"
+      },
+      {
+        "nom": "'Pallida'",
+        "couleur": "jaune soufre pâle"
+      },
+      {
+        "nom": "'Aphrodite'",
+        "couleur": "orange"
+      },
+      {
+        "nom": "'Feuerzauber' (syn. 'Magic Fire')",
+        "couleur": "rouge orangé"
+      },
+      {
+        "nom": "'Barmstedt Gold'",
+        "couleur": "jaune d’or"
+      },
+      {
+        "nom": "'Ruby Glow'",
+        "couleur": "rouge cuivré"
+      },
+      {
+        "nom": "'Rubin'",
+        "couleur": "rouge"
+      },
+      {
+        "nom": "'Vesna'",
+        "couleur": "orange-jaune"
+      },
+      {
+        "nom": "mollis 'Wisley Supreme'",
+        "couleur": "jaune"
+      }
+    ],
+    "formes": "rameaux nus garnis de fleurs-araignées parfumées",
+    "saison": "décembre–mars",
+    "tenue_vase": "7–10 jours",
+    "gamme_prix": "€€€",
+    "rarete_jeu": "precieuse",
+    "notes_dessin": "Rameaux gris-brun duveteux, étalés et légèrement en zigzag, avec de gros bourgeons foliaires veloutés. Les fleurs, groupées par 2 à 4 en petits bouquets serrés le long des rameaux nus, ont chacune 4 pétales en lanières étroites de 1,5 à 2 cm, froissés et vrillés comme des rubans de papier. Au centre, une petite coupe de 4 sépales recourbés pourpre-brun ou rougeâtre contraste avec les pétales jaunes ou orangés. Quelques feuilles sèches brunes ou capsules ligneuses à deux valves de l’an passé restent parfois accrochées.",
+    "wiki": "Hamamelis × intermedia",
+    "img_queries": [
+      "Hamamelis × intermedia 'Jelena'",
+      "Hamamelis × intermedia 'Diane'",
+      "Hamamelis × intermedia 'Arnold Promise'",
+      "Hamamelis × intermedia 'Pallida'"
+    ],
+    "sources": [
+      "https://www.mayesh.com/witch-hazel-orange",
+      "https://www.mayesh.com/witch-hazel-red",
+      "https://www.treesandshrubsonline.org/articles/hamamelis/hamamelis-x-intermedia/",
+      "https://www.rhs.org.uk/plants/pdfs/rhs-recommended-award-of-garden-merit-ornamentals.pdf"
+    ]
+  },
+  {
+    "id": "viorne-d-hiver",
+    "nom_fr": "Viorne d’hiver (Viburnum × bodnantense)",
+    "nom_en": "Winter-flowering viburnum",
+    "latin": "Viburnum × bodnantense",
+    "famille": "Viburnaceae (ex-Adoxaceae)",
+    "categorie": "Branches & baies",
+    "role": "branche",
+    "couleurs": [
+      "rose",
+      "rose pâle",
+      "blanc rosé"
+    ],
+    "varietes": [
+      {
+        "nom": "'Dawn'",
+        "couleur": "rose",
+        "note": "très parfumé"
+      },
+      {
+        "nom": "'Charles Lamont'",
+        "couleur": "rose vif"
+      },
+      {
+        "nom": "'Deben'",
+        "couleur": "blanc rosé"
+      },
+      {
+        "nom": "V. farreri (parent)",
+        "couleur": "rose pâle à blanc"
+      }
+    ],
+    "formes": "rameaux nus à bouquets de fleurs tubulaires parfumées",
+    "saison": "novembre–mars",
+    "tenue_vase": "5–8 jours",
+    "gamme_prix": "€€",
+    "rarete_jeu": "rare",
+    "notes_dessin": "Tiges droites et raides brun-gris, à bourgeons opposés et quelques lenticelles ; la floraison a lieu sur le bois nu. Les fleurs sont réunies en petites têtes arrondies de 3 à 5 cm au bout des rameaux courts et le long des tiges. Chaque fleur est un petit tube rose foncé qui s’ouvre sur 5 lobes étalés plus pâles, presque blancs : boutons rose soutenu et fleurs ouvertes rose pâle donnent un bouquet bicolore. En fin d’hiver, quelques jeunes feuilles bronze, plissées et nervurées, peuvent pointer.",
+    "wiki": "Viburnum × bodnantense",
+    "img_queries": [
+      "Viburnum × bodnantense 'Dawn'",
+      "Viburnum × bodnantense flowers",
+      "Viburnum farreri"
+    ],
+    "sources": [
+      "https://www.mayesh.com/viburnum-flowering-dawn-pink",
+      "https://www.mayesh.com/viburnum-flowering-bodnantense-blush",
+      "https://www.rhs.org.uk/plants/pdfs/rhs-recommended-award-of-garden-merit-ornamentals.pdf"
+    ]
+  },
+  {
+    "id": "spiree",
+    "nom_fr": "Spirée (couronne de mariée)",
+    "nom_en": "Spiraea / bridal wreath",
+    "latin": "Spiraea spp. (S. × vanhouttei, S. thunbergii, S. cantoniensis, S. × cinerea)",
+    "famille": "Rosaceae",
+    "categorie": "Branches & baies",
+    "role": "branche",
+    "couleurs": [
+      "blanc",
+      "blanc crème",
+      "rose pâle"
+    ],
+    "varietes": [
+      {
+        "nom": "× cinerea 'Grefsheim'",
+        "couleur": "blanc",
+        "note": "très précoce, sélection pour la fleur coupée (Kolster)"
+      },
+      {
+        "nom": "nipponica 'Snowmound'",
+        "couleur": "blanc",
+        "note": "fin juin (Kolster)"
+      },
+      {
+        "nom": "'Pink Innocence'",
+        "couleur": "blanc à rose pâle",
+        "note": "fin juin (Kolster)"
+      },
+      {
+        "nom": "thunbergii",
+        "couleur": "blanc",
+        "note": "fleurs le long des tiges"
+      },
+      {
+        "nom": "cantoniensis",
+        "couleur": "blanc",
+        "note": "corymbes ronds"
+      },
+      {
+        "nom": "× vanhouttei",
+        "couleur": "blanc",
+        "note": "corymbes en guirlande"
+      },
+      {
+        "nom": "'Arguta'",
+        "couleur": "blanc"
+      }
+    ],
+    "formes": "longues tiges arquées couvertes de petites fleurs",
+    "saison": "mars–juin (selon l’espèce)",
+    "tenue_vase": "5–8 jours",
+    "gamme_prix": "€",
+    "rarete_jeu": "commune",
+    "notes_dessin": "Tiges fines, brun-rouge, souples et arquées en fontaine, à ramification alterne régulière. Chez S. thunbergii et 'Grefsheim', minuscules fleurs blanches de 6 à 8 mm à 5 pétales ronds, en petites ombelles sessiles serrées tout le long du rameau, comme une guirlande de neige. Chez S. × vanhouttei et S. cantoniensis, les fleurs sont réunies en corymbes bombés de 3 à 5 cm alignés sur le dessus de la tige. Petites feuilles vert clair (losangées et dentées chez vanhouttei) sortant avec les fleurs ; les étamines nombreuses donnent un aspect duveteux.",
+    "wiki": "Spiraea",
+    "img_queries": [
+      "Spiraea × cinerea 'Grefsheim'",
+      "Spiraea × vanhouttei",
+      "Spiraea thunbergii flowers",
+      "Spiraea cantoniensis"
+    ],
+    "sources": [
+      "https://www.kolster.nl/nl/producten/snijheesters/overige-snijheesters-en-vaste-planten/3492-spiraea-cin-grefsheim.html",
+      "https://www.kolster.nl/nl/producten/snijheesters/overige-snijheesters-en-vaste-planten/3034-spiraea-nip-snowmound.html",
+      "https://florabundance.com/flowers/spirea-japanese-meadowsweet/",
+      "https://www.mayesh.com/spirea-japan-cantoniensis-white",
+      "https://www.rhs.org.uk/plants/pdfs/rhs-recommended-award-of-garden-merit-ornamentals.pdf"
+    ]
+  },
+  {
+    "id": "deutzia",
+    "nom_fr": "Deutzia",
+    "nom_en": "Deutzia",
+    "latin": "Deutzia spp. (D. × hybrida, D. scabra, D. gracilis)",
+    "famille": "Hydrangeaceae",
+    "categorie": "Branches & baies",
+    "role": "branche",
+    "couleurs": [
+      "blanc",
+      "rose",
+      "rose framboise",
+      "lavande"
+    ],
+    "varietes": [
+      {
+        "nom": "'Magical Spring'",
+        "couleur": "blanc",
+        "note": "très florifère, sélection pour la fleur coupée (Kolster)"
+      },
+      {
+        "nom": "× hybrida 'Strawberry Fields'",
+        "couleur": "rose framboise à cœur clair"
+      },
+      {
+        "nom": "× hybrida 'Mont Rose'",
+        "couleur": "rose"
+      },
+      {
+        "nom": "crenata 'Pride of Rochester'",
+        "couleur": "blanc lavé de rose",
+        "note": "double"
+      },
+      {
+        "nom": "gracilis 'Nikko'",
+        "couleur": "blanc"
+      },
+      {
+        "nom": "scabra 'Candidissima'",
+        "couleur": "blanc pur",
+        "note": "double"
+      },
+      {
+        "nom": "scabra 'Codsall Pink'",
+        "couleur": "rose",
+        "note": "double"
+      },
+      {
+        "nom": "× elegantissima 'Rosealind'",
+        "couleur": "rose carmin"
+      },
+      {
+        "nom": "Deutzia lavande (forme commerciale)",
+        "couleur": "lavande",
+        "note": "Mayesh"
+      }
+    ],
+    "formes": "tiges fleuries en panicules étoilées",
+    "saison": "mai–juin",
+    "tenue_vase": "5–8 jours",
+    "gamme_prix": "€€",
+    "rarete_jeu": "rare",
+    "notes_dessin": "Tiges droites brun clair dont l’écorce se détache en fines lanières papyracées ; feuilles opposées lancéolées, rugueuses au toucher et finement dentées. Fleurs en étoile de 1,5 à 2,5 cm à 5 pétales pointus, réunies en panicules ou corymbes coniques au bout des rameaux latéraux. Chez 'Strawberry Fields', le revers des pétales est rose framboise et l’intérieur plus pâle ; les formes doubles ('Pride of Rochester') forment de petites rosettes ébouriffées. Boutons ronds serrés ; étamines à filets aplatis et anthères jaunes.",
+    "wiki": "Deutzia",
+    "img_queries": [
+      "Deutzia × hybrida 'Strawberry Fields'",
+      "Deutzia scabra 'Pride of Rochester'",
+      "Deutzia gracilis 'Nikko'"
+    ],
+    "sources": [
+      "https://www.kolster.nl/nl/producten/snijheesters/overige-snijheesters-en-vaste-planten/3026-deutzia-magical-spring-kolmaspri.html",
+      "https://www.mayesh.com/deutzia-white",
+      "https://www.mayesh.com/deutzia-lavender",
+      "https://www.rhs.org.uk/plants/pdfs/rhs-recommended-award-of-garden-merit-ornamentals.pdf"
+    ]
+  },
+  {
+    "id": "seringat",
+    "nom_fr": "Seringat (faux oranger)",
+    "nom_en": "Mock orange",
+    "latin": "Philadelphus spp. (P. coronarius et hybrides)",
+    "famille": "Hydrangeaceae",
+    "categorie": "Branches & baies",
+    "role": "branche",
+    "couleurs": [
+      "blanc",
+      "blanc crème",
+      "blanc à cœur pourpre"
+    ],
+    "varietes": [
+      {
+        "nom": "'Snowbelle'",
+        "couleur": "blanc",
+        "note": "précoce, 2e quinzaine de mai (Kolster)"
+      },
+      {
+        "nom": "'Snowwhite Fantasy'",
+        "couleur": "blanc",
+        "note": "double, début juin, sélection de 'Virginal' (Kolster)"
+      },
+      {
+        "nom": "'Belle Étoile'",
+        "couleur": "blanc à cœur pourpre"
+      },
+      {
+        "nom": "'Manteau d'Hermine'",
+        "couleur": "blanc crème",
+        "note": "double"
+      },
+      {
+        "nom": "'Beauclerk'",
+        "couleur": "blanc à cœur rosé"
+      },
+      {
+        "nom": "'Sybille'",
+        "couleur": "blanc à cœur pourpre"
+      },
+      {
+        "nom": "coronarius 'Aureus'",
+        "couleur": "fleurs blanches",
+        "note": "feuillage doré"
+      },
+      {
+        "nom": "White Rock ('Pekphil')",
+        "couleur": "blanc"
+      }
+    ],
+    "formes": "tiges feuillées fleuries, fleurs simples ou doubles parfumées",
+    "saison": "mai–juin",
+    "tenue_vase": "4–7 jours (retirer une partie des feuilles)",
+    "gamme_prix": "€€",
+    "rarete_jeu": "rare",
+    "notes_dessin": "Tiges brun-orangé à écorce qui s’exfolie finement, ramifiées par paires ; feuilles opposées ovales et pointues, à 3 nervures principales. Fleurs en coupe de 2,5 à 5 cm à 4 pétales arrondis blanc pur, groupées par 5 à 9 en courtes grappes au bout des rameaux latéraux. Le cœur porte une touffe dense d’étamines jaune d’or ; chez 'Belle Étoile', une tache pourpre marque la base des pétales. Les formes doubles ('Manteau d'Hermine', 'Snowwhite Fantasy') ressemblent à de petites roses blanches ébouriffées.",
+    "wiki": "Philadelphus coronarius",
+    "img_queries": [
+      "Philadelphus 'Belle Etoile'",
+      "Philadelphus 'Virginal'",
+      "Philadelphus coronarius flowers"
+    ],
+    "sources": [
+      "https://www.kolster.nl/nl/producten/snijheesters/overige-snijheesters-en-vaste-planten/2576-philadelphus-snowbelle.html",
+      "https://www.kolster.nl/nl/producten/snijheesters/overige-snijheesters-en-vaste-planten/2579-philadelphus-snowwhite-fantasy-snowwhite-fantasy.html",
+      "https://www.mayesh.com/mock-orange-white",
+      "https://www.rhs.org.uk/plants/pdfs/rhs-recommended-award-of-garden-merit-ornamentals.pdf"
+    ]
+  },
+  {
+    "id": "groseillier-a-fleurs",
+    "nom_fr": "Groseillier à fleurs",
+    "nom_en": "Flowering currant",
+    "latin": "Ribes sanguineum",
+    "famille": "Grossulariaceae",
+    "categorie": "Branches & baies",
+    "role": "branche",
+    "couleurs": [
+      "rose",
+      "rouge",
+      "cramoisi",
+      "blanc"
+    ],
+    "varietes": [
+      {
+        "nom": "'King Edward VII'",
+        "couleur": "cramoisi"
+      },
+      {
+        "nom": "'Pulborough Scarlet'",
+        "couleur": "rouge vif"
+      },
+      {
+        "nom": "'Koja'",
+        "couleur": "rouge foncé"
+      },
+      {
+        "nom": "'Lombartsii'",
+        "couleur": "rose à cœur blanc"
+      },
+      {
+        "nom": "'Poky's Pink'",
+        "couleur": "rose"
+      },
+      {
+        "nom": "White Icicle ('Ubric')",
+        "couleur": "blanc"
+      },
+      {
+        "nom": "'Brocklebankii'",
+        "couleur": "rose",
+        "note": "feuillage doré"
+      },
+      {
+        "nom": "'Splendens'",
+        "couleur": "rouge"
+      }
+    ],
+    "formes": "branche fleurie à grappes pendantes, avec jeunes feuilles",
+    "saison": "mars–avril",
+    "tenue_vase": "5–8 jours",
+    "gamme_prix": "€€",
+    "rarete_jeu": "rare",
+    "notes_dessin": "Rameaux brun-rouge à écorce lisse et ramification lâche ; les feuilles palmées à 3–5 lobes arrondis, gaufrées et finement duveteuses, se déplient en même temps que les fleurs. Grappes pendantes de 5 à 10 cm réunissant 10 à 30 petites fleurs tubulaires, serrées et toutes tournées vers le bas. Chaque fleur montre 5 sépales colorés étalés en étoile, plus grands que les minuscules pétales blancs ou rosés du centre. L’axe de la grappe et les bractées sont teintés de rose ; le feuillage froissé sent le cassis.",
+    "wiki": "Ribes sanguineum",
+    "img_queries": [
+      "Ribes sanguineum flowers",
+      "Ribes sanguineum inflorescence",
+      "Ribes sanguineum 'Pulborough Scarlet'"
+    ],
+    "sources": [
+      "https://www.treesandshrubsonline.org/articles/ribes/ribes-sanguineum/",
+      "https://www.rhs.org.uk/plants/pdfs/rhs-recommended-award-of-garden-merit-ornamentals.pdf",
+      "https://thursd.com/articles/red-flowers-complete-guide"
+    ]
+  },
+  {
+    "id": "enkianthus-dodan",
+    "nom_fr": "Enkianthus (dōdan-tsutsuji)",
+    "nom_en": "White enkianthus (Dodan)",
+    "latin": "Enkianthus perulatus",
+    "famille": "Ericaceae",
+    "categorie": "Branches & baies",
+    "role": "branche",
+    "couleurs": [
+      "vert tendre",
+      "blanc",
+      "rouge écarlate (automne)",
+      "orange"
+    ],
+    "varietes": [
+      {
+        "nom": "Forme de montagne (récolte forestière)",
+        "couleur": "vert tendre puis rouge",
+        "note": "ramure étagée horizontale, ≈20 ans pour atteindre 140 cm ; surnommée « l’Hermès des branches »"
+      },
+      {
+        "nom": "Forme cultivée (plaine)",
+        "couleur": "vert",
+        "note": "rameaux plus droits"
+      },
+      {
+        "nom": "'Compactus'",
+        "couleur": "fleurs blanches",
+        "note": "forme compacte"
+      }
+    ],
+    "formes": "branche feuillée verte, fleurie en juin ou en couleurs d’automne",
+    "saison": "mai–septembre (export japonais), feuillage rouge en automne",
+    "tenue_vase": "7–14 jours (3–4 jours en feuillage d’automne)",
+    "gamme_prix": "€€€€",
+    "rarete_jeu": "legendaire",
+    "notes_dessin": "Branches fines gris-brun très ramifiées, disposées en étages presque horizontaux ; les feuilles ovales de 2 à 4 cm, finement dentées, sont groupées en verticilles au bout de chaque rameau, comme de petites ombrelles. Sous ces rosettes pendent 1 à 5 clochettes blanches en urne de 7–8 mm, au bout de pédicelles de 1 à 2 cm recourbés vers le bas. La corolle est renflée de 5 bosses à la base et resserrée sous 5 petits lobes retroussés ; après la floraison, de petites capsules dressées à 5 côtes les remplacent. En automne, le feuillage vire au rouge écarlate translucide.",
+    "wiki": "Enkianthus perulatus",
+    "img_queries": [
+      "Enkianthus perulatus",
+      "Enkianthus perulatus autumn",
+      "Enkianthus perulatus flowers"
+    ],
+    "sources": [
+      "https://thursd.com/articles/aucnet-japan-enkianthus-perulatus",
+      "https://www.treesandshrubsonline.org/articles/enkianthus/enkianthus-perulatus/",
+      "https://www.rhs.org.uk/plants/pdfs/rhs-recommended-award-of-garden-merit-ornamentals.pdf"
+    ]
+  },
+  {
+    "id": "glycine",
+    "nom_fr": "Glycine",
+    "nom_en": "Wisteria",
+    "latin": "Wisteria floribunda ; Wisteria sinensis",
+    "famille": "Fabaceae",
+    "categorie": "Branches & baies",
+    "role": "branche",
+    "couleurs": [
+      "mauve",
+      "violet",
+      "lilas",
+      "blanc",
+      "rose"
+    ],
+    "varietes": [
+      {
+        "nom": "floribunda f. alba 'Shiro-noda'",
+        "couleur": "blanc",
+        "note": "longues grappes"
+      },
+      {
+        "nom": "floribunda f. rosea 'Hon-beni'",
+        "couleur": "rose pâle à pointe pourpre"
+      },
+      {
+        "nom": "floribunda 'Kokuryū'",
+        "couleur": "violet foncé"
+      },
+      {
+        "nom": "floribunda 'Yae-kokuryū'",
+        "couleur": "violet foncé",
+        "note": "fleurs doubles"
+      },
+      {
+        "nom": "floribunda 'Domino'",
+        "couleur": "lilas"
+      },
+      {
+        "nom": "sinensis 'Prolific'",
+        "couleur": "lilas"
+      },
+      {
+        "nom": "sinensis 'Amethyst'",
+        "couleur": "violet rosé",
+        "note": "très parfumé"
+      },
+      {
+        "nom": "brachybotrys f. albiflora 'Shiro-kapitan'",
+        "couleur": "blanc"
+      },
+      {
+        "nom": "brachybotrys 'Showa-beni'",
+        "couleur": "rose"
+      }
+    ],
+    "formes": "grappes pendantes coupées, liane fleurie ou liane sèche",
+    "saison": "avril–mai (liane sèche toute l’année)",
+    "tenue_vase": "2–5 jours",
+    "gamme_prix": "€€€€",
+    "rarete_jeu": "legendaire",
+    "notes_dessin": "Liane ligneuse gris argenté, tordue et volubile, avec de jeunes pousses vertes qui s’enroulent (dans le sens horaire chez W. floribunda). Les fleurs papilionacées d’environ 2 cm — un grand étendard redressé taché de jaune à la base, deux ailes et une carène — sont serrées en grappes pendantes de 20 à 60 cm, jusqu’à 1–2 m chez certaines W. floribunda. Chez W. floribunda, la grappe s’ouvre progressivement de la base vers la pointe, qui garde des boutons plus foncés ; chez W. sinensis, toutes les fleurs s’ouvrent presque ensemble. Feuilles pennées vert tendre (15 à 19 folioles chez W. floribunda), encore petites au moment de la floraison.",
+    "wiki": "Wisteria floribunda",
+    "img_queries": [
+      "Wisteria floribunda 'Rosea'",
+      "Wisteria floribunda alba",
+      "Wisteria sinensis 'Prolific'",
+      "Wisteria floribunda raceme"
+    ],
+    "sources": [
+      "https://www.rhs.org.uk/plants/pdfs/rhs-recommended-award-of-garden-merit-ornamentals.pdf",
+      "https://thursd.com/articles/wisteria-flower",
+      "https://en.wikipedia.org/wiki/Wisteria_floribunda"
+    ]
+  },
+  {
+    "id": "mitsumata",
+    "nom_fr": "Mitsumata (buisson à papier)",
+    "nom_en": "Mitsumata / Paperbush",
+    "latin": "Edgeworthia chrysantha",
+    "famille": "Thymelaeaceae",
+    "categorie": "Branches & baies",
+    "role": "branche",
+    "couleurs": [
+      "brun naturel",
+      "blanc ivoire (blanchi)",
+      "jaune (fleurs)",
+      "rouge, vert foncé ou blanc (floqué)"
+    ],
+    "varietes": [
+      {
+        "nom": "'Grandiflora'",
+        "couleur": "fleurs jaunes",
+        "note": "grandes têtes florales"
+      },
+      {
+        "nom": "Mitsumata blanchi (forme commerciale)",
+        "couleur": "blanc ivoire",
+        "note": "branches de 1,20 à 1,50 m (Mayesh)"
+      },
+      {
+        "nom": "Mitsumata sablé (forme commerciale)",
+        "couleur": "blanc mat",
+        "note": "Mayesh"
+      },
+      {
+        "nom": "Mitsumata floqué (forme commerciale)",
+        "couleur": "blanc, rouge ou vert foncé",
+        "note": "Mayesh"
+      },
+      {
+        "nom": "Mitsumata naturel (forme commerciale)",
+        "couleur": "brun olive",
+        "note": "Mayesh"
+      }
+    ],
+    "formes": "branches sèches tripartites (naturelles, blanchies, floquées) ou fleuries",
+    "saison": "toute l’année (sec) ; branches fleuries février–mars",
+    "tenue_vase": "illimitée (sèche) ; 7–10 jours en fleurs",
+    "gamme_prix": "€€€",
+    "rarete_jeu": "precieuse",
+    "notes_dessin": "Signature graphique : chaque rameau se divise exactement en trois (« mitsu-mata » signifie « trois fourches »), formant une ramure régulière en candélabre, souple et lisse. Le mitsumata blanchi ou sablé est d’un blanc ivoire mat, sans écorce, avec un petit nœud arrondi à chaque fourche ; la version naturelle garde une écorce brun olive lisse. En fleur, chaque extrémité porte une tête sphérique pendante de 3 à 5 cm faite de 30 à 50 petites fleurs tubulaires, couvertes de soies blanches argentées à l’extérieur et jaune d’or à l’intérieur. Les boutons d’hiver ressemblent à de petits pompons de soie blanche penchés vers le bas.",
+    "wiki": "Edgeworthia chrysantha",
+    "img_queries": [
+      "Edgeworthia chrysantha",
+      "Edgeworthia chrysantha flowers",
+      "Edgeworthia chrysantha grandiflora"
+    ],
+    "sources": [
+      "https://www.mayesh.com/4-ft-mitsumata-bleached-x3",
+      "https://www.mayesh.com/mitsumata-branch-sandblasted-white",
+      "https://www.mayesh.com/mitsumata-branch-flocked-red",
+      "https://www.treesandshrubsonline.org/articles/edgeworthia/edgeworthia-chrysantha/"
+    ]
+  },
+  {
+    "id": "saule-a-chatons",
+    "nom_fr": "Saule à chatons",
+    "nom_en": "Pussy willow",
+    "latin": "Salix caprea ; S. discolor ; S. gracilistyla",
+    "famille": "Salicaceae",
+    "categorie": "Branches & baies",
+    "role": "branche",
+    "couleurs": [
+      "gris argenté",
+      "blanc",
+      "noir",
+      "rose",
+      "rouge",
+      "jaune (pollen)"
+    ],
+    "varietes": [
+      {
+        "nom": "S. discolor",
+        "couleur": "gris argenté",
+        "note": "saule à chatons américain"
+      },
+      {
+        "nom": "gracilistyla 'Mount Aso'",
+        "couleur": "rose",
+        "note": "saule à chatons rose japonais"
+      },
+      {
+        "nom": "gracilistyla 'Melanostachys'",
+        "couleur": "noir",
+        "note": "anthères rouges puis jaunes"
+      },
+      {
+        "nom": "koriyanagi 'Rubykins'",
+        "couleur": "rouge"
+      },
+      {
+        "nom": "'Magical Silver'",
+        "couleur": "blanc argenté",
+        "note": "très florifère, sélection pour la fleur coupée (Kolster)"
+      },
+      {
+        "nom": "'Pink Cushion'",
+        "couleur": "chatons rouges",
+        "note": "Kolster"
+      },
+      {
+        "nom": "Saule à chatons « French » (forme commerciale)",
+        "couleur": "gris argenté",
+        "note": "Florabundance, Mayesh"
+      },
+      {
+        "nom": "Saule à écorce rouge (forme commerciale)",
+        "couleur": "chatons argentés sur bois rouge",
+        "note": "Florabundance, Mayesh"
+      },
+      {
+        "nom": "Saule à chatons teinté (forme commerciale)",
+        "couleur": "rose, lavande, bleu, vert, orange…",
+        "note": "chatons peints, Mayesh"
+      }
+    ],
+    "formes": "baguettes droites à chatons soyeux, fraîches ou séchées",
+    "saison": "janvier–mars (séché toute l’année)",
+    "tenue_vase": "12–21 jours (indéfiniment une fois sec)",
+    "gamme_prix": "€",
+    "rarete_jeu": "commune",
+    "notes_dessin": "Baguettes droites et souples, brun-rouge, vert olive ou presque noires et brillantes, à ramifications rares et alternes. Les chatons ovoïdes de 1,5 à 4 cm sont sessiles, plaqués contre la tige, chacun sortant d’une unique écaille en capuchon brun-rouge ou noire qui tombe ou reste à la base. Leur surface est une fourrure soyeuse gris argenté aux reflets nacrés (noire chez 'Melanostachys', rosée chez 'Mount Aso'). À maturité, les chatons mâles se hérissent d’étamines aux anthères rouges puis jaunes poudrées de pollen, comme de petits pompons ébouriffés.",
+    "wiki": "Salix caprea",
+    "img_queries": [
+      "Salix gracilistyla 'Melanostachys'",
+      "Salix gracilistyla 'Mount Aso'",
+      "Salix caprea catkins",
+      "Salix discolor catkins"
+    ],
+    "sources": [
+      "https://thursd.com/articles/could-salix-be-the-next-addition-to-your-floral-arrangements",
+      "https://www.kolster.nl/nl/producten/snijheesters/overige-snijheesters-en-vaste-planten/2615-salix-magical-silver.html",
+      "https://www.kolster.nl/nl/producten/snijheesters/overige-snijheesters-en-vaste-planten/3033-salix-pink-cushion.html",
+      "https://florabundance.com/flowers/pussy-willow-medium-black-branches/",
+      "https://www.mayesh.com/pussy-willow-french-brown-long"
+    ]
+  },
+  {
+    "id": "saule-fascie-sekka",
+    "nom_fr": "Saule fascié 'Sekka'",
+    "nom_en": "Japanese fantail willow",
+    "latin": "Salix udensis 'Sekka'",
+    "famille": "Salicaceae",
+    "categorie": "Branches & baies",
+    "role": "branche",
+    "couleurs": [
+      "brun acajou",
+      "gris argenté (chatons)"
+    ],
+    "varietes": [
+      {
+        "nom": "udensis 'Sekka' (syn. S. sachalinensis 'Sekka')",
+        "couleur": "brun acajou",
+        "note": "tiges aplaties en éventail"
+      },
+      {
+        "nom": "Fantail willow long/medium/short (forme commerciale)",
+        "couleur": "brun",
+        "note": "calibres Mayesh"
+      },
+      {
+        "nom": "Fantail pussy willow (forme commerciale)",
+        "couleur": "brun à chatons argentés",
+        "note": "Florabundance"
+      }
+    ],
+    "formes": "tiges aplaties et crossées, avec ou sans chatons",
+    "saison": "décembre–mars (frais) ; sec toute l’année",
+    "tenue_vase": "14–21 jours ; se conserve sec",
+    "gamme_prix": "€€",
+    "rarete_jeu": "rare",
+    "notes_dessin": "Tiges fasciées : au lieu d’être cylindriques, elles s’aplatissent en larges rubans striés (jusqu’à 3–4 cm de large) qui se tordent et se recourbent à l’extrémité en crosse ou en éventail. L’écorce brun acajou brillant est finement rayée dans la longueur, avec des bourgeons serrés en rangs le long des bords. De petits chatons argentés sessiles s’alignent souvent sur la partie aplatie. Bien marquer le contraste entre la base cylindrique et l’élargissement en spatule, avec des torsions de ruban de cuir.",
+    "wiki": "Salix udensis",
+    "img_queries": [
+      "Salix udensis 'Sekka'",
+      "Salix sachalinensis 'Sekka'",
+      "Salix 'Sekka'"
+    ],
+    "sources": [
+      "https://en.wikipedia.org/wiki/Salix_udensis",
+      "https://thursd.com/articles/could-salix-be-the-next-addition-to-your-floral-arrangements",
+      "https://www.mayesh.com/pussy-willow-fantail-brown-long",
+      "https://florabundance.com/flowers/pussy-willow-fantail/",
+      "https://www.sierraflowerfinder.com/en/d/fantail-willow/6445"
+    ]
+  },
+  {
+    "id": "saule-tortueux",
+    "nom_fr": "Saule tortueux",
+    "nom_en": "Curly / corkscrew willow",
+    "latin": "Salix matsudana 'Tortuosa' ; Salix × sepulcralis 'Erythroflexuosa'",
+    "famille": "Salicaceae",
+    "categorie": "Branches & baies",
+    "role": "branche",
+    "couleurs": [
+      "brun",
+      "vert",
+      "rouge",
+      "orange doré",
+      "blanchi",
+      "peint"
+    ],
+    "varietes": [
+      {
+        "nom": "matsudana 'Tortuosa'",
+        "couleur": "brun-vert",
+        "note": "saule tire-bouchon"
+      },
+      {
+        "nom": "× sepulcralis 'Erythroflexuosa'",
+        "couleur": "orange doré",
+        "note": "rameaux tortueux et retombants"
+      },
+      {
+        "nom": "Saule tortueux rouge (forme commerciale)",
+        "couleur": "rouge",
+        "note": "Mayesh, Sierra Flower Finder"
+      },
+      {
+        "nom": "Saule tortueux vert (forme commerciale)",
+        "couleur": "vert",
+        "note": "frais, parfois feuillé"
+      },
+      {
+        "nom": "Saule tortueux « flame » (forme commerciale)",
+        "couleur": "rouge et jaune",
+        "note": "Mayesh"
+      },
+      {
+        "nom": "Saule tortueux blanchi, peint ou floqué (forme commerciale)",
+        "couleur": "blanc, or",
+        "note": "Mayesh"
+      }
+    ],
+    "formes": "rameaux en tire-bouchon, frais (avec ou sans feuilles) ou secs",
+    "saison": "toute l’année",
+    "tenue_vase": "12–21 jours (peut s’enraciner dans l’eau)",
+    "gamme_prix": "€",
+    "rarete_jeu": "commune",
+    "notes_dessin": "Tiges et rameaux spiralés en tire-bouchon irrégulier, alternant boucles serrées et longues ondulations, sans aucune portion vraiment droite. L’écorce est lisse et luisante, olive-brun sur le vieux bois, vert-jaune à orange doré sur les jeunes pousses ('Erythroflexuosa'). Les fines ramilles terminales se tortillent comme des vrilles, avec de minuscules bourgeons alternes plaqués. Les formes feuillées portent des feuilles étroites lancéolées, elles aussi ondulées et vrillées.",
+    "wiki": "Salix matsudana",
+    "img_queries": [
+      "Salix matsudana 'Tortuosa'",
+      "Salix 'Erythroflexuosa'",
+      "Curly willow branches"
+    ],
+    "sources": [
+      "https://en.wikipedia.org/wiki/Salix_babylonica",
+      "https://www.rhs.org.uk/plants/pdfs/rhs-recommended-award-of-garden-merit-ornamentals.pdf",
+      "https://www.mayesh.com/curly-willow-red-long",
+      "https://www.sierraflowerfinder.com/en/d/curly-willow-red/1832",
+      "https://fiftyflowers.com/products/curly-willow-branch"
+    ]
+  },
+  {
+    "id": "cornouiller-a-bois-colore",
+    "nom_fr": "Cornouiller à bois coloré",
+    "nom_en": "Coloured-stem dogwood",
+    "latin": "Cornus alba ; Cornus sericea ; Cornus sanguinea",
+    "famille": "Cornaceae",
+    "categorie": "Branches & baies",
+    "role": "branche",
+    "couleurs": [
+      "rouge corail",
+      "noir pourpre",
+      "jaune-vert",
+      "orange flamme"
+    ],
+    "varietes": [
+      {
+        "nom": "alba 'Sibirica'",
+        "couleur": "rouge corail",
+        "note": "novembre–mars, sélection pour la branche coupée (Kolster)"
+      },
+      {
+        "nom": "alba 'Kesselringii'",
+        "couleur": "noir pourpre",
+        "note": "novembre–mars (Kolster)"
+      },
+      {
+        "nom": "sericea (stolonifera) 'Flaviramea'",
+        "couleur": "jaune-vert",
+        "note": "novembre–mars (Kolster)"
+      },
+      {
+        "nom": "sanguinea 'Midwinter Fire'",
+        "couleur": "jaune-orange flammé",
+        "note": "décembre–mars, colorée à partir de mi-décembre (Kolster)"
+      },
+      {
+        "nom": "sanguinea 'Anny's Winter Orange'",
+        "couleur": "orange"
+      },
+      {
+        "nom": "sanguinea 'Magic Flame'",
+        "couleur": "orange-rouge"
+      },
+      {
+        "nom": "sericea 'Bud's Yellow'",
+        "couleur": "jaune"
+      },
+      {
+        "nom": "alba 'Westonbirt'",
+        "couleur": "rouge vif"
+      },
+      {
+        "nom": "alba 'Elegantissima'",
+        "couleur": "rouge sombre",
+        "note": "feuillage panaché blanc"
+      }
+    ],
+    "formes": "baguettes droites nues, rouges, noires, jaunes ou orangées",
+    "saison": "novembre–mars",
+    "tenue_vase": "12–21 jours",
+    "gamme_prix": "€",
+    "rarete_jeu": "commune",
+    "notes_dessin": "Baguettes parfaitement droites et lisses de 0,5 à 1 cm de diamètre, très peu ramifiées, à l’écorce laquée et brillante. Bourgeons opposés, appliqués et allongés, avec de petites cicatrices foliaires en croissant à chaque nœud et de fines lenticelles claires. La couleur est uniforme et saturée chez 'Sibirica' (rouge corail) ou 'Kesselringii' (noir pourpré), alors que 'Midwinter Fire' passe du jaune à la base à l’orange puis au rouge à la pointe. Souvent présentées en bottes verticales serrées, coupées net en biseau.",
+    "wiki": "Cornus alba",
+    "img_queries": [
+      "Cornus alba 'Sibirica'",
+      "Cornus alba 'Kesselringii'",
+      "Cornus sericea 'Flaviramea'",
+      "Cornus sanguinea 'Midwinter Fire'"
+    ],
+    "sources": [
+      "https://www.kolster.nl/nl/producten/snijheesters/overige-snijheesters-en-vaste-planten/2462-cornus-alba-sibirica.html",
+      "https://www.kolster.nl/nl/producten/snijheesters/overige-snijheesters-en-vaste-planten/2459-cornus-alba-kesselringii.html",
+      "https://www.kolster.nl/nl/producten/snijheesters/overige-snijheesters-en-vaste-planten/2465-cornus-sang-midwinter-fire.html",
+      "https://www.mayesh.com/branches-dogwood-black-long",
+      "https://fiftyflowers.com/products/red-dogwood-branches"
+    ]
+  },
+  {
+    "id": "bouleau",
+    "nom_fr": "Bouleau (rameaux, perches, chatons)",
+    "nom_en": "Birch branches",
+    "latin": "Betula pendula (et B. utilis)",
+    "famille": "Betulaceae",
+    "categorie": "Branches & baies",
+    "role": "branche",
+    "couleurs": [
+      "brun pourpre",
+      "blanc",
+      "argent",
+      "or (peint)"
+    ],
+    "varietes": [
+      {
+        "nom": "Rameaux « Victorian birch » (forme commerciale)",
+        "couleur": "brun",
+        "note": "Florabundance, Mayesh"
+      },
+      {
+        "nom": "Perches de bouleau (forme commerciale)",
+        "couleur": "écorce blanche",
+        "note": "Mayesh"
+      },
+      {
+        "nom": "Bouleau peint ou floqué (forme commerciale)",
+        "couleur": "blanc neige, argent, or, cuivre",
+        "note": "Sierra Flower Finder, Mayesh"
+      },
+      {
+        "nom": "pendula 'Tristis'",
+        "couleur": "rameaux brun pourpre",
+        "note": "port pleureur"
+      },
+      {
+        "nom": "pendula 'Laciniata'",
+        "couleur": "rameaux brun pourpre",
+        "note": "feuilles découpées"
+      },
+      {
+        "nom": "utilis subsp. jacquemontii 'Doorenbos'",
+        "couleur": "écorce blanc pur"
+      }
+    ],
+    "formes": "brindilles fines, perches blanches, rameaux à chatons",
+    "saison": "toute l’année (rameaux nus octobre–mars, chatons mars–avril)",
+    "tenue_vase": "14–21 jours ; illimitée une fois sec",
+    "gamme_prix": "€",
+    "rarete_jeu": "commune",
+    "notes_dessin": "Brindilles très fines, brun-rouge pourpré luisant, parsemées de minuscules verrues résineuses blanches, qui retombent en fins fouets chez B. pendula. Les perches et grosses branches ont une écorce blanche crayeuse qui se détache en fines feuilles de papier, marquée de lenticelles horizontales et de losanges noirs aux insertions des branches. En fin d’hiver, des chatons mâles cylindriques de 3 à 6 cm pendent par 2 ou 3 au bout des rameaux, d’abord jaune-brun puis jaune pollen. Les petits chatons femelles dressés, vert pâle, sont plus discrets.",
+    "wiki": "Betula pendula",
+    "img_queries": [
+      "Betula pendula twigs",
+      "Betula pendula catkins",
+      "Betula utilis var. jacquemontii bark"
+    ],
+    "sources": [
+      "https://florabundance.com/flowers/victorian-birch/",
+      "https://www.mayesh.com/branches-birch-poles",
+      "https://www.sierraflowerfinder.com/en/d/birch-branches-painted-silver/6975",
+      "https://www.rhs.org.uk/plants/pdfs/rhs-recommended-award-of-garden-merit-ornamentals.pdf"
+    ]
+  },
+  {
+    "id": "noisetier-tortueux-chatons",
+    "nom_fr": "Noisetier (tortueux et à chatons)",
+    "nom_en": "Contorted hazel & hazel catkins",
+    "latin": "Corylus avellana (dont 'Contorta')",
+    "famille": "Betulaceae",
+    "categorie": "Branches & baies",
+    "role": "branche",
+    "couleurs": [
+      "brun gris",
+      "jaune paille (chatons)",
+      "pourpre"
+    ],
+    "varietes": [
+      {
+        "nom": "'Contorta'",
+        "couleur": "brun gris",
+        "note": "rameaux en tire-bouchon, chatons jaunes"
+      },
+      {
+        "nom": "'Red Majestic'",
+        "couleur": "rameaux tortueux, chatons et feuillage pourpres",
+        "note": "issu de 'Contorta'"
+      },
+      {
+        "nom": "'Contorta Purpurea'",
+        "couleur": "pourpre",
+        "note": "forme tortueuse pourpre"
+      },
+      {
+        "nom": "Noisetier commun à chatons (forme sauvage)",
+        "couleur": "jaune paille",
+        "note": "rameaux droits, janvier–mars"
+      },
+      {
+        "nom": "Noisetier pourpre (forme commerciale)",
+        "couleur": "pourpre",
+        "note": "Mayesh"
+      }
+    ],
+    "formes": "rameaux tortueux en tire-bouchon ; rameaux droits à chatons pendants",
+    "saison": "toute l’année ('Contorta', frais ou sec) ; chatons janvier–mars",
+    "tenue_vase": "14–21 jours (chatons 7–10 jours)",
+    "gamme_prix": "€€",
+    "rarete_jeu": "rare",
+    "notes_dessin": "'Contorta' : branches vrillées et coudées dans tous les sens en spirales irrégulières, écorce brun-gris lisse ponctuée de lenticelles pâles ; chaque nœud forme un petit genou. En fin d’hiver, les chatons mâles pendent par 1 à 4 : cylindres souples de 3 à 8 cm, d’abord gris-vert serrés puis jaune paille et poudrés de pollen, comme des queues d’agneau. Les fleurs femelles sont de minuscules bourgeons ovoïdes coiffés de stigmates filiformes rouge vif, posés sur le rameau près des chatons. Les feuilles rondes et gaufrées n’apparaissent qu’après, pourpre foncé chez 'Red Majestic'.",
+    "wiki": "Corylus avellana",
+    "img_queries": [
+      "Corylus avellana 'Contorta'",
+      "Corylus avellana catkins",
+      "Corylus avellana 'Red Majestic'"
+    ],
+    "sources": [
+      "https://www.mayesh.com/branches-contorted-hazelnut-brown",
+      "https://www.treesandshrubsonline.org/articles/corylus/corylus-avellana/",
+      "https://en.wikipedia.org/wiki/Corylus_avellana",
+      "https://www.rhs.org.uk/plants/pdfs/rhs-recommended-award-of-garden-merit-ornamentals.pdf"
+    ]
+  },
+  {
+    "id": "houx-a-baies",
+    "nom_fr": "Houx à baies",
+    "nom_en": "English holly",
+    "latin": "Ilex aquifolium (et Ilex × meserveae)",
+    "famille": "Aquifoliaceae",
+    "categorie": "Branches & baies",
+    "role": "baie",
+    "couleurs": [
+      "rouge",
+      "vert foncé",
+      "panaché crème",
+      "panaché doré",
+      "jaune (baies)"
+    ],
+    "varietes": [
+      {
+        "nom": "'J.C. van Tol'",
+        "couleur": "baies rouges",
+        "note": "feuilles presque sans épines"
+      },
+      {
+        "nom": "'Argentea Marginata'",
+        "couleur": "feuilles marginées de crème, baies rouges"
+      },
+      {
+        "nom": "'Madame Briot'",
+        "couleur": "feuilles panachées d’or, baies rouges"
+      },
+      {
+        "nom": "'Pyramidalis'",
+        "couleur": "baies rouges"
+      },
+      {
+        "nom": "'Pyramidalis Fructu Luteo'",
+        "couleur": "baies jaunes"
+      },
+      {
+        "nom": "'Amber'",
+        "couleur": "baies ambre"
+      },
+      {
+        "nom": "'Handsworth New Silver'",
+        "couleur": "feuilles marginées de crème, baies rouges"
+      },
+      {
+        "nom": "× altaclerensis 'Golden King'",
+        "couleur": "feuilles panachées d’or, baies rouges",
+        "note": "pied femelle malgré son nom"
+      },
+      {
+        "nom": "× meserveae 'Magical Amore Rosso'",
+        "couleur": "baies rouge vif",
+        "note": "houx bleu, sélection pour la branche coupée (Kolster)"
+      },
+      {
+        "nom": "× meserveae Blue Princess ('Conapri')",
+        "couleur": "feuillage bleuté, baies rouges"
+      }
+    ],
+    "formes": "rameaux feuillus persistants à bouquets de baies",
+    "saison": "novembre–décembre",
+    "tenue_vase": "14–21 jours",
+    "gamme_prix": "€€",
+    "rarete_jeu": "commune",
+    "notes_dessin": "Rameaux vert olive à violacés, garnis de feuilles alternes coriaces vert foncé très luisantes, ondulées, dont la marge porte de longues épines acérées (moins nombreuses chez 'J.C. van Tol'). Les baies (drupes) sphériques de 6 à 10 mm, rouge écarlate laqué, sont serrées en petits bouquets à l’aisselle des feuilles, sur de courts pédoncules. Chaque baie porte au sommet un minuscule point noir, reste du stigmate. Formes panachées : marge irrégulière crème ou dorée autour d’un centre vert marbré de gris-vert.",
+    "wiki": "Ilex aquifolium",
+    "img_queries": [
+      "Ilex aquifolium berries",
+      "Ilex aquifolium 'Argentea Marginata'",
+      "Ilex aquifolium yellow berries"
+    ],
+    "sources": [
+      "https://thursd.com/articles/best-christmas-greens",
+      "https://www.mayesh.com/holly-w-berries-variegated",
+      "https://www.sierraflowerfinder.com/en/d/holly-variegated/1698",
+      "https://www.kolster.nl/nl/producten/snijheesters/ilex/3238-ilex-mes-magical-amore-rosso.html",
+      "https://www.rhs.org.uk/plants/pdfs/rhs-recommended-award-of-garden-merit-ornamentals.pdf"
+    ]
+  },
+  {
+    "id": "houx-verticille-ilex",
+    "nom_fr": "Houx verticillé (ilex à baies)",
+    "nom_en": "Winterberry",
+    "latin": "Ilex verticillata",
+    "famille": "Aquifoliaceae",
+    "categorie": "Branches & baies",
+    "role": "baie",
+    "couleurs": [
+      "rouge",
+      "rouge orangé",
+      "orange",
+      "jaune",
+      "saumon"
+    ],
+    "varietes": [
+      {
+        "nom": "'Oosterwijk'",
+        "couleur": "rouge",
+        "note": "la référence hollandaise de la branche coupée"
+      },
+      {
+        "nom": "'Magical Berry' (Kolmber)",
+        "couleur": "rouge profond",
+        "note": "tiges très droites (Kolster, KMB Flowers)"
+      },
+      {
+        "nom": "'Magical Amaranth' (Kolmagimar)",
+        "couleur": "rouge foncé",
+        "note": "baies très serrées, tiges lourdes (KMB Flowers)"
+      },
+      {
+        "nom": "'Magical Crimson' (Kolmagicson)",
+        "couleur": "rouge",
+        "note": "Kolster"
+      },
+      {
+        "nom": "'Magical Winter Jewel'",
+        "couleur": "rouge",
+        "note": "très grosses baies, récolte octobre–décembre"
+      },
+      {
+        "nom": "'Magical Wintergold' (syn. 'Winter Gold')",
+        "couleur": "orange doux à pêche"
+      },
+      {
+        "nom": "'Magical Daydream' (Kolmadadre)",
+        "couleur": "orange doux"
+      },
+      {
+        "nom": "'Magical Showtime'",
+        "couleur": "orange vif",
+        "note": "baies moins prisées des oiseaux, récolte octobre–décembre"
+      },
+      {
+        "nom": "'Magical Cresgold'",
+        "couleur": "orange-jaune"
+      },
+      {
+        "nom": "'Magical Citronella'",
+        "couleur": "jaune vif",
+        "note": "première couleur de la saison"
+      },
+      {
+        "nom": "'Orange Beauty'",
+        "couleur": "orange vif et rouge",
+        "note": "Radical Wonders"
+      },
+      {
+        "nom": "'Julia'",
+        "couleur": "saumon et crème",
+        "note": "Radical Wonders"
+      },
+      {
+        "nom": "'Golden Spirit'",
+        "couleur": "or",
+        "note": "Continental Floral Greens"
+      },
+      {
+        "nom": "'Winter Red'",
+        "couleur": "rouge orangé"
+      },
+      {
+        "nom": "'Red Sprite'",
+        "couleur": "rouge",
+        "note": "grosses baies"
+      },
+      {
+        "nom": "'Afterglow'",
+        "couleur": "orange-rouge"
+      },
+      {
+        "nom": "Berry Heavy ('Spravy')",
+        "couleur": "rouge orangé"
+      }
+    ],
+    "formes": "tiges défeuillées couvertes de baies serrées",
+    "saison": "septembre–décembre (jaunes dès septembre, oranges en octobre–novembre, rouges jusqu’à mi-décembre)",
+    "tenue_vase": "14–21 jours (plus au frais ; les baies sèchent sans brunir)",
+    "gamme_prix": "€€",
+    "rarete_jeu": "rare",
+    "notes_dessin": "Tiges droites gris-brun lisses, vendues sans feuilles, ramifiées en courts rameaux latéraux. Les baies sphériques de 6 à 8 mm, très brillantes, sont pressées les unes contre les autres en manchons continus sur 40 à 70 cm de tige, par 2 à 4 à chaque nœud sur de très courts pédoncules. Chaque baie porte au sommet un petit point noir et accroche un reflet blanc net. Rouge laqué ('Magical Berry'), orange pêche ('Wintergold') ou jaune citron ('Citronella') ; en vieillissant, les baies se rident légèrement mais gardent leur couleur.",
+    "wiki": "Ilex verticillata",
+    "img_queries": [
+      "Ilex verticillata 'Winter Red'",
+      "Ilex verticillata 'Winter Gold'",
+      "Ilex verticillata berries",
+      "Ilex verticillata 'Red Sprite'"
+    ],
+    "sources": [
+      "https://www.kolster.nl/nl/producten/snijheesters/ilex/2282-ilex-vert-magical-berry-kolmber.html",
+      "https://thursd.com/articles/long-lasting-ilex-is-back",
+      "https://thursd.com/posts/peter-van-delft-ilex-kmb-flowers",
+      "https://thursd.com/articles/ilex-is-widely-available-again",
+      "https://en.wikipedia.org/wiki/Ilex_verticillata"
+    ]
+  },
+  {
+    "id": "laurier-tin-a-baies",
+    "nom_fr": "Laurier-tin à baies (viorne tin)",
+    "nom_en": "Laurustinus",
+    "latin": "Viburnum tinus",
+    "famille": "Viburnaceae (ex-Adoxaceae)",
+    "categorie": "Branches & baies",
+    "role": "baie",
+    "couleurs": [
+      "bleu métallique",
+      "bleu-noir",
+      "bordeaux",
+      "blanc",
+      "rose (boutons)"
+    ],
+    "varietes": [
+      {
+        "nom": "'Eve Price'",
+        "couleur": "boutons carmin, fleurs blanc rosé"
+      },
+      {
+        "nom": "'Gwenllian'",
+        "couleur": "boutons rose foncé, fleurs blanches",
+        "note": "baies abondantes"
+      },
+      {
+        "nom": "'French White'",
+        "couleur": "blanc pur"
+      },
+      {
+        "nom": "'Lucidum'",
+        "couleur": "blanc",
+        "note": "grandes fleurs, feuilles luisantes"
+      },
+      {
+        "nom": "'Purpureum'",
+        "couleur": "blanc",
+        "note": "jeunes feuilles pourprées"
+      },
+      {
+        "nom": "Laurier-tin à baies (forme commerciale)",
+        "couleur": "bordeaux à bleu métallique",
+        "note": "Florabundance, Sierra Flower Finder"
+      }
+    ],
+    "formes": "rameaux feuillus à baies métalliques, à boutons roses ou fleuris",
+    "saison": "novembre–avril",
+    "tenue_vase": "10–14 jours",
+    "gamme_prix": "€",
+    "rarete_jeu": "commune",
+    "notes_dessin": "Rameaux rougeâtres à vert-brun ; feuilles persistantes opposées, ovales, vert foncé luisant, à bord entier légèrement enroulé. Les inflorescences en cymes plates de 5 à 10 cm terminent les rameaux : boutons ronds rose carmin s’ouvrant en petites fleurs blanches étoilées à 5 lobes. En fruit, ces mêmes cymes portent des baies ovoïdes de 6–7 mm d’un bleu métallique intense, presque irisé, virant au bleu-noir ; certaines restent bordeaux. Boutons, fleurs et baies coexistent souvent sur la même branche.",
+    "wiki": "Viburnum tinus",
+    "img_queries": [
+      "Viburnum tinus fruits",
+      "Viburnum tinus flowers",
+      "Viburnum tinus 'Gwenllian'"
+    ],
+    "sources": [
+      "https://florabundance.com/flowers/viburnum-tinus-berry/",
+      "https://www.sierraflowerfinder.com/en/d/viburnum-tinus-berried/3530",
+      "https://www.treesandshrubsonline.org/articles/viburnum/viburnum-tinus/",
+      "https://www.rhs.org.uk/plants/pdfs/rhs-recommended-award-of-garden-merit-ornamentals.pdf"
+    ]
+  },
+  {
+    "id": "viornes-a-baies",
+    "nom_fr": "Viornes à baies (obier, viorne nue, viorne dentée)",
+    "nom_en": "Viburnum berries",
+    "latin": "Viburnum opulus ; V. nudum ; V. dentatum",
+    "famille": "Viburnaceae (ex-Adoxaceae)",
+    "categorie": "Branches & baies",
+    "role": "baie",
+    "couleurs": [
+      "rouge",
+      "jaune",
+      "bleu marine",
+      "rose et bleu",
+      "pêche",
+      "blanc",
+      "vert"
+    ],
+    "varietes": [
+      {
+        "nom": "opulus 'Xanthocarpum'",
+        "couleur": "jaune ambré"
+      },
+      {
+        "nom": "opulus 'Compactum'",
+        "couleur": "rouge"
+      },
+      {
+        "nom": "opulus 'Notcutt's Variety'",
+        "couleur": "rouge"
+      },
+      {
+        "nom": "Viorne « Cranberry » (forme commerciale)",
+        "couleur": "jaune rosé virant au rouge",
+        "note": "juillet à fin d’automne (Florabundance)"
+      },
+      {
+        "nom": "Viorne « Blueberry » (forme commerciale)",
+        "couleur": "bleu marine",
+        "note": "automne–hiver (Florabundance)"
+      },
+      {
+        "nom": "V. nudum (forme commerciale)",
+        "couleur": "rose et bleu mêlés",
+        "note": "Florabundance"
+      },
+      {
+        "nom": "Viorne à baies pêche, blanches ou vertes (formes commerciales)",
+        "couleur": "pêche, blanc, vert",
+        "note": "Mayesh"
+      }
+    ],
+    "formes": "corymbes de baies sur tiges feuillées ou défeuillées",
+    "saison": "juillet–novembre",
+    "tenue_vase": "7–12 jours",
+    "gamme_prix": "€€",
+    "rarete_jeu": "rare",
+    "notes_dessin": "Les baies sont groupées en larges corymbes plats ou un peu retombants de 5 à 10 cm, portés au bout des rameaux sur des pédicelles rouges ramifiés. Chez V. opulus, drupes rondes de 8–10 mm, translucides et luisantes, rouge vif (jaune ambré chez 'Xanthocarpum'), à travers lesquelles on devine le noyau. Chez V. nudum, une même grappe mêle baies vert pâle, blanc crème, rose bonbon et bleu ardoise, d’aspect mat et poudré. Feuilles opposées : trilobées comme celles d’un érable chez V. opulus, ovales et luisantes chez V. nudum, à grosses dents chez V. dentatum.",
+    "wiki": "Viburnum opulus",
+    "img_queries": [
+      "Viburnum opulus fruits",
+      "Viburnum opulus yellow fruits",
+      "Viburnum nudum fruits",
+      "Viburnum dentatum fruits"
+    ],
+    "sources": [
+      "https://florabundance.com/flowers/viburnum-berry-red/",
+      "https://florabundance.com/flowers/viburnum-nudum-pink-blue/",
+      "https://www.mayesh.com/viburnum-berries-peach",
+      "https://fiftyflowers.com/products/viburnum-berries-wholesale-flowers",
+      "https://www.rhs.org.uk/plants/pdfs/rhs-recommended-award-of-garden-merit-ornamentals.pdf"
+    ]
+  },
+  {
+    "id": "rosier-a-cynorrhodons",
+    "nom_fr": "Rosier à cynorrhodons (églantier)",
+    "nom_en": "Rose hips",
+    "latin": "Rosa canina et rosiers à fruits",
+    "famille": "Rosaceae",
+    "categorie": "Branches & baies",
+    "role": "baie",
+    "couleurs": [
+      "rouge",
+      "orange",
+      "rouge orangé",
+      "rouge sombre",
+      "vert"
+    ],
+    "varietes": [
+      {
+        "nom": "'Magical Sensational Fantasy' (Kolsens)",
+        "couleur": "rouge",
+        "note": "septembre–décembre, tiges presque sans épines, rameaux rouges (Kolster)"
+      },
+      {
+        "nom": "'Magical Sunset' (Kolmagisun)",
+        "couleur": "rouge",
+        "note": "récolte tardive novembre–décembre (Kolster)"
+      },
+      {
+        "nom": "'Magical Miracle'",
+        "couleur": "orange",
+        "note": "fruits persistants jusqu’au cœur de l’hiver (Kolster)"
+      },
+      {
+        "nom": "'Magical Delight'",
+        "couleur": "rouge profond",
+        "note": "Kolster"
+      },
+      {
+        "nom": "'Amazing Fantasy'",
+        "couleur": "rouge",
+        "note": "Sierra Flower Finder"
+      },
+      {
+        "nom": "'Giant Fantasy'",
+        "couleur": "rouge",
+        "note": "Sierra Flower Finder"
+      },
+      {
+        "nom": "'Ladybug Hiphop'",
+        "couleur": "orange",
+        "note": "nombreux petits fruits (De Ruiter)"
+      },
+      {
+        "nom": "'Tender Hiphop'",
+        "couleur": "rouge orangé",
+        "note": "tige sans épines (De Ruiter)"
+      },
+      {
+        "nom": "'Attractive Hiphop'",
+        "couleur": "rouge orangé",
+        "note": "tige sans épines (De Ruiter)"
+      },
+      {
+        "nom": "Rosefruits Elite / Tops (gamme commerciale)",
+        "couleur": "rouge",
+        "note": "Coloríginz / Radical Wonders"
+      },
+      {
+        "nom": "R. canina",
+        "couleur": "rouge orangé",
+        "note": "églantier"
+      },
+      {
+        "nom": "moyesii 'Geranium'",
+        "couleur": "écarlate",
+        "note": "fruits en flacon"
+      },
+      {
+        "nom": "R. glauca",
+        "couleur": "rouge sombre",
+        "note": "petits fruits"
+      },
+      {
+        "nom": "rugosa 'Scabrosa'",
+        "couleur": "rouge tomate",
+        "note": "gros fruits ronds"
+      }
+    ],
+    "formes": "branche fruitée, cynorrhodons ovoïdes en grappes",
+    "saison": "août–décembre",
+    "tenue_vase": "14–21 jours",
+    "gamme_prix": "€€",
+    "rarete_jeu": "rare",
+    "notes_dessin": "Tiges vert olive à rougeâtres, souvent armées d’aiguillons crochus (absents chez les sélections 'Tender Hiphop' ou 'Sensational Fantasy'), à ramification arquée. Les cynorrhodons, ovoïdes à ronds, de 1 à 2,5 cm selon la variété, pendent en grappes de 3 à 15 au bout des rameaux, sur des pédicelles fins. La peau est lisse et brillante comme une laque ; chaque fruit est couronné d’un petit col où persistent parfois 5 sépales secs effilés (très visibles chez R. moyesii, aux fruits en flacon allongé). Quelques feuilles composées de 5 à 7 folioles dentées peuvent rester vertes ou jaunies.",
+    "wiki": "Rosa canina",
+    "img_queries": [
+      "Rosa canina hips",
+      "Rosa moyesii hips",
+      "Rosa rugosa hips",
+      "Rosa glauca hips"
+    ],
+    "sources": [
+      "https://www.kolster.nl/nl/producten/snijheesters/rosa/2333-rosa-sensational-fantasy-kolsens.html",
+      "https://www.thursd.com/products/cut-flowers/roses/rosehip-tender-hiphop",
+      "https://www.sierraflowerfinder.com/en/d/rose-hips-amazing-fantasy/4495",
+      "https://thursd.com/articles/coloriginz-radical-wonders-rosefruits",
+      "https://florabundance.com/flowers/rose-hip-branched-orange/"
+    ]
+  },
+  {
+    "id": "cotoneaster",
+    "nom_fr": "Cotonéaster",
+    "nom_en": "Cotoneaster",
+    "latin": "Cotoneaster spp.",
+    "famille": "Rosaceae",
+    "categorie": "Branches & baies",
+    "role": "baie",
+    "couleurs": [
+      "rouge",
+      "orange",
+      "jaune crème",
+      "vert"
+    ],
+    "varietes": [
+      {
+        "nom": "'Cornubia'",
+        "couleur": "rouge",
+        "note": "grandes grappes lourdes"
+      },
+      {
+        "nom": "lacteus",
+        "couleur": "rouge",
+        "note": "tardif"
+      },
+      {
+        "nom": "'Rothschildianus'",
+        "couleur": "jaune crème"
+      },
+      {
+        "nom": "salicifolius 'Pink Champagne'",
+        "couleur": "jaune rosé"
+      },
+      {
+        "nom": "sternianus",
+        "couleur": "orange-rouge"
+      },
+      {
+        "nom": "conspicuus 'Decorus'",
+        "couleur": "rouge vif"
+      },
+      {
+        "nom": "Cotonéaster orange ou vert (formes commerciales)",
+        "couleur": "orange, vert",
+        "note": "Mayesh"
+      }
+    ],
+    "formes": "rameaux feuillus à grappes de petites baies",
+    "saison": "septembre–décembre",
+    "tenue_vase": "10–14 jours",
+    "gamme_prix": "€",
+    "rarete_jeu": "commune",
+    "notes_dessin": "Rameaux arqués brun-pourpre, finement duveteux à l’extrémité, à ramification en arête de poisson chez certaines espèces. Feuilles alternes entières, de 1 à 8 cm selon l’espèce, vert sombre dessus et souvent gris feutré dessous, persistantes ou semi-persistantes. Les baies (pommes miniatures de 5 à 10 mm) sont groupées en corymbes denses à l’aisselle des feuilles ou au bout des rameaux, rouge vif et brillantes, couronnées d’un minuscule calice sombre. Grappes lourdes et pendantes chez 'Cornubia', baies jaune crème chez 'Rothschildianus'.",
+    "wiki": "Cotoneaster",
+    "img_queries": [
+      "Cotoneaster 'Cornubia'",
+      "Cotoneaster lacteus berries",
+      "Cotoneaster berries"
+    ],
+    "sources": [
+      "https://florabundance.com/flowers/cotoneaster-red-berries/",
+      "https://www.mayesh.com/cotoneaster-orange",
+      "https://www.sierraflowerfinder.com/en/d/cotoneaster/2190",
+      "https://www.rhs.org.uk/plants/pdfs/rhs-recommended-award-of-garden-merit-ornamentals.pdf"
+    ]
+  },
+  {
+    "id": "buisson-ardent",
+    "nom_fr": "Buisson ardent (pyracantha)",
+    "nom_en": "Firethorn",
+    "latin": "Pyracantha spp. (P. coccinea et hybrides)",
+    "famille": "Rosaceae",
+    "categorie": "Branches & baies",
+    "role": "baie",
+    "couleurs": [
+      "orange",
+      "rouge",
+      "jaune"
+    ],
+    "varietes": [
+      {
+        "nom": "'Orange Glow'",
+        "couleur": "orange"
+      },
+      {
+        "nom": "rogersiana 'Flava'",
+        "couleur": "jaune"
+      },
+      {
+        "nom": "rogersiana 'Molten Lava'",
+        "couleur": "orange-rouge"
+      },
+      {
+        "nom": "Saphyr Orange ('Cadange')",
+        "couleur": "orange"
+      },
+      {
+        "nom": "Saphyr Rouge ('Cadrou')",
+        "couleur": "rouge"
+      },
+      {
+        "nom": "'Teton'",
+        "couleur": "jaune-orangé"
+      },
+      {
+        "nom": "coccinea 'Kasan'",
+        "couleur": "orange-rouge"
+      },
+      {
+        "nom": "coccinea 'Lalandei'",
+        "couleur": "orange"
+      }
+    ],
+    "formes": "rameaux épineux chargés de corymbes de baies",
+    "saison": "septembre–décembre",
+    "tenue_vase": "10–14 jours",
+    "gamme_prix": "€",
+    "rarete_jeu": "commune",
+    "notes_dessin": "Rameaux brun-gris raides, ramifiés presque à angle droit et armés d’épines fines et acérées de 1 à 2 cm. Petites feuilles persistantes elliptiques de 2 à 4 cm, vert foncé luisant et finement crénelées, groupées en rosettes. Les baies de 5 à 8 mm sont serrées en corymbes denses et bombés tout le long des rameaux, si nombreuses qu’elles masquent le bois ; rondes, un peu aplaties aux pôles, avec un petit œil noir. Couleur pleine et lumineuse : orange flamme, rouge ou jaune d’or selon la variété.",
+    "wiki": "Pyracantha coccinea",
+    "img_queries": [
+      "Pyracantha coccinea berries",
+      "Pyracantha 'Saphyr Orange'",
+      "Pyracantha berries"
+    ],
+    "sources": [
+      "https://www.sierraflowerfinder.com/en/d/pyracanthra/2468",
+      "https://www.mayesh.com/fruiting-branches-pyracantha-red",
+      "https://www.treesandshrubsonline.org/articles/pyracantha/pyracantha-coccinea/",
+      "https://www.rhs.org.uk/plants/pdfs/rhs-recommended-award-of-garden-merit-ornamentals.pdf"
+    ]
+  },
+  {
+    "id": "callicarpa",
+    "nom_fr": "Arbuste aux bonbons (callicarpa)",
+    "nom_en": "Beautyberry",
+    "latin": "Callicarpa bodinieri",
+    "famille": "Lamiaceae",
+    "categorie": "Branches & baies",
+    "role": "baie",
+    "couleurs": [
+      "violet",
+      "pourpre",
+      "blanc"
+    ],
+    "varietes": [
+      {
+        "nom": "bodinieri var. giraldii 'Profusion'",
+        "couleur": "violet",
+        "note": "fructifie même isolé"
+      },
+      {
+        "nom": "'Magical Purple Giant' (Kolmapurgi)",
+        "couleur": "violet",
+        "note": "très grosses baies, octobre–novembre (Kolster)"
+      },
+      {
+        "nom": "'Magical Deep Purple' (Kolmdepu)",
+        "couleur": "violet intense",
+        "note": "couleur stable, longue tenue, récolte tardive (Kolster)"
+      },
+      {
+        "nom": "'Magical Snowqueen' (Kolmsqueen)",
+        "couleur": "blanc",
+        "note": "fin septembre–novembre (Kolster)"
+      }
+    ],
+    "formes": "tiges défeuillées à bouquets de baies",
+    "saison": "septembre–novembre",
+    "tenue_vase": "10–14 jours",
+    "gamme_prix": "€€",
+    "rarete_jeu": "rare",
+    "notes_dessin": "Tiges droites brun-gris finement duveteuses, à nœuds opposés réguliers ; elles sont le plus souvent vendues défeuillées. À chaque nœud, deux petits bouquets sphériques (cymes) de 20 à 40 baies serrées entourent la tige comme des colliers de perles. Les baies rondes sont minuscules (3–4 mm), violet améthyste métallique et brillant, ou blanc nacré chez 'Snowqueen'. Les grappes rapetissent vers la pointe ; quelques feuilles opposées lancéolées jaune rosé peuvent subsister.",
+    "wiki": "Callicarpa bodinieri",
+    "img_queries": [
+      "Callicarpa bodinieri 'Profusion'",
+      "Callicarpa bodinieri berries",
+      "Callicarpa japonica 'Leucocarpa'"
+    ],
+    "sources": [
+      "https://www.kolster.nl/nl/producten/snijheesters/callicarpa/2450-callicarpa-bod-magical-purple-giant-kolmapurgi.html",
+      "https://www.kolster.nl/nl/producten/snijheesters/callicarpa/3024-callicarpa-magical-snowqueen-kolmsqueen.html",
+      "https://www.treesandshrubsonline.org/articles/callicarpa/callicarpa-bodinieri/",
+      "https://thursd.com/articles/when-berries-steal-the-show",
+      "https://www.sierraflowerfinder.com/en/d/callicarpa/3182"
+    ]
+  },
+  {
+    "id": "sorbier-baies",
+    "nom_fr": "Sorbier (baies)",
+    "nom_en": "Rowan / mountain ash berries",
+    "latin": "Sorbus aucuparia et sorbiers asiatiques",
+    "famille": "Rosaceae",
+    "categorie": "Branches & baies",
+    "role": "baie",
+    "couleurs": [
+      "orange",
+      "rouge",
+      "rose",
+      "blanc",
+      "jaune"
+    ],
+    "varietes": [
+      {
+        "nom": "aucuparia 'Sheerwater Seedling'",
+        "couleur": "orange-rouge"
+      },
+      {
+        "nom": "'Joseph Rock'",
+        "couleur": "jaune primevère",
+        "note": "baies d’environ 9 mm"
+      },
+      {
+        "nom": "'Tundra'",
+        "couleur": "blanc"
+      },
+      {
+        "nom": "cashmiriana",
+        "couleur": "blanc",
+        "note": "gros fruits"
+      },
+      {
+        "nom": "vilmorinii",
+        "couleur": "rose virant au blanc"
+      },
+      {
+        "nom": "pseudohupehensis",
+        "couleur": "blanc rosé"
+      },
+      {
+        "nom": "'Eastern Promise'",
+        "couleur": "rose"
+      },
+      {
+        "nom": "Sorbier orange, rose ou vert (formes commerciales)",
+        "couleur": "orange, rose, vert",
+        "note": "Florabundance, Mayesh"
+      }
+    ],
+    "formes": "corymbes de baies sur rameaux à feuilles pennées",
+    "saison": "août–octobre",
+    "tenue_vase": "7–10 jours",
+    "gamme_prix": "€€",
+    "rarete_jeu": "rare",
+    "notes_dessin": "Rameaux gris-brun lisses à gros bourgeons laineux ; feuilles composées pennées de 11 à 19 folioles étroites et dentées, qui rougissent à l’automne. Les baies de 6 à 10 mm sont réunies en larges corymbes plats et lourds de 50 à 150 fruits, qui font ployer le rameau. Fruits ronds, lisses et un peu brillants, avec un petit cratère noir au sommet : orange-rouge chez S. aucuparia, jaune primevère chez 'Joseph Rock', blanc porcelaine ou rosé chez les sorbiers chinois. Les pédicelles rouges ramifiés restent visibles entre les baies.",
+    "wiki": "Sorbus aucuparia",
+    "img_queries": [
+      "Sorbus aucuparia berries",
+      "Sorbus cashmiriana",
+      "Sorbus vilmorinii",
+      "Sorbus hupehensis"
+    ],
+    "sources": [
+      "https://florabundance.com/flowers/mountain-berries-orange/",
+      "https://florabundance.com/flowers/mountain-berries-pink/",
+      "https://www.mayesh.com/mountain-ash-orange",
+      "https://www.treesandshrubsonline.org/articles/sorbus/sorbus-joseph-rock/",
+      "https://www.rhs.org.uk/plants/pdfs/rhs-recommended-award-of-garden-merit-ornamentals.pdf"
+    ]
+  },
+  {
+    "id": "celastre-bittersweet",
+    "nom_fr": "Célastre (« bittersweet »)",
+    "nom_en": "Bittersweet",
+    "latin": "Celastrus orbiculatus ; Celastrus scandens",
+    "famille": "Celastraceae",
+    "categorie": "Branches & baies",
+    "role": "baie",
+    "couleurs": [
+      "orange",
+      "jaune",
+      "rouge écarlate",
+      "vert"
+    ],
+    "varietes": [
+      {
+        "nom": "orbiculatus Hermaphrodite Group",
+        "couleur": "capsules jaune-orangé, arilles écarlates",
+        "note": "fructifie sans partenaire"
+      },
+      {
+        "nom": "C. scandens",
+        "couleur": "orange",
+        "note": "espèce américaine"
+      },
+      {
+        "nom": "Bittersweet vert (forme commerciale)",
+        "couleur": "vert",
+        "note": "capsules fermées, fin d’été, tiges d’environ 1,20 m (Florabundance)"
+      },
+      {
+        "nom": "Bittersweet orange (forme commerciale)",
+        "couleur": "orange et écarlate",
+        "note": "capsules ouvertes (Mayesh)"
+      }
+    ],
+    "formes": "lianes ligneuses chargées de capsules qui s’ouvrent",
+    "saison": "septembre–novembre (vert dès la fin de l’été)",
+    "tenue_vase": "14 jours et plus (sèche très bien)",
+    "gamme_prix": "€€",
+    "rarete_jeu": "rare",
+    "notes_dessin": "Lianes volubiles brun-gris, souples, parfois enroulées sur elles-mêmes, ponctuées de lenticelles claires. Les fruits sont des capsules rondes de la taille d’un pois (5–8 mm), d’abord vertes puis jaune-orangé, groupées par 2 à 5 à chaque nœud tout le long de la tige. À maturité, chaque capsule s’ouvre en 3 valves qui se rabattent en arrière comme des pétales jaunes, révélant des graines enrobées d’un arille rouge écarlate, charnu et brillant. Ce chapelet « jaune et écarlate » est la signature à dessiner ; les feuilles rondes sont généralement retirées.",
+    "wiki": "Celastrus orbiculatus",
+    "img_queries": [
+      "Celastrus orbiculatus fruit",
+      "Celastrus scandens fruit"
+    ],
+    "sources": [
+      "https://www.treesandshrubsonline.org/articles/celastrus/celastrus-orbiculatus/",
+      "https://florabundance.com/flowers/bittersweet-green/",
+      "https://www.mayesh.com/bittersweet-orange-long",
+      "https://www.sierraflowerfinder.com/en/d/bittersweet/6276",
+      "https://www.rhs.org.uk/plants/pdfs/rhs-recommended-award-of-garden-merit-ornamentals.pdf"
+    ]
+  },
+  {
+    "id": "troene-a-baies",
+    "nom_fr": "Troène à baies",
+    "nom_en": "Privet berries",
+    "latin": "Ligustrum vulgare (et L. ovalifolium)",
+    "famille": "Oleaceae",
+    "categorie": "Branches & baies",
+    "role": "baie",
+    "couleurs": [
+      "noir",
+      "vert"
+    ],
+    "varietes": [
+      {
+        "nom": "'Black Pearl' (nom commercial)",
+        "couleur": "noir",
+        "note": "bottes d’environ 10 tiges (Florabundance)"
+      },
+      {
+        "nom": "Troène à baies vertes (forme commerciale)",
+        "couleur": "vert",
+        "note": "Florabundance, Sierra Flower Finder"
+      },
+      {
+        "nom": "Troène à baies noires (forme commerciale)",
+        "couleur": "noir",
+        "note": "Sierra Flower Finder"
+      }
+    ],
+    "formes": "panicules de baies sur tiges feuillées",
+    "saison": "septembre–décembre",
+    "tenue_vase": "7–12 jours",
+    "gamme_prix": "€",
+    "rarete_jeu": "commune",
+    "notes_dessin": "Tiges grises fines et droites ; feuilles opposées lancéolées de 3 à 6 cm, lisses et vert sombre, souvent conservées sur la partie haute. Les baies forment des panicules terminales coniques et compactes de 4 à 8 cm. Chaque baie sphérique de 6 à 8 mm est d’un noir bleuté très brillant (vert pomme mat avant maturité), sur un court pédicelle vert. Dessiner le volume d’une grappe de raisin miniature dressée, avec un reflet blanc net sur chaque baie.",
+    "wiki": "Ligustrum vulgare",
+    "img_queries": [
+      "Ligustrum vulgare berries",
+      "Ligustrum vulgare fruits",
+      "Ligustrum ovalifolium berries"
+    ],
+    "sources": [
+      "https://florabundance.com/flowers/ligustrum-berries-black-pearl/",
+      "https://florabundance.com/flowers/ligustrum-berries-green/",
+      "https://www.sierraflowerfinder.com/en/d/black-berried-privet/3179",
+      "https://www.mayesh.com/ligustrum-berries",
+      "https://thursd.com/articles/wholesale-flowers-in-season-september"
+    ]
+  },
+  {
+    "id": "nandina-a-baies",
+    "nom_fr": "Nandina (bambou sacré) à baies",
+    "nom_en": "Heavenly bamboo berries",
+    "latin": "Nandina domestica",
+    "famille": "Berberidaceae",
+    "categorie": "Branches & baies",
+    "role": "baie",
+    "couleurs": [
+      "rouge corail",
+      "vert",
+      "rouge bronze (feuillage)"
+    ],
+    "varietes": [
+      {
+        "nom": "'Richmond'",
+        "couleur": "baies rouges",
+        "note": "fructification abondante"
+      },
+      {
+        "nom": "'Magical Lemon-Lime'",
+        "couleur": "feuillage vert-jaune",
+        "note": "Kolster"
+      },
+      {
+        "nom": "Nandina à baies (forme commerciale)",
+        "couleur": "rouge",
+        "note": "Mayesh, FiftyFlowers"
+      },
+      {
+        "nom": "Nandina feuillage rouge ou vert (forme commerciale)",
+        "couleur": "rouge, vert",
+        "note": "Mayesh"
+      }
+    ],
+    "formes": "tiges à panicules de baies et feuillage découpé",
+    "saison": "septembre–février",
+    "tenue_vase": "8–14 jours",
+    "gamme_prix": "€€",
+    "rarete_jeu": "rare",
+    "notes_dessin": "Tiges dressées comme des cannes de bambou, peu ramifiées, à nœuds marqués et gaines foliaires. Feuillage deux à trois fois penné, très découpé, aux folioles lancéolées pointues de 3 à 8 cm, vert virant au rouge bronze en hiver. Les baies sphériques de 6 à 8 mm, rouge corail brillant, forment de grandes panicules pyramidales lâches de 20 à 40 cm au sommet des tiges, sur de fines ramifications rouges. Chaque baie porte un petit point sombre au sommet ; les grappes s’affaissent légèrement sous leur poids.",
+    "wiki": "Nandina domestica",
+    "img_queries": [
+      "Nandina domestica berries",
+      "Nandina domestica 'Richmond'",
+      "Nandina domestica fruit"
+    ],
+    "sources": [
+      "https://florabundance.com/flowers/nandina/",
+      "https://fiftyflowers.com/products/nandina-fall-fresh-cut-branches-with-berries",
+      "https://www.mayesh.com/cb-nandina-berry",
+      "https://thursd.com/articles/plan-ahead-with-continental-floral-greens",
+      "https://www.rhs.org.uk/plants/pdfs/rhs-recommended-award-of-garden-merit-ornamentals.pdf"
+    ]
+  },
+  {
+    "id": "arbousier-a-fruits",
+    "nom_fr": "Arbousier à fruits (arbre aux fraises)",
+    "nom_en": "Strawberry tree",
+    "latin": "Arbutus unedo",
+    "famille": "Ericaceae",
+    "categorie": "Branches & baies",
+    "role": "baie",
+    "couleurs": [
+      "rouge",
+      "orange",
+      "jaune",
+      "vert",
+      "blanc (fleurs)"
+    ],
+    "varietes": [
+      {
+        "nom": "'Atlantic'",
+        "couleur": "fruits rouges, fleurs blanches"
+      },
+      {
+        "nom": "f. rubra",
+        "couleur": "fruits rouges, fleurs roses"
+      },
+      {
+        "nom": "× andrachnoides",
+        "couleur": "fleurs blanches",
+        "note": "hybride à écorce cannelle"
+      },
+      {
+        "nom": "Arbousier en branches (forme commerciale)",
+        "couleur": "vert à rouge",
+        "note": "Adomex, Florabundance, Mayesh"
+      }
+    ],
+    "formes": "rameaux feuillus portant fruits et fleurs en même temps",
+    "saison": "octobre–janvier",
+    "tenue_vase": "10–14 jours",
+    "gamme_prix": "€€",
+    "rarete_jeu": "rare",
+    "notes_dessin": "Rameaux rouge-brun à écorce qui s’exfolie en fines lanières, jeunes pousses rougeâtres et glanduleuses. Feuilles persistantes alternes, ovales-lancéolées de 5 à 10 cm, coriaces et luisantes, finement dentées, groupées vers l’extrémité. Fruits sphériques de 1,5 à 2 cm couverts de petites verrues coniques, comme une fraise ronde, pendants en grappes ; ils mûrissent sur un an, si bien qu’une même branche montre fruits verts, jaunes, orange et rouge vif. En même temps s’ouvrent des panicules pendantes de petites fleurs en urne d’environ 8 mm, blanches (roses chez f. rubra).",
+    "wiki": "Arbutus unedo",
+    "img_queries": [
+      "Arbutus unedo fruit",
+      "Arbutus unedo flowers and fruit",
+      "Arbutus unedo ripe fruit"
+    ],
+    "sources": [
+      "https://www.adomex.nl/en/assortment-overview/",
+      "https://florabundance.com/flowers/strawberry-tree-branches/",
+      "https://www.mayesh.com/arbutus-unedo",
+      "https://www.rhs.org.uk/plants/pdfs/rhs-recommended-award-of-garden-merit-ornamentals.pdf"
+    ]
+  },
+  {
+    "id": "ronce-mures-en-fruits",
+    "nom_fr": "Ronce à mûres en fruits",
+    "nom_en": "Fruiting blackberry vine",
+    "latin": "Rubus fruticosus agg. (et Rubus idaeus)",
+    "famille": "Rosaceae",
+    "categorie": "Branches & baies",
+    "role": "baie",
+    "couleurs": [
+      "noir",
+      "rouge",
+      "vert"
+    ],
+    "varietes": [
+      {
+        "nom": "'Chester'",
+        "couleur": "noir",
+        "note": "mûre sans épines, fruits juillet–septembre, sélection pour la branche coupée (Kolster)"
+      },
+      {
+        "nom": "Blackberry vine (forme commerciale)",
+        "couleur": "baies vertes à noires",
+        "note": "Florabundance"
+      },
+      {
+        "nom": "Framboisier en fruits (R. idaeus, forme commerciale)",
+        "couleur": "rouge",
+        "note": "Florabundance, Mayesh"
+      },
+      {
+        "nom": "Mûres sur tige (forme commerciale)",
+        "couleur": "noir",
+        "note": "Sierra Flower Finder"
+      }
+    ],
+    "formes": "tiges arquées portant des grappes de mûres à différents stades",
+    "saison": "juillet–septembre",
+    "tenue_vase": "5–8 jours",
+    "gamme_prix": "€€",
+    "rarete_jeu": "rare",
+    "notes_dessin": "Tiges arquées vert-rouge à pourpres, anguleuses, sans aiguillons chez 'Chester' (ailleurs hérissées d’aiguillons crochus). Feuilles composées palmées à 3 à 5 folioles ovales dentées, vert foncé dessus et plus claires dessous. Les fruits sont des mûres de 1,5 à 2,5 cm, assemblages de 20 à 50 drupéoles rondes et luisantes, groupées en grappes au bout des rameaux. Une même grappe mêle mûres vertes, rouges et noir brillant, parfois avec quelques fleurs blanches à 5 pétales froissés.",
+    "wiki": "Rubus fruticosus",
+    "img_queries": [
+      "Rubus fruticosus fruit",
+      "Blackberry 'Chester Thornless'",
+      "Rubus fruticosus unripe berries"
+    ],
+    "sources": [
+      "https://www.kolster.nl/nl/producten/snijheesters/overige-snijheesters-en-vaste-planten/2606-rubus-chester-doornloze-braam.html",
+      "https://florabundance.com/flowers/blackberry-vine-black/",
+      "https://florabundance.com/flowers/raspberry-vine/",
+      "https://www.mayesh.com/fruiting-branches-blackberries-black",
+      "https://www.sierraflowerfinder.com/en/d/blackberries-on-stem/8741"
+    ]
+  },
+  {
+    "id": "liane-de-kiwi",
+    "nom_fr": "Liane de kiwi",
+    "nom_en": "Kiwi vine",
+    "latin": "Actinidia deliciosa (et Actinidia spp.)",
+    "famille": "Actinidiaceae",
+    "categorie": "Branches & baies",
+    "role": "branche",
+    "couleurs": [
+      "brun",
+      "brun chocolat",
+      "gris"
+    ],
+    "varietes": [
+      {
+        "nom": "Liane séchée naturelle (forme commerciale)",
+        "couleur": "brun",
+        "note": "Florabundance, Mayesh, Sierra Flower Finder"
+      },
+      {
+        "nom": "Liane préservée (forme commerciale)",
+        "couleur": "brun",
+        "note": "Mayesh"
+      },
+      {
+        "nom": "Branche fruitière de kiwi (forme commerciale)",
+        "couleur": "brun, fruits",
+        "note": "Mayesh"
+      },
+      {
+        "nom": "A. kolomikta",
+        "couleur": "feuillage panaché rose et blanc",
+        "note": "liane ornementale"
+      }
+    ],
+    "formes": "lianes sèches bouclées, en écheveaux ou en couronnes",
+    "saison": "toute l’année (sèche)",
+    "tenue_vase": "illimitée (matériau sec)",
+    "gamme_prix": "€€",
+    "rarete_jeu": "rare",
+    "notes_dessin": "Longues lianes sinueuses de 1 à 3 m, de 0,5 à 2 cm de diamètre, qui ondulent, s’enroulent et forment des boucles et des spirales lâches. L’écorce brun chocolat à roux est finement fissurée, avec de petites lenticelles et parfois des restes de poils rêches. Les nœuds, légèrement renflés, portent des cicatrices de feuilles et des chicots de rameaux coupés ; les extrémités plus fines se tortillent en tire-bouchon. Rendu mat et fibreux, idéal pour des arches et des couronnes.",
+    "wiki": "Actinidia deliciosa",
+    "img_queries": [
+      "Actinidia chinensis var. deliciosa",
+      "Actinidia arguta",
+      "Actinidia kolomikta"
+    ],
+    "sources": [
+      "https://florabundance.com/flowers/kiwi-vine/",
+      "https://www.mayesh.com/26-28-in-kiwi-vine-natural-x6",
+      "https://www.mayesh.com/preserved-kiwi-vine-brown",
+      "https://www.sierraflowerfinder.com/en/d/kiwi-vine/3323",
+      "https://www.rhs.org.uk/plants/pdfs/rhs-recommended-award-of-garden-merit-ornamentals.pdf"
+    ]
+  },
+  {
+    "id": "vigne-sarments",
+    "nom_fr": "Vigne (sarments, bois de vigne et grappes)",
+    "nom_en": "Grapevine",
+    "latin": "Vitis vinifera (et Vitis coignetiae)",
+    "famille": "Vitaceae",
+    "categorie": "Branches & baies",
+    "role": "branche",
+    "couleurs": [
+      "brun",
+      "sable",
+      "vert",
+      "pourpre",
+      "rouge (automne)"
+    ],
+    "varietes": [
+      {
+        "nom": "Bois de vigne poncé (forme commerciale)",
+        "couleur": "sable",
+        "note": "60 à 90 cm, vendu à la pièce (Florabundance)"
+      },
+      {
+        "nom": "Grandes branches de vigne (forme commerciale)",
+        "couleur": "brun naturel",
+        "note": "3,5 à 5,5 m (Mayesh)"
+      },
+      {
+        "nom": "Couronnes de sarments (forme commerciale)",
+        "couleur": "brun",
+        "note": "Mayesh"
+      },
+      {
+        "nom": "Branche de raisin (forme commerciale)",
+        "couleur": "vert",
+        "note": "Mayesh"
+      },
+      {
+        "nom": "vinifera 'Purpurea'",
+        "couleur": "feuillage pourpre"
+      },
+      {
+        "nom": "vinifera 'Spetchley Red'",
+        "couleur": "feuillage rouge à l’automne"
+      },
+      {
+        "nom": "coignetiae",
+        "couleur": "feuillage rouge écarlate à l’automne"
+      },
+      {
+        "nom": "Claret Cloak ('Frovit')",
+        "couleur": "feuillage pourpre"
+      }
+    ],
+    "formes": "sarments secs, bois tourmenté, rameaux feuillés avec grappes",
+    "saison": "toute l’année (bois sec) ; grappes août–octobre",
+    "tenue_vase": "illimitée (bois) ; 5–7 jours (feuillage et grappes)",
+    "gamme_prix": "€€",
+    "rarete_jeu": "rare",
+    "notes_dessin": "Vieux bois tortueux et noueux, à l’écorce brun-gris qui se détache en longues lanières fibreuses ; poncé, il devient lisse et couleur sable. Les sarments de l’année sont plus fins, brun-rouge, avec des nœuds renflés d’où partent, à l’opposé des feuilles, des vrilles fourchues spiralées. Feuilles palmées à 3 à 5 lobes dentés, au sinus pétiolaire marqué, qui rougissent à l’automne (pourpres chez 'Purpurea'). Les grappes coniques de baies rondes ou ovales de 1 à 2 cm, couvertes d’une pruine mate, pendent sous les feuilles.",
+    "wiki": "Vitis vinifera",
+    "img_queries": [
+      "Vitis vinifera 'Purpurea'",
+      "Vitis coignetiae autumn",
+      "Vitis vinifera tendril",
+      "Vitis vinifera bark"
+    ],
+    "sources": [
+      "https://florabundance.com/flowers/wedding-branch-grape-wood-sand/",
+      "https://www.mayesh.com/branches-grape-wood-natural-12-ft",
+      "https://www.mayesh.com/fruiting-branches-grape-green",
+      "https://www.rhs.org.uk/plants/pdfs/rhs-recommended-award-of-garden-merit-ornamentals.pdf"
+    ]
+  },
+  {
+    "id": "erable-du-japon",
+    "nom_fr": "Érable du Japon (branches)",
+    "nom_en": "Japanese maple branches",
+    "latin": "Acer palmatum (et Acer circinatum)",
+    "famille": "Sapindaceae",
+    "categorie": "Branches & baies",
+    "role": "branche",
+    "couleurs": [
+      "rouge",
+      "orange",
+      "jaune",
+      "vert",
+      "pourpre",
+      "rouge corail (rameaux)"
+    ],
+    "varietes": [
+      {
+        "nom": "'Ōsakazuki'",
+        "couleur": "vert virant à l’écarlate"
+      },
+      {
+        "nom": "'Bloodgood'",
+        "couleur": "pourpre"
+      },
+      {
+        "nom": "'Sango-kaku'",
+        "couleur": "rameaux rouge corail, feuillage jaune d’or à l’automne"
+      },
+      {
+        "nom": "'Seiryū'",
+        "couleur": "vert virant à l’or et au rouge",
+        "note": "feuillage finement disséqué"
+      },
+      {
+        "nom": "'Katsura'",
+        "couleur": "orange au printemps"
+      },
+      {
+        "nom": "'Orange Dream'",
+        "couleur": "jaune-orangé"
+      },
+      {
+        "nom": "'Beni-maiko'",
+        "couleur": "rouge vif au printemps"
+      },
+      {
+        "nom": "'Trompenburg'",
+        "couleur": "pourpre",
+        "note": "lobes enroulés"
+      },
+      {
+        "nom": "'Garnet'",
+        "couleur": "pourpre-rouge",
+        "note": "feuillage disséqué"
+      },
+      {
+        "nom": "Vine maple, A. circinatum (forme commerciale)",
+        "couleur": "vert, orange, rouge",
+        "note": "Florabundance"
+      }
+    ],
+    "formes": "rameaux feuillés (printemps, automne) ou rameaux nus colorés",
+    "saison": "septembre–novembre (couleurs d’automne) ; avril–juin (feuillage printanier)",
+    "tenue_vase": "5–7 jours",
+    "gamme_prix": "€€",
+    "rarete_jeu": "rare",
+    "notes_dessin": "Rameaux fins à ramification opposée et étagée, écorce lisse verte à pourpre (rouge corail vif chez 'Sango-kaku'). Feuilles opposées palmées de 5 à 10 cm, à 5–7 (jusqu’à 9) lobes lancéolés profondément découpés et doublement dentés, sur de longs pétioles fins ; très finement disséquées en dentelle chez 'Seiryū' ou 'Garnet'. En automne, chaque feuille passe en dégradé du vert au jaune, à l’orange puis à l’écarlate translucide. Des samares rougeâtres par paires, en V très ouvert, pendent sous les feuilles.",
+    "wiki": "Acer palmatum",
+    "img_queries": [
+      "Acer palmatum 'Osakazuki'",
+      "Acer palmatum 'Sango-kaku'",
+      "Acer palmatum 'Bloodgood'",
+      "Acer palmatum autumn leaves"
+    ],
+    "sources": [
+      "https://florabundance.com/flowers/branch-japanese-maple/",
+      "https://florabundance.com/flowers/vine-maple/",
+      "https://www.mayesh.com/maple-japanese-red",
+      "https://www.rhs.org.uk/plants/pdfs/rhs-recommended-award-of-garden-merit-ornamentals.pdf"
+    ]
+  },
+  {
+    "id": "chene-branches-glands",
+    "nom_fr": "Chêne (branches, feuilles et glands)",
+    "nom_en": "Oak branches",
+    "latin": "Quercus robur ; Q. rubra ; Q. palustris",
+    "famille": "Fagaceae",
+    "categorie": "Branches & baies",
+    "role": "feuillage",
+    "couleurs": [
+      "vert",
+      "rouge",
+      "brun roux",
+      "cuivre",
+      "chocolat (préservé)"
+    ],
+    "varietes": [
+      {
+        "nom": "Q. robur",
+        "couleur": "vert puis brun roux",
+        "note": "chêne pédonculé, glands sur long pédoncule"
+      },
+      {
+        "nom": "Q. rubra",
+        "couleur": "rouge",
+        "note": "chêne rouge d’Amérique"
+      },
+      {
+        "nom": "Q. palustris (« pin oak »)",
+        "couleur": "vert, rouge",
+        "note": "fin d’été et automne (Florabundance)"
+      },
+      {
+        "nom": "coccinea 'Splendens'",
+        "couleur": "écarlate"
+      },
+      {
+        "nom": "Chêne préservé (forme commerciale)",
+        "couleur": "brun, roux, chocolat, couleurs teintes",
+        "note": "Mayesh, Florabundance"
+      },
+      {
+        "nom": "Branches à glands (forme commerciale)",
+        "couleur": "vert, brun",
+        "note": "Mayesh"
+      }
+    ],
+    "formes": "rameaux feuillés frais ou préservés, avec glands",
+    "saison": "août–novembre (frais) ; préservé toute l’année",
+    "tenue_vase": "7–14 jours ; plusieurs mois en préservé",
+    "gamme_prix": "€",
+    "rarete_jeu": "commune",
+    "notes_dessin": "Rameaux gris-brun noueux, en zigzag, avec des bourgeons ovoïdes groupés au sommet des pousses. Chez Q. robur, feuilles de 7 à 12 cm à 4–6 paires de lobes arrondis, presque sans pétiole, avec deux petites oreillettes à la base ; chez Q. rubra et Q. palustris, lobes pointus terminés par une soie, profondément découpés chez le pin oak. Les glands ovoïdes de 2 à 3 cm, brun-vert luisant, sont enchâssés dans une cupule écailleuse grise, au bout d’un long pédoncule chez Q. robur. Les feuilles préservées prennent un aspect souple et mat, brun chocolat ou cuivre.",
+    "wiki": "Quercus robur",
+    "img_queries": [
+      "Quercus robur acorns",
+      "Quercus rubra autumn leaves",
+      "Quercus palustris leaves",
+      "Quercus robur leaves"
+    ],
+    "sources": [
+      "https://florabundance.com/flowers/pin-oak/",
+      "https://florabundance.com/flowers/oak-leaves-red/",
+      "https://www.mayesh.com/fruiting-branches-acorn-brown",
+      "https://thursd.com/articles/wholesale-flowers-in-season-september",
+      "https://www.rhs.org.uk/plants/pdfs/rhs-recommended-award-of-garden-merit-ornamentals.pdf"
+    ]
+  },
+  {
+    "id": "hetre-branches",
+    "nom_fr": "Hêtre (branches fraîches et préservées)",
+    "nom_en": "Beech branches",
+    "latin": "Fagus sylvatica",
+    "famille": "Fagaceae",
+    "categorie": "Branches & baies",
+    "role": "feuillage",
+    "couleurs": [
+      "vert",
+      "pourpre",
+      "cuivre",
+      "brun",
+      "orange",
+      "jaune",
+      "bordeaux"
+    ],
+    "varietes": [
+      {
+        "nom": "F. sylvatica",
+        "couleur": "vert",
+        "note": "hêtre commun"
+      },
+      {
+        "nom": "Atropurpurea Group 'Riversii'",
+        "couleur": "pourpre foncé"
+      },
+      {
+        "nom": "'Dawyck Purple'",
+        "couleur": "pourpre"
+      },
+      {
+        "nom": "'Purple Fountain'",
+        "couleur": "pourpre",
+        "note": "port pleureur"
+      },
+      {
+        "nom": "var. heterophylla 'Aspleniifolia'",
+        "couleur": "vert",
+        "note": "feuilles finement découpées"
+      },
+      {
+        "nom": "Copper beech préservé (forme commerciale)",
+        "couleur": "brun, rouge, orange, jaune, bordeaux, or, vert",
+        "note": "Mayesh, Florabundance"
+      }
+    ],
+    "formes": "rameaux feuillés en éventail, frais ou glycérinés",
+    "saison": "mai–octobre (frais) ; préservé toute l’année",
+    "tenue_vase": "7–10 jours (frais) ; plusieurs mois (préservé)",
+    "gamme_prix": "€€",
+    "rarete_jeu": "commune",
+    "notes_dessin": "Rameaux fins en zigzag, gris-brun, portant des bourgeons très longs (1–2 cm), fins et pointus comme des cigares, aux écailles brun cuivré. Feuilles alternes ovales de 5 à 10 cm, au bord ondulé presque entier frangé de fins cils soyeux, avec 5 à 9 paires de nervures parallèles très droites ; elles s’étagent à plat le long des rameaux, en éventail. Hêtre pourpre : limbe pourpre-bordeaux luisant ; feuillage préservé : texture souple et satinée, du cuivre au chocolat. Parfois des cupules ligneuses hérissées, ouvertes en 4 valves sur deux faînes triangulaires.",
+    "wiki": "Fagus sylvatica",
+    "img_queries": [
+      "Fagus sylvatica Atropurpurea leaves",
+      "Fagus sylvatica leaves",
+      "Fagus sylvatica 'Riversii'",
+      "Fagus sylvatica buds"
+    ],
+    "sources": [
+      "https://florabundance.com/flowers/copper-beech-red/",
+      "https://www.mayesh.com/preserved-copper-beech-assorted",
+      "https://www.sierraflowerfinder.com/en/d/copper-beech/6751",
+      "https://fiftyflowers.com/products/copper-beech-bulk-branches",
+      "https://www.rhs.org.uk/plants/pdfs/rhs-recommended-award-of-garden-merit-ornamentals.pdf"
+    ]
+  },
+  {
+    "id": "meleze-a-cones",
+    "nom_fr": "Mélèze à cônes",
+    "nom_en": "Larch with cones",
+    "latin": "Larix decidua ; Larix kaempferi",
+    "famille": "Pinaceae",
+    "categorie": "Branches & baies",
+    "role": "branche",
+    "couleurs": [
+      "brun",
+      "gris",
+      "vert tendre (aiguilles)",
+      "doré (automne)"
+    ],
+    "varietes": [
+      {
+        "nom": "L. decidua",
+        "couleur": "cônes brun clair",
+        "note": "mélèze d’Europe, cônes ovoïdes dressés de 2 à 6 cm, rose vif au printemps"
+      },
+      {
+        "nom": "L. kaempferi",
+        "couleur": "cônes brun clair",
+        "note": "mélèze du Japon, écailles réfléchies en rosette"
+      },
+      {
+        "nom": "Rameaux de mélèze à cônes (forme commerciale)",
+        "couleur": "brun",
+        "note": "Mayesh"
+      }
+    ],
+    "formes": "rameaux nus garnis de petits cônes",
+    "saison": "octobre–mars",
+    "tenue_vase": "3–4 semaines ; se conserve sec",
+    "gamme_prix": "€€",
+    "rarete_jeu": "rare",
+    "notes_dessin": "Rameaux souples gris-brun ponctués de courts rameaux en bouton (éperons), régulièrement espacés, d’où sortaient les touffes d’aiguilles. Les petits cônes de 2 à 6 cm sont dressés sur le dessus des rameaux, comme de petites roses de bois : écailles rondes, minces et imbriquées, brun clair, droites chez L. decidua et recourbées vers l’extérieur chez L. kaempferi. Les cônes restent attachés plusieurs années et grisaillent en vieillissant, souvent avec un peu de lichen. En automne, les aiguilles fines de 2 à 4 cm, groupées en touffes denses sur les éperons, forment des pinceaux jaune d’or ; au printemps, les jeunes cônes sont rose vif.",
+    "wiki": "Larix decidua",
+    "img_queries": [
+      "Larix decidua cones",
+      "Larix kaempferi cones",
+      "Larix decidua female cone"
+    ],
+    "sources": [
+      "https://www.mayesh.com/larch",
+      "https://www.mayesh.com/cb-larch",
+      "https://en.wikipedia.org/wiki/Larix_decidua",
+      "https://www.rhs.org.uk/plants/pdfs/rhs-recommended-award-of-garden-merit-ornamentals.pdf"
+    ]
+  },
+  {
+    "id": "pin-a-cones",
+    "nom_fr": "Pin à cônes (rameaux et pommes de pin)",
+    "nom_en": "Pine branches with cones / pine cones",
+    "latin": "Pinus spp.",
+    "famille": "Pinaceae",
+    "categorie": "Branches & baies",
+    "role": "texture",
+    "couleurs": [
+      "brun",
+      "brun cannelle",
+      "vert (aiguilles)",
+      "blanchi",
+      "doré (pailleté)"
+    ],
+    "varietes": [
+      {
+        "nom": "P. lambertiana (sugar pine)",
+        "couleur": "brun",
+        "note": "cônes de 23 à 30 cm dans le commerce"
+      },
+      {
+        "nom": "P. jeffreyi (Jeffrey pine)",
+        "couleur": "brun",
+        "note": "cônes de 15 à 20 cm"
+      },
+      {
+        "nom": "P. ponderosa",
+        "couleur": "brun",
+        "note": "cônes de 8 à 15 cm"
+      },
+      {
+        "nom": "P. coulteri",
+        "couleur": "brun",
+        "note": "cônes massifs à écailles en crochet"
+      },
+      {
+        "nom": "P. contorta (lodgepole)",
+        "couleur": "brun",
+        "note": "mini-cônes de 2,5 à 7,5 cm"
+      },
+      {
+        "nom": "P. sylvestris (Kiefer)",
+        "couleur": "aiguilles bleu-vert, petits cônes",
+        "note": "rameaux de Noël (Adomex)"
+      },
+      {
+        "nom": "P. pinea",
+        "couleur": "brun rouge",
+        "note": "cônes ronds à pignons"
+      },
+      {
+        "nom": "P. wallichiana",
+        "couleur": "brun",
+        "note": "longs cônes résineux"
+      },
+      {
+        "nom": "Cônes blanchis, pailletés ou cannelle (formes commerciales)",
+        "couleur": "blanc, or, brun",
+        "note": "Mayesh"
+      }
+    ],
+    "formes": "rameaux d’aiguilles avec cônes, cônes isolés naturels ou décorés",
+    "saison": "novembre–décembre (cônes secs toute l’année)",
+    "tenue_vase": "3–4 semaines (rameaux) ; illimitée (cônes)",
+    "gamme_prix": "€",
+    "rarete_jeu": "commune",
+    "notes_dessin": "Les cônes sont faits d’écailles ligneuses imbriquées disposées en spirales croisées (motif de Fibonacci), chacune terminée par un écusson en losange (apophyse) portant un petit ombilic, parfois une épine. Fermés, ils sont fuselés et lisses ; ouverts, les écailles s’écartent en rosette et montrent leur face interne plus claire. Tailles très contrastées : petits cônes coniques de 3 à 7 cm du pin sylvestre, longs cônes cylindriques du sugar pine, cônes massifs à écailles crochues du pin de Coulter. Sur rameau, les aiguilles sont groupées par 2 (sylvestre, bleu-vert et torsadées), 3 ou 5 en faisceaux gainés à la base.",
+    "wiki": "Pinus",
+    "img_queries": [
+      "Pinus lambertiana cone",
+      "Pinus coulteri cone",
+      "Pinus sylvestris cones",
+      "Pinus ponderosa cone"
+    ],
+    "sources": [
+      "https://florabundance.com/flowers/pinecones-sugar-x20/",
+      "https://florabundance.com/flowers/pine-cones-ponderosa-xpc150/",
+      "https://www.mayesh.com/coulter-pine-cones-brown",
+      "https://newcoventgardenmarket.com/blog/porters-foliage-sets-off-early-for-christmas/",
+      "https://www.adomex.nl/en/assortment-overview/"
+    ]
+  },
+  {
+    "id": "gui",
+    "nom_fr": "Gui",
+    "nom_en": "Mistletoe",
+    "latin": "Viscum album",
+    "famille": "Santalaceae (ex-Viscaceae)",
+    "categorie": "Branches & baies",
+    "role": "baie",
+    "couleurs": [
+      "vert jaune",
+      "blanc nacré"
+    ],
+    "varietes": [
+      {
+        "nom": "Viscum album",
+        "couleur": "baies blanc nacré",
+        "note": "gui européen"
+      },
+      {
+        "nom": "Phoradendron (gui américain)",
+        "couleur": "baies blanches",
+        "note": "espèces nord-américaines"
+      },
+      {
+        "nom": "Boule de gui (forme commerciale)",
+        "couleur": "vert jaune",
+        "note": "Mayesh"
+      },
+      {
+        "nom": "Brins de gui (forme commerciale)",
+        "couleur": "vert jaune",
+        "note": "Sierra Flower Finder"
+      }
+    ],
+    "formes": "touffes ramifiées en fourche avec baies",
+    "saison": "novembre–janvier",
+    "tenue_vase": "10–15 jours (sèche lentement)",
+    "gamme_prix": "€€",
+    "rarete_jeu": "rare",
+    "notes_dessin": "Tiges vert-jaune articulées, ramifiées en fourches régulières (dichotomie) à chaque nœud, qui forment une boule dense. Au bout de chaque article, deux feuilles opposées épaisses et coriaces, oblongues en spatule de 2 à 8 cm, vert jaunâtre mat, sans dentelure. Les baies de 6 à 10 mm sont groupées par 2 à 6 dans les fourches : sphères blanc nacré translucides et collantes, où l’on devine la graine verte, avec un petit point sombre au sommet. Tous les rameaux s’écartent au même angle, d’où une silhouette géométrique en éventail.",
+    "wiki": "Viscum album",
+    "img_queries": [
+      "Viscum album berries",
+      "Viscum album",
+      "Viscum album on apple tree"
+    ],
+    "sources": [
+      "https://thursd.com/articles/mistletoe-the-legend-of-the-famous-kissing-plant",
+      "https://www.mayesh.com/mistletoe-ball-green",
+      "https://www.sierraflowerfinder.com/en/d/mistletoe/3287",
+      "https://newcoventgardenmarket.com/blog/christmas-comes-early-every-year-at-lavenders/"
+    ]
+  }
+]

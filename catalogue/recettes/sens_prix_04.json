@@ -1,0 +1,1198 @@
+[
+ {
+  "id": "rhapis-excelsa",
+  "prix": 6.5,
+  "sens": "Élégance sereine et retenue",
+  "occ": [
+   "juste",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage : petit palmier d'Asie aux éventails digités, prisé en intérieur."
+ },
+ {
+  "id": "caryota-mitis",
+  "prix": 8.5,
+  "sens": "Victoire pleine de fantaisie",
+  "occ": [
+   "bravo",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "La palme dit la victoire depuis l'Antiquité ; folioles en queue de poisson."
+ },
+ {
+  "id": "serenoa-repens-palmetto",
+  "prix": 6.8,
+  "sens": "Succès déployé en éventail",
+  "occ": [
+   "bravo",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "Palme, symbole antique du succès ; ce palmier nain tapisse les pinèdes de Floride."
+ },
+ {
+  "id": "bismarckia-nobilis",
+  "prix": 10.0,
+  "sens": "Prestige et majesté",
+  "occ": [
+   "bravo",
+   "anniv"
+  ],
+  "eviter": [],
+  "note": "Palmier de Madagascar dédié à Bismarck ; la palme y ajoute l'idée de triomphe."
+ },
+ {
+  "id": "cordyline-fruticosa-ti",
+  "prix": 3.0,
+  "sens": "Protection contre le mauvais sort",
+  "occ": [
+   "courage",
+   "bravo",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "À Hawaï, le ti planté autour des maisons éloigne le mauvais sort et porte chance."
+ },
+ {
+  "id": "dracaena-reflexa-song-of-india",
+  "prix": 4.3,
+  "sens": "Bonne humeur ourlée d'or",
+  "occ": [
+   "juste",
+   "anniv"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage : rosettes vertes liserées d'or, d'une longévité remarquable en vase."
+ },
+ {
+  "id": "dracaena-marginata",
+  "prix": 3.8,
+  "sens": "Énergie vive et graphique",
+  "occ": [
+   "bravo",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Du grec drakaina, « dragonne » ; sens d'usage : fines lames liserées de rouge."
+ },
+ {
+  "id": "dracaena-fragrans",
+  "prix": 3.6,
+  "sens": "Bien-être au quotidien",
+  "occ": [
+   "juste",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage : le « bois du Brésil » des intérieurs, aux fleurs nocturnes parfumées."
+ },
+ {
+  "id": "dracaena-sanderiana-lucky-bamboo",
+  "prix": 4.2,
+  "sens": "Chance, bonheur et prospérité",
+  "occ": [
+   "bravo",
+   "anniv",
+   "courage"
+  ],
+  "eviter": [],
+  "note": "Feng shui : le nombre de tiges compte ; trois pour le bonheur, jamais quatre."
+ },
+ {
+  "id": "dracaena-surculosa",
+  "prix": 4.0,
+  "sens": "Gaieté constellée d'étoiles",
+  "occ": [
+   "anniv",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage : feuilles semées de points crème ; une variété se nomme Milky Way."
+ },
+ {
+  "id": "codiaeum-variegatum-croton",
+  "prix": 4.2,
+  "sens": "Exubérance des tropiques",
+  "occ": [
+   "bravo",
+   "anniv"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage : feuilles marbrées de jaune, d'orange et de rouge, un été sans fin."
+ },
+ {
+  "id": "alocasia",
+  "prix": 8.0,
+  "sens": "Présence sculpturale et audace",
+  "occ": [
+   "bravo",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage : grande feuille en flèche aux nervures d'argent, d'allure sculpturale."
+ },
+ {
+  "id": "goeppertia-calathea",
+  "prix": 7.0,
+  "sens": "Calme intérieur et délicatesse",
+  "occ": [
+   "courage",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage : ses feuilles se redressent le soir, comme des mains jointes."
+ },
+ {
+  "id": "anthurium-feuilles",
+  "prix": 6.5,
+  "sens": "Hospitalité au cœur ouvert",
+  "occ": [
+   "merci",
+   "amour",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Feuille en cœur de l'anthurium, fleur de l'hospitalité à Hawaï ; sens d'usage."
+ },
+ {
+  "id": "musa-feuille-bananier",
+  "prix": 7.5,
+  "sens": "Générosité sans compter",
+  "occ": [
+   "merci",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "En Inde du Sud, la feuille de bananier sert d'assiette aux repas de fête."
+ },
+ {
+  "id": "strelitzia-feuilles",
+  "prix": 6.5,
+  "sens": "Liberté et fierté royale",
+  "occ": [
+   "bravo",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Genre dédié à la reine Charlotte de Mecklembourg-Strelitz ; oiseau de paradis."
+ },
+ {
+  "id": "pandanus",
+  "prix": 4.4,
+  "sens": "Savoir-faire tressé à la main",
+  "occ": [
+   "merci",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Dans le Pacifique, ses feuilles tressées font nattes et paniers ; sens d'usage."
+ },
+ {
+  "id": "alpinia-zerumbet-variegata",
+  "prix": 4.3,
+  "sens": "Vitalité rayée de soleil",
+  "occ": [
+   "courage",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "À Okinawa, ses feuilles enveloppent les gâteaux mūchī, offerts pour la santé."
+ },
+ {
+  "id": "fatsia-japonica-aralia",
+  "prix": 5.0,
+  "sens": "Main tendue et accueil",
+  "occ": [
+   "merci",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Au Japon, yatsude, « huit doigts » : le chiffre huit y est de bon augure."
+ },
+ {
+  "id": "nephrolepis-exaltata-boston",
+  "prix": 2.6,
+  "sens": "Sincérité chaleureuse",
+  "occ": [
+   "merci",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Fougère, emblème de sincérité ; forme repérée à Boston vers 1894, d'où son nom."
+ },
+ {
+  "id": "polystichum-munitum-sword-fern",
+  "prix": 2.0,
+  "sens": "Franchise sans détour",
+  "occ": [
+   "courage",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Fougère, gage de sincérité ; frondes en lame d'épée des forêts du Pacifique."
+ },
+ {
+  "id": "adiantum-capillaire",
+  "prix": 3.0,
+  "sens": "Discrétion et grâce aérienne",
+  "occ": [
+   "amour",
+   "merci",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "« Discrétion » au langage des fleurs ; adiantum, « qui ne se mouille pas »."
+ },
+ {
+  "id": "sticherus-umbrella-fern",
+  "prix": 3.0,
+  "sens": "Abri bienveillant",
+  "occ": [
+   "courage",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage : frondes étagées en ombrelle des forêts humides d'Australie."
+ },
+ {
+  "id": "dicranopteris-uluhe",
+  "prix": 3.0,
+  "sens": "Renouveau qui se déploie",
+  "occ": [
+   "courage",
+   "bravo"
+  ],
+  "eviter": [],
+  "note": "Fougère pionnière des coulées de lave à Hawaï ; sa crosse figure le renouveau."
+ },
+ {
+  "id": "thelypteris-kunthii-helecho",
+  "prix": 2.0,
+  "sens": "Simplicité légère et vraie",
+  "occ": [
+   "juste",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "Fougère, symbole de sincérité ; helecho veut dire « fougère » en espagnol."
+ },
+ {
+  "id": "cyrtomium-falcatum-houx",
+  "prix": 2.6,
+  "sens": "Confiance solide et loyale",
+  "occ": [
+   "merci",
+   "courage"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage : fougère d'Asie aux pennes lustrées comme le houx, très robuste."
+ },
+ {
+  "id": "phlebodium-aureum-blue-star",
+  "prix": 2.6,
+  "sens": "Rêverie aux reflets bleus",
+  "occ": [
+   "juste",
+   "courage"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage : fronde bleu-vert glauque, teinte froide rare chez les fougères."
+ },
+ {
+  "id": "woodwardia-fimbriata",
+  "prix": 2.8,
+  "sens": "Solidarité à toute épreuve",
+  "occ": [
+   "courage",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage : fougère géante de l'Ouest américain, aux sores alignés en chaîne."
+ },
+ {
+  "id": "asplenium-nidus",
+  "prix": 2.8,
+  "sens": "Nid douillet, foyer heureux",
+  "occ": [
+   "juste",
+   "bravo"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage : rosette en nid qui recueille l'humus dans la canopée tropicale."
+ },
+ {
+  "id": "microsorum-musifolium-crocodile",
+  "prix": 3.0,
+  "sens": "Originalité affirmée",
+  "occ": [
+   "bravo",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage : fronde réticulée comme une peau de crocodile, d'Asie tropicale."
+ },
+ {
+  "id": "zamia-integrifolia-coontie",
+  "prix": 2.7,
+  "sens": "Endurance venue du fond des âges",
+  "occ": [
+   "courage",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Cycadée de Floride, « fossile vivant » ; les Séminoles tiraient farine de sa racine."
+ },
+ {
+  "id": "lycopodium",
+  "prix": 2.2,
+  "sens": "Patience des forêts anciennes",
+  "occ": [
+   "courage",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Lignée vieille de 400 millions d'ans ; ses spores servaient de poudre à éclair."
+ },
+ {
+  "id": "equisetum-preles",
+  "prix": 1.0,
+  "sens": "Persévérance des origines",
+  "occ": [
+   "courage",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Héritière des forêts du Carbonifère ; jadis utilisée pour polir l'étain."
+ },
+ {
+  "id": "xerophyllum-tenax-bear-grass",
+  "prix": 0.5,
+  "sens": "Grâce des lignes libres",
+  "occ": [
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage : les peuples du Nord-Ouest américain en tressent de fins paniers."
+ },
+ {
+  "id": "xanthorrhoea-steel-grass",
+  "prix": 0.9,
+  "sens": "Résilience, renaître du feu",
+  "occ": [
+   "courage",
+   "bravo"
+  ],
+  "eviter": [],
+  "note": "Arbre-herbe d'Australie, qui repousse et fleurit de plus belle après les feux."
+ },
+ {
+  "id": "liriope-lily-grass",
+  "prix": 0.5,
+  "sens": "Ruban souple et tendre",
+  "occ": [
+   "juste",
+   "amour"
+  ],
+  "eviter": [],
+  "note": "Nommée d'après la nymphe Liriopé, mère de Narcisse ; ruban souple à nouer."
+ },
+ {
+  "id": "phormium-lin-nz",
+  "prix": 3.8,
+  "sens": "Famille unie et protectrice",
+  "occ": [
+   "anniv",
+   "merci",
+   "courage"
+  ],
+  "eviter": [],
+  "note": "Pour les Maoris, la touffe de harakeke figure la famille qui entoure l'enfant."
+ },
+ {
+  "id": "astelia-silver-spear",
+  "prix": 4.5,
+  "sens": "Détermination en fer de lance",
+  "occ": [
+   "courage",
+   "bravo"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage : feuilles argentées en fer de lance, natives des îles Chatham."
+ },
+ {
+  "id": "jacobaea-maritima-cineraire",
+  "prix": 3.2,
+  "sens": "Apaisement d'un voile poudré",
+  "occ": [
+   "courage",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Du latin cinis, « cendre », pour son gris ; sens d'usage : apaisement."
+ },
+ {
+  "id": "stachys-byzantina-oreille-ours",
+  "prix": 3.0,
+  "sens": "Réconfort doux comme la laine",
+  "occ": [
+   "courage",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "Feuilles laineuses jadis posées sur les plaies en pansement ; sens d'usage."
+ },
+ {
+  "id": "hosta-feuilles",
+  "prix": 3.0,
+  "sens": "Quiétude des jardins d'ombre",
+  "occ": [
+   "juste",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage : reine des jardins d'ombre, dédiée au botaniste autrichien Host."
+ },
+ {
+  "id": "galax-urceolata",
+  "prix": 0.6,
+  "sens": "Constance au fil des saisons",
+  "occ": [
+   "juste",
+   "courage"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage : feuille ronde des Appalaches, qui vire au bronze en hiver."
+ },
+ {
+  "id": "heuchera",
+  "prix": 1.8,
+  "sens": "Richesse des nuances",
+  "occ": [
+   "juste",
+   "anniv"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage : feuillage nord-américain décliné du vert citron au presque noir."
+ },
+ {
+  "id": "atriplex-hortensis-arroche",
+  "prix": 3.2,
+  "sens": "Abondance simple du potager",
+  "occ": [
+   "juste",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "Légume ancien surnommé « belle-dame » ; ses grappes de graines dansent au vent."
+ },
+ {
+  "id": "pelargonium-geranium-odorant",
+  "prix": 2.5,
+  "sens": "Vous avez ma préférence",
+  "occ": [
+   "amour",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "Le géranium rosat signifie « préférence » dans le langage des fleurs."
+ },
+ {
+  "id": "magnolia-grandiflora-feuillage",
+  "prix": 6.5,
+  "sens": "Prestance et dignité",
+  "occ": [
+   "bravo",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage : feuilles lustrées au revers roux, emblème du Sud des États-Unis."
+ },
+ {
+  "id": "olea-europaea-olivier",
+  "prix": 5.0,
+  "sens": "Paix et sagesse",
+  "occ": [
+   "merci",
+   "courage",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Rameau de la colombe de Noé et arbre d'Athéna, déesse de la sagesse."
+ },
+ {
+  "id": "hedera-helix-lierre",
+  "prix": 2.0,
+  "sens": "Fidélité, je meurs où je m'attache",
+  "occ": [
+   "amour",
+   "anniv",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "Devise classique du lierre ; il couronnait aussi Dionysos dans l'Antiquité."
+ },
+ {
+  "id": "jasminum-liane-jasmin",
+  "prix": 4.5,
+  "sens": "Amabilité et douceur parfumée",
+  "occ": [
+   "amour",
+   "merci",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "« Amabilité » au langage des fleurs ; Grasse en tire l'une de ses essences reines."
+ },
+ {
+  "id": "trachelospermum-jasmin-etoile",
+  "prix": 4.0,
+  "sens": "Parfum d'étoiles qui s'accroche",
+  "occ": [
+   "amour",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage : liane de Chine et du Japon, fleurs en étoile au parfum de jasmin."
+ },
+ {
+  "id": "myrtus-communis-myrte",
+  "prix": 2.5,
+  "sens": "Amour et promesse de mariage",
+  "occ": [
+   "amour",
+   "anniv"
+  ],
+  "eviter": [],
+  "note": "Plante de Vénus ; un brin de myrte orne les bouquets des mariées royales anglaises."
+ },
+ {
+  "id": "buxus-sempervirens-buis",
+  "prix": 2.2,
+  "sens": "Fermeté d'âme et stoïcisme",
+  "occ": [
+   "courage",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "« Stoïcisme » au langage des fleurs ; le buis béni des Rameaux protège la maison."
+ },
+ {
+  "id": "pistacia-lentiscus-pistachier",
+  "prix": 2.2,
+  "sens": "Robustesse du maquis",
+  "occ": [
+   "juste",
+   "courage"
+  ],
+  "eviter": [],
+  "note": "Arbuste du maquis ; à Chios, sa résine donne le mastic, les « larmes de Chios »."
+ },
+ {
+  "id": "laurus-nobilis-laurier-sauce",
+  "prix": 2.5,
+  "sens": "Gloire et triomphe mérités",
+  "occ": [
+   "bravo",
+   "courage"
+  ],
+  "eviter": [],
+  "note": "Couronne des vainqueurs : Daphné, fuyant Apollon, fut changée en laurier."
+ },
+ {
+  "id": "prunus-laurocerasus-laurier-cerise",
+  "prix": 2.2,
+  "sens": "Vigueur toujours verte",
+  "occ": [
+   "juste"
+  ],
+  "eviter": [
+   "amour"
+  ],
+  "note": "« Perfidie » au XIXe, pour ses feuilles toxiques à odeur d'amande ; sens d'usage."
+ },
+ {
+  "id": "viburnum-tinus-laurier-tin",
+  "prix": 2.8,
+  "sens": "Gage d'attention fidèle",
+  "occ": [
+   "merci",
+   "amour",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Langage des fleurs : « je meurs si l'on me néglige », gage d'attention."
+ },
+ {
+  "id": "quercus-ilex-chene-vert",
+  "prix": 4.0,
+  "sens": "Force tranquille et enracinée",
+  "occ": [
+   "courage",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "Le chêne, arbre de Zeus, dit la force ; « hospitalité » au langage des fleurs."
+ },
+ {
+  "id": "cotinus-coggygria-arbre-a-perruques",
+  "prix": 4.2,
+  "sens": "Légèreté vaporeuse",
+  "occ": [
+   "juste",
+   "anniv"
+  ],
+  "eviter": [],
+  "note": "Ses plumets vaporeux évoquent des perruques ; son bois donnait une teinture jaune."
+ },
+ {
+  "id": "physocarpus-opulifolius",
+  "prix": 4.0,
+  "sens": "Profondeur des sentiments",
+  "occ": [
+   "amour",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage : écorce qui pèle en fines couches ; feuillage pourpre ou doré."
+ },
+ {
+  "id": "nandina-domestica-bambou-sacre",
+  "prix": 4.0,
+  "sens": "Les soucis détournés",
+  "occ": [
+   "courage",
+   "bravo",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Au Japon, nanten évoque « détourner le malheur » ; on le plante près des portes."
+ },
+ {
+  "id": "photinia-red-robin",
+  "prix": 2.5,
+  "sens": "Élan d'un nouveau printemps",
+  "occ": [
+   "courage",
+   "bravo",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage : ses jeunes pousses rouge vif annoncent chaque printemps."
+ },
+ {
+  "id": "elaeagnus-chalef",
+  "prix": 3.0,
+  "sens": "Éclat discret qui scintille",
+  "occ": [
+   "juste",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage : revers argenté qui scintille ; fleurs d'automne très parfumées."
+ },
+ {
+  "id": "euonymus-japonicus-fusain",
+  "prix": 2.5,
+  "sens": "Votre image est gravée dans mon cœur",
+  "occ": [
+   "amour",
+   "anniv"
+  ],
+  "eviter": [],
+  "note": "Langage des fleurs : le fusain, charbon des dessinateurs, « grave » l'image aimée."
+ },
+ {
+  "id": "griselinia-littoralis",
+  "prix": 2.8,
+  "sens": "Lumière vive du littoral",
+  "occ": [
+   "juste",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage : arbuste des côtes néo-zélandaises, vert pomme et lustré."
+ },
+ {
+  "id": "aucuba-japonica",
+  "prix": 2.5,
+  "sens": "Ténacité mouchetée d'or",
+  "occ": [
+   "courage",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage : arbuste japonais moucheté d'or, qui prospère même à l'ombre."
+ },
+ {
+  "id": "choisya-ternata-oranger-du-mexique",
+  "prix": 3.2,
+  "sens": "Fraîcheur de fleur d'oranger",
+  "occ": [
+   "merci",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage : feuilles aromatiques, fleurs blanches au parfum de fleur d'oranger."
+ },
+ {
+  "id": "brachyglottis-sunshine",
+  "prix": 2.8,
+  "sens": "Sérénité feutrée",
+  "occ": [
+   "courage",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage : feuillage feutré de Nouvelle-Zélande, qui adoucit les tons vifs."
+ },
+ {
+  "id": "leucothoe",
+  "prix": 3.2,
+  "sens": "Amour solaire aux mille reflets",
+  "occ": [
+   "amour",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Nommé d'après Leucothoé, aimée du Soleil et changée en arbuste à encens (Ovide)."
+ },
+ {
+  "id": "skimmia-japonica",
+  "prix": 3.8,
+  "sens": "Promesse tenue tout l'hiver",
+  "occ": [
+   "courage",
+   "merci",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage : boutons rouges tenus de l'automne au printemps avant d'éclore."
+ },
+ {
+  "id": "ilex-aquifolium-houx",
+  "prix": 5.0,
+  "sens": "Prévoyance et vœux d'hiver",
+  "occ": [
+   "juste",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "« Prévoyance » au langage des fleurs ; porte-bonheur des fêtes de fin d'année."
+ },
+ {
+  "id": "camellia-japonica-feuillage",
+  "prix": 3.8,
+  "sens": "Excellence sans ostentation",
+  "occ": [
+   "bravo",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "Le camélia dit l'excellence au langage des fleurs ; ici, son feuillage lustré."
+ },
+ {
+  "id": "gardenia-feuillage",
+  "prix": 3.5,
+  "sens": "Amour secret et pureté",
+  "occ": [
+   "amour",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Sens hérité de la fleur de gardénia, messagère d'amour secret et de pureté."
+ },
+ {
+  "id": "ligustrum-troene",
+  "prix": 2.2,
+  "sens": "Intimité préservée",
+  "occ": [
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage : haie classique des jardins, qui protège et préserve l'intimité."
+ },
+ {
+  "id": "podocarpus-macrophyllus",
+  "prix": 2.5,
+  "sens": "Harmonie à la japonaise",
+  "occ": [
+   "juste",
+   "courage"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage : surnommé « pin des bouddhistes », taillé dans les jardins japonais."
+ },
+ {
+  "id": "nageia-nagi",
+  "prix": 3.0,
+  "sens": "Un lien que rien ne déchire",
+  "occ": [
+   "amour",
+   "anniv",
+   "courage"
+  ],
+  "eviter": [],
+  "note": "Arbre sacré de Kumano : sa feuille, difficile à déchirer, protège les liens."
+ },
+ {
+  "id": "cocculus-laurifolius",
+  "prix": 3.2,
+  "sens": "Courbes lustrées et gracieuses",
+  "occ": [
+   "juste",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage : branches arquées aux feuilles lustrées, prisées des grands bouquets."
+ },
+ {
+  "id": "arbutus-arbousier",
+  "prix": 4.5,
+  "sens": "Je n'aime que vous",
+  "occ": [
+   "amour",
+   "anniv"
+  ],
+  "eviter": [],
+  "note": "Langage des fleurs victorien ; unedo vient de Pline : « je n'en mange qu'un »."
+ },
+ {
+  "id": "lophomyrtus",
+  "prix": 4.0,
+  "sens": "Trésor venu des antipodes",
+  "occ": [
+   "juste",
+   "anniv"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage : myrte de Nouvelle-Zélande aux petites feuilles cloquées et lustrées."
+ },
+ {
+  "id": "agonis-flexuosa",
+  "prix": 3.5,
+  "sens": "Mouvement souple et parfumé",
+  "occ": [
+   "juste",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage : « myrte saule » d'Australie, retombant, à odeur de menthe au froissé."
+ },
+ {
+  "id": "melaleuca-feuillage",
+  "prix": 3.5,
+  "sens": "Bienfait purifiant",
+  "occ": [
+   "courage",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage : genre de l'arbre à thé, dont l'huile purifie et apaise."
+ },
+ {
+  "id": "grevillea-feuillage",
+  "prix": 3.5,
+  "sens": "Raffinement ciselé",
+  "occ": [
+   "juste",
+   "bravo"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage : feuillage australien finement découpé, dédié à C. F. Greville."
+ },
+ {
+  "id": "leptospermum-arbre-a-the",
+  "prix": 4.0,
+  "sens": "Douceur qui soigne",
+  "occ": [
+   "courage",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "Le mānuka néo-zélandais donne un miel réputé ; Cook en infusait les feuilles."
+ },
+ {
+  "id": "acacia-feuillage",
+  "prix": 4.5,
+  "sens": "Amitié et amour platonique",
+  "occ": [
+   "merci",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Acacia : amitié, ou amour platonique, au langage des fleurs ; feuillage de mimosa."
+ },
+ {
+  "id": "adenanthos-sericeus-woolly-bush",
+  "prix": 5.0,
+  "sens": "Caresse soyeuse et rassurante",
+  "occ": [
+   "courage",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage : arbuste côtier d'Australie, doux comme une fourrure argentée."
+ },
+ {
+  "id": "leucadendron-rouges",
+  "prix": 4.5,
+  "sens": "Caractère passionné",
+  "occ": [
+   "amour",
+   "bravo",
+   "anniv"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage : bractées rouge vin du fynbos sud-africain, d'une tenue remarquable."
+ },
+ {
+  "id": "leucadendron-jaunes-verts",
+  "prix": 4.5,
+  "sens": "Optimisme rayonnant",
+  "occ": [
+   "bravo",
+   "anniv",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage : « cônes » dorés du fynbos du Cap, qui tiennent des semaines."
+ },
+ {
+  "id": "leucadendron-argenteum-arbre-argent",
+  "prix": 6.0,
+  "sens": "Rareté précieuse et argentée",
+  "occ": [
+   "anniv",
+   "bravo"
+  ],
+  "eviter": [],
+  "note": "Endémique des pentes de la montagne de la Table, au Cap ; espèce menacée."
+ },
+ {
+  "id": "lonicera-chevrefeuille",
+  "prix": 4.0,
+  "sens": "Ni vous sans moi, ni moi sans vous",
+  "occ": [
+   "amour",
+   "anniv"
+  ],
+  "eviter": [],
+  "note": "Lai de Marie de France : Tristan et Iseut, enlacés comme chèvrefeuille et coudrier."
+ },
+ {
+  "id": "salvia-rosmarinus-romarin",
+  "prix": 2.0,
+  "sens": "Votre présence me ranime",
+  "occ": [
+   "amour",
+   "courage",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "Langage des fleurs ; herbe du souvenir chez Shakespeare (Ophélie, Hamlet)."
+ },
+ {
+  "id": "mentha-menthe",
+  "prix": 1.5,
+  "sens": "Vivacité et cordialité",
+  "occ": [
+   "juste",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "La nymphe Minthé fut changée en menthe par Perséphone ; sens d'usage : vivacité."
+ },
+ {
+  "id": "salvia-officinalis-sauge",
+  "prix": 1.8,
+  "sens": "Estime et sage conseil",
+  "occ": [
+   "merci",
+   "courage"
+  ],
+  "eviter": [],
+  "note": "Du latin salvare, « sauver » ; « estime » au langage des fleurs."
+ },
+ {
+  "id": "origanum-origan",
+  "prix": 1.5,
+  "sens": "Joie de la montagne",
+  "occ": [
+   "juste",
+   "anniv"
+  ],
+  "eviter": [],
+  "note": "Du grec oros et ganos, « joie de la montagne » ; signe de bonheur chez les Grecs."
+ },
+ {
+  "id": "ocimum-basilic",
+  "prix": 1.5,
+  "sens": "Chaleur de l'été, parfum royal",
+  "occ": [
+   "juste",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "Du grec basilikon, « royal » ; « haine » au XIXe, mais gage d'amour en Italie."
+ },
+ {
+  "id": "thymus-thym",
+  "prix": 1.2,
+  "sens": "Courage et ardeur",
+  "occ": [
+   "courage",
+   "bravo"
+  ],
+  "eviter": [],
+  "note": "Les Grecs y voyaient le courage ; « activité » au langage des fleurs."
+ },
+ {
+  "id": "curio-rowleyanus-collier-de-perles",
+  "prix": 4.5,
+  "sens": "Attentions enfilées comme des perles",
+  "occ": [
+   "merci",
+   "anniv"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage : succulente en chapelet de perles, qui peut s'enraciner ensuite."
+ },
+ {
+  "id": "rhipsalis",
+  "prix": 4.0,
+  "sens": "Insouciance en cascade",
+  "occ": [
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Son espèce type est le seul cactus sauvage hors des Amériques (Afrique, Sri Lanka)."
+ },
+ {
+  "id": "tillandsia-usneoides-mousse-espagnole",
+  "prix": 2.0,
+  "sens": "Mystère langoureux du Sud",
+  "occ": [
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Ni mousse ni lichen : une broméliacée qui drape les chênes du sud des États-Unis."
+ },
+ {
+  "id": "tillandsia-plantes-de-l-air",
+  "prix": 7.0,
+  "sens": "Libre comme l'air",
+  "occ": [
+   "juste",
+   "bravo"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage : vit sans terre et puise tout dans l'air, d'où « fille de l'air »."
+ },
+ {
+  "id": "succulentes-echeveria",
+  "prix": 4.0,
+  "sens": "Résister à tout avec le sourire",
+  "occ": [
+   "courage",
+   "merci",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage : rosettes gorgées d'eau, symbole d'endurance ; nom dédié à Echeverría."
+ },
+ {
+  "id": "mousses-fraiches",
+  "prix": 2.0,
+  "sens": "Amour maternel et tendresse",
+  "occ": [
+   "merci",
+   "courage",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "« Amour maternel » au langage des fleurs : elle couvre et protège la terre."
+ },
+ {
+  "id": "abies-procera-nobilis",
+  "prix": 4.0,
+  "sens": "Élévation et espérance",
+  "occ": [
+   "juste",
+   "courage"
+  ],
+  "eviter": [],
+  "note": "« Élévation » au langage des fleurs ; branche reine des couronnes de l'Avent."
+ },
+ {
+  "id": "abies-nordmanniana-nordmann",
+  "prix": 3.0,
+  "sens": "Magie des fêtes partagées",
+  "occ": [
+   "juste",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "Sapin de Noël préféré des Français, nommé d'après Nordmann, qui l'observa au Caucase."
+ },
+ {
+  "id": "pseudotsuga-menziesii-douglas",
+  "prix": 3.2,
+  "sens": "Grandeur et droiture",
+  "occ": [
+   "courage",
+   "bravo"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage : géant des forêts du Pacifique, au parfum d'agrume quand on le froisse."
+ },
+ {
+  "id": "pinus-pins",
+  "prix": 3.0,
+  "sens": "Longue vie et vaillance",
+  "occ": [
+   "courage",
+   "anniv",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Avec le bambou et le prunier, l'un des « trois amis de l'hiver » en Asie."
+ },
+ {
+  "id": "cedrus-cedre",
+  "prix": 4.0,
+  "sens": "Noblesse incorruptible",
+  "occ": [
+   "courage",
+   "bravo"
+  ],
+  "eviter": [],
+  "note": "Bois du temple de Salomon, le cèdre figure la force et l'incorruptibilité."
+ },
+ {
+  "id": "thuja-cedre-rouge",
+  "prix": 2.5,
+  "sens": "Amitié immuable",
+  "occ": [
+   "merci",
+   "juste"
+  ],
+  "eviter": [
+   "amour"
+  ],
+  "note": "Nommé « arbre de vie » ; « amitié immuable » au langage des fleurs anglais."
+ },
+ {
+  "id": "chamaecyparis-lawsoniana",
+  "prix": 2.5,
+  "sens": "Dentelle bleutée des forêts",
+  "occ": [
+   "juste"
+  ],
+  "eviter": [
+   "amour"
+  ],
+  "note": "Sens d'usage : faux-cyprès de l'Oregon aux rameaux en dentelle bleutée."
+ }
+]

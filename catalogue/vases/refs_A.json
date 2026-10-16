@@ -1,0 +1,1555 @@
+[
+ {
+  "id": "kenzan-laiton-rond",
+  "refs": [
+   2,
+   3
+  ],
+  "n": "Kenzan rond en laiton",
+  "m": "laiton, socle argenté",
+  "family": "pique-fleurs",
+  "shape": "lathe",
+  "h_cm": 4.1,
+  "prof": [
+   [
+    0,
+    5.05
+   ],
+   [
+    0.12,
+    5.25
+   ],
+   [
+    0.5,
+    5.3
+   ],
+   [
+    0.95,
+    5.3
+   ],
+   [
+    1.08,
+    5.2
+   ],
+   [
+    1.12,
+    5.0
+   ],
+   [
+    1.15,
+    4.95
+   ],
+   [
+    2.0,
+    4.95
+   ],
+   [
+    3.0,
+    4.95
+   ],
+   [
+    3.9,
+    4.95
+   ],
+   [
+    4.05,
+    4.9
+   ],
+   [
+    4.1,
+    4.85
+   ]
+  ],
+  "mouth_cm": 4.95,
+  "lip": "plain",
+  "lip_cm": 0.3,
+  "mat": "metal",
+  "finish": "polished",
+  "col": "#c8b48a",
+  "col2": "#b9c0c8",
+  "tex": [],
+  "tex_notes": "Champ d'aiguilles en laiton (pas de texture de surface: ce sont des pointes): ≈ 370 aiguilles Ø 1,5 mm, pas 4,5 mm en quinconce, hauteur 2,85 cm au-dessus de la semelle, bouts plats, toutes à la même hauteur; vues de face elles forment une frange dorée régulière (laiton clair #c8b48a, bouts éclairés #f3eace, intervalles sombres #2a2010). Le champ d'aiguilles s'arrête à 0,3 cm du bord du socle. Socle: métal argenté poli (étain/zinc) #b9c0c8, tranche lisse de 1,1 cm avec reflet blanc bleuté #f2f6ff sur l'avant droit et ombre #505763 à gauche.",
+  "handles": null,
+  "stand": {
+   "type": "cube",
+   "w_cm": 33,
+   "h_cm": 33,
+   "col": "#97a1ab",
+   "mat": "béton brut",
+   "notes": "Plinthe en béton gris bleuté coulé à la main, arêtes irrégulières et écornées, dessus mat avec zones plus sombres à gauche (#626872) et plus claires à droite (#969ba4), face avant éclairée #a0b1c1. Seuls le dessus et ~8 cm de la face avant sont visibles (bas hors champ: peut être un piédestal haut). Kenzan posé au centre du dessus. Prix seul ≈ 180 €."
+  },
+  "surface": "beton",
+  "glass": null,
+  "outline": null,
+  "price_eur": 235,
+  "why": "Le pique-fleurs des maîtres d'ikebana : les tiges nues tiennent debout sur ses pointes de laiton.",
+  "details": "Kenzan rond Ø 10,5 cm × 4,1 cm posé à nu, sans coupe ni eau visible. Socle argenté épais (1,1 cm) un peu plus large que le champ d'aiguilles (rebord 0,3 cm). Le bouquet est un bouquet lié (ligature en ruban satin bronze #6b4a2a, Ø ≈ 4 cm) dont les tiges nues, vertes et parallèles, sont plantées verticalement au centre des aiguilles; ~7 cm de tiges visibles entre la ligature et les pointes. Vue en légère plongée (~20°): l'ellipse du socle est bien ouverte (petit axe ≈ 1/3 du grand). Échelle déduite des phalaenopsis (≈ 10 cm) et de la ligature: ±10 %. Prix: kenzan japonais ≈ 55 € + plinthe béton ≈ 180 €. Les refs 2 et 3 sont la même photo (3 = repost recadré avec texte)."
+ },
+ {
+  "id": "suiban-ovale-peint",
+  "refs": [
+   4
+  ],
+  "n": "Suiban ovale peint",
+  "m": "porcelaine peinte",
+  "family": "bassin",
+  "shape": "outline",
+  "h_cm": 8.1,
+  "prof": null,
+  "mouth_cm": 22.0,
+  "lip": "rolled",
+  "lip_cm": 0.5,
+  "mat": "satin",
+  "finish": "",
+  "col": "#e3dccd",
+  "col2": "#5d8590",
+  "tex": [
+   "painted",
+   "chinoiserie"
+  ],
+  "tex_notes": "5 motifs peints régulièrement espacés sur la face avant, centrés à mi-paroi (h 3,5–6 cm), chacun ≈ 5 × 3 cm, trait fin: (1) bâton enlacé d'un ruban sarcelle avec pompon rouge, (2) livre/boîte bleu-violet noué d'un ruban ocre-rose, (3) flûte de bambou rayée noir et jaune avec rubans bleus noués, au centre, (4) brûle-parfum jaune-vert sur un nuage rose, (5) vase bleu garni de fleurs rouges avec ruban. Couleurs: sarcelle #5d8590, bleu #7185b2, ocre #a69c62, rouge brique #a3796e, rose #90666f, noir. Objets du lettré (munbangdo coréen / huit trésors).",
+  "handles": null,
+  "stand": null,
+  "surface": "none",
+  "glass": null,
+  "outline": {
+   "pts": [
+    [
+     -21.4,
+     0.0
+    ],
+    [
+     -21.2,
+     0.4
+    ],
+    [
+     -20.6,
+     1.0
+    ],
+    [
+     -20.4,
+     1.6
+    ],
+    [
+     -21.0,
+     2.2
+    ],
+    [
+     -21.7,
+     3.0
+    ],
+    [
+     -22.0,
+     4.0
+    ],
+    [
+     -22.1,
+     5.5
+    ],
+    [
+     -22.1,
+     6.9
+    ],
+    [
+     -22.6,
+     7.4
+    ],
+    [
+     -22.8,
+     7.8
+    ],
+    [
+     -22.6,
+     8.05
+    ],
+    [
+     -22.2,
+     8.1
+    ],
+    [
+     22.2,
+     8.1
+    ],
+    [
+     22.6,
+     8.05
+    ],
+    [
+     22.8,
+     7.8
+    ],
+    [
+     22.6,
+     7.4
+    ],
+    [
+     22.1,
+     6.9
+    ],
+    [
+     22.1,
+     5.5
+    ],
+    [
+     22.0,
+     4.0
+    ],
+    [
+     21.7,
+     3.0
+    ],
+    [
+     21.0,
+     2.2
+    ],
+    [
+     20.4,
+     1.6
+    ],
+    [
+     20.6,
+     1.0
+    ],
+    [
+     21.2,
+     0.4
+    ],
+    [
+     21.4,
+     0.0
+    ],
+    [
+     19.4,
+     0.0
+    ],
+    [
+     19.0,
+     0.6
+    ],
+    [
+     18.6,
+     1.4
+    ],
+    [
+     18.2,
+     1.8
+    ],
+    [
+     10.0,
+     1.8
+    ],
+    [
+     3.2,
+     1.8
+    ],
+    [
+     3.5,
+     1.2
+    ],
+    [
+     3.0,
+     0.6
+    ],
+    [
+     3.3,
+     0.0
+    ],
+    [
+     -3.3,
+     0.0
+    ],
+    [
+     -3.0,
+     0.6
+    ],
+    [
+     -3.5,
+     1.2
+    ],
+    [
+     -3.2,
+     1.8
+    ],
+    [
+     -10.0,
+     1.8
+    ],
+    [
+     -18.2,
+     1.8
+    ],
+    [
+     -18.6,
+     1.4
+    ],
+    [
+     -19.0,
+     0.6
+    ],
+    [
+     -19.4,
+     0.0
+    ]
+   ],
+   "mouth": [
+    -22.0,
+    22.0,
+    8.1
+   ],
+   "d_cm": 26
+  },
+  "price_eur": 150,
+  "why": "Le suiban des tables de lettrés, en porcelaine crème peinte d'objets précieux.",
+  "details": "Référence = illustration peinte, pas une photo: perspective lissée. Bassin ovale bas: 45,6 cm de long, ≈ 26 cm de profondeur (estimée d'après l'ellipse du bord), 8,1 cm de haut dont 1,8 cm de pieds. Paroi presque verticale à peine bombée, fond plat aux angles arrondis (rayon ~2 cm), lèvre roulée qui s'évase légèrement vers l'extérieur aux deux extrémités. Quatre pieds-nuages (ruyi): un au centre avant vu de face (festonné, ~6,6 cm à la base), un au centre arrière (caché) et un à chaque extrémité vu de profil (console qui s'évase vers l'extérieur). Dans le dessin le pied droit est un peu rentré (~3 cm) par rapport au gauche: symétrisé ici. Intérieur ombré gris #96959a, paroi intérieure droite rosée #d6b197 (reflet des fruits); pieds et bas de panse dans une ombre lavande #b0afc1. Le bassin est rempli de fruits (papaye, poire, kiwi, litchi, pomme coupée) d'où sort une branche fleurie en arbre; pas d'eau visible. Surface: plan lisse lilas, bleu pervenche #8a96b1 au fond qui passe au mauve gris #a8a1aa devant, sans texture (fond dégradé menthe → pêche → lilas). Échelle déduite des fruits et des fleurs (≈ 14 px/cm), incertaine ±15 %. Outline: pts = silhouette de face, mouth = ouverture, d_cm = profondeur de l'ovale."
+ },
+ {
+  "id": "vase-ovoide-chocolat",
+  "refs": [
+   6
+  ],
+  "n": "Vase ovoïde chocolat",
+  "m": "céramique émaillée",
+  "family": "vase",
+  "shape": "lathe",
+  "h_cm": 15.0,
+  "prof": [
+   [
+    0,
+    3.55
+   ],
+   [
+    0.2,
+    3.75
+   ],
+   [
+    0.6,
+    3.85
+   ],
+   [
+    1.1,
+    3.85
+   ],
+   [
+    1.45,
+    4.0
+   ],
+   [
+    1.75,
+    4.3
+   ],
+   [
+    2.4,
+    4.7
+   ],
+   [
+    3.0,
+    5.1
+   ],
+   [
+    4.25,
+    5.8
+   ],
+   [
+    5.5,
+    6.4
+   ],
+   [
+    6.75,
+    6.95
+   ],
+   [
+    8.0,
+    7.3
+   ],
+   [
+    9.25,
+    7.55
+   ],
+   [
+    10.5,
+    7.5
+   ],
+   [
+    11.4,
+    7.3
+   ],
+   [
+    12.4,
+    6.9
+   ],
+   [
+    13.3,
+    6.1
+   ],
+   [
+    14.0,
+    5.0
+   ],
+   [
+    14.4,
+    4.3
+   ],
+   [
+    14.6,
+    4.1
+   ],
+   [
+    15.0,
+    4.1
+   ]
+  ],
+  "mouth_cm": 3.6,
+  "lip": "plain",
+  "lip_cm": 0.4,
+  "mat": "gloss",
+  "finish": "",
+  "col": "#5a3626",
+  "col2": null,
+  "tex": [],
+  "tex_notes": "",
+  "handles": null,
+  "stand": {
+   "type": "column",
+   "w_cm": 38,
+   "h_cm": 48,
+   "col": "#6e5048",
+   "mat": "bois laqué",
+   "notes": "Guéridon-tambour rond brun mauve satiné assorti au vase: plateau Ø ≈ 38 cm au chant épais et arrondi (~2,5 cm) qui déborde légèrement d'un fût cylindrique large; bas hors champ. Le vase est posé au centre-arrière du plateau. Meuble, non compté dans le prix (≈ 150 € seul)."
+  },
+  "surface": "bois",
+  "glass": null,
+  "outline": null,
+  "price_eur": 45,
+  "why": "Le vase ovoïde au glacis chocolat, miroir sombre des bouquets d'automne.",
+  "details": "Corps ovoïde à épaule haute: Ø max 15,1 cm vers 9–10 cm du pied, qui s'affine régulièrement jusqu'à un fond plat Ø 7,1 cm aux bords arrondis (pas d'anneau de pied visible). Mesuré du pied à 13,3 cm; au-dessus (fin d'épaule, col étroit Ø ~8 cm, lèvre) tout est caché par les cymbidiums: col et hauteur totale (15 cm) sont estimés, à ±1,5 cm. Émail brun chocolat très brillant et uni; reflet de fenêtre net en haut à gauche de la panse, liseré clair le long du flanc gauche, flanc droit presque noir. Photo en clair-obscur sous-exposée (corps lu #3c251d): couleur remontée ≈ ×1,5 pour la lumière neutre. Bouquet automnal ample (≈ 4× la largeur du vase: amarante, cymbidiums, hêtre pourpre, eucalyptus rose, fil de cuivre) qui retombe sur la gauche. Échelle ≈ 16 px/cm (cymbidiums ≈ 10,5 cm)."
+ },
+ {
+  "id": "vase-tete-veine-sable",
+  "refs": [
+   7
+  ],
+  "n": "Vase tête veiné sable",
+  "m": "onyx beige veiné",
+  "family": "sculpture",
+  "shape": "outline",
+  "h_cm": 22.0,
+  "prof": null,
+  "mouth_cm": 4.0,
+  "lip": "plain",
+  "lip_cm": 0.6,
+  "mat": "stone",
+  "finish": "onyx",
+  "col": "#c4ab88",
+  "col2": "#8a6a48",
+  "tex": [
+   "marble"
+  ],
+  "tex_notes": "Veinage d'onyx/travertin poli: larges bandes nuageuses de 1–3 cm, veines brun caramel #8a6a48 en diagonale sur fond sable #c4ab88, plages plus claires #d8c6a6; pas de trous, pas de grain.",
+  "handles": null,
+  "stand": {
+   "type": "block",
+   "w_cm": 20,
+   "h_cm": 30,
+   "col": "#25201c",
+   "mat": "bois brûlé",
+   "notes": "Socle parallélépipédique noir mat (bois brûlé/teinté noir, fines stries horizontales), 20 cm de côté; seul le haut est visible, la base sort du cadre (piédestal probablement ~90 cm), devant un soubassement en planches noires horizontales. Le vase est posé au centre. Prix seul ≈ 150 €."
+  },
+  "surface": "noir",
+  "glass": null,
+  "outline": {
+   "pts": [
+    [
+     -3.85,
+     0.0
+    ],
+    [
+     -3.7,
+     0.8
+    ],
+    [
+     -3.3,
+     1.8
+    ],
+    [
+     -2.9,
+     2.9
+    ],
+    [
+     -2.75,
+     4.1
+    ],
+    [
+     -2.75,
+     5.2
+    ],
+    [
+     -3.3,
+     6.3
+    ],
+    [
+     -4.1,
+     7.7
+    ],
+    [
+     -5.2,
+     9.3
+    ],
+    [
+     -6.6,
+     11.4
+    ],
+    [
+     -7.8,
+     13.4
+    ],
+    [
+     -8.8,
+     15.2
+    ],
+    [
+     -9.5,
+     15.9
+    ],
+    [
+     -9.9,
+     16.5
+    ],
+    [
+     -9.6,
+     17.0
+    ],
+    [
+     -10.1,
+     17.5
+    ],
+    [
+     -9.9,
+     18.0
+    ],
+    [
+     -10.7,
+     18.9
+    ],
+    [
+     -9.9,
+     19.4
+    ],
+    [
+     -9.7,
+     20.2
+    ],
+    [
+     -9.0,
+     21.0
+    ],
+    [
+     -7.6,
+     21.7
+    ],
+    [
+     -5.5,
+     22.0
+    ],
+    [
+     3.5,
+     22.0
+    ],
+    [
+     4.6,
+     21.2
+    ],
+    [
+     5.1,
+     19.8
+    ],
+    [
+     5.0,
+     17.8
+    ],
+    [
+     4.6,
+     16.2
+    ],
+    [
+     4.5,
+     15.2
+    ],
+    [
+     4.65,
+     13.4
+    ],
+    [
+     4.65,
+     10.7
+    ],
+    [
+     4.4,
+     7.9
+    ],
+    [
+     3.95,
+     6.6
+    ],
+    [
+     3.15,
+     5.6
+    ],
+    [
+     2.35,
+     4.9
+    ],
+    [
+     2.05,
+     3.8
+    ],
+    [
+     2.35,
+     2.5
+    ],
+    [
+     3.15,
+     1.4
+    ],
+    [
+     4.1,
+     0.4
+    ],
+    [
+     4.4,
+     0.0
+    ]
+   ],
+   "mouth": [
+    -5.5,
+    3.5,
+    22.0
+   ],
+   "d_cm": 11
+  },
+  "price_eur": 290,
+  "why": "Le vase-buste au profil levé, sculpté dans une pierre veinée couleur sable.",
+  "details": "Tête stylisée de profil, visage tourné vers la gauche et levé, posée sur un cou étroit qui s'élargit en piédouche court. Mesuré du pied à 15,2 cm: gorge concave à gauche (ligne menton-cou), nuque arrondie à droite, cou le plus fin Ø 4,8 cm à 4 cm du pied, pied Ø 8,2 cm. Le visage (menton, lèvres, nez, front) et le sommet ouvert sont cachés par l'hortensia stabilisé crème et un anthurium: ces points de l'outline (h > 15,2 cm) sont reconstruits, hauteur totale 22 cm estimée ±3 cm. Épaisseur réelle (largeur de la tête, perpendiculaire à l'image) estimée 11 cm. Pierre polie satinée sans reflet fort; lumière chaude venant de la gauche, flanc droit plus sombre #806240. Composition très débordante (~80 cm): fumée de cotinus rose, héliconias, anthuriums, amarante blanche retombante qui masque le flanc droit du vase et descend jusqu'au milieu du socle. Échelle ≈ 7,3 px/cm (anthuriums ≈ 11 cm). Prix: vase ≈ 140 € + socle ≈ 150 €."
+ },
+ {
+  "id": "vase-conique-blanc",
+  "refs": [
+   8
+  ],
+  "n": "Vase conique blanc",
+  "m": "céramique mate",
+  "family": "vase",
+  "shape": "lathe",
+  "h_cm": 26.0,
+  "prof": [
+   [
+    0,
+    7.2
+   ],
+   [
+    0.3,
+    7.3
+   ],
+   [
+    2.0,
+    7.25
+   ],
+   [
+    6.0,
+    7.0
+   ],
+   [
+    10.0,
+    6.6
+   ],
+   [
+    14.0,
+    6.15
+   ],
+   [
+    18.0,
+    5.75
+   ],
+   [
+    22.0,
+    5.35
+   ],
+   [
+    25.5,
+    5.0
+   ],
+   [
+    26.0,
+    4.9
+   ]
+  ],
+  "mouth_cm": 4.4,
+  "lip": "plain",
+  "lip_cm": 0.5,
+  "mat": "matte",
+  "finish": "",
+  "col": "#eceae4",
+  "col2": null,
+  "tex": [],
+  "tex_notes": "",
+  "handles": null,
+  "stand": {
+   "type": "cube",
+   "w_cm": 20,
+   "h_cm": 20,
+   "col": "#eeeeea",
+   "mat": "bois laqué blanc",
+   "notes": "Cube blanc mat visible à gauche et derrière le vase, son arête supérieure arrive à mi-hauteur du vase; le pied du vase est hors champ: relation exacte vase/cube incertaine. Prix seul ≈ 60 €."
+  },
+  "surface": "blanc",
+  "glass": null,
+  "outline": null,
+  "price_eur": 105,
+  "why": "Le vase conique blanc qui porte un bouquet enveloppé de papier plié en voile.",
+  "details": "Vase très peu visible: seul son flanc gauche (ombré gris, liseré net) descend de sous l'emballage jusqu'au bas du cadre en s'évasant légèrement; le flanc droit est caché par une cascade de phalaenopsis et deux rubans lilas qui pendent. Profil reconstruit: tronc de cône droit, Ø ≈ 10 cm en haut → 14,5 cm en bas, hauteur ≈ 26 cm (pied hors champ) — dimensions peu fiables (±25 %). Le bouquet est emballé dans une grande feuille de papier blanc mat (~60 × 60 cm) pliée en voile/cornet asymétrique, avec une petite étiquette ronde; l'emballage plonge dans le col. Fond: mur gris-beige uni. Échelle ≈ 11 px/cm (phalaenopsis ≈ 9,5 cm). Prix: vase ≈ 45 € + cube ≈ 60 €."
+ },
+ {
+  "id": "coupe-pied-rosee",
+  "refs": [
+   9
+  ],
+  "n": "Coupe sur pied rosée",
+  "m": "céramique mate",
+  "family": "coupe",
+  "shape": "lathe",
+  "h_cm": 14.5,
+  "prof": [
+   [
+    0,
+    4.6
+   ],
+   [
+    0.5,
+    4.6
+   ],
+   [
+    0.55,
+    3.9
+   ],
+   [
+    1.0,
+    3.85
+   ],
+   [
+    6.2,
+    2.9
+   ],
+   [
+    6.35,
+    3.2
+   ],
+   [
+    6.6,
+    3.9
+   ],
+   [
+    6.8,
+    4.4
+   ],
+   [
+    7.1,
+    5.3
+   ],
+   [
+    7.7,
+    6.4
+   ],
+   [
+    8.35,
+    7.2
+   ],
+   [
+    9.2,
+    8.0
+   ],
+   [
+    10.0,
+    8.7
+   ],
+   [
+    11.6,
+    9.5
+   ],
+   [
+    13.2,
+    9.85
+   ],
+   [
+    14.1,
+    9.85
+   ],
+   [
+    14.5,
+    9.7
+   ]
+  ],
+  "mouth_cm": 9.2,
+  "lip": "plain",
+  "lip_cm": 0.5,
+  "mat": "matte",
+  "finish": "",
+  "col": "#ecdfdf",
+  "col2": null,
+  "tex": [],
+  "tex_notes": "",
+  "handles": null,
+  "stand": {
+   "type": "block",
+   "w_cm": 30,
+   "h_cm": 9,
+   "col": "#e8306a",
+   "mat": "livres",
+   "notes": "Pile de 2 grands beaux livres à plat (~30 × 24 cm, 9 cm d'épaisseur au total): couverture rose fuchsia #e8306a avec grand titre orange #f5a623, tranches de pages blanches, liseré bleu sur le livre du dessous; posés sur une table basse noire mate, une bougie en verre devant. Non comptés dans le prix."
+  },
+  "surface": "noir",
+  "glass": null,
+  "outline": null,
+  "price_eur": 55,
+  "why": "La coupe sur pied au rose poudré, qui hisse le bouquet au-dessus de la table.",
+  "details": "Bol large presque hémisphérique (Ø 19,7 cm, 8 cm de profondeur), bord à peine rentrant, sur un pied tronconique évasé vers le bas (Ø 5,8 cm en haut → 7,8 cm en bas, 5,2 cm de haut) puis un disque fin gris clair (Ø 9,2 cm, 0,5 cm): ce disque est légèrement décentré vers la droite (peut-être un dessous séparé). Jonction bol/pied nette avec ombre sous le bol. Céramique blanc rosé mate sans brillance; le dessous du bol prend des reflets rose framboise (#9f646d) de la couverture et des lys. Bord caché par les fleurs. Bouquet (lys orientaux, giroflées, chrysanthèmes araignées) ~4× la largeur de la coupe. Vue en plongée ~20°. Échelle ≈ 13 px/cm (bougie Ø 8 cm, lys ≈ 16 cm)."
+ },
+ {
+  "id": "boule-verre-bouteille",
+  "refs": [
+   10
+  ],
+  "n": "Boule en verre bouteille",
+  "m": "verre teinté vert",
+  "family": "boule",
+  "shape": "lathe",
+  "h_cm": 20.0,
+  "prof": [
+   [
+    0,
+    5.0
+   ],
+   [
+    0.25,
+    5.4
+   ],
+   [
+    0.55,
+    5.9
+   ],
+   [
+    1.3,
+    7.3
+   ],
+   [
+    2.5,
+    8.7
+   ],
+   [
+    3.9,
+    9.8
+   ],
+   [
+    5.6,
+    10.6
+   ],
+   [
+    7.9,
+    11.2
+   ],
+   [
+    9.9,
+    11.4
+   ],
+   [
+    12.7,
+    11.15
+   ],
+   [
+    15.0,
+    10.2
+   ],
+   [
+    17.0,
+    8.9
+   ],
+   [
+    18.5,
+    7.5
+   ],
+   [
+    19.3,
+    6.5
+   ],
+   [
+    19.6,
+    6.45
+   ],
+   [
+    20.0,
+    6.25
+   ]
+  ],
+  "mouth_cm": 5.9,
+  "lip": "rolled",
+  "lip_cm": 0.35,
+  "mat": "glass",
+  "finish": "tinted",
+  "col": "#2c4527",
+  "col2": null,
+  "tex": [],
+  "tex_notes": "",
+  "handles": null,
+  "stand": {
+   "type": "column",
+   "w_cm": 41,
+   "h_cm": 60,
+   "col": "#e2e6e4",
+   "mat": "plâtre peint",
+   "notes": "Colonne cylindrique blanche mate (Ø ≈ 41 cm, ~1,8× le vase), surface un peu irrégulière comme du plâtre/papier peint, arête supérieure légèrement arrondie; le bas sort du cadre (≥ 30 cm visibles). Bocal posé au centre. Prix seul ≈ 180 €."
+  },
+  "surface": "blanc",
+  "glass": {
+   "tint": "#1e3418",
+   "opacity": 0.75,
+   "water_cm": 12,
+   "extra": "Intérieur assombri par les tiges et des feuilles vertes plaquées contre la paroi (doublure de feuilles probable): le verre paraît presque opaque, vert très sombre #15210c en bas. Grands reflets blancs de fenêtre en haut au centre-droit, liseré clair sur le bord droit. Niveau d'eau non visible (estimé)."
+  },
+  "outline": null,
+  "price_eur": 225,
+  "why": "La boule de verre vert bouteille, qui laisse deviner les tiges dans l'eau.",
+  "details": "Bocal sphérique tronqué: sphère Ø 22,8 cm centrée à 9,9 cm du sol, fond plat Ø ~10 cm, ouverture ≈ Ø 12,5 cm vers 19,5 cm. Le haut (col, lèvre) est caché par les fleurs: hauteur et ouverture déduites de la courbe (±1,5 cm). Verre épais teinté vert bouteille. Amarantes rouges retombantes qui pendent tout autour jusque sur la colonne, callas bordeaux, cymbidium, scabieuses, sanguisorbes; composition ~4× plus haute que le vase. Échelle ≈ 16,5 px/cm (callas ≈ 12 cm, cymbidium ≈ 10 cm). Prix: vase ≈ 45 € + colonne ≈ 180 €."
+ },
+ {
+  "id": "coupe-pied-sable",
+  "refs": [
+   12
+  ],
+  "n": "Coupe sur pied sable",
+  "m": "grès mat",
+  "family": "coupe",
+  "shape": "lathe",
+  "h_cm": 8.2,
+  "prof": [
+   [
+    0,
+    2.95
+   ],
+   [
+    0.25,
+    3.1
+   ],
+   [
+    0.5,
+    3.1
+   ],
+   [
+    3.6,
+    2.55
+   ],
+   [
+    3.75,
+    2.8
+   ],
+   [
+    4.1,
+    3.3
+   ],
+   [
+    4.7,
+    3.95
+   ],
+   [
+    5.2,
+    4.7
+   ],
+   [
+    6.1,
+    5.6
+   ],
+   [
+    6.7,
+    6.15
+   ],
+   [
+    7.5,
+    6.75
+   ],
+   [
+    7.9,
+    6.8
+   ],
+   [
+    8.2,
+    6.75
+   ]
+  ],
+  "mouth_cm": 6.2,
+  "lip": "plain",
+  "lip_cm": 0.5,
+  "mat": "matte",
+  "finish": "",
+  "col": "#c4ad8e",
+  "col2": null,
+  "tex": [],
+  "tex_notes": "",
+  "handles": null,
+  "stand": {
+   "type": "stool",
+   "w_cm": 32,
+   "h_cm": 45,
+   "col": "#a89273",
+   "mat": "bois massif patiné",
+   "notes": "Tabouret rustique en bois massif vieilli (orme/chêne gris-miel), assise ronde épaisse (~4 cm) au chant arrondi, fentes et veines visibles, 3–4 pieds obliques écartés; bas hors champ. Coupe posée au centre-arrière de l'assise. Meuble, non compté (≈ 90 € seul)."
+  },
+  "surface": "bois",
+  "glass": null,
+  "outline": null,
+  "price_eur": 45,
+  "why": "La petite coupe en grès sablé des compositions d'atelier, juchée sur son tabouret.",
+  "details": "Petite coupe: bol arrondi peu profond (Ø 13,5 cm × 4,6 cm) sur un pied tronconique massif plus étroit en haut (Ø 5,1 → 6,2 cm, 3,6 cm de haut) aux arêtes basses arrondies. Raccord bol/pied net avec ombre dessous. Grès beige sable mat, uni; côté droit dans l'ombre brun chaud #7a5739, dessous du bol #7e542c. Bord caché par les fleurs. Composition très volumineuse (~5× la largeur de la coupe: dahlias pompons, renoncules, roses de jardin, tulipes, clématites, orchidées mokara orange, fritillaires). Échelle ≈ 16,5 px/cm (renoncules 5,5 cm, dahlias 9 cm)."
+ },
+ {
+  "id": "pot-boule-blanc-perle",
+  "refs": [
+   13
+  ],
+  "n": "Pot boule blanc perle",
+  "m": "céramique émaillée",
+  "family": "pot",
+  "shape": "lathe",
+  "h_cm": 9.4,
+  "prof": [
+   [
+    0,
+    3.75
+   ],
+   [
+    0.1,
+    3.85
+   ],
+   [
+    0.55,
+    4.0
+   ],
+   [
+    0.65,
+    4.0
+   ],
+   [
+    1.25,
+    4.1
+   ],
+   [
+    1.65,
+    4.6
+   ],
+   [
+    2.0,
+    4.95
+   ],
+   [
+    2.4,
+    5.4
+   ],
+   [
+    3.1,
+    6.1
+   ],
+   [
+    3.9,
+    6.7
+   ],
+   [
+    4.6,
+    7.1
+   ],
+   [
+    5.4,
+    7.5
+   ],
+   [
+    6.1,
+    7.8
+   ],
+   [
+    6.9,
+    8.0
+   ],
+   [
+    8.0,
+    8.2
+   ],
+   [
+    8.7,
+    8.2
+   ],
+   [
+    9.1,
+    8.15
+   ],
+   [
+    9.4,
+    8.05
+   ]
+  ],
+  "mouth_cm": 7.6,
+  "lip": "plain",
+  "lip_cm": 0.45,
+  "mat": "satin",
+  "finish": "",
+  "col": "#dfe3e1",
+  "col2": null,
+  "tex": [],
+  "tex_notes": "",
+  "handles": null,
+  "stand": {
+   "type": "counter",
+   "w_cm": 70,
+   "h_cm": 25,
+   "col": "#eef0ef",
+   "mat": "bois laqué blanc",
+   "notes": "Plateau/console blanc mat qui traverse toute l'image: arête avant nette ~2 cm devant le pot, face avant blanche unie visible sur ≥ 22 cm (bas hors champ), même blanc que le mur, séparés par une ombre douce. Non compté dans le prix."
+  },
+  "surface": "blanc",
+  "glass": null,
+  "outline": null,
+  "price_eur": 39,
+  "why": "Le pot boule au glacis perle, doux et rond, qui rassemble un bouquet foisonnant.",
+  "details": "Bol boule bas: panse arrondie Ø max 16,4 cm vers 8 cm, bord très légèrement rentrant (Ø 16,1 cm), fond étroit sur un petit anneau de pied bien visible (Ø 8 cm, 0,6 cm). Émail satiné blanc grisé (léger ton gris perle/céladon), sans reflets nets; ombre douce à droite #92938e, bas de panse plus sombre. Bord caché par l'hortensia et les tulipes perroquet. Composition aérienne asymétrique (~5× la largeur du pot): phalaenopsis en cascade à gauche, scabieuses, nérines, dendrobium, géranium. Lumière douce grise (photo lue #adb1b2, remontée pour le blanc neutre). Échelle ≈ 10,7 px/cm (phalaenopsis ≈ 9,5 cm, dendrobium ≈ 6 cm)."
+ },
+ {
+  "id": "bouteille-verre-fume",
+  "refs": [
+   16
+  ],
+  "n": "Bouteille en verre fumé",
+  "m": "verre soufflé fumé",
+  "family": "bouteille",
+  "shape": "lathe",
+  "h_cm": 26.0,
+  "prof": [
+   [
+    0,
+    4.6
+   ],
+   [
+    0.3,
+    5.1
+   ],
+   [
+    1.0,
+    6.1
+   ],
+   [
+    2.5,
+    7.6
+   ],
+   [
+    4.5,
+    8.8
+   ],
+   [
+    6.5,
+    9.5
+   ],
+   [
+    8.9,
+    9.8
+   ],
+   [
+    11.0,
+    9.6
+   ],
+   [
+    13.0,
+    9.0
+   ],
+   [
+    15.0,
+    7.8
+   ],
+   [
+    16.5,
+    6.5
+   ],
+   [
+    17.5,
+    5.2
+   ],
+   [
+    17.9,
+    4.3
+   ],
+   [
+    18.2,
+    3.85
+   ],
+   [
+    18.5,
+    3.8
+   ],
+   [
+    22.0,
+    3.8
+   ],
+   [
+    25.6,
+    3.8
+   ],
+   [
+    26.0,
+    3.8
+   ]
+  ],
+  "mouth_cm": 3.45,
+  "lip": "plain",
+  "lip_cm": 0.35,
+  "mat": "glass",
+  "finish": "smoked",
+  "col": "#8b908a",
+  "col2": null,
+  "tex": [],
+  "tex_notes": "",
+  "handles": null,
+  "stand": null,
+  "surface": "blanc",
+  "glass": {
+   "tint": "#5f665e",
+   "opacity": 0.4,
+   "water_cm": 15.5,
+   "extra": "Verre fumé gris à peine vert, fin et régulier, transparent: on voit la tige et la ligne d'eau au travers. Reflets verticaux blancs de fenêtre dans le col, bord du col un peu plus sombre (épaisseur du verre). Une seule tige verte entre en diagonale."
+  },
+  "outline": null,
+  "price_eur": 49,
+  "why": "La bouteille en verre fumé au long col, faite pour une seule tige spectaculaire.",
+  "details": "Seuls le col et le haut de la panse sont visibles (coin bas gauche de la photo, le reste hors champ): panse sphérique Ø ≈ 19,6 cm reconstruite à partir de la courbe de l'épaule (cercle très régulier), col cylindrique droit Ø 7,5 cm et 7,8 cm de long, raccord col/épaule net avec un petit congé; fond non visible, supposé plat Ø ~9 cm. Proportions sûres (Ø col / Ø panse = 0,38), échelle absolue incertaine ±15 % (d'après l'épaisseur de la tige, ~22 px/cm). Mise en scène minimaliste: une seule fleur composite (gloriosa recomposée) sur une longue tige arquée au-dessus d'un mur blanc texturé; surface non visible (blanc supposé)."
+ },
+ {
+  "id": "vase-coeur-anthracite",
+  "refs": [
+   17
+  ],
+  "n": "Vase cœur anthracite",
+  "m": "pierre taillée mate",
+  "family": "sculpture",
+  "shape": "outline",
+  "h_cm": 30.9,
+  "prof": null,
+  "mouth_cm": 7.0,
+  "lip": "plain",
+  "lip_cm": 1.2,
+  "mat": "stone",
+  "finish": "",
+  "col": "#3b3e41",
+  "col2": "#6b7780",
+  "tex": [
+   "facets"
+  ],
+  "tex_notes": "≈ 20–26 facettes planes irrégulières taillées au ciseau (5–10 cm chacune), arêtes vives légèrement éclaircies; quelques facettes portent de fines stries de taille parallèles. Facettes tournées vers la lumière (haut droite) gris bleuté #5f6a70 à #7d8999, flanc gauche presque noir #030504. Un sillon diagonal plus clair descend du creux du cœur vers le bas à droite.",
+  "handles": null,
+  "stand": null,
+  "surface": "none",
+  "glass": null,
+  "outline": {
+   "pts": [
+    [
+     -1.9,
+     0.0
+    ],
+    [
+     -2.6,
+     1.54
+    ],
+    [
+     -3.9,
+     3.08
+    ],
+    [
+     -5.3,
+     4.62
+    ],
+    [
+     -6.5,
+     6.15
+    ],
+    [
+     -7.8,
+     7.69
+    ],
+    [
+     -9.0,
+     9.23
+    ],
+    [
+     -10.3,
+     10.77
+    ],
+    [
+     -11.5,
+     12.31
+    ],
+    [
+     -12.3,
+     13.85
+    ],
+    [
+     -12.8,
+     15.38
+    ],
+    [
+     -13.15,
+     16.92
+    ],
+    [
+     -13.6,
+     18.46
+    ],
+    [
+     -14.4,
+     20.0
+    ],
+    [
+     -14.9,
+     21.54
+    ],
+    [
+     -15.15,
+     23.08
+    ],
+    [
+     -15.15,
+     24.62
+    ],
+    [
+     -14.85,
+     26.15
+    ],
+    [
+     -14.0,
+     27.69
+    ],
+    [
+     -13.0,
+     29.23
+    ],
+    [
+     -12.15,
+     30.0
+    ],
+    [
+     -10.8,
+     30.6
+    ],
+    [
+     -8.85,
+     30.9
+    ],
+    [
+     -5.4,
+     30.4
+    ],
+    [
+     -2.3,
+     28.85
+    ],
+    [
+     1.5,
+     26.8
+    ],
+    [
+     5.4,
+     29.6
+    ],
+    [
+     8.5,
+     30.9
+    ],
+    [
+     11.9,
+     30.15
+    ],
+    [
+     14.0,
+     28.6
+    ],
+    [
+     15.0,
+     26.5
+    ],
+    [
+     15.2,
+     24.2
+    ],
+    [
+     15.1,
+     22.3
+    ],
+    [
+     14.4,
+     20.77
+    ],
+    [
+     13.5,
+     19.23
+    ],
+    [
+     13.3,
+     17.69
+    ],
+    [
+     12.7,
+     16.15
+    ],
+    [
+     11.9,
+     14.62
+    ],
+    [
+     10.9,
+     13.08
+    ],
+    [
+     9.8,
+     11.54
+    ],
+    [
+     8.7,
+     10.0
+    ],
+    [
+     7.8,
+     8.46
+    ],
+    [
+     7.0,
+     6.92
+    ],
+    [
+     6.15,
+     5.38
+    ],
+    [
+     5.15,
+     3.85
+    ],
+    [
+     3.85,
+     2.31
+    ],
+    [
+     2.8,
+     0.77
+    ],
+    [
+     1.4,
+     0.0
+    ]
+   ],
+   "mouth": [
+    -7.5,
+    8.5,
+    28.0
+   ],
+   "d_cm": 16
+  },
+  "price_eur": 280,
+  "why": "Un cœur taillé à facettes dans une pierre anthracite, sculpture autant que vase.",
+  "details": "Cœur massif posé sur sa pointe (petit méplat de 3,3 cm qui sert d'assise), légèrement tourné: lobe gauche un peu plus visible, creux central décalé à droite de l'axe. 30,9 cm de haut, 30,4 cm de large, épaisseur estimée 16 cm. Contour mesuré sur toute la moitié basse et le lobe gauche; le haut du lobe droit (sous l'anthurium) et le creux central (sous les fleurs) sont reconstruits par symétrie (±1 cm). L'ouverture est cachée par les fleurs (mouth estimée). Pierre mate sans brillance hors arêtes. Ombre portée douce et large vers la gauche. Surface: fond studio continu gris clair (sol #a6b1b7, fond #aba8a3), sans table. Image probablement générée/retouchée. Bouquet haut et étroit (~2× la hauteur du vase): phalaenopsis et roses blanches, anthuriums bordeaux, rameaux de feuillage pourpre. Échelle ≈ 13 px/cm (roses ≈ 8,5 cm, phalaenopsis ≈ 10,5 cm)."
+ },
+ {
+  "id": "coupe-pied-blanche",
+  "refs": [
+   18
+  ],
+  "n": "Coupe sur pied blanche",
+  "m": "céramique mate",
+  "family": "coupe",
+  "shape": "lathe",
+  "h_cm": 10.1,
+  "prof": [
+   [
+    0,
+    3.1
+   ],
+   [
+    0.3,
+    3.35
+   ],
+   [
+    2.15,
+    3.35
+   ],
+   [
+    2.2,
+    3.5
+   ],
+   [
+    2.4,
+    3.7
+   ],
+   [
+    2.9,
+    4.4
+   ],
+   [
+    3.4,
+    5.0
+   ],
+   [
+    3.9,
+    5.6
+   ],
+   [
+    4.9,
+    6.4
+   ],
+   [
+    5.5,
+    6.85
+   ],
+   [
+    6.45,
+    7.25
+   ],
+   [
+    7.2,
+    7.5
+   ],
+   [
+    8.0,
+    7.7
+   ],
+   [
+    9.3,
+    7.8
+   ],
+   [
+    10.1,
+    7.75
+   ]
+  ],
+  "mouth_cm": 7.25,
+  "lip": "plain",
+  "lip_cm": 0.5,
+  "mat": "matte",
+  "finish": "",
+  "col": "#e9e8e3",
+  "col2": null,
+  "tex": [],
+  "tex_notes": "",
+  "handles": null,
+  "stand": {
+   "type": "cube",
+   "w_cm": 22,
+   "h_cm": 22,
+   "col": "#e4e6e3",
+   "mat": "plâtre",
+   "notes": "Cube/plinthe en plâtre ou béton blanc mat, arêtes vives, léger grain poudré; seuls le dessus et ~2 cm de la face avant sont visibles (bas hors champ). Coupe posée un peu à gauche du centre, ombre portée nette vers la droite sur le dessus. Prix seul ≈ 70 €."
+  },
+  "surface": "blanc",
+  "glass": null,
+  "outline": null,
+  "price_eur": 119,
+  "why": "La coupe-bol blanche sur piédouche, épurée comme une pièce de galerie.",
+  "details": "Bol hémisphérique profond (Ø 15,6 × 8 cm), bord droit très légèrement rentrant, sur un pied cylindrique court et droit (Ø 6,7 × 2,15 cm) aux arêtes basses arrondies; le bol déborde nettement au-dessus du pied (ombre en creux au raccord). Céramique blanche mate (blanc cassé froid à la lumière du jour), côté droit dans l'ombre gris chaud #989590, reflets chauds des fleurs sur la panse. Bord caché par les chrysanthèmes et les anthuriums. Bouquet sombre (chrysanthèmes pompon prune, hellébores, vanda léopard, anthuriums chocolat, calla noire) ~3× la largeur de la coupe et 3,5× sa hauteur. Vue presque de face (plongée ~7°). Échelle ≈ 13 px/cm (hellébores ≈ 7 cm, vanda ≈ 10 cm). Prix: coupe ≈ 49 € + cube ≈ 70 €."
+ }
+]

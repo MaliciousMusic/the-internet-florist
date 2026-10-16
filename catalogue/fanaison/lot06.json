@@ -1,0 +1,1801 @@
+[
+  {
+    "id": "anthurium-andraeanum",
+    "nom": "Anthurium",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [
+        6,
+        7
+      ],
+      "toute_annee": true,
+      "note": "cultivé sous serre aux Pays-Bas toute l'année (aussi Maurice) ; une étude néerlandaise note une production minimale en mars et maximale dans la seconde moitié de juin (pic estimé à partir de ce seul relevé)",
+      "sources": [
+        "https://thursd.com/growers/anthogether",
+        "https://library.wur.nl/ojs/index.php/njas/article/download/16672/16086",
+        "https://www.anthura.nl/wp-content/uploads/2024/04/Anthura-teelthandleiding-Snijanthurium-binnen-EU-UK.pdf"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 12,
+      "max": 30,
+      "sources": [
+        "https://www.plantarchives.org/SPL%20ISSUE%2020-2/231__1433-1435_.pdf",
+        "https://uwispace.sta.uwi.edu/bitstreams/54bf3440-aa4b-4070-b5b2-70d85d4ecbd7/download",
+        "https://www.hbloom.com/blogs/in-bloom-with-h-bloom/all-about-anthuriums"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "spathe-persiste",
+        "decolore",
+        "brunit-bords"
+      ],
+      "ordre": "le spadice noircit d'abord (nécrose, critère officiel de fin de vase) ; la spathe perd son brillant, puis bleuit et brunit ; la base du pédoncule brunit",
+      "tete": "reste droite et rigide ; la spathe ne se referme pas et garde sa forme cireuse",
+      "petales": "spathe : perte du vernis brillant, puis bleuissement et taches brunes ou noires ; le spadice brunit puis noircit depuis la pointe",
+      "feuilles": "vendu sans feuille ou avec une feuille séparée ; non décrit dans les sources",
+      "tige": "droite ; la base du pédoncule brunit",
+      "couleurs": {
+        "rouge": {
+          "declin": "rouge terni, mat, qui bleuit vers le cramoisi",
+          "fane": "rouge violacé sombre taché de brun"
+        },
+        "rose": {
+          "declin": "rose mat qui bleuit vers le mauve",
+          "fane": "mauve sale taché de brun"
+        },
+        "blanc": {
+          "declin": "blanc mat, taches beiges",
+          "fane": "beige taché de brun"
+        },
+        "vert": {
+          "declin": "vert terne, mat",
+          "fane": "vert olive taché de brun"
+        },
+        "bordeaux": {
+          "declin": "bordeaux mat",
+          "fane": "brun-noir"
+        }
+      },
+      "seche_bien": false,
+      "notes": "La spathe tient plus longtemps que le spadice : au dessin du Déclin, le spadice est déjà brun-noir alors que la spathe est seulement ternie. Le bleuissement est le symptôme typique de la spathe rouge ou rose ; les teintes de déclin par couleur sont déduites de ce symptôme. Tenue très variable selon le cultivar (12 à plus de 60 jours) ; 12-30 jours retenu pour les cultivars courants.",
+      "sources": [
+        "https://www.plantarchives.org/SPL%20ISSUE%2020-2/231__1433-1435_.pdf",
+        "https://www.maxapress.com/data/article/tihort/preview/pdf/tihort-0025-0038.pdf",
+        "https://www.phtnet.org/research/download/pdf/re2246.pdf",
+        "https://uwispace.sta.uwi.edu/bitstreams/54bf3440-aa4b-4070-b5b2-70d85d4ecbd7/download"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "anthurium-obake",
+    "nom": "Anthurium obake",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [
+        6,
+        7
+      ],
+      "toute_annee": true,
+      "note": "groupe de cultivars d'A. andraeanum à spathe bicolore (rouge, rose ou blanc et vert) ; même disponibilité que l'anthurium standard (serres néerlandaises toute l'année)",
+      "sources": [
+        "https://thursd.com/growers/anthogether",
+        "https://www.hbloom.com/blogs/in-bloom-with-h-bloom/all-about-anthuriums"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 14,
+      "max": 25,
+      "sources": [
+        "https://ishs.org/ishs-article/755_55/",
+        "https://www.plantarchives.org/SPL%20ISSUE%2020-2/231__1433-1435_.pdf"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "spathe-persiste",
+        "decolore",
+        "brunit-bords"
+      ],
+      "ordre": "comme l'anthurium : le spadice noircit d'abord, puis la spathe perd son brillant ; la partie verte jaunit, la partie colorée bleuit ou brunit",
+      "tete": "reste droite, spathe rigide",
+      "petales": "spathe : la zone verte jaunit (perte de chlorophylle), la zone colorée ternit puis brunit",
+      "feuilles": "non vendues avec la fleur",
+      "tige": "droite, base du pédoncule qui brunit",
+      "couleurs": {
+        "bicolore": {
+          "declin": "vert qui jaunit, rouge ou rose qui se ternit",
+          "fane": "jaune-brun et brun-rouge, mat"
+        },
+        "blanc": {
+          "declin": "blanc et vert ternis, la partie verte jaunit",
+          "fane": "beige et brun-olive"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Une étude montre que le TDZ conserve la couleur verte de la spathe, ce qui confirme que le vert disparaît pendant la fanaison. Le reste est extrapolé depuis l'anthurium standard.",
+      "sources": [
+        "https://ishs.org/ishs-article/755_55/",
+        "https://www.maxapress.com/data/article/tihort/preview/pdf/tihort-0025-0038.pdf"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "anthurium-tulipe",
+    "nom": "Anthurium tulipe",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [],
+      "toute_annee": true,
+      "note": "cultivars à spathe en coupe (type 'Tulip'), surtout produits en pot ; disponibilité en fleur coupée non vérifiée, alignée sur l'anthurium",
+      "sources": [
+        "https://thursd.com/growers/anthogether"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 12,
+      "max": 25,
+      "sources": [
+        "https://www.plantarchives.org/SPL%20ISSUE%2020-2/231__1433-1435_.pdf",
+        "https://ishs.org/ishs-article/755_56/"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "spathe-persiste",
+        "decolore",
+        "brunit-bords"
+      ],
+      "ordre": "supposé identique à l'anthurium : spadice qui noircit, puis spathe qui ternit et brunit",
+      "tete": "reste droite ; la coupe garde sa forme",
+      "petales": "spathe en coupe qui ternit, puis brunit par les bords",
+      "feuilles": "non vendues avec la fleur",
+      "tige": "droite",
+      "couleurs": {
+        "rose": {
+          "declin": "rose terni, mauve",
+          "fane": "mauve-brun"
+        },
+        "violet": {
+          "declin": "violet mat",
+          "fane": "brun violacé"
+        },
+        "blanc": {
+          "declin": "blanc ivoire mat",
+          "fane": "beige taché de brun"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Aucune source propre au type tulipe : fiche extrapolée depuis Anthurium andraeanum.",
+      "sources": [
+        "https://www.plantarchives.org/SPL%20ISSUE%2020-2/231__1433-1435_.pdf",
+        "https://www.maxapress.com/data/article/tihort/preview/pdf/tihort-0025-0038.pdf"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "heliconia-rostrata",
+    "nom": "Héliconia pendant",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [],
+      "toute_annee": true,
+      "note": "importé toute l'année (Colombie, Costa Rica, Brésil), vendu aux enchères néerlandaises par des négociants spécialisés ; pas de pic européen documenté",
+      "sources": [
+        "https://www.frontiersin.org/journals/plant-science/articles/10.3389/fpls.2023.1221346/full",
+        "https://www.calyxflowers.com/?p=7332"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 10,
+      "max": 12,
+      "sources": [
+        "https://www.calyxflowers.com/?p=7332",
+        "https://scielo.br/j/oh/a/yBpKxzWrGkzJYXj487tVtrg/?lang=en"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "brunit-bords",
+        "recroqueville",
+        "fleurons-tombent"
+      ],
+      "ordre": "les vraies fleurs tombent dès le premier jour ; ensuite les pointes des bractées se fanent et sèchent, et le flétrissement descend vers la base de chaque bractée ; les bractées foncent",
+      "tete": "l'inflorescence pendante reste pendante ; elle ne se redresse ni ne se ferme",
+      "petales": "bractées en zigzag : pointes jaunes et vertes qui sèchent et brunissent les premières, le rouge fonce ; les bractées perdent leur turgescence",
+      "feuilles": "vendu sans feuille",
+      "tige": "rigide ; risque de déshydratation par embolie (gros vaisseaux)",
+      "couleurs": {
+        "rouge": {
+          "declin": "rouge qui fonce, pointes jaunes ternies et brunes",
+          "fane": "rouge brique sombre, pointes brunes et sèches"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Chez les héliconias, la vraie fleur dure environ un jour : seule l'apparence des bractées compte. Le symptôme de sénescence part de la pointe des bractées et descend vers leur base ; le froid (moins de 10-12 °C) donne au contraire des taches sombres à la jonction bractée-rachis. H. rostrata fait partie des espèces à plus de 10 jours de tenue.",
+      "sources": [
+        "https://locus.ufv.br/items/a7102b42-dcac-4e2e-8b14-581941b2da97",
+        "https://www.phtnet.org/research/download/pdf/re2226.pdf",
+        "https://journals.ashs.org/downloadpdf/view/journals/horttech/13/2/article-p259.pdf",
+        "https://scielo.br/j/oh/a/yBpKxzWrGkzJYXj487tVtrg/?lang=en"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "heliconia-wagneriana",
+    "nom": "Héliconia wagneriana",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [],
+      "toute_annee": true,
+      "note": "importé d'Amérique centrale et du Sud toute l'année ; pas de pic européen documenté",
+      "sources": [
+        "https://www.frontiersin.org/journals/plant-science/articles/10.3389/fpls.2023.1221346/full",
+        "https://www.calyxflowers.com/?p=7332"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 9,
+      "max": 15,
+      "sources": [
+        "https://journals.ashs.org/downloadpdf/view/journals/horttech/13/2/article-p259.pdf",
+        "https://scielo.br/j/hb/a/5zmh7NNMygFGGqNMvstqYYM/?lang=en"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "brunit-bords",
+        "recroqueville",
+        "fleurons-tombent"
+      ],
+      "ordre": "les vraies fleurs tombent dès le premier jour ; ensuite les pointes des bractées se fanent et sèchent, et le flétrissement descend vers la base de chaque bractée ; les bractées foncent",
+      "tete": "inflorescence dressée qui reste droite",
+      "petales": "bractées rouges à bord jaune et vert : la bordure jaune-verte sèche et brunit d'abord, puis la bractée ramollit",
+      "feuilles": "vendu sans feuille",
+      "tige": "droite",
+      "couleurs": {
+        "bicolore": {
+          "declin": "rouge qui fonce, bord jaune-vert terni et bruni",
+          "fane": "rouge sombre, bords bruns et secs"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Chez les héliconias, la vraie fleur dure environ un jour : seule l'apparence des bractées compte. Le symptôme de sénescence part de la pointe des bractées et descend vers leur base ; le froid (moins de 10-12 °C) donne au contraire des taches sombres à la jonction bractée-rachis. Tenue de 9 jours à température ambiante dans une étude, 15 jours ou plus selon la littérature.",
+      "sources": [
+        "https://locus.ufv.br/items/a7102b42-dcac-4e2e-8b14-581941b2da97",
+        "https://www.phtnet.org/research/download/pdf/re2226.pdf",
+        "https://scielo.br/j/hb/a/5zmh7NNMygFGGqNMvstqYYM/?lang=en",
+        "https://journals.ashs.org/downloadpdf/view/journals/horttech/13/2/article-p259.pdf"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "heliconia-bihai",
+    "nom": "Héliconia bihai",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [],
+      "toute_annee": true,
+      "note": "importé toute l'année (Colombie, Costa Rica, Brésil) ; pas de pic européen documenté",
+      "sources": [
+        "https://www.frontiersin.org/journals/plant-science/articles/10.3389/fpls.2023.1221346/full",
+        "https://www.calyxflowers.com/?p=7332",
+        "https://ojs.ceres.ufv.br/ceres/article/view/8059"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 7,
+      "max": 14,
+      "sources": [
+        "https://www.scielo.br/j/rbeaa/a/R7n6dBmpFF5gJMwKJpFTshs/?lang=en",
+        "https://journals.ashs.org/downloadpdf/view/journals/horttech/13/2/article-p259.pdf"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "brunit-bords",
+        "recroqueville",
+        "fleurons-tombent"
+      ],
+      "ordre": "les vraies fleurs tombent dès le premier jour ; ensuite les pointes des bractées se fanent et sèchent, et le flétrissement descend vers la base de chaque bractée ; les bractées foncent",
+      "tete": "inflorescence dressée qui reste droite",
+      "petales": "bractées en pince de homard : pointes qui se dessèchent et brunissent, le rouge fonce, les bractées perdent du poids et ramollissent",
+      "feuilles": "vendu sans feuille",
+      "tige": "droite",
+      "couleurs": {
+        "rouge": {
+          "declin": "rouge qui fonce, pointes brunies",
+          "fane": "rouge brun, bords secs"
+        },
+        "bicolore": {
+          "declin": "rouge et jaune ternis, bords jaunes brunis",
+          "fane": "brun-rouge, liseré brun sec"
+        },
+        "orange": {
+          "declin": "orange terni",
+          "fane": "orange brûlé, pointes brunes"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Chez les héliconias, la vraie fleur dure environ un jour : seule l'apparence des bractées compte. Le symptôme de sénescence part de la pointe des bractées et descend vers leur base ; le froid (moins de 10-12 °C) donne au contraire des taches sombres à la jonction bractée-rachis. Cultivar 'Lobster Claw' étudié : la qualité visuelle baisse avec le temps à toutes les températures.",
+      "sources": [
+        "https://www.scielo.br/j/rbeaa/a/R7n6dBmpFF5gJMwKJpFTshs/?lang=en",
+        "https://locus.ufv.br/items/a7102b42-dcac-4e2e-8b14-581941b2da97",
+        "https://www.phtnet.org/research/download/pdf/re2226.pdf"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "heliconia-psittacorum",
+    "nom": "Héliconia perroquet",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [],
+      "toute_annee": true,
+      "note": "importé toute l'année ; espèce cultivée en masse (hybride 'Tropics' notamment) ; pas de pic européen documenté",
+      "sources": [
+        "https://www.frontiersin.org/journals/plant-science/articles/10.3389/fpls.2023.1221346/full",
+        "https://www.calyxflowers.com/?p=7332",
+        "https://revista-agroproductividad.org/index.php/agroproductividad/article/view/1926"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 4,
+      "max": 10,
+      "sources": [
+        "https://revista-agroproductividad.org/index.php/agroproductividad/article/view/1926",
+        "https://ageconsearch.umn.edu/record/353427/files/Velasco-Velasco%2C%2Bcon-15.pdf"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "recroqueville",
+        "brunit-bords",
+        "fleurons-tombent"
+      ],
+      "ordre": "perte de turgescence rapide : les bractées se flétrissent tôt, puis leurs pointes sèchent ; les petites fleurs tubulaires tombent",
+      "tete": "petite inflorescence dressée qui peut s'incliner légèrement en se flétrissant (non documenté)",
+      "petales": "bractées étroites qui se ramollissent et se fripent, pointes brunes",
+      "feuilles": "parfois une feuille sur la tige ; non décrite",
+      "tige": "fine, se déshydrate vite",
+      "couleurs": {
+        "orange": {
+          "declin": "orange terni, mat",
+          "fane": "orange brunâtre"
+        },
+        "rouge": {
+          "declin": "rouge terni",
+          "fane": "rouge brun"
+        },
+        "rose": {
+          "declin": "rose terni",
+          "fane": "rose brunâtre"
+        },
+        "jaune": {
+          "declin": "jaune terne",
+          "fane": "jaune-brun"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Espèce la plus courte en vase de la liste (3-4 jours pour 'Rubra' selon une source grand public, 10 jours pour les témoins de l'étude). Perte de turgescence liée aux gros vaisseaux et aux stomates non fonctionnels des bractées.",
+      "sources": [
+        "https://revista-agroproductividad.org/index.php/agroproductividad/article/view/1926",
+        "https://ageconsearch.umn.edu/record/353427/files/Velasco-Velasco%2C%2Bcon-15.pdf",
+        "https://locus.ufv.br/items/a7102b42-dcac-4e2e-8b14-581941b2da97"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "heliconia-caribaea",
+    "nom": "Héliconia caribaea",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [],
+      "toute_annee": true,
+      "note": "importé toute l'année ; dans son aire (Caraïbes) floraison printemps-été",
+      "sources": [
+        "https://www.frontiersin.org/journals/plant-science/articles/10.3389/fpls.2023.1221346/full",
+        "https://www.calyxflowers.com/?p=7332",
+        "https://hort.ifas.ufl.edu/database/documents/pdf/shrub_fact_sheets/helcara.pdf"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 7,
+      "max": 14,
+      "sources": [
+        "https://hort.ifas.ufl.edu/database/documents/pdf/shrub_fact_sheets/helcara.pdf",
+        "https://journals.ashs.org/downloadpdf/view/journals/horttech/13/2/article-p259.pdf"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "brunit-bords",
+        "recroqueville",
+        "fleurons-tombent"
+      ],
+      "ordre": "les vraies fleurs tombent dès le premier jour ; ensuite les pointes des bractées se fanent et sèchent, et le flétrissement descend vers la base de chaque bractée ; les bractées foncent",
+      "tete": "inflorescence dressée qui reste droite",
+      "petales": "grandes bractées épaisses : pointes qui sèchent et brunissent, puis la bractée ternit",
+      "feuilles": "vendu sans feuille",
+      "tige": "droite",
+      "couleurs": {
+        "rouge": {
+          "declin": "écarlate qui fonce",
+          "fane": "rouge brun, pointes brunes"
+        },
+        "jaune": {
+          "declin": "jaune terne, pointes brunes",
+          "fane": "jaune-brun"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Aucune mesure de tenue propre à l'espèce trouvée (seulement « plusieurs semaines » coupée, source horticole) ; valeurs et fanaison extrapolées du genre. Chez les héliconias, la vraie fleur dure environ un jour : seule l'apparence des bractées compte. Le symptôme de sénescence part de la pointe des bractées et descend vers leur base ; le froid (moins de 10-12 °C) donne au contraire des taches sombres à la jonction bractée-rachis.",
+      "sources": [
+        "https://locus.ufv.br/items/a7102b42-dcac-4e2e-8b14-581941b2da97",
+        "https://hort.ifas.ufl.edu/database/documents/pdf/shrub_fact_sheets/helcara.pdf"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "heliconia-stricta",
+    "nom": "Héliconia stricta",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [],
+      "toute_annee": true,
+      "note": "importé toute l'année ; pas de pic européen documenté",
+      "sources": [
+        "https://www.frontiersin.org/journals/plant-science/articles/10.3389/fpls.2023.1221346/full",
+        "https://www.calyxflowers.com/?p=7332"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 7,
+      "max": 12,
+      "sources": [
+        "https://journal.iahs.org.in/index.php/ijh/article/download/1327/887",
+        "https://agris.fao.org/search/en/records/65e00c0990674e46e65451c1"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "brunit-bords",
+        "recroqueville",
+        "fleurons-tombent"
+      ],
+      "ordre": "les vraies fleurs tombent dès le premier jour ; ensuite les pointes des bractées se fanent et sèchent, et le flétrissement descend vers la base de chaque bractée ; les bractées foncent",
+      "tete": "petite inflorescence dressée qui reste droite",
+      "petales": "bractées rouges à pointe verte ou jaune : la pointe sèche et brunit d'abord",
+      "feuilles": "vendu sans feuille",
+      "tige": "droite",
+      "couleurs": {
+        "rouge": {
+          "declin": "rouge qui fonce, pointes vertes ternies",
+          "fane": "rouge brun, pointes brunes"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Tenue de 12 jours au mieux dans une étude sur solutions de vase (espèce non confirmée dans le résumé). Fanaison extrapolée du genre. Chez les héliconias, la vraie fleur dure environ un jour : seule l'apparence des bractées compte. Le symptôme de sénescence part de la pointe des bractées et descend vers leur base ; le froid (moins de 10-12 °C) donne au contraire des taches sombres à la jonction bractée-rachis.",
+      "sources": [
+        "https://locus.ufv.br/items/a7102b42-dcac-4e2e-8b14-581941b2da97",
+        "https://journal.iahs.org.in/index.php/ijh/article/download/1327/887"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "heliconia-chartacea",
+    "nom": "Héliconia chartacea « Sexy Pink »",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [],
+      "toute_annee": true,
+      "note": "importé toute l'année ; pas de pic européen documenté",
+      "sources": [
+        "https://www.frontiersin.org/journals/plant-science/articles/10.3389/fpls.2023.1221346/full",
+        "https://www.calyxflowers.com/?p=7332"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 6,
+      "max": 10,
+      "sources": [
+        "https://journal.ipb.ac.id/index.php/jhi/article/download/17492/12553",
+        "https://journals.ashs.org/downloadpdf/view/journals/horttech/13/2/article-p259.pdf",
+        "https://scielo.br/j/oh/a/yBpKxzWrGkzJYXj487tVtrg/?lang=en"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "brunit-bords",
+        "recroqueville",
+        "penche-tete"
+      ],
+      "ordre": "inflorescence pendante : les pointes vertes des bractées sèchent, le rose pâlit et devient terne, les bractées ramollissent",
+      "tete": "pendante dès l'achat ; s'allonge et pend davantage en se flétrissant (non documenté)",
+      "petales": "bractées rose vif à bord vert qui ternissent, pointes qui sèchent et brunissent",
+      "feuilles": "vendu sans feuille",
+      "tige": "rigide",
+      "couleurs": {
+        "rose": {
+          "declin": "rose vif qui ternit, bords verts brunis",
+          "fane": "rose sale brunâtre, pointes brunes et sèches"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Une source donne une semaine au plus pour les grands héliconias comme 'Sexy Pink', une autre plus de 10 jours pour H. chartacea ; les essais 1-MCP donnent 6 à 8 jours. Fanaison extrapolée du genre.",
+      "sources": [
+        "https://journal.ipb.ac.id/index.php/jhi/article/download/17492/12553",
+        "https://locus.ufv.br/items/a7102b42-dcac-4e2e-8b14-581941b2da97",
+        "https://scielo.br/j/oh/a/yBpKxzWrGkzJYXj487tVtrg/?lang=en"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "heliconia-orthotricha",
+    "nom": "Héliconia orthotricha",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [],
+      "toute_annee": true,
+      "note": "importé toute l'année ('She', 'Total Eclipse'…) ; pas de pic européen documenté",
+      "sources": [
+        "https://www.frontiersin.org/journals/plant-science/articles/10.3389/fpls.2023.1221346/full",
+        "https://www.calyxflowers.com/?p=7332",
+        "https://jhs.iihr.res.in/index.php/jhs/article/view/2062"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 7,
+      "max": 12,
+      "sources": [
+        "https://journals.ashs.org/downloadpdf/view/journals/horttech/13/2/article-p259.pdf"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "brunit-bords",
+        "recroqueville",
+        "fleurons-tombent"
+      ],
+      "ordre": "les vraies fleurs tombent dès le premier jour ; ensuite les pointes des bractées se fanent et sèchent, et le flétrissement descend vers la base de chaque bractée ; les bractées foncent",
+      "tete": "inflorescence dressée qui reste droite",
+      "petales": "bractées rouge-rose à orange, souvent duveteuses : pointes qui sèchent et brunissent",
+      "feuilles": "vendu sans feuille",
+      "tige": "droite",
+      "couleurs": {
+        "rose": {
+          "declin": "rose-rouge qui fonce",
+          "fane": "brun rosé, pointes brunes"
+        },
+        "orange": {
+          "declin": "orange terni",
+          "fane": "orange brun"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Aucune mesure propre à l'espèce : tenue et fanaison extrapolées du genre. Chez les héliconias, la vraie fleur dure environ un jour : seule l'apparence des bractées compte. Le symptôme de sénescence part de la pointe des bractées et descend vers leur base ; le froid (moins de 10-12 °C) donne au contraire des taches sombres à la jonction bractée-rachis.",
+      "sources": [
+        "https://locus.ufv.br/items/a7102b42-dcac-4e2e-8b14-581941b2da97",
+        "https://jhs.iihr.res.in/index.php/jhs/article/view/2062"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "heliconia-velues",
+    "nom": "Héliconias pendants velus",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [],
+      "toute_annee": true,
+      "note": "H. vellerigera, H. mutisiana et proches ; importés irrégulièrement ; disponibilité non vérifiée",
+      "sources": [
+        "https://www.frontiersin.org/journals/plant-science/articles/10.3389/fpls.2023.1221346/full",
+        "https://www.calyxflowers.com/?p=7332"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 5,
+      "max": 10,
+      "sources": [
+        "https://scielo.br/j/oh/a/yBpKxzWrGkzJYXj487tVtrg/?lang=en"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "brunit-bords",
+        "recroqueville",
+        "penche-tete"
+      ],
+      "ordre": "pointes des bractées qui sèchent, puis bractées ternes ; le duvet garde l'aspect velouté",
+      "tete": "pendante dès l'achat ; pend davantage en se flétrissant (non documenté)",
+      "petales": "bractées couvertes d'un duvet épais (pubescent à laineux) : la couleur sous le duvet fonce, les pointes brunissent",
+      "feuilles": "vendu sans feuille",
+      "tige": "rigide",
+      "couleurs": {
+        "rouge": {
+          "declin": "rouge velouté qui fonce",
+          "fane": "brun-rouge velouté, pointes brunes"
+        },
+        "rose": {
+          "declin": "rose velouté terni",
+          "fane": "brun rosé"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Étude brésilienne : H. vellerigera n'atteint pas 10 jours de tenue (seules H. platystachys, H. rostrata, H. chartacea et H. rauliniana dépassent 10 jours). Le reste est extrapolé du genre.",
+      "sources": [
+        "https://scielo.br/j/oh/a/yBpKxzWrGkzJYXj487tVtrg/?lang=en",
+        "https://locus.ufv.br/items/a7102b42-dcac-4e2e-8b14-581941b2da97"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "calathea-crotalifera",
+    "nom": "Calathea crotalifera",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [],
+      "toute_annee": true,
+      "note": "floraison d'environ 210 jours par an en culture tropicale, production de fleurs coupées toute l'année ; disponibilité européenne non vérifiée",
+      "sources": [
+        "https://ciari.icar.gov.in/FC-Maranda.html"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 10,
+      "max": 15,
+      "sources": [
+        "https://ciari.icar.gov.in/FC-Maranda.html"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "brunit-bords",
+        "decolore"
+      ],
+      "ordre": "bractées cireuses en hochet qui ternissent, puis brunissent par les bords ; les petites fleurs jaunes entre les bractées fanent en premier",
+      "tete": "épi aplati dressé qui reste droit",
+      "petales": "bractées imbriquées ternes, bords bruns",
+      "feuilles": "vendu sans feuille ou avec une grande feuille non décrite",
+      "tige": "droite",
+      "couleurs": {
+        "jaune": {
+          "declin": "jaune terne, bords verdâtres",
+          "fane": "jaune-brun"
+        },
+        "rouge": {
+          "declin": "rouge terni",
+          "fane": "brun-rouge"
+        },
+        "vert": {
+          "declin": "vert terne",
+          "fane": "vert olive bruni"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Seule la tenue (10-15 jours) est sourcée ; la description de fanaison est extrapolée des autres inflorescences à bractées cireuses (héliconias, gingembres).",
+      "sources": [
+        "https://ciari.icar.gov.in/FC-Maranda.html"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "musa-fleur",
+    "nom": "Fleur de bananier ornemental",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [],
+      "toute_annee": true,
+      "note": "tiges de Musa ornamentaux (M. ornata, M. velutina…) vendues toute l'année par les importateurs de fleurs tropicales",
+      "sources": [
+        "https://fiftyflowers.com/products/orange-musa-banana-flower",
+        "https://vikaspedia.in/agriculture/crop-production/ornamental-bananas"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 8,
+      "max": 12,
+      "sources": [
+        "https://fiftyflowers.com/products/orange-musa-banana-flower"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "recroqueville",
+        "brunit-bords",
+        "fleurons-tombent"
+      ],
+      "ordre": "les bractées s'ouvrent une à une en s'enroulant vers l'arrière ; les fleurs tubulaires jaunes ou orange fanent et tombent ; les bractées ouvertes se fripent et brunissent",
+      "tete": "bouton dressé, parfois légèrement fendu à l'achat ; les bractées s'écartent avec le temps",
+      "petales": "bractées pétaloïdes rose, lilas, rouge ou orange qui se ramollissent, se fripent et brunissent aux bords",
+      "feuilles": "vendu sans feuille",
+      "tige": "droite, parfois avec de petites bananes ornementales qui restent",
+      "couleurs": {
+        "rose": {
+          "declin": "rose lilas terni",
+          "fane": "mauve-brun fripé"
+        },
+        "rouge": {
+          "declin": "rouge terni",
+          "fane": "brun-rouge"
+        },
+        "orange": {
+          "declin": "orange terni",
+          "fane": "orange brun"
+        },
+        "violet": {
+          "declin": "violet mat",
+          "fane": "brun violacé"
+        }
+      },
+      "seche_bien": false,
+      "notes": "La longévité des bractées varie selon le cultivar ; aucune description scientifique de la sénescence en vase trouvée : ordre extrapolé de la morphologie (bractées qui s'ouvrent successivement) et des autres Zingibérales.",
+      "sources": [
+        "https://plantarchives.org/article/360%20ASSESSMENT-OF-ORNAMENTAL-BANANA-ACCESSIONS-FOR-FLORAL-ATTRIBUTES.pdf",
+        "https://vikaspedia.in/agriculture/crop-production/ornamental-bananas",
+        "https://fiftyflowers.com/products/orange-musa-banana-flower"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "strelitzia-reginae",
+    "nom": "Oiseau de paradis",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [],
+      "toute_annee": true,
+      "note": "disponible toute l'année chez les fleuristes ; en Afrique du Sud la floraison naturelle va de mai à décembre",
+      "sources": [
+        "https://www.euroflorist.pl/en/flower-encyclopedia/strelitzia",
+        "https://pza.sanbi.org/node/11343"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 7,
+      "max": 14,
+      "sources": [
+        "https://www.euroflorist.pl/en/flower-encyclopedia/strelitzia",
+        "https://floraldesigninstitute.com/birdofparadise.html",
+        "https://postharvest.ucdavis.edu/node/9066"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "spathe-persiste",
+        "recroqueville",
+        "bourgeons-avortent"
+      ],
+      "ordre": "chaque fleur (sépales orange et pétales bleus) se fane en quelques jours ; d'autres fleurs sortent ensuite de la spathe, mais l'ouverture est souvent irrégulière ou incomplète ; la spathe en bec reste en place",
+      "tete": "reste à l'horizontale, la spathe en bec persiste",
+      "petales": "sépales orange et pétales bleus qui se flétrissent, ramollissent et se fripent dans la spathe",
+      "feuilles": "vendu sans feuille",
+      "tige": "droite, épaisse",
+      "couleurs": {
+        "bicolore": {
+          "declin": "orange qui pâlit et bleu qui s'éteint, fleurs ramollies",
+          "fane": "brun orangé et bleu-gris fripés ; spathe verte et pourpre presque intacte, brunie aux bords"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Surprise : la fleur fane par vagues, car une spathe contient 4 ou 5 fleurs ; le fleuriste peut extraire les suivantes. Sensible au froid (moins de 8 °C). Les teintes du fané sont déduites.",
+      "sources": [
+        "https://www.ishs.org/ishs-article/877_242",
+        "https://postharvest.ucdavis.edu/node/9066",
+        "https://czasopisma.up.lublin.pl/asphc/article/view/2071"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "strelitzia-nicolai",
+    "nom": "Strelitzia blanc géant",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [
+        3,
+        4,
+        5,
+        6
+      ],
+      "toute_annee": true,
+      "note": "floraison toute l'année avec un pic au printemps et en été ; peu présent en fleur coupée en Europe, disponibilité commerciale non vérifiée",
+      "sources": [
+        "https://www.nparks.gov.sg/florafaunaweb/flora/3/1/3147",
+        "https://pza.sanbi.org/node/10992"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 7,
+      "max": 14,
+      "sources": [
+        "https://www.euroflorist.pl/en/flower-encyclopedia/strelitzia"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "spathe-persiste",
+        "recroqueville"
+      ],
+      "ordre": "comme l'oiseau de paradis : fleurs blanches et bleues qui sortent successivement d'une spathe pourpre-noir et fanent en quelques jours, la spathe reste",
+      "tete": "grande spathe en bec qui reste horizontale",
+      "petales": "sépales blancs et pétales bleus qui se flétrissent et brunissent",
+      "feuilles": "vendu sans feuille",
+      "tige": "droite, très épaisse",
+      "couleurs": {
+        "blanc": {
+          "declin": "blanc ivoire, bleu terni",
+          "fane": "beige brunâtre fripé, spathe pourpre-noir intacte"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Tenue et fanaison extrapolées de S. reginae.",
+      "sources": [
+        "https://pza.sanbi.org/node/10992",
+        "https://www.gardenia.net/plant/strelitzia-nicolai"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "alpinia-purpurata",
+    "nom": "Alpinia",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [],
+      "toute_annee": true,
+      "note": "premier gingembre coupé du commerce, importé toute l'année des zones tropicales ; pas de pic européen documenté",
+      "sources": [
+        "https://www.frontiersin.org/journals/plant-science/articles/10.3389/fpls.2023.1221346/full",
+        "https://www.ishs.org/ishs-article/683_46"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 5,
+      "max": 25,
+      "sources": [
+        "https://thegardenisland.com/?p=85146",
+        "https://journals.ashs.org/downloadpdf/view/journals/horttech/13/2/article-p259.pdf"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "recroqueville",
+        "brunit-bords"
+      ],
+      "ordre": "plus de 90 % des inflorescences fanent par flétrissement de l'épi, brunissement des bractées, ou les deux ; les petites fleurs blanches entre les bractées sont éphémères",
+      "tete": "épi conique dressé qui se ramollit en se flétrissant",
+      "petales": "bractées en spirale qui perdent leur eau, ramollissent et brunissent",
+      "feuilles": "souvent vendu avec quelques feuilles ; non décrites",
+      "tige": "droite",
+      "couleurs": {
+        "rouge": {
+          "declin": "rouge qui fonce et ternit, pointes brunes",
+          "fane": "brun-rouge mat"
+        },
+        "rose": {
+          "declin": "rose terni",
+          "fane": "rose brunâtre"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Flétrissement lié au bilan hydrique, brunissement des bractées lié au manque de sucre dans la tige. Tenue de 5 jours pour les jeunes inflorescences fines à 25 jours pour les standard. Se conserve au-dessus de 12 °C.",
+      "sources": [
+        "https://scholarspace.manoa.hawaii.edu/items/ea3a6951-abb6-440a-9be0-9a9ee3e27d73",
+        "https://journals.ashs.org/downloadpdf/view/journals/horttech/13/2/article-p259.pdf",
+        "https://www.ishs.org/ishs-article/683_46"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "etlingera-elatior",
+    "nom": "Rose de porcelaine",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "toute_annee": true,
+      "note": "disponible toute l'année en zone tropicale, pic de la fin du printemps au début de l'été ; exporté notamment du Costa Rica",
+      "sources": [
+        "https://specialtyproduce.com/produce/Torch_Ginger_Flowers_11169.php",
+        "https://hortscans.ces.ncsu.edu/file/../uploads/n/e/new_trop_57f53584f0979.pdf"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 5,
+      "max": 12,
+      "sources": [
+        "https://mjst.ustp.edu.ph/index.php/mjst/article/view/263",
+        "https://www.phtnet.org/research/download/pdf/mk366.pdf",
+        "https://hortscans.ces.ncsu.edu/file/../uploads/n/e/new_trop_57f53584f0979.pdf"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "brunit-bords",
+        "decolore"
+      ],
+      "ordre": "les bractées cireuses perdent leur brillant, puis la couleur fonce et brunit ; meurtrissures brunes sur les bractées",
+      "tete": "capitule en torche dressé qui reste droit",
+      "petales": "bractées cireuses : perte du brillant, assombrissement, taches et meurtrissures brunes",
+      "feuilles": "vendu sans feuille",
+      "tige": "droite, très longue",
+      "couleurs": {
+        "rouge": {
+          "declin": "rouge mat qui fonce",
+          "fane": "rouge brun meurtri"
+        },
+        "rose": {
+          "declin": "rose terni, mat",
+          "fane": "rose brunâtre taché"
+        },
+        "blanc": {
+          "declin": "blanc mat, taches beiges",
+          "fane": "beige taché de brun"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Tenue courte : 4-5 jours dans une étude, 9 avec 1-MCP, 10-12 jours si la fleur est coupée plus mûre. Le brunissement serait lié à l'éthylène.",
+      "sources": [
+        "https://mjst.ustp.edu.ph/index.php/mjst/article/view/263",
+        "https://www.phtnet.org/research/download/pdf/mk366.pdf"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "zingiber",
+    "nom": "Gingembre ruche et gingembre shampoing",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [
+        7,
+        8,
+        9
+      ],
+      "toute_annee": true,
+      "note": "importés des tropiques ; Z. zerumbet produit ses cônes en plein été (pic estimé d'après sa floraison naturelle) ; disponibilité européenne non vérifiée",
+      "sources": [
+        "https://www.logees.com/products/shampoo-ginger",
+        "https://www.frontiersin.org/journals/plant-science/articles/10.3389/fpls.2023.1221346/full"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 7,
+      "max": 21,
+      "sources": [
+        "https://floraldesigninstitute.com/blogs/resources-flower-library/beehive-ginger",
+        "https://publication.npru.ac.th/handle/123456789/1594"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "decolore",
+        "brunit-bords"
+      ],
+      "ordre": "les bractées changent de couleur en vieillissant (jaune vers rouge pour le gingembre ruche, vert vers rouge pour le gingembre shampoing), puis leurs bords sèchent",
+      "tete": "épi en ruche ou en cône qui reste droit",
+      "petales": "bractées cireuses et rigides, qui gardent leur forme",
+      "feuilles": "vendu sans feuille",
+      "tige": "droite",
+      "couleurs": {
+        "jaune": {
+          "declin": "jaune qui vire à l'orange puis au rouge",
+          "fane": "rouge sombre, bords bruns"
+        },
+        "vert": {
+          "declin": "vert qui rosit puis rougit",
+          "fane": "rouge brun"
+        },
+        "rouge": {
+          "declin": "rouge qui fonce",
+          "fane": "brun-rouge"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Surprise utile au dessin : en vieillissant, la couleur des bractées se renforce (jaune ou vert vers rouge) au lieu de pâlir. Le cône du gingembre shampoing contient un mucilage parfumé. Bords bruns en fin de vie : supposés.",
+      "sources": [
+        "https://www.botanybrisbane.com/?p=3807",
+        "https://toptropicals.com/catalog/uid/zingiber_zerumbet.htm",
+        "https://www.logees.com/products/shampoo-ginger"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "costus",
+    "nom": "Costus",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [],
+      "toute_annee": true,
+      "note": "importé des zones tropicales ; disponibilité européenne non vérifiée",
+      "sources": [
+        "https://www.frontiersin.org/journals/plant-science/articles/10.3389/fpls.2023.1221346/full",
+        "https://www.heliconia.org/costaceae-spiral-gingers"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 4,
+      "max": 10,
+      "sources": [
+        "https://kirim.kmutt.ac.th/converis/portal/detail/Publication/601397585?lang=en_GB",
+        "https://scielo.br/j/oh/a/DN98TYYFVhPJrJdcpWKCCJg/?lang=en"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "feuilles-jaunissent",
+        "recroqueville"
+      ],
+      "ordre": "la tige perd sa chlorophylle et jaunit dès 4 jours, puis les bractées se flétrissent",
+      "tete": "cône de bractées dressé, fleurs en crêpe éphémères",
+      "petales": "bractées qui se flétrissent ; les fleurs en papier froissé fanent en un jour environ",
+      "feuilles": "feuilles en spirale qui jaunissent",
+      "tige": "spiralée ; jaunit",
+      "couleurs": {
+        "rouge": {
+          "declin": "rouge terni, tige jaunissante",
+          "fane": "brun-rouge, tige jaune paille"
+        },
+        "orange": {
+          "declin": "orange terni",
+          "fane": "orange brun"
+        },
+        "jaune": {
+          "declin": "jaune pâli",
+          "fane": "jaune-brun"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Le jaunissement de la tige est le symptôme principal. Tenue maximale de 10 jours estimée (seulement 6,5 jours avant jaunissement avec traitement). Fleur éphémère d'environ un jour : non sourcé.",
+      "sources": [
+        "https://kirim.kmutt.ac.th/converis/portal/detail/Publication/601397585?lang=en_GB",
+        "https://scielo.br/j/oh/a/DN98TYYFVhPJrJdcpWKCCJg/?lang=en"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "tapeinochilos-ananassae",
+    "nom": "Gingembre de cire",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [],
+      "toute_annee": true,
+      "note": "importé des tropiques (Hawaï, Indonésie) ; disponibilité européenne non vérifiée",
+      "sources": [
+        "https://plantsofhawaii.org/detail/{608D0157-955D-4895-A42E-F7B114C5A9ED}",
+        "https://www.frontiersin.org/journals/plant-science/articles/10.3389/fpls.2023.1221346/full"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 7,
+      "max": 14,
+      "sources": [
+        "https://journal.ipb.ac.id/bulagron/article/view/8215",
+        "https://gardinonursery.com/product/tapeinochilos-ananassae-indonesian-wax-ginger/"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "brunit-bords",
+        "seche-sur-place"
+      ],
+      "ordre": "les bractées rouges cireuses à pointe recourbée ternissent puis brunissent aux pointes ; les petites fleurs jaunes fanent les premières",
+      "tete": "cône ovale dressé qui garde sa forme",
+      "petales": "bractées cireuses très rigides, pointes qui brunissent",
+      "feuilles": "vendu sans feuille",
+      "tige": "droite, rigide",
+      "couleurs": {
+        "rouge": {
+          "declin": "rouge mat, pointes brunissantes",
+          "fane": "rouge brun mat, forme intacte"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Bractées très dures : l'inflorescence se déforme peu. Tenue citée « longue », 1,2 à 1,8 fois plus avec 1-MCP. Fanaison extrapolée des autres gingembres.",
+      "sources": [
+        "https://journal.ipb.ac.id/bulagron/article/view/8215",
+        "https://gardinonursery.com/product/tapeinochilos-ananassae-indonesian-wax-ginger/"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "curcuma",
+    "nom": "Curcuma",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "pic": [
+        6,
+        7,
+        8,
+        9
+      ],
+      "toute_annee": false,
+      "note": "seul producteur néerlandais de curcuma coupé (Villa Curcuma) des semaines 1 à 40 ; en Thaïlande, floraison de juin à septembre",
+      "sources": [
+        "https://thursd.com/growers/villa-curcuma",
+        "https://www.fao.org/4/ac452e/ac452e0b.htm"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 7,
+      "max": 21,
+      "sources": [
+        "https://test01.ku.dk/:obvius/pureproxy/3974268/en/publications/curcuma-alismatifolia-vase-life",
+        "https://phtnet.org/research/download/pdf/mk358.pdf"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "brunit-bords",
+        "decolore"
+      ],
+      "ordre": "les pointes des bractées colorées brunissent d'abord, la couleur pâlit, des taches apparaissent, puis tout l'épi se flétrit",
+      "tete": "épi en tulipe dressé",
+      "petales": "bractées roses ou blanches qui pâlissent, pointes brunes, taches",
+      "feuilles": "parfois vendues avec la tige ; non décrites",
+      "tige": "droite",
+      "couleurs": {
+        "rose": {
+          "declin": "rose pâli, pointes brunes",
+          "fane": "rose sale taché de brun"
+        },
+        "blanc": {
+          "declin": "blanc crème, pointes brunes",
+          "fane": "beige taché"
+        },
+        "rouge": {
+          "declin": "rouge rubis terni",
+          "fane": "brun-rouge"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Le brunissement des pointes est accéléré par l'éthylène. Une étude donne 21 jours en eau déionisée ; la mousse florale réduit la tenue.",
+      "sources": [
+        "https://test01.ku.dk/:obvius/pureproxy/3974268/en/publications/curcuma-alismatifolia-vase-life",
+        "https://phtnet.org/research/download/pdf/mk358.pdf",
+        "https://www.doaj.org/article/726498297a8a48539bd8d3460756715e"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "ananas-ornemental",
+    "nom": "Ananas ornemental sur tige",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [],
+      "toute_annee": true,
+      "note": "surtout A. comosus var. erectifolius (75 % des exportations) et var. bracteatus, exportés du Brésil ; disponible toute l'année chez les importateurs",
+      "sources": [
+        "https://www.redalyc.org/journal/3030/303047322007/html/",
+        "https://fiftyflowers.com/products/Pink-Pineapple-Tropical-DIY-Flower-Collection"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 8,
+      "max": 28,
+      "sources": [
+        "https://fiftyflowers.com/products/Pink-Pineapple-Tropical-DIY-Flower-Collection",
+        "https://www.redalyc.org/journal/3030/303047322007/html/",
+        "https://ashs.confex.com/ashs/2011/webprogram/Paper6062.html"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "feuilles-brunissent",
+        "decolore"
+      ],
+      "ordre": "le petit fruit reste ferme ; les bractées rouges ou roses ternissent, la couronne de feuilles se dessèche aux pointes",
+      "tete": "petit ananas dressé sur sa tige, qui garde sa forme",
+      "petales": null,
+      "feuilles": "couronne et bractées dont les pointes sèchent et brunissent",
+      "tige": "droite, rigide",
+      "couleurs": {
+        "rose": {
+          "declin": "rose terni",
+          "fane": "rose brunâtre"
+        },
+        "rouge": {
+          "declin": "rouge terni",
+          "fane": "rouge brun"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Jusqu'à 28 jours avec une solution conservatrice (8-HQC, sucre, cytokinine), 8 jours en moyenne selon un grossiste. Description de fanaison extrapolée.",
+      "sources": [
+        "https://www.redalyc.org/journal/3030/303047322007/html/",
+        "https://www.alice.cnptia.embrapa.br/alice/bitstream/doc/1187548/1/Rosa.pdf"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "bromeliacees",
+    "nom": "Broméliacées à fleurs",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [],
+      "toute_annee": true,
+      "note": "Guzmania, Vriesea et Aechmea surtout cultivés en serre aux Pays-Bas pour le pot ; disponibilité en tige coupée non vérifiée",
+      "sources": [
+        "https://laidbackgardener.blog/2026/03/21/guzmanias-chronicle-of-a-death-foretold/"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 10,
+      "max": 24,
+      "sources": [
+        "https://www.redalyc.org/journal/1699/169971425003/169971425003.pdf",
+        "https://ojs.ceres.ufv.br/ceres/article/view/7921"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "decolore",
+        "brunit-bords"
+      ],
+      "ordre": "les bractées colorées tiennent longtemps ; les petites fleurs tubulaires fanent vite ; en fin de vie les bractées perdent leur brillant, pâlissent et brunissent aux pointes",
+      "tete": "épi ou rosette de bractées qui reste droit",
+      "petales": "bractées qui perdent leur brillant et pâlissent ; fleurs jaunes ou blanches éphémères",
+      "feuilles": "non vendues avec la tige",
+      "tige": "droite",
+      "couleurs": {
+        "rouge": {
+          "declin": "rouge mat",
+          "fane": "rouge brunâtre, pointes sèches"
+        },
+        "orange": {
+          "declin": "orange terni",
+          "fane": "orange brun"
+        },
+        "jaune": {
+          "declin": "jaune pâli",
+          "fane": "jaune paille bruni"
+        },
+        "rose": {
+          "declin": "rose pâli",
+          "fane": "rose brunâtre"
+        },
+        "violet": {
+          "declin": "violet mat",
+          "fane": "brun violacé"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Vriesea incurvata : plus de 16 jours, jusqu'à 24 jours avec du sucre (qui maintient couleur, brillant et turgescence). Aechmea distichantha : 10 jours environ. Ordre et couleurs extrapolés.",
+      "sources": [
+        "https://www.redalyc.org/journal/1699/169971425003/169971425003.pdf",
+        "https://ojs.ceres.ufv.br/ceres/article/view/7921",
+        "https://laidbackgardener.blog/2026/03/21/guzmanias-chronicle-of-a-death-foretold/"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "protea-cynaroides",
+    "nom": "Protée royale",
+    "saison_vente": {
+      "mois": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "pic": [
+        9,
+        10
+      ],
+      "toute_annee": false,
+      "note": "floraison d'avril à octobre en Afrique du Sud (principal exportateur, 75 % vers l'Europe et surtout les Pays-Bas) ; la demande européenne est la plus forte de septembre à janvier ; importations hors saison (Australie, Hawaï) non vérifiées",
+      "sources": [
+        "https://kumbulanursery.co.za/node/352",
+        "https://www.farmersweekly.co.za/agri-news/south-africa/protea-exports-set-to-increase-despite-covid-19-challenges",
+        "https://library.aosis.co.za/index.php/record/view/32480"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 10,
+      "max": 21,
+      "sources": [
+        "https://floralife.com/flowers/protea/",
+        "https://kumbulanursery.co.za/node/352"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "feuilles-brunissent",
+        "seche-sur-place",
+        "decolore"
+      ],
+      "ordre": "les feuilles noircissent d'abord (taches puis pointes noires, surtout à l'ombre ou sans sucre) ; la tête garde sa forme ; les bractées sèchent lentement en place et la couleur s'éteint vers le beige",
+      "tete": "grande coupe qui reste dressée et garde sa forme ; les bractées peuvent se recourber vers l'intérieur par temps chaud et sec",
+      "petales": "bractées cireuses qui sèchent et se raidissent, couleur qui pâlit ; le cône central de fleurons duveteux reste",
+      "feuilles": "noircissement : taches noires puis pointes et feuilles entières noires",
+      "tige": "ligneuse, droite",
+      "couleurs": {
+        "rose": {
+          "declin": "rose qui pâlit, pointes un peu sèches",
+          "fane": "rose poudré passé vers le beige-brun"
+        },
+        "blanc": {
+          "declin": "crème",
+          "fane": "beige paille"
+        },
+        "rouge": {
+          "declin": "rouge rosé terni",
+          "fane": "brun rosé"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Surprise : le premier signe de fin de vie est le noircissement des feuilles, pas la fleur. Le mode « feuilles-brunissent » couvre ici un vrai noircissement. Séchée, la fleur garde sa forme puis passe au tan.",
+      "sources": [
+        "https://scholar.sun.ac.za/handle/10019.1/53320",
+        "https://scholar.sun.ac.za/items/9def663c-8c56-465c-8c1f-c467fc520cfb/full",
+        "https://www.euroflorist.nl/en/flowers/protea",
+        "https://www.floristrytradeclub.co.uk/post/protea-everything-you-need-to-know",
+        "https://ishs.org/ishs-article/1201_59/"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "protea-neriifolia",
+    "nom": "Protée à feuilles de laurier-rose",
+    "saison_vente": {
+      "mois": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "pic": [],
+      "toute_annee": false,
+      "note": "floraison de février à novembre en Afrique du Sud (février-juillet à l'ouest, août-novembre à l'est) ; la diversité des provenances donne aux producteurs une longue saison",
+      "sources": [
+        "https://pza.sanbi.org/node/10835",
+        "https://www.farmersweekly.co.za/agri-news/south-africa/protea-exports-set-to-increase-despite-covid-19-challenges"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 10,
+      "max": 20,
+      "sources": [
+        "https://floralife.com/flowers/protea/"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "feuilles-brunissent",
+        "seche-sur-place",
+        "decolore"
+      ],
+      "ordre": "les feuilles noircissent d'abord (taches puis pointes noires, surtout à l'ombre ou sans sucre) ; la tête garde sa forme ; les bractées sèchent lentement en place et la couleur s'éteint vers le beige",
+      "tete": "tête en cornet allongé qui reste fermée et droite",
+      "petales": "bractées dressées, frangées d'une barbe noire ou blanche au sommet ; elles sèchent en place, la barbe persiste",
+      "feuilles": "feuilles étroites qui noircissent",
+      "tige": "ligneuse, droite",
+      "couleurs": {
+        "rose": {
+          "declin": "rose qui pâlit, barbe noire intacte",
+          "fane": "rose beige, barbe noire"
+        },
+        "creme": {
+          "declin": "crème",
+          "fane": "beige paille, barbe noire"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Tenue extrapolée de la fiche générale des protées ; le noircissement des feuilles est documenté pour le genre.",
+      "sources": [
+        "https://scholar.sun.ac.za/items/9def663c-8c56-465c-8c1f-c467fc520cfb/full",
+        "https://floralife.com/flowers/protea/",
+        "https://pza.sanbi.org/node/10835"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "protea-repens",
+    "nom": "Protée sucrière",
+    "saison_vente": {
+      "mois": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "pic": [],
+      "toute_annee": false,
+      "note": "floraison de l'hiver au printemps austral à l'ouest de l'aire, en été à l'est ; mois de vente estimés",
+      "sources": [
+        "https://pza.sanbi.org/node/10838",
+        "https://www.calyxflowers.com/?p=7678"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 10,
+      "max": 20,
+      "sources": [
+        "https://www.calyxflowers.com/?p=7678"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "feuilles-brunissent",
+        "seche-sur-place",
+        "decolore"
+      ],
+      "ordre": "les feuilles noircissent d'abord (taches puis pointes noires, surtout à l'ombre ou sans sucre) ; la tête garde sa forme ; les bractées sèchent lentement en place et la couleur s'éteint vers le beige",
+      "tete": "cornet en V qui reste droit",
+      "petales": "bractées lisses et collantes (riches en nectar) qui sèchent en place",
+      "feuilles": "noircissent sans aliment sucré",
+      "tige": "ligneuse",
+      "couleurs": {
+        "rouge": {
+          "declin": "rouge rosé terni",
+          "fane": "brun rosé"
+        },
+        "blanc": {
+          "declin": "crème",
+          "fane": "beige paille"
+        },
+        "rose": {
+          "declin": "rose pâli",
+          "fane": "beige rosé"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Un aliment floral sucré évite le noircissement des feuilles. Les variétés rouge profond sont celles de la fleur coupée.",
+      "sources": [
+        "https://www.calyxflowers.com/?p=7678",
+        "https://scholar.sun.ac.za/items/9def663c-8c56-465c-8c1f-c467fc520cfb/full"
+      ]
+    },
+    "confiance": "moyenne"
+  }
+]

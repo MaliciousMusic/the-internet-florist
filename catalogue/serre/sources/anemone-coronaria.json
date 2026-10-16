@@ -1,0 +1,4079 @@
+{
+ "sid": "anemone-coronaria",
+ "genre": "Anemone",
+ "consulte": "2026-10-08",
+ "agent": "fleur-recensement (Sonnet)",
+ "portee": "tout ce qui est documenté en nom libre ; règle du porteur du 2026-10-08 : aucune fleur sous marque déposée, on ne garde que les cultivars libres (De Caen, St Brigid, noms non déposés) et les formes botaniques",
+ "sorte": {
+  "nom_botanique_accepte": "Anemone coronaria L., Sp. Pl. 539 (1753)",
+  "source_nom": "https://api.gbif.org/v1/species/3033261 (socle GBIF : ACCEPTED, plus de 70 synonymes). POWO (https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:708314-1) est derrière un contrôle anti-robot, non contourné.",
+  "autorite_enregistrement": "KAVB (ICRA de l'ISHS pour Anemone, « bulbous species only »), non interrogé par ce recensement (réservé à l'orchestrateur). A impossible sans lui : B est le plafond ici.",
+  "groupe_horticole": "Pas de division officielle. La RHS (base horticole, qui n'est pas l'ICRA) range les cultivars en De Caen Group (simples), Saint Bridgid Group (semi-doubles et doubles), Mona Lisa Series, Harmony Series, Mistral Series, Mistral Plus Series, Jerusalem hybrids.",
+  "melange_de_sortes": "Oui. 'anemone-coronaria' mêle des simples (De Caen), des semi-doubles et doubles (St Brigid, Levante®) et des séries sous marque. Proposition : garder 'anemone-coronaria' pour les simples (De Caen + formes sauvages) et créer 'anemone-coronaria-st-brigid' pour les semi-doubles et doubles (The Governor, The Admiral, Lord Lieutenant, Mount Everest).",
+  "forme": "Fleur simple en coupe puis en soucoupe, 5 à 8 pétales (tépales), grand cœur noir-bleu d'étamines, collerette de trois bractées découpées sous la fleur, feuilles basales finement découpées, tubercule sec.",
+  "series_ecartees_pour_marque": [
+   "Mistral®/Mistral Plus®/Levante®",
+   "Galilee™/Jerusalem™/Carmel™/Meron™/Full Star™/Rainbow™",
+   "Mona Lisa®",
+   "'Bordeaux' (nom partagé)"
+  ],
+  "serie_a_trancher": [
+   "Harmony (Sakata)"
+  ]
+ },
+ "priorite_bouquet_printemps_a_la_carpe": {
+  "bleu": {
+   "coloris": "bleu",
+   "cultivar_libre": "Mister Fokker (Mr Fokker), De Caen Group",
+   "marque": null,
+   "niveau_preuve": "B (A après le KAVB)",
+   "preuves_du_nom": [
+    "RHS : nom accepté 'Mister Fokker', synonyme 'Mr Fokker'",
+    "Nijssen, BULBi, DutchGrown, Peter Nyssen : 'Mr. Fokker' / 'Anemone de Caen Mr. Fokker'"
+   ],
+   "photos_nommees": [
+    "Nijssen 17501 et 17502 (N3)",
+    "RHS visi197417 et visi74605 (N3)",
+    "BULBi Anemone_coronaria_Mr_Fokker_1a_1_9.jpg (N3)",
+    "DutchGrown Anemone_De_Caen_Mr_Fokker-1.jpg (N3)"
+   ],
+   "conclusion": "Garder tel quel : nom libre, aucune marque relevée."
+  },
+  "blanc": {
+   "coloris": "blanc",
+   "nom_actuel": "Mistral Bianco Centro Nero, Panda",
+   "marque": "Mistral Plus® 'Panda' (Biancheri Creazioni) : ® sur les pages Nijssen (« white with black ») et Jo Radahl ; demande de marque PANDA (États-Unis, 2020, classe 31) abandonnée",
+   "cultivar_libre": null,
+   "proche_libre": "Forme blanche sauvage à cœur violet-noir (var. alba / f. albiflora)",
+   "niveau_preuve": "B",
+   "conclusion": "Aucun cultivar libre nommé n'est blanc à cœur noir ('Die Braut', 'Mount Everest' : centre vert ; 'Bicolor', 'Duet' : anneau rouge). Seule la forme blanche sauvage correspond, en plus petit : décision du porteur."
+  }
+ },
+ "coloris": [
+  {
+   "id": "blanc",
+   "nom_affiche": "Blanc à cœur noir (Mistral Bianco Centro Nero, Panda)",
+   "teinte_catalogue": "#f7f5f0",
+   "oeil_catalogue": "#1e1628",
+   "variete_du_nom_actuel": {
+    "variete": "Mistral Plus® 'Panda' (= Bianco Centro Nero)",
+    "serie": "Mistral Plus®",
+    "marque": "Mistral®/Mistral Plus® (Biancheri Creazioni) : voir exclus_marque",
+    "note": "Nijssen : « white with black » ; Ball Australie : 'Mistral Plus Bianco Centro Nero'."
+   },
+   "statut": "à confirmer",
+   "niveau_preuve": "B",
+   "raison": "Rattachement à une forme botanique libre : le porteur valide la substitution de Panda par la forme sauvage. Nom proposé : « Blanc à cœur sombre (forme sauvage) ».",
+   "nom_affiche_propose": "Blanc à cœur sombre (forme sauvage)",
+   "correspondance": {
+    "type": "forme_botanique",
+    "cible_id": "f_blanche",
+    "cible": "Forme blanche sauvage à cœur sombre",
+    "qualite": "approchée",
+    "ecarts": "Aucun cultivar libre nommé n'est blanc à cœur noir : 'Die Braut' et 'Mount Everest' ont le centre vert, 'Bicolor' et 'Duet' un anneau rouge. La forme sauvage est blanche à cœur violet-noir mais plus petite (35 à 75 mm d'après une flore de Crète, vue en résumé de recherche) et à tépales plus étroits que les cultivars modernes (8 à 10 cm d'après Wikipedia ; Nijssen dit de Panda : « sometimes with an extra layer of petals »)."
+   },
+   "cultivar_libre_retenu": {
+    "id": "f_blanche",
+    "nom_enregistre": "Forme blanche d'Anemone coronaria",
+    "noms_botaniques": [
+     "var. alba Burnat",
+     "f. albiflora Foucaud (synonymes sous A. coronaria L. dans le socle GBIF)"
+    ],
+    "groupe": "forme botanique d'Anemone coronaria L.",
+    "obtenteur": null,
+    "annee": null,
+    "numeros_registre": null,
+    "protection": null,
+    "forme": "simple"
+   },
+   "marque": null,
+   "sources": [
+    {
+     "page": "https://www.inaturalist.org/observations/262539144",
+     "niveau": "N3",
+     "type": "photo",
+     "consulte": "2026-10-08",
+     "auteur": "peter_gabler",
+     "licence": "CC0 (iNaturalist)",
+     "images": [
+      "https://inaturalist-open-data.s3.amazonaws.com/photos/471575908/original.jpg"
+     ],
+     "eclairage": "plein jour, plante sauvage en place (approché)",
+     "note": "Observation iNaturalist de qualité « recherche » (Anemone coronaria, non captive), Zypern, Paphos, Paphos, CY, 2025-02-20. Fleur blanche en vue de dessus, centre violet-noir à anthères sombres, tépales étroits et longs."
+    },
+    {
+     "page": "https://www.inaturalist.org/observations/256919782",
+     "niveau": "N3",
+     "type": "photo",
+     "consulte": "2026-10-08",
+     "auteur": "sahalsey",
+     "licence": "CC-BY (iNaturalist)",
+     "images": [
+      "https://inaturalist-open-data.s3.amazonaws.com/photos/460757525/original.jpeg"
+     ],
+     "eclairage": "plein jour, plante sauvage en place (approché)",
+     "note": "Observation iNaturalist de qualité « recherche » (Anemone coronaria, non captive), Neo Chorio, Cyprus, 2024-12-25. Deux fleurs blanches à cœur violet-bleu."
+    },
+    {
+     "page": "https://commons.wikimedia.org/wiki/File:White-Anemone-Sitia-Crete-Greece.jpg",
+     "niveau": "N4",
+     "type": "photo",
+     "consulte": "2026-10-08",
+     "auteur": "Petro Stelte",
+     "licence": "CC BY-SA 4.0 (Wikimedia Commons)",
+     "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/d/d8/White-Anemone-Sitia-Crete-Greece.jpg"
+     ],
+     "note": "Fleur blanche de face, disque central sombre brun-noir (Sitia, Crète)."
+    },
+    {
+     "page": "https://commons.wikimedia.org/wiki/File:White-Anemone-coronaria-0011.jpg",
+     "niveau": "N4",
+     "type": "photo",
+     "consulte": "2026-10-08",
+     "auteur": "MathKnight and Zachi Evenor",
+     "licence": "CC BY 3.0 (Wikimedia Commons)",
+     "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/a/af/White-Anemone-coronaria-0011.jpg"
+     ],
+     "note": "Fleur blanche vue de profil, couronne d'étamines gris-bleu (Israël)."
+    },
+    {
+     "page": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7154818/",
+     "niveau": "N3",
+     "type": "texte savant",
+     "consulte": "2026-10-08",
+     "auteur": "Dafni A., Tzohari H., Ben-Shlomo R., Vereecken N.J., Ne'eman G., Plants (Bâle) 2020, 9(3):397, doi 10.3390/plants9030397",
+     "licence": "libre accès (MDPI)",
+     "note": "L'espèce a trois morphes de couleur discrets, rouge, blanc et violet-bleu, et au moins 30 variantes graduelles ; les trois morphes sont interféconds."
+    }
+   ],
+   "mesures": {}
+  },
+  {
+   "id": "blanc-vert",
+   "nom_affiche": "Blanc à cœur vert (The Bride)",
+   "teinte_catalogue": "#f7f5f0",
+   "oeil_catalogue": "#5f7a40",
+   "tige_catalogue": "#2e3a28",
+   "variete_du_nom_actuel": {
+    "variete": "The Bride",
+    "serie": "De Caen",
+    "marque": null
+   },
+   "statut": "en production",
+   "niveau_preuve": "B",
+   "raison": "Nom libre, quatre sources N3 concordantes, A après le KAVB.",
+   "nom_affiche_propose": "Blanc à cœur vert (The Bride)",
+   "correspondance": {
+    "type": "cultivar_libre",
+    "cible_id": "bride",
+    "cible": "'Die Braut' / 'The Bride' (De Caen Group)",
+    "qualite": "exacte",
+    "ecarts": "Cœur vert-jaune pâle sur toutes les photos (le catalogue met un œil vert #5f7a40 : à mesurer ; les étamines sont plutôt jaune-vert clair)."
+   },
+   "cultivar_libre_retenu": {
+    "id": "bride",
+    "nom_enregistre": "Die Braut",
+    "nom_commercial": "The Bride",
+    "synonymes": [
+     "The Bride",
+     "Bride"
+    ],
+    "groupe": "De Caen Group (RHS)",
+    "obtenteur": null,
+    "annee": 1870,
+    "numeros_registre": null,
+    "protection": null,
+    "forme": "simple"
+   },
+   "marque": null,
+   "sources": [
+    {
+     "page": "https://www.rhs.org.uk/plants/112679/anemone-coronaria-de-caen-group-die-braut/details",
+     "niveau": "N3",
+     "type": "nom+description",
+     "consulte": "2026-10-08",
+     "auteur": "Royal Horticultural Society, fiche de la base horticole (aucune photo propre à la fiche)",
+     "licence": "texte seulement",
+     "note": "Nom accepté par la RHS : 'Die Braut' (De Caen Group) ; synonymes 'The Bride' et [The Bride]. « large white flowers with green centres »."
+    },
+    {
+     "page": "https://www.rhs.org.uk/plants/98998/anemone-coronaria-(de-caen-group)-the-bride/details",
+     "niveau": "N3",
+     "type": "nom+description",
+     "consulte": "2026-10-08",
+     "auteur": "Royal Horticultural Society, fiche de la base horticole (aucune photo propre à la fiche)",
+     "licence": "texte seulement",
+     "note": "Fiche 'The Bride' (statut : synonyme de 'Die Braut')."
+    },
+    {
+     "page": "https://www.nijssenbulbs.com/anemone/8049-anemone-coronaria-039bride039-8049.html",
+     "niveau": "N3",
+     "type": "photo+nom",
+     "consulte": "2026-10-08",
+     "auteur": "Nijssen Tuin & Bulbs, Heemstede (Pays-Bas ; bulbiculteur-grossiste)",
+     "licence": "droits réservés (mesure locale seulement)",
+     "images": [
+      "https://www.nijssenbulbs.com/14835-large_default/anemone-coronaria-039bride039-8049.jpg",
+      "https://www.nijssenbulbs.com/17500-large_default/anemone-coronaria-039bride039-8049.jpg"
+     ],
+     "eclairage": "plein jour, parterre ou prairie en gros plan (approché)",
+     "note": "'Bride' : « Strong anemone with pure white flowers. Introduced in 1870. » Photos : fleurs blanches à cœur vert pâle ; 13448 = tubercules."
+    },
+    {
+     "page": "https://www.bulbi.nl/en/the-bride-coronaria",
+     "niveau": "N3",
+     "type": "photo+nom",
+     "consulte": "2026-10-08",
+     "auteur": "BULBi (grossiste de bulbes, Pays-Bas)",
+     "licence": "droits réservés (mesure locale seulement)",
+     "images": [
+      "https://www.bulbi.nl/media/catalog/product/A/n/Anemone_coronaria_The_Bride_A_1_12.jpg"
+     ],
+     "eclairage": "photo de catalogue, fleurs de parterre (approché)",
+     "note": "« beautiful white flowers with a light yellow heart » ; photo de face, étamines jaune-vert pâle."
+    },
+    {
+     "page": "https://www.dutchgrown.com/products/anemone-de-caen-the-bride",
+     "niveau": "N3",
+     "type": "photo+nom",
+     "consulte": "2026-10-08",
+     "auteur": "DutchGrown (Pays-Bas/États-Unis)",
+     "licence": "droits réservés (mesure locale seulement)",
+     "images": [
+      "https://www.dutchgrown.com/cdn/shop/products/Anemone_De_Caen_The_Bride-2.jpg"
+     ],
+     "eclairage": "plein jour, gros plan (approché)",
+     "note": "Nom 'Anemone de Caen The Bride' ; blanc pur, cœur vert-jaune."
+    },
+    {
+     "page": "https://commons.wikimedia.org/wiki/File:Anemone_coronaria_The_Bride1d.UME.JPG",
+     "niveau": "N4",
+     "type": "photo",
+     "consulte": "2026-10-08",
+     "auteur": "Epibase",
+     "licence": "CC BY 3.0 (Wikimedia Commons)",
+     "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/1/14/Anemone_coronaria_The_Bride1d.UME.JPG"
+     ],
+     "note": "'The Bride', trois fleurs blanches à cœur vert-jaune dans un massif."
+    }
+   ],
+   "mesures": {
+    "base": "#cfcec0",
+    "corps": "#dbdbd5",
+    "pointe": "#d0d0c8",
+    "revers": null,
+    "oeil": "#b3b395",
+    "couronne": "#d8d29a (visuel, non mesuré)",
+    "anneau": null,
+    "photos": [
+     "index 2 (confiance 1.00)",
+     "index 3 (confiance 0.78)"
+    ],
+    "eclairage": [
+     "plein jour, fleur en massif (approché)",
+     "plein jour, gros plan (approché)"
+    ],
+    "ecart": "corps 2 vs 3 : ΔE estimé < 10. Photos 0 et 1 écartées (groupes de fleurs, fond gris). Œil : vert-jaune pâle (#b7b69a à #afb097), non vert foncé.",
+    "niveau": "B",
+    "note": "Le cœur n'est pas vert foncé mais vert-jaune pâle sur les photos ; le catalogue (#5f7a40) est trop sombre."
+   }
+  },
+  {
+   "id": "rouge",
+   "nom_affiche": "Rouge à anneau blanc (Hollandia, Mistral Rosso)",
+   "teinte_catalogue": "#c8102e",
+   "oeil_catalogue": "#1e1628",
+   "anneau_catalogue": "#f2ece8",
+   "variete_du_nom_actuel": {
+    "variete": "Hollandia, et 'Mistral Rosso' dans le nom",
+    "serie": "De Caen / Mistral",
+    "marque": "Mistral®/Mistral Plus® (Biancheri Creazioni) : voir exclus_marque",
+    "note": "Seul 'Hollandia' est libre ; 'Mistral Rosso' n'a pas été retrouvé (seul 'Rosso Sfumato' est cité)."
+   },
+   "statut": "en production",
+   "niveau_preuve": "B",
+   "raison": "Retirer « Mistral Rosso » du nom affiché.",
+   "nom_affiche_propose": "Rouge à anneau blanc (Hollandia)",
+   "correspondance": {
+    "type": "cultivar_libre",
+    "cible_id": "hollandia",
+    "cible": "'Hollandia' (De Caen Group)",
+    "qualite": "exacte",
+    "ecarts": "Concordance : rouge écarlate, anneau blanc, cœur noir-bleu."
+   },
+   "cultivar_libre_retenu": {
+    "id": "hollandia",
+    "nom_enregistre": "Hollandia",
+    "nom_commercial": null,
+    "synonymes": [
+     "His Excellency"
+    ],
+    "groupe": "De Caen Group (RHS)",
+    "obtenteur": null,
+    "annee": null,
+    "numeros_registre": null,
+    "protection": null,
+    "forme": "simple"
+   },
+   "marque": null,
+   "sources": [
+    {
+     "page": "https://www.rhs.org.uk/plants/91632/anemone-coronaria-de-caen-group-hollandia/details",
+     "niveau": "N3",
+     "type": "nom+description+photo",
+     "consulte": "2026-10-08",
+     "auteur": "Royal Horticultural Society, fiche de la base horticole (photos : visionspictures.com)",
+     "licence": "droits réservés (mesure locale seulement)",
+     "images": [
+      "https://apps.rhs.org.uk/plantselectorimages/detail/visi00477.jpg",
+      "https://apps.rhs.org.uk/plantselectorimages/detail/visi07531.jpg"
+     ],
+     "eclairage": "photo de catalogue, plein jour (approché)",
+     "note": "Nom accepté 'Hollandia' (De Caen Group) ; synonyme 'His Excellency'. « velvety scarlet red flowers with black centres »."
+    },
+    {
+     "page": "https://www.rhs.org.uk/plants/54758/anemone-coronaria-(de-caen-group)-his-excellency/details",
+     "niveau": "N3",
+     "type": "nom+description+photo",
+     "consulte": "2026-10-08",
+     "auteur": "Royal Horticultural Society, fiche de la base horticole (photos : visionspictures.com)",
+     "licence": "droits réservés (mesure locale seulement)",
+     "images": [
+      "https://apps.rhs.org.uk/plantselectorimages/detail/visi00477.jpg",
+      "https://apps.rhs.org.uk/plantselectorimages/detail/visi07531.jpg"
+     ],
+     "eclairage": "photo de catalogue, plein jour (approché)",
+     "note": "Fiche du synonyme 'His Excellency' = 'Hollandia' (mêmes photos)."
+    },
+    {
+     "page": "https://www.nijssenbulbs.com/anemone/8051-anemone-coronaria-039hollandia039-8051.html",
+     "niveau": "N3",
+     "type": "photo+nom",
+     "consulte": "2026-10-08",
+     "auteur": "Nijssen Tuin & Bulbs, Heemstede (Pays-Bas ; bulbiculteur-grossiste)",
+     "licence": "droits réservés (mesure locale seulement)",
+     "images": [
+      "https://www.nijssenbulbs.com/15544-large_default/anemone-coronaria-039hollandia039-8051.jpg",
+      "https://www.nijssenbulbs.com/17503-large_default/anemone-coronaria-039hollandia039-8051.jpg",
+      "https://www.nijssenbulbs.com/19050-large_default/anemone-coronaria-039hollandia039-8051.jpg",
+      "https://www.nijssenbulbs.com/19051-large_default/anemone-coronaria-039hollandia039-8051.jpg"
+     ],
+     "eclairage": "plein jour, parterre ou prairie en gros plan (approché)",
+     "note": "Quatre vues de fleurs (rouge vif, anneau blanc autour du cœur noir-bleu, feuillage) ; la photo 13451 montre les tubercules."
+    },
+    {
+     "page": "https://www.bulbi.nl/en/hollandia-coronaria-z21693-config",
+     "niveau": "N3",
+     "type": "photo+nom",
+     "consulte": "2026-10-08",
+     "auteur": "BULBi (grossiste de bulbes, Pays-Bas)",
+     "licence": "droits réservés (mesure locale seulement)",
+     "images": [
+      "https://www.bulbi.nl/media/catalog/product/A/n/Anemone_coronaria_Hollandia_1_14.jpg"
+     ],
+     "eclairage": "photo de catalogue, fleurs de parterre (approché)",
+     "note": "« striking, bright red flowers with a white ring in the centre and a black heart »."
+    },
+    {
+     "page": "https://www.pacificbulbsociety.org/pbswiki/index.php/Anemone",
+     "niveau": "N3",
+     "type": "photo+nom",
+     "consulte": "2026-10-08",
+     "auteur": "Pacific Bulb Society (photos de Jim McKenney et David Pilling)",
+     "licence": "droits réservés (non réutilisable ; mesure locale seulement)",
+     "images": [
+      "https://www.pacificbulbsociety.org/pbswiki/files/Anemone/Anemone_coronaria_Hollandia_jmck_01.jpg",
+      "https://www.pacificbulbsociety.org/pbswiki/files/Anemone/Anemone_coronaria_Hollandia_DP3.jpg",
+      "https://www.pacificbulbsociety.org/pbswiki/files/Anemone/Anemone_coronaria_Hollandia_DP1.jpg",
+      "https://www.pacificbulbsociety.org/pbswiki/files/Anemone/Anemone_coronaria_Hollandia_DP5.jpg"
+     ],
+     "eclairage": "plein jour, jardin ou serre (approché) ; macros au flash ou à la lumière du jour",
+     "note": "Seul cultivar d'A. coronaria nommé de la page ; macros du cœur (dôme de pistils vert-noir violacé, couronne d'étamines bleu acier à filets rose-pourpre, anneau blanc à la base des pétales)."
+    },
+    {
+     "page": "https://commons.wikimedia.org/wiki/File:Anemone_coronaria_Hollandia_1c.JPG",
+     "niveau": "N4",
+     "type": "photo",
+     "consulte": "2026-10-08",
+     "auteur": "Consultaplantas",
+     "licence": "CC BY-SA 4.0 (Wikimedia Commons)",
+     "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/0/01/Anemone_coronaria_Hollandia_1c.JPG"
+     ],
+     "note": "'Hollandia', Jardin botanique de Barcelone : massif de fleurs rouges à anneau blanc, plante entière."
+    },
+    {
+     "page": "https://commons.wikimedia.org/wiki/File:Anemone_coronaria_Hollandia_2c.JPG",
+     "niveau": "N4",
+     "type": "photo",
+     "consulte": "2026-10-08",
+     "auteur": "Consultaplantas",
+     "licence": "CC BY-SA 4.0 (Wikimedia Commons)",
+     "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/3/39/Anemone_coronaria_Hollandia_2c.JPG"
+     ],
+     "note": "'Hollandia', Jardin botanique de Barcelone : trois-quarts, anneau blanc net, cœur noir."
+    }
+   ],
+   "mesures": {
+    "base": "#c6121a",
+    "corps": "#c80d15",
+    "pointe": "#c8101a",
+    "revers": null,
+    "oeil": "#57091c",
+    "couronne": "#2a1a20 (visuel, non mesuré)",
+    "anneau": {
+     "couleur": "#f2ece8",
+     "largeur_rel": "environ 0,25 du rayon (visuel, non mesuré)"
+    },
+    "photos": [
+     "index 5 (confiance 1.00)",
+     "index 6 (confiance 0.98)",
+     "index 7 (confiance 0.80, ombre)"
+    ],
+    "eclairage": [
+     "plein jour, fleur isolée (approché)",
+     "plein jour, fleur en massif (approché)",
+     "ombre, fleur en massif (approché)"
+    ],
+    "ecart": "Photo 7 en ombre : corps #a50d15 contre #e61019 (photo 6) : ΔE > 10. Une troisième photo en plein jour est demandée. Index 4 (champ) écarté.",
+    "niveau": "B",
+    "note": "Anneau blanc confirmé sur 5 et 6 mais non mesuré (le rayon 0,3 tombe dans le rouge). Pas de base pâle : le catalogue (#f4ece8) est faux."
+   }
+  },
+  {
+   "id": "bleu",
+   "nom_affiche": "Bleu violet (Mr Fokker, De Caen)",
+   "teinte_catalogue": "#5b4aa8",
+   "oeil_catalogue": "#1e1628",
+   "anneau_catalogue": "#ece8f4",
+   "variete_du_nom_actuel": {
+    "variete": "Mr Fokker, De Caen",
+    "serie": "De Caen",
+    "marque": null
+   },
+   "statut": "en production",
+   "niveau_preuve": "B",
+   "raison": "Nom libre, cinq sources N3 concordantes, A après le KAVB.",
+   "nom_affiche_propose": "Bleu violet (Mr Fokker)",
+   "correspondance": {
+    "type": "cultivar_libre",
+    "cible_id": "fokker",
+    "cible": "'Mister Fokker' (De Caen Group)",
+    "qualite": "exacte",
+    "ecarts": "Bleu violet saturé selon Nijssen et DutchGrown, plus clair et lavande sous la lumière des photos RHS (mesurer sur plusieurs photos). Anneau pâle discret autour du cœur."
+   },
+   "cultivar_libre_retenu": {
+    "id": "fokker",
+    "nom_enregistre": "Mister Fokker",
+    "nom_commercial": "Mr. Fokker",
+    "synonymes": [
+     "Mr Fokker",
+     "Mr. Fokker"
+    ],
+    "groupe": "De Caen Group (RHS)",
+    "obtenteur": null,
+    "annee": null,
+    "numeros_registre": null,
+    "protection": null,
+    "forme": "simple"
+   },
+   "marque": null,
+   "sources": [
+    {
+     "page": "https://www.rhs.org.uk/plants/95644/anemone-coronaria-de-caen-group-mister-fokker/details",
+     "niveau": "N3",
+     "type": "nom+description+photo",
+     "consulte": "2026-10-08",
+     "auteur": "Royal Horticultural Society, fiche de la base horticole (photos : visionspictures.com)",
+     "licence": "droits réservés (mesure locale seulement)",
+     "images": [
+      "https://apps.rhs.org.uk/plantselectorimages/detail/visi197417.jpg",
+      "https://apps.rhs.org.uk/plantselectorimages/detail/visi74605.jpg"
+     ],
+     "eclairage": "photo de catalogue, plein jour (approché)",
+     "note": "Nom accepté 'Mister Fokker' (De Caen Group) ; synonymes 'Mr Fokker'. Description : « velvety violet-blue flowers with black centres », en coupe puis en soucoupe, mars-avril ; 0,1-0,5 m. Page lue le 2026-10-08."
+    },
+    {
+     "page": "https://www.nijssenbulbs.com/anemone/8053-anemone-coronaria-039mr-fokker039-8053.html",
+     "niveau": "N3",
+     "type": "photo+nom",
+     "consulte": "2026-10-08",
+     "auteur": "Nijssen Tuin & Bulbs, Heemstede (Pays-Bas ; bulbiculteur-grossiste)",
+     "licence": "droits réservés (mesure locale seulement)",
+     "images": [
+      "https://www.nijssenbulbs.com/17501-large_default/anemone-coronaria-039mr-fokker039-8053.jpg",
+      "https://www.nijssenbulbs.com/17502-large_default/anemone-coronaria-039mr-fokker039-8053.jpg"
+     ],
+     "eclairage": "plein jour, parterre ou prairie en gros plan (approché)",
+     "note": "Nom 'Mr. Fokker' ; « large-flowered, blue anemone », couleur 'blue', 30 cm. Photo 13445 = tubercules avec pièce de 1 € (échelle)."
+    },
+    {
+     "page": "https://www.bulbi.nl/en/mr-fokker-coronaria-z26272-config",
+     "niveau": "N3",
+     "type": "photo+nom",
+     "consulte": "2026-10-08",
+     "auteur": "BULBi (grossiste de bulbes, Pays-Bas)",
+     "licence": "droits réservés (mesure locale seulement)",
+     "images": [
+      "https://www.bulbi.nl/media/catalog/product/A/n/Anemone_coronaria_Mr_Fokker_1a_1_9.jpg"
+     ],
+     "eclairage": "photo de catalogue, fleurs de parterre (approché)",
+     "note": "« beautiful violet blue flowers with a black heart » ; cœur noir, anneau d'étamines pâle."
+    },
+    {
+     "page": "https://www.dutchgrown.com/products/anemone-de-caen-mr-fokker",
+     "niveau": "N3",
+     "type": "photo+nom",
+     "consulte": "2026-10-08",
+     "auteur": "DutchGrown (Pays-Bas/États-Unis)",
+     "licence": "droits réservés (mesure locale seulement)",
+     "images": [
+      "https://www.dutchgrown.com/cdn/shop/products/Anemone_De_Caen_Mr_Fokker-1.jpg"
+     ],
+     "eclairage": "plein jour, gros plan (approché)",
+     "note": "Nom 'Anemone de Caen Mr. Fokker' ; bleu saturé, cœur noir-bleu (fiche vue en résumé de recherche : « saturated dark blue … deep black-blue center »)."
+    },
+    {
+     "page": "https://www.peternyssen.com/anemone-de-caen-mr-fokker.html",
+     "niveau": "N3",
+     "type": "nom+description+photo",
+     "consulte": "2026-10-08",
+     "auteur": "Peter Nyssen (Royaume-Uni)",
+     "licence": "droits réservés (mesure locale seulement)",
+     "images": [
+      "https://www.peternyssen.com/media/catalog/product/cache/e0a1f4cc1d0470a0b3e71e5c9b0f617d/2/5/256666d5434b4744efe4e905d15c9ae9.jpg"
+     ],
+     "eclairage": "photo de catalogue",
+     "note": "« Violet blue, open bowl-shaped flowers », bossette centrale sombre, tige de 25 à 30 cm."
+    }
+   ],
+   "mesures": {
+    "base": "#3f3a80",
+    "corps": "#5a37b1",
+    "pointe": "#7560b8",
+    "revers": null,
+    "oeil": "#1f1a3c",
+    "couronne": "#2b2740 (visuel : filets et anthères sombres, non mesuré)",
+    "anneau": null,
+    "photos": [
+     "index 9 (confiance 0.97)",
+     "index 10 (confiance 0.97)",
+     "index 11 (confiance 0.97, centre)"
+    ],
+    "eclairage": [
+     "plein jour, fleur isolée (approché)",
+     "plein jour, massif (approché)",
+     "plein jour, massif (approché)"
+    ],
+    "ecart": "Index 8 (lilas, #8d6dd0) : ΔE > 10 avec 9 : c'est peut-être une autre variété, écartée. Demande d'une troisième photo de Mister Fokker en plein jour.",
+    "niveau": "B",
+    "note": "Pas d'anneau visible. Violet bleuté foncé, proche de #5b4aa8 du catalogue."
+   }
+  },
+  {
+   "id": "lilas",
+   "nom_affiche": "Lilas (Harmony Lavender)",
+   "teinte_catalogue": "#b8a2d8",
+   "oeil_catalogue": "#2a2440",
+   "anneau_catalogue": "#f2eef8",
+   "variete_du_nom_actuel": {
+    "variete": "« Harmony Lavender »",
+    "serie": "Harmony (Sakata)",
+    "marque": "Harmony : série commerciale, marque non établie ; Lavender absent des listes de Sakata et de la RHS",
+    "note": "Seule trace : légende d'une photo de salon (Shenzhen) sur Commons."
+   },
+   "statut": "à confirmer",
+   "niveau_preuve": "B",
+   "raison": "Aucun cultivar libre nommé n'est lilas. Doublon partiel de 'bleu' si le porteur ne veut pas deux bleus.",
+   "nom_affiche_propose": "Lilas (forme sauvage lavande)",
+   "correspondance": {
+    "type": "forme_botanique",
+    "cible_id": "f_pourpre_bleue",
+    "cible": "Forme violet-bleu, nuance lavande pâle",
+    "qualite": "approchée",
+    "ecarts": "Lavande pâle à tépales étroits en nature ; anneau pâle autour du cœur visible sur certaines photos."
+   },
+   "cultivar_libre_retenu": {
+    "id": "f_pourpre_bleue",
+    "nom_enregistre": "Forme violet-bleu d'Anemone coronaria (de la lavande pâle au violet profond)",
+    "noms_botaniques": [
+     "subsp. ou var. cyanea (Risso) Arcang. ou Ardoino",
+     "var. purpurea Ardoino"
+    ],
+    "groupe": "forme botanique d'Anemone coronaria L.",
+    "obtenteur": null,
+    "annee": null,
+    "numeros_registre": null,
+    "protection": null,
+    "forme": "simple"
+   },
+   "marque": null,
+   "sources": [
+    {
+     "page": "https://www.inaturalist.org/observations/266982001",
+     "niveau": "N3",
+     "type": "photo",
+     "consulte": "2026-10-08",
+     "auteur": "srgdnch",
+     "licence": "CC-BY (iNaturalist)",
+     "images": [
+      "https://inaturalist-open-data.s3.amazonaws.com/photos/479732402/original.jpg"
+     ],
+     "eclairage": "plein jour, plante sauvage en place (approché)",
+     "note": "Observation iNaturalist de qualité « recherche » (Anemone coronaria, non captive), Crete, Greece, 2023-04-30. Fleur bleu-violet pervenche, cœur noir, tépales larges (Crète)."
+    },
+    {
+     "page": "https://www.inaturalist.org/observations/338755361",
+     "niveau": "N3",
+     "type": "photo",
+     "consulte": "2026-10-08",
+     "auteur": "marios10",
+     "licence": "CC-BY (iNaturalist)",
+     "images": [
+      "https://inaturalist-open-data.s3.amazonaws.com/photos/616108464/original.jpg"
+     ],
+     "eclairage": "plein jour, plante sauvage en place (approché)",
+     "note": "Observation iNaturalist de qualité « recherche » (Anemone coronaria, non captive), Kaplıca, 2025-02-01. Fleurs lavande à tépales étroits, cœur gris-violet (Chypre-Nord)."
+    },
+    {
+     "page": "https://www.inaturalist.org/observations/117272128",
+     "niveau": "N3",
+     "type": "photo",
+     "consulte": "2026-10-08",
+     "auteur": "grzegorz_grzejszczak",
+     "licence": "CC-BY-SA (iNaturalist)",
+     "images": [
+      "https://inaturalist-open-data.s3.amazonaws.com/photos/198036251/original.jpeg"
+     ],
+     "eclairage": "plein jour, plante sauvage en place (approché)",
+     "note": "Observation iNaturalist de qualité « recherche » (Anemone coronaria, non captive), Kreta, Grecja, 2022-03-13. Fleur lavande pâle (Crète)."
+    },
+    {
+     "page": "https://www.inaturalist.org/observations/138703969",
+     "niveau": "N3",
+     "type": "photo",
+     "consulte": "2026-10-08",
+     "auteur": "grzegorz_grzejszczak",
+     "licence": "CC-BY-SA (iNaturalist)",
+     "images": [
+      "https://inaturalist-open-data.s3.amazonaws.com/photos/237109322/original.jpeg"
+     ],
+     "eclairage": "plein jour, plante sauvage en place (approché)",
+     "note": "Observation iNaturalist de qualité « recherche » (Anemone coronaria, non captive), Kreta, Grecja, 2022-03-17. Fleur violet-bleu profond, cœur noir (Crète)."
+    },
+    {
+     "page": "https://commons.wikimedia.org/wiki/File:Purple-Blueish_Anemone_coronaria.jpg",
+     "niveau": "N4",
+     "type": "photo",
+     "consulte": "2026-10-08",
+     "auteur": "Agvania~commonswiki",
+     "licence": "CC BY-SA 4.0 (Wikimedia Commons)",
+     "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/1/16/Purple-Blueish_Anemone_coronaria.jpg"
+     ],
+     "note": "Plante entière sur fond neutre avec échelle : fleur bleu-violet pâle, cœur sombre, tubercule et fruit (Megiddo, Israël)."
+    },
+    {
+     "page": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7154818/",
+     "niveau": "N3",
+     "type": "texte savant",
+     "consulte": "2026-10-08",
+     "auteur": "Dafni A., Tzohari H., Ben-Shlomo R., Vereecken N.J., Ne'eman G., Plants (Bâle) 2020, 9(3):397, doi 10.3390/plants9030397",
+     "licence": "libre accès (MDPI)",
+     "note": "L'espèce a trois morphes de couleur discrets, rouge, blanc et violet-bleu, et au moins 30 variantes graduelles ; les trois morphes sont interféconds."
+    }
+   ],
+   "mesures": {}
+  },
+  {
+   "id": "fuchsia",
+   "nom_affiche": "Fuchsia (Mistral Fucsia, Sylphide)",
+   "teinte_catalogue": "#d81f7a",
+   "oeil_catalogue": "#1e1628",
+   "variete_du_nom_actuel": {
+    "variete": "Mistral Fucsia (= Magenta), Sylphide",
+    "serie": "Mistral / De Caen",
+    "marque": "Mistral®/Mistral Plus® (Biancheri Creazioni) : voir exclus_marque"
+   },
+   "statut": "en production",
+   "niveau_preuve": "B",
+   "raison": "Retirer « Mistral Fucsia » du nom ; vérifier au KAVB le lien de 'Sylphide' avec la série Mona Lisa®.",
+   "nom_affiche_propose": "Fuchsia (Sylphide)",
+   "correspondance": {
+    "type": "cultivar_libre",
+    "cible_id": "sylphide",
+    "cible": "'Sylphide' (De Caen)",
+    "qualite": "proche",
+    "ecarts": "Sylphide est un rose magenta un peu plus clair et violacé que #d81f7a ; cœur violet-noir."
+   },
+   "cultivar_libre_retenu": {
+    "id": "sylphide",
+    "nom_enregistre": "Sylphide",
+    "nom_commercial": null,
+    "synonymes": [],
+    "groupe": "De Caen Group (Wikipedia, grossistes) ; la RHS accepte 'Sylphide' (Mona Lisa Series)",
+    "obtenteur": null,
+    "annee": null,
+    "numeros_registre": null,
+    "protection": null,
+    "forme": "simple (photos) ; la RHS écrit « double »"
+   },
+   "marque": null,
+   "sources": [
+    {
+     "page": "https://www.rhs.org.uk/plants/65288/anemone-coronaria-sylphide-mona-lisa-series/details",
+     "niveau": "N3",
+     "type": "nom+description+photo",
+     "consulte": "2026-10-08",
+     "auteur": "Royal Horticultural Society, fiche de la base horticole (photos : visionspictures.com)",
+     "licence": "droits réservés (mesure locale seulement)",
+     "images": [
+      "https://apps.rhs.org.uk/plantselectorimages/detail/elbo15853.jpg",
+      "https://apps.rhs.org.uk/plantselectorimages/detail/vawi00758.jpg"
+     ],
+     "eclairage": "photo de catalogue, plein jour (approché)",
+     "note": "La RHS accepte 'Sylphide' (Mona Lisa Series) et classe 'Sylphide' (De Caen) en synonyme : « fine-petalled double rose-pink flowers with black centre ». Les photos montrent des fleurs simples à semi-doubles rose magenta."
+    },
+    {
+     "page": "https://www.nijssenbulbs.com/anemone/8055-anemone-coronaria-039sylphide039-8055.html",
+     "niveau": "N3",
+     "type": "photo+nom",
+     "consulte": "2026-10-08",
+     "auteur": "Nijssen Tuin & Bulbs, Heemstede (Pays-Bas ; bulbiculteur-grossiste)",
+     "licence": "droits réservés (mesure locale seulement)",
+     "images": [
+      "https://www.nijssenbulbs.com/13522-large_default/anemone-coronaria-039sylphide039-8055.jpg"
+     ],
+     "eclairage": "plein jour, parterre ou prairie en gros plan (approché)",
+     "note": "« Expressive violet-pink single flowers. » ; photo 13453 = tubercules."
+    },
+    {
+     "page": "https://www.bulbi.nl/en/sylphide-coronaria",
+     "niveau": "N3",
+     "type": "photo+nom",
+     "consulte": "2026-10-08",
+     "auteur": "BULBi (grossiste de bulbes, Pays-Bas)",
+     "licence": "droits réservés (mesure locale seulement)",
+     "images": [
+      "https://www.bulbi.nl/media/catalog/product/A/n/Anemone_de_caen_Sylphide_FA2_1_7.jpg"
+     ],
+     "eclairage": "photo de catalogue, fleurs de parterre (approché)",
+     "note": "« bright pink flowers and a dark heart » ; rose magenta vif, cœur violet-noir."
+    },
+    {
+     "page": "https://commons.wikimedia.org/wiki/File:Anemone_coronaria_'Sylphide'_3.jpg",
+     "niveau": "N4",
+     "type": "photo",
+     "consulte": "2026-10-08",
+     "auteur": "Ghislain118",
+     "licence": "CC BY-SA 3.0 (Wikimedia Commons)",
+     "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/9/9f/Anemone_coronaria_%27Sylphide%27_3.jpg"
+     ],
+     "note": "'Sylphide' : groupe de fleurs magenta à cœur violet-noir."
+    },
+    {
+     "page": "https://commons.wikimedia.org/wiki/File:Anemone_coronaria_'Sylphide'_2.JPG",
+     "niveau": "N4",
+     "type": "photo",
+     "consulte": "2026-10-08",
+     "auteur": "Ghislain118",
+     "licence": "CC BY-SA 3.0 (Wikimedia Commons)",
+     "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/f/f1/Anemone_coronaria_%27Sylphide%27_2.JPG"
+     ],
+     "note": "'Sylphide' : fleurs en entonnoir à cœur sombre, vue de dessus et de côté."
+    }
+   ],
+   "mesures": {
+    "base": "#dd24b7",
+    "corps": "#d535af",
+    "pointe": "#c83aa6",
+    "revers": null,
+    "oeil": "#991960",
+    "couronne": "#2a1220 (visuel, non mesuré)",
+    "anneau": null,
+    "photos": [
+     "index 12 (confiance 1.00)",
+     "index 15 (confiance 0.81)"
+    ],
+    "eclairage": [
+     "plein jour, massif (approché)",
+     "plein jour, gros plan (approché)"
+    ],
+    "ecart": "12 vs 15 : ΔE environ 10 (15 plus clair) ; index 14 (mauve #9a54a3) écarté, ΔE > 10 : demande d'une troisième photo. Index 13 (faible confiance, fleurs fanées) écarté.",
+    "niveau": "B",
+    "note": "Pas de base pâle : la base est aussi saturée que le corps. Le catalogue (base #f0a8d8, corps #de24a4) est trop pâle à la base."
+   }
+  },
+  {
+   "id": "rose-pale",
+   "nom_affiche": "Rose pâle (Mistral Rosa Chiaro)",
+   "teinte_catalogue": "#f2c4cf",
+   "oeil_catalogue": "#2a2440",
+   "variete_du_nom_actuel": {
+    "variete": "Mistral Rosa Chiaro",
+    "serie": "Mistral",
+    "marque": "Mistral®/Mistral Plus® (Biancheri Creazioni) : voir exclus_marque"
+   },
+   "statut": "à confirmer",
+   "niveau_preuve": "B",
+   "raison": "Pas de cultivar libre rose pâle documenté.",
+   "nom_affiche_propose": "Rose pâle (forme sauvage)",
+   "correspondance": {
+    "type": "forme_botanique",
+    "cible_id": "f_rose",
+    "cible": "Forme rose clair sauvage",
+    "qualite": "approchée",
+    "ecarts": "Rose pâle uni à cœur sombre chez la forme sauvage, moins ample que Rosa Chiaro. L'entrée RHS « De Caen Group pink-flowered » (rose velouté, cœur noir) donne le nom de groupe mais n'a pas de photo propre."
+   },
+   "cultivar_libre_retenu": {
+    "id": "f_rose",
+    "nom_enregistre": "Forme rose d'Anemone coronaria (du rose très pâle au magenta)",
+    "noms_botaniques": [
+     "f. rosea (Segond) Rouy",
+     "var. rosea (Hanry) P.Fourn."
+    ],
+    "groupe": "forme botanique d'Anemone coronaria L.",
+    "obtenteur": null,
+    "annee": null,
+    "numeros_registre": null,
+    "protection": null,
+    "forme": "simple"
+   },
+   "marque": null,
+   "sources": [
+    {
+     "page": "https://www.inaturalist.org/observations/342615067",
+     "niveau": "N3",
+     "type": "photo",
+     "consulte": "2026-10-08",
+     "auteur": "marios10",
+     "licence": "CC-BY (iNaturalist)",
+     "images": [
+      "https://inaturalist-open-data.s3.amazonaws.com/photos/623955599/original.jpg"
+     ],
+     "eclairage": "plein jour, plante sauvage en place (approché)",
+     "note": "Observation iNaturalist de qualité « recherche » (Anemone coronaria, non captive), Tuzla, 2024-12-28. Fleur rose magenta vif, cœur noir (Chypre-Nord)."
+    },
+    {
+     "page": "https://www.inaturalist.org/observations/342614780",
+     "niveau": "N3",
+     "type": "photo",
+     "consulte": "2026-10-08",
+     "auteur": "marios10",
+     "licence": "CC-BY (iNaturalist)",
+     "images": [
+      "https://inaturalist-open-data.s3.amazonaws.com/photos/623955032/original.jpg"
+     ],
+     "eclairage": "plein jour, plante sauvage en place (approché)",
+     "note": "Observation iNaturalist de qualité « recherche » (Anemone coronaria, non captive), Tuzla, 2024-12-28. Fleur rose très pâle, cœur sombre (Chypre-Nord)."
+    },
+    {
+     "page": "https://www.inaturalist.org/observations/389425264",
+     "niveau": "N3",
+     "type": "photo",
+     "consulte": "2026-10-08",
+     "auteur": "zebedeugalinha",
+     "licence": "CC-BY (iNaturalist)",
+     "images": [
+      "https://inaturalist-open-data.s3.amazonaws.com/photos/713317343/original.jpg"
+     ],
+     "eclairage": "plein jour, plante sauvage en place (approché)",
+     "note": "Observation iNaturalist de qualité « recherche » (Anemone coronaria, non captive), Neo Chorio, Paphos 8852, Chipre, 2007-03-16. Fleur rose clair (Paphos, Chypre)."
+    },
+    {
+     "page": "https://commons.wikimedia.org/wiki/File:Pink_Anemone_coronaria.jpg",
+     "niveau": "N4",
+     "type": "photo",
+     "consulte": "2026-10-08",
+     "auteur": "Agvania~commonswiki",
+     "licence": "CC BY-SA 4.0 (Wikimedia Commons)",
+     "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/4/45/Pink_Anemone_coronaria.jpg"
+     ],
+     "note": "Plante entière avec échelle : fleur rose fuchsia clair, cœur sombre, tubercule (Megiddo)."
+    },
+    {
+     "page": "https://commons.wikimedia.org/wiki/File:Close_Up_of_Pink_Anemone_coronaria.jpg",
+     "niveau": "N4",
+     "type": "photo",
+     "consulte": "2026-10-08",
+     "auteur": "Agvania~commonswiki",
+     "licence": "CC BY-SA 4.0 (Wikimedia Commons)",
+     "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/a/a4/Close_Up_of_Pink_Anemone_coronaria.jpg"
+     ],
+     "note": "Macro du cœur d'un phénotype rose : étamines bleu-noir, nervures rosées."
+    },
+    {
+     "page": "https://commons.wikimedia.org/wiki/File:Anemone_coronaria_02.jpg",
+     "niveau": "N4",
+     "type": "photo",
+     "consulte": "2026-10-08",
+     "auteur": "Zeynel Cebeci",
+     "licence": "CC BY-SA 4.0 (Wikimedia Commons)",
+     "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/7/73/Anemone_coronaria_02.jpg"
+     ],
+     "note": "« Pinky flowered poppy anemone » : rose très pâle presque blanc à cœur sombre (Turquie)."
+    },
+    {
+     "page": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7154818/",
+     "niveau": "N3",
+     "type": "texte savant",
+     "consulte": "2026-10-08",
+     "auteur": "Dafni A., Tzohari H., Ben-Shlomo R., Vereecken N.J., Ne'eman G., Plants (Bâle) 2020, 9(3):397, doi 10.3390/plants9030397",
+     "licence": "libre accès (MDPI)",
+     "note": "L'espèce a trois morphes de couleur discrets, rouge, blanc et violet-bleu, et au moins 30 variantes graduelles ; les trois morphes sont interféconds."
+    }
+   ],
+   "mesures": {}
+  },
+  {
+   "id": "saumon",
+   "nom_affiche": "Rose saumon",
+   "teinte_catalogue": "#f2a8a0",
+   "oeil_catalogue": "#2a2030",
+   "variete_du_nom_actuel": {
+    "variete": "« Rose saumon » (aucun nom de cultivar)",
+    "serie": "inconnue",
+    "marque": "Le saumon n'est documenté que chez Mistral Salmone et Rainbow Barbie (séries sous marque)"
+   },
+   "statut": "à retirer",
+   "niveau_preuve": null,
+   "raison": "Pas de variété libre ; le ton saumon ne se trouve que dans des séries sous marque.",
+   "nom_affiche_propose": null,
+   "correspondance": {
+    "type": "aucune",
+    "cible_id": null,
+    "cible": null,
+    "qualite": "aucune",
+    "ecarts": "Aucune forme sauvage ni cultivar libre saumon n'a été trouvé : le rose sauvage est froid (rose-lilas à magenta)."
+   },
+   "cultivar_libre_retenu": null,
+   "marque": "Le saumon n'est documenté que chez Mistral Salmone et Rainbow Barbie (séries sous marque)",
+   "sources": [],
+   "mesures": {}
+  },
+  {
+   "id": "bordeaux",
+   "nom_affiche": "Bordeaux (Mistral Bordeaux)",
+   "teinte_catalogue": "#6b0f2a",
+   "oeil_catalogue": "#160c14",
+   "variete_du_nom_actuel": {
+    "variete": "Mistral Bordeaux",
+    "serie": "Mistral",
+    "marque": "Mistral®/Mistral Plus® (Biancheri Creazioni) : voir exclus_marque",
+    "note": "La RHS donne aussi 'Galilee Bordeaux' en synonyme du 'Bordeaux' De Caen."
+   },
+   "statut": "à retirer",
+   "niveau_preuve": null,
+   "raison": "Nom lié aux séries Mistral® et Galilee™ ; pas de cultivar libre prouvé.",
+   "nom_affiche_propose": null,
+   "correspondance": {
+    "type": "aucune",
+    "cible_id": null,
+    "cible": null,
+    "qualite": "aucune",
+    "ecarts": "Le nom 'Bordeaux' sert à trois séries sous marque. Aucun rouge vin libre documenté (une observation iNaturalist d'un rouge sombre, prise dans un jardin anglais, ne vaut pas forme sauvage)."
+   },
+   "cultivar_libre_retenu": null,
+   "marque": "Mistral®/Mistral Plus® (Biancheri Creazioni) : voir exclus_marque",
+   "sources": [],
+   "mesures": {}
+  },
+  {
+   "id": "prune",
+   "nom_affiche": "Prune noire",
+   "teinte_catalogue": "#2a1028",
+   "oeil_catalogue": "#0e0810",
+   "variete_du_nom_actuel": {
+    "variete": "« Prune noire » (aucun nom de cultivar)",
+    "serie": "inconnue",
+    "marque": null
+   },
+   "statut": "à retirer",
+   "niveau_preuve": null,
+   "raison": "Couleur sans source (niveau D).",
+   "nom_affiche_propose": null,
+   "correspondance": {
+    "type": "aucune",
+    "cible_id": null,
+    "cible": null,
+    "qualite": "aucune",
+    "ecarts": "Aucun cultivar ni forme sauvage quasi noir prune documenté."
+   },
+   "cultivar_libre_retenu": null,
+   "marque": null,
+   "sources": [],
+   "mesures": {}
+  },
+  {
+   "id": "bicolore",
+   "nom_affiche": "Blanc cerclé de rouge (Bicolor)",
+   "teinte_catalogue": "#f6eef0",
+   "oeil_catalogue": "#1e1628",
+   "anneau_catalogue": "#c8203a",
+   "anneau_epais": 1,
+   "variete_du_nom_actuel": {
+    "variete": "Bicolor",
+    "serie": "De Caen",
+    "marque": null
+   },
+   "statut": "en production",
+   "niveau_preuve": "B",
+   "raison": "Nom libre, RHS et DutchGrown concordent ; A après le KAVB.",
+   "nom_affiche_propose": "Blanc cerclé de rouge (Bicolor)",
+   "correspondance": {
+    "type": "cultivar_libre",
+    "cible_id": "bicolor",
+    "cible": "'Bicolor' (De Caen Group) ; variante 'Duet'",
+    "qualite": "exacte",
+    "ecarts": "RHS : blanc à cœur noir et anneau rouge-framboise qui teinte un peu les pétales ; 'Duet' a un anneau rose-rouge à intensité variable."
+   },
+   "cultivar_libre_retenu": {
+    "id": "bicolor",
+    "nom_enregistre": "Bicolor",
+    "nom_commercial": "De Caen Bi-Color",
+    "synonymes": [
+     "Bi-Color",
+     "Bicolour"
+    ],
+    "groupe": "De Caen Group (RHS)",
+    "obtenteur": null,
+    "annee": null,
+    "numeros_registre": null,
+    "protection": null,
+    "forme": "simple"
+   },
+   "marque": null,
+   "sources": [
+    {
+     "page": "https://www.rhs.org.uk/plants/210962/anemone-coronaria-de-caen-group-bicolor/details",
+     "niveau": "N3",
+     "type": "nom+description+photo",
+     "consulte": "2026-10-08",
+     "auteur": "Royal Horticultural Society, fiche de la base horticole (photos : visionspictures.com)",
+     "licence": "droits réservés (mesure locale seulement)",
+     "images": [
+      "https://apps.rhs.org.uk/plantselectorimages/detail/elbo30325.jpg",
+      "https://apps.rhs.org.uk/plantselectorimages/detail/elbo68796.jpg"
+     ],
+     "eclairage": "photo de catalogue, plein jour (approché)",
+     "note": "Nom 'Bicolor' (De Caen Group), statut « Unresolved » à la RHS ; « large, striking white flowers with a black centre and a raspberry-red ring ». La photo elbo68796 montre un bouton en tulipe lavé de rouge."
+    },
+    {
+     "page": "https://www.dutchgrown.com/products/anemone-de-caen-bi-color",
+     "niveau": "N3",
+     "type": "photo+nom",
+     "consulte": "2026-10-08",
+     "auteur": "DutchGrown (Pays-Bas/États-Unis)",
+     "licence": "droits réservés (mesure locale seulement)",
+     "images": [
+      "https://www.dutchgrown.com/cdn/shop/products/Anemone_De_Caen_Bicolor-1.jpg"
+     ],
+     "eclairage": "plein jour, gros plan (approché)",
+     "note": "Nom 'Anemone de Caen Bi-Color' : fleur blanche, flammes et anneau rouge-framboise autour du cœur noir."
+    }
+   ],
+   "mesures": {
+    "base": "#f8e7ed",
+    "corps": "#f8e7ed",
+    "pointe": "#f1ebee",
+    "revers": null,
+    "oeil": "#1c1122",
+    "couronne": "#2a1c31 (visuel, non mesuré)",
+    "anneau": {
+     "couleur": "#fc7fa5 (mesuré) ; cerise sur le visuel",
+     "largeur_rel": "environ 0,3 à 0,4 du rayon"
+    },
+    "photos": [
+     "index 18 (confiance 0.99)",
+     "index 16 (confiance 0.78, petites fleurs)"
+    ],
+    "eclairage": [
+     "plein jour, gros plan (approché)",
+     "plein jour, massif (approché)"
+    ],
+    "ecart": "Corps 16 (#cd8e9e) contre 18 (#f8e7ed) : ΔE > 10, index 16 en mélange. Index 17 (bouton) écarté. Anneau : #fc7fa5 mesuré contre #c8203a du catalogue : demande d'une troisième photo.",
+    "niveau": "B",
+    "note": "Le bord du pétale est blanc, l'anneau rouge. Catalogue : #c8203a à confirmer."
+   }
+  },
+  {
+   "id": "bleu-roi",
+   "nom_affiche": "Bleu roi (Mistral Blu)",
+   "teinte_catalogue": "#4c34bc",
+   "oeil_catalogue": "#1a1838",
+   "tardif": 1,
+   "variete_du_nom_actuel": {
+    "variete": "Mistral Blu (Mistral Plus® Blu)",
+    "serie": "Mistral Plus®",
+    "marque": "Mistral®/Mistral Plus® (Biancheri Creazioni) : voir exclus_marque",
+    "note": "Nijssen : « soft lilac-blue » ; RHS : « vivid violet-blue »."
+   },
+   "statut": "à retirer",
+   "niveau_preuve": null,
+   "raison": "Doublon de 'bleu' : retirer, pas de variété libre distincte.",
+   "nom_affiche_propose": null,
+   "correspondance": {
+    "type": "cultivar_libre",
+    "cible_id": "fokker",
+    "cible": "'Mister Fokker'",
+    "qualite": "doublon",
+    "ecarts": "#4c34bc et #5b4aa8 sont presque la même teinte ; Mr Fokker couvre le bleu violet saturé.",
+    "doublon_de": "bleu"
+   },
+   "cultivar_libre_retenu": null,
+   "marque": "Mistral®/Mistral Plus® (Biancheri Creazioni) : voir exclus_marque",
+   "sources": [],
+   "mesures": {}
+  },
+  {
+   "id": "bleu-lavande",
+   "nom_affiche": "Bleu lavande (Galilee Blue)",
+   "teinte_catalogue": "#9078d6",
+   "oeil_catalogue": "#1e1a36",
+   "tardif": 1,
+   "variete_du_nom_actuel": {
+    "variete": "Galilee Blue",
+    "serie": "Galilee™",
+    "marque": "Galilee™/Rainbow™ (Yodfat, Danziger) : voir exclus_marque"
+   },
+   "statut": "à retirer",
+   "niveau_preuve": null,
+   "raison": "Doublon de 'lilas' ; Galilee™ est une marque.",
+   "nom_affiche_propose": null,
+   "correspondance": {
+    "type": "forme_botanique",
+    "cible_id": "f_pourpre_bleue",
+    "cible": "Forme violet-bleu, lavande",
+    "qualite": "doublon",
+    "ecarts": "Entre 'lilas' et 'bleu' ; pas de variété libre distincte.",
+    "doublon_de": "lilas"
+   },
+   "cultivar_libre_retenu": null,
+   "marque": "Galilee™/Rainbow™ (Yodfat, Danziger) : voir exclus_marque",
+   "sources": [],
+   "mesures": {}
+  },
+  {
+   "id": "azzurro",
+   "nom_affiche": "Lavande à cœur blanc (Mistral Azzurro)",
+   "teinte_catalogue": "#9e66cf",
+   "oeil_catalogue": "#221a34",
+   "tardif": 1,
+   "variete_du_nom_actuel": {
+    "variete": "Mistral Plus® Azzurro",
+    "serie": "Mistral Plus®",
+    "marque": "Mistral®/Mistral Plus® (Biancheri Creazioni) : voir exclus_marque"
+   },
+   "statut": "à retirer",
+   "niveau_preuve": null,
+   "raison": "Doublon de 'lilas', motif non documenté en libre.",
+   "nom_affiche_propose": null,
+   "correspondance": {
+    "type": "forme_botanique",
+    "cible_id": "f_pourpre_bleue",
+    "cible": "Forme violet-bleu, lavande",
+    "qualite": "doublon",
+    "ecarts": "Le motif « cœur blanc » de la série n'a pas de photo libre.",
+    "doublon_de": "lilas"
+   },
+   "cultivar_libre_retenu": null,
+   "marque": "Mistral®/Mistral Plus® (Biancheri Creazioni) : voir exclus_marque",
+   "sources": [],
+   "mesures": {}
+  },
+  {
+   "id": "bleu-blanc",
+   "nom_affiche": "Blanc à cœur bleu (Rainbow Blue/White)",
+   "teinte_catalogue": "#f2f0f6",
+   "oeil_catalogue": "#1c1834",
+   "tardif": 1,
+   "variete_du_nom_actuel": {
+    "variete": "Rainbow Blue/White",
+    "serie": "Rainbow™",
+    "marque": "Galilee™/Rainbow™ (Yodfat, Danziger) : voir exclus_marque"
+   },
+   "statut": "à retirer",
+   "niveau_preuve": null,
+   "raison": "Doublon de 'blanc' ; Rainbow™ est une marque.",
+   "nom_affiche_propose": null,
+   "correspondance": {
+    "type": "forme_botanique",
+    "cible_id": "f_blanche",
+    "cible": "Forme blanche à cœur sombre",
+    "qualite": "doublon",
+    "ecarts": "#f2f0f6 à œil sombre : quasi identique au blanc.",
+    "doublon_de": "blanc"
+   },
+   "cultivar_libre_retenu": null,
+   "marque": "Galilee™/Rainbow™ (Yodfat, Danziger) : voir exclus_marque",
+   "sources": [],
+   "mesures": {}
+  },
+  {
+   "id": "rose-vif",
+   "nom_affiche": "Rose vif (Galilee Pink)",
+   "teinte_catalogue": "#e577bd",
+   "oeil_catalogue": "#221628",
+   "tardif": 1,
+   "variete_du_nom_actuel": {
+    "variete": "Galilee Pink",
+    "serie": "Galilee™",
+    "marque": "Galilee™/Rainbow™ (Yodfat, Danziger) : voir exclus_marque"
+   },
+   "statut": "à confirmer",
+   "niveau_preuve": "B",
+   "raison": "Garder si le porteur veut deux roses (fuchsia = Sylphide, rose vif = forme sauvage).",
+   "nom_affiche_propose": "Rose vif (forme sauvage)",
+   "correspondance": {
+    "type": "forme_botanique",
+    "cible_id": "f_rose",
+    "cible": "Forme rose magenta sauvage",
+    "qualite": "approchée",
+    "ecarts": "Rose magenta à cœur noir en nature ; 'Sylphide' est déjà pris par 'fuchsia'."
+   },
+   "cultivar_libre_retenu": {
+    "id": "f_rose",
+    "nom_enregistre": "Forme rose d'Anemone coronaria (du rose très pâle au magenta)",
+    "noms_botaniques": [
+     "f. rosea (Segond) Rouy",
+     "var. rosea (Hanry) P.Fourn."
+    ],
+    "groupe": "forme botanique d'Anemone coronaria L.",
+    "obtenteur": null,
+    "annee": null,
+    "numeros_registre": null,
+    "protection": null,
+    "forme": "simple"
+   },
+   "marque": null,
+   "sources": [
+    {
+     "page": "https://www.inaturalist.org/observations/342615067",
+     "niveau": "N3",
+     "type": "photo",
+     "consulte": "2026-10-08",
+     "auteur": "marios10",
+     "licence": "CC-BY (iNaturalist)",
+     "images": [
+      "https://inaturalist-open-data.s3.amazonaws.com/photos/623955599/original.jpg"
+     ],
+     "eclairage": "plein jour, plante sauvage en place (approché)",
+     "note": "Observation iNaturalist de qualité « recherche » (Anemone coronaria, non captive), Tuzla, 2024-12-28. Fleur rose magenta vif, cœur noir (Chypre-Nord)."
+    },
+    {
+     "page": "https://www.inaturalist.org/observations/342614780",
+     "niveau": "N3",
+     "type": "photo",
+     "consulte": "2026-10-08",
+     "auteur": "marios10",
+     "licence": "CC-BY (iNaturalist)",
+     "images": [
+      "https://inaturalist-open-data.s3.amazonaws.com/photos/623955032/original.jpg"
+     ],
+     "eclairage": "plein jour, plante sauvage en place (approché)",
+     "note": "Observation iNaturalist de qualité « recherche » (Anemone coronaria, non captive), Tuzla, 2024-12-28. Fleur rose très pâle, cœur sombre (Chypre-Nord)."
+    },
+    {
+     "page": "https://www.inaturalist.org/observations/389425264",
+     "niveau": "N3",
+     "type": "photo",
+     "consulte": "2026-10-08",
+     "auteur": "zebedeugalinha",
+     "licence": "CC-BY (iNaturalist)",
+     "images": [
+      "https://inaturalist-open-data.s3.amazonaws.com/photos/713317343/original.jpg"
+     ],
+     "eclairage": "plein jour, plante sauvage en place (approché)",
+     "note": "Observation iNaturalist de qualité « recherche » (Anemone coronaria, non captive), Neo Chorio, Paphos 8852, Chipre, 2007-03-16. Fleur rose clair (Paphos, Chypre)."
+    },
+    {
+     "page": "https://commons.wikimedia.org/wiki/File:Pink_Anemone_coronaria.jpg",
+     "niveau": "N4",
+     "type": "photo",
+     "consulte": "2026-10-08",
+     "auteur": "Agvania~commonswiki",
+     "licence": "CC BY-SA 4.0 (Wikimedia Commons)",
+     "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/4/45/Pink_Anemone_coronaria.jpg"
+     ],
+     "note": "Plante entière avec échelle : fleur rose fuchsia clair, cœur sombre, tubercule (Megiddo)."
+    },
+    {
+     "page": "https://commons.wikimedia.org/wiki/File:Close_Up_of_Pink_Anemone_coronaria.jpg",
+     "niveau": "N4",
+     "type": "photo",
+     "consulte": "2026-10-08",
+     "auteur": "Agvania~commonswiki",
+     "licence": "CC BY-SA 4.0 (Wikimedia Commons)",
+     "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/a/a4/Close_Up_of_Pink_Anemone_coronaria.jpg"
+     ],
+     "note": "Macro du cœur d'un phénotype rose : étamines bleu-noir, nervures rosées."
+    },
+    {
+     "page": "https://commons.wikimedia.org/wiki/File:Anemone_coronaria_02.jpg",
+     "niveau": "N4",
+     "type": "photo",
+     "consulte": "2026-10-08",
+     "auteur": "Zeynel Cebeci",
+     "licence": "CC BY-SA 4.0 (Wikimedia Commons)",
+     "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/7/73/Anemone_coronaria_02.jpg"
+     ],
+     "note": "« Pinky flowered poppy anemone » : rose très pâle presque blanc à cœur sombre (Turquie)."
+    },
+    {
+     "page": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7154818/",
+     "niveau": "N3",
+     "type": "texte savant",
+     "consulte": "2026-10-08",
+     "auteur": "Dafni A., Tzohari H., Ben-Shlomo R., Vereecken N.J., Ne'eman G., Plants (Bâle) 2020, 9(3):397, doi 10.3390/plants9030397",
+     "licence": "libre accès (MDPI)",
+     "note": "L'espèce a trois morphes de couleur discrets, rouge, blanc et violet-bleu, et au moins 30 variantes graduelles ; les trois morphes sont interféconds."
+    }
+   ],
+   "mesures": {}
+  },
+  {
+   "id": "rarity",
+   "nom_affiche": "Mauve rosé (Mistral Rarity)",
+   "teinte_catalogue": "#c480a0",
+   "oeil_catalogue": "#24142a",
+   "tardif": 1,
+   "variete_du_nom_actuel": {
+    "variete": "Mistral Plus® Rarity",
+    "serie": "Mistral Plus®",
+    "marque": "Mistral®/Mistral Plus® (Biancheri Creazioni) : voir exclus_marque",
+    "note": "Pétales blancs qui rosissent en mauve, bleu et rose lavande (Tesselaar)."
+   },
+   "statut": "à retirer",
+   "niveau_preuve": null,
+   "raison": "Sélection propre à la série Mistral Plus®.",
+   "nom_affiche_propose": null,
+   "correspondance": {
+    "type": "aucune",
+    "cible_id": null,
+    "cible": null,
+    "qualite": "aucune",
+    "ecarts": "Aucune fleur libre à teintes changeantes de ce type."
+   },
+   "cultivar_libre_retenu": null,
+   "marque": "Mistral®/Mistral Plus® (Biancheri Creazioni) : voir exclus_marque",
+   "sources": [],
+   "mesures": {}
+  },
+  {
+   "id": "ecarlate",
+   "nom_affiche": "Écarlate (Galilee Red)",
+   "teinte_catalogue": "#ee1414",
+   "oeil_catalogue": "#141018",
+   "tardif": 1,
+   "variete_du_nom_actuel": {
+    "variete": "Galilee Red",
+    "serie": "Galilee™",
+    "marque": "Galilee™/Rainbow™ (Yodfat, Danziger) : voir exclus_marque"
+   },
+   "statut": "à confirmer",
+   "niveau_preuve": "B",
+   "raison": "Doublon partiel de 'rouge' (Hollandia a l'anneau blanc) : garder seulement si le porteur veut un rouge sans anneau.",
+   "nom_affiche_propose": "Écarlate (forme sauvage)",
+   "correspondance": {
+    "type": "forme_botanique",
+    "cible_id": "f_rouge",
+    "cible": "Forme rouge sauvage",
+    "qualite": "approchée",
+    "ecarts": "Rouge écarlate à cœur pourpre-noir, sans anneau net (certaines plantes en ont un) : la RHS décrit « vermillion-red with dark purplish stamens ».",
+    "doublon_de": "rouge"
+   },
+   "cultivar_libre_retenu": {
+    "id": "f_rouge",
+    "nom_enregistre": "Forme rouge d'Anemone coronaria",
+    "noms_botaniques": [
+     "var. coccinea (Jord.) Burnat",
+     "var. phoenicea Ardoino",
+     "A. coronaria var. coronaria (RHS)"
+    ],
+    "groupe": "forme botanique d'Anemone coronaria L.",
+    "obtenteur": null,
+    "annee": null,
+    "numeros_registre": null,
+    "protection": null,
+    "forme": "simple"
+   },
+   "marque": null,
+   "sources": [
+    {
+     "page": "https://www.inaturalist.org/observations/66959331",
+     "niveau": "N3",
+     "type": "photo",
+     "consulte": "2026-10-08",
+     "auteur": "aryehm",
+     "licence": "CC0 (iNaturalist)",
+     "images": [
+      "https://inaturalist-open-data.s3.amazonaws.com/photos/108066151/original.jpeg"
+     ],
+     "eclairage": "plein jour, plante sauvage en place (approché)",
+     "note": "Observation iNaturalist de qualité « recherche » (Anemone coronaria, non captive), Givat Ram, Jerusalem, Israel, 2020-12-23. Fleur rouge écarlate sans anneau net, cœur pourpre-noir (Jérusalem)."
+    },
+    {
+     "page": "https://www.inaturalist.org/observations/66970680",
+     "niveau": "N3",
+     "type": "photo",
+     "consulte": "2026-10-08",
+     "auteur": "bobw75",
+     "licence": "CC-BY (iNaturalist)",
+     "images": [
+      "https://inaturalist-open-data.s3.amazonaws.com/photos/108087491/original.jpg"
+     ],
+     "eclairage": "plein jour, plante sauvage en place (approché)",
+     "note": "Observation iNaturalist de qualité « recherche » (Anemone coronaria, non captive), Hadera, Israel, 2017-02-25. Fleur rouge à petit anneau blanc autour du cœur sombre (Hadera)."
+    },
+    {
+     "page": "https://www.rhs.org.uk/plants/294169/anemone-coronaria-var-rosea/details",
+     "niveau": "N3",
+     "type": "nom+description+photo",
+     "consulte": "2026-10-08",
+     "auteur": "Royal Horticultural Society, fiche de la base horticole (photos : visionspictures.com)",
+     "licence": "droits réservés (mesure locale seulement)",
+     "images": [
+      "https://apps.rhs.org.uk/plantselectorimages/detail/sepa13038.jpg",
+      "https://apps.rhs.org.uk/plantselectorimages/detail/vaem11501.jpg"
+     ],
+     "eclairage": "photo de catalogue, plein jour (approché)",
+     "note": "Fiche RHS 'A. coronaria var. rosea' (statut : synonyme ; autres synonymes 'A. coronaria red', var. phoenica) : « large, shallowly cup-shaped vermillion-red flowers with dark purplish stamens ». Photo vaem11501 = macro du cœur."
+    },
+    {
+     "page": "https://commons.wikimedia.org/wiki/File:Anemone_coronaria_cultivar_1DS-II_3-8811.jpg",
+     "niveau": "N4",
+     "type": "photo",
+     "consulte": "2026-10-08",
+     "auteur": "SAplants",
+     "licence": "CC BY-SA 4.0 (Wikimedia Commons)",
+     "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/9/9e/Anemone_coronaria_cultivar_1DS-II_3-8811.jpg"
+     ],
+     "note": "Plante entière en fleur (naturalisée, Afrique du Sud) : fleur rouge à cœur sombre et petit anneau pâle, feuillage en rosette."
+    },
+    {
+     "page": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7154818/",
+     "niveau": "N3",
+     "type": "texte savant",
+     "consulte": "2026-10-08",
+     "auteur": "Dafni A., Tzohari H., Ben-Shlomo R., Vereecken N.J., Ne'eman G., Plants (Bâle) 2020, 9(3):397, doi 10.3390/plants9030397",
+     "licence": "libre accès (MDPI)",
+     "note": "L'espèce a trois morphes de couleur discrets, rouge, blanc et violet-bleu, et au moins 30 variantes graduelles ; les trois morphes sont interféconds."
+    }
+   ],
+   "mesures": {}
+  },
+  {
+   "id": "rouge-blanc",
+   "nom_affiche": "Rouge et blanc (Rainbow Red/White)",
+   "teinte_catalogue": "#e91047",
+   "oeil_catalogue": "#1c1430",
+   "tardif": 1,
+   "variete_du_nom_actuel": {
+    "variete": "Rainbow Red/White",
+    "serie": "Rainbow™",
+    "marque": "Galilee™/Rainbow™ (Yodfat, Danziger) : voir exclus_marque"
+   },
+   "statut": "à confirmer",
+   "niveau_preuve": "B",
+   "raison": "Seule forme libre rouge et blanc documentée ; absorbe aussi le motif 'tigre'.",
+   "nom_affiche_propose": "Rouge marbré de blanc (forme sauvage)",
+   "correspondance": {
+    "type": "forme_botanique",
+    "cible_id": "f_panachee",
+    "cible": "Forme panachée rouge et blanc sauvage",
+    "qualite": "approchée",
+    "ecarts": "Pétales rouges marbrés ou flammés de blanc en nature ; seulement deux sources (une observation et un cliché Commons)."
+   },
+   "cultivar_libre_retenu": {
+    "id": "f_panachee",
+    "nom_enregistre": "Forme panachée rouge et blanc d'Anemone coronaria",
+    "noms_botaniques": [
+     "variante graduelle (pas de nom botanique propre trouvé)"
+    ],
+    "groupe": "forme botanique d'Anemone coronaria L.",
+    "obtenteur": null,
+    "annee": null,
+    "numeros_registre": null,
+    "protection": null,
+    "forme": "simple"
+   },
+   "marque": null,
+   "sources": [
+    {
+     "page": "https://www.inaturalist.org/observations/69133136",
+     "niveau": "N3",
+     "type": "photo",
+     "consulte": "2026-10-08",
+     "auteur": "eleftherioskats",
+     "licence": "CC-BY (iNaturalist)",
+     "images": [
+      "https://inaturalist-open-data.s3.amazonaws.com/photos/112108864/original.jpeg"
+     ],
+     "eclairage": "plein jour, plante sauvage en place (approché)",
+     "note": "Observation iNaturalist de qualité « recherche » (Anemone coronaria, non captive), Περιφέρεια Νοτίου Αιγαίου, Ελλάδα, 2021-02-04. Fleur étoilée rouge à taches et flammes blanches, anneau blanc autour du cœur sombre (Égée-Sud)."
+    },
+    {
+     "page": "https://commons.wikimedia.org/wiki/File:Anemone_(Red_and_white).jpg",
+     "niveau": "N4",
+     "type": "photo",
+     "consulte": "2026-10-08",
+     "auteur": "Davidbena",
+     "licence": "CC BY-SA 4.0 (Wikimedia Commons)",
+     "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/e/ef/Anemone_%28Red_and_white%29.jpg"
+     ],
+     "note": "Fleur rouge et blanc marbrée, vallée d'Elah (Israël) ; légende de Wikipedia : « Red and white anemone »."
+    },
+    {
+     "page": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7154818/",
+     "niveau": "N3",
+     "type": "texte savant",
+     "consulte": "2026-10-08",
+     "auteur": "Dafni A., Tzohari H., Ben-Shlomo R., Vereecken N.J., Ne'eman G., Plants (Bâle) 2020, 9(3):397, doi 10.3390/plants9030397",
+     "licence": "libre accès (MDPI)",
+     "note": "L'espèce a trois morphes de couleur discrets, rouge, blanc et violet-bleu, et au moins 30 variantes graduelles ; les trois morphes sont interféconds."
+    }
+   ],
+   "mesures": {}
+  },
+  {
+   "id": "tigre",
+   "nom_affiche": "Blanc flammé de rouge (Mistral Tigre)",
+   "teinte_catalogue": "#d3053d",
+   "oeil_catalogue": "#160c18",
+   "tardif": 1,
+   "variete_du_nom_actuel": {
+    "variete": "Mistral Tigre",
+    "serie": "Mistral",
+    "marque": "Mistral®/Mistral Plus® (Biancheri Creazioni) : voir exclus_marque",
+    "note": "Tesselaar : « White petals with variable red flecks … clear white eye »."
+   },
+   "statut": "à retirer",
+   "niveau_preuve": null,
+   "raison": "Doublon de 'rouge-blanc' ; motif propre à une série sous marque.",
+   "nom_affiche_propose": null,
+   "correspondance": {
+    "type": "forme_botanique",
+    "cible_id": "f_panachee",
+    "cible": "Forme panachée rouge et blanc",
+    "qualite": "doublon",
+    "ecarts": "Le motif tigré blanc moucheté de rouge est celui de Mistral Tigre ; la forme sauvage est rouge marbré de blanc.",
+    "doublon_de": "rouge-blanc"
+   },
+   "cultivar_libre_retenu": null,
+   "marque": "Mistral®/Mistral Plus® (Biancheri Creazioni) : voir exclus_marque",
+   "sources": [],
+   "mesures": {}
+  },
+  {
+   "id": "tigre-vin",
+   "nom_affiche": "Blanc flammé de pourpre (Mistral Tigre Wine)",
+   "teinte_catalogue": "#f2eef4",
+   "oeil_catalogue": "#1a1424",
+   "tardif": 1,
+   "variete_du_nom_actuel": {
+    "variete": "Mistral Tigre Wine",
+    "serie": "Mistral",
+    "marque": "Mistral®/Mistral Plus® (Biancheri Creazioni) : voir exclus_marque"
+   },
+   "statut": "à retirer",
+   "niveau_preuve": null,
+   "raison": "Sélection propre à la série Mistral.",
+   "nom_affiche_propose": null,
+   "correspondance": {
+    "type": "aucune",
+    "cible_id": null,
+    "cible": null,
+    "qualite": "aucune",
+    "ecarts": "Aucun blanc flammé de pourpre en libre."
+   },
+   "cultivar_libre_retenu": null,
+   "marque": "Mistral®/Mistral Plus® (Biancheri Creazioni) : voir exclus_marque",
+   "sources": [],
+   "mesures": {}
+  },
+  {
+   "id": "raisin",
+   "nom_affiche": "Raisin à œil bleu (Mistral Grape)",
+   "teinte_catalogue": "#86205e",
+   "oeil_catalogue": "#141020",
+   "tardif": 1,
+   "variete_du_nom_actuel": {
+    "variete": "Mistral Grape",
+    "serie": "Mistral",
+    "marque": "Mistral®/Mistral Plus® (Biancheri Creazioni) : voir exclus_marque",
+    "note": "Tesselaar : « Deep grape purple bleeding into a blue centre »."
+   },
+   "statut": "à retirer",
+   "niveau_preuve": null,
+   "raison": "Sélection propre à la série Mistral.",
+   "nom_affiche_propose": null,
+   "correspondance": {
+    "type": "aucune",
+    "cible_id": null,
+    "cible": null,
+    "qualite": "aucune",
+    "ecarts": "Pas de forme sauvage prune-magenta foncé à œil bleu documentée."
+   },
+   "cultivar_libre_retenu": null,
+   "marque": "Mistral®/Mistral Plus® (Biancheri Creazioni) : voir exclus_marque",
+   "sources": [],
+   "mesures": {}
+  },
+  {
+   "id": "blush",
+   "nom_affiche": "Blanc rosé (Mistral Blush)",
+   "teinte_catalogue": "#f6ece8",
+   "oeil_catalogue": "#221a28",
+   "tardif": 1,
+   "variete_du_nom_actuel": {
+    "variete": "« Mistral Blush » (nom non retrouvé ; 'Mistral Pale' existe chez Nijssen)",
+    "serie": "Mistral",
+    "marque": "Mistral®/Mistral Plus® (Biancheri Creazioni) : voir exclus_marque"
+   },
+   "statut": "à confirmer",
+   "niveau_preuve": "B",
+   "raison": "Garder seulement comme rose très pâle ; sinon doublon de 'rose-pale'.",
+   "nom_affiche_propose": "Blanc rosé (forme sauvage)",
+   "correspondance": {
+    "type": "forme_botanique",
+    "cible_id": "f_rose",
+    "cible": "Forme rose très pâle sauvage",
+    "qualite": "approchée",
+    "ecarts": "Blanc rosé à cœur sombre ; la photo Commons 'pinky flowered' et l'observation de Tuzla en donnent la teinte."
+   },
+   "cultivar_libre_retenu": {
+    "id": "f_rose",
+    "nom_enregistre": "Forme rose d'Anemone coronaria (du rose très pâle au magenta)",
+    "noms_botaniques": [
+     "f. rosea (Segond) Rouy",
+     "var. rosea (Hanry) P.Fourn."
+    ],
+    "groupe": "forme botanique d'Anemone coronaria L.",
+    "obtenteur": null,
+    "annee": null,
+    "numeros_registre": null,
+    "protection": null,
+    "forme": "simple"
+   },
+   "marque": null,
+   "sources": [
+    {
+     "page": "https://www.inaturalist.org/observations/342615067",
+     "niveau": "N3",
+     "type": "photo",
+     "consulte": "2026-10-08",
+     "auteur": "marios10",
+     "licence": "CC-BY (iNaturalist)",
+     "images": [
+      "https://inaturalist-open-data.s3.amazonaws.com/photos/623955599/original.jpg"
+     ],
+     "eclairage": "plein jour, plante sauvage en place (approché)",
+     "note": "Observation iNaturalist de qualité « recherche » (Anemone coronaria, non captive), Tuzla, 2024-12-28. Fleur rose magenta vif, cœur noir (Chypre-Nord)."
+    },
+    {
+     "page": "https://www.inaturalist.org/observations/342614780",
+     "niveau": "N3",
+     "type": "photo",
+     "consulte": "2026-10-08",
+     "auteur": "marios10",
+     "licence": "CC-BY (iNaturalist)",
+     "images": [
+      "https://inaturalist-open-data.s3.amazonaws.com/photos/623955032/original.jpg"
+     ],
+     "eclairage": "plein jour, plante sauvage en place (approché)",
+     "note": "Observation iNaturalist de qualité « recherche » (Anemone coronaria, non captive), Tuzla, 2024-12-28. Fleur rose très pâle, cœur sombre (Chypre-Nord)."
+    },
+    {
+     "page": "https://www.inaturalist.org/observations/389425264",
+     "niveau": "N3",
+     "type": "photo",
+     "consulte": "2026-10-08",
+     "auteur": "zebedeugalinha",
+     "licence": "CC-BY (iNaturalist)",
+     "images": [
+      "https://inaturalist-open-data.s3.amazonaws.com/photos/713317343/original.jpg"
+     ],
+     "eclairage": "plein jour, plante sauvage en place (approché)",
+     "note": "Observation iNaturalist de qualité « recherche » (Anemone coronaria, non captive), Neo Chorio, Paphos 8852, Chipre, 2007-03-16. Fleur rose clair (Paphos, Chypre)."
+    },
+    {
+     "page": "https://commons.wikimedia.org/wiki/File:Pink_Anemone_coronaria.jpg",
+     "niveau": "N4",
+     "type": "photo",
+     "consulte": "2026-10-08",
+     "auteur": "Agvania~commonswiki",
+     "licence": "CC BY-SA 4.0 (Wikimedia Commons)",
+     "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/4/45/Pink_Anemone_coronaria.jpg"
+     ],
+     "note": "Plante entière avec échelle : fleur rose fuchsia clair, cœur sombre, tubercule (Megiddo)."
+    },
+    {
+     "page": "https://commons.wikimedia.org/wiki/File:Close_Up_of_Pink_Anemone_coronaria.jpg",
+     "niveau": "N4",
+     "type": "photo",
+     "consulte": "2026-10-08",
+     "auteur": "Agvania~commonswiki",
+     "licence": "CC BY-SA 4.0 (Wikimedia Commons)",
+     "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/a/a4/Close_Up_of_Pink_Anemone_coronaria.jpg"
+     ],
+     "note": "Macro du cœur d'un phénotype rose : étamines bleu-noir, nervures rosées."
+    },
+    {
+     "page": "https://commons.wikimedia.org/wiki/File:Anemone_coronaria_02.jpg",
+     "niveau": "N4",
+     "type": "photo",
+     "consulte": "2026-10-08",
+     "auteur": "Zeynel Cebeci",
+     "licence": "CC BY-SA 4.0 (Wikimedia Commons)",
+     "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/7/73/Anemone_coronaria_02.jpg"
+     ],
+     "note": "« Pinky flowered poppy anemone » : rose très pâle presque blanc à cœur sombre (Turquie)."
+    },
+    {
+     "page": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7154818/",
+     "niveau": "N3",
+     "type": "texte savant",
+     "consulte": "2026-10-08",
+     "auteur": "Dafni A., Tzohari H., Ben-Shlomo R., Vereecken N.J., Ne'eman G., Plants (Bâle) 2020, 9(3):397, doi 10.3390/plants9030397",
+     "licence": "libre accès (MDPI)",
+     "note": "L'espèce a trois morphes de couleur discrets, rouge, blanc et violet-bleu, et au moins 30 variantes graduelles ; les trois morphes sont interféconds."
+    }
+   ],
+   "mesures": {}
+  }
+ ],
+ "inventaire": [
+  {
+   "id": "fokker",
+   "nom_enregistre": "Mister Fokker",
+   "nom_commercial": "Mr. Fokker",
+   "synonymes": [
+    "Mr Fokker",
+    "Mr. Fokker"
+   ],
+   "groupe": "De Caen Group (RHS)",
+   "forme": "simple",
+   "obtenteur": null,
+   "annee": null,
+   "numeros_registre": null,
+   "couleur_registre": "violet-blue (RHS) ; blue (Nijssen, BULBi : « violet blue … black heart »)",
+   "motif": "unie, cœur noir-bleu, couronne d'étamines pâle ou bleu acier, anneau pâle discret",
+   "marque": null,
+   "marque_note": "Aucun ™ ni ® relevé sur les fiches RHS, Nijssen, BULBi, DutchGrown, Harding & Bloom ; nom de cultivar au sens ICNCP. Registre des marques (EUIPO, WIPO, UIBM) non interrogé.",
+   "niveau_preuve": "B",
+   "statut": "en production (B ; A possible si le KAVB confirme)",
+   "rattache_au_catalogue": "bleu",
+   "sources": [
+    {
+     "page": "https://www.rhs.org.uk/plants/95644/anemone-coronaria-de-caen-group-mister-fokker/details",
+     "niveau": "N3",
+     "type": "nom+description+photo",
+     "consulte": "2026-10-08",
+     "auteur": "Royal Horticultural Society, fiche de la base horticole (photos : visionspictures.com)",
+     "licence": "droits réservés (mesure locale seulement)",
+     "images": [
+      "https://apps.rhs.org.uk/plantselectorimages/detail/visi197417.jpg",
+      "https://apps.rhs.org.uk/plantselectorimages/detail/visi74605.jpg"
+     ],
+     "eclairage": "photo de catalogue, plein jour (approché)",
+     "note": "Nom accepté 'Mister Fokker' (De Caen Group) ; synonymes 'Mr Fokker'. Description : « velvety violet-blue flowers with black centres », en coupe puis en soucoupe, mars-avril ; 0,1-0,5 m. Page lue le 2026-10-08."
+    },
+    {
+     "page": "https://www.nijssenbulbs.com/anemone/8053-anemone-coronaria-039mr-fokker039-8053.html",
+     "niveau": "N3",
+     "type": "photo+nom",
+     "consulte": "2026-10-08",
+     "auteur": "Nijssen Tuin & Bulbs, Heemstede (Pays-Bas ; bulbiculteur-grossiste)",
+     "licence": "droits réservés (mesure locale seulement)",
+     "images": [
+      "https://www.nijssenbulbs.com/17501-large_default/anemone-coronaria-039mr-fokker039-8053.jpg",
+      "https://www.nijssenbulbs.com/17502-large_default/anemone-coronaria-039mr-fokker039-8053.jpg"
+     ],
+     "eclairage": "plein jour, parterre ou prairie en gros plan (approché)",
+     "note": "Nom 'Mr. Fokker' ; « large-flowered, blue anemone », couleur 'blue', 30 cm. Photo 13445 = tubercules avec pièce de 1 € (échelle)."
+    },
+    {
+     "page": "https://www.bulbi.nl/en/mr-fokker-coronaria-z26272-config",
+     "niveau": "N3",
+     "type": "photo+nom",
+     "consulte": "2026-10-08",
+     "auteur": "BULBi (grossiste de bulbes, Pays-Bas)",
+     "licence": "droits réservés (mesure locale seulement)",
+     "images": [
+      "https://www.bulbi.nl/media/catalog/product/A/n/Anemone_coronaria_Mr_Fokker_1a_1_9.jpg"
+     ],
+     "eclairage": "photo de catalogue, fleurs de parterre (approché)",
+     "note": "« beautiful violet blue flowers with a black heart » ; cœur noir, anneau d'étamines pâle."
+    },
+    {
+     "page": "https://www.dutchgrown.com/products/anemone-de-caen-mr-fokker",
+     "niveau": "N3",
+     "type": "photo+nom",
+     "consulte": "2026-10-08",
+     "auteur": "DutchGrown (Pays-Bas/États-Unis)",
+     "licence": "droits réservés (mesure locale seulement)",
+     "images": [
+      "https://www.dutchgrown.com/cdn/shop/products/Anemone_De_Caen_Mr_Fokker-1.jpg"
+     ],
+     "eclairage": "plein jour, gros plan (approché)",
+     "note": "Nom 'Anemone de Caen Mr. Fokker' ; bleu saturé, cœur noir-bleu (fiche vue en résumé de recherche : « saturated dark blue … deep black-blue center »)."
+    },
+    {
+     "page": "https://www.peternyssen.com/anemone-de-caen-mr-fokker.html",
+     "niveau": "N3",
+     "type": "nom+description+photo",
+     "consulte": "2026-10-08",
+     "auteur": "Peter Nyssen (Royaume-Uni)",
+     "licence": "droits réservés (mesure locale seulement)",
+     "images": [
+      "https://www.peternyssen.com/media/catalog/product/cache/e0a1f4cc1d0470a0b3e71e5c9b0f617d/2/5/256666d5434b4744efe4e905d15c9ae9.jpg"
+     ],
+     "eclairage": "photo de catalogue",
+     "note": "« Violet blue, open bowl-shaped flowers », bossette centrale sombre, tige de 25 à 30 cm."
+    }
+   ],
+   "doutes": [
+    "Aucun obtenteur ni année trouvés. Le nom enregistré par la RHS est 'Mister Fokker' ; les grossistes écrivent 'Mr. Fokker'."
+   ]
+  },
+  {
+   "id": "hollandia",
+   "nom_enregistre": "Hollandia",
+   "synonymes": [
+    "His Excellency"
+   ],
+   "groupe": "De Caen Group (RHS)",
+   "forme": "simple",
+   "obtenteur": null,
+   "annee": null,
+   "numeros_registre": null,
+   "couleur_registre": "scarlet red, black centres (RHS)",
+   "motif": "rouge écarlate uni, anneau blanc net autour du cœur noir-bleu (BULBi, Nijssen, PBS)",
+   "marque": null,
+   "marque_note": "Aucun ™ ni ® relevé sur les fiches RHS, Nijssen, BULBi, DutchGrown, Harding & Bloom ; nom de cultivar au sens ICNCP. Registre des marques (EUIPO, WIPO, UIBM) non interrogé.",
+   "niveau_preuve": "B",
+   "statut": "en production (B ; A possible si le KAVB confirme)",
+   "rattache_au_catalogue": "rouge",
+   "sources": [
+    {
+     "page": "https://www.rhs.org.uk/plants/91632/anemone-coronaria-de-caen-group-hollandia/details",
+     "niveau": "N3",
+     "type": "nom+description+photo",
+     "consulte": "2026-10-08",
+     "auteur": "Royal Horticultural Society, fiche de la base horticole (photos : visionspictures.com)",
+     "licence": "droits réservés (mesure locale seulement)",
+     "images": [
+      "https://apps.rhs.org.uk/plantselectorimages/detail/visi00477.jpg",
+      "https://apps.rhs.org.uk/plantselectorimages/detail/visi07531.jpg"
+     ],
+     "eclairage": "photo de catalogue, plein jour (approché)",
+     "note": "Nom accepté 'Hollandia' (De Caen Group) ; synonyme 'His Excellency'. « velvety scarlet red flowers with black centres »."
+    },
+    {
+     "page": "https://www.rhs.org.uk/plants/54758/anemone-coronaria-(de-caen-group)-his-excellency/details",
+     "niveau": "N3",
+     "type": "nom+description+photo",
+     "consulte": "2026-10-08",
+     "auteur": "Royal Horticultural Society, fiche de la base horticole (photos : visionspictures.com)",
+     "licence": "droits réservés (mesure locale seulement)",
+     "images": [
+      "https://apps.rhs.org.uk/plantselectorimages/detail/visi00477.jpg",
+      "https://apps.rhs.org.uk/plantselectorimages/detail/visi07531.jpg"
+     ],
+     "eclairage": "photo de catalogue, plein jour (approché)",
+     "note": "Fiche du synonyme 'His Excellency' = 'Hollandia' (mêmes photos)."
+    },
+    {
+     "page": "https://www.nijssenbulbs.com/anemone/8051-anemone-coronaria-039hollandia039-8051.html",
+     "niveau": "N3",
+     "type": "photo+nom",
+     "consulte": "2026-10-08",
+     "auteur": "Nijssen Tuin & Bulbs, Heemstede (Pays-Bas ; bulbiculteur-grossiste)",
+     "licence": "droits réservés (mesure locale seulement)",
+     "images": [
+      "https://www.nijssenbulbs.com/15544-large_default/anemone-coronaria-039hollandia039-8051.jpg",
+      "https://www.nijssenbulbs.com/17503-large_default/anemone-coronaria-039hollandia039-8051.jpg",
+      "https://www.nijssenbulbs.com/19050-large_default/anemone-coronaria-039hollandia039-8051.jpg",
+      "https://www.nijssenbulbs.com/19051-large_default/anemone-coronaria-039hollandia039-8051.jpg"
+     ],
+     "eclairage": "plein jour, parterre ou prairie en gros plan (approché)",
+     "note": "Quatre vues de fleurs (rouge vif, anneau blanc autour du cœur noir-bleu, feuillage) ; la photo 13451 montre les tubercules."
+    },
+    {
+     "page": "https://www.bulbi.nl/en/hollandia-coronaria-z21693-config",
+     "niveau": "N3",
+     "type": "photo+nom",
+     "consulte": "2026-10-08",
+     "auteur": "BULBi (grossiste de bulbes, Pays-Bas)",
+     "licence": "droits réservés (mesure locale seulement)",
+     "images": [
+      "https://www.bulbi.nl/media/catalog/product/A/n/Anemone_coronaria_Hollandia_1_14.jpg"
+     ],
+     "eclairage": "photo de catalogue, fleurs de parterre (approché)",
+     "note": "« striking, bright red flowers with a white ring in the centre and a black heart »."
+    },
+    {
+     "page": "https://www.pacificbulbsociety.org/pbswiki/index.php/Anemone",
+     "niveau": "N3",
+     "type": "photo+nom",
+     "consulte": "2026-10-08",
+     "auteur": "Pacific Bulb Society (photos de Jim McKenney et David Pilling)",
+     "licence": "droits réservés (non réutilisable ; mesure locale seulement)",
+     "images": [
+      "https://www.pacificbulbsociety.org/pbswiki/files/Anemone/Anemone_coronaria_Hollandia_jmck_01.jpg",
+      "https://www.pacificbulbsociety.org/pbswiki/files/Anemone/Anemone_coronaria_Hollandia_DP3.jpg",
+      "https://www.pacificbulbsociety.org/pbswiki/files/Anemone/Anemone_coronaria_Hollandia_DP1.jpg",
+      "https://www.pacificbulbsociety.org/pbswiki/files/Anemone/Anemone_coronaria_Hollandia_DP5.jpg"
+     ],
+     "eclairage": "plein jour, jardin ou serre (approché) ; macros au flash ou à la lumière du jour",
+     "note": "Seul cultivar d'A. coronaria nommé de la page ; macros du cœur (dôme de pistils vert-noir violacé, couronne d'étamines bleu acier à filets rose-pourpre, anneau blanc à la base des pétales)."
+    },
+    {
+     "page": "https://commons.wikimedia.org/wiki/File:Anemone_coronaria_Hollandia_1c.JPG",
+     "niveau": "N4",
+     "type": "photo",
+     "consulte": "2026-10-08",
+     "auteur": "Consultaplantas",
+     "licence": "CC BY-SA 4.0 (Wikimedia Commons)",
+     "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/0/01/Anemone_coronaria_Hollandia_1c.JPG"
+     ],
+     "note": "'Hollandia', Jardin botanique de Barcelone : massif de fleurs rouges à anneau blanc, plante entière."
+    },
+    {
+     "page": "https://commons.wikimedia.org/wiki/File:Anemone_coronaria_Hollandia_2c.JPG",
+     "niveau": "N4",
+     "type": "photo",
+     "consulte": "2026-10-08",
+     "auteur": "Consultaplantas",
+     "licence": "CC BY-SA 4.0 (Wikimedia Commons)",
+     "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/3/39/Anemone_coronaria_Hollandia_2c.JPG"
+     ],
+     "note": "'Hollandia', Jardin botanique de Barcelone : trois-quarts, anneau blanc net, cœur noir."
+    }
+   ],
+   "doutes": [
+    "PIÈGE : la catégorie Wikimedia Commons « Anemone coronaria 'Hollandia' » contient six photos (Wrocław, 2019 et 2023) d'une anémone du Japon rose (A. hupehensis ou ×hybrida) : à ne jamais mesurer.",
+    "Le coloris du catalogue 'rouge' porte aussi « Mistral Rosso » dans son nom : nom de série à supprimer."
+   ]
+  },
+  {
+   "id": "bride",
+   "nom_enregistre": "Die Braut",
+   "nom_commercial": "The Bride",
+   "synonymes": [
+    "The Bride",
+    "Bride"
+   ],
+   "groupe": "De Caen Group (RHS)",
+   "forme": "simple",
+   "obtenteur": null,
+   "annee": 1870,
+   "annee_niveau": "C (une source : Nijssen « Introduced in 1870 »)",
+   "numeros_registre": null,
+   "couleur_registre": "large white flowers with green centres (RHS)",
+   "motif": "blanc pur, cœur vert-jaune pâle (étamines jaune-vert, pistil vert) ; pas de cœur noir",
+   "marque": null,
+   "marque_note": "Aucun ™ ni ® relevé sur les fiches RHS, Nijssen, BULBi, DutchGrown, Harding & Bloom ; nom de cultivar au sens ICNCP. Registre des marques (EUIPO, WIPO, UIBM) non interrogé.",
+   "niveau_preuve": "B",
+   "statut": "en production (B ; A possible si le KAVB confirme)",
+   "rattache_au_catalogue": "blanc-vert",
+   "sources": [
+    {
+     "page": "https://www.rhs.org.uk/plants/112679/anemone-coronaria-de-caen-group-die-braut/details",
+     "niveau": "N3",
+     "type": "nom+description",
+     "consulte": "2026-10-08",
+     "auteur": "Royal Horticultural Society, fiche de la base horticole (aucune photo propre à la fiche)",
+     "licence": "texte seulement",
+     "note": "Nom accepté par la RHS : 'Die Braut' (De Caen Group) ; synonymes 'The Bride' et [The Bride]. « large white flowers with green centres »."
+    },
+    {
+     "page": "https://www.rhs.org.uk/plants/98998/anemone-coronaria-(de-caen-group)-the-bride/details",
+     "niveau": "N3",
+     "type": "nom+description",
+     "consulte": "2026-10-08",
+     "auteur": "Royal Horticultural Society, fiche de la base horticole (aucune photo propre à la fiche)",
+     "licence": "texte seulement",
+     "note": "Fiche 'The Bride' (statut : synonyme de 'Die Braut')."
+    },
+    {
+     "page": "https://www.nijssenbulbs.com/anemone/8049-anemone-coronaria-039bride039-8049.html",
+     "niveau": "N3",
+     "type": "photo+nom",
+     "consulte": "2026-10-08",
+     "auteur": "Nijssen Tuin & Bulbs, Heemstede (Pays-Bas ; bulbiculteur-grossiste)",
+     "licence": "droits réservés (mesure locale seulement)",
+     "images": [
+      "https://www.nijssenbulbs.com/14835-large_default/anemone-coronaria-039bride039-8049.jpg",
+      "https://www.nijssenbulbs.com/17500-large_default/anemone-coronaria-039bride039-8049.jpg"
+     ],
+     "eclairage": "plein jour, parterre ou prairie en gros plan (approché)",
+     "note": "'Bride' : « Strong anemone with pure white flowers. Introduced in 1870. » Photos : fleurs blanches à cœur vert pâle ; 13448 = tubercules."
+    },
+    {
+     "page": "https://www.bulbi.nl/en/the-bride-coronaria",
+     "niveau": "N3",
+     "type": "photo+nom",
+     "consulte": "2026-10-08",
+     "auteur": "BULBi (grossiste de bulbes, Pays-Bas)",
+     "licence": "droits réservés (mesure locale seulement)",
+     "images": [
+      "https://www.bulbi.nl/media/catalog/product/A/n/Anemone_coronaria_The_Bride_A_1_12.jpg"
+     ],
+     "eclairage": "photo de catalogue, fleurs de parterre (approché)",
+     "note": "« beautiful white flowers with a light yellow heart » ; photo de face, étamines jaune-vert pâle."
+    },
+    {
+     "page": "https://www.dutchgrown.com/products/anemone-de-caen-the-bride",
+     "niveau": "N3",
+     "type": "photo+nom",
+     "consulte": "2026-10-08",
+     "auteur": "DutchGrown (Pays-Bas/États-Unis)",
+     "licence": "droits réservés (mesure locale seulement)",
+     "images": [
+      "https://www.dutchgrown.com/cdn/shop/products/Anemone_De_Caen_The_Bride-2.jpg"
+     ],
+     "eclairage": "plein jour, gros plan (approché)",
+     "note": "Nom 'Anemone de Caen The Bride' ; blanc pur, cœur vert-jaune."
+    },
+    {
+     "page": "https://commons.wikimedia.org/wiki/File:Anemone_coronaria_The_Bride1d.UME.JPG",
+     "niveau": "N4",
+     "type": "photo",
+     "consulte": "2026-10-08",
+     "auteur": "Epibase",
+     "licence": "CC BY 3.0 (Wikimedia Commons)",
+     "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/1/14/Anemone_coronaria_The_Bride1d.UME.JPG"
+     ],
+     "note": "'The Bride', trois fleurs blanches à cœur vert-jaune dans un massif."
+    }
+   ],
+   "doutes": [
+    "La RHS retient 'Die Braut' comme nom accepté et 'The Bride' en synonyme ; le commerce néerlandais écrit 'Bride' ou 'The Bride'."
+   ]
+  },
+  {
+   "id": "sylphide",
+   "nom_enregistre": "Sylphide",
+   "groupe": "De Caen Group (Wikipedia, grossistes) ; la RHS accepte 'Sylphide' (Mona Lisa Series)",
+   "forme": "simple (photos) ; la RHS écrit « double »",
+   "obtenteur": null,
+   "annee": null,
+   "numeros_registre": null,
+   "couleur_registre": "rose-pink, black centre (RHS) ; violet-pink (Nijssen) ; bright pink (BULBi)",
+   "motif": "rose magenta uni, cœur violet-noir",
+   "marque": null,
+   "marque_note": "Aucun ™ ni ® relevé sur les fiches RHS, Nijssen, BULBi, DutchGrown, Harding & Bloom ; nom de cultivar au sens ICNCP. Registre des marques (EUIPO, WIPO, UIBM) non interrogé. Attention : la RHS rattache 'Sylphide' à la série Mona Lisa, qui est une marque de Ball (voir exclus_marque) ; le nom 'Sylphide' est antérieur et vendu en tubercules par les bulbiculteurs néerlandais. À trancher au KAVB.",
+   "niveau_preuve": "B",
+   "statut": "en production (B ; A possible si le KAVB confirme)",
+   "rattache_au_catalogue": "fuchsia",
+   "sources": [
+    {
+     "page": "https://www.rhs.org.uk/plants/65288/anemone-coronaria-sylphide-mona-lisa-series/details",
+     "niveau": "N3",
+     "type": "nom+description+photo",
+     "consulte": "2026-10-08",
+     "auteur": "Royal Horticultural Society, fiche de la base horticole (photos : visionspictures.com)",
+     "licence": "droits réservés (mesure locale seulement)",
+     "images": [
+      "https://apps.rhs.org.uk/plantselectorimages/detail/elbo15853.jpg",
+      "https://apps.rhs.org.uk/plantselectorimages/detail/vawi00758.jpg"
+     ],
+     "eclairage": "photo de catalogue, plein jour (approché)",
+     "note": "La RHS accepte 'Sylphide' (Mona Lisa Series) et classe 'Sylphide' (De Caen) en synonyme : « fine-petalled double rose-pink flowers with black centre ». Les photos montrent des fleurs simples à semi-doubles rose magenta."
+    },
+    {
+     "page": "https://www.nijssenbulbs.com/anemone/8055-anemone-coronaria-039sylphide039-8055.html",
+     "niveau": "N3",
+     "type": "photo+nom",
+     "consulte": "2026-10-08",
+     "auteur": "Nijssen Tuin & Bulbs, Heemstede (Pays-Bas ; bulbiculteur-grossiste)",
+     "licence": "droits réservés (mesure locale seulement)",
+     "images": [
+      "https://www.nijssenbulbs.com/13522-large_default/anemone-coronaria-039sylphide039-8055.jpg"
+     ],
+     "eclairage": "plein jour, parterre ou prairie en gros plan (approché)",
+     "note": "« Expressive violet-pink single flowers. » ; photo 13453 = tubercules."
+    },
+    {
+     "page": "https://www.bulbi.nl/en/sylphide-coronaria",
+     "niveau": "N3",
+     "type": "photo+nom",
+     "consulte": "2026-10-08",
+     "auteur": "BULBi (grossiste de bulbes, Pays-Bas)",
+     "licence": "droits réservés (mesure locale seulement)",
+     "images": [
+      "https://www.bulbi.nl/media/catalog/product/A/n/Anemone_de_caen_Sylphide_FA2_1_7.jpg"
+     ],
+     "eclairage": "photo de catalogue, fleurs de parterre (approché)",
+     "note": "« bright pink flowers and a dark heart » ; rose magenta vif, cœur violet-noir."
+    },
+    {
+     "page": "https://commons.wikimedia.org/wiki/File:Anemone_coronaria_'Sylphide'_3.jpg",
+     "niveau": "N4",
+     "type": "photo",
+     "consulte": "2026-10-08",
+     "auteur": "Ghislain118",
+     "licence": "CC BY-SA 3.0 (Wikimedia Commons)",
+     "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/9/9f/Anemone_coronaria_%27Sylphide%27_3.jpg"
+     ],
+     "note": "'Sylphide' : groupe de fleurs magenta à cœur violet-noir."
+    },
+    {
+     "page": "https://commons.wikimedia.org/wiki/File:Anemone_coronaria_'Sylphide'_2.JPG",
+     "niveau": "N4",
+     "type": "photo",
+     "consulte": "2026-10-08",
+     "auteur": "Ghislain118",
+     "licence": "CC BY-SA 3.0 (Wikimedia Commons)",
+     "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/f/f1/Anemone_coronaria_%27Sylphide%27_2.JPG"
+     ],
+     "note": "'Sylphide' : fleurs en entonnoir à cœur sombre, vue de dessus et de côté."
+    }
+   ],
+   "doutes": [
+    "Simple ou double : Nijssen et les photos disent simple ; la RHS dit « double, fine-petalled »."
+   ]
+  },
+  {
+   "id": "bicolor",
+   "nom_enregistre": "Bicolor",
+   "nom_commercial": "De Caen Bi-Color",
+   "synonymes": [
+    "Bi-Color",
+    "Bicolour"
+   ],
+   "groupe": "De Caen Group (RHS)",
+   "forme": "simple",
+   "obtenteur": null,
+   "annee": null,
+   "numeros_registre": null,
+   "couleur_registre": "large white flowers with a black centre and a raspberry-red ring (RHS)",
+   "motif": "blanc, flammes et anneau rouge-framboise autour du cœur noir, teinte qui déborde un peu sur les pétales",
+   "marque": null,
+   "marque_note": "Aucun ™ ni ® relevé sur les fiches RHS, Nijssen, BULBi, DutchGrown, Harding & Bloom ; nom de cultivar au sens ICNCP. Registre des marques (EUIPO, WIPO, UIBM) non interrogé.",
+   "niveau_preuve": "B",
+   "statut": "en production (B ; A possible si le KAVB confirme)",
+   "rattache_au_catalogue": "bicolore",
+   "sources": [
+    {
+     "page": "https://www.rhs.org.uk/plants/210962/anemone-coronaria-de-caen-group-bicolor/details",
+     "niveau": "N3",
+     "type": "nom+description+photo",
+     "consulte": "2026-10-08",
+     "auteur": "Royal Horticultural Society, fiche de la base horticole (photos : visionspictures.com)",
+     "licence": "droits réservés (mesure locale seulement)",
+     "images": [
+      "https://apps.rhs.org.uk/plantselectorimages/detail/elbo30325.jpg",
+      "https://apps.rhs.org.uk/plantselectorimages/detail/elbo68796.jpg"
+     ],
+     "eclairage": "photo de catalogue, plein jour (approché)",
+     "note": "Nom 'Bicolor' (De Caen Group), statut « Unresolved » à la RHS ; « large, striking white flowers with a black centre and a raspberry-red ring ». La photo elbo68796 montre un bouton en tulipe lavé de rouge."
+    },
+    {
+     "page": "https://www.dutchgrown.com/products/anemone-de-caen-bi-color",
+     "niveau": "N3",
+     "type": "photo+nom",
+     "consulte": "2026-10-08",
+     "auteur": "DutchGrown (Pays-Bas/États-Unis)",
+     "licence": "droits réservés (mesure locale seulement)",
+     "images": [
+      "https://www.dutchgrown.com/cdn/shop/products/Anemone_De_Caen_Bicolor-1.jpg"
+     ],
+     "eclairage": "plein jour, gros plan (approché)",
+     "note": "Nom 'Anemone de Caen Bi-Color' : fleur blanche, flammes et anneau rouge-framboise autour du cœur noir."
+    }
+   ],
+   "doutes": [
+    "Statut « Unresolved » à la RHS. Un fournisseur néerlandais décrit « deep red centre with creamy-white edging » : le texte de la RHS et les photos concordent avec l'anneau rouge sur fond blanc."
+   ]
+  },
+  {
+   "id": "duet",
+   "nom_enregistre": "Duet",
+   "groupe": "type De Caen (grossistes) ; aucun registre consulté",
+   "forme": "simple",
+   "obtenteur": null,
+   "annee": null,
+   "numeros_registre": null,
+   "couleur_registre": "white with a pink-red ring (Nijssen)",
+   "motif": "blanc, anneau rouge-rose à intensité variable qui s'élargit avec l'âge",
+   "marque": null,
+   "marque_note": "Aucun ™ ni ® relevé sur les fiches RHS, Nijssen, BULBi, DutchGrown, Harding & Bloom ; nom de cultivar au sens ICNCP. Registre des marques (EUIPO, WIPO, UIBM) non interrogé.",
+   "niveau_preuve": "B",
+   "statut": "documenté ; variante de Bicolor, non rattaché",
+   "rattache_au_catalogue": null,
+   "sources": [
+    {
+     "page": "https://www.nijssenbulbs.com/anemone/8047-anemone-coronaria-039duet039-8047.html",
+     "niveau": "N3",
+     "type": "photo+nom",
+     "consulte": "2026-10-08",
+     "auteur": "Nijssen Tuin & Bulbs, Heemstede (Pays-Bas ; bulbiculteur-grossiste)",
+     "licence": "droits réservés (mesure locale seulement)",
+     "images": [
+      "https://www.nijssenbulbs.com/17498-large_default/anemone-coronaria-039duet039-8047.jpg",
+      "https://www.nijssenbulbs.com/17499-large_default/anemone-coronaria-039duet039-8047.jpg"
+     ],
+     "eclairage": "plein jour, parterre ou prairie en gros plan (approché)",
+     "note": "« Large white flowers with a variable pink-red ring. » ; couleur 'white with a pink-red ring' ; 30 cm. Photo 13447 = tubercules."
+    },
+    {
+     "page": "https://hardingandbloom.co.uk/products/anemone-coronaria-bicolor-duet",
+     "niveau": "N3",
+     "type": "photo+nom",
+     "consulte": "2026-10-08",
+     "auteur": "Harding & Bloom (Royaume-Uni)",
+     "licence": "droits réservés (mesure locale seulement)",
+     "images": [
+      "https://hardingandbloom.co.uk/cdn/shop/files/ANEMONE_20BI_20COLOUR_20DUET_20SQUARE_203-topaz.jpg"
+     ],
+     "eclairage": "photo de catalogue, fond de feuillage",
+     "note": "Nom 'Anemone Bicolor Duet' ; pétales blancs, œil sombre, anneau rouge net (description lue en résumé de recherche : « bicolour form » ; la photo de la fiche montre le motif)."
+    },
+    {
+     "page": "https://nzbulbs.co.nz/Item/Anemone-Duet",
+     "niveau": "N3",
+     "type": "nom+description",
+     "consulte": "2026-10-08",
+     "auteur": "NZ Bulbs (Nouvelle-Zélande)",
+     "licence": "texte seulement",
+     "note": "Résultat de moteur de recherche, page non ouverte : « white blooms with a light pink tint and a red ring around the dark center, De Caen type »."
+    }
+   ],
+   "doutes": [
+    "Absent de la liste Wikipedia et de la RHS vues : seuls les grossistes l'attestent. À chercher au KAVB."
+   ]
+  },
+  {
+   "id": "governor",
+   "nom_enregistre": "The Governor",
+   "nom_commercial": "Governor",
+   "synonymes": [
+    "Governor"
+   ],
+   "groupe": "De Caen Group (RHS, Unresolved) ; Saint Bridgid Group (Wikipedia) : classement contradictoire",
+   "forme": "semi-double à double (photos, RHS)",
+   "obtenteur": null,
+   "annee": null,
+   "numeros_registre": null,
+   "couleur_registre": "double, bright red, white centres, dark purple to black stamens (RHS)",
+   "motif": "rouge vif, anneau blanc crème autour du cœur sombre, pétales étroits nombreux",
+   "marque": null,
+   "marque_note": "Aucun ™ ni ® relevé sur les fiches RHS, Nijssen, BULBi, DutchGrown, Harding & Bloom ; nom de cultivar au sens ICNCP. Registre des marques (EUIPO, WIPO, UIBM) non interrogé.",
+   "niveau_preuve": "B",
+   "statut": "documenté ; sorte semi-double à créer, ne pas mélanger aux simples",
+   "rattache_au_catalogue": null,
+   "sources": [
+    {
+     "page": "https://www.rhs.org.uk/plants/82538/anemone-coronaria-de-caen-group-the-governor/details",
+     "niveau": "N3",
+     "type": "nom+description",
+     "consulte": "2026-10-08",
+     "auteur": "Royal Horticultural Society, fiche de la base horticole (aucune photo propre à la fiche)",
+     "licence": "texte seulement",
+     "note": "'The Governor' classé 'De Caen Group' par la RHS (statut Unresolved) : « double, bright red poppy-like flowers with white centres and dark purple to black stamens » (Wikipedia le range dans St Brigid : classement contradictoire)."
+    },
+    {
+     "page": "https://www.nijssenbulbs.com/anemone/7121-anemone-coronaria-039governor039-7121.html",
+     "niveau": "N3",
+     "type": "photo+nom",
+     "consulte": "2026-10-08",
+     "auteur": "Nijssen Tuin & Bulbs, Heemstede (Pays-Bas ; bulbiculteur-grossiste)",
+     "licence": "droits réservés (mesure locale seulement)",
+     "images": [
+      "https://www.nijssenbulbs.com/16964-large_default/anemone-coronaria-039governor039-7121.jpg",
+      "https://www.nijssenbulbs.com/17113-large_default/anemone-coronaria-039governor039-7121.jpg"
+     ],
+     "eclairage": "plein jour, parterre ou prairie en gros plan (approché)",
+     "note": "'Governor' : fleurs rouges à anneau blanc crème et nombreux pétales étroits (semi-double, aspect marguerite) ; 13450 = tubercules."
+    },
+    {
+     "page": "https://commons.wikimedia.org/wiki/File:Anemone_coronaria_The_Governor_RJB.JPG",
+     "niveau": "N4",
+     "type": "photo",
+     "consulte": "2026-10-08",
+     "auteur": "A. Barra",
+     "licence": "CC BY-SA 3.0 (Wikimedia Commons)",
+     "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/6/6c/Anemone_coronaria_The_Governor_RJB.JPG"
+     ],
+     "note": "'The Governor', Real Jardín Botánico de Madrid : rouge, anneau blanc, semi-double."
+    },
+    {
+     "page": "https://commons.wikimedia.org/wiki/File:Anemone_coronaria_Governor_1c.JPG",
+     "niveau": "N4",
+     "type": "photo",
+     "consulte": "2026-10-08",
+     "auteur": "Consultaplantas",
+     "licence": "CC BY-SA 4.0 (Wikimedia Commons)",
+     "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/1/11/Anemone_coronaria_Governor_1c.JPG"
+     ],
+     "note": "'Governor', Jardín Botánico de Barcelona : fleur semi-double à pétales étroits, rouge strié de blanc."
+    }
+   ],
+   "doutes": [
+    "Le groupe change d'une source à l'autre : le registre tranchera."
+   ]
+  },
+  {
+   "id": "admiral",
+   "nom_enregistre": "The Admiral",
+   "nom_commercial": "Admiral",
+   "synonymes": [
+    "Admiral"
+   ],
+   "groupe": "Saint Bridgid Group (RHS)",
+   "forme": "semi-double",
+   "obtenteur": null,
+   "annee": null,
+   "numeros_registre": null,
+   "couleur_registre": "semi-double, violet, black centre (RHS)",
+   "motif": "magenta-violet uni, pétales étroits en marguerite, cœur sombre",
+   "marque": null,
+   "marque_note": "Aucun ™ ni ® relevé sur les fiches RHS, Nijssen, BULBi, DutchGrown, Harding & Bloom ; nom de cultivar au sens ICNCP. Registre des marques (EUIPO, WIPO, UIBM) non interrogé.",
+   "niveau_preuve": "B",
+   "statut": "documenté ; sorte semi-double à créer",
+   "rattache_au_catalogue": null,
+   "sources": [
+    {
+     "page": "https://www.rhs.org.uk/plants/56938/anemone-coronaria-saint-bridgid-group-the-admiral-d/details",
+     "niveau": "N3",
+     "type": "nom+description+photo",
+     "consulte": "2026-10-08",
+     "auteur": "Royal Horticultural Society, fiche de la base horticole (photos : visionspictures.com)",
+     "licence": "droits réservés (mesure locale seulement)",
+     "images": [
+      "https://apps.rhs.org.uk/plantselectorimages/detail/visi30564.jpg",
+      "https://apps.rhs.org.uk/plantselectorimages/detail/visi45271.jpg"
+     ],
+     "eclairage": "photo de catalogue, plein jour (approché)",
+     "note": "'The Admiral' (Saint Bridgid Group), nom accepté ; « semi-double, violet flowers with a black centre ». Les photos montrent un violet-rose magenta."
+    },
+    {
+     "page": "https://www.nijssenbulbs.com/anemone/6460-anemone-coronaria-039admiral039-6460.html",
+     "niveau": "N3",
+     "type": "photo+nom",
+     "consulte": "2026-10-08",
+     "auteur": "Nijssen Tuin & Bulbs, Heemstede (Pays-Bas ; bulbiculteur-grossiste)",
+     "licence": "droits réservés (mesure locale seulement)",
+     "images": [
+      "https://www.nijssenbulbs.com/16963-large_default/anemone-coronaria-039admiral039-6460.jpg"
+     ],
+     "eclairage": "plein jour, parterre ou prairie en gros plan (approché)",
+     "note": "'Admiral' : fleurs semi-doubles magenta-violet à cœur sombre (marguerite) ; 13446 = tubercules."
+    }
+   ],
+   "doutes": [
+    "La RHS écrit « violet » ; les photos RHS et Nijssen montrent un magenta violacé. Wikipédia français le range en « pourpre »."
+   ]
+  },
+  {
+   "id": "lordlieutenant",
+   "nom_enregistre": "Lord Lieutenant",
+   "groupe": "Saint Bridgid Group (RHS)",
+   "forme": "double",
+   "obtenteur": null,
+   "annee": null,
+   "numeros_registre": null,
+   "couleur_registre": "double purple-blue flowers with a black centre (RHS)",
+   "motif": "violet-bleu uni, fleur pleine en pivoine",
+   "marque": null,
+   "marque_note": "Aucun ™ ni ® relevé sur les fiches RHS, Nijssen, BULBi, DutchGrown, Harding & Bloom ; nom de cultivar au sens ICNCP. Registre des marques (EUIPO, WIPO, UIBM) non interrogé.",
+   "niveau_preuve": "B",
+   "statut": "documenté ; sorte double à créer",
+   "rattache_au_catalogue": null,
+   "sources": [
+    {
+     "page": "https://www.rhs.org.uk/plants/69244/anemone-coronaria-saint-bridgid-group-lord-lieutenant-d/details",
+     "niveau": "N3",
+     "type": "nom+description+photo",
+     "consulte": "2026-10-08",
+     "auteur": "Royal Horticultural Society, fiche de la base horticole (photos : visionspictures.com)",
+     "licence": "droits réservés (mesure locale seulement)",
+     "images": [
+      "https://apps.rhs.org.uk/plantselectorimages/detail/visi00489.jpg",
+      "https://apps.rhs.org.uk/plantselectorimages/detail/visi45264.jpg"
+     ],
+     "eclairage": "photo de catalogue, plein jour (approché)",
+     "note": "'Lord Lieutenant' (Saint Bridgid Group), nom accepté ; synonyme 'Anemone (De Caen Group) Lord Lieutenant' ; « double purple-blue flowers which have a black centre »."
+    },
+    {
+     "page": "https://www.bulbi.nl/en/lord-lieutenant-st-brigid-z27652-config",
+     "niveau": "N3",
+     "type": "photo+nom",
+     "consulte": "2026-10-08",
+     "auteur": "BULBi (grossiste de bulbes, Pays-Bas)",
+     "licence": "droits réservés (mesure locale seulement)",
+     "images": [
+      "https://www.bulbi.nl/media/catalog/product/A/n/Anemone_Lord_Lieutenant_1_11.jpg"
+     ],
+     "eclairage": "photo de catalogue, fleurs de parterre (approché)",
+     "note": "« full, double violet-blue flowers » ; fleur en pivoine violet-bleu."
+    }
+   ],
+   "doutes": [
+    "Semi-double ou double selon les vendeurs ; un vendeur parle de centre blanc (isolé)."
+   ]
+  },
+  {
+   "id": "mounteverest",
+   "nom_enregistre": "Mount Everest",
+   "groupe": "Saint Bridgid Group (RHS)",
+   "forme": "double",
+   "obtenteur": null,
+   "annee": null,
+   "numeros_registre": null,
+   "couleur_registre": "double white flowers with green centres (RHS)",
+   "motif": "blanc pur, centre vert (pas de cœur noir)",
+   "marque": null,
+   "marque_note": "Aucun ™ ni ® relevé sur les fiches RHS, Nijssen, BULBi, DutchGrown, Harding & Bloom ; nom de cultivar au sens ICNCP. Registre des marques (EUIPO, WIPO, UIBM) non interrogé.",
+   "niveau_preuve": "B",
+   "statut": "documenté ; sorte double à créer",
+   "rattache_au_catalogue": null,
+   "sources": [
+    {
+     "page": "https://www.rhs.org.uk/plants/69245/anemone-coronaria-saint-bridgid-group-mount-everest-d/details",
+     "niveau": "N3",
+     "type": "nom+description+photo",
+     "consulte": "2026-10-08",
+     "auteur": "Royal Horticultural Society, fiche de la base horticole (photos : visionspictures.com)",
+     "licence": "droits réservés (mesure locale seulement)",
+     "images": [
+      "https://apps.rhs.org.uk/plantselectorimages/detail/visi45269.jpg",
+      "https://apps.rhs.org.uk/plantselectorimages/detail/visi45270.jpg"
+     ],
+     "eclairage": "photo de catalogue, plein jour (approché)",
+     "note": "'Mount Everest' (Saint Bridgid Group), nom accepté ; « double white flowers which have green centres »."
+    },
+    {
+     "page": "https://www.nijssenbulbs.com/anemone/6461-anemone-coronaria-039mount-everest039-6461.html",
+     "niveau": "N3",
+     "type": "photo+nom",
+     "consulte": "2026-10-08",
+     "auteur": "Nijssen Tuin & Bulbs, Heemstede (Pays-Bas ; bulbiculteur-grossiste)",
+     "licence": "droits réservés (mesure locale seulement)",
+     "images": [
+      "https://www.nijssenbulbs.com/16965-large_default/anemone-coronaria-039mount-everest039-6461.jpg"
+     ],
+     "eclairage": "plein jour, parterre ou prairie en gros plan (approché)",
+     "note": "'Mount Everest' : fleur double blanche à cœur vert, vue de face ; 13452 = tubercules."
+    }
+   ],
+   "doutes": [
+    "Ne remplace pas le blanc à cœur noir : le centre est vert."
+   ]
+  },
+  {
+   "id": "stbrigid",
+   "nom_enregistre": "Saint Bridgid (groupe, mélange)",
+   "synonymes": [
+    "St Brigid",
+    "St. Brigid"
+   ],
+   "groupe": "Saint Bridgid Group (RHS, Unresolved)",
+   "forme": "semi-double à double",
+   "obtenteur": null,
+   "annee": null,
+   "numeros_registre": null,
+   "couleur_registre": "crimson, blue, violet and white, black centres (RHS)",
+   "motif": "mélange de coloris, jamais un coloris unique",
+   "marque": null,
+   "marque_note": "Aucun ™ ni ® relevé sur les fiches RHS, Nijssen, BULBi, DutchGrown, Harding & Bloom ; nom de cultivar au sens ICNCP. Registre des marques (EUIPO, WIPO, UIBM) non interrogé.",
+   "niveau_preuve": "B",
+   "statut": "groupe : sert de sorte, pas de coloris",
+   "rattache_au_catalogue": null,
+   "sources": [
+    {
+     "page": "https://www.rhs.org.uk/plants/153331/anemone-coronaria-saint-bridgid-group-saint-bridgid-d/details",
+     "niveau": "N3",
+     "type": "nom+description",
+     "consulte": "2026-10-08",
+     "auteur": "Royal Horticultural Society, fiche de la base horticole (aucune photo propre à la fiche)",
+     "licence": "texte seulement",
+     "note": "'Saint Bridgid' (Saint Bridgid Group), statut Unresolved ; « semi-double or double flowers with black centres, in crimson, blue, violet and white » (mélange)."
+    },
+    {
+     "page": "https://www.bulbi.nl/en/st-brigid-mixed-coronaria",
+     "niveau": "N3",
+     "type": "photo+nom",
+     "consulte": "2026-10-08",
+     "auteur": "BULBi (grossiste de bulbes, Pays-Bas)",
+     "licence": "droits réservés (mesure locale seulement)",
+     "images": [
+      "https://www.bulbi.nl/media/catalog/product/cache/fee55e627bb23b05e67e630ae68979e2/A/n/Anemone_coronaria_St_Brigid_mixed_1_13.jpg"
+     ],
+     "eclairage": "photo de catalogue, fleurs de parterre (approché)",
+     "note": "Mélange de fleurs doubles ; rouge à anneau blanc, blanc, violet-bleu, rose, magenta."
+    },
+    {
+     "page": "https://commons.wikimedia.org/wiki/File:Dreer's_wholesale_price_list_-_Henry_A._Dreer._(20442599853).jpg",
+     "niveau": "N4",
+     "type": "photo",
+     "consulte": "2026-10-08",
+     "auteur": "Internet Archive Book Images",
+     "licence": "No restrictions (Wikimedia Commons)",
+     "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/9/9b/Dreer%27s_wholesale_price_list_-_Henry_A._Dreer._%2820442599853%29.jpg"
+     ],
+     "note": "Liste de prix de gros de Henry A. Dreer, 1912 (Internet Archive) : « St Brigid anemones, Anemone coronaria - St Brigid group » ; atteste le nom dans le commerce dès 1912."
+    }
+   ],
+   "doutes": [
+    "Nom présent dans le commerce dès 1912 (liste de prix Dreer). Les graphies RHS 'Bridgid' et commerciales 'Brigid' coexistent."
+   ]
+  },
+  {
+   "id": "decaen",
+   "nom_enregistre": "De Caen (groupe, mélange et groupes de couleur)",
+   "synonymes": [
+    "Anemone de Caen"
+   ],
+   "groupe": "De Caen Group (RHS)",
+   "forme": "simple",
+   "obtenteur": null,
+   "annee": null,
+   "numeros_registre": null,
+   "couleur_registre": "entrées RHS « De Caen Group blue-flowered / pink-flowered / white-flowered » (+ red-flowered, vue en résultat de recherche)",
+   "motif": "mélange de simples à cœur sombre ; sert de preuve de couleur, pas de cultivar",
+   "marque": null,
+   "marque_note": "Aucun ™ ni ® relevé sur les fiches RHS, Nijssen, BULBi, DutchGrown, Harding & Bloom ; nom de cultivar au sens ICNCP. Registre des marques (EUIPO, WIPO, UIBM) non interrogé.",
+   "niveau_preuve": "B",
+   "statut": "groupe : sert de sorte, pas de coloris",
+   "rattache_au_catalogue": null,
+   "sources": [
+    {
+     "page": "https://www.rhs.org.uk/plants/324882/anemone-coronaria-de-caen-group-blue-flowered/details",
+     "niveau": "N3",
+     "type": "nom+description",
+     "consulte": "2026-10-08",
+     "auteur": "Royal Horticultural Society, fiche de la base horticole (aucune photo propre à la fiche)",
+     "licence": "texte seulement",
+     "note": "Entrée de groupe de couleur : « large, striking blue flowers with black centres » (nom accepté)."
+    },
+    {
+     "page": "https://www.rhs.org.uk/plants/324883/anemone-coronaria-de-caen-group-pink-flowered/details",
+     "niveau": "N3",
+     "type": "nom+description",
+     "consulte": "2026-10-08",
+     "auteur": "Royal Horticultural Society, fiche de la base horticole (aucune photo propre à la fiche)",
+     "licence": "texte seulement",
+     "note": "Entrée de groupe de couleur : « large, striking velvety pink flowers with black centres » (nom accepté)."
+    },
+    {
+     "page": "https://www.rhs.org.uk/plants/372020/anemone-coronaria-de-caen-group-white-flowered/details",
+     "niveau": "N3",
+     "type": "nom+description",
+     "consulte": "2026-10-08",
+     "auteur": "Royal Horticultural Society, fiche de la base horticole (aucune photo propre à la fiche)",
+     "licence": "texte seulement",
+     "note": "Entrée de groupe de couleur : blanc ; centre non décrit ; statut Unresolved."
+    },
+    {
+     "page": "https://www.nijssenbulbs.com/anemone/8503-anemone-coronaria-039de-caen039-8503.html",
+     "niveau": "N3",
+     "type": "photo+nom",
+     "consulte": "2026-10-08",
+     "auteur": "Nijssen Tuin & Bulbs, Heemstede (Pays-Bas ; bulbiculteur-grossiste)",
+     "licence": "droits réservés (mesure locale seulement)",
+     "images": [
+      "https://www.nijssenbulbs.com/14836-large_default/anemone-coronaria-039de-caen039-8503.jpg",
+      "https://www.nijssenbulbs.com/17497-large_default/anemone-coronaria-039de-caen039-8503.jpg"
+     ],
+     "eclairage": "plein jour, parterre ou prairie en gros plan (approché)",
+     "note": "Mélange 'De Caen' : bleu, violet, rouge à anneau blanc, rose, blanc, tous à cœur sombre."
+    },
+    {
+     "page": "https://www.bulbi.nl/en/de-caen-mixed-coronaria",
+     "niveau": "N3",
+     "type": "photo+nom",
+     "consulte": "2026-10-08",
+     "auteur": "BULBi (grossiste de bulbes, Pays-Bas)",
+     "licence": "droits réservés (mesure locale seulement)",
+     "images": [
+      "https://www.bulbi.nl/media/catalog/product/A/n/Anemone_De_Caen_mixed_1_13.jpg"
+     ],
+     "eclairage": "photo de catalogue, fleurs de parterre (approché)",
+     "note": "« Colourful mix of single-flowered anemones with a black heart » ; on y voit un blanc à flammes rouges, un lavande, un rouge à anneau blanc."
+    }
+   ],
+   "doutes": [
+    "Wikipedia place l'origine à Caen et Bayeux au XVIIIe siècle ; un vendeur dit 1848, Nijssen dit 1870 pour 'Bride' : pas de date de groupe sûre."
+   ]
+  },
+  {
+   "id": "bluepoppy",
+   "nom_enregistre": "Blue Poppy",
+   "groupe": "De Caen (Wikipedia, vendeurs)",
+   "forme": "simple",
+   "obtenteur": null,
+   "annee": null,
+   "numeros_registre": null,
+   "couleur_registre": "blue (Wikipedia) ; « satiny violet-blue … dark button center » (vendeurs)",
+   "motif": "non vérifié",
+   "marque": null,
+   "marque_note": "Aucun ™ ni ® relevé sur les fiches RHS, Nijssen, BULBi, DutchGrown, Harding & Bloom ; nom de cultivar au sens ICNCP. Registre des marques (EUIPO, WIPO, UIBM) non interrogé.",
+   "niveau_preuve": "D",
+   "statut": "sans photo fiable : listé à part",
+   "rattache_au_catalogue": null,
+   "sources": [
+    {
+     "page": "https://en.wikipedia.org/wiki/Anemone_coronaria",
+     "niveau": "N4",
+     "type": "nom",
+     "consulte": "2026-10-08",
+     "auteur": "Wikipedia (liste des cultivars De Caen : 'Blue Poppy' = bleu)",
+     "licence": "texte",
+     "note": "Nom attesté (De Caen) ; aucun registre ni photo fiable retrouvés."
+    },
+    {
+     "page": "https://commons.wikimedia.org/wiki/File:Anemone._(23590072679).jpg",
+     "niveau": "N4",
+     "type": "photo",
+     "consulte": "2026-10-08",
+     "auteur": "Bernard Spragg. NZ from Christchurch, Ne",
+     "licence": "CC0 (Wikimedia Commons)",
+     "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/f/f8/Anemone._%2823590072679%29.jpg"
+     ],
+     "note": "Fichier CC0 titré « Anemone Blue Poppy Bulbs » (Bernard Spragg) : les fleurs visibles sont lilas semi-doubles, pas bleues. Légende jugée non fiable, photo rejetée."
+    }
+   ],
+   "doutes": [
+    "La seule photo libre étiquetée 'Blue Poppy' (Commons, CC0) montre des fleurs lilas semi-doubles : légende rejetée. Peut n'être qu'un nom de vendeur : aucun registre trouvé."
+   ]
+  }
+ ],
+ "formes_botaniques": [
+  {
+   "id": "f_blanche",
+   "nom": "Forme blanche d'Anemone coronaria",
+   "noms_botaniques": [
+    "var. alba Burnat",
+    "f. albiflora Foucaud (synonymes sous A. coronaria L. dans le socle GBIF)"
+   ],
+   "description": "Fleur simple blanche, centre violet-noir à étamines sombres ou gris-bleu ; plus petite que les cultivars (35 à 75 mm d'après une flore de Crète, vue en résumé de recherche : https://www.cretanflora.com/anemone_coronaria_text.html).",
+   "marque": null,
+   "niveau_preuve": "B",
+   "sources": [
+    {
+     "page": "https://www.inaturalist.org/observations/262539144",
+     "niveau": "N3",
+     "type": "photo",
+     "consulte": "2026-10-08",
+     "auteur": "peter_gabler",
+     "licence": "CC0 (iNaturalist)",
+     "images": [
+      "https://inaturalist-open-data.s3.amazonaws.com/photos/471575908/original.jpg"
+     ],
+     "eclairage": "plein jour, plante sauvage en place (approché)",
+     "note": "Observation iNaturalist de qualité « recherche » (Anemone coronaria, non captive), Zypern, Paphos, Paphos, CY, 2025-02-20. Fleur blanche en vue de dessus, centre violet-noir à anthères sombres, tépales étroits et longs."
+    },
+    {
+     "page": "https://www.inaturalist.org/observations/256919782",
+     "niveau": "N3",
+     "type": "photo",
+     "consulte": "2026-10-08",
+     "auteur": "sahalsey",
+     "licence": "CC-BY (iNaturalist)",
+     "images": [
+      "https://inaturalist-open-data.s3.amazonaws.com/photos/460757525/original.jpeg"
+     ],
+     "eclairage": "plein jour, plante sauvage en place (approché)",
+     "note": "Observation iNaturalist de qualité « recherche » (Anemone coronaria, non captive), Neo Chorio, Cyprus, 2024-12-25. Deux fleurs blanches à cœur violet-bleu."
+    },
+    {
+     "page": "https://commons.wikimedia.org/wiki/File:White-Anemone-Sitia-Crete-Greece.jpg",
+     "niveau": "N4",
+     "type": "photo",
+     "consulte": "2026-10-08",
+     "auteur": "Petro Stelte",
+     "licence": "CC BY-SA 4.0 (Wikimedia Commons)",
+     "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/d/d8/White-Anemone-Sitia-Crete-Greece.jpg"
+     ],
+     "note": "Fleur blanche de face, disque central sombre brun-noir (Sitia, Crète)."
+    },
+    {
+     "page": "https://commons.wikimedia.org/wiki/File:White-Anemone-coronaria-0011.jpg",
+     "niveau": "N4",
+     "type": "photo",
+     "consulte": "2026-10-08",
+     "auteur": "MathKnight and Zachi Evenor",
+     "licence": "CC BY 3.0 (Wikimedia Commons)",
+     "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/a/af/White-Anemone-coronaria-0011.jpg"
+     ],
+     "note": "Fleur blanche vue de profil, couronne d'étamines gris-bleu (Israël)."
+    },
+    {
+     "page": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7154818/",
+     "niveau": "N3",
+     "type": "texte savant",
+     "consulte": "2026-10-08",
+     "auteur": "Dafni A., Tzohari H., Ben-Shlomo R., Vereecken N.J., Ne'eman G., Plants (Bâle) 2020, 9(3):397, doi 10.3390/plants9030397",
+     "licence": "libre accès (MDPI)",
+     "note": "L'espèce a trois morphes de couleur discrets, rouge, blanc et violet-bleu, et au moins 30 variantes graduelles ; les trois morphes sont interféconds."
+    }
+   ]
+  },
+  {
+   "id": "f_rouge",
+   "nom": "Forme rouge d'Anemone coronaria",
+   "noms_botaniques": [
+    "var. coccinea (Jord.) Burnat",
+    "var. phoenicea Ardoino",
+    "A. coronaria var. coronaria (RHS)"
+   ],
+   "description": "Fleur simple rouge écarlate à vermillon, étamines pourpre-noir ; un anneau blanc se forme à la base des pétales avec l'âge selon un site israélien.",
+   "marque": null,
+   "niveau_preuve": "B",
+   "sources": [
+    {
+     "page": "https://www.inaturalist.org/observations/66959331",
+     "niveau": "N3",
+     "type": "photo",
+     "consulte": "2026-10-08",
+     "auteur": "aryehm",
+     "licence": "CC0 (iNaturalist)",
+     "images": [
+      "https://inaturalist-open-data.s3.amazonaws.com/photos/108066151/original.jpeg"
+     ],
+     "eclairage": "plein jour, plante sauvage en place (approché)",
+     "note": "Observation iNaturalist de qualité « recherche » (Anemone coronaria, non captive), Givat Ram, Jerusalem, Israel, 2020-12-23. Fleur rouge écarlate sans anneau net, cœur pourpre-noir (Jérusalem)."
+    },
+    {
+     "page": "https://www.inaturalist.org/observations/66970680",
+     "niveau": "N3",
+     "type": "photo",
+     "consulte": "2026-10-08",
+     "auteur": "bobw75",
+     "licence": "CC-BY (iNaturalist)",
+     "images": [
+      "https://inaturalist-open-data.s3.amazonaws.com/photos/108087491/original.jpg"
+     ],
+     "eclairage": "plein jour, plante sauvage en place (approché)",
+     "note": "Observation iNaturalist de qualité « recherche » (Anemone coronaria, non captive), Hadera, Israel, 2017-02-25. Fleur rouge à petit anneau blanc autour du cœur sombre (Hadera)."
+    },
+    {
+     "page": "https://www.rhs.org.uk/plants/294169/anemone-coronaria-var-rosea/details",
+     "niveau": "N3",
+     "type": "nom+description+photo",
+     "consulte": "2026-10-08",
+     "auteur": "Royal Horticultural Society, fiche de la base horticole (photos : visionspictures.com)",
+     "licence": "droits réservés (mesure locale seulement)",
+     "images": [
+      "https://apps.rhs.org.uk/plantselectorimages/detail/sepa13038.jpg",
+      "https://apps.rhs.org.uk/plantselectorimages/detail/vaem11501.jpg"
+     ],
+     "eclairage": "photo de catalogue, plein jour (approché)",
+     "note": "Fiche RHS 'A. coronaria var. rosea' (statut : synonyme ; autres synonymes 'A. coronaria red', var. phoenica) : « large, shallowly cup-shaped vermillion-red flowers with dark purplish stamens ». Photo vaem11501 = macro du cœur."
+    },
+    {
+     "page": "https://commons.wikimedia.org/wiki/File:Anemone_coronaria_cultivar_1DS-II_3-8811.jpg",
+     "niveau": "N4",
+     "type": "photo",
+     "consulte": "2026-10-08",
+     "auteur": "SAplants",
+     "licence": "CC BY-SA 4.0 (Wikimedia Commons)",
+     "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/9/9e/Anemone_coronaria_cultivar_1DS-II_3-8811.jpg"
+     ],
+     "note": "Plante entière en fleur (naturalisée, Afrique du Sud) : fleur rouge à cœur sombre et petit anneau pâle, feuillage en rosette."
+    },
+    {
+     "page": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7154818/",
+     "niveau": "N3",
+     "type": "texte savant",
+     "consulte": "2026-10-08",
+     "auteur": "Dafni A., Tzohari H., Ben-Shlomo R., Vereecken N.J., Ne'eman G., Plants (Bâle) 2020, 9(3):397, doi 10.3390/plants9030397",
+     "licence": "libre accès (MDPI)",
+     "note": "L'espèce a trois morphes de couleur discrets, rouge, blanc et violet-bleu, et au moins 30 variantes graduelles ; les trois morphes sont interféconds."
+    }
+   ]
+  },
+  {
+   "id": "f_pourpre_bleue",
+   "nom": "Forme violet-bleu d'Anemone coronaria (de la lavande pâle au violet profond)",
+   "noms_botaniques": [
+    "subsp. ou var. cyanea (Risso) Arcang. ou Ardoino",
+    "var. purpurea Ardoino"
+   ],
+   "description": "Fleur simple bleu-violet à lavande, cœur noir ; la teinte varie de façon graduelle d'une plante à l'autre.",
+   "marque": null,
+   "niveau_preuve": "B",
+   "sources": [
+    {
+     "page": "https://www.inaturalist.org/observations/266982001",
+     "niveau": "N3",
+     "type": "photo",
+     "consulte": "2026-10-08",
+     "auteur": "srgdnch",
+     "licence": "CC-BY (iNaturalist)",
+     "images": [
+      "https://inaturalist-open-data.s3.amazonaws.com/photos/479732402/original.jpg"
+     ],
+     "eclairage": "plein jour, plante sauvage en place (approché)",
+     "note": "Observation iNaturalist de qualité « recherche » (Anemone coronaria, non captive), Crete, Greece, 2023-04-30. Fleur bleu-violet pervenche, cœur noir, tépales larges (Crète)."
+    },
+    {
+     "page": "https://www.inaturalist.org/observations/338755361",
+     "niveau": "N3",
+     "type": "photo",
+     "consulte": "2026-10-08",
+     "auteur": "marios10",
+     "licence": "CC-BY (iNaturalist)",
+     "images": [
+      "https://inaturalist-open-data.s3.amazonaws.com/photos/616108464/original.jpg"
+     ],
+     "eclairage": "plein jour, plante sauvage en place (approché)",
+     "note": "Observation iNaturalist de qualité « recherche » (Anemone coronaria, non captive), Kaplıca, 2025-02-01. Fleurs lavande à tépales étroits, cœur gris-violet (Chypre-Nord)."
+    },
+    {
+     "page": "https://www.inaturalist.org/observations/117272128",
+     "niveau": "N3",
+     "type": "photo",
+     "consulte": "2026-10-08",
+     "auteur": "grzegorz_grzejszczak",
+     "licence": "CC-BY-SA (iNaturalist)",
+     "images": [
+      "https://inaturalist-open-data.s3.amazonaws.com/photos/198036251/original.jpeg"
+     ],
+     "eclairage": "plein jour, plante sauvage en place (approché)",
+     "note": "Observation iNaturalist de qualité « recherche » (Anemone coronaria, non captive), Kreta, Grecja, 2022-03-13. Fleur lavande pâle (Crète)."
+    },
+    {
+     "page": "https://www.inaturalist.org/observations/138703969",
+     "niveau": "N3",
+     "type": "photo",
+     "consulte": "2026-10-08",
+     "auteur": "grzegorz_grzejszczak",
+     "licence": "CC-BY-SA (iNaturalist)",
+     "images": [
+      "https://inaturalist-open-data.s3.amazonaws.com/photos/237109322/original.jpeg"
+     ],
+     "eclairage": "plein jour, plante sauvage en place (approché)",
+     "note": "Observation iNaturalist de qualité « recherche » (Anemone coronaria, non captive), Kreta, Grecja, 2022-03-17. Fleur violet-bleu profond, cœur noir (Crète)."
+    },
+    {
+     "page": "https://commons.wikimedia.org/wiki/File:Purple-Blueish_Anemone_coronaria.jpg",
+     "niveau": "N4",
+     "type": "photo",
+     "consulte": "2026-10-08",
+     "auteur": "Agvania~commonswiki",
+     "licence": "CC BY-SA 4.0 (Wikimedia Commons)",
+     "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/1/16/Purple-Blueish_Anemone_coronaria.jpg"
+     ],
+     "note": "Plante entière sur fond neutre avec échelle : fleur bleu-violet pâle, cœur sombre, tubercule et fruit (Megiddo, Israël)."
+    },
+    {
+     "page": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7154818/",
+     "niveau": "N3",
+     "type": "texte savant",
+     "consulte": "2026-10-08",
+     "auteur": "Dafni A., Tzohari H., Ben-Shlomo R., Vereecken N.J., Ne'eman G., Plants (Bâle) 2020, 9(3):397, doi 10.3390/plants9030397",
+     "licence": "libre accès (MDPI)",
+     "note": "L'espèce a trois morphes de couleur discrets, rouge, blanc et violet-bleu, et au moins 30 variantes graduelles ; les trois morphes sont interféconds."
+    }
+   ]
+  },
+  {
+   "id": "f_rose",
+   "nom": "Forme rose d'Anemone coronaria (du rose très pâle au magenta)",
+   "noms_botaniques": [
+    "f. rosea (Segond) Rouy",
+    "var. rosea (Hanry) P.Fourn."
+   ],
+   "description": "Fleur simple rose à magenta ; cœur sombre.",
+   "marque": null,
+   "niveau_preuve": "B",
+   "sources": [
+    {
+     "page": "https://www.inaturalist.org/observations/342615067",
+     "niveau": "N3",
+     "type": "photo",
+     "consulte": "2026-10-08",
+     "auteur": "marios10",
+     "licence": "CC-BY (iNaturalist)",
+     "images": [
+      "https://inaturalist-open-data.s3.amazonaws.com/photos/623955599/original.jpg"
+     ],
+     "eclairage": "plein jour, plante sauvage en place (approché)",
+     "note": "Observation iNaturalist de qualité « recherche » (Anemone coronaria, non captive), Tuzla, 2024-12-28. Fleur rose magenta vif, cœur noir (Chypre-Nord)."
+    },
+    {
+     "page": "https://www.inaturalist.org/observations/342614780",
+     "niveau": "N3",
+     "type": "photo",
+     "consulte": "2026-10-08",
+     "auteur": "marios10",
+     "licence": "CC-BY (iNaturalist)",
+     "images": [
+      "https://inaturalist-open-data.s3.amazonaws.com/photos/623955032/original.jpg"
+     ],
+     "eclairage": "plein jour, plante sauvage en place (approché)",
+     "note": "Observation iNaturalist de qualité « recherche » (Anemone coronaria, non captive), Tuzla, 2024-12-28. Fleur rose très pâle, cœur sombre (Chypre-Nord)."
+    },
+    {
+     "page": "https://www.inaturalist.org/observations/389425264",
+     "niveau": "N3",
+     "type": "photo",
+     "consulte": "2026-10-08",
+     "auteur": "zebedeugalinha",
+     "licence": "CC-BY (iNaturalist)",
+     "images": [
+      "https://inaturalist-open-data.s3.amazonaws.com/photos/713317343/original.jpg"
+     ],
+     "eclairage": "plein jour, plante sauvage en place (approché)",
+     "note": "Observation iNaturalist de qualité « recherche » (Anemone coronaria, non captive), Neo Chorio, Paphos 8852, Chipre, 2007-03-16. Fleur rose clair (Paphos, Chypre)."
+    },
+    {
+     "page": "https://commons.wikimedia.org/wiki/File:Pink_Anemone_coronaria.jpg",
+     "niveau": "N4",
+     "type": "photo",
+     "consulte": "2026-10-08",
+     "auteur": "Agvania~commonswiki",
+     "licence": "CC BY-SA 4.0 (Wikimedia Commons)",
+     "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/4/45/Pink_Anemone_coronaria.jpg"
+     ],
+     "note": "Plante entière avec échelle : fleur rose fuchsia clair, cœur sombre, tubercule (Megiddo)."
+    },
+    {
+     "page": "https://commons.wikimedia.org/wiki/File:Close_Up_of_Pink_Anemone_coronaria.jpg",
+     "niveau": "N4",
+     "type": "photo",
+     "consulte": "2026-10-08",
+     "auteur": "Agvania~commonswiki",
+     "licence": "CC BY-SA 4.0 (Wikimedia Commons)",
+     "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/a/a4/Close_Up_of_Pink_Anemone_coronaria.jpg"
+     ],
+     "note": "Macro du cœur d'un phénotype rose : étamines bleu-noir, nervures rosées."
+    },
+    {
+     "page": "https://commons.wikimedia.org/wiki/File:Anemone_coronaria_02.jpg",
+     "niveau": "N4",
+     "type": "photo",
+     "consulte": "2026-10-08",
+     "auteur": "Zeynel Cebeci",
+     "licence": "CC BY-SA 4.0 (Wikimedia Commons)",
+     "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/7/73/Anemone_coronaria_02.jpg"
+     ],
+     "note": "« Pinky flowered poppy anemone » : rose très pâle presque blanc à cœur sombre (Turquie)."
+    },
+    {
+     "page": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7154818/",
+     "niveau": "N3",
+     "type": "texte savant",
+     "consulte": "2026-10-08",
+     "auteur": "Dafni A., Tzohari H., Ben-Shlomo R., Vereecken N.J., Ne'eman G., Plants (Bâle) 2020, 9(3):397, doi 10.3390/plants9030397",
+     "licence": "libre accès (MDPI)",
+     "note": "L'espèce a trois morphes de couleur discrets, rouge, blanc et violet-bleu, et au moins 30 variantes graduelles ; les trois morphes sont interféconds."
+    }
+   ]
+  },
+  {
+   "id": "f_panachee",
+   "nom": "Forme panachée rouge et blanc d'Anemone coronaria",
+   "noms_botaniques": [
+    "variante graduelle (pas de nom botanique propre trouvé)"
+   ],
+   "description": "Fleur à pétales rouges marbrés ou flammés de blanc, anneau blanc autour du cœur sombre.",
+   "marque": null,
+   "niveau_preuve": "B (limite : une observation et un cliché Commons)",
+   "sources": [
+    {
+     "page": "https://www.inaturalist.org/observations/69133136",
+     "niveau": "N3",
+     "type": "photo",
+     "consulte": "2026-10-08",
+     "auteur": "eleftherioskats",
+     "licence": "CC-BY (iNaturalist)",
+     "images": [
+      "https://inaturalist-open-data.s3.amazonaws.com/photos/112108864/original.jpeg"
+     ],
+     "eclairage": "plein jour, plante sauvage en place (approché)",
+     "note": "Observation iNaturalist de qualité « recherche » (Anemone coronaria, non captive), Περιφέρεια Νοτίου Αιγαίου, Ελλάδα, 2021-02-04. Fleur étoilée rouge à taches et flammes blanches, anneau blanc autour du cœur sombre (Égée-Sud)."
+    },
+    {
+     "page": "https://commons.wikimedia.org/wiki/File:Anemone_(Red_and_white).jpg",
+     "niveau": "N4",
+     "type": "photo",
+     "consulte": "2026-10-08",
+     "auteur": "Davidbena",
+     "licence": "CC BY-SA 4.0 (Wikimedia Commons)",
+     "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/e/ef/Anemone_%28Red_and_white%29.jpg"
+     ],
+     "note": "Fleur rouge et blanc marbrée, vallée d'Elah (Israël) ; légende de Wikipedia : « Red and white anemone »."
+    },
+    {
+     "page": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7154818/",
+     "niveau": "N3",
+     "type": "texte savant",
+     "consulte": "2026-10-08",
+     "auteur": "Dafni A., Tzohari H., Ben-Shlomo R., Vereecken N.J., Ne'eman G., Plants (Bâle) 2020, 9(3):397, doi 10.3390/plants9030397",
+     "licence": "libre accès (MDPI)",
+     "note": "L'espèce a trois morphes de couleur discrets, rouge, blanc et violet-bleu, et au moins 30 variantes graduelles ; les trois morphes sont interféconds."
+    }
+   ]
+  }
+ ],
+ "exclus_marque": [
+  {
+   "serie": "Mistral® / Mistral Plus®",
+   "marque": {
+    "nom": "Mistral® / Mistral Plus® / Levante® (séries d'obtenteur ; Biancheri Creazioni, Camporosso, Ligurie)",
+    "statut": "marque signalée par le commerce (®) ; dépôt non vérifié au registre",
+    "preuve": [
+     {
+      "page": "https://www.nijssenbulbs.com/anemone/5903013-anemone-coronaria-mistral-plusreg-039panda039-52274.html",
+      "note": "Nijssen (grossiste) écrit « MISTRAL PLUS® 'Panda' », couleur « white with black » : c'est le blanc à cœur noir du catalogue."
+     },
+     {
+      "page": "https://www.nijssenbulbs.com/anemone/5903010-anemone-coronaria-mistralreg-039bordeaux039-52268.html",
+      "note": "« MISTRAL® 'Bordeaux' », couleur red-purple ; pages sœurs : Rosa Chiaro (5903017), Pale (5903011), Magenta (5903405), Mistral Plus® Blu (5903018), Azzurro (5914554), Rarity (5914556), Pinkie (5903015), Rosa Shocking (5903404), Levante® (5903012 et suivantes)."
+     },
+     {
+      "page": "https://joradahl.de/en/produkt/anemone-mistral-plus-panda/",
+      "note": "Jo Radahl (jardinerie allemande) : « Crown anemone 'Mistral Plus® Panda' »."
+     },
+     {
+      "page": "https://www.tesselaar.net.au/product/mistral-anemone-tigre",
+      "note": "Tesselaar (Australie) crédite l'obtenteur « Biancheri Creations of San Remo, Italy » (pages Tigre, Tigre Wine, Bordeaux, Rarity, Grape, Rosa Chiaro)."
+     },
+     {
+      "page": "https://www.rhs.org.uk/plants/511893/anemone-coronaria-mistral-plus-blu-mistral-plus-series/details",
+      "note": "La RHS classe 'Mistral Plus Blu' dans la « Mistral Plus Series » (semi-double, bleu-violet vif, œil pourpre-noir)."
+     },
+     {
+      "page": "https://gleanmark.com/owner/bianchericreazioni",
+      "note": "Agrégateur de marques américaines : 7 marques ou demandes de Biancheri Creazioni en classe 31 (MODERNA, ARCHIMEDE, EUPHORIA, HANOI, PON PON enregistrées ; PANDA et TANGO, déposées en 2020, abandonnées) ; MISTRAL et LEVANTE n'y figurent pas, mais la liste est américaine seulement."
+     }
+    ],
+    "verifier": "EUIPO eSearch plus et WIPO Global Brand Database, classe 31, titulaire « Biancheri Creazioni » ou « Creations »."
+   },
+   "varietes_vues": [
+    "Panda (= Bianco Centro Nero)",
+    "Bordeaux",
+    "Rosa Chiaro",
+    "Pale",
+    "Blu",
+    "Azzurro",
+    "Rarity",
+    "Fucsia (= Magenta)",
+    "Pinkie",
+    "Rosa Shocking",
+    "Tigre",
+    "Tigre Wine",
+    "Grape",
+    "Salmone",
+    "Rosso Sfumato",
+    "Vinato",
+    "Edge"
+   ],
+   "coloris_du_catalogue_concernes": [
+    "blanc",
+    "rouge (nom 'Mistral Rosso')",
+    "fuchsia",
+    "rose-pale",
+    "bordeaux",
+    "bleu-roi",
+    "azzurro",
+    "rarity",
+    "tigre",
+    "tigre-vin",
+    "raisin",
+    "blush (nom 'Mistral Blush' non retrouvé ; 'Mistral Pale' existe)",
+    "saumon (si Mistral Salmone)"
+   ],
+   "sources_variete": [
+    {
+     "page": "https://www.tesselaar.net.au/product/mistral-anemone-tigre",
+     "niveau": "N3",
+     "type": "nom+description",
+     "consulte": "2026-10-08",
+     "auteur": "Tesselaar (Australie)",
+     "licence": "texte seulement",
+     "note": "Tigre : « White petals with variable red flecks throughout and a clear white eye »."
+    },
+    {
+     "page": "https://www.tesselaar.net.au/product/mistral-anemone-bordeaux",
+     "niveau": "N3",
+     "type": "nom+description",
+     "consulte": "2026-10-08",
+     "auteur": "Tesselaar (Australie)",
+     "licence": "texte seulement",
+     "note": "Bordeaux : « wine red petals with a deep blue-black heart »."
+    },
+    {
+     "page": "https://tesselaar.net.au/product/mistral-anemone-rarity",
+     "niveau": "N3",
+     "type": "nom+description",
+     "consulte": "2026-10-08",
+     "auteur": "Tesselaar (Australie)",
+     "licence": "texte seulement",
+     "note": "Rarity : pétales blancs qui rosissent en mauve, bleu et rose lavande."
+    },
+    {
+     "page": "https://www.tesselaar.net.au/product/mistral-anemone-grape",
+     "niveau": "N3",
+     "type": "nom+description",
+     "consulte": "2026-10-08",
+     "auteur": "Tesselaar (Australie)",
+     "licence": "texte seulement",
+     "note": "Grape : violet profond virant au bleu au centre (résumé de recherche, page non ouverte)."
+    },
+    {
+     "page": "https://hardingandbloom.co.uk/collections/anemones/products/anemone-mistral-salmone",
+     "niveau": "N3",
+     "type": "nom+description",
+     "consulte": "2026-10-08",
+     "auteur": "Harding & Bloom (Royaume-Uni)",
+     "licence": "texte seulement",
+     "note": "Mistral Salmone : ton saumon adouci ; la fiche se contredit (couleur « green » dans sa table) : résumé de recherche."
+    }
+   ]
+  },
+  {
+   "serie": "Galilee™ / Jerusalem™ / Carmel™ / Meron™ / Full Star™ / Rainbow™ (Danziger)",
+   "marque": {
+    "nom": "Galilee™ / Jerusalem™ / Carmel™ / Meron™ / Full Star™ / Rainbow™ (pépinière Yodfat, Israël ; représentée par Danziger)",
+    "statut": "marque revendiquée (™ sur le site de Danziger) ; dépôt non vérifié au registre",
+    "preuve": [
+     {
+      "page": "https://www.danzigeronline.com/series_cut_flowers/anemone/",
+      "note": "Les six séries portent ™ ; Danziger demande de créditer « the trade name and/or trademark of the variety … whether registered or not »."
+     },
+     {
+      "page": "https://www.danzigeronline.com/variety/fullstar-blue/",
+      "note": "Fiche variété : « Galilee™, Jerusalem™, Carmel™, Meron™, Full Star™, Rainbow™ »."
+     },
+     {
+      "page": "https://www.dutchgrown.com/collections/anemone",
+      "note": "Liste DutchGrown : Galilee Blue, Galilee Bordeaux, Galilee Red, Rainbow Blue/White, Rainbow Red/White, Fullstar…"
+     }
+    ],
+    "verifier": "EUIPO / WIPO : Galilee, Rainbow, Full Star, classe 31."
+   },
+   "varietes_vues": [
+    "Galilee Blue",
+    "Galilee Pink",
+    "Galilee Red",
+    "Galilee Bordeaux",
+    "Rainbow Blue/White",
+    "Rainbow Red/White",
+    "Rainbow Pink and White",
+    "Rainbow Barbie",
+    "Fullstar Blue",
+    "Fullstar Strawberry",
+    "Meron Bordeaux",
+    "Carmel White"
+   ],
+   "coloris_du_catalogue_concernes": [
+    "bleu-lavande (Galilee Blue)",
+    "rose-vif (Galilee Pink)",
+    "ecarlate (Galilee Red)",
+    "bleu-blanc (Rainbow Blue/White)",
+    "rouge-blanc (Rainbow Red/White)",
+    "bordeaux (synonyme RHS 'Galilee Bordeaux')",
+    "saumon (si Rainbow Barbie)"
+   ],
+   "sources_variete": [
+    {
+     "page": "https://www.phoenixperennials.com/?p=77998",
+     "niveau": "N3",
+     "type": "nom",
+     "consulte": "2026-10-08",
+     "auteur": "Phoenix Perennials (Canada)",
+     "licence": "texte seulement",
+     "note": "'Rainbow Barbie' : grandes fleurs roses aux tons pêche et saumon (résumé de recherche ; page protégée par un contrôle anti-robot, non ouverte)."
+    }
+   ]
+  },
+  {
+   "serie": "Mona Lisa® (Ball / PanAmerican Seed)",
+   "marque": {
+    "nom": "Mona Lisa® (série de semences F1 ; Ball Horticultural / PanAmerican Seed)",
+    "statut": "marque enregistrée d'après un résumé de moteur de recherche (page Justia non ouverte, 403) ; marque américaine MONA LISA, n° 1299791, graines d'anémone, classe 31",
+    "preuve": [
+     {
+      "page": "https://catalog.panamseed.com/view/445948364/170/",
+      "note": "Catalogue PanAmerican Seed 2026-2027 : « Anemone coronaria Mona Lisa® Series F1 » (vu en résumé de recherche)."
+     },
+     {
+      "page": "https://trademarks.justia.com/734/25/mona-73425151.html",
+      "note": "Fiche Justia du dépôt MONA LISA (non ouverte : 403) ; chiffres repris du résumé de la recherche."
+     }
+    ],
+    "verifier": "USPTO TSDR n° 1299791 (titulaire actuel)."
+   },
+   "varietes_vues": [
+    "Mona Lisa Deep Blue",
+    "Pink",
+    "White",
+    "Red Bicolor",
+    "Orchid Shades",
+    "Scarlet With Eye",
+    "Wine White Bicolor"
+   ],
+   "coloris_du_catalogue_concernes": [
+    "aucun nom de coloris ; risque sur 'Sylphide', que la RHS range sous cette série"
+   ],
+   "sources_variete": []
+  },
+  {
+   "serie": "Harmony (Sakata)",
+   "marque": {
+    "nom": "Harmony (série de semences ; fournisseur Sakata Seed America)",
+    "statut": "série commerciale d'obtenteur ; ni ™ ni ® relevé ; marque non établie, à trancher",
+    "preuve": [
+     {
+      "page": "https://www.agriexpo.online/it/prod/sakata-seed-america-inc/product-178468-188353.html",
+      "note": "Sakata présente Harmony comme série de référence pour la production en pot (Blue, Burgundy, Orchid, Pearl, Scarlet, White) ; page refusée en lecture (403), contenu vu dans le résumé d'un moteur de recherche."
+     },
+     {
+      "page": "https://www.rhs.org.uk/plants/370827/anemone-coronaria-harmony-blue-harmony-series/details",
+      "note": "La RHS la classe « Harmony Series » : Blue (accepté, simple violet-bleu), Scarlet, Pearl (soft pink-white), White (simple, centre vert), Orchid (semi-double violet-rose)."
+     }
+    ],
+    "verifier": "EUIPO, WIPO, USPTO : Harmony, classe 31 ; fiche de Sakata Ornamentals."
+   },
+   "varietes_vues": [
+    "Harmony Blue",
+    "Harmony Scarlet",
+    "Harmony Pearl",
+    "Harmony White",
+    "Harmony Orchid",
+    "Harmony Burgundy",
+    "Harmony Double (Blue, Scarlet, Pink)"
+   ],
+   "coloris_du_catalogue_concernes": [
+    "lilas (nom 'Harmony Lavender' : seule trace = légende d'une photo de salon à Shenzhen sur Commons ; Lavender n'est ni dans la liste de Sakata, ni à la RHS)"
+   ],
+   "statut_proposé": "à trancher par le porteur : série commerciale, marque non établie ; non retenue comme cible de rattachement",
+   "sources_variete": []
+  },
+  {
+   "serie": "'Bordeaux' (De Caen) — nom lié à une série",
+   "marque": {
+    "nom": "Bordeaux = Mistral® 'Bordeaux' / Galilee™ 'Bordeaux' / Meron™ 'Bordeaux'",
+    "statut": "nom employé par trois séries sous marque",
+    "preuve": [
+     {
+      "page": "https://www.rhs.org.uk/plants/333799/anemone-coronaria-(de-caen-group)-bordeaux/details",
+      "note": "RHS : 'Bordeaux' (De Caen Group, Unresolved), synonyme « Anemone 'Galilee Bordeaux' » ; « deep wine-red single poppy-like flowers with a dark centre »."
+     },
+     {
+      "page": "https://www.nijssenbulbs.com/anemone/5903010-anemone-coronaria-mistralreg-039bordeaux039-52268.html",
+      "note": "Nijssen : « MISTRAL® 'Bordeaux' »."
+     }
+    ],
+    "verifier": "KAVB : 'Bordeaux' existe-t-il comme cultivar De Caen indépendant ?"
+   },
+   "varietes_vues": [
+    "Bordeaux"
+   ],
+   "coloris_du_catalogue_concernes": [
+    "bordeaux"
+   ],
+   "sources_variete": []
+  }
+ ],
+ "sans_photo": [
+  {
+   "id": "bluepoppy",
+   "nom": "Blue Poppy",
+   "note": "Nom attesté (Wikipedia, vendeurs), aucune photo fiable."
+  }
+ ],
+ "photos_forme": [
+  {
+   "angle_stade": [
+    "face",
+    "ouverte épanouie",
+    "cœur (macro)"
+   ],
+   "description": "Macro de face du cœur de 'Hollandia' : dôme central de pistils vert-noir violacé, couronne d'étamines bleu acier à filets rose-pourpre, anneau blanc, pétales rouges.",
+   "cultivar_serie": "Hollandia",
+   "page": "https://www.pacificbulbsociety.org/pbswiki/index.php/Anemone",
+   "image": "https://www.pacificbulbsociety.org/pbswiki/files/Anemone/Anemone_coronaria_Hollandia_DP1.jpg",
+   "source": "Pacific Bulb Society, David Pilling",
+   "licence": "droits réservés (non réutilisable ; mesure locale)",
+   "niveau": "N3",
+   "consulte": "2026-10-08"
+  },
+  {
+   "angle_stade": [
+    "cœur (macro)",
+    "étamines de profil"
+   ],
+   "description": "Étamines à anthères bleu-noir et filets rose-pourpre devant l'anneau blanc.",
+   "cultivar_serie": "Hollandia",
+   "page": "https://www.pacificbulbsociety.org/pbswiki/index.php/Anemone",
+   "image": "https://www.pacificbulbsociety.org/pbswiki/files/Anemone/Anemone_coronaria_Hollandia_DP2.jpg",
+   "source": "Pacific Bulb Society, David Pilling",
+   "licence": "droits réservés (non réutilisable ; mesure locale)",
+   "niveau": "N3",
+   "consulte": "2026-10-08"
+  },
+  {
+   "angle_stade": [
+    "cœur (macro)"
+   ],
+   "description": "Cœur vu de près : pistils noirs en dôme, étamines bleues, anneau blanc très net.",
+   "cultivar_serie": "Hollandia",
+   "page": "https://www.pacificbulbsociety.org/pbswiki/index.php/Anemone",
+   "image": "https://www.pacificbulbsociety.org/pbswiki/files/Anemone/Anemone_coronaria_Hollandia_DP5.jpg",
+   "source": "Pacific Bulb Society, David Pilling",
+   "licence": "droits réservés (non réutilisable ; mesure locale)",
+   "niveau": "N3",
+   "consulte": "2026-10-08"
+  },
+  {
+   "angle_stade": [
+    "face",
+    "ouverte épanouie",
+    "feuilles (dessus)"
+   ],
+   "description": "Fleur de face sur un feuillage vert finement découpé.",
+   "cultivar_serie": "Hollandia",
+   "page": "https://www.pacificbulbsociety.org/pbswiki/index.php/Anemone",
+   "image": "https://www.pacificbulbsociety.org/pbswiki/files/Anemone/Anemone_coronaria_Hollandia_DP3.jpg",
+   "source": "Pacific Bulb Society, David Pilling",
+   "licence": "droits réservés (non réutilisable ; mesure locale)",
+   "niveau": "N3",
+   "consulte": "2026-10-08"
+  },
+  {
+   "angle_stade": [
+    "face",
+    "feuilles (dessus)"
+   ],
+   "description": "Fleur rouge à anneau blanc de face, feuilles vertes découpées autour.",
+   "cultivar_serie": "Hollandia",
+   "page": "https://www.nijssenbulbs.com/anemone/8051-anemone-coronaria-039hollandia039-8051.html",
+   "image": "https://www.nijssenbulbs.com/19050-large_default/anemone-coronaria-039hollandia039-8051.jpg",
+   "source": "Nijssen Tuin & Bulbs, Heemstede",
+   "licence": "droits réservés (mesure locale seulement)",
+   "niveau": "N3",
+   "consulte": "2026-10-08"
+  },
+  {
+   "angle_stade": [
+    "trois-quarts",
+    "tige",
+    "feuilles (attache)"
+   ],
+   "description": "Fleur vue en trois-quarts, tige verte et feuilles découpées sous la fleur.",
+   "cultivar_serie": "Hollandia",
+   "page": "https://www.nijssenbulbs.com/anemone/8051-anemone-coronaria-039hollandia039-8051.html",
+   "image": "https://www.nijssenbulbs.com/17503-large_default/anemone-coronaria-039hollandia039-8051.jpg",
+   "source": "Nijssen Tuin & Bulbs, Heemstede",
+   "licence": "droits réservés (mesure locale seulement)",
+   "niveau": "N3",
+   "consulte": "2026-10-08"
+  },
+  {
+   "angle_stade": [
+    "trois-quarts"
+   ],
+   "description": "'Hollandia' en trois-quarts, anneau blanc, cœur noir.",
+   "cultivar_serie": "Hollandia",
+   "page": "https://commons.wikimedia.org/wiki/File:Anemone_coronaria_Hollandia_2c.JPG",
+   "image": "https://upload.wikimedia.org/wikipedia/commons/3/39/Anemone_coronaria_Hollandia_2c.JPG",
+   "source": "Wikimedia Commons, Consultaplantas",
+   "licence": "CC BY-SA 4.0",
+   "niveau": "N4",
+   "consulte": "2026-10-08"
+  },
+  {
+   "angle_stade": [
+    "plante entière en massif",
+    "tiges",
+    "boutons"
+   ],
+   "description": "Massif de 'Hollandia' : tiges grêles, fleurs ouvertes et boutons, feuillage découpé.",
+   "cultivar_serie": "Hollandia",
+   "page": "https://commons.wikimedia.org/wiki/File:Anemone_coronaria_Hollandia_1c.JPG",
+   "image": "https://upload.wikimedia.org/wikipedia/commons/0/01/Anemone_coronaria_Hollandia_1c.JPG",
+   "source": "Wikimedia Commons, Consultaplantas",
+   "licence": "CC BY-SA 4.0",
+   "niveau": "N4",
+   "consulte": "2026-10-08"
+  },
+  {
+   "angle_stade": [
+    "trois-quarts",
+    "profil"
+   ],
+   "description": "Fleur rouge vue de côté, pétales étroits écartés, étamines sombres.",
+   "cultivar_serie": "A. coronaria var. rosea (rouge)",
+   "page": "https://www.rhs.org.uk/plants/294169/anemone-coronaria-var-rosea/details",
+   "image": "https://apps.rhs.org.uk/plantselectorimages/detail/sepa13038.jpg",
+   "source": "RHS (photo visionspictures.com)",
+   "licence": "droits réservés",
+   "niveau": "N3",
+   "consulte": "2026-10-08"
+  },
+  {
+   "angle_stade": [
+    "cœur (macro)"
+   ],
+   "description": "Macro du cœur : filets d'étamines bleu-noir, pistils vert-noir, pétales rouges à base pâle.",
+   "cultivar_serie": "A. coronaria var. rosea (rouge)",
+   "page": "https://www.rhs.org.uk/plants/294169/anemone-coronaria-var-rosea/details",
+   "image": "https://apps.rhs.org.uk/plantselectorimages/detail/vaem11501.jpg",
+   "source": "RHS (photo visionspictures.com)",
+   "licence": "droits réservés",
+   "niveau": "N3",
+   "consulte": "2026-10-08"
+  },
+  {
+   "angle_stade": [
+    "dos",
+    "dessous",
+    "profil bas"
+   ],
+   "description": "Fleur rouge vue par en dessous contre le ciel : revers des pétales, pédoncule et base de la fleur.",
+   "cultivar_serie": "A. coronaria sauvage, Israël",
+   "page": "https://commons.wikimedia.org/wiki/File:PikiWiki_Israel_28678_Red_Anemone.jpg",
+   "image": "https://upload.wikimedia.org/wikipedia/commons/f/f5/PikiWiki_Israel_28678_Red_Anemone.jpg",
+   "source": "Wikimedia Commons, מרוה עסאקלה",
+   "licence": "CC BY 2.5",
+   "niveau": "N4",
+   "consulte": "2026-10-08",
+   "remarque": "Seul cliché de dos trouvé ; titre de l'auteur : « a Red Anemones with a Blue sky »."
+  },
+  {
+   "angle_stade": [
+    "profil"
+   ],
+   "description": "Fleur blanche vue de côté : cuvette peu profonde, couronne d'étamines gris-bleu.",
+   "cultivar_serie": "A. coronaria sauvage, Israël",
+   "page": "https://commons.wikimedia.org/wiki/File:White-Anemone-coronaria-0011.jpg",
+   "image": "https://upload.wikimedia.org/wikipedia/commons/a/af/White-Anemone-coronaria-0011.jpg",
+   "source": "Wikimedia Commons, MathKnight and Zachi Evenor",
+   "licence": "CC BY 3.0",
+   "niveau": "N4",
+   "consulte": "2026-10-08"
+  },
+  {
+   "angle_stade": [
+    "face",
+    "cœur (macro)"
+   ],
+   "description": "Fleur rouge cultivée de face : cœur noir-bleu, couronne d'étamines blanches à anthères sombres.",
+   "cultivar_serie": "Zuchtform (cultivar non nommé), Allemagne",
+   "page": "https://commons.wikimedia.org/wiki/File:Kronen-Anemone_(Anemone_coronaria)_0932.JPG",
+   "image": "https://upload.wikimedia.org/wikipedia/commons/f/f5/Kronen-Anemone_%28Anemone_coronaria%29_0932.JPG",
+   "source": "Wikimedia Commons, Hedwig Storch",
+   "licence": "CC BY-SA 3.0",
+   "niveau": "N4",
+   "consulte": "2026-10-08"
+  },
+  {
+   "angle_stade": [
+    "bouton",
+    "bouton ouvrant"
+   ],
+   "description": "Bouton ouvrant en tulipe, pétales blancs lavés de rouge sur les bords, collerette de bractées découpées.",
+   "cultivar_serie": "Bicolor",
+   "page": "https://www.rhs.org.uk/plants/210962/anemone-coronaria-de-caen-group-bicolor/details",
+   "image": "https://apps.rhs.org.uk/plantselectorimages/detail/elbo68796.jpg",
+   "source": "RHS (photo visionspictures.com)",
+   "licence": "droits réservés",
+   "niveau": "N3",
+   "consulte": "2026-10-08"
+  },
+  {
+   "angle_stade": [
+    "bouton"
+   ],
+   "description": "Bouton bleu-violet aux pétales bordés de blanc, collerette de trois bractées découpées, tige fine.",
+   "cultivar_serie": "A. coronaria (cultivar non nommé)",
+   "page": "https://commons.wikimedia.org/wiki/File:Poppy_anemone_not_quite_ready_to_open.jpg",
+   "image": "https://upload.wikimedia.org/wikipedia/commons/6/6f/Poppy_anemone_not_quite_ready_to_open.jpg",
+   "source": "Wikimedia Commons, Anne The Librarian",
+   "licence": "CC BY 2.0",
+   "niveau": "N4",
+   "consulte": "2026-10-08"
+  },
+  {
+   "angle_stade": [
+    "bouton fermé"
+   ],
+   "description": "Bouton fermé violet sombre en forme de tulipe sur une tige haute et fine.",
+   "cultivar_serie": "A. coronaria sauvage",
+   "page": "https://commons.wikimedia.org/wiki/File:Anemone_coronaria_6.JPG",
+   "image": "https://upload.wikimedia.org/wikipedia/commons/a/a4/Anemone_coronaria_6.JPG",
+   "source": "Wikimedia Commons, Zcebeci",
+   "licence": "CC BY-SA 3.0",
+   "niveau": "N4",
+   "consulte": "2026-10-08"
+  },
+  {
+   "angle_stade": [
+    "bouton fermé"
+   ],
+   "description": "Bouton rouge en tulipe sur tige longue et lisse.",
+   "cultivar_serie": "A. coronaria sauvage, Turquie",
+   "page": "https://commons.wikimedia.org/wiki/File:Anemone_coronaria_-_Poppy_anemone_05.jpg",
+   "image": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Anemone_coronaria_-_Poppy_anemone_05.jpg",
+   "source": "Wikimedia Commons, Zeynel Cebeci",
+   "licence": "CC BY-SA 4.0",
+   "niveau": "N4",
+   "consulte": "2026-10-08"
+  },
+  {
+   "angle_stade": [
+    "bouton ouvrant",
+    "tige velue"
+   ],
+   "description": "Jeune bouton violet recourbé, pédoncule velu et bractée découpée.",
+   "cultivar_serie": "A. coronaria sauvage, Sardaigne",
+   "page": "https://commons.wikimedia.org/wiki/File:Flora_della_Sardegna_220_(05).JPG",
+   "image": "https://upload.wikimedia.org/wikipedia/commons/e/ec/Flora_della_Sardegna_220_%2805%29.JPG",
+   "source": "Wikimedia Commons, Gianni Careddu",
+   "licence": "CC BY-SA 4.0",
+   "niveau": "N4",
+   "consulte": "2026-10-08"
+  },
+  {
+   "angle_stade": [
+    "bouton ouvrant",
+    "tige velue"
+   ],
+   "description": "Même plante, bouton plus ouvert.",
+   "cultivar_serie": "A. coronaria sauvage, Sardaigne",
+   "page": "https://commons.wikimedia.org/wiki/File:Flora_della_Sardegna_220_(06).JPG",
+   "image": "https://upload.wikimedia.org/wikipedia/commons/b/b9/Flora_della_Sardegna_220_%2806%29.JPG",
+   "source": "Wikimedia Commons, Gianni Careddu",
+   "licence": "CC BY-SA 4.0",
+   "niveau": "N4",
+   "consulte": "2026-10-08"
+  },
+  {
+   "angle_stade": [
+    "bouton fermé",
+    "pédoncule recourbé"
+   ],
+   "description": "Bouton bleu-violet aux pétales serrés, tige brun-pourpre recourbée.",
+   "cultivar_serie": "A. coronaria sauvage, Kreta, Grecja",
+   "page": "https://www.inaturalist.org/observations/119043498",
+   "image": "https://inaturalist-open-data.s3.amazonaws.com/photos/201198075/original.jpeg",
+   "source": "iNaturalist, grzegorz_grzejszczak",
+   "licence": "CC-BY-SA",
+   "niveau": "N3",
+   "consulte": "2026-10-08"
+  },
+  {
+   "angle_stade": [
+    "bouton fermé"
+   ],
+   "description": "Fleur blanche refermée en tulipe, tige verte, collerette.",
+   "cultivar_serie": "A. coronaria sauvage, Kreta, Grecja",
+   "page": "https://www.inaturalist.org/observations/142443997",
+   "image": "https://inaturalist-open-data.s3.amazonaws.com/photos/244207134/original.jpeg",
+   "source": "iNaturalist, grzegorz_grzejszczak",
+   "licence": "CC-BY-SA",
+   "niveau": "N3",
+   "consulte": "2026-10-08"
+  },
+  {
+   "angle_stade": [
+    "bouton fermé"
+   ],
+   "description": "Bouton magenta en tulipe sur sol rocailleux.",
+   "cultivar_serie": "A. coronaria sauvage, Doğanbey, 09220 Söke/Aydın, Türkiye",
+   "page": "https://www.inaturalist.org/observations/336103806",
+   "image": "https://inaturalist-open-data.s3.amazonaws.com/photos/610709222/original.jpg",
+   "source": "iNaturalist, liva_erkul",
+   "licence": "CC-BY",
+   "niveau": "N3",
+   "consulte": "2026-10-08"
+  },
+  {
+   "angle_stade": [
+    "fleur qui se ferme",
+    "profil",
+    "tige"
+   ],
+   "description": "Fleur refermée en tulipe (ombre ou fin de journée), tige arquée, collerette de trois bractées découpées.",
+   "cultivar_serie": "Hollandia",
+   "page": "https://www.pacificbulbsociety.org/pbswiki/index.php/Anemone",
+   "image": "https://www.pacificbulbsociety.org/pbswiki/files/Anemone/Anemone_coronaria_Hollandia_DP4.jpg",
+   "source": "Pacific Bulb Society, David Pilling",
+   "licence": "droits réservés (non réutilisable ; mesure locale)",
+   "niveau": "N3",
+   "consulte": "2026-10-08",
+   "remarque": "La page cite une vidéo de la fleur qui se ferme (YouTube UOoWIcS_ZoA), non ouverte."
+  },
+  {
+   "angle_stade": [
+    "cycle de vie",
+    "bouton à fruit"
+   ],
+   "description": "Cliché du cycle de vie (légende de l'auteur : bouton, fleur jeune, fleur mature, tête fructifère).",
+   "cultivar_serie": "A. coronaria sauvage, Israël",
+   "page": "https://commons.wikimedia.org/wiki/File:PikiWiki_Israel_17651_The_anemone_life_cycle.jpg",
+   "image": "https://upload.wikimedia.org/wikipedia/commons/b/b2/PikiWiki_Israel_17651_The_anemone_life_cycle.jpg",
+   "source": "Wikimedia Commons, רותי רוטשטיין",
+   "licence": "CC BY 2.5",
+   "niveau": "N4",
+   "consulte": "2026-10-08",
+   "remarque": "Légende de l'auteur, non vérifiée image par image."
+  },
+  {
+   "angle_stade": [
+    "fruit",
+    "akènes plumeux",
+    "déclin"
+   ],
+   "description": "Tête fructifère : akènes laineux qui se détachent d'une tige velue.",
+   "cultivar_serie": "A. coronaria sauvage",
+   "page": "https://commons.wikimedia.org/wiki/File:Anemone_coronaria_seeds.jpg",
+   "image": "https://upload.wikimedia.org/wikipedia/commons/0/05/Anemone_coronaria_seeds.jpg",
+   "source": "Wikimedia Commons, Agvania~commonswiki",
+   "licence": "CC BY-SA 4.0",
+   "niveau": "N4",
+   "consulte": "2026-10-08"
+  },
+  {
+   "angle_stade": [
+    "plante entière",
+    "fruit",
+    "feuilles",
+    "tige",
+    "tubercule"
+   ],
+   "description": "Plante entière sur fond neutre avec échelle : fleur bleu-violet pâle, tiges longues et recourbées, feuilles basales découpées, tubercule.",
+   "cultivar_serie": "A. coronaria sauvage, Megiddo",
+   "page": "https://commons.wikimedia.org/wiki/File:Purple-Blueish_Anemone_coronaria.jpg",
+   "image": "https://upload.wikimedia.org/wikipedia/commons/1/16/Purple-Blueish_Anemone_coronaria.jpg",
+   "source": "Wikimedia Commons, Agvania~commonswiki",
+   "licence": "CC BY-SA 4.0",
+   "niveau": "N4",
+   "consulte": "2026-10-08"
+  },
+  {
+   "angle_stade": [
+    "plante entière",
+    "feuilles",
+    "tige",
+    "tubercule"
+   ],
+   "description": "Plante entière avec échelle : fleur rose, deux tiges, feuilles basales à folioles dentées, tubercule.",
+   "cultivar_serie": "A. coronaria sauvage, Megiddo",
+   "page": "https://commons.wikimedia.org/wiki/File:Pink_Anemone_coronaria.jpg",
+   "image": "https://upload.wikimedia.org/wikipedia/commons/4/45/Pink_Anemone_coronaria.jpg",
+   "source": "Wikimedia Commons, Agvania~commonswiki",
+   "licence": "CC BY-SA 4.0",
+   "niveau": "N4",
+   "consulte": "2026-10-08"
+  },
+  {
+   "angle_stade": [
+    "bouton fermé",
+    "plante entière",
+    "tubercule"
+   ],
+   "description": "Bouton violet sur tige lisse avec feuilles et tubercule, échelle de 20 cm.",
+   "cultivar_serie": "A. coronaria sauvage, Megiddo",
+   "page": "https://commons.wikimedia.org/wiki/File:Purple_Closed_Anemone_coronaria.jpg",
+   "image": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Purple_Closed_Anemone_coronaria.jpg",
+   "source": "Wikimedia Commons, Agvania~commonswiki",
+   "licence": "CC BY-SA 4.0",
+   "niveau": "N4",
+   "consulte": "2026-10-08"
+  },
+  {
+   "angle_stade": [
+    "plante entière",
+    "feuilles",
+    "tubercule"
+   ],
+   "description": "Fleur violette ouverte, feuilles découpées et tubercule, échelle de 20 cm.",
+   "cultivar_serie": "A. coronaria sauvage, Megiddo",
+   "page": "https://commons.wikimedia.org/wiki/File:Open_Purple_Anemone_coronaria.jpg",
+   "image": "https://upload.wikimedia.org/wikipedia/commons/a/a4/Open_Purple_Anemone_coronaria.jpg",
+   "source": "Wikimedia Commons, Agvania~commonswiki",
+   "licence": "CC BY-SA 4.0",
+   "niveau": "N4",
+   "consulte": "2026-10-08"
+  },
+  {
+   "angle_stade": [
+    "face",
+    "feuilles (dessus)",
+    "collerette"
+   ],
+   "description": "Fleur violette de face parmi des feuilles découpées, dont de vieilles feuilles bronze.",
+   "cultivar_serie": "A. coronaria cultivée, France",
+   "page": "https://commons.wikimedia.org/wiki/File:Anémone_FR_2013.jpg",
+   "image": "https://upload.wikimedia.org/wikipedia/commons/3/38/An%C3%A9mone_FR_2013.jpg",
+   "source": "Wikimedia Commons, JLPC",
+   "licence": "CC BY-SA 3.0",
+   "niveau": "N4",
+   "consulte": "2026-10-08"
+  },
+  {
+   "angle_stade": [
+    "profil",
+    "tige",
+    "collerette"
+   ],
+   "description": "Fleur rouge à pétales nombreux vue de côté sur sa tige, bractées vertes sous la fleur.",
+   "cultivar_serie": "A. coronaria cultivée",
+   "page": "https://commons.wikimedia.org/wiki/File:Plant-Anemone-Anemoon-03.jpg",
+   "image": "https://upload.wikimedia.org/wikipedia/commons/1/11/Plant-Anemone-Anemoon-03.jpg",
+   "source": "Wikimedia Commons, Marianne Cornelissen-Kuyt",
+   "licence": "CC BY-SA 4.0",
+   "niveau": "N4",
+   "consulte": "2026-10-08"
+  },
+  {
+   "angle_stade": [
+    "plante entière en fleur",
+    "feuilles basales"
+   ],
+   "description": "Plante en fleur dans l'herbe : fleur rouge sur tige simple, rosette de feuilles découpées.",
+   "cultivar_serie": "A. coronaria naturalisée, Afrique du Sud",
+   "page": "https://commons.wikimedia.org/wiki/File:Anemone_coronaria_cultivar_1DS-II_3-8811.jpg",
+   "image": "https://upload.wikimedia.org/wikipedia/commons/9/9e/Anemone_coronaria_cultivar_1DS-II_3-8811.jpg",
+   "source": "Wikimedia Commons, SAplants",
+   "licence": "CC BY-SA 4.0",
+   "niveau": "N4",
+   "consulte": "2026-10-08"
+  },
+  {
+   "angle_stade": [
+    "tubercule"
+   ],
+   "description": "Tubercules secs de 'Mr. Fokker' avec pièce de 1 € pour l'échelle (2 à 3 cm).",
+   "cultivar_serie": "Mister Fokker",
+   "page": "https://www.nijssenbulbs.com/anemone/8053-anemone-coronaria-039mr-fokker039-8053.html",
+   "image": "https://www.nijssenbulbs.com/13445-large_default/anemone-coronaria-039mr-fokker039-8053.jpg",
+   "source": "Nijssen Tuin & Bulbs, Heemstede",
+   "licence": "droits réservés (mesure locale seulement)",
+   "niveau": "N3",
+   "consulte": "2026-10-08"
+  },
+  {
+   "angle_stade": [
+    "tubercule"
+   ],
+   "description": "Tubercules de 'Mount Everest' avec pièce de 1 €.",
+   "cultivar_serie": "Mount Everest",
+   "page": "https://www.nijssenbulbs.com/anemone/6461-anemone-coronaria-039mount-everest039-6461.html",
+   "image": "https://www.nijssenbulbs.com/13452-large_default/anemone-coronaria-039mount-everest039-6461.jpg",
+   "source": "Nijssen Tuin & Bulbs, Heemstede",
+   "licence": "droits réservés (mesure locale seulement)",
+   "niveau": "N3",
+   "consulte": "2026-10-08"
+  },
+  {
+   "angle_stade": [
+    "tubercule"
+   ],
+   "description": "Tubercules de 'Hollandia' avec pièce d'une livre.",
+   "cultivar_serie": "Hollandia",
+   "page": "https://www.pacificbulbsociety.org/pbswiki/index.php/Anemone",
+   "image": "https://www.pacificbulbsociety.org/pbswiki/files/Anemone/Anemone_coronaria_Hollandia_DP0.jpg",
+   "source": "Pacific Bulb Society, David Pilling",
+   "licence": "droits réservés (non réutilisable ; mesure locale)",
+   "niveau": "N3",
+   "consulte": "2026-10-08"
+  },
+  {
+   "angle_stade": [
+    "semi-double",
+    "face"
+   ],
+   "description": "Fleur à pétales étroits plus nombreux que la simple, légendée « double form » par la PBS.",
+   "cultivar_serie": "Hollandia (forme semi-double)",
+   "page": "https://www.pacificbulbsociety.org/pbswiki/index.php/Anemone",
+   "image": "https://www.pacificbulbsociety.org/pbswiki/files/Anemone/Anemone_coronaria_Hollandia_DP6.jpg",
+   "source": "Pacific Bulb Society, David Pilling",
+   "licence": "droits réservés (non réutilisable ; mesure locale)",
+   "niveau": "N3",
+   "consulte": "2026-10-08"
+  },
+  {
+   "angle_stade": [
+    "face",
+    "semi-double"
+   ],
+   "description": "Fleur rouge à anneau blanc crème et pétales étroits nombreux.",
+   "cultivar_serie": "The Governor",
+   "page": "https://www.nijssenbulbs.com/anemone/7121-anemone-coronaria-039governor039-7121.html",
+   "image": "https://www.nijssenbulbs.com/17113-large_default/anemone-coronaria-039governor039-7121.jpg",
+   "source": "Nijssen Tuin & Bulbs, Heemstede",
+   "licence": "droits réservés (mesure locale seulement)",
+   "niveau": "N3",
+   "consulte": "2026-10-08"
+  },
+  {
+   "angle_stade": [
+    "face",
+    "double"
+   ],
+   "description": "Fleur double blanche à centre vert pâle.",
+   "cultivar_serie": "Mount Everest",
+   "page": "https://www.nijssenbulbs.com/anemone/6461-anemone-coronaria-039mount-everest039-6461.html",
+   "image": "https://www.nijssenbulbs.com/16965-large_default/anemone-coronaria-039mount-everest039-6461.jpg",
+   "source": "Nijssen Tuin & Bulbs, Heemstede",
+   "licence": "droits réservés (mesure locale seulement)",
+   "niveau": "N3",
+   "consulte": "2026-10-08"
+  }
+ ],
+ "couverture": {
+  "registre_kavb": "non interrogé (réservé à l'orchestrateur)",
+  "entrees_rhs_ouvertes": "23 fiches (A. coronaria) ; d'autres vues en résultat de recherche seulement",
+  "cultivars_libres_documentes_avec_photos_nommees": [
+   "Mister Fokker",
+   "Hollandia",
+   "Die Braut / The Bride",
+   "Sylphide",
+   "Bicolor",
+   "Duet",
+   "The Governor",
+   "The Admiral",
+   "Lord Lieutenant",
+   "Mount Everest"
+  ],
+  "dont_prouves_A": 0,
+  "dont_prouves_B": 10,
+  "groupes_et_melanges": [
+   "Saint Bridgid",
+   "De Caen (mélange et groupes de couleur RHS)"
+  ],
+  "sans_photo_fiable": [
+   "Blue Poppy"
+  ],
+  "formes_botaniques_documentees": 5,
+  "dont_prouvees_B": 5,
+  "series_sous_marque_ecartees": 4,
+  "serie_a_trancher": 1,
+  "coloris_du_catalogue": {
+   "total": 23,
+   "en_production": 5,
+   "a_confirmer": 7,
+   "a_retirer": 11
+  },
+  "angles_couverts": {
+   "face": "oui (Hollandia, Mr Fokker, The Bride…)",
+   "trois-quarts": "oui",
+   "profil": "oui (PBS DP4, Commons)",
+   "dos": "un seul cliché (PikiWiki 28678)",
+   "bouton": "oui (fermé, ouvrant)",
+   "fleur qui se ferme": "oui (PBS DP4)",
+   "fané": "aucun cliché libre trouvé",
+   "fruit et akènes": "oui",
+   "feuilles dessus": "oui",
+   "feuilles dessous": "aucun",
+   "attache des feuilles et collerette": "partiel",
+   "tige": "oui (lisse, longue ; velue près du bouton)",
+   "plante entière": "oui (échelle, fond neutre)",
+   "tubercule": "oui"
+  },
+  "libres_documentes_absents_du_catalogue": [
+   "The Governor (semi-double rouge à anneau blanc)",
+   "The Admiral (semi-double magenta-violet)",
+   "Lord Lieutenant (double violet-bleu)",
+   "Mount Everest (double blanc)",
+   "Duet (blanc à anneau rose-rouge)"
+  ],
+  "kavb_a_interroger": [
+   "Mister Fokker / Mr Fokker",
+   "Hollandia / His Excellency",
+   "Die Braut / The Bride",
+   "Sylphide",
+   "Bicolor / Bi-Color",
+   "Duet",
+   "The Governor",
+   "The Admiral",
+   "Lord Lieutenant",
+   "Mount Everest",
+   "Blue Poppy",
+   "Bordeaux",
+   "St Brigid",
+   "De Caen",
+   "Harmony (Blue, Scarlet, Pearl, White, Orchid, Burgundy)",
+   "Panda",
+   "Mistral, Mistral Plus, Levante, Galilee, Rainbow : droits d'obtenteur et date d'enregistrement"
+  ]
+ },
+ "ordre_de_production": [
+  "1. Les cinq cultivars libres du catalogue : bleu (Mr Fokker), rouge (Hollandia), blanc-vert (The Bride), fuchsia (Sylphide), bicolore (Bicolor).",
+  "2. Les sept formes sauvages, si le porteur valide la substitution (dont le blanc à cœur sombre du bouquet).",
+  "3. Les cultivars semi-doubles et doubles (Governor, Admiral, Lord Lieutenant, Mount Everest), dans une nouvelle sorte.",
+  "4. Duet, puis les cultivars qui sortiront de la recherche KAVB."
+ ],
+ "sources_generales": [
+  {
+   "page": "https://api.gbif.org/v1/species/3033261",
+   "niveau": "N1",
+   "type": "taxonomie",
+   "consulte": "2026-10-08",
+   "auteur": "GBIF (socle taxonomique, tient lieu de POWO bloqué)",
+   "licence": "libre",
+   "note": "Nom accepté et liste des synonymes (var. coccinea, cyanea, alba, albiflora, rosea, purpurea, grassensis, plena…) : tous sont des synonymes d'A. coronaria L."
+  },
+  {
+   "page": "https://www.rhs.org.uk/plants/search-results?query=anemone%20coronaria",
+   "niveau": "N3",
+   "type": "inventaire",
+   "consulte": "2026-10-08",
+   "auteur": "Royal Horticultural Society",
+   "licence": "texte seulement",
+   "note": "La page de recherche est dynamique ; les 23 fiches utilisées sont citées une à une dans les sources des variétés."
+  },
+  {
+   "page": "https://www.nijssenbulbs.com/170-anemone",
+   "niveau": "N3",
+   "type": "inventaire",
+   "consulte": "2026-10-08",
+   "auteur": "Nijssen Tuin & Bulbs",
+   "licence": "texte seulement",
+   "note": "Liste des A. coronaria : Admiral, Mount Everest, Governor, Duet, Bride, Hollandia, Mr Fokker, Sylphide, De Caen ; et sous ® : Mistral, Mistral Plus, Levante (https://www.nijssenbulbs.com/606-anemone)."
+  },
+  {
+   "page": "https://www.dutchgrown.com/collections/anemone",
+   "niveau": "N3",
+   "type": "inventaire",
+   "consulte": "2026-10-08",
+   "auteur": "DutchGrown",
+   "licence": "texte seulement",
+   "note": "De Caen Mixed, Mr Fokker, The Bride, St Brigid, Bi-Color ; Fullstar, Galilee, Rainbow, Mistral, Barbie (série non établie)."
+  },
+  {
+   "page": "https://www.peternyssen.com/anemone-de-caen-mr-fokker.html",
+   "niveau": "N3",
+   "type": "inventaire",
+   "consulte": "2026-10-08",
+   "auteur": "Peter Nyssen",
+   "licence": "texte seulement",
+   "note": "De Caen : Mr Fokker, The Bride, Hollandia, Sylphide, St Brigid."
+  },
+  {
+   "page": "https://www.danzigeronline.com/series_cut_flowers/anemone/",
+   "niveau": "N2",
+   "type": "fiche obtenteur",
+   "consulte": "2026-10-08",
+   "auteur": "Danziger (représentant de la pépinière Yodfat)",
+   "licence": "texte seulement",
+   "note": "Six séries sous ™ ; images de variété en espace réservé."
+  },
+  {
+   "page": "https://en.wikipedia.org/wiki/Anemone_coronaria",
+   "niveau": "N4",
+   "type": "inventaire",
+   "consulte": "2026-10-08",
+   "auteur": "Wikipedia",
+   "licence": "CC BY-SA",
+   "note": "Groupes De Caen et St Brigid, cultivars cités : Bicolor, Blue Poppy, Mr Fokker, Sylphide, The Bride ; Lord Lieutenant, The Governor ; groupes mineurs Rissoana et Grassensis."
+  },
+  {
+   "page": "https://commons.wikimedia.org/wiki/Category:Anemone_coronaria_(cultivars)",
+   "niveau": "N4",
+   "type": "photos",
+   "consulte": "2026-10-08",
+   "auteur": "Wikimedia Commons",
+   "licence": "CC",
+   "note": "73 fichiers (+ 84 en gros plan) ; un tiers sans nom de cultivar."
+  },
+  {
+   "page": "https://www.inaturalist.org/taxa/244745",
+   "niveau": "N3",
+   "type": "photos",
+   "consulte": "2026-10-08",
+   "auteur": "iNaturalist (API)",
+   "licence": "CC BY, CC BY-SA, CC0",
+   "note": "Seules des observations de qualité recherche, non captives, prises dans l'aire naturelle (Grèce, Crète, Chypre, Turquie, Israël) servent aux formes sauvages ; les jardins hors aire sont écartés."
+  },
+  {
+   "page": "https://www.pacificbulbsociety.org/pbswiki/index.php/Anemone",
+   "niveau": "N3",
+   "type": "photos",
+   "consulte": "2026-10-08",
+   "auteur": "Pacific Bulb Society",
+   "licence": "droits réservés",
+   "note": "Seul cultivar d'A. coronaria nommé : 'Hollandia', 8 photos."
+  },
+  {
+   "page": "https://www.cretanflora.com/anemone_coronaria_text.html",
+   "niveau": "N3",
+   "type": "flore locale",
+   "consulte": "2026-10-08",
+   "auteur": "Cretan Flora",
+   "licence": "texte seulement",
+   "note": "Résumé de recherche, page non ouverte : fleurs rose, rouge, bleu, lavande, blanc ou pourpre, souvent avec une zone pâle au centre, 35 à 75 mm."
+  },
+  {
+   "page": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7154818/",
+   "niveau": "N3",
+   "type": "texte savant",
+   "consulte": "2026-10-08",
+   "auteur": "Dafni A., Tzohari H., Ben-Shlomo R., Vereecken N.J., Ne'eman G., Plants (Bâle) 2020, 9(3):397, doi 10.3390/plants9030397",
+   "licence": "libre accès (MDPI)",
+   "note": "L'espèce a trois morphes de couleur discrets, rouge, blanc et violet-bleu, et au moins 30 variantes graduelles ; les trois morphes sont interféconds."
+  }
+ ],
+ "doutes": [
+  "Aucun niveau A : le registre KAVB n'a pas été interrogé (consigne), Floricode et UPOV PLUTO sont fermés, Jan de Wit en Zonen n'a pas de page A. coronaria retrouvée. Tous les cultivars sont plafonnés à B.",
+  "Le nom RHS ne fait pas autorité d'enregistrement : l'ICRA est le KAVB. Plusieurs fiches RHS sont « Unresolved » (Bicolor, The Governor, Bordeaux, Saint Bridgid, Harmony Pearl).",
+  "Marques : les ® et ™ viennent du commerce (Nijssen, Jo Radahl, Danziger) ; ni EUIPO, ni WIPO, ni UIBM n'ont été interrogés. La marque MONA LISA n° 1299791 vient d'un résumé de recherche, la page Justia a répondu 403.",
+  "Le blanc à cœur noir du bouquet « Printemps à la carpe » n'a aucun équivalent en cultivar libre ; la forme blanche sauvage est plus petite et à tépales étroits. Si le porteur la refuse, il reste 'Die Braut' (cœur vert) ou le retrait.",
+  "Les formes botaniques sont des fleurs simples sauvages de 3,5 à 7,5 cm : elles changent l'allure du coloris par rapport à un cultivar de fleur coupée. Leurs noms botaniques (var. alba, cyanea, rosea…) ne sont que des synonymes dans le socle GBIF ; la couleur seule les définit. Les trois morphes discrets (rouge, blanc, violet-bleu) sont attestés par Dafni et al. 2020 ; rose et panaché ne sont attestés que par des photos.",
+  "'Sylphide' : la RHS l'accepte sous la série Mona Lisa (marque Ball). Le nom est ancien et vendu en tubercules, mais le KAVB doit confirmer qu'il est indépendant. Simple (photos) ou double (RHS) reste à trancher.",
+  "'The Governor' : De Caen Group à la RHS, Saint Bridgid Group chez Wikipedia ; semi-double sur les photos.",
+  "'Bordeaux' : nom partagé par Mistral®, Galilee™ et Meron™ ; la RHS donne 'Galilee Bordeaux' en synonyme. Le KAVB peut dire s'il existe un 'Bordeaux' De Caen antérieur.",
+  "'Harmony Lavender' (nom du coloris 'lilas') n'est ni dans la liste de Sakata, ni à la RHS : seule une légende de photo de salon le porte. 'Mistral Blush' n'a pas été retrouvé non plus ('Mistral Pale' existe).",
+  "Indépendance des photos : les catalogues néerlandais (Nijssen, BULBi, DutchGrown) peuvent puiser dans la même banque d'images ; les photos RHS (visionspictures.com), Pacific Bulb Society et Commons sont d'origine distincte.",
+  "Les photos de catalogue sont saturées : mesurer en médiane sur plusieurs photos ; la teinte de 'Mr Fokker' varie du bleu violet profond (Nijssen) au lavande (RHS) selon la lumière.",
+  "'Rainbow Pink and White' est rangé par la RHS dans le De Caen Group, mais « Rainbow™ » est une série Danziger : considérer comme sous marque."
+ ],
+ "limites": [
+  "KAVB non interrogé (consigne) ; Floricode et UPOV PLUTO sur compte professionnel ou payant : non ouverts.",
+  "POWO derrière un contrôle anti-robot ; wildflowers.co.il, agriexpo, Justia, Phoenix Perennials : 403 ou page de contrôle, résumés de recherche seulement.",
+  "Aucune photo libre de pétales fanés ou tombants nommée trouvée ; aucune photo du dessous des feuilles ; un seul cliché de dos (PikiWiki 28678). À chercher sur Flickr sous licence CC par fleur-refs.",
+  "Pas d'obtenteur ni d'année pour les cultivars De Caen et St Brigid (sauf 'Bride' : 1870, une seule source) : ce sont de vieux noms sans fiche d'obtenteur.",
+  "Les pages RHS n'ont pas de photo de plante propre pour 'Die Braut', 'The Governor', 'Bordeaux' (image promotionnelle seulement)."
+ ],
+ "pieges": [
+  "Commons, catégorie « Anemone coronaria 'Hollandia' » : six photos de Wrocław (2019, 2023) montrent une anémone du Japon rose et jaune, pas 'Hollandia'.",
+  "Commons « Anemone x hybrida Geante des Blanches RJB.jpg » est titrée A. coronaria dans sa description : à ne pas utiliser.",
+  "Commons « Anemone. (23590072679).jpg » (CC0, « Blue Poppy Bulbs ») montre des fleurs lilas semi-doubles.",
+  "Un nom de série sous marque sert souvent de nom de cultivar (Mistral® 'Bordeaux', Galilee™ 'Bordeaux') : toujours citer le cultivar et la série.",
+  "iNaturalist « qualité recherche » accepte des plantes de jardin ou naturalisées hors de l'aire (Madrid, Reading, Kent) : ne retenir que l'aire naturelle.",
+  "Pages Plantura (Shutterstock) et places de marché exclues."
+ ]
+}

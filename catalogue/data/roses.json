@@ -1,0 +1,3773 @@
+[
+  {
+    "id": "rose-standard",
+    "nom_fr": "Rose standard (hybride de thé à grosse tête)",
+    "nom_en": "Standard cut rose (large-headed hybrid tea)",
+    "latin": "Rosa × hybrida",
+    "famille": "Rosaceae",
+    "categorie": "Roses",
+    "role": "focale",
+    "couleurs": [
+      "blanc pur",
+      "blanc crème",
+      "ivoire",
+      "champagne",
+      "rose blush",
+      "rose poudré",
+      "rose moyen",
+      "vieux rose",
+      "rose vif",
+      "fuchsia",
+      "magenta",
+      "cerise",
+      "pêche",
+      "abricot",
+      "saumon",
+      "corail",
+      "orange",
+      "jaune",
+      "jaune pâle",
+      "rouge",
+      "rouge foncé velouté",
+      "bordeaux",
+      "lavande",
+      "mauve",
+      "lilas",
+      "vert",
+      "brun caramel",
+      "terracotta",
+      "bicolore jaune bordé rouge",
+      "blanc bordé rose",
+      "blanc bordé rouge cerise",
+      "crème bordé rouge",
+      "blanc flammé de rose vif"
+    ],
+    "varietes": [
+      {
+        "nom": "Avalanche+",
+        "couleur": "blanc crème",
+        "note": "Obtenteur Dümmen Orange ; cultivée aux Pays-Bas ; plus de 50 pétales, s'ouvre entièrement, peu d'épines, tenue d'au moins 14 jours ; certains pétales externes portent un petit « baiser » rouge"
+      },
+      {
+        "nom": "Mondial",
+        "couleur": "blanc chaud à cœur crème, pétales externes verdâtres",
+        "note": "« Rose de mariée » d'Équateur (Rosaprima, Naranjo Roses) ; très gros bouton s'ouvrant en tête pleine et ronde"
+      },
+      {
+        "nom": "Playa Blanca",
+        "couleur": "blanc pur",
+        "note": "Équateur (Rosaprima, Naranjo Roses) ; grosse tête à double cœur"
+      },
+      {
+        "nom": "Vendela",
+        "couleur": "ivoire champagne, bords des pétales légèrement rosés",
+        "note": "Obtenteur Rosen Tantau ; tige 70–90 cm ; classique très utilisé comme base pour la teinture"
+      },
+      {
+        "nom": "Akito",
+        "couleur": "blanc optique",
+        "note": "Obtenteur Rosen Tantau ; tête moyenne de forme classique, longue tenue"
+      },
+      {
+        "nom": "Bridal Akito",
+        "couleur": "blanc à œil rose délicat",
+        "note": "Rosen Tantau, mutation d'Akito ; tige 50–60 cm ; pensée pour les mariages"
+      },
+      {
+        "nom": "Polar Star",
+        "couleur": "blanc",
+        "note": "Obtenteur Rosen Tantau ; très grosse tête, fleurs parfumées, tige 60–80 cm"
+      },
+      {
+        "nom": "Tibet",
+        "couleur": "blanc neige à cœur jaune pâle",
+        "note": "Équateur (Rosaprima, Naranjo) ; obtenteur Schreurs selon Naranjo Roses"
+      },
+      {
+        "nom": "Proud",
+        "couleur": "blanc coquille d'œuf",
+        "note": "Bouton pointu ; Équateur (Rosaprima, Naranjo) ; obtenteur De Ruiter selon Naranjo Roses"
+      },
+      {
+        "nom": "Escimo",
+        "couleur": "blanc éclatant, touche jaune au cœur",
+        "note": "Rosaprima (Équateur) ; pétales aux bords « carrés »"
+      },
+      {
+        "nom": "White Naomi!",
+        "couleur": "blanc",
+        "note": "Obtenteur Schreurs ; énorme tête très pétaleuse à l'ouverture presque symétrique, feuillage vert foncé"
+      },
+      {
+        "nom": "Highlight",
+        "couleur": "blanc pur",
+        "note": "Obtenteur Interplant, vendue par Rosaprima ; fleur bien ronde ; tige 60–80 cm ; vase 12–14 jours"
+      },
+      {
+        "nom": "White Diamond",
+        "couleur": "blanc",
+        "note": "Interplant (synonyme High Society) ; tige 60–80 cm ; vase 14–16 jours"
+      },
+      {
+        "nom": "Mia",
+        "couleur": "blanc doux, pétales externes à reflets verts",
+        "note": "Équateur (Rosaprima, Naranjo) ; obtenteur De Ruiter selon Naranjo Roses"
+      },
+      {
+        "nom": "Champagnier",
+        "couleur": "blanc crème à lueur intérieure",
+        "note": "Rosaprima ; alternative chaude au blanc pur"
+      },
+      {
+        "nom": "Crème de la Crème",
+        "couleur": "crème",
+        "note": "Rosaprima ; forme stylisée classique"
+      },
+      {
+        "nom": "Soul",
+        "couleur": "blanc crème à cœur pêche",
+        "note": "Obtenteur Rosen Tantau ; Rosaprima ; tige 50–70 cm"
+      },
+      {
+        "nom": "Candlelight",
+        "couleur": "crème nude à cœur pêche chaud",
+        "note": "Rosaprima ; bouton très gros"
+      },
+      {
+        "nom": "Fancy Dreams",
+        "couleur": "blanc crème à cœur pêche",
+        "note": "Rosaprima, nouveauté ; spirale classique symétrique"
+      },
+      {
+        "nom": "Juwena",
+        "couleur": "blanc crème",
+        "note": "Rosen Tantau ; grosse tête, tige 60–80 cm, idéale en bouquet de mariée"
+      },
+      {
+        "nom": "Arctica",
+        "couleur": "blanc teinté de vert",
+        "note": "Rosen Tantau, nouveauté Europe ; grosse tête, tige 50–60 cm"
+      },
+      {
+        "nom": "Flat White",
+        "couleur": "porcelaine, pétales externes teintés de vert",
+        "note": "Rosen Tantau, nouveauté Europe ; grand bouton élégant, tige 60–80 cm"
+      },
+      {
+        "nom": "Quicksand",
+        "couleur": "ivoire sable lavé de rose (nude)",
+        "note": "Équateur (Rosaprima, Naranjo) ; aussi au catalogue Interplant ; aspect « antique »"
+      },
+      {
+        "nom": "Menta",
+        "couleur": "ivoire crème à reflets lavande-gris, saumon et moka",
+        "note": "Interplant (classée intermédiaire), Rosaprima ; très pleine, s'ouvre complètement ; incontournable des tons terre"
+      },
+      {
+        "nom": "Sweet Avalanche+",
+        "couleur": "rose porcelaine",
+        "note": "Famille Avalanche+ (Dümmen Orange) ; pétales presque translucides ; Pays-Bas (Meijer Roses)"
+      },
+      {
+        "nom": "Adore Avalanche+",
+        "couleur": "rose blush nude, pétales externes verdâtres",
+        "note": "Famille Avalanche+ ; « rose ballerine de Degas »"
+      },
+      {
+        "nom": "Pink Avalanche+",
+        "couleur": "rose doux lumineux, pétales externes plus clairs",
+        "note": "Famille Avalanche+ ; Pays-Bas (Van den Berg Roses, Arend Roses)"
+      },
+      {
+        "nom": "Pink Mondial",
+        "couleur": "rose poudré antique, pétales externes verdis",
+        "note": "Équateur (Rosaprima, Naranjo) ; obtenteur Kordes selon Naranjo Roses"
+      },
+      {
+        "nom": "Sweet Akito",
+        "couleur": "rose pâle",
+        "note": "Rosaprima ; légers froufrous"
+      },
+      {
+        "nom": "Sweet Escimo",
+        "couleur": "rose pâle crémeux",
+        "note": "Rosaprima ; forme semi-pointue"
+      },
+      {
+        "nom": "Revival Sweet",
+        "couleur": "blanc à cœur rose tendre",
+        "note": "Rosen Tantau, mutation de Revival ; tige 60–80 cm"
+      },
+      {
+        "nom": "Señorita",
+        "couleur": "blanc à œil rose pâle",
+        "note": "Rosen Tantau ; grosse tête, tige 60–80 cm"
+      },
+      {
+        "nom": "Esperance",
+        "couleur": "rose blush bordé de vert",
+        "note": "Équateur ; obtenteur De Ruiter selon Naranjo Roses ; aspect « rose ancienne »"
+      },
+      {
+        "nom": "Faith",
+        "couleur": "rose poudré lavandé (antique)",
+        "note": "Rosaprima ; teinte poussiéreuse"
+      },
+      {
+        "nom": "Titanic",
+        "couleur": "rose pastel à frange verte",
+        "note": "Rosaprima ; pétales externes arrondis"
+      },
+      {
+        "nom": "Nena",
+        "couleur": "rose coquillage, pétales externes blanchis",
+        "note": "Rosaprima ; obtenteur De Ruiter selon Naranjo Roses"
+      },
+      {
+        "nom": "Mother of Pearl",
+        "couleur": "rose pâle et pêche",
+        "note": "Rosaprima ; bicolore nette"
+      },
+      {
+        "nom": "Mandala",
+        "couleur": "rose clair s'intensifiant vers le cœur",
+        "note": "Rosaprima, Naranjo ; obtenteur De Ruiter selon Naranjo ; spirale parfaite, très grosse tête"
+      },
+      {
+        "nom": "Luciano",
+        "couleur": "rose pâle antique aux bords presque blancs",
+        "note": "Rosaprima ; très gros bouton"
+      },
+      {
+        "nom": "Christa",
+        "couleur": "rose clair : cœur rose bonbon, bords crème guimauve",
+        "note": "Rosaprima ; très gros bouton"
+      },
+      {
+        "nom": "Secret Garden",
+        "couleur": "rose lavandé à reflets argentés",
+        "note": "Obtenteur Schreurs selon Naranjo Roses ; léger parfum de rose de jardin ; très grosse tête"
+      },
+      {
+        "nom": "Jessika",
+        "couleur": "rose poudré",
+        "note": "Obtenteur Rosen Tantau ; très productive"
+      },
+      {
+        "nom": "Aly",
+        "couleur": "rose blush",
+        "note": "Rosaprima ; parfum prononcé ; pétales concentriques tourbillonnants"
+      },
+      {
+        "nom": "Shy",
+        "couleur": "rose tendre « timide »",
+        "note": "Rosen Tantau ; grosse tête, tige 50–70 cm"
+      },
+      {
+        "nom": "Primaballerina",
+        "couleur": "rose doux",
+        "note": "Rosen Tantau, nouveauté Europe ; gros boutons"
+      },
+      {
+        "nom": "Hermosa",
+        "couleur": "vieux rose (rose antique)",
+        "note": "Équateur ; obtenteur Dümmen Orange selon Naranjo Roses"
+      },
+      {
+        "nom": "Honey Avalanche+",
+        "couleur": "vieux rose profond, cœur plus foncé",
+        "note": "Famille Avalanche+ ; aspect vintage, se marie aux bleus"
+      },
+      {
+        "nom": "Frutteto",
+        "couleur": "cœur rose blush, pétales externes verts",
+        "note": "Obtenteur De Ruiter selon Naranjo Roses ; pointes légèrement recourbées"
+      },
+      {
+        "nom": "Geraldine",
+        "couleur": "rose poudré, pétales externes verts",
+        "note": "Obtenteur Interplant ; Rosaprima ; pétales légèrement froissés"
+      },
+      {
+        "nom": "Sweet Unique",
+        "couleur": "rose crémeux, pétales externes plus clairs",
+        "note": "Rosaprima"
+      },
+      {
+        "nom": "Rosita Vendela",
+        "couleur": "rose vif passant au crème sur les bords",
+        "note": "Rosen Tantau, mutation de Vendela ; tige 60–90 cm"
+      },
+      {
+        "nom": "Revival",
+        "couleur": "rose frais",
+        "note": "Rosen Tantau ; « classique mondial », tige 60–80 cm"
+      },
+      {
+        "nom": "Paloma",
+        "couleur": "dégradé du rose clair au rose soutenu",
+        "note": "Obtenteur Rosen Tantau ; cultivable sous tous les climats"
+      },
+      {
+        "nom": "Pink Paloma",
+        "couleur": "rose foncé à l'extérieur, cœur rose tendre",
+        "note": "Rosen Tantau, mutation de Paloma"
+      },
+      {
+        "nom": "Romina",
+        "couleur": "vieux rose vintage",
+        "note": "Rosen Tantau, mutation de Paloma ; très grosse tête"
+      },
+      {
+        "nom": "Barracuda",
+        "couleur": "rose tacheté de blanc",
+        "note": "Rosen Tantau, mutation de Paloma ; tige 60–70 cm"
+      },
+      {
+        "nom": "Lupita",
+        "couleur": "rose chaud élégant",
+        "note": "Rosen Tantau ; grosse tête"
+      },
+      {
+        "nom": "Charlotte",
+        "couleur": "rose franc",
+        "note": "Rosen Tantau ; grosse tête, tige 60–70 cm"
+      },
+      {
+        "nom": "Shanghai Lady",
+        "couleur": "rose frais et clair",
+        "note": "Rosen Tantau"
+      },
+      {
+        "nom": "Miss Piggy",
+        "couleur": "rose délicat virant au pêche",
+        "note": "Rosaprima ; très demandée par les fleuristes"
+      },
+      {
+        "nom": "Sweet Memory",
+        "couleur": "rose moyen",
+        "note": "Rosaprima ; très pétaleuse, longue tenue"
+      },
+      {
+        "nom": "Pink Babaloo",
+        "couleur": "rose moyen",
+        "note": "Rosaprima ; très grosse tête"
+      },
+      {
+        "nom": "Maritim",
+        "couleur": "rose bleuté froid",
+        "note": "Rosen Tantau ; feuillage brillant, tige 60–80 cm"
+      },
+      {
+        "nom": "Candy Avalanche+",
+        "couleur": "blanc flammé de rose vif",
+        "note": "Famille Avalanche+ ; dessin des pétales changeant pendant l'ouverture"
+      },
+      {
+        "nom": "Pink Floyd",
+        "couleur": "rose néon (fuchsia vif)",
+        "note": "Équateur (Rosaprima, Naranjo) ; bouton extra-large"
+      },
+      {
+        "nom": "Hot Paris",
+        "couleur": "rose vif",
+        "note": "Rosaprima"
+      },
+      {
+        "nom": "Cherry O",
+        "couleur": "rose fuchsia saturé",
+        "note": "Rosaprima"
+      },
+      {
+        "nom": "Full Monty",
+        "couleur": "rose vif",
+        "note": "Rosaprima, Naranjo ; très grosse tête veloutée"
+      },
+      {
+        "nom": "Topaz",
+        "couleur": "rose vif, revers des pétales plus clair",
+        "note": "Rosaprima"
+      },
+      {
+        "nom": "Queenberry",
+        "couleur": "rose vif",
+        "note": "Rosaprima ; forme spectaculaire"
+      },
+      {
+        "nom": "Hot Shot",
+        "couleur": "rose foncé aux reflets framboise",
+        "note": "Rosaprima"
+      },
+      {
+        "nom": "Hot Spot",
+        "couleur": "rose vif aux pétales ondulés",
+        "note": "Rosaprima, Naranjo"
+      },
+      {
+        "nom": "Jacaranda",
+        "couleur": "rose vif",
+        "note": "Rosaprima ; pétales sculptés, longue tenue"
+      },
+      {
+        "nom": "Gotcha",
+        "couleur": "rose vif",
+        "note": "Obtenteur Interplant ; Rosaprima ; très grosse tête"
+      },
+      {
+        "nom": "Aqua!",
+        "couleur": "rose vif (hot pink)",
+        "note": "Obtenteur Schreurs ; tige sans épines, feuillage vert vif brillant ; Pays-Bas (Holla Roses, Van der Hulst)"
+      },
+      {
+        "nom": "Abigaile",
+        "couleur": "rose magenta",
+        "note": "Rosen Tantau ; feuillage sombre très brillant"
+      },
+      {
+        "nom": "Bella Natalie",
+        "couleur": "magenta vif intense",
+        "note": "Rosen Tantau, nouveauté ; tige 60–70 cm"
+      },
+      {
+        "nom": "Tina",
+        "couleur": "rose intense",
+        "note": "Rosen Tantau, nouveauté ; peu d'épines"
+      },
+      {
+        "nom": "Girlfriend",
+        "couleur": "magenta brillant",
+        "note": "Rosen Tantau, nouveauté Europe ; forme nostalgique"
+      },
+      {
+        "nom": "Shogun",
+        "couleur": "rose pourpré",
+        "note": "Rosen Tantau ; grosse tête"
+      },
+      {
+        "nom": "Movie Star",
+        "couleur": "rouge framboise aux pointes « sucrées »",
+        "note": "Rosen Tantau ; tête moyenne à grosse"
+      },
+      {
+        "nom": "Peach Avalanche+",
+        "couleur": "pêche poudré",
+        "note": "Famille Avalanche+ ; Pays-Bas (Van den Berg Roses)"
+      },
+      {
+        "nom": "Pearl Avalanche+",
+        "couleur": "saumon pastel (corail, abricot, pastèque)",
+        "note": "Famille Avalanche+ ; reflets nacrés"
+      },
+      {
+        "nom": "Tiffany",
+        "couleur": "pêche",
+        "note": "Rosaprima ; spirale hypnotique"
+      },
+      {
+        "nom": "Felicity",
+        "couleur": "pêche intense au cœur, plus clair aux bords",
+        "note": "Rosaprima ; très pétaleuse"
+      },
+      {
+        "nom": "Peach Wave",
+        "couleur": "pêche crémeux",
+        "note": "Rosaprima ; pétales ondulés en vagues"
+      },
+      {
+        "nom": "Coral Reef",
+        "couleur": "abricot-orangé chaud (orange-pêche crémeux)",
+        "note": "Obtenteur Rosen Tantau ; Rosaprima, Naranjo"
+      },
+      {
+        "nom": "Confidential",
+        "couleur": "cœur pêche-orange, revers corail-rose",
+        "note": "Rosaprima ; bords de pétales froissés"
+      },
+      {
+        "nom": "RP Flamingo",
+        "couleur": "rose sucre à cœur pêche (« corail vivant »)",
+        "note": "Exclusivité Rosaprima ; bouton extra-large"
+      },
+      {
+        "nom": "Patina",
+        "couleur": "abricot en bouton, rose à l'ouverture",
+        "note": "Rosen Tantau ; tête moyenne"
+      },
+      {
+        "nom": "Primavera",
+        "couleur": "champagne à abricot",
+        "note": "Rosen Tantau ; tige 60–80 cm"
+      },
+      {
+        "nom": "Lady Margaret",
+        "couleur": "pêche",
+        "note": "Rosen Tantau ; s'ouvre joliment, tige 60–80 cm"
+      },
+      {
+        "nom": "Janina",
+        "couleur": "saumon",
+        "note": "Rosen Tantau, nouveauté Europe"
+      },
+      {
+        "nom": "Saphir",
+        "couleur": "rose corail",
+        "note": "Rosen Tantau ; tige 60–70 cm"
+      },
+      {
+        "nom": "Apple Pie",
+        "couleur": "abricot bordé de rose",
+        "note": "Rosen Tantau, nouveauté Europe"
+      },
+      {
+        "nom": "Orange Crush",
+        "couleur": "orange vif",
+        "note": "Équateur (Rosaprima, Naranjo)"
+      },
+      {
+        "nom": "Nina",
+        "couleur": "orange foncé aux tons rouge clair",
+        "note": "Équateur (Rosaprima…) ; fleur en coupe, idéale pour le « reflexing »"
+      },
+      {
+        "nom": "Carnelian",
+        "couleur": "orange riche",
+        "note": "Rosaprima ; forme sculpturale"
+      },
+      {
+        "nom": "Aloha",
+        "couleur": "gingembre et orange",
+        "note": "Rosaprima ; tons d'automne"
+      },
+      {
+        "nom": "Milva",
+        "couleur": "orange chaud",
+        "note": "Rosen Tantau ; feuillage brillant, tige 60–80 cm"
+      },
+      {
+        "nom": "Belinda",
+        "couleur": "orange uni qui ne pâlit pas",
+        "note": "Rosen Tantau"
+      },
+      {
+        "nom": "Sansibar",
+        "couleur": "orange mandarine",
+        "note": "Rosen Tantau, nouveauté Europe"
+      },
+      {
+        "nom": "Tycoon",
+        "couleur": "orange",
+        "note": "Obtenteur Interplant ; Naranjo Roses"
+      },
+      {
+        "nom": "Naranjo",
+        "couleur": "orange",
+        "note": "Naranjo Roses (Équateur) ; obtenteur De Ruiter"
+      },
+      {
+        "nom": "Brighton",
+        "couleur": "jaune vif à spirale marquée",
+        "note": "Obtenteur Interplant ; Rosaprima, Naranjo ; vase très long"
+      },
+      {
+        "nom": "Momentum",
+        "couleur": "jaune ensoleillé",
+        "note": "Obtenteur Dümmen Orange selon Naranjo Roses ; Rosaprima"
+      },
+      {
+        "nom": "High & Exotic",
+        "couleur": "jaune vif",
+        "note": "Rosaprima"
+      },
+      {
+        "nom": "Butterscotch",
+        "couleur": "jaune pastel",
+        "note": "Rosaprima ; parfum doux"
+      },
+      {
+        "nom": "Hummer",
+        "couleur": "jaune d'or",
+        "note": "Rosaprima ; spirale stylisée"
+      },
+      {
+        "nom": "Idole",
+        "couleur": "jaune",
+        "note": "Rosaprima ; feuillage vert dense"
+      },
+      {
+        "nom": "Lighthouse",
+        "couleur": "jaune sable intense",
+        "note": "Rosaprima ; forme anguleuse"
+      },
+      {
+        "nom": "Super Sun",
+        "couleur": "jaune vif",
+        "note": "Rosaprima ; gros bouton"
+      },
+      {
+        "nom": "Bikini",
+        "couleur": "jaune lumineux",
+        "note": "Rosaprima"
+      },
+      {
+        "nom": "Bella Donna",
+        "couleur": "jaune clair crémeux",
+        "note": "Rosaprima, nouveauté ; ouverture homogène"
+      },
+      {
+        "nom": "Golden Tower",
+        "couleur": "jaune",
+        "note": "Rosen Tantau ; tige 70–90 cm"
+      },
+      {
+        "nom": "Candela",
+        "couleur": "jaune",
+        "note": "Rosen Tantau ; fleurs parfumées qui s'ouvrent lentement"
+      },
+      {
+        "nom": "Mimosa",
+        "couleur": "jaune d'or",
+        "note": "Rosen Tantau, nouveauté ; tige 60–70 cm"
+      },
+      {
+        "nom": "Omara",
+        "couleur": "jaune d'or stable",
+        "note": "Rosen Tantau"
+      },
+      {
+        "nom": "Yelloween",
+        "couleur": "jaune",
+        "note": "Interplant ; tige 60–80 cm"
+      },
+      {
+        "nom": "High & Magic",
+        "couleur": "jaune bordé de rouge brûlé",
+        "note": "Rosaprima"
+      },
+      {
+        "nom": "Cherry Brandy",
+        "couleur": "jaune orangé lavé de cramoisi",
+        "note": "Obtenteur Rosen Tantau ; classique à très grosse tête, tige 60–90 cm"
+      },
+      {
+        "nom": "Whisky",
+        "couleur": "dégradé type Cherry Brandy, qui ne pâlit pas",
+        "note": "Rosen Tantau"
+      },
+      {
+        "nom": "Circus",
+        "couleur": "jaune bordé d'orange brûlé",
+        "note": "Rosaprima"
+      },
+      {
+        "nom": "Silantoi",
+        "couleur": "cœur jaune d'or, bords rouge feu",
+        "note": "Rosaprima, Naranjo"
+      },
+      {
+        "nom": "Sweetness",
+        "couleur": "crème vanille et framboise",
+        "note": "Rosen Tantau, Naranjo ; « glace vanille sauce framboise », tige 60–90 cm"
+      },
+      {
+        "nom": "Cherry Love",
+        "couleur": "blanc bordé rouge cerise",
+        "note": "Rosen Tantau, nouveauté Europe"
+      },
+      {
+        "nom": "Melina",
+        "couleur": "blanc bordé rouge cerise",
+        "note": "Rosen Tantau ; tige 60–80 cm"
+      },
+      {
+        "nom": "Marimba",
+        "couleur": "crème-jaune, pétales externes rouges",
+        "note": "Rosen Tantau"
+      },
+      {
+        "nom": "Marosa",
+        "couleur": "crème-jaune, pétales externes grenés de rouge",
+        "note": "Rosen Tantau"
+      },
+      {
+        "nom": "Cheerleader",
+        "couleur": "jaune à l'intérieur, bord orange",
+        "note": "Rosen Tantau"
+      },
+      {
+        "nom": "Fireball",
+        "couleur": "jaune et orange bordé de rouge",
+        "note": "Rosen Tantau"
+      },
+      {
+        "nom": "Lampion",
+        "couleur": "jeu de rouge et de jaune",
+        "note": "Rosen Tantau"
+      },
+      {
+        "nom": "Lipstick",
+        "couleur": "abricot à pétales externes rouge-rose",
+        "note": "Rosen Tantau"
+      },
+      {
+        "nom": "My Girl",
+        "couleur": "dégradé du rose frais au blanc crème",
+        "note": "Rosen Tantau ; tige 60–80 cm"
+      },
+      {
+        "nom": "Deep Purple",
+        "couleur": "lavande bicolore : blanc cassé à bord foncé",
+        "note": "Obtenteur Dümmen Orange selon Naranjo Roses ; Rosaprima"
+      },
+      {
+        "nom": "Red Panther",
+        "couleur": "rouge strié de rose vif",
+        "note": "Obtenteur Interplant ; Rosaprima, Naranjo ; pétales pointus"
+      },
+      {
+        "nom": "Discovery",
+        "couleur": "bicolore blanc et rose",
+        "note": "Interplant ; tige 60–70 cm"
+      },
+      {
+        "nom": "Ripasso",
+        "couleur": "bicolore blanc et rose",
+        "note": "Interplant ; vase 15–17 jours"
+      },
+      {
+        "nom": "Freedom",
+        "couleur": "rouge vif",
+        "note": "Obtenteur Rosen Tantau ; « probablement la rose rouge coupée la plus connue au monde » ; Équateur (Rosaprima, Naranjo)"
+      },
+      {
+        "nom": "RP Freedom Ultra",
+        "couleur": "rouge vif",
+        "note": "Freedom en calibre « Ultra » exclusif Rosaprima : bouton extra-large"
+      },
+      {
+        "nom": "Explorer",
+        "couleur": "rouge cramoisi",
+        "note": "Équateur (Rosaprima, Naranjo) ; tenue extra-longue"
+      },
+      {
+        "nom": "Hot Explorer",
+        "couleur": "rouge",
+        "note": "Interplant ; Naranjo ; tige 60–80 cm"
+      },
+      {
+        "nom": "Red Naomi!",
+        "couleur": "rouge velouté",
+        "note": "Obtenteur Schreurs ; très grosse tête jusqu'à 80 pétales, léger parfum sucré, peu d'épines ; Pays-Bas (Porta Nova, Marjoland, Fa. van den Ende Rozen)"
+      },
+      {
+        "nom": "Red Paris",
+        "couleur": "rouge foncé",
+        "note": "Rosaprima ; forme anguleuse stylisée"
+      },
+      {
+        "nom": "RP Black Pearl",
+        "couleur": "rouge très sombre velouté",
+        "note": "Exclusivité Rosaprima ; bouton extra-large"
+      },
+      {
+        "nom": "Black Baccara",
+        "couleur": "rouge noir velouté (bouton presque noir)",
+        "note": "Obtenteur Meilland (introduite en 2000) ; jeunes feuilles rougeâtres ; Pays-Bas (Arend Roses)"
+      },
+      {
+        "nom": "Redvolution",
+        "couleur": "rouge très profond",
+        "note": "Rosaprima"
+      },
+      {
+        "nom": "Montana",
+        "couleur": "rouge foncé",
+        "note": "Rosen Tantau ; tige 70–90 cm"
+      },
+      {
+        "nom": "Prestige",
+        "couleur": "rouge",
+        "note": "Rosen Tantau ; classique très productif"
+      },
+      {
+        "nom": "Merci Chérie",
+        "couleur": "rouge velours",
+        "note": "Rosen Tantau"
+      },
+      {
+        "nom": "True Love",
+        "couleur": "rouge moyen vif",
+        "note": "Rosen Tantau ; rappelle Freedom, tige 60–90 cm"
+      },
+      {
+        "nom": "Admiral",
+        "couleur": "rouge moderne",
+        "note": "Rosen Tantau ; tige 60–80 cm"
+      },
+      {
+        "nom": "Royal Class",
+        "couleur": "rouge",
+        "note": "Interplant ; tige 60–80 cm"
+      },
+      {
+        "nom": "Ocean Song",
+        "couleur": "lavande uni à reflets antiques",
+        "note": "Obtenteur Rosen Tantau ; Rosaprima, Naranjo"
+      },
+      {
+        "nom": "Moody Blues",
+        "couleur": "lavande intense, pétales externes plus foncés",
+        "note": "Rosaprima"
+      },
+      {
+        "nom": "Amnesia",
+        "couleur": "lavande sourde à sous-ton crème",
+        "note": "Rosaprima"
+      },
+      {
+        "nom": "Purple Haze",
+        "couleur": "lavande pâle",
+        "note": "Rosaprima ; très grosse tête"
+      },
+      {
+        "nom": "Govinda",
+        "couleur": "mauve-lavande, pétales externes rouillés",
+        "note": "Rosaprima, Naranjo ; obtenteur Continental Breeding selon Naranjo"
+      },
+      {
+        "nom": "Cool Water",
+        "couleur": "lavande nuancée rose et mauve",
+        "note": "Rosaprima, Naranjo ; obtenteur Schreurs selon Naranjo"
+      },
+      {
+        "nom": "Shocking Blue",
+        "couleur": "lavande froide",
+        "note": "Rosaprima"
+      },
+      {
+        "nom": "Silverado",
+        "couleur": "lilas délicat",
+        "note": "Rosen Tantau ; contraste avec le feuillage vert foncé"
+      },
+      {
+        "nom": "Tantau's Blue Dream",
+        "couleur": "lilas soutenu",
+        "note": "Rosen Tantau, mutation de Breathless ; très grosse tête"
+      },
+      {
+        "nom": "Queens Crown",
+        "couleur": "lavande riche",
+        "note": "Rosaprima, Naranjo ; obtenteur Kordes selon Naranjo ; pétales de type jardin"
+      },
+      {
+        "nom": "Blueberry",
+        "couleur": "bordeaux nuancé de rose foncé et de lavande",
+        "note": "Rosaprima ; pétales externes froissés"
+      },
+      {
+        "nom": "Paladio",
+        "couleur": "pourpre et crème",
+        "note": "Interplant ; vase 18–20 jours"
+      },
+      {
+        "nom": "Green Romance",
+        "couleur": "vert tendre",
+        "note": "Rosaprima"
+      },
+      {
+        "nom": "Veggie",
+        "couleur": "vert franc",
+        "note": "Rosaprima ; s'ouvre comme une fleur de lotus"
+      },
+      {
+        "nom": "Green Gene",
+        "couleur": "vert",
+        "note": "Rosen Tantau ; tige 70–80 cm"
+      },
+      {
+        "nom": "Evergreen",
+        "couleur": "vert",
+        "note": "Interplant ; vase 16–18 jours"
+      },
+      {
+        "nom": "Toffee",
+        "couleur": "caramel-brun",
+        "note": "Rosaprima ; tons terre très recherchés"
+      },
+      {
+        "nom": "Cappuccino",
+        "couleur": "brun clair naturel",
+        "note": "Rosen Tantau ; en altitude, les pétales externes prennent un motif rose"
+      },
+      {
+        "nom": "Coffee Break",
+        "couleur": "jaune-orangé aux pointes brun foncé (terracotta et rouille)",
+        "note": "Obtenteur Rosen Tantau ; Rosaprima"
+      },
+      {
+        "nom": "Café del Mar",
+        "couleur": "terracotta brûlé",
+        "note": "Rosaprima ; rappelle le cuir vieilli"
+      },
+      {
+        "nom": "Art Café!",
+        "couleur": "beige et jaune cappuccino",
+        "note": "Obtenteur Schreurs ; style naturel"
+      },
+      {
+        "nom": "Barista",
+        "couleur": "mauve à l'extérieur, cœur couleur latte macchiato",
+        "note": "Rosen Tantau ; tête moyenne à grosse"
+      },
+      {
+        "nom": "RP Espresso",
+        "couleur": "brun-rouge profond",
+        "note": "Exclusivité Rosaprima ; pétales veloutés"
+      },
+      {
+        "nom": "RP Moab",
+        "couleur": "brun clair sable (sienne claire)",
+        "note": "Exclusivité Rosaprima ; aspect vintage"
+      },
+      {
+        "nom": "Teddy's",
+        "couleur": "brun",
+        "note": "Interplant ; vase 14–16 jours"
+      }
+    ],
+    "formes": "Bouton haut et conique (forme « hybride de thé »), s'ouvrant en coupe haute à cœur spiralé ; têtes de 5 à 8 cm (grosses têtes équatoriennes), 35 à 80 pétales ; certaines s'ouvrent pleinement en fleur ronde (Avalanche+, Mondial) ; ouverture « réfléchie » (pétales retournés à la main) très utilisée en fleuristerie.",
+    "saison": "Toute l'année : Équateur et Colombie (serres d'altitude), Kenya, serres des Pays-Bas ; pics de demande à la Saint-Valentin et à la fête des Mères.",
+    "tenue_vase": "8–14 jours en moyenne (Avalanche+ : 14 jours et plus ; jusqu'à 18–20 jours pour certaines obtentions Interplant)",
+    "gamme_prix": "€€",
+    "rarete_jeu": "commune",
+    "notes_dessin": "Dessiner un bouton conique haut de 5 à 7 cm : 35 à 60 pétales enroulés en spirale serrée, les pétales externes plus larges se décollent et leur bord se retourne en pointe tandis que le cœur reste fermé et pointu. De profil, la fleur forme une coupe haute posée sur un réceptacle lisse en forme de petite poire, sous lequel 5 sépales étroits (deux barbus, deux lisses, un à demi barbu) se rabattent vers la tige à l'ouverture. Texture veloutée et mate pour les rouges profonds (Red Naomi!, Black Baccara aux revers presque noirs), satinée et légèrement translucide pour les blancs et pastels, avec de fines nervures visibles par transparence. Tige droite et rigide de 50 à 90 cm, aiguillons crochus brun-rouge espacés (souvent retirés chez le fleuriste ; Aqua! est sans épines). Feuilles alternes composées de 5 folioles ovales dentées, vert foncé brillant, jeunes feuilles teintées de bordeaux, stipules soudées à la base du pétiole.",
+    "wiki": "Rosa",
+    "img_queries": [
+      "Rosa 'Freedom' cut rose",
+      "Rosa 'Avalanche' rose",
+      "Rosa 'Red Naomi'",
+      "Rosa 'Black Baccara'"
+    ],
+    "sources": [
+      "https://www.rosaprima.com/catalog",
+      "https://cutroses.rosen-tantau.com/en/cut-rose-varieties/",
+      "https://naranjoroses.com/varietiesnaranjo/",
+      "https://thursd.com/products/cut-flowers/roses/rose-red-naomi",
+      "https://siteadmin.dummenorange.com/site/documents/5875/avalanche-catalog.pdf"
+    ]
+  },
+  {
+    "id": "rose-intermediaire-kenya",
+    "nom_fr": "Rose intermédiaire et sweetheart (type Kenya)",
+    "nom_en": "Intermediate & sweetheart rose (Kenya type)",
+    "latin": "Rosa × hybrida",
+    "famille": "Rosaceae",
+    "categorie": "Roses",
+    "role": "focale",
+    "couleurs": [
+      "blanc",
+      "ivoire",
+      "crème",
+      "rose",
+      "rose vif",
+      "cerise",
+      "orange",
+      "jaune",
+      "rouge",
+      "rouge profond velouté",
+      "violet",
+      "lavande",
+      "brun",
+      "blanc bordé rose vif",
+      "bicolore jaune",
+      "bicolore rose et crème"
+    ],
+    "varietes": [
+      {
+        "nom": "Athena",
+        "couleur": "blanc ivoire",
+        "note": "Kenya (Tiara, Subati Group, Valentine Growers, Mzurrie…) ; tiges épaisses, gros bouton, feuillage sombre et brillant"
+      },
+      {
+        "nom": "Snowstorm+",
+        "couleur": "blanc",
+        "note": "Kenya (Kisima, Subati Group, Valentine Growers…) ; bouton ferme de 4,5–5 cm, pétales qui ne marquent pas au transport"
+      },
+      {
+        "nom": "Jumilia",
+        "couleur": "blanc à bord rose vif",
+        "note": "Kenya (Subati Group, Mzurrie, Everflora) et Pays-Bas (Marjoland, Van der Hulst) ; grosse fleur, excellente tenue"
+      },
+      {
+        "nom": "Rhodos",
+        "couleur": "rouge vif, un peu plus clair que Red Naomi!",
+        "note": "Kenya, serres à 2 300 m ; tête de 5,5 cm très pétaleuse, tige sans épines de 60–90 cm"
+      },
+      {
+        "nom": "Furiosa",
+        "couleur": "rouge puissant",
+        "note": "Kenya (Rosebud Ltd, Valentine Growers) ; 35 pétales, tige sans épines de 60–90 cm, parmi les rouges les plus durables"
+      },
+      {
+        "nom": "Ever Red",
+        "couleur": "rouge profond velouté",
+        "note": "Kenya (nombreux producteurs) ; qualité « super premium » pour l'événementiel"
+      },
+      {
+        "nom": "Red Torch",
+        "couleur": "rouge",
+        "note": "Kenya (Bilashaka Flowers, Rift Valley Roses) ; fleurs dressées « en torche », tige 50–80 cm"
+      },
+      {
+        "nom": "Tacazzi+",
+        "couleur": "cerise",
+        "note": "Kenya (Batian Flowers, Ol-Njorowa, Sian Flowers…) ; bouton de 4,5 cm légèrement frangé, presque sans épines, parfum de rose ancienne"
+      },
+      {
+        "nom": "Tropical Amazone",
+        "couleur": "orange franc nuancé",
+        "note": "Kenya (Rosebud Ltd)"
+      },
+      {
+        "nom": "Penny Lane",
+        "couleur": "jaune lumineux",
+        "note": "Kenya (Dale Tiara) et Pays-Bas (Marjoland) ; grosse fleur"
+      },
+      {
+        "nom": "Wham",
+        "couleur": "rose vif",
+        "note": "Kenya (Sian Flowers) et Pays-Bas (Van der Hulst)"
+      },
+      {
+        "nom": "Bahama",
+        "couleur": "jaune",
+        "note": "Interplant, intermédiaire ; tige 50–70 cm ; vase 12–14 jours"
+      },
+      {
+        "nom": "Boardwalk",
+        "couleur": "bicolore jaune",
+        "note": "Interplant, intermédiaire ; tige 60–70 cm"
+      },
+      {
+        "nom": "Boomer",
+        "couleur": "jaune",
+        "note": "Interplant, intermédiaire ; vase 14–16 jours"
+      },
+      {
+        "nom": "Moonwalk",
+        "couleur": "jaune",
+        "note": "Interplant, intermédiaire ; vase 14–16 jours"
+      },
+      {
+        "nom": "Zest",
+        "couleur": "jaune",
+        "note": "Interplant, intermédiaire ; tige 60–70 cm"
+      },
+      {
+        "nom": "Chiffon",
+        "couleur": "crème",
+        "note": "Interplant, intermédiaire ; tige 60–80 cm"
+      },
+      {
+        "nom": "Dynamic",
+        "couleur": "crème",
+        "note": "Interplant, intermédiaire"
+      },
+      {
+        "nom": "Lady Suzanna",
+        "couleur": "crème",
+        "note": "Interplant, intermédiaire"
+      },
+      {
+        "nom": "Unforgettable",
+        "couleur": "crème",
+        "note": "Interplant, intermédiaire ; tige 60–70 cm"
+      },
+      {
+        "nom": "Mindset",
+        "couleur": "bicolore rose et crème",
+        "note": "Interplant, intermédiaire"
+      },
+      {
+        "nom": "Crossfire",
+        "couleur": "bicolore rose",
+        "note": "Interplant, intermédiaire"
+      },
+      {
+        "nom": "Pink Breezer",
+        "couleur": "rose",
+        "note": "Interplant, intermédiaire ; vase 14–16 jours"
+      },
+      {
+        "nom": "Tabatha",
+        "couleur": "rose",
+        "note": "Interplant, intermédiaire"
+      },
+      {
+        "nom": "Oblica",
+        "couleur": "rose",
+        "note": "Interplant, intermédiaire ; tige longue de 80–90 cm"
+      },
+      {
+        "nom": "Hilux",
+        "couleur": "orange",
+        "note": "Interplant, intermédiaire ; vase 14–16 jours"
+      },
+      {
+        "nom": "On Fire",
+        "couleur": "orange",
+        "note": "Interplant, intermédiaire ; vase 16–18 jours"
+      },
+      {
+        "nom": "Orange Wave",
+        "couleur": "orange",
+        "note": "Interplant, intermédiaire"
+      },
+      {
+        "nom": "Scarlet Explorer",
+        "couleur": "rouge",
+        "note": "Interplant, intermédiaire ; tige 60–80 cm"
+      },
+      {
+        "nom": "Cool Blue",
+        "couleur": "violet lavande",
+        "note": "Interplant, intermédiaire ; tige 70–80 cm"
+      },
+      {
+        "nom": "Thriller",
+        "couleur": "violet",
+        "note": "Interplant, intermédiaire"
+      },
+      {
+        "nom": "Vanquish",
+        "couleur": "violet",
+        "note": "Interplant, intermédiaire"
+      },
+      {
+        "nom": "Symbol",
+        "couleur": "brun",
+        "note": "Interplant, intermédiaire"
+      },
+      {
+        "nom": "Wild Moss",
+        "couleur": "brun",
+        "note": "Interplant, intermédiaire ; vase 14–16 jours"
+      },
+      {
+        "nom": "Frisbee",
+        "couleur": "rose",
+        "note": "Interplant, groupe « sweetheart »"
+      },
+      {
+        "nom": "Pink Frisbee",
+        "couleur": "rose",
+        "note": "Interplant, groupe « sweetheart » ; vase 14–16 jours"
+      },
+      {
+        "nom": "Image",
+        "couleur": "rose",
+        "note": "Interplant, groupe « sweetheart »"
+      },
+      {
+        "nom": "Royal Chelsea",
+        "couleur": "rouge",
+        "note": "Interplant, groupe « sweetheart » ; tige 70–80 cm"
+      },
+      {
+        "nom": "Tiebreak",
+        "couleur": "bicolore jaune",
+        "note": "Interplant, groupe « sweetheart »"
+      }
+    ],
+    "formes": "Bouton conique plus petit que les roses équatoriennes (4,5 à 5,5 cm), s'ouvrant en coupe ronde ; tiges de 40 à 80 cm souvent sans épines ; sweetheart = mini-hybride de thé à une seule fleur par tige.",
+    "saison": "Toute l'année : Kenya (serres de haute altitude, autour de 2 300 m, région de Naivasha et du mont Kenya) ; certaines variétés aussi produites aux Pays-Bas.",
+    "tenue_vase": "8–16 jours (données Interplant : 8 à 18 jours selon la variété)",
+    "gamme_prix": "€",
+    "rarete_jeu": "commune",
+    "notes_dessin": "Même architecture que la rose standard mais en plus compact : bouton conique de 4,5 à 5,5 cm, tête plus serrée qui s'arrondit en coupe à l'ouverture, 30 à 40 pétales épais et fermes aux contours nets. De profil, la fleur reste plus haute que large, posée sur un réceptacle lisse et cinq sépales courts rabattus ; les tiges fines et très droites de 40 à 70 cm sont souvent lisses (Rhodos et Furiosa sans épines, Tacazzi+ presque) et portent un feuillage vert foncé brillant et dense de folioles ovales dentées. Les sweethearts portent une seule mini-fleur parfaite au sommet d'une tige élancée et se représentent volontiers en bottes serrées de 10 à 20 tiges. Tacazzi+ montre des bords de pétales légèrement frangés ; Jumilia un liseré rose vif net sur fond blanc.",
+    "wiki": "Rosa",
+    "img_queries": [
+      "Rosa 'Athena' rose",
+      "Kenya rose farm Naivasha",
+      "Rosa 'Jumilia'"
+    ],
+    "sources": [
+      "https://interplant.com/catalogue/",
+      "https://thursd.com/products/cut-flowers/roses/rose-rhodos",
+      "https://thursd.com/products/cut-flowers/roses/rose-athena",
+      "https://thursd.com/products/cut-flowers/roses/rose-tacazzi",
+      "https://thursd.com/products/cut-flowers/roses/rose-furiosa"
+    ]
+  },
+  {
+    "id": "rose-aspect-jardin",
+    "nom_fr": "Rose d'aspect jardin (garden-look)",
+    "nom_en": "Garden-look hybrid tea rose",
+    "latin": "Rosa × hybrida",
+    "famille": "Rosaceae",
+    "categorie": "Roses",
+    "role": "focale",
+    "couleurs": [
+      "blanc",
+      "blanc nacré",
+      "crème",
+      "ivoire",
+      "champagne",
+      "rose pâle",
+      "rose moyen",
+      "rose bonbon",
+      "rose vif",
+      "pêche",
+      "abricot",
+      "corail",
+      "orange",
+      "jaune moutarde",
+      "jaune",
+      "rouge cramoisi",
+      "lavande",
+      "lilas",
+      "vert",
+      "tons terre",
+      "bicolore orange multicolore",
+      "rose bordé de vert"
+    ],
+    "varietes": [
+      {
+        "nom": "Country Blues",
+        "couleur": "lavande baie (mauve framboisé)",
+        "note": "Rosaprima, Naranjo ; ouverture en forme de cœur ; tête moyenne"
+      },
+      {
+        "nom": "Country Home",
+        "couleur": "pêche aux pétales or et abricot",
+        "note": "Rosaprima, Naranjo ; gros bouton stylisé"
+      },
+      {
+        "nom": "Free Spirit",
+        "couleur": "cuivre-orangé et abricot virant au jaune-orangé, nuances rouge, rose et fuchsia",
+        "note": "Obtenteur Rosen Tantau ; Rosaprima ; s'ouvre comme une rose de jardin nostalgique, parfumée, tenue extra-longue"
+      },
+      {
+        "nom": "Hearts",
+        "couleur": "rouge cramoisi",
+        "note": "Rosaprima, Naranjo ; forme froissée unique"
+      },
+      {
+        "nom": "Shimmer",
+        "couleur": "pêche nuancé de crème",
+        "note": "Rosaprima, Naranjo ; obtenteur Kordes selon Naranjo ; volants extravagants"
+      },
+      {
+        "nom": "Wedding Spirit",
+        "couleur": "pêche délicat à touches jaune-vert",
+        "note": "Rosaprima"
+      },
+      {
+        "nom": "Wild Spirit",
+        "couleur": "orange dégradé de pourpre et de vert sur les pétales externes",
+        "note": "Rosaprima ; gros bouton abricot froissé"
+      },
+      {
+        "nom": "Princess Crown",
+        "couleur": "pêche",
+        "note": "Rosaprima, Naranjo ; obtenteur Interplant selon Naranjo ; petit cœur vert visible à l'ouverture"
+      },
+      {
+        "nom": "Kahala",
+        "couleur": "champagne-crème (tons terre)",
+        "note": "Rosaprima, Naranjo ; obtenteur Schreurs selon Naranjo"
+      },
+      {
+        "nom": "Moonstone",
+        "couleur": "blanc perle velouté",
+        "note": "Rosaprima, Naranjo ; obtenteur Kordes selon Naranjo ; volants abondants"
+      },
+      {
+        "nom": "Phoenix",
+        "couleur": "bords crème, cœur abricot",
+        "note": "Rosaprima, Naranjo ; obtenteur Kordes selon Naranjo"
+      },
+      {
+        "nom": "Kings Cross",
+        "couleur": "jaune de fruit mûr (pêche)",
+        "note": "Rosaprima ; forme de jardin"
+      },
+      {
+        "nom": "Art Deco",
+        "couleur": "rose moyen s'intensifiant vers l'extérieur",
+        "note": "Rosaprima ; pétales froissés ; tenue longue"
+      },
+      {
+        "nom": "Cooldown",
+        "couleur": "lavande claire",
+        "note": "Rosaprima ; pétales légèrement ondulés"
+      },
+      {
+        "nom": "Arya",
+        "couleur": "lavande froide à sous-tons lilas",
+        "note": "Rosaprima, nouveauté ; cœur dense"
+      },
+      {
+        "nom": "Powder Puff",
+        "couleur": "rose pastel plus soutenu au cœur",
+        "note": "Rosaprima, nouveauté ; large ouverture, très pétaleuse"
+      },
+      {
+        "nom": "Wasabi",
+        "couleur": "vert à tons crème",
+        "note": "Rosaprima ; bords ondulés"
+      },
+      {
+        "nom": "Dragon Fly",
+        "couleur": "corail-pêche",
+        "note": "Rosaprima, Naranjo ; fleur très froissée"
+      },
+      {
+        "nom": "Candy X-Pression",
+        "couleur": "rose bonbon",
+        "note": "Série X-pression ; obtenteur De Ruiter selon Naranjo ; très grosse tête aux pétales ondulés"
+      },
+      {
+        "nom": "Cotton X-pression",
+        "couleur": "crème",
+        "note": "Série X-pression ; obtenteur De Ruiter selon Naranjo ; pétales froissés en cœur"
+      },
+      {
+        "nom": "Mandarin X-pression",
+        "couleur": "pêche infusé de rose vif, œil vert",
+        "note": "Série X-pression ; obtenteur De Ruiter selon Naranjo ; gros bouton"
+      },
+      {
+        "nom": "Melon X-Pression",
+        "couleur": "melon et abricot doux",
+        "note": "Série X-pression ; Rosaprima ; cœur vert dressé"
+      },
+      {
+        "nom": "Dark X-Pression",
+        "couleur": "cœur corail vif, pétales externes plus sombres",
+        "note": "Série X-pression ; Rosaprima ; tenue jusqu'à 12 jours"
+      },
+      {
+        "nom": "Juicy X-Pression",
+        "couleur": "corail",
+        "note": "Série X-pression ; Rosaprima, nouveauté ; tête extra-large"
+      },
+      {
+        "nom": "Sunset X-pression",
+        "couleur": "orange-rouge à cœur jaune orangé (coucher de soleil)",
+        "note": "Série X-pression ; Naranjo Roses ; obtenteur De Ruiter"
+      },
+      {
+        "nom": "Pink-Expression",
+        "couleur": "rose moyen",
+        "note": "Naranjo Roses ; obtenteur De Ruiter"
+      },
+      {
+        "nom": "Hot Pink Mayra",
+        "couleur": "rose vif",
+        "note": "Rosaprima ; série Mayra"
+      },
+      {
+        "nom": "Razzmatazz",
+        "couleur": "tons terre",
+        "note": "Rosaprima, nouveauté ; tête extra-large"
+      },
+      {
+        "nom": "RP Aspen",
+        "couleur": "blanc pur",
+        "note": "Exclusivité Rosaprima ; pétales élégamment froissés"
+      },
+      {
+        "nom": "RP Popcorn",
+        "couleur": "blanc",
+        "note": "Exclusivité Rosaprima"
+      },
+      {
+        "nom": "RP Midas Touch",
+        "couleur": "jaune moutarde riche",
+        "note": "Exclusivité Rosaprima ; pétales pointus, forme sculpturale"
+      },
+      {
+        "nom": "RP Filomena",
+        "couleur": "rose élégant",
+        "note": "Exclusivité Rosaprima ; cœur multicouche"
+      },
+      {
+        "nom": "Country Spirit Frieda",
+        "couleur": "crème",
+        "note": "Rosen Tantau, mutation de Country Spirit Louise ; très grosse tête"
+      },
+      {
+        "nom": "Country Spirit Garden",
+        "couleur": "rose corail à abricot",
+        "note": "Rosen Tantau ; léger parfum ; très grosse tête"
+      },
+      {
+        "nom": "Country Spirit Papillon",
+        "couleur": "jaune vif intense",
+        "note": "Rosen Tantau"
+      },
+      {
+        "nom": "Country Spirit Peonia",
+        "couleur": "rose pâle",
+        "note": "Rosen Tantau, nouveauté Europe ; fleurs très grosses et doubles"
+      },
+      {
+        "nom": "Country Spirit Princess",
+        "couleur": "rose élégant, pétales externes crème-vert",
+        "note": "Rosen Tantau ; tige 60–80 cm"
+      },
+      {
+        "nom": "Country Spirit Romance",
+        "couleur": "rose abricot délicat à liseré vert clair",
+        "note": "Rosen Tantau ; très grosse tête pleine"
+      },
+      {
+        "nom": "Country Spirit Secret",
+        "couleur": "rose crème, pétales externes verts",
+        "note": "Rosen Tantau, mutation de Country Spirit Blues"
+      },
+      {
+        "nom": "Country Spirit Song",
+        "couleur": "lilas délicat",
+        "note": "Rosen Tantau ; peut se tailler en branchue"
+      },
+      {
+        "nom": "Garden Spirit",
+        "couleur": "crème",
+        "note": "Rosen Tantau (synonyme Wedding Rose) ; fleurs pleines au parfum délicieux, ouverture de rose de jardin"
+      },
+      {
+        "nom": "Giardina",
+        "couleur": "saumon-orangé",
+        "note": "Rosen Tantau ; grosse tête qui s'ouvre comme une rose de jardin, tige 60–80 cm"
+      },
+      {
+        "nom": "Buttercup",
+        "couleur": "crème",
+        "note": "Interplant, groupe « Garden shape Hybrid Tea »"
+      },
+      {
+        "nom": "Coral Reeva",
+        "couleur": "rose corail",
+        "note": "Interplant, groupe « Garden shape Hybrid Tea »"
+      },
+      {
+        "nom": "Orange Reeva",
+        "couleur": "orange",
+        "note": "Interplant, groupe « Garden shape Hybrid Tea » ; Naranjo Roses"
+      },
+      {
+        "nom": "Passing Cloud",
+        "couleur": "rose",
+        "note": "Interplant, groupe « Garden shape Hybrid Tea » ; vase 16–18 jours"
+      }
+    ],
+    "formes": "Gros bouton rond (6 à 8 cm) s'ouvrant en coupe pleine ou en rosette dense de pétales ondulés ou froissés, cœur parfois en cœur plissé ou à œil vert ; aspect de rose de jardin sur une tige longue et droite d'hybride de thé.",
+    "saison": "Toute l'année : Équateur et Colombie (Rosaprima, Naranjo Roses) ; obtentions Tantau, Kordes, De Ruiter, Interplant cultivées aussi en Afrique de l'Est.",
+    "tenue_vase": "8–12 jours (jusqu'à 12 jours pour Dark X-Pression)",
+    "gamme_prix": "€€",
+    "rarete_jeu": "rare",
+    "notes_dessin": "Gros bouton rond et plein de 6 à 8 cm dont les pétales externes, souvent lavés de vert ou de crème, s'ouvrent largement pour révéler une coupe dense de 60 à 100 pétales ondulés ou froissés aux bords irréguliers. Le cœur peut former des plis en cœur (Country Blues), montrer un œil vert dressé (Mandarin X-pression, Melon X-Pression, Princess Crown) ou une rosette serrée. Vue de profil, la silhouette est plus large que haute mais la tête reste portée bien droite sur une tige rigide de 60 à 80 cm, comme une hybride de thé. Sépales fins rabattus sous la fleur, feuilles composées vert foncé et aiguillons présents mais espacés ; les tons terre (Kahala, Razzmatazz) demandent des dégradés subtils du crème au cuivré.",
+    "wiki": "Rosa",
+    "img_queries": [
+      "Rosa 'Free Spirit' rose",
+      "Rosa 'Country Blues' rose",
+      "Rosa 'Shimmer' rose",
+      "Rosa 'Moonstone' rose"
+    ],
+    "sources": [
+      "https://www.rosaprima.com/catalog",
+      "https://naranjoroses.com/varietiesnaranjo/",
+      "https://cutroses.rosen-tantau.com/en/cut-rose-varieties/",
+      "https://interplant.com/catalogue/"
+    ]
+  },
+  {
+    "id": "rose-de-jardin",
+    "nom_fr": "Rose de jardin (garden rose)",
+    "nom_en": "Garden rose",
+    "latin": "Rosa × hybrida",
+    "famille": "Rosaceae",
+    "categorie": "Roses",
+    "role": "focale",
+    "couleurs": [
+      "blanc",
+      "blanc crème",
+      "ivoire",
+      "beurre",
+      "rose blush",
+      "rose pâle",
+      "rose dragée",
+      "rose moyen",
+      "vieux rose",
+      "magenta",
+      "fuchsia",
+      "pêche",
+      "abricot",
+      "saumon",
+      "corail",
+      "orange",
+      "jaune citron",
+      "jaune beurre",
+      "jaune moutarde",
+      "caramel",
+      "brun sable",
+      "rouge écarlate",
+      "rouge cramoisi",
+      "rouge rouille",
+      "lavande",
+      "mauve moka",
+      "crème bordé de rose",
+      "blanc bordé de vert"
+    ],
+    "varietes": [
+      {
+        "nom": "White O'Hara",
+        "couleur": "blanc crème, cœur blush ivoire",
+        "note": "Style français ; petit bouton à pétales externes verdâtres, rosette quartée ; parfum de rose ancienne (Tambuzi) ; Alexandra Farms, Rosaprima, Tambuzi"
+      },
+      {
+        "nom": "Pink O'Hara",
+        "couleur": "rose confiserie, plus soutenu au cœur",
+        "note": "Obtention française ; « quatre cœurs », pétales externes en pointes étoilées ; riche parfum de lavande (Alexandra Farms)"
+      },
+      {
+        "nom": "O'Hara",
+        "couleur": "rose pâle",
+        "note": "Rosaprima ; multiples couches de pétales doux"
+      },
+      {
+        "nom": "Yves Piaget",
+        "couleur": "magenta à rose vif",
+        "note": "Obtention Meilland ; environ 80 pétales frangés, bol rappelant la pivoine ; parfum puissant d'agrumes"
+      },
+      {
+        "nom": "Cream Yves Piaget",
+        "couleur": "blanc crème bordé de rose",
+        "note": "Famille Yves Piaget (Meilland) ; bouton rond et serré, fleur en pivoine, parfum enivrant ; Kenya (Tambuzi)"
+      },
+      {
+        "nom": "Romantic Antike",
+        "couleur": "rose sourd, saumon au cœur",
+        "note": "Rose « chou » à très grosse tête, léger parfum de lavande ; sœur de Caramel Antike ; Alexandra Farms, Rosaprima, Tambuzi"
+      },
+      {
+        "nom": "Caramel Antike",
+        "couleur": "caramel et crème, plus foncé au cœur",
+        "note": "Sphérique, très pétaleuse ; sœur de Romantic Antike ; Alexandra Farms, Tambuzi"
+      },
+      {
+        "nom": "Piano",
+        "couleur": "rouge (pétales externes plus foncés)",
+        "note": "Obtenteur Rosen Tantau ; sphère en coupe profonde, étamines dorées, boutons latéraux"
+      },
+      {
+        "nom": "Pink Piano",
+        "couleur": "rose",
+        "note": "Rosen Tantau, mutation rose de Piano ; tige 50–70 cm"
+      },
+      {
+        "nom": "Happy Piano",
+        "couleur": "rose",
+        "note": "Rosen Tantau, mutation rose de Piano ; tige 60–80 cm"
+      },
+      {
+        "nom": "Charming Piano",
+        "couleur": "rose",
+        "note": "Rosen Tantau, mutation de Piano ; fleurs pleines"
+      },
+      {
+        "nom": "Mariatheresia",
+        "couleur": "rose",
+        "note": "Rosen Tantau ; petite fleur ronde s'ouvrant en rosette plate entièrement quartée"
+      },
+      {
+        "nom": "Baronesse",
+        "couleur": "rose moyen et rose foncé",
+        "note": "Rosen Tantau, mutation de Mariatheresia ; rosettes rondes quartées à cœur doré"
+      },
+      {
+        "nom": "Ashley",
+        "couleur": "rose moyen intense nuancé",
+        "note": "Rosen Tantau ; rosette plate aux pétales épais, les pétales externes couvrent la tige"
+      },
+      {
+        "nom": "Alabaster",
+        "couleur": "blanc à cœur jaune pâle",
+        "note": "Rosen Tantau (plein champ) ; petites fleurs en rosette plate, parfum léger de lilas"
+      },
+      {
+        "nom": "White Cloud",
+        "couleur": "blanc os",
+        "note": "Coupe profonde quartée au centre, archétype de la rose ancienne ; Alexandra Farms"
+      },
+      {
+        "nom": "Westminster Abbey",
+        "couleur": "brun clair (tan) bordé de vert",
+        "note": "Obtenteur Schreurs (Thursd) ; jusqu'à 150 pétales ondulés, vase jusqu'à 12 jours"
+      },
+      {
+        "nom": "Golden Mustard",
+        "couleur": "jaune moutarde : extérieur amande, cœur or sourd",
+        "note": "Obtention Interplant ; sans parfum ; Alexandra Farms, Tambuzi"
+      },
+      {
+        "nom": "Café Latte",
+        "couleur": "moka clair et mauve",
+        "note": "Fort parfum de lavande ; pétales en spirale ; Alexandra Farms"
+      },
+      {
+        "nom": "Catalina",
+        "couleur": "jaune crème citron dans une coupe de pétales vert menthe",
+        "note": "Alexandra Farms"
+      },
+      {
+        "nom": "Antonia Gardens",
+        "couleur": "jaune lumineux et ivoire",
+        "note": "Obtention néerlandaise ; coupe extra-large ; Alexandra Farms, Rosaprima"
+      },
+      {
+        "nom": "Fatima Gardens",
+        "couleur": "jaune beurre plus soutenu au cœur, extérieur ivoire",
+        "note": "Coupe profonde ; Alexandra Farms, Rosaprima"
+      },
+      {
+        "nom": "Aurora Gardens!",
+        "couleur": "crème et blanc",
+        "note": "Grande coupe aux pétales ondulés, parfum de lavande ; Alexandra Farms, Rosaprima"
+      },
+      {
+        "nom": "Vicky Gardens!",
+        "couleur": "pêche très clair (crème)",
+        "note": "Très pétaleuse, parfum légèrement citronné ; Alexandra Farms, Rosaprima"
+      },
+      {
+        "nom": "Tip-Top!",
+        "couleur": "cœur pêche, pétales externes rose clair liserés de vert menthe",
+        "note": "Coupe volumineuse ; Alexandra Farms, Rosaprima"
+      },
+      {
+        "nom": "Tie-Dye",
+        "couleur": "pêche en balayage, du mandarine au orange crème",
+        "note": "Coupe peu profonde, parfum fruité doux ; Alexandra Farms, Rosaprima"
+      },
+      {
+        "nom": "Sunset",
+        "couleur": "orange lumineux veiné de rose, jaune et rouge",
+        "note": "Grande tête aux pétales ondulés ; Alexandra Farms"
+      },
+      {
+        "nom": "Pink X-pression",
+        "couleur": "rose corail à sous-tons pêche",
+        "note": "Coupe profonde très froissée ; Alexandra Farms"
+      },
+      {
+        "nom": "Rosa Pimpinella",
+        "couleur": "rose poudré et blush, cœur doré",
+        "note": "Rosette plate aux pétales légers et ébouriffés ; Alexandra Farms"
+      },
+      {
+        "nom": "Rosa's Amazing Tea Rose",
+        "couleur": "rose et blanc, centre végétatif vert",
+        "note": "Très grosse tête, parfum fruité intense ; Alexandra Farms"
+      },
+      {
+        "nom": "Sabrina",
+        "couleur": "tache rose clair encadrée de pétales blush",
+        "note": "Obtention française (2018) ; rosette symétrique à bouton central"
+      },
+      {
+        "nom": "Mayra's Bridal Pink",
+        "couleur": "cœur rose tendre encadré de pétales blancs",
+        "note": "Pétales festonnés, léger parfum de rose ; Alexandra Farms"
+      },
+      {
+        "nom": "Lavender Bouquet",
+        "couleur": "lavande, pétales externes bordés de violet",
+        "note": "Alexandra Farms ; l'une des rares lavandes performantes"
+      },
+      {
+        "nom": "Garden Romance",
+        "couleur": "rouge écarlate",
+        "note": "Obtention allemande ; fleur « chou » aux pétales délicatement pliés ; Alexandra Farms"
+      },
+      {
+        "nom": "Wanted",
+        "couleur": "rouge vif ombré de rouge foncé",
+        "note": "Cœur évoquant les « quatre cœurs » qui rayonnent en vagues ; Alexandra Farms"
+      },
+      {
+        "nom": "Princess Holly's Hope",
+        "couleur": "cœur pêche, pétales externes crème",
+        "note": "Série Princess (Alexandra Farms) ; plus de 80 pétales en coupe froufroutante ; rose signature de Holly Heider Chapple"
+      },
+      {
+        "nom": "Princess Alina",
+        "couleur": "blanc pur à cœur beurre",
+        "note": "Série Princess (Alexandra Farms) ; grande rosette plate, parfum d'agrumes"
+      },
+      {
+        "nom": "Mamy Blue",
+        "couleur": "fuchsia pourpré",
+        "note": "Rosaprima ; parfum sucré"
+      },
+      {
+        "nom": "RP Serendipity",
+        "couleur": "rose clair délicat",
+        "note": "Exclusivité Rosaprima ; fleur ronde et volumineuse au cœur serré"
+      },
+      {
+        "nom": "Apricot Swirl",
+        "couleur": "jaune virant à l'abricot chaud",
+        "note": "Anciennement Candlelight ; pétales légèrement enroulés, parfum doux de lavande ; Kenya (Tambuzi)"
+      },
+      {
+        "nom": "Alina Perfumella",
+        "couleur": "pêche passant au crème et au rose blush",
+        "note": "Petite rose de jardin parfumée (« sucre d'orge »), existe aussi en branchue ; Kenya (Tambuzi)"
+      },
+      {
+        "nom": "Amaretto",
+        "couleur": "rouge rouille entre terracotta et cannelle",
+        "note": "Pétales veloutés, tons de terre ; Kenya (Tambuzi, rangée parmi ses roses branchues)"
+      },
+      {
+        "nom": "Honey Coloroma",
+        "couleur": "miel doré et ambre doux",
+        "note": "Parfum délicat ; Kenya (Tambuzi)"
+      },
+      {
+        "nom": "Jeanne Moreau",
+        "couleur": "blanc cassé bordé de vert, cœur rose bébé",
+        "note": "Coupe quartée entre tulipe et rose de jardin ; très parfumée (agrumes, pomme verte) ; Kenya (Tambuzi)"
+      },
+      {
+        "nom": "Lady Killer",
+        "couleur": "rouge pur velouté",
+        "note": "Rose de jardin au parfum fort et délicieux ; Kenya (Tambuzi)"
+      },
+      {
+        "nom": "Paul Ricard",
+        "couleur": "rose nuancé de pêche, pétales crème à reflets abricot",
+        "note": "Grande fleur au parfum sucré anisé ; Kenya (Tambuzi)"
+      },
+      {
+        "nom": "Peony Pink",
+        "couleur": "rose coquillage",
+        "note": "Fleur en forme de pivoine ; parfum de myrrhe, citron et amande ; Kenya (Tambuzi)"
+      },
+      {
+        "nom": "Prince Jardinier",
+        "couleur": "rose très pâle",
+        "note": "Fleur presque en soucoupe révélant un cœur doré ; très parfumée ; Kenya (Tambuzi)"
+      },
+      {
+        "nom": "Princess Charlene",
+        "couleur": "rose saumon délicat",
+        "note": "Peu de pétales, parfum frais et fruité ; Kenya (Tambuzi)"
+      },
+      {
+        "nom": "Rouge Royale",
+        "couleur": "rouge cramoisi profond",
+        "note": "Anciennement Red Elegance ; très grosse coupe quartée, sans parfum ; Kenya (Tambuzi)"
+      },
+      {
+        "nom": "Toulouse Lautrec",
+        "couleur": "jaune frais et franc",
+        "note": "Cœur quarté romantique, parfum sucré puissant ; Kenya (Tambuzi)"
+      },
+      {
+        "nom": "Vitality",
+        "couleur": "blanc beurré",
+        "note": "Rosette en spirale parfaite, parfum fruité fort ; Kenya (Tambuzi)"
+      }
+    ],
+    "formes": "Coupe profonde, globe « chou », rosette plate quartée à bouton central, fleur en pivoine (Yves Piaget), soucoupe ouverte à cœur doré ; 60 à 150 pétales ; certaines variétés portent des boutons latéraux (Piano).",
+    "saison": "Toute l'année : Colombie (Alexandra Farms), Équateur (Rosaprima), Kenya (Tambuzi, roses parfumées) ; roses de jardin de plein champ européennes (obtentions Tantau) de juin à octobre.",
+    "tenue_vase": "6–12 jours (jusqu'à 12 jours pour Westminster Abbey)",
+    "gamme_prix": "€€€",
+    "rarete_jeu": "rare",
+    "notes_dessin": "Fleur ronde et pleine de 80 à 150 pétales courts, plissés et serrés, disposés en coupe profonde ou en rosette plate souvent quartée (« quatre cœurs ») autour d'un petit bouton central ; à pleine ouverture, les pétales externes larges et arrondis se recourbent en pointes étoilées (Pink O'Hara). Certaines variétés sont globulaires comme une rose « chou » (Romantic Antike, Caramel Antike, Piano), d'autres ébouriffées comme une pivoine aux pétales frangés (Yves Piaget) ou en soucoupe montrant un cœur doré (Prince Jardinier). De profil, la tête est lourde, plus large que haute, et s'incline légèrement sur une tige plus fine et plus souple de 40 à 60 cm ; le bouton est court et rond, enveloppé de sépales foliacés. Feuillage abondant, mat à semi-brillant, aiguillons nombreux ; Piano porte des boutons latéraux sur la même tige.",
+    "wiki": "Rosa",
+    "img_queries": [
+      "Rosa 'Yves Piaget'",
+      "Rosa 'White O'Hara'",
+      "Rosa 'Romantic Antike'",
+      "Rosa 'Piano' Tantau"
+    ],
+    "sources": [
+      "https://www.alexandrafarms.com/varieties/",
+      "https://www.tambuzi.co.ke/rose-anthology/",
+      "https://www.rosaprima.com/catalog",
+      "https://cutroses.rosen-tantau.com/en/product-overview/piano/"
+    ]
+  },
+  {
+    "id": "rose-anglaise-david-austin",
+    "nom_fr": "Rose anglaise David Austin (Wedding & Event)",
+    "nom_en": "David Austin Wedding & Event rose",
+    "latin": "Rosa × hybrida",
+    "famille": "Rosaceae",
+    "categorie": "Roses",
+    "role": "focale",
+    "couleurs": [
+      "blanc nacré",
+      "ivoire",
+      "crème",
+      "crème et vert pistache",
+      "jaune beurre",
+      "pêche",
+      "abricot",
+      "rose blush",
+      "rose ballerine",
+      "rose dragée",
+      "rose barbe à papa",
+      "rose moyen",
+      "rose saumon",
+      "rose flamant",
+      "fuchsia",
+      "rouge framboise",
+      "rouge cramoisi",
+      "crème marbré de framboise",
+      "abricot à halo rose"
+    ],
+    "varietes": [
+      {
+        "nom": "Juliet",
+        "couleur": "pêche dégradé jusqu'à l'abricot chaud",
+        "note": "Ausjameson ; héroïne iconique de la collection : coupe pleine au cœur généreux ; parfum discret"
+      },
+      {
+        "nom": "Patience",
+        "couleur": "blanc laiteux à cœur crème beurré",
+        "note": "Auspastor ; pétales en dentelle s'ouvrant en coupes sculptées ; parfum le plus intense de la collection (rose ancienne et citron)"
+      },
+      {
+        "nom": "Keira",
+        "couleur": "crème guimauve marbré de rose framboise",
+        "note": "Ausboxer ; volants imprévisibles, chaque fleur est différente ; parfum de myrrhe, amande, massepain et vanille"
+      },
+      {
+        "nom": "Miranda",
+        "couleur": "rose dragée à cœur rose cerisier",
+        "note": "Ausimmon ; grande rosette aux pétales externes mouchetés de vert qui se rabattent ; parfum léger"
+      },
+      {
+        "nom": "Constance",
+        "couleur": "rose ballerine dégradé, cœur crème",
+        "note": "Austruss ; forme de robe de bal vaporeuse ; parfum doux et fruité"
+      },
+      {
+        "nom": "Charity",
+        "couleur": "rose pêche, étamines vert citron",
+        "note": "Auswasher ; rosette ; parfum de violette, musc et vanille"
+      },
+      {
+        "nom": "Capability",
+        "couleur": "fuchsia éclatant",
+        "note": "Ausapply ; rosettes parfaites et pleines ; parfum enivrant"
+      },
+      {
+        "nom": "Darcey",
+        "couleur": "rouge framboise aux tons de baies",
+        "note": "Auschariot ; d'abord plus rose, puis plus rouge ; rosette ; parfum léger de thé et de santal"
+      },
+      {
+        "nom": "Edith",
+        "couleur": "cœur abricot et or dans un halo de pétales rose poudré",
+        "note": "Auspluto ; bicolore flamboyante, grandes fleurs parfumées (fruits et myrrhe)"
+      },
+      {
+        "nom": "Effie",
+        "couleur": "cœur jaune beurre, abricot et orange zesté, pétales externes crème",
+        "note": "Ausgray ; s'ouvre de la coupe à la rosette ; parfum de thé moyen"
+      },
+      {
+        "nom": "Eugenie",
+        "couleur": "cœur pêche-abricot blush passant au crème",
+        "note": "Ausimage ; pétales très froufroutants ; parfum de myrrhe et d'anis (Rosaprima)"
+      },
+      {
+        "nom": "Beatrice",
+        "couleur": "jaune beurre doré, pétales externes blond pâle",
+        "note": "Auslevity ; cœur tourbillonnant ouvrant en rosette ; parfum de myrrhe aux notes fruitées"
+      },
+      {
+        "nom": "Leonora",
+        "couleur": "ivoire crème",
+        "note": "Auswagsy ; fleur ébouriffée à l'amas d'étamines dorées ; parfum d'agrumes et de concombre (Rosaprima)"
+      },
+      {
+        "nom": "Tess",
+        "couleur": "rouge cramoisi-cassis",
+        "note": "Ausyatch ; volants profonds veloutés, étamines dorées ; parfum subtil"
+      },
+      {
+        "nom": "Kate",
+        "couleur": "fuchsia",
+        "note": "Auschris ; nombreux pétales ondulés, coupe profonde puis rosette plate ; parfum frais citron et poire (Tambuzi, Kenya)"
+      },
+      {
+        "nom": "Purity",
+        "couleur": "blanc nacré, pointe de pêche, cœur légèrement blush",
+        "note": "Pétales plumeux s'ouvrant d'un petit bouton en grande fleur détendue"
+      },
+      {
+        "nom": "Purity Spr",
+        "couleur": "blanc nacré",
+        "note": "Version branchue de Purity : plusieurs fleurs détendues par tige"
+      },
+      {
+        "nom": "Bessie",
+        "couleur": "crème beurré",
+        "note": "Coupe profonde et symétrique d'environ 100 pétales, s'ouvre à 90 % ; léger parfum floral"
+      },
+      {
+        "nom": "Enid",
+        "couleur": "crème, pétales externes vert pistache, étamine verte",
+        "note": "Coupe profonde aux pétales ébouriffés ; parfum de rose délicat"
+      },
+      {
+        "nom": "Hettie",
+        "couleur": "rose vif",
+        "note": "Coupe large et peu profonde en rosette, pétales ondulés ; ouverture rapide, longue tenue, parfum discret"
+      },
+      {
+        "nom": "Millicent",
+        "couleur": "rose moyen chaud nuancé de lilas et de mauve",
+        "note": "Rosette ébouriffée de pétales texturés ; parfum distinctif (Rosaprima)"
+      },
+      {
+        "nom": "Ottilie",
+        "couleur": "rose barbe à papa",
+        "note": "Pétales froissés comme du papier crépon, fleur pleine et sculptée"
+      },
+      {
+        "nom": "Ariadne",
+        "couleur": "rose saumon, abricot et vieux rose",
+        "note": "Volants doux et ondulés"
+      },
+      {
+        "nom": "Phoebe",
+        "couleur": "rose flamant à cœur corail",
+        "note": "Rosette ; dégradé d'abricot-orangé à rose naturel"
+      }
+    ],
+    "formes": "Rosettes plates ou bombées, coupes profondes enveloppant un cœur dense, coupes larges et peu profondes ; 70 à plus de 100 pétales ; une variété branchue (Purity Spr).",
+    "saison": "Toute l'année : roses de fleuristerie David Austin cultivées sous abri en climat équatorial (Colombie : Alexandra Farms ; Équateur : Rosaprima ; Kenya : Tambuzi).",
+    "tenue_vase": "5–8 jours (tenue jugée « courte » par Rosaprima ; Hettie plus durable)",
+    "gamme_prix": "€€€",
+    "rarete_jeu": "precieuse",
+    "notes_dessin": "Fleurs de 8 à 12 cm composées de 70 à plus de 100 pétales fins, soit en coupe profonde dont les pétales externes enveloppent un cœur dense visible par le haut (Juliet, Keira, Bessie), soit en rosette plate et régulière (Capability, Miranda, Charity). Les bords des pétales sont légèrement froissés et ondulés, avec des dégradés doux du cœur vers l'extérieur : abricot vers pêche pour Juliet, marbrures crème et framboise pour Keira, halo rose autour d'un cœur abricot pour Edith. Plusieurs variétés montrent leur cœur à pleine ouverture : étamines vert anis (Charity, Enid) ou amas d'étamines dorées (Tess, Leonora). Bouton court et rond enveloppé de sépales longs et foliacés ; tige de 40 à 60 cm légèrement souple, feuillage vert moyen semi-mat et aiguillons fins assez nombreux.",
+    "wiki": "Rosa",
+    "img_queries": [
+      "Rosa 'Juliet' David Austin",
+      "Rosa 'Patience' Austin",
+      "Rosa 'Keira' David Austin",
+      "Rosa 'Constance' Austin"
+    ],
+    "sources": [
+      "https://www.alexandrafarms.com/varieties/juliet/",
+      "https://www.alexandrafarms.com/varieties/",
+      "https://eu.davidaustinroses.com/pages/wedding-roses",
+      "https://www.tambuzi.co.ke/rose-anthology/",
+      "https://www.rosaprima.com/catalog"
+    ]
+  },
+  {
+    "id": "rose-japonaise",
+    "nom_fr": "Rose japonaise (Wabara et série Princess)",
+    "nom_en": "Japanese garden rose (Wabara, Princess series)",
+    "latin": "Rosa × hybrida",
+    "famille": "Rosaceae",
+    "categorie": "Roses",
+    "role": "focale",
+    "couleurs": [
+      "blanc",
+      "blanc cassé",
+      "crème",
+      "rose très pâle",
+      "rose pâle",
+      "rose",
+      "rose barbe à papa",
+      "pêche",
+      "pêche-sable",
+      "agrumes (jaune, abricot)",
+      "jaune",
+      "rouge",
+      "rouge profond",
+      "lavande",
+      "lavande poussiéreuse",
+      "mauve poudré",
+      "beige rosé",
+      "brun nude",
+      "tan (brun clair)",
+      "bleuté",
+      "multicolore",
+      "cerise foncé et jaune pâle",
+      "rose bordé de vert"
+    ],
+    "varietes": [
+      {
+        "nom": "Misaki",
+        "couleur": "rose pâle",
+        "note": "美咲 ; rose signature de Wabara (Rose Farm Keiji) : tige naturelle et souple, très parfumée"
+      },
+      {
+        "nom": "Hiyoli",
+        "couleur": "rose pâle",
+        "note": "ひより ; série Misaki ; très parfumée"
+      },
+      {
+        "nom": "Shizuku",
+        "couleur": "blanc",
+        "note": "しずく ; série Misaki ; très parfumée"
+      },
+      {
+        "nom": "Shilabe",
+        "couleur": "blanc",
+        "note": "しらべ ; série Misaki ; pétales doux et dansants, très parfumée"
+      },
+      {
+        "nom": "Yuzen",
+        "couleur": "rouge virant au violet au fil des jours",
+        "note": "友禅 ; série Yuzen ; s'ouvre en rosette, parfumée"
+      },
+      {
+        "nom": "Iloha",
+        "couleur": "rose",
+        "note": "いろは ; série Yuzen ; peu parfumée"
+      },
+      {
+        "nom": "Kohalu",
+        "couleur": "rose",
+        "note": "小春 ; série Yuzen ; très grande fleur en hiver, parfum léger"
+      },
+      {
+        "nom": "Senlitsu",
+        "couleur": "rose pâle évoluant vers un rose lavande pâle",
+        "note": "旋律 ; série Yuzen ; rosette en coupe profonde très pleine ; aussi cultivée en Colombie (Alexandra Farms)"
+      },
+      {
+        "nom": "Ichika",
+        "couleur": "rose",
+        "note": "一華 ; série Yuzen"
+      },
+      {
+        "nom": "Tamaki",
+        "couleur": "multicolore aux motifs étranges",
+        "note": "環 ; série Yuzen ; fleur parfaitement sphérique « comme une planète »"
+      },
+      {
+        "nom": "Tamaki-Misola",
+        "couleur": "rose à cœur beige",
+        "note": "環 -美空 ; série Yuzen ; sœur de Tamaki"
+      },
+      {
+        "nom": "Fugetsu",
+        "couleur": "tons agrumes mêlés de rose (plus rose en été)",
+        "note": "風月 ; série Yuzen ; proportion de rose variable selon la saison"
+      },
+      {
+        "nom": "Shilatama",
+        "couleur": "blanc",
+        "note": "しらたま ; série Yuzen ; parfum léger"
+      },
+      {
+        "nom": "Kaolikazali",
+        "couleur": "tons agrumes",
+        "note": "かおりかざり ; « décorer de parfum » : très parfumée, parfum fruité"
+      },
+      {
+        "nom": "Likuhotalu",
+        "couleur": "jaune chaud (lueur de luciole)",
+        "note": "りくほたる ; série Kaori Kazari ; très parfumée"
+      },
+      {
+        "nom": "Kagelou",
+        "couleur": "tons agrumes au bord des pétales coloré",
+        "note": "カゲロウ ; série Kaori Kazari ; très parfumée"
+      },
+      {
+        "nom": "Tsukitohana",
+        "couleur": "tons agrumes",
+        "note": "つきとはな ; série Kaori Kazari ; très parfumée"
+      },
+      {
+        "nom": "Miyabi",
+        "couleur": "rose moyen s'ouvrant en étoile sur un cœur rose pâle et pêche",
+        "note": "雅 ; série Miyabi ; aussi cultivée en Colombie (Alexandra Farms) et proposée par Rosaprima (Équateur) ; peu parfumée"
+      },
+      {
+        "nom": "Miyabi Brown",
+        "couleur": "pétales externes rose pâle bordés de rose vif, cœur tan beurré",
+        "note": "Sœur de Miyabi ; rosette étalée de plus de 12 cm aux pétales plissés innombrables"
+      },
+      {
+        "nom": "Mikoto",
+        "couleur": "crème à étamines vertes",
+        "note": "みこと ; série Miyabi ; fleur plate à amas central d'étamines vertes"
+      },
+      {
+        "nom": "Gen",
+        "couleur": "multicolore aux teintes graves et posées",
+        "note": "絃 ; série Miyabi ; allure solennelle « de violoncelle »"
+      },
+      {
+        "nom": "Issei",
+        "couleur": "pêche-sable sur pétales crème",
+        "note": "一生 ; série Miyabi ; grande rosette plate ; Alexandra Farms"
+      },
+      {
+        "nom": "Solahana",
+        "couleur": "rose pâle nuancé, cœur écru",
+        "note": "そらはな ; série Miyabi ; finit ouverte comme un dahlia"
+      },
+      {
+        "nom": "Yui",
+        "couleur": "blanc",
+        "note": "結 ; série Hina ; parfumée"
+      },
+      {
+        "nom": "Hinaalale",
+        "couleur": "rose pâle",
+        "note": "ひなあられ ; série Hina ; parfum léger"
+      },
+      {
+        "nom": "Tsumugi",
+        "couleur": "rose clair au cœur, rose pâle à l'extérieur",
+        "note": "つむぎ ; grande coupe de pétales tourbillonnants ; aussi cultivée en Colombie (Alexandra Farms)"
+      },
+      {
+        "nom": "Tsumugi-Yulali",
+        "couleur": "rose pâle",
+        "note": "つむぎ - ゆらり ; série Tsumugi"
+      },
+      {
+        "nom": "Tsumugi-Hilali",
+        "couleur": "rose pâle",
+        "note": "つむぎ - ひらり ; série Tsumugi"
+      },
+      {
+        "nom": "Tsumugi-Ulala",
+        "couleur": "pêche pétillant (rose champagne)",
+        "note": "つむぎ - うらら ; double coupe aux pétales ondulés, sans parfum ; Alexandra Farms"
+      },
+      {
+        "nom": "Hilaku",
+        "couleur": "rouge",
+        "note": "ひらく ; parfum puissant et somptueux"
+      },
+      {
+        "nom": "Sono",
+        "couleur": "rouge",
+        "note": "園 ; parfum somptueux"
+      },
+      {
+        "nom": "Mahola",
+        "couleur": "rouge profond (cramoisi)",
+        "note": "まほら ; allure sauvage, parfum riche ; cœur parfois vert (œil vert)"
+      },
+      {
+        "nom": "Tsukinoniwa",
+        "couleur": "couleur profonde",
+        "note": "つきのにわ ; dédiée à un fleuriste de Kyoto ; parfumée"
+      },
+      {
+        "nom": "Yukinoniwa",
+        "couleur": "blanc",
+        "note": "ゆきのにわ ; « jardin sous la neige » ; parfum léger"
+      },
+      {
+        "nom": "Wataboushi",
+        "couleur": "blanc",
+        "note": "わたぼうし ; pensée pour le kimono blanc de mariée ; parfum somptueux"
+      },
+      {
+        "nom": "Fumi",
+        "couleur": "multicolore : chaque fleur touchée de carmin différemment",
+        "note": "文 ; « lettre d'amour »"
+      },
+      {
+        "nom": "Honoka",
+        "couleur": "tons agrumes à touche de rose",
+        "note": "ほのか ; parfum léger"
+      },
+      {
+        "nom": "Akali",
+        "couleur": "tons agrumes chauds",
+        "note": "あかり ; « lueur de lampe » ; parfumée"
+      },
+      {
+        "nom": "Tsukihi",
+        "couleur": "jaune (jaune froid en été, jaune chaud en hiver)",
+        "note": "つきひ"
+      },
+      {
+        "nom": "Kanata",
+        "couleur": "rose",
+        "note": "かなた ; forme étrange et singulière"
+      },
+      {
+        "nom": "Miyako",
+        "couleur": "rose",
+        "note": "京 ; pensée pour les ornements de cheveux des maiko"
+      },
+      {
+        "nom": "Kurumi",
+        "couleur": "beige doux, cœur plus brun, pointes parfois rosées",
+        "note": "くるみ ; forme arrondie de noix"
+      },
+      {
+        "nom": "Chiyo",
+        "couleur": "pétales externes blanc cassé, bords et cœur rose",
+        "note": "ちよ ; bouton pointu puis fleur en dahlia"
+      },
+      {
+        "nom": "Mone",
+        "couleur": "bleuté mystérieux",
+        "note": "百音 ; plus de 100 pétales, premier « parfum bleu » de Wabara"
+      },
+      {
+        "nom": "Charlotte Perriand",
+        "couleur": "brun nude",
+        "note": "Chef-d'œuvre de Keiji Kunieda dédié à Charlotte Perriand ; parfum qui se développe au fil des jours ; non livrée en hiver"
+      },
+      {
+        "nom": "Aoi",
+        "couleur": "lavande profond",
+        "note": "葵 ; rose en bouquet (房咲き) ; Rosaprima (spray lavande)"
+      },
+      {
+        "nom": "Aoi-Nana",
+        "couleur": "rose calme",
+        "note": "葵 - 七 ; rose en bouquet, série Aoi"
+      },
+      {
+        "nom": "Ioli",
+        "couleur": "lavande bordé de beige rosé (brun nude)",
+        "note": "いおり ; rose en bouquet à 3 fleurs par tige, pétales ondulés ; vendue « Loli Spr » par Alexandra Farms"
+      },
+      {
+        "nom": "Sola",
+        "couleur": "mauve poussiéreux, brun plus soutenu que Ioli",
+        "note": "そら ; rose en bouquet, série Aoi ; rosette groupée"
+      },
+      {
+        "nom": "Hana Spr",
+        "couleur": "tan foncé (sable)",
+        "note": "Branchue japonaise à faible nombre de pétales, collection Wabara d'Alexandra Farms"
+      },
+      {
+        "nom": "Temali",
+        "couleur": "rose pâle",
+        "note": "てまり ; rose en bouquet ; ronde comme une balle temari en été"
+      },
+      {
+        "nom": "Hanamikoji",
+        "couleur": "rose pâle",
+        "note": "花見小路 ; rose en bouquet évoquant les cerisiers doubles de Gion"
+      },
+      {
+        "nom": "Aya",
+        "couleur": "rose pâle",
+        "note": "綾 ; rose en bouquet"
+      },
+      {
+        "nom": "Lin",
+        "couleur": "blanc",
+        "note": "凛 ; rose en bouquet pour bouquet de mariée"
+      },
+      {
+        "nom": "Kanade",
+        "couleur": "blanc",
+        "note": "奏 ; rose en bouquet aux tiges qui ploient sous les fleurs"
+      },
+      {
+        "nom": "Kalin",
+        "couleur": "multicolore aux rose changeants",
+        "note": "かりん ; rose en bouquet souple comme une fleur des champs"
+      },
+      {
+        "nom": "Nagisa",
+        "couleur": "tons agrumes",
+        "note": "渚 ; rose en bouquet aux pétales ondulés comme des vagues"
+      },
+      {
+        "nom": "Hero",
+        "couleur": "rouge écarlate (緋色, hiiro)",
+        "note": "ひいろ, romanisé « hero » par Wabara ; rose en bouquet, rouge à la japonaise"
+      },
+      {
+        "nom": "Waka",
+        "couleur": "couleur profonde",
+        "note": "和花 ; rose en bouquet en forme de camélia"
+      },
+      {
+        "nom": "Princess Aiko",
+        "couleur": "pêche vif étincelé de crème et de corail",
+        "note": "Série Princess ; « rose japonaise obtenue pour l'impératrice » ; fleur presque sphérique, taille moyenne ; Alexandra Farms"
+      },
+      {
+        "nom": "Princess Hitomi",
+        "couleur": "rose barbe à papa",
+        "note": "Série Princess ; quatre cœurs, pétales externes en pointes étoilées ; parfum de lavande ; Alexandra Farms"
+      },
+      {
+        "nom": "Princess Maya",
+        "couleur": "pêche clair",
+        "note": "Série Princess ; quartée, pétales externes en pointes ; parfum de lavande ; Alexandra Farms"
+      },
+      {
+        "nom": "Princess Miyuki",
+        "couleur": "blanc pur",
+        "note": "Série Princess ; grosse fleur à cœur haut, parfum de myrrhe anisé ; Alexandra Farms"
+      },
+      {
+        "nom": "Princess Sakura",
+        "couleur": "pêche blush, pétales externes rose et pêche",
+        "note": "Série Princess ; « rose de jardin japonaise » en coupe profonde ; Kenya (Tambuzi)"
+      },
+      {
+        "nom": "Princess Suki",
+        "couleur": "cerise foncé à l'extérieur, jaune pâle à l'intérieur avec une couche crème",
+        "note": "Série Princess ; forme sphérique ; Kenya (Tambuzi)"
+      }
+    ],
+    "formes": "Coupes et rosettes aux pétales fins ondulés ou frangés ; étoile (Miyabi), sphère (Tamaki), boule temari (Temali), fleur de dahlia en fin d'ouverture (Solahana, Chiyo), forme de camélia (Waka) ; fleurs uniques (一輪咲き) ou en bouquet de 2 à 5 fleurs (房咲き).",
+    "saison": "Toute l'année depuis le Japon (Rose Farm Keiji, au bord du lac Biwa près de Kyoto), en quantités limitées ; Miyabi, Tsumugi et Senlitsu aussi produites en Colombie (Alexandra Farms) ; série Princess cultivée en Colombie et au Kenya ; certaines variétés non expédiées en hiver.",
+    "tenue_vase": "7–12 jours (réputées pour leur longue tenue)",
+    "gamme_prix": "€€€€",
+    "rarete_jeu": "legendaire",
+    "notes_dessin": "Pétales très fins et légèrement translucides, au bord ondulé ou finement frangé, dans des coloris neutres et nuancés (beige rosé, lavande poussiéreuse, sable, brun nude) : travailler en lavis et dégradés plutôt qu'en aplats. Les formes varient : coupe profonde à pétales tourbillonnants (Tsumugi), étoile qui s'ouvre sur un cœur pêche (Miyabi), sphère parfaite (Tamaki), rosette qui finit ouverte comme un dahlia (Solahana, Chiyo), camélia (Waka) ou balle temari (Temali). Les tiges sont naturellement souples et légèrement arquées, plus fines que celles des roses standard, avec un feuillage plus petit et mat ; de profil, la fleur paraît plus plate et plus aérienne, et les roses en bouquet portent 2 à 5 fleurs sur de fins pédicelles (Aoi, Ioli). Quelques variétés montrent un œil vert ou des étamines vertes au centre (Mikoto, Mahola).",
+    "wiki": "Rosa",
+    "img_queries": [
+      "Wabara rose",
+      "Rosa 'Miyabi' rose",
+      "Rosa 'Tsumugi' rose",
+      "Rosa 'Princess Hitomi'"
+    ],
+    "sources": [
+      "https://www.wabararose.com/collections/wabararose-catalog",
+      "https://www.alexandrafarms.com/varieties/",
+      "https://thursd.com/articles/extraordinary-wabara-roses-from-japan",
+      "https://www.gracerosefarm.com/blogs/news/wabara-garden-roses-striking-neutrals-from-kyoto",
+      "https://www.tambuzi.co.ke/rose-anthology/princess-sakura/"
+    ]
+  },
+  {
+    "id": "rose-branchue",
+    "nom_fr": "Rose branchue (rose spray)",
+    "nom_en": "Spray rose",
+    "latin": "Rosa × hybrida",
+    "famille": "Rosaceae",
+    "categorie": "Roses",
+    "role": "secondaire",
+    "couleurs": [
+      "blanc",
+      "blanc laiteux",
+      "crème",
+      "champagne",
+      "rose blush",
+      "rose pâle",
+      "rose moyen",
+      "rose vif",
+      "magenta",
+      "fuchsia",
+      "pêche",
+      "abricot",
+      "saumon",
+      "corail",
+      "orange",
+      "jaune citron",
+      "jaune d'or",
+      "rouge",
+      "rouge foncé",
+      "lavande",
+      "lilas",
+      "violet",
+      "vert",
+      "brun chocolat",
+      "beige taupe",
+      "bicolore rose et blanc",
+      "bicolore rouge et jaune",
+      "blanc bordé rouge"
+    ],
+    "varietes": [
+      {
+        "nom": "Majolika",
+        "couleur": "rose pâle chaud",
+        "note": "Obtenteur Rosen Tantau ; branchue classique à petites et moyennes têtes, tige 40–60 cm"
+      },
+      {
+        "nom": "White Majolika",
+        "couleur": "blanc laiteux",
+        "note": "Rosaprima ; l'une des branchues les plus demandées ; grosses têtes"
+      },
+      {
+        "nom": "Pink Majolika",
+        "couleur": "rose doux",
+        "note": "Rosaprima ; grappes de boutons délicats"
+      },
+      {
+        "nom": "Champagne Majolika",
+        "couleur": "crème",
+        "note": "Rosaprima ; longue tenue"
+      },
+      {
+        "nom": "Hot Majolika",
+        "couleur": "magenta-rose vif",
+        "note": "Rosen Tantau ; petites à moyennes têtes"
+      },
+      {
+        "nom": "Lydia",
+        "couleur": "rose",
+        "note": "Interplant, branchue classique ; tige 50–70 cm ; vase 10–12 jours"
+      },
+      {
+        "nom": "Lovely Lydia",
+        "couleur": "rose",
+        "note": "Interplant ; tige 50–70 cm"
+      },
+      {
+        "nom": "Babe",
+        "couleur": "orange",
+        "note": "Interplant ; tige 50–60 cm ; vase 12–14 jours"
+      },
+      {
+        "nom": "Yellow Babe",
+        "couleur": "jaune",
+        "note": "Interplant ; tige 40–60 cm ; 5 à 7 fleurs par tige"
+      },
+      {
+        "nom": "Odilia",
+        "couleur": "rose",
+        "note": "Interplant ; tige 50–70 cm"
+      },
+      {
+        "nom": "Rubicon",
+        "couleur": "rouge",
+        "note": "Interplant ; vase 14–16 jours"
+      },
+      {
+        "nom": "Mirabel",
+        "couleur": "rouge",
+        "note": "Interplant"
+      },
+      {
+        "nom": "Snowflake",
+        "couleur": "blanc pur",
+        "note": "Interplant, Rosaprima, Naranjo Roses"
+      },
+      {
+        "nom": "White Lady",
+        "couleur": "blanc",
+        "note": "Interplant ; vase 14–16 jours"
+      },
+      {
+        "nom": "Josephine",
+        "couleur": "blanc",
+        "note": "Interplant ; tige 70–80 cm"
+      },
+      {
+        "nom": "Jana",
+        "couleur": "crème",
+        "note": "Interplant ; tige 60–70 cm"
+      },
+      {
+        "nom": "Sweet Sara",
+        "couleur": "orange et crème",
+        "note": "Interplant ; tige 50–70 cm"
+      },
+      {
+        "nom": "Silver Shadow",
+        "couleur": "lilas (violet pâle)",
+        "note": "Interplant ; tige 60–80 cm"
+      },
+      {
+        "nom": "Glorious",
+        "couleur": "violet",
+        "note": "Interplant ; vase 14–16 jours"
+      },
+      {
+        "nom": "Fireworks",
+        "couleur": "bicolore blanc et rose",
+        "note": "Interplant ; tige 60–80 cm"
+      },
+      {
+        "nom": "Land of Fire",
+        "couleur": "bicolore rouge et jaune",
+        "note": "Interplant ; vase 14–16 jours"
+      },
+      {
+        "nom": "Jolene",
+        "couleur": "bicolore blanc et rouge",
+        "note": "Interplant ; tige 50–70 cm"
+      },
+      {
+        "nom": "Mariah",
+        "couleur": "jaune",
+        "note": "Interplant"
+      },
+      {
+        "nom": "Tessa",
+        "couleur": "rose",
+        "note": "Interplant"
+      },
+      {
+        "nom": "Bombastic",
+        "couleur": "rose blush à crème",
+        "note": "Interplant (premium) ; pompons ronds très pleins, nombreux boutons ; aussi au Kenya (Tambuzi)"
+      },
+      {
+        "nom": "Lady Bombastic",
+        "couleur": "rose",
+        "note": "Interplant (premium) ; tige 50–70 cm"
+      },
+      {
+        "nom": "Miss Bombastic",
+        "couleur": "blanc",
+        "note": "Interplant (premium) ; vase 14–16 jours"
+      },
+      {
+        "nom": "Princess Bombastic",
+        "couleur": "blanc crème",
+        "note": "Interplant (premium) ; tige 70–80 cm"
+      },
+      {
+        "nom": "Madam Bombastic",
+        "couleur": "rose et crème",
+        "note": "Interplant (premium)"
+      },
+      {
+        "nom": "Dima Bombastic",
+        "couleur": "violet",
+        "note": "Interplant (premium) ; vase 13–15 jours"
+      },
+      {
+        "nom": "Royal Porcelina",
+        "couleur": "crème",
+        "note": "Interplant (premium) ; tige 60–80 cm"
+      },
+      {
+        "nom": "Sweet Porcelina",
+        "couleur": "rose",
+        "note": "Interplant (premium) ; vase 14–16 jours"
+      },
+      {
+        "nom": "Muscadet",
+        "couleur": "blanc et vert",
+        "note": "Interplant (premium) ; tige 60–80 cm"
+      },
+      {
+        "nom": "Green Glow",
+        "couleur": "vert",
+        "note": "Interplant (premium)"
+      },
+      {
+        "nom": "Chococcino",
+        "couleur": "brun chocolat",
+        "note": "Interplant (premium) ; tige 50–70 cm"
+      },
+      {
+        "nom": "Saxony",
+        "couleur": "rose",
+        "note": "Interplant (premium) ; vase exceptionnel de 20–22 jours"
+      },
+      {
+        "nom": "Ramona",
+        "couleur": "jaune",
+        "note": "Interplant (premium) ; vase 18–20 jours"
+      },
+      {
+        "nom": "Purple Sky",
+        "couleur": "violet",
+        "note": "Interplant (premium) ; vase 16–18 jours"
+      },
+      {
+        "nom": "Eyeliner",
+        "couleur": "bicolore rouge et jaune",
+        "note": "Interplant (premium)"
+      },
+      {
+        "nom": "Caradonna",
+        "couleur": "rouge",
+        "note": "Interplant (premium) ; vase 16–17 jours"
+      },
+      {
+        "nom": "Antigua",
+        "couleur": "pétales externes abricot, cœur pêche",
+        "note": "Interplant (premium) ; sans parfum ; très populaire au Kenya (Tambuzi)"
+      },
+      {
+        "nom": "Red Trendsetter",
+        "couleur": "rouge",
+        "note": "Interplant, série Trendsetter"
+      },
+      {
+        "nom": "Golden Trendsetter",
+        "couleur": "jaune",
+        "note": "Interplant, série Trendsetter ; vase 14–16 jours"
+      },
+      {
+        "nom": "Antique Trendsetter",
+        "couleur": "rose antique",
+        "note": "Interplant, série Trendsetter"
+      },
+      {
+        "nom": "Catching Trendsetter",
+        "couleur": "bicolore blanc et rouge",
+        "note": "Interplant, série Trendsetter"
+      },
+      {
+        "nom": "Bridal Flow",
+        "couleur": "blanc et crème",
+        "note": "Interplant, série Flow"
+      },
+      {
+        "nom": "Blushing Flow",
+        "couleur": "bicolore blanc et rose",
+        "note": "Interplant, série Flow"
+      },
+      {
+        "nom": "Sun Flow",
+        "couleur": "jaune",
+        "note": "Interplant, série Flow"
+      },
+      {
+        "nom": "Sahara Sensation",
+        "couleur": "pêche sable chaud",
+        "note": "Rosaprima ; pétales froissés de rose de jardin, très grosses têtes ; aussi proposée par Alexandra Farms"
+      },
+      {
+        "nom": "Be Loving",
+        "couleur": "rose mousseline",
+        "note": "Rosaprima ; têtes extra-larges, classique des mariages"
+      },
+      {
+        "nom": "Fire Up",
+        "couleur": "rose vif",
+        "note": "Obtenteur Schreurs (Thursd) ; Rosaprima ; très longue tenue"
+      },
+      {
+        "nom": "Lavender Irishka",
+        "couleur": "lavande nuancé de rose",
+        "note": "Rosaprima ; nombreuses petites pousses"
+      },
+      {
+        "nom": "Portrait",
+        "couleur": "rose pâle vintage",
+        "note": "Rosaprima ; s'ouvre gracieusement"
+      },
+      {
+        "nom": "Star Blush",
+        "couleur": "pêche crémeux à cœur rosé",
+        "note": "Rosaprima ; obtenteur NIRP International selon Naranjo"
+      },
+      {
+        "nom": "Sweet Dreams",
+        "couleur": "blanc pur",
+        "note": "Rosaprima ; grosses têtes de forme jardin"
+      },
+      {
+        "nom": "Milky Way",
+        "couleur": "rose foncé au bord passant au blanc",
+        "note": "Rosaprima ; pétales pointus"
+      },
+      {
+        "nom": "Gem Star",
+        "couleur": "rose vif",
+        "note": "Rosaprima ; grappes de boutons bien formés"
+      },
+      {
+        "nom": "Saona",
+        "couleur": "orange vif",
+        "note": "Rosaprima ; tige solide"
+      },
+      {
+        "nom": "Fibonacci Aureus",
+        "couleur": "extérieur pastel, cœur orange vif",
+        "note": "Rosaprima ; nombreux boutons"
+      },
+      {
+        "nom": "Bellalinda Glee",
+        "couleur": "corail",
+        "note": "Rosaprima ; forme froissée sauvage"
+      },
+      {
+        "nom": "Brilliant Stars Leo",
+        "couleur": "jaune",
+        "note": "Rosaprima ; boutons de type jardin"
+      },
+      {
+        "nom": "Brillant Stars Sagitta",
+        "couleur": "lavande subtil",
+        "note": "Rosaprima ; très longue tenue"
+      },
+      {
+        "nom": "Be True",
+        "couleur": "bords rose pâle, cœur plus soutenu",
+        "note": "Rosaprima ; ouverture de type jardin"
+      },
+      {
+        "nom": "Be Joyful",
+        "couleur": "corail",
+        "note": "Rosaprima ; forme de jardin"
+      },
+      {
+        "nom": "Be Amazing",
+        "couleur": "beige et taupe à bords verts (tons terre)",
+        "note": "Rosaprima ; tenue extra-longue"
+      },
+      {
+        "nom": "Golden Blossom",
+        "couleur": "jaune d'or",
+        "note": "Rosaprima"
+      },
+      {
+        "nom": "Splendid Rosever",
+        "couleur": "corail",
+        "note": "Rosaprima ; grosses têtes"
+      },
+      {
+        "nom": "Morning Star",
+        "couleur": "crème",
+        "note": "Rosaprima ; grosses têtes"
+      },
+      {
+        "nom": "New Moon",
+        "couleur": "jaune pastel au cœur, crème à l'extérieur",
+        "note": "Rosaprima ; grosses têtes multiples"
+      },
+      {
+        "nom": "Mykonos",
+        "couleur": "blanc",
+        "note": "Rosaprima"
+      },
+      {
+        "nom": "Hot Desire",
+        "couleur": "rouge feu foncé",
+        "note": "Rosen Tantau ; Rosaprima ; pétales pointus"
+      },
+      {
+        "nom": "Candy Rokoko",
+        "couleur": "rose",
+        "note": "Rosen Tantau, branchue « Noblesse » de plein champ ; grosses têtes"
+      },
+      {
+        "nom": "Champagne Rokoko",
+        "couleur": "crème élégant",
+        "note": "Rosen Tantau, branchue « Noblesse » ; tige 50–70 cm"
+      },
+      {
+        "nom": "Hot Rokoko",
+        "couleur": "rouge vif",
+        "note": "Rosen Tantau, branchue « Noblesse » ; feuillage sombre brillant"
+      },
+      {
+        "nom": "Playful Rokoko",
+        "couleur": "rose",
+        "note": "Rosen Tantau, branchue « Noblesse »"
+      },
+      {
+        "nom": "Grandma's Finest Josy",
+        "couleur": "magenta-rose pur",
+        "note": "Rosen Tantau, style Country Spirit ; boutons latéraux plats et pleins"
+      },
+      {
+        "nom": "Grandma's Finest Mary",
+        "couleur": "abricot-saumon",
+        "note": "Rosen Tantau ; fleurs pleines nostalgiques"
+      },
+      {
+        "nom": "Grandma's Finest Katy",
+        "couleur": "blanc crème à cœur rose",
+        "note": "Rosen Tantau ; idéale pour les bouquets de mariée"
+      },
+      {
+        "nom": "Grandma's Finest Daisy",
+        "couleur": "crème-vert à œil rose",
+        "note": "Rosen Tantau, mutation de Grandma's Finest Josy"
+      },
+      {
+        "nom": "Diamond Rain",
+        "couleur": "rose doux à l'extérieur, rose intense au cœur",
+        "note": "Rosen Tantau ; grandes fleurs"
+      },
+      {
+        "nom": "Wedding Mikado",
+        "couleur": "blanc crème",
+        "note": "Rosen Tantau, mutation de Sissi Mikado"
+      },
+      {
+        "nom": "Tropical Rain",
+        "couleur": "saumon-orangé",
+        "note": "Rosen Tantau ; fleurs pleines"
+      },
+      {
+        "nom": "Simba",
+        "couleur": "orange franc",
+        "note": "Rosen Tantau, nouveauté Amérique du Sud"
+      },
+      {
+        "nom": "#Ashtag Famous",
+        "couleur": "rouge intense",
+        "note": "Kenya (Tambuzi) ; pétales froissés en forme singulière"
+      },
+      {
+        "nom": "#Ashtag So Fine",
+        "couleur": "rose doux",
+        "note": "Kenya (Tambuzi)"
+      },
+      {
+        "nom": "#Ashtag Yang",
+        "couleur": "saumon",
+        "note": "Kenya (Tambuzi)"
+      },
+      {
+        "nom": "4Good White",
+        "couleur": "blanc pur",
+        "note": "Kenya (Tambuzi) ; pétales veloutés"
+      },
+      {
+        "nom": "Apricot Lace",
+        "couleur": "abricot-orangé",
+        "note": "Kenya (Tambuzi)"
+      },
+      {
+        "nom": "Darlington",
+        "couleur": "pêche crémeux",
+        "note": "Kenya (Tambuzi)"
+      },
+      {
+        "nom": "English Miss",
+        "couleur": "rose pâle à cœur doré",
+        "note": "Kenya (Tambuzi) ; s'ouvre vite et pleinement, léger parfum"
+      },
+      {
+        "nom": "Everlasting Lavender",
+        "couleur": "lavande pâle",
+        "note": "Kenya (Tambuzi) ; quelques pétales papyracés seulement"
+      },
+      {
+        "nom": "Exclusive Sensation",
+        "couleur": "pétales externes blanc crème, cœur rose chaud",
+        "note": "Kenya (Tambuzi) ; petite taille, pour boutonnières"
+      },
+      {
+        "nom": "Julietta",
+        "couleur": "pétales externes rose foncé, cœur rose-pêche",
+        "note": "Kenya (Tambuzi) ; gros boutons pleins, parfum très léger"
+      },
+      {
+        "nom": "Lemon Pom Pom",
+        "couleur": "jaune citron",
+        "note": "Kenya (Tambuzi) ; coupes classiques, sans parfum"
+      },
+      {
+        "nom": "Palm Beach",
+        "couleur": "orange coucher de soleil",
+        "note": "Kenya (Tambuzi)"
+      },
+      {
+        "nom": "Pavlova",
+        "couleur": "pétales externes verts, cœur rose blush et pêche",
+        "note": "Kenya (Tambuzi) ; pétales froissés comme un tutu"
+      },
+      {
+        "nom": "Purple Tambourine",
+        "couleur": "magenta-pourpre",
+        "note": "Kenya (Tambuzi) ; fleurs généreuses"
+      },
+      {
+        "nom": "Scented Whisper",
+        "couleur": "saumon chaud",
+        "note": "Kenya (Tambuzi) ; parfumée ; certains boutons restent verts et fermés"
+      },
+      {
+        "nom": "Snow Ballet",
+        "couleur": "blanc neige",
+        "note": "Kenya (Tambuzi), Naranjo Roses ; obtenteur NIRP International selon Naranjo ; parfum subtil"
+      },
+      {
+        "nom": "Sweet Antike",
+        "couleur": "rose doux",
+        "note": "Kenya (Tambuzi) ; forme ancienne, parfum de myrrhe"
+      },
+      {
+        "nom": "Yes I Do",
+        "couleur": "rose bébé",
+        "note": "Kenya (Tambuzi) ; grappes de toutes petites fleurs"
+      },
+      {
+        "nom": "Alina Perfumella (branchue)",
+        "couleur": "pêche et saumon clair",
+        "note": "Collection Jardin & Parfum de Meilland ; très parfumée ; Kenya (Tambuzi)"
+      },
+      {
+        "nom": "Blanche Spr",
+        "couleur": "blanc pur, cœur crème, pétales externes vert pâle",
+        "note": "Alexandra Farms ; première branchue blanc pur de la ferme, s'étale en coupe peu profonde"
+      },
+      {
+        "nom": "Pink Butterfly Spr",
+        "couleur": "rose clair à cœur beurre",
+        "note": "Alexandra Farms"
+      },
+      {
+        "nom": "Wedding Rosever Spr",
+        "couleur": "rose blush et blanc",
+        "note": "Alexandra Farms ; environ 30 pétales, 4 fleurs ou plus par tige"
+      },
+      {
+        "nom": "Princess Fairy Kiss Pink Spr",
+        "couleur": "rose blush lumineux",
+        "note": "Série Princess (Alexandra Farms, Tambuzi) ; pétales ondulés, fleurs plus grosses que la plupart des branchues"
+      },
+      {
+        "nom": "Princess Fairy Kiss White",
+        "couleur": "blanc pur",
+        "note": "Sœur de Fairy Kiss Pink ; Kenya (Tambuzi)"
+      },
+      {
+        "nom": "Princess Midori Spr",
+        "couleur": "vert intense",
+        "note": "Série Princess (Alexandra Farms) ; 4 à 5 petites fleurs par tige"
+      },
+      {
+        "nom": "Princess Pinku Spr",
+        "couleur": "cœur rose vif, pétales externes rose clair et vert pâle",
+        "note": "Série Princess (Alexandra Farms) ; toutes petites fleurs pour boutonnières"
+      },
+      {
+        "nom": "Princess Shiro Spr",
+        "couleur": "blanc à sous-tons verts",
+        "note": "Série Princess (Alexandra Farms) ; fleurs à différents stades sur la même tige"
+      }
+    ],
+    "formes": "Tige ramifiée portant 3 à 10 fleurs : petites coupes classiques (Majolika, Lydia, Babe), pompons ronds très pétaleux (famille Bombastic), rosettes de jardin (Grandma's Finest, Sweet Dreams), fleurs presque simples aux pétales papyracés (Everlasting Lavender).",
+    "saison": "Toute l'année : Kenya, Équateur, Colombie, Pays-Bas ; branchues de plein champ en Europe (gamme Rokoko de Tantau) de mai à octobre.",
+    "tenue_vase": "8–16 jours (jusqu'à 20–22 jours pour Saxony selon Interplant)",
+    "gamme_prix": "€",
+    "rarete_jeu": "commune",
+    "notes_dessin": "Une tige principale de 40 à 70 cm se ramifie au sommet en 5 à 10 pédicelles portant des fleurs de 3 à 5 cm à des stades différents : boutons ronds serrés, fleurs en coupe mi-ouvertes et fleurs épanouies montrant parfois leurs étamines. Les variétés classiques (Majolika, Lydia, Babe) ont de petites coupes régulières ; la famille Bombastic forme des pompons ronds très pétaleux ; Everlasting Lavender n'a que quelques pétales papyracés. Composer la tête en bouquet asymétrique : fleurs dominantes au centre, boutons ronds encore serrés dans leurs sépales verts sur les côtés et plus bas. Feuilles plus petites que celles des roses standard, vert moyen brillant, petites épines fines.",
+    "wiki": "Rosa",
+    "img_queries": [
+      "Rosa 'Majolika' spray rose",
+      "Rosa 'Bombastic' spray rose",
+      "spray roses",
+      "Rosa 'Lydia' spray rose"
+    ],
+    "sources": [
+      "https://interplant.com/catalogue/",
+      "https://www.rosaprima.com/catalog",
+      "https://cutroses.rosen-tantau.com/en/product-overview/majolika/",
+      "https://www.tambuzi.co.ke/rose-anthology/",
+      "https://www.alexandrafarms.com/varieties/"
+    ]
+  },
+  {
+    "id": "rose-ancienne-parfumee",
+    "nom_fr": "Rose ancienne et rose parfumée",
+    "nom_en": "Old garden rose & scented rose",
+    "latin": "Rosa gallica, Rosa × damascena, Rosa × alba, Rosa × centifolia et hybrides",
+    "famille": "Rosaceae",
+    "categorie": "Roses",
+    "role": "focale",
+    "couleurs": [
+      "blanc",
+      "blanc crème",
+      "ivoire",
+      "rose blush",
+      "rose tendre",
+      "rose moyen",
+      "rose vif",
+      "magenta",
+      "fuchsia",
+      "cerise",
+      "cramoisi",
+      "pourpre",
+      "violet parme",
+      "marron-pourpre",
+      "lilas",
+      "orange",
+      "abricot",
+      "vert (rose verte)",
+      "blanc strié de cramoisi",
+      "rose strié de fuchsia et blanc",
+      "fuchsia strié de blanc",
+      "cramoisi liseré de blanc",
+      "blanc bordé de cramoisi"
+    ],
+    "varietes": [
+      {
+        "nom": "Mme. Hardy",
+        "couleur": "blanc éclatant à œil vert",
+        "note": "Damas (Hardy, 1832) ; fleurs en grappes, fort parfum de rose ancienne"
+      },
+      {
+        "nom": "Ispahan",
+        "couleur": "rose moyen",
+        "note": "Damas (vers 1832) ; fleurs mi-ouvertes puis réfléchies ; parfum de rose ancienne fort et fin ; l'une des premières à fleurir"
+      },
+      {
+        "nom": "Kazanlik",
+        "couleur": "rose",
+        "note": "Damas (« Professeur Émile Perrot ») ; utilisée pour l'essence de rose à Kazanlak en Bulgarie ; parfum riche"
+      },
+      {
+        "nom": "Celsiana",
+        "couleur": "rose pâle, étamines dorées",
+        "note": "Damas (vers 1750) ; grandes fleurs semi-doubles ouvertes en petits bouquets"
+      },
+      {
+        "nom": "Quatre Saisons",
+        "couleur": "rose franc",
+        "note": "Damas d'automne ; fleurs lâchement doubles au parfum puissant"
+      },
+      {
+        "nom": "Gloire de Guilan",
+        "couleur": "rose clair",
+        "note": "Damas ; coupes s'ouvrant à plat, légèrement quartées ; cultivée en Perse pour l'essence de rose"
+      },
+      {
+        "nom": "Leda",
+        "couleur": "blanc laiteux bordé de cramoisi foncé",
+        "note": "Damas (1827) ; fort parfum de rose ancienne"
+      },
+      {
+        "nom": "Charles de Mills",
+        "couleur": "rouge magenta riche",
+        "note": "Gallica (vers 1790) ; très grandes fleurs plates « tranchées » aux pétales serrés"
+      },
+      {
+        "nom": "Cardinal de Richelieu",
+        "couleur": "pourpre très foncé",
+        "note": "Gallica (Parmentier, 1847) ; fleurs qui se réfléchissent presque en boule ; léger parfum"
+      },
+      {
+        "nom": "R. gallica 'Officinalis'",
+        "couleur": "fuchsia",
+        "note": "Rose des apothicaires (avant 1400) ; grandes fleurs semi-doubles, parfum pur de rose ancienne, cynorrhodons"
+      },
+      {
+        "nom": "Rosa Mundi",
+        "couleur": "fuchsia strié de blanc",
+        "note": "Gallica 'Versicolor', sport d'Officinalis (avant 1600) ; floraison unique très parfumée"
+      },
+      {
+        "nom": "Tuscany Superb",
+        "couleur": "rouge magenta, étamines dorées",
+        "note": "Gallica (Rivers, 1837) ; fleurs semi-doubles parfumées"
+      },
+      {
+        "nom": "Belle de Crécy",
+        "couleur": "cerise passant au violet parme",
+        "note": "Gallica (1848) ; parfum riche"
+      },
+      {
+        "nom": "Camaieux",
+        "couleur": "blanc strié et éclaboussé de cramoisi",
+        "note": "Gallica (1830) ; parfum moyen à fort de rose ancienne"
+      },
+      {
+        "nom": "Duchesse de Montebello",
+        "couleur": "rose blush pur",
+        "note": "Gallica (1829) ; fleurs entièrement doubles, parfum fruité"
+      },
+      {
+        "nom": "Alba Maxima",
+        "couleur": "blush puis blanc crème",
+        "note": "Alba ; fleurs doubles un peu informelles, très parfumées"
+      },
+      {
+        "nom": "Maiden's Blush",
+        "couleur": "rose doux",
+        "note": "Alba (avant 1400) ; rosettes lâchement doubles, parfum riche"
+      },
+      {
+        "nom": "Queen of Denmark",
+        "couleur": "rose lumineux",
+        "note": "Alba (Königin von Dänemark) ; fleurs quartées à bouton central, parfum particulièrement fort"
+      },
+      {
+        "nom": "Félicité Parmentier",
+        "couleur": "rose frais passant au crème sur les bords",
+        "note": "Alba (Parmentier, 1834) ; très pétaleuse, parfum délicieux"
+      },
+      {
+        "nom": "Centifolia",
+        "couleur": "rose franc",
+        "note": "Rose à cent feuilles ou rose de Provence (« rose chou ») ; fleurs lourdes et penchées, très parfumées"
+      },
+      {
+        "nom": "Fantin Latour",
+        "couleur": "rose moyen, rose coquillage au cœur",
+        "note": "Centifolia (vers 1940) ; coupe puis bords réfléchis, parfum fort et délicieux"
+      },
+      {
+        "nom": "Chapeau de Napoléon",
+        "couleur": "rose franc",
+        "note": "Centifolia (1845) ; boutons enveloppés de sépales ailés en crête verte ; très parfumée"
+      },
+      {
+        "nom": "William Lobb",
+        "couleur": "pourpre magenta passant au mauve et au gris violet",
+        "note": "Mousseuse (Laffay, 1855) ; mousse verte abondante, parfum riche"
+      },
+      {
+        "nom": "Nuits de Young",
+        "couleur": "marron-pourpre très sombre",
+        "note": "Mousseuse (Laffay, 1845) ; mousse foncée, très parfumée"
+      },
+      {
+        "nom": "Blanche Moreau",
+        "couleur": "blanc crème",
+        "note": "Mousseuse ; mousse et aiguillons brun foncé contrastés, parfum fort et sucré"
+      },
+      {
+        "nom": "Henri Martin",
+        "couleur": "cramoisi pur puis pourpre cramoisi",
+        "note": "Mousseuse (Laffay, 1863) ; longs boutons à mousse vert clair"
+      },
+      {
+        "nom": "Comte de Chambord",
+        "couleur": "magenta clair",
+        "note": "Portland ; fleurs plates et quartées, parfum fort ; feuilles montant jusqu'à la fleur"
+      },
+      {
+        "nom": "Jacques Cartier",
+        "couleur": "rose moyen clair pâlissant",
+        "note": "Portland ; rosettes à bouton central, parfum riche"
+      },
+      {
+        "nom": "Rose de Rêscht",
+        "couleur": "magenta vif",
+        "note": "Portland (1840) ; petites fleurs très doubles bien au-dessus du feuillage, très parfumée"
+      },
+      {
+        "nom": "Souvenir de la Malmaison",
+        "couleur": "rose tendre",
+        "note": "Bourbon (Béluze, 1843) ; coupe puis fleur plate quartée, parfum fort"
+      },
+      {
+        "nom": "Mme. Isaac Pereire",
+        "couleur": "fuchsia",
+        "note": "Bourbon (Garçon, 1841) ; énormes coupes aux bords retournés, parfum puissant"
+      },
+      {
+        "nom": "Louise Odier",
+        "couleur": "rose vif nuancé de lilas",
+        "note": "Bourbon (Margottin, 1851) ; coupe régulière, chaque pétale en place ; très parfumée"
+      },
+      {
+        "nom": "Boule de Neige",
+        "couleur": "blanc",
+        "note": "Bourbon (Lacharme, 1867) ; fleurs en camélia d'environ 5 cm, texture soyeuse, très parfumées"
+      },
+      {
+        "nom": "Reine Victoria",
+        "couleur": "rose lilas chaud",
+        "note": "Bourbon (Schwartz, 1872) ; fleurs en coquille parfaitement posées, parfum délicieux"
+      },
+      {
+        "nom": "Mme. Pierre Oger",
+        "couleur": "rose argenté pâle",
+        "note": "Bourbon, sport de Reine Victoria (Verdier, 1878) ; fleurs en calice, parfum riche"
+      },
+      {
+        "nom": "Variegata di Bologna",
+        "couleur": "blanc ou blanc rosé strié de cramoisi",
+        "note": "Bourbon (Bonfiglioli, 1869) ; grandes coupes pleines, très parfumée"
+      },
+      {
+        "nom": "Honorine de Brabant",
+        "couleur": "rose clair éclaboussé de cramoisi et de pourpre",
+        "note": "Bourbon ; coupes quartées peu profondes, fort parfum"
+      },
+      {
+        "nom": "Ferdinand Pichard",
+        "couleur": "rose strié de fuchsia, magenta et blanc",
+        "note": "Hybride remontant ; fleurs pleines et globuleuses au parfum riche"
+      },
+      {
+        "nom": "Reine des Violettes",
+        "couleur": "nuances de magenta violacé",
+        "note": "Hybride remontant (Millet-Malet, 1860) ; fleurs plates très pétaleuses, tiges presque sans épines"
+      },
+      {
+        "nom": "Baron Girod de l'Ain",
+        "couleur": "cramoisi foncé liseré de blanc",
+        "note": "Hybride remontant (Reverchon, 1857) ; très parfumée"
+      },
+      {
+        "nom": "Paul Neyron",
+        "couleur": "rose profond lavé de lilas",
+        "note": "Hybride remontant (Levet, 1869) ; très grandes coupes, léger parfum"
+      },
+      {
+        "nom": "Souvenir du Dr. Jamain",
+        "couleur": "marron cramoisi le plus riche",
+        "note": "Hybride remontant (Lacharme, 1865) ; fleurs plates montrant à peine les étamines jaunes, parfum riche"
+      },
+      {
+        "nom": "Old Blush China",
+        "couleur": "rose doux",
+        "note": "Rose de Chine (1750) ; grappes de petites fleurs délicates, parfum délicieux"
+      },
+      {
+        "nom": "Cramoisi Supérieur",
+        "couleur": "cramoisi franc",
+        "note": "Rose de Chine (1832) ; petites coupes parfumées en grappes"
+      },
+      {
+        "nom": "Viridiflora",
+        "couleur": "vert puis cuivré",
+        "note": "« Rose verte », sport d'Old Blush China (1855) : toutes les pièces florales sont devenues foliacées ; curiosité pour fleuristes"
+      },
+      {
+        "nom": "Augusta Luise",
+        "couleur": "orange à rose",
+        "note": "Rosen Tantau, rose coupée de plein champ ; très grandes fleurs romantiques au parfum très intense"
+      },
+      {
+        "nom": "Chippendale",
+        "couleur": "orange",
+        "note": "Rosen Tantau, plein champ ; fleurs nostalgiques très parfumées, feuillage sombre brillant"
+      },
+      {
+        "nom": "Eisvogel",
+        "couleur": "lilas à cœur orange-abricot",
+        "note": "Rosen Tantau, plein champ ; grand parfum"
+      },
+      {
+        "nom": "Gospel",
+        "couleur": "pourpre foncé",
+        "note": "Rosen Tantau, plein champ ; fort parfum de rose"
+      },
+      {
+        "nom": "Deep Secret",
+        "couleur": "pourpre-violet foncé",
+        "note": "Rosen Tantau, plein champ ; parfum « à couper le souffle »"
+      },
+      {
+        "nom": "Hot Lady",
+        "couleur": "magenta intense",
+        "note": "Rosen Tantau, plein champ ; parfum intense"
+      },
+      {
+        "nom": "Marietta",
+        "couleur": "bordeaux à rouge framboise",
+        "note": "Rosen Tantau, branchue nostalgique de plein champ ; fort parfum"
+      },
+      {
+        "nom": "Mary Ann",
+        "couleur": "orange foncé à abricot selon la météo",
+        "note": "Rosen Tantau, branchue nostalgique de plein champ ; beau parfum"
+      },
+      {
+        "nom": "Pacific Blue",
+        "couleur": "lilas délicat",
+        "note": "Rosen Tantau, plein champ ; merveilleux parfum de rose"
+      },
+      {
+        "nom": "Dainty Parfum",
+        "couleur": "rose doux",
+        "note": "Rosen Tantau ; bouton élégant, parfum de rose intense"
+      },
+      {
+        "nom": "Nostalgie",
+        "couleur": "blanc crème bordé rouge cerise",
+        "note": "Rosen Tantau, plein champ ; parfum subtil, feuillage vert intense brillant"
+      },
+      {
+        "nom": "Wildberry",
+        "couleur": "teinte de fruits des bois",
+        "note": "Rosen Tantau, plein champ ; hybride de thé nostalgique robuste"
+      }
+    ],
+    "formes": "Fleurs plates très pleines et quartées à bouton central (Gallica, Alba, Portland), coupes et calices (Bourbon), globes « chou » penchés (Centifolia), fleurs semi-doubles à étamines dorées (Celsiana, Officinalis), boutons couverts de mousse (Mousseuses), panachures striées (Rosa Mundi, Ferdinand Pichard) ; roses parfumées modernes de plein champ à forme nostalgique.",
+    "saison": "Plein champ en Europe : floraison principale fin mai à juillet (Gallica, Damas, Alba, Centifolia et Mousseuses ne fleurissent qu'une fois) ; Bourbon, Portland, roses de Chine, hybrides remontants et roses de plein champ Tantau refleurissent jusqu'en septembre-octobre.",
+    "tenue_vase": "3–6 jours (roses anciennes fragiles, à cueillir en bouton) ; 7–10 jours pour les roses de plein champ modernes",
+    "gamme_prix": "€€€",
+    "rarete_jeu": "precieuse",
+    "notes_dessin": "Les roses anciennes se dessinent plus plates et plus « bourrées » que les roses modernes : jusqu'à 100 à 200 pétales courts et chiffonnés, souvent quartés autour d'un petit bouton central (Queen of Denmark, Jacques Cartier), les pétales externes se réfléchissant vers l'arrière. Les Gallica ont des fleurs plates « tranchées » (Charles de Mills) aux pourpres veloutés ; les Damas portent des fleurs plus lâches en bouquets sur des pédoncules glanduleux ; les Centifolia forment des globes lourds qui penchent ; les Mousseuses ont sépales et pédoncules couverts d'une « mousse » glanduleuse vert-brun et collante. Les striées (Rosa Mundi, Ferdinand Pichard, Variegata di Bologna) demandent des rayures irrégulières qui suivent les nervures. Tiges courtes et souples (30 à 50 cm) garnies de nombreux aiguillons fins, feuillage mat gris-vert (Alba) ou vert franc aux folioles arrondies et un peu rugueuses.",
+    "wiki": "Rosa × damascena",
+    "img_queries": [
+      "Rosa 'Madame Hardy'",
+      "Rosa gallica 'Versicolor'",
+      "Rosa 'Charles de Mills'",
+      "Rosa × centifolia"
+    ],
+    "sources": [
+      "https://www.davidaustinroses.co.uk/products/mme-hardy",
+      "https://www.davidaustinroses.co.uk/products/charles-de-mills",
+      "https://en.wikipedia.org/wiki/Garden_roses",
+      "https://cutroses.rosen-tantau.com/en/product-overview/augusta-luise/",
+      "https://en.wikipedia.org/wiki/Rosa_%C3%97_damascena"
+    ]
+  },
+  {
+    "id": "rose-teintee",
+    "nom_fr": "Rose teintée et rose fantaisie (arc-en-ciel, bleue, noire)",
+    "nom_en": "Tinted & novelty rose (rainbow, blue, black)",
+    "latin": "Rosa × hybrida",
+    "famille": "Rosaceae",
+    "categorie": "Roses",
+    "role": "focale",
+    "couleurs": [
+      "arc-en-ciel vif",
+      "arc-en-ciel pastel",
+      "bleu",
+      "bleu roi",
+      "bleu ciel",
+      "turquoise",
+      "vert",
+      "violet",
+      "fuchsia et bleu",
+      "jaune et bleu",
+      "rouge et bleu",
+      "rouge et jaune",
+      "rouge et blanc",
+      "orange et blanc",
+      "orange et bleu",
+      "noir et blanc",
+      "noir et orange",
+      "tricolore bleu-blanc-rouge",
+      "lavande mauve (rose bleue OGM)"
+    ],
+    "varietes": [
+      {
+        "nom": "Rose Rainbow",
+        "couleur": "sept couleurs de l'arc-en-ciel, une par pétale",
+        "note": "Rose teintée « Rainbow » ; producteurs Happy Colors et Rio Roses (Thursd)"
+      },
+      {
+        "nom": "R1000",
+        "couleur": "arc-en-ciel vif : rouge, orange, jaune, vert, bleu, violet",
+        "note": "Happy Colors (Delwijnen, Pays-Bas) ; rose standard teintée par absorption ; rose arc-en-ciel classique, chaque pétale d'une couleur"
+      },
+      {
+        "nom": "R1001",
+        "couleur": "arc-en-ciel pastel : rose, bleu ciel, jaune pâle, lilas, pêche",
+        "note": "Happy Colors (Delwijnen, Pays-Bas) ; rose standard teintée par absorption ; arc-en-ciel pastel"
+      },
+      {
+        "nom": "R1002",
+        "couleur": "rouge, orange, fuchsia et jaune",
+        "note": "Happy Colors (Delwijnen, Pays-Bas) ; rose standard teintée par absorption ; esprit « tropical » (combinaisons rouge, rose et jaune)"
+      },
+      {
+        "nom": "R1003",
+        "couleur": "vert, jaune et bleu",
+        "note": "Happy Colors (Delwijnen, Pays-Bas) ; rose standard teintée par absorption"
+      },
+      {
+        "nom": "R1004",
+        "couleur": "rouge et blanc marbrés",
+        "note": "Happy Colors (Delwijnen, Pays-Bas) ; rose standard teintée par absorption"
+      },
+      {
+        "nom": "R1006",
+        "couleur": "vert et violet",
+        "note": "Happy Colors (Delwijnen, Pays-Bas) ; rose standard teintée par absorption"
+      },
+      {
+        "nom": "R1007",
+        "couleur": "blanc et bleu",
+        "note": "Happy Colors (Delwijnen, Pays-Bas) ; rose standard teintée par absorption"
+      },
+      {
+        "nom": "R1008",
+        "couleur": "camaïeu de bleus (bleu roi et bleu ciel)",
+        "note": "Happy Colors (Delwijnen, Pays-Bas) ; rose standard teintée par absorption ; « rose bleue » teintée"
+      },
+      {
+        "nom": "R1009",
+        "couleur": "jaune et bleu",
+        "note": "Happy Colors (Delwijnen, Pays-Bas) ; rose standard teintée par absorption"
+      },
+      {
+        "nom": "R1011",
+        "couleur": "rouge et bleu",
+        "note": "Happy Colors (Delwijnen, Pays-Bas) ; rose standard teintée par absorption"
+      },
+      {
+        "nom": "R1012",
+        "couleur": "rouge et jaune",
+        "note": "Happy Colors (Delwijnen, Pays-Bas) ; rose standard teintée par absorption"
+      },
+      {
+        "nom": "R1014",
+        "couleur": "pétales externes rouges, cœur blanc rosé",
+        "note": "Happy Colors (Delwijnen, Pays-Bas) ; rose standard teintée par absorption"
+      },
+      {
+        "nom": "R1016",
+        "couleur": "noir et orange",
+        "note": "Happy Colors (Delwijnen, Pays-Bas) ; rose standard teintée par absorption ; secteurs noirs"
+      },
+      {
+        "nom": "R1018",
+        "couleur": "bleu, rouge et blanc",
+        "note": "Happy Colors (Delwijnen, Pays-Bas) ; rose standard teintée par absorption ; tricolore"
+      },
+      {
+        "nom": "R1019",
+        "couleur": "fuchsia et bleu",
+        "note": "Happy Colors (Delwijnen, Pays-Bas) ; rose standard teintée par absorption"
+      },
+      {
+        "nom": "R1021",
+        "couleur": "blanc et vert",
+        "note": "Happy Colors (Delwijnen, Pays-Bas) ; rose standard teintée par absorption"
+      },
+      {
+        "nom": "R1022",
+        "couleur": "orange et blanc",
+        "note": "Happy Colors (Delwijnen, Pays-Bas) ; rose standard teintée par absorption"
+      },
+      {
+        "nom": "R1024",
+        "couleur": "orange, vert et blanc",
+        "note": "Happy Colors (Delwijnen, Pays-Bas) ; rose standard teintée par absorption"
+      },
+      {
+        "nom": "R1025",
+        "couleur": "bleu, vert émeraude et violet",
+        "note": "Happy Colors (Delwijnen, Pays-Bas) ; rose standard teintée par absorption ; esprit « océan » (combinaisons vert et bleu)"
+      },
+      {
+        "nom": "R1026",
+        "couleur": "violet et blanc",
+        "note": "Happy Colors (Delwijnen, Pays-Bas) ; rose standard teintée par absorption"
+      },
+      {
+        "nom": "R1027",
+        "couleur": "jaune et blanc",
+        "note": "Happy Colors (Delwijnen, Pays-Bas) ; rose standard teintée par absorption"
+      },
+      {
+        "nom": "R1028",
+        "couleur": "noir et blanc",
+        "note": "Happy Colors (Delwijnen, Pays-Bas) ; rose standard teintée par absorption"
+      },
+      {
+        "nom": "R1029",
+        "couleur": "bleu roi et blanc",
+        "note": "Happy Colors (Delwijnen, Pays-Bas) ; rose standard teintée par absorption"
+      },
+      {
+        "nom": "R1201",
+        "couleur": "orange, bleu et blanc",
+        "note": "Happy Colors (Delwijnen, Pays-Bas) ; rose standard teintée par absorption"
+      },
+      {
+        "nom": "R1202",
+        "couleur": "orange, blanc et bleu-violet",
+        "note": "Happy Colors (Delwijnen, Pays-Bas) ; rose standard teintée par absorption"
+      },
+      {
+        "nom": "R1010",
+        "couleur": "arc-en-ciel sur rose branchue",
+        "note": "Happy Colors (gamme « Specials », Rosa spray) ; chaque petite fleur de la branche prend une couleur différente"
+      },
+      {
+        "nom": "Applause",
+        "couleur": "lavande à mauve pâle (« rose bleue »)",
+        "note": "Suntory et Florigene (Japon) : rose génétiquement modifiée contenant de la delphinidine, obtenue en 2002 ; vendue au Japon (environ 10 000 tiges en 2010, 2 000 à 3 000 yens la tige) ; couleur naturelle, non teintée"
+      }
+    ],
+    "formes": "Rose standard à bouton haut (le plus souvent Vendela, ivoire, qui absorbe parfaitement les colorants ; aussi Avalanche+) teintée par la tige fendue : arc-en-ciel par secteurs, bicolores et tricolores, unies (bleue) ; version branchue arc-en-ciel ; rose bleue OGM Applause.",
+    "saison": "Toute l'année, sur commande (production néerlandaise ; Applause uniquement au Japon).",
+    "tenue_vase": "5–8 jours (tenue réduite par rapport à une rose non teintée)",
+    "gamme_prix": "€€€",
+    "rarete_jeu": "rare",
+    "notes_dessin": "La base est une rose standard à bouton haut (Vendela ivoire le plus souvent) dont chaque pétale prend une couleur franche : dans l'arc-en-ciel, la teinture monte par secteurs depuis la tige fendue, si bien que des pétales voisins alternent rouge, orange, jaune, vert, bleu et violet en « parts de gâteau » du cœur vers l'extérieur. La couleur est plus saturée au bord des pétales et dans les nervures, plus claire à leur base : garder un léger veinage visible. Sépales, tige et feuilles restent vert naturel. Pour les bicolores (noir et blanc, bleu et blanc), séparer nettement les zones par secteurs radiaux plutôt que par un dégradé. Applause, elle, a une couleur unie mauve lavande pâle, sans veinage coloré.",
+    "wiki": "Rosa",
+    "img_queries": [
+      "Rainbow rose",
+      "Dyed blue rose",
+      "Suntory blue rose Applause"
+    ],
+    "sources": [
+      "https://en.wikipedia.org/wiki/Rainbow_rose",
+      "http://www.happycolorsbv.nl/roses.html",
+      "https://thursd.com/products/cut-flowers/roses/rose-rainbow",
+      "https://en.wikipedia.org/wiki/Blue_rose",
+      "https://cutroses.rosen-tantau.com/en/product-overview/vendela-2/"
+    ]
+  },
+  {
+    "id": "rose-stabilisee",
+    "nom_fr": "Rose stabilisée (rose éternelle)",
+    "nom_en": "Preserved (stabilised) rose",
+    "latin": "Rosa × hybrida",
+    "famille": "Rosaceae",
+    "categorie": "Roses",
+    "role": "focale",
+    "couleurs": [
+      "blanc",
+      "vanille crème",
+      "champagne",
+      "rose pastel",
+      "rose poudré",
+      "fleur de cerisier",
+      "rose vif",
+      "rose foncé",
+      "rouge",
+      "cerise vintage",
+      "bordeaux",
+      "corail",
+      "pêche",
+      "orange",
+      "terracotta",
+      "jaune vif",
+      "jaune chaud",
+      "jaune doux",
+      "or de Dijon",
+      "vert lime",
+      "vert agrume",
+      "menthe pastel",
+      "turquoise vif",
+      "bleu clair",
+      "bleu poudré",
+      "bleu foncé",
+      "lilas",
+      "lilas vif",
+      "violet pastel",
+      "pourpre",
+      "moka cacao",
+      "noisette",
+      "gris soyeux",
+      "noir",
+      "arc-en-ciel",
+      "bicolore",
+      "blanc / rose pastel / vert pastel",
+      "or 24 carats",
+      "platine",
+      "argent",
+      "or rose"
+    ],
+    "varietes": [
+      {
+        "nom": "Rose King",
+        "couleur": "rouge, rose pastel, blanc, rose vif, bordeaux, bleu foncé, rose foncé, orange, pourpre, jaune chaud, noir, lilas",
+        "note": "Verdissimo ; tête unique de très grande taille présentée en boîte individuelle"
+      },
+      {
+        "nom": "Rose Queen",
+        "couleur": "23 coloris, du blanc au noir, dont blanc / rose pastel / vert pastel",
+        "note": "Verdissimo ; tête de 6,3–7,3 cm de diamètre et 5–6 cm de haut, boîte de 5"
+      },
+      {
+        "nom": "Rose Premium",
+        "couleur": "23 coloris dont bicolore",
+        "note": "Verdissimo ; grosse tête aux pétales en couches, boîte de 4"
+      },
+      {
+        "nom": "Rose Standard",
+        "couleur": "36 coloris dont arc-en-ciel, gris soyeux et terracotta",
+        "note": "Verdissimo ; tête de taille standard, boîte de 6 ou vrac de 195"
+      },
+      {
+        "nom": "Rose Medium",
+        "couleur": "23 coloris dont bicolore",
+        "note": "Verdissimo ; boîte de 8"
+      },
+      {
+        "nom": "Rose Mini",
+        "couleur": "20 coloris",
+        "note": "Verdissimo ; petite tête, boîte de 12"
+      },
+      {
+        "nom": "Rose Princess",
+        "couleur": "22 coloris dont noisette et corail",
+        "note": "Verdissimo ; tête compacte, boîte de 16"
+      },
+      {
+        "nom": "Rose Garden",
+        "couleur": "rouge, rose pastel, blanc, bicolores blanc / rose pastel (/ vert pastel)",
+        "note": "Verdissimo ; tête de rose de jardin aux pétales pleins et étagés, boîte de 6"
+      },
+      {
+        "nom": "Rose Heart Small",
+        "couleur": "rouge, rose pastel, blanc",
+        "note": "Verdissimo ; rose façonnée en forme de cœur, boîte individuelle"
+      },
+      {
+        "nom": "Amorosa Standard",
+        "couleur": "23 coloris dont arc-en-ciel et multicolore",
+        "note": "Verdissimo ; rose stabilisée sur tige avec feuillage : tête de 5–5,5 cm, tige d'environ 54 cm"
+      },
+      {
+        "nom": "Amorosa Premium",
+        "couleur": "18 coloris dont bicolore",
+        "note": "Verdissimo ; rose premium sur tige avec feuillage, coffret individuel"
+      },
+      {
+        "nom": "Amorosa Mini",
+        "couleur": "21 coloris en coffret dont multicolore ; rose fleur de cerisier en vrac",
+        "note": "Verdissimo ; tête de 3,5–4,5 cm, tige d'environ 26 cm"
+      },
+      {
+        "nom": "Amorosa Red Stem Heart",
+        "couleur": "rouge",
+        "note": "Verdissimo ; rose rouge sur tige ornée d'un cœur en feutrine et d'un ruban"
+      },
+      {
+        "nom": "Mini Garden Stem Rose",
+        "couleur": "rose pastel, rouge, blanc, blanc / rose pastel / vert pastel",
+        "note": "Verdissimo ; mini rose de jardin sur tige naturelle avec feuillage"
+      },
+      {
+        "nom": "V-Rose Private Selection",
+        "couleur": "bleu foncé, rose foncé, orange, rose pastel, rouge, blanc",
+        "note": "Verdissimo ; rose stabilisée à longue tige raffinée, lot de 16"
+      },
+      {
+        "nom": "Vintage Cherry",
+        "couleur": "rouge cerise vintage",
+        "note": "Coloris Verdissimo (têtes Standard, Premium, Queen, Mini…)"
+      },
+      {
+        "nom": "Bright Turquoise",
+        "couleur": "turquoise vif",
+        "note": "Coloris Verdissimo"
+      },
+      {
+        "nom": "Dark Blue",
+        "couleur": "bleu foncé",
+        "note": "Coloris Verdissimo"
+      },
+      {
+        "nom": "Light Blue",
+        "couleur": "bleu clair",
+        "note": "Coloris Verdissimo"
+      },
+      {
+        "nom": "Dusty Blue",
+        "couleur": "bleu poudré",
+        "note": "Coloris Verdissimo (tête Standard)"
+      },
+      {
+        "nom": "Gold Dijon",
+        "couleur": "jaune or « moutarde de Dijon »",
+        "note": "Coloris Verdissimo (tête Standard)"
+      },
+      {
+        "nom": "Mocha Cocoa",
+        "couleur": "moka cacao (brun)",
+        "note": "Coloris Verdissimo (tête Standard)"
+      },
+      {
+        "nom": "Hazelnut",
+        "couleur": "noisette",
+        "note": "Coloris Verdissimo (têtes Standard et Princess)"
+      },
+      {
+        "nom": "Silky Gray",
+        "couleur": "gris soyeux",
+        "note": "Coloris Verdissimo (tête Standard)"
+      },
+      {
+        "nom": "Terracotta",
+        "couleur": "terracotta",
+        "note": "Coloris Verdissimo (tête Standard)"
+      },
+      {
+        "nom": "Pastel Mint",
+        "couleur": "menthe pastel",
+        "note": "Coloris Verdissimo (tête Standard)"
+      },
+      {
+        "nom": "Citrus Green",
+        "couleur": "vert agrume",
+        "note": "Coloris Verdissimo (tête Standard)"
+      },
+      {
+        "nom": "Lime Green",
+        "couleur": "vert lime",
+        "note": "Coloris Verdissimo"
+      },
+      {
+        "nom": "Vanilla Cream",
+        "couleur": "vanille crème",
+        "note": "Coloris Verdissimo"
+      },
+      {
+        "nom": "Champagne",
+        "couleur": "champagne",
+        "note": "Coloris Verdissimo"
+      },
+      {
+        "nom": "Dusty Pink",
+        "couleur": "rose poudré",
+        "note": "Coloris Verdissimo (tête Standard)"
+      },
+      {
+        "nom": "Cherry Blossom",
+        "couleur": "rose fleur de cerisier",
+        "note": "Coloris Verdissimo (Amorosa Mini)"
+      },
+      {
+        "nom": "Pastel Violet",
+        "couleur": "violet pastel",
+        "note": "Coloris Verdissimo (tête Standard)"
+      },
+      {
+        "nom": "Bright Lilac",
+        "couleur": "lilas vif",
+        "note": "Coloris Verdissimo"
+      },
+      {
+        "nom": "Black",
+        "couleur": "noir",
+        "note": "Coloris Verdissimo"
+      },
+      {
+        "nom": "Rainbow",
+        "couleur": "arc-en-ciel",
+        "note": "Coloris Verdissimo (tête Standard, Amorosa Standard)"
+      },
+      {
+        "nom": "Rose trempée or 24 carats",
+        "couleur": "or 24 carats",
+        "note": "The Forever Rose (Londres) ; rose stabilisée trempée ou bordée d'or"
+      },
+      {
+        "nom": "Rose trempée platine",
+        "couleur": "platine",
+        "note": "The Forever Rose"
+      },
+      {
+        "nom": "Rose trempée argent",
+        "couleur": "argent",
+        "note": "The Forever Rose"
+      },
+      {
+        "nom": "Rose trempée or rose",
+        "couleur": "or rose",
+        "note": "The Forever Rose"
+      }
+    ],
+    "formes": "Têtes seules calibrées en boîte (Mini, Princess, Medium, Standard, Premium, Queen 6,3–7,3 cm, King), têtes de rose de jardin, rose en forme de cœur, roses sur tige stabilisée avec feuillage (Amorosa Mini ~26 cm, Standard ~54 cm), roses trempées dans l'or, le platine ou l'argent.",
+    "saison": "Toute l'année (fleurs fraîches stabilisées : la sève est remplacée par une solution à base de glycérine, puis la fleur est colorée).",
+    "tenue_vase": "Sans eau : plusieurs mois à plusieurs années à l'abri de l'humidité, de la chaleur et du soleil direct (garantie « à vie limitée » chez The Forever Rose)",
+    "gamme_prix": "€€€€",
+    "rarete_jeu": "precieuse",
+    "notes_dessin": "Tête de rose figée en ouverture contrôlée, plus compacte qu'une rose fraîche : pétales externes un peu raides, parfois légèrement froissés ou marqués au bord, cœur serré en spirale. La couleur est parfaitement uniforme (aplat sans nervure visible, aspect mat ou légèrement satiné), y compris pour des teintes impossibles en nature (turquoise, noir, gris, or). Les têtes se présentent sans tige, serrées dans une boîte ronde ou carrée (4 à 16 têtes, pétales effleurant le couvercle), ou sur une tige stabilisée droite avec quelques feuilles vert sombre. Variante luxe : pétales bordés ou entièrement trempés d'or 24 carats, de platine ou d'argent, à rendre avec des reflets métalliques nets.",
+    "wiki": "Rosa",
+    "img_queries": [
+      "Preserved roses",
+      "Stabilized roses box",
+      "Gold dipped rose"
+    ],
+    "sources": [
+      "https://www.verdissimo.com/collections/rose-heads",
+      "https://www.verdissimo.com/collections/stem-roses",
+      "https://theforeverrose.com/",
+      "https://fr.wikipedia.org/wiki/Fleur_stabilis%C3%A9e"
+    ]
+  }
+]

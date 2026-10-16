@@ -1,0 +1,2695 @@
+[
+  {
+    "id": "aster-vivace-symphyotrichum",
+    "nom": "Aster vivace de fleur coupée",
+    "saison_vente": {
+      "mois": [
+        7,
+        8,
+        9,
+        10
+      ],
+      "pic": [
+        9,
+        10
+      ],
+      "toute_annee": false,
+      "note": "floraison naturelle de juillet-août à octobre ; certaines productions sous serre sont annoncées toute l'année par des grossistes américains, non confirmé pour l'Europe",
+      "sources": [
+        "https://www.floristrytradeclub.co.uk/post/september-from-the-artisan-grower",
+        "https://bloomsybox.com/f/aster",
+        "https://www.promessedefleurs.ie/gardening-tips/advicesheet/the-best-varieties-of-asters-for-cut-flower-arrangements/"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 7,
+      "max": 14,
+      "sources": [
+        "https://www.floristrytradeclub.co.uk/post/september-from-the-artisan-grower",
+        "https://bloomsybox.com/f/aster"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "capitule-se-ferme",
+        "recroqueville",
+        "decolore",
+        "feuilles-jaunissent"
+      ],
+      "ordre": "les capitules les plus anciens de la grappe fanent d'abord : les ligules se recourbent et virent, le cœur (fleurons du disque) brunit ; les capitules plus jeunes tiennent plus longtemps ; les feuilles fines jaunissent et sèchent",
+      "tete": "chaque petit capitule se referme ou ses ligules s'enroulent ; le cœur jaune passe au brun",
+      "petales": "ligules fines qui s'enroulent, prennent une teinte pourpre puis sèchent en gris-brun",
+      "feuilles": "petites feuilles étroites qui jaunissent puis sèchent sur la tige (déduit)",
+      "tige": "reste droite, ramifiée et rigide",
+      "couleurs": {
+        "blanc": {
+          "declin": "blanc teinté de mauve-rosé, cœur brunissant",
+          "fane": "gris-brun pâle, cœur brun"
+        },
+        "rose": {
+          "declin": "rose qui se teinte de pourpre",
+          "fane": "mauve grisé puis gris-brun"
+        },
+        "violet": {
+          "declin": "violet-bleu qui pâlit et grisonne",
+          "fane": "gris-brun violacé"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Le virage pourpre puis gris-brun des ligules âgées est décrit pour des cultivars d'Aster (brevets de plantes US PP12840/PP12903) ; le reste (ordre, feuilles) est déduit du schéma général des Astéracées (ligules qui s'enroulent, disque qui brunit). Couleurs par famille déduites. Tenue citée entre 7 jours (S. ericoides) et 10-14 jours. — Les éléments déduits ou extrapolés signalés ici sont en confiance basse.",
+      "sources": [
+        "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/PP12840",
+        "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/PP12903",
+        "https://www.mdpi.com/2311-7524/8/10/922"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "agapanthe",
+    "nom": "Agapanthe",
+    "saison_vente": {
+      "mois": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "pic": [
+        6,
+        7,
+        8
+      ],
+      "toute_annee": false,
+      "note": "disponible de mars à août (serre), plein air de mi-juin à mi-août avec un fort pic sur ces deux mois",
+      "sources": [
+        "https://www.flowers.nl/blog/agapanthus/",
+        "https://www.flower.style/flowers-we-love/agapanthus"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 6,
+      "max": 12,
+      "sources": [
+        "https://www.flowers.nl/blog/agapanthus/",
+        "https://fiftyflowers.com/products/lily-of-the-nile-agapanthus-flowers"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "fleurons-tombent",
+        "recroqueville",
+        "decolore"
+      ],
+      "ordre": "les fleurons de l'ombelle s'ouvrent et fanent en continu : les plus anciens se fripent et tombent pendant que d'autres s'ouvrent ; l'ombelle se dégarnit, laissant des pédicelles nus et de petites capsules vertes ; la hampe reste verte et droite",
+      "tete": "ombelle qui se dégarnit progressivement, devient clairsemée, hérissée de pédicelles et de capsules vertes",
+      "petales": "fleurons en trompette qui se fripent, se ferment, pâlissent puis tombent (très sensibles à l'éthylène)",
+      "feuilles": null,
+      "tige": "hampe épaisse, verte et lisse, qui reste droite",
+      "couleurs": {
+        "bleu": {
+          "declin": "bleu qui pâlit vers le lilas grisé sur les fleurons fripés",
+          "fane": "fleurons restants bleu-gris parcheminé, capsules vert pâle à beige"
+        },
+        "violet": {
+          "declin": "violet qui pâlit et se ternit",
+          "fane": "mauve grisé, capsules beige pâle"
+        },
+        "blanc": {
+          "declin": "blanc qui devient crème terne",
+          "fane": "beige-brun clair, capsules beige pâle"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Chute des fleurons et sensibilité à l'éthylène bien sourcées. Le séchage de la hampe (tête en bas) et les capsules qui passent du vert au brun pâle ou blanchâtre sont sourcés. Les couleurs des fleurons au déclin sont déduites. Vendue sans feuilles. seche_bien=true pour la tête à capsules (structure), la couleur des fleurons ne se garde pas. — Les éléments déduits ou extrapolés signalés ici sont en confiance basse.",
+      "sources": [
+        "https://www.flowers.nl/blog/agapanthus/",
+        "https://fiftyflowers.com/products/lily-of-the-nile-agapanthus-flowers",
+        "https://ucanr.edu/node/113988",
+        "https://operationwildflower.org.za/index.php/albums/herbs/agapanthus-praecox-seed-heads-960"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "glaieul",
+    "nom": "Glaïeul",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [
+        6,
+        7,
+        8
+      ],
+      "toute_annee": true,
+      "note": "disponible toute l'année (régions chaudes, serres), en quantité d'avril à octobre ; production européenne de plein air de juin à septembre",
+      "sources": [
+        "https://www.euroflorist.se/en/blommor/gladiolus/gladiolus-fakta",
+        "https://extension.msstate.edu/publications/gladiolus-for-the-farmer-florist",
+        "https://www.lavenir.net/lifestyle/2024/01/27/la-question-jardin-les-glaieuls-resistent-ils-a-lhiver-7YNMZMEEUZDS5P233FGDYKP4UY/"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 6,
+      "max": 12,
+      "sources": [
+        "https://floralife.com/flowers/gladiolus/",
+        "https://www.longfield-gardens.com/blogs/gladiola-care/gladiolus-when-to-cut-the-best-timing-for-vases-and-gardens"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "fane-du-bas",
+        "recroqueville",
+        "bourgeons-avortent"
+      ],
+      "ordre": "l'épi s'ouvre de bas en haut et fane dans le même ordre : les fleurs du bas se fripent pendant que celles du haut s'ouvrent ; les derniers boutons du sommet restent souvent fermés",
+      "tete": "épi dont la base porte des fleurs flétries et le sommet des boutons verts ; la pointe se recourbe vers le haut si la tige a été couchée (géotropisme)",
+      "petales": "fleurs qui se ferment et se fripent en cornet mou, pendent, puis sèchent sur l'épi",
+      "feuilles": "peu présentes en vase (une ou deux feuilles en glaive), qui jaunissent du bout (déduit)",
+      "tige": "droite et rigide ; la pointe se courbe vers le haut si l'épi est couché",
+      "couleurs": {
+        "blanc": {
+          "declin": "blanc qui devient crème, bords translucides",
+          "fane": "beige-brun froissé"
+        },
+        "rose": {
+          "declin": "rose qui fonce et bleuit",
+          "fane": "mauve-brun froissé"
+        },
+        "rouge": {
+          "declin": "rouge qui s'assombrit",
+          "fane": "bordeaux brunâtre"
+        },
+        "jaune": {
+          "declin": "jaune qui se ternit",
+          "fane": "brun doré"
+        },
+        "orange": {
+          "declin": "orange qui fonce",
+          "fane": "brun rouille"
+        },
+        "violet": {
+          "declin": "violet qui s'assombrit",
+          "fane": "pourpre-brun"
+        },
+        "bicolore": {
+          "declin": "contraste qui s'estompe",
+          "fane": "brun mêlé"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Ouverture et fanaison de bas en haut, géotropisme de la pointe et avortement des boutons du sommet (éthylène) bien sourcés. Couleurs du déclin et du fané déduites, non sourcées. — Les éléments déduits ou extrapolés signalés ici sont en confiance basse.",
+      "sources": [
+        "https://www.longfield-gardens.com/blogs/gladiola-care/gladiolus-when-to-cut-the-best-timing-for-vases-and-gardens",
+        "https://floralife.com/flowers/gladiolus/",
+        "https://maxapress.com/data/article/tihort/preview/pdf/TIH-2023-0021.pdf"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "arum-calla",
+    "nom": "Arum",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [
+        4,
+        5,
+        6
+      ],
+      "toute_annee": true,
+      "note": "produit toute l'année sous serre aux Pays-Bas ; Zantedeschia aethiopica (arum blanc) fleurit naturellement de mai à juillet-août en Europe. Pic estimé au printemps (mariages), non sourcé précisément — Mois ou pic extrapolés : confiance basse sur ces valeurs.",
+      "sources": [
+        "https://thursd.com/posts/future-flowers-dutch-calla-lily-specialist",
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/calla",
+        "https://nature-and-garden.com/gardening/zantedeschia.html"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 7,
+      "max": 14,
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/calla",
+        "https://floralife.com/flowers/calla-lily/"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "brunit-bords",
+        "recroqueville",
+        "decolore",
+        "verdit"
+      ],
+      "ordre": "la spathe perd son brillant, ses bords et sa pointe brunissent ; le spadice noircit (nécrose) ; la spathe se ramollit, rétrécit et s'enroule ; chez les callas colorés, la spathe reverdit ; la tige charnue peut ramollir et plier",
+      "tete": "cornet qui se resserre et se flétrit ; la pointe de la spathe, recourbée, s'affaisse",
+      "petales": "spathe mate, bords et pointe bruns, puis tissu ridé qui s'enroule sur lui-même",
+      "feuilles": "souvent vendu sans feuilles ; si présentes, elles jaunissent (déduit)",
+      "tige": "charnue et poreuse : elle peut ramollir, brunir à la base, se fendre ou plier dans une eau sale",
+      "couleurs": {
+        "blanc": {
+          "declin": "blanc qui verdit à la base, pointe et bords crème-brun",
+          "fane": "vert pâle et brun, bords brun foncé ridés"
+        },
+        "jaune": {
+          "declin": "jaune qui se teinte de vert",
+          "fane": "vert-jaune terne, bords bruns"
+        },
+        "orange": {
+          "declin": "orange qui verdit et se ternit",
+          "fane": "brun-vert"
+        },
+        "rose": {
+          "declin": "rose qui se teinte de vert",
+          "fane": "rose verdâtre terne, bords bruns"
+        },
+        "violet": {
+          "declin": "violet sombre qui se teinte de vert, mat",
+          "fane": "violet-noir et brun"
+        },
+        "bordeaux": {
+          "declin": "bordeaux mat",
+          "fane": "presque noir, bords brun sec"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Mode ajouté « verdit » : la spathe reverdit au vieillissement (re-greening), sourcé par la recherche (Massey University) ; chez Z. elliottiana, la spathe verdit après 7 à 8 jours. Le brunissement des bords, la nécrose du spadice et la perte de brillant sont sourcés. Les couleurs par famille sont déduites de ce re-greening. Le brief propose aussi spathe-persiste, mais ici la spathe fane elle-même. — Les éléments déduits ou extrapolés signalés ici sont en confiance basse.",
+      "sources": [
+        "https://mro.massey.ac.nz/handle/10179/2873",
+        "https://pbsociety.org.pl/journals/index.php/aa/article/download/aa.2011.050/1139",
+        "https://gardenerspath.com/plants/flowers/drooping-calla-lilies/",
+        "https://floralife.com/flowers/calla-lily/"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "lis-oriental",
+    "nom": "Lis oriental",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [
+        6,
+        7,
+        8
+      ],
+      "toute_annee": true,
+      "note": "produit toute l'année aux Pays-Bas grâce à des bulbes conservés congelés ; pic estival estimé, non sourcé précisément — Mois ou pic extrapolés : confiance basse sur ces valeurs.",
+      "sources": [
+        "https://www.longfield-gardens.com/a/blog/tips-for-using-lilies-as-cut-flowers",
+        "https://extension.umd.edu/resource/production-hybrid-lilies-cut-flowers"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 7,
+      "max": 14,
+      "sources": [
+        "https://windflowerflorist.com/blogs/news/how-long-lilies-last",
+        "https://core.ac.uk/works/91151678"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "recroqueville",
+        "chute-petales",
+        "bourgeons-avortent",
+        "feuilles-jaunissent"
+      ],
+      "ordre": "les fleurs s'ouvrent de bas en haut de la tige et fanent une à une ; les tépales de chaque fleur fanée se flétrissent, changent de couleur et finissent par tomber ; les petits boutons du haut avortent souvent ; les feuilles jaunissent",
+      "tete": "chaque fleur se referme en se fanant : les tépales recourbés s'affaissent, se tordent et pendent autour du pistil",
+      "petales": "tépales qui perdent leur fermeté, se fripent et se tordent, brunissent aux bords, puis tombent",
+      "feuilles": "jaunissent (symptôme classique du lis coupé), puis brunissent",
+      "tige": "reste droite et robuste",
+      "couleurs": {
+        "blanc": {
+          "declin": "blanc qui devient crème, bords translucides",
+          "fane": "crème-brun, tépales parcheminés"
+        },
+        "rose": {
+          "declin": "rose qui pâlit, mouchetures plus visibles",
+          "fane": "rose brunâtre sale"
+        },
+        "rouge": {
+          "declin": "rouge-rose qui s'assombrit",
+          "fane": "bordeaux brun"
+        },
+        "jaune": {
+          "declin": "jaune qui pâlit",
+          "fane": "brun doré"
+        },
+        "bicolore": {
+          "declin": "contraste qui s'estompe",
+          "fane": "brun mêlé"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Flétrissement des tépales, changement de couleur, abscission parfois, avortement des boutons et jaunissement des feuilles sont sourcés comme symptômes des lis coupés (lis orientaux étudiés). L'ordre fleur par fleur du bas vers le haut est déduit de l'inflorescence en grappe. Couleurs déduites. — Les éléments déduits ou extrapolés signalés ici sont en confiance basse.",
+      "sources": [
+        "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8227295/",
+        "https://ishs.org/ishs-article/1002_51/",
+        "https://www.phtnet.org/research/download/pdf/mj758.pdf"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "lis-ot-orienpet",
+    "nom": "Lis OT",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [
+        6,
+        7,
+        8
+      ],
+      "toute_annee": true,
+      "note": "extrapolé des lis orientaux et hybrides : production néerlandaise toute l'année ; pic estival estimé",
+      "sources": [
+        "https://extension.umd.edu/resource/production-hybrid-lilies-cut-flowers",
+        "https://www.johnscheepers.com/blog/post/ifliliesorientpet"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 8,
+      "max": 14,
+      "sources": [
+        "https://www.johnscheepers.com/blog/post/ifliliesorientpet",
+        "https://core.ac.uk/works/91151678"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "recroqueville",
+        "chute-petales",
+        "feuilles-jaunissent"
+      ],
+      "ordre": "comme le lis oriental : les fleurs fanent une à une ; leurs tépales épais se flétrissent, se décolorent puis tombent ; les feuilles jaunissent",
+      "tete": "chaque fleur s'affaisse et se referme partiellement en fanant",
+      "petales": "tépales épais qui se ramollissent, se plissent, brunissent aux bords, puis tombent",
+      "feuilles": "jaunissent puis brunissent",
+      "tige": "très robuste, reste droite",
+      "couleurs": {
+        "jaune": {
+          "declin": "jaune qui pâlit vers le crème",
+          "fane": "crème-brun"
+        },
+        "blanc": {
+          "declin": "crème, bords translucides",
+          "fane": "beige-brun"
+        },
+        "rose": {
+          "declin": "rose qui pâlit",
+          "fane": "rose brunâtre"
+        },
+        "rouge": {
+          "declin": "rouge qui s'assombrit",
+          "fane": "bordeaux brun"
+        },
+        "bicolore": {
+          "declin": "cœur coloré qui se ternit",
+          "fane": "brun mêlé"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Aucune étude spécifique sur la fanaison des OT trouvée : tout est extrapolé des lis orientaux (parent). Seule la bonne tenue en vase des Orienpet est sourcée (John Scheepers), les jours sont extrapolés. Couleurs déduites.",
+      "sources": [
+        "https://www.johnscheepers.com/blog/post/ifliliesorientpet",
+        "https://extension.psu.edu/orienpet-lilies-are-show-stoppers-in-the-garden"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "lis-asiatique-la",
+    "nom": "Lis asiatique et hybrides LA",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [
+        5,
+        6,
+        7
+      ],
+      "toute_annee": true,
+      "note": "production néerlandaise toute l'année (bulbes conservés au froid) ; pic estimé non sourcé — Mois ou pic extrapolés : confiance basse sur ces valeurs.",
+      "sources": [
+        "https://floristsreview.com/wp-content/uploads/2021/10/FR-OCT-21-lily-worksheet.pdf",
+        "https://extension.umd.edu/resource/production-hybrid-lilies-cut-flowers"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 7,
+      "max": 14,
+      "sources": [
+        "https://floralife.com/flowers/la-hybrid-lily",
+        "https://accessibility.extension.msstate.edu/publications/la-hybrid-lilies-lilium-longiflorum-x-lilium-asiatic-for-the-farmer-florist"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "chute-petales",
+        "decolore",
+        "feuilles-jaunissent"
+      ],
+      "ordre": "les tépales des hybrides LA tombent encore turgescents, presque sans se flétrir : la fleur se défait d'un coup ; les fleurs fanent une à une sur la tige ; les feuilles jaunissent",
+      "tete": "fleur en étoile ouverte vers le haut qui perd ses tépales encore fermes, laissant le pistil et les étamines nus",
+      "petales": "tépales qui restent fermes, pâlissent légèrement puis se détachent entiers",
+      "feuilles": "jaunissent puis brunissent",
+      "tige": "droite et rigide",
+      "couleurs": {
+        "blanc": {
+          "declin": "blanc légèrement crème",
+          "fane": "tépales tombés ; pistil vert-brun"
+        },
+        "jaune": {
+          "declin": "jaune qui pâlit",
+          "fane": "tépales tombés jaune terne"
+        },
+        "orange": {
+          "declin": "orange qui pâlit légèrement",
+          "fane": "tépales tombés orange terne"
+        },
+        "rose": {
+          "declin": "rose qui pâlit",
+          "fane": "tépales tombés rose pâli"
+        },
+        "rouge": {
+          "declin": "rouge qui s'assombrit légèrement",
+          "fane": "tépales tombés rouge sombre"
+        },
+        "bicolore": {
+          "declin": "contraste qui s'estompe",
+          "fane": "tépales tombés"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Surprise sourcée (Cardiff University) : les tépales des lis LA tombent turgescents, alors que ceux du L. longiflorum se flétrissent beaucoup. Extrapolé aux lis asiatiques purs, qui sont un parent des LA (non vérifié directement). Couleurs déduites. — Les éléments déduits ou extrapolés signalés ici sont en confiance basse.",
+      "sources": [
+        "https://orca.cardiff.ac.uk/id/eprint/77769/",
+        "https://floralife.com/flowers/la-hybrid-lily",
+        "https://ashs.confex.com/ashs/2015/webprogram/Presentation/Paper21405/2015%20ASHS%20Vase%20life%20poster.pdf"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "lis-longiflorum-trompette",
+    "nom": "Lis longiflorum et lis trompette",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [
+        3,
+        4
+      ],
+      "toute_annee": true,
+      "note": "lis de Pâques coupé disponible toute l'année ; pic autour de Pâques supposé (usage religieux), non chiffré par les sources",
+      "sources": [
+        "https://westmountflorist.com/blogs/flower-dictionary/lily"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 10,
+      "max": 14,
+      "sources": [
+        "https://westmountflorist.com/blogs/flower-dictionary/lily",
+        "https://windflowerflorist.com/blogs/news/how-long-lilies-last"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "recroqueville",
+        "transparence",
+        "penche-tete",
+        "feuilles-jaunissent"
+      ],
+      "ordre": "les tépales soudés de la trompette se flétrissent fortement et perdent leur eau avant de se détacher : la trompette ramollit, se ferme et pend, molle, sur la tige ; les fleurs fanent une à une ; les feuilles jaunissent",
+      "tete": "la trompette s'affaisse et pend ; la gorge se referme",
+      "petales": "tépales soudés qui deviennent mous, translucides et ridés, puis brunissent ; ils restent souvent accrochés",
+      "feuilles": "jaunissent puis brunissent",
+      "tige": "droite",
+      "couleurs": {
+        "blanc": {
+          "declin": "blanc qui devient crème et translucide",
+          "fane": "brun beige ridé, parcheminé"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Sourcé (Cardiff University) : les tépales de L. longiflorum se flétrissent fortement (forte perte de poids frais, fuite d'ions) avant la fin de l'abscission, à l'inverse des lis LA. La translucidité est une inférence tirée de cette perte d'eau. Les lis trompette autres que longiflorum sont extrapolés. Couleurs déduites ; vendu surtout en blanc. — Les éléments déduits ou extrapolés signalés ici sont en confiance basse.",
+      "sources": [
+        "https://orca.cardiff.ac.uk/id/eprint/77769/",
+        "https://agris.fao.org/search/ar/records/65de1e174c5aef494fd9f908"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "alstroemere",
+    "nom": "Alstrœmère",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [
+        5,
+        6,
+        7
+      ],
+      "toute_annee": true,
+      "note": "disponible toute l'année (production sous serre aux Pays-Bas et import) ; pic estimé non sourcé — Mois ou pic extrapolés : confiance basse sur ces valeurs.",
+      "sources": [
+        "https://www.royalvanzanten.com/en/inspirations/alstroemeria-varieties/",
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/alstroemeria"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 10,
+      "max": 14,
+      "sources": [
+        "https://www.royalvanzanten.com/en/inspirations/alstroemeria-varieties/",
+        "https://www.anniesannuals.com/blogs/news/alstroemeria-bouquet-care-tips-for-longer-vase-life"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "chute-petales",
+        "feuilles-jaunissent",
+        "recroqueville"
+      ],
+      "ordre": "les feuilles jaunissent souvent avant que les fleurs ne fanent ; chaque fleur dure environ une semaine et se renouvelle sur l'ombelle ; les pétales tombent, souvent avant même d'être flétris (éthylène) ; en fin de vie, des pétales flétris restent aussi accrochés",
+      "tete": "ombelle de fleurs en trompette qui se dégarnit ; il reste les ovaires verts et les étamines",
+      "petales": "tombent souvent encore frais ; sinon ils se fripent légèrement et pâlissent",
+      "feuilles": "jaunissent tôt, parfois avant les fleurs, puis brunissent",
+      "tige": "reste droite et ferme",
+      "couleurs": {
+        "blanc": {
+          "declin": "blanc ivoire, stries brunes plus marquées",
+          "fane": "pétales tombés, crème-brun s'ils restent"
+        },
+        "rose": {
+          "declin": "rose qui pâlit",
+          "fane": "rose fané brunâtre"
+        },
+        "rouge": {
+          "declin": "rouge qui fonce",
+          "fane": "bordeaux terne"
+        },
+        "orange": {
+          "declin": "orange qui pâlit",
+          "fane": "orange-brun"
+        },
+        "jaune": {
+          "declin": "jaune qui pâlit",
+          "fane": "jaune-brun"
+        },
+        "violet": {
+          "declin": "violet qui pâlit vers le lilas",
+          "fane": "mauve terne"
+        },
+        "bicolore": {
+          "declin": "contraste qui s'estompe",
+          "fane": "brun mêlé"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Bien sourcé : flétrissement et/ou chute des pétales, chute avant flétrissement, jaunissement précoce des feuilles, forte sensibilité à l'éthylène. Couleurs par famille déduites. — Les éléments déduits ou extrapolés signalés ici sont en confiance basse.",
+      "sources": [
+        "https://oaj.fupress.net/index.php/ahs/article/download/7872/8689/15779",
+        "https://postharvest.ucdavis.edu/node/8191",
+        "https://agris.fao.org/search/en/records/647480bb79cbb2c2c1b8fd2a"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "amaryllis-hippeastrum",
+    "nom": "Amaryllis",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [
+        11,
+        12
+      ],
+      "toute_annee": false,
+      "note": "en fleur coupée, de fin septembre à mai, pic en novembre-décembre (fêtes)",
+      "sources": [
+        "https://floralife.com/2024/11/27/amaryllis-star-of-the-festive-season/",
+        "https://floraldesigninstitute.com/blogs/resources-flower-library/amaryllis"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 8,
+      "max": 14,
+      "sources": [
+        "https://floraldesigninstitute.com/blogs/resources-flower-library/amaryllis",
+        "https://www.longfield-gardens.com/a/blog/how-to-use-amaryllis-as-cut-flowers"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "recroqueville",
+        "transparence",
+        "penche-tete",
+        "tige-se-fend"
+      ],
+      "ordre": "les 2 à 4 grandes fleurs s'ouvrent et fanent une à une (chacune dure 2 à 5 jours) ; les tépales de la fleur fanée se ramollissent, se plissent et pendent ; la base de la tige creuse se fend et s'enroule vers l'extérieur",
+      "tete": "chaque trompette s'affaisse, se ferme à demi et pend sous l'ombelle",
+      "petales": "tépales qui deviennent mous, fripés, un peu translucides, puis sèchent en papier",
+      "feuilles": null,
+      "tige": "tige creuse sans feuilles ; sa base se fend en lanières qui s'enroulent ; la tige peut ramollir et plier sous le poids des fleurs",
+      "couleurs": {
+        "rouge": {
+          "declin": "rouge qui fonce et devient mat",
+          "fane": "bordeaux brun, presque noir, parcheminé"
+        },
+        "blanc": {
+          "declin": "blanc qui devient crème et translucide",
+          "fane": "beige-brun ridé"
+        },
+        "rose": {
+          "declin": "rose qui pâlit et se ternit",
+          "fane": "rose brunâtre"
+        },
+        "bicolore": {
+          "declin": "stries rouges qui ressortent sur un fond terne",
+          "fane": "brun strié"
+        },
+        "orange": {
+          "declin": "orange-saumon qui se ternit",
+          "fane": "brun rouille"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Mode ajouté « tige-se-fend » : la base de la tige creuse se fend et s'enroule en vase (bien sourcé : Chrysal, Longfield, Floralife). La durée de chaque fleur (2 à 5 jours) et l'ordre fleur par fleur sont sourcés. La texture des tépales (molle, translucide) et les couleurs sont déduites (aucune étude de sénescence trouvée). — Les éléments déduits ou extrapolés signalés ici sont en confiance basse.",
+      "sources": [
+        "https://www.longfield-gardens.com/a/blog/how-to-use-amaryllis-as-cut-flowers",
+        "https://www.chrysal.com/en-gb/node/5082",
+        "https://westmountflorist.com/blogs/flower-dictionary/amaryllis",
+        "https://banglajol.info/index.php/BJAR/article/view/28217"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "tubereuse",
+    "nom": "Tubéreuse",
+    "saison_vente": {
+      "mois": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "pic": [
+        6,
+        7,
+        8,
+        9
+      ],
+      "toute_annee": false,
+      "note": "flower.style indique une disponibilité de février à octobre ; floraison la plus abondante en été et saison des pluies dans les pays producteurs (Inde, premier producteur). Pic estival déduit de la floraison, non d'un calendrier de grossiste. — Mois ou pic extrapolés : confiance basse sur ces valeurs.",
+      "sources": [
+        "https://www.flower.style/flowers-we-love/tuberose",
+        "https://doaj.org/article/fc9f86f269b642e29bae62cf33196450"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 5,
+      "max": 10,
+      "sources": [
+        "https://www.flower.style/flowers-we-love/tuberose",
+        "https://www.plantarchives.org/PDF 181/512-514 (PA3 3975).pdf",
+        "https://doaj.org/article/fc9f86f269b642e29bae62cf33196450"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "fane-du-bas",
+        "brunit-bords",
+        "fleurons-tombent",
+        "bourgeons-avortent",
+        "penche-tete"
+      ],
+      "ordre": "les florets s'ouvrent du bas vers le haut ; chaque floret ne reste frais qu'un à trois jours, puis brunit et flétrit en commençant par les plus bas ; moins de la moitié des boutons du haut s'ouvrent après la coupe, et florets fanés comme boutons finissent par tomber ; la pointe de l'épi se courbe",
+      "tete": "la pointe de l'épi (boutons verts non ouverts) se courbe vers le bas ; le haut reste en boutons avortés",
+      "petales": "florets cireux blancs qui brunissent (aspect brûlé), ramollissent et pourrissent, puis se détachent",
+      "feuilles": "feuilles étroites peu présentes sur la tige coupée ; jaunissement probable (non sourcé précisément)",
+      "tige": "reste droite sauf la pointe qui s'incurve",
+      "couleurs": {
+        "blanc": {
+          "declin": "blanc cireux qui jaunit en crème, bords des florets bas beige-brun",
+          "fane": "florets brun caramel à brun foncé, d'aspect pourri, boutons du haut verts restés fermés"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Le brunissement, le flétrissement et la chute des florets, l'échec d'ouverture des boutons et la courbure de la pointe sont sourcés (articles de post-récolte). La progression de bas en haut est déduite de l'ouverture acropète de l'épi. Les nuances de couleur au déclin sont déduites. Les variétés vendues sont blanches (simple 'Single' et double 'The Pearl'). Les tenues de vase élevées (13-15 j) ne s'obtiennent qu'avec des traitements de laboratoire. — Les éléments déduits ou extrapolés signalés ici sont en confiance basse.",
+      "sources": [
+        "https://www.plantarchives.org/PDF 181/512-514 (PA3 3975).pdf",
+        "https://jalexu.journals.ekb.eg/article_161898_dc1180ab277d8cb3b2fa628b266b550c.pdf",
+        "https://www.redalyc.org/journal/5770/577074698009/577074698009.pdf",
+        "https://microbiologyjournal.org/effect-of-thidiazuron-with-sucrose-pulsing-and-low-temperature-storage-with-polyfilm-packaging-on-floret-opening-and-abscission-of-tuberose-cut-spikes/"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "rudbeckia",
+    "nom": "Rudbeckia",
+    "saison_vente": {
+      "mois": [
+        7,
+        8,
+        9,
+        10
+      ],
+      "pic": [
+        8,
+        9
+      ],
+      "toute_annee": false,
+      "note": "floraison de juillet à septembre, jusqu'en octobre selon les producteurs britanniques de fleurs coupées ; pas de calendrier de grossiste NL trouvé.",
+      "sources": [
+        "https://www.flowersfromthefarm.co.uk/learning-resources/rudbeckias-a-grand-finale/",
+        "https://vitalseeds.co.uk/wp-content/uploads/2025/03/How-To-Grow-Rudbeckia.pdf"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 7,
+      "max": 14,
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/rudbeckia-black-eyed-susan",
+        "https://www.flowersfromthefarm.co.uk/learning-resources/rudbeckias-a-grand-finale/",
+        "https://hortscans.ces.ncsu.edu/file/../uploads/e/v/evaluati_51cb0a3ae1d58.pdf"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "brunit-bords",
+        "capitule-se-ferme",
+        "penche-tete"
+      ],
+      "ordre": "les ligules jaunes (fleurs stériles) commencent à brunir, se fanent puis tombent ; le cône central brun-noir reste et durcit ; la fin de vie survient souvent par effondrement de la tige",
+      "tete": "le capitule reste droit tant que la tige tient ; à la fin, la tige s'affaisse et la tête bascule",
+      "petales": "ligules qui brunissent depuis la pointe, pendent puis tombent, laissant le cône nu",
+      "feuilles": "feuilles rugueuses qui flétrissent vite ; oïdium blanc possible sur le feuillage et les ligules externes en vieillissant",
+      "tige": "peut s'effondrer en fin de vie",
+      "couleurs": {
+        "jaune": {
+          "declin": "jaune d'or qui ternit, pointes des ligules brun clair",
+          "fane": "ligules brun tabac recroquevillées ou tombées, cône brun-noir"
+        },
+        "orange": {
+          "declin": "orange cuivré qui s'assombrit vers le rouille",
+          "fane": "brun rouille, cône noir"
+        },
+        "bicolore": {
+          "declin": "zones acajou qui foncent, jaune qui ternit",
+          "fane": "brun sombre uniforme, cône noir"
+        }
+      },
+      "seche_bien": true,
+      "notes": "La fin de vie « tige qui s'effondre ou ligules qui brunissent » est le critère de l'étude NCSU ; la chute des ligules laissant un cône décoratif est sourcée (Flowers from the Farm). seche_bien=true pour le cône (cône sec et cassant), pas pour les ligules. Couleurs au déclin et au fané déduites. Tenue en vase variable selon les cultivars : 7 à 10 jours en général, 13 à 36 jours dans certaines études. — Les éléments déduits ou extrapolés signalés ici sont en confiance basse.",
+      "sources": [
+        "https://hortscans.ces.ncsu.edu/file/../uploads/o/p/optimizi_51cb100ae40b4.pdf",
+        "https://www.flowersfromthefarm.co.uk/learning-resources/rudbeckias-a-grand-finale/",
+        "https://vitalseeds.co.uk/wp-content/uploads/2025/03/How-To-Grow-Rudbeckia.pdf"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "echinacea",
+    "nom": "Échinacée",
+    "saison_vente": {
+      "mois": [
+        7,
+        8,
+        9
+      ],
+      "pic": [
+        7,
+        8
+      ],
+      "toute_annee": false,
+      "note": "Floral Design Institute indique une disponibilité de juillet à septembre ; floraison d'Echinacea purpurea de juillet à octobre.",
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/cone-flower",
+        "https://promessedefleurs.ie/perennials/perennials-by-variety/echinacea-coneflower/echinacea-purpurea-purple-coneflower.html"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 7,
+      "max": 10,
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/cone-flower",
+        "https://specialtyproduce.com/produce/Echinacea_Flowers_12760.php"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "capitule-se-ferme",
+        "decolore",
+        "seche-sur-place"
+      ],
+      "ordre": "les ligules, déjà souvent retombantes, pâlissent et pendent davantage, puis se détachent ; le cône épineux persiste et sèche sur place",
+      "tete": "capitule qui reste en place ; le cône bombé orange-brun devient brun foncé et piquant",
+      "petales": "ligules qui pendent vers le bas, se décolorent puis tombent",
+      "feuilles": "feuilles rugueuses qui flétrissent (non sourcé précisément)",
+      "tige": "rigide, reste droite",
+      "couleurs": {
+        "rose": {
+          "declin": "rose-mauve qui pâlit en rose poudré",
+          "fane": "ligules mauve grisé à brun, ou tombées ; cône brun chocolat"
+        },
+        "violet": {
+          "declin": "pourpre qui pâlit vers le mauve",
+          "fane": "mauve sale, cône brun foncé"
+        },
+        "blanc": {
+          "declin": "blanc qui vire au crème, cône vert-bronze",
+          "fane": "beige, cône brun"
+        },
+        "orange": {
+          "declin": "orange qui passe au rose saumoné",
+          "fane": "rose terne puis brun"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Sourcé : quand la fleur vieillit, les fleuristes retirent les ligules et gardent le cône, qui sèche facilement. Certaines variétés passent du jaune doré à l'orange puis au rouge, et finissent par pâlir au rose (glissement de couleur sourcé sur plante vivante, appliqué au vase par déduction). Les autres couleurs au déclin sont déduites. — Les éléments déduits ou extrapolés signalés ici sont en confiance basse.",
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/cone-flower",
+        "https://www.canr.msu.edu/uploads/resources/pdfs/evaluatingnewechinacea.pdf",
+        "https://johnnyseeds.com/echinacea/echinacea-key-growing-information.html"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "nigelle",
+    "nom": "Nigelle de Damas",
+    "saison_vente": {
+      "mois": [
+        5,
+        6,
+        7,
+        8
+      ],
+      "pic": [
+        6,
+        7
+      ],
+      "toute_annee": false,
+      "note": "disponible au printemps et en été ; floraison de la fin du printemps à l'été, pendant environ 8 semaines. Les capsules séchées se vendent toute l'année en fleur sèche.",
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/nigella-love-in-a-mist",
+        "https://extension.unl.edu/statewide/cass/2018%20SGP%20newsletter%20nigella.pdf"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 7,
+      "max": 10,
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/nigella-love-in-a-mist"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "chute-petales",
+        "decolore"
+      ],
+      "ordre": "les sépales colorés pâlissent puis tombent ; le pistil central se renfle en capsule gonflée (en ballon) entourée de son collerette de bractées filiformes, qui reste décorative",
+      "tete": "ne penche pas ; après la chute des sépales, il reste une capsule ovale renflée, verte rayée de pourpre, puis brune, dans un nid de fines bractées",
+      "petales": "sépales qui pâlissent et tombent d'un coup",
+      "feuilles": "feuilles en fines lanières, qui jaunissent puis se dessèchent",
+      "tige": "fine et droite",
+      "couleurs": {
+        "bleu": {
+          "declin": "bleu ciel qui pâlit vers le bleu blanchâtre",
+          "fane": "sépales tombés ; capsule verte striée de pourpre puis paille"
+        },
+        "blanc": {
+          "declin": "blanc qui verdit légèrement",
+          "fane": "sépales tombés ; capsule vert pâle puis beige"
+        },
+        "rose": {
+          "declin": "rose qui pâlit",
+          "fane": "sépales tombés ; capsule verte puis beige"
+        },
+        "violet": {
+          "declin": "violet qui pâlit vers le lilas",
+          "fane": "sépales tombés ; capsule verte à rayures pourpres"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Sourcé : longue tenue en vase, sensible à l'éthylène, belles capsules après la chute des pétales, capsules excellentes en fleur sèche. Surprise pour le dessin : le stade Fané montre une capsule en ballon, pas une fleur flétrie. Que la capsule grossisse vraiment dans le vase est déduit (les sources parlent du jardin). La pâleur des sépales au déclin est déduite. Les capsules peuvent être sombres ('Albion Black Pod'). seche_bien=true vaut pour la capsule. — Les éléments déduits ou extrapolés signalés ici sont en confiance basse.",
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/nigella-love-in-a-mist",
+        "https://vitalseeds.co.uk/?p=67629",
+        "https://www.sarahraven.com/products/nigella-papillosa-african-bride",
+        "https://extension.unl.edu/statewide/cass/2018%20SGP%20newsletter%20nigella.pdf"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "clematite",
+    "nom": "Clématite",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "toute_annee": true,
+      "note": "Marginpar (Pays-Bas) fournirait 99 % des clématites coupées d'Europe (série 'Amazing'), disponibles toute l'année, avec des pics par variété ; les fleuristes britanniques situent le meilleur de mai à septembre.",
+      "sources": [
+        "https://www.floristrytradeclub.co.uk/post/clematis-as-a-cut-flower",
+        "https://rhs.org.uk/plants/plants-blogs/plants/april-2017/Clematis-Amazing-Series",
+        "https://thursd.com/products/cut-flowers/other-flowers/clematis-amazing-blue-pirouette"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 6,
+      "max": 14,
+      "sources": [
+        "https://www.floristrytradeclub.co.uk/post/clematis-as-a-cut-flower",
+        "https://doaj.org/article/263bc5d7a7e34b418c977432aee8d373",
+        "https://moysesflowers.co.uk/flower-care/clematis-care"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "chute-petales",
+        "decolore",
+        "feuilles-recroquevillees"
+      ],
+      "ordre": "les sépales pâlissent puis tombent un à un (dès le 12e jour environ chez un fleuriste) ; les feuilles et vrilles flétrissent si la tige manque d'eau ; il reste au centre un bouquet d'étamines puis les styles plumeux",
+      "tete": "fleur plate en étoile qui reste de face ; la tige fine peut s'incliner sous le poids",
+      "petales": "sépales (pas de vrais pétales) qui ternissent, pâlissent et se détachent",
+      "feuilles": "se ramollissent et pendent vite si la tige manque d'eau (plante très gourmande en eau)",
+      "tige": "fine et ligneuse, garde sa forme",
+      "couleurs": {
+        "blanc": {
+          "declin": "blanc qui vire au crème verdâtre",
+          "fane": "beige, sépales tombés"
+        },
+        "rose": {
+          "declin": "rose qui pâlit",
+          "fane": "rose délavé presque blanc, sépales tombés"
+        },
+        "rouge": {
+          "declin": "cramoisi qui bleuit",
+          "fane": "pourpre terne"
+        },
+        "bleu": {
+          "declin": "bleu pâle qui grisonne",
+          "fane": "bleu-gris délavé"
+        },
+        "violet": {
+          "declin": "violet qui pâlit vers le lilas",
+          "fane": "mauve délavé, sépales tombés"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Sourcé : chute des pétales vers le 12e jour, très sensible à l'éthylène, gourmande en eau. Les sélections récentes ('Zo09146') sont citées comme ne pâlissant presque pas, ce qui montre que les cultivars plus anciens se décolorent. Tenue en vase de 3 à 12 jours en essai sur de nombreux cultivars (6 à 8 en majorité), de 10 à 14 jours selon les fleuristes pour la série Amazing. Les couleurs au déclin sont déduites. Les capsules plumeuses servent en fleur sèche, mais la fleur elle-même ne sèche pas bien (déduit). — Les éléments déduits ou extrapolés signalés ici sont en confiance basse.",
+      "sources": [
+        "https://www.floristrytradeclub.co.uk/post/clematis-as-a-cut-flower",
+        "https://flirtyfleurs.com/clematis-the-beautiful/",
+        "https://patents.google.com/patent/USPP30634",
+        "https://doaj.org/article/263bc5d7a7e34b418c977432aee8d373",
+        "https://hgic.clemson.edu/factsheet/clematis/"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "achillee",
+    "nom": "Achillée",
+    "saison_vente": {
+      "mois": [
+        6,
+        7,
+        8,
+        9
+      ],
+      "pic": [
+        7,
+        8
+      ],
+      "toute_annee": false,
+      "note": "Floral Design Institute : de juillet à septembre ; récolte d'A. filipendulina 'Parker' en semaines 25 à 30 (Saxe) ; floraison de mai à août. Vendue sèche toute l'année.",
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/achillea-yarrow",
+        "https://www.gartenbau.sachsen.de/download/Schnittstauden_Sommer_2010.pdf"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 7,
+      "max": 14,
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/achillea-yarrow",
+        "https://www.gartenbau.sachsen.de/download/Schnittstauden_Sommer_2010.pdf",
+        "https://extension.msstate.edu/publications/cottage-yarrow-achillea-millefolium-for-the-farmer-florist"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "decolore",
+        "feuilles-recroquevillees",
+        "seche-sur-place"
+      ],
+      "ordre": "les feuilles flétrissent très vite et les premières ; le corymbe plat garde sa forme et pâlit lentement, en gardant une part de sa couleur jusqu'à la fin ; il finit par sécher sur place",
+      "tete": "corymbe plat qui reste droit et garde sa forme",
+      "petales": "fleurons minuscules qui pâlissent lentement, puis brunissent légèrement au centre",
+      "feuilles": "feuilles plumeuses qui flétrissent très vite (à retirer)",
+      "tige": "rigide, reste droite",
+      "couleurs": {
+        "blanc": {
+          "declin": "blanc qui vire au crème",
+          "fane": "beige grisé"
+        },
+        "creme": {
+          "declin": "crème qui jaunit",
+          "fane": "beige paille"
+        },
+        "jaune": {
+          "declin": "jaune d'or qui garde sa couleur",
+          "fane": "jaune moutarde terne"
+        },
+        "rose": {
+          "declin": "rose qui pâlit nettement",
+          "fane": "rose délavé presque crème, puis beige"
+        },
+        "rouge": {
+          "declin": "rouge qui passe au rose",
+          "fane": "rose terne puis jaune moutarde ou beige"
+        },
+        "orange": {
+          "declin": "terracotta qui pâlit en saumon",
+          "fane": "beige saumoné, jaune moutarde"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Sourcé : feuilles qui flétrissent très vite, fleurs qui pâlissent très lentement en gardant de la couleur, achillée rose qui pâlit toujours (c'est le pigment), 'Paprika' qui passe du rouge rubis au rose puis au jaune moutarde (sur plante), excellente en fleur sèche. Tenue de 12 jours dans l'eau et de 20 jours avec nourriture pour 'Parker' ; certains cultivars de millefolium ne tiennent que 3 à 4 jours. Appliquer ces glissements au vase est une déduction.",
+      "sources": [
+        "https://extension.msstate.edu/publications/cottage-yarrow-achillea-millefolium-for-the-farmer-florist",
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/achillea-yarrow",
+        "https://www.ashridgetrees.co.uk/products/achillea-summer-pastels-plants",
+        "https://www.ashwoodnurseries.com/product/achillea-paprika/",
+        "https://www.gartenbau.sachsen.de/download/Schnittstauden_Sommer_2010.pdf"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "trachelium",
+    "nom": "Trachélium",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "toute_annee": true,
+      "note": "disponible toute l'année, pic de mars à novembre (série Lake : variétés de printemps et d'automne, et d'hiver).",
+      "sources": [
+        "https://floraldesigninstitute.com/blogs/resources-flower-library/trachelium",
+        "https://ballseed.com/MarketingPDF.aspx?blobid=128"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 7,
+      "max": 14,
+      "sources": [
+        "https://floraldesigninstitute.com/blogs/resources-flower-library/trachelium",
+        "https://hortscans.ces.ncsu.edu/uploads/o/p/optimizi_51cb10c5121e9.pdf"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "fleurons-tombent",
+        "decolore",
+        "feuilles-jaunissent"
+      ],
+      "ordre": "les boutons continuent de s'ouvrir dans le vase ; les fleurons du dôme vieillissent ensuite, se ternissent et sèchent ; les feuilles jaunissent ; les têtes blanches vieillissent plus vite que les bleues ou violettes",
+      "tete": "dôme plat de minuscules fleurons étoilés qui reste droit ; il s'éclaircit à mesure que les fleurons se flétrissent",
+      "petales": "fleurons qui ternissent, se fripent puis brunissent ou tombent",
+      "feuilles": "jaunissent (déduit)",
+      "tige": "droite",
+      "couleurs": {
+        "violet": {
+          "declin": "violet qui pâlit vers le mauve",
+          "fane": "mauve grisé à brun"
+        },
+        "bleu": {
+          "declin": "bleu lavande qui grisonne",
+          "fane": "gris-bleu à beige"
+        },
+        "blanc": {
+          "declin": "blanc qui vire au crème et brunit en taches",
+          "fane": "beige-brun"
+        },
+        "rose": {
+          "declin": "rose qui pâlit",
+          "fane": "rose terne puis beige"
+        },
+        "vert": {
+          "declin": "vert qui jaunit",
+          "fane": "vert-brun"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Sourcé : ouverture continue dans le vase, cultivars blancs qui vieillissent plus vite et sont plus sensibles aux maladies, tenue de 7 jours ('Summer Lake') à 11 jours ('White Umbrella'), 2 semaines dans l'eau selon une autre source. La forme exacte du déclin (chute ou séchage des fleurons, feuilles qui jaunissent) et les couleurs sont déduites, par analogie avec les Campanulacées. Qu'il sèche bien n'est pas sourcé (false par prudence).",
+      "sources": [
+        "https://floraldesigninstitute.com/blogs/resources-flower-library/trachelium",
+        "https://hortscans.ces.ncsu.edu/uploads/o/p/optimizi_51cb10c5121e9.pdf",
+        "https://blogs.cornell.edu/hightunnels/flowers/cut-flowers/cut-flower-crops/trachelium"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "bleuet",
+    "nom": "Bleuet",
+    "saison_vente": {
+      "mois": [
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "pic": [
+        6,
+        7
+      ],
+      "toute_annee": false,
+      "note": "floraison de mai à septembre, de juin à août au plus fort ; pas de calendrier de grossiste NL trouvé. Vendu sec hors saison.",
+      "sources": [
+        "https://www.euroflorist.pl/en/flower-encyclopedia/cornflower",
+        "https://www.sarahraven.com/products/centaurea-cyanus-classic-magic"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 5,
+      "max": 10,
+      "sources": [
+        "https://www.euroflorist.pl/en/flower-encyclopedia/cornflower",
+        "https://fieldreport.caes.uga.edu/?p=10590"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "recroqueville",
+        "decolore",
+        "seche-sur-place"
+      ],
+      "ordre": "les fleurons en entonnoir du bord se fripent et se replient sur place ; le capitule se resserre dans son involucre écailleux ; la couleur, très stable, pâlit seulement un peu",
+      "tete": "petit capitule qui se resserre dans son involucre à écailles bordées de brun ; il ne penche guère",
+      "petales": "fleurons périphériques frangés qui se recroquevillent sans tomber tout de suite",
+      "feuilles": "étroites et grisâtres, qui flétrissent et jaunissent",
+      "tige": "fine et ramifiée, reste droite",
+      "couleurs": {
+        "bleu": {
+          "declin": "bleu vif qui reste bleu, légèrement violacé",
+          "fane": "bleu-violet sombre, fleurons fripés"
+        },
+        "rose": {
+          "declin": "rose qui pâlit",
+          "fane": "rose terne"
+        },
+        "blanc": {
+          "declin": "blanc qui vire au crème",
+          "fane": "beige grisé"
+        },
+        "bordeaux": {
+          "declin": "bordeaux qui fonce",
+          "fane": "prune presque noir ('Black Ball')"
+        },
+        "violet": {
+          "declin": "mauve qui pâlit",
+          "fane": "lilas grisé"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Sourcé : tenue de 5-6 à 7-10 jours, sensible à la chaleur, sèche très bien en gardant remarquablement son bleu (les couleurs intenses tiennent mieux que les pâles). Le froissement des fleurons et le resserrement du capitule sont déduits de la morphologie des centaurées. Le glissement du bleu vers le violet n'est pas sourcé.",
+      "sources": [
+        "https://www.euroflorist.pl/en/flower-encyclopedia/cornflower",
+        "https://www.promessedefleurs.ie/gardening-tips/tutorial/how-to-dry-cornflower-blooms",
+        "https://blackgold.bz/home-gardening-solutions/petal-heads-flowers-to-grow-for-colorful-dried-petals/",
+        "https://joradahl.de/en/produkt/centaurea-cyanus-black-ball/"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "godetia-clarkia",
+    "nom": "Godétia et clarkia",
+    "saison_vente": {
+      "mois": [
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "pic": [
+        6,
+        7
+      ],
+      "toute_annee": false,
+      "note": "floraison de juin à septembre en plein air, dès mai pour les semis d'automne ; c'est une culture de climat frais qui ne supporte pas la chaleur à la floraison. Les mois et le pic viennent des sources de culture, pas d'un calendrier de grossiste.",
+      "sources": [
+        "https://www.gardenersworld.com/how-to/grow-plants/godetia",
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/clarkia",
+        "https://library.floretflowers.com/products/godetia-grace-salmon"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 5,
+      "max": 10,
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/clarkia",
+        "https://fiftyflowers.com/products/White-Godetia-Flowers"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "fane-du-bas",
+        "recroqueville",
+        "chute-petales"
+      ],
+      "ordre": "chaque fleur ne dure qu'environ 5 jours, mais les boutons s'ouvrent à la suite le long de l'épi, du bas vers le haut ; les fleurs basses fanées se fripent, se referment en cornet satiné et tombent pendant que celles du haut s'ouvrent",
+      "tete": "épi feuillé dont la pointe porte encore des boutons ; peut s'incurver légèrement",
+      "petales": "pétales satinés qui se fripent, se referment, puis tombent",
+      "feuilles": "étroites, qui jaunissent à la base",
+      "tige": "raide",
+      "couleurs": {
+        "rose": {
+          "declin": "rose satiné qui fonce vers le magenta violacé",
+          "fane": "mauve sale, pétales fripés"
+        },
+        "peche": {
+          "declin": "saumon qui pâlit",
+          "fane": "beige rosé"
+        },
+        "blanc": {
+          "declin": "blanc qui vire au crème",
+          "fane": "beige, bords brunis"
+        },
+        "bicolore": {
+          "declin": "tache centrale qui fonce",
+          "fane": "mauve terne"
+        },
+        "violet": {
+          "declin": "lilas qui bleuit",
+          "fane": "mauve grisé"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Sourcé : fleurs individuelles d'environ 5 jours, remplacées par les boutons qui s'ouvrent à la suite (d'où une longue tenue de la tige), tenue de 5 à 10 jours. Le mode de flétrissement des fleurs (froissement puis chute) et l'ordre du bas vers le haut sont déduits de la morphologie en épi et de la famille des Onagracées. Couleurs déduites.",
+      "sources": [
+        "https://library.floretflowers.com/products/godetia-grace-salmon",
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/clarkia",
+        "https://fiftyflowers.com/products/White-Godetia-Flowers"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "tagete-oeillet-d-inde",
+    "nom": "Tagète",
+    "saison_vente": {
+      "mois": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "pic": [
+        7,
+        8,
+        9,
+        10
+      ],
+      "toute_annee": false,
+      "note": "fleur d'été et d'automne en Europe (floraison de juillet à octobre) ; peu présente en criée hors saison. Pic culturel autour de la Toussaint/Día de Muertos (T. erecta). Juin et novembre extrapolés. — Mois ou pic extrapolés : confiance basse sur ces valeurs.",
+      "sources": [
+        "https://groei.nl/files/downloads/Afrikaantjes_0314.pdf",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC10962335"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 5,
+      "max": 12,
+      "sources": [
+        "https://library.floretflowers.com/products/marigold-tiger-eyes",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC10962335",
+        "https://www.canr.msu.edu/news/garden_flowers_for_cutting_part_1"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "recroqueville",
+        "brunit-bords",
+        "feuilles-brunissent"
+      ],
+      "ordre": "les ligules extérieures (rangs du bas) ramollissent et s'affaissent les premières, puis toute la tête se dessèche : pétales cassants et parcheminés qui brunissent ou grisent",
+      "tete": "reste globalement en place, pompon qui s'affaisse et se tasse en séchant ; légère inclinaison possible",
+      "petales": "bords qui brunissent, ligules qui se fripent, deviennent cassantes et papyracées, sans tomber franchement",
+      "feuilles": "souvent retirées par le fleuriste (odeur) ; si présentes, elles flétrissent et brunissent vite",
+      "tige": "creuse et assez ferme, reste droite",
+      "couleurs": {
+        "jaune": {
+          "declin": "jaune d'or qui ternit, bords brun clair",
+          "fane": "jaune paille sale et brun, aspect papier"
+        },
+        "orange": {
+          "declin": "orange qui fonce, bords rouille",
+          "fane": "brun rouille à brun gris, papyracé"
+        },
+        "rouge": {
+          "declin": "acajou terni, bords brun foncé",
+          "fane": "brun chocolat grisé"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Déclin (ligules extérieures qui s'affaissent, pétales cassants et papyracés, brun ou gris) d'après NCSU/MSU ; couleurs par famille déduites de cette description générale, non sourcées. L'odeur vient du feuillage, d'où le retrait des feuilles. Les petites T. patula tiennent moins que T. erecta. — Les éléments déduits ou extrapolés signalés ici sont en confiance basse.",
+      "sources": [
+        "https://hortscans.ces.ncsu.edu/uploads/m/a/marigold_520a90a169535.pdf",
+        "https://www.canr.msu.edu/news/garden_flowers_for_cutting_part_1"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "souci-calendula",
+    "nom": "Souci",
+    "saison_vente": {
+      "mois": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "pic": [
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "toute_annee": false,
+      "note": "floraison de février à octobre en France selon les guides ; fleur de producteurs locaux, rare en criée hors saison. Mois exacts de vente extrapolés depuis la période de floraison. — Mois ou pic extrapolés : confiance basse sur ces valeurs.",
+      "sources": [
+        "https://www.youschool.fr/fleuriste/calendrier-fleurs-saison/",
+        "https://blog.kokopelli-semences.fr/wp-content/uploads/2021/01/Fiche_multiplication-souci-LG.pdf"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 5,
+      "max": 7,
+      "sources": [
+        "https://www.ascfg.org/wp-content/uploads/2009-Postharvest-Report.pdf",
+        "https://www.youschool.fr/fleuriste/calendrier-fleurs-saison/"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "capitule-se-ferme",
+        "recroqueville",
+        "penche-tete"
+      ],
+      "ordre": "le capitule se ferme la nuit et se rouvre de jour, puis de moins en moins ; les ligules se fripent et se replient, la tête s'incline si la tige est molle ; le cœur peut évoluer vers la tête à graines",
+      "tete": "capitule qui se referme partiellement (mouvement nocturne), puis reste à demi fermé ; inclinaison possible sur tiges molles",
+      "petales": "ligules qui s'enroulent vers le cœur, se fripent et ternissent ; quelques-unes tombent",
+      "feuilles": "feuilles molles et collantes qui flétrissent vite, jaunissent puis brunissent",
+      "tige": "tige tendre, peut ramollir et plier quand la culture a été chaude",
+      "couleurs": {
+        "orange": {
+          "declin": "orange vif qui ternit, revers des ligules plus sombres",
+          "fane": "orange brûlé à brun rouille, fripé"
+        },
+        "jaune": {
+          "declin": "jaune qui pâlit",
+          "fane": "jaune paille et brun clair"
+        },
+        "peche": {
+          "declin": "abricot pâli, crème rosé",
+          "fane": "beige rosé terne puis brun clair"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Fermeture nocturne et faible tenue (5 j pour 'Maayan', ASCFG) sourcées ; flétrissement des tiges cultivées au chaud sourcé (NCSU). Les couleurs au déclin et au fané sont déduites, non sourcées. Les pétales séchés s'emploient en herboristerie, mais la fleur entière garde mal sa forme. — Les éléments déduits ou extrapolés signalés ici sont en confiance basse.",
+      "sources": [
+        "https://www.ascfg.org/wp-content/uploads/2009-Postharvest-Report.pdf",
+        "https://hortscans.ces.ncsu.edu/file/../uploads/c/a/calendul_53a04b0fb2907.pdf",
+        "https://www.americanmeadows.com/blogs/wildflower-seeds/all-about-calendula"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "immortelle-xerochrysum",
+    "nom": "Immortelle à bractées",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [
+        7,
+        8,
+        9,
+        10
+      ],
+      "toute_annee": true,
+      "note": "en frais de juillet à septembre-octobre (production d'été européenne) ; vendue séchée toute l'année. Le toute_annee vaut pour la forme séchée.",
+      "sources": [
+        "https://www.sarahraven.com/products/helichrysum-bracteatum-salmon-rose",
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/strawflower"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 7,
+      "max": 14,
+      "sources": [
+        "https://www.johnnyseeds.com/growers-library/flowers/strawflower/strawflower-key-growing-information.html",
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/strawflower"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "seche-sur-place",
+        "feuilles-recroquevillees"
+      ],
+      "ordre": "les bractées sont déjà des tissus morts : la tête continue de s'ouvrir après la coupe, le disque central se découvre et brunit, puis la fleur sèche sur la tige en gardant forme et couleur ; les feuilles flétrissent bien avant la fleur",
+      "tete": "reste droite ; s'ouvre de plus en plus (cœur jaune ou brun visible), se referme par temps humide puis se rouvre (mouvement hygroscopique, même sèche)",
+      "petales": "bractées papyracées, brillantes, qui ne flétrissent pas ; légère perte d'éclat",
+      "feuilles": "feuilles étroites qui se recroquevillent, grisent et sèchent sur la tige",
+      "tige": "devient raide et cassante en séchant ; peut plier sous la tête si la tige est faible",
+      "couleurs": {
+        "blanc": {
+          "declin": "blanc argenté, cœur jaune qui brunit",
+          "fane": "blanc crème légèrement jauni, cœur brun"
+        },
+        "jaune": {
+          "declin": "jaune d'or stable",
+          "fane": "jaune un peu passé, cœur brun"
+        },
+        "orange": {
+          "declin": "orange stable",
+          "fane": "orange cuivré légèrement pâli"
+        },
+        "rose": {
+          "declin": "rose argenté stable",
+          "fane": "rose poudré un peu passé"
+        },
+        "rouge": {
+          "declin": "rouge écarlate stable",
+          "fane": "rouge brique foncé"
+        },
+        "bordeaux": {
+          "declin": "pourpre stable",
+          "fane": "pourpre brun foncé"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Bractées scarieuses (cellules mortes) qui gardent forme et couleur des années, s'ouvrant et se fermant selon l'humidité même séchées (sources unesp / botany.one). Utile au dessin : au Fané, la tête est intacte, simplement plus ouverte avec le cœur brun. La légère pâlissure des couleurs est déduite. — Les éléments déduits ou extrapolés signalés ici sont en confiance basse.",
+      "sources": [
+        "https://www.botany.one/plant-tissues-move-like-animal-muscles-long-death/",
+        "https://acervodigital.unesp.br/handle/11449/20334?mode=full",
+        "https://www.gardenersworld.com/how-to/grow-plants/strawflowers/",
+        "https://www.johnnyseeds.com/growers-library/flowers/strawflower/strawflower-key-growing-information.html"
+      ]
+    },
+    "confiance": "haute"
+  },
+  {
+    "id": "sauge-salvia",
+    "nom": "Sauge ornementale",
+    "saison_vente": {
+      "mois": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "pic": [
+        6,
+        7,
+        8
+      ],
+      "toute_annee": false,
+      "note": "saison d'été (S. nemorosa, S. farinacea, S. viridis, hybrides néerlandais) ; mois de vente extrapolés depuis la floraison, pas de calendrier de grossiste trouvé.",
+      "sources": [
+        "https://gardencentermag.com/news/hilverdakooij-promotes-growth-american-takii-2019-california-spring-trials",
+        "https://www.rhs.org.uk/plants/297303/salvia-nemorosa-sensation-deep-blue-(sensation-series)/details"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 5,
+      "max": 10,
+      "sources": [
+        "https://library.floretflowers.com/products/clary-sage-tricolor-mix"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "fleurons-tombent",
+        "fane-du-bas",
+        "feuilles-recroquevillees"
+      ],
+      "ordre": "l'épi s'ouvre de bas en haut ; les corolles du bas tombent les premières en laissant les calices, puis la pointe de l'épi s'affaisse et les feuilles flétrissent",
+      "tete": "pointe de l'épi qui s'incline légèrement en fin de vie",
+      "petales": "les corolles tubulaires tombent entières ; les calices (souvent colorés) restent sur l'épi",
+      "feuilles": "flétrissent, s'enroulent et grisent",
+      "tige": "tige carrée assez ferme, reste droite",
+      "couleurs": {
+        "bleu": {
+          "declin": "bleu violacé qui grise, calices plus ternes",
+          "fane": "calices gris-violet poussiéreux"
+        },
+        "violet": {
+          "declin": "violet qui pâlit",
+          "fane": "calices mauve gris"
+        },
+        "rose": {
+          "declin": "rose qui pâlit",
+          "fane": "calices rose beige"
+        },
+        "blanc": {
+          "declin": "blanc qui jaunit légèrement",
+          "fane": "calices beige verdâtre"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Tenue en vase sourcée seulement pour S. viridis (sauge hormin, 7-10 j, Floret, dont les bractées restent utilisables après la chute des fleurs) ; extrapolée aux autres sauges. La chute des corolles avec calices persistants et l'ouverture de bas en haut viennent de la botanique générale du genre et de la consigne de récolte (fleurs du bas ouvertes) de Johnny's. Couleurs déduites. Séchage : 'Victoria Blue' et la sauge hormin se sèchent (Johnny's, Floret).",
+      "sources": [
+        "https://library.floretflowers.com/products/clary-sage-tricolor-mix",
+        "https://www.johnnyseeds.com/flowers/salvia/victoria-blue-salvia-seed-1775.11.html"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "bouvardia",
+    "nom": "Bouvardia",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "toute_annee": true,
+      "note": "cultivée sous serre aux Pays-Bas (Royal Van Zanten) et disponible toute l'année ; pic estival extrapolé (production néerlandaise plus abondante en lumière longue). — Mois ou pic extrapolés : confiance basse sur ces valeurs.",
+      "sources": [
+        "https://royalvanzanten.com/en/inspirations/bouvardia-for-every-season",
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/bouvardia"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 5,
+      "max": 14,
+      "sources": [
+        "https://floralife.com/flowers/bouvardia/",
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/bouvardia"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "fleurons-tombent",
+        "feuilles-jaunissent",
+        "penche-tete",
+        "recroqueville"
+      ],
+      "ordre": "très gourmande en eau : sans eau, les feuilles et l'ombelle flétrissent en quelques heures ; à l'éthylène, les fleurons tombent (shattering) ; sinon, les fleurons se fripent et brunissent un à un, les feuilles jaunissent",
+      "tete": "le corymbe se dégarnit, peut s'affaisser en cas de manque d'eau",
+      "petales": "petites étoiles tubulaires qui se fripent, brunissent au bout puis tombent",
+      "feuilles": "jaunissement fréquent, flétrissement et pendaison des feuilles quand la tige manque d'eau",
+      "tige": "tige ligneuse fine, droite ; la partie haute peut ramollir",
+      "couleurs": {
+        "blanc": {
+          "declin": "blanc crème, pointes beige",
+          "fane": "beige brun, fleurons fripés"
+        },
+        "rose": {
+          "declin": "rose qui pâlit, bords plus sombres",
+          "fane": "rose brun terne"
+        },
+        "rouge": {
+          "declin": "rouge qui fonce",
+          "fane": "brun rouge sombre"
+        },
+        "bicolore": {
+          "declin": "contraste qui s'atténue",
+          "fane": "beige rosé brunâtre"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Sensibilité à l'éthylène (chute des fleurons), jaunissement des feuilles et flétrissement par déshydratation sourcés Floralife ; tenue 5-18 j selon les sources (fourchette prudente retenue). Couleurs au déclin et au fané déduites. — Les éléments déduits ou extrapolés signalés ici sont en confiance basse.",
+      "sources": [
+        "https://floralife.com/article/bouvardia-troubleshooting/",
+        "https://floralife.com/flowers/bouvardia/",
+        "https://postharvest.ucdavis.edu/node/9081"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "liatris",
+    "nom": "Liatris",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [
+        6,
+        7,
+        8,
+        9
+      ],
+      "toute_annee": true,
+      "note": "disponible toute l'année (cormes forcés aux Pays-Bas, imports Kenya et Afrique du Sud) ; pic de plein champ en été extrapolé depuis la floraison naturelle. — Mois ou pic extrapolés : confiance basse sur ces valeurs.",
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/liatris",
+        "https://idtools.org/id/cutflowers/key/Cut_Flower_Exports_of_Africa/Media/Html/Other/Cut_flower_trade.htm"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 6,
+      "max": 14,
+      "sources": [
+        "https://floralife.com/flowers/liatris",
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/liatris",
+        "https://extension.psu.edu/liatris-postharvest-handling-tips"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "fane-du-haut",
+        "feuilles-jaunissent",
+        "seche-sur-place"
+      ],
+      "ordre": "l'épi s'ouvre du haut vers le bas, à l'inverse des autres épis ; il fane donc aussi par le haut : la pointe brunit pendant que le bas est encore en fleur, puis tout l'épi sèche en plumeau ; les feuilles linéaires jaunissent",
+      "tete": "épi droit ; la pointe ternie et brune devient duveteuse",
+      "petales": "fleurons filamenteux qui perdent leur couleur et deviennent un duvet brun-beige, sans chuter",
+      "feuilles": "feuilles fines qui jaunissent et brunissent sur la tige",
+      "tige": "rigide, reste droite",
+      "couleurs": {
+        "violet": {
+          "declin": "pourpre qui pâlit en mauve, pointe brunie",
+          "fane": "mauve gris et brun beige duveteux"
+        },
+        "blanc": {
+          "declin": "blanc crème, pointe beige",
+          "fane": "beige paille duveteux"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Ouverture de haut en bas sourcée (Floralife, Penn State). Le déclin par le haut s'en déduit et correspond aux épis bruns décrits par les jardiniers. Séchage tête en bas sourcé (Gardening Know How, UF). Couleurs au déclin et au fané déduites. — Les éléments déduits ou extrapolés signalés ici sont en confiance basse.",
+      "sources": [
+        "https://floralife.com/flowers/liatris",
+        "https://extension.psu.edu/liatris-postharvest-handling-tips",
+        "https://questions.gardeningknowhow.com/tag/liatris/page/2/",
+        "https://blogs.ifas.ufl.edu/nassauco/2017/06/05/fact-sheet-liatris/"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "aconit",
+    "nom": "Aconit",
+    "saison_vente": {
+      "mois": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "pic": [
+        6,
+        7,
+        8,
+        9
+      ],
+      "toute_annee": false,
+      "note": "chez les fleuristes d'avril à octobre (Floral Design Institute) ; A. carmichaelii fleurit en septembre-octobre. Plante très toxique.",
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/aconite",
+        "https://www.rhs.org.uk/plants/92739/aconitum-carmichaelii-wilsonii-group-barkers-variety/details"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 7,
+      "max": 10,
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/aconite"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "fane-du-bas",
+        "chute-petales",
+        "feuilles-recroquevillees"
+      ],
+      "ordre": "la grappe s'ouvre de bas en haut ; les casques (sépales) du bas ternissent, se fripent et tombent, laissant les jeunes follicules, pendant que le haut fleurit encore ; les feuilles découpées flétrissent",
+      "tete": "grappe droite, pointe qui peut s'incliner en fin de vie",
+      "petales": "casques bleus (sépales pétaloïdes) qui se fripent sur les bords puis tombent",
+      "feuilles": "feuilles palmées qui s'enroulent, sèchent et brunissent",
+      "tige": "robuste, reste droite",
+      "couleurs": {
+        "bleu": {
+          "declin": "bleu violet qui ternit, bords grisés",
+          "fane": "bleu gris terne à brun violacé"
+        },
+        "violet": {
+          "declin": "violet plus terne",
+          "fane": "violet brun"
+        },
+        "blanc": {
+          "declin": "blanc crème",
+          "fane": "beige"
+        },
+        "bicolore": {
+          "declin": "bleu et blanc qui ternissent",
+          "fane": "gris bleuté et beige"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Saison et tenue sourcées. L'ordre de fanaison (racème qui s'ouvre de bas en haut, chute des sépales) est déduit de la morphologie des Ranunculaceae en grappe (comme le delphinium), pas d'une source sur la fanaison en vase. Couleurs déduites.",
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/aconite",
+        "https://www.nature-and-garden.com/gardening/aconite.html"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "pigamon",
+    "nom": "Pigamon",
+    "saison_vente": {
+      "mois": [
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "pic": [
+        6,
+        7
+      ],
+      "toute_annee": false,
+      "note": "fleurit de mai à août selon les variétés (T. aquilegiifolium au printemps, T. delavayi jusqu'au début de l'automne) ; mois de vente extrapolés depuis la floraison. — Mois ou pic extrapolés : confiance basse sur ces valeurs.",
+      "sources": [
+        "https://horticulture.co.uk/thalictrum/",
+        "https://hayloft.co.uk/thalictrum-nimbus-white-g-k37999"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 5,
+      "max": 9,
+      "sources": [
+        "https://cutflowers.ces.ncsu.edu/thalictrum-dipterocarpum"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "fleurons-tombent",
+        "chute-petales",
+        "feuilles-recroquevillees"
+      ],
+      "ordre": "fleurs sans pétales : les petits sépales tombent tôt ; ensuite, les houppes d'étamines (ou les sépales lilas de T. delavayi) s'égrènent et tombent sur la table, et le nuage floral se dégarnit en laissant des pédicelles fins et de petits fruits",
+      "tete": "panicule aérienne qui se dégarnit, sans pencher nettement",
+      "petales": "pas de pétales : sépales et étamines tombent (petal drop signalé)",
+      "feuilles": "folioles qui ressemblent à celles de l'ancolie ; elles se recroquevillent et sèchent",
+      "tige": "fine et souvent pourpre, reste droite",
+      "couleurs": {
+        "violet": {
+          "declin": "lilas qui pâlit",
+          "fane": "pédicelles brunâtres, quelques sépales gris mauve"
+        },
+        "rose": {
+          "declin": "rose poudré qui pâlit",
+          "fane": "beige rosé terne"
+        },
+        "blanc": {
+          "declin": "blanc crème",
+          "fane": "beige paille"
+        },
+        "jaune": {
+          "declin": "jaune soufre qui ternit",
+          "fane": "jaune paille brunâtre"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Tenue de 7 j (eau) à 9 j (avec conservateur), ainsi que la chute des pétales signalée, viennent de la NCSU pour T. dipterocarpum. Absence de pétales et sépales caducs sourcés (Wikipédia). Utile au dessin : au déclin, le volume s'égrène au lieu de faner sur place. Couleurs déduites. — Les éléments déduits ou extrapolés signalés ici sont en confiance basse.",
+      "sources": [
+        "https://cutflowers.ces.ncsu.edu/thalictrum-dipterocarpum",
+        "https://en.wikipedia.org/wiki/Thalictrum"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "kniphofia",
+    "nom": "Tritoma",
+    "saison_vente": {
+      "mois": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "pic": [
+        7,
+        8,
+        9
+      ],
+      "toute_annee": false,
+      "note": "floraison de juin aux gelées, surtout de juillet à septembre ; mois de vente extrapolés depuis la floraison (production d'appoint, et parfois import d'Afrique du Sud non vérifié). — Mois ou pic extrapolés : confiance basse sur ces valeurs.",
+      "sources": [
+        "https://hayloft.co.uk/kniphofia-poco-collection-g-k41588",
+        "https://www.longfield-gardens.com/article/all-about-kniphofia/"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 5,
+      "max": 7,
+      "sources": [
+        "https://ishs.org/ishs-article/669_47/",
+        "https://farmerbailey.com/pages/kniphofia-growing-guide"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "fane-du-bas",
+        "fleurons-tombent"
+      ],
+      "ordre": "l'épi s'ouvre de bas en haut et les boutons continuent de s'ouvrir en vase ; les fleurons du bas fanent les premiers, brunissent et forment un manchon brun autour de l'axe, puis tombent, tandis que la pointe porte encore des boutons colorés",
+      "tete": "épi droit qui se raccourcit visuellement par le bas",
+      "petales": "tubes pendants qui se fripent et brunissent ; les filaments jaunes sortent puis brunissent en masse collée à l'axe",
+      "feuilles": "aucune sur la tige (hampe nue)",
+      "tige": "hampe épaisse et nue, droite",
+      "couleurs": {
+        "bicolore": {
+          "declin": "rouge des boutons en haut, base jaune qui passe au brun",
+          "fane": "manchon brun sur la moitié basse, pointe orange terne"
+        },
+        "orange": {
+          "declin": "orange qui pâlit en jaune vers le bas",
+          "fane": "brun rouille en bas"
+        },
+        "jaune": {
+          "declin": "jaune citron qui crème",
+          "fane": "beige brun"
+        },
+        "vert": {
+          "declin": "vert jade pâle qui crème",
+          "fane": "beige brun"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Tenue de 4,9 à 6,9 j (essai ISHS) et ouverture des boutons en vase avec chute des vieilles fleurs (Farmer Bailey) sourcées ; manchon brun des fleurons fanés sourcé RBGE. Utile au dessin : l'épi est naturellement bicolore (boutons rouges en haut, fleurs ouvertes jaunes en bas), et le brun envahit le bas. Couleurs au fané déduites. — Les éléments déduits ou extrapolés signalés ici sont en confiance basse.",
+      "sources": [
+        "https://ishs.org/ishs-article/669_47/",
+        "https://farmerbailey.com/pages/kniphofia-growing-guide",
+        "https://stories.rbge.org.uk/?p=9262"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "crocosmia",
+    "nom": "Crocosmia",
+    "saison_vente": {
+      "mois": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "pic": [
+        7,
+        8
+      ],
+      "toute_annee": false,
+      "note": "saison néerlandaise de juin à septembre ; fleurs et capsules (graines vertes) chez les grossistes du milieu de l'été à la fin de l'automne",
+      "sources": [
+        "https://www.floristrytradeclub.co.uk/post/crocosmia-flowers-explained-care-colours-vase-life-and-design-ideas"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 7,
+      "max": 14,
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/crocosmia",
+        "https://www.floristrytradeclub.co.uk/post/crocosmia-flowers-explained-care-colours-vase-life-and-design-ideas",
+        "https://bibliotekanauki.pl/articles/12662345.pdf"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "fane-du-bas",
+        "fleurons-tombent"
+      ],
+      "ordre": "l'épi arqué s'ouvre de bas en haut ; les fleurs du bas fanent les premières et tombent proprement, tandis que les boutons de la pointe continuent de s'ouvrir ; il reste en fin de vie un zigzag de petites capsules vertes, puis brun-roux",
+      "tete": "l'épi garde sa courbe en arc ; pas de pliure du col notable",
+      "petales": "les tépales des fleurs basses se fripent puis la fleur entière se détache, laissant un ovaire vert renflé",
+      "feuilles": "feuilles en lame, jaunissent puis brunissent depuis la pointe",
+      "tige": "semi-ligneuse, reste rigide",
+      "couleurs": {
+        "orange": {
+          "declin": "orange qui ternit sur les fleurs basses, pointe encore vive",
+          "fane": "capsules vert sauge puis brun roux, quelques fleurs rouille fripées"
+        },
+        "rouge": {
+          "declin": "rouge écarlate qui fonce et mate en bas de l'épi",
+          "fane": "capsules rouge sombre à brun roux"
+        },
+        "jaune": {
+          "declin": "jaune qui pâlit vers le crème sur les fleurs basses",
+          "fane": "capsules vertes virant au brun clair"
+        }
+      },
+      "seche_bien": true,
+      "notes": "seche_bien concerne les capsules (seedheads), utilisées fraîches et sèches ; les fleurs elles-mêmes ne sèchent pas bien. Les couleurs au déclin des fleurs sont déduites ; les teintes des capsules (vert sauge, brun roux, rouge sombre) sont sourcées. Le texte complet des pages n'a pas pu être lu (accès bloqué), seulement les extraits de recherche. — Les éléments déduits ou extrapolés signalés ici sont en confiance basse.",
+      "sources": [
+        "https://www.floristrytradeclub.co.uk/post/crocosmia-flowers-explained-care-colours-vase-life-and-design-ideas",
+        "https://www.gardenerspath.com/plants/flowers/grow-crocosmia",
+        "https://www.epicgardening.com/crocosmia/"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "lis-tigre",
+    "nom": "Lis tigré",
+    "saison_vente": {
+      "mois": [
+        7,
+        8,
+        9
+      ],
+      "pic": [
+        8
+      ],
+      "toute_annee": false,
+      "note": "Lilium lancifolium fleurit en plein air de juillet-août à septembre, plus tard que la plupart des lis ; peu présent en criée, vendu surtout en saison par les producteurs locaux (déduit de la floraison)",
+      "sources": [
+        "https://www.chicagobotanic.org/plant-information/plant-finder/lilium-lancifolium-splendens-tiger-lily",
+        "https://www.minnesotawildflowers.info/flower/tiger-lily"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 7,
+      "max": 14,
+      "sources": [
+        "https://springhillnursery.com/product/double-tiger-lily",
+        "https://www.chicagobotanic.org/plant-information/plant-finder/lilium-lancifolium-splendens-tiger-lily"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "chute-petales",
+        "recroqueville",
+        "feuilles-jaunissent"
+      ],
+      "ordre": "les fleurs s'ouvrent du bas vers le haut de la hampe ; chaque fleur ouverte tient quelques jours, ses tépales très retroussés mollissent, se rident puis tombent ; les boutons supérieurs continuent d'éclore ; les feuilles jaunissent et brunissent",
+      "tete": "fleurs pendantes en turban dès l'origine ; elles pendent davantage et s'affaissent en fanant",
+      "petales": "tépales orange tachés de pourpre, déjà enroulés vers l'arrière, qui se fripent, brunissent aux bords et se détachent",
+      "feuilles": "étroites et nombreuses, avec bulbilles noires à l'aisselle ; jaunissent puis brunissent (premier symptôme de sénescence chez les lis)",
+      "tige": "reste droite, porte les bulbilles noirâtres",
+      "couleurs": {
+        "orange": {
+          "declin": "orange qui ternit vers l'abricot sale, taches pourpres qui restent nettes",
+          "fane": "orange brunâtre, tépales roulés et parcheminés, bords bruns"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Aucune fiche de fanaison propre à L. lancifolium trouvée ; le schéma (flétrissement puis chute des tépales, jaunissement des feuilles) vient des études sur Lilium en général. Les couleurs de déclin sont déduites. Chez les hybrides asiatiques/LA proches, les tépales tombent encore turgescents ; l'espèce est du groupe des lis à turban.",
+      "sources": [
+        "https://www.phtnet.org/research/download/pdf/mj758.pdf",
+        "https://orca.cardiff.ac.uk/id/eprint/77769/",
+        "https://www.minnesotawildflowers.info/flower/tiger-lily",
+        "https://springhillnursery.com/product/double-tiger-lily"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "lis-oriental-double",
+    "nom": "Lis oriental double",
+    "saison_vente": {
+      "mois": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "pic": [
+        6,
+        7,
+        8
+      ],
+      "toute_annee": false,
+      "note": "gamme Roselily complète de mai à octobre chez le producteur néerlandais Van Schie (Decorum) ; les lis orientaux simples, eux, sont forcés toute l'année",
+      "sources": [
+        "https://thursd.com/products/cut-flowers/lilies/roselily-natascha-cutflower",
+        "https://extension.umd.edu/resource/production-hybrid-lilies-cut-flowers"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 10,
+      "max": 14,
+      "sources": [
+        "https://thursd.com/articles/roselily-series-is-the-gold-standard-of-double-lilies",
+        "https://www.longfield-gardens.com/plantname/Lily-Double-Oriental-Roselily-Editha"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "recroqueville",
+        "brunit-bords",
+        "feuilles-jaunissent"
+      ],
+      "ordre": "les fleurs s'ouvrent du bas vers le haut ; les tépales extérieurs flétrissent les premiers, mollissent et se froissent sur place (chez les orientaux, ils flétrissent nettement avant de tomber) ; les feuilles jaunissent ; la fleur sans pollen ne se tache pas",
+      "tete": "fleur large, double, tournée vers l'extérieur ; s'affaisse un peu quand les tépales mollissent",
+      "petales": "au moins 18 tépales imbriqués ; ceux de l'extérieur se fripent, brunissent aux bords et pendent, puis tombent",
+      "feuilles": "jaunissent puis brunissent, premier symptôme de sénescence chez les lis",
+      "tige": "reste droite et rigide",
+      "couleurs": {
+        "blanc": {
+          "declin": "blanc qui vire à l'ivoire, bords crème",
+          "fane": "beige à brun clair, bords bruns et froissés"
+        },
+        "rose": {
+          "declin": "rose qui pâlit et se délave",
+          "fane": "rose sale tirant au mauve brun, bords bruns"
+        },
+        "creme": {
+          "declin": "crème qui jaunit",
+          "fane": "beige brun"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Les orientaux (proches de L. longiflorum dans l'étude) flétrissent leurs tépales, à la différence des hybrides LA qui les perdent encore turgescents ; c'est extrapolé aux doubles. Couleurs de déclin déduites. Variétés vendues surtout en blanc, rose et crème (Roselily Aisha, Natascha, Sara…). — Les éléments déduits ou extrapolés signalés ici sont en confiance basse.",
+      "sources": [
+        "https://orca.cardiff.ac.uk/id/eprint/77769/",
+        "https://www.phtnet.org/research/download/pdf/mj758.pdf",
+        "https://thursd.com/articles/roselily-series-is-the-gold-standard-of-double-lilies"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "clematite-clochettes",
+    "nom": "Clématite à clochettes",
+    "saison_vente": {
+      "mois": [
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "pic": [
+        6,
+        7
+      ],
+      "toute_annee": false,
+      "note": "saison de la clématite coupée de mai à septembre ; C. integrifolia fleurit de juin à septembre ; variétés de coupe obtenues aux Pays-Bas (J. van Zoest)",
+      "sources": [
+        "https://moysesflowers.co.uk/flower-care/clematis-care",
+        "https://hayloft.co.uk/clematis-integrifolia-g-k35846"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 5,
+      "max": 12,
+      "sources": [
+        "https://czasopisma.up.lublin.pl/index.php/asphc/article/view/2273",
+        "https://doaj.org/article/263bc5d7a7e34b418c977432aee8d373"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "recroqueville",
+        "chute-petales"
+      ],
+      "ordre": "les sépales en clochette se flétrissent, sèchent ou tombent ; la tige peut s'affaisser si elle manque d'eau et récupère mal ; il reste parfois le centre plumeux qui donnera les aigrettes de graines",
+      "tete": "clochette penchée ; penche davantage en flétrissant",
+      "petales": "quatre sépales épais, souvent tordus à la pointe, qui mollissent, se fripent puis se détachent",
+      "feuilles": "flétrissent vite, se recroquevillent",
+      "tige": "fine, souple, peut s'affaisser",
+      "couleurs": {
+        "bleu": {
+          "declin": "bleu lavande qui pâlit vers le gris-mauve",
+          "fane": "mauve grisâtre, sépales brun clair aux pointes"
+        },
+        "violet": {
+          "declin": "violet qui devient plus terne",
+          "fane": "pourpre brunâtre"
+        },
+        "rose": {
+          "declin": "rose délavé",
+          "fane": "rose brunâtre"
+        },
+        "blanc": {
+          "declin": "blanc qui crème",
+          "fane": "beige"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Fin de vie définie dans l'étude polonaise par flétrissement, dessèchement ou chute des sépales ; 2 à 14 jours selon cultivar, la plupart 6 à 8. Très sensible à l'éthylène. Les aigrettes de graines (seedheads) se coupent aussi et se tiennent en sec, mais la fleur elle-même ne sèche pas bien. Couleurs de déclin déduites. — Les éléments déduits ou extrapolés signalés ici sont en confiance basse.",
+      "sources": [
+        "https://czasopisma.up.lublin.pl/index.php/asphc/article/view/2273",
+        "https://hayloft.co.uk/clematis-integrifolia-g-k35846",
+        "https://www.floristrytradeclub.co.uk/post/clematis-as-a-cut-flower"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "pentas",
+    "nom": "Pentas",
+    "saison_vente": {
+      "mois": [
+        6,
+        7,
+        8,
+        9
+      ],
+      "pic": [
+        7,
+        8
+      ],
+      "toute_annee": false,
+      "note": "rare en fleur coupée en Europe ; surtout vendue en plante en pot l'été ; mois déduits de la saison de plein air, sans calendrier de grossiste trouvé",
+      "sources": [
+        "https://www.finegardening.com/pentas",
+        "https://extension.msstate.edu/news/southern-gardening/2023/long-lasting-pentas-bloom-spring-frost"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 5,
+      "max": 14,
+      "sources": [
+        "https://www.calyxflowers.com/?p=7217"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "fleurons-tombent",
+        "recroqueville"
+      ],
+      "ordre": "les petites étoiles à cinq lobes du bouquet bombé fanent et brunissent une à une, en commençant par le pourtour ; la grappe sèche en brun",
+      "tete": "ombelle bombée qui se dégarnit et brunit",
+      "petales": "fleurons tubulaires qui se fripent, brunissent et tombent",
+      "feuilles": "feuilles velues, mollissent et jaunissent",
+      "tige": "reste droite",
+      "couleurs": {
+        "rose": {
+          "declin": "rose qui pâlit",
+          "fane": "brun rosé sec"
+        },
+        "rouge": {
+          "declin": "rouge qui fonce",
+          "fane": "brun rouge"
+        },
+        "blanc": {
+          "declin": "blanc crème",
+          "fane": "brun clair"
+        },
+        "violet": {
+          "declin": "lavande délavée",
+          "fane": "brun mauve"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Très peu de données post-récolte publiées (Calyx Flowers le dit). Le mode de fanaison est déduit des conseils de jardinage (grappes qui brunissent et sèchent) ; l'ordre du pourtour vers le centre est un raisonnement. Couleurs déduites.",
+      "sources": [
+        "https://www.calyxflowers.com/?p=7217",
+        "https://www.homesandgardens.com/gardens/how-to-deadhead-pentas-plants"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "geranium-vivace",
+    "nom": "Géranium vivace",
+    "saison_vente": {
+      "mois": [
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "pic": [
+        6,
+        7
+      ],
+      "toute_annee": false,
+      "note": "pas de calendrier de criée trouvé ; mois déduits de la floraison en plein air (fin de printemps à fin d'été), vente surtout par petits producteurs",
+      "sources": [
+        "https://plants.ces.ncsu.edu/plants/geranium-rozanne/common-name/cranesbill"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 2,
+      "max": 5,
+      "sources": [
+        "https://plants.ces.ncsu.edu/plants/geranium-rozanne/common-name/cranesbill"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "chute-petales",
+        "feuilles-recroquevillees"
+      ],
+      "ordre": "chaque fleur à cinq pétales vit peu ; les pétales se détachent entiers, souvent encore colorés, laissant le bec de grue vert ; de nouveaux boutons s'ouvrent ; le feuillage découpé flétrit vite",
+      "tete": "petite coupe ouverte qui se dégarnit",
+      "petales": "tombent d'un coup, encore frais ou à peine fanés",
+      "feuilles": "palmées, flétrissent et se recroquevillent rapidement (le feuillage d'automne ne tient qu'environ 24 heures)",
+      "tige": "fine, ramifiée, peut s'affaisser",
+      "couleurs": {
+        "bleu": {
+          "declin": "bleu violacé qui pâlit",
+          "fane": "pétales tombés ; bec vert brunissant"
+        },
+        "violet": {
+          "declin": "magenta qui bleuit",
+          "fane": "pétales tombés ; calices brun-vert"
+        },
+        "rose": {
+          "declin": "rose délavé",
+          "fane": "pétales tombés"
+        },
+        "blanc": {
+          "declin": "blanc veiné",
+          "fane": "pétales tombés"
+        }
+      },
+      "seche_bien": false,
+      "notes": "NC State indique une tenue courte en vase et un feuillage qui ne dure que 24 h ; la durée en jours est une estimation. La chute rapide des pétales est sourcée pour la famille (Erodium), extrapolée aux Geranium. Couleurs déduites.",
+      "sources": [
+        "https://plants.ces.ncsu.edu/plants/geranium-rozanne/common-name/cranesbill",
+        "https://www.hainaultforest.net/geranium-family"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "coreopsis",
+    "nom": "Coréopsis",
+    "saison_vente": {
+      "mois": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "pic": [
+        7,
+        8
+      ],
+      "toute_annee": false,
+      "note": "floraison de juin à octobre (Coreopsis tinctoria) ; pas de calendrier de criée trouvé, vente surtout par producteurs locaux",
+      "sources": [
+        "https://www.rhs.org.uk/plants/60968/wd/details",
+        "https://www.sativa.bio/en/coreopsis-b129"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 7,
+      "max": 10,
+      "sources": [
+        "https://farmerbailey.com/pages/coreopsis-annual-growing-guide"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "capitule-se-ferme",
+        "recroqueville",
+        "decolore"
+      ],
+      "ordre": "les boutons secondaires continuent d'éclore en vase ; sur les capitules ouverts, les ligules dentées se fripent, s'enroulent et pâlissent, le cœur sombre persiste en bouton bombé",
+      "tete": "petit capitule qui reste droit au bout d'une tige grêle",
+      "petales": "ligules à bout denté qui se recroquevillent et ternissent",
+      "feuilles": "fines, se dessèchent",
+      "tige": "grêle et ramifiée, reste droite",
+      "couleurs": {
+        "jaune": {
+          "declin": "jaune d'or qui pâlit",
+          "fane": "jaune paille brunâtre"
+        },
+        "bicolore": {
+          "declin": "jaune à cœur acajou, l'acajou s'étale et fonce",
+          "fane": "brun rouille et paille"
+        },
+        "rouge": {
+          "declin": "acajou qui fonce",
+          "fane": "brun roux"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Les fleurs se sèchent pour la teinture mais sans intérêt décoratif sourcé ; seche_bien mis à false par prudence. Mode de fanaison déduit de la famille des astéracées. Couleurs déduites.",
+      "sources": [
+        "https://farmerbailey.com/pages/coreopsis-annual-growing-guide",
+        "https://www.botanic.cam.ac.uk/collections/botanic-dyes/red-dyes-2/"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "gerbera-araignee",
+    "nom": "Gerbera araignée",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "toute_annee": true,
+      "note": "gerberas cultivés toute l'année sous serre aux Pays-Bas (plus de 32 producteurs, environ 900 millions de tiges) ; production plus forte au printemps et en été",
+      "sources": [
+        "https://colouredbygerbera.com/en/gerbera-colours-your-day"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 5,
+      "max": 14,
+      "sources": [
+        "https://fiftyflowers.com/products/farm-fresh-mix-spider-gerbera-flowers",
+        "https://www.jircas.go.jp/sites/default/files/publication/jarq/jarq58-1_57-64.pdf"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "penche-tete",
+        "recroqueville",
+        "decolore"
+      ],
+      "ordre": "la tige plie juste sous le capitule (stem bending), qui retombe ; les ligules fines et effilées flétrissent, se tordent et perdent leur couleur",
+      "tete": "capitule qui penche puis pend par pliure de la hampe, souvent juste sous la tête",
+      "petales": "ligules étroites en pointes qui mollissent, se tordent et pendent ; les pointes sèchent",
+      "feuilles": "hampe sans feuilles",
+      "tige": "hampe creuse qui se courbe ou casse sous le poids de la tête",
+      "couleurs": {
+        "rouge": {
+          "declin": "rouge qui fonce et mate",
+          "fane": "bordeaux brunâtre"
+        },
+        "orange": {
+          "declin": "orange qui ternit",
+          "fane": "brun orangé"
+        },
+        "jaune": {
+          "declin": "jaune qui pâlit",
+          "fane": "paille brunâtre"
+        },
+        "rose": {
+          "declin": "rose qui pâlit",
+          "fane": "rose brun délavé"
+        },
+        "blanc": {
+          "declin": "blanc crème",
+          "fane": "beige"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Fin de vie du gerbera : flétrissement des ligules, pliure de la hampe et dégradation des pigments (sourcé pour les gerberas en général) ; extrapolé aux gerberas araignées. Couleurs de déclin déduites. — Les éléments déduits ou extrapolés signalés ici sont en confiance basse.",
+      "sources": [
+        "https://www.mdpi.com/2311-7524/9/10/1106",
+        "https://www.jircas.go.jp/sites/default/files/publication/jarq/jarq58-1_57-64.pdf",
+        "https://fiftyflowers.com/products/farm-fresh-mix-spider-gerbera-flowers"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "cosmos-chocolat",
+    "nom": "Cosmos chocolat",
+    "saison_vente": {
+      "mois": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "pic": [
+        8,
+        9
+      ],
+      "toute_annee": false,
+      "note": "fleurit du début de l'été à l'automne ; pas de calendrier de criée trouvé ; mois déduits de la floraison",
+      "sources": [
+        "https://www.rhs.org.uk/plants/4529/wd/details",
+        "https://www.finegardening.com/plant/chocolate-cosmos-cosmos-atrosanguineus"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 4,
+      "max": 6,
+      "sources": [
+        "https://fiftyflowers.com/products/chocolate-cosmos-flower"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "chute-petales",
+        "recroqueville"
+      ],
+      "ordre": "une fois pollinisée, la fleur perd vite ses ligules ; elles se fripent et tombent, laissant le cœur bombé sur la tige grêle",
+      "tete": "petit capitule en coupe, reste droit au bout d'une tige fine",
+      "petales": "ligules veloutées qui se fripent puis tombent",
+      "feuilles": "peu de feuillage sur les tiges coupées",
+      "tige": "longue, fine, brun rouge, reste droite",
+      "couleurs": {
+        "bordeaux": {
+          "declin": "brun rouge velouté qui s'éclaircit et mate",
+          "fane": "brun chocolat sec, presque noir aux bords"
+        }
+      },
+      "seche_bien": false,
+      "notes": "La chute des pétales après pollinisation est sourcée pour Cosmos en général, extrapolée à C. atrosanguineus. Couleurs de déclin déduites.",
+      "sources": [
+        "https://www.threeacrefarm.net/blog/2020/1/8/how-to-grow-cosmos",
+        "https://fiftyflowers.com/products/chocolate-cosmos-flower"
+      ]
+    },
+    "confiance": "basse"
+  }
+]

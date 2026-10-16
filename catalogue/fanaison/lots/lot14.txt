@@ -1,0 +1,53 @@
+ligustrum-troene;Troène;Feuillages;foliage;feuillage
+podocarpus-macrophyllus;Podocarpus;Feuillages;foliage;feuillage
+nageia-nagi;Nagi;Feuillages;foliage;feuillage
+cocculus-laurifolius;Cocculus;Feuillages;foliage;feuillage
+arbutus-arbousier;Arbousier;Feuillages;foliage;feuillage
+lophomyrtus;Lophomyrtus;Feuillages;foliage;feuillage
+agonis-flexuosa;Agonis;Feuillages;foliage;feuillage
+melaleuca-feuillage;Melaleuca;Feuillages;foliage;feuillage
+grevillea-feuillage;Grevillea;Feuillages;foliage;feuillage
+leptospermum-arbre-a-the;Leptospermum;Feuillages;foliage;feuillage
+acacia-feuillage;Acacia;Feuillages;foliage;feuillage
+adenanthos-sericeus-woolly-bush;Adenanthos;Feuillages;foliage;texture
+leucadendron-rouges;Leucadendron rouges et bordeaux;Feuillages;protea;feuillage
+leucadendron-jaunes-verts;Leucadendron jaunes et verts;Feuillages;protea;feuillage
+leucadendron-argenteum-arbre-argent;Arbre d'argent;Feuillages;foliage;feuillage
+lonicera-chevrefeuille;Liane de chèvrefeuille;Feuillages;drape;feuillage
+salvia-rosmarinus-romarin;Romarin;Feuillages;foliage;feuillage
+mentha-menthe;Menthe;Feuillages;foliage;feuillage
+salvia-officinalis-sauge;Sauge officinale;Feuillages;foliage;feuillage
+origanum-origan;Origan;Feuillages;foliage;feuillage
+ocimum-basilic;Basilic;Feuillages;foliage;feuillage
+thymus-thym;Thym;Feuillages;foliage;texture
+curio-rowleyanus-collier-de-perles;Collier de perles;Feuillages;drape;texture
+rhipsalis;Rhipsalis;Feuillages;drape;texture
+tillandsia-usneoides-mousse-espagnole;Mousse espagnole;Feuillages;drape;texture
+tillandsia-plantes-de-l-air;Tillandsia;Feuillages;foliage;texture
+succulentes-echeveria;Succulentes;Feuillages;double;texture
+mousses-fraiches;Mousses fraîches;Feuillages;globe;texture
+abies-procera-nobilis;Sapin noble;Feuillages;foliage;feuillage
+abies-nordmanniana-nordmann;Sapin de Nordmann;Feuillages;foliage;feuillage
+pseudotsuga-menziesii-douglas;Douglas;Feuillages;foliage;feuillage
+pinus-pins;Pin;Feuillages;foliage;feuillage
+cedrus-cedre;Cèdre;Feuillages;foliage;feuillage
+thuja-cedre-rouge;Thuya;Feuillages;foliage;feuillage
+chamaecyparis-lawsoniana;Faux-cyprès de Lawson;Feuillages;foliage;feuillage
+cupressus-cypres-bleus;Cyprès;Feuillages;foliage;feuillage
+juniperus-genevrier;Genévrier;Feuillages;foliage;feuillage
+taxus-baccata-if;If commun;Feuillages;foliage;feuillage
+cryptomeria-japonica;Cryptomeria;Feuillages;foliage;feuillage
+picea-epicea;Épicéa;Feuillages;foliage;feuillage
+caladium;Caladium;Feuillages;foliage;feuillage
+loropetalum;Loropetalum;Feuillages;foliage;feuillage
+pivoine-feuillage;Feuillage de pivoine;Feuillages;foliage;feuillage
+robinier;Robinier;Feuillages;foliage;feuillage
+coleus;Coléus;Feuillages;foliage;feuillage
+begonia-feuillage;Bégonia rex;Feuillages;foliage;feuillage
+vigne-feuilles;Feuilles de vigne;Feuillages;foliage;feuillage
+fusain-aile;Fusain ailé;Feuillages;foliage;feuillage
+calla-feuilles;Feuilles de calla;Feuillages;foliage;feuillage
+anthurium-cristal;Anthurium cristal;Feuillages;foliage;feuillage
+hellebore-feuilles;Feuilles d'hellébore;Feuillages;foliage;feuillage
+chrysantheme-feuilles;Feuillage de chrysanthème;Feuillages;foliage;feuillage
+gloriosa-feuillage;Liane de gloriosa;Feuillages;foliage;feuillage

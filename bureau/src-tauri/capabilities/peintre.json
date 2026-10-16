@@ -1,0 +1,15 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "peintre",
+  "description": "The hidden window that runs the engine of a bouquet NFT: it may only send back the drawing (the peint command).",
+  "windows": [
+    "peintre-*"
+  ],
+  "remote": {
+    "urls": [
+      "http://peintre.localhost/*",
+      "peintre://localhost/*"
+    ]
+  },
+  "permissions": []
+}

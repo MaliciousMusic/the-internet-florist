@@ -1,0 +1,1321 @@
+[
+ {
+  "id": "rose-standard",
+  "prix": 4.5,
+  "sens": "Amour et admiration",
+  "sens_couleur": {
+   "rouge": "Amour passionné",
+   "blanc": "Pureté, respect",
+   "jaune": "Amitié joyeuse",
+   "rose": "Tendresse, gratitude"
+  },
+  "occ": [
+   "amour",
+   "anniv",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "Fleur de Vénus ; le sens change avec la couleur dans le langage des fleurs du XIXe siècle."
+ },
+ {
+  "id": "rose-intermediaire-kenya",
+  "prix": 2.8,
+  "sens": "Affection spontanée et vive",
+  "sens_couleur": {
+   "rouge": "Désir ardent et sincère",
+   "blanc": "Respect et douceur",
+   "jaune": "Amitié ensoleillée",
+   "rose": "Remerciement tendre",
+   "orange": "Enthousiasme, élan"
+  },
+  "occ": [
+   "amour",
+   "merci",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Roses des hauts plateaux du Kenya ; même langage que la rose, sur une tige plus courte."
+ },
+ {
+  "id": "rose-aspect-jardin",
+  "prix": 7.0,
+  "sens": "Romantisme bohème et naturel",
+  "occ": [
+   "amour",
+   "anniv",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Rose de serre au cœur plein façon jardin ; le langage de la rose, en version bohème."
+ },
+ {
+  "id": "rose-de-jardin",
+  "prix": 9.0,
+  "sens": "Amour généreux et épanoui",
+  "sens_couleur": {
+   "rouge": "Passion profonde",
+   "blanc": "Amour pur et serein",
+   "peche": "Gratitude chaleureuse",
+   "rose": "Douceur romantique"
+  },
+  "occ": [
+   "amour",
+   "anniv"
+  ],
+  "eviter": [],
+  "note": "Coupe pleine héritée des roses anciennes ; la rose dit l'amour depuis l'Antiquité."
+ },
+ {
+  "id": "rose-anglaise-david-austin",
+  "prix": 10.0,
+  "sens": "Romance à l'anglaise",
+  "occ": [
+   "amour",
+   "anniv",
+   "bravo"
+  ],
+  "eviter": [],
+  "note": "Obtenues par David Austin en croisant roses anciennes et modernes ; reines des mariages."
+ },
+ {
+  "id": "rose-japonaise",
+  "prix": 12.0,
+  "sens": "Délicatesse rare, poésie du détail",
+  "occ": [
+   "amour",
+   "bravo",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "Wabara cultivées par Rose Farm Keiji près du lac Biwa ; rareté et raffinement japonais."
+ },
+ {
+  "id": "rose-branchue",
+  "prix": 4.8,
+  "sens": "Tendresse en grappe, joie partagée",
+  "sens_couleur": {
+   "rouge": "Amour pétillant",
+   "rose": "Affection espiègle",
+   "blanc": "Innocence, nouveau départ",
+   "jaune": "Amitié rayonnante"
+  },
+  "occ": [
+   "anniv",
+   "juste",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "Plusieurs boutons par tige : le langage de la rose, en version légère et gaie."
+ },
+ {
+  "id": "rose-ancienne-parfumee",
+  "prix": 7.0,
+  "sens": "Amour fidèle, souvenir parfumé",
+  "occ": [
+   "amour",
+   "anniv",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "Roses de Provins et de Damas, cultivées depuis des siècles pour leur parfum."
+ },
+ {
+  "id": "rose-teintee",
+  "prix": 8.5,
+  "sens": "Rêve en couleurs inattendues",
+  "sens_couleur": {
+   "bleu": "Désir de l'inaccessible",
+   "noir": "Mystère et fin d'un chapitre",
+   "violet": "Coup de foudre, enchantement"
+  },
+  "occ": [
+   "anniv",
+   "bravo",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Colorée par la tige ; la rose bleue, absente de la nature, symbolise l'impossible."
+ },
+ {
+  "id": "rose-stabilisee",
+  "prix": 9.5,
+  "sens": "Un amour qui ne fane jamais",
+  "sens_couleur": {
+   "rouge": "Passion pour toujours",
+   "blanc": "Fidélité inaltérable",
+   "rose": "Tendresse qui dure"
+  },
+  "occ": [
+   "amour",
+   "anniv"
+  ],
+  "eviter": [],
+  "note": "Sève remplacée par de la glycérine : forme et couleur tiennent des mois, voire des années."
+ },
+ {
+  "id": "tulipe-simple",
+  "prix": 2.2,
+  "sens": "Déclaration d'amour printanière",
+  "sens_couleur": {
+   "rouge": "Déclaration ardente",
+   "jaune": "Gaieté et amitié",
+   "blanc": "Pardon sincère",
+   "rose": "Affection attentionnée",
+   "violet": "Admiration et noblesse"
+  },
+  "occ": [
+   "amour",
+   "anniv",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Nom tiré du turc tülbent, turban ; déclaration d'amour au langage des fleurs."
+ },
+ {
+  "id": "tulipe-francaise",
+  "prix": 5.0,
+  "sens": "Déclaration de haute allure",
+  "occ": [
+   "amour",
+   "anniv",
+   "bravo"
+  ],
+  "eviter": [],
+  "note": "Très longues tiges qui poussent encore en vase ; elle garde le sens amoureux de la tulipe."
+ },
+ {
+  "id": "tulipe-double",
+  "prix": 4.2,
+  "sens": "Profusion heureuse",
+  "occ": [
+   "anniv",
+   "merci",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage : cœur plein de pétales, d'où son surnom de tulipe pivoine."
+ },
+ {
+  "id": "tulipe-perroquet",
+  "prix": 4.5,
+  "sens": "Exubérance, fantaisie joyeuse",
+  "occ": [
+   "anniv",
+   "bravo",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage : née de mutations, pétales découpés comme un plumage de perroquet."
+ },
+ {
+  "id": "tulipe-frangee",
+  "prix": 4.2,
+  "sens": "Raffinement ciselé comme une dentelle",
+  "occ": [
+   "amour",
+   "anniv",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage : bord des pétales frangé de fines aiguilles cristallines."
+ },
+ {
+  "id": "tulipe-fleur-de-lys",
+  "prix": 3.6,
+  "sens": "Grâce élancée, distinction",
+  "occ": [
+   "merci",
+   "bravo",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage : pétales pointus et recourbés qui évoquent la silhouette du lis."
+ },
+ {
+  "id": "tulipe-viridiflora",
+  "prix": 4.5,
+  "sens": "Fraîcheur verte, regain de vie",
+  "occ": [
+   "courage",
+   "merci",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage : flamme verte au dos des pétales ; viridiflora signifie « à fleur verte »."
+ },
+ {
+  "id": "tulipe-rembrandt",
+  "prix": 5.5,
+  "sens": "Beauté qui fit perdre la tête",
+  "occ": [
+   "amour",
+   "bravo",
+   "anniv"
+  ],
+  "eviter": [],
+  "note": "Flammes dues jadis à un virus ; ces tulipes ont nourri la tulipomanie de 1637."
+ },
+ {
+  "id": "renoncule-classique",
+  "prix": 4.0,
+  "sens": "Ébloui par tant de charme",
+  "occ": [
+   "amour",
+   "anniv",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Langage des fleurs : « vous êtes rayonnante de charmes » ; du latin rana, grenouille."
+ },
+ {
+  "id": "renoncule-cloni",
+  "prix": 5.8,
+  "sens": "Charme rayonnant, pétales de soie",
+  "occ": [
+   "amour",
+   "anniv",
+   "bravo"
+  ],
+  "eviter": [],
+  "note": "Sélection ligure Biancheri aux pétales serrés ; sens de la renoncule : le charme."
+ },
+ {
+  "id": "renoncule-pon-pon",
+  "prix": 5.0,
+  "sens": "Malice et fraîcheur au cœur vert",
+  "occ": [
+   "anniv",
+   "juste",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "Sens de la renoncule (le charme) ; son cœur vert lui donne un air mutin."
+ },
+ {
+  "id": "renoncule-butterfly",
+  "prix": 6.2,
+  "sens": "Grâce qui papillonne",
+  "occ": [
+   "juste",
+   "merci",
+   "anniv"
+  ],
+  "eviter": [],
+  "note": "Obtention japonaise aux pétales cireux et brillants ; sens d'usage : légèreté."
+ },
+ {
+  "id": "renoncule-natura-moderna",
+  "prix": 5.5,
+  "sens": "Élégance libre et champêtre",
+  "occ": [
+   "juste",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "Hybrides ligures avec des renoncules sauvages ; sens d'usage : charme naturel."
+ },
+ {
+  "id": "anemone-coronaria",
+  "prix": 3.6,
+  "sens": "Espérance fragile, amour qui attend",
+  "occ": [
+   "amour",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Née du sang d'Adonis selon Ovide ; son nom vient du grec anemos, le vent."
+ },
+ {
+  "id": "anemone-japonaise",
+  "prix": 3.8,
+  "sens": "Douceur aérienne de fin d'été",
+  "occ": [
+   "merci",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage : tiges souples qui ondulent au vent, de la fin de l'été à l'automne."
+ },
+ {
+  "id": "hellebore-orientalis",
+  "prix": 5.5,
+  "sens": "Sérénité en plein hiver",
+  "occ": [
+   "courage",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Rose de carême ; l'ellébore des Anciens passait pour guérir la folie."
+ },
+ {
+  "id": "hellebore-niger",
+  "prix": 5.0,
+  "sens": "Apaise mon inquiétude",
+  "occ": [
+   "courage",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "Sens victorien ; légende de Madelon, bergère sans présent pour l'Enfant Jésus."
+ },
+ {
+  "id": "pivoine-herbacee-double",
+  "prix": 8.0,
+  "sens": "Prospérité et bonheur opulent",
+  "occ": [
+   "amour",
+   "anniv",
+   "bravo"
+  ],
+  "eviter": [],
+  "note": "Péan, médecin des dieux de l'Olympe, aurait été changé en pivoine par Zeus."
+ },
+ {
+  "id": "pivoine-herbacee-simple",
+  "prix": 7.5,
+  "sens": "Pudeur délicate et sincérité",
+  "occ": [
+   "amour",
+   "merci",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Pudeur (« honte ») au langage des fleurs ; forme simple ou dite japonaise."
+ },
+ {
+  "id": "pivoine-corail",
+  "prix": 9.0,
+  "sens": "Chaleur d'une joie changeante",
+  "occ": [
+   "anniv",
+   "bravo",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage : sa teinte corail pâlit vers l'abricot puis le crème en s'ouvrant."
+ },
+ {
+  "id": "pivoine-itoh",
+  "prix": 12.0,
+  "sens": "Union rare de deux mondes",
+  "occ": [
+   "amour",
+   "bravo",
+   "anniv"
+  ],
+  "eviter": [],
+  "note": "Hybride d'herbacée et d'arbustive, obtenu en 1948 par le Japonais Toichi Itoh."
+ },
+ {
+  "id": "pivoine-arbustive",
+  "prix": 15.0,
+  "sens": "Noblesse, richesse et honneur",
+  "occ": [
+   "bravo",
+   "anniv",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "Mudan, « roi des fleurs » en Chine, emblème de richesse et d'honneur."
+ },
+ {
+  "id": "pois-de-senteur",
+  "prix": 3.2,
+  "sens": "Merci pour ces doux moments",
+  "occ": [
+   "merci",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Langage des fleurs : départ et plaisirs délicats ; emblème de l'ère édouardienne."
+ },
+ {
+  "id": "jacinthe",
+  "prix": 3.4,
+  "sens": "Bienveillance et esprit de jeu",
+  "sens_couleur": {
+   "bleu": "Constance sincère",
+   "violet": "Regret, pardon demandé",
+   "blanc": "Beauté sans artifice"
+  },
+  "occ": [
+   "merci",
+   "courage",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Née du sang d'Hyacinthe, aimé d'Apollon, selon le mythe grec ; fleur de Pâques."
+ },
+ {
+  "id": "muscari",
+  "prix": 1.8,
+  "sens": "Candeur et gaieté bleutée",
+  "occ": [
+   "juste",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage : grappes de clochettes au parfum musqué, d'où son nom."
+ },
+ {
+  "id": "narcisse-trompette",
+  "prix": 1.6,
+  "sens": "Espoir et désir de vivre",
+  "occ": [
+   "courage",
+   "juste",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "Fleur d'espoir de l'Institut Curie contre le cancer ; désir au langage des fleurs."
+ },
+ {
+  "id": "narcisse-double",
+  "prix": 2.0,
+  "sens": "Renaissance éclatante",
+  "occ": [
+   "juste",
+   "anniv",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "Sens moderne : renouveau ; jadis l'amour de soi, par le mythe de Narcisse."
+ },
+ {
+  "id": "narcisse-bouquet",
+  "prix": 2.2,
+  "sens": "Inspiration au parfum envoûtant",
+  "occ": [
+   "juste",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "Narcisse des poètes : fleur du jeune homme épris de son reflet, chez Ovide."
+ },
+ {
+  "id": "muguet",
+  "prix": 2.3,
+  "sens": "Retour du bonheur",
+  "occ": [
+   "courage",
+   "juste",
+   "anniv"
+  ],
+  "eviter": [],
+  "note": "Offert le 1er mai depuis Charles IX (1561) ; « retour du bonheur » au langage des fleurs."
+ },
+ {
+  "id": "violette",
+  "prix": 0.8,
+  "sens": "Modestie et amour secret",
+  "occ": [
+   "amour",
+   "merci",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Fleur de Napoléon, le « Père la Violette » ; modestie au langage des fleurs."
+ },
+ {
+  "id": "ancolie",
+  "prix": 3.4,
+  "sens": "Douce folie et hardiesse",
+  "occ": [
+   "amour",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Folie au langage des fleurs : ses éperons évoquent le bonnet du bouffon."
+ },
+ {
+  "id": "lilas",
+  "prix": 8.0,
+  "sens": "Premiers émois amoureux",
+  "sens_couleur": {
+   "violet": "Désir naissant, premier amour",
+   "blanc": "Innocence de la jeunesse"
+  },
+  "occ": [
+   "amour",
+   "anniv",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Venu d'Orient par Constantinople au XVIe siècle ; sens victorien selon la couleur."
+ },
+ {
+  "id": "freesia",
+  "prix": 2.7,
+  "sens": "Amitié confiante et complice",
+  "occ": [
+   "merci",
+   "anniv",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Sens moderne : amitié et confiance ; parfum fruité venu d'Afrique du Sud."
+ },
+ {
+  "id": "viburnum-roseum",
+  "prix": 6.5,
+  "sens": "Flocons de tendresse acidulée",
+  "occ": [
+   "juste",
+   "merci",
+   "anniv"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage : boules vert anis qui blanchissent en s'ouvrant, comme la neige."
+ },
+ {
+  "id": "fritillaire-imperiale",
+  "prix": 12.0,
+  "sens": "Majesté et puissance",
+  "occ": [
+   "bravo",
+   "anniv"
+  ],
+  "eviter": [],
+  "note": "Couronne impériale, au sens victorien ; une légende voit des larmes dans son nectar."
+ },
+ {
+  "id": "fritillaire-meleagris",
+  "prix": 3.0,
+  "sens": "Singularité, beauté en damier",
+  "occ": [
+   "juste",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage : meleagris, la pintade, pour son damier ; fritillus, le cornet à dés."
+ },
+ {
+  "id": "fritillaire-persica",
+  "prix": 7.0,
+  "sens": "Mystère sombre et velouté",
+  "occ": [
+   "juste",
+   "bravo"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage : clochettes prune presque noires, venues du Proche-Orient."
+ },
+ {
+  "id": "fritillaire-michailovskyi",
+  "prix": 4.5,
+  "sens": "Merveille de curiosité",
+  "occ": [
+   "juste",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage : petites cloches pourpres bordées d'or, natives de l'est de la Turquie."
+ },
+ {
+  "id": "allium-grosse-tete",
+  "prix": 5.5,
+  "sens": "Unité, force tranquille",
+  "occ": [
+   "bravo",
+   "courage",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage : des centaines de fleurettes réunies en une seule sphère."
+ },
+ {
+  "id": "allium-petit",
+  "prix": 2.0,
+  "sens": "Espièglerie pétillante",
+  "occ": [
+   "juste",
+   "anniv"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage : petites têtes graphiques, cousines de la ciboulette et de l'ail."
+ },
+ {
+  "id": "iris-hollandais",
+  "prix": 2.6,
+  "sens": "J'ai un message pour toi",
+  "occ": [
+   "merci",
+   "bravo",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Iris, messagère des dieux grecs et arc-en-ciel, a donné son nom à la fleur."
+ },
+ {
+  "id": "iris-barbu",
+  "prix": 3.5,
+  "sens": "Sagesse et éloquence",
+  "occ": [
+   "bravo",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "Messagère des dieux, Iris inspire l'éloquence ; la fleur de lys en dériverait."
+ },
+ {
+  "id": "ornithogale",
+  "prix": 3.3,
+  "sens": "Pureté et clarté d'étoile",
+  "occ": [
+   "courage",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "Étoile de Bethléem, en écho à l'astre des Rois mages ; pureté au langage des fleurs."
+ },
+ {
+  "id": "pavot-islande",
+  "prix": 4.5,
+  "sens": "Rêverie légère et réconfort",
+  "sens_couleur": {
+   "rouge": "Consolation du cœur",
+   "blanc": "Sommeil et apaisement"
+  },
+  "occ": [
+   "courage",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Fleur d'Hypnos et de Morphée ; ce pavot aux tiges duveteuses vient du Grand Nord."
+ },
+ {
+  "id": "camassia",
+  "prix": 3.5,
+  "sens": "Quiétude des prairies bleues",
+  "occ": [
+   "juste",
+   "courage"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage : bulbe comestible longtemps récolté par les peuples amérindiens."
+ },
+ {
+  "id": "eremurus",
+  "prix": 9.0,
+  "sens": "Grandeur et élan vers le ciel",
+  "occ": [
+   "bravo",
+   "anniv"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage : « chandelle du désert », hampes géantes des steppes d'Asie centrale."
+ },
+ {
+  "id": "triteleia",
+  "prix": 1.8,
+  "sens": "Petit ciel étoilé",
+  "occ": [
+   "juste",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage : ombelles d'étoiles bleues, originaires de Californie et d'Oregon."
+ },
+ {
+  "id": "jacinthe-des-bois",
+  "prix": 2.2,
+  "sens": "Constance et humilité",
+  "occ": [
+   "merci",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Langage victorien : constance ; elle tapisse de bleu les sous-bois atlantiques."
+ },
+ {
+  "id": "scille",
+  "prix": 2.8,
+  "sens": "Premier éveil bleu de l'année",
+  "occ": [
+   "courage",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage : l'un des tout premiers bulbes à fleurir, d'un bleu intense."
+ },
+ {
+  "id": "niveole",
+  "prix": 2.5,
+  "sens": "Promesse blanche du dégel",
+  "occ": [
+   "courage",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Du grec leukoion, « violette blanche » ; cousine du perce-neige, fleur d'espoir."
+ },
+ {
+  "id": "crocus",
+  "prix": 1.5,
+  "sens": "Allégresse de la jeunesse",
+  "occ": [
+   "juste",
+   "anniv"
+  ],
+  "eviter": [],
+  "note": "Langage victorien : joie juvénile ; l'un des premiers messagers du printemps."
+ },
+ {
+  "id": "sparaxis",
+  "prix": 2.0,
+  "sens": "Gaieté bariolée d'arlequin",
+  "occ": [
+   "juste",
+   "anniv"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage : « fleur arlequin » d'Afrique du Sud aux couleurs éclatantes."
+ },
+ {
+  "id": "ixia",
+  "prix": 1.7,
+  "sens": "Joie qui s'ouvre au soleil",
+  "occ": [
+   "juste",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage : épis étoilés du Cap dont les fleurs ne s'ouvrent qu'au soleil."
+ },
+ {
+  "id": "glaieul-nain",
+  "prix": 3.5,
+  "sens": "Rendez-vous plein de grâce",
+  "occ": [
+   "amour",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Glaïeul de printemps ; jadis, ses fleurs ouvertes fixaient l'heure d'un rendez-vous."
+ },
+ {
+  "id": "amaryllis",
+  "prix": 11.0,
+  "sens": "Fierté et splendeur",
+  "occ": [
+   "bravo",
+   "anniv",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "Nom d'une bergère des Bucoliques de Virgile ; fierté au langage des fleurs."
+ },
+ {
+  "id": "nerine",
+  "prix": 5.5,
+  "sens": "Étincelle de l'arrière-saison",
+  "occ": [
+   "juste",
+   "anniv"
+  ],
+  "eviter": [],
+  "note": "Nommée d'après les Néréides ; ses pétales scintillent comme de la poudre de diamant."
+ },
+ {
+  "id": "dahlia-assiette",
+  "prix": 8.0,
+  "sens": "Une gratitude démesurée",
+  "occ": [
+   "merci",
+   "bravo",
+   "anniv"
+  ],
+  "eviter": [],
+  "note": "Têtes de plus de 25 cm ; le dahlia dit la reconnaissance au langage des fleurs."
+ },
+ {
+  "id": "dahlia-decoratif",
+  "prix": 5.0,
+  "sens": "Reconnaissance et prestance",
+  "occ": [
+   "merci",
+   "anniv",
+   "bravo"
+  ],
+  "eviter": [],
+  "note": "Nommé d'après le botaniste suédois Anders Dahl ; reconnaissance au langage des fleurs."
+ },
+ {
+  "id": "dahlia-balle",
+  "prix": 4.5,
+  "sens": "Merci tout en rondeur",
+  "occ": [
+   "merci",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Sens du dahlia, la reconnaissance ; pétales roulés en cornets serrés en boule."
+ },
+ {
+  "id": "dahlia-pompon",
+  "prix": 4.2,
+  "sens": "Reconnaissance pleine d'entrain",
+  "occ": [
+   "merci",
+   "juste",
+   "anniv"
+  ],
+  "eviter": [],
+  "note": "Boules parfaites de moins de 5 cm ; le dahlia exprime la reconnaissance."
+ },
+ {
+  "id": "dahlia-cactus",
+  "prix": 4.8,
+  "sens": "Audace flamboyante",
+  "occ": [
+   "bravo",
+   "anniv"
+  ],
+  "eviter": [],
+  "note": "Pétales roulés en pointes, d'où le nom de cactus ; dahlia : reconnaissance."
+ },
+ {
+  "id": "dahlia-nenuphar",
+  "prix": 5.2,
+  "sens": "Calme gracieux, gratitude",
+  "occ": [
+   "merci",
+   "courage",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Forme ouverte et plate comme un nénuphar ; le dahlia est la fleur nationale du Mexique."
+ },
+ {
+  "id": "dahlia-collerette",
+  "prix": 4.4,
+  "sens": "Coquetterie souriante",
+  "occ": [
+   "juste",
+   "anniv"
+  ],
+  "eviter": [],
+  "note": "Une collerette de petits pétales entoure le cœur ; dahlia : reconnaissance."
+ },
+ {
+  "id": "dahlia-simple",
+  "prix": 4.0,
+  "sens": "Un merci simple et vrai",
+  "occ": [
+   "merci",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Forme la plus proche des dahlias sauvages des montagnes du Mexique."
+ },
+ {
+  "id": "dahlia-anemone",
+  "prix": 4.6,
+  "sens": "Originalité au grand cœur",
+  "occ": [
+   "anniv",
+   "merci",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Cœur bombé de fleurons tubulés, comme l'anémone ; dahlia : reconnaissance."
+ },
+ {
+  "id": "dahlia-lacinie",
+  "prix": 6.5,
+  "sens": "Créativité ébouriffée",
+  "occ": [
+   "bravo",
+   "anniv"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage : pétales fendus à la pointe, effet frangé ou étoilé."
+ },
+ {
+  "id": "cosmos",
+  "prix": 2.5,
+  "sens": "Harmonie paisible",
+  "occ": [
+   "juste",
+   "merci",
+   "courage"
+  ],
+  "eviter": [],
+  "note": "Du grec kosmos, ordre et harmonie, pour la régularité de ses pétales."
+ },
+ {
+  "id": "zinnia",
+  "prix": 2.2,
+  "sens": "Pensée pour un ami absent",
+  "sens_couleur": {
+   "rouge": "Constance du cœur",
+   "fuchsia": "Affection durable",
+   "blanc": "Bonté d'âme",
+   "jaune": "Souvenir de chaque jour"
+  },
+  "occ": [
+   "juste",
+   "merci",
+   "courage"
+  ],
+  "eviter": [],
+  "note": "Langage victorien, nuancé par la couleur ; nommé d'après le botaniste J. G. Zinn."
+ },
+ {
+  "id": "scabieuse",
+  "prix": 4.0,
+  "sens": "Présence tendre dans l'épreuve",
+  "occ": [
+   "courage",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Jadis remède contre la gale (scabies) ; « fleur des veuves » au langage des fleurs."
+ },
+ {
+  "id": "delphinium",
+  "prix": 6.0,
+  "sens": "Légèreté, souffle d'azur",
+  "occ": [
+   "anniv",
+   "bravo",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Du grec delphis, dauphin, pour la forme du bouton ; légèreté au langage des fleurs."
+ },
+ {
+  "id": "pied-alouette-annuel",
+  "prix": 3.0,
+  "sens": "Insouciance rieuse",
+  "occ": [
+   "juste",
+   "anniv"
+  ],
+  "eviter": [],
+  "note": "Éperon semblable à la griffe d'une alouette ; légèreté au langage des fleurs."
+ },
+ {
+  "id": "digitale",
+  "prix": 5.0,
+  "sens": "Ambition assumée",
+  "occ": [
+   "bravo",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage : hautes hampes ; dite gant de Notre-Dame, elle donne la digitaline."
+ },
+ {
+  "id": "lisianthus",
+  "prix": 5.0,
+  "sens": "Charisme et haute estime",
+  "occ": [
+   "merci",
+   "anniv",
+   "amour"
+  ],
+  "eviter": [],
+  "note": "Sens moderne : estime et gratitude ; fleur des prairies du Texas sublimée au Japon."
+ },
+ {
+  "id": "muflier",
+  "prix": 3.2,
+  "sens": "Aplomb et belle assurance",
+  "occ": [
+   "bravo",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Gueule-de-loup qui s'ouvre quand on la pince ; présomption au langage des fleurs."
+ },
+ {
+  "id": "giroflee-matthiole",
+  "prix": 3.3,
+  "sens": "Beauté durable, attachement",
+  "occ": [
+   "amour",
+   "anniv",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Langage des fleurs : beauté durable ; nommée d'après le médecin italien Mattioli."
+ },
+ {
+  "id": "hortensia-boule",
+  "prix": 12.0,
+  "sens": "Gratitude du fond du cœur",
+  "occ": [
+   "merci",
+   "anniv",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Sens moderne : remerciement ; les Victoriens y voyaient plutôt de la vantardise."
+ },
+ {
+  "id": "hortensia-lacecap",
+  "prix": 11.0,
+  "sens": "Délicatesse et ouverture",
+  "occ": [
+   "merci",
+   "courage"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage : fleurs fertiles au centre, ceinturées de fleurs stériles colorées."
+ },
+ {
+  "id": "hortensia-paniculata",
+  "prix": 10.0,
+  "sens": "Plénitude lumineuse",
+  "occ": [
+   "merci",
+   "bravo",
+   "anniv"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage : grands cônes crème qui rosissent en fin de saison."
+ },
+ {
+  "id": "hortensia-arborescens",
+  "prix": 9.5,
+  "sens": "Blancheur généreuse et apaisante",
+  "occ": [
+   "merci",
+   "courage",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage : grosses boules blanches d'Annabelle, qui verdissent en vieillissant."
+ },
+ {
+  "id": "astilbe",
+  "prix": 3.3,
+  "sens": "Patience, je t'attendrai",
+  "occ": [
+   "amour",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Du grec « sans éclat », pour ses feuilles mates ; sens moderne : patience."
+ },
+ {
+  "id": "campanule",
+  "prix": 3.8,
+  "sens": "Gratitude en clochettes",
+  "occ": [
+   "merci",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Langage victorien : gratitude ; son nom vient du latin campana, la cloche."
+ },
+ {
+  "id": "phlox",
+  "prix": 3.0,
+  "sens": "Nos âmes sont unies",
+  "occ": [
+   "amour",
+   "merci",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Du grec phlox, flamme ; unanimité et âmes unies au langage victorien."
+ },
+ {
+  "id": "gerbera",
+  "prix": 3.0,
+  "sens": "Joie de vivre contagieuse",
+  "occ": [
+   "anniv",
+   "bravo",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "Sens moderne : gaieté ; nommé d'après le naturaliste allemand Traugott Gerber."
+ },
+ {
+  "id": "germini",
+  "prix": 2.2,
+  "sens": "Petits sourires à offrir",
+  "occ": [
+   "juste",
+   "anniv",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "Mini-gerbera : la gaieté du gerbera (sens moderne), en format espiègle."
+ },
+ {
+  "id": "tournesol",
+  "prix": 4.0,
+  "sens": "Admiration solaire et loyauté",
+  "occ": [
+   "anniv",
+   "bravo",
+   "courage"
+  ],
+  "eviter": [],
+  "note": "Jeune, il suit la course du soleil ; immortalisé par les toiles de Van Gogh."
+ },
+ {
+  "id": "chrysantheme-disbud",
+  "prix": 4.5,
+  "sens": "Mémoire fidèle et longévité",
+  "occ": [
+   "courage"
+  ],
+  "eviter": [
+   "amour",
+   "anniv",
+   "bravo"
+  ],
+  "note": "Fleur de la Toussaint en France ; au Japon, emblème impérial de longévité."
+ },
+ {
+  "id": "chrysantheme-araignee",
+  "prix": 6.5,
+  "sens": "Élégance graphique du Japon",
+  "occ": [
+   "bravo",
+   "merci",
+   "juste"
+  ],
+  "eviter": [
+   "amour"
+  ],
+  "note": "Au Japon, le kiku dit la longévité ; on le fête le 9e jour du 9e mois."
+ },
+ {
+  "id": "chrysantheme-santini-pompon",
+  "prix": 3.2,
+  "sens": "Simplicité qui dure",
+  "occ": [
+   "juste",
+   "merci"
+  ],
+  "eviter": [
+   "amour"
+  ],
+  "note": "Sens d'usage : petites têtes très durables en vase ; en Asie, gage de longue vie."
+ },
+ {
+  "id": "chrysantheme-marguerite-spray",
+  "prix": 3.4,
+  "sens": "Vitalité ensoleillée",
+  "occ": [
+   "merci",
+   "juste",
+   "anniv"
+  ],
+  "eviter": [
+   "amour"
+  ],
+  "note": "Sens d'usage : allure de marguerite, loin des grosses fleurs de la Toussaint."
+ },
+ {
+  "id": "oeillet-standard",
+  "prix": 2.2,
+  "sens": "Fascination et amour ardent",
+  "sens_couleur": {
+   "rouge": "Amour vif et profond",
+   "blanc": "Affection pure, loyauté",
+   "rose": "Amour maternel"
+  },
+  "occ": [
+   "amour",
+   "merci",
+   "anniv"
+  ],
+  "eviter": [
+   "bravo"
+  ],
+  "note": "Au théâtre, l'œillet annonçait jadis un renvoi : on n'en offre pas aux artistes."
+ },
+ {
+  "id": "oeillet-spray",
+  "prix": 2.7,
+  "sens": "Mille attentions affectueuses",
+  "occ": [
+   "juste",
+   "merci",
+   "anniv"
+  ],
+  "eviter": [
+   "bravo"
+  ],
+  "note": "Plusieurs fleurettes par tige ; comme tout œillet, à éviter pour féliciter un artiste."
+ },
+ {
+  "id": "oeillet-de-poete-dianthus",
+  "prix": 3.2,
+  "sens": "Galanterie et finesse",
+  "occ": [
+   "amour",
+   "merci",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Dianthus, « fleur divine » en grec ; galanterie au langage victorien."
+ },
+ {
+  "id": "reine-marguerite",
+  "prix": 2.6,
+  "sens": "Je partage tes sentiments",
+  "occ": [
+   "amour",
+   "merci",
+   "courage"
+  ],
+  "eviter": [],
+  "note": "Langage victorien : « je partage vos sentiments » ; venue de Chine au XVIIIe siècle."
+ },
+ {
+  "id": "aster-vivace-symphyotrichum",
+  "prix": 2.4,
+  "sens": "Constellation d'affection",
+  "occ": [
+   "juste",
+   "merci",
+   "anniv"
+  ],
+  "eviter": [],
+  "note": "Du grec aster, étoile ; floraison d'automne en nuées de petites fleurs."
+ },
+ {
+  "id": "agapanthe",
+  "prix": 5.5,
+  "sens": "Amour profond et sincère",
+  "occ": [
+   "amour",
+   "anniv",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "Du grec agapê, amour, et anthos, fleur ; originaire d'Afrique australe."
+ },
+ {
+  "id": "glaieul",
+  "prix": 3.2,
+  "sens": "Force de caractère et intégrité",
+  "occ": [
+   "bravo",
+   "courage",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "Du latin gladius, glaive ; ses fleurs ouvertes donnaient l'heure d'un rendez-vous."
+ },
+ {
+  "id": "arum-calla",
+  "prix": 7.0,
+  "sens": "Magnificence et pureté",
+  "occ": [
+   "amour",
+   "bravo",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "Du grec kallos, beauté ; l'arum blanc orne mariages et cérémonies solennelles."
+ }
+]

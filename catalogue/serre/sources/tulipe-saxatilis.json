@@ -1,0 +1,294 @@
+{
+ "sid": "tulipe-saxatilis",
+ "schema": "STANDARD-SOURCES.md section 5",
+ "legende_entrees": "« cultivars » = entrées de la sorte : cultivars, formes botaniques ou espèce type ; « sans_photo » = nom prouvé (N1 ou N3) mais aucune photo nommée retenue ; « ecartes » = rejetés avec la raison",
+ "rattachement_catalogue": "aucun coloris existant du catalogue ne correspond à cette sorte (catalogue.json, inventaire_fleurs.csv et skus.csv relus le 2026-10-08 : aucune tulipe botanique) ; coloris_catalogue est donc vide",
+ "genre": "Tulipa",
+ "recensement": {
+  "date": "2026-10-08",
+  "agent": "fleur-recensement",
+  "portee": "tulipes botaniques : groupes Kaufmanniana (12), Fosteriana (13), Greigii (14) du KAVB et espèces / hybrides de la division 15 (« Overige Groep » = Miscellaneous) ; tout ce qui est documenté par une photo nommée fiable",
+  "limites": [
+   "N1 : la base de cultivars du KAVB (login.kavb.nl/siergewassen) n'est interrogeable que par un formulaire de recherche, non utilisé (règle « aucun formulaire »). Le N1 des cultivars repose donc sur les listes annuelles « Registraties » du KAVB (PDF, 2004-07 à 2013, huit documents) et sur les mentions « Mutant van » qui prouvent l'existence d'un parent. Les cultivars plus anciens ou postérieurs à 2013 n'ont pas de N1 lu.",
+   "N1 espèces : POWO (Kew) renvoie une erreur 403 (protection Cloudflare, non contournée). Les noms d'espèces sont recoupés avec le GBIF Backbone (API), iNaturalist et les textes de la Pacific Bulb Society ; à revérifier sur POWO.",
+   "N2 : Floricode (codes et photos des variétés vendues) est sur abonnement et n'a pas été consulté ; aucune fiche d'obtenteur à photo exploitable n'a été trouvée pour ces tulipes. Aucun cultivar n'est donc au niveau A.",
+   "Nouveautés 2014-2026 : les listes d'enregistrement KAVB de ces années ne sont pas publiées en PDF libre ; la fenêtre des cinq dernières années n'est pas couverte.",
+   "Les photos ne sont jamais stockées dans le dépôt : seules les adresses, auteurs, licences et niveaux sont écrits. Les vignettes regardées sont dans le cache de l'atelier (refcache/tulipe-botanique/).",
+   "Photos PBS : droits réservés aux photographes (consultation et mesure seulement, jamais publiées). Photos iNaturalist : licences CC BY-NC en majorité, mêmes usages."
+  ],
+  "statuts": "en production = niveau A ou B (à mesurer par fleur-coloris puis sondage de 10 % par l'orchestrateur) ; à confirmer = niveau C ou D ; écarté = avec la raison"
+ },
+ "nom": "Tulipe de Crète (tulipe saxatilis, groupe Bakeri)",
+ "latin": "Tulipa saxatilis Sieber ex Spreng. (syn. T. bakeri) et 'Lilac Wonder'",
+ "priorite": "P2",
+ "pourquoi_cette_priorite": "teinte rose lilas à grand halo jaune unique dans la sélection ; AGM (Lilac Wonder) ; espèce bien documentée (iNaturalist : 142 observations)",
+ "groupe_registre": {
+  "autorite": "KAVB",
+  "division": 15,
+  "nom_registre": "Overige Groep (Miscellaneous)",
+  "preuve": "RHS « Tulipa saxatilis (Bakeri Group) 'Lilac Wonder' (15) »"
+ },
+ "taxonomie": {
+  "espece_mere": "Tulipa saxatilis Sieber ex Spreng., accepté (GBIF usageKey 5299458) ; T. bakeri A.D.Hall synonyme (usageKey 5299461)",
+  "nom_accepte_source": "GBIF ; POWO non consulté"
+ },
+ "melange": "Espèce de Crète et Égée ; T. bakeri / 'Lilac Wonder' = forme à rose plus profond et anthères orange-jaune.",
+ "forme": {
+  "resume": "étoile parfumée, 1 à 4 fleurs, rose à lilas pourpre, à grand halo jaune cerné de blanc à la base ; coupe puis plate au soleil",
+  "details": [
+   "RHS : « star-shaped, pink to lilac purple, yellow haloes rimmed with white at the base »",
+   "PBS : couleur délavée en plein soleil (McDonough)"
+  ],
+  "sources": [
+   "RHS « Tulipa saxatilis (15) » ; PBS TulipaSpeciesFour"
+  ]
+ },
+ "feuilles": {
+  "resume": "feuilles longues, linéaires, luisantes, vert franc, larges et coriaces (plus larges que celles des autres petites espèces)",
+  "details": [
+   "RHS : « long, linear, glossy green leaves » ; PBS (McDonough) : feuillage jugé trop large et coriace"
+  ]
+ },
+ "hauteur_cm": "25 à 35 (RHS)",
+ "floraison": "mi à fin de printemps (RHS)",
+ "distinction": {
+  "vs_humilis": "halo jaune bien plus large, feuilles luisantes plus larges, stolons"
+ },
+ "coloris_catalogue": [],
+ "cultivars": [
+  {
+   "id": "saxatilis",
+   "nom_affiche": "Tulipe de Crète (T. saxatilis)",
+   "nom_enregistre": "Tulipa saxatilis Sieber ex Spreng.",
+   "synonymes": [],
+   "groupe": "Espèce (KAVB Div. 15, « Overige Groep » / Miscellaneous)",
+   "obtenteur": null,
+   "annee": null,
+   "numeros": {},
+   "couleur_registre": "rose à lilas, halo jaune bordé de blanc",
+   "motif": "grand halo jaune basal",
+   "sources": [
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://www.rhs.org.uk/plants/100389/tulipa-saxatilis-(15)/details",
+     "consulte": "2026-10-08",
+     "note": "RHS (société savante) : fiche (15) : feuilles longues, linéaires, luisantes ; fleurs en étoile parfumées, rose à pourpre lilas, halos jaunes bordés de blanc à la base ; 1 à 4 fleurs ; jusqu'à 35 cm ; stolons"
+    },
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaSpeciesFour",
+     "consulte": "2026-10-08",
+     "note": "Pacific Bulb Society : T. saxatilis : rose à pourpre lilas à grande tache jaune, en coupe puis à plat au soleil ; stolonifère"
+    },
+    {
+     "role": "taxonomie",
+     "niveau": "N4",
+     "url": "https://api.gbif.org/v1/species/match?kingdom=Plantae&name=Tulipa%20saxatilis",
+     "consulte": "2026-10-08",
+     "note": "accepté : Tulipa saxatilis Sieber ex Spreng. (usageKey 5299458) ; T. bakeri en synonyme"
+    }
+   ],
+   "photos": [
+    {
+     "url": "https://pacificbulbsociety.org/pbswiki/files/Tulipa/Tulipa_saxatilis_bakeri_AT1.jpg",
+     "page": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaSpeciesFour",
+     "niveau": "N3",
+     "auteur": "Arnold Trachtenberg",
+     "licence": "© photographe ; Pacific Bulb Society (reproduction non libre : consultation et mesure seulement)",
+     "legende": "Tulipa saxatilis, bakeri form, Arnold Trachtenberg",
+     "consulte": "2026-10-08",
+     "vue": "dessus",
+     "eclairage": null,
+     "balance_blancs": null
+    },
+    {
+     "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/114629171/original.jpeg",
+     "page": "https://www.inaturalist.org/observations/70502898",
+     "niveau": "N3",
+     "auteur": "fotis-samaritakis",
+     "licence": "iNaturalist CC-BY-NC (observation de qualité recherche)",
+     "legende": "Tulipa saxatilis, Κρήτη, Ελλάδα, 2016-02-23",
+     "consulte": "2026-10-08",
+     "vue": "spontané (Crète)",
+     "date_prise": "2016-02-23",
+     "eclairage": null,
+     "balance_blancs": null
+    },
+    {
+     "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/326469185/original.jpg",
+     "page": "https://www.inaturalist.org/observations/186783588",
+     "niveau": "N3",
+     "auteur": "thibaudaronson",
+     "licence": "iNaturalist CC-BY-SA (observation de qualité recherche)",
+     "legende": "Tulipa saxatilis, Gious Kampos, Spili, Crete, 2023-04-01",
+     "consulte": "2026-10-08",
+     "vue": "spontané (Crète)",
+     "date_prise": "2023-04-01",
+     "eclairage": null,
+     "balance_blancs": null
+    }
+   ],
+   "mesures": {},
+   "niveau_preuve": "B",
+   "existence_n1_n2": false,
+   "statut": "en production",
+   "coloris_catalogue": null,
+   "familles_de_sources": [
+    "pacificbulbsociety.org",
+    "www.inaturalist.org",
+    "www.rhs.org.uk"
+   ]
+  },
+  {
+   "id": "lilac-wonder",
+   "nom_affiche": "Lilac Wonder (T. saxatilis, groupe Bakeri)",
+   "nom_enregistre": "Lilac Wonder",
+   "synonymes": [
+    "Tulipa bakeri 'Lilac Wonder'",
+    "Tulipa 'Lilac Wonder'"
+   ],
+   "groupe": "Espèce (KAVB Div. 15, « Overige Groep » / Miscellaneous)",
+   "obtenteur": null,
+   "annee": null,
+   "numeros": {},
+   "couleur_registre": "rose mauve, large zone jaune basale (RHS)",
+   "motif": "zone jaune basale très large",
+   "sources": [
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://www.rhs.org.uk/plants/67509/tulipa-saxatilis-bakeri-group-lilac-wonder-15/details",
+     "consulte": "2026-10-08",
+     "note": "RHS (société savante) : fiche (15) AGM ; syn. Tulipa bakeri 'Lilac Wonder', Tulipa 'Lilac Wonder' ; 25 cm, feuillage luisant, fleurs solitaires rose-mauve plus pâles dedans à grande zone jaune à la base"
+    },
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaSpeciesFour",
+     "consulte": "2026-10-08",
+     "note": "Pacific Bulb Society : 'Lilac Wonder' ; T. bakeri inclus dans T. saxatilis ; photos Mark McDonough, Mary Sue Ittner"
+    }
+   ],
+   "photos": [
+    {
+     "url": "https://pacificbulbsociety.org/pbswiki/files/Tulipa/Tulipa_saxatilis_ssp_bakeri_Lilac_Wonder_MM10.jpg",
+     "page": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaSpeciesFour",
+     "niveau": "N3",
+     "auteur": "Mark McDonough",
+     "licence": "© photographe ; Pacific Bulb Society (reproduction non libre : consultation et mesure seulement)",
+     "legende": "Tulipa saxatilis 'Lilac Wonder', Mark McDonough",
+     "consulte": "2026-10-08",
+     "vue": "groupe",
+     "eclairage": null,
+     "balance_blancs": null
+    },
+    {
+     "url": "https://pacificbulbsociety.org/pbswiki/files/Tulipa/Tulipa_saxatilis_ssp_bakeri_Lilac-Wonder_2006_msi.jpg",
+     "page": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaSpeciesFour",
+     "niveau": "N3",
+     "auteur": "Mary Sue Ittner",
+     "licence": "© photographe ; Pacific Bulb Society (reproduction non libre : consultation et mesure seulement)",
+     "legende": "Tulip saxatilis 'Lilac Wonder', 2006, Mary Sue Ittner",
+     "consulte": "2026-10-08",
+     "vue": "groupe en pot",
+     "eclairage": null,
+     "balance_blancs": null
+    },
+    {
+     "url": "https://pacificbulbsociety.org/pbswiki/files/Tulipa/Tulipa_saxatilis_ssp_bakeri-Lilac-Wonder_08_msi.jpg",
+     "page": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaSpeciesFour",
+     "niveau": "N3",
+     "auteur": "Mary Sue Ittner",
+     "licence": "© photographe ; Pacific Bulb Society (reproduction non libre : consultation et mesure seulement)",
+     "legende": "Tulip saxatilis 'Lilac Wonder', 2008, Mary Sue Ittner",
+     "consulte": "2026-10-08",
+     "vue": "groupe",
+     "eclairage": null,
+     "balance_blancs": null
+    },
+    {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/e/e1/2011-365-105_Perfection_in_a_Flower_Form_%285623780094%29.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:2011-365-105_Perfection_in_a_Flower_Form_%285623780094%29.jpg",
+     "niveau": "N4",
+     "auteur": "cogdogblog",
+     "licence": "CC BY 2.0",
+     "legende": "File:2011-365-105 Perfection in a Flower Form (5623780094).jpg",
+     "consulte": "2026-10-08",
+     "vue": "gros plan intérieur",
+     "date_prise": "2011-04-15 15:38:29",
+     "eclairage": null,
+     "balance_blancs": null,
+     "miniature": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e1/2011-365-105_Perfection_in_a_Flower_Form_%285623780094%29.jpg/960px-2011-365-105_Perfection_in_a_Flower_Form_%285623780094%29.jpg"
+    },
+    {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/e/ef/2016-366-111_Tiny_Feed_Time_%2826528115926%29.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:2016-366-111_Tiny_Feed_Time_%2826528115926%29.jpg",
+     "niveau": "N4",
+     "auteur": "cogdogblog",
+     "licence": "CC BY 2.0",
+     "legende": "File:2016-366-111 Tiny Feed Time (26528115926).jpg",
+     "consulte": "2026-10-08",
+     "vue": "gros plan intérieur",
+     "date_prise": "2016-04-20 10:20:22",
+     "eclairage": null,
+     "balance_blancs": null,
+     "miniature": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/2016-366-111_Tiny_Feed_Time_%2826528115926%29.jpg/960px-2016-366-111_Tiny_Feed_Time_%2826528115926%29.jpg"
+    }
+   ],
+   "mesures": {},
+   "niveau_preuve": "B",
+   "existence_n1_n2": false,
+   "statut": "en production",
+   "doutes": [
+    "existence N1/N2 non établie : base KAVB (formulaire) non interrogée et Floricode non consulté ; à valider au sondage de 10 %"
+   ],
+   "coloris_catalogue": null,
+   "familles_de_sources": [
+    "commons.wikimedia.org",
+    "pacificbulbsociety.org",
+    "www.rhs.org.uk"
+   ]
+  }
+ ],
+ "sans_photo": [],
+ "ecartes": [],
+ "couverture": {
+  "cultivars_retenus_avec_photo": 2,
+  "niveau_A": 0,
+  "niveau_B": 2,
+  "niveau_C": 0,
+  "niveau_D": 0,
+  "prouves_A_ou_B": 2,
+  "sans_photo": 0,
+  "ecartes": 0,
+  "au_catalogue": 0,
+  "existence_N1_lue": 0,
+  "remarque": "« enregistrés » du KAVB : total inconnu (base non interrogée). Les nombres ci-dessus portent sur ce qui a été recensé dans les sources consultées"
+ },
+ "vues_deja_photographiees": {
+  "face (dessus, intérieur)": 3,
+  "trois-quarts": 0,
+  "profil": 0,
+  "dos (revers, extérieur)": 0,
+  "bouton": 0,
+  "fané ou déclin": 0,
+  "feuilles": 0,
+  "tige, pied": 0,
+  "plante entière ou massif": 3
+ },
+ "vues_manquantes": [
+  "trois-quarts",
+  "profil",
+  "dos (revers, extérieur)",
+  "bouton",
+  "fané ou déclin",
+  "feuilles",
+  "tige, pied",
+  "dessous et attache des feuilles",
+  "épaisseur et surface de la tige",
+  "stades intermédiaires (goblet, coupe, déclin)"
+ ],
+ "vues_note": "comptage des photos retenues par mot-clé de la rubrique « vue » ; les photos de forme par angle et par stade sont à compléter par fleur-refs (STANDARD-SOURCES, exhaustivité)"
+}

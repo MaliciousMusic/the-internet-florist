@@ -1,0 +1,29 @@
+cerisier-du-japon-sato-zakura;Cerisier à fleurs du Japon;Branches & baies;line;branche
+cerisiers-hatifs-fleurs-simples;Cerisiers hâtifs à fleurs simples;Branches & baies;line;branche
+abricotier-du-japon-ume;Abricotier du Japon;Branches & baies;line;branche
+amandier-en-fleurs;Amandier;Branches & baies;line;branche
+amandier-de-chine-cerisier-nain;Amandier de Chine & cerisier nain ;Branches & baies;line;branche
+pecher-a-fleurs;Pêcher à fleurs;Branches & baies;line;branche
+pommier-pommetier-en-fleurs;Pommier & pommetier à fleurs;Branches & baies;line;branche
+pommetier-a-fruits;Pommetier à fruits décoratifs;Branches & baies;berries;baie
+cognassier-du-japon;Cognassier du Japon;Branches & baies;line;branche
+magnolia-branches;Magnolia;Branches & baies;line;branche
+forsythia;Forsythia;Branches & baies;line;branche
+amelanchier;Amélanchier;Branches & baies;line;branche
+cornouiller-a-fleurs;Cornouiller à fleurs;Branches & baies;line;branche
+hamamelis;Hamamélis;Branches & baies;line;branche
+viorne-d-hiver;Viorne d’hiver;Branches & baies;spray;branche
+spiree;Spirée;Branches & baies;line;branche
+deutzia;Deutzia;Branches & baies;spray;branche
+seringat;Seringat;Branches & baies;spray;branche
+groseillier-a-fleurs;Groseillier à fleurs;Branches & baies;spray;branche
+enkianthus-dodan;Enkianthus;Branches & baies;foliage;branche
+glycine;Glycine;Branches & baies;drape;branche
+mitsumata;Mitsumata;Branches & baies;line;branche
+saule-a-chatons;Saule à chatons;Branches & baies;line;branche
+saule-fascie-sekka;Saule fascié 'Sekka';Branches & baies;line;branche
+saule-tortueux;Saule tortueux;Branches & baies;line;branche
+cornouiller-a-bois-colore;Cornouiller à bois coloré;Branches & baies;line;branche
+bouleau;Bouleau;Branches & baies;line;branche
+noisetier-tortueux-chatons;Noisetier;Branches & baies;line;branche
+houx-a-baies;Houx à baies;Branches & baies;berries;baie

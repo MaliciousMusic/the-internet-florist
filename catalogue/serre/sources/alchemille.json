@@ -1,0 +1,1564 @@
+{
+ "sid": "alchemille",
+ "schema": "STANDARD-SOURCES.md section 5",
+ "genre": "Alchemilla",
+ "famille": "Rosaceae",
+ "date_consultation": "2026-10-09",
+ "redige_par": "fleur-recensement (passage unique : inventaire, preuves et sondage réunis, consigne du porteur du 2026-10-09 : recensement court)",
+ "perimetre": "Alchemilla mollis (Buser) Rothm. et ses cultivars, fleur coupée de remplissage ; A. erythropoda, A. epipsila, A. xanthochlora seulement si vendues en coupe : aucune vente en coupe vue dans les sources lues, non retenues.",
+ "taxonomie": {
+  "nom_accepte": "Alchemilla mollis (Buser) Rothm. (IPNI 720776-1, 1934 ; GBIF 3028528 accepté ; RHS 774)",
+  "autorite_enregistrement": "aucune : le genre est absent de la liste des ICRA de l'ISHS (page A relue le 2026-10-09 : 31 genres Al…, pas d'Alchemilla). Aucun registre d'enregistrement : limite. Remplacé par les autorités de nom : IPNI, GBIF, RHS Plants, Missouri Botanical Garden ; POWO 403 (NV) ; WFO non lu (NV).",
+  "groupe": "aucun groupe horticole",
+  "melanges": "A. mollis est une micro-espèce du complexe A. vulgaris agg. (plus de 1 000 taxons apomictiques)"
+ },
+ "sources_trame": {
+  "ISHS": {
+   "niveau": "N1",
+   "url": "https://ishs.org/sci/taxlist/ataxlist.htm",
+   "constat": "Alchemilla absent"
+  },
+  "IPNI": {
+   "niveau": "N1",
+   "url": "https://www.ipni.org/n/720776-1"
+  },
+  "GBIF": {
+   "niveau": "N1",
+   "url": "https://www.gbif.org/species/3028528"
+  },
+  "RHS": {
+   "niveau": "N3",
+   "url": "https://www.rhs.org.uk/plants/774/alchemilla-mollis/details"
+  },
+  "MBG": {
+   "niveau": "N3",
+   "url": "https://plantfinder.mobot.org/"
+  },
+  "Benary": {
+   "niveau": "N2",
+   "url": "https://www.benary.com/products/alchemilla-mollis-thriller/thriller-am0101t"
+  },
+  "Chicago Botanic Garden": {
+   "niveau": "N3",
+   "url": "https://www.chicagobotanic.org/plantcollections/plantfinder/alchemilla_mollis_auslese--ladys_mantle"
+  },
+  "Wisconsin et NC State Extension": {
+   "niveau": "N3",
+   "url": "https://hort.extension.wisc.edu/articles/ladys-mantle-alchemilla-mollis/"
+  },
+  "iNaturalist": {
+   "niveau": "N3",
+   "url": "https://www.inaturalist.org/taxa/56022"
+  },
+  "Commons et Wikidata": {
+   "niveau": "N4",
+   "url": "https://commons.wikimedia.org/wiki/Category:Alchemilla_mollis"
+  }
+ },
+ "sku_bouquet": {
+  "sku": "alchemille~0",
+  "coloris": "vert-acide",
+  "nom_affiche": "Vert acide (mollis)",
+  "tiges": 2,
+  "cultivar_reel": "Alchemilla mollis (Buser) Rothm., forme type, pas un cultivar",
+  "verdict": "Nom exact. C'est ce que le commerce de fleur coupée vend sous « alchemille » : RHS « popular in cut-flower displays », NC State « Good Cut », et un cultivar de coupe nommé (Thriller, Benary). Aucune liste d'assortiment d'exportateur ni Floricode lue : le détail de l'assortiment coupé n'est pas établi."
+ },
+ "sku_bouquet_note": "lots.json non créé : un seul passage, peu de formes en fleur coupée",
+ "coloris": [
+  {
+   "id": "vert-acide",
+   "sku": "alchemille~0",
+   "numero_skus_csv": null,
+   "nom_affiche": "Vert acide (mollis)",
+   "cultivar_reel": "mollis-type",
+   "nom_enregistre": "Alchemilla mollis (Buser) Rothm.",
+   "niveau_preuve": "B",
+   "statut": "en production possible (B)",
+   "nom_affiche_propose": "Vert acide (mollis)",
+   "correction_motif": "nom conforme : l'espèce type ; les sources disent lime-green (RHS), chartreuse (MBG, NC State), jaune vif (RHS fiche) : « vert acide » reste juste pour la pleine floraison",
+   "photos_designees": [
+    {
+     "url_image": "https://inaturalist-open-data.s3.amazonaws.com/photos/523448384/large.jpg",
+     "url_page": "https://www.inaturalist.org/observations/290953255",
+     "niveau": "N3",
+     "source": "iNaturalist, observation de recherche Alchemilla mollis (Danemark, 2025-06-19)",
+     "auteur": "Marcello Manara",
+     "licence": "CC BY",
+     "eclairage": "plein soleil, gros plan, floraison pleine",
+     "role": "floraison pleine",
+     "vu": "jaune-vert vif, étamines orangées"
+    },
+    {
+     "url_image": "https://inaturalist-open-data.s3.amazonaws.com/photos/675376074/large.jpg",
+     "url_page": "https://www.inaturalist.org/observations/369724963",
+     "niveau": "N3",
+     "source": "iNaturalist, observation de recherche Alchemilla mollis (Islande, 2026-06-08)",
+     "auteur": "sans auteur (CC0)",
+     "licence": "CC0",
+     "eclairage": "lumière diffuse de jardin, plante entière, début de floraison",
+     "role": "début de floraison",
+     "vu": "fleurs jaune-vert pâle sur feuillage gris-vert"
+    },
+    {
+     "url_image": "https://inaturalist-open-data.s3.amazonaws.com/photos/559770582/large.jpg",
+     "url_page": "https://www.inaturalist.org/observations/310167720",
+     "niveau": "N3",
+     "source": "iNaturalist, observation de recherche Alchemilla mollis (2025-06-24)",
+     "auteur": "Ametsak",
+     "licence": "CC BY",
+     "eclairage": "lumière du jour couverte, gros plan",
+     "role": "floraison pâle",
+     "vu": "crème-vert pâle, fleurs ouvertes sur bractées jaune-vert"
+    }
+   ],
+   "mesures": {
+    "date": "2026-10-09",
+    "par": "fleur-coloris (Haiku), refs.py pal --box, atelier ch/clochettes, cache refcache/alchemille-coloris/",
+    "methode": "Zones choisies sur chaque photo (cadre serré sur les fleurs, feuillage exclu) ; fleur = moyenne des deux zones ; CIELAB D65 ; LCh ; ΔE76 ; médiane composante par composante (L*, a*, b*) puis LCh. Balance des blancs : seule J1 (studio, fond blanc, médiane RGB 249/250/232) est corrigée ; aucune autre photo n'a de neutre visible.",
+    "photos": [
+     {
+      "ref": "A1",
+      "url_image": "https://inaturalist-open-data.s3.amazonaws.com/photos/523448384/large.jpg",
+      "url_page": "https://www.inaturalist.org/observations/290953255",
+      "eclairage": "plein soleil, gros plan",
+      "stade": "floraison pleine",
+      "role": "médiane ; N3",
+      "fleur_LCh": [
+       91.2,
+       77.1,
+       103.6
+      ],
+      "ombre_LCh": [
+       61.1,
+       64.2,
+       108.0
+      ],
+      "feuille_LCh": [
+       57.6,
+       51.2,
+       118.0
+      ]
+     },
+     {
+      "ref": "A2",
+      "url_image": "https://inaturalist-open-data.s3.amazonaws.com/photos/675376074/large.jpg",
+      "url_page": "https://www.inaturalist.org/observations/369724963",
+      "eclairage": "lumière diffuse de jardin, plante entière",
+      "stade": "début de floraison",
+      "role": "médiane ; N3",
+      "fleur_LCh": [
+       85.7,
+       39.2,
+       116.8
+      ],
+      "feuille_LCh": [
+       63.8,
+       25.9,
+       136.3
+      ]
+     },
+     {
+      "ref": "A3",
+      "url_image": "https://inaturalist-open-data.s3.amazonaws.com/photos/559770582/large.jpg",
+      "url_page": "https://www.inaturalist.org/observations/310167720",
+      "eclairage": "lumière du jour couverte, gros plan",
+      "stade": "floraison pâle",
+      "role": "médiane ; N3 ; partagée avec vert-tendre",
+      "fleur_LCh": [
+       86.4,
+       47.9,
+       103.5
+      ],
+      "ombre_LCh": [
+       65.1,
+       58.0,
+       108.0
+      ],
+      "feuille_LCh": [
+       57.1,
+       56.5,
+       113.5
+      ]
+     }
+    ],
+    "mediane_LCh": [
+     86.4,
+     49.8,
+     110.8
+    ],
+    "ecart_teinte_deg": {
+     "A1-A3": 0.1,
+     "A1-A2": 13.2,
+     "A2-A3": 13.3
+    },
+    "ecart_dE76": {
+     "A1-A3": 29.7,
+     "A1-A2": 40.4,
+     "A2-A3": 13.3
+    },
+    "lecture": "A1 et A3 concordent en teinte (0,1°) et en chroma du même ordre (77 et 48). A2 s'écarte de 13° en teinte et n'a que la moitié de la chroma : lumière diffuse, début de floraison ; sa teinte verte rejoint celle des boutons (h proche de 114°). L'écart de clarté (A1 plus clair) tient à l'éclairage.",
+    "stades_indicatifs": {
+     "fane_iNat_328232536": [
+      66.9,
+      15.3,
+      44.5
+     ]
+    },
+    "niveau_couleur": "C",
+    "niveau_preuve_final": "C",
+    "raison_niveau": "la teinte diverge (A2, 13° > 10°) : règle du porteur, le niveau reste C. Passe à B si une photo de pleine floraison en plein soleil, de niveau N2 ou N3, confirme la teinte de A1 et A3.",
+    "photos_ajoutees": [],
+    "ecart_entre_médianes_des_coloris": {
+     "vert-acide / jaune-vert": {
+      "dE76": 14.1,
+      "dh_deg": 7.6
+     },
+     "vert-acide / vert-tendre": {
+      "dE76": 4.2,
+      "dh_deg": 3.2
+     },
+     "jaune-vert / vert-tendre": {
+      "dE76": 14.8,
+      "dh_deg": 10.8
+     }
+    }
+   },
+   "mesures_passe2": {
+    "date": "2026-10-09",
+    "par": "fleur-coloris (Haiku), passe 2, atelier refcache/alchemille-coloris2/",
+    "methode": "Cadres serrés sur les cymes, deux par photo, feuillage exclu. Dans chaque cadre : pixels « fleur » seulement (CIELAB D65, teinte 80 à 125 degrés, L* >= 55, C* >= 25 ; sans masque si moins de 30 pixels), médiane par composante. Fleur d'une photo = moyenne des deux cadres ; médiane du coloris = médiane composante par composante (L*, a*, b*), puis LCh.",
+    "balance_des_blancs": "Une seule correction : J1 (fond blanc du studio, RGB 249/250/232 ramené à 250/250/250). Aucune autre image n'a de neutre visible. Ombre entre cymes non retenue : cadres trop mêlés au feuillage.",
+    "sensibilite_methode": "Sans masque, les clartés sont plus basses de 8 à 10 unités et les chromas de 7 à 9 ; la teinte bouge de 1 à 2 degrés. Les écarts ΔE entre coloris dépendent de la méthode (jaune-vert/vert-acide : 8,6 avec masque, 14,7 sans) ; la teinte, non.",
+    "nombre_photos": 7,
+    "photos_pleine_floraison_independantes": 5,
+    "photos_concordantes": "7 sur 7 (teinte à 10 degrés au plus de la médiane)",
+    "mediane_LCh": [
+     80.9,
+     61.6,
+     106.9
+    ],
+    "photos": [
+     {
+      "ref": "A1",
+      "url_image": "https://inaturalist-open-data.s3.amazonaws.com/photos/523448384/large.jpg",
+      "url_page": "https://www.inaturalist.org/observations/290953255",
+      "stade": "pleine floraison",
+      "eclairage": "plein soleil, gros plan",
+      "role": "médiane (pleine floraison)",
+      "source": "N3 iNaturalist, Marcello Manara, CC BY, Danemark 2025-06-19",
+      "fleur_LCh": [
+       84.1,
+       74.8,
+       104.6
+      ],
+      "ecart_entre_cadres_dE": 7.0
+     },
+     {
+      "ref": "A2",
+      "url_image": "https://inaturalist-open-data.s3.amazonaws.com/photos/675376074/large.jpg",
+      "url_page": "https://www.inaturalist.org/observations/369724963",
+      "stade": "début de floraison, cymes encore en bouton",
+      "eclairage": "lumière diffuse, plante entière",
+      "role": "concordante ; hors pleine floraison ; lieu corrigé : Swadlincote (Royaume-Uni), pas Islande",
+      "source": "N3 iNaturalist, timerobot, CC0, Royaume-Uni 2026-06-08",
+      "fleur_LCh": [
+       83.8,
+       40.4,
+       116.3
+      ],
+      "ecart_entre_cadres_dE": 3.1
+     },
+     {
+      "ref": "A3",
+      "url_image": "https://inaturalist-open-data.s3.amazonaws.com/photos/559770582/large.jpg",
+      "url_page": "https://www.inaturalist.org/observations/310167720",
+      "stade": "floraison pâle",
+      "eclairage": "couvert, gros plan",
+      "role": "médiane ; partagée avec vert-tendre",
+      "source": "N3 iNaturalist, Ametsak, CC BY, Islande 2025-06-24",
+      "fleur_LCh": [
+       77.0,
+       53.3,
+       105.0
+      ],
+      "ecart_entre_cadres_dE": 14.7
+     },
+     {
+      "ref": "N0",
+      "url_image": "https://inaturalist-open-data.s3.amazonaws.com/photos/696608810/large.jpg",
+      "url_page": "https://www.inaturalist.org/observations/380754661",
+      "stade": "pleine floraison",
+      "eclairage": "plein soleil, plante en herbe",
+      "role": "médiane (pleine floraison)",
+      "source": "N3 iNaturalist, olmagon, CC BY, Écosse 2026-07-02",
+      "fleur_LCh": [
+       69.5,
+       60.5,
+       103.2
+      ],
+      "ecart_entre_cadres_dE": 6.6
+     },
+     {
+      "ref": "N3",
+      "url_image": "https://static.inaturalist.org/photos/684929007/large.jpg",
+      "url_page": "https://www.inaturalist.org/observations/374712249",
+      "stade": "pleine floraison",
+      "eclairage": "lumière du jour, cymes en partie sous les feuilles",
+      "role": "médiane (pleine floraison)",
+      "source": "N3 iNaturalist, blue29697, licence non libre (mesure seulement), Allemagne 2026-06-23",
+      "fleur_LCh": [
+       80.9,
+       54.9,
+       107.9
+      ],
+      "ecart_entre_cadres_dE": 9.2
+     },
+     {
+      "ref": "N14",
+      "url_image": "https://inaturalist-open-data.s3.amazonaws.com/photos/544375044/large.jpg",
+      "url_page": "https://www.inaturalist.org/observations/302070891",
+      "stade": "pleine floraison, peu de cymes visibles",
+      "eclairage": "lumière du jour, herbe autour",
+      "role": "médiane ; surface faible, doute",
+      "source": "N3 iNaturalist, sjurdur, CC BY-NC, Féroé 2025-07-29",
+      "fleur_LCh": [
+       80.2,
+       69.2,
+       106.0
+      ],
+      "ecart_entre_cadres_dE": 5.1
+     },
+     {
+      "ref": "N16",
+      "url_image": "https://inaturalist-open-data.s3.amazonaws.com/photos/540664484/large.jpg",
+      "url_page": "https://www.inaturalist.org/observations/300084044",
+      "stade": "pleine floraison",
+      "eclairage": "plein soleil, plante entière",
+      "role": "médiane (pleine floraison)",
+      "source": "N3 iNaturalist, williamsutton1, CC BY-NC, Islande 2025-07-22",
+      "fleur_LCh": [
+       81.9,
+       73.2,
+       106.3
+      ],
+      "ecart_entre_cadres_dE": 2.4
+     }
+    ],
+    "niveau_couleur": "C (à confirmer)",
+    "niveau_preuve_final": "C",
+    "raison_niveau": "Règle 3 : B exige une photo N2/N3 de fournisseur ou de jardin du type, désignée dans le json. Il n'y en a aucune (toutes les photos du json sont iNaturalist). Sans elle, pas de B, même si 7 photos sur 7 concordent. Le json donne niveau_preuve B : ce niveau n'est pas soutenu par la règle 3, à trancher.",
+    "mediane_LCh_pleine_floraison_5": [
+     80.9,
+     69.2,
+     105.8
+    ],
+    "ecart_teinte_max_pleine_floraison_5_deg": 2.7,
+    "ecart_teinte_max_deg": 9.4,
+    "ecart_teinte_max_photo": "A2 (début de floraison)",
+    "ecart_dE_max_entre_photos_pleine_floraison": 20.5,
+    "ecarts_entre_medianes": [
+     {
+      "vs": "jaune-vert",
+      "dE76": 8.6,
+      "dh_deg": 2.0,
+      "dC": 0.2,
+      "dL": 8.3,
+      "bruit_cadrage_dE": 5.7
+     },
+     {
+      "vs": "vert-tendre",
+      "dE76": 9.0,
+      "dh_deg": 5.3,
+      "dC": 6.0,
+      "dL": 3.9,
+      "bruit_cadrage_dE": 5.8
+     }
+    ],
+    "fusion": "Teinte de référence : à conserver.",
+    "doutes": [
+     "Pas de photo N2/N3 fournisseur ou jardin du type : B impossible tant qu'elle n'est pas désignée (piste : Missouri Botanical Garden, pages déjà citées dans le json, ou RHS). Hors de mon périmètre.",
+     "A2 : le json dit Islande, l'API iNaturalist dit Swadlincote (Royaume-Uni), auteur timerobot, CC0 ; le json dit « sans auteur ».",
+     "T1 et J2 sont deux images de la même plante Chicago (596, auslese) : elles ne comptent que pour une. A3 compte pour deux colorisants.",
+     "Le nom « jaune-vert (Thriller) » du json porte une marque (Thriller est sous ®) : nom à retirer.",
+     "J4 (Wikimedia, bouton) : erreur 429, non mesurée ; J3 (vieillissement) et iNat 244603205 (bouton) : stade seul, non mesurés."
+    ]
+   }
+  },
+  {
+   "id": "jaune-vert",
+   "sku": null,
+   "numero_skus_csv": null,
+   "nom_affiche": "Jaune-vert (Thriller)",
+   "cultivar_reel": "thriller (en attente de marque) ; sinon forme type, floraison avancée",
+   "nom_enregistre": "Alchemilla mollis 'Thriller' (Thriller® chez Benary)",
+   "niveau_preuve": "B",
+   "statut": "en attente : ® (Benary) à vérifier",
+   "nom_affiche_propose": "Jaune-vert",
+   "correction_motif": "nom trompeur de deux façons : (1) il porte Thriller®, ® vu chez Benary ; (2) 3 sources N3 décrivent Thriller comme plus vert que jaune, Benary « greenish yellow ». Proposition : retirer le nom de cultivar et garder « Jaune-vert » comme nom de couleur ; le rattacher au stade jaune-vert de la pleine floraison du type (CBG Auslese plein soleil, iNaturalist) tant que le ® n'est pas levé",
+   "photos_designees": [
+    {
+     "url_image": "https://www.benary.com/sites/default/files/content/Product_Images/Thriller/A4091962.png",
+     "url_page": "https://www.benary.com/products/alchemilla-mollis-thriller/thriller-am0101t",
+     "niveau": "N2",
+     "source": "Benary, fiche produit Thriller® (AM0101T), tige coupée détourée sur fond blanc",
+     "auteur": "Benary (image du vendeur)",
+     "licence": "image d'un obtenteur-vendeur, à vérifier avant tout usage",
+     "eclairage": "studio, fond blanc, détourage (retouche possible)",
+     "role": "tige coupée de référence",
+     "vu": "jaune-vert clair, cymes lâches"
+    },
+    {
+     "url_image": "https://app.chicagobotanic.org/images/plants/596/flwftd/596_flwftd_high.jpg",
+     "url_page": "https://www.chicagobotanic.org/plantcollections/plantfinder/alchemilla_mollis_auslese--ladys_mantle",
+     "niveau": "N3",
+     "source": "Chicago Botanic Garden, fiche de plante Alchemilla mollis 'Auslese' (jardin botanique)",
+     "auteur": null,
+     "licence": "à vérifier (photo d'un jardin botanique)",
+     "eclairage": "plein soleil, touffe en pleine fleur",
+     "role": "touffe en pleine fleur",
+     "vu": "jaune-vert franc (le plus jaune des photos vues)"
+    },
+    {
+     "url_image": "https://inaturalist-open-data.s3.amazonaws.com/photos/424161149/large.jpeg",
+     "url_page": "https://www.inaturalist.org/observations/238263067",
+     "niveau": "N3",
+     "source": "iNaturalist, observation de recherche Alchemilla mollis (2024-08-27)",
+     "auteur": "Johanna Kolehmainen",
+     "licence": "CC BY-NC",
+     "eclairage": "lumière du jour, plante entière en fin d'été",
+     "role": "vieillissement",
+     "vu": "jaune-orangé puis rouille sur les cymes, feuilles intactes"
+    },
+    {
+     "url_image": "https://upload.wikimedia.org/wikipedia/commons/c/c4/Alchemilla_mollis_Thriller_1zz.jpg",
+     "url_page": "https://commons.wikimedia.org/wiki/File:Alchemilla_mollis_Thriller_1zz.jpg",
+     "niveau": "N4",
+     "source": "Wikimedia Commons, nom 'Thriller' sur la légende (pot de jardinerie, Merrifield VA, 2006-05-06)",
+     "auteur": "David J. Stang",
+     "licence": "CC BY-SA 4.0",
+     "eclairage": "plein soleil, plant en pot",
+     "role": "bouton",
+     "vu": "cymes vertes encore fermées"
+    }
+   ],
+   "mesures": {
+    "date": "2026-10-09",
+    "par": "fleur-coloris (Haiku), refs.py pal --box, atelier ch/clochettes, cache refcache/alchemille-coloris/",
+    "methode": "Zones choisies sur chaque photo (cadre serré sur les fleurs, feuillage exclu) ; fleur = moyenne des deux zones ; CIELAB D65 ; LCh ; ΔE76 ; médiane composante par composante (L*, a*, b*) puis LCh. Balance des blancs : seule J1 (studio, fond blanc, médiane RGB 249/250/232) est corrigée ; aucune autre photo n'a de neutre visible.",
+    "photos": [
+     {
+      "ref": "J1",
+      "url_image": "https://www.benary.com/sites/default/files/content/Product_Images/Thriller/A4091962.png",
+      "url_page": "https://www.benary.com/products/alchemilla-mollis-thriller/thriller-am0101t",
+      "eclairage": "studio, fond blanc, détourage (retouche possible) ; balance des blancs corrigée sur le fond",
+      "stade": "tige coupée, fleurs ouvertes",
+      "role": "médiane ; N2 (image de vendeur)",
+      "fleur_LCh": [
+       87.7,
+       32.4,
+       108.9
+      ]
+     },
+     {
+      "ref": "J2",
+      "url_image": "https://app.chicagobotanic.org/images/plants/596/flwftd/596_flwftd_high.jpg",
+      "url_page": "https://www.chicagobotanic.org/plantcollections/plantfinder/alchemilla_mollis_auslese--ladys_mantle",
+      "eclairage": "plein soleil, touffe",
+      "stade": "pleine floraison",
+      "role": "médiane ; N3",
+      "fleur_LCh": [
+       83.0,
+       63.9,
+       102.6
+      ]
+     },
+     {
+      "ref": "G13",
+      "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/06/Alchemilla_molis001.JPG/500px-Alchemilla_molis001.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "url_page": "https://commons.wikimedia.org/wiki/File:Alchemilla_molis001.JPG",
+      "eclairage": "lumière du jour, plante entière (éclairage non précisé)",
+      "stade": "pleine floraison",
+      "role": "médiane seulement : photo d'espèce, N4 (aucun cultivar nommé)",
+      "fleur_LCh": [
+       82.9,
+       65.0,
+       113.3
+      ],
+      "ombre_LCh": [
+       30.5,
+       39.7,
+       125.0
+      ],
+      "feuille_LCh": [
+       48.3,
+       38.6,
+       136.6
+      ]
+     }
+    ],
+    "mediane_LCh": [
+     83.0,
+     61.3,
+     103.2
+    ],
+    "ecart_teinte_deg": {
+     "J1-J2": 6.3,
+     "J1-G13": 4.4,
+     "J2-G13": 10.7
+    },
+    "ecart_dE76": {
+     "J1-J2": 32.2,
+     "J1-G13": 33.2,
+     "J2-G13": 12.0
+    },
+    "stades": {
+     "bouton_J4_N4": {
+      "LCh": [
+       87.2,
+       50.4,
+       114.5
+      ],
+      "page": "https://commons.wikimedia.org/wiki/File:Alchemilla_mollis_Thriller_1zz.jpg"
+     },
+     "vieillissement_J3_iNat": {
+      "LCh": [
+       82.5,
+       39.4,
+       105.5
+      ],
+      "page": "https://www.inaturalist.org/observations/238263067"
+     }
+    },
+    "lecture": "J1 (studio, neutre corrigé) et J2 (plein soleil) concordent en teinte (6°) ; chroma 32 et 64, même ordre. G13 (espèce, N4) est à 10,7° de J2 : elle entre dans la médiane, pas dans le niveau. La médiane est plus jaune (−8° sur vert-acide) et plus chromatique parce que deux de ses trois photos sont en plein jour de pleine floraison.",
+    "niveau_couleur": "B",
+    "niveau_preuve_final": "B (couleur) ; le nom de cultivar est une marque (®) : à retirer, « jaune-vert » reste le nom de couleur",
+    "raison_niveau": "photos nommées N2 et N3 concordantes en teinte (6,3°) et chroma du même ordre.",
+    "photos_ajoutees": [
+     "G13 : Commons, Alchemilla molis001 (G7OBC, CC0), espèce"
+    ],
+    "ecart_entre_médianes_des_coloris": {
+     "vert-acide / jaune-vert": {
+      "dE76": 14.1,
+      "dh_deg": 7.6
+     },
+     "vert-acide / vert-tendre": {
+      "dE76": 4.2,
+      "dh_deg": 3.2
+     },
+     "jaune-vert / vert-tendre": {
+      "dE76": 14.8,
+      "dh_deg": 10.8
+     }
+    }
+   },
+   "mesures_passe2": {
+    "date": "2026-10-09",
+    "par": "fleur-coloris (Haiku), passe 2, atelier refcache/alchemille-coloris2/",
+    "methode": "Cadres serrés sur les cymes, deux par photo, feuillage exclu. Dans chaque cadre : pixels « fleur » seulement (CIELAB D65, teinte 80 à 125 degrés, L* >= 55, C* >= 25 ; sans masque si moins de 30 pixels), médiane par composante. Fleur d'une photo = moyenne des deux cadres ; médiane du coloris = médiane composante par composante (L*, a*, b*), puis LCh.",
+    "balance_des_blancs": "Une seule correction : J1 (fond blanc du studio, RGB 249/250/232 ramené à 250/250/250). Aucune autre image n'a de neutre visible. Ombre entre cymes non retenue : cadres trop mêlés au feuillage.",
+    "sensibilite_methode": "Sans masque, les clartés sont plus basses de 8 à 10 unités et les chromas de 7 à 9 ; la teinte bouge de 1 à 2 degrés. Les écarts ΔE entre coloris dépendent de la méthode (jaune-vert/vert-acide : 8,6 avec masque, 14,7 sans) ; la teinte, non.",
+    "nombre_photos": 3,
+    "photos_pleine_floraison_independantes": 2,
+    "photos_concordantes": "3 sur 3 (teinte à 10 degrés au plus de la médiane)",
+    "mediane_LCh": [
+     72.6,
+     61.4,
+     104.9
+    ],
+    "photos": [
+     {
+      "ref": "J1",
+      "url_image": "https://www.benary.com/sites/default/files/content/Product_Images/Thriller/A4091962.png",
+      "url_page": "https://www.benary.com/products/alchemilla-mollis-thriller/thriller-am0101t",
+      "stade": "tige coupée, fleurs ouvertes",
+      "eclairage": "studio, fond blanc (balance corrigée sur le fond)",
+      "role": "médiane ; fournisseur N2 (Benary)",
+      "source": "N2 Benary, fiche Thriller (image du vendeur, à vérifier avant usage)",
+      "fleur_LCh": [
+       77.1,
+       54.1,
+       106.9
+      ],
+      "ecart_entre_cadres_dE": 3.2
+     },
+     {
+      "ref": "J2",
+      "url_image": "https://app.chicagobotanic.org/images/plants/596/flwftd/596_flwftd_high.jpg",
+      "url_page": "https://www.chicagobotanic.org/plantcollections/plantfinder/alchemilla_mollis_auslese--ladys_mantle",
+      "stade": "pleine floraison",
+      "eclairage": "plein soleil, touffe",
+      "role": "médiane ; même plante que T1 (Chicago 596)",
+      "source": "N3 Chicago Botanic Garden, auslese, licence à vérifier",
+      "fleur_LCh": [
+       71.1,
+       61.2,
+       102.7
+      ],
+      "ecart_entre_cadres_dE": 5.7
+     },
+     {
+      "ref": "G13",
+      "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/06/Alchemilla_molis001.JPG/500px-Alchemilla_molis001.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "url_page": "https://commons.wikimedia.org/wiki/File:Alchemilla_molis001.JPG",
+      "stade": "pleine floraison",
+      "eclairage": "jour, touffe",
+      "role": "médiane ; ombre non retenue",
+      "source": "N4 Wikimedia Commons, CC0 (espèce, passe 1)",
+      "fleur_LCh": [
+       72.6,
+       64.7,
+       113.6
+      ],
+      "ecart_entre_cadres_dE": 4.7
+     }
+    ],
+    "niveau_couleur": "C (à confirmer)",
+    "niveau_preuve_final": "C",
+    "raison_niveau": "Règle 1 : une forme sauvage demande 5 photos indépendantes ; il n'y en a que 3 (J1 N2 fournisseur, J2 N3, G13 N4). Concordance 3 sur 3, fournisseur présent. Le nom Thriller est une marque : à retirer du nom affiché.",
+    "ecarts_entre_medianes": [
+     {
+      "vs": "vert-tendre",
+      "dE76": 10.4,
+      "dh_deg": 7.3,
+      "dC": 5.8,
+      "dL": -4.4,
+      "bruit_cadrage_dE": 4.8
+     }
+    ],
+    "fusion": "Propose de fusionner dans vert-acide (ret:1, sans renuméroter) : teinte à 2 degrés, l'écart de clarté vient de la lumière.",
+    "doutes": []
+   }
+  },
+  {
+   "id": "vert-tendre",
+   "sku": null,
+   "numero_skus_csv": null,
+   "nom_affiche": "Vert tendre (Robusta)",
+   "cultivar_reel": "robusta (D, sans photo) ; proposé : auslese (B) ou stade bouton/début de floraison du type",
+   "nom_enregistre": "Alchemilla mollis 'Robusta'",
+   "niveau_preuve": "D",
+   "statut": "à rattacher (question à l'orchestrateur)",
+   "nom_affiche_propose": "Vert tendre",
+   "correction_motif": "aucune source ne donne la couleur de fleur de Robusta (port et feuillage seulement) et aucune photo nommée n'existe : le nom de cultivar n'est pas soutenu. Deux rattachements possibles, sans trancher : 'Auslese' (vert citron, B, photos Chicago Botanic Garden) ou le stade pâle du type (bouton et début de floraison : photos iNaturalist crème-vert pâle)",
+   "photos_designees": [
+    {
+     "url_image": "https://app.chicagobotanic.org/images/plants/596/flwf/596_flwf_high.jpg",
+     "url_page": "https://www.chicagobotanic.org/plantcollections/plantfinder/alchemilla_mollis_auslese--ladys_mantle",
+     "niveau": "N3",
+     "source": "Chicago Botanic Garden, fiche de plante Alchemilla mollis 'Auslese' (jardin botanique)",
+     "auteur": null,
+     "licence": "à vérifier (photo d'un jardin botanique)",
+     "eclairage": "lumière du jour douce, gros plan sur fond flou",
+     "role": "cyme isolée",
+     "vu": "jaune-vert moyen, anthères orange-brun"
+    },
+    {
+     "url_image": "https://inaturalist-open-data.s3.amazonaws.com/photos/559770582/large.jpg",
+     "url_page": "https://www.inaturalist.org/observations/310167720",
+     "niveau": "N3",
+     "source": "iNaturalist, observation de recherche Alchemilla mollis (2025-06-24)",
+     "auteur": "Ametsak",
+     "licence": "CC BY",
+     "eclairage": "lumière du jour couverte, gros plan",
+     "role": "floraison pâle",
+     "vu": "crème-vert pâle, fleurs ouvertes sur bractées jaune-vert"
+    },
+    {
+     "url_image": "https://inaturalist-open-data.s3.amazonaws.com/photos/244603205/large.jpeg",
+     "url_page": "https://www.inaturalist.org/observations/142650543",
+     "niveau": "N3",
+     "source": "iNaturalist, observation de recherche Alchemilla mollis (Nouvelle-Zélande, 2022-11-23)",
+     "auteur": "Chris Ecroyd",
+     "licence": "CC BY-NC",
+     "eclairage": "plein soleil, gros plan",
+     "role": "bouton",
+     "vu": "grappes vert-citron serrées dans les bractées"
+    }
+   ],
+   "mesures": {
+    "date": "2026-10-09",
+    "par": "fleur-coloris (Haiku), refs.py pal --box, atelier ch/clochettes, cache refcache/alchemille-coloris/",
+    "methode": "Zones choisies sur chaque photo (cadre serré sur les fleurs, feuillage exclu) ; fleur = moyenne des deux zones ; CIELAB D65 ; LCh ; ΔE76 ; médiane composante par composante (L*, a*, b*) puis LCh. Balance des blancs : seule J1 (studio, fond blanc, médiane RGB 249/250/232) est corrigée ; aucune autre photo n'a de neutre visible.",
+    "photos": [
+     {
+      "ref": "T1",
+      "url_image": "https://app.chicagobotanic.org/images/plants/596/flwf/596_flwf_high.jpg",
+      "url_page": "https://www.chicagobotanic.org/plantcollections/plantfinder/alchemilla_mollis_auslese--ladys_mantle",
+      "eclairage": "lumière du jour douce, gros plan, fond flou",
+      "stade": "cyme isolée, ouverte",
+      "role": "médiane ; N3",
+      "fleur_LCh": [
+       76.0,
+       69.5,
+       107.3
+      ],
+      "feuille_LCh": [
+       31.8,
+       42.5,
+       114.6
+      ]
+     },
+     {
+      "ref": "A3",
+      "url_image": "https://inaturalist-open-data.s3.amazonaws.com/photos/559770582/large.jpg",
+      "url_page": "https://www.inaturalist.org/observations/310167720",
+      "eclairage": "lumière du jour couverte, gros plan",
+      "stade": "floraison pâle",
+      "role": "médiane ; N3 ; partagée avec vert-acide",
+      "fleur_LCh": [
+       86.4,
+       47.9,
+       103.5
+      ],
+      "feuille_LCh": [
+       57.1,
+       56.5,
+       113.5
+      ]
+     },
+     {
+      "ref": "R16",
+      "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/Alchemilla_mollis_%28Fraaie_vrouwenmantel_bloeiwijze%291.jpg/500px-Alchemilla_mollis_%28Fraaie_vrouwenmantel_bloeiwijze%291.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "url_page": "https://commons.wikimedia.org/wiki/File:Alchemilla_mollis_(Fraaie_vrouwenmantel_bloeiwijze)1.jpg",
+      "eclairage": "lumière diffuse, inflorescences dans le feuillage",
+      "stade": "pleine floraison, fleurs pâles",
+      "role": "médiane seulement : photo d'espèce, N4 (aucun cultivar nommé)",
+      "fleur_LCh": [
+       83.5,
+       48.7,
+       118.5
+      ],
+      "feuille_LCh": [
+       42.3,
+       22.8,
+       147.3
+      ]
+     }
+    ],
+    "mediane_LCh": [
+     83.5,
+     50.9,
+     114.0
+    ],
+    "ecart_teinte_deg": {
+     "T1-A3": 3.8,
+     "T1-R16": 11.2,
+     "A3-R16": 15.0
+    },
+    "ecart_dE76": {
+     "T1-A3": 24.3,
+     "T1-R16": 24.9,
+     "A3-R16": 12.9
+    },
+    "stades": {
+     "bouton_T3_iNat": {
+      "LCh": [
+       79.3,
+       79.9,
+       113.7
+      ],
+      "page": "https://www.inaturalist.org/observations/142650543"
+     }
+    },
+    "lecture": "T1 (N3) et A3 (N3) concordent en teinte (3,8°) ; chroma 70 et 48, même ordre. R16 (espèce, N4, lumière diffuse) est à 11° de T1 et 15° de A3 : médiane seulement. La médiane a la teinte des boutons (T3 et J4, h proche de 114°). A3 est partagée avec vert-acide : indépendance limitée.",
+    "niveau_couleur": "B",
+    "niveau_preuve_final": "D (nom « Robusta » non soutenu, voir json) ; couleur B, à rattacher",
+    "raison_niveau": "couleur : deux photos nommées N3 concordantes. Nom : aucune photo ni couleur de fleur pour Robusta dans les sources.",
+    "photos_ajoutees": [
+     "R16 : Commons, Alchemilla mollis (Fraaie vrouwenmantel bloeiwijze)1 (Rasbak, CC BY-SA 3.0), espèce"
+    ],
+    "ecart_entre_médianes_des_coloris": {
+     "vert-acide / jaune-vert": {
+      "dE76": 14.1,
+      "dh_deg": 7.6
+     },
+     "vert-acide / vert-tendre": {
+      "dE76": 4.2,
+      "dh_deg": 3.2
+     },
+     "jaune-vert / vert-tendre": {
+      "dE76": 14.8,
+      "dh_deg": 10.8
+     }
+    }
+   },
+   "mesures_passe2": {
+    "date": "2026-10-09",
+    "par": "fleur-coloris (Haiku), passe 2, atelier refcache/alchemille-coloris2/",
+    "methode": "Cadres serrés sur les cymes, deux par photo, feuillage exclu. Dans chaque cadre : pixels « fleur » seulement (CIELAB D65, teinte 80 à 125 degrés, L* >= 55, C* >= 25 ; sans masque si moins de 30 pixels), médiane par composante. Fleur d'une photo = moyenne des deux cadres ; médiane du coloris = médiane composante par composante (L*, a*, b*), puis LCh.",
+    "balance_des_blancs": "Une seule correction : J1 (fond blanc du studio, RGB 249/250/232 ramené à 250/250/250). Aucune autre image n'a de neutre visible. Ombre entre cymes non retenue : cadres trop mêlés au feuillage.",
+    "sensibilite_methode": "Sans masque, les clartés sont plus basses de 8 à 10 unités et les chromas de 7 à 9 ; la teinte bouge de 1 à 2 degrés. Les écarts ΔE entre coloris dépendent de la méthode (jaune-vert/vert-acide : 8,6 avec masque, 14,7 sans) ; la teinte, non.",
+    "nombre_photos": 3,
+    "photos_pleine_floraison_independantes": 1,
+    "photos_concordantes": "3 sur 3 (teinte à 10 degrés au plus de la médiane)",
+    "mediane_LCh": [
+     77.0,
+     55.6,
+     112.2
+    ],
+    "photos": [
+     {
+      "ref": "T1",
+      "url_image": "https://app.chicagobotanic.org/images/plants/596/flwf/596_flwf_high.jpg",
+      "url_page": "https://www.chicagobotanic.org/plantcollections/plantfinder/alchemilla_mollis_auslese--ladys_mantle",
+      "stade": "cyme isolée, ouverte",
+      "eclairage": "lumière du jour douce, fond flou",
+      "role": "médiane ; même plante que J2 (non indépendante)",
+      "source": "N3 Chicago Botanic Garden, auslese (plante 596), licence à vérifier",
+      "fleur_LCh": [
+       69.9,
+       68.3,
+       107.9
+      ],
+      "ecart_entre_cadres_dE": 2.8
+     },
+     {
+      "ref": "A3",
+      "url_image": "https://inaturalist-open-data.s3.amazonaws.com/photos/559770582/large.jpg",
+      "url_page": "https://www.inaturalist.org/observations/310167720",
+      "stade": "floraison pâle",
+      "eclairage": "couvert, gros plan",
+      "role": "médiane ; partagée avec vert-tendre",
+      "source": "N3 iNaturalist, Ametsak, CC BY, Islande 2025-06-24",
+      "fleur_LCh": [
+       77.0,
+       53.3,
+       105.0
+      ],
+      "ecart_entre_cadres_dE": 14.7
+     },
+     {
+      "ref": "R16",
+      "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/Alchemilla_mollis_%28Fraaie_vrouwenmantel_bloeiwijze%291.jpg/500px-Alchemilla_mollis_%28Fraaie_vrouwenmantel_bloeiwijze%291.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "url_page": "https://commons.wikimedia.org/wiki/File:Alchemilla_mollis_(Fraaie_vrouwenmantel_bloeiwijze)1.jpg",
+      "stade": "pleine floraison",
+      "eclairage": "diffus",
+      "role": "médiane ; espèce, pas Robusta",
+      "source": "N4 Wikimedia Commons, Rasbak, CC BY-SA 3.0 (espèce, passe 1)",
+      "fleur_LCh": [
+       77.3,
+       50.9,
+       118.2
+      ],
+      "ecart_entre_cadres_dE": 4.9
+     }
+    ],
+    "niveau_couleur": "D",
+    "niveau_preuve_final": "D",
+    "raison_niveau": "Aucune photo propre : A3 est partagée avec vert-acide, T1 est la même plante que J2 (Chicago 596, auslese), R16 est une photo d'espèce N4. Le nom Robusta n'a pas de source. Ne passe pas en production.",
+    "ecarts_entre_medianes": [
+     {
+      "vs": "vert-acide",
+      "dE76": 9.0,
+      "dh_deg": 5.3,
+      "dC": -6.0,
+      "dL": -3.9,
+      "bruit_cadrage_dE": 5.8
+     }
+    ],
+    "fusion": "Propose de fusionner dans vert-acide (ret:1, stade pâle de la même teinte), sans renuméroter : teinte à 5 degrés.",
+    "doutes": []
+   }
+  }
+ ],
+ "cultivars": [
+  {
+   "id": "mollis-type",
+   "coloris_catalogue": "vert-acide",
+   "nom_affiche": "Vert acide (mollis)",
+   "nom_enregistre": "Alchemilla mollis (Buser) Rothm.",
+   "synonymes": [
+    "Alchemilla acutiloba var. mollis Buser (IPNI 77120347-1)",
+    "Alchemilla acutiloba subsp. mollis (Buser) Buser (IPNI 77397869-1)",
+    "autres synonymes GBIF : 13 au total, liste dans refcache/alchemille/census/census.json (taxon_info)"
+   ],
+   "groupe": "espèce botanique (le genre n'a pas de groupes ; A. mollis est une micro-espèce du complexe A. vulgaris agg.)",
+   "nature": "espèce, forme type : c'est ce que le commerce de fleur coupée vend sous « alchemille » (plants et semis non nommés)",
+   "obtenteur": null,
+   "annee": "1934 (publication de la combinaison, IPNI)",
+   "registre": {
+    "ishs_icra": "aucune (voir limites)",
+    "ipni": {
+     "id": "urn:lsid:ipni.org:names:720776-1",
+     "url": "https://www.ipni.org/n/720776-1",
+     "auteur": "(Buser) Rothm.",
+     "annee": 1934
+    },
+    "gbif": {
+     "cle": 3028528,
+     "url": "https://www.gbif.org/species/3028528",
+     "statut": "ACCEPTED"
+    },
+    "powo": "403 aux robots : NV",
+    "wfo": "non lu à ce passage : NV"
+   },
+   "marque": null,
+   "marque_preuve": "nom d'espèce, non marquable ; aucun ® ni ™ vu sur le nom de l'espèce",
+   "couleur_selon_sources": {
+    "RHS fiche de plante": "bright yellow (floraison été-automne)",
+    "RHS guide de culture": "lime-green, « popular in cut-flower displays »",
+    "Missouri Botanical Garden": "chartreuse, minuscules fleurs en étoile sans pétales",
+    "NC State Extension": "chartreuse ; Good Cut, Good Dried",
+    "Wikipedia (appoint)": "chartreuse yellow"
+   },
+   "sources": [
+    {
+     "type": "nom",
+     "niveau": "N1",
+     "consulte": "2026-10-09",
+     "source": "IPNI (Kew), nom et auteur de la combinaison",
+     "url_page": "https://www.ipni.org/n/720776-1",
+     "constat": "Alchemilla mollis (Buser) Rothm., 1934, rang espèce ; lu par l'API IPNI"
+    },
+    {
+     "type": "nom",
+     "niveau": "N1",
+     "consulte": "2026-10-09",
+     "source": "GBIF Backbone",
+     "url_page": "https://www.gbif.org/species/3028528",
+     "constat": "nom accepté Alchemilla mollis (Buser) Rothm., 13 synonymes (lu par census.py)"
+    },
+    {
+     "type": "nom",
+     "niveau": "N3",
+     "consulte": "2026-10-09",
+     "source": "RHS Plants",
+     "url_page": "https://www.rhs.org.uk/plants/774/alchemilla-mollis/details",
+     "constat": "nom accepté Alchemilla mollis ; fleurs jaune vif ; Award of Garden Merit ; aire Carpates, Caucase ; photo © RHS (non réutilisable)"
+    },
+    {
+     "type": "couleur",
+     "niveau": "N3",
+     "consulte": "2026-10-09",
+     "source": "RHS, guide de culture",
+     "url_page": "https://www.rhs.org.uk/plants/alchemilla/growing-guide",
+     "constat": "A. mollis : fleurs vert citron, espèce la plus cultivée, « popular in cut-flower displays »"
+    },
+    {
+     "type": "couleur",
+     "niveau": "N3",
+     "consulte": "2026-10-09",
+     "source": "Missouri Botanical Garden",
+     "url_page": "https://plantfinder.mobot.org/PlantFinderDetails.aspx?taxonid=286570&isprofile=0&basic=Alchemilla%20mollis",
+     "constat": "fleurs chartreuse, juin, hauteur 30-45 cm ; aucun cultivar sur la page"
+    },
+    {
+     "type": "couleur",
+     "niveau": "N3",
+     "consulte": "2026-10-09",
+     "source": "NC State Extension",
+     "url_page": "https://plants.ces.ncsu.edu/plants/alchemilla-mollis/",
+     "constat": "chartreuse ; Good Cut, Good Dried"
+    },
+    {
+     "type": "photo",
+     "niveau": "N3",
+     "consulte": "2026-10-09",
+     "source": "iNaturalist (observations de recherche, taxon A. mollis, licences CC)",
+     "url_page": "https://www.inaturalist.org/taxa/56022",
+     "constat": "40 photos retenues par census.py : 12 fleur, 12 bouton, 4 fruit, 12 plante ; relues par l'API : taxon, qualité research, licence concordants (3 observations)"
+    }
+   ],
+   "photos_designees": [
+    {
+     "url_image": "https://inaturalist-open-data.s3.amazonaws.com/photos/523448384/large.jpg",
+     "url_page": "https://www.inaturalist.org/observations/290953255",
+     "niveau": "N3",
+     "source": "iNaturalist, observation de recherche Alchemilla mollis (Danemark, 2025-06-19)",
+     "auteur": "Marcello Manara",
+     "licence": "CC BY",
+     "eclairage": "plein soleil, gros plan, floraison pleine",
+     "role": "floraison pleine",
+     "vu": "jaune-vert vif, étamines orangées"
+    },
+    {
+     "url_image": "https://inaturalist-open-data.s3.amazonaws.com/photos/675376074/large.jpg",
+     "url_page": "https://www.inaturalist.org/observations/369724963",
+     "niveau": "N3",
+     "source": "iNaturalist, observation de recherche Alchemilla mollis (Islande, 2026-06-08)",
+     "auteur": "sans auteur (CC0)",
+     "licence": "CC0",
+     "eclairage": "lumière diffuse de jardin, plante entière, début de floraison",
+     "role": "début de floraison",
+     "vu": "fleurs jaune-vert pâle sur feuillage gris-vert"
+    }
+   ],
+   "niveau_preuve": "B",
+   "niveau_motif": "nom N1 (IPNI, GBIF) + photos N3 concordantes (iNaturalist, plusieurs auteurs) + descriptions N3 (RHS, MBG, NC State). Pas de photo N2 de l'espèce : donc pas A.",
+   "statut": "en production possible (B ; mesure par fleur-coloris puis sondage de 10 %)",
+   "doutes": [
+    "micro-espèce parmi plus de 1 000 du complexe A. vulgaris : une photo de jardin peut montrer une autre micro-espèce ; le tri se fait par le feuillage très poilu",
+    "les descriptions de couleur divergent (jaune vif, vert citron, chartreuse) sans mesure : lumière et stade dominent"
+   ]
+  },
+  {
+   "id": "thriller",
+   "coloris_catalogue": "jaune-vert",
+   "nom_affiche": "Jaune-vert (Thriller)",
+   "nom_enregistre": "Alchemilla mollis 'Thriller' (écrit « Thriller® » sur la fiche Benary ; sans ® chez MBG, Wisconsin, NC State)",
+   "synonymes": [],
+   "groupe": "cultivar d'A. mollis, sans groupe",
+   "nature": "cultivar vendu en fleur coupée (Benary : « vase filler », « cut flower production »)",
+   "obtenteur": "non dit : la fiche Benary est éditée par Ernst Benary Samenzucht GmbH (Hann. Münden), sans le mot obtenteur",
+   "annee": null,
+   "registre": {
+    "ishs_icra": "aucune",
+    "cpvo_pluto_floricode": "non consultés (comptes fermés)"
+   },
+   "marque": {
+    "indice": "®",
+    "ou": "Benary, fiche produit AM0101T",
+    "url": "https://www.benary.com/products/alchemilla-mollis-thriller/thriller-am0101t",
+    "note": "propriétaire du ® non nommé sur la page ; registre des marques non consulté ; à vérifier (marques-a-verifier.txt)"
+   },
+   "marque_preuve": "« Thriller® » sur la fiche Benary ; aucun registre des marques consulté (TMview, EUIPO, INPI, WIPO : à l'orchestrateur). Un nom absent d'un registre n'est pas prouvé libre.",
+   "couleur_selon_sources": {
+    "Benary": "greenish yellow flowers on bright green leaves ; 50 cm",
+    "Missouri Botanical Garden": "chartreuse, juin ; un peu plus grand que l'espèce, floraison plus fournie",
+    "Wisconsin Extension": "plus compact ; fleurs plus vertes que jaunes",
+    "NC State Extension": "compact ; fleurs plus vertes que jaunes"
+   },
+   "sources": [
+    {
+     "type": "nom",
+     "niveau": "N2",
+     "consulte": "2026-10-09",
+     "source": "Benary (fiche de l'obtenteur-vendeur)",
+     "url_page": "https://www.benary.com/products/alchemilla-mollis-thriller/thriller-am0101t",
+     "constat": "Alchemilla mollis Thriller®, réf. AM0101T ; vert-jaune ; 50 cm ; « great vase filler » ; image de tige coupée détourée"
+    },
+    {
+     "type": "nom",
+     "niveau": "N3",
+     "consulte": "2026-10-09",
+     "source": "Missouri Botanical Garden",
+     "url_page": "https://plantfinder.mobot.org/PlantFinderDetails.aspx?taxonid=265864&isprofile=0&basic=Alchemilla%20mollis",
+     "constat": "Alchemilla mollis 'Thriller', chartreuse, juin ; pas de marque sur la page"
+    },
+    {
+     "type": "nom",
+     "niveau": "N3",
+     "consulte": "2026-10-09",
+     "source": "Wisconsin Extension",
+     "url_page": "https://hort.extension.wisc.edu/articles/ladys-mantle-alchemilla-mollis/",
+     "constat": "'Thriller' : un peu plus compact, fleurs plus vertes que jaunes"
+    },
+    {
+     "type": "nom",
+     "niveau": "N3",
+     "consulte": "2026-10-09",
+     "source": "NC State Extension",
+     "url_page": "https://plants.ces.ncsu.edu/plants/alchemilla-mollis/",
+     "constat": "'Thriller' : compact, fleurs plus vertes que jaunes"
+    },
+    {
+     "type": "photo",
+     "niveau": "N4",
+     "consulte": "2026-10-09",
+     "source": "Wikimedia Commons (David J. Stang, 2006)",
+     "url_page": "https://commons.wikimedia.org/wiki/File:Alchemilla_mollis_Thriller_1zz.jpg",
+     "constat": "nom 'Thriller' sur la légende ; pot de jardinerie ; stade bouton. L'autre fichier (0zz) ne montre aucune fleur : à ne pas mesurer"
+    }
+   ],
+   "photos_designees": [
+    {
+     "url_image": "https://www.benary.com/sites/default/files/content/Product_Images/Thriller/A4091962.png",
+     "url_page": "https://www.benary.com/products/alchemilla-mollis-thriller/thriller-am0101t",
+     "niveau": "N2",
+     "source": "Benary, fiche produit Thriller® (AM0101T), tige coupée détourée sur fond blanc",
+     "auteur": "Benary (image du vendeur)",
+     "licence": "image d'un obtenteur-vendeur, à vérifier avant tout usage",
+     "eclairage": "studio, fond blanc, détourage (retouche possible)",
+     "role": "tige coupée de référence",
+     "vu": "jaune-vert clair, cymes lâches"
+    },
+    {
+     "url_image": "https://app.chicagobotanic.org/images/plants/596/flwftd/596_flwftd_high.jpg",
+     "url_page": "https://www.chicagobotanic.org/plantcollections/plantfinder/alchemilla_mollis_auslese--ladys_mantle",
+     "niveau": "N3",
+     "source": "Chicago Botanic Garden, fiche de plante Alchemilla mollis 'Auslese' (jardin botanique)",
+     "auteur": null,
+     "licence": "à vérifier (photo d'un jardin botanique)",
+     "eclairage": "plein soleil, touffe en pleine fleur",
+     "role": "touffe en pleine fleur",
+     "vu": "jaune-vert franc (le plus jaune des photos vues)"
+    },
+    {
+     "url_image": "https://upload.wikimedia.org/wikipedia/commons/c/c4/Alchemilla_mollis_Thriller_1zz.jpg",
+     "url_page": "https://commons.wikimedia.org/wiki/File:Alchemilla_mollis_Thriller_1zz.jpg",
+     "niveau": "N4",
+     "source": "Wikimedia Commons, nom 'Thriller' sur la légende (pot de jardinerie, Merrifield VA, 2006-05-06)",
+     "auteur": "David J. Stang",
+     "licence": "CC BY-SA 4.0",
+     "eclairage": "plein soleil, plant en pot",
+     "role": "bouton",
+     "vu": "cymes vertes encore fermées"
+    }
+   ],
+   "niveau_preuve": "B",
+   "niveau_motif": "nom N2 (Benary) + N3 x3 concordants ; photo N2 (Benary, détourée) + N4 ; pas de N1 (aucun registre) donc pas A. Production : AUCUNE tant que le ® n'est pas levé (règle du porteur : « à vérifier », la variété attend).",
+   "statut": "en attente : ® vu chez le vendeur (marques-a-verifier) ; ne pas dessiner sous ce nom",
+   "doutes": [
+    "® : un coloris sous marque prend un nom de couleur générique ou est refondé sur une variété libre (STANDARD-SOURCES §2)",
+    "les fiches se contredisent sur la taille (MBG plus grand, Wisconsin plus compact) : s'en tenir à la fiche Benary (50 cm)",
+    "la couleur « plus verte que jaune » (3 sources) contredit le nom affiché « Jaune-vert »"
+   ]
+  },
+  {
+   "id": "auslese",
+   "coloris_catalogue": null,
+   "nom_affiche": null,
+   "nom_enregistre": "Alchemilla mollis 'Auslese'",
+   "synonymes": [],
+   "groupe": "cultivar (sélection de semis) d'A. mollis",
+   "nature": "« seed-strain selection, plus uniforme en taille et en port que l'espèce » (Chicago Botanic Garden)",
+   "obtenteur": null,
+   "annee": null,
+   "registre": {
+    "ishs_icra": "aucune",
+    "wikidata": "Q18475643 (nom seul)"
+   },
+   "marque": null,
+   "marque_preuve": "aucun ® ni ™ vu sur le nom dans les 4 pages lues ; « Auslese » est un mot allemand courant (sélection) ; registre des marques non consulté : l'absence n'est pas prouvée",
+   "couleur_selon_sources": {
+    "Chicago Botanic Garden": "tiny lime-green flowers ; 30 cm sur 45 cm",
+    "Wisconsin Extension": "lime-green, port érigé, 38-45 cm, plus grand que l'espèce",
+    "NC State Extension": "large, lime green flowers"
+   },
+   "sources": [
+    {
+     "type": "nom",
+     "niveau": "N3",
+     "consulte": "2026-10-09",
+     "source": "Chicago Botanic Garden, fiche de plante",
+     "url_page": "https://www.chicagobotanic.org/plantcollections/plantfinder/alchemilla_mollis_auslese--ladys_mantle",
+     "constat": "Alchemilla mollis 'Auslese' ; fleurs vert citron ; sélection de semis ; 3 photos"
+    },
+    {
+     "type": "nom",
+     "niveau": "N3",
+     "consulte": "2026-10-09",
+     "source": "Wisconsin Extension",
+     "url_page": "https://hort.extension.wisc.edu/articles/ladys-mantle-alchemilla-mollis/",
+     "constat": "'Auslese' : fleurs vert citron, port érigé"
+    },
+    {
+     "type": "nom",
+     "niveau": "N3",
+     "consulte": "2026-10-09",
+     "source": "NC State Extension",
+     "url_page": "https://plants.ces.ncsu.edu/plants/alchemilla-mollis/",
+     "constat": "'Auslese' : grandes fleurs vert citron"
+    },
+    {
+     "type": "nom",
+     "niveau": "N4",
+     "consulte": "2026-10-09",
+     "source": "Wikidata",
+     "url_page": "https://www.wikidata.org/wiki/Q18475643",
+     "constat": "élément « Alchemilla mollis ‘Auslese’ », sans photo"
+    }
+   ],
+   "photos_designees": [
+    {
+     "url_image": "https://app.chicagobotanic.org/images/plants/596/flwf/596_flwf_high.jpg",
+     "url_page": "https://www.chicagobotanic.org/plantcollections/plantfinder/alchemilla_mollis_auslese--ladys_mantle",
+     "niveau": "N3",
+     "source": "Chicago Botanic Garden, fiche de plante Alchemilla mollis 'Auslese' (jardin botanique)",
+     "auteur": null,
+     "licence": "à vérifier (photo d'un jardin botanique)",
+     "eclairage": "lumière du jour douce, gros plan sur fond flou",
+     "role": "cyme isolée",
+     "vu": "jaune-vert moyen, anthères orange-brun"
+    },
+    {
+     "url_image": "https://app.chicagobotanic.org/images/plants/596/flwftd/596_flwftd_high.jpg",
+     "url_page": "https://www.chicagobotanic.org/plantcollections/plantfinder/alchemilla_mollis_auslese--ladys_mantle",
+     "niveau": "N3",
+     "source": "Chicago Botanic Garden, fiche de plante Alchemilla mollis 'Auslese' (jardin botanique)",
+     "auteur": null,
+     "licence": "à vérifier (photo d'un jardin botanique)",
+     "eclairage": "plein soleil, touffe en pleine fleur",
+     "role": "touffe en pleine fleur",
+     "vu": "jaune-vert franc (le plus jaune des photos vues)"
+    }
+   ],
+   "niveau_preuve": "B",
+   "niveau_motif": "photo N3 vue (2 images du Chicago Botanic Garden, un seul fournisseur), preuve de nom N3 x3 (jardin botanique, 2 services d'extension) ; pas de N1/N2",
+   "statut": "en production possible (B), sous réserve du registre des marques ; candidat libre pour « vert tendre » (voir questions)",
+   "doutes": [
+    "photos d'un seul jardin botanique : le jaune de la touffe en plein soleil est plus franc que « lime-green »",
+    "nom commun allemand : la liberté de marque est à confirmer"
+   ]
+  },
+  {
+   "id": "robusta",
+   "coloris_catalogue": "vert-tendre",
+   "nom_affiche": "Vert tendre (Robusta)",
+   "nom_enregistre": "Alchemilla mollis 'Robusta'",
+   "synonymes": [],
+   "groupe": "cultivar d'A. mollis",
+   "nature": null,
+   "obtenteur": null,
+   "annee": null,
+   "registre": {
+    "ishs_icra": "aucune",
+    "wikidata": "Q9597714 (nom seul)"
+   },
+   "marque": null,
+   "marque_preuve": "aucun ® ni ™ vu sur le nom ; attention : « Robusta » est aussi un rosier (autre genre ; 2 fichiers Commons Rosa 'Robusta' écartés)",
+   "couleur_selon_sources": {
+    "Wisconsin Extension": "port érigé, grandes feuilles, 60 cm ; couleur de fleur non dite",
+    "NC State Extension": "port érigé, grandes feuilles",
+    "Chicago Botanic Garden": "couleur non dite ; photo absente (vignette générique)"
+   },
+   "sources": [
+    {
+     "type": "nom",
+     "niveau": "N3",
+     "consulte": "2026-10-09",
+     "source": "Wisconsin Extension",
+     "url_page": "https://hort.extension.wisc.edu/articles/ladys-mantle-alchemilla-mollis/",
+     "constat": "'Robusta' : port érigé, feuilles plus grandes, environ 60 cm ; couleur de fleur non dite"
+    },
+    {
+     "type": "nom",
+     "niveau": "N3",
+     "consulte": "2026-10-09",
+     "source": "NC State Extension",
+     "url_page": "https://plants.ces.ncsu.edu/plants/alchemilla-mollis/",
+     "constat": "'Robusta' : port érigé, grandes feuilles"
+    },
+    {
+     "type": "nom",
+     "niveau": "N3",
+     "consulte": "2026-10-09",
+     "source": "Chicago Botanic Garden",
+     "url_page": "https://www.chicagobotanic.org/plantcollections/plantfinder/alchemilla_mollis_robusta--ladys_mantle",
+     "constat": "page 'Robusta' archivée avant 2022-02, sans description de fleur, sans photo (vignette générique vue)"
+    },
+    {
+     "type": "nom",
+     "niveau": "N4",
+     "consulte": "2026-10-09",
+     "source": "Wikidata",
+     "url_page": "https://www.wikidata.org/wiki/Q9597714",
+     "constat": "élément « Alchemilla mollis ‘Robusta’ », sans photo"
+    }
+   ],
+   "photos_designees": [],
+   "niveau_preuve": "D",
+   "niveau_motif": "aucune photo nommée trouvée (Commons : seulement le rosier ; Chicago : vignette) ; les sources ne disent rien de la couleur de sa fleur : « vert tendre » n'a pas de source",
+   "statut": "à écarter de la production (D) ; coloris « vert-tendre » à rattacher ailleurs (question)",
+   "doutes": [
+    "la différence de 'Robusta' avec l'espèce est le port et le feuillage, pas la fleur"
+   ]
+  },
+  {
+   "id": "irish-silk",
+   "coloris_catalogue": null,
+   "nom_affiche": null,
+   "nom_enregistre": "Alchemilla mollis 'Irish Silk'",
+   "synonymes": [],
+   "groupe": null,
+   "nature": null,
+   "obtenteur": null,
+   "annee": null,
+   "registre": {
+    "ishs_icra": "aucune"
+   },
+   "marque": null,
+   "marque_preuve": "aucun ® ni ™ vu ; registre des marques non consulté",
+   "couleur_selon_sources": {},
+   "sources": [
+    {
+     "type": "nom",
+     "niveau": "N3",
+     "consulte": "2026-10-09",
+     "source": "Wisconsin Extension",
+     "url_page": "https://hort.extension.wisc.edu/articles/ladys-mantle-alchemilla-mollis/",
+     "constat": "cité"
+    },
+    {
+     "type": "nom",
+     "niveau": "N3",
+     "consulte": "2026-10-09",
+     "source": "NC State Extension",
+     "url_page": "https://plants.ces.ncsu.edu/plants/alchemilla-mollis/",
+     "constat": "cité"
+    }
+   ],
+   "photos_designees": [],
+   "niveau_preuve": "D",
+   "niveau_motif": "cité par Wisconsin Extension (« 2 ft, très florifère ») et NC State ; la fiche Florensis citée par l'annuaire répond 404 ; aucune photo, aucune couleur dite",
+   "statut": "sans photo : liste « sans photo », jamais en production",
+   "doutes": []
+  },
+  {
+   "id": "senior",
+   "coloris_catalogue": null,
+   "nom_affiche": null,
+   "nom_enregistre": "Alchemilla mollis 'Senior'",
+   "synonymes": [],
+   "groupe": null,
+   "nature": null,
+   "obtenteur": null,
+   "annee": null,
+   "registre": {
+    "ishs_icra": "aucune"
+   },
+   "marque": null,
+   "marque_preuve": "aucun ® ni ™ vu ; registre des marques non consulté",
+   "couleur_selon_sources": {},
+   "sources": [
+    {
+     "type": "nom",
+     "niveau": "N4",
+     "consulte": "2026-10-09",
+     "source": "Wikidata",
+     "url_page": "https://www.wikidata.org/wiki/Q9597718",
+     "constat": "élément cultivar, sans photo"
+    }
+   ],
+   "photos_designees": [],
+   "niveau_preuve": "D",
+   "niveau_motif": "nom seul chez Wikidata ; aucune source N2/N3 lue",
+   "statut": "sans photo : liste « sans photo », jamais en production",
+   "doutes": []
+  },
+  {
+   "id": "grandiflora",
+   "coloris_catalogue": null,
+   "nom_affiche": null,
+   "nom_enregistre": "Alchemilla mollis 'Grandiflora'",
+   "synonymes": [],
+   "groupe": null,
+   "nature": null,
+   "obtenteur": null,
+   "annee": null,
+   "registre": {
+    "ishs_icra": "aucune"
+   },
+   "marque": null,
+   "marque_preuve": "aucun ® ni ™ vu ; registre des marques non consulté",
+   "couleur_selon_sources": {},
+   "sources": [
+    {
+     "type": "nom",
+     "niveau": "N4",
+     "consulte": "2026-10-09",
+     "source": "Wikidata",
+     "url_page": "https://www.wikidata.org/wiki/Q9597709",
+     "constat": "élément cultivar, sans photo"
+    }
+   ],
+   "photos_designees": [],
+   "niveau_preuve": "D",
+   "niveau_motif": "nom seul chez Wikidata ; aucune source N2/N3 lue",
+   "statut": "sans photo : liste « sans photo », jamais en production",
+   "doutes": []
+  },
+  {
+   "id": "variegata",
+   "coloris_catalogue": null,
+   "nom_affiche": null,
+   "nom_enregistre": "Alchemilla mollis 'Variegata'",
+   "synonymes": [],
+   "groupe": null,
+   "nature": null,
+   "obtenteur": null,
+   "annee": null,
+   "registre": {
+    "ishs_icra": "aucune"
+   },
+   "marque": null,
+   "marque_preuve": "aucun ® ni ™ vu ; registre des marques non consulté",
+   "couleur_selon_sources": {},
+   "sources": [
+    {
+     "type": "nom",
+     "niveau": "N4",
+     "consulte": "2026-10-09",
+     "source": "Wikidata",
+     "url_page": "https://www.wikidata.org/wiki/Q9597728",
+     "constat": "élément cultivar, sans photo"
+    }
+   ],
+   "photos_designees": [],
+   "niveau_preuve": "D",
+   "niveau_motif": "nom seul chez Wikidata ; sens du nom (feuillage panaché ?) non vérifié",
+   "statut": "sans photo : liste « sans photo », jamais en production",
+   "doutes": []
+  },
+  {
+   "id": "mr-polands-variety",
+   "coloris_catalogue": null,
+   "nom_affiche": null,
+   "nom_enregistre": "Alchemilla 'Mr Polands Variety'",
+   "synonymes": [],
+   "groupe": null,
+   "nature": null,
+   "obtenteur": null,
+   "annee": null,
+   "registre": {
+    "ishs_icra": "aucune"
+   },
+   "marque": null,
+   "marque_preuve": "aucun ® ni ™ vu ; registre des marques non consulté",
+   "couleur_selon_sources": {},
+   "sources": [
+    {
+     "type": "nom",
+     "niveau": "N4",
+     "consulte": "2026-10-09",
+     "source": "Wikidata",
+     "url_page": "https://www.wikidata.org/wiki/Q18475317",
+     "constat": "élément cultivar, sans photo"
+    }
+   ],
+   "photos_designees": [],
+   "niveau_preuve": "D",
+   "niveau_motif": "Wikidata le classe sous le genre Alchemilla, pas sous A. mollis ; aucune source N2/N3 lue",
+   "statut": "sans photo : liste « sans photo », jamais en production",
+   "doutes": []
+  }
+ ],
+ "stades_observes": {
+  "note": "photos iNaturalist de l'espèce, toutes vues ; teintes décrites à l'œil, non mesurées (c'est le travail de fleur-coloris)",
+  "bouton": "vert-citron serré dans les bractées",
+  "floraison_pale": "crème-vert pâle, fleurs ouvertes",
+  "floraison_pleine": "jaune-vert vif au soleil, étamines orangées",
+  "vieillissement": "jaune-orangé puis rouille sur les cymes (fin août)",
+  "fane": "cymes sèches rose-brun et feuilles brun-rouge (octobre)",
+  "photos": {
+   "bouton": {
+    "url_image": "https://inaturalist-open-data.s3.amazonaws.com/photos/244603205/large.jpeg",
+    "url_page": "https://www.inaturalist.org/observations/142650543",
+    "niveau": "N3",
+    "source": "iNaturalist, observation de recherche Alchemilla mollis (Nouvelle-Zélande, 2022-11-23)",
+    "auteur": "Chris Ecroyd",
+    "licence": "CC BY-NC",
+    "eclairage": "plein soleil, gros plan",
+    "role": "bouton",
+    "vu": "grappes vert-citron serrées dans les bractées"
+   },
+   "floraison_pleine": {
+    "url_image": "https://inaturalist-open-data.s3.amazonaws.com/photos/523448384/large.jpg",
+    "url_page": "https://www.inaturalist.org/observations/290953255",
+    "niveau": "N3",
+    "source": "iNaturalist, observation de recherche Alchemilla mollis (Danemark, 2025-06-19)",
+    "auteur": "Marcello Manara",
+    "licence": "CC BY",
+    "eclairage": "plein soleil, gros plan, floraison pleine",
+    "role": "floraison pleine",
+    "vu": "jaune-vert vif, étamines orangées"
+   },
+   "vieillissement": {
+    "url_image": "https://inaturalist-open-data.s3.amazonaws.com/photos/424161149/large.jpeg",
+    "url_page": "https://www.inaturalist.org/observations/238263067",
+    "niveau": "N3",
+    "source": "iNaturalist, observation de recherche Alchemilla mollis (2024-08-27)",
+    "auteur": "Johanna Kolehmainen",
+    "licence": "CC BY-NC",
+    "eclairage": "lumière du jour, plante entière en fin d'été",
+    "role": "vieillissement",
+    "vu": "jaune-orangé puis rouille sur les cymes, feuilles intactes"
+   },
+   "fane": {
+    "url_image": "https://inaturalist-open-data.s3.amazonaws.com/photos/328232536/large.jpeg",
+    "url_page": "https://www.inaturalist.org/observations/187659299",
+    "niveau": "N3",
+    "source": "iNaturalist, observation de recherche Alchemilla mollis (Islande, 2023-10-15)",
+    "auteur": "sans auteur (CC0)",
+    "licence": "CC0",
+    "eclairage": "lumière du jour couverte, automne",
+    "role": "fané",
+    "vu": "cymes sèches rose-brun, feuilles brun-rouge"
+   }
+  }
+ },
+ "existence_non_prouvee": [
+  {
+   "id": "select",
+   "motif": "« Select » : nom cité par la consigne, absent de toutes les sources lues (RHS, MBG, Wisconsin, NC State, Chicago, Benary, Wikidata, Commons)"
+  },
+  {
+   "id": "irish-silk",
+   "motif": "existence N3 seulement (2 extensions), fiche Florensis en 404, aucune photo"
+  }
+ ],
+ "manquants_proposes_late": [],
+ "manquants_conditionnels": [
+  {
+   "id": "auslese",
+   "motif": "candidat libre pour le coloris « vert tendre » : B, sous réserve du registre des marques"
+  }
+ ],
+ "hors_taxon": [
+  {
+   "nom": "Pumila",
+   "taxon": "Alchemilla faeroensis (Wikidata)"
+  },
+  {
+   "nom": "Minima",
+   "taxon": "Alchemilla filicaulis (Wikidata)"
+  },
+  {
+   "nom": "fichiers Commons Rosa 'Leonardo da Vinci' et Rosa 'Robusta'",
+   "taxon": "roses : écartés"
+  }
+ ],
+ "couverture": {
+  "cultivars_inventories": 9,
+  "niveaux": {
+   "A": 0,
+   "B": 3,
+   "C": 0,
+   "D": 6
+  },
+  "avec_photo_nommee_vue": [
+   "mollis-type",
+   "thriller",
+   "auslese"
+  ],
+  "sans_photo": [
+   "robusta",
+   "irish-silk",
+   "senior",
+   "grandiflora",
+   "variegata",
+   "mr-polands-variety"
+  ],
+  "census_py": "9 cultivars en 12 s (Wikidata 9, Commons 2, iNaturalist 40 photos de l'espèce, GBIF 0 cultivar)",
+  "kavb": "non utilisé (genre hors KAVB)"
+ },
+ "marques": {
+  "vues": [
+   "Thriller® (Benary) : dans marques-a-verifier.txt"
+  ],
+  "registre_des_marques": "TMview, EUIPO, INPI, WIPO non consultés : à l'orchestrateur, pour Thriller en premier, puis Auslese, Robusta, Senior, Irish Silk (absence non prouvée)"
+ },
+ "questions_orchestrateur": [
+  "Stade ou cultivar ? Les trois coloris du catalogue ne se distinguent, dans les sources, ni par une couleur de fleur mesurée ni par un cultivar documenté : les descriptions de cultivar vont toutes du vert citron au jaune-vert, et les photos varient surtout avec le stade et la lumière. À trancher par le porteur : mesurer les trois comme stades de l'espèce (bouton ou début pâle, pleine floraison, vieillissement), ou garder des cultivars (alors Thriller® est en attente et Robusta n'a pas de photo).",
+  "Marques : TMview/EUIPO pour Thriller (® chez Benary).",
+  "Robusta : sans photo ni couleur de fleur (D). Rattacher « vert tendre » à Auslese (B) ou au stade pâle du type ?",
+  "N1 des cultivars et assortiment de coupe : CPVO, UPOV PLUTO, Floricode (comptes) ou liste d'un exportateur de fleur coupée, non lus à ce passage."
+ ],
+ "limites": [
+  "aucun registre d'enregistrement pour Alchemilla (absent de la liste des ICRA de l'ISHS) : pas de N1 pour un cultivar, donc pas de niveau A possible",
+  "WebSearch épuisé : seules des pages précises (WebFetch) et des API sans clé ont été lues ; aucune liste d'assortiment d'exportateur ou de grossiste de fleur coupée",
+  "POWO 403 aux robots ; WFO non lu ; Jelitto 403 ; Florensis 404 ; Gardenia.net 403",
+  "RHS Plants : aucune fiche de cultivar atteinte (la recherche est dynamique) ; photo RHS © non réutilisable, non vue",
+  "une seule photo N2 (Benary, détourée), aucune photo nommée pour Robusta, Senior, Irish Silk, Grandiflora, Variegata, Mr Poland's Variety",
+  "pas de mesure de couleur dans ce fichier : le champ mesures sera ajouté par fleur-coloris"
+ ],
+ "mesures_disponibles": "Aucune mesure de ce fichier. Copies de contrôle des photos vues : refcache/alchemille/img/ (hors dépôt).",
+ "sondage_10_pourcent": {
+  "date": "2026-10-09",
+  "fait_par": "fleur-recensement",
+  "part": "3 fiches sur 9 (33 %) : mollis-type (SKU du bouquet), thriller, auslese",
+  "methode": "pages et API rouvertes (RHS 774 relue avec deux invites, IPNI par API, iNaturalist par API sur 3 observations, Benary relue deux fois, Chicago Botanic Garden), images téléchargées dans refcache et regardées une à une",
+  "resultat": "aucun niveau corrigé ; Commons Thriller 0zz écarté de la mesure (aucune fleur visible) ; Benary : l'image principale de la page est une feuille à gouttes (sans fleur), l'image de tige coupée est la seconde (A4091962.png) : retenue"
+ },
+ "statut_fichier": "passage unique terminé, avant fleur-coloris (le champ mesures de chaque coloris reste à ajouter)"
+}

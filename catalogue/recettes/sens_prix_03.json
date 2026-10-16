@@ -1,0 +1,1196 @@
+[
+ {
+  "id": "solidago",
+  "prix": 2.6,
+  "sens": "Encouragement et réussite",
+  "occ": [
+   "courage",
+   "bravo"
+  ],
+  "eviter": [],
+  "note": "Du latin solidare, « consolider » ; verge d'or : sens d'usage de soutien et de réussite."
+ },
+ {
+  "id": "veronique",
+  "prix": 3.2,
+  "sens": "Fidélité sincère et constante",
+  "occ": [
+   "amour",
+   "merci",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Langage des fleurs du XIXe : fidélité ; nom associé à sainte Véronique."
+ },
+ {
+  "id": "bupleurum",
+  "prix": 2.6,
+  "sens": "Vitalité d'un vert acidulé",
+  "occ": [
+   "juste",
+   "anniv"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; son vert chartreuse, rare chez les fleurs, réveille les bouquets."
+ },
+ {
+  "id": "alchemille",
+  "prix": 2.6,
+  "sens": "Bienveillance maternelle",
+  "occ": [
+   "courage",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "Rosée recueillie par les alchimistes ; feuille comparée au manteau de Notre-Dame."
+ },
+ {
+  "id": "ammi",
+  "prix": 3.6,
+  "sens": "Grâce légère et aérienne",
+  "occ": [
+   "merci",
+   "juste",
+   "anniv"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; ses ombelles en dentelle blanche allègent tout bouquet."
+ },
+ {
+  "id": "daucus-carota",
+  "prix": 4.0,
+  "sens": "Délicatesse d'une dentelle royale",
+  "occ": [
+   "amour",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "Dentelle de la reine Anne : la fleur pourpre du centre serait sa goutte de sang."
+ },
+ {
+  "id": "aneth",
+  "prix": 3.5,
+  "sens": "Gaieté vive et piquante",
+  "occ": [
+   "juste",
+   "courage"
+  ],
+  "eviter": [],
+  "note": "Folklore médiéval : l'aneth éloignait les sortilèges ; sens d'usage : gaieté vive."
+ },
+ {
+  "id": "orlaya",
+  "prix": 4.0,
+  "sens": "Pureté des champs de blé",
+  "occ": [
+   "juste",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; messicole devenue rare, dentelle blanche des moissons."
+ },
+ {
+  "id": "didiscus",
+  "prix": 4.2,
+  "sens": "Rêverie poétique",
+  "occ": [
+   "amour",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; ombelle bleu pâle d'Australie-Occidentale, fine comme une dentelle."
+ },
+ {
+  "id": "eryngium",
+  "prix": 4.5,
+  "sens": "Attraction et caractère bien trempé",
+  "occ": [
+   "amour",
+   "courage",
+   "bravo"
+  ],
+  "eviter": [],
+  "note": "Racine confite jadis réputée aphrodisiaque (Shakespeare) ; épines : caractère."
+ },
+ {
+  "id": "echinops",
+  "prix": 4.4,
+  "sens": "Fermeté douce, rempart d'azur",
+  "occ": [
+   "courage",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Du grec ekhinos, « hérisson » : sphère piquante d'un bleu acier ; sens d'usage."
+ },
+ {
+  "id": "craspedia",
+  "prix": 3.1,
+  "sens": "Énergie solaire et bonne humeur",
+  "occ": [
+   "anniv",
+   "courage"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; pompons d'or venus d'Australie, gais comme de petits soleils."
+ },
+ {
+  "id": "nigelle-capsules",
+  "prix": 3.2,
+  "sens": "Énigme amoureuse dans la brume",
+  "occ": [
+   "amour",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Nigelle dite « love-in-a-mist », l'amour dans la brume ; Victoriens : perplexité."
+ },
+ {
+  "id": "pavot-capsules",
+  "prix": 3.4,
+  "sens": "Doux sommeil et consolation",
+  "occ": [
+   "courage",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Attribut d'Hypnos et de Morphée ; Victoriens : sommeil et consolation."
+ },
+ {
+  "id": "scabieuse-etoilee-capsules",
+  "prix": 4.2,
+  "sens": "Bonne étoile et émerveillement",
+  "occ": [
+   "bravo",
+   "courage"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; capsule sphérique semée de petites étoiles (stellata)."
+ },
+ {
+  "id": "lunaire",
+  "prix": 6.4,
+  "sens": "Honnêteté et richesse du cœur",
+  "occ": [
+   "merci",
+   "bravo"
+  ],
+  "eviter": [],
+  "note": "Anglais « honesty » : cloison translucide sans secret ; disques d'argent."
+ },
+ {
+  "id": "amour-en-cage",
+  "prix": 5.9,
+  "sens": "Cœur précieusement gardé",
+  "occ": [
+   "amour",
+   "anniv"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage tiré du nom « amour-en-cage » : baie gardée dans sa lanterne."
+ },
+ {
+  "id": "coton",
+  "prix": 9.2,
+  "sens": "Douceur du cocon, premières noces",
+  "occ": [
+   "anniv",
+   "amour"
+  ],
+  "eviter": [],
+  "note": "Noces de coton : un an de mariage en France ; la fibre douce du cocon."
+ },
+ {
+  "id": "asclepias",
+  "prix": 4.7,
+  "sens": "Baume pour les chagrins",
+  "occ": [
+   "courage",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Nommée d'après Asclépios, dieu grec de la médecine : sens d'usage de guérison."
+ },
+ {
+  "id": "gomphocarpus",
+  "prix": 5.6,
+  "sens": "Fantaisie pleine d'humour",
+  "occ": [
+   "anniv",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; fruits gonflés comme des ballons, d'où son nom d'arbre à ballons."
+ },
+ {
+  "id": "sedum",
+  "prix": 3.1,
+  "sens": "Quiétude de l'arrière-saison",
+  "occ": [
+   "courage",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Victoriens : tranquillité ; il fleurit encore quand l'été s'achève."
+ },
+ {
+  "id": "carthame",
+  "prix": 3.1,
+  "sens": "Ardeur solaire et éclat",
+  "occ": [
+   "bravo",
+   "anniv",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Plante tinctoriale de l'Égypte antique ; sens d'usage : chaleur et éclat."
+ },
+ {
+  "id": "celosie-plumeuse",
+  "prix": 3.4,
+  "sens": "Flamme ardente et fierté",
+  "occ": [
+   "amour",
+   "bravo",
+   "anniv"
+  ],
+  "eviter": [],
+  "note": "Du grec kêleos, « brûlant » : ses plumets dressés évoquent des flammes."
+ },
+ {
+  "id": "celosie-crete-de-coq",
+  "prix": 4.6,
+  "sens": "Originalité et panache",
+  "occ": [
+   "bravo",
+   "anniv",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "« Passe-velours » : plus doux que le velours ; Victoriens : singularité."
+ },
+ {
+  "id": "celosie-a-epis",
+  "prix": 3.5,
+  "sens": "Enthousiasme spontané",
+  "occ": [
+   "anniv",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; épis effilés comme des flammes de bougie."
+ },
+ {
+  "id": "amarante-retombante",
+  "prix": 3.5,
+  "sens": "Passion qui jamais ne se fane",
+  "occ": [
+   "amour",
+   "anniv"
+  ],
+  "eviter": [],
+  "note": "Grec amarantos, « qui ne flétrit pas » ; en anglais « love-lies-bleeding »."
+ },
+ {
+  "id": "amarante-dressee",
+  "prix": 3.1,
+  "sens": "Vigueur et force de vie",
+  "occ": [
+   "courage",
+   "bravo"
+  ],
+  "eviter": [],
+  "note": "Graine sacrée des Aztèques, modelée en offrandes ; sens d'usage : vigueur."
+ },
+ {
+  "id": "hypericum",
+  "prix": 3.2,
+  "sens": "Talisman contre les idées noires",
+  "occ": [
+   "courage",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Herbe de la Saint-Jean, dite « chasse-diable » : on la suspendait contre le mal."
+ },
+ {
+  "id": "symphorine",
+  "prix": 4.7,
+  "sens": "Complicité et liens resserrés",
+  "occ": [
+   "amour",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "Du grec symphorein, « porter ensemble » : baies serrées en grappes ; sens d'usage."
+ },
+ {
+  "id": "gomphrena",
+  "prix": 3.1,
+  "sens": "Amour qui défie le temps",
+  "occ": [
+   "amour",
+   "anniv"
+  ],
+  "eviter": [],
+  "note": "Victoriens : amour immortel ; ses pompons gardent leur couleur une fois secs."
+ },
+ {
+  "id": "matricaire",
+  "prix": 2.6,
+  "sens": "Vœu de prompt rétablissement",
+  "occ": [
+   "courage",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Anglais « feverfew », du latin febrifugia : l'herbe qui chassait la fièvre."
+ },
+ {
+  "id": "tanaisie",
+  "prix": 2.7,
+  "sens": "Ténacité inébranlable",
+  "occ": [
+   "courage",
+   "bravo"
+  ],
+  "eviter": [
+   "amour"
+  ],
+  "note": "Du grec athanasia, « immortalité » ; Victoriens : « je vous déclare la guerre »."
+ },
+ {
+  "id": "camomille",
+  "prix": 2.7,
+  "sens": "Énergie dans l'adversité",
+  "occ": [
+   "courage",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "Plus on la foule, plus elle s'étend : le langage des fleurs y voit l'énergie."
+ },
+ {
+  "id": "agerate",
+  "prix": 2.6,
+  "sens": "Charme qui ne prend pas de rides",
+  "occ": [
+   "anniv",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "Du grec ageratos, « qui ne vieillit pas » : ses houppes restent longtemps fraîches."
+ },
+ {
+  "id": "lavande",
+  "prix": 1.9,
+  "sens": "Sérénité, parfum de Provence",
+  "occ": [
+   "merci",
+   "courage",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Du latin lavare, « laver » ; jadis « méfiance », car l'aspic s'y cachait."
+ },
+ {
+  "id": "mimosa",
+  "prix": 7.8,
+  "sens": "Sécurité et lumière d'hiver",
+  "occ": [
+   "merci",
+   "anniv",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Langage des fleurs : sécurité ; offert aux femmes le 8 mars en Italie."
+ },
+ {
+  "id": "setaria",
+  "prix": 2.2,
+  "sens": "Nourrir ceux que l'on aime",
+  "occ": [
+   "merci",
+   "amour"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; millet cultivé en Chine depuis le néolithique, régal des oiseaux."
+ },
+ {
+  "id": "panicum",
+  "prix": 2.2,
+  "sens": "Spontanéité vive et scintillante",
+  "occ": [
+   "juste",
+   "anniv"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; nuage de fines panicules qui accroche la lumière."
+ },
+ {
+  "id": "pennisetum",
+  "prix": 2.4,
+  "sens": "Douceur soyeuse à effleurer",
+  "occ": [
+   "amour",
+   "courage"
+  ],
+  "eviter": [],
+  "note": "Du latin penna, « plume », et seta, « soie » ; sens d'usage de douceur."
+ },
+ {
+  "id": "lagurus",
+  "prix": 2.1,
+  "sens": "Tendresse espiègle et duveteuse",
+  "occ": [
+   "amour",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Du grec lagôs, « lièvre », et oura, « queue » ; sens d'usage : douceur espiègle."
+ },
+ {
+  "id": "phalaris",
+  "prix": 3.1,
+  "sens": "Sobriété au naturel",
+  "occ": [
+   "juste",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; l'alpiste, graine des canaris, a un épi lisse qui prend toute teinte."
+ },
+ {
+  "id": "briza",
+  "prix": 2.2,
+  "sens": "Frisson d'une amourette",
+  "occ": [
+   "amour",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Nom populaire « amourette » ; ses épillets tremblent au moindre souffle."
+ },
+ {
+  "id": "miscanthus",
+  "prix": 3.2,
+  "sens": "Contemplation d'un soir d'automne",
+  "occ": [
+   "juste",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "Au Japon, le susuki accompagne la fête de la lune d'automne (tsukimi)."
+ },
+ {
+  "id": "pampa",
+  "prix": 8.1,
+  "sens": "Esprit bohème et insouciance",
+  "occ": [
+   "juste",
+   "anniv",
+   "bravo"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; plumeau des pampas argentines, devenu emblème du décor bohème."
+ },
+ {
+  "id": "stipa",
+  "prix": 3.4,
+  "sens": "Légèreté d'un souffle d'ange",
+  "occ": [
+   "amour",
+   "courage"
+  ],
+  "eviter": [],
+  "note": "Nom populaire « cheveux d'ange » ; protégée à l'état sauvage, elle vient de culture."
+ },
+ {
+  "id": "ble",
+  "prix": 1.6,
+  "sens": "Prospérité et moisson heureuse",
+  "occ": [
+   "bravo",
+   "anniv",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "Attribut de Déméter et Cérès ; noces de froment : trois ans de mariage."
+ },
+ {
+  "id": "avoine",
+  "prix": 1.6,
+  "sens": "Charme d'une musique champêtre",
+  "occ": [
+   "juste",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "Victoriens : l'âme de la musique, en écho au chalumeau d'avoine des bergers."
+ },
+ {
+  "id": "orge",
+  "prix": 1.7,
+  "sens": "Générosité de la terre",
+  "occ": [
+   "merci",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Céréale de Déméter, base du cycéon d'Éleusis ; sens d'usage de générosité."
+ },
+ {
+  "id": "chasmanthium",
+  "prix": 3.5,
+  "sens": "Danse au gré du vent",
+  "occ": [
+   "juste",
+   "anniv"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; épillets plats en médaillons qui dansent et cuivrent à l'automne."
+ },
+ {
+  "id": "sorgho-a-balai",
+  "prix": 3.4,
+  "sens": "Bon augure pour un nouveau foyer",
+  "occ": [
+   "bravo",
+   "merci",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; ses panicules servent depuis des siècles à fabriquer les balais."
+ },
+ {
+  "id": "typha",
+  "prix": 3.2,
+  "sens": "Calme des eaux dormantes",
+  "occ": [
+   "courage",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; épi brun et velouté des berges, image de calme et d'ancrage."
+ },
+ {
+  "id": "ozothamnus",
+  "prix": 4.9,
+  "sens": "Mille petites prévenances",
+  "occ": [
+   "merci",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; arbuste aromatique d'Australie aux innombrables boutons."
+ },
+ {
+  "id": "brunia",
+  "prix": 5.6,
+  "sens": "Éclat d'argent qui dure",
+  "occ": [
+   "bravo",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; perles argentées du fynbos du Cap, aussi belles une fois séchées."
+ },
+ {
+  "id": "berzelia",
+  "prix": 4.8,
+  "sens": "Fraîcheur tonique et pétillante",
+  "occ": [
+   "juste",
+   "anniv"
+  ],
+  "eviter": [],
+  "note": "Dédiée au chimiste Berzelius ; sens d'usage : boules vertes et toniques du fynbos."
+ },
+ {
+  "id": "phylica",
+  "prix": 5.5,
+  "sens": "Réconfort tout en velours",
+  "occ": [
+   "courage",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; plumeaux soyeux du fynbos sud-africain, doux comme une caresse."
+ },
+ {
+  "id": "ixodia",
+  "prix": 3.5,
+  "sens": "Candeur et simplicité durables",
+  "occ": [
+   "merci",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; « marguerite des montagnes » d'Australie, qui sèche sans faner."
+ },
+ {
+  "id": "immortelle-helichrysum",
+  "prix": 3.1,
+  "sens": "Attachement que rien n'efface",
+  "occ": [
+   "amour",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "Grec hêlios, « soleil », et khrusos, « or » ; Victoriens : souvenir éternel."
+ },
+ {
+  "id": "xeranthemum",
+  "prix": 3.2,
+  "sens": "Sourire qui résiste aux épreuves",
+  "occ": [
+   "courage",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Victoriens : gaieté dans l'adversité ; capitules de papier qui ne fanent pas."
+ },
+ {
+  "id": "ammobium",
+  "prix": 3.2,
+  "sens": "Résilience lumineuse",
+  "occ": [
+   "courage",
+   "bravo"
+  ],
+  "eviter": [],
+  "note": "Du grec ammos, « sable », et bios, « vie » : immortelle des sols pauvres."
+ },
+ {
+  "id": "acroclinium",
+  "prix": 3.0,
+  "sens": "Bonheur qui se prolonge",
+  "occ": [
+   "anniv",
+   "amour"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; immortelle australienne (rhodon, « rose ») aux pétales de papier."
+ },
+ {
+  "id": "stirlingia",
+  "prix": 3.5,
+  "sens": "Âme libre et sauvage",
+  "occ": [
+   "juste",
+   "courage"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; protéacée sauvage d'Australie-Occidentale en pompons ramifiés."
+ },
+ {
+  "id": "glixia",
+  "prix": 2.4,
+  "sens": "Vœux qui scintillent",
+  "occ": [
+   "anniv",
+   "bravo"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; « sempre-viva » du Brésil, pluie de petites étoiles séchées."
+ },
+ {
+  "id": "palm-spear-seche",
+  "prix": 6.0,
+  "sens": "Audace et allure graphique",
+  "occ": [
+   "bravo",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; feuille de palmier repliée en lance, pilier du bouquet sec moderne."
+ },
+ {
+  "id": "sun-palm-seche",
+  "prix": 6.5,
+  "sens": "Rayonnement et joie de vivre",
+  "occ": [
+   "anniv",
+   "bravo"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; éventail de palmier taillé en disque, comme un soleil."
+ },
+ {
+  "id": "ruscus-seche-teint",
+  "prix": 2.8,
+  "sens": "Ligne élégante et pérenne",
+  "occ": [
+   "juste",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; fragon séché ou glycériné qui garde sa ligne des mois."
+ },
+ {
+  "id": "hortensia-seche-stabilise",
+  "prix": 16.0,
+  "sens": "Gratitude qui traverse le temps",
+  "occ": [
+   "merci",
+   "anniv"
+  ],
+  "eviter": [],
+  "note": "Usage moderne : la reconnaissance (jadis la froideur) ; séché, il garde ses teintes."
+ },
+ {
+  "id": "eucalyptus-stabilise",
+  "prix": 4.8,
+  "sens": "Protection fidèle au long cours",
+  "occ": [
+   "courage",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "Du grec eu-kalyptos, « bien couvert » : l'opercule protège la fleur."
+ },
+ {
+  "id": "lichen-stabilise",
+  "prix": 3.0,
+  "sens": "Harmonie de deux êtres unis",
+  "occ": [
+   "amour",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Le lichen naît de l'union d'un champignon et d'une algue : la symbiose."
+ },
+ {
+  "id": "broom-bloom",
+  "prix": 2.3,
+  "sens": "Pluie d'étincelles joyeuses",
+  "occ": [
+   "anniv",
+   "bravo"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; herbe des prairies américaines au nuage de fleurettes."
+ },
+ {
+  "id": "feuille-strelitzia-sechee",
+  "prix": 6.5,
+  "sens": "Liberté d'un oiseau de paradis",
+  "occ": [
+   "bravo",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; feuille de strelitzia que le séchage enroule et sculpte."
+ },
+ {
+  "id": "stoebe",
+  "prix": 3.9,
+  "sens": "Caresse poudrée et nuageuse",
+  "occ": [
+   "amour",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; arbuste du veld sud-africain, nuage plumeux stabilisé."
+ },
+ {
+  "id": "eucalyptus-cinerea",
+  "prix": 3.8,
+  "sens": "Chance et prospérité argentée",
+  "occ": [
+   "bravo",
+   "anniv"
+  ],
+  "eviter": [],
+  "note": "Feuilles rondes comme des pièces d'argent (« Silver Dollar ») : sens d'usage."
+ },
+ {
+  "id": "eucalyptus-pulverulenta-baby-blue",
+  "prix": 3.8,
+  "sens": "Tendresse protectrice",
+  "occ": [
+   "courage",
+   "amour"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; feuilles rondes et serrées d'un bleu poudré (pulverulenta)."
+ },
+ {
+  "id": "eucalyptus-gunnii",
+  "prix": 3.6,
+  "sens": "Souffle apaisé et bien-être",
+  "occ": [
+   "courage",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Dit « gommier cidre » pour sa sève sucrée ; feuillage à l'essence apaisante."
+ },
+ {
+  "id": "eucalyptus-parvifolia",
+  "prix": 3.8,
+  "sens": "Souplesse et résistance",
+  "occ": [
+   "courage",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; petites feuilles bleutées sur de longues tiges souples."
+ },
+ {
+  "id": "eucalyptus-nicholii",
+  "prix": 4.4,
+  "sens": "Fraîcheur poivrée et vivifiante",
+  "occ": [
+   "courage",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "Dit « peppermint » en Australie : ses feuilles fines sentent la menthe poivrée."
+ },
+ {
+  "id": "eucalyptus-populus",
+  "prix": 4.0,
+  "sens": "Abondance en devenir",
+  "occ": [
+   "anniv",
+   "bravo"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; grappes de boutons pris pour des baies, promesse de floraison."
+ },
+ {
+  "id": "eucalyptus-stuartiana",
+  "prix": 4.4,
+  "sens": "Renouveau, pousses d'espoir",
+  "occ": [
+   "courage",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; pousses cuivrées, comme l'eucalyptus qui repart après le feu."
+ },
+ {
+  "id": "eucalyptus-polyanthemos",
+  "prix": 4.0,
+  "sens": "Clarté sereine et noble",
+  "occ": [
+   "merci",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Du grec polyanthemos, « aux fleurs nombreuses » ; larges feuilles d'argent."
+ },
+ {
+  "id": "eucalyptus-kruseana",
+  "prix": 4.6,
+  "sens": "Mémoire précieuse des jours heureux",
+  "occ": [
+   "merci",
+   "anniv"
+  ],
+  "eviter": [],
+  "note": "Mallee « livre » : feuilles empilées comme des pages ; sens d'usage."
+ },
+ {
+  "id": "danae-racemosa-ruscus-italien",
+  "prix": 2.2,
+  "sens": "Gloire et lauriers mérités",
+  "occ": [
+   "bravo",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "Dit « laurier d'Alexandrie » ou des poètes, associé aux couronnes de gloire."
+ },
+ {
+  "id": "ruscus-hypophyllum-israelien",
+  "prix": 2.1,
+  "sens": "Constance robuste au quotidien",
+  "occ": [
+   "juste",
+   "courage"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; feuillage coriace qui tient des semaines en vase."
+ },
+ {
+  "id": "ruscus-aculeatus-petit-houx",
+  "prix": 2.8,
+  "sens": "Porte-bonheur des fêtes d'hiver",
+  "occ": [
+   "merci",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "En Italie, le pungitopo porte bonheur à Noël ; il éloignait les souris."
+ },
+ {
+  "id": "pittosporum-tenuifolium",
+  "prix": 3.2,
+  "sens": "Élégance ondoyante et discrète",
+  "occ": [
+   "juste",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; feuillage ondulé et lustré venu de Nouvelle-Zélande."
+ },
+ {
+  "id": "pittosporum-tobira",
+  "prix": 3.0,
+  "sens": "Bienvenue et seuil préservé",
+  "occ": [
+   "merci",
+   "bravo"
+  ],
+  "eviter": [],
+  "note": "Au Japon, ses rameaux ornaient les portes (tobira) pour chasser le mal."
+ },
+ {
+  "id": "gaultheria-shallon-salal",
+  "prix": 2.2,
+  "sens": "Soutien humble et généreux",
+  "occ": [
+   "juste",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; « feuille de citron » cueillie dans les forêts du Nord-Ouest pacifique."
+ },
+ {
+  "id": "vaccinium-ovatum-huckleberry",
+  "prix": 2.8,
+  "sens": "Authenticité rustique",
+  "occ": [
+   "merci",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; myrtillier sauvage des forêts de la côte pacifique nord-américaine."
+ },
+ {
+  "id": "rumohra-adiantiformis-leatherleaf",
+  "prix": 2.1,
+  "sens": "Sincérité sans détour",
+  "occ": [
+   "merci",
+   "amour"
+  ],
+  "eviter": [],
+  "note": "Langage des fleurs : la fougère dit la sincérité ; fronde robuste et lustrée."
+ },
+ {
+  "id": "asparagus-setaceus-plumosus",
+  "prix": 3.1,
+  "sens": "Voile léger et romantique",
+  "occ": [
+   "amour",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; voile vaporeux des bouquets d'antan, revenu en grâce."
+ },
+ {
+  "id": "asparagus-virgatus-tree-fern",
+  "prix": 3.1,
+  "sens": "Ascension et croissance",
+  "occ": [
+   "bravo",
+   "courage"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; tige dressée en petit arbre plumeux, toute en verticalité."
+ },
+ {
+  "id": "asparagus-macowanii-ming-fern",
+  "prix": 3.5,
+  "sens": "Sagesse sereine et patiente",
+  "occ": [
+   "merci",
+   "courage"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; houppes denses en nuages, allure de bonsaï miniature."
+ },
+ {
+  "id": "asparagus-densiflorus-sprengeri",
+  "prix": 3.1,
+  "sens": "Joie qui coule de source",
+  "occ": [
+   "juste",
+   "anniv"
+  ],
+  "eviter": [],
+  "note": "Dédié au pépiniériste Carl Sprenger ; sens d'usage : tiges libres et retombantes."
+ },
+ {
+  "id": "asparagus-densiflorus-myersii",
+  "prix": 3.4,
+  "sens": "Malice et vivacité",
+  "occ": [
+   "anniv",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; plumeaux coniques en queue de renard, pleins de vie."
+ },
+ {
+  "id": "asparagus-asparagoides-smilax",
+  "prix": 3.8,
+  "sens": "Promesse d'union éternelle",
+  "occ": [
+   "amour",
+   "bravo",
+   "anniv"
+  ],
+  "eviter": [],
+  "note": "Liane des guirlandes de mariage depuis l'époque victorienne."
+ },
+ {
+  "id": "asparagus-falcatus",
+  "prix": 3.5,
+  "sens": "Détermination tranquille",
+  "occ": [
+   "courage",
+   "bravo"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; cladodes en faucille (falcatus), robustes et brillants."
+ },
+ {
+  "id": "smilax-smallii-southern-smilax",
+  "prix": 4.0,
+  "sens": "Liens festifs et chaleureux",
+  "occ": [
+   "bravo",
+   "anniv",
+   "amour"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; liane sauvage du sud des États-Unis, reine des guirlandes."
+ },
+ {
+  "id": "monstera-deliciosa",
+  "prix": 7.8,
+  "sens": "Exubérance tropicale",
+  "occ": [
+   "bravo",
+   "anniv"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; grande feuille fenestrée, star de la déco végétale."
+ },
+ {
+  "id": "philodendron-bipinnatifidum-selloum",
+  "prix": 7.8,
+  "sens": "Affection qui grandit",
+  "occ": [
+   "amour",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "Du grec philein, « aimer », et dendron, « arbre » : l'ami des arbres."
+ },
+ {
+  "id": "philodendron-xanadu",
+  "prix": 6.4,
+  "sens": "Évasion vers un ailleurs rêvé",
+  "occ": [
+   "juste",
+   "anniv"
+  ],
+  "eviter": [],
+  "note": "Xanadu, capitale d'été de Kubilaï Khan, devenue synonyme de paradis."
+ },
+ {
+  "id": "philodendron-hybrides",
+  "prix": 6.8,
+  "sens": "Personnalité affirmée et chic",
+  "occ": [
+   "bravo",
+   "amour"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; feuilles laquées, du noir acajou au chartreuse lumineux."
+ },
+ {
+  "id": "aspidistra-elatior",
+  "prix": 3.2,
+  "sens": "Endurance et loyauté sans faille",
+  "occ": [
+   "courage",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "Dite « plante des concierges » : elle prospérait dans leurs loges sombres."
+ },
+ {
+  "id": "dypsis-lutescens-areca",
+  "prix": 7.4,
+  "sens": "La palme du succès",
+  "occ": [
+   "bravo",
+   "merci"
+  ],
+  "eviter": [],
+  "note": "Depuis l'Antiquité, la palme couronne les vainqueurs : « remporter la palme »."
+ },
+ {
+  "id": "chamaedorea-chico",
+  "prix": 6.8,
+  "sens": "Petit présent, grande attention",
+  "occ": [
+   "merci",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Du grec chamai, « à terre », et dôrea, « don » : fruits à portée de main."
+ },
+ {
+  "id": "phoenix-roebelenii",
+  "prix": 7.4,
+  "sens": "Renaissance et nouvel essor",
+  "occ": [
+   "courage",
+   "bravo"
+  ],
+  "eviter": [],
+  "note": "En grec, phoinix nomme à la fois le palmier dattier et l'oiseau qui renaît."
+ },
+ {
+  "id": "licuala-grandis",
+  "prix": 10.0,
+  "sens": "Raffinement rare et souverain",
+  "occ": [
+   "bravo",
+   "merci",
+   "anniv"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; feuille ronde plissée en éventail, joyau des sous-bois tropicaux."
+ },
+ {
+  "id": "livistona-rotundifolia",
+  "prix": 9.2,
+  "sens": "Hospitalité et abri ombragé",
+  "occ": [
+   "merci",
+   "juste"
+  ],
+  "eviter": [],
+  "note": "Sens d'usage ; grande feuille en éventail, ombrelle naturelle des tropiques."
+ },
+ {
+  "id": "cycas-revoluta",
+  "prix": 7.8,
+  "sens": "Longévité venue du fond des âges",
+  "occ": [
+   "courage",
+   "bravo",
+   "anniv"
+  ],
+  "eviter": [],
+  "note": "Fossile vivant : les cycas poussaient déjà au temps des dinosaures."
+ }
+]

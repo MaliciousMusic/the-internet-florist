@@ -1,0 +1,43 @@
+mimosa;Mimosa;Remplissage & textures;spray;secondaire
+setaria;Sétaire d'Italie;Remplissage & textures;line;graminee
+panicum;Panic;Remplissage & textures;spray;graminee
+pennisetum;Pennisetum;Remplissage & textures;line;graminee
+lagurus;Lagure;Remplissage & textures;line;graminee
+phalaris;Alpiste;Remplissage & textures;line;graminee
+briza;Grande brize;Remplissage & textures;spray;graminee
+miscanthus;Eulalie;Remplissage & textures;line;graminee
+pampa;Herbe de la pampa;Remplissage & textures;line;graminee
+stipa;Stipe pennée;Remplissage & textures;line;graminee
+ble;Blé;Remplissage & textures;line;graminee
+avoine;Avoine;Remplissage & textures;spray;graminee
+orge;Orge;Remplissage & textures;line;graminee
+chasmanthium;Chasmanthium à larges feuilles;Remplissage & textures;spray;graminee
+sorgho-a-balai;Sorgho à balai;Remplissage & textures;spray;graminee
+typha;Massette;Remplissage & textures;line;texture
+ozothamnus;Ozothamnus;Remplissage & textures;spray;remplissage
+brunia;Brunia;Remplissage & textures;protea;texture
+berzelia;Berzelia;Remplissage & textures;protea;texture
+phylica;Phylica;Remplissage & textures;globe;texture
+ixodia;Ixodia;Remplissage & textures;spray;remplissage
+immortelle-helichrysum;Immortelle;Remplissage & textures;spray;remplissage
+xeranthemum;Xéranthème;Remplissage & textures;double;remplissage
+ammobium;Ammobium;Remplissage & textures;spray;remplissage
+acroclinium;Acroclinium;Remplissage & textures;radial;remplissage
+stirlingia;Stirlingia;Remplissage & textures;spray;texture
+glixia;Glixia;Remplissage & textures;spray;remplissage
+palm-spear-seche;Lance de palmier séchée;Remplissage & textures;foliage;texture
+sun-palm-seche;Palmier soleil séché;Remplissage & textures;foliage;texture
+ruscus-seche-teint;Fragon;Remplissage & textures;foliage;feuillage
+hortensia-seche-stabilise;Hortensia séché ou stabilisé;Remplissage & textures;custom/hydrangea;remplissage
+eucalyptus-stabilise;Eucalyptus stabilisé;Remplissage & textures;foliage;feuillage
+lichen-stabilise;Lichen stabilisé;Remplissage & textures;globe;texture
+broom-bloom;Broom bloom;Remplissage & textures;spray;remplissage
+feuille-strelitzia-sechee;Feuille de strelitzia séchée;Remplissage & textures;foliage;texture
+stoebe;Stoebe stabilisé;Remplissage & textures;foliage;texture
+sanguisorbe;Sanguisorbe;Remplissage & textures;spray;texture
+fraisier-des-bois;Fraisier des bois et tiges de frai;Remplissage & textures;berries;baie
+ricin-capsules;Ricin;Remplissage & textures;berries;texture
+tweedia;Tweedia;Remplissage & textures;spray;remplissage
+baptisia-gousses;Baptisia;Remplissage & textures;berries;texture
+bruyere;Bruyère;Remplissage & textures;spike;texture
+fustet-plumes;Fustet en plumes;Remplissage & textures;custom/xSmoke;texture

@@ -1,0 +1,535 @@
+sid;espece;role;forme;plan;place;pivot;raison
+rose-standard;Rose standard;focale;rosette;milieu;5;1;fleur pivot : la composition se construit autour, au cœur du bouquet
+rose-intermediaire-kenya;Rose intermédiaire et sweetheart;focale;rosette;milieu;6;0;fleur principale plus petite : au milieu, un peu en avant des pivots
+rose-aspect-jardin;Rose d'aspect jardin;focale;rosette;milieu;5;1;fleur pivot : la composition se construit autour, au cœur du bouquet
+rose-de-jardin;Rose de jardin;focale;rosette;milieu;5;1;fleur pivot : la composition se construit autour, au cœur du bouquet
+rose-anglaise-david-austin;Rose anglaise David Austin;focale;rosette;milieu;5;1;fleur pivot : la composition se construit autour, au cœur du bouquet
+rose-japonaise;Rose japonaise;focale;rosette;milieu;5;1;fleur pivot : la composition se construit autour, au cœur du bouquet
+rose-branchue;Rose branchue;secondaire;rosette;milieu;6;0;fleur d’accompagnement : autour des pivots, un peu en avant
+rose-ancienne-parfumee;Rose ancienne et rose parfumée;focale;rosette;milieu;6;0;fleur principale plus petite : au milieu, un peu en avant des pivots
+rose-teintee;Rose teintée et rose fantaisie;focale;rosette;milieu;5;1;fleur pivot : la composition se construit autour, au cœur du bouquet
+rose-stabilisee;Rose stabilisée;focale;rosette;milieu;6;0;fleur principale plus petite : au milieu, un peu en avant des pivots
+tulipe-simple;Tulipe simple;focale;cornet;milieu;6;0;fleur principale plus petite : au milieu, un peu en avant des pivots
+tulipe-francaise;Tulipe française;focale;cornet;milieu;6;0;fleur principale plus petite : au milieu, un peu en avant des pivots
+tulipe-double;Tulipe double;focale;rosette;milieu;5;1;fleur pivot : la composition se construit autour, au cœur du bouquet
+tulipe-perroquet;Tulipe perroquet;focale;etoile;milieu;5;1;fleur pivot : la composition se construit autour, au cœur du bouquet
+tulipe-frangee;Tulipe frangée;focale;cornet;milieu;6;0;fleur principale plus petite : au milieu, un peu en avant des pivots
+tulipe-fleur-de-lys;Tulipe à fleur de lis;focale;cornet;milieu;6;0;fleur principale plus petite : au milieu, un peu en avant des pivots
+tulipe-viridiflora;Tulipe viridiflora;focale;cornet;milieu;6;0;fleur principale plus petite : au milieu, un peu en avant des pivots
+tulipe-rembrandt;Tulipe Rembrandt;focale;cornet;milieu;6;0;fleur principale plus petite : au milieu, un peu en avant des pivots
+renoncule-classique;Renoncule;focale;rosette;milieu;6;0;fleur principale plus petite : au milieu, un peu en avant des pivots
+renoncule-cloni;Renoncule Cloni;focale;rosette;milieu;5;1;fleur pivot : la composition se construit autour, au cœur du bouquet
+renoncule-pon-pon;Renoncule Pon-Pon;focale;rosette;milieu;6;0;fleur principale plus petite : au milieu, un peu en avant des pivots
+renoncule-butterfly;Renoncule Butterfly;secondaire;disque;milieu;6;0;fleur d’accompagnement : autour des pivots, un peu en avant
+renoncule-natura-moderna;Renoncule Natura Moderna;secondaire;disque;milieu;6;0;fleur d’accompagnement : autour des pivots, un peu en avant
+anemone-coronaria;Anémone des fleuristes;focale;disque;milieu;6;0;fleur principale plus petite : au milieu, un peu en avant des pivots
+anemone-japonaise;Anémone du Japon;secondaire;disque;milieu;6;0;fleur d’accompagnement : autour des pivots, un peu en avant
+anemone-sauvage;Anémone sauvage;secondaire;disque;milieu;6;0;fleur d’accompagnement : autour des pivots, un peu en avant
+hellebore-orientalis;Hellébore d'Orient;secondaire;cornet;avant;8;0;fleur basse ou penchée : se regarde de près, devant
+hellebore-niger;Rose de Noël;secondaire;disque;avant;8;0;fleur basse ou penchée : se regarde de près, devant
+pivoine-herbacee-double;Pivoine herbacée double;focale;rosette;milieu;5;1;fleur pivot : la composition se construit autour, au cœur du bouquet
+pivoine-herbacee-simple;Pivoine simple;focale;disque;milieu;5;1;fleur pivot : la composition se construit autour, au cœur du bouquet
+pivoine-corail;Pivoine corail;focale;rosette;milieu;5;1;fleur pivot : la composition se construit autour, au cœur du bouquet
+pivoine-itoh;Pivoine intersectionnelle;focale;disque;milieu;5;1;fleur pivot : la composition se construit autour, au cœur du bouquet
+pivoine-arbustive;Pivoine arbustive;focale;rosette;milieu;5;1;fleur pivot : la composition se construit autour, au cœur du bouquet
+pois-de-senteur;Pois de senteur;secondaire;grappe;milieu;6;0;fleur d’accompagnement : autour des pivots, un peu en avant
+jacinthe;Jacinthe;secondaire;grappe;milieu;6;0;fleur d’accompagnement : autour des pivots, un peu en avant
+muscari;Muscari;remplissage;grappe;avant;8;0;fleur basse ou penchée : se regarde de près, devant
+narcisse-trompette;Jonquille;secondaire;etoile;milieu;6;0;fleur d’accompagnement : autour des pivots, un peu en avant
+narcisse-double;Narcisse double;secondaire;rosette;milieu;6;0;fleur d’accompagnement : autour des pivots, un peu en avant
+narcisse-bouquet;Narcisse à bouquet;secondaire;grappe;milieu;6;0;fleur d’accompagnement : autour des pivots, un peu en avant
+muguet;Muguet;secondaire;grappe;avant;8;0;fleur basse ou penchée : se regarde de près, devant
+violette;Violette;secondaire;disque;avant;8;0;fleur basse ou penchée : se regarde de près, devant
+ancolie;Ancolie;secondaire;etoile;milieu;6;0;fleur d’accompagnement : autour des pivots, un peu en avant
+lilas;Lilas;focale;grappe;milieu;4;0;grappes amples : volume au cœur du bouquet, un peu en retrait
+freesia;Freesia;secondaire;grappe;milieu;6;0;fleur d’accompagnement : autour des pivots, un peu en avant
+viburnum-roseum;Boule-de-neige;secondaire;sphere;milieu;6;0;fleur d’accompagnement : autour des pivots, un peu en avant
+fritillaire-imperiale;Fritillaire impériale;focale;cornet;arrière;3;0;épi ou haute tige : dépasse à l’arrière
+fritillaire-meleagris;Fritillaire pintade;texture;grappe;avant;8;0;fleur basse ou penchée : se regarde de près, devant
+fritillaire-persica;Fritillaire de Perse;secondaire;epi;arrière;2;0;épi ou haute tige : dépasse à l’arrière
+fritillaire-michailovskyi;Fritillaire de Michailovski et pet;texture;grappe;avant;8;0;fleur basse ou penchée : se regarde de près, devant
+allium-grosse-tete;Ail d'ornement à grosse tête;focale;sphere;arrière;2;0;épi ou haute tige : dépasse à l’arrière
+allium-petit;Ail d'ornement à petite tête;texture;sphere;avant;7;0;texture : accent et relief à l’avant de la masse
+iris-hollandais;Iris de Hollande;secondaire;etoile;milieu;6;0;fleur d’accompagnement : autour des pivots, un peu en avant
+iris-barbu;Iris barbu;focale;etoile;milieu;5;1;fleur pivot : la composition se construit autour, au cœur du bouquet
+ornithogale;Ornithogale;secondaire;epi;arrière;3;0;épi ou haute tige : dépasse à l’arrière
+pavot-islande;Pavot d'Islande;focale;disque;milieu;6;0;fleur principale plus petite : au milieu, un peu en avant des pivots
+camassia;Camassia;secondaire;epi;arrière;2;0;épi ou haute tige : dépasse à l’arrière
+eremurus;Eremurus;secondaire;epi;arrière;2;0;épi ou haute tige : dépasse à l’arrière
+triteleia;Triteleia;remplissage;sphere;avant;7;0;petites têtes : remplissent l’avant de la masse
+jacinthe-des-bois;Jacinthe des bois;remplissage;grappe;avant;8;0;fleur basse ou penchée : se regarde de près, devant
+scille;Scille;remplissage;grappe;avant;8;0;fleur basse ou penchée : se regarde de près, devant
+niveole;Nivéole;remplissage;grappe;avant;8;0;fleur basse ou penchée : se regarde de près, devant
+crocus;Crocus;secondaire;cornet;avant;8;0;fleur basse ou penchée : se regarde de près, devant
+sparaxis;Sparaxis;secondaire;etoile;milieu;6;0;fleur d’accompagnement : autour des pivots, un peu en avant
+ixia;Ixia;remplissage;grappe;avant;7;0;petites têtes : remplissent l’avant de la masse
+glaieul-nain;Glaïeul nain;secondaire;epi;arrière;3;0;épi ou haute tige : dépasse à l’arrière
+amaryllis;Amaryllis;focale;grappe;milieu;5;1;fleur pivot : la composition se construit autour, au cœur du bouquet
+nerine;Nérine;secondaire;ombelle;milieu;6;0;fleur d’accompagnement : autour des pivots, un peu en avant
+dahlia-assiette;Dahlia géant 'assiette';focale;disque;milieu;5;1;fleur pivot : la composition se construit autour, au cœur du bouquet
+dahlia-decoratif;Dahlia décoratif;focale;disque;milieu;5;1;fleur pivot : la composition se construit autour, au cœur du bouquet
+dahlia-balle;Dahlia balle;secondaire;rosette;milieu;6;0;fleur d’accompagnement : autour des pivots, un peu en avant
+dahlia-pompon;Dahlia pompon;secondaire;rosette;avant;7;0;petite fleur : entre les pivots et l’avant
+dahlia-cactus;Dahlia cactus et semi-cactus;focale;rosette;milieu;5;1;fleur pivot : la composition se construit autour, au cœur du bouquet
+dahlia-nenuphar;Dahlia nénuphar;focale;disque;milieu;5;1;fleur pivot : la composition se construit autour, au cœur du bouquet
+dahlia-collerette;Dahlia collerette;secondaire;disque;milieu;6;0;fleur d’accompagnement : autour des pivots, un peu en avant
+dahlia-simple;Dahlia simple;secondaire;disque;milieu;6;0;fleur d’accompagnement : autour des pivots, un peu en avant
+dahlia-anemone;Dahlia à fleur d'anémone;secondaire;disque;milieu;6;0;fleur d’accompagnement : autour des pivots, un peu en avant
+dahlia-lacinie;Dahlia lacinié;focale;rosette;milieu;5;1;fleur pivot : la composition se construit autour, au cœur du bouquet
+cosmos;Cosmos;secondaire;disque;milieu;6;0;fleur d’accompagnement : autour des pivots, un peu en avant
+zinnia;Zinnia;secondaire;disque;milieu;6;0;fleur d’accompagnement : autour des pivots, un peu en avant
+scabieuse;Scabieuse;secondaire;disque;avant;7;0;texture : accent et relief à l’avant de la masse
+delphinium;Delphinium;secondaire;epi;arrière;2;0;épi ou haute tige : dépasse à l’arrière
+pied-alouette-annuel;Pied-d'alouette annuel;secondaire;epi;arrière;3;0;épi ou haute tige : dépasse à l’arrière
+digitale;Digitale;secondaire;epi;arrière;2;0;épi ou haute tige : dépasse à l’arrière
+lisianthus;Lisianthus;secondaire;rosette;milieu;6;0;fleur d’accompagnement : autour des pivots, un peu en avant
+muflier;Muflier;secondaire;epi;arrière;3;0;épi ou haute tige : dépasse à l’arrière
+giroflee-matthiole;Giroflée;secondaire;epi;arrière;3;0;épi ou haute tige : dépasse à l’arrière
+hortensia-boule;Hortensia boule;focale;sphere;milieu;5;1;fleur pivot : la composition se construit autour, au cœur du bouquet
+hortensia-lacecap;Hortensia à fleurs plates;focale;sphere;milieu;5;1;fleur pivot : la composition se construit autour, au cœur du bouquet
+hortensia-paniculata;Hortensia paniculé;focale;cornet;milieu;5;1;fleur pivot : la composition se construit autour, au cœur du bouquet
+hortensia-arborescens;Hortensia arborescent;focale;sphere;milieu;5;1;fleur pivot : la composition se construit autour, au cœur du bouquet
+astilbe;Astilbe;texture;epi;arrière;3;0;ligne : structure verticale à l’arrière
+campanule;Campanule;secondaire;epi;arrière;3;0;épi ou haute tige : dépasse à l’arrière
+phlox;Phlox;secondaire;sphere;milieu;6;0;fleur d’accompagnement : autour des pivots, un peu en avant
+gerbera;Gerbera;focale;disque;milieu;5;1;fleur pivot : la composition se construit autour, au cœur du bouquet
+germini;Germini;secondaire;disque;milieu;6;0;fleur d’accompagnement : autour des pivots, un peu en avant
+tournesol;Tournesol;focale;disque;milieu;5;1;fleur pivot : la composition se construit autour, au cœur du bouquet
+chrysantheme-disbud;Chrysanthème à grosse fleur;focale;sphere;milieu;5;1;fleur pivot : la composition se construit autour, au cœur du bouquet
+chrysantheme-araignee;Chrysanthème araignée et japonais;focale;etoile;milieu;5;1;fleur pivot : la composition se construit autour, au cœur du bouquet
+chrysantheme-santini-pompon;Chrysanthème santini;remplissage;grappe;avant;7;0;petites têtes : remplissent l’avant de la masse
+chrysantheme-marguerite-spray;Chrysanthème spray marguerite et d;secondaire;grappe;milieu;6;0;fleur d’accompagnement : autour des pivots, un peu en avant
+oeillet-standard;Œillet standard;secondaire;frange;avant;7;0;petite fleur : entre les pivots et l’avant
+oeillet-spray;Œillet à petites fleurs;remplissage;disque;milieu;5;0;grosse tête de remplissage : au cœur de la masse
+oeillet-de-poete-dianthus;Œillet de poète et dianthus de fle;secondaire;disque;milieu;6;0;fleur d’accompagnement : autour des pivots, un peu en avant
+reine-marguerite;Reine-marguerite;secondaire;disque;milieu;6;0;fleur d’accompagnement : autour des pivots, un peu en avant
+aster-vivace-symphyotrichum;Aster vivace de fleur coupée;remplissage;grappe;milieu;4;0;nuage léger : traverse la masse, derrière les fleurs
+agapanthe;Agapanthe;focale;sphere;arrière;3;0;épi ou haute tige : dépasse à l’arrière
+glaieul;Glaïeul;secondaire;epi;arrière;2;0;épi ou haute tige : dépasse à l’arrière
+arum-calla;Arum;focale;cornet;milieu;6;0;fleur principale plus petite : au milieu, un peu en avant des pivots
+lis-oriental;Lis oriental;focale;etoile;milieu;5;1;fleur pivot : la composition se construit autour, au cœur du bouquet
+lis-ot-orienpet;Lis OT;focale;etoile;milieu;5;1;fleur pivot : la composition se construit autour, au cœur du bouquet
+lis-asiatique-la;Lis asiatique et hybrides LA;focale;etoile;milieu;5;1;fleur pivot : la composition se construit autour, au cœur du bouquet
+lis-longiflorum-trompette;Lis longiflorum et lis trompette;focale;etoile;milieu;5;1;fleur pivot : la composition se construit autour, au cœur du bouquet
+alstroemere;Alstrœmère;secondaire;etoile;milieu;6;0;fleur d’accompagnement : autour des pivots, un peu en avant
+amaryllis-hippeastrum;Amaryllis;focale;etoile;milieu;5;1;fleur pivot : la composition se construit autour, au cœur du bouquet
+tubereuse;Tubéreuse;secondaire;epi;arrière;2;0;épi ou haute tige : dépasse à l’arrière
+rudbeckia;Rudbeckia;secondaire;disque;milieu;6;0;fleur d’accompagnement : autour des pivots, un peu en avant
+echinacea;Échinacée;secondaire;disque;milieu;6;0;fleur d’accompagnement : autour des pivots, un peu en avant
+nigelle;Nigelle de Damas;secondaire;etoile;avant;7;0;texture : accent et relief à l’avant de la masse
+clematite;Clématite;secondaire;etoile;avant;9;0;retombe à l’avant, par-dessus le col
+achillee;Achillée;remplissage;disque;milieu;4;0;nuage léger : traverse la masse, derrière les fleurs
+trachelium;Trachélium;remplissage;disque;avant;7;0;petites têtes : remplissent l’avant de la masse
+bleuet;Bleuet;remplissage;disque;avant;7;0;texture : accent et relief à l’avant de la masse
+godetia-clarkia;Godétia et clarkia;secondaire;epi;arrière;3;0;épi ou haute tige : dépasse à l’arrière
+tagete-oeillet-d-inde;Tagète;secondaire;sphere;milieu;6;0;fleur d’accompagnement : autour des pivots, un peu en avant
+souci-calendula;Souci;secondaire;disque;milieu;6;0;fleur d’accompagnement : autour des pivots, un peu en avant
+immortelle-xerochrysum;Immortelle à bractées;secondaire;disque;avant;7;0;texture : accent et relief à l’avant de la masse
+sauge-salvia;Sauge ornementale;secondaire;epi;arrière;3;0;épi ou haute tige : dépasse à l’arrière
+bouvardia;Bouvardia;secondaire;sphere;milieu;6;0;fleur d’accompagnement : autour des pivots, un peu en avant
+liatris;Liatris;secondaire;epi;arrière;2;0;épi ou haute tige : dépasse à l’arrière
+aconit;Aconit;secondaire;epi;arrière;2;0;épi ou haute tige : dépasse à l’arrière
+phalaenopsis;Phalaenopsis;focale;orchidee;milieu;5;1;fleur pivot : la composition se construit autour, au cœur du bouquet
+cymbidium-grandes-fleurs;Cymbidium à grandes fleurs;focale;orchidee;milieu;5;1;fleur pivot : la composition se construit autour, au cœur du bouquet
+cymbidium-mini;Cymbidium mini;secondaire;orchidee;milieu;6;0;fleur d’accompagnement : autour des pivots, un peu en avant
+dendrobium-coupe;Dendrobium coupé;secondaire;orchidee;milieu;6;0;fleur d’accompagnement : autour des pivots, un peu en avant
+dendrobium-nobile;Dendrobium nobile et dendrobiums e;secondaire;orchidee;milieu;6;0;fleur d’accompagnement : autour des pivots, un peu en avant
+vanda;Vanda;focale;orchidee;milieu;5;1;fleur pivot : la composition se construit autour, au cœur du bouquet
+ascocenda;Ascocenda et Ascocentrum;secondaire;orchidee;avant;7;0;petite fleur : entre les pivots et l’avant
+mokara;Mokara;secondaire;orchidee;milieu;6;0;fleur d’accompagnement : autour des pivots, un peu en avant
+aranda;Aranda;secondaire;orchidee;milieu;6;0;fleur d’accompagnement : autour des pivots, un peu en avant
+arachnis-aranthera;Arachnis;texture;orchidee;avant;7;0;texture : accent et relief à l’avant de la masse
+oncidium;Oncidium;remplissage;grappe;milieu;4;0;nuage léger : traverse la masse, derrière les fleurs
+cambria;Cambria et hybrides intergénérique;secondaire;orchidee;milieu;6;0;fleur d’accompagnement : autour des pivots, un peu en avant
+odontoglossum;Odontoglossum;secondaire;orchidee;milieu;6;0;fleur d’accompagnement : autour des pivots, un peu en avant
+brassia;Brassia;texture;orchidee;avant;7;0;texture : accent et relief à l’avant de la masse
+miltoniopsis;Miltoniopsis et Miltonia;focale;orchidee;milieu;5;1;fleur pivot : la composition se construit autour, au cœur du bouquet
+zygopetalum;Zygopetalum;focale;orchidee;milieu;5;1;fleur pivot : la composition se construit autour, au cœur du bouquet
+paphiopedilum;Paphiopedilum;focale;orchidee;milieu;6;0;fleur principale plus petite : au milieu, un peu en avant des pivots
+phragmipedium;Phragmipedium;focale;orchidee;milieu;5;1;fleur pivot : la composition se construit autour, au cœur du bouquet
+cattleya;Cattleya et hybrides;focale;orchidee;milieu;5;1;fleur pivot : la composition se construit autour, au cœur du bouquet
+epidendrum;Epidendrum;remplissage;sphere;avant;7;0;petites têtes : remplissent l’avant de la masse
+masdevallia;Masdevallia;texture;orchidee;avant;7;0;texture : accent et relief à l’avant de la masse
+disa;Disa;focale;orchidee;milieu;5;1;fleur pivot : la composition se construit autour, au cœur du bouquet
+coelogyne;Coelogyne;secondaire;orchidee;milieu;6;0;fleur d’accompagnement : autour des pivots, un peu en avant
+lycaste;Lycaste;focale;orchidee;milieu;5;1;fleur pivot : la composition se construit autour, au cœur du bouquet
+ludisia;Ludisia;feuillage;feuillage;avant;8;0;feuille basse : col et pied du bouquet, devant
+cypripedium;Cypripedium;focale;orchidee;milieu;5;1;fleur pivot : la composition se construit autour, au cœur du bouquet
+rhynchostylis;Rhynchostylis;secondaire;orchidee;milieu;6;0;fleur d’accompagnement : autour des pivots, un peu en avant
+anthurium-andraeanum;Anthurium;focale;coeur;milieu;5;1;fleur pivot : la composition se construit autour, au cœur du bouquet
+anthurium-obake;Anthurium obake;focale;coeur;milieu;5;1;fleur pivot : la composition se construit autour, au cœur du bouquet
+anthurium-tulipe;Anthurium tulipe;secondaire;coeur;milieu;6;0;fleur d’accompagnement : autour des pivots, un peu en avant
+heliconia-rostrata;Héliconia pendant;focale;sculpt;milieu;4;1;grand exotique sculptural : s’élève au fond du milieu
+heliconia-wagneriana;Héliconia wagneriana;focale;sculpt;milieu;4;1;grand exotique sculptural : s’élève au fond du milieu
+heliconia-bihai;Héliconia bihai;focale;sculpt;milieu;4;1;grand exotique sculptural : s’élève au fond du milieu
+heliconia-psittacorum;Héliconia perroquet;secondaire;sculpt;milieu;4;0;grand exotique sculptural : s’élève au fond du milieu
+heliconia-caribaea;Héliconia caribaea;focale;sculpt;milieu;4;1;grand exotique sculptural : s’élève au fond du milieu
+heliconia-stricta;Héliconia stricta;secondaire;sculpt;milieu;4;0;grand exotique sculptural : s’élève au fond du milieu
+heliconia-chartacea;Héliconia chartacea « Sexy Pink »;focale;sculpt;milieu;4;1;grand exotique sculptural : s’élève au fond du milieu
+heliconia-orthotricha;Héliconia orthotricha;focale;sculpt;milieu;4;1;grand exotique sculptural : s’élève au fond du milieu
+heliconia-velues;Héliconias pendants velus;focale;sculpt;milieu;4;1;grand exotique sculptural : s’élève au fond du milieu
+calathea-crotalifera;Calathea crotalifera;secondaire;sculpt;milieu;4;0;grand exotique sculptural : s’élève au fond du milieu
+musa-fleur;Fleur de bananier ornemental;focale;sculpt;milieu;4;1;grand exotique sculptural : s’élève au fond du milieu
+strelitzia-reginae;Oiseau de paradis;focale;sculpt;milieu;4;1;grand exotique sculptural : s’élève au fond du milieu
+strelitzia-nicolai;Strelitzia blanc géant;focale;sculpt;milieu;4;1;grand exotique sculptural : s’élève au fond du milieu
+alpinia-purpurata;Alpinia;focale;sculpt;milieu;4;1;grand exotique sculptural : s’élève au fond du milieu
+etlingera-elatior;Rose de porcelaine;focale;sculpt;milieu;4;1;grand exotique sculptural : s’élève au fond du milieu
+zingiber;Gingembre ruche et gingembre shamp;focale;sculpt;milieu;4;1;grand exotique sculptural : s’élève au fond du milieu
+costus;Costus;secondaire;sculpt;milieu;4;0;grand exotique sculptural : s’élève au fond du milieu
+tapeinochilos-ananassae;Gingembre de cire;focale;sculpt;milieu;4;1;grand exotique sculptural : s’élève au fond du milieu
+curcuma;Curcuma;secondaire;sculpt;milieu;6;0;fleur d’accompagnement : autour des pivots, un peu en avant
+ananas-ornemental;Ananas ornemental sur tige;texture;sculpt;avant;7;0;texture : accent et relief à l’avant de la masse
+bromeliacees;Broméliacées à fleurs;focale;sculpt;milieu;5;1;fleur pivot : la composition se construit autour, au cœur du bouquet
+protea-cynaroides;Protée royale;focale;disque;milieu;5;1;fleur pivot : la composition se construit autour, au cœur du bouquet
+protea-neriifolia;Protée à feuilles de laurier-rose;focale;cornet;milieu;5;1;fleur pivot : la composition se construit autour, au cœur du bouquet
+protea-repens;Protée sucrière;secondaire;cornet;milieu;6;0;fleur d’accompagnement : autour des pivots, un peu en avant
+protea-magnifica;Protée reine;focale;disque;milieu;5;1;fleur pivot : la composition se construit autour, au cœur du bouquet
+protea-eximia;Protée duchesse;focale;disque;milieu;5;1;fleur pivot : la composition se construit autour, au cœur du bouquet
+protea-hybrides;Protées hybrides et petites protée;focale;cornet;milieu;5;1;fleur pivot : la composition se construit autour, au cœur du bouquet
+leucospermum;Leucospermum;focale;sphere;milieu;5;1;fleur pivot : la composition se construit autour, au cœur du bouquet
+leucadendron;Leucadendron;secondaire;cornet;milieu;6;0;fleur d’accompagnement : autour des pivots, un peu en avant
+serruria;Serruria;secondaire;etoile;avant;7;0;texture : accent et relief à l’avant de la masse
+mimetes;Mimetes;focale;cornet;milieu;5;1;fleur pivot : la composition se construit autour, au cœur du bouquet
+aulax;Aulax;texture;cornet;avant;7;0;texture : accent et relief à l’avant de la masse
+banksia;Banksia;focale;sphere;milieu;5;1;fleur pivot : la composition se construit autour, au cœur du bouquet
+telopea;Waratah;focale;sphere;milieu;5;1;fleur pivot : la composition se construit autour, au cœur du bouquet
+anigozanthos;Patte de kangourou;secondaire;grappe;milieu;4;0;grand exotique sculptural : s’élève au fond du milieu
+isopogon;Isopogon;secondaire;sphere;avant;7;0;texture : accent et relief à l’avant de la masse
+grevillea;Grevillea;secondaire;grappe;milieu;6;0;fleur d’accompagnement : autour des pivots, un peu en avant
+hakea;Hakea;secondaire;sphere;milieu;6;0;fleur d’accompagnement : autour des pivots, un peu en avant
+gloriosa;Gloriosa;secondaire;etoile;milieu;6;0;fleur d’accompagnement : autour des pivots, un peu en avant
+tillandsia;Tillandsia;texture;sculpt;avant;7;0;texture : accent et relief à l’avant de la masse
+nepenthes;Népenthès;texture;ligne;avant;7;0;texture : accent et relief à l’avant de la masse
+nelumbo-nucifera;Fleur de lotus;focale;cornet;milieu;5;1;fleur pivot : la composition se construit autour, au cœur du bouquet
+nelumbo-capsule;Capsule de lotus;texture;disque;avant;7;0;texture : accent et relief à l’avant de la masse
+passiflora;Passiflore;secondaire;retombante;avant;9;0;retombe à l’avant, par-dessus le col
+hibiscus;Hibiscus tropical;focale;etoile;milieu;5;1;fleur pivot : la composition se construit autour, au cœur du bouquet
+plumeria;Frangipanier;secondaire;sphere;milieu;6;0;fleur d’accompagnement : autour des pivots, un peu en avant
+bougainvillea;Bougainvillier;remplissage;grappe;avant;7;0;petites têtes : remplissent l’avant de la masse
+gypsophile;Gypsophile;remplissage;grappe;milieu;4;0;nuage léger : traverse la masse, derrière les fleurs
+waxflower;Fleur de cire;remplissage;grappe;milieu;4;0;nuage léger : traverse la masse, derrière les fleurs
+statice-sinuata;Statice;remplissage;grappe;milieu;4;0;nuage léger : traverse la masse, derrière les fleurs
+limonium-latifolium;Lavande de mer;remplissage;grappe;milieu;4;0;nuage léger : traverse la masse, derrière les fleurs
+limonium-hybride;Limonium hybride;remplissage;grappe;milieu;4;0;nuage léger : traverse la masse, derrière les fleurs
+statice-tatarica;Statice tatarica;remplissage;grappe;milieu;4;0;nuage léger : traverse la masse, derrière les fleurs
+statice-queue-de-rat;Statice queue-de-rat;texture;epi;arrière;3;0;ligne : structure verticale à l’arrière
+astrantia;Astrance;secondaire;etoile;avant;7;0;texture : accent et relief à l’avant de la masse
+solidago;Solidage;remplissage;grappe;milieu;4;0;nuage léger : traverse la masse, derrière les fleurs
+veronique;Véronique;secondaire;epi;arrière;3;0;épi ou haute tige : dépasse à l’arrière
+bupleurum;Buplèvre;remplissage;grappe;milieu;4;0;nuage léger : traverse la masse, derrière les fleurs
+alchemille;Alchémille;remplissage;grappe;milieu;4;0;nuage léger : traverse la masse, derrière les fleurs
+ammi;Ammi;remplissage;disque;milieu;4;0;nuage léger : traverse la masse, derrière les fleurs
+daucus-carota;Carotte sauvage ornementale;remplissage;disque;milieu;4;0;nuage léger : traverse la masse, derrière les fleurs
+aneth;Aneth;remplissage;disque;milieu;4;0;nuage léger : traverse la masse, derrière les fleurs
+orlaya;Orlaya;remplissage;disque;milieu;4;0;nuage léger : traverse la masse, derrière les fleurs
+didiscus;Didiscus bleu;remplissage;disque;avant;7;0;petites têtes : remplissent l’avant de la masse
+eryngium;Panicaut;texture;etoile;avant;7;0;texture : accent et relief à l’avant de la masse
+echinops;Échinops;texture;sphere;avant;7;0;texture : accent et relief à l’avant de la masse
+craspedia;Craspedia;secondaire;sphere;avant;7;0;texture : accent et relief à l’avant de la masse
+nigelle-capsules;Nigelle;texture;sphere;avant;7;0;texture : accent et relief à l’avant de la masse
+pavot-capsules;Pavot;texture;sphere;avant;7;0;texture : accent et relief à l’avant de la masse
+scabieuse-etoilee-capsules;Scabieuse étoilée;texture;sphere;avant;7;0;texture : accent et relief à l’avant de la masse
+lunaire;Monnaie-du-pape;texture;grappe;avant;7;0;texture : accent et relief à l’avant de la masse
+amour-en-cage;Amour-en-cage;texture;ligne;arrière;3;0;ligne : structure verticale à l’arrière
+coton;Coton;texture;sphere;avant;7;0;texture : accent et relief à l’avant de la masse
+asclepias;Asclépiade;secondaire;sphere;milieu;6;0;fleur d’accompagnement : autour des pivots, un peu en avant
+gomphocarpus;Arbre à ballons;texture;ligne;arrière;3;0;ligne : structure verticale à l’arrière
+sedum;Orpin d'automne;texture;disque;avant;7;0;texture : accent et relief à l’avant de la masse
+carthame;Carthame des teinturiers;texture;sphere;avant;7;0;texture : accent et relief à l’avant de la masse
+celosie-plumeuse;Célosie plumeuse;texture;epi;arrière;3;0;ligne : structure verticale à l’arrière
+celosie-crete-de-coq;Célosie crête-de-coq;texture;disque;avant;7;0;texture : accent et relief à l’avant de la masse
+celosie-a-epis;Célosie à épis;texture;epi;arrière;3;0;ligne : structure verticale à l’arrière
+amarante-retombante;Amarante queue-de-renard;texture;retombante;avant;9;0;retombe à l’avant, par-dessus le col
+amarante-dressee;Amarante dressée;texture;epi;arrière;3;0;ligne : structure verticale à l’arrière
+hypericum;Millepertuis;baie;baie;avant;8;0;baies : accent à l’avant
+symphorine;Symphorine;baie;baie;avant;8;0;baies : accent à l’avant
+gomphrena;Amarantine;remplissage;sphere;avant;7;0;texture : accent et relief à l’avant de la masse
+matricaire;Matricaire;remplissage;grappe;milieu;4;0;nuage léger : traverse la masse, derrière les fleurs
+tanaisie;Tanaisie commune;remplissage;disque;milieu;4;0;nuage léger : traverse la masse, derrière les fleurs
+camomille;Camomille;remplissage;grappe;milieu;4;0;nuage léger : traverse la masse, derrière les fleurs
+agerate;Agérate du Mexique;remplissage;grappe;milieu;4;0;nuage léger : traverse la masse, derrière les fleurs
+lavande;Lavande et lavandin;texture;epi;arrière;3;0;épi ou haute tige : dépasse à l’arrière
+mimosa;Mimosa;secondaire;grappe;milieu;4;0;nuage léger : traverse la masse, derrière les fleurs
+setaria;Sétaire d'Italie;graminee;ligne;arrière;2;0;graminée : légèreté au fond, au-dessus de la masse
+panicum;Panic;graminee;grappe;arrière;2;0;graminée : légèreté au fond, au-dessus de la masse
+pennisetum;Pennisetum;graminee;ligne;arrière;3;0;graminée : légèreté au fond, au-dessus de la masse
+lagurus;Lagure;graminee;ligne;arrière;3;0;graminée : légèreté au fond, au-dessus de la masse
+phalaris;Alpiste;graminee;ligne;arrière;3;0;graminée : légèreté au fond, au-dessus de la masse
+briza;Grande brize;graminee;ligne;arrière;3;0;graminée : légèreté au fond, au-dessus de la masse
+miscanthus;Eulalie;graminee;ligne;arrière;2;0;graminée : légèreté au fond, au-dessus de la masse
+pampa;Herbe de la pampa;graminee;ligne;arrière;2;0;graminée : légèreté au fond, au-dessus de la masse
+stipa;Stipe pennée;graminee;ligne;arrière;3;0;graminée : légèreté au fond, au-dessus de la masse
+ble;Blé;graminee;ligne;arrière;3;0;graminée : légèreté au fond, au-dessus de la masse
+avoine;Avoine;graminee;ligne;arrière;3;0;graminée : légèreté au fond, au-dessus de la masse
+orge;Orge;graminee;ligne;arrière;3;0;graminée : légèreté au fond, au-dessus de la masse
+chasmanthium;Chasmanthium à larges feuilles;graminee;ligne;arrière;2;0;graminée : légèreté au fond, au-dessus de la masse
+sorgho-a-balai;Sorgho à balai;graminee;ligne;arrière;2;0;graminée : légèreté au fond, au-dessus de la masse
+typha;Massette;texture;ligne;arrière;3;0;ligne : structure verticale à l’arrière
+ozothamnus;Ozothamnus;remplissage;nuage;milieu;4;0;nuage léger : traverse la masse, derrière les fleurs
+brunia;Brunia;texture;baie;avant;7;0;texture : accent et relief à l’avant de la masse
+berzelia;Berzelia;texture;baie;avant;7;0;texture : accent et relief à l’avant de la masse
+phylica;Phylica;texture;grappe;avant;7;0;texture : accent et relief à l’avant de la masse
+ixodia;Ixodia;remplissage;grappe;milieu;4;0;nuage léger : traverse la masse, derrière les fleurs
+immortelle-helichrysum;Immortelle;remplissage;grappe;avant;7;0;texture : accent et relief à l’avant de la masse
+xeranthemum;Xéranthème;remplissage;disque;avant;7;0;texture : accent et relief à l’avant de la masse
+ammobium;Ammobium;remplissage;grappe;avant;7;0;petites têtes : remplissent l’avant de la masse
+acroclinium;Acroclinium;remplissage;disque;avant;7;0;texture : accent et relief à l’avant de la masse
+stirlingia;Stirlingia;texture;nuage;milieu;4;0;nuage léger : traverse la masse, derrière les fleurs
+glixia;Glixia;remplissage;grappe;milieu;4;0;nuage léger : traverse la masse, derrière les fleurs
+palm-spear-seche;Lance de palmier séchée;texture;ligne;arrière;3;0;ligne : structure verticale à l’arrière
+sun-palm-seche;Palmier soleil séché;texture;feuillage;arrière;3;0;ligne : structure verticale à l’arrière
+ruscus-seche-teint;Fragon;feuillage;feuillage;milieu;4;0;feuillage d’appui : structure et liant entre les fleurs
+hortensia-seche-stabilise;Hortensia séché ou stabilisé;remplissage;sphere;milieu;5;0;grosse tête de remplissage : au cœur de la masse
+eucalyptus-stabilise;Eucalyptus stabilisé;feuillage;feuillage;milieu;4;0;feuillage d’appui : structure et liant entre les fleurs
+lichen-stabilise;Lichen stabilisé;texture;sphere;avant;8;0;fleur basse ou penchée : se regarde de près, devant
+broom-bloom;Broom bloom;remplissage;ligne;milieu;4;0;nuage léger : traverse la masse, derrière les fleurs
+feuille-strelitzia-sechee;Feuille de strelitzia séchée;texture;feuillage;arrière;3;0;ligne : structure verticale à l’arrière
+stoebe;Stoebe stabilisé;texture;nuage;milieu;4;0;nuage léger : traverse la masse, derrière les fleurs
+eucalyptus-cinerea;Eucalyptus cinerea;feuillage;feuillage;milieu;4;0;feuillage d’appui : structure et liant entre les fleurs
+eucalyptus-pulverulenta-baby-blue;Eucalyptus 'Baby Blue';feuillage;feuillage;milieu;4;0;feuillage d’appui : structure et liant entre les fleurs
+eucalyptus-gunnii;Eucalyptus gunnii;feuillage;feuillage;milieu;4;0;feuillage d’appui : structure et liant entre les fleurs
+eucalyptus-parvifolia;Eucalyptus parvifolia;feuillage;feuillage;milieu;4;0;feuillage d’appui : structure et liant entre les fleurs
+eucalyptus-nicholii;Eucalyptus nicholii;feuillage;feuillage;milieu;4;0;feuillage d’appui : structure et liant entre les fleurs
+eucalyptus-populus;Eucalyptus populus;feuillage;feuillage;milieu;4;0;feuillage d’appui : structure et liant entre les fleurs
+eucalyptus-stuartiana;Eucalyptus stuartiana;feuillage;feuillage;milieu;4;0;feuillage d’appui : structure et liant entre les fleurs
+eucalyptus-polyanthemos;Eucalyptus polyanthemos;feuillage;feuillage;milieu;4;0;feuillage d’appui : structure et liant entre les fleurs
+eucalyptus-kruseana;Eucalyptus kruseana;feuillage;feuillage;milieu;4;0;feuillage d’appui : structure et liant entre les fleurs
+danae-racemosa-ruscus-italien;Ruscus italien;feuillage;feuillage;milieu;4;0;feuillage d’appui : structure et liant entre les fleurs
+ruscus-hypophyllum-israelien;Ruscus israélien;feuillage;feuillage;milieu;4;0;feuillage d’appui : structure et liant entre les fleurs
+ruscus-aculeatus-petit-houx;Petit houx;feuillage;feuillage;milieu;4;0;feuillage d’appui : structure et liant entre les fleurs
+pittosporum-tenuifolium;Pittosporum tenuifolium;feuillage;feuillage;milieu;4;0;feuillage d’appui : structure et liant entre les fleurs
+pittosporum-tobira;Pittosporum tobira;feuillage;feuillage;milieu;4;0;feuillage d’appui : structure et liant entre les fleurs
+gaultheria-shallon-salal;Salal;feuillage;feuillage;milieu;4;0;feuillage d’appui : structure et liant entre les fleurs
+vaccinium-ovatum-huckleberry;Huckleberry;feuillage;feuillage;milieu;4;0;feuillage d’appui : structure et liant entre les fleurs
+rumohra-adiantiformis-leatherleaf;Fougère cuir;feuillage;feuillage;milieu;4;0;feuillage d’appui : structure et liant entre les fleurs
+asparagus-setaceus-plumosus;Asparagus plumosus;feuillage;feuillage;milieu;4;0;feuillage d’appui : structure et liant entre les fleurs
+asparagus-virgatus-tree-fern;Asparagus virgatus;feuillage;feuillage;milieu;4;0;feuillage d’appui : structure et liant entre les fleurs
+asparagus-macowanii-ming-fern;Asparagus myriocladus;feuillage;feuillage;milieu;4;0;feuillage d’appui : structure et liant entre les fleurs
+asparagus-densiflorus-sprengeri;Asparagus sprengeri;feuillage;feuillage;milieu;4;0;feuillage d’appui : structure et liant entre les fleurs
+asparagus-densiflorus-myersii;Asparagus meyeri;feuillage;feuillage;milieu;4;0;feuillage d’appui : structure et liant entre les fleurs
+asparagus-asparagoides-smilax;Smilax;feuillage;retombante;avant;9;0;retombe à l’avant, par-dessus le col
+asparagus-falcatus;Asparagus falcatus;feuillage;feuillage;milieu;4;0;feuillage d’appui : structure et liant entre les fleurs
+smilax-smallii-southern-smilax;Smilax du Sud;feuillage;retombante;avant;9;0;retombe à l’avant, par-dessus le col
+monstera-deliciosa;Monstera;feuillage;feuillage;arrière;2;0;grande feuille : toile de fond
+philodendron-bipinnatifidum-selloum;Philodendron selloum;feuillage;feuillage;arrière;2;0;grande feuille : toile de fond
+philodendron-xanadu;Philodendron Xanadu;feuillage;feuillage;arrière;2;0;grande feuille : toile de fond
+philodendron-hybrides;Philodendron;feuillage;feuillage;arrière;2;0;grande feuille : toile de fond
+aspidistra-elatior;Aspidistra;feuillage;feuillage;arrière;2;0;grande feuille : toile de fond
+dypsis-lutescens-areca;Palme areca;feuillage;feuillage;arrière;2;0;grande feuille : toile de fond
+chamaedorea-chico;Chamaedorea;feuillage;feuillage;arrière;2;0;grande feuille : toile de fond
+phoenix-roebelenii;Palme roebelenii;feuillage;feuillage;arrière;2;0;grande feuille : toile de fond
+licuala-grandis;Licuala;feuillage;feuillage;arrière;2;0;grande feuille : toile de fond
+livistona-rotundifolia;Palme livistona;feuillage;feuillage;arrière;2;0;grande feuille : toile de fond
+cycas-revoluta;Cycas;feuillage;feuillage;arrière;2;0;grande feuille : toile de fond
+rhapis-excelsa;Rhapis;feuillage;feuillage;arrière;2;0;grande feuille : toile de fond
+caryota-mitis;Palme queue de poisson;feuillage;feuillage;arrière;2;0;grande feuille : toile de fond
+serenoa-repens-palmetto;Palme éventail;feuillage;feuillage;arrière;2;0;grande feuille : toile de fond
+bismarckia-nobilis;Palme bismarckia;feuillage;feuillage;arrière;2;0;grande feuille : toile de fond
+cordyline-fruticosa-ti;Feuilles de ti;feuillage;feuillage;arrière;2;0;grande feuille : toile de fond
+dracaena-reflexa-song-of-india;Dracaena « Song of India »;feuillage;feuillage;arrière;2;0;grande feuille : toile de fond
+dracaena-marginata;Dracaena marginata;feuillage;feuillage;arrière;2;0;grande feuille : toile de fond
+dracaena-fragrans;Dracaena fragrans;feuillage;feuillage;arrière;2;0;grande feuille : toile de fond
+dracaena-sanderiana-lucky-bamboo;Bambou de la chance;texture;ligne;arrière;3;0;ligne : structure verticale à l’arrière
+dracaena-surculosa;Dracaena surculosa;feuillage;feuillage;arrière;2;0;grande feuille : toile de fond
+codiaeum-variegatum-croton;Croton;feuillage;feuillage;arrière;2;0;grande feuille : toile de fond
+alocasia;Alocasia;feuillage;feuillage;arrière;2;0;grande feuille : toile de fond
+goeppertia-calathea;Calathea;feuillage;feuillage;arrière;2;0;grande feuille : toile de fond
+anthurium-feuilles;Feuilles d'anthurium;feuillage;feuillage;arrière;2;0;grande feuille : toile de fond
+musa-feuille-bananier;Feuille de bananier;feuillage;feuillage;arrière;2;0;grande feuille : toile de fond
+strelitzia-feuilles;Feuilles de strelitzia;feuillage;feuillage;milieu;4;0;grand exotique sculptural : s’élève au fond du milieu
+pandanus;Pandanus;feuillage;feuillage;arrière;2;0;grande feuille : toile de fond
+alpinia-zerumbet-variegata;Feuilles de gingembre panaché;feuillage;feuillage;arrière;2;0;grande feuille : toile de fond
+fatsia-japonica-aralia;Aralia;feuillage;feuillage;arrière;2;0;grande feuille : toile de fond
+nephrolepis-exaltata-boston;Fougère de Boston;feuillage;feuillage;arrière;2;0;grande feuille : toile de fond
+polystichum-munitum-sword-fern;Fougère épée de l'Ouest;feuillage;feuillage;arrière;2;0;grande feuille : toile de fond
+adiantum-capillaire;Capillaire;feuillage;feuillage;milieu;4;0;feuillage d’appui : structure et liant entre les fleurs
+sticherus-umbrella-fern;Fougère parapluie;feuillage;feuillage;arrière;2;0;grande feuille : toile de fond
+dicranopteris-uluhe;Fougère uluhe;texture;ligne;arrière;3;0;ligne : structure verticale à l’arrière
+thelypteris-kunthii-helecho;Helecho;feuillage;feuillage;arrière;2;0;grande feuille : toile de fond
+cyrtomium-falcatum-houx;Fougère houx;feuillage;feuillage;arrière;2;0;grande feuille : toile de fond
+phlebodium-aureum-blue-star;Fougère bleue;feuillage;feuillage;arrière;2;0;grande feuille : toile de fond
+woodwardia-fimbriata;Fougère chaîne géante;feuillage;feuillage;arrière;2;0;grande feuille : toile de fond
+asplenium-nidus;Fougère nid d'oiseau;feuillage;feuillage;arrière;2;0;grande feuille : toile de fond
+microsorum-musifolium-crocodile;Fougère crocodile;feuillage;feuillage;arrière;2;0;grande feuille : toile de fond
+zamia-integrifolia-coontie;Coontie;feuillage;feuillage;arrière;2;0;grande feuille : toile de fond
+lycopodium;Lycopode;texture;feuillage;arrière;3;0;ligne : structure verticale à l’arrière
+equisetum-preles;Prêle d'hiver;texture;ligne;arrière;3;0;ligne : structure verticale à l’arrière
+xerophyllum-tenax-bear-grass;Herbe à l'ours;graminee;ligne;arrière;2;0;graminée : légèreté au fond, au-dessus de la masse
+xanthorrhoea-steel-grass;Herbe d'acier;graminee;ligne;arrière;2;0;graminée : légèreté au fond, au-dessus de la masse
+liriope-lily-grass;Liriope;graminee;ligne;arrière;3;0;graminée : légèreté au fond, au-dessus de la masse
+phormium-lin-nz;Phormium;feuillage;ligne;arrière;2;0;grande feuille : toile de fond
+astelia-silver-spear;Astelia 'Silver Spear';feuillage;feuillage;arrière;2;0;grande feuille : toile de fond
+jacobaea-maritima-cineraire;Cinéraire maritime;feuillage;feuillage;avant;8;0;feuille basse : col et pied du bouquet, devant
+stachys-byzantina-oreille-ours;Épiaire laineuse;feuillage;feuillage;avant;8;0;feuille basse : col et pied du bouquet, devant
+hosta-feuilles;Feuilles d'hosta;feuillage;feuillage;arrière;2;0;grande feuille : toile de fond
+galax-urceolata;Galax;feuillage;feuillage;avant;8;0;feuille basse : col et pied du bouquet, devant
+heuchera;Feuilles d'heuchère;feuillage;feuillage;avant;8;0;feuille basse : col et pied du bouquet, devant
+atriplex-hortensis-arroche;Arroche des jardins;feuillage;feuillage;milieu;4;0;feuillage d’appui : structure et liant entre les fleurs
+pelargonium-geranium-odorant;Géranium odorant;feuillage;feuillage;milieu;4;0;feuillage d’appui : structure et liant entre les fleurs
+magnolia-grandiflora-feuillage;Feuillage de magnolia;feuillage;feuillage;milieu;4;0;feuillage d’appui : structure et liant entre les fleurs
+olea-europaea-olivier;Branches d'olivier;feuillage;feuillage;milieu;4;0;feuillage d’appui : structure et liant entre les fleurs
+hedera-helix-lierre;Lierre;feuillage;retombante;avant;9;0;retombe à l’avant, par-dessus le col
+jasminum-liane-jasmin;Liane de jasmin;feuillage;retombante;avant;9;0;retombe à l’avant, par-dessus le col
+trachelospermum-jasmin-etoile;Jasmin étoilé;feuillage;retombante;avant;9;0;retombe à l’avant, par-dessus le col
+myrtus-communis-myrte;Myrte;feuillage;feuillage;milieu;4;0;feuillage d’appui : structure et liant entre les fleurs
+buxus-sempervirens-buis;Buis;feuillage;feuillage;milieu;4;0;feuillage d’appui : structure et liant entre les fleurs
+pistacia-lentiscus-pistachier;Pistachier lentisque;feuillage;feuillage;milieu;4;0;feuillage d’appui : structure et liant entre les fleurs
+laurus-nobilis-laurier-sauce;Laurier-sauce;feuillage;feuillage;milieu;4;0;feuillage d’appui : structure et liant entre les fleurs
+prunus-laurocerasus-laurier-cerise;Laurier-cerise;feuillage;feuillage;milieu;4;0;feuillage d’appui : structure et liant entre les fleurs
+viburnum-tinus-laurier-tin;Laurier-tin;feuillage;feuillage;milieu;4;0;feuillage d’appui : structure et liant entre les fleurs
+quercus-ilex-chene-vert;Chêne vert;feuillage;feuillage;milieu;4;0;feuillage d’appui : structure et liant entre les fleurs
+cotinus-coggygria-arbre-a-perruques;Arbre à perruques;feuillage;feuillage;milieu;4;0;feuillage d’appui : structure et liant entre les fleurs
+physocarpus-opulifolius;Physocarpe;feuillage;feuillage;milieu;4;0;feuillage d’appui : structure et liant entre les fleurs
+nandina-domestica-bambou-sacre;Nandina;feuillage;feuillage;milieu;4;0;feuillage d’appui : structure et liant entre les fleurs
+photinia-red-robin;Photinia 'Red Robin';feuillage;feuillage;milieu;4;0;feuillage d’appui : structure et liant entre les fleurs
+elaeagnus-chalef;Chalef;feuillage;feuillage;milieu;4;0;feuillage d’appui : structure et liant entre les fleurs
+euonymus-japonicus-fusain;Fusain du Japon;feuillage;feuillage;milieu;4;0;feuillage d’appui : structure et liant entre les fleurs
+griselinia-littoralis;Griselinia;feuillage;feuillage;milieu;4;0;feuillage d’appui : structure et liant entre les fleurs
+aucuba-japonica;Aucuba du Japon;feuillage;feuillage;arrière;2;0;grande feuille : toile de fond
+choisya-ternata-oranger-du-mexique;Oranger du Mexique;feuillage;feuillage;milieu;4;0;feuillage d’appui : structure et liant entre les fleurs
+brachyglottis-sunshine;Brachyglottis 'Sunshine';feuillage;feuillage;milieu;4;0;feuillage d’appui : structure et liant entre les fleurs
+leucothoe;Leucothoé;feuillage;feuillage;milieu;4;0;feuillage d’appui : structure et liant entre les fleurs
+skimmia-japonica;Skimmia du Japon;feuillage;baie;milieu;4;0;feuillage d’appui : structure et liant entre les fleurs
+ilex-aquifolium-houx;Houx;feuillage;feuillage;milieu;4;0;feuillage d’appui : structure et liant entre les fleurs
+camellia-japonica-feuillage;Feuillage de camélia;feuillage;feuillage;milieu;4;0;feuillage d’appui : structure et liant entre les fleurs
+gardenia-feuillage;Feuillage de gardénia;feuillage;feuillage;milieu;4;0;feuillage d’appui : structure et liant entre les fleurs
+ligustrum-troene;Troène;feuillage;feuillage;milieu;4;0;feuillage d’appui : structure et liant entre les fleurs
+podocarpus-macrophyllus;Podocarpus;feuillage;feuillage;milieu;4;0;feuillage d’appui : structure et liant entre les fleurs
+nageia-nagi;Nagi;feuillage;feuillage;milieu;4;0;feuillage d’appui : structure et liant entre les fleurs
+cocculus-laurifolius;Cocculus;feuillage;feuillage;milieu;4;0;feuillage d’appui : structure et liant entre les fleurs
+arbutus-arbousier;Arbousier;feuillage;feuillage;milieu;4;0;feuillage d’appui : structure et liant entre les fleurs
+lophomyrtus;Lophomyrtus;feuillage;feuillage;milieu;4;0;feuillage d’appui : structure et liant entre les fleurs
+agonis-flexuosa;Agonis;feuillage;feuillage;milieu;4;0;feuillage d’appui : structure et liant entre les fleurs
+melaleuca-feuillage;Melaleuca;feuillage;feuillage;milieu;4;0;feuillage d’appui : structure et liant entre les fleurs
+grevillea-feuillage;Grevillea;feuillage;feuillage;milieu;4;0;feuillage d’appui : structure et liant entre les fleurs
+leptospermum-arbre-a-the;Leptospermum;feuillage;feuillage;milieu;4;0;feuillage d’appui : structure et liant entre les fleurs
+acacia-feuillage;Acacia;feuillage;feuillage;milieu;4;0;feuillage d’appui : structure et liant entre les fleurs
+adenanthos-sericeus-woolly-bush;Adenanthos;texture;feuillage;avant;7;0;texture : accent et relief à l’avant de la masse
+leucadendron-rouges;Leucadendron rouges et bordeaux;feuillage;cornet;milieu;4;0;feuillage d’appui : structure et liant entre les fleurs
+leucadendron-jaunes-verts;Leucadendron jaunes et verts;feuillage;cornet;milieu;4;0;feuillage d’appui : structure et liant entre les fleurs
+leucadendron-argenteum-arbre-argent;Arbre d'argent;feuillage;feuillage;milieu;4;0;feuillage d’appui : structure et liant entre les fleurs
+lonicera-chevrefeuille;Liane de chèvrefeuille;feuillage;retombante;avant;9;0;retombe à l’avant, par-dessus le col
+salvia-rosmarinus-romarin;Romarin;feuillage;feuillage;milieu;4;0;feuillage d’appui : structure et liant entre les fleurs
+mentha-menthe;Menthe;feuillage;feuillage;milieu;4;0;feuillage d’appui : structure et liant entre les fleurs
+salvia-officinalis-sauge;Sauge officinale;feuillage;feuillage;milieu;4;0;feuillage d’appui : structure et liant entre les fleurs
+origanum-origan;Origan;feuillage;feuillage;milieu;4;0;feuillage d’appui : structure et liant entre les fleurs
+ocimum-basilic;Basilic;feuillage;feuillage;milieu;4;0;feuillage d’appui : structure et liant entre les fleurs
+thymus-thym;Thym;texture;feuillage;avant;7;0;texture : accent et relief à l’avant de la masse
+curio-rowleyanus-collier-de-perles;Collier de perles;texture;retombante;avant;9;0;retombe à l’avant, par-dessus le col
+rhipsalis;Rhipsalis;texture;retombante;avant;9;0;retombe à l’avant, par-dessus le col
+tillandsia-usneoides-mousse-espagnole;Mousse espagnole;texture;retombante;avant;9;0;retombe à l’avant, par-dessus le col
+tillandsia-plantes-de-l-air;Tillandsia;texture;rosette;avant;8;0;fleur basse ou penchée : se regarde de près, devant
+succulentes-echeveria;Succulentes;texture;rosette;avant;8;0;fleur basse ou penchée : se regarde de près, devant
+mousses-fraiches;Mousses fraîches;texture;sphere;avant;8;0;fleur basse ou penchée : se regarde de près, devant
+abies-procera-nobilis;Sapin noble;feuillage;feuillage;milieu;4;0;feuillage d’appui : structure et liant entre les fleurs
+abies-nordmanniana-nordmann;Sapin de Nordmann;feuillage;feuillage;milieu;4;0;feuillage d’appui : structure et liant entre les fleurs
+pseudotsuga-menziesii-douglas;Douglas;feuillage;feuillage;milieu;4;0;feuillage d’appui : structure et liant entre les fleurs
+pinus-pins;Pin;feuillage;feuillage;milieu;4;0;feuillage d’appui : structure et liant entre les fleurs
+cedrus-cedre;Cèdre;feuillage;feuillage;milieu;4;0;feuillage d’appui : structure et liant entre les fleurs
+thuja-cedre-rouge;Thuya;feuillage;feuillage;milieu;4;0;feuillage d’appui : structure et liant entre les fleurs
+chamaecyparis-lawsoniana;Faux-cyprès de Lawson;feuillage;feuillage;milieu;4;0;feuillage d’appui : structure et liant entre les fleurs
+cupressus-cypres-bleus;Cyprès;feuillage;feuillage;milieu;4;0;feuillage d’appui : structure et liant entre les fleurs
+juniperus-genevrier;Genévrier;feuillage;feuillage;milieu;4;0;feuillage d’appui : structure et liant entre les fleurs
+taxus-baccata-if;If commun;feuillage;feuillage;milieu;4;0;feuillage d’appui : structure et liant entre les fleurs
+cryptomeria-japonica;Cryptomeria;feuillage;feuillage;milieu;4;0;feuillage d’appui : structure et liant entre les fleurs
+picea-epicea;Épicéa;feuillage;feuillage;milieu;4;0;feuillage d’appui : structure et liant entre les fleurs
+cerisier-du-japon-sato-zakura;Cerisier à fleurs du Japon;branche;ligne;arrière;2;0;branche : donne la hauteur et le fond
+cerisiers-hatifs-fleurs-simples;Cerisiers hâtifs à fleurs simples;branche;ligne;arrière;2;0;branche : donne la hauteur et le fond
+abricotier-du-japon-ume;Abricotier du Japon;branche;ligne;arrière;2;0;branche : donne la hauteur et le fond
+amandier-en-fleurs;Amandier;branche;ligne;arrière;2;0;branche : donne la hauteur et le fond
+amandier-de-chine-cerisier-nain;Amandier de Chine & cerisier nain ;branche;ligne;arrière;2;0;branche : donne la hauteur et le fond
+pecher-a-fleurs;Pêcher à fleurs;branche;ligne;arrière;2;0;branche : donne la hauteur et le fond
+pommier-pommetier-en-fleurs;Pommier & pommetier à fleurs;branche;ligne;arrière;2;0;branche : donne la hauteur et le fond
+pommetier-a-fruits;Pommetier à fruits décoratifs;baie;ligne;arrière;3;0;branche à baies : hauteur et fond
+cognassier-du-japon;Cognassier du Japon;branche;ligne;arrière;2;0;branche : donne la hauteur et le fond
+magnolia-branches;Magnolia;branche;ligne;arrière;1;0;branche : donne la hauteur et le fond
+forsythia;Forsythia;branche;ligne;arrière;1;0;branche : donne la hauteur et le fond
+amelanchier;Amélanchier;branche;ligne;arrière;2;0;branche : donne la hauteur et le fond
+cornouiller-a-fleurs;Cornouiller à fleurs;branche;ligne;arrière;2;0;branche : donne la hauteur et le fond
+hamamelis;Hamamélis;branche;ligne;arrière;2;0;branche : donne la hauteur et le fond
+viorne-d-hiver;Viorne d’hiver;branche;ligne;arrière;2;0;branche : donne la hauteur et le fond
+spiree;Spirée;branche;ligne;arrière;1;0;branche : donne la hauteur et le fond
+deutzia;Deutzia;branche;ligne;arrière;2;0;branche : donne la hauteur et le fond
+seringat;Seringat;branche;ligne;arrière;2;0;branche : donne la hauteur et le fond
+groseillier-a-fleurs;Groseillier à fleurs;branche;ligne;arrière;2;0;branche : donne la hauteur et le fond
+enkianthus-dodan;Enkianthus;branche;feuillage;arrière;1;0;branche : donne la hauteur et le fond
+glycine;Glycine;branche;retombante;avant;9;0;retombe à l’avant, par-dessus le col
+mitsumata;Mitsumata;branche;ligne;arrière;1;0;branche : donne la hauteur et le fond
+saule-a-chatons;Saule à chatons;branche;ligne;arrière;2;0;branche : donne la hauteur et le fond
+saule-fascie-sekka;Saule fascié 'Sekka';branche;ligne;arrière;1;0;branche : donne la hauteur et le fond
+saule-tortueux;Saule tortueux;branche;ligne;arrière;1;0;branche : donne la hauteur et le fond
+cornouiller-a-bois-colore;Cornouiller à bois coloré;branche;ligne;arrière;1;0;branche : donne la hauteur et le fond
+bouleau;Bouleau;branche;ligne;arrière;1;0;branche : donne la hauteur et le fond
+noisetier-tortueux-chatons;Noisetier;branche;ligne;arrière;1;0;branche : donne la hauteur et le fond
+houx-a-baies;Houx à baies;baie;baie;avant;8;0;baies : accent à l’avant
+houx-verticille-ilex;Houx verticillé;baie;ligne;arrière;3;0;branche à baies : hauteur et fond
+laurier-tin-a-baies;Laurier-tin à baies;baie;baie;avant;8;0;baies : accent à l’avant
+viornes-a-baies;Viornes à baies;baie;baie;avant;8;0;baies : accent à l’avant
+rosier-a-cynorrhodons;Rosier à cynorrhodons;baie;baie;avant;8;0;baies : accent à l’avant
+cotoneaster;Cotonéaster;baie;baie;avant;8;0;baies : accent à l’avant
+buisson-ardent;Buisson ardent;baie;baie;avant;8;0;baies : accent à l’avant
+callicarpa;Arbuste aux bonbons;baie;ligne;arrière;3;0;branche à baies : hauteur et fond
+sorbier-baies;Sorbier;baie;baie;avant;8;0;baies : accent à l’avant
+celastre-bittersweet;Célastre;baie;ligne;arrière;3;0;branche à baies : hauteur et fond
+troene-a-baies;Troène à baies;baie;baie;avant;8;0;baies : accent à l’avant
+nandina-a-baies;Nandina;baie;baie;avant;8;0;baies : accent à l’avant
+arbousier-a-fruits;Arbousier à fruits;baie;baie;avant;8;0;baies : accent à l’avant
+ronce-mures-en-fruits;Ronce à mûres en fruits;baie;baie;avant;8;0;baies : accent à l’avant
+liane-de-kiwi;Liane de kiwi;branche;ligne;arrière;1;0;branche : donne la hauteur et le fond
+vigne-sarments;Vigne;branche;ligne;arrière;1;0;branche : donne la hauteur et le fond
+erable-du-japon;Érable du Japon;branche;feuillage;arrière;2;0;branche : donne la hauteur et le fond
+chene-branches-glands;Chêne;feuillage;feuillage;milieu;4;0;feuillage d’appui : structure et liant entre les fleurs
+hetre-branches;Hêtre;feuillage;feuillage;milieu;4;0;feuillage d’appui : structure et liant entre les fleurs
+meleze-a-cones;Mélèze à cônes;branche;ligne;arrière;2;0;branche : donne la hauteur et le fond
+pin-a-cones;Pin à cônes;texture;feuillage;avant;7;0;texture : accent et relief à l’avant de la masse
+gui;Gui;baie;baie;avant;8;0;baies : accent à l’avant
+sanguisorbe;Sanguisorbe;texture;ligne;arrière;3;0;ligne : structure verticale à l’arrière
+pieris-japonica;Piéris;branche;feuillage;arrière;2;0;branche : donne la hauteur et le fond
+pigamon;Pigamon;texture;grappe;milieu;4;0;nuage léger : traverse la masse, derrière les fleurs
+cyclamen-fleur-coupee;Cyclamen de Perse;secondaire;etoile;avant;8;0;fleur basse ou penchée : se regarde de près, devant
+kniphofia;Tritoma;ligne;epi;arrière;3;0;ligne : structure verticale à l’arrière
+hymenocallis;Lis araignée;focale;etoile;milieu;5;1;fleur pivot : la composition se construit autour, au cœur du bouquet
+crocosmia;Crocosmia;ligne;epi;arrière;3;0;ligne : structure verticale à l’arrière
+bomarea;Bomarea;secondaire;etoile;avant;7;0;petite fleur : entre les pivots et l’avant
+ixora;Ixora;secondaire;sphere;milieu;6;0;fleur d’accompagnement : autour des pivots, un peu en avant
+cyrtanthus;Lis de feu;focale;grappe;milieu;6;0;fleur principale plus petite : au milieu, un peu en avant des pivots
+fraisier-des-bois;Fraisier des bois et tiges de frai;baie;baie;avant;8;0;baies : accent à l’avant
+tamaris;Tamaris;branche;grappe;arrière;2;0;branche : donne la hauteur et le fond
+ricin-capsules;Ricin;texture;baie;avant;7;0;texture : accent et relief à l’avant de la masse
+caladium;Caladium;feuillage;feuillage;arrière;2;0;grande feuille : toile de fond
+loropetalum;Loropetalum;feuillage;feuillage;milieu;4;0;feuillage d’appui : structure et liant entre les fleurs
+tweedia;Tweedia;remplissage;grappe;milieu;4;0;nuage léger : traverse la masse, derrière les fleurs
+baptisia-gousses;Baptisia;texture;ligne;arrière;3;0;ligne : structure verticale à l’arrière
+grenade-branche;Grenadier;baie;baie;avant;8;0;baies : accent à l’avant
+figuier-branche;Figuier;baie;baie;avant;8;0;baies : accent à l’avant
+litchi-branche;Litchi;baie;baie;avant;8;0;baies : accent à l’avant
+kumquat-branche;Kumquat;baie;baie;avant;8;0;baies : accent à l’avant
+fil-aluminium-decoratif;Fil d'aluminium décoratif;accent;ligne;arrière;3;0;ligne : structure verticale à l’arrière
+plume-autruche-teinte;Plume d'autruche teinte;accent;ligne;arrière;3;0;ligne : structure verticale à l’arrière
+chaines-strass-perles;Chaînes de strass et perles décora;accent;ligne;avant;9;0;retombe à l’avant, par-dessus le col
+pensee;Pensée;secondaire;disque;avant;8;0;fleur basse ou penchée : se regarde de près, devant
+rose-eglantine;Rose simple;secondaire;disque;milieu;6;0;fleur d’accompagnement : autour des pivots, un peu en avant
+sandersonia;Sandersonia;ligne;ligne;arrière;3;0;ligne : structure verticale à l’arrière
+ail-serpent;Ail serpent;ligne;ligne;arrière;3;0;ligne : structure verticale à l’arrière
+lis-tigre;Lis tigré;focale;etoile;milieu;5;1;fleur pivot : la composition se construit autour, au cœur du bouquet
+lis-oriental-double;Lis oriental double;focale;etoile;milieu;5;1;fleur pivot : la composition se construit autour, au cœur du bouquet
+clematite-clochettes;Clématite à clochettes;secondaire;grappe;milieu;6;0;fleur d’accompagnement : autour des pivots, un peu en avant
+pentas;Pentas;remplissage;sphere;avant;7;0;petites têtes : remplissent l’avant de la masse
+geranium-vivace;Géranium vivace;remplissage;grappe;avant;7;0;petites têtes : remplissent l’avant de la masse
+coreopsis;Coréopsis;secondaire;disque;avant;7;0;petite fleur : entre les pivots et l’avant
+bruyere;Bruyère;texture;epi;arrière;3;0;épi ou haute tige : dépasse à l’arrière
+gerbera-araignee;Gerbera araignée;secondaire;disque;milieu;6;0;fleur d’accompagnement : autour des pivots, un peu en avant
+cosmos-chocolat;Cosmos chocolat;accent;disque;avant;7;0;texture : accent et relief à l’avant de la masse
+fustet-plumes;Fustet en plumes;texture;grappe;milieu;4;0;nuage léger : traverse la masse, derrière les fleurs
+branche-lichen;Branche lichénée;branche;ligne;arrière;2;0;branche : donne la hauteur et le fond
+pivoine-feuillage;Feuillage de pivoine;feuillage;feuillage;milieu;4;0;feuillage d’appui : structure et liant entre les fleurs
+robinier;Robinier;feuillage;feuillage;milieu;4;0;feuillage d’appui : structure et liant entre les fleurs
+coleus;Coléus;feuillage;feuillage;milieu;4;0;feuillage d’appui : structure et liant entre les fleurs
+begonia-feuillage;Bégonia rex;feuillage;feuillage;milieu;4;0;feuillage d’appui : structure et liant entre les fleurs
+vigne-feuilles;Feuilles de vigne;feuillage;feuillage;milieu;4;0;feuillage d’appui : structure et liant entre les fleurs
+fusain-aile;Fusain ailé;feuillage;feuillage;milieu;4;0;feuillage d’appui : structure et liant entre les fleurs
+calla-feuilles;Feuilles de calla;feuillage;feuillage;milieu;4;0;feuillage d’appui : structure et liant entre les fleurs
+anthurium-cristal;Anthurium cristal;feuillage;feuillage;milieu;4;0;feuillage d’appui : structure et liant entre les fleurs
+hellebore-feuilles;Feuilles d'hellébore;feuillage;feuillage;milieu;4;0;feuillage d’appui : structure et liant entre les fleurs
+chrysantheme-feuilles;Feuillage de chrysanthème;feuillage;feuillage;milieu;4;0;feuillage d’appui : structure et liant entre les fleurs
+gloriosa-feuillage;Liane de gloriosa;feuillage;feuillage;milieu;4;0;feuillage d’appui : structure et liant entre les fleurs

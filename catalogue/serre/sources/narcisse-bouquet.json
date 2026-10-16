@@ -1,0 +1,3606 @@
+{
+ "sid": "narcisse-bouquet",
+ "genre": "Narcissus",
+ "famille": "Amaryllidaceae",
+ "consulte": "2026-10-09",
+ "agent": "fleur-recensement (temps 2 et 3)",
+ "portee": "division 8 (Tazetta) : plusieurs petites fleurs parfumées par hampe ; assortiment de fleur coupée et forçage d'abord, puis classiques du jardin",
+ "taxonomie": {
+  "nom_accepte": "Narcissus L. (accepté par POWO d'après catalogue/serre/methode/SOURCES.md ; page POWO non relue). Espèce souche des tazettas : Narcissus tazetta L. (sous-espèces tazetta, italicus, aureus, chinensis d'après Wikipédia).",
+  "autorite_enregistrement": "RHS (ICRA), The International Daffodil Register and Classified List. Pas de KAVB pour ce genre.",
+  "groupe": "Division 8, Tazetta : plusieurs petites fleurs parfumees par tige (3 a 20), coupe petite et souvent d'une autre couleur (definition du brief). Code couleur du registre : perianthe-coupe (W-W, W-Y, W-O, Y-O, Y-Y...)",
+  "sous_divisions_couleur": "code périanthe-couronne du registre : W-W, W-Y, W-O, Y-O, Y-Y, Y-R, etc. ; les lettres répétées (YYO) donnent les zones de la couronne du fond vers le bord",
+  "melange": [
+   "PAPERWHITES de forcage (Ziva 8 W-W, Omri 8 W-Y, Inbal 8 W-W, Nir 8 W-W, Galilee 8 W-W) : 'Paperwhite' est un nom de groupe commercial, pas une dénomination enregistree ; Jacques Amand : floraison des novembre si plante en septembre",
+   "TAZETTAS de jardin a coupe coloree (Geranium W-O, Cragford W-O, Avalanche W-Y, Grand Soleil d'Or Y-O, Martinette Y-O, puis Golden Dawn, Falconet, Hoopoe, Highfield Beauty : AGM)",
+   "NAINS (Minnow 15-18 cm, Pacific Coast 'miniature tazetta' 8 Y-Y, canaliculatus 25 cm) et TARDIF PENDANT (Silver Chimes 8 W-W)",
+   "FORME BOTANIQUE (Chinese Sacred Lily = N. tazetta subsp. chinensis : entree du registre sans division ni code) ; 'Canaliculatus' est inscrit 8 W-Y au registre et reste dans la sorte",
+   "DOUBLES ranges en 'tazetta' par certains vendeurs (Bloms : Cheerfulness, Yellow Cheerfulness, Sir Winston Churchill ; Jan de Wit et Jacques Amand les mettent en Double, division 4) : exclus, relevent de narcisse-double",
+   "MULTI-FLEURS d'AUTRES DIVISIONS vendus 'multi-headed' : jonquilles (division 7 : Baby Boomer, Dainty Miss, Diego, Heart to Heart, Kokopelli, Quail, Sailboat, Sweetness, Sun Disc, Yazz...) et division 12 (Tete-a-Tete, Toto, Hunter Dawn, Polar Hunter...) : exclus de la sorte, proposes comme sortes a part"
+  ]
+ },
+ "couverture": {
+  "cultivars_inventories": 38,
+  "registre_RHS_lu_par_nom": 37,
+  "division_8_confirmee_au_registre": 36,
+  "hors_division_8": [
+   {
+    "id": "chinese-sacred-lily",
+    "raison": "entrée du registre sans division ni code ; forme de Narcissus tazetta (subsp. chinensis)"
+   },
+   {
+    "id": "polly-s-pearl",
+    "raison": "aucune entrée trouvée au registre le 2026-10-08 ; Fluwel annonce 8 W-W"
+   }
+  ],
+  "niveaux_de_preuve": {
+   "A": 2,
+   "B": 8,
+   "C": 13,
+   "D": 15
+  },
+  "prouves_A_ou_B": 10,
+  "au_catalogue": 9,
+  "au_catalogue_A_ou_B": 7,
+  "sans_photo_exploitable": [
+   "highfield-beauty",
+   "hoopoe",
+   "avalanche-of-gold",
+   "aspasia",
+   "chinita",
+   "grand-monarque",
+   "grand-primo",
+   "orange-wonder",
+   "scarlet-gem",
+   "sparkling-eye",
+   "early-pearl",
+   "galilee",
+   "laurens-koster",
+   "matador",
+   "scilly-white"
+  ],
+  "jan_de_wit": {
+   "fiches_narcissus": 93,
+   "groupe_tazetta": [
+    "Geranium",
+    "Golden Dawn"
+   ],
+   "cultivars_retenus_presents": [
+    "geranium",
+    "golden-dawn"
+   ],
+   "absents_des_93_fiches": 36
+  },
+  "noms_a_trier_division": 380,
+  "nombre_division_8_enregistres": "inconnu : le registre se cherche par nom, il ne liste pas par division ; les 380 noms de a_trier_division (inventaire.json) n'ont pas été lus",
+  "marques_vues": "aucune marque, aucun ® ni ™ sur les 38 noms ; Galilee mis en attente (cité par le standard comme série déposée)"
+ },
+ "coloris": [
+  {
+   "id": "avalanche",
+   "nom_affiche": "Blanc à coupe jaune (Avalanche)",
+   "cultivar": "avalanche",
+   "nom_registre": "Avalanche",
+   "division_registre": "8",
+   "code_couleur_registre": "W-Y",
+   "niveau_preuve": "B",
+   "photos_comptees": 3,
+   "nom_affiche_propose": null,
+   "correspondance": "exacte",
+   "statut": "en production (après mesure des couleurs)",
+   "raison": "SKU du bouquet (narcisse-bouquet~3). Registre RHS : division 8, W-Y, ID 212096 ; AGM. Photos JA, VE et Longfield regardées : périanthe blanc, coupe jaune, concordantes. Pas de fiche Jan de Wit : B est le maximum atteignable (N2 absent).",
+   "mesure_couleur": {
+    "methode": "refs.py auto (mesure automatique brute, non relue à la main)",
+    "photos": [
+     {
+      "photo": 0,
+      "source": "Jacques Amand",
+      "base": "#a29f82",
+      "corps": "#a19e84",
+      "pointe": "#aba349",
+      "confiance_auto": 0.46
+     },
+     {
+      "photo": 1,
+      "source": "Van Engelen",
+      "base": "#aaa48c",
+      "corps": "#b6aa7e",
+      "pointe": "#a59d72",
+      "confiance_auto": 0.77
+     }
+    ],
+    "valeur_retenue": {
+     "base": "#a6a287",
+     "corps": "#aca481",
+     "pointe": "#a8a05e"
+    },
+    "ecart_deltaE": {
+     "base": 3.8,
+     "corps": 11.4,
+     "pointe": 23.9
+    },
+    "eclairage": "studio sur fond gris (photos JA, VE, Blooms) ; le fond gris contamine les blancs",
+    "niveau_couleur": "C",
+    "remarques": "Le SKU de l'avalanche n'est pas validé : les mesures auto de périanthe blanc sont grises (fond gris), le catalogue #f9f7ee n'est pas confirmé. Photo 0 visuellement : périanthe blanc, coupe jaune. Une troisième photo (ou une mesure manuelle) est nécessaire."
+   },
+   "a_mesurer": true,
+   "eclairage": "studio sur fond gris (photos JA, VE, Blooms) ; le fond gris contamine les blancs",
+   "sku_bouquet": true
+  },
+  {
+   "id": "paperwhite",
+   "nom_affiche": "Blanc pur (Paperwhite Ziva)",
+   "cultivar": "ziva",
+   "nom_registre": "Ziva",
+   "division_registre": "8",
+   "code_couleur_registre": "W-W",
+   "niveau_preuve": "B",
+   "photos_comptees": 2,
+   "nom_affiche_propose": "Blanc pur (Ziva)",
+   "correspondance": "nom affiché corrigé",
+   "statut": "en production (après mesure des couleurs)",
+   "raison": "Ziva est le nom enregistré (8 W-W, ID 208702). « Paperwhite » est un nom de groupe commercial (forçage), pas une dénomination ; « Paperwhite Ziva » est un libellé de vendeur (Jacques Amand). Photos JA et Longfield : touffes blanches, coupe non lisible.",
+   "mesure_couleur": null,
+   "a_mesurer": "périanthe (base, corps, pointe) et coupe (gorge, bord), par fleur-coloris sur les photos désignées",
+   "eclairage": "JA : scène de Noël, lumière artificielle ; LF : potée en intérieur",
+   "sku_bouquet": false
+  },
+  {
+   "id": "geranium",
+   "nom_affiche": "Blanc à coupe orange (Geranium)",
+   "cultivar": "geranium",
+   "nom_registre": "Geranium",
+   "division_registre": "8",
+   "code_couleur_registre": "W-O",
+   "niveau_preuve": "A",
+   "photos_comptees": 4,
+   "nom_affiche_propose": null,
+   "correspondance": "exacte",
+   "statut": "en production (après mesure des couleurs)",
+   "raison": "Registre RHS 8 W-O (ID 203123) ; AGM. Seule variété du lot à porter une fiche N2 (Jan de Wit, groupe Tazetta, White/Orange, 40 cm) : vignette concordante avec JA, VE et Bloms regardées.",
+   "mesure_couleur": {
+    "methode": "refs.py auto (mesure automatique brute, non relue à la main)",
+    "photos": [
+     {
+      "photo": 3,
+      "source": "Jacques Amand",
+      "base": "#a99489",
+      "corps": "#a99f99",
+      "pointe": "#a5a099",
+      "confiance_auto": 0.86
+     },
+     {
+      "photo": 4,
+      "source": "Van Engelen",
+      "base": "#bfb8a5",
+      "corps": "#c6b9a6",
+      "pointe": "#9a9682",
+      "confiance_auto": 0.75
+     },
+     {
+      "photo": 5,
+      "source": "Blooms Bulbs",
+      "base": "#b9a186",
+      "corps": "#b5a997",
+      "pointe": "#afa892",
+      "confiance_auto": 1.0
+     },
+     {
+      "photo": 6,
+      "source": "Jan de Wit",
+      "base": "#cdb875",
+      "corps": "#d3c693",
+      "pointe": "#dac692",
+      "confiance_auto": 0.77
+     }
+    ],
+    "valeur_retenue": {
+     "base": "#bcac88",
+     "corps": "#beb198",
+     "pointe": "#aaa492"
+    },
+    "ecart_deltaE": {
+     "base": 13.9,
+     "corps": 11.8,
+     "pointe": 8.4
+    },
+    "eclairage": "studio sur fond gris (photos JA, VE, Blooms) ; le fond gris contamine les blancs",
+    "niveau_couleur": "C",
+    "remarques": "Écart > 10 ΔE sur base et corps entre sources ; blancs contaminés par le fond. Coupe orange non mesurée proprement. Troisième photo nécessaire."
+   },
+   "a_mesurer": true,
+   "eclairage": "studio sur fond gris (photos JA, VE, Blooms) ; le fond gris contamine les blancs",
+   "sku_bouquet": false
+  },
+  {
+   "id": "minnow",
+   "nom_affiche": "Jaune primevère à coupe jaune (Minnow)",
+   "cultivar": "minnow",
+   "nom_registre": "Minnow",
+   "division_registre": "8",
+   "code_couleur_registre": "W-Y",
+   "niveau_preuve": "B",
+   "photos_comptees": 2,
+   "nom_affiche_propose": "Blanc à coupe jaune citron (Minnow)",
+   "correspondance": "nom affiché corrigé",
+   "statut": "en production (après mesure des couleurs)",
+   "raison": "Registre RHS 8 W-Y (ID 212796) : périanthe BLANC, coupe jaune. Le nom « jaune primevère » est faux. Photos VE et Bloms : périanthe blanc crème, petite coupe jaune citron. AGM (Wikipédia : blanc, jaune pâle, 18 cm).",
+   "mesure_couleur": {
+    "methode": "refs.py auto (mesure automatique brute, non relue à la main)",
+    "photos": [
+     {
+      "photo": 7,
+      "source": "Van Engelen",
+      "base": "#9f9951",
+      "corps": "#d2c672",
+      "pointe": "#cec774",
+      "confiance_auto": 0.81
+     },
+     {
+      "photo": 8,
+      "source": "Blooms Bulbs",
+      "base": "#beb958",
+      "corps": "#aaa65e",
+      "pointe": "#373432",
+      "confiance_auto": 0.65
+     }
+    ],
+    "valeur_retenue": {
+     "base": "#aea954",
+     "corps": "#beb668",
+     "pointe": "#827e53"
+    },
+    "ecart_deltaE": {
+     "base": 16.0,
+     "corps": 13.6,
+     "pointe": 70.9
+    },
+    "eclairage": "studio sur fond gris (photos JA, VE, Blooms) ; le fond gris contamine les blancs",
+    "niveau_couleur": "C",
+    "remarques": "Écart très fort sur la pointe (ombre sombre sur photo Blooms). Périanthe blanc non mesurable en auto."
+   },
+   "a_mesurer": true,
+   "eclairage": "studio sur fond gris (photos JA, VE, Blooms) ; le fond gris contamine les blancs",
+   "sku_bouquet": false
+  },
+  {
+   "id": "soleil-d-or",
+   "nom_affiche": "Jaune à coupe orange (Grand Soleil d'Or)",
+   "cultivar": "grand-soleil-d-or",
+   "nom_registre": "Grand Soleil d'Or",
+   "division_registre": "8",
+   "code_couleur_registre": "Y-O",
+   "niveau_preuve": "C",
+   "photos_comptees": 1,
+   "nom_affiche_propose": null,
+   "correspondance": "exacte",
+   "statut": "à confirmer (niveau C)",
+   "raison": "Registre RHS 8 Y-O (ID 222562, orthographe « Grand Soleil d'Or »). Une seule photo (JA) : périanthe jaune, coupe orange. Homonymes proches au registre : Le Soleil d'Or (8 Y-Y or O), Baby Soleil (8 Y-O). Golden Dawn (A) est un substitut possible de même couleur.",
+   "mesure_couleur": {
+    "methode": "refs.py auto (mesure automatique brute, non relue à la main)",
+    "photos": [
+     {
+      "photo": 9,
+      "source": "Jacques Amand",
+      "base": "#c19207",
+      "corps": "#c19417",
+      "pointe": "#8c7d36",
+      "confiance_auto": 0.72
+     }
+    ],
+    "valeur_retenue": {
+     "base": "#c19207",
+     "corps": "#c19417",
+     "pointe": "#8c7d36"
+    },
+    "ecart_deltaE": null,
+    "eclairage": "studio sur fond gris (photos JA, VE, Blooms) ; le fond gris contamine les blancs",
+    "niveau_couleur": "C",
+    "remarques": "Une seule photo (JA). Mesure auto jaune-orange plausible mais non recoupée."
+   },
+   "a_mesurer": true,
+   "eclairage": "studio sur fond gris (photos JA, VE, Blooms) ; le fond gris contamine les blancs",
+   "sku_bouquet": false,
+   "ret": 1,
+   "ret_raison": "Niveau C (une seule organisation de photos) : ret:1 dans le code (s106a.js), SKU inchangé."
+  },
+  {
+   "id": "cragford",
+   "nom_affiche": "Blanc à coupe orange vif (Cragford)",
+   "cultivar": "cragford",
+   "nom_registre": "Cragford",
+   "division_registre": "8",
+   "code_couleur_registre": "W-O",
+   "niveau_preuve": "B",
+   "photos_comptees": 2,
+   "nom_affiche_propose": null,
+   "correspondance": "exacte",
+   "statut": "en production (après mesure des couleurs)",
+   "raison": "Registre RHS 8 W-O (ID 201948). Photos VE (vignette) et Longfield regardées : périanthe blanc, coupe orange rouge. Absent de Jan de Wit.",
+   "mesure_couleur": {
+    "methode": "refs.py auto (mesure automatique brute, non relue à la main)",
+    "photos": [
+     {
+      "photo": 10,
+      "source": "Van Engelen",
+      "base": "#aeaaa4",
+      "corps": "#abb3ae",
+      "pointe": "#a5afab",
+      "confiance_auto": 0.54
+     }
+    ],
+    "valeur_retenue": {
+     "base": "#aeaaa4",
+     "corps": "#abb3ae",
+     "pointe": "#a5afab"
+    },
+    "ecart_deltaE": null,
+    "eclairage": "studio sur fond gris (photos JA, VE, Blooms) ; le fond gris contamine les blancs",
+    "niveau_couleur": "C",
+    "remarques": "Une seule photo (VE). Périanthe blanc contaminé par le fond."
+   },
+   "a_mesurer": true,
+   "eclairage": "studio sur fond gris (photos JA, VE, Blooms) ; le fond gris contamine les blancs",
+   "sku_bouquet": false
+  },
+  {
+   "id": "chinensis",
+   "nom_affiche": "Blanc à coupe jaune d'or (tazetta chinensis)",
+   "cultivar": "chinese-sacred-lily",
+   "nom_registre": "Chinese Sacred Lily",
+   "division_registre": null,
+   "code_couleur_registre": null,
+   "niveau_preuve": "C",
+   "photos_comptees": 1,
+   "nom_affiche_propose": "Blanc à coupe jaune d'or (Chinese Sacred Lily)",
+   "correspondance": "nom affiché précisé",
+   "statut": "à confirmer (niveau C)",
+   "raison": "Pas un cultivar de division 8 : forme ancienne de Narcissus tazetta (sous-espèce chinensis d'après Wikipédia et Commons). Entrée du registre RHS « Chinese Sacred Lily » sans division ni code. Une seule photo (JA) : périanthe blanc, coupe jaune d'or à reflet orange (le vendeur écrit « orange »).",
+   "mesure_couleur": {
+    "methode": "refs.py auto (mesure automatique brute, non relue à la main)",
+    "photos": [
+     {
+      "photo": 11,
+      "source": "Jacques Amand",
+      "base": "#98978c",
+      "corps": "#a19f99",
+      "pointe": "#a4a19b",
+      "confiance_auto": 0.86
+     }
+    ],
+    "valeur_retenue": {
+     "base": "#98978c",
+     "corps": "#a19f99",
+     "pointe": "#a4a19b"
+    },
+    "ecart_deltaE": null,
+    "eclairage": "studio sur fond gris (photos JA, VE, Blooms) ; le fond gris contamine les blancs",
+    "niveau_couleur": "C",
+    "remarques": "Une seule photo (JA). Périanthe blanc contaminé par le fond."
+   },
+   "a_mesurer": true,
+   "eclairage": "studio sur fond gris (photos JA, VE, Blooms) ; le fond gris contamine les blancs",
+   "sku_bouquet": false,
+   "ret": 1,
+   "ret_raison": "Niveau C (une seule organisation de photos) : ret:1 dans le code (s106a.js), SKU inchangé."
+  },
+  {
+   "id": "silver-chimes",
+   "nom_affiche": "Crème à coupe citron pâle (Silver Chimes)",
+   "cultivar": "silver-chimes",
+   "nom_registre": "Silver Chimes",
+   "division_registre": "8",
+   "code_couleur_registre": "W-W",
+   "niveau_preuve": "B",
+   "photos_comptees": 2,
+   "nom_affiche_propose": "Blanc à coupe blanche (Silver Chimes)",
+   "correspondance": "nom affiché corrigé",
+   "statut": "en production (après mesure des couleurs)",
+   "raison": "Registre RHS 8 W-W (ID 220924) : périanthe et coupe BLANCS. Le nom « coupe citron pâle » est faux. Photos JA et Bloms : fleurs blanches pendantes, coupe crème pâle (reflet citron léger sur la photo Bloms, à mesurer).",
+   "mesure_couleur": {
+    "methode": "refs.py auto (mesure automatique brute, non relue à la main)",
+    "photos": [
+     {
+      "photo": 12,
+      "source": "Jacques Amand",
+      "base": "#999586",
+      "corps": "#a19c86",
+      "pointe": "#918775",
+      "confiance_auto": 0.86
+     },
+     {
+      "photo": 13,
+      "source": "Blooms Bulbs",
+      "base": "#bdaf69",
+      "corps": "#e2daa4",
+      "pointe": "#e7dea2",
+      "confiance_auto": 0.88
+     }
+    ],
+    "valeur_retenue": {
+     "base": "#aba278",
+     "corps": "#c2bb95",
+     "pointe": "#bcb28c"
+    },
+    "ecart_deltaE": {
+     "base": 30.9,
+     "corps": 27.3,
+     "pointe": 37.4
+    },
+    "eclairage": "studio sur fond gris (photos JA, VE, Blooms) ; le fond gris contamine les blancs",
+    "niveau_couleur": "C",
+    "remarques": "Écart très fort entre JA et Blooms ; coupe supposée blanche non confirmée."
+   },
+   "a_mesurer": true,
+   "eclairage": "studio sur fond gris (photos JA, VE, Blooms) ; le fond gris contamine les blancs",
+   "sku_bouquet": false
+  },
+  {
+   "id": "martinette",
+   "nom_affiche": "Jaune d'or à coupe orange (Martinette)",
+   "cultivar": "martinette",
+   "nom_registre": "Martinette",
+   "division_registre": "8",
+   "code_couleur_registre": "Y-O",
+   "niveau_preuve": "B",
+   "photos_comptees": 2,
+   "nom_affiche_propose": null,
+   "correspondance": "exacte",
+   "statut": "en production (après mesure des couleurs)",
+   "raison": "Registre RHS 8 Y-O (ID 219155) ; Jacques Amand le range en division 7 (jonquille) et décrit des coupes rouges : le registre tranche, division 8. Photos JA et Bloms : périanthe jaune, coupe orange.",
+   "mesure_couleur": {
+    "methode": "refs.py auto (mesure automatique brute, non relue à la main)",
+    "photos": [
+     {
+      "photo": 14,
+      "source": "Jacques Amand",
+      "base": "#d09e0e",
+      "corps": "#c6ac27",
+      "pointe": "#806e0a",
+      "confiance_auto": 0.92
+     },
+     {
+      "photo": 15,
+      "source": "Blooms Bulbs",
+      "base": "#dfb72d",
+      "corps": "#d2a126",
+      "pointe": "#3e381f",
+      "confiance_auto": 0.66
+     }
+    ],
+    "valeur_retenue": {
+     "base": "#d8aa1e",
+     "corps": "#cca626",
+     "pointe": "#5f5314"
+    },
+    "ecart_deltaE": {
+     "base": 10.0,
+     "corps": 11.2,
+     "pointe": 41.3
+    },
+    "eclairage": "studio sur fond gris (photos JA, VE, Blooms) ; le fond gris contamine les blancs",
+    "niveau_couleur": "C",
+    "remarques": "Pointe très sombre sur photo Blooms (ombre) ; base et corps proches. Troisième photo nécessaire pour la pointe."
+   },
+   "a_mesurer": true,
+   "eclairage": "studio sur fond gris (photos JA, VE, Blooms) ; le fond gris contamine les blancs",
+   "sku_bouquet": false
+  }
+ ],
+ "propositions_late1": [
+  {
+   "late": 1,
+   "cultivar": "golden-dawn",
+   "nom_registre": "Golden Dawn",
+   "division_registre": "8",
+   "code_couleur_registre": "Y-O",
+   "niveau_preuve": "A",
+   "nom_affiche_propose": "Jaune à coupe orange (Golden Dawn)",
+   "raison": "niveau A : registre RHS 8 Y-O (ID 217603), fiche N2 Jan de Wit (Tazetta, Yellow/Orange), photo JA concordante ; AGM. Même couleur annoncée que Grand Soleil d'Or (C) et Martinette (B) : à garder comme coloris à part seulement si la mesure le sépare, sinon à substituer à Grand Soleil d'Or.",
+   "rang": 1,
+   "mesure_couleur": {
+    "methode": "refs.py auto (mesure automatique brute, non relue à la main)",
+    "photos": [
+     {
+      "photo": 17,
+      "source": "Jacques Amand",
+      "base": "#d5b608",
+      "corps": "#d0ac06",
+      "pointe": "#c5a407",
+      "confiance_auto": 0.7
+     },
+     {
+      "photo": 18,
+      "source": "Jan de Wit",
+      "base": "#c6a608",
+      "corps": "#cdaa0e",
+      "pointe": "#debc2c",
+      "confiance_auto": 0.83
+     }
+    ],
+    "valeur_retenue": {
+     "base": "#ceae08",
+     "corps": "#ceab0a",
+     "pointe": "#d2b01a"
+    },
+    "ecart_deltaE": {
+     "base": 7.6,
+     "corps": 1.9,
+     "pointe": 8.8
+    },
+    "eclairage": "studio sur fond gris (photos JA, VE, Blooms) ; le fond gris contamine les blancs",
+    "niveau_couleur": "B",
+    "remarques": "Écart ≤ 9 ΔE entre JA et JdW (vignette 160 px). Jaune à coupe orange, cohérent. Niveau B."
+   },
+   "a_mesurer": false,
+   "eclairage": "studio sur fond gris (photos JA, VE, Blooms) ; le fond gris contamine les blancs"
+  },
+  {
+   "late": 1,
+   "cultivar": "falconet",
+   "nom_registre": "Falconet",
+   "division_registre": "8",
+   "code_couleur_registre": "Y-R",
+   "niveau_preuve": "B",
+   "nom_affiche_propose": "Jaune à coupe rouge orangé (Falconet)",
+   "raison": "niveau B : registre RHS 8 Y-R (ID 211528), photos VE et Longfield concordantes (périanthe jaune, coupe orange rouge plus soutenue que Martinette) ; AGM. À séparer de Martinette par la mesure.",
+   "rang": 2,
+   "mesure_couleur": {
+    "methode": "refs.py auto (mesure automatique brute, non relue à la main)",
+    "photos": [
+     {
+      "photo": 16,
+      "source": "Van Engelen",
+      "base": "#ecca09",
+      "corps": "#e6b006",
+      "pointe": "#d8b612",
+      "confiance_auto": 0.93
+     }
+    ],
+    "valeur_retenue": {
+     "base": "#ecca09",
+     "corps": "#e6b006",
+     "pointe": "#d8b612"
+    },
+    "ecart_deltaE": null,
+    "eclairage": "studio sur fond gris (photos JA, VE, Blooms) ; le fond gris contamine les blancs",
+    "niveau_couleur": "C",
+    "remarques": "Une seule photo (VE). Périanthe rouge-jaune (Y-R) non vérifié."
+   },
+   "a_mesurer": true,
+   "eclairage": "studio sur fond gris (photos JA, VE, Blooms) ; le fond gris contamine les blancs"
+  }
+ ],
+ "autre_sorte": [
+  {
+   "id": "cheerfulness",
+   "nom": "Cheerfulness, Yellow Cheerfulness, Sir Winston Churchill",
+   "division": 4,
+   "raison": "doubles rangés « tazetta » par Bloms ; Jan de Wit et Jacques Amand les mettent en Double : sorte narcisse-double"
+  }
+ ],
+ "hors_sorte": {
+  "nombre": 326,
+  "raison": "noms de listes vendeurs d'autres divisions ou de division non lue (inventaire.json, clé hors_sorte)"
+ },
+ "sortes_voisines_sans_sorte": [
+  {
+   "sid": "narcisse-jonquille",
+   "division": 7,
+   "indice": "plusieurs fleurs parfumees par tige : Baby Boomer, Dainty Miss, Diego, Heart to Heart, Kokopelli (AGM), Sailboat (AGM), Sweetness (AGM), Sun Disc (AGM), Yazz (Jacques Amand, Van Engelen, Bloms)"
+  },
+  {
+   "sid": "narcisse-divers-multifleur",
+   "division": 12,
+   "indice": "type Tete-a-Tete : Tete-a-Tete, Tete Boucle, Toto, Little Emma, Hunter Dawn, Polar Hunter, Pacific Hunter, Tiny Bubbles (Jacques Amand division 12) ; Jan de Wit classe Tete-a-Tete en 'Other'"
+  },
+  {
+   "sid": "narcisse-especes",
+   "division": 13,
+   "indice": "Chinese Sacred Lily (N. tazetta subsp. chinensis), obvallaris : formes sauvages ou anciennes, a decider apres lecture du registre"
+  },
+  {
+   "sid": "narcisse-grande-coupe",
+   "division": 2,
+   "indice": "deja propose pour narcisse-trompette"
+  },
+  {
+   "sid": "narcisse-petite-coupe",
+   "division": 3,
+   "indice": "idem"
+  },
+  {
+   "sid": "narcisse-triandrus",
+   "division": 5,
+   "indice": "Thalia (Jan de Wit : Triandrus) ; Silver Chimes est range ici par certains vendeurs mais le registre dit 8"
+  },
+  {
+   "sid": "narcisse-cyclamineus",
+   "division": 6,
+   "indice": "idem"
+  },
+  {
+   "sid": "narcisse-poeticus",
+   "division": 9,
+   "indice": "Actaea : fleur unique, exclu sauf vendu en bouquet"
+  },
+  {
+   "sid": "narcisse-coupe-fendue",
+   "division": 11,
+   "indice": "idem (Papillon, Collar chez Jan de Wit)"
+  }
+ ],
+ "cultivars": [
+  {
+   "id": "avalanche",
+   "nom": "Avalanche",
+   "nom_enregistre": "Avalanche",
+   "synonymes": [],
+   "coloris_rattache": "avalanche",
+   "division_registre": "8",
+   "code_couleur_registre": "W-Y",
+   "lecture_code": "périanthe blanc ; couronne (du fond vers le bord, lettres du code) jaune",
+   "registre": {
+    "requete": "Avalanche",
+    "url_recherche": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Avalanche",
+    "id": "212096",
+    "nom_registre": "Avalanche",
+    "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffdetails.asp?ID=212096",
+    "homonymes": [
+     {
+      "nom": "Avalanche",
+      "division": "1",
+      "code": "W-W",
+      "rhs_id": "200678"
+     }
+    ],
+    "statut": "lu le 2026-10-08 par recherche de nom (division 8, code W-Y) ; relecture du 2026-10-09 : le registre répond « no matches » à tort, non refaite",
+    "fiche_detail": "non lue : la page daffdetails.asp répond 504 ou expire (WebFetch, 2 essais de 60 s le 2026-10-09)"
+   },
+   "division_annoncee_vendeurs": {
+    "JA": "div8",
+    "VE": "tazetta",
+    "LF": "Tazetta",
+    "WP-AGM": "div8"
+   },
+   "obtenteur": null,
+   "annee": null,
+   "origine_obtenteur_annee": "non lu : fiche détail du registre en 504",
+   "couleur_annoncee": "code registre W-Y (périanthe blanc, couronne jaune)",
+   "sources_existence": [
+    {
+     "niveau": "N1",
+     "source": "RHSREG",
+     "nom_source": "RHS, International Daffodil Register : recherche par nom (liste nom, division, code ; fiche détail en 504)",
+     "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Avalanche"
+    },
+    {
+     "niveau": "N3",
+     "source": "JA",
+     "nom_source": "Jacques Amand International",
+     "url": "https://www.jacquesamand.com/collections/narcissi-division-8-tazetta-narcissi"
+    },
+    {
+     "niveau": "N3",
+     "source": "LF",
+     "nom_source": "Longfield Gardens",
+     "url": "https://www.longfield-gardens.com/collections/narcissus"
+    },
+    {
+     "niveau": "N3",
+     "source": "PBS",
+     "nom_source": "Pacific Bulb Society",
+     "url": "https://www.pacificbulbsociety.org/pbswiki/index.php/Narcissus"
+    },
+    {
+     "niveau": "N3",
+     "source": "VE",
+     "nom_source": "Van Engelen",
+     "url": "https://www.vanengelen.com/flower-bulbs-index/narcissi/tazetta.html"
+    },
+    {
+     "niveau": "N4",
+     "source": "WP",
+     "nom_source": "Wikipédia, liste des AGM narcisses",
+     "url": "https://en.wikipedia.org/wiki/List_of_Award_of_Garden_Merit_narcissus"
+    }
+   ],
+   "photos": [
+    {
+     "niveau": "N3",
+     "auteur": "Jacques Amand International",
+     "image": "https://cdn.shopify.com/s/files/1/0711/1586/6390/files/N0120NarcissusAvalanche.jpg?v=1783943991",
+     "page": "https://www.jacquesamand.com/products/avalanche-agm",
+     "licence": "usage du vendeur, non relevée",
+     "vue_le": "2026-10-09",
+     "concordance": "concordante",
+     "observation": "périanthe blanc, coupe jaune franc ; fond gris studio"
+    },
+    {
+     "niveau": "N3",
+     "auteur": "Van Engelen",
+     "image": "https://www.vanengelen.com/media/catalog/product/cache/ae5a6ea9a5f2aff03513e6f42df29704/n/_/n_avalanche_ath.jpg",
+     "page": "https://www.vanengelen.com/flower-bulbs-index/narcissi/tazetta/narcissus-avalanche.html",
+     "licence": "usage du vendeur, non relevée",
+     "vue_le": "2026-10-09",
+     "concordance": "concordante",
+     "observation": "périanthe blanc crème, coupe jaune plus soutenu"
+    },
+    {
+     "niveau": "N3",
+     "auteur": "Longfield Gardens",
+     "image": "https://cdn.shopify.com/s/files/1/0620/5092/6710/files/1280x1280_5__81127.1638382884.1280.1280.jpg?v=1764757395",
+     "page": "https://www.longfield-gardens.com/products/narcissus-avalanche",
+     "licence": "usage du vendeur, non relevée",
+     "note": "ajoutée au sondage du 2026-10-09 depuis le flux du vendeur ; titre : Daffodil Tazetta Avalanche",
+     "vue_le": "2026-10-09",
+     "concordance": "concordante",
+     "observation": "périanthe blanc, coupe jaune ; plein jour (Longfield, détaillant)"
+    }
+   ],
+   "niveau_preuve": "B",
+   "niveau_provisoire_preuves": "B",
+   "raison_niveau": "registre RHS lu (N1 : division 8, W-Y) + 3 photos nommées indépendantes concordantes (Jacques N3, Longfield N3, Van N3) ; aucune photo N2 : pas de A",
+   "marque": null,
+   "marque_verifiee": false,
+   "marque_note": "aucun ®, ™ ni série commerciale vu aux pages lues ; registre des marques (TMview, EUIPO, INPI) non consulté : à faire par l'orchestrateur. Nom de cultivar au registre RHS, donc dénomination libre selon le standard.",
+   "statut": "en production (après mesure des couleurs)",
+   "priorite": "coloris_catalogue",
+   "notes": [
+    "SKU du bouquet. Division 8 W-Y au registre (ID 212096). Homonyme Avalanche div 1 W-W (200678) écarté. Photos JA et VE, deux vendeurs distincts, à mesurer.",
+    "Sondage du 2026-10-09 : trois photos N3 (JA, VE, LF) regardées, concordantes ; Jan de Wit ne le liste pas, donc pas de niveau A possible tant qu'aucune fiche N2 n'existe. Homonyme Avalanche division 1 W-W (ID 200678) et Avalanche of Gold 8 Y-Y (ID 258180) écartés. AGM (Wikipédia : périanthe blanc, coupe jaune/orange, 35 cm)."
+   ],
+   "sondage": {
+    "photos_regardees": 3,
+    "date": "2026-10-09",
+    "registre_relu": false
+   }
+  },
+  {
+   "id": "chinese-sacred-lily",
+   "nom": "Chinese Sacred Lily",
+   "nom_enregistre": "Chinese Sacred Lily",
+   "synonymes": [
+    "Narcissus tazetta subsp. chinensis (d'après Wikipédia et la catégorie Commons ; POWO non relu)"
+   ],
+   "coloris_rattache": "chinensis",
+   "division_registre": null,
+   "code_couleur_registre": null,
+   "lecture_code": null,
+   "registre": {
+    "requete": "Chinese Sacred Lily",
+    "url_recherche": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Chinese%20Sacred%20Lily",
+    "id": "223265",
+    "nom_registre": "Chinese Sacred Lily",
+    "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffdetails.asp?ID=223265",
+    "homonymes": [
+     {
+      "nom": "Chinese Sacred Lily",
+      "division": "",
+      "code": "",
+      "rhs_id": "223265"
+     }
+    ],
+    "statut": "entrée lue le 2026-10-08 sans division ni code (ID 223265)",
+    "fiche_detail": "non lue : la page daffdetails.asp répond 504 ou expire (WebFetch, 2 essais de 60 s le 2026-10-09)"
+   },
+   "division_annoncee_vendeurs": {
+    "JA": "div8"
+   },
+   "obtenteur": null,
+   "annee": null,
+   "origine_obtenteur_annee": "non lu : fiche détail du registre en 504",
+   "couleur_annoncee": null,
+   "sources_existence": [
+    {
+     "niveau": "N1",
+     "source": "RHSREG",
+     "nom_source": "RHS, International Daffodil Register : recherche par nom (liste nom, division, code ; fiche détail en 504)",
+     "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Chinese%20Sacred%20Lily"
+    },
+    {
+     "niveau": "N3",
+     "source": "JA",
+     "nom_source": "Jacques Amand International",
+     "url": "https://www.jacquesamand.com/collections/narcissi-division-8-tazetta-narcissi"
+    }
+   ],
+   "photos": [
+    {
+     "niveau": "N3",
+     "auteur": "Jacques Amand International",
+     "image": "https://cdn.shopify.com/s/files/1/0711/1586/6390/products/Narcissus-Chinese-Sacred-Lily-cat.jpg?v=1749826107",
+     "page": "https://www.jacquesamand.com/products/chinese-sacred-lily",
+     "licence": "usage du vendeur, non relevée",
+     "vue_le": "2026-10-09",
+     "concordance": "concordante",
+     "observation": "périanthe blanc, coupe jaune d'or à reflet orange"
+    }
+   ],
+   "niveau_preuve": "C",
+   "niveau_provisoire_preuves": "C",
+   "raison_niveau": "entrée du registre sans division ni code ; une seule source de photo (Jacques N3)",
+   "marque": null,
+   "marque_verifiee": false,
+   "marque_note": "aucun ®, ™ ni série commerciale vu aux pages lues ; registre des marques (TMview, EUIPO, INPI) non consulté : à faire par l'orchestrateur. Nom de cultivar au registre RHS, donc dénomination libre selon le standard.",
+   "statut": "à confirmer",
+   "priorite": "coloris_catalogue",
+   "notes": [
+    "Au registre, seul un homonyme sans division (ID 223265) a été trouvé ; division 8 non confirmée. Une seule photo (JA).",
+    "Pas un cultivar de division 8 : forme ancienne de Narcissus tazetta (sous-espèce chinensis) ; le registre RHS a une entrée sans division ni code. À ranger avec les formes botaniques (division 13) plutôt qu'avec la division 8."
+   ],
+   "sondage": {
+    "photos_regardees": 1,
+    "date": "2026-10-09",
+    "registre_relu": false
+   }
+  },
+  {
+   "id": "cragford",
+   "nom": "Cragford",
+   "nom_enregistre": "Cragford",
+   "synonymes": [],
+   "coloris_rattache": "cragford",
+   "division_registre": "8",
+   "code_couleur_registre": "W-O",
+   "lecture_code": "périanthe blanc ; couronne (du fond vers le bord, lettres du code) orange",
+   "registre": {
+    "requete": "Cragford",
+    "url_recherche": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Cragford",
+    "id": "201948",
+    "nom_registre": "Cragford",
+    "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffdetails.asp?ID=201948",
+    "homonymes": [],
+    "statut": "lu le 2026-10-08 par recherche de nom (division 8, code W-O) ; relecture du 2026-10-09 : le registre répond « no matches » à tort, non refaite",
+    "fiche_detail": "non lue : la page daffdetails.asp répond 504 ou expire (WebFetch, 2 essais de 60 s le 2026-10-09)"
+   },
+   "division_annoncee_vendeurs": {
+    "VE": "tazetta",
+    "LF": "Tazetta"
+   },
+   "obtenteur": null,
+   "annee": null,
+   "origine_obtenteur_annee": "non lu : fiche détail du registre en 504",
+   "couleur_annoncee": "code registre W-O (périanthe blanc, couronne orange)",
+   "sources_existence": [
+    {
+     "niveau": "N1",
+     "source": "RHSREG",
+     "nom_source": "RHS, International Daffodil Register : recherche par nom (liste nom, division, code ; fiche détail en 504)",
+     "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Cragford"
+    },
+    {
+     "niveau": "N3",
+     "source": "LF",
+     "nom_source": "Longfield Gardens",
+     "url": "https://www.longfield-gardens.com/collections/narcissus"
+    },
+    {
+     "niveau": "N3",
+     "source": "VE",
+     "nom_source": "Van Engelen",
+     "url": "https://www.vanengelen.com/flower-bulbs-index/narcissi/tazetta.html"
+    }
+   ],
+   "photos": [
+    {
+     "niveau": "N3",
+     "auteur": "Van Engelen",
+     "image": "https://www.vanengelen.com/media/catalog/product/cache/ae5a6ea9a5f2aff03513e6f42df29704/n/_/n_cragford_1-th_1.jpg",
+     "page": "https://www.vanengelen.com/flower-bulbs-index/narcissi/tazetta/narcissus-cragford.html",
+     "licence": "usage du vendeur, non relevée",
+     "vue_le": "2026-10-09",
+     "concordance": "concordante",
+     "observation": "vignette ; périanthe blanc, coupe orange rouge"
+    },
+    {
+     "niveau": "N3",
+     "auteur": "Longfield Gardens",
+     "image": "https://cdn.shopify.com/s/files/1/0620/5092/6710/files/DETA-1240__71445.1638383298.1280.1280.jpg?v=1764755138",
+     "page": "https://www.longfield-gardens.com/products/narcissus-cragford",
+     "licence": "usage du vendeur, non relevée",
+     "note": "ajoutée au sondage du 2026-10-09 depuis le flux du vendeur ; titre : Daffodil Tazetta Cragford",
+     "vue_le": "2026-10-09",
+     "concordance": "concordante",
+     "observation": "périanthe blanc, coupe orange rouge ; fond vert (Longfield)"
+    }
+   ],
+   "niveau_preuve": "B",
+   "niveau_provisoire_preuves": "C",
+   "raison_niveau": "registre RHS lu (N1 : division 8, W-O) + 2 photos nommées indépendantes concordantes (Longfield N3, Van N3) ; aucune photo N2 : pas de A",
+   "marque": null,
+   "marque_verifiee": false,
+   "marque_note": "aucun ®, ™ ni série commerciale vu aux pages lues ; registre des marques (TMview, EUIPO, INPI) non consulté : à faire par l'orchestrateur. Nom de cultivar au registre RHS, donc dénomination libre selon le standard.",
+   "statut": "en production (après mesure des couleurs)",
+   "priorite": "coloris_catalogue",
+   "notes": [
+    "Registre ID 201948 (div 8 W-O). Une seule photo (VE)."
+   ],
+   "sondage": {
+    "photos_regardees": 2,
+    "date": "2026-10-09",
+    "registre_relu": false
+   }
+  },
+  {
+   "id": "geranium",
+   "nom": "Geranium",
+   "nom_enregistre": "Geranium",
+   "synonymes": [],
+   "coloris_rattache": "geranium",
+   "division_registre": "8",
+   "code_couleur_registre": "W-O",
+   "lecture_code": "périanthe blanc ; couronne (du fond vers le bord, lettres du code) orange",
+   "registre": {
+    "requete": "Geranium",
+    "url_recherche": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Geranium",
+    "id": "203123",
+    "nom_registre": "Geranium",
+    "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffdetails.asp?ID=203123",
+    "homonymes": [],
+    "statut": "lu le 2026-10-08 par recherche de nom (division 8, code W-O) ; relecture du 2026-10-09 : le registre répond « no matches » à tort, non refaite",
+    "fiche_detail": "non lue : la page daffdetails.asp répond 504 ou expire (WebFetch, 2 essais de 60 s le 2026-10-09)"
+   },
+   "division_annoncee_vendeurs": {
+    "JDW": "Tazetta",
+    "JA": "div8",
+    "VE": "tazetta",
+    "WP-AGM": "div8",
+    "BLOMS": "tazetta"
+   },
+   "obtenteur": null,
+   "annee": null,
+   "origine_obtenteur_annee": "non lu : fiche détail du registre en 504",
+   "couleur_annoncee": "code registre W-O (périanthe blanc, couronne orange)",
+   "sources_existence": [
+    {
+     "niveau": "N1",
+     "source": "RHSREG",
+     "nom_source": "RHS, International Daffodil Register : recherche par nom (liste nom, division, code ; fiche détail en 504)",
+     "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Geranium"
+    },
+    {
+     "niveau": "N2",
+     "source": "JDW",
+     "nom_source": "Jan de Wit en Zonen, assortiment Narcissus, groupe Tazetta (2 fiches)",
+     "url": "https://www.jandewitenzonen.com/en/assortment/narcissus/"
+    },
+    {
+     "niveau": "N3",
+     "source": "BL",
+     "nom_source": "Bloms Bulbs",
+     "url": "https://blomsbulbs.com/product-category/autumn/daffodils-narcissi/tazetta/"
+    },
+    {
+     "niveau": "N3",
+     "source": "FL",
+     "nom_source": "Fluwel",
+     "url": "https://fluwel.nl/collections/narcissen"
+    },
+    {
+     "niveau": "N3",
+     "source": "JA",
+     "nom_source": "Jacques Amand International",
+     "url": "https://www.jacquesamand.com/collections/narcissi-division-8-tazetta-narcissi"
+    },
+    {
+     "niveau": "N3",
+     "source": "PBS",
+     "nom_source": "Pacific Bulb Society",
+     "url": "https://www.pacificbulbsociety.org/pbswiki/index.php/Narcissus"
+    },
+    {
+     "niveau": "N3",
+     "source": "VE",
+     "nom_source": "Van Engelen",
+     "url": "https://www.vanengelen.com/flower-bulbs-index/narcissi/tazetta.html"
+    },
+    {
+     "niveau": "N4",
+     "source": "WP",
+     "nom_source": "Wikipédia, liste des AGM narcisses",
+     "url": "https://en.wikipedia.org/wiki/List_of_Award_of_Garden_Merit_narcissus"
+    }
+   ],
+   "photos": [
+    {
+     "niveau": "N3",
+     "auteur": "Jacques Amand International",
+     "image": "https://cdn.shopify.com/s/files/1/0711/1586/6390/products/Narcissus-Geranium-sq.jpg?v=1749826102",
+     "page": "https://www.jacquesamand.com/products/geranium-agm",
+     "licence": "usage du vendeur, non relevée",
+     "vue_le": "2026-10-09",
+     "concordance": "concordante",
+     "observation": "périanthe blanc, coupe orange vif"
+    },
+    {
+     "niveau": "N3",
+     "auteur": "Van Engelen",
+     "image": "https://www.vanengelen.com/media/catalog/product/cache/ae5a6ea9a5f2aff03513e6f42df29704/n/_/n_geranium_2-w_1.jpg",
+     "page": "https://www.vanengelen.com/flower-bulbs-index/narcissi/tazetta/narcissus-geranium.html",
+     "licence": "usage du vendeur, non relevée",
+     "vue_le": "2026-10-09",
+     "concordance": "concordante",
+     "observation": "plein champ ; blanc, coupe orange"
+    },
+    {
+     "niveau": "N3",
+     "auteur": "Blooms Bulbs",
+     "image": "https://blomsbulbs.com/wp-content/uploads/2023/05/Geranium-420x454.jpg",
+     "page": "https://blomsbulbs.com/",
+     "licence": "usage du vendeur, non relevée",
+     "vue_le": "2026-10-09",
+     "concordance": "concordante",
+     "observation": "périanthe blanc, coupe orange rouge"
+    },
+    {
+     "niveau": "N2",
+     "auteur": "Jan de Wit en Zonen",
+     "image": "https://www.jandewitenzonen.com/img/products/narcissus/thumbs/Geranium.jpg",
+     "page": "https://www.jandewitenzonen.com/en/assortment/narcissus/",
+     "licence": "usage du vendeur, non relevée; vignette 160 px",
+     "vue_le": "2026-10-09",
+     "concordance": "concordante",
+     "observation": "vignette 160 px ; périanthe blanc, coupe orange"
+    }
+   ],
+   "niveau_preuve": "A",
+   "niveau_provisoire_preuves": "B",
+   "raison_niveau": "registre RHS lu (N1 : division 8, W-O) + photo N2 Jan de Wit concordante ; 4 photo(s) concordante(s) : Blooms N3, Jacques N3, Jan N2, Van N3",
+   "marque": null,
+   "marque_verifiee": false,
+   "marque_note": "aucun ®, ™ ni série commerciale vu aux pages lues ; registre des marques (TMview, EUIPO, INPI) non consulté : à faire par l'orchestrateur. Nom de cultivar au registre RHS, donc dénomination libre selon le standard.",
+   "statut": "en production (après mesure des couleurs)",
+   "priorite": "coloris_catalogue",
+   "notes": [
+    "Registre ID 203123 (div 8 W-O). Quatre photos nommées (JA, VE, BL, JDW en vignette 160 px). Concordance visuelle non vérifiée."
+   ],
+   "sondage": {
+    "photos_regardees": 4,
+    "date": "2026-10-09",
+    "registre_relu": false
+   }
+  },
+  {
+   "id": "grand-soleil-d-or",
+   "nom": "Grand Soleil d'Or",
+   "nom_enregistre": "Grand Soleil d'Or",
+   "synonymes": [],
+   "coloris_rattache": "soleil-d-or",
+   "division_registre": "8",
+   "code_couleur_registre": "Y-O",
+   "lecture_code": "périanthe jaune ; couronne (du fond vers le bord, lettres du code) orange",
+   "registre": {
+    "requete": "Grand Soleil d'Or",
+    "url_recherche": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Grand%20Soleil%20d'Or",
+    "id": "222562",
+    "nom_registre": "Grand Soleil d'Or",
+    "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffdetails.asp?ID=222562",
+    "homonymes": [],
+    "statut": "lu le 2026-10-08 par recherche de nom (division 8, code Y-O) ; relecture du 2026-10-09 : le registre répond « no matches » à tort, non refaite",
+    "fiche_detail": "non lue : la page daffdetails.asp répond 504 ou expire (WebFetch, 2 essais de 60 s le 2026-10-09)"
+   },
+   "division_annoncee_vendeurs": {
+    "JA": "div8"
+   },
+   "obtenteur": null,
+   "annee": null,
+   "origine_obtenteur_annee": "non lu : fiche détail du registre en 504",
+   "couleur_annoncee": "code registre Y-O (périanthe jaune, couronne orange)",
+   "sources_existence": [
+    {
+     "niveau": "N1",
+     "source": "RHSREG",
+     "nom_source": "RHS, International Daffodil Register : recherche par nom (liste nom, division, code ; fiche détail en 504)",
+     "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Grand%20Soleil%20d'Or"
+    },
+    {
+     "niveau": "N3",
+     "source": "JA",
+     "nom_source": "Jacques Amand International",
+     "url": "https://www.jacquesamand.com/collections/narcissi-division-8-tazetta-narcissi"
+    }
+   ],
+   "photos": [
+    {
+     "niveau": "N3",
+     "auteur": "Jacques Amand International",
+     "image": "https://cdn.shopify.com/s/files/1/0711/1586/6390/files/N1040NarcissusGrandSoleilD_Or.jpg?v=1783944060",
+     "page": "https://www.jacquesamand.com/products/grand-soleil-dor",
+     "licence": "usage du vendeur, non relevée",
+     "vue_le": "2026-10-09",
+     "concordance": "concordante",
+     "observation": "périanthe jaune, coupe orange"
+    }
+   ],
+   "niveau_preuve": "C",
+   "niveau_provisoire_preuves": "C",
+   "raison_niveau": "registre RHS lu (N1 : division 8, Y-O) ; une seule source de photo (Jacques N3)",
+   "marque": null,
+   "marque_verifiee": false,
+   "marque_note": "aucun ®, ™ ni série commerciale vu aux pages lues ; registre des marques (TMview, EUIPO, INPI) non consulté : à faire par l'orchestrateur. Nom de cultivar au registre RHS, donc dénomination libre selon le standard.",
+   "statut": "à confirmer",
+   "priorite": "coloris_catalogue",
+   "notes": [
+    "Registre ID 222562 (div 8 Y-O). Une seule photo (JA)."
+   ],
+   "sondage": {
+    "photos_regardees": 1,
+    "date": "2026-10-09",
+    "registre_relu": false
+   }
+  },
+  {
+   "id": "martinette",
+   "nom": "Martinette",
+   "nom_enregistre": "Martinette",
+   "synonymes": [],
+   "coloris_rattache": "martinette",
+   "division_registre": "8",
+   "code_couleur_registre": "Y-O",
+   "lecture_code": "périanthe jaune ; couronne (du fond vers le bord, lettres du code) orange",
+   "registre": {
+    "requete": "Martinette",
+    "url_recherche": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Martinette",
+    "id": "219155",
+    "nom_registre": "Martinette",
+    "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffdetails.asp?ID=219155",
+    "homonymes": [],
+    "statut": "lu le 2026-10-08 par recherche de nom (division 8, code Y-O) ; relecture du 2026-10-09 : le registre répond « no matches » à tort, non refaite",
+    "fiche_detail": "non lue : la page daffdetails.asp répond 504 ou expire (WebFetch, 2 essais de 60 s le 2026-10-09)"
+   },
+   "division_annoncee_vendeurs": {
+    "JA": "div7",
+    "BLOMS": "tazetta"
+   },
+   "obtenteur": null,
+   "annee": null,
+   "origine_obtenteur_annee": "non lu : fiche détail du registre en 504",
+   "couleur_annoncee": "code registre Y-O (périanthe jaune, couronne orange)",
+   "sources_existence": [
+    {
+     "niveau": "N1",
+     "source": "RHSREG",
+     "nom_source": "RHS, International Daffodil Register : recherche par nom (liste nom, division, code ; fiche détail en 504)",
+     "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Martinette"
+    },
+    {
+     "niveau": "N3",
+     "source": "BL",
+     "nom_source": "Bloms Bulbs",
+     "url": "https://blomsbulbs.com/product-category/autumn/daffodils-narcissi/tazetta/"
+    },
+    {
+     "niveau": "N3",
+     "source": "JA",
+     "nom_source": "Jacques Amand International",
+     "url": "https://www.jacquesamand.com/collections/narcissi-division-8-tazetta-narcissi"
+    },
+    {
+     "niveau": "N3",
+     "source": "PBS",
+     "nom_source": "Pacific Bulb Society",
+     "url": "https://www.pacificbulbsociety.org/pbswiki/index.php/Narcissus"
+    }
+   ],
+   "photos": [
+    {
+     "niveau": "N3",
+     "auteur": "Jacques Amand International",
+     "image": "https://cdn.shopify.com/s/files/1/0711/1586/6390/files/NarcissusMartinette-hulse_0197sq.jpg?v=1752050031",
+     "page": "https://www.jacquesamand.com/products/martinette",
+     "licence": "usage du vendeur, non relevée",
+     "vue_le": "2026-10-09",
+     "concordance": "concordante",
+     "observation": "périanthe jaune, coupe orange"
+    },
+    {
+     "niveau": "N3",
+     "auteur": "Blooms Bulbs",
+     "image": "https://blomsbulbs.com/wp-content/uploads/2023/05/Martinette-420x454.jpg",
+     "page": "https://blomsbulbs.com/",
+     "licence": "usage du vendeur, non relevée",
+     "vue_le": "2026-10-09",
+     "concordance": "concordante",
+     "observation": "massif ; périanthe jaune, coupes orange"
+    }
+   ],
+   "niveau_preuve": "B",
+   "niveau_provisoire_preuves": "B",
+   "raison_niveau": "registre RHS lu (N1 : division 8, Y-O) + 2 photos nommées indépendantes concordantes (Blooms N3, Jacques N3) ; aucune photo N2 : pas de A",
+   "marque": null,
+   "marque_verifiee": false,
+   "marque_note": "aucun ®, ™ ni série commerciale vu aux pages lues ; registre des marques (TMview, EUIPO, INPI) non consulté : à faire par l'orchestrateur. Nom de cultivar au registre RHS, donc dénomination libre selon le standard.",
+   "statut": "en production (après mesure des couleurs)",
+   "priorite": "coloris_catalogue",
+   "notes": [
+    "Registre ID 219155 (div 8 Y-O). JA range la fiche en division 7 : désaccord à lever. Photos JA et Blooms."
+   ],
+   "sondage": {
+    "photos_regardees": 2,
+    "date": "2026-10-09",
+    "registre_relu": false
+   }
+  },
+  {
+   "id": "minnow",
+   "nom": "Minnow",
+   "nom_enregistre": "Minnow",
+   "synonymes": [],
+   "coloris_rattache": "minnow",
+   "division_registre": "8",
+   "code_couleur_registre": "W-Y",
+   "lecture_code": "périanthe blanc ; couronne (du fond vers le bord, lettres du code) jaune",
+   "registre": {
+    "requete": "Minnow",
+    "url_recherche": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Minnow",
+    "id": "212796",
+    "nom_registre": "Minnow",
+    "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffdetails.asp?ID=212796",
+    "homonymes": [],
+    "statut": "lu le 2026-10-08 par recherche de nom (division 8, code W-Y) ; relecture du 2026-10-09 : le registre répond « no matches » à tort, non refaite",
+    "fiche_detail": "non lue : la page daffdetails.asp répond 504 ou expire (WebFetch, 2 essais de 60 s le 2026-10-09)"
+   },
+   "division_annoncee_vendeurs": {
+    "JA": "div8",
+    "VE": "tazetta",
+    "LF": "Tazetta",
+    "WP-AGM": "div8"
+   },
+   "obtenteur": null,
+   "annee": null,
+   "origine_obtenteur_annee": "non lu : fiche détail du registre en 504",
+   "couleur_annoncee": "code registre W-Y (périanthe blanc, couronne jaune)",
+   "sources_existence": [
+    {
+     "niveau": "N1",
+     "source": "RHSREG",
+     "nom_source": "RHS, International Daffodil Register : recherche par nom (liste nom, division, code ; fiche détail en 504)",
+     "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Minnow"
+    },
+    {
+     "niveau": "N3",
+     "source": "BL",
+     "nom_source": "Bloms Bulbs",
+     "url": "https://blomsbulbs.com/product-category/autumn/daffodils-narcissi/tazetta/"
+    },
+    {
+     "niveau": "N4",
+     "source": "COM",
+     "nom_source": "Wikimedia Commons, catégorie de cultivar",
+     "url": "https://commons.wikimedia.org/wiki/Category:Narcissus_(cultivars)"
+    },
+    {
+     "niveau": "N3",
+     "source": "JA",
+     "nom_source": "Jacques Amand International",
+     "url": "https://www.jacquesamand.com/collections/narcissi-division-8-tazetta-narcissi"
+    },
+    {
+     "niveau": "N3",
+     "source": "LF",
+     "nom_source": "Longfield Gardens",
+     "url": "https://www.longfield-gardens.com/collections/narcissus"
+    },
+    {
+     "niveau": "N3",
+     "source": "PBS",
+     "nom_source": "Pacific Bulb Society",
+     "url": "https://www.pacificbulbsociety.org/pbswiki/index.php/Narcissus"
+    },
+    {
+     "niveau": "N3",
+     "source": "VE",
+     "nom_source": "Van Engelen",
+     "url": "https://www.vanengelen.com/flower-bulbs-index/narcissi/tazetta.html"
+    },
+    {
+     "niveau": "N4",
+     "source": "WP",
+     "nom_source": "Wikipédia, liste des AGM narcisses",
+     "url": "https://en.wikipedia.org/wiki/List_of_Award_of_Garden_Merit_narcissus"
+    }
+   ],
+   "photos": [
+    {
+     "niveau": "N3",
+     "auteur": "Van Engelen",
+     "image": "https://www.vanengelen.com/media/catalog/product/cache/ae5a6ea9a5f2aff03513e6f42df29704/n/_/n_minnow_a.jpg",
+     "page": "https://www.vanengelen.com/flower-bulbs-index/narcissi/tazetta/narcissus-minnow.html",
+     "licence": "usage du vendeur, non relevée",
+     "vue_le": "2026-10-09",
+     "concordance": "concordante",
+     "observation": "périanthe blanc crème (plus crème que blanc), petite coupe jaune citron"
+    },
+    {
+     "niveau": "N3",
+     "auteur": "Blooms Bulbs",
+     "image": "https://blomsbulbs.com/wp-content/uploads/2023/05/Minnow.jpg",
+     "page": "https://blomsbulbs.com/",
+     "licence": "usage du vendeur, non relevée",
+     "vue_le": "2026-10-09",
+     "concordance": "concordante",
+     "observation": "massif ; périanthe blanc crème, coupes jaune citron"
+    }
+   ],
+   "niveau_preuve": "B",
+   "niveau_provisoire_preuves": "B",
+   "raison_niveau": "registre RHS lu (N1 : division 8, W-Y) + 2 photos nommées indépendantes concordantes (Blooms N3, Van N3) ; aucune photo N2 : pas de A",
+   "marque": null,
+   "marque_verifiee": false,
+   "marque_note": "aucun ®, ™ ni série commerciale vu aux pages lues ; registre des marques (TMview, EUIPO, INPI) non consulté : à faire par l'orchestrateur. Nom de cultivar au registre RHS, donc dénomination libre selon le standard.",
+   "statut": "en production (après mesure des couleurs)",
+   "priorite": "coloris_catalogue",
+   "notes": [
+    "Registre ID 212796 (div 8 W-Y). Photo JA rejetée : image 'Photo coming soon'. Photos VE et Blooms."
+   ],
+   "sondage": {
+    "photos_regardees": 2,
+    "date": "2026-10-09",
+    "registre_relu": false
+   }
+  },
+  {
+   "id": "silver-chimes",
+   "nom": "Silver Chimes",
+   "nom_enregistre": "Silver Chimes",
+   "synonymes": [],
+   "coloris_rattache": "silver-chimes",
+   "division_registre": "8",
+   "code_couleur_registre": "W-W",
+   "lecture_code": "périanthe blanc ; couronne (du fond vers le bord, lettres du code) blanc",
+   "registre": {
+    "requete": "Silver Chimes",
+    "url_recherche": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Silver%20Chimes",
+    "id": "220924",
+    "nom_registre": "Silver Chimes",
+    "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffdetails.asp?ID=220924",
+    "homonymes": [],
+    "statut": "lu le 2026-10-08 par recherche de nom (division 8, code W-W) ; relecture du 2026-10-09 : le registre répond « no matches » à tort, non refaite",
+    "fiche_detail": "non lue : la page daffdetails.asp répond 504 ou expire (WebFetch, 2 essais de 60 s le 2026-10-09)"
+   },
+   "division_annoncee_vendeurs": {
+    "JA": "div8",
+    "VE": "tazetta",
+    "BLOMS": "tazetta"
+   },
+   "obtenteur": null,
+   "annee": null,
+   "origine_obtenteur_annee": "non lu : fiche détail du registre en 504",
+   "couleur_annoncee": "code registre W-W (périanthe blanc, couronne blanc)",
+   "sources_existence": [
+    {
+     "niveau": "N1",
+     "source": "RHSREG",
+     "nom_source": "RHS, International Daffodil Register : recherche par nom (liste nom, division, code ; fiche détail en 504)",
+     "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Silver%20Chimes"
+    },
+    {
+     "niveau": "N3",
+     "source": "BL",
+     "nom_source": "Bloms Bulbs",
+     "url": "https://blomsbulbs.com/product-category/autumn/daffodils-narcissi/tazetta/"
+    },
+    {
+     "niveau": "N3",
+     "source": "JA",
+     "nom_source": "Jacques Amand International",
+     "url": "https://www.jacquesamand.com/collections/narcissi-division-8-tazetta-narcissi"
+    },
+    {
+     "niveau": "N3",
+     "source": "VE",
+     "nom_source": "Van Engelen",
+     "url": "https://www.vanengelen.com/flower-bulbs-index/narcissi/tazetta.html"
+    }
+   ],
+   "photos": [
+    {
+     "niveau": "N3",
+     "auteur": "Jacques Amand International",
+     "image": "https://cdn.shopify.com/s/files/1/0711/1586/6390/files/NarcissusSilverChimes_2165_1.jpg?v=1752058994",
+     "page": "https://www.jacquesamand.com/products/silver-chimes",
+     "licence": "usage du vendeur, non relevée",
+     "vue_le": "2026-10-09",
+     "concordance": "concordante",
+     "observation": "fleurs blanches pendantes ; coupe crème pâle ; une autre variété à coupe orange (hors sujet) en haut à gauche"
+    },
+    {
+     "niveau": "N3",
+     "auteur": "Blooms Bulbs",
+     "image": "https://blomsbulbs.com/wp-content/uploads/2023/05/Silver-Chimes-420x454.jpg",
+     "page": "https://blomsbulbs.com/",
+     "licence": "usage du vendeur, non relevée",
+     "vue_le": "2026-10-09",
+     "concordance": "concordante",
+     "observation": "périanthe blanc, coupe crème à reflet citron léger (à mesurer)"
+    }
+   ],
+   "niveau_preuve": "B",
+   "niveau_provisoire_preuves": "B",
+   "raison_niveau": "registre RHS lu (N1 : division 8, W-W) + 2 photos nommées indépendantes concordantes (Blooms N3, Jacques N3) ; aucune photo N2 : pas de A",
+   "marque": null,
+   "marque_verifiee": false,
+   "marque_note": "aucun ®, ™ ni série commerciale vu aux pages lues ; registre des marques (TMview, EUIPO, INPI) non consulté : à faire par l'orchestrateur. Nom de cultivar au registre RHS, donc dénomination libre selon le standard.",
+   "statut": "en production (après mesure des couleurs)",
+   "priorite": "coloris_catalogue",
+   "notes": [
+    "Registre ID 220924 (div 8 W-W). Photos JA et Blooms."
+   ],
+   "sondage": {
+    "photos_regardees": 2,
+    "date": "2026-10-09",
+    "registre_relu": false
+   }
+  },
+  {
+   "id": "ziva",
+   "nom": "Ziva",
+   "nom_enregistre": "Ziva",
+   "synonymes": [],
+   "coloris_rattache": "paperwhite",
+   "division_registre": "8",
+   "code_couleur_registre": "W-W",
+   "lecture_code": "périanthe blanc ; couronne (du fond vers le bord, lettres du code) blanc",
+   "registre": {
+    "requete": "Ziva",
+    "url_recherche": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Ziva",
+    "id": "208702",
+    "nom_registre": "Ziva",
+    "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffdetails.asp?ID=208702",
+    "homonymes": [],
+    "statut": "lu le 2026-10-08 par recherche de nom (division 8, code W-W) ; relecture du 2026-10-09 : le registre répond « no matches » à tort, non refaite",
+    "fiche_detail": "non lue : la page daffdetails.asp répond 504 ou expire (WebFetch, 2 essais de 60 s le 2026-10-09)"
+   },
+   "division_annoncee_vendeurs": {
+    "JA": "div8",
+    "LF": "Tazetta"
+   },
+   "obtenteur": null,
+   "annee": null,
+   "origine_obtenteur_annee": "non lu : fiche détail du registre en 504",
+   "couleur_annoncee": "code registre W-W (périanthe blanc, couronne blanc)",
+   "sources_existence": [
+    {
+     "niveau": "N1",
+     "source": "RHSREG",
+     "nom_source": "RHS, International Daffodil Register : recherche par nom (liste nom, division, code ; fiche détail en 504)",
+     "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Ziva"
+    },
+    {
+     "niveau": "N3",
+     "source": "JA",
+     "nom_source": "Jacques Amand International",
+     "url": "https://www.jacquesamand.com/collections/narcissi-division-8-tazetta-narcissi"
+    },
+    {
+     "niveau": "N3",
+     "source": "LF",
+     "nom_source": "Longfield Gardens",
+     "url": "https://www.longfield-gardens.com/collections/narcissus"
+    }
+   ],
+   "photos": [
+    {
+     "niveau": "N3",
+     "auteur": "Jacques Amand International",
+     "image": "https://cdn.shopify.com/s/files/1/0711/1586/6390/products/Narcissus-Paperwhite-Ziva_2373-12-scaled-e1625830557768.jpg?v=1749826104",
+     "page": "https://www.jacquesamand.com/products/paperwhite-ziva",
+     "licence": "usage du vendeur, non relevée",
+     "vue_le": "2026-10-09",
+     "concordance": "coupe peu lisible",
+     "observation": "touffe de fleurs blanches devant un sapin décoré ; la coupe n'est pas lisible"
+    },
+    {
+     "niveau": "N3",
+     "auteur": "Longfield Gardens",
+     "image": "https://cdn.shopify.com/s/files/1/0620/5092/6710/files/DETA-262__60933.1638385477.1280.1280.jpg?v=1764757219",
+     "page": "https://www.longfield-gardens.com/products/narcissus-ziva",
+     "licence": "usage du vendeur, non relevée",
+     "note": "ajoutée au sondage du 2026-10-09 depuis le flux du vendeur ; titre : Daffodil Tazetta Ziva Paperwhites",
+     "vue_le": "2026-10-09",
+     "concordance": "coupe peu lisible",
+     "observation": "potée de fleurs blanches en intérieur ; la coupe n'est pas lisible (Longfield, détaillant)"
+    }
+   ],
+   "niveau_preuve": "B",
+   "niveau_provisoire_preuves": "C",
+   "raison_niveau": "registre RHS lu (N1 : division 8, W-W) + 2 photos nommées indépendantes concordantes (Jacques N3, Longfield N3) ; aucune photo N2 : pas de A",
+   "marque": null,
+   "marque_verifiee": false,
+   "marque_note": "aucun ®, ™ ni série commerciale vu aux pages lues ; registre des marques (TMview, EUIPO, INPI) non consulté : à faire par l'orchestrateur. Nom de cultivar au registre RHS, donc dénomination libre selon le standard.",
+   "statut": "en production (après mesure des couleurs)",
+   "priorite": "coloris_catalogue",
+   "notes": [
+    "Nom affiché Paperwhite Ziva chez JA. Registre ID 208702 (div 8 W-W). Une seule photo nommée trouvée."
+   ],
+   "sondage": {
+    "photos_regardees": 2,
+    "date": "2026-10-09",
+    "registre_relu": false
+   }
+  },
+  {
+   "id": "canaliculatus",
+   "nom": "canaliculatus",
+   "nom_enregistre": "Canaliculatus",
+   "synonymes": [],
+   "coloris_rattache": null,
+   "division_registre": "8",
+   "code_couleur_registre": "W-Y",
+   "lecture_code": "périanthe blanc ; couronne (du fond vers le bord, lettres du code) jaune",
+   "registre": {
+    "requete": "canaliculatus",
+    "url_recherche": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=canaliculatus",
+    "id": "224716",
+    "nom_registre": "Canaliculatus",
+    "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffdetails.asp?ID=224716",
+    "homonymes": [],
+    "statut": "lu le 2026-10-08 par recherche de nom (division 8, code W-Y) ; relecture du 2026-10-09 : le registre répond « no matches » à tort, non refaite",
+    "fiche_detail": "non lue : la page daffdetails.asp répond 504 ou expire (WebFetch, 2 essais de 60 s le 2026-10-09)"
+   },
+   "division_annoncee_vendeurs": {
+    "JA": "div8",
+    "VE": "tazetta"
+   },
+   "obtenteur": null,
+   "annee": null,
+   "origine_obtenteur_annee": "non lu : fiche détail du registre en 504",
+   "couleur_annoncee": "code registre W-Y (périanthe blanc, couronne jaune)",
+   "sources_existence": [
+    {
+     "niveau": "N1",
+     "source": "RHSREG",
+     "nom_source": "RHS, International Daffodil Register : recherche par nom (liste nom, division, code ; fiche détail en 504)",
+     "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=canaliculatus"
+    },
+    {
+     "niveau": "N3",
+     "source": "BL",
+     "nom_source": "Bloms Bulbs",
+     "url": "https://blomsbulbs.com/product-category/autumn/daffodils-narcissi/tazetta/"
+    },
+    {
+     "niveau": "N3",
+     "source": "JA",
+     "nom_source": "Jacques Amand International",
+     "url": "https://www.jacquesamand.com/collections/narcissi-division-8-tazetta-narcissi"
+    },
+    {
+     "niveau": "N3",
+     "source": "PBS",
+     "nom_source": "Pacific Bulb Society",
+     "url": "https://www.pacificbulbsociety.org/pbswiki/index.php/Narcissus"
+    },
+    {
+     "niveau": "N3",
+     "source": "VE",
+     "nom_source": "Van Engelen",
+     "url": "https://www.vanengelen.com/flower-bulbs-index/narcissi/tazetta.html"
+    }
+   ],
+   "photos": [
+    {
+     "niveau": "N3",
+     "auteur": "Jacques Amand International",
+     "image": "https://cdn.shopify.com/s/files/1/0711/1586/6390/products/Narcissus-canaliculatus-714-e1625826380842.jpg?v=1749827066",
+     "page": "https://www.jacquesamand.com/products/canaliculatus",
+     "licence": "usage du vendeur, non relevée",
+     "vue_le": "2026-10-09",
+     "concordance": "concordante",
+     "observation": "périanthe blanc, petite coupe jaune ; tiges fines"
+    },
+    {
+     "niveau": "N3",
+     "auteur": "Van Engelen",
+     "image": "https://www.vanengelen.com/media/catalog/product/cache/ae5a6ea9a5f2aff03513e6f42df29704/n/_/n_canaliculatus_a_th.jpg",
+     "page": "https://www.vanengelen.com/flower-bulbs-index/narcissi/tazetta/narcissus-canaliculatus.html",
+     "licence": "usage du vendeur, non relevée",
+     "vue_le": "2026-10-09",
+     "concordance": "concordante",
+     "observation": "périanthe blanc, coupe jaune"
+    }
+   ],
+   "niveau_preuve": "B",
+   "niveau_provisoire_preuves": "B",
+   "raison_niveau": "registre RHS lu (N1 : division 8, W-Y) + 2 photos nommées indépendantes concordantes (Jacques N3, Van N3) ; aucune photo N2 : pas de A",
+   "marque": null,
+   "marque_verifiee": false,
+   "marque_note": "aucun ®, ™ ni série commerciale vu aux pages lues ; registre des marques (TMview, EUIPO, INPI) non consulté : à faire par l'orchestrateur. Nom de cultivar au registre RHS, donc dénomination libre selon le standard.",
+   "statut": "en production (après mesure des couleurs)",
+   "priorite": "assortiment_fleur_coupee",
+   "notes": [
+    "Registre ID 224716 (div 8 W-Y). Photos JA et VE. Espèce botanique portée en nom de coloris : à trancher par l'orchestrateur."
+   ],
+   "sondage": {
+    "photos_regardees": 2,
+    "date": "2026-10-09",
+    "registre_relu": false
+   }
+  },
+  {
+   "id": "falconet",
+   "nom": "Falconet",
+   "nom_enregistre": "Falconet",
+   "synonymes": [],
+   "coloris_rattache": null,
+   "division_registre": "8",
+   "code_couleur_registre": "Y-R",
+   "lecture_code": "périanthe jaune ; couronne (du fond vers le bord, lettres du code) rouge",
+   "registre": {
+    "requete": "Falconet",
+    "url_recherche": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Falconet",
+    "id": "211528",
+    "nom_registre": "Falconet",
+    "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffdetails.asp?ID=211528",
+    "homonymes": [
+     {
+      "nom": "Falconet",
+      "division": "0",
+      "code": "",
+      "rhs_id": "202749"
+     }
+    ],
+    "statut": "lu le 2026-10-08 par recherche de nom (division 8, code Y-R) ; relecture du 2026-10-09 : le registre répond « no matches » à tort, non refaite",
+    "fiche_detail": "non lue : la page daffdetails.asp répond 504 ou expire (WebFetch, 2 essais de 60 s le 2026-10-09)"
+   },
+   "division_annoncee_vendeurs": {
+    "VE": "tazetta",
+    "LF": "Tazetta",
+    "WP-AGM": "div8"
+   },
+   "obtenteur": null,
+   "annee": null,
+   "origine_obtenteur_annee": "non lu : fiche détail du registre en 504",
+   "couleur_annoncee": "code registre Y-R (périanthe jaune, couronne rouge)",
+   "sources_existence": [
+    {
+     "niveau": "N1",
+     "source": "RHSREG",
+     "nom_source": "RHS, International Daffodil Register : recherche par nom (liste nom, division, code ; fiche détail en 504)",
+     "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Falconet"
+    },
+    {
+     "niveau": "N3",
+     "source": "LF",
+     "nom_source": "Longfield Gardens",
+     "url": "https://www.longfield-gardens.com/collections/narcissus"
+    },
+    {
+     "niveau": "N3",
+     "source": "VE",
+     "nom_source": "Van Engelen",
+     "url": "https://www.vanengelen.com/flower-bulbs-index/narcissi/tazetta.html"
+    },
+    {
+     "niveau": "N4",
+     "source": "WP",
+     "nom_source": "Wikipédia, liste des AGM narcisses",
+     "url": "https://en.wikipedia.org/wiki/List_of_Award_of_Garden_Merit_narcissus"
+    }
+   ],
+   "photos": [
+    {
+     "niveau": "N3",
+     "auteur": "Van Engelen",
+     "image": "https://www.vanengelen.com/media/catalog/product/cache/ae5a6ea9a5f2aff03513e6f42df29704/n/_/n_falconet_1th.jpg",
+     "page": "https://www.vanengelen.com/flower-bulbs-index/narcissi/tazetta/narcissus-falconet.html",
+     "licence": "usage du vendeur, non relevée",
+     "vue_le": "2026-10-09",
+     "concordance": "concordante",
+     "observation": "périanthe jaune, coupe orange rouge"
+    },
+    {
+     "niveau": "N3",
+     "auteur": "Longfield Gardens",
+     "image": "https://cdn.shopify.com/s/files/1/0620/5092/6710/files/DETA-1241__63754.1638383495.1280.1280.jpg?v=1764755167",
+     "page": "https://www.longfield-gardens.com/products/narcissus-falconet",
+     "licence": "usage du vendeur, non relevée",
+     "note": "ajoutée au sondage du 2026-10-09 depuis le flux du vendeur ; titre : Daffodil Tazetta Falconet",
+     "vue_le": "2026-10-09",
+     "concordance": "concordante",
+     "observation": "périanthe jaune, coupe orange rouge (Longfield)"
+    }
+   ],
+   "niveau_preuve": "B",
+   "niveau_provisoire_preuves": "C",
+   "raison_niveau": "registre RHS lu (N1 : division 8, Y-R) + 2 photos nommées indépendantes concordantes (Longfield N3, Van N3) ; aucune photo N2 : pas de A",
+   "marque": null,
+   "marque_verifiee": false,
+   "marque_note": "aucun ®, ™ ni série commerciale vu aux pages lues ; registre des marques (TMview, EUIPO, INPI) non consulté : à faire par l'orchestrateur. Nom de cultivar au registre RHS, donc dénomination libre selon le standard.",
+   "statut": "en production (après mesure des couleurs)",
+   "priorite": "assortiment_fleur_coupee",
+   "notes": [
+    "Registre ID 211528 (div 8 Y-R). Homonyme div 0 (202749) écarté. Une seule photo (VE)."
+   ],
+   "sondage": {
+    "photos_regardees": 2,
+    "date": "2026-10-09",
+    "registre_relu": false
+   }
+  },
+  {
+   "id": "golden-dawn",
+   "nom": "Golden Dawn",
+   "nom_enregistre": "Golden Dawn",
+   "synonymes": [],
+   "coloris_rattache": null,
+   "division_registre": "8",
+   "code_couleur_registre": "Y-O",
+   "lecture_code": "périanthe jaune ; couronne (du fond vers le bord, lettres du code) orange",
+   "registre": {
+    "requete": "Golden Dawn",
+    "url_recherche": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Golden%20Dawn",
+    "id": "217603",
+    "nom_registre": "Golden Dawn",
+    "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffdetails.asp?ID=217603",
+    "homonymes": [
+     {
+      "nom": "Golden Dawn",
+      "division": "1",
+      "code": "Y-Y",
+      "rhs_id": "217601"
+     },
+     {
+      "nom": "Golden Dawn",
+      "division": "1",
+      "code": "Y-Y",
+      "rhs_id": "217602"
+     }
+    ],
+    "statut": "lu le 2026-10-08 par recherche de nom (division 8, code Y-O) ; relecture du 2026-10-09 : le registre répond « no matches » à tort, non refaite",
+    "fiche_detail": "non lue : la page daffdetails.asp répond 504 ou expire (WebFetch, 2 essais de 60 s le 2026-10-09)"
+   },
+   "division_annoncee_vendeurs": {
+    "JDW": "Tazetta",
+    "JA": "div8",
+    "VE": "tazetta",
+    "WP-AGM": "div8"
+   },
+   "obtenteur": null,
+   "annee": null,
+   "origine_obtenteur_annee": "non lu : fiche détail du registre en 504",
+   "couleur_annoncee": "code registre Y-O (périanthe jaune, couronne orange)",
+   "sources_existence": [
+    {
+     "niveau": "N1",
+     "source": "RHSREG",
+     "nom_source": "RHS, International Daffodil Register : recherche par nom (liste nom, division, code ; fiche détail en 504)",
+     "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Golden%20Dawn"
+    },
+    {
+     "niveau": "N2",
+     "source": "JDW",
+     "nom_source": "Jan de Wit en Zonen, assortiment Narcissus, groupe Tazetta (2 fiches)",
+     "url": "https://www.jandewitenzonen.com/en/assortment/narcissus/"
+    },
+    {
+     "niveau": "N4",
+     "source": "COM",
+     "nom_source": "Wikimedia Commons, catégorie de cultivar",
+     "url": "https://commons.wikimedia.org/wiki/Category:Narcissus_(cultivars)"
+    },
+    {
+     "niveau": "N3",
+     "source": "JA",
+     "nom_source": "Jacques Amand International",
+     "url": "https://www.jacquesamand.com/collections/narcissi-division-8-tazetta-narcissi"
+    },
+    {
+     "niveau": "N3",
+     "source": "VE",
+     "nom_source": "Van Engelen",
+     "url": "https://www.vanengelen.com/flower-bulbs-index/narcissi/tazetta.html"
+    },
+    {
+     "niveau": "N4",
+     "source": "WP",
+     "nom_source": "Wikipédia, liste des AGM narcisses",
+     "url": "https://en.wikipedia.org/wiki/List_of_Award_of_Garden_Merit_narcissus"
+    }
+   ],
+   "photos": [
+    {
+     "niveau": "N3",
+     "auteur": "Jacques Amand International",
+     "image": "https://cdn.shopify.com/s/files/1/0711/1586/6390/products/Golden-Dawn-AGM.jpg?v=1749826103",
+     "page": "https://www.jacquesamand.com/products/golden-dawn-agm",
+     "licence": "usage du vendeur, non relevée",
+     "vue_le": "2026-10-09",
+     "concordance": "concordante",
+     "observation": "périanthe jaune, coupe orange"
+    },
+    {
+     "niveau": "N2",
+     "auteur": "Jan de Wit en Zonen",
+     "image": "https://www.jandewitenzonen.com/img/products/narcissus/thumbs/Golden_Dawn.jpg",
+     "page": "https://www.jandewitenzonen.com/en/assortment/narcissus/",
+     "licence": "usage du vendeur, non relevée; vignette 160 px",
+     "vue_le": "2026-10-09",
+     "concordance": "concordante",
+     "observation": "vignette ; périanthe jaune, coupe orange"
+    }
+   ],
+   "niveau_preuve": "A",
+   "niveau_provisoire_preuves": "B",
+   "raison_niveau": "registre RHS lu (N1 : division 8, Y-O) + photo N2 Jan de Wit concordante ; 2 photo(s) concordante(s) : Jacques N3, Jan N2",
+   "marque": null,
+   "marque_verifiee": false,
+   "marque_note": "aucun ®, ™ ni série commerciale vu aux pages lues ; registre des marques (TMview, EUIPO, INPI) non consulté : à faire par l'orchestrateur. Nom de cultivar au registre RHS, donc dénomination libre selon le standard.",
+   "statut": "en production (après mesure des couleurs)",
+   "priorite": "assortiment_fleur_coupee",
+   "notes": [
+    "Registre ID 217603 (div 8 Y-O) : homonymes div 1 Y-Y (217601, 217602) écartés. Photos JA et JDW (vignette)."
+   ],
+   "sondage": {
+    "photos_regardees": 2,
+    "date": "2026-10-09",
+    "registre_relu": false
+   }
+  },
+  {
+   "id": "inbal",
+   "nom": "Inbal",
+   "nom_enregistre": "Inbal",
+   "synonymes": [],
+   "coloris_rattache": null,
+   "division_registre": "8",
+   "code_couleur_registre": "W-W",
+   "lecture_code": "périanthe blanc ; couronne (du fond vers le bord, lettres du code) blanc",
+   "registre": {
+    "requete": "Inbal",
+    "url_recherche": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Inbal",
+    "id": "256246",
+    "nom_registre": "Inbal",
+    "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffdetails.asp?ID=256246",
+    "homonymes": [],
+    "statut": "lu le 2026-10-08 par recherche de nom (division 8, code W-W) ; relecture du 2026-10-09 : le registre répond « no matches » à tort, non refaite",
+    "fiche_detail": "non lue : la page daffdetails.asp répond 504 ou expire (WebFetch, 2 essais de 60 s le 2026-10-09)"
+   },
+   "division_annoncee_vendeurs": {
+    "LF": "Tazetta"
+   },
+   "obtenteur": null,
+   "annee": null,
+   "origine_obtenteur_annee": "non lu : fiche détail du registre en 504",
+   "couleur_annoncee": "code registre W-W (périanthe blanc, couronne blanc)",
+   "sources_existence": [
+    {
+     "niveau": "N1",
+     "source": "RHSREG",
+     "nom_source": "RHS, International Daffodil Register : recherche par nom (liste nom, division, code ; fiche détail en 504)",
+     "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Inbal"
+    },
+    {
+     "niveau": "N4",
+     "source": "COM",
+     "nom_source": "Wikimedia Commons, catégorie de cultivar",
+     "url": "https://commons.wikimedia.org/wiki/Category:Narcissus_(cultivars)"
+    },
+    {
+     "niveau": "N3",
+     "source": "LF",
+     "nom_source": "Longfield Gardens",
+     "url": "https://www.longfield-gardens.com/collections/narcissus"
+    }
+   ],
+   "photos": [
+    {
+     "niveau": "N3",
+     "auteur": "Longfield Gardens",
+     "image": "https://cdn.shopify.com/s/files/1/0620/5092/6710/files/1280x1280_9__08802.1638384513.1280.1280.jpg?v=1764757412",
+     "page": "https://www.longfield-gardens.com/products/narcissus-inbal",
+     "licence": "usage du vendeur, non relevée",
+     "note": "ajoutée au sondage du 2026-10-09 depuis le flux du vendeur ; titre : Daffodil Tazetta Inbal Paperwhites",
+     "vue_le": "2026-10-09",
+     "concordance": "concordante",
+     "observation": "périanthe blanc, très petite coupe blanche à cœur orangé (Longfield)"
+    }
+   ],
+   "niveau_preuve": "C",
+   "niveau_provisoire_preuves": "D",
+   "raison_niveau": "registre RHS lu (N1 : division 8, W-W) ; une seule source de photo (Longfield N3)",
+   "marque": null,
+   "marque_verifiee": false,
+   "marque_note": "aucun ®, ™ ni série commerciale vu aux pages lues ; registre des marques (TMview, EUIPO, INPI) non consulté : à faire par l'orchestrateur. Nom de cultivar au registre RHS, donc dénomination libre selon le standard.",
+   "statut": "à confirmer",
+   "priorite": "assortiment_fleur_coupee",
+   "notes": [
+    "Registre ID 256246 (div 8 W-W). Aucune photo nommée dans les caches. Commons : page de catégorie seulement, pas d'image."
+   ],
+   "sondage": {
+    "photos_regardees": 1,
+    "date": "2026-10-09",
+    "registre_relu": false
+   }
+  },
+  {
+   "id": "kapiti-peach",
+   "nom": "Kapiti Peach",
+   "nom_enregistre": "Kapiti Peach",
+   "synonymes": [],
+   "coloris_rattache": null,
+   "division_registre": "8",
+   "code_couleur_registre": "W-O",
+   "lecture_code": "périanthe blanc ; couronne (du fond vers le bord, lettres du code) orange",
+   "registre": {
+    "requete": "Kapiti Peach",
+    "url_recherche": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Kapiti%20Peach",
+    "id": "1001046",
+    "nom_registre": "Kapiti Peach",
+    "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffdetails.asp?ID=1001046",
+    "homonymes": [],
+    "statut": "lu le 2026-10-08 par recherche de nom (division 8, code W-O) ; relecture du 2026-10-09 : le registre répond « no matches » à tort, non refaite",
+    "fiche_detail": "non lue : la page daffdetails.asp répond 504 ou expire (WebFetch, 2 essais de 60 s le 2026-10-09)"
+   },
+   "division_annoncee_vendeurs": {
+    "VE": "tazetta"
+   },
+   "obtenteur": null,
+   "annee": null,
+   "origine_obtenteur_annee": "non lu : fiche détail du registre en 504",
+   "couleur_annoncee": "code registre W-O (périanthe blanc, couronne orange)",
+   "sources_existence": [
+    {
+     "niveau": "N1",
+     "source": "RHSREG",
+     "nom_source": "RHS, International Daffodil Register : recherche par nom (liste nom, division, code ; fiche détail en 504)",
+     "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Kapiti%20Peach"
+    },
+    {
+     "niveau": "N3",
+     "source": "VE",
+     "nom_source": "Van Engelen",
+     "url": "https://www.vanengelen.com/flower-bulbs-index/narcissi/tazetta.html"
+    }
+   ],
+   "photos": [
+    {
+     "niveau": "N3",
+     "auteur": "Van Engelen",
+     "image": "https://www.vanengelen.com/media/catalog/product/cache/ae5a6ea9a5f2aff03513e6f42df29704/n/a/narcissus-kapitipeach1-w.jpg",
+     "page": "https://www.vanengelen.com/flower-bulbs-index/narcissi/tazetta/narcissus-kapiti-peach.html",
+     "licence": "usage du vendeur, non relevée",
+     "vue_le": "2026-10-09",
+     "concordance": "concordante",
+     "observation": "périanthe blanc, coupe pêche saumonée"
+    }
+   ],
+   "niveau_preuve": "C",
+   "niveau_provisoire_preuves": "C",
+   "raison_niveau": "registre RHS lu (N1 : division 8, W-O) ; une seule source de photo (Van N3)",
+   "marque": null,
+   "marque_verifiee": false,
+   "marque_note": "aucun ®, ™ ni série commerciale vu aux pages lues ; registre des marques (TMview, EUIPO, INPI) non consulté : à faire par l'orchestrateur. Nom de cultivar au registre RHS, donc dénomination libre selon le standard.",
+   "statut": "à confirmer",
+   "priorite": "assortiment_fleur_coupee",
+   "notes": [
+    "Registre ID 1001046 (div 8 W-O). Une seule photo (VE)."
+   ],
+   "sondage": {
+    "photos_regardees": 1,
+    "date": "2026-10-09",
+    "registre_relu": false
+   }
+  },
+  {
+   "id": "nir",
+   "nom": "Nir",
+   "nom_enregistre": "Nir",
+   "synonymes": [],
+   "coloris_rattache": null,
+   "division_registre": "8",
+   "code_couleur_registre": "W-W",
+   "lecture_code": "périanthe blanc ; couronne (du fond vers le bord, lettres du code) blanc",
+   "registre": {
+    "requete": "Nir",
+    "url_recherche": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Nir",
+    "id": "259503",
+    "nom_registre": "Nir",
+    "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffdetails.asp?ID=259503",
+    "homonymes": [],
+    "statut": "lu le 2026-10-08 par recherche de nom (division 8, code W-W) ; relecture du 2026-10-09 : le registre répond « no matches » à tort, non refaite",
+    "fiche_detail": "non lue : la page daffdetails.asp répond 504 ou expire (WebFetch, 2 essais de 60 s le 2026-10-09)"
+   },
+   "division_annoncee_vendeurs": {
+    "LF": "Tazetta"
+   },
+   "obtenteur": null,
+   "annee": null,
+   "origine_obtenteur_annee": "non lu : fiche détail du registre en 504",
+   "couleur_annoncee": "code registre W-W (périanthe blanc, couronne blanc)",
+   "sources_existence": [
+    {
+     "niveau": "N1",
+     "source": "RHSREG",
+     "nom_source": "RHS, International Daffodil Register : recherche par nom (liste nom, division, code ; fiche détail en 504)",
+     "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Nir"
+    },
+    {
+     "niveau": "N3",
+     "source": "LF",
+     "nom_source": "Longfield Gardens",
+     "url": "https://www.longfield-gardens.com/collections/narcissus"
+    }
+   ],
+   "photos": [
+    {
+     "niveau": "N3",
+     "auteur": "Longfield Gardens",
+     "image": "https://cdn.shopify.com/s/files/1/0620/5092/6710/files/3__43072.1679597194.1280.1280.jpg?v=1764757429",
+     "page": "https://www.longfield-gardens.com/products/narcissus-nir",
+     "licence": "usage du vendeur, non relevée",
+     "note": "ajoutée au sondage du 2026-10-09 depuis le flux du vendeur ; titre : Daffodil Tazetta Nir Paperwhites",
+     "vue_le": "2026-10-09",
+     "concordance": "concordante",
+     "observation": "périanthe blanc, petite coupe pâle à cœur orangé (Longfield)"
+    }
+   ],
+   "niveau_preuve": "C",
+   "niveau_provisoire_preuves": "D",
+   "raison_niveau": "registre RHS lu (N1 : division 8, W-W) ; une seule source de photo (Longfield N3)",
+   "marque": null,
+   "marque_verifiee": false,
+   "marque_note": "aucun ®, ™ ni série commerciale vu aux pages lues ; registre des marques (TMview, EUIPO, INPI) non consulté : à faire par l'orchestrateur. Nom de cultivar au registre RHS, donc dénomination libre selon le standard.",
+   "statut": "à confirmer",
+   "priorite": "assortiment_fleur_coupee",
+   "notes": [
+    "Registre ID 259503 (div 8 W-W). Aucune photo nommée dans les caches."
+   ],
+   "sondage": {
+    "photos_regardees": 1,
+    "date": "2026-10-09",
+    "registre_relu": false
+   }
+  },
+  {
+   "id": "highfield-beauty",
+   "nom": "Highfield Beauty",
+   "nom_enregistre": "Highfield Beauty",
+   "synonymes": [],
+   "coloris_rattache": null,
+   "division_registre": "8",
+   "code_couleur_registre": "Y-YYO",
+   "lecture_code": "périanthe jaune ; couronne (du fond vers le bord, lettres du code) jaune, jaune, orange",
+   "registre": {
+    "requete": "Highfield Beauty",
+    "url_recherche": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Highfield%20Beauty",
+    "id": "218088",
+    "nom_registre": "Highfield Beauty",
+    "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffdetails.asp?ID=218088",
+    "homonymes": [],
+    "statut": "lu le 2026-10-08 par recherche de nom (division 8, code Y-YYO) ; relecture du 2026-10-09 : le registre répond « no matches » à tort, non refaite",
+    "fiche_detail": "non lue : la page daffdetails.asp répond 504 ou expire (WebFetch, 2 essais de 60 s le 2026-10-09)"
+   },
+   "division_annoncee_vendeurs": {
+    "WP-AGM": "div8"
+   },
+   "obtenteur": null,
+   "annee": null,
+   "origine_obtenteur_annee": "non lu : fiche détail du registre en 504",
+   "couleur_annoncee": "code registre Y-YYO (périanthe jaune, couronne jaune)",
+   "sources_existence": [
+    {
+     "niveau": "N1",
+     "source": "RHSREG",
+     "nom_source": "RHS, International Daffodil Register : recherche par nom (liste nom, division, code ; fiche détail en 504)",
+     "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Highfield%20Beauty"
+    },
+    {
+     "niveau": "N4",
+     "source": "WP",
+     "nom_source": "Wikipédia, liste des AGM narcisses",
+     "url": "https://en.wikipedia.org/wiki/List_of_Award_of_Garden_Merit_narcissus"
+    }
+   ],
+   "photos": [],
+   "niveau_preuve": "D",
+   "niveau_provisoire_preuves": "D",
+   "raison_niveau": "registre RHS lu (N1 : division 8, Y-YYO) ; aucune photo nommée exploitable",
+   "marque": null,
+   "marque_verifiee": false,
+   "marque_note": "aucun ®, ™ ni série commerciale vu aux pages lues ; registre des marques (TMview, EUIPO, INPI) non consulté : à faire par l'orchestrateur. Nom de cultivar au registre RHS, donc dénomination libre selon le standard.",
+   "statut": "brouillon",
+   "priorite": "classique_jardin_AGM",
+   "notes": [
+    "Registre ID 218088 (div 8 Y-YYO). Aucune photo nommée (WP-AGM seulement, liste sans image)."
+   ],
+   "sondage": {
+    "photos_regardees": 0,
+    "date": "2026-10-09",
+    "registre_relu": false
+   }
+  },
+  {
+   "id": "hoopoe",
+   "nom": "Hoopoe",
+   "nom_enregistre": "Hoopoe",
+   "synonymes": [],
+   "coloris_rattache": null,
+   "division_registre": "8",
+   "code_couleur_registre": "Y-O",
+   "lecture_code": "périanthe jaune ; couronne (du fond vers le bord, lettres du code) orange",
+   "registre": {
+    "requete": "Hoopoe",
+    "url_recherche": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Hoopoe",
+    "id": "212024",
+    "nom_registre": "Hoopoe",
+    "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffdetails.asp?ID=212024",
+    "homonymes": [],
+    "statut": "lu le 2026-10-08 par recherche de nom (division 8, code Y-O) ; relecture du 2026-10-09 : le registre répond « no matches » à tort, non refaite",
+    "fiche_detail": "non lue : la page daffdetails.asp répond 504 ou expire (WebFetch, 2 essais de 60 s le 2026-10-09)"
+   },
+   "division_annoncee_vendeurs": {
+    "WP-AGM": "div8"
+   },
+   "obtenteur": null,
+   "annee": null,
+   "origine_obtenteur_annee": "non lu : fiche détail du registre en 504",
+   "couleur_annoncee": "code registre Y-O (périanthe jaune, couronne orange)",
+   "sources_existence": [
+    {
+     "niveau": "N1",
+     "source": "RHSREG",
+     "nom_source": "RHS, International Daffodil Register : recherche par nom (liste nom, division, code ; fiche détail en 504)",
+     "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Hoopoe"
+    },
+    {
+     "niveau": "N4",
+     "source": "COM",
+     "nom_source": "Wikimedia Commons, catégorie de cultivar",
+     "url": "https://commons.wikimedia.org/wiki/Category:Narcissus_(cultivars)"
+    },
+    {
+     "niveau": "N4",
+     "source": "WP",
+     "nom_source": "Wikipédia, liste des AGM narcisses",
+     "url": "https://en.wikipedia.org/wiki/List_of_Award_of_Garden_Merit_narcissus"
+    }
+   ],
+   "photos": [],
+   "niveau_preuve": "D",
+   "niveau_provisoire_preuves": "D",
+   "raison_niveau": "registre RHS lu (N1 : division 8, Y-O) ; aucune photo nommée exploitable",
+   "marque": null,
+   "marque_verifiee": false,
+   "marque_note": "aucun ®, ™ ni série commerciale vu aux pages lues ; registre des marques (TMview, EUIPO, INPI) non consulté : à faire par l'orchestrateur. Nom de cultivar au registre RHS, donc dénomination libre selon le standard.",
+   "statut": "brouillon",
+   "priorite": "classique_jardin_AGM",
+   "notes": [
+    "Registre ID 212024 (div 8 Y-O). Aucune photo nommée (Commons : page de catégorie)."
+   ],
+   "sondage": {
+    "photos_regardees": 0,
+    "date": "2026-10-09",
+    "registre_relu": false
+   }
+  },
+  {
+   "id": "avalanche-of-gold",
+   "nom": "Avalanche of Gold",
+   "nom_enregistre": "Avalanche of Gold",
+   "synonymes": [],
+   "coloris_rattache": null,
+   "division_registre": "8",
+   "code_couleur_registre": "Y-Y",
+   "lecture_code": "périanthe jaune ; couronne (du fond vers le bord, lettres du code) jaune",
+   "registre": {
+    "requete": "Avalanche of Gold",
+    "url_recherche": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Avalanche%20of%20Gold",
+    "id": "258180",
+    "nom_registre": "Avalanche of Gold",
+    "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffdetails.asp?ID=258180",
+    "homonymes": [],
+    "statut": "lu le 2026-10-08 par recherche de nom (division 8, code Y-Y) ; relecture du 2026-10-09 : le registre répond « no matches » à tort, non refaite",
+    "fiche_detail": "non lue : la page daffdetails.asp répond 504 ou expire (WebFetch, 2 essais de 60 s le 2026-10-09)"
+   },
+   "division_annoncee_vendeurs": null,
+   "obtenteur": "William R.P. (Bill) Welch",
+   "annee": 1986,
+   "origine_obtenteur_annee": "texte de vendeur Fluwel, non confirmé au registre (fiche détail illisible)",
+   "couleur_annoncee": "code registre Y-Y (périanthe jaune, couronne jaune)",
+   "sources_existence": [
+    {
+     "niveau": "N1",
+     "source": "RHSREG",
+     "nom_source": "RHS, International Daffodil Register : recherche par nom (liste nom, division, code ; fiche détail en 504)",
+     "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Avalanche%20of%20Gold"
+    },
+    {
+     "niveau": "N3",
+     "source": "FL",
+     "nom_source": "Fluwel",
+     "url": "https://fluwel.nl/collections/narcissen"
+    }
+   ],
+   "photos": [
+    {
+     "niveau": "N3",
+     "auteur": "Fluwel",
+     "image": "https://cdn.shopify.com/s/files/1/0567/5165/2954/files/avalanche-of-gold-narcissus-fluwel-7339722.jpg?v=1773154057",
+     "page": "https://fluwel.nl/products/avalanche-of-gold-8y-y-w-r-welsh-early-season-712",
+     "licence": "usage du vendeur, non relevée",
+     "note": "ajoutée au sondage du 2026-10-09 depuis le flux du vendeur ; titre : Avalanche of Gold",
+     "vue_le": "2026-10-09",
+     "concordance": "discordante",
+     "observation": "périanthe crème, couronne jaune alors que le registre donne Y-Y ; photo écartée, nom à vérifier (Fluwel)"
+    }
+   ],
+   "niveau_preuve": "D",
+   "niveau_provisoire_preuves": "D",
+   "raison_niveau": "registre RHS lu (N1 : division 8, Y-Y) ; photo discordante écartée : couleur non confirmée",
+   "marque": null,
+   "marque_verifiee": false,
+   "marque_note": "aucun ®, ™ ni série commerciale vu aux pages lues ; registre des marques (TMview, EUIPO, INPI) non consulté : à faire par l'orchestrateur. Nom de cultivar au registre RHS, donc dénomination libre selon le standard.",
+   "statut": "brouillon",
+   "priorite": "vendu_specialistes",
+   "notes": [
+    "Registre ID 258180 (div 8 Y-Y). Obtenteur et année selon Fluwel, texte vendeur. Aucune photo nommée N2 ou N3 dans les caches."
+   ],
+   "sondage": {
+    "photos_regardees": 1,
+    "date": "2026-10-09",
+    "registre_relu": false
+   }
+  },
+  {
+   "id": "castanets",
+   "nom": "Castanets",
+   "nom_enregistre": "Castanets",
+   "synonymes": [],
+   "coloris_rattache": null,
+   "division_registre": "8",
+   "code_couleur_registre": "Y-O",
+   "lecture_code": "périanthe jaune ; couronne (du fond vers le bord, lettres du code) orange",
+   "registre": {
+    "requete": "Castanets",
+    "url_recherche": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Castanets",
+    "id": "210864",
+    "nom_registre": "Castanets",
+    "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffdetails.asp?ID=210864",
+    "homonymes": [],
+    "statut": "lu le 2026-10-08 par recherche de nom (division 8, code Y-O) ; relecture du 2026-10-09 : le registre répond « no matches » à tort, non refaite",
+    "fiche_detail": "non lue : la page daffdetails.asp répond 504 ou expire (WebFetch, 2 essais de 60 s le 2026-10-09)"
+   },
+   "division_annoncee_vendeurs": null,
+   "obtenteur": "William G. Pannill",
+   "annee": 1985,
+   "origine_obtenteur_annee": "texte de vendeur Fluwel, non confirmé au registre (fiche détail illisible)",
+   "couleur_annoncee": "code registre Y-O (périanthe jaune, couronne orange)",
+   "sources_existence": [
+    {
+     "niveau": "N1",
+     "source": "RHSREG",
+     "nom_source": "RHS, International Daffodil Register : recherche par nom (liste nom, division, code ; fiche détail en 504)",
+     "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Castanets"
+    },
+    {
+     "niveau": "N3",
+     "source": "FL",
+     "nom_source": "Fluwel",
+     "url": "https://fluwel.nl/collections/narcissen"
+    }
+   ],
+   "photos": [
+    {
+     "niveau": "N3",
+     "auteur": "Fluwel",
+     "image": "https://cdn.shopify.com/s/files/1/0567/5165/2954/files/NarcisCastanetsd.jpg?v=1788532811",
+     "page": "https://fluwel.nl/products/castanets",
+     "licence": "usage du vendeur, non relevée",
+     "note": "ajoutée au sondage du 2026-10-09 depuis le flux du vendeur ; titre : Castanets",
+     "vue_le": "2026-10-09",
+     "concordance": "concordante",
+     "observation": "périanthe jaune, coupe orange (Fluwel)"
+    }
+   ],
+   "niveau_preuve": "C",
+   "niveau_provisoire_preuves": "D",
+   "raison_niveau": "registre RHS lu (N1 : division 8, Y-O) ; une seule source de photo (Fluwel N3)",
+   "marque": null,
+   "marque_verifiee": false,
+   "marque_note": "aucun ®, ™ ni série commerciale vu aux pages lues ; registre des marques (TMview, EUIPO, INPI) non consulté : à faire par l'orchestrateur. Nom de cultivar au registre RHS, donc dénomination libre selon le standard.",
+   "statut": "à confirmer",
+   "priorite": "vendu_specialistes",
+   "notes": [
+    "Registre ID 210864 (div 8 Y-O). Obtenteur selon Fluwel, texte vendeur. Aucune photo nommée."
+   ],
+   "sondage": {
+    "photos_regardees": 1,
+    "date": "2026-10-09",
+    "registre_relu": false
+   }
+  },
+  {
+   "id": "gloriosus",
+   "nom": "Gloriosus",
+   "nom_enregistre": "Gloriosus",
+   "synonymes": [],
+   "coloris_rattache": null,
+   "division_registre": "8",
+   "code_couleur_registre": "W-O",
+   "lecture_code": "périanthe blanc ; couronne (du fond vers le bord, lettres du code) orange",
+   "registre": {
+    "requete": "Gloriosus",
+    "url_recherche": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Gloriosus",
+    "id": "203238",
+    "nom_registre": "Gloriosus",
+    "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffdetails.asp?ID=203238",
+    "homonymes": [
+     {
+      "nom": "Gloriosus",
+      "division": "3",
+      "code": "W-W",
+      "rhs_id": "203237"
+     }
+    ],
+    "statut": "lu le 2026-10-08 par recherche de nom (division 8, code W-O) ; relecture du 2026-10-09 : le registre répond « no matches » à tort, non refaite",
+    "fiche_detail": "non lue : la page daffdetails.asp répond 504 ou expire (WebFetch, 2 essais de 60 s le 2026-10-09)"
+   },
+   "division_annoncee_vendeurs": null,
+   "obtenteur": "unknown",
+   "annee": 1883,
+   "origine_obtenteur_annee": "texte de vendeur Fluwel, non confirmé au registre (fiche détail illisible)",
+   "couleur_annoncee": "code registre W-O (périanthe blanc, couronne orange)",
+   "sources_existence": [
+    {
+     "niveau": "N1",
+     "source": "RHSREG",
+     "nom_source": "RHS, International Daffodil Register : recherche par nom (liste nom, division, code ; fiche détail en 504)",
+     "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Gloriosus"
+    },
+    {
+     "niveau": "N3",
+     "source": "FL",
+     "nom_source": "Fluwel",
+     "url": "https://fluwel.nl/collections/narcissen"
+    }
+   ],
+   "photos": [
+    {
+     "niveau": "N3",
+     "auteur": "Fluwel",
+     "image": "https://cdn.shopify.com/s/files/1/0567/5165/2954/files/gloriosus-narcissus-fluwel-3274328.jpg?v=1773152370",
+     "page": "https://fluwel.nl/products/gloriosus",
+     "licence": "usage du vendeur, non relevée",
+     "note": "ajoutée au sondage du 2026-10-09 depuis le flux du vendeur ; titre : Gloriosus",
+     "vue_le": "2026-10-09",
+     "concordance": "concordante",
+     "observation": "périanthe blanc, coupe orange (Fluwel)"
+    }
+   ],
+   "niveau_preuve": "C",
+   "niveau_provisoire_preuves": "D",
+   "raison_niveau": "registre RHS lu (N1 : division 8, W-O) ; une seule source de photo (Fluwel N3)",
+   "marque": null,
+   "marque_verifiee": false,
+   "marque_note": "aucun ®, ™ ni série commerciale vu aux pages lues ; registre des marques (TMview, EUIPO, INPI) non consulté : à faire par l'orchestrateur. Nom de cultivar au registre RHS, donc dénomination libre selon le standard.",
+   "statut": "à confirmer",
+   "priorite": "vendu_specialistes",
+   "notes": [
+    "Registre ID 203238 (div 8 W-O). Homonyme div 3 W-W (203237) écarté. Aucune photo nommée."
+   ],
+   "sondage": {
+    "photos_regardees": 1,
+    "date": "2026-10-09",
+    "registre_relu": false
+   }
+  },
+  {
+   "id": "nickelodeon",
+   "nom": "Nickelodeon",
+   "nom_enregistre": "Nickelodeon",
+   "synonymes": [],
+   "coloris_rattache": null,
+   "division_registre": "8",
+   "code_couleur_registre": "W-W",
+   "lecture_code": "périanthe blanc ; couronne (du fond vers le bord, lettres du code) blanc",
+   "registre": {
+    "requete": "Nickelodeon",
+    "url_recherche": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Nickelodeon",
+    "id": "258992",
+    "nom_registre": "Nickelodeon",
+    "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffdetails.asp?ID=258992",
+    "homonymes": [],
+    "statut": "lu le 2026-10-08 par recherche de nom (division 8, code W-W) ; relecture du 2026-10-09 : le registre répond « no matches » à tort, non refaite",
+    "fiche_detail": "non lue : la page daffdetails.asp répond 504 ou expire (WebFetch, 2 essais de 60 s le 2026-10-09)"
+   },
+   "division_annoncee_vendeurs": null,
+   "obtenteur": "Wilfred Hall",
+   "annee": 2003,
+   "origine_obtenteur_annee": "texte de vendeur Fluwel, non confirmé au registre (fiche détail illisible)",
+   "couleur_annoncee": "code registre W-W (periantheblanc, couronne blanche)",
+   "sources_existence": [
+    {
+     "niveau": "N1",
+     "source": "RHSREG",
+     "nom_source": "RHS, International Daffodil Register : recherche par nom (liste nom, division, code ; fiche détail en 504)",
+     "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Nickelodeon"
+    },
+    {
+     "niveau": "N3",
+     "source": "FL",
+     "nom_source": "Fluwel",
+     "url": "https://fluwel.nl/collections/narcissen"
+    }
+   ],
+   "photos": [
+    {
+     "niveau": "N3",
+     "auteur": "Fluwel",
+     "image": "https://cdn.shopify.com/s/files/1/0567/5165/2954/files/nickelodeon-special-narcissus-fluwel-1657246.jpg",
+     "page": "https://fluwel.nl/products/nickelodeon",
+     "licence": "usage du vendeur, non relevee",
+     "vue_le": "2026-10-09",
+     "concordance": "concordante",
+     "observation": "périanthe blanc, très petite coupe à œil jaune verdâtre"
+    },
+    {
+     "niveau": "N3",
+     "auteur": "Fluwel",
+     "image": "https://cdn.shopify.com/s/files/1/0567/5165/2954/files/nickelodeon-special-narcissus-fluwel-5591145.jpg",
+     "page": "https://fluwel.nl/products/nickelodeon",
+     "licence": "usage du vendeur, non relevee",
+     "vue_le": null,
+     "concordance": "non regardée",
+     "observation": ""
+    }
+   ],
+   "niveau_preuve": "C",
+   "niveau_provisoire_preuves": "C",
+   "raison_niveau": "registre RHS lu (N1 : division 8, W-W) ; une seule source de photo (Fluwel N3)",
+   "marque": null,
+   "marque_verifiee": false,
+   "marque_note": "aucun ®, ™ ni série commerciale vu aux pages lues ; registre des marques (TMview, EUIPO, INPI) non consulté : à faire par l'orchestrateur. Nom de cultivar au registre RHS, donc dénomination libre selon le standard.",
+   "statut": "à confirmer",
+   "priorite": "vendu_specialistes",
+   "notes": [
+    "Registre ID 258992 lu, division 8 W-W. Annee 2003 et obtenteur : texte Fluwel, a confirmer au registre."
+   ],
+   "sondage": {
+    "photos_regardees": 1,
+    "date": "2026-10-09",
+    "registre_relu": false
+   }
+  },
+  {
+   "id": "omri",
+   "nom": "Omri",
+   "nom_enregistre": "Omri",
+   "synonymes": [],
+   "coloris_rattache": null,
+   "division_registre": "8",
+   "code_couleur_registre": "W-Y",
+   "lecture_code": "périanthe blanc ; couronne (du fond vers le bord, lettres du code) jaune",
+   "registre": {
+    "requete": "Omri",
+    "url_recherche": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Omri",
+    "id": "223258",
+    "nom_registre": "Omri",
+    "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffdetails.asp?ID=223258",
+    "homonymes": [],
+    "statut": "lu le 2026-10-08 par recherche de nom (division 8, code W-Y) ; relecture du 2026-10-09 : le registre répond « no matches » à tort, non refaite",
+    "fiche_detail": "non lue : la page daffdetails.asp répond 504 ou expire (WebFetch, 2 essais de 60 s le 2026-10-09)"
+   },
+   "division_annoncee_vendeurs": {
+    "JA": "div8"
+   },
+   "obtenteur": null,
+   "annee": null,
+   "origine_obtenteur_annee": "non lu : fiche détail du registre en 504",
+   "couleur_annoncee": "code registre W-Y ; JA : creme blanc, coupe un peu plus profonde",
+   "sources_existence": [
+    {
+     "niveau": "N1",
+     "source": "RHSREG",
+     "nom_source": "RHS, International Daffodil Register : recherche par nom (liste nom, division, code ; fiche détail en 504)",
+     "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Omri"
+    },
+    {
+     "niveau": "N3",
+     "source": "JA",
+     "nom_source": "Jacques Amand International",
+     "url": "https://www.jacquesamand.com/collections/narcissi-division-8-tazetta-narcissi"
+    }
+   ],
+   "photos": [
+    {
+     "niveau": "N3",
+     "auteur": "Jacques Amand International",
+     "image": "https://cdn.shopify.com/s/files/1/0711/1586/6390/products/Narcissus-Omri_9544-1-scaled-e1657268985741.jpg?v=1749826109",
+     "page": "https://www.jacquesamand.com/products/paperwhite-omri",
+     "licence": "usage du vendeur, non relevee",
+     "vue_le": "2026-10-09",
+     "concordance": "concordante",
+     "observation": "périanthe blanc crème, coupe jaune pâle ; teinte à mesurer"
+    }
+   ],
+   "niveau_preuve": "C",
+   "niveau_provisoire_preuves": "C",
+   "raison_niveau": "registre RHS lu (N1 : division 8, W-Y) ; une seule source de photo (Jacques N3)",
+   "marque": null,
+   "marque_verifiee": false,
+   "marque_note": "aucun ®, ™ ni série commerciale vu aux pages lues ; registre des marques (TMview, EUIPO, INPI) non consulté : à faire par l'orchestrateur. Nom de cultivar au registre RHS, donc dénomination libre selon le standard.",
+   "statut": "à confirmer",
+   "priorite": "vendu_specialistes",
+   "notes": [
+    "JA annonce div 8 ; registre W-Y lu. Pas d'obtenteur ni d'annee verifies."
+   ],
+   "sondage": {
+    "photos_regardees": 1,
+    "date": "2026-10-09",
+    "registre_relu": false
+   }
+  },
+  {
+   "id": "pacific-coast",
+   "nom": "Pacific Coast",
+   "nom_enregistre": "Pacific Coast",
+   "synonymes": [],
+   "coloris_rattache": null,
+   "division_registre": "8",
+   "code_couleur_registre": "Y-Y",
+   "lecture_code": "périanthe jaune ; couronne (du fond vers le bord, lettres du code) jaune",
+   "registre": {
+    "requete": "Pacific Coast",
+    "url_recherche": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Pacific%20Coast",
+    "id": "224402",
+    "nom_registre": "Pacific Coast",
+    "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffdetails.asp?ID=224402",
+    "homonymes": [],
+    "statut": "lu le 2026-10-08 par recherche de nom (division 8, code Y-Y) ; relecture du 2026-10-09 : le registre répond « no matches » à tort, non refaite",
+    "fiche_detail": "non lue : la page daffdetails.asp répond 504 ou expire (WebFetch, 2 essais de 60 s le 2026-10-09)"
+   },
+   "division_annoncee_vendeurs": null,
+   "obtenteur": "E. Lievens",
+   "annee": 1994,
+   "origine_obtenteur_annee": "texte de vendeur Fluwel, non confirmé au registre (fiche détail illisible)",
+   "couleur_annoncee": "code registre Y-Y ; Fluwel : perianthe creme, coupe or pale",
+   "sources_existence": [
+    {
+     "niveau": "N1",
+     "source": "RHSREG",
+     "nom_source": "RHS, International Daffodil Register : recherche par nom (liste nom, division, code ; fiche détail en 504)",
+     "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Pacific%20Coast"
+    },
+    {
+     "niveau": "N4",
+     "source": "COM",
+     "nom_source": "Wikimedia Commons, catégorie de cultivar",
+     "url": "https://commons.wikimedia.org/wiki/Category:Narcissus_(cultivars)"
+    },
+    {
+     "niveau": "N3",
+     "source": "FL",
+     "nom_source": "Fluwel",
+     "url": "https://fluwel.nl/collections/narcissen"
+    }
+   ],
+   "photos": [
+    {
+     "niveau": "N3",
+     "auteur": "Fluwel",
+     "image": "https://cdn.shopify.com/s/files/1/0567/5165/2954/files/pacific-coast-narcissus-fluwel-4555753.jpg",
+     "page": "https://fluwel.nl/products/pacific-coast-8y-y-1007",
+     "licence": "usage du vendeur, non relevee",
+     "vue_le": "2026-10-09",
+     "concordance": "concordante",
+     "observation": "périanthe jaune citron, coupe jaune"
+    },
+    {
+     "niveau": "N3",
+     "auteur": "Fluwel",
+     "image": "https://cdn.shopify.com/s/files/1/0567/5165/2954/files/pacific-coast-narcissus-fluwel-4476412.jpg",
+     "page": "https://fluwel.nl/products/pacific-coast-8y-y-1007",
+     "licence": "usage du vendeur, non relevee",
+     "vue_le": null,
+     "concordance": "non regardée",
+     "observation": ""
+    }
+   ],
+   "niveau_preuve": "C",
+   "niveau_provisoire_preuves": "C",
+   "raison_niveau": "registre RHS lu (N1 : division 8, Y-Y) ; une seule source de photo (Fluwel N3)",
+   "marque": null,
+   "marque_verifiee": false,
+   "marque_note": "aucun ®, ™ ni série commerciale vu aux pages lues ; registre des marques (TMview, EUIPO, INPI) non consulté : à faire par l'orchestrateur. Nom de cultivar au registre RHS, donc dénomination libre selon le standard.",
+   "statut": "à confirmer",
+   "priorite": "vendu_specialistes",
+   "notes": [
+    "Registre ID 224402 lu, division 8 Y-Y. Obtenteur 1994 : texte Fluwel. Commons aussi liste la categorie (non photographiee)."
+   ],
+   "sondage": {
+    "photos_regardees": 1,
+    "date": "2026-10-09",
+    "registre_relu": false
+   }
+  },
+  {
+   "id": "polly-s-pearl",
+   "nom": "Polly's Pearl",
+   "nom_enregistre": "Polly's Pearl",
+   "synonymes": [],
+   "coloris_rattache": null,
+   "division_registre": null,
+   "code_couleur_registre": null,
+   "lecture_code": null,
+   "registre": {
+    "requete": "Polly's Pearl",
+    "url_recherche": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Polly's%20Pearl",
+    "id": null,
+    "nom_registre": null,
+    "url": null,
+    "homonymes": [],
+    "statut": "recherche du 2026-10-08 : aucune entrée (peut être un faux « no matches »)",
+    "fiche_detail": "non lue : la page daffdetails.asp répond 504 ou expire (WebFetch, 2 essais de 60 s le 2026-10-09)"
+   },
+   "division_annoncee_vendeurs": null,
+   "obtenteur": "Harold Koopowitz",
+   "annee": 1979,
+   "origine_obtenteur_annee": "texte de vendeur Fluwel, non confirmé au registre (fiche détail illisible)",
+   "couleur_annoncee": "Fluwel : 8 W-W",
+   "sources_existence": [
+    {
+     "niveau": "N3",
+     "source": "FL",
+     "nom_source": "Fluwel",
+     "url": "https://fluwel.nl/collections/narcissen"
+    }
+   ],
+   "photos": [
+    {
+     "niveau": "N3",
+     "auteur": "Fluwel",
+     "image": "https://cdn.shopify.com/s/files/1/0567/5165/2954/files/pollys-pearl-narcissus-fluwel-5853432.jpg",
+     "page": "https://fluwel.nl/products/pollys-pearl",
+     "licence": "usage du vendeur, non relevee",
+     "vue_le": "2026-10-09",
+     "concordance": "sans référence",
+     "observation": "périanthe blanc, petite coupe citron ; pas de code de registre pour comparer"
+    },
+    {
+     "niveau": "N3",
+     "auteur": "Fluwel",
+     "image": "https://cdn.shopify.com/s/files/1/0567/5165/2954/files/pollys-pearl-narcissus-fluwel-3410808.jpg",
+     "page": "https://fluwel.nl/products/pollys-pearl",
+     "licence": "usage du vendeur, non relevee",
+     "vue_le": null,
+     "concordance": "non regardée",
+     "observation": ""
+    }
+   ],
+   "niveau_preuve": "C",
+   "niveau_provisoire_preuves": "D",
+   "raison_niveau": "nom absent du registre lu ; une seule source de photo (Fluwel N3)",
+   "marque": null,
+   "marque_verifiee": false,
+   "marque_note": "aucun ®, ™ vu ; nom non retrouvé au registre ; registre des marques non consulté.",
+   "statut": "à confirmer",
+   "priorite": "vendu_specialistes",
+   "notes": [
+    "Registre non cherche ; l'apostrophe est tracee dans le nom de l'inventaire. A chercher au registre avant tout.",
+    "Sondage : la recherche au registre du 2026-10-08 ne renvoie aucune entrée (peut être un faux « no matches ») ; existence N1 non prouvée, seule source Fluwel (N3)."
+   ],
+   "sondage": {
+    "photos_regardees": 1,
+    "date": "2026-10-09",
+    "registre_relu": false
+   }
+  },
+  {
+   "id": "aspasia",
+   "nom": "Aspasia",
+   "nom_enregistre": "Aspasia",
+   "synonymes": [],
+   "coloris_rattache": null,
+   "division_registre": "8",
+   "code_couleur_registre": "W-Y",
+   "lecture_code": "périanthe blanc ; couronne (du fond vers le bord, lettres du code) jaune",
+   "registre": {
+    "requete": "Aspasia",
+    "url_recherche": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Aspasia",
+    "id": "200591",
+    "nom_registre": "Aspasia",
+    "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffdetails.asp?ID=200591",
+    "homonymes": [],
+    "statut": "lu le 2026-10-08 par recherche de nom (division 8, code W-Y) ; relecture du 2026-10-09 : le registre répond « no matches » à tort, non refaite",
+    "fiche_detail": "non lue : la page daffdetails.asp répond 504 ou expire (WebFetch, 2 essais de 60 s le 2026-10-09)"
+   },
+   "division_annoncee_vendeurs": null,
+   "obtenteur": null,
+   "annee": null,
+   "origine_obtenteur_annee": "non lu : fiche détail du registre en 504",
+   "couleur_annoncee": "code registre W-Y",
+   "sources_existence": [
+    {
+     "niveau": "N1",
+     "source": "RHSREG",
+     "nom_source": "RHS, International Daffodil Register : recherche par nom (liste nom, division, code ; fiche détail en 504)",
+     "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Aspasia"
+    },
+    {
+     "niveau": "N3",
+     "source": "PBS",
+     "nom_source": "Pacific Bulb Society",
+     "url": "https://www.pacificbulbsociety.org/pbswiki/index.php/Narcissus"
+    }
+   ],
+   "photos": [],
+   "niveau_preuve": "D",
+   "niveau_provisoire_preuves": "D",
+   "raison_niveau": "registre RHS lu (N1 : division 8, W-Y) ; aucune photo nommée exploitable",
+   "marque": null,
+   "marque_verifiee": false,
+   "marque_note": "aucun ®, ™ ni série commerciale vu aux pages lues ; registre des marques (TMview, EUIPO, INPI) non consulté : à faire par l'orchestrateur. Nom de cultivar au registre RHS, donc dénomination libre selon le standard.",
+   "statut": "brouillon",
+   "priorite": "niche_ou_historique",
+   "notes": [
+    "Registre ID 200591 lu. Pas de photo trouvee chez les vendeurs (PBS seul, liste de noms)."
+   ],
+   "sondage": {
+    "photos_regardees": 0,
+    "date": "2026-10-09",
+    "registre_relu": false
+   }
+  },
+  {
+   "id": "canarybird",
+   "nom": "Canarybird",
+   "nom_enregistre": "Canarybird",
+   "synonymes": [],
+   "coloris_rattache": null,
+   "division_registre": "8",
+   "code_couleur_registre": "Y-GOO",
+   "lecture_code": "périanthe jaune ; couronne (du fond vers le bord, lettres du code) vert, orange, orange",
+   "registre": {
+    "requete": "Canarybird",
+    "url_recherche": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Canarybird",
+    "id": "215927",
+    "nom_registre": "Canarybird",
+    "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffdetails.asp?ID=215927",
+    "homonymes": [
+     {
+      "nom": "Canarybird",
+      "division": "1",
+      "code": "Y-Y",
+      "rhs_id": "215926"
+     }
+    ],
+    "statut": "lu le 2026-10-08 par recherche de nom (division 8, code Y-GOO) ; relecture du 2026-10-09 : le registre répond « no matches » à tort, non refaite",
+    "fiche_detail": "non lue : la page daffdetails.asp répond 504 ou expire (WebFetch, 2 essais de 60 s le 2026-10-09)"
+   },
+   "division_annoncee_vendeurs": null,
+   "obtenteur": null,
+   "annee": null,
+   "origine_obtenteur_annee": "non lu : fiche détail du registre en 504",
+   "couleur_annoncee": "code registre Y-GOO (div 8)",
+   "sources_existence": [
+    {
+     "niveau": "N1",
+     "source": "RHSREG",
+     "nom_source": "RHS, International Daffodil Register : recherche par nom (liste nom, division, code ; fiche détail en 504)",
+     "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Canarybird"
+    },
+    {
+     "niveau": "N4",
+     "source": "COM",
+     "nom_source": "Wikimedia Commons, catégorie de cultivar",
+     "url": "https://commons.wikimedia.org/wiki/Category:Narcissus_(cultivars)"
+    }
+   ],
+   "photos": [
+    {
+     "niveau": "N4",
+     "auteur": "Wikimedia Commons (auteur non relu)",
+     "image": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Narcissus_Canarybird_0zz.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Narcissus_Canarybird_0zz.jpg",
+     "licence": "a relever sur la page du fichier",
+     "vue_le": "2026-10-09",
+     "concordance": "concordante",
+     "observation": "périanthe jaune pâle, coupe jaune"
+    }
+   ],
+   "niveau_preuve": "C",
+   "niveau_provisoire_preuves": "C",
+   "raison_niveau": "registre RHS lu (N1 : division 8, Y-GOO) ; une seule source de photo (Wikimedia N4)",
+   "marque": null,
+   "marque_verifiee": false,
+   "marque_note": "aucun ®, ™ ni série commerciale vu aux pages lues ; registre des marques (TMview, EUIPO, INPI) non consulté : à faire par l'orchestrateur. Nom de cultivar au registre RHS, donc dénomination libre selon le standard.",
+   "statut": "à confirmer",
+   "priorite": "niche_ou_historique",
+   "notes": [
+    "Homonyme au registre : div 1 Y-Y, ID 215926. Image lue en miniature, URL pleine taille deduite du chemin."
+   ],
+   "sondage": {
+    "photos_regardees": 1,
+    "date": "2026-10-09",
+    "registre_relu": false
+   }
+  },
+  {
+   "id": "chinita",
+   "nom": "Chinita",
+   "nom_enregistre": "Chinita",
+   "synonymes": [],
+   "coloris_rattache": null,
+   "division_registre": "8",
+   "code_couleur_registre": "Y-YYR",
+   "lecture_code": "périanthe jaune ; couronne (du fond vers le bord, lettres du code) jaune, jaune, rouge",
+   "registre": {
+    "requete": "Chinita",
+    "url_recherche": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Chinita",
+    "id": "201605",
+    "nom_registre": "Chinita",
+    "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffdetails.asp?ID=201605",
+    "homonymes": [],
+    "statut": "lu le 2026-10-08 par recherche de nom (division 8, code Y-YYR) ; relecture du 2026-10-09 : le registre répond « no matches » à tort, non refaite",
+    "fiche_detail": "non lue : la page daffdetails.asp répond 504 ou expire (WebFetch, 2 essais de 60 s le 2026-10-09)"
+   },
+   "division_annoncee_vendeurs": null,
+   "obtenteur": null,
+   "annee": null,
+   "origine_obtenteur_annee": "non lu : fiche détail du registre en 504",
+   "couleur_annoncee": "code registre Y-YYR",
+   "sources_existence": [
+    {
+     "niveau": "N1",
+     "source": "RHSREG",
+     "nom_source": "RHS, International Daffodil Register : recherche par nom (liste nom, division, code ; fiche détail en 504)",
+     "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Chinita"
+    },
+    {
+     "niveau": "N4",
+     "source": "COM",
+     "nom_source": "Wikimedia Commons, catégorie de cultivar",
+     "url": "https://commons.wikimedia.org/wiki/Category:Narcissus_(cultivars)"
+    }
+   ],
+   "photos": [
+    {
+     "niveau": "N4",
+     "auteur": "Wikimedia Commons (auteur non relu)",
+     "image": "https://upload.wikimedia.org/wikipedia/commons/a/a6/Narcissus_Chinita_0zz.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Narcissus_Chinita_0zz.jpg",
+     "licence": "a relever sur la page du fichier",
+     "vue_le": "2026-10-09",
+     "concordance": "discordante",
+     "observation": "périanthe BLANC, coupe jaune orangé alors que le registre donne Y-YYR (périanthe jaune) ; photo écartée"
+    }
+   ],
+   "niveau_preuve": "D",
+   "niveau_provisoire_preuves": "C",
+   "raison_niveau": "registre RHS lu (N1 : division 8, Y-YYR) ; photo discordante écartée : couleur non confirmée",
+   "marque": null,
+   "marque_verifiee": false,
+   "marque_note": "aucun ®, ™ ni série commerciale vu aux pages lues ; registre des marques (TMview, EUIPO, INPI) non consulté : à faire par l'orchestrateur. Nom de cultivar au registre RHS, donc dénomination libre selon le standard.",
+   "statut": "brouillon",
+   "priorite": "niche_ou_historique",
+   "notes": [
+    "Image lue en miniature, URL pleine taille deduite du chemin."
+   ],
+   "sondage": {
+    "photos_regardees": 1,
+    "date": "2026-10-09",
+    "registre_relu": false
+   }
+  },
+  {
+   "id": "grand-monarque",
+   "nom": "Grand Monarque",
+   "nom_enregistre": "Grand Monarque",
+   "synonymes": [],
+   "coloris_rattache": null,
+   "division_registre": "8",
+   "code_couleur_registre": "W-Y",
+   "lecture_code": "périanthe blanc ; couronne (du fond vers le bord, lettres du code) jaune",
+   "registre": {
+    "requete": "Grand Monarque",
+    "url_recherche": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Grand%20Monarque",
+    "id": "217866",
+    "nom_registre": "Grand Monarque",
+    "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffdetails.asp?ID=217866",
+    "homonymes": [],
+    "statut": "lu le 2026-10-08 par recherche de nom (division 8, code W-Y) ; relecture du 2026-10-09 : le registre répond « no matches » à tort, non refaite",
+    "fiche_detail": "non lue : la page daffdetails.asp répond 504 ou expire (WebFetch, 2 essais de 60 s le 2026-10-09)"
+   },
+   "division_annoncee_vendeurs": null,
+   "obtenteur": null,
+   "annee": null,
+   "origine_obtenteur_annee": "non lu : fiche détail du registre en 504",
+   "couleur_annoncee": "code registre W-Y",
+   "sources_existence": [
+    {
+     "niveau": "N1",
+     "source": "RHSREG",
+     "nom_source": "RHS, International Daffodil Register : recherche par nom (liste nom, division, code ; fiche détail en 504)",
+     "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Grand%20Monarque"
+    },
+    {
+     "niveau": "N4",
+     "source": "COM",
+     "nom_source": "Wikimedia Commons, catégorie de cultivar",
+     "url": "https://commons.wikimedia.org/wiki/Category:Narcissus_(cultivars)"
+    }
+   ],
+   "photos": [],
+   "niveau_preuve": "D",
+   "niveau_provisoire_preuves": "D",
+   "raison_niveau": "registre RHS lu (N1 : division 8, W-Y) ; aucune photo nommée exploitable",
+   "marque": null,
+   "marque_verifiee": false,
+   "marque_note": "aucun ®, ™ ni série commerciale vu aux pages lues ; registre des marques (TMview, EUIPO, INPI) non consulté : à faire par l'orchestrateur. Nom de cultivar au registre RHS, donc dénomination libre selon le standard.",
+   "statut": "brouillon",
+   "priorite": "niche_ou_historique",
+   "notes": [
+    "Nom au registre, aucune photo lue."
+   ],
+   "sondage": {
+    "photos_regardees": 0,
+    "date": "2026-10-09",
+    "registre_relu": false
+   }
+  },
+  {
+   "id": "grand-primo",
+   "nom": "Grand Primo",
+   "nom_enregistre": "Grand Primo",
+   "synonymes": [],
+   "coloris_rattache": null,
+   "division_registre": "8",
+   "code_couleur_registre": "Y-Y",
+   "lecture_code": "périanthe jaune ; couronne (du fond vers le bord, lettres du code) jaune",
+   "registre": {
+    "requete": "Grand Primo",
+    "url_recherche": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Grand%20Primo",
+    "id": "217875",
+    "nom_registre": "Grand Primo",
+    "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffdetails.asp?ID=217875",
+    "homonymes": [],
+    "statut": "lu le 2026-10-08 par recherche de nom (division 8, code Y-Y) ; relecture du 2026-10-09 : le registre répond « no matches » à tort, non refaite",
+    "fiche_detail": "non lue : la page daffdetails.asp répond 504 ou expire (WebFetch, 2 essais de 60 s le 2026-10-09)"
+   },
+   "division_annoncee_vendeurs": null,
+   "obtenteur": null,
+   "annee": null,
+   "origine_obtenteur_annee": "non lu : fiche détail du registre en 504",
+   "couleur_annoncee": "code registre Y-Y",
+   "sources_existence": [
+    {
+     "niveau": "N1",
+     "source": "RHSREG",
+     "nom_source": "RHS, International Daffodil Register : recherche par nom (liste nom, division, code ; fiche détail en 504)",
+     "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Grand%20Primo"
+    },
+    {
+     "niveau": "N3",
+     "source": "PBS",
+     "nom_source": "Pacific Bulb Society",
+     "url": "https://www.pacificbulbsociety.org/pbswiki/index.php/Narcissus"
+    }
+   ],
+   "photos": [],
+   "niveau_preuve": "D",
+   "niveau_provisoire_preuves": "D",
+   "raison_niveau": "registre RHS lu (N1 : division 8, Y-Y) ; aucune photo nommée exploitable",
+   "marque": null,
+   "marque_verifiee": false,
+   "marque_note": "aucun ®, ™ ni série commerciale vu aux pages lues ; registre des marques (TMview, EUIPO, INPI) non consulté : à faire par l'orchestrateur. Nom de cultivar au registre RHS, donc dénomination libre selon le standard.",
+   "statut": "brouillon",
+   "priorite": "niche_ou_historique",
+   "notes": [
+    "Colorblends (N3) a une fiche produit, photo non lue."
+   ],
+   "sondage": {
+    "photos_regardees": 0,
+    "date": "2026-10-09",
+    "registre_relu": false
+   }
+  },
+  {
+   "id": "orange-wonder",
+   "nom": "Orange Wonder",
+   "nom_enregistre": "Orange Wonder",
+   "synonymes": [],
+   "coloris_rattache": null,
+   "division_registre": "8",
+   "code_couleur_registre": "W-O",
+   "lecture_code": "périanthe blanc ; couronne (du fond vers le bord, lettres du code) orange",
+   "registre": {
+    "requete": "Orange Wonder",
+    "url_recherche": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Orange%20Wonder",
+    "id": "219749",
+    "nom_registre": "Orange Wonder",
+    "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffdetails.asp?ID=219749",
+    "homonymes": [],
+    "statut": "lu le 2026-10-08 par recherche de nom (division 8, code W-O) ; relecture du 2026-10-09 : le registre répond « no matches » à tort, non refaite",
+    "fiche_detail": "non lue : la page daffdetails.asp répond 504 ou expire (WebFetch, 2 essais de 60 s le 2026-10-09)"
+   },
+   "division_annoncee_vendeurs": null,
+   "obtenteur": null,
+   "annee": null,
+   "origine_obtenteur_annee": "non lu : fiche détail du registre en 504",
+   "couleur_annoncee": "code registre W-O",
+   "sources_existence": [
+    {
+     "niveau": "N1",
+     "source": "RHSREG",
+     "nom_source": "RHS, International Daffodil Register : recherche par nom (liste nom, division, code ; fiche détail en 504)",
+     "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Orange%20Wonder"
+    },
+    {
+     "niveau": "N4",
+     "source": "COM",
+     "nom_source": "Wikimedia Commons, catégorie de cultivar",
+     "url": "https://commons.wikimedia.org/wiki/Category:Narcissus_(cultivars)"
+    }
+   ],
+   "photos": [],
+   "niveau_preuve": "D",
+   "niveau_provisoire_preuves": "D",
+   "raison_niveau": "registre RHS lu (N1 : division 8, W-O) ; aucune photo nommée exploitable",
+   "marque": null,
+   "marque_verifiee": false,
+   "marque_note": "aucun ®, ™ ni série commerciale vu aux pages lues ; registre des marques (TMview, EUIPO, INPI) non consulté : à faire par l'orchestrateur. Nom de cultivar au registre RHS, donc dénomination libre selon le standard.",
+   "statut": "brouillon",
+   "priorite": "niche_ou_historique",
+   "notes": [
+    "Nom au registre, aucune photo lue."
+   ],
+   "sondage": {
+    "photos_regardees": 0,
+    "date": "2026-10-09",
+    "registre_relu": false
+   }
+  },
+  {
+   "id": "scarlet-gem",
+   "nom": "Scarlet Gem",
+   "nom_enregistre": "Scarlet Gem",
+   "synonymes": [],
+   "coloris_rattache": null,
+   "division_registre": "8",
+   "code_couleur_registre": "Y-O",
+   "lecture_code": "périanthe jaune ; couronne (du fond vers le bord, lettres du code) orange",
+   "registre": {
+    "requete": "Scarlet Gem",
+    "url_recherche": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Scarlet%20Gem",
+    "id": "220775",
+    "nom_registre": "Scarlet Gem",
+    "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffdetails.asp?ID=220775",
+    "homonymes": [],
+    "statut": "lu le 2026-10-08 par recherche de nom (division 8, code Y-O) ; relecture du 2026-10-09 : le registre répond « no matches » à tort, non refaite",
+    "fiche_detail": "non lue : la page daffdetails.asp répond 504 ou expire (WebFetch, 2 essais de 60 s le 2026-10-09)"
+   },
+   "division_annoncee_vendeurs": null,
+   "obtenteur": null,
+   "annee": null,
+   "origine_obtenteur_annee": "non lu : fiche détail du registre en 504",
+   "couleur_annoncee": "code registre Y-O",
+   "sources_existence": [
+    {
+     "niveau": "N1",
+     "source": "RHSREG",
+     "nom_source": "RHS, International Daffodil Register : recherche par nom (liste nom, division, code ; fiche détail en 504)",
+     "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Scarlet%20Gem"
+    },
+    {
+     "niveau": "N3",
+     "source": "PBS",
+     "nom_source": "Pacific Bulb Society",
+     "url": "https://www.pacificbulbsociety.org/pbswiki/index.php/Narcissus"
+    }
+   ],
+   "photos": [],
+   "niveau_preuve": "D",
+   "niveau_provisoire_preuves": "D",
+   "raison_niveau": "registre RHS lu (N1 : division 8, Y-O) ; aucune photo nommée exploitable",
+   "marque": null,
+   "marque_verifiee": false,
+   "marque_note": "aucun ®, ™ ni série commerciale vu aux pages lues ; registre des marques (TMview, EUIPO, INPI) non consulté : à faire par l'orchestrateur. Nom de cultivar au registre RHS, donc dénomination libre selon le standard.",
+   "statut": "brouillon",
+   "priorite": "niche_ou_historique",
+   "notes": [
+    "PBS (N3) liste le nom, photo non lue."
+   ],
+   "sondage": {
+    "photos_regardees": 0,
+    "date": "2026-10-09",
+    "registre_relu": false
+   }
+  },
+  {
+   "id": "sparkling-eye",
+   "nom": "Sparkling Eye",
+   "nom_enregistre": "Sparkling Eye",
+   "synonymes": [],
+   "coloris_rattache": null,
+   "division_registre": "8",
+   "code_couleur_registre": "W-GOO",
+   "lecture_code": "périanthe blanc ; couronne (du fond vers le bord, lettres du code) vert, orange, orange",
+   "registre": {
+    "requete": "Sparkling Eye",
+    "url_recherche": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Sparkling%20Eye",
+    "id": "221167",
+    "nom_registre": "Sparkling Eye",
+    "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffdetails.asp?ID=221167",
+    "homonymes": [],
+    "statut": "lu le 2026-10-08 par recherche de nom (division 8, code W-GOO) ; relecture du 2026-10-09 : le registre répond « no matches » à tort, non refaite",
+    "fiche_detail": "non lue : la page daffdetails.asp répond 504 ou expire (WebFetch, 2 essais de 60 s le 2026-10-09)"
+   },
+   "division_annoncee_vendeurs": null,
+   "obtenteur": null,
+   "annee": null,
+   "origine_obtenteur_annee": "non lu : fiche détail du registre en 504",
+   "couleur_annoncee": "code registre W-GOO",
+   "sources_existence": [
+    {
+     "niveau": "N1",
+     "source": "RHSREG",
+     "nom_source": "RHS, International Daffodil Register : recherche par nom (liste nom, division, code ; fiche détail en 504)",
+     "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Sparkling%20Eye"
+    },
+    {
+     "niveau": "N4",
+     "source": "COM",
+     "nom_source": "Wikimedia Commons, catégorie de cultivar",
+     "url": "https://commons.wikimedia.org/wiki/Category:Narcissus_(cultivars)"
+    }
+   ],
+   "photos": [],
+   "niveau_preuve": "D",
+   "niveau_provisoire_preuves": "D",
+   "raison_niveau": "registre RHS lu (N1 : division 8, W-GOO) ; aucune photo nommée exploitable",
+   "marque": null,
+   "marque_verifiee": false,
+   "marque_note": "aucun ®, ™ ni série commerciale vu aux pages lues ; registre des marques (TMview, EUIPO, INPI) non consulté : à faire par l'orchestrateur. Nom de cultivar au registre RHS, donc dénomination libre selon le standard.",
+   "statut": "brouillon",
+   "priorite": "niche_ou_historique",
+   "notes": [
+    "Nom au registre seul, aucune photo lue."
+   ],
+   "sondage": {
+    "photos_regardees": 0,
+    "date": "2026-10-09",
+    "registre_relu": false
+   }
+  },
+  {
+   "id": "early-pearl",
+   "nom": "Early Pearl",
+   "nom_enregistre": "Early Pearl",
+   "synonymes": [],
+   "coloris_rattache": null,
+   "division_registre": "8",
+   "code_couleur_registre": "W-Y",
+   "lecture_code": "périanthe blanc ; couronne (du fond vers le bord, lettres du code) jaune",
+   "registre": {
+    "requete": "Early Pearl",
+    "url_recherche": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Early%20Pearl",
+    "id": "216769",
+    "nom_registre": "Early Pearl",
+    "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffdetails.asp?ID=216769",
+    "homonymes": [],
+    "statut": "lu le 2026-10-08 par recherche de nom (division 8, code W-Y) ; relecture du 2026-10-09 : le registre répond « no matches » à tort, non refaite",
+    "fiche_detail": "non lue : la page daffdetails.asp répond 504 ou expire (WebFetch, 2 essais de 60 s le 2026-10-09)"
+   },
+   "division_annoncee_vendeurs": null,
+   "obtenteur": null,
+   "annee": null,
+   "origine_obtenteur_annee": "non lu : fiche détail du registre en 504",
+   "couleur_annoncee": "code registre W-Y",
+   "sources_existence": [
+    {
+     "niveau": "N1",
+     "source": "RHSREG",
+     "nom_source": "RHS, International Daffodil Register : recherche par nom (liste nom, division, code ; fiche détail en 504)",
+     "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Early%20Pearl"
+    }
+   ],
+   "photos": [],
+   "niveau_preuve": "D",
+   "niveau_provisoire_preuves": "D",
+   "raison_niveau": "registre RHS lu (N1 : division 8, W-Y) ; aucune photo nommée exploitable",
+   "marque": null,
+   "marque_verifiee": false,
+   "marque_note": "aucun ®, ™ ni série commerciale vu aux pages lues ; registre des marques (TMview, EUIPO, INPI) non consulté : à faire par l'orchestrateur. Nom de cultivar au registre RHS, donc dénomination libre selon le standard.",
+   "statut": "brouillon",
+   "priorite": "registre_seul_non_trouve_chez_les_vendeurs",
+   "notes": [
+    "Nom au registre seul, aucune source vendeur."
+   ],
+   "sondage": {
+    "photos_regardees": 0,
+    "date": "2026-10-09",
+    "registre_relu": false
+   }
+  },
+  {
+   "id": "elvira",
+   "nom": "Elvira",
+   "nom_enregistre": "Elvira",
+   "synonymes": [],
+   "coloris_rattache": null,
+   "division_registre": "8",
+   "code_couleur_registre": "W-YYO",
+   "lecture_code": "périanthe blanc ; couronne (du fond vers le bord, lettres du code) jaune, jaune, orange",
+   "registre": {
+    "requete": "Elvira",
+    "url_recherche": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Elvira",
+    "id": "202551",
+    "nom_registre": "Elvira",
+    "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffdetails.asp?ID=202551",
+    "homonymes": [],
+    "statut": "lu le 2026-10-08 par recherche de nom (division 8, code W-YYO) ; relecture du 2026-10-09 : le registre répond « no matches » à tort, non refaite",
+    "fiche_detail": "non lue : la page daffdetails.asp répond 504 ou expire (WebFetch, 2 essais de 60 s le 2026-10-09)"
+   },
+   "division_annoncee_vendeurs": null,
+   "obtenteur": null,
+   "annee": null,
+   "origine_obtenteur_annee": "non lu : fiche détail du registre en 504",
+   "couleur_annoncee": "code registre W-YYO",
+   "sources_existence": [
+    {
+     "niveau": "N1",
+     "source": "RHSREG",
+     "nom_source": "RHS, International Daffodil Register : recherche par nom (liste nom, division, code ; fiche détail en 504)",
+     "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Elvira"
+    }
+   ],
+   "photos": [
+    {
+     "niveau": "N3",
+     "auteur": "Hortus Bulborum",
+     "image": "https://hortus-bulborum.nl/wp-content/uploads/2020/03/Tazetta-Elvira-scaled.jpg",
+     "page": "non relevee (image lue dans le plan du site)",
+     "licence": "usage du vendeur, non relevee",
+     "vue_le": "2026-10-09",
+     "concordance": "concordante",
+     "observation": "périanthe blanc, coupe orange jaune"
+    }
+   ],
+   "niveau_preuve": "C",
+   "niveau_provisoire_preuves": "C",
+   "raison_niveau": "registre RHS lu (N1 : division 8, W-YYO) ; une seule source de photo (Hortus N3)",
+   "marque": null,
+   "marque_verifiee": false,
+   "marque_note": "aucun ®, ™ ni série commerciale vu aux pages lues ; registre des marques (TMview, EUIPO, INPI) non consulté : à faire par l'orchestrateur. Nom de cultivar au registre RHS, donc dénomination libre selon le standard.",
+   "statut": "à confirmer",
+   "priorite": "registre_seul_non_trouve_chez_les_vendeurs",
+   "notes": [
+    "Registre ID 202551 lu. Pas d'autre photo ni de vendeur."
+   ],
+   "sondage": {
+    "photos_regardees": 1,
+    "date": "2026-10-09",
+    "registre_relu": false
+   }
+  },
+  {
+   "id": "galilee",
+   "nom": "Galilee",
+   "nom_enregistre": "Galilee",
+   "synonymes": [],
+   "coloris_rattache": null,
+   "division_registre": "8",
+   "code_couleur_registre": "W-W",
+   "lecture_code": "périanthe blanc ; couronne (du fond vers le bord, lettres du code) blanc",
+   "registre": {
+    "requete": "Galilee",
+    "url_recherche": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Galilee",
+    "id": "223554",
+    "nom_registre": "Galilee",
+    "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffdetails.asp?ID=223554",
+    "homonymes": [
+     {
+      "nom": "Galilee",
+      "division": "3",
+      "code": "W-GWO",
+      "rhs_id": "203047"
+     }
+    ],
+    "statut": "lu le 2026-10-08 par recherche de nom (division 8, code W-W) ; relecture du 2026-10-09 : le registre répond « no matches » à tort, non refaite",
+    "fiche_detail": "non lue : la page daffdetails.asp répond 504 ou expire (WebFetch, 2 essais de 60 s le 2026-10-09)"
+   },
+   "division_annoncee_vendeurs": null,
+   "obtenteur": null,
+   "annee": null,
+   "origine_obtenteur_annee": "non lu : fiche détail du registre en 504",
+   "couleur_annoncee": "code registre W-W",
+   "sources_existence": [
+    {
+     "niveau": "N1",
+     "source": "RHSREG",
+     "nom_source": "RHS, International Daffodil Register : recherche par nom (liste nom, division, code ; fiche détail en 504)",
+     "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Galilee"
+    }
+   ],
+   "photos": [],
+   "niveau_preuve": "D",
+   "niveau_provisoire_preuves": "D",
+   "raison_niveau": "registre RHS lu (N1 : division 8, W-W) ; aucune photo nommée exploitable",
+   "marque": null,
+   "marque_verifiee": false,
+   "marque_note": "le standard cite « Galilee » parmi les séries déposées ; la variété 8 W-W existe au registre RHS (ID 223554) et un homonyme de division 3 (ID 203047). Nom à vérifier au registre des marques par l'orchestrateur avant tout usage.",
+   "statut": "attente : marque à vérifier",
+   "priorite": "registre_seul_non_trouve_chez_les_vendeurs",
+   "notes": [
+    "Homonyme au registre : div 3 W-GWO (ID 203047) ecarte."
+   ],
+   "sondage": {
+    "photos_regardees": 0,
+    "date": "2026-10-09",
+    "registre_relu": false
+   }
+  },
+  {
+   "id": "laurens-koster",
+   "nom": "Laurens Koster",
+   "nom_enregistre": "Laurens Koster",
+   "synonymes": [],
+   "coloris_rattache": null,
+   "division_registre": "8",
+   "code_couleur_registre": "W-Y",
+   "lecture_code": "périanthe blanc ; couronne (du fond vers le bord, lettres du code) jaune",
+   "registre": {
+    "requete": "Laurens Koster",
+    "url_recherche": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Laurens%20Koster",
+    "id": "218715",
+    "nom_registre": "Laurens Koster",
+    "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffdetails.asp?ID=218715",
+    "homonymes": [],
+    "statut": "lu le 2026-10-08 par recherche de nom (division 8, code W-Y) ; relecture du 2026-10-09 : le registre répond « no matches » à tort, non refaite",
+    "fiche_detail": "non lue : la page daffdetails.asp répond 504 ou expire (WebFetch, 2 essais de 60 s le 2026-10-09)"
+   },
+   "division_annoncee_vendeurs": null,
+   "obtenteur": null,
+   "annee": null,
+   "origine_obtenteur_annee": "non lu : fiche détail du registre en 504",
+   "couleur_annoncee": "code registre W-Y",
+   "sources_existence": [
+    {
+     "niveau": "N1",
+     "source": "RHSREG",
+     "nom_source": "RHS, International Daffodil Register : recherche par nom (liste nom, division, code ; fiche détail en 504)",
+     "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Laurens%20Koster"
+    }
+   ],
+   "photos": [],
+   "niveau_preuve": "D",
+   "niveau_provisoire_preuves": "D",
+   "raison_niveau": "registre RHS lu (N1 : division 8, W-Y) ; aucune photo nommée exploitable",
+   "marque": null,
+   "marque_verifiee": false,
+   "marque_note": "aucun ®, ™ ni série commerciale vu aux pages lues ; registre des marques (TMview, EUIPO, INPI) non consulté : à faire par l'orchestrateur. Nom de cultivar au registre RHS, donc dénomination libre selon le standard.",
+   "statut": "brouillon",
+   "priorite": "registre_seul_non_trouve_chez_les_vendeurs",
+   "notes": [
+    "Nom au registre seul, aucune source vendeur."
+   ],
+   "sondage": {
+    "photos_regardees": 0,
+    "date": "2026-10-09",
+    "registre_relu": false
+   }
+  },
+  {
+   "id": "matador",
+   "nom": "Matador",
+   "nom_enregistre": "Matador",
+   "synonymes": [],
+   "coloris_rattache": null,
+   "division_registre": "8",
+   "code_couleur_registre": "Y-GOO",
+   "lecture_code": "périanthe jaune ; couronne (du fond vers le bord, lettres du code) vert, orange, orange",
+   "registre": {
+    "requete": "Matador",
+    "url_recherche": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Matador",
+    "id": "212700",
+    "nom_registre": "Matador",
+    "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffdetails.asp?ID=212700",
+    "homonymes": [
+     {
+      "nom": "Matador",
+      "division": "2",
+      "code": "W-Y",
+      "rhs_id": "204985"
+     }
+    ],
+    "statut": "lu le 2026-10-08 par recherche de nom (division 8, code Y-GOO) ; relecture du 2026-10-09 : le registre répond « no matches » à tort, non refaite",
+    "fiche_detail": "non lue : la page daffdetails.asp répond 504 ou expire (WebFetch, 2 essais de 60 s le 2026-10-09)"
+   },
+   "division_annoncee_vendeurs": null,
+   "obtenteur": null,
+   "annee": null,
+   "origine_obtenteur_annee": "non lu : fiche détail du registre en 504",
+   "couleur_annoncee": "code registre Y-GOO",
+   "sources_existence": [
+    {
+     "niveau": "N1",
+     "source": "RHSREG",
+     "nom_source": "RHS, International Daffodil Register : recherche par nom (liste nom, division, code ; fiche détail en 504)",
+     "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Matador"
+    }
+   ],
+   "photos": [],
+   "niveau_preuve": "D",
+   "niveau_provisoire_preuves": "D",
+   "raison_niveau": "registre RHS lu (N1 : division 8, Y-GOO) ; aucune photo nommée exploitable",
+   "marque": null,
+   "marque_verifiee": false,
+   "marque_note": "aucun ®, ™ ni série commerciale vu aux pages lues ; registre des marques (TMview, EUIPO, INPI) non consulté : à faire par l'orchestrateur. Nom de cultivar au registre RHS, donc dénomination libre selon le standard.",
+   "statut": "brouillon",
+   "priorite": "registre_seul_non_trouve_chez_les_vendeurs",
+   "notes": [
+    "Homonyme au registre : div 2 W-Y (ID 204985) ecarte."
+   ],
+   "sondage": {
+    "photos_regardees": 0,
+    "date": "2026-10-09",
+    "registre_relu": false
+   }
+  },
+  {
+   "id": "scilly-white",
+   "nom": "Scilly White",
+   "nom_enregistre": "Scilly White",
+   "synonymes": [],
+   "coloris_rattache": null,
+   "division_registre": "8",
+   "code_couleur_registre": "W-W",
+   "lecture_code": "périanthe blanc ; couronne (du fond vers le bord, lettres du code) blanc",
+   "registre": {
+    "requete": "Scilly White",
+    "url_recherche": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Scilly%20White",
+    "id": "220806",
+    "nom_registre": "Scilly White",
+    "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffdetails.asp?ID=220806",
+    "homonymes": [],
+    "statut": "lu le 2026-10-08 par recherche de nom (division 8, code W-W) ; relecture du 2026-10-09 : le registre répond « no matches » à tort, non refaite",
+    "fiche_detail": "non lue : la page daffdetails.asp répond 504 ou expire (WebFetch, 2 essais de 60 s le 2026-10-09)"
+   },
+   "division_annoncee_vendeurs": null,
+   "obtenteur": null,
+   "annee": null,
+   "origine_obtenteur_annee": "non lu : fiche détail du registre en 504",
+   "couleur_annoncee": "code registre W-W",
+   "sources_existence": [
+    {
+     "niveau": "N1",
+     "source": "RHSREG",
+     "nom_source": "RHS, International Daffodil Register : recherche par nom (liste nom, division, code ; fiche détail en 504)",
+     "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp?name=Scilly%20White"
+    }
+   ],
+   "photos": [],
+   "niveau_preuve": "D",
+   "niveau_provisoire_preuves": "D",
+   "raison_niveau": "registre RHS lu (N1 : division 8, W-W) ; aucune photo nommée exploitable",
+   "marque": null,
+   "marque_verifiee": false,
+   "marque_note": "aucun ®, ™ ni série commerciale vu aux pages lues ; registre des marques (TMview, EUIPO, INPI) non consulté : à faire par l'orchestrateur. Nom de cultivar au registre RHS, donc dénomination libre selon le standard.",
+   "statut": "brouillon",
+   "priorite": "registre_seul_non_trouve_chez_les_vendeurs",
+   "notes": [
+    "Wikipedia (N4) liste le nom en AGM, sans photo."
+   ],
+   "sondage": {
+    "photos_regardees": 0,
+    "date": "2026-10-09",
+    "registre_relu": false
+   }
+  }
+ ],
+ "sources_generales": {
+  "RHSREG": {
+   "niveau": "N1",
+   "nom": "RHS, International Daffodil Register and Classified List, recherche par nom (liste : nom, division, code couleur ; pages de detail en 504)",
+   "url": "https://apps.rhs.org.uk/horticulturaldatabase/daffodilregister/daffsearch.asp",
+   "note": "lu par GET ?name=<nom> le 2026-10-08 ; scripts _x/rhs_lookup.py, resultats _x/rhs_lookup.jsonl | relecture du 2026-10-09 impossible : réponses « no matches » fausses (une cinquantaine d'essais) ; lecture de référence = celle du 2026-10-08 (_x/rhs_lookup.jsonl)"
+  },
+  "JDW": {
+   "niveau": "N2",
+   "nom": "Jan de Wit en Zonen, assortiment Narcissus (93 fiches : groupe, couleur, hauteur)",
+   "url": "https://www.jandewitenzonen.com/en/assortment/narcissus/",
+   "note": "liste lue par le chargeur de la page (POST products_filter_db.php, categorie narcissus, sans donnee personnelle) ; groupe Tazetta : 2 fiches, Geranium et Golden Dawn"
+  },
+  "JA": {
+   "niveau": "N3",
+   "nom": "Jacques Amand International, collections par division (flux products.json public)",
+   "url": "https://www.jacquesamand.com/collections/narcissi-division-8-tazetta-narcissi",
+   "note": "division 8 : 10 fiches ; division 7 : 20 fiches (Martinette y est rangee) ; 141 fiches au total"
+  },
+  "VE": {
+   "niveau": "N3",
+   "nom": "Van Engelen, categorie Tazetta (10 fiches)",
+   "url": "https://www.vanengelen.com/flower-bulbs-index/narcissi/tazetta.html",
+   "note": "noms de la categorie ; categories jonquilla, miscellaneous et poeticus lues aussi | niveau corrigé en N3 le 2026-10-09 : grossiste de bulbes, ni fiche d'obtenteur, ni Floricode, ni exportateur professionnel au sens du standard (consigne du chef)",
+   "niveau_ancien": "N2"
+  },
+  "LF": {
+   "niveau": "N3",
+   "nom": "Longfield Gardens, collection Narcissus (flux products.json, 60 fiches ; libelles 'Daffodil Tazetta ...')",
+   "url": "https://www.longfield-gardens.com/collections/narcissus",
+   "note": "detaillant, fiabilite C ; 7 tazettas : Ziva, Falconet, Nir, Inbal, Cragford, Avalanche, Minnow"
+  },
+  "BL": {
+   "niveau": "N3",
+   "nom": "Bloms Bulbs (API publique WooCommerce wp-json/wc/store/v1/products, categorie daffodils-narcissi : 114 fiches)",
+   "url": "https://blomsbulbs.com/product-category/autumn/daffodils-narcissi/tazetta/",
+   "note": "la page de categorie est rendue en JavaScript ; Bloms range des doubles (Cheerfulness, Yellow Cheerfulness, Sir Winston Churchill) dans 'tazetta'"
+  },
+  "FL": {
+   "niveau": "N3",
+   "nom": "Fluwel (flux products.json, collection narcissen : 114 fiches)",
+   "url": "https://fluwel.nl/collections/narcissen",
+   "note": "certaines fiches portent division, code couleur, obtenteur et annee (texte de vendeur, a confirmer au registre)"
+  },
+  "WP": {
+   "niveau": "N4",
+   "nom": "Wikipedia, List of Award of Garden Merit narcissus (division, couleurs du perianthe et de la coupe, hauteur)",
+   "url": "https://en.wikipedia.org/wiki/List_of_Award_of_Garden_Merit_narcissus",
+   "note": "fiabilite C ; division 8 : Avalanche, Falconet, Geranium, Golden Dawn, Highfield Beauty, Hoopoe, Minnow"
+  },
+  "COM": {
+   "niveau": "N4",
+   "nom": "Wikimedia Commons, Category:Narcissus (cultivars) : 301 sous-categories de cultivars",
+   "url": "https://commons.wikimedia.org/wiki/Category:Narcissus_(cultivars)",
+   "note": "noms de categories seulement ; photos non ouvertes a ce temps"
+  },
+  "PBS": {
+   "niveau": "N3",
+   "nom": "Pacific Bulb Society, page Narcissus, liste de cultivars (145 noms)",
+   "url": "https://www.pacificbulbsociety.org/pbswiki/index.php/Narcissus",
+   "note": "liste de noms ; photos nommees a ouvrir au temps 2 ; sous-page Division 8 non retrouvee"
+  },
+  "CB": {
+   "niveau": "N3",
+   "nom": "Colorblends, catalogue (sitemap produits : avalanche, geranium, minnow, falconet, nir, grand-primo, daffodil-grand-soleil-dor, tazetta-essentials)",
+   "url": "https://www.colorblends.com/product/avalanche/",
+   "note": "noms seulement ; fiche Avalanche : 'a very old daffodil ... multiple blooms' (texte de vendeur, sans annee)"
+  }
+ },
+ "marques_a_verifier": [
+  {
+   "nom": "Galilee",
+   "raison": "cité par STANDARD-SOURCES.md § 2 parmi les séries déposées ; existe au registre RHS (8 W-W, ID 223554)"
+  }
+ ],
+ "marques_note": "Aucun ® ni ™ vu chez les vendeurs sur les 38 noms ; le registre des marques (TMview, EUIPO, INPI) n'a pas été consulté : à faire par l'orchestrateur. Seul Galilee entre dans marques-a-verifier.txt.",
+ "limites": [
+  "Registre RHS (apps.rhs.org.uk/horticulturaldatabase/daffodilregister/) : le 2026-10-09 la recherche par nom (GET ?name=) répond « no matches » à tort pour tous les noms essayés (Avalanche, Ziva, Geranium, Cragford, Silver Chimes, Martinette, Minnow : une cinquantaine d'essais, urllib, curl puis WebFetch) ; les pages de détail daffdetails.asp?ID= expirent (WebFetch, 2 essais de 60 s). Division et code lus le 2026-10-08 (_x/rhs_lookup.jsonl), recoupés ce jour avec l'inventaire (36 sur 36 identiques) ; obtenteur et année non lus, sauf six valeurs de texte vendeur Fluwel à confirmer.",
+  "Le registre ne liste pas par division : le nombre de cultivars de division 8 enregistrés est inconnu ; 380 noms de listes de vendeurs n'ont pas leur division lue (inventaire.json, a_trier_division).",
+  "Jan de Wit en Zonen (seule source N2 ouverte) : 93 fiches Narcissus lues par la requête de filtre de la page ; 2 Tazetta (Geranium, Golden Dawn). Les 36 autres cultivars n'y figurent dans aucun groupe. Floricode et UPOV PLUTO fermés (comptes) : pas d'autre N2.",
+  "DaffSeek (ADS) non utilisé : formulaires POST protégés par reCAPTCHA. WebSearch : budget de recherches épuisé pour ce tour, aucune requête de moteur.",
+  "Photos regardées en vignettes de 300 px au sondage du 2026-10-09 ; aucune mesure de couleur (fleur-coloris). Adresses et observations seulement, aucune image dans un dépôt.",
+  "Non lus (inventaire du 2026-10-08) : Peter Nyssen (Cloudflare), Crocus, Walkers Bulbs, Broadleigh, DutchGrown, Old House Gardens, producteurs de narcisses coupés (Cornouailles, Scilly)."
+ ],
+ "doutes": [
+  "Avalanche (SKU du bouquet) : B au mieux, aucune fiche N2 ; trois photos N3 concordantes.",
+  "Ziva : les deux photos montrent des touffes blanches, la coupe n'est pas lisible ; la couleur de coupe (W-W du registre) reste à mesurer ou à confirmer par un gros plan.",
+  "Silver Chimes : registre W-W (coupe blanche) mais la photo Bloms montre un reflet citron léger sur la coupe ; le nom corrigé suit le registre, la mesure tranchera.",
+  "Minnow : registre W-Y ; photos blanc crème : la teinte du périanthe est à mesurer pour le nommer « blanc » ou « crème ».",
+  "Martinette : Jacques Amand le range en division 7 et décrit des coupes rouges ; le registre dit 8 Y-O et les photos montrent une coupe orange.",
+  "Chinese Sacred Lily : entrée du registre sans division ni code ; forme de Narcissus tazetta (subsp. chinensis), pas un cultivar de division 8 ; à trancher : coloris du bouquet ou forme botanique à part. Niveau C : une seule photo.",
+  "Grand Soleil d'Or : une seule photo (C) ; Golden Dawn (A) a la même couleur annoncée Y-O et pourrait le remplacer.",
+  "Avalanche of Gold : la photo Fluwel montre un périanthe crème et une coupe jaune, alors que le registre donne Y-Y ; photo écartée, nom à vérifier (peut-être une image d'Avalanche).",
+  "Chinita : la photo Commons montre un périanthe blanc, le registre donne Y-YYR (jaune) ; photo écartée, nom ou photo à vérifier.",
+  "Galilee : cité par le standard parmi les séries déposées ; au registre 8 W-W (ID 223554) avec un homonyme de division 3 ; en attente du registre des marques.",
+  "Polly's Pearl : aucune entrée au registre le 2026-10-08 (possible faux « no matches ») ; obtenteur et année de Fluwel (Koopowitz, 1979).",
+  "Canaliculatus : nom d'espèce botanique inscrit au registre en 8 W-Y ; B ; même couleur qu'Avalanche, apport par la forme (miniature) seulement ; non proposé en late:1.",
+  "Kapiti Peach (8 W-O, coupe pêche saumonée) : couleur absente du catalogue, une seule photo (VE) : C ; à proposer en late:1 dès qu'une seconde photo indépendante est trouvée.",
+  "Obtenteurs et années d'Avalanche of Gold (Welch, 1986), Castanets (Pannill, 1985), Gloriosus (1883), Nickelodeon (Hall, 2003), Pacific Coast (Lievens, 1994), Polly's Pearl (Koopowitz, 1979) viennent de textes Fluwel, non confirmés au registre."
+ ],
+ "pieges_rencontres": [
+  "Van Engelen était noté N2 dans l'inventaire (sources.VE) : corrigé N3 (grossiste) ; les fiches de preuves le comptaient déjà N3.",
+  "Homonymes du registre : Avalanche (div 1 W-W), Golden Dawn (div 1), Galilee (div 3), Canarybird (div 1), Gloriosus (div 3), Matador (div 2) : toujours retenir l'ID de la division 8.",
+  "Les flux Longfield répètent la même image pour deux entrées de Ziva : une seule photo comptée.",
+  "Les vendeurs rangent Silver Chimes en triandrus, Martinette en jonquille et des doubles en « tazetta » : le registre prime.",
+  "Deux images Fluwel du même nom ne sont pas deux sources indépendantes."
+ ],
+ "decisions_orchestrateur_2026-10-09": {
+  "niveaux": "Règle des deux photos : les 8 B (deux domaines de photos dont un N3) et les 2 A tiennent ; Grand Soleil d'Or et Chinese Sacred Lily sont C (une seule organisation de photos) : ret:1, SKU inchangés.",
+  "chinese_sacred_lily": "Reste un coloris du narcisse bouquet (id chinensis), en ret:1 tant qu'une seconde photo nommée indépendante manque.",
+  "golden_dawn": "Gardé (late:1, niveau A) : nom au registre RHS (ID 217603, division 8 Y-O) et fiche N2 de Jan de Wit.",
+  "galilee": "Cultivar du registre RHS (ID 223554, division 8 W-W), niveau D (aucune photo) et nom de série déposée pour les anémones : hors jeu, aucun nom affiché ; s'il entrait un jour, il prendrait un nom générique de couleur."
+ }
+}

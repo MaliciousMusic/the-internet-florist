@@ -1,0 +1,37 @@
+aster-vivace-symphyotrichum;Aster vivace de fleur coupée;Été & classiques;spray;remplissage
+agapanthe;Agapanthe;Été & classiques;globe;focale
+glaieul;Glaïeul;Été & classiques;spike;secondaire
+arum-calla;Arum;Été & classiques;custom/xCalla;focale
+lis-oriental;Lis oriental;Été & classiques;custom/xLily;focale
+lis-ot-orienpet;Lis OT;Été & classiques;star;focale
+lis-asiatique-la;Lis asiatique et hybrides LA;Été & classiques;star;focale
+lis-longiflorum-trompette;Lis longiflorum et lis trompette;Été & classiques;star;focale
+alstroemere;Alstrœmère;Été & classiques;star;secondaire
+amaryllis-hippeastrum;Amaryllis;Été & classiques;star;focale
+tubereuse;Tubéreuse;Été & classiques;spike;secondaire
+rudbeckia;Rudbeckia;Été & classiques;radial;secondaire
+echinacea;Échinacée;Été & classiques;radial;secondaire
+nigelle;Nigelle de Damas;Été & classiques;radial;secondaire
+clematite;Clématite;Été & classiques;star;secondaire
+achillee;Achillée;Été & classiques;globe;remplissage
+trachelium;Trachélium;Été & classiques;globe;remplissage
+bleuet;Bleuet;Été & classiques;radial;remplissage
+godetia-clarkia;Godétia et clarkia;Été & classiques;spike;secondaire
+tagete-oeillet-d-inde;Tagète;Été & classiques;double;secondaire
+souci-calendula;Souci;Été & classiques;radial;secondaire
+immortelle-xerochrysum;Immortelle à bractées;Été & classiques;double;secondaire
+sauge-salvia;Sauge ornementale;Été & classiques;spike;secondaire
+bouvardia;Bouvardia;Été & classiques;spray;secondaire
+liatris;Liatris;Été & classiques;spike;secondaire
+aconit;Aconit;Été & classiques;spike;secondaire
+pigamon;Pigamon;Été & classiques;spray;texture
+kniphofia;Tritoma;Été & classiques;spike;ligne
+crocosmia;Crocosmia;Été & classiques;spike;ligne
+lis-tigre;Lis tigré;Été & classiques;star;focale
+lis-oriental-double;Lis oriental double;Été & classiques;star;focale
+clematite-clochettes;Clématite à clochettes;Été & classiques;star;secondaire
+pentas;Pentas;Été & classiques;globe;remplissage
+geranium-vivace;Géranium vivace;Été & classiques;spray;remplissage
+coreopsis;Coréopsis;Été & classiques;radial;secondaire
+gerbera-araignee;Gerbera araignée;Été & classiques;radial;secondaire
+cosmos-chocolat;Cosmos chocolat;Été & classiques;radial;accent

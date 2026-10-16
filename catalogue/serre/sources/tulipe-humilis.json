@@ -1,0 +1,720 @@
+{
+ "sid": "tulipe-humilis",
+ "schema": "STANDARD-SOURCES.md section 5",
+ "legende_entrees": "« cultivars » = entrées de la sorte : cultivars, formes botaniques ou espèce type ; « sans_photo » = nom prouvé (N1 ou N3) mais aucune photo nommée retenue ; « ecartes » = rejetés avec la raison",
+ "rattachement_catalogue": "aucun coloris existant du catalogue ne correspond à cette sorte (catalogue.json, inventaire_fleurs.csv et skus.csv relus le 2026-10-08 : aucune tulipe botanique) ; coloris_catalogue est donc vide",
+ "genre": "Tulipa",
+ "recensement": {
+  "date": "2026-10-08",
+  "agent": "fleur-recensement",
+  "portee": "tulipes botaniques : groupes Kaufmanniana (12), Fosteriana (13), Greigii (14) du KAVB et espèces / hybrides de la division 15 (« Overige Groep » = Miscellaneous) ; tout ce qui est documenté par une photo nommée fiable",
+  "limites": [
+   "N1 : la base de cultivars du KAVB (login.kavb.nl/siergewassen) n'est interrogeable que par un formulaire de recherche, non utilisé (règle « aucun formulaire »). Le N1 des cultivars repose donc sur les listes annuelles « Registraties » du KAVB (PDF, 2004-07 à 2013, huit documents) et sur les mentions « Mutant van » qui prouvent l'existence d'un parent. Les cultivars plus anciens ou postérieurs à 2013 n'ont pas de N1 lu.",
+   "N1 espèces : POWO (Kew) renvoie une erreur 403 (protection Cloudflare, non contournée). Les noms d'espèces sont recoupés avec le GBIF Backbone (API), iNaturalist et les textes de la Pacific Bulb Society ; à revérifier sur POWO.",
+   "N2 : Floricode (codes et photos des variétés vendues) est sur abonnement et n'a pas été consulté ; aucune fiche d'obtenteur à photo exploitable n'a été trouvée pour ces tulipes. Aucun cultivar n'est donc au niveau A.",
+   "Nouveautés 2014-2026 : les listes d'enregistrement KAVB de ces années ne sont pas publiées en PDF libre ; la fenêtre des cinq dernières années n'est pas couverte.",
+   "Les photos ne sont jamais stockées dans le dépôt : seules les adresses, auteurs, licences et niveaux sont écrits. Les vignettes regardées sont dans le cache de l'atelier (refcache/tulipe-botanique/).",
+   "Photos PBS : droits réservés aux photographes (consultation et mesure seulement, jamais publiées). Photos iNaturalist : licences CC BY-NC en majorité, mêmes usages."
+  ],
+  "statuts": "en production = niveau A ou B (à mesurer par fleur-coloris puis sondage de 10 % par l'orchestrateur) ; à confirmer = niveau C ou D ; écarté = avec la raison"
+ },
+ "nom": "Tulipe naine (tulipe humilis)",
+ "latin": "Tulipa humilis Herb. (incl. T. pulchella, T. aucheriana) et cultivars 'Eastern Star', 'Little Beauty'",
+ "priorite": "P2",
+ "pourquoi_cette_priorite": "forme étoilée naine très reconnaissable ; palette très riche (rose, pourpre, bleu-noir) ; plusieurs AGM (aucheriana, Little Beauty)",
+ "groupe_registre": {
+  "autorite": "KAVB",
+  "division": 15,
+  "nom_registre": "Overige Groep (Miscellaneous)",
+  "preuve": "KAVB 2005-2011 : « Tulipa humilis 'Eastern Spice' / 'Helene' / 'Little Lune' (Overige Groep) » ; RHS « (15) »"
+ },
+ "taxonomie": {
+  "espece_mere": "Tulipa humilis Herb., accepté (GBIF usageKey 5299366) ; variétés aucheriana, humilis, kurdica, pulchella, violacea (Wikipédia) ; T. pulchella et T. aucheriana synonymes",
+  "nom_accepte_source": "GBIF ; POWO non consulté"
+ },
+ "melange": "Espèce très variable ; les coloris sont des formes (pulchella pourpre, aucheriana rose, violacea) et des cultivars ; 'Little Beauty' est inscrit sous Tulipa humilis par la RHS.",
+ "forme": {
+  "resume": "naine, étoile large jusqu'à 7 cm, quasi sessile ; fleur rose pâle à pourpre rosé foncé, base jaune, olive ou noir-bleu bordée de jaune ou de blanc ; revers souvent gris-vert ; ne s'ouvre à plat qu'en plein soleil",
+  "details": [
+   "RHS : étamines à filets jaunes ou pourpres, anthères jaunes, brunes, pourpres ou noires",
+   "PBS (pulchella) : fleurs sur tiges de 15 cm, ouvertes seulement au soleil vif"
+  ],
+  "sources": [
+   "RHS « Tulipa humilis (15) » ; PBS TulipaSpeciesTwo"
+  ]
+ },
+ "feuilles": {
+  "resume": "2 à 5 feuilles étroites, linéaires, glauques, couchées, 15 cm ; falciformes chez pulchella",
+  "details": [
+   "RHS ; PBS"
+  ]
+ },
+ "hauteur_cm": "10 à 25 (RHS : 25 max ; Eastern Star 10 ; Little Beauty 12)",
+ "floraison": "début à mi-printemps",
+ "distinction": {
+  "vs_clusiana": "plus basse, étoile large à macule bleu-noir, pas de revers rayé"
+ },
+ "coloris_catalogue": [],
+ "cultivars": [
+  {
+   "id": "humilis",
+   "nom_affiche": "Tulipe naine (T. humilis)",
+   "nom_enregistre": "Tulipa humilis Herb.",
+   "synonymes": [],
+   "groupe": "Espèce (KAVB Div. 15, « Overige Groep » / Miscellaneous)",
+   "obtenteur": null,
+   "annee": null,
+   "numeros": {},
+   "couleur_registre": "très variable : rose pâle à pourpre rosé, base jaune/olive/noir-bleu",
+   "motif": "étoile, macule basale bordée de jaune ou de blanc",
+   "sources": [
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://www.rhs.org.uk/plants/18518/tulipa-humilis-(15)/details",
+     "consulte": "2026-10-08",
+     "note": "RHS (société savante) : fiche (15) : 25 cm max ; tépales rose très pâle à pourpre rosé foncé, souvent teintés gris-vert dehors ; base jaune, olive ou noir-bleu bordée de jaune ou de blanc ; filets jaunes ou pourpres ; étoile jusqu'à 7 cm ; 2 à 5 feuilles étroites glauques, 15 cm"
+    },
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaSpeciesTwo",
+     "consulte": "2026-10-08",
+     "note": "Pacific Bulb Society : T. humilis : rose lilas à base jaune, très variable ; variétés aucheriana, pulchella, kurdica, violacea"
+    },
+    {
+     "role": "taxonomie",
+     "niveau": "N4",
+     "url": "https://api.gbif.org/v1/species/match?kingdom=Plantae&name=Tulipa%20humilis",
+     "consulte": "2026-10-08",
+     "note": "accepté : Tulipa humilis Herb. (usageKey 5299366) ; pulchella et aucheriana en synonymes"
+    }
+   ],
+   "photos": [
+    {
+     "url": "https://pacificbulbsociety.org/pbswiki/files/Tulipa/Tulipa_humilis_JL1.jpg",
+     "page": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaSpeciesTwo",
+     "niveau": "N3",
+     "auteur": "John Lonsdale",
+     "licence": "© photographe ; Pacific Bulb Society (reproduction non libre : consultation et mesure seulement)",
+     "legende": "Tulipa humilis, John Lonsdale",
+     "consulte": "2026-10-08",
+     "vue": "dessus",
+     "eclairage": null,
+     "balance_blancs": null
+    },
+    {
+     "url": "https://pacificbulbsociety.org/pbswiki/files/Tulipa/Tulipa_humilis_2.jpg",
+     "page": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaSpeciesTwo",
+     "niveau": "N3",
+     "auteur": "Mark McDonough",
+     "licence": "© photographe ; Pacific Bulb Society (reproduction non libre : consultation et mesure seulement)",
+     "legende": "Tulipa humilis, Mark McDonough",
+     "consulte": "2026-10-08",
+     "vue": "groupe",
+     "eclairage": null,
+     "balance_blancs": null
+    },
+    {
+     "url": "https://pacificbulbsociety.org/pbswiki/files/Tulipa/Tulipa_humilis_4.jpg",
+     "page": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaSpeciesTwo",
+     "niveau": "N3",
+     "auteur": "Arnold Trachtenberg",
+     "licence": "© photographe ; Pacific Bulb Society (reproduction non libre : consultation et mesure seulement)",
+     "legende": "Tulipa humilis, Arnold Trachtenberg",
+     "consulte": "2026-10-08",
+     "vue": "dessus",
+     "eclairage": null,
+     "balance_blancs": null
+    },
+    {
+     "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/115068172/original.jpg",
+     "page": "https://www.inaturalist.org/observations/70747972",
+     "niveau": "N3",
+     "auteur": "oronperi",
+     "licence": "iNaturalist CC-BY-NC-ND (observation de qualité recherche)",
+     "legende": "Tulipa humilis, Gevaş/Van, Turkey, 2019-06-03",
+     "consulte": "2026-10-08",
+     "vue": "spontané (Turquie)",
+     "date_prise": "2019-06-03",
+     "eclairage": null,
+     "balance_blancs": null
+    }
+   ],
+   "mesures": {},
+   "niveau_preuve": "B",
+   "existence_n1_n2": false,
+   "statut": "en production",
+   "doutes": [
+    "espèce très variable : un coloris par forme (pulchella, aucheriana, violacea) et non un coloris « humilis » unique"
+   ],
+   "coloris_catalogue": null,
+   "familles_de_sources": [
+    "pacificbulbsociety.org",
+    "www.inaturalist.org",
+    "www.rhs.org.uk"
+   ]
+  },
+  {
+   "id": "humilis-pulchella",
+   "nom_affiche": "T. humilis var. pulchella (violacea)",
+   "nom_enregistre": "Tulipa humilis var. pulchella (Fenzl ex Regel) Christenh.",
+   "synonymes": [],
+   "groupe": "Espèce (KAVB Div. 15, « Overige Groep » / Miscellaneous)",
+   "obtenteur": null,
+   "annee": null,
+   "numeros": {},
+   "couleur_registre": "pourpre cramoisi, macule bleu-noir",
+   "motif": "macule bleu-noir bordée de blanc",
+   "sources": [
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaSpeciesTwo",
+     "consulte": "2026-10-08",
+     "note": "Pacific Bulb Society : feuilles falciformes, pourpre cramoisi à macule bleu-noir sur fond blanc, tiges de 15 cm, s'ouvre à plein soleil ; photos Dave Brastow et abdullah ünlü (CC BY-SA 3.0)"
+    },
+    {
+     "role": "taxonomie",
+     "niveau": "N4",
+     "url": "https://api.gbif.org/v1/species/match?kingdom=Plantae&name=Tulipa%20pulchella",
+     "consulte": "2026-10-08",
+     "note": "synonyme de Tulipa humilis (usageKey 5299360)"
+    }
+   ],
+   "photos": [
+    {
+     "url": "https://pacificbulbsociety.org/pbswiki/files/Tulipa/Tulipa_humilis_var_pulchella.jpg",
+     "page": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaSpeciesTwo",
+     "niveau": "N3",
+     "auteur": "Dave Brastow",
+     "licence": "© photographe ; Pacific Bulb Society (reproduction non libre : consultation et mesure seulement)",
+     "legende": "Tulipa humilis var. pulchella, Dave Brastow",
+     "consulte": "2026-10-08",
+     "vue": "groupe",
+     "eclairage": null,
+     "balance_blancs": null
+    },
+    {
+     "url": "https://pacificbulbsociety.org/pbswiki/files/Tulipa/Tulipa_pulchella_PD.jpg",
+     "page": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaSpeciesTwo",
+     "niveau": "N3",
+     "auteur": "CC BY-SA 3.0 license",
+     "licence": "© photographe ; Pacific Bulb Society (reproduction non libre : consultation et mesure seulement)",
+     "legende": "Tulipa humilis var. pulchella, abdullah ünlü, CC BY-SA 3.0 license",
+     "consulte": "2026-10-08",
+     "vue": "sauvage, bouton",
+     "eclairage": null,
+     "balance_blancs": null
+    },
+    {
+     "url": "https://static.inaturalist.org/photos/243151992/original.jpeg",
+     "page": "https://www.inaturalist.org/observations/141878341",
+     "niveau": "N3",
+     "auteur": "joaotiagotavares",
+     "licence": "iNaturalist NONE (observation de qualité recherche)",
+     "legende": "Tulipa humilis pulchella, Kavaközü, 70502 Kavaközü/Ayrancı/Karaman, Turquia, 2012-04-23",
+     "consulte": "2026-10-08",
+     "vue": "spontané (Turquie)",
+     "date_prise": "2012-04-23",
+     "eclairage": null,
+     "balance_blancs": null
+    }
+   ],
+   "mesures": {},
+   "niveau_preuve": "B",
+   "existence_n1_n2": false,
+   "statut": "en production",
+   "coloris_catalogue": null,
+   "familles_de_sources": [
+    "pacificbulbsociety.org",
+    "www.inaturalist.org"
+   ]
+  },
+  {
+   "id": "humilis-aucheriana",
+   "nom_affiche": "T. humilis var. aucheriana (T. aucheriana)",
+   "nom_enregistre": "Tulipa humilis var. aucheriana",
+   "synonymes": [],
+   "groupe": "Espèce (KAVB Div. 15, « Overige Groep » / Miscellaneous)",
+   "obtenteur": null,
+   "annee": null,
+   "numeros": {},
+   "couleur_registre": "rose",
+   "motif": "étoile rose, tache jaune diffuse",
+   "sources": [
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaSpeciesTwo",
+     "consulte": "2026-10-08",
+     "note": "Pacific Bulb Society : petite étoile rose, tache jaune moins nette ; AGM sous le nom T. aucheriana"
+    },
+    {
+     "role": "nom",
+     "niveau": "N4",
+     "url": "https://en.wikipedia.org/wiki/List_of_Award_of_Garden_Merit_tulips",
+     "consulte": "2026-10-08",
+     "note": "liste AGM : Aucher's Tulip rose-pink 25 cm"
+    }
+   ],
+   "photos": [
+    {
+     "url": "https://pacificbulbsociety.org/pbswiki/files/Tulipa/Tulipa_aucheriana_1.jpg",
+     "page": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaSpeciesTwo",
+     "niveau": "N3",
+     "auteur": "Arnold Trachtenberg",
+     "licence": "© photographe ; Pacific Bulb Society (reproduction non libre : consultation et mesure seulement)",
+     "legende": "Tulipa humilis var. aucheriana, syn. Tulipa aucheriana, Arnold Trachtenberg",
+     "consulte": "2026-10-08",
+     "vue": "dessus",
+     "eclairage": null,
+     "balance_blancs": null
+    },
+    {
+     "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/661586560/original.jpg",
+     "page": "https://www.inaturalist.org/observations/362479392",
+     "niveau": "N3",
+     "auteur": "banksiacoccinea",
+     "licence": "iNaturalist CC-BY-NC (observation de qualité recherche)",
+     "legende": "Tulipa humilis aucheriana, Golan, IL, 2026-05-14",
+     "consulte": "2026-10-08",
+     "vue": "spontané (var. aucheriana, Golan)",
+     "date_prise": "2026-05-14",
+     "eclairage": null,
+     "balance_blancs": null
+    }
+   ],
+   "mesures": {},
+   "niveau_preuve": "B",
+   "existence_n1_n2": false,
+   "statut": "en production",
+   "coloris_catalogue": null,
+   "familles_de_sources": [
+    "en.wikipedia.org",
+    "pacificbulbsociety.org",
+    "www.inaturalist.org"
+   ]
+  },
+  {
+   "id": "eastern-star",
+   "nom_affiche": "Eastern Star",
+   "nom_enregistre": "Eastern Star",
+   "synonymes": [],
+   "groupe": "Espèce (KAVB Div. 15, « Overige Groep » / Miscellaneous)",
+   "obtenteur": null,
+   "annee": null,
+   "numeros": {},
+   "couleur_registre": "rose magenta, centre jaune (RHS)",
+   "motif": "flamme bronze-vert, base jaune canari",
+   "sources": [
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://www.rhs.org.uk/plants/80519/tulipa-humilis-eastern-star-15/details",
+     "consulte": "2026-10-08",
+     "note": "RHS (société savante) : fiche (15) : nain 10 cm, feuilles larges gris-vert, fleurs rose magenta à centre jaune"
+    },
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaSpeciesTwo",
+     "consulte": "2026-10-08",
+     "note": "Pacific Bulb Society : « magenta-rose with a bronze-green flame and a canary-yellow base » ; photos David Pilling"
+    }
+   ],
+   "photos": [
+    {
+     "url": "https://pacificbulbsociety.org/pbswiki/files/Tulipa/Tulipa_humilis_Eastern_Star_DP0.jpg",
+     "page": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaSpeciesTwo",
+     "niveau": "N3",
+     "auteur": "David Pilling",
+     "licence": "© photographe ; Pacific Bulb Society (reproduction non libre : consultation et mesure seulement)",
+     "legende": "Tulipa humilis 'Eastern Star', 6th March 2015, David Pilling",
+     "consulte": "2026-10-08",
+     "vue": "pied",
+     "eclairage": null,
+     "balance_blancs": null
+    },
+    {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/a/aa/Tulipa_Eastern_Star_2021-04-19_5836.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Tulipa_Eastern_Star_2021-04-19_5836.jpg",
+     "niveau": "N4",
+     "auteur": "Salicyna",
+     "licence": "CC BY-SA 4.0",
+     "legende": "File:Tulipa Eastern Star 2021-04-19 5836.jpg",
+     "consulte": "2026-10-08",
+     "vue": "dessus",
+     "date_prise": "2021-04-19 11:02:17",
+     "eclairage": null,
+     "balance_blancs": null,
+     "miniature": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/aa/Tulipa_Eastern_Star_2021-04-19_5836.jpg/960px-Tulipa_Eastern_Star_2021-04-19_5836.jpg"
+    }
+   ],
+   "mesures": {},
+   "niveau_preuve": "C",
+   "existence_n1_n2": false,
+   "statut": "à confirmer",
+   "doutes": [
+    "CONFLIT DE COULEUR : les photos Commons montrent un rouge écarlate à centre jaune, alors que RHS et PBS disent rose magenta : au moins une source est mal nommée ; chercher une troisième photo avant mesure"
+   ],
+   "coloris_catalogue": null,
+   "familles_de_sources": [
+    "commons.wikimedia.org",
+    "pacificbulbsociety.org",
+    "www.rhs.org.uk"
+   ]
+  },
+  {
+   "id": "little-beauty",
+   "nom_affiche": "Little Beauty",
+   "nom_enregistre": "Little Beauty",
+   "synonymes": [
+    "Tulipa humilis 'Little Beauty'"
+   ],
+   "groupe": "Espèce (KAVB Div. 15, « Overige Groep » / Miscellaneous)",
+   "obtenteur": "W. Van Lierop & Sons (selon PBS)",
+   "annee": "1991 (selon PBS)",
+   "numeros": {},
+   "couleur_registre": "cramoisi à rose, centre bleu foncé bordé de blanc",
+   "motif": "macule bleu-noir bordée de blanc ; fleur en étoile pointue",
+   "sources": [
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://www.rhs.org.uk/plants/155507/tulipa-little-beauty-15/details",
+     "consulte": "2026-10-08",
+     "note": "RHS (société savante) : fiche (15) AGM : 12 cm ; centres pourpre foncé pâlissant vers un bord pourpre clair liseré de rose, l'essentiel du pétale supérieur cramoisi ; autre fiche : Tulipa humilis 'Little Beauty'"
+    },
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaHybrids",
+     "consulte": "2026-10-08",
+     "note": "Pacific Bulb Society : Div. 15 : « 'Little Beauty' : developed by W. Van Lierop & Sons, introduced 1991 ; fragrant red to pink petals with a dark blue center edged white ; AGM 1997 »"
+    }
+   ],
+   "photos": [
+    {
+     "url": "https://pacificbulbsociety.org/pbswiki/files/Tulipa/Tulipa_Little_Beauty_msi.jpg",
+     "page": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaHybrids",
+     "niveau": "N3",
+     "auteur": "Mary Sue Ittner",
+     "licence": "© photographe ; Pacific Bulb Society (reproduction non libre : consultation et mesure seulement)",
+     "legende": "Tulipa 'Little Beauty', Mary Sue Ittner",
+     "consulte": "2026-10-08",
+     "vue": "dessus",
+     "eclairage": null,
+     "balance_blancs": null
+    },
+    {
+     "url": "https://pacificbulbsociety.org/pbswiki/files/Tulipa/Tulipa_Little_Beauty_msi3.jpg",
+     "page": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaHybrids",
+     "niveau": "N3",
+     "auteur": "Mary Sue Ittner",
+     "licence": "© photographe ; Pacific Bulb Society (reproduction non libre : consultation et mesure seulement)",
+     "legende": "Tulipa 'Little Beauty', Mary Sue Ittner",
+     "consulte": "2026-10-08",
+     "vue": "profil",
+     "eclairage": null,
+     "balance_blancs": null
+    },
+    {
+     "url": "https://pacificbulbsociety.org/pbswiki/files/Tulipa/Tulipa_Little_Beauty_br.jpg",
+     "page": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaHybrids",
+     "niveau": "N3",
+     "auteur": "Bob Rutemoeller",
+     "licence": "© photographe ; Pacific Bulb Society (reproduction non libre : consultation et mesure seulement)",
+     "legende": "Tulipa 'Little Beauty', Bob Rutemoeller",
+     "consulte": "2026-10-08",
+     "vue": "dessus",
+     "eclairage": null,
+     "balance_blancs": null
+    },
+    {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Tulip_-_Flickr_-_S._Rae_%282%29.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Tulip_-_Flickr_-_S._Rae_%282%29.jpg",
+     "niveau": "N4",
+     "auteur": "S. Rae from Scotland, UK",
+     "licence": "CC BY 2.0",
+     "legende": "File:Tulip - Flickr - S. Rae (2).jpg",
+     "consulte": "2026-10-08",
+     "vue": "dessus",
+     "date_prise": "2014-04-29 12:03",
+     "eclairage": null,
+     "balance_blancs": null,
+     "miniature": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5b/Tulip_-_Flickr_-_S._Rae_%282%29.jpg/960px-Tulip_-_Flickr_-_S._Rae_%282%29.jpg"
+    },
+    {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/2/24/Tulipa_%27Little_Beauty%27_2.JPG",
+     "page": "https://commons.wikimedia.org/wiki/File:Tulipa_%27Little_Beauty%27_2.JPG",
+     "niveau": "N4",
+     "auteur": "Ghislain118   http://www.fleurs-des-montagnes.net",
+     "licence": "CC BY-SA 3.0",
+     "legende": "File:Tulipa 'Little Beauty' 2.JPG",
+     "consulte": "2026-10-08",
+     "vue": "dessus",
+     "date_prise": "2010-03-28 03:59:46",
+     "eclairage": null,
+     "balance_blancs": null,
+     "miniature": "https://upload.wikimedia.org/wikipedia/commons/2/24/Tulipa_%27Little_Beauty%27_2.JPG"
+    }
+   ],
+   "mesures": {},
+   "niveau_preuve": "B",
+   "existence_n1_n2": false,
+   "statut": "en production",
+   "doutes": [
+    "existence N1/N2 non établie : base KAVB (formulaire) non interrogée et Floricode non consulté ; à valider au sondage de 10 %",
+    "obtenteur et année tirés de PBS : non vérifiés au registre"
+   ],
+   "coloris_catalogue": null,
+   "familles_de_sources": [
+    "commons.wikimedia.org",
+    "pacificbulbsociety.org",
+    "www.rhs.org.uk"
+   ]
+  },
+  {
+   "id": "lilliput",
+   "nom_affiche": "Lilliput",
+   "nom_enregistre": "Lilliput",
+   "synonymes": [],
+   "groupe": "Espèce (KAVB Div. 15, « Overige Groep » / Miscellaneous)",
+   "obtenteur": null,
+   "annee": null,
+   "numeros": {},
+   "couleur_registre": "rouge à base violette",
+   "motif": null,
+   "sources": [
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaSpeciesTwo",
+     "consulte": "2026-10-08",
+     "note": "Pacific Bulb Society : « 'Lilliput' : red with a violet base and more than one flower per stem » ; photos John Lonsdale"
+    }
+   ],
+   "photos": [
+    {
+     "url": "https://pacificbulbsociety.org/pbswiki/files/Tulipa/Tulipa_humilis_Lilliput0_JL.jpg",
+     "page": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaSpeciesTwo",
+     "niveau": "N3",
+     "auteur": "John Lonsdale",
+     "licence": "© photographe ; Pacific Bulb Society (reproduction non libre : consultation et mesure seulement)",
+     "legende": "Tulipa humilis 'Lilliput', John Lonsdale",
+     "consulte": "2026-10-08",
+     "vue": "dessus",
+     "eclairage": null,
+     "balance_blancs": null
+    },
+    {
+     "url": "https://pacificbulbsociety.org/pbswiki/files/Tulipa/Tulipa_humilis_Lilliput_JL1.jpg",
+     "page": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaSpeciesTwo",
+     "niveau": "N3",
+     "auteur": "John Lonsdale",
+     "licence": "© photographe ; Pacific Bulb Society (reproduction non libre : consultation et mesure seulement)",
+     "legende": "Tulipa humilis 'Lilliput', John Lonsdale",
+     "consulte": "2026-10-08",
+     "vue": "dessus",
+     "eclairage": null,
+     "balance_blancs": null
+    }
+   ],
+   "mesures": {},
+   "niveau_preuve": "C",
+   "existence_n1_n2": false,
+   "statut": "à confirmer",
+   "doutes": [
+    "PBS seul (un auteur) ; aucune fiche RHS/KAVB"
+   ],
+   "coloris_catalogue": null,
+   "familles_de_sources": [
+    "pacificbulbsociety.org"
+   ]
+  },
+  {
+   "id": "alba-coerulea-oculata",
+   "nom_affiche": "Alba Coerulea Oculata",
+   "nom_enregistre": "Alba Coerulea Oculata",
+   "synonymes": [],
+   "groupe": "Espèce (KAVB Div. 15, « Overige Groep » / Miscellaneous)",
+   "obtenteur": null,
+   "annee": null,
+   "numeros": {},
+   "couleur_registre": "blanc à base bleu acier",
+   "motif": null,
+   "sources": [
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaSpeciesTwo",
+     "consulte": "2026-10-08",
+     "note": "Pacific Bulb Society : « white with a steel-blue base » ; récolté au nord-ouest de l'Iran en 1927 ; photos Arnold Trachtenberg et Ian Young"
+    }
+   ],
+   "photos": [
+    {
+     "url": "https://pacificbulbsociety.org/pbswiki/files/Tulipa/Tulipa_humilis_Albocaerula_Oculata_IY1b.jpg",
+     "page": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaSpeciesTwo",
+     "niveau": "N3",
+     "auteur": "Ian Young",
+     "licence": "© photographe ; Pacific Bulb Society (reproduction non libre : consultation et mesure seulement)",
+     "legende": "Tulipa humilis 'Alba Coerulea Oculata', Ian Young",
+     "consulte": "2026-10-08",
+     "vue": "dessus",
+     "eclairage": null,
+     "balance_blancs": null
+    },
+    {
+     "url": "https://pacificbulbsociety.org/pbswiki/files/Tulipa/Tulipa_humilis_Albocaerula_Oculata_IY1a.jpg",
+     "page": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaSpeciesTwo",
+     "niveau": "N3",
+     "auteur": "Ian Young",
+     "licence": "© photographe ; Pacific Bulb Society (reproduction non libre : consultation et mesure seulement)",
+     "legende": "Tulipa humilis 'Alba Coerulea Oculata', Ian Young",
+     "consulte": "2026-10-08",
+     "vue": "dessus",
+     "eclairage": null,
+     "balance_blancs": null
+    }
+   ],
+   "mesures": {},
+   "niveau_preuve": "C",
+   "existence_n1_n2": false,
+   "statut": "à confirmer",
+   "doutes": [
+    "PBS seul ; orthographes variables"
+   ],
+   "coloris_catalogue": null,
+   "familles_de_sources": [
+    "pacificbulbsociety.org"
+   ]
+  }
+ ],
+ "sans_photo": [
+  {
+   "id": "helene",
+   "nom_affiche": "Helene",
+   "nom_enregistre": "Helene",
+   "groupe": "Overige Groep (KAVB)",
+   "edibulb": "78641",
+   "mutant_de": null,
+   "registrant": "De Goede Bulbivaria, Breezand",
+   "obtenteur_ou_selectionneur": "Visser, Sint Pancras",
+   "periode_registre": "2007-11 à 2008-11",
+   "couleur_registre": "donkerviolet N79B, paars 64A gerand",
+   "multiflore": null,
+   "source": {
+    "niveau": "N1",
+    "url": "https://assets.kavb.nl/docs/709a8fb3-51c8-47ad-94a7-97c37c7f447f.pdf",
+    "document": "Registraties week 46-2007 t/m 45-2008",
+    "consulte": "2026-10-08"
+   },
+   "niveau_preuve": "D",
+   "statut": "à confirmer",
+   "raison": "nom et couleur de registre seuls : aucune photo nommée trouvée",
+   "mesures": {},
+   "sorte_proposee": "tulipe-humilis (T. humilis dans le nom du registre)"
+  },
+  {
+   "id": "little-lune",
+   "nom_affiche": "Little Lune",
+   "nom_enregistre": "Little Lune",
+   "groupe": "Overige Groep (KAVB)",
+   "edibulb": "82215",
+   "mutant_de": null,
+   "registrant": "P.C. Nijssen, Heemstede & H.M. Meeuwissen Voorhout, Voorhout",
+   "obtenteur_ou_selectionneur": "P. Visser & Zn., Sint Pancras",
+   "periode_registre": "2010-11 à 2011-12",
+   "couleur_registre": "paars 61B",
+   "multiflore": null,
+   "source": {
+    "niveau": "N1",
+    "url": "https://assets.kavb.nl/docs/aaac1091-e77c-4f0c-b395-e3f444b42877.pdf",
+    "document": "Registraties week 45-2010 t/m 52-2011",
+    "consulte": "2026-10-08"
+   },
+   "niveau_preuve": "D",
+   "statut": "à confirmer",
+   "raison": "nom et couleur de registre seuls : aucune photo nommée trouvée",
+   "mesures": {},
+   "sorte_proposee": "tulipe-humilis (T. humilis dans le nom du registre)"
+  },
+  {
+   "id": "eastern-spice",
+   "nom_affiche": "Eastern Spice",
+   "nom_enregistre": "Eastern Spice",
+   "groupe": "Overige Groep (KAVB)",
+   "edibulb": "76970",
+   "mutant_de": null,
+   "registrant": "H.M. Meeuwissen Voorhout, Voorhout",
+   "obtenteur_ou_selectionneur": "waarschijnlijk Visser, Sint Pancras",
+   "periode_registre": "2005-07 à 2006-10",
+   "couleur_registre": "donker paarsrood 53B",
+   "multiflore": null,
+   "source": {
+    "niveau": "N1",
+    "url": "https://assets.kavb.nl/docs/aba604d0-c12d-4e19-8c8f-f6723c699fbd.pdf",
+    "document": "Registraties week 27-2005 t/m 43-2006",
+    "consulte": "2026-10-08"
+   },
+   "niveau_preuve": "D",
+   "statut": "à confirmer",
+   "raison": "nom et couleur de registre seuls : aucune photo nommée trouvée",
+   "mesures": {},
+   "sorte_proposee": "tulipe-humilis (T. humilis dans le nom du registre)"
+  },
+  {
+   "id": "red-cup",
+   "nom_affiche": "Red Cup",
+   "nom_enregistre": "Red Cup",
+   "groupe": "Div. 15",
+   "niveau_preuve": "D",
+   "statut": "à confirmer",
+   "source": {
+    "niveau": "N3",
+    "url": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaHybrids",
+    "document": "PBS : acheté comme T. humilis 'Red Cup', peu d'informations ; photos Mary Sue Ittner",
+    "consulte": "2026-10-08"
+   },
+   "raison": "nom non confirmé",
+   "mesures": {}
+  }
+ ],
+ "ecartes": [],
+ "couverture": {
+  "cultivars_retenus_avec_photo": 7,
+  "niveau_A": 0,
+  "niveau_B": 4,
+  "niveau_C": 3,
+  "niveau_D": 0,
+  "prouves_A_ou_B": 4,
+  "sans_photo": 4,
+  "ecartes": 0,
+  "au_catalogue": 0,
+  "existence_N1_lue": 3,
+  "remarque": "« enregistrés » du KAVB : total inconnu (base non interrogée). Les nombres ci-dessus portent sur ce qui a été recensé dans les sources consultées"
+ },
+ "vues_deja_photographiees": {
+  "face (dessus, intérieur)": 12,
+  "trois-quarts": 0,
+  "profil": 1,
+  "dos (revers, extérieur)": 0,
+  "bouton": 1,
+  "fané ou déclin": 0,
+  "feuilles": 0,
+  "tige, pied": 1,
+  "plante entière ou massif": 2
+ },
+ "vues_manquantes": [
+  "trois-quarts",
+  "dos (revers, extérieur)",
+  "fané ou déclin",
+  "feuilles",
+  "dessous et attache des feuilles",
+  "épaisseur et surface de la tige",
+  "stades intermédiaires (goblet, coupe, déclin)"
+ ],
+ "vues_note": "comptage des photos retenues par mot-clé de la rubrique « vue » ; les photos de forme par angle et par stade sont à compléter par fleur-refs (STANDARD-SOURCES, exhaustivité)"
+}

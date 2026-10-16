@@ -1,0 +1,2695 @@
+{
+ "sid": "tulipe-fosteriana",
+ "schema": "STANDARD-SOURCES.md section 5",
+ "legende_entrees": "« cultivars » = entrées de la sorte : cultivars, formes botaniques ou espèce type ; « sans_photo » = nom prouvé (N1 ou N3) mais aucune photo nommée retenue ; « ecartes » = rejetés avec la raison",
+ "rattachement_catalogue": "aucun coloris existant du catalogue ne correspond à cette sorte (catalogue.json, inventaire_fleurs.csv et skus.csv relus le 2026-10-08 : aucune tulipe botanique) ; coloris_catalogue est donc vide",
+ "genre": "Tulipa",
+ "recensement": {
+  "date": "2026-10-08",
+  "agent": "fleur-recensement",
+  "portee": "tulipes botaniques : groupes Kaufmanniana (12), Fosteriana (13), Greigii (14) du KAVB et espèces / hybrides de la division 15 (« Overige Groep » = Miscellaneous) ; tout ce qui est documenté par une photo nommée fiable",
+  "limites": [
+   "N1 : la base de cultivars du KAVB (login.kavb.nl/siergewassen) n'est interrogeable que par un formulaire de recherche, non utilisé (règle « aucun formulaire »). Le N1 des cultivars repose donc sur les listes annuelles « Registraties » du KAVB (PDF, 2004-07 à 2013, huit documents) et sur les mentions « Mutant van » qui prouvent l'existence d'un parent. Les cultivars plus anciens ou postérieurs à 2013 n'ont pas de N1 lu.",
+   "N1 espèces : POWO (Kew) renvoie une erreur 403 (protection Cloudflare, non contournée). Les noms d'espèces sont recoupés avec le GBIF Backbone (API), iNaturalist et les textes de la Pacific Bulb Society ; à revérifier sur POWO.",
+   "N2 : Floricode (codes et photos des variétés vendues) est sur abonnement et n'a pas été consulté ; aucune fiche d'obtenteur à photo exploitable n'a été trouvée pour ces tulipes. Aucun cultivar n'est donc au niveau A.",
+   "Nouveautés 2014-2026 : les listes d'enregistrement KAVB de ces années ne sont pas publiées en PDF libre ; la fenêtre des cinq dernières années n'est pas couverte.",
+   "Les photos ne sont jamais stockées dans le dépôt : seules les adresses, auteurs, licences et niveaux sont écrits. Les vignettes regardées sont dans le cache de l'atelier (refcache/tulipe-botanique/).",
+   "Photos PBS : droits réservés aux photographes (consultation et mesure seulement, jamais publiées). Photos iNaturalist : licences CC BY-NC en majorité, mêmes usages."
+  ],
+  "statuts": "en production = niveau A ou B (à mesurer par fleur-coloris puis sondage de 10 % par l'orchestrateur) ; à confirmer = niveau C ou D ; écarté = avec la raison"
+ },
+ "nom": "Tulipe Fosteriana (tulipe Empereur)",
+ "latin": "Tulipa Fosteriana Group (Tulipa fosteriana W.Irving et ses hybrides)",
+ "priorite": "P1",
+ "pourquoi_cette_priorite": "groupe forme-clé du catalogue des tulipes botaniques ; seul des trois groupes dont plusieurs clones sont encore au catalogue de Jan de Wit en Zonen en 2026 (Purissima, Madame Lefeber, Orange Emperor, Candela, Juan, Sweetheart ; l'usage fleur coupée n'est pas prouvé par Floricode) ; la forme v1 actuelle s'en rapproche",
+ "groupe_registre": {
+  "autorite": "KAVB (ICRA du genre Tulipa)",
+  "division": 13,
+  "nom_registre": "Fosteriana Groep",
+  "preuve": "KAVB, listes « Registraties » 2004-2013 (« Fosteriana Groep ») ; RHS : « (13) » dans les noms de fiches"
+ },
+ "taxonomie": {
+  "espece_mere": "Tulipa fosteriana W.Irving, accepté (GBIF, usageKey 5299364 ; Wikipédia : décrit par Irving en 1906, Pamir, Afghanistan à Ouzbékistan)",
+  "nom_accepte_source": "GBIF Backbone ; POWO non consulté (403)"
+ },
+ "melange": "Le groupe réunit les clones directs de T. fosteriana (Madame Lefeber = Red Emperor, Purissima = White Emperor, Orange Emperor, Princeps, Candela) et leurs mutations (Yellow Purissima, Flaming Purissima, etc.). Certaines inscriptions KAVB portent deux groupes (Virilemon : Fosteriana + Viridiflora). Les hybrides Darwin (division 4, croisement Darwin × fosteriana) ne sont PAS ici : ils sont dans tulipe-simple. 'Exotic Emperor' est un nom commercial de 'White Valley', fleur double à classer peut-être en Double.",
+ "forme": {
+  "resume": "grand bol ovoïde à 6 tépales larges, ovales à pointe aiguë (mucronée), s'ouvrant à plat en étoile large au soleil ; fleur jusqu'à 12 cm (RHS) ; macule basale contrastée et bien délimitée ; anthères noires-violettes",
+  "details": [
+   "bouton long, ovoïde, à pointes aiguës (Purissima, Madame Lefeber : photos PBS et Commons)",
+   "tépales largement ovales, plus larges que ceux d'un Kaufmanniana ; au plein épanouissement ils s'étalent et les pointes se recourbent légèrement, bord un peu ondulé (Juan, Madame Lefeber)",
+   "macule : noire cernée de jaune (Madame Lefeber, Princeps, Concerto), jaune franche (Juan, Candela), crème-verte (Purissima) ; centre de 6 étamines noires-violettes, anthères deux fois plus longues que les filets (Wikipédia, T. fosteriana)",
+   "revers : même teinte que la face, sans flamme chez les cultivars unis ; flammes roses chez les sports (Flaming Purissima, Flaming Emperor)"
+  ],
+  "sources": [
+   "RHS « Tulipa fosteriana (13) » : fleurs en bol jusqu'à 12 cm, base de chaque tépale contrastée ; photos PBS (Janos Agoston, Mary Sue Ittner) ; Wikipédia T. fosteriana"
+  ]
+ },
+ "feuilles": {
+  "resume": "larges (3 à 5), ovales-lancéolées, glauques à gris-vert, lisses, dressées ; le plus souvent unies",
+  "details": [
+   "unies et luisantes chez Madame Lefeber ; bleu-gris chez Zombie (Wikipédia)",
+   "striées ou marquées de pourpre-bronze chez certains : Juan (RHS : feuilles marquées de bronze ; PBS : variegated)",
+   "RHS : les Fosteriana ont souvent des feuilles marquées de pourpre, moins que les Greigii"
+  ]
+ },
+ "hauteur_cm": "20 à 50 selon le cultivar : Princeps 20, Juan 25, Purissima 30-35, Candela 35, Madame Lefeber et Pirand 40, Orange Emperor 45, Concerto 50 (RHS) ; espèce 40-55",
+ "floraison": "début à mi-printemps (RHS : mid-spring ; PBS : early)",
+ "distinction": {
+  "vs_kaufmanniana": "plus grande, plus haute, tépales plus larges et moins aigus, macule plus nette, revers sans large flamme, feuilles généralement unies",
+  "vs_greigii": "feuilles non rayées de pourpre dans la majorité des cas, tige plus haute, fleur plus ovoïde",
+  "vs_tulipe_simple_v1": "voir recensement.md, question 1"
+ },
+ "coloris_catalogue": [],
+ "cultivars": [
+  {
+   "id": "madame-lefeber",
+   "nom_affiche": "Madame Lefeber (Red Emperor)",
+   "nom_enregistre": "Madame Lefeber",
+   "synonymes": [
+    "Red Emperor",
+    "Tulipa fosteriana 'Red Emperor'",
+    "'Madam LeFeber'"
+   ],
+   "groupe": "Fosteriana (13)",
+   "obtenteur": null,
+   "annee": null,
+   "numeros": {},
+   "couleur_registre": "rouge vif (RHS, PBS)",
+   "motif": "macule noire cernée de jaune, anthères noires (photos PBS) ; revers uni",
+   "sources": [
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://www.rhs.org.uk/plants/44742/tulipa-madame-lefeber-(13)/details",
+     "consulte": "2026-10-08",
+     "note": "RHS (société savante) : fiche (13) ; synonymes Tulipa fosteriana 'Red Emperor', Tulipa 'Red Emperor' ; fleurs rouges, macule jaune, anthères noires ; jusqu'à 40 cm, mi-printemps"
+    },
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaHybrids",
+     "consulte": "2026-10-08",
+     "note": "Pacific Bulb Society : Div. 13 : « 'Madam Lefeber' (now mostly 'Red Emperor') : bright fiery red » ; photos de Janos Agoston"
+    },
+    {
+     "role": "nom",
+     "niveau": "N4",
+     "url": "https://commons.wikimedia.org/wiki/Category:Tulipa_%27Madame_Lefeber%27",
+     "consulte": "2026-10-08",
+     "note": "catégorie Commons Tulipa 'Madame Lefeber' (6 fichiers)"
+    },
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://www.jandewitenzonen.com/en/assortment/tulip/326/Madame-Lefeber/",
+     "consulte": "2026-10-08",
+     "note": "fiche variété du bulbiculteur-exportateur Jan de Wit en Zonen (Enkhuizen) : groupe Fosteriana ; couleur Red ; hauteur Medium ; floraison Early ; encore au catalogue de Jan de Wit en 2026"
+    }
+   ],
+   "photos": [
+    {
+     "url": "https://pacificbulbsociety.org/pbswiki/files/Tulipa/Tulipa_Fosteriana_MadamLefeber_JA15.jpg",
+     "page": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaHybrids",
+     "niveau": "N3",
+     "auteur": "Janos Agoston",
+     "licence": "© photographe ; Pacific Bulb Society (reproduction non libre : consultation et mesure seulement)",
+     "legende": "Tulipa 'Madam LeFeber' or 'Red Emperor', Janos Agoston",
+     "consulte": "2026-10-08",
+     "vue": "champ",
+     "eclairage": null,
+     "balance_blancs": null
+    },
+    {
+     "url": "https://pacificbulbsociety.org/pbswiki/files/Tulipa/Tulipa_Fosteriana_MadamLefeber_JA14.jpg",
+     "page": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaHybrids",
+     "niveau": "N3",
+     "auteur": "Janos Agoston",
+     "licence": "© photographe ; Pacific Bulb Society (reproduction non libre : consultation et mesure seulement)",
+     "legende": "Tulipa 'Madam LeFeber' or 'Red Emperor', Janos Agoston",
+     "consulte": "2026-10-08",
+     "vue": "dessus, règle graduée",
+     "eclairage": null,
+     "balance_blancs": null
+    },
+    {
+     "url": "https://pacificbulbsociety.org/pbswiki/files/Tulipa/Tulipa_Fosteriana_MadamLefeber_JA5.jpg",
+     "page": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaHybrids",
+     "niveau": "N3",
+     "auteur": "Janos Agoston",
+     "licence": "© photographe ; Pacific Bulb Society (reproduction non libre : consultation et mesure seulement)",
+     "legende": "Tulipa 'Madam LeFeber' or 'Red Emperor', Janos Agoston",
+     "consulte": "2026-10-08",
+     "vue": "bouton/pied",
+     "eclairage": null,
+     "balance_blancs": null
+    },
+    {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/7/72/Tulpe_%27Madame_Lefeber%27_im_botanischen_Garten_in_M%C3%BCnchen_01.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Tulpe_%27Madame_Lefeber%27_im_botanischen_Garten_in_M%C3%BCnchen_01.jpg",
+     "niveau": "N4",
+     "auteur": "Kritzolina",
+     "licence": "CC BY-SA 4.0",
+     "legende": "File:Tulpe 'Madame Lefeber' im botanischen Garten in München 01.jpg",
+     "consulte": "2026-10-08",
+     "vue": "bouton ouvert, étiquette du jardin botanique de Munich",
+     "date_prise": "2026-04-12 15:19:20",
+     "eclairage": null,
+     "balance_blancs": null,
+     "miniature": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/Tulpe_%27Madame_Lefeber%27_im_botanischen_Garten_in_M%C3%BCnchen_01.jpg/960px-Tulpe_%27Madame_Lefeber%27_im_botanischen_Garten_in_M%C3%BCnchen_01.jpg"
+    },
+    {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/c/c9/Tulpe_%27Madame_Lefeber%27_im_botanischen_Garten_in_M%C3%BCnchen_03.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Tulpe_%27Madame_Lefeber%27_im_botanischen_Garten_in_M%C3%BCnchen_03.jpg",
+     "niveau": "N4",
+     "auteur": "Kritzolina",
+     "licence": "CC BY-SA 4.0",
+     "legende": "File:Tulpe 'Madame Lefeber' im botanischen Garten in München 03.jpg",
+     "consulte": "2026-10-08",
+     "vue": "bouton, profil",
+     "date_prise": "2026-04-12 15:19:32",
+     "eclairage": null,
+     "balance_blancs": null,
+     "miniature": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c9/Tulpe_%27Madame_Lefeber%27_im_botanischen_Garten_in_M%C3%BCnchen_03.jpg/960px-Tulpe_%27Madame_Lefeber%27_im_botanischen_Garten_in_M%C3%BCnchen_03.jpg"
+    },
+    {
+     "url": "https://www.jandewitenzonen.com/img/products/tulip/Madame_Lefeber.jpg",
+     "page": "https://www.jandewitenzonen.com/en/assortment/tulip/326/Madame-Lefeber/",
+     "niveau": "N3",
+     "auteur": "Jan de Wit en Zonen B.V.",
+     "licence": "tous droits réservés ; mesure locale seulement, jamais stockée ni publiée",
+     "legende": "Tulipa 'Madame Lefeber' (fiche variété Jan de Wit en Zonen)",
+     "consulte": "2026-10-08",
+     "vue": "bouton fermé ou gobelet, photo de catalogue (filigrane, fond flou) : couleur approchée",
+     "note": "photo de catalogue : couleur à recouper",
+     "eclairage": null,
+     "balance_blancs": null
+    }
+   ],
+   "mesures": {},
+   "niveau_preuve": "B",
+   "existence_n1_n2": false,
+   "statut": "en production",
+   "doutes": [
+    "existence N1/N2 non établie : base KAVB (formulaire) non interrogée et Floricode non consulté ; à valider au sondage de 10 %",
+    "obtenteur et année non sourcés : des revendeurs avancent « 1931 » (non primaire) ; une liste PBS de 2004 note que 'Red Emperor' aurait été collecté en 1904 : à trancher au registre"
+   ],
+   "coloris_catalogue": null,
+   "commerce": {
+    "jan_de_wit_en_zonen_catalogue_2026": true,
+    "groupe": "Fosteriana",
+    "couleur": "Red",
+    "hauteur": "Medium",
+    "floraison": "Early",
+    "note": "fiche en ligne le 2026-10-08 ; Floricode non consulté"
+   },
+   "familles_de_sources": [
+    "commons.wikimedia.org",
+    "pacificbulbsociety.org",
+    "www.jandewitenzonen.com",
+    "www.rhs.org.uk"
+   ]
+  },
+  {
+   "id": "purissima",
+   "nom_affiche": "Purissima (White Emperor)",
+   "nom_enregistre": "Purissima",
+   "synonymes": [
+    "White Emperor"
+   ],
+   "groupe": "Fosteriana (13)",
+   "obtenteur": null,
+   "annee": null,
+   "numeros": {},
+   "couleur_registre": "blanc crème, base ivoire (RHS ; PBS : primevère puis blanc)",
+   "motif": "uni ; base ivoire à nervures, anthères noires (RHS, article nains)",
+   "sources": [
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://www.rhs.org.uk/plants/84029/tulipa-purissima-(13)/details",
+     "consulte": "2026-10-08",
+     "note": "RHS (société savante) : fiche (13) : grandes fleurs blanc crème, environ 35 cm, mi-printemps"
+    },
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaHybrids",
+     "consulte": "2026-10-08",
+     "note": "Pacific Bulb Society : Div. 13 : « 'Purissima' (also 'White Emperor') : starts primrose, fades to white, large rounded flowers » ; AGM"
+    },
+    {
+     "role": "nom",
+     "niveau": "N4",
+     "url": "https://commons.wikimedia.org/wiki/Category:Tulipa_%27Purissima%27",
+     "consulte": "2026-10-08",
+     "note": "catégorie Commons (17 fichiers)"
+    },
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://www.jandewitenzonen.com/en/assortment/tulip/424/Purissima/",
+     "consulte": "2026-10-08",
+     "note": "fiche variété du bulbiculteur-exportateur Jan de Wit en Zonen (Enkhuizen) : groupe Fosteriana ; couleur White ; hauteur Medium ; floraison Early ; encore au catalogue de Jan de Wit en 2026"
+    }
+   ],
+   "photos": [
+    {
+     "url": "https://pacificbulbsociety.org/pbswiki/files/Tulipa/Tulipa_Fosteriana_Purissima_JA3.jpg",
+     "page": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaHybrids",
+     "niveau": "N3",
+     "auteur": "Janos Agoston",
+     "licence": "© photographe ; Pacific Bulb Society (reproduction non libre : consultation et mesure seulement)",
+     "legende": "Tulipa 'Purissima' or 'White Emperor', Janos Agoston",
+     "consulte": "2026-10-08",
+     "vue": "dessus",
+     "eclairage": null,
+     "balance_blancs": null
+    },
+    {
+     "url": "https://pacificbulbsociety.org/pbswiki/files/Tulipa/Tulipa_Fosteriana_Purissima_JA1.jpg",
+     "page": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaHybrids",
+     "niveau": "N3",
+     "auteur": "Janos Agoston",
+     "licence": "© photographe ; Pacific Bulb Society (reproduction non libre : consultation et mesure seulement)",
+     "legende": "Tulipa 'Purissima' or 'White Emperor', Janos Agoston",
+     "consulte": "2026-10-08",
+     "vue": "champ",
+     "eclairage": null,
+     "balance_blancs": null
+    },
+    {
+     "url": "https://pacificbulbsociety.org/pbswiki/files/Tulipa/Tulipa_Fosteriana_Purissima_JA.jpg",
+     "page": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaHybrids",
+     "niveau": "N3",
+     "auteur": "Janos Agoston",
+     "licence": "© photographe ; Pacific Bulb Society (reproduction non libre : consultation et mesure seulement)",
+     "legende": "Tulipa 'Purissima' or 'White Emperor', Janos Agoston",
+     "consulte": "2026-10-08",
+     "vue": "profil",
+     "eclairage": null,
+     "balance_blancs": null
+    },
+    {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Helbra%2C_Tulipa_%27Purissima%27.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Helbra%2C_Tulipa_%27Purissima%27.jpg",
+     "niveau": "N4",
+     "auteur": "Dguendel",
+     "licence": "CC BY 3.0",
+     "legende": "File:Helbra, Tulipa 'Purissima'.jpg",
+     "consulte": "2026-10-08",
+     "vue": "profil, bouton ovoïde",
+     "date_prise": "2011-04-14 10:04:02",
+     "eclairage": null,
+     "balance_blancs": null,
+     "miniature": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3b/Helbra%2C_Tulipa_%27Purissima%27.jpg/960px-Helbra%2C_Tulipa_%27Purissima%27.jpg"
+    },
+    {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Tulipa_%27Purissima%27.JPG",
+     "page": "https://commons.wikimedia.org/wiki/File:Tulipa_%27Purissima%27.JPG",
+     "niveau": "N4",
+     "auteur": "Uleli",
+     "licence": "CC BY-SA 3.0",
+     "legende": "File:Tulipa 'Purissima'.JPG",
+     "consulte": "2026-10-08",
+     "vue": "profil",
+     "date_prise": "2013-05-15 17:43:28",
+     "eclairage": null,
+     "balance_blancs": null,
+     "miniature": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f1/Tulipa_%27Purissima%27.JPG/960px-Tulipa_%27Purissima%27.JPG"
+    },
+    {
+     "url": "https://www.jandewitenzonen.com/img/products/tulip/Purissima.jpg",
+     "page": "https://www.jandewitenzonen.com/en/assortment/tulip/424/Purissima/",
+     "niveau": "N3",
+     "auteur": "Jan de Wit en Zonen B.V.",
+     "licence": "tous droits réservés ; mesure locale seulement, jamais stockée ni publiée",
+     "legende": "Tulipa 'Purissima' (fiche variété Jan de Wit en Zonen)",
+     "consulte": "2026-10-08",
+     "vue": "bouton fermé ou gobelet, photo de catalogue (filigrane, fond flou) : couleur approchée",
+     "note": "photo de catalogue : couleur à recouper",
+     "eclairage": null,
+     "balance_blancs": null
+    }
+   ],
+   "mesures": {},
+   "niveau_preuve": "B",
+   "existence_n1_n2": false,
+   "statut": "en production",
+   "doutes": [
+    "existence N1/N2 non établie : base KAVB (formulaire) non interrogée et Floricode non consulté ; à valider au sondage de 10 %",
+    "sports signalés : 'Yellow Purissima', 'Flaming Purissima', 'Purple Purissima', 'Purissima Design' (RHS) : traités à part"
+   ],
+   "coloris_catalogue": null,
+   "commerce": {
+    "jan_de_wit_en_zonen_catalogue_2026": true,
+    "groupe": "Fosteriana",
+    "couleur": "White",
+    "hauteur": "Medium",
+    "floraison": "Early",
+    "note": "fiche en ligne le 2026-10-08 ; Floricode non consulté"
+   },
+   "familles_de_sources": [
+    "commons.wikimedia.org",
+    "pacificbulbsociety.org",
+    "www.jandewitenzonen.com",
+    "www.rhs.org.uk"
+   ]
+  },
+  {
+   "id": "orange-emperor",
+   "nom_affiche": "Orange Emperor",
+   "nom_enregistre": "Orange Emperor",
+   "synonymes": [],
+   "groupe": "Fosteriana (13)",
+   "obtenteur": null,
+   "annee": null,
+   "numeros": {},
+   "couleur_registre": "orange à base jaune pâle (PBS ; RHS : rouge orangé, base jaune)",
+   "motif": "uni, base jaune ; ouverture en étoile large (PBS)",
+   "sources": [
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://www.rhs.org.uk/plants/52149/tulipa-orange-emperor-(13)/details",
+     "consulte": "2026-10-08",
+     "note": "RHS (société savante) : fiche (13) AGM : fleurs rouge-orangé à base jaune, environ 45 cm"
+    },
+    {
+     "role": "existence",
+     "niveau": "N1",
+     "url": "https://assets.kavb.nl/docs/3fd65dc9-0010-4071-b881-5976ef70410a.pdf",
+     "consulte": "2026-10-08",
+     "note": "KAVB, liste « Registraties 2013 week 1 t/m 52 » : 'Disneyland Paris' (Dubbele Vroege Groep, Edibulbcode 82512) est enregistré « Mutant van 'Orange Emperor' » : le parent figure donc au registre"
+    },
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaHybrids",
+     "consulte": "2026-10-08",
+     "note": "Pacific Bulb Society : Div. 13 : « 'Orange Emperor' : orange petals with a pale yellow base », AGM"
+    },
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://www.jandewitenzonen.com/en/assortment/tulip/374/Orange-Emperor/",
+     "consulte": "2026-10-08",
+     "note": "fiche variété du bulbiculteur-exportateur Jan de Wit en Zonen (Enkhuizen) : groupe Fosteriana ; couleur Orange ; hauteur Medium ; floraison Early ; encore au catalogue de Jan de Wit en 2026"
+    }
+   ],
+   "photos": [
+    {
+     "url": "https://pacificbulbsociety.org/pbswiki/files/Tulipa/Tulipa_Fosteriana_OrangeEmperor_JA5.jpg",
+     "page": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaHybrids",
+     "niveau": "N3",
+     "auteur": "Janos Agoston",
+     "licence": "© photographe ; Pacific Bulb Society (reproduction non libre : consultation et mesure seulement)",
+     "legende": "Tulipa 'Orange Emperor', Janos Agoston",
+     "consulte": "2026-10-08",
+     "vue": "dessus",
+     "eclairage": null,
+     "balance_blancs": null
+    },
+    {
+     "url": "https://pacificbulbsociety.org/pbswiki/files/Tulipa/Tulipa_Fosteriana_OrangeEmperor_JA1.jpg",
+     "page": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaHybrids",
+     "niveau": "N3",
+     "auteur": "Janos Agoston",
+     "licence": "© photographe ; Pacific Bulb Society (reproduction non libre : consultation et mesure seulement)",
+     "legende": "Tulipa 'Orange Emperor', Janos Agoston",
+     "consulte": "2026-10-08",
+     "vue": "champ",
+     "eclairage": null,
+     "balance_blancs": null
+    },
+    {
+     "url": "https://pacificbulbsociety.org/pbswiki/files/Tulipa/Tulipa_Fosteriana_OrangeEmperor_JA.jpg",
+     "page": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaHybrids",
+     "niveau": "N3",
+     "auteur": "Janos Agoston",
+     "licence": "© photographe ; Pacific Bulb Society (reproduction non libre : consultation et mesure seulement)",
+     "legende": "Tulipa 'Orange Emperor', Janos Agoston",
+     "consulte": "2026-10-08",
+     "vue": "groupe",
+     "eclairage": null,
+     "balance_blancs": null
+    },
+    {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/4/48/Tulipa_Orange_Emperor_flower_interior.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Tulipa_Orange_Emperor_flower_interior.jpg",
+     "niveau": "N4",
+     "auteur": "Willow Coville",
+     "licence": "CC BY-SA 4.0",
+     "legende": "File:Tulipa Orange Emperor flower interior.jpg",
+     "consulte": "2026-10-08",
+     "vue": "intérieur",
+     "date_prise": "2022-03-16",
+     "eclairage": null,
+     "balance_blancs": null,
+     "miniature": "https://upload.wikimedia.org/wikipedia/commons/4/48/Tulipa_Orange_Emperor_flower_interior.jpg"
+    },
+    {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Tulipa_Orange_Emperor_flower_exterior.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Tulipa_Orange_Emperor_flower_exterior.jpg",
+     "niveau": "N4",
+     "auteur": "Willow Coville",
+     "licence": "CC BY-SA 4.0",
+     "legende": "File:Tulipa Orange Emperor flower exterior.jpg",
+     "consulte": "2026-10-08",
+     "vue": "extérieur (revers)",
+     "date_prise": "2022-03-16",
+     "eclairage": null,
+     "balance_blancs": null,
+     "miniature": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Tulipa_Orange_Emperor_flower_exterior.jpg"
+    },
+    {
+     "url": "https://www.jandewitenzonen.com/img/products/tulip/Orange_Emperor.jpg",
+     "page": "https://www.jandewitenzonen.com/en/assortment/tulip/374/Orange-Emperor/",
+     "niveau": "N3",
+     "auteur": "Jan de Wit en Zonen B.V.",
+     "licence": "tous droits réservés ; mesure locale seulement, jamais stockée ni publiée",
+     "legende": "Tulipa 'Orange Emperor' (fiche variété Jan de Wit en Zonen)",
+     "consulte": "2026-10-08",
+     "vue": "bouton fermé ou gobelet, photo de catalogue (filigrane, fond flou) : couleur approchée",
+     "note": "photo de catalogue : couleur à recouper",
+     "eclairage": null,
+     "balance_blancs": null
+    }
+   ],
+   "mesures": {},
+   "niveau_preuve": "B",
+   "existence_n1_n2": true,
+   "statut": "en production",
+   "doutes": [
+    "le registre KAVB 2013 cite 'Orange Emperor' comme parent d'une mutation : existence N1 prouvée, mais fiche du registre non lue"
+   ],
+   "coloris_catalogue": null,
+   "commerce": {
+    "jan_de_wit_en_zonen_catalogue_2026": true,
+    "groupe": "Fosteriana",
+    "couleur": "Orange",
+    "hauteur": "Medium",
+    "floraison": "Early",
+    "note": "fiche en ligne le 2026-10-08 ; Floricode non consulté"
+   },
+   "familles_de_sources": [
+    "assets.kavb.nl",
+    "commons.wikimedia.org",
+    "pacificbulbsociety.org",
+    "www.jandewitenzonen.com",
+    "www.rhs.org.uk"
+   ],
+   "niveau_A_si": "passe à A si la fiche Jan de Wit en Zonen (bulbiculteur-exportateur, photo de catalogue) est admise comme N2 : N1 d'existence lu (KAVB, parent d'un mutant ou inscription) + photo N2 ; décision de l'orchestrateur"
+  },
+  {
+   "id": "candela",
+   "nom_affiche": "Candela (Yellow Emperor)",
+   "nom_enregistre": "Candela",
+   "synonymes": [
+    "Yellow Emperor (PBS, non confirmé au registre)"
+   ],
+   "groupe": "Fosteriana (13)",
+   "obtenteur": null,
+   "annee": null,
+   "numeros": {},
+   "couleur_registre": "jaune franc",
+   "motif": "uni ; base plus sombre à vérifier sur macro",
+   "sources": [
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://www.rhs.org.uk/plants/84745/tulipa-candela-13/details",
+     "consulte": "2026-10-08",
+     "note": "RHS (société savante) : fiche (13) AGM : grandes fleurs jaune profond, anthères noires, environ 35 cm"
+    },
+    {
+     "role": "existence",
+     "niveau": "N1",
+     "url": "https://assets.kavb.nl/docs/4d05a724-67b1-430c-b4a4-4f9ccbe34ae5.pdf",
+     "consulte": "2026-10-08",
+     "note": "KAVB, liste « Registraties week 44-2006 t/m 45-2007 » : 'Candela Fire' (Fosteriana Groep, Edibulbcode 77763) est enregistré « Mutant van 'Candela' » : le parent figure donc au registre"
+    },
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaHybrids",
+     "consulte": "2026-10-08",
+     "note": "Pacific Bulb Society : Div. 13 : « 'Candela' (also 'Yellow Emperor') : bright pure yellow »"
+    },
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://www.jandewitenzonen.com/en/assortment/tulip/89/Candela/",
+     "consulte": "2026-10-08",
+     "note": "fiche variété du bulbiculteur-exportateur Jan de Wit en Zonen (Enkhuizen) : groupe Fosteriana ; couleur Yellow ; hauteur Medium ; floraison Early ; encore au catalogue de Jan de Wit en 2026"
+    }
+   ],
+   "photos": [
+    {
+     "url": "https://pacificbulbsociety.org/pbswiki/files/Tulipa/Tulipa_Fosteriana_Candela_JA5.jpg",
+     "page": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaHybrids",
+     "niveau": "N3",
+     "auteur": "Janos Agoston",
+     "licence": "© photographe ; Pacific Bulb Society (reproduction non libre : consultation et mesure seulement)",
+     "legende": "Tulipa Candela, Janos Agoston",
+     "consulte": "2026-10-08",
+     "vue": "dessus",
+     "eclairage": null,
+     "balance_blancs": null
+    },
+    {
+     "url": "https://pacificbulbsociety.org/pbswiki/files/Tulipa/Tulipa_Fosteriana_Candela_JA4.jpg",
+     "page": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaHybrids",
+     "niveau": "N3",
+     "auteur": "Janos Agoston",
+     "licence": "© photographe ; Pacific Bulb Society (reproduction non libre : consultation et mesure seulement)",
+     "legende": "Tulipa Candela, Janos Agoston",
+     "consulte": "2026-10-08",
+     "vue": "champ",
+     "eclairage": null,
+     "balance_blancs": null
+    },
+    {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/8/88/Tulipa_Candela.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Tulipa_Candela.jpg",
+     "niveau": "N4",
+     "auteur": "Anna reg",
+     "licence": "CC BY-SA 3.0 at",
+     "legende": "File:Tulipa Candela.jpg",
+     "consulte": "2026-10-08",
+     "vue": "bouquet, étiquette",
+     "date_prise": "2013-05-01",
+     "eclairage": null,
+     "balance_blancs": null,
+     "miniature": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/Tulipa_Candela.jpg/960px-Tulipa_Candela.jpg"
+    },
+    {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/c/ca/Tulipa_fosteriana_a1.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Tulipa_fosteriana_a1.jpg",
+     "niveau": "N4",
+     "auteur": "Jerzy Opioła",
+     "licence": "CC BY-SA 4.0",
+     "legende": "File:Tulipa fosteriana a1.jpg",
+     "consulte": "2026-10-08",
+     "vue": "champ",
+     "eclairage": null,
+     "balance_blancs": null,
+     "miniature": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/Tulipa_fosteriana_a1.jpg/960px-Tulipa_fosteriana_a1.jpg"
+    },
+    {
+     "url": "https://www.jandewitenzonen.com/img/products/tulip/Candela.jpg",
+     "page": "https://www.jandewitenzonen.com/en/assortment/tulip/89/Candela/",
+     "niveau": "N3",
+     "auteur": "Jan de Wit en Zonen B.V.",
+     "licence": "tous droits réservés ; mesure locale seulement, jamais stockée ni publiée",
+     "legende": "Tulipa 'Candela' (fiche variété Jan de Wit en Zonen)",
+     "consulte": "2026-10-08",
+     "vue": "bouton fermé ou gobelet, photo de catalogue (filigrane, fond flou) : couleur approchée",
+     "note": "photo de catalogue : couleur à recouper",
+     "eclairage": null,
+     "balance_blancs": null
+    }
+   ],
+   "mesures": {},
+   "niveau_preuve": "B",
+   "existence_n1_n2": true,
+   "statut": "en production",
+   "coloris_catalogue": null,
+   "commerce": {
+    "jan_de_wit_en_zonen_catalogue_2026": true,
+    "groupe": "Fosteriana",
+    "couleur": "Yellow",
+    "hauteur": "Medium",
+    "floraison": "Early",
+    "note": "fiche en ligne le 2026-10-08 ; Floricode non consulté"
+   },
+   "doutes": [],
+   "familles_de_sources": [
+    "assets.kavb.nl",
+    "commons.wikimedia.org",
+    "pacificbulbsociety.org",
+    "www.jandewitenzonen.com",
+    "www.rhs.org.uk"
+   ],
+   "niveau_A_si": "passe à A si la fiche Jan de Wit en Zonen (bulbiculteur-exportateur, photo de catalogue) est admise comme N2 : N1 d'existence lu (KAVB, parent d'un mutant ou inscription) + photo N2 ; décision de l'orchestrateur"
+  },
+  {
+   "id": "concerto",
+   "nom_affiche": "Concerto",
+   "nom_enregistre": "Concerto",
+   "synonymes": [],
+   "groupe": "Fosteriana (13)",
+   "obtenteur": null,
+   "annee": null,
+   "numeros": {},
+   "couleur_registre": "blanc crème, base jaune/noire à l'intérieur",
+   "motif": "macule basale noire (PBS) cernée de jaune (RHS)",
+   "sources": [
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://www.rhs.org.uk/plants/79882/tulipa-concerto-13/details",
+     "consulte": "2026-10-08",
+     "note": "RHS (société savante) : fiche (13) AGM : fleurs en gobelet blanc crème à base jaune, environ 50 cm, début à mi-printemps"
+    },
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaHybrids",
+     "consulte": "2026-10-08",
+     "note": "Pacific Bulb Society : Div. 13 : « 'Concerto' : white with a black internal base »"
+    },
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://www.jandewitenzonen.com/en/assortment/tulip/129/Concerto/",
+     "consulte": "2026-10-08",
+     "note": "fiche variété du bulbiculteur-exportateur Jan de Wit en Zonen (Enkhuizen) : groupe Fosteriana ; couleur White ; hauteur Short ; floraison Early ; marqué « no longer supported » (retiré de son assortiment actuel, fiche encore en ligne)"
+    }
+   ],
+   "photos": [
+    {
+     "url": "https://pacificbulbsociety.org/pbswiki/files/Tulipa/Tulipa_Fosteriana_Concerto_JA1.jpg",
+     "page": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaHybrids",
+     "niveau": "N3",
+     "auteur": "Janos Agoston",
+     "licence": "© photographe ; Pacific Bulb Society (reproduction non libre : consultation et mesure seulement)",
+     "legende": "Tulipa Concerto, Janos Agoston",
+     "consulte": "2026-10-08",
+     "vue": "dessus",
+     "eclairage": null,
+     "balance_blancs": null
+    },
+    {
+     "url": "https://pacificbulbsociety.org/pbswiki/files/Tulipa/Tulipa_Fosteriana_Concerto_JA23.jpg",
+     "page": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaHybrids",
+     "niveau": "N3",
+     "auteur": "Janos Agoston",
+     "licence": "© photographe ; Pacific Bulb Society (reproduction non libre : consultation et mesure seulement)",
+     "legende": "Tulipa Concerto, Janos Agoston",
+     "consulte": "2026-10-08",
+     "eclairage": null,
+     "balance_blancs": null
+    },
+    {
+     "url": "https://pacificbulbsociety.org/pbswiki/files/Tulipa/Tulipa_Fosteriana_Concerto_JA3.jpg",
+     "page": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaHybrids",
+     "niveau": "N3",
+     "auteur": "Janos Agoston",
+     "licence": "© photographe ; Pacific Bulb Society (reproduction non libre : consultation et mesure seulement)",
+     "legende": "Tulipa Concerto, Janos Agoston",
+     "consulte": "2026-10-08",
+     "eclairage": null,
+     "balance_blancs": null
+    },
+    {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/3/35/Tulipa_%27Concerto%27_2021-04-24_01.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Tulipa_%27Concerto%27_2021-04-24_01.jpg",
+     "niveau": "N4",
+     "auteur": "Agnieszka Kwiecień, Nova",
+     "licence": "CC BY-SA 4.0",
+     "legende": "File:Tulipa 'Concerto' 2021-04-24 01.jpg",
+     "consulte": "2026-10-08",
+     "vue": "profil",
+     "date_prise": "2021-04-24",
+     "eclairage": null,
+     "balance_blancs": null,
+     "miniature": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/35/Tulipa_%27Concerto%27_2021-04-24_01.jpg/960px-Tulipa_%27Concerto%27_2021-04-24_01.jpg"
+    },
+    {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/1/14/Tulipa_fosteriana_concerto_2016_01.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Tulipa_fosteriana_concerto_2016_01.jpg",
+     "niveau": "N4",
+     "auteur": "Retired electrician",
+     "licence": "CC0",
+     "legende": "File:Tulipa fosteriana concerto 2016 01.jpg",
+     "consulte": "2026-10-08",
+     "vue": "dessus",
+     "date_prise": "2016-05-01",
+     "eclairage": null,
+     "balance_blancs": null,
+     "miniature": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/14/Tulipa_fosteriana_concerto_2016_01.jpg/960px-Tulipa_fosteriana_concerto_2016_01.jpg"
+    },
+    {
+     "url": "https://www.jandewitenzonen.com/img/products/tulip/Concerto.jpg",
+     "page": "https://www.jandewitenzonen.com/en/assortment/tulip/129/Concerto/",
+     "niveau": "N3",
+     "auteur": "Jan de Wit en Zonen B.V.",
+     "licence": "tous droits réservés ; mesure locale seulement, jamais stockée ni publiée",
+     "legende": "Tulipa 'Concerto' (fiche variété Jan de Wit en Zonen)",
+     "consulte": "2026-10-08",
+     "vue": "bouton fermé ou gobelet, photo de catalogue (filigrane, fond flou) : couleur approchée",
+     "note": "photo de catalogue : couleur à recouper",
+     "eclairage": null,
+     "balance_blancs": null
+    }
+   ],
+   "mesures": {},
+   "niveau_preuve": "B",
+   "existence_n1_n2": false,
+   "statut": "en production",
+   "doutes": [
+    "existence N1/N2 non établie : base KAVB (formulaire) non interrogée et Floricode non consulté ; à valider au sondage de 10 %",
+    "hauteur : RHS 50 cm, Commons montre des pieds courts"
+   ],
+   "coloris_catalogue": null,
+   "commerce": {
+    "jan_de_wit_en_zonen_catalogue_2026": false,
+    "groupe": "Fosteriana",
+    "couleur": "White",
+    "hauteur": "Short",
+    "floraison": "Early",
+    "note": "fiche en ligne le 2026-10-08 ; Floricode non consulté"
+   },
+   "familles_de_sources": [
+    "commons.wikimedia.org",
+    "pacificbulbsociety.org",
+    "www.jandewitenzonen.com",
+    "www.rhs.org.uk"
+   ]
+  },
+  {
+   "id": "juan",
+   "nom_affiche": "Juan",
+   "nom_enregistre": "Juan",
+   "synonymes": [
+    "Tulipa fosteriana 'Juan'"
+   ],
+   "groupe": "Fosteriana (13)",
+   "obtenteur": null,
+   "annee": null,
+   "numeros": {},
+   "couleur_registre": "rouge orangé, base jaune",
+   "motif": "grande base jaune bien délimitée ; feuilles striées de pourpre-bronze (distinctif du groupe)",
+   "sources": [
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://www.rhs.org.uk/plants/59574/tulipa-juan-13/details",
+     "consulte": "2026-10-08",
+     "note": "RHS (société savante) : fiche (13) AGM ; syn. Tulipa fosteriana 'Juan' ; environ 25 cm, feuilles marquées de bronze, fleurs en bol rouge orangé à base jaune"
+    },
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaHybrids",
+     "consulte": "2026-10-08",
+     "note": "Pacific Bulb Society : Div. 13 : « 'Juan' : red-orange with yellow centers, variegated leaves », AGM"
+    },
+    {
+     "role": "nom",
+     "niveau": "N4",
+     "url": "https://en.wikipedia.org/wiki/Tulipa_fosteriana",
+     "consulte": "2026-10-08",
+     "note": "Wikipédia : 'Juan' rouge-orangé à centre jaune, feuilles panachées, AGM"
+    },
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://www.jandewitenzonen.com/en/assortment/tulip/1449/Juan/",
+     "consulte": "2026-10-08",
+     "note": "fiche variété du bulbiculteur-exportateur Jan de Wit en Zonen (Enkhuizen) : groupe Fosteriana ; couleur Orange/Yellow ; hauteur Medium ; floraison Early ; encore au catalogue de Jan de Wit en 2026"
+    }
+   ],
+   "photos": [
+    {
+     "url": "https://pacificbulbsociety.org/pbswiki/files/Tulipa/Tulipa_Fosteriana_Juan_msi.jpg",
+     "page": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaHybrids",
+     "niveau": "N3",
+     "auteur": "Mary Sue Ittner",
+     "licence": "© photographe ; Pacific Bulb Society (reproduction non libre : consultation et mesure seulement)",
+     "legende": "Tulipa 'Juan', Mary Sue Ittner",
+     "consulte": "2026-10-08",
+     "vue": "dessus",
+     "eclairage": null,
+     "balance_blancs": null
+    },
+    {
+     "url": "https://pacificbulbsociety.org/pbswiki/files/Tulipa/Tulipa_Fosteriana_Juan_msi2.jpg",
+     "page": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaHybrids",
+     "niveau": "N3",
+     "auteur": "Mary Sue Ittner",
+     "licence": "© photographe ; Pacific Bulb Society (reproduction non libre : consultation et mesure seulement)",
+     "legende": "Tulipa 'Juan', Mary Sue Ittner",
+     "consulte": "2026-10-08",
+     "vue": "dessus",
+     "eclairage": null,
+     "balance_blancs": null
+    },
+    {
+     "url": "https://pacificbulbsociety.org/pbswiki/files/Tulipa/Tulipa_Fosteriana_Juan_leaves_JA.jpg",
+     "page": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaHybrids",
+     "niveau": "N3",
+     "auteur": "Janos Agoston",
+     "licence": "© photographe ; Pacific Bulb Society (reproduction non libre : consultation et mesure seulement)",
+     "legende": "Tulipa 'Juan', Janos Agoston",
+     "consulte": "2026-10-08",
+     "vue": "feuilles marquées de pourpre",
+     "eclairage": null,
+     "balance_blancs": null
+    },
+    {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/c/cd/Tulip_Tulipa_%27Juan%27_Flower_2836px.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Tulip_Tulipa_%27Juan%27_Flower_2836px.jpg",
+     "niveau": "N4",
+     "auteur": "Photo by and (c)2007 Derek Ramsey (Ram-Man).  Location credit to the Chanticleer Garden.",
+     "licence": "CC BY-SA 3.0",
+     "legende": "File:Tulip Tulipa 'Juan' Flower 2836px.jpg",
+     "consulte": "2026-10-08",
+     "vue": "dessus",
+     "date_prise": "2007-04-20",
+     "eclairage": null,
+     "balance_blancs": null,
+     "miniature": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Tulip_Tulipa_%27Juan%27_Flower_2836px.jpg/960px-Tulip_Tulipa_%27Juan%27_Flower_2836px.jpg"
+    },
+    {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/f/ff/Tulip_Tulipa_%27Juan%27_Plant_1872px.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Tulip_Tulipa_%27Juan%27_Plant_1872px.jpg",
+     "niveau": "N4",
+     "auteur": "Photo by and (c)2007 Derek Ramsey (Ram-Man).  Location credit to the Chanticleer Garden.",
+     "licence": "CC BY-SA 3.0",
+     "legende": "File:Tulip Tulipa 'Juan' Plant 1872px.jpg",
+     "consulte": "2026-10-08",
+     "vue": "plante entière, feuilles striées",
+     "date_prise": "2007-04-20",
+     "eclairage": null,
+     "balance_blancs": null,
+     "miniature": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Tulip_Tulipa_%27Juan%27_Plant_1872px.jpg/960px-Tulip_Tulipa_%27Juan%27_Plant_1872px.jpg"
+    },
+    {
+     "url": "https://www.jandewitenzonen.com/img/products/tulip/Juan.jpg",
+     "page": "https://www.jandewitenzonen.com/en/assortment/tulip/1449/Juan/",
+     "niveau": "N3",
+     "auteur": "Jan de Wit en Zonen B.V.",
+     "licence": "tous droits réservés ; mesure locale seulement, jamais stockée ni publiée",
+     "legende": "Tulipa 'Juan' (fiche variété Jan de Wit en Zonen)",
+     "consulte": "2026-10-08",
+     "vue": "bouton fermé ou gobelet, photo de catalogue (filigrane, fond flou) : couleur approchée",
+     "note": "photo de catalogue : couleur à recouper",
+     "eclairage": null,
+     "balance_blancs": null
+    }
+   ],
+   "mesures": {},
+   "niveau_preuve": "B",
+   "existence_n1_n2": false,
+   "statut": "en production",
+   "doutes": [
+    "existence N1/N2 non établie : base KAVB (formulaire) non interrogée et Floricode non consulté ; à valider au sondage de 10 %"
+   ],
+   "coloris_catalogue": null,
+   "commerce": {
+    "jan_de_wit_en_zonen_catalogue_2026": true,
+    "groupe": "Fosteriana",
+    "couleur": "Orange/Yellow",
+    "hauteur": "Medium",
+    "floraison": "Early",
+    "note": "fiche en ligne le 2026-10-08 ; Floricode non consulté"
+   },
+   "familles_de_sources": [
+    "commons.wikimedia.org",
+    "en.wikipedia.org",
+    "pacificbulbsociety.org",
+    "www.jandewitenzonen.com",
+    "www.rhs.org.uk"
+   ]
+  },
+  {
+   "id": "princeps",
+   "nom_affiche": "Princeps",
+   "nom_enregistre": "Princeps",
+   "synonymes": [],
+   "groupe": "Fosteriana (13)",
+   "obtenteur": null,
+   "annee": null,
+   "numeros": {},
+   "couleur_registre": "rouge, base bronze-vert (RHS)",
+   "motif": "cœur sombre ; ressemble à Madame Lefeber (PBS)",
+   "sources": [
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://www.rhs.org.uk/plants/84028/tulipa-princeps-13/details",
+     "consulte": "2026-10-08",
+     "note": "RHS (société savante) : fiche (13) : petit bulbe d'environ 20 cm, feuillage gris-vert, fleurs rouges en bol parfumées à base vert-bronze"
+    },
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaHybrids",
+     "consulte": "2026-10-08",
+     "note": "Pacific Bulb Society : Div. 13 : « 'Princeps' : similar to 'Madam Lefeber' (red) »"
+    },
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://www.jandewitenzonen.com/en/assortment/tulip/416/Princeps/",
+     "consulte": "2026-10-08",
+     "note": "fiche variété du bulbiculteur-exportateur Jan de Wit en Zonen (Enkhuizen) : groupe Fosteriana ; couleur Red ; hauteur Short ; floraison Early ; marqué « no longer supported » (retiré de son assortiment actuel, fiche encore en ligne)"
+    }
+   ],
+   "photos": [
+    {
+     "url": "https://pacificbulbsociety.org/pbswiki/files/Tulipa/Tulipa_Fosteriana_PrincepsJA1.jpg",
+     "page": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaHybrids",
+     "niveau": "N3",
+     "auteur": "Janos Agoston",
+     "licence": "© photographe ; Pacific Bulb Society (reproduction non libre : consultation et mesure seulement)",
+     "legende": "Tulipa 'Princeps', Janos Agoston",
+     "consulte": "2026-10-08",
+     "vue": "dessus",
+     "eclairage": null,
+     "balance_blancs": null
+    },
+    {
+     "url": "https://pacificbulbsociety.org/pbswiki/files/Tulipa/Tulipa_Fosteriana_PrincepsJA.jpg",
+     "page": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaHybrids",
+     "niveau": "N3",
+     "auteur": "Janos Agoston",
+     "licence": "© photographe ; Pacific Bulb Society (reproduction non libre : consultation et mesure seulement)",
+     "legende": "Tulipa 'Princeps', Janos Agoston",
+     "consulte": "2026-10-08",
+     "vue": "champ",
+     "eclairage": null,
+     "balance_blancs": null
+    },
+    {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/a/a7/Tulipa_fosteriana_%27Princeps%27_%28Liliaceae%29_flower.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Tulipa_fosteriana_%27Princeps%27_%28Liliaceae%29_flower.jpg",
+     "niveau": "N4",
+     "auteur": "Magnus Manske",
+     "licence": "CC BY-SA 3.0",
+     "legende": "File:Tulipa fosteriana 'Princeps' (Liliaceae) flower.jpg",
+     "consulte": "2026-10-08",
+     "vue": "dessus",
+     "date_prise": "2010-04-11",
+     "eclairage": null,
+     "balance_blancs": null,
+     "miniature": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a7/Tulipa_fosteriana_%27Princeps%27_%28Liliaceae%29_flower.jpg/960px-Tulipa_fosteriana_%27Princeps%27_%28Liliaceae%29_flower.jpg"
+    },
+    {
+     "url": "https://www.jandewitenzonen.com/img/products/tulip/Princeps.jpg",
+     "page": "https://www.jandewitenzonen.com/en/assortment/tulip/416/Princeps/",
+     "niveau": "N3",
+     "auteur": "Jan de Wit en Zonen B.V.",
+     "licence": "tous droits réservés ; mesure locale seulement, jamais stockée ni publiée",
+     "legende": "Tulipa 'Princeps' (fiche variété Jan de Wit en Zonen)",
+     "consulte": "2026-10-08",
+     "vue": "bouton fermé ou gobelet, photo de catalogue (filigrane, fond flou) : couleur approchée",
+     "note": "photo de catalogue : couleur à recouper",
+     "eclairage": null,
+     "balance_blancs": null
+    }
+   ],
+   "mesures": {},
+   "niveau_preuve": "B",
+   "existence_n1_n2": false,
+   "statut": "en production",
+   "doutes": [
+    "existence N1/N2 non établie : base KAVB (formulaire) non interrogée et Floricode non consulté ; à valider au sondage de 10 %",
+    "hauteur annoncée 20 cm par RHS : plus bas que Madame Lefeber"
+   ],
+   "coloris_catalogue": null,
+   "commerce": {
+    "jan_de_wit_en_zonen_catalogue_2026": false,
+    "groupe": "Fosteriana",
+    "couleur": "Red",
+    "hauteur": "Short",
+    "floraison": "Early",
+    "note": "fiche en ligne le 2026-10-08 ; Floricode non consulté"
+   },
+   "familles_de_sources": [
+    "commons.wikimedia.org",
+    "pacificbulbsociety.org",
+    "www.jandewitenzonen.com",
+    "www.rhs.org.uk"
+   ]
+  },
+  {
+   "id": "zombie",
+   "nom_affiche": "Zombie",
+   "nom_enregistre": "Zombie",
+   "synonymes": [],
+   "groupe": "Fosteriana (13)",
+   "obtenteur": null,
+   "annee": null,
+   "numeros": {},
+   "couleur_registre": "crème-jaune pâle à base jaune et cœur noir cerclé de rouge (RHS, photos)",
+   "motif": "macule noire, étamines noires",
+   "sources": [
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://www.rhs.org.uk/plants/45545/tulipa-zombie-(13)/details",
+     "consulte": "2026-10-08",
+     "note": "RHS (société savante) : fiche (13) : nain de moins de 40 cm, feuillage vert, fleurs jaune crème et rouge, centre rouge vif cerclé de noir à l'ouverture"
+    },
+    {
+     "role": "existence",
+     "niveau": "N1",
+     "url": "https://assets.kavb.nl/docs/709a8fb3-51c8-47ad-94a7-97c37c7f447f.pdf",
+     "consulte": "2026-10-08",
+     "note": "KAVB, liste « Registraties week 46-2007 t/m 45-2008 » : 'Zizou' (Fosteriana Groep, Edibulbcode 78734) est enregistré « Mutant van 'Zombie' » : le parent figure donc au registre"
+    },
+    {
+     "role": "nom",
+     "niveau": "N4",
+     "url": "https://en.wikipedia.org/wiki/Tulipa_fosteriana",
+     "consulte": "2026-10-08",
+     "note": "Wikipédia : 'Zombie' à grandes fleurs et feuillage gris bleuté"
+    }
+   ],
+   "photos": [
+    {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/b/b7/Tulipa_%27Zombie%27_2018-04-15_02.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Tulipa_%27Zombie%27_2018-04-15_02.jpg",
+     "niveau": "N4",
+     "auteur": "Agnieszka Kwiecień, Nova",
+     "licence": "CC BY-SA 4.0",
+     "legende": "File:Tulipa 'Zombie' 2018-04-15 02.jpg",
+     "consulte": "2026-10-08",
+     "vue": "dessus, étoile ouverte",
+     "date_prise": "2018-04-15",
+     "eclairage": null,
+     "balance_blancs": null,
+     "miniature": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b7/Tulipa_%27Zombie%27_2018-04-15_02.jpg/960px-Tulipa_%27Zombie%27_2018-04-15_02.jpg"
+    },
+    {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/7/73/Tulipa_%27Zombie%27_2018-04-15_03.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Tulipa_%27Zombie%27_2018-04-15_03.jpg",
+     "niveau": "N4",
+     "auteur": "Agnieszka Kwiecień, Nova",
+     "licence": "CC BY-SA 4.0",
+     "legende": "File:Tulipa 'Zombie' 2018-04-15 03.jpg",
+     "consulte": "2026-10-08",
+     "vue": "dessus",
+     "date_prise": "2018-04-15",
+     "eclairage": null,
+     "balance_blancs": null,
+     "miniature": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/Tulipa_%27Zombie%27_2018-04-15_03.jpg/960px-Tulipa_%27Zombie%27_2018-04-15_03.jpg"
+    },
+    {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Tulipa_%27Zombie%27_2018-04-15_01.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Tulipa_%27Zombie%27_2018-04-15_01.jpg",
+     "niveau": "N4",
+     "auteur": "Agnieszka Kwiecień, Nova",
+     "licence": "CC BY-SA 4.0",
+     "legende": "File:Tulipa 'Zombie' 2018-04-15 01.jpg",
+     "consulte": "2026-10-08",
+     "vue": "profil",
+     "date_prise": "2018-04-15",
+     "eclairage": null,
+     "balance_blancs": null,
+     "miniature": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/Tulipa_%27Zombie%27_2018-04-15_01.jpg/960px-Tulipa_%27Zombie%27_2018-04-15_01.jpg"
+    }
+   ],
+   "mesures": {},
+   "niveau_preuve": "C",
+   "existence_n1_n2": true,
+   "statut": "à confirmer",
+   "doutes": [
+    "une seule série de photos (un auteur, N4) : pas de photo N2/N3",
+    "jaune crème selon RHS ; blanc crème sur photos : couleur de mesure à reprendre"
+   ],
+   "coloris_catalogue": null,
+   "familles_de_sources": [
+    "assets.kavb.nl",
+    "commons.wikimedia.org",
+    "en.wikipedia.org",
+    "www.rhs.org.uk"
+   ]
+  },
+  {
+   "id": "pirand",
+   "nom_affiche": "Pirand",
+   "nom_enregistre": "Pirand",
+   "synonymes": [],
+   "groupe": "Fosteriana (13)",
+   "obtenteur": null,
+   "annee": null,
+   "numeros": {},
+   "couleur_registre": "rouge vif bordé de blanc (RHS)",
+   "motif": "bord blanc ; pointes rouges (photos)",
+   "sources": [
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://www.rhs.org.uk/plants/280533/tulipa-pirand-(13)/details",
+     "consulte": "2026-10-08",
+     "note": "RHS (société savante) : fiche (13) : environ 40 cm, feuilles vert moyen larges, grandes fleurs en bol rouge vif bordées de blanc"
+    },
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://www.jandewitenzonen.com/en/assortment/tulip/409/Pirand/",
+     "consulte": "2026-10-08",
+     "note": "fiche variété du bulbiculteur-exportateur Jan de Wit en Zonen (Enkhuizen) : groupe Fosteriana ; couleur Red/White ; hauteur Medium ; floraison Early ; marqué « no longer supported » (retiré de son assortiment actuel, fiche encore en ligne)"
+    }
+   ],
+   "photos": [
+    {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Tulipa_fosteriana_%27Pirand%27_2015_03.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Tulipa_fosteriana_%27Pirand%27_2015_03.jpg",
+     "niveau": "N4",
+     "auteur": "Retired electrician",
+     "licence": "CC0",
+     "legende": "File:Tulipa fosteriana 'Pirand' 2015 03.jpg",
+     "consulte": "2026-10-08",
+     "vue": "profil, plante",
+     "date_prise": "2015-05-02",
+     "eclairage": null,
+     "balance_blancs": null,
+     "miniature": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Tulipa_fosteriana_%27Pirand%27_2015_03.jpg/960px-Tulipa_fosteriana_%27Pirand%27_2015_03.jpg"
+    },
+    {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/6/68/Tulipa_fosteriana_%27Pirand%27_2015_04.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Tulipa_fosteriana_%27Pirand%27_2015_04.jpg",
+     "niveau": "N4",
+     "auteur": "Retired electrician",
+     "licence": "CC0",
+     "legende": "File:Tulipa fosteriana 'Pirand' 2015 04.jpg",
+     "consulte": "2026-10-08",
+     "vue": "profil",
+     "date_prise": "2015-05-02",
+     "eclairage": null,
+     "balance_blancs": null,
+     "miniature": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/68/Tulipa_fosteriana_%27Pirand%27_2015_04.jpg/960px-Tulipa_fosteriana_%27Pirand%27_2015_04.jpg"
+    },
+    {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/0/04/Tulipa_fosteriana_%27Pirand%27_2015_01.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Tulipa_fosteriana_%27Pirand%27_2015_01.jpg",
+     "niveau": "N4",
+     "auteur": "Retired electrician",
+     "licence": "CC0",
+     "legende": "File:Tulipa fosteriana 'Pirand' 2015 01.jpg",
+     "consulte": "2026-10-08",
+     "vue": "rang",
+     "date_prise": "2015-05-02",
+     "eclairage": null,
+     "balance_blancs": null,
+     "miniature": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/Tulipa_fosteriana_%27Pirand%27_2015_01.jpg/960px-Tulipa_fosteriana_%27Pirand%27_2015_01.jpg"
+    },
+    {
+     "url": "https://www.jandewitenzonen.com/img/products/tulip/Pirand.jpg",
+     "page": "https://www.jandewitenzonen.com/en/assortment/tulip/409/Pirand/",
+     "niveau": "N3",
+     "auteur": "Jan de Wit en Zonen B.V.",
+     "licence": "tous droits réservés ; mesure locale seulement, jamais stockée ni publiée",
+     "legende": "Tulipa 'Pirand' (fiche variété Jan de Wit en Zonen)",
+     "consulte": "2026-10-08",
+     "vue": "bouton fermé ou gobelet, photo de catalogue (filigrane, fond flou) : couleur approchée",
+     "note": "photo de catalogue : couleur à recouper",
+     "eclairage": null,
+     "balance_blancs": null
+    }
+   ],
+   "mesures": {},
+   "niveau_preuve": "B",
+   "existence_n1_n2": false,
+   "statut": "en production",
+   "doutes": [
+    "existence N1/N2 non établie : base KAVB (formulaire) non interrogée et Floricode non consulté ; à valider au sondage de 10 %"
+   ],
+   "coloris_catalogue": null,
+   "commerce": {
+    "jan_de_wit_en_zonen_catalogue_2026": false,
+    "groupe": "Fosteriana",
+    "couleur": "Red/White",
+    "hauteur": "Medium",
+    "floraison": "Early",
+    "note": "fiche en ligne le 2026-10-08 ; Floricode non consulté"
+   },
+   "familles_de_sources": [
+    "commons.wikimedia.org",
+    "www.jandewitenzonen.com",
+    "www.rhs.org.uk"
+   ]
+  },
+  {
+   "id": "sweet-sixteen",
+   "nom_affiche": "Sweet Sixteen",
+   "nom_enregistre": "Sweet Sixteen",
+   "synonymes": [],
+   "groupe": "Fosteriana (13)",
+   "obtenteur": "J. Visser Contractteelt B.V., Bovenkarspel (registrant) ; sélection : I.V.T., Wageningen",
+   "annee": "2012 (liste KAVB 2012)",
+   "numeros": {
+    "edibulb": "82507",
+    "TLP": "2065"
+   },
+   "couleur_registre": "licht blauwrose 62B (rose clair à reflet bleuté)",
+   "motif": null,
+   "sources": [
+    {
+     "role": "nom",
+     "niveau": "N1",
+     "url": "https://assets.kavb.nl/docs/595aedc7-bad3-44ae-bf35-7c0235ac23b8.pdf",
+     "consulte": "2026-10-08",
+     "note": "KAVB, liste « Registraties 2012 week 1 t/m 52 » : Tulipa 'Sweet Sixteen' (Fosteriana Groep), Edibulbcode 82507, registrant : J. Visser Contractteelt B.V., Bovenkarspel, couleur au registre (« Samenvatting » avec code RHS) : licht blauwrose 62B ; « Getuigschrift Proeftuin 2012 »"
+    }
+   ],
+   "photos": [
+    {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/3/36/Tulipa_%27Sweet_Sixteen%27_2023-04-23_02.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Tulipa_%27Sweet_Sixteen%27_2023-04-23_02.jpg",
+     "niveau": "N4",
+     "auteur": "Agnieszka Kwiecień, Nova",
+     "licence": "CC BY-SA 4.0",
+     "legende": "File:Tulipa 'Sweet Sixteen' 2023-04-23 02.jpg",
+     "consulte": "2026-10-08",
+     "vue": "dessus",
+     "date_prise": "2023-04-23",
+     "eclairage": null,
+     "balance_blancs": null,
+     "miniature": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/Tulipa_%27Sweet_Sixteen%27_2023-04-23_02.jpg/960px-Tulipa_%27Sweet_Sixteen%27_2023-04-23_02.jpg"
+    },
+    {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/6/68/Tulipa_%27Sweet_Sixteen%27_2023-04-23_03.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Tulipa_%27Sweet_Sixteen%27_2023-04-23_03.jpg",
+     "niveau": "N4",
+     "auteur": "Agnieszka Kwiecień, Nova",
+     "licence": "CC BY-SA 4.0",
+     "legende": "File:Tulipa 'Sweet Sixteen' 2023-04-23 03.jpg",
+     "consulte": "2026-10-08",
+     "vue": "profil",
+     "date_prise": "2023-04-23",
+     "eclairage": null,
+     "balance_blancs": null,
+     "miniature": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/68/Tulipa_%27Sweet_Sixteen%27_2023-04-23_03.jpg/960px-Tulipa_%27Sweet_Sixteen%27_2023-04-23_03.jpg"
+    },
+    {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Tulipa_%27Sweet_Sixteen%27_2023-04-23_01.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Tulipa_%27Sweet_Sixteen%27_2023-04-23_01.jpg",
+     "niveau": "N4",
+     "auteur": "Agnieszka Kwiecień, Nova",
+     "licence": "CC BY-SA 4.0",
+     "legende": "File:Tulipa 'Sweet Sixteen' 2023-04-23 01.jpg",
+     "consulte": "2026-10-08",
+     "vue": "rang",
+     "date_prise": "2023-04-23",
+     "eclairage": null,
+     "balance_blancs": null,
+     "miniature": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/Tulipa_%27Sweet_Sixteen%27_2023-04-23_01.jpg/960px-Tulipa_%27Sweet_Sixteen%27_2023-04-23_01.jpg"
+    }
+   ],
+   "mesures": {},
+   "niveau_preuve": "C",
+   "existence_n1_n2": true,
+   "statut": "à confirmer",
+   "doutes": [
+    "N1 et couleur de registre concordent avec les photos Commons (rose), mais photos N4 d'un seul auteur : pas de photo N2/N3"
+   ],
+   "coloris_catalogue": null,
+   "familles_de_sources": [
+    "assets.kavb.nl",
+    "commons.wikimedia.org"
+   ]
+  },
+  {
+   "id": "flaming-purissima",
+   "nom_affiche": "Flaming Purissima",
+   "nom_enregistre": "Flaming Purissima",
+   "synonymes": [],
+   "groupe": "Fosteriana (13)",
+   "obtenteur": null,
+   "annee": null,
+   "numeros": {},
+   "couleur_registre": null,
+   "motif": "blanc flammé de rose framboise (photos)",
+   "sources": [
+    {
+     "role": "nom",
+     "niveau": "N4",
+     "url": "https://commons.wikimedia.org/wiki/Category:Tulipa_%27Flaming_Purissima%27",
+     "consulte": "2026-10-08",
+     "note": "catégorie Commons (9 fichiers)"
+    },
+    {
+     "role": "nom",
+     "niveau": "N4",
+     "url": "https://www.ashridgetrees.co.uk/flaming-purissima-tulip-bulbs",
+     "consulte": "2026-10-08",
+     "note": "revendeur (ne vaut pas preuve) : sport de Purissima à flammes rouge framboise"
+    },
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://www.jandewitenzonen.com/en/assortment/tulip/202/Flaming-Purissima/",
+     "consulte": "2026-10-08",
+     "note": "fiche variété du bulbiculteur-exportateur Jan de Wit en Zonen (Enkhuizen) : groupe Fosteriana ; couleur Cream/Pink ; hauteur Medium ; floraison Early ; marqué « no longer supported » (retiré de son assortiment actuel, fiche encore en ligne)"
+    }
+   ],
+   "photos": [
+    {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/9/9d/Tulipa_%27Flaming_Purissima%27_2017_01.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Tulipa_%27Flaming_Purissima%27_2017_01.jpg",
+     "niveau": "N4",
+     "auteur": "Retired electrician",
+     "licence": "CC0",
+     "legende": "File:Tulipa 'Flaming Purissima' 2017 01.jpg",
+     "consulte": "2026-10-08",
+     "vue": "champ",
+     "date_prise": "2017-05",
+     "eclairage": null,
+     "balance_blancs": null,
+     "miniature": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9d/Tulipa_%27Flaming_Purissima%27_2017_01.jpg/960px-Tulipa_%27Flaming_Purissima%27_2017_01.jpg"
+    },
+    {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/e/ed/Tulipa_%27Flaming_Purissima%27_2017_03.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Tulipa_%27Flaming_Purissima%27_2017_03.jpg",
+     "niveau": "N4",
+     "auteur": "Retired electrician",
+     "licence": "CC0",
+     "legende": "File:Tulipa 'Flaming Purissima' 2017 03.jpg",
+     "consulte": "2026-10-08",
+     "vue": "dessus",
+     "date_prise": "2017-05",
+     "eclairage": null,
+     "balance_blancs": null,
+     "miniature": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ed/Tulipa_%27Flaming_Purissima%27_2017_03.jpg/960px-Tulipa_%27Flaming_Purissima%27_2017_03.jpg"
+    },
+    {
+     "url": "https://www.jandewitenzonen.com/img/products/tulip/Flaming_Purissima.jpg",
+     "page": "https://www.jandewitenzonen.com/en/assortment/tulip/202/Flaming-Purissima/",
+     "niveau": "N3",
+     "auteur": "Jan de Wit en Zonen B.V.",
+     "licence": "tous droits réservés ; mesure locale seulement, jamais stockée ni publiée",
+     "legende": "Tulipa 'Flaming Purissima' (fiche variété Jan de Wit en Zonen)",
+     "consulte": "2026-10-08",
+     "vue": "bouton fermé ou gobelet, photo de catalogue (filigrane, fond flou) : couleur approchée",
+     "note": "photo de catalogue : couleur à recouper",
+     "eclairage": null,
+     "balance_blancs": null
+    }
+   ],
+   "mesures": {},
+   "niveau_preuve": "B",
+   "existence_n1_n2": false,
+   "statut": "en production",
+   "doutes": [
+    "existence N1/N2 non établie : base KAVB (formulaire) non interrogée et Floricode non consulté ; à valider au sondage de 10 %"
+   ],
+   "coloris_catalogue": null,
+   "commerce": {
+    "jan_de_wit_en_zonen_catalogue_2026": false,
+    "groupe": "Fosteriana",
+    "couleur": "Cream/Pink",
+    "hauteur": "Medium",
+    "floraison": "Early",
+    "note": "fiche en ligne le 2026-10-08 ; Floricode non consulté"
+   },
+   "familles_de_sources": [
+    "commons.wikimedia.org",
+    "www.ashridgetrees.co.uk",
+    "www.jandewitenzonen.com"
+   ]
+  },
+  {
+   "id": "yellow-purissima",
+   "nom_affiche": "Yellow Purissima",
+   "nom_enregistre": "Yellow Purissima",
+   "synonymes": [],
+   "groupe": "Fosteriana (13)",
+   "obtenteur": null,
+   "annee": null,
+   "numeros": {},
+   "couleur_registre": null,
+   "motif": "jaune uni",
+   "sources": [
+    {
+     "role": "nom",
+     "niveau": "N4",
+     "url": "https://commons.wikimedia.org/wiki/Category:Tulipa_%27Yellow_Purissima%27",
+     "consulte": "2026-10-08",
+     "note": "catégorie Commons (1 fichier : jardin botanique de Prague, étiquette)"
+    },
+    {
+     "role": "nom",
+     "niveau": "N4",
+     "url": "https://www.gardenia.net/plant/tulipa-yellow-purissima-fosteriana-tulip",
+     "consulte": "2026-10-08",
+     "note": "base horticole généraliste : sport jaune de Purissima"
+    },
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://www.jandewitenzonen.com/en/assortment/tulip/566/Yellow-Purissima/",
+     "consulte": "2026-10-08",
+     "note": "fiche variété du bulbiculteur-exportateur Jan de Wit en Zonen (Enkhuizen) : groupe Fosteriana ; couleur Yellow ; hauteur Medium ; floraison Early ; encore au catalogue de Jan de Wit en 2026"
+    }
+   ],
+   "photos": [
+    {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/0/0a/Praha%2C_Troja%2C_Botanick%C3%A1_zahrada%2C_Tulip%C3%A1n_Foster%C5%AFv.JPG",
+     "page": "https://commons.wikimedia.org/wiki/File:Praha%2C_Troja%2C_Botanick%C3%A1_zahrada%2C_Tulip%C3%A1n_Foster%C5%AFv.JPG",
+     "niveau": "N4",
+     "auteur": "I would appreciate being notified if you use my work outside Wikimedia.\nMore of my work can be found in my personal gallery.",
+     "licence": "CC BY 3.0",
+     "legende": "File:Praha, Troja, Botanická zahrada, Tulipán Fosterův.JPG",
+     "consulte": "2026-10-08",
+     "vue": "champ, étiquette du jardin botanique",
+     "date_prise": "2010-04-17",
+     "eclairage": null,
+     "balance_blancs": null,
+     "miniature": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0a/Praha%2C_Troja%2C_Botanick%C3%A1_zahrada%2C_Tulip%C3%A1n_Foster%C5%AFv.JPG/960px-Praha%2C_Troja%2C_Botanick%C3%A1_zahrada%2C_Tulip%C3%A1n_Foster%C5%AFv.JPG"
+    },
+    {
+     "url": "https://www.jandewitenzonen.com/img/products/tulip/Yellow_Purissima.jpg",
+     "page": "https://www.jandewitenzonen.com/en/assortment/tulip/566/Yellow-Purissima/",
+     "niveau": "N3",
+     "auteur": "Jan de Wit en Zonen B.V.",
+     "licence": "tous droits réservés ; mesure locale seulement, jamais stockée ni publiée",
+     "legende": "Tulipa 'Yellow Purissima' (fiche variété Jan de Wit en Zonen)",
+     "consulte": "2026-10-08",
+     "vue": "bouton fermé ou gobelet, photo de catalogue (filigrane, fond flou) : couleur approchée",
+     "note": "photo de catalogue : couleur à recouper",
+     "eclairage": null,
+     "balance_blancs": null
+    }
+   ],
+   "mesures": {},
+   "niveau_preuve": "B",
+   "existence_n1_n2": false,
+   "statut": "en production",
+   "doutes": [
+    "une seule photo N4",
+    "existence N1/N2 non établie : base KAVB (formulaire) non interrogée et Floricode non consulté ; à valider au sondage de 10 %"
+   ],
+   "coloris_catalogue": null,
+   "commerce": {
+    "jan_de_wit_en_zonen_catalogue_2026": true,
+    "groupe": "Fosteriana",
+    "couleur": "Yellow",
+    "hauteur": "Medium",
+    "floraison": "Early",
+    "note": "fiche en ligne le 2026-10-08 ; Floricode non consulté"
+   },
+   "familles_de_sources": [
+    "commons.wikimedia.org",
+    "www.gardenia.net",
+    "www.jandewitenzonen.com"
+   ]
+  },
+  {
+   "id": "sweetheart",
+   "nom_affiche": "Sweetheart",
+   "nom_enregistre": "Sweetheart",
+   "synonymes": [],
+   "groupe": "Fosteriana (13) ? (classement par Commons ou PBS)",
+   "obtenteur": null,
+   "annee": null,
+   "numeros": {},
+   "couleur_registre": null,
+   "motif": null,
+   "sources": [
+    {
+     "role": "nom",
+     "niveau": "N4",
+     "url": "https://commons.wikimedia.org/wiki/Category:Tulipa_Fosteriana_Group",
+     "consulte": "2026-10-08",
+     "note": "sous-catégorie du groupe Fosteriana de Commons : Sweetheart"
+    },
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://www.jandewitenzonen.com/en/assortment/tulip/507/Sweetheart/",
+     "consulte": "2026-10-08",
+     "note": "fiche variété du bulbiculteur-exportateur Jan de Wit en Zonen (Enkhuizen) : groupe Fosteriana ; couleur Yellow/Cream ; hauteur Medium ; floraison Early ; encore au catalogue de Jan de Wit en 2026"
+    }
+   ],
+   "photos": [
+    {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/2/21/Tulipa_%27Sweetheart%27_2016-05-02_01.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Tulipa_%27Sweetheart%27_2016-05-02_01.jpg",
+     "niveau": "N4",
+     "auteur": "Agnieszka Kwiecień, Nova",
+     "licence": "CC BY-SA 4.0",
+     "legende": "File:Tulipa 'Sweetheart' 2016-05-02 01.jpg",
+     "consulte": "2026-10-08",
+     "vue": "profil",
+     "date_prise": "2016-05-02",
+     "eclairage": null,
+     "balance_blancs": null,
+     "miniature": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/Tulipa_%27Sweetheart%27_2016-05-02_01.jpg/960px-Tulipa_%27Sweetheart%27_2016-05-02_01.jpg"
+    },
+    {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/0/02/Tulipa_%27Sweetheart%27_2016-05-02_02.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Tulipa_%27Sweetheart%27_2016-05-02_02.jpg",
+     "niveau": "N4",
+     "auteur": "Agnieszka Kwiecień, Nova",
+     "licence": "CC BY-SA 4.0",
+     "legende": "File:Tulipa 'Sweetheart' 2016-05-02 02.jpg",
+     "consulte": "2026-10-08",
+     "vue": "profil",
+     "date_prise": "2016-05-02",
+     "eclairage": null,
+     "balance_blancs": null,
+     "miniature": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/Tulipa_%27Sweetheart%27_2016-05-02_02.jpg/960px-Tulipa_%27Sweetheart%27_2016-05-02_02.jpg"
+    },
+    {
+     "url": "https://www.jandewitenzonen.com/img/products/tulip/Sweetheart.jpg",
+     "page": "https://www.jandewitenzonen.com/en/assortment/tulip/507/Sweetheart/",
+     "niveau": "N3",
+     "auteur": "Jan de Wit en Zonen B.V.",
+     "licence": "tous droits réservés ; mesure locale seulement, jamais stockée ni publiée",
+     "legende": "Tulipa 'Sweetheart' (fiche variété Jan de Wit en Zonen)",
+     "consulte": "2026-10-08",
+     "vue": "bouton fermé ou gobelet, photo de catalogue (filigrane, fond flou) : couleur approchée",
+     "note": "photo de catalogue : couleur à recouper",
+     "eclairage": null,
+     "balance_blancs": null
+    }
+   ],
+   "mesures": {},
+   "niveau_preuve": "B",
+   "existence_n1_n2": false,
+   "statut": "en production",
+   "doutes": [],
+   "coloris_catalogue": null,
+   "commerce": {
+    "jan_de_wit_en_zonen_catalogue_2026": true,
+    "groupe": "Fosteriana",
+    "couleur": "Yellow/Cream",
+    "hauteur": "Medium",
+    "floraison": "Early",
+    "note": "fiche en ligne le 2026-10-08 ; Floricode non consulté"
+   },
+   "familles_de_sources": [
+    "commons.wikimedia.org",
+    "www.jandewitenzonen.com"
+   ]
+  },
+  {
+   "id": "spring-pearl",
+   "nom_affiche": "Spring Pearl",
+   "nom_enregistre": "Spring Pearl",
+   "synonymes": [],
+   "groupe": "Fosteriana (13) ? (classement par Commons ou PBS)",
+   "obtenteur": null,
+   "annee": null,
+   "numeros": {},
+   "couleur_registre": null,
+   "motif": null,
+   "sources": [
+    {
+     "role": "nom",
+     "niveau": "N4",
+     "url": "https://commons.wikimedia.org/wiki/Category:Tulipa_Fosteriana_Group",
+     "consulte": "2026-10-08",
+     "note": "sous-catégorie du groupe Fosteriana de Commons : Spring Pearl"
+    }
+   ],
+   "photos": [
+    {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/b/ba/Tulipa_%27Spring_Pearl%27_2019-04-06_02.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Tulipa_%27Spring_Pearl%27_2019-04-06_02.jpg",
+     "niveau": "N4",
+     "auteur": "Agnieszka Kwiecień, Nova",
+     "licence": "CC BY-SA 4.0",
+     "legende": "File:Tulipa 'Spring Pearl' 2019-04-06 02.jpg",
+     "consulte": "2026-10-08",
+     "vue": "dessus",
+     "date_prise": "2019-04-06",
+     "eclairage": null,
+     "balance_blancs": null,
+     "miniature": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Tulipa_%27Spring_Pearl%27_2019-04-06_02.jpg/960px-Tulipa_%27Spring_Pearl%27_2019-04-06_02.jpg"
+    },
+    {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/f/fc/Tulipa_%27Spring_Pearl%27_2019-04-06_03.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Tulipa_%27Spring_Pearl%27_2019-04-06_03.jpg",
+     "niveau": "N4",
+     "auteur": "Agnieszka Kwiecień, Nova",
+     "licence": "CC BY-SA 4.0",
+     "legende": "File:Tulipa 'Spring Pearl' 2019-04-06 03.jpg",
+     "consulte": "2026-10-08",
+     "vue": "dessus",
+     "date_prise": "2019-04-06",
+     "eclairage": null,
+     "balance_blancs": null,
+     "miniature": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fc/Tulipa_%27Spring_Pearl%27_2019-04-06_03.jpg/960px-Tulipa_%27Spring_Pearl%27_2019-04-06_03.jpg"
+    }
+   ],
+   "mesures": {},
+   "niveau_preuve": "C",
+   "existence_n1_n2": false,
+   "statut": "à confirmer",
+   "doutes": [
+    "7 fichiers Commons d'un seul auteur (rouge à base jaune) ; aucune source N1-N3"
+   ],
+   "coloris_catalogue": null,
+   "familles_de_sources": [
+    "commons.wikimedia.org"
+   ]
+  },
+  {
+   "id": "albert-heijn",
+   "nom_affiche": "Albert Heijn",
+   "nom_enregistre": "Albert Heijn",
+   "synonymes": [],
+   "groupe": "Fosteriana (13) ? (classement par Commons ou PBS)",
+   "obtenteur": null,
+   "annee": null,
+   "numeros": {},
+   "couleur_registre": null,
+   "motif": null,
+   "sources": [
+    {
+     "role": "nom",
+     "niveau": "N4",
+     "url": "https://commons.wikimedia.org/wiki/Category:Tulipa_Fosteriana_Group",
+     "consulte": "2026-10-08",
+     "note": "sous-catégorie du groupe Fosteriana de Commons : Albert Heijn"
+    }
+   ],
+   "photos": [
+    {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/8/88/Tulipa_%27Albert_Heijn%27_2023-04-23_03.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Tulipa_%27Albert_Heijn%27_2023-04-23_03.jpg",
+     "niveau": "N4",
+     "auteur": "Agnieszka Kwiecień, Nova",
+     "licence": "CC BY-SA 4.0",
+     "legende": "File:Tulipa 'Albert Heijn' 2023-04-23 03.jpg",
+     "consulte": "2026-10-08",
+     "vue": "profil",
+     "date_prise": "2023-04-23",
+     "eclairage": null,
+     "balance_blancs": null,
+     "miniature": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/Tulipa_%27Albert_Heijn%27_2023-04-23_03.jpg/960px-Tulipa_%27Albert_Heijn%27_2023-04-23_03.jpg"
+    },
+    {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/b/b7/Tulipa_%27Albert_Heijn%27_2023-04-23_04.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Tulipa_%27Albert_Heijn%27_2023-04-23_04.jpg",
+     "niveau": "N4",
+     "auteur": "Agnieszka Kwiecień, Nova",
+     "licence": "CC BY-SA 4.0",
+     "legende": "File:Tulipa 'Albert Heijn' 2023-04-23 04.jpg",
+     "consulte": "2026-10-08",
+     "vue": "profil",
+     "date_prise": "2023-04-23",
+     "eclairage": null,
+     "balance_blancs": null,
+     "miniature": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b7/Tulipa_%27Albert_Heijn%27_2023-04-23_04.jpg/960px-Tulipa_%27Albert_Heijn%27_2023-04-23_04.jpg"
+    }
+   ],
+   "mesures": {},
+   "niveau_preuve": "C",
+   "existence_n1_n2": false,
+   "statut": "à confirmer",
+   "doutes": [
+    "5 fichiers Commons d'un seul auteur (rose en gobelet) ; aucune source N1-N3 ; classement Fosteriana non confirmé"
+   ],
+   "coloris_catalogue": null,
+   "familles_de_sources": [
+    "commons.wikimedia.org"
+   ]
+  },
+  {
+   "id": "flaming-emperor",
+   "nom_affiche": "Flaming Emperor",
+   "nom_enregistre": "Flaming Emperor",
+   "synonymes": [],
+   "groupe": "Fosteriana (13) ? (classement par Commons ou PBS)",
+   "obtenteur": null,
+   "annee": null,
+   "numeros": {},
+   "couleur_registre": null,
+   "motif": null,
+   "sources": [
+    {
+     "role": "nom",
+     "niveau": "N4",
+     "url": "https://commons.wikimedia.org/wiki/Category:Tulipa_Fosteriana_Group",
+     "consulte": "2026-10-08",
+     "note": "sous-catégorie du groupe Fosteriana de Commons : Flaming Emperor"
+    }
+   ],
+   "photos": [
+    {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/c/cb/Tulipa_%27Flaming_Emperor%27_2018-04-15_01.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Tulipa_%27Flaming_Emperor%27_2018-04-15_01.jpg",
+     "niveau": "N4",
+     "auteur": "Agnieszka Kwiecień, Nova",
+     "licence": "CC BY-SA 4.0",
+     "legende": "File:Tulipa 'Flaming Emperor' 2018-04-15 01.jpg",
+     "consulte": "2026-10-08",
+     "vue": "dessus",
+     "date_prise": "2018-04-15",
+     "eclairage": null,
+     "balance_blancs": null,
+     "miniature": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cb/Tulipa_%27Flaming_Emperor%27_2018-04-15_01.jpg/960px-Tulipa_%27Flaming_Emperor%27_2018-04-15_01.jpg"
+    },
+    {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Tulipa_%27Flaming_Emperor%27_2018-04-15_04.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Tulipa_%27Flaming_Emperor%27_2018-04-15_04.jpg",
+     "niveau": "N4",
+     "auteur": "Agnieszka Kwiecień, Nova",
+     "licence": "CC BY-SA 4.0",
+     "legende": "File:Tulipa 'Flaming Emperor' 2018-04-15 04.jpg",
+     "consulte": "2026-10-08",
+     "vue": "profil",
+     "date_prise": "2018-04-15",
+     "eclairage": null,
+     "balance_blancs": null,
+     "miniature": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/Tulipa_%27Flaming_Emperor%27_2018-04-15_04.jpg/960px-Tulipa_%27Flaming_Emperor%27_2018-04-15_04.jpg"
+    }
+   ],
+   "mesures": {},
+   "niveau_preuve": "C",
+   "existence_n1_n2": false,
+   "statut": "à confirmer",
+   "doutes": [
+    "8 fichiers Commons d'un seul auteur (rose flammé de blanc) ; aucune source N1-N3"
+   ],
+   "coloris_catalogue": null,
+   "familles_de_sources": [
+    "commons.wikimedia.org"
+   ]
+  },
+  {
+   "id": "apricot-emperor",
+   "nom_affiche": "Apricot Emperor",
+   "nom_enregistre": "Apricot Emperor",
+   "synonymes": [],
+   "groupe": "Fosteriana (13) ? (classement par Commons ou PBS)",
+   "obtenteur": null,
+   "annee": null,
+   "numeros": {},
+   "couleur_registre": null,
+   "motif": null,
+   "sources": [
+    {
+     "role": "nom",
+     "niveau": "N4",
+     "url": "https://commons.wikimedia.org/wiki/Category:Tulipa_Fosteriana_Group",
+     "consulte": "2026-10-08",
+     "note": "sous-catégorie du groupe Fosteriana de Commons : Apricot Emperor"
+    },
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://www.jandewitenzonen.com/en/assortment/tulip/1523/Apricot-Emperor/",
+     "consulte": "2026-10-08",
+     "note": "fiche variété du bulbiculteur-exportateur Jan de Wit en Zonen (Enkhuizen) : groupe Fosteriana ; couleur Orange ; hauteur Medium ; floraison Early ; encore au catalogue de Jan de Wit en 2026"
+    }
+   ],
+   "photos": [
+    {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Tulip_Apricot_Emperor.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Tulip_Apricot_Emperor.jpg",
+     "niveau": "N4",
+     "auteur": "Netha Hussain",
+     "licence": "CC0",
+     "legende": "File:Tulip Apricot Emperor.jpg",
+     "consulte": "2026-10-08",
+     "vue": "champ, étiquette",
+     "date_prise": "2022-04-17 18:07:40",
+     "eclairage": null,
+     "balance_blancs": null,
+     "miniature": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/Tulip_Apricot_Emperor.jpg/960px-Tulip_Apricot_Emperor.jpg"
+    },
+    {
+     "url": "https://www.jandewitenzonen.com/img/products/tulip/Apricot_Emperor.jpg",
+     "page": "https://www.jandewitenzonen.com/en/assortment/tulip/1523/Apricot-Emperor/",
+     "niveau": "N3",
+     "auteur": "Jan de Wit en Zonen B.V.",
+     "licence": "tous droits réservés ; mesure locale seulement, jamais stockée ni publiée",
+     "legende": "Tulipa 'Apricot Emperor' (fiche variété Jan de Wit en Zonen)",
+     "consulte": "2026-10-08",
+     "vue": "bouton fermé ou gobelet, photo de catalogue (filigrane, fond flou) : couleur approchée",
+     "note": "photo de catalogue : couleur à recouper",
+     "eclairage": null,
+     "balance_blancs": null
+    }
+   ],
+   "mesures": {},
+   "niveau_preuve": "B",
+   "existence_n1_n2": false,
+   "statut": "en production",
+   "doutes": [],
+   "coloris_catalogue": null,
+   "commerce": {
+    "jan_de_wit_en_zonen_catalogue_2026": true,
+    "groupe": "Fosteriana",
+    "couleur": "Orange",
+    "hauteur": "Medium",
+    "floraison": "Early",
+    "note": "fiche en ligne le 2026-10-08 ; Floricode non consulté"
+   },
+   "familles_de_sources": [
+    "commons.wikimedia.org",
+    "www.jandewitenzonen.com"
+   ]
+  },
+  {
+   "id": "hit-parade",
+   "nom_affiche": "Hit Parade",
+   "nom_enregistre": "Hit Parade",
+   "synonymes": [],
+   "groupe": "Fosteriana (13) ? (classement par Commons ou PBS)",
+   "obtenteur": null,
+   "annee": null,
+   "numeros": {},
+   "couleur_registre": null,
+   "motif": null,
+   "sources": [
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaHybrids",
+     "consulte": "2026-10-08",
+     "note": "Pacific Bulb Society : Div. 13 : Hit Parade"
+    }
+   ],
+   "photos": [
+    {
+     "url": "https://pacificbulbsociety.org/pbswiki/files/Tulipa/Tulipa_Fosteriana_HitParade_JA8.jpg",
+     "page": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaHybrids",
+     "niveau": "N3",
+     "auteur": "Janos Agoston",
+     "licence": "© photographe ; Pacific Bulb Society (reproduction non libre : consultation et mesure seulement)",
+     "legende": "Tulipa Hit Parade, Janos Agoston",
+     "consulte": "2026-10-08",
+     "vue": "profil",
+     "eclairage": null,
+     "balance_blancs": null
+    },
+    {
+     "url": "https://pacificbulbsociety.org/pbswiki/files/Tulipa/Tulipa_Fosteriana_HitParade_JA5.jpg",
+     "page": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaHybrids",
+     "niveau": "N3",
+     "auteur": "Janos Agoston",
+     "licence": "© photographe ; Pacific Bulb Society (reproduction non libre : consultation et mesure seulement)",
+     "legende": "Tulipa Hit Parade, Janos Agoston",
+     "consulte": "2026-10-08",
+     "vue": "dessus",
+     "eclairage": null,
+     "balance_blancs": null
+    },
+    {
+     "url": "https://pacificbulbsociety.org/pbswiki/files/Tulipa/Tulipa_Fosteriana_HitParade_JA1.jpg",
+     "page": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaHybrids",
+     "niveau": "N3",
+     "auteur": "Janos Agoston",
+     "licence": "© photographe ; Pacific Bulb Society (reproduction non libre : consultation et mesure seulement)",
+     "legende": "Tulipa Hit Parade, Janos Agoston",
+     "consulte": "2026-10-08",
+     "vue": "champ",
+     "eclairage": null,
+     "balance_blancs": null
+    }
+   ],
+   "mesures": {},
+   "niveau_preuve": "C",
+   "existence_n1_n2": false,
+   "statut": "à confirmer",
+   "doutes": [
+    "3 photos PBS (Janos Agoston, un seul auteur : jaune à base noire et rouge) ; aucune source N1-N2"
+   ],
+   "coloris_catalogue": null,
+   "familles_de_sources": [
+    "pacificbulbsociety.org"
+   ]
+  },
+  {
+   "id": "golden-purissima",
+   "nom_affiche": "Golden Purissima",
+   "nom_enregistre": "Golden Purissima",
+   "synonymes": [],
+   "groupe": "Fosteriana (13)",
+   "obtenteur": null,
+   "annee": null,
+   "numeros": {},
+   "couleur_registre": null,
+   "motif": null,
+   "sources": [
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://www.jandewitenzonen.com/en/assortment/tulip/240/Golden-Purissima/",
+     "consulte": "2026-10-08",
+     "note": "fiche variété du bulbiculteur-exportateur Jan de Wit en Zonen (Enkhuizen) : groupe Fosteriana ; couleur Yellow ; hauteur Medium ; floraison Early ; encore au catalogue de Jan de Wit en 2026"
+    }
+   ],
+   "photos": [
+    {
+     "url": "https://www.jandewitenzonen.com/img/products/tulip/Golden_Purissima.jpg",
+     "page": "https://www.jandewitenzonen.com/en/assortment/tulip/240/Golden-Purissima/",
+     "niveau": "N3",
+     "auteur": "Jan de Wit en Zonen B.V.",
+     "licence": "tous droits réservés ; mesure locale seulement, jamais stockée ni publiée",
+     "legende": "Tulipa 'Golden Purissima' (fiche variété Jan de Wit en Zonen)",
+     "consulte": "2026-10-08",
+     "vue": "bouton fermé ou gobelet, photo de catalogue (filigrane, fond flou) : couleur approchée",
+     "note": "photo de catalogue : couleur à recouper",
+     "eclairage": null,
+     "balance_blancs": null
+    }
+   ],
+   "mesures": {},
+   "niveau_preuve": "C",
+   "existence_n1_n2": false,
+   "statut": "à confirmer",
+   "doutes": [
+    "une seule source (fiche Jan de Wit) : sport jaune de Purissima ? (lié à 'Yellow Purissima' sur la fiche)",
+    "existence N1/N2 non établie : base KAVB (formulaire) non interrogée et Floricode non consulté ; à valider au sondage de 10 %"
+   ],
+   "coloris_catalogue": null,
+   "commerce": {
+    "jan_de_wit_en_zonen_catalogue_2026": true,
+    "groupe": "Fosteriana",
+    "couleur": "Yellow",
+    "hauteur": "Medium",
+    "floraison": "Early",
+    "note": "fiche en ligne le 2026-10-08 ; Floricode non consulté"
+   },
+   "familles_de_sources": [
+    "www.jandewitenzonen.com"
+   ]
+  },
+  {
+   "id": "red-purissima",
+   "nom_affiche": "Red Purissima",
+   "nom_enregistre": "Red Purissima",
+   "synonymes": [],
+   "groupe": "Fosteriana (13)",
+   "obtenteur": null,
+   "annee": null,
+   "numeros": {},
+   "couleur_registre": null,
+   "motif": null,
+   "sources": [
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://www.jandewitenzonen.com/en/assortment/tulip/1988/Red-Purissima/",
+     "consulte": "2026-10-08",
+     "note": "fiche variété du bulbiculteur-exportateur Jan de Wit en Zonen (Enkhuizen) : groupe Fosteriana ; couleur Red/Pink ; hauteur Medium ; floraison Mid Season ; encore au catalogue de Jan de Wit en 2026"
+    }
+   ],
+   "photos": [
+    {
+     "url": "https://www.jandewitenzonen.com/img/products/tulip/Red_Purissima_R.jpg",
+     "page": "https://www.jandewitenzonen.com/en/assortment/tulip/1988/Red-Purissima/",
+     "niveau": "N3",
+     "auteur": "Jan de Wit en Zonen B.V.",
+     "licence": "tous droits réservés ; mesure locale seulement, jamais stockée ni publiée",
+     "legende": "Tulipa 'Red Purissima' (fiche variété Jan de Wit en Zonen)",
+     "consulte": "2026-10-08",
+     "vue": "bouton fermé ou gobelet, photo de catalogue (filigrane, fond flou) : couleur approchée",
+     "note": "photo de catalogue : couleur à recouper",
+     "eclairage": null,
+     "balance_blancs": null
+    }
+   ],
+   "mesures": {},
+   "niveau_preuve": "C",
+   "existence_n1_n2": false,
+   "statut": "à confirmer",
+   "doutes": [
+    "une seule source (fiche Jan de Wit) : fiche « Red Purissima ® » (marque) : rouge/rose, mi-saison",
+    "existence N1/N2 non établie : base KAVB (formulaire) non interrogée et Floricode non consulté ; à valider au sondage de 10 %"
+   ],
+   "coloris_catalogue": null,
+   "commerce": {
+    "jan_de_wit_en_zonen_catalogue_2026": true,
+    "groupe": "Fosteriana",
+    "couleur": "Red/Pink",
+    "hauteur": "Medium",
+    "floraison": "Mid Season",
+    "note": "fiche en ligne le 2026-10-08 ; Floricode non consulté"
+   },
+   "familles_de_sources": [
+    "www.jandewitenzonen.com"
+   ]
+  },
+  {
+   "id": "yellow-empress",
+   "nom_affiche": "Yellow Empress",
+   "nom_enregistre": "Yellow Empress",
+   "synonymes": [],
+   "groupe": "Fosteriana (13)",
+   "obtenteur": null,
+   "annee": null,
+   "numeros": {},
+   "couleur_registre": null,
+   "motif": null,
+   "sources": [
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://www.jandewitenzonen.com/en/assortment/tulip/560/Yellow-Empress/",
+     "consulte": "2026-10-08",
+     "note": "fiche variété du bulbiculteur-exportateur Jan de Wit en Zonen (Enkhuizen) : groupe Fosteriana ; couleur Yellow ; hauteur Medium ; floraison Early ; marqué « no longer supported » (retiré de son assortiment actuel, fiche encore en ligne)"
+    }
+   ],
+   "photos": [
+    {
+     "url": "https://www.jandewitenzonen.com/img/products/tulip/Yellow_Empress.jpg",
+     "page": "https://www.jandewitenzonen.com/en/assortment/tulip/560/Yellow-Empress/",
+     "niveau": "N3",
+     "auteur": "Jan de Wit en Zonen B.V.",
+     "licence": "tous droits réservés ; mesure locale seulement, jamais stockée ni publiée",
+     "legende": "Tulipa 'Yellow Empress' (fiche variété Jan de Wit en Zonen)",
+     "consulte": "2026-10-08",
+     "vue": "bouton fermé ou gobelet, photo de catalogue (filigrane, fond flou) : couleur approchée",
+     "note": "photo de catalogue : couleur à recouper",
+     "eclairage": null,
+     "balance_blancs": null
+    }
+   ],
+   "mesures": {},
+   "niveau_preuve": "C",
+   "existence_n1_n2": false,
+   "statut": "à confirmer",
+   "doutes": [
+    "une seule source (fiche Jan de Wit) : jaune, retiré de l'assortiment de Jan de Wit",
+    "existence N1/N2 non établie : base KAVB (formulaire) non interrogée et Floricode non consulté ; à valider au sondage de 10 %"
+   ],
+   "coloris_catalogue": null,
+   "commerce": {
+    "jan_de_wit_en_zonen_catalogue_2026": false,
+    "groupe": "Fosteriana",
+    "couleur": "Yellow",
+    "hauteur": "Medium",
+    "floraison": "Early",
+    "note": "fiche en ligne le 2026-10-08 ; Floricode non consulté"
+   },
+   "familles_de_sources": [
+    "www.jandewitenzonen.com"
+   ]
+  },
+  {
+   "id": "purissima-design",
+   "nom_affiche": "Purissima Design",
+   "nom_enregistre": "Purissima Design",
+   "synonymes": [],
+   "groupe": "Fosteriana (13)",
+   "obtenteur": null,
+   "annee": null,
+   "numeros": {},
+   "couleur_registre": null,
+   "motif": null,
+   "sources": [
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://www.jandewitenzonen.com/en/assortment/tulip/425/Purissima-Design/",
+     "consulte": "2026-10-08",
+     "note": "fiche variété du bulbiculteur-exportateur Jan de Wit en Zonen (Enkhuizen) : groupe Fosteriana ; couleur White ; hauteur Medium ; floraison Early ; marqué « no longer supported » (retiré de son assortiment actuel, fiche encore en ligne)"
+    }
+   ],
+   "photos": [
+    {
+     "url": "https://www.jandewitenzonen.com/img/products/tulip/Purissima_Design.jpg",
+     "page": "https://www.jandewitenzonen.com/en/assortment/tulip/425/Purissima-Design/",
+     "niveau": "N3",
+     "auteur": "Jan de Wit en Zonen B.V.",
+     "licence": "tous droits réservés ; mesure locale seulement, jamais stockée ni publiée",
+     "legende": "Tulipa 'Purissima Design' (fiche variété Jan de Wit en Zonen)",
+     "consulte": "2026-10-08",
+     "vue": "bouton fermé ou gobelet, photo de catalogue (filigrane, fond flou) : couleur approchée",
+     "note": "photo de catalogue : couleur à recouper",
+     "eclairage": null,
+     "balance_blancs": null
+    }
+   ],
+   "mesures": {},
+   "niveau_preuve": "C",
+   "existence_n1_n2": false,
+   "statut": "à confirmer",
+   "doutes": [
+    "une seule source (fiche Jan de Wit) : blanc, retiré de l'assortiment ; RHS a une fiche « Tulipa 'Purissima Design' (13) » (375818)",
+    "existence N1/N2 non établie : base KAVB (formulaire) non interrogée et Floricode non consulté ; à valider au sondage de 10 %"
+   ],
+   "coloris_catalogue": null,
+   "commerce": {
+    "jan_de_wit_en_zonen_catalogue_2026": false,
+    "groupe": "Fosteriana",
+    "couleur": "White",
+    "hauteur": "Medium",
+    "floraison": "Early",
+    "note": "fiche en ligne le 2026-10-08 ; Floricode non consulté"
+   },
+   "familles_de_sources": [
+    "www.jandewitenzonen.com"
+   ]
+  },
+  {
+   "id": "flames-mystery",
+   "nom_affiche": "Flames Mystery",
+   "nom_enregistre": "Flames Mystery",
+   "synonymes": [],
+   "groupe": "Fosteriana (13) (classement « Emperor » de Van Engelen)",
+   "obtenteur": null,
+   "annee": null,
+   "numeros": {},
+   "couleur_registre": null,
+   "motif": null,
+   "sources": [
+    {
+     "role": "nom",
+     "niveau": "N4",
+     "url": "https://www.vanengelen.com/flower-bulbs-index/tulips/emperor/tulip-flames-mystery.html",
+     "consulte": "2026-10-08",
+     "note": "Van Engelen (grossiste-détaillant) : fiche « Tulip Flames Mystery » dans la catégorie emperor"
+    }
+   ],
+   "photos": [
+    {
+     "url": "https://www.vanengelen.com/media/catalog/product/cache/ae5a6ea9a5f2aff03513e6f42df29704/t/_/t_flames_mystery_d-w.jpg",
+     "page": "https://www.vanengelen.com/flower-bulbs-index/tulips/emperor/tulip-flames-mystery.html",
+     "niveau": "N4",
+     "auteur": "Van Engelen",
+     "licence": "tous droits réservés ; mesure locale seulement, jamais stockée ni publiée",
+     "legende": "Tulip Flames Mystery (fiche Van Engelen)",
+     "consulte": "2026-10-08",
+     "vue": "photo de catalogue",
+     "note": "couleurs de catalogue souvent saturées : recouper avec une photo N3",
+     "eclairage": null,
+     "balance_blancs": null
+    }
+   ],
+   "mesures": {},
+   "niveau_preuve": "C",
+   "existence_n1_n2": false,
+   "statut": "à confirmer",
+   "doutes": [
+    "une seule source (détaillant) : groupe, nom et couleur non confirmés par N1-N3",
+    "existence N1/N2 non établie : base KAVB (formulaire) non interrogée et Floricode non consulté ; à valider au sondage de 10 %"
+   ],
+   "coloris_catalogue": null,
+   "familles_de_sources": [
+    "www.vanengelen.com"
+   ]
+  },
+  {
+   "id": "flaming-sunrise",
+   "nom_affiche": "Flaming Sunrise",
+   "nom_enregistre": "Flaming Sunrise",
+   "synonymes": [],
+   "groupe": "Fosteriana (13) (classement « Emperor » de Van Engelen)",
+   "obtenteur": null,
+   "annee": null,
+   "numeros": {},
+   "couleur_registre": null,
+   "motif": null,
+   "sources": [
+    {
+     "role": "nom",
+     "niveau": "N4",
+     "url": "https://www.vanengelen.com/flower-bulbs-index/tulips/emperor/tulip-flaming-sunrise.html",
+     "consulte": "2026-10-08",
+     "note": "Van Engelen (grossiste-détaillant) : fiche « Tulip Flaming Sunrise » dans la catégorie emperor"
+    }
+   ],
+   "photos": [
+    {
+     "url": "https://www.vanengelen.com/media/catalog/product/cache/ae5a6ea9a5f2aff03513e6f42df29704/t/_/t_flaming_sunrise_a.jpg",
+     "page": "https://www.vanengelen.com/flower-bulbs-index/tulips/emperor/tulip-flaming-sunrise.html",
+     "niveau": "N4",
+     "auteur": "Van Engelen",
+     "licence": "tous droits réservés ; mesure locale seulement, jamais stockée ni publiée",
+     "legende": "Tulip Flaming Sunrise (fiche Van Engelen)",
+     "consulte": "2026-10-08",
+     "vue": "photo de catalogue",
+     "note": "couleurs de catalogue souvent saturées : recouper avec une photo N3",
+     "eclairage": null,
+     "balance_blancs": null
+    }
+   ],
+   "mesures": {},
+   "niveau_preuve": "C",
+   "existence_n1_n2": false,
+   "statut": "à confirmer",
+   "doutes": [
+    "une seule source (détaillant) : groupe, nom et couleur non confirmés par N1-N3",
+    "existence N1/N2 non établie : base KAVB (formulaire) non interrogée et Floricode non consulté ; à valider au sondage de 10 %"
+   ],
+   "coloris_catalogue": null,
+   "familles_de_sources": [
+    "www.vanengelen.com"
+   ]
+  },
+  {
+   "id": "job-s-memory",
+   "nom_affiche": "Job's Memory",
+   "nom_enregistre": "Job's Memory",
+   "synonymes": [],
+   "groupe": "Fosteriana (13) (classement « Emperor » de Van Engelen)",
+   "obtenteur": null,
+   "annee": null,
+   "numeros": {},
+   "couleur_registre": null,
+   "motif": null,
+   "sources": [
+    {
+     "role": "nom",
+     "niveau": "N4",
+     "url": "https://www.vanengelen.com/flower-bulbs-index/tulips/emperor/tulip-jobs-memory.html",
+     "consulte": "2026-10-08",
+     "note": "Van Engelen (grossiste-détaillant) : fiche « Tulip Job's Memory » dans la catégorie emperor"
+    }
+   ],
+   "photos": [
+    {
+     "url": "https://www.vanengelen.com/media/catalog/product/cache/ae5a6ea9a5f2aff03513e6f42df29704/t/u/tulip-jobsmemory1-th.jpg",
+     "page": "https://www.vanengelen.com/flower-bulbs-index/tulips/emperor/tulip-jobs-memory.html",
+     "niveau": "N4",
+     "auteur": "Van Engelen",
+     "licence": "tous droits réservés ; mesure locale seulement, jamais stockée ni publiée",
+     "legende": "Tulip Job's Memory (fiche Van Engelen)",
+     "consulte": "2026-10-08",
+     "vue": "photo de catalogue",
+     "note": "couleurs de catalogue souvent saturées : recouper avec une photo N3",
+     "eclairage": null,
+     "balance_blancs": null
+    }
+   ],
+   "mesures": {},
+   "niveau_preuve": "C",
+   "existence_n1_n2": false,
+   "statut": "à confirmer",
+   "doutes": [
+    "une seule source (détaillant) : groupe, nom et couleur non confirmés par N1-N3",
+    "existence N1/N2 non établie : base KAVB (formulaire) non interrogée et Floricode non consulté ; à valider au sondage de 10 %"
+   ],
+   "coloris_catalogue": null,
+   "familles_de_sources": [
+    "www.vanengelen.com"
+   ]
+  },
+  {
+   "id": "sweet-valley",
+   "nom_affiche": "Sweet Valley",
+   "nom_enregistre": "Sweet Valley",
+   "synonymes": [],
+   "groupe": "Fosteriana (13) (classement « Emperor » de Van Engelen)",
+   "obtenteur": null,
+   "annee": null,
+   "numeros": {},
+   "couleur_registre": null,
+   "motif": null,
+   "sources": [
+    {
+     "role": "nom",
+     "niveau": "N4",
+     "url": "https://www.vanengelen.com/flower-bulbs-index/tulips/emperor/tulip-sweet-valley.html",
+     "consulte": "2026-10-08",
+     "note": "Van Engelen (grossiste-détaillant) : fiche « Tulip Sweet Valley » dans la catégorie emperor"
+    }
+   ],
+   "photos": [
+    {
+     "url": "https://www.vanengelen.com/media/catalog/product/cache/ae5a6ea9a5f2aff03513e6f42df29704/t/_/t_sweet_valley_a.jpg",
+     "page": "https://www.vanengelen.com/flower-bulbs-index/tulips/emperor/tulip-sweet-valley.html",
+     "niveau": "N4",
+     "auteur": "Van Engelen",
+     "licence": "tous droits réservés ; mesure locale seulement, jamais stockée ni publiée",
+     "legende": "Tulip Sweet Valley (fiche Van Engelen)",
+     "consulte": "2026-10-08",
+     "vue": "photo de catalogue",
+     "note": "couleurs de catalogue souvent saturées : recouper avec une photo N3",
+     "eclairage": null,
+     "balance_blancs": null
+    }
+   ],
+   "mesures": {},
+   "niveau_preuve": "C",
+   "existence_n1_n2": false,
+   "statut": "à confirmer",
+   "doutes": [
+    "une seule source (détaillant) : groupe, nom et couleur non confirmés par N1-N3",
+    "existence N1/N2 non établie : base KAVB (formulaire) non interrogée et Floricode non consulté ; à valider au sondage de 10 %"
+   ],
+   "coloris_catalogue": null,
+   "familles_de_sources": [
+    "www.vanengelen.com"
+   ]
+  }
+ ],
+ "sans_photo": [
+  {
+   "id": "candela-fire",
+   "nom_affiche": "Candela Fire",
+   "nom_enregistre": "Candela Fire",
+   "groupe": "Fosteriana Groep (KAVB)",
+   "edibulb": "77763",
+   "mutant_de": "Candela",
+   "registrant": "Holland BolRoy Markt B.V., Heiloo",
+   "obtenteur_ou_selectionneur": "Holland BolRoy Markt B.V., Heiloo",
+   "periode_registre": "2006-11 à 2007-11",
+   "couleur_registre": "geel 7A met rode 44A blos",
+   "multiflore": null,
+   "source": {
+    "niveau": "N1",
+    "url": "https://assets.kavb.nl/docs/4d05a724-67b1-430c-b4a4-4f9ccbe34ae5.pdf",
+    "document": "Registraties week 44-2006 t/m 45-2007",
+    "consulte": "2026-10-08"
+   },
+   "niveau_preuve": "D",
+   "statut": "à confirmer",
+   "raison": "nom et couleur de registre seuls : aucune photo nommée trouvée",
+   "mesures": {}
+  },
+  {
+   "id": "zizou",
+   "nom_affiche": "Zizou",
+   "nom_enregistre": "Zizou",
+   "groupe": "Fosteriana Groep (KAVB)",
+   "edibulb": "78734",
+   "mutant_de": "Zombie",
+   "registrant": "Fa. W.A.M. Pennings & Zn., Noordwijkerhout",
+   "obtenteur_ou_selectionneur": null,
+   "periode_registre": "2007-11 à 2008-11",
+   "couleur_registre": "geeloranje 14C met donker roserode 45D vlam",
+   "multiflore": null,
+   "source": {
+    "niveau": "N1",
+    "url": "https://assets.kavb.nl/docs/709a8fb3-51c8-47ad-94a7-97c37c7f447f.pdf",
+    "document": "Registraties week 46-2007 t/m 45-2008",
+    "consulte": "2026-10-08"
+   },
+   "niveau_preuve": "D",
+   "statut": "à confirmer",
+   "raison": "nom et couleur de registre seuls : aucune photo nommée trouvée",
+   "mesures": {}
+  },
+  {
+   "id": "kaiserslautern",
+   "nom_affiche": "Kaiserslautern",
+   "nom_enregistre": "Kaiserslautern",
+   "groupe": "Fosteriana Groep (KAVB)",
+   "edibulb": "78075",
+   "mutant_de": null,
+   "registrant": "Fred de Meulder Export B.V., Lisse",
+   "obtenteur_ou_selectionneur": "Remarkable C.V., Lisse",
+   "periode_registre": "2006-11 à 2007-11",
+   "couleur_registre": "rood N30A met rode 43A rand",
+   "multiflore": null,
+   "source": {
+    "niveau": "N1",
+    "url": "https://assets.kavb.nl/docs/4d05a724-67b1-430c-b4a4-4f9ccbe34ae5.pdf",
+    "document": "Registraties week 44-2006 t/m 45-2007",
+    "consulte": "2026-10-08"
+   },
+   "niveau_preuve": "D",
+   "statut": "à confirmer",
+   "raison": "nom et couleur de registre seuls : aucune photo nommée trouvée",
+   "mesures": {}
+  },
+  {
+   "id": "park-lady",
+   "nom_affiche": "Park Lady",
+   "nom_enregistre": "Park Lady",
+   "groupe": "Fosteriana Groep (KAVB)",
+   "edibulb": "83855",
+   "mutant_de": null,
+   "registrant": "Holland BolRoy Markt B.V., Heiloo",
+   "obtenteur_ou_selectionneur": "I.V.T., Wageningen",
+   "periode_registre": "2013",
+   "couleur_registre": "rood N30A",
+   "multiflore": null,
+   "source": {
+    "niveau": "N1",
+    "url": "https://assets.kavb.nl/docs/3fd65dc9-0010-4071-b881-5976ef70410a.pdf",
+    "document": "Registraties 2013 week 1 t/m 52",
+    "consulte": "2026-10-08"
+   },
+   "niveau_preuve": "D",
+   "statut": "à confirmer",
+   "raison": "nom et couleur de registre seuls : aucune photo nommée trouvée",
+   "mesures": {}
+  },
+  {
+   "id": "natura-artis-magistra",
+   "nom_affiche": "Natura Artis Magistra",
+   "nom_enregistre": "Natura Artis Magistra",
+   "groupe": "Fosteriana Groep (KAVB)",
+   "edibulb": "83854",
+   "mutant_de": "Mieke Telkamp",
+   "registrant": "Jac. Uittenbogaard en Zonen B.V., Noordwijkerhout",
+   "obtenteur_ou_selectionneur": "Jac. Uittenbogaard en Zonen B.V., Noordwijkerhout",
+   "periode_registre": "2013",
+   "couleur_registre": "lichtgeel 5D met oranjerode 39B blos",
+   "multiflore": null,
+   "source": {
+    "niveau": "N1",
+    "url": "https://assets.kavb.nl/docs/3fd65dc9-0010-4071-b881-5976ef70410a.pdf",
+    "document": "Registraties 2013 week 1 t/m 52",
+    "consulte": "2026-10-08"
+   },
+   "niveau_preuve": "D",
+   "statut": "à confirmer",
+   "raison": "nom et couleur de registre seuls : aucune photo nommée trouvée",
+   "mesures": {}
+  },
+  {
+   "id": "border-legend",
+   "nom_affiche": "Border Legend",
+   "nom_enregistre": "Border Legend",
+   "groupe": "Fosteriana Groep (KAVB)",
+   "edibulb": "80558",
+   "mutant_de": null,
+   "registrant": "W. van Lierop en Zn. B.V., Anna Paulowna",
+   "obtenteur_ou_selectionneur": "I.V.T., Wageningen",
+   "periode_registre": "2008-11 à 2009-11",
+   "couleur_registre": "wit 155C met vlam donker roserood 45D",
+   "multiflore": null,
+   "source": {
+    "niveau": "N1",
+    "url": "https://assets.kavb.nl/docs/7d64fa67-6e25-466b-856d-6177ee674386.pdf",
+    "document": "Registraties week 46-2008 t/m 45-2009",
+    "consulte": "2026-10-08"
+   },
+   "niveau_preuve": "D",
+   "statut": "à confirmer",
+   "raison": "nom et couleur de registre seuls : aucune photo nommée trouvée",
+   "mesures": {}
+  },
+  {
+   "id": "partitura",
+   "nom_affiche": "Partitura",
+   "nom_enregistre": "Partitura",
+   "groupe": "Fosteriana Groep (KAVB)",
+   "edibulb": "80598",
+   "mutant_de": "Salut",
+   "registrant": "Fa. D. van den Berg en Zoon, Breezand",
+   "obtenteur_ou_selectionneur": "Fa. D. van den Berg en Zoon, Breezand",
+   "periode_registre": "2008-11 à 2009-11",
+   "couleur_registre": "lichtgeel 12C met lichtgele 4D vlam",
+   "multiflore": null,
+   "source": {
+    "niveau": "N1",
+    "url": "https://assets.kavb.nl/docs/7d64fa67-6e25-466b-856d-6177ee674386.pdf",
+    "document": "Registraties week 46-2008 t/m 45-2009",
+    "consulte": "2026-10-08"
+   },
+   "niveau_preuve": "D",
+   "statut": "à confirmer",
+   "raison": "nom et couleur de registre seuls : aucune photo nommée trouvée",
+   "mesures": {}
+  },
+  {
+   "id": "madame-gless",
+   "nom_affiche": "Madame Gless",
+   "nom_enregistre": "Madame Gless",
+   "groupe": "Fosteriana Groep (KAVB)",
+   "edibulb": "74504",
+   "mutant_de": null,
+   "registrant": "Karl-Heinz Gless, Eggersdorf, Duitsland",
+   "obtenteur_ou_selectionneur": "Kar-Heinz Gless, Eggersdorf, Duitsland",
+   "periode_registre": "2004-07 à 2005-06",
+   "couleur_registre": "ca. donker paarsrood 53B",
+   "multiflore": null,
+   "source": {
+    "niveau": "N1",
+    "url": "https://assets.kavb.nl/docs/c00abd89-8997-4099-b0cf-3bbfc0cfafc5.pdf",
+    "document": "Registraties week 31-2004 t/m 26-2005",
+    "consulte": "2026-10-08"
+   },
+   "niveau_preuve": "D",
+   "statut": "à confirmer",
+   "raison": "nom et couleur de registre seuls : aucune photo nommée trouvée",
+   "mesures": {}
+  },
+  {
+   "id": "poco-loco",
+   "nom_affiche": "Poco Loco",
+   "nom_enregistre": "Poco Loco",
+   "groupe": "Fosteriana Groep (KAVB)",
+   "edibulb": "73993",
+   "mutant_de": null,
+   "registrant": "Fa. Voordenhout, De Lier",
+   "obtenteur_ou_selectionneur": "IVT, Wageningen",
+   "periode_registre": "2004-07 à 2005-06",
+   "couleur_registre": "paarsrood 58B en lichtgeel 10C",
+   "multiflore": null,
+   "source": {
+    "niveau": "N1",
+    "url": "https://assets.kavb.nl/docs/c00abd89-8997-4099-b0cf-3bbfc0cfafc5.pdf",
+    "document": "Registraties week 31-2004 t/m 26-2005",
+    "consulte": "2026-10-08"
+   },
+   "niveau_preuve": "D",
+   "statut": "à confirmer",
+   "raison": "nom et couleur de registre seuls : aucune photo nommée trouvée",
+   "mesures": {}
+  },
+  {
+   "id": "virilemon",
+   "nom_affiche": "Virilemon",
+   "nom_enregistre": "Virilemon",
+   "groupe": "Fosteriana Groep (KAVB) ; aussi Viridiflora Groep",
+   "edibulb": "77666",
+   "mutant_de": null,
+   "registrant": "Holland BolRoy Markt B.V., Heiloo",
+   "obtenteur_ou_selectionneur": "J.H. Veldhuyzen van Zanten, Hillegom",
+   "periode_registre": "2006-11 à 2007-11",
+   "couleur_registre": "geel 8A, over midden bruingroen 146B. Ook Viridiflora Groep",
+   "multiflore": null,
+   "source": {
+    "niveau": "N1",
+    "url": "https://assets.kavb.nl/docs/4d05a724-67b1-430c-b4a4-4f9ccbe34ae5.pdf",
+    "document": "Registraties week 44-2006 t/m 45-2007",
+    "consulte": "2026-10-08"
+   },
+   "niveau_preuve": "D",
+   "statut": "à confirmer",
+   "raison": "nom et couleur de registre seuls : aucune photo nommée trouvée",
+   "mesures": {}
+  },
+  {
+   "id": "amu-daria",
+   "nom_affiche": "Amu Daria",
+   "nom_enregistre": "Amu Daria",
+   "groupe": "Fosteriana Groep (KAVB)",
+   "edibulb": "82888",
+   "mutant_de": null,
+   "registrant": "Apeldoorn Bloembollen VOF, Egmond Binnen",
+   "obtenteur_ou_selectionneur": "I.V.T., Wageningen",
+   "periode_registre": "2012",
+   "couleur_registre": "oranjerood 30A, rood N30A gerand. Blad groen met roodpaarse strepen",
+   "multiflore": null,
+   "source": {
+    "niveau": "N1",
+    "url": "https://assets.kavb.nl/docs/595aedc7-bad3-44ae-bf35-7c0235ac23b8.pdf",
+    "document": "Registraties 2012 week 1 t/m 52",
+    "consulte": "2026-10-08"
+   },
+   "niveau_preuve": "D",
+   "statut": "à confirmer",
+   "raison": "nom et couleur de registre seuls : aucune photo nommée trouvée",
+   "mesures": {}
+  }
+ ],
+ "ecartes": [
+  {
+   "id": "orange-breeze",
+   "nom_affiche": "Orange Breeze",
+   "raison": "ÉCARTÉ comme référence de couleur : les photos Commons sont légendées « flaming, virus infected » (flammes dues au virus de la panachure)"
+  },
+  {
+   "id": "white-valley",
+   "nom_affiche": "White Valley (nom commercial Exotic Emperor)",
+   "raison": "classé « Double early » (blanc/vert, grand) par la fiche Jan de Wit en Zonen et fleur double sur les photos Commons : relève de tulipe-double, pas de tulipe-fosteriana. N1 : liste KAVB 2006-07, « Tulipa 'White Valley' edibulbcode 68041 als handelsnaam Exotic Emperor »",
+   "sources": [
+    {
+     "role": "nom",
+     "niveau": "N1",
+     "url": "https://assets.kavb.nl/docs/4d05a724-67b1-430c-b4a4-4f9ccbe34ae5.pdf",
+     "consulte": "2026-10-08",
+     "note": "KAVB, liste « Registraties week 44-2006 t/m 45-2007 » : « Tulipa 'White Valley' edibulbcode 68041 als handelsnaam Exotic Emperor » : 'Exotic Emperor' est un NOM COMMERCIAL, le nom enregistré est 'White Valley'"
+    },
+    {
+     "role": "nom",
+     "niveau": "N4",
+     "url": "https://commons.wikimedia.org/wiki/Category:Tulipa_%27Exotic_Emperor%27",
+     "consulte": "2026-10-08",
+     "note": "catégorie Commons Tulipa 'Exotic Emperor' (6 fichiers)"
+    },
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://www.jandewitenzonen.com/en/assortment/tulip/1000/White-Valley/",
+     "consulte": "2026-10-08",
+     "note": "fiche variété du bulbiculteur-exportateur Jan de Wit en Zonen (Enkhuizen) : groupe Double early ; couleur White/Green ; hauteur Tall ; floraison Early ; encore au catalogue de Jan de Wit en 2026"
+    }
+   ],
+   "photos": [
+    {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Tulipa_%27Exotic_Emperor%27_2017_01.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Tulipa_%27Exotic_Emperor%27_2017_01.jpg",
+     "niveau": "N4",
+     "auteur": "Retired electrician",
+     "licence": "CC0",
+     "legende": "File:Tulipa 'Exotic Emperor' 2017 01.jpg",
+     "consulte": "2026-10-08",
+     "vue": "dessus, fleur pleine",
+     "date_prise": "2017-05",
+     "eclairage": null,
+     "balance_blancs": null,
+     "miniature": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/Tulipa_%27Exotic_Emperor%27_2017_01.jpg/960px-Tulipa_%27Exotic_Emperor%27_2017_01.jpg"
+    },
+    {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/3/37/Tulipa_%27Exotic_Emperor%27_2017_03.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Tulipa_%27Exotic_Emperor%27_2017_03.jpg",
+     "niveau": "N4",
+     "auteur": "Retired electrician",
+     "licence": "CC0",
+     "legende": "File:Tulipa 'Exotic Emperor' 2017 03.jpg",
+     "consulte": "2026-10-08",
+     "vue": "rang",
+     "date_prise": "2017-05",
+     "eclairage": null,
+     "balance_blancs": null,
+     "miniature": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/37/Tulipa_%27Exotic_Emperor%27_2017_03.jpg/960px-Tulipa_%27Exotic_Emperor%27_2017_03.jpg"
+    },
+    {
+     "url": "https://www.jandewitenzonen.com/img/products/tulip/White_Valley.jpg",
+     "page": "https://www.jandewitenzonen.com/en/assortment/tulip/1000/White-Valley/",
+     "niveau": "N3",
+     "auteur": "Jan de Wit en Zonen B.V.",
+     "licence": "tous droits réservés ; mesure locale seulement, jamais stockée ni publiée",
+     "legende": "Tulipa 'White Valley' (fiche variété Jan de Wit en Zonen)",
+     "consulte": "2026-10-08",
+     "vue": "bouton fermé ou gobelet, photo de catalogue (filigrane, fond flou) : couleur approchée",
+     "note": "photo de catalogue : couleur à recouper",
+     "eclairage": null,
+     "balance_blancs": null
+    }
+   ]
+  }
+ ],
+ "couverture": {
+  "cultivars_retenus_avec_photo": 26,
+  "niveau_A": 0,
+  "niveau_B": 12,
+  "niveau_C": 14,
+  "niveau_D": 0,
+  "prouves_A_ou_B": 12,
+  "sans_photo": 11,
+  "ecartes": 2,
+  "au_catalogue": 0,
+  "existence_N1_lue": 15,
+  "remarque": "« enregistrés » du KAVB : total inconnu (base non interrogée). Les nombres ci-dessus portent sur ce qui a été recensé dans les sources consultées"
+ },
+ "vues_deja_photographiees": {
+  "face (dessus, intérieur)": 20,
+  "trois-quarts": 0,
+  "profil": 15,
+  "dos (revers, extérieur)": 1,
+  "bouton": 20,
+  "fané ou déclin": 0,
+  "feuilles": 2,
+  "tige, pied": 1,
+  "plante entière ou massif": 15
+ },
+ "vues_manquantes": [
+  "trois-quarts",
+  "fané ou déclin",
+  "dessous et attache des feuilles",
+  "épaisseur et surface de la tige",
+  "stades intermédiaires (goblet, coupe, déclin)"
+ ],
+ "vues_note": "comptage des photos retenues par mot-clé de la rubrique « vue » ; les photos de forme par angle et par stade sont à compléter par fleur-refs (STANDARD-SOURCES, exhaustivité)"
+}

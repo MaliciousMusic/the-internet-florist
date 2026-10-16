@@ -1,0 +1,3898 @@
+{
+ "sid": "forsythia",
+ "genre": "Forsythia",
+ "consulte": "2026-10-09",
+ "agent": "fleur-recensement (Sonnet), temps 2 et 3 : fusion par coloris distinct (lot de représentants), sondage",
+ "portee": "Forsythia × intermedia seulement, branche fleurie coupée ; les autres forsythias (suspensa, viridissima, ovata, europaea, koreana…) sont des sortes à part ; genre non KAVB ; coloris du catalogue : 0 Spectabilis, 1 Lynwood Variety (SKU du bouquet)",
+ "sorte": {
+  "nom_botanique": "Forsythia × intermedia Zabel (hybride F. suspensa × F. viridissima), genre Forsythia Vahl (IPNI 331614-2) ; nom accepté POWO non rouvert dans ce chantier",
+  "groupe_autorite": "aucun groupe horticole défini : l'hybride se subdivise en cultivars isolés ; ICRA du genre : APGA (American Public Gardens Association), l'Arnold Arboretum étant registraire de 1963 à 2003 ; aucun registre consultable en ligne",
+  "melange": "La sorte mêle des formes à 4 lobes simples qui diffèrent par la largeur des lobes et la taille : Spectabilis (pointes recourbées et tordues, pin-eyed), Lynwood Variety (lobes larges, très ouverts, thrum-eyed), tétraploïdes à larges lobes (Beatrix Farrand, Arnold Giant), Spring Glory (thrum-eyed, ~4 cm). Les cultivars à feuillage panaché ou jaune et les formes naines sont écartés de la sorte.",
+  "autorite_de_nom_de_remplacement": "ICRA/APGA sans registre en ligne -> à défaut, par ordre de solidité : (1) plan de collection Forsythia de l'Arnold Arboretum 2018 (publicgardens.org, PDF lu), N3 : dates et origines des cultivars de l'Arnold ; (2) fiches RHS Plant Finder, Missouri Botanical Garden, Cornell : noms, synonymes, couleur (N3) ; (3) Trees and Shrubs Online (TSO) : synonymes, historique, clés (N3) ; (4) Kolster BV, exportateur de branches coupées (N2) : existence des produits de fleur coupée. Forme du nom d'affichage : celle de la RHS et du MBG.",
+  "nom_accepte": "Forsythia × intermedia Zabel (hybride)",
+  "groupe": "sans groupe horticole ; cultivars de F. × intermedia",
+  "coloris_au_catalogue": "0 spectabilis (Jaune d'or (Spectabilis)), 1 lynwood-variety (Jaune vif (Lynwood Variety), SKU du bouquet 3213, 2 tiges ; ancien nom affiché Lynwood Gold, synonyme)"
+ },
+ "limites": [
+  "Pas de registre en ligne : l'ICRA du genre est l'APGA (l'Arnold Arboretum registraire de 1963 à 2003), sans base consultable ; aucun niveau A n'est donc atteignable. Les noms reposent sur des sources N3 (plan de collection de l'Arnold Arboretum 2018, TSO, RHS, MBG, Cornell).",
+  "Floricode (codes et photos des produits vendus à Royal FloraHolland) demande un compte professionnel : non consulté. Seul Kolster BV (exportateur de branches coupées, N2) documente l'assortiment de fleur coupée : Spectabilis (photo mesurée) et Golden Fantasy (une photo, C).",
+  "Aucune photo N2 sauf Kolster pour Spectabilis (et Golden Fantasy). Les autres coloris reposent sur des photos N3 (RHS, MBG, TSO, vendeurs) et N4 (Commons).",
+  "GBIF nomme « Forsythia × intermedia Zabel » toutes les accessions vivantes du RBGE (relu dans gbif_occ_sel.json : 19855002, 19781651, 19230050, 19687554, 19901357, 19901416, 19580762) : ces photos ne prouvent donc pas le nom de cultivar de leur étiquette. Écartées pour Beatrix Farrand et Spring Glory ; gardées sous réserve pour Lynwood (voir Q2).",
+  "WebSearch épuisé : pages ciblées seulement (WebFetch, extraction courte) ; Plantago : seule la page 1/3 est lisible par script. Wayside Gardens (introducteur de Spring Glory en 1942) est protégé par un défi anti-robot, non contourné. UPOV PLUTO / CPVO non consultés (compte ou accès fermé).",
+  "Registres des marques (TMview, EUIPO, INPI, WIPO) non consultés par ce chantier : tous les ® et ™ restent « vus chez un vendeur » ou « à vérifier » ; aucune marque n'est donc prouvée au sens du standard.",
+  "Aucune photo de fané, de dos de fleur ni de branche coupée en vase ; les photos GBIF d'herbier sont écartées (couleurs altérées). Commons répond 429 en rafale : 8 photos Commons (Lynwood 7 à 11, Spectabilis 15 à 17) listées mais non mesurées.",
+  "Mesures sur plantes de jardin au soleil ou sur fond sombre, sans repère neutre : aucune correction de balance des blancs ; la clarté d'un coloris dépend de l'éclairage (dE 2 à 19 pour Lynwood) et ne sert pas de critère."
+ ],
+ "regles": {
+  "niveau_final": "min(niveau du nom, niveau de la mesure de couleur) ; B si deux photos nommées de sites indépendants concordent (teinte à 10 degrés en LCh, chroma du même ordre, clarté libre) ; un niveau C reste C ; A impossible (pas de registre N1 en ligne ni, sauf Kolster, de photo N2)",
+  "entree_en_boutique": "A et B seulement ; un coloris C ou D porte en_boutique:false. Un coloris du catalogue garde son numéro de SKU (rien n'est renuméroté). prov:1 marque un B dont l'existence N1/N2 reste à trancher par l'orchestrateur.",
+  "noms_affiches": "le nom enregistré, jamais un nom de vente ni une marque ; les synonymes et les noms de vente restent dans ce json (Lynwood Gold est un synonyme de Lynwood Variety : le SKU est le même).",
+  "ecartes": "Show Off, Show Off Starlet, Sugar Baby, Flying Machine, Gold Tide (® vus chez les vendeurs) et les noms de vente Week-End, Marée d'Or, Mêlée d'Or, Magical Gold et autres ne sont jamais des représentants ni des noms affichés."
+ },
+ "points_reperes": {
+  "floraison": "fleurs avant les feuilles : bois nu, jeunes feuilles seulement après (TSO, MBG, RHS pour le genre)",
+  "corolle": "jaune, tube court en cloche, 4 lobes plus longs que le tube et se chevauchant en bouton (parfois 5 ou 6) ; calice vert à 4 lobes persistant",
+  "heterostylie": {
+   "thrum_eyed (anthères à l'entrée)": "Lynwood Variety, Week-End, Spring Glory, Primulina, Nimbus, clone britannique de Beatrix Farrand",
+   "pin_eyed (stigmate à l'entrée)": "Spectabilis, Vitellina, Densiflora, Courtadic"
+  },
+  "fleurs_par_noeud": "1 à 3 (catalogue) ; 1 à 6 en grappe axillaire (TSO, MBG) ; Beatrix Farrand : 1 bouton et 2 fleurs ouvertes sur un même noeud à l'oeil (±1) ; à trancher sur photo",
+  "rameau": "creux entre les noeuds, plein au noeud (clé TSO 1b, hybrides de suspensa) ; la moelle chambrée du brief ne vaut que pour viridissima et voisines, à confirmer en coupe ; tige souvent à quatre angles (non confirmée sur photo), lenticelles saillantes ; boutons en paires opposées, gros, aux écailles nombreuses",
+  "lynwood_contre_spectabilis": "Lynwood : lobes plus larges et moins enroulés, fleurs très ouvertes ; Spectabilis : pointes recourbées et tordues",
+  "couleurs_mesurees": {
+   "lynwood-variety": "#ceaf29 (L 72,1 ; C 66,9 ; h 91,4)",
+   "spectabilis": "#e8c733 (L 80,9 ; C 72,6 ; h 92,4)",
+   "beatrix-farrand": "#c1b33a (L 72,3 ; C 61,4 ; h 98,3)",
+   "spring-glory": "#c5b13c (L 72,0 ; C 60,1 ; h 95,6)",
+   "distances_dE76": {
+    "lynwood-spectabilis": 10.6,
+    "lynwood-beatrix": 9.5,
+    "lynwood-spring-glory": 8.2,
+    "spectabilis-beatrix": 15.7,
+    "spectabilis-spring-glory": 15.8,
+    "beatrix-spring-glory": 3.2
+   }
+  }
+ },
+ "coloris": [
+  {
+   "id": "lynwood-variety",
+   "ordre": 1,
+   "rang": "bouquet",
+   "catalogue_n": 1,
+   "late": 0,
+   "nom_affiche": "Jaune vif (Lynwood Variety)",
+   "nom_affiche_catalogue_avant": "Jaune vif (Lynwood Gold)",
+   "nom_enregistre": "Lynwood Variety",
+   "synonymes": [
+    "Lynwood Gold (nom nord-américain : RHS, MBG, Cornell, TSO)",
+    "Lynwood (RHS, TSO, Cornell)",
+    "Splendens (vendu en 1946, renommé en 1948 : TSO)",
+    "Gloriosa (listé par TSO, qui doute qu'il s'agisse du même clone : non retenu)"
+   ],
+   "noms_de_vente_jamais_affiches": [],
+   "obtenteur": "Nora Adair, Cookstown (Irlande du Nord) selon TSO ; ni RHS ni MBG ne nomment d'obtenteur (MBG : trouvé dans un jardin appelé Lynwood)",
+   "annee": "trouvé en 1935 (MBG, seule source datée rouverte au sondage) ; vendu 1946 sous Splendens, renommé 1948 (TSO)",
+   "origine": "mutant de bourgeon naturel de F. × intermedia 'Spectabilis' (TSO, MBG)",
+   "representant": "lynwood-variety",
+   "sosies": [
+    "week-end"
+   ],
+   "sosies_niveaux": {
+    "week-end": "D (écarté : nom de vente ; mutation de Lynwood selon RHS/Plantago)"
+   },
+   "description": {
+    "couleur": "jaune vif, plus clair et moins cuivré que Spectabilis selon TSO (RHS : « bright yellow » ; MBG : jaune ; Cornell : « bright yellow ») ; mesure : corps #ceaf29 (L 72,1 ; C 66,9 ; h 91,4), médiane de 8 photos",
+    "forme": "4 lobes plus larges et moins enroulés que Spectabilis, fleurs très ouvertes (Cornell : « open very wide »), jusqu'à ~4,4 cm (TSO) ou 1 3/4 po (MBG) ; thrum-eyed (anthères à l'entrée de la gorge)",
+    "port": "dressé-arqué, buissonnant, 1,5 à 2,5 m (RHS), 6 à 9 pieds (MBG) ; très florifère, fleurs bien réparties le long de la branche (Cornell) ; AGM RHS",
+    "fleurs_par_noeud": "1 à 3 à l'aisselle (catalogue) ; 1 à 6 groupées selon TSO/MBG : à trancher sur photo (non compté)",
+    "floraison": "avant les feuilles (RHS pour le genre, MBG) ; début du printemps (RHS), mars à avril (MBG)"
+   },
+   "conflits": [
+    "Lynwood Gold est un synonyme (RHS, MBG, Cornell, TSO) : le jeu affiche le nom enregistré 'Lynwood Variety', le SKU ne change pas.",
+    "Obtenteur et découverte : TSO donne un bud-sport sur un Spectabilis de Nora Adair (Cookstown) ; MBG dit « trouvé en 1935 dans un jardin appelé Lynwood » sans nom d'obtenteur. La page MBG écrit une fois « Linwood Variety » dans son texte (titre : Lynwood Variety).",
+    "Gloriosa : synonyme listé par TSO, mais le « Gloriosa » vendu en 1956 par Brimfield Gardens aurait pu être un autre clone : non retenu.",
+    "TSO : Lynwood plus clair et moins cuivré que Spectabilis ; la mesure donne Spectabilis plus clair (L 80,9 contre 72,1) à 1 degré de teinte : l'éclairage (Kolster en studio) domine, voir Q3.",
+    "RBGE acc. 19901357 : GBIF la nomme « Forsythia × intermedia Zabel », comme toutes les accessions RBGE ; la 2e passe l'avait gardée dans la médiane faute de contradiction, voir Q2."
+   ],
+   "limite": null,
+   "mesures": {
+    "fichier": "refcache/forsythia/coloris-mesures.json et coloris.md (la 2e passe prévaut sur la 1re)",
+    "zones": {
+     "corps": {
+      "hex": "#ceaf29",
+      "L": 72.1,
+      "C": 66.9,
+      "h": 91.4,
+      "methode": "médiane Lab des photos retenues ; par photo, médiane des pixels de pétales éclairés (L 60-97, C >= 22, teinte 55-105 deg, blanc clippé exclu) ; écart CIE76",
+      "n_photos_retenues": 8,
+      "n_concordantes": 8,
+      "sans_rbge": {
+       "hex": "#d6b629",
+       "L": 74.8,
+       "C": 69.6,
+       "h": 91.6,
+       "statut": "sensibilité sans les 3 photos RBGE : même teinte, dE ~4 ; non retenu par la 2e passe faute de contradiction ; recommandé si la règle « Zabel » est appliquée partout (Q2)"
+      }
+     },
+     "base": {
+      "valeur": "non mesuré",
+      "hex_indicatifs": []
+     },
+     "pointe": {
+      "valeur": "non mesuré",
+      "hex_indicatifs": []
+     },
+     "bouton": {
+      "valeur": "jaune-vert indicatif #a39d43 (L 63,5 ; C 47,6 ; h 101,6) : boîte sur la photo RHS vaem11640, bouton et bord de fleur mêlés (approché)",
+      "hex_indicatifs": [
+       "#a39d43"
+      ]
+     },
+     "etamines": {
+      "valeur": "non mesuré",
+      "hex_indicatifs": []
+     },
+     "revers": {
+      "valeur": "non mesuré",
+      "hex_indicatifs": []
+     },
+     "calice": {
+      "valeur": "non mesuré",
+      "hex_indicatifs": []
+     },
+     "vieux_bois": {
+      "valeur": "rameau rouge-brun #4d1a0e à #7b4e36 et écailles #cbb090, #a68863 (brief.md, photo 136 étiquetée Lynwood ; pal, dominantes, non propre au coloris)",
+      "hex_indicatifs": [
+       "#4d1a0e",
+       "#7b4e36",
+       "#cbb090",
+       "#a68863"
+      ]
+     },
+     "jeunes_feuilles": {
+      "valeur": "non mesuré",
+      "hex_indicatifs": []
+     }
+    },
+    "eclairage": "RHS : arbuste au soleil, éclairage non noté ; RBGE : plein soleil sur ciel bleu, gros plan sur fond sombre ; MBG et Brighter Blooms : non noté",
+    "balance_des_blancs": "aucune : aucun repère neutre fiable dans les photos",
+    "photos": [
+     {
+      "cle": "lynwood-variety#0",
+      "role": "retenue",
+      "niveau_source": "N3",
+      "source": "RHS Plant Finder 'Lynwood Variety' (credit RHS)",
+      "page": "https://www.rhs.org.uk/plants/214902/forsythia-x-intermedia-lynwood-variety/details",
+      "url_image": "https://apps.rhs.org.uk/plantselectorimages/detail/vaem11640.jpg",
+      "auteur_licence": "(c) RHS / visionspictures.com, vue seule, non stockee",
+      "note": "RHS Plant Finder, 3 photos d'une même fiche = 1 seul site",
+      "L": 77.7,
+      "C": 77.5,
+      "h": 90.9,
+      "hex": "#e2bd11",
+      "eclairage": "soleil (arbuste), non noté",
+      "dE": 12.0,
+      "dh": 0.5,
+      "dC": 10.6,
+      "ratio_chroma": 1.16
+     },
+     {
+      "cle": "lynwood-variety#1",
+      "role": "retenue",
+      "niveau_source": "N3",
+      "source": "RHS Plant Finder 'Lynwood Variety' (credit visionspictures.com)",
+      "page": "https://www.rhs.org.uk/plants/214902/forsythia-x-intermedia-lynwood-variety/details",
+      "url_image": "https://apps.rhs.org.uk/plantselectorimages/detail/WSY0000348_802.jpg",
+      "auteur_licence": "(c) RHS / visionspictures.com, vue seule, non stockee",
+      "note": "même fiche RHS",
+      "L": 74.8,
+      "C": 69.7,
+      "h": 93.1,
+      "hex": "#d3b728",
+      "eclairage": "non noté",
+      "dE": 4.4,
+      "dh": 1.7,
+      "dC": 2.8,
+      "ratio_chroma": 1.04
+     },
+     {
+      "cle": "lynwood-variety#2",
+      "role": "retenue",
+      "niveau_source": "N3",
+      "source": "RHS Plant Finder 'Lynwood Variety' (credit visionspictures.com)",
+      "page": "https://www.rhs.org.uk/plants/214902/forsythia-x-intermedia-lynwood-variety/details",
+      "url_image": "https://apps.rhs.org.uk/plantselectorimages/detail/visi01936.jpg",
+      "auteur_licence": "(c) RHS / visionspictures.com, vue seule, non stockee",
+      "note": "même fiche RHS",
+      "L": 70.9,
+      "C": 68.1,
+      "h": 91.1,
+      "hex": "#cbab21",
+      "eclairage": "non noté",
+      "dE": 1.7,
+      "dh": 0.3,
+      "dC": 1.2,
+      "ratio_chroma": 1.02
+     },
+     {
+      "cle": "lynwood-variety#3",
+      "role": "retenue",
+      "niveau_source": "N3",
+      "source": "Missouri Botanical Garden Plant Finder, 'Lynwood Variety'",
+      "page": "https://plantfinder.mobot.org/PlantFinderDetails.aspx?taxonid=269583",
+      "url_image": "https://images.mobot.org/PlantRecordsVol2/prod/full/00019000/19822_D769-0507091taa.jpg",
+      "auteur_licence": "(c) MBG, vue seule, non stockee",
+      "note": "MBG : chroma basse (C 48), clarté haute : éclairage",
+      "L": 73.2,
+      "C": 48.3,
+      "h": 93.6,
+      "hex": "#cab359",
+      "eclairage": "non noté",
+      "dE": 18.8,
+      "dh": 2.2,
+      "dC": -18.6,
+      "ratio_chroma": 0.72
+     },
+     {
+      "cle": "lynwood-variety#4",
+      "role": "retenue_sous_reserve",
+      "niveau_source": "N3",
+      "source": "Royal Botanic Garden Edinburgh, collection vivante, acc. 19901357 'Lynwood' (photo 26, Charlotte McDonald)",
+      "page": "https://www.gbif.org/occurrence/574705795",
+      "url_image": "http://repo.rbge.org.uk/image_server.php?kind=1500&path_base64=L2l0ZW1faW1hZ2VzL2FjY2Vzc2lvbnMvMTkvOTAvMTMvNTcvUGhvdG9fNTM3MDkxYmJjMjhkNi5qcGc=",
+      "auteur_licence": "CC BY-NC 3.0, (c) RBGE",
+      "note": "buisson en fleurs sur ciel bleu, jaune saturee: eclairage plein soleil ; RBGE acc. 19901357 : GBIF nomme l'accession « Forsythia × intermedia Zabel » (relu au sondage) : ne prouve pas le nom ; gardée dans la médiane de la 2e passe, voir corps.sans_rbge",
+      "L": 70.0,
+      "C": 65.1,
+      "h": 90.8,
+      "hex": "#c8a928",
+      "eclairage": "non noté",
+      "dE": 2.9,
+      "dh": 0.6,
+      "dC": -1.8,
+      "ratio_chroma": 0.97
+     },
+     {
+      "cle": "lynwood-variety#5",
+      "role": "retenue_sous_reserve",
+      "niveau_source": "N3",
+      "source": "Royal Botanic Garden Edinburgh, collection vivante, acc. 19901357 'Lynwood' (photo 28, Charlotte McDonald)",
+      "page": "https://www.gbif.org/occurrence/574705795",
+      "url_image": "http://repo.rbge.org.uk/image_server.php?kind=1500&path_base64=L2l0ZW1faW1hZ2VzL2FjY2Vzc2lvbnMvMTkvOTAvMTMvNTcvUGhvdG9fNTM3MDkxYzA3NGUxYi5qcGc=",
+      "auteur_licence": "CC BY-NC 3.0, (c) RBGE",
+      "note": "même accession RBGE 19901357",
+      "L": 70.9,
+      "C": 65.6,
+      "h": 91.1,
+      "hex": "#cbab29",
+      "eclairage": "plein soleil (note source)",
+      "dE": 1.8,
+      "dh": 0.3,
+      "dC": -1.3,
+      "ratio_chroma": 0.98
+     },
+     {
+      "cle": "lynwood-variety#6",
+      "role": "retenue_sous_reserve",
+      "niveau_source": "N3",
+      "source": "Royal Botanic Garden Edinburgh, collection vivante, acc. 19901357 'Lynwood' (photo 30, Tony Garn)",
+      "page": "https://www.gbif.org/occurrence/574705795",
+      "url_image": "http://repo.rbge.org.uk/image_server.php?kind=1500&path_base64=L2l0ZW1faW1hZ2VzL2FjY2Vzc2lvbnMvMTkvOTAvMTMvNTcvUGhvdG9fNTNmMzIwMDBhMGQ0ZS5qcGc=",
+      "auteur_licence": "CC BY-NC 3.0, (c) RBGE",
+      "note": "gros plan fleurs et rameau, fond sombre ; même accession RBGE 19901357",
+      "L": 69.2,
+      "C": 63.3,
+      "h": 96.0,
+      "hex": "#bcaa2b",
+      "eclairage": "gros plan, fond sombre (note source)",
+      "dE": 7.0,
+      "dh": 4.6,
+      "dC": -3.6,
+      "ratio_chroma": 0.95
+     },
+     {
+      "cle": "lynwood-variety#7",
+      "role": "non_mesuree",
+      "niveau_source": "N4",
+      "source": "Wikimedia Commons: Location taken: American Plant Food Company, 7405 River Road, Bethesda MD.. Name",
+      "page": "https://commons.wikimedia.org/wiki/File:Forsythia_x_intermedia_Lynwood_Gold_2zz.jpg",
+      "url_image": "https://upload.wikimedia.org/wikipedia/commons/4/4a/Forsythia_x_intermedia_Lynwood_Gold_2zz.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "auteur_licence": "CC BY-SA 4.0, Photo by David J. Stang",
+      "note": "etiquette de vente (centre-jardin) ; Commons : non mesurée (429 Wikimedia en rafale), non nécessaire pour le niveau"
+     },
+     {
+      "cle": "lynwood-variety#8",
+      "role": "non_mesuree",
+      "niveau_source": "N4",
+      "source": "Wikimedia Commons: Forsythia × intermedia 'Lynwood Gold' in Arboretum Wirty, N Poland",
+      "page": "https://commons.wikimedia.org/wiki/File:Forsythia_%C3%97_intermedia_%27Lynwood_Gold%27_kz01.jpg",
+      "url_image": "https://upload.wikimedia.org/wikipedia/commons/9/94/Forsythia_%C3%97_intermedia_%27Lynwood_Gold%27_kz01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "auteur_licence": "CC BY-SA 4.0, Krzysztof Ziarnek, Kenraiz",
+      "note": "Arboretum Wirty (Pologne), plante etiquetee ; Commons : non mesurée (429 Wikimedia en rafale), non nécessaire pour le niveau"
+     },
+     {
+      "cle": "lynwood-variety#9",
+      "role": "non_mesuree",
+      "niveau_source": "N4",
+      "source": "Wikimedia Commons: Forsythia × intermedia 'Lynwood Gold' in Arboretum Wirty, N Poland",
+      "page": "https://commons.wikimedia.org/wiki/File:Forsythia_%C3%97_intermedia_%27Lynwood_Gold%27_kz02.jpg",
+      "url_image": "https://upload.wikimedia.org/wikipedia/commons/7/79/Forsythia_%C3%97_intermedia_%27Lynwood_Gold%27_kz02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "auteur_licence": "CC BY-SA 4.0, Krzysztof Ziarnek, Kenraiz",
+      "note": "Commons : non mesurée (429 Wikimedia en rafale), non nécessaire pour le niveau"
+     },
+     {
+      "cle": "lynwood-variety#10",
+      "role": "non_mesuree",
+      "niveau_source": "N4",
+      "source": "Wikimedia Commons: Forsythia × intermedia 'Lynwood Gold' in Arboretum Wirty, N Poland",
+      "page": "https://commons.wikimedia.org/wiki/File:Forsythia_%C3%97_intermedia_%27Lynwood_Gold%27_kz03.jpg",
+      "url_image": "https://upload.wikimedia.org/wikipedia/commons/2/2b/Forsythia_%C3%97_intermedia_%27Lynwood_Gold%27_kz03.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "auteur_licence": "CC BY-SA 4.0, Krzysztof Ziarnek, Kenraiz",
+      "note": "Commons : non mesurée (429 Wikimedia en rafale), non nécessaire pour le niveau"
+     },
+     {
+      "cle": "lynwood-variety#11",
+      "role": "non_mesuree",
+      "niveau_source": "N4",
+      "source": "Wikimedia Commons: Forsythia × intermedia ‘Lynwood Gold’, allotment garden in Szczecin, West Pomera",
+      "page": "https://commons.wikimedia.org/wiki/File:Forsythia_intermedia_Lynwood_Gold_2019-03-12_6789.jpg",
+      "url_image": "https://upload.wikimedia.org/wikipedia/commons/a/af/Forsythia_intermedia_Lynwood_Gold_2019-03-12_6789.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "auteur_licence": "CC BY-SA 4.0, Salicyna",
+      "note": "jardin ouvrier de Szczecin: nom donne par l'auteur ; Commons : non mesurée (429 Wikimedia en rafale), non nécessaire pour le niveau"
+     },
+     {
+      "cle": "lynwood-variety#12",
+      "role": "retenue",
+      "niveau_source": "N3",
+      "source": "Brighter Blooms (pepiniere, E.-U.) 'Lynwood Gold Forsythia'",
+      "page": "https://www.brighterblooms.com/products/lynwood-gold-forsythia",
+      "url_image": "https://cdn.shopify.com/s/files/1/0062/8532/8445/products/Lynwood_Gold_Forsythia_1.jpg?v=1606336288",
+      "auteur_licence": "vendeur, vue seule",
+      "note": "pas de symbole R ou TM ; pépinière E.-U. (vendeur) : pas de ® ni ™ ; clarté haute",
+      "L": 81.5,
+      "C": 78.7,
+      "h": 91.4,
+      "hex": "#ecc81d",
+      "eclairage": "non noté",
+      "dE": 15.1,
+      "dh": 0.0,
+      "dC": 11.8,
+      "ratio_chroma": 1.18
+     }
+    ],
+    "n_photos_retenues": 8,
+    "n_concordantes": 8,
+    "sites_concordants": [
+     "RHS Plant Finder",
+     "Missouri Botanical Garden",
+     "Brighter Blooms (vendeur)",
+     "RBGE (sous réserve)"
+    ],
+    "niveau_mesure": "B",
+    "motif_niveau": "teinte à 4,6 degrés au plus de la médiane (seuil 10) ; chroma de 0,72 à 1,18 de la médiane ; trois sites indépendants hors RBGE (RHS, MBG, Brighter Blooms) ; l'écart de clarté (dE 2 à 19) est de l'éclairage, non retenu"
+   },
+   "niveau_nom": "B",
+   "niveau_final": "B",
+   "conformite_regle_porteur": {
+    "regle": "B : N2 ou N3 plus une autre source indépendante ; teinte à 10 degrés en LCh de la médiane, chroma du même ordre, clarté libre",
+    "verdict": "conforme : RHS, MBG, Brighter Blooms concordants (RBGE en plus, sous réserve)"
+   },
+   "en_boutique": true,
+   "statut": "en production (SKU du bouquet 3213, 2 tiges)",
+   "manque": "Rien pour B. A impossible : pas de registre N1 en ligne (APGA) ni de photo N2. Pas de photo de branche coupée en vase. Base, pointe, étamines, calice, revers et jeunes feuilles non mesurés."
+  },
+  {
+   "id": "spectabilis",
+   "ordre": 2,
+   "rang": "catalogue",
+   "catalogue_n": 0,
+   "late": 0,
+   "nom_affiche": "Jaune d'or (Spectabilis)",
+   "nom_affiche_catalogue_avant": "Jaune d'or (Spectabilis)",
+   "nom_enregistre": "Spectabilis",
+   "synonymes": [
+    "Spectabile (orthographe de Cornell)"
+   ],
+   "noms_de_vente_jamais_affiches": [],
+   "obtenteur": "Späth (Berlin)",
+   "annee": "vers 1905 (TSO) ; à l'Arnold Arboretum en 1908 ; l'année 1906 n'est pas confirmée",
+   "origine": "cultivar de F. × intermedia, dans la collection historique de l'Arnold Arboretum",
+   "representant": "spectabilis",
+   "sosies": [
+    "vitellina"
+   ],
+   "sosies_niveaux": {
+    "vitellina": "D (inventaire seul)"
+   },
+   "description": {
+    "couleur": "jaune d'or cuivré (« brassy », TSO), plus foncé que Lynwood selon TSO ; Kolster : « golden yellow » (jaune d'or) ; mesure : corps #e8c733 (L 80,9 ; C 72,6 ; h 92,4), médiane de 2 photos",
+    "forme": "fleurs ~4 cm, 4 lobes (parfois 5 ou 6) aux pointes recourbées et tordues ; pin-eyed (stigmate à l'entrée)",
+    "port": "vigoureux, arqué, floraison très abondante (Kolster : floraison chaque année, février à mars)",
+    "fleurs_par_noeud": "à confirmer sur photo (non compté : pas de face isolée)"
+   },
+   "conflits": [
+    "Orthographe : 'Spectabilis' (TSO, plan de l'Arnold Arboretum, Kolster) contre 'Spectabile' (Cornell, qui ne donne ni couleur ni année) ; même cultivar.",
+    "Année : vers 1905 (TSO) ; reçu à l'Arnold Arboretum en 1908 ; 1906 non confirmée."
+   ],
+   "limite": "une seule photo N2 de fleurs coupées (fond sombre) ; la 2e photo mesurée est une plante de jardin botanique (N4) ; aucune photo de face isolée, donc aucun lobe compté",
+   "mesures": {
+    "fichier": "refcache/forsythia/coloris-mesures.json et coloris.md",
+    "zones": {
+     "corps": {
+      "hex": "#e8c733",
+      "L": 80.9,
+      "C": 72.6,
+      "h": 92.4,
+      "methode": "médiane Lab des photos retenues ; par photo, médiane des pixels de pétales éclairés (L 60-97, C >= 22, teinte 55-105 deg, blanc clippé exclu) ; écart CIE76",
+      "n_photos_retenues": 2,
+      "n_concordantes": 2
+     },
+     "base": {
+      "valeur": "non mesuré",
+      "hex_indicatifs": []
+     },
+     "pointe": {
+      "valeur": "non mesuré",
+      "hex_indicatifs": []
+     },
+     "bouton": {
+      "valeur": "non mesuré",
+      "hex_indicatifs": []
+     },
+     "etamines": {
+      "valeur": "non mesuré",
+      "hex_indicatifs": []
+     },
+     "revers": {
+      "valeur": "non mesuré",
+      "hex_indicatifs": []
+     },
+     "calice": {
+      "valeur": "non mesuré",
+      "hex_indicatifs": []
+     },
+     "jeunes_feuilles": {
+      "valeur": "non mesuré",
+      "hex_indicatifs": []
+     }
+    },
+    "eclairage": "Kolster : studio, fond sombre, fleurs coupées ; Madrid : non noté",
+    "balance_des_blancs": "aucune : aucun repère neutre fiable dans les photos",
+    "photos": [
+     {
+      "cle": "spectabilis#13",
+      "role": "retenue",
+      "niveau_source": "N2",
+      "source": "Kolster BV (producteur-exportateur de branches coupees, Pays-Bas) 'Forsythia int. Spectabilis'",
+      "page": "https://www.kolster.nl/nl/producten/snijheesters/overige-snijheesters-en-vaste-planten/2519-forsythia-int-spectabilis.html",
+      "url_image": "https://www.kolster.nl/images/catalogus/forsythia-int-spectabilis.jpg",
+      "auteur_licence": "vendeur, vue seule",
+      "note": "jaune d'or, fevrier-mars ; N2 : fleurs coupées sur fond sombre, photo du catalogue du producteur",
+      "L": 84.3,
+      "C": 69.6,
+      "h": 88.8,
+      "hex": "#f9ce46",
+      "eclairage": "non noté (fond sombre, fleurs coupées)",
+      "dE": 6.4,
+      "dh": 3.6,
+      "dC": -3.0,
+      "ratio_chroma": 0.96
+     },
+     {
+      "cle": "spectabilis#14",
+      "role": "retenue",
+      "niveau_source": "N4",
+      "source": "Wikimedia Commons: Forsythia x intermedia 'Spectabilis'. Real Jardín Botánico, Madrid",
+      "page": "https://commons.wikimedia.org/wiki/File:Forsythia_x_intermedia_Spectabilis.jpg",
+      "url_image": "https://upload.wikimedia.org/wikipedia/commons/1/16/Forsythia_x_intermedia_Spectabilis.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "auteur_licence": "CC BY-SA 4.0, A. Barra",
+      "note": "Real Jardin Botanico de Madrid, plante etiquetee ; Real Jardín Botánico de Madrid, plante étiquetée",
+      "L": 77.6,
+      "C": 75.9,
+      "h": 95.7,
+      "hex": "#d7c11a",
+      "eclairage": "non noté",
+      "dE": 6.3,
+      "dh": 3.3,
+      "dC": 3.3,
+      "ratio_chroma": 1.05
+     },
+     {
+      "cle": "spectabilis#15",
+      "role": "non_mesuree",
+      "niveau_source": "N4",
+      "source": "Wikimedia Commons: Forsythia × intermedia 'Spectabilis' in Arboretum Wirty, N Poland",
+      "page": "https://commons.wikimedia.org/wiki/File:Forsythia_%C3%97_intermedia_%27Spectabilis%27_kz01.jpg",
+      "url_image": "https://upload.wikimedia.org/wikipedia/commons/4/48/Forsythia_%C3%97_intermedia_%27Spectabilis%27_kz01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "auteur_licence": "CC BY-SA 4.0, Krzysztof Ziarnek, Kenraiz",
+      "note": "Arboretum Wirty (Pologne), plante etiquetee ; Arboretum Wirty, plante étiquetée : non mesurée (429 Wikimedia)"
+     },
+     {
+      "cle": "spectabilis#16",
+      "role": "non_mesuree",
+      "niveau_source": "N4",
+      "source": "Wikimedia Commons: Forsythia × intermedia 'Spectabilis' in Arboretum Wirty, N Poland",
+      "page": "https://commons.wikimedia.org/wiki/File:Forsythia_%C3%97_intermedia_%27Spectabilis%27_kz02.jpg",
+      "url_image": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Forsythia_%C3%97_intermedia_%27Spectabilis%27_kz02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "auteur_licence": "CC BY-SA 4.0, Krzysztof Ziarnek, Kenraiz",
+      "note": "Arboretum Wirty : non mesurée (429 Wikimedia)"
+     },
+     {
+      "cle": "spectabilis#17",
+      "role": "non_mesuree",
+      "niveau_source": "N4",
+      "source": "Wikimedia Commons: Forsythia intermedia Spectabilis",
+      "page": "https://commons.wikimedia.org/wiki/File:Forsythia_intermedia_spectabilis_r11.jpg",
+      "url_image": "https://upload.wikimedia.org/wikipedia/commons/1/15/Forsythia_intermedia_spectabilis_r11.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "auteur_licence": "Public domain, Rob Hille",
+      "note": "rameau nu avec bourgeons, pas de fleur ouverte; domaine public ; rameau nu avec bourgeons, pas de fleur ouverte"
+     }
+    ],
+    "n_photos_retenues": 2,
+    "n_concordantes": 2,
+    "sites_concordants": [
+     "Kolster BV (N2)",
+     "Real Jardín Botánico de Madrid (Commons, N4)"
+    ],
+    "niveau_mesure": "B",
+    "motif_niveau": "teinte à 6,9 degrés entre Kolster (N2) et Madrid (N4), chroma 1,05 ; dE 6,3 de chacune à la médiane ; deux sources indépendantes"
+   },
+   "niveau_nom": "B",
+   "niveau_final": "B",
+   "conformite_regle_porteur": {
+    "regle": "B : N2 ou N3 plus une autre source indépendante ; teinte à 10 degrés",
+    "verdict": "conforme : Kolster (N2) et Madrid (N4) concordants ; A impossible faute de registre N1"
+   },
+   "en_boutique": true,
+   "statut": "en production (catalogue n° 0)",
+   "manque": "Rien pour B. Une 2e photo N2 ou N3 de fleurs ouvertes de face serait un plus. Base, pointe, étamines, lobes et fleurs par nœud non mesurés. Pas de photo de fané ni de dos de fleur."
+  },
+  {
+   "id": "beatrix-farrand",
+   "ordre": 3,
+   "rang": "nouveau",
+   "catalogue_n": null,
+   "late": 1,
+   "nom_affiche": "Jaune d'or brillant (Beatrix Farrand)",
+   "nom_affiche_catalogue_avant": null,
+   "nom_enregistre": "Beatrix Farrand",
+   "synonymes": [],
+   "noms_de_vente_jamais_affiches": [],
+   "obtenteur": "Arnold Arboretum (Karl Sax et ses élèves)",
+   "annee": "1944 (plan de collection de l'Arnold Arboretum, TSO)",
+   "origine": "tétraploïde (colchicine) : « expériences de colchicine de Karl Sax » (Arnold Arboretum) ; MBG : issu de 'Arnold Giant' croisé avec des cultivars diploïdes (dont F. ovata et 'Spectabilis') ; nommé d'après la paysagiste Beatrix Farrand (1872-1959)",
+   "representant": "beatrix-farrand",
+   "sosies": [
+    "karl-sax",
+    "arnold-giant",
+    "goldrausch",
+    "golden-nugget",
+    "parkdekor",
+    "goldzauber",
+    "hamden-golden-bells",
+    "kolgold",
+    "golden-fantasy"
+   ],
+   "sosies_niveaux": {
+    "karl-sax": "D",
+    "arnold-giant": "D (photos Commons = fleurs blanches, écartées)",
+    "goldrausch": "D",
+    "golden-nugget": "D",
+    "parkdekor": "D",
+    "goldzauber": "D",
+    "hamden-golden-bells": "D",
+    "kolgold": "D (nom de vente Magical Gold : écarté, marque à vérifier)",
+    "golden-fantasy": "C (coloris candidat, voir golden-fantasy)"
+   },
+   "description": {
+    "couleur": "jaune d'or brillant (MBG : « golden yellow » ; TSO : « large brilliant yellow flowers ») ; mesure : corps #c1b33a (L 72,3 ; C 61,4 ; h 98,3), médiane de 3 photos : plus verte et plus pâle que Lynwood",
+    "forme": "grandes fleurs simples à larges pétales, jusqu'à ~5 cm (MBG : 2 po), axillaires ; 4 lobes comptés sur deux faces nettes (MBG/TSO), 5 non vu ; clone britannique thrum-eyed ; gorge sombre orangée (#7d4400, ombre)",
+    "port": "vigoureux, dressé, longues cannes à l'aspect un peu déséquilibré (MBG), 6 à 8 pieds ; mars à avril (MBG)",
+    "fleurs_par_noeud": "1 bouton et 2 fleurs ouvertes sur le même nœud (MBG, à l'œil, ±1) ; brief : 1 à 3 par nœud"
+   },
+   "conflits": [
+    "Identité du clone : TSO dit que la plante vendue sous ce nom au Royaume-Uni est thrum-eyed et doute que la forme américaine décrite par Green soit la même ; MBG écrit lui-même « unclear if today's plant matches the original ». La photo TSO prouve l'appellation britannique, pas le clone de 1944.",
+    "Parenté : colchicine sur les croisements de Karl Sax (plan de l'Arnold Arboretum) contre 'Arnold Giant' × diploïdes (MBG) : à ne pas écrire au-delà de « tétraploïde, Arnold Arboretum, 1944 ».",
+    "Photos RBGE (acc. 19901416 et 19580762) : nommées « Zabel » par GBIF, écartées de la preuve et de la médiane.",
+    "Appariement légende-fichier de la photo TSO incertain (deux légendes de M. Gudgeon, 14 et 23 mars 2022).",
+    "Existence : trois sources N3 (plan de collection de l'Arnold Arboretum, TSO, MBG), aucune N1 ni N2 ; voir Q2."
+   ],
+   "limite": "clone d'origine de 1944 non distingué du clone britannique ; ni N1 ni N2",
+   "mesures": {
+    "fichier": "refcache/forsythia/coloris-mesures.json (clé passe_2) et coloris.md : la 2e passe remplace la 1re (#c2b432)",
+    "zones": {
+     "corps": {
+      "hex": "#c1b33a",
+      "L": 72.3,
+      "C": 61.4,
+      "h": 98.3,
+      "methode": "médiane Lab des photos retenues ; par photo, médiane des pixels de pétales éclairés (L 60-97, C >= 22, teinte 55-105 deg, blanc clippé exclu) ; écart CIE76",
+      "n_photos_retenues": 3,
+      "n_concordantes": 3
+     },
+     "base": {
+      "valeur": "#c9b32b (L 72,8 ; C 66,8 ; h 95,1 ; moyenne de 2 photos : Commons et TSO ; rayon < 0,3)",
+      "hex_indicatifs": [
+       "#c9b32b"
+      ]
+     },
+     "pointe": {
+      "valeur": "#c4b33b (L 72,3 ; C 60,8 ; h 96,8 ; moyenne de 2 photos ; rayon 0,7 à 1)",
+      "hex_indicatifs": [
+       "#c4b33b"
+      ]
+     },
+     "gorge": {
+      "valeur": "gorge sombre orangée #7d4400 (L 34,9) : boîte sur la gorge, ombre (TSO)",
+      "hex_indicatifs": [
+       "#7d4400"
+      ]
+     },
+     "bouton": {
+      "valeur": "jaune-vert #586639 (pixels verts du bouton, MBG, ombre : approché)",
+      "hex_indicatifs": [
+       "#586639"
+      ]
+     },
+     "etamines": {
+      "valeur": "pâles, jaune-vert à l'oeil ; non mesurés (trop petits à 640 px)",
+      "hex_indicatifs": []
+     },
+     "revers": {
+      "valeur": "non mesuré",
+      "hex_indicatifs": []
+     },
+     "calice": {
+      "valeur": "non mesuré",
+      "hex_indicatifs": []
+     },
+     "rameau": {
+      "valeur": "jeune : #5b4a21, #8c764e (brief.md photo 502, pal, non propre au coloris) ; anguleux non confirmé",
+      "hex_indicatifs": [
+       "#5b4a21",
+       "#8c764e"
+      ]
+     },
+     "vieux_bois": {
+      "valeur": "#454126, #837250, #cbbb87 (brief.md photo 5) ; 8 à 12 mm (brief-organes 115)",
+      "hex_indicatifs": [
+       "#454126",
+       "#837250",
+       "#cbbb87"
+      ]
+     },
+     "jeunes_feuilles": {
+      "valeur": "non mesuré",
+      "hex_indicatifs": []
+     }
+    },
+    "eclairage": "TSO : extérieur, ciel bleu, direct probable ; MBG et Commons : non noté",
+    "balance_des_blancs": "aucune : aucun repère neutre fiable dans les photos",
+    "photos": [
+     {
+      "cle": "beatrix-farrand#18",
+      "role": "retenue",
+      "niveau_source": "N3",
+      "source": "Missouri Botanical Garden Plant Finder, 'Beatrix Farrand'",
+      "page": "https://plantfinder.mobot.org/PlantFinderDetails.aspx?taxonid=245765",
+      "url_image": "https://images.mobot.org/PlantRecordsVol2/prod/full/00019000/19777_D731-0415091taa.jpg",
+      "auteur_licence": "(c) MBG, vue seule, non stockee",
+      "note": "MBG",
+      "L": 67.7,
+      "C": 59.5,
+      "h": 98.6,
+      "hex": "#b3a732",
+      "eclairage": "non noté",
+      "dE": 5.0,
+      "dh": 0.3,
+      "dC": -1.9,
+      "ratio_chroma": 0.97
+     },
+     {
+      "cle": "beatrix-farrand#22",
+      "role": "retenue",
+      "niveau_source": "N4",
+      "source": "Wikimedia Commons 'Forsythie Beatrix Farrand mit Erzwespe' (fleur isolee, variete nommee par l'auteur)",
+      "page": "https://commons.wikimedia.org/wiki/File:Forsythie_Beatrix_Farrand_mit_Erzwespe.jpg",
+      "url_image": "https://upload.wikimedia.org/wikipedia/commons/0/0a/Forsythie_Beatrix_Farrand_mit_Erzwespe.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "auteur_licence": "CC BY-SA 4.0, Velotopist",
+      "note": "Commons, fleur isolée, variété nommée par l'auteur (Velotopist), confirmée par les textes N3",
+      "L": 72.3,
+      "C": 62.0,
+      "h": 98.7,
+      "hex": "#c1b438",
+      "eclairage": "non noté",
+      "dE": 0.7,
+      "dh": 0.4,
+      "dC": 0.6,
+      "ratio_chroma": 1.01
+     },
+     {
+      "cle": "beatrix-farrand#lot0",
+      "role": "retenue",
+      "niveau_source": "N3",
+      "source": "Trees and Shrubs Online ; plante au Sculpture by the Lakes (Dorset, Royaume-Uni), collection de forsythia",
+      "page": "https://www.treesandshrubsonline.org/articles/forsythia/forsythia-x-intermedia/",
+      "url_image": "https://www.treesandshrubsonline.org/site/assets/files/19203/forsythia-x-intermedia-beatrix-farrand.jpg",
+      "auteur_licence": "Monique Gudgeon (legende TSO : 'Flower detail of the representative of Beatrix Farrand at Sculpture by the Lakes, Dorset, 14th March 2022'). Appariement avec la legende 23 mars 2022 non certain. ; licence : non lue (TSO)",
+      "date": "2022-03-14 (legende)",
+      "L": 76.1,
+      "C": 61.0,
+      "h": 95.3,
+      "hex": "#d2bc45",
+      "eclairage": "extérieur, ciel bleu ; direct probable, non noté",
+      "note": "TSO, gros plan de face à 4 ou 5 lobes ; appariement légende-fichier incertain (légendes de M. Gudgeon des 14 et 23 mars 2022)",
+      "dE": 5.0,
+      "dh": 3.0,
+      "dC": -0.4,
+      "ratio_chroma": 0.99
+     },
+     {
+      "cle": "beatrix-farrand#19",
+      "role": "ecartee",
+      "niveau_source": "N3",
+      "source": "Royal Botanic Garden Edinburgh, collection vivante, acc. 19901416 'Beatrix Farrand' (photo 59, Fiona Inches)",
+      "page": "https://www.gbif.org/occurrence/574797772",
+      "url_image": "http://repo.rbge.org.uk/image_server.php?kind=1500&path_base64=L2l0ZW1faW1hZ2VzL2FjY2Vzc2lvbnMvMTkvOTAvMTQvMTYvQi9QaG90b181Y2VmY2I1MTJlMDkxLmpwZw==",
+      "auteur_licence": "CC BY-NC 3.0, (c) RBGE",
+      "note": "fleur de trois-quarts et boutons ; RBGE acc. 19901416 : GBIF la nomme « Forsythia × intermedia Zabel » ; sortie de la médiane en 2e passe (la 1re passe l'écartait déjà comme preuve)",
+      "L": 74.4,
+      "C": 70.6,
+      "h": 97.9,
+      "hex": "#c8b924",
+      "eclairage": "non noté",
+      "dE": 9.4,
+      "dh": 0.4,
+      "dC": 9.2,
+      "ratio_chroma": 1.15
+     },
+     {
+      "cle": "beatrix-farrand#20",
+      "role": "ecartee",
+      "niveau_source": "N3",
+      "source": "Royal Botanic Garden Edinburgh, collection vivante, acc. 19901416 'Beatrix Farrand' (photo 60, Fiona Inches)",
+      "page": "https://www.gbif.org/occurrence/574797772",
+      "url_image": "http://repo.rbge.org.uk/image_server.php?kind=1500&path_base64=L2l0ZW1faW1hZ2VzL2FjY2Vzc2lvbnMvMTkvOTAvMTQvMTYvQi9QaG90b181Y2VmY2I1MTgzYzdmLmpwZw==",
+      "auteur_licence": "CC BY-NC 3.0, (c) RBGE",
+      "note": "fleur de face en gros plan ; même accession RBGE 19901416",
+      "L": 72.6,
+      "C": 73.1,
+      "h": 95.2,
+      "hex": "#c9b30f",
+      "eclairage": "non noté",
+      "dE": 12.3,
+      "dh": 3.1,
+      "dC": 11.7,
+      "ratio_chroma": 1.19
+     },
+     {
+      "cle": "beatrix-farrand#21",
+      "role": "ecartee",
+      "niveau_source": "N3",
+      "source": "Royal Botanic Garden Edinburgh, collection vivante, acc. 19901416 'Beatrix Farrand' (photo 57, Fiona Inches)",
+      "page": "https://www.gbif.org/occurrence/574797772",
+      "url_image": "http://repo.rbge.org.uk/image_server.php?kind=1500&path_base64=L2l0ZW1faW1hZ2VzL2FjY2Vzc2lvbnMvMTkvOTAvMTQvMTYvQi9QaG90b181Y2VmY2I1MDc0YTZhLmpwZw==",
+      "auteur_licence": "CC BY-NC 3.0, (c) RBGE",
+      "note": "même accession RBGE 19901416",
+      "L": 72.8,
+      "C": 64.9,
+      "h": 99.4,
+      "hex": "#c1b632",
+      "eclairage": "non noté",
+      "dE": 3.7,
+      "dh": 1.1,
+      "dC": 3.5,
+      "ratio_chroma": 1.06
+     }
+    ],
+    "n_photos_retenues": 3,
+    "n_concordantes": 3,
+    "sites_concordants": [
+     "Missouri Botanical Garden",
+     "Wikimedia Commons (Velotopist, N4)",
+     "Trees and Shrubs Online"
+    ],
+    "niveau_mesure": "B",
+    "motif_niveau": "dE 5,2 (MBG-Commons), 9,2 (MBG-TSO), 5,4 (Commons-TSO) : sous 10, pas de 4e photo ; teinte à 3,3 degrés au plus ; chroma de 0,97 à 1,01 de la médiane ; deux N3 indépendantes (MBG, TSO) plus une N4"
+   },
+   "niveau_nom": "B",
+   "niveau_final": "B",
+   "conformite_regle_porteur": {
+    "regle": "B : N2 ou N3 plus une autre source indépendante ; teinte à 10 degrés",
+    "verdict": "conforme sur la teinte ; existence N3 seulement (pas de N1 ni N2) : voir Q2"
+   },
+   "en_boutique": true,
+   "statut": "en production possible",
+   "manque": "Rien pour B. Pas de N1 ni N2 : A impossible. Une photo du clone d'origine de 1944 n'existe pas à notre connaissance. Étamines, revers, calice et jeunes feuilles non mesurés."
+  },
+  {
+   "id": "spring-glory",
+   "ordre": 4,
+   "rang": "nouveau",
+   "catalogue_n": null,
+   "late": 1,
+   "prov": 1,
+   "nom_affiche": "Jaune soufre (Spring Glory)",
+   "nom_affiche_catalogue_avant": null,
+   "nom_enregistre": "Spring Glory",
+   "synonymes": [],
+   "noms_de_vente_jamais_affiches": [],
+   "obtenteur": "trouvé à Mentor (Ohio) par M. H. Horvarth (orthographe TSO), diffusé par Wayside Gardens",
+   "annee": "découvert vers 1930 (TSO) ou 1935 (Arnold Arboretum) ; introduit en 1942 (Wayside Gardens)",
+   "origine": "mutant de bourgeon de 'Primulina' (Edwards et Marshall 2019, TSO)",
+   "representant": "spring-glory",
+   "sosies": [
+    "primulina",
+    "courtasol",
+    "courtaneur",
+    "densiflora",
+    "mirabilis",
+    "liliane"
+   ],
+   "sosies_niveaux": {
+    "primulina": "D",
+    "courtasol": "D (écarté : marque Gold Tide ®)",
+    "courtaneur": "D (écarté : nom de vente Mêlée d'Or)",
+    "densiflora": "D",
+    "mirabilis": "D",
+    "liliane": "D"
+   },
+   "description": {
+    "couleur": "jaune soufre plus vif que Primulina (TSO, citant Bean 1981) ; Cornell : « deep yellow » ; Nature Hills : or brillant (texte vendeur) ; mesure : corps #c5b13c (L 72,0 ; C 60,1 ; h 95,6), moyenne de 2 photos : soufre retenu",
+    "forme": "fleurs plus grandes que Primulina (~4 cm), abondantes, thrum-eyed ; bois nu à la floraison, feuilles après (TSO)",
+    "port": "dressé, jusqu'à 3 m (Cornell : 10 pieds, zones 7-8)",
+    "fleurs_par_noeud": "non compté"
+   },
+   "conflits": [
+    "Existence : aucune source N1 ni N2 ; trois textes N3 (plan de l'Arnold Arboretum, TSO, Cornell). La page de Wayside Gardens (introducteur de 1942) est protégée par un défi anti-robot, non contourné. Voir Q1.",
+    "Date de découverte : vers 1930 (TSO) contre 1935 (plan de l'Arnold Arboretum, « 23 ans après » 1912).",
+    "Couleur : soufre (TSO) ou profond (Cornell) ; la mesure tranche pour soufre (h 95,6, C 60) mais Spring Glory est à dE 3,2 de Beatrix Farrand : voir Q3.",
+    "Photos RBGE (acc. 19855002) : nommées « Zabel » par GBIF, écartées ; la 1re passe les avait seules (niveau C).",
+    "Courtasol (issu de Spring Glory) : clair (MBG, TSO) ou doré (Nature Hills) ; vendu sous la marque Gold Tide ® : écarté."
+   ],
+   "limite": "B par la règle de teinte seulement ; existence non prouvée en N1 ni N2 ; la photo Nature Hills est un visuel de vendeur sans auteur ni licence lue",
+   "mesures": {
+    "fichier": "refcache/forsythia/coloris-mesures.json (clé passe_2) et coloris.md",
+    "zones": {
+     "corps": {
+      "hex": "#c5b13c",
+      "L": 72.0,
+      "C": 60.1,
+      "h": 95.6,
+      "methode": "médiane Lab des photos retenues ; par photo, médiane des pixels de pétales éclairés (L 60-97, C >= 22, teinte 55-105 deg, blanc clippé exclu) ; écart CIE76 ; médiane de deux = moyenne Lab",
+      "n_photos_retenues": 2,
+      "n_concordantes": 2
+     },
+     "base": {
+      "valeur": "non mesuré",
+      "hex_indicatifs": []
+     },
+     "pointe": {
+      "valeur": "non mesuré",
+      "hex_indicatifs": []
+     },
+     "bouton": {
+      "valeur": "non mesuré",
+      "hex_indicatifs": []
+     },
+     "etamines": {
+      "valeur": "non mesuré",
+      "hex_indicatifs": []
+     },
+     "revers": {
+      "valeur": "non mesuré",
+      "hex_indicatifs": []
+     },
+     "calice": {
+      "valeur": "non mesuré",
+      "hex_indicatifs": []
+     },
+     "jeunes_feuilles": {
+      "valeur": "non mesuré",
+      "hex_indicatifs": []
+     }
+    },
+    "eclairage": "TSO : extérieur, ciel bleu ; Nature Hills : extérieur, fond sombre flou",
+    "balance_des_blancs": "aucune : aucun repère neutre fiable dans les photos",
+    "photos": [
+     {
+      "cle": "spring-glory#lot0",
+      "role": "retenue",
+      "niveau_source": "N3",
+      "source": "Trees and Shrubs Online ; plante en collection au Sculpture by the Lakes (Dorset, Royaume-Uni)",
+      "page": "https://www.treesandshrubsonline.org/articles/forsythia/forsythia-x-intermedia/",
+      "url_image": "https://www.treesandshrubsonline.org/site/assets/files/9833/forsythia-x-intermedia-spring-glory.jpg",
+      "auteur_licence": "Monique Gudgeon (legende TSO : 'flowering at Sculpture by the Lakes, Dorset, UK, 14th March 2022'). Appariement legende-fichier non certain : les deux fichiers 'Spring Glory' du site portent des legendes de M. Gudgeon (7 et 14 mars 2022). ; licence : non lue (TSO)",
+      "date": "2022-03 (legende)",
+      "L": 71.5,
+      "C": 56.0,
+      "h": 97.3,
+      "hex": "#c0b145",
+      "eclairage": "extérieur, ciel bleu ; soleil non noté",
+      "note": "TSO (M. Gudgeon, Sculpture by the Lakes, Dorset, 2022) ; appariement légende-fichier incertain (légendes des 7 et 14 mars 2022)",
+      "dE": 4.5,
+      "dh": 1.7,
+      "dC": -4.1,
+      "ratio_chroma": 0.93
+     },
+     {
+      "cle": "spring-glory#lot1",
+      "role": "retenue",
+      "niveau_source": "N3",
+      "source": "Nature Hills Nursery (pepiniere de vente par correspondance, Etats-Unis)",
+      "page": "https://naturehills.com/products/spring-glory-forsythia",
+      "url_image": "https://naturehills.com/cdn/shop/files/spring-glory-forsythia.jpg?crop=center&height=1200&v=1775651652&width=1200",
+      "auteur_licence": "non credite (photo de fiche produit Nature Hills) ; licence : non lue (fiche produit du vendeur)",
+      "date": "version de l'image du 2026-04-08 (parametre v de l'URL)",
+      "L": 72.5,
+      "C": 64.2,
+      "h": 94.2,
+      "hex": "#cab232",
+      "eclairage": "extérieur, fond sombre flou ; non noté",
+      "note": "Nature Hills (fiche vendeur, auteur non crédité)",
+      "dE": 4.4,
+      "dh": 1.4,
+      "dC": 4.1,
+      "ratio_chroma": 1.07
+     },
+     {
+      "cle": "spring-glory#23",
+      "role": "ecartee",
+      "niveau_source": "N3",
+      "source": "Royal Botanic Garden Edinburgh, collection vivante, acc. 19855002 'Spring Glory' (photo 44, Tony Garn)",
+      "page": "https://www.gbif.org/occurrence/574718325",
+      "url_image": "http://repo.rbge.org.uk/image_server.php?kind=1500&path_base64=L2l0ZW1faW1hZ2VzL2FjY2Vzc2lvbnMvMTkvODUvNTAvMDIvUGhvdG9fNTg3ZjlkYWJlNjA2MS5qcGc=",
+      "auteur_licence": "CC BY-NC 3.0, (c) RBGE",
+      "note": "une fleur ouverte sur bois nu, de trois-quarts ; RBGE acc. 19855002 : GBIF la nomme « Forsythia × intermedia Zabel » ; ne prouve pas le nom",
+      "L": 78.7,
+      "C": 55.9,
+      "h": 99.7,
+      "hex": "#d2c558",
+      "eclairage": "non noté (fleur ouverte, bois nu)",
+      "dE": 8.9,
+      "dh": 4.1,
+      "dC": -4.2,
+      "ratio_chroma": 0.93
+     },
+     {
+      "cle": "spring-glory#24",
+      "role": "ecartee",
+      "niveau_source": "N3",
+      "source": "Royal Botanic Garden Edinburgh, collection vivante, acc. 19855002 'Spring Glory' (photo 41, Peter Tothill)",
+      "page": "https://www.gbif.org/occurrence/574718325",
+      "url_image": "http://repo.rbge.org.uk/image_server.php?kind=1500&path_base64=L2l0ZW1faW1hZ2VzL2FjY2Vzc2lvbnMvMTkvODUvNTAvMDIvUGhvdG9fNTczMzBlYWFkYzVjMC5qcGc=",
+      "auteur_licence": "CC BY-NC 3.0, (c) RBGE",
+      "note": "boutons qui s'ouvrent sur bois nu ; même accession RBGE 19855002 : boutons qui s ouvrent, mélange de bois",
+      "L": 69.5,
+      "C": 30.7,
+      "h": 94.5,
+      "hex": "#b9a972",
+      "eclairage": "non noté (boutons qui s ouvrent)",
+      "dE": 29.5,
+      "dh": 1.1,
+      "dC": -29.4,
+      "ratio_chroma": 0.51
+     }
+    ],
+    "n_photos_retenues": 2,
+    "n_concordantes": 2,
+    "sites_concordants": [
+     "Trees and Shrubs Online",
+     "Nature Hills Nursery (vendeur)"
+    ],
+    "niveau_mesure": "B",
+    "motif_niveau": "dE 8,9 (sous 10, donc pas de 3e photo) ; teinte à 3,1 degrés ; chroma 0,87 ; deux sites N3 indépendants ; distances dE de la médiane : 3,2 à Beatrix, 8,2 à Lynwood, 15,8 à Spectabilis"
+   },
+   "niveau_nom": "C",
+   "niveau_final": "B",
+   "conformite_regle_porteur": {
+    "regle": "B : N2 ou N3 plus une autre source indépendante ; teinte à 10 degrés en LCh, chroma du même ordre",
+    "verdict": "B par la règle de teinte (TSO et Nature Hills concordants) ; l'existence N1 ou N2 manque : niveau provisoire, voir Q1"
+   },
+   "en_boutique": true,
+   "en_boutique_condition": "sous réserve de la réponse à Q1 (existence N1/N2 absente)",
+   "statut": "provisoire (prov:1)",
+   "manque": "Une source N1 ou N2 d'existence (fiche d'obtenteur ou d'introducteur : Wayside Gardens bloqué par un défi anti-robot). Base, pointe, étamines, calice, lobes et fleurs par nœud non mesurés. Pas de photo de face isolée."
+  },
+  {
+   "id": "golden-fantasy",
+   "ordre": 5,
+   "rang": "nouveau",
+   "catalogue_n": null,
+   "late": 1,
+   "nom_affiche": "Jaune profond (Golden Fantasy)",
+   "nom_affiche_catalogue_avant": null,
+   "nom_enregistre": "Golden Fantasy (nom de produit Kolster BV ; dénomination non confirmée par un registre)",
+   "synonymes": [],
+   "noms_de_vente_jamais_affiches": [],
+   "obtenteur": "Kolster BV (Pays-Bas), selon Kolster et TSO (2022)",
+   "annee": "non établie",
+   "origine": "sélection à grandes fleurs de Kolster ; TSO : « may not belong within Forsythia × intermedia »",
+   "representant": "golden-fantasy",
+   "sosies": [],
+   "sosies_niveaux": {},
+   "sosie_de": "beatrix-farrand (grandes fleurs jaune profond ; à mesurer)",
+   "description": {
+    "couleur": "jaune profond (Kolster : « diepgele », « deep yellow ») ; photo Kolster sur fond bleu-gris de studio, teinte à interpréter avec prudence ; non mesurée",
+    "forme": "forsythia à grandes fleurs, fleurissant sur le bois d'un an le long de toute la branche ; mars à avril ; 70 × 70 cm (espacement Kolster)",
+    "port": "rusticité excellente (Kolster) ; produit de fleur coupée",
+    "fleurs_par_noeud": "non compté"
+   },
+   "conflits": [
+    "Identité Golden Fantasy = Kolgold (Magical Gold) NON PROUVÉE : TSO décrit deux entrées séparées ; le MBG ne lie pas les deux noms.",
+    "Appartenance à F. × intermedia non confirmée (TSO).",
+    "Deux identifiants Kolster (2516 en néerlandais, 2517 en anglais) : même fiche ou deux produits, à vérifier."
+   ],
+   "limite": "une seule photo nommée (Kolster, N2) : le standard en exige deux indépendantes ; teinte non mesurée",
+   "mesures": {
+    "fichier": "aucune mesure (aucun coloris agent passé)",
+    "zones": {
+     "corps": {
+      "valeur": "non mesuré",
+      "hex_indicatifs": []
+     }
+    },
+    "eclairage": "studio, fond bleu-gris, ombres portées",
+    "balance_des_blancs": "aucune : aucun repère neutre fiable dans les photos",
+    "photos": [
+     {
+      "cle": "golden-fantasy#lot0",
+      "role": "non_mesuree",
+      "niveau_source": "N2",
+      "source": "Kolster BV, catalogue de fleur coupee",
+      "page": "https://www.kolster.nl/en/products/cutflowers/various-shrubs-and-perennials/2517-forsythia-golden-fantasy.html",
+      "url_image": "https://www.kolster.nl/images/catalogus/forsythia-golden-fantasy.jpg",
+      "auteur_licence": "non credite (photo du catalogue Kolster) ; licence : non lue",
+      "note": "botte de rameaux jaune vif, studio sur fond bleu-gris"
+     }
+    ],
+    "n_photos_retenues": 0,
+    "n_concordantes": 0,
+    "sites_concordants": [],
+    "niveau_mesure": "non mesuré",
+    "motif_niveau": "une seule photo N2, non mesurée"
+   },
+   "niveau_nom": "C",
+   "niveau_final": "C",
+   "conformite_regle_porteur": {
+    "regle": "B : deux sources indépendantes dont une N2 ou N3",
+    "verdict": "non conforme : une seule photo nommée (Kolster, N2)"
+   },
+   "en_boutique": false,
+   "statut": "à confirmer (n entre pas en boutique)",
+   "raison_hors_boutique": "niveau C : une seule photo nommée (Kolster, N2) ; identité avec Kolgold non prouvée ; marque à vérifier (® sur le slogan « Magical Plants & Flowers » de Kolster, ® sur MAGICAL® GOLD chez TSO ; aucun symbole sur le nom Golden Fantasy)",
+   "manque": "Une 2e photo nommée indépendante (CPVO, autre exportateur, fiche d'obtenteur) ; la mesure de couleur ; la preuve d'identité avec Kolgold ou sa réfutation."
+  }
+ ],
+ "cultivars": [
+  {
+   "id": "lynwood-variety",
+   "nom": "Lynwood Variety",
+   "nom_enregistre": "Lynwood Variety",
+   "synonymes": [
+    "Lynwood",
+    "Lynwood Gold",
+    "Splendens (1946)"
+   ],
+   "noms_de_vente": [],
+   "groupe": "F. x intermedia",
+   "obtenteur": "Nora Adair (Cookstown, Irlande du Nord)",
+   "annee": "trouve 1935 (MBG); vendu 1946 sous Splendens, renomme 1948 (TSO)",
+   "couleur_annoncee": "jaune vif, plus clair et moins cuivre que Spectabilis",
+   "forme_annoncee": "mutant de bourgeon de Spectabilis; lobes plus larges, moins enroules; fleurs denses, grandes (jusqu'a 4,4 cm), tres ouvertes; thrum-eyed; AGM RHS; port dresse-arque 1,5-2,5 m",
+   "statut_inventaire": "representant",
+   "statut_inventaire_origine": "SKU bouquet",
+   "niveau": "B",
+   "niveau_origine": "preuves détaillées (lot-representants.json et coloris-mesures.json)",
+   "niveau_couleur": "B (8 photos mesurées)",
+   "n_photos_nommees": 13,
+   "preuve_nom": [
+    {
+     "source": "RHS Plant Finder",
+     "niveau": "N3",
+     "url": "https://www.rhs.org.uk/plants/214902/forsythia-x-intermedia-lynwood-variety/details"
+    },
+    {
+     "source": "Missouri Botanical Garden",
+     "niveau": "N3",
+     "url": "https://plantfinder.mobot.org/PlantFinderListResults.aspx?basic=Forsythia"
+    },
+    {
+     "source": "Trees and Shrubs Online (TSO)",
+     "niveau": "N3",
+     "url": "https://www.treesandshrubsonline.org/articles/forsythia/forsythia-x-intermedia/"
+    },
+    {
+     "source": "Cornell, Woody Plants Database",
+     "niveau": "N3",
+     "url": "https://woodyplants.cals.cornell.edu/cultivar/1382"
+    },
+    {
+     "source": "Plantago (page 1/3 de la liste)",
+     "niveau": "N3",
+     "url": "https://plantago.nl/plantindex/plant/FR/F/1/Forsythia.html"
+    }
+   ],
+   "marque": {
+    "statut": null,
+    "detail": "aucune marque vue (RHS, MBG, TSO, Cornell, Arnold Arboretum, Kolster, Brighter Blooms, Nature Hills)"
+   },
+   "coloris": "lynwood-variety",
+   "role_coloris": "representant",
+   "doutes": []
+  },
+  {
+   "id": "spectabilis",
+   "nom": "Spectabilis",
+   "nom_enregistre": "Spectabilis",
+   "synonymes": [
+    "Spectabile"
+   ],
+   "noms_de_vente": [],
+   "groupe": "F. x intermedia",
+   "obtenteur": "Spaeth (Berlin)",
+   "annee": "vers 1905 (TSO); recu a l'Arnold Arboretum en 1908",
+   "couleur_annoncee": "jaune d'or cuivre (brassy)",
+   "forme_annoncee": "vigoureux, fleurs ~4 cm, 4 lobes (parfois 5-6) a pointes recourbees et tordues; pin-eyed; floraison tres abondante",
+   "statut_inventaire": "representant",
+   "statut_inventaire_origine": "coloris catalogue 0",
+   "niveau": "B",
+   "niveau_origine": "preuves détaillées (lot-representants.json et coloris-mesures.json)",
+   "niveau_couleur": "B (2 photos mesurées)",
+   "n_photos_nommees": 5,
+   "preuve_nom": [
+    {
+     "source": "Trees and Shrubs Online (TSO)",
+     "niveau": "N3",
+     "url": "https://www.treesandshrubsonline.org/articles/forsythia/forsythia-x-intermedia/"
+    },
+    {
+     "source": "plan de collection Forsythia, Arnold Arboretum 2018 (PDF)",
+     "niveau": "N3",
+     "url": "https://www.publicgardens.org/wp-content/uploads/2019/08/forsythia-collection-plan-2018-anold-arboretum.pdf"
+    },
+    {
+     "source": "Cornell, Woody Plants Database",
+     "niveau": "N3",
+     "url": "https://woodyplants.cals.cornell.edu/cultivar/1383"
+    },
+    {
+     "source": "Kolster BV (exportateur de branches coupées)",
+     "niveau": "N2",
+     "url": "https://www.kolster.nl/nl/producten/snijheesters/overige-snijheesters-en-vaste-planten/2519-forsythia-int-spectabilis.html"
+    }
+   ],
+   "marque": {
+    "statut": null,
+    "detail": "aucune marque vue (RHS, MBG, TSO, Cornell, Arnold Arboretum, Kolster, Brighter Blooms, Nature Hills)"
+   },
+   "coloris": "spectabilis",
+   "role_coloris": "representant",
+   "doutes": []
+  },
+  {
+   "id": "week-end",
+   "nom": "Week-End",
+   "nom_enregistre": "Courtalyn (dénomination probable ; RHS : Week-End (Courtalyn) PBR)",
+   "synonymes": [
+    "Courtalyn",
+    "Weekend"
+   ],
+   "noms_de_vente": [
+    "Week-End",
+    "Weekend"
+   ],
+   "groupe": "F. x intermedia",
+   "obtenteur": "Luc Decourtye (France)",
+   "annee": "annees 1970",
+   "couleur_annoncee": "jaune dore vif ~3 cm",
+   "forme_annoncee": "mutation de Lynwood; branches minces dressees, port plus net; tardif; thrum-eyed; AGM RHS",
+   "statut_inventaire": "ecarte_nom_de_vente",
+   "statut_inventaire_origine": "liste",
+   "niveau": "D",
+   "niveau_origine": "inventaire seul (aucune preuve détaillée)",
+   "niveau_couleur": "non mesurée",
+   "n_photos_nommees": 0,
+   "preuve_nom": [
+    {
+     "source": "RHS Plant Finder",
+     "niveau": "N3",
+     "url": "https://www.rhs.org.uk/plants/101339/forsythia-x-intermedia-week-end-courtalyn-pbr/details"
+    },
+    {
+     "source": "Trees and Shrubs Online (TSO)",
+     "niveau": "N3",
+     "url": "https://www.treesandshrubsonline.org/articles/forsythia/forsythia-x-intermedia/"
+    },
+    {
+     "source": "Plantago (page 1/3 de la liste)",
+     "niveau": "N3",
+     "url": "https://plantago.nl/plantindex/plant/FR/F/1/Forsythia.html"
+    }
+   ],
+   "marque": {
+    "statut": "à vérifier",
+    "detail": "Week-End / Weekend : PBR (droit d'obtenteur, pas une marque) vu chez RHS (« Week-End (Courtalyn) PBR ») et Plantago ; aucun ® vu ; nom de vente à vérifier",
+    "url": "https://www.rhs.org.uk/plants/101339/forsythia-x-intermedia-week-end-courtalyn-pbr/details"
+   },
+   "coloris": "lynwood-variety",
+   "role_coloris": "sosie",
+   "doutes": []
+  },
+  {
+   "id": "beatrix-farrand",
+   "nom": "Beatrix Farrand",
+   "nom_enregistre": "Beatrix Farrand",
+   "synonymes": [],
+   "noms_de_vente": [],
+   "groupe": "F. x intermedia",
+   "obtenteur": "Arnold Arboretum (Karl Sax et ses eleves)",
+   "annee": "1944",
+   "couleur_annoncee": "jaune d'or brillant",
+   "forme_annoncee": "tetraploide vigoureux; fleurs simples a larges petales jusqu'a 5 cm; longues cannes; identite brouillee (TSO: clone UK thrum-eyed a feuilles bleu-vert)",
+   "statut_inventaire": "representant",
+   "statut_inventaire_origine": "nouveau, late:1",
+   "niveau": "B",
+   "niveau_origine": "preuves détaillées (lot-representants.json et coloris-mesures.json)",
+   "niveau_couleur": "B (3 photos mesurées)",
+   "n_photos_nommees": 5,
+   "preuve_nom": [
+    {
+     "source": "plan de collection Forsythia, Arnold Arboretum 2018 (PDF)",
+     "niveau": "N3",
+     "url": "https://www.publicgardens.org/wp-content/uploads/2019/08/forsythia-collection-plan-2018-anold-arboretum.pdf"
+    },
+    {
+     "source": "Trees and Shrubs Online (TSO)",
+     "niveau": "N3",
+     "url": "https://www.treesandshrubsonline.org/articles/forsythia/forsythia-x-intermedia/"
+    },
+    {
+     "source": "Missouri Botanical Garden",
+     "niveau": "N3",
+     "url": "https://plantfinder.mobot.org/PlantFinderDetails.aspx?taxonid=245765"
+    }
+   ],
+   "marque": {
+    "statut": null,
+    "detail": "aucune marque vue (RHS, MBG, TSO, Cornell, Arnold Arboretum, Kolster, Brighter Blooms, Nature Hills)"
+   },
+   "coloris": "beatrix-farrand",
+   "role_coloris": "representant",
+   "doutes": []
+  },
+  {
+   "id": "karl-sax",
+   "nom": "Karl Sax",
+   "nom_enregistre": "Karl Sax",
+   "synonymes": [],
+   "noms_de_vente": [],
+   "groupe": "F. x intermedia",
+   "obtenteur": "Arnold Arboretum; nomme en 1960 par J.L. Thomas",
+   "annee": "1960",
+   "couleur_annoncee": "jaune profond, gorge jaune profond",
+   "forme_annoncee": "soeur de Beatrix Farrand; plus compact, fleurs plus sombres portees a l'horizontale; tetraploide",
+   "statut_inventaire": "liste_sans_preuve_detaillee",
+   "statut_inventaire_origine": "liste",
+   "niveau": "D",
+   "niveau_origine": "inventaire seul (aucune preuve détaillée)",
+   "niveau_couleur": "non mesurée",
+   "n_photos_nommees": 0,
+   "preuve_nom": [
+    {
+     "source": "plan de collection Forsythia, Arnold Arboretum 2018 (PDF)",
+     "niveau": "N3",
+     "url": "https://www.publicgardens.org/wp-content/uploads/2019/08/forsythia-collection-plan-2018-anold-arboretum.pdf"
+    },
+    {
+     "source": "Trees and Shrubs Online (TSO)",
+     "niveau": "N3",
+     "url": "https://www.treesandshrubsonline.org/articles/forsythia/forsythia-x-intermedia/"
+    },
+    {
+     "source": "Cornell, Woody Plants Database",
+     "niveau": "N3",
+     "url": "https://woodyplants.cals.cornell.edu/cultivar/10967"
+    }
+   ],
+   "marque": {
+    "statut": null,
+    "detail": "aucune marque vue dans les sources lues"
+   },
+   "coloris": "beatrix-farrand",
+   "role_coloris": "sosie",
+   "doutes": []
+  },
+  {
+   "id": "arnold-giant",
+   "nom": "Arnold Giant",
+   "nom_enregistre": "Arnold Giant",
+   "synonymes": [],
+   "noms_de_vente": [],
+   "groupe": "F. x intermedia",
+   "obtenteur": "Karl Sax (Arnold Arboretum)",
+   "annee": "1939",
+   "couleur_annoncee": "jaune",
+   "forme_annoncee": "tetraploide induit a la colchicine d'un semis de Spectabilis; tres grandes fleurs mais peu nombreuses; feuilles larges et epaisses",
+   "statut_inventaire": "conflit",
+   "statut_inventaire_origine": "conflit: les 3 photos Commons 'Arnold Giant' montrent des fleurs blanches",
+   "niveau": "D",
+   "niveau_origine": "inventaire seul (aucune preuve détaillée)",
+   "niveau_couleur": "non mesurée",
+   "n_photos_nommees": 0,
+   "preuve_nom": [
+    {
+     "source": "plan de collection Forsythia, Arnold Arboretum 2018 (PDF)",
+     "niveau": "N3",
+     "url": "https://www.publicgardens.org/wp-content/uploads/2019/08/forsythia-collection-plan-2018-anold-arboretum.pdf"
+    },
+    {
+     "source": "Trees and Shrubs Online (TSO)",
+     "niveau": "N3",
+     "url": "https://www.treesandshrubsonline.org/articles/forsythia/forsythia-x-intermedia/"
+    },
+    {
+     "source": "Missouri Botanical Garden",
+     "niveau": "N3",
+     "url": "https://plantfinder.mobot.org/PlantFinderDetails.aspx?taxonid=245764"
+    }
+   ],
+   "marque": {
+    "statut": null,
+    "detail": "aucune marque vue dans les sources lues"
+   },
+   "coloris": "beatrix-farrand",
+   "role_coloris": "sosie",
+   "doutes": [
+    "conflit: les 3 photos Commons 'Arnold Giant' montrent des fleurs blanches"
+   ]
+  },
+  {
+   "id": "primulina",
+   "nom": "Primulina",
+   "nom_enregistre": "Primulina",
+   "synonymes": [],
+   "noms_de_vente": [],
+   "groupe": "F. x intermedia",
+   "obtenteur": "Alfred Rehder (semis spontane, Arnold Arboretum)",
+   "annee": "1912",
+   "couleur_annoncee": "jaune primevere pale",
+   "forme_annoncee": "ressemble a Spectabilis, fleurs plus pales; thrum-eyed",
+   "statut_inventaire": "liste_sans_preuve_detaillee",
+   "statut_inventaire_origine": "liste",
+   "niveau": "D",
+   "niveau_origine": "inventaire seul (aucune preuve détaillée)",
+   "niveau_couleur": "non mesurée",
+   "n_photos_nommees": 0,
+   "preuve_nom": [
+    {
+     "source": "plan de collection Forsythia, Arnold Arboretum 2018 (PDF)",
+     "niveau": "N3",
+     "url": "https://www.publicgardens.org/wp-content/uploads/2019/08/forsythia-collection-plan-2018-anold-arboretum.pdf"
+    },
+    {
+     "source": "Trees and Shrubs Online (TSO)",
+     "niveau": "N3",
+     "url": "https://www.treesandshrubsonline.org/articles/forsythia/forsythia-x-intermedia/"
+    }
+   ],
+   "marque": {
+    "statut": null,
+    "detail": "aucune marque vue dans les sources lues"
+   },
+   "coloris": "spring-glory",
+   "role_coloris": "sosie",
+   "doutes": []
+  },
+  {
+   "id": "spring-glory",
+   "nom": "Spring Glory",
+   "nom_enregistre": "Spring Glory",
+   "synonymes": [],
+   "noms_de_vente": [],
+   "groupe": "F. x intermedia",
+   "obtenteur": "trouve a Mentor (Ohio); introduit par Wayside Gardens",
+   "annee": "sport de Primulina vu 1935; introduit 1942 (APGA)",
+   "couleur_annoncee": "jaune soufre, plus vif que Primulina (TSO); 'jaune profond' (Cornell): a mesurer",
+   "forme_annoncee": "fleurs ~4 cm, plus abondantes que Primulina; thrum-eyed; ~3 m",
+   "statut_inventaire": "representant",
+   "statut_inventaire_origine": "nouveau, late:1",
+   "niveau": "B",
+   "niveau_origine": "preuves détaillées (lot-representants.json et coloris-mesures.json)",
+   "niveau_couleur": "B provisoire (2 photos mesurées)",
+   "n_photos_nommees": 2,
+   "preuve_nom": [
+    {
+     "source": "plan de collection Forsythia, Arnold Arboretum 2018 (PDF)",
+     "niveau": "N3",
+     "url": "https://www.publicgardens.org/wp-content/uploads/2019/08/forsythia-collection-plan-2018-anold-arboretum.pdf"
+    },
+    {
+     "source": "Trees and Shrubs Online (TSO)",
+     "niveau": "N3",
+     "url": "https://www.treesandshrubsonline.org/articles/forsythia/forsythia-x-intermedia/"
+    },
+    {
+     "source": "Cornell, Woody Plants Database",
+     "niveau": "N3",
+     "url": "https://woodyplants.cals.cornell.edu/cultivar/10968"
+    }
+   ],
+   "marque": {
+    "statut": null,
+    "detail": "aucune marque vue (RHS, MBG, TSO, Cornell, Arnold Arboretum, Kolster, Brighter Blooms, Nature Hills)"
+   },
+   "coloris": "spring-glory",
+   "role_coloris": "representant",
+   "doutes": []
+  },
+  {
+   "id": "courtasol",
+   "nom": "Courtasol",
+   "nom_enregistre": "Courtasol",
+   "synonymes": [
+    "Gold Tide",
+    "Maree d'Or"
+   ],
+   "noms_de_vente": [
+    "Gold Tide",
+    "Marée d'Or"
+   ],
+   "groupe": "F. x intermedia",
+   "obtenteur": "Decourtye / Courtin (France)",
+   "annee": "annees 1970, issu de Spring Glory",
+   "couleur_annoncee": "jaune clair / citron (MBG, TSO); 'dore' (Nature Hills): a mesurer",
+   "forme_annoncee": "bas, etale-arque (50-60 cm sur 1,2 m); precoce; AGM",
+   "statut_inventaire": "ecarte_marque",
+   "statut_inventaire_origine": "marque a verifier",
+   "niveau": "D",
+   "niveau_origine": "inventaire seul (aucune preuve détaillée)",
+   "niveau_couleur": "non mesurée",
+   "n_photos_nommees": 0,
+   "preuve_nom": [
+    {
+     "source": "Missouri Botanical Garden",
+     "niveau": "N3",
+     "url": "https://plantfinder.mobot.org/PlantFinderDetails.aspx?taxonid=245756"
+    },
+    {
+     "source": "Nature Hills Nursery (vendeur)",
+     "niveau": "vendeur",
+     "url": "https://www.naturehills.com/gold-tide-forsythia"
+    },
+    {
+     "source": "Plantago (page 1/3 de la liste)",
+     "niveau": "N3",
+     "url": "https://plantago.nl/plantindex/plant/FR/F/1/Forsythia.html"
+    }
+   ],
+   "marque": {
+    "statut": "® vu chez un vendeur",
+    "detail": "Gold Tide ® vu chez Nature Hills ; PBR chez Plantago ; Marée d'Or = nom de vente (catalogue interne, Plantago) ; MBG : Courtasol = GOLD TIDE",
+    "url": "https://www.naturehills.com/gold-tide-forsythia"
+   },
+   "coloris": "spring-glory",
+   "role_coloris": "sosie",
+   "doutes": []
+  },
+  {
+   "id": "courtacour",
+   "nom": "Courtacour",
+   "nom_enregistre": "Courtacour",
+   "synonymes": [
+    "Goldilocks",
+    "Boucle d'Or",
+    "Gold Curl"
+   ],
+   "noms_de_vente": [
+    "Goldilocks",
+    "Boucle d'Or",
+    "Gold Curl"
+   ],
+   "groupe": "F. x intermedia",
+   "obtenteur": "France",
+   "annee": "annees 1970, issu de Spring Glory irradie",
+   "couleur_annoncee": "jaune d'or riche",
+   "forme_annoncee": "tres compact ~50 cm",
+   "statut_inventaire": "ecarte_hors_portee_port_nain",
+   "statut_inventaire_origine": "ecarte: port nain",
+   "niveau": "D",
+   "niveau_origine": "inventaire seul (aucune preuve détaillée)",
+   "niveau_couleur": "non mesurée",
+   "n_photos_nommees": 0,
+   "preuve_nom": [
+    {
+     "source": "Trees and Shrubs Online (TSO)",
+     "niveau": "N3",
+     "url": "https://www.treesandshrubsonline.org/articles/forsythia/forsythia-x-intermedia/"
+    },
+    {
+     "source": "Plantago (page 1/3 de la liste)",
+     "niveau": "N3",
+     "url": "https://plantago.nl/plantindex/plant/FR/F/1/Forsythia.html"
+    },
+    {
+     "source": "Missouri Botanical Garden",
+     "niveau": "N3",
+     "url": "https://plantfinder.mobot.org/PlantFinderDetails.aspx?taxonid=263654"
+    }
+   ],
+   "marque": {
+    "statut": "à vérifier",
+    "detail": "Goldilocks / Boucle d'Or / Gold Curl : noms de vente (MBG, Plantago), symbole non vu",
+    "url": "https://plantfinder.mobot.org/PlantFinderDetails.aspx?taxonid=263654"
+   },
+   "coloris": null,
+   "role_coloris": null,
+   "doutes": []
+  },
+  {
+   "id": "courtaneur",
+   "nom": "Courtaneur",
+   "nom_enregistre": "Courtaneur",
+   "synonymes": [
+    "Melee d'Or",
+    "Gold Mix"
+   ],
+   "noms_de_vente": [
+    "Mêlée d'Or",
+    "Gold Mix"
+   ],
+   "groupe": "F. x intermedia",
+   "obtenteur": "Luc Decourtye (France)",
+   "annee": null,
+   "couleur_annoncee": "jaune clair net",
+   "forme_annoncee": "~1 m; fleurit une semaine avant Lynwood Variety",
+   "statut_inventaire": "ecarte_nom_de_vente",
+   "statut_inventaire_origine": "liste",
+   "niveau": "D",
+   "niveau_origine": "inventaire seul (aucune preuve détaillée)",
+   "niveau_couleur": "non mesurée",
+   "n_photos_nommees": 0,
+   "preuve_nom": [
+    {
+     "source": "Trees and Shrubs Online (TSO)",
+     "niveau": "N3",
+     "url": "https://www.treesandshrubsonline.org/articles/forsythia/forsythia-x-intermedia/"
+    },
+    {
+     "source": "Plantago (page 1/3 de la liste)",
+     "niveau": "N3",
+     "url": "https://plantago.nl/plantindex/plant/FR/F/1/Forsythia.html"
+    }
+   ],
+   "marque": {
+    "statut": "à vérifier",
+    "detail": "Mêlée d'Or / Gold Mix : PBR sur 'Courtaneur' (Plantago) ; symbole du nom de vente non vu",
+    "url": "https://plantago.nl/plantindex/plant/FR/F/1/Forsythia.html"
+   },
+   "coloris": "spring-glory",
+   "role_coloris": "sosie",
+   "doutes": []
+  },
+  {
+   "id": "courdijau",
+   "nom": "Courdijau",
+   "nom_enregistre": "Courdijau",
+   "synonymes": [
+    "Casque d'Or",
+    "Golden Peep"
+   ],
+   "noms_de_vente": [
+    "Golden Peep",
+    "Casque d'Or"
+   ],
+   "groupe": "F. x intermedia",
+   "obtenteur": "Luc Decourtye (France)",
+   "annee": "annees 1970",
+   "couleur_annoncee": "jaune",
+   "forme_annoncee": "globulaire, 1 m, floraison abondante",
+   "statut_inventaire": "ecarte_nom_de_vente",
+   "statut_inventaire_origine": "liste",
+   "niveau": "D",
+   "niveau_origine": "inventaire seul (aucune preuve détaillée)",
+   "niveau_couleur": "non mesurée",
+   "n_photos_nommees": 0,
+   "preuve_nom": [
+    {
+     "source": "Trees and Shrubs Online (TSO)",
+     "niveau": "N3",
+     "url": "https://www.treesandshrubsonline.org/articles/forsythia/forsythia-x-intermedia/"
+    },
+    {
+     "source": "Plantago (page 1/3 de la liste)",
+     "niveau": "N3",
+     "url": "https://plantago.nl/plantindex/plant/FR/F/1/Forsythia.html"
+    },
+    {
+     "source": "Missouri Botanical Garden",
+     "niveau": "N3",
+     "url": "https://plantfinder.mobot.org/PlantFinderDetails.aspx?taxonid=256659"
+    }
+   ],
+   "marque": {
+    "statut": "à vérifier",
+    "detail": "Golden Peep / Casque d'Or : noms de vente de 'Courdijau' (MBG, Plantago), symbole non vu",
+    "url": "https://plantfinder.mobot.org/PlantFinderDetails.aspx?taxonid=256659"
+   },
+   "coloris": null,
+   "role_coloris": null,
+   "doutes": []
+  },
+  {
+   "id": "courtadic",
+   "nom": "Courtadic",
+   "nom_enregistre": "Courtadic",
+   "synonymes": [
+    "Melisa"
+   ],
+   "noms_de_vente": [
+    "Melisa"
+   ],
+   "groupe": "F. x intermedia",
+   "obtenteur": "Decourtye (France)",
+   "annee": null,
+   "couleur_annoncee": "jaune",
+   "forme_annoncee": "pin-eyed; dresse jeune",
+   "statut_inventaire": "ecarte_nom_de_vente",
+   "statut_inventaire_origine": "liste",
+   "niveau": "D",
+   "niveau_origine": "inventaire seul (aucune preuve détaillée)",
+   "niveau_couleur": "non mesurée",
+   "n_photos_nommees": 0,
+   "preuve_nom": [
+    {
+     "source": "Trees and Shrubs Online (TSO)",
+     "niveau": "N3",
+     "url": "https://www.treesandshrubsonline.org/articles/forsythia/forsythia-x-intermedia/"
+    },
+    {
+     "source": "Plantago (page 1/3 de la liste)",
+     "niveau": "N3",
+     "url": "https://plantago.nl/plantindex/plant/FR/F/1/Forsythia.html"
+    }
+   ],
+   "marque": {
+    "statut": "à vérifier",
+    "detail": "Melisa : ® vu sur 'MELISA®' chez TSO (sans registre) ; à vérifier",
+    "url": "https://www.treesandshrubsonline.org/articles/forsythia/forsythia-x-intermedia/"
+   },
+   "coloris": null,
+   "role_coloris": null,
+   "doutes": []
+  },
+  {
+   "id": "goldrausch",
+   "nom": "Goldrausch",
+   "nom_enregistre": "Goldrausch",
+   "synonymes": [],
+   "noms_de_vente": [],
+   "groupe": "F. x intermedia",
+   "obtenteur": "Allemagne (Hachmann?)",
+   "annee": "annees 1970",
+   "couleur_annoncee": "jaune",
+   "forme_annoncee": "grandes fleurs tardives durables, abondantes sur pousses de l'annee; thrum-eyed",
+   "statut_inventaire": "liste_sans_preuve_detaillee",
+   "statut_inventaire_origine": "liste",
+   "niveau": "D",
+   "niveau_origine": "inventaire seul (aucune preuve détaillée)",
+   "niveau_couleur": "non mesurée",
+   "n_photos_nommees": 0,
+   "preuve_nom": [
+    {
+     "source": "Trees and Shrubs Online (TSO)",
+     "niveau": "N3",
+     "url": "https://www.treesandshrubsonline.org/articles/forsythia/forsythia-x-intermedia/"
+    },
+    {
+     "source": "Plantago (page 1/3 de la liste)",
+     "niveau": "N3",
+     "url": "https://plantago.nl/plantindex/plant/FR/F/1/Forsythia.html"
+    }
+   ],
+   "marque": {
+    "statut": null,
+    "detail": "aucune marque vue dans les sources lues"
+   },
+   "coloris": "beatrix-farrand",
+   "role_coloris": "sosie",
+   "doutes": []
+  },
+  {
+   "id": "golden-nugget",
+   "nom": "Golden Nugget",
+   "nom_enregistre": "Golden Nugget",
+   "synonymes": [],
+   "noms_de_vente": [],
+   "groupe": "F. x intermedia",
+   "obtenteur": "Hillier (R.-U.)",
+   "annee": "1964",
+   "couleur_annoncee": "jaune",
+   "forme_annoncee": "vigoureux; fleurs jusqu'a 5 cm, parfois 6 lobes; thrum-eyed",
+   "statut_inventaire": "liste_sans_preuve_detaillee",
+   "statut_inventaire_origine": "liste",
+   "niveau": "D",
+   "niveau_origine": "inventaire seul (aucune preuve détaillée)",
+   "niveau_couleur": "non mesurée",
+   "n_photos_nommees": 0,
+   "preuve_nom": [
+    {
+     "source": "Trees and Shrubs Online (TSO)",
+     "niveau": "N3",
+     "url": "https://www.treesandshrubsonline.org/articles/forsythia/forsythia-x-intermedia/"
+    },
+    {
+     "source": "Plantago (page 1/3 de la liste)",
+     "niveau": "N3",
+     "url": "https://plantago.nl/plantindex/plant/FR/F/1/Forsythia.html"
+    }
+   ],
+   "marque": {
+    "statut": null,
+    "detail": "aucune marque vue dans les sources lues"
+   },
+   "coloris": "beatrix-farrand",
+   "role_coloris": "sosie",
+   "doutes": []
+  },
+  {
+   "id": "parkdekor",
+   "nom": "Parkdekor",
+   "nom_enregistre": "Parkdekor",
+   "synonymes": [],
+   "noms_de_vente": [],
+   "groupe": "F. x intermedia",
+   "obtenteur": "Hans Hachmann (Allemagne)",
+   "annee": "annees 1970",
+   "couleur_annoncee": "jaune profond",
+   "forme_annoncee": "tres grandes fleurs sur rameaux retombants",
+   "statut_inventaire": "liste_sans_preuve_detaillee",
+   "statut_inventaire_origine": "liste",
+   "niveau": "D",
+   "niveau_origine": "inventaire seul (aucune preuve détaillée)",
+   "niveau_couleur": "non mesurée",
+   "n_photos_nommees": 0,
+   "preuve_nom": [
+    {
+     "source": "Trees and Shrubs Online (TSO)",
+     "niveau": "N3",
+     "url": "https://www.treesandshrubsonline.org/articles/forsythia/forsythia-x-intermedia/"
+    }
+   ],
+   "marque": {
+    "statut": null,
+    "detail": "aucune marque vue dans les sources lues"
+   },
+   "coloris": "beatrix-farrand",
+   "role_coloris": "sosie",
+   "doutes": []
+  },
+  {
+   "id": "goldzauber",
+   "nom": "Goldzauber",
+   "nom_enregistre": "Goldzauber",
+   "synonymes": [],
+   "noms_de_vente": [],
+   "groupe": "F. x intermedia",
+   "obtenteur": "Hachmann (Allemagne)",
+   "annee": "1974",
+   "couleur_annoncee": "jaune fonce",
+   "forme_annoncee": null,
+   "statut_inventaire": "liste_sans_preuve_detaillee",
+   "statut_inventaire_origine": "liste",
+   "niveau": "D",
+   "niveau_origine": "inventaire seul (aucune preuve détaillée)",
+   "niveau_couleur": "non mesurée",
+   "n_photos_nommees": 0,
+   "preuve_nom": [
+    {
+     "source": "Trees and Shrubs Online (TSO)",
+     "niveau": "N3",
+     "url": "https://www.treesandshrubsonline.org/articles/forsythia/forsythia-x-intermedia/"
+    },
+    {
+     "source": "Plantago (page 1/3 de la liste)",
+     "niveau": "N3",
+     "url": "https://plantago.nl/plantindex/plant/FR/F/1/Forsythia.html"
+    }
+   ],
+   "marque": {
+    "statut": null,
+    "detail": "aucune marque vue dans les sources lues"
+   },
+   "coloris": "beatrix-farrand",
+   "role_coloris": "sosie",
+   "doutes": []
+  },
+  {
+   "id": "hamden-golden-bells",
+   "nom": "Hamden Golden Bells",
+   "nom_enregistre": "Hamden Golden Bells",
+   "synonymes": [],
+   "noms_de_vente": [],
+   "groupe": "F. x intermedia",
+   "obtenteur": "Connecticut (E.-U.)",
+   "annee": "2003",
+   "couleur_annoncee": "jaune",
+   "forme_annoncee": "fleurs particulierement grandes",
+   "statut_inventaire": "liste_sans_preuve_detaillee",
+   "statut_inventaire_origine": "liste",
+   "niveau": "D",
+   "niveau_origine": "inventaire seul (aucune preuve détaillée)",
+   "niveau_couleur": "non mesurée",
+   "n_photos_nommees": 0,
+   "preuve_nom": [
+    {
+     "source": "Trees and Shrubs Online (TSO)",
+     "niveau": "N3",
+     "url": "https://www.treesandshrubsonline.org/articles/forsythia/forsythia-x-intermedia/"
+    }
+   ],
+   "marque": {
+    "statut": null,
+    "detail": "aucune marque vue dans les sources lues"
+   },
+   "coloris": "beatrix-farrand",
+   "role_coloris": "sosie",
+   "doutes": []
+  },
+  {
+   "id": "kolgold",
+   "nom": "Kolgold",
+   "nom_enregistre": "Kolgold",
+   "synonymes": [
+    "Magical Gold"
+   ],
+   "noms_de_vente": [
+    "Magical Gold"
+   ],
+   "groupe": "F. x intermedia",
+   "obtenteur": "Kolster BV (Pays-Bas/Allemagne)",
+   "annee": null,
+   "couleur_annoncee": "jaune",
+   "forme_annoncee": "fleurs plus grandes (~2,5 cm selon MBG), floraison de bas en haut, 1,2-1,5 m",
+   "statut_inventaire": "ecarte_nom_de_vente",
+   "statut_inventaire_origine": "marque a verifier",
+   "niveau": "D",
+   "niveau_origine": "inventaire seul (aucune preuve détaillée)",
+   "niveau_couleur": "non mesurée",
+   "n_photos_nommees": 0,
+   "preuve_nom": [
+    {
+     "source": "Trees and Shrubs Online (TSO)",
+     "niveau": "N3",
+     "url": "https://www.treesandshrubsonline.org/articles/forsythia/forsythia-x-intermedia/"
+    },
+    {
+     "source": "Missouri Botanical Garden",
+     "niveau": "N3",
+     "url": "https://plantfinder.mobot.org/PlantFinderDetails.aspx?taxonid=364287"
+    }
+   ],
+   "marque": {
+    "statut": "à vérifier",
+    "detail": "Magical Gold : MBG l'écrit sans symbole (nom de vente de 'Kolgold', Kolster BV) ; TSO écrit MAGICAL® GOLD (® vu chez TSO, sans registre) ; série Magical de Kolster possible : à vérifier dans un registre des marques",
+    "url": "https://plantfinder.mobot.org/PlantFinderDetails.aspx?taxonid=364287"
+   },
+   "coloris": "beatrix-farrand",
+   "role_coloris": "sosie",
+   "doutes": []
+  },
+  {
+   "id": "golden-fantasy",
+   "nom": "Golden Fantasy",
+   "nom_enregistre": "Golden Fantasy",
+   "synonymes": [],
+   "noms_de_vente": [],
+   "groupe": "F. x intermedia",
+   "obtenteur": "Kolster BV (Pays-Bas)",
+   "annee": null,
+   "couleur_annoncee": "jaune profond (Kolster)",
+   "forme_annoncee": "grandes fleurs sur bois d'un an sur toute la branche; mars-avril; rusticite excellente; produit de fleur coupee",
+   "statut_inventaire": "candidat_C",
+   "statut_inventaire_origine": "identite a verifier (peut etre = Kolgold)",
+   "niveau": "C",
+   "niveau_origine": "preuves détaillées (lot-representants.json et coloris-mesures.json)",
+   "niveau_couleur": "non mesurée",
+   "n_photos_nommees": 1,
+   "preuve_nom": [
+    {
+     "source": "Kolster BV (exportateur de branches coupées)",
+     "niveau": "N2",
+     "url": "https://www.kolster.nl/nl/producten/snijheesters/overige-snijheesters-en-vaste-planten/2516-forsythia-golden-fantasy.html"
+    },
+    {
+     "source": "Trees and Shrubs Online (TSO)",
+     "niveau": "N3",
+     "url": "https://www.treesandshrubsonline.org/articles/forsythia/forsythia-x-intermedia/"
+    }
+   ],
+   "marque": {
+    "statut": "à vérifier",
+    "detail": "aucun ® ni ™ sur le nom 'Golden Fantasy' (Kolster, deux pages relues au sondage) ; ® vu sur le slogan « Magical Plants & Flowers » de Kolster et sur MAGICAL® GOLD chez TSO (nom de vente de 'Kolgold', lien non prouvé)"
+   },
+   "coloris": "golden-fantasy",
+   "role_coloris": "representant",
+   "doutes": [
+    "identite a verifier (peut etre = Kolgold)"
+   ],
+   "sosie_de": "beatrix-farrand"
+  },
+  {
+   "id": "vitellina",
+   "nom": "Vitellina",
+   "nom_enregistre": "Vitellina",
+   "synonymes": [],
+   "noms_de_vente": [],
+   "groupe": "F. x intermedia",
+   "obtenteur": "Spaeth (Berlin)",
+   "annee": "1899",
+   "couleur_annoncee": "jaune profond",
+   "forme_annoncee": "dresse; fleurs en grappes serrees sur le bois de l'an dernier; lobes peu recourbes; pin-eyed",
+   "statut_inventaire": "liste_sans_preuve_detaillee",
+   "statut_inventaire_origine": "liste",
+   "niveau": "D",
+   "niveau_origine": "inventaire seul (aucune preuve détaillée)",
+   "niveau_couleur": "non mesurée",
+   "n_photos_nommees": 0,
+   "preuve_nom": [
+    {
+     "source": "Trees and Shrubs Online (TSO)",
+     "niveau": "N3",
+     "url": "https://www.treesandshrubsonline.org/articles/forsythia/forsythia-x-intermedia/"
+    }
+   ],
+   "marque": {
+    "statut": null,
+    "detail": "aucune marque vue dans les sources lues"
+   },
+   "coloris": "spectabilis",
+   "role_coloris": "sosie",
+   "doutes": []
+  },
+  {
+   "id": "densiflora",
+   "nom": "Densiflora",
+   "nom_enregistre": "Densiflora",
+   "synonymes": [],
+   "noms_de_vente": [],
+   "groupe": "F. x intermedia",
+   "obtenteur": "Spaeth (Berlin)",
+   "annee": "1899",
+   "couleur_annoncee": "jaune doux",
+   "forme_annoncee": "retombant; grandes fleurs ~32 mm; lobes peu recourbes; pin-eyed",
+   "statut_inventaire": "liste_sans_preuve_detaillee",
+   "statut_inventaire_origine": "liste",
+   "niveau": "D",
+   "niveau_origine": "inventaire seul (aucune preuve détaillée)",
+   "niveau_couleur": "non mesurée",
+   "n_photos_nommees": 0,
+   "preuve_nom": [
+    {
+     "source": "Trees and Shrubs Online (TSO)",
+     "niveau": "N3",
+     "url": "https://www.treesandshrubsonline.org/articles/forsythia/forsythia-x-intermedia/"
+    },
+    {
+     "source": "Plantago (page 1/3 de la liste)",
+     "niveau": "N3",
+     "url": "https://plantago.nl/plantindex/plant/FR/F/1/Forsythia.html"
+    }
+   ],
+   "marque": {
+    "statut": null,
+    "detail": "aucune marque vue dans les sources lues"
+   },
+   "coloris": "spring-glory",
+   "role_coloris": "sosie",
+   "doutes": []
+  },
+  {
+   "id": "mirabilis",
+   "nom": "Mirabilis",
+   "nom_enregistre": "Mirabilis",
+   "synonymes": [],
+   "noms_de_vente": [],
+   "groupe": "F. x intermedia",
+   "obtenteur": "ancien clone, peut-etre danois",
+   "annee": null,
+   "couleur_annoncee": "jaune clair",
+   "forme_annoncee": null,
+   "statut_inventaire": "liste_sans_preuve_detaillee",
+   "statut_inventaire_origine": "liste",
+   "niveau": "D",
+   "niveau_origine": "inventaire seul (aucune preuve détaillée)",
+   "niveau_couleur": "non mesurée",
+   "n_photos_nommees": 0,
+   "preuve_nom": [
+    {
+     "source": "Trees and Shrubs Online (TSO)",
+     "niveau": "N3",
+     "url": "https://www.treesandshrubsonline.org/articles/forsythia/forsythia-x-intermedia/"
+    }
+   ],
+   "marque": {
+    "statut": null,
+    "detail": "aucune marque vue dans les sources lues"
+   },
+   "coloris": "spring-glory",
+   "role_coloris": "sosie",
+   "doutes": []
+  },
+  {
+   "id": "liliane",
+   "nom": "Liliane",
+   "nom_enregistre": "Liliane",
+   "synonymes": [
+    "Golden Bells"
+   ],
+   "noms_de_vente": [],
+   "groupe": "F. x intermedia",
+   "obtenteur": "probablement Pologne",
+   "annee": null,
+   "couleur_annoncee": "jaune citron",
+   "forme_annoncee": "feuilles jusqu'a 12 cm",
+   "statut_inventaire": "liste_sans_preuve_detaillee",
+   "statut_inventaire_origine": "liste",
+   "niveau": "D",
+   "niveau_origine": "inventaire seul (aucune preuve détaillée)",
+   "niveau_couleur": "non mesurée",
+   "n_photos_nommees": 0,
+   "preuve_nom": [
+    {
+     "source": "Trees and Shrubs Online (TSO)",
+     "niveau": "N3",
+     "url": "https://www.treesandshrubsonline.org/articles/forsythia/forsythia-x-intermedia/"
+    },
+    {
+     "source": "Plantago (page 1/3 de la liste)",
+     "niveau": "N3",
+     "url": "https://plantago.nl/plantindex/plant/FR/F/1/Forsythia.html"
+    }
+   ],
+   "marque": {
+    "statut": null,
+    "detail": "aucune marque vue dans les sources lues"
+   },
+   "coloris": "spring-glory",
+   "role_coloris": "sosie",
+   "doutes": []
+  },
+  {
+   "id": "minigold",
+   "nom": "Minigold",
+   "nom_enregistre": "Minigold",
+   "synonymes": [
+    "Flojor"
+   ],
+   "noms_de_vente": [
+    "Minigold"
+   ],
+   "groupe": "F. x intermedia",
+   "obtenteur": "France",
+   "annee": "annees 1980",
+   "couleur_annoncee": "jaune dore",
+   "forme_annoncee": "nain ~1 m; petites fleurs aux lobes larges, tres nombreuses; CONFLIT: TSO feuilles vertes, MBG feuillage panache",
+   "statut_inventaire": "ecarte_hors_portee_port_nain",
+   "statut_inventaire_origine": "ecarte: port nain",
+   "niveau": "D",
+   "niveau_origine": "inventaire seul (aucune preuve détaillée)",
+   "niveau_couleur": "non mesurée",
+   "n_photos_nommees": 0,
+   "preuve_nom": [
+    {
+     "source": "Trees and Shrubs Online (TSO)",
+     "niveau": "N3",
+     "url": "https://www.treesandshrubsonline.org/articles/forsythia/forsythia-x-intermedia/"
+    },
+    {
+     "source": "Missouri Botanical Garden",
+     "niveau": "N3",
+     "url": "https://plantfinder.mobot.org/PlantFinderDetails.aspx?taxonid=265323"
+    }
+   ],
+   "marque": {
+    "statut": "à vérifier",
+    "detail": "Minigold : nom de vente de 'Flojor' (MBG, TSO), symbole non vu",
+    "url": "https://plantfinder.mobot.org/PlantFinderDetails.aspx?taxonid=265323"
+   },
+   "coloris": null,
+   "role_coloris": null,
+   "doutes": []
+  },
+  {
+   "id": "mindor",
+   "nom": "Mindor",
+   "nom_enregistre": "Mindor",
+   "synonymes": [
+    "Show Off"
+   ],
+   "noms_de_vente": [
+    "Show Off"
+   ],
+   "groupe": "F. x intermedia",
+   "obtenteur": "Minier (France); Proven Winners",
+   "annee": "2005",
+   "couleur_annoncee": "jaune vif",
+   "forme_annoncee": "sport de Fiesta; fleurs d'un jaune vif, longue floraison; dresse 1,5-1,8 m",
+   "statut_inventaire": "ecarte_marque",
+   "statut_inventaire_origine": "ECARTE: marque",
+   "niveau": "D",
+   "niveau_origine": "inventaire seul (aucune preuve détaillée)",
+   "niveau_couleur": "non mesurée",
+   "n_photos_nommees": 0,
+   "preuve_nom": [
+    {
+     "source": "Proven Winners (vendeur, page de marque)",
+     "niveau": "vendeur",
+     "url": "https://www.provenwinners.com/plants/forsythia/show-forsythia-x-intermedia"
+    },
+    {
+     "source": "Trees and Shrubs Online (TSO)",
+     "niveau": "N3",
+     "url": "https://www.treesandshrubsonline.org/articles/forsythia/forsythia-x-intermedia/"
+    }
+   ],
+   "marque": {
+    "statut": "® vu chez un vendeur",
+    "detail": "Show Off ® vu chez Proven Winners (cultivars 'Mindor', 'Minfor6', 'Nimbus' sous la série)",
+    "url": "https://www.provenwinners.com/plants/forsythia"
+   },
+   "coloris": null,
+   "role_coloris": null,
+   "doutes": []
+  },
+  {
+   "id": "minfor6",
+   "nom": "Minfor6",
+   "nom_enregistre": "Minfor6",
+   "synonymes": [
+    "Mikado",
+    "Show Off Starlet"
+   ],
+   "noms_de_vente": [
+    "Show Off Starlet"
+   ],
+   "groupe": "F. x intermedia",
+   "obtenteur": "Minier (France)",
+   "annee": "brevet US PP24361",
+   "couleur_annoncee": "jaune",
+   "forme_annoncee": "compact; floraison plus tardive et plus longue que Courdijau",
+   "statut_inventaire": "ecarte_marque",
+   "statut_inventaire_origine": "ECARTE: marque",
+   "niveau": "D",
+   "niveau_origine": "inventaire seul (aucune preuve détaillée)",
+   "niveau_couleur": "non mesurée",
+   "n_photos_nommees": 0,
+   "preuve_nom": [
+    {
+     "source": "Proven Winners (vendeur, page de marque)",
+     "niveau": "vendeur",
+     "url": "https://www.provenwinners.com/plants/forsythia/show-starlet-forsythia-x"
+    },
+    {
+     "source": "Trees and Shrubs Online (TSO)",
+     "niveau": "N3",
+     "url": "https://www.treesandshrubsonline.org/articles/forsythia/forsythia-x-intermedia/"
+    }
+   ],
+   "marque": {
+    "statut": "® vu chez un vendeur",
+    "detail": "Show Off Starlet ® vu chez Proven Winners",
+    "url": "https://www.provenwinners.com/plants/forsythia"
+   },
+   "coloris": null,
+   "role_coloris": null,
+   "doutes": []
+  },
+  {
+   "id": "nimbus",
+   "nom": "Nimbus",
+   "nom_enregistre": "Nimbus",
+   "synonymes": [
+    "Sugar Baby",
+    "Show Off Sugar Baby"
+   ],
+   "noms_de_vente": [
+    "Sugar Baby",
+    "Show Off Sugar Baby"
+   ],
+   "groupe": "F. x intermedia",
+   "obtenteur": "Minier (France)",
+   "annee": "2006",
+   "couleur_annoncee": "jaune",
+   "forme_annoncee": "tres nain; thrum-eyed",
+   "statut_inventaire": "ecarte_marque",
+   "statut_inventaire_origine": "ECARTE: marque",
+   "niveau": "D",
+   "niveau_origine": "inventaire seul (aucune preuve détaillée)",
+   "niveau_couleur": "non mesurée",
+   "n_photos_nommees": 0,
+   "preuve_nom": [
+    {
+     "source": "Proven Winners (vendeur, page de marque)",
+     "niveau": "vendeur",
+     "url": "https://www.provenwinners.com/plants/forsythia/show-sugar-baby-forsythia-x"
+    },
+    {
+     "source": "Trees and Shrubs Online (TSO)",
+     "niveau": "N3",
+     "url": "https://www.treesandshrubsonline.org/articles/forsythia/forsythia-x-intermedia/"
+    }
+   ],
+   "marque": {
+    "statut": "® vu chez un vendeur",
+    "detail": "Sugar Baby ® (Show Off ® Sugar Baby ®) vu chez Proven Winners ; Minier 2006",
+    "url": "https://www.provenwinners.com/plants/forsythia/show-sugar-baby-forsythia-x"
+   },
+   "coloris": null,
+   "role_coloris": null,
+   "doutes": []
+  },
+  {
+   "id": "fiesta",
+   "nom": "Fiesta",
+   "nom_enregistre": "Fiesta",
+   "synonymes": [],
+   "noms_de_vente": [],
+   "groupe": "F. x intermedia",
+   "obtenteur": "Duncan & Davies (Nouvelle-Zelande)",
+   "annee": null,
+   "couleur_annoncee": "jaune",
+   "forme_annoncee": "sport panache de Lynwood; floraison timide; compact",
+   "statut_inventaire": "ecarte_hors_portee_feuillage",
+   "statut_inventaire_origine": "ecarte: feuillage panache, floraison timide",
+   "niveau": "D",
+   "niveau_origine": "inventaire seul (aucune preuve détaillée)",
+   "niveau_couleur": "non mesurée",
+   "n_photos_nommees": 0,
+   "preuve_nom": [
+    {
+     "source": "Trees and Shrubs Online (TSO)",
+     "niveau": "N3",
+     "url": "https://www.treesandshrubsonline.org/articles/forsythia/forsythia-x-intermedia/"
+    },
+    {
+     "source": "Missouri Botanical Garden",
+     "niveau": "N3",
+     "url": "https://plantfinder.mobot.org/PlantFinderDetails.aspx?taxonid=257286"
+    }
+   ],
+   "marque": {
+    "statut": null,
+    "detail": "aucune marque vue dans les sources lues"
+   },
+   "coloris": null,
+   "role_coloris": null,
+   "doutes": []
+  },
+  {
+   "id": "variegata",
+   "nom": "Variegata",
+   "nom_enregistre": "Variegata",
+   "synonymes": [],
+   "noms_de_vente": [],
+   "groupe": "F. x intermedia",
+   "obtenteur": null,
+   "annee": null,
+   "couleur_annoncee": null,
+   "forme_annoncee": "feuillage panache ou jaune; fleur sans particularite documentee",
+   "statut_inventaire": "ecarte_hors_portee_feuillage",
+   "statut_inventaire_origine": "ecarte: feuillage",
+   "niveau": "D",
+   "niveau_origine": "inventaire seul (aucune preuve détaillée)",
+   "niveau_couleur": "non mesurée",
+   "n_photos_nommees": 0,
+   "preuve_nom": [
+    {
+     "source": "Trees and Shrubs Online (TSO)",
+     "niveau": "N3",
+     "url": "https://www.treesandshrubsonline.org/articles/forsythia/forsythia-x-intermedia/"
+    },
+    {
+     "source": "Plantago (page 1/3 de la liste)",
+     "niveau": "N3",
+     "url": "https://plantago.nl/plantindex/plant/FR/F/1/Forsythia.html"
+    }
+   ],
+   "marque": {
+    "statut": null,
+    "detail": "aucune marque vue dans les sources lues"
+   },
+   "coloris": null,
+   "role_coloris": null,
+   "doutes": []
+  },
+  {
+   "id": "ashmount",
+   "nom": "Ashmount",
+   "nom_enregistre": "Ashmount",
+   "synonymes": [],
+   "noms_de_vente": [],
+   "groupe": "F. x intermedia",
+   "obtenteur": null,
+   "annee": null,
+   "couleur_annoncee": null,
+   "forme_annoncee": "feuillage panache ou jaune; fleur sans particularite documentee",
+   "statut_inventaire": "ecarte_hors_portee_feuillage",
+   "statut_inventaire_origine": "ecarte: feuillage",
+   "niveau": "D",
+   "niveau_origine": "inventaire seul (aucune preuve détaillée)",
+   "niveau_couleur": "non mesurée",
+   "n_photos_nommees": 0,
+   "preuve_nom": [
+    {
+     "source": "Trees and Shrubs Online (TSO)",
+     "niveau": "N3",
+     "url": "https://www.treesandshrubsonline.org/articles/forsythia/forsythia-x-intermedia/"
+    },
+    {
+     "source": "Plantago (page 1/3 de la liste)",
+     "niveau": "N3",
+     "url": "https://plantago.nl/plantindex/plant/FR/F/1/Forsythia.html"
+    }
+   ],
+   "marque": {
+    "statut": null,
+    "detail": "aucune marque vue dans les sources lues"
+   },
+   "coloris": null,
+   "role_coloris": null,
+   "doutes": []
+  },
+  {
+   "id": "aurea",
+   "nom": "Aurea",
+   "nom_enregistre": "Aurea",
+   "synonymes": [],
+   "noms_de_vente": [],
+   "groupe": "F. x intermedia",
+   "obtenteur": null,
+   "annee": null,
+   "couleur_annoncee": null,
+   "forme_annoncee": "feuillage panache ou jaune; fleur sans particularite documentee",
+   "statut_inventaire": "ecarte_hors_portee_feuillage",
+   "statut_inventaire_origine": "ecarte: feuillage",
+   "niveau": "D",
+   "niveau_origine": "inventaire seul (aucune preuve détaillée)",
+   "niveau_couleur": "non mesurée",
+   "n_photos_nommees": 0,
+   "preuve_nom": [
+    {
+     "source": "Trees and Shrubs Online (TSO)",
+     "niveau": "N3",
+     "url": "https://www.treesandshrubsonline.org/articles/forsythia/forsythia-x-intermedia/"
+    },
+    {
+     "source": "Plantago (page 1/3 de la liste)",
+     "niveau": "N3",
+     "url": "https://plantago.nl/plantindex/plant/FR/F/1/Forsythia.html"
+    }
+   ],
+   "marque": {
+    "statut": null,
+    "detail": "aucune marque vue dans les sources lues"
+   },
+   "coloris": null,
+   "role_coloris": null,
+   "doutes": []
+  },
+  {
+   "id": "josefa",
+   "nom": "Josefa",
+   "nom_enregistre": "Josefa",
+   "synonymes": [],
+   "noms_de_vente": [],
+   "groupe": "F. x intermedia",
+   "obtenteur": null,
+   "annee": null,
+   "couleur_annoncee": null,
+   "forme_annoncee": "feuillage panache ou jaune; fleur sans particularite documentee",
+   "statut_inventaire": "ecarte_hors_portee_feuillage",
+   "statut_inventaire_origine": "ecarte: feuillage",
+   "niveau": "D",
+   "niveau_origine": "inventaire seul (aucune preuve détaillée)",
+   "niveau_couleur": "non mesurée",
+   "n_photos_nommees": 0,
+   "preuve_nom": [
+    {
+     "source": "Trees and Shrubs Online (TSO)",
+     "niveau": "N3",
+     "url": "https://www.treesandshrubsonline.org/articles/forsythia/forsythia-x-intermedia/"
+    },
+    {
+     "source": "Plantago (page 1/3 de la liste)",
+     "niveau": "N3",
+     "url": "https://plantago.nl/plantindex/plant/FR/F/1/Forsythia.html"
+    }
+   ],
+   "marque": {
+    "statut": null,
+    "detail": "aucune marque vue dans les sources lues"
+   },
+   "coloris": null,
+   "role_coloris": null,
+   "doutes": []
+  },
+  {
+   "id": "evergold",
+   "nom": "Evergold",
+   "nom_enregistre": "Evergold",
+   "synonymes": [],
+   "noms_de_vente": [],
+   "groupe": "F. x intermedia",
+   "obtenteur": null,
+   "annee": null,
+   "couleur_annoncee": null,
+   "forme_annoncee": "feuillage panache ou jaune; fleur sans particularite documentee",
+   "statut_inventaire": "ecarte_hors_portee_feuillage",
+   "statut_inventaire_origine": "ecarte: feuillage",
+   "niveau": "D",
+   "niveau_origine": "inventaire seul (aucune preuve détaillée)",
+   "niveau_couleur": "non mesurée",
+   "n_photos_nommees": 0,
+   "preuve_nom": [
+    {
+     "source": "Trees and Shrubs Online (TSO)",
+     "niveau": "N3",
+     "url": "https://www.treesandshrubsonline.org/articles/forsythia/forsythia-x-intermedia/"
+    },
+    {
+     "source": "Plantago (page 1/3 de la liste)",
+     "niveau": "N3",
+     "url": "https://plantago.nl/plantindex/plant/FR/F/1/Forsythia.html"
+    }
+   ],
+   "marque": {
+    "statut": null,
+    "detail": "aucune marque vue dans les sources lues"
+   },
+   "coloris": null,
+   "role_coloris": null,
+   "doutes": []
+  },
+  {
+   "id": "discovery",
+   "nom": "Discovery",
+   "nom_enregistre": "Discovery",
+   "synonymes": [],
+   "noms_de_vente": [],
+   "groupe": "F. x intermedia",
+   "obtenteur": null,
+   "annee": null,
+   "couleur_annoncee": null,
+   "forme_annoncee": "feuillage panache ou jaune; fleur sans particularite documentee",
+   "statut_inventaire": "ecarte_hors_portee_feuillage",
+   "statut_inventaire_origine": "ecarte: feuillage",
+   "niveau": "D",
+   "niveau_origine": "inventaire seul (aucune preuve détaillée)",
+   "niveau_couleur": "non mesurée",
+   "n_photos_nommees": 0,
+   "preuve_nom": [
+    {
+     "source": "Trees and Shrubs Online (TSO)",
+     "niveau": "N3",
+     "url": "https://www.treesandshrubsonline.org/articles/forsythia/forsythia-x-intermedia/"
+    },
+    {
+     "source": "Plantago (page 1/3 de la liste)",
+     "niveau": "N3",
+     "url": "https://plantago.nl/plantindex/plant/FR/F/1/Forsythia.html"
+    }
+   ],
+   "marque": {
+    "statut": null,
+    "detail": "aucune marque vue dans les sources lues"
+   },
+   "coloris": null,
+   "role_coloris": null,
+   "doutes": []
+  },
+  {
+   "id": "clems",
+   "nom": "Clems",
+   "nom_enregistre": "Clems",
+   "synonymes": [],
+   "noms_de_vente": [
+    "Clems Yellow Leaf"
+   ],
+   "groupe": "F. x intermedia",
+   "obtenteur": null,
+   "annee": null,
+   "couleur_annoncee": null,
+   "forme_annoncee": "feuillage panache ou jaune; fleur sans particularite documentee",
+   "statut_inventaire": "ecarte_hors_portee_feuillage",
+   "statut_inventaire_origine": "ecarte: feuillage",
+   "niveau": "D",
+   "niveau_origine": "inventaire seul (aucune preuve détaillée)",
+   "niveau_couleur": "non mesurée",
+   "n_photos_nommees": 0,
+   "preuve_nom": [
+    {
+     "source": "Trees and Shrubs Online (TSO)",
+     "niveau": "N3",
+     "url": "https://www.treesandshrubsonline.org/articles/forsythia/forsythia-x-intermedia/"
+    },
+    {
+     "source": "Plantago (page 1/3 de la liste)",
+     "niveau": "N3",
+     "url": "https://plantago.nl/plantindex/plant/FR/F/1/Forsythia.html"
+    }
+   ],
+   "marque": {
+    "statut": "à vérifier",
+    "detail": "Clems Yellow Leaf : ® vu sur 'CLEMS YELLOW LEAF®' chez TSO (sans registre) ; à vérifier",
+    "url": "https://www.treesandshrubsonline.org/articles/forsythia/forsythia-x-intermedia/"
+   },
+   "coloris": null,
+   "role_coloris": null,
+   "doutes": []
+  },
+  {
+   "id": "susan-gruninger",
+   "nom": "Susan Gruninger",
+   "nom_enregistre": "Susan Gruninger",
+   "synonymes": [],
+   "noms_de_vente": [],
+   "groupe": "F. x intermedia",
+   "obtenteur": null,
+   "annee": null,
+   "couleur_annoncee": null,
+   "forme_annoncee": "feuillage panache ou jaune; fleur sans particularite documentee",
+   "statut_inventaire": "ecarte_hors_portee_feuillage",
+   "statut_inventaire_origine": "ecarte: feuillage",
+   "niveau": "D",
+   "niveau_origine": "inventaire seul (aucune preuve détaillée)",
+   "niveau_couleur": "non mesurée",
+   "n_photos_nommees": 0,
+   "preuve_nom": [
+    {
+     "source": "Trees and Shrubs Online (TSO)",
+     "niveau": "N3",
+     "url": "https://www.treesandshrubsonline.org/articles/forsythia/forsythia-x-intermedia/"
+    },
+    {
+     "source": "Plantago (page 1/3 de la liste)",
+     "niveau": "N3",
+     "url": "https://plantago.nl/plantindex/plant/FR/F/1/Forsythia.html"
+    }
+   ],
+   "marque": {
+    "statut": null,
+    "detail": "aucune marque vue dans les sources lues"
+   },
+   "coloris": null,
+   "role_coloris": null,
+   "doutes": []
+  },
+  {
+   "id": "white-gold",
+   "nom": "White Gold",
+   "nom_enregistre": "White Gold",
+   "synonymes": [],
+   "noms_de_vente": [],
+   "groupe": "F. x intermedia",
+   "obtenteur": null,
+   "annee": null,
+   "couleur_annoncee": null,
+   "forme_annoncee": "feuillage panache ou jaune; fleur sans particularite documentee",
+   "statut_inventaire": "ecarte_hors_portee_feuillage",
+   "statut_inventaire_origine": "ecarte: feuillage",
+   "niveau": "D",
+   "niveau_origine": "inventaire seul (aucune preuve détaillée)",
+   "niveau_couleur": "non mesurée",
+   "n_photos_nommees": 0,
+   "preuve_nom": [
+    {
+     "source": "Trees and Shrubs Online (TSO)",
+     "niveau": "N3",
+     "url": "https://www.treesandshrubsonline.org/articles/forsythia/forsythia-x-intermedia/"
+    },
+    {
+     "source": "Plantago (page 1/3 de la liste)",
+     "niveau": "N3",
+     "url": "https://plantago.nl/plantindex/plant/FR/F/1/Forsythia.html"
+    }
+   ],
+   "marque": {
+    "statut": null,
+    "detail": "aucune marque vue dans les sources lues"
+   },
+   "coloris": null,
+   "role_coloris": null,
+   "doutes": []
+  },
+  {
+   "id": "mnich01",
+   "nom": "MNICH01",
+   "nom_enregistre": "MNICH01",
+   "synonymes": [],
+   "noms_de_vente": [],
+   "groupe": "F. x intermedia",
+   "obtenteur": null,
+   "annee": null,
+   "couleur_annoncee": null,
+   "forme_annoncee": "feuillage panache ou jaune; fleur sans particularite documentee",
+   "statut_inventaire": "ecarte_hors_portee_feuillage",
+   "statut_inventaire_origine": "ecarte: feuillage",
+   "niveau": "D",
+   "niveau_origine": "inventaire seul (aucune preuve détaillée)",
+   "niveau_couleur": "non mesurée",
+   "n_photos_nommees": 0,
+   "preuve_nom": [
+    {
+     "source": "Trees and Shrubs Online (TSO)",
+     "niveau": "N3",
+     "url": "https://www.treesandshrubsonline.org/articles/forsythia/forsythia-x-intermedia/"
+    },
+    {
+     "source": "Plantago (page 1/3 de la liste)",
+     "niveau": "N3",
+     "url": "https://plantago.nl/plantindex/plant/FR/F/1/Forsythia.html"
+    }
+   ],
+   "marque": {
+    "statut": null,
+    "detail": "aucune marque vue dans les sources lues"
+   },
+   "coloris": null,
+   "role_coloris": null,
+   "doutes": []
+  },
+  {
+   "id": "gold-leaf",
+   "nom": "Gold Leaf",
+   "nom_enregistre": "Gold Leaf",
+   "synonymes": [],
+   "noms_de_vente": [],
+   "groupe": "F. x intermedia",
+   "obtenteur": null,
+   "annee": null,
+   "couleur_annoncee": null,
+   "forme_annoncee": "feuillage panache ou jaune; fleur sans particularite documentee",
+   "statut_inventaire": "ecarte_hors_portee_feuillage",
+   "statut_inventaire_origine": "ecarte: feuillage",
+   "niveau": "D",
+   "niveau_origine": "inventaire seul (aucune preuve détaillée)",
+   "niveau_couleur": "non mesurée",
+   "n_photos_nommees": 0,
+   "preuve_nom": [
+    {
+     "source": "Trees and Shrubs Online (TSO)",
+     "niveau": "N3",
+     "url": "https://www.treesandshrubsonline.org/articles/forsythia/forsythia-x-intermedia/"
+    },
+    {
+     "source": "Plantago (page 1/3 de la liste)",
+     "niveau": "N3",
+     "url": "https://plantago.nl/plantindex/plant/FR/F/1/Forsythia.html"
+    }
+   ],
+   "marque": {
+    "statut": null,
+    "detail": "aucune marque vue dans les sources lues"
+   },
+   "coloris": null,
+   "role_coloris": null,
+   "doutes": []
+  },
+  {
+   "id": "charming",
+   "nom": "Charming",
+   "nom_enregistre": "Charming",
+   "synonymes": [],
+   "noms_de_vente": [],
+   "groupe": "F. x intermedia",
+   "obtenteur": null,
+   "annee": null,
+   "couleur_annoncee": null,
+   "forme_annoncee": "feuillage panache ou jaune; fleur sans particularite documentee",
+   "statut_inventaire": "ecarte_hors_portee_feuillage",
+   "statut_inventaire_origine": "ecarte: feuillage",
+   "niveau": "D",
+   "niveau_origine": "inventaire seul (aucune preuve détaillée)",
+   "niveau_couleur": "non mesurée",
+   "n_photos_nommees": 0,
+   "preuve_nom": [
+    {
+     "source": "Trees and Shrubs Online (TSO)",
+     "niveau": "N3",
+     "url": "https://www.treesandshrubsonline.org/articles/forsythia/forsythia-x-intermedia/"
+    },
+    {
+     "source": "Plantago (page 1/3 de la liste)",
+     "niveau": "N3",
+     "url": "https://plantago.nl/plantindex/plant/FR/F/1/Forsythia.html"
+    }
+   ],
+   "marque": {
+    "statut": null,
+    "detail": "aucune marque vue dans les sources lues"
+   },
+   "coloris": null,
+   "role_coloris": null,
+   "doutes": []
+  },
+  {
+   "id": "mertensiana",
+   "nom": "Mertensiana",
+   "nom_enregistre": "Mertensiana",
+   "synonymes": [],
+   "noms_de_vente": [],
+   "groupe": "F. x intermedia",
+   "obtenteur": null,
+   "annee": null,
+   "couleur_annoncee": null,
+   "forme_annoncee": "Zurich 1949; bas, fleurs serrees",
+   "statut_inventaire": "ecarte_hors_portee_port_nain",
+   "statut_inventaire_origine": "ecarte: port nain",
+   "niveau": "D",
+   "niveau_origine": "inventaire seul (aucune preuve détaillée)",
+   "niveau_couleur": "non mesurée",
+   "n_photos_nommees": 0,
+   "preuve_nom": [
+    {
+     "source": "Trees and Shrubs Online (TSO)",
+     "niveau": "N3",
+     "url": "https://www.treesandshrubsonline.org/articles/forsythia/forsythia-x-intermedia/"
+    }
+   ],
+   "marque": {
+    "statut": null,
+    "detail": "aucune marque vue dans les sources lues"
+   },
+   "coloris": null,
+   "role_coloris": null,
+   "doutes": []
+  },
+  {
+   "id": "nana",
+   "nom": "Nana",
+   "nom_enregistre": "Nana",
+   "synonymes": [],
+   "noms_de_vente": [],
+   "groupe": "F. x intermedia",
+   "obtenteur": null,
+   "annee": null,
+   "couleur_annoncee": null,
+   "forme_annoncee": "Ohio 1938; compact, fleurs ternes vers 7 ans",
+   "statut_inventaire": "ecarte_hors_portee_port_nain",
+   "statut_inventaire_origine": "ecarte: port nain",
+   "niveau": "D",
+   "niveau_origine": "inventaire seul (aucune preuve détaillée)",
+   "niveau_couleur": "non mesurée",
+   "n_photos_nommees": 0,
+   "preuve_nom": [
+    {
+     "source": "Trees and Shrubs Online (TSO)",
+     "niveau": "N3",
+     "url": "https://www.treesandshrubsonline.org/articles/forsythia/forsythia-x-intermedia/"
+    }
+   ],
+   "marque": {
+    "statut": null,
+    "detail": "aucune marque vue dans les sources lues"
+   },
+   "coloris": null,
+   "role_coloris": null,
+   "doutes": []
+  },
+  {
+   "id": "minikin",
+   "nom": "Minikin",
+   "nom_enregistre": "Minikin",
+   "synonymes": [],
+   "noms_de_vente": [],
+   "groupe": "F. x intermedia",
+   "obtenteur": null,
+   "annee": null,
+   "couleur_annoncee": null,
+   "forme_annoncee": "van de Werken; fleurs minuscules",
+   "statut_inventaire": "ecarte_hors_portee_port_nain",
+   "statut_inventaire_origine": "ecarte: port nain",
+   "niveau": "D",
+   "niveau_origine": "inventaire seul (aucune preuve détaillée)",
+   "niveau_couleur": "non mesurée",
+   "n_photos_nommees": 0,
+   "preuve_nom": [
+    {
+     "source": "Trees and Shrubs Online (TSO)",
+     "niveau": "N3",
+     "url": "https://www.treesandshrubsonline.org/articles/forsythia/forsythia-x-intermedia/"
+    }
+   ],
+   "marque": {
+    "statut": null,
+    "detail": "aucune marque vue dans les sources lues"
+   },
+   "coloris": null,
+   "role_coloris": null,
+   "doutes": []
+  },
+  {
+   "id": "fairy-land",
+   "nom": "Fairy-land",
+   "nom_enregistre": "Fairy-land",
+   "synonymes": [],
+   "noms_de_vente": [],
+   "groupe": "F. x intermedia",
+   "obtenteur": null,
+   "annee": null,
+   "couleur_annoncee": null,
+   "forme_annoncee": "van de Werken",
+   "statut_inventaire": "ecarte_hors_portee_port_nain",
+   "statut_inventaire_origine": "ecarte: port nain",
+   "niveau": "D",
+   "niveau_origine": "inventaire seul (aucune preuve détaillée)",
+   "niveau_couleur": "non mesurée",
+   "n_photos_nommees": 0,
+   "preuve_nom": [
+    {
+     "source": "Trees and Shrubs Online (TSO)",
+     "niveau": "N3",
+     "url": "https://www.treesandshrubsonline.org/articles/forsythia/forsythia-x-intermedia/"
+    }
+   ],
+   "marque": {
+    "statut": null,
+    "detail": "aucune marque vue dans les sources lues"
+   },
+   "coloris": null,
+   "role_coloris": null,
+   "doutes": []
+  },
+  {
+   "id": "pygmy-red",
+   "nom": "Pygmy-Red",
+   "nom_enregistre": "Pygmy-Red",
+   "synonymes": [],
+   "noms_de_vente": [],
+   "groupe": "F. x intermedia",
+   "obtenteur": null,
+   "annee": null,
+   "couleur_annoncee": null,
+   "forme_annoncee": "van de Werken",
+   "statut_inventaire": "ecarte_hors_portee_port_nain",
+   "statut_inventaire_origine": "ecarte: port nain",
+   "niveau": "D",
+   "niveau_origine": "inventaire seul (aucune preuve détaillée)",
+   "niveau_couleur": "non mesurée",
+   "n_photos_nommees": 0,
+   "preuve_nom": [
+    {
+     "source": "Trees and Shrubs Online (TSO)",
+     "niveau": "N3",
+     "url": "https://www.treesandshrubsonline.org/articles/forsythia/forsythia-x-intermedia/"
+    }
+   ],
+   "marque": {
+    "statut": null,
+    "detail": "aucune marque vue dans les sources lues"
+   },
+   "coloris": null,
+   "role_coloris": null,
+   "doutes": []
+  },
+  {
+   "id": "tinkle-bells",
+   "nom": "Tinkle Bells",
+   "nom_enregistre": "Tinkle Bells",
+   "synonymes": [],
+   "noms_de_vente": [],
+   "groupe": "F. x intermedia",
+   "obtenteur": null,
+   "annee": null,
+   "couleur_annoncee": null,
+   "forme_annoncee": "van de Werken",
+   "statut_inventaire": "ecarte_hors_portee_port_nain",
+   "statut_inventaire_origine": "ecarte: port nain",
+   "niveau": "D",
+   "niveau_origine": "inventaire seul (aucune preuve détaillée)",
+   "niveau_couleur": "non mesurée",
+   "n_photos_nommees": 0,
+   "preuve_nom": [
+    {
+     "source": "Trees and Shrubs Online (TSO)",
+     "niveau": "N3",
+     "url": "https://www.treesandshrubsonline.org/articles/forsythia/forsythia-x-intermedia/"
+    }
+   ],
+   "marque": {
+    "statut": null,
+    "detail": "aucune marque vue dans les sources lues"
+   },
+   "coloris": null,
+   "role_coloris": null,
+   "doutes": []
+  },
+  {
+   "id": "lemon-screen",
+   "nom": "Lemon Screen",
+   "nom_enregistre": "Lemon Screen",
+   "synonymes": [],
+   "noms_de_vente": [],
+   "groupe": "F. x intermedia",
+   "obtenteur": null,
+   "annee": null,
+   "couleur_annoncee": null,
+   "forme_annoncee": "van de Werken; 3 m",
+   "statut_inventaire": "ecarte_hors_portee_port_nain",
+   "statut_inventaire_origine": "ecarte: port nain",
+   "niveau": "D",
+   "niveau_origine": "inventaire seul (aucune preuve détaillée)",
+   "niveau_couleur": "non mesurée",
+   "n_photos_nommees": 0,
+   "preuve_nom": [
+    {
+     "source": "Trees and Shrubs Online (TSO)",
+     "niveau": "N3",
+     "url": "https://www.treesandshrubsonline.org/articles/forsythia/forsythia-x-intermedia/"
+    }
+   ],
+   "marque": {
+    "statut": null,
+    "detail": "aucune marque vue dans les sources lues"
+   },
+   "coloris": null,
+   "role_coloris": null,
+   "doutes": []
+  },
+  {
+   "id": "arnold-dwarf",
+   "nom": "Arnold Dwarf",
+   "nom_enregistre": "Arnold Dwarf",
+   "synonymes": [],
+   "noms_de_vente": [],
+   "groupe": "F. x intermedia",
+   "obtenteur": null,
+   "annee": null,
+   "couleur_annoncee": null,
+   "forme_annoncee": "Karl Sax 1941; bas",
+   "statut_inventaire": "ecarte_hors_portee_port_nain",
+   "statut_inventaire_origine": "ecarte: port nain",
+   "niveau": "D",
+   "niveau_origine": "inventaire seul (aucune preuve détaillée)",
+   "niveau_couleur": "non mesurée",
+   "n_photos_nommees": 0,
+   "preuve_nom": [
+    {
+     "source": "Trees and Shrubs Online (TSO)",
+     "niveau": "N3",
+     "url": "https://www.treesandshrubsonline.org/articles/forsythia/forsythia-x-intermedia/"
+    }
+   ],
+   "marque": {
+    "statut": null,
+    "detail": "aucune marque vue dans les sources lues"
+   },
+   "coloris": null,
+   "role_coloris": null,
+   "doutes": []
+  },
+  {
+   "id": "maluch",
+   "nom": "Maluch",
+   "nom_enregistre": "Maluch",
+   "synonymes": [],
+   "noms_de_vente": [],
+   "groupe": "F. x intermedia",
+   "obtenteur": null,
+   "annee": null,
+   "couleur_annoncee": null,
+   "forme_annoncee": "liste seule (Plantago, MBG, Cornell, Commons ou APGA); aucune description de fleur lue",
+   "statut_inventaire": "sans_description",
+   "statut_inventaire_origine": "sans description",
+   "niveau": "D",
+   "niveau_origine": "inventaire seul (aucune preuve détaillée)",
+   "niveau_couleur": "non mesurée",
+   "n_photos_nommees": 0,
+   "preuve_nom": [
+    {
+     "source": "Plantago (page 1/3 de la liste)",
+     "niveau": "N3",
+     "url": "https://plantago.nl/plantindex/plant/FR/F/1/Forsythia.html"
+    }
+   ],
+   "marque": {
+    "statut": null,
+    "detail": "aucune marque vue dans les sources lues"
+   },
+   "coloris": null,
+   "role_coloris": null,
+   "doutes": []
+  },
+  {
+   "id": "goldblossom",
+   "nom": "Goldblossom",
+   "nom_enregistre": "Goldblossom",
+   "synonymes": [],
+   "noms_de_vente": [],
+   "groupe": "F. x intermedia",
+   "obtenteur": null,
+   "annee": null,
+   "couleur_annoncee": null,
+   "forme_annoncee": "liste seule (Plantago, MBG, Cornell, Commons ou APGA); aucune description de fleur lue",
+   "statut_inventaire": "sans_description",
+   "statut_inventaire_origine": "sans description",
+   "niveau": "D",
+   "niveau_origine": "inventaire seul (aucune preuve détaillée)",
+   "niveau_couleur": "non mesurée",
+   "n_photos_nommees": 0,
+   "preuve_nom": [
+    {
+     "source": "Plantago (page 1/3 de la liste)",
+     "niveau": "N3",
+     "url": "https://plantago.nl/plantindex/plant/FR/F/1/Forsythia.html"
+    }
+   ],
+   "marque": {
+    "statut": null,
+    "detail": "aucune marque vue dans les sources lues"
+   },
+   "coloris": null,
+   "role_coloris": null,
+   "doutes": []
+  },
+  {
+   "id": "goldteppich",
+   "nom": "Goldteppich",
+   "nom_enregistre": "Goldteppich",
+   "synonymes": [],
+   "noms_de_vente": [],
+   "groupe": "F. x intermedia",
+   "obtenteur": null,
+   "annee": null,
+   "couleur_annoncee": null,
+   "forme_annoncee": "liste seule (Plantago, MBG, Cornell, Commons ou APGA); aucune description de fleur lue",
+   "statut_inventaire": "sans_description",
+   "statut_inventaire_origine": "sans description",
+   "niveau": "D",
+   "niveau_origine": "inventaire seul (aucune preuve détaillée)",
+   "niveau_couleur": "non mesurée",
+   "n_photos_nommees": 0,
+   "preuve_nom": [
+    {
+     "source": "Plantago (page 1/3 de la liste)",
+     "niveau": "N3",
+     "url": "https://plantago.nl/plantindex/plant/FR/F/1/Forsythia.html"
+    }
+   ],
+   "marque": {
+    "statut": null,
+    "detail": "aucune marque vue dans les sources lues"
+   },
+   "coloris": null,
+   "role_coloris": null,
+   "doutes": []
+  },
+  {
+   "id": "goldzwerg",
+   "nom": "Goldzwerg",
+   "nom_enregistre": "Goldzwerg",
+   "synonymes": [],
+   "noms_de_vente": [],
+   "groupe": "F. x intermedia",
+   "obtenteur": null,
+   "annee": null,
+   "couleur_annoncee": null,
+   "forme_annoncee": "liste seule (Plantago, MBG, Cornell, Commons ou APGA); aucune description de fleur lue",
+   "statut_inventaire": "sans_description",
+   "statut_inventaire_origine": "sans description",
+   "niveau": "D",
+   "niveau_origine": "inventaire seul (aucune preuve détaillée)",
+   "niveau_couleur": "non mesurée",
+   "n_photos_nommees": 0,
+   "preuve_nom": [
+    {
+     "source": "Plantago (page 1/3 de la liste)",
+     "niveau": "N3",
+     "url": "https://plantago.nl/plantindex/plant/FR/F/1/Forsythia.html"
+    }
+   ],
+   "marque": {
+    "statut": null,
+    "detail": "aucune marque vue dans les sources lues"
+   },
+   "coloris": null,
+   "role_coloris": null,
+   "doutes": []
+  },
+  {
+   "id": "helios",
+   "nom": "Helios",
+   "nom_enregistre": "Helios",
+   "synonymes": [],
+   "noms_de_vente": [],
+   "groupe": "F. x intermedia",
+   "obtenteur": null,
+   "annee": null,
+   "couleur_annoncee": null,
+   "forme_annoncee": "liste seule (Plantago, MBG, Cornell, Commons ou APGA); aucune description de fleur lue",
+   "statut_inventaire": "sans_description",
+   "statut_inventaire_origine": "sans description",
+   "niveau": "D",
+   "niveau_origine": "inventaire seul (aucune preuve détaillée)",
+   "niveau_couleur": "non mesurée",
+   "n_photos_nommees": 0,
+   "preuve_nom": [
+    {
+     "source": "Plantago (page 1/3 de la liste)",
+     "niveau": "N3",
+     "url": "https://plantago.nl/plantindex/plant/FR/F/1/Forsythia.html"
+    }
+   ],
+   "marque": {
+    "statut": null,
+    "detail": "aucune marque vue dans les sources lues"
+   },
+   "coloris": null,
+   "role_coloris": null,
+   "doutes": []
+  },
+  {
+   "id": "fontanna",
+   "nom": "Fontanna",
+   "nom_enregistre": "Fontanna",
+   "synonymes": [],
+   "noms_de_vente": [],
+   "groupe": "F. x intermedia",
+   "obtenteur": null,
+   "annee": null,
+   "couleur_annoncee": null,
+   "forme_annoncee": "liste seule (Plantago, MBG, Cornell, Commons ou APGA); aucune description de fleur lue",
+   "statut_inventaire": "sans_description",
+   "statut_inventaire_origine": "sans description",
+   "niveau": "D",
+   "niveau_origine": "inventaire seul (aucune preuve détaillée)",
+   "niveau_couleur": "non mesurée",
+   "n_photos_nommees": 0,
+   "preuve_nom": [
+    {
+     "source": "Plantago (page 1/3 de la liste)",
+     "niveau": "N3",
+     "url": "https://plantago.nl/plantindex/plant/FR/F/1/Forsythia.html"
+    }
+   ],
+   "marque": {
+    "statut": null,
+    "detail": "aucune marque vue dans les sources lues"
+   },
+   "coloris": null,
+   "role_coloris": null,
+   "doutes": []
+  },
+  {
+   "id": "freja",
+   "nom": "Freja",
+   "nom_enregistre": "Freja",
+   "synonymes": [],
+   "noms_de_vente": [],
+   "groupe": "F. x intermedia",
+   "obtenteur": null,
+   "annee": null,
+   "couleur_annoncee": null,
+   "forme_annoncee": "liste seule (Plantago, MBG, Cornell, Commons ou APGA); aucune description de fleur lue",
+   "statut_inventaire": "sans_description",
+   "statut_inventaire_origine": "sans description",
+   "niveau": "D",
+   "niveau_origine": "inventaire seul (aucune preuve détaillée)",
+   "niveau_couleur": "non mesurée",
+   "n_photos_nommees": 0,
+   "preuve_nom": [
+    {
+     "source": "Plantago (page 1/3 de la liste)",
+     "niveau": "N3",
+     "url": "https://plantago.nl/plantindex/plant/FR/F/1/Forsythia.html"
+    }
+   ],
+   "marque": {
+    "statut": null,
+    "detail": "aucune marque vue dans les sources lues"
+   },
+   "coloris": null,
+   "role_coloris": null,
+   "doutes": []
+  },
+  {
+   "id": "golden-times",
+   "nom": "Golden Times",
+   "nom_enregistre": "Golden Times",
+   "synonymes": [],
+   "noms_de_vente": [],
+   "groupe": "F. x intermedia",
+   "obtenteur": null,
+   "annee": null,
+   "couleur_annoncee": null,
+   "forme_annoncee": "liste seule (Plantago, MBG, Cornell, Commons ou APGA); aucune description de fleur lue",
+   "statut_inventaire": "sans_description",
+   "statut_inventaire_origine": "sans description",
+   "niveau": "D",
+   "niveau_origine": "inventaire seul (aucune preuve détaillée)",
+   "niveau_couleur": "non mesurée",
+   "n_photos_nommees": 0,
+   "preuve_nom": [
+    {
+     "source": "Plantago (page 1/3 de la liste)",
+     "niveau": "N3",
+     "url": "https://plantago.nl/plantindex/plant/FR/F/1/Forsythia.html"
+    }
+   ],
+   "marque": {
+    "statut": null,
+    "detail": "aucune marque vue dans les sources lues"
+   },
+   "coloris": null,
+   "role_coloris": null,
+   "doutes": []
+  },
+  {
+   "id": "goldrush",
+   "nom": "Goldrush",
+   "nom_enregistre": "Goldrush",
+   "synonymes": [],
+   "noms_de_vente": [],
+   "groupe": "F. x intermedia",
+   "obtenteur": null,
+   "annee": null,
+   "couleur_annoncee": null,
+   "forme_annoncee": "liste seule (Plantago, MBG, Cornell, Commons ou APGA); aucune description de fleur lue",
+   "statut_inventaire": "sans_description",
+   "statut_inventaire_origine": "sans description",
+   "niveau": "D",
+   "niveau_origine": "inventaire seul (aucune preuve détaillée)",
+   "niveau_couleur": "non mesurée",
+   "n_photos_nommees": 0,
+   "preuve_nom": [
+    {
+     "source": "Plantago (page 1/3 de la liste)",
+     "niveau": "N3",
+     "url": "https://plantago.nl/plantindex/plant/FR/F/1/Forsythia.html"
+    }
+   ],
+   "marque": {
+    "statut": null,
+    "detail": "aucune marque vue dans les sources lues"
+   },
+   "coloris": null,
+   "role_coloris": null,
+   "doutes": []
+  },
+  {
+   "id": "happy-centennial",
+   "nom": "Happy Centennial",
+   "nom_enregistre": "Happy Centennial",
+   "synonymes": [],
+   "noms_de_vente": [],
+   "groupe": "F. x intermedia",
+   "obtenteur": null,
+   "annee": null,
+   "couleur_annoncee": null,
+   "forme_annoncee": "liste seule (Plantago, MBG, Cornell, Commons ou APGA); aucune description de fleur lue",
+   "statut_inventaire": "sans_description",
+   "statut_inventaire_origine": "sans description",
+   "niveau": "D",
+   "niveau_origine": "inventaire seul (aucune preuve détaillée)",
+   "niveau_couleur": "non mesurée",
+   "n_photos_nommees": 0,
+   "preuve_nom": [
+    {
+     "source": "Plantago (page 1/3 de la liste)",
+     "niveau": "N3",
+     "url": "https://plantago.nl/plantindex/plant/FR/F/1/Forsythia.html"
+    }
+   ],
+   "marque": {
+    "statut": null,
+    "detail": "aucune marque vue dans les sources lues"
+   },
+   "coloris": null,
+   "role_coloris": null,
+   "doutes": []
+  },
+  {
+   "id": "northern-sun",
+   "nom": "Northern Sun",
+   "nom_enregistre": "Northern Sun",
+   "synonymes": [],
+   "noms_de_vente": [],
+   "groupe": "F. x intermedia",
+   "obtenteur": null,
+   "annee": null,
+   "couleur_annoncee": null,
+   "forme_annoncee": "liste seule (Plantago, MBG, Cornell, Commons ou APGA); aucune description de fleur lue",
+   "statut_inventaire": "sans_description",
+   "statut_inventaire_origine": "sans description",
+   "niveau": "D",
+   "niveau_origine": "inventaire seul (aucune preuve détaillée)",
+   "niveau_couleur": "non mesurée",
+   "n_photos_nommees": 0,
+   "preuve_nom": [
+    {
+     "source": "Plantago (page 1/3 de la liste)",
+     "niveau": "N3",
+     "url": "https://plantago.nl/plantindex/plant/FR/F/1/Forsythia.html"
+    }
+   ],
+   "marque": {
+    "statut": null,
+    "detail": "aucune marque vue dans les sources lues"
+   },
+   "coloris": null,
+   "role_coloris": null,
+   "doutes": []
+  },
+  {
+   "id": "new-hampshire-gold",
+   "nom": "New Hampshire Gold",
+   "nom_enregistre": "New Hampshire Gold",
+   "synonymes": [],
+   "noms_de_vente": [],
+   "groupe": "F. x intermedia",
+   "obtenteur": null,
+   "annee": null,
+   "couleur_annoncee": null,
+   "forme_annoncee": "liste seule (Plantago, MBG, Cornell, Commons ou APGA); aucune description de fleur lue",
+   "statut_inventaire": "sans_description",
+   "statut_inventaire_origine": "sans description",
+   "niveau": "D",
+   "niveau_origine": "inventaire seul (aucune preuve détaillée)",
+   "niveau_couleur": "non mesurée",
+   "n_photos_nommees": 0,
+   "preuve_nom": [
+    {
+     "source": "Plantago (page 1/3 de la liste)",
+     "niveau": "N3",
+     "url": "https://plantago.nl/plantindex/plant/FR/F/1/Forsythia.html"
+    }
+   ],
+   "marque": {
+    "statut": null,
+    "detail": "aucune marque vue dans les sources lues"
+   },
+   "coloris": null,
+   "role_coloris": null,
+   "doutes": []
+  },
+  {
+   "id": "sunrise",
+   "nom": "Sunrise",
+   "nom_enregistre": "Sunrise",
+   "synonymes": [],
+   "noms_de_vente": [],
+   "groupe": "F. x intermedia",
+   "obtenteur": null,
+   "annee": null,
+   "couleur_annoncee": null,
+   "forme_annoncee": "liste seule (Plantago, MBG, Cornell, Commons ou APGA); aucune description de fleur lue",
+   "statut_inventaire": "sans_description",
+   "statut_inventaire_origine": "sans description",
+   "niveau": "D",
+   "niveau_origine": "inventaire seul (aucune preuve détaillée)",
+   "niveau_couleur": "non mesurée",
+   "n_photos_nommees": 0,
+   "preuve_nom": [
+    {
+     "source": "Plantago (page 1/3 de la liste)",
+     "niveau": "N3",
+     "url": "https://plantago.nl/plantindex/plant/FR/F/1/Forsythia.html"
+    }
+   ],
+   "marque": {
+    "statut": null,
+    "detail": "aucune marque vue dans les sources lues"
+   },
+   "coloris": null,
+   "role_coloris": null,
+   "doutes": []
+  },
+  {
+   "id": "little-renee",
+   "nom": "Little Renee",
+   "nom_enregistre": "Little Renee",
+   "synonymes": [],
+   "noms_de_vente": [],
+   "groupe": "F. x intermedia",
+   "obtenteur": null,
+   "annee": null,
+   "couleur_annoncee": null,
+   "forme_annoncee": "liste seule (Plantago, MBG, Cornell, Commons ou APGA); aucune description de fleur lue",
+   "statut_inventaire": "sans_description",
+   "statut_inventaire_origine": "sans description",
+   "niveau": "D",
+   "niveau_origine": "inventaire seul (aucune preuve détaillée)",
+   "niveau_couleur": "non mesurée",
+   "n_photos_nommees": 0,
+   "preuve_nom": [
+    {
+     "source": "Plantago (page 1/3 de la liste)",
+     "niveau": "N3",
+     "url": "https://plantago.nl/plantindex/plant/FR/F/1/Forsythia.html"
+    }
+   ],
+   "marque": {
+    "statut": null,
+    "detail": "aucune marque vue dans les sources lues"
+   },
+   "coloris": null,
+   "role_coloris": null,
+   "doutes": []
+  },
+  {
+   "id": "tremonia",
+   "nom": "Tremonia",
+   "nom_enregistre": "Tremonia",
+   "synonymes": [],
+   "noms_de_vente": [],
+   "groupe": "F. x intermedia",
+   "obtenteur": null,
+   "annee": null,
+   "couleur_annoncee": null,
+   "forme_annoncee": "liste seule (Plantago, MBG, Cornell, Commons ou APGA); aucune description de fleur lue",
+   "statut_inventaire": "sans_description",
+   "statut_inventaire_origine": "sans description",
+   "niveau": "D",
+   "niveau_origine": "inventaire seul (aucune preuve détaillée)",
+   "niveau_couleur": "non mesurée",
+   "n_photos_nommees": 0,
+   "preuve_nom": [
+    {
+     "source": "Plantago (page 1/3 de la liste)",
+     "niveau": "N3",
+     "url": "https://plantago.nl/plantindex/plant/FR/F/1/Forsythia.html"
+    }
+   ],
+   "marque": {
+    "statut": null,
+    "detail": "aucune marque vue dans les sources lues"
+   },
+   "coloris": null,
+   "role_coloris": null,
+   "doutes": []
+  },
+  {
+   "id": "forsythia-double-forme-commerciale",
+   "nom": "Forsythia double (forme commerciale)",
+   "nom_enregistre": "Forsythia double (forme commerciale)",
+   "synonymes": [],
+   "noms_de_vente": [],
+   "groupe": "F. x intermedia",
+   "obtenteur": null,
+   "annee": null,
+   "couleur_annoncee": "jaune",
+   "forme_annoncee": "mentionne par un grossiste (Mayesh) dans le catalogue interne; aucun cultivar ni photo",
+   "statut_inventaire": "sans_preuve",
+   "statut_inventaire_origine": "sans preuve",
+   "niveau": "D",
+   "niveau_origine": "inventaire seul (aucune preuve détaillée)",
+   "niveau_couleur": "non mesurée",
+   "n_photos_nommees": 0,
+   "preuve_nom": [],
+   "marque": {
+    "statut": null,
+    "detail": "aucune marque vue dans les sources lues"
+   },
+   "coloris": null,
+   "role_coloris": null,
+   "doutes": []
+  },
+  {
+   "id": "456-54-et-460",
+   "nom": "456/54 et 460",
+   "nom_enregistre": "456/54 et 460",
+   "synonymes": [],
+   "noms_de_vente": [],
+   "groupe": "F. x intermedia",
+   "obtenteur": null,
+   "annee": null,
+   "couleur_annoncee": null,
+   "forme_annoncee": "clones numerotes (categories Commons)",
+   "statut_inventaire": "sans_description",
+   "statut_inventaire_origine": "sans description",
+   "niveau": "D",
+   "niveau_origine": "inventaire seul (aucune preuve détaillée)",
+   "niveau_couleur": "non mesurée",
+   "n_photos_nommees": 0,
+   "preuve_nom": [
+    {
+     "source": "Wikimedia Commons (catégorie)",
+     "niveau": "N4",
+     "url": "https://commons.wikimedia.org/wiki/Category:Forsythia_%C3%97_intermedia_(cultivars)"
+    }
+   ],
+   "marque": {
+    "statut": null,
+    "detail": "aucune marque vue dans les sources lues"
+   },
+   "coloris": null,
+   "role_coloris": null,
+   "doutes": []
+  }
+ ],
+ "hors_groupe": [
+  {
+   "nom": "Forsythia suspensa (+ var. fortunei, sieboldii, 'Atrocaulis')",
+   "groupe": "sorte à part (sid à créer) ou hors sorte",
+   "sources": "retombante; sorte a part (sid a creer); details de fleur non lus ici [memoire]"
+  },
+  {
+   "nom": "Forsythia viridissima (+ var. koreana, 'Bronxensis', 'Border Gem')",
+   "groupe": "sorte à part (sid à créer) ou hors sorte",
+   "sources": "tiges vertes (cle TSO); sorte a part"
+  },
+  {
+   "nom": "Forsythia ovata ('Meadowlark' = ovata x europaea, Arnold Arboretum 1984)",
+   "groupe": "sorte à part (sid à créer) ou hors sorte",
+   "sources": "sorte a part [details de fleur non lus]"
+  },
+  {
+   "nom": "Forsythia europaea, F. giraldiana",
+   "groupe": "sorte à part (sid à créer) ou hors sorte",
+   "sources": "especes, sortes a part; accessions RBGE vivantes existent"
+  },
+  {
+   "nom": "F. koreana (Flying Machine R), F. x mandshurica, F. togashii, F. nakaii, F. saxatilis, F. likiangensis, F. japonica, F. mira",
+   "groupe": "sorte à part (sid à créer) ou hors sorte",
+   "sources": "liste TSO; marque vue sur Flying Machine (R) chez Proven Winners"
+  },
+  {
+   "nom": "Abeliophyllum distichum (white forsythia)",
+   "groupe": "sorte à part (sid à créer) ou hors sorte",
+   "sources": "autre genre, hors sorte"
+  }
+ ],
+ "marques": {
+  "verifie_tmview_2026-10-09": [],
+  "non_verifie_tmview": "tous les noms ci-dessous : les registres des marques (TMview, EUIPO, INPI, WIPO) relèvent de l'orchestrateur, en lecture seule, depuis la session principale",
+  "ecartes": [
+   {
+    "nom": "Show Off",
+    "cultivar_ou_denomination": "Mindor",
+    "nature": "marque (® vu)",
+    "vendeur_ou_source": "Proven Winners",
+    "preuve_vue": "Show Off®, Show Off Starlet®, Show Off® Sugar Baby® ; cultivars 'Mindor', 'Minfor6', 'Nimbus'",
+    "url": "https://www.provenwinners.com/plants/forsythia",
+    "verifie_tmview": null,
+    "decision": "écarté : marque / nom de vente ; jamais affiché"
+   },
+   {
+    "nom": "Show Off Starlet",
+    "cultivar_ou_denomination": "Minfor6 (syn. Mikado)",
+    "nature": "marque (® vu)",
+    "vendeur_ou_source": "Proven Winners",
+    "preuve_vue": "Show Off Starlet® ; brevet US PP24361",
+    "url": "https://www.provenwinners.com/plants/forsythia",
+    "verifie_tmview": null,
+    "decision": "écarté : marque / nom de vente ; jamais affiché"
+   },
+   {
+    "nom": "Sugar Baby (Show Off Sugar Baby)",
+    "cultivar_ou_denomination": "Nimbus",
+    "nature": "marque (® vu)",
+    "vendeur_ou_source": "Proven Winners",
+    "preuve_vue": "Show Off® Sugar Baby® ; Minier 2006",
+    "url": "https://www.provenwinners.com/plants/forsythia/show-sugar-baby-forsythia-x",
+    "verifie_tmview": null,
+    "decision": "écarté : marque / nom de vente ; jamais affiché"
+   },
+   {
+    "nom": "Flying Machine",
+    "cultivar_ou_denomination": "Forsythia koreana (hors sorte × intermedia)",
+    "nature": "marque (® vu)",
+    "vendeur_ou_source": "Proven Winners",
+    "preuve_vue": "Flying Machine® ; F. koreana",
+    "url": "https://www.provenwinners.com/plants/forsythia/flying-machine-forsythia-koreana",
+    "verifie_tmview": null,
+    "decision": "écarté : marque / nom de vente ; jamais affiché"
+   },
+   {
+    "nom": "Gold Tide",
+    "cultivar_ou_denomination": "Courtasol",
+    "nature": "marque (® vu)",
+    "vendeur_ou_source": "Nature Hills Nursery",
+    "preuve_vue": "Gold Tide® Forsythia ; vendu aussi comme Marée d'Or ; MBG : Courtasol = GOLD TIDE",
+    "url": "https://www.naturehills.com/gold-tide-forsythia",
+    "verifie_tmview": null,
+    "decision": "écarté : marque / nom de vente ; jamais affiché"
+   },
+   {
+    "nom": "Week-End / Weekend",
+    "cultivar_ou_denomination": "Courtalyn",
+    "nature": "nom de vente",
+    "vendeur_ou_source": "RHS (fiche), Plantago",
+    "preuve_vue": "PBR (droit d'obtenteur) seulement, pas de ® vu ; nom de vente à vérifier (France : Week-End ?)",
+    "url": "https://www.rhs.org.uk/plants/101339/forsythia-x-intermedia-week-end-courtalyn-pbr/details",
+    "verifie_tmview": null,
+    "decision": "écarté : marque / nom de vente ; jamais affiché"
+   },
+   {
+    "nom": "Marée d'Or",
+    "cultivar_ou_denomination": "Courtasol",
+    "nature": "nom de vente",
+    "vendeur_ou_source": "catalogue interne (branches.json), Plantago",
+    "preuve_vue": "PBR sur 'Courtasol' ; symbole du nom de vente non vu",
+    "url": "https://plantago.nl/plantindex/plant/FR/F/1/Forsythia.html",
+    "verifie_tmview": null,
+    "decision": "écarté : marque / nom de vente ; jamais affiché"
+   },
+   {
+    "nom": "Mêlée d'Or / Gold Mix",
+    "cultivar_ou_denomination": "Courtaneur",
+    "nature": "nom de vente",
+    "vendeur_ou_source": "Plantago",
+    "preuve_vue": "PBR sur 'Courtaneur' ; symbole du nom de vente non vu",
+    "url": "https://plantago.nl/plantindex/plant/FR/F/1/Forsythia.html",
+    "verifie_tmview": null,
+    "decision": "écarté : marque / nom de vente ; jamais affiché"
+   },
+   {
+    "nom": "Magical Gold",
+    "cultivar_ou_denomination": "Kolgold",
+    "nature": "nom de vente",
+    "vendeur_ou_source": "MBG (sans symbole), TSO (® vu)",
+    "preuve_vue": "MBG : MAGICAL GOLD de 'Kolgold' (Kolster BV), majuscules sans symbole ; TSO : MAGICAL® GOLD ; série Magical de Kolster possible",
+    "url": "https://plantfinder.mobot.org/PlantFinderDetails.aspx?taxonid=364287",
+    "verifie_tmview": null,
+    "decision": "écarté : marque / nom de vente ; jamais affiché"
+   },
+   {
+    "nom": "Goldilocks / Boucle d'Or / Gold Curl",
+    "cultivar_ou_denomination": "Courtacour",
+    "nature": "nom de vente",
+    "vendeur_ou_source": "MBG, Plantago",
+    "preuve_vue": "noms de vente, symbole non vu ; port nain",
+    "url": "https://plantfinder.mobot.org/PlantFinderDetails.aspx?taxonid=263654",
+    "verifie_tmview": null,
+    "decision": "écarté : marque / nom de vente ; jamais affiché"
+   },
+   {
+    "nom": "Minigold",
+    "cultivar_ou_denomination": "Flojor",
+    "nature": "nom de vente",
+    "vendeur_ou_source": "MBG, TSO",
+    "preuve_vue": "nom de vente, symbole non vu ; port nain ; feuilles vertes (TSO) ou panachées (MBG)",
+    "url": "https://plantfinder.mobot.org/PlantFinderDetails.aspx?taxonid=265323",
+    "verifie_tmview": null,
+    "decision": "écarté : marque / nom de vente ; jamais affiché"
+   },
+   {
+    "nom": "Golden Peep / Casque d'Or",
+    "cultivar_ou_denomination": "Courdijau",
+    "nature": "nom de vente",
+    "vendeur_ou_source": "MBG, Plantago",
+    "preuve_vue": "noms de vente, symbole non vu",
+    "url": "https://plantfinder.mobot.org/PlantFinderDetails.aspx?taxonid=256659",
+    "verifie_tmview": null,
+    "decision": "écarté : marque / nom de vente ; jamais affiché"
+   },
+   {
+    "nom": "Clems Yellow Leaf",
+    "cultivar_ou_denomination": "Clems",
+    "nature": "nom de vente (® vu)",
+    "vendeur_ou_source": "TSO",
+    "preuve_vue": "CLEMS YELLOW LEAF® (TSO, sans registre) ; feuillage jaune",
+    "url": "https://www.treesandshrubsonline.org/articles/forsythia/forsythia-x-intermedia/",
+    "verifie_tmview": null,
+    "decision": "écarté : marque / nom de vente ; jamais affiché"
+   },
+   {
+    "nom": "Gold Cluster",
+    "cultivar_ou_denomination": "non identifié dans l'inventaire",
+    "nature": "nom de vente (® vu)",
+    "vendeur_ou_source": "TSO",
+    "preuve_vue": "GOLD CLUSTER® (TSO, sans registre)",
+    "url": "https://www.treesandshrubsonline.org/articles/forsythia/forsythia-x-intermedia/",
+    "verifie_tmview": null,
+    "decision": "écarté : marque / nom de vente ; jamais affiché"
+   },
+   {
+    "nom": "Melisa",
+    "cultivar_ou_denomination": "Courtadic",
+    "nature": "nom de vente (® vu)",
+    "vendeur_ou_source": "TSO",
+    "preuve_vue": "MELISA® (TSO, sans registre)",
+    "url": "https://www.treesandshrubsonline.org/articles/forsythia/forsythia-x-intermedia/",
+    "verifie_tmview": null,
+    "decision": "écarté : marque / nom de vente ; jamais affiché"
+   },
+   {
+    "nom": "Believe It Or Not",
+    "cultivar_ou_denomination": "non identifié dans l'inventaire",
+    "nature": "nom de vente (® vu)",
+    "vendeur_ou_source": "TSO",
+    "preuve_vue": "BELIEVE IT OR NOT® (TSO, sans registre)",
+    "url": "https://www.treesandshrubsonline.org/articles/forsythia/forsythia-x-intermedia/",
+    "verifie_tmview": null,
+    "decision": "écarté : marque / nom de vente ; jamais affiché"
+   },
+   {
+    "nom": "Magical Plants & Flowers",
+    "cultivar_ou_denomination": "slogan de Kolster BV (pas une variété)",
+    "nature": "marque d'entreprise (® vu)",
+    "vendeur_ou_source": "Kolster BV (pages produit Golden Fantasy NL et EN)",
+    "preuve_vue": "® sur le slogan de l'entreprise, pas sur une variété ; à vérifier comme marque d'entreprise",
+    "url": "https://www.kolster.nl/en/products/cutflowers/various-shrubs-and-perennials/2517-forsythia-golden-fantasy.html",
+    "verifie_tmview": null,
+    "decision": "écarté : marque / nom de vente ; jamais affiché"
+   }
+  ],
+  "aucun_symbole_vu": [
+   "Lynwood Variety (RHS, MBG, TSO, Cornell, Brighter Blooms)",
+   "Spectabilis (Kolster, TSO, Cornell)",
+   "Beatrix Farrand (MBG, TSO, plan de l'Arnold Arboretum)",
+   "Spring Glory (TSO, Cornell, plan de l'Arnold Arboretum, Nature Hills : les ® de la page sont ceux du site)",
+   "Golden Fantasy (Kolster : le ® est sur le slogan de l'entreprise)"
+  ],
+  "pbr": "PBR (droit d'obtenteur) n'est pas une marque (Courtasol, Courtaneur, Courtalyn chez Plantago et RHS).",
+  "regle": "le jeu affiche les noms enregistrés ; aucun nom de vente ni marque n'apparaît."
+ },
+ "conflits_identite": [
+  "Lynwood Variety / Lynwood Gold / Lynwood : un seul clone, quatre noms (RHS : synonymes Lynwood Gold et Lynwood ; MBG, Cornell, TSO, Plantago) ; Splendens (1946) puis Lynwood Variety (1948) selon TSO ; Gloriosa douteux (autre clone possible).",
+  "Spectabilis (TSO, Arnold Arboretum, Kolster) = Spectabile (Cornell) ; année vers 1905 (TSO), 1908 à l'Arnold Arboretum, 1906 non confirmée.",
+  "Beatrix Farrand : le clone britannique (thrum-eyed) n'est peut-être pas le clone américain de 1944 (TSO) ; MBG : « unclear if today's plant matches the original » ; parenté : colchicine de Karl Sax (Arnold Arboretum) ou 'Arnold Giant' × diploïdes (MBG).",
+  "Arnold Giant : les trois photos Commons montrent des fleurs blanches (pas un forsythia), TSO et Clemson divergent sur la taille.",
+  "Spring Glory : découvert vers 1930 (TSO) ou 1935 (Arnold Arboretum) ; jaune soufre (TSO) ou profond (Cornell) ; la mesure donne h 95,6 / C 60,1, à dE 3,2 de Beatrix Farrand.",
+  "Courtasol : clair (MBG, TSO) ou doré (Nature Hills) ; Gold Tide ® = Courtasol (Nature Hills, MBG).",
+  "Minigold (Flojor) : feuilles vertes (TSO) ou panachées (MBG).",
+  "Golden Fantasy (Kolster) peut être Kolgold (Magical Gold) : TSO en fait deux entrées distinctes, le MBG ne les lie pas ; TSO doute même de l'appartenance de Golden Fantasy à F. × intermedia. Kolster publie deux identifiants (2516 NL, 2517 EN).",
+  "Week-End / Weekend / Courtalyn : RHS écrit « Week-End (Courtalyn) PBR », Plantago donne Courtalyn : le nom de vente et la dénomination ne sont pas rangés de la même façon selon la source.",
+  "Les accessions RBGE (19855002, 19901416, 19580762, 19901357…) sont nommées « Forsythia × intermedia Zabel » par GBIF : l'étiquette de cultivar du jardin ne se retrouve pas dans GBIF.",
+  "Erreur de l'annuaire SOURCES.md : Cornell /cultivar/1385 est 'Northern Sun' ; les bonnes fiches sont /1382 (Lynwood Gold) et /1383 (Spectabile). Re-confirmé au sondage (pages 1382 et 1383 ouvertes)."
+ ],
+ "questions_orchestrateur": [
+  {
+   "id": "Q1",
+   "sujet": "Spring Glory (late:1, prov:1) : B par la teinte, existence sans N1 ni N2",
+   "question": "Spring Glory est B par la règle de teinte (TSO et Nature Hills concordants, dE 8,9, teinte à 3,1 degrés), mais aucune source N1 ni N2 n'en prouve l'existence (trois textes N3 : Arnold Arboretum, TSO, Cornell ; Wayside Gardens bloqué par un défi anti-robot). Le garder en boutique ?",
+   "proposition": "Le garder en production avec prov:1 : trois textes N3 indépendants le datent et le décrivent, il est toujours commercialisé (TSO), et la photo concorde. Solution de rechange : le passer en C (hors boutique) jusqu'à une fiche d'obtenteur ou d'introducteur N2. Rien n'est renuméroté ici."
+  },
+  {
+   "id": "Q2",
+   "sujet": "Photos RBGE de Lynwood et règle « Zabel »",
+   "question": "GBIF nomme « Forsythia × intermedia Zabel » toutes les accessions RBGE, y compris 19901357 (Lynwood). La 2e passe a écarté celles de Beatrix Farrand et de Spring Glory mais gardé celles de Lynwood (nom GBIF « non vérifié » ; il l'est maintenant, au sondage). Appliquer la règle partout ?",
+   "proposition": "Oui, par cohérence : corps de Lynwood #d6b629 (L 74,8 ; C 69,6 ; h 91,6) sans RBGE, au lieu de #ceaf29 (même teinte, dE ~4). Le niveau B ne change pas (RHS, MBG, Brighter Blooms). Le json garde #ceaf29 en valeur retenue et #d6b629 en sans_rbge."
+  },
+  {
+   "id": "Q3",
+   "sujet": "Quatre coloris proches par la teinte",
+   "question": "Spring Glory est à dE 3,2 de Beatrix Farrand, et Spectabilis à 1 degré de teinte de Lynwood (leur écart de clarté, L 80,9 contre 72,1, vient du fond sombre et du studio Kolster). Les quatre coloris se distinguent donc par la forme (lobes larges ou recourbés, taille, port) plutôt que par la couleur. Garder les quatre ?",
+   "proposition": "Garder les quatre : les lobes et le port diffèrent (Lynwood : très ouvert ; Spectabilis : pointes recourbées ; Beatrix : grandes fleurs à larges lobes ; Spring Glory : fleurs de ~4 cm abondantes). Corriger au dessin les noms affichés « Jaune soufre » (Spring Glory) et « Jaune d'or brillant » (Beatrix Farrand) si la différence de couleur ne se voit pas à l'écran."
+  },
+  {
+   "id": "Q4",
+   "sujet": "Golden Fantasy (C)",
+   "question": "Golden Fantasy (Kolster) n'a qu'une photo nommée (N2) et son identité avec Kolgold n'est pas prouvée. Le laisser hors boutique ?",
+   "proposition": "Oui (en_boutique:false) ; le reprendre au recensement annuel avec une 2e photo, une fiche CPVO ou la preuve que Golden Fantasy et Kolgold sont deux sélections distinctes ou une seule."
+  },
+  {
+   "id": "Q5",
+   "sujet": "Marques à vérifier dans un registre des marques",
+   "question": "Voulez-vous consulter TMview ou EUIPO pour Magical Gold, Magical Plants & Flowers (Kolster), Gold Tide, Show Off, Sugar Baby et les ® vus chez TSO (Clems Yellow Leaf, Gold Cluster, Melisa, Believe It Or Not) ?",
+   "proposition": "Seulement Magical Gold et Magical Plants & Flowers, si Golden Fantasy doit un jour devenir un coloris. Les autres noms restent écartés sans enquête : aucun n'est un représentant."
+  }
+ ],
+ "sondage": {
+  "date": "2026-10-09",
+  "agent": "fleur-recensement (Sonnet), temps 3",
+  "methode": "pages rouvertes par WebFetch (extraction courte), sans cache ; toutes les fiches de coloris revérifiées sur au moins une page, le SKU du bouquet sur trois ; relecture du cache GBIF (API ouverte) pour les accessions RBGE",
+  "taux": "5 coloris sur 5 revérifiés (100 %), dont le SKU du bouquet sur trois pages ; 5 fiches de cultivars sur 66 (8 %) ; 8 pages ouvertes",
+  "tirage_au_hasard": null,
+  "cible": [
+   "lynwood-variety (SKU du bouquet)",
+   "spectabilis",
+   "beatrix-farrand",
+   "spring-glory",
+   "golden-fantasy"
+  ],
+  "resultats": [
+   {
+    "coloris": "lynwood-variety",
+    "sku_bouquet": true,
+    "verdict": "confirmé, niveau B maintenu ; année 1935 confirmée par MBG seul ; obtenteur Nora Adair par TSO seul",
+    "pages": [
+     "https://www.rhs.org.uk/plants/214902/forsythia-x-intermedia-lynwood-variety/details",
+     "https://plantfinder.mobot.org/PlantFinderDetails.aspx?taxonid=269583",
+     "https://woodyplants.cals.cornell.edu/cultivar/1382"
+    ],
+    "releve": {
+     "rhs": "nom 'Lynwood Variety' ; synonymes 'Lynwood Gold', 'Lynwood' ; couleur jaune vif (« bright yellow ») ; floraison début de printemps, avant les feuilles (description du genre) ; dressé, buissonnant, 1,5 à 2,5 m ; AGM ; aucun obtenteur ni année ; aucun symbole de marque",
+     "mbg": "titre 'Lynwood Variety' (le texte écrit une fois « Linwood Variety ») ; nom commun border forsythia ; jaune ; mars à avril ; 6 à 9 pieds ; mutation naturelle de rameau de 'Spectabilis' trouvée en 1935 dans un jardin appelé Lynwood à Cookstown (Irlande du Nord), aucun obtenteur nommé ; fleurs avant les feuilles ; aucun ® ni ™",
+     "cornell": "'Lynwood Gold' (a.k.a. 'Lynwood') ; F. × intermedia ; jaune vif ; dressé ; très florifère ; fleurs largement ouvertes, bien réparties sur la branche ; ni année ni origine ; floraison avant les feuilles non précisée",
+     "gbif": "accession RBGE 19901357 (occurrence 574705795) : nom GBIF « Forsythia × intermedia Zabel » : le doute « nom non vérifié » de la 2e passe est levé dans le sens défavorable, voir Q2"
+    },
+    "accord": "nom, synonymes, couleur, port, 1935, floraison avant les feuilles : concordants sur deux pages ou plus ; aucun symbole de marque nulle part"
+   },
+   {
+    "coloris": "spectabilis",
+    "verdict": "nom, existence et couleur jaune d'or confirmés ; orthographe Spectabile confirmée chez Cornell ; année et obtenteur non revérifiés (TSO, plan de l'Arnold Arboretum)",
+    "pages": [
+     "https://woodyplants.cals.cornell.edu/cultivar/1383",
+     "https://www.kolster.nl/nl/producten/snijheesters/overige-snijheesters-en-vaste-planten/2519-forsythia-int-spectabilis.html"
+    ],
+    "releve": {
+     "cornell": "'Spectabile', F. × intermedia ; « bigger flowers, more floriferous » ; ni couleur, ni hauteur, ni année",
+     "kolster": "FORSYTHIA INT. SPECTABILIS (aucun symbole) ; jaune d'or (« golden yellow ») ; février à mars, fleurit chaque année ; proposé en branches coupées fleuries ; espacement 125 × 125"
+    }
+   },
+   {
+    "coloris": "beatrix-farrand",
+    "verdict": "confirmé, niveau B maintenu ; MBG signale lui-même le doute sur le clone actuel",
+    "pages": [
+     "https://plantfinder.mobot.org/PlantFinderDetails.aspx?taxonid=245765"
+    ],
+    "releve": {
+     "mbg": "'Beatrix Farrand' (aucun symbole) ; jaune d'or ; mars à avril ; 6 à 8 pieds, longues cannes déséquilibrées ; créé dans les années 1940 par Karl Sax à l'Arnold Arboretum à partir de 'Arnold Giant' croisé avec des diploïdes (dont F. ovata et 'Spectabilis') ; tétraploïde ; nommé d'après Beatrix Farrand (1872-1959) ; « unclear if today's plant matches the original » ; fleurs avant les feuilles ; simples, à larges pétales, axillaires, jusqu'à 2 po"
+    }
+   },
+   {
+    "coloris": "spring-glory",
+    "verdict": "texte Cornell confirmé (« deep yellow ») ; existence N1 ou N2 toujours absente : prov:1 maintenu",
+    "pages": [
+     "https://woodyplants.cals.cornell.edu/cultivar/10968"
+    ],
+    "releve": {
+     "cornell": "'Spring Glory', F. × intermedia ; jaune profond ; 10 pieds ; zones 7 et 8 ; « a better choice for warmer zones » ; ni année, ni origine, ni parent ; floraison avant les feuilles non précisée"
+    }
+   },
+   {
+    "coloris": "golden-fantasy",
+    "verdict": "confirmé, niveau C maintenu",
+    "pages": [
+     "https://www.kolster.nl/nl/producten/snijheesters/overige-snijheesters-en-vaste-planten/2516-forsythia-golden-fantasy.html"
+    ],
+    "releve": {
+     "kolster": "FORSYTHIA GOLDEN FANTASY (aucun ® ni ™ sur la page) ; jaune profond ; mars à avril ; forsythia à grandes fleurs sur le bois d'un an le long de toute la branche ; espacement 70 × 70 ; aucune hauteur"
+    }
+   }
+  ],
+  "conclusion": "Les quatre coloris B et le candidat C tiennent. Deux points à trancher par l'orchestrateur : Q1 (Spring Glory sans N1/N2) et Q2 (règle « Zabel » pour les trois photos RBGE de Lynwood). Aucune marque vue sur les cinq représentants."
+ },
+ "comptes": {
+  "cultivars_inventories": 66,
+  "enregistres": "indéterminé : pas de registre APGA en ligne (l'Arnold Arboretum fut registraire de 1963 à 2003)",
+  "documentes_par_photo_nommee": 5,
+  "par_niveau_cultivars": {
+   "B": 4,
+   "D": 61,
+   "C": 1
+  },
+  "sans_photo_connue_ou_non_traitee": 61,
+  "coloris_distincts": 5,
+  "par_niveau_coloris": {
+   "B": 4,
+   "C": 1
+  },
+  "coloris_en_boutique": [
+   "lynwood-variety",
+   "spectabilis",
+   "beatrix-farrand",
+   "spring-glory"
+  ],
+  "coloris_en_boutique_provisoires": [
+   "spring-glory"
+  ],
+  "coloris_hors_boutique": [
+   "golden-fantasy"
+  ],
+  "au_catalogue": 2,
+  "nouveaux_late": 3,
+  "cultivars_rattaches_a_un_coloris": 21,
+  "ecartes_marque_ou_nom_de_vente": 9,
+  "ecartes_hors_portee": {
+   "feuillage": 13,
+   "port_nain": 10
+  },
+  "statuts_inventaire": {
+   "representant": 4,
+   "ecarte_nom_de_vente": 5,
+   "liste_sans_preuve_detaillee": 11,
+   "conflit": 1,
+   "ecarte_marque": 4,
+   "ecarte_hors_portee_port_nain": 10,
+   "candidat_C": 1,
+   "ecarte_hors_portee_feuillage": 13,
+   "sans_description": 16,
+   "sans_preuve": 1
+  }
+ }
+}

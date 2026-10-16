@@ -1,0 +1,2136 @@
+[
+  {
+    "ref": "014bdcb3de295e5762ec91fe006534e6.jpg",
+    "n": 1,
+    "nom": "Feux de l'arrière-saison",
+    "occ": [
+      "anniv",
+      "bravo"
+    ],
+    "tpl": "libre",
+    "asp": 1.15,
+    "vase": "noue",
+    "vcol": "#9cb36b",
+    "bg": "#ada391",
+    "plinth": "none",
+    "side": -1,
+    "els": [
+      {
+        "id": "anthurium-andraeanum",
+        "col": "#e39272",
+        "n": 5,
+        "role": "focal",
+        "pos": "around",
+        "h": 0.65,
+        "ang": "mixed"
+      },
+      {
+        "id": "celosie-crete-de-coq",
+        "col": "#8f1f22",
+        "n": 3,
+        "role": "second",
+        "pos": "core",
+        "h": 0.45,
+        "ang": "face"
+      },
+      {
+        "id": "hortensia-boule",
+        "col": "#8e7f74",
+        "n": 2,
+        "role": "second",
+        "pos": "core",
+        "h": 0.4,
+        "ang": "face"
+      },
+      {
+        "id": "amarante-retombante",
+        "col": "#a87866",
+        "n": 2,
+        "role": "drape",
+        "pos": "bottom",
+        "h": 0,
+        "ang": "side"
+      },
+      {
+        "id": "amarante-retombante",
+        "col": "#8c2c45",
+        "n": 1,
+        "role": "drape",
+        "pos": "right",
+        "h": 0,
+        "ang": "side"
+      },
+      {
+        "id": "rosier-a-cynorrhodons",
+        "col": "#c8502e",
+        "n": 4,
+        "role": "line",
+        "pos": "top",
+        "h": 1.0,
+        "ang": "mixed"
+      },
+      {
+        "id": "amarante-dressee",
+        "col": "#9a4452",
+        "n": 2,
+        "role": "line",
+        "pos": "core",
+        "h": 0.7,
+        "ang": "side"
+      },
+      {
+        "id": "fusain-aile",
+        "col": "#a8222f",
+        "n": 5,
+        "role": "foliage",
+        "pos": "left",
+        "h": 0.55,
+        "ang": "side"
+      },
+      {
+        "id": "fusain-aile",
+        "col": "#e07684",
+        "n": 3,
+        "role": "foliage",
+        "pos": "top",
+        "h": 0.85,
+        "ang": "mixed"
+      },
+      {
+        "id": "rosier-a-cynorrhodons",
+        "col": "#d4602c",
+        "n": 3,
+        "role": "filler",
+        "pos": "core",
+        "h": 0.45,
+        "ang": "mixed"
+      },
+      {
+        "id": "eucalyptus-stabilise",
+        "col": "#8f6a2a",
+        "n": 2,
+        "role": "filler",
+        "pos": "core",
+        "h": 0.5,
+        "ang": "face"
+      },
+      {
+        "id": "renoncule-classique",
+        "col": "#d2501e",
+        "n": 1,
+        "role": "second",
+        "pos": "core",
+        "h": 0.35,
+        "ang": "tq"
+      },
+      {
+        "id": "hortensia-seche-stabilise",
+        "col": "#dc9a2e",
+        "n": 2,
+        "role": "accent",
+        "pos": "right",
+        "h": 0.4,
+        "ang": "face"
+      },
+      {
+        "id": "eucalyptus-stabilise",
+        "col": "#c4923f",
+        "n": 1,
+        "role": "drape",
+        "pos": "left",
+        "h": 0.15,
+        "ang": "side"
+      },
+      {
+        "id": "mousses-fraiches",
+        "col": "#5b5530",
+        "n": 2,
+        "role": "accent",
+        "pos": "core",
+        "h": 0.35,
+        "ang": "face"
+      }
+    ],
+    "notes": "Brassée sauvage plus large que haute : cœur sombre de célosies et d'hortensias, anthuriums pêche en zigzag, branches à baies qui fusent vers le haut et cascade d'amarantes sous les mains."
+  },
+  {
+    "ref": "01e9f2ffe9685e70b4adf414b9520742.jpg",
+    "n": 2,
+    "nom": "Lanternes d'abricot",
+    "occ": [
+      "anniv",
+      "merci"
+    ],
+    "tpl": "eventail",
+    "asp": 1.3,
+    "vase": "kenzan",
+    "vcol": "#b8a768",
+    "bg": "#bcac9c",
+    "plinth": "beton",
+    "side": -1,
+    "els": [
+      {
+        "id": "phalaenopsis",
+        "col": "#93506f",
+        "n": 1,
+        "role": "focal",
+        "pos": "left",
+        "h": 0.3,
+        "ang": "face"
+      },
+      {
+        "id": "anthurium-andraeanum",
+        "col": "#dd8a70",
+        "n": 2,
+        "role": "focal",
+        "pos": "right",
+        "h": 0.35,
+        "ang": "tq"
+      },
+      {
+        "id": "arum-calla",
+        "col": "#df9446",
+        "n": 4,
+        "role": "second",
+        "pos": "core",
+        "h": 0.65,
+        "ang": "side"
+      },
+      {
+        "id": "tulipe-perroquet",
+        "col": "#e4b0b4",
+        "n": 2,
+        "role": "second",
+        "pos": "core",
+        "h": 0.4,
+        "ang": "tq"
+      },
+      {
+        "id": "bomarea",
+        "col": "#7a1a22",
+        "n": 1,
+        "role": "second",
+        "pos": "left",
+        "h": 0.6,
+        "ang": "side"
+      },
+      {
+        "id": "anthurium-andraeanum",
+        "col": "#d9b0a2",
+        "n": 1,
+        "role": "second",
+        "pos": "core",
+        "h": 0.55,
+        "ang": "side"
+      },
+      {
+        "id": "sandersonia",
+        "col": "#eba54a",
+        "n": 2,
+        "role": "line",
+        "pos": "top",
+        "h": 1.0,
+        "ang": "side"
+      },
+      {
+        "id": "oncidium",
+        "col": "#b8825c",
+        "n": 1,
+        "role": "line",
+        "pos": "left",
+        "h": 0.5,
+        "ang": "side"
+      },
+      {
+        "id": "arum-calla",
+        "col": "#e6b85a",
+        "n": 1,
+        "role": "line",
+        "pos": "right",
+        "h": 0.75,
+        "ang": "side"
+      },
+      {
+        "id": "cyrtanthus",
+        "col": "#dc7a5c",
+        "n": 1,
+        "role": "filler",
+        "pos": "top",
+        "h": 0.8,
+        "ang": "side"
+      },
+      {
+        "id": "pentas",
+        "col": "#eeaa8e",
+        "n": 1,
+        "role": "filler",
+        "pos": "core",
+        "h": 0.2,
+        "ang": "face"
+      },
+      {
+        "id": "allium-petit",
+        "col": "#9a86a8",
+        "n": 1,
+        "role": "filler",
+        "pos": "core",
+        "h": 0.5,
+        "ang": "face"
+      },
+      {
+        "id": "oncidium",
+        "col": "#d0a83a",
+        "n": 1,
+        "role": "filler",
+        "pos": "core",
+        "h": 0.6,
+        "ang": "mixed"
+      },
+      {
+        "id": "allium-petit",
+        "col": "#5c3f55",
+        "n": 3,
+        "role": "accent",
+        "pos": "right",
+        "h": 0.8,
+        "ang": "mixed"
+      }
+    ],
+    "notes": "Tête dense posée debout sur un kenzan, tiges nues liées de bronze : orchidées prune groupées en bas à gauche, lignes d'oncidium, d'alliums et de clochettes orange qui s'échappent, sans aucune feuille."
+  },
+  {
+    "ref": "069c7f202d2dbbbb7263fd3a467ac839.jpg",
+    "n": 5,
+    "nom": "Éclats de corail",
+    "occ": [
+      "anniv",
+      "amour"
+    ],
+    "tpl": "dome",
+    "asp": 1.15,
+    "vase": "noue",
+    "vcol": "#b5c27a",
+    "bg": "#9a968a",
+    "plinth": "none",
+    "side": 1,
+    "els": [
+      {
+        "id": "anthurium-obake",
+        "col": "#e08a72",
+        "n": 7,
+        "role": "focal",
+        "pos": "around",
+        "h": 0.5,
+        "ang": "mixed"
+      },
+      {
+        "id": "celosie-crete-de-coq",
+        "col": "#e2a0ae",
+        "n": 3,
+        "role": "focal",
+        "pos": "core",
+        "h": 0.55,
+        "ang": "face"
+      },
+      {
+        "id": "glaieul",
+        "col": "#ee9f8f",
+        "n": 6,
+        "role": "line",
+        "pos": "top",
+        "h": 1.0,
+        "ang": "side"
+      },
+      {
+        "id": "cosmos",
+        "col": "#f09ac8",
+        "n": 4,
+        "role": "second",
+        "pos": "core",
+        "h": 0.6,
+        "ang": "face"
+      },
+      {
+        "id": "oeillet-standard",
+        "col": "#f6c0bc",
+        "n": 3,
+        "role": "second",
+        "pos": "left",
+        "h": 0.5,
+        "ang": "face"
+      },
+      {
+        "id": "pois-de-senteur",
+        "col": "#c46aa8",
+        "n": 3,
+        "role": "second",
+        "pos": "right",
+        "h": 0.45,
+        "ang": "tq"
+      },
+      {
+        "id": "amarante-dressee",
+        "col": "#6e1c2a",
+        "n": 5,
+        "role": "filler",
+        "pos": "core",
+        "h": 0.45,
+        "ang": "mixed"
+      },
+      {
+        "id": "gomphrena",
+        "col": "#b87470",
+        "n": 4,
+        "role": "filler",
+        "pos": "right",
+        "h": 0.6,
+        "ang": "face"
+      },
+      {
+        "id": "amarante-retombante",
+        "col": "#c08070",
+        "n": 1,
+        "role": "drape",
+        "pos": "bottom",
+        "h": 0,
+        "ang": "side"
+      },
+      {
+        "id": "amarante-retombante",
+        "col": "#6e1c2a",
+        "n": 1,
+        "role": "drape",
+        "pos": "left",
+        "h": 0.2,
+        "ang": "side"
+      },
+      {
+        "id": "eucalyptus-stabilise",
+        "col": "#6e2c3c",
+        "n": 2,
+        "role": "foliage",
+        "pos": "left",
+        "h": 0.25,
+        "ang": "mixed"
+      },
+      {
+        "id": "loropetalum",
+        "col": "#6a1c30",
+        "n": 2,
+        "role": "foliage",
+        "pos": "top",
+        "h": 0.85,
+        "ang": "mixed"
+      }
+    ],
+    "notes": "Dôme ébouriffé rose-corail hérissé d'épis de glaïeuls aux boutons vert acide, anthuriums tournés vers l'extérieur et perles d'amarante bordeaux enfoncées dans la masse."
+  },
+  {
+    "ref": "080f81ebca6d48f4c6c7c89e5cffc570.jpg",
+    "n": 6,
+    "nom": "Clair-obscur cuivré",
+    "occ": [
+      "juste",
+      "courage"
+    ],
+    "tpl": "triangle",
+    "asp": 1.0,
+    "vase": "boule-chocolat",
+    "vcol": "#3a2219",
+    "bg": "#6b6764",
+    "plinth": "bois",
+    "side": 1,
+    "els": [
+      {
+        "id": "cymbidium-grandes-fleurs",
+        "col": "#c8835f",
+        "n": 1,
+        "role": "focal",
+        "pos": "core",
+        "h": 0.3,
+        "ang": "face"
+      },
+      {
+        "id": "amarante-dressee",
+        "col": "#c07a4e",
+        "n": 1,
+        "role": "line",
+        "pos": "top",
+        "h": 1.0,
+        "ang": "side"
+      },
+      {
+        "id": "amarante-dressee",
+        "col": "#c07a4e",
+        "n": 1,
+        "role": "second",
+        "pos": "left",
+        "h": 0.55,
+        "ang": "side"
+      },
+      {
+        "id": "eucalyptus-stabilise",
+        "col": "#a56c71",
+        "n": 2,
+        "role": "second",
+        "pos": "left",
+        "h": 0.75,
+        "ang": "mixed"
+      },
+      {
+        "id": "trachelium",
+        "col": "#b0565a",
+        "n": 2,
+        "role": "second",
+        "pos": "core",
+        "h": 0.45,
+        "ang": "face"
+      },
+      {
+        "id": "sanguisorbe",
+        "col": "#7e3a3e",
+        "n": 1,
+        "role": "line",
+        "pos": "left",
+        "h": 0.6,
+        "ang": "mixed"
+      },
+      {
+        "id": "physocarpus-opulifolius",
+        "col": "#2b1a1c",
+        "n": 3,
+        "role": "foliage",
+        "pos": "right",
+        "h": 0.8,
+        "ang": "mixed"
+      },
+      {
+        "id": "begonia-feuillage",
+        "col": "#9a3a3c",
+        "n": 3,
+        "role": "foliage",
+        "pos": "left",
+        "h": 0.15,
+        "ang": "side"
+      },
+      {
+        "id": "coleus",
+        "col": "#3a1418",
+        "n": 1,
+        "role": "foliage",
+        "pos": "right",
+        "h": 0.85,
+        "ang": "side"
+      },
+      {
+        "id": "fil-aluminium-decoratif",
+        "col": "#7a2a35",
+        "n": 2,
+        "role": "accent",
+        "pos": "around",
+        "h": 0.6,
+        "ang": "mixed"
+      }
+    ],
+    "notes": "Clair-obscur brun : cymbidiums cuivrés posés sur le col d'un vase chocolat, amarante cannelle en flèche, feuillages rouges et pourpre-noir en triangle incliné, fil bordeaux en boucles."
+  },
+  {
+    "ref": "0d383ef7328841d016dd4708d3e4a88b.jpg",
+    "n": 7,
+    "nom": "Brume de travertin",
+    "occ": [
+      "bravo",
+      "merci"
+    ],
+    "tpl": "lcroissant",
+    "asp": 0.8,
+    "vase": "calice",
+    "vcol": "#bfa98a",
+    "bg": "#c9aa7e",
+    "plinth": "noir",
+    "side": 1,
+    "els": [
+      {
+        "id": "hortensia-seche-stabilise",
+        "col": "#e9cf98",
+        "n": 3,
+        "role": "focal",
+        "pos": "core",
+        "h": 0.25,
+        "ang": "face"
+      },
+      {
+        "id": "fustet-plumes",
+        "col": "#a4726e",
+        "n": 4,
+        "role": "line",
+        "pos": "left",
+        "h": 0.9,
+        "ang": "mixed"
+      },
+      {
+        "id": "fustet-plumes",
+        "col": "#a4726e",
+        "n": 3,
+        "role": "filler",
+        "pos": "left",
+        "h": 0.7,
+        "ang": "mixed"
+      },
+      {
+        "id": "heliconia-velues",
+        "col": "#9c4a2c",
+        "n": 1,
+        "role": "line",
+        "pos": "right",
+        "h": 0.9,
+        "ang": "side"
+      },
+      {
+        "id": "heliconia-velues",
+        "col": "#9c4a2c",
+        "n": 1,
+        "role": "drape",
+        "pos": "left",
+        "h": 0.35,
+        "ang": "side"
+      },
+      {
+        "id": "anthurium-andraeanum",
+        "col": "#b0502a",
+        "n": 5,
+        "role": "second",
+        "pos": "around",
+        "h": 0.5,
+        "ang": "mixed"
+      },
+      {
+        "id": "arum-calla",
+        "col": "#3e2232",
+        "n": 5,
+        "role": "second",
+        "pos": "right",
+        "h": 0.5,
+        "ang": "side"
+      },
+      {
+        "id": "cymbidium-mini",
+        "col": "#d0906c",
+        "n": 1,
+        "role": "second",
+        "pos": "core",
+        "h": 0.35,
+        "ang": "face"
+      },
+      {
+        "id": "palm-spear-seche",
+        "col": "#7a3c22",
+        "n": 4,
+        "role": "line",
+        "pos": "top",
+        "h": 0.85,
+        "ang": "side"
+      },
+      {
+        "id": "amarante-retombante",
+        "col": "#ddd2bc",
+        "n": 3,
+        "role": "drape",
+        "pos": "right",
+        "h": 0,
+        "ang": "side"
+      }
+    ],
+    "notes": "Sculpture sur socle noir : nuage de fustet mauve en fond, héliconias velues en arc et en chute, boules d'hortensia crème d'où tombe l'amarante blanchie."
+  },
+  {
+    "ref": "0e7ed45d9f79ca160db2de39d1a7693c.jpg",
+    "n": 8,
+    "nom": "Voile d'améthyste",
+    "occ": [
+      "merci",
+      "anniv"
+    ],
+    "tpl": "eventail",
+    "asp": 0.9,
+    "vase": "papier",
+    "vcol": "#dfe0da",
+    "bg": "#cfd1c9",
+    "plinth": "blanc",
+    "side": -1,
+    "els": [
+      {
+        "id": "anthurium-andraeanum",
+        "col": "#a8849c",
+        "n": 3,
+        "role": "focal",
+        "pos": "around",
+        "h": 0.75,
+        "ang": "tq"
+      },
+      {
+        "id": "arum-calla",
+        "col": "#2a1a2e",
+        "n": 3,
+        "role": "focal",
+        "pos": "core",
+        "h": 0.55,
+        "ang": "side"
+      },
+      {
+        "id": "allium-grosse-tete",
+        "col": "#4a2a50",
+        "n": 2,
+        "role": "second",
+        "pos": "core",
+        "h": 0.45,
+        "ang": "face"
+      },
+      {
+        "id": "tulipe-simple",
+        "col": "#94507f",
+        "n": 3,
+        "role": "second",
+        "pos": "around",
+        "h": 0.45,
+        "ang": "side"
+      },
+      {
+        "id": "clematite",
+        "col": "#d2c4dc",
+        "n": 1,
+        "role": "second",
+        "pos": "core",
+        "h": 0.3,
+        "ang": "face"
+      },
+      {
+        "id": "phalaenopsis",
+        "col": "#e4dae6",
+        "n": 2,
+        "role": "drape",
+        "pos": "bottom",
+        "h": 0.1,
+        "ang": "face"
+      },
+      {
+        "id": "clematite-clochettes",
+        "col": "#8a74a0",
+        "n": 4,
+        "role": "line",
+        "pos": "around",
+        "h": 0.8,
+        "ang": "mixed"
+      },
+      {
+        "id": "allium-petit",
+        "col": "#626049",
+        "n": 2,
+        "role": "line",
+        "pos": "top",
+        "h": 1.0,
+        "ang": "mixed"
+      },
+      {
+        "id": "dendrobium-coupe",
+        "col": "#d8bfe0",
+        "n": 1,
+        "role": "accent",
+        "pos": "core",
+        "h": 0.3,
+        "ang": "face"
+      },
+      {
+        "id": "ruban-soie-mousseline",
+        "col": "#b8a8c8",
+        "n": 1,
+        "role": "accent",
+        "pos": "bottom",
+        "h": 0,
+        "ang": "side"
+      }
+    ],
+    "notes": "Monochrome violet dressé devant un voile de papier crème plié, des anthuriums lilas au sommet jusqu'à la hampe de phalaenopsis qui coule devant le vase."
+  },
+  {
+    "ref": "14b28af3deb1f22bd437b1b31bfd8a6d.jpg",
+    "n": 9,
+    "nom": "Murmure de lys",
+    "occ": [
+      "anniv",
+      "merci"
+    ],
+    "tpl": "triangle",
+    "asp": 1.05,
+    "vase": "coupe-blanche",
+    "vcol": "#ecdcdf",
+    "bg": "#aea296",
+    "plinth": "none",
+    "side": -1,
+    "els": [
+      {
+        "id": "lis-oriental",
+        "col": "#e08aa6",
+        "n": 3,
+        "role": "focal",
+        "pos": "left",
+        "h": 0.75,
+        "ang": "mixed"
+      },
+      {
+        "id": "lis-oriental",
+        "col": "#e08aa6",
+        "n": 3,
+        "role": "focal",
+        "pos": "right",
+        "h": 0.3,
+        "ang": "mixed"
+      },
+      {
+        "id": "giroflee-matthiole",
+        "col": "#e3a0c4",
+        "n": 1,
+        "role": "second",
+        "pos": "left",
+        "h": 0.55,
+        "ang": "side"
+      },
+      {
+        "id": "giroflee-matthiole",
+        "col": "#b4a0c4",
+        "n": 2,
+        "role": "second",
+        "pos": "right",
+        "h": 0.5,
+        "ang": "side"
+      },
+      {
+        "id": "lis-oriental",
+        "col": "#e5b5b0",
+        "n": 2,
+        "role": "line",
+        "pos": "top",
+        "h": 1.0,
+        "ang": "side"
+      },
+      {
+        "id": "chrysantheme-araignee",
+        "col": "#b67a9a",
+        "n": 2,
+        "role": "filler",
+        "pos": "core",
+        "h": 0.1,
+        "ang": "face"
+      }
+    ],
+    "notes": "Lys roses étagés en triangle dans une coupe sur pied : boutons dressés au sommet, grappe épanouie à gauche, chute sous le bord à droite et giroflées qui élargissent les ailes."
+  },
+  {
+    "ref": "186b7e73906eec934d768fb9b18a6ceb.jpg",
+    "n": 10,
+    "nom": "Rideau de vin",
+    "occ": [
+      "amour",
+      "anniv"
+    ],
+    "tpl": "cascade",
+    "asp": 1.1,
+    "vase": "boule-sapin",
+    "vcol": "#1c2414",
+    "bg": "#c8c7bd",
+    "plinth": "blanc",
+    "side": -1,
+    "els": [
+      {
+        "id": "arum-calla",
+        "col": "#963f60",
+        "n": 5,
+        "role": "focal",
+        "pos": "core",
+        "h": 0.45,
+        "ang": "mixed"
+      },
+      {
+        "id": "amarante-retombante",
+        "col": "#6a1a2a",
+        "n": 7,
+        "role": "drape",
+        "pos": "around",
+        "h": 0,
+        "ang": "side"
+      },
+      {
+        "id": "cymbidium-grandes-fleurs",
+        "col": "#983c4a",
+        "n": 1,
+        "role": "line",
+        "pos": "top",
+        "h": 1.0,
+        "ang": "face"
+      },
+      {
+        "id": "arum-calla",
+        "col": "#963f60",
+        "n": 4,
+        "role": "line",
+        "pos": "around",
+        "h": 0.6,
+        "ang": "side"
+      },
+      {
+        "id": "scabieuse",
+        "col": "#4a1018",
+        "n": 5,
+        "role": "second",
+        "pos": "around",
+        "h": 0.6,
+        "ang": "face"
+      },
+      {
+        "id": "chrysantheme-araignee",
+        "col": "#8a4a66",
+        "n": 3,
+        "role": "second",
+        "pos": "core",
+        "h": 0.3,
+        "ang": "face"
+      },
+      {
+        "id": "sanguisorbe",
+        "col": "#3a1016",
+        "n": 1,
+        "role": "line",
+        "pos": "right",
+        "h": 0.75,
+        "ang": "mixed"
+      },
+      {
+        "id": "arum-calla",
+        "col": "#963f60",
+        "n": 1,
+        "role": "accent",
+        "pos": "bottom",
+        "h": 0,
+        "ang": "side"
+      }
+    ],
+    "notes": "Monochrome vin : cymbidium dressé, callas lancés jusqu'aux bords et rideau d'amarantes qui enveloppe le vase boule vert bouteille posé sur une colonne blanche."
+  },
+  {
+    "ref": "1970b8db665b122b7859c4e83762b9c1.jpg",
+    "n": 11,
+    "nom": "Promesse framboise",
+    "occ": [
+      "amour",
+      "anniv"
+    ],
+    "tpl": "cascade",
+    "asp": 1.0,
+    "vase": "noue",
+    "vcol": "#e2d8c8",
+    "bg": "#c1b9b2",
+    "plinth": "beton",
+    "side": 1,
+    "els": [
+      {
+        "id": "cymbidium-grandes-fleurs",
+        "col": "#b84a62",
+        "n": 1,
+        "role": "focal",
+        "pos": "core",
+        "h": 0.35,
+        "ang": "face"
+      },
+      {
+        "id": "anthurium-andraeanum",
+        "col": "#c2c47e",
+        "n": 2,
+        "role": "focal",
+        "pos": "around",
+        "h": 0.65,
+        "ang": "face"
+      },
+      {
+        "id": "arum-calla",
+        "col": "#d06a88",
+        "n": 3,
+        "role": "line",
+        "pos": "top",
+        "h": 1.0,
+        "ang": "side"
+      },
+      {
+        "id": "arum-calla",
+        "col": "#efe2dc",
+        "n": 2,
+        "role": "second",
+        "pos": "left",
+        "h": 0.45,
+        "ang": "face"
+      },
+      {
+        "id": "amarante-retombante",
+        "col": "#7a2234",
+        "n": 2,
+        "role": "drape",
+        "pos": "left",
+        "h": 0.45,
+        "ang": "side"
+      },
+      {
+        "id": "jasminum-liane-jasmin",
+        "col": "#6f8a3a",
+        "n": 4,
+        "role": "line",
+        "pos": "around",
+        "h": 0.8,
+        "ang": "mixed"
+      },
+      {
+        "id": "physocarpus-opulifolius",
+        "col": "#5e7a2a",
+        "n": 4,
+        "role": "foliage",
+        "pos": "right",
+        "h": 0.3,
+        "ang": "mixed"
+      },
+      {
+        "id": "adiantum-capillaire",
+        "col": "#7a9a40",
+        "n": 2,
+        "role": "foliage",
+        "pos": "left",
+        "h": 0.45,
+        "ang": "mixed"
+      },
+      {
+        "id": "ruban-soie-mousseline",
+        "col": "#e2d8c8",
+        "n": 1,
+        "role": "accent",
+        "pos": "bottom",
+        "h": 0,
+        "ang": "side"
+      }
+    ],
+    "notes": "Bouquet de mariée lié de soie crème : diagonale de callas roses, grappe de cymbidiums framboise, anthuriums vert tendre en contrepoint et chute d'amarante bordeaux jusqu'au sol."
+  },
+  {
+    "ref": "1d9707b610f1055f13dbd6b02b3d0e70.jpg",
+    "n": 12,
+    "nom": "Aube pastel",
+    "occ": [
+      "anniv",
+      "merci"
+    ],
+    "tpl": "lcroissant",
+    "asp": 1.0,
+    "vase": "coupe-blanche",
+    "vcol": "#c4b296",
+    "bg": "#d4d4cf",
+    "plinth": "bois",
+    "side": 1,
+    "els": [
+      {
+        "id": "dahlia-balle",
+        "col": "#e4a6ba",
+        "n": 2,
+        "role": "focal",
+        "pos": "core",
+        "h": 0.55,
+        "ang": "face"
+      },
+      {
+        "id": "rose-anglaise-david-austin",
+        "col": "#ecd6b8",
+        "n": 3,
+        "role": "focal",
+        "pos": "core",
+        "h": 0.35,
+        "ang": "face"
+      },
+      {
+        "id": "tulipe-simple",
+        "col": "#e6b040",
+        "n": 1,
+        "role": "focal",
+        "pos": "right",
+        "h": 0.5,
+        "ang": "face"
+      },
+      {
+        "id": "oeillet-standard",
+        "col": "#e07e58",
+        "n": 4,
+        "role": "second",
+        "pos": "core",
+        "h": 0.4,
+        "ang": "face"
+      },
+      {
+        "id": "renoncule-classique",
+        "col": "#e8b8b0",
+        "n": 3,
+        "role": "second",
+        "pos": "around",
+        "h": 0.3,
+        "ang": "face"
+      },
+      {
+        "id": "cosmos",
+        "col": "#f2eee2",
+        "n": 2,
+        "role": "second",
+        "pos": "core",
+        "h": 0.6,
+        "ang": "face"
+      },
+      {
+        "id": "lisianthus",
+        "col": "#ece2a8",
+        "n": 2,
+        "role": "second",
+        "pos": "around",
+        "h": 0.15,
+        "ang": "face"
+      },
+      {
+        "id": "alstroemere",
+        "col": "#e8b0a8",
+        "n": 1,
+        "role": "second",
+        "pos": "core",
+        "h": 0.65,
+        "ang": "tq"
+      },
+      {
+        "id": "tulipe-simple",
+        "col": "#e3a462",
+        "n": 3,
+        "role": "line",
+        "pos": "right",
+        "h": 0.5,
+        "ang": "side"
+      },
+      {
+        "id": "clematite",
+        "col": "#b0a0c8",
+        "n": 1,
+        "role": "line",
+        "pos": "top",
+        "h": 1.0,
+        "ang": "face"
+      },
+      {
+        "id": "clematite",
+        "col": "#b0a0c8",
+        "n": 2,
+        "role": "line",
+        "pos": "left",
+        "h": 0.3,
+        "ang": "face"
+      },
+      {
+        "id": "sandersonia",
+        "col": "#e09a18",
+        "n": 1,
+        "role": "line",
+        "pos": "top",
+        "h": 0.9,
+        "ang": "side"
+      },
+      {
+        "id": "mokara",
+        "col": "#e0960f",
+        "n": 1,
+        "role": "line",
+        "pos": "top",
+        "h": 0.75,
+        "ang": "face"
+      },
+      {
+        "id": "glaieul",
+        "col": "#f4bfae",
+        "n": 2,
+        "role": "line",
+        "pos": "left",
+        "h": 0.4,
+        "ang": "side"
+      },
+      {
+        "id": "aster-vivace-symphyotrichum",
+        "col": "#c49ac8",
+        "n": 1,
+        "role": "filler",
+        "pos": "core",
+        "h": 0.15,
+        "ang": "face"
+      },
+      {
+        "id": "statice-sinuata",
+        "col": "#9a64a0",
+        "n": 1,
+        "role": "filler",
+        "pos": "core",
+        "h": 0.25,
+        "ang": "mixed"
+      },
+      {
+        "id": "didiscus",
+        "col": "#efece4",
+        "n": 1,
+        "role": "filler",
+        "pos": "left",
+        "h": 0.25,
+        "ang": "face"
+      },
+      {
+        "id": "oeillet-standard",
+        "col": "#bb2558",
+        "n": 2,
+        "role": "accent",
+        "pos": "left",
+        "h": 0.35,
+        "ang": "face"
+      },
+      {
+        "id": "danae-racemosa-ruscus-italien",
+        "col": "#7aa040",
+        "n": 2,
+        "role": "foliage",
+        "pos": "left",
+        "h": 0.6,
+        "ang": "side"
+      }
+    ],
+    "notes": "Dôme pastel bas et dense sur une petite coupe, d'où jaillit à droite une colonne aérienne de clématites, clochettes orange et mokaras, avec des tulipes abricot en fuite."
+  },
+  {
+    "ref": "2162bf24ab2eaea01c439bf5d4d857a0.jpg",
+    "n": 13,
+    "nom": "Souffle d'orchidée",
+    "occ": [
+      "juste",
+      "merci"
+    ],
+    "tpl": "eventail",
+    "asp": 1.05,
+    "vase": "coupe-blanche",
+    "vcol": "#b8bebe",
+    "bg": "#dbdcd7",
+    "plinth": "blanc",
+    "side": -1,
+    "els": [
+      {
+        "id": "phalaenopsis",
+        "col": "#d29ccc",
+        "n": 2,
+        "role": "drape",
+        "pos": "left",
+        "h": 0.15,
+        "ang": "face"
+      },
+      {
+        "id": "tulipe-perroquet",
+        "col": "#e6b0ac",
+        "n": 3,
+        "role": "second",
+        "pos": "right",
+        "h": 0.45,
+        "ang": "face"
+      },
+      {
+        "id": "nerine",
+        "col": "#e2a6b4",
+        "n": 2,
+        "role": "second",
+        "pos": "top",
+        "h": 0.8,
+        "ang": "mixed"
+      },
+      {
+        "id": "phalaenopsis",
+        "col": "#b86aa8",
+        "n": 1,
+        "role": "second",
+        "pos": "right",
+        "h": 0.7,
+        "ang": "face"
+      },
+      {
+        "id": "dendrobium-coupe",
+        "col": "#ecdcd8",
+        "n": 1,
+        "role": "second",
+        "pos": "top",
+        "h": 0.9,
+        "ang": "face"
+      },
+      {
+        "id": "anemone-sauvage",
+        "col": "#e8d1e5",
+        "n": 1,
+        "role": "second",
+        "pos": "right",
+        "h": 0.55,
+        "ang": "face"
+      },
+      {
+        "id": "chrysantheme-araignee",
+        "col": "#e6b0a0",
+        "n": 1,
+        "role": "second",
+        "pos": "core",
+        "h": 0.5,
+        "ang": "face"
+      },
+      {
+        "id": "scabieuse",
+        "col": "#9a88bc",
+        "n": 7,
+        "role": "accent",
+        "pos": "around",
+        "h": 0.75,
+        "ang": "mixed"
+      },
+      {
+        "id": "pelargonium-geranium-odorant",
+        "col": "#4e7224",
+        "n": 3,
+        "role": "line",
+        "pos": "around",
+        "h": 0.6,
+        "ang": "side"
+      },
+      {
+        "id": "hortensia-boule",
+        "col": "#d8c0c8",
+        "n": 2,
+        "role": "filler",
+        "pos": "core",
+        "h": 0.15,
+        "ang": "face"
+      }
+    ],
+    "notes": "Éventail aérien de pastels dans un petit pot blanc : hampe de phalaenopsis qui plonge sous le bord de l'étagère et scabieuses lavande en points froids au bout de tiges fines."
+  },
+  {
+    "ref": "26383b9bc813c48b1a2ad4d49cc9c7d7.jpg",
+    "n": 14,
+    "nom": "Printemps cobalt",
+    "occ": [
+      "anniv",
+      "juste"
+    ],
+    "tpl": "vertical",
+    "asp": 0.65,
+    "vase": "papier",
+    "vcol": "#3460ee",
+    "bg": "#2d313b",
+    "plinth": "none",
+    "side": 1,
+    "els": [
+      {
+        "id": "narcisse-trompette",
+        "col": "#f6dc50",
+        "n": 1,
+        "role": "focal",
+        "pos": "core",
+        "h": 0.55,
+        "ang": "face"
+      },
+      {
+        "id": "renoncule-classique",
+        "col": "#e8481a",
+        "n": 1,
+        "role": "focal",
+        "pos": "core",
+        "h": 0.4,
+        "ang": "face"
+      },
+      {
+        "id": "anthurium-obake",
+        "col": "#d6707e",
+        "n": 1,
+        "role": "focal",
+        "pos": "core",
+        "h": 0.35,
+        "ang": "face"
+      },
+      {
+        "id": "tulipe-simple",
+        "col": "#f08c6e",
+        "n": 3,
+        "role": "second",
+        "pos": "right",
+        "h": 0.75,
+        "ang": "side"
+      },
+      {
+        "id": "tulipe-simple",
+        "col": "#c8c070",
+        "n": 1,
+        "role": "second",
+        "pos": "right",
+        "h": 0.65,
+        "ang": "side"
+      },
+      {
+        "id": "saule-a-chatons",
+        "col": "#c4d066",
+        "n": 2,
+        "role": "line",
+        "pos": "top",
+        "h": 1.0,
+        "ang": "side"
+      },
+      {
+        "id": "forsythia",
+        "col": "#f4d855",
+        "n": 2,
+        "role": "line",
+        "pos": "left",
+        "h": 0.85,
+        "ang": "mixed"
+      },
+      {
+        "id": "liriope-lily-grass",
+        "col": "#b5c97c",
+        "n": 2,
+        "role": "line",
+        "pos": "right",
+        "h": 0.6,
+        "ang": "side"
+      },
+      {
+        "id": "ruban-soie-mousseline",
+        "col": "#ef7a6a",
+        "n": 1,
+        "role": "accent",
+        "pos": "bottom",
+        "h": 0,
+        "ang": "side"
+      }
+    ],
+    "notes": "Petite poignée printanière nichée dans une vaste collerette de papier de soie cobalt, avec saule et forsythia qui filent vers le haut et brins d'herbe en arc vers la droite."
+  },
+  {
+    "ref": "2645da8ec1d84860922bed8761df275f.jpg",
+    "n": 15,
+    "nom": "Velours de prune",
+    "occ": [
+      "anniv",
+      "juste"
+    ],
+    "tpl": "dome",
+    "asp": 1.25,
+    "vase": "papier",
+    "vcol": "#d6d8d9",
+    "bg": "#c4c6c7",
+    "plinth": "none",
+    "side": -1,
+    "els": [
+      {
+        "id": "dahlia-decoratif",
+        "col": "#341018",
+        "n": 1,
+        "role": "focal",
+        "pos": "left",
+        "h": 0.3,
+        "ang": "face"
+      },
+      {
+        "id": "cymbidium-grandes-fleurs",
+        "col": "#c0bb5c",
+        "n": 1,
+        "role": "focal",
+        "pos": "top",
+        "h": 0.7,
+        "ang": "face"
+      },
+      {
+        "id": "tulipe-double",
+        "col": "#d4b0c4",
+        "n": 1,
+        "role": "focal",
+        "pos": "right",
+        "h": 0.55,
+        "ang": "face"
+      },
+      {
+        "id": "tulipe-double",
+        "col": "#a04e60",
+        "n": 1,
+        "role": "second",
+        "pos": "core",
+        "h": 0.35,
+        "ang": "tq"
+      },
+      {
+        "id": "anthurium-andraeanum",
+        "col": "#a83444",
+        "n": 1,
+        "role": "second",
+        "pos": "right",
+        "h": 0.45,
+        "ang": "side"
+      },
+      {
+        "id": "echinops",
+        "col": "#a891b0",
+        "n": 1,
+        "role": "second",
+        "pos": "left",
+        "h": 0.65,
+        "ang": "face"
+      },
+      {
+        "id": "pois-de-senteur",
+        "col": "#d8b0cc",
+        "n": 2,
+        "role": "line",
+        "pos": "top",
+        "h": 1.0,
+        "ang": "tq"
+      },
+      {
+        "id": "echinacea",
+        "col": "#c27e9a",
+        "n": 2,
+        "role": "line",
+        "pos": "left",
+        "h": 0.6,
+        "ang": "tq"
+      },
+      {
+        "id": "pavot-capsules",
+        "col": "#6f8a48",
+        "n": 1,
+        "role": "line",
+        "pos": "right",
+        "h": 0.95,
+        "ang": "side"
+      },
+      {
+        "id": "cosmos-chocolat",
+        "col": "#5c0f22",
+        "n": 4,
+        "role": "accent",
+        "pos": "top",
+        "h": 0.75,
+        "ang": "mixed"
+      },
+      {
+        "id": "sedum",
+        "col": "#6e6a45",
+        "n": 3,
+        "role": "filler",
+        "pos": "right",
+        "h": 0.35,
+        "ang": "face"
+      },
+      {
+        "id": "hortensia-boule",
+        "col": "#a8b48a",
+        "n": 1,
+        "role": "filler",
+        "pos": "core",
+        "h": 0.15,
+        "ang": "face"
+      },
+      {
+        "id": "skimmia-japonica",
+        "col": "#c8c8a0",
+        "n": 1,
+        "role": "filler",
+        "pos": "core",
+        "h": 0.2,
+        "ang": "face"
+      },
+      {
+        "id": "troene-a-baies",
+        "col": "#5a3a26",
+        "n": 1,
+        "role": "filler",
+        "pos": "left",
+        "h": 0.1,
+        "ang": "mixed"
+      },
+      {
+        "id": "amarante-retombante",
+        "col": "#86963e",
+        "n": 2,
+        "role": "drape",
+        "pos": "left",
+        "h": 0.25,
+        "ang": "side"
+      },
+      {
+        "id": "pittosporum-tenuifolium",
+        "col": "#4f6e2c",
+        "n": 3,
+        "role": "foliage",
+        "pos": "around",
+        "h": 0.4,
+        "ang": "mixed"
+      },
+      {
+        "id": "pelargonium-geranium-odorant",
+        "col": "#4f6e2c",
+        "n": 2,
+        "role": "foliage",
+        "pos": "core",
+        "h": 0.3,
+        "ang": "mixed"
+      },
+      {
+        "id": "ruban-soie-mousseline",
+        "col": "#ece6da",
+        "n": 1,
+        "role": "accent",
+        "pos": "bottom",
+        "h": 0,
+        "ang": "side"
+      }
+    ],
+    "notes": "Dôme prune et chartreuse qui affleure un cône de papier blanc : dahlia noir en bas à gauche, cymbidium vert acide au sommet, pois de senteur et amarante verte qui s'échappent."
+  },
+  {
+    "ref": "269877b75623256b41c4c0d158055461.jpg",
+    "n": 16,
+    "nom": "Chimère sur tige",
+    "occ": [
+      "bravo",
+      "juste"
+    ],
+    "tpl": "lcroissant",
+    "asp": 1.2,
+    "vase": "soliflore",
+    "vcol": "#92978f",
+    "bg": "#d6d6d3",
+    "plinth": "none",
+    "side": 1,
+    "els": [
+      {
+        "id": "gloriosa",
+        "col": "#ae0944",
+        "n": 1,
+        "role": "focal",
+        "pos": "right",
+        "h": 1.0,
+        "ang": "face"
+      },
+      {
+        "id": "celosie-crete-de-coq",
+        "col": "#a3161a",
+        "n": 1,
+        "role": "focal",
+        "pos": "right",
+        "h": 1.0,
+        "ang": "face"
+      },
+      {
+        "id": "lis-oriental",
+        "col": "#d98aa0",
+        "n": 1,
+        "role": "second",
+        "pos": "right",
+        "h": 1.0,
+        "ang": "face"
+      },
+      {
+        "id": "iris-hollandais",
+        "col": "#8048a8",
+        "n": 1,
+        "role": "second",
+        "pos": "right",
+        "h": 1.0,
+        "ang": "side"
+      },
+      {
+        "id": "tulipe-simple",
+        "col": "#ebae5f",
+        "n": 1,
+        "role": "second",
+        "pos": "right",
+        "h": 1.0,
+        "ang": "face"
+      },
+      {
+        "id": "oeillet-standard",
+        "col": "#f0d8dc",
+        "n": 1,
+        "role": "second",
+        "pos": "right",
+        "h": 1.0,
+        "ang": "face"
+      },
+      {
+        "id": "anthurium-andraeanum",
+        "col": "#c2c650",
+        "n": 1,
+        "role": "accent",
+        "pos": "right",
+        "h": 1.0,
+        "ang": "side"
+      },
+      {
+        "id": "arum-calla",
+        "col": "#2a0f22",
+        "n": 1,
+        "role": "accent",
+        "pos": "right",
+        "h": 1.0,
+        "ang": "side"
+      }
+    ],
+    "notes": "Une tige unique en arc qui porte, loin du col, une fleur composite assemblée de pétales de gloriosa, célosie, lis, iris et tulipe, au milieu d'un immense vide."
+  },
+  {
+    "ref": "278c61fc448e6e34fd5cd86bcb3851f6.jpg",
+    "n": 17,
+    "nom": "Cœur d'obsidienne",
+    "occ": [
+      "amour",
+      "juste"
+    ],
+    "tpl": "vertical",
+    "asp": 0.66,
+    "vase": "coupe-noire",
+    "vcol": "#2e3338",
+    "bg": "#8e8a84",
+    "plinth": "none",
+    "side": -1,
+    "els": [
+      {
+        "id": "phalaenopsis",
+        "col": "#eef3f2",
+        "n": 1,
+        "role": "focal",
+        "pos": "core",
+        "h": 0.5,
+        "ang": "face"
+      },
+      {
+        "id": "anthurium-andraeanum",
+        "col": "#6a1824",
+        "n": 1,
+        "role": "focal",
+        "pos": "right",
+        "h": 0.05,
+        "ang": "tq"
+      },
+      {
+        "id": "anthurium-andraeanum",
+        "col": "#6a1824",
+        "n": 1,
+        "role": "line",
+        "pos": "right",
+        "h": 0.85,
+        "ang": "tq"
+      },
+      {
+        "id": "rose-de-jardin",
+        "col": "#e2dcc6",
+        "n": 2,
+        "role": "second",
+        "pos": "left",
+        "h": 0.05,
+        "ang": "face"
+      },
+      {
+        "id": "lisianthus",
+        "col": "#eeeeea",
+        "n": 5,
+        "role": "second",
+        "pos": "left",
+        "h": 0.65,
+        "ang": "mixed"
+      },
+      {
+        "id": "cotinus-coggygria-arbre-a-perruques",
+        "col": "#6e2a35",
+        "n": 4,
+        "role": "line",
+        "pos": "around",
+        "h": 0.55,
+        "ang": "mixed"
+      },
+      {
+        "id": "bouleau",
+        "col": "#5a4a3e",
+        "n": 1,
+        "role": "line",
+        "pos": "top",
+        "h": 1.0,
+        "ang": "side"
+      },
+      {
+        "id": "pivoine-herbacee-double",
+        "col": "#5a1a24",
+        "n": 1,
+        "role": "filler",
+        "pos": "core",
+        "h": 0.1,
+        "ang": "tq"
+      },
+      {
+        "id": "dahlia-cactus",
+        "col": "#2a1a22",
+        "n": 1,
+        "role": "filler",
+        "pos": "core",
+        "h": 0.08,
+        "ang": "face"
+      }
+    ],
+    "notes": "Flamme gothique blanc-bordeaux-noir : colonne d'orchidées blanches, anthuriums laqués en pointes et rameaux bordeaux en éventail sur un vase-cœur de pierre noire."
+  },
+  {
+    "ref": "291ad42746f06ef3b7980147f309b4f5.jpg",
+    "n": 18,
+    "nom": "Nocturne d'hellébores",
+    "occ": [
+      "juste",
+      "courage"
+    ],
+    "tpl": "triangle",
+    "asp": 0.72,
+    "vase": "coupe-blanche",
+    "vcol": "#e6e4df",
+    "bg": "#c4c5c0",
+    "plinth": "blanc",
+    "side": -1,
+    "els": [
+      {
+        "id": "vanda",
+        "col": "#d0c8a0",
+        "n": 1,
+        "role": "focal",
+        "pos": "core",
+        "h": 0.3,
+        "ang": "face"
+      },
+      {
+        "id": "anthurium-andraeanum",
+        "col": "#2e1a1e",
+        "n": 2,
+        "role": "focal",
+        "pos": "left",
+        "h": 0.4,
+        "ang": "side"
+      },
+      {
+        "id": "chrysantheme-disbud",
+        "col": "#3e1228",
+        "n": 7,
+        "role": "filler",
+        "pos": "core",
+        "h": 0.4,
+        "ang": "face"
+      },
+      {
+        "id": "hellebore-orientalis",
+        "col": "#4e2a3e",
+        "n": 6,
+        "role": "line",
+        "pos": "top",
+        "h": 0.85,
+        "ang": "mixed"
+      },
+      {
+        "id": "hellebore-orientalis",
+        "col": "#4e2a3e",
+        "n": 3,
+        "role": "second",
+        "pos": "around",
+        "h": 0.2,
+        "ang": "face"
+      },
+      {
+        "id": "arum-calla",
+        "col": "#2a0f1e",
+        "n": 1,
+        "role": "line",
+        "pos": "left",
+        "h": 0.6,
+        "ang": "side"
+      },
+      {
+        "id": "hellebore-feuilles",
+        "col": "#6a9a40",
+        "n": 3,
+        "role": "foliage",
+        "pos": "left",
+        "h": 0.2,
+        "ang": "mixed"
+      }
+    ],
+    "notes": "Triangle monochrome très sombre sur une minuscule coupe blanche : dôme de chrysanthèmes aubergine et de vandas léopard, hellébores doubles étagés sur tiges fines, calla noir en flèche."
+  },
+  {
+    "ref": "2b3a8a590d17dbfdec0dfe8a52fc3c8f.jpg",
+    "n": 19,
+    "nom": "Envolée de nérines",
+    "occ": [
+      "bravo",
+      "merci"
+    ],
+    "tpl": "eventail",
+    "asp": 0.85,
+    "vase": "boule-sapin",
+    "vcol": "#26352a",
+    "bg": "#a89a82",
+    "plinth": "none",
+    "side": -1,
+    "els": [
+      {
+        "id": "lis-asiatique-la",
+        "col": "#d87a8a",
+        "n": 2,
+        "role": "focal",
+        "pos": "core",
+        "h": 0.45,
+        "ang": "mixed"
+      },
+      {
+        "id": "anthurium-obake",
+        "col": "#d4d29c",
+        "n": 1,
+        "role": "focal",
+        "pos": "right",
+        "h": 0.35,
+        "ang": "face"
+      },
+      {
+        "id": "nerine",
+        "col": "#e66973",
+        "n": 6,
+        "role": "line",
+        "pos": "top",
+        "h": 0.9,
+        "ang": "mixed"
+      },
+      {
+        "id": "arum-calla",
+        "col": "#ecd3a0",
+        "n": 3,
+        "role": "line",
+        "pos": "left",
+        "h": 0.6,
+        "ang": "side"
+      },
+      {
+        "id": "gerbera-araignee",
+        "col": "#eaa47e",
+        "n": 4,
+        "role": "second",
+        "pos": "right",
+        "h": 0.6,
+        "ang": "tq"
+      },
+      {
+        "id": "amarante-retombante",
+        "col": "#7e3442",
+        "n": 3,
+        "role": "drape",
+        "pos": "around",
+        "h": 0.35,
+        "ang": "side"
+      },
+      {
+        "id": "muflier",
+        "col": "#dcb4a8",
+        "n": 3,
+        "role": "filler",
+        "pos": "core",
+        "h": 0.2,
+        "ang": "side"
+      },
+      {
+        "id": "hortensia-boule",
+        "col": "#9c5a58",
+        "n": 2,
+        "role": "filler",
+        "pos": "core",
+        "h": 0.15,
+        "ang": "face"
+      },
+      {
+        "id": "hortensia-boule",
+        "col": "#b9c860",
+        "n": 1,
+        "role": "filler",
+        "pos": "core",
+        "h": 0.55,
+        "ang": "face"
+      },
+      {
+        "id": "ail-serpent",
+        "col": "#b8c040",
+        "n": 1,
+        "role": "accent",
+        "pos": "core",
+        "h": 0.7,
+        "ang": "side"
+      }
+    ],
+    "notes": "Grand éventail de hall : nérines corail au sommet de longues tiges nues, callas crème lancés à gauche, gerberas et anthurium pistache au-dessus du col, amarantes bordeaux qui tombent jusqu'à la table."
+  },
+  {
+    "ref": "2e2bb20715b47b0e8975b068cc4abeb5.jpg",
+    "n": 20,
+    "nom": "Étoile pourpre",
+    "occ": [
+      "amour",
+      "bravo"
+    ],
+    "tpl": "eventail",
+    "asp": 0.85,
+    "vase": "urne",
+    "vcol": "#1c1d1f",
+    "bg": "#c0b9ae",
+    "plinth": "bois",
+    "side": -1,
+    "els": [
+      {
+        "id": "lis-asiatique-la",
+        "col": "#6a0a18",
+        "n": 2,
+        "role": "focal",
+        "pos": "core",
+        "h": 0.35,
+        "ang": "face"
+      },
+      {
+        "id": "lis-asiatique-la",
+        "col": "#c0403a",
+        "n": 1,
+        "role": "second",
+        "pos": "around",
+        "h": 0.65,
+        "ang": "face"
+      },
+      {
+        "id": "arum-calla",
+        "col": "#ece4c6",
+        "n": 6,
+        "role": "line",
+        "pos": "around",
+        "h": 0.6,
+        "ang": "side"
+      }
+    ],
+    "notes": "Étoile rayonnante : noyau dense de lys bordeaux sur une urne noire à pied, d'où six callas crème partent dans six directions."
+  },
+  {
+    "ref": "2ec3993214ddacc8fa8d420cde9152b1.jpg",
+    "n": 21,
+    "nom": "Calligraphie d'orchidées",
+    "occ": [
+      "merci",
+      "juste"
+    ],
+    "tpl": "libre",
+    "asp": 1.35,
+    "vase": "verre",
+    "vcol": "#b8b4ae",
+    "bg": "#d6c9b8",
+    "plinth": "blanc",
+    "side": 1,
+    "els": [
+      {
+        "id": "phalaenopsis",
+        "col": "#82384a",
+        "n": 2,
+        "role": "focal",
+        "pos": "core",
+        "h": 0.5,
+        "ang": "face"
+      },
+      {
+        "id": "arum-calla",
+        "col": "#e4ddb4",
+        "n": 3,
+        "role": "second",
+        "pos": "around",
+        "h": 0.45,
+        "ang": "side"
+      },
+      {
+        "id": "arum-calla",
+        "col": "#5e4a6a",
+        "n": 1,
+        "role": "second",
+        "pos": "right",
+        "h": 0.8,
+        "ang": "side"
+      },
+      {
+        "id": "pieris-japonica",
+        "col": "#d9ccb6",
+        "n": 2,
+        "role": "filler",
+        "pos": "rim",
+        "h": 0.05,
+        "ang": "mixed"
+      },
+      {
+        "id": "ail-serpent",
+        "col": "#5f6e3a",
+        "n": 5,
+        "role": "line",
+        "pos": "around",
+        "h": 0.9,
+        "ang": "mixed"
+      },
+      {
+        "id": "phalaenopsis",
+        "col": "#7c8448",
+        "n": 1,
+        "role": "line",
+        "pos": "left",
+        "h": 0.7,
+        "ang": "side"
+      },
+      {
+        "id": "hellebore-orientalis",
+        "col": "#d5cd9d",
+        "n": 2,
+        "role": "accent",
+        "pos": "right",
+        "h": 0.15,
+        "ang": "tq"
+      },
+      {
+        "id": "anemone-coronaria",
+        "col": "#faf9f5",
+        "n": 1,
+        "role": "accent",
+        "pos": "left",
+        "h": 0.45,
+        "ang": "tq"
+      },
+      {
+        "id": "oeillet-standard",
+        "col": "#d0b9ab",
+        "n": 1,
+        "role": "filler",
+        "pos": "core",
+        "h": 0.6,
+        "ang": "face"
+      },
+      {
+        "id": "goeppertia-calathea",
+        "col": "#3e4a32",
+        "n": 2,
+        "role": "foliage",
+        "pos": "core",
+        "h": 0.55,
+        "ang": "mixed"
+      }
+    ],
+    "notes": "Masse basse d'orchidées mouchetées, de callas et d'une jupe de piéris sur un cylindre chromé, prolongée par des tiges d'allium qui bouclent sur le mur comme de l'encre."
+  }
+]

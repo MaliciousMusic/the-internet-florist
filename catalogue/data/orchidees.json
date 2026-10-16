@@ -1,0 +1,5278 @@
+[
+  {
+    "id": "phalaenopsis",
+    "nom_fr": "Phalaenopsis (orchidée papillon)",
+    "nom_en": "Moth orchid",
+    "latin": "Phalaenopsis spp. et hybrides",
+    "famille": "Orchidaceae",
+    "categorie": "Orchidées",
+    "role": "focale",
+    "couleurs": [
+      "blanc",
+      "blanc à labelle jaune",
+      "blanc à labelle rouge",
+      "crème",
+      "jaune",
+      "jaune citron",
+      "orange",
+      "cuivre",
+      "rose pâle",
+      "rose",
+      "rose fuchsia",
+      "lilas",
+      "violet",
+      "pourpre",
+      "rouge",
+      "rouge vin",
+      "vert",
+      "strié",
+      "moucheté / tacheté (harlequin)",
+      "bordé (liseré)",
+      "bicolore",
+      "teinté (bleu, vert, gris – fleurs teintes)"
+    ],
+    "varietes": [
+      {
+        "nom": "Stellenbosch",
+        "couleur": "pourpre intense, labelle rouge",
+        "note": "Anthura – fleur coupée et pot ; fleur 8,5 cm ; ~13 j en vase"
+      },
+      {
+        "nom": "Montreux",
+        "couleur": "rouge uni, labelle rouge",
+        "note": "Anthura – fleur coupée ; fleur 7,5 cm ; jusqu'à 27 j en vase"
+      },
+      {
+        "nom": "Buffalo",
+        "couleur": "pourpre, labelle rose",
+        "note": "Anthura – fleur coupée ; grande fleur 10 cm"
+      },
+      {
+        "nom": "Memphis",
+        "couleur": "rose uni",
+        "note": "Anthura – fleur coupée ; fleur 10 cm"
+      },
+      {
+        "nom": "Manila",
+        "couleur": "lilas intense",
+        "note": "Anthura – fleur coupée ; fleur 10,5 cm"
+      },
+      {
+        "nom": "Hong Kong",
+        "couleur": "blanc, labelle rouge profond",
+        "note": "Anthura – fleur coupée ; fleur 9,5 cm ; ~12 j en vase"
+      },
+      {
+        "nom": "Milan",
+        "couleur": "jaune, labelle orange",
+        "note": "Anthura – fleur coupée"
+      },
+      {
+        "nom": "Cambridge",
+        "couleur": "blanc, labelle jaune",
+        "note": "Anthura – pot 12 cm ; fleur 10 cm"
+      },
+      {
+        "nom": "Washington",
+        "couleur": "lilas, labelle rouge",
+        "note": "Anthura – pot"
+      },
+      {
+        "nom": "Salinas",
+        "couleur": "lilas, labelle orange",
+        "note": "Anthura – pot"
+      },
+      {
+        "nom": "Narbonne",
+        "couleur": "cuivre, labelle rouge",
+        "note": "Anthura – pot ; coloris cuivré rare"
+      },
+      {
+        "nom": "Toronto",
+        "couleur": "blanc, labelle rouge",
+        "note": "Anthura – pot ; tige 75 cm"
+      },
+      {
+        "nom": "Lima",
+        "couleur": "jaune strié, labelle pourpre",
+        "note": "Anthura – petite fleur 5,5 cm"
+      },
+      {
+        "nom": "Boston",
+        "couleur": "rose strié, labelle rouge",
+        "note": "Anthura – pot"
+      },
+      {
+        "nom": "Sevilla",
+        "couleur": "lilas ponctué, labelle pourpre",
+        "note": "Anthura – pot"
+      },
+      {
+        "nom": "Tampa",
+        "couleur": "rose à cœur orange",
+        "note": "Anthura – pot"
+      },
+      {
+        "nom": "Rotterdam",
+        "couleur": "rose ponctué, labelle pourpre",
+        "note": "Anthura – pot"
+      },
+      {
+        "nom": "Ravello",
+        "couleur": "orange strié",
+        "note": "Anthura – pot"
+      },
+      {
+        "nom": "Cali",
+        "couleur": "vert uni",
+        "note": "Anthura – pot"
+      },
+      {
+        "nom": "Grosseto",
+        "couleur": "jaune ponctué, labelle rouge",
+        "note": "Anthura – pot"
+      },
+      {
+        "nom": "Angers",
+        "couleur": "rouge à liseré",
+        "note": "Anthura – pot"
+      },
+      {
+        "nom": "Golden Leopard",
+        "couleur": "orange, labelle rouge",
+        "note": "Anthura – pot"
+      },
+      {
+        "nom": "Bohemian Pink Leopard",
+        "couleur": "rose moucheté",
+        "note": "Anthura – pot"
+      },
+      {
+        "nom": "Barcelona",
+        "couleur": "pourpre moucheté, labelle blanc",
+        "note": "Anthura – pot"
+      },
+      {
+        "nom": "Bentong",
+        "couleur": "vert, labelle jaune",
+        "note": "Anthura – pot"
+      },
+      {
+        "nom": "Livorno",
+        "couleur": "crème ponctué, labelle orange",
+        "note": "Anthura – pot"
+      },
+      {
+        "nom": "Bologna",
+        "couleur": "orange strié, labelle rouge",
+        "note": "Anthura – pot"
+      },
+      {
+        "nom": "Las Vegas",
+        "couleur": "orange uni, labelle orange",
+        "note": "Anthura – pot"
+      },
+      {
+        "nom": "Vintura Positano",
+        "couleur": "vert, labelle jaune",
+        "note": "Anthura – série Vintura (pastels « vintage »)"
+      },
+      {
+        "nom": "Vintura Padova",
+        "couleur": "cuivre pastel",
+        "note": "Anthura – série Vintura"
+      },
+      {
+        "nom": "Vintura Rome",
+        "couleur": "cuivre pastel",
+        "note": "Anthura – série Vintura"
+      },
+      {
+        "nom": "Vintura Treviso",
+        "couleur": "rose pastel",
+        "note": "Anthura – série Vintura"
+      },
+      {
+        "nom": "Vintura Vittoria",
+        "couleur": "jaune pâle",
+        "note": "Anthura – série Vintura"
+      },
+      {
+        "nom": "Sunca Split",
+        "couleur": "rose, labelle jaune fluo",
+        "note": "Anthura – série Sunca ; grandes fleurs ; >16 semaines en pot"
+      },
+      {
+        "nom": "Sunca Pula",
+        "couleur": "rose, labelle jaune vif",
+        "note": "Anthura – série Sunca ; compacte, fleur 7 cm"
+      },
+      {
+        "nom": "Sunca Zagreb",
+        "couleur": "blanc moucheté de pourpre, labelle jaune vif",
+        "note": "Anthura – série Sunca"
+      },
+      {
+        "nom": "Sunca Zadar",
+        "couleur": "blanc dégradé lilas, labelle jaune feu",
+        "note": "Anthura – série Sunca ; fleur 9 cm"
+      },
+      {
+        "nom": "Sunca Novalja",
+        "couleur": "lilas à liseré, labelle jaune",
+        "note": "Anthura – série Sunca"
+      },
+      {
+        "nom": "Chamonix",
+        "couleur": "rose-pourpre foncé, anthère blanche",
+        "note": "RHS AGM ; Anthura"
+      },
+      {
+        "nom": "Denver",
+        "couleur": "blanc finement strié de pourpre, labelle pourpre",
+        "note": "RHS AGM"
+      },
+      {
+        "nom": "Dover",
+        "couleur": "blanc uni, labelle jaune à gorge mauve",
+        "note": "RHS AGM ; très florifère"
+      },
+      {
+        "nom": "Folkestone",
+        "couleur": "blanc pur, labelle bordé de jaune",
+        "note": "RHS AGM ; jusqu'à 6 hampes"
+      },
+      {
+        "nom": "Linz",
+        "couleur": "blanc, labelle pourpre foncé à gorge jaune",
+        "note": "RHS AGM"
+      },
+      {
+        "nom": "La Paz",
+        "couleur": "jaune citron, labelle orange, colonne blanche",
+        "note": "RHS AGM ; Anthura"
+      },
+      {
+        "nom": "Marrakesh",
+        "couleur": "blanc maculé de pourpre (harlequin)",
+        "note": "RHS AGM ; Anthura"
+      },
+      {
+        "nom": "Milwaukee",
+        "couleur": "rose-pourpre ponctué de rouge à la gorge",
+        "note": "RHS AGM ; Anthura"
+      },
+      {
+        "nom": "Puebla",
+        "couleur": "pourpre profond bordé de blanc",
+        "note": "RHS AGM ; Anthura"
+      },
+      {
+        "nom": "Salta",
+        "couleur": "rose-pourpre strié, labelle pourpre",
+        "note": "RHS AGM ; Anthura"
+      },
+      {
+        "nom": "Santos",
+        "couleur": "rose, labelle rose-orangé",
+        "note": "RHS AGM"
+      },
+      {
+        "nom": "Zurich",
+        "couleur": "blanc, labelle marqué de jaune et ponctué de rouge",
+        "note": "RHS AGM ; Anthura"
+      },
+      {
+        "nom": "Violet Queen",
+        "couleur": "violet finement strié, labelle violet foncé",
+        "note": "RHS AGM ; coloris rare"
+      },
+      {
+        "nom": "White Apple",
+        "couleur": "petites fleurs blanches, revers mauve, labelle jaune ponctué de rouge",
+        "note": "RHS AGM ; compacte"
+      },
+      {
+        "nom": "Picasso",
+        "couleur": "blanc à cœur bordeaux, ponctué de bordeaux (harlequin)",
+        "note": "RHS AGM ; aucune fleur identique"
+      },
+      {
+        "nom": "Birdie",
+        "couleur": "rose strié, labelle mauve à gorge jaune",
+        "note": "RHS AGM ; multi-hampes"
+      },
+      {
+        "nom": "Honeybee",
+        "couleur": "fond blanc-rose fortement strié de rose",
+        "note": "RHS AGM"
+      },
+      {
+        "nom": "Perceval",
+        "couleur": "pourpre-rose strié, labelle pourpre foncé",
+        "note": "RHS AGM"
+      },
+      {
+        "nom": "Puppy",
+        "couleur": "blanc, labelle jaune-orange ponctué de rouge",
+        "note": "RHS AGM"
+      },
+      {
+        "nom": "Electric Vibes",
+        "couleur": "pourpre-rose bordé de blanc",
+        "note": "RHS AGM"
+      },
+      {
+        "nom": "Tiny Tim",
+        "couleur": "blanc cristallin, labelle jaune",
+        "note": "RHS AGM ; miniature multiflora"
+      },
+      {
+        "nom": "Yellow Lightning",
+        "couleur": "jaune vif bordé de rouge, labelle pourpre",
+        "note": "RHS AGM"
+      },
+      {
+        "nom": "Ariadne",
+        "couleur": "rose, bords ponctués de rouge foncé, labelle blanc-jaune-rouge",
+        "note": "RHS AGM"
+      },
+      {
+        "nom": "Brother Pico Sweetheart",
+        "couleur": "blanc à cœur rose, labelle rose-rouge profond",
+        "note": "RHS AGM ; multiflora"
+      },
+      {
+        "nom": "Chingruey's Goldstaff",
+        "couleur": "jaune strié de rouge, labelle rose-orangé",
+        "note": "RHS AGM"
+      },
+      {
+        "nom": "Hsinying Yenlin 'Purple Princess'",
+        "couleur": "rose-violet foncé bordé de blanc, labelle pourpre",
+        "note": "RHS AGM ; compacte"
+      },
+      {
+        "nom": "Taida Sweet 'Stripe Beauty'",
+        "couleur": "crème strié de rose",
+        "note": "RHS AGM"
+      },
+      {
+        "nom": "Chengdu",
+        "couleur": "rose pâle finement ponctué, labelle orange",
+        "note": "RHS AGM"
+      },
+      {
+        "nom": "New Life",
+        "couleur": "petites fleurs blanches parfumées, revers mauve",
+        "note": "RHS AGM"
+      },
+      {
+        "nom": "Be Tris",
+        "couleur": "miniature blanche lavée de rose, labelle rose foncé",
+        "note": "RHS AGM"
+      },
+      {
+        "nom": "White World",
+        "couleur": "blanc pur, labelle jaune",
+        "note": "Sion/Labeau – grandes fleurs ; pot et fleur coupée de mariage ; >100 j"
+      },
+      {
+        "nom": "Pure Silk",
+        "couleur": "blanc",
+        "note": "Floricultura – série Elastica, hampes souples"
+      },
+      {
+        "nom": "Snow Compass",
+        "couleur": "blanc",
+        "note": "Floricultura – grandes fleurs jusqu'à 10 cm"
+      },
+      {
+        "nom": "Tigerhill",
+        "couleur": "blanc",
+        "note": "Floricultura – grandes fleurs, multi-hampes"
+      },
+      {
+        "nom": "Grand Dessert",
+        "couleur": "blanc",
+        "note": "Floricultura – multiflora à hampe courte"
+      },
+      {
+        "nom": "Ocean Boulevard",
+        "couleur": "blanc",
+        "note": "Floricultura – multiflora très fournie"
+      },
+      {
+        "nom": "Friday Flirt",
+        "couleur": "rose foncé",
+        "note": "Floricultura – multiflora"
+      },
+      {
+        "nom": "Pure Poetry",
+        "couleur": "rose, grand labelle",
+        "note": "Floricultura – série Lingua (big lip)"
+      },
+      {
+        "nom": "Aquarelle",
+        "couleur": "rose",
+        "note": "Floricultura – port dense type bouquet"
+      },
+      {
+        "nom": "Gallery Play",
+        "couleur": "rose fantaisie",
+        "note": "Floricultura – 150 j de floraison"
+      },
+      {
+        "nom": "Xanadu",
+        "couleur": "blanc à cœur rose",
+        "note": "Floricultura – série Eccentrix"
+      },
+      {
+        "nom": "Heroes",
+        "couleur": "rose frais strié de blanc",
+        "note": "Floricultura – série Eccentrix ; 110 j"
+      },
+      {
+        "nom": "Wanderlust",
+        "couleur": "rose tendre, labelle jaune",
+        "note": "Floricultura – série Eccentrix"
+      },
+      {
+        "nom": "Dream On",
+        "couleur": "rose néon",
+        "note": "Floricultura – série Eccentrix ; 3–4 hampes"
+      },
+      {
+        "nom": "Strawberry Cake",
+        "couleur": "taches et marbrures en combinaison colorée",
+        "note": "Floricultura – série Eccentrix"
+      },
+      {
+        "nom": "Sparx",
+        "couleur": "tons chauds en dégradé",
+        "note": "Floricultura – série Eccentrix"
+      },
+      {
+        "nom": "Freeride",
+        "couleur": "pourpre foncé",
+        "note": "Floricultura – série Elastica"
+      },
+      {
+        "nom": "Miraflore",
+        "couleur": "jaune",
+        "note": "Floricultura"
+      },
+      {
+        "nom": "Carrotcake",
+        "couleur": "orange vif",
+        "note": "Floricultura – un des rares vrais orange"
+      },
+      {
+        "nom": "Singolo Hello",
+        "couleur": "grande fleur unique au motif spécial",
+        "note": "Opti-flor – une seule grande fleur par plante (Thursd)"
+      },
+      {
+        "nom": "Champion Lightning",
+        "couleur": "blanc strié de pourpre en bordure",
+        "note": "NParks Singapour ; jusqu'à 3 mois"
+      },
+      {
+        "nom": "Sogo Vivien 'Variegated'",
+        "couleur": "blanc strié de pourpre, labelle pourpre foncé",
+        "note": "NParks ; feuillage panaché, compacte"
+      },
+      {
+        "nom": "Red Dream",
+        "couleur": "rouge vin",
+        "note": "FiftyFlowers – fleur coupée"
+      },
+      {
+        "nom": "Blush Princess",
+        "couleur": "rose poudré",
+        "note": "FiftyFlowers – fleur coupée"
+      },
+      {
+        "nom": "Tiger Striped Purple",
+        "couleur": "blanc rayé de pourpre (tigré)",
+        "note": "FiftyFlowers – fleur coupée"
+      },
+      {
+        "nom": "Phalaenopsis bellina (espèce)",
+        "couleur": "blanc et violet",
+        "note": "espèce de Bornéo (Thursd) ; floraison 3–4 mois, très parfumée"
+      },
+      {
+        "nom": "Phalaenopsis amabilis (espèce)",
+        "couleur": "blanc pur",
+        "note": "espèce type, RHS AGM ; ancêtre des hybrides blancs"
+      }
+    ],
+    "formes": "Tige coupée (branche de 6 à 15 fleurs, 50–80 cm) vendue en tube ou en carton ; fleur seule pour boutonnières, couronnes et bijoux floraux ; plante en pot 9 ou 12 cm à 1–3 hampes (standard, grandiflora de 10–12 cm, multiflora et mini à fleurs de 3–6 cm) ; cascades pour mariage.",
+    "saison": "Toute l'année (production néerlandaise sous serre) ; tiges coupées plus abondantes d'octobre à mai.",
+    "tenue_vase": "7–27 jours en coupe selon la variété (9–13 j en moyenne) ; 2 à 5 mois en pot",
+    "gamme_prix": "€€€",
+    "rarete_jeu": "commune",
+    "notes_dessin": "Fleur plate et frontale de 7 à 12 cm (3–6 cm en multiflora) : trois sépales ovales — un dorsal dressé, deux latéraux plus larges vers le bas — et deux pétales très larges, presque circulaires, qui forment les « ailes » du papillon. Au centre, le labelle charnu est trilobé : deux lobes latéraux relevés en conque et un lobe médian en ancre terminé par deux fines antennes (cirres), avec un cal jaune ou orange ponctué de rouge à sa base ; la colonne courte et blanche, coiffée d'un capuchon d'anthère, surplombe le labelle. Texture cireuse et satinée, légèrement translucide sur les bords ; les motifs vont de l'uni aux veines rayonnantes (strié), aux mouchetures fines, aux grandes taches irrégulières « harlequin » et au liseré clair (bordé). Les fleurs s'alignent en arc régulier sur une hampe arquée, s'ouvrant de la base vers la pointe où restent 2 à 5 boutons ronds et verts ; vue de profil, la fleur est quasi plane avec le labelle qui avance. La plante forme une rosette basale de 3 à 6 feuilles larges, épaisses et luisantes, d'où sortent des racines aériennes argentées à pointe verte.",
+    "wiki": "Phalaenopsis",
+    "img_queries": [
+      "Phalaenopsis amabilis",
+      "Phalaenopsis hybrid white",
+      "Phalaenopsis harlequin",
+      "Phalaenopsis bellina"
+    ],
+    "sources": [
+      "https://anthura.nl/en/products/phalaenopsis-cut/stellenbosch/",
+      "https://www.rhs.org.uk/plants/pdfs/rhs-recommended-award-of-garden-merit-orchids.pdf",
+      "https://thursd.com/articles/these-are-some-of-the-most-popular-phalaenopsis-in-brazil",
+      "https://thursd.com/articles/phalaenopsis-white-world-elegance",
+      "https://thursd.com/articles/eccentrix-phalaenopsis-make-you-go-wow"
+    ]
+  },
+  {
+    "id": "cymbidium-grandes-fleurs",
+    "nom_fr": "Cymbidium à grandes fleurs",
+    "nom_en": "Large-flowered cymbidium (boat orchid)",
+    "latin": "Cymbidium hybrides (grandiflora)",
+    "famille": "Orchidaceae",
+    "categorie": "Orchidées",
+    "role": "focale",
+    "couleurs": [
+      "blanc",
+      "blanc pur",
+      "ivoire",
+      "crème",
+      "jaune",
+      "jaune d'or",
+      "vert",
+      "vert pomme",
+      "vert menthe",
+      "rose pâle",
+      "rose",
+      "rose vif",
+      "rose saumon",
+      "rouge",
+      "bordeaux",
+      "brun",
+      "caramel",
+      "orange",
+      "bronze",
+      "pourpre",
+      "noir pourpré",
+      "bicolore à labelle rouge ou rose",
+      "labelle tacheté",
+      "teinté (bleu, pêche – fleurs teintes)"
+    ],
+    "varietes": [
+      {
+        "nom": "Ivory",
+        "couleur": "blanc ivoire",
+        "note": "R. Ammerlaan (sept–oct), Alain Poot, Peet Zwink"
+      },
+      {
+        "nom": "Antonella",
+        "couleur": "blanc",
+        "note": "R. Ammerlaan, sept–oct"
+      },
+      {
+        "nom": "Mrs. Sugar Lee",
+        "couleur": "blanc",
+        "note": "R. Ammerlaan (sept–oct), Alain Poot, Present Orchids"
+      },
+      {
+        "nom": "Early White",
+        "couleur": "blanc",
+        "note": "R. Ammerlaan, Sanfiero ; précoce sept–oct"
+      },
+      {
+        "nom": "White Sensation",
+        "couleur": "blanc",
+        "note": "R. Ammerlaan (oct–nov), Alain Poot"
+      },
+      {
+        "nom": "White Christal",
+        "couleur": "blanc cristal",
+        "note": "R. Ammerlaan, oct–nov"
+      },
+      {
+        "nom": "Mazurka",
+        "couleur": "blanc",
+        "note": "R. Ammerlaan (oct–déc), Alain Poot, Seven Orchids, Present Orchids"
+      },
+      {
+        "nom": "Snowbird",
+        "couleur": "blanc",
+        "note": "R. Ammerlaan (nov–déc), Present Orchids ; « Hotstuff Snowbird » chez Peet Zwink"
+      },
+      {
+        "nom": "Snowcastle",
+        "couleur": "blanc",
+        "note": "R. Ammerlaan, Seven Orchids, Kwekerij Schieland ; oct–déc"
+      },
+      {
+        "nom": "Sylvester",
+        "couleur": "blanc",
+        "note": "R. Ammerlaan, nov–déc"
+      },
+      {
+        "nom": "Pompei",
+        "couleur": "blanc",
+        "note": "R. Ammerlaan (déc–janv.), Alain Poot"
+      },
+      {
+        "nom": "Muscle White",
+        "couleur": "blanc",
+        "note": "R. Ammerlaan, déc–janv."
+      },
+      {
+        "nom": "Lisette",
+        "couleur": "blanc",
+        "note": "R. Ammerlaan, Seven Orchids ; déc–janv."
+      },
+      {
+        "nom": "Valenta",
+        "couleur": "blanc",
+        "note": "R. Ammerlaan, janv.–févr."
+      },
+      {
+        "nom": "Amy Liv",
+        "couleur": "blanc",
+        "note": "R. Ammerlaan, janv.–févr."
+      },
+      {
+        "nom": "Steffi",
+        "couleur": "blanc",
+        "note": "R. Ammerlaan, Present Orchids ; janv.–févr."
+      },
+      {
+        "nom": "Kilimanjaro",
+        "couleur": "blanc pur",
+        "note": "R. Ammerlaan (févr.–mars), Alain Poot, Peet Zwink, Holex"
+      },
+      {
+        "nom": "Silver",
+        "couleur": "blanc argenté",
+        "note": "R. Ammerlaan, Present Orchids ; févr.–mars"
+      },
+      {
+        "nom": "Jungfrau 'Dos Pueblos'",
+        "couleur": "blanc",
+        "note": "R. Ammerlaan (févr.–avr.), Peet Zwink, Present Orchids ; grex classique"
+      },
+      {
+        "nom": "Cascade",
+        "couleur": "blanc",
+        "note": "R. Ammerlaan (avr.–mai), Present Orchids, Schieland ; tardif"
+      },
+      {
+        "nom": "Esmee",
+        "couleur": "blanc pur",
+        "note": "Alain Poot, Holex"
+      },
+      {
+        "nom": "Venezia",
+        "couleur": "blanc",
+        "note": "Alain Poot"
+      },
+      {
+        "nom": "Joan's Charisma 'Vanity'",
+        "couleur": "blanc",
+        "note": "Alain Poot, Peet Zwink"
+      },
+      {
+        "nom": "Snow White",
+        "couleur": "blanc neige",
+        "note": "Alain Poot"
+      },
+      {
+        "nom": "Cinderella",
+        "couleur": "blanc",
+        "note": "Alain Poot, Peet Zwink"
+      },
+      {
+        "nom": "Queen Sophie",
+        "couleur": "blanc éclatant, intérieur du labelle rose",
+        "note": "Koningshof ; janv.–mars ; tige 60–80 cm, jusqu'à 13 grandes fleurs"
+      },
+      {
+        "nom": "Millenium",
+        "couleur": "blanc",
+        "note": "Kwekerij Schieland"
+      },
+      {
+        "nom": "Koala",
+        "couleur": "blanc",
+        "note": "Present Orchids"
+      },
+      {
+        "nom": "Long John",
+        "couleur": "blanc",
+        "note": "Present Orchids"
+      },
+      {
+        "nom": "Marianne",
+        "couleur": "blanc",
+        "note": "Present Orchids"
+      },
+      {
+        "nom": "Honey Green 'Melissa'",
+        "couleur": "vert miel",
+        "note": "R. Ammerlaan (sept–oct), Seven Orchids (sept–nov)"
+      },
+      {
+        "nom": "Hans",
+        "couleur": "vert",
+        "note": "R. Ammerlaan, Alain Poot, Present Orchids"
+      },
+      {
+        "nom": "Verona",
+        "couleur": "vert",
+        "note": "R. Ammerlaan (oct–nov), Alain Poot"
+      },
+      {
+        "nom": "Bonjoni",
+        "couleur": "vert",
+        "note": "R. Ammerlaan, oct–nov"
+      },
+      {
+        "nom": "Robin Hood",
+        "couleur": "vert",
+        "note": "R. Ammerlaan (« Mrs. Robin Hood »), Alain Poot, Peet Zwink, Present Orchids"
+      },
+      {
+        "nom": "Mrs. Maxima",
+        "couleur": "vert",
+        "note": "R. Ammerlaan, nov–déc"
+      },
+      {
+        "nom": "Bremo",
+        "couleur": "vert",
+        "note": "R. Ammerlaan, Present Orchids, Seven Orchids ; déc–janv."
+      },
+      {
+        "nom": "Noah",
+        "couleur": "vert",
+        "note": "R. Ammerlaan, Alain Poot ; déc–janv."
+      },
+      {
+        "nom": "Machteld",
+        "couleur": "vert",
+        "note": "R. Ammerlaan, Alain Poot, Present Orchids, Seven Orchids ; déc–févr."
+      },
+      {
+        "nom": "Majestic",
+        "couleur": "vert",
+        "note": "R. Ammerlaan, Present Orchids, Sanfiero ; janv.–févr."
+      },
+      {
+        "nom": "Valley Boop",
+        "couleur": "vert",
+        "note": "R. Ammerlaan, Alain Poot ; janv.–févr."
+      },
+      {
+        "nom": "Green Choice",
+        "couleur": "vert",
+        "note": "R. Ammerlaan, Present Orchids ; janv.–févr."
+      },
+      {
+        "nom": "Top Spot",
+        "couleur": "vert",
+        "note": "R. Ammerlaan, Alain Poot, Sanfiero"
+      },
+      {
+        "nom": "Green Valley",
+        "couleur": "vert",
+        "note": "R. Ammerlaan, févr.–mars"
+      },
+      {
+        "nom": "Forty Niner 'Alice Anderson'",
+        "couleur": "vert",
+        "note": "R. Ammerlaan (févr.–avr.), Peet Zwink, Present Orchids"
+      },
+      {
+        "nom": "Ovation Emerald",
+        "couleur": "vert émeraude",
+        "note": "R. Ammerlaan, févr.–avr."
+      },
+      {
+        "nom": "Green Giant",
+        "couleur": "vert",
+        "note": "R. Ammerlaan, mars–avr."
+      },
+      {
+        "nom": "Dublin",
+        "couleur": "vert",
+        "note": "Alain Poot, Seven Orchids"
+      },
+      {
+        "nom": "Lightning",
+        "couleur": "vert",
+        "note": "Alain Poot, Sanfiero"
+      },
+      {
+        "nom": "Kill Bill",
+        "couleur": "vert",
+        "note": "Alain Poot"
+      },
+      {
+        "nom": "Apple Green",
+        "couleur": "vert pomme",
+        "note": "Alain Poot ; « Eagle Apple Green » chez Present Orchids"
+      },
+      {
+        "nom": "Mint Ice",
+        "couleur": "vert menthe",
+        "note": "Present Orchids, Seven Orchids ; déc–févr."
+      },
+      {
+        "nom": "Mrs Gabrielle",
+        "couleur": "vert",
+        "note": "Kwekerij Schieland"
+      },
+      {
+        "nom": "Mrs Eveline",
+        "couleur": "vert",
+        "note": "Kwekerij Schieland"
+      },
+      {
+        "nom": "Jungle Trail",
+        "couleur": "vert",
+        "note": "Present Orchids"
+      },
+      {
+        "nom": "Saffier",
+        "couleur": "vert",
+        "note": "Present Orchids, Sanfiero"
+      },
+      {
+        "nom": "Madrid",
+        "couleur": "vert",
+        "note": "Present Orchids ; grex ancien (Madrid 'Forest King')"
+      },
+      {
+        "nom": "Gerry",
+        "couleur": "rose",
+        "note": "R. Ammerlaan (sept–oct), Alain Poot, Peet Zwink"
+      },
+      {
+        "nom": "Bobbi",
+        "couleur": "rose",
+        "note": "R. Ammerlaan, sept–oct"
+      },
+      {
+        "nom": "Jennet",
+        "couleur": "rose",
+        "note": "R. Ammerlaan, sept–oct"
+      },
+      {
+        "nom": "Kady",
+        "couleur": "rose",
+        "note": "R. Ammerlaan, oct–nov"
+      },
+      {
+        "nom": "Rosa",
+        "couleur": "rose",
+        "note": "R. Ammerlaan, Alain Poot"
+      },
+      {
+        "nom": "Marita",
+        "couleur": "rose",
+        "note": "R. Ammerlaan, Alain Poot"
+      },
+      {
+        "nom": "Red Dream",
+        "couleur": "rose soutenu",
+        "note": "R. Ammerlaan, Alain Poot, Present Orchids, Seven Orchids ; sept–déc"
+      },
+      {
+        "nom": "Sky Scraper",
+        "couleur": "rose",
+        "note": "R. Ammerlaan, Alain Poot, Sanfiero"
+      },
+      {
+        "nom": "Teresa",
+        "couleur": "rose",
+        "note": "R. Ammerlaan, nov–déc"
+      },
+      {
+        "nom": "Pink Floyd",
+        "couleur": "rose",
+        "note": "R. Ammerlaan, Seven Orchids ; déc–janv."
+      },
+      {
+        "nom": "Valentine",
+        "couleur": "rose foncé",
+        "note": "R. Ammerlaan ; janv.–févr. ; présentée comme fleur de la Saint-Valentin"
+      },
+      {
+        "nom": "Rebecca",
+        "couleur": "rose",
+        "note": "R. Ammerlaan, janv.–févr."
+      },
+      {
+        "nom": "Trinity",
+        "couleur": "rose",
+        "note": "R. Ammerlaan, janv.–févr."
+      },
+      {
+        "nom": "Brera",
+        "couleur": "rose",
+        "note": "R. Ammerlaan, janv.–févr."
+      },
+      {
+        "nom": "Happy Face",
+        "couleur": "rose",
+        "note": "R. Ammerlaan, janv.–févr."
+      },
+      {
+        "nom": "Freeke",
+        "couleur": "rose vif",
+        "note": "R. Ammerlaan, Alain Poot, Holex, Sanfiero ; janv.–févr."
+      },
+      {
+        "nom": "Aida",
+        "couleur": "rose",
+        "note": "R. Ammerlaan, Alain Poot, Present Orchids ; févr."
+      },
+      {
+        "nom": "Lazise",
+        "couleur": "rose",
+        "note": "R. Ammerlaan, Alain Poot ; févr.–mars"
+      },
+      {
+        "nom": "Esmeralde",
+        "couleur": "rose",
+        "note": "R. Ammerlaan, févr.–mars"
+      },
+      {
+        "nom": "Rosann",
+        "couleur": "rose",
+        "note": "R. Ammerlaan, Present Orchids"
+      },
+      {
+        "nom": "Ruby Rose",
+        "couleur": "rose rubis",
+        "note": "R. Ammerlaan, févr.–mars"
+      },
+      {
+        "nom": "Cindy",
+        "couleur": "rose",
+        "note": "R. Ammerlaan, févr.–avr."
+      },
+      {
+        "nom": "Monica",
+        "couleur": "rose",
+        "note": "R. Ammerlaan, Alain Poot (« Bremo Monica »), Sanfiero"
+      },
+      {
+        "nom": "Elliot Rogers",
+        "couleur": "rose",
+        "note": "R. Ammerlaan (mars–avr.), Present Orchids ; grex ancien Eliot Rogers"
+      },
+      {
+        "nom": "Kensi",
+        "couleur": "rose vif, labelle très foncé",
+        "note": "Alain Poot, Koningshof ; sem. 39–44 ; jusqu'à 3 semaines en vase"
+      },
+      {
+        "nom": "Pauline",
+        "couleur": "rose vif",
+        "note": "Holex, Peet Zwink"
+      },
+      {
+        "nom": "Giorgina",
+        "couleur": "rose",
+        "note": "René van Eijk ; baptisée au château de Keukenhof"
+      },
+      {
+        "nom": "Big Berry",
+        "couleur": "rose",
+        "note": "Alain Poot"
+      },
+      {
+        "nom": "Nikkie",
+        "couleur": "rose",
+        "note": "Alain Poot"
+      },
+      {
+        "nom": "Three of a Kind",
+        "couleur": "rose",
+        "note": "Alain Poot – obtention maison : trois pétales arrière, fleur tournée vers le haut"
+      },
+      {
+        "nom": "Geisha Girl",
+        "couleur": "rose",
+        "note": "Alain Poot"
+      },
+      {
+        "nom": "So Gorgeous",
+        "couleur": "rose",
+        "note": "Alain Poot"
+      },
+      {
+        "nom": "La Vie Rosa",
+        "couleur": "rose",
+        "note": "Kwekerij Schieland"
+      },
+      {
+        "nom": "Bryce",
+        "couleur": "rose et blanc",
+        "note": "Kwekerij Schieland, Present Orchids"
+      },
+      {
+        "nom": "Perfection",
+        "couleur": "rose",
+        "note": "Kwekerij Schieland"
+      },
+      {
+        "nom": "Pink Blossom",
+        "couleur": "rose",
+        "note": "Seven Orchids, Sanfiero ; déc."
+      },
+      {
+        "nom": "Pops Pink",
+        "couleur": "rose",
+        "note": "Present Orchids, Peet Zwink"
+      },
+      {
+        "nom": "Bella Donna 'Aquarella'",
+        "couleur": "rose",
+        "note": "Present Orchids, Peet Zwink"
+      },
+      {
+        "nom": "Pink Salmon",
+        "couleur": "rose saumon",
+        "note": "Present Orchids"
+      },
+      {
+        "nom": "Royal Perfection",
+        "couleur": "rose",
+        "note": "Present Orchids"
+      },
+      {
+        "nom": "Kiwi Sue",
+        "couleur": "rose",
+        "note": "Present Orchids"
+      },
+      {
+        "nom": "Lisa Fireglow",
+        "couleur": "rose",
+        "note": "Present Orchids"
+      },
+      {
+        "nom": "Gilgamesh",
+        "couleur": "rose",
+        "note": "Present Orchids"
+      },
+      {
+        "nom": "Yellow Cab",
+        "couleur": "jaune",
+        "note": "R. Ammerlaan, sept."
+      },
+      {
+        "nom": "Sunkist",
+        "couleur": "jaune",
+        "note": "R. Ammerlaan, Present Orchids"
+      },
+      {
+        "nom": "La Vie Stella",
+        "couleur": "jaune",
+        "note": "R. Ammerlaan, oct–nov"
+      },
+      {
+        "nom": "Yellow River 'Esther'",
+        "couleur": "jaune",
+        "note": "R. Ammerlaan, Alain Poot, Peet Zwink, Present Orchids, Seven Orchids"
+      },
+      {
+        "nom": "Rijsenhout",
+        "couleur": "jaune",
+        "note": "R. Ammerlaan, Alain Poot, Present Orchids, Seven Orchids"
+      },
+      {
+        "nom": "Arcadian",
+        "couleur": "jaune",
+        "note": "R. Ammerlaan, Present Orchids, Seven Orchids"
+      },
+      {
+        "nom": "Mimosa",
+        "couleur": "jaune mimosa",
+        "note": "R. Ammerlaan, Alain Poot, Peet Zwink, Sanfiero ; janv.–févr."
+      },
+      {
+        "nom": "Jolie",
+        "couleur": "jaune",
+        "note": "R. Ammerlaan, janv.–févr."
+      },
+      {
+        "nom": "Sunglow",
+        "couleur": "jaune soleil",
+        "note": "R. Ammerlaan, Peet Zwink, Present Orchids, Holex ; févr.–mars"
+      },
+      {
+        "nom": "Diona",
+        "couleur": "jaune",
+        "note": "R. Ammerlaan, févr.–mars"
+      },
+      {
+        "nom": "Nevada",
+        "couleur": "jaune",
+        "note": "R. Ammerlaan, Present Orchids, Schieland, Sanfiero ; févr.–avr."
+      },
+      {
+        "nom": "Cooksbridge",
+        "couleur": "jaune",
+        "note": "R. Ammerlaan, Present Orchids ; avr.–mai"
+      },
+      {
+        "nom": "Golden Fleece",
+        "couleur": "jaune d'or",
+        "note": "Kwekerij Schieland"
+      },
+      {
+        "nom": "Oakley",
+        "couleur": "jaune",
+        "note": "Alain Poot"
+      },
+      {
+        "nom": "Miss Saigon",
+        "couleur": "jaune",
+        "note": "Alain Poot, Seven Orchids"
+      },
+      {
+        "nom": "Milou",
+        "couleur": "jaune",
+        "note": "Alain Poot"
+      },
+      {
+        "nom": "Suzan",
+        "couleur": "jaune",
+        "note": "Alain Poot"
+      },
+      {
+        "nom": "Yellow King",
+        "couleur": "jaune",
+        "note": "Alain Poot"
+      },
+      {
+        "nom": "Gold",
+        "couleur": "jaune or",
+        "note": "Alain Poot"
+      },
+      {
+        "nom": "Daydream",
+        "couleur": "jaune",
+        "note": "Present Orchids"
+      },
+      {
+        "nom": "Fleurijn",
+        "couleur": "jaune",
+        "note": "Present Orchids"
+      },
+      {
+        "nom": "Lucifer",
+        "couleur": "rouge",
+        "note": "R. Ammerlaan, Present Orchids ; nov–janv."
+      },
+      {
+        "nom": "Inferno",
+        "couleur": "rouge",
+        "note": "R. Ammerlaan, déc–janv."
+      },
+      {
+        "nom": "Vulcan",
+        "couleur": "rouge",
+        "note": "R. Ammerlaan, oct–nov"
+      },
+      {
+        "nom": "Flame Flor",
+        "couleur": "rouge",
+        "note": "R. Ammerlaan, Present Orchids"
+      },
+      {
+        "nom": "Risto",
+        "couleur": "rouge",
+        "note": "R. Ammerlaan, nov–déc"
+      },
+      {
+        "nom": "Ferr-ari",
+        "couleur": "rouge",
+        "note": "R. Ammerlaan, Present Orchids, Sanfiero ; déc–févr."
+      },
+      {
+        "nom": "Blazing Fury 'Hades'",
+        "couleur": "rouge profond",
+        "note": "R. Ammerlaan, Alain Poot, Peet Zwink, Present Orchids, Holex ; LE cymbidium de la Saint-Valentin"
+      },
+      {
+        "nom": "Belta",
+        "couleur": "rouge",
+        "note": "Alain Poot"
+      },
+      {
+        "nom": "Priwine",
+        "couleur": "rouge vin",
+        "note": "Alain Poot"
+      },
+      {
+        "nom": "Bloody Mary",
+        "couleur": "rouge",
+        "note": "Alain Poot"
+      },
+      {
+        "nom": "Cherry-O",
+        "couleur": "rouge cerise",
+        "note": "Alain Poot"
+      },
+      {
+        "nom": "Naomi",
+        "couleur": "rouge",
+        "note": "Alain Poot | Floricultura – cymbidium en pot à fleurs intermédiaires ; floraison déc. – janv. ; couleur Floricultura : pourpre"
+      },
+      {
+        "nom": "Dancing Prince",
+        "couleur": "rouge",
+        "note": "Present Orchids"
+      },
+      {
+        "nom": "Fredericka",
+        "couleur": "rouge",
+        "note": "Present Orchids"
+      },
+      {
+        "nom": "Grand Canyon",
+        "couleur": "rouge",
+        "note": "Present Orchids"
+      },
+      {
+        "nom": "Red Velvet 'Henrietta'",
+        "couleur": "rouge velours",
+        "note": "Present Orchids"
+      },
+      {
+        "nom": "Red Pimpernel",
+        "couleur": "rouge",
+        "note": "Peet Zwink"
+      },
+      {
+        "nom": "Florida",
+        "couleur": "brun orangé",
+        "note": "R. Ammerlaan (bruns, nov–déc), Present Orchids (oranges)"
+      },
+      {
+        "nom": "Los Angeles",
+        "couleur": "brun caramel",
+        "note": "R. Ammerlaan, Alain Poot ; janv.–févr. | Floricultura – cymbidium en pot à grandes fleurs ; floraison janv. – févr."
+      },
+      {
+        "nom": "Manon",
+        "couleur": "brun",
+        "note": "R. Ammerlaan, févr.–avr."
+      },
+      {
+        "nom": "Australian Price",
+        "couleur": "caramel",
+        "note": "Alain Poot"
+      },
+      {
+        "nom": "Butterscotch",
+        "couleur": "caramel doré",
+        "note": "Alain Poot, Holex"
+      },
+      {
+        "nom": "Espresso",
+        "couleur": "brun café",
+        "note": "Alain Poot"
+      },
+      {
+        "nom": "Arancia",
+        "couleur": "caramel orangé",
+        "note": "Alain Poot"
+      },
+      {
+        "nom": "Charley Brown",
+        "couleur": "brun",
+        "note": "Alain Poot, Present Orchids (« Charly Brown »)"
+      },
+      {
+        "nom": "Autumn Pride",
+        "couleur": "brun-vert",
+        "note": "Peet Zwink, Holex ; teintes d'automne"
+      },
+      {
+        "nom": "Burgundian Chateau",
+        "couleur": "brun",
+        "note": "Present Orchids"
+      },
+      {
+        "nom": "David Brown",
+        "couleur": "brun",
+        "note": "Present Orchids"
+      },
+      {
+        "nom": "Mokka",
+        "couleur": "brun moka",
+        "note": "Present Orchids"
+      },
+      {
+        "nom": "Renee's Wish",
+        "couleur": "orange",
+        "note": "Present Orchids"
+      },
+      {
+        "nom": "Mrs. Britney",
+        "couleur": "orange",
+        "note": "Holex ; tige 60 cm"
+      },
+      {
+        "nom": "Da Vinci",
+        "couleur": "motifs « peints »",
+        "note": "Holex"
+      },
+      {
+        "nom": "Purple Rain",
+        "couleur": "pourpre",
+        "note": "Kwekerij Schieland"
+      },
+      {
+        "nom": "Black Shower",
+        "couleur": "noir pourpré",
+        "note": "Mayesh – cymbidium japonais"
+      },
+      {
+        "nom": "Pink Beauty 'Joal'",
+        "couleur": "rose",
+        "note": "Floricultura – cymbidium en pot à grandes fleurs ; floraison avr."
+      },
+      {
+        "nom": "Tracey Reddaway 'Sungold'",
+        "couleur": "jaune",
+        "note": "Floricultura – cymbidium en pot à grandes fleurs ; floraison oct. – févr."
+      },
+      {
+        "nom": "Golden Courtier 'Wall Flor'",
+        "couleur": "jaune",
+        "note": "Floricultura – cymbidium en pot à grandes fleurs ; floraison mars – avr."
+      },
+      {
+        "nom": "Marcy Flor",
+        "couleur": "brun",
+        "note": "Floricultura – cymbidium en pot à grandes fleurs ; floraison janv. – févr."
+      },
+      {
+        "nom": "Bedrock",
+        "couleur": "rose",
+        "note": "Floricultura – cymbidium en pot à grandes fleurs ; floraison oct. – déc."
+      },
+      {
+        "nom": "Valley Flor",
+        "couleur": "vert",
+        "note": "Floricultura – cymbidium en pot à grandes fleurs ; floraison févr. – mars"
+      },
+      {
+        "nom": "Sweet Flor",
+        "couleur": "rose",
+        "note": "Floricultura – cymbidium en pot à grandes fleurs ; floraison févr. – mars"
+      },
+      {
+        "nom": "Katy Flor",
+        "couleur": "blanc",
+        "note": "Floricultura – cymbidium en pot à grandes fleurs ; floraison févr. – mars"
+      },
+      {
+        "nom": "Geyser Flor",
+        "couleur": "rose",
+        "note": "Floricultura – cymbidium en pot à grandes fleurs ; floraison mars – avr."
+      },
+      {
+        "nom": "Earliara",
+        "couleur": "blanc",
+        "note": "Floricultura – cymbidium en pot à grandes fleurs ; floraison oct. – nov."
+      },
+      {
+        "nom": "Casual Chic",
+        "couleur": "vert",
+        "note": "Floricultura – cymbidium en pot à grandes fleurs ; floraison oct. – nov."
+      }
+    ],
+    "formes": "Tige coupée de 50 à 100 cm (5 à plus de 18 fleurs), conditionnée par 4 à 12 tiges selon la longueur ; fleur seule en tube (« cymbi-pack ») pour corsages et boutonnières ; plante en pot à grandes fleurs ; tiges teintées (Special Color Series).",
+    "saison": "Disponible presque toute l'année en Europe ; pleine saison de mi-octobre à juin (précoces sept–nov, mi-saison déc–févr, tardifs mars–mai).",
+    "tenue_vase": "21–35 jours (2 à 5 semaines selon les obtenteurs)",
+    "gamme_prix": "€€€",
+    "rarete_jeu": "rare",
+    "notes_dessin": "Fleur en étoile ouverte de 8 à 12 cm : trois sépales et deux pétales presque identiques, elliptiques, épais et cireux, disposés en étoile à cinq branches légèrement incurvées vers l'avant. Le labelle en forme de bateau (kymbos) est trilobé : deux lobes latéraux relevés encadrent la colonne, le lobe médian se recourbe vers le bas et porte presque toujours des points, une bordure ou une macule rouge, bordeaux ou rose, avec deux crêtes jaunes au centre. La colonne arquée et épaisse se termine par un capuchon d'anthère toujours blanc — détail à ne pas oublier. 8 à 18 fleurs alternent sur une hampe rigide et dressée, légèrement arquée au sommet, avec quelques boutons ronds et verts en pointe ; de profil, montrer la profondeur du labelle en cuillère. Le feuillage est fait de longues feuilles rubanées, étroites et retombantes, vert foncé, partant de pseudobulbes ovoïdes.",
+    "wiki": "Cymbidium",
+    "img_queries": [
+      "Cymbidium hybrid",
+      "Cymbidium cut flower",
+      "Cymbidium lowianum",
+      "Cymbidium Golden Elf"
+    ],
+    "sources": [
+      "https://www.ronaldammerlaan.nl/assortiment/",
+      "https://www.alainpoot.nl/nl/assortiment",
+      "https://presentorchids.nl/onze-soorten-cymbidiums/",
+      "https://shop.holex.com/en_US/cymbidium-discovery-tour",
+      "https://cymbidium.info/en/our-growers/"
+    ]
+  },
+  {
+    "id": "cymbidium-mini",
+    "nom_fr": "Cymbidium mini (petites fleurs, cascade)",
+    "nom_en": "Miniature cymbidium",
+    "latin": "Cymbidium hybrides (miniatures et intermédiaires)",
+    "famille": "Orchidaceae",
+    "categorie": "Orchidées",
+    "role": "secondaire",
+    "couleurs": [
+      "blanc",
+      "crème",
+      "jaune",
+      "vert",
+      "vert pastel",
+      "rose",
+      "rose pastel",
+      "pêche",
+      "orange",
+      "rouge",
+      "bordeaux",
+      "brun",
+      "noir pourpré",
+      "bicolore à labelle rouge",
+      "labelle tacheté"
+    ],
+    "varietes": [
+      {
+        "nom": "Amber",
+        "couleur": "jaune",
+        "note": "Leekade Orchids (mini) ; oct.–déc."
+      },
+      {
+        "nom": "Angel Sue",
+        "couleur": "blanc",
+        "note": "Leekade Orchids (mini) ; toute l'année | Floricultura – cymbidium en pot à fleurs intermédiaires ; floraison oct. – déc."
+      },
+      {
+        "nom": "Boudi",
+        "couleur": "rose",
+        "note": "Leekade Orchids (mini) ; août–oct."
+      },
+      {
+        "nom": "Brown Spring",
+        "couleur": "brun",
+        "note": "Leekade Orchids (mini) ; mars–avr."
+      },
+      {
+        "nom": "Brownie",
+        "couleur": "brun",
+        "note": "Leekade Orchids (mini) ; toute l'année"
+      },
+      {
+        "nom": "Camelfort",
+        "couleur": "vert",
+        "note": "Leekade Orchids (mini) ; toute l'année"
+      },
+      {
+        "nom": "Campfire",
+        "couleur": "orange",
+        "note": "Leekade Orchids (mini) ; sept.–nov."
+      },
+      {
+        "nom": "Carioca",
+        "couleur": "jaune",
+        "note": "Leekade Orchids (mini) ; août–oct."
+      },
+      {
+        "nom": "Christmas Rose",
+        "couleur": "rose",
+        "note": "Leekade Orchids (mini) ; toute l'année ; grex ancien Allison Shaw 'Christmas Rose'"
+      },
+      {
+        "nom": "Claziena",
+        "couleur": "blanc",
+        "note": "Leekade Orchids (mini) ; févr.–mai"
+      },
+      {
+        "nom": "Del Rey",
+        "couleur": "jaune",
+        "note": "Leekade Orchids (mini) ; févr.–déc. ; grex ancien Ayako Tanaka 'Del Rey'"
+      },
+      {
+        "nom": "Earlyflor",
+        "couleur": "blanc",
+        "note": "Leekade Orchids (mini) ; oct.–déc. | « Earliflor » : Floricultura – cymbidium en pot à fleurs intermédiaires ; floraison nov. – janv."
+      },
+      {
+        "nom": "Evergreen",
+        "couleur": "vert",
+        "note": "Leekade Orchids (mini) ; janv.–mars"
+      },
+      {
+        "nom": "Going West",
+        "couleur": "rouge",
+        "note": "Leekade Orchids (mini) ; févr.–avr. ; aussi « Mini Going West » brun chez Holex (tige 40 cm)"
+      },
+      {
+        "nom": "Golden Boy",
+        "couleur": "jaune",
+        "note": "Leekade Orchids (mini) ; févr.–avr."
+      },
+      {
+        "nom": "Green Rock",
+        "couleur": "vert",
+        "note": "Leekade Orchids (mini) ; oct.–déc. | Floricultura – cymbidium en pot à fleurs intermédiaires ; floraison déc. – févr."
+      },
+      {
+        "nom": "Greenflame",
+        "couleur": "vert",
+        "note": "Leekade Orchids (mini) ; toute l'année | « Green Flame » : Floricultura – cymbidium en pot à fleurs intermédiaires ; floraison oct. – déc."
+      },
+      {
+        "nom": "Greenland",
+        "couleur": "vert",
+        "note": "Leekade Orchids (mini) ; toute l'année"
+      },
+      {
+        "nom": "Hot Chocolate",
+        "couleur": "brun",
+        "note": "Leekade Orchids (mini) ; toute l'année"
+      },
+      {
+        "nom": "Howard Robin",
+        "couleur": "rouge",
+        "note": "Leekade Orchids (mini) ; janv.–mars"
+      },
+      {
+        "nom": "Insigne",
+        "couleur": "blanc",
+        "note": "Leekade Orchids (mini) ; mars–mai"
+      },
+      {
+        "nom": "Iris",
+        "couleur": "blanc",
+        "note": "Leekade Orchids (mini) ; juil.–sept."
+      },
+      {
+        "nom": "Joshua",
+        "couleur": "blanc",
+        "note": "Leekade Orchids (mini) ; janv.–mars"
+      },
+      {
+        "nom": "King Flor",
+        "couleur": "vert",
+        "note": "Leekade Orchids (mini) ; mars–avr."
+      },
+      {
+        "nom": "Limoncello",
+        "couleur": "jaune",
+        "note": "Leekade Orchids (mini) ; août–sept."
+      },
+      {
+        "nom": "Lisa",
+        "couleur": "vert",
+        "note": "Leekade Orchids (mini) ; sept.–déc."
+      },
+      {
+        "nom": "Lovely Sue",
+        "couleur": "orange",
+        "note": "Leekade Orchids (mini) ; août–oct. | Floricultura – cymbidium en pot à fleurs intermédiaires ; floraison oct. – déc. ; couleur Floricultura : jaune"
+      },
+      {
+        "nom": "Madelon",
+        "couleur": "rouge",
+        "note": "Leekade Orchids (mini) ; févr.–avr."
+      },
+      {
+        "nom": "Majolica",
+        "couleur": "orange",
+        "note": "Leekade Orchids (mini) ; août–déc. ; cf. Enzan Forest 'Majolica' (fleur 7 cm, parfum d'abricot)"
+      },
+      {
+        "nom": "Margot",
+        "couleur": "blanc",
+        "note": "Leekade Orchids (mini) ; toute l'année"
+      },
+      {
+        "nom": "Mon Cerise",
+        "couleur": "rose",
+        "note": "Leekade Orchids (mini) ; toute l'année"
+      },
+      {
+        "nom": "Orange Beauty",
+        "couleur": "orange",
+        "note": "Leekade Orchids (mini) ; août–déc."
+      },
+      {
+        "nom": "Paddy",
+        "couleur": "crème",
+        "note": "Leekade Orchids (mini) ; sept.–déc. | « Earlisue 'Paddy' » : Floricultura – cymbidium en pot à fleurs intermédiaires ; floraison oct. – janv. ; couleur Floricultura : jaune"
+      },
+      {
+        "nom": "Pendragon Groen",
+        "couleur": "vert",
+        "note": "Leekade Orchids (mini) ; sept.–nov."
+      },
+      {
+        "nom": "Pink Fall",
+        "couleur": "rose",
+        "note": "Leekade Orchids (mini) ; toute l'année | Floricultura – cymbidium en pot à fleurs intermédiaires ; floraison nov. – déc."
+      },
+      {
+        "nom": "Pink Parfait",
+        "couleur": "rose",
+        "note": "Leekade Orchids (mini) ; août–sept."
+      },
+      {
+        "nom": "Pink Perfect",
+        "couleur": "rose",
+        "note": "Leekade Orchids (mini) ; janv.–mai"
+      },
+      {
+        "nom": "Poet John",
+        "couleur": "blanc",
+        "note": "Leekade Orchids (mini) ; févr.–mars"
+      },
+      {
+        "nom": "Red Velvet",
+        "couleur": "rouge",
+        "note": "Leekade Orchids (mini) ; mars–avr."
+      },
+      {
+        "nom": "Riaad",
+        "couleur": "rose",
+        "note": "Leekade Orchids (mini) ; mars–avr."
+      },
+      {
+        "nom": "Rincon Claris",
+        "couleur": "rose",
+        "note": "Leekade Orchids (mini) ; sept.–déc."
+      },
+      {
+        "nom": "Rosanna Shaw",
+        "couleur": "rose",
+        "note": "Leekade Orchids (mini) ; mars–mai"
+      },
+      {
+        "nom": "Round Table",
+        "couleur": "vert",
+        "note": "Leekade Orchids (mini) ; févr.–avr. ; King Arthur 'Round Table' : vert pastel, labelle bordeaux (Orchids Limited)"
+      },
+      {
+        "nom": "Roy",
+        "couleur": "rouge",
+        "note": "Leekade Orchids (mini) ; août–déc."
+      },
+      {
+        "nom": "Royal Peach",
+        "couleur": "orange",
+        "note": "Leekade Orchids (mini) ; août–oct."
+      },
+      {
+        "nom": "Sabrina",
+        "couleur": "blanc",
+        "note": "Leekade Orchids (mini) ; mars–mai"
+      },
+      {
+        "nom": "Siette",
+        "couleur": "vert",
+        "note": "Leekade Orchids (mini) ; juil.–sept."
+      },
+      {
+        "nom": "Solo",
+        "couleur": "rose",
+        "note": "Leekade Orchids (mini) ; févr.–mars ; aussi « Mini Solo » rose chez Holex (tige 50 cm)"
+      },
+      {
+        "nom": "Stanley Flor",
+        "couleur": "rose",
+        "note": "Leekade Orchids (mini) ; toute l'année"
+      },
+      {
+        "nom": "Sultan",
+        "couleur": "rouge",
+        "note": "Leekade Orchids (mini) ; mars–avr."
+      },
+      {
+        "nom": "Superbe",
+        "couleur": "crème",
+        "note": "Leekade Orchids (mini) ; févr.–mai"
+      },
+      {
+        "nom": "Teeflor",
+        "couleur": "brun",
+        "note": "Leekade Orchids (mini) ; toute l'année"
+      },
+      {
+        "nom": "Tessa",
+        "couleur": "vert",
+        "note": "Leekade Orchids (mini) ; août–oct."
+      },
+      {
+        "nom": "Tigertail",
+        "couleur": "jaune",
+        "note": "Leekade Orchids (mini) ; avr.–mai ; grex Tiger Tail, RHS AGM : vert olive à jaune citron ombré de brun, labelle blanc teinté rose"
+      },
+      {
+        "nom": "Valerie",
+        "couleur": "brun",
+        "note": "Leekade Orchids (mini) ; août–déc."
+      },
+      {
+        "nom": "Vera",
+        "couleur": "jaune",
+        "note": "Leekade Orchids (mini) ; août–nov."
+      },
+      {
+        "nom": "Wish Flor",
+        "couleur": "jaune",
+        "note": "Leekade Orchids (mini) ; toute l'année"
+      },
+      {
+        "nom": "Suzanne",
+        "couleur": "jaune",
+        "note": "Holex – « Mini Suzanne », tige 50 cm"
+      },
+      {
+        "nom": "King Arthur",
+        "couleur": "vert",
+        "note": "Mayesh – mini cymbidium vert"
+      },
+      {
+        "nom": "Sarah Jean 'Ice Cascade'",
+        "couleur": "blanc (bouton blanc-jaune)",
+        "note": "RHS AGM ; mini retombant, jusqu'à 30 fleurs de 5,5 cm"
+      },
+      {
+        "nom": "Sarah Jean 'Limelight'",
+        "couleur": "tons agrumes (citron-vert)",
+        "note": "Tesselaar ; cascade, fleurs de 6 cm, juin–août (hémisphère sud)"
+      },
+      {
+        "nom": "Last Tango 'Geyserland'",
+        "couleur": "rouge profond",
+        "note": "Tesselaar ; cascade de 20–25 fleurs de 7 cm"
+      },
+      {
+        "nom": "Kiwi Midnight 'Geyserland'",
+        "couleur": "noir pourpré",
+        "note": "Orchids Limited – « le cymbidium noir », FCC/AOS, retombant"
+      },
+      {
+        "nom": "Dorothy Stockstill",
+        "couleur": "petites fleurs rose-brun, labelle bordeaux",
+        "note": "RHS AGM ; retombant ; clone 'Forgotten Fruits' rouge profond parfum eucalyptus"
+      },
+      {
+        "nom": "Golden Elf",
+        "couleur": "jaune vif",
+        "note": "RHS AGM ; floraison estivale, parfumé, supporte la chaleur"
+      },
+      {
+        "nom": "Tuffet",
+        "couleur": "bordeaux foncé, labelle rouge",
+        "note": "Orchids Limited ; grappes retombantes"
+      },
+      {
+        "nom": "Devon Carrot 'New Horizon'",
+        "couleur": "orange",
+        "note": "Orchids Limited ; tiges retombantes"
+      },
+      {
+        "nom": "Devon Shell 'New Horizon'",
+        "couleur": "rose, labelle rose foncé à rouge",
+        "note": "Orchids Limited ; retombant"
+      },
+      {
+        "nom": "Evening Star 'Pinkie'",
+        "couleur": "rose pastel, labelle ponctué bordeaux",
+        "note": "Orchids Limited ; « plante de Saint-Valentin »"
+      },
+      {
+        "nom": "Pipeta 'Magenta'",
+        "couleur": "rouge, labelle rouge foncé et blanc",
+        "note": "Orchids Limited ; HCC/AOS"
+      },
+      {
+        "nom": "Lipper",
+        "couleur": "pêche, labelle rouge et blanc",
+        "note": "Orchids Limited"
+      },
+      {
+        "nom": "Magic Carpet 'Jem'",
+        "couleur": "rose, labelle rouge et blanc",
+        "note": "Orchids Limited"
+      },
+      {
+        "nom": "Comanche Sunset",
+        "couleur": "jaune, labelle rouge",
+        "note": "Orchids Limited"
+      },
+      {
+        "nom": "Cymbidium erythraeum (espèce)",
+        "couleur": "vert strié de bronze, labelle blanc",
+        "note": "RHS AGM ; automne–hiver"
+      },
+      {
+        "nom": "Cymbidium lowianum (espèce)",
+        "couleur": "vert clair",
+        "note": "RHS AGM ; longues tiges arquées, forme ancienne"
+      },
+      {
+        "nom": "Summer Pearl 'Suzy'",
+        "couleur": "vert",
+        "note": "Floricultura – cymbidium en pot à fleurs intermédiaires ; floraison sept. – nov."
+      },
+      {
+        "nom": "Summer Pearl 'Shirley'",
+        "couleur": "rose",
+        "note": "Floricultura – cymbidium en pot à fleurs intermédiaires ; floraison sept. – nov."
+      },
+      {
+        "nom": "Summer Pearl 'Sonia'",
+        "couleur": "rose",
+        "note": "Floricultura – cymbidium en pot à fleurs intermédiaires ; floraison sept. – nov."
+      },
+      {
+        "nom": "Summer Pearl 'Senne'",
+        "couleur": "vert",
+        "note": "Floricultura – cymbidium en pot à fleurs intermédiaires ; floraison sept. – nov."
+      },
+      {
+        "nom": "Summer Pearl 'Selma'",
+        "couleur": "rose",
+        "note": "Floricultura – cymbidium en pot à fleurs intermédiaires ; floraison sept. – nov."
+      },
+      {
+        "nom": "Petite Surprise",
+        "couleur": "rose",
+        "note": "Floricultura – cymbidium en pot à fleurs intermédiaires ; floraison oct. – déc."
+      },
+      {
+        "nom": "Peggy Sue 'Five'",
+        "couleur": "rouge",
+        "note": "Floricultura – cymbidium en pot à fleurs intermédiaires ; floraison sept. – nov."
+      },
+      {
+        "nom": "Pretty Flor",
+        "couleur": "rose",
+        "note": "Floricultura – cymbidium en pot à fleurs intermédiaires ; floraison oct. – déc."
+      },
+      {
+        "nom": "Summer Love 'Dwarf Pink'",
+        "couleur": "rose",
+        "note": "Floricultura – cymbidium en pot à fleurs intermédiaires ; floraison oct. – déc."
+      },
+      {
+        "nom": "Shellpearl 'Parnasse'",
+        "couleur": "rose",
+        "note": "Floricultura – cymbidium en pot à fleurs intermédiaires ; floraison févr. – mars"
+      },
+      {
+        "nom": "Lucky Rainbow 'Lupine Joyner'",
+        "couleur": "rose",
+        "note": "Floricultura – cymbidium en pot à fleurs intermédiaires ; floraison déc. – janv."
+      },
+      {
+        "nom": "Ballerina",
+        "couleur": "rose",
+        "note": "Floricultura – cymbidium en pot à fleurs intermédiaires ; floraison janv. – mars"
+      },
+      {
+        "nom": "Shiny Yellow",
+        "couleur": "jaune",
+        "note": "Floricultura – cymbidium en pot à fleurs intermédiaires ; floraison sept. – nov."
+      },
+      {
+        "nom": "Iceflor",
+        "couleur": "blanc",
+        "note": "Floricultura – cymbidium en pot à fleurs intermédiaires ; floraison déc. – févr."
+      },
+      {
+        "nom": "Flying Sue",
+        "couleur": "brun",
+        "note": "Floricultura – cymbidium en pot à fleurs intermédiaires ; floraison déc. – janv."
+      },
+      {
+        "nom": "Season Flor",
+        "couleur": "blanc",
+        "note": "Floricultura – cymbidium en pot à fleurs intermédiaires ; floraison déc. – janv."
+      },
+      {
+        "nom": "Li Flor",
+        "couleur": "jaune",
+        "note": "Floricultura – cymbidium en pot à fleurs intermédiaires ; floraison oct. – déc."
+      },
+      {
+        "nom": "Let Flor",
+        "couleur": "bicolore / à motif (« special »)",
+        "note": "Floricultura – cymbidium en pot à fleurs intermédiaires ; floraison déc. – janv."
+      },
+      {
+        "nom": "Jamie Red",
+        "couleur": "rouge",
+        "note": "Floricultura – cymbidium en pot à fleurs intermédiaires ; floraison déc. – janv."
+      },
+      {
+        "nom": "Late Sue",
+        "couleur": "rouge",
+        "note": "Floricultura – cymbidium en pot à fleurs intermédiaires ; floraison oct. – déc."
+      },
+      {
+        "nom": "Latoya",
+        "couleur": "rouge",
+        "note": "Floricultura – cymbidium en pot à fleurs intermédiaires ; floraison nov. – janv."
+      },
+      {
+        "nom": "Hazel Flor",
+        "couleur": "brun",
+        "note": "Floricultura – cymbidium en pot à fleurs intermédiaires ; floraison oct. – nov."
+      },
+      {
+        "nom": "Flame Sox",
+        "couleur": "rose",
+        "note": "Floricultura – cymbidium en pot à fleurs intermédiaires ; floraison déc. – janv."
+      },
+      {
+        "nom": "White Flame",
+        "couleur": "blanc",
+        "note": "Floricultura – cymbidium en pot à fleurs intermédiaires ; floraison déc. – févr."
+      },
+      {
+        "nom": "Deepee Seventeen",
+        "couleur": "blanc",
+        "note": "Floricultura – cymbidium en pot à fleurs intermédiaires ; floraison oct. – déc."
+      },
+      {
+        "nom": "Megan",
+        "couleur": "vert",
+        "note": "Floricultura – cymbidium en pot à fleurs intermédiaires ; floraison déc. – févr."
+      },
+      {
+        "nom": "Red Arrow",
+        "couleur": "rouge",
+        "note": "Floricultura – cymbidium en pot à fleurs intermédiaires ; floraison févr. – mars"
+      },
+      {
+        "nom": "Summer Frost",
+        "couleur": "blanc",
+        "note": "Floricultura – cymbidium en pot à fleurs intermédiaires ; floraison sept. – nov."
+      },
+      {
+        "nom": "White Frost",
+        "couleur": "blanc",
+        "note": "Floricultura – cymbidium en pot à fleurs intermédiaires ; floraison sept. – nov."
+      },
+      {
+        "nom": "Greenshot",
+        "couleur": "vert",
+        "note": "Floricultura – cymbidium en pot à fleurs intermédiaires ; floraison janv. – févr."
+      },
+      {
+        "nom": "Chiara",
+        "couleur": "blanc",
+        "note": "Floricultura – cymbidium en pot à fleurs intermédiaires ; floraison nov. – janv."
+      },
+      {
+        "nom": "Abbigail",
+        "couleur": "rose",
+        "note": "Floricultura – cymbidium en pot à fleurs intermédiaires ; floraison nov. – janv."
+      },
+      {
+        "nom": "Jade",
+        "couleur": "vert",
+        "note": "Floricultura – cymbidium en pot à fleurs intermédiaires ; floraison janv. – févr."
+      },
+      {
+        "nom": "Fashion Show",
+        "couleur": "rose",
+        "note": "Floricultura – cymbidium en pot à fleurs intermédiaires ; floraison févr. – avr."
+      },
+      {
+        "nom": "Yellow Spot",
+        "couleur": "jaune",
+        "note": "Floricultura – cymbidium en pot à fleurs intermédiaires ; floraison déc. – janv."
+      },
+      {
+        "nom": "White Surprise",
+        "couleur": "rose",
+        "note": "Floricultura – cymbidium en pot à fleurs intermédiaires ; floraison déc. – janv."
+      },
+      {
+        "nom": "Jolly Red",
+        "couleur": "rose",
+        "note": "Floricultura – cymbidium en pot à fleurs intermédiaires ; floraison oct. – déc."
+      },
+      {
+        "nom": "Citadelle",
+        "couleur": "brun",
+        "note": "Floricultura – cymbidium en pot à fleurs intermédiaires ; floraison déc. – janv."
+      },
+      {
+        "nom": "Mamma Mia",
+        "couleur": "rose",
+        "note": "Floricultura – cymbidium en pot à fleurs intermédiaires ; floraison déc. – janv."
+      },
+      {
+        "nom": "Leontine",
+        "couleur": "rose",
+        "note": "Floricultura – cymbidium en pot à fleurs intermédiaires ; floraison déc. – janv."
+      },
+      {
+        "nom": "Pink Lady",
+        "couleur": "rose",
+        "note": "Floricultura – cymbidium en pot à fleurs intermédiaires ; floraison nov. – janv."
+      },
+      {
+        "nom": "White Madam",
+        "couleur": "blanc",
+        "note": "Floricultura – cymbidium en pot à fleurs intermédiaires ; floraison nov. – janv."
+      },
+      {
+        "nom": "Wonderland",
+        "couleur": "orange",
+        "note": "Floricultura – cymbidium en pot à fleurs intermédiaires ; floraison déc. – janv."
+      },
+      {
+        "nom": "Dresscode",
+        "couleur": "rose",
+        "note": "Floricultura – cymbidium en pot à fleurs intermédiaires ; floraison févr. – avr."
+      },
+      {
+        "nom": "Carisque",
+        "couleur": "jaune",
+        "note": "Floricultura – cymbidium en pot à fleurs intermédiaires ; floraison nov. – janv."
+      },
+      {
+        "nom": "Orange Shining",
+        "couleur": "orange",
+        "note": "Floricultura – cymbidium en pot à fleurs intermédiaires ; floraison oct. – déc."
+      },
+      {
+        "nom": "Shene Pearl",
+        "couleur": "rose",
+        "note": "Floricultura – cymbidium en pot à fleurs intermédiaires ; floraison janv. – mars"
+      },
+      {
+        "nom": "Cashmere Dreams",
+        "couleur": "orange",
+        "note": "Floricultura – cymbidium en pot à fleurs intermédiaires ; floraison oct. – nov."
+      },
+      {
+        "nom": "Tailor Diva",
+        "couleur": "jaune",
+        "note": "Floricultura – cymbidium en pot à fleurs intermédiaires ; floraison oct. – nov."
+      },
+      {
+        "nom": "Catwalk",
+        "couleur": "jaune",
+        "note": "Floricultura – cymbidium en pot à fleurs intermédiaires ; floraison oct. – nov."
+      },
+      {
+        "nom": "Amber Dawn",
+        "couleur": "jaune",
+        "note": "Floricultura – cymbidium en pot à fleurs intermédiaires ; floraison oct. – déc."
+      },
+      {
+        "nom": "Ivory Blossom",
+        "couleur": "blanc",
+        "note": "Floricultura – cymbidium en pot à fleurs intermédiaires ; floraison oct. – déc."
+      },
+      {
+        "nom": "Bronce Glow",
+        "couleur": "brun",
+        "note": "Floricultura – cymbidium en pot à fleurs intermédiaires ; floraison oct. – déc."
+      },
+      {
+        "nom": "Haute Couture",
+        "couleur": "rose",
+        "note": "Floricultura – cymbidium en pot à fleurs intermédiaires ; floraison oct. – nov."
+      },
+      {
+        "nom": "Limira",
+        "couleur": "vert",
+        "note": "Floricultura – cymbidium en pot à fleurs intermédiaires ; floraison nov. – janv."
+      },
+      {
+        "nom": "Cumberland Blues 'Dark Red'",
+        "couleur": "rouge",
+        "note": "Floricultura – cymbidium en pot à fleurs intermédiaires ; floraison sept. – nov."
+      }
+    ],
+    "formes": "Tige coupée de 40 à 60 cm portant 10 à 30 fleurs de 4 à 7 cm ; boîtes mixtes ; plante en pot (fleurs intermédiaires) ; types retombants « cascade » pour suspensions et bouquets tombants.",
+    "saison": "Toute l'année ; offre la plus large d'août à mai (minis néerlandais).",
+    "tenue_vase": "14–28 jours",
+    "gamme_prix": "€€",
+    "rarete_jeu": "commune",
+    "notes_dessin": "Même architecture que le grand cymbidium — étoile à cinq segments, labelle en bateau taché de rouge, colonne à capuchon blanc — mais fleurs de 4 à 7 cm, plus nombreuses (10 à 30) et plus serrées. Les segments sont souvent plus pointus, légèrement réfléchis vers l'arrière, et les bicolores sont fréquents (vert à labelle bordeaux, crème rosé, jaune à labelle rouge). Deux ports à distinguer : tiges dressées et compactes de fleuriste, ou grappes pendantes en cascade (Sarah Jean 'Ice Cascade', 'Last Tango') où toutes les fleurs se tournent vers l'extérieur. Feuillage étroit et graminiforme, plus court que celui des grands cymbidiums.",
+    "wiki": "Cymbidium",
+    "img_queries": [
+      "Cymbidium Sarah Jean Ice Cascade",
+      "Cymbidium Tiger Tail",
+      "Cymbidium Dorothy Stockstill",
+      "miniature Cymbidium"
+    ],
+    "sources": [
+      "https://www.leekade.nl/assortiment",
+      "https://shop.holex.com/en_US/cymbidium",
+      "https://www.floricultura.com/en/orchidaceae/cymbidium/8539/",
+      "https://www.rhs.org.uk/plants/pdfs/rhs-recommended-award-of-garden-merit-orchids.pdf",
+      "https://store.orchidweb.com/products/cymbidium-sarah-jean-ice-cascade-pumilum-x-sleeping-beauty"
+    ]
+  },
+  {
+    "id": "dendrobium-coupe",
+    "nom_fr": "Dendrobium coupé (type phalaenopsis : Sonia, Pompadour, Big White…)",
+    "nom_en": "Dendrobium (Den-phal / Singapore orchid)",
+    "latin": "Dendrobium hybrides (section Phalaenanthe, D. bigibbum)",
+    "famille": "Orchidaceae",
+    "categorie": "Orchidées",
+    "role": "secondaire",
+    "couleurs": [
+      "blanc",
+      "blanc bordé de vert",
+      "crème",
+      "vert chartreuse",
+      "vert lime",
+      "rose pâle",
+      "rose poudré",
+      "rose",
+      "lavande",
+      "lilas",
+      "magenta",
+      "fuchsia",
+      "pourpre",
+      "pourpre foncé",
+      "bordeaux",
+      "presque noir",
+      "bicolore blanc et pourpre",
+      "strié",
+      "teinté (bleu, vert, jaune, « dragonfruit », tie-dye)"
+    ],
+    "varietes": [
+      {
+        "nom": "Sonia",
+        "couleur": "pourpre-magenta à base blanche, labelle pourpre foncé",
+        "note": "NParks ; parfumé ; LE dendrobium de fleuriste et des leis hawaïens (Caesar × Tomie Drake)"
+      },
+      {
+        "nom": "Red Sonia",
+        "couleur": "rouge-pourpre",
+        "note": "Verdnatura – import Thaïlande"
+      },
+      {
+        "nom": "Big White",
+        "couleur": "blanc pur",
+        "note": "Verdnatura, liste d'export thaïlandaise (FAO)"
+      },
+      {
+        "nom": "Madame Pompadour",
+        "couleur": "pourpre",
+        "note": "liste d'export thaïlandaise (FAO) ; « Pompadour » pourpre chez Mayesh"
+      },
+      {
+        "nom": "New Madame",
+        "couleur": "pourpre",
+        "note": "Mayesh"
+      },
+      {
+        "nom": "Burana Jade",
+        "couleur": "vert-jaune finement strié, labelle rose-violet",
+        "note": "Specialty Produce, Mayesh ; P. Buranaraktham 1996 ; 15–20 fleurs par épi"
+      },
+      {
+        "nom": "Burana Sindy",
+        "couleur": "rose foncé",
+        "note": "Mayesh"
+      },
+      {
+        "nom": "Woon Leng",
+        "couleur": "crème, labelle pourpre contrasté",
+        "note": "Thursd – Ter Haar Ornamental Flowers"
+      },
+      {
+        "nom": "Enobi Purple",
+        "couleur": "blanc strié de pourpre en bordure, labelle blanc strié",
+        "note": "NParks"
+      },
+      {
+        "nom": "Liberty White",
+        "couleur": "blanc bordé de vert, sépales recourbés",
+        "note": "NParks ; « Liberty » vert et blanc chez Mayesh"
+      },
+      {
+        "nom": "Lucian Pink",
+        "couleur": "rose à base blanche",
+        "note": "NParks"
+      },
+      {
+        "nom": "Peach Blossom",
+        "couleur": "rose pâle, labelle rose foncé",
+        "note": "NParks"
+      },
+      {
+        "nom": "Rasa Sayang",
+        "couleur": "blanc bordé de vert, labelle rose profond",
+        "note": "NParks ; fleur 3 cm"
+      },
+      {
+        "nom": "Shavin White",
+        "couleur": "blanc veiné de vert clair",
+        "note": "NParks"
+      },
+      {
+        "nom": "Chao Praya Smile",
+        "couleur": "blanc, intérieur du labelle pourpre profond",
+        "note": "NParks"
+      },
+      {
+        "nom": "Buddha Tooth",
+        "couleur": "vert lime, labelle rose-pourpre",
+        "note": "NParks ; cannes de 1,3 m, épis de 30–45 cm (Burana Jade × Palolo Sunshine)"
+      },
+      {
+        "nom": "Red Bull",
+        "couleur": "pourpre",
+        "note": "Mayesh, Verdnatura, NParks"
+      },
+      {
+        "nom": "Sakura",
+        "couleur": "lavande",
+        "note": "Mayesh ; liste d'export thaïlandaise"
+      },
+      {
+        "nom": "Misteen",
+        "couleur": "lavande rosée",
+        "note": "Mayesh ; liste thaïlandaise (« Missteen »)"
+      },
+      {
+        "nom": "Marco Polo",
+        "couleur": "rose poudré",
+        "note": "Mayesh ; liste thaïlandaise"
+      },
+      {
+        "nom": "Miss Singapore",
+        "couleur": "pourpre",
+        "note": "Mayesh"
+      },
+      {
+        "nom": "Sabine",
+        "couleur": "pourpre",
+        "note": "Mayesh ; « Sabin » dans la liste thaïlandaise"
+      },
+      {
+        "nom": "Annie Black",
+        "couleur": "bordeaux",
+        "note": "Mayesh"
+      },
+      {
+        "nom": "Black Beauty",
+        "couleur": "pourpre très foncé, presque noir",
+        "note": "Mayesh"
+      },
+      {
+        "nom": "Macha",
+        "couleur": "pourpre foncé",
+        "note": "Mayesh"
+      },
+      {
+        "nom": "Katingdang",
+        "couleur": "pourpre",
+        "note": "Mayesh"
+      },
+      {
+        "nom": "Copter",
+        "couleur": "pourpre",
+        "note": "Mayesh"
+      },
+      {
+        "nom": "Kamila",
+        "couleur": "pourpre panaché",
+        "note": "Mayesh"
+      },
+      {
+        "nom": "Purple Crown",
+        "couleur": "blanc à pourpre",
+        "note": "Mayesh"
+      },
+      {
+        "nom": "Queen Pink",
+        "couleur": "rose",
+        "note": "Mayesh"
+      },
+      {
+        "nom": "Alika",
+        "couleur": "rose poudré (blush)",
+        "note": "Mayesh"
+      },
+      {
+        "nom": "Jurri",
+        "couleur": "rose poudré (blush)",
+        "note": "Mayesh"
+      },
+      {
+        "nom": "Bombay",
+        "couleur": "bicolore blanc et rose vif / pourpre",
+        "note": "FiftyFlowers, Mayesh ; aussi en fleurs détachées et leis"
+      },
+      {
+        "nom": "Sky Magenta",
+        "couleur": "magenta-mauve",
+        "note": "FiftyFlowers"
+      },
+      {
+        "nom": "Channel (Chanel Blush)",
+        "couleur": "blanc rosé",
+        "note": "FiftyFlowers ; « Channel » dans la liste thaïlandaise"
+      },
+      {
+        "nom": "Lilac Mist",
+        "couleur": "lilas lavande",
+        "note": "FiftyFlowers"
+      },
+      {
+        "nom": "Midnight Purple",
+        "couleur": "pourpre mauve",
+        "note": "FiftyFlowers"
+      },
+      {
+        "nom": "Magnetic Magic",
+        "couleur": "fuchsia-violet vif",
+        "note": "FiftyFlowers"
+      },
+      {
+        "nom": "Green Geisha",
+        "couleur": "vert chartreuse",
+        "note": "FiftyFlowers"
+      },
+      {
+        "nom": "Royal Pink",
+        "couleur": "rose",
+        "note": "liste d'export thaïlandaise (FAO)"
+      },
+      {
+        "nom": "Siam Ruby",
+        "couleur": "rouge rubis",
+        "note": "liste d'export thaïlandaise (FAO)"
+      },
+      {
+        "nom": "Violette Marie Gudmunson",
+        "couleur": "magenta à pourpre profond",
+        "note": "Orchids Limited – type phalaenopsis"
+      },
+      {
+        "nom": "Orchidom Teresa",
+        "couleur": "rose veiné de rose foncé à pourpre",
+        "note": "Orchids Limited – type phalaenopsis"
+      },
+      {
+        "nom": "Sonia teinté (bleu, vert, jaune)",
+        "couleur": "teintures bleu, vert, jaune",
+        "note": "Verdnatura ; coloris obtenus par teinture, non naturels"
+      }
+    ],
+    "formes": "Tige coupée de 40 à 70 cm (8 à 15 fleurs) vendue par 10 ; fleurs détachées en sachet pour décor de table ; leis et guirlandes ; tiges teintées ; quelques variétés en pot.",
+    "saison": "Toute l'année (import de Thaïlande, Singapour, Malaisie, Hawaï).",
+    "tenue_vase": "10–18 jours",
+    "gamme_prix": "€",
+    "rarete_jeu": "commune",
+    "notes_dessin": "Fleur plate et ronde de 5 à 8 cm, proche d'un petit phalaenopsis : sépale dorsal étroit, sépales latéraux soudés à la base en un court éperon (mentum) bien visible de profil, et deux pétales larges, arrondis, souvent légèrement torsadés. Le labelle est roulé en cornet autour de la colonne, plus foncé que les pétales chez 'Sonia' (pourpre profond) et marqué de veines. 8 à 15 fleurs alternent en grappe arquée sur une tige fine, souple et luisante, avec 3 à 6 boutons pointus et serrés à l'extrémité. Coloris typiques : pourpre à base blanche, blanc pur, vert lime, bicolores ; texture satinée à légèrement cireuse. Les cannes (pseudobulbes allongés) portent des feuilles ovales alternes, vert franc.",
+    "wiki": "Dendrobium bigibbum",
+    "img_queries": [
+      "Dendrobium Sonia",
+      "Dendrobium Burana Jade",
+      "Dendrobium bigibbum",
+      "Dendrobium hybrid cut flower"
+    ],
+    "sources": [
+      "https://www.nparks.gov.sg/florafaunaweb/flora/6/5/6500",
+      "https://www.fao.org/4/ac452e/ac452e09.htm",
+      "https://www.mayesh.com/dendrobium-pompadour-purple",
+      "https://specialtyproduce.com/produce/Jade_Green_Orchids_23726.php",
+      "https://thursd.com/products/cut-flowers/orchids/dendrobium-woon-leng"
+    ]
+  },
+  {
+    "id": "dendrobium-nobile",
+    "nom_fr": "Dendrobium nobile et dendrobiums en pot",
+    "nom_en": "Noble dendrobium",
+    "latin": "Dendrobium nobile et hybrides (aussi D. kingianum)",
+    "famille": "Orchidaceae",
+    "categorie": "Orchidées",
+    "role": "secondaire",
+    "couleurs": [
+      "blanc",
+      "blanc à pointes roses",
+      "rose tendre",
+      "rose-pourpre",
+      "pourpre",
+      "mauve",
+      "jaune",
+      "bicolore à œil sombre",
+      "labelle à macule bordeaux"
+    ],
+    "varietes": [
+      {
+        "nom": "Spring Dream 'Apollon'",
+        "couleur": "blanc neige, cœur jaune doux",
+        "note": "Floricultura ; De Hoog Orchids (Thursd) – nobile, cannes couvertes de boutons"
+      },
+      {
+        "nom": "Spring Dream 'Kumiko'",
+        "couleur": "rose tendre, cœur jaune",
+        "note": "Floricultura ; De Hoog Orchids – nobile très florifère"
+      },
+      {
+        "nom": "Comet King 'Akatsuki'",
+        "couleur": "pourpre chaud, cœur jaune",
+        "note": "Floricultura ; De Hoog Orchids – nobile"
+      },
+      {
+        "nom": "Fairlight",
+        "couleur": "rose",
+        "note": "Floricultura – nobile"
+      },
+      {
+        "nom": "Bright Eyes",
+        "couleur": "blanc bordé de rose, cœur jaune",
+        "note": "De Hoog Orchids – nobile"
+      },
+      {
+        "nom": "Sunny Eyes",
+        "couleur": "blanc nacré, bord rose, centre sombre",
+        "note": "De Hoog Orchids – nobile, très forte densité de boutons"
+      },
+      {
+        "nom": "Red Emperor 'Prince'",
+        "couleur": "pourpre foncé, labelle bordé de jaune à centre sombre",
+        "note": "Orchids Limited – nobile parfumé, fleurs jusqu'à 2 mois"
+      },
+      {
+        "nom": "Yellow Song 'Canary'",
+        "couleur": "jaune vif",
+        "note": "Orchids Limited – nobile, fleurs de 5–7 cm"
+      },
+      {
+        "nom": "To My Kids 'Fantastic Story'",
+        "couleur": "blanc, labelle pourpre",
+        "note": "Orchids Limited – nobile parfumé"
+      },
+      {
+        "nom": "Sweet Pinky 'Love'",
+        "couleur": "rose et blanc, labelle multicolore",
+        "note": "Orchids Limited – nobile"
+      },
+      {
+        "nom": "Asian Smile 'Cutie Girl'",
+        "couleur": "coloris vifs",
+        "note": "Orchids Limited – hybride Yamamoto"
+      },
+      {
+        "nom": "Hibiki",
+        "couleur": "rose-pourpre vif, labelle orange foncé",
+        "note": "NParks – compact (bracteosum × laevifolium)"
+      },
+      {
+        "nom": "Cherry Song",
+        "couleur": "blanc lavé de magenta, pétales et labelle magenta à pointe blanche",
+        "note": "NParks – miniature"
+      },
+      {
+        "nom": "Frosty Dawn",
+        "couleur": "blanc doux, labelle orange vif frangé",
+        "note": "NParks"
+      },
+      {
+        "nom": "Berry (Oda)",
+        "couleur": "mauve profond",
+        "note": "RHS AGM – type australien (kingianum), grappes durables"
+      },
+      {
+        "nom": "Dendrobium kingianum album",
+        "couleur": "blanc pur parfumé",
+        "note": "Orchids Limited – espèce australienne miniature"
+      },
+      {
+        "nom": "Dendrobium nobile (espèce)",
+        "couleur": "blanc à rose et pourpre, très variable",
+        "note": "Wikipedia ; fleurs cireuses parfumées par 2–4, hiver–printemps"
+      },
+      {
+        "nom": "Sa-Nook (gamme)",
+        "couleur": "pourpre et coloris variés",
+        "note": "Thursd – gamme de dendrobiums en pot pour fleuristes"
+      }
+    ],
+    "formes": "Plante en pot 12 cm à plusieurs cannes couvertes de fleurs ; cannes coupées occasionnellement pour compositions ; formes compactes et miniatures.",
+    "saison": "Surtout de décembre à mai ; certaines lignées disponibles toute l'année.",
+    "tenue_vase": "6–10 semaines sur la plante ; 7–10 jours en coupe",
+    "gamme_prix": "€€",
+    "rarete_jeu": "commune",
+    "notes_dessin": "Fleurs de 5 à 7 cm, groupées par 2 à 4 directement le long de cannes nues et segmentées, de sorte que la canne entière devient une colonne de fleurs serrées. Sépales et pétales ovales-lancéolés, souvent blancs à pointes colorées (rose, pourpre) ; le labelle roulé en cornet porte une macule centrale sombre (pourpre ou bordeaux) cerclée de jaune ou de blanc — « l'œil » des variétés 'Bright Eyes' et 'Sunny Eyes'. Les cannes jaune-vert, articulées comme du bambou, ne gardent que quelques feuilles alternes au sommet à la floraison. Texture douce, mate à légèrement nacrée ; parfum léger.",
+    "wiki": "Dendrobium nobile",
+    "img_queries": [
+      "Dendrobium nobile",
+      "Dendrobium nobile hybrid",
+      "Dendrobium kingianum",
+      "Dendrobium Berry Oda"
+    ],
+    "sources": [
+      "https://thursd.com/products/plants/orchid-plants/dendrobium-nobile-spring-dream-apollon",
+      "https://www.floricultura.com/en/orchidaceae/dendrobium-nobile/5203/",
+      "https://www.rhs.org.uk/plants/pdfs/rhs-recommended-award-of-garden-merit-orchids.pdf",
+      "https://www.nparks.gov.sg/florafaunaweb/flora/6/8/6877",
+      "https://store.orchidweb.com/products/dendrobium-red-emperor-prince"
+    ]
+  },
+  {
+    "id": "vanda",
+    "nom_fr": "Vanda",
+    "nom_en": "Vanda orchid",
+    "latin": "Vanda spp. et hybrides (incl. Papilionanda)",
+    "famille": "Orchidaceae",
+    "categorie": "Orchidées",
+    "role": "focale",
+    "couleurs": [
+      "bleu",
+      "bleu-violet",
+      "bleu indigo",
+      "lavande",
+      "lilas",
+      "mauve",
+      "violet",
+      "pourpre",
+      "bordeaux",
+      "brun chocolat",
+      "rouge",
+      "rose",
+      "rose vif",
+      "magenta",
+      "fuchsia",
+      "corail",
+      "pêche",
+      "orange",
+      "jaune",
+      "blanc",
+      "crème",
+      "tessellé (mosaïque en damier)",
+      "tacheté léopard",
+      "bicolore"
+    ],
+    "varietes": [
+      {
+        "nom": "Kanchana Magic Blue",
+        "couleur": "bleu indigo-violet à reflets pourpres",
+        "note": "Ansu Vanda / Su-Su ; tolère le froid, longue tenue"
+      },
+      {
+        "nom": "Kanchana Ansu No. 1",
+        "couleur": "blanc pur à mosaïque blanche",
+        "note": "Ansu Vanda ; fleur ~10 cm ; « le N°5 des vandas », mariages"
+      },
+      {
+        "nom": "Kanchana China Blue",
+        "couleur": "mosaïque bleu foncé sur fond blanc",
+        "note": "RHS (PBR 'Spcdw1712') ; fleur >10 cm, ronde et plate"
+      },
+      {
+        "nom": "Sunanda Chocolate Brown",
+        "couleur": "brun café tacheté",
+        "note": "Ansu Vanda ; tendance teintes terre"
+      },
+      {
+        "nom": "Sunanda Chocolate Red",
+        "couleur": "rose foncé taché et tessellé de marron, centre jaune",
+        "note": "RHS (PBR 'Spcdw1709') ; fleur 10–12 cm"
+      },
+      {
+        "nom": "Sunanda Jeff Leatham",
+        "couleur": "pourpre et pourpre foncé tacheté, mosaïque sur sépales inférieurs",
+        "note": "Ansu Vanda ; nommée d'après le designer floral"
+      },
+      {
+        "nom": "Sunanda Blueberry Smoothie",
+        "couleur": "bords pourpres, centre pâle, couvert de points pourpre-bleu",
+        "note": "RHS (PBR 'Spcdw1718') ; fleur >10 cm"
+      },
+      {
+        "nom": "Sunanda Lilac Starlight",
+        "couleur": "crème bordé de pourpre, entièrement tacheté de pourpre foncé",
+        "note": "RHS (PBR 'Spcdw1811') ; fleur >10 cm"
+      },
+      {
+        "nom": "Sunanda Leopard Tangerine",
+        "couleur": "jaune-orangé fortement taché de rouge, labelle rouge foncé",
+        "note": "RHS (PBR 'Spcdw1809') ; fleur 10–12 cm"
+      },
+      {
+        "nom": "Sunanda Leopard Coral",
+        "couleur": "rose pêche à taches léopard pourpres",
+        "note": "Ansu Vanda (Thursd)"
+      },
+      {
+        "nom": "Sunanda Campari Passion",
+        "couleur": "magenta-rose fortement tacheté",
+        "note": "RHS (PBR 'Spcdw1721') ; fleur >10 cm"
+      },
+      {
+        "nom": "Divana Sea Shell",
+        "couleur": "lavande très pâle fondant vers le jaune doux, taches bordeaux",
+        "note": "Ansu Vanda"
+      },
+      {
+        "nom": "Divana Pink Maroon",
+        "couleur": "pétales rose vif, sépales latéraux bordeaux-marron",
+        "note": "RHS (PBR 'Spcdw1711') ; fleur 10 cm"
+      },
+      {
+        "nom": "Divana Antique Mauve Plum",
+        "couleur": "mauve pâle à points pourpre foncé, mosaïque sur sépales inférieurs",
+        "note": "RHS (PBR 'Spcdw1802') ; fleur 8 cm"
+      },
+      {
+        "nom": "Divana Mauve Aubergine",
+        "couleur": "pourpre vif, sépales inférieurs plus foncés",
+        "note": "RHS (PBR 'Spcdw1702') ; jusqu'à 10 fleurs"
+      },
+      {
+        "nom": "Nitaya Velvet Blackberry",
+        "couleur": "bordeaux-pourpre très foncé uni",
+        "note": "RHS (PBR 'Spcdw1801') ; fleur 10 cm"
+      },
+      {
+        "nom": "Nitaya Crimson Lane",
+        "couleur": "fortement marqué de mosaïque et de points rouge foncé",
+        "note": "RHS (PBR 'Spcdw1806')"
+      },
+      {
+        "nom": "Nitaya Indian Red",
+        "couleur": "taches et mosaïque rose foncé-fuchsia, texture épaisse",
+        "note": "RHS (PBR 'Spcdw1703') ; fleur >10 cm"
+      },
+      {
+        "nom": "Natcha Princess Orange",
+        "couleur": "orange vif",
+        "note": "RHS (PBR 'Spcdw1701') ; petites fleurs ~6 cm, très nombreuses"
+      },
+      {
+        "nom": "Pachara Delight",
+        "couleur": "bleu-violet profond tessellé en damier",
+        "note": "Chicago Botanic Garden – le « bleu » classique"
+      },
+      {
+        "nom": "Sansai Blue 'Acker's Pride'",
+        "couleur": "bleu",
+        "note": "Orchids Limited ; FCC/AOS (Crimson Glory × coerulea)"
+      },
+      {
+        "nom": "Pakchong Blue",
+        "couleur": "bleu",
+        "note": "Orchids Limited ; grande fleur de belle substance (Doctor Anek × coerulea)"
+      },
+      {
+        "nom": "Robert's Delight 'Dark Red'",
+        "couleur": "rouge foncé",
+        "note": "Orchids Limited (Kasem's Delight × Madame Rattana)"
+      },
+      {
+        "nom": "Robert's Delight 'Andaman'",
+        "couleur": "lavande profond et bordeaux presque noir",
+        "note": "Orchids Limited"
+      },
+      {
+        "nom": "Robert's Delight 'Red Berry'",
+        "couleur": "rouge baie",
+        "note": "NParks Singapour"
+      },
+      {
+        "nom": "Robert's Delight 'Blue'",
+        "couleur": "bleu",
+        "note": "NParks Singapour"
+      },
+      {
+        "nom": "Robert's Delight 'Torblue'",
+        "couleur": "bleu",
+        "note": "Orchids Limited ; AM/AOS"
+      },
+      {
+        "nom": "Manuvadee 'Sky'",
+        "couleur": "bleu ciel",
+        "note": "Orchids Limited ; JC/AOS (Ponpimol × coerulea)"
+      },
+      {
+        "nom": "Kultana Blue",
+        "couleur": "bleu",
+        "note": "Orchids Limited"
+      },
+      {
+        "nom": "Rothschildiana 'Blue Ribbon'",
+        "couleur": "bleu-violet tessellé",
+        "note": "Orchids Limited ; FCC/AOS (coerulea × sanderiana), hybride historique"
+      },
+      {
+        "nom": "Ratchaburi Blue",
+        "couleur": "bleu",
+        "note": "NParks Singapour"
+      },
+      {
+        "nom": "Somsri Glory 'Blue'",
+        "couleur": "bleu",
+        "note": "NParks Singapour"
+      },
+      {
+        "nom": "Kriengchai Brownie",
+        "couleur": "brun",
+        "note": "NParks Singapour"
+      },
+      {
+        "nom": "Lumpini 'Red'",
+        "couleur": "rouge",
+        "note": "Orchids Limited ; AM/AOS (Kasem's Delight × Saladaeng)"
+      },
+      {
+        "nom": "Alice Blue",
+        "couleur": "bleu",
+        "note": "liste d'export thaïlandaise (FAO)"
+      },
+      {
+        "nom": "Mimi Palmer",
+        "couleur": "fortement tessellé de brun foncé, labelle mauve",
+        "note": "NParks ; parfum sirupeux, 1963 (Afterglow × tessellata)"
+      },
+      {
+        "nom": "Tan Hoon Siang",
+        "couleur": "rose à bords ondulés, points rose foncé, labelle rose foncé",
+        "note": "NParks"
+      },
+      {
+        "nom": "Papilionanda Tan Chay Yan",
+        "couleur": "pêche dessus, orange doré dessous, labelle orange foncé",
+        "note": "NParks ; FCC RHS, Chelsea 1954"
+      },
+      {
+        "nom": "Papilionanda Bangkok",
+        "couleur": "orange moucheté de rouge, labelle rouge",
+        "note": "NParks"
+      },
+      {
+        "nom": "Speckled Watermelon",
+        "couleur": "rose pastèque moucheté",
+        "note": "FiftyFlowers – fleur coupée"
+      },
+      {
+        "nom": "Pink Butterfly",
+        "couleur": "rose vif",
+        "note": "FiftyFlowers – fleur coupée"
+      },
+      {
+        "nom": "Calypso",
+        "couleur": "rose vif",
+        "note": "FiftyFlowers – fleur coupée"
+      },
+      {
+        "nom": "Royal Blue",
+        "couleur": "bleu roi",
+        "note": "FiftyFlowers – fleur coupée"
+      },
+      {
+        "nom": "White Magic",
+        "couleur": "blanc",
+        "note": "FiftyFlowers – fleur coupée"
+      },
+      {
+        "nom": "Red Magic",
+        "couleur": "rouge",
+        "note": "FiftyFlowers – fleur coupée"
+      },
+      {
+        "nom": "Orange Magic",
+        "couleur": "orange",
+        "note": "FiftyFlowers – fleur coupée"
+      },
+      {
+        "nom": "Fuchsia Magic",
+        "couleur": "fuchsia",
+        "note": "FiftyFlowers – fleur coupée"
+      },
+      {
+        "nom": "Black Magic",
+        "couleur": "pourpre presque noir",
+        "note": "Mayesh – fleur coupée"
+      },
+      {
+        "nom": "Tropical Punch",
+        "couleur": "rose foncé et crème",
+        "note": "Mayesh – fleur coupée"
+      },
+      {
+        "nom": "Dark Dotty",
+        "couleur": "blanc ponctué de pourpre foncé",
+        "note": "Mayesh – fleur coupée"
+      },
+      {
+        "nom": "Vanda coerulea (espèce)",
+        "couleur": "bleu lavande tessellé, presque vrai bleu",
+        "note": "Orchids Limited (lignée 'Lord Rothschild') ; fleurs 10–15 cm ; Inde, Myanmar, Thaïlande"
+      },
+      {
+        "nom": "Vanda coerulea alba",
+        "couleur": "blanc cristallin",
+        "note": "Orchids Limited ; forme très rare"
+      },
+      {
+        "nom": "Vanda sanderiana / Waling-waling (espèce)",
+        "couleur": "rose, base tachetée brun-pourpre, sépales latéraux jaune fauve réticulés de pourpre",
+        "note": "Wikipedia, Thursd ; « reine des fleurs des Philippines » ; 8–12 fleurs plates"
+      },
+      {
+        "nom": "Vanda tricolor var. suavis (espèce)",
+        "couleur": "blanc taché de rouille, labelle rose vif",
+        "note": "Orchids Limited, Thursd ; parfum de bonbon au raisin"
+      },
+      {
+        "nom": "Vanda bensonii (espèce)",
+        "couleur": "jaune taché de brun-rouge, cœur blanc à lilas",
+        "note": "Thursd ; ~20 fleurs parfumées de 5 cm"
+      },
+      {
+        "nom": "Vanda merrillii var. rotorii (espèce)",
+        "couleur": "rouge acajou",
+        "note": "Orchids Limited ; parfum sucré"
+      },
+      {
+        "nom": "Vanda coerulescens (espèce)",
+        "couleur": "bleu pâle, labelle pourpre",
+        "note": "NParks ; petites fleurs espacées"
+      }
+    ],
+    "formes": "Tige coupée de 4 à 12 grandes fleurs, souvent vendue en tube ; fleur seule (coiffures, bijoux floraux) ; plante entière à racines nues présentée en vase de verre ou suspendue ; grandes plantes en panier de teck.",
+    "saison": "Toute l'année (Ansu Vanda aux Pays-Bas, import de Thaïlande).",
+    "tenue_vase": "14–21 jours",
+    "gamme_prix": "€€€€",
+    "rarete_jeu": "precieuse",
+    "notes_dessin": "Grande fleur plate presque circulaire de 8 à 12 cm, aux cinq segments larges et arrondis, souvent légèrement ondulés, qui se chevauchent ; les deux sépales inférieurs sont les plus grands et souvent les plus foncés. Le motif signature est la tessellation : un réseau en damier ou en mosaïque de veines foncées sur fond plus clair (bleu sur blanc, pourpre sur lilas), ou une ponctuation dense de type léopard. Le labelle est minuscule, court et charnu, prolongé d'un petit éperon, d'une couleur plus intense ; la colonne est courte et blanche au centre. 4 à 12 fleurs se serrent en grappe dressée sur une tige épaisse ; la plante monopodiale a des feuilles rubanées en éventail (distiques) et un spectaculaire rideau de racines aériennes gris-vert pendantes.",
+    "wiki": "Vanda",
+    "img_queries": [
+      "Vanda coerulea",
+      "Vanda Pachara Delight",
+      "Vanda sanderiana",
+      "Vanda hybrid tessellated"
+    ],
+    "sources": [
+      "https://thursd.com/articles/vanda-orchids",
+      "https://thursd.com/growers/ansu-vanda",
+      "https://www.rhs.org.uk/plants/386256/vanda-kanchana-china-blue-spcdw1712/details",
+      "https://www.chicagobotanic.org/plant-information/plant-finder/vanda-pachara-delight-pachara-delight-vanda-orchid",
+      "https://www.nparks.gov.sg/florafaunaweb/flora/5/8/5845"
+    ]
+  },
+  {
+    "id": "ascocenda",
+    "nom_fr": "Ascocenda et Ascocentrum (vanda miniature)",
+    "nom_en": "Ascocenda / mini vanda",
+    "latin": "× Ascocenda (Vanda × Ascocentrum) et Ascocentrum spp.",
+    "famille": "Orchidaceae",
+    "categorie": "Orchidées",
+    "role": "secondaire",
+    "couleurs": [
+      "orange",
+      "rouge-orangé",
+      "jaune",
+      "rose",
+      "magenta",
+      "bleu-violet",
+      "blanc",
+      "tessellé"
+    ],
+    "varietes": [
+      {
+        "nom": "Princess Mikasa 'Blue'",
+        "couleur": "bleu-violet",
+        "note": "RHS AGM – formes rose, blanche et bleue ; souvent vendue comme Ascocenda"
+      },
+      {
+        "nom": "Princess Mikasa 'Pink'",
+        "couleur": "rose",
+        "note": "RHS AGM"
+      },
+      {
+        "nom": "Princess Mikasa 'White'",
+        "couleur": "blanc",
+        "note": "RHS AGM"
+      },
+      {
+        "nom": "Louise Gabbert 'Lovely'",
+        "couleur": "coloris inhabituels, fleurs très plates",
+        "note": "Orchids Limited"
+      },
+      {
+        "nom": "Mini Vanda orange",
+        "couleur": "orange",
+        "note": "Mayesh – « vanda mini » en fleur coupée"
+      },
+      {
+        "nom": "Mini Vanda blanc",
+        "couleur": "blanc",
+        "note": "Mayesh – « vanda mini » en fleur coupée"
+      },
+      {
+        "nom": "Ascocentrum miniatum",
+        "couleur": "orange vif",
+        "note": "Orchids Limited – grappes dressées denses"
+      },
+      {
+        "nom": "Ascocentrum ampullaceum (forme orange)",
+        "couleur": "orange",
+        "note": "Orchids Limited – petites grappes"
+      },
+      {
+        "nom": "Ascocentrum ampullaceum var. alba",
+        "couleur": "blanc",
+        "note": "Orchids Limited – forme rare"
+      },
+      {
+        "nom": "Ascocentrum curvifolium",
+        "couleur": "rouge-orangé vif",
+        "note": "Orchids Limited – fleurs de 2,5 cm, 1–2 mois"
+      },
+      {
+        "nom": "Ascocentrum curvifolium var. luteum",
+        "couleur": "jaune pur",
+        "note": "Orchids Limited – forme rare"
+      },
+      {
+        "nom": "Vanda miniata (espèce)",
+        "couleur": "jaune à orange-rouge",
+        "note": "NParks – fleurs de 1,2 cm à long éperon"
+      }
+    ],
+    "formes": "Petites tiges coupées (« mini vanda ») ; plantes compactes en pot ou panier, racines aériennes.",
+    "saison": "Toute l'année en import ; floraison principale printemps–été pour les Ascocentrum.",
+    "tenue_vase": "10–20 jours",
+    "gamme_prix": "€€€",
+    "rarete_jeu": "rare",
+    "notes_dessin": "Version miniature et lumineuse de la vanda : fleurs plates de 2 à 5 cm, rondes à étoilées, très serrées (15 à 30) en grappes dressées. Couleurs saturées et vives — orange, rouge-orangé, magenta, jaune pur — unies ou légèrement tessellées ; labelle minuscule avec un éperon fin bien visible de profil. Chez les Ascocentrum, les fleurs de 1 à 2,5 cm forment une colonne dense presque cylindrique au-dessus d'une petite plante (20–30 cm) aux feuilles en V serrées en éventail. Racines aériennes épaisses et blanchâtres comme chez la vanda.",
+    "wiki": "Ascocenda",
+    "img_queries": [
+      "Ascocenda",
+      "Ascocentrum miniatum",
+      "Ascocentrum curvifolium",
+      "Vanda Princess Mikasa"
+    ],
+    "sources": [
+      "https://www.rhs.org.uk/plants/pdfs/rhs-recommended-award-of-garden-merit-orchids.pdf",
+      "https://store.orchidweb.com/products/ascocentrum-curvifolium",
+      "https://www.mayesh.com/vanda-orchid-mini-orange",
+      "https://www.nparks.gov.sg/florafaunaweb/flora/6/4/6463"
+    ]
+  },
+  {
+    "id": "mokara",
+    "nom_fr": "Mokara",
+    "nom_en": "Mokara orchid",
+    "latin": "× Mokara (Arachnis × Ascocentrum × Vanda)",
+    "famille": "Orchidaceae",
+    "categorie": "Orchidées",
+    "role": "secondaire",
+    "couleurs": [
+      "orange",
+      "rouge-orangé",
+      "rouge",
+      "corail",
+      "jaune",
+      "jaune pâle",
+      "jaune moutarde",
+      "pêche",
+      "rose pâle",
+      "rose",
+      "magenta",
+      "fuchsia",
+      "pourpre",
+      "bleu",
+      "blanc",
+      "moucheté",
+      "tacheté"
+    ],
+    "varietes": [
+      {
+        "nom": "Bloonlong",
+        "couleur": "rouge-orangé (RHS 41B)",
+        "note": "WNOFNS 2019 ; 13–15 fleurs de 5–6,5 cm ; ~16 j en vase"
+      },
+      {
+        "nom": "Calypso (Calipso)",
+        "couleur": "rose magenta (RHS 74C)",
+        "note": "WNOFNS 2019 ; grandes fleurs 7,4–8,1 cm ; fuchsia chez Mayesh"
+      },
+      {
+        "nom": "Chark Kuan",
+        "couleur": "rose très pâle abondamment tacheté (RHS 49D)",
+        "note": "WNOFNS 2019 ; NParks ; « Jark Kuan » liste thaïlandaise"
+      },
+      {
+        "nom": "Chark Kuan 'Super Pink'",
+        "couleur": "rose vif",
+        "note": "NParks ; 12–17 fleurs de 9,5 × 8,5 cm, tige 45–50 cm (Aranda Christine × Ascocenda Cholburi)"
+      },
+      {
+        "nom": "Chark Kuan Pink",
+        "couleur": "rose",
+        "note": "Sartpetch et al. ; ~12 j en vase"
+      },
+      {
+        "nom": "Chark Kuan Orange",
+        "couleur": "orange",
+        "note": "Mayesh"
+      },
+      {
+        "nom": "Chark Kuan Blue",
+        "couleur": "bleu",
+        "note": "Mayesh"
+      },
+      {
+        "nom": "Chorcharood",
+        "couleur": "blanc lumineux tacheté (RHS 155B)",
+        "note": "WNOFNS 2019 ; 15–24 fleurs, pétales enroulés en tube"
+      },
+      {
+        "nom": "Jenistar",
+        "couleur": "jaune pâle à petits points (RHS 7D)",
+        "note": "WNOFNS 2019 ; 14–22 fleurs"
+      },
+      {
+        "nom": "Kitti",
+        "couleur": "jaune uni (RHS 12A)",
+        "note": "WNOFNS 2019 ; fleurs 8,4–9,1 cm ; record ~22 j en vase"
+      },
+      {
+        "nom": "Pranee",
+        "couleur": "jaune à grosses taches (RHS 6A)",
+        "note": "WNOFNS 2019 ; fleurs 7,5–8,7 cm"
+      },
+      {
+        "nom": "Panee",
+        "couleur": "jaune or",
+        "note": "Sartpetch et al. (~13 j) ; « Panee Gold » chez Mayesh"
+      },
+      {
+        "nom": "Robin",
+        "couleur": "rouge corail uni (RHS 39B)",
+        "note": "WNOFNS 2019 ; sans taches, segments externes larges"
+      },
+      {
+        "nom": "Tammy",
+        "couleur": "jaune pâle à grosses taches éparses (RHS 7D)",
+        "note": "WNOFNS 2019 ; bords enroulés en tube"
+      },
+      {
+        "nom": "Tangerine",
+        "couleur": "orange mandarine tacheté (RHS 15B)",
+        "note": "WNOFNS 2019"
+      },
+      {
+        "nom": "Red",
+        "couleur": "rouge",
+        "note": "Sartpetch et al. ; Flowers of India"
+      },
+      {
+        "nom": "Nora Yellow",
+        "couleur": "jaune",
+        "note": "Sartpetch et al."
+      },
+      {
+        "nom": "Nora Pink",
+        "couleur": "rose",
+        "note": "Sartpetch et al."
+      },
+      {
+        "nom": "New Orange",
+        "couleur": "orange chaud et pêche",
+        "note": "Thursd – Ter Haar Ornamental Flowers"
+      },
+      {
+        "nom": "Hassan Red",
+        "couleur": "rouge",
+        "note": "Mayesh"
+      },
+      {
+        "nom": "Jaguar Pink",
+        "couleur": "rose vif moucheté",
+        "note": "FiftyFlowers, Mayesh"
+      },
+      {
+        "nom": "Red Lipstick",
+        "couleur": "rouge franc",
+        "note": "FiftyFlowers"
+      },
+      {
+        "nom": "Sunshine Bright Yellow",
+        "couleur": "jaune vif",
+        "note": "FiftyFlowers"
+      },
+      {
+        "nom": "Violet Purple Speckled",
+        "couleur": "violet pourpre à mouchetures claires",
+        "note": "FiftyFlowers"
+      },
+      {
+        "nom": "Purple Berry Sparkles",
+        "couleur": "fuchsia moucheté",
+        "note": "FiftyFlowers"
+      },
+      {
+        "nom": "Dramatic Pink",
+        "couleur": "magenta moucheté",
+        "note": "FiftyFlowers"
+      },
+      {
+        "nom": "Vintage",
+        "couleur": "pourpre foncé",
+        "note": "FiftyFlowers"
+      },
+      {
+        "nom": "Peach Schnapps",
+        "couleur": "orange foncé pêche",
+        "note": "FiftyFlowers"
+      },
+      {
+        "nom": "Speckled Sunset",
+        "couleur": "jaune moutarde moucheté",
+        "note": "FiftyFlowers"
+      },
+      {
+        "nom": "Florida Sunset",
+        "couleur": "orange",
+        "note": "FiftyFlowers ; par 60 tiges"
+      },
+      {
+        "nom": "Hot Pink Bicolor",
+        "couleur": "rose vif à mouchetures plus foncées",
+        "note": "FiftyFlowers"
+      }
+    ],
+    "formes": "Tige coupée raide de 40 à 60 cm (8 à 24 fleurs) ; fleurs détachées et leis ; vendue par 10 ou en cartons de 60 tiges.",
+    "saison": "Toute l'année (Thaïlande, Malaisie, Singapour).",
+    "tenue_vase": "6–22 jours selon le cultivar (12–16 j en moyenne)",
+    "gamme_prix": "€€",
+    "rarete_jeu": "commune",
+    "notes_dessin": "Fleur étoilée de 5 à 9 cm, intermédiaire entre la vanda et l'arachnis : cinq segments spatulés, arrondis au bout et rétrécis à la base, plats ou légèrement enroulés vers l'arrière (certains cultivars, comme 'Chorcharood' ou 'Tammy', forment presque des tubes). La surface est unie ou couverte de mouchetures et de taches irrégulières, plus denses vers les pointes ; labelle petit, charnu, souvent plus foncé. 8 à 20 fleurs serrées sur une tige raide et droite, avec quelques boutons ronds au sommet ; palette chaude (orange, rouge, jaune, pêche) mais aussi magenta, blanc et violet.",
+    "wiki": "Mokara",
+    "img_queries": [
+      "Mokara orchid",
+      "Mokara Chark Kuan",
+      "Mokara Red",
+      "Mokara orange"
+    ],
+    "sources": [
+      "http://www.worldnewsnaturalsciences.com/wp-content/uploads/2019/07/WNOFNS-26-2019-1-10.pdf",
+      "http://www.worldnewsnaturalsciences.com/wp-content/uploads/2019/07/WNOFNS-26-2019-11-19.pdf",
+      "https://www.nparks.gov.sg/florafaunaweb/flora/5/5/5552",
+      "https://thursd.com/products/cut-flowers/orchids/mokara-new-orange",
+      "https://fiftyflowers.com/products/red-mokara-orchids-flower"
+    ]
+  },
+  {
+    "id": "aranda",
+    "nom_fr": "Aranda",
+    "nom_en": "Aranda orchid",
+    "latin": "× Aranda (Arachnis × Vanda)",
+    "famille": "Orchidaceae",
+    "categorie": "Orchidées",
+    "role": "secondaire",
+    "couleurs": [
+      "blanc",
+      "jaune",
+      "jaune taché de brun",
+      "orange",
+      "rouge vermillon",
+      "rose orangé",
+      "bleu-pourpre",
+      "tacheté"
+    ],
+    "varietes": [
+      {
+        "nom": "Christine",
+        "couleur": "blanc",
+        "note": "NParks (Arachnis hookeriana × Vanda 'Hilo Blue', 1963) ; « Christine » blanc chez Mayesh ; liste thaïlandaise"
+      },
+      {
+        "nom": "Bangkok Gold",
+        "couleur": "jaune vif, foncit en mûrissant",
+        "note": "NParks ; grandes étoiles 6 × 5,5 cm, 10–15 fleurs"
+      },
+      {
+        "nom": "Bertha Braga",
+        "couleur": "jaune taché de brun, labelle rose",
+        "note": "NParks (Vanda tricolor × Arachnis Maggie Oei)"
+      },
+      {
+        "nom": "Prapin Yellow",
+        "couleur": "jaune ponctué de rose-pourpre, labelle rouge-pourpre strié",
+        "note": "NParks"
+      },
+      {
+        "nom": "Anne Black",
+        "couleur": "rouge vermillon sombre",
+        "note": "Thursd – Ter Haar ; tiges 60–90 cm, fleurs de 4 cm"
+      },
+      {
+        "nom": "Nora Blue",
+        "couleur": "bleu-pourpre",
+        "note": "Mayesh ; liste d'export thaïlandaise"
+      },
+      {
+        "nom": "Aomyai Orange",
+        "couleur": "orange",
+        "note": "Mayesh"
+      },
+      {
+        "nom": "Aomyai Yellow",
+        "couleur": "jaune",
+        "note": "Mayesh"
+      },
+      {
+        "nom": "Holttumara Chao Praya Peach",
+        "couleur": "rose orangé, labelle rouge rosé",
+        "note": "NParks – hybride apparenté (Aranthera × Vanda)"
+      }
+    ],
+    "formes": "Tige coupée longue et raide (jusqu'à 75 cm, 10–15 fleurs) ; fleurs pour leis et décor tropical.",
+    "saison": "Toute l'année (Singapour, Thaïlande).",
+    "tenue_vase": "14–21 jours",
+    "gamme_prix": "€",
+    "rarete_jeu": "commune",
+    "notes_dessin": "Fleur en étoile de 5 à 8 cm aux segments étroits et réguliers, un peu plus fins que ceux de la Mokara, héritage de l'Arachnis. Sépales et pétales légèrement recourbés, souvent tachetés ou marbrés (jaune taché de brun, jaune ponctué de pourpre) ; labelle petit et triangulaire d'une couleur contrastée (rose, pourpre). 10 à 15 fleurs espacées le long d'une tige longue et raide ; plante grimpante monopodiale à feuilles coriaces en deux rangs.",
+    "wiki": "Aranda (plant)",
+    "img_queries": [
+      "Aranda orchid",
+      "Aranda Christine",
+      "Aranda Bertha Braga"
+    ],
+    "sources": [
+      "https://www.nparks.gov.sg/florafaunaweb/flora/5/3/5326",
+      "https://www.nparks.gov.sg/florafaunaweb/flora/5/3/5366",
+      "https://thursd.com/products/cut-flowers/orchids/aranda-anne-black",
+      "https://www.fao.org/4/ac452e/ac452e09.htm"
+    ]
+  },
+  {
+    "id": "arachnis-aranthera",
+    "nom_fr": "Arachnis, Aranthera et Renanthera (orchidées scorpion)",
+    "nom_en": "Scorpion orchid / fire orchid",
+    "latin": "Arachnis, × Aranthera (Arachnis × Renanthera), Renanthera",
+    "famille": "Orchidaceae",
+    "categorie": "Orchidées",
+    "role": "texture",
+    "couleurs": [
+      "jaune",
+      "jaune pâle",
+      "jaune barré de marron",
+      "marron",
+      "rouge",
+      "rouge vif",
+      "orange",
+      "rose (labelle)"
+    ],
+    "varietes": [
+      {
+        "nom": "Arachnis Maggie Oei",
+        "couleur": "jaune à taches marron, labelle rose",
+        "note": "NParks (hookeriana × flos-aeris, 1950) ; la classique « orchidée scorpion » de Singapour"
+      },
+      {
+        "nom": "Arachnis Maggie Oei 'Yellow Ribbon'",
+        "couleur": "jaune pâle à taches marron, labelle jaune",
+        "note": "NParks"
+      },
+      {
+        "nom": "Arachnis Maroon Maggie",
+        "couleur": "jaune à taches marron foncé, labelle marron",
+        "note": "NParks"
+      },
+      {
+        "nom": "Arachnis flos-aeris (espèce)",
+        "couleur": "jaune verdâtre barré de marron",
+        "note": "Orchids Limited ; fleurs cireuses de 10–12 cm"
+      },
+      {
+        "nom": "Arachnis hookeriana var. luteola",
+        "couleur": "jaune, pointes renflées plus jaunes",
+        "note": "NParks ; sépales en griffes de scorpion"
+      },
+      {
+        "nom": "Aranthera James Storie",
+        "couleur": "rouge profond",
+        "note": "FiftyFlowers, Mayesh ; « James Storei » dans la liste thaïlandaise"
+      },
+      {
+        "nom": "Aranthera James Storie orange",
+        "couleur": "orange",
+        "note": "Mayesh"
+      },
+      {
+        "nom": "Aranthera James Storie yellow",
+        "couleur": "jaune",
+        "note": "Mayesh"
+      },
+      {
+        "nom": "Renanthera Kalsom",
+        "couleur": "rouge vif",
+        "note": "NParks ; grappes compactes de 60 cm"
+      },
+      {
+        "nom": "Renanthera Singaporeans",
+        "couleur": "rouge vif",
+        "note": "NParks (Kalsom × Tom Thumb)"
+      },
+      {
+        "nom": "Renanthera elongata (espèce)",
+        "couleur": "rouge finement ponctué de sombre",
+        "note": "NParks ; fleurs de 1,5 cm sur grappes ramifiées"
+      },
+      {
+        "nom": "Renanthera citrina (espèce)",
+        "couleur": "jaune clair ponctué de rouge",
+        "note": "Orchids Limited"
+      }
+    ],
+    "formes": "Longues tiges coupées raides aux fleurs espacées (effet graphique) ; grappes ramifiées de petites fleurs rouges (Renanthera) ; leis.",
+    "saison": "Toute l'année (Asie du Sud-Est).",
+    "tenue_vase": "14–21 jours",
+    "gamme_prix": "€€",
+    "rarete_jeu": "rare",
+    "notes_dessin": "Silhouette d'araignée ou de scorpion : sépale dorsal et pétales longs, étroits et clavés (renflés à l'extrémité), les deux sépales latéraux arqués vers le bas comme des pinces. Fond jaune pâle à jaune verdâtre barré de taches transversales marron ou bordeaux (Arachnis Maggie Oei), labelle petit, mobile, rose, jaune ou marron. Les Aranthera et Renanthera sont rouge vif, à fleurs plus petites (1,5–5 cm) groupées en grappes ramifiées très fournies. Tige grimpante épaisse à feuilles distiques et racines aériennes le long de la tige.",
+    "wiki": "Arachnis",
+    "img_queries": [
+      "Arachnis Maggie Oei",
+      "Arachnis flos-aeris",
+      "Renanthera",
+      "Aranthera James Storie"
+    ],
+    "sources": [
+      "https://www.nparks.gov.sg/florafaunaweb/flora/6/2/6222",
+      "https://www.nparks.gov.sg/florafaunaweb/flora/6/8/6872",
+      "https://fiftyflowers.com/products/james-storie-red-aranthera-orchids",
+      "https://store.orchidweb.com/products/arachnis-flos-aeris"
+    ]
+  },
+  {
+    "id": "oncidium",
+    "nom_fr": "Oncidium (dame qui danse)",
+    "nom_en": "Dancing-lady orchid",
+    "latin": "Oncidium et Oncidesa (Gomesa × Oncidium) hybrides",
+    "famille": "Orchidaceae",
+    "categorie": "Orchidées",
+    "role": "remplissage",
+    "couleurs": [
+      "jaune",
+      "jaune vif",
+      "jaune strié de brun",
+      "brun chocolat",
+      "bordeaux et blanc",
+      "rouge",
+      "pourpre",
+      "rose",
+      "crème",
+      "blanc"
+    ],
+    "varietes": [
+      {
+        "nom": "Golden Shower (Oncidesa Goldiana 'Golden Shower')",
+        "couleur": "jaune foncé strié et ponctué de brun",
+        "note": "NParks, Thursd (Ter Haar) ; 60–80 fleurs par hampe de 1 m ; créé au Jardin botanique de Singapour (1939)"
+      },
+      {
+        "nom": "Gower Ramsey",
+        "couleur": "jaune vif à jaune orangé",
+        "note": "Orchids Limited ; « dancing lady » classique (Goldiana × Guinea Gold)"
+      },
+      {
+        "nom": "Golden Wish (Oncidesa)",
+        "couleur": "jaune, grand labelle",
+        "note": "NParks ; « spray orchid » de fleuriste, hampes ramifiées arquées"
+      },
+      {
+        "nom": "Gold Star",
+        "couleur": "jaune",
+        "note": "liste d'export thaïlandaise (FAO)"
+      },
+      {
+        "nom": "Sweet Sugar (Oncidesa)",
+        "couleur": "jaune brillant",
+        "note": "RHS AGM ; panicules ramifiées, idéal en intérieur"
+      },
+      {
+        "nom": "Sweet Sugar 'Lemon Drop'",
+        "couleur": "jaune pur",
+        "note": "Orchids Limited"
+      },
+      {
+        "nom": "Giant Yellow",
+        "couleur": "jaune",
+        "note": "Mayesh – fleur coupée"
+      },
+      {
+        "nom": "Sharry Baby",
+        "couleur": "bordeaux et blanc",
+        "note": "RHS AGM, NParks, Mayesh (Japon) ; « orchidée chocolat », parfum de cacao"
+      },
+      {
+        "nom": "Twinkle",
+        "couleur": "crème, rose à rouge doux",
+        "note": "RHS AGM ; parfum épicé de vanille, effet mousseux"
+      },
+      {
+        "nom": "Twinkle 'Red Fantasy'",
+        "couleur": "rouge",
+        "note": "NParks"
+      },
+      {
+        "nom": "Twinkle blanc / rose pâle",
+        "couleur": "blanc à rose pâle",
+        "note": "Orchids Limited (cheirophorum × ornithorhynchum)"
+      },
+      {
+        "nom": "Jairak Fragrance",
+        "couleur": "pourpre, point blanc au centre du labelle",
+        "note": "RHS AGM ; parfum de chocolat, 2 floraisons par an"
+      },
+      {
+        "nom": "Jungle Monarch",
+        "couleur": "jaune-brun à grandes taches pourpre-brun, labelle blanc à tache centrale",
+        "note": "RHS AGM ; parfumé"
+      },
+      {
+        "nom": "Oncidium naevium (espèce)",
+        "couleur": "étoiles blanches ponctuées de rouge, point jaune central",
+        "note": "RHS AGM ; parfum sucré"
+      },
+      {
+        "nom": "Oncidium sphacelatum 'Westwood'",
+        "couleur": "jaune vif",
+        "note": "Orchids Limited ; hampes arquées jusqu'à 90 cm"
+      },
+      {
+        "nom": "Cleopatra",
+        "couleur": "pourpre",
+        "note": "Mayesh – oncidium du Japon en fleur coupée"
+      },
+      {
+        "nom": "Red Lady",
+        "couleur": "rouge",
+        "note": "Mayesh – oncidium du Japon en fleur coupée"
+      },
+      {
+        "nom": "Choco",
+        "couleur": "brun chocolat",
+        "note": "Mayesh – oncidium du Japon en fleur coupée"
+      }
+    ],
+    "formes": "Panicule coupée ramifiée de 60 cm à 1 m portant des dizaines de petites fleurs (« spray orchid ») ; plante en pot ; branches détachées pour bouquets aériens.",
+    "saison": "Toute l'année (Taïwan, Thaïlande, Japon).",
+    "tenue_vase": "10–21 jours",
+    "gamme_prix": "€",
+    "rarete_jeu": "commune",
+    "notes_dessin": "Petite fleur de 2–3 cm dont le grand labelle jaune, étalé et lobé, figure une jupe de danseuse, tandis que les petits sépales et pétales bruns ou barrés de brun forment le buste et les bras. Au centre du labelle, un cal verruqueux orange ou brun ; la colonne minuscule porte deux petites ailes. Des dizaines à des centaines de fleurs (60 à 80 chez 'Golden Shower') sont portées par des panicules ramifiées et arquées, en nuage léger ; les hybrides Twinkle et Sharry Baby ont des fleurs d'1 cm très nombreuses. Pseudobulbes ovales aplatis et luisants, coiffés d'une à deux feuilles.",
+    "wiki": "Oncidium",
+    "img_queries": [
+      "Oncidium Gower Ramsey",
+      "Oncidium Sharry Baby",
+      "Oncidium Twinkle",
+      "Oncidium sphacelatum"
+    ],
+    "sources": [
+      "https://thursd.com/products/cut-flowers/orchids/oncidium-golden-shower",
+      "https://www.nparks.gov.sg/florafaunaweb/flora/5/5/5556",
+      "https://www.nparks.gov.sg/florafaunaweb/flora/3/3/3375",
+      "https://www.rhs.org.uk/plants/pdfs/rhs-recommended-award-of-garden-merit-orchids.pdf",
+      "https://store.orchidweb.com/products/oncidium-gower-ramsey-goldiana-x-guinea-gold"
+    ]
+  },
+  {
+    "id": "cambria",
+    "nom_fr": "Cambria et hybrides intergénériques (Vuylstekeara, Burrageara, Beallara…)",
+    "nom_en": "Cambria-type orchids",
+    "latin": "Hybrides intergénériques Oncidiinae : × Vuylstekeara, × Burrageara, × Beallara, × Oncostele, × Colmanara, × Aliceara, × Wilsonara, × Degarmoara",
+    "famille": "Orchidaceae",
+    "categorie": "Orchidées",
+    "role": "secondaire",
+    "couleurs": [
+      "rouge",
+      "rouge bordeaux",
+      "fuchsia",
+      "rose",
+      "pourpre",
+      "blanc",
+      "ivoire",
+      "jaune",
+      "bronze",
+      "marbré",
+      "tacheté léopard",
+      "labelle blanc maculé"
+    ],
+    "varietes": [
+      {
+        "nom": "Vuylstekeara Cambria 'Plush'",
+        "couleur": "rouge bordeaux, labelle blanc marbré de rouge",
+        "note": "Orchids Limited ; FCC/RHS ; l'hybride qui a donné son nom aux « Cambria »"
+      },
+      {
+        "nom": "Vuylstekeara Melissa Brianne 'Dark'",
+        "couleur": "fuchsia profond saturé",
+        "note": "Orchids Limited"
+      },
+      {
+        "nom": "Vuylstekeara Carnivale 'Rio'",
+        "couleur": "rose bubble-gum vif",
+        "note": "Orchids Limited ; jusqu'à 4 hampes"
+      },
+      {
+        "nom": "Vuylstekeara Fall In Love 'Lovely Lady'",
+        "couleur": "pourpre, grandes étoiles de 8,5–9 cm",
+        "note": "Orchids Limited"
+      },
+      {
+        "nom": "Vuylstekeara Linda Isler 'Red'",
+        "couleur": "rouge",
+        "note": "Orchids Limited"
+      },
+      {
+        "nom": "Burrageara Nelly Isler 'Swiss Beauty'",
+        "couleur": "rouge vif, labelle tacheté à centre jaune",
+        "note": "RHS AGM (sous Oncidopsis) ; Orchids Limited ; le plus célèbre intergénérique rouge"
+      },
+      {
+        "nom": "Burrageara Stefan Isler",
+        "couleur": "rouge profond",
+        "note": "Orchids Limited ; plante cadeau populaire"
+      },
+      {
+        "nom": "Burrageara Living Fire 'Glowing Embers'",
+        "couleur": "rouge braise, labelle blanc et rose",
+        "note": "Orchids Limited"
+      },
+      {
+        "nom": "Beallara Tahoma Glacier 'Green'",
+        "couleur": "ivoire à reflets verts, marques acajou, labelle marqué de bordeaux",
+        "note": "Orchids Limited ; fleurs de 15 cm"
+      },
+      {
+        "nom": "Beallara Marfitch 'Howard's Dream'",
+        "couleur": "pourpre raisin profond",
+        "note": "Orchids Limited ; AM/AOS ; étoiles de 12 cm sur tiges de 90 cm"
+      },
+      {
+        "nom": "Beallara Tropic Tom",
+        "couleur": "mélange de couleurs",
+        "note": "Orchids Limited ; grandes fleurs"
+      },
+      {
+        "nom": "Oncostele Wildcat",
+        "couleur": "rouge rubis à jaune marqué de brun",
+        "note": "RHS AGM ; souvent vendu comme « Cambria »"
+      },
+      {
+        "nom": "Oncostele Wildcat 'Red Cat'",
+        "couleur": "rouge",
+        "note": "Orchids Limited ; hampes hautes ramifiées"
+      },
+      {
+        "nom": "Colmanara Wildcat (variétés)",
+        "couleur": "rouge, jaune et bordeaux",
+        "note": "Orchids Limited ; 2 floraisons par an ; fleurs 2–3 mois"
+      },
+      {
+        "nom": "Oncostele Midnight Miracles 'Masai Red'",
+        "couleur": "labelle rouge uni",
+        "note": "RHS AGM ; vendu sous le nom commercial « Masai »"
+      },
+      {
+        "nom": "Oncostele Midnight Miracles 'Masai Splash'",
+        "couleur": "labelle éclaboussé de blanc",
+        "note": "RHS AGM"
+      },
+      {
+        "nom": "Aliceara Peggy Ruth Carpenter",
+        "couleur": "rose marqué de rouge foncé, labelle blanc",
+        "note": "RHS AGM ; parfois en jardinerie"
+      },
+      {
+        "nom": "Aliceara Vivacious 'Partytime'",
+        "couleur": "multicolore à motifs",
+        "note": "Orchids Limited"
+      },
+      {
+        "nom": "Aliceara Patricia McCully",
+        "couleur": "pourpre étoilé",
+        "note": "Orchids Limited"
+      },
+      {
+        "nom": "Degarmoara Winter Wonderland 'White Fairy'",
+        "couleur": "blanc étoilé",
+        "note": "Orchids Limited"
+      },
+      {
+        "nom": "Wilsonara Aloha Kapoho",
+        "couleur": "rouge uni",
+        "note": "Orchids Limited ; très florifère"
+      },
+      {
+        "nom": "Wilsonara Red Pacific 'Deep Shadows'",
+        "couleur": "rouge sombre",
+        "note": "Orchids Limited ; HCC/AOS, hampes ramifiées"
+      },
+      {
+        "nom": "Renaissance Grandeur",
+        "couleur": "rouge, labelle blanc",
+        "note": "Anthura (Exclusive Orchids) – très parfumé, longues hampes ; 35 j"
+      },
+      {
+        "nom": "Barrocco Red",
+        "couleur": "rouge brillant, labelle rose",
+        "note": "Anthura – Cambria compact, fleur 5 cm ; 48 j"
+      },
+      {
+        "nom": "Barrocco Bronze",
+        "couleur": "bronze",
+        "note": "Anthura – série Barrocco"
+      }
+    ],
+    "formes": "Plante en pot 9–12 cm à 1–3 hampes (parfois en cascade) ; hampes coupées pour compositions de luxe.",
+    "saison": "Toute l'année en pot ; pic de floraison de l'automne au printemps.",
+    "tenue_vase": "5–7 semaines sur la plante (35–48 j chez Anthura) ; 7–10 jours en coupe",
+    "gamme_prix": "€€",
+    "rarete_jeu": "rare",
+    "notes_dessin": "Fleurs plates et larges de 5 à 15 cm, étoilées ou presque rondes, aux couleurs saturées (rouge, bordeaux, fuchsia, blanc, jaune) couvertes de macules, de marbrures et de taches « peau de léopard ». Le labelle est large, plat, en éventail, souvent blanc ou rose avec un masque central coloré et un cal jaune en relief. 5 à 15 fleurs alternent sur une hampe arquée, parfois ramifiée ; les Beallara ont des étoiles géantes aux segments pointus. Pseudobulbes ovales aplatis et lisses, vert franc, portant deux feuilles fines et souples.",
+    "wiki": "Vuylstekeara",
+    "img_queries": [
+      "Vuylstekeara Cambria Plush",
+      "Burrageara Nelly Isler",
+      "Beallara Tahoma Glacier",
+      "Oncostele Wildcat"
+    ],
+    "sources": [
+      "https://www.rhs.org.uk/plants/pdfs/rhs-recommended-award-of-garden-merit-orchids.pdf",
+      "https://store.orchidweb.com/products/burrageara-nelly-isler-swiss-beauty-am-aos",
+      "https://anthura.nl/en/products/exclusive-orchids/renaissance-grandeur/",
+      "https://thursd.com/articles/interview-inca-orchids",
+      "https://store.orchidweb.com/products/beallara-tahoma-glacier-green-mtssa-cartagena-x-oda-alaskan-sunset"
+    ]
+  },
+  {
+    "id": "odontoglossum",
+    "nom_fr": "Odontoglossum, Odontioda et Odontocidium",
+    "nom_en": "Odontoglossum (odont)",
+    "latin": "Odontoglossum (aujourd'hui inclus dans Oncidium) et hybrides × Odontioda, × Odontocidium, × Wilsonara",
+    "famille": "Orchidaceae",
+    "categorie": "Orchidées",
+    "role": "secondaire",
+    "couleurs": [
+      "jaune",
+      "jaune taché d'acajou",
+      "rouge",
+      "rouge écarlate",
+      "bordeaux orangé",
+      "orange",
+      "or et bronze"
+    ],
+    "varietes": [
+      {
+        "nom": "Odontoglossum retusum (espèce)",
+        "couleur": "jaune et rouge-orangé",
+        "note": "Orchids Limited ; grappes ramifiées"
+      },
+      {
+        "nom": "Odontioda Hilo Glory 'HOF#6'",
+        "couleur": "rouge uni",
+        "note": "Orchids Limited"
+      },
+      {
+        "nom": "Odontioda Aissa McLaughlin",
+        "couleur": "rouges",
+        "note": "Orchids Limited ; jusqu'à 15 fleurs par hampe"
+      },
+      {
+        "nom": "Odontioda Nettie Valentine 'H-188'",
+        "couleur": "rouge pur, labelle orange",
+        "note": "Orchids Limited"
+      },
+      {
+        "nom": "Odontocidium Tiger Crow 'Golden Girl'",
+        "couleur": "jaune marqué de motifs acajou",
+        "note": "Orchids Limited ; hybride classique de 1992"
+      },
+      {
+        "nom": "Odontocidium Susan Kaufmann 'Black Gold'",
+        "couleur": "rouge écarlate profond, labelle moucheté de rouge",
+        "note": "Orchids Limited ; très florifère"
+      },
+      {
+        "nom": "Odontocidium Catatante 'Pacific Sun Spots'",
+        "couleur": "bordeaux orangé",
+        "note": "Orchids Limited ; AM/AOS, tiges de 75–90 cm"
+      },
+      {
+        "nom": "Wilsonara Tiger Brew 'Pacific Holiday'",
+        "couleur": "étoiles jaunes marquées d'acajou rougeâtre",
+        "note": "Orchids Limited ; fleurs de 7–8 cm"
+      },
+      {
+        "nom": "Wilsonara Tropic Breeze 'Everglades'",
+        "couleur": "or et bronze",
+        "note": "Orchids Limited ; HCC/AOS, centaines de fleurs sur hampe de 2,5 m"
+      }
+    ],
+    "formes": "Plante en pot ; hampes ramifiées coupées pour compositions.",
+    "saison": "Automne à printemps.",
+    "tenue_vase": "4–6 semaines sur la plante ; 10–14 jours en coupe",
+    "gamme_prix": "€€€",
+    "rarete_jeu": "rare",
+    "notes_dessin": "Fleurs étoilées de 5 à 8 cm aux segments lancéolés, aux bords ondulés ou crispés, jaunes, blancs ou rouges, abondamment marqués de taches, de barres et de mouchetures acajou ou rouge brique. Le labelle, plus clair, est frangé ou dentelé avec une crête jaune ; la colonne porte deux petites ailes. Fleurs nombreuses sur des hampes ramifiées et arquées au-dessus de pseudobulbes ovales comprimés à feuilles fines.",
+    "wiki": "Odontoglossum",
+    "img_queries": [
+      "Odontoglossum",
+      "Odontioda",
+      "Odontocidium Tiger Crow",
+      "Odontoglossum crispum"
+    ],
+    "sources": [
+      "https://store.orchidweb.com/products/odontoglossum-retusum",
+      "https://store.orchidweb.com/products/odontocidium-tiger-crow-golden-girl-odcdm-tiger-hambuhren-x-odcdm-crowborough",
+      "https://www.floricultura.com/en/orchidaceae/odontoglossum/87/",
+      "https://thursd.com/articles/interview-inca-orchids"
+    ]
+  },
+  {
+    "id": "brassia",
+    "nom_fr": "Brassia (orchidée araignée) et hybrides",
+    "nom_en": "Spider orchid",
+    "latin": "Brassia spp., × Miltassia, Oncidium « Tarantula »",
+    "famille": "Orchidaceae",
+    "categorie": "Orchidées",
+    "role": "texture",
+    "couleurs": [
+      "vert pâle",
+      "jaune verdâtre",
+      "taché de brun",
+      "acajou",
+      "pourpre",
+      "corail",
+      "crème"
+    ],
+    "varietes": [
+      {
+        "nom": "Brassia verrucosa (espèce)",
+        "couleur": "vert pâle taché de brun, labelle crème à verrues vertes",
+        "note": "Orchids Limited ; fleurs de 20–25 cm, parfumées, 4–8 semaines"
+      },
+      {
+        "nom": "Brassia verrucosa 'Costa Rica'",
+        "couleur": "vert pâle taché de brun",
+        "note": "Orchids Limited ; compacte, grandes fleurs parfumées"
+      },
+      {
+        "nom": "Brassia wageneri (espèce)",
+        "couleur": "jaune verdâtre marqué d'acajou",
+        "note": "Orchids Limited ; fleurs de 10–15 cm"
+      },
+      {
+        "nom": "Brassia Eternal Wind",
+        "couleur": "vert pâle barré de brun, labelle jaune pâle ponctué de brun et frangé",
+        "note": "NParks (Brachdiana × Rex)"
+      },
+      {
+        "nom": "Brassia Eternal Wind 'Sato'",
+        "couleur": "vert pâle barré de brun",
+        "note": "Orchids Limited – mériclone"
+      },
+      {
+        "nom": "Miltassia Charles M. Fitch 'Dark Monarch'",
+        "couleur": "pourpre foncé",
+        "note": "Orchids Limited (Brassia verrucosa × Miltonia spectabilis)"
+      },
+      {
+        "nom": "Miltassia Dark Star 'The OrchidWorks'",
+        "couleur": "étoiles pourpres tachetées de bordeaux",
+        "note": "Orchids Limited ; 2 floraisons par an"
+      },
+      {
+        "nom": "Tarantula XL Coral",
+        "couleur": "corail",
+        "note": "Anthura – Oncidium à grandes fleurs araignée"
+      }
+    ],
+    "formes": "Plante en pot ; hampes coupées pour compositions graphiques et mariages tropicaux.",
+    "saison": "Printemps–été surtout ; disponible ponctuellement toute l'année.",
+    "tenue_vase": "4–8 semaines sur la plante ; 10–14 jours en coupe",
+    "gamme_prix": "€€€",
+    "rarete_jeu": "precieuse",
+    "notes_dessin": "Orchidée-araignée : sépales et pétales très longs et filiformes (jusqu'à 20–25 cm chez B. verrucosa), étroits et effilés, vert pâle à jaune verdâtre, barrés de taches brun foncé ou acajou. Le labelle, plus court et large, en losange ou en spatule, est crème à jaune pâle, ponctué de petites verrues vertes ou brunes et parfois frangé. 6 à 12 fleurs sont disposées en deux rangées le long d'une hampe arquée, comme des araignées en marche ; les Miltassia ont des étoiles pourpres plus courtes. Pseudobulbes ovales aplatis à deux feuilles.",
+    "wiki": "Brassia",
+    "img_queries": [
+      "Brassia verrucosa",
+      "Brassia Eternal Wind",
+      "Miltassia",
+      "Brassia spider orchid"
+    ],
+    "sources": [
+      "https://store.orchidweb.com/products/brassia-verrucosa",
+      "https://www.nparks.gov.sg/florafaunaweb/flora/6/0/6024",
+      "https://anthura.nl/en/products/exclusive-orchids/tarantula-xl-coral/",
+      "https://en.wikipedia.org/wiki/Brassia"
+    ]
+  },
+  {
+    "id": "miltoniopsis",
+    "nom_fr": "Miltoniopsis et Miltonia (orchidée pensée)",
+    "nom_en": "Pansy orchid",
+    "latin": "Miltoniopsis spp. et hybrides ; Miltonia",
+    "famille": "Orchidaceae",
+    "categorie": "Orchidées",
+    "role": "focale",
+    "couleurs": [
+      "blanc",
+      "rose",
+      "rouge",
+      "pourpre",
+      "jaune",
+      "masque en cascade (waterfall)",
+      "bicolore",
+      "pélorique"
+    ],
+    "varietes": [
+      {
+        "nom": "Breathless",
+        "couleur": "contrastes colorés, masque en cascade (variable)",
+        "note": "Orchids Limited ; fleurs ~6 semaines, léger parfum"
+      },
+      {
+        "nom": "Herralexandre",
+        "couleur": "blanc",
+        "note": "Floricultura – pot 12 cm, toute l'année"
+      },
+      {
+        "nom": "Victorian Lace",
+        "couleur": "blanc",
+        "note": "Floricultura"
+      },
+      {
+        "nom": "Fairway",
+        "couleur": "blanc",
+        "note": "Floricultura"
+      },
+      {
+        "nom": "Trick Question",
+        "couleur": "rose",
+        "note": "Floricultura"
+      },
+      {
+        "nom": "Holy Shrine",
+        "couleur": "rouge",
+        "note": "Floricultura"
+      },
+      {
+        "nom": "Royal Flush",
+        "couleur": "rouge",
+        "note": "Floricultura"
+      },
+      {
+        "nom": "Abyss",
+        "couleur": "rouge",
+        "note": "Floricultura"
+      },
+      {
+        "nom": "Algebra",
+        "couleur": "rouge",
+        "note": "Floricultura"
+      },
+      {
+        "nom": "Ananda Apple 'Fioratta'",
+        "couleur": "rouge",
+        "note": "Floricultura"
+      },
+      {
+        "nom": "Etiquette",
+        "couleur": "bicolore à motif (« special »)",
+        "note": "Floricultura"
+      },
+      {
+        "nom": "Princess Diana 'Red Baron'",
+        "couleur": "bicolore à motif (« special »)",
+        "note": "Floricultura"
+      },
+      {
+        "nom": "Pretty In Pink",
+        "couleur": "rose, centre du labelle blanc, cascade rouge bordeaux",
+        "note": "Orchids Limited (Meadowdale × Martin Orenstein)"
+      },
+      {
+        "nom": "Maui Spring 'Bright Eyes'",
+        "couleur": "blanc-jaune lavé de rose-pourpre au centre",
+        "note": "Orchids Limited ; parfumée"
+      },
+      {
+        "nom": "Bert Field 'Eileen'",
+        "couleur": "rouge",
+        "note": "Orchids Limited ; AM/AOS, un des plus beaux rouges"
+      },
+      {
+        "nom": "Tome Yokoyama",
+        "couleur": "grandes fleurs blanches, cascade rouge sur le labelle",
+        "note": "Orchids Limited"
+      },
+      {
+        "nom": "Rene Komoda",
+        "couleur": "blanc à petit masque jaune",
+        "note": "Orchids Limited"
+      },
+      {
+        "nom": "Ariel",
+        "couleur": "jaunes à rouges, cascades noires",
+        "note": "Orchids Limited"
+      },
+      {
+        "nom": "Rubaiyat",
+        "couleur": "masque bordeaux profond",
+        "note": "Orchids Limited"
+      },
+      {
+        "nom": "Rouge 'Picardie'",
+        "couleur": "rouge",
+        "note": "Orchids Limited – mériclone"
+      },
+      {
+        "nom": "Zorro 'Yellow Delight'",
+        "couleur": "jaune",
+        "note": "Orchids Limited"
+      },
+      {
+        "nom": "Miltoniopsis vexillaria (espèce)",
+        "couleur": "rose",
+        "note": "Orchids Limited ; forêts de nuages de Colombie"
+      },
+      {
+        "nom": "Miltoniopsis roezlii (espèce)",
+        "couleur": "blanc à tache pourpre",
+        "note": "Orchids Limited"
+      },
+      {
+        "nom": "Miltoniopsis santanae (espèce)",
+        "couleur": "blanc",
+        "note": "Orchids Limited ; forme blanche de roezlii"
+      },
+      {
+        "nom": "Miltonia spectabilis var. moreliana 'Romeo'",
+        "couleur": "pourpre foncé",
+        "note": "Orchids Limited ; Brésil, parfum de réglisse"
+      },
+      {
+        "nom": "Miltonia spectabilis alba 'Full Moon'",
+        "couleur": "blanc",
+        "note": "Orchids Limited ; forme rare"
+      }
+    ],
+    "formes": "Plante en pot 9–12 cm ; fleurs coupées réservées à la boutonnière ou aux compositions éphémères.",
+    "saison": "Toute l'année en pot (Floricultura) ; pic au printemps et début d'été.",
+    "tenue_vase": "5–7 jours en coupe ; environ 6 semaines sur la plante",
+    "gamme_prix": "€€€",
+    "rarete_jeu": "precieuse",
+    "notes_dessin": "Fleur en forme de pensée de 7 à 12 cm, plate : pétales et sépales larges et arrondis, et un énorme labelle bilobé en éventail qui occupe la moitié inférieure de la fleur. Le centre du labelle porte un « masque » ou une « cascade » (waterfall) de lignes rayonnantes et de mouchetures rouges, pourpres ou noires, sur fond blanc, rose, rouge ou jaune. Texture très fine et satinée, presque veloutée ; 3 à 6 fleurs sur des hampes arquées courtes au-dessus de feuilles fines, vert-gris, issues de pseudobulbes aplatis.",
+    "wiki": "Miltoniopsis",
+    "img_queries": [
+      "Miltoniopsis",
+      "Miltoniopsis hybrid waterfall",
+      "Miltoniopsis vexillaria",
+      "Miltonia spectabilis"
+    ],
+    "sources": [
+      "https://www.floricultura.com/en/orchidaceae/miltoniopsis/14189/",
+      "https://store.orchidweb.com/products/miltoniopsis-pretty-in-pink-meadowdale-x-martin-orenstein",
+      "https://thursd.com/articles/interview-inca-orchids",
+      "https://en.wikipedia.org/wiki/Miltoniopsis"
+    ]
+  },
+  {
+    "id": "zygopetalum",
+    "nom_fr": "Zygopetalum",
+    "nom_en": "Zygopetalum orchid",
+    "latin": "Zygopetalum spp. et hybrides (× Zygonisia, × Zygotoria, × Zygolum)",
+    "famille": "Orchidaceae",
+    "categorie": "Orchidées",
+    "role": "focale",
+    "couleurs": [
+      "vert",
+      "vert taché de brun",
+      "pourpre",
+      "violet",
+      "indigo",
+      "bordeaux",
+      "framboise",
+      "blanc veiné de violet"
+    ],
+    "varietes": [
+      {
+        "nom": "Zygopetalum maculatum / mackayi (espèce)",
+        "couleur": "vert taché de brun, labelle blanc veiné de violet",
+        "note": "Orchids Limited ; parfum de jacinthe ; parent de presque tous les hybrides"
+      },
+      {
+        "nom": "Artur Elle 'Tombstone'",
+        "couleur": "coloris riches et contrastés",
+        "note": "Orchids Limited ; compact ; parfum à maturité"
+      },
+      {
+        "nom": "Zygotoria Midnight Jack",
+        "couleur": "vert, labelle pourpre, liseré pourpre",
+        "note": "Orchids Limited"
+      },
+      {
+        "nom": "Zygonisia Blue Lagoon",
+        "couleur": "labelle pourpre foncé",
+        "note": "Orchids Limited (Zygopetalum Imagination × Acacallis cyanea)"
+      },
+      {
+        "nom": "Zygonisia Cynosure 'Blue Birds'",
+        "couleur": "pourpre à indigo",
+        "note": "Orchids Limited (Aganisia cyanea × Zygopetalum Skippy Ku)"
+      },
+      {
+        "nom": "Zygolum Louisendorf 'Rhein Moonlight'",
+        "couleur": "couleurs riches",
+        "note": "Orchids Limited ; parfum sucré-poivré, compact"
+      }
+    ],
+    "formes": "Tige coupée de 40 à 60 cm (4 à 10 fleurs) ; plante en pot.",
+    "saison": "Automne–hiver surtout (octobre à mars).",
+    "tenue_vase": "14–21 jours",
+    "gamme_prix": "€€€",
+    "rarete_jeu": "precieuse",
+    "notes_dessin": "Fleur cireuse de 6 à 8 cm : sépales et pétales lancéolés vert pomme, barrés et tachetés de brun chocolat ou de pourpre, disposés en éventail au-dessus d'un large labelle étalé, blanc veiné de violet-bleu ou entièrement pourpre. À la base du labelle, un cal strié en forme de joug (zygon, d'où le nom). 4 à 10 fleurs sur une tige dressée ; feuilles longues, plissées et brillantes ; parfum puissant de jacinthe.",
+    "wiki": "Zygopetalum",
+    "img_queries": [
+      "Zygopetalum mackayi",
+      "Zygopetalum hybrid",
+      "Zygopetalum maculatum"
+    ],
+    "sources": [
+      "https://store.orchidweb.com/products/zygopetalum-maculatum-syn-zygopetalum-mackayi",
+      "https://store.orchidweb.com/products/zygotoria-midnight-jack-zgt-midnight-blue-x-z-jumpin-jack",
+      "https://en.wikipedia.org/wiki/Zygopetalum",
+      "https://thursd.com/growers/inca-orchids"
+    ]
+  },
+  {
+    "id": "paphiopedilum",
+    "nom_fr": "Paphiopedilum (sabot de Vénus)",
+    "nom_en": "Venus slipper / lady's slipper orchid",
+    "latin": "Paphiopedilum spp. et hybrides",
+    "famille": "Orchidaceae",
+    "categorie": "Orchidées",
+    "role": "focale",
+    "couleurs": [
+      "vert",
+      "vert pomme et blanc",
+      "vert et pourpre",
+      "blanc",
+      "jaune",
+      "jaune d'or",
+      "brun",
+      "bordeaux",
+      "rouge vineux",
+      "pourpre presque noir",
+      "rose",
+      "strié",
+      "ponctué",
+      "maculé"
+    ],
+    "varietes": [
+      {
+        "nom": "Maudiae 'Green'",
+        "couleur": "sépale dorsal blanc veiné de vert, pétales vert clair, sabot vert-jaune",
+        "note": "NParks ; feuillage marbré ; type « Maudiae » classique"
+      },
+      {
+        "nom": "Maudiae 'Red'",
+        "couleur": "rouge vineux",
+        "note": "NParks"
+      },
+      {
+        "nom": "Clair de Lune",
+        "couleur": "vert pomme et blanc, sabot vert-jaune vif",
+        "note": "RHS AGM, NParks ; Sanders ; tige raide, prisé des fleuristes"
+      },
+      {
+        "nom": "Pinocchio",
+        "couleur": "rose, jaune et vert",
+        "note": "RHS AGM ; floraison successive 6–9 mois"
+      },
+      {
+        "nom": "Leeanum",
+        "couleur": "dorsal blanc ponctué de pourpre, base vert émeraude, sabot brun-rouge luisant",
+        "note": "RHS AGM"
+      },
+      {
+        "nom": "Delophyllum",
+        "couleur": "rose pâle velu",
+        "note": "RHS AGM ; compact, feuilles marbrées, floraison successive"
+      },
+      {
+        "nom": "Paphiopedilum insigne (espèce)",
+        "couleur": "pétales et sabot brun doré, dorsal jaune ponctué de brun-rouge à marge blanche",
+        "note": "RHS AGM ; fleur solitaire ~12 cm"
+      },
+      {
+        "nom": "Macabre",
+        "couleur": "pourpre vineux presque noir (vinicolor)",
+        "note": "Orchids Limited ; « légendaire » parmi les Maudiae coloratum"
+      },
+      {
+        "nom": "Hilo Red Cherry",
+        "couleur": "rouge cerise vineux (vinicolor)",
+        "note": "Orchids Limited ; type Maudiae, dorsal légèrement en capuchon"
+      },
+      {
+        "nom": "Lady Isobel",
+        "couleur": "contrastes de couleur marqués, surtout sur le sépale dorsal",
+        "note": "Orchids Limited ; multiflore primaire (stonei × rothschildianum), 1897"
+      },
+      {
+        "nom": "Lynleigh Koopowitz",
+        "couleur": "rose à réseau rose foncé-pourpre",
+        "note": "Orchids Limited ; parfum framboise-crème (delenatii × malipoense)"
+      },
+      {
+        "nom": "Armeni White",
+        "couleur": "s'ouvre jaune puis pâlit au blanc",
+        "note": "Orchids Limited (armeniacum × delenatii)"
+      },
+      {
+        "nom": "Paphiopedilum armeniacum (espèce)",
+        "couleur": "jaune d'or",
+        "note": "Orchids Limited ; grandes fleurs ~3 semaines, hiver–printemps"
+      },
+      {
+        "nom": "Wossner Vietnam Gold",
+        "couleur": "jaune d'or lavé de pêche",
+        "note": "Orchids Limited (armeniacum × vietnamense)"
+      },
+      {
+        "nom": "Wossner Bellarmi",
+        "couleur": "grand jaune ponctué d'acajou",
+        "note": "Orchids Limited (bellatulum × armeniacum)"
+      },
+      {
+        "nom": "Wossner Vietnam Beauty",
+        "couleur": "blanc à rose finement ponctué",
+        "note": "Orchids Limited (bellatulum × vietnamense)"
+      },
+      {
+        "nom": "Black Diamond",
+        "couleur": "rose",
+        "note": "Orchids Limited (delenatii × fairrieanum)"
+      },
+      {
+        "nom": "Paphiopedilum rothschildianum (espèce)",
+        "couleur": "sépales striés de pourpre, latéraux jaunes striés de pourpre, sabot pourpre",
+        "note": "NParks ; 2–4 grandes fleurs sur hampe pourpre velue de 45 cm ; « roi des paphiopedilums »"
+      },
+      {
+        "nom": "Paphiopedilum spicerianum (espèce)",
+        "couleur": "dorsal blanc à ligne rouge foncé, pétales verts ondulés",
+        "note": "NParks ; fleur de 5–7,5 cm"
+      },
+      {
+        "nom": "Paphiopedilum concolor (espèce)",
+        "couleur": "jaune finement ponctué de pourpre",
+        "note": "NParks ; fleur de 5–7 cm"
+      },
+      {
+        "nom": "Paphiopedilum godefroyae (espèce)",
+        "couleur": "blanc maculé de pourpre",
+        "note": "NParks ; fleur de 5–9 cm"
+      },
+      {
+        "nom": "Paphiopedilum exul (espèce)",
+        "couleur": "pétales jaunes maculés de marron, dorsal vert-jaune à large marge blanche, sabot jaune",
+        "note": "NParks"
+      },
+      {
+        "nom": "Paphiopedilum parishii (espèce)",
+        "couleur": "dorsal verdâtre, pétales spiralés pourpre foncé",
+        "note": "NParks ; multiflore, hampe de 60 cm"
+      },
+      {
+        "nom": "Paphiopedilum micranthum var. eburneum",
+        "couleur": "clair, sabot presque blanc pur",
+        "note": "Orchids Limited ; forme rare « kwongsee »"
+      },
+      {
+        "nom": "Sabot vert",
+        "couleur": "vert",
+        "note": "Mayesh – paphiopedilum en fleur coupée"
+      },
+      {
+        "nom": "Sabot vert et blanc",
+        "couleur": "vert et blanc",
+        "note": "Mayesh – fleur coupée"
+      },
+      {
+        "nom": "Sabot vert et pourpre",
+        "couleur": "vert et pourpre",
+        "note": "Mayesh – fleur coupée"
+      },
+      {
+        "nom": "Sabot bordeaux",
+        "couleur": "bordeaux",
+        "note": "Mayesh – fleur coupée"
+      },
+      {
+        "nom": "Sabot brun",
+        "couleur": "brun",
+        "note": "Mayesh – fleur coupée"
+      },
+      {
+        "nom": "Sabot rouge",
+        "couleur": "rouge",
+        "note": "Mayesh – fleur coupée"
+      }
+    ],
+    "formes": "Fleur coupée sur tige de 20–35 cm (une fleur, rarement plusieurs) ; plante en pot ; multiflores pour collectionneurs.",
+    "saison": "Toute l'année en pot ; fleurs coupées surtout de l'hiver au printemps.",
+    "tenue_vase": "21–28 jours",
+    "gamme_prix": "€€€€",
+    "rarete_jeu": "precieuse",
+    "notes_dessin": "Le labelle est transformé en poche (sabot) lisse et luisante, au premier plan ; au-dessus se dresse un grand sépale dorsal en éventail, souvent strié de veines vertes ou pourpres ou ponctué. Les deux sépales latéraux soudés (synsépale) se cachent derrière le sabot, et les deux pétales latéraux s'étirent à l'horizontale ou retombent, parfois ornés de verrues et de poils sur les bords. Au centre, un staminode en écusson masque la colonne. Une fleur cireuse de 8 à 12 cm au sommet d'une tige poilue ; feuilles en rosette, souvent marbrées de vert foncé et clair (types Maudiae).",
+    "wiki": "Paphiopedilum",
+    "img_queries": [
+      "Paphiopedilum Maudiae",
+      "Paphiopedilum insigne",
+      "Paphiopedilum rothschildianum",
+      "Paphiopedilum Clair de Lune"
+    ],
+    "sources": [
+      "https://www.rhs.org.uk/plants/pdfs/rhs-recommended-award-of-garden-merit-orchids.pdf",
+      "https://www.nparks.gov.sg/florafaunaweb/flora/6/5/6510",
+      "https://www.nparks.gov.sg/florafaunaweb/flora/6/8/6893",
+      "https://store.orchidweb.com/products/paph-macabre",
+      "https://www.mayesh.com/paphiopedilum-green-white"
+    ]
+  },
+  {
+    "id": "phragmipedium",
+    "nom_fr": "Phragmipedium",
+    "nom_en": "Phragmipedium (tropical American slipper orchid)",
+    "latin": "Phragmipedium spp. et hybrides",
+    "famille": "Orchidaceae",
+    "categorie": "Orchidées",
+    "role": "focale",
+    "couleurs": [
+      "rouge-orangé",
+      "orange",
+      "rouge",
+      "saumon",
+      "rose",
+      "fuchsia",
+      "jaune",
+      "pêche",
+      "cuivre",
+      "vert",
+      "acajou"
+    ],
+    "varietes": [
+      {
+        "nom": "Phragmipedium besseae (espèce)",
+        "couleur": "rouge-orangé",
+        "note": "NParks ; fleurs jusqu'à 6 cm, successives ; à l'origine des hybrides colorés"
+      },
+      {
+        "nom": "Phragmipedium besseae flavum",
+        "couleur": "jaune riche",
+        "note": "Orchids Limited ; clone 'Taiyo' AM/AOS jusqu'à 9,5 cm"
+      },
+      {
+        "nom": "Don Wimber",
+        "couleur": "orange vif",
+        "note": "Orchids Limited ; 10–12 cm (Eric Young × besseae)"
+      },
+      {
+        "nom": "Hanne Popow",
+        "couleur": "rose à bicolore rose et blanc",
+        "note": "Orchids Limited ; fleurs de 5 cm, léger parfum de rose (besseae × schlimii)"
+      },
+      {
+        "nom": "Barbara LeAnn",
+        "couleur": "rose vif à fuchsia profond, pétales bicolores",
+        "note": "Orchids Limited (besseae × fischeri)"
+      },
+      {
+        "nom": "Pink Panther",
+        "couleur": "rose",
+        "note": "Orchids Limited ; parfum de rose (fischeri × schlimii)"
+      },
+      {
+        "nom": "Scarlet O'Hara",
+        "couleur": "rouge profond",
+        "note": "Orchids Limited (Jason Fischer × besseae)"
+      },
+      {
+        "nom": "Living Fire",
+        "couleur": "saumon",
+        "note": "Orchids Limited"
+      },
+      {
+        "nom": "Icho Tower",
+        "couleur": "tons pêche, jaune et orange (ou rouge profond selon la lignée)",
+        "note": "Orchids Limited"
+      },
+      {
+        "nom": "Bouley Bay",
+        "couleur": "orange à jaune, grand sabot",
+        "note": "Orchids Limited ; tétraploïde"
+      },
+      {
+        "nom": "China Dragon",
+        "couleur": "longs pétales rouge-orangé",
+        "note": "Orchids Limited (Grande × besseae)"
+      },
+      {
+        "nom": "Devil Fire",
+        "couleur": "pétales acajou rouge, sabot rouge foncé",
+        "note": "Orchids Limited (Grande × popowii)"
+      },
+      {
+        "nom": "Nitidissimum 'Neville'",
+        "couleur": "cuivre rouge intense, pétales de 35–40 cm",
+        "note": "Orchids Limited ; FCC/AOS"
+      },
+      {
+        "nom": "Phragmipedium wallisii / warszewiczianum (espèce)",
+        "couleur": "longs pétales verts, sabot clair",
+        "note": "Orchids Limited"
+      },
+      {
+        "nom": "Phragmipedium schlimii (espèce)",
+        "couleur": "rose et blanc",
+        "note": "Orchids Limited ; seule espèce parfumée (rose), 3–6 fleurs successives"
+      }
+    ],
+    "formes": "Plante en pot à floraison successive ; fleurs coupées exceptionnelles pour compositions de prestige.",
+    "saison": "Toute l'année chez les spécialistes (floraison successive pendant des mois).",
+    "tenue_vase": "10–14 jours par fleur ; hampe fleurie pendant plusieurs mois",
+    "gamme_prix": "€€€€",
+    "rarete_jeu": "legendaire",
+    "notes_dessin": "Sabot proche du paphiopedilum mais à poche plus allongée, au bord recourbé vers l'intérieur, et feuillage vert uni en touffe dressée. Deux silhouettes : les fleurs rondes et plates de 5 à 12 cm, rouge-orangé à rose vif (lignée besseae : 'Don Wimber', 'Hanne Popow'), et les fleurs aux pétales en rubans spiralés retombants de 30 à 60 cm (caudatum, 'Nitidissimum'). Les fleurs s'ouvrent l'une après l'autre sur la même hampe ; texture plus fine et plus mate que celle des paphiopedilums, avec quelques poils fins.",
+    "wiki": "Phragmipedium",
+    "img_queries": [
+      "Phragmipedium besseae",
+      "Phragmipedium Don Wimber",
+      "Phragmipedium caudatum",
+      "Phragmipedium schlimii"
+    ],
+    "sources": [
+      "https://www.nparks.gov.sg/florafaunaweb/flora/6/3/6331",
+      "https://store.orchidweb.com/products/phrag-don-wimber-4n-eric-young-mont-millais-am-rhs-x-besseae-4n",
+      "https://store.orchidweb.com/products/phrag-hanne-popow-pink-form-besseae-x-schlimii",
+      "https://en.wikipedia.org/wiki/Phragmipedium"
+    ]
+  },
+  {
+    "id": "cattleya",
+    "nom_fr": "Cattleya et hybrides (Rhyncholaeliocattleya, Brassolaeliocattleya…)",
+    "nom_en": "Cattleya (corsage orchid)",
+    "latin": "Cattleya spp. et hybrides intergénériques (Rlc., Blc., Lc., Slc., Pot., Ctt., Laelia)",
+    "famille": "Orchidaceae",
+    "categorie": "Orchidées",
+    "role": "focale",
+    "couleurs": [
+      "lavande",
+      "mauve",
+      "rose",
+      "fuchsia",
+      "magenta",
+      "pourpre",
+      "blanc",
+      "vert lime",
+      "jaune",
+      "orange",
+      "rouge",
+      "bleu lavande (coerulea)",
+      "splash",
+      "labelle contrasté à gorge jaune"
+    ],
+    "varietes": [
+      {
+        "nom": "Cattleya trianae (espèce)",
+        "couleur": "lavande, labelle jaune, bleu et rouge",
+        "note": "Thursd ; « orchidée de Noël », fleur nationale de Colombie"
+      },
+      {
+        "nom": "Cattleya trianae coerulea",
+        "couleur": "bleu lavande",
+        "note": "Orchids Limited ('Blue Amethyst' × 'Blue Moon')"
+      },
+      {
+        "nom": "Michelle Obama",
+        "couleur": "fuchsia et lavande",
+        "note": "Chadwick & Son Orchids (Thursd)"
+      },
+      {
+        "nom": "Cattlianthe White Bridal",
+        "couleur": "blanc, parfum de jasmin",
+        "note": "Thursd (Angelwalker × Candy Tuft) ; type walkeriana compact"
+      },
+      {
+        "nom": "Rhyncholaeliocattleya Taichung Beauty",
+        "couleur": "rose foncé, labelle rouge pourpre à gorge jaune strié de rouge",
+        "note": "NParks ; fleurs de 15–17 cm"
+      },
+      {
+        "nom": "Rhyncholaeliocattleya Yen Corona 'Green Genie'",
+        "couleur": "sépales vert pomme, pétales crème lavés de rose-pourpre, labelle rose-pourpre",
+        "note": "NParks ; fleurs de 7–8 cm"
+      },
+      {
+        "nom": "Rhyncholaeliocattleya Ports of Paradise",
+        "couleur": "vert lime à vert-jaune",
+        "note": "NParks ; 15–18 cm, parfum de citron vert"
+      },
+      {
+        "nom": "Rhyncholaeliocattleya Duh's White 'Peppa Pig'",
+        "couleur": "grandes fleurs blanc pur",
+        "note": "Orchids Limited (Rl. digbyana × Rlc. Mount Hood)"
+      },
+      {
+        "nom": "Brassolaeliocattleya Chia Lin 'Shinsu'",
+        "couleur": "rouge profond (jaune à l'ouverture)",
+        "note": "Orchids Limited ; parfum épicé"
+      },
+      {
+        "nom": "Brassolaeliocattleya Chyong Guu Chaffinch 'Sunset Blaze'",
+        "couleur": "grand jaune, labelle écarlate",
+        "note": "Orchids Limited ; parfum d'agrume"
+      },
+      {
+        "nom": "Brassolaeliocattleya Dora Louise Capen 'Lea'",
+        "couleur": "pétales « splash » éclaboussés de couleur",
+        "note": "Orchids Limited ; parfum citronné"
+      },
+      {
+        "nom": "Brassolaeliocattleya Waianae Leopard 'Ching Hua'",
+        "couleur": "pétales verts cireux tachetés de pourpre",
+        "note": "Orchids Limited ; compact"
+      },
+      {
+        "nom": "Potinara Hoku Gem",
+        "couleur": "orange ponctué de rouge",
+        "note": "Orchids Limited ; refleurit 2 fois par an"
+      },
+      {
+        "nom": "Potinara Memoria Harriet George",
+        "couleur": "rouge",
+        "note": "Orchids Limited ; parfumé"
+      },
+      {
+        "nom": "Sophrolaeliocattleya Jewel Box 'Scheherazade'",
+        "couleur": "rouge brillant",
+        "note": "Orchids Limited ; fleurs de 7–10 cm"
+      },
+      {
+        "nom": "Sophrolaeliocattleya Sierra Doll",
+        "couleur": "rose clair à magenta",
+        "note": "Orchids Limited ; miniature"
+      },
+      {
+        "nom": "Epicattleya René Marqués",
+        "couleur": "sépales et pétales verts, labelle jaune ondulé, colonne pourpre",
+        "note": "NParks ; clone 'Flame Thrower' vert, jaune et rose vif"
+      },
+      {
+        "nom": "Cattleya walkeriana f. flamea",
+        "couleur": "lavande flammée de magenta",
+        "note": "Orchids Limited"
+      },
+      {
+        "nom": "Laelia anceps var. dawsonii",
+        "couleur": "blanc, intérieur de la colonne acajou",
+        "note": "Orchids Limited ; Mexique, très rustique"
+      },
+      {
+        "nom": "Laelia purpurata var. carnea",
+        "couleur": "blanc, labelle rose saumon",
+        "note": "Orchids Limited ; grandes fleurs parfumées du Brésil"
+      },
+      {
+        "nom": "Cattleya blanche",
+        "couleur": "blanc",
+        "note": "Mayesh – fleur coupée"
+      },
+      {
+        "nom": "Cattleya rose",
+        "couleur": "rose",
+        "note": "Mayesh – fleur coupée"
+      },
+      {
+        "nom": "Cattleya pourpre",
+        "couleur": "pourpre",
+        "note": "Mayesh – fleur coupée"
+      }
+    ],
+    "formes": "Fleur coupée seule ou par 2–5 (corsages, bouquets de mariée, bijoux floraux) ; plante en pot ; mini-cattleyas compactes.",
+    "saison": "Toute l'année selon les hybrides ; pic de l'automne au printemps (C. trianae en hiver).",
+    "tenue_vase": "7–10 jours en coupe ; 2–3 semaines sur la plante",
+    "gamme_prix": "€€€€",
+    "rarete_jeu": "precieuse",
+    "notes_dessin": "La « reine des orchidées » : grande fleur de 10 à 18 cm aux pétales larges, ondulés et froissés comme de la soie, aux sépales plus étroits et lancéolés. Le labelle tubulaire enveloppe la colonne puis s'évase en une large jupe aux bords frangés et ondulés, d'une couleur plus profonde avec une gorge jaune ou veinée. 1 à 5 fleurs sortent d'une gaine verte au sommet de pseudobulbes en massue coiffés d'une ou deux feuilles épaisses et coriaces. Les mini-cattleyas (Sophrolaeliocattleya) ont des fleurs de 5 à 10 cm plus cireuses ; les Rhyncholaeliocattleya issues de Rhyncholaelia digbyana ont un labelle très frangé.",
+    "wiki": "Cattleya",
+    "img_queries": [
+      "Cattleya trianae",
+      "Rhyncholaeliocattleya",
+      "Cattleya labiata",
+      "Cattleya walkeriana"
+    ],
+    "sources": [
+      "https://thursd.com/products/plants/orchid-plants/cattleya-trianae",
+      "https://thursd.com/articles/cattleya-orchid-chadwick-and-son",
+      "https://www.nparks.gov.sg/florafaunaweb/flora/6/9/6906",
+      "https://www.mayesh.com/cattleya-orchid-white",
+      "https://store.orchidweb.com/products/blc-chia-lin-shinsu-blc-oconee-x-blc-maitland"
+    ]
+  },
+  {
+    "id": "epidendrum",
+    "nom_fr": "Epidendrum (orchidée crucifix)",
+    "nom_en": "Reed-stem epidendrum / crucifix orchid",
+    "latin": "Epidendrum spp. et hybrides (E. ibaguense, E. radicans)",
+    "famille": "Orchidaceae",
+    "categorie": "Orchidées",
+    "role": "remplissage",
+    "couleurs": [
+      "orange",
+      "rouge",
+      "jaune",
+      "rose",
+      "mauve",
+      "pourpre",
+      "blanc",
+      "vert"
+    ],
+    "varietes": [
+      {
+        "nom": "Epidendrum ibaguense (espèce)",
+        "couleur": "mauve, rouge, orange ou jaune",
+        "note": "NParks ; « orchidée crucifix », fleurs de 2–3 cm en grappe terminale"
+      },
+      {
+        "nom": "Epidendrum radicans 'White'",
+        "couleur": "blanc",
+        "note": "Secret Garden (pot XL)"
+      },
+      {
+        "nom": "Joseph Lii",
+        "couleur": "rouge, labelle rouge à centre jaune moucheté",
+        "note": "NParks (Orange Glow × cinnabarinum)"
+      },
+      {
+        "nom": "Shizuno Muraoka",
+        "couleur": "jaune uni",
+        "note": "Orchids Limited"
+      },
+      {
+        "nom": "Cinnabar Sunset",
+        "couleur": "orange vif, labelle rouge à jaune",
+        "note": "Orchids Limited (Sun Valley × cinnabarinum)"
+      },
+      {
+        "nom": "Epidendrum ciliare (espèce)",
+        "couleur": "vert pâle, labelle blanc frangé",
+        "note": "Orchids Limited ; très parfumé, port de cattleya"
+      },
+      {
+        "nom": "Epidendrum floribundum (espèce)",
+        "couleur": "sépales verts, labelle blanc veiné de pourpre",
+        "note": "Orchids Limited ; parfum de fruit de la passion"
+      },
+      {
+        "nom": "Epidendrum coriifolium (espèce)",
+        "couleur": "vert",
+        "note": "Orchids Limited ; parfum de bonbon à la pomme"
+      },
+      {
+        "nom": "Epidendrum (Japon) orange",
+        "couleur": "orange",
+        "note": "Mayesh – fleur coupée du Japon"
+      },
+      {
+        "nom": "Epidendrum (Japon) rouge",
+        "couleur": "rouge",
+        "note": "Mayesh – fleur coupée du Japon"
+      },
+      {
+        "nom": "Epidendrum (Japon) pourpre",
+        "couleur": "pourpre",
+        "note": "Mayesh – fleur coupée du Japon"
+      },
+      {
+        "nom": "Epidendrum rose",
+        "couleur": "rose",
+        "note": "Mayesh – fleur coupée"
+      },
+      {
+        "nom": "Epidendrum blanc",
+        "couleur": "blanc",
+        "note": "Mayesh – fleur coupée"
+      }
+    ],
+    "formes": "Tige coupée fine (50 cm à 1 m) terminée par une boule de petites fleurs ; plante en pot (tiges de type roseau).",
+    "saison": "Toute l'année (Colombie, Japon, Pays-Bas).",
+    "tenue_vase": "10–14 jours",
+    "gamme_prix": "€€",
+    "rarete_jeu": "commune",
+    "notes_dessin": "Petites fleurs de 2 à 3 cm groupées en boule dense au sommet de tiges fines comme des roseaux. Chaque fleur forme une petite croix : sépales et pétales étroits étalés, et un labelle en croix à trois lobes frangés (le « crucifix »), souvent jaune ou moucheté au centre. Couleurs vives : orange, rouge, jaune, rose, mauve ; la boule refleurit en continu pendant des semaines. Les tiges portent des feuilles alternes coriaces et des racines aériennes.",
+    "wiki": "Epidendrum",
+    "img_queries": [
+      "Epidendrum ibaguense",
+      "Epidendrum radicans",
+      "Epidendrum hybrid",
+      "Epidendrum ciliare"
+    ],
+    "sources": [
+      "https://www.nparks.gov.sg/florafaunaweb/flora/1/9/1987",
+      "https://www.nparks.gov.sg/florafaunaweb/flora/6/0/6029",
+      "https://www.mayesh.com/epidendrum-japan-orange",
+      "https://store.orchidweb.com/products/epidendrum-cinnabar-sunset-sun-valley-x-cinnabarinum",
+      "https://en.wikipedia.org/wiki/Epidendrum_radicans"
+    ]
+  },
+  {
+    "id": "masdevallia",
+    "nom_fr": "Masdevallia",
+    "nom_en": "Masdevallia (kite orchid)",
+    "latin": "Masdevallia spp. et hybrides",
+    "famille": "Orchidaceae",
+    "categorie": "Orchidées",
+    "role": "texture",
+    "couleurs": [
+      "orange",
+      "orange fluo",
+      "rouge",
+      "rouge feu",
+      "magenta",
+      "rose électrique",
+      "jaune",
+      "jaune beurre",
+      "ivoire",
+      "marron",
+      "ponctué",
+      "veiné"
+    ],
+    "varietes": [
+      {
+        "nom": "Masdevallia veitchiana 'Prince de Galle'",
+        "couleur": "orange à poils pourpres irisés",
+        "note": "Orchids Limited ; AM/AOS"
+      },
+      {
+        "nom": "Masdevallia veitchiana 'Rainbow Machu Picchu'",
+        "couleur": "orange vif à reflets pourpres",
+        "note": "Orchids Limited ; fleur de 14 cm de haut"
+      },
+      {
+        "nom": "Masdevallia coccinea 'San Bar's Carmen Beauty'",
+        "couleur": "jaune clair passant à l'orange aux pointes",
+        "note": "Orchids Limited ; HCC/AOS"
+      },
+      {
+        "nom": "Masdevallia coccinea (rouges)",
+        "couleur": "rouge à magenta",
+        "note": "Orchids Limited"
+      },
+      {
+        "nom": "Masdevallia ignea (espèce)",
+        "couleur": "orange profond et rouge feu",
+        "note": "Orchids Limited ; Colombie, printemps"
+      },
+      {
+        "nom": "Cheryl Shohan 'Sweet Sister'",
+        "couleur": "rose électrique",
+        "note": "Orchids Limited"
+      },
+      {
+        "nom": "Dawn Glow",
+        "couleur": "base jaune lavée de rose",
+        "note": "Orchids Limited ; supporte la chaleur"
+      },
+      {
+        "nom": "Inca Snow",
+        "couleur": "blanc pur, gorge jaune-orangé",
+        "note": "Orchids Limited ; refleurit 3 fois par an"
+      },
+      {
+        "nom": "Celtic Frost 'Cinnamon and Honey'",
+        "couleur": "orange-jaune ponctué de pourpre foncé",
+        "note": "Orchids Limited ; parfumé"
+      },
+      {
+        "nom": "Maui Gold 'Tico'",
+        "couleur": "orange mangue et jaune",
+        "note": "Orchids Limited ; fleurs tubulaires"
+      },
+      {
+        "nom": "Snow Cone 'Mango Surprise'",
+        "couleur": "mangue, pourpre et ivoire",
+        "note": "Orchids Limited ; parfumé"
+      },
+      {
+        "nom": "Ted Khoe",
+        "couleur": "orange vif",
+        "note": "Orchids Limited"
+      },
+      {
+        "nom": "Aquarius 'Dawning of the Age'",
+        "couleur": "crème-jaune pâlissant",
+        "note": "Orchids Limited ; fleurs de 7,5 cm"
+      },
+      {
+        "nom": "Masdevallia princeps (espèce)",
+        "couleur": "or et marron ponctué de rouge",
+        "note": "Orchids Limited ; fleurs de 25–30 cm"
+      },
+      {
+        "nom": "Masdevallia amplexa (espèce)",
+        "couleur": "marron et jaune vif",
+        "note": "Orchids Limited ; floraison successive"
+      },
+      {
+        "nom": "Masdevallia tonduzii 'Makawao'",
+        "couleur": "jaune beurre",
+        "note": "Orchids Limited ; miniature"
+      }
+    ],
+    "formes": "Plante en pot de collection (miniature à moyenne) ; fleurs coupées pour micro-compositions et bijoux floraux.",
+    "saison": "Printemps–été surtout ; certains hybrides refleurissent plusieurs fois par an.",
+    "tenue_vase": "7–14 jours",
+    "gamme_prix": "€€€",
+    "rarete_jeu": "precieuse",
+    "notes_dessin": "Fleur triangulaire composée presque uniquement de trois sépales soudés en tube à la base, qui s'étirent en longues queues fines (caudae) ; pétales et labelle minuscules restent cachés dans la gorge. Couleurs saturées et lumineuses — orange, rouge, magenta, jaune — souvent veinées ou couvertes de poils fins qui donnent un reflet iridescent. Fleurs solitaires sur des pédoncules fins au-dessus d'une touffe de feuilles spatulées sans pseudobulbes ; vue de face, dessiner le triangle et ses trois queues, de profil le tube en entonnoir.",
+    "wiki": "Masdevallia",
+    "img_queries": [
+      "Masdevallia veitchiana",
+      "Masdevallia coccinea",
+      "Masdevallia ignea",
+      "Masdevallia hybrid"
+    ],
+    "sources": [
+      "https://store.orchidweb.com/products/masdevallia-veitchiana-prince-de-galle-am-aos",
+      "https://store.orchidweb.com/products/masdevallia-ignea",
+      "https://en.wikipedia.org/wiki/Masdevallia",
+      "https://en.wikipedia.org/wiki/Masdevallia_coccinea"
+    ]
+  },
+  {
+    "id": "disa",
+    "nom_fr": "Disa (fierté de la Montagne de la Table)",
+    "nom_en": "Disa / Pride of Table Mountain",
+    "latin": "Disa uniflora et Disa spp.",
+    "famille": "Orchidaceae",
+    "categorie": "Orchidées",
+    "role": "focale",
+    "couleurs": [
+      "écarlate",
+      "carmin",
+      "rouge",
+      "rose",
+      "rose mauve",
+      "blanc",
+      "jaune doré"
+    ],
+    "varietes": [
+      {
+        "nom": "Disa uniflora (espèce)",
+        "couleur": "écarlate à carmin, casque rose veiné de rouge, pétales jaunes ponctués de rouge",
+        "note": "Wikipedia, Thursd ; « Pride of Table Mountain », fleur de 10 cm"
+      },
+      {
+        "nom": "Disa cardinalis (espèce)",
+        "couleur": "rouge écarlate",
+        "note": "Wikipedia ; espèce parente des hybrides (>400 grex)"
+      },
+      {
+        "nom": "Disa tripetaloides (espèce)",
+        "couleur": "blanc à rose, petites fleurs ponctuées",
+        "note": "Wikipedia ; espèce parente des hybrides"
+      },
+      {
+        "nom": "Disa aurata (espèce)",
+        "couleur": "jaune doré",
+        "note": "Wikipedia ; espèce parente des hybrides"
+      },
+      {
+        "nom": "Disa racemosa (espèce)",
+        "couleur": "rose mauve veiné",
+        "note": "Wikipedia ; espèce parente des hybrides"
+      }
+    ],
+    "formes": "Fleur coupée sur tige de 15–60 cm (1 à 3 fleurs) ; plante en pot de spécialiste.",
+    "saison": "Été (floraison de janvier à mars en Afrique du Sud ; en été sous serre en Europe) ; offre très confidentielle.",
+    "tenue_vase": "7–10 jours",
+    "gamme_prix": "€€€€",
+    "rarete_jeu": "legendaire",
+    "notes_dessin": "Chez Disa uniflora, ce sont les sépales qui font la fleur : le sépale dorsal dressé forme un casque prolongé d'un court éperon, rose pâle à l'intérieur et veiné d'écarlate, tandis que les deux sépales latéraux, larges et étalés, écarlates à carmin, dominent la fleur (jusqu'à 10 cm d'envergure). Les vrais pétales, minuscules, restent dressés à l'intérieur du casque, jaunes ponctués de rouge, et le labelle est réduit à une languette étroite. 1 à 3 fleurs par tige au-dessus de feuilles lancéolées ; texture mate et lumineuse.",
+    "wiki": "Disa uniflora",
+    "img_queries": [
+      "Disa uniflora",
+      "Disa (plant)",
+      "Disa cardinalis",
+      "Disa hybrid"
+    ],
+    "sources": [
+      "https://thursd.com/products/cut-flowers/orchids/disa-uniflora",
+      "https://en.wikipedia.org/wiki/Disa_uniflora",
+      "https://en.wikipedia.org/wiki/Disa_(plant)"
+    ]
+  },
+  {
+    "id": "coelogyne",
+    "nom_fr": "Coelogyne",
+    "nom_en": "Coelogyne (necklace orchid)",
+    "latin": "Coelogyne spp.",
+    "famille": "Orchidaceae",
+    "categorie": "Orchidées",
+    "role": "secondaire",
+    "couleurs": [
+      "blanc neige",
+      "blanc",
+      "vert pomme",
+      "vert à jaune",
+      "labelle jaune d'or",
+      "labelle noir",
+      "labelle rouge chocolat"
+    ],
+    "varietes": [
+      {
+        "nom": "Coelogyne cristata (espèce)",
+        "couleur": "blanc neige, crêtes jaune d'or sur le labelle",
+        "note": "RHS AGM ; grappes retombantes parfumées, des centaines de fleurs sur les grosses touffes"
+      },
+      {
+        "nom": "Coelogyne cristata 'Mama's Pearl'",
+        "couleur": "blanc",
+        "note": "Orchids Limited ; parfum d'orange pelée, fleurs de 7–10 cm"
+      },
+      {
+        "nom": "Coelogyne pandurata (espèce)",
+        "couleur": "vert pomme, labelle éclaboussé de noir",
+        "note": "Orchids Limited ; « orchidée noire », fleurs de 8–10 cm"
+      },
+      {
+        "nom": "Coelogyne mayeriana 'Crystal Green'",
+        "couleur": "vert pomme, labelle à réseau noir",
+        "note": "Orchids Limited, NParks ; fleurs de 7,5 cm"
+      },
+      {
+        "nom": "Coelogyne usitana (espèce)",
+        "couleur": "blanc, labelle rouge chocolat",
+        "note": "Orchids Limited, NParks ; hampes zigzag retombantes"
+      },
+      {
+        "nom": "Coelogyne rochussenii (espèce)",
+        "couleur": "vert à jaune",
+        "note": "Orchids Limited, NParks ; jusqu'à 100 fleurs sur hampes de 60–90 cm"
+      },
+      {
+        "nom": "Coelogyne pulverula / dayana (espèce)",
+        "couleur": "blanc parfumé",
+        "note": "Orchids Limited ; grappes pendantes jusqu'à 1,2 m"
+      }
+    ],
+    "formes": "Plante en pot ou en panier aux grappes retombantes ; grappes coupées pour compositions suspendues.",
+    "saison": "Hiver–printemps (C. cristata de janvier à mars) ; espèces vertes au printemps–été.",
+    "tenue_vase": "2–3 semaines sur la plante ; 5–7 jours en coupe",
+    "gamme_prix": "€€€",
+    "rarete_jeu": "precieuse",
+    "notes_dessin": "C. cristata : fleurs blanc neige de 6 à 9 cm aux segments ondulés et légèrement froissés, retombant en grappes pendantes ; le labelle trilobé porte au centre 4 à 5 crêtes frangées jaune d'or comme une petite crête de coq. Les espèces vertes (C. pandurata, C. mayeriana) ont des fleurs vert pomme dont le labelle est éclaboussé ou réticulé de noir comme une dentelle. Pseudobulbes ronds, lisses et vert pâle serrés sur un rhizome, chacun coiffé de deux feuilles étroites ; texture cristalline et parfum d'agrume.",
+    "wiki": "Coelogyne",
+    "img_queries": [
+      "Coelogyne cristata",
+      "Coelogyne pandurata",
+      "Coelogyne mayeriana",
+      "Coelogyne usitana"
+    ],
+    "sources": [
+      "https://www.rhs.org.uk/plants/pdfs/rhs-recommended-award-of-garden-merit-orchids.pdf",
+      "https://store.orchidweb.com/products/coelogyne-pandurata",
+      "https://store.orchidweb.com/products/coelogyne-cristata-mama-s-pearl",
+      "https://en.wikipedia.org/wiki/Coelogyne"
+    ]
+  },
+  {
+    "id": "lycaste",
+    "nom_fr": "Lycaste",
+    "nom_en": "Lycaste orchid",
+    "latin": "Lycaste spp. et hybrides (dont L. skinneri / virginalis)",
+    "famille": "Orchidaceae",
+    "categorie": "Orchidées",
+    "role": "focale",
+    "couleurs": [
+      "blanc cristallin",
+      "rose",
+      "rose clair",
+      "rouge",
+      "rouge foncé",
+      "jaune",
+      "vert émeraude",
+      "bronze",
+      "bordé de rose",
+      "labelle rouge"
+    ],
+    "varietes": [
+      {
+        "nom": "Lycaste aromatica (espèce)",
+        "couleur": "jaune",
+        "note": "RHS AGM ; fort parfum de cannelle"
+      },
+      {
+        "nom": "Lycaste skinneri / virginalis var. alba",
+        "couleur": "blanc cristallin",
+        "note": "Orchids Limited ; fleurs de 12–18 cm, parfumées"
+      },
+      {
+        "nom": "Lycaste virginalis var. rosea",
+        "couleur": "rose",
+        "note": "Orchids Limited ; lignées japonaises"
+      },
+      {
+        "nom": "Lycaste schilleriana 'Rosea'",
+        "couleur": "forme à labelle rose",
+        "note": "Orchids Limited ; grandes fleurs 6–8 semaines"
+      },
+      {
+        "nom": "Lycaste locusta (espèce)",
+        "couleur": "vert émeraude foncé",
+        "note": "Orchids Limited ; parfum de melon"
+      },
+      {
+        "nom": "Lycaste lasioglossa (espèce)",
+        "couleur": "sépales bronze-cuivre, pétales et labelle jaunes",
+        "note": "Orchids Limited"
+      },
+      {
+        "nom": "Shoalhaven 'Miss Shonan'",
+        "couleur": "grand blanc bordé de rose, labelle rouge à centre blanc",
+        "note": "Orchids Limited ; BM/JOGA"
+      },
+      {
+        "nom": "Shoalhaven",
+        "couleur": "blanc à rose, labelle rouge",
+        "note": "Orchids Limited ; obtentions japonaises"
+      },
+      {
+        "nom": "Kiama 'Miss Kobe'",
+        "couleur": "rouge foncé",
+        "note": "Orchids Limited ; mériclone japonais"
+      },
+      {
+        "nom": "Abou Sunset",
+        "couleur": "rouge profond, fleurs rondes",
+        "note": "Orchids Limited ; nurserie Abou (Japon)"
+      },
+      {
+        "nom": "Angela Yu",
+        "couleur": "jaune",
+        "note": "Orchids Limited ; un des rares hybrides jaunes"
+      },
+      {
+        "nom": "Sunray",
+        "couleur": "rose clair",
+        "note": "Orchids Limited ; nurserie Abou"
+      },
+      {
+        "nom": "Rakuhoku",
+        "couleur": "blanc à jaune doux lavé de rose, labelle rouge",
+        "note": "Orchids Limited"
+      },
+      {
+        "nom": "Chita Prelude",
+        "couleur": "rouge à rose",
+        "note": "Orchids Limited ; nurserie Nagai (Japon)"
+      }
+    ],
+    "formes": "Plante en pot à fleurs solitaires ; fleurs coupées pour compositions de prestige.",
+    "saison": "Hiver–printemps.",
+    "tenue_vase": "6–8 semaines sur la plante ; 10–14 jours en coupe",
+    "gamme_prix": "€€€",
+    "rarete_jeu": "precieuse",
+    "notes_dessin": "Fleur triangulaire : trois grands sépales larges et étalés dessinent le triangle, tandis que les deux pétales, plus petits, restent dressés et rapprochés autour de la colonne comme un capuchon, au-dessus d'un petit labelle. Texture épaisse, cireuse, presque cristalline (L. skinneri en blanc, rose ou blanc bordé de rose), avec des espèces jaunes, vert émeraude ou bronze. Fleurs solitaires sur des tiges courtes naissant à la base de pseudobulbes ovoïdes, dont les grandes feuilles plissées tombent souvent avant la floraison.",
+    "wiki": "Lycaste",
+    "img_queries": [
+      "Lycaste skinneri",
+      "Lycaste aromatica",
+      "Lycaste hybrid",
+      "Lycaste virginalis"
+    ],
+    "sources": [
+      "https://www.rhs.org.uk/plants/pdfs/rhs-recommended-award-of-garden-merit-orchids.pdf",
+      "https://store.orchidweb.com/products/lycaste-virginalis-var-alba-syn-l-skinneri-var-alba-behar-x-emerardo",
+      "https://store.orchidweb.com/products/lycaste-shoalhaven-miss-shonan-bm-joga",
+      "https://en.wikipedia.org/wiki/Lycaste"
+    ]
+  },
+  {
+    "id": "ludisia",
+    "nom_fr": "Ludisia (orchidée-bijou)",
+    "nom_en": "Jewel orchid",
+    "latin": "Ludisia discolor",
+    "famille": "Orchidaceae",
+    "categorie": "Orchidées",
+    "role": "feuillage",
+    "couleurs": [
+      "feuillage bordeaux velouté",
+      "feuillage noir",
+      "feuillage vert",
+      "nervures rouges à rose cuivré",
+      "fleurs blanches à centre jaune"
+    ],
+    "varietes": [
+      {
+        "nom": "Ludisia discolor (espèce)",
+        "couleur": "feuilles bordeaux veloutées à nervures rouges ; fleurs blanches à centre jaune",
+        "note": "RHS AGM, NParks ; épi de 30 cm"
+      },
+      {
+        "nom": "Ludisia discolor (forme verte)",
+        "couleur": "feuilles vertes ; fleurs blanches à centre jaune",
+        "note": "NParks"
+      },
+      {
+        "nom": "Ludisia discolor 'Alba'",
+        "couleur": "variante albinos",
+        "note": "Wikipedia"
+      },
+      {
+        "nom": "Ludisia discolor 'Nigrescens'",
+        "couleur": "feuillage noir velours (« black velvet »)",
+        "note": "Wikipedia"
+      },
+      {
+        "nom": "Ludisia ravanii (espèce)",
+        "couleur": "orchidée-bijou des Philippines",
+        "note": "Wikipedia ; décrite en 2013"
+      }
+    ],
+    "formes": "Plante en pot (feuillage décoratif) ; boutures et terrariums ; épis floraux d'hiver.",
+    "saison": "Toute l'année pour le feuillage ; floraison en hiver.",
+    "tenue_vase": "Feuillage durable en pot ; épis floraux environ 1 mois",
+    "gamme_prix": "€€",
+    "rarete_jeu": "rare",
+    "notes_dessin": "Orchidée cultivée pour son feuillage : feuilles ovales de 5 à 7 cm d'un velours bordeaux à presque noir, parcourues de fines nervures longitudinales rouges ou rose cuivré qui scintillent à la lumière. Tiges charnues rampantes puis redressées, articulées. Les fleurs, petites (1–2 cm), blanches avec une colonne jaune torsadée, forment un épi dressé d'environ 30 cm. La forme verte a un feuillage vert à nervures claires, 'Nigrescens' un feuillage noir velours.",
+    "wiki": "Ludisia",
+    "img_queries": [
+      "Ludisia discolor",
+      "Ludisia discolor flowers",
+      "jewel orchid Ludisia"
+    ],
+    "sources": [
+      "https://www.rhs.org.uk/plants/pdfs/rhs-recommended-award-of-garden-merit-orchids.pdf",
+      "https://www.nparks.gov.sg/florafaunaweb/flora/2/2/2202",
+      "https://en.wikipedia.org/wiki/Ludisia"
+    ]
+  },
+  {
+    "id": "cypripedium",
+    "nom_fr": "Cypripedium (sabot de Vénus rustique)",
+    "nom_en": "Hardy lady's slipper orchid",
+    "latin": "Cypripedium spp. et hybrides",
+    "famille": "Orchidaceae",
+    "categorie": "Orchidées",
+    "role": "focale",
+    "couleurs": [
+      "jaune",
+      "blanc",
+      "crème",
+      "ivoire",
+      "rose",
+      "magenta",
+      "bordeaux",
+      "brun-pourpre",
+      "veiné",
+      "ponctué"
+    ],
+    "varietes": [
+      {
+        "nom": "Gabriela",
+        "couleur": "pétales et sépales bordeaux, sabot crème veiné de bordeaux",
+        "note": "RHS AGM ; marque Garden Orchids"
+      },
+      {
+        "nom": "Philipp",
+        "couleur": "sabot blanc ponctué de pourpre, sépales rose-pourpre",
+        "note": "RHS AGM ; marque Garden Orchids"
+      },
+      {
+        "nom": "Ulla Silkens",
+        "couleur": "sabot blanc à rose (variable)",
+        "note": "RHS AGM ; tardif, parfois 2 fleurs"
+      },
+      {
+        "nom": "Sabine",
+        "couleur": "sabot crème lavé de rose, pétales veinés de rouge",
+        "note": "RHS AGM"
+      },
+      {
+        "nom": "Michael",
+        "couleur": "crème lavé de rose, veiné",
+        "note": "RHS AGM ; souvent 2 fleurs par tige"
+      },
+      {
+        "nom": "Hank Small",
+        "couleur": "sabot jaune profond, pétales vrillés brun foncé",
+        "note": "RHS AGM ; touffe compacte"
+      },
+      {
+        "nom": "Ivory",
+        "couleur": "sabot blanc ivoire, tépales jaune-vert striés de bordeaux",
+        "note": "RHS AGM ; 2–3 fleurs par tige"
+      },
+      {
+        "nom": "Boots",
+        "couleur": "grandes fleurs, pétales vrillés brun-bordeaux, sabot crème",
+        "note": "RHS AGM"
+      },
+      {
+        "nom": "Dietrich",
+        "couleur": "crème, sabot finement strié de rose, sépales rouge-brun",
+        "note": "RHS AGM"
+      },
+      {
+        "nom": "Victoria",
+        "couleur": "sabot crème à jaune pâle, tépales vrillés rouge bordeaux à brun clair",
+        "note": "RHS AGM"
+      },
+      {
+        "nom": "Cypripedium reginae (espèce)",
+        "couleur": "pétales blancs, sabot blanc lavé et ponctué de magenta",
+        "note": "RHS AGM, Orchids Limited ; fleur d'État du Minnesota"
+      },
+      {
+        "nom": "Cypripedium reginae album",
+        "couleur": "blanc pur",
+        "note": "Orchids Limited ; rare"
+      },
+      {
+        "nom": "Cypripedium calceolus (espèce)",
+        "couleur": "sabot jaune, pétales vrillés pourpre-brun",
+        "note": "Wikipedia, Thursd ; plus grande orchidée d'Europe (fleur jusqu'à 9 cm), protégée"
+      },
+      {
+        "nom": "Cypripedium parviflorum var. pubescens (espèce)",
+        "couleur": "sabot jaune",
+        "note": "Orchids Limited ; « Yellow Lady's Slipper », parfum d'abricot"
+      },
+      {
+        "nom": "Cypripedium kentuckiense (espèce)",
+        "couleur": "grand sabot jaune, pétales chocolat clair",
+        "note": "Orchids Limited ; la plus grande des jaunes"
+      },
+      {
+        "nom": "Cypripedium formosanum (espèce)",
+        "couleur": "blanc ponctué de rouge, sabot blanc maculé de pourpre",
+        "note": "RHS AGM ; fleur penchée, feuilles en éventail"
+      },
+      {
+        "nom": "Cypripedium ventricosum (espèce)",
+        "couleur": "ivoire à jaune ou pourpre foncé",
+        "note": "RHS AGM ; hybride naturel calceolus × macranthos"
+      },
+      {
+        "nom": "Cypripedium candidum (espèce)",
+        "couleur": "sabot blanc",
+        "note": "Orchids Limited ; Midwest américain"
+      }
+    ],
+    "formes": "Plante de jardin vivace (pot de printemps) ; fleurs coupées exceptionnelles.",
+    "saison": "Mai–juin (floraison au jardin) ; plantes vendues au printemps.",
+    "tenue_vase": "2–3 semaines au jardin ; 5–7 jours en coupe",
+    "gamme_prix": "€€€€",
+    "rarete_jeu": "legendaire",
+    "notes_dessin": "Une grande poche (labelle) arrondie et gonflée, jaune vif, blanche, crème ou rose, ouverte en rond sur le dessus, domine la fleur. Autour, le sépale dorsal dressé au-dessus et le synsépale caché dessous, et deux pétales longs et étroits, souvent vrillés en tire-bouchon, brun-pourpre, bordeaux ou rayés. 1 à 3 fleurs au sommet d'une tige feuillée de 30 à 60 cm, aux feuilles larges, plissées et nervurées, vert tendre ; plante herbacée qui disparaît l'hiver.",
+    "wiki": "Cypripedium",
+    "img_queries": [
+      "Cypripedium calceolus",
+      "Cypripedium reginae",
+      "Cypripedium Gabriela",
+      "Cypripedium kentuckiense"
+    ],
+    "sources": [
+      "https://www.rhs.org.uk/plants/pdfs/rhs-recommended-award-of-garden-merit-orchids.pdf",
+      "https://thursd.com/articles/cypripedium-a-pearl-in-your-garden",
+      "https://thursd.com/articles/garden-orchids-give-your-garden-that-tropical-look",
+      "https://store.orchidweb.com/products/cypripedium-kentuckiense",
+      "https://en.wikipedia.org/wiki/Cypripedium_calceolus"
+    ]
+  },
+  {
+    "id": "rhynchostylis",
+    "nom_fr": "Rhynchostylis (orchidée queue de renard)",
+    "nom_en": "Foxtail orchid",
+    "latin": "Rhynchostylis spp.",
+    "famille": "Orchidaceae",
+    "categorie": "Orchidées",
+    "role": "secondaire",
+    "couleurs": [
+      "blanc",
+      "blanc ponctué de pourpre",
+      "rose",
+      "rouge foncé",
+      "orange",
+      "bleu-violet"
+    ],
+    "varietes": [
+      {
+        "nom": "Rhynchostylis gigantea (espèce)",
+        "couleur": "blanc à pourpre, ou blanc ponctué de pourpre",
+        "note": "NParks ; épis denses arqués, parfumés"
+      },
+      {
+        "nom": "Rhynchostylis gigantea rouge",
+        "couleur": "rouge foncé uni",
+        "note": "Orchids Limited ; parfum d'agrume"
+      },
+      {
+        "nom": "Rhynchostylis gigantea alba",
+        "couleur": "blanc pur",
+        "note": "Orchids Limited"
+      },
+      {
+        "nom": "Rhynchostylis gigantea 'Orange'",
+        "couleur": "orange",
+        "note": "Orchids Limited ; forme rare"
+      },
+      {
+        "nom": "Rhynchostylis retusa (espèce)",
+        "couleur": "blanc taché de rose, labelle rose",
+        "note": "NParks ; grappes retombantes"
+      },
+      {
+        "nom": "Rhynchostylis coelestis 'Blue'",
+        "couleur": "blanc lavé de bleu-violet, labelle bleu-violet",
+        "note": "NParks ; parfumé"
+      }
+    ],
+    "formes": "Plante en panier ou montée sur bois ; épis floraux coupés pour compositions asiatiques.",
+    "saison": "Hiver–printemps (R. gigantea de novembre à février).",
+    "tenue_vase": "7–14 jours",
+    "gamme_prix": "€€€",
+    "rarete_jeu": "rare",
+    "notes_dessin": "Des dizaines de petites fleurs rondes de 2 à 3 cm serrées en un épi cylindrique dense, arqué ou pendant, qui évoque une queue de renard touffue. Fleurs blanches ponctuées de pourpre, roses, rouge sombre, orange ou bleu-violet, avec un petit labelle plus coloré. Plante monopodiale compacte aux feuilles épaisses en V, canaliculées et légèrement rayées, et grosses racines aériennes ; parfum épicé ou d'agrume.",
+    "wiki": "Rhynchostylis",
+    "img_queries": [
+      "Rhynchostylis gigantea",
+      "Rhynchostylis retusa",
+      "Rhynchostylis coelestis"
+    ],
+    "sources": [
+      "https://www.nparks.gov.sg/florafaunaweb/flora/6/5/6574",
+      "https://www.nparks.gov.sg/florafaunaweb/flora/6/9/6929",
+      "https://store.orchidweb.com/products/rhynchostylis-gigantea-red",
+      "https://en.wikipedia.org/wiki/Rhynchostylis"
+    ]
+  }
+]

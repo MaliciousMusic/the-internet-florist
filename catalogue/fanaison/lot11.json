@@ -1,0 +1,2921 @@
+[
+  {
+    "id": "mimosa",
+    "nom": "Mimosa",
+    "saison_vente": {
+      "mois": [
+        11,
+        12,
+        1,
+        2,
+        3
+      ],
+      "pic": [
+        1,
+        2
+      ],
+      "toute_annee": false,
+      "note": "production française du Var (Tanneron, Bormes) : récolte de mi-décembre à début mars, pic en février ; selon les variétés, floraison de novembre à mars. Les rameaux sont souvent « forcés » en local chaud et humide pour ouvrir les boules.",
+      "sources": [
+        "https://cotedazurfrance.com/offers/the-flowering-of-mimosa-in-tanneron-pays-de-fayence-tanneron-en-3394822/",
+        "https://www.provence7.com/portails/couleurs/couleur-jaune/mimosa-2/",
+        "https://cotedazurfrance.fr/offres/brin-de-soleil-bormes-les-mimosas-fr-2995200/",
+        "https://pro.esterel-cotedazur.com/wp-content/uploads/TOURISM-ROUTE-DU-MIMOSA-PRESS-FILE-2026.pdf"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 4,
+      "max": 5,
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/acacia"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "seche-sur-place",
+        "decolore",
+        "feuilles-recroquevillees"
+      ],
+      "ordre": "les petites boules perdent leur aspect duveteux en 4-5 jours : elles se resserrent, durcissent et ternissent ; puis la branche sèche sur place. À 30 jours, c'est un mimosa sec : boules petites et dures, jaune moutarde terne, feuillage gris-vert cassant.",
+      "tete": "les grappes de boules restent en place sur les rameaux, plus petites et plus clairsemées d'aspect",
+      "petales": "pas de pétales visibles : chaque boule est faite d'étamines ; le duvet s'affaisse et la boule devient une petite bille dure",
+      "feuilles": "feuillage fin et plumeux qui se dessèche, les folioles se replient et virent au gris-vert terne ; certaines tombent au toucher",
+      "tige": "tige ligneuse, reste droite",
+      "couleurs": {
+        "jaune": {
+          "declin": "jaune vif qui se ternit, boules moins duveteuses",
+          "fane": "jaune moutarde terne à jaune paille, quelques boules brunâtres"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Sources : tenue de 4-5 jours (Floral Design Institute) ; le mimosa se sèche en gardant ses pompons et sa couleur si on le tient à l'abri de la lumière (Promesse de Fleurs). Le détail du ternissement et du brunissement est déduit du comportement général des fleurs séchées à la lumière (la lumière décolore), pas d'une source propre au mimosa.",
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/acacia",
+        "https://www.promessedefleurs.ie/gardening-tips/tutorial/how-to-dry-mimosa/"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "setaria",
+    "nom": "Sétaire d'Italie",
+    "saison_vente": {
+      "mois": [
+        7,
+        8,
+        9,
+        10
+      ],
+      "pic": [
+        8,
+        9
+      ],
+      "toute_annee": false,
+      "note": "graminée annuelle qui fleurit environ 60 jours après le semis : vente fraîche en fin d'été et automne ; aussi vendue séchée. Mois déduits du cycle de culture, pas d'un calendrier de grossiste européen.",
+      "sources": [
+        "https://www.seedaholic.com/setaria-italica-red-jewel.html",
+        "https://www.johnnyseeds.com/flowers/grasses-ornamental/highlander-ornamental-grass-seed-1599.html"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 7,
+      "max": 14,
+      "sources": [
+        "https://library.floretflowers.com/products/ornamental-grass-frosted-explosion"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "seche-sur-place",
+        "decolore",
+        "feuilles-jaunissent"
+      ],
+      "ordre": "l'épi en queue de renard, retombant, garde sa forme ; il passe du vert au bronze puis au paille. À 30 jours l'épi est sec, encore souple, couleur paille dorée ; quelques graines peuvent tomber.",
+      "tete": "épi arqué et pendant de 8 à 15 cm, il garde sa courbe en séchant",
+      "petales": null,
+      "feuilles": "feuilles larges qui jaunissent puis se dessèchent en se roulant",
+      "tige": "reste droite, ploie seulement sous l'épi",
+      "couleurs": {
+        "vert": {
+          "declin": "vert qui tourne au bronze clair",
+          "fane": "paille doré"
+        },
+        "brun": {
+          "declin": "bronze cuivré",
+          "fane": "bronze terne tirant sur le paille"
+        },
+        "bordeaux": {
+          "declin": "bordeaux qui s'assombrit (variété Red Jewel)",
+          "fane": "brun-bordeaux sec"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Aucune durée de vase trouvée pour Setaria : 7-14 jours est repris du Panicum voisin (Floret). Récolte : épis encore verts pour sécher, bronze pour le frais (Johnny's) ; Setaria sèche mieux que Panicum, trop fin et cassant (Johnny's).",
+      "sources": [
+        "https://www.johnnyseeds.com/flowers/grasses-ornamental/highlander-ornamental-grass-seed-1599.html",
+        "https://www.johnnyseeds.com/flowers/grasses-ornamental/lime-light-spray-millet-ornamental-grass-seed-1715.html",
+        "https://www.seedaholic.com/setaria-italica-red-jewel.html"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "panicum",
+    "nom": "Panic",
+    "saison_vente": {
+      "mois": [
+        7,
+        8,
+        9,
+        10
+      ],
+      "pic": [
+        8,
+        9
+      ],
+      "toute_annee": false,
+      "note": "graminée annuelle (Panicum 'Frosted Explosion'), vendue fraîche en été-automne et aussi séchée. Mois déduits du cycle de culture, pas d'un calendrier de grossiste européen.",
+      "sources": [
+        "https://library.floretflowers.com/products/ornamental-grass-frosted-explosion",
+        "https://www.panamseed.com/products/046608873021696/panicum-frosted-explosion/"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 7,
+      "max": 14,
+      "sources": [
+        "https://library.floretflowers.com/products/ornamental-grass-frosted-explosion",
+        "https://botanicalinterests.com/product/Frosted-Explosion-Grass-Seeds"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "seche-sur-place",
+        "decolore",
+        "fleurons-tombent"
+      ],
+      "ordre": "le nuage de fines ramilles garde sa forme « en explosion » ; le vert argenté pâlit vers le paille. À 30 jours, c'est un nuage sec et léger, beige argenté, très cassant : de petites graines tombent quand on le touche.",
+      "tete": "panicule en nuage ouvert, garde son volume",
+      "petales": null,
+      "feuilles": "fines feuilles qui jaunissent et s'enroulent",
+      "tige": "fine, reste droite",
+      "couleurs": {
+        "vert": {
+          "declin": "vert argenté qui pâlit",
+          "fane": "beige argenté à paille"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Tenue 7-10 jours (Floret) à 10-14 jours selon d'autres vendeurs ; excellent séché, prix « ASCFG 2010 Dried Cut Flower of the Year ». Johnny's note que Panicum, trop fin, devient cassant en séchant. Le détail de la décoloration est déduit.",
+      "sources": [
+        "https://library.floretflowers.com/products/ornamental-grass-frosted-explosion",
+        "https://www.johnnyseeds.com/flowers/grasses-ornamental/lime-light-spray-millet-ornamental-grass-seed-1715.html"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "pennisetum",
+    "nom": "Pennisetum",
+    "saison_vente": {
+      "mois": [
+        8,
+        9,
+        10
+      ],
+      "pic": [
+        8,
+        9
+      ],
+      "toute_annee": false,
+      "note": "fiche faite pour le millet ornemental (Pennisetum glaucum, type 'Purple Majesty'), annuel qui fleurit 80-95 jours après semis : fin d'été et automne. Aussi vendu séché. Mois déduits du cycle, pas d'un calendrier de grossiste.",
+      "sources": [
+        "https://www.superseeds.com/products/purple-majesty-ornamental-millet",
+        "https://www.westcoastseeds.com/products/purple-majesty-millet"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 10,
+      "max": 14,
+      "sources": [
+        "https://www.johnnyseeds.com/growers-library/flowers/grasses-ornamental/pennisetum-glaucum-key-growing-information.html"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "seche-sur-place",
+        "decolore",
+        "feuilles-brunissent"
+      ],
+      "ordre": "l'épi épais en forme de petit épi de maïs reste droit et garde sa forme. S'il a été coupé trop mûr, il se couvre de pollen jaune en quelques jours. À 30 jours, épi sec et dur, violet sombre tirant sur le brun, feuilles brunes et sèches.",
+      "tete": "épi cylindrique dressé, jusqu'à 30 cm de long et 2-3 cm d'épaisseur, il ne retombe pas",
+      "petales": null,
+      "feuilles": "feuilles larges violet sombre façon maïs, qui se dessèchent et brunissent en se roulant",
+      "tige": "tige épaisse et raide, reste droite",
+      "couleurs": {
+        "violet": {
+          "declin": "violet profond qui s'assombrit, parfois poudré de pollen jaune",
+          "fane": "brun violacé presque noir, mat"
+        },
+        "vert": {
+          "declin": "vert qui jaunit",
+          "fane": "paille brun"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Ambiguïté : « Pennisetum » peut aussi désigner les herbes aux écouvillons (P. alopecuroides, villosum) ; j'ai pris le millet ornemental. Durée 10-14 jours empruntée à un autre millet (Panicum miliaceum), donnée par Johnny's : extrapolation. Johnny's signale que des épis laissés quelques jours deviennent tout jaunes de pollen à odeur forte : couper avant la sortie du pollen.",
+      "sources": [
+        "https://www.johnnyseeds.com/growers-library/flowers/grasses-ornamental/pennisetum-glaucum-key-growing-information.html",
+        "https://bloomist.com/products/dried-purple-majesty-millet",
+        "https://www.superseeds.com/products/purple-majesty-ornamental-millet"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "lagurus",
+    "nom": "Lagure",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [
+        6,
+        7,
+        8,
+        9
+      ],
+      "toute_annee": true,
+      "note": "frais de juin à octobre (floraison) ; vendu séché, naturel ou teint, toute l'année. La disponibilité annuelle est déduite des offres de produit séché.",
+      "sources": [
+        "https://www.sarahraven.com/products/lagurus-ovatus-bunnys-tail-grass",
+        "https://promessedefleurs.ie/annuals/flower-seeds/flower-seeds-a-to-z/lagurus-ovatus-hare-s-tail.html",
+        "https://www.crateandbarrel.com/dried-rust-bunny-tail-bunch/s109555"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 10,
+      "max": 14,
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/bunny-tail-grass"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "seche-sur-place",
+        "decolore"
+      ],
+      "ordre": "le petit pompon ovale et duveteux sèche sans changer de forme ; vert pâle au départ, il vire au crème puis au beige doré. À 30 jours, pompons secs et doux, beige crème, sans perte.",
+      "tete": "pompon ovale et soyeux de 2 à 6 cm, droit au bout de la tige",
+      "petales": null,
+      "feuilles": "feuilles étroites, peu nombreuses, qui jaunissent puis sèchent",
+      "tige": "fine et raide, reste droite",
+      "couleurs": {
+        "vert": {
+          "declin": "vert pâle qui blanchit",
+          "fane": "crème à beige doré"
+        },
+        "creme": {
+          "declin": "crème",
+          "fane": "beige doré clair"
+        },
+        "orange": {
+          "declin": "rouille (teint) qui pâlit un peu",
+          "fane": "rouille passé"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Tenue en vase 10-14 jours (Floral Design Institute). Les pompons passent du vert au crème en mûrissant et se dorent en automne (NC State, Promesse de Fleurs) ; séchés, ils durent des mois sans s'effriter. Vendus aussi teints de nombreuses couleurs.",
+      "sources": [
+        "https://plants.ces.ncsu.edu/plants/lagurus-ovatus/common-name/harestail-grass/",
+        "https://promessedefleurs.ie/annuals/flower-seeds/flower-seeds-a-to-z/lagurus-ovatus-hare-s-tail.html",
+        "https://thursd.com/articles/lagurus-ovatus-bunny-tails-are-taking-over-the-dried-flower-scene"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "phalaris",
+    "nom": "Alpiste",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [
+        5,
+        6,
+        7
+      ],
+      "toute_annee": true,
+      "note": "floraison de mai à juillet (frais) ; vendu surtout séché (séché au four), naturel ou teint, toute l'année. Disponibilité annuelle déduite des offres de produit séché.",
+      "sources": [
+        "https://www.promessedefleurs.ie/annuals/flower-seeds/flower-seeds-a-to-z/phalaris-canariensis.html",
+        "https://essentiallyhops.co.uk/product/dried-flower-decoration/dried-flowers/phalaris-natural/"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 7,
+      "max": 14,
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/quaking-grass"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "seche-sur-place",
+        "decolore"
+      ],
+      "ordre": "la petite tête ovale et serrée, vert blanchâtre à rayures vertes, garde sa forme ; le vert pâlit vers le crème paille. À 30 jours, têtes sèches crème-paille sur tiges fines, intactes.",
+      "tete": "tête ovale, dense et dressée de 2-4 cm, ne retombe pas",
+      "petales": null,
+      "feuilles": "feuilles fines qui jaunissent puis sèchent",
+      "tige": "tige fine, droite",
+      "couleurs": {
+        "vert": {
+          "declin": "vert blanchâtre qui pâlit",
+          "fane": "crème paille"
+        },
+        "creme": {
+          "declin": "crème (blanchi au soleil)",
+          "fane": "crème légèrement jauni"
+        },
+        "violet": {
+          "declin": "mauve (teint)",
+          "fane": "mauve passé"
+        },
+        "bleu": {
+          "declin": "bleu (teint)",
+          "fane": "bleu un peu pâli"
+        },
+        "bordeaux": {
+          "declin": "framboise (teint)",
+          "fane": "framboise passé"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Aucune durée de vase fraîche trouvée : 7-14 jours repris de la brize, autre petite graminée annuelle (extrapolation). Séché, il tient des mois si on le garde au sec et à l'ombre (Essentially Hops). Couleurs teintes vues chez Essentially Hops (mauve, bleu, blanchi) et Walmart (berry).",
+      "sources": [
+        "https://essentiallyhops.co.uk/product/dried-flower-decoration/dried-flowers/phalaris-natural/",
+        "https://essentiallyhops.co.uk/product/dried-flower-decoration/dried-flowers/phalaris-canary-grass-mauve/",
+        "https://essentiallyhops.co.uk/product/dried-flower-decoration/dried-flowers/phalaris-canary-grass-dyed-blue/",
+        "https://www.walmart.com/ip/830888962"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "briza",
+    "nom": "Grande brize",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [
+        5,
+        6,
+        7
+      ],
+      "toute_annee": true,
+      "note": "floraison de la fin du printemps au milieu de l'été (frais) ; séchée toute l'année. Disponibilité annuelle déduite de son usage courant en fleur séchée.",
+      "sources": [
+        "https://www.rhs.org.uk/plants/76294/Briza-maxima/Details",
+        "https://www.seedaholic.com/briza-maxima-greater-quaking-grass.html"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 10,
+      "max": 14,
+      "sources": [
+        "https://www.seedaholic.com/briza-maxima-greater-quaking-grass.html",
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/quaking-grass"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "seche-sur-place",
+        "decolore",
+        "fleurons-tombent"
+      ],
+      "ordre": "les médaillons en cœur pendants passent du vert teinté de rose au doré paille et gardent leur forme. Les médaillons cueillis trop mûrs (déjà dorés) s'effritent. À 30 jours, médaillons secs couleur paille qui tremblent au moindre souffle ; quelques écailles tombent.",
+      "tete": "médaillons en forme de cœur, pendants au bout de fins pédicelles",
+      "petales": null,
+      "feuilles": "feuilles vert-bleu qui jaunissent et sèchent",
+      "tige": "fine et souple, reste droite",
+      "couleurs": {
+        "vert": {
+          "declin": "vert teinté de rose qui dore",
+          "fane": "paille doré"
+        },
+        "creme": {
+          "declin": "paille clair",
+          "fane": "paille doré, un peu terne"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Tenue 10-14 jours en vase (Seedaholic) ; sécher à l'ombre, tête en bas, 1-2 semaines ; les têtes déjà dorées s'effritent (Johnny's).",
+      "sources": [
+        "https://www.johnnyseeds.com/grasses-ornamental/briza-maxima-greater-quaking-grass-key-growing-information.html",
+        "https://www.seedaholic.com/briza-maxima-greater-quaking-grass.html",
+        "https://www.rhs.org.uk/plants/76294/Briza-maxima/Details"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "miscanthus",
+    "nom": "Eulalie",
+    "saison_vente": {
+      "mois": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "pic": [
+        9,
+        10
+      ],
+      "toute_annee": false,
+      "note": "plumets de la fin de l'été et de l'automne, qui restent beaux jusque dans l'hiver. Pas de calendrier de grossiste trouvé : mois tirés de la floraison.",
+      "sources": [
+        "https://www.gardenia.net/guide/miscanthus-sinensis-selection-guide-japanese-silver-grass",
+        "https://hayloft.co.uk/miscanthus-kleine-fontane-g-k23283"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 7,
+      "max": 14,
+      "sources": [
+        "https://library.floretflowers.com/products/ornamental-grass-frosted-explosion"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "seche-sur-place",
+        "decolore",
+        "feuilles-jaunissent"
+      ],
+      "ordre": "les plumets argentés, roses ou brun-rouge s'ouvrent en éventail, puis pâlissent vers l'argent-beige et deviennent duveteux. À 30 jours, plumet sec, argent-beige et soyeux, plus gonflé qu'au début ; feuilles jaunes puis paille.",
+      "tete": "plumet en éventail de fins rameaux, d'abord serré, puis il s'ouvre et devient duveteux",
+      "petales": null,
+      "feuilles": "longues feuilles rubanées qui jaunissent puis passent au paille, souvent recourbées",
+      "tige": "tige raide, reste droite",
+      "couleurs": {
+        "rose": {
+          "declin": "rose qui pâlit vers l'argent",
+          "fane": "argent-beige duveteux"
+        },
+        "creme": {
+          "declin": "argent",
+          "fane": "argent-beige soyeux"
+        },
+        "brun": {
+          "declin": "brun-rouge qui s'éclaircit",
+          "fane": "beige argenté"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Aucune durée de vase trouvée : 7-14 jours repris du Panicum (extrapolation). Les sources de jardin disent que les plumets passent à l'argent en 3-4 semaines en devenant duveteux, et qu'ils conviennent au frais comme au sec (Gardenia, Hayloft).",
+      "sources": [
+        "https://www.gardenia.net/guide/miscanthus-sinensis-selection-guide-japanese-silver-grass",
+        "https://hayloft.co.uk/miscanthus-kleine-fontane-g-k23283",
+        "https://www.wavehill.org/discover/garden-journal/miscanthus-sinensis-gracillimus-miscanthus-cultivar"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "pampa",
+    "nom": "Herbe de la pampa",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [
+        9,
+        10
+      ],
+      "toute_annee": true,
+      "note": "frais (plumets juste sortis) de fin août à octobre ; séché et vendu toute l'année, naturel ou teint.",
+      "sources": [
+        "https://education.teamflower.org/learn/2021/7/13/where-to-buy-pampas-grass-wholesale",
+        "https://biologyinsights.com/when-is-the-best-time-to-cut-pampas-grass-for-drying/"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 30,
+      "max": 1095,
+      "sources": [
+        "https://www.creoate.com/product-category/pampas-grass",
+        "https://biologyinsights.com/when-is-the-best-time-to-cut-pampas-grass-for-drying/"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "seche-sur-place",
+        "fleurons-tombent"
+      ],
+      "ordre": "le plumet se met en vase sans eau : il sèche en gardant sa forme et gonfle un peu. Quand on le bouge, des brins duveteux tombent ; immobile, il ne perd presque plus rien. À 30 jours, il est quasi identique au premier jour, juste un peu plus pâle et plus floconneux.",
+      "tete": "grand plumet pyramidal ou allongé, dense et soyeux ; se gonfle en séchant",
+      "petales": null,
+      "feuilles": "pas de feuilles en général (tiges vendues nues)",
+      "tige": "tige raide et creuse, reste droite",
+      "couleurs": {
+        "blanc": {
+          "declin": "blanc argenté",
+          "fane": "blanc cassé un peu jauni"
+        },
+        "creme": {
+          "declin": "crème",
+          "fane": "crème beige"
+        },
+        "rose": {
+          "declin": "rose pâle",
+          "fane": "rose très passé, beige rosé"
+        },
+        "brun": {
+          "declin": "brun (teint ou naturel foncé)",
+          "fane": "brun un peu passé"
+        },
+        "bleu": {
+          "declin": "bleu (teint)",
+          "fane": "bleu pâli"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Tenue « en vase » : vendue sèche, sans eau ; 3 à 4 ans et plus (Creoate), 30-1095 jours est donc une fourchette de produit sec, pas de vase frais. La perte de brins s'arrête une fois le bouquet posé (Biology Insights) ; laque pour limiter. Plumets argentés, souvent teintés rose ou violet (RHS).",
+      "sources": [
+        "https://www.rhs.org.uk/plants/4431/pampas-grass/details",
+        "https://biologyinsights.com/when-is-the-best-time-to-cut-pampas-grass-for-drying/",
+        "https://www.crateandbarrel.com/grass-plume-dried-botanical-bunch/s579941"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "stipa",
+    "nom": "Stipe pennée",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [
+        5,
+        6
+      ],
+      "toute_annee": true,
+      "note": "floraison de mai à juin (frais) ; vendue surtout séchée, parfois teinte, toute l'année. Disponibilité annuelle déduite des offres de produit séché.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Stipa_pennata",
+        "https://shropshirepetals.com/products/feather-grass-stipa-penata-bunch"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 30,
+      "max": 365,
+      "sources": [
+        "https://shropshirepetals.com/products/feather-grass-stipa-penata-bunch"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "seche-sur-place",
+        "decolore"
+      ],
+      "ordre": "les longues arêtes plumeuses gris argenté sèchent en gardant leur forme ; en vase sans eau, rien ne bouge. À 30 jours, plumes argent-crème, légères et ondulantes, un peu plus ternes.",
+      "tete": "pas de vraie tête : de très longues arêtes plumeuses et soyeuses (jusqu'à 30 cm) qui pendent en arc",
+      "petales": null,
+      "feuilles": "feuilles très fines, enroulées comme des fils, gris-vert puis paille",
+      "tige": "très fine, souple",
+      "couleurs": {
+        "creme": {
+          "declin": "gris argenté soyeux",
+          "fane": "crème argenté, un peu terne"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Aucune durée de vase fraîche trouvée : la fiche est remplie comme produit séché (des années au sec, Shropshire Petals) ; 30-365 jours est une estimation. Parfois teinte (Fryd), couleurs teintes non vérifiées.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Stipa_pennata",
+        "https://fryd.app/en/library/plants/27810-grassesfeathergrasses",
+        "https://www.jelitto.com/Seed/Random+browse/STIPA+pennata+Portion+s.html"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "ble",
+    "nom": "Blé",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [
+        6,
+        7,
+        8
+      ],
+      "toute_annee": true,
+      "note": "vert en début d'été, mûr et doré en été ; séché et vendu toute l'année. Mois du frais déduits du cycle du blé, pas d'un calendrier de grossiste.",
+      "sources": [
+        "https://www.johnnyseeds.com/growers-library/flowers/grasses-ornamental/black-tip-silver-tip-key-growing-information.html",
+        "https://bloomist.com/products/dried-natural-triticum-wheat"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 8,
+      "max": 10,
+      "sources": [
+        "https://fiftyflowers.com/products/fresh-pasta-wheat-greenery"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "seche-sur-place",
+        "decolore",
+        "feuilles-jaunissent"
+      ],
+      "ordre": "l'épi vert, droit et barbu, garde sa forme et vire lentement du vert au doré. À 30 jours, épi sec blond doré, les barbes intactes ; feuilles paille enroulées.",
+      "tete": "épi dense et droit, avec ou sans barbes ; s'incline légèrement s'il est lourd",
+      "petales": null,
+      "feuilles": "feuilles qui jaunissent puis sèchent couleur paille, en s'enroulant",
+      "tige": "creuse, reste droite, couleur paille",
+      "couleurs": {
+        "vert": {
+          "declin": "vert qui jaunit",
+          "fane": "blond doré"
+        },
+        "jaune": {
+          "declin": "blond doré",
+          "fane": "blond pâle"
+        },
+        "brun": {
+          "declin": "barbes noires (blé Black Tip)",
+          "fane": "barbes noires, épi doré"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Tenue 8 jours minimum pour du blé vert frais (Fifty Flowers) ; on l'utilise surtout séché, il dure des mois à des années (Johnny's). Le vert devient doré avec le temps (Shropshire Petals).",
+      "sources": [
+        "https://www.johnnyseeds.com/growers-library/flowers/grasses-ornamental/black-tip-silver-tip-key-growing-information.html",
+        "https://shropshirepetals.com/products/dried-wheat-bunch",
+        "https://bloomist.com/products/dried-natural-triticum-wheat"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "avoine",
+    "nom": "Avoine",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [
+        7,
+        8,
+        9,
+        10
+      ],
+      "toute_annee": true,
+      "note": "vendue surtout séchée, toute l'année (récoltée en été, séchée puis expédiée toute l'année) ; en frais, seulement au moment de la récolte d'été. Pic estival/automnal déduit de la récolte, non sourcé pour l'Europe",
+      "sources": [
+        "https://www.shropshirepetals.com/products/oat-bunch",
+        "https://essentiallyhops.co.uk/product/dried-flower-decoration/dried-grasses/oats-natural/"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 90,
+      "max": 730,
+      "sources": [
+        "https://essentiallyhops.co.uk/product/dried-flower-decoration/dried-grasses/oats-natural/",
+        "https://fiftyflowers.com/products/wild-dried-oats"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "seche-sur-place",
+        "decolore"
+      ],
+      "ordre": "en frais, les épillets verts jaunissent en quelques jours et sèchent sur la tige ; séchée, l'avoine garde sa forme et pâlit lentement à la lumière",
+      "tete": "panicule lâche aux épillets pendants qui restent en place ; quelques grains peuvent tomber si on la manipule",
+      "petales": null,
+      "feuilles": "souvent retirées ; sinon elles se recroquevillent et deviennent paille",
+      "tige": "reste droite, couleur paille",
+      "couleurs": {
+        "vert": {
+          "declin": "vert tendre qui jaunit",
+          "fane": "paille doré"
+        },
+        "creme": {
+          "declin": "blanchi crème (version blanchie vendue)",
+          "fane": "crème un peu jauni"
+        },
+        "orange": {
+          "declin": "orange teint, légèrement passé",
+          "fane": "orange délavé"
+        },
+        "violet": {
+          "declin": "violet teint, légèrement passé",
+          "fane": "violet grisé, délavé"
+        },
+        "bleu": {
+          "declin": "bleu teint",
+          "fane": "bleu grisé, délavé"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Vendue naturelle, blanchie ou teinte (orange, violet, bleu, vert émeraude). Les durées de tenue viennent des fiches séchées (« des mois, voire des années »). En 30 jours dans un vase : quasiment aucun changement visible. Le pâlissement à la lumière est une déduction des conseils de conservation (éviter le soleil).",
+      "sources": [
+        "https://essentiallyhops.co.uk/product/dried-flower-decoration/dried-grasses/oats-natural/",
+        "https://essentiallyhops.co.uk/product/dried-flower-decoration/dried-flowers/oats-bleached/",
+        "https://fiftyflowers.com/products/wild-dried-oats",
+        "https://www.shropshirepetals.com/products/oat-bunch"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "orge",
+    "nom": "Orge",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [
+        6,
+        7
+      ],
+      "toute_annee": true,
+      "note": "fraîche en fin de printemps et début d'été (floraison) ; séchée disponible toute l'année par analogie avec l'avoine séchée, non sourcé directement pour l'orge",
+      "sources": [
+        "https://www.birminghambotanicalgardens.org.uk/?p=776",
+        "https://www.knollgardens.co.uk/product/hordeum-jubatum/"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 7,
+      "max": 365,
+      "sources": [
+        "https://www.birminghambotanicalgardens.org.uk/?p=776"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "seche-sur-place",
+        "decolore"
+      ],
+      "ordre": "l'épi vert, parfois teinté de rose ou de violet, pâlit puis devient beige clair en mûrissant ; les longues barbes restent en place",
+      "tete": "épi dense hérissé de longues barbes fines ; reste droit ou s'incline un peu en séchant",
+      "petales": null,
+      "feuilles": "jaunissent puis deviennent paille, s'enroulent",
+      "tige": "reste droite, devient paille",
+      "couleurs": {
+        "vert": {
+          "declin": "vert argenté qui jaunit, reflets rosés ou violets",
+          "fane": "beige clair, paille"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Durée en frais non trouvée en jours : le minimum de 7 est une estimation, la tenue séchée (des mois) vient par analogie avec les céréales séchées. Couleurs du déclin d'après l'orge à crinière (Hordeum jubatum) qui vire du vert rosé au beige. En 30 jours : épi devenu paille, barbes intactes mais fragiles.",
+      "sources": [
+        "https://www.birminghambotanicalgardens.org.uk/?p=776",
+        "https://www.knollgardens.co.uk/product/hordeum-jubatum/",
+        "https://www.johnnyseeds.com/growers-library/flowers/dried-flowers-beyond-blossoms.html"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "chasmanthium",
+    "nom": "Chasmanthium à larges feuilles",
+    "saison_vente": {
+      "mois": [
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "pic": [
+        8,
+        9
+      ],
+      "toute_annee": false,
+      "note": "épillets formés au milieu de l'été ; août est le meilleur moment pour couper des tiges vertes à sécher, puis tiges cuivrées en automne. Calendrier d'un grossiste européen non trouvé",
+      "sources": [
+        "https://uaex.uada.edu/yard-garden/resource-library/plant-week/Chasmanthium-latifolium-Northern-Sea-Oats-08-07-2015.aspx",
+        "https://harvesttotable.com/how-to-grow-chasmanthium-wild-oats-sea-oats/"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 14,
+      "max": 365,
+      "sources": [
+        "https://plants.ces.ncsu.edu/plants/all/chasmanthium-latifolium/",
+        "https://harvesttotable.com/how-to-grow-chasmanthium-wild-oats-sea-oats/"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "seche-sur-place",
+        "decolore"
+      ],
+      "ordre": "épillets plats verts, puis bronze violacé à la fin de l'été, puis couleur paille ou cuivre en séchant",
+      "tete": "panicule retombante d'épillets plats en forme d'avoine aplatie, suspendus à des fils fins ; ils gardent leur forme en séchant",
+      "petales": null,
+      "feuilles": "vert vif, puis cuivrées après les gelées, enfin paille",
+      "tige": "fine, droite, arquée sous le poids des épillets",
+      "couleurs": {
+        "vert": {
+          "declin": "vert argenté puis bronze violacé",
+          "fane": "paille verdâtre ou cuivre brun"
+        },
+        "brun": {
+          "declin": "cuivre",
+          "fane": "brun cuivré pâli"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Tenue en vase en jours non sourcée : 14 jours en frais est une estimation, la tenue séchée de plusieurs mois vient du fait qu'elle se sèche bien à l'air. En 30 jours dans un vase : les épillets verts sont devenus paille verdâtre, toujours en place.",
+      "sources": [
+        "https://plants.ces.ncsu.edu/plants/all/chasmanthium-latifolium/",
+        "https://uaex.uada.edu/yard-garden/resource-library/plant-week/Chasmanthium-latifolium-Northern-Sea-Oats-08-07-2015.aspx",
+        "https://harvesttotable.com/how-to-grow-chasmanthium-wild-oats-sea-oats/",
+        "https://plants.usda.gov/DocumentLibrary/plantguide/pdf/pg_chla5.pdf"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "sorgho-a-balai",
+    "nom": "Sorgho à balai",
+    "saison_vente": {
+      "mois": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "pic": [
+        9,
+        10
+      ],
+      "toute_annee": false,
+      "note": "utilisé surtout en fin d'été et en automne (décor d'automne, frais ou séché) ; sources américaines, pas de calendrier européen trouvé. Séché, il peut se trouver hors saison",
+      "sources": [
+        "https://projects.sare.org/media/pdf/S/A/R/SARE-Grant_Sorgham.pdf",
+        "https://www.johnnyseeds.com/vegetables/corn/dry-corn/mixed-broom-corn-broom-corn-seed-4228.html"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 30,
+      "max": 365,
+      "sources": [
+        "https://projects.sare.org/media/pdf/S/A/R/SARE-Grant_Sorgham.pdf"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "seche-sur-place",
+        "decolore"
+      ],
+      "ordre": "les panicules gardent leur forme ; les couleurs se fondent en dégradés doux à mesure que les graines sèchent",
+      "tete": "panicule en balai, longues ramifications chargées de graines ; peut perdre quelques graines",
+      "petales": null,
+      "feuilles": "larges, jaunissent et se déchirent ; souvent retirées",
+      "tige": "épaisse, droite, solide",
+      "couleurs": {
+        "rouge": {
+          "declin": "rouge brique",
+          "fane": "rouge brun adouci"
+        },
+        "orange": {
+          "declin": "orange roux",
+          "fane": "roux pâli"
+        },
+        "brun": {
+          "declin": "brun",
+          "fane": "brun chaud"
+        },
+        "violet": {
+          "declin": "pourpre",
+          "fane": "pourpre brunâtre"
+        },
+        "creme": {
+          "declin": "blanc crème, naturel",
+          "fane": "paille clair"
+        },
+        "bicolore": {
+          "declin": "dégradé rouge, orange, brun, noir",
+          "fane": "dégradé plus doux et plus terne"
+        }
+      },
+      "seche_bien": true,
+      "notes": "« Garde sa couleur plus d'un an » (SARE). Tenue minimum de 30 jours estimée, pas de chiffre en frais. Graines noires possibles dans les mélanges. En 30 jours : presque aucun changement visible.",
+      "sources": [
+        "https://projects.sare.org/media/pdf/S/A/R/SARE-Grant_Sorgham.pdf",
+        "https://www.johnnyseeds.com/vegetables/corn/dry-corn/mixed-broom-corn-broom-corn-seed-4228.html",
+        "https://publications.ca.uky.edu/sites/publications.ca.uky.edu/files/broomcorn.pdf"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "typha",
+    "nom": "Massette",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [
+        8,
+        9,
+        10
+      ],
+      "toute_annee": true,
+      "note": "vendue surtout séchée, disponible en continu ; à cueillir avant maturité, en fin d'été. Pic d'automne déduit des usages décoratifs d'automne, pas de calendrier européen sourcé",
+      "sources": [
+        "https://btsnew.nzpcn.org.nz/site/assets/files/21165/auck_1973_30_1_4.pdf",
+        "https://www.worldmarket.com/p/dried-fall-bulrush-reed-bunch-110551.html"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 90,
+      "max": 365,
+      "sources": [
+        "https://btsnew.nzpcn.org.nz/site/assets/files/21165/auck_1973_30_1_4.pdf"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "seche-sur-place",
+        "eclate-en-bourre"
+      ],
+      "ordre": "l'épi brun reste net et lisse tant qu'il est cueilli jeune ; s'il mûrit, il éclate en bourre blanche et soyeuse qui s'accroche à l'épi comme une barbe, puis s'envole",
+      "tete": "cylindre brun foncé, dense, au sommet d'une tige raide ; au-dessus, une fine pointe (la partie mâle) qui sèche et se casse",
+      "petales": null,
+      "feuilles": "longues, en ruban, jaunissent puis brunissent ; souvent absentes du produit",
+      "tige": "raide et droite, vert olive puis paille",
+      "couleurs": {
+        "brun": {
+          "declin": "brun chocolat",
+          "fane": "brun chocolat, ou bourre crème si l'épi éclate"
+        },
+        "rouge": {
+          "declin": "terre cuite (teint)",
+          "fane": "terre cuite pâli"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Mode « eclate-en-bourre » ajouté : l'épi mûr se déchire et laisse sortir une bourre blanc crème de graines plumeuses. Les fleuristes le fixent avec un vernis ou de la colle diluée pour l'éviter. En 30 jours dans un vase : épi intact s'il a été traité, sinon début de bourre. Les durées sont des estimations pour un produit séché.",
+      "sources": [
+        "https://janetims.com/2011/12/14/a-place-in-the-marsh-2/",
+        "https://btsnew.nzpcn.org.nz/site/assets/files/21165/auck_1973_30_1_4.pdf",
+        "https://www.worldmarket.com/p/dried-fall-bulrush-reed-bunch-110551.html"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "ozothamnus",
+    "nom": "Ozothamnus",
+    "saison_vente": {
+      "mois": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "pic": [
+        9,
+        10
+      ],
+      "toute_annee": false,
+      "note": "disponible de la fin de l'hiver au printemps (source américaine ; la récolte australienne a lieu au printemps austral, soit vers septembre-novembre). Saison de production courte, 3 à 6 semaines par variété. Calendrier européen non trouvé",
+      "sources": [
+        "https://floraldesigninstitute.com/blogs/resources-flower-library/rice-flower",
+        "https://era.dpi.qld.gov.au/id/eprint/14542/1/Development%20of%20rice%20flower%20industryConfPaperBeal_et_al.pdf"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 7,
+      "max": 14,
+      "sources": [
+        "https://floraldesigninstitute.com/blogs/resources-flower-library/rice-flower",
+        "https://flower.style/flowers-we-love/rice-flower",
+        "https://theplantcompany.co.nz/shop/plants/latin/o/ozothamnus"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "seche-sur-place",
+        "decolore"
+      ],
+      "ordre": "les boutons ronds et serrés restent en place, puis la fleur sèche sur la tige en gardant sa forme",
+      "tete": "bouquet dense de minuscules boutons ronds en forme de grains de riz, en petit nuage de coton",
+      "petales": "boutons papyreux qui sèchent sans tomber",
+      "feuilles": "petites, aiguillées et aromatiques ; sèchent sur la tige, vert grisé",
+      "tige": "ligneuse, droite",
+      "couleurs": {
+        "blanc": {
+          "declin": "blanc crème",
+          "fane": "crème beige"
+        },
+        "rose": {
+          "declin": "rose pâlissant",
+          "fane": "rose poudré très passé, beige rosé"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Sensible à l'éthylène (les boutons pourraient alors tomber : non vérifié). Après 2 semaines en vase, il se sèche facilement et se garde indéfiniment. Le pâlissement des couleurs est une déduction. En 30 jours : sec, forme intacte, couleur adoucie.",
+      "sources": [
+        "https://floraldesigninstitute.com/blogs/resources-flower-library/rice-flower",
+        "https://flower.style/flowers-we-love/rice-flower",
+        "https://era.dpi.qld.gov.au/id/eprint/14542/1/Development%20of%20rice%20flower%20industryConfPaperBeal_et_al.pdf",
+        "https://en.wikipedia.org/wiki/Ozothamnus_diosmifolius"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "brunia",
+    "nom": "Brunia",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [
+        11,
+        12
+      ],
+      "toute_annee": true,
+      "note": "la brunia argentée est disponible toute l'année ; pic de demande à Noël (couronnes, guirlandes). Floraison sauvage en Afrique du Sud en automne-hiver austral",
+      "sources": [
+        "https://www.fiftyflowers.com/products/silver-brunia-balls",
+        "https://www.floristrytradeclub.co.uk/post/south-african-stars",
+        "https://plantzafrica.com/plantab/brunalb.html"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 7,
+      "max": 21,
+      "sources": [
+        "https://floraldesigninstitute.com/blogs/resources-flower-library/brunia",
+        "https://www.floristrytradeclub.co.uk/post/south-african-stars",
+        "https://btfgroup.com/product/brunia"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "seche-sur-place"
+      ],
+      "ordre": "les boules gardent leur forme et leur couleur gris argent ; la tige sèche peu à peu en vase sans changement net",
+      "tete": "boules gris argent de la taille d'une bille, groupées au bout de la tige ; ne tombent pas",
+      "petales": null,
+      "feuilles": "petites, en écailles serrées le long des tiges ; restent vertes longtemps puis grisonnent",
+      "tige": "ligneuse, raide",
+      "couleurs": {
+        "blanc": {
+          "declin": "gris argent",
+          "fane": "gris argent un peu plus terne"
+        },
+        "vert": {
+          "declin": "vert grisé",
+          "fane": "brun grisé"
+        },
+        "brun": {
+          "declin": "brun",
+          "fane": "brun"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Ce qu'on vend sont surtout des fruits (infrutescences), non des fleurs ; les vraies fleurs blanches, à étamines jaunes, vieillissent en crème puis brunissent et tombent. Les boules vertes vieillissent en brun avec le temps. Elle sèche bien : on en fait des versions séchées, stabilisées et teintes. En 30 jours : les boules ne bougent presque pas, feuillage plus terne.",
+      "sources": [
+        "https://floraldesigninstitute.com/blogs/resources-flower-library/brunia",
+        "https://www.floristrytradeclub.co.uk/post/south-african-stars",
+        "https://www.santadorotea.es/en/?p=14091",
+        "https://plantzafrica.com/plantab/brunalb.html"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "berzelia",
+    "nom": "Berzelia",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [
+        9,
+        10,
+        11,
+        12
+      ],
+      "toute_annee": true,
+      "note": "Berzelia lanuginosa est disponible toute l'année ; floraison principale de septembre à décembre (ou juin à novembre selon les sources)",
+      "sources": [
+        "https://www.floristrytradeclub.co.uk/post/south-african-stars",
+        "https://www.worldplants.ca/display.php?id=9586"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 7,
+      "max": 21,
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/berzelia",
+        "https://www.worldplants.ca/display.php?id=9586"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "seche-sur-place",
+        "decolore"
+      ],
+      "ordre": "les petits boutons ronds crème à vert restent en place ; la tête se dessèche lentement en vase",
+      "tete": "grappe de petites boules rondes (boutons) au bout des rameaux, hérissées d'étamines quand elles fleurissent",
+      "petales": null,
+      "feuilles": "petites aiguilles serrées qui se chevauchent ; durent longtemps",
+      "tige": "ligneuse, ramifiée, raide",
+      "couleurs": {
+        "vert": {
+          "declin": "vert jaunâtre",
+          "fane": "vert olive brunâtre"
+        },
+        "creme": {
+          "declin": "crème à jaune beurre",
+          "fane": "beige paille"
+        },
+        "rouge": {
+          "declin": "rouge (espèces à fruits rouges)",
+          "fane": "rouge passé, brunâtre"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Fleurs et feuillage très durables, utilisés frais et secs. Les fruits rouges d'une espèce voisine (Berzelia alopecuroides) pâlissent lentement : c'est une extrapolation pour la couleur « rouge ». Le brunissement final est déduit. En 30 jours : boules sèches, couleurs ternes.",
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/berzelia",
+        "https://www.floristrytradeclub.co.uk/post/south-african-stars",
+        "https://www.fernkloof.org.za/index.php/all-plants/plant-families/item/berzelia-alopecuroides",
+        "https://pza.sanbi.org/node/9829"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "phylica",
+    "nom": "Phylica",
+    "saison_vente": {
+      "mois": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        1
+      ],
+      "pic": [
+        11,
+        12
+      ],
+      "toute_annee": false,
+      "note": "floraison de la mi-automne à la fin de l'hiver austral (mai à août) ; saison de vente en Europe non trouvée, mois et pic de Noël estimés. Aussi vendue séchée",
+      "sources": [
+        "https://leafland.co.nz/plants/phylica-plumosa/",
+        "https://pza.sanbi.org/node/10770"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 14,
+      "max": 28,
+      "sources": [
+        "https://leafland.co.nz/plants/phylica-plumosa/",
+        "https://pza.sanbi.org/node/10770"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "seche-sur-place"
+      ],
+      "ordre": "les têtes plumeuses gardent leur forme et sèchent sur place, sans chute notable",
+      "tete": "tête ronde et duveteuse, faite de bractées en plumes autour des minuscules fleurs ; aspect de petit plumeau",
+      "petales": null,
+      "feuilles": "fines, étroites, duvetées de blanc dessous ; sèchent sur la tige",
+      "tige": "ligneuse, droite",
+      "couleurs": {
+        "vert": {
+          "declin": "vert doré à crème duveteux",
+          "fane": "beige doré, duvet plus terne"
+        },
+        "creme": {
+          "declin": "crème doré",
+          "fane": "beige paille"
+        }
+      },
+      "seche_bien": true,
+      "notes": "« Très durable » en frais et sèche très bien (sources), mais aucun nombre de jours trouvé : 14 à 28 jours est une estimation. Couleurs de déclin déduites. P. plumosa fut l'une des premières fleurs séchées du Cap à atteindre l'Europe. En 30 jours : plumeau sec, intact.",
+      "sources": [
+        "https://leafland.co.nz/plants/phylica-plumosa/",
+        "https://pza.sanbi.org/node/10770"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "ixodia",
+    "nom": "Ixodia",
+    "saison_vente": {
+      "mois": [
+        11,
+        12,
+        1,
+        2,
+        3
+      ],
+      "pic": [
+        12,
+        1
+      ],
+      "toute_annee": false,
+      "note": "fleurit au printemps et en été austral ; récoltée surtout pour le commerce de fleurs séchées (Australie du Sud). Calendrier européen non trouvé, mois estimés",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Ixodia_achillaeoides",
+        "https://ishs.org/ishs-article/454_20/"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 14,
+      "max": 365,
+      "sources": [
+        "https://ishs.org/ishs-article/541_57/",
+        "https://fiftyflowers.com/products/dried-white-mountain-daisy"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "seche-sur-place",
+        "decolore"
+      ],
+      "ordre": "les petites marguerites blanches papyreuses restent ouvertes et sèchent en gardant leur forme",
+      "tete": "bouquets plats et serrés de petites têtes blanches à cœur jaune",
+      "petales": "bractées blanches papyreuses qui ne tombent pas ; jaunissent légèrement avec le temps",
+      "feuilles": "étroites, vert foncé, collantes ; brunissent en séchant",
+      "tige": "fine, un peu collante, droite",
+      "couleurs": {
+        "blanc": {
+          "declin": "blanc papier, cœur jaune",
+          "fane": "blanc crème légèrement jauni"
+        }
+      },
+      "seche_bien": true,
+      "notes": "« Fleur immortelle d'une durabilité unique » (ISHS), mais aucune durée de vase chiffrée trouvée : valeurs estimées. Jaunissement léger déduit des immortelles voisines. En 30 jours : fleurs ouvertes et sèches, feuilles brunies.",
+      "sources": [
+        "https://ishs.org/ishs-article/541_57/",
+        "https://en.wikipedia.org/wiki/Ixodia_achillaeoides",
+        "https://fiftyflowers.com/products/dried-white-mountain-daisy"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "immortelle-helichrysum",
+    "nom": "Immortelle",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [
+        7,
+        8,
+        9,
+        10
+      ],
+      "toute_annee": true,
+      "note": "fraîche de juillet à octobre (floraison en Europe) ; séchée disponible toute l'année. Calendrier de grossiste non trouvé",
+      "sources": [
+        "https://www.jardiner-malin.fr/fiche/helichrysum-bracteatum-immortelle-a-bractees.html",
+        "https://rhs.org.uk/plants/184125/Xerochrysum-bracteatum/Details"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 7,
+      "max": 10,
+      "sources": [
+        "https://www.johnnyseeds.com/flowers/strawflower/choice-mix-strawflower-seed-4985.html"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "seche-sur-place",
+        "capitule-s-ouvre"
+      ],
+      "ordre": "la fleur continue de s'ouvrir dans le vase puis sèche sur place ; trop ouverte, elle montre son cœur, puis s'effrite et se ternit",
+      "tete": "capitule rond de bractées papyreuses brillantes, en coupe ; s'ouvre à plat en vieillissant, cœur jaune visible",
+      "petales": "bractées raides comme de la paille, qui gardent leur couleur ; trop mûres, elles se cassent et ternissent",
+      "feuilles": "jaunissent et se dessèchent vite, souvent retirées",
+      "tige": "creuse ; peut plier sous la tête en séchant (les fleuristes la remplacent par un fil)",
+      "couleurs": {
+        "blanc": {
+          "declin": "blanc argenté",
+          "fane": "crème"
+        },
+        "jaune": {
+          "declin": "jaune d'or",
+          "fane": "jaune d'or un peu passé"
+        },
+        "orange": {
+          "declin": "orange cuivré",
+          "fane": "orange cuivré passé"
+        },
+        "rose": {
+          "declin": "rose argenté",
+          "fane": "rose pâle passé"
+        },
+        "rouge": {
+          "declin": "rouge pourpré",
+          "fane": "rouge brunâtre"
+        },
+        "bordeaux": {
+          "declin": "framboise sombre",
+          "fane": "brun pourpré"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Mode « capitule-s-ouvre » ajouté : contrairement à la plupart des fleurs, la tête s'ouvre de plus en plus en séchant au lieu de se refermer. Les fleurs trop ouvertes « s'effritent et se décolorent ». Elle garde des couleurs vives une fois sèche. La pliure de la tige vient de l'usage courant et n'est pas sourcée. En 30 jours : fleur sèche, grande ouverte, couleur encore vive.",
+      "sources": [
+        "https://www.johnnyseeds.com/flowers/strawflower/choice-mix-strawflower-seed-4985.html",
+        "https://kokopelli-semences.fr/en/p/with-large-bracts-helichrysum",
+        "https://www.jardiner-malin.fr/fiche/helichrysum-bracteatum-immortelle-a-bractees.html"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "xeranthemum",
+    "nom": "Xéranthème",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [
+        7,
+        8,
+        9
+      ],
+      "toute_annee": true,
+      "note": "frais : floraison du milieu de l'été au début de l'automne (juillet à septembre en Europe) ; séché : vendu toute l'année, le séchage garde la couleur des années",
+      "sources": [
+        "https://www.johnnyseeds.com/growers-library/flowers/xeranthemum/xeranthemum-key-growing-information.html",
+        "https://library.floretflowers.com/products/xeranthemum",
+        "https://www.seedaholic.com/xeranthemum-bracteatum-superbissimum-purpureum.html"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 10,
+      "max": 14,
+      "sources": [
+        "https://library.floretflowers.com/products/xeranthemum",
+        "https://www.johnnyseeds.com/growers-library/flowers/xeranthemum/xeranthemum-key-growing-information.html"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "seche-sur-place",
+        "decolore"
+      ],
+      "ordre": "les bractées sont déjà sèches et papier au toucher quand la fleur est fraîche : elles ne flétrissent pas ; la tête sèche en gardant sa forme, puis la couleur pâlit doucement à la lumière",
+      "tete": "reste droite et ouverte, ne penche pas ; la forme double reste nette",
+      "petales": "pas de vrais pétales : des bractées brillantes et satinées comme du papier, qui ne se fripent pas ; avec le temps elles perdent un peu d'éclat",
+      "feuilles": "feuilles fines et argentées, peu nombreuses ; elles sèchent, se recroquevillent et virent au gris-vert terne",
+      "tige": "fine, reste droite, devient raide et cassante en séchant",
+      "couleurs": {
+        "blanc": {
+          "declin": "blanc argenté un peu moins brillant",
+          "fane": "blanc crème, cœur paille"
+        },
+        "rose": {
+          "declin": "rose satiné un peu plus doux",
+          "fane": "rose poudré pâli"
+        },
+        "violet": {
+          "declin": "violet pourpre au reflet argenté",
+          "fane": "mauve pâli, plus gris"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Fleur sans ligules : les bractées colorées remplacent les pétales, d'où l'absence de flétrissement. Le pâlissement à la lumière est déduit des conseils généraux sur les fleurs séchées (éviter le soleil direct), pas d'une source propre au xéranthème.",
+      "sources": [
+        "https://www.seedaholic.com/?p=13890",
+        "https://www.seedaholic.com/xeranthemum-bracteatum-superbissimum-purpureum.html",
+        "https://www.promessedefleurs.ie/annuals/flower-seeds/flower-seeds-a-to-z/xeranthemum-annuum-mix-seeds-everlasting-flower.html",
+        "https://library.floretflowers.com/products/xeranthemum"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "ammobium",
+    "nom": "Ammobium",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [
+        7,
+        8,
+        9
+      ],
+      "toute_annee": true,
+      "note": "frais : floraison de juin-juillet à septembre-octobre ; surtout vendu séché, donc disponible toute l'année",
+      "sources": [
+        "https://www.gardenershq.com/Ammobium-WingedEverlasting.php",
+        "https://plants.ces.ncsu.edu/plants/ammobium-alatum/common-name/winged-everlasting/",
+        "https://www.seedaholic.com/?p=13895"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 7,
+      "max": 10,
+      "sources": [
+        "https://www.johnnyseeds.com/ammobium/ammobium-key-growing-information.html"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "seche-sur-place",
+        "decolore"
+      ],
+      "ordre": "les petites têtes continuent de s'ouvrir en séchant ; le cœur jaune fonce et devient doré puis plus sombre ; les bractées blanches restent en place",
+      "tete": "petits capitules en bouquet, restent droits ; ils s'ouvrent davantage en séchant",
+      "petales": "bractées blanches comme du papier, qui gardent forme et couleur ; le cœur jaune fonce",
+      "feuilles": "peu de feuilles sur la tige ailée ; elles sèchent et grisent",
+      "tige": "tige à ailes plates, très reconnaissable ; reste droite et devient raide",
+      "couleurs": {
+        "blanc": {
+          "declin": "blanc papier, cœur jaune doré",
+          "fane": "blanc cassé un peu crème, cœur brun doré foncé"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Vendu en blanc à cœur jaune. Le cœur qui fonce au séchage est sourcé ; le léger jaunissement du blanc à la lumière est déduit des conseils généraux sur les fleurs séchées.",
+      "sources": [
+        "https://www.seedaholic.com/?p=13895",
+        "https://www.gardenershq.com/Ammobium-WingedEverlasting.php",
+        "https://farmerbailey.com/pages/ammobium-growing-guide"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "acroclinium",
+    "nom": "Acroclinium",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [
+        7,
+        8,
+        9
+      ],
+      "toute_annee": true,
+      "note": "frais : floraison de juillet à août (fin d'été à fin d'automne selon les sources) ; séché : vendu toute l'année",
+      "sources": [
+        "https://www.futura-sciences.com/maison/actualites/decoration-creez-bouquets-fleurs-sechees-durent-toute-annee-114977/",
+        "https://www.johnnyseeds.com/flowers/helipterum-paper-daisy/pierrot-white-helipterum-seed-1279.html",
+        "https://essentiallyhops.co.uk/product/dried-flower-decoration/dried-flowers/acroclinium-pink/"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": null,
+      "max": 14,
+      "note": "« longue tenue en vase », fleur qui dure deux bonnes semaines ; pas de minimum chiffré",
+      "sources": [
+        "https://anbg.gov.au/gnp/interns-2008/rhodanthe-chlorocephala.html",
+        "https://www.johnnyseeds.com/flowers/helipterum-paper-daisy/pierrot-white-helipterum-seed-1279.html"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "seche-sur-place",
+        "decolore"
+      ],
+      "ordre": "la fleur continue de s'ouvrir après la coupe ; elle sèche ensuite en gardant sa forme de marguerite en papier ; à la lumière, le rose et le blanc s'adoucissent lentement",
+      "tete": "capitule droit, s'ouvre à plat ; le cœur jaune (ou noir) reste visible",
+      "petales": "bractées en papier, raides, qui ne se fripent pas ; deviennent fragiles une fois sèches",
+      "feuilles": "étroites, sèchent et grisent",
+      "tige": "fine et droite, devient cassante",
+      "couleurs": {
+        "blanc": {
+          "declin": "blanc papier, cœur jaune ou noir",
+          "fane": "blanc cassé, cœur plus terne"
+        },
+        "rose": {
+          "declin": "rose vif un peu adouci",
+          "fane": "rose pâle poudré"
+        },
+        "rouge": {
+          "declin": "rose foncé presque rouge",
+          "fane": "vieux rose terne"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Rhodanthe chlorocephala (ex Helipterum roseum). Couleurs vendues : blanc, rose, presque rouge, cœur jaune ou noir. Tenue en vase non chiffrée précisément.",
+      "sources": [
+        "https://anbg.gov.au/gnp/interns-2008/rhodanthe-chlorocephala.html",
+        "https://essentiallyhops.co.uk/product/dried-flower-decoration/dried-flowers/acroclinium-pink/",
+        "https://www.futura-sciences.com/maison/actualites/decoration-creez-bouquets-fleurs-sechees-durent-toute-annee-114977/"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "stirlingia",
+    "nom": "Stirlingia",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [],
+      "toute_annee": true,
+      "note": "cueillie dans la nature en Australie de l'Ouest (floraison août-octobre) puis exportée séchée ; en Europe elle n'existe que séchée, naturelle, blanchie ou teinte, et se vend toute l'année",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Stirlingia_latifolia",
+        "https://www.anthropologie.com/shop/dried-stirlingia-bunch"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": null,
+      "max": null,
+      "note": "vendu sec, ne se met pas dans l'eau ; l'eau le ferait ramollir ou moisir",
+      "sources": [
+        "https://www.anthropologie.com/shop/dried-stirlingia-bunch"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "aucune-fanaison-visible",
+        "decolore"
+      ],
+      "ordre": "sur 30 jours, presque rien ne change : la matière est déjà sèche ; seule la teinte peut pâlir au soleil direct et la poussière se dépose dans les petites boules",
+      "tete": "petites têtes rondes en grappe lâche au bout de tiges fines ; elles gardent leur forme",
+      "petales": "fleurs minuscules en boules cotonneuses, sans pétales visibles ; peuvent s'effriter si on les manipule",
+      "feuilles": "généralement absentes des bottes vendues",
+      "tige": "fine, ramifiée, raide et cassante",
+      "couleurs": {
+        "brun": {
+          "declin": "brun-jaune naturel",
+          "fane": "brun-jaune un peu plus terne et poussiéreux"
+        },
+        "creme": {
+          "declin": "crème blanchi",
+          "fane": "crème légèrement jaunie"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Fleur sauvage jaunâtre à brun-rouge (Proteaceae). Aucune source sur une tenue en vase fraîche en Europe. Le comportement sur 30 jours est déduit des conseils d'entretien des fleurs séchées (pas d'eau, pas de soleil direct). Couleurs teintes possibles mais non détaillées.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Stirlingia_latifolia",
+        "https://www.anthropologie.com/shop/dried-stirlingia-bunch",
+        "https://aff.org.au/?p=1196"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "glixia",
+    "nom": "Glixia",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [],
+      "toute_annee": true,
+      "note": "Glixia est le nom commercial de Syngonanthus elegans (Brésil), cueilli en floraison (février à juillet) puis séché au soleil ; vendu séché, souvent teint, toute l'année",
+      "sources": [
+        "https://www.rhs.org.uk/plants/140427/syngonanthus-elegans/details",
+        "https://www.vbs-hobby.at/en/glixia-pink-a299073",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC4246773"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": null,
+      "max": null,
+      "note": "vendu sec, ne se met pas dans l'eau ; l'eau le ferait ramollir ou moisir",
+      "sources": [
+        "https://lykkeandyou.de/en/pages/pflanzenname/glixia"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "aucune-fanaison-visible",
+        "decolore"
+      ],
+      "ordre": "sur 30 jours, aspect presque inchangé : ces « fleurs éternelles » gardent l'air frais des années ; les couleurs teintes pâlissent seulement au soleil direct",
+      "tete": "petits pompons ronds d'environ 5 mm au bout de tiges très fines, comme des têtes d'épingle",
+      "petales": "pas de pétales visibles : de minuscules boules serrées, sèches",
+      "feuilles": "absentes (tiges nues)",
+      "tige": "très fine et raide, environ 25 cm, cassante",
+      "couleurs": {
+        "blanc": {
+          "declin": "blanc",
+          "fane": "blanc un peu crème"
+        },
+        "jaune": {
+          "declin": "jaune vif",
+          "fane": "jaune pâli"
+        },
+        "rose": {
+          "declin": "rose teint",
+          "fane": "rose pâli"
+        },
+        "orange": {
+          "declin": "orange teint",
+          "fane": "orange pâli"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Identification par le RHS et les vendeurs de fleurs séchées (pompon 0,5 cm, tige 25 cm). Les Eriocaulaceae sont dites « éternelles » car elles gardent l'air frais des années. Le pâlissement des teintes est déduit des conseils généraux ; aucune source spécifique.",
+      "sources": [
+        "https://lykkeandyou.de/en/pages/pflanzenname/glixia",
+        "https://www.vbs-hobby.at/en/glixia-pink-a299073",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC4246773"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "palm-spear-seche",
+    "nom": "Lance de palmier séchée",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [],
+      "toute_annee": true,
+      "note": "matière sèche importée, vendue toute l'année en naturel, blanchie ou teinte",
+      "sources": [
+        "https://cakerswarehouse.com.au/products/dried-flower-spear-palm-spring-range",
+        "https://syncee.com/product/230412_61773_6557661593662/anahaw-spear-palm-leaves"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": null,
+      "max": null,
+      "note": "vendu sec, ne se met pas dans l'eau ; l'eau le ferait ramollir ou moisir",
+      "sources": [
+        "https://www.webstaurantstore.com/kalalou-25-large-dried-natural-sun-palm-spear-pack/815NSBE1016.html"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "aucune-fanaison-visible",
+        "decolore"
+      ],
+      "ordre": "sur 30 jours, la forme ne bouge pas ; au soleil direct la couleur pâlit et une fine poussière se pose dans les plis",
+      "tete": null,
+      "petales": null,
+      "feuilles": "jeune feuille de palmier encore pliée en éventail fermé, en forme de lance ; plissée, raide, vert pâle à paille ; peut se fendre le long des plis",
+      "tige": "pétiole raide et droit",
+      "couleurs": {
+        "vert": {
+          "declin": "vert pâle naturel",
+          "fane": "vert pâle tirant sur le paille"
+        },
+        "creme": {
+          "declin": "blanc crème blanchi",
+          "fane": "crème un peu jauni"
+        },
+        "brun": {
+          "declin": "paille naturel",
+          "fane": "paille plus terne"
+        }
+      },
+      "seche_bien": true,
+      "notes": "La lance est la jeune feuille centrale, encore fermée, d'un palmier ; l'espèce commerciale n'est pas précisée (palmier anahaw cité par un vendeur). Durée de plusieurs années annoncée. Le pâlissement est déduit du conseil d'éviter le soleil et l'humidité.",
+      "sources": [
+        "https://merwinconservancy.org/2015/08/palm-fact-of-the-week-the-spear-leaf/",
+        "https://syncee.com/product/230412_61773_6557661593662/anahaw-spear-palm-leaves",
+        "https://www.webstaurantstore.com/kalalou-25-large-dried-natural-sun-palm-spear-pack/815NSBE1016.html"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "sun-palm-seche",
+    "nom": "Palmier soleil séché",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [],
+      "toute_annee": true,
+      "note": "matière sèche importée, vendue toute l'année en naturel ou blanchi",
+      "sources": [
+        "https://bloomist.com/products/sun-palm",
+        "https://www.webstaurantstore.com/kalalou-25-large-dried-natural-sun-palm-spear-pack/815NSBE1016.html"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": null,
+      "max": null,
+      "note": "vendu sec, ne se met pas dans l'eau ; l'eau le ferait ramollir ou moisir",
+      "sources": [
+        "https://www.webstaurantstore.com/kalalou-25-large-dried-natural-sun-palm-spear-pack/815NSBE1016.html"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "aucune-fanaison-visible",
+        "decolore"
+      ],
+      "ordre": "sur 30 jours, aucun changement de forme ; seule la couleur pâlit au soleil direct ; la poussière se dépose dans les plis, on l'essuie avec un chiffon sec",
+      "tete": null,
+      "petales": null,
+      "feuilles": "feuille en éventail plissée naturellement, taillée en rond comme un soleil ; raide ; les bords peuvent s'effilocher ou se fendre",
+      "tige": "pétiole raide et droit",
+      "couleurs": {
+        "brun": {
+          "declin": "paille vert-beige naturel",
+          "fane": "paille plus pâle"
+        },
+        "creme": {
+          "declin": "blanc crème blanchi",
+          "fane": "crème un peu jauni"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Espèce de palmier non précisée par les vendeurs. Durée de 3 ans et plus annoncée. Pâlissement déduit du conseil d'éviter soleil et humidité.",
+      "sources": [
+        "https://bloomist.com/products/sun-palm",
+        "https://www.webstaurantstore.com/kalalou-25-large-dried-natural-sun-palm-spear-pack/815NSBE1016.html"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "ruscus-seche-teint",
+    "nom": "Fragon",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [],
+      "toute_annee": true,
+      "note": "fragon d'Italie séché, blanchi ou teint : vendu toute l'année",
+      "sources": [
+        "https://fiftyflowers.com/products/white-dried-italian-ruscus",
+        "https://fiftyflowers.com/products/blush-dried-italian-ruscus"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": null,
+      "max": null,
+      "note": "vendu sec, ne se met pas dans l'eau ; l'eau le ferait ramollir ou moisir",
+      "sources": [
+        "https://lykkeandyou.de/en/pages/pflanzenname/ruskus"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "aucune-fanaison-visible",
+        "decolore"
+      ],
+      "ordre": "sur 30 jours, presque rien ne change ; à la lumière directe la teinte pâlit lentement ; la poussière se pose sur les petites feuilles ; à l'humidité la matière ramollit",
+      "tete": null,
+      "petales": null,
+      "feuilles": "petites « feuilles » ovales et pointues (des tiges aplaties) alignées le long de la branche ; restent en place, raides",
+      "tige": "souple à l'arrivée si teinte (encore un peu humide), puis raide ; peut se tordre si mal séchée",
+      "couleurs": {
+        "blanc": {
+          "declin": "blanc",
+          "fane": "blanc un peu crème"
+        },
+        "creme": {
+          "declin": "crème",
+          "fane": "crème légèrement jauni"
+        },
+        "rose": {
+          "declin": "rose poudré",
+          "fane": "rose pâli"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Les « feuilles » du fragon sont des cladodes (tiges aplaties). Les fleurs séchées pâlissent avec le temps selon le vendeur ; sur 30 jours le changement est faible. Couleurs sourcées : blanc, crème, rose poudré.",
+      "sources": [
+        "https://lykkeandyou.de/en/pages/pflanzenname/ruskus",
+        "https://fiftyflowers.com/products/white-dried-italian-ruscus",
+        "https://flowermoxie.com/products/bleached-dried-white-italian-ruscus"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "hortensia-seche-stabilise",
+    "nom": "Hortensia séché ou stabilisé",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [],
+      "toute_annee": true,
+      "note": "stabilisé ou séché : vendu toute l'année",
+      "sources": [
+        "https://bloomoon.it/en/products/mabel-ortensia-stabilizzata-annabelle-stelo-lungo-rosa",
+        "https://lykkeandyou.de/en/pages/pflanzenname/hortensie"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": null,
+      "max": null,
+      "note": "vendu sec, ne se met pas dans l'eau ; l'eau le ferait ramollir ou moisir",
+      "sources": [
+        "https://www.youschool.fr/fleuriste/methodes-stabiliser-fleurs/"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "seche-sur-place",
+        "decolore"
+      ],
+      "ordre": "sur 30 jours, la boule garde sa forme ; au soleil direct la couleur pâlit et tire vers le jaune, les petites fleurs deviennent cassantes et peuvent tomber si on touche ; à l'humidité elles ramollissent",
+      "tete": "grosse boule de petites fleurs qui garde sa forme ; ne penche pas",
+      "petales": "sépales fins comme du papier ; stabilisés, ils restent souples ; séchés, ils deviennent cassants et s'émiettent",
+      "feuilles": "souvent retirées ; si présentes, sèches et brunes",
+      "tige": "droite et ligneuse",
+      "couleurs": {
+        "blanc": {
+          "declin": "blanc blanchi",
+          "fane": "blanc jauni, ivoire"
+        },
+        "bleu": {
+          "declin": "bleu",
+          "fane": "bleu pâli vers le gris"
+        },
+        "rose": {
+          "declin": "rose",
+          "fane": "rose pâli tirant sur le beige"
+        },
+        "violet": {
+          "declin": "violet",
+          "fane": "violet passé"
+        },
+        "bordeaux": {
+          "declin": "rouge vin",
+          "fane": "rouge vin terni"
+        },
+        "peche": {
+          "declin": "abricot",
+          "fane": "abricot pâli"
+        },
+        "jaune": {
+          "declin": "jaune",
+          "fane": "jaune pâli"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Couleurs stabilisées listées : blanc blanchi, violet, abricot, bleu, noir, rose, rouge vin, jaune, gris clair. Le jaunissement au soleil et la casse des pétales sont sourcés pour l'hortensia séché. L'ampleur du changement sur 30 jours seulement est une estimation.",
+      "sources": [
+        "https://lykkeandyou.de/en/pages/pflanzenname/hortensie",
+        "https://en.jardineriaon.com/how-to-dry-hydrangeas.html",
+        "https://www.youschool.fr/fleuriste/methodes-stabiliser-fleurs/",
+        "https://bloomoon.it/en/products/ortus-ortensia-stabilizzata-annabelle-stelo-lungo-grigio-chiaro"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "eucalyptus-stabilise",
+    "nom": "Eucalyptus stabilisé",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [],
+      "toute_annee": true,
+      "note": "stabilisé à la glycérine, souvent teint : vendu toute l'année",
+      "sources": [
+        "https://nybgshop.org/products/silver-dollar-baby-eucalyptus-8-ounce-preserved-bundle",
+        "https://endowment.org/news/discovering-the-best-way-to-preserve-eucalyptus-foliage"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": null,
+      "max": null,
+      "note": "vendu sec, ne se met pas dans l'eau ; l'eau le ferait ramollir ou moisir",
+      "sources": [
+        "https://endowment.org/news/discovering-the-best-way-to-preserve-eucalyptus-foliage"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "aucune-fanaison-visible",
+        "decolore"
+      ],
+      "ordre": "sur 30 jours, les feuilles restent souples et en place ; la couleur peut s'adoucir vers un ton plus sourd ; la poussière se dépose sur les feuilles rondes ; par temps humide la tige peut suinter un liquide vert",
+      "tete": null,
+      "petales": null,
+      "feuilles": "feuilles rondes (dollar) ou allongées, restent souples, un peu cireuses ; ton plus sourd que le frais",
+      "tige": "souple, ne casse pas ; peut suinter à l'humidité",
+      "couleurs": {
+        "vert": {
+          "declin": "vert gris un peu sourd",
+          "fane": "vert gris plus éteint"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Stabilisé à la glycérine avec un peu de teinture verte : reste souple jusqu'à un an selon une source, des années selon d'autres. Seul le vert est sourcé ; d'autres teintes existent peut-être mais ne sont pas retenues.",
+      "sources": [
+        "https://endowment.org/news/discovering-the-best-way-to-preserve-eucalyptus-foliage",
+        "https://floralacres.ca/blogs/diy/preserving-christmas-greenery-magnolia-and-eucalyptus",
+        "https://publish.csiro.au/an/EA99114"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "lichen-stabilise",
+    "nom": "Lichen stabilisé",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [],
+      "toute_annee": true,
+      "note": "lichen des rennes stabilisé et teint : vendu toute l'année",
+      "sources": [
+        "https://highlandmoss.com/preserved-reindeer-moss-grey",
+        "https://highlandmoss.com/preserved-reindeer-moss-rose-pink/"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": null,
+      "max": null,
+      "note": "vendu sec, ne se met pas dans l'eau ; l'eau le ferait ramollir ou moisir",
+      "sources": [
+        "https://archiexpo.com/prod/wertykaln/product-158867-1969719.html"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "aucune-fanaison-visible",
+        "decolore"
+      ],
+      "ordre": "sur 30 jours, la boule garde sa forme ; si l'air est très sec il durcit et s'émiette au toucher, et redevient souple quand l'air s'humidifie ; au soleil direct la teinte pâlit",
+      "tete": null,
+      "petales": null,
+      "feuilles": "pas de feuilles : touffe ronde de fins rameaux creux et ramifiés comme un petit corail, spongieuse",
+      "tige": "pas de tige",
+      "couleurs": {
+        "vert": {
+          "declin": "vert vif teint",
+          "fane": "vert un peu passé"
+        },
+        "blanc": {
+          "declin": "blanc grisé naturel pâle",
+          "fane": "gris pâle"
+        },
+        "rose": {
+          "declin": "rose teint",
+          "fane": "rose pâli"
+        },
+        "rouge": {
+          "declin": "rouge teint",
+          "fane": "rouge un peu terni"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Les teintures sont choisies pour résister aux UV : 5 à 10 ans de durée. Raide sous 40 % d'humidité, souple au-dessus, c'est réversible. Le changement sur 30 jours est faible.",
+      "sources": [
+        "https://highlandmoss.com/preserved-reindeer-moss-grey",
+        "https://archiexpo.com/prod/wertykaln/product-158867-1969719.html",
+        "https://tropicalglass.co.uk/collections/plants/products/preserved-reindeer-moss-green"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "broom-bloom",
+    "nom": "Broom bloom",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [
+        9,
+        10,
+        11
+      ],
+      "toute_annee": true,
+      "note": "fleur séchée vendue en bottes toute l'année par les grossistes de fleurs sèches ; le pic d'automne est une supposition liée aux ventes de déco sèche",
+      "sources": [
+        "https://www.vbs-hobby.at/en/broom-bloom-a296874",
+        "https://essentiallyhops.co.uk/product/dried-flower-decoration/dried-flowers/broom-bloom-natural/"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 30,
+      "max": 365,
+      "sources": [
+        "https://essentiallyhops.co.uk/product/dried-flower-decoration/dried-flowers/broom-bloom-natural/"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "seche-sur-place",
+        "decolore",
+        "fleurons-tombent"
+      ],
+      "ordre": "produit déjà sec : sur 30 jours la forme ne bouge pas ; la couleur pâlit doucement à la lumière, et quelques minuscules fleurettes cassantes tombent quand on touche le bouquet",
+      "tete": "nuage de toutes petites fleurettes rondes (environ 3 mm) sur tiges fines et ramifiées, façon gypsophile ; reste en place",
+      "petales": "fleurettes sèches et raides, qui s'effritent un peu au toucher",
+      "feuilles": "pas de feuilles visibles",
+      "tige": "fine, raide, cassante ; reste droite",
+      "couleurs": {
+        "creme": {
+          "declin": "crème naturel un peu terne",
+          "fane": "beige paille poussiéreux"
+        },
+        "vert": {
+          "declin": "vert forêt teint qui s'éclaircit",
+          "fane": "vert olive grisé, plus pâle côté lumière"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Les vendeurs décrivent Broom bloom comme une fleur sèche « semblable à la gypsophile », fleurettes d'environ 0,3 cm, bottes de 6 à 9 tiges d'environ 50 cm, vendue en naturel et en teintes (vert forêt vu). Nom botanique non trouvé dans les sources : le lien avec un genêt (Spartium, Genista) est seulement supposé. Pâlissement au soleil et fragilité : conseils généraux des vendeurs de fleurs sèches. Les pages des vendeurs n'ont pas pu être ouvertes, seulement vues dans les résultats de recherche. Les couleurs du déclin sont extrapolées.",
+      "sources": [
+        "https://www.vbs-hobby.at/en/broom-bloom-a296874",
+        "https://essentiallyhops.co.uk/product/dried-flower-decoration/dried-flowers/broom-bloom-natural/",
+        "https://blog.onparticipe.fr/products/broom-bloom-forest-green/58147350"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "feuille-strelitzia-sechee",
+    "nom": "Feuille de strelitzia séchée",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [],
+      "toute_annee": true,
+      "note": "feuille séchée vendue toute l'année par les grossistes de fleurs sèches (autour de 80 cm chez Holex) ; pas de pic trouvé",
+      "sources": [
+        "https://shop.holex.com/en_US/dried-flowers-top10"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 30,
+      "max": 365,
+      "sources": [
+        "https://shop.holex.com/en_US/dried-flowers-top10"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "seche-sur-place",
+        "decolore",
+        "feuilles-recroquevillees"
+      ],
+      "ordre": "produit déjà sec : sur 30 jours la grande feuille garde sa forme de pagaie ; la couleur pâlit un peu et les bords peuvent se fendre et s'enrouler légèrement",
+      "tete": null,
+      "petales": null,
+      "feuilles": "grande feuille en forme de pagaie, raide et parcheminée, nervures parallèles bien marquées ; bords qui se fendent en lanières comme une feuille de bananier et s'enroulent un peu",
+      "tige": "long pétiole sec et raide, reste droit",
+      "couleurs": {
+        "brun": {
+          "declin": "brun miel à beige doré",
+          "fane": "beige paille plus pâle, bords plus clairs"
+        },
+        "vert": {
+          "declin": "vert-gris éteint",
+          "fane": "vert sauge passé, presque kaki"
+        },
+        "blanc": {
+          "declin": "blanc blanchi un peu jauni",
+          "fane": "ivoire grisé"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Holex liste « Strelitzia Leaf Dried » parmi ses fleurs sèches phares (environ 80 cm). Couleurs vendues (naturel, blanchi, teint), fendillement des bords et enroulement : extrapolés à partir des feuilles de palmier séchées et de la feuille vivante (feuille en pagaie qui se déchire comme celle du bananier), pas lus sur une fiche produit. Page Holex vue seulement dans les résultats de recherche.",
+      "sources": [
+        "https://shop.holex.com/en_US/dried-flowers-top10",
+        "https://landscapeplants.aub.edu.lb/Plants/GetPDF/71ff776b-8b85-4c64-b786-befc50cfcf85"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "stoebe",
+    "nom": "Stoebe stabilisé",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [],
+      "toute_annee": true,
+      "note": "produit stabilisé (sève remplacée par une solution à base de glycérine) vendu toute l'année en bottes ; plante d'Afrique du Sud",
+      "sources": [
+        "https://www.walmart.com/ip/Vickerman-14-18-Coral-Stoebe-Bundle-Comes-3-5-oz-per-bundle/203140975",
+        "https://freshdi.com/supplier/SAS-ELEMENT-VEGETAL"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 365,
+      "max": 3650,
+      "sources": [
+        "https://freshdi.com/supplier/SAS-ELEMENT-VEGETAL"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "aucune-fanaison-visible",
+        "decolore"
+      ],
+      "ordre": "stabilisé : sur 30 jours, aucun changement de forme ; tout au plus une couleur un peu moins vive côté lumière",
+      "tete": null,
+      "petales": null,
+      "feuilles": "rameaux très fins couverts de petites feuilles en aiguilles serrées, aspect de mousse plumeuse ou de bruyère ; restent souples",
+      "tige": "fines tiges ramifiées, souples, restent en place",
+      "couleurs": {
+        "vert": {
+          "declin": "vert teint intact",
+          "fane": "vert un peu plus terne côté lumière"
+        },
+        "rose": {
+          "declin": "rose framboise ou fuchsia intact",
+          "fane": "rose un peu passé"
+        },
+        "jaune": {
+          "declin": "jaune intact",
+          "fane": "jaune légèrement délavé"
+        },
+        "bleu": {
+          "declin": "bleu clair intact",
+          "fane": "bleu grisé"
+        },
+        "orange": {
+          "declin": "corail intact",
+          "fane": "corail un peu pâli"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Couleurs vues en vente : corail, bleu bébé, jaune, vert, framboise, fuchsia (Vickerman), argent (favi.cz). La durée de 3 à 10 ans et le principe de la glycérine viennent d'un grossiste de végétaux stabilisés en général, pas d'une fiche stoebe. Le pâlissement à la lumière est une extrapolation (règle générale des végétaux stabilisés). Description du port (Stoebe plumosa, buisson à feuillage fin et plumeux) : Top Tropicals.",
+      "sources": [
+        "https://www.walmart.com/ip/Vickerman-14-18-Coral-Stoebe-Bundle-Comes-3-5-oz-per-bundle/203140975",
+        "https://favi.cz/produkty/p/stabilizovana-kytice-stoebe-silver",
+        "https://freshdi.com/supplier/SAS-ELEMENT-VEGETAL",
+        "https://toptropicals.com/catalog/uid/stoebe_plumosa.htm"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "sanguisorbe",
+    "nom": "Sanguisorbe",
+    "saison_vente": {
+      "mois": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "pic": [
+        7,
+        8,
+        9
+      ],
+      "toute_annee": false,
+      "note": "disponible de l'été à l'automne ; floraison en fin d'été et à l'automne au jardin",
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/sanguisorba",
+        "https://gardenersworld.com/how-to/grow-plants/sanguisorba",
+        "https://thursd.com/articles/marginpar-jan-star-bd-flowers-sanguisorba"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 7,
+      "max": 10,
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/sanguisorba"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "seche-sur-place",
+        "decolore",
+        "feuilles-recroquevillees"
+      ],
+      "ordre": "les petits épis ovales gardent leur forme ; leur couleur fonce puis se ternit, les feuilles découpées se fripent en premier",
+      "tete": "petit épi ovale ou rond, dense comme un pompon, au bout d'une tige fine ; reste dressé, la tige peut s'arquer un peu",
+      "petales": "minuscules fleurons serrés qui se dessèchent sur place",
+      "feuilles": "feuilles composées découpées (folioles dentées) qui se fripent et brunissent",
+      "tige": "fine, raide et ramifiée, reste debout",
+      "couleurs": {
+        "rouge": {
+          "declin": "rouge bordeaux plus sombre",
+          "fane": "brun bordeaux sec, presque chocolat"
+        },
+        "rose": {
+          "declin": "rose un peu terne",
+          "fane": "rose brunâtre"
+        },
+        "blanc": {
+          "declin": "blanc crème",
+          "fane": "beige"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Tenue 7 à 10 jours, été-automne, sensible à l'éthylène : Flower Design Institute (vu en résultat de recherche, page non ouvrable). Marginpar en propose (Red Dream, tenue annoncée jusqu'à 2-3 semaines). Le mode de fanaison (épi qui sèche sur place) et les couleurs du déclin sont extrapolés de la structure de l'épi dense, pas sourcés ; seche_bien est une supposition.",
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/sanguisorba",
+        "https://thursd.com/articles/marginpar-jan-star-bd-flowers-sanguisorba"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "fraisier-des-bois",
+    "nom": "Fraisier des bois et tiges de frai",
+    "saison_vente": {
+      "mois": [
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "pic": [
+        6,
+        7
+      ],
+      "toute_annee": false,
+      "note": "fleurs et fruits présents en même temps tout l'été sur la plante ; aucune offre de grossiste en tiges coupées trouvée",
+      "sources": [
+        "https://www.michlers.com/products/fragaria-vesca-alpine-strawberry-fraise-des-bois",
+        "https://www.inaturalist.org/guide_taxa/530571"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 3,
+      "max": 6,
+      "sources": [],
+      "note": "estimation sans source (aucune donnée de tenue en vase trouvée) : confiance basse"
+    },
+    "fanaison": {
+      "modes": [
+        "baies-rident",
+        "feuilles-recroquevillees",
+        "chute-petales"
+      ],
+      "ordre": "les petites feuilles à trois folioles mollissent et se fripent d'abord ; les fraises perdent leur brillant, foncent et se rident ; les fleurs blanches perdent leurs pétales",
+      "tete": null,
+      "petales": "fleur blanche à cinq pétales et cœur jaune ; les pétales tombent vite et laissent le petit cœur vert",
+      "feuilles": "feuilles à trois folioles dentées, vert vif, qui mollissent, se fripent et jaunissent sur les bords",
+      "tige": "tiges fines et souples qui retombent ; les fruits pendent",
+      "couleurs": {
+        "rouge": {
+          "declin": "fraises rouge plus sombre, moins brillantes",
+          "fane": "fraises rouge brun, ridées et ratatinées"
+        },
+        "blanc": {
+          "declin": "fleurs blanc cassé",
+          "fane": "pétales tombés, cœur vert-brun"
+        },
+        "vert": {
+          "declin": "feuilles vert terne",
+          "fane": "feuilles jaunes et brunes, fripées"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Botanique (fleurs blanches à cœur jaune, petits fruits rouges, fleurs et fruits ensemble en été) : sources de botanique et de pépinière. Aucune source sur des tiges coupées en vase : tenue en vase (3-6 jours) et ordre de fanaison entièrement extrapolés ; pas de source pour la tenue. « Tiges de frai » compris comme tiges de fraisier.",
+      "sources": [
+        "https://www.michlers.com/products/fragaria-vesca-alpine-strawberry-fraise-des-bois",
+        "https://www.inaturalist.org/guide_taxa/530571"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "ricin-capsules",
+    "nom": "Ricin",
+    "saison_vente": {
+      "mois": [
+        8,
+        9,
+        10
+      ],
+      "pic": [
+        9
+      ],
+      "toute_annee": false,
+      "note": "plante annuelle ; fleurs en fin d'été suivies des capsules rouges ; pas de calendrier de grossiste trouvé",
+      "sources": [
+        "https://hort.extension.wisc.edu/articles/castor-bean-ricinus-communis/",
+        "https://utgardens.tennessee.edu/july-2018-the-castor-bean/"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 7,
+      "max": 14,
+      "sources": [],
+      "note": "estimation sans source (aucune donnée de tenue en vase trouvée) : confiance basse"
+    },
+    "fanaison": {
+      "modes": [
+        "seche-sur-place",
+        "decolore",
+        "feuilles-brunissent"
+      ],
+      "ordre": "les grandes feuilles mollissent et brunissent bien avant les capsules ; les capsules hérissées restent en grappe, passent du rouge au brun et durcissent en séchant",
+      "tete": null,
+      "petales": null,
+      "feuilles": "très grandes feuilles en étoile (palmées, 5 à 11 lobes), souvent rouge-brun chez 'Carmencita' ; elles fanent vite, pendent puis brunissent",
+      "tige": "épaisse, rouge sur les variétés rouges, reste droite",
+      "couleurs": {
+        "rouge": {
+          "declin": "capsules rouge cerise qui virent au rouge brique",
+          "fane": "capsules brunes, piquants raides et secs"
+        },
+        "rose": {
+          "declin": "capsules rose-rouge plus ternes",
+          "fane": "brun rosé puis brun"
+        },
+        "vert": {
+          "declin": "capsules vert jaunâtre",
+          "fane": "brun paille"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Capsules rouge cerise, hérissées, douces tant qu'elles sont rouges et vraiment piquantes une fois sèches et brunes ; « bon remplissage et bon pour le séchage » (UT Gardens). Couleurs des capsules selon la variété : rouge vif, rose, pêche (Wisconsin). Tenue en vase non trouvée : 7-14 jours est une estimation. Toutes les parties sont très toxiques (graines surtout).",
+      "sources": [
+        "https://utgardens.tennessee.edu/july-2018-the-castor-bean/",
+        "https://hort.extension.wisc.edu/articles/castor-bean-ricinus-communis/",
+        "https://www.selectseeds.com/products/castor-oil-bean-carmencita-red-seeds"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "tweedia",
+    "nom": "Tweedia",
+    "saison_vente": {
+      "mois": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "pic": [
+        5,
+        6,
+        7
+      ],
+      "toute_annee": false,
+      "note": "proposée au printemps et en été ; une culture sous serre en jours longs et au chaud peut en produire toute l'année",
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/tweedia",
+        "https://ballaustralia.com/wp-content/uploads/plant_list/cultural_notes/O/Oxypetalum-Tweedia-CN-1.pdf"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 5,
+      "max": 10,
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/tweedia",
+        "https://farmerbailey.com/pages/tweedia-growing-guide"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "capitule-se-ferme",
+        "decolore",
+        "penche-tete"
+      ],
+      "ordre": "les petites étoiles bleu ciel virent au mauve-violet en vieillissant, puis se referment (sénescence accélérée par l'éthylène) ; les tiges mal hydratées peuvent fléchir",
+      "tete": "bouquet lâche de petites fleurs en étoile à cinq pointes ; les fleurs se referment sur elles-mêmes en fin de vie",
+      "petales": "cinq pétales pointus et charnus qui passent du bleu ciel au violet puis se replient",
+      "feuilles": "feuilles allongées, duveteuses, gris-vert, qui mollissent",
+      "tige": "souple, duveteuse, laisse couler un latex blanc à la coupe ; peut fléchir",
+      "couleurs": {
+        "bleu": {
+          "declin": "bleu ciel qui tourne au lilas",
+          "fane": "violet-mauve, fleurs refermées et ternes"
+        },
+        "blanc": {
+          "declin": "blanc un peu crème",
+          "fane": "crème beige, fleurs refermées"
+        },
+        "rose": {
+          "declin": "rose pâle plus mauve",
+          "fane": "mauve fané"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Le passage du bleu au violet avec l'âge est bien documenté (Wikipedia, NC State). La fermeture des fleurs comme signe de sénescence, accélérée par l'éthylène : article de Plant Growth Regulation (Springer), vu en résumé dans la recherche. Saison : source américaine, pas de calendrier de grossiste européen trouvé. Couleurs vendues bleu et blanc (FiftyFlowers) ; le rose est supposé (variétés japonaises) — à vérifier. Plante de la famille des asclépiades (latex).",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Oxypetalum_coeruleum",
+        "https://plants.ces.ncsu.edu/plants/oxypetalum-coeruleum/",
+        "https://link.springer.com/article/10.1007/s10725-012-9755-6",
+        "https://fiftyflowers.com/products/tweedia-flower-white",
+        "https://info.ballseed.com/CutFlowers/Resources/MarketTrends/2024/09/16/tweedia-heavenly-blue.html"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "baptisia-gousses",
+    "nom": "Baptisia",
+    "saison_vente": {
+      "mois": [
+        7,
+        8,
+        9,
+        10
+      ],
+      "pic": [
+        8,
+        9
+      ],
+      "toute_annee": false,
+      "note": "gousses coupées en été (vert-bleu) ou à l'automne quand elles sont noires et sèches ; pas de calendrier de grossiste européen trouvé",
+      "sources": [
+        "https://www.hortmag.com/smart-gardening/how-to-harvest-and-grow-the-seeds-of-blue-indigo",
+        "https://extension.sdstate.edu/baptisia-tough-perennial-looks-great"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 7,
+      "max": 10,
+      "sources": [
+        "https://farmerbailey.com/pages/baptesia-growing-guide"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "seche-sur-place",
+        "feuilles-recroquevillees",
+        "feuilles-brunissent"
+      ],
+      "ordre": "le feuillage gris-bleu fane en premier (il flétrit facilement) ; les gousses gonflées restent sur la tige, foncent jusqu'au brun-noir et sèchent ; les graines font hochet à l'intérieur",
+      "tete": null,
+      "petales": null,
+      "feuilles": "petites feuilles à trois folioles, vert bleuté, qui flétrissent vite puis noircissent ou brunissent",
+      "tige": "raide et ligneuse, reste droite ; épis de gousses le long de la tige",
+      "couleurs": {
+        "vert": {
+          "declin": "gousses vert-gris qui se teintent de brun-violet",
+          "fane": "gousses brun foncé à noires, mates"
+        },
+        "brun": {
+          "declin": "gousses brun-noir déjà sèches, inchangées",
+          "fane": "noir mat, inchangé"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Gousses mûres noires qui sonnent comme un hochet, appréciées en bouquets secs (HortMag, SDSU). Feuillage sujet au flétrissement et tenue 7-10 jours : fiche Farmer Bailey qui parle surtout des fleurs (les gousses tiennent sans doute bien plus longtemps, non sourcé). Le passage progressif du vert au noir en vase est extrapolé.",
+      "sources": [
+        "https://www.hortmag.com/smart-gardening/how-to-harvest-and-grow-the-seeds-of-blue-indigo",
+        "https://extension.sdstate.edu/baptisia-tough-perennial-looks-great",
+        "https://farmerbailey.com/pages/baptesia-growing-guide",
+        "https://thefabulousgarden.com/blog/2019/03/03/plant-profile-baptisia/"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "bruyere",
+    "nom": "Bruyère",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [
+        11,
+        12,
+        1,
+        2
+      ],
+      "toute_annee": false,
+      "note": "les bruyères d'hiver (Erica) sont surtout vendues de novembre à avril ; la callune (Calluna) fleurit de juillet à novembre",
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/heather",
+        "https://www.rhs.org.uk/plants/28310/calluna-vulgaris-floriferous/details"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 7,
+      "max": 14,
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/heather",
+        "https://www.yourhomeandgarden.co.nz/inspiration/heather-erica-flower/"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "seche-sur-place",
+        "fleurons-tombent"
+      ],
+      "ordre": "l'épi sèche sur place en gardant sa forme ; la couleur fonce ; à la fin, les petites clochettes et aiguilles tombent dès qu'on touche la tige",
+      "tete": "épi fin couvert de minuscules clochettes serrées ; garde sa forme",
+      "petales": "clochettes sèches et papyracées, couleur plus foncée, qui se détachent au toucher",
+      "feuilles": "minuscules feuilles en écailles ou aiguilles, qui sèchent et tombent avec les fleurs",
+      "tige": "ligneuse, raide, reste droite",
+      "couleurs": {
+        "rose": {
+          "declin": "rose plus profond",
+          "fane": "rose-mauve sombre et terne"
+        },
+        "violet": {
+          "declin": "violet plus sombre",
+          "fane": "prune brunâtre"
+        },
+        "blanc": {
+          "declin": "blanc crème",
+          "fane": "beige paille"
+        },
+        "rouge": {
+          "declin": "rouge carmin assombri",
+          "fane": "rouge brun"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Tenue 7-14 jours selon la variété, sèche bien sans traitement, couleur qui fonce et fleurs qui tombent au toucher sans laque fixative, l'eau doit être vérifiée chaque jour : Flower Design Institute (vu en résultat de recherche). Saison donnée pour le marché américain ; floraison de la callune de juillet à novembre (RHS). Couleurs vendues : extrapolées des teintes courantes des Erica et Calluna.",
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/heather",
+        "https://www.yourhomeandgarden.co.nz/inspiration/heather-erica-flower/",
+        "https://www.rhs.org.uk/plants/28310/calluna-vulgaris-floriferous/details"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "fustet-plumes",
+    "nom": "Fustet en plumes",
+    "saison_vente": {
+      "mois": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "pic": [
+        7,
+        8
+      ],
+      "toute_annee": false,
+      "note": "disponible l'été et l'automne ; les plumes apparaissent au milieu de l'été et tiennent jusqu'au début de l'automne",
+      "sources": [
+        "https://floraldesigninstitute.com/blogs/resources-flower-library/smoke-bush-foliage",
+        "https://www.gardenia.net/plant/cotinus-coggygria-smokebush"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 7,
+      "max": 10,
+      "sources": [
+        "https://floraldesigninstitute.com/blogs/resources-flower-library/smoke-bush-foliage"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "seche-sur-place",
+        "feuilles-recroquevillees",
+        "decolore"
+      ],
+      "ordre": "les feuilles rondes flétrissent et se fripent en premier ; les plumes vaporeuses gardent leur volume et sèchent sur place en pâlissant",
+      "tete": "nuage de fins filaments en plumeau (ce ne sont pas des pétales mais les poils des tiges florales) ; garde son volume",
+      "petales": null,
+      "feuilles": "feuilles rondes, pourpres ou vertes selon la variété, qui pendent, se fripent puis sèchent",
+      "tige": "ligneuse, fine, reste droite",
+      "couleurs": {
+        "rose": {
+          "declin": "rose fumé plus pâle",
+          "fane": "beige rosé grisé"
+        },
+        "bordeaux": {
+          "declin": "plumes pourpre-rose et feuilles pourpre sombre",
+          "fane": "plumes gris-mauve, feuilles brun violacé fripées"
+        },
+        "vert": {
+          "declin": "plumes vert-crème",
+          "fane": "beige grisé"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Tenue 7-10 jours, été-automne, peu sensible à l'éthylène : Flower Design Institute (page vue en résultat de recherche). Plumes rose-blanc puis grises, longue durée, usage en bouquet sec : RHS, Gardenia, NC State. Le pâlissement en vase et l'ordre feuilles-puis-plumes sont extrapolés.",
+      "sources": [
+        "https://floraldesigninstitute.com/blogs/resources-flower-library/smoke-bush-foliage",
+        "https://www.gardenia.net/plant/cotinus-coggygria-smokebush",
+        "https://www.rhs.org.uk/plants/4552/cotinus-coggygria-smoke-tree-american-smoke-tree/details",
+        "https://plants.ces.ncsu.edu/plants/cotinus/common-name/smokebush/"
+      ]
+    },
+    "confiance": "moyenne"
+  }
+]

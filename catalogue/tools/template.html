@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Herbier Belai's Flowers</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Fraunces:ital,opsz,wght@0,9..144,500..700;1,9..144,400..600&display=swap" rel="stylesheet">
+<style>
+/* Layout: a working herbarium — sticky filter bar, responsive card grid, illustrator notes set apart in leaf green */
+:root{--paper:#fbf7f1;--card:#fffdf9;--ink:#2b1d24;--ink2:#6b5a63;--berry:#c2185b;--leaf:#3f6b3a;--leafbg:#eef4e8;--chip:#f1ebe3;--line:rgba(43,29,36,.12);
+--r-c:#3fa66b;--r-r:#2f7bff;--r-p:#9b5cff;--r-l:#d97f00;--f-d:"Fraunces",Georgia,serif;--f-u:"Bricolage Grotesque",system-ui,-apple-system,"Segoe UI",sans-serif;color-scheme:light}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:var(--f-u);font-size:15px;line-height:1.45}
+header{position:sticky;top:0;z-index:5;background:rgba(251,247,241,.95);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line);padding:14px 16px 8px}
+.wrap{max-width:1440px;margin:0 auto}
+h1{font-family:var(--f-d);font-weight:600;font-size:clamp(24px,3vw,34px);letter-spacing:-.01em;text-wrap:balance}
+h1 em{color:var(--berry)}
+.stats{color:var(--ink2);font-size:14px;margin:2px 0 10px;font-variant-numeric:tabular-nums}
+.bar{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+#q{flex:1 1 240px;min-width:0;font:inherit;padding:10px 14px;border:1.5px solid var(--line);border-radius:12px;background:#fff;color:var(--ink)}
+select{font:inherit;padding:9px 10px;border:1.5px solid var(--line);border-radius:12px;background:#fff;color:var(--ink)}
+#q:focus-visible,select:focus-visible,button:focus-visible,a:focus-visible{outline:3px solid var(--berry);outline-offset:2px}
+.tabs,.cols{display:flex;gap:6px;overflow-x:auto;padding:8px 0 2px;scrollbar-width:thin}
+.tabs button,.cols button{flex:none;border:1px solid var(--line);background:#fff;border-radius:999px;padding:7px 12px;font:inherit;font-size:13.5px;font-weight:650;cursor:pointer;display:flex;gap:6px;align-items:center;color:var(--ink)}
+.tabs button.on,.cols button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.tabs small{opacity:.6;font-weight:600}
+.cols i{width:14px;height:14px;border-radius:50%;box-shadow:inset 0 0 0 1px rgba(0,0,0,.15)}
+main{padding:16px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,330px),1fr));gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;min-width:0}
+.ph{position:relative;aspect-ratio:4/3;background:#eae3d8;cursor:zoom-in;border:0;padding:0;width:100%;display:block}
+.ph img{width:100%;height:100%;object-fit:cover;display:block}
+.ph .none{position:absolute;inset:0;display:grid;place-items:center;color:var(--ink2);font-size:13px}
+.thumbs{display:flex;gap:4px;padding:6px;overflow-x:auto;background:#f3ede4;min-height:66px}
+.thumbs button{flex:none;border:2px solid transparent;border-radius:9px;padding:0;background:none;cursor:pointer;opacity:.82}
+.thumbs button.on{border-color:var(--berry);opacity:1}
+.thumbs img{width:52px;height:52px;object-fit:cover;border-radius:7px;display:block}
+.bd{padding:12px 14px 14px;display:grid;gap:9px}
+.nm{font-family:var(--f-d);font-size:22px;font-weight:600;line-height:1.15;text-wrap:balance}
+.lt{font-family:var(--f-d);font-style:italic;color:var(--ink2);font-size:15px}
+.en{color:var(--ink2);font-size:13px}
+.bdg{display:flex;flex-wrap:wrap;gap:5px}
+.bdg span{font-size:11.5px;font-weight:700;padding:3px 8px;border-radius:999px;background:var(--chip);color:var(--ink)}
+.bdg .rar{color:#fff;background:var(--rc)}
+.sw{display:flex;flex-wrap:wrap;gap:4px 10px;font-size:12.5px;color:var(--ink2)}
+.sw span{display:flex;align-items:center;gap:5px}
+.sw i,.vl i{flex:none;width:12px;height:12px;border-radius:50%;box-shadow:inset 0 0 0 1px rgba(0,0,0,.18)}
+.dess{background:var(--leafbg);border-radius:12px;padding:10px 12px;font-size:13.5px}
+.dess b{display:block;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--leaf);margin-bottom:3px}
+.fm{font-size:13px;color:var(--ink2)}
+details{border-top:1px dashed var(--line);padding-top:8px}
+summary{cursor:pointer;font-weight:700;font-size:13.5px}
+.vl{list-style:none;display:grid;gap:4px;margin-top:6px;max-height:280px;overflow:auto;font-size:13px}
+.vl li{display:flex;gap:7px;align-items:baseline}
+.vl em{color:var(--ink2);font-style:normal}
+.src{font-size:12px;color:var(--ink2);display:flex;flex-wrap:wrap;gap:4px 10px}
+.src a,.cr a{color:var(--berry)}
+.cr{font-size:11px;color:var(--ink2);overflow-wrap:anywhere}
+.empty{text-align:center;color:var(--ink2);padding:60px 0}
+#lb{position:fixed;inset:0;background:rgba(20,10,15,.88);display:none;place-items:center;z-index:20;padding:20px;cursor:zoom-out}
+#lb.on{display:grid}
+#lb figure{display:grid;justify-items:center;gap:8px;max-width:100%}
+#lb img{max-width:100%;max-height:82vh;border-radius:12px}
+#lb figcaption{color:#fff;font-size:13px;text-align:center}
+#lb a{color:#ffb3cc}
+footer{color:var(--ink2);font-size:12.5px;text-align:center;padding:24px 16px 40px;max-width:760px;margin:0 auto}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+ <h1>Herbier <em>Belai's Flowers</em></h1>
+ <p class="stats" id="stats"></p>
+ <div class="bar">
+  <input id="q" type="search" placeholder="Chercher : renoncule, 'Juliet', bleu, Protea…" aria-label="Rechercher une fleur, une variété ou une couleur">
+  <select id="rar" aria-label="Rareté"><option value="">Toutes raretés</option><option value="commune">Commune</option><option value="rare">Rare</option><option value="precieuse">Précieuse</option><option value="legendaire">Légendaire</option></select>
+  <select id="role" aria-label="Rôle dans le bouquet"><option value="">Tous les rôles</option><option value="focale">Fleur focale</option><option value="secondaire">Fleur secondaire</option><option value="remplissage">Remplissage</option><option value="texture">Texture</option><option value="feuillage">Feuillage</option><option value="graminee">Graminée</option><option value="branche">Branche</option><option value="baie">Baies</option><option value="ligne">Ligne</option><option value="accent">Accent</option></select>
+ </div>
+ <div class="tabs" id="tabs" role="tablist" aria-label="Familles"></div>
+ <div class="cols" id="cols" aria-label="Couleurs"></div>
+</div></header>
+<main class="wrap"><div class="grid" id="grid"></div></main>
+<footer>Photos de référence : Wikipédia et Wikimedia Commons, sous licences libres (auteur et licence indiqués sous chaque photo, lien vers la page d’origine). Données réunies à partir de fleuristes, producteurs et grossistes cités dans chaque fiche.</footer>
+<div id="lb" role="dialog" aria-modal="true" aria-label="Photo agrandie"><figure><img alt=""><figcaption></figcaption></figure></div>
+<script id="data" type="application/json">__DATA__</script>
+<script>
+const DATA=JSON.parse(document.getElementById('data').textContent);
+const $=s=>document.querySelector(s);
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const norm=s=>String(s||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
+const CMAP=[[/blanc|neige|ivoire|white/,'#ffffff','blanc'],[/creme|champagne|vanille|beige|sable|nude|cream/,'#f6e7c8','creme'],[/saumon/,'#ff9a7a','orange'],[/corail/,'#ff6f61','orange'],[/peche|abricot/,'#ffb37a','orange'],[/orange|mandarine|cuivre|terracotta|rouille/,'#ff8a1f','orange'],[/fuchsia|magenta|framboise/,'#d81b70','rose'],[/rose|blush/,'#f5a3c0','rose'],[/bordeaux|grenat|prune|aubergine|lie de vin|marsala/,'#6d0f2a','bordeaux'],[/rouge|ecarlate|carmin|cerise|vermillon/,'#d0102e','rouge'],[/jaune|citron|dore|\bor\b|moutarde|ocre/,'#ffd21f','jaune'],[/vert|lime|anis|sauge|olive|emeraude|chartreuse/,'#6fae3a','vert'],[/bleu|azur|turquoise|indigo|glauque/,'#3d6ff0','bleu'],[/violet|mauve|lavande|lilas|pourpre|parme|amethyste|orchidee/,'#8f5ad6','violet'],[/brun|chocolat|caramel|cafe|marron|toffee|bronze|cannelle|tabac/,'#7a4a2a','brun'],[/noir|ebene/,'#241418','noir'],[/gris|argent/,'#b9bec4','gris']];
+function col(name){const n=norm(name);for(const[re,hex,fam]of CMAP)if(re.test(n))return{hex,fam};return{hex:'#d8d0c6',fam:'autre'}}
+const FAMS=[['blanc','Blancs'],['creme','Crèmes'],['rose','Roses'],['rouge','Rouges'],['bordeaux','Bordeaux'],['orange','Oranges'],['jaune','Jaunes'],['vert','Verts'],['bleu','Bleus'],['violet','Violets'],['brun','Bruns'],['noir','Noirs'],['gris','Gris']];
+const RAR={commune:['Commune','--r-c'],rare:['Rare','--r-r'],precieuse:['Précieuse','--r-p'],legendaire:['Légendaire','--r-l']};
+const ROLE={focale:'Fleur focale',secondaire:'Fleur secondaire',remplissage:'Remplissage',texture:'Texture',feuillage:'Feuillage',branche:'Branche',graminee:'Graminée',baie:'Baies',ligne:'Ligne',accent:'Accent'};
+const big=u=>String(u||'').replace(/\/(\d+)px-/,'/1280px-');
+const host=u=>{try{return new URL(u).hostname.replace(/^www\./,'')}catch(e){return u}};
+for(const e of DATA){const cs=[...(e.couleurs||[]),...(e.varietes||[]).map(v=>v.couleur)];e._fams=new Set(cs.map(c=>col(c).fam));
+  e._txt=norm([e.nom_fr,e.nom_en,e.latin,e.famille,e.categorie,(e.couleurs||[]).join(' '),(e.varietes||[]).map(v=>v.nom+' '+(v.couleur||'')).join(' ')].join(' '));
+  const g=e.img&&e.img.gallery||[],m=e.img&&e.img.main;e._ph=m?[m,...g.filter(x=>x.src!==m.src)]:g;}
+const CATS=['Tout',...new Set(DATA.map(e=>e.categorie||'Autres'))];
+const S={cat:'Tout',fam:'',q:'',rar:'',role:''};
+const nVar=DATA.reduce((a,e)=>a+(e.varietes||[]).length,0),nPh=DATA.reduce((a,e)=>a+e._ph.length,0);
+$('#stats').textContent=`${DATA.length} fleurs, feuillages et branches · ${nVar} variétés · ${nPh} photos de référence`;
+function tabs(){$('#tabs').innerHTML=CATS.map(c=>`<button type="button" role="tab" aria-selected="${S.cat===c}" class="${S.cat===c?'on':''}" data-c="${esc(c)}">${esc(c)} <small>${c==='Tout'?DATA.length:DATA.filter(e=>e.categorie===c).length}</small></button>`).join('');
+  $('#cols').innerHTML=FAMS.map(([k,n])=>`<button type="button" aria-pressed="${S.fam===k}" class="${S.fam===k?'on':''}" data-f="${k}"><i style="background:${CMAP.find(x=>x[2]===k)[1]}"></i>${n}</button>`).join('')}
+function credit(p){return p?`${p.page?`<a href="${esc(p.page)}" target="_blank" rel="noopener">${esc(p.credit||'Wikimedia Commons')}</a>`:esc(p.credit||'')}`:''}
+function card(e,i){const r=RAR[e.rarete_jeu]||null,ph=e._ph,m=ph[0];
+  return `<article class="card" data-i="${i}">
+  <button class="ph" type="button" aria-label="Agrandir la photo de ${esc(e.nom_fr)}">${m?`<img loading="lazy" src="${esc(m.src)}" alt="${esc(e.nom_fr)}${m.q?' — '+esc(m.q):''}">`:'<span class="none">Pas de photo libre trouvée</span>'}</button>
+  ${ph.length>1?`<div class="thumbs">${ph.map((p,k)=>`<button type="button" class="${k?'':'on'}" data-k="${k}" aria-label="Photo ${k+1}${p.q?' : '+esc(p.q):''}"><img loading="lazy" src="${esc(p.src)}" alt=""></button>`).join('')}</div>`:''}
+  <div class="bd">
+   <div><h2 class="nm">${esc(e.nom_fr)}</h2><div class="lt">${esc(e.latin||'')}</div><div class="en">${esc(e.nom_en||'')}${e.famille?' · '+esc(e.famille):''}</div></div>
+   <div class="bdg">${r?`<span class="rar" style="--rc:var(${r[1]})">${r[0]}</span>`:''}${ROLE[e.role]?`<span>${ROLE[e.role]}</span>`:''}${e.gamme_prix?`<span>${esc(e.gamme_prix)}</span>`:''}${e.saison?`<span>${esc(e.saison)}</span>`:''}${e.tenue_vase?`<span>Vase ${esc(e.tenue_vase)}</span>`:''}</div>
+   ${(e.couleurs||[]).length?`<div class="sw">${e.couleurs.map(c=>`<span><i style="background:${col(c).hex}"></i>${esc(c)}</span>`).join('')}</div>`:''}
+   ${e.formes?`<p class="fm"><b>Formes :</b> ${esc(e.formes)}</p>`:''}
+   ${e.notes_dessin?`<div class="dess"><b>Pour le dessin</b>${esc(e.notes_dessin)}</div>`:''}
+   ${(e.varietes||[]).length?`<details><summary>${e.varietes.length} variété${e.varietes.length>1?'s':''}</summary><ul class="vl">${e.varietes.map(v=>`<li><i style="background:${col(v.couleur).hex}"></i><span><b>${esc(v.nom)}</b> <em>${esc(v.couleur||'')}${v.note?' · '+esc(v.note):''}</em></span></li>`).join('')}</ul></details>`:''}
+   ${(e.sources||[]).length?`<div class="src">Vu chez : ${e.sources.map(u=>`<a href="${esc(u)}" target="_blank" rel="noopener">${esc(host(u))}</a>`).join('')}</div>`:''}
+   <div class="cr" data-cr>${m?'Photo : '+credit(m):''}</div>
+  </div></article>`}
+let LIST=[];
+function render(){const q=norm(S.q).trim();LIST=DATA.filter(e=>(S.cat==='Tout'||e.categorie===S.cat)&&(!S.fam||e._fams.has(S.fam))&&(!S.rar||e.rarete_jeu===S.rar)&&(!S.role||e.role===S.role)&&(!q||q.split(/\s+/).every(w=>e._txt.includes(w))));
+  $('#grid').innerHTML=LIST.map((e,i)=>card(e,i)).join('')||'<p class="empty">Aucune fiche ne correspond à ces filtres.</p>'}
+$('#tabs').onclick=e=>{const b=e.target.closest('button');if(!b)return;S.cat=b.dataset.c;tabs();render()};
+$('#cols').onclick=e=>{const b=e.target.closest('button');if(!b)return;S.fam=S.fam===b.dataset.f?'':b.dataset.f;tabs();render()};
+$('#q').oninput=e=>{S.q=e.target.value;clearTimeout(render.t);render.t=setTimeout(render,180)};
+$('#rar').onchange=e=>{S.rar=e.target.value;render()};$('#role').onchange=e=>{S.role=e.target.value;render()};
+$('#grid').onclick=ev=>{const cardEl=ev.target.closest('.card');if(!cardEl)return;const e=LIST[+cardEl.dataset.i],th=ev.target.closest('.thumbs button');
+  if(th){const p=e._ph[+th.dataset.k];const im=cardEl.querySelector('.ph img');if(im){im.src=p.src;im.alt=e.nom_fr+(p.q?' — '+p.q:'')}cardEl.querySelectorAll('.thumbs button').forEach(b=>b.classList.toggle('on',b===th));cardEl.querySelector('[data-cr]').innerHTML='Photo : '+credit(p);cardEl.dataset.k=th.dataset.k;return}
+  if(ev.target.closest('.ph')){const p=e._ph[+(cardEl.dataset.k||0)];if(!p)return;const lb=$('#lb');lb.querySelector('img').src=big(p.src);lb.querySelector('img').alt=e.nom_fr;lb.querySelector('figcaption').innerHTML=`${esc(e.nom_fr)}${p.q?' — '+esc(p.q):''} · ${credit(p)}`;lb.classList.add('on')}};
+$('#lb').onclick=e=>{if(e.target.tagName!=='A')$('#lb').classList.remove('on')};
+addEventListener('keydown',e=>{if(e.key==='Escape')$('#lb').classList.remove('on')});
+tabs();render();
+</script>
+</body>
+</html>

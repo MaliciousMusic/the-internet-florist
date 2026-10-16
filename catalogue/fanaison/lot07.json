@@ -1,0 +1,2128 @@
+[
+  {
+    "id": "protea-magnifica",
+    "nom": "Protée reine",
+    "saison_vente": {
+      "mois": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        1
+      ],
+      "pic": [
+        9,
+        10,
+        11
+      ],
+      "toute_annee": false,
+      "note": "floraison sud-africaine de juin à janvier (rose à rouge intense au printemps et en été austral) ; aussi cultivée en Australie. Les grossistes néerlandais proposent les protées « toute l'année » au niveau du genre, avec un pic en automne-hiver, mais aucune source ne le confirme pour P. magnifica seule. Pic = printemps austral, déduit et non chiffré par une source.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Protea_magnifica",
+        "https://pza.sanbi.org/node/10834",
+        "https://shop.holex.com/en_US/protea"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 10,
+      "max": 21,
+      "sources": [
+        "https://pza.sanbi.org/protea-eximia",
+        "https://www.hunker.com/13411853/how-to-dry-protea/",
+        "https://journals.ashs.org/downloadpdf/view/journals/jashs/117/1/article-p124.pdf"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "feuilles-brunissent",
+        "seche-sur-place",
+        "decolore"
+      ],
+      "ordre": "les feuilles faiblissent et noircissent en premier, alors que la tête reste intacte ; la tête finit par sécher sur place, sans perdre ses bractées, et ses couleurs pâlissent lentement vers le beige-brun",
+      "tete": "grosse tête en coupe qui garde sa forme ; reste dressée sur une tige ligneuse (le port qui ne penche pas est déduit de la tige ligneuse, aucune source n'en parle)",
+      "petales": "pas de vrais pétales : les bractées soyeuses et la « barbe » de poils au bout des bractées internes restent en place et deviennent papyracées ; la couleur pâlit puis tourne au beige",
+      "feuilles": "les feuilles deviennent molles et coriaces en quelques jours, puis des plages noires apparaissent ; vers 8 jours après la récolte, la plupart peuvent être entièrement noires (noircissement foliaire des Protea, lié à l'épuisement des sucres)",
+      "tige": "ligneuse, reste droite",
+      "couleurs": {
+        "rose": {
+          "declin": "rose qui ternit et s'éteint légèrement, barbe intacte",
+          "fane": "rose poussiéreux qui vire au beige-brun clair"
+        },
+        "blanc": {
+          "declin": "blanc crème, un peu terne",
+          "fane": "beige paille"
+        },
+        "bicolore": {
+          "declin": "bractées (blanches ou roses) qui ternissent ; la barbe noire ou pourpre-noir du cœur reste sombre",
+          "fane": "bractées beige-brun, cœur toujours sombre"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Sources consultées via les extraits des résultats de recherche (WebSearch) : le téléchargement direct des pages (WebFetch) était bloqué par le proxy réseau de la session ; les valeurs reprennent ce que montraient ces extraits. Couleurs catalogue : « rose » et « rose pâle » → rose ; « blanc » → blanc ; « blanc à cœur noir » et « rose et blanc » → bicolore. Barbe des bractées blanche, pourpre-noir ou brun fauve, avec la pointe centrale noire, brune ou blanche (Protea Atlas, SANBI). Noircissement foliaire documenté pour le genre Protea (surtout P. eximia, P. neriifolia, 'Sylvia'), pas spécifiquement pour P. magnifica : appliqué ici par extension au genre. Les descriptions de couleur en déclin et fané sont extrapolées depuis la règle générale « les protées séchées gardent leur forme mais pâlissent jusqu'au beige-brun » ; aucune source ne décrit la fanaison de P. magnifica coloris par coloris. Tenue en vase : chiffre de genre (10-20 j pour P. eximia, 2-3 semaines pour les protées en général). Les valeurs signalées comme extrapolées, déduites ou estimées dans cette fiche sont à lire en confiance basse ; le reste est en confiance moyenne.",
+      "sources": [
+        "https://journals.ashs.org/downloadpdf/view/journals/jashs/117/1/article-p124.pdf",
+        "https://scholar.sun.ac.za/items/9def663c-8c56-465c-8c1f-c467fc520cfb/full",
+        "https://www.hunker.com/13411853/how-to-dry-protea/",
+        "https://www.floristrytradeclub.co.uk/post/protea-everything-you-need-to-know",
+        "https://www.proteaatlas.org.za/p11bea.htm",
+        "https://treesa.org/?p=7497",
+        "https://pza.sanbi.org/node/10834"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "protea-eximia",
+    "nom": "Protée duchesse",
+    "saison_vente": {
+      "mois": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [
+        8,
+        9,
+        10
+      ],
+      "toute_annee": false,
+      "note": "floraison principale d'août à octobre (printemps austral), têtes présentes de juin à décembre (SANBI).",
+      "sources": [
+        "https://pza.sanbi.org/protea-eximia",
+        "https://shop.holex.com/en_US/protea"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 10,
+      "max": 20,
+      "sources": [
+        "https://pza.sanbi.org/protea-eximia",
+        "https://journals.ashs.org/downloadpdf/view/journals/jashs/117/1/article-p124.pdf",
+        "https://agris.fao.org/search/ar/records/65df92f96eef00c2cea3083a"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "feuilles-brunissent",
+        "seche-sur-place",
+        "decolore"
+      ],
+      "ordre": "les feuilles noircissent tôt : à l'obscurité dès 4 jours, souvent dès le 3e jour, puis jusqu'à 50 % de la surface foliaire noire ; pendant ce temps la tête rose garde sa forme, puis sèche sur place en pâlissant",
+      "tete": "tête en coupe allongée, rose profond à centre pourpre ; garde sa forme et ne tombe pas",
+      "petales": "bractées cireuses qui restent attachées et deviennent sèches et papyracées, avec une couleur qui s'éteint",
+      "feuilles": "feuilles larges gris-vert : molles et coriaces d'abord, puis taches noires qui s'étendent jusqu'au noir complet",
+      "tige": "ligneuse, reste droite",
+      "couleurs": {
+        "rose": {
+          "declin": "rose profond qui ternit, centre pourpre toujours net",
+          "fane": "rose sale qui vire au brun beige"
+        },
+        "rouge": {
+          "declin": "rose-rouge qui s'assombrit légèrement et perd son éclat",
+          "fane": "brun rosé terne"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Sources consultées via les extraits des résultats de recherche (WebSearch) : le téléchargement direct des pages (WebFetch) était bloqué par le proxy réseau de la session ; les valeurs reprennent ce que montraient ces extraits. Couleurs catalogue : « rose » et « rose vif » → rose ; « rose-rouge » → rouge. C'est l'espèce de référence des études sur le noircissement foliaire (Bieleski et al., J. Amer. Soc. Hort. Sci. 117(1)) : feuilles noires en 4 jours à l'obscurité ; 16 jours jusqu'à 50 % de noircissement avec 0,5 % de saccharose et du chlore. Pour le dessin, c'est donc la feuille qui marque le déclin, pas la fleur. Évolution des couleurs de la tête extrapolée depuis le comportement général des protées séchées (elles pâlissent jusqu'au beige-brun). Les valeurs signalées comme extrapolées, déduites ou estimées dans cette fiche sont à lire en confiance basse ; le reste est en confiance moyenne.",
+      "sources": [
+        "https://journals.ashs.org/downloadpdf/view/journals/jashs/117/1/article-p124.pdf",
+        "https://agris.fao.org/search/ar/records/65df92f96eef00c2cea3083a",
+        "https://scholar.sun.ac.za/items/9def663c-8c56-465c-8c1f-c467fc520cfb/full",
+        "https://www.hunker.com/13411853/how-to-dry-protea/",
+        "https://pza.sanbi.org/protea-eximia",
+        "https://www.rhs.org.uk/plants/53972/wd/details"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "protea-hybrides",
+    "nom": "Protées hybrides et petites protée",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [
+        10,
+        11,
+        12,
+        1,
+        2
+      ],
+      "toute_annee": true,
+      "note": "le grossiste néerlandais Holex propose les protées toute l'année, avec un pic en automne et en hiver. Production sud-africaine (premier exportateur, l'Europe est son premier marché) et australienne ; 'Pink Ice' fleurit de l'automne au printemps austral. Le pic est donné par le grossiste au niveau du genre.",
+      "sources": [
+        "https://shop.holex.com/en_US/protea",
+        "https://www.farmersweekly.co.za/agri-news/south-africa/protea-exports-set-to-increase-despite-covid-19-challenges",
+        "https://proteaflora.com.au/proteaflora-plants/protea/pink-ice",
+        "https://hortflora.rbg.vic.gov.au/taxon/ad98ffe2-5340-11e7-b82b-005056b0018f"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 6,
+      "max": 21,
+      "sources": [
+        "https://ishs.org/ishs-article/869_17/",
+        "https://www.hunker.com/13411853/how-to-dry-protea/",
+        "https://pza.sanbi.org/protea-eximia"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "feuilles-brunissent",
+        "seche-sur-place",
+        "decolore"
+      ],
+      "ordre": "noircissement des feuilles d'abord (c'est lui qui limite la tenue de 'Sylvia' et de 'Pink Ice') ; les têtes restent entières et finissent par sécher en pâlissant",
+      "tete": "tête en coupe qui garde sa forme ; ne penche pas",
+      "petales": "bractées (souvent bordées de poils argentés chez 'Pink Ice') qui restent attachées, sèchent et pâlissent",
+      "feuilles": "les feuilles deviennent molles et coriaces en quelques jours, puis des plages noires apparaissent ; vers 8 jours après la récolte, la plupart peuvent être entièrement noires (noircissement foliaire des Protea, lié à l'épuisement des sucres)",
+      "tige": "ligneuse, droite",
+      "couleurs": {
+        "rose": {
+          "declin": "rose qui ternit, frange argentée intacte",
+          "fane": "vieux rose poussiéreux puis beige-brun"
+        },
+        "rouge": {
+          "declin": "rouge cerise qui s'assombrit",
+          "fane": "brun rougeâtre terne"
+        },
+        "peche": {
+          "declin": "saumon qui pâlit",
+          "fane": "beige rosé"
+        },
+        "creme": {
+          "declin": "crème terne",
+          "fane": "beige paille"
+        },
+        "blanc": {
+          "declin": "blanc ivoire",
+          "fane": "beige clair"
+        },
+        "vert": {
+          "declin": "vert lime qui jaunit",
+          "fane": "vert-brun paille"
+        },
+        "bordeaux": {
+          "declin": "prune qui s'assombrit",
+          "fane": "brun prune très sombre"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Sources consultées via les extraits des résultats de recherche (WebSearch) : le téléchargement direct des pages (WebFetch) était bloqué par le proxy réseau de la session ; les valeurs reprennent ce que montraient ces extraits. Couleurs catalogue : « rose argenté », « rose » et « rose vif » → rose ; « rouge » et « rouge cerise » → rouge ; « saumon » → peche ; « crème » → creme ; « blanc » → blanc ; « vert lime » → vert ; « prune » → bordeaux (famille la plus proche). Groupe hétérogène : la tenue va de 6 jours ('Sylvia' sans traitement, à cause du noircissement foliaire) à environ 20 jours (avec glucose, ou chiffre général « 2-3 semaines » des protées). Avec une solution d'acide ascorbique, 'Pink Ice' retarde son noircissement de 11 jours et 'Susara' noircit beaucoup moins sur 13 jours. Toutes les couleurs en déclin et fané sont extrapolées depuis la règle générale (forme gardée, couleurs qui pâlissent vers le beige) ; aucune source par coloris. Les valeurs signalées comme extrapolées, déduites ou estimées dans cette fiche sont à lire en confiance basse ; le reste est en confiance moyenne.",
+      "sources": [
+        "https://ishs.org/ishs-article/869_17/",
+        "https://scholar.sun.ac.za/items/9def663c-8c56-465c-8c1f-c467fc520cfb/full",
+        "https://journals.ashs.org/downloadpdf/view/journals/jashs/117/1/article-p124.pdf",
+        "https://www.hunker.com/13411853/how-to-dry-protea/",
+        "https://proteaflora.com.au/proteaflora-plants/protea/pink-ice",
+        "https://hortflora.rbg.vic.gov.au/taxon/ad98ffe2-5340-11e7-b82b-005056b0018f"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "leucospermum",
+    "nom": "Leucospermum",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [
+        9,
+        10,
+        11,
+        12
+      ],
+      "toute_annee": true,
+      "note": "floraison sud-africaine de septembre à décembre ; aujourd'hui aussi cultivé en Espagne et au Portugal, la plupart des variétés sont disponibles toute l'année selon un fleuriste européen. D'autres sources précisent que certaines espèces restent limitées par la saison.",
+      "sources": [
+        "https://www.euroflorist.pl/en/flower-encyclopedia/leucospermum",
+        "https://floraldesigninstitute.com/blogs/resources-flower-library/pincusion-protea",
+        "https://www.calyxflowers.com/?p=7527"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 10,
+      "max": 21,
+      "sources": [
+        "https://floraldesigninstitute.com/blogs/resources-flower-library/pincusion-protea",
+        "https://www.euroflorist.pl/en/flower-encyclopedia/leucospermum",
+        "https://www.calyxflowers.com/?p=7527"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "feuilles-brunissent",
+        "seche-sur-place"
+      ],
+      "ordre": "les feuilles noircissent (signe de déclin chez les fleuristes, et défaut connu en conservation, qui demande de la lumière en chambre froide) ; la tête en pelote d'épingles garde ensuite sa structure et sèche sur place",
+      "tete": "capitule en pelote d'épingles ; à la récolte, environ 25 % des styles sont droits et les autres se dégagent en boucles ; en vase, tous les styles se redressent et la pelote s'ouvre complètement ; reste dressée",
+      "petales": "les « épingles » sont des styles raides dépassant de petites fleurs tubulaires ; en séchant, la tête garde couleur et structure",
+      "feuilles": "feuilles qui noircissent ; craint la pourriture en atmosphère humide",
+      "tige": "ligneuse, droite",
+      "couleurs": {
+        "orange": {
+          "declin": "orange qui perd un peu d'éclat",
+          "fane": "orange brûlé, assez bien conservé au séchage"
+        },
+        "rouge": {
+          "declin": "rouge qui s'assombrit légèrement",
+          "fane": "rouge brique sombre"
+        },
+        "jaune": {
+          "declin": "jaune d'or un peu terne",
+          "fane": "jaune moutarde ocré"
+        },
+        "peche": {
+          "declin": "saumon qui pâlit",
+          "fane": "beige saumoné"
+        },
+        "rose": {
+          "declin": "rose qui ternit",
+          "fane": "vieux rose"
+        },
+        "creme": {
+          "declin": "crème terne",
+          "fane": "beige paille"
+        },
+        "bicolore": {
+          "declin": "jaune et rouge qui ternissent ensemble",
+          "fane": "ocre et rouge brique"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Sources consultées via les extraits des résultats de recherche (WebSearch) : le téléchargement direct des pages (WebFetch) était bloqué par le proxy réseau de la session ; les valeurs reprennent ce que montraient ces extraits. Couleurs catalogue : « orange » et « rouge orangé » → orange ; « rouge » → rouge ; « jaune » et « jaune d'or » → jaune ; « saumon » → peche ; « rose » → rose ; « crème » → creme ; « bicolore jaune et rouge » → bicolore. Préfère l'eau claire : la nourriture pour fleurs raccourcit parfois sa tenue. Pourtant, des solutions de glucose à 1-2 % prolongent la tenue de 'Cordi', 'Gold Dust', 'High Gold' et 'Succession', mais pas celle de 'Scarlet Ribbon' ni de 'Tango'. « Garde couleur et structure en séchant » est sourcé. Les nuances exactes du déclin et du fané par coloris sont extrapolées, et aucune source ne décrit l'aspect des styles en fin de vie (affaissement, brunissement) : à dessiner prudemment. Les valeurs signalées comme extrapolées, déduites ou estimées dans cette fiche sont à lire en confiance basse ; le reste est en confiance moyenne.",
+      "sources": [
+        "https://www.calyxflowers.com/?p=7527",
+        "https://floraldesigninstitute.com/blogs/resources-flower-library/pincusion-protea",
+        "https://www.euroflorist.pl/en/flower-encyclopedia/leucospermum",
+        "https://ishs.org/ishs-article/602_22/",
+        "https://scholar.sun.ac.za/items/bb6955b0-ad76-4a7d-ad17-a8d862b1349f/full"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "leucadendron",
+    "nom": "Leucadendron",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [],
+      "toute_annee": true,
+      "note": "'Safari Sunset' et 'Green Gem' sont disponibles toute l'année ; d'autres cultivars ('Jester') sont saisonniers. Israël exporte plus de 24 millions de tiges de 'Safari Sunset' par an vers l'Europe et les États-Unis, et l'Afrique du Sud en exporte aussi. Aucune source trouvée pour un pic européen, d'où un pic laissé vide.",
+      "sources": [
+        "https://fiftyflowers.com/products/safari-sunset-leucadendron",
+        "https://www.phtnet.org/research/download/pdf/mg351.pdf",
+        "https://ishs.org/ishs-article/869_25/"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 8,
+      "max": 25,
+      "sources": [
+        "https://fiftyflowers.com/products/safari-sunset-leucadendron",
+        "https://www.flower.style/flowers-we-love/leucadendron"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "feuilles-brunissent",
+        "decolore",
+        "seche-sur-place",
+        "reverdit"
+      ],
+      "ordre": "les feuilles vertes noircissent et se dessèchent (premier défaut de 'Safari Sunset' coupé) ; les feuilles colorées qui entourent le cône (feuilles involucrales) perdent leur couleur : les jaunes reverdissent quand les fleurettes fanent, et les rouges passent au rouge pourpré puis pâlissent vers le jaune doré ; le cône persiste",
+      "tete": "cône central (fleurettes chez la femelle, futur cône à graines) entouré d'une rosette de feuilles colorées ; garde sa forme",
+      "petales": "pas de pétales : la couleur vient des feuilles involucrales (« bractées ») ; elles restent attachées",
+      "feuilles": "les feuilles vertes de la tige noircissent et se dessèchent ; les feuilles colorées changent de teinte sans tomber",
+      "tige": "ligneuse, droite",
+      "couleurs": {
+        "bordeaux": {
+          "declin": "bordeaux qui vire au rouge pourpré",
+          "fane": "pourpre brunâtre, pâlissant vers le jaune doré à la base des feuilles"
+        },
+        "rouge": {
+          "declin": "rouge qui mûrit en rouge pourpré",
+          "fane": "pâlit vers le jaune doré ou le brun rougeâtre"
+        },
+        "jaune": {
+          "declin": "jaune vif qui verdit (regreening)",
+          "fane": "jaune-vert terne puis vert olive"
+        },
+        "creme": {
+          "declin": "crème qui verdit légèrement",
+          "fane": "crème verdâtre terne"
+        },
+        "bicolore": {
+          "declin": "rouge du centre qui s'assombrit, crème qui verdit",
+          "fane": "brun rouge et crème verdâtre"
+        },
+        "rose": {
+          "declin": "rose qui s'assombrit",
+          "fane": "rose brunâtre"
+        },
+        "vert": {
+          "declin": "vert inchangé ou plus foncé",
+          "fane": "vert olive, bords bruns"
+        },
+        "brun": {
+          "declin": "cône brun inchangé",
+          "fane": "brun foncé, inchangé (cône ligneux)"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Sources consultées via les extraits des résultats de recherche (WebSearch) : le téléchargement direct des pages (WebFetch) était bloqué par le proxy réseau de la session ; les valeurs reprennent ce que montraient ces extraits. Mode ajouté : « reverdit », car les feuilles involucrales jaunes reverdissent quand les fleurettes fanent : la chlorophylle avait été dégradée et réapparaît (étude publiée dans Australian Journal of Botany). C'est l'inverse d'une fanaison classique. Couleurs catalogue : « rouge bordeaux » → bordeaux ; « rouge » → rouge ; « jaune d'or » → jaune ; « crème » → creme ; « bicolore crème et rouge » → bicolore ; « rose » → rose ; « vert » → vert ; « brun » → brun (cônes) ; « argent » → rangé sous vert faute de famille « argent » (feuillage de L. argenteum, argenté par des poils soyeux couchés ; déclin non documenté, sans doute un argent qui ternit vers le gris-vert : extrapolation). La séquence rouge → rouge pourpré → jaune doré est décrite sur la plante (femelles de 'Safari Sunset'-type) ; qu'elle se produise en vase pendant 30 jours est une extrapolation. Sur seche_bien = true : pas de source directe, seulement « idéal en fleur coupée » pour L. argenteum et des cônes qui persistent des années sur la plante, d'où la confiance moyenne. Tenue : 8 j minimum ('Safari Sunset', Fiftyflowers) à 14-25 j (flower.style, extrait de recherche). Les valeurs signalées comme extrapolées, déduites ou estimées dans cette fiche sont à lire en confiance basse ; le reste est en confiance moyenne.",
+      "sources": [
+        "https://www.phtnet.org/research/download/pdf/mg351.pdf",
+        "https://ishs.org/ishs-article/869_25/",
+        "https://publish.csiro.au/bt/bt10129",
+        "https://scholar.sun.ac.za/handle/10019.1/5314?show=full",
+        "https://gardensonline.com.au/GardenShed/PlantFinder/Show_2815.aspx",
+        "https://en.wikipedia.org/wiki/Leucadendron_argenteum",
+        "https://pza.sanbi.org/node/10507"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "serruria",
+    "nom": "Serruria",
+    "saison_vente": {
+      "mois": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "pic": [
+        7,
+        8,
+        9,
+        10
+      ],
+      "toute_annee": false,
+      "note": "vendu en fleur coupée de mai à octobre ; floraison naturelle de juillet à octobre (hiver-printemps austral).",
+      "sources": [
+        "https://floraldesigninstitute.com/blogs/resources-flower-library/blushing-bride",
+        "https://en.wikipedia.org/wiki/Serruria_florida"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 7,
+      "max": 14,
+      "sources": [
+        "https://floraldesigninstitute.com/blogs/resources-flower-library/blushing-bride"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "feuilles-jaunissent",
+        "feuilles-brunissent",
+        "penche-tete",
+        "seche-sur-place"
+      ],
+      "ordre": "en mûrissant, le cœur passe du blanc au rose de plus en plus marqué et ses fleurettes se séparent ; les feuilles jaunissent ou noircissent ; la tige faible peut laisser pencher la tête ; les bractées papyracées sèchent sur place",
+      "tete": "tête en étoile de bractées blanches papyracées et pointues autour d'un cœur duveteux ; les fleurettes, d'abord blanches et serrées, se séparent et rosissent avec l'âge",
+      "petales": "bractées papyracées qui gardent leur forme en séchant",
+      "feuilles": "feuilles finement découpées qui jaunissent ou noircissent ; sensible au botrytis",
+      "tige": "faible, peut avoir besoin d'un tuteur, donc ploiement possible",
+      "couleurs": {
+        "blanc": {
+          "declin": "cœur qui rosit nettement, bractées blanc ivoire",
+          "fane": "bractées crème-beige papyracées, cœur rose brunâtre"
+        },
+        "creme": {
+          "declin": "crème avec cœur rosé",
+          "fane": "beige paille"
+        },
+        "rose": {
+          "declin": "rose plus marqué au cœur",
+          "fane": "rose fané vers le beige rosé"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Sources consultées via les extraits des résultats de recherche (WebSearch) : le téléchargement direct des pages (WebFetch) était bloqué par le proxy réseau de la session ; les valeurs reprennent ce que montraient ces extraits. Couleurs catalogue : « blanc rosé » → blanc ; « blanc crème » → creme ; « rose » et « rose pâle » → rose. Surprise pour le dessin : la fleur rosit en vieillissant au lieu de pâlir. Sensible à l'éthylène. Aucune source sur une éventuelle chute des fleurettes. « Sèche bien » repose sur la texture papyracée des bractées, qu'on dit populaires en bouquets : je n'ai pas trouvé de guide de séchage dédié. Les teintes du fané sont extrapolées. Les valeurs signalées comme extrapolées, déduites ou estimées dans cette fiche sont à lire en confiance basse ; le reste est en confiance moyenne.",
+      "sources": [
+        "https://floraldesigninstitute.com/blogs/resources-flower-library/blushing-bride",
+        "https://en.wikipedia.org/wiki/Serruria_florida",
+        "https://pza.sanbi.org/node/10949",
+        "https://www.thetablemountainfund.org.za/know-your-fynbos-secrets-of-serruria/"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "mimetes",
+    "nom": "Mimetes",
+    "saison_vente": {
+      "mois": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        1,
+        2,
+        3
+      ],
+      "pic": [
+        9,
+        10,
+        11
+      ],
+      "toute_annee": false,
+      "note": "Mimetes cucullatus fleurit presque toute l'année dans la nature, avec un pic d'août à mars (début du printemps à la fin de l'été austral) ; espèce citée comme excellente pour la production de fleurs coupées. Aucun calendrier de grossiste européen trouvé : mois et pic sont déduits de la floraison naturelle.",
+      "sources": [
+        "https://pza.sanbi.org/node/11629",
+        "https://kumbulanursery.co.za/node/470",
+        "https://easyscape.com/species/Mimetes-cucullatus(Common-Pagoda)"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 14,
+      "max": 21,
+      "sources": [
+        "https://pza.sanbi.org/node/11629"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "feuilles-brunissent",
+        "seche-sur-place"
+      ],
+      "ordre": "extrapolé : comme chez les autres Proteaceae coupées, les feuilles vertes basses noircissent d'abord ; les feuilles colorées de la « pagode » gardent leur couleur plusieurs semaines puis sèchent sur place",
+      "tete": "pas de tête unique : une « pagode » de feuilles supérieures rouge vif, chacune abritant une touffe de 4 à 7 fleurettes duveteuses, sur jusqu'à 15 étages",
+      "petales": "fleurettes en touffes à longs styles ; leur fanaison n'est pas documentée",
+      "feuilles": "les feuilles colorées tiennent leur couleur plusieurs semaines ; les feuilles vertes noircissent probablement, comme chez les Protea (extrapolé)",
+      "tige": "ligneuse, droite",
+      "couleurs": {
+        "rouge": {
+          "declin": "rouge écarlate qui ternit légèrement",
+          "fane": "rouge brique sombre puis brun rouge"
+        },
+        "orange": {
+          "declin": "orange qui perd son éclat",
+          "fane": "orange brûlé à brun"
+        },
+        "bicolore": {
+          "declin": "jaune et rouge (ou argent et rouge) qui ternissent ; les poils argentés restent",
+          "fane": "brun rouge et beige argenté"
+        },
+        "peche": {
+          "declin": "rose orangé qui pâlit",
+          "fane": "beige rosé brunâtre"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Sources consultées via les extraits des résultats de recherche (WebSearch) : le téléchargement direct des pages (WebFetch) était bloqué par le proxy réseau de la session ; les valeurs reprennent ce que montraient ces extraits. Couleurs catalogue : « rouge écarlate » → rouge ; « orange » → orange ; « jaune et rouge » et « argent et rouge » → bicolore ; « rose orangé » → peche. Seule donnée sur la tenue : les tiges « gardent leur couleur plusieurs semaines » en fleur coupée (SANBI) ; les valeurs 14-21 j traduisent prudemment ce « plusieurs semaines » et ne sont pas un chiffre mesuré. Le déroulé de la fanaison, les couleurs du déclin et du fané et seche_bien sont extrapolés depuis Protea et Leucadendron (genres voisins) : confiance basse.",
+      "sources": [
+        "https://pza.sanbi.org/node/11629",
+        "https://kumbulanursery.co.za/node/470",
+        "https://easyscape.com/species/Mimetes-cucullatus(Common-Pagoda)",
+        "https://journals.ashs.org/downloadpdf/view/journals/jashs/117/1/article-p124.pdf"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "aulax",
+    "nom": "Aulax",
+    "saison_vente": {
+      "mois": [
+        9,
+        10,
+        11,
+        12,
+        1,
+        2
+      ],
+      "pic": [
+        11,
+        12,
+        1
+      ],
+      "toute_annee": false,
+      "note": "A. cancellata fleurit de novembre à février, A. umbellata de septembre à février (floraison naturelle en Afrique du Sud). Aucun calendrier de grossiste européen trouvé ; le feuillage est peut-être vendu plus longtemps, mais rien ne le confirme.",
+      "sources": [
+        "https://www.proteaatlas.org.za/cpaucanc.htm",
+        "https://easyscape.com/species/Aulax-cancellata(Channel-Leaf-Featherbush)",
+        "https://en.wikipedia.org/wiki/Aulax_umbellata"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 10,
+      "max": 21,
+      "sources": [
+        "https://easyscape.com/species/Aulax-cancellata(Channel-Leaf-Featherbush)",
+        "https://fiftyflowers.com/products/safari-sunset-leucadendron"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "seche-sur-place",
+        "feuilles-brunissent"
+      ],
+      "ordre": "extrapolé : le feuillage fin perd son éclat et brunit lentement ; les inflorescences mâles plumeuses jaunes ternissent ; les inflorescences femelles sèchent naturellement en coque ligneuse en forme de cône",
+      "tete": "plantes mâles : grappes plumeuses jaunes ; plantes femelles : têtes en entonnoir, semblables à des Leucospermum, qui deviennent des cônes à graines ligneux",
+      "petales": null,
+      "feuilles": "feuillage fin, en aiguilles (A. cancellata, A. pallasia) ou plat (A. umbellata) ; son déclin en vase n'est pas documenté",
+      "tige": "ligneuse, droite",
+      "couleurs": {
+        "jaune": {
+          "declin": "jaune plumeux qui ternit",
+          "fane": "jaune paille à beige"
+        },
+        "brun": {
+          "declin": "bronze qui s'assombrit",
+          "fane": "brun mat"
+        },
+        "vert": {
+          "declin": "vert qui ternit",
+          "fane": "vert olive brunâtre"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Sources consultées via les extraits des résultats de recherche (WebSearch) : le téléchargement direct des pages (WebFetch) était bloqué par le proxy réseau de la session ; les valeurs reprennent ce que montraient ces extraits. Couleurs catalogue : « jaune » → jaune ; « bronze » et « brun » → brun ; « vert » → vert. Sourcé : les fleurs tiennent bien une fois coupées (pas de chiffre), et chez la femelle les fleurs sèchent en coque ligneuse qui protège les graines. Les jours de tenue (10-21) sont extrapolés depuis Leucadendron, genre voisin vendu comme feuillage du Cap. Le déroulé de la fanaison et les couleurs sont extrapolés : confiance basse.",
+      "sources": [
+        "https://www.proteaatlas.org.za/cpaucanc.htm",
+        "https://easyscape.com/species/Aulax-cancellata(Channel-Leaf-Featherbush)",
+        "https://en.wikipedia.org/wiki/Aulax_umbellata",
+        "https://en.wikipedia.org/wiki/Aulax"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "banksia",
+    "nom": "Banksia",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [
+        7,
+        8,
+        9,
+        10
+      ],
+      "toute_annee": true,
+      "note": "disponible toute l'année. Récolte en Australie-Occidentale : B. coccinea d'avril à novembre, B. hookeriana toute l'année ; en Australie-Méridionale, B. coccinea de juillet à octobre et B. menziesii de mars à octobre, avec un pic en mars-avril. Le pic retenu (juillet-octobre) correspond au recouvrement des espèces principales et ne vient pas d'un calendrier de grossiste européen.",
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/banksia",
+        "https://www.agric.wa.gov.au/nursery-cutflowers/banksias-cutflower-production",
+        "https://www.publish.csiro.au/EA/EA9910853"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 8,
+      "max": 16,
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/banksia",
+        "https://www.viva.co.nz/article/at-home/flowers-that-wont-die-in-a-week/"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "seche-sur-place",
+        "decolore",
+        "fleurons-tombent"
+      ],
+      "ordre": "l'épi garde sa forme ; les fleurs sèchent et passent à l'orange, au fauve ou au brun foncé, puis au gris (sur la plante, en plusieurs années) ; selon l'espèce, les vieilles fleurs restent sur l'axe (aspect velu) ou tombent et découvrent les follicules ligneux",
+      "tete": "épi cylindrique ou en cône (ou tête en dôme chez les anciens Dryandra), dressé, qui garde sa forme",
+      "petales": "des centaines de fleurs tubulaires à styles en crochet, qui sèchent sur l'axe ou tombent selon l'espèce",
+      "feuilles": "feuilles coriaces et dentées ; le feuillage sèche bien en décor sec ; aucune source sur un noircissement en vase",
+      "tige": "ligneuse, droite",
+      "couleurs": {
+        "orange": {
+          "declin": "orange qui ternit vers le fauve",
+          "fane": "brun roux puis gris-brun"
+        },
+        "bicolore": {
+          "declin": "rouge et blanc (ou bordeaux et or) qui ternissent",
+          "fane": "brun fauve et beige"
+        },
+        "jaune": {
+          "declin": "jaune qui vire au fauve",
+          "fane": "brun clair puis gris"
+        },
+        "creme": {
+          "declin": "crème qui vire au fauve",
+          "fane": "beige-brun puis gris"
+        },
+        "vert": {
+          "declin": "jaune-vert ou vert qui ternit",
+          "fane": "brun olive"
+        },
+        "brun": {
+          "declin": "brun inchangé",
+          "fane": "brun foncé à gris"
+        },
+        "violet": {
+          "declin": "pourpre foncé qui s'assombrit",
+          "fane": "brun noirâtre puis gris"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Sources consultées via les extraits des résultats de recherche (WebSearch) : le téléchargement direct des pages (WebFetch) était bloqué par le proxy réseau de la session ; les valeurs reprennent ce que montraient ces extraits. Couleurs catalogue : « orange » → orange ; « rouge et blanc » et « bordeaux et or » → bicolore ; « jaune » → jaune ; « jaune-vert » et « vert » → vert ; « crème » → creme ; « brun » → brun ; « pourpre foncé » → violet (famille la plus proche ; bordeaux possible). Le passage à l'orange, au fauve, au brun puis au gris est décrit pour les épis vieillissant sur la plante (Wikipédia, Banksia, B. marginata, B. ericifolia) ; en vase sur 30 jours, seul le début (brunissement) est vraisemblable et le gris relève de l'extrapolation. Fleurs persistantes ou tombantes selon l'espèce (par exemple, les fleurs persistent chez B. marginata et tombent vite chez B. ericifolia). Très bon pour le séchage. Peu de recherche post-récolte publiée (voir l'étude sur B. coccinea, Adélaïde). Les valeurs signalées comme extrapolées, déduites ou estimées dans cette fiche sont à lire en confiance basse ; le reste est en confiance moyenne.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Banksia",
+        "https://en.wikipedia.org/wiki/Banksia_marginata",
+        "https://en.wikipedia.org/wiki/Banksia_ericifolia",
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/banksia",
+        "https://www.viva.co.nz/article/at-home/flowers-that-wont-die-in-a-week/",
+        "https://eres.library.adelaide.edu.au/dspace/handle/2440/13029"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "telopea",
+    "nom": "Waratah",
+    "saison_vente": {
+      "mois": [
+        9,
+        10,
+        11
+      ],
+      "pic": [
+        9,
+        10
+      ],
+      "toute_annee": false,
+      "note": "floraison naturelle en Australie de septembre à novembre, fenêtre commerciale de 5 à 6 semaines seulement ; le Zimbabwe et l'Afrique du Sud exportent aussi des Telopea (calendrier non trouvé) ; présence confirmée sur le marché néerlandais (Waratah Shady Lady Crimson) sans calendrier précis",
+      "sources": [
+        "https://anbg.gov.au/emblems/nsw.emblem.html",
+        "https://agrifutures.com.au/related-projects/farm-based-methods-for-control-of-flowering-in-waratahs",
+        "https://idtools.org/id/cutflowers/key/Cut_Flower_Exports_of_Africa/Media/Html/Fact_sheets/Telopea.htm",
+        "https://thursd.com/products/cut-flowers/other-flowers/waratah-shady-lady-crimson"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 8,
+      "max": 13,
+      "sources": [
+        "https://www.sciencedirect.com/science/article/abs/pii/0304423886900099",
+        "https://ses.library.usyd.edu.au/bitstream/handle/2123/5773/03a-martyn-2005-thesis.pdf?sequence=3&isAllowed=y"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "bleuit",
+        "penche-tete",
+        "seche-sur-place",
+        "feuilles-brunissent"
+      ],
+      "ordre": "les petites fleurs serrées de la tête et les bractées rouges qui l'entourent flétrissent et bleuissent ; la tête garde sa forme en séchant",
+      "tete": "capitule conique ou aplati qui reste en place ; perd sa fermeté puis sèche en gardant à peu près sa silhouette",
+      "petales": "pas de vrais pétales : fleurs tubulaires serrées et collerette de bractées ; ce sont elles qui ramollissent et virent au bleuâtre",
+      "feuilles": "coriaces ; noircissement possible comme chez les protées (rapproché du genre Protea par les sources, non documenté précisément pour le waratah)",
+      "tige": "ligneuse, reste droite",
+      "couleurs": {
+        "rouge": {
+          "declin": "rouge cramoisi qui se ternit et bleuit",
+          "fane": "rouge sombre bleuté, mat et sec"
+        },
+        "rose": {
+          "declin": "rose qui se ternit, reflets bleutés (extrapolé du rouge)",
+          "fane": "rose-mauve sale, sec (extrapolé)"
+        },
+        "creme": {
+          "declin": "crème qui s'éteint, pointes beiges (extrapolé)",
+          "fane": "beige brunâtre (extrapolé)"
+        },
+        "blanc": {
+          "declin": "blanc qui jaunit légèrement (extrapolé)",
+          "fane": "beige (extrapolé)"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Mode « bleuit » ajouté : la fin de vie est définie dans l'étude de référence (Scientia Horticulturae 1986) par un flétrissement et un bleuissement des fleurs ou des bractées. Le brunissement des bractées est un défaut avant récolte (coup de soleil), pas un symptôme de vase. Tenue : 7,9 j sans traitement et 11,7 j avec bactéricide chloré ; une thèse cite « plus de 13 jours ». Séchage : un glossaire de fleuriste dit qu'il se tient bien en sec ; non vérifié par une source scientifique. Couleurs autres que le rouge (hybrides Shady Lady blanc, rose, jaune crème) : déclin extrapolé, non sourcé. Catalogue : rouge et rouge cramoisi → rouge ; rose, rose prune, rose saumon → rose ; jaune crème → creme ; blanc crème → blanc. Méthode : les pages citées n'ont pu être lues qu'à travers les extraits du moteur de recherche (téléchargement direct bloqué par le proxy de la session) ; chiffres et faits repris de ces extraits. Les valeurs signalées comme extrapolées, déduites ou estimées dans cette fiche sont à lire en confiance basse ; le reste est en confiance moyenne.",
+      "sources": [
+        "https://www.sciencedirect.com/science/article/abs/pii/0304423886900099",
+        "https://www.sciencedirect.com/science/article/abs/pii/S0304423807000957",
+        "https://premierepeau.com/ja/pages/glossary-terms/waratah",
+        "https://gardeningwithangus.com.au/?p=861"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "anigozanthos",
+    "nom": "Patte de kangourou",
+    "saison_vente": {
+      "mois": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "pic": [],
+      "toute_annee": false,
+      "note": "les fournisseurs (calendriers américains) l'annoncent de mai à novembre ; cultivée aussi en Israël (serres non chauffées) et exportée d'Australie vers l'Europe ; pas de calendrier européen trouvé",
+      "sources": [
+        "https://fiftyflowers.com/products/kangaroo-paw-yellow-flower",
+        "https://westmountflorist.com/blogs/flower-dictionary/kangaroo-paw",
+        "https://en.wikipedia.org/wiki/Kangaroo_paw"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 8,
+      "max": 16,
+      "sources": [
+        "https://floraldesigninstitute.com/blogs/resources-flower-library/anigozanthos",
+        "https://oes.chileanjar.cl/files/V63I1A11_es.pdf"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "brunit-bords",
+        "recroqueville",
+        "decolore"
+      ],
+      "ordre": "les pointes des fleurs tubulaires brunissent et les fleurs deviennent molles ; en séchant, les couleurs vives pâlissent",
+      "tete": "pas de tête : grappe ramifiée de fleurs tubulaires velues en « patte » au bout d'une tige nue ; les fleurs ramollissent sur place",
+      "petales": "tubes velus fendus en six lobes ; les pointes brunissent, les fleurs deviennent flasques",
+      "feuilles": "peu présentes sur la tige coupée (feuilles en éventail à la base) ; taches noires d'encre possibles (maladie fongique), à la culture",
+      "tige": "rigide, velue, reste droite",
+      "couleurs": {
+        "rouge": {
+          "declin": "rouge qui se ternit, pointes brunes",
+          "fane": "rouge brique pâli"
+        },
+        "jaune": {
+          "declin": "jaune moins vif, pointes brunes",
+          "fane": "jaune paille terne"
+        },
+        "vert": {
+          "declin": "vert jaunissant (extrapolé)",
+          "fane": "vert-gris pâle (extrapolé)"
+        },
+        "orange": {
+          "declin": "orange terni, pointes brunes",
+          "fane": "orange pâle délavé"
+        },
+        "rose": {
+          "declin": "rose terni",
+          "fane": "rose pâle délavé"
+        },
+        "violet": {
+          "declin": "pourpre qui se ternit (extrapolé)",
+          "fane": "pourpre grisé (extrapolé)"
+        },
+        "bordeaux": {
+          "declin": "bordeaux mat",
+          "fane": "bordeaux brunâtre (extrapolé)"
+        },
+        "blanc": {
+          "declin": "blanc crème, pointes brunes (extrapolé)",
+          "fane": "beige (extrapolé)"
+        },
+        "bicolore": {
+          "declin": "rouge et vert qui se ternissent ensemble (extrapolé)",
+          "fane": "rouge brique et vert-gris (extrapolé)"
+        },
+        "peche": {
+          "declin": "corail terni (extrapolé)",
+          "fane": "saumon pâle (extrapolé)"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Les sources de fleuristes conseillent d'éviter à l'achat les fleurs flasques et les pointes brunes (signe de manque d'eau) : ce sont donc les premiers signes de déclin. Séchée, la tige garde sa forme mais les couleurs vives deviennent « pâles et sans vie » (source de jardinage). Sensible au froid, pas à l'éthylène. Tenue : 8 à 16 j selon les fiches ; une étude chilienne donne environ 8 j ; certains cultivars annoncés à plus de 4 semaines (fiche d'obtenteur). Les teintes de déclin par couleur sont générales (ternissement, pâlissement) ; les détails par couleur sont extrapolés. Catalogue : rouge → rouge ; rouge et vert → bicolore ; jaune, jaune-vert → jaune ; orange ; rose ; pourpre → violet ; bordeaux ; blanc ; bleu-vert → vert ; corail → peche. Méthode : les pages citées n'ont pu être lues qu'à travers les extraits du moteur de recherche (téléchargement direct bloqué par le proxy de la session) ; chiffres et faits repris de ces extraits. Les valeurs signalées comme extrapolées, déduites ou estimées dans cette fiche sont à lire en confiance basse ; le reste est en confiance moyenne.",
+      "sources": [
+        "https://floraldesigninstitute.com/blogs/resources-flower-library/anigozanthos",
+        "https://www.agric.wa.gov.au/nursery-cutflowers/growing-kangaroo-paws-western-australia?nopaging=1",
+        "https://gardeningwithangus.com.au/?p=166956",
+        "https://iifiir.org/en/fridoc/long-term-low-temperature-storage-injures-kangaroo-paw-cut-flowers-116077"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "isopogon",
+    "nom": "Isopogon",
+    "saison_vente": {
+      "mois": [
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [
+        9,
+        10
+      ],
+      "toute_annee": false,
+      "note": "saison de floraison australienne : I. formosus (rose) d'août à décembre, I. anethifolius (jaune) de septembre à décembre ; aucun calendrier de grossiste européen trouvé",
+      "sources": [
+        "https://resources.austplants.com.au/plant/isopogon-formosus/",
+        "https://resources.austplants.com.au/plant/isopogon-anethifolius/"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": null,
+      "max": null,
+      "sources": [
+        "https://resources.austplants.com.au/plant/isopogon-formosus/",
+        "https://en.wikipedia.org/wiki/Isopogon_latifolius"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "seche-sur-place",
+        "decolore"
+      ],
+      "ordre": "non documenté en vase ; sur la plante, les fleurs du capitule fanent et le cône vire au gris puis gris-brun en perdant les restes floraux",
+      "tete": "capitule globuleux (« drumstick ») ; après la floraison il devient un cône rond, gris puis gris-brun, ligneux",
+      "petales": "fleurs fines et filiformes autour du capitule ; chez l'espèce jaune, les styles deviennent jaune-orangé plus foncé en vieillissant",
+      "feuilles": "non documenté pour la tige coupée",
+      "tige": "ligneuse, reste droite",
+      "couleurs": {
+        "jaune": {
+          "declin": "jaune qui fonce vers le jaune-orangé (styles)",
+          "fane": "cône gris à gris-brun, poilu"
+        },
+        "rose": {
+          "declin": "rose qui pâlit (extrapolé)",
+          "fane": "cône gris-brun (stade fruit, observé sur la plante)"
+        },
+        "violet": {
+          "declin": "rose pourpré qui pâlit (extrapolé)",
+          "fane": "cône gris-brun (stade fruit, observé sur la plante)"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Tenue en vase : aucune valeur chiffrée trouvée, seulement « longue tenue » et « bonne tenue en vase » (Australian Plants Society) ; min et max laissés à null plutôt qu'inventés. Le passage au cône gris est observé sur la plante (environ 6 mois après la floraison), pas en vase : on peut s'en servir pour le stade Fané, mais c'est une extrapolation. Séchage : déduit du cône ligneux persistant, non documenté en fleuristerie. Catalogue : jaune → jaune ; rose, rose rougeâtre → rose ; rose pourpré → violet. Méthode : les pages citées n'ont pu être lues qu'à travers les extraits du moteur de recherche (téléchargement direct bloqué par le proxy de la session) ; chiffres et faits repris de ces extraits.",
+      "sources": [
+        "https://resources.austplants.com.au/plant/isopogon-anemonifolius/",
+        "https://resources.austplants.com.au/plant/isopogon-anethifolius/",
+        "https://en.wikipedia.org/wiki/Isopogon_anemonifolius"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "grevillea",
+    "nom": "Grevillea",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [],
+      "toute_annee": true,
+      "note": "annoncé disponible toute l'année par une fiche de fleuristerie américaine ; production israélienne (70 ha, 70 % des exportations en G. 'Spiderman') vendue en Europe ; pas de calendrier européen précis",
+      "sources": [
+        "https://floraldesigninstitute.com/blogs/resources-flower-library/grevillea",
+        "https://ishs.org/ishs-article/869_24/"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 3,
+      "max": 9,
+      "sources": [
+        "https://publish.csiro.au/AN/EA9960379",
+        "https://era.daf.qld.gov.au/id/eprint/12640/1/Vase%20life%20characteristics%20of%20selected%20Grevillea.pdf"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "penche-tete",
+        "fleurons-tombent",
+        "decolore"
+      ],
+      "ordre": "l'inflorescence flétrit tôt (tige bouchée à la coupe), puis les fleurs tombent et les couleurs pâlissent",
+      "tete": "grappe en brosse ou en araignée, styles longs et recourbés ; elle se flétrit et s'affaisse",
+      "petales": "fleurs tubulaires à styles saillants ; elles se détachent (abscission) et pâlissent",
+      "feuilles": "non documenté",
+      "tige": "ligneuse ; le flétrissement part d'un blocage des 2 cm du bas de la tige",
+      "couleurs": {
+        "rouge": {
+          "declin": "rouge qui pâlit",
+          "fane": "rouge rosé délavé (extrapolé)"
+        },
+        "orange": {
+          "declin": "orange qui pâlit",
+          "fane": "orange délavé (extrapolé)"
+        },
+        "peche": {
+          "declin": "abricot qui pâlit",
+          "fane": "beige rosé (extrapolé)"
+        },
+        "rose": {
+          "declin": "rose qui pâlit",
+          "fane": "rose grisé (extrapolé)"
+        },
+        "creme": {
+          "declin": "crème qui jaunit (extrapolé)",
+          "fane": "beige (extrapolé)"
+        },
+        "bicolore": {
+          "declin": "rouge et jaune qui pâlissent",
+          "fane": "rouge et jaune délavés (extrapolé)"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Étude du Queensland sur des grevilléas tropicaux : tenue de 3 j (G. wickhamii) à 9 j (G. whiteana) ; fin de vie par flétrissement, chute des fleurs et pâlissement. Certains hybrides sont sensibles à l'éthylène ('Kay Williams', 'Misty Pink'). Une fiche de fleuristerie annonce 14 à 21 j, sans doute pour le feuillage de grevillea : non retenu. Le pâlissement est sourcé, mais les teintes précises de fin de vie sont extrapolées. Catalogue : rouge, rouge profond → rouge ; orange, jaune orangé → orange ; abricot → peche ; rose ; blanc crème → creme ; rouge et jaune → bicolore. Méthode : les pages citées n'ont pu être lues qu'à travers les extraits du moteur de recherche (téléchargement direct bloqué par le proxy de la session) ; chiffres et faits repris de ces extraits. Les valeurs signalées comme extrapolées, déduites ou estimées dans cette fiche sont à lire en confiance basse ; le reste est en confiance moyenne.",
+      "sources": [
+        "https://publish.csiro.au/AN/EA9960379",
+        "https://era.daf.qld.gov.au/id/eprint/9746/1/Responses%20of%20Native%20Australian%20Cut%20Flowers%20to%20Treatment%20with%201-Methylcyclopropene%20and%20Ethylene.pdf",
+        "https://era.daf.qld.gov.au/id/eprint/11887/1/Cutflower%20characteristics%20of%20terminal%20flowering%20tropical%20Grevillea%20A%20brief%20review.pdf"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "hakea",
+    "nom": "Hakea",
+    "saison_vente": {
+      "mois": [
+        5,
+        6,
+        7,
+        8
+      ],
+      "pic": [
+        6,
+        7
+      ],
+      "toute_annee": false,
+      "note": "floraison australienne de H. laurina du milieu de l'automne au début du printemps austral (fin avril à août-septembre) ; aucun calendrier de grossiste européen trouvé",
+      "sources": [
+        "https://gardeningwithangus.com.au/?p=55996",
+        "https://anbg.gov.au/gnp/gnp2/hakea-laurina.html",
+        "https://www.gardenia.net/plant/hakea-laurina"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": null,
+      "max": null,
+      "sources": [
+        "https://anbg.gov.au/gnp/gnp2/hakea-laurina.html"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "decolore",
+        "fleurons-tombent"
+      ],
+      "ordre": "non documenté en vase ; extrapolé du genre voisin Grevillea : la boule s'affaisse, les styles tombent et les couleurs pâlissent",
+      "tete": "boule en pelote d'épingles de 5 cm environ, 120 à 190 styles en épingles ; s'affaisse et se dégarnit (extrapolé)",
+      "petales": "pas de vrais pétales : boule de tépales rouges hérissée de styles crème ; sur la plante, les styles virent du crème au rouge en mûrissant",
+      "feuilles": "longues, bleu-vert, coriaces ; comportement en vase non documenté",
+      "tige": "ligneuse, reste droite",
+      "couleurs": {
+        "bicolore": {
+          "declin": "styles crème qui rougissent (vu sur la plante), puis le rouge se ternit (extrapolé)",
+          "fane": "rouge brunâtre terne (extrapolé)"
+        },
+        "rouge": {
+          "declin": "rouge qui se ternit (extrapolé)",
+          "fane": "rouge brun (extrapolé)"
+        },
+        "orange": {
+          "declin": "orange qui pâlit (extrapolé)",
+          "fane": "orange brunâtre (extrapolé)"
+        },
+        "rose": {
+          "declin": "rose qui pâlit (extrapolé)",
+          "fane": "rose grisé (extrapolé)"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Aucune donnée de tenue en vase ni de symptômes de fin de vie trouvée pour Hakea : min et max à null ; les sources disent seulement « bonnes fleurs coupées », parfumées. Fanaison extrapolée de Grevillea (même tribu de Proteaceae), donc confiance basse. Point utile au dessin : chez H. laurina, la couleur évolue avant la fanaison, car les styles crème rougissent en vieillissant (les sources se contredisent un peu sur le sens). Catalogue : rose rouge et crème, crème et pourpre → bicolore ; rouge ; orange ; rose. Méthode : les pages citées n'ont pu être lues qu'à travers les extraits du moteur de recherche (téléchargement direct bloqué par le proxy de la session) ; chiffres et faits repris de ces extraits.",
+      "sources": [
+        "https://traveller.exploroz.com/wildflowers/proteaceae/hakea/laurina",
+        "https://worldplants.ca/display.php?id=10199",
+        "https://anbg.gov.au/gnp/gnp2/hakea-laurina.html"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "gloriosa",
+    "nom": "Gloriosa",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [],
+      "toute_annee": true,
+      "note": "disponible toute l'année ; les gloriosas rouge-orangé arrivent de Tanzanie presque toute l'année ; pas de pic européen trouvé",
+      "sources": [
+        "https://floraldesigninstitute.com/blogs/resources-flower-library/gloriosa",
+        "https://thursd.com/products/cut-flowers/other-flowers/gloriosa-superba",
+        "https://thursd.com/products/cut-flowers/other-flowers/gloriosa-superba-simba-fifty-shades"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 4,
+      "max": 5,
+      "sources": [
+        "https://floraldesigninstitute.com/blogs/resources-flower-library/gloriosa"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "vire-au-rouge",
+        "recroqueville"
+      ],
+      "ordre": "les tépales d'abord jaunes et rouges rougissent jour après jour, tandis que leur retroussement diminue et que la fleur s'aplatit ; puis les tépales flétrissent",
+      "tete": "fleur pendante aux six tépales ondulés et retroussés vers le haut (environ 45°) ; en vieillissant elle s'aplatit",
+      "petales": "tépales à bords ondulés ; la bordure jaune recule au profit du rouge, puis ils ramollissent et se flétrissent",
+      "feuilles": "feuilles terminées par une vrille ; comportement en vase non documenté",
+      "tige": "grimpante, souple",
+      "couleurs": {
+        "bicolore": {
+          "declin": "le rouge gagne sur la bordure jaune, de plus en plus rouge",
+          "fane": "entièrement rouge cramoisi, flétri"
+        },
+        "rouge": {
+          "declin": "rouge qui fonce vers le cramoisi",
+          "fane": "cramoisi sombre, flétri (extrapolé)"
+        },
+        "bordeaux": {
+          "declin": "bordeaux qui fonce (extrapolé)",
+          "fane": "bordeaux brunâtre, flétri (extrapolé)"
+        },
+        "jaune": {
+          "declin": "jaune ('Lutea') : virage au rouge non documenté, ternissement supposé (extrapolé)",
+          "fane": "jaune brunâtre flétri (extrapolé)"
+        },
+        "orange": {
+          "declin": "orange qui rougit (extrapolé du type)",
+          "fane": "rouge orangé flétri (extrapolé)"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Mode « vire-au-rouge » ajouté : le changement de couleur au vieillissement est la signature de l'espèce (vert et cerise sombre, puis jaune bouton-d'or et rouge vif, puis de plus en plus rouge sur une semaine à 10 jours ; tépales moins retroussés). D'après une étude sri-lankaise, la fleur tient environ 14 j sur la plante, et elle tiendrait autant coupée. La fiche de fleuristerie donne 4 à 5 j par fleur en vase. Conservation : jusqu'à 10 j à 4 °C, nette baisse après 7 j ; dégâts de froid à 1 °C. Pour les formes jaune et bordeaux, le déclin est extrapolé. Catalogue : rouge bordé de jaune → bicolore ; jaune ; orange ; rouge ; bordeaux. Méthode : les pages citées n'ont pu être lues qu'à travers les extraits du moteur de recherche (téléchargement direct bloqué par le proxy de la session) ; chiffres et faits repris de ces extraits. Les valeurs signalées comme extrapolées, déduites ou estimées dans cette fiche sont à lire en confiance basse ; le reste est en confiance moyenne.",
+      "sources": [
+        "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/PP22733",
+        "https://dl.nsf.gov.lk/bitstreams/8e9bcddd-b12f-4300-875a-8fe7e52f43c4/download",
+        "https://journals.ashs.org/view/journals/jashs/117/3/article-p442.xml",
+        "https://tare.sljol.info/article/10.4038/tare.v7i0.5422/"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "tillandsia",
+    "nom": "Tillandsia",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [],
+      "toute_annee": true,
+      "note": "plante vivante (filles de l'air, T. cyanea en pot) vendue en jardinerie toute l'année ; pas de calendrier formel trouvé, valeur à confirmer",
+      "sources": [
+        "https://www.bomagardencentre.co.uk/product/tillandsia-cyanea-pink-pot-size-55cm-height-25cm-pink-quill",
+        "https://www.joyusgarden.com/pink-quill-plant-care/"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 60,
+      "max": 120,
+      "sources": [
+        "https://www.joyusgarden.com/pink-quill-plant-care/",
+        "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/PP27512"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "feuilles-recroquevillees",
+        "feuilles-brunissent",
+        "decolore"
+      ],
+      "ordre": "sans eau, les feuilles s'enroulent vers l'intérieur et leurs pointes brunissent et cassent ; trop mouillée, la base noircit et pourrit, et les feuilles du centre se détachent ; l'épi coloré pâlit après la floraison",
+      "tete": "épi plat de bractées roses (T. cyanea) ; chaque fleur violette ne dure que 1 à 3 jours, mais l'épi tient 2 à 4 mois puis pâlit",
+      "petales": "fleurs violettes éphémères, qui sortent une à une entre les bractées",
+      "feuilles": "rosette grise argentée ou verte ; en déclin, les feuilles s'enroulent vers l'intérieur et les pointes brunissent et sèchent ; en pourriture, la base devient brun-noir et la rosette se défait",
+      "tige": "pas de tige : rosette sans racines utiles",
+      "couleurs": {
+        "vert": {
+          "declin": "pointes brunes, feuilles enroulées, vert terni",
+          "fane": "brun paille sec ou base noire"
+        },
+        "rose": {
+          "declin": "bractées roses qui pâlissent",
+          "fane": "rose pâle délavé virant au beige (extrapolé)"
+        },
+        "rouge": {
+          "declin": "rougeur des feuilles ou bractées qui pâlit (extrapolé)",
+          "fane": "brun-rouge sec (extrapolé)"
+        },
+        "violet": {
+          "declin": "fleurs violettes fanées en un à trois jours",
+          "fane": "fleurs flétries, brunes (extrapolé)"
+        },
+        "orange": {
+          "declin": "bractée orange qui pâlit (extrapolé)",
+          "fane": "orange délavé brunâtre (extrapolé)"
+        },
+        "jaune": {
+          "declin": "bractée jaune qui pâlit (extrapolé)",
+          "fane": "jaune paille (extrapolé)"
+        },
+        "blanc": {
+          "declin": "fleur blanche qui flétrit (extrapolé)",
+          "fane": "beige (extrapolé)"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Plante vivante : la « tenue en vase » ne veut rien dire ici. Le chiffre retenu est la durée de l'épi coloré : 2 à 4 mois pour T. cyanea, environ 2 mois pour T. 'Biancini'. Après la floraison, la plante mère est monocarpique : elle décline lentement pendant que des rejets apparaissent. Mode utile pour le stade Déclin : feuilles enroulées vers l'intérieur et pointes brunes. Le gris argenté (trichomes) est classé en vert faute de famille « gris ». Catalogue : gris argenté, vert → vert ; rouge ; rose ; violet, pourpre → violet ; orange ; jaune ; blanc. Méthode : les pages citées n'ont pu être lues qu'à travers les extraits du moteur de recherche (téléchargement direct bloqué par le proxy de la session) ; chiffres et faits repris de ces extraits. Les valeurs signalées comme extrapolées, déduites ou estimées dans cette fiche sont à lire en confiance basse ; le reste est en confiance moyenne.",
+      "sources": [
+        "https://plantaddicts.com/common-air-plant-problems/",
+        "https://gardenerspath.com/plants/houseplants/revive-air-plants/",
+        "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/PP27512",
+        "https://www.joyusgarden.com/pink-quill-plant-care/"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "nepenthes",
+    "nom": "Népenthès",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [],
+      "toute_annee": true,
+      "note": "plante d'intérieur en suspension proposée par des producteurs néerlandais (ex. Kwekerij Laguna, N. 'Gaya', N. alata en pot suspendu de 14 cm) ; disponibilité toute l'année supposée, sans calendrier formel",
+      "sources": [
+        "https://just-plants.freshportal.com/en/product/details/index/STI_ID/13785847/",
+        "https://www.rhs.org.uk/plants/76432/nepenthes-alata/details"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 30,
+      "max": 60,
+      "sources": [
+        "https://flytrapcare.com/phpBB3/post349612.html",
+        "https://www.terraforums.com/forums/threads/pitchers-turning-yellow-then.88448"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "brunit-du-haut",
+        "feuilles-brunissent"
+      ],
+      "ordre": "l'urne vieillit du haut vers le bas : le couvercle brunit d'abord, puis le rebord (péristome), puis le corps de l'urne jusqu'à la vrille ; l'urne finit ratatinée",
+      "tete": "urne pendue au bout d'une vrille, avec un couvercle ; elle se dessèche à partir du couvercle",
+      "petales": null,
+      "feuilles": "en air sec, les urnes deviennent brunes et cassantes, et les pointes de feuilles qui devaient former des urnes se dessèchent avant de se développer",
+      "tige": "vrilles qui portent les urnes ; elles sèchent en dernier",
+      "couleurs": {
+        "vert": {
+          "declin": "couvercle brun, puis rebord qui brunit, corps encore vert jaunissant",
+          "fane": "brun sec et ratatiné jusqu'à la vrille"
+        },
+        "rouge": {
+          "declin": "couvercle brun, rouge qui se ternit vers le bas (extrapolé pour la teinte)",
+          "fane": "brun-rouge sec (extrapolé)"
+        },
+        "bordeaux": {
+          "declin": "couvercle brun foncé, bordeaux mat (extrapolé pour la teinte)",
+          "fane": "brun presque noir, sec (extrapolé)"
+        },
+        "bicolore": {
+          "declin": "vert moucheté de rouge qui jaunit sous un couvercle brun (extrapolé)",
+          "fane": "brun moucheté sec (extrapolé)"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Mode « brunit-du-haut » ajouté (le couvercle et le rebord brunissent avant le corps), décrit par des cultivateurs sur forums spécialisés. Durée de vie d'une urne sur la plante : environ un mois, parfois plus ; un à deux mois pour N. mirabilis. Urnes coupées en vase : aucune source trouvée ; la valeur concerne une urne sur plante vivante. Le sens du brunissement est sourcé ; les teintes intermédiaires par couleur sont extrapolées. Sources faibles (forums et fiche de vulgarisation) : confiance moyenne au mieux pour la forme, basse pour les durées. Catalogue : vert, vert lime → vert ; rouge ; bordeaux ; vert moucheté de rouge → bicolore. Méthode : les pages citées n'ont pu être lues qu'à travers les extraits du moteur de recherche (téléchargement direct bloqué par le proxy de la session) ; chiffres et faits repris de ces extraits.",
+      "sources": [
+        "https://flytrapcare.com/phpBB3/post349612.html",
+        "https://hgic.clemson.edu/factsheet/tropical-pitcher-plants-nepenthes-spp-indoor-care-growing-tips-plant-guide/",
+        "https://bloomscape.com/common-issue/why-are-the-pitchers-on-my-pitcher-plant-brown-and-crispy"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "nelumbo-nucifera",
+    "nom": "Fleur de lotus",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [],
+      "toute_annee": true,
+      "note": "cultivé toute l'année en Thaïlande et exporté (dont un importateur néerlandais) ; fleur coupée rare en Occident car la tige se colmate ; pas de calendrier européen trouvé",
+      "sources": [
+        "https://pondlotus.com/pages/cut-lotus-flowers",
+        "https://www.fao.org/4/ac452e/ac452e09.htm",
+        "https://thursd.com/posts/dmitry-turcan-with-nelumbo-nucifera"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 1,
+      "max": 3,
+      "sources": [
+        "https://doaj.org/article/9cafc1ddfa1148528828935aa23491de",
+        "https://pondlotus.com/pages/cut-lotus-flowers",
+        "https://vjol.info.vn/JSTD/article/view/26897"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "chute-petales",
+        "recroqueville"
+      ],
+      "ordre": "la fleur s'ouvre le matin et se referme le soir pendant environ trois jours ; au troisième jour les premiers pétales tombent, au quatrième tous sont flétris ; il reste le réceptacle en pomme d'arrosoir, qui brunit et durcit",
+      "tete": "grande coupe ; s'ouvre et se referme chaque jour, puis se défait ; le réceptacle central reste dressé",
+      "petales": "grands pétales concaves qui flétrissent puis tombent un à un",
+      "feuilles": "non vendues avec la fleur",
+      "tige": "rigide ; elle exsude un latex qui bouche la coupe, d'où le flétrissement rapide",
+      "couleurs": {
+        "rose": {
+          "declin": "rose qui pâlit, bords flétris (extrapolé)",
+          "fane": "pétales tombés ; réceptacle vert-jaune qui brunit"
+        },
+        "blanc": {
+          "declin": "blanc qui jaunit et brunit sur les bords (extrapolé)",
+          "fane": "pétales tombés ; réceptacle qui brunit"
+        },
+        "jaune": {
+          "declin": "jaune crème terni (N. lutea, extrapolé)",
+          "fane": "pétales tombés ; réceptacle qui brunit"
+        },
+        "rouge": {
+          "declin": "rouge qui se ternit (extrapolé)",
+          "fane": "pétales tombés ; réceptacle qui brunit"
+        },
+        "bicolore": {
+          "declin": "pointes roses qui pâlissent sur fond blanc (extrapolé)",
+          "fane": "pétales tombés ; réceptacle qui brunit"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Tenue très courte, environ 3 j en vase d'après une étude sri-lankaise ; un pépiniériste parle de quelques heures à un jour une fois la fleur coupée ; une étude vietnamienne obtient jusqu'à 10 j avec de l'eau de coco à 30 %. Cause : le latex collant qui obstrue la coupe. Pour le dessin, la fleur se referme chaque soir ; la fin de vie se lit dans la chute des pétales, jusqu'à ce qu'il ne reste que le réceptacle (voir la fiche « Capitule de lotus »). Les teintes de déclin par couleur ne sont pas documentées (extrapolées). Catalogue : rose ; blanc ; jaune ; rouge ; blanc à pointes roses → bicolore. Méthode : les pages citées n'ont pu être lues qu'à travers les extraits du moteur de recherche (téléchargement direct bloqué par le proxy de la session) ; chiffres et faits repris de ces extraits. Les valeurs signalées comme extrapolées, déduites ou estimées dans cette fiche sont à lire en confiance basse ; le reste est en confiance moyenne.",
+      "sources": [
+        "https://plantsinmotion.bio.indiana.edu/plantmotion/flowers/lotusflower/lotus.html",
+        "https://db.koreascholar.com/Article/Detail/283125",
+        "https://doaj.org/article/9cafc1ddfa1148528828935aa23491de",
+        "https://www.botany.one/nelumbo-nucifera/"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "nelumbo-capsule",
+    "nom": "Capsule de lotus",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [
+        7,
+        8,
+        9
+      ],
+      "toute_annee": true,
+      "note": "vendue surtout séchée (naturelle, blanchie, teintée ou peinte or/argent), disponible toute l'année ; la capsule fraîche verte n'est proposée qu'en fin d'été et en automne (juillet à septembre aux États-Unis, seule donnée trouvée ; pas de calendrier européen trouvé pour le frais)",
+      "sources": [
+        "https://fiftyflowers.com/products/Fresh-Lotus-Pods",
+        "https://floraldesigninstitute.com/blogs/resources-flower-library/lotus-pod",
+        "https://bloomist.com/products/dried-natural-lotus-pods",
+        "https://nestasia.in/products/lotus-seed-pod"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 10,
+      "max": 14,
+      "sources": [
+        "https://fiftyflowers.com/products/Fresh-Lotus-Pods"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "seche-sur-place",
+        "decolore",
+        "graines-tombent"
+      ],
+      "ordre": "capsule fraîche : passe du vert au brun en mûrissant et en séchant, sans perdre sa forme ; une fois sèche, les graines dures finissent par tomber des alvéoles. Capsule déjà séchée : aucune fanaison au sens strict ; elle pâlit à la lumière et devient cassante avec le temps",
+      "tete": "la capsule garde sa forme de pomme d'arrosoir ; séchée à l'endroit, la tige peut se courber et la capsule pencher vers le bas",
+      "petales": null,
+      "feuilles": "aucune feuille vendue avec la capsule",
+      "tige": "rigide une fois sèche ; tige souvent remplacée par un bois ou un fil de fer dans le commerce",
+      "couleurs": {
+        "brun": {
+          "declin": "naturel brun : brun chaud qui pâlit en brun grisé à la lumière ; noir peint : noir qui se ternit, extrapolé",
+          "fane": "naturel brun : brun beige délavé, surface poussiéreuse, alvéoles vides ; noir : noir mat grisé, extrapolé"
+        },
+        "blanc": {
+          "declin": "blanc blanchi, argent ou platine : blanc qui s'ivoirise ; reflets métalliques un peu ternis, extrapolé",
+          "fane": "blanc crème sale ; peinture argent/platine écaillée aux arêtes, extrapolé"
+        },
+        "jaune": {
+          "declin": "jaune et or antique : teinte qui pâlit et se délave, extrapolé",
+          "fane": "jaune paille délavé ; or terni brunâtre, extrapolé"
+        },
+        "peche": {
+          "declin": "abricot qui se délave, extrapolé",
+          "fane": "beige rosé pâle, extrapolé"
+        },
+        "rouge": {
+          "declin": "cerise qui pâlit vers le rose foncé, extrapolé",
+          "fane": "rose vieux délavé sur fond brun, extrapolé"
+        },
+        "bleu": {
+          "declin": "bleu clair qui pâlit, extrapolé",
+          "fane": "bleu grisé très pâle, extrapolé"
+        },
+        "vert": {
+          "declin": "capsule fraîche : vert qui jaunit et brunit par plaques",
+          "fane": "brun naturel de la capsule sèche"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Sources consultées via les extraits du moteur de recherche (WebSearch) ; l'ouverture complète des pages (WebFetch) était bloquée par le proxy réseau, d'où une confiance plafonnée. Mode ajouté « graines-tombent » : les graines sèches se détachent des alvéoles. Le vert-jaune/chartreuse puis vert puis brun est sourcé pour la capsule fraîche. Les capsules teintes et peintes (or, argent, paillettes) sont attestées par des vendeurs ; leur vieillissement n'est documenté que de façon générale (les UV dégradent les pigments, donnent un aspect blanchi ou délavé et rendent la matière cassante). Les descriptions par couleur teinte ou peinte sont donc extrapolées. Correspondance des couleurs du catalogue : naturel brun et noir → brun ; blanc, argent et platine → blanc ; or antique et jaune → jaune ; abricot → peche ; cerise → rouge ; bleu clair → bleu ; vert (frais) → vert. La tenue en vase de 10 à 14 jours ne vaut que pour la capsule fraîche ; la capsule sèche dure indéfiniment, sans durée chiffrée trouvée. Les valeurs signalées comme extrapolées, déduites ou estimées dans cette fiche sont à lire en confiance basse ; le reste est en confiance moyenne.",
+      "sources": [
+        "https://fiftyflowers.com/products/Fresh-Lotus-Pods",
+        "https://floraldesigninstitute.com/blogs/resources-flower-library/lotus-pod",
+        "https://brainbound.blog/lotus-drying-methods",
+        "https://www.brainbound.blog/lotus-preservation-guide",
+        "https://nestasia.in/products/lotus-seed-pod",
+        "https://bloomist.com/products/dried-natural-lotus-pods-on-stems"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "passiflora",
+    "nom": "Passiflore",
+    "saison_vente": {
+      "mois": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "pic": [],
+      "toute_annee": false,
+      "note": "presque absente du commerce de fleurs coupées : vendue en Europe en plante grimpante en pot, chaque fleur ne durant qu'un jour. Mois = floraison de P. caerulea « de l'été à l'automne » selon la RHS (traduction en mois par l'agent) ; aucun calendrier de grossiste trouvé, pic non documenté",
+      "sources": [
+        "https://www.rhs.org.uk/plants/12356/wd/details",
+        "https://www.richters.com/questions-and-answers/04-19980616-2",
+        "https://harvesttotable.com/how-to-grow-passionflower-passiflora/"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 1,
+      "max": 2,
+      "sources": [
+        "https://www.richters.com/questions-and-answers/04-19980616-2",
+        "https://smartgardenguide.com/passiflora-caerulea-ultimate-care-guide/"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "se-referme",
+        "fleur-tombe-entiere",
+        "recroqueville"
+      ],
+      "ordre": "la fleur s'ouvre un seul jour (48 h au plus selon une source) puis se referme lentement ; non fécondée, elle se détache entière du rameau",
+      "tete": "la fleur se referme : les pétales et sépales se relèvent par-dessus la couronne de filaments, puis la fleur tombe entière",
+      "petales": "se replient et se fripent en refermant la fleur ; brunissement des bords probable, extrapolé",
+      "feuilles": "feuilles palmées à 5-7 lobes ; leur fanaison en vase n'est pas documentée",
+      "tige": "rameau souple de liane avec vrilles ; comportement en vase non documenté",
+      "couleurs": {
+        "bicolore": {
+          "declin": "blanc et bleu ou blanc et pourpre : le blanc s'ivoirise, les filaments bleus ou pourpres se froissent et se resserrent au centre, extrapolé",
+          "fane": "bouton refermé beige verdâtre d'où dépassent des filaments ternis, extrapolé"
+        },
+        "blanc": {
+          "declin": "blanc qui s'ivoirise, extrapolé",
+          "fane": "beige crème froissé, extrapolé"
+        },
+        "rouge": {
+          "declin": "rouge qui fonce, extrapolé",
+          "fane": "rouge brunâtre, extrapolé"
+        },
+        "rose": {
+          "declin": "rose qui pâlit, extrapolé",
+          "fane": "rose sale brunâtre, extrapolé"
+        },
+        "violet": {
+          "declin": "lavande ou pourpre qui se ternit, extrapolé",
+          "fane": "mauve grisé brunâtre, extrapolé"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Sources consultées via les extraits du moteur de recherche (WebSearch) ; l'ouverture complète des pages (WebFetch) était bloquée par le proxy réseau, d'où une confiance plafonnée. Modes ajoutés : « se-referme » (la fleur se referme au lieu de s'ouvrir davantage) et « fleur-tombe-entiere » (abscission de toute la fleur). Fleur d'un jour, fleurs nouvelles chaque jour sur la liane ; coupée juste à l'ouverture et posée sur l'eau, elle dure parfois plus d'un jour. Les changements de couleur au déclin ne sont décrits par aucune source lue : toutes les teintes sont extrapolées. Correspondance des couleurs du catalogue : blanc et bleu, blanc et pourpre → bicolore ; lavande et pourpre → violet. Aucune donnée sur le séchage.",
+      "sources": [
+        "https://www.richters.com/questions-and-answers/04-19980616-2",
+        "https://harvesttotable.com/how-to-grow-passionflower-passiflora/",
+        "https://smartgardenguide.com/passiflora-caerulea-ultimate-care-guide/",
+        "https://plants.ces.ncsu.edu/plants/passiflora-caerulea/common-name/passion-flower/",
+        "https://www.rhs.org.uk/plants/12356/wd/details"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "hibiscus",
+    "nom": "Hibiscus tropical",
+    "saison_vente": {
+      "mois": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [],
+      "toute_annee": true,
+      "note": "pas vendu en fleur coupée en Europe : sa fleur d'un jour le rend impropre aux compositions. Il est vendu toute l'année en plante en pot (production européenne, Danemark notamment, avec l'obtenteur Graff et ses HibisQs®). Pic commercial non documenté",
+      "sources": [
+        "https://windflowerflorist.com/blogs/news/how-long-hibiscus-flower-last",
+        "https://www.ipm-essen.de/world-trade-fair/exhibitor-list/detail/graff-breeding-as-graff-growing-as-a88a6",
+        "https://hortscans.ces.ncsu.edu/uploads/g/r/growing__56215f6e8f16b.pdf"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 1,
+      "max": 4,
+      "sources": [
+        "https://expertise.unimi.it/resource/item/72446",
+        "https://air.unimi.it/handle/2434/33738",
+        "https://biologyinsights.com/how-long-do-hibiscus-flowers-last-when-cut/"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "recroqueville",
+        "fleur-tombe-entiere",
+        "decolore"
+      ],
+      "ordre": "la fleur s'ouvre le matin et flétrit en fin d'après-midi (12 à 18 h pour les fleurs éphémères ; 3-4 jours pour le cultivar longue durée 'Porto') ; les pétales s'enroulent vers l'intérieur et la fleur fermée en cornet tordu se détache entière (abscission)",
+      "tete": "la corolle se referme en s'enroulant sur elle-même, comme un parapluie fermé et vrillé, puis tombe ; elle ne penche pas avant de tomber, extrapolé",
+      "petales": "bords qui s'enroulent vers l'intérieur et pâlissent ; tissu mou et gorgé d'eau",
+      "feuilles": "non documentées en vase ; feuilles vernissées dont la tenue en coupe n'est pas décrite",
+      "tige": "non documentée",
+      "couleurs": {
+        "rouge": {
+          "declin": "rouge qui fonce, bords enroulés",
+          "fane": "rouge très sombre tirant au bleuté ou au presque noir"
+        },
+        "bordeaux": {
+          "declin": "rouge foncé qui noircit",
+          "fane": "presque noir à reflets bleutés, extrapolé du rouge"
+        },
+        "orange": {
+          "declin": "orange abricot qui pâlit au soleil, extrapolé",
+          "fane": "abricot délavé, bords enroulés, extrapolé"
+        },
+        "blanc": {
+          "declin": "blanc qui s'ivoirise, extrapolé",
+          "fane": "beige translucide en cornet, extrapolé"
+        },
+        "violet": {
+          "declin": "mauve qui bleuit (documenté chez H. syriacus)",
+          "fane": "mauve bleuté terne"
+        },
+        "bleu": {
+          "declin": "lilas bleu qui bleuit encore (copigmentation documentée chez H. syriacus)",
+          "fane": "bleu grisé terne, extrapolé"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Sources consultées via les extraits du moteur de recherche (WebSearch) ; l'ouverture complète des pages (WebFetch) était bloquée par le proxy réseau, d'où une confiance plafonnée. Mode ajouté « fleur-tombe-entiere ». L'enroulement des pétales et l'abscission sont la signature de la sénescence chez H. rosa-sinensis (études de l'Université de Milan). Le noircissement ou le bleuissement du rouge en fin de journée est rapporté par une source de jardinage. Le bleuissement des pétales pourpres âgés est documenté chez H. syriacus (hausse du rapport flavones/anthocyanes) et appliqué ici par analogie aux teintes mauve et lilas bleu. Les autres teintes sont extrapolées. Correspondance des couleurs du catalogue : rouge → rouge ; rouge foncé → bordeaux ; orange abricot → orange ; mauve → violet ; lilas bleu → bleu. La valeur max de 4 jours ne vaut que pour les cultivars longue durée. Aucun séchage documenté pour la fleur ornementale. Les valeurs signalées comme extrapolées, déduites ou estimées dans cette fiche sont à lire en confiance basse ; le reste est en confiance moyenne.",
+      "sources": [
+        "https://expertise.unimi.it/resource/item/72446",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC5091337",
+        "https://gardeningknowhow.com/ornamental/flowers/hibiscus/hibiscus-turning-different-color.htm",
+        "https://torontobotanicalgarden.ca/blog/botanical-buzz/colour-changing-hibiscus-full-surprises/",
+        "https://biologyinsights.com/how-long-do-hibiscus-flowers-last-when-cut/"
+      ]
+    },
+    "confiance": "moyenne"
+  },
+  {
+    "id": "plumeria",
+    "nom": "Frangipanier",
+    "saison_vente": {
+      "mois": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "pic": [
+        6,
+        7,
+        8,
+        9
+      ],
+      "toute_annee": false,
+      "note": "rarement vendue en fleur coupée en Europe : trop fragile pour voyager depuis Hawaï selon des fleuristes. Mois = saison de floraison à Hawaï, de mai à octobre avec un pic de juin à septembre ; la production cesse presque en hiver. Aucun calendrier de grossiste européen trouvé",
+      "sources": [
+        "https://www.hawaii-guide.com/blog/hawaii-plumeria-season",
+        "https://www.ctahr.hawaii.edu/oc/freepubs/pdf/HRN-13.pdf",
+        "https://www.florist20.com/community/threads/frangipani-plumeria-flowers.19059"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 1,
+      "max": 2,
+      "sources": [
+        "https://www.hunker.com/12002160/how-to-preserve-plumeria-flowers",
+        "https://www.florist20.com/community/threads/plumeria-flowers.27054/latest",
+        "https://lacocinadegisele.com/knowledgebase/which-lei-last-the-longest"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "brunit-taches",
+        "recroqueville"
+      ],
+      "ordre": "les fleurs cireuses brunissent très vite, en 2 jours environ en lei ou en corsage, et marquent au moindre choc ; puis elles se ramollissent et se fripent, extrapolé",
+      "tete": "fleur isolée ou en bouquet terminal ; pas d'inclinaison documentée",
+      "petales": "cinq pétales cireux qui brunissent par plages ou meurtrissures, puis se fripent, extrapolé",
+      "feuilles": "non documentées (en lei, les fleurs sont vendues sans feuilles)",
+      "tige": "non documentée",
+      "couleurs": {
+        "blanc": {
+          "declin": "blanc à cœur jaune : blanc taché de beige-brun, cœur jaune qui ternit",
+          "fane": "brun caramel et beige, extrapolé"
+        },
+        "bicolore": {
+          "declin": "jaune bordé de blanc : bords blancs qui brunissent, jaune qui ternit",
+          "fane": "brun doré, extrapolé"
+        },
+        "jaune": {
+          "declin": "jaune taché de brun",
+          "fane": "brun doré, extrapolé"
+        },
+        "rose": {
+          "declin": "rose taché de brun, extrapolé",
+          "fane": "rose brunâtre, extrapolé"
+        },
+        "rouge": {
+          "declin": "rouge qui fonce, taches sombres, extrapolé",
+          "fane": "bordeaux brunâtre, extrapolé"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Sources consultées via les extraits du moteur de recherche (WebSearch) ; l'ouverture complète des pages (WebFetch) était bloquée par le proxy réseau, d'où une confiance plafonnée. Mode ajouté « brunit-taches » : brunissement par meurtrissures plutôt que par les bords. Le brunissement rapide (environ 2 jours) vient de fleuristes et de sources de lei hawaïens. On garde la fleur 24 h dans l'eau, 48 h au réfrigérateur ; une source peu fiable avance 2 à 7 jours, non retenue. Séchage : une étude sri-lankaise (P. rubra) montre que le séchage à l'air (témoin) conserve mal la forme, contrairement au gel de silice et au sable ; d'où seche_bien = false pour un séchage naturel. Teintes par couleur : seul le brunissement est sourcé, les nuances sont extrapolées. Correspondance des couleurs du catalogue : blanc à cœur jaune → blanc ; jaune bordé de blanc → bicolore.",
+      "sources": [
+        "https://www.hunker.com/12002160/how-to-preserve-plumeria-flowers",
+        "https://www.florist20.com/community/threads/plumeria-flowers.27054/latest",
+        "https://www.florist20.com/community/threads/frangipani-plumeria-flowers.19059",
+        "https://rda.sliit.lk/handle/123456789/1229",
+        "https://www.nparks.gov.sg/florafaunaweb/flora/8/6/8620"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "bougainvillea",
+    "nom": "Bougainvillier",
+    "saison_vente": {
+      "mois": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "pic": [],
+      "toute_annee": false,
+      "note": "pas un article courant de fleur coupée : il fane en une journée en vase, et l'Europe le vend en plante en pot ou en treillage. Mois = floraison méditerranéenne de la fin du printemps au début de l'automne ; pic non documenté",
+      "sources": [
+        "https://marketmanila.com/archives/bougainvilla",
+        "https://www.promessedefleurs.ie/gardening-tips/familysheet/bougainvillea-planting-care-growing-in-containers-and-in-the-garden",
+        "https://www.gardeningdirect.co.uk/item-p-680344/bougainvillea-red-on-trellis"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 1,
+      "max": 3,
+      "sources": [
+        "https://marketmanila.com/archives/bougainvilla",
+        "https://eprints.um.edu.my/7764",
+        "https://knova.um.edu.my/research_publications_2006_2010/4374"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "chute-petales",
+        "decolore",
+        "feuilles-recroquevillees"
+      ],
+      "ordre": "rameau coupé : feuilles et bractées flétrissent vite, puis les bractées colorées tombent par abscission (sensibles à l'éthylène et à la chaleur) ; sur la plante, les bractées pâlissent en vieillissant (le rouge vire au rose) avant de tomber",
+      "tete": "grappes de bractées papyracées autour de minuscules fleurs blanches tubulaires ; les vraies fleurs fanent les premières, extrapolé",
+      "petales": "pas de pétales : les « pétales » sont des bractées fines, veinées et papyracées, qui pâlissent puis tombent entières, souvent avec la fleur qu'elles portent",
+      "feuilles": "flétrissent rapidement après la coupe",
+      "tige": "rameau ligneux épineux qui reste rigide",
+      "couleurs": {
+        "rose": {
+          "declin": "magenta ou rose vif qui pâlit, extrapolé du rouge",
+          "fane": "rose pâle papier, extrapolé"
+        },
+        "rouge": {
+          "declin": "rouge vif qui s'adoucit en rose",
+          "fane": "rose terne papyracé, extrapolé"
+        },
+        "violet": {
+          "declin": "pourpre ou lilas qui pâlit, extrapolé",
+          "fane": "lilas pâle grisé, extrapolé"
+        },
+        "orange": {
+          "declin": "orange qui pâlit vers le saumon, extrapolé",
+          "fane": "saumon rosé pâle, extrapolé"
+        },
+        "jaune": {
+          "declin": "jaune qui pâlit, extrapolé",
+          "fane": "crème paille, extrapolé"
+        },
+        "blanc": {
+          "declin": "blanc qui s'ivoirise, extrapolé",
+          "fane": "blanc crème papier, extrapolé"
+        },
+        "bicolore": {
+          "declin": "rose et blanc : contraste qui s'adoucit, extrapolé",
+          "fane": "rose très pâle et crème, extrapolé"
+        }
+      },
+      "seche_bien": true,
+      "notes": "Sources consultées via les extraits du moteur de recherche (WebSearch) ; l'ouverture complète des pages (WebFetch) était bloquée par le proxy réseau, d'où une confiance plafonnée. Les bractées papyracées gardent bien leur couleur au séchage par pressage (artisanat de fleurs pressées). Le séchage en volume n'est pas documenté. La durée d'un jour en vase vient d'un blog philippin. Des études malaisiennes montrent que le saccharose et le froid (10 °C) prolongent la tenue et que l'éthanol retarde de 2 jours flétrissement et abscission ; les durées absolues n'ont pas été lues, d'où un max de 3 jours estimé (1 jour + 2 jours). Le passage du rouge au rose avec l'âge est sourcé pour un cultivar rouge ; les autres teintes sont extrapolées. Correspondance des couleurs du catalogue : magenta et rose vif → rose ; pourpre et lilas → violet ; bicolore rose et blanc → bicolore. Les valeurs signalées comme extrapolées, déduites ou estimées dans cette fiche sont à lire en confiance basse ; fiche abaissée en confiance basse à la relecture : tenue maximale estimée et nombreuses extrapolations.",
+      "sources": [
+        "https://specialtyproduce.com/produce/Bougainvillea_Flowers_24124.php",
+        "https://gardeningsolutions.ifas.ufl.edu/design/outdoor-living/plant-craft/",
+        "https://sapientia.ualg.pt/handle/10400.1/739?mode=full",
+        "https://eprints.um.edu.my/7764",
+        "https://knova.um.edu.my/research_publications_2006_2010/4374",
+        "https://birminghambotanicalgardens.org.uk/?p=8405",
+        "https://marketmanila.com/archives/bougainvilla"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "hymenocallis",
+    "nom": "Lis araignée",
+    "saison_vente": {
+      "mois": [
+        6,
+        7,
+        8
+      ],
+      "pic": [
+        7
+      ],
+      "toute_annee": false,
+      "note": "surtout vendu en bulbe pour le jardin (Ismene) ; tige coupée rare, venant surtout des jardins ou de petits producteurs. Floraison estivale en Europe : juin ou juillet après une plantation d'avril-mai, ou juillet-août selon les sources",
+      "sources": [
+        "https://www.promessedefleurs.ie/summer-flowering-bulbs/summer-bulbs-by-variety/ismene/hymenocallis-festalis-blanche.html",
+        "https://dutchbulbs.com/product/peruvian-daffodil-sulphur-queen",
+        "https://plants.ces.ncsu.edu/plants/hymenocallis/"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 1,
+      "max": 3,
+      "sources": [
+        "https://www.pacificbulbsociety.org/pbswiki/index.php/hymenocallis",
+        "https://plants.ces.ncsu.edu/plants/hymenocallis-occidentalis-var-occidentalis/common-name/woodland-spiderlily/"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "recroqueville",
+        "fane-en-succession",
+        "brunit-bords"
+      ],
+      "ordre": "chaque fleur s'ouvre le soir, embaume la nuit et dure 1 à 3 jours selon l'espèce ; une hampe porte 2 à 5 fleurs qui s'ouvrent et fanent l'une après l'autre ; la fleur fanée se flétrit sur la hampe, extrapolé",
+      "tete": "ombelle au sommet d'une hampe sans feuilles ; les fleurs fanées pendent mollement parmi les fraîches, extrapolé",
+      "petales": "les longs tépales filiformes et la coupe staminale (couronne) se ramollissent et se fripent, puis brunissent, extrapolé",
+      "feuilles": "hampe florale sans feuilles ; feuillage non vendu",
+      "tige": "hampe charnue ; tenue non documentée",
+      "couleurs": {
+        "blanc": {
+          "declin": "blanc pur qui s'ivoirise et devient translucide, extrapolé",
+          "fane": "beige brunâtre fripé, extrapolé"
+        },
+        "creme": {
+          "declin": "crème qui jaunit, extrapolé",
+          "fane": "beige brun, extrapolé"
+        },
+        "vert": {
+          "declin": "blanc verdâtre qui ternit, extrapolé",
+          "fane": "beige verdâtre brunâtre, extrapolé"
+        },
+        "jaune": {
+          "declin": "jaune soufre ('Sulphur Queen', gorge rayée de vert) qui pâlit, extrapolé",
+          "fane": "paille brunâtre, extrapolé"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Sources consultées via les extraits du moteur de recherche (WebSearch) ; l'ouverture complète des pages (WebFetch) était bloquée par le proxy réseau, d'où une confiance plafonnée. Mode ajouté « fane-en-succession » : les fleurs de l'ombelle fanent une à une pendant que d'autres s'ouvrent. La durée d'une fleur (1 jour chez H. coronaria et H. occidentalis, 2 à 3 jours en général, une seule nuit chez H. harrisiana) est sourcée. Des vendeurs de bulbes disent que la fleur « tient longtemps en vase » : c'est sans doute dû à la succession des fleurs de la hampe, sans chiffre trouvé. Tout l'aspect de la fanaison (fripé, brun, translucide) est extrapolé, faute de source, des autres Amaryllidacées à fleurs blanches. Correspondance des couleurs du catalogue : blanc pur → blanc ; blanc crème → creme ; blanc verdâtre → vert ; jaune soufre → jaune.",
+      "sources": [
+        "https://www.pacificbulbsociety.org/pbswiki/index.php/hymenocallis",
+        "https://plants.ces.ncsu.edu/plants/hymenocallis/",
+        "https://www.promessedefleurs.ie/summer-flowering-bulbs/summer-bulbs-by-variety/ismene/hymenocallis-festalis-blanche.html",
+        "https://www.nijssenbulbs.com/other-summer-flowering-bulbs-a-z/50113-hymenocallis-039sulphur-queen039-50113.html",
+        "https://nature-and-garden.com/gardening/spider-lily-care-blooming.html"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "bomarea",
+    "nom": "Bomarea",
+    "saison_vente": {
+      "mois": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "pic": [],
+      "toute_annee": false,
+      "note": "pas de commerce de fleur coupée documenté : plante de collection grimpante. Mois = floraison au jardin ou en serre en Europe : B. multiflora du printemps à l'automne, B. edulis du début de l'été à l'automne (RHS) ; pic non documenté",
+      "sources": [
+        "https://www.rhs.org.uk/plants/96468/wd/details",
+        "https://www.nzpcn.org.nz/flora/species/bomarea-edulis/",
+        "https://www.pacificbulbsociety.org/pbswiki/index.php/Bomarea"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 10,
+      "max": 14,
+      "sources": [
+        "https://www.anniesannuals.com/blogs/news/alstroemeria-bouquet-care-tips-for-longer-vase-life",
+        "https://floralife.com/flowers/alstroemeria/"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "chute-petales",
+        "feuilles-jaunissent",
+        "decolore"
+      ],
+      "ordre": "extrapolé de l'alstroemère, de la même famille : les feuilles jaunissent avant les fleurs ; les tépales pâlissent puis tombent ; l'ombelle pendante se dégarnit fleur à fleur ; sur la plante, les capsules restent et s'ouvrent plus tard sur des graines rouge orangé",
+      "tete": "ombelle pendante de 15 à 45 clochettes tubulaires qui se dégarnit progressivement, extrapolé",
+      "petales": "six tépales libres (trois externes, trois internes souvent mouchetés) qui pâlissent puis se détachent, extrapolé de l'alstroemère",
+      "feuilles": "jaunissent tôt, avant les fleurs, extrapolé de l'alstroemère (sensibilité à l'éthylène)",
+      "tige": "tige volubile de liane, souple ; tenue non documentée",
+      "couleurs": {
+        "rouge": {
+          "declin": "rouge écarlate qui pâlit, extrapolé",
+          "fane": "rouge brique terne, extrapolé"
+        },
+        "orange": {
+          "declin": "orange-rouge qui pâlit, extrapolé",
+          "fane": "orange brunâtre, extrapolé"
+        },
+        "peche": {
+          "declin": "saumon qui se délave, extrapolé",
+          "fane": "beige rosé, extrapolé"
+        },
+        "rose": {
+          "declin": "rose ou rose magenta qui pâlit, extrapolé",
+          "fane": "rose sale, extrapolé"
+        },
+        "jaune": {
+          "declin": "jaune qui pâlit, extrapolé",
+          "fane": "paille, extrapolé"
+        },
+        "vert": {
+          "declin": "vert qui jaunit, extrapolé",
+          "fane": "jaune verdâtre brunâtre, extrapolé"
+        },
+        "bicolore": {
+          "declin": "intérieur jaune moucheté de rouge : le jaune pâlit, les mouchetures restent nettes, extrapolé",
+          "fane": "paille piqueté de brun-rouge, extrapolé"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Sources consultées via les extraits du moteur de recherche (WebSearch) ; l'ouverture complète des pages (WebFetch) était bloquée par le proxy réseau, d'où une confiance plafonnée. Fiche entièrement extrapolée de l'alstroemère (Alstroemeriaceae, genre voisin) : tenue de 10 à 14 jours, jaunissement précoce des feuilles, chute des tépales. Aucune donnée de tenue ni de fanaison propre au Bomarea n'a été trouvée. Seules sont sourcées pour le Bomarea : la morphologie (ombelles de 15 à 45 fleurs, tépales externes et internes de couleurs parfois contrastées, intérieur moucheté) et les graines rouges ou orangées à sarcotesta charnu, visibles quand les capsules s'ouvrent. Correspondance des couleurs du catalogue : rouge écarlate → rouge ; orange-rouge → orange ; saumon → peche ; rose magenta et rose → rose ; intérieur jaune moucheté de rouge → bicolore. Séchage non documenté.",
+      "sources": [
+        "https://www.pacificbulbsociety.org/pbswiki/index.php/Bomarea",
+        "https://naturalhistory.si.edu/sites/default/files/media/file/alstroemeriaceae.pdf",
+        "https://www.rhs.org.uk/plants/96468/wd/details",
+        "https://journals.ashs.org/downloadpdf/view/journals/hortsci/26/3/article-p314.pdf",
+        "https://floralife.com/article/alstroemeria-troubleshooting/"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "ixora",
+    "nom": "Ixora",
+    "saison_vente": {
+      "mois": [
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "pic": [
+        6,
+        7,
+        8
+      ],
+      "toute_annee": false,
+      "note": "rarement vendue en fleur coupée en Europe (plante en pot) ; utilisée en fleur coupée et en lei à Hawaï et vendue en fleur détachée en Inde. Mois = floraison du printemps au début de l'automne, avec un pic l'été en Floride ; elle fleurit presque toute l'année sous les tropiques. Aucun calendrier européen trouvé",
+      "sources": [
+        "https://ask.ifas.ufl.edu/publication/FP291",
+        "https://gardenerspath.com/plants/ornamentals/grow-ixora/",
+        "https://www.to-hawaii.com/general/hawaii-flora/flowers/ixora/"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 5,
+      "max": 6,
+      "sources": [
+        "https://www.mdpi.com/2673-9976/47/1/6",
+        "https://sciforum.net/paper/23064"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "decolore",
+        "fleurons-tombent"
+      ],
+      "ordre": "chaque fleuron tubulaire tient environ 5 jours avant de faner ; le corymbe dure plus longtemps (4 semaines sur la plante) car les fleurons se renouvellent ; les fleurons fanés pâlissent puis tombent, laissant des trous dans la boule, extrapolé",
+      "tete": "boule ou dôme (corymbe) de dizaines de fleurons à 4 lobes qui se dégarnit, extrapolé",
+      "petales": "lobes des fleurons qui pâlissent (documenté pour un cultivar rose), puis se fripent, extrapolé",
+      "feuilles": "feuilles coriaces opposées ; tenue en coupe non documentée",
+      "tige": "rameau ligneux rigide",
+      "couleurs": {
+        "rouge": {
+          "declin": "rouge écarlate qui fonce ou ternit, extrapolé",
+          "fane": "rouge brique brunâtre, extrapolé"
+        },
+        "orange": {
+          "declin": "orange qui pâlit, extrapolé",
+          "fane": "orange brunâtre, extrapolé"
+        },
+        "jaune": {
+          "declin": "jaune qui pâlit, extrapolé",
+          "fane": "crème brunâtre, extrapolé"
+        },
+        "rose": {
+          "declin": "rose qui pâlit vers un rose plus clair (cultivar 'Pink Pixie')",
+          "fane": "rose pâle sale, extrapolé"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Sources consultées via les extraits du moteur de recherche (WebSearch) ; l'ouverture complète des pages (WebFetch) était bloquée par le proxy réseau, d'où une confiance plafonnée. La durée de 5,2 à 6,2 jours vient d'une étude indienne (Tamil Nadu) qui mesure la « durée de conservation » de variétés d'Ixora à température ambiante et au froid ; il s'agit probablement de fleurs détachées et non de tiges en vase. Durée de vie d'un fleuron (environ 5 jours) et d'une inflorescence (environ 4 semaines) : source de jardinage. Le changement de couleur sourcé ne concerne que le développement d'un cultivar rose, qui pâlit (brevet 'Pink Pixie') ; chez une espèce, les fleurs passent du rouge-orangé au rouge. La chute des fleurons et toutes les teintes du fané sont extrapolées. Correspondance des couleurs du catalogue : rouge écarlate et rouge vif → rouge. Séchage non documenté.",
+      "sources": [
+        "https://www.mdpi.com/2673-9976/47/1/6",
+        "https://gardenerspath.com/plants/ornamentals/grow-ixora/",
+        "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/PP15026",
+        "https://www.nparks.gov.sg/florafaunaweb/flora/2/1/2136"
+      ]
+    },
+    "confiance": "basse"
+  },
+  {
+    "id": "sandersonia",
+    "nom": "Sandersonia",
+    "saison_vente": {
+      "mois": [
+        1,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pic": [
+        11,
+        12,
+        1
+      ],
+      "toute_annee": false,
+      "note": "exportée de Nouvelle-Zélande, au 2e rang des fleurs coupées exportées au milieu des années 1990 (1 million de tiges en 2006) ; floraison naturelle de mi-décembre à janvier (« Christmas bells »), en novembre-décembre en plein air en Nouvelle-Zélande. La conservation des tubercules au froid permet des floraisons décalées. Les guides de fleuristes de l'hémisphère nord donnent une disponibilité de l'été à l'automne. Pic = saison néo-zélandaise ; aucun calendrier de grossiste européen consulté",
+      "sources": [
+        "https://pza.sanbi.org/sandersonia-aurantiaca",
+        "https://www.sciencedirect.com/science/article/abs/pii/S030442380800232X",
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/sandersonia",
+        "https://www.ghp.co.nz/sandersonia"
+      ]
+    },
+    "tenue_vase_jours": {
+      "min": 7,
+      "max": 21,
+      "sources": [
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/sandersonia",
+        "https://pza.sanbi.org/node/10910",
+        "https://plants.ces.ncsu.edu/plants/sandersonia-aurantiaca/"
+      ]
+    },
+    "fanaison": {
+      "modes": [
+        "decolore",
+        "recroqueville",
+        "seche-sur-place",
+        "fane-du-bas"
+      ],
+      "ordre": "les clochettes du bas, ouvertes les premières, fanent les premières (extrapolé de la floraison de bas en haut). L'orange pâlit en jaune pâle et le tissu perd sa fermeté ; puis les tépales nécrosent et chaque lanterne devient une coque parcheminée qui reste accrochée à la tige. Les boutons du haut continuent de se colorer en vase",
+      "tete": "pas de tête : clochettes pendantes en lanterne, une par aisselle de feuille, sur un pédicelle arqué ; la coque fanée reste pendue à sa place",
+      "petales": "tépales soudés en lanterne qui se décolorent (orange → jaune pâle), se ramollissent, puis sèchent en coque de papier",
+      "feuilles": "feuilles étroites terminées par une vrille ; leur fanaison en vase n'est pas documentée",
+      "tige": "tige grêle et souple, garnie de feuilles ; droite, non documentée en fin de vie",
+      "couleurs": {
+        "orange": {
+          "declin": "orange vif qui pâlit vers l'orange clair puis le jaune pâle, lanternes molles",
+          "fane": "coque parcheminée jaune pâle à beige, nécrosée par endroits"
+        }
+      },
+      "seche_bien": false,
+      "notes": "Sources consultées via les extraits du moteur de recherche (WebSearch) ; l'ouverture complète des pages (WebFetch) était bloquée par le proxy réseau, d'où une confiance plafonnée. Sénescence bien étudiée en Nouvelle-Zélande. Elle se marque par une décoloration (perte de caroténoïdes, l'orange revient au jaune pâle), un flétrissement puis une nécrose des tépales ; la fleur fanée forme une coque de papier qui reste attachée. Le saccharose dans l'eau du vase donne des fleurs plus grandes, plus fermes et d'un orange plus vif, et permet aux boutons de s'ouvrir. La fleur est sensible à l'éthylène. Tenue : 7 à 10 jours selon un guide de fleuriste, jusqu'à 3 ou 4 semaines selon d'autres. seche_bien = false : la coque garde sa forme mais perd sa couleur, et aucun usage en fleur séchée n'a été trouvé. Les valeurs signalées comme extrapolées, déduites ou estimées dans cette fiche sont à lire en confiance basse ; le reste est en confiance moyenne.",
+      "sources": [
+        "https://www.sciencedirect.com/science/article/abs/pii/030442389500796V",
+        "https://www.sciencedirect.com/science/article/abs/pii/S0925521497000409",
+        "https://www.researchgate.net/publication/223677571_Vase_solutions_containing_sucrose_result_in_changes_to_cell_walls_of_sandersonia_Sandersonia_aurantiaca_flowers",
+        "https://pza.sanbi.org/node/10910",
+        "https://www.floraldesigninstitute.com/blogs/resources-flower-library/sandersonia"
+      ]
+    },
+    "confiance": "moyenne"
+  }
+]

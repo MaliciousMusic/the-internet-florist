@@ -1,0 +1,44 @@
+{
+  "source": "Étude de 76 bouquets de référence (dossier Composition reference), octobre 2026",
+  "propositions_par_bouquet": 24,
+  "proportions": {
+    "largeur_sur_hauteur": {"mediane": 0.83, "min": 0.72, "max": 1.0},
+    "hauteur_sur_contenant": {"mediane": 3.4, "min": 2.7, "max": 4.9, "coupe_a_pied_max": 10},
+    "part_volume_bas": [0.55, 0.70],
+    "focale_hauteur": -0.30
+  },
+  "gabarits": {
+    "eventail":         {"poids": 0.24, "lh": [0.9, 1.1], "hc": [3, 4],   "decalage": [0.15, 0.25], "lignes": [3, 7], "retombee": "legere", "espace_negatif": [0.15, 0.30]},
+    "libre":            {"poids": 0.20, "lh": [0.8, 1.0], "hc": [3, 5],   "decalage": [0.20, 0.35], "lignes": [4, 8], "retombee": "legere_ou_longue", "espace_negatif": [0.20, 0.40]},
+    "triangle_scalene": {"poids": 0.16, "lh": [0.7, 0.9], "hc": [2.7, 4], "decalage": [0.25, 0.35], "lignes": [2, 4], "retombee": "legere", "espace_negatif": [0.15, 0.30]},
+    "cascade":          {"poids": 0.12, "lh": [0.5, 0.7], "hc": [3, 5],   "decalage": [0.15, 0.30], "lignes": [1, 3], "retombee": "longue", "longueur_retombee_h": [0.30, 0.45], "espace_negatif": [0.15, 0.30]},
+    "dome":             {"poids": 0.11, "lh": [1.0, 1.3], "hc": [1.6, 2.5], "decalage": [0.0, 0.10], "lignes": [0, 2], "retombee": "legere", "espace_negatif": [0.05, 0.15]},
+    "vertical_aerien":  {"poids": 0.08, "lh": [0.5, 0.7], "hc": [4, 7],   "decalage": [0.10, 0.25], "lignes": [3, 6], "retombee": "legere", "espace_negatif": [0.30, 0.45]},
+    "l_croissant":      {"poids": 0.09, "lh": [0.8, 1.2], "hc": [2.5, 3.5], "decalage": [0.35, 0.50], "lignes": [2, 3], "retombee": "legere", "espace_negatif": [0.15, 0.30]}
+  },
+  "lignes": {"impair": true, "ecart_angle_min_deg": 18, "longueur_sur_rayon_masse": [1.2, 2.0], "depassement_enveloppe": [0.2, 1.0], "termine_par_bouton": true},
+  "focales": {"groupes": [1, 3], "trio": "triangle_scalene", "ecart_hauteur_min_h": 0.08, "orientations_deg": {"face": 0, "trois_quarts": [25, 40], "profil": [50, 70]}, "faces_plates_en_zigzag": true, "masquage_max": 0.40},
+  "masse": {"poisson": true, "chevauchement": [0.10, 0.25], "traineees_par_espece": true, "echos_isoles": [1, 2]},
+  "remplissage": {"en_retrait": true, "points_accent": [5, 12], "textures_min": 4},
+  "retombee": {"probabilite_si_disponible": 0.88, "longue": 0.37, "longueur_h": [0.20, 0.45], "brins": [3, 5], "cote": "masse, opposé au sommet", "franchit_le_bord": true},
+  "feuillage": {"budget_surface": 0.10, "budget_jardin": 0.20, "collerette_interdite": true, "preferer": ["tonal", "sombre", "teint", "sculptural"]},
+  "couleur": {
+    "modes": {"famille_unique": 0.67, "complementaire": 0.12, "multicolore": 0.12, "neutres_accent": 0.05, "triade": 0.04},
+    "valeurs": {"foncees_30pc": "coeur, arriere, bords", "claires_20pc": "avant-centre ou zone lumineuse unique"},
+    "accent": {"surface_max": 0.10, "points": 3, "triangle_cote_min_h": 0.30, "ecart_teinte_min_deg": 90},
+    "contenant": "teinte la plus sombre ou dominante"
+  },
+  "profondeur": {"plans": {"arriere": 0.85, "milieu": 1.0, "avant": [1.0, 1.1]}, "rotation_vers_spectateur": [0.30, 0.70], "aplatissement": [0.70, 1.0]},
+  "qualite": {
+    "equilibre_gauche_droite": {"cible": [0.58, 0.70], "dome": [0.50, 0.55], "poids": 3},
+    "hierarchie_focale": {"poids": 3},
+    "focales_visibles": {"poids": 3},
+    "lignes_qui_depassent": {"cible": [2, 8], "poids": 2},
+    "debordement_bas": {"poids": 2},
+    "espace_negatif": {"poids": 2},
+    "budget_feuillage": {"poids": 2},
+    "groupements": {"cible": [0.4, 0.7], "poids": 1},
+    "accent_triangle": {"poids": 1},
+    "textures": {"poids": 1}
+  }
+}

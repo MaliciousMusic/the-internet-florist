@@ -1,0 +1,27 @@
+protea-magnifica;Protée reine;Exotiques;protea;focale
+protea-eximia;Protée duchesse;Exotiques;protea;focale
+protea-hybrides;Protées hybrides et petites protée;Exotiques;protea;focale
+leucospermum;Leucospermum;Exotiques;protea;focale
+leucadendron;Leucadendron;Exotiques;protea;secondaire
+serruria;Serruria;Exotiques;protea;secondaire
+mimetes;Mimetes;Exotiques;protea;focale
+aulax;Aulax;Exotiques;spray;texture
+banksia;Banksia;Exotiques;protea;focale
+telopea;Waratah;Exotiques;protea;focale
+anigozanthos;Patte de kangourou;Exotiques;exotic;secondaire
+isopogon;Isopogon;Exotiques;globe;secondaire
+grevillea;Grevillea;Exotiques;protea;secondaire
+hakea;Hakea;Exotiques;globe;secondaire
+gloriosa;Gloriosa;Exotiques;custom/xGlor;secondaire
+tillandsia;Tillandsia;Exotiques;foliage;texture
+nepenthes;Népenthès;Exotiques;berries;texture
+nelumbo-nucifera;Fleur de lotus;Exotiques;cup;focale
+nelumbo-capsule;Capsule de lotus;Exotiques;exotic;texture
+passiflora;Passiflore;Exotiques;drape;secondaire
+hibiscus;Hibiscus tropical;Exotiques;star;focale
+plumeria;Frangipanier;Exotiques;star;secondaire
+bougainvillea;Bougainvillier;Exotiques;spray;remplissage
+hymenocallis;Lis araignée;Exotiques;star;focale
+bomarea;Bomarea;Exotiques;star;secondaire
+ixora;Ixora;Exotiques;globe;secondaire
+sandersonia;Sandersonia;Exotiques;custom/xSanders;ligne

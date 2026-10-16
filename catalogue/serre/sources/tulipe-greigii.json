@@ -1,0 +1,2922 @@
+{
+ "sid": "tulipe-greigii",
+ "schema": "STANDARD-SOURCES.md section 5",
+ "legende_entrees": "« cultivars » = entrées de la sorte : cultivars, formes botaniques ou espèce type ; « sans_photo » = nom prouvé (N1 ou N3) mais aucune photo nommée retenue ; « ecartes » = rejetés avec la raison",
+ "rattachement_catalogue": "aucun coloris existant du catalogue ne correspond à cette sorte (catalogue.json, inventaire_fleurs.csv et skus.csv relus le 2026-10-08 : aucune tulipe botanique) ; coloris_catalogue est donc vide",
+ "genre": "Tulipa",
+ "recensement": {
+  "date": "2026-10-08",
+  "agent": "fleur-recensement",
+  "portee": "tulipes botaniques : groupes Kaufmanniana (12), Fosteriana (13), Greigii (14) du KAVB et espèces / hybrides de la division 15 (« Overige Groep » = Miscellaneous) ; tout ce qui est documenté par une photo nommée fiable",
+  "limites": [
+   "N1 : la base de cultivars du KAVB (login.kavb.nl/siergewassen) n'est interrogeable que par un formulaire de recherche, non utilisé (règle « aucun formulaire »). Le N1 des cultivars repose donc sur les listes annuelles « Registraties » du KAVB (PDF, 2004-07 à 2013, huit documents) et sur les mentions « Mutant van » qui prouvent l'existence d'un parent. Les cultivars plus anciens ou postérieurs à 2013 n'ont pas de N1 lu.",
+   "N1 espèces : POWO (Kew) renvoie une erreur 403 (protection Cloudflare, non contournée). Les noms d'espèces sont recoupés avec le GBIF Backbone (API), iNaturalist et les textes de la Pacific Bulb Society ; à revérifier sur POWO.",
+   "N2 : Floricode (codes et photos des variétés vendues) est sur abonnement et n'a pas été consulté ; aucune fiche d'obtenteur à photo exploitable n'a été trouvée pour ces tulipes. Aucun cultivar n'est donc au niveau A.",
+   "Nouveautés 2014-2026 : les listes d'enregistrement KAVB de ces années ne sont pas publiées en PDF libre ; la fenêtre des cinq dernières années n'est pas couverte.",
+   "Les photos ne sont jamais stockées dans le dépôt : seules les adresses, auteurs, licences et niveaux sont écrits. Les vignettes regardées sont dans le cache de l'atelier (refcache/tulipe-botanique/).",
+   "Photos PBS : droits réservés aux photographes (consultation et mesure seulement, jamais publiées). Photos iNaturalist : licences CC BY-NC en majorité, mêmes usages."
+  ],
+  "statuts": "en production = niveau A ou B (à mesurer par fleur-coloris puis sondage de 10 % par l'orchestrateur) ; à confirmer = niveau C ou D ; écarté = avec la raison"
+ },
+ "nom": "Tulipe Greigii",
+ "latin": "Tulipa greigii Regel et Greigii Group",
+ "priorite": "P1",
+ "pourquoi_cette_priorite": "groupe forme-clé : seul groupe à feuilles panachées de pourpre au ras du sol ; le plus riche en coloris et en enregistrements (37 entrées Greigii sur 67 botaniques lues dans les listes KAVB 2004-2013) ; plusieurs clones multiflores",
+ "groupe_registre": {
+  "autorite": "KAVB (ICRA du genre Tulipa)",
+  "division": 14,
+  "nom_registre": "Greigii Groep",
+  "preuve": "KAVB, listes « Registraties » 2004-2013 (« Greigii Groep ») ; RHS : « (14) »"
+ },
+ "taxonomie": {
+  "espece_mere": "Tulipa greigii Regel, accepté (GBIF usageKey 5299454 ; Gartenflora 22: 290, 1873) ; Turkestan, Kazakhstan, Ouzbékistan, Iran",
+  "nom_accepte_source": "GBIF Backbone ; POWO non consulté (403)"
+ },
+ "melange": "Le groupe réunit l'espèce, ses clones et ses hybrides avec Kaufmanniana et Fosteriana. Inscriptions à double groupe : 'Redwood' (Greigii + Dubbele Vroege). Plusieurs cultivars de Commons classés Greigii ont une forme de Kaufmanniana (First Love, White Fire, Mary Ann) : classement à confirmer au registre.",
+ "forme": {
+  "resume": "gros bol large (jusqu'à 10 cm, Wikipédia) et court sur tige trapue, à tépales ovales-lancéolés pointus pouvant s'étaler en étoile (Pinocchio, Plaisir, Orange Toronto) ; coloris vifs, bordure ou flamme contrastées ; macule basale noire, brune ou jaune ; fleurs parfois multiples (Toronto 3-5, Quebec, Orange Toronto)",
+  "details": [
+   "bol évasé « cup-shaped » (RHS, Cape Cod, Calypso) à tépales en lancette aiguë",
+   "marque basale noire (Red Riding Hood, Calypso, Cape Cod : photos PBS) ; flamme centrale rouge (Quebec, Pinocchio, Plaisir)",
+   "espèce sauvage : coupe écarlate large à marque noire-jaune au centre (photo David Victor ; RHS : « red or yellow flowers with black markings on a yellow base »)",
+   "tiges duveteuses lavées de rose ou de brun (RHS T. greigii)"
+  ],
+  "sources": [
+   "RHS « Tulipa greigii (14) » et fiches Cape Cod, Calypso, Quebec, Plaisir ; photos PBS Janos Agoston ; Wikipédia T. greigii"
+  ]
+ },
+ "feuilles": {
+  "resume": "marque distinctive : feuilles gris-vert, larges, ondulées au bord, étalées au ras du sol, striées ou mouchetées de pourpre-brun",
+  "details": [
+   "Cape Cod : gris-vert, lancéolées, striées de pourpre (RHS) ; Toronto : larges, mouchetées de pourpre, ondulées (RHS, photos Commons) ; Plaisir : marquées de pourpre profond (RHS) ; Pinocchio : striées légèrement de pourpre (RHS) ; Red Riding Hood : striées de cramoisi (RHS)",
+   "c'est le trait le plus fiable pour séparer un Greigii d'un Fosteriana (RHS : feuilles « usually mottled with purple or maroon »)"
+  ]
+ },
+ "hauteur_cm": "15 à 35 : Plaisir 15, Pinocchio 15-20, Toronto et Red Riding Hood 20, Cape Cod et Calypso 30, Quebec et Orange Toronto 35 (RHS, PBS) ; espèce 20-45",
+ "floraison": "tôt à mi-printemps (début avril d'après le musée de la tulipe d'Amsterdam)",
+ "distinction": {
+  "vs_fosteriana": "feuilles striées de pourpre au ras du sol, tiges courtes, multiflore fréquent",
+  "vs_kaufmanniana": "fleur plus grosse, bol plus profond, feuilles plus largement striées"
+ },
+ "coloris_catalogue": [],
+ "cultivars": [
+  {
+   "id": "red-riding-hood",
+   "nom_affiche": "Red Riding Hood",
+   "nom_enregistre": "Red Riding Hood",
+   "synonymes": [],
+   "groupe": "Greigii (14)",
+   "obtenteur": null,
+   "annee": null,
+   "numeros": {},
+   "couleur_registre": "écarlate, base noire (RHS)",
+   "motif": "macule basale noire ; feuilles striées de cramoisi",
+   "sources": [
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://www.rhs.org.uk/plants/92114/tulipa-red-riding-hood-14/details",
+     "consulte": "2026-10-08",
+     "note": "RHS (société savante) : fiche (14) AGM : environ 20 cm ; écarlate vif à base noire, revers rouge plus foncé ; feuillage grisâtre strié de cramoisi ; autre entrée « Tulipa greigii 'Red Riding Hood' »"
+    },
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaHybrids",
+     "consulte": "2026-10-08",
+     "note": "Pacific Bulb Society : Div. 14 : « 'Red Riding Hood' : red with black basal markings inside », AGM"
+    },
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://www.jandewitenzonen.com/en/assortment/tulip/451/Red-Riding-Hood/",
+     "consulte": "2026-10-08",
+     "note": "fiche variété du bulbiculteur-exportateur Jan de Wit en Zonen (Enkhuizen) : groupe Greigii ; couleur Red ; hauteur Short ; floraison Mid Season ; marqué « no longer supported » (retiré de son assortiment actuel, fiche encore en ligne)"
+    }
+   ],
+   "photos": [
+    {
+     "url": "https://pacificbulbsociety.org/pbswiki/files/Tulipa/Tulipa_Greigii_RedRidingHood_JA6.jpg",
+     "page": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaHybrids",
+     "niveau": "N3",
+     "auteur": "Janos Agoston",
+     "licence": "© photographe ; Pacific Bulb Society (reproduction non libre : consultation et mesure seulement)",
+     "legende": "Tulipa 'Red Riding Hood', Janos Agoston",
+     "consulte": "2026-10-08",
+     "vue": "champ",
+     "eclairage": null,
+     "balance_blancs": null
+    },
+    {
+     "url": "https://pacificbulbsociety.org/pbswiki/files/Tulipa/Tulipa_Greigii_RedRidingHood_JA12.jpg",
+     "page": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaHybrids",
+     "niveau": "N3",
+     "auteur": "Janos Agoston",
+     "licence": "© photographe ; Pacific Bulb Society (reproduction non libre : consultation et mesure seulement)",
+     "legende": "Tulipa 'Red Riding Hood', Janos Agoston",
+     "consulte": "2026-10-08",
+     "vue": "profil, feuilles striées",
+     "eclairage": null,
+     "balance_blancs": null
+    },
+    {
+     "url": "https://www.jandewitenzonen.com/img/products/tulip/Red_Riding_Hood.jpg",
+     "page": "https://www.jandewitenzonen.com/en/assortment/tulip/451/Red-Riding-Hood/",
+     "niveau": "N3",
+     "auteur": "Jan de Wit en Zonen B.V.",
+     "licence": "tous droits réservés ; mesure locale seulement, jamais stockée ni publiée",
+     "legende": "Tulipa 'Red Riding Hood' (fiche variété Jan de Wit en Zonen)",
+     "consulte": "2026-10-08",
+     "vue": "bouton fermé ou gobelet, photo de catalogue (filigrane, fond flou) : couleur approchée",
+     "note": "photo de catalogue : couleur à recouper",
+     "eclairage": null,
+     "balance_blancs": null
+    }
+   ],
+   "mesures": {},
+   "niveau_preuve": "B",
+   "existence_n1_n2": false,
+   "statut": "en production",
+   "doutes": [
+    "existence N1/N2 non établie : base KAVB (formulaire) non interrogée et Floricode non consulté ; à valider au sondage de 10 %"
+   ],
+   "coloris_catalogue": null,
+   "commerce": {
+    "jan_de_wit_en_zonen_catalogue_2026": false,
+    "groupe": "Greigii",
+    "couleur": "Red",
+    "hauteur": "Short",
+    "floraison": "Mid Season",
+    "note": "fiche en ligne le 2026-10-08 ; Floricode non consulté"
+   },
+   "familles_de_sources": [
+    "pacificbulbsociety.org",
+    "www.jandewitenzonen.com",
+    "www.rhs.org.uk"
+   ]
+  },
+  {
+   "id": "toronto",
+   "nom_affiche": "Toronto",
+   "nom_enregistre": "Toronto",
+   "synonymes": [],
+   "groupe": "Greigii (14)",
+   "obtenteur": null,
+   "annee": null,
+   "numeros": {},
+   "couleur_registre": "rouge corail profond (RHS) ; rose rougeâtre, base jaune (PBS)",
+   "motif": "multiflore ; feuilles larges ondulées, mouchetées de pourpre",
+   "sources": [
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://www.rhs.org.uk/plants/81418/tulipa-toronto-(14)/details",
+     "consulte": "2026-10-08",
+     "note": "RHS (société savante) : fiche (14) AGM : environ 20 cm, feuilles larges mouchetées de pourpre, fleurs rouge corail profond ; 3 à 5 fleurs par tige"
+    },
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaHybrids",
+     "consulte": "2026-10-08",
+     "note": "Pacific Bulb Society : Div. 14 : « 'Toronto' : multi-flowered, rosy pink flushed red with a yellow base », AGM"
+    },
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://www.jandewitenzonen.com/en/assortment/tulip/524/Toronto/",
+     "consulte": "2026-10-08",
+     "note": "fiche variété du bulbiculteur-exportateur Jan de Wit en Zonen (Enkhuizen) : groupe Greigii ; couleur Orange ; hauteur Medium ; floraison Mid Season ; marqué « no longer supported » (retiré de son assortiment actuel, fiche encore en ligne)"
+    }
+   ],
+   "photos": [
+    {
+     "url": "https://pacificbulbsociety.org/pbswiki/files/Tulipa/Tulipa_Greigii_Toronto_JA8.jpg",
+     "page": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaHybrids",
+     "niveau": "N3",
+     "auteur": "Janos Agoston",
+     "licence": "© photographe ; Pacific Bulb Society (reproduction non libre : consultation et mesure seulement)",
+     "legende": "Tulipa 'Toronto', Janos Agoston",
+     "consulte": "2026-10-08",
+     "vue": "boutons, feuilles",
+     "eclairage": null,
+     "balance_blancs": null
+    },
+    {
+     "url": "https://pacificbulbsociety.org/pbswiki/files/Tulipa/Tulipa_Greigii_Toronto_JA13.jpg",
+     "page": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaHybrids",
+     "niveau": "N3",
+     "auteur": "Janos Agoston",
+     "licence": "© photographe ; Pacific Bulb Society (reproduction non libre : consultation et mesure seulement)",
+     "legende": "Tulipa 'Toronto', Janos Agoston",
+     "consulte": "2026-10-08",
+     "vue": "dessus",
+     "eclairage": null,
+     "balance_blancs": null
+    },
+    {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/6/65/Tulipa_%27Toronto%27_2021-04-24_01.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Tulipa_%27Toronto%27_2021-04-24_01.jpg",
+     "niveau": "N4",
+     "auteur": "Agnieszka Kwiecień, Nova",
+     "licence": "CC BY-SA 4.0",
+     "legende": "File:Tulipa 'Toronto' 2021-04-24 01.jpg",
+     "consulte": "2026-10-08",
+     "vue": "bouton, feuilles ondulées",
+     "date_prise": "2021-04-24",
+     "eclairage": null,
+     "balance_blancs": null,
+     "miniature": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/65/Tulipa_%27Toronto%27_2021-04-24_01.jpg/960px-Tulipa_%27Toronto%27_2021-04-24_01.jpg"
+    },
+    {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/b/ba/Tulipa_%27Toronto%27_2021-04-24_03.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Tulipa_%27Toronto%27_2021-04-24_03.jpg",
+     "niveau": "N4",
+     "auteur": "Agnieszka Kwiecień, Nova",
+     "licence": "CC BY-SA 4.0",
+     "legende": "File:Tulipa 'Toronto' 2021-04-24 03.jpg",
+     "consulte": "2026-10-08",
+     "vue": "profil, feuille ondulée striée",
+     "date_prise": "2021-04-24",
+     "eclairage": null,
+     "balance_blancs": null,
+     "miniature": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Tulipa_%27Toronto%27_2021-04-24_03.jpg/960px-Tulipa_%27Toronto%27_2021-04-24_03.jpg"
+    },
+    {
+     "url": "https://www.jandewitenzonen.com/img/products/tulip/Toronto.jpg",
+     "page": "https://www.jandewitenzonen.com/en/assortment/tulip/524/Toronto/",
+     "niveau": "N3",
+     "auteur": "Jan de Wit en Zonen B.V.",
+     "licence": "tous droits réservés ; mesure locale seulement, jamais stockée ni publiée",
+     "legende": "Tulipa 'Toronto' (fiche variété Jan de Wit en Zonen)",
+     "consulte": "2026-10-08",
+     "vue": "bouton fermé ou gobelet, photo de catalogue (filigrane, fond flou) : couleur approchée",
+     "note": "photo de catalogue : couleur à recouper",
+     "eclairage": null,
+     "balance_blancs": null
+    }
+   ],
+   "mesures": {},
+   "niveau_preuve": "B",
+   "existence_n1_n2": false,
+   "statut": "en production",
+   "doutes": [
+    "existence N1/N2 non établie : base KAVB (formulaire) non interrogée et Floricode non consulté ; à valider au sondage de 10 %",
+    "écart de couleur entre sources (corail / rose lavé de rouge) : à trancher à la mesure"
+   ],
+   "coloris_catalogue": null,
+   "commerce": {
+    "jan_de_wit_en_zonen_catalogue_2026": false,
+    "groupe": "Greigii",
+    "couleur": "Orange",
+    "hauteur": "Medium",
+    "floraison": "Mid Season",
+    "note": "fiche en ligne le 2026-10-08 ; Floricode non consulté"
+   },
+   "familles_de_sources": [
+    "commons.wikimedia.org",
+    "pacificbulbsociety.org",
+    "www.jandewitenzonen.com",
+    "www.rhs.org.uk"
+   ]
+  },
+  {
+   "id": "orange-toronto",
+   "nom_affiche": "Orange Toronto",
+   "nom_enregistre": "Orange Toronto",
+   "synonymes": [],
+   "groupe": "Greigii (14)",
+   "obtenteur": null,
+   "annee": null,
+   "numeros": {},
+   "couleur_registre": "orange souci bordé de rouge capucine (PBS)",
+   "motif": "multiflore ; étoile à pointes aiguës",
+   "sources": [
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaHybrids",
+     "consulte": "2026-10-08",
+     "note": "Pacific Bulb Society : Div. 14 : « 'Orange Toronto' : marigold orange edged nasturtium red, 35 cm, 2 à 5 fleurs par tige » ; photos de David Pilling (2013-2014)"
+    },
+    {
+     "role": "nom",
+     "niveau": "N4",
+     "url": "https://commons.wikimedia.org/wiki/Category:Tulipa_%27Orange_Toronto%27",
+     "consulte": "2026-10-08",
+     "note": "catégorie Commons (6 fichiers)"
+    },
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://www.jandewitenzonen.com/en/assortment/tulip/379/Orange-Toronto/",
+     "consulte": "2026-10-08",
+     "note": "fiche variété du bulbiculteur-exportateur Jan de Wit en Zonen (Enkhuizen) : groupe Greigii ; couleur Orange ; hauteur Medium ; floraison Mid Season ; marqué « no longer supported » (retiré de son assortiment actuel, fiche encore en ligne)"
+    }
+   ],
+   "photos": [
+    {
+     "url": "https://pacificbulbsociety.org/pbswiki/files/Tulipa/Tulipa_OrangeToronto_DP0.jpg",
+     "page": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaHybrids",
+     "niveau": "N3",
+     "auteur": "David Pilling",
+     "licence": "© photographe ; Pacific Bulb Society (reproduction non libre : consultation et mesure seulement)",
+     "legende": "Tulipa 'Orange Toronto' 3rd April 2014, David Pilling",
+     "consulte": "2026-10-08",
+     "vue": "bulbe, feuilles, bouton",
+     "eclairage": null,
+     "balance_blancs": null
+    },
+    {
+     "url": "https://pacificbulbsociety.org/pbswiki/files/Tulipa/Tulipa_OrangeToronto_DP3.jpg",
+     "page": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaHybrids",
+     "niveau": "N3",
+     "auteur": "David Pilling",
+     "licence": "© photographe ; Pacific Bulb Society (reproduction non libre : consultation et mesure seulement)",
+     "legende": "Tulipa 'Orange Toronto' 10th April 2014, David Pilling",
+     "consulte": "2026-10-08",
+     "eclairage": null,
+     "balance_blancs": null
+    },
+    {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/b/b4/Tulipa_%27Orange_Toronto%27_2016_01.JPG",
+     "page": "https://commons.wikimedia.org/wiki/File:Tulipa_%27Orange_Toronto%27_2016_01.JPG",
+     "niveau": "N4",
+     "auteur": "Retired electrician",
+     "licence": "CC0",
+     "legende": "File:Tulipa 'Orange Toronto' 2016 01.JPG",
+     "consulte": "2026-10-08",
+     "vue": "dessus, étoile (CC0)",
+     "date_prise": "2015-05-08",
+     "eclairage": null,
+     "balance_blancs": null,
+     "miniature": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b4/Tulipa_%27Orange_Toronto%27_2016_01.JPG/960px-Tulipa_%27Orange_Toronto%27_2016_01.JPG"
+    },
+    {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/3/37/Tulipa_%27Orange_Toronto%27_2016_02.JPG",
+     "page": "https://commons.wikimedia.org/wiki/File:Tulipa_%27Orange_Toronto%27_2016_02.JPG",
+     "niveau": "N4",
+     "auteur": "Retired electrician",
+     "licence": "CC0",
+     "legende": "File:Tulipa 'Orange Toronto' 2016 02.JPG",
+     "consulte": "2026-10-08",
+     "vue": "groupe",
+     "date_prise": "2015-05-08",
+     "eclairage": null,
+     "balance_blancs": null,
+     "miniature": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/37/Tulipa_%27Orange_Toronto%27_2016_02.JPG/960px-Tulipa_%27Orange_Toronto%27_2016_02.JPG"
+    },
+    {
+     "url": "https://www.jandewitenzonen.com/img/products/tulip/Orange_Toronto.jpg",
+     "page": "https://www.jandewitenzonen.com/en/assortment/tulip/379/Orange-Toronto/",
+     "niveau": "N3",
+     "auteur": "Jan de Wit en Zonen B.V.",
+     "licence": "tous droits réservés ; mesure locale seulement, jamais stockée ni publiée",
+     "legende": "Tulipa 'Orange Toronto' (fiche variété Jan de Wit en Zonen)",
+     "consulte": "2026-10-08",
+     "vue": "bouton fermé ou gobelet, photo de catalogue (filigrane, fond flou) : couleur approchée",
+     "note": "photo de catalogue : couleur à recouper",
+     "eclairage": null,
+     "balance_blancs": null
+    }
+   ],
+   "mesures": {},
+   "niveau_preuve": "B",
+   "existence_n1_n2": false,
+   "statut": "en production",
+   "doutes": [
+    "existence N1/N2 non établie : base KAVB (formulaire) non interrogée et Floricode non consulté ; à valider au sondage de 10 %"
+   ],
+   "coloris_catalogue": null,
+   "commerce": {
+    "jan_de_wit_en_zonen_catalogue_2026": false,
+    "groupe": "Greigii",
+    "couleur": "Orange",
+    "hauteur": "Medium",
+    "floraison": "Mid Season",
+    "note": "fiche en ligne le 2026-10-08 ; Floricode non consulté"
+   },
+   "familles_de_sources": [
+    "commons.wikimedia.org",
+    "pacificbulbsociety.org",
+    "www.jandewitenzonen.com"
+   ]
+  },
+  {
+   "id": "cape-cod",
+   "nom_affiche": "Cape Cod",
+   "nom_enregistre": "Cape Cod",
+   "synonymes": [
+    "Tulipa greigii 'Cape Cod'"
+   ],
+   "groupe": "Greigii (14)",
+   "obtenteur": null,
+   "annee": null,
+   "numeros": {},
+   "couleur_registre": "jaune à nervure centrale rouge orangé (RHS) ; PBS dit « abricot bordé de jaune »",
+   "motif": "flamme rouge-orangé médiane sur fond jaune, cœur noir ; feuilles tachetées de pourpre",
+   "sources": [
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://www.rhs.org.uk/plants/71255/tulipa-cape-cod-14/details",
+     "consulte": "2026-10-08",
+     "note": "RHS (société savante) : fiche (14) ; syn. Tulipa greigii 'Cape Cod' ; environ 30 cm ; orange-jaune avec marques rouges centrales à l'extérieur ; feuilles gris-vert striées de pourpre"
+    },
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaHybrids",
+     "consulte": "2026-10-08",
+     "note": "Pacific Bulb Society : Div. 14 : « 'Cape Cod' : apricot petals edged yellow »"
+    },
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://www.jandewitenzonen.com/en/assortment/tulip/92/Cape-Cod/",
+     "consulte": "2026-10-08",
+     "note": "fiche variété du bulbiculteur-exportateur Jan de Wit en Zonen (Enkhuizen) : groupe Greigii ; couleur Red/Yellow ; hauteur Short ; floraison Mid Season ; marqué « no longer supported » (retiré de son assortiment actuel, fiche encore en ligne)"
+    }
+   ],
+   "photos": [
+    {
+     "url": "https://pacificbulbsociety.org/pbswiki/files/Tulipa/Tulipa_Greigii_CapeCod_JA2.jpg",
+     "page": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaHybrids",
+     "niveau": "N3",
+     "auteur": "Janos Agoston",
+     "licence": "© photographe ; Pacific Bulb Society (reproduction non libre : consultation et mesure seulement)",
+     "legende": "Tulipa 'Cape Cod', Janos Agoston",
+     "consulte": "2026-10-08",
+     "vue": "dessus",
+     "eclairage": null,
+     "balance_blancs": null
+    },
+    {
+     "url": "https://pacificbulbsociety.org/pbswiki/files/Tulipa/Tulipa_Greigii_CapeCod_JA3.jpg",
+     "page": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaHybrids",
+     "niveau": "N3",
+     "auteur": "Janos Agoston",
+     "licence": "© photographe ; Pacific Bulb Society (reproduction non libre : consultation et mesure seulement)",
+     "legende": "Tulipa 'Cape Cod', Janos Agoston",
+     "consulte": "2026-10-08",
+     "vue": "dessus",
+     "eclairage": null,
+     "balance_blancs": null
+    },
+    {
+     "url": "https://pacificbulbsociety.org/pbswiki/files/Tulipa/Tulipa_Greigii_CapeCod_leaves_JA.jpg",
+     "page": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaHybrids",
+     "niveau": "N3",
+     "auteur": "Janos Agoston",
+     "licence": "© photographe ; Pacific Bulb Society (reproduction non libre : consultation et mesure seulement)",
+     "legende": "Tulipa 'Cape Cod' leaves, Janos Agoston",
+     "consulte": "2026-10-08",
+     "vue": "feuilles marquées",
+     "eclairage": null,
+     "balance_blancs": null
+    },
+    {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/0/0a/Tulipa_%27Cape_Cod%27_2023-04-16_01.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Tulipa_%27Cape_Cod%27_2023-04-16_01.jpg",
+     "niveau": "N4",
+     "auteur": "Agnieszka Kwiecień, Nova",
+     "licence": "CC BY-SA 4.0",
+     "legende": "File:Tulipa 'Cape Cod' 2023-04-16 01.jpg",
+     "consulte": "2026-10-08",
+     "vue": "dessus",
+     "date_prise": "2023-04-16",
+     "eclairage": null,
+     "balance_blancs": null,
+     "miniature": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0a/Tulipa_%27Cape_Cod%27_2023-04-16_01.jpg/960px-Tulipa_%27Cape_Cod%27_2023-04-16_01.jpg"
+    },
+    {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/2/24/Tulipa_%27Cape_Cod%27_2023-04-16_02.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Tulipa_%27Cape_Cod%27_2023-04-16_02.jpg",
+     "niveau": "N4",
+     "auteur": "Agnieszka Kwiecień, Nova",
+     "licence": "CC BY-SA 4.0",
+     "legende": "File:Tulipa 'Cape Cod' 2023-04-16 02.jpg",
+     "consulte": "2026-10-08",
+     "vue": "dessus, feuilles tachetées",
+     "date_prise": "2023-04-16",
+     "eclairage": null,
+     "balance_blancs": null,
+     "miniature": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/24/Tulipa_%27Cape_Cod%27_2023-04-16_02.jpg/960px-Tulipa_%27Cape_Cod%27_2023-04-16_02.jpg"
+    },
+    {
+     "url": "https://www.jandewitenzonen.com/img/products/tulip/Cape_Cod.jpg",
+     "page": "https://www.jandewitenzonen.com/en/assortment/tulip/92/Cape-Cod/",
+     "niveau": "N3",
+     "auteur": "Jan de Wit en Zonen B.V.",
+     "licence": "tous droits réservés ; mesure locale seulement, jamais stockée ni publiée",
+     "legende": "Tulipa 'Cape Cod' (fiche variété Jan de Wit en Zonen)",
+     "consulte": "2026-10-08",
+     "vue": "bouton fermé ou gobelet, photo de catalogue (filigrane, fond flou) : couleur approchée",
+     "note": "photo de catalogue : couleur à recouper",
+     "eclairage": null,
+     "balance_blancs": null
+    }
+   ],
+   "mesures": {},
+   "niveau_preuve": "B",
+   "existence_n1_n2": false,
+   "statut": "en production",
+   "doutes": [
+    "existence N1/N2 non établie : base KAVB (formulaire) non interrogée et Floricode non consulté ; à valider au sondage de 10 %",
+    "description de la couleur contradictoire entre PBS (abricot) et RHS/photos (jaune flammé de rouge-orangé) : la photo prime"
+   ],
+   "coloris_catalogue": null,
+   "commerce": {
+    "jan_de_wit_en_zonen_catalogue_2026": false,
+    "groupe": "Greigii",
+    "couleur": "Red/Yellow",
+    "hauteur": "Short",
+    "floraison": "Mid Season",
+    "note": "fiche en ligne le 2026-10-08 ; Floricode non consulté"
+   },
+   "familles_de_sources": [
+    "commons.wikimedia.org",
+    "pacificbulbsociety.org",
+    "www.jandewitenzonen.com",
+    "www.rhs.org.uk"
+   ]
+  },
+  {
+   "id": "calypso",
+   "nom_affiche": "Calypso",
+   "nom_enregistre": "Calypso",
+   "synonymes": [],
+   "groupe": "Greigii (14)",
+   "obtenteur": null,
+   "annee": null,
+   "numeros": {},
+   "couleur_registre": "orange-rouge à marges jaunes, bases noires (RHS)",
+   "motif": "marge jaune fine, base noire ; feuilles striées",
+   "sources": [
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://www.rhs.org.uk/plants/110866/tulipa-calypso-14/details",
+     "consulte": "2026-10-08",
+     "note": "RHS (société savante) : fiche (14) AGM : environ 30 cm, bols orange-rouge tendre à fines marges jaunes et bases noires"
+    },
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaHybrids",
+     "consulte": "2026-10-08",
+     "note": "Pacific Bulb Society : Div. 14 : « 'Calypso' : glowing orange-red with canary-yellow margins »"
+    },
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://www.jandewitenzonen.com/en/assortment/tulip/86/Calypso/",
+     "consulte": "2026-10-08",
+     "note": "fiche variété du bulbiculteur-exportateur Jan de Wit en Zonen (Enkhuizen) : groupe None ; couleur None ; hauteur None ; floraison None ; marqué « no longer supported » (retiré de son assortiment actuel, fiche encore en ligne)"
+    }
+   ],
+   "photos": [
+    {
+     "url": "https://pacificbulbsociety.org/pbswiki/files/Tulipa/Tulipa_Greigii_Calypso_JA1.jpg",
+     "page": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaHybrids",
+     "niveau": "N3",
+     "auteur": "Janos Agoston",
+     "licence": "© photographe ; Pacific Bulb Society (reproduction non libre : consultation et mesure seulement)",
+     "legende": "Tulipa 'Calypso', Janos Agoston",
+     "consulte": "2026-10-08",
+     "vue": "dessus",
+     "eclairage": null,
+     "balance_blancs": null
+    },
+    {
+     "url": "https://pacificbulbsociety.org/pbswiki/files/Tulipa/Tulipa_Greigii_Calypso_JA2.jpg",
+     "page": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaHybrids",
+     "niveau": "N3",
+     "auteur": "Janos Agoston",
+     "licence": "© photographe ; Pacific Bulb Society (reproduction non libre : consultation et mesure seulement)",
+     "legende": "Tulipa 'Calypso', Janos Agoston",
+     "consulte": "2026-10-08",
+     "vue": "champ",
+     "eclairage": null,
+     "balance_blancs": null
+    },
+    {
+     "url": "https://pacificbulbsociety.org/pbswiki/files/Tulipa/Tulipa_Greigii_Calypso_JA.jpg",
+     "page": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaHybrids",
+     "niveau": "N3",
+     "auteur": "Janos Agoston",
+     "licence": "© photographe ; Pacific Bulb Society (reproduction non libre : consultation et mesure seulement)",
+     "legende": "Tulipa 'Calypso' leaves, Janos Agoston",
+     "consulte": "2026-10-08",
+     "vue": "feuilles",
+     "eclairage": null,
+     "balance_blancs": null
+    },
+    {
+     "url": "https://www.jandewitenzonen.com/img/products/tulip/Calypso.jpg",
+     "page": "https://www.jandewitenzonen.com/en/assortment/tulip/86/Calypso/",
+     "niveau": "N3",
+     "auteur": "Jan de Wit en Zonen B.V.",
+     "licence": "tous droits réservés ; mesure locale seulement, jamais stockée ni publiée",
+     "legende": "Tulipa 'Calypso' (fiche variété Jan de Wit en Zonen)",
+     "consulte": "2026-10-08",
+     "vue": "bouton fermé ou gobelet, photo de catalogue (filigrane, fond flou) : couleur approchée",
+     "note": "photo de catalogue : couleur à recouper",
+     "eclairage": null,
+     "balance_blancs": null
+    }
+   ],
+   "mesures": {},
+   "niveau_preuve": "B",
+   "existence_n1_n2": false,
+   "statut": "en production",
+   "doutes": [
+    "existence N1/N2 non établie : base KAVB (formulaire) non interrogée et Floricode non consulté ; à valider au sondage de 10 %"
+   ],
+   "coloris_catalogue": null,
+   "commerce": {
+    "jan_de_wit_en_zonen_catalogue_2026": false,
+    "groupe": null,
+    "couleur": null,
+    "hauteur": null,
+    "floraison": null,
+    "note": "fiche en ligne le 2026-10-08 ; Floricode non consulté"
+   },
+   "familles_de_sources": [
+    "pacificbulbsociety.org",
+    "www.jandewitenzonen.com",
+    "www.rhs.org.uk"
+   ]
+  },
+  {
+   "id": "pinocchio",
+   "nom_affiche": "Pinocchio",
+   "nom_enregistre": "Pinocchio",
+   "synonymes": [],
+   "groupe": "Greigii (14)",
+   "obtenteur": null,
+   "annee": null,
+   "numeros": {},
+   "couleur_registre": "rouge à bords blanc crème (RHS)",
+   "motif": "blanc crème flammé de rouge en son milieu, cœur bronze",
+   "sources": [
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://www.rhs.org.uk/plants/85071/tulipa-pinocchio-14/details",
+     "consulte": "2026-10-08",
+     "note": "RHS (société savante) : fiche (14) AGM : 15-20 cm, feuillage gris-vert légèrement strié de pourpre, pétales rouges à bords blanc crème"
+    },
+    {
+     "role": "existence",
+     "niveau": "N1",
+     "url": "https://assets.kavb.nl/docs/7d64fa67-6e25-466b-856d-6177ee674386.pdf",
+     "consulte": "2026-10-08",
+     "note": "KAVB, liste « Registraties week 46-2008 t/m 45-2009 » : 'Buddy' (Greigii Groep, Edibulbcode 80080) est enregistré « Mutant van 'Pinocchio' » : le parent figure donc au registre"
+    },
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaHybrids",
+     "consulte": "2026-10-08",
+     "note": "Pacific Bulb Society : Div. 14 : « 'Pinocchio' : ivory-white flamed red up the center, bronze heart »"
+    }
+   ],
+   "photos": [
+    {
+     "url": "https://pacificbulbsociety.org/pbswiki/files/Tulipa/Tulipa_Greigii_Pinocchio_JA7.jpg",
+     "page": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaHybrids",
+     "niveau": "N3",
+     "auteur": "Janos Agoston",
+     "licence": "© photographe ; Pacific Bulb Society (reproduction non libre : consultation et mesure seulement)",
+     "legende": "Tulipa 'Pinocchio', Janos Agoston",
+     "consulte": "2026-10-08",
+     "vue": "dessus",
+     "eclairage": null,
+     "balance_blancs": null
+    },
+    {
+     "url": "https://pacificbulbsociety.org/pbswiki/files/Tulipa/Tulipa_Greigii_Pinocchio_JA10.jpg",
+     "page": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaHybrids",
+     "niveau": "N3",
+     "auteur": "Janos Agoston",
+     "licence": "© photographe ; Pacific Bulb Society (reproduction non libre : consultation et mesure seulement)",
+     "legende": "Tulipa 'Pinocchio', Janos Agoston",
+     "consulte": "2026-10-08",
+     "eclairage": null,
+     "balance_blancs": null
+    },
+    {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/f/fd/Tulipa_%27Pinocchio%27_2016_01.JPG",
+     "page": "https://commons.wikimedia.org/wiki/File:Tulipa_%27Pinocchio%27_2016_01.JPG",
+     "niveau": "N4",
+     "auteur": "Retired electrician",
+     "licence": "CC0",
+     "legende": "File:Tulipa 'Pinocchio' 2016 01.JPG",
+     "consulte": "2026-10-08",
+     "vue": "rang",
+     "date_prise": "2016-05-08",
+     "eclairage": null,
+     "balance_blancs": null,
+     "miniature": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/Tulipa_%27Pinocchio%27_2016_01.JPG/960px-Tulipa_%27Pinocchio%27_2016_01.JPG"
+    },
+    {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Tulipa_%27Pinocchio%27_2023-04-23_01.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Tulipa_%27Pinocchio%27_2023-04-23_01.jpg",
+     "niveau": "N4",
+     "auteur": "Agnieszka Kwiecień, Nova",
+     "licence": "CC BY-SA 4.0",
+     "legende": "File:Tulipa 'Pinocchio' 2023-04-23 01.jpg",
+     "consulte": "2026-10-08",
+     "vue": "rang",
+     "date_prise": "2023-04-23",
+     "eclairage": null,
+     "balance_blancs": null,
+     "miniature": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Tulipa_%27Pinocchio%27_2023-04-23_01.jpg/960px-Tulipa_%27Pinocchio%27_2023-04-23_01.jpg"
+    }
+   ],
+   "mesures": {},
+   "niveau_preuve": "B",
+   "existence_n1_n2": true,
+   "statut": "en production",
+   "doutes": [
+    "PBS dit « blanc ivoire flammé de rouge » ; RHS dit « rouge bordé de blanc » : même fleur vue différemment, à mesurer"
+   ],
+   "coloris_catalogue": null,
+   "familles_de_sources": [
+    "assets.kavb.nl",
+    "commons.wikimedia.org",
+    "pacificbulbsociety.org",
+    "www.rhs.org.uk"
+   ]
+  },
+  {
+   "id": "quebec",
+   "nom_affiche": "Quebec",
+   "nom_enregistre": "Quebec",
+   "synonymes": [],
+   "groupe": "Greigii (14)",
+   "obtenteur": null,
+   "annee": null,
+   "numeros": {},
+   "couleur_registre": "jaune très pâle à blanc, strie cramoisie (RHS)",
+   "motif": "multiflore ; strie rouge médiane, base citron",
+   "sources": [
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://www.rhs.org.uk/plants/212143/tulipa-quebec-(14)/details",
+     "consulte": "2026-10-08",
+     "note": "RHS (société savante) : fiche (14) : environ 35 cm, bol jaune très pâle virant au quasi-blanc, strie cramoisie au centre de chaque pétale"
+    },
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaHybrids",
+     "consulte": "2026-10-08",
+     "note": "Pacific Bulb Society : Div. 14 : « 'Quebec' : multi-flowered, creamy white striped red with a lemon base »"
+    },
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://www.jandewitenzonen.com/en/assortment/tulip/431/Quebec/",
+     "consulte": "2026-10-08",
+     "note": "fiche variété du bulbiculteur-exportateur Jan de Wit en Zonen (Enkhuizen) : groupe Greigii ; couleur Pink/Cream ; hauteur Medium ; floraison Mid Season ; marqué « no longer supported » (retiré de son assortiment actuel, fiche encore en ligne)"
+    }
+   ],
+   "photos": [
+    {
+     "url": "https://pacificbulbsociety.org/pbswiki/files/Tulipa/Tulipa_Greigii_Quebec_JA3.jpg",
+     "page": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaHybrids",
+     "niveau": "N3",
+     "auteur": "Janos Agoston",
+     "licence": "© photographe ; Pacific Bulb Society (reproduction non libre : consultation et mesure seulement)",
+     "legende": "Tulipa 'Quebec', Janos Agoston",
+     "consulte": "2026-10-08",
+     "vue": "champ",
+     "eclairage": null,
+     "balance_blancs": null
+    },
+    {
+     "url": "https://pacificbulbsociety.org/pbswiki/files/Tulipa/Tulipa_Greigii_Quebec_JA4.jpg",
+     "page": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaHybrids",
+     "niveau": "N3",
+     "auteur": "Janos Agoston",
+     "licence": "© photographe ; Pacific Bulb Society (reproduction non libre : consultation et mesure seulement)",
+     "legende": "Tulipa 'Quebec', Janos Agoston",
+     "consulte": "2026-10-08",
+     "vue": "dessus",
+     "eclairage": null,
+     "balance_blancs": null
+    },
+    {
+     "url": "https://www.jandewitenzonen.com/img/products/tulip/Quebec.jpg",
+     "page": "https://www.jandewitenzonen.com/en/assortment/tulip/431/Quebec/",
+     "niveau": "N3",
+     "auteur": "Jan de Wit en Zonen B.V.",
+     "licence": "tous droits réservés ; mesure locale seulement, jamais stockée ni publiée",
+     "legende": "Tulipa 'Quebec' (fiche variété Jan de Wit en Zonen)",
+     "consulte": "2026-10-08",
+     "vue": "bouton fermé ou gobelet, photo de catalogue (filigrane, fond flou) : couleur approchée",
+     "note": "photo de catalogue : couleur à recouper",
+     "eclairage": null,
+     "balance_blancs": null
+    }
+   ],
+   "mesures": {},
+   "niveau_preuve": "B",
+   "existence_n1_n2": false,
+   "statut": "en production",
+   "doutes": [
+    "existence N1/N2 non établie : base KAVB (formulaire) non interrogée et Floricode non consulté ; à valider au sondage de 10 %"
+   ],
+   "coloris_catalogue": null,
+   "commerce": {
+    "jan_de_wit_en_zonen_catalogue_2026": false,
+    "groupe": "Greigii",
+    "couleur": "Pink/Cream",
+    "hauteur": "Medium",
+    "floraison": "Mid Season",
+    "note": "fiche en ligne le 2026-10-08 ; Floricode non consulté"
+   },
+   "familles_de_sources": [
+    "pacificbulbsociety.org",
+    "www.jandewitenzonen.com",
+    "www.rhs.org.uk"
+   ]
+  },
+  {
+   "id": "czaar-peter",
+   "nom_affiche": "Czaar Peter",
+   "nom_enregistre": "Czaar Peter",
+   "synonymes": [
+    "Czar Peter"
+   ],
+   "groupe": "Greigii (14)",
+   "obtenteur": null,
+   "annee": null,
+   "numeros": {},
+   "couleur_registre": null,
+   "motif": "crème moucheté et plumeté de rose, centre brun et jaune",
+   "sources": [
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaHybrids",
+     "consulte": "2026-10-08",
+     "note": "Pacific Bulb Society : Div. 14 : « 'Czar Peter' (also spelled 'Czaar Peter') : creamy white, speckled and feathered pink, with brown and yellow center markings »"
+    },
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://www.jandewitenzonen.com/en/assortment/tulip/144/Czaar-Peter/",
+     "consulte": "2026-10-08",
+     "note": "fiche variété du bulbiculteur-exportateur Jan de Wit en Zonen (Enkhuizen) : groupe None ; couleur None ; hauteur None ; floraison None ; marqué « no longer supported » (retiré de son assortiment actuel, fiche encore en ligne)"
+    }
+   ],
+   "photos": [
+    {
+     "url": "https://pacificbulbsociety.org/pbswiki/files/Tulipa/Tulipa_Greigii_Czaar_Peter_JA1.jpg",
+     "page": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaHybrids",
+     "niveau": "N3",
+     "auteur": "Janos Agoston",
+     "licence": "© photographe ; Pacific Bulb Society (reproduction non libre : consultation et mesure seulement)",
+     "legende": "Tulipa 'Czar Peter', Janos Agoston",
+     "consulte": "2026-10-08",
+     "vue": "dessus",
+     "eclairage": null,
+     "balance_blancs": null
+    },
+    {
+     "url": "https://pacificbulbsociety.org/pbswiki/files/Tulipa/Tulipa_Greigii_Czaar_Peter_JA7.jpg",
+     "page": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaHybrids",
+     "niveau": "N3",
+     "auteur": "Janos Agoston",
+     "licence": "© photographe ; Pacific Bulb Society (reproduction non libre : consultation et mesure seulement)",
+     "legende": "Tulipa 'Czar Peter', Janos Agoston",
+     "consulte": "2026-10-08",
+     "vue": "champ",
+     "eclairage": null,
+     "balance_blancs": null
+    },
+    {
+     "url": "https://www.jandewitenzonen.com/img/products/tulip/Czaar_Peter.jpg",
+     "page": "https://www.jandewitenzonen.com/en/assortment/tulip/144/Czaar-Peter/",
+     "niveau": "N3",
+     "auteur": "Jan de Wit en Zonen B.V.",
+     "licence": "tous droits réservés ; mesure locale seulement, jamais stockée ni publiée",
+     "legende": "Tulipa 'Czaar Peter' (fiche variété Jan de Wit en Zonen)",
+     "consulte": "2026-10-08",
+     "vue": "bouton fermé ou gobelet, photo de catalogue (filigrane, fond flou) : couleur approchée",
+     "note": "photo de catalogue : couleur à recouper",
+     "eclairage": null,
+     "balance_blancs": null
+    }
+   ],
+   "mesures": {},
+   "niveau_preuve": "B",
+   "existence_n1_n2": false,
+   "statut": "en production",
+   "doutes": [],
+   "coloris_catalogue": null,
+   "commerce": {
+    "jan_de_wit_en_zonen_catalogue_2026": false,
+    "groupe": null,
+    "couleur": null,
+    "hauteur": null,
+    "floraison": null,
+    "note": "fiche en ligne le 2026-10-08 ; Floricode non consulté"
+   },
+   "familles_de_sources": [
+    "pacificbulbsociety.org",
+    "www.jandewitenzonen.com"
+   ]
+  },
+  {
+   "id": "tarafa",
+   "nom_affiche": "Tarafa",
+   "nom_enregistre": "Tarafa",
+   "synonymes": [],
+   "groupe": "Greigii (14)",
+   "obtenteur": null,
+   "annee": null,
+   "numeros": {},
+   "couleur_registre": null,
+   "motif": "crème à bords rosés et cœur noir cerclé de jaune (photos)",
+   "sources": [
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaHybrids",
+     "consulte": "2026-10-08",
+     "note": "Pacific Bulb Society : Div. 14 : « 'Tarafa' : rose edged yellow »"
+    }
+   ],
+   "photos": [
+    {
+     "url": "https://pacificbulbsociety.org/pbswiki/files/Tulipa/Tulipa_Greigii_Tarafa_JA.jpg",
+     "page": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaHybrids",
+     "niveau": "N3",
+     "auteur": "Janos Agoston",
+     "licence": "© photographe ; Pacific Bulb Society (reproduction non libre : consultation et mesure seulement)",
+     "legende": "Tulipa 'Tarafa', Janos Agoston",
+     "consulte": "2026-10-08",
+     "vue": "boutons",
+     "eclairage": null,
+     "balance_blancs": null
+    },
+    {
+     "url": "https://pacificbulbsociety.org/pbswiki/files/Tulipa/Tulipa_Greigii_Tarafa_JA2.jpg",
+     "page": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaHybrids",
+     "niveau": "N3",
+     "auteur": "Janos Agoston",
+     "licence": "© photographe ; Pacific Bulb Society (reproduction non libre : consultation et mesure seulement)",
+     "legende": "Tulipa 'Tarafa', Janos Agoston",
+     "consulte": "2026-10-08",
+     "vue": "dessus",
+     "eclairage": null,
+     "balance_blancs": null
+    }
+   ],
+   "mesures": {},
+   "niveau_preuve": "C",
+   "existence_n1_n2": false,
+   "statut": "à confirmer",
+   "doutes": [
+    "PBS seul ; la légende PBS (« rose bordé de jaune ») ne colle pas aux photos (crème à bords rosés) : à trancher"
+   ],
+   "coloris_catalogue": null,
+   "familles_de_sources": [
+    "pacificbulbsociety.org"
+   ]
+  },
+  {
+   "id": "plaisir",
+   "nom_affiche": "Plaisir",
+   "nom_enregistre": "Plaisir",
+   "synonymes": [],
+   "groupe": "Greigii (14)",
+   "obtenteur": null,
+   "annee": null,
+   "numeros": {},
+   "couleur_registre": null,
+   "motif": null,
+   "sources": [
+    {
+     "role": "existence",
+     "niveau": "N1",
+     "url": "https://assets.kavb.nl/docs/4d05a724-67b1-430c-b4a4-4f9ccbe34ae5.pdf",
+     "consulte": "2026-10-08",
+     "note": "KAVB, liste « Registraties week 44-2006 t/m 45-2007 » : 'Burning Sun' (Greigii Groep, Edibulbcode 77762) est enregistré « Mutant van 'Plaisir' » : le parent figure donc au registre"
+    },
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://www.rhs.org.uk/plants/61718/i-tulipa-i-plaisir-(14)/details",
+     "consulte": "2026-10-08",
+     "note": "RHS (société savante) : fiche (14) : 15 cm, feuilles lancéolées marquées de pourpre foncé, fleur rouge largement bordée de jaune soufre ; AGM"
+    },
+    {
+     "role": "nom",
+     "niveau": "N4",
+     "url": "https://en.wikipedia.org/wiki/Tulipa_greigii",
+     "consulte": "2026-10-08",
+     "note": "Wikipédia : AGM"
+    }
+   ],
+   "photos": [
+    {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Tulipa_greigii_%27Plaisir%27_2015_03.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Tulipa_greigii_%27Plaisir%27_2015_03.jpg",
+     "niveau": "N4",
+     "auteur": "Retired electrician",
+     "licence": "CC0",
+     "legende": "File:Tulipa greigii 'Plaisir' 2015 03.jpg",
+     "consulte": "2026-10-08",
+     "vue": "dessus",
+     "date_prise": "2015-05-10",
+     "eclairage": null,
+     "balance_blancs": null,
+     "miniature": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a9/Tulipa_greigii_%27Plaisir%27_2015_03.jpg/960px-Tulipa_greigii_%27Plaisir%27_2015_03.jpg"
+    },
+    {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/5/53/Tulipa_greigii_%27Plaisir%27_2015_04.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Tulipa_greigii_%27Plaisir%27_2015_04.jpg",
+     "niveau": "N4",
+     "auteur": "Retired electrician",
+     "licence": "CC0",
+     "legende": "File:Tulipa greigii 'Plaisir' 2015 04.jpg",
+     "consulte": "2026-10-08",
+     "vue": "dessus, flammes rouges",
+     "date_prise": "2015-05-10",
+     "eclairage": null,
+     "balance_blancs": null,
+     "miniature": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/Tulipa_greigii_%27Plaisir%27_2015_04.jpg/960px-Tulipa_greigii_%27Plaisir%27_2015_04.jpg"
+    }
+   ],
+   "mesures": {},
+   "niveau_preuve": "C",
+   "existence_n1_n2": true,
+   "statut": "à confirmer",
+   "doutes": [
+    "KAVB 2006-07 cite 'Plaisir' comme parent de 'Burning Sun' ; RHS décrit « rouge bordé de jaune soufre » alors que les photos Commons montrent un crème flammé de rouge : écart de description à trancher"
+   ],
+   "coloris_catalogue": null,
+   "familles_de_sources": [
+    "assets.kavb.nl",
+    "commons.wikimedia.org",
+    "en.wikipedia.org",
+    "www.rhs.org.uk"
+   ]
+  },
+  {
+   "id": "corsage",
+   "nom_affiche": "Corsage",
+   "nom_enregistre": "Corsage",
+   "synonymes": [],
+   "groupe": "Greigii (14)",
+   "obtenteur": null,
+   "annee": null,
+   "numeros": {},
+   "couleur_registre": null,
+   "motif": null,
+   "sources": [
+    {
+     "role": "nom",
+     "niveau": "N4",
+     "url": "https://en.wikipedia.org/wiki/List_of_Award_of_Garden_Merit_tulips",
+     "consulte": "2026-10-08",
+     "note": "liste AGM (reprise RHS) : Corsage, orange, 25 cm"
+    }
+   ],
+   "photos": [
+    {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/3/30/Tulipa_%27Corsage%27_2018-04-15_01.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Tulipa_%27Corsage%27_2018-04-15_01.jpg",
+     "niveau": "N4",
+     "auteur": "Agnieszka Kwiecień, Nova",
+     "licence": "CC BY-SA 3.0",
+     "legende": "File:Tulipa 'Corsage' 2018-04-15 01.jpg",
+     "consulte": "2026-10-08",
+     "vue": "dessus",
+     "date_prise": "2018-04-15",
+     "eclairage": null,
+     "balance_blancs": null,
+     "miniature": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/30/Tulipa_%27Corsage%27_2018-04-15_01.jpg/960px-Tulipa_%27Corsage%27_2018-04-15_01.jpg"
+    },
+    {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Tulipa_%27Corsage%27_2017-04-09_01.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Tulipa_%27Corsage%27_2017-04-09_01.jpg",
+     "niveau": "N4",
+     "auteur": "Agnieszka Kwiecień, Nova",
+     "licence": "CC BY-SA 3.0",
+     "legende": "File:Tulipa 'Corsage' 2017-04-09 01.jpg",
+     "consulte": "2026-10-08",
+     "vue": "profil",
+     "date_prise": "2017-04-09",
+     "eclairage": null,
+     "balance_blancs": null,
+     "miniature": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Tulipa_%27Corsage%27_2017-04-09_01.jpg/960px-Tulipa_%27Corsage%27_2017-04-09_01.jpg"
+    }
+   ],
+   "mesures": {},
+   "niveau_preuve": "C",
+   "existence_n1_n2": false,
+   "statut": "à confirmer",
+   "doutes": [
+    "RHS fiche non trouvée ; photos d'un seul auteur"
+   ],
+   "coloris_catalogue": null,
+   "familles_de_sources": [
+    "commons.wikimedia.org",
+    "en.wikipedia.org"
+   ]
+  },
+  {
+   "id": "casa-grande",
+   "nom_affiche": "Casa Grande",
+   "nom_enregistre": "Casa Grande",
+   "synonymes": [],
+   "groupe": "Greigii (14)",
+   "obtenteur": null,
+   "annee": null,
+   "numeros": {},
+   "couleur_registre": null,
+   "motif": null,
+   "sources": [
+    {
+     "role": "nom",
+     "niveau": "N4",
+     "url": "https://en.wikipedia.org/wiki/List_of_Award_of_Garden_Merit_tulips",
+     "consulte": "2026-10-08",
+     "note": "liste AGM : Casa Grande, rouge, 50 cm"
+    }
+   ],
+   "photos": [
+    {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/1/10/%D0%92%D1%8B%D1%81%D1%82%D0%B0%D0%B2%D0%BA%D0%B0_%D1%86%D0%B2%D0%B5%D1%82%D0%BE%D0%B2_%D0%B2_%D0%91%D0%BE%D1%82%D0%B0%D0%BD%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%BC_%D1%81%D0%B0%D0%B4%D1%83_%D0%9C%D0%93%D0%A3_%28%D0%90%D0%BF%D1%82%D0%B5%D0%BA%D0%B0%D1%80%D1%81%D0%BA%D0%B8%D0%B9_%D0%BE%D0%B3%D0%BE%D1%80%D0%BE%D0%B4%29%2C_2017-03_%2812%29.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:%D0%92%D1%8B%D1%81%D1%82%D0%B0%D0%B2%D0%BA%D0%B0_%D1%86%D0%B2%D0%B5%D1%82%D0%BE%D0%B2_%D0%B2_%D0%91%D0%BE%D1%82%D0%B0%D0%BD%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%BC_%D1%81%D0%B0%D0%B4%D1%83_%D0%9C%D0%93%D0%A3_%28%D0%90%D0%BF%D1%82%D0%B5%D0%BA%D0%B0%D1%80%D1%81%D0%BA%D0%B8%D0%B9_%D0%BE%D0%B3%D0%BE%D1%80%D0%BE%D0%B4%29%2C_2017-03_%2812%29.jpg",
+     "niveau": "N4",
+     "auteur": "Sergey Korovkin 84",
+     "licence": "CC BY-SA 4.0",
+     "legende": "File:Выставка цветов в Ботаническом саду МГУ (Аптекарский огород), 2017-03 (12).jpg",
+     "consulte": "2026-10-08",
+     "vue": "massif, étiquette",
+     "date_prise": "2017-03-05 20:05:31",
+     "eclairage": null,
+     "balance_blancs": null,
+     "miniature": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/%D0%92%D1%8B%D1%81%D1%82%D0%B0%D0%B2%D0%BA%D0%B0_%D1%86%D0%B2%D0%B5%D1%82%D0%BE%D0%B2_%D0%B2_%D0%91%D0%BE%D1%82%D0%B0%D0%BD%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%BC_%D1%81%D0%B0%D0%B4%D1%83_%D0%9C%D0%93%D0%A3_%28%D0%90%D0%BF%D1%82%D0%B5%D0%BA%D0%B0%D1%80%D1%81%D0%BA%D0%B8%D0%B9_%D0%BE%D0%B3%D0%BE%D1%80%D0%BE%D0%B4%29%2C_2017-03_%2812%29.jpg/960px-%D0%92%D1%8B%D1%81%D1%82%D0%B0%D0%B2%D0%BA%D0%B0_%D1%86%D0%B2%D0%B5%D1%82%D0%BE%D0%B2_%D0%B2_%D0%91%D0%BE%D1%82%D0%B0%D0%BD%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%BC_%D1%81%D0%B0%D0%B4%D1%83_%D0%9C%D0%93%D0%A3_%28%D0%90%D0%BF%D1%82%D0%B5%D0%BA%D0%B0%D1%80%D1%81%D0%BA%D0%B8%D0%B9_%D0%BE%D0%B3%D0%BE%D1%80%D0%BE%D0%B4%29%2C_2017-03_%2812%29.jpg"
+    }
+   ],
+   "mesures": {},
+   "niveau_preuve": "C",
+   "existence_n1_n2": false,
+   "statut": "à confirmer",
+   "doutes": [
+    "une seule photo N4 ; hauteur 50 cm inhabituelle pour un Greigii"
+   ],
+   "coloris_catalogue": null,
+   "familles_de_sources": [
+    "commons.wikimedia.org",
+    "en.wikipedia.org"
+   ]
+  },
+  {
+   "id": "mary-ann",
+   "nom_affiche": "Mary Ann",
+   "nom_enregistre": "Mary Ann",
+   "synonymes": [],
+   "groupe": "Greigii (14)",
+   "obtenteur": null,
+   "annee": null,
+   "numeros": {},
+   "couleur_registre": null,
+   "motif": null,
+   "sources": [
+    {
+     "role": "nom",
+     "niveau": "N4",
+     "url": "https://dutch-bulbs.com/greigii-tulips/",
+     "consulte": "2026-10-08",
+     "note": "revendeur (appoint) : « rose pâle à accents blancs »"
+    }
+   ],
+   "photos": [
+    {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/1/14/Tulipa_%27Mary_Ann%27_2019-04-06_02.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Tulipa_%27Mary_Ann%27_2019-04-06_02.jpg",
+     "niveau": "N4",
+     "auteur": "Agnieszka Kwiecień, Nova",
+     "licence": "CC BY-SA 4.0",
+     "legende": "File:Tulipa 'Mary Ann' 2019-04-06 02.jpg",
+     "consulte": "2026-10-08",
+     "vue": "dessus",
+     "date_prise": "2019-04-06",
+     "eclairage": null,
+     "balance_blancs": null,
+     "miniature": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/14/Tulipa_%27Mary_Ann%27_2019-04-06_02.jpg/960px-Tulipa_%27Mary_Ann%27_2019-04-06_02.jpg"
+    },
+    {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/4/4d/Tulipa_%27Mary_Ann%27_2019-04-06_03.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Tulipa_%27Mary_Ann%27_2019-04-06_03.jpg",
+     "niveau": "N4",
+     "auteur": "Agnieszka Kwiecień, Nova",
+     "licence": "CC BY-SA 4.0",
+     "legende": "File:Tulipa 'Mary Ann' 2019-04-06 03.jpg",
+     "consulte": "2026-10-08",
+     "vue": "profil",
+     "date_prise": "2019-04-06",
+     "eclairage": null,
+     "balance_blancs": null,
+     "miniature": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Tulipa_%27Mary_Ann%27_2019-04-06_03.jpg/960px-Tulipa_%27Mary_Ann%27_2019-04-06_03.jpg"
+    }
+   ],
+   "mesures": {},
+   "niveau_preuve": "C",
+   "existence_n1_n2": false,
+   "statut": "à confirmer",
+   "doutes": [
+    "le revendeur dit rose pâle, les photos montrent un crème à flamme rouge : contradiction à trancher"
+   ],
+   "coloris_catalogue": null,
+   "familles_de_sources": [
+    "commons.wikimedia.org",
+    "dutch-bulbs.com"
+   ]
+  },
+  {
+   "id": "white-fire",
+   "nom_affiche": "White Fire",
+   "nom_enregistre": "White Fire",
+   "synonymes": [],
+   "groupe": "Greigii (14)",
+   "obtenteur": null,
+   "annee": null,
+   "numeros": {},
+   "couleur_registre": null,
+   "motif": null,
+   "sources": [
+    {
+     "role": "nom",
+     "niveau": "N4",
+     "url": "https://commons.wikimedia.org/wiki/Category:Tulipa_%27White_Fire%27",
+     "consulte": "2026-10-08",
+     "note": "catégorie Commons (12 fichiers)"
+    }
+   ],
+   "photos": [
+    {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/b/bf/Tulipa_greigii_%27White_Fire%27_2015_01.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Tulipa_greigii_%27White_Fire%27_2015_01.jpg",
+     "niveau": "N4",
+     "auteur": "Retired electrician",
+     "licence": "CC0",
+     "legende": "File:Tulipa greigii 'White Fire' 2015 01.jpg",
+     "consulte": "2026-10-08",
+     "vue": "dessus",
+     "date_prise": "2015-05-02",
+     "eclairage": null,
+     "balance_blancs": null,
+     "miniature": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bf/Tulipa_greigii_%27White_Fire%27_2015_01.jpg/960px-Tulipa_greigii_%27White_Fire%27_2015_01.jpg"
+    },
+    {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Tulipa_greigii_%27White_Fire%27_2015_03.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Tulipa_greigii_%27White_Fire%27_2015_03.jpg",
+     "niveau": "N4",
+     "auteur": "Retired electrician",
+     "licence": "CC0",
+     "legende": "File:Tulipa greigii 'White Fire' 2015 03.jpg",
+     "consulte": "2026-10-08",
+     "vue": "dessus",
+     "date_prise": "2015-05-02",
+     "eclairage": null,
+     "balance_blancs": null,
+     "miniature": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/Tulipa_greigii_%27White_Fire%27_2015_03.jpg/960px-Tulipa_greigii_%27White_Fire%27_2015_03.jpg"
+    }
+   ],
+   "mesures": {},
+   "niveau_preuve": "C",
+   "existence_n1_n2": false,
+   "statut": "à confirmer",
+   "doutes": [
+    "aucune source N1-N3 ; blanc à cœur jaune en étoile très ouverte, proche de Kaufmanniana : classement Greigii non confirmé"
+   ],
+   "coloris_catalogue": null,
+   "familles_de_sources": [
+    "commons.wikimedia.org"
+   ]
+  },
+  {
+   "id": "giant-orange-sunset",
+   "nom_affiche": "Giant Orange Sunset",
+   "nom_enregistre": "Giant Orange Sunset",
+   "synonymes": [],
+   "groupe": "Greigii (14)",
+   "obtenteur": null,
+   "annee": null,
+   "numeros": {},
+   "couleur_registre": null,
+   "motif": null,
+   "sources": [
+    {
+     "role": "nom",
+     "niveau": "N1",
+     "url": "https://assets.kavb.nl/docs/7d64fa67-6e25-466b-856d-6177ee674386.pdf",
+     "consulte": "2026-10-08",
+     "note": "KAVB, liste « Registraties week 46-2008 t/m 45-2009 » : « Giant Orange SUNRISE » (Greigii Groep, Edibulbcode 80283, rouge 34A, orange-rouge 32A en bord) : nom proche mais différent (Sunrise / Sunset)"
+    }
+   ],
+   "photos": [
+    {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Tulipa_%27Giant_Orange_Sunset%27_2015_02.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Tulipa_%27Giant_Orange_Sunset%27_2015_02.jpg",
+     "niveau": "N4",
+     "auteur": "Retired electrician",
+     "licence": "CC0",
+     "legende": "File:Tulipa 'Giant Orange Sunset' 2015 02.jpg",
+     "consulte": "2026-10-08",
+     "vue": "bouton",
+     "date_prise": "2015-05-16",
+     "eclairage": null,
+     "balance_blancs": null,
+     "miniature": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Tulipa_%27Giant_Orange_Sunset%27_2015_02.jpg/960px-Tulipa_%27Giant_Orange_Sunset%27_2015_02.jpg"
+    },
+    {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/6/6e/Tulipa_%27Giant_Orange_Sunset%27_2015_03.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Tulipa_%27Giant_Orange_Sunset%27_2015_03.jpg",
+     "niveau": "N4",
+     "auteur": "Retired electrician",
+     "licence": "CC0",
+     "legende": "File:Tulipa 'Giant Orange Sunset' 2015 03.jpg",
+     "consulte": "2026-10-08",
+     "vue": "bouton",
+     "date_prise": "2015-05-16",
+     "eclairage": null,
+     "balance_blancs": null,
+     "miniature": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6e/Tulipa_%27Giant_Orange_Sunset%27_2015_03.jpg/960px-Tulipa_%27Giant_Orange_Sunset%27_2015_03.jpg"
+    }
+   ],
+   "mesures": {},
+   "niveau_preuve": "C",
+   "existence_n1_n2": true,
+   "statut": "à confirmer",
+   "doutes": [
+    "nom Commons « Sunset » ≠ nom KAVB « Sunrise » : confusion probable, à trancher"
+   ],
+   "coloris_catalogue": null,
+   "familles_de_sources": [
+    "assets.kavb.nl",
+    "commons.wikimedia.org"
+   ]
+  },
+  {
+   "id": "miskodeed",
+   "nom_affiche": "Miskodeed",
+   "nom_enregistre": "Miskodeed",
+   "synonymes": [],
+   "groupe": "Greigii (14)",
+   "obtenteur": null,
+   "annee": null,
+   "numeros": {},
+   "couleur_registre": null,
+   "motif": null,
+   "sources": [
+    {
+     "role": "nom",
+     "niveau": "N4",
+     "url": "https://commons.wikimedia.org/wiki/Category:Tulipa_%27Miskodeed%27",
+     "consulte": "2026-10-08",
+     "note": "catégorie Commons (4 fichiers, jardin botanique de Munich)"
+    }
+   ],
+   "photos": [
+    {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/7/7f/Tulpe_%27Miskodeed%27_im_botanischen_Garten_in_M%C3%BCnchen-Nymphenburg_01.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Tulpe_%27Miskodeed%27_im_botanischen_Garten_in_M%C3%BCnchen-Nymphenburg_01.jpg",
+     "niveau": "N4",
+     "auteur": "Kritzolina",
+     "licence": "CC BY-SA 4.0",
+     "legende": "File:Tulpe 'Miskodeed' im botanischen Garten in München-Nymphenburg 01.jpg",
+     "consulte": "2026-10-08",
+     "vue": "rang, étiquette du jardin botanique de Munich",
+     "date_prise": "2026-04-18 14:40:06",
+     "eclairage": null,
+     "balance_blancs": null,
+     "miniature": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7f/Tulpe_%27Miskodeed%27_im_botanischen_Garten_in_M%C3%BCnchen-Nymphenburg_01.jpg/960px-Tulpe_%27Miskodeed%27_im_botanischen_Garten_in_M%C3%BCnchen-Nymphenburg_01.jpg"
+    },
+    {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/0/05/Tulpe_%27Miskodeed%27_im_botanischen_Garten_in_M%C3%BCnchen-Nymphenburg_03.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Tulpe_%27Miskodeed%27_im_botanischen_Garten_in_M%C3%BCnchen-Nymphenburg_03.jpg",
+     "niveau": "N4",
+     "auteur": "Kritzolina",
+     "licence": "CC BY-SA 4.0",
+     "legende": "File:Tulpe 'Miskodeed' im botanischen Garten in München-Nymphenburg 03.jpg",
+     "consulte": "2026-10-08",
+     "vue": "profil",
+     "date_prise": "2026-04-18 14:40:20",
+     "eclairage": null,
+     "balance_blancs": null,
+     "miniature": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/Tulpe_%27Miskodeed%27_im_botanischen_Garten_in_M%C3%BCnchen-Nymphenburg_03.jpg/960px-Tulpe_%27Miskodeed%27_im_botanischen_Garten_in_M%C3%BCnchen-Nymphenburg_03.jpg"
+    }
+   ],
+   "mesures": {},
+   "niveau_preuve": "C",
+   "existence_n1_n2": false,
+   "statut": "à confirmer",
+   "doutes": [
+    "aucune source N1-N3"
+   ],
+   "coloris_catalogue": null,
+   "familles_de_sources": [
+    "commons.wikimedia.org"
+   ]
+  },
+  {
+   "id": "trauttmansdorff",
+   "nom_affiche": "Trauttmansdorff",
+   "nom_enregistre": "Trauttmansdorff",
+   "synonymes": [],
+   "groupe": "Greigii (14)",
+   "obtenteur": null,
+   "annee": null,
+   "numeros": {},
+   "couleur_registre": null,
+   "motif": null,
+   "sources": [
+    {
+     "role": "nom",
+     "niveau": "N4",
+     "url": "https://commons.wikimedia.org/wiki/Category:Tulipa_%27Trauttmansdorff%27",
+     "consulte": "2026-10-08",
+     "note": "catégorie Commons (4 fichiers de Syrio, jardins de Trauttmansdorff)"
+    }
+   ],
+   "photos": [
+    {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/0/09/Trauttmansdorff_gardens_-_Tulipa_Trauttmansdorff_01.JPG",
+     "page": "https://commons.wikimedia.org/wiki/File:Trauttmansdorff_gardens_-_Tulipa_Trauttmansdorff_01.JPG",
+     "niveau": "N4",
+     "auteur": "Syrio",
+     "licence": "CC BY-SA 4.0",
+     "legende": "File:Trauttmansdorff gardens - Tulipa Trauttmansdorff 01.JPG",
+     "consulte": "2026-10-08",
+     "vue": "rang",
+     "date_prise": "2016-04-10 02:16:29",
+     "eclairage": null,
+     "balance_blancs": null,
+     "miniature": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/09/Trauttmansdorff_gardens_-_Tulipa_Trauttmansdorff_01.JPG/960px-Trauttmansdorff_gardens_-_Tulipa_Trauttmansdorff_01.JPG"
+    },
+    {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Trauttmansdorff_gardens_-_Tulipa_Trauttmansdorff_02.JPG",
+     "page": "https://commons.wikimedia.org/wiki/File:Trauttmansdorff_gardens_-_Tulipa_Trauttmansdorff_02.JPG",
+     "niveau": "N4",
+     "auteur": "Syrio",
+     "licence": "CC BY-SA 4.0",
+     "legende": "File:Trauttmansdorff gardens - Tulipa Trauttmansdorff 02.JPG",
+     "consulte": "2026-10-08",
+     "vue": "dessus",
+     "date_prise": "2016-04-10 02:16:46",
+     "eclairage": null,
+     "balance_blancs": null,
+     "miniature": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a9/Trauttmansdorff_gardens_-_Tulipa_Trauttmansdorff_02.JPG/960px-Trauttmansdorff_gardens_-_Tulipa_Trauttmansdorff_02.JPG"
+    }
+   ],
+   "mesures": {},
+   "niveau_preuve": "C",
+   "existence_n1_n2": false,
+   "statut": "à confirmer",
+   "doutes": [
+    "le nom est aussi celui d'un lieu (jardins de Trauttmansdorff) : cultivar à confirmer par une source N1-N3"
+   ],
+   "coloris_catalogue": null,
+   "familles_de_sources": [
+    "commons.wikimedia.org"
+   ]
+  },
+  {
+   "id": "first-love",
+   "nom_affiche": "First Love",
+   "nom_enregistre": "First Love",
+   "synonymes": [],
+   "groupe": "Greigii (14)",
+   "obtenteur": null,
+   "annee": null,
+   "numeros": {},
+   "couleur_registre": null,
+   "motif": null,
+   "sources": [
+    {
+     "role": "nom",
+     "niveau": "N4",
+     "url": "https://commons.wikimedia.org/wiki/Category:Tulipa_%27First_Love%27",
+     "consulte": "2026-10-08",
+     "note": "catégorie Commons (6 fichiers du même auteur)"
+    }
+   ],
+   "photos": [
+    {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/2/29/Tulipa_%27First_Love%27_2019-04-06_02.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Tulipa_%27First_Love%27_2019-04-06_02.jpg",
+     "niveau": "N4",
+     "auteur": "Agnieszka Kwiecień, Nova",
+     "licence": "CC BY-SA 4.0",
+     "legende": "File:Tulipa 'First Love' 2019-04-06 02.jpg",
+     "consulte": "2026-10-08",
+     "vue": "profil",
+     "date_prise": "2019-04-06",
+     "eclairage": null,
+     "balance_blancs": null,
+     "miniature": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/29/Tulipa_%27First_Love%27_2019-04-06_02.jpg/960px-Tulipa_%27First_Love%27_2019-04-06_02.jpg"
+    },
+    {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/7/71/Tulipa_%27First_Love%27_2021-04-24_01.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Tulipa_%27First_Love%27_2021-04-24_01.jpg",
+     "niveau": "N4",
+     "auteur": "Agnieszka Kwiecień, Nova",
+     "licence": "CC BY-SA 4.0",
+     "legende": "File:Tulipa 'First Love' 2021-04-24 01.jpg",
+     "consulte": "2026-10-08",
+     "vue": "profil",
+     "date_prise": "2021-04-24",
+     "eclairage": null,
+     "balance_blancs": null,
+     "miniature": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/71/Tulipa_%27First_Love%27_2021-04-24_01.jpg/960px-Tulipa_%27First_Love%27_2021-04-24_01.jpg"
+    }
+   ],
+   "mesures": {},
+   "niveau_preuve": "C",
+   "existence_n1_n2": false,
+   "statut": "à confirmer",
+   "doutes": [
+    "aucune source N1-N3 ; jaune lavé de rouge, forme élancée de type Kaufmanniana : classement Greigii non confirmé"
+   ],
+   "coloris_catalogue": null,
+   "familles_de_sources": [
+    "commons.wikimedia.org"
+   ]
+  },
+  {
+   "id": "oriental-splendour",
+   "nom_affiche": "Oriental Splendour",
+   "nom_enregistre": "Oriental Splendour",
+   "synonymes": [],
+   "groupe": "Greigii (14)",
+   "obtenteur": null,
+   "annee": null,
+   "numeros": {},
+   "couleur_registre": null,
+   "motif": null,
+   "sources": [
+    {
+     "role": "existence",
+     "niveau": "N1",
+     "url": "https://assets.kavb.nl/docs/4d05a724-67b1-430c-b4a4-4f9ccbe34ae5.pdf",
+     "consulte": "2026-10-08",
+     "note": "KAVB, liste « Registraties week 44-2006 t/m 45-2007 » : 'Orange Oriental Splendour' (Greigii Groep, Edibulbcode 77798) est enregistré « Mutant van 'Oriental Splendour' » : le parent figure donc au registre"
+    }
+   ],
+   "photos": [
+    {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Tulipa_%27ORIENTAL_SPLENDOUR%27_M1.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Tulipa_%27ORIENTAL_SPLENDOUR%27_M1.jpg",
+     "niveau": "N4",
+     "auteur": "Guy Waterval",
+     "licence": "Apache License 2.0",
+     "legende": "File:Tulipa 'ORIENTAL SPLENDOUR' M1.jpg",
+     "consulte": "2026-10-08",
+     "vue": "champ",
+     "date_prise": "2017-05-24",
+     "eclairage": null,
+     "balance_blancs": null,
+     "miniature": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Tulipa_%27ORIENTAL_SPLENDOUR%27_M1.jpg"
+    }
+   ],
+   "mesures": {},
+   "niveau_preuve": "C",
+   "existence_n1_n2": true,
+   "statut": "à confirmer",
+   "doutes": [
+    "une seule photo N4 ; existence N1 par parenté"
+   ],
+   "coloris_catalogue": null,
+   "familles_de_sources": [
+    "assets.kavb.nl",
+    "commons.wikimedia.org"
+   ]
+  },
+  {
+   "id": "portland",
+   "nom_affiche": "Portland",
+   "nom_enregistre": "Portland",
+   "synonymes": [],
+   "groupe": "Greigii (14)",
+   "obtenteur": null,
+   "annee": null,
+   "numeros": {},
+   "couleur_registre": null,
+   "motif": null,
+   "sources": [
+    {
+     "role": "nom",
+     "niveau": "N4",
+     "url": "https://dutch-bulbs.com/greigii-tulips/",
+     "consulte": "2026-10-08",
+     "note": "revendeur (appoint) : Portland, Greigii"
+    }
+   ],
+   "photos": [
+    {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Tulipa_%27PORTLAND%27_M1.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Tulipa_%27PORTLAND%27_M1.jpg",
+     "niveau": "N4",
+     "auteur": "Guy Waterval",
+     "licence": "Apache License 2.0",
+     "legende": "File:Tulipa 'PORTLAND' M1.jpg",
+     "consulte": "2026-10-08",
+     "vue": "champ",
+     "date_prise": "2017-05-24",
+     "eclairage": null,
+     "balance_blancs": null,
+     "miniature": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/Tulipa_%27PORTLAND%27_M1.jpg/960px-Tulipa_%27PORTLAND%27_M1.jpg"
+    }
+   ],
+   "mesures": {},
+   "niveau_preuve": "C",
+   "existence_n1_n2": false,
+   "statut": "à confirmer",
+   "doutes": [
+    "une seule photo N4"
+   ],
+   "coloris_catalogue": null,
+   "familles_de_sources": [
+    "commons.wikimedia.org",
+    "dutch-bulbs.com"
+   ]
+  },
+  {
+   "id": "oriental-beauty",
+   "nom_affiche": "Oriental Beauty",
+   "nom_enregistre": "Oriental Beauty",
+   "synonymes": [],
+   "groupe": "Greigii (14)",
+   "obtenteur": null,
+   "annee": null,
+   "numeros": {},
+   "couleur_registre": null,
+   "motif": null,
+   "sources": [
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://www.jandewitenzonen.com/en/assortment/tulip/382/Oriental-Beauty/",
+     "consulte": "2026-10-08",
+     "note": "fiche variété du bulbiculteur-exportateur Jan de Wit en Zonen (Enkhuizen) : groupe Greigii ; couleur Red ; hauteur Short ; floraison Mid Season ; marqué « no longer supported » (retiré de son assortiment actuel, fiche encore en ligne)"
+    }
+   ],
+   "photos": [
+    {
+     "url": "https://www.jandewitenzonen.com/img/products/tulip/Oriental_Beauty.jpg",
+     "page": "https://www.jandewitenzonen.com/en/assortment/tulip/382/Oriental-Beauty/",
+     "niveau": "N3",
+     "auteur": "Jan de Wit en Zonen B.V.",
+     "licence": "tous droits réservés ; mesure locale seulement, jamais stockée ni publiée",
+     "legende": "Tulipa 'Oriental Beauty' (fiche variété Jan de Wit en Zonen)",
+     "consulte": "2026-10-08",
+     "vue": "bouton fermé ou gobelet, photo de catalogue (filigrane, fond flou) : couleur approchée",
+     "note": "photo de catalogue : couleur à recouper",
+     "eclairage": null,
+     "balance_blancs": null
+    }
+   ],
+   "mesures": {},
+   "niveau_preuve": "C",
+   "existence_n1_n2": false,
+   "statut": "à confirmer",
+   "doutes": [
+    "une seule photo (fiche Jan de Wit) : ne pas confondre avec 'Oriental Splendour' (autre cultivar)",
+    "existence N1/N2 non établie : base KAVB (formulaire) non interrogée et Floricode non consulté ; à valider au sondage de 10 %"
+   ],
+   "coloris_catalogue": null,
+   "familles_de_sources": [
+    "www.jandewitenzonen.com"
+   ]
+  },
+  {
+   "id": "compostella",
+   "nom_affiche": "Compostella",
+   "nom_enregistre": "Compostella",
+   "synonymes": [],
+   "groupe": "Greigii (14)",
+   "obtenteur": null,
+   "annee": null,
+   "numeros": {},
+   "couleur_registre": null,
+   "motif": null,
+   "sources": [
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://www.jandewitenzonen.com/en/assortment/tulip/127/Compostella/",
+     "consulte": "2026-10-08",
+     "note": "fiche variété du bulbiculteur-exportateur Jan de Wit en Zonen (Enkhuizen) : groupe Greigii ; couleur Red/Yellow ; hauteur Short ; floraison Mid Season ; marqué « no longer supported » (retiré de son assortiment actuel, fiche encore en ligne)"
+    },
+    {
+     "role": "existence",
+     "niveau": "N1",
+     "url": "https://assets.kavb.nl/docs/3fd65dc9-0010-4071-b881-5976ef70410a.pdf",
+     "consulte": "2026-10-08",
+     "note": "KAVB, liste « Registraties 2013 week 1 t/m 52 » : 'Yellow Compostella' (Greigii Groep, Edibulbcode 83194) est enregistré « Mutant van 'Compostella' » : le parent figure donc au registre"
+    }
+   ],
+   "photos": [
+    {
+     "url": "https://www.jandewitenzonen.com/img/products/tulip/Compostella.jpg",
+     "page": "https://www.jandewitenzonen.com/en/assortment/tulip/127/Compostella/",
+     "niveau": "N3",
+     "auteur": "Jan de Wit en Zonen B.V.",
+     "licence": "tous droits réservés ; mesure locale seulement, jamais stockée ni publiée",
+     "legende": "Tulipa 'Compostella' (fiche variété Jan de Wit en Zonen)",
+     "consulte": "2026-10-08",
+     "vue": "bouton fermé ou gobelet, photo de catalogue (filigrane, fond flou) : couleur approchée",
+     "note": "photo de catalogue : couleur à recouper",
+     "eclairage": null,
+     "balance_blancs": null
+    }
+   ],
+   "mesures": {},
+   "niveau_preuve": "C",
+   "existence_n1_n2": true,
+   "statut": "à confirmer",
+   "doutes": [
+    "une seule photo (fiche Jan de Wit) : KAVB 2013 : 'Yellow Compostella' est « Mutant van 'Compostella' » : existence N1 par parenté",
+    "existence N1/N2 non établie : base KAVB (formulaire) non interrogée et Floricode non consulté ; à valider au sondage de 10 %"
+   ],
+   "coloris_catalogue": null,
+   "familles_de_sources": [
+    "assets.kavb.nl",
+    "www.jandewitenzonen.com"
+   ]
+  },
+  {
+   "id": "fur-elise",
+   "nom_affiche": "Für Elise",
+   "nom_enregistre": "Für Elise",
+   "synonymes": [],
+   "groupe": "Greigii (14)",
+   "obtenteur": null,
+   "annee": null,
+   "numeros": {},
+   "couleur_registre": null,
+   "motif": null,
+   "sources": [
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://www.jandewitenzonen.com/en/assortment/tulip/218/Fur-Elise/",
+     "consulte": "2026-10-08",
+     "note": "fiche variété du bulbiculteur-exportateur Jan de Wit en Zonen (Enkhuizen) : groupe Greigii ; couleur Yellow/Pink ; hauteur Short ; floraison Mid Season ; marqué « no longer supported » (retiré de son assortiment actuel, fiche encore en ligne)"
+    }
+   ],
+   "photos": [
+    {
+     "url": "https://www.jandewitenzonen.com/img/products/tulip/Fur_Elise.jpg",
+     "page": "https://www.jandewitenzonen.com/en/assortment/tulip/218/Fur-Elise/",
+     "niveau": "N3",
+     "auteur": "Jan de Wit en Zonen B.V.",
+     "licence": "tous droits réservés ; mesure locale seulement, jamais stockée ni publiée",
+     "legende": "Tulipa 'Für Elise' (fiche variété Jan de Wit en Zonen)",
+     "consulte": "2026-10-08",
+     "vue": "bouton fermé ou gobelet, photo de catalogue (filigrane, fond flou) : couleur approchée",
+     "note": "photo de catalogue : couleur à recouper",
+     "eclairage": null,
+     "balance_blancs": null
+    }
+   ],
+   "mesures": {},
+   "niveau_preuve": "C",
+   "existence_n1_n2": false,
+   "statut": "à confirmer",
+   "doutes": [
+    "une seule photo (fiche Jan de Wit) : jaune/rose, court",
+    "existence N1/N2 non établie : base KAVB (formulaire) non interrogée et Floricode non consulté ; à valider au sondage de 10 %"
+   ],
+   "coloris_catalogue": null,
+   "familles_de_sources": [
+    "www.jandewitenzonen.com"
+   ]
+  },
+  {
+   "id": "ali-baba",
+   "nom_affiche": "Ali Baba",
+   "nom_enregistre": "Ali Baba",
+   "synonymes": [],
+   "groupe": "Greigii (14)",
+   "obtenteur": null,
+   "annee": null,
+   "numeros": {},
+   "couleur_registre": null,
+   "motif": null,
+   "sources": [
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://www.jandewitenzonen.com/en/assortment/tulip/11/Ali-Baba/",
+     "consulte": "2026-10-08",
+     "note": "fiche variété du bulbiculteur-exportateur Jan de Wit en Zonen (Enkhuizen) : groupe Greigii ; couleur Red ; hauteur Short ; floraison Early ; marqué « no longer supported » (retiré de son assortiment actuel, fiche encore en ligne)"
+    },
+    {
+     "role": "nom",
+     "niveau": "N4",
+     "url": "https://en.wikipedia.org/wiki/List_of_Award_of_Garden_Merit_tulips",
+     "consulte": "2026-10-08",
+     "note": "liste AGM (reprise RHS) : Ali Baba, rouge, 25 cm"
+    }
+   ],
+   "photos": [
+    {
+     "url": "https://www.jandewitenzonen.com/img/products/tulip/Ali_Baba.jpg",
+     "page": "https://www.jandewitenzonen.com/en/assortment/tulip/11/Ali-Baba/",
+     "niveau": "N3",
+     "auteur": "Jan de Wit en Zonen B.V.",
+     "licence": "tous droits réservés ; mesure locale seulement, jamais stockée ni publiée",
+     "legende": "Tulipa 'Ali Baba' (fiche variété Jan de Wit en Zonen)",
+     "consulte": "2026-10-08",
+     "vue": "bouton fermé ou gobelet, photo de catalogue (filigrane, fond flou) : couleur approchée",
+     "note": "photo de catalogue : couleur à recouper",
+     "eclairage": null,
+     "balance_blancs": null
+    }
+   ],
+   "mesures": {},
+   "niveau_preuve": "C",
+   "existence_n1_n2": false,
+   "statut": "à confirmer",
+   "doutes": [
+    "une seule photo (fiche Jan de Wit) : AGM selon la liste Wikipédia (RHS) : rouge 25 cm",
+    "existence N1/N2 non établie : base KAVB (formulaire) non interrogée et Floricode non consulté ; à valider au sondage de 10 %"
+   ],
+   "coloris_catalogue": null,
+   "familles_de_sources": [
+    "en.wikipedia.org",
+    "www.jandewitenzonen.com"
+   ]
+  },
+  {
+   "id": "rob-verlinden",
+   "nom_affiche": "Rob Verlinden",
+   "nom_enregistre": "Rob Verlinden",
+   "synonymes": [],
+   "groupe": "Greigii (14)",
+   "obtenteur": null,
+   "annee": null,
+   "numeros": {},
+   "couleur_registre": null,
+   "motif": null,
+   "sources": [
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://www.jandewitenzonen.com/en/assortment/tulip/458/Rob-Verlinden/",
+     "consulte": "2026-10-08",
+     "note": "fiche variété du bulbiculteur-exportateur Jan de Wit en Zonen (Enkhuizen) : groupe Greigii ; couleur Red ; hauteur Medium ; floraison Mid Season ; marqué « no longer supported » (retiré de son assortiment actuel, fiche encore en ligne)"
+    }
+   ],
+   "photos": [
+    {
+     "url": "https://www.jandewitenzonen.com/img/products/tulip/Rob_Verlinden.jpg",
+     "page": "https://www.jandewitenzonen.com/en/assortment/tulip/458/Rob-Verlinden/",
+     "niveau": "N3",
+     "auteur": "Jan de Wit en Zonen B.V.",
+     "licence": "tous droits réservés ; mesure locale seulement, jamais stockée ni publiée",
+     "legende": "Tulipa 'Rob Verlinden' (fiche variété Jan de Wit en Zonen)",
+     "consulte": "2026-10-08",
+     "vue": "bouton fermé ou gobelet, photo de catalogue (filigrane, fond flou) : couleur approchée",
+     "note": "photo de catalogue : couleur à recouper",
+     "eclairage": null,
+     "balance_blancs": null
+    }
+   ],
+   "mesures": {},
+   "niveau_preuve": "C",
+   "existence_n1_n2": false,
+   "statut": "à confirmer",
+   "doutes": [
+    "une seule photo (fiche Jan de Wit) : rouge, moyen",
+    "existence N1/N2 non établie : base KAVB (formulaire) non interrogée et Floricode non consulté ; à valider au sondage de 10 %"
+   ],
+   "coloris_catalogue": null,
+   "familles_de_sources": [
+    "www.jandewitenzonen.com"
+   ]
+  },
+  {
+   "id": "oratorio",
+   "nom_affiche": "Oratorio",
+   "nom_enregistre": "Oratorio",
+   "synonymes": [],
+   "groupe": "Greigii (14)",
+   "obtenteur": null,
+   "annee": null,
+   "numeros": {},
+   "couleur_registre": null,
+   "motif": null,
+   "sources": [
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://www.rhs.org.uk/plants/58009/tulipa-oratorio-(14)/details",
+     "consulte": "2026-10-08",
+     "note": "RHS (société savante) : fiche (14) AGM : environ 20 cm, rose-pink, base noire, intérieur orange-rose"
+    },
+    {
+     "role": "existence",
+     "niveau": "N1",
+     "url": "https://assets.kavb.nl/docs/709a8fb3-51c8-47ad-94a7-97c37c7f447f.pdf",
+     "consulte": "2026-10-08",
+     "note": "KAVB, liste « Registraties week 46-2007 t/m 45-2008 » : 'Apricot Lady' (Greigii Groep, Edibulbcode 78585) est enregistré « Mutant van 'Oratorio' » : le parent figure donc au registre"
+    },
+    {
+     "role": "nom",
+     "niveau": "N4",
+     "url": "https://www.vanengelen.com/flower-bulbs-index/tulips/greigii/tulip-oratorio.html",
+     "consulte": "2026-10-08",
+     "note": "Van Engelen (grossiste-détaillant) : fiche « Tulip Oratorio » dans la catégorie greigii"
+    }
+   ],
+   "photos": [
+    {
+     "url": "https://www.vanengelen.com/media/catalog/product/cache/ae5a6ea9a5f2aff03513e6f42df29704/t/_/t_oratorio_1.jpg",
+     "page": "https://www.vanengelen.com/flower-bulbs-index/tulips/greigii/tulip-oratorio.html",
+     "niveau": "N4",
+     "auteur": "Van Engelen",
+     "licence": "tous droits réservés ; mesure locale seulement, jamais stockée ni publiée",
+     "legende": "Tulip Oratorio (fiche Van Engelen)",
+     "consulte": "2026-10-08",
+     "vue": "photo de catalogue",
+     "note": "couleurs de catalogue souvent saturées : recouper avec une photo N3",
+     "eclairage": null,
+     "balance_blancs": null
+    }
+   ],
+   "mesures": {},
+   "niveau_preuve": "C",
+   "existence_n1_n2": true,
+   "statut": "à confirmer",
+   "doutes": [
+    "une seule photo (détaillant, N4) ; existence N1 par parenté (KAVB 2007-08 : 'Apricot Lady' mutant d'Oratorio)"
+   ],
+   "coloris_catalogue": null,
+   "familles_de_sources": [
+    "assets.kavb.nl",
+    "www.rhs.org.uk",
+    "www.vanengelen.com"
+   ]
+  }
+ ],
+ "sans_photo": [
+  {
+   "id": "burning-sun",
+   "nom_affiche": "Burning Sun",
+   "nom_enregistre": "Burning Sun",
+   "groupe": "Greigii Groep (KAVB)",
+   "edibulb": "77762",
+   "mutant_de": "Plaisir",
+   "registrant": "Fa. W.A.M. Pennings, Noordwijkerhout",
+   "obtenteur_ou_selectionneur": "P. Lakeman, Oostwoud",
+   "periode_registre": "2006-11 à 2007-11",
+   "couleur_registre": "donker roserood 51A met wit 155A",
+   "multiflore": null,
+   "source": {
+    "niveau": "N1",
+    "url": "https://assets.kavb.nl/docs/4d05a724-67b1-430c-b4a4-4f9ccbe34ae5.pdf",
+    "document": "Registraties week 44-2006 t/m 45-2007",
+    "consulte": "2026-10-08"
+   },
+   "niveau_preuve": "D",
+   "statut": "à confirmer",
+   "raison": "nom et couleur de registre seuls : aucune photo nommée trouvée",
+   "mesures": {}
+  },
+  {
+   "id": "bonrouge",
+   "nom_affiche": "Bonrouge",
+   "nom_enregistre": "Bonrouge",
+   "groupe": "Greigii Groep (KAVB)",
+   "edibulb": "83821",
+   "mutant_de": null,
+   "registrant": "Holland BolRoy Markt B.V., Heiloo",
+   "obtenteur_ou_selectionneur": "D.W. Lefeber, Lisse",
+   "periode_registre": "2013",
+   "couleur_registre": "rood 40A",
+   "multiflore": null,
+   "source": {
+    "niveau": "N1",
+    "url": "https://assets.kavb.nl/docs/3fd65dc9-0010-4071-b881-5976ef70410a.pdf",
+    "document": "Registraties 2013 week 1 t/m 52",
+    "consulte": "2026-10-08"
+   },
+   "niveau_preuve": "D",
+   "statut": "à confirmer",
+   "raison": "nom et couleur de registre seuls : aucune photo nommée trouvée",
+   "mesures": {}
+  },
+  {
+   "id": "friendly-fire",
+   "nom_affiche": "Friendly Fire",
+   "nom_enregistre": "Friendly Fire",
+   "groupe": "Greigii Groep (KAVB)",
+   "edibulb": "83826",
+   "mutant_de": "Sombrero",
+   "registrant": "Bloembollenkwekerij J. de Waard, Egmond a.d. Hoef",
+   "obtenteur_ou_selectionneur": "J.P. de Waard, Egmond a.d. Hoef",
+   "periode_registre": "2013",
+   "couleur_registre": "rood 50A, wit 155A gerand",
+   "multiflore": null,
+   "source": {
+    "niveau": "N1",
+    "url": "https://assets.kavb.nl/docs/3fd65dc9-0010-4071-b881-5976ef70410a.pdf",
+    "document": "Registraties 2013 week 1 t/m 52",
+    "consulte": "2026-10-08"
+   },
+   "niveau_preuve": "D",
+   "statut": "à confirmer",
+   "raison": "nom et couleur de registre seuls : aucune photo nommée trouvée",
+   "mesures": {}
+  },
+  {
+   "id": "yellow-compostella",
+   "nom_affiche": "Yellow Compostella",
+   "nom_enregistre": "Yellow Compostella",
+   "groupe": "Greigii Groep (KAVB)",
+   "edibulb": "83194",
+   "mutant_de": "Compostella",
+   "registrant": "G. Groot-Vriend, Lutjebroek",
+   "obtenteur_ou_selectionneur": "G. Groot-Vriend, Lutjebroek",
+   "periode_registre": "2013",
+   "couleur_registre": "geel 5B met grote oranjerode 30B vlam",
+   "multiflore": null,
+   "source": {
+    "niveau": "N1",
+    "url": "https://assets.kavb.nl/docs/3fd65dc9-0010-4071-b881-5976ef70410a.pdf",
+    "document": "Registraties 2013 week 1 t/m 52",
+    "consulte": "2026-10-08"
+   },
+   "niveau_preuve": "D",
+   "statut": "à confirmer",
+   "raison": "nom et couleur de registre seuls : aucune photo nommée trouvée",
+   "mesures": {}
+  },
+  {
+   "id": "bolray-sweet",
+   "nom_affiche": "Bolray Sweet",
+   "nom_enregistre": "Bolray Sweet",
+   "groupe": "Greigii Groep (KAVB)",
+   "edibulb": "78062",
+   "mutant_de": null,
+   "registrant": "Holland BolRoy Markt B.V., Heiloo",
+   "obtenteur_ou_selectionneur": "Kwekerij De Horn B.V., Andijk",
+   "periode_registre": "2006-11 à 2007-11",
+   "couleur_registre": "oranjerose 37B met bruinpaarse vlam 186B",
+   "multiflore": null,
+   "source": {
+    "niveau": "N1",
+    "url": "https://assets.kavb.nl/docs/4d05a724-67b1-430c-b4a4-4f9ccbe34ae5.pdf",
+    "document": "Registraties week 44-2006 t/m 45-2007",
+    "consulte": "2026-10-08"
+   },
+   "niveau_preuve": "D",
+   "statut": "à confirmer",
+   "raison": "nom et couleur de registre seuls : aucune photo nommée trouvée",
+   "mesures": {}
+  },
+  {
+   "id": "master-of-art",
+   "nom_affiche": "Master of Art",
+   "nom_enregistre": "Master of Art",
+   "groupe": "Greigii Groep (KAVB)",
+   "edibulb": "77791",
+   "mutant_de": null,
+   "registrant": "W.A. Heemskerk, Noordwijkerhout",
+   "obtenteur_ou_selectionneur": "H. van Dijk, Lisse",
+   "periode_registre": "2006-11 à 2007-11",
+   "couleur_registre": "oranjebruin 35A, naar randen rood 40B",
+   "multiflore": null,
+   "source": {
+    "niveau": "N1",
+    "url": "https://assets.kavb.nl/docs/4d05a724-67b1-430c-b4a4-4f9ccbe34ae5.pdf",
+    "document": "Registraties week 44-2006 t/m 45-2007",
+    "consulte": "2026-10-08"
+   },
+   "niveau_preuve": "D",
+   "statut": "à confirmer",
+   "raison": "nom et couleur de registre seuls : aucune photo nommée trouvée",
+   "mesures": {}
+  },
+  {
+   "id": "orange-oriental-splendour",
+   "nom_affiche": "Orange Oriental Splendour",
+   "nom_enregistre": "Orange Oriental Splendour",
+   "groupe": "Greigii Groep (KAVB)",
+   "edibulb": "77798",
+   "mutant_de": "Oriental Splendour",
+   "registrant": "A. Snoek-Begon en Zn., Balkbrug",
+   "obtenteur_ou_selectionneur": "A.T.J. Snoek, Balkbrug",
+   "periode_registre": "2006-11 à 2007-11",
+   "couleur_registre": "donker roserood 53C, rood 43A gerand",
+   "multiflore": null,
+   "source": {
+    "niveau": "N1",
+    "url": "https://assets.kavb.nl/docs/4d05a724-67b1-430c-b4a4-4f9ccbe34ae5.pdf",
+    "document": "Registraties week 44-2006 t/m 45-2007",
+    "consulte": "2026-10-08"
+   },
+   "niveau_preuve": "D",
+   "statut": "à confirmer",
+   "raison": "nom et couleur de registre seuls : aucune photo nommée trouvée",
+   "mesures": {}
+  },
+  {
+   "id": "pilar",
+   "nom_affiche": "Pilar",
+   "nom_enregistre": "Pilar",
+   "groupe": "Greigii Groep (KAVB)",
+   "edibulb": "77159",
+   "mutant_de": null,
+   "registrant": "Fa. Voordenhout, De Lier",
+   "obtenteur_ou_selectionneur": "I.V.T., Wageningen",
+   "periode_registre": "2006-11 à 2007-11",
+   "couleur_registre": "paarsrood 58B met witte 155A rand",
+   "multiflore": null,
+   "source": {
+    "niveau": "N1",
+    "url": "https://assets.kavb.nl/docs/4d05a724-67b1-430c-b4a4-4f9ccbe34ae5.pdf",
+    "document": "Registraties week 44-2006 t/m 45-2007",
+    "consulte": "2026-10-08"
+   },
+   "niveau_preuve": "D",
+   "statut": "à confirmer",
+   "raison": "nom et couleur de registre seuls : aucune photo nommée trouvée",
+   "mesures": {}
+  },
+  {
+   "id": "redwood",
+   "nom_affiche": "Redwood",
+   "nom_enregistre": "Redwood",
+   "groupe": "Greigii Groep (KAVB) ; aussi Dubbele Vroege Groep",
+   "edibulb": "75887",
+   "mutant_de": null,
+   "registrant": "Testcentrum voor Siergewassen B.V., Lisse",
+   "obtenteur_ou_selectionneur": "Testcentrum voor Siergewassen B.V., Lisse",
+   "periode_registre": "2006-11 à 2007-11",
+   "couleur_registre": "rood 42A/45B. Ook Dubbele Vroege Groep",
+   "multiflore": null,
+   "source": {
+    "niveau": "N1",
+    "url": "https://assets.kavb.nl/docs/4d05a724-67b1-430c-b4a4-4f9ccbe34ae5.pdf",
+    "document": "Registraties week 44-2006 t/m 45-2007",
+    "consulte": "2026-10-08"
+   },
+   "niveau_preuve": "D",
+   "statut": "à confirmer",
+   "raison": "nom et couleur de registre seuls : aucune photo nommée trouvée",
+   "mesures": {}
+  },
+  {
+   "id": "royal-anthos",
+   "nom_affiche": "Royal Anthos",
+   "nom_enregistre": "Royal Anthos",
+   "groupe": "Greigii Groep (KAVB)",
+   "edibulb": "76531",
+   "mutant_de": null,
+   "registrant": "Testcentrum voor Siergewassen B.V./Remarkable C.V., Lisse",
+   "obtenteur_ou_selectionneur": "Testcentrum voor Siergewassen B.V., Lisse",
+   "periode_registre": "2006-11 à 2007-11",
+   "couleur_registre": "rood 42A, rood 43A gerand",
+   "multiflore": null,
+   "source": {
+    "niveau": "N1",
+    "url": "https://assets.kavb.nl/docs/4d05a724-67b1-430c-b4a4-4f9ccbe34ae5.pdf",
+    "document": "Registraties week 44-2006 t/m 45-2007",
+    "consulte": "2026-10-08"
+   },
+   "niveau_preuve": "D",
+   "statut": "à confirmer",
+   "raison": "nom et couleur de registre seuls : aucune photo nommée trouvée",
+   "mesures": {}
+  },
+  {
+   "id": "vanilla-cream",
+   "nom_affiche": "Vanilla Cream",
+   "nom_enregistre": "Vanilla Cream",
+   "groupe": "Greigii Groep (KAVB)",
+   "edibulb": "76026",
+   "mutant_de": null,
+   "registrant": "Testcentrum voor Siergewassen B.V., Lisse",
+   "obtenteur_ou_selectionneur": "Testcentrum voor Siergewassen B.V., Lisse",
+   "periode_registre": "2006-11 à 2007-11",
+   "couleur_registre": "lichtgeel 4D, geelgroen 4C gerand",
+   "multiflore": null,
+   "source": {
+    "niveau": "N1",
+    "url": "https://assets.kavb.nl/docs/4d05a724-67b1-430c-b4a4-4f9ccbe34ae5.pdf",
+    "document": "Registraties week 44-2006 t/m 45-2007",
+    "consulte": "2026-10-08"
+   },
+   "niveau_preuve": "D",
+   "statut": "à confirmer",
+   "raison": "nom et couleur de registre seuls : aucune photo nommée trouvée",
+   "mesures": {}
+  },
+  {
+   "id": "apricot-lady",
+   "nom_affiche": "Apricot Lady",
+   "nom_enregistre": "Apricot Lady",
+   "groupe": "Greigii Groep (KAVB)",
+   "edibulb": "78585",
+   "mutant_de": "Oratorio",
+   "registrant": "W.A.M. Pennings, Noordwijkerhout",
+   "obtenteur_ou_selectionneur": "W.A.M. Pennings, Noordwijkerhout",
+   "periode_registre": "2007-11 à 2008-11",
+   "couleur_registre": "geelgroen 2D met oranjerose 33D streepjes",
+   "multiflore": null,
+   "source": {
+    "niveau": "N1",
+    "url": "https://assets.kavb.nl/docs/709a8fb3-51c8-47ad-94a7-97c37c7f447f.pdf",
+    "document": "Registraties week 46-2007 t/m 45-2008",
+    "consulte": "2026-10-08"
+   },
+   "niveau_preuve": "D",
+   "statut": "à confirmer",
+   "raison": "nom et couleur de registre seuls : aucune photo nommée trouvée",
+   "mesures": {}
+  },
+  {
+   "id": "brilliance",
+   "nom_affiche": "Brilliance",
+   "nom_enregistre": "Brilliance",
+   "groupe": "Greigii Groep (KAVB)",
+   "edibulb": "78599",
+   "mutant_de": null,
+   "registrant": "Maveridge International B.V., Sint Maarten",
+   "obtenteur_ou_selectionneur": "I.V.T., Wageningen",
+   "periode_registre": "2007-11 à 2008-11",
+   "couleur_registre": "rood 45A. Blad groen met paars/bruine strepen",
+   "multiflore": null,
+   "source": {
+    "niveau": "N1",
+    "url": "https://assets.kavb.nl/docs/709a8fb3-51c8-47ad-94a7-97c37c7f447f.pdf",
+    "document": "Registraties week 46-2007 t/m 45-2008",
+    "consulte": "2026-10-08"
+   },
+   "niveau_preuve": "D",
+   "statut": "à confirmer",
+   "raison": "nom et couleur de registre seuls : aucune photo nommée trouvée",
+   "mesures": {}
+  },
+  {
+   "id": "maria-christina",
+   "nom_affiche": "Maria Christina",
+   "nom_enregistre": "Maria Christina",
+   "groupe": "Greigii Groep (KAVB)",
+   "edibulb": "78376",
+   "mutant_de": null,
+   "registrant": "W.J. Schrama Jr., Lisse",
+   "obtenteur_ou_selectionneur": "J.W.M. van Haaster",
+   "periode_registre": "2007-11 à 2008-11",
+   "couleur_registre": "blauwrose 186C met wit 155B",
+   "multiflore": null,
+   "source": {
+    "niveau": "N1",
+    "url": "https://assets.kavb.nl/docs/709a8fb3-51c8-47ad-94a7-97c37c7f447f.pdf",
+    "document": "Registraties week 46-2007 t/m 45-2008",
+    "consulte": "2026-10-08"
+   },
+   "niveau_preuve": "D",
+   "statut": "à confirmer",
+   "raison": "nom et couleur de registre seuls : aucune photo nommée trouvée",
+   "mesures": {}
+  },
+  {
+   "id": "border-king",
+   "nom_affiche": "Border King",
+   "nom_enregistre": "Border King",
+   "groupe": "Greigii Groep (KAVB)",
+   "edibulb": "80557",
+   "mutant_de": null,
+   "registrant": "W. van Lierop en Zn. B.V., Anna Paulowna",
+   "obtenteur_ou_selectionneur": "Ron van Lierop",
+   "periode_registre": "2008-11 à 2009-11",
+   "couleur_registre": "rood 42A met geeloranje 14A rand",
+   "multiflore": null,
+   "source": {
+    "niveau": "N1",
+    "url": "https://assets.kavb.nl/docs/7d64fa67-6e25-466b-856d-6177ee674386.pdf",
+    "document": "Registraties week 46-2008 t/m 45-2009",
+    "consulte": "2026-10-08"
+   },
+   "niveau_preuve": "D",
+   "statut": "à confirmer",
+   "raison": "nom et couleur de registre seuls : aucune photo nommée trouvée",
+   "mesures": {}
+  },
+  {
+   "id": "buddy",
+   "nom_affiche": "Buddy",
+   "nom_enregistre": "Buddy",
+   "groupe": "Greigii Groep (KAVB)",
+   "edibulb": "80080",
+   "mutant_de": "Pinocchio",
+   "registrant": "W.A.M. Pennings, Noordwijkerhout",
+   "obtenteur_ou_selectionneur": "W.A.M. Pennings, Noordwijkerhout",
+   "periode_registre": "2008-11 à 2009-11",
+   "couleur_registre": "rood 50A, lichtgeel 4D gerand",
+   "multiflore": null,
+   "source": {
+    "niveau": "N1",
+    "url": "https://assets.kavb.nl/docs/7d64fa67-6e25-466b-856d-6177ee674386.pdf",
+    "document": "Registraties week 46-2008 t/m 45-2009",
+    "consulte": "2026-10-08"
+   },
+   "niveau_preuve": "D",
+   "statut": "à confirmer",
+   "raison": "nom et couleur de registre seuls : aucune photo nommée trouvée",
+   "mesures": {}
+  },
+  {
+   "id": "danku",
+   "nom_affiche": "Danku",
+   "nom_enregistre": "Danku",
+   "groupe": "Greigii Groep (KAVB)",
+   "edibulb": "80565",
+   "mutant_de": null,
+   "registrant": "Blooming Forever, Lisse",
+   "obtenteur_ou_selectionneur": "I.V.T., Wageningen",
+   "periode_registre": "2008-11 à 2009-11",
+   "couleur_registre": "paarsrood N57C met witte 155D rand",
+   "multiflore": null,
+   "source": {
+    "niveau": "N1",
+    "url": "https://assets.kavb.nl/docs/7d64fa67-6e25-466b-856d-6177ee674386.pdf",
+    "document": "Registraties week 46-2008 t/m 45-2009",
+    "consulte": "2026-10-08"
+   },
+   "niveau_preuve": "D",
+   "statut": "à confirmer",
+   "raison": "nom et couleur de registre seuls : aucune photo nommée trouvée",
+   "mesures": {}
+  },
+  {
+   "id": "daybreak",
+   "nom_affiche": "Daybreak",
+   "nom_enregistre": "Daybreak",
+   "groupe": "Greigii Groep (KAVB)",
+   "edibulb": "80627",
+   "mutant_de": null,
+   "registrant": "H.J. Wentink, Egmond Binnen",
+   "obtenteur_ou_selectionneur": "A.P. ter Steege, Callantsoog",
+   "periode_registre": "2008-11 à 2009-11",
+   "couleur_registre": "rood 42A, rood 33A gerand",
+   "multiflore": null,
+   "source": {
+    "niveau": "N1",
+    "url": "https://assets.kavb.nl/docs/7d64fa67-6e25-466b-856d-6177ee674386.pdf",
+    "document": "Registraties week 46-2008 t/m 45-2009",
+    "consulte": "2026-10-08"
+   },
+   "niveau_preuve": "D",
+   "statut": "à confirmer",
+   "raison": "nom et couleur de registre seuls : aucune photo nommée trouvée",
+   "mesures": {}
+  },
+  {
+   "id": "giant-orange-sunrise",
+   "nom_affiche": "Giant Orange Sunrise",
+   "nom_enregistre": "Giant Orange Sunrise",
+   "groupe": "Greigii Groep (KAVB)",
+   "edibulb": "80283",
+   "mutant_de": null,
+   "registrant": "Fa. M.C. Zonneveld & Zn., Den Helder",
+   "obtenteur_ou_selectionneur": "D.W. Lefeber",
+   "periode_registre": "2008-11 à 2009-11",
+   "couleur_registre": "rood 34A, oranjerood 32A gerand",
+   "multiflore": null,
+   "source": {
+    "niveau": "N1",
+    "url": "https://assets.kavb.nl/docs/7d64fa67-6e25-466b-856d-6177ee674386.pdf",
+    "document": "Registraties week 46-2008 t/m 45-2009",
+    "consulte": "2026-10-08"
+   },
+   "niveau_preuve": "D",
+   "statut": "à confirmer",
+   "raison": "nom et couleur de registre seuls : aucune photo nommée trouvée",
+   "mesures": {}
+  },
+  {
+   "id": "mothers-love",
+   "nom_affiche": "Mothers Love",
+   "nom_enregistre": "Mothers Love",
+   "groupe": "Greigii Groep (KAVB)",
+   "edibulb": "80219",
+   "mutant_de": null,
+   "registrant": "W. van Lierop en Zn. B.V., Anna Paulowna",
+   "obtenteur_ou_selectionneur": "Ron van Lierop",
+   "periode_registre": "2008-11 à 2009-11",
+   "couleur_registre": "oranjerood 41B, geelgroen 1D gerand",
+   "multiflore": null,
+   "source": {
+    "niveau": "N1",
+    "url": "https://assets.kavb.nl/docs/7d64fa67-6e25-466b-856d-6177ee674386.pdf",
+    "document": "Registraties week 46-2008 t/m 45-2009",
+    "consulte": "2026-10-08"
+   },
+   "niveau_preuve": "D",
+   "statut": "à confirmer",
+   "raison": "nom et couleur de registre seuls : aucune photo nommée trouvée",
+   "mesures": {},
+   "complement": {
+    "niveau": "N3",
+    "url": "https://www.rhs.org.uk/plants/333684/tulipa-mother-s-love-(14)/details",
+    "document": "RHS fiche (14) AGM : environ 25 cm, feuilles larges mouchetées de pourpre, fleurs écarlates à marges jaunes",
+    "consulte": "2026-10-08"
+   }
+  },
+  {
+   "id": "splash",
+   "nom_affiche": "Splash",
+   "nom_enregistre": "Splash",
+   "groupe": "Greigii Groep (KAVB)",
+   "edibulb": "80615",
+   "mutant_de": null,
+   "registrant": "Kwekerij De Morgenster, Nieuw Vennep",
+   "obtenteur_ou_selectionneur": "A.P. ter Steege, Callantsoog",
+   "periode_registre": "2008-11 à 2009-11",
+   "couleur_registre": "rood 33A met geeloranje 13B rand",
+   "multiflore": null,
+   "source": {
+    "niveau": "N1",
+    "url": "https://assets.kavb.nl/docs/7d64fa67-6e25-466b-856d-6177ee674386.pdf",
+    "document": "Registraties week 46-2008 t/m 45-2009",
+    "consulte": "2026-10-08"
+   },
+   "niveau_preuve": "D",
+   "statut": "à confirmer",
+   "raison": "nom et couleur de registre seuls : aucune photo nommée trouvée",
+   "mesures": {}
+  },
+  {
+   "id": "yellow-winnipeg",
+   "nom_affiche": "Yellow Winnipeg",
+   "nom_enregistre": "Yellow Winnipeg",
+   "groupe": "Greigii Groep (KAVB)",
+   "edibulb": "80622",
+   "mutant_de": "Winnipeg",
+   "registrant": "P. en M. van der Poel B.V., Noordwijkerhout",
+   "obtenteur_ou_selectionneur": "P. en M. van der Poel B.V., Noordwijkerhout",
+   "periode_registre": "2008-11 à 2009-11",
+   "couleur_registre": "oranjerood 35B, geel 8A gerand. Meerbloemig",
+   "multiflore": true,
+   "source": {
+    "niveau": "N1",
+    "url": "https://assets.kavb.nl/docs/7d64fa67-6e25-466b-856d-6177ee674386.pdf",
+    "document": "Registraties week 46-2008 t/m 45-2009",
+    "consulte": "2026-10-08"
+   },
+   "niveau_preuve": "D",
+   "statut": "à confirmer",
+   "raison": "nom et couleur de registre seuls : aucune photo nommée trouvée",
+   "mesures": {}
+  },
+  {
+   "id": "bonbini",
+   "nom_affiche": "Bonbini",
+   "nom_enregistre": "Bonbini",
+   "groupe": "Greigii Groep (KAVB)",
+   "edibulb": "82190",
+   "mutant_de": null,
+   "registrant": "Holland BolRoy Markt B.V., Heiloo",
+   "obtenteur_ou_selectionneur": "D.W. Lefeber, Lisse",
+   "periode_registre": "2010-11 à 2011-12",
+   "couleur_registre": "geel 9C met rode 42A vlam",
+   "multiflore": null,
+   "source": {
+    "niveau": "N1",
+    "url": "https://assets.kavb.nl/docs/aaac1091-e77c-4f0c-b395-e3f444b42877.pdf",
+    "document": "Registraties week 45-2010 t/m 52-2011",
+    "consulte": "2026-10-08"
+   },
+   "niveau_preuve": "D",
+   "statut": "à confirmer",
+   "raison": "nom et couleur de registre seuls : aucune photo nommée trouvée",
+   "mesures": {}
+  },
+  {
+   "id": "diablo",
+   "nom_affiche": "Diablo",
+   "nom_enregistre": "Diablo",
+   "groupe": "Greigii Groep (KAVB)",
+   "edibulb": "81013",
+   "mutant_de": null,
+   "registrant": "Kesteloo Bloembollen B.V., Breezand",
+   "obtenteur_ou_selectionneur": "J.W.A. Lefeber B.V., Noordwijkerhout",
+   "periode_registre": "2010-11 à 2011-12",
+   "couleur_registre": "geelgroen 2D met oranjerode 39B vlam",
+   "multiflore": null,
+   "source": {
+    "niveau": "N1",
+    "url": "https://assets.kavb.nl/docs/aaac1091-e77c-4f0c-b395-e3f444b42877.pdf",
+    "document": "Registraties week 45-2010 t/m 52-2011",
+    "consulte": "2026-10-08"
+   },
+   "niveau_preuve": "D",
+   "statut": "à confirmer",
+   "raison": "nom et couleur de registre seuls : aucune photo nommée trouvée",
+   "mesures": {}
+  },
+  {
+   "id": "mees-hartvelt",
+   "nom_affiche": "Mees Hartvelt",
+   "nom_enregistre": "Mees Hartvelt",
+   "groupe": "Greigii Groep (KAVB)",
+   "edibulb": "82240",
+   "mutant_de": null,
+   "registrant": "Jan Huiberts, Broek op Langedijk",
+   "obtenteur_ou_selectionneur": "D.W. Lefeber",
+   "periode_registre": "2010-11 à 2011-12",
+   "couleur_registre": "oranjebruin 34C met oranjerode 32A rand",
+   "multiflore": null,
+   "source": {
+    "niveau": "N1",
+    "url": "https://assets.kavb.nl/docs/aaac1091-e77c-4f0c-b395-e3f444b42877.pdf",
+    "document": "Registraties week 45-2010 t/m 52-2011",
+    "consulte": "2026-10-08"
+   },
+   "niveau_preuve": "D",
+   "statut": "à confirmer",
+   "raison": "nom et couleur de registre seuls : aucune photo nommée trouvée",
+   "mesures": {}
+  },
+  {
+   "id": "tottori",
+   "nom_affiche": "Tottori",
+   "nom_enregistre": "Tottori",
+   "groupe": "Greigii Groep (KAVB)",
+   "edibulb": "82296",
+   "mutant_de": null,
+   "registrant": "J.S. Pennings, Breezand",
+   "obtenteur_ou_selectionneur": "Vitauts Skuja, Sigulda, Letland",
+   "periode_registre": "2010-11 à 2011-12",
+   "couleur_registre": "bruinpaars 186B met roodrose 43D",
+   "multiflore": null,
+   "source": {
+    "niveau": "N1",
+    "url": "https://assets.kavb.nl/docs/aaac1091-e77c-4f0c-b395-e3f444b42877.pdf",
+    "document": "Registraties week 45-2010 t/m 52-2011",
+    "consulte": "2026-10-08"
+   },
+   "niveau_preuve": "D",
+   "statut": "à confirmer",
+   "raison": "nom et couleur de registre seuls : aucune photo nommée trouvée",
+   "mesures": {}
+  },
+  {
+   "id": "zeeschat",
+   "nom_affiche": "Zeeschat",
+   "nom_enregistre": "Zeeschat",
+   "groupe": "Greigii Groep (KAVB)",
+   "edibulb": "82311",
+   "mutant_de": null,
+   "registrant": "Ligthart Bloembollen, Den Helder",
+   "obtenteur_ou_selectionneur": "D.W. Lefeber, Lisse",
+   "periode_registre": "2010-11 à 2011-12",
+   "couleur_registre": "oranjebruin 34C, oranjerood N30C gerand",
+   "multiflore": null,
+   "source": {
+    "niveau": "N1",
+    "url": "https://assets.kavb.nl/docs/aaac1091-e77c-4f0c-b395-e3f444b42877.pdf",
+    "document": "Registraties week 45-2010 t/m 52-2011",
+    "consulte": "2026-10-08"
+   },
+   "niveau_preuve": "D",
+   "statut": "à confirmer",
+   "raison": "nom et couleur de registre seuls : aucune photo nommée trouvée",
+   "mesures": {}
+  },
+  {
+   "id": "bonbeauty",
+   "nom_affiche": "Bonbeauty",
+   "nom_enregistre": "Bonbeauty",
+   "groupe": "Greigii Groep (KAVB)",
+   "edibulb": "81708",
+   "mutant_de": null,
+   "registrant": "Holland BolRoy Markt B.V., Heiloo",
+   "obtenteur_ou_selectionneur": "D.W. Lefeber, Lisse",
+   "periode_registre": "2012",
+   "couleur_registre": "lichtgeel 6D met rode 44C vlam",
+   "multiflore": null,
+   "source": {
+    "niveau": "N1",
+    "url": "https://assets.kavb.nl/docs/595aedc7-bad3-44ae-bf35-7c0235ac23b8.pdf",
+    "document": "Registraties 2012 week 1 t/m 52",
+    "consulte": "2026-10-08"
+   },
+   "niveau_preuve": "D",
+   "statut": "à confirmer",
+   "raison": "nom et couleur de registre seuls : aucune photo nommée trouvée",
+   "mesures": {}
+  },
+  {
+   "id": "willem-vanden-akker",
+   "nom_affiche": "Willem vanden Akker",
+   "nom_enregistre": "Willem vanden Akker",
+   "groupe": "Greigii Groep (KAVB)",
+   "edibulb": "82325",
+   "mutant_de": null,
+   "registrant": "Remarkable Tulips, Lisse",
+   "obtenteur_ou_selectionneur": "Remarkable Tulips, Lisse",
+   "periode_registre": "2012",
+   "couleur_registre": "roodrose 48B met witte 155B rand",
+   "multiflore": null,
+   "source": {
+    "niveau": "N1",
+    "url": "https://assets.kavb.nl/docs/595aedc7-bad3-44ae-bf35-7c0235ac23b8.pdf",
+    "document": "Registraties 2012 week 1 t/m 52",
+    "consulte": "2026-10-08"
+   },
+   "niveau_preuve": "D",
+   "statut": "à confirmer",
+   "raison": "nom et couleur de registre seuls : aucune photo nommée trouvée",
+   "mesures": {}
+  },
+  {
+   "id": "first-beauty",
+   "nom_affiche": "First Beauty",
+   "nom_enregistre": "First Beauty",
+   "groupe": "Greigii Groep (KAVB)",
+   "edibulb": "74258",
+   "mutant_de": null,
+   "registrant": "Boltha, Breezand",
+   "obtenteur_ou_selectionneur": "Boltha, Breezand",
+   "periode_registre": "2004-07 à 2005-06",
+   "couleur_registre": "geel 12A met rode 42A vlam",
+   "multiflore": null,
+   "source": {
+    "niveau": "N1",
+    "url": "https://assets.kavb.nl/docs/c00abd89-8997-4099-b0cf-3bbfc0cfafc5.pdf",
+    "document": "Registraties week 31-2004 t/m 26-2005",
+    "consulte": "2026-10-08"
+   },
+   "niveau_preuve": "D",
+   "statut": "à confirmer",
+   "raison": "nom et couleur de registre seuls : aucune photo nommée trouvée",
+   "mesures": {}
+  },
+  {
+   "id": "greigs-beauty",
+   "nom_affiche": "Greigs Beauty",
+   "nom_enregistre": "Greigs Beauty",
+   "groupe": "Greigii Groep (KAVB)",
+   "edibulb": "74265",
+   "mutant_de": null,
+   "registrant": "Holland BolRoy Markt, Heiloo",
+   "obtenteur_ou_selectionneur": "Fa. W. van Lierop & Zn., Anna Paulowna",
+   "periode_registre": "2004-07 à 2005-06",
+   "couleur_registre": "rood 33A",
+   "multiflore": null,
+   "source": {
+    "niveau": "N1",
+    "url": "https://assets.kavb.nl/docs/c00abd89-8997-4099-b0cf-3bbfc0cfafc5.pdf",
+    "document": "Registraties week 31-2004 t/m 26-2005",
+    "consulte": "2026-10-08"
+   },
+   "niveau_preuve": "D",
+   "statut": "à confirmer",
+   "raison": "nom et couleur de registre seuls : aucune photo nommée trouvée",
+   "mesures": {}
+  },
+  {
+   "id": "greigs-dream",
+   "nom_affiche": "Greigs Dream",
+   "nom_enregistre": "Greigs Dream",
+   "groupe": "Greigii Groep (KAVB)",
+   "edibulb": "74482",
+   "mutant_de": null,
+   "registrant": "Holland BolRoy Markt, Heiloo",
+   "obtenteur_ou_selectionneur": "Fa. W. van Lierop & Zn., Anna Paulowna",
+   "periode_registre": "2004-07 à 2005-06",
+   "couleur_registre": "rood N30A met streep rood 47B",
+   "multiflore": null,
+   "source": {
+    "niveau": "N1",
+    "url": "https://assets.kavb.nl/docs/c00abd89-8997-4099-b0cf-3bbfc0cfafc5.pdf",
+    "document": "Registraties week 31-2004 t/m 26-2005",
+    "consulte": "2026-10-08"
+   },
+   "niveau_preuve": "D",
+   "statut": "à confirmer",
+   "raison": "nom et couleur de registre seuls : aucune photo nommée trouvée",
+   "mesures": {}
+  },
+  {
+   "id": "greigs-happy",
+   "nom_affiche": "Greigs Happy",
+   "nom_enregistre": "Greigs Happy",
+   "groupe": "Greigii Groep (KAVB)",
+   "edibulb": "74483",
+   "mutant_de": null,
+   "registrant": "Holland BolRoy Markt, Heiloo",
+   "obtenteur_ou_selectionneur": "Fa. W. van Lierop & Zn., Anna Paulowna",
+   "periode_registre": "2004-07 à 2005-06",
+   "couleur_registre": "donker roserood 48A, aan randen wit 155A",
+   "multiflore": null,
+   "source": {
+    "niveau": "N1",
+    "url": "https://assets.kavb.nl/docs/c00abd89-8997-4099-b0cf-3bbfc0cfafc5.pdf",
+    "document": "Registraties week 31-2004 t/m 26-2005",
+    "consulte": "2026-10-08"
+   },
+   "niveau_preuve": "D",
+   "statut": "à confirmer",
+   "raison": "nom et couleur de registre seuls : aucune photo nommée trouvée",
+   "mesures": {}
+  },
+  {
+   "id": "greigs-master",
+   "nom_affiche": "Greigs Master",
+   "nom_enregistre": "Greigs Master",
+   "groupe": "Greigii Groep (KAVB)",
+   "edibulb": "75683",
+   "mutant_de": null,
+   "registrant": "Holland BolRoy Markt BV, Heiloo",
+   "obtenteur_ou_selectionneur": "Fa. W. van Lierop & Zn., Anna Paulowna",
+   "periode_registre": "2005-07 à 2006-10",
+   "couleur_registre": "rood 40A, randen geel 6C",
+   "multiflore": null,
+   "source": {
+    "niveau": "N1",
+    "url": "https://assets.kavb.nl/docs/aba604d0-c12d-4e19-8c8f-f6723c699fbd.pdf",
+    "document": "Registraties week 27-2005 t/m 43-2006",
+    "consulte": "2026-10-08"
+   },
+   "niveau_preuve": "D",
+   "statut": "à confirmer",
+   "raison": "nom et couleur de registre seuls : aucune photo nommée trouvée",
+   "mesures": {}
+  },
+  {
+   "id": "little-girl",
+   "nom_affiche": "Little Girl",
+   "nom_enregistre": "Little Girl",
+   "groupe": "Greigii Groep (KAVB)",
+   "edibulb": "73970",
+   "mutant_de": "Sweet Lady",
+   "registrant": "P. Meurs, Opperdoes",
+   "obtenteur_ou_selectionneur": "P. Meurs, Opperdoes",
+   "periode_registre": "2004-07 à 2005-06",
+   "couleur_registre": "licht geeloranje 11D met blauwrose 63B/C",
+   "multiflore": null,
+   "source": {
+    "niveau": "N1",
+    "url": "https://assets.kavb.nl/docs/c00abd89-8997-4099-b0cf-3bbfc0cfafc5.pdf",
+    "document": "Registraties week 31-2004 t/m 26-2005",
+    "consulte": "2026-10-08"
+   },
+   "niveau_preuve": "D",
+   "statut": "à confirmer",
+   "raison": "nom et couleur de registre seuls : aucune photo nommée trouvée",
+   "mesures": {}
+  },
+  {
+   "id": "my-support",
+   "nom_affiche": "My Support",
+   "nom_enregistre": "My Support",
+   "groupe": "Greigii Groep (KAVB)",
+   "edibulb": "73984",
+   "mutant_de": null,
+   "registrant": "J.S. Pennings, Breezand",
+   "obtenteur_ou_selectionneur": "J. Ruksans, Letland",
+   "periode_registre": "2004-07 à 2005-06",
+   "couleur_registre": "oranjerood 32A",
+   "multiflore": null,
+   "source": {
+    "niveau": "N1",
+    "url": "https://assets.kavb.nl/docs/c00abd89-8997-4099-b0cf-3bbfc0cfafc5.pdf",
+    "document": "Registraties week 31-2004 t/m 26-2005",
+    "consulte": "2026-10-08"
+   },
+   "niveau_preuve": "D",
+   "statut": "à confirmer",
+   "raison": "nom et couleur de registre seuls : aucune photo nommée trouvée",
+   "mesures": {}
+  },
+  {
+   "id": "zampa",
+   "nom_affiche": "Zampa",
+   "nom_enregistre": "Zampa",
+   "groupe": "Greigii (14)",
+   "niveau_preuve": "D",
+   "statut": "à confirmer",
+   "source": {
+    "niveau": "N3",
+    "url": "https://www.rhs.org.uk/plants/82966/i-tulipa-i-zampa-(14)/details",
+    "document": "RHS : fiche (14) AGM : 15-20 cm, fleurs crème et jaune marquées de stries rouges, début de printemps",
+    "consulte": "2026-10-08"
+   },
+   "raison": "AGM de la RHS ; aucune photo nommée relevée",
+   "mesures": {}
+  },
+  {
+   "id": "trinket",
+   "nom_affiche": "Trinket",
+   "nom_enregistre": "Trinket",
+   "groupe": "Greigii (14)",
+   "niveau_preuve": "D",
+   "statut": "à confirmer",
+   "source": {
+    "niveau": "N3",
+    "url": "https://www.rhs.org.uk/plants/74501/tulipa-trinket-(14)/details",
+    "document": "RHS : fiche (14) AGM : environ 20 cm, fleurs rouges à marges crème, feuilles gris-vert mouchetées",
+    "consulte": "2026-10-08"
+   },
+   "raison": "AGM de la RHS ; aucune photo nommée relevée",
+   "mesures": {}
+  },
+  {
+   "id": "united-states",
+   "nom_affiche": "United States",
+   "nom_enregistre": "United States",
+   "groupe": "Greigii (14)",
+   "niveau_preuve": "D",
+   "statut": "à confirmer",
+   "source": {
+    "niveau": "N3",
+    "url": "https://www.rhs.org.uk/plants/194542/tulipa-united-states-14/details",
+    "document": "RHS : fiche (14) AGM ; syn. Tulipa greigii 'United States' : 25 cm, feuilles vertes mouchetées de pourpre, large bande rouge sur pétales jaune d'or",
+    "consulte": "2026-10-08"
+   },
+   "raison": "AGM de la RHS ; aucune photo nommée relevée",
+   "mesures": {}
+  },
+  {
+   "id": "kiev",
+   "nom_affiche": "Kiev",
+   "nom_enregistre": "Kiev",
+   "groupe": "Greigii (14)",
+   "niveau_preuve": "D",
+   "statut": "à confirmer",
+   "source": {
+    "niveau": "N3",
+    "url": "https://www.rhs.org.uk/plants/307801/tulipa-kiev-(14)/details",
+    "document": "RHS : fiche (14) AGM : 30 cm, feuilles mouchetées de pourpre, rayures rouges au milieu des tépales jaunes, intérieur orange et jaune",
+    "consulte": "2026-10-08"
+   },
+   "raison": "AGM de la RHS ; aucune photo nommée relevée",
+   "mesures": {}
+  }
+ ],
+ "ecartes": [
+  {
+   "id": "red-riding-hood-commons",
+   "nom_affiche": "Red Riding Hood (fichier Commons « Tulipa cultivars 2 »)",
+   "raison": "collage de six photos de cultivars différents (pivoine rose, frangée...) rangé dans la catégorie du cultivar : écarté"
+  },
+  {
+   "id": "free-world",
+   "nom_affiche": "Free World (1 fichier Commons)",
+   "raison": "le même collage : pas de photo exploitable du cultivar"
+  }
+ ],
+ "couverture": {
+  "cultivars_retenus_avec_photo": 26,
+  "niveau_A": 0,
+  "niveau_B": 8,
+  "niveau_C": 18,
+  "niveau_D": 0,
+  "prouves_A_ou_B": 8,
+  "sans_photo": 40,
+  "ecartes": 2,
+  "au_catalogue": 0,
+  "existence_N1_lue": 42,
+  "remarque": "« enregistrés » du KAVB : total inconnu (base non interrogée). Les nombres ci-dessus portent sur ce qui a été recensé dans les sources consultées"
+ },
+ "vues_deja_photographiees": {
+  "face (dessus, intérieur)": 18,
+  "trois-quarts": 0,
+  "profil": 7,
+  "dos (revers, extérieur)": 0,
+  "bouton": 18,
+  "fané ou déclin": 0,
+  "feuilles": 8,
+  "tige, pied": 0,
+  "plante entière ou massif": 12
+ },
+ "vues_manquantes": [
+  "trois-quarts",
+  "dos (revers, extérieur)",
+  "fané ou déclin",
+  "tige, pied",
+  "dessous et attache des feuilles",
+  "épaisseur et surface de la tige",
+  "stades intermédiaires (goblet, coupe, déclin)"
+ ],
+ "vues_note": "comptage des photos retenues par mot-clé de la rubrique « vue » ; les photos de forme par angle et par stade sont à compléter par fleur-refs (STANDARD-SOURCES, exhaustivité)"
+}

@@ -1,0 +1,43 @@
+gypsophile;Gypsophile;Remplissage & textures;spray;remplissage
+waxflower;Fleur de cire;Remplissage & textures;spray;remplissage
+statice-sinuata;Statice;Remplissage & textures;spray;remplissage
+limonium-latifolium;Lavande de mer;Remplissage & textures;spray;remplissage
+limonium-hybride;Limonium hybride;Remplissage & textures;spray;remplissage
+statice-tatarica;Statice tatarica;Remplissage & textures;spray;remplissage
+statice-queue-de-rat;Statice queue-de-rat;Remplissage & textures;spike;texture
+astrantia;Astrance;Remplissage & textures;globe;secondaire
+solidago;Solidage;Remplissage & textures;spray;remplissage
+veronique;Véronique;Remplissage & textures;spike;secondaire
+bupleurum;Buplèvre;Remplissage & textures;spray;remplissage
+alchemille;Alchémille;Remplissage & textures;spray;remplissage
+ammi;Ammi;Remplissage & textures;globe;remplissage
+daucus-carota;Carotte sauvage ornementale;Remplissage & textures;globe;remplissage
+aneth;Aneth;Remplissage & textures;globe;remplissage
+orlaya;Orlaya;Remplissage & textures;globe;remplissage
+didiscus;Didiscus bleu;Remplissage & textures;globe;remplissage
+eryngium;Panicaut;Remplissage & textures;globe;texture
+echinops;Échinops;Remplissage & textures;globe;texture
+craspedia;Craspedia;Remplissage & textures;globe;secondaire
+nigelle-capsules;Nigelle;Remplissage & textures;berries;texture
+pavot-capsules;Pavot;Remplissage & textures;berries;texture
+scabieuse-etoilee-capsules;Scabieuse étoilée;Remplissage & textures;globe;texture
+lunaire;Monnaie-du-pape;Remplissage & textures;foliage;texture
+amour-en-cage;Amour-en-cage;Remplissage & textures;berries;texture
+coton;Coton;Remplissage & textures;exotic;texture
+asclepias;Asclépiade;Remplissage & textures;globe;secondaire
+gomphocarpus;Arbre à ballons;Remplissage & textures;berries;texture
+sedum;Orpin d'automne;Remplissage & textures;globe;texture
+carthame;Carthame des teinturiers;Remplissage & textures;globe;texture
+celosie-plumeuse;Célosie plumeuse;Remplissage & textures;spike;texture
+celosie-crete-de-coq;Célosie crête-de-coq;Remplissage & textures;double;texture
+celosie-a-epis;Célosie à épis;Remplissage & textures;spike;texture
+amarante-retombante;Amarante queue-de-renard;Remplissage & textures;custom/amaranthPlant;texture
+amarante-dressee;Amarante dressée;Remplissage & textures;spike;texture
+hypericum;Millepertuis;Remplissage & textures;berries;baie
+symphorine;Symphorine;Remplissage & textures;berries;baie
+gomphrena;Amarantine;Remplissage & textures;globe;remplissage
+matricaire;Matricaire;Remplissage & textures;spray;remplissage
+tanaisie;Tanaisie commune;Remplissage & textures;globe;remplissage
+camomille;Camomille;Remplissage & textures;spray;remplissage
+agerate;Agérate du Mexique;Remplissage & textures;spray;remplissage
+lavande;Lavande et lavandin;Remplissage & textures;spike;texture

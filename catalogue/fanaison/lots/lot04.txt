@@ -1,0 +1,30 @@
+tulipe-simple;Tulipe simple;Printemps & bulbes;custom/tulip;focale
+tulipe-francaise;Tulipe française;Printemps & bulbes;custom/tulip;focale
+tulipe-double;Tulipe double;Printemps & bulbes;double;focale
+tulipe-perroquet;Tulipe perroquet;Printemps & bulbes;star;focale
+tulipe-frangee;Tulipe frangée;Printemps & bulbes;radial;focale
+tulipe-fleur-de-lys;Tulipe à fleur de lis;Printemps & bulbes;star;focale
+tulipe-viridiflora;Tulipe viridiflora;Printemps & bulbes;star;focale
+tulipe-rembrandt;Tulipe Rembrandt;Printemps & bulbes;custom/tulip;focale
+renoncule-classique;Renoncule;Printemps & bulbes;custom/xRanunc;focale
+renoncule-cloni;Renoncule Cloni;Printemps & bulbes;custom/xRanunc;focale
+renoncule-pon-pon;Renoncule Pon-Pon;Printemps & bulbes;custom/xRanunc;focale
+renoncule-butterfly;Renoncule Butterfly;Printemps & bulbes;spray;secondaire
+renoncule-natura-moderna;Renoncule Natura Moderna;Printemps & bulbes;spray;secondaire
+anemone-coronaria;Anémone des fleuristes;Printemps & bulbes;custom/anemone;focale
+anemone-japonaise;Anémone du Japon;Printemps & bulbes;radial;secondaire
+hellebore-orientalis;Hellébore d'Orient;Printemps & bulbes;cup;secondaire
+hellebore-niger;Rose de Noël;Printemps & bulbes;radial;secondaire
+pivoine-herbacee-double;Pivoine herbacée double;Printemps & bulbes;custom/peony;focale
+pivoine-herbacee-simple;Pivoine simple;Printemps & bulbes;cup;focale
+pivoine-corail;Pivoine corail;Printemps & bulbes;double;focale
+pivoine-itoh;Pivoine intersectionnelle;Printemps & bulbes;cup;focale
+pivoine-arbustive;Pivoine arbustive;Printemps & bulbes;double;focale
+pois-de-senteur;Pois de senteur;Printemps & bulbes;custom/xPea;secondaire
+jacinthe;Jacinthe;Printemps & bulbes;spike;secondaire
+muscari;Muscari;Printemps & bulbes;spike;remplissage
+narcisse-trompette;Jonquille;Printemps & bulbes;star;secondaire
+narcisse-double;Narcisse double;Printemps & bulbes;double;secondaire
+narcisse-bouquet;Narcisse à bouquet;Printemps & bulbes;star;secondaire
+muguet;Muguet;Printemps & bulbes;spike;secondaire
+violette;Violette;Printemps & bulbes;radial;secondaire

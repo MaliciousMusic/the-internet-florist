@@ -1,0 +1,7 @@
+# a local test network for the desktop app (anvil): a minimal bouquets contract with the IBelaiBouquets reads it uses
+[profile.default]
+src = "src"
+out = "out"
+cache_path = "cache"
+solc_version = "0.8.28"
+evm_version = "cancun"

@@ -1,0 +1,536 @@
+﻿id;nom;categorie;role;rendu;angles;stades;couleurs_definies;couleurs_proposees;elements_svg;archetype;feuille_de_tige
+rose-standard;Rose standard;Roses;focale;volume (paramÃ©trique);tous;3;6;4;211;double;compound
+rose-intermediaire-kenya;Rose intermÃ©diaire et sweetheart;Roses;focale;volume (paramÃ©trique);tous;3;6;4;171;double;compound
+rose-aspect-jardin;Rose d'aspect jardin;Roses;focale;volume (dessin dÃ©diÃ©);tous;3;6;4;149;custom/xRose;compound
+rose-de-jardin;Rose de jardin;Roses;focale;volume (dessin dÃ©diÃ©);tous;3;6;4;149;custom/xRose;compound
+rose-anglaise-david-austin;Rose anglaise David Austin;Roses;focale;volume (dessin dÃ©diÃ©);tous;3;6;4;149;custom/xRose;compound
+rose-japonaise;Rose japonaise;Roses;focale;volume (paramÃ©trique);tous;3;6;4;271;double;compound
+rose-branchue;Rose branchue;Roses;secondaire;tige portÃ©e;1;1;6;4;1223;spray;compound
+rose-ancienne-parfumee;Rose ancienne et rose parfumÃ©e;Roses;focale;volume (paramÃ©trique);tous;3;6;4;475;double;compound
+rose-teintee;Rose teintÃ©e et rose fantaisie;Roses;focale;volume (paramÃ©trique);tous;3;6;4;211;double;compound
+rose-stabilisee;Rose stabilisÃ©e;Roses;focale;volume (paramÃ©trique);tous;3;6;4;191;double;compound
+tulipe-simple;Tulipe simple;Printemps & bulbes;focale;volume (dessin dÃ©diÃ©);tous;3;6;4;25;custom/tulip;lanceolate
+tulipe-francaise;Tulipe franÃ§aise;Printemps & bulbes;focale;volume (dessin dÃ©diÃ©);tous;3;6;4;25;custom/tulip;lanceolate
+tulipe-double;Tulipe double;Printemps & bulbes;focale;volume (paramÃ©trique);tous;3;6;4;119;double;lanceolate
+tulipe-perroquet;Tulipe perroquet;Printemps & bulbes;focale;volume (paramÃ©trique);tous;3;6;4;37;star;lanceolate
+tulipe-frangee;Tulipe frangÃ©e;Printemps & bulbes;focale;volume (paramÃ©trique);tous;1;6;4;112;radial;lanceolate
+tulipe-fleur-de-lys;Tulipe Ã  fleur de lis;Printemps & bulbes;focale;volume (paramÃ©trique);tous;3;6;4;37;star;lanceolate
+tulipe-viridiflora;Tulipe viridiflora;Printemps & bulbes;focale;volume (paramÃ©trique);tous;3;6;4;37;star;lanceolate
+tulipe-rembrandt;Tulipe Rembrandt;Printemps & bulbes;focale;volume (dessin dÃ©diÃ©);tous;3;6;4;25;custom/tulip;lanceolate
+renoncule-classique;Renoncule;Printemps & bulbes;focale;volume (dessin dÃ©diÃ©);tous;3;6;4;295;custom/xRanunc;lobed
+renoncule-cloni;Renoncule Cloni;Printemps & bulbes;focale;volume (dessin dÃ©diÃ©);tous;3;6;4;295;custom/xRanunc;lobed
+renoncule-pon-pon;Renoncule Pon-Pon;Printemps & bulbes;focale;volume (dessin dÃ©diÃ©);tous;3;6;4;295;custom/xRanunc;lobed
+renoncule-butterfly;Renoncule Butterfly;Printemps & bulbes;secondaire;tige portÃ©e;1;1;6;4;262;spray;lobed
+renoncule-natura-moderna;Renoncule Natura Moderna;Printemps & bulbes;secondaire;tige portÃ©e;1;1;6;4;421;spray;lobed
+anemone-coronaria;AnÃ©mone des fleuristes;Printemps & bulbes;focale;volume (dessin dÃ©diÃ©);tous;1;6;4;31;custom/anemone;lobed
+anemone-japonaise;AnÃ©mone du Japon;Printemps & bulbes;secondaire;volume (paramÃ©trique);tous;1;4;4;92;radial;lobed
+hellebore-orientalis;HellÃ©bore d'Orient;Printemps & bulbes;secondaire;volume (paramÃ©trique);tous;3;6;4;69;cup;palmate
+hellebore-niger;Rose de NoÃ«l;Printemps & bulbes;secondaire;volume (paramÃ©trique);tous;1;4;4;84;radial;palmate
+pivoine-herbacee-double;Pivoine herbacÃ©e double;Printemps & bulbes;focale;volume (dessin dÃ©diÃ©);tous;3;6;4;225;custom/peony;compound
+pivoine-herbacee-simple;Pivoine simple;Printemps & bulbes;focale;volume (paramÃ©trique);tous;3;6;4;77;cup;compound
+pivoine-corail;Pivoine corail;Printemps & bulbes;focale;volume (paramÃ©trique);tous;3;6;4;103;double;compound
+pivoine-itoh;Pivoine intersectionnelle;Printemps & bulbes;focale;volume (paramÃ©trique);tous;3;6;4;85;cup;lobed
+pivoine-arbustive;Pivoine arbustive;Printemps & bulbes;focale;volume (paramÃ©trique);tous;3;6;4;156;double;lobed
+pois-de-senteur;Pois de senteur;Printemps & bulbes;secondaire;Ã  plat (dessin dÃ©diÃ©);1;1;6;4;107;custom/xPea;none
+jacinthe;Jacinthe;Printemps & bulbes;secondaire;tige portÃ©e;1;1;6;4;971;spike;lanceolate
+muscari;Muscari;Printemps & bulbes;remplissage;tige portÃ©e;1;1;6;4;40;spike;grass
+narcisse-trompette;Jonquille;Printemps & bulbes;secondaire;volume (paramÃ©trique);tous;3;4;4;85;star;none
+narcisse-double;Narcisse double;Printemps & bulbes;secondaire;volume (paramÃ©trique);tous;3;4;4;155;double;none
+narcisse-bouquet;Narcisse Ã  bouquet;Printemps & bulbes;secondaire;volume (paramÃ©trique);tous;3;4;4;681;star;none
+muguet;Muguet;Printemps & bulbes;secondaire;tige portÃ©e;1;1;3;3;250;spike;ovate
+violette;Violette;Printemps & bulbes;secondaire;volume (paramÃ©trique);tous;1;6;4;47;radial;cordate
+ancolie;Ancolie;Printemps & bulbes;secondaire;volume (paramÃ©trique);tous;3;6;4;136;star;lobed
+lilas;Lilas;Printemps & bulbes;focale;tige portÃ©e;1;1;6;4;951;spray;cordate
+freesia;Freesia;Printemps & bulbes;secondaire;tige portÃ©e;1;1;6;4;227;spike;none
+viburnum-roseum;Boule-de-neige;Printemps & bulbes;secondaire;volume (paramÃ©trique);tous;1;4;4;4;globe;lobed
+fritillaire-imperiale;Fritillaire impÃ©riale;Printemps & bulbes;focale;volume (paramÃ©trique);tous;3;5;4;223;star;whorl
+fritillaire-meleagris;Fritillaire pintade;Printemps & bulbes;texture;volume (paramÃ©trique);tous;3;5;4;25;cup;grass
+fritillaire-persica;Fritillaire de Perse;Printemps & bulbes;secondaire;tige portÃ©e;1;1;4;4;612;spike;lanceolate
+fritillaire-michailovskyi;Fritillaire de Michailovski et pet;Printemps & bulbes;texture;volume (paramÃ©trique);tous;3;4;4;25;cup;lanceolate
+allium-grosse-tete;Ail d'ornement Ã  grosse tÃªte;Printemps & bulbes;focale;tige portÃ©e;1;1;6;4;107;custom/xAllium;none
+allium-petit;Ail d'ornement Ã  petite tÃªte;Printemps & bulbes;texture;volume (paramÃ©trique);tous;1;6;4;4;globe;none
+iris-hollandais;Iris de Hollande;Printemps & bulbes;secondaire;volume (paramÃ©trique);tous;3;6;4;61;star;grass
+iris-barbu;Iris barbu;Printemps & bulbes;focale;volume (paramÃ©trique);tous;3;6;4;61;star;lanceolate
+ornithogale;Ornithogale;Printemps & bulbes;secondaire;tige portÃ©e;1;1;5;4;735;spike;none
+pavot-islande;Pavot d'Islande;Printemps & bulbes;focale;volume (paramÃ©trique);tous;3;6;4;65;cup;none
+camassia;Camassia;Printemps & bulbes;secondaire;tige portÃ©e;1;1;4;4;733;spike;none
+eremurus;Eremurus;Printemps & bulbes;secondaire;tige portÃ©e;1;1;6;4;1553;spike;none
+triteleia;Triteleia;Printemps & bulbes;remplissage;volume (paramÃ©trique);tous;1;6;4;501;globe;none
+jacinthe-des-bois;Jacinthe des bois;Printemps & bulbes;remplissage;tige portÃ©e;1;1;4;4;250;spike;none
+scille;Scille;Printemps & bulbes;remplissage;tige portÃ©e;1;1;5;4;201;spike;grass
+niveole;NivÃ©ole;Printemps & bulbes;remplissage;volume (paramÃ©trique);tous;3;1;1;221;star;none
+crocus;Crocus;Printemps & bulbes;secondaire;volume (paramÃ©trique);tous;3;6;4;29;cup;grass
+sparaxis;Sparaxis;Printemps & bulbes;secondaire;volume (paramÃ©trique);tous;1;6;4;55;radial;grass
+ixia;Ixia;Printemps & bulbes;remplissage;tige portÃ©e;1;1;6;4;300;spike;none
+glaieul-nain;GlaÃ¯eul nain;Printemps & bulbes;secondaire;tige portÃ©e;1;1;6;4;202;spike;grass
+amaryllis;Amaryllis;Printemps & bulbes;focale;volume (paramÃ©trique);tous;3;6;4;149;star;none
+nerine;NÃ©rine;Printemps & bulbes;secondaire;volume (dessin dÃ©diÃ©);tous;1;6;4;297;custom/xNerine;none
+dahlia-assiette;Dahlia gÃ©ant 'assiette';Ã‰tÃ© & classiques;focale;volume (dessin dÃ©diÃ©);tous;3;6;4;369;custom/xDahlia;compound
+dahlia-decoratif;Dahlia dÃ©coratif;Ã‰tÃ© & classiques;focale;volume (dessin dÃ©diÃ©);tous;3;6;4;369;custom/xDahlia;compound
+dahlia-balle;Dahlia balle;Ã‰tÃ© & classiques;secondaire;volume (paramÃ©trique);tous;3;6;4;471;double;compound
+dahlia-pompon;Dahlia pompon;Ã‰tÃ© & classiques;secondaire;volume (paramÃ©trique);tous;3;6;4;391;double;compound
+dahlia-cactus;Dahlia cactus et semi-cactus;Ã‰tÃ© & classiques;focale;volume (paramÃ©trique);tous;3;6;4;381;double;compound
+dahlia-nenuphar;Dahlia nÃ©nuphar;Ã‰tÃ© & classiques;focale;volume (paramÃ©trique);tous;3;6;4;191;double;compound
+dahlia-collerette;Dahlia collerette;Ã‰tÃ© & classiques;secondaire;volume (paramÃ©trique);tous;1;6;4;100;radial;compound
+dahlia-simple;Dahlia simple;Ã‰tÃ© & classiques;secondaire;volume (paramÃ©trique);tous;1;6;4;72;radial;compound
+dahlia-anemone;Dahlia Ã  fleur d'anÃ©mone;Ã‰tÃ© & classiques;secondaire;volume (paramÃ©trique);tous;1;6;4;159;radial;compound
+dahlia-lacinie;Dahlia laciniÃ©;Ã‰tÃ© & classiques;focale;volume (paramÃ©trique);tous;3;6;4;271;double;compound
+cosmos;Cosmos;Ã‰tÃ© & classiques;secondaire;volume (dessin dÃ©diÃ©);tous;1;6;4;38;custom/cosmos;needle
+zinnia;Zinnia;Ã‰tÃ© & classiques;secondaire;volume (paramÃ©trique);tous;3;6;4;276;double;lanceolate
+scabieuse;Scabieuse;Ã‰tÃ© & classiques;secondaire;volume (dessin dÃ©diÃ©);tous;1;6;4;145;custom/xScab;lobed
+delphinium;Delphinium;Ã‰tÃ© & classiques;secondaire;tige portÃ©e;1;1;6;4;714;custom/xDelph;palmate
+pied-alouette-annuel;Pied-d'alouette annuel;Ã‰tÃ© & classiques;secondaire;tige portÃ©e;1;1;6;4;813;spike;needle
+digitale;Digitale;Ã‰tÃ© & classiques;secondaire;tige portÃ©e;1;1;6;4;615;spike;lanceolate
+lisianthus;Lisianthus;Ã‰tÃ© & classiques;secondaire;volume (paramÃ©trique);tous;3;6;4;131;double;ovate
+muflier;Muflier;Ã‰tÃ© & classiques;secondaire;tige portÃ©e;1;1;6;4;515;spike;lanceolate
+giroflee-matthiole;GiroflÃ©e;Ã‰tÃ© & classiques;secondaire;tige portÃ©e;1;1;6;4;1213;spike;lanceolate
+hortensia-boule;Hortensia boule;Ã‰tÃ© & classiques;focale;volume (dessin dÃ©diÃ©);tous;1;6;4;865;custom/hydrangea;ovate
+hortensia-lacecap;Hortensia Ã  fleurs plates;Ã‰tÃ© & classiques;focale;volume (paramÃ©trique);tous;1;6;4;200;globe;ovate
+hortensia-paniculata;Hortensia paniculÃ©;Ã‰tÃ© & classiques;focale;tige portÃ©e;1;1;5;4;1031;spike;ovate
+hortensia-arborescens;Hortensia arborescent;Ã‰tÃ© & classiques;focale;volume (paramÃ©trique);tous;1;3;3;2402;globe;ovate
+astilbe;Astilbe;Ã‰tÃ© & classiques;texture;tige portÃ©e;1;1;6;4;71;spike;compound
+campanule;Campanule;Ã‰tÃ© & classiques;secondaire;tige portÃ©e;1;1;6;4;210;spike;lanceolate
+phlox;Phlox;Ã‰tÃ© & classiques;secondaire;tige portÃ©e;1;1;6;4;852;spray;lanceolate
+gerbera;Gerbera;Ã‰tÃ© & classiques;focale;volume (paramÃ©trique);tous;1;6;4;344;radial;none
+germini;Germini;Ã‰tÃ© & classiques;secondaire;volume (paramÃ©trique);tous;1;6;4;164;radial;none
+tournesol;Tournesol;Ã‰tÃ© & classiques;focale;volume (dessin dÃ©diÃ©);tous;1;6;4;156;custom/sunflower;cordate
+chrysantheme-disbud;ChrysanthÃ¨me Ã  grosse fleur;Ã‰tÃ© & classiques;focale;volume (paramÃ©trique);tous;3;6;4;471;double;lobed
+chrysantheme-araignee;ChrysanthÃ¨me araignÃ©e et japonais;Ã‰tÃ© & classiques;focale;volume (dessin dÃ©diÃ©);tous;1;6;4;271;custom/xMum;lobed
+chrysantheme-santini-pompon;ChrysanthÃ¨me santini;Ã‰tÃ© & classiques;remplissage;tige portÃ©e;1;1;6;4;1946;spray;lobed
+chrysantheme-marguerite-spray;ChrysanthÃ¨me spray marguerite et d;Ã‰tÃ© & classiques;secondaire;tige portÃ©e;1;1;6;4;824;spray;lobed
+oeillet-standard;Å’illet standard;Ã‰tÃ© & classiques;secondaire;volume (dessin dÃ©diÃ©);tous;3;6;4;215;custom/xCarn;grass
+oeillet-spray;Å’illet Ã  petites fleurs;Ã‰tÃ© & classiques;remplissage;tige portÃ©e;1;1;6;4;1021;spray;grass
+oeillet-de-poete-dianthus;Å’illet de poÃ¨te et dianthus de fle;Ã‰tÃ© & classiques;secondaire;volume (paramÃ©trique);tous;1;6;4;802;globe;lanceolate
+reine-marguerite;Reine-marguerite;Ã‰tÃ© & classiques;secondaire;volume (paramÃ©trique);tous;1;6;4;464;radial;ovate
+aster-vivace-symphyotrichum;Aster vivace de fleur coupÃ©e;Ã‰tÃ© & classiques;remplissage;tige portÃ©e;1;1;6;4;6229;spray;lanceolate
+agapanthe;Agapanthe;Ã‰tÃ© & classiques;focale;volume (paramÃ©trique);tous;1;6;4;1501;globe;none
+glaieul;GlaÃ¯eul;Ã‰tÃ© & classiques;secondaire;tige portÃ©e;1;1;6;4;348;spike;grass
+arum-calla;Arum;Ã‰tÃ© & classiques;focale;Ã  plat (dessin dÃ©diÃ©);4;3;6;4;23;custom/xCalla;none
+lis-oriental;Lis oriental;Ã‰tÃ© & classiques;focale;volume (dessin dÃ©diÃ©);tous;3;6;4;39;custom/xLily;whorl
+lis-ot-orienpet;Lis OT;Ã‰tÃ© & classiques;focale;volume (paramÃ©trique);tous;3;6;4;112;star;whorl
+lis-asiatique-la;Lis asiatique et hybrides LA;Ã‰tÃ© & classiques;focale;volume (paramÃ©trique);tous;3;6;4;293;star;whorl
+lis-longiflorum-trompette;Lis longiflorum et lis trompette;Ã‰tÃ© & classiques;focale;volume (paramÃ©trique);tous;3;3;3;112;star;whorl
+alstroemere;AlstrÅ“mÃ¨re;Ã‰tÃ© & classiques;secondaire;volume (paramÃ©trique);tous;3;6;4;433;star;lanceolate
+amaryllis-hippeastrum;Amaryllis;Ã‰tÃ© & classiques;focale;volume (paramÃ©trique);tous;3;6;4;149;star;none
+tubereuse;TubÃ©reuse;Ã‰tÃ© & classiques;secondaire;tige portÃ©e;1;1;3;3;493;spike;none
+rudbeckia;Rudbeckia;Ã‰tÃ© & classiques;secondaire;volume (paramÃ©trique);tous;1;6;4;100;radial;lanceolate
+echinacea;Ã‰chinacÃ©e;Ã‰tÃ© & classiques;secondaire;volume (paramÃ©trique);tous;1;6;4;104;radial;lanceolate
+nigelle;Nigelle de Damas;Ã‰tÃ© & classiques;secondaire;volume (paramÃ©trique);tous;1;6;4;136;radial;needle
+clematite;ClÃ©matite;Ã‰tÃ© & classiques;secondaire;volume (paramÃ©trique);tous;3;6;4;49;star;compound
+achillee;AchillÃ©e;Ã‰tÃ© & classiques;remplissage;volume (paramÃ©trique);tous;1;6;4;3002;globe;lobed
+trachelium;TrachÃ©lium;Ã‰tÃ© & classiques;remplissage;volume (paramÃ©trique);tous;1;6;4;3002;globe;ovate
+bleuet;Bleuet;Ã‰tÃ© & classiques;remplissage;volume (paramÃ©trique);tous;1;6;4;159;radial;lanceolate
+godetia-clarkia;GodÃ©tia et clarkia;Ã‰tÃ© & classiques;secondaire;tige portÃ©e;1;1;6;4;139;spike;lanceolate
+tagete-oeillet-d-inde;TagÃ¨te;Ã‰tÃ© & classiques;secondaire;volume (paramÃ©trique);tous;3;6;4;431;double;compound
+souci-calendula;Souci;Ã‰tÃ© & classiques;secondaire;volume (paramÃ©trique);tous;1;6;4;439;radial;lanceolate
+immortelle-xerochrysum;Immortelle Ã  bractÃ©es;Ã‰tÃ© & classiques;secondaire;volume (paramÃ©trique);tous;3;6;4;336;double;lanceolate
+sauge-salvia;Sauge ornementale;Ã‰tÃ© & classiques;secondaire;tige portÃ©e;1;1;6;4;253;spike;lanceolate
+bouvardia;Bouvardia;Ã‰tÃ© & classiques;secondaire;tige portÃ©e;1;1;6;4;521;spray;ovate
+liatris;Liatris;Ã‰tÃ© & classiques;secondaire;tige portÃ©e;1;1;4;4;67;spike;grass
+aconit;Aconit;Ã‰tÃ© & classiques;secondaire;tige portÃ©e;1;1;3;3;513;spike;palmate
+phalaenopsis;Phalaenopsis;OrchidÃ©es;focale;volume (dessin dÃ©diÃ©);tous;1;6;4;106;custom/xPhalCluster;none
+cymbidium-grandes-fleurs;Cymbidium Ã  grandes fleurs;OrchidÃ©es;focale;volume (dessin dÃ©diÃ©);tous;1;6;4;247;custom/xCymbCluster;none
+cymbidium-mini;Cymbidium mini;OrchidÃ©es;secondaire;volume (paramÃ©trique);tous;1;6;4;247;orchid;none
+dendrobium-coupe;Dendrobium coupÃ©;OrchidÃ©es;secondaire;volume (paramÃ©trique);tous;1;6;4;269;orchid;none
+dendrobium-nobile;Dendrobium nobile et dendrobiums e;OrchidÃ©es;secondaire;volume (paramÃ©trique);tous;1;6;4;234;orchid;lanceolate
+vanda;Vanda;OrchidÃ©es;focale;volume (paramÃ©trique);tous;1;6;4;269;orchid;none
+ascocenda;Ascocenda et Ascocentrum;OrchidÃ©es;secondaire;volume (paramÃ©trique);tous;1;6;4;234;orchid;none
+mokara;Mokara;OrchidÃ©es;secondaire;volume (paramÃ©trique);tous;1;6;4;234;orchid;none
+aranda;Aranda;OrchidÃ©es;secondaire;volume (paramÃ©trique);tous;1;6;4;234;orchid;none
+arachnis-aranthera;Arachnis;OrchidÃ©es;texture;volume (paramÃ©trique);tous;1;5;4;234;orchid;none
+oncidium;Oncidium;OrchidÃ©es;remplissage;tige portÃ©e;1;1;6;4;104;custom/oncidium;none
+cambria;Cambria et hybrides intergÃ©nÃ©rique;OrchidÃ©es;secondaire;Ã  plat (paramÃ©trique);1;1;6;4;104;orchid;none
+odontoglossum;Odontoglossum;OrchidÃ©es;secondaire;Ã  plat (paramÃ©trique);1;1;6;4;104;orchid;none
+brassia;Brassia;OrchidÃ©es;texture;volume (paramÃ©trique);tous;1;4;4;234;orchid;none
+miltoniopsis;Miltoniopsis et Miltonia;OrchidÃ©es;focale;volume (paramÃ©trique);tous;1;5;4;155;orchid;none
+zygopetalum;Zygopetalum;OrchidÃ©es;focale;volume (paramÃ©trique);tous;1;5;4;247;orchid;none
+paphiopedilum;Paphiopedilum;OrchidÃ©es;focale;Ã  plat (dessin dÃ©diÃ©);1;1;6;4;62;custom/paphio;none
+phragmipedium;Phragmipedium;OrchidÃ©es;focale;Ã  plat (paramÃ©trique);1;1;6;4;62;orchid;none
+cattleya;Cattleya et hybrides;OrchidÃ©es;focale;Ã  plat (dessin dÃ©diÃ©);1;1;6;4;60;custom/cattleya;none
+epidendrum;Epidendrum;OrchidÃ©es;remplissage;volume (paramÃ©trique);tous;1;6;4;4;globe;none
+masdevallia;Masdevallia;OrchidÃ©es;texture;volume (paramÃ©trique);tous;1;6;4;41;orchid;none
+disa;Disa;OrchidÃ©es;focale;volume (paramÃ©trique);tous;1;6;4;79;orchid;none
+coelogyne;Coelogyne;OrchidÃ©es;secondaire;volume (paramÃ©trique);tous;1;3;3;234;orchid;none
+lycaste;Lycaste;OrchidÃ©es;focale;volume (paramÃ©trique);tous;1;6;4;247;orchid;none
+ludisia;Ludisia;OrchidÃ©es;feuillage;tige portÃ©e;1;1;3;3;62;foliage;ovate
+cypripedium;Cypripedium;OrchidÃ©es;focale;Ã  plat (paramÃ©trique);1;1;5;4;62;orchid;ovate
+rhynchostylis;Rhynchostylis;OrchidÃ©es;secondaire;tige portÃ©e;1;1;6;4;1010;spike;none
+anthurium-andraeanum;Anthurium;Exotiques;focale;volume (dessin dÃ©diÃ©);tous;1;6;4;19;custom/xAnth;none
+anthurium-obake;Anthurium obake;Exotiques;focale;volume (paramÃ©trique);tous;1;5;4;19;spathe;none
+anthurium-tulipe;Anthurium tulipe;Exotiques;secondaire;volume (paramÃ©trique);tous;1;5;4;6;spathe;none
+heliconia-rostrata;HÃ©liconia pendant;Exotiques;focale;Ã  plat (paramÃ©trique);1;1;1;1;44;exotic;none
+heliconia-wagneriana;HÃ©liconia wagneriana;Exotiques;focale;Ã  plat (paramÃ©trique);1;1;4;4;44;exotic;none
+heliconia-bihai;HÃ©liconia bihai;Exotiques;focale;Ã  plat (paramÃ©trique);1;1;5;4;44;exotic;none
+heliconia-psittacorum;HÃ©liconia perroquet;Exotiques;secondaire;Ã  plat (paramÃ©trique);1;1;5;4;44;exotic;lanceolate
+heliconia-caribaea;HÃ©liconia caribaea;Exotiques;focale;Ã  plat (paramÃ©trique);1;1;5;4;44;exotic;none
+heliconia-stricta;HÃ©liconia stricta;Exotiques;secondaire;Ã  plat (paramÃ©trique);1;1;5;4;44;exotic;none
+heliconia-chartacea;HÃ©liconia chartacea Â« Sexy Pink Â»;Exotiques;focale;Ã  plat (paramÃ©trique);1;1;2;2;44;exotic;none
+heliconia-orthotricha;HÃ©liconia orthotricha;Exotiques;focale;Ã  plat (paramÃ©trique);1;1;3;3;44;exotic;none
+heliconia-velues;HÃ©liconias pendants velus;Exotiques;focale;Ã  plat (paramÃ©trique);1;1;3;3;44;exotic;none
+calathea-crotalifera;Calathea crotalifera;Exotiques;secondaire;Ã  plat (paramÃ©trique);1;1;3;3;44;exotic;none
+musa-fleur;Fleur de bananier ornemental;Exotiques;focale;volume (paramÃ©trique);tous;1;4;4;121;exotic;none
+strelitzia-reginae;Oiseau de paradis;Exotiques;focale;Ã  plat (dessin dÃ©diÃ©);1;1;2;2;24;custom/strelitzia;none
+strelitzia-nicolai;Strelitzia blanc gÃ©ant;Exotiques;focale;Ã  plat (paramÃ©trique);1;1;1;1;24;exotic;none
+alpinia-purpurata;Alpinia;Exotiques;focale;volume (paramÃ©trique);tous;1;3;3;121;exotic;lanceolate
+etlingera-elatior;Rose de porcelaine;Exotiques;focale;volume (paramÃ©trique);tous;1;6;4;121;exotic;none
+zingiber;Gingembre ruche et gingembre shamp;Exotiques;focale;volume (paramÃ©trique);tous;1;5;4;121;exotic;none
+costus;Costus;Exotiques;secondaire;volume (paramÃ©trique);tous;1;5;4;121;exotic;ovate
+tapeinochilos-ananassae;Gingembre de cire;Exotiques;focale;volume (paramÃ©trique);tous;1;2;2;121;exotic;none
+curcuma;Curcuma;Exotiques;secondaire;volume (paramÃ©trique);tous;1;5;4;121;exotic;none
+ananas-ornemental;Ananas ornemental sur tige;Exotiques;texture;volume (paramÃ©trique);tous;1;3;3;121;exotic;none
+bromeliacees;BromÃ©liacÃ©es Ã  fleurs;Exotiques;focale;volume (paramÃ©trique);tous;1;6;4;121;exotic;none
+protea-cynaroides;ProtÃ©e royale;Exotiques;focale;volume (paramÃ©trique);tous;1;6;4;136;protea;ovate
+protea-neriifolia;ProtÃ©e Ã  feuilles de laurier-rose;Exotiques;focale;volume (paramÃ©trique);tous;1;5;4;136;protea;lanceolate
+protea-repens;ProtÃ©e sucriÃ¨re;Exotiques;secondaire;volume (paramÃ©trique);tous;1;5;4;136;protea;needle
+protea-magnifica;ProtÃ©e reine;Exotiques;focale;volume (paramÃ©trique);tous;1;4;4;136;protea;ovate
+protea-eximia;ProtÃ©e duchesse;Exotiques;focale;volume (paramÃ©trique);tous;1;3;3;136;protea;cordate
+protea-hybrides;ProtÃ©es hybrides et petites protÃ©e;Exotiques;focale;volume (paramÃ©trique);tous;1;6;4;136;protea;ovate
+leucospermum;Leucospermum;Exotiques;focale;volume (paramÃ©trique);tous;1;6;4;145;protea;ovate
+leucadendron;Leucadendron;Exotiques;secondaire;volume (paramÃ©trique);tous;1;6;4;76;protea;lanceolate
+serruria;Serruria;Exotiques;secondaire;volume (paramÃ©trique);tous;1;4;4;66;protea;needle
+mimetes;Mimetes;Exotiques;focale;volume (paramÃ©trique);tous;1;5;4;76;protea;ovate
+aulax;Aulax;Exotiques;texture;tige portÃ©e;1;1;4;4;132;spray;needle
+banksia;Banksia;Exotiques;focale;volume (paramÃ©trique);tous;1;6;4;6;protea;lanceolate
+telopea;Waratah;Exotiques;focale;volume (paramÃ©trique);tous;1;6;4;136;protea;lanceolate
+anigozanthos;Patte de kangourou;Exotiques;secondaire;volume (paramÃ©trique);tous;1;6;4;121;exotic;none
+isopogon;Isopogon;Exotiques;secondaire;volume (paramÃ©trique);tous;1;4;4;4;globe;needle
+grevillea;Grevillea;Exotiques;secondaire;volume (paramÃ©trique);tous;1;6;4;6;protea;lobed
+hakea;Hakea;Exotiques;secondaire;volume (paramÃ©trique);tous;1;5;4;4;globe;lanceolate
+gloriosa;Gloriosa;Exotiques;secondaire;volume (dessin dÃ©diÃ©);tous;1;4;4;38;custom/xGlor;lanceolate
+tillandsia;Tillandsia;Exotiques;texture;tige portÃ©e;1;1;5;4;73;foliage;none
+nepenthes;NÃ©penthÃ¨s;Exotiques;texture;tige portÃ©e;1;1;5;4;50;berries;lanceolate
+nelumbo-nucifera;Fleur de lotus;Exotiques;focale;volume (paramÃ©trique);tous;3;5;4;41;cup;none
+nelumbo-capsule;Capsule de lotus;Exotiques;texture;Ã  plat (paramÃ©trique);1;1;6;4;17;exotic;none
+passiflora;Passiflore;Exotiques;secondaire;tige portÃ©e;1;1;5;4;240;drape;palmate
+hibiscus;Hibiscus tropical;Exotiques;focale;volume (paramÃ©trique);tous;3;6;4;23;star;ovate
+plumeria;Frangipanier;Exotiques;secondaire;volume (paramÃ©trique);tous;3;5;4;106;star;lanceolate
+bougainvillea;Bougainvillier;Exotiques;remplissage;tige portÃ©e;1;1;6;4;401;spray;ovate
+gypsophile;Gypsophile;Remplissage & textures;remplissage;tige portÃ©e;1;1;6;4;1488;spray;lanceolate
+waxflower;Fleur de cire;Remplissage & textures;remplissage;tige portÃ©e;1;1;6;4;1169;spray;needle
+statice-sinuata;Statice;Remplissage & textures;remplissage;tige portÃ©e;1;1;6;4;1167;spray;none
+limonium-latifolium;Lavande de mer;Remplissage & textures;remplissage;tige portÃ©e;1;1;5;4;338;spray;none
+limonium-hybride;Limonium hybride;Remplissage & textures;remplissage;tige portÃ©e;1;1;6;4;1171;spray;none
+statice-tatarica;Statice tatarica;Remplissage & textures;remplissage;tige portÃ©e;1;1;4;4;316;spray;none
+statice-queue-de-rat;Statice queue-de-rat;Remplissage & textures;texture;tige portÃ©e;1;1;3;3;71;spike;none
+astrantia;Astrance;Remplissage & textures;secondaire;volume (paramÃ©trique);tous;1;5;4;1066;globe;palmate
+solidago;Solidage;Remplissage & textures;remplissage;tige portÃ©e;1;1;5;4;336;spray;lanceolate
+veronique;VÃ©ronique;Remplissage & textures;secondaire;tige portÃ©e;1;1;6;4;1046;spike;lanceolate
+bupleurum;BuplÃ¨vre;Remplissage & textures;remplissage;tige portÃ©e;1;1;3;3;537;spray;ovate
+alchemille;AlchÃ©mille;Remplissage & textures;remplissage;tige portÃ©e;1;1;2;2;949;spray;palmate
+ammi;Ammi;Remplissage & textures;remplissage;volume (paramÃ©trique);tous;1;4;4;301;globe;compound
+daucus-carota;Carotte sauvage ornementale;Remplissage & textures;remplissage;volume (paramÃ©trique);tous;1;5;4;341;globe;compound
+aneth;Aneth;Remplissage & textures;remplissage;volume (paramÃ©trique);tous;1;3;3;301;globe;needle
+orlaya;Orlaya;Remplissage & textures;remplissage;volume (paramÃ©trique);tous;1;2;2;946;globe;compound
+didiscus;Didiscus bleu;Remplissage & textures;remplissage;volume (paramÃ©trique);tous;1;3;3;3074;globe;lobed
+eryngium;Panicaut;Remplissage & textures;texture;volume (paramÃ©trique);tous;1;5;4;4;globe;lobed
+echinops;Ã‰chinops;Remplissage & textures;texture;volume (paramÃ©trique);tous;1;5;4;4;globe;lobed
+craspedia;Craspedia;Remplissage & textures;secondaire;volume (paramÃ©trique);tous;1;4;4;4;globe;none
+nigelle-capsules;Nigelle;Remplissage & textures;texture;tige portÃ©e;1;1;6;4;41;berries;needle
+pavot-capsules;Pavot;Remplissage & textures;texture;tige portÃ©e;1;1;6;4;4;berries;none
+scabieuse-etoilee-capsules;Scabieuse Ã©toilÃ©e;Remplissage & textures;texture;volume (paramÃ©trique);tous;1;4;4;4;globe;none
+lunaire;Monnaie-du-pape;Remplissage & textures;texture;tige portÃ©e;1;1;5;4;142;foliage;none
+amour-en-cage;Amour-en-cage;Remplissage & textures;texture;tige portÃ©e;1;1;4;4;56;berries;ovate
+coton;Coton;Remplissage & textures;texture;Ã  plat (paramÃ©trique);1;1;2;2;29;exotic;none
+asclepias;AsclÃ©piade;Remplissage & textures;secondaire;volume (paramÃ©trique);tous;1;6;4;602;globe;lanceolate
+gomphocarpus;Arbre Ã  ballons;Remplissage & textures;texture;tige portÃ©e;1;1;2;2;68;berries;lanceolate
+sedum;Orpin d'automne;Remplissage & textures;texture;volume (paramÃ©trique);tous;1;6;4;3002;globe;ovate
+carthame;Carthame des teinturiers;Remplissage & textures;texture;volume (paramÃ©trique);tous;1;5;4;1249;globe;lanceolate
+celosie-plumeuse;CÃ©losie plumeuse;Remplissage & textures;texture;tige portÃ©e;1;1;6;4;1287;spike;lanceolate
+celosie-crete-de-coq;CÃ©losie crÃªte-de-coq;Remplissage & textures;texture;volume (paramÃ©trique);tous;3;6;4;471;double;lanceolate
+celosie-a-epis;CÃ©losie Ã  Ã©pis;Remplissage & textures;texture;tige portÃ©e;1;1;6;4;1207;spike;lanceolate
+amarante-retombante;Amarante queue-de-renard;Remplissage & textures;texture;tige portÃ©e;1;1;6;4;208;custom/amaranthPlant;ovate
+amarante-dressee;Amarante dressÃ©e;Remplissage & textures;texture;tige portÃ©e;1;1;6;4;71;spike;ovate
+hypericum;Millepertuis;Remplissage & textures;baie;tige portÃ©e;1;1;6;4;100;berries;ovate
+symphorine;Symphorine;Remplissage & textures;baie;tige portÃ©e;1;1;5;4;100;berries;ovate
+gomphrena;Amarantine;Remplissage & textures;remplissage;volume (paramÃ©trique);tous;1;6;4;4;globe;lanceolate
+matricaire;Matricaire;Remplissage & textures;remplissage;tige portÃ©e;1;1;4;4;2294;spray;lobed
+tanaisie;Tanaisie commune;Remplissage & textures;remplissage;volume (paramÃ©trique);tous;1;2;2;42;globe;compound
+camomille;Camomille;Remplissage & textures;remplissage;tige portÃ©e;1;1;1;1;2294;spray;needle
+agerate;AgÃ©rate du Mexique;Remplissage & textures;remplissage;tige portÃ©e;1;1;6;4;70;spray;ovate
+lavande;Lavande et lavandin;Remplissage & textures;texture;tige portÃ©e;1;1;6;4;807;spike;none
+mimosa;Mimosa;Remplissage & textures;secondaire;tige portÃ©e;1;1;2;2;316;spray;compound
+setaria;SÃ©taire d'Italie;Remplissage & textures;graminee;tige portÃ©e;1;1;6;4;46;line;grass
+panicum;Panic;Remplissage & textures;graminee;tige portÃ©e;1;1;6;4;336;spray;grass
+pennisetum;Pennisetum;Remplissage & textures;graminee;tige portÃ©e;1;1;6;4;72;line;grass
+lagurus;Lagure;Remplissage & textures;graminee;tige portÃ©e;1;1;6;4;72;line;grass
+phalaris;Alpiste;Remplissage & textures;graminee;tige portÃ©e;1;1;6;4;46;line;none
+briza;Grande brize;Remplissage & textures;graminee;tige portÃ©e;1;1;6;4;262;spray;grass
+miscanthus;Eulalie;Remplissage & textures;graminee;tige portÃ©e;1;1;6;4;72;line;grass
+pampa;Herbe de la pampa;Remplissage & textures;graminee;tige portÃ©e;1;1;6;4;72;line;none
+stipa;Stipe pennÃ©e;Remplissage & textures;graminee;tige portÃ©e;1;1;6;4;72;line;grass
+ble;BlÃ©;Remplissage & textures;graminee;tige portÃ©e;1;1;6;4;46;line;grass
+avoine;Avoine;Remplissage & textures;graminee;tige portÃ©e;1;1;6;4;390;spray;grass
+orge;Orge;Remplissage & textures;graminee;tige portÃ©e;1;1;3;3;46;line;grass
+chasmanthium;Chasmanthium Ã  larges feuilles;Remplissage & textures;graminee;tige portÃ©e;1;1;4;4;326;spray;lanceolate
+sorgho-a-balai;Sorgho Ã  balai;Remplissage & textures;graminee;tige portÃ©e;1;1;6;4;338;spray;none
+typha;Massette;Remplissage & textures;texture;tige portÃ©e;1;1;5;4;46;line;grass
+ozothamnus;Ozothamnus;Remplissage & textures;remplissage;tige portÃ©e;1;1;6;4;334;spray;needle
+brunia;Brunia;Remplissage & textures;texture;volume (paramÃ©trique);tous;1;6;4;36;protea;needle
+berzelia;Berzelia;Remplissage & textures;texture;volume (paramÃ©trique);tous;1;6;4;36;protea;needle
+phylica;Phylica;Remplissage & textures;texture;volume (paramÃ©trique);tous;1;3;3;1601;globe;needle
+ixodia;Ixodia;Remplissage & textures;remplissage;tige portÃ©e;1;1;2;2;2269;spray;lanceolate
+immortelle-helichrysum;Immortelle;Remplissage & textures;remplissage;tige portÃ©e;1;1;3;3;132;spray;needle
+xeranthemum;XÃ©ranthÃ¨me;Remplissage & textures;remplissage;volume (paramÃ©trique);tous;3;5;4;260;double;lanceolate
+ammobium;Ammobium;Remplissage & textures;remplissage;tige portÃ©e;1;1;1;1;1724;spray;none
+acroclinium;Acroclinium;Remplissage & textures;remplissage;volume (paramÃ©trique);tous;1;4;4;269;radial;grass
+stirlingia;Stirlingia;Remplissage & textures;texture;tige portÃ©e;1;1;6;4;74;spray;none
+glixia;Glixia;Remplissage & textures;remplissage;tige portÃ©e;1;1;6;4;1833;spray;none
+palm-spear-seche;Lance de palmier sÃ©chÃ©e;Remplissage & textures;texture;tige portÃ©e;1;1;6;4;10;foliage;none
+sun-palm-seche;Palmier soleil sÃ©chÃ©;Remplissage & textures;texture;tige portÃ©e;1;1;6;4;27;foliage;none
+ruscus-seche-teint;Fragon;Remplissage & textures;feuillage;tige portÃ©e;1;1;6;4;254;foliage;lanceolate
+hortensia-seche-stabilise;Hortensia sÃ©chÃ© ou stabilisÃ©;Remplissage & textures;remplissage;volume (dessin dÃ©diÃ©);tous;1;6;4;865;custom/hydrangea;none
+eucalyptus-stabilise;Eucalyptus stabilisÃ©;Remplissage & textures;feuillage;tige portÃ©e;1;1;6;4;254;foliage;ovate
+lichen-stabilise;Lichen stabilisÃ©;Remplissage & textures;texture;volume (paramÃ©trique);tous;1;6;4;2402;globe;none
+broom-bloom;Broom bloom;Remplissage & textures;remplissage;tige portÃ©e;1;1;6;4;318;spray;none
+feuille-strelitzia-sechee;Feuille de strelitzia sÃ©chÃ©e;Remplissage & textures;texture;tige portÃ©e;1;1;6;4;15;foliage;none
+stoebe;Stoebe stabilisÃ©;Remplissage & textures;texture;tige portÃ©e;1;1;6;4;773;foliage;needle
+eucalyptus-cinerea;Eucalyptus cinerea;Feuillages;feuillage;tige portÃ©e;1;1;3;3;398;foliage;ovate
+eucalyptus-pulverulenta-baby-blue;Eucalyptus 'Baby Blue';Feuillages;feuillage;tige portÃ©e;1;1;3;3;433;foliage;cordate
+eucalyptus-gunnii;Eucalyptus gunnii;Feuillages;feuillage;tige portÃ©e;1;1;3;3;494;foliage;cordate
+eucalyptus-parvifolia;Eucalyptus parvifolia;Feuillages;feuillage;tige portÃ©e;1;1;3;3;254;foliage;lanceolate
+eucalyptus-nicholii;Eucalyptus nicholii;Feuillages;feuillage;tige portÃ©e;1;1;3;3;254;foliage;lanceolate
+eucalyptus-populus;Eucalyptus populus;Feuillages;feuillage;tige portÃ©e;1;1;6;4;144;berries;lanceolate
+eucalyptus-stuartiana;Eucalyptus stuartiana;Feuillages;feuillage;tige portÃ©e;1;1;2;2;254;foliage;ovate
+eucalyptus-polyanthemos;Eucalyptus polyanthemos;Feuillages;feuillage;tige portÃ©e;1;1;2;2;158;foliage;ovate
+eucalyptus-kruseana;Eucalyptus kruseana;Feuillages;feuillage;tige portÃ©e;1;1;2;2;433;foliage;cordate
+danae-racemosa-ruscus-italien;Ruscus italien;Feuillages;feuillage;tige portÃ©e;1;1;3;3;254;foliage;lanceolate
+ruscus-hypophyllum-israelien;Ruscus israÃ©lien;Feuillages;feuillage;tige portÃ©e;1;1;2;2;142;foliage;ovate
+ruscus-aculeatus-petit-houx;Petit houx;Feuillages;feuillage;tige portÃ©e;1;1;2;2;254;foliage;ovate
+pittosporum-tenuifolium;Pittosporum tenuifolium;Feuillages;feuillage;tige portÃ©e;1;1;5;4;254;foliage;ovate
+pittosporum-tobira;Pittosporum tobira;Feuillages;feuillage;tige portÃ©e;1;1;2;2;91;foliage;ovate
+gaultheria-shallon-salal;Salal;Feuillages;feuillage;tige portÃ©e;1;1;3;3;110;foliage;ovate
+vaccinium-ovatum-huckleberry;Huckleberry;Feuillages;feuillage;tige portÃ©e;1;1;1;1;254;foliage;ovate
+rumohra-adiantiformis-leatherleaf;FougÃ¨re cuir;Feuillages;feuillage;tige portÃ©e;1;1;2;2;51;foliage;none
+asparagus-setaceus-plumosus;Asparagus plumosus;Feuillages;feuillage;tige portÃ©e;1;1;2;2;51;foliage;needle
+asparagus-virgatus-tree-fern;Asparagus virgatus;Feuillages;feuillage;tige portÃ©e;1;1;2;2;2189;foliage;needle
+asparagus-macowanii-ming-fern;Asparagus myriocladus;Feuillages;feuillage;tige portÃ©e;1;1;2;2;1009;foliage;needle
+asparagus-densiflorus-sprengeri;Asparagus sprengeri;Feuillages;feuillage;tige portÃ©e;1;1;2;2;80;drape;needle
+asparagus-densiflorus-myersii;Asparagus meyeri;Feuillages;feuillage;tige portÃ©e;1;1;2;2;2407;spike;needle
+asparagus-asparagoides-smilax;Smilax;Feuillages;feuillage;tige portÃ©e;1;1;2;2;80;drape;ovate
+asparagus-falcatus;Asparagus falcatus;Feuillages;feuillage;tige portÃ©e;1;1;2;2;254;foliage;lanceolate
+smilax-smallii-southern-smilax;Smilax du Sud;Feuillages;feuillage;tige portÃ©e;1;1;2;2;80;drape;lanceolate
+monstera-deliciosa;Monstera;Feuillages;feuillage;tige portÃ©e;1;1;3;3;15;foliage;none
+philodendron-bipinnatifidum-selloum;Philodendron selloum;Feuillages;feuillage;tige portÃ©e;1;1;2;2;15;foliage;none
+philodendron-xanadu;Philodendron Xanadu;Feuillages;feuillage;tige portÃ©e;1;1;2;2;15;foliage;none
+philodendron-hybrides;Philodendron;Feuillages;feuillage;tige portÃ©e;1;1;3;3;10;foliage;none
+aspidistra-elatior;Aspidistra;Feuillages;feuillage;tige portÃ©e;1;1;3;3;10;foliage;none
+dypsis-lutescens-areca;Palme areca;Feuillages;feuillage;tige portÃ©e;1;1;2;2;51;foliage;none
+chamaedorea-chico;Chamaedorea;Feuillages;feuillage;tige portÃ©e;1;1;2;2;51;foliage;none
+phoenix-roebelenii;Palme roebelenii;Feuillages;feuillage;tige portÃ©e;1;1;2;2;51;foliage;none
+licuala-grandis;Licuala;Feuillages;feuillage;tige portÃ©e;1;1;2;2;27;foliage;none
+livistona-rotundifolia;Palme livistona;Feuillages;feuillage;tige portÃ©e;1;1;2;2;27;foliage;none
+cycas-revoluta;Cycas;Feuillages;feuillage;tige portÃ©e;1;1;2;2;51;foliage;none
+rhapis-excelsa;Rhapis;Feuillages;feuillage;tige portÃ©e;1;1;1;1;45;foliage;none
+caryota-mitis;Palme queue de poisson;Feuillages;feuillage;tige portÃ©e;1;1;2;2;431;foliage;palmate
+serenoa-repens-palmetto;Palme Ã©ventail;Feuillages;feuillage;tige portÃ©e;1;1;3;3;27;foliage;none
+bismarckia-nobilis;Palme bismarckia;Feuillages;feuillage;tige portÃ©e;1;1;2;2;27;foliage;none
+cordyline-fruticosa-ti;Feuilles de ti;Feuillages;feuillage;tige portÃ©e;1;1;6;4;10;foliage;none
+dracaena-reflexa-song-of-india;Dracaena Â« Song of India Â»;Feuillages;feuillage;tige portÃ©e;1;1;3;3;91;foliage;lanceolate
+dracaena-marginata;Dracaena marginata;Feuillages;feuillage;tige portÃ©e;1;1;3;3;82;foliage;grass
+dracaena-fragrans;Dracaena fragrans;Feuillages;feuillage;tige portÃ©e;1;1;3;3;82;foliage;grass
+dracaena-sanderiana-lucky-bamboo;Bambou de la chance;Feuillages;texture;tige portÃ©e;1;1;3;3;61;foliage;none
+dracaena-surculosa;Dracaena surculosa;Feuillages;feuillage;tige portÃ©e;1;1;3;3;420;foliage;ovate
+codiaeum-variegatum-croton;Croton;Feuillages;feuillage;tige portÃ©e;1;1;5;4;91;foliage;ovate
+alocasia;Alocasia;Feuillages;feuillage;tige portÃ©e;1;1;3;3;10;foliage;none
+goeppertia-calathea;Calathea;Feuillages;feuillage;tige portÃ©e;1;1;4;4;11;foliage;none
+anthurium-feuilles;Feuilles d'anthurium;Feuillages;feuillage;tige portÃ©e;1;1;2;2;10;foliage;none
+musa-feuille-bananier;Feuille de bananier;Feuillages;feuillage;tige portÃ©e;1;1;3;3;15;foliage;none
+strelitzia-feuilles;Feuilles de strelitzia;Feuillages;feuillage;tige portÃ©e;1;1;3;3;10;foliage;none
+pandanus;Pandanus;Feuillages;feuillage;tige portÃ©e;1;1;3;3;9;foliage;none
+alpinia-zerumbet-variegata;Feuilles de gingembre panachÃ©;Feuillages;feuillage;tige portÃ©e;1;1;2;2;87;foliage;lanceolate
+fatsia-japonica-aralia;Aralia;Feuillages;feuillage;tige portÃ©e;1;1;3;3;45;foliage;none
+nephrolepis-exaltata-boston;FougÃ¨re de Boston;Feuillages;feuillage;tige portÃ©e;1;1;2;2;51;foliage;none
+polystichum-munitum-sword-fern;FougÃ¨re Ã©pÃ©e de l'Ouest;Feuillages;feuillage;tige portÃ©e;1;1;2;2;51;foliage;none
+adiantum-capillaire;Capillaire;Feuillages;feuillage;tige portÃ©e;1;1;2;2;51;foliage;none
+sticherus-umbrella-fern;FougÃ¨re parapluie;Feuillages;feuillage;tige portÃ©e;1;1;2;2;1301;foliage;none
+dicranopteris-uluhe;FougÃ¨re uluhe;Feuillages;texture;tige portÃ©e;1;1;3;3;5;line;none
+thelypteris-kunthii-helecho;Helecho;Feuillages;feuillage;tige portÃ©e;1;1;2;2;51;foliage;none
+cyrtomium-falcatum-houx;FougÃ¨re houx;Feuillages;feuillage;tige portÃ©e;1;1;2;2;51;foliage;none
+phlebodium-aureum-blue-star;FougÃ¨re bleue;Feuillages;feuillage;tige portÃ©e;1;1;3;3;51;foliage;none
+woodwardia-fimbriata;FougÃ¨re chaÃ®ne gÃ©ante;Feuillages;feuillage;tige portÃ©e;1;1;2;2;51;foliage;none
+asplenium-nidus;FougÃ¨re nid d'oiseau;Feuillages;feuillage;tige portÃ©e;1;1;2;2;10;foliage;none
+microsorum-musifolium-crocodile;FougÃ¨re crocodile;Feuillages;feuillage;tige portÃ©e;1;1;1;1;10;foliage;none
+zamia-integrifolia-coontie;Coontie;Feuillages;feuillage;tige portÃ©e;1;1;1;1;51;foliage;none
+lycopodium;Lycopode;Feuillages;texture;tige portÃ©e;1;1;2;2;211;drape;needle
+equisetum-preles;PrÃªle d'hiver;Feuillages;texture;tige portÃ©e;1;1;1;1;6;line;none
+xerophyllum-tenax-bear-grass;Herbe Ã  l'ours;Feuillages;graminee;tige portÃ©e;1;1;2;2;5;line;grass
+xanthorrhoea-steel-grass;Herbe d'acier;Feuillages;graminee;tige portÃ©e;1;1;2;2;5;line;grass
+liriope-lily-grass;Liriope;Feuillages;graminee;tige portÃ©e;1;1;2;2;5;line;grass
+phormium-lin-nz;Phormium;Feuillages;feuillage;tige portÃ©e;1;1;5;4;9;foliage;none
+astelia-silver-spear;Astelia 'Silver Spear';Feuillages;feuillage;tige portÃ©e;1;1;2;2;9;foliage;none
+jacobaea-maritima-cineraire;CinÃ©raire maritime;Feuillages;feuillage;tige portÃ©e;1;1;3;3;97;foliage;lobed
+stachys-byzantina-oreille-ours;Ã‰piaire laineuse;Feuillages;feuillage;tige portÃ©e;1;1;2;2;153;foliage;ovate
+hosta-feuilles;Feuilles d'hosta;Feuillages;feuillage;tige portÃ©e;1;1;5;4;10;foliage;none
+galax-urceolata;Galax;Feuillages;feuillage;tige portÃ©e;1;1;3;3;10;foliage;none
+heuchera;Feuilles d'heuchÃ¨re;Feuillages;feuillage;tige portÃ©e;1;1;5;4;10;foliage;none
+atriplex-hortensis-arroche;Arroche des jardins;Feuillages;feuillage;tige portÃ©e;1;1;3;3;142;foliage;cordate
+pelargonium-geranium-odorant;GÃ©ranium odorant;Feuillages;feuillage;tige portÃ©e;1;1;3;3;126;foliage;lobed
+magnolia-grandiflora-feuillage;Feuillage de magnolia;Feuillages;feuillage;tige portÃ©e;1;1;2;2;94;foliage;ovate
+olea-europaea-olivier;Branches d'olivier;Feuillages;feuillage;tige portÃ©e;1;1;2;2;494;foliage;lanceolate
+hedera-helix-lierre;Lierre;Feuillages;feuillage;tige portÃ©e;1;1;3;3;80;drape;lobed
+jasminum-liane-jasmin;Liane de jasmin;Feuillages;feuillage;tige portÃ©e;1;1;1;1;304;drape;compound
+trachelospermum-jasmin-etoile;Jasmin Ã©toilÃ©;Feuillages;feuillage;tige portÃ©e;1;1;3;3;80;drape;ovate
+myrtus-communis-myrte;Myrte;Feuillages;feuillage;tige portÃ©e;1;1;2;2;494;foliage;lanceolate
+buxus-sempervirens-buis;Buis;Feuillages;feuillage;tige portÃ©e;1;1;2;2;494;foliage;ovate
+pistacia-lentiscus-pistachier;Pistachier lentisque;Feuillages;feuillage;tige portÃ©e;1;1;2;2;601;foliage;compound
+laurus-nobilis-laurier-sauce;Laurier-sauce;Feuillages;feuillage;tige portÃ©e;1;1;2;2;142;foliage;lanceolate
+prunus-laurocerasus-laurier-cerise;Laurier-cerise;Feuillages;feuillage;tige portÃ©e;1;1;3;3;94;foliage;ovate
+viburnum-tinus-laurier-tin;Laurier-tin;Feuillages;feuillage;tige portÃ©e;1;1;4;4;183;berries;ovate
+quercus-ilex-chene-vert;ChÃªne vert;Feuillages;feuillage;tige portÃ©e;1;1;1;1;238;foliage;ovate
+cotinus-coggygria-arbre-a-perruques;Arbre Ã  perruques;Feuillages;feuillage;tige portÃ©e;1;1;5;4;126;foliage;ovate
+physocarpus-opulifolius;Physocarpe;Feuillages;feuillage;tige portÃ©e;1;1;5;4;158;foliage;lobed
+nandina-domestica-bambou-sacre;Nandina;Feuillages;feuillage;tige portÃ©e;1;1;4;4;216;foliage;compound
+photinia-red-robin;Photinia 'Red Robin';Feuillages;feuillage;tige portÃ©e;1;1;2;2;126;foliage;ovate
+elaeagnus-chalef;Chalef;Feuillages;feuillage;tige portÃ©e;1;1;2;2;142;foliage;ovate
+euonymus-japonicus-fusain;Fusain du Japon;Feuillages;feuillage;tige portÃ©e;1;1;3;3;302;foliage;ovate
+griselinia-littoralis;Griselinia;Feuillages;feuillage;tige portÃ©e;1;1;3;3;142;foliage;ovate
+aucuba-japonica;Aucuba du Japon;Feuillages;feuillage;tige portÃ©e;1;1;2;2;195;foliage;ovate
+choisya-ternata-oranger-du-mexique;Oranger du Mexique;Feuillages;feuillage;tige portÃ©e;1;1;2;2;1253;foliage;palmate
+brachyglottis-sunshine;Brachyglottis 'Sunshine';Feuillages;feuillage;tige portÃ©e;1;1;2;2;158;foliage;ovate
+leucothoe;LeucothoÃ©;Feuillages;feuillage;tige portÃ©e;1;1;3;3;159;foliage;lanceolate
+skimmia-japonica;Skimmia du Japon;Feuillages;feuillage;tige portÃ©e;1;1;2;2;144;berries;ovate
+ilex-aquifolium-houx;Houx;Feuillages;feuillage;tige portÃ©e;1;1;3;3;142;foliage;ovate
+camellia-japonica-feuillage;Feuillage de camÃ©lia;Feuillages;feuillage;tige portÃ©e;1;1;1;1;110;foliage;ovate
+gardenia-feuillage;Feuillage de gardÃ©nia;Feuillages;feuillage;tige portÃ©e;1;1;1;1;206;foliage;ovate
+ligustrum-troene;TroÃ¨ne;Feuillages;feuillage;tige portÃ©e;1;1;3;3;302;foliage;ovate
+podocarpus-macrophyllus;Podocarpus;Feuillages;feuillage;tige portÃ©e;1;1;2;2;223;foliage;lanceolate
+nageia-nagi;Nagi;Feuillages;feuillage;tige portÃ©e;1;1;2;2;270;foliage;lanceolate
+cocculus-laurifolius;Cocculus;Feuillages;feuillage;tige portÃ©e;1;1;2;2;126;foliage;lanceolate
+arbutus-arbousier;Arbousier;Feuillages;feuillage;tige portÃ©e;1;1;1;1;158;foliage;lanceolate
+lophomyrtus;Lophomyrtus;Feuillages;feuillage;tige portÃ©e;1;1;5;4;494;foliage;ovate
+agonis-flexuosa;Agonis;Feuillages;feuillage;tige portÃ©e;1;1;4;4;254;foliage;lanceolate
+melaleuca-feuillage;Melaleuca;Feuillages;feuillage;tige portÃ©e;1;1;2;2;223;foliage;needle
+grevillea-feuillage;Grevillea;Feuillages;feuillage;tige portÃ©e;1;1;2;2;391;foliage;compound
+leptospermum-arbre-a-the;Leptospermum;Feuillages;feuillage;tige portÃ©e;1;1;3;3;254;foliage;needle
+acacia-feuillage;Acacia;Feuillages;feuillage;tige portÃ©e;1;1;4;4;254;foliage;ovate
+adenanthos-sericeus-woolly-bush;Adenanthos;Feuillages;texture;tige portÃ©e;1;1;2;2;1835;foliage;needle
+leucadendron-rouges;Leucadendron rouges et bordeaux;Feuillages;feuillage;volume (paramÃ©trique);tous;1;4;4;76;protea;lanceolate
+leucadendron-jaunes-verts;Leucadendron jaunes et verts;Feuillages;feuillage;volume (paramÃ©trique);tous;1;4;4;76;protea;lanceolate
+leucadendron-argenteum-arbre-argent;Arbre d'argent;Feuillages;feuillage;tige portÃ©e;1;1;2;2;254;foliage;lanceolate
+lonicera-chevrefeuille;Liane de chÃ¨vrefeuille;Feuillages;feuillage;tige portÃ©e;1;1;2;2;208;drape;ovate
+salvia-rosmarinus-romarin;Romarin;Feuillages;feuillage;tige portÃ©e;1;1;2;2;433;foliage;needle
+mentha-menthe;Menthe;Feuillages;feuillage;tige portÃ©e;1;1;4;4;238;foliage;ovate
+salvia-officinalis-sauge;Sauge officinale;Feuillages;feuillage;tige portÃ©e;1;1;4;4;181;foliage;lanceolate
+origanum-origan;Origan;Feuillages;feuillage;tige portÃ©e;1;1;2;2;398;foliage;ovate
+ocimum-basilic;Basilic;Feuillages;feuillage;tige portÃ©e;1;1;2;2;206;foliage;ovate
+thymus-thym;Thym;Feuillages;texture;tige portÃ©e;1;1;2;2;494;foliage;ovate
+curio-rowleyanus-collier-de-perles;Collier de perles;Feuillages;texture;tige portÃ©e;1;1;2;2;80;drape;none
+rhipsalis;Rhipsalis;Feuillages;texture;tige portÃ©e;1;1;2;2;80;drape;none
+tillandsia-usneoides-mousse-espagnole;Mousse espagnole;Feuillages;texture;tige portÃ©e;1;1;2;2;6;drape;none
+tillandsia-plantes-de-l-air;Tillandsia;Feuillages;texture;tige portÃ©e;1;1;3;3;64;foliage;none
+succulentes-echeveria;Succulentes;Feuillages;texture;volume (paramÃ©trique);tous;3;4;4;231;double;none
+mousses-fraiches;Mousses fraÃ®ches;Feuillages;texture;volume (paramÃ©trique);tous;1;3;3;152;globe;none
+abies-procera-nobilis;Sapin noble;Feuillages;feuillage;tige portÃ©e;1;1;3;3;51;foliage;needle
+abies-nordmanniana-nordmann;Sapin de Nordmann;Feuillages;feuillage;tige portÃ©e;1;1;1;1;51;foliage;needle
+pseudotsuga-menziesii-douglas;Douglas;Feuillages;feuillage;tige portÃ©e;1;1;2;2;643;foliage;needle
+pinus-pins;Pin;Feuillages;feuillage;tige portÃ©e;1;1;3;3;223;foliage;needle
+cedrus-cedre;CÃ¨dre;Feuillages;feuillage;tige portÃ©e;1;1;3;3;223;foliage;needle
+thuja-cedre-rouge;Thuya;Feuillages;feuillage;tige portÃ©e;1;1;3;3;51;foliage;needle
+chamaecyparis-lawsoniana;Faux-cyprÃ¨s de Lawson;Feuillages;feuillage;tige portÃ©e;1;1;4;4;51;foliage;needle
+cupressus-cypres-bleus;CyprÃ¨s;Feuillages;feuillage;tige portÃ©e;1;1;3;3;1245;foliage;needle
+juniperus-genevrier;GenÃ©vrier;Feuillages;feuillage;tige portÃ©e;1;1;2;2;643;foliage;needle
+taxus-baccata-if;If commun;Feuillages;feuillage;tige portÃ©e;1;1;2;2;51;foliage;needle
+cryptomeria-japonica;Cryptomeria;Feuillages;feuillage;tige portÃ©e;1;1;4;4;643;foliage;needle
+picea-epicea;Ã‰picÃ©a;Feuillages;feuillage;tige portÃ©e;1;1;2;2;643;foliage;needle
+cerisier-du-japon-sato-zakura;Cerisier Ã  fleurs du Japon;Branches & baies;branche;tige portÃ©e;1;1;5;4;2496;line;ovate
+cerisiers-hatifs-fleurs-simples;Cerisiers hÃ¢tifs Ã  fleurs simples;Branches & baies;branche;tige portÃ©e;1;1;4;4;4206;line;none
+abricotier-du-japon-ume;Abricotier du Japon;Branches & baies;branche;tige portÃ©e;1;1;4;4;3606;line;none
+amandier-en-fleurs;Amandier;Branches & baies;branche;tige portÃ©e;1;1;3;3;3006;line;none
+amandier-de-chine-cerisier-nain;Amandier de Chine & cerisier nain ;Branches & baies;branche;tige portÃ©e;1;1;3;3;5406;line;none
+pecher-a-fleurs;PÃªcher Ã  fleurs;Branches & baies;branche;tige portÃ©e;1;1;4;4;3606;line;none
+pommier-pommetier-en-fleurs;Pommier & pommetier Ã  fleurs;Branches & baies;branche;tige portÃ©e;1;1;4;4;3096;line;ovate
+pommetier-a-fruits;Pommetier Ã  fruits dÃ©coratifs;Branches & baies;baie;tige portÃ©e;1;1;5;4;68;berries;ovate
+cognassier-du-japon;Cognassier du Japon;Branches & baies;branche;tige portÃ©e;1;1;5;4;2736;line;ovate
+magnolia-branches;Magnolia;Branches & baies;branche;tige portÃ©e;1;1;5;4;726;line;none
+forsythia;Forsythia;Branches & baies;branche;tige portÃ©e;1;1;2;2;8406;line;none
+amelanchier;AmÃ©lanchier;Branches & baies;branche;tige portÃ©e;1;1;2;2;4896;line;ovate
+cornouiller-a-fleurs;Cornouiller Ã  fleurs;Branches & baies;branche;tige portÃ©e;1;1;4;4;1296;line;ovate
+hamamelis;HamamÃ©lis;Branches & baies;branche;tige portÃ©e;1;1;4;4;4206;line;none
+viorne-d-hiver;Viorne dâ€™hiver;Branches & baies;branche;tige portÃ©e;1;1;3;3;1166;spray;none
+spiree;SpirÃ©e;Branches & baies;branche;tige portÃ©e;1;1;3;3;18096;line;ovate
+deutzia;Deutzia;Branches & baies;branche;tige portÃ©e;1;1;4;4;1167;spray;lanceolate
+seringat;Seringat;Branches & baies;branche;tige portÃ©e;1;1;3;3;521;spray;ovate
+groseillier-a-fleurs;Groseillier Ã  fleurs;Branches & baies;branche;tige portÃ©e;1;1;4;4;1167;spray;palmate
+enkianthus-dodan;Enkianthus;Branches & baies;branche;tige portÃ©e;1;1;3;3;734;foliage;whorl
+glycine;Glycine;Branches & baies;branche;tige portÃ©e;1;1;5;4;141;drape;compound
+mitsumata;Mitsumata;Branches & baies;branche;tige portÃ©e;1;1;4;4;6;line;none
+saule-a-chatons;Saule Ã  chatons;Branches & baies;branche;tige portÃ©e;1;1;6;4;21;line;none
+saule-fascie-sekka;Saule fasciÃ© 'Sekka';Branches & baies;branche;tige portÃ©e;1;1;2;2;10;line;none
+saule-tortueux;Saule tortueux;Branches & baies;branche;tige portÃ©e;1;1;6;4;10;line;none
+cornouiller-a-bois-colore;Cornouiller Ã  bois colorÃ©;Branches & baies;branche;tige portÃ©e;1;1;4;4;6;line;none
+bouleau;Bouleau;Branches & baies;branche;tige portÃ©e;1;1;4;4;6;line;none
+noisetier-tortueux-chatons;Noisetier;Branches & baies;branche;tige portÃ©e;1;1;2;2;10;line;none
+houx-a-baies;Houx Ã  baies;Branches & baies;baie;tige portÃ©e;1;1;2;2;94;berries;lobed
+houx-verticille-ilex;Houx verticillÃ©;Branches & baies;baie;tige portÃ©e;1;1;5;4;124;berries;none
+laurier-tin-a-baies;Laurier-tin Ã  baies;Branches & baies;baie;tige portÃ©e;1;1;5;4;141;berries;ovate
+viornes-a-baies;Viornes Ã  baies;Branches & baies;baie;tige portÃ©e;1;1;6;4;144;berries;lobed
+rosier-a-cynorrhodons;Rosier Ã  cynorrhodons;Branches & baies;baie;tige portÃ©e;1;1;5;4;52;berries;compound
+cotoneaster;CotonÃ©aster;Branches & baies;baie;tige portÃ©e;1;1;4;4;136;berries;ovate
+buisson-ardent;Buisson ardent;Branches & baies;baie;tige portÃ©e;1;1;3;3;176;berries;ovate
+callicarpa;Arbuste aux bonbons;Branches & baies;baie;tige portÃ©e;1;1;3;3;124;berries;none
+sorbier-baies;Sorbier;Branches & baies;baie;tige portÃ©e;1;1;5;4;207;berries;compound
+celastre-bittersweet;CÃ©lastre;Branches & baies;baie;tige portÃ©e;1;1;3;3;84;berries;none
+troene-a-baies;TroÃ¨ne Ã  baies;Branches & baies;baie;tige portÃ©e;1;1;2;2;132;berries;lanceolate
+nandina-a-baies;Nandina;Branches & baies;baie;tige portÃ©e;1;1;2;2;214;berries;compound
+arbousier-a-fruits;Arbousier Ã  fruits;Branches & baies;baie;tige portÃ©e;1;1;4;4;92;berries;lanceolate
+ronce-mures-en-fruits;Ronce Ã  mÃ»res en fruits;Branches & baies;baie;tige portÃ©e;1;1;3;3;54;berries;compound
+liane-de-kiwi;Liane de kiwi;Branches & baies;branche;tige portÃ©e;1;1;3;3;5;line;none
+vigne-sarments;Vigne;Branches & baies;branche;tige portÃ©e;1;1;3;3;10;line;lobed
+erable-du-japon;Ã‰rable du Japon;Branches & baies;branche;tige portÃ©e;1;1;5;4;2113;foliage;palmate
+chene-branches-glands;ChÃªne;Branches & baies;feuillage;tige portÃ©e;1;1;5;4;126;foliage;lobed
+hetre-branches;HÃªtre;Branches & baies;feuillage;tige portÃ©e;1;1;6;4;174;foliage;ovate
+meleze-a-cones;MÃ©lÃ¨ze Ã  cÃ´nes;Branches & baies;branche;tige portÃ©e;1;1;4;4;21;line;none
+pin-a-cones;Pin Ã  cÃ´nes;Branches & baies;texture;tige portÃ©e;1;1;4;4;184;berries;needle
+gui;Gui;Branches & baies;baie;tige portÃ©e;1;1;1;1;136;berries;lanceolate
+sanguisorbe;Sanguisorbe;Remplissage & textures;texture;tige portÃ©e;1;1;6;4;48;spray;none
+pieris-japonica;PiÃ©ris;Branches & baies;branche;tige portÃ©e;1;1;5;4;1167;spray;whorl
+pigamon;Pigamon;Ã‰tÃ© & classiques;texture;tige portÃ©e;1;1;6;4;951;spray;compound
+cyclamen-fleur-coupee;Cyclamen de Perse;Printemps & bulbes;secondaire;volume (paramÃ©trique);tous;3;6;4;21;star;none
+kniphofia;Tritoma;Ã‰tÃ© & classiques;ligne;tige portÃ©e;1;1;6;4;1563;spike;none
+hymenocallis;Lis araignÃ©e;Exotiques;focale;volume (paramÃ©trique);tous;3;4;4;341;star;none
+crocosmia;Crocosmia;Ã‰tÃ© & classiques;ligne;tige portÃ©e;1;1;6;4;349;spike;none
+bomarea;Bomarea;Exotiques;secondaire;volume (paramÃ©trique);tous;3;6;4;496;star;lanceolate
+ixora;Ixora;Exotiques;secondaire;volume (paramÃ©trique);tous;1;5;4;962;globe;ovate
+cyrtanthus;Lis de feu;Printemps & bulbes;focale;volume (paramÃ©trique);tous;3;6;4;149;star;none
+fraisier-des-bois;Fraisier des bois et tiges de frai;Remplissage & textures;baie;tige portÃ©e;1;1;6;4;44;berries;palmate
+tamaris;Tamaris;Branches & baies;branche;tige portÃ©e;1;1;4;4;336;spray;needle
+ricin-capsules;Ricin;Remplissage & textures;texture;tige portÃ©e;1;1;6;4;56;berries;palmate
+caladium;Caladium;Feuillages;feuillage;tige portÃ©e;1;1;6;4;11;foliage;cordate
+loropetalum;Loropetalum;Feuillages;feuillage;tige portÃ©e;1;1;6;4;254;foliage;ovate
+tweedia;Tweedia;Remplissage & textures;remplissage;tige portÃ©e;1;1;6;4;261;spray;cordate
+baptisia-gousses;Baptisia;Remplissage & textures;texture;tige portÃ©e;1;1;6;4;28;berries;none
+grenade-branche;Grenadier;Branches & baies;baie;tige portÃ©e;1;1;6;4;76;berries;lanceolate
+figuier-branche;Figuier;Branches & baies;baie;tige portÃ©e;1;1;6;4;22;berries;lobed
+litchi-branche;Litchi;Branches & baies;baie;tige portÃ©e;1;1;5;4;52;berries;compound
+kumquat-branche;Kumquat;Branches & baies;baie;tige portÃ©e;1;1;5;4;124;berries;ovate
+fil-aluminium-decoratif;Fil d'aluminium dÃ©coratif;Accessoires & matiÃ¨res;accent;tige portÃ©e;1;1;6;4;3;accessory;none
+plume-autruche-teinte;Plume d'autruche teinte;Accessoires & matiÃ¨res;accent;tige portÃ©e;1;1;6;4;62;accessory;none
+chaines-strass-perles;ChaÃ®nes de strass et perles dÃ©cora;Accessoires & matiÃ¨res;accent;tige portÃ©e;1;1;6;4;78;accessory;none
+papier-emballage-floral;Papier d'emballage floral;Accessoires & matiÃ¨res;accent;tige portÃ©e;1;1;6;4;3;accessory;none
+ruban-soie-mousseline;Ruban de soie et de mousseline;Accessoires & matiÃ¨res;accent;tige portÃ©e;1;1;6;4;3;accessory;none
+pensee;PensÃ©e;Printemps & bulbes;secondaire;volume (paramÃ©trique);tous;1;6;4;47;radial;ovate
+rose-eglantine;Rose simple;Roses;secondaire;volume (paramÃ©trique);tous;1;6;4;84;radial;compound
+sandersonia;Sandersonia;Exotiques;ligne;tige portÃ©e;1;1;3;3;142;custom/xSanders;lanceolate
+ail-serpent;Ail serpent;Printemps & bulbes;ligne;tige portÃ©e;1;1;3;3;9;custom/xSnake;none
+lis-tigre;Lis tigrÃ©;Ã‰tÃ© & classiques;focale;volume (paramÃ©trique);tous;3;4;4;208;star;lanceolate
+lis-oriental-double;Lis oriental double;Ã‰tÃ© & classiques;focale;volume (paramÃ©trique);tous;3;5;4;73;star;whorl
+clematite-clochettes;ClÃ©matite Ã  clochettes;Ã‰tÃ© & classiques;secondaire;volume (paramÃ©trique);tous;3;5;4;17;star;lanceolate
+pentas;Pentas;Ã‰tÃ© & classiques;remplissage;volume (paramÃ©trique);tous;1;5;4;722;globe;ovate
+geranium-vivace;GÃ©ranium vivace;Ã‰tÃ© & classiques;remplissage;tige portÃ©e;1;1;5;4;199;spray;palmate
+coreopsis;CorÃ©opsis;Ã‰tÃ© & classiques;secondaire;volume (paramÃ©trique);tous;1;4;4;72;radial;lanceolate
+bruyere;BruyÃ¨re;Remplissage & textures;texture;tige portÃ©e;1;1;4;4;1035;spike;needle
+gerbera-araignee;Gerbera araignÃ©e;Ã‰tÃ© & classiques;secondaire;volume (paramÃ©trique);tous;1;6;4;474;radial;none
+cosmos-chocolat;Cosmos chocolat;Ã‰tÃ© & classiques;accent;volume (paramÃ©trique);tous;1;3;3;72;radial;none
+fustet-plumes;Fustet en plumes;Remplissage & textures;texture;tige portÃ©e;1;1;4;4;78;custom/xSmoke;none
+branche-lichen;Branche lichÃ©nÃ©e;Branches & baies;branche;tige portÃ©e;1;1;3;3;679;custom/xLichen;none
+pivoine-feuillage;Feuillage de pivoine;Feuillages;feuillage;tige portÃ©e;1;1;2;2;221;foliage;palmate
+robinier;Robinier;Feuillages;feuillage;tige portÃ©e;1;1;2;2;139;foliage;pinnate
+coleus;ColÃ©us;Feuillages;feuillage;tige portÃ©e;1;1;5;4;149;foliage;ovate
+begonia-feuillage;BÃ©gonia rex;Feuillages;feuillage;tige portÃ©e;1;1;4;4;43;foliage;cordate
+vigne-feuilles;Feuilles de vigne;Feuillages;feuillage;tige portÃ©e;1;1;4;4;55;foliage;lobed
+fusain-aile;Fusain ailÃ©;Feuillages;feuillage;tige portÃ©e;1;1;4;4;181;foliage;elliptic
+calla-feuilles;Feuilles de calla;Feuillages;feuillage;tige portÃ©e;1;1;2;2;26;foliage;cordate
+anthurium-cristal;Anthurium cristal;Feuillages;feuillage;tige portÃ©e;1;1;2;2;9;foliage;cordate
+hellebore-feuilles;Feuilles d'hellÃ©bore;Feuillages;feuillage;tige portÃ©e;1;1;2;2;133;foliage;palmate
+chrysantheme-feuilles;Feuillage de chrysanthÃ¨me;Feuillages;feuillage;tige portÃ©e;1;1;2;2;97;foliage;lobed
+gloriosa-feuillage;Liane de gloriosa;Feuillages;feuillage;tige portÃ©e;1;1;2;2;94;foliage;lanceolate

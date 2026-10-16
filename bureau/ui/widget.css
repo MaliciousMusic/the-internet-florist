@@ -1,0 +1,13 @@
+/* the window is transparent: only the vase and its flowers are seen on the wallpaper */
+html, body { margin: 0; height: 100%; overflow: hidden; background: transparent; user-select: none; -webkit-user-select: none; cursor: default; }
+#vase { position: fixed; inset: 0; }
+#vase > svg, #vase > canvas { display: block; width: 100%; height: 100%; }
+/* while the pointer is on an unlocked bouquet: a faint frame and the corner that sizes it */
+body::after { content: ""; position: fixed; inset: 1px; border: 1px dashed rgba(255, 255, 255, .55); border-radius: 10px; box-shadow: 0 0 0 1px rgba(0, 0, 0, .18); opacity: 0; transition: opacity .25s; pointer-events: none; }
+body:hover:not(.verrou)::after { opacity: 1; }
+#coin { position: fixed; right: 0; bottom: 0; width: 22px; height: 22px; cursor: nwse-resize; opacity: 0; transition: opacity .25s;
+  background: linear-gradient(135deg, transparent 50%, rgba(255, 255, 255, .85) 50%, rgba(255, 255, 255, .85) 58%, transparent 58%, transparent 70%, rgba(255, 255, 255, .85) 70%, rgba(255, 255, 255, .85) 78%, transparent 78%);
+  filter: drop-shadow(0 0 1px rgba(0, 0, 0, .5)); }
+body:hover:not(.verrou) #coin { opacity: 1; }
+body.verrou #coin { display: none; }
+#vase.vide { display: grid; place-items: center; font: 600 13px system-ui, sans-serif; color: #fff; text-shadow: 0 1px 2px #000; text-align: center; padding: 12px; }

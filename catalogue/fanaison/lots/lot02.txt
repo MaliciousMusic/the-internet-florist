@@ -1,0 +1,37 @@
+dahlia-assiette;Dahlia géant 'assiette';Été & classiques;custom/xDahlia;focale
+dahlia-decoratif;Dahlia décoratif;Été & classiques;custom/xDahlia;focale
+dahlia-balle;Dahlia balle;Été & classiques;double;secondaire
+dahlia-pompon;Dahlia pompon;Été & classiques;double;secondaire
+dahlia-cactus;Dahlia cactus et semi-cactus;Été & classiques;double;focale
+dahlia-nenuphar;Dahlia nénuphar;Été & classiques;double;focale
+dahlia-collerette;Dahlia collerette;Été & classiques;radial;secondaire
+dahlia-simple;Dahlia simple;Été & classiques;radial;secondaire
+dahlia-anemone;Dahlia à fleur d'anémone;Été & classiques;radial;secondaire
+dahlia-lacinie;Dahlia lacinié;Été & classiques;double;focale
+cosmos;Cosmos;Été & classiques;custom/cosmos;secondaire
+zinnia;Zinnia;Été & classiques;double;secondaire
+scabieuse;Scabieuse;Été & classiques;custom/xScab;secondaire
+delphinium;Delphinium;Été & classiques;custom/xDelph;secondaire
+pied-alouette-annuel;Pied-d'alouette annuel;Été & classiques;spike;secondaire
+digitale;Digitale;Été & classiques;spike;secondaire
+lisianthus;Lisianthus;Été & classiques;double;secondaire
+muflier;Muflier;Été & classiques;spike;secondaire
+giroflee-matthiole;Giroflée;Été & classiques;spike;secondaire
+hortensia-boule;Hortensia boule;Été & classiques;custom/hydrangea;focale
+hortensia-lacecap;Hortensia à fleurs plates;Été & classiques;globe;focale
+hortensia-paniculata;Hortensia paniculé;Été & classiques;spike;focale
+hortensia-arborescens;Hortensia arborescent;Été & classiques;globe;focale
+astilbe;Astilbe;Été & classiques;spike;texture
+campanule;Campanule;Été & classiques;spike;secondaire
+phlox;Phlox;Été & classiques;spray;secondaire
+gerbera;Gerbera;Été & classiques;radial;focale
+germini;Germini;Été & classiques;radial;secondaire
+tournesol;Tournesol;Été & classiques;custom/sunflower;focale
+chrysantheme-disbud;Chrysanthème à grosse fleur;Été & classiques;double;focale
+chrysantheme-araignee;Chrysanthème araignée et japonais;Été & classiques;custom/xMum;focale
+chrysantheme-santini-pompon;Chrysanthème santini;Été & classiques;spray;remplissage
+chrysantheme-marguerite-spray;Chrysanthème spray marguerite et d;Été & classiques;spray;secondaire
+oeillet-standard;Œillet standard;Été & classiques;custom/xCarn;secondaire
+oeillet-spray;Œillet à petites fleurs;Été & classiques;spray;remplissage
+oeillet-de-poete-dianthus;Œillet de poète et dianthus de fle;Été & classiques;globe;secondaire
+reine-marguerite;Reine-marguerite;Été & classiques;radial;secondaire

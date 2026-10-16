@@ -1,0 +1,253 @@
+{
+ "sid": "tulipe-urumiensis",
+ "schema": "STANDARD-SOURCES.md section 5",
+ "legende_entrees": "« cultivars » = entrées de la sorte : cultivars, formes botaniques ou espèce type ; « sans_photo » = nom prouvé (N1 ou N3) mais aucune photo nommée retenue ; « ecartes » = rejetés avec la raison",
+ "rattachement_catalogue": "aucun coloris existant du catalogue ne correspond à cette sorte (catalogue.json, inventaire_fleurs.csv et skus.csv relus le 2026-10-08 : aucune tulipe botanique) ; coloris_catalogue est donc vide",
+ "genre": "Tulipa",
+ "recensement": {
+  "date": "2026-10-08",
+  "agent": "fleur-recensement",
+  "portee": "tulipes botaniques : groupes Kaufmanniana (12), Fosteriana (13), Greigii (14) du KAVB et espèces / hybrides de la division 15 (« Overige Groep » = Miscellaneous) ; tout ce qui est documenté par une photo nommée fiable",
+  "limites": [
+   "N1 : la base de cultivars du KAVB (login.kavb.nl/siergewassen) n'est interrogeable que par un formulaire de recherche, non utilisé (règle « aucun formulaire »). Le N1 des cultivars repose donc sur les listes annuelles « Registraties » du KAVB (PDF, 2004-07 à 2013, huit documents) et sur les mentions « Mutant van » qui prouvent l'existence d'un parent. Les cultivars plus anciens ou postérieurs à 2013 n'ont pas de N1 lu.",
+   "N1 espèces : POWO (Kew) renvoie une erreur 403 (protection Cloudflare, non contournée). Les noms d'espèces sont recoupés avec le GBIF Backbone (API), iNaturalist et les textes de la Pacific Bulb Society ; à revérifier sur POWO.",
+   "N2 : Floricode (codes et photos des variétés vendues) est sur abonnement et n'a pas été consulté ; aucune fiche d'obtenteur à photo exploitable n'a été trouvée pour ces tulipes. Aucun cultivar n'est donc au niveau A.",
+   "Nouveautés 2014-2026 : les listes d'enregistrement KAVB de ces années ne sont pas publiées en PDF libre ; la fenêtre des cinq dernières années n'est pas couverte.",
+   "Les photos ne sont jamais stockées dans le dépôt : seules les adresses, auteurs, licences et niveaux sont écrits. Les vignettes regardées sont dans le cache de l'atelier (refcache/tulipe-botanique/).",
+   "Photos PBS : droits réservés aux photographes (consultation et mesure seulement, jamais publiées). Photos iNaturalist : licences CC BY-NC en majorité, mêmes usages."
+  ],
+  "statuts": "en production = niveau A ou B (à mesurer par fleur-coloris puis sondage de 10 % par l'orchestrateur) ; à confirmer = niveau C ou D ; écarté = avec la raison"
+ },
+ "nom": "Tulipe urumiensis (Tulipa urumiensis, syn. T. tarda)",
+ "latin": "Tulipa urumiensis Stapf (syn. T. tarda Stapf) : nom retenu par le porteur le 2026-10-08",
+ "priorite": "P2",
+ "pourquoi_cette_priorite": "grappe d'étoiles plates très reconnaissable, AGM sous les deux noms, facile à dessiner (multiflore)",
+ "groupe_registre": {
+  "autorite": "KAVB",
+  "division": 15,
+  "nom_registre": "Overige Groep (Miscellaneous)",
+  "preuve": "RHS : « Tulipa tarda (15) »"
+ },
+ "taxonomie": {
+  "espece_mere": "Tulipa urumiensis Stapf accepté, T. tarda synonyme (GBIF usageKey 5299589 ; iNaturalist) ; RHS et Wikipédia gardent T. tarda ; PBS : synonymes selon beaucoup de sources. Contradiction à trancher sur POWO",
+  "nom_accepte_source": "GBIF ; POWO non consulté"
+ },
+ "melange": "Deux noms pour une même forme : tarda (tépales jaunes à bouts blancs) et urumiensis (tépales entièrement jaunes) ; traités comme deux coloris de la sorte.",
+ "forme": {
+  "resume": "grappe de 3 à 8 étoiles plates parfumées ; tépales étroits à pointe aiguë, jaune vif à bout blanc, revers lavé de bronze/vert ; 10-15 cm",
+  "details": [
+   "RHS : « racemes of up to 6, fragrant, star-shaped white flowers flushed bronze outside, lower half bright yellow within »"
+  ],
+  "sources": [
+   "RHS « Tulipa tarda (15) » ; PBS TulipaSpeciesFour"
+  ]
+ },
+ "feuilles": {
+  "resume": "étroites, luisantes, vert vif à bord rougeâtre, en rosette basse",
+  "details": [
+   "RHS : « narrow, reddish-edged, glossy bright green leaves »"
+  ]
+ },
+ "hauteur_cm": "10 à 15 (RHS ; Wikipédia : tige 4-20)",
+ "floraison": "début de printemps (RHS : from early spring ; fin avril-début mai selon Wikipédia)",
+ "distinction": {
+  "vs_clusiana": "grappe de petites étoiles plates sans macule sombre",
+  "vs_turkestanica": "tépales jaunes à bouts blancs, plus ramassée"
+ },
+ "coloris_catalogue": [],
+ "cultivars": [
+  {
+   "id": "tarda",
+   "nom_affiche": "Tulipe tardive (T. tarda)",
+   "nom_enregistre": "Tulipa tarda Stapf (syn. de T. urumiensis selon GBIF et iNaturalist)",
+   "synonymes": [],
+   "groupe": "Espèce (KAVB Div. 15, « Overige Groep » / Miscellaneous)",
+   "obtenteur": null,
+   "annee": null,
+   "numeros": {},
+   "couleur_registre": "jaune vif à bouts blancs (PBS, RHS)",
+   "motif": "étoile plate à pointes blanches, centre jaune",
+   "sources": [
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://www.rhs.org.uk/plants/18549/tulipa-tarda-15/details",
+     "consulte": "2026-10-08",
+     "note": "RHS (société savante) : fiche (15) AGM : 15 cm ; feuilles étroites luisantes vert vif à bord rougeâtre ; grappes jusqu'à 6 fleurs parfumées en étoile, blanches lavées de bronze dehors, moitié inférieure jaune vif dedans"
+    },
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaSpeciesFour",
+     "consulte": "2026-10-08",
+     "note": "Pacific Bulb Society : « Tulipa tarda is considered by many resources to be a synonym of Tulipa urumiensis » ; urumiensis jaune, tarda à tépales en partie blancs ; AGM"
+    },
+    {
+     "role": "taxonomie",
+     "niveau": "N4",
+     "url": "https://api.gbif.org/v1/species/match?kingdom=Plantae&name=Tulipa%20tarda",
+     "consulte": "2026-10-08",
+     "note": "synonyme de Tulipa urumiensis Stapf selon GBIF (usageKey 5299589) ; iNaturalist fusionne aussi les deux noms"
+    }
+   ],
+   "photos": [
+    {
+     "url": "https://pacificbulbsociety.org/pbswiki/files/Tulipa/Tulipa_tarda_1.jpg",
+     "page": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaSpeciesFour",
+     "niveau": "N3",
+     "auteur": "Mark McDonough",
+     "licence": "© photographe ; Pacific Bulb Society (reproduction non libre : consultation et mesure seulement)",
+     "legende": "Tulipa tarda, Mark McDonough",
+     "consulte": "2026-10-08",
+     "vue": "dessus, groupe",
+     "eclairage": null,
+     "balance_blancs": null
+    },
+    {
+     "url": "https://pacificbulbsociety.org/pbswiki/files/Tulipa/Tulipa_tarda_2.jpg",
+     "page": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaSpeciesFour",
+     "niveau": "N3",
+     "auteur": "Mark McDonough",
+     "licence": "© photographe ; Pacific Bulb Society (reproduction non libre : consultation et mesure seulement)",
+     "legende": "Tulipa tarda, Mark McDonough",
+     "consulte": "2026-10-08",
+     "vue": "groupe",
+     "eclairage": null,
+     "balance_blancs": null
+    },
+    {
+     "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/61829993/original.jpeg",
+     "page": "https://www.inaturalist.org/observations/38880600",
+     "niveau": "N3",
+     "auteur": "aleksandr_naumenko",
+     "licence": "iNaturalist CC-BY-NC (observation de qualité recherche)",
+     "legende": "Tulipa tarda, Otmek, Киргизия, 2016-04-05",
+     "consulte": "2026-10-08",
+     "vue": "dessus, spontané (Kirghizistan)",
+     "date_prise": "2016-04-05",
+     "eclairage": null,
+     "balance_blancs": null
+    },
+    {
+     "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/249242944/original.jpeg",
+     "page": "https://www.inaturalist.org/observations/145128724",
+     "niveau": "N3",
+     "auteur": "aleksandr_naumenko",
+     "licence": "iNaturalist CC-BY-NC (observation de qualité recherche)",
+     "legende": "Tulipa tarda, Ak-Tuz, 2012-04-17",
+     "consulte": "2026-10-08",
+     "vue": "dessus, spontané (Kirghizistan)",
+     "date_prise": "2012-04-17",
+     "eclairage": null,
+     "balance_blancs": null
+    }
+   ],
+   "mesures": {},
+   "niveau_preuve": "B",
+   "existence_n1_n2": false,
+   "statut": "en production",
+   "doutes": [
+    "nom accepté contesté : GBIF/iNaturalist le rangent sous T. urumiensis ; Wikipédia et la RHS gardent T. tarda ; POWO non consulté : garder l'id tulipe-tarda, nom latin à trancher"
+   ],
+   "coloris_catalogue": null,
+   "familles_de_sources": [
+    "pacificbulbsociety.org",
+    "www.inaturalist.org",
+    "www.rhs.org.uk"
+   ]
+  },
+  {
+   "id": "urumiensis",
+   "nom_affiche": "Tulipe d'Urmia (T. urumiensis)",
+   "nom_enregistre": "Tulipa urumiensis Stapf",
+   "synonymes": [],
+   "groupe": "Espèce (KAVB Div. 15, « Overige Groep » / Miscellaneous)",
+   "obtenteur": null,
+   "annee": null,
+   "numeros": {},
+   "couleur_registre": "jaune d'or vif",
+   "motif": null,
+   "sources": [
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaSpeciesFour",
+     "consulte": "2026-10-08",
+     "note": "Pacific Bulb Society : « dwarf species from Iran and Turkey with narrow leaves and bright golden yellow flowers » ; AGM"
+    },
+    {
+     "role": "taxonomie",
+     "niveau": "N4",
+     "url": "https://api.gbif.org/v1/species/match?kingdom=Plantae&name=Tulipa%20urumiensis",
+     "consulte": "2026-10-08",
+     "note": "accepté : Tulipa urumiensis Stapf (usageKey 5299590)"
+    }
+   ],
+   "photos": [
+    {
+     "url": "https://pacificbulbsociety.org/pbswiki/files/Tulipa/Tulipa_urumiensis.jpg",
+     "page": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaSpeciesFour",
+     "niveau": "N3",
+     "auteur": "Arnold Trachtenberg",
+     "licence": "© photographe ; Pacific Bulb Society (reproduction non libre : consultation et mesure seulement)",
+     "legende": "Tulipa urumiensis, Arnold Trachtenberg",
+     "consulte": "2026-10-08",
+     "vue": "dessus",
+     "eclairage": null,
+     "balance_blancs": null
+    }
+   ],
+   "mesures": {},
+   "niveau_preuve": "C",
+   "existence_n1_n2": false,
+   "statut": "à confirmer",
+   "doutes": [
+    "à fusionner avec 'tarda' si le coloris est jugé identique ; seule différence indiquée : tépales entièrement jaunes",
+    "photo Commons non contrôlée visuellement"
+   ],
+   "coloris_catalogue": null,
+   "familles_de_sources": [
+    "pacificbulbsociety.org"
+   ]
+  }
+ ],
+ "sans_photo": [],
+ "ecartes": [],
+ "couverture": {
+  "cultivars_retenus_avec_photo": 2,
+  "niveau_A": 0,
+  "niveau_B": 1,
+  "niveau_C": 1,
+  "niveau_D": 0,
+  "prouves_A_ou_B": 1,
+  "sans_photo": 0,
+  "ecartes": 0,
+  "au_catalogue": 0,
+  "existence_N1_lue": 0,
+  "remarque": "« enregistrés » du KAVB : total inconnu (base non interrogée). Les nombres ci-dessus portent sur ce qui a été recensé dans les sources consultées"
+ },
+ "vues_deja_photographiees": {
+  "face (dessus, intérieur)": 4,
+  "trois-quarts": 0,
+  "profil": 0,
+  "dos (revers, extérieur)": 0,
+  "bouton": 0,
+  "fané ou déclin": 0,
+  "feuilles": 0,
+  "tige, pied": 0,
+  "plante entière ou massif": 2
+ },
+ "vues_manquantes": [
+  "trois-quarts",
+  "profil",
+  "dos (revers, extérieur)",
+  "bouton",
+  "fané ou déclin",
+  "feuilles",
+  "tige, pied",
+  "dessous et attache des feuilles",
+  "épaisseur et surface de la tige",
+  "stades intermédiaires (goblet, coupe, déclin)"
+ ],
+ "vues_note": "comptage des photos retenues par mot-clé de la rubrique « vue » ; les photos de forme par angle et par stade sont à compléter par fleur-refs (STANDARD-SOURCES, exhaustivité)"
+}

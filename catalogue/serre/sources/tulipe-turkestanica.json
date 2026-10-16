@@ -1,0 +1,209 @@
+{
+ "sid": "tulipe-turkestanica",
+ "schema": "STANDARD-SOURCES.md section 5",
+ "legende_entrees": "« cultivars » = entrées de la sorte : cultivars, formes botaniques ou espèce type ; « sans_photo » = nom prouvé (N1 ou N3) mais aucune photo nommée retenue ; « ecartes » = rejetés avec la raison",
+ "rattachement_catalogue": "aucun coloris existant du catalogue ne correspond à cette sorte (catalogue.json, inventaire_fleurs.csv et skus.csv relus le 2026-10-08 : aucune tulipe botanique) ; coloris_catalogue est donc vide",
+ "genre": "Tulipa",
+ "recensement": {
+  "date": "2026-10-08",
+  "agent": "fleur-recensement",
+  "portee": "tulipes botaniques : groupes Kaufmanniana (12), Fosteriana (13), Greigii (14) du KAVB et espèces / hybrides de la division 15 (« Overige Groep » = Miscellaneous) ; tout ce qui est documenté par une photo nommée fiable",
+  "limites": [
+   "N1 : la base de cultivars du KAVB (login.kavb.nl/siergewassen) n'est interrogeable que par un formulaire de recherche, non utilisé (règle « aucun formulaire »). Le N1 des cultivars repose donc sur les listes annuelles « Registraties » du KAVB (PDF, 2004-07 à 2013, huit documents) et sur les mentions « Mutant van » qui prouvent l'existence d'un parent. Les cultivars plus anciens ou postérieurs à 2013 n'ont pas de N1 lu.",
+   "N1 espèces : POWO (Kew) renvoie une erreur 403 (protection Cloudflare, non contournée). Les noms d'espèces sont recoupés avec le GBIF Backbone (API), iNaturalist et les textes de la Pacific Bulb Society ; à revérifier sur POWO.",
+   "N2 : Floricode (codes et photos des variétés vendues) est sur abonnement et n'a pas été consulté ; aucune fiche d'obtenteur à photo exploitable n'a été trouvée pour ces tulipes. Aucun cultivar n'est donc au niveau A.",
+   "Nouveautés 2014-2026 : les listes d'enregistrement KAVB de ces années ne sont pas publiées en PDF libre ; la fenêtre des cinq dernières années n'est pas couverte.",
+   "Les photos ne sont jamais stockées dans le dépôt : seules les adresses, auteurs, licences et niveaux sont écrits. Les vignettes regardées sont dans le cache de l'atelier (refcache/tulipe-botanique/).",
+   "Photos PBS : droits réservés aux photographes (consultation et mesure seulement, jamais publiées). Photos iNaturalist : licences CC BY-NC en majorité, mêmes usages."
+  ],
+  "statuts": "en production = niveau A ou B (à mesurer par fleur-coloris puis sondage de 10 % par l'orchestrateur) ; à confirmer = niveau C ou D ; écarté = avec la raison"
+ },
+ "nom": "Tulipe du Turkestan",
+ "latin": "Tulipa turkestanica (Regel) Regel",
+ "priorite": "P2",
+ "pourquoi_cette_priorite": "grappe de petites étoiles blanches à cœur jaune, AGM ; très photographiée (Commons 83 fichiers)",
+ "groupe_registre": {
+  "autorite": "KAVB",
+  "division": 15,
+  "nom_registre": "Overige Groep (Miscellaneous)",
+  "preuve": "RHS « Tulipa turkestanica (15) »"
+ },
+ "taxonomie": {
+  "espece_mere": "Tulipa turkestanica (Regel) Regel, accepté (GBIF usageKey 5299547)",
+  "nom_accepte_source": "GBIF ; POWO non consulté"
+ },
+ "melange": "Espèce seule ; une forme jaune sauvage est photographiée par PBS (David Victor).",
+ "forme": {
+  "resume": "grappe de 1 à 12 (parfois plus) petites étoiles blanches de 3-5 cm à fond jaune profond, tépales étroits à pointe aiguë, revers gris-vert ou rosé",
+  "details": [
+   "RHS : « racemes of up to 12 star-shaped white flowers 3-5 cm in width, showing deep yellow at the base »"
+  ],
+  "sources": [
+   "RHS « Tulipa turkestanica (15) » ; PBS"
+  ]
+ },
+ "feuilles": {
+  "resume": "étroites, gris-vert glauques",
+  "details": [
+   "RHS"
+  ]
+ },
+ "hauteur_cm": "15 à 30 (RHS 30)",
+ "floraison": "début de printemps",
+ "distinction": {
+  "vs_tarda": "blanc à cœur jaune plus petit, grappe plus fournie, feuilles glauques"
+ },
+ "coloris_catalogue": [],
+ "cultivars": [
+  {
+   "id": "turkestanica",
+   "nom_affiche": "Tulipe du Turkestan (T. turkestanica)",
+   "nom_enregistre": "Tulipa turkestanica (Regel) Regel",
+   "synonymes": [],
+   "groupe": "Espèce (KAVB Div. 15, « Overige Groep » / Miscellaneous)",
+   "obtenteur": null,
+   "annee": null,
+   "numeros": {},
+   "couleur_registre": "blanc à fond jaune profond",
+   "motif": "étoile multiflore ; revers gris-vert",
+   "sources": [
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://www.rhs.org.uk/plants/18552/tulipa-turkestanica-15/details",
+     "consulte": "2026-10-08",
+     "note": "RHS (société savante) : fiche (15) AGM : 30 cm, feuilles étroites gris-vert ; grappes jusqu'à 12 fleurs blanches en étoile de 3-5 cm à fond jaune profond"
+    },
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaSpeciesFour",
+     "consulte": "2026-10-08",
+     "note": "Pacific Bulb Society : « one to 12 starry white flowers per bulb » ; photos Arnold Trachtenberg, Janos Agoston, Mary Sue Ittner, David Victor (Tien Shan)"
+    },
+    {
+     "role": "taxonomie",
+     "niveau": "N4",
+     "url": "https://api.gbif.org/v1/species/match?kingdom=Plantae&name=Tulipa%20turkestanica",
+     "consulte": "2026-10-08",
+     "note": "accepté : Tulipa turkestanica (Regel) Regel (usageKey 5299547)"
+    }
+   ],
+   "photos": [
+    {
+     "url": "https://pacificbulbsociety.org/pbswiki/files/Tulipa/Tulipa_turkestanica_5.jpg",
+     "page": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaSpeciesFour",
+     "niveau": "N3",
+     "auteur": "Arnold Trachtenberg",
+     "licence": "© photographe ; Pacific Bulb Society (reproduction non libre : consultation et mesure seulement)",
+     "legende": "Tulipa turkestanica, Arnold Trachtenberg",
+     "consulte": "2026-10-08",
+     "vue": "dessus",
+     "eclairage": null,
+     "balance_blancs": null
+    },
+    {
+     "url": "https://pacificbulbsociety.org/pbswiki/files/Tulipa/Tulipa_turkestanica_JA6.jpg",
+     "page": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaSpeciesFour",
+     "niveau": "N3",
+     "auteur": "Janos Agoston",
+     "licence": "© photographe ; Pacific Bulb Society (reproduction non libre : consultation et mesure seulement)",
+     "legende": "Tulipa turkestanica, Janos Agoston",
+     "consulte": "2026-10-08",
+     "vue": "groupe",
+     "eclairage": null,
+     "balance_blancs": null
+    },
+    {
+     "url": "https://pacificbulbsociety.org/pbswiki/files/Tulipa/Tulipa_turkestanica2.jpg",
+     "page": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaSpeciesFour",
+     "niveau": "N3",
+     "auteur": "Mary Sue Ittner",
+     "licence": "© photographe ; Pacific Bulb Society (reproduction non libre : consultation et mesure seulement)",
+     "legende": "Tulipa turkestanica, Mary Sue Ittner",
+     "consulte": "2026-10-08",
+     "vue": "pot",
+     "eclairage": null,
+     "balance_blancs": null
+    },
+    {
+     "url": "https://pacificbulbsociety.org/pbswiki/files/Tulipa/Tulipa_turkestanica_Tien-Shan_1_DXV.jpg",
+     "page": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaSpeciesFour",
+     "niveau": "N3",
+     "auteur": "David Victor",
+     "licence": "© photographe ; Pacific Bulb Society (reproduction non libre : consultation et mesure seulement)",
+     "legende": "Tulipa turkestanica, David Victor",
+     "consulte": "2026-10-08",
+     "vue": "sauvage (Tien Shan)",
+     "eclairage": null,
+     "balance_blancs": null
+    },
+    {
+     "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/340511758/original.jpg",
+     "page": "https://www.inaturalist.org/observations/193809195",
+     "niveau": "N3",
+     "auteur": "bobur99",
+     "licence": "iNaturalist CC-BY-NC (observation de qualité recherche)",
+     "legende": "Tulipa turkestanica, Surxondaryo Region, Uzbekistan, 2023-03-14",
+     "consulte": "2026-10-08",
+     "vue": "spontané (Ouzbékistan)",
+     "date_prise": "2023-03-14",
+     "eclairage": null,
+     "balance_blancs": null
+    }
+   ],
+   "mesures": {},
+   "niveau_preuve": "B",
+   "existence_n1_n2": false,
+   "statut": "en production",
+   "doutes": [
+    "forme jaune sauvage signalée par PBS (David Victor, Tien Shan) : coloris à part si on le veut"
+   ],
+   "coloris_catalogue": null,
+   "familles_de_sources": [
+    "pacificbulbsociety.org",
+    "www.inaturalist.org",
+    "www.rhs.org.uk"
+   ]
+  }
+ ],
+ "sans_photo": [],
+ "ecartes": [],
+ "couverture": {
+  "cultivars_retenus_avec_photo": 1,
+  "niveau_A": 0,
+  "niveau_B": 1,
+  "niveau_C": 0,
+  "niveau_D": 0,
+  "prouves_A_ou_B": 1,
+  "sans_photo": 0,
+  "ecartes": 0,
+  "au_catalogue": 0,
+  "existence_N1_lue": 0,
+  "remarque": "« enregistrés » du KAVB : total inconnu (base non interrogée). Les nombres ci-dessus portent sur ce qui a été recensé dans les sources consultées"
+ },
+ "vues_deja_photographiees": {
+  "face (dessus, intérieur)": 1,
+  "trois-quarts": 0,
+  "profil": 0,
+  "dos (revers, extérieur)": 0,
+  "bouton": 0,
+  "fané ou déclin": 0,
+  "feuilles": 0,
+  "tige, pied": 0,
+  "plante entière ou massif": 2
+ },
+ "vues_manquantes": [
+  "trois-quarts",
+  "profil",
+  "dos (revers, extérieur)",
+  "bouton",
+  "fané ou déclin",
+  "feuilles",
+  "tige, pied",
+  "dessous et attache des feuilles",
+  "épaisseur et surface de la tige",
+  "stades intermédiaires (goblet, coupe, déclin)"
+ ],
+ "vues_note": "comptage des photos retenues par mot-clé de la rubrique « vue » ; les photos de forme par angle et par stade sont à compléter par fleur-refs (STANDARD-SOURCES, exhaustivité)"
+}

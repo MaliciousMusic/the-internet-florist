@@ -1,0 +1,1459 @@
+{
+ "sid": "tulipe-kaufmanniana",
+ "schema": "STANDARD-SOURCES.md section 5",
+ "legende_entrees": "« cultivars » = entrées de la sorte : cultivars, formes botaniques ou espèce type ; « sans_photo » = nom prouvé (N1 ou N3) mais aucune photo nommée retenue ; « ecartes » = rejetés avec la raison",
+ "rattachement_catalogue": "aucun coloris existant du catalogue ne correspond à cette sorte (catalogue.json, inventaire_fleurs.csv et skus.csv relus le 2026-10-08 : aucune tulipe botanique) ; coloris_catalogue est donc vide",
+ "genre": "Tulipa",
+ "recensement": {
+  "date": "2026-10-08",
+  "agent": "fleur-recensement",
+  "portee": "tulipes botaniques : groupes Kaufmanniana (12), Fosteriana (13), Greigii (14) du KAVB et espèces / hybrides de la division 15 (« Overige Groep » = Miscellaneous) ; tout ce qui est documenté par une photo nommée fiable",
+  "limites": [
+   "N1 : la base de cultivars du KAVB (login.kavb.nl/siergewassen) n'est interrogeable que par un formulaire de recherche, non utilisé (règle « aucun formulaire »). Le N1 des cultivars repose donc sur les listes annuelles « Registraties » du KAVB (PDF, 2004-07 à 2013, huit documents) et sur les mentions « Mutant van » qui prouvent l'existence d'un parent. Les cultivars plus anciens ou postérieurs à 2013 n'ont pas de N1 lu.",
+   "N1 espèces : POWO (Kew) renvoie une erreur 403 (protection Cloudflare, non contournée). Les noms d'espèces sont recoupés avec le GBIF Backbone (API), iNaturalist et les textes de la Pacific Bulb Society ; à revérifier sur POWO.",
+   "N2 : Floricode (codes et photos des variétés vendues) est sur abonnement et n'a pas été consulté ; aucune fiche d'obtenteur à photo exploitable n'a été trouvée pour ces tulipes. Aucun cultivar n'est donc au niveau A.",
+   "Nouveautés 2014-2026 : les listes d'enregistrement KAVB de ces années ne sont pas publiées en PDF libre ; la fenêtre des cinq dernières années n'est pas couverte.",
+   "Les photos ne sont jamais stockées dans le dépôt : seules les adresses, auteurs, licences et niveaux sont écrits. Les vignettes regardées sont dans le cache de l'atelier (refcache/tulipe-botanique/).",
+   "Photos PBS : droits réservés aux photographes (consultation et mesure seulement, jamais publiées). Photos iNaturalist : licences CC BY-NC en majorité, mêmes usages."
+  ],
+  "statuts": "en production = niveau A ou B (à mesurer par fleur-coloris puis sondage de 10 % par l'orchestrateur) ; à confirmer = niveau C ou D ; écarté = avec la raison"
+ },
+ "nom": "Tulipe Kaufmanniana (tulipe nénuphar)",
+ "latin": "Tulipa kaufmanniana Regel et Kaufmanniana Group",
+ "priorite": "P1",
+ "pourquoi_cette_priorite": "groupe forme-clé : étoile plate à pointes aiguës et revers flammé, nettement différente des deux autres ; le plus précoce de la saison ; classique du jardin (Showwinner, Stresa, Giuseppe Verdi, Johann Strauss, tous AGM)",
+ "groupe_registre": {
+  "autorite": "KAVB (ICRA du genre Tulipa)",
+  "division": 12,
+  "nom_registre": "Kaufmanniana Groep",
+  "preuve": "KAVB, listes « Registraties » 2004-2013 (« Kaufmanniana Groep ») ; RHS : « (12) »"
+ },
+ "taxonomie": {
+  "espece_mere": "Tulipa kaufmanniana Regel, accepté (GBIF usageKey 5299659 ; WFO 2023 d'après une recherche ; Wikipédia : Gartenflora 26: 194, 1877 ; Tien Shan, Pamir) ; synonyme T. berkariensis Rukšans",
+  "nom_accepte_source": "GBIF Backbone ; POWO non consulté (403)"
+ },
+ "melange": "Le groupe réunit l'espèce, ses clones et ses hybrides avec T. greigii (d'où les feuilles pourprées de beaucoup de cultivars). Les hybrides Kaufmanniana × Greigii classés Greigii (par exemple Plaisir, Toronto) sont dans tulipe-greigii. Classement contradictoire à surveiller : 'Chopin', rangé par Commons en Greigii et cité par Wikipédia comme Kaufmanniana ; 'First Love', 'White Fire', 'Mary Ann' (Commons : Greigii) ont une forme de Kaufmanniana.",
+ "forme": {
+  "resume": "petite fleur (diamètre ouvert à mesurer : aucune source ne le donne) à 6 tépales étroits, lancéolés à pointe aiguë, qui s'ouvrent en étoile plate (« nénuphar ») puis se recourbent ; face jaune, crème ou blanche à base jaune, revers marqué d'une large bande carmin-rouge bordée de jaune ou crème ; bouton fuselé, rayé sur le revers ; cœur clair, étamines courtes",
+  "details": [
+   "bouton long et pointu, rayé de rouge sur fond jaune ou crème (Giuseppe Verdi, Johann Strauss : photos PBS)",
+   "épanouie : étoile très ouverte à pointes nettes ; les pointes se recourbent au soleil (RHS, Stresa) ; cœur jaune sans grande macule sombre (Showwinner), sauf Stresa et Glück (cœur sombre)",
+   "revers souvent d'une autre couleur que la face (Wikipédia ; RHS : « outer petals ... bright yellow and pillar-box red »)",
+   "espèce sauvage : petites étoiles crème-jaune à centre orangé, revers rougeâtre (PBS : photos David Victor, Tien Shan)"
+  ],
+  "sources": [
+   "RHS « Tulipa kaufmanniana (12) » ; RHS Showwinner et Stresa ; Wikipédia T. kaufmanniana ; PBS TulipaHybrids et TulipaSpeciesThree"
+  ]
+ },
+ "feuilles": {
+  "resume": "larges, lancéolées, vert glauque à bleu-vert, souvent ondulées ; striées ou mouchetées de pourpre chez de nombreux cultivars",
+  "details": [
+   "Showwinner : feuilles mouchetées de pourpre (RHS) ; Early Harvest : gris-vert striées de pourpre terne (RHS) ; Johann Strauss : striées de pourpre (PBS) ; Ancilla : lancéolées à bord ondulé (RHS)",
+   "l'espèce a des feuilles unies vert-bleu, souvent marquées de pourpre (Wikipédia ; héritage greigii)"
+  ]
+ },
+ "hauteur_cm": "15 à 25 : Showwinner et Ancilla 20, Stresa et Early Harvest 25 (RHS) ; espèce 20-25",
+ "floraison": "très précoce : février à avril (Wikipédia ; RHS : early spring)",
+ "distinction": {
+  "vs_fosteriana": "plus petite, tépales étroits et aigus, revers coloré contrasté, feuilles souvent striées de pourpre",
+  "vs_greigii": "fleur plus petite et plus étoilée, tiges plus basses, feuilles moins marquées"
+ },
+ "coloris_catalogue": [],
+ "cultivars": [
+  {
+   "id": "showwinner",
+   "nom_affiche": "Showwinner",
+   "nom_enregistre": "Showwinner",
+   "synonymes": [],
+   "groupe": "Kaufmanniana (12)",
+   "obtenteur": null,
+   "annee": null,
+   "numeros": {},
+   "couleur_registre": "écarlate (RHS) ; bord crème au revers",
+   "motif": "étoile à pointes aiguës, centre jaune ; feuilles pourprées",
+   "sources": [
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://www.rhs.org.uk/plants/66436/tulipa-showwinner-(12)/details",
+     "consulte": "2026-10-08",
+     "note": "RHS (société savante) : fiche (12) AGM : environ 20 cm, feuilles mouchetées de pourpre, fleur solitaire écarlate bordée de crème à l'extérieur"
+    },
+    {
+     "role": "existence",
+     "niveau": "N1",
+     "url": "https://assets.kavb.nl/docs/709a8fb3-51c8-47ad-94a7-97c37c7f447f.pdf",
+     "consulte": "2026-10-08",
+     "note": "KAVB, liste « Registraties week 46-2007 t/m 45-2008 » : 'Orange Showwinner' (Kaufmanniana Groep, Edibulbcode 79195) est enregistré « Mutant van 'Showwinner' » : le parent figure donc au registre"
+    },
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaHybrids",
+     "consulte": "2026-10-08",
+     "note": "Pacific Bulb Society : Div. 12 : « 'Showwinner' : scarlet red », AGM"
+    },
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://www.jandewitenzonen.com/en/assortment/tulip/484/Showwinner/",
+     "consulte": "2026-10-08",
+     "note": "fiche variété du bulbiculteur-exportateur Jan de Wit en Zonen (Enkhuizen) : groupe Kaufmanniana ; couleur Red ; hauteur Short ; floraison Early ; marqué « no longer supported » (retiré de son assortiment actuel, fiche encore en ligne)"
+    }
+   ],
+   "photos": [
+    {
+     "url": "https://pacificbulbsociety.org/pbswiki/files/Tulipa/Tulipa_kaufmanniana_Showwinner_JA5.jpg",
+     "page": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaHybrids",
+     "niveau": "N3",
+     "auteur": "Janos Agoston",
+     "licence": "© photographe ; Pacific Bulb Society (reproduction non libre : consultation et mesure seulement)",
+     "legende": "Tulipa kaufmanniana 'Showwinner', Janos Agoston",
+     "consulte": "2026-10-08",
+     "vue": "champ",
+     "eclairage": null,
+     "balance_blancs": null
+    },
+    {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/0/0b/Tulipa_Showwinner_%28Jardin_des_Plantes_de_Paris%29.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Tulipa_Showwinner_%28Jardin_des_Plantes_de_Paris%29.jpg",
+     "niveau": "N4",
+     "auteur": "Tangopaso",
+     "licence": "Public domain",
+     "legende": "File:Tulipa Showwinner (Jardin des Plantes de Paris).jpg",
+     "consulte": "2026-10-08",
+     "vue": "dessus, étoile à centre jaune (Jardin des Plantes, Paris)",
+     "date_prise": "2013-03-16",
+     "eclairage": null,
+     "balance_blancs": null,
+     "miniature": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0b/Tulipa_Showwinner_%28Jardin_des_Plantes_de_Paris%29.jpg/960px-Tulipa_Showwinner_%28Jardin_des_Plantes_de_Paris%29.jpg"
+    },
+    {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/8/8b/Tulipa_kaufmanniana_-_tulipe_showwinner_-_parc_floral_Paris.JPG",
+     "page": "https://commons.wikimedia.org/wiki/File:Tulipa_kaufmanniana_-_tulipe_showwinner_-_parc_floral_Paris.JPG",
+     "niveau": "N4",
+     "auteur": "Thesupermat",
+     "licence": "CC BY-SA 3.0",
+     "legende": "File:Tulipa kaufmanniana - tulipe showwinner - parc floral Paris.JPG",
+     "consulte": "2026-10-08",
+     "vue": "massif (Parc floral de Paris)",
+     "date_prise": "2009-03-29",
+     "eclairage": null,
+     "balance_blancs": null,
+     "miniature": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8b/Tulipa_kaufmanniana_-_tulipe_showwinner_-_parc_floral_Paris.JPG/960px-Tulipa_kaufmanniana_-_tulipe_showwinner_-_parc_floral_Paris.JPG"
+    },
+    {
+     "url": "https://www.jandewitenzonen.com/img/products/tulip/Showwinner.jpg",
+     "page": "https://www.jandewitenzonen.com/en/assortment/tulip/484/Showwinner/",
+     "niveau": "N3",
+     "auteur": "Jan de Wit en Zonen B.V.",
+     "licence": "tous droits réservés ; mesure locale seulement, jamais stockée ni publiée",
+     "legende": "Tulipa 'Showwinner' (fiche variété Jan de Wit en Zonen)",
+     "consulte": "2026-10-08",
+     "vue": "bouton fermé ou gobelet, photo de catalogue (filigrane, fond flou) : couleur approchée",
+     "note": "photo de catalogue : couleur à recouper",
+     "eclairage": null,
+     "balance_blancs": null
+    }
+   ],
+   "mesures": {},
+   "niveau_preuve": "B",
+   "existence_n1_n2": true,
+   "statut": "en production",
+   "doutes": [
+    "deux photos Commons floues (James Johnstone, tons orangés) écartées : couleur non fiable"
+   ],
+   "coloris_catalogue": null,
+   "commerce": {
+    "jan_de_wit_en_zonen_catalogue_2026": false,
+    "groupe": "Kaufmanniana",
+    "couleur": "Red",
+    "hauteur": "Short",
+    "floraison": "Early",
+    "note": "fiche en ligne le 2026-10-08 ; Floricode non consulté"
+   },
+   "familles_de_sources": [
+    "assets.kavb.nl",
+    "commons.wikimedia.org",
+    "pacificbulbsociety.org",
+    "www.jandewitenzonen.com",
+    "www.rhs.org.uk"
+   ],
+   "niveau_A_si": "passe à A si la fiche Jan de Wit en Zonen (bulbiculteur-exportateur, photo de catalogue) est admise comme N2 : N1 d'existence lu (KAVB, parent d'un mutant ou inscription) + photo N2 ; décision de l'orchestrateur"
+  },
+  {
+   "id": "stresa",
+   "nom_affiche": "Stresa",
+   "nom_enregistre": "Stresa",
+   "synonymes": [
+    "Tulipa kaufmanniana 'Stresa'"
+   ],
+   "groupe": "Kaufmanniana (12)",
+   "obtenteur": null,
+   "annee": null,
+   "numeros": {},
+   "couleur_registre": "jaune vif, revers rouge (RHS)",
+   "motif": "flamme rouge au revers et au cœur sur fond jaune ; feuilles mouchetées",
+   "sources": [
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://www.rhs.org.uk/plants/98684/tulipa-stresa-12/details",
+     "consulte": "2026-10-08",
+     "note": "RHS (société savante) : fiche (12) AGM ; syn. Tulipa kaufmanniana 'Stresa' ; environ 25 cm ; jaune vif et rouge « boîte aux lettres » à l'extérieur, les pointes se recourbent au soleil"
+    },
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaHybrids",
+     "consulte": "2026-10-08",
+     "note": "Pacific Bulb Society : Div. 12 : « 'Stresa' : red with yellow edges and interior, mottled foliage », AGM"
+    },
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://www.jandewitenzonen.com/en/assortment/tulip/497/Stresa/",
+     "consulte": "2026-10-08",
+     "note": "fiche variété du bulbiculteur-exportateur Jan de Wit en Zonen (Enkhuizen) : groupe Kaufmanniana ; couleur Red/Yellow ; hauteur Short ; floraison Early ; marqué « no longer supported » (retiré de son assortiment actuel, fiche encore en ligne)"
+    }
+   ],
+   "photos": [
+    {
+     "url": "https://pacificbulbsociety.org/pbswiki/files/Tulipa/Tulipa_kaufmanniana_Stresa_JA10.jpg",
+     "page": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaHybrids",
+     "niveau": "N3",
+     "auteur": "Janos Agoston",
+     "licence": "© photographe ; Pacific Bulb Society (reproduction non libre : consultation et mesure seulement)",
+     "legende": "Tulipa kaufmanniana 'Stresa', Janos Agoston",
+     "consulte": "2026-10-08",
+     "vue": "dessus",
+     "eclairage": null,
+     "balance_blancs": null
+    },
+    {
+     "url": "https://pacificbulbsociety.org/pbswiki/files/Tulipa/Tulipa_kaufmanniana_Stresa_JA6.jpg",
+     "page": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaHybrids",
+     "niveau": "N3",
+     "auteur": "Janos Agoston",
+     "licence": "© photographe ; Pacific Bulb Society (reproduction non libre : consultation et mesure seulement)",
+     "legende": "Tulipa kaufmanniana 'Stresa', Janos Agoston",
+     "consulte": "2026-10-08",
+     "vue": "dessus",
+     "eclairage": null,
+     "balance_blancs": null
+    },
+    {
+     "url": "https://pacificbulbsociety.org/pbswiki/files/Tulipa/Tulipa_kaufmanniana_Stresa_JA7.jpg",
+     "page": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaHybrids",
+     "niveau": "N3",
+     "auteur": "Janos Agoston",
+     "licence": "© photographe ; Pacific Bulb Society (reproduction non libre : consultation et mesure seulement)",
+     "legende": "Tulipa kaufmanniana 'Stresa', Janos Agoston",
+     "consulte": "2026-10-08",
+     "vue": "bouton",
+     "eclairage": null,
+     "balance_blancs": null
+    },
+    {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/6/67/Tulipa_%27Stresa%27_2014.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Tulipa_%27Stresa%27_2014.jpg",
+     "niveau": "N4",
+     "auteur": "Anna reg",
+     "licence": "CC BY-SA 3.0 at",
+     "legende": "File:Tulipa 'Stresa' 2014.jpg",
+     "consulte": "2026-10-08",
+     "vue": "massif, étiquette « Tulipa Stresa » (Kaufmanniana)",
+     "date_prise": "2014-03-21",
+     "eclairage": null,
+     "balance_blancs": null,
+     "miniature": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/Tulipa_%27Stresa%27_2014.jpg/960px-Tulipa_%27Stresa%27_2014.jpg"
+    },
+    {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/a/ad/Tulipa_Stresa_%281%29.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Tulipa_Stresa_%281%29.jpg",
+     "niveau": "N4",
+     "auteur": "David Wright",
+     "licence": "CC BY 2.0",
+     "legende": "File:Tulipa Stresa (1).jpg",
+     "consulte": "2026-10-08",
+     "vue": "gros plan intérieur",
+     "date_prise": "2010-04-08 16:34",
+     "eclairage": null,
+     "balance_blancs": null,
+     "miniature": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ad/Tulipa_Stresa_%281%29.jpg/960px-Tulipa_Stresa_%281%29.jpg"
+    },
+    {
+     "url": "https://www.jandewitenzonen.com/img/products/tulip/Stresa.jpg",
+     "page": "https://www.jandewitenzonen.com/en/assortment/tulip/497/Stresa/",
+     "niveau": "N3",
+     "auteur": "Jan de Wit en Zonen B.V.",
+     "licence": "tous droits réservés ; mesure locale seulement, jamais stockée ni publiée",
+     "legende": "Tulipa 'Stresa' (fiche variété Jan de Wit en Zonen)",
+     "consulte": "2026-10-08",
+     "vue": "bouton fermé ou gobelet, photo de catalogue (filigrane, fond flou) : couleur approchée",
+     "note": "photo de catalogue : couleur à recouper",
+     "eclairage": null,
+     "balance_blancs": null
+    }
+   ],
+   "mesures": {},
+   "niveau_preuve": "B",
+   "existence_n1_n2": false,
+   "statut": "en production",
+   "doutes": [
+    "existence N1/N2 non établie : base KAVB (formulaire) non interrogée et Floricode non consulté ; à valider au sondage de 10 %"
+   ],
+   "coloris_catalogue": null,
+   "commerce": {
+    "jan_de_wit_en_zonen_catalogue_2026": false,
+    "groupe": "Kaufmanniana",
+    "couleur": "Red/Yellow",
+    "hauteur": "Short",
+    "floraison": "Early",
+    "note": "fiche en ligne le 2026-10-08 ; Floricode non consulté"
+   },
+   "familles_de_sources": [
+    "commons.wikimedia.org",
+    "pacificbulbsociety.org",
+    "www.jandewitenzonen.com",
+    "www.rhs.org.uk"
+   ]
+  },
+  {
+   "id": "giuseppe-verdi",
+   "nom_affiche": "Giuseppe Verdi",
+   "nom_enregistre": "Giuseppe Verdi",
+   "synonymes": [],
+   "groupe": "Kaufmanniana (12)",
+   "obtenteur": null,
+   "annee": null,
+   "numeros": {},
+   "couleur_registre": null,
+   "motif": "jaune, revers flammé de rouge-orangé (photos)",
+   "sources": [
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://www.rhs.org.uk/plants/67057/tulipa-giuseppe-verdi-12/details",
+     "consulte": "2026-10-08",
+     "note": "RHS (société savante) : fiche (12) ; la description florale n'y est pas reprise"
+    },
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaHybrids",
+     "consulte": "2026-10-08",
+     "note": "Pacific Bulb Society : Div. 12 (photos de Janos Agoston ; couleur non décrite dans le texte)"
+    },
+    {
+     "role": "nom",
+     "niveau": "N4",
+     "url": "https://amsterdamtulipmuseum.com/blogs/tulip-facts/different-kinds-of-tulips",
+     "consulte": "2026-10-08",
+     "note": "musée de la tulipe d'Amsterdam : « Giuseppe Verdi » jaune et rouge"
+    },
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://www.jandewitenzonen.com/en/assortment/tulip/232/Giuseppe-Verdi/",
+     "consulte": "2026-10-08",
+     "note": "fiche variété du bulbiculteur-exportateur Jan de Wit en Zonen (Enkhuizen) : groupe Kaufmanniana ; couleur Red/Yellow ; hauteur Short ; floraison Early ; marqué « no longer supported » (retiré de son assortiment actuel, fiche encore en ligne)"
+    }
+   ],
+   "photos": [
+    {
+     "url": "https://pacificbulbsociety.org/pbswiki/files/Tulipa/Tulipa_kaufmanniana_Giuseppe_Verdi_JA2.jpg",
+     "page": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaHybrids",
+     "niveau": "N3",
+     "auteur": "Janos Agoston",
+     "licence": "© photographe ; Pacific Bulb Society (reproduction non libre : consultation et mesure seulement)",
+     "legende": "Tulipa kaufmanniana 'Giuseppe Verdi', Janos Agoston",
+     "consulte": "2026-10-08",
+     "vue": "champ",
+     "eclairage": null,
+     "balance_blancs": null
+    },
+    {
+     "url": "https://pacificbulbsociety.org/pbswiki/files/Tulipa/Tulipa_kaufmanniana_Giuseppe_Verdi_JA6.jpg",
+     "page": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaHybrids",
+     "niveau": "N3",
+     "auteur": "Janos Agoston",
+     "licence": "© photographe ; Pacific Bulb Society (reproduction non libre : consultation et mesure seulement)",
+     "legende": "Tulipa kaufmanniana 'Giuseppe Verdi', Janos Agoston",
+     "consulte": "2026-10-08",
+     "vue": "profil, bouton",
+     "eclairage": null,
+     "balance_blancs": null
+    },
+    {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/d/d0/Tulipa_%27Giuseppe_Verdi%27_2019-04-06_02.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Tulipa_%27Giuseppe_Verdi%27_2019-04-06_02.jpg",
+     "niveau": "N4",
+     "auteur": "Agnieszka Kwiecień, Nova",
+     "licence": "CC BY-SA 4.0",
+     "legende": "File:Tulipa 'Giuseppe Verdi' 2019-04-06 02.jpg",
+     "consulte": "2026-10-08",
+     "vue": "dessus, étoile ouverte (CC0)",
+     "date_prise": "2019-04-06",
+     "eclairage": null,
+     "balance_blancs": null,
+     "miniature": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/Tulipa_%27Giuseppe_Verdi%27_2019-04-06_02.jpg/960px-Tulipa_%27Giuseppe_Verdi%27_2019-04-06_02.jpg"
+    },
+    {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Tulipa_%27Giuseppe_Verdi%27_2019-04-06_01.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Tulipa_%27Giuseppe_Verdi%27_2019-04-06_01.jpg",
+     "niveau": "N4",
+     "auteur": "Agnieszka Kwiecień, Nova",
+     "licence": "CC BY-SA 4.0",
+     "legende": "File:Tulipa 'Giuseppe Verdi' 2019-04-06 01.jpg",
+     "consulte": "2026-10-08",
+     "vue": "bouton",
+     "date_prise": "2019-04-06",
+     "eclairage": null,
+     "balance_blancs": null,
+     "miniature": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c3/Tulipa_%27Giuseppe_Verdi%27_2019-04-06_01.jpg/960px-Tulipa_%27Giuseppe_Verdi%27_2019-04-06_01.jpg"
+    },
+    {
+     "url": "https://www.jandewitenzonen.com/img/products/tulip/Giuseppe_Verdi.jpg",
+     "page": "https://www.jandewitenzonen.com/en/assortment/tulip/232/Giuseppe-Verdi/",
+     "niveau": "N3",
+     "auteur": "Jan de Wit en Zonen B.V.",
+     "licence": "tous droits réservés ; mesure locale seulement, jamais stockée ni publiée",
+     "legende": "Tulipa 'Giuseppe Verdi' (fiche variété Jan de Wit en Zonen)",
+     "consulte": "2026-10-08",
+     "vue": "bouton fermé ou gobelet, photo de catalogue (filigrane, fond flou) : couleur approchée",
+     "note": "photo de catalogue : couleur à recouper",
+     "eclairage": null,
+     "balance_blancs": null
+    }
+   ],
+   "mesures": {},
+   "niveau_preuve": "B",
+   "existence_n1_n2": false,
+   "statut": "en production",
+   "doutes": [
+    "existence N1/N2 non établie : base KAVB (formulaire) non interrogée et Floricode non consulté ; à valider au sondage de 10 %",
+    "aucune description de couleur N1-N3 écrite : la couleur ne repose que sur les photos"
+   ],
+   "coloris_catalogue": null,
+   "commerce": {
+    "jan_de_wit_en_zonen_catalogue_2026": false,
+    "groupe": "Kaufmanniana",
+    "couleur": "Red/Yellow",
+    "hauteur": "Short",
+    "floraison": "Early",
+    "note": "fiche en ligne le 2026-10-08 ; Floricode non consulté"
+   },
+   "familles_de_sources": [
+    "amsterdamtulipmuseum.com",
+    "commons.wikimedia.org",
+    "pacificbulbsociety.org",
+    "www.jandewitenzonen.com",
+    "www.rhs.org.uk"
+   ]
+  },
+  {
+   "id": "johann-strauss",
+   "nom_affiche": "Johann Strauss",
+   "nom_enregistre": "Johann Strauss",
+   "synonymes": [],
+   "groupe": "Kaufmanniana (12)",
+   "obtenteur": null,
+   "annee": null,
+   "numeros": {},
+   "couleur_registre": "jaune doré passant au primevère, lavé de rouge (PBS)",
+   "motif": "boutons rayés de rouge ; feuilles striées de pourpre",
+   "sources": [
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://www.rhs.org.uk/plants/96988/tulipa-johann-strauss-(12)/details",
+     "consulte": "2026-10-08",
+     "note": "RHS (société savante) : fiche (12)"
+    },
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaHybrids",
+     "consulte": "2026-10-08",
+     "note": "Pacific Bulb Society : Div. 12 : « 'Johann Strauss' : golden yellow fading to primrose at the edges, flushed red early in the season, leaves striped purple »"
+    },
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://www.jandewitenzonen.com/en/assortment/tulip/292/Johann-Strauss/",
+     "consulte": "2026-10-08",
+     "note": "fiche variété du bulbiculteur-exportateur Jan de Wit en Zonen (Enkhuizen) : groupe Kaufmanniana ; couleur Yellow/Red ; hauteur Short ; floraison Early ; marqué « no longer supported » (retiré de son assortiment actuel, fiche encore en ligne)"
+    }
+   ],
+   "photos": [
+    {
+     "url": "https://pacificbulbsociety.org/pbswiki/files/Tulipa/Tulipa_kaufmanniana_Johann_Strauss_JA2.jpg",
+     "page": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaHybrids",
+     "niveau": "N3",
+     "auteur": "Janos Agoston",
+     "licence": "© photographe ; Pacific Bulb Society (reproduction non libre : consultation et mesure seulement)",
+     "legende": "Tulipa kaufmanniana 'Johann Strauss', Janos Agoston",
+     "consulte": "2026-10-08",
+     "vue": "champ",
+     "eclairage": null,
+     "balance_blancs": null
+    },
+    {
+     "url": "https://pacificbulbsociety.org/pbswiki/files/Tulipa/Tulipa_kaufmanniana_Johann_Strauss_JA.jpg",
+     "page": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaHybrids",
+     "niveau": "N3",
+     "auteur": "Janos Agoston",
+     "licence": "© photographe ; Pacific Bulb Society (reproduction non libre : consultation et mesure seulement)",
+     "legende": "Tulipa kaufmanniana 'Johann Strauss', Janos Agoston",
+     "consulte": "2026-10-08",
+     "vue": "boutons rayés",
+     "eclairage": null,
+     "balance_blancs": null
+    },
+    {
+     "url": "https://www.jandewitenzonen.com/img/products/tulip/Johann_Strauss.jpg",
+     "page": "https://www.jandewitenzonen.com/en/assortment/tulip/292/Johann-Strauss/",
+     "niveau": "N3",
+     "auteur": "Jan de Wit en Zonen B.V.",
+     "licence": "tous droits réservés ; mesure locale seulement, jamais stockée ni publiée",
+     "legende": "Tulipa 'Johann Strauss' (fiche variété Jan de Wit en Zonen)",
+     "consulte": "2026-10-08",
+     "vue": "bouton fermé ou gobelet, photo de catalogue (filigrane, fond flou) : couleur approchée",
+     "note": "photo de catalogue : couleur à recouper",
+     "eclairage": null,
+     "balance_blancs": null
+    }
+   ],
+   "mesures": {},
+   "niveau_preuve": "B",
+   "existence_n1_n2": false,
+   "statut": "en production",
+   "doutes": [
+    "existence N1/N2 non établie : base KAVB (formulaire) non interrogée et Floricode non consulté ; à valider au sondage de 10 %"
+   ],
+   "coloris_catalogue": null,
+   "commerce": {
+    "jan_de_wit_en_zonen_catalogue_2026": false,
+    "groupe": "Kaufmanniana",
+    "couleur": "Yellow/Red",
+    "hauteur": "Short",
+    "floraison": "Early",
+    "note": "fiche en ligne le 2026-10-08 ; Floricode non consulté"
+   },
+   "familles_de_sources": [
+    "pacificbulbsociety.org",
+    "www.jandewitenzonen.com",
+    "www.rhs.org.uk"
+   ]
+  },
+  {
+   "id": "scarlet-baby",
+   "nom_affiche": "Scarlet Baby",
+   "nom_enregistre": "Scarlet Baby",
+   "synonymes": [],
+   "groupe": "Kaufmanniana (12)",
+   "obtenteur": null,
+   "annee": null,
+   "numeros": {},
+   "couleur_registre": "rouge à base jaune (PBS)",
+   "motif": "étoile à pointes aiguës, centre jaune-orangé",
+   "sources": [
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaHybrids",
+     "consulte": "2026-10-08",
+     "note": "Pacific Bulb Society : Div. 12 : « 'Scarlet Baby' : red with a yellow base » ; photos de David Pilling"
+    },
+    {
+     "role": "nom",
+     "niveau": "N4",
+     "url": "https://commons.wikimedia.org/wiki/Category:Tulipa_%27Scarlet_Baby%27",
+     "consulte": "2026-10-08",
+     "note": "catégorie Commons (2 fichiers)"
+    },
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://www.jandewitenzonen.com/en/assortment/tulip/477/Scarlet-Baby/",
+     "consulte": "2026-10-08",
+     "note": "fiche variété du bulbiculteur-exportateur Jan de Wit en Zonen (Enkhuizen) : groupe Kaufmanniana ; couleur Red ; hauteur Short ; floraison Early ; marqué « no longer supported » (retiré de son assortiment actuel, fiche encore en ligne)"
+    }
+   ],
+   "photos": [
+    {
+     "url": "https://pacificbulbsociety.org/pbswiki/files/Tulipa/Tulipa_kaufmanniana_scarlet_baby_DP0.jpg",
+     "page": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaHybrids",
+     "niveau": "N3",
+     "auteur": "David Pilling",
+     "licence": "© photographe ; Pacific Bulb Society (reproduction non libre : consultation et mesure seulement)",
+     "legende": "Tulipa kaufmanniana 'Scarlet Baby', David Pilling",
+     "consulte": "2026-10-08",
+     "vue": "dessus, étoile ouverte",
+     "eclairage": null,
+     "balance_blancs": null
+    },
+    {
+     "url": "https://pacificbulbsociety.org/pbswiki/files/Tulipa/Tulipa_kaufmanniana_scarlet_baby_DP2.jpg",
+     "page": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaHybrids",
+     "niveau": "N3",
+     "auteur": "David Pilling",
+     "licence": "© photographe ; Pacific Bulb Society (reproduction non libre : consultation et mesure seulement)",
+     "legende": "Tulipa kaufmanniana 'Scarlet Baby', David Pilling",
+     "consulte": "2026-10-08",
+     "vue": "profil, pied",
+     "eclairage": null,
+     "balance_blancs": null
+    },
+    {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/1/11/Tulipa_kaufmanniana_%27Scarlet_Baby%27_1.JPG",
+     "page": "https://commons.wikimedia.org/wiki/File:Tulipa_kaufmanniana_%27Scarlet_Baby%27_1.JPG",
+     "niveau": "N4",
+     "auteur": "Ghislain118   http://www.fleurs-des-montagnes.net",
+     "licence": "CC BY-SA 3.0",
+     "legende": "File:Tulipa kaufmanniana 'Scarlet Baby' 1.JPG",
+     "consulte": "2026-10-08",
+     "vue": "dessus",
+     "date_prise": "2009-02-22 00:12:55",
+     "eclairage": null,
+     "balance_blancs": null,
+     "miniature": "https://upload.wikimedia.org/wikipedia/commons/1/11/Tulipa_kaufmanniana_%27Scarlet_Baby%27_1.JPG"
+    },
+    {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/8/81/Tulipa_kaufmanniana_%27Scarlet_Baby%27_2.JPG",
+     "page": "https://commons.wikimedia.org/wiki/File:Tulipa_kaufmanniana_%27Scarlet_Baby%27_2.JPG",
+     "niveau": "N4",
+     "auteur": "Ghislain118   http://www.fleurs-des-montagnes.net",
+     "licence": "CC BY-SA 3.0",
+     "legende": "File:Tulipa kaufmanniana 'Scarlet Baby' 2.JPG",
+     "consulte": "2026-10-08",
+     "vue": "dessus",
+     "date_prise": "2010-03-25 05:29:32",
+     "eclairage": null,
+     "balance_blancs": null,
+     "miniature": "https://upload.wikimedia.org/wikipedia/commons/8/81/Tulipa_kaufmanniana_%27Scarlet_Baby%27_2.JPG"
+    },
+    {
+     "url": "https://www.jandewitenzonen.com/img/products/tulip/Scarlet_Baby.jpg",
+     "page": "https://www.jandewitenzonen.com/en/assortment/tulip/477/Scarlet-Baby/",
+     "niveau": "N3",
+     "auteur": "Jan de Wit en Zonen B.V.",
+     "licence": "tous droits réservés ; mesure locale seulement, jamais stockée ni publiée",
+     "legende": "Tulipa 'Scarlet Baby' (fiche variété Jan de Wit en Zonen)",
+     "consulte": "2026-10-08",
+     "vue": "bouton fermé ou gobelet, photo de catalogue (filigrane, fond flou) : couleur approchée",
+     "note": "photo de catalogue : couleur à recouper",
+     "eclairage": null,
+     "balance_blancs": null
+    }
+   ],
+   "mesures": {},
+   "niveau_preuve": "B",
+   "existence_n1_n2": false,
+   "statut": "en production",
+   "doutes": [
+    "existence N1/N2 non établie : base KAVB (formulaire) non interrogée et Floricode non consulté ; à valider au sondage de 10 %"
+   ],
+   "coloris_catalogue": null,
+   "commerce": {
+    "jan_de_wit_en_zonen_catalogue_2026": false,
+    "groupe": "Kaufmanniana",
+    "couleur": "Red",
+    "hauteur": "Short",
+    "floraison": "Early",
+    "note": "fiche en ligne le 2026-10-08 ; Floricode non consulté"
+   },
+   "familles_de_sources": [
+    "commons.wikimedia.org",
+    "pacificbulbsociety.org",
+    "www.jandewitenzonen.com"
+   ]
+  },
+  {
+   "id": "ancilla",
+   "nom_affiche": "Ancilla",
+   "nom_enregistre": "Ancilla",
+   "synonymes": [],
+   "groupe": "Kaufmanniana (12)",
+   "obtenteur": null,
+   "annee": null,
+   "numeros": {},
+   "couleur_registre": "rose tendre, revers rose-rouge, intérieur blanc à anneau basal rouge (RHS)",
+   "motif": "blanc, revers rosé, anneau basal rouge",
+   "sources": [
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://www.rhs.org.uk/plants/76910/tulipa-ancilla-(12)/details",
+     "consulte": "2026-10-08",
+     "note": "RHS (société savante) : fiche (12) AGM : environ 20 cm, feuilles lancéolées à bord ondulé, fleurs rose tendre, lavées de rose-rouge dehors, blanches dedans avec un anneau rouge à la base"
+    },
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://www.jandewitenzonen.com/en/assortment/tulip/16/Ancilla/",
+     "consulte": "2026-10-08",
+     "note": "fiche variété du bulbiculteur-exportateur Jan de Wit en Zonen (Enkhuizen) : groupe Kaufmanniana ; couleur Red/White ; hauteur Short ; floraison Early ; marqué « no longer supported » (retiré de son assortiment actuel, fiche encore en ligne)"
+    }
+   ],
+   "photos": [
+    {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/d/d6/Tulipa_kaufmanniana_-_tulipe_ancilia_-_parc_floral_Paris.JPG",
+     "page": "https://commons.wikimedia.org/wiki/File:Tulipa_kaufmanniana_-_tulipe_ancilia_-_parc_floral_Paris.JPG",
+     "niveau": "N4",
+     "auteur": "Thesupermat",
+     "licence": "CC BY-SA 3.0",
+     "legende": "File:Tulipa kaufmanniana - tulipe ancilia - parc floral Paris.JPG",
+     "consulte": "2026-10-08",
+     "vue": "massif (Parc floral de Paris)",
+     "date_prise": "2009-03-29",
+     "eclairage": null,
+     "balance_blancs": null,
+     "miniature": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/Tulipa_kaufmanniana_-_tulipe_ancilia_-_parc_floral_Paris.JPG/960px-Tulipa_kaufmanniana_-_tulipe_ancilia_-_parc_floral_Paris.JPG"
+    },
+    {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Tulipa_kaufmanniana_-_tulipe_ancilia_-_parc_floral_Paris2.JPG",
+     "page": "https://commons.wikimedia.org/wiki/File:Tulipa_kaufmanniana_-_tulipe_ancilia_-_parc_floral_Paris2.JPG",
+     "niveau": "N4",
+     "auteur": "Thesupermat",
+     "licence": "CC BY-SA 3.0",
+     "legende": "File:Tulipa kaufmanniana - tulipe ancilia - parc floral Paris2.JPG",
+     "consulte": "2026-10-08",
+     "vue": "gros plan",
+     "eclairage": null,
+     "balance_blancs": null,
+     "miniature": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/Tulipa_kaufmanniana_-_tulipe_ancilia_-_parc_floral_Paris2.JPG/960px-Tulipa_kaufmanniana_-_tulipe_ancilia_-_parc_floral_Paris2.JPG"
+    },
+    {
+     "url": "https://www.jandewitenzonen.com/img/products/tulip/Ancilla.jpg",
+     "page": "https://www.jandewitenzonen.com/en/assortment/tulip/16/Ancilla/",
+     "niveau": "N3",
+     "auteur": "Jan de Wit en Zonen B.V.",
+     "licence": "tous droits réservés ; mesure locale seulement, jamais stockée ni publiée",
+     "legende": "Tulipa 'Ancilla' (fiche variété Jan de Wit en Zonen)",
+     "consulte": "2026-10-08",
+     "vue": "bouton fermé ou gobelet, photo de catalogue (filigrane, fond flou) : couleur approchée",
+     "note": "photo de catalogue : couleur à recouper",
+     "eclairage": null,
+     "balance_blancs": null
+    }
+   ],
+   "mesures": {},
+   "niveau_preuve": "B",
+   "existence_n1_n2": false,
+   "statut": "en production",
+   "doutes": [
+    "existence N1/N2 non établie : base KAVB (formulaire) non interrogée et Floricode non consulté ; à valider au sondage de 10 %"
+   ],
+   "coloris_catalogue": null,
+   "commerce": {
+    "jan_de_wit_en_zonen_catalogue_2026": false,
+    "groupe": "Kaufmanniana",
+    "couleur": "Red/White",
+    "hauteur": "Short",
+    "floraison": "Early",
+    "note": "fiche en ligne le 2026-10-08 ; Floricode non consulté"
+   },
+   "familles_de_sources": [
+    "commons.wikimedia.org",
+    "www.jandewitenzonen.com",
+    "www.rhs.org.uk"
+   ]
+  },
+  {
+   "id": "gluck",
+   "nom_affiche": "Glück",
+   "nom_enregistre": "Glück",
+   "synonymes": [],
+   "groupe": "Kaufmanniana (12)",
+   "obtenteur": null,
+   "annee": null,
+   "numeros": {},
+   "couleur_registre": null,
+   "motif": "jaune à flammes rouges et centre sombre (photo)",
+   "sources": [
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://www.rhs.org.uk/plants/93729/i-tulipa-i-gluck-(12)/details",
+     "consulte": "2026-10-08",
+     "note": "RHS (société savante) : fiche (12), AGM selon Wikipédia/RHS"
+    }
+   ],
+   "photos": [
+    {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/6/64/Tulipa_%27Gluck%27_2016-05-02_01.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Tulipa_%27Gluck%27_2016-05-02_01.jpg",
+     "niveau": "N4",
+     "auteur": "Agnieszka Kwiecień, Nova",
+     "licence": "CC BY-SA 4.0",
+     "legende": "File:Tulipa 'Gluck' 2016-05-02 01.jpg",
+     "consulte": "2026-10-08",
+     "vue": "dessus, étoile à cœur sombre",
+     "date_prise": "2016-05-02",
+     "eclairage": null,
+     "balance_blancs": null,
+     "miniature": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/Tulipa_%27Gluck%27_2016-05-02_01.jpg/960px-Tulipa_%27Gluck%27_2016-05-02_01.jpg"
+    }
+   ],
+   "mesures": {},
+   "niveau_preuve": "C",
+   "existence_n1_n2": false,
+   "statut": "à confirmer",
+   "doutes": [
+    "une seule photo N4",
+    "existence N1/N2 non établie : base KAVB (formulaire) non interrogée et Floricode non consulté ; à valider au sondage de 10 %"
+   ],
+   "coloris_catalogue": null,
+   "familles_de_sources": [
+    "commons.wikimedia.org",
+    "www.rhs.org.uk"
+   ]
+  },
+  {
+   "id": "fashion",
+   "nom_affiche": "Fashion",
+   "nom_enregistre": "Fashion",
+   "synonymes": [],
+   "groupe": "Kaufmanniana (12)",
+   "obtenteur": null,
+   "annee": null,
+   "numeros": {},
+   "couleur_registre": null,
+   "motif": "rouge-orangé à pointes aiguës, feuilles pourprées (photos)",
+   "sources": [
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaHybrids",
+     "consulte": "2026-10-08",
+     "note": "Pacific Bulb Society : Div. 12 : « 'Fashion' », couleur non décrite"
+    }
+   ],
+   "photos": [
+    {
+     "url": "https://pacificbulbsociety.org/pbswiki/files/Tulipa/Tulipa_kaufmanniana_Fashion_JA5.jpg",
+     "page": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaHybrids",
+     "niveau": "N3",
+     "auteur": "Janos Agoston",
+     "licence": "© photographe ; Pacific Bulb Society (reproduction non libre : consultation et mesure seulement)",
+     "legende": "Tulipa kaufmanniana 'Fashion', Janos Agoston",
+     "consulte": "2026-10-08",
+     "vue": "champ",
+     "eclairage": null,
+     "balance_blancs": null
+    },
+    {
+     "url": "https://pacificbulbsociety.org/pbswiki/files/Tulipa/Tulipa_kaufmanniana_Fashion_JA8.jpg",
+     "page": "https://pacificbulbsociety.org/pbswiki/index.php/TulipaHybrids",
+     "niveau": "N3",
+     "auteur": "Janos Agoston",
+     "licence": "© photographe ; Pacific Bulb Society (reproduction non libre : consultation et mesure seulement)",
+     "legende": "Tulipa kaufmanniana 'Fashion', Janos Agoston",
+     "consulte": "2026-10-08",
+     "vue": "dessus",
+     "eclairage": null,
+     "balance_blancs": null
+    }
+   ],
+   "mesures": {},
+   "niveau_preuve": "C",
+   "existence_n1_n2": false,
+   "statut": "à confirmer",
+   "doutes": [
+    "un seul auteur (PBS), aucune fiche RHS/KAVB trouvée"
+   ],
+   "coloris_catalogue": null,
+   "familles_de_sources": [
+    "pacificbulbsociety.org"
+   ]
+  },
+  {
+   "id": "heart-s-delight",
+   "nom_affiche": "Heart's Delight (étiqueté « Dwarf Heart's Delight »)",
+   "nom_enregistre": "Heart's Delight",
+   "synonymes": [],
+   "groupe": "Kaufmanniana (12)",
+   "obtenteur": null,
+   "annee": null,
+   "numeros": {},
+   "couleur_registre": "rose tendre (Wikipédia)",
+   "motif": "blanc bordé de rose, centre jaune orangé (photos) : bicolore",
+   "sources": [
+    {
+     "role": "nom",
+     "niveau": "N4",
+     "url": "https://en.wikipedia.org/wiki/Tulipa_kaufmanniana",
+     "consulte": "2026-10-08",
+     "note": "Wikipédia : 'Heart's Delight' rose tendre à œil jaune orangé"
+    },
+    {
+     "role": "nom",
+     "niveau": "N4",
+     "url": "https://commons.wikimedia.org/wiki/Category:Tulipa_%27Dwarf_Heart%27s_Delight%27",
+     "consulte": "2026-10-08",
+     "note": "catégorie Commons : étiquette « Dwarf Heart's Delight » (Andy Mabbett, 3 fichiers)"
+    },
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://www.jandewitenzonen.com/en/assortment/tulip/255/Heart's-Delight/",
+     "consulte": "2026-10-08",
+     "note": "fiche variété du bulbiculteur-exportateur Jan de Wit en Zonen (Enkhuizen) : groupe Kaufmanniana ; couleur Pink/White ; hauteur Short ; floraison Early ; marqué « no longer supported » (retiré de son assortiment actuel, fiche encore en ligne)"
+    }
+   ],
+   "photos": [
+    {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/9/9c/Tulip_%27Dwarf_Heart%27s_Delight%27_-_Andy_Mabbett_-_2016-03-20_-_01.JPG",
+     "page": "https://commons.wikimedia.org/wiki/File:Tulip_%27Dwarf_Heart%27s_Delight%27_-_Andy_Mabbett_-_2016-03-20_-_01.JPG",
+     "niveau": "N4",
+     "auteur": "Andy Mabbett",
+     "licence": "CC BY-SA 4.0",
+     "legende": "File:Tulip 'Dwarf Heart's Delight' - Andy Mabbett - 2016-03-20 - 01.JPG",
+     "consulte": "2026-10-08",
+     "vue": "dessus",
+     "date_prise": "2016-03-20 16:42:19",
+     "eclairage": null,
+     "balance_blancs": null,
+     "miniature": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/Tulip_%27Dwarf_Heart%27s_Delight%27_-_Andy_Mabbett_-_2016-03-20_-_01.JPG/960px-Tulip_%27Dwarf_Heart%27s_Delight%27_-_Andy_Mabbett_-_2016-03-20_-_01.JPG"
+    },
+    {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/6/6c/Tulip_%27Dwarf_Heart%27s_Delight%27_-_Andy_Mabbett_-_2016-03-20_-_02.JPG",
+     "page": "https://commons.wikimedia.org/wiki/File:Tulip_%27Dwarf_Heart%27s_Delight%27_-_Andy_Mabbett_-_2016-03-20_-_02.JPG",
+     "niveau": "N4",
+     "auteur": "Andy Mabbett",
+     "licence": "CC BY-SA 4.0",
+     "legende": "File:Tulip 'Dwarf Heart's Delight' - Andy Mabbett - 2016-03-20 - 02.JPG",
+     "consulte": "2026-10-08",
+     "vue": "dessus",
+     "date_prise": "2016-03-20 16:42:29",
+     "eclairage": null,
+     "balance_blancs": null,
+     "miniature": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/Tulip_%27Dwarf_Heart%27s_Delight%27_-_Andy_Mabbett_-_2016-03-20_-_02.JPG/960px-Tulip_%27Dwarf_Heart%27s_Delight%27_-_Andy_Mabbett_-_2016-03-20_-_02.JPG"
+    },
+    {
+     "url": "https://www.jandewitenzonen.com/img/products/tulip/Hearts_Delight.jpg",
+     "page": "https://www.jandewitenzonen.com/en/assortment/tulip/255/Heart's-Delight/",
+     "niveau": "N3",
+     "auteur": "Jan de Wit en Zonen B.V.",
+     "licence": "tous droits réservés ; mesure locale seulement, jamais stockée ni publiée",
+     "legende": "Tulipa 'Heart's Delight' (fiche variété Jan de Wit en Zonen)",
+     "consulte": "2026-10-08",
+     "vue": "bouton fermé ou gobelet, photo de catalogue (filigrane, fond flou) : couleur approchée",
+     "note": "photo de catalogue : couleur à recouper",
+     "eclairage": null,
+     "balance_blancs": null
+    }
+   ],
+   "mesures": {},
+   "niveau_preuve": "B",
+   "existence_n1_n2": false,
+   "statut": "en production",
+   "doutes": [
+    "nom enregistré incertain : l'étiquette dit « Dwarf Heart's Delight »"
+   ],
+   "coloris_catalogue": null,
+   "commerce": {
+    "jan_de_wit_en_zonen_catalogue_2026": false,
+    "groupe": "Kaufmanniana",
+    "couleur": "Pink/White",
+    "hauteur": "Short",
+    "floraison": "Early",
+    "note": "fiche en ligne le 2026-10-08 ; Floricode non consulté"
+   },
+   "familles_de_sources": [
+    "commons.wikimedia.org",
+    "en.wikipedia.org",
+    "www.jandewitenzonen.com"
+   ]
+  },
+  {
+   "id": "ice-stick",
+   "nom_affiche": "Ice Stick",
+   "nom_enregistre": "Ice Stick",
+   "synonymes": [],
+   "groupe": "Kaufmanniana (12) ? (classement par Commons)",
+   "obtenteur": null,
+   "annee": null,
+   "numeros": {},
+   "couleur_registre": null,
+   "motif": "blanc à base jaune, tépales étroits (photos)",
+   "sources": [
+    {
+     "role": "nom",
+     "niveau": "N4",
+     "url": "https://commons.wikimedia.org/wiki/Category:Tulipa_%27Ice_Stick%27",
+     "consulte": "2026-10-08",
+     "note": "catégorie Commons (2 fichiers du même auteur)"
+    }
+   ],
+   "photos": [
+    {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/9/9d/Tulipa_%27Ice_Stick%27_2023-04-16_01.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Tulipa_%27Ice_Stick%27_2023-04-16_01.jpg",
+     "niveau": "N4",
+     "auteur": "Agnieszka Kwiecień, Nova",
+     "licence": "CC BY-SA 4.0",
+     "legende": "File:Tulipa 'Ice Stick' 2023-04-16 01.jpg",
+     "consulte": "2026-10-08",
+     "vue": "dessus",
+     "date_prise": "2023-04-16",
+     "eclairage": null,
+     "balance_blancs": null,
+     "miniature": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9d/Tulipa_%27Ice_Stick%27_2023-04-16_01.jpg/960px-Tulipa_%27Ice_Stick%27_2023-04-16_01.jpg"
+    },
+    {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/6/67/Tulipa_%27Ice_Stick%27_2023-04-16_02.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Tulipa_%27Ice_Stick%27_2023-04-16_02.jpg",
+     "niveau": "N4",
+     "auteur": "Agnieszka Kwiecień, Nova",
+     "licence": "CC BY-SA 4.0",
+     "legende": "File:Tulipa 'Ice Stick' 2023-04-16 02.jpg",
+     "consulte": "2026-10-08",
+     "vue": "dessus",
+     "date_prise": "2023-04-16",
+     "eclairage": null,
+     "balance_blancs": null,
+     "miniature": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/Tulipa_%27Ice_Stick%27_2023-04-16_02.jpg/960px-Tulipa_%27Ice_Stick%27_2023-04-16_02.jpg"
+    }
+   ],
+   "mesures": {},
+   "niveau_preuve": "C",
+   "existence_n1_n2": false,
+   "statut": "à confirmer",
+   "doutes": [
+    "groupe et nom non confirmés par une source N1-N3"
+   ],
+   "coloris_catalogue": null,
+   "familles_de_sources": [
+    "commons.wikimedia.org"
+   ]
+  },
+  {
+   "id": "love-song",
+   "nom_affiche": "Love Song",
+   "nom_enregistre": "Love Song",
+   "synonymes": [],
+   "groupe": "Kaufmanniana (12)",
+   "obtenteur": null,
+   "annee": null,
+   "numeros": {},
+   "couleur_registre": null,
+   "motif": null,
+   "sources": [
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://www.jandewitenzonen.com/en/assortment/tulip/320/Love-Song/",
+     "consulte": "2026-10-08",
+     "note": "fiche variété du bulbiculteur-exportateur Jan de Wit en Zonen (Enkhuizen) : groupe Kaufmanniana ; couleur Orange/Yellow ; hauteur Short ; floraison Early ; marqué « no longer supported » (retiré de son assortiment actuel, fiche encore en ligne)"
+    }
+   ],
+   "photos": [
+    {
+     "url": "https://www.jandewitenzonen.com/img/products/tulip/Love_Song.jpg",
+     "page": "https://www.jandewitenzonen.com/en/assortment/tulip/320/Love-Song/",
+     "niveau": "N3",
+     "auteur": "Jan de Wit en Zonen B.V.",
+     "licence": "tous droits réservés ; mesure locale seulement, jamais stockée ni publiée",
+     "legende": "Tulipa 'Love Song' (fiche variété Jan de Wit en Zonen)",
+     "consulte": "2026-10-08",
+     "vue": "massif en fleurs, photo de catalogue (filigrane)",
+     "note": "photo de catalogue : couleur à recouper",
+     "eclairage": null,
+     "balance_blancs": null
+    }
+   ],
+   "mesures": {},
+   "niveau_preuve": "C",
+   "existence_n1_n2": false,
+   "statut": "à confirmer",
+   "doutes": [
+    "une seule source (fiche Jan de Wit : orange/jaune, court)",
+    "existence N1/N2 non établie : base KAVB (formulaire) non interrogée et Floricode non consulté ; à valider au sondage de 10 %"
+   ],
+   "coloris_catalogue": null,
+   "familles_de_sources": [
+    "www.jandewitenzonen.com"
+   ]
+  },
+  {
+   "id": "shakespeare",
+   "nom_affiche": "Shakespeare",
+   "nom_enregistre": "Shakespeare",
+   "synonymes": [],
+   "groupe": "Kaufmanniana (12)",
+   "obtenteur": null,
+   "annee": null,
+   "numeros": {},
+   "couleur_registre": null,
+   "motif": null,
+   "sources": [
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://www.jandewitenzonen.com/en/assortment/tulip/480/Shakespeare/",
+     "consulte": "2026-10-08",
+     "note": "fiche variété du bulbiculteur-exportateur Jan de Wit en Zonen (Enkhuizen) : groupe Kaufmanniana ; couleur Red/Salmon ; hauteur Short ; floraison Early ; marqué « no longer supported » (retiré de son assortiment actuel, fiche encore en ligne)"
+    },
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://www.rhs.org.uk/plants/286205/tulipa-kaufmanniana-shakespeare/details",
+     "consulte": "2026-10-08",
+     "note": "RHS (société savante) : fiche « Tulipa kaufmanniana 'Shakespeare' »"
+    },
+    {
+     "role": "nom",
+     "niveau": "N4",
+     "url": "https://commons.wikimedia.org/wiki/Category:Tulipa_Kaufmanniana_Group",
+     "consulte": "2026-10-08",
+     "note": "fichier Commons « Tulipa Shakespeare.JPG » (NataljaMT) non contrôlé"
+    }
+   ],
+   "photos": [
+    {
+     "url": "https://www.jandewitenzonen.com/img/products/tulip/Shakespeare.jpg",
+     "page": "https://www.jandewitenzonen.com/en/assortment/tulip/480/Shakespeare/",
+     "niveau": "N3",
+     "auteur": "Jan de Wit en Zonen B.V.",
+     "licence": "tous droits réservés ; mesure locale seulement, jamais stockée ni publiée",
+     "legende": "Tulipa 'Shakespeare' (fiche variété Jan de Wit en Zonen)",
+     "consulte": "2026-10-08",
+     "vue": "massif en fleurs, photo de catalogue (filigrane)",
+     "note": "photo de catalogue : couleur à recouper",
+     "eclairage": null,
+     "balance_blancs": null
+    }
+   ],
+   "mesures": {},
+   "niveau_preuve": "C",
+   "existence_n1_n2": false,
+   "statut": "à confirmer",
+   "doutes": [
+    "une seule photo ; fiche Jan de Wit : rouge/saumon, court, adapté au forçage à 9 °C"
+   ],
+   "coloris_catalogue": null,
+   "familles_de_sources": [
+    "commons.wikimedia.org",
+    "www.jandewitenzonen.com",
+    "www.rhs.org.uk"
+   ]
+  },
+  {
+   "id": "floresta",
+   "nom_affiche": "Floresta",
+   "nom_enregistre": "Floresta",
+   "synonymes": [],
+   "groupe": "Kaufmanniana (12) (classement Van Engelen)",
+   "obtenteur": null,
+   "annee": null,
+   "numeros": {},
+   "couleur_registre": null,
+   "motif": null,
+   "sources": [
+    {
+     "role": "nom",
+     "niveau": "N4",
+     "url": "https://www.vanengelen.com/flower-bulbs-index/tulips/kaufmanniana-hybrid/tulip-floresta.html",
+     "consulte": "2026-10-08",
+     "note": "Van Engelen (grossiste-détaillant) : fiche « Tulip Floresta » dans la catégorie kaufmanniana-hybrid"
+    }
+   ],
+   "photos": [
+    {
+     "url": "https://www.vanengelen.com/media/catalog/product/cache/ae5a6ea9a5f2aff03513e6f42df29704/t/_/t_floresta_a-th.jpg",
+     "page": "https://www.vanengelen.com/flower-bulbs-index/tulips/kaufmanniana-hybrid/tulip-floresta.html",
+     "niveau": "N4",
+     "auteur": "Van Engelen",
+     "licence": "tous droits réservés ; mesure locale seulement, jamais stockée ni publiée",
+     "legende": "Tulip Floresta (fiche Van Engelen)",
+     "consulte": "2026-10-08",
+     "vue": "photo de catalogue",
+     "note": "couleurs de catalogue souvent saturées : recouper avec une photo N3",
+     "eclairage": null,
+     "balance_blancs": null
+    }
+   ],
+   "mesures": {},
+   "niveau_preuve": "C",
+   "existence_n1_n2": false,
+   "statut": "à confirmer",
+   "doutes": [
+    "une seule source (détaillant) : floraison précoce, 8 à 10 pouces d'après Van Engelen ; aucune source N1-N3"
+   ],
+   "coloris_catalogue": null,
+   "familles_de_sources": [
+    "www.vanengelen.com"
+   ]
+  },
+  {
+   "id": "the-first",
+   "nom_affiche": "The First",
+   "nom_enregistre": "The First",
+   "synonymes": [],
+   "groupe": "Kaufmanniana (12)",
+   "obtenteur": null,
+   "annee": null,
+   "numeros": {},
+   "couleur_registre": null,
+   "motif": null,
+   "sources": [
+    {
+     "role": "nom",
+     "niveau": "N3",
+     "url": "https://www.rhs.org.uk/plants/27259/tulipa-kaufmanniana-the-first/details",
+     "consulte": "2026-10-08",
+     "note": "RHS (société savante) : fiche « Tulipa kaufmanniana 'The First' »"
+    },
+    {
+     "role": "nom",
+     "niveau": "N4",
+     "url": "https://www.vanengelen.com/flower-bulbs-index/tulips/kaufmanniana-hybrid/tulip-the-first.html",
+     "consulte": "2026-10-08",
+     "note": "Van Engelen (grossiste-détaillant) : fiche « Tulip The First » dans la catégorie kaufmanniana-hybrid"
+    }
+   ],
+   "photos": [
+    {
+     "url": "https://www.vanengelen.com/media/catalog/product/cache/ae5a6ea9a5f2aff03513e6f42df29704/t/_/t_the_first_ath.jpg",
+     "page": "https://www.vanengelen.com/flower-bulbs-index/tulips/kaufmanniana-hybrid/tulip-the-first.html",
+     "niveau": "N4",
+     "auteur": "Van Engelen",
+     "licence": "tous droits réservés ; mesure locale seulement, jamais stockée ni publiée",
+     "legende": "Tulip The First (fiche Van Engelen)",
+     "consulte": "2026-10-08",
+     "vue": "photo de catalogue",
+     "note": "couleurs de catalogue souvent saturées : recouper avec une photo N3",
+     "eclairage": null,
+     "balance_blancs": null
+    }
+   ],
+   "mesures": {},
+   "niveau_preuve": "C",
+   "existence_n1_n2": false,
+   "statut": "à confirmer",
+   "doutes": [
+    "une seule photo (détaillant, N4) ; RHS : fiche seulement"
+   ],
+   "coloris_catalogue": null,
+   "familles_de_sources": [
+    "www.rhs.org.uk",
+    "www.vanengelen.com"
+   ]
+  }
+ ],
+ "sans_photo": [
+  {
+   "id": "princess-household",
+   "nom_affiche": "Princess Household",
+   "nom_enregistre": "Princess Household",
+   "groupe": "Kaufmanniana Groep (KAVB)",
+   "edibulb": "73995",
+   "mutant_de": null,
+   "registrant": "Rooyakkers/Ligthart, Breezand",
+   "obtenteur_ou_selectionneur": "IVT, Wageningen",
+   "periode_registre": "2004-07 à 2005-06",
+   "couleur_registre": "rood 33A en oranje 28B",
+   "multiflore": null,
+   "source": {
+    "niveau": "N1",
+    "url": "https://assets.kavb.nl/docs/c00abd89-8997-4099-b0cf-3bbfc0cfafc5.pdf",
+    "document": "Registraties week 31-2004 t/m 26-2005",
+    "consulte": "2026-10-08"
+   },
+   "niveau_preuve": "D",
+   "statut": "à confirmer",
+   "raison": "nom et couleur de registre seuls : aucune photo nommée trouvée",
+   "mesures": {}
+  },
+  {
+   "id": "graefin-bettina",
+   "nom_affiche": "Graefin Bettina",
+   "nom_enregistre": "Graefin Bettina",
+   "groupe": "Kaufmanniana Groep (KAVB)",
+   "edibulb": "83846",
+   "mutant_de": "Princess Household",
+   "registrant": "Ligthart Bloembollen, Den Helder",
+   "obtenteur_ou_selectionneur": "Jan Ligthart, Den Helder",
+   "periode_registre": "2013",
+   "couleur_registre": "geel 7B met oranjerode 33B vlam",
+   "multiflore": null,
+   "source": {
+    "niveau": "N1",
+    "url": "https://assets.kavb.nl/docs/3fd65dc9-0010-4071-b881-5976ef70410a.pdf",
+    "document": "Registraties 2013 week 1 t/m 52",
+    "consulte": "2026-10-08"
+   },
+   "niveau_preuve": "D",
+   "statut": "à confirmer",
+   "raison": "nom et couleur de registre seuls : aucune photo nommée trouvée",
+   "mesures": {},
+   "conflit_de_groupe": "KAVB 2013 : Kaufmanniana Groep ; Van Engelen la range en Greigii (https://www.vanengelen.com/flower-bulbs-index/tulips/greigii/tulip-graefin-bettina.html) : le registre tranche"
+  },
+  {
+   "id": "orange-showwinner",
+   "nom_affiche": "Orange Showwinner",
+   "nom_enregistre": "Orange Showwinner",
+   "groupe": "Kaufmanniana Groep (KAVB)",
+   "edibulb": "79195",
+   "mutant_de": "Showwinner",
+   "registrant": "De Waard Bloembollenkwekerij v.o.f., Egmond aan den Hoef",
+   "obtenteur_ou_selectionneur": "J.P. de Waard, Egmond aan den Hoef",
+   "periode_registre": "2007-11 à 2008-11",
+   "couleur_registre": "rood 45C, rood N30A gerand",
+   "multiflore": null,
+   "source": {
+    "niveau": "N1",
+    "url": "https://assets.kavb.nl/docs/709a8fb3-51c8-47ad-94a7-97c37c7f447f.pdf",
+    "document": "Registraties week 46-2007 t/m 45-2008",
+    "consulte": "2026-10-08"
+   },
+   "niveau_preuve": "D",
+   "statut": "à confirmer",
+   "raison": "nom et couleur de registre seuls : aucune photo nommée trouvée",
+   "mesures": {}
+  },
+  {
+   "id": "hope",
+   "nom_affiche": "Hope",
+   "nom_enregistre": "Hope",
+   "groupe": "Kaufmanniana Groep (KAVB)",
+   "edibulb": "77781",
+   "mutant_de": null,
+   "registrant": "Gebr. Hopman, Egmond-Binnen",
+   "obtenteur_ou_selectionneur": "onbekend, mogelijk uit Letland",
+   "periode_registre": "2006-11 à 2007-11",
+   "couleur_registre": "wit 157D met rood 47B",
+   "multiflore": null,
+   "source": {
+    "niveau": "N1",
+    "url": "https://assets.kavb.nl/docs/4d05a724-67b1-430c-b4a4-4f9ccbe34ae5.pdf",
+    "document": "Registraties week 44-2006 t/m 45-2007",
+    "consulte": "2026-10-08"
+   },
+   "niveau_preuve": "D",
+   "statut": "à confirmer",
+   "raison": "nom et couleur de registre seuls : aucune photo nommée trouvée",
+   "mesures": {}
+  },
+  {
+   "id": "danny-blind",
+   "nom_affiche": "Danny Blind",
+   "nom_enregistre": "Danny Blind",
+   "groupe": "Kaufmanniana Groep (KAVB)",
+   "edibulb": "76967",
+   "mutant_de": null,
+   "registrant": "Kwekerij De Morgenster, Lisse",
+   "obtenteur_ou_selectionneur": "A.P. ter Steege, Callantsoog",
+   "periode_registre": "2005-07 à 2006-10",
+   "couleur_registre": "rood 50A met witte 157D rand",
+   "multiflore": null,
+   "source": {
+    "niveau": "N1",
+    "url": "https://assets.kavb.nl/docs/aba604d0-c12d-4e19-8c8f-f6723c699fbd.pdf",
+    "document": "Registraties week 27-2005 t/m 43-2006",
+    "consulte": "2026-10-08"
+   },
+   "niveau_preuve": "D",
+   "statut": "à confirmer",
+   "raison": "nom et couleur de registre seuls : aucune photo nommée trouvée",
+   "mesures": {}
+  },
+  {
+   "id": "early-harvest",
+   "nom_affiche": "Early Harvest",
+   "nom_enregistre": "Early Harvest",
+   "groupe": "Kaufmanniana (12)",
+   "niveau_preuve": "D",
+   "statut": "à confirmer",
+   "source": {
+    "niveau": "N3",
+    "url": "https://www.rhs.org.uk/plants/56815/tulipa-early-harvest-(12)/details",
+    "document": "RHS : fiche (12) : environ 25 cm, feuilles gris-vert striées de pourpre terne, fleurs dressées rose profond à bords et base jaunes",
+    "consulte": "2026-10-08"
+   },
+   "raison": "fiche RHS lue ; aucune photo nommée relevée",
+   "mesures": {}
+  },
+  {
+   "id": "alfred-cortot",
+   "nom_affiche": "Alfred Cortot",
+   "nom_enregistre": "Alfred Cortot",
+   "groupe": "Kaufmanniana (12)",
+   "niveau_preuve": "D",
+   "statut": "à confirmer",
+   "source": {
+    "niveau": "N4",
+    "url": "https://en.wikipedia.org/wiki/Tulipa_kaufmanniana",
+    "document": "Wikipédia : AGM de la RHS",
+    "consulte": "2026-10-08"
+   },
+   "raison": "aucune photo relevée",
+   "mesures": {}
+  },
+  {
+   "id": "goudstuk",
+   "nom_affiche": "Goudstuk",
+   "nom_enregistre": "Goudstuk",
+   "groupe": "Kaufmanniana (12)",
+   "niveau_preuve": "D",
+   "statut": "à confirmer",
+   "source": {
+    "niveau": "N4",
+    "url": "https://commons.wikimedia.org/wiki/Category:Tulipa_Kaufmanniana_Group",
+    "document": "fichier Commons « Tulipa kaufmanniana - tulipe Goudstuck - parc floral Paris » (Thesupermat)",
+    "consulte": "2026-10-08"
+   },
+   "raison": "photo à extraire du fichier Commons (catégorie de groupe) : non retenue ici faute de contrôle visuel",
+   "mesures": {}
+  }
+ ],
+ "ecartes": [
+  {
+   "id": "jeantine",
+   "nom_affiche": "Jeantine",
+   "raison": "catégorie Commons Tulipa 'Jeantine' (Kaufmanniana Group) : 5 photos de 3 auteurs aux noms de fichier génériques (« Tulpe », « Květ tulipánu ») : identification non prouvée, aucune source N1-N3 ; étoile corail-saumon à revers strié, à ne pas utiliser sans confirmation"
+  },
+  {
+   "id": "showwinner-photos-floues",
+   "nom_affiche": "Showwinner (3 fichiers Commons de James Johnstone)",
+   "raison": "images floues aux tons orangés : couleur non fiable pour la mesure"
+  }
+ ],
+ "couverture": {
+  "cultivars_retenus_avec_photo": 14,
+  "niveau_A": 0,
+  "niveau_B": 7,
+  "niveau_C": 7,
+  "niveau_D": 0,
+  "prouves_A_ou_B": 7,
+  "sans_photo": 8,
+  "ecartes": 2,
+  "au_catalogue": 0,
+  "existence_N1_lue": 6,
+  "remarque": "« enregistrés » du KAVB : total inconnu (base non interrogée). Les nombres ci-dessus portent sur ce qui a été recensé dans les sources consultées"
+ },
+ "vues_deja_photographiees": {
+  "face (dessus, intérieur)": 14,
+  "trois-quarts": 0,
+  "profil": 2,
+  "dos (revers, extérieur)": 0,
+  "bouton": 11,
+  "fané ou déclin": 0,
+  "feuilles": 0,
+  "tige, pied": 1,
+  "plante entière ou massif": 10
+ },
+ "vues_manquantes": [
+  "trois-quarts",
+  "dos (revers, extérieur)",
+  "fané ou déclin",
+  "feuilles",
+  "dessous et attache des feuilles",
+  "épaisseur et surface de la tige",
+  "stades intermédiaires (goblet, coupe, déclin)"
+ ],
+ "vues_note": "comptage des photos retenues par mot-clé de la rubrique « vue » ; les photos de forme par angle et par stade sont à compléter par fleur-refs (STANDARD-SOURCES, exhaustivité)"
+}

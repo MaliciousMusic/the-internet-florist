@@ -1,0 +1,54 @@
+eucalyptus-cinerea;Eucalyptus cinerea;Feuillages;foliage;feuillage
+eucalyptus-pulverulenta-baby-blue;Eucalyptus 'Baby Blue';Feuillages;foliage;feuillage
+eucalyptus-gunnii;Eucalyptus gunnii;Feuillages;foliage;feuillage
+eucalyptus-parvifolia;Eucalyptus parvifolia;Feuillages;foliage;feuillage
+eucalyptus-nicholii;Eucalyptus nicholii;Feuillages;foliage;feuillage
+eucalyptus-populus;Eucalyptus populus;Feuillages;berries;feuillage
+eucalyptus-stuartiana;Eucalyptus stuartiana;Feuillages;foliage;feuillage
+eucalyptus-polyanthemos;Eucalyptus polyanthemos;Feuillages;foliage;feuillage
+eucalyptus-kruseana;Eucalyptus kruseana;Feuillages;foliage;feuillage
+danae-racemosa-ruscus-italien;Ruscus italien;Feuillages;foliage;feuillage
+ruscus-hypophyllum-israelien;Ruscus israélien;Feuillages;foliage;feuillage
+ruscus-aculeatus-petit-houx;Petit houx;Feuillages;foliage;feuillage
+pittosporum-tenuifolium;Pittosporum tenuifolium;Feuillages;foliage;feuillage
+pittosporum-tobira;Pittosporum tobira;Feuillages;foliage;feuillage
+gaultheria-shallon-salal;Salal;Feuillages;foliage;feuillage
+vaccinium-ovatum-huckleberry;Huckleberry;Feuillages;foliage;feuillage
+rumohra-adiantiformis-leatherleaf;Fougère cuir;Feuillages;foliage;feuillage
+asparagus-setaceus-plumosus;Asparagus plumosus;Feuillages;foliage;feuillage
+asparagus-virgatus-tree-fern;Asparagus virgatus;Feuillages;foliage;feuillage
+asparagus-macowanii-ming-fern;Asparagus myriocladus;Feuillages;foliage;feuillage
+asparagus-densiflorus-sprengeri;Asparagus sprengeri;Feuillages;drape;feuillage
+asparagus-densiflorus-myersii;Asparagus meyeri;Feuillages;spike;feuillage
+asparagus-asparagoides-smilax;Smilax;Feuillages;drape;feuillage
+asparagus-falcatus;Asparagus falcatus;Feuillages;foliage;feuillage
+smilax-smallii-southern-smilax;Smilax du Sud;Feuillages;drape;feuillage
+monstera-deliciosa;Monstera;Feuillages;foliage;feuillage
+philodendron-bipinnatifidum-selloum;Philodendron selloum;Feuillages;foliage;feuillage
+philodendron-xanadu;Philodendron Xanadu;Feuillages;foliage;feuillage
+philodendron-hybrides;Philodendron;Feuillages;foliage;feuillage
+aspidistra-elatior;Aspidistra;Feuillages;foliage;feuillage
+dypsis-lutescens-areca;Palme areca;Feuillages;foliage;feuillage
+chamaedorea-chico;Chamaedorea;Feuillages;foliage;feuillage
+phoenix-roebelenii;Palme roebelenii;Feuillages;foliage;feuillage
+licuala-grandis;Licuala;Feuillages;foliage;feuillage
+livistona-rotundifolia;Palme livistona;Feuillages;foliage;feuillage
+cycas-revoluta;Cycas;Feuillages;foliage;feuillage
+rhapis-excelsa;Rhapis;Feuillages;foliage;feuillage
+caryota-mitis;Palme queue de poisson;Feuillages;foliage;feuillage
+serenoa-repens-palmetto;Palme éventail;Feuillages;foliage;feuillage
+bismarckia-nobilis;Palme bismarckia;Feuillages;foliage;feuillage
+cordyline-fruticosa-ti;Feuilles de ti;Feuillages;foliage;feuillage
+dracaena-reflexa-song-of-india;Dracaena « Song of India »;Feuillages;foliage;feuillage
+dracaena-marginata;Dracaena marginata;Feuillages;foliage;feuillage
+dracaena-fragrans;Dracaena fragrans;Feuillages;foliage;feuillage
+dracaena-sanderiana-lucky-bamboo;Bambou de la chance;Feuillages;foliage;texture
+dracaena-surculosa;Dracaena surculosa;Feuillages;foliage;feuillage
+codiaeum-variegatum-croton;Croton;Feuillages;foliage;feuillage
+alocasia;Alocasia;Feuillages;foliage;feuillage
+goeppertia-calathea;Calathea;Feuillages;foliage;feuillage
+anthurium-feuilles;Feuilles d'anthurium;Feuillages;foliage;feuillage
+musa-feuille-bananier;Feuille de bananier;Feuillages;foliage;feuillage
+strelitzia-feuilles;Feuilles de strelitzia;Feuillages;foliage;feuillage
+pandanus;Pandanus;Feuillages;foliage;feuillage
+alpinia-zerumbet-variegata;Feuilles de gingembre panaché;Feuillages;foliage;feuillage

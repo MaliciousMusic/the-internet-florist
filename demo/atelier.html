@@ -1,0 +1,1248 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Atelier botanique</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400..700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#efe9e1;--paper:#f8f4ee;--ink:#1d1916;--ink2:#6e625a;--wine:#6d1028;--line:rgba(29,25,22,.12);--f-serif:"Instrument Serif",Georgia,serif;--f-ui:"DM Sans",system-ui,sans-serif;color-scheme:light}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-ui);padding:28px 16px 60px}
+header{max-width:1100px;margin:0 auto 26px;text-align:center}
+.k{font-size:11px;font-weight:600;letter-spacing:.34em;text-transform:uppercase;color:var(--ink2)}
+h1{font-family:var(--f-serif);font-weight:400;font-size:clamp(40px,8vw,68px);line-height:1;margin:10px 0 12px}h1 em{font-style:italic}
+header p{font-family:var(--f-serif);font-style:italic;font-size:20px;color:var(--ink2);max-width:640px;margin:0 auto;text-wrap:balance}
+section{max-width:1100px;margin:34px auto 0}
+h2{font-family:var(--f-serif);font-style:italic;font-weight:400;font-size:34px;margin:0 0 4px}
+h2+p{color:var(--ink2);font-size:14px;margin-bottom:14px}
+.g{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px}
+.c{background:radial-gradient(ellipse at 50% 35%,#fbf8f3,#ece4d9);border:1px solid var(--line);border-radius:18px;padding:10px 10px 12px;min-width:0}
+.c svg{display:block;width:100%;aspect-ratio:1;overflow:visible}
+.c b{display:block;font-family:var(--f-serif);font-style:italic;font-weight:400;font-size:18px;line-height:1.15;margin-top:6px}
+.c small{color:var(--ink2);font-size:12px}
+.note{max-width:1100px;margin:40px auto 0;color:var(--ink2);font-size:13px;line-height:1.5}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs id="defs"></defs></svg>
+<header><p class="k">Belai's Flowers · Atelier</p><h1>Planches <em>botaniques</em></h1><p>Chaque fleur est modélisée en SVG pur, pétale par pétale et en volume, à sa taille réelle : elle peut être vue sous tous les angles, puis s'anime à l'éclosion.</p></header>
+<div id="w"></div>
+<p class="note">Les fleurs sont rendues dans le navigateur à partir de code, sans aucune image : elles restent nettes à toutes les tailles. Les compositions sont ensuite assemblées par l'algorithme selon l'occasion.</p>
+<script>
+function finished(){}function toast(){}
+/* ---------- core helpers ---------- */
+const NS='http://www.w3.org/2000/svg';
+const $=id=>document.getElementById(id);
+function E(t,a,p){const e=document.createElementNS(NS,t);if(a)for(const k in a)e.setAttribute(k,a[k]);if(p)p.appendChild(e);return e}
+const G=(p,a)=>E('g',a,p);
+let seed=11;
+function rnd(){seed=(seed*16807)%2147483647;return(seed-1)/2147483646}
+const R=(a,b)=>a+(b-a)*rnd();
+const pick=a=>a[Math.floor(rnd()*a.length)];
+const MR=(a,b)=>a+(b-a)*Math.random();
+const f=n=>Math.round(n*10)/10;
+const D=Math.PI/180;
+
+/* ---------- gradients (cached) ---------- */
+const defs=$('defs');let gid=0;const gc={};
+function stops(g,s){s.forEach((c,i)=>{const o=Array.isArray(c)?c:[i/(s.length-1),c];E('stop',{offset:o[0],'stop-color':o[1],'stop-opacity':o[2]??1},g)})}
+function lin(s,x1=0,y1=1,x2=0,y2=0){const k='l'+JSON.stringify(s)+[x1,y1,x2,y2];if(gc[k])return gc[k];const id='g'+(gid++);stops(E('linearGradient',{id,x1,y1,x2,y2},defs),s);return gc[k]=`url(#${id})`}
+function rad(s,cx=.5,cy=.5,r=.5,fx=cx,fy=cy){const k='r'+JSON.stringify(s)+[cx,cy,r,fx,fy];if(gc[k])return gc[k];const id='g'+(gid++);stops(E('radialGradient',{id,cx,cy,r,fx,fy},defs),s);return gc[k]=`url(#${id})`}
+function radU(s,r){const k='u'+JSON.stringify(s)+r;if(gc[k])return gc[k];const id='g'+(gid++);stops(E('radialGradient',{id,cx:0,cy:0,r,gradientUnits:'userSpaceOnUse'},defs),s);return gc[k]=`url(#${id})`}
+
+/* ---------- geometry ---------- */
+function bz(P,t){const u=1-t;return[u*u*u*P[0][0]+3*u*u*t*P[1][0]+3*u*t*t*P[2][0]+t*t*t*P[3][0],u*u*u*P[0][1]+3*u*u*t*P[1][1]+3*u*t*t*P[2][1]+t*t*t*P[3][1]]}
+/* filled ribbon along a cubic bezier, half-width wf(t) */
+function taper(P,wf,n=20){const A=[],B=[];for(let i=0;i<=n;i++){const t=i/n,p=bz(P,t),q=bz(P,Math.min(1,t+.02)),o=bz(P,Math.max(0,t-.02));const dx=q[0]-o[0],dy=q[1]-o[1],l=Math.hypot(dx,dy)||1,w=typeof wf=='function'?wf(t):wf*(1-t);A.push(f(p[0]-dy/l*w)+','+f(p[1]+dx/l*w));B.push(f(p[0]+dy/l*w)+','+f(p[1]-dx/l*w))}return'M'+A.join('L')+'L'+B.reverse().join('L')+'Z'}
+const cp=P=>`M${f(P[0][0])},${f(P[0][1])}C${f(P[1][0])},${f(P[1][1])} ${f(P[2][0])},${f(P[2][1])} ${f(P[3][0])},${f(P[3][1])}`;
+/* petals: base at 0,0 pointing up */
+const pet=(l,w,r=.6,b=.15)=>`M0,0C${f(w*.9)},${f(-l*b)} ${f(w*1.05)},${f(-l*r)} 0,${f(-l)}C${f(-w*1.05)},${f(-l*r)} ${f(-w*.9)},${f(-l*b)} 0,0Z`;
+const rpet=(l,w)=>`M0,0C${f(w*1.3)},${f(-l*.12)} ${f(w*1.25)},${f(-l*1.05)} 0,${f(-l)}C${f(-w*1.25)},${f(-l*1.05)} ${f(-w*1.3)},${f(-l*.12)} 0,0Z`;
+
+/* ---------- timeline engine ---------- */
+const tw=[];let T0=0,running=false;
+const eo=t=>1-Math.pow(1-t,3);
+const eio=t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
+const eb=t=>{const c=1.6;return 1+(c+1)*Math.pow(t-1,3)+c*Math.pow(t-1,2)};
+function tween(t0,d,fn,e=eo){const w={t0,d,fn,e};tw.push(w);fn(0,0);return w}
+function tick(now){if(T0<0)T0=now;const t=now-T0;let act=false;for(const w of tw){if(w.done)continue;if(t<w.t0){act=true;continue}const p=Math.min(1,(t-w.t0)/w.d);w.fn(w.e(p),p);if(p>=1)w.done=true;else act=true}if(act)requestAnimationFrame(tick);else{running=false;finished()}}
+function play(){tw.forEach(w=>{w.done=false;w.fn(0,0)});T0=-1;if(!running){running=true;requestAnimationFrame(tick)}}
+const tr=(x,y,r,s)=>`translate(${f(x)},${f(y)}) rotate(${f(r)}) scale(${Math.max(s,.0001).toFixed(4)})`;
+/* whole flower appears at x,y */
+function bloom(el,x,y,r,s,t0,d=1200,spin=-25){tween(t0,d,(e,p)=>el.setAttribute('transform',tr(x,y,r+spin*(1-eo(p)),s*e)),eb);idleAdd({el,k:0,x,y,r,s,a:R(1.2,2.4),b:R(.01,.025)})}
+/* inner layer unfolds around its local origin */
+function open(el,t0,d=900,spin=20,from=.25){tween(t0,d,(e,p)=>el.setAttribute('transform',`rotate(${f(spin*(1-eo(p)))}) scale(${(from+(1-from)*e).toFixed(4)})`),eb);idleAdd({el,k:1,a:R(2,4.5),b:R(.012,.035)})}
+
+/* ---------- idle life once everything has bloomed ---------- */
+let IA=1;const idle=[];let idleOn=false,idleT0=0,idleLast=0;
+function idleAdd(m){if(idle.length>=16)return;m.a*=IA;m.b*=Math.min(IA,1.2);m.w=R(.00065,.0012);m.p=R(0,6.283);idle.push(m)}
+function idleTick(now){if(!idleOn)return;requestAnimationFrame(idleTick);if(now-idleLast<30)return;idleLast=now;const t=now-idleT0,ramp=Math.min(1,t/2500);
+  for(const m of idle){const s1=Math.sin(t*m.w+m.p)*ramp,s2=Math.sin(t*m.w*1.6+m.p*1.7)*ramp;
+    m.el.setAttribute('transform',m.k?`rotate(${(m.a*s1).toFixed(2)}) scale(${(1+m.b*s2).toFixed(4)})`:`translate(${f(m.x)},${f(m.y)}) rotate(${(m.r+m.a*s1).toFixed(2)}) scale(${(m.s*(1+m.b*s2)).toFixed(4)})`)}}
+function startIdle(){if(RM||idleOn)return;idleOn=true;idleT0=performance.now();idleLast=0;requestAnimationFrame(idleTick)}
+/* stroke draws itself */
+function grow(el,t0,d=900){const L=Math.ceil(el.getTotalLength())+2;el.setAttribute('stroke-dasharray',L+' '+L);tween(t0,d,e=>el.setAttribute('stroke-dashoffset',f(L*(1-e))),eio)}
+function fade(el,t0,d=800,dy=20){tween(t0,d,e=>{el.setAttribute('opacity',e.toFixed(3));el.setAttribute('transform',`translate(0,${f(dy*(1-e))})`)})}
+
+/* ---------- flowers A : tropical structure ---------- */
+/* dyed sun-palm fan: opens like a hand fan */
+function palmFan(g,t,o){const c=o.c||['#ffd6e6','#ff5fa8','#a3239a'],n=o.n||58,a0=-105,a1=105,secs=8;
+  const st=radU([[0,c[0]],[.4,c[1]],[1,c[2]]],104);
+  E('circle',{r:19,fill:'none',stroke:st,'stroke-width':5},g);
+  E('path',{d:'M0,19 Q-4,40 -2,62',stroke:c[2],'stroke-width':4,fill:'none','stroke-linecap':'round'},g);
+  const S=[];for(let i=0;i<secs;i++){const ac=a0+(a1-a0)*(i+.5)/secs,pg=G(g,{transform:`rotate(${f(ac)})`}),sg=G(pg);S.push([sg,ac]);open(sg,t+120+Math.abs(i-3.5)*60,1150,-ac,.55)}
+  for(let i=0;i<n;i++){const a=a0+(a1-a0)*i/(n-1),si=Math.min(secs-1,Math.floor((a-a0)/(a1-a0)*secs)),[sg,ac]=S[si];
+    const rel=(a-ac)*D,r0=21+R(0,3),r1=96+R(-5,8)-Math.pow(Math.abs(a)/110,3)*28,bend=R(-3,3);
+    const x0=Math.sin(rel)*r0,y0=-Math.cos(rel)*r0,x1=Math.sin(rel)*r1,y1=-Math.cos(rel)*r1;
+    E('path',{d:`M${f(x0)},${f(y0)}Q${f((x0+x1)/2+bend)},${f((y0+y1)/2)} ${f(x1)},${f(y1)}`,stroke:st,'stroke-width':f(R(1.5,2.6)),'stroke-linecap':'round',fill:'none'},sg)}
+}
+/* electric-blue dyed palm spears */
+function blades(g,t,o){const n=o.n||7,A=o.a||[-40,40],c=o.bc||['#0a2a8a','#1460d8','#3cc0ff'];
+  for(let i=0;i<n;i++){const a=A[0]+(A[1]-A[0])*(n==1?.5:i/(n-1))+R(-5,5),len=(o.l||220)*R(.75,1.1),w=(o.bw||16)*R(.8,1.15),bend=R(-35,35);
+    const pg=G(g,{transform:`rotate(${f(a)})`}),k=G(pg),P=[[0,0],[bend*.2,-len*.35],[bend*.7,-len*.7],[bend,-len]];
+    E('path',{d:taper(P,u=>w*Math.pow(Math.sin(Math.PI*(.12+.88*u)),.8)*(1-u*.35),26),fill:lin(c,0,1,0,0)},k);
+    for(const s of[-.5,0,.5])E('path',{d:cp(P.map((p,j)=>[p[0]+s*w*Math.sin(Math.PI*(.12+.88*j/3)),p[1]])),stroke:s?c[2]:'#c6ecff','stroke-width':s?.8:1.2,'stroke-opacity':.55,fill:'none'},k);
+    open(k,t+i*60,850,0,0)}
+}
+/* heliconia (lobster claw) */
+function heliconia(g,t,o){const n=o.n||6,H=o.h||210,c=o.hc||['#b50f2a','#ff3b1f','#ff8a1f','#ffd23a'],rim=o.rim||'#c9e24c';
+  E('path',{d:taper([[0,0],[4,-H*.3],[-4,-H*.7],[0,-H]],u=>4.5*(1-u*.6),14),fill:'#6b8f2c'},g);
+  for(let i=0;i<n;i++){const side=i%2?-1:1,y=-H*(i/n)*.92-6,s=1-i*.11,L=80*s;
+    const pg=G(g,{transform:`translate(${side*3},${f(y)}) scale(${side},1) rotate(${-16-i*3})`}),k=G(pg);
+    E('path',{d:`M0,0C${f(L*.25)},${f(L*.32)} ${f(L*.8)},${f(L*.22)} ${f(L)},${f(-L*.42)}C${f(L*.72)},${f(-L*.12)} ${f(L*.36)},${f(-L*.16)} 0,${f(-L*.2)}Z`,fill:lin(c,0,0,1,0)},k);
+    E('path',{d:`M${f(L*.1)},${f(-L*.06)}C${f(L*.4)},${f(-L*.02)} ${f(L*.7)},${f(-L*.02)} ${f(L*.9)},${f(-L*.3)}`,stroke:'#7a0a1c','stroke-width':f(4*s),'stroke-opacity':.25,fill:'none'},k);
+    E('path',{d:`M${f(L*.06)},${f(-L*.17)}C${f(L*.38)},${f(-L*.12)} ${f(L*.72)},${f(-L*.09)} ${f(L*.98)},${f(-L*.4)}`,stroke:rim,'stroke-width':f(3.2*s+1),fill:'none','stroke-linecap':'round'},k);
+    E('path',{d:`M${f(L*.14)},${f(L*.07)}C${f(L*.4)},${f(L*.2)} ${f(L*.75)},${f(L*.1)} ${f(L*.93)},${f(-L*.3)}`,stroke:'#fff3b0','stroke-width':1.6,'stroke-opacity':.45,fill:'none'},k);
+    open(k,t+150+i*110,800,-35,.15)}
+}
+/* bird of paradise */
+function strelitzia(g,t,o){const sp=['#3f7a33','#6b3d6e','#b0336a','#ee6a86'],se=['#ff4d12','#ff9a1f','#ffd04a'];
+  [[-48,96],[-27,114],[-8,108],[12,90]].forEach(([a,l],i)=>{const pg=G(g,{transform:`translate(${56+i*6},-13) rotate(${a})`}),k=G(pg);
+    E('path',{d:pet(l,10+i%2*2,.5,.1),fill:lin(se,0,1,0,0)},k);E('path',{d:`M0,-4L0,${f(-l*.9)}`,stroke:'#fff2c0','stroke-opacity':.5,'stroke-width':1},k);
+    open(k,t+250+i*120,850,72-a,.2)});
+  for(const[a,x]of[[-14,66],[4,74]]){const pg=G(g,{transform:`translate(${x},-14) rotate(${a})`}),k=G(pg);
+    E('path',{d:`M0,0C6,-20 5,-50 2,-74C-1,-50 -6,-20 0,0Z`,fill:lin(['#141a8c','#2f4bff','#8fa8ff'],0,1,0,0)},k);open(k,t+650,800,60,0)}
+  E('path',{d:'M0,0C40,-12 100,-20 162,-46C126,-10 66,12 0,16Z',fill:lin(sp,0,0,1,0)},g);
+  E('path',{d:'M6,2C46,-9 100,-17 150,-39',stroke:'#f6c1d4','stroke-width':1.4,'stroke-opacity':.6,fill:'none'},g);
+}
+/* anthurium */
+function anthurium(g,t,o){const c=o.c||['#fff3a0','#ffb35c','#ff7aa2','#e2457f','#b8245e'],k=G(g);
+  E('path',{d:'M0,18C-18,38 -62,40 -70,6C-78,-30 -40,-70 0,-104C40,-70 78,-30 70,6C62,40 18,38 0,18Z',fill:rad(c,.5,.82,.78,.5,.86)},k);
+  for(const s of[-1,1])for(const v of[[28,-34,34,-84],[52,-10,58,-44],[24,8,54,6]])E('path',{d:`M0,16Q${s*v[0]},${v[1]} ${s*v[2]},${v[3]}`,stroke:'#a8164f','stroke-opacity':.25,'stroke-width':1.5,fill:'none'},k);
+  E('path',{d:'M0,16Q4,-40 0,-100',stroke:'#a8164f','stroke-opacity':.3,'stroke-width':2,fill:'none'},k);
+  E('path',{d:'M-36,-46C-32,-70 -16,-84 -5,-91C-17,-70 -23,-58 -27,-38Z',fill:'#fff',opacity:.38},k);
+  const sp=G(k),SP=[[0,14],[6,-12],[18,-34],[34,-54]];
+  E('path',{d:taper(SP,u=>7*(1-u*.55)+1.5,16),fill:lin(['#ffe066','#ffb020','#ff7a1a'],0,1,1,0)},sp);
+  for(let i=0;i<16;i++){const p=bz(SP,i/16);E('circle',{cx:f(p[0]+R(-2.5,2.5)),cy:f(p[1]+R(-2.5,2.5)),r:1.1,fill:'#fff6c0',opacity:.75},sp)}
+  open(k,t,1000,-20,.2);open(sp,t+500,700,30,0)}
+/* glossy leaf */
+function leaf(g,t,o){const l=o.l||90,w=o.lw||26,c=o.lc||['#2f6a2a','#4f9a3a','#9fd35a'],k=G(g);
+  E('path',{d:pet(l,w,.55,.12),fill:lin(c,0,1,1,0)},k);
+  E('path',{d:`M0,0Q${f(w*.12)},${f(-l*.5)} 0,${f(-l*.97)}`,stroke:'#d8f0a0','stroke-opacity':.6,'stroke-width':1.3,fill:'none'},k);
+  for(let i=1;i<6;i++){const y=-l*i/6.5;for(const s of[-1,1])E('path',{d:`M0,${f(y)}Q${f(s*w*.4)},${f(y-l*.06)} ${f(s*w*.75)},${f(y-l*.16)}`,stroke:'#d8f0a0','stroke-opacity':.35,'stroke-width':.9,fill:'none'},k)}
+  open(k,t,900,o.ls??25,0)}
+/* twisted dyed leaf */
+function curl(g,t,o){const P=o.P,w=o.cw||12,c=o.cc||['#5b2a86','#9a6bd6','#d3b8ff'],k=G(g);
+  E('path',{d:taper(P,u=>w*(.22+.78*Math.abs(Math.cos(u*Math.PI*(o.tw||1.6))))*(1-u*.7)+.8,44),fill:lin(c,0,1,1,0)},k);
+  E('path',{d:cp(P),stroke:c[2],'stroke-opacity':.45,'stroke-width':1,fill:'none'},k);
+  open(k,t,1200,o.cs??-12,0)}
+/* cut green stalk */
+function stalk(g,t,o){const l=o.l||200,w=o.sw||9,k=G(g);
+  E('path',{d:`M0,0L0,${-l}`,stroke:'#82ac3e','stroke-width':w},k);
+  E('path',{d:`M${-w*.22},0L${-w*.22},${-l}`,stroke:'#d6eb92','stroke-width':1.6,'stroke-opacity':.7},k);
+  E('ellipse',{cx:0,cy:-l,rx:w/2,ry:2.2,fill:'#e9f5b8'},k);
+  open(k,t,1000,0,0)}
+
+/* ---------- flowers B : blooms & textures ---------- */
+/* pompon dahlia: golden-angle spiral of cupped petals */
+function dahlia(g,t,o){const c=o.c||['#ffe3f0','#ff86b8','#e0306f','#9c1046'],n=o.n||76,R0=56;
+  const k=G(g,{transform:`scale(1,${o.tilt||.9})`});E('circle',{r:R0+14,fill:c[3],opacity:.55},k);
+  const rings=[G(k),G(k),G(k)],gO=lin([c[3],c[2],c[1],c[0]]),gI=lin([c[3],c[2],c[1]]),hol=lin([c[3],c[2]]);
+  for(let i=n;i>=1;i--){const q=i/n,rr=R0*Math.sqrt(q),a=i*137.508+R(-4,4),len=11+20*q,w=6+6*q;
+    const pg=G(rings[q>.62?0:q>.28?1:2],{transform:`rotate(${f(a)}) translate(0,${f(-rr+len*.35)})`});
+    E('path',{d:rpet(len,w),fill:q>.28?gO:gI,stroke:c[0],'stroke-width':.7,'stroke-opacity':.55},pg);
+    E('path',{d:rpet(len*.55,w*.55),fill:hol,opacity:.55},pg)}
+  E('circle',{r:5,fill:c[3]},rings[2]);
+  rings.forEach((r,j)=>open(r,t+j*230,1050,(j%2?1:-1)*28,.3))}
+/* garden rose */
+function rose(g,t,o){const c=o.c||['#fff4ec','#ffd2bf','#f7a08f','#d8616b'],k=G(g,{transform:`scale(1,${o.tilt||.92})`});
+  const L=[G(k),G(k),G(k),G(k)],go=lin([c[2],c[1],c[0]]),gm=lin([c[3],c[2],c[1]]),st={stroke:c[3],'stroke-width':.8,'stroke-opacity':.35};
+  for(let i=0;i<9;i++)E('path',{d:rpet(60+R(-4,4),30),fill:go,...st,transform:`rotate(${f(i*40+R(-6,6))})`},L[0]);
+  for(let i=0;i<7;i++)E('path',{d:rpet(46,27),fill:go,...st,transform:`rotate(${f(i*51+20)})`},L[1]);
+  E('circle',{r:32,fill:rad([[0,c[3],.75],[1,c[2],0]])},L[2]);
+  for(let j=13;j>=0;j--){const r=7+j*1.9;E('path',{d:`M${f(-r)},0Q0,${f(-r*1.35)} ${f(r)},0Q0,${f(-r*.55)} ${f(-r)},0Z`,fill:j<5?gm:go,...st,transform:`rotate(${f(j*67)}) translate(0,${f(r*.25)})`},L[3])}
+  open(L[0],t,1100,-20,.35);open(L[1],t+180,1100,25,.3);open(L[3],t+380,1100,50,.4)}
+/* phalaenopsis orchid */
+function orchid(g,t,o){const c=o.c||['#fff7fd','#f7cdf0','#e09ae0'],v=o.v||'#b2479f',k=G(g),gs=lin([c[2],c[1],c[0]]),ln={stroke:c[2],'stroke-width':.6,'stroke-opacity':.5};
+  for(const[a,l,w]of[[0,40,13],[128,38,12],[-128,38,12]]){const pg=G(k,{transform:`rotate(${a})`});E('path',{d:pet(l,w,.55,.18),fill:gs,...ln},pg);E('path',{d:`M0,-3L0,${f(-l*.85)}`,stroke:v,'stroke-opacity':.25,'stroke-width':.8},pg)}
+  for(const s of[-1,1]){const pg=G(k,{transform:`rotate(${s*68})`});E('path',{d:rpet(36,22),fill:gs,...ln},pg);
+    for(const x of[-10,-5,0,5,10])E('path',{d:`M0,-2Q${f(x*.6)},-18 ${x},-31`,stroke:v,'stroke-opacity':.22,'stroke-width':.7,fill:'none'},pg)}
+  E('path',{d:'M-11,2C-16,-6 -7,-10 -4,-3L4,-3C7,-10 16,-6 11,2Z',fill:'#ffd34d'},k);
+  E('path',{d:'M-6,2C-9,12 -6,22 0,24C6,22 9,12 6,2Z',fill:lin(['#7a1460','#c8338f','#f07ac8'],0,1,0,0)},k);
+  for(let i=0;i<6;i++)E('circle',{cx:f(R(-5,5)),cy:f(R(-2,6)),r:.9,fill:'#c2185b'},k);
+  E('ellipse',{cx:0,cy:-3,rx:3.5,ry:5,fill:'#fffaf0',stroke:'#e7c6df','stroke-width':.6},k);
+  open(k,t,900,-20,.15)}
+function bud(g,t,o){const k=G(g);E('ellipse',{cx:0,cy:6,rx:6,ry:9,fill:lin(o.c||['#d98ad6','#f7cdf0'],0,1,0,0)},k);open(k,t,700,0,0)}
+/* king protea */
+function protea(g,t,o){const c=o.c||['#fff0f5','#ffb6cf','#f06292','#c2185b'],k=G(g),back=G(k),dome=G(k),front=G(k),gb=lin([c[3],c[2],c[1],c[0]]);
+  for(let i=0;i<11;i++){const a=-75+i*15+R(-3,3);E('path',{d:pet(88+R(-8,8)-Math.abs(a)*.2,11,.45,.12),fill:gb,stroke:c[0],'stroke-width':.8,'stroke-opacity':.6,transform:`translate(0,-8) rotate(${f(a)})`},back)}
+  E('ellipse',{cx:0,cy:-52,rx:40,ry:30,fill:rad(['#fffafc','#ffe0ec','#f7a6c4'],.5,.35,.6)},dome);
+  for(let i=0;i<50;i++){const a=R(0,6.283),r=Math.sqrt(rnd()),x=Math.cos(a)*r*36,y=-52+Math.sin(a)*r*26;E('path',{d:`M${f(x)},${f(y)}l${f(R(-2,2))},${f(R(-6,-3))}`,stroke:pick(['#ffffff','#f8bbd0','#e991b4']),'stroke-width':1.3,'stroke-linecap':'round'},dome)}
+  for(let i=0;i<9;i++){const a=-80+i*20+R(-3,3),l=48+Math.abs(a)*.5;E('path',{d:pet(l,15,.5,.15),fill:gb,stroke:'#fff','stroke-width':1.1,'stroke-opacity':.55,transform:`rotate(${f(a)})`},front)}
+  open(back,t,1000,0,.2);open(dome,t+250,800,0,.3);open(front,t+150,1000,0,.3)}
+/* billy button */
+function craspedia(g,t,o){const k=G(g),r=17;E('circle',{r,fill:rad(['#fff7a8','#ffd51e','#e0a100','#a87400'],.4,.35,.65)},k);
+  for(let i=0;i<34;i++){const q=Math.sqrt((i+.5)/34)*r*.92,a=i*137.5*D;E('circle',{cx:f(Math.cos(a)*q),cy:f(Math.sin(a)*q),r:f(2.6-q/r*1.1),fill:'none',stroke:'#c28800','stroke-width':.6,'stroke-opacity':.55},k)}
+  open(k,t,800,0,0)}
+/* hairy balloon plant */
+function balloon(g,t,o){const r=30,k=G(g);E('ellipse',{rx:r,ry:r*1.08,fill:rad(['#f4ffe0','#c7e6a0','#8fbf63','#5d8a3c'],.38,.32,.7)},k);
+  E('path',{d:`M0,${f(-r*1.05)}Q${f(r*.35)},0 0,${f(r*1.05)}`,stroke:'#6f9a4a','stroke-width':1,'stroke-opacity':.6,fill:'none'},k);
+  for(let i=0;i<36;i++){const a=R(0,6.283),rr=r*R(.2,1.02),x=Math.cos(a)*rr,y=Math.sin(a)*rr*1.08,l=R(4,8),b=a+R(-.6,.6);E('path',{d:`M${f(x)},${f(y)}q${f(Math.cos(b)*l*.6)},${f(Math.sin(b)*l*.6-2)} ${f(Math.cos(b)*l)},${f(Math.sin(b)*l)}`,stroke:pick(['#5f8a3d','#7aa84f','#a9cf7c']),'stroke-width':1,fill:'none','stroke-linecap':'round'},k)}
+  open(k,t,900,0,0)}
+/* physalis lantern, hangs from origin */
+function lantern(g,t,o){const c=o.c||['#ffcf6a','#ff8a1f','#e0520e'],k=G(g);
+  E('path',{d:'M0,0C15,4 23,20 19,35C16,47 7,55 0,59C-7,55 -16,47 -19,35C-23,20 -15,4 0,0Z',fill:lin(c,0,0,1,1)},k);
+  for(const x of[-11,-4,4,11])E('path',{d:`M0,1Q${f(x*1.4)},30 0,59`,stroke:c[2],'stroke-opacity':.5,'stroke-width':.9,fill:'none'},k);
+  E('path',{d:'M0,0L0,-6',stroke:'#7a6a2a','stroke-width':1.6},k);open(k,t,800,25,0)}
+/* orange star lily */
+function lily(g,t,o){const c=o.c||['#ffe14d','#ffa21f','#ff6a13','#e2400b'],k=G(g),L1=G(k),L2=G(k),gp=lin(c),ln={stroke:c[3],'stroke-width':.7,'stroke-opacity':.4};
+  for(let i=0;i<3;i++){E('path',{d:pet(58,19,.55,.2),fill:gp,...ln,transform:`rotate(${i*120+30})`},L1);E('path',{d:pet(52,22,.5,.2),fill:gp,...ln,transform:`rotate(${i*120+90})`},L2)}
+  for(let i=0;i<14;i++){const a=R(0,6.28),r=R(6,20);E('circle',{cx:f(Math.cos(a)*r),cy:f(Math.sin(a)*r),r:f(R(.8,1.6)),fill:'#b5300a',opacity:.7},L2)}
+  const st=G(k);for(let i=0;i<6;i++){const a=i*60+R(-10,10),l=R(26,34),x=Math.sin(a*D)*l,y=-Math.cos(a*D)*l;E('path',{d:`M0,0Q${f(x*.4)},${f(y*.6)} ${f(x)},${f(y)}`,stroke:'#ffe9a8','stroke-width':1.2,fill:'none'},st);E('ellipse',{cx:f(x),cy:f(y),rx:2,ry:4.5,fill:'#a8320c',transform:`rotate(${f(a)} ${f(x)} ${f(y)})`},st)}
+  open(L1,t,950,-30,.2);open(L2,t+120,950,30,.2);open(st,t+500,700,0,0)}
+/* sea lavender */
+function statice(g,t,o){const k=G(g),C=['#7c4dff','#9f7bff','#b69cff','#6a3fd6','#d1c0ff'];
+  for(let b=0;b<6;b++){const a=R(-70,70)*D,l=R(25,60),x=Math.sin(a)*l,y=-Math.cos(a)*l;
+    E('path',{d:`M0,0Q${f(x*.3)},${f(y*.6)} ${f(x)},${f(y)}`,stroke:'#8a9a6a','stroke-width':1,fill:'none'},k);
+    for(let i=0;i<13;i++){const aa=R(0,6.28),rr=R(0,11);E('circle',{cx:f(x+Math.cos(aa)*rr),cy:f(y+Math.sin(aa)*rr*.8),r:f(R(1.8,4)),fill:pick(C),opacity:.92},k)}}
+  open(k,t,900,0,0)}
+/* pampas plume */
+function pampas(g,t,o){const P=o.P,k=G(g),c=['#f8c9de','#eaa9cf','#fde6f0','#d9a2e0'];
+  E('path',{d:cp(P),stroke:'#d8b4c8','stroke-width':1.5,fill:'none'},k);
+  for(let i=0;i<80;i++){const u=.12+.88*rnd(),p=bz(P,u),q=bz(P,Math.min(1,u+.05)),side=rnd()<.5?-1:1,l=R(14,30)*(1.1-u*.5),a=R(20,60)*side*D;
+    const tx=q[0]-p[0],ty=q[1]-p[1],tl=Math.hypot(tx,ty)||1,dx=(tx*Math.cos(a)-ty*Math.sin(a))/tl,dy=(tx*Math.sin(a)+ty*Math.cos(a))/tl;
+    E('path',{d:`M${f(p[0])},${f(p[1])}q${f(dx*l*.5-dy*side*3)},${f(dy*l*.5+dx*side*3)} ${f(dx*l)},${f(dy*l)}`,stroke:pick(c),'stroke-width':f(R(.8,1.8)),'stroke-opacity':.75,fill:'none','stroke-linecap':'round'},k)}
+  open(k,t,1000,-10,0)}
+/* asparagus foxtail fern */
+function foxtail(g,t,o){const P=[[0,0],[5,-30],[0,-70],[8,-110]],k=G(g);E('path',{d:cp(P),stroke:'#4f7a2a','stroke-width':2,fill:'none'},k);
+  for(let i=0;i<90;i++){const u=rnd(),p=bz(P,u),w=(1-u*.7)*14,a=R(0,6.28),l=R(5,1+w);E('path',{d:`M${f(p[0])},${f(p[1])}l${f(Math.cos(a)*l)},${f(Math.sin(a)*l-3)}`,stroke:pick(['#4f8a2a','#6fae3a','#8fcf4a','#3d6e22']),'stroke-width':1.1,'stroke-linecap':'round'},k)}
+  open(k,t,900,0,0)}
+/* banksia cone */
+function banksia(g,t,o){const c=o.c||['#fff1dc','#f6cfa8','#d9a27a','#a8714f'],k=G(g);
+  E('rect',{x:-22,y:-110,width:44,height:110,rx:22,fill:lin([c[3],c[2],c[1],c[2],c[3]],0,0,1,0)},k);
+  for(let r=0;r<17;r++)for(let j=0;j<7;j++){const y=-10-r*6,x=-18+j*6+(r%2)*3;if(Math.abs(x)>19)continue;E('path',{d:`M${x},${y}q2,-3 0,-5`,stroke:j%2?c[0]:c[3],'stroke-width':1.3,'stroke-opacity':.7,fill:'none','stroke-linecap':'round'},k)}
+  open(k,t,900,0,0)}
+/* serrated banksia leaf hanging along P */
+function sleaf(g,t,o){const P=o.P,n=40,w=o.w||9,A=[],B=[];
+  for(let i=0;i<=n;i++){const u=i/n,p=bz(P,u),q=bz(P,Math.min(1,u+.02)),r=bz(P,Math.max(0,u-.02)),dx=q[0]-r[0],dy=q[1]-r[1],l=Math.hypot(dx,dy)||1,ww=w*Math.sin(Math.PI*Math.min(1,u*1.05+.04))*(i%2?1:.45);A.push(f(p[0]-dy/l*ww)+','+f(p[1]+dx/l*ww));B.push(f(p[0]+dy/l*ww)+','+f(p[1]-dx/l*ww))}
+  const k=G(g);E('path',{d:'M'+A.join('L')+'L'+B.reverse().join('L')+'Z',fill:o.lc||'#86a07c'},k);E('path',{d:cp(P),stroke:'#c9d8b8','stroke-width':1,fill:'none','stroke-opacity':.7},k);
+  open(k,t,1000,o.ls??10,0)}
+
+/* ================= botanical art kit ================= */
+/* closed / open Catmull-Rom through points -> smooth organic cubic path */
+function smooth(P,closed=true){const n=P.length;let d=`M${f(P[0][0])},${f(P[0][1])}`;const g=i=>closed?P[(i+n)%n]:P[Math.max(0,Math.min(n-1,i))];
+  for(let i=0;i<(closed?n:n-1);i++){const p0=g(i-1),p1=g(i),p2=g(i+1),p3=g(i+2);
+    d+=`C${f(p1[0]+(p2[0]-p0[0])/6)},${f(p1[1]+(p2[1]-p0[1])/6)} ${f(p2[0]-(p3[0]-p1[0])/6)},${f(p2[1]-(p3[1]-p1[1])/6)} ${f(p2[0])},${f(p2[1])}`}
+  return d+(closed?'Z':'')}
+const sinP=(pw,a=.05)=>t=>Math.pow(Math.sin(Math.PI*Math.min(.97,a+(1-a)*t)),pw);
+/* organic petal / leaf outline pointing up (-y), base at 0,0 */
+function petalD(L,W,o={}){const n=o.n||10,rf=o.rf||0,rk=o.rk||8,bend=(o.bend||0)*L,ph=[R(0,6.3),R(0,6.3)],prof=o.prof||sinP(o.pw||.75);
+  const side=s=>{const a=[];for(let i=1;i<n;i++){const t=i/n,w=W*prof(t)*(1+(o.asym||0)*s)*(1+rf*t*Math.sin(t*rk*Math.PI+ph[s>0?0:1])+.035*Math.sin(t*5.3+ph[1]));a.push([s*w+bend*t*t,-L*t])}return a};
+  const wt=W*prof(.97),tp=o.tip||'round';let tip;
+  if(tp==='point')tip=[[bend+wt*.32,-L*.985],[bend,-L*1.03],[bend-wt*.32,-L*.985]];
+  else if(tp==='notch')tip=[[bend+wt*.85,-L*.97],[bend+wt*.55,-L*1.0],[bend+wt*.27,-L*.94],[bend,-L*1.01],[bend-wt*.27,-L*.94],[bend-wt*.55,-L*1.0],[bend-wt*.85,-L*.97]];
+  else tip=[[bend+wt*.62,-L*.99],[bend,-L*1.03],[bend-wt*.62,-L*.99]];
+  return smooth([[0,0],...side(1),...tip,...side(-1).reverse()])}
+function veins(g,L,W,c,n,op,sw=.6){for(let k=0;k<n;k++){const u=n===1?0:k/(n-1)*2-1,x=u*W*.55;E('path',{d:`M${f(u*W*.08)},${f(-L*.05)}Q${f(x*.75)},${f(-L*.45)} ${f(x*.92)},${f(-L*.86)}`,stroke:c,'stroke-width':sw,'stroke-opacity':op,fill:'none','stroke-linecap':'round'},g)}}
+function specks(g,L,W,o){const c=o.c||'#b3122e';for(let i=0;i<(o.n||20);i++){const t=Math.pow(rnd(),o.p||1.4)*.72+.06,w=W*.5*(1-t*.35),x=R(-w,w),y=-L*t,s=R(.6,1.6)*(o.s||1)*(1-t*.45);
+  E('ellipse',{cx:f(x),cy:f(y),rx:f(s*.7),ry:f(s*1.7),fill:c,opacity:f(R(.55,.95)),transform:`rotate(${f(x*.9)} ${f(x)} ${f(y)})`},g)}}
+/* painted petal: body gradient, side shading, base shadow, veins, speckles, ink edge. pal=[base,mid,tip,ink] */
+function P2(par,L,W,pal,o={}){const g=G(par,o.tr?{transform:o.tr}:null),d=petalD(L,W,o);
+  E('path',{d,fill:lin([[0,pal[0]],[.5,pal[1]],[1,pal[2]]],0,1,0,0)},g);
+  if(!o.lite){E('path',{d,fill:lin([[0,'#1a0010',o.sh??.24],[.42,'#1a0010',0],[.62,'#ffffff',0],[1,'#ffffff',o.hl??.2]],0,0,1,0)},g);
+    if(o.base!==0)E('path',{d,fill:lin([[0,pal[3],o.base??.35],[.32,pal[3],0]],0,1,0,0)},g);
+    if(o.v)veins(g,L,W,o.vc||pal[3],o.v,o.vo??.3);if(o.sp)specks(g,L,W,o.sp)}
+  E('path',{d,fill:'none',stroke:pal[3],'stroke-width':o.sw??.8,'stroke-opacity':o.so??.5,'stroke-linejoin':'round'},g);return g}
+/* composite disc of florets (cosmos, daisy) */
+function disc(par,r,c,n){const g=G(par);E('circle',{r,fill:rad([c[0],c[1],c[2]],.42,.38,.7)},g);
+  for(let i=0;i<n;i++){const q=Math.sqrt((i+.5)/n)*r*.82,a=i*137.5*D;E('circle',{cx:f(Math.cos(a)*q),cy:f(Math.sin(a)*q),r:f(r*.14*(1.1-q/r*.5)),fill:c[i%3?1:0],stroke:c[2],'stroke-width':.4,'stroke-opacity':.6},g)}
+  E('circle',{r,fill:'none',stroke:c[2],'stroke-width':.8,'stroke-opacity':.5},g);return g}
+
+/* ---------- foliage ---------- */
+const GP={deep:['#0c3328','#1d5c45','#3f8a5f','#06201a','#9fd3a8'],mid:['#1f5a2c','#3f8f3f','#8fcf6a','#123a1a','#c8f0a0'],light:['#3f7a2a','#7fb84a','#c8e07a','#24461a','#eef9c8'],teal:['#0b3836','#1c6658','#3d8f7a','#04201d','#d8f5ec']};
+function leafPaint(g,L,W,pal,o={}){const d=petalD(L,W,Object.assign({n:12,tip:'point',rf:.02,rk:5},o)),bend=o.bend||0;
+  E('path',{d,fill:lin([[0,pal[0]],[.55,pal[1]],[1,pal[2]]],0,1,.35,0)},g);
+  E('path',{d,fill:lin([[0,'#000',.3],[.47,'#000',0],[.53,'#fff',0],[1,'#fff',.12]],0,0,1,0)},g);
+  const prof=o.prof||sinP(.75),nv=o.nv??7;
+  for(let i=1;i<=nv;i++){const t=i/(nv+1),y=-L*t,w=W*prof(t)*.86,cx=bend*L*t*t;for(const s of[-1,1])E('path',{d:`M${f(cx)},${f(y)}Q${f(cx+s*w*.5)},${f(y-L*.03)} ${f(cx+s*w)},${f(y-L*(o.va??.12))}`,stroke:pal[4],'stroke-width':o.vw??1,'stroke-opacity':o.vo??.45,fill:'none','stroke-linecap':'round'},g)}
+  E('path',{d:taper([[0,0],[bend*L*.12,-L*.35],[bend*L*.49,-L*.7],[bend*L*.94,-L*.97]],u=>Math.max(.35,(o.mr||2.2)*(1-u)),10),fill:pal[4],opacity:.75},g);
+  E('path',{d,fill:'none',stroke:pal[3],'stroke-width':o.sw??1,'stroke-opacity':o.so??.75},g);
+  if(o.drops)for(let i=0;i<o.drops;i++){const t=R(.2,.8),x=bend*L*t*t+R(-W*.25,W*.25),y=-L*t;E('ellipse',{cx:f(x),cy:f(y),rx:1.7,ry:2.3,fill:'#fff',opacity:.4},g);E('ellipse',{cx:f(x+.5),cy:f(y-.6),rx:.7,ry:.9,fill:'#fff',opacity:.9},g)}
+  return d}
+function cuts(g,L,W,prof,n){for(let i=1;i<=n;i++){const t=.22+i*.12;for(const s of[-1,1]){const w=W*prof(t),y=-L*t;E('path',{d:`M${f(s*w*1.04)},${f(y+1)}Q${f(s*w*.7)},${f(y-L*.012)} ${f(s*w*.5)},${f(y-L*.018)}Q${f(s*w*.72)},${f(y-L*.03)} ${f(s*w*1.04)},${f(y-L*.032)}Z`,fill:'#0b2a1f'},g)}}
+  for(let i=0;i<3;i++){const t=.34+i*.17,s=i%2?1:-1,x=s*W*.26,y=-L*t;E('ellipse',{cx:f(x),cy:f(y),rx:3,ry:6.5,fill:'#0b2a1f',transform:`rotate(${s*28} ${f(x)} ${f(y)})`},g)}}
+function tears(g,L,W,prof,n){for(let i=0;i<n;i++){const t=R(.2,.85),s=rnd()<.5?-1:1,w=W*prof(t),y=-L*t;E('path',{d:`M${f(s*w*1.06)},${f(y+1)}L${f(s*w*.12)},${f(y-1)}L${f(s*w*1.06)},${f(y-4)}Z`,fill:'#24461a',opacity:.75},g)}}
+function fern(g,L,pal){const P=[[0,0],[R(-15,15),-L*.35],[R(-25,25),-L*.7],[R(-40,40),-L]];E('path',{d:cp(P),stroke:pal[3],'stroke-width':2,fill:'none'},g);const n=20;
+  for(let i=1;i<=n;i++){const u=i/(n+1),q=bz(P,u),q2=bz(P,Math.min(1,u+.02)),ang=Math.atan2(q2[1]-q[1],q2[0]-q[0])/D+90,l=L*.2*(1-u*.72),w=l*.24;
+    for(const s of[-1,1])E('path',{d:petalD(l,w,{n:6,tip:'point',prof:sinP(.6)}),fill:lin([pal[0],pal[1],pal[2]],0,1,0,0),stroke:pal[3],'stroke-width':.6,'stroke-opacity':.6,transform:`translate(${f(q[0])},${f(q[1])}) rotate(${f(ang+s*62)})`},g)}}
+const PA={alocasia:sinP(.7,.24),monstera:sinP(.6,.2),banana:sinP(.35),round:sinP(.5,.08),strap:sinP(.3,.02),stem:sinP(.75)};
+const FOL={
+ alocasia:g=>leafPaint(g,170,62,GP.teal,{prof:PA.alocasia,nv:6,va:.18,vw:2,vo:.85,mr:3.2,bend:R(-.1,.1)}),
+ monstera:g=>{leafPaint(g,160,80,GP.deep,{prof:PA.monstera,nv:6,va:.1,vw:1.4,vo:.5,mr:3});cuts(g,160,80,PA.monstera,5)},
+ banana:g=>{leafPaint(g,260,46,GP.light,{prof:PA.banana,nv:22,va:.015,vw:.7,vo:.4,mr:3.6,bend:R(-.12,.12)});tears(g,260,46,PA.banana,4)},
+ round:g=>leafPaint(g,120,70,GP.light,{prof:PA.round,nv:5,va:.14,vw:1.2,vo:.5,mr:2.4,tip:'round'}),
+ fern:g=>fern(g,200,GP.mid),
+ strap:g=>leafPaint(g,190,13,GP.mid,{prof:PA.strap,nv:0,mr:1.2,bend:R(-.35,.35),drops:3}),
+ stem:g=>leafPaint(g,70,15,GP.mid,{prof:PA.stem,nv:4,va:.1,vw:.7,vo:.4,mr:1.2,bend:R(-.25,.25)})};
+/* flat dark silhouettes for the far layer */
+const FARC=[['#173f36','#22574a'],['#1a4a3e','#2b6a55'],['#1f5546','#33785c'],['#163a33','#245244'],['#24584a','#3a7f62']];
+function silh(g,tp){const c=pick(FARC);let L=170,W=62,o={prof:PA.alocasia};if(tp==='monstera'){L=160;W=80;o={prof:PA.monstera}}if(tp==='banana'){L=260;W=46;o={prof:PA.banana}}if(tp==='round'){L=120;W=70;o={prof:PA.round,tip:'round'}}
+  E('path',{d:petalD(L,W,Object.assign({n:10,tip:'point'},o)),fill:lin([c[0],c[1]],0,1,.4,0)},g);E('path',{d:`M0,0L0,${-L*.95}`,stroke:'#4f9a7c','stroke-width':1.4,'stroke-opacity':.35},g)}
+
+/* ================= species (heads centred on 0,0 unless noted) ================= */
+function cosmos(g,t,o){const c=o.c||['#9e1047','#f06a9b','#ffd9e7','#7d0c38'],k=G(g,{transform:`scale(1,${o.tilt||.92})`}),pet=G(k);
+  for(let i=0;i<8;i++)P2(pet,48,15,c,{tr:`rotate(${f(i*45+R(-6,6))})`,tip:'notch',prof:u=>Math.min(1,.22+.88*u)*(u>.9?1-(u-.9)*2.5:1),n:8,rf:.05,rk:6,v:5,vo:.2,sh:.18,hl:.2,base:.55,bend:R(-.06,.06)});
+  const d=disc(k,9.5,o.d||['#ffe680','#f2b705','#a86b00'],22);open(pet,t,1000,-25,.2);open(d,t+300,700,0,.3)}
+function anemone(g,t,o){const c=o.c||['#cfcde3','#fbfbff','#ffffff','#6b6f8a'],k=G(g,{transform:`scale(1,${o.tilt||.9})`}),a=G(k),b=G(k);
+  for(let i=0;i<6;i++)P2(i%2?b:a,46,27,c,{tr:`rotate(${f(i*60+R(-8,8))})`,prof:sinP(.55,.1),n:10,rf:.07,rk:5,v:7,vo:.12,sh:.15,hl:.12,base:.3});
+  const ce=G(k);E('circle',{r:13,fill:rad(['#3b3f5a','#1b1630','#0b0814'],.4,.4,.7)},ce);
+  for(let i=0;i<44;i++){const a2=R(0,6.283),r2=R(12.5,19.5);E('circle',{cx:f(Math.cos(a2)*r2),cy:f(Math.sin(a2)*r2),r:f(R(.9,1.8)),fill:'#141024',opacity:.92},ce)}
+  for(let i=0;i<14;i++){const a2=R(0,6.283),r2=R(3,9);E('circle',{cx:f(Math.cos(a2)*r2),cy:f(Math.sin(a2)*r2),r:f(R(.8,1.4)),fill:'#646a90'},ce)}
+  E('circle',{r:4.5,fill:rad(['#e0f5c8','#86b064','#3d5a2a'],.4,.4,.6)},ce);
+  open(a,t,1000,-20,.2);open(b,t+120,1000,20,.2);open(ce,t+350,700,0,.3)}
+function peony(g,t,o){const c=o.c||['#cf4f7e','#f7a8c4','#ffe6ee','#9a2f58'],k=G(g,{transform:`scale(1,${o.tilt||.86})`}),gs=[];
+  [[8,60,36,.12,0],[8,50,32,.14,22],[7,40,28,.16,8],[6,30,22,.18,30]].forEach(([n,L,W,rf,off],j)=>{const rg=G(k);gs.push(rg);
+    for(let i=0;i<n;i++)P2(rg,L*R(.9,1.08),W*R(.9,1.1),c,{tr:`rotate(${f(off+i*360/n+R(-9,9))})`,prof:sinP(.5,.08),n:12,rf,rk:R(9,14),v:j<2?6:0,vo:.14,sh:.22+j*.05,hl:.22,base:.45})});
+  const hc=G(k);for(let j=14;j>=0;j--){const r=5+j*1.5,a=j*61+R(-10,10);E('path',{d:`M${f(-r)},0Q${f(-r*.3)},${f(-r*1.25)} ${f(r*.2)},${f(-r*1.1)}Q${f(r*1.1)},${f(-r*.9)} ${f(r)},0Q0,${f(-r*.5)} ${f(-r)},0Z`,fill:lin([c[0],c[1],c[2]],0,1,0,0),stroke:c[3],'stroke-width':.6,'stroke-opacity':.45,transform:`rotate(${f(a)}) translate(0,${f(r*.3)})`},hc)}
+  gs.forEach((r,j)=>open(r,t+j*130,1100,(j%2?1:-1)*24,.3));open(hc,t+520,900,40,.4)}
+/* side view, base (stem attach) at 0,0 */
+function tulip(g,t,o){const c=o.c||['#6e0712','#e2232f','#ff7a6a','#4a040b'],k=G(g),back=G(k),front=G(k),prof=u=>Math.pow(Math.sin(Math.PI*Math.min(.96,.04+.92*u)),.55)*(.72+.38*u);
+  const pet=(par,x,rot,L,W,sh)=>P2(par,L,W,c,{tr:`translate(${x},0) rotate(${rot})`,prof,n:10,rf:.025,rk:4,v:7,vo:.15,sh,hl:.32,base:.5,bend:R(-.04,.04)});
+  pet(back,-7,-15,94,30,.32);pet(back,7,15,94,30,.32);pet(back,0,0,100,30,.2);
+  E('ellipse',{cx:0,cy:-90,rx:15,ry:5,fill:c[3],opacity:.55},back);
+  pet(front,-11,-8,86,33,.16);pet(front,11,8,86,33,.16);pet(front,0,1,82,31,.05);
+  open(k,t,1000,0,.2)}
+function calla(g,t,o){const c=o.c||['#8fb05e','#f4f7ec','#ffffff','#6f8060'],k=G(g);
+  const sp=smooth([[0,0],[-6,-20],[-14,-45],[-24,-70],[-32,-92],[-28,-108],[-12,-116],[8,-114],[28,-106],[44,-94],[42,-80],[30,-70],[18,-52],[8,-28],[3,-10]]);
+  E('path',{d:sp,fill:lin([[0,c[0]],[.4,c[1]],[1,c[2]]],0,1,.4,0)},k);
+  E('path',{d:sp,fill:lin([[0,'#000',.18],[.5,'#000',0],[1,'#fff',.25]],0,0,1,0)},k);
+  E('path',{d:smooth([[-24,-90],[-12,-104],[8,-106],[26,-98],[12,-90],[0,-80],[-10,-78]]),fill:lin([[0,'#d5e3bd'],[1,c[1]]],0,0,1,1),opacity:.95},k);
+  E('path',{d:taper([[2,-40],[0,-60],[-2,-78],[4,-94]],u=>3.8*(1-u*.3),12),fill:lin([o.sx||'#e8940c','#ffd34d','#fff0a0'],0,1,0,0)},k);
+  E('path',{d:smooth([[-30,-96],[-20,-110],[0,-116],[22,-110],[40,-96]],false),fill:'none',stroke:'#fff','stroke-width':2.2,'stroke-opacity':.75,'stroke-linecap':'round'},k);
+  E('path',{d:sp,fill:'none',stroke:c[3],'stroke-width':.9,'stroke-opacity':.55},k);
+  open(k,t,1000,-10,.2)}
+function lilyStar(g,t,o){const c=o.c||['#f4c4d4','#ffffff','#fffafc','#b8a6b5'],sp=o.sp||{n:30,c:'#c8102e',p:1.5,s:1.1},k=G(g,{transform:`scale(1,${o.tilt||.88})`}),A=G(k),B=G(k),S2=G(k);
+  for(let i=0;i<6;i++)P2(i%2?B:A,i%2?62:66,i%2?17:15,c,{tr:`rotate(${f(i*60+30+R(-6,6))})`,prof:sinP(.7),n:12,rf:.09,rk:7,tip:'point',bend:R(-.18,.18),v:3,vo:.25,vc:'#86b86a',sh:.16,hl:.15,base:.3,sp});
+  E('circle',{r:7,fill:rad(['#e6f5c9','#9ccf6e','#5e8f3a'],.4,.4,.7)},k);
+  for(let i=0;i<6;i++){const a=i*60+R(-14,14),l=R(48,62),bx=Math.sin(a*D)*l,by=-Math.cos(a*D)*l,cx=bx*.45+R(-10,10),cy=by*.45+R(-10,10);
+    E('path',{d:`M0,0Q${f(cx)},${f(cy)} ${f(bx)},${f(by)}`,stroke:'#f4efe8','stroke-width':1.3,fill:'none','stroke-linecap':'round'},S2);
+    E('ellipse',{cx:f(bx),cy:f(by),rx:2.2,ry:7.5,fill:lin([o.an||'#7a1020',o.an2||'#d4142e'],0,0,1,0),transform:`rotate(${f(a+90+R(-25,25))} ${f(bx)} ${f(by)})`},S2)}
+  E('path',{d:'M0,0Q6,-24 2,-50',stroke:'#cfe3b0','stroke-width':2,fill:'none'},S2);E('circle',{cx:2,cy:-51,r:3.4,fill:'#8fbf5f'},S2);
+  open(A,t,1000,-25,.2);open(B,t+150,1000,25,.2);open(S2,t+500,800,0,0)}
+function morningGlory(g,t,o){const c=o.c||['#fff7d6','#8fb0ff','#2f4fe0','#1b2a8a'],k=G(g,{transform:`scale(1,${o.tilt||.9})`}),pts=[],ph=R(0,6);
+  for(let i=0;i<60;i++){const a=i/60*Math.PI*2,r=52*(1-.07*Math.cos(a*5)+.025*Math.sin(a*13+ph));pts.push([Math.sin(a)*r,-Math.cos(a)*r])}
+  const d=smooth(pts);E('path',{d,fill:rad([[0,c[0]],[.2,c[0]],[.36,c[1]],[1,c[2]]],.5,.5,.52)},k);
+  E('path',{d,fill:rad([[0,'#fff',0],[.72,'#000',0],[1,'#000',.28]],.5,.5,.52)},k);
+  for(let i=0;i<5;i++){const a=(i*72)*D,b=(i*72+36)*D;
+    E('path',{d:`M${f(Math.sin(a)*12)},${f(-Math.cos(a)*12)}Q${f(Math.sin(a+.06)*30)},${f(-Math.cos(a+.06)*30)} ${f(Math.sin(a)*49)},${f(-Math.cos(a)*49)}`,stroke:'#ffffff','stroke-width':2.6,'stroke-opacity':.42,fill:'none','stroke-linecap':'round'},k);
+    E('path',{d:`M${f(Math.sin(b)*14)},${f(-Math.cos(b)*14)}L${f(Math.sin(b)*48)},${f(-Math.cos(b)*48)}`,stroke:c[3],'stroke-width':.7,'stroke-opacity':.35},k)}
+  E('circle',{r:9,fill:rad(['#fffbe0','#f7f0b0','#e8d880'],.5,.5,.6)},k);
+  E('path',{d,fill:'none',stroke:c[3],'stroke-width':.9,'stroke-opacity':.55},k);open(k,t,1000,-30,.2)}
+function marigold(g,t,o){const c=o.c||['#a8330a','#ff7a00','#ffc23a','#6e2004'],n=o.n||54,k=G(g,{transform:`scale(1,${o.tilt||.9})`}),rings=[G(k),G(k),G(k)];
+  E('circle',{r:44,fill:c[3],opacity:.6},rings[0]);
+  for(let i=n;i>=1;i--){const q=i/n,rr=36*Math.sqrt(q),a=i*137.508+R(-6,6),L=10+14*q,W=7+5*q;
+    P2(rings[q>.62?0:q>.3?1:2],L,W,c,{tr:`rotate(${f(a)}) translate(0,${f(-rr+L*.3)})`,prof:sinP(.45,.1),n:6,rf:.12,rk:8,sh:.26,hl:.16,base:.5,sw:.5,so:.45})}
+  rings.forEach((r,j)=>open(r,t+j*200,1000,(j%2?1:-1)*24,.3))}
+function pansy(g,t,o){const c=o.c||['#2b0a55','#6a2cc4','#b892ff','#1a0535'],face=o.face||'#12031f',k=G(g,{transform:`scale(1,${o.tilt||.95})`}),A=G(k),B=G(k),F=G(k);
+  const pp=(par,rot,L,W,cc)=>P2(par,L,W,cc||c,{tr:`rotate(${rot})`,prof:sinP(.48,.06),n:10,rf:.07,rk:5,sh:.18,hl:.16,base:.3});
+  pp(A,-28,44,30,o.top);pp(A,28,44,30,o.top);pp(B,-100,40,26);pp(B,100,40,26);pp(B,180,42,32);
+  if(o.blotch)E('ellipse',{cx:0,cy:15,rx:17,ry:14,fill:rad([[0,face,.95],[.7,face,.6],[1,face,0]],.5,.35,.6)},F);
+  for(const[rot,len,n]of[[-100,25,5],[100,25,5],[180,30,7]]){const fg=G(F,{transform:`rotate(${rot})`});for(let i=0;i<n;i++){const u=i/(n-1)*2-1;E('path',{d:`M0,-3Q${f(u*6)},${f(-len*.5)} ${f(u*10)},${f(-len)}`,stroke:face,'stroke-width':f(1.6-Math.abs(u)*.6),'stroke-linecap':'round',fill:'none',opacity:.85},fg)}}
+  E('path',{d:'M-5,1Q0,9 5,1Q0,4 -5,1Z',fill:'#ffd21f'},F);E('circle',{r:3.2,fill:'#ffd21f',stroke:'#a87b00','stroke-width':.6},F);
+  open(A,t,900,-20,.2);open(B,t+120,900,20,.2);open(F,t+400,600,0,.4)}
+function hydrangea(g,t,o){const c=o.c||[['#5f7fe8','#a3b8ff','#e6ecff','#3a4ea8'],['#8a76e0','#c2b3ff','#f0ebff','#4f3fa8']],k=G(g),L=[G(k),G(k)];
+  E('ellipse',{rx:46,ry:40,fill:'#203458',opacity:.45},L[0]);const fl=[];
+  for(let i=0;i<32;i++){const a=R(0,6.283),r=Math.sqrt(rnd())*40;fl.push([Math.cos(a)*r,Math.sin(a)*r*.86])}fl.sort((a,b)=>a[1]-b[1]);
+  fl.forEach(([x,y],i)=>{const pal=c[i%c.length],s=R(.82,1.05)*(1.05-(y+40)/300),fg=G(L[i%2],{transform:`translate(${f(x)},${f(y)}) rotate(${f(R(0,90))}) scale(${f(s)})`});
+    for(let j=0;j<4;j++)P2(fg,12,8,pal,{tr:`rotate(${j*90})`,prof:sinP(.45,.08),n:5,rf:.06,rk:4,lite:1,sw:.5,so:.45});E('circle',{r:1.4,fill:pal[3]},fg)});
+  open(L[0],t,1000,-15,.3);open(L[1],t+200,1000,15,.3)}
+/* spikes grow from the base at 0,0 */
+function spike(g,t,o){const P=o.P||[[0,0],[4,-50],[-4,-100],[6,-150]],c=o.c,n=o.n||16,np=o.np||5,k=G(g);
+  E('path',{d:cp(P),stroke:'#4f7a33','stroke-width':2.2,fill:'none','stroke-linecap':'round'},k);
+  for(let i=0;i<n;i++){const u=.22+.78*i/(n-1),q=bz(P,u),s=(1-u*.5)*(o.s||1),side=i%2?1:-1,fg=G(k,{transform:`translate(${f(q[0]+side*R(2,7)*s)},${f(q[1])}) rotate(${f(R(0,72))}) scale(${f(s)})`});
+    if(u>.9)E('ellipse',{rx:2.6,ry:4,fill:lin([c[3],c[1]],0,1,0,0)},fg);
+    else{for(let j=0;j<np;j++)P2(fg,o.pl||9,o.pw2||6,c,{tr:`rotate(${j*360/np})`,prof:sinP(.45,.08),n:5,rf:.04,rk:4,lite:1,sw:.45,so:.5});E('circle',{r:1.5,fill:o.eye||'#ffd21f'},fg)}}
+  open(k,t,1000,0,0)}
+function cattleya(g,t,o){const c=o.c||['#e2d3f2','#fbf7ff','#ffffff','#a998c2'],lip=o.lip||['#c9a0d6','#fffaff','#ffd23f'],k=G(g),S=G(k),Pt=G(k),Lp=G(k);
+  for(const r of[0,125,-125])P2(S,54,10,c,{tr:`rotate(${r+R(-6,6)})`,tip:'point',n:9,rf:.03,rk:3,v:3,vo:.12,sh:.15,hl:.18,base:.25});
+  for(const s of[-1,1])P2(Pt,56,27,c,{tr:`rotate(${s*62+R(-5,5)})`,prof:sinP(.55,.06),n:12,rf:.14,rk:13,v:5,vo:.12,sh:.15,hl:.2,base:.3});
+  const lp=[];for(let i=0;i<=40;i++){const a=(i/40-.5)*Math.PI*1.25,r=40*(1+.08*Math.sin(i*1.9+R(0,1)));lp.push([Math.sin(a)*r*.85,Math.cos(a)*r*.95])}
+  const ld=smooth([[-12,-6],...lp,[12,-6]]);E('path',{d:ld,fill:rad([[0,lip[2]],[.32,lip[2]],[.55,lip[1]],[1,lip[0]]],.5,.15,.9)},Lp);
+  for(let i=0;i<9;i++){const u=i/8*2-1;E('path',{d:`M${f(u*4)},2Q${f(u*14)},18 ${f(u*24)},${f(30+Math.abs(u)*4)}`,stroke:lip[0],'stroke-width':.7,'stroke-opacity':.5,fill:'none'},Lp)}
+  E('path',{d:ld,fill:'none',stroke:lip[0],'stroke-width':.9,'stroke-opacity':.6},Lp);
+  E('ellipse',{cx:0,cy:-2,rx:6,ry:9,fill:'#fffaf0',stroke:'#e8dcc8','stroke-width':.6},k);
+  open(S,t,1000,-15,.2);open(Pt,t+120,1000,15,.2);open(Lp,t+300,900,0,.2)}
+function paphio(g,t,o){const c=o.c||{dor:['#3d6b2f','#e8f5d0','#ffffff','#2d4a22'],pet:['#7a1d2e','#c0485a','#e8b8a8','#5a0f1d'],pouch:['#4a0f1d','#a3263d','#e88b8b']},k=G(g),A=G(k),B=G(k);
+  const dd=petalD(52,30,{prof:sinP(.5,.06),n:10,rf:.05,rk:5}),dg=G(A);E('path',{d:dd,fill:lin([[0,c.dor[0]],[.6,c.dor[1]],[1,c.dor[2]]],0,1,0,0)},dg);
+  for(let i=0;i<9;i++){const u=i/8*2-1;E('path',{d:`M${f(u*3)},-4Q${f(u*16)},-26 ${f(u*20)},-44`,stroke:c.dor[0],'stroke-width':1.3,'stroke-opacity':.7,fill:'none'},dg)}
+  E('path',{d:dd,fill:'none',stroke:c.dor[3],'stroke-width':.8,'stroke-opacity':.6},dg);
+  for(const s of[-1,1])P2(A,64,12,c.pet,{tr:`rotate(${s*(98+R(-6,6))})`,n:12,rf:.18,rk:9,bend:s*.12,v:2,vo:.3,sh:.2,hl:.15,base:.4,sp:{n:14,c:'#3a0610',s:.9,p:.8}});
+  const pg=G(B,{transform:'translate(0,26)'});E('path',{d:'M-20,-14C-24,4 -16,26 0,28C16,26 24,4 20,-14C12,-20 -12,-20 -20,-14Z',fill:rad([[0,c.pouch[2]],[.55,c.pouch[1]],[1,c.pouch[0]]],.4,.3,.75)},pg);
+  E('path',{d:'M-12,-6C-14,6 -10,16 -4,20',stroke:'#fff','stroke-width':2.2,'stroke-opacity':.5,fill:'none','stroke-linecap':'round'},pg);E('path',{d:'M-20,-14C-12,-8 12,-8 20,-14',stroke:c.pouch[0],'stroke-width':1.2,fill:'none'},pg);
+  E('ellipse',{cx:0,cy:4,rx:8,ry:6,fill:'#f5e9a8',stroke:'#c9b25a','stroke-width':.6},k);open(A,t,1000,-15,.2);open(B,t+250,900,0,.2)}
+function danceLady(g){for(const r of[-40,40,-140,140,0])E('path',{d:petalD(8,3.5,{n:5}),fill:lin(['#6e3f00','#c99a1f','#ffd34d'],0,1,0,0),transform:`rotate(${r})`},g);
+  E('path',{d:'M-11,2C-14,10 -10,18 0,19C10,18 14,10 11,2C6,6 -6,6 -11,2Z',fill:rad(['#fff3a0','#ffd21f','#e0a800'],.5,.3,.8),stroke:'#a87b00','stroke-width':.5},g);E('circle',{cy:2,r:2.4,fill:'#a35a00'},g)}
+function oncidium(g,t,o){const P=[[0,0],[10,-60],[40,-120],[80,-150]],k=G(g);E('path',{d:cp(P),stroke:'#6a7a3a','stroke-width':2,fill:'none'},k);
+  [[.35,-1],[.5,1],[.62,-1],[.74,1],[.86,-1],[.96,1]].forEach(([u,s])=>{const q=bz(P,u),e=[q[0]+s*R(14,26),q[1]-R(6,20)];
+    E('path',{d:`M${f(q[0])},${f(q[1])}Q${f((q[0]+e[0])/2)},${f(q[1]-8)} ${f(e[0])},${f(e[1])}`,stroke:'#6a7a3a','stroke-width':1.2,fill:'none'},k);
+    for(const[dx,dy,s2]of[[0,0,1],[s*-10,7,.85]])danceLady(G(k,{transform:`translate(${f(e[0]+dx)},${f(e[1]+dy)}) rotate(${f(R(-15,15))}) scale(${f(s2*.9)})`}))});
+  open(k,t,1000,0,0)}
+function sunflower(g,t,o){const c=o.c||['#c27c00','#ffc21a','#ffe680','#8a5200'],k=G(g,{transform:`scale(1,${o.tilt||.9})`}),A=G(k),B=G(k),d=G(k);
+  for(let i=0;i<22;i++)P2(i%2?B:A,40,9,c,{tr:`rotate(${f(i*360/22+R(-4,4))}) translate(0,-20)`,tip:'point',n:8,rf:.05,rk:4,v:3,vo:.18,sh:.2,hl:.15,base:.4,bend:R(-.12,.12)});
+  E('circle',{r:26,fill:rad(['#5a2d0c','#3a1a06','#1e0c02'],.45,.4,.7)},d);
+  for(let i=0;i<110;i++){const q=Math.sqrt((i+.5)/110)*24,a=i*137.508*D;E('circle',{cx:f(Math.cos(a)*q),cy:f(Math.sin(a)*q),r:f(.9+q/24*.9),fill:i%3?'#6b3a12':'#8a5a1f'},d)}
+  E('circle',{r:26,fill:'none',stroke:'#2a1203','stroke-width':1.2},d);open(A,t,1000,-20,.2);open(B,t+120,1000,20,.2);open(d,t+300,800,0,.4)}
+
+/* ================= structure elements: drapes and lines (the corpus signatures) ================= */
+/* hanging amaranthus: velvety chenille of beads along a drooping curve, hangs down (+y) from the origin */
+function amaranth(g,t,o){const c=o.c||['#4a0818','#8e1235','#c2385a','#2e0410'],L=o.len||220,k=G(g),sw=o.sway??R(-45,45);
+  const P=[[0,0],[sw*.25,L*.32],[sw*.8,L*.68],[sw+R(-18,18),L]],n=Math.round(L/4.4);
+  E('path',{d:cp(P),stroke:c[3],'stroke-width':2.4,fill:'none','stroke-linecap':'round'},k);
+  for(let i=0;i<n;i++){const u=i/n,q=bz(P,u),w=(1-u*.62)*6.8+1.3;
+    for(let j=0;j<2;j++)E('circle',{cx:f(q[0]+R(-w,w)*.7),cy:f(q[1]+R(-2,2)),r:f(R(.55,1)*w*.56),fill:pick([c[0],c[1],c[1],c[2]])},k)}
+  for(let i=0;i<n/3;i++){const q=bz(P,rnd());E('circle',{cx:f(q[0]+R(-3,3)),cy:f(q[1]),r:1,fill:'#fff',opacity:.22},k)}
+  open(k,t,1300,0,0)}
+/* garden form: arched stem with three tassels hanging from the top */
+function amaranthPlant(g,t,o){const k=G(g);E('path',{d:taper([[0,0],[4,-60],[-6,-120],[10,-165]],u=>3*(1-u*.5)+.6,14),fill:'#4f6a2c'},k);
+  for(const[dx,len,sw]of[[10,150,-30],[6,120,25],[12,95,-8]]){const h=G(k,{transform:`translate(${10+dx*.3},-165)`});amaranth(h,t,Object.assign({},o,{len,sway:sw}))}
+  for(const s of[-1,1])E('path',{d:petalD(48,13,{tip:'point'}),fill:lin(['#2f4a1c','#5f7f34','#9fb860'],0,1,0,0),transform:`translate(0,-60) rotate(${s*55})`},k)}
+/* bare curved line ending in a bud (calla or nerine stems without the bloom) */
+function bareLine(g,t,o){const L=o.len||300,b=o.bend??R(-.35,.35),k=G(g),col=o.sc||'#557a36';
+  const P=[[0,0],[b*L*.15,-L*.33],[b*L*.6,-L*.66],[b*L*.9,-L]];E('path',{d:taper(P,u=>Math.max(.7,2.4*(1-u*.7)),24),fill:col},k);
+  if(o.bud){const e=P[3];E('ellipse',{cx:f(e[0]),cy:f(e[1]-6),rx:3.2,ry:7.5,fill:o.bud,transform:`rotate(${f(b*35)} ${f(e[0])} ${f(e[1])})`},k)}
+  open(k,t,1100,0,0)}
+/* bear grass: two or three thin blades bent into loops */
+function grassLoop(g,t,o){const L=o.len||260,k=G(g),col=o.sc||'#7fae4a';
+  for(let i=0;i<(o.n||3);i++){const a=R(-.5,.5)*L,b=R(-.6,.6)*L,h=L*R(.75,1.05),e=R(-.45,.45)*L;
+    E('path',{d:`M${f(R(-4,4))},0C${f(a)},${f(-h)} ${f(b)},${f(-h*1.08)} ${f(e)},${f(-h*R(.25,.5))}`,stroke:i%2?col:'#5f8f34','stroke-width':f(R(1.2,1.9)),fill:'none','stroke-linecap':'round'},k)}
+  open(k,t,1100,0,0)}
+/* curly willow: wiggling twig with small buds */
+function willow(g,t,o){const L=o.len||300,k=G(g),pts=[];for(let i=0;i<=16;i++){const u=i/16;pts.push([Math.sin(u*Math.PI*R(4,6))*(6+u*16)+R(-3,3),-L*u])}
+  E('path',{d:smooth(pts,false),stroke:o.sc||'#6b4a2e','stroke-width':2.6,fill:'none','stroke-linecap':'round'},k);
+  for(let i=3;i<16;i+=2){const q=pts[i];E('ellipse',{cx:f(q[0]),cy:f(q[1]),rx:1.8,ry:3,fill:'#b7c96a',transform:`rotate(${f(R(-40,40))} ${f(q[0])} ${f(q[1])})`},k)}
+  open(k,t,1200,0,0)}
+/* allium on a looping stem ('Snakeball' look): sphere of star florets at the end */
+function allium(g,t,o){const L=o.len||260,k=G(g),c=o.c||['#5a2a9e','#8f5ad6','#cdb6ff','#3a1670'],lp=R(.35,.6);
+  const d=`M0,0C${f(-L*.25)},${f(-L*.35)} ${f(L*.35)},${f(-L*lp)} ${f(L*.1)},${f(-L*(lp+.1))}S${f(-L*.3)},${f(-L*.9)} ${f(L*.05)},${f(-L)}`;
+  E('path',{d,stroke:'#5f7f34','stroke-width':2.4,fill:'none','stroke-linecap':'round'},k);
+  const h=G(k,{transform:`translate(${f(L*.05)},${f(-L-14)})`});E('circle',{r:15,fill:rad([c[2],c[1],c[0]],.4,.35,.7)},h);
+  for(let i=0;i<34;i++){const q=Math.sqrt((i+.5)/34)*14,a=i*137.5*D;E('path',{d:'M0,-3L.9,-.9 3,0 .9,.9 0,3 -.9,.9 -3,0 -.9,-.9Z',fill:i%3?c[2]:c[1],transform:`translate(${f(Math.cos(a)*q)},${f(Math.sin(a)*q)}) rotate(${f(R(0,90))})`},h)}
+  open(k,t,1100,0,0)}
+
+/* ================= Atelier v3 — high-detail botanical kit ================= */
+/* colour maths */
+const hx=c=>{const n=parseInt(c.slice(1,7),16);return[n>>16&255,n>>8&255,n&255]};
+const hs=a=>'#'+a.map(v=>Math.max(0,Math.min(255,Math.round(v))).toString(16).padStart(2,'0')).join('');
+const mix=(a,b,t)=>{const A=hx(a),B=hx(b);return hs(A.map((v,i)=>v+(B[i]-v)*t))};
+const dk=(c,t)=>mix(c,'#0d0408',t),lt=(c,t)=>mix(c,'#fffaf4',t);
+/* five tones from one colour: ink, shadow, body, light, rim */
+const tones=(c,k=1)=>[mix(dk(c,.82),'#1a0610',.25),dk(c,.36*k),c,lt(c,.3*k),lt(c,.66)];
+/* level of detail: 1 drops hairline veins and rim lights (garden thumbnails) */
+let LOD=0;
+/* attribute bag without empty values */
+const AT=o=>{for(const k in o)if(o[k]==null)delete o[k];return o};
+
+/* fine veins that follow the petal's own width profile (no clipping needed) */
+function veinD(L,W,o={}){const n=o.vn||9,prof=o.prof||sinP(o.pw||.75),bend=(o.bend||0)*L,sp=o.spread??.8,len=o.vl??.88;let d='';
+  for(let k=0;k<n;k++){const u=n===1?0:k/(n-1)*2-1,e=len*(1-.28*u*u)*R(.82,1.02),P=[];
+    for(let i=0;i<=5;i++){const t=.03+e*i/5;P.push([u*W*prof(Math.min(.97,t))*sp+bend*t*t,-L*t])}d+=smooth(P,false)}return d}
+/* painted petal v3: body, curvature, base shadow, veins, speckles, translucent rim, ink edge. cs=tones() */
+function pp(par,L,W,cs,o={}){const g=G(par,AT({transform:o.tr})),d=o.d||petalD(L,W,o),sh=o.sh??1;
+  E('path',{d,fill:lin([[0,o.bc||cs[1]],[o.mp??.42,cs[2]],[1,o.tc||cs[3]]],0,1,0,0)},g);
+  if((o.cup??1)>0)E('path',{d,fill:lin([[0,cs[0],.32*sh],[.27,cs[0],0],[.52,'#fff',0],[.7,'#fff',.13*sh],[1,cs[0],.2*sh]],0,0,1,0)},g);
+  else E('path',{d,fill:lin([[0,'#fff',.2*sh],[.24,'#fff',0],[.6,cs[0],0],[1,cs[0],.34*sh]],0,0,1,0)},g);
+  if(o.base!==0)E('path',{d,fill:lin([[0,o.bk||cs[0],o.base??.5],[o.bl??.34,o.bk||cs[0],0]],0,1,0,0)},g);
+  if(o.v&&!LOD)E('path',{d:veinD(L,W,{vn:o.v,prof:o.prof,pw:o.pw,bend:o.bend,spread:o.spread,vl:o.vl}),stroke:o.vc||cs[0],'stroke-width':o.vw??.45,'stroke-opacity':o.vo??.2,fill:'none','stroke-linecap':'round'},g);
+  if(o.sp)specks(g,L,W,o.sp);
+  if(o.rim!==0&&!LOD)E('path',{d,fill:'none',stroke:lin([[0,cs[4],0],[o.rs??.5,cs[4],0],[1,cs[4],o.rim??.7]],0,1,0,0),'stroke-width':o.rw??1.1},g);
+  E('path',{d,fill:'none',stroke:cs[0],'stroke-width':o.sw??.5,'stroke-opacity':o.so??.5,'stroke-linejoin':'round'},g);return g}
+/* specular highlight and soft contact shadow */
+function glint(par,x,y,rx,ry,rot,op=.55){return E('ellipse',AT({cx:f(x),cy:f(y),rx:f(rx),ry:f(ry),fill:rad([[0,'#fff',op],[.55,'#fff',op*.3],[1,'#fff',0]]),transform:rot?`rotate(${f(rot)} ${f(x)} ${f(y)})`:null}),par)}
+function ao(par,x,y,rx,ry,op=.35,c='#140608'){return E('ellipse',{cx:f(x),cy:f(y),rx:f(rx),ry:f(ry),fill:rad([[0,c,op],[.5,c,op*.55],[1,c,0]])},par)}
+/* ribbon along a cubic bezier; normals flipped toward the light (upper left) so off>0 = lit side */
+function ribbon(P,wf,off,n=22){const A=[],B=[];for(let i=0;i<=n;i++){const t=i/n,p=bz(P,t),q=bz(P,Math.min(1,t+.02)),o=bz(P,Math.max(0,t-.02)),dx=q[0]-o[0],dy=q[1]-o[1],l=Math.hypot(dx,dy)||1;
+  let nx=-dy/l,ny=dx/l;if(nx+ny>0){nx=-nx;ny=-ny}const w=wf(t),c=off?off(t):0,cx=p[0]+nx*c,cy=p[1]+ny*c;A.push(f(cx+nx*w)+','+f(cy+ny*w));B.push(f(cx-nx*w)+','+f(cy-ny*w))}
+  return'M'+A.join('L')+'L'+B.reverse().join('L')+'Z'}
+/* cylindrical stem: dark body, lit midtone, highlight, specular thread */
+const SG=['#1f3818','#3a6328','#6a9444','#b9d684'];
+function stem3(par,P,w0,w1,c=SG,n=22){const wf=t=>(w0+(w1-w0)*t)/2,g=G(par);
+  E('path',{d:ribbon(P,wf,null,n),fill:c[0]},g);E('path',{d:ribbon(P,t=>wf(t)*.7,t=>wf(t)*.22,n),fill:c[1]},g);
+  E('path',{d:ribbon(P,t=>wf(t)*.28,t=>wf(t)*.42,n),fill:c[2],opacity:.9},g);E('path',{d:ribbon(P,t=>wf(t)*.09,t=>wf(t)*.5,n),fill:c[3],opacity:.55},g);return g}
+/* serrated outline (rose leaflets, nettles) */
+function toothD(L,W,prof,nt,bend=0){const b=bend*L,side=s=>{const a=[];for(let i=1;i<=nt;i++){const t0=(i-.55)/nt*.95,t1=i/nt*.95;a.push([s*W*prof(t0)+b*t0*t0,-L*t0],[s*W*prof(t1)*.86+b*t1*t1,-L*(t1-.01)])}return a};
+  const P=[[0,0],...side(1),[b,-L],...side(-1).reverse()];return'M'+P.map(p=>f(p[0])+','+f(p[1])).join('L')+'Z'}
+/* leaf v3: two-tone fold along the midrib, paired veins, raised midrib, optional gloss & teeth */
+const LG={rose:['#142410','#2a4a1c','#47722e','#86ad55','#a9c97a'],glauc:['#1b2a27','#37534b','#62857a','#9fbcb0','#c8dcd2'],dark:['#0b170f','#1a3121','#2e573a','#5f9262','#8fbf8a'],
+  lime:['#25350d','#476419','#7e9f34','#bcd673','#dcefa0'],plum:['#170610','#351224','#57203c','#80405a','#b07a8e'],sage:['#26302a','#4a5c50','#7a8f80','#b3c4b6','#dbe6dc']};
+function leaf3(par,L,W,cs,o={}){const prof=o.prof||sinP(o.pw??.7,.06),bend=(o.bend||0),g=G(par,AT({transform:o.tr})),d=o.teeth?toothD(L,W,prof,o.teeth,bend):petalD(L,W,Object.assign({n:12,tip:'point',rf:.012,rk:5},o,{prof})),b=bend*L;
+  E('path',{d,fill:lin([[0,cs[1]],[.55,cs[2]],[1,cs[3]]],0,1,.3,0)},g);
+  E('path',{d,fill:lin([[0,'#fff',.1],[.47,'#fff',0],[.5,cs[0],.18],[1,cs[0],.34]],0,0,1,0)},g);
+  const nv=o.nv??6;let vd='';for(let i=1;i<=nv;i++){const t=i/(nv+1)*.9,y=-L*t,cx=b*t*t;for(const s of[-1,1]){const w=W*prof(Math.min(.97,t+.07))*.86;vd+=`M${f(cx)},${f(y)}Q${f(cx+s*w*.45)},${f(y-L*.02)} ${f(cx+s*w)},${f(y-L*(o.va??.1))}`}}
+  if(nv)E('path',{d:vd,stroke:cs[4],'stroke-width':o.vw??.6,'stroke-opacity':o.vo??.42,fill:'none'},g);
+  E('path',{d:taper([[0,0],[b*.12,-L*.33],[b*.48,-L*.66],[b*.92,-L*.96]],u=>Math.max(.22,(o.mr||1.3)*(1-u)),12),fill:cs[4],opacity:.75},g);
+  if(o.gloss)glint(g,-W*.32+b*.2,-L*.46,W*.16,L*.2,-6,o.gloss);
+  E('path',{d,fill:'none',stroke:cs[0],'stroke-width':o.sw??.6,'stroke-opacity':.6,'stroke-linejoin':'round'},g);return g}
+/* crescent petal edge seen from above: horns at (+-w,0), rim bulging to -h; used for roses, ranunculus, camellia */
+function cresc(par,w,h,c,o={}){const t=o.th??.55,d=`M${f(-w)},0Q0,${f(-h*2)} ${f(w)},0Q0,${f(-h*2*(1-t))} ${f(-w)},0Z`;
+  E('path',AT({d,fill:lin([[0,c[0]],[.5,c[1]],[1,c[2]]],0,1,0,0),transform:o.tr}),par);
+  if(o.rim!==0&&!LOD)E('path',AT({d:`M${f(-w*.8)},${f(-h*.38)}Q0,${f(-h*1.94)} ${f(w*.8)},${f(-h*.38)}`,fill:'none',stroke:c[3],'stroke-width':o.rw??.9,'stroke-opacity':o.rim??.75,'stroke-linecap':'round',transform:o.tr}),par)}
+/* small stamen / filament with anther */
+function stamen(par,x0,y0,x1,y1,c,an,r=1.6,w=.6){E('path',{d:`M${f(x0)},${f(y0)}Q${f((x0+x1)/2+(y1-y0)*.12)},${f((y0+y1)/2)} ${f(x1)},${f(y1)}`,stroke:c,'stroke-width':w,fill:'none','stroke-linecap':'round'},par);
+  E('ellipse',{cx:f(x1),cy:f(y1),rx:f(r*.7),ry:f(r*1.25),fill:an,transform:`rotate(${f(Math.atan2(y1-y0,x1-x0)/D+90)} ${f(x1)} ${f(y1)})`},par)}
+/* sparkle dust (nerine, gloriosa) */
+function dust(par,n,rx,ry,op=.7){for(let i=0;i<n;i++)E('circle',{cx:f(R(-rx,rx)),cy:f(R(-ry,ry)),r:f(R(.25,.6)),fill:'#fff',opacity:f(R(.3,op))},par)}
+/* cylindrical club (anthurium / calla spadix) with rounded tip and floret texture */
+function spadix(par,P,w0,w1,c0,c1,dots=1){const g=G(par),wf=t=>(w0+(w1-w0)*t)/2,e=bz(P,1);
+  E('path',{d:ribbon(P,wf,null,16),fill:dk(c1,.35)},g);E('circle',{cx:f(e[0]),cy:f(e[1]),r:f(w1/2),fill:dk(c1,.35)},g);
+  E('path',{d:ribbon(P,t=>wf(t)*.72,t=>wf(t)*.2,16),fill:lin([[0,c0],[1,c1]],0,1,0,0)},g);E('circle',{cx:f(e[0]),cy:f(e[1]),r:f(w1*.36),fill:c1},g);
+  E('path',{d:ribbon(P,t=>wf(t)*.2,t=>wf(t)*.45,16),fill:'#fff',opacity:.38},g);
+  if(dots){let dd='';const n=Math.round(w0*5);for(let i=1;i<n;i++){const u=i/n,a=bz(P,u),b=bz(P,Math.min(1,u+.01)),an=Math.atan2(b[1]-a[1],b[0]-a[0]),w=wf(u)*.62;
+    for(const s of[-1,0,1]){if((i+s)%2)continue;const x=a[0]-Math.sin(an)*w*s*.8,y=a[1]+Math.cos(an)*w*s*.8;dd+=`M${f(x-.4)},${f(y)}a.4,.4 0 1,0 .8,0a.4,.4 0 1,0 -.8,0`}}
+    E('path',{d:dd,fill:dk(c1,.45),opacity:.45},g)}return g}
+
+/* ================= Atelier v3 — anthurium, calla, phalaenopsis, cymbidium ================= */
+const q20=v=>Math.round(v*20)/20;
+/* ---------- Anthurium: glossy quilted heart spathe, embossed veins, dotted spadix. centred on the spathe ---------- */
+function anthD(L,W,as){const pr=s=>[[.1,.07],[.36,.14],[.7,.1],[.94,-.03],[1,-.22],[.92,-.42],[.7,-.62],[.42,-.8],[.17,-.93]].map(([x,y])=>[s*x*W*(1+s*as),y*L]);
+  return smooth([[0,0],...pr(1),[W*.03,-L],...pr(-1).reverse()])}
+const anW=t=>t<.2?1:Math.max(.04,1-Math.pow((t-.2)/.8,1.5));
+function anthBody(h,L,W,c,as,gl=1){const d=anthD(L,W,as);
+  E('path',{d,fill:rad([[0,c[3]],[.5,c[2]],[1,c[1]]],.46,.4,.7)},h);
+  E('path',{d,fill:rad([[0,c[0],.7],[.5,c[0],.25],[1,c[0],0]],.5,.92,.42)},h);
+  E('path',{d,fill:lin([[0,'#fff',.12],[.3,'#fff',0],[.62,c[0],0],[1,c[0],.32]],0,0,1,.15)},h);
+  let vd='';for(const s of[-1,1]){for(const m of[.9,.74,.56]){const P=[[s*1.2,-L*.02],[s*W*m*1.05,L*.07],[s*W*m*1.08,-L*.34],[s*W*.02,-L*.985]];vd+=cp(P)}
+    for(let i=0;i<5;i++){const t0=.1+i*.15,te=Math.min(.95,t0+.2),xe=s*W*anW(te)*R(.5,.6);vd+=`M${f(s*.8)},${f(-L*t0)}Q${f(xe*.55)},${f(-L*(t0+.05))} ${f(xe)},${f(-L*te)}`}}
+  vd+=`M0,${f(-L*.02)}C${f(W*.04)},${f(-L*.4)} ${f(W*.02)},${f(-L*.7)} ${f(W*.03)},${f(-L*.97)}`;
+  E('path',{d:vd,stroke:c[0],'stroke-width':f(L/80),'stroke-opacity':.42,fill:'none','stroke-linecap':'round'},h);
+  E('path',{d:vd,stroke:c[4],'stroke-width':f(L/150),'stroke-opacity':.34,fill:'none','stroke-linecap':'round',transform:'translate(-.9,-.7)'},h);
+  for(let i=0;i<5;i++)for(const s of[-1,1]){const tt=.12+i*.14;glint(h,s*W*anW(tt+.06)*R(.35,.55),-L*(tt+.07),W*.1*(1-i*.1),L*.05,s*R(20,40),q20(R(.18,.34)*gl))}
+  glint(h,-W*.5,-L*.22,W*.22,L*.08,-35,.5*gl);glint(h,W*.15,-L*.62,W*.08,L*.12,20,q20(.32*gl));
+  E('path',{d,fill:'none',stroke:c[4],'stroke-width':1.3,'stroke-opacity':.35},h);
+  E('path',{d,fill:'none',stroke:c[0],'stroke-width':.7,'stroke-opacity':.7},h)}
+function xAnth(g,t,o){const c=o.c||['#2a020a','#5c0a1c','#8e1430','#c23a54','#f2a6b4'],sp=o.sp||['#f3e6c2','#c9a96a'],L=o.L||94,W=o.W||42,k=G(g),h=G(k,{transform:`translate(0,${f(L*.44)})`});
+  anthBody(h,L,W,c,R(-.06,.06));
+  const s2=o.side??(rnd()<.5?-1:1),cv=R(.6,1.2),P=[[0,-L*.04],[s2*W*.05,-L*.2],[s2*W*.2*cv,-L*.36],[s2*W*.36*cv,-L*.5]];
+  ao(h,P[3][0]*.6+2,P[3][1]*.6+3,W*.16,L*.2,.3);spadix(h,P,6.4,4,sp[0],sp[1]);
+  open(k,t,1000,-8,.3)}
+/* sculptural anthurium leaf for foliage: heart blade on a petiole (grows up from 0,0) */
+function xAnthLeaf(g,t,o){const L=o.L||150,W=o.W||66,c=o.c||['#08140c','#173a22','#2f6a3c','#5f9a5a','#a9d49a'],k=G(g),pl=o.pl??60;
+  stem3(k,[[0,0],[2,-pl*.4],[-2,-pl*.75],[0,-pl]],3,2.2);const h=G(k,{transform:`translate(0,${-pl}) rotate(${f(o.rot??R(-25,25))}) scale(1,${f(o.tilt??R(.8,.95))})`});
+  anthBody(h,L,W,c,R(-.05,.05),.8);open(k,t,900,8,.3)}
+
+/* ---------- Calla: rolled spathe from the side, base at 0,0, mouth ~ -100 ---------- */
+function xCalla(g,t,o){const c=o.c||['#3a4a1a','#b9c48f','#eef0dc','#ffffff','#ffffff'],ic=o.ic||['#c9cf9a','#f6f6e6'],nk=o.nk||'#6f8a3a',sp=o.sp||'#f0b72a',k=G(g),m=o.m??(rnd()<.5?1:-1),h=G(k,{transform:`scale(${m},1)`});
+  E('path',{d:'M-3.2,0C-3.6,-14 -5,-30 -8,-44L8,-46C5,-30 3.6,-14 3.2,0Z',fill:lin([[0,dk(nk,.2)],[1,mix(nk,c[1],.5)]],0,1,0,0)},h);
+  E('path',{d:'M-1.6,0C-1.8,-14 -2.6,-30 -4.4,-44',stroke:'#fff','stroke-width':.8,'stroke-opacity':.3,fill:'none'},h);
+  const inner='M-30,-96C-27,-110 -8,-119 10,-120C17,-124 22,-131 27,-139C28,-125 30,-112 31,-103C24,-96 16,-91 3,-89C-10,-88 -24,-91 -30,-96Z';
+  E('path',{d:inner,fill:lin([[0,ic[0]],[.45,ic[1]],[1,lt(ic[1],.25)]],0,1,0,0)},h);
+  E('path',{d:inner,fill:rad([[0,c[0],.6],[1,c[0],0]],.42,.95,.5)},h);
+  glint(h,-6,-108,10,3,-12,.25);
+  spadix(h,[[1,-84],[1.2,-95],[2.4,-105],[3.6,-113]],5,3.4,lt(sp,.2),sp);
+  const face='M-3,-40C-8,-56 -17,-72 -24,-84C-27,-89 -30,-93 -31,-96C-24,-91 -10,-87 3,-89C16,-91 24,-96 31,-103C27,-90 20,-74 14,-58C11,-50 8,-44 3,-40Z';
+  E('path',{d:face,fill:lin([[0,mix(nk,c[1],.35)],[.32,c[1]],[.62,c[2]],[1,c[3]]],0,1,.2,0)},h);
+  E('path',{d:face,fill:lin([[0,c[0],.32],[.3,c[0],0],[.55,'#fff',0],[.75,'#fff',.12],[1,c[0],.36]],0,0,1,0)},h);
+  E('path',{d:'M-31,-96C-24,-91 -10,-87 3,-89C16,-91 24,-96 31,-103',stroke:c[4],'stroke-width':2.4,'stroke-opacity':.85,fill:'none','stroke-linecap':'round'},h);
+  E('path',{d:'M-29,-93C-22,-89 -10,-85.5 3,-87C14,-88.5 22,-93 29,-99',stroke:c[0],'stroke-width':.8,'stroke-opacity':.35,fill:'none'},h);
+  glint(h,-12,-70,3.2,16,-24,.6);glint(h,15,-66,1.6,9,18,.3);
+  E('path',{d:face,fill:'none',stroke:c[0],'stroke-width':.6,'stroke-opacity':.55},h);
+  E('path',{d:inner,fill:'none',stroke:c[0],'stroke-width':.6,'stroke-opacity':.4},h);
+  E('path',{d:'M14,-121C19,-125 23,-131 27,-139',stroke:c[0],'stroke-width':.7,'stroke-opacity':.5,fill:'none'},h);
+  open(k,t,1000,6,.3)}
+
+/* ---------- Phalaenopsis: moth orchid facing the viewer, radius R ---------- */
+function xPhal(g,t,o){const c=o.c||['#5a2a46','#e9d6e4','#fbf4f8','#ffffff','#ffffff'],lp=o.lip||['#6a0f3a','#c2306e','#ffd23f'],R0=o.R||34,k=G(g),rv=o.ret||0;
+  const pt={v:rv?11:4,vo:rv?.5:.16,vc:o.vc||c[0],vw:rv?.5:.4,sh:.7,base:.32,rim:.6,rs:.6,sw:.45,so:.35,tip:'round'};
+  for(const s of[-1,1])pp(k,R0*.84,R0*.27,c,Object.assign({},pt,{tr:`rotate(${s*128+R(-4,4)})`,prof:sinP(.7,.05),bend:s*.04}));
+  pp(k,R0*.88,R0*.28,c,Object.assign({},pt,{tr:`rotate(${R(-4,4)})`,prof:sinP(.7,.05)}));
+  for(const s of[-1,1])pp(k,R0*.92,R0*.5,c,Object.assign({},pt,{tr:`rotate(${s*72+R(-5,5)})`,prof:sinP(.5,.04),asym:-.06,v:rv?14:6}));
+  const L=G(k),lc=tones(lp[1]);for(const s of[-1,1])pp(L,R0*.36,R0*.12,lc,{tr:`rotate(${180+s*38})`,prof:sinP(.6),tip:'round',v:3,vo:.5,vc:lp[0],base:.3,rim:.4});
+  const r=R0,ml=`M0,0C${f(r*.1)},${f(r*.12)} ${f(r*.06)},${f(r*.24)} ${f(r*.2)},${f(r*.36)}C${f(r*.16)},${f(r*.46)} ${f(r*.06)},${f(r*.5)} 0,${f(r*.54)}C${f(-r*.06)},${f(r*.5)} ${f(-r*.16)},${f(r*.46)} ${f(-r*.2)},${f(r*.36)}C${f(-r*.06)},${f(r*.24)} ${f(-r*.1)},${f(r*.12)} 0,0Z`;
+  E('path',{d:ml,fill:lin([[0,lp[0]],[.5,lp[1]],[1,lt(lp[1],.2)]],0,0,0,1)},L);E('path',{d:ml,fill:'none',stroke:lp[0],'stroke-width':.5,'stroke-opacity':.6},L);
+  glint(L,-r*.05,r*.36,r*.05,r*.03,0,.4);
+  for(const s of[-1,1])E('path',{d:`M${f(s*r*.03)},${f(r*.52)}C${f(s*r*.08)},${f(r*.64)} ${f(s*r*.2)},${f(r*.6)} ${f(s*r*.14)},${f(r*.54)}`,stroke:lp[1],'stroke-width':.8,fill:'none','stroke-linecap':'round'},L);
+  E('ellipse',{cx:0,cy:f(r*.1),rx:f(r*.09),ry:f(r*.07),fill:lp[2]},L);for(let i=0;i<6;i++)E('circle',{cx:f(R(-.07,.07)*r),cy:f(r*R(.06,.15)),r:.45,fill:lp[0]},L);
+  E('path',{d:`M${f(-r*.08)},${f(r*.04)}C${f(-r*.1)},${f(-r*.12)} ${f(r*.1)},${f(-r*.12)} ${f(r*.08)},${f(r*.04)}Z`,fill:lin(['#d9d2cc','#ffffff'],0,1,0,0),stroke:'#a99a9a','stroke-width':.4},k);
+  E('ellipse',{cx:0,cy:f(-r*.05),rx:f(r*.045),ry:f(r*.035),fill:o.cap||'#f0c8d8'},k);
+  open(k,t,900,14,.25)}
+/* orchid buds */
+function obud(par,x,y,r,rot,c){const g=G(par,{transform:`translate(${f(x)},${f(y)}) rotate(${f(rot)})`});
+  E('ellipse',{cx:0,cy:0,rx:f(r*.78),ry:f(r),fill:rad([[0,lt(c,.5)],[.6,c],[1,dk(c,.35)]],.38,.35,.75)},g);E('path',{d:`M0,${f(-r)}Q${f(r*.25)},0 0,${f(r)}`,stroke:dk(c,.4),'stroke-width':.5,'stroke-opacity':.5,fill:'none'},g);glint(g,-r*.3,-r*.35,r*.2,r*.3,-20,.5)}
+/* a spray: stem arching up (or hanging when o.hang) with flowers graded to buds */
+function spray(g,t,o,fn,bc){const n=o.n||6,Lh=o.len||210,s=o.side??(rnd()<.5?-1:1),k=G(g),sc0=o.fs||1;
+  const P=o.hang?[[0,0],[s*Lh*.22,Lh*.04],[s*Lh*.42,Lh*.42],[s*Lh*.34,Lh]]:[[0,0],[s*Lh*.05,-Lh*.55],[s*Lh*.4,-Lh*.94],[s*Lh*.88,-Lh*.8]];
+  stem3(k,P,3.2,1.6,o.sc||['#2a3418','#4d5c2c','#77864a','#b4c07e']);const nb=3,tot=n+nb,u0=o.u0??.36;
+  for(let i=tot-1;i>=0;i--){const u=u0+(1-u0-.03)*i/(tot-1),q=bz(P,u),q2=bz(P,Math.min(1,u+.02)),ang=Math.atan2(q2[1]-q[1],q2[0]-q[0]),side=i%2?1:-1,nx=-Math.sin(ang)*side,ny=Math.cos(ang)*side;
+    if(i>=n){const r=3.2+(tot-i)*1.4;obud(k,q[0]+nx*r*.6,q[1]+ny*r*.6,r,ang/D+90,bc);continue}
+    const sc=sc0*(1-.3*i/Math.max(1,n-1)),off=8*sc,x=q[0]+nx*off,y=q[1]+ny*off;
+    E('path',{d:`M${f(q[0])},${f(q[1])}L${f(x)},${f(y)}`,stroke:'#5c6b34','stroke-width':1.2},k);
+    fn(G(k,{transform:`translate(${f(x)},${f(y)}) rotate(${f(R(-18,18))}) scale(${f(sc)})`}),t+i*70,o)}
+  open(k,t,1100,0,.6)}
+function xPhalSpray(g,t,o){spray(g,t,o,xPhal,(o.c||[])[3]||'#f4eef2')}
+/* compact cluster used as a bouquet head */
+function xPhalCluster(g,t,o){const k=G(g);obud(k,-30,-34,5,-30,(o.c||[])[3]||'#f4eef2');
+  for(const[x,y,s,r]of[[22,-22,.78,14],[-24,-8,.86,-10],[4,12,1,4]])xPhal(G(k,{transform:`translate(${x},${y}) rotate(${r}) scale(${s})`}),t,o)}
+
+/* ---------- Cymbidium: waxy tepals, spotted tongue lip, curved column ---------- */
+function xCymb(g,t,o){const c=o.c||tones('#c8714c'),lp=o.lip||['#7a0f22','#fff1df','#c2304a'],R0=o.R||30,k=G(g);
+  const pt={v:7,vo:.26,vc:c[0],vw:.4,sh:.9,base:.45,rim:.55,sw:.5,so:.45,prof:sinP(.55,.06),tip:'round'};
+  for(const a of[-128,128])pp(k,R0*.92,R0*.31,c,Object.assign({},pt,{tr:`rotate(${a+R(-5,5)})`,bend:a>0?.05:-.05}));
+  pp(k,R0*.96,R0*.32,c,Object.assign({},pt,{tr:`rotate(${R(-6,6)})`,bend:R(-.06,.06)}));
+  for(const a of[-56,56])pp(k,R0*.88,R0*.3,c,Object.assign({},pt,{tr:`rotate(${a+R(-5,5)})`,bend:a>0?-.08:.08}));
+  for(const a of[-130,0,130,-60,60]){const r=a*D;glint(k,Math.sin(r)*R0*.45,-Math.cos(r)*R0*.45,R0*.05,R0*.16,a,.35)}
+  const r=R0,L=G(k);for(const s of[-1,1])pp(L,r*.3,r*.13,tones(lp[2]),{tr:`translate(${f(s*r*.06)},${f(r*.02)}) rotate(${180+s*24})`,prof:sinP(.6),tip:'round',v:4,vo:.6,vc:lp[0],base:.2,rim:.3});
+  const tg=`M${f(-r*.15)},${f(r*.05)}C${f(-r*.22)},${f(r*.2)} ${f(-r*.26)},${f(r*.4)} ${f(-r*.14)},${f(r*.52)}C${f(-r*.06)},${f(r*.6)} ${f(r*.06)},${f(r*.6)} ${f(r*.14)},${f(r*.52)}C${f(r*.26)},${f(r*.4)} ${f(r*.22)},${f(r*.2)} ${f(r*.15)},${f(r*.05)}Z`;
+  E('path',{d:tg,fill:lin([[0,dk(lp[1],.15)],[1,lp[1]]],0,0,0,1)},L);
+  let dd='';for(let i=0;i<34;i++){const a=R(0,1),x=R(-.19,.19)*r*(1-a*.3),y=r*(.12+a*.42);dd+=`M${f(x-.6)},${f(y)}a.6,.75 0 1,0 1.2,0a.6,.75 0 1,0 -1.2,0`}E('path',{d:dd,fill:lp[0],opacity:.85},L);
+  E('path',{d:`M${f(-r*.13)},${f(r*.5)}C${f(-r*.05)},${f(r*.57)} ${f(r*.05)},${f(r*.57)} ${f(r*.13)},${f(r*.5)}`,stroke:lt(lp[1],.4),'stroke-width':1.6,'stroke-opacity':.9,fill:'none','stroke-linecap':'round'},L);
+  E('path',{d:tg,fill:'none',stroke:lp[0],'stroke-width':.5,'stroke-opacity':.5},L);
+  E('path',{d:`M${f(-r*.07)},${f(r*.12)}C${f(-r*.1)},${f(-r*.08)} ${f(-r*.04)},${f(-r*.2)} 0,${f(-r*.2)}C${f(r*.04)},${f(-r*.2)} ${f(r*.1)},${f(-r*.08)} ${f(r*.07)},${f(r*.12)}Z`,fill:lin(['#e8d4b4','#fff8ec'],0,1,0,0),stroke:'#8a6a50','stroke-width':.4},k);
+  for(let i=0;i<5;i++)E('circle',{cx:f(R(-.04,.04)*r),cy:f(r*R(-.12,.08)),r:.4,fill:lp[0]},k);E('ellipse',{cx:0,cy:f(-r*.17),rx:f(r*.05),ry:f(r*.04),fill:'#f2d24a'},k);
+  open(k,t,900,12,.3)}
+function xCymbSpray(g,t,o){spray(g,t,Object.assign({u0:.3,n:7,fs:1.05},o),xCymb,o.bud||'#c8c47a')}
+function xCymbCluster(g,t,o){const k=G(g);for(const[x,y,s,r]of[[-20,-20,.86,-18],[20,-24,.9,16],[0,-40,.76,4],[18,10,1,8],[-16,12,1.06,-6]])xCymb(G(k,{transform:`translate(${x},${y}) rotate(${r}) scale(${s})`}),t,o)}
+
+/* ================= Atelier v3 — rose de jardin, renoncule, dahlia, œillet ================= */
+/* ring of cupped petal edges around the centre (seen from above), local -y points outward */
+function cring(par,r,n,w,h,cols,a0,o={}){for(let i=0;i<n;i++){const a=a0+i*360/n+R(-9,9),x=Math.cos(a*D)*r,y=Math.sin(a*D)*r;
+  cresc(par,w*R(.86,1.1),h*R(.85,1.15),cols,{tr:`translate(${f(x)},${f(y)}) rotate(${f(a+90)})`,th:o.th,rim:o.rim,rw:o.rw})}}
+const deepen=(c,dp,k)=>[mix(c[1],dp,k),mix(c[2],dp,k*.6),mix(c[3],c[2],k*.7),mix(c[3],c[4],.5-k*.4)];
+
+/* ---------- garden rose (David Austin type): broad guard petals, deep cup, quartered heart ---------- */
+function xRose(g,t,o){const c=o.c||tones('#f2c6b6'),Rr=o.R||40,k=G(g),dp=o.deep||dk(c[1],.35);
+  const gp={prof:sinP(.42,.12),tip:'round',rf:.035,rk:3,cup:-1,sh:.9,base:.55,bl:.44,v:7,vo:.12,vw:.4,rim:.85,rs:.55,rw:1.4,so:.4};
+  for(let i=0;i<6;i++)pp(k,Rr*1.02,Rr*.56,c,Object.assign({},gp,{tr:`rotate(${f(i*60+R(-10,10))})`,asym:R(-.1,.1)}));
+  for(let i=0;i<6;i++)pp(k,Rr*.86,Rr*.5,c,Object.assign({},gp,{tr:`rotate(${f(i*60+30+R(-10,10))})`,asym:R(-.1,.1)}));
+  E('circle',{r:f(Rr*.66),fill:rad([[0,dp],[.62,mix(dp,c[1],.55)],[1,c[1],0]])},k);
+  cring(k,Rr*.6,8,Rr*.37,Rr*.12,deepen(c,dp,0),R(0,45),{th:.55,rim:.6,rw:1.1});
+  const M=o.n||30;for(let i=0;i<M;i++){const u=i/M,r=Rr*.5*Math.pow(1-u,.85)+R(-1.5,1.5),a=i*137.508+R(-20,20),w=Rr*(.12+.24*(1-u))*R(.85,1.15);
+    cresc(k,w,w*R(.3,.42),deepen(c,dp,.12+u*.55),{tr:`translate(${f(Math.cos(a*D)*r)},${f(Math.sin(a*D)*r)}) rotate(${f(a+90+R(-28,28))})`,th:.62,rim:.85,rw:1})}
+  if(o.button)E('circle',{r:f(Rr*.09),fill:rad([[0,lt(o.button,.3)],[1,dk(o.button,.35)]],.4,.35,.7)},k);
+  open(k,t,1100,16,.3)}
+
+/* ---------- ranunculus: tight concentric layers of tissue-thin petals, optional green eye ---------- */
+function xRanunc(g,t,o){const c=o.c||tones('#f07a3a'),Rr=o.R||32,k=G(g),dp=o.deep||dk(c[1],.35);
+  const gp={prof:sinP(.45,.1),tip:'round',cup:-1,sh:.8,base:.5,v:9,vo:.14,vw:.35,rim:.9,rw:1.2,so:.35};
+  for(let i=0;i<5;i++)pp(k,Rr,Rr*.6,c,Object.assign({},gp,{tr:`rotate(${f(i*72+R(-8,8))})`}));
+  E('circle',{r:f(Rr*.82),fill:rad([[0,dp],[.7,mix(dp,c[1],.6)],[1,c[2]]])},k);
+  const K=o.rings||10;for(let r=0;r<K;r++){const u=r/K,r0=Rr*.8*Math.pow(1-u,1.05),n=Math.max(5,Math.round(10-r*.5)),w=2*Math.PI*r0/n*.78;
+    cring(k,r0,n,w,w*.36,deepen(c,dp,u*.5),r*23+R(-6,6),{th:.78,rim:.55,rw:.75})}
+  if(o.eye)E('circle',{r:f(Rr*.1),fill:rad([[0,lt(o.eye,.35)],[1,dk(o.eye,.3)]],.4,.35,.7)},k);
+  open(k,t,1000,18,.3)}
+
+/* ---------- decorative dahlia: creased pointed petals in golden-angle whorls, cupped centre ---------- */
+function xDahlia(g,t,o){const c=o.c||tones('#8e1a3a'),Rr=o.R||46,k=G(g),N=o.n||64,dp=o.deep||c[0];
+  E('circle',{r:f(Rr*.7),fill:rad([[0,dp],[1,c[1]]])},k);
+  const P=[];for(let i=0;i<N;i++)P.push({u:Math.sqrt((i+.5)/N),a:i*137.508+R(-4,4)});P.sort((a,b)=>b.u-a.u);
+  const pt={prof:sinP(.62,.1),tip:'point',v:1,vo:.4,vw:.6,cup:1,sh:1,base:.55,bl:.4,rim:.55,rs:.5,rw:.9,so:.45};
+  for(const p of P){const L=Rr*(.22+.78*p.u)*R(.93,1.04);
+    if(p.u>.4){const cc=p.u>.75?c:[c[0],mix(c[1],dp,.2),mix(c[2],c[1],.2),c[3],c[4]];pp(k,L,L*(.3+.08*(1-p.u)),cc,Object.assign({},pt,{tr:`rotate(${f(p.a+90)}) translate(0,${f(-Rr*.1*p.u)})`,bend:R(-.06,.06)}))}
+    else{const r0=Rr*p.u*.85,w=L*.42;cresc(k,w,w*.42,deepen(c,dp,.25+(.4-p.u)),{tr:`translate(${f(Math.cos(p.a*D)*r0)},${f(Math.sin(p.a*D)*r0)}) rotate(${f(p.a+90)})`,th:.5,rim:.8,rw:.8})}}
+  open(k,t,1100,22,.25)}
+
+/* ---------- carnation: frilled fan petals with toothed rims, optional picotee edge ---------- */
+function fanD(L,W,nt){let d=`M0,0C${f(W*.2)},${f(-L*.2)} ${f(W*.6)},${f(-L*.5)} ${f(W)},${f(-L*.86)}`;
+  for(let i=0;i<nt;i++){const xt=W-2*W*(i+.5)/nt+R(-.5,.5),xv=W-2*W*(i+1)/nt,arc=Math.sin(Math.PI*(i+.5)/nt),yt=-L*(.93+.07*arc)*R(.97,1.03),yv=-L*(.87+.07*arc)*R(.97,1.01);
+    d+=`Q${f(xt)},${f(yt-L*.03)} ${f(xv)},${f(yv)}`}
+  return d+`C${f(-W*.6)},${f(-L*.5)} ${f(-W*.2)},${f(-L*.2)} 0,0Z`}
+function xCarn(g,t,o){const c=o.c||tones('#eba3b2'),Rr=o.R||30,k=G(g);
+  E('circle',{r:f(Rr*.8),fill:dk(c[1],.3)},k);
+  [[1,10,.5],[.88,9,.48],[.75,8,.46],[.62,8,.46],[.48,7,.46],[.34,6,.5],[.22,4,.6]].forEach(([s,n,w],ri)=>{const cc=ri>2?[c[0],mix(c[1],c[0],.3),mix(c[2],c[1],.25),c[3],c[4]]:c;
+    for(let i=0;i<n;i++){const L=Rr*s*R(.88,1.08),W=L*w*R(.9,1.15);pp(k,L,W,cc,{d:fanD(L,W,11+(i+ri)%4),tr:`rotate(${f(i*360/n+ri*23+R(-12,12))}) translate(0,${f(-Rr*.06*s)})`,tc:o.tc,mp:.55,cup:1,sh:.9,base:.6,bl:.5,rim:.9,rs:.7,rw:.9,so:.25,prof:sinP(.6,.2)})}});
+  for(let i=0;i<5;i++){const a=i*72+R(-15,15);cresc(k,Rr*.16,Rr*.09,deepen(c,c[0],.2),{tr:`translate(${f(Math.cos(a*D)*Rr*.05)},${f(Math.sin(a*D)*Rr*.05)}) rotate(${f(a+90)})`,th:.8,rim:.7,rw:.7})}
+  open(k,t,950,20,.3)}
+
+/* ================= Atelier v3 — chrysanthème araignée, nérine, gloriosa, pois de senteur, scabieuse, delphinium, lys, allium ================= */
+/* ---------- spider chrysanthemum: tubular quills ending in hooks, curled centre ---------- */
+function xMum(g,t,o){const c=o.c||tones('#c98ab8'),Rr=o.R||46,k=G(g),N=o.n||54;
+  E('circle',{r:f(Rr*.34),fill:rad([[0,c[0]],[1,c[1]]])},k);
+  const P=[];for(let i=0;i<N;i++)P.push({u:.45+.55*Math.sqrt((i+.5)/N),a:i*137.508+R(-6,6)});P.sort((a,b)=>b.u-a.u);
+  for(const p of P){const L=Rr*p.u*R(.82,1.06),b=R(-.18,.18)*L,tr=`rotate(${f(p.a+90)}) translate(0,${f(-Rr*.1)})`,Q=[[0,0],[b*.2,-L*.35],[b*.7,-L*.72],[b,-L]],w0=1.2,w1=2.3;
+    E('path',{d:taper(Q,u=>w0+(w1-w0)*u,10),fill:lin([[0,c[1]],[.5,c[2]],[1,c[3]]],0,1,0,0),stroke:c[0],'stroke-width':.35,'stroke-opacity':.45,transform:tr},k);
+    E('path',{d:`M${f(b+w1*.6)},${f(-L+1)}c${f(w1*.4)},${f(-w1*1.6)} ${f(-w1*2.2)},${f(-w1*1.8)} ${f(-w1*1.6)},${f(w1*.4)}`,stroke:c[3],'stroke-width':f(w1*1.1),fill:'none','stroke-linecap':'round',transform:tr},k);
+    E('path',{d:`M${f(b*.3-.4)},${f(-L*.3)}L${f(b*.85-.4)},${f(-L*.85)}`,stroke:c[4],'stroke-width':.5,'stroke-opacity':.5,transform:tr},k)}
+  for(let i=0;i<34;i++){const u=Math.sqrt((i+.5)/34),a=i*137.5+R(-10,10),r=Rr*.32*u,w=3+u*4.5;cresc(k,w,w*.55,deepen(c,c[0],.15+.4*(1-u)),{tr:`translate(${f(Math.cos(a*D)*r)},${f(Math.sin(a*D)*r)}) rotate(${f(a+90+R(-20,20))})`,th:.7,rim:.6,rw:.8})}
+  open(k,t,1100,24,.2)}
+
+/* ---------- nerine: umbel of wavy, recurved, glittering florets with long stamens ---------- */
+function nerFloret(par,c,s,rot,tilt){const h=G(par,{transform:`rotate(${f(rot)}) scale(${f(s)},${f(s*tilt)})`});
+  for(let i=0;i<6;i++)pp(h,26,4.4,c,{tr:`rotate(${f(i*60+R(-12,12))})`,prof:sinP(.35,.08),tip:'point',rf:.16,rk:9,bend:R(-.25,.25),v:1,vo:.35,vw:.4,sh:.8,base:.4,rim:.8,rs:.4,rw:.7,so:.4});
+  for(let i=0;i<6;i++){const a=(-90+R(-40,40))*D,l=R(24,32);stamen(h,0,0,Math.cos(a)*l,Math.sin(a)*l,lt(c[2],.25),'#5a2a30',1.4,.6)}
+  dust(h,10,14,14,.7)}
+function xNerine(g,t,o){const c=o.c||tones('#e8507a'),k=G(g),n=o.n||8;
+  for(let i=0;i<n;i++){const a=i/n*Math.PI*2+R(-.2,.2),r=R(10,22),x=Math.cos(a)*r,y=Math.sin(a)*r*.75-4;E('path',{d:`M0,14Q${f(x*.4)},${f(y*.4+8)} ${f(x)},${f(y)}`,stroke:'#6a7a3a','stroke-width':1,fill:'none'},k);
+    nerFloret(G(k,{transform:`translate(${f(x)},${f(y)})`}),c,R(.8,1),Math.atan2(y,x)/D+90+R(-20,20),R(.55,1))}
+  open(k,t,1000,16,.3)}
+
+/* ---------- gloriosa: six wavy tepals swept up like flames, bicolour, spidery stamens ---------- */
+function xGlor(g,t,o){const c=o.c||['#4a0410','#a80c2a','#e0203e','#ff6a5a','#ffd23f'],ed=o.edge||'#f5c518',k=G(g);
+  for(const a of[-62,62,-38,38,-14,14]){const L=R(40,46),b=(a<0?-1:1)*R(.18,.3);
+    const pg=pp(k,L,6.8,c,{tr:`rotate(${f(a*.85)})`,prof:sinP(.45,.12),tip:'point',rf:.16,rk:10,bend:b,bc:mix(ed,c[2],.25),mp:.35,v:3,vo:.25,vw:.35,cup:1,sh:.8,base:.2,rim:0,so:.35});
+    E('path',{d:petalD(L,6.8,{prof:sinP(.45,.12),tip:'point',rf:.16,rk:10,bend:b}),fill:'none',stroke:ed,'stroke-width':1.5,'stroke-opacity':.85},pg)}
+  for(let i=0;i<6;i++){const a=(160+i*44+R(-8,8))*D,l=R(26,32),x=Math.cos(a)*l,y=Math.sin(a)*l*.55+10;stamen(k,0,6,x,y,'#c8b060','#7a5a10',2,.9)}
+  E('path',{d:'M0,6Q-2,16 8,22L26,24',stroke:'#9aa858','stroke-width':1.2,fill:'none','stroke-linecap':'round'},k);
+  open(k,t,1000,-14,.3)}
+
+/* ---------- sweet pea: ruffled standards and wings along a curving stem with a tendril ---------- */
+function peaFloret(par,c,s){const h=G(par,{transform:`scale(${f(s)})`});
+  pp(h,25,15,c,{prof:sinP(.38,.22),tip:'notch',rf:.12,rk:5,v:5,vo:.14,vw:.4,cup:1,sh:.6,base:.45,bl:.4,rim:.9,rs:.5,rw:1.2,so:.35});
+  for(const sd of[-1,1])pp(h,14,9,[c[0],c[1],mix(c[2],c[1],.3),c[3],c[4]],{tr:`translate(${sd*3},2) rotate(${sd*125})`,prof:sinP(.5,.15),tip:'round',rf:.08,rk:6,v:4,vo:.2,cup:1,base:.4,rim:.7,so:.4});
+  E('path',{d:'M-4,7Q0,13 4,7Q0,10 -4,7Z',fill:lt(c[2],.45),stroke:c[0],'stroke-width':.4,'stroke-opacity':.4},h)}
+function xPea(g,t,o){const c=o.c||tones('#b79ae0'),k=G(g),P=[[0,46],[R(-6,6),18],[R(-10,10),-10],[R(-6,6),-38]];
+  stem3(k,P,2.6,1.6,['#2e4a20','#4f7a34','#7aa850','#c0dc8a']);
+  E('path',{d:`M${f(P[2][0])},${f(P[2][1])}c8,-4 14,-12 10,-18s-9,-2 -6,3s7,2 7,-3`,stroke:'#6a9a44','stroke-width':.8,fill:'none'},k);
+  [[.95,-1,1],[.7,1,.92],[.45,-1,.84],[.2,1,.7]].forEach(([u,sd,s])=>{const q=bz(P,1-u);const x=q[0]+sd*10*s,y=q[1]-6;
+    E('path',{d:`M${f(q[0])},${f(q[1])}Q${f(q[0]+sd*4)},${f(q[1]-2)} ${f(x)},${f(y+6)}`,stroke:'#4f7a34','stroke-width':1,fill:'none'},k);peaFloret(G(k,{transform:`translate(${f(x)},${f(y)}) rotate(${f(sd*R(10,25))})`}),c,s)});
+  open(k,t,1000,10,.3)}
+
+/* ---------- scabiosa: ruffled skirt of florets around a domed pincushion with white pins ---------- */
+function xScab(g,t,o){const c=o.c||['#12020a','#2e0818','#4e1028','#74284a','#b06a88'],ce=o.ce||['#1a0610','#3a0c20','#6a1a38'],Rr=o.R||26,k=G(g);
+  for(let i=0;i<15;i++)pp(k,Rr*R(.92,1.05),Rr*.34,c,{tr:`rotate(${f(i*24+R(-6,6))})`,prof:sinP(.4,.25),tip:'notch',rf:.12,rk:6,v:5,vo:.25,vw:.35,cup:-1,base:.5,rim:.8,rs:.55,so:.4});
+  for(let i=0;i<10;i++)pp(k,Rr*.68,Rr*.26,c,{tr:`rotate(${f(i*36+12+R(-6,6))})`,prof:sinP(.45,.2),tip:'notch',rf:.1,rk:5,v:3,vo:.25,cup:-1,base:.55,rim:.7,so:.4});
+  E('circle',{r:f(Rr*.46),fill:rad([[0,ce[2]],[.7,ce[1]],[1,ce[0]]],.4,.35,.7)},k);
+  let d1='',d2='';for(let i=0;i<70;i++){const q=Math.sqrt((i+.5)/70)*Rr*.42,a=i*137.508*D,x=Math.cos(a)*q,y=Math.sin(a)*q,r=1.25-q/Rr;
+    d1+=`M${f(x-r)},${f(y)}a${f(r)},${f(r)} 0 1,0 ${f(2*r)},0a${f(r)},${f(r)} 0 1,0 ${f(-2*r)},0`;if(i%2)d2+=`M${f(x-.45)},${f(y-1)}a.45,.45 0 1,0 .9,0a.45,.45 0 1,0 -.9,0`}
+  E('path',{d:d1,fill:ce[2],stroke:ce[0],'stroke-width':.3},k);E('path',{d:d2,fill:o.pin||'#f4ecf0'},k);glint(k,-Rr*.15,-Rr*.18,Rr*.16,Rr*.1,-30,.25);
+  open(k,t,950,16,.3)}
+
+/* ---------- delphinium: tapering spike of spurred florets with bee centres, buds on top (grows up) ---------- */
+function delFloret(par,c,s,bee){const h=G(par,{transform:`scale(${f(s)})`});
+  for(let i=0;i<5;i++)pp(h,11,7,c,{tr:`rotate(${f(i*72+R(-8,8))})`,prof:sinP(.5,.15),tip:'round',v:5,vo:.22,vw:.35,cup:-1,sh:.7,base:.35,rim:.7,so:.35});
+  for(let i=0;i<4;i++)E('ellipse',{cx:f(Math.cos(i*1.57+.78)*1.8),cy:f(Math.sin(i*1.57+.78)*1.8),rx:1.8,ry:2.6,fill:bee,transform:`rotate(${i*90+45} ${f(Math.cos(i*1.57+.78)*1.8)} ${f(Math.sin(i*1.57+.78)*1.8)})`},h)}
+function xDelph(g,t,o){const c=o.c||tones('#8ea8e4'),bee=o.bee||'#2e2440',L=o.len||230,k=G(g),sw=R(-18,18),P=[[0,0],[sw*.2,-L*.35],[sw*.6,-L*.7],[sw,-L]];
+  stem3(k,P,4,2,['#22381c','#3e6030','#6a904e','#b4d08a']);const n=o.n||16;
+  for(let i=n+4;i>=0;i--){const u=.3+.68*i/(n+4),q=bz(P,u),side=[-1,1,0][i%3],s=1.15-.6*i/(n+4);
+    if(i>=n){const r=3.6-(i-n)*.5;obud(k,q[0]+side*4,q[1],r,side*20,mix(c[2],'#9ab070',.45));continue}
+    const x=q[0]+side*10*s,y=q[1]+R(-3,3);E('path',{d:`M${f(q[0])},${f(q[1])}L${f(x)},${f(y)}`,stroke:'#4a6a34','stroke-width':.9},k);
+    if(side)E('path',{d:`M${f(x)},${f(y)}l${f(-side*9*s)},${f(-7*s)}`,stroke:c[1],'stroke-width':f(3.4*s),'stroke-linecap':'round'},k);
+    delFloret(G(k,{transform:`translate(${f(x)},${f(y)}) scale(${side?.72:1},1) rotate(${f(R(-20,20))})`}),c,s,bee)}
+  open(k,t,1100,0,.5)}
+
+/* ---------- oriental lily: recurved wavy tepals, nectary groove, papillae, spots, T anthers ---------- */
+function xLily(g,t,o){const c=o.c||tones('#d8306a'),Rr=o.R||50,k=G(g),sp=o.sp,pa=o.pap;
+  const tp=(a,w)=>{const L=Rr*R(.95,1.05),gg=pp(k,L,w,c,{tr:`rotate(${f(a)})`,prof:sinP(.55,.06),tip:'point',rf:.07,rk:6,bend:R(-.1,.1),tc:o.tc,mp:.5,v:7,vo:.15,vw:.4,cup:1,sh:.9,base:.3,rim:.85,rs:.55,rw:1.2,so:.45,sp});
+    E('path',{d:`M0,-2Q.6,${f(-L*.2)} 0,${f(-L*.42)}`,stroke:o.nec||'#a8c050','stroke-width':2.2,'stroke-opacity':.85,fill:'none','stroke-linecap':'round'},gg);
+    if(pa){let d='';for(let i=0;i<16;i++){const tt=R(.06,.36),x=R(-w*.45,w*.45)*(1-tt),y=-L*tt;d+=`M${f(x-.7)},${f(y)}a.7,.9 0 1,0 1.4,0a.7,.9 0 1,0 -1.4,0`}E('path',{d,fill:pa,opacity:.85},gg)}};
+  for(let i=0;i<3;i++)tp(i*120+60+R(-6,6),Rr*.2);for(let i=0;i<3;i++)tp(i*120+R(-6,6),Rr*.28);
+  E('circle',{r:4,fill:o.nec||'#a8c050'},k);
+  for(let i=0;i<6;i++){const a=(i*60+30+R(-12,12))*D,l=Rr*R(.55,.68),x=Math.cos(a)*l,y=Math.sin(a)*l;E('path',{d:`M0,0Q${f(x*.5+R(-4,4))},${f(y*.5+R(-4,4))} ${f(x)},${f(y)}`,stroke:'#d8dcae','stroke-width':1.1,fill:'none'},k);
+    E('ellipse',{cx:f(x),cy:f(y),rx:1.6,ry:5,fill:o.an||'#8a3a12',transform:`rotate(${f(a/D)} ${f(x)} ${f(y)})`},k)}
+  const sa=R(0,6.28),sl=Rr*.7;E('path',{d:`M0,0Q${f(Math.cos(sa)*sl*.5)},${f(Math.sin(sa)*sl*.5)} ${f(Math.cos(sa)*sl)},${f(Math.sin(sa)*sl)}`,stroke:'#c8d49a','stroke-width':1.6,fill:'none'},k);
+  E('circle',{cx:f(Math.cos(sa)*sl),cy:f(Math.sin(sa)*sl),r:3,fill:o.stg||'#7a6a3a'},k);
+  open(k,t,1100,-18,.25)}
+
+/* ---------- round allium: shaded sphere of six-pointed florets on a straight stem (grows up) ---------- */
+function xAllium(g,t,o){const c=o.c||tones('#7a3cc0'),L=o.len||240,Rr=o.R||24,k=G(g),sw=R(-14,14),P=[[0,0],[sw*.1,-L*.4],[sw*.5,-L*.75],[sw,-L]];
+  stem3(k,P,3.4,2.6,['#2a4220','#4a7034','#76a052','#bcd690']);const h=G(k,{transform:`translate(${f(sw)},${f(-L-Rr*.8)})`});
+  E('circle',{r:f(Rr),fill:rad([[0,c[3]],[.55,c[2]],[1,c[0]]],.38,.34,.72)},h);
+  const st='M0,-3L.8,-.8 3,0 .8,.8 0,3 -.8,.8 -3,0 -.8,-.8Z';let pts=[];
+  for(let i=0;i<170;i++){const z=1-2*(i+.5)/170,r=Math.sqrt(1-z*z),a=i*137.508*D,x=Math.cos(a)*r,y=Math.sin(a)*r;if(z<-.15)continue;pts.push([x,y,z])}
+  pts.sort((a,b)=>a[2]-b[2]);for(const[x,y,z]of pts){const lgt=(.6-x*.35-y*.35)*(.5+z*.5);E('path',{d:st,fill:mix(c[1],c[4],Math.max(0,Math.min(1,lgt))),transform:`translate(${f(x*Rr*.96)},${f(y*Rr*.96)}) rotate(${f(R(0,60))}) scale(${f((.55+.4*z)*Rr/24)})`},h)}
+  glint(h,-Rr*.35,-Rr*.38,Rr*.3,Rr*.2,-35,.3);open(k,t,1000,0,.5)}
+
+/* ================= Views & stages: face, three-quarter, profile, back, half open, bud ================= */
+const CALYX=['#1c3416','#365e26','#628c40','#a6c67a','#c8e09a'];
+const DEFC3={xRose:'#f2c6b6',xRanunc:'#f07a3a',xDahlia:'#8e1a3a',xCarn:'#eba3b2',xMum:'#c98ab8',xLily:'#d8306a',xGlor:'#e0203e'};
+const palOf=(f0,o)=>o.c||(f0==='xScab'?['#12020a','#2e0818','#4e1028','#74284a','#b06a88']:tones(DEFC3[f0]||'#e8a0b0'));
+/* reverse side of petals: paler, slightly green at the base */
+const backT=c=>[c[0],mix(c[1],'#6f7f4e',.3),mix(c[2],'#ffffff',.12),lt(c[3],.12),c[4]];
+/* green calyx cupping the base, pointing up from 0,0 */
+function calyx(par,w,h,n=5,c=CALYX,spread=50){const g=G(par);for(let i=0;i<n;i++){const u=n>1?i/(n-1)*2-1:0;pp(g,h*R(.85,1.1),w*.3,c,{tr:`rotate(${f(u*spread)})`,prof:sinP(.6,.06),tip:'point',v:1,vo:.3,cup:1,sh:.8,base:.3,rim:.35,so:.5,bend:u*.25})}
+  E('ellipse',{cx:0,cy:f(h*.06),rx:f(w*.34),ry:f(h*.2),fill:rad([[0,c[3]],[.6,c[2]],[1,c[0]]],.4,.3,.75)},g);return g}
+/* one petal of the outer ring, by family: round (rose, ranunculus), point (dahlia), fan (carnation), quill (mum), ruffle (scabiosa) */
+function ringPetal(par,kind,L,c,tr){const o={tr,sh:.9,base:.55,bl:.42,rim:.6,so:.45,cup:1};
+  if(kind==='point')return pp(par,L,L*.3,c,Object.assign(o,{prof:sinP(.62,.1),tip:'point',v:1,vo:.38}));
+  if(kind==='fan')return pp(par,L,L*.5,c,Object.assign(o,{d:fanD(L,L*.5,11),prof:sinP(.6,.2),mp:.55}));
+  if(kind==='quill'){const g=G(par,{transform:tr});E('path',{d:taper([[0,0],[1,-L*.35],[2,-L*.72],[3,-L]],u=>1.2+1.1*u,10),fill:lin([[0,c[1]],[.5,c[2]],[1,c[3]]],0,1,0,0),stroke:c[0],'stroke-width':.35,'stroke-opacity':.45},g);
+    E('path',{d:`M${f(4.4)},${f(-L+1)}c1,-4 -5,-4.4 -3.8,1`,stroke:c[3],'stroke-width':2.4,fill:'none','stroke-linecap':'round'},g);return g}
+  if(kind==='ruffle')return pp(par,L,L*.34,c,Object.assign(o,{prof:sinP(.4,.25),tip:'notch',rf:.12,rk:6,v:4,vo:.25}));
+  return pp(par,L,L*.56,c,Object.assign(o,{prof:sinP(.42,.12),tip:'round',rf:.03,rk:3,v:6,vo:.1}))}
+const RING={xRose:'round',xRanunc:'round',xDahlia:'point',xCarn:'fan',xMum:'quill',xScab:'ruffle',peony:'round',anemone:'round',cosmos:'round'};
+const RAD={xRose:40,xRanunc:32,xDahlia:46,xCarn:30,xMum:46,xScab:26,peony:44,anemone:38,cosmos:36};
+/* three-quarter / profile of a radial bloom: the backs of the near petals form a bowl, the face sits tilted on top */
+function tiltView(g,t,o,f0,sq){const R0=(o.R||RAD[f0]||40),c=palOf(f0,o),bc=backT(c),kind=RING[f0]||'round',k=G(g),deep=sq<.45;
+  const bw=G(k);if(deep&&(f0==='xRose'||f0==='xRanunc'||f0==='xCarn'))calyx(bw,R0*.55,R0*.5,5,CALYX,58);
+  const n=deep?9:7;for(let i=0;i<n;i++){const a=(deep?8:22)+i*((deep?164:136)/(n-1))+R(-6,6),r=R0*.1,L=R0*(deep?R(.95,1.1):R(.88,1.02));
+    ringPetal(bw,kind,L,bc,`translate(${f(Math.cos(a*D)*r)},${f(Math.sin(a*D)*r-R0*(deep?.02:.06))}) scale(1,${f(deep?.86:.74)}) rotate(${f(a+90)})`)}
+  const fg=G(k,{transform:`translate(0,${f(-R0*(deep?.4:.27))}) scale(1,${f(sq)})`});FN[f0](fg,t,Object.assign({},o,{view:'face'}));
+  open(bw,t,1000,0,.4)}
+/* cup in profile (rose, ranunculus, peony): a goblet of petals, narrow at the receptacle, rims curling on top */
+function cupSide(g,t,o,f0){const R0=(o.R||RAD[f0]||40),c=palOf(f0,o),bc=backT(c),k=G(g),round=f0==='xRanunc';
+  calyx(k,R0*.42,R0*.34,5,CALYX,72);const P=G(k,{transform:`translate(0,${f(-R0*.1)})`});
+  E('ellipse',{cx:0,cy:f(-R0*1.0),rx:f(R0*.5),ry:f(R0*.14),fill:dk(c[1],.35)},P);
+  for(let i=0;i<5;i++)cresc(P,R0*R(.18,.3),R0*.07,deepen(c,dk(c[1],.3),.2),{tr:`translate(${f(R(-.3,.3)*R0)},${f(-R0*R(.98,1.08))})`,th:.7,rim:.7,rw:.8});
+  [[3,8,R0*1.12,R0*.4,c,-1],[4,20,R0*1.06,R0*.46,bc,1],[5,round?40:34,R0*(round?1:.96),R0*(round?.56:.5),bc,1]].forEach(([n,sp,L,W,cc,cup])=>{
+    for(let i=0;i<n;i++){const u=n>1?i/(n-1)*2-1:0,a=u*sp+R(-4,4);pp(P,L*R(.94,1.04),W,cc,{tr:`translate(${f(u*R0*.16)},0) rotate(${f(a)})`,prof:sinP(round?.4:.5,.14),tip:'round',rf:.03,rk:3,bend:u*.06,cup,sh:.9,base:.6,bl:.5,v:6,vo:.1,rim:.75,rs:.55,so:.45})}});
+  open(k,t,1000,0,.4)}
+/* carnation in profile: frilled crown over the long calyx tube */
+function carnSide(g,t,o){const c=palOf('xCarn',o),R0=o.R||30,k=G(g);
+  E('path',{d:`M${f(-R0*.22)},0L${f(-R0*.26)},${f(-R0*.75)}L${f(R0*.26)},${f(-R0*.75)}L${f(R0*.22)},0Z`,fill:lin([[0,'#3a5e44'],[.5,'#7aa08a'],[1,'#4a6e54']],0,0,1,0),stroke:'#2a4a34','stroke-width':.5},k);
+  for(let i=0;i<5;i++){const x=-R0*.24+i*R0*.12;E('path',{d:`M${f(x-2)},${f(-R0*.72)}L${f(x)},${f(-R0*.86)}L${f(x+2)},${f(-R0*.72)}Z`,fill:'#5a8a6a'},k)}
+  const P=G(k,{transform:`translate(0,${f(-R0*.78)})`});
+  for(const[n,sp,L]of[[7,80,R0*.95],[6,56,R0*1.0],[5,30,R0*.92]])for(let i=0;i<n;i++){const a=-sp+i*(2*sp/(n-1))+R(-6,6);pp(P,L*R(.9,1.06),L*.5,c,{d:fanD(L,L*.5,11),tr:`rotate(${f(a)}) scale(1,.8)`,tc:o.tc,mp:.55,cup:1,sh:.9,base:.6,bl:.5,rim:.9,rs:.7,rw:.9,so:.3,prof:sinP(.6,.2)})}
+  open(k,t,950,0,.4)}
+/* closed and half-open buds */
+function budV(g,t,o,f0){const c=palOf(f0,o),R0=(RAD[f0]||36)*.55,k=G(g);
+  if(f0==='xCarn'){E('path',{d:`M${f(-R0*.3)},0L${f(-R0*.34)},${f(-R0*1.4)}L${f(R0*.34)},${f(-R0*1.4)}L${f(R0*.3)},0Z`,fill:lin([[0,'#3a5e44'],[.5,'#7aa08a'],[1,'#4a6e54']],0,0,1,0)},k);
+    for(let i=0;i<4;i++)pp(k,R0*.5,R0*.3,c,{d:fanD(R0*.5,R0*.3,7),tr:`translate(0,${f(-R0*1.36)}) rotate(${f(-30+i*20)})`,cup:1,base:.5,rim:.8,so:.3,prof:sinP(.6,.2)})}
+  else if(f0==='xRose'){const d=`M0,0C${f(R0*.55)},${f(-R0*.15)} ${f(R0*.5)},${f(-R0*1.05)} 0,${f(-R0*1.45)}C${f(-R0*.5)},${f(-R0*1.05)} ${f(-R0*.55)},${f(-R0*.15)} 0,0Z`;
+    E('path',{d,fill:lin([[0,c[1]],[.6,c[2]],[1,c[3]]],0,1,.2,0)},k);E('path',{d,fill:lin([[0,c[0],.35],[.4,c[0],0],[.65,'#fff',0],[1,'#fff',.15]],0,0,1,0)},k);
+    E('path',{d:`M${f(-R0*.36)},${f(-R0*.5)}C${f(-R0*.1)},${f(-R0*1.0)} ${f(R0*.25)},${f(-R0*1.0)} ${f(R0*.1)},${f(-R0*1.42)}M${f(R0*.4)},${f(-R0*.4)}C${f(R0*.2)},${f(-R0*.75)} ${f(-R0*.15)},${f(-R0*.85)} ${f(-R0*.2)},${f(-R0*1.15)}`,stroke:c[0],'stroke-width':.7,'stroke-opacity':.45,fill:'none'},k);
+    E('path',{d,fill:'none',stroke:c[0],'stroke-width':.6,'stroke-opacity':.5},k);calyx(k,R0*.46,R0*.78,5,CALYX,28)}
+  else{const r=R0*.62,g2=G(k,{transform:`translate(0,${f(-r*.9)})`});E('circle',{r:f(r),fill:rad([[0,c[3]],[.55,c[2]],[1,c[1]]],.38,.32,.75)},g2);
+    for(let i=0;i<5;i++){const a=i*72+R(-10,10);cresc(g2,r*.5,r*.18,deepen(c,c[0],.2),{tr:`translate(${f(Math.cos(a*D)*r*.35)},${f(Math.sin(a*D)*r*.35)}) rotate(${f(a+90)})`,th:.6,rim:.7,rw:.6})}
+    glint(g2,-r*.35,-r*.4,r*.25,r*.18,-30,.4);calyx(k,r*.95,r*.72,f0==='xDahlia'||f0==='xMum'?7:5,CALYX,58)}
+  open(k,t,800,0,.4)}
+/* ---------- species-specific views ---------- */
+function anthBack(g,t,o){const c0=o.c||AN3.bordeaux.c,c=[c0[0],mix(c0[1],'#5a4a3a',.25),mix(c0[2],c0[1],.45),mix(c0[3],c0[2],.5),c0[3]],L=o.L||94,W=o.W||42,k=G(g),h=G(k,{transform:`translate(0,${f(L*.44)})`}),d=anthD(L,W,R(-.05,.05));
+  stem3(h,[[0,L*.5],[1,L*.3],[0,L*.12],[0,L*.02]],5,4.2,SG,10);
+  E('path',{d,fill:rad([[0,c[3]],[.6,c[2]],[1,c[1]]],.5,.45,.7)},h);E('path',{d,fill:lin([[0,'#fff',.08],[.4,'#fff',0],[.6,c[0],0],[1,c[0],.3]],0,0,1,0)},h);
+  E('path',{d:`M0,${f(-L*.02)}C${f(W*.04)},${f(-L*.4)} ${f(W*.02)},${f(-L*.7)} ${f(W*.03)},${f(-L*.97)}`,stroke:c[4],'stroke-width':2.4,'stroke-opacity':.5,fill:'none'},h);
+  E('path',{d,fill:'none',stroke:c[0],'stroke-width':.8,'stroke-opacity':.7},h);open(k,t,1000,-8,.3)}
+function anthSide(g,t,o){const c=o.c||AN3.bordeaux.c,sp=o.sp||AN3.bordeaux.sp,L=o.L||94,k=G(g),h=G(k,{transform:`translate(0,${f(L*.4)})`});
+  const d=`M0,0C${f(-L*.08)},${f(-L*.3)} ${f(-L*.05)},${f(-L*.7)} ${f(L*.12)},${f(-L)}C${f(L*.02)},${f(-L*.68)} ${f(L*.06)},${f(-L*.3)} ${f(L*.1)},${f(L*.05)}Z`;
+  E('path',{d,fill:lin([[0,c[1]],[.5,c[2]],[1,c[3]]],0,1,1,0)},h);glint(h,-L*.01,-L*.5,L*.015,L*.2,10,.5);E('path',{d,fill:'none',stroke:c[0],'stroke-width':.7,'stroke-opacity':.7},h);
+  spadix(h,[[L*.04,-L*.05],[L*.2,-L*.2],[L*.38,-L*.3],[L*.5,-L*.36]],6,4,sp[0],sp[1]);open(k,t,1000,-8,.3)}
+function anthBud(g,t,o){const c=o.c||AN3.bordeaux.c,k=G(g),L=(o.L||94)*.62;
+  const d=`M0,0C${f(L*.3)},${f(-L*.2)} ${f(L*.22)},${f(-L*.75)} ${f(L*.02)},${f(-L)}C${f(-L*.2)},${f(-L*.7)} ${f(-L*.28)},${f(-L*.2)} 0,0Z`;
+  E('path',{d,fill:lin([[0,mix(c[1],'#5a7a3a',.4)],[.6,c[2]],[1,c[3]]],0,1,.2,0)},k);E('path',{d:`M0,${f(-L*.05)}C${f(L*.12)},${f(-L*.4)} ${f(L*.1)},${f(-L*.7)} ${f(L*.02)},${f(-L*.98)}`,stroke:c[0],'stroke-width':.7,'stroke-opacity':.5,fill:'none'},k);
+  glint(k,-L*.08,-L*.45,L*.04,L*.2,-8,.4);E('path',{d,fill:'none',stroke:c[0],'stroke-width':.6,'stroke-opacity':.6},k);open(k,t,900,0,.4)}
+/* calla seen into the trumpet */
+function callaFront(g,t,o){const c=o.c||['#3a4a1a','#b9c48f','#eef0dc','#ffffff','#ffffff'],ic=o.ic||['#c9cf9a','#f6f6e6'],sp=o.sp||'#f0b72a',k=G(g,{transform:'translate(0,-92)'});
+  const lim='M0,-44C24,-44 40,-26 40,-4C40,20 22,34 0,34C-22,34 -40,20 -40,-4C-40,-20 -30,-34 -14,-40C-8,-50 -4,-58 2,-66C4,-56 4,-50 0,-44Z';
+  E('path',{d:lim,fill:rad([[0,c[3]],[.7,c[2]],[1,c[1]]],.5,.55,.6)},k);E('ellipse',{cx:0,cy:-2,rx:27,ry:24,fill:rad([[0,dk(ic[0],.55)],[.55,ic[0]],[1,ic[1]]],.5,.55,.55)},k);
+  E('path',{d:'M-27,-2A27,24 0 0 1 27,-2',stroke:c[4],'stroke-width':2,'stroke-opacity':.8,fill:'none'},k);E('path',{d:lim,fill:'none',stroke:c[0],'stroke-width':.6,'stroke-opacity':.5},k);
+  E('ellipse',{cx:2,cy:2,rx:5,ry:7,fill:rad([[0,lt(sp,.35)],[1,dk(sp,.25)]],.4,.35,.7)},k);for(let i=0;i<10;i++)E('circle',{cx:f(2+R(-3,3)),cy:f(2+R(-5,5)),r:.45,fill:dk(sp,.4),opacity:.5},k);
+  glint(k,-22,-20,6,12,-30,.45);open(k,t,1000,6,.3)}
+function callaBud(g,t,o){const c=o.c||['#3a4a1a','#b9c48f','#eef0dc','#ffffff','#ffffff'],nk=o.nk||'#6f8a3a',k=G(g);
+  const d='M-3,0C-5,-20 -9,-50 -10,-70C-11,-90 -6,-104 2,-118C6,-104 9,-88 8,-70C7,-50 5,-20 3,0Z';
+  E('path',{d,fill:lin([[0,nk],[.45,mix(nk,c[2],.6)],[1,c[3]]],0,1,0,0)},k);E('path',{d:'M6,-100C0,-86 -6,-70 -8,-50',stroke:c[0],'stroke-width':.7,'stroke-opacity':.45,fill:'none'},k);
+  glint(k,-5,-70,1.6,16,-6,.5);E('path',{d,fill:'none',stroke:c[0],'stroke-width':.5,'stroke-opacity':.5},k);open(k,t,900,0,.4)}
+function callaHalf(g,t,o){const k=G(g,{transform:'scale(.66,1)'});xCalla(k,t,Object.assign({},o,{view:'face'}))}
+/* lily: trumpet in profile, half open, long club bud */
+function lilySide(g,t,o,spread=34){const c=palOf('xLily',o),Rr=o.R||50,k=G(g);
+  E('path',{d:`M-4,0C-5,-14 -6,-22 -8,-30L8,-30C6,-22 5,-14 4,0Z`,fill:lin([[0,'#6a8a3a'],[1,mix('#a8c050',c[2],.4)]],0,1,0,0)},k);const T=G(k,{transform:'translate(0,-26)'});
+  for(const[a,w,b]of[[-spread,Rr*.2,-.35],[spread,Rr*.2,.35],[-spread*.45,Rr*.27,-.2],[spread*.45,Rr*.27,.2],[0,Rr*.22,R(-.1,.1)]])pp(T,Rr*R(.95,1.05),w,c,{tr:`rotate(${f(a)})`,prof:sinP(.55,.06),tip:'point',rf:.07,rk:6,bend:b,tc:o.tc,mp:.5,v:7,vo:.15,vw:.4,cup:1,sh:.9,base:.3,rim:.85,rs:.55,rw:1.2,so:.45,sp:o.sp});
+  for(let i=0;i<5;i++){const a=(-90+(i-2)*9)*D,l=Rr*R(.95,1.1),x=Math.cos(a)*l,y=Math.sin(a)*l;E('path',{d:`M0,0Q${f(x*.5)},${f(y*.5)} ${f(x)},${f(y)}`,stroke:'#d8dcae','stroke-width':1,fill:'none'},T);
+    E('ellipse',{cx:f(x),cy:f(y),rx:1.5,ry:4.6,fill:o.an||'#8a3a12',transform:`rotate(${f(a/D+90)} ${f(x)} ${f(y)})`},T)}
+  open(k,t,1100,0,.3)}
+function lilyBud(g,t,o){const c=palOf('xLily',o),L=(o.R||50)*1.25,k=G(g),d=`M-3,0C-5,-${f(L*.3)} -${f(L*.18)},-${f(L*.62)} -${f(L*.13)},-${f(L*.86)}C-${f(L*.1)},-${f(L*.96)} ${f(L*.1)},-${f(L*.96)} ${f(L*.13)},-${f(L*.86)}C${f(L*.18)},-${f(L*.62)} 5,-${f(L*.3)} 3,0Z`;
+  E('path',{d,fill:lin([[0,'#6a8a3a'],[.5,mix('#9ab060',c[2],.45)],[1,c[3]]],0,1,0,0)},k);E('path',{d,fill:lin([[0,c[0],.3],[.4,c[0],0],[.65,'#fff',0],[1,'#fff',.15]],0,0,1,0)},k);
+  for(const x of[-.06,.05])E('path',{d:`M${f(L*x)},-${f(L*.2)}Q${f(L*x*1.6)},-${f(L*.6)} ${f(L*x*.4)},-${f(L*.95)}`,stroke:c[0],'stroke-width':.7,'stroke-opacity':.4,fill:'none'},k);
+  E('path',{d,fill:'none',stroke:c[0],'stroke-width':.6,'stroke-opacity':.5},k);open(k,t,900,0,.4)}
+/* gloriosa nodding in profile */
+function glorSide(g,t,o){const c=o.c||['#4a0410','#a80c2a','#e0203e','#ff6a5a','#ffd23f'],ed=o.edge||'#f5c518',k=G(g);
+  for(const[a,b]of[[-40,-.35],[-18,-.2],[4,0],[24,.22],[46,.36]]){const L=R(40,47),pg=pp(k,L,6.4,c,{tr:`rotate(${f(a)})`,prof:sinP(.45,.12),tip:'point',rf:.16,rk:10,bend:b,bc:mix(ed,c[2],.25),mp:.35,v:3,vo:.25,cup:1,base:.2,rim:0,so:.35});
+    E('path',{d:petalD(L,6.4,{prof:sinP(.45,.12),tip:'point',rf:.16,rk:10,bend:b}),fill:'none',stroke:ed,'stroke-width':1.4,'stroke-opacity':.85},pg)}
+  for(let i=0;i<6;i++){const a=(60+i*12+R(-5,5))*D,l=R(24,30);stamen(k,0,4,Math.cos(a)*l*(i%2?1:-1),Math.sin(a)*l,'#c8b060','#7a5a10',2,.9)}
+  E('path',{d:'M0,4Q-6,-6 -2,-20',stroke:'#9aa858','stroke-width':1.3,fill:'none'},k);open(k,t,1000,0,.3)}
+/* registry: which views each species offers */
+const VW={xRose:{tq:(g,t,o)=>tiltView(g,t,o,'xRose',.62),side:(g,t,o)=>cupSide(g,t,o,'xRose'),half:(g,t,o)=>{const k=G(g,{transform:'scale(.8)'});cupSide(k,t,Object.assign({},o,{R:30}),'xRose')},bud:(g,t,o)=>budV(g,t,o,'xRose')},
+ xRanunc:{tq:(g,t,o)=>tiltView(g,t,o,'xRanunc',.6),side:(g,t,o)=>cupSide(g,t,o,'xRanunc'),bud:(g,t,o)=>budV(g,t,o,'xRanunc')},
+ xDahlia:{tq:(g,t,o)=>tiltView(g,t,o,'xDahlia',.58),side:(g,t,o)=>tiltView(g,t,o,'xDahlia',.34),bud:(g,t,o)=>budV(g,t,o,'xDahlia')},
+ xCarn:{tq:(g,t,o)=>tiltView(g,t,o,'xCarn',.6),side:(g,t,o)=>carnSide(g,t,o),bud:(g,t,o)=>budV(g,t,o,'xCarn')},
+ xMum:{tq:(g,t,o)=>tiltView(g,t,o,'xMum',.58),side:(g,t,o)=>tiltView(g,t,o,'xMum',.32),bud:(g,t,o)=>budV(g,t,o,'xMum')},
+ xScab:{tq:(g,t,o)=>tiltView(g,t,o,'xScab',.6),side:(g,t,o)=>tiltView(g,t,o,'xScab',.36),bud:(g,t,o)=>budV(g,t,o,'xScab')},
+ xAnth:{back:anthBack,side:anthSide,bud:anthBud},xCalla:{front:callaFront,bud:callaBud,half:callaHalf},
+ xLily:{side:(g,t,o)=>lilySide(g,t,o),half:(g,t,o)=>lilySide(g,t,o,14),bud:lilyBud},xGlor:{side:glorSide}};
+/* draw any variety under a given view (falls back to the face) */
+function drawView(g,t,f0,o,view){const fn=view&&VW[f0]&&VW[f0][view];if(fn)return fn(g,t,o);return FN[f0](g,t,o)}
+const hasView=(f0,v)=>!!(VW[f0]&&VW[f0][v]);
+
+/* ================= Moteur 3D des fleurs : pétales en volume, projetés et ombrés pour chaque angle de vue ================= */
+let GDEF=null;/* per-bouquet <defs> for one-off gradients, so re-composing never piles them up */
+const UPC=6.5;/* SVG units per centimetre: vessels, flowers and stems share this real-world scale */
+const V3={add:(a,b)=>[a[0]+b[0],a[1]+b[1],a[2]+b[2]],sc:(a,s)=>[a[0]*s,a[1]*s,a[2]*s],dot:(a,b)=>a[0]*b[0]+a[1]*b[1]+a[2]*b[2],
+  cr:(a,b)=>[a[1]*b[2]-a[2]*b[1],a[2]*b[0]-a[0]*b[2],a[0]*b[1]-a[1]*b[0]],nz:a=>{const l=Math.hypot(a[0],a[1],a[2])||1;return[a[0]/l,a[1]/l,a[2]/l]}};
+const LIGHT=V3.nz([-.45,.6,.66]);/* view space: x right, y up, z toward the viewer */
+/* orthonormal frame whose Z is the flower axis (where the face looks), rolled around it */
+function basis(ax=[0,0,1],roll=0){const Z=V3.nz(ax),up=Math.abs(Z[1])>.96?[1,0,0]:[0,1,0],X0=V3.nz(V3.cr(up,Z)),Y0=V3.cr(Z,X0),c=Math.cos(roll),s=Math.sin(roll);
+  return[V3.add(V3.sc(X0,c),V3.sc(Y0,s)),V3.add(V3.sc(Y0,c),V3.sc(X0,-s)),Z]}
+const toV=(B,p)=>[B[0][0]*p[0]+B[1][0]*p[1]+B[2][0]*p[2],B[0][1]*p[0]+B[1][1]*p[1]+B[2][1]*p[2],B[0][2]*p[0]+B[1][2]*p[1]+B[2][2]*p[2]];
+/* local point -> screen [x, y down, depth] with an optional view-space offset */
+const PJ=(B,O,p)=>{const v=toV(B,p);return[v[0]+O[0],-(v[1]+O[1]),v[2]+O[2]]};
+/* frame of a sub-part (floret, tepal group): axis given in the parent's local space */
+function subBasis(B,axL,roll=0){return basis(toV(B,axL),roll)}
+/* a petal as a curved surface: base on a ring (r0, z0, phi), spine opening from angle a0 to a1 (radians off the axis),
+   width profile pf, cross curvature cup (<0 = hollow inner face), waves on the margin (ruf, rk), fan = broad frilled tip */
+function petalGeo(o){const{r0=0,z0=0,phi=0,L,W,pf,a0,a1,pw=1.5,cup=-.3,ruf=0,rk=6,n=9,tw=0}=o,cp=Math.cos(phi),sp=Math.sin(phi),Rv=[cp,sp,0],T=[-sp,cp,0];
+  let p=[r0*cp,r0*sp,z0];const S=[p],Dv=[];for(let i=0;i<=n;i++){const t=i/n,a=a0+(a1-a0)*Math.pow(t,pw);Dv.push([Rv[0]*Math.sin(a),Rv[1]*Math.sin(a),Math.cos(a)])}
+  for(let i=1;i<=n;i++)p=V3.add(p,V3.sc(Dv[i],L/n)),S.push(p);
+  const sec=[],N=[];for(let i=0;i<=n;i++){const t=i/n,w=W*pf(Math.min(.985,t)),nrm=V3.cr(Dv[i],T),tws=tw*t,Tt=V3.add(V3.sc(T,Math.cos(tws)),V3.sc(nrm,Math.sin(tws)));N.push(nrm);const row=[];
+    for(const u of[-1,-.5,0,.5,1]){const wave=ruf?Math.sin(t*rk*Math.PI+u*2.2+phi*3)*ruf*w*t:0;row.push(V3.add(V3.add(S[i],V3.sc(Tt,u*w)),V3.sc(nrm,cup*w*(1-u*u)+wave)))}sec.push(row)}
+  let tip=null;if(o.fan){tip=[];const w=W*pf(1),nt=o.fan;for(let k=0;k<=nt;k++){const u=-1+2*k/nt,bump=(k%2?-1:1)*o.fd*w*R(.6,1.2);tip.push(V3.add(V3.add(S[n],V3.sc(T,u*w)),V3.add(V3.sc(Dv[n],bump),V3.sc(N[n],cup*w*(1-u*u)))))}}
+  return{S,sec,N,T,tip,n}}
+/* project a petal: silhouette of the curved surface, which face shows, Lambert shading, spine gradient */
+function petalPart(geo,B,O,cf,cb,o={}){const n=geo.n,PS=geo.sec.map(r=>r.map(p=>PJ(B,O,p))),SP=geo.S.map(p=>PJ(B,O,p)),Lf=[],Rt=[];
+  for(let i=0;i<=n;i++){const a=SP[Math.max(0,i-1)],b=SP[Math.min(n,i+1)];let dx=b[0]-a[0],dy=b[1]-a[1];const l=Math.hypot(dx,dy);let px,py;
+    if(l<.01){const t=toV(B,geo.T);px=t[0];py=-t[1]}else{px=-dy/l;py=dx/l}let mn=1e9,mx=-1e9,pl=PS[i][0],pr=PS[i][4];
+    for(const q of PS[i]){const s=(q[0]-SP[i][0])*px+(q[1]-SP[i][1])*py;if(s<mn){mn=s;pl=q}if(s>mx){mx=s;pr=q}}Lf.push(pl);Rt.push(pr)}
+  let pts;if(geo.tip){let tp=geo.tip.map(p=>PJ(B,O,p));const e=Lf[n];if(Math.hypot(tp[0][0]-e[0],tp[0][1]-e[1])>Math.hypot(tp[tp.length-1][0]-e[0],tp[tp.length-1][1]-e[1]))tp=tp.reverse();pts=Lf.concat(tp,Rt.slice().reverse())}
+  else pts=Lf.concat(Rt.slice().reverse());
+  const mi=n>>1,nv=toV(B,geo.N[mi]),face=nv[2]>=0,pal=face?cf:cb,nn=face?nv:V3.sc(nv,-1),lam=Math.max(0,V3.dot(V3.nz(nn),LIGHT)),sh=.28+.72*lam;
+  const body=sh<.5?mix(pal[1],pal[2],sh*2):mix(pal[2],pal[3],(sh-.5)*2),base=o.bc||mix(body,pal[1],.65),tipc=mix(body,pal[4],.25+.3*sh),z=PS[mi][2][2];
+  return{z,fn:par=>{const d=smooth(pts.map(p=>[p[0],p[1]]));
+    if(LOD||o.flat){E('path',{d,fill:body},par);const k=Math.max(2,Math.round(n*.38)),bd=smooth(Lf.slice(0,k+1).concat(Rt.slice(0,k+1).reverse()).map(p=>[p[0],p[1]]));E('path',{d:bd,fill:base,opacity:.55},par)}
+    else{const id='q'+(gid++),gr=E('linearGradient',{id,gradientUnits:'userSpaceOnUse',x1:f(SP[0][0]),y1:f(SP[0][1]),x2:f(SP[n][0]),y2:f(SP[n][1])},GDEF||defs);stops(gr,[[0,base],[.42,body],[1,tipc]]);E('path',{d,fill:`url(#${id})`},par)}
+    if(o.vein&&!LOD)E('path',{d:'M'+SP.slice(1,Math.round(n*.85)).map(p=>f(p[0])+','+f(p[1])).join('L'),stroke:o.vc||pal[0],'stroke-width':o.vw||.5,'stroke-opacity':o.vo||.3,fill:'none'},par);
+    if(o.dots)for(const[ti,u,r,c]of o.dots){const i=Math.min(n,Math.round(ti*n)),row=PS[i],k=(u+1)*2,j=Math.min(3,Math.floor(k)),fr=k-j,q=[row[j][0]+(row[j+1][0]-row[j][0])*fr,row[j][1]+(row[j+1][1]-row[j][1])*fr];if(face)E('circle',{cx:f(q[0]),cy:f(q[1]),r:f(r),fill:c},par)}
+    if(o.edge)E('path',{d,fill:'none',stroke:o.edge,'stroke-width':1.3,'stroke-opacity':.85},par);
+    if(!LOD)E('path',{d,fill:'none',stroke:pal[4],'stroke-width':.7,'stroke-opacity':f(.3*sh)},par);
+    E('path',{d,fill:'none',stroke:pal[0],'stroke-width':o.sw||.5,'stroke-opacity':o.so??.45,'stroke-linejoin':'round'},par)}}}
+/* flat disc / dome of florets (dahlia eye, scabiosa pincushion, sunflower) */
+function domePart(B,O,rc,zc,h,cols,nd,o={}){const ring=[];for(let i=0;i<30;i++){const a=i/30*2*Math.PI;ring.push(PJ(B,O,[Math.cos(a)*rc,Math.sin(a)*rc,zc]))}
+  const top=PJ(B,O,[0,0,zc+h]),ax=toV(B,[0,0,1]),face=ax[2];
+  return{z:PJ(B,O,[0,0,zc+h*.5])[2]+(o.zb||0),fn:par=>{E('path',{d:smooth(ring.map(p=>[p[0],p[1]])),fill:cols[1]},par);
+    if(h>0){const sil=[];for(let i=0;i<30;i++){const a=i/30*2*Math.PI;sil.push(PJ(B,O,[Math.cos(a)*rc*.98,Math.sin(a)*rc*.98,zc+h*.15]))}
+      const hp=[];for(let i=0;i<=12;i++){const a=i/12*Math.PI*2;hp.push(PJ(B,O,[Math.cos(a)*rc*.55,Math.sin(a)*rc*.55,zc+h*.85]))}
+      E('path',{d:smooth(sil.map(p=>[p[0],p[1]])),fill:cols[2]},par);if(face>-.2)E('path',{d:smooth(hp.map(p=>[p[0],p[1]])),fill:cols[3],opacity:.6},par)}
+    if(nd){let d1='';const pts=[];for(let i=0;i<nd;i++){const q=Math.sqrt((i+.5)/nd),a=i*137.508*D,lx=Math.cos(a)*q*rc*.92,ly=Math.sin(a)*q*rc*.92,lz=zc+h*Math.sqrt(Math.max(0,1-q*q));
+        const nrm=toV(B,V3.nz([lx,ly,h?lz-zc+rc*.2:1]));if(nrm[2]<-.15)continue;pts.push([PJ(B,O,[lx,ly,lz]),nrm[2]])}
+      pts.sort((a,b)=>a[0][2]-b[0][2]);const r0=o.dr||rc*.09;for(const[p,fz]of pts){const r=r0*(.55+.45*Math.max(0,fz));d1+=`M${f(p[0]-r)},${f(p[1])}a${f(r)},${f(r)} 0 1,0 ${f(2*r)},0a${f(r)},${f(r)} 0 1,0 ${f(-2*r)},0`}
+      E('path',{d:d1,fill:cols[3],stroke:cols[0],'stroke-width':.3},par);if(o.pins){let d2='';for(const[p]of pts.filter((_,i)=>i%2))d2+=`M${f(p[0]-.5)},${f(p[1]-1)}a.5,.5 0 1,0 1,0a.5,.5 0 1,0 -1,0`;E('path',{d:d2,fill:o.pins},par)}}
+    E('path',{d:smooth(ring.map(p=>[p[0],p[1]])),fill:'none',stroke:cols[0],'stroke-width':.4,'stroke-opacity':.5},par)}}}
+/* a 3D curve (filament, style, spadix) drawn as a stroke with an end cap */
+function curvePart(B,O,pts3,w,col,cap){const P=pts3.map(p=>PJ(B,O,p)),z=P[P.length-1][2];
+  return{z,fn:par=>{E('path',{d:'M'+P.map(p=>f(p[0])+','+f(p[1])).join('L'),stroke:col,'stroke-width':f(w),fill:'none','stroke-linecap':'round'},par);
+    if(cap){const e=P[P.length-1],a=P[P.length-2];E('ellipse',{cx:f(e[0]),cy:f(e[1]),rx:f(cap[0]),ry:f(cap[1]),fill:cap[2],transform:`rotate(${f(Math.atan2(e[1]-a[1],e[0]-a[0])/D+90)} ${f(e[0])} ${f(e[1])})`},par)}}}}
+/* green bracts / receptacle behind a bloom: hidden from the front, visible from behind and in profile */
+function bracts(parts,B,O,Rr,n=7,len=.42){const c=['#1c3416','#365e26','#628c40','#a6c67a','#c8e09a'];for(let i=0;i<n;i++)parts.push(petalPart(petalGeo({r0:Rr*.06,z0:-Rr*.04,phi:(i*360/n+R(-10,10))*D,L:Rr*len*R(.8,1.1),W:Rr*.16,pf:sinP(.55,.06),a0:(105+R(-8,8))*D,a1:(120+R(0,25))*D,cup:-.2,n:4}),B,O,c,c,{flat:1}));
+  parts.push(domePart(B,O,Rr*.12,-Rr*.12,-Rr*.06,c,0,{zb:-1}))}
+/* painter's algorithm: far parts first */
+function drawParts(par,parts){parts.sort((a,b)=>a.z-b.z);for(const p of parts)p.fn(par)}
+/* default view axis: face toward the viewer unless the composer or garden asks for another direction */
+const axOf=o=>o.ax||[0,0,1];
+
+/* ================= Espèces en 3D, à taille réelle (o.cm = diamètre en cm, o.ax = direction du regard, o.op = ouverture 0..1) ================= */
+const pal5=c=>!c?null:typeof c==='string'?tones(c):c.length===4?[c[3],c[0],c[1],c[2],lt(c[2],.5)]:c;
+const tint=(c,dp,k)=>c.map((x,i)=>i?mix(x,dp,k*(i===4?.5:1)):x);
+const opA=o=>{const op=o.op??1;return a=>a*(.36+.64*op)*D};
+function fl3(g,o,rollR=Math.PI){const k=G(g);return{k,B:basis(axOf(o),o.roll??R(-rollR,rollR)),O:[0,0,0],parts:[],A:opA(o)}}
+/* decorative dahlia: creased pointed petals in golden-angle whorls closing into a tight heart */
+function x3Dahlia(g,t,o){const c=pal5(o.c)||tones('#8e1a3a'),cb=backT(c),Rr=(o.cm||13)/2*UPC,N=o.n||66,F=fl3(g,o);
+  for(let i=0;i<N;i++){const u=Math.sqrt((i+.5)/N),L=Rr*(.2+.8*u)*R(.93,1.05),a0=6+80*Math.pow(u,1.25),a1=a0+(u>.5?10+22*u:-30+40*u),cc=u>.7?c:tint(c,c[0],.12);
+    F.parts.push(petalPart(petalGeo({r0:Rr*.05*u,z0:Rr*.3*(1-u*u),phi:(i*137.508+R(-4,4))*D,L,W:L*(.3-.08*u),pf:sinP(.6,.12),a0:F.A(a0),a1:F.A(a1),pw:1.7,cup:-.38,n:8}),F.B,F.O,cc,cb,{vein:1,vo:.35,flat:1}))}
+  bracts(F.parts,F.B,F.O,Rr,9,.4);drawParts(F.k,F.parts);open(F.k,t,1100,22,.25)}
+/* garden rose: reflexed guard petals, deep cup, incurved quartered heart */
+function x3Rose(g,t,o){const c=pal5(o.c)||tones('#f2c6b6'),cb=backT(c),Rr=(o.cm||10)/2*UPC,dp=mix(o.deep||dk(c[2],.2),c[2],.35),F=fl3(g,o);let off=R(0,6);
+  const ring=(n,r0,z0,L,W,a0,a1,cup,cc,jit=8)=>{for(let i=0;i<n;i++)F.parts.push(petalPart(petalGeo({r0,z0,phi:(i*360/n+R(-jit,jit))*D+off,L:L*R(.92,1.06),W,pf:sinP(.42,.14),a0:F.A(a0),a1:F.A(a1),pw:1.4,cup,n:8,ruf:.02,rk:4}),F.B,F.O,cc,cb,{flat:n>8}));off+=.41};
+  ring(5,Rr*.18,0,Rr*.98,Rr*.64,62,104,-.42,c);ring(6,Rr*.2,Rr*.06,Rr*.86,Rr*.6,40,60,-.5,c);ring(7,Rr*.18,Rr*.16,Rr*.7,Rr*.54,26,24,-.6,tint(c,dp,.1));
+  ring(8,Rr*.14,Rr*.26,Rr*.54,Rr*.48,16,12,-.7,tint(c,dp,.2));
+  for(let i=0;i<12;i++){const u=i/12;F.parts.push(petalPart(petalGeo({r0:Rr*(.04+.08*u),z0:Rr*(.42-.1*u),phi:(i*137.5+R(-20,20))*D,L:Rr*(.24+.12*u),W:Rr*(.26+.1*u),pf:sinP(.42,.18),a0:F.A(4+10*u),a1:F.A(-2+8*u),cup:-.85,n:5,tw:R(-.6,.6)}),F.B,F.O,tint(c,dp,.32-.1*u),cb,{flat:1}))}
+  if(o.button)F.parts.push(domePart(F.B,F.O,Rr*.08,Rr*.36,Rr*.06,[dk(o.button,.4),o.button,lt(o.button,.2),lt(o.button,.4)],0,{zb:.5}));
+  bracts(F.parts,F.B,F.O,Rr,5,.5);drawParts(F.k,F.parts);open(F.k,t,1100,16,.3)}
+/* ranunculus: tissue-thin cupped petals in many tight rings, optional green eye */
+function x3Ranunc(g,t,o){const c=pal5(o.c)||tones('#f07a3a'),cb=backT(c),Rr=(o.cm||6)/2*UPC,dp=mix(o.deep||dk(c[2],.2),c[2],.35),F=fl3(g,o),K=9;
+  for(let r=0;r<K;r++){const u=r/(K-1),n=Math.round(9-u*3),L=Rr*(1-.62*u),a0=78-68*u;
+    for(let i=0;i<n;i++)F.parts.push(petalPart(petalGeo({r0:Rr*.1*(1-u),z0:Rr*.42*u,phi:(i*360/n+r*23+R(-6,6))*D,L:L*R(.94,1.04),W:L*.78,pf:sinP(.45,.12),a0:F.A(a0),a1:F.A(a0-6-8*u),pw:1.3,cup:-.62,n:7}),F.B,F.O,tint(c,dp,u*.45),cb,{flat:1}))}
+  if(o.eye)F.parts.push(domePart(F.B,F.O,Rr*.12,Rr*.44,Rr*.1,[dk(o.eye,.4),o.eye,lt(o.eye,.2),lt(o.eye,.4)],0,{zb:.5}));
+  bracts(F.parts,F.B,F.O,Rr,5,.45);drawParts(F.k,F.parts);open(F.k,t,1000,18,.3)}
+/* carnation: frilled fan petals flaring from a tight calyx; picotee edge with o.tc */
+function x3Carn(g,t,o){const c=pal5(o.c)||tones('#eba3b2'),cb=backT(c),Rr=(o.cm||6)/2*UPC,F=fl3(g,o),cc=o.tc?[c[0],c[1],c[2],mix(c[3],o.tc,.55),o.tc]:c;
+  for(let r=0;r<6;r++){const u=r/5,n=Math.round(10-u*4),L=Rr*(1-.55*u),a0=84-64*u;
+    for(let i=0;i<n;i++)F.parts.push(petalPart(petalGeo({r0:Rr*.06,z0:Rr*.35*u,phi:(i*360/n+r*31+R(-10,10))*D,L:L*R(.9,1.06),W:L*.44,pf:t=>.12+.88*Math.pow(t,.55),a0:F.A(a0),a1:F.A(a0+12-20*u),pw:1.2,cup:-.28,n:6,fan:10,fd:.12,ruf:.06,rk:8}),F.B,F.O,cc,cb,{flat:1,edge:o.tc}))}
+  bracts(F.parts,F.B,F.O,Rr,5,.6);drawParts(F.k,F.parts);open(F.k,t,950,20,.3)}
+/* spider chrysanthemum: rolled quills that droop and hook, curled heart */
+function x3Mum(g,t,o){const c=pal5(o.c)||tones('#c98ab8'),cb=backT(c),Rr=(o.cm||11)/2*UPC,N=o.n||58,F=fl3(g,o);
+  for(let i=0;i<N;i++){const u=Math.sqrt((i+.5)/N),L=Rr*(.3+.7*u)*R(.88,1.06),a0=10+75*u,q=u>.45;
+    F.parts.push(petalPart(petalGeo({r0:Rr*.04,z0:Rr*.25*(1-u),phi:(i*137.508+R(-5,5))*D,L,W:L*(q?.075:.17),pf:t=>.45+.55*t,a0:F.A(a0),a1:F.A(a0+(q?30+40*u:-30)),pw:2.6,cup:-1.1,n:9}),F.B,F.O,q?c:tint(c,c[0],.25),cb,{flat:1,sw:.35}))}
+  bracts(F.parts,F.B,F.O,Rr,9,.35);drawParts(F.k,F.parts);open(F.k,t,1100,24,.2)}
+/* scabiosa: ruffled skirt of florets around a domed pincushion with white pins */
+function x3Scab(g,t,o){const c=pal5(o.c)||['#12020a','#2e0818','#4e1028','#74284a','#b06a88'],cb=backT(c),ce=o.ce||['#1a0610','#3a0c20','#6a1a38'],Rr=(o.cm||5)/2*UPC,F=fl3(g,o);
+  for(let i=0;i<16;i++)F.parts.push(petalPart(petalGeo({r0:Rr*.34,phi:(i*22.5+R(-5,5))*D,L:Rr*.68*R(.9,1.08),W:Rr*.34,pf:sinP(.4,.25),a0:F.A(78),a1:F.A(97),pw:1.3,cup:-.15,n:6,fan:8,fd:.1,ruf:.1,rk:6}),F.B,F.O,c,cb,{flat:1}));
+  for(let i=0;i<10;i++)F.parts.push(petalPart(petalGeo({r0:Rr*.3,z0:Rr*.04,phi:(i*36+12)*D,L:Rr*.46,W:Rr*.26,pf:sinP(.45,.2),a0:F.A(58),a1:F.A(76),cup:-.2,n:5,fan:6,fd:.1}),F.B,F.O,c,cb,{flat:1}));
+  F.parts.push(domePart(F.B,F.O,Rr*.38,Rr*.03,Rr*.3,[ce[0],ce[1],ce[1],ce[2]],56,{pins:o.pin||'#f4ecf0',dr:Rr*.055,zb:1}));
+  bracts(F.parts,F.B,F.O,Rr,8,.5);drawParts(F.k,F.parts);open(F.k,t,950,16,.3)}
+/* oriental lily: six recurved wavy tepals, nectary grooves, spots and papillae, T-anthers and pistil */
+function x3Lily(g,t,o){const c=pal5(o.c)||tones('#d8306a'),cb=backT(c),Rr=(o.cm||17)/2*UPC,F=fl3(g,o),cc=o.tc?[c[0],c[1],c[2],mix(c[3],o.tc,.5),o.tc]:c,sp=o.sp;
+  for(let i=0;i<6;i++){const outer=i%2,dots=[];if(sp)for(let j=0;j<sp.n/6;j++)dots.push([R(.12,.55),R(-.55,.55),R(.6,1.3)*(sp.s||1),sp.c]);if(o.pap)for(let j=0;j<8;j++)dots.push([R(.05,.3),R(-.4,.4),.75,o.pap]);
+    F.parts.push(petalPart(petalGeo({r0:Rr*.05,phi:(i*60+R(-6,6))*D,L:Rr*R(.95,1.03),W:Rr*(outer?.21:.29),pf:sinP(.55,.08),a0:F.A(outer?30:26),a1:F.A(outer?118:108),pw:2.2,cup:-.28,ruf:.06,rk:5,n:10,tw:R(-.3,.3)}),F.B,F.O,cc,cb,{vein:1,vc:o.nec||'#a8c050',vw:1.6,vo:.75,dots}))}
+  if((o.op??1)>.5){for(let i=0;i<6;i++){const a=(i*60+30)*D,L=Rr*R(.55,.65);F.parts.push(curvePart(F.B,F.O,[[0,0,Rr*.05],[Math.cos(a)*L*.3,Math.sin(a)*L*.3,L*.5],[Math.cos(a)*L*.6,Math.sin(a)*L*.6,L*.75],[Math.cos(a)*L*.75,Math.sin(a)*L*.75,L*.8]],1.1,'#d8dcae',[1.6,4.4,o.an||'#8a3a12']))}
+    const sa=R(0,6.28),sl=Rr*.72;F.parts.push(curvePart(F.B,F.O,[[0,0,Rr*.05],[Math.cos(sa)*sl*.2,Math.sin(sa)*sl*.2,sl*.6],[Math.cos(sa)*sl*.35,Math.sin(sa)*sl*.35,sl*.95]],1.7,'#c8d49a',[3,3,o.stg||'#7a6a3a']))}
+  drawParts(F.k,F.parts);open(F.k,t,1100,-18,.25)}
+/* gloriosa: tepals swept far back like flames, wavy yellow margins, spidery stamens */
+function x3Glor(g,t,o){const c=pal5(o.c)||['#4a0410','#a80c2a','#e0203e','#ff6a5a','#ffd23f'],cb=backT(c),ed=o.edge||'#f5c518',Rr=(o.cm||9)/2*UPC,F=fl3(g,o);
+  for(let i=0;i<6;i++)F.parts.push(petalPart(petalGeo({r0:Rr*.06,phi:(i*60+R(-8,8))*D,L:Rr*R(.92,1.05),W:Rr*.17,pf:sinP(.45,.12),a0:F.A(95),a1:F.A(166),pw:1.4,cup:-.15,ruf:.22,rk:9,n:10}),F.B,F.O,c,cb,{edge:ed,bc:mix(ed,c[2],.3)}));
+  for(let i=0;i<6;i++){const a=(i*60+30)*D,L=Rr*.7;F.parts.push(curvePart(F.B,F.O,[[0,0,Rr*.05],[Math.cos(a)*L*.4,Math.sin(a)*L*.4,Rr*.25],[Math.cos(a)*L,Math.sin(a)*L,Rr*.18]],1,'#c8b060',[1.8,3.6,'#7a5a10']))}
+  const sa=R(0,6.28);F.parts.push(curvePart(F.B,F.O,[[0,0,Rr*.05],[0,0,Rr*.45],[Math.cos(sa)*Rr*.5,Math.sin(sa)*Rr*.5,Rr*.5]],1.3,'#9aa858'));
+  drawParts(F.k,F.parts);open(F.k,t,1000,-14,.3)}
+/* moth orchid: broad flat tepals, three-lobed lip pushed forward, column */
+function x3Phal(g,t,o){const c=pal5(o.c)||['#5a2a46','#e9d6e4','#fbf4f8','#ffffff','#ffffff'],cb=backT(c),lp=o.lip||['#6a0f3a','#c2306e','#ffd23f'],Rr=(o.cm||9)/2*UPC,F=fl3(g,o,.25),rv=o.ret,lc=tones(lp[1]);
+  const tep=(ph,L,W,pf,a0,a1)=>F.parts.push(petalPart(petalGeo({r0:Rr*.04,phi:ph*D,L,W,pf,a0:F.A(a0),a1:F.A(a1),pw:1.2,cup:-.12,n:8}),F.B,F.O,c,cb,{vein:rv?1:0,vc:o.vc||c[0],vo:.4}));
+  tep(90,Rr*.9,Rr*.3,sinP(.7,.05),84,96);tep(232,Rr*.86,Rr*.28,sinP(.7,.05),84,98);tep(308,Rr*.86,Rr*.28,sinP(.7,.05),84,98);
+  tep(162,Rr*.96,Rr*.56,sinP(.48,.04),80,94);tep(18,Rr*.96,Rr*.56,sinP(.48,.04),80,94);
+  for(const ph of[244,296])F.parts.push(petalPart(petalGeo({r0:Rr*.06,z0:Rr*.05,phi:ph*D,L:Rr*.32,W:Rr*.12,pf:sinP(.6,.1),a0:F.A(36),a1:F.A(20),cup:-.4,n:5}),F.B,F.O,lc,lc,{}));
+  F.parts.push(petalPart(petalGeo({r0:Rr*.08,z0:Rr*.07,phi:270*D,L:Rr*.52,W:Rr*.18,pf:t=>t<.5?.5+t:Math.max(.05,1.5-1.6*t),a0:F.A(58),a1:F.A(108),cup:-.3,n:6}),F.B,F.O,lc,lc,{dots:[[.15,0,1.4,lp[2]],[.2,-.3,.6,lp[0]],[.2,.3,.6,lp[0]]]}));
+  F.parts.push(domePart(F.B,F.O,Rr*.08,Rr*.07,Rr*.09,['#a99a9a','#f6f0ee','#ffffff','#ffffff'],0,{zb:.4}));
+  drawParts(F.k,F.parts);open(F.k,t,900,14,.25)}
+/* cymbidium: waxy cupped tepals, spotted tongue curling down and forward */
+function x3Cymb(g,t,o){const c=pal5(o.c)||tones('#c8714c'),cb=backT(c),lp=o.lip||['#7a0f22','#fff1df','#c2304a'],Rr=(o.cm||9)/2*UPC,F=fl3(g,o,.3),lc=[lp[0],dk(lp[1],.12),lp[1],lt(lp[1],.3),'#ffffff'];
+  for(const[ph,a0,a1]of[[90,72,92],[218,74,98],[322,74,98],[150,66,86],[30,66,86]])F.parts.push(petalPart(petalGeo({r0:Rr*.05,phi:ph*D,L:Rr*R(.9,.98),W:Rr*.3,pf:sinP(.55,.06),a0:F.A(a0),a1:F.A(a1),pw:1.3,cup:-.26,n:8}),F.B,F.O,c,cb,{vein:1,vo:.3}));
+  const dots=[];for(let i=0;i<22;i++)dots.push([R(.25,.95),R(-.75,.75),R(.6,1.1),lp[0]]);
+  F.parts.push(petalPart(petalGeo({r0:Rr*.08,z0:Rr*.05,phi:270*D,L:Rr*.58,W:Rr*.26,pf:sinP(.5,.3),a0:F.A(55),a1:F.A(135),pw:1.6,cup:-.35,n:7}),F.B,F.O,lc,lc,{dots}));
+  F.parts.push(curvePart(F.B,F.O,[[0,Rr*.02,Rr*.05],[0,Rr*.02,Rr*.2],[0,-Rr*.04,Rr*.32]],Rr*.08,'#efe0c4',[Rr*.05,Rr*.04,'#f2d24a']));
+  drawParts(F.k,F.parts);open(F.k,t,900,12,.3)}
+/* sprays and clusters of 3D orchids: every flower faces its own way along the stem */
+function cl3(g,t,o,fn,pos){const k=G(g),ax=axOf(o),B=basis(ax,0);for(const[x,y,z,s,dx,dy]of pos){const v=toV(B,[x,y,z]),a2=toV(B,V3.nz([dx,dy,1]));fn(G(k,{transform:`translate(${f(v[0])},${f(-v[1])}) scale(${f(s)})`}),t,Object.assign({},o,{ax:a2,roll:R(-.15,.15)}))}}
+function x3PhalCluster(g,t,o){const r=(o.cm||9)/2*UPC;obud(g,-r*.9,-r*.95,r*.15,-30,(pal5(o.c)||[0,0,0,'#f4eef2'])[3]);cl3(g,t,o,x3Phal,[[r*.62,r*.6,0,.82,.3,.2],[-r*.66,r*.2,0,.9,-.3,.1],[r*.08,-r*.36,r*.2,1,0,-.15]])}
+function x3CymbCluster(g,t,o){const r=(o.cm||9)/2*UPC;cl3(g,t,o,x3Cymb,[[-r*.55,r*.55,0,.84,-.3,.3],[r*.55,r*.6,0,.88,.3,.3],[0,r*1.05,-r*.1,.74,0,.5],[r*.5,-r*.35,r*.1,1,.25,-.1],[-r*.45,-r*.3,r*.15,1,-.25,-.1]])}
+/* anthurium: one curved heart spathe with embossed veins and a dotted spadix pointing at the viewer */
+const ANP=[[.1,.07],[.36,.14],[.7,.1],[.94,-.03],[1,-.22],[.92,-.42],[.7,-.62],[.42,-.8],[.17,-.93]];
+function crPts(P,k=5,closed=true){const n=P.length,out=[],g2=i=>closed?P[(i+n)%n]:P[Math.max(0,Math.min(n-1,i))];for(let i=0;i<(closed?n:n-1);i++){const p0=g2(i-1),p1=g2(i),p2=g2(i+1),p3=g2(i+2);
+  for(let j=0;j<k;j++){const t=j/k,t2=t*t,t3=t2*t;out.push([0,1].map(d=>.5*((2*p1[d])+(-p0[d]+p2[d])*t+(2*p0[d]-5*p1[d]+4*p2[d]-p3[d])*t2+(-p0[d]+3*p1[d]-3*p2[d]+p3[d])*t3)))}}return out}
+function x3Anth(g,t,o){const c=pal5(o.c)||AN3.bordeaux.c,sp=o.sp||AN3.bordeaux.sp,L=(o.cm||12)*UPC,W=L*.45,k=G(g),B=basis(axOf(o),o.roll??R(-.6,.6)),O=[0,0,0],as=R(-.06,.06);
+  const loc=(x,y)=>{const Y=-y*L-.44*L;return[x,Y,.08*L*(1-Math.min(1,(x/W)**2))-.13*L*Math.max(0,(Y-.18*L)/(.38*L))**2-.05*L*Math.max(0,(-Y-.42*L)/(.16*L))**2]};
+  const out=[[0,0],...ANP.map(([x,y])=>[x*W*(1+as),y]),[W*.03,-1],...ANP.slice().reverse().map(([x,y])=>[-x*W*(1-as),y])];
+  const pts=crPts(out,5).map(([x,y])=>PJ(B,O,loc(x,y))),d=smooth(pts.map(p=>[p[0],p[1]])),ax=toV(B,[0,0,1]),face=ax[2]>=0,pal=face?c:[c[0],mix(c[1],'#5a4a3a',.25),mix(c[2],c[1],.45),mix(c[3],c[2],.5),c[3]];
+  const nv=V3.nz(face?ax:V3.sc(ax,-1)),sh=.35+.65*Math.max(0,V3.dot(nv,LIGHT)),cen=PJ(B,O,loc(0,-.42)),sin=PJ(B,O,loc(0,.02)),sz=L*.62;
+  const id='q'+(gid++),gr=E('radialGradient',{id,gradientUnits:'userSpaceOnUse',cx:f(cen[0]-sz*.15),cy:f(cen[1]-sz*.15),r:f(sz)},GDEF||defs);stops(gr,[[0,mix(pal[2],pal[3],sh)],[.55,mix(pal[1],pal[2],sh)],[1,pal[1]]]);
+  const sid='q'+(gid++),sg=E('radialGradient',{id:sid,gradientUnits:'userSpaceOnUse',cx:f(sin[0]),cy:f(sin[1]),r:f(L*.32)},GDEF||defs);stops(sg,[[0,pal[0],.65],[1,pal[0],0]]);
+  const veins=[];for(const s of[-1,1]){for(const m of[.9,.74,.56])veins.push([[s*.012*W,-.02],[s*W*m*1.05,.07],[s*W*m*1.08,-.34],[s*W*.02,-.985]]);for(let i=0;i<5;i++){const t0=.1+i*.15,te=Math.min(.95,t0+.2),xe=s*W*anW(te)*R(.5,.6);veins.push([[s*.8,-t0],[xe*.3,-t0-.03],[xe*.55,-t0-.05],[xe,-te]])}}
+  veins.push([[0,-.02],[W*.04,-.4],[W*.02,-.7],[W*.03,-.97]]);
+  const vd=veins.map(P=>{let s='';for(let i=0;i<=10;i++){const q=bz(P,i/10),v=PJ(B,O,loc(q[0],q[1]));s+=(i?'L':'M')+f(v[0])+','+f(v[1])}return s}).join('');
+  const P=[[0,.02,0],[0,-.05,.12],[0,-.12,.24],[0,-.2,.32]].map(([x,y,z],i)=>{const sd=o.side??1,q=loc(sd*x*W+sd*i*.06*W,y);return PJ(B,O,[q[0],q[1],q[2]+z*L])});
+  const spad=()=>spadix(k,P.map(p=>[p[0],p[1]]),6.4*L/94*1.2,4*L/94*1.2,sp[0],sp[1]);
+  if(!face)spad();E('path',{d,fill:`url(#${id})`},k);E('path',{d,fill:`url(#${sid})`},k);
+  E('path',{d:vd,stroke:pal[0],'stroke-width':f(L/80),'stroke-opacity':face?.42:.25,fill:'none','stroke-linecap':'round'},k);if(face)E('path',{d:vd,stroke:pal[4],'stroke-width':f(L/150),'stroke-opacity':.34,fill:'none',transform:'translate(-.9,-.7)'},k);
+  if(face&&!LOD){const fz=Math.max(.25,ax[2]);for(const[x,y,rx,ry,op]of[[-.5,-.22,.22,.08,.5],[.15,-.62,.08,.12,.32],[-.3,-.45,.1,.05,.3],[.35,-.3,.1,.05,.28],[-.15,-.75,.07,.04,.25]]){const v=PJ(B,O,loc(x*W,y));glint(k,v[0],v[1],rx*W*fz+1,ry*L*fz+1,-35,op*sh)}}
+  E('path',{d,fill:'none',stroke:pal[4],'stroke-width':1.2,'stroke-opacity':.3},k);E('path',{d,fill:'none',stroke:pal[0],'stroke-width':.7,'stroke-opacity':.7},k);
+  if(face)spad();open(k,t,1000,-8,.3)}
+/* nerine: umbel of small lilies with thin, crimped, recurved tepals and long stamens */
+function x3Nerine(g,t,o){const c=pal5(o.c)||tones('#e8507a'),cb=backT(c),Rr=(o.cm||13)/2*UPC,k=G(g),Bm=basis(axOf(o),R(0,6.28)),n=o.n||8,parts=[];
+  for(let i=0;i<n;i++){const a=i/n*Math.PI*2+R(-.2,.2),el=R(.35,1),dir=[Math.cos(a)*el,Math.sin(a)*el,1.1-el*.6],pos=V3.sc(V3.nz(dir),Rr*.45),O=toV(Bm,pos),Bf=subBasis(Bm,dir,R(0,6.28)),r=Rr*.5;
+    for(let j=0;j<6;j++)parts.push(petalPart(petalGeo({r0:r*.04,phi:(j*60+R(-10,10))*D,L:r*R(.9,1.05),W:r*.09,pf:sinP(.35,.08),a0:55*D,a1:150*D,pw:1.6,cup:-.2,ruf:.16,rk:9,n:8}),Bf,O,c,cb,{flat:1,sw:.35}));
+    for(let j=0;j<6;j++){const b=(j*60+30)*D;parts.push(curvePart(Bf,O,[[0,0,0],[Math.cos(b)*r*.2,Math.sin(b)*r*.2,r*.6],[Math.cos(b)*r*.35,Math.sin(b)*r*.35,r*1.05]],.6,lt(c[2],.25),[.9,1.6,'#5a2a30']))}
+    const s0=PJ(Bm,[0,0,0],[0,0,0]);parts.push({z:O[2]-r,fn:par=>E('path',{d:`M${f(s0[0])},${f(s0[1])}L${f(O[0])},${f(-O[1])}`,stroke:'#6a7a3a','stroke-width':1},par)})}
+  drawParts(k,parts);if(!LOD)dust(k,24,Rr*.8,Rr*.8,.6);open(k,t,1000,16,.3)}
+/* tulip: six hollow tepals closed into a cup, opening with o.op */
+function x3Tulip(g,t,o){const c=pal5(o.c)||tones('#e2232f'),cb=backT(c),Rr=(o.cm||7)/2*UPC,F=fl3(g,o),op=o.op??.35;
+  for(let i=0;i<6;i++){const inn=i%2;F.parts.push(petalPart(petalGeo({r0:Rr*.12,z0:inn?Rr*.02:0,phi:(i*60+R(-4,4))*D,L:Rr*1.8*R(.95,1.03),W:Rr*.66,pf:sinP(.42,.1),a0:(8+40*op+(inn?0:6))*D,a1:(-6+60*op)*D,pw:1.2,cup:-.72,n:8}),F.B,F.O,c,cb,{vein:1,vo:.15}))}
+  drawParts(F.k,F.parts);open(F.k,t,950,8,.3)}
+/* peony (bomb): broad guard petals round a ruffled pompon */
+function x3Peony(g,t,o){const c=pal5(o.c)||tones('#f7a8c4'),cb=backT(c),Rr=(o.cm||13)/2*UPC,F=fl3(g,o),dp=dk(c[1],.25);
+  for(let i=0;i<6;i++)F.parts.push(petalPart(petalGeo({r0:Rr*.2,phi:(i*60+R(-8,8))*D,L:Rr*.95,W:Rr*.66,pf:sinP(.4,.14),a0:F.A(66),a1:F.A(100),pw:1.4,cup:-.45,ruf:.05,rk:4,n:8}),F.B,F.O,c,cb,{}));
+  for(let i=0;i<46;i++){const u=Math.sqrt((i+.5)/46),phi=(i*137.508+R(-8,8))*D;F.parts.push(petalPart(petalGeo({r0:Rr*.12*u,z0:Rr*(.5-.3*u),phi,L:Rr*(.25+.4*u),W:Rr*(.22+.12*u),pf:sinP(.4,.2),a0:F.A(10+50*u),a1:F.A(5+40*u),pw:1.3,cup:-.55,ruf:.12,rk:6,n:6}),F.B,F.O,tint(c,dp,.3*(1-u)),cb,{flat:1}))}
+  bracts(F.parts,F.B,F.O,Rr,5,.45);drawParts(F.k,F.parts);open(F.k,t,1100,18,.3)}
+/* single flowers: cosmos, anemone, sunflower (petal ring + disc or dome) */
+function x3Daisy(g,t,o,d){const c=pal5(o.c)||tones(d.col),cb=backT(c),Rr=(o.cm||d.cm)/2*UPC,F=fl3(g,o),dc=o.dc||d.dc;
+  for(let i=0;i<d.np;i++)F.parts.push(petalPart(petalGeo({r0:Rr*d.r0,phi:(i*360/d.np+R(-5,5))*D,L:Rr*(1-d.r0)*R(.92,1.05),W:Rr*d.w,pf:sinP(d.pf||.5,.1),a0:F.A(d.a0),a1:F.A(d.a1),pw:1.3,cup:d.cup,n:7,fan:d.fan||0,fd:.12}),F.B,F.O,c,cb,{vein:1,vo:.15,flat:d.np>16}));
+  F.parts.push(domePart(F.B,F.O,Rr*d.dr,Rr*.02,Rr*d.dh,dc,d.nd,{dr:Rr*d.dd,pins:d.pins,zb:1}));
+  drawParts(F.k,F.parts);open(F.k,t,1000,18,.3)}
+const DZ={cosmos:{col:'#f06a9b',cm:7,np:8,r0:.16,w:.36,a0:80,a1:93,cup:-.12,fan:6,dr:.17,dh:.08,nd:40,dd:.05,dc:['#7a5a10','#c89a20','#e8b830','#ffd84a']},
+ anemone:{col:'#f2f2fa',cm:7,np:6,r0:.18,w:.5,pf:.42,a0:58,a1:78,cup:-.35,dr:.22,dh:.14,nd:48,dd:.06,pins:'#1a1020',dc:['#0e0a14','#1e1830','#2e2850','#3a3460']},
+ sunflower:{col:'#ffc21a',cm:14,np:30,r0:.42,w:.13,pf:.6,a0:84,a1:98,cup:-.25,dr:.42,dh:.08,nd:120,dd:.04,dc:['#1e0e04','#3a1e08','#5a3010','#7a4818']}};
+const x3Cosmos=(g,t,o)=>x3Daisy(g,t,Object.assign({},o,{c:pal5(o.c),dc:o.d?[o.d[2],o.d[1],o.d[0],lt(o.d[0],.2)]:undefined}),DZ.cosmos);
+const x3Anem=(g,t,o)=>x3Daisy(g,t,Object.assign({},o,{c:pal5(o.c)}),DZ.anemone);
+const x3Sun=(g,t,o)=>x3Daisy(g,t,o,DZ.sunflower);
+/* hydrangea: a dome of small four-petal florets, each facing out of the dome */
+function x3Hydra(g,t,o){const cs=o.c||[['#5b7fd8','#8fa6f5','#dfe6ff','#2f4a9a'],['#7a7fe0','#a8aef8','#e8eaff','#3a3f9a']],Rr=(o.cm||16)/2*UPC,k=G(g),Bm=basis(axOf(o),R(0,6.28)),parts=[];
+  for(let i=0;i<54;i++){const z=1-(i+.5)/54*1.25,r=Math.sqrt(Math.max(0,1-z*z)),a=i*137.508*D,dir=[Math.cos(a)*r,Math.sin(a)*r,Math.max(-.2,z)],O=toV(Bm,V3.sc(dir,Rr*.7)),Bf=subBasis(Bm,dir,R(0,6.28)),c=pal5(cs[i%cs.length]);
+    for(let j=0;j<4;j++)parts.push(petalPart(petalGeo({r0:Rr*.01,phi:(j*90+R(-8,8))*D,L:Rr*.2,W:Rr*.13,pf:sinP(.42,.15),a0:80*D,a1:96*D,cup:-.15,n:4}),Bf,O,c,backT(c),{flat:1,sw:.35}))}
+  drawParts(k,parts);open(k,t,1000,10,.35)}
+
+/* ================= Vessels from the reference study: lathe-drawn ceramics, glass, metal, kenzan, hand-tied, paper ================= */
+const FL=990,VX=500;
+/* profile = [[height from floor, half width], ...] bottom -> top */
+const VZ={
+ 'coupe-blanche':{n:'Coupe sur pied',m:'céramique mate',p:0,col:'#ecebe5',mat:'matte',pl:'beton',prof:[[0,34],[5,36],[9,22],[34,12],[52,13],[66,34],[82,60],[94,70]]},
+ 'coupe-noire':{n:'Coupe noire',m:'céramique mate',p:60,col:'#1d1b1d',mat:'matte',pl:'blanc',prof:[[0,34],[5,36],[9,22],[34,12],[52,13],[66,34],[82,60],[94,70]]},
+ 'boule-chocolat':{n:'Boule chocolat',m:'émail brillant',p:60,col:'#3b2016',mat:'gloss',pl:'bois',prof:[[0,38],[10,56],[40,74],[78,72],[108,50],[124,26],[134,22],[142,26]]},
+ 'boule-sapin':{n:'Boule vert sapin',m:'émail brillant',p:60,col:'#1d3a29',mat:'gloss',pl:'blanc',prof:[[0,38],[10,56],[40,74],[78,72],[108,50],[124,26],[134,22],[142,26]]},
+ 'verre':{n:'Cylindre verre',m:'tiges visibles',p:50,kind:'glass',pl:'beton',prof:[[0,44],[176,44]]},
+ 'calice':{n:'Calice terrazzo',m:'grès moucheté',p:80,col:'#e9e5e0',mat:'matte',tex:'terrazzo',pl:'blanc',prof:[[0,46],[7,46],[12,28],[54,13],[64,15],[74,30],[160,34],[166,35]]},
+ 'balustre':{n:'Balustre argent',m:'étain patiné',p:100,kind:'metal',col:'#a19e98',pl:'noir',prof:[[0,38],[8,38],[14,20],[34,17],[84,54],[118,50],[148,24],[166,19],[180,32]]},
+ 'urne':{n:'Urne Médicis',m:'céramique noire',p:100,col:'#161517',mat:'matte',pl:'blanc',prof:[[0,42],[9,42],[15,24],[40,20],[56,32],[84,40],[130,46],[150,54],[156,56]]},
+ 'cobalt':{n:'Boule côtelée',m:'émail cobalt',p:80,col:'#3a68c8',mat:'gloss',tex:'ribs',pl:'blanc',prof:[[0,36],[10,54],[40,70],[76,68],[104,46],[120,26],[130,23],[136,26]]},
+ 'jarre':{n:'Jarre en grès',m:'terre mouchetée',p:60,col:'#a5683e',mat:'matte',tex:'speck',pl:'bois',prof:[[0,36],[24,58],[70,64],[110,46],[130,28],[140,26],[146,29]]},
+ 'soliflore':{n:'Soliflore noir',m:'verre laqué',p:80,col:'#0d0b0d',mat:'gloss',pl:'blanc',prof:[[0,40],[6,40],[12,14],[24,12],[44,34],[70,48],[96,40],[124,16],[184,9],[196,13]]},
+ 'kenzan':{n:'Pique-fleurs',m:'laiton sur béton',p:90,kind:'kenzan',pl:'beton',h:96},
+ 'noue':{n:'Bouquet noué',m:'ruban satin',p:0,kind:'hand',rib:'#e9c9c3',h:0},
+ 'papier':{n:'Papier coréen',m:'ruban de soie',p:40,kind:'wrap',paper:'#ebe6de',rib:'#b9a294',h:0}};
+const vH=v=>v.h!=null?v.h:v.prof[v.prof.length-1][0];
+const vMouth=v=>v.prof?v.prof[v.prof.length-1][1]:v.kind==='kenzan'?18:26;
+/* lathe outline whose top edge is the FRONT half of the mouth ellipse: stems vanish behind the lip */
+const vRy=mw=>Math.max(2.5,mw*.16);
+function lathe(P){const R2=P.map(([y,w])=>[VX+w,FL-y]),L2=P.slice().reverse().map(([y,w])=>[VX-w,FL-y]),mw=P[P.length-1][1],top=FL-P[P.length-1][0];
+  return smooth(R2,false)+`A${f(mw)},${f(vRy(mw))} 0 0 1 ${f(VX-mw)},${f(top)}`+'L'+smooth(L2,false).slice(1)+'Z'}
+function plinth(par,kind){if(!kind)return;const C={beton:['#b9b4ac','#cfcac2','#a29c93'],blanc:['#ecebe7','#f7f6f3','#d8d6d1'],noir:['#1c1b1c','#2a292a','#111'],bois:['#6a4a32','#8a6446','#4e3524']}[kind];
+  E('path',{d:`M${VX-260},${FL+2}L${VX+260},${FL+2}L${VX+250},${FL-14}L${VX-250},${FL-14}Z`,fill:lin([C[1],C[0]],0,0,0,1)},par);
+  E('rect',{x:VX-260,y:FL+2,width:520,height:260,fill:lin([[0,C[0]],[.5,C[2]],[1,C[2]]],0,0,0,1)},par);
+  E('path',{d:`M${VX-260},${FL+2.5}L${VX+260},${FL+2.5}`,stroke:'#fff','stroke-opacity':kind==='noir'?.12:.45,'stroke-width':1.2},par);
+  if(kind==='bois')for(let i=0;i<9;i++){const y=FL+10+i*26+R(-6,6);E('path',{d:`M${VX-260},${f(y)}C${VX-80},${f(y+R(-8,8))} ${VX+80},${f(y+R(-8,8))} ${VX+260},${f(y)}`,stroke:'#3e2a1c','stroke-opacity':.35,'stroke-width':1.2,fill:'none'},par)}}
+/* o.part: 'back' = mouth interior (behind the stems), 'front' = body and front lip (over the stems); none = both */
+function vessel(par,id,t=0,o={}){const v=VZ[id]||VZ['coupe-blanche'],g=G(par),h=vH(v),mw=vMouth(v),top=FL-h,ry=vRy(mw),back=o.part!=='front',front=o.part!=='back',glass=v.kind==='glass';
+  if(!o.noPlinth&&back)plinth(g,v.pl);
+  if(v.kind==='hand'||v.kind==='wrap')return{g,top,mw,h};
+  if(back&&v.prof){E('ellipse',{cx:VX,cy:f(top),rx:mw,ry:f(ry),fill:glass?'#dde9e5':rad([[0,dk(v.col||'#888',.82)],[1,dk(v.col||'#888',.6)]],.5,.75,.7)},g);
+    E('path',{d:`M${f(VX-mw)},${f(top)}A${f(mw)},${f(ry)} 0 0 1 ${f(VX+mw)},${f(top)}`,stroke:glass?'#ffffff':lt(v.col||'#888',.25),'stroke-width':1.2,'stroke-opacity':.6,fill:'none'},g)}
+  if(!front){if(t)fade(g,t,700,18);return{g,top,mw,h}}
+  E('ellipse',{cx:VX+8,cy:FL-1,rx:f((v.prof?v.prof[0][1]:60)*1.5),ry:9,fill:rad([[0,'#1a1210',.42],[1,'#1a1210',0]])},g);
+  if(v.kind==='kenzan'){E('ellipse',{cx:VX,cy:FL-6,rx:46,ry:8,fill:lin(['#6a5020','#d9b25a','#8a6a2a'],0,0,1,0)},g);E('rect',{x:VX-46,y:FL-6,width:92,height:6,fill:lin(['#5a4018','#c9a24a','#7a5a20'],0,0,1,0)},g);
+    for(let i=0;i<26;i++)E('path',{d:`M${f(VX+R(-38,38))},${f(FL-6+R(-4,4))}v-4`,stroke:'#e8d08a','stroke-width':.8},g)}
+  else if(v.prof){const d=lathe(v.prof),wmax=Math.max(...v.prof.map(p=>p[1]));
+    if(glass)E('path',{d,fill:lin([[0,'#cfe0dc',.42],[.2,'#ffffff',.12],[.5,'#e8f2f0',.08],[.85,'#bcd2cc',.3],[1,'#a8c2bc',.5]],0,0,1,0)},g);
+    else{const c=v.col,met=v.kind==='metal';
+      E('path',{d,fill:met?lin([[0,dk(c,.55)],[.12,lt(c,.5)],[.24,dk(c,.2)],[.42,lt(c,.7)],[.55,c],[.8,dk(c,.45)],[1,dk(c,.65)]],0,0,1,0):lin([[0,dk(c,.5)],[.2,dk(c,.12)],[.34,lt(c,v.mat==='gloss'?.25:.12)],[.5,c],[.82,dk(c,.38)],[1,dk(c,.58)]],0,0,1,0)},g);
+      E('path',{d,fill:lin([[0,'#000',0],[.7,'#000',0],[1,'#000',.25]],0,0,0,1)},g);
+      if(v.tex==='ribs')for(let i=1;i<12;i++){const u=i/12*2-1;E('path',{d:smooth(v.prof.map(([y,w])=>[VX+u*w*.98,FL-y]),false),stroke:lt(c,.55),'stroke-width':2.2,'stroke-opacity':f(.55*(1-Math.abs(u))+.1),fill:'none'},g)}
+      if(v.tex==='terrazzo'||v.tex==='speck'){const sc=v.tex==='terrazzo'?['#2a2626','#7a7470','#b8aea6']:['#3a2010','#d8b890','#5a3420'];
+        for(let i=0;i<70;i++){const y=R(4,h-6),pr=v.prof,j=pr.findIndex(p=>p[0]>=y),a=pr[Math.max(0,j-1)],b=pr[Math.max(0,j)],w=a[1]+(b[1]-a[1])*((y-a[0])/Math.max(1,b[0]-a[0]));
+          E('circle',{cx:f(VX+R(-.9,.9)*w),cy:f(FL-y),r:f(R(.8,v.tex==='terrazzo'?2.2:1.4)),fill:pick(sc),opacity:f(R(.45,.85))},g)}}
+      if(v.mat==='gloss'||met){glint(g,VX-wmax*.42,FL-h*.5,wmax*.07,h*.32,0,.6);glint(g,VX+wmax*.5,FL-h*.45,wmax*.04,h*.2,0,.25)}}
+    E('path',{d:`M${f(VX+mw)},${f(top)}A${f(mw)},${f(ry)} 0 0 1 ${f(VX-mw)},${f(top)}`,stroke:glass?'#ffffff':lt(v.col||'#888',.4),'stroke-width':glass?2.2:1.6,'stroke-opacity':.85,fill:'none','stroke-linecap':'round'},g);
+    if(glass){E('path',{d:`M${VX-41},${FL-140}Q${VX},${FL-133} ${VX+41},${FL-140}`,stroke:'#ffffff','stroke-width':1.4,'stroke-opacity':.7,fill:'none'},g);
+      glint(g,VX-30,FL-90,4,70,0,.55);glint(g,VX+33,FL-96,2.5,60,0,.35);E('path',{d,fill:'none',stroke:'#e4eeeb','stroke-width':2.5,'stroke-opacity':.8},g)}}
+  if(t)fade(g,t,700,18);return{g,top,mw,h}}
+/* stems seen through glass / below a binding: bundle from the binding point down to the cut ends */
+function stemsBelow(par,n,id){const v=VZ[id]||{},bp=v.kind==='hand'||v.kind==='wrap'?[VX,830]:[VX,FL-vH(v)],g=G(par);
+  if(v.kind==='glass'){for(let i=0;i<n;i++){const x0=VX+R(-30,30),x1=VX+R(-34,34);E('path',{d:`M${f(x0)},${FL-176}L${f(x0+(x1-x0)*.35)},${FL-140}L${f(x1)},${FL-6}`,stroke:pick(['#4f7a36','#5f8a3e','#3f6a2e']),'stroke-width':f(R(2.2,3.6)),'stroke-opacity':.85,fill:'none'},g)}
+    E('rect',{x:VX-43,y:FL-140,width:86,height:138,fill:'#cfe3dc',opacity:.18},g);return g}
+  const hand=v.kind==='hand'||v.kind==='wrap',len=v.kind==='kenzan'?vH(v)-8:hand?120:0,spread=hand?40:6;
+  for(let i=0;i<n;i++){const u=n>1?i/(n-1)*2-1:0,x1=bp[0]+u*spread+R(-4,4),y1=bp[1]+len*R(.9,1.05);E('path',{d:`M${f(bp[0]+u*8)},${f(bp[1]-6)}Q${f(bp[0]+u*6)},${f(bp[1]+len*.3)} ${f(x1)},${f(y1)}`,stroke:pick(['#4f7a36','#5f8a3e','#3f6a2e','#6a8a3a']),'stroke-width':f(R(2.4,3.8)),fill:'none','stroke-linecap':'butt'},g)}
+  return g}
+/* ribbon bow with trailing tails (hand-tied, wrap, kenzan bundle) */
+function bow(par,x,y,c,long=1){const g=G(par);E('rect',{x:f(x-16),y:f(y-6),width:32,height:12,rx:3,fill:c},g);E('rect',{x:f(x-16),y:f(y-6),width:32,height:12,rx:3,fill:lin([[0,'#fff',.3],[.5,'#fff',0],[1,'#000',.2]],0,0,0,1)},g);
+  for(const s of[-1,1]){E('path',{d:`M${x},${y}C${x+s*12},${y-22} ${x+s*34},${y-14} ${x+s*30},${y}C${x+s*26},${y+10} ${x+s*10},${y+6} ${x},${y}Z`,fill:c,stroke:dk(c,.25),'stroke-width':.6},g);
+    E('path',{d:`M${x},${y+2}C${x+s*8},${y+40} ${x+s*(18+R(0,10))},${y+90*long} ${x+s*(10+R(0,14))},${y+150*long}`,stroke:c,'stroke-width':7,fill:'none','stroke-linecap':'butt'},g)}
+  E('circle',{cx:x,cy:y,r:5,fill:dk(c,.12)},g);return g}
+/* paper cone: back sheet behind the flowers, front sheet over the stems */
+function wrapBack(par,bp,c){E('path',{d:`M${bp[0]-26},${bp[1]+40}L${bp[0]-170},${bp[1]-150}Q${bp[0]},${bp[1]-200} ${bp[0]+170},${bp[1]-150}L${bp[0]+26},${bp[1]+40}Z`,fill:lin([dk(c,.12),c,lt(c,.4)],0,0,1,0)},par)}
+function wrapFront(par,bp,c){const g=G(par);E('path',{d:`M${bp[0]-22},${bp[1]+44}L${bp[0]-120},${bp[1]-84}Q${bp[0]-40},${bp[1]-40} ${bp[0]+10},${bp[1]-62}Q${bp[0]+70},${bp[1]-90} ${bp[0]+128},${bp[1]-70}L${bp[0]+22},${bp[1]+44}Z`,fill:lin([[0,lt(c,.3)],[.5,c],[1,dk(c,.18)]],0,0,1,0)},g);
+  E('path',{d:`M${bp[0]-120},${bp[1]-84}Q${bp[0]-40},${bp[1]-40} ${bp[0]+10},${bp[1]-62}Q${bp[0]+70},${bp[1]-90} ${bp[0]+128},${bp[1]-70}`,stroke:'#fff','stroke-width':2,'stroke-opacity':.7,fill:'none'},g);
+  for(let i=0;i<5;i++)E('path',{d:`M${f(bp[0]+R(-80,80))},${f(bp[1]-R(20,60))}l${f(R(-20,20))},${f(R(30,60))}`,stroke:dk(c,.25),'stroke-width':.8,'stroke-opacity':.25},g);return g}
+
+/* ================= Belai's Flowers — state & catalogue v3 (one pick = one variety, the composer decides the stems) ================= */
+const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const eur=c=>(c/100).toFixed(2).replace('.',',')+' €';
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const RAR={c:['Commune','r-c'],r:['Rare','r-r'],p:['Précieuse','r-p'],l:['Légendaire','r-l']};
+/* species registry: form & size drive the composer; k = art kind (head centred | cup base at 0,0 | plant grows up); r = visual radius; an = head centre offset */
+const SP={xAnth:{form:'coeur',size:3,k:'head',r:48},xCalla:{form:'cornet',size:2,k:'cup',r:34,an:[0,-96]},xPhalCluster:{form:'orchidee',size:3,k:'head',r:52},xCymbCluster:{form:'orchidee',size:3,k:'head',r:50},
+ xRose:{form:'rosette',size:2.6,k:'head',r:42},xRanunc:{form:'rosette',size:2,k:'head',r:34},xDahlia:{form:'disque',size:3,k:'head',r:48},xCarn:{form:'frange',size:1.5,k:'head',r:31},
+ xMum:{form:'araignee',size:2.5,k:'head',r:46},xNerine:{form:'ombelle',size:1.6,k:'head',r:44},xGlor:{form:'etoile',size:1.6,k:'head',r:40},xPea:{form:'grappe',size:1.2,k:'head',r:40},
+ xScab:{form:'disque',size:1.1,k:'head',r:27},xLily:{form:'etoile',size:3,k:'head',r:52},xDelph:{form:'epi',size:1,k:'plant',self:230},xAllium:{form:'ligne',size:1,k:'plant',self:270},
+ xPhalSpray:{form:'retombante',size:2,k:'spray'},amaranthPlant:{form:'retombante',size:2,k:'plant'},allium:{form:'ligne',size:1,k:'plant',self:0},grassLoop:{form:'ligne',size:1,k:'plant',self:0},
+ willow:{form:'ligne',size:1,k:'plant',self:0},bareLine:{form:'ligne',size:1,k:'plant',self:0},
+ peony:{form:'rosette',size:3,k:'head',r:46},tulip:{form:'cornet',size:2,k:'cup',r:30,an:[0,-55]},anemone:{form:'disque',size:2,k:'head',r:40},cosmos:{form:'disque',size:1,k:'head',r:38},
+ hydrangea:{form:'sphere',size:3,k:'head',r:48},sunflower:{form:'disque',size:3,k:'head',r:48},strelitzia:{form:'sculpt',size:2,k:'head',r:50},cattleya:{form:'orchidee',size:3,k:'head',r:46},
+ paphio:{form:'orchidee',size:2,k:'head',r:40},oncidium:{form:'grappe',size:1,k:'plant',self:170},spike:{form:'epi',size:1,k:'plant',self:150},marigold:{form:'disque',size:2,k:'head',r:40},pansy:{form:'disque',size:1,k:'head',r:34}};
+const AN3={bordeaux:{c:['#2a020a','#5c0a1c','#8e1430','#c23a54','#f2a6b4'],sp:['#f3e6c2','#c9a96a']},saumon:{c:['#5a2010','#a8512f','#d9825d','#f3b394','#ffe0cc'],sp:['#fff1d6','#e7b06b']},
+ vert:{c:['#1f3a10','#4c7a24','#7faa3c','#b4d276','#e6f5c4'],sp:['#f2f0c8','#c8d07a']},noir:{c:['#08020a','#1d0814','#341024','#57203c','#a8708a'],sp:['#4a2430','#7a4050']},
+ rose:{c:['#6a3440','#b8707e','#dda0aa','#f3cdd2','#fff0f2'],sp:['#f5eadf','#d9a3a8']},rouge:{c:['#3a0208','#7a0614','#c0101e','#ee4050','#ffb0b8'],sp:['#fff4d6','#e8c070']}};
+const PHM={c:tones('#c2387f'),lip:['#4a0626','#8a1048','#ffd23f'],cap:'#ffd0e4'};
+const V=(id,n,fam,rar,p,f,o,col)=>({id,n,fam,rar,p,f,o:o||{},col});
+const CAT=[
+ V('lys-casablanca','Lys Casa Blanca','blanc','p',140,'xLily',{c:tones('#f7f5ef'),an:'#a0401a'},'#f7f5ef'),V('calla-ivoire','Calla ivoire','blanc','r',70,'xCalla',{},'#eef0dc'),
+ V('phalaenopsis-blanc','Orchidée papillon blanche','blanc','p',150,'xPhalCluster',{},'#fbf4f8'),V('rose-ivoire','Rose de jardin ivoire','blanc','r',70,'xRose',{c:tones('#f4ecd8'),deep:'#c9b47a',button:'#9aa860'},'#f4ecd8'),
+ V('renoncule-blanche','Renoncule blanche','blanc','c',40,'xRanunc',{c:tones('#f6f2ea'),deep:'#b8b090',eye:'#5a7a2a'},'#f6f2ea'),V('delphinium-blanc','Delphinium blanc','blanc','r',60,'xDelph',{c:tones('#f4f2ec'),bee:'#3a3020'},'#f4f2ec'),
+ V('anemone-blanche','Anémone blanche','blanc','c',35,'anemone',{},'#f2f2fa'),
+ V('anthurium-saumon','Anthurium pêche cuivré','peche','p',140,'xAnth',AN3.saumon,'#d9825d'),V('rose-peche','Rose de jardin pêche','peche','r',70,'xRose',{c:tones('#f4d2bd'),deep:'#d98a66'},'#f4d2bd'),
+ V('renoncule-saumon','Renoncule saumon','peche','c',40,'xRanunc',{c:tones('#f49a78'),deep:'#b0402a'},'#f49a78'),V('dahlia-peche','Dahlia pêche','peche','r',80,'xDahlia',{c:tones('#f59a62'),deep:'#a0401a'},'#f59a62'),
+ V('calla-peche','Calla pêche','peche','r',70,'xCalla',{c:['#5a2a10','#c0602a','#ee9050','#ffc090','#ffe4cc'],ic:['#d07040','#ffd0a8'],nk:'#7a8a3a',sp:'#f0a020'},'#ee9050'),
+ V('oeillet-corail','Œillet corail','peche','c',30,'xCarn',{c:tones('#f07862')},'#f07862'),V('cymbidium-cuivre','Cymbidium cuivre','peche','p',150,'xCymbCluster',{},'#c8714c'),
+ V('chrysantheme-peche','Chrysanthème araignée pêche','peche','r',60,'xMum',{c:tones('#f2b08a')},'#f2b08a'),V('nerine-corail','Nérine corail','peche','r',70,'xNerine',{c:tones('#f2604a')},'#f2604a'),
+ V('rose-blush','Rose de jardin blush','rose','r',70,'xRose',{c:tones('#eebcc4'),deep:'#b8606e'},'#eebcc4'),V('dahlia-cafe','Dahlia café au lait','rose','p',120,'xDahlia',{c:tones('#ecc9b8'),deep:'#b0806e'},'#ecc9b8'),
+ V('renoncule-rose','Renoncule rose poudré','rose','c',40,'xRanunc',{c:tones('#f2c4c6'),deep:'#c07a80',eye:'#6a8a2a'},'#f2c4c6'),V('oeillet-poudre','Œillet rose poudré','rose','c',30,'xCarn',{},'#eba3b2'),
+ V('anthurium-rose','Anthurium rose poudré','rose','p',140,'xAnth',AN3.rose,'#dda0aa'),V('pois-rose','Pois de senteur rose','rose','c',40,'xPea',{c:tones('#eeb0c8')},'#eeb0c8'),
+ V('oeillet-picotee','Œillet picotee','rose','r',50,'xCarn',{c:tones('#fbf3f4'),tc:'#d0206a'},'#f4c6d6'),V('pivoine-sarah','Pivoine Sarah Bernhardt','rose','r',80,'peony',{},'#f7a8c4'),
+ V('phalaenopsis-magenta','Orchidée papillon magenta','fuchsia','p',150,'xPhalCluster',PHM,'#c2387f'),V('nerine-rose','Nérine rose','fuchsia','r',70,'xNerine',{},'#e8507a'),
+ V('lys-stargazer','Lys Stargazer','fuchsia','p',130,'xLily',{tc:'#fff0f4',sp:{n:40,c:'#8a0a34',p:1.2,s:1},pap:'#b01048'},'#d8306a'),
+ V('phalaenopsis-prune','Orchidée papillon prune réticulée','fuchsia','l',240,'xPhalCluster',{c:['#3a0820','#a8406a','#e9a0bc','#f8d6e4','#fff0f6'],ret:1,vc:'#7a0a36',lip:['#3a0418','#7a0a36','#f2c84a']},'#a8406a'),
+ V('cattleya-fuchsia','Cattleya fuchsia','fuchsia','l',240,'cattleya',{c:['#a8166a','#ff5cae','#ffd6ec','#720d47'],lip:['#5a0636','#c2185b','#ffd23f']},'#ff5cae'),
+ V('anthurium-rouge','Anthurium rouge','rouge','p',140,'xAnth',AN3.rouge,'#c0101e'),V('gloriosa','Gloriosa flamme','rouge','p',130,'xGlor',{},'#e0203e'),
+ V('renoncule-rouge','Renoncule rouge','rouge','c',40,'xRanunc',{c:tones('#d8202a'),deep:'#5a0008'},'#d8202a'),V('tulipe-rouge','Tulipe rouge','rouge','c',30,'tulip',{},'#e2232f'),
+ V('anemone-rubis','Anémone rubis','rouge','c',35,'anemone',{c:['#5e000b','#d1162e','#ff5a68','#3e0007']},'#d1162e'),V('pivoine-rubis','Pivoine rubis','rouge','r',80,'peony',{c:['#62000f','#c8102e','#ff6070','#40000a']},'#c8102e'),
+ V('anthurium-bordeaux','Anthurium bordeaux','bordeaux','p',140,'xAnth',AN3.bordeaux,'#8e1430'),V('rose-bordeaux','Rose de jardin bordeaux','bordeaux','r',70,'xRose',{c:tones('#8a1430'),deep:'#2a0410'},'#8a1430'),
+ V('dahlia-bordeaux','Dahlia bordeaux','bordeaux','r',80,'xDahlia',{},'#8e1a3a'),V('oeillet-bordeaux','Œillet bordeaux','bordeaux','c',30,'xCarn',{c:tones('#7a1028')},'#7a1028'),
+ V('cymbidium-bordeaux','Cymbidium bordeaux','bordeaux','p',150,'xCymbCluster',{c:tones('#7a1734'),lip:['#5a0816','#fbe8dc','#b02040']},'#7a1734'),
+ V('cosmos-chocolat','Cosmos chocolat','bordeaux','r',50,'cosmos',{c:['#2a0006','#7a0a1e','#b4303f','#170003'],d:['#d07a40','#7a2a10','#3a0e04']},'#7a0a1e'),
+ V('calla-noir','Calla noire','noir','p',120,'xCalla',{c:['#0a0206','#22061a','#3d0f2e','#5e2048','#9a6080'],ic:['#1a0410','#4a1636'],nk:'#2a3018',sp:'#d8b44a'},'#3d0f2e'),
+ V('anthurium-noir','Anthurium Black Queen','noir','l',240,'xAnth',AN3.noir,'#341024'),V('scabieuse-noire','Scabieuse Black Knight','noir','r',50,'xScab',{},'#4e1028'),
+ V('dahlia-noir','Dahlia Karma Choc','noir','p',130,'xDahlia',{c:tones('#4a0c22'),deep:'#0e0206'},'#4a0c22'),
+ V('allium-violet','Allium Globemaster','violet','r',70,'xAllium',{},'#7a3cc0'),V('chrysantheme-mauve','Chrysanthème araignée mauve','violet','r',60,'xMum',{},'#c98ab8'),
+ V('pois-lavande','Pois de senteur lavande','violet','c',40,'xPea',{},'#b79ae0'),V('scabieuse-lavande','Scabieuse lavande','violet','c',40,'xScab',{c:tones('#b0a6dc'),ce:['#5a6a4a','#8a9a70','#c8d2b0'],pin:'#ffffff'},'#b0a6dc'),
+ V('cattleya-lavande','Cattleya lavande','violet','p',150,'cattleya',{c:['#8a66d4','#c9b3ff','#f3edff','#553ba8'],lip:['#4a1478','#9b4fd6','#ffe14d']},'#c9b3ff'),
+ V('delphinium-bleu','Delphinium bleu poudré','bleu','r',60,'xDelph',{},'#8ea8e4'),V('hortensia-bleu','Hortensia bleu','bleu','r',70,'hydrangea',{},'#8fa6f5'),
+ V('anemone-bleue','Anémone bleue','bleu','c',35,'anemone',{c:['#18166a','#3f4fd6','#909dff','#0c0c3a']},'#3f4fd6'),V('myosotis','Myosotis','bleu','c',30,'spike',{c:['#2f5fd0','#6f97ff','#dbe7ff','#1c3a8a'],n:18},'#6f97ff'),
+ V('anthurium-vert','Anthurium Midori','vert','p',140,'xAnth',AN3.vert,'#7faa3c'),V('cymbidium-vert','Cymbidium chartreuse','vert','p',150,'xCymbCluster',{c:tones('#b8c35a'),lip:['#9a1020','#fff6e0','#d04050']},'#b8c35a'),
+ V('calla-verte','Calla verte','vert','r',70,'xCalla',{c:['#2a3a10','#6a8a2a','#a8c060','#d4e6a0','#eef6d0'],ic:['#90a850','#e0eeb8'],nk:'#4a6a20',sp:'#e8d050'},'#a8c060'),
+ V('hortensia-antique','Hortensia vert antique','vert','r',70,'hydrangea',{c:[['#6a8a4a','#a9c08a','#e4ecd4','#4a6a30'],['#8a7a9a','#b8a8c8','#ece4f0','#5a4a6a']]},'#a9c08a'),
+ V('lys-dore','Lys doré','jaune','r',60,'xLily',{c:tones('#f2c832'),an:'#a0401a',sp:{n:14,c:'#b35a00',p:1.6,s:.9}},'#f2c832'),V('renoncule-jaune','Renoncule beurre','jaune','c',40,'xRanunc',{c:tones('#f6d24a'),deep:'#a07a10'},'#f6d24a'),
+ V('tournesol','Tournesol','jaune','c',40,'sunflower',{},'#ffc21a'),V('oncidium','Orchidée danseuse','jaune','p',120,'oncidium',{},'#ffd21f'),V('tulipe-citron','Tulipe citron','jaune','c',30,'tulip',{c:['#c29000','#ffd21f','#fff3a0','#7d5c00']},'#ffd21f'),
+ V('lys-tigre','Lys tigré','orange','r',60,'xLily',{c:tones('#f07a1a'),sp:{n:40,c:'#3a0d00',p:1.2,s:1.2},an:'#5a1a00'},'#f07a1a'),V('renoncule-orange','Renoncule orange','orange','c',40,'xRanunc',{},'#f07a3a'),
+ V('tagete','Tagète orange','orange','c',30,'marigold',{},'#ff7a00'),V('strelitzia','Oiseau de paradis','orange','p',150,'strelitzia',{},'#ff9a1f'),V('sabot-venus','Sabot de Vénus','orange','l',240,'paphio',{},'#b0485a'),
+ V('amarante-bordeaux','Amarante bordeaux','lignes','r',60,'amaranthPlant',{},'#8e1235'),V('amarante-verte','Amarante émeraude','lignes','r',60,'amaranthPlant',{c:['#3f5a1e','#6f8f2f','#a9c45a','#2c3f14']},'#6f8f2f'),
+ V('amarante-corail','Amarante vieux rose','lignes','p',90,'amaranthPlant',{c:['#a8504e','#d88a84','#f2bcb4','#6e2a28']},'#d88a84'),
+ V('phalaenopsis-cascade','Cascade d\'orchidées','lignes','l',240,'xPhalSpray',{hang:1,n:6},'#fbf4f8'),V('allium-boucle','Allium bouclé','lignes','r',50,'allium',{},'#8f5ad6'),
+ V('herbe-ours','Boucles d\'herbe d\'ours','lignes','c',20,'grassLoop',{},'#7fae4a'),V('saule-tortueux','Saule tortueux','lignes','c',30,'willow',{},'#6b4a2e'),V('tige-calla','Tige de calla nue','lignes','c',30,'bareLine',{bud:'#e8e4c8'},'#557a36')];
+const BYID=Object.fromEntries(CAT.map(p=>[p.id,p]));
+const FN={cosmos,anemone,peony,tulip,calla,lilyStar,morningGlory,marigold,pansy,hydrangea,spike,cattleya,paphio,oncidium,sunflower,strelitzia,
+  xAnth,xCalla,xPhal,xPhalCluster,xPhalSpray,xCymb,xCymbCluster,xRose,xRanunc,xDahlia,xCarn,xMum,xNerine,xGlor,xPea,xScab,xDelph,xLily,xAllium,amaranth,amaranthPlant,allium,grassLoop,willow,bareLine};
+const BASE=90,MIN=200,CAP=2000;
+const VASES=Object.entries(VZ).map(([id,v])=>({id,n:v.n,m:v.m,p:v.p}));
+const MUS=[{id:'none',n:'Silence',p:0},{id:'box',n:'Boîte à musique',p:50},{id:'lofi',n:'Lo-fi doux',p:50},{id:'romance',n:'Romance',p:50}];
+const S={cart:new Map(),vase:'coupe-blanche',occ:'juste',music:'none',seed:7,view:'shop',to:'',from:'',msg:''};
+const store={get(k,d){try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+const SEEN=new Set(store.get('bf3-seen',[]).filter(id=>BYID[id]));
+function seen(id){if(!SEEN.has(id)){SEEN.add(id);store.set('bf3-seen',[...SEEN])}}
+function count(){return S.cart.size}
+function expand(){return[...S.cart.keys()]}
+function flowersCost(){let c=0;for(const id of S.cart.keys())c+=BYID[id].p;return c}
+/* no limit on varieties: the bill simply never goes above 20 € */
+function rawTotal(){if(!count())return 0;return flowersCost()+BASE+VASES.find(v=>v.id===S.vase).p+MUS.find(m=>m.id===S.music).p}
+function total(){return Math.min(CAP,rawTotal())}
+function canAdd(p){return true}
+/* draw once with every animation already finished */
+function renderStatic(fn){const a=tw.length,b=idle.length;fn();for(const w of tw.splice(a))w.fn(1,1);idle.length=b}
+/* garden art: two variants of every variety, kept in <defs> and reused */
+function artOf(p,g,o2={}){const sp=SP[p.f]||{},o=Object.assign({},p.o,o2);if(p.f==='xPhalSpray')o.hang=0;
+  const h=sp.an?G(g,{transform:`translate(${-sp.an[0]},${-sp.an[1]})`}):g;FN[p.f](h,0,o)}
+/* garden art kept in <defs>: 3D species in three orientations plus a bud, 2D drawings once */
+function buildArt(){LOD=1;for(const p of CAT){const d3=D3.has(p.f),mk=(id,o2)=>{const g=E('g',{id},defs);renderStatic(()=>artOf(p,g,o2))};
+    mk(`h-${p.id}-0`,d3?{ax:[0,.25,1],roll:0}:{});if(d3){mk(`h-${p.id}-l`,{ax:[-.72,.35,.62],roll:0});mk(`h-${p.id}-r`,{ax:[.72,.35,.62],roll:0});if(BUD3.has(p.f))mk(`h-${p.id}-b`,{ax:[0,.5,.85],op:.14,roll:0})}}LOD=0}
+
+/* ================= Branchement des espèces 3D, tailles réelles ================= */
+/* green sepals cupping a bud (3D species with o.op < .45) */
+function sepals3(F,Rr,n=5){const c=['#1c3416','#365e26','#628c40','#a6c67a','#c8e09a'];for(let i=0;i<n;i++)F.parts.push(petalPart(petalGeo({r0:Rr*.05,z0:-Rr*.08,phi:(i*360/n+R(-10,10))*D,L:Rr*.55,W:Rr*.1,pf:sinP(.6,.05),a0:(40+R(0,30))*D,a1:(70+R(0,40))*D,cup:-.2,n:5}),F.B,F.O,c,c,{flat:1}))}
+const BUD3=new Set(['xRose','xRanunc','xDahlia','xCarn','peony','tulip','xLily']);
+function withSepals(fn,cm){return(g,t,o)=>{fn(g,t,o);if((o.op??1)<.45){const F={k:G(g),B:basis(axOf(o),0),O:[0,0,0],parts:[]};sepals3(F,(o.cm||cm)/2*UPC);drawParts(F.k,F.parts);g.insertBefore(F.k,g.firstChild)}}}
+Object.assign(FN,{xRose:withSepals(x3Rose,10),xRanunc:withSepals(x3Ranunc,6),xDahlia:withSepals(x3Dahlia,13),xCarn:x3Carn,xMum:x3Mum,xScab:x3Scab,xLily:withSepals(x3Lily,17),xGlor:x3Glor,
+  xPhalCluster:x3PhalCluster,xCymbCluster:x3CymbCluster,xAnth:x3Anth,xNerine:x3Nerine,tulip:withSepals(x3Tulip,7),peony:withSepals(x3Peony,13),cosmos:x3Cosmos,anemone:x3Anem,sunflower:x3Sun,hydrangea:x3Hydra});
+/* real head size in cm (diameter, or spathe length) and scale of the remaining 2D drawings */
+const CM={xAnth:12,xCalla:10,xPhalCluster:9,xCymbCluster:9,xRose:10,xRanunc:6,xDahlia:13,xCarn:6,xMum:11,xNerine:13,xGlor:9,xPea:12,xScab:5,xLily:17,
+  peony:13,tulip:7,anemone:7,cosmos:7,hydrangea:16,sunflower:14,strelitzia:18,cattleya:13,paphio:9,marigold:6,pansy:5,morningGlory:8};
+const D3=new Set(['xAnth','xPhalCluster','xCymbCluster','xRose','xRanunc','xDahlia','xCarn','xMum','xNerine','xGlor','xScab','xLily','peony','tulip','anemone','cosmos','hydrangea','sunflower']);
+const ART2={xCalla:.66,xPea:.78,strelitzia:.6,cattleya:.92,paphio:.73,marigold:.5,pansy:.5,morningGlory:.6};
+/* visual radius in SVG units at real size: drives spacing and visibility in the composer and the garden */
+for(const k in CM){if(SP[k])SP[k].r=CM[k]/2*UPC*(k==='xPhalCluster'||k==='xCymbCluster'?1.9:k==='xAnth'?.8:k==='xCalla'?.75:1)}
+const artK=f0=>D3.has(f0)?1:(ART2[f0]||1);
+function renderStatic(fn){const a=tw.length,b=idle.length;fn();for(const w of tw.splice(a))w.fn(1,1);idle.length=b}
+const SECT=[['Les focales','Les fleurs qui portent le regard : posées en triangle, à trois hauteurs.',p=>['xAnth','xPhalCluster','xCymbCluster','xLily','xDahlia'].includes(p.f)],
+ ['Les secondaires','Elles construisent la masse, en dérives de couleur.',p=>['xRose','xRanunc','xCalla','xMum','xCarn'].includes(p.f)],
+ ['Les texturées','Légèreté, frange et pointillés entre les têtes.',p=>['xNerine','xGlor','xPea','xScab'].includes(p.f)],
+ ['Lignes & retombées','Ce qui dépasse et ce qui tombe : la signature des bouquets contemporains.',p=>['xDelph','xAllium','amaranthPlant','xPhalSpray','allium','grassLoop','willow','bareLine'].includes(p.f)]];
+const W=$('w');
+function card(par,name,sub,draw){const d=document.createElement('div');d.className='c';d.innerHTML=`<b>${name}</b><small>${sub}</small>`;const s=E('svg',{viewBox:'0 0 10 10'},null);d.prepend(s);par.append(d);
+  renderStatic(()=>draw(s));const b=s.getBBox(),m=Math.max(b.width,b.height)*.06+4,sz=Math.max(b.width,b.height)+2*m;s.setAttribute('viewBox',`${f(b.x+b.width/2-sz/2)} ${f(b.y+b.height/2-sz/2)} ${f(sz)} ${f(sz)}`)}
+for(const[t,sub,fl]of SECT){const sec=document.createElement('section');sec.innerHTML=`<h2>${t}</h2><p>${sub}</p><div class="g"></div>`;W.append(sec);const g=sec.querySelector('.g');
+  for(const p of CAT.filter(fl))card(g,p.n,RAR[p.rar][0],s=>{seed=7+p.id.length*13;const o=Object.assign({},p.o);if(p.f==='xPhalSpray')Object.assign(o,{hang:1,side:1,len:200,n:6});FN[p.f](s,0,o)})}
+{const sec=document.createElement('section');sec.innerHTML='<h2>Angles & stades</h2><p>Chaque fleur est modélisée en volume : pétales courbes projetés et ombrés selon l’angle. De face, de trois-quarts, de profil, de dos, mi-ouverte ou en bouton, à sa taille réelle.</p><div class="g"></div>';W.append(sec);const g=sec.querySelector('.g');
+  const AX=[['de face',[0,0,1],1],['trois-quarts',[.55,.5,.67],1],['profil',[0,1,.1],1],['de dos',[.2,.35,-.9],1],['mi-ouverte',[.3,.5,.8],.5],['bouton',[0,.6,.8],.14]];
+  for(const id of['dahlia-cafe','rose-peche','oeillet-corail','lys-stargazer','anthurium-bordeaux','renoncule-rose','scabieuse-noire','chrysantheme-mauve','tulipe-rouge','phalaenopsis-magenta'])for(const[nm,ax,op]of AX){const p=BYID[id];if(op<1&&!BUD3.has(p.f))continue;if(nm==='de dos'&&(p.f==='xPhalCluster'))continue;card(g,p.n,nm,s=>{seed=17;FN[p.f](s,0,Object.assign({},p.o,{ax,op,roll:0}))})}}
+{const sec=document.createElement('section');sec.innerHTML='<h2>Les contenants</h2><p>Tirés de tes 82 références : coupes sur pied, boules émaillées, verre, métal, pique-fleurs, bouquet noué, papier.</p><div class="g"></div>';W.append(sec);const g=sec.querySelector('.g');
+  for(const[id,v]of Object.entries(VZ))card(g,v.n,v.m,s=>{seed=31;if(v.kind==='hand'||v.kind==='wrap'){const bp=[VX,830];if(v.kind==='wrap')wrapBack(s,bp,v.paper);stemsBelow(s,9,id);if(v.kind==='wrap'){wrapFront(s,bp,v.paper);bow(s,VX,860,v.rib,.4)}else bow(s,VX,846,v.rib,.45)}
+    else{if(v.kind==='kenzan'||v.kind==='glass')stemsBelow(s,7,id);vessel(s,id,0,{noPlinth:1})}})}
+</script>
+</body>
+</html>

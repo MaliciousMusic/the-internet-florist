@@ -1,0 +1,2954 @@
+[
+ {
+  "n": 1,
+  "fichier": "014bdcb3de295e5762ec91fe006534e6.jpg",
+  "palette": [
+   {
+    "hex": "#915e4b",
+    "part": 0.253
+   },
+   {
+    "hex": "#723e2e",
+    "part": 0.216
+   },
+   {
+    "hex": "#bd6a4d",
+    "part": 0.173
+   },
+   {
+    "hex": "#521c17",
+    "part": 0.155
+   },
+   {
+    "hex": "#a2272b",
+    "part": 0.133
+   },
+   {
+    "hex": "#e08b7e",
+    "part": 0.07
+   }
+  ],
+  "part_fonce": 0.213,
+  "part_clair": 0.079,
+  "saturation_moy": 0.594,
+  "part_chaude": 0.998,
+  "familles_teintes": 3,
+  "type_palette": "analogue"
+ },
+ {
+  "n": 2,
+  "fichier": "01e9f2ffe9685e70b4adf414b9520742.jpg",
+  "palette": [
+   {
+    "hex": "#6a5244",
+    "part": 0.309
+   },
+   {
+    "hex": "#51241f",
+    "part": 0.221
+   },
+   {
+    "hex": "#d28c4c",
+    "part": 0.127
+   },
+   {
+    "hex": "#dba48a",
+    "part": 0.121
+   },
+   {
+    "hex": "#a35b2e",
+    "part": 0.117
+   },
+   {
+    "hex": "#966264",
+    "part": 0.105
+   }
+  ],
+  "part_fonce": 0.077,
+  "part_clair": 0.131,
+  "saturation_moy": 0.383,
+  "part_chaude": 0.977,
+  "familles_teintes": 3,
+  "type_palette": "analogue"
+ },
+ {
+  "n": 3,
+  "fichier": "0347a728e738dff4e67ece0a063040d1.jpg",
+  "palette": [
+   {
+    "hex": "#695748",
+    "part": 0.234
+   },
+   {
+    "hex": "#4a201e",
+    "part": 0.176
+   },
+   {
+    "hex": "#dca285",
+    "part": 0.155
+   },
+   {
+    "hex": "#c67e44",
+    "part": 0.15
+   },
+   {
+    "hex": "#783c2d",
+    "part": 0.146
+   },
+   {
+    "hex": "#965e5a",
+    "part": 0.139
+   }
+  ],
+  "part_fonce": 0.075,
+  "part_clair": 0.135,
+  "saturation_moy": 0.377,
+  "part_chaude": 0.981,
+  "familles_teintes": 3,
+  "type_palette": "analogue"
+ },
+ {
+  "n": 4,
+  "fichier": "05c22b880e817b1ec7803d72e9b94848.jpg",
+  "palette": [
+   {
+    "hex": "#c2af7b",
+    "part": 0.226
+   },
+   {
+    "hex": "#c48784",
+    "part": 0.22
+   },
+   {
+    "hex": "#9e8c66",
+    "part": 0.165
+   },
+   {
+    "hex": "#ae5e57",
+    "part": 0.158
+   },
+   {
+    "hex": "#cda161",
+    "part": 0.14
+   },
+   {
+    "hex": "#67708c",
+    "part": 0.091
+   }
+  ],
+  "part_fonce": 0.005,
+  "part_clair": 0.13,
+  "saturation_moy": 0.318,
+  "part_chaude": 0.893,
+  "familles_teintes": 3,
+  "type_palette": "analogue"
+ },
+ {
+  "n": 5,
+  "fichier": "069c7f202d2dbbbb7263fd3a467ac839.jpg",
+  "palette": [
+   {
+    "hex": "#813c37",
+    "part": 0.23
+   },
+   {
+    "hex": "#a85a59",
+    "part": 0.214
+   },
+   {
+    "hex": "#dd7d73",
+    "part": 0.174
+   },
+   {
+    "hex": "#541b1e",
+    "part": 0.156
+   },
+   {
+    "hex": "#e7a8a8",
+    "part": 0.148
+   },
+   {
+    "hex": "#94863a",
+    "part": 0.079
+   }
+  ],
+  "part_fonce": 0.124,
+  "part_clair": 0.275,
+  "saturation_moy": 0.546,
+  "part_chaude": 0.984,
+  "familles_teintes": 3,
+  "type_palette": "analogue"
+ },
+ {
+  "n": 6,
+  "fichier": "080f81ebca6d48f4c6c7c89e5cffc570.jpg",
+  "palette": [
+   {
+    "hex": "#aa6754",
+    "part": 0.216
+   },
+   {
+    "hex": "#914b3a",
+    "part": 0.196
+   },
+   {
+    "hex": "#75514a",
+    "part": 0.182
+   },
+   {
+    "hex": "#380a08",
+    "part": 0.17
+   },
+   {
+    "hex": "#763429",
+    "part": 0.158
+   },
+   {
+    "hex": "#d3946c",
+    "part": 0.078
+   }
+  ],
+  "part_fonce": 0.535,
+  "part_clair": 0.009,
+  "saturation_moy": 0.421,
+  "part_chaude": 1.0,
+  "familles_teintes": 2,
+  "type_palette": "tonale"
+ },
+ {
+  "n": 7,
+  "fichier": "0d383ef7328841d016dd4708d3e4a88b.jpg",
+  "palette": [
+   {
+    "hex": "#a27e5d",
+    "part": 0.279
+   },
+   {
+    "hex": "#8b5d44",
+    "part": 0.225
+   },
+   {
+    "hex": "#4f2316",
+    "part": 0.187
+   },
+   {
+    "hex": "#6b4230",
+    "part": 0.179
+   },
+   {
+    "hex": "#7a2e15",
+    "part": 0.067
+   },
+   {
+    "hex": "#eace9f",
+    "part": 0.064
+   }
+  ],
+  "part_fonce": 0.291,
+  "part_clair": 0.152,
+  "saturation_moy": 0.377,
+  "part_chaude": 1.0,
+  "familles_teintes": 2,
+  "type_palette": "tonale"
+ },
+ {
+  "n": 8,
+  "fichier": "0e7ed45d9f79ca160db2de39d1a7693c.jpg",
+  "palette": [
+   {
+    "hex": "#825972",
+    "part": 0.252
+   },
+   {
+    "hex": "#351d35",
+    "part": 0.214
+   },
+   {
+    "hex": "#6c495e",
+    "part": 0.213
+   },
+   {
+    "hex": "#503449",
+    "part": 0.174
+   },
+   {
+    "hex": "#946e84",
+    "part": 0.112
+   },
+   {
+    "hex": "#ba84b3",
+    "part": 0.035
+   }
+  ],
+  "part_fonce": 0.208,
+  "part_clair": 0.004,
+  "saturation_moy": 0.253,
+  "part_chaude": 0.883,
+  "familles_teintes": 2,
+  "type_palette": "tonale"
+ },
+ {
+  "n": 9,
+  "fichier": "14b28af3deb1f22bd437b1b31bfd8a6d.jpg",
+  "palette": [
+   {
+    "hex": "#625443",
+    "part": 0.271
+   },
+   {
+    "hex": "#d38797",
+    "part": 0.195
+   },
+   {
+    "hex": "#42392c",
+    "part": 0.194
+   },
+   {
+    "hex": "#9b4558",
+    "part": 0.156
+   },
+   {
+    "hex": "#70303b",
+    "part": 0.1
+   },
+   {
+    "hex": "#e33e72",
+    "part": 0.085
+   }
+  ],
+  "part_fonce": 0.296,
+  "part_clair": 0.114,
+  "saturation_moy": 0.31,
+  "part_chaude": 0.979,
+  "familles_teintes": 3,
+  "type_palette": "analogue"
+ },
+ {
+  "n": 10,
+  "fichier": "186b7e73906eec934d768fb9b18a6ceb.jpg",
+  "palette": [
+   {
+    "hex": "#3b0a13",
+    "part": 0.269
+   },
+   {
+    "hex": "#6e313b",
+    "part": 0.183
+   },
+   {
+    "hex": "#571623",
+    "part": 0.176
+   },
+   {
+    "hex": "#7b5c55",
+    "part": 0.154
+   },
+   {
+    "hex": "#452625",
+    "part": 0.116
+   },
+   {
+    "hex": "#9b756d",
+    "part": 0.101
+   }
+  ],
+  "part_fonce": 0.428,
+  "part_clair": 0.001,
+  "saturation_moy": 0.548,
+  "part_chaude": 0.999,
+  "familles_teintes": 3,
+  "type_palette": "analogue"
+ },
+ {
+  "n": 11,
+  "fichier": "1970b8db665b122b7859c4e83762b9c1.jpg",
+  "palette": [
+   {
+    "hex": "#482716",
+    "part": 0.212
+   },
+   {
+    "hex": "#9c985e",
+    "part": 0.199
+   },
+   {
+    "hex": "#6d6c2f",
+    "part": 0.179
+   },
+   {
+    "hex": "#742d2f",
+    "part": 0.169
+   },
+   {
+    "hex": "#985353",
+    "part": 0.146
+   },
+   {
+    "hex": "#ba7276",
+    "part": 0.095
+   }
+  ],
+  "part_fonce": 0.089,
+  "part_clair": 0.005,
+  "saturation_moy": 0.456,
+  "part_chaude": 0.935,
+  "familles_teintes": 4,
+  "type_palette": "multicolore"
+ },
+ {
+  "n": 12,
+  "fichier": "1d9707b610f1055f13dbd6b02b3d0e70.jpg",
+  "palette": [
+   {
+    "hex": "#b38d78",
+    "part": 0.251
+   },
+   {
+    "hex": "#90684e",
+    "part": 0.209
+   },
+   {
+    "hex": "#d4ad8b",
+    "part": 0.185
+   },
+   {
+    "hex": "#6d4229",
+    "part": 0.13
+   },
+   {
+    "hex": "#ce984c",
+    "part": 0.122
+   },
+   {
+    "hex": "#bf7b18",
+    "part": 0.104
+   }
+  ],
+  "part_fonce": 0.002,
+  "part_clair": 0.147,
+  "saturation_moy": 0.395,
+  "part_chaude": 0.998,
+  "familles_teintes": 3,
+  "type_palette": "analogue"
+ },
+ {
+  "n": 13,
+  "fichier": "2162bf24ab2eaea01c439bf5d4d857a0.jpg",
+  "palette": [
+   {
+    "hex": "#9b6596",
+    "part": 0.285
+   },
+   {
+    "hex": "#ac8674",
+    "part": 0.209
+   },
+   {
+    "hex": "#974a60",
+    "part": 0.183
+   },
+   {
+    "hex": "#c78bad",
+    "part": 0.153
+   },
+   {
+    "hex": "#5a3a44",
+    "part": 0.09
+   },
+   {
+    "hex": "#6c7741",
+    "part": 0.08
+   }
+  ],
+  "part_fonce": 0.014,
+  "part_clair": 0.045,
+  "saturation_moy": 0.314,
+  "part_chaude": 0.841,
+  "familles_teintes": 4,
+  "type_palette": "multicolore"
+ },
+ {
+  "n": 14,
+  "fichier": "26383b9bc813c48b1a2ad4d49cc9c7d7.jpg",
+  "palette": [
+   {
+    "hex": "#3468e8",
+    "part": 0.29
+   },
+   {
+    "hex": "#2345c2",
+    "part": 0.241
+   },
+   {
+    "hex": "#be787b",
+    "part": 0.138
+   },
+   {
+    "hex": "#548fef",
+    "part": 0.138
+   },
+   {
+    "hex": "#e38538",
+    "part": 0.099
+   },
+   {
+    "hex": "#1b2a75",
+    "part": 0.095
+   }
+  ],
+  "part_fonce": 0.341,
+  "part_clair": 0.313,
+  "saturation_moy": 0.526,
+  "part_chaude": 0.231,
+  "familles_teintes": 2,
+  "type_palette": "tonale"
+ },
+ {
+  "n": 15,
+  "fichier": "2645da8ec1d84860922bed8761df275f.jpg",
+  "palette": [
+   {
+    "hex": "#805f4c",
+    "part": 0.25
+   },
+   {
+    "hex": "#4f5021",
+    "part": 0.241
+   },
+   {
+    "hex": "#6f4237",
+    "part": 0.228
+   },
+   {
+    "hex": "#3b201a",
+    "part": 0.155
+   },
+   {
+    "hex": "#a6707f",
+    "part": 0.072
+   },
+   {
+    "hex": "#a99f48",
+    "part": 0.055
+   }
+  ],
+  "part_fonce": 0.29,
+  "part_clair": 0.003,
+  "saturation_moy": 0.474,
+  "part_chaude": 0.921,
+  "familles_teintes": 4,
+  "type_palette": "multicolore"
+ },
+ {
+  "n": 16,
+  "fichier": "269877b75623256b41c4c0d158055461.jpg",
+  "palette": [
+   {
+    "hex": "#c98e79",
+    "part": 0.23
+   },
+   {
+    "hex": "#9d1e3f",
+    "part": 0.186
+   },
+   {
+    "hex": "#94547e",
+    "part": 0.186
+   },
+   {
+    "hex": "#7f0b12",
+    "part": 0.152
+   },
+   {
+    "hex": "#9e7132",
+    "part": 0.144
+   },
+   {
+    "hex": "#40372e",
+    "part": 0.102
+   }
+  ],
+  "part_fonce": 0.081,
+  "part_clair": 0.093,
+  "saturation_moy": 0.539,
+  "part_chaude": 0.841,
+  "familles_teintes": 5,
+  "type_palette": "multicolore"
+ },
+ {
+  "n": 17,
+  "fichier": "278c61fc448e6e34fd5cd86bcb3851f6.jpg",
+  "palette": [
+   {
+    "hex": "#443932",
+    "part": 0.429
+   },
+   {
+    "hex": "#2e2d2e",
+    "part": 0.169
+   },
+   {
+    "hex": "#3c1719",
+    "part": 0.168
+   },
+   {
+    "hex": "#6b4d47",
+    "part": 0.133
+   },
+   {
+    "hex": "#5f2329",
+    "part": 0.092
+   },
+   {
+    "hex": "#b1966e",
+    "part": 0.009
+   }
+  ],
+  "part_fonce": 0.54,
+  "part_clair": 0.001,
+  "saturation_moy": 0.257,
+  "part_chaude": 0.904,
+  "familles_teintes": 3,
+  "type_palette": "analogue"
+ },
+ {
+  "n": 18,
+  "fichier": "291ad42746f06ef3b7980147f309b4f5.jpg",
+  "palette": [
+   {
+    "hex": "#361a25",
+    "part": 0.325
+   },
+   {
+    "hex": "#4c333e",
+    "part": 0.188
+   },
+   {
+    "hex": "#3b3a1f",
+    "part": 0.153
+   },
+   {
+    "hex": "#566731",
+    "part": 0.136
+   },
+   {
+    "hex": "#6b565d",
+    "part": 0.103
+   },
+   {
+    "hex": "#818f60",
+    "part": 0.095
+   }
+  ],
+  "part_fonce": 0.621,
+  "part_clair": 0.002,
+  "saturation_moy": 0.411,
+  "part_chaude": 0.658,
+  "familles_teintes": 5,
+  "type_palette": "multicolore"
+ },
+ {
+  "n": 19,
+  "fichier": "2b3a8a590d17dbfdec0dfe8a52fc3c8f.jpg",
+  "palette": [
+   {
+    "hex": "#4f4430",
+    "part": 0.326
+   },
+   {
+    "hex": "#3f291f",
+    "part": 0.238
+   },
+   {
+    "hex": "#c55e66",
+    "part": 0.149
+   },
+   {
+    "hex": "#a88b61",
+    "part": 0.111
+   },
+   {
+    "hex": "#d7b08b",
+    "part": 0.109
+   },
+   {
+    "hex": "#793336",
+    "part": 0.067
+   }
+  ],
+  "part_fonce": 0.394,
+  "part_clair": 0.091,
+  "saturation_moy": 0.379,
+  "part_chaude": 0.965,
+  "familles_teintes": 3,
+  "type_palette": "analogue"
+ },
+ {
+  "n": 20,
+  "fichier": "2e2bb20715b47b0e8975b068cc4abeb5.jpg",
+  "palette": [
+   {
+    "hex": "#3f090e",
+    "part": 0.273
+   },
+   {
+    "hex": "#661119",
+    "part": 0.236
+   },
+   {
+    "hex": "#a46a66",
+    "part": 0.152
+   },
+   {
+    "hex": "#9d2e33",
+    "part": 0.151
+   },
+   {
+    "hex": "#614448",
+    "part": 0.143
+   },
+   {
+    "hex": "#e4b09d",
+    "part": 0.044
+   }
+  ],
+  "part_fonce": 0.416,
+  "part_clair": 0.054,
+  "saturation_moy": 0.533,
+  "part_chaude": 0.942,
+  "familles_teintes": 2,
+  "type_palette": "tonale"
+ },
+ {
+  "n": 21,
+  "fichier": "2ec3993214ddacc8fa8d420cde9152b1.jpg",
+  "palette": [
+   {
+    "hex": "#4c342a",
+    "part": 0.242
+   },
+   {
+    "hex": "#3a1c18",
+    "part": 0.195
+   },
+   {
+    "hex": "#8c705b",
+    "part": 0.185
+   },
+   {
+    "hex": "#5f563c",
+    "part": 0.158
+   },
+   {
+    "hex": "#7a4143",
+    "part": 0.12
+   },
+   {
+    "hex": "#b09f7a",
+    "part": 0.1
+   }
+  ],
+  "part_fonce": 0.352,
+  "part_clair": 0.009,
+  "saturation_moy": 0.39,
+  "part_chaude": 0.978,
+  "familles_teintes": 4,
+  "type_palette": "multicolore"
+ },
+ {
+  "n": 22,
+  "fichier": "31205100a98397f3eb952d38dbf84df3.jpg",
+  "palette": [
+   {
+    "hex": "#783d47",
+    "part": 0.219
+   },
+   {
+    "hex": "#8d5754",
+    "part": 0.211
+   },
+   {
+    "hex": "#5f2734",
+    "part": 0.195
+   },
+   {
+    "hex": "#41131b",
+    "part": 0.159
+   },
+   {
+    "hex": "#a1716d",
+    "part": 0.158
+   },
+   {
+    "hex": "#bc9583",
+    "part": 0.058
+   }
+  ],
+  "part_fonce": 0.131,
+  "part_clair": 0.025,
+  "saturation_moy": 0.442,
+  "part_chaude": 0.994,
+  "familles_teintes": 2,
+  "type_palette": "tonale"
+ },
+ {
+  "n": 23,
+  "fichier": "31c091b113ea36a081a366911f5fa714.jpg",
+  "palette": [
+   {
+    "hex": "#5f4439",
+    "part": 0.28
+   },
+   {
+    "hex": "#948165",
+    "part": 0.179
+   },
+   {
+    "hex": "#74673d",
+    "part": 0.159
+   },
+   {
+    "hex": "#7f5462",
+    "part": 0.151
+   },
+   {
+    "hex": "#c4c089",
+    "part": 0.117
+   },
+   {
+    "hex": "#c8c4c9",
+    "part": 0.114
+   }
+  ],
+  "part_fonce": 0.043,
+  "part_clair": 0.11,
+  "saturation_moy": 0.216,
+  "part_chaude": 0.945,
+  "familles_teintes": 5,
+  "type_palette": "multicolore"
+ },
+ {
+  "n": 24,
+  "fichier": "34a21795f854948e2a70367783a1d4f5.jpg",
+  "palette": [
+   {
+    "hex": "#d26b90",
+    "part": 0.296
+   },
+   {
+    "hex": "#dfa797",
+    "part": 0.252
+   },
+   {
+    "hex": "#9f715c",
+    "part": 0.233
+   },
+   {
+    "hex": "#d12258",
+    "part": 0.102
+   },
+   {
+    "hex": "#76a2c4",
+    "part": 0.078
+   },
+   {
+    "hex": "#534e5b",
+    "part": 0.04
+   }
+  ],
+  "part_fonce": 0.001,
+  "part_clair": 0.338,
+  "saturation_moy": 0.339,
+  "part_chaude": 0.876,
+  "familles_teintes": 4,
+  "type_palette": "multicolore"
+ },
+ {
+  "n": 25,
+  "fichier": "38a2ea8ba04307a69753bc69c97e9ab1.jpg",
+  "palette": [
+   {
+    "hex": "#371e2f",
+    "part": 0.315
+   },
+   {
+    "hex": "#532d49",
+    "part": 0.263
+   },
+   {
+    "hex": "#783a70",
+    "part": 0.165
+   },
+   {
+    "hex": "#9f62af",
+    "part": 0.096
+   },
+   {
+    "hex": "#685937",
+    "part": 0.081
+   },
+   {
+    "hex": "#957167",
+    "part": 0.081
+   }
+  ],
+  "part_fonce": 0.595,
+  "part_clair": 0.004,
+  "saturation_moy": 0.238,
+  "part_chaude": 0.766,
+  "familles_teintes": 3,
+  "type_palette": "analogue"
+ },
+ {
+  "n": 26,
+  "fichier": "3a3599e6d9ddec38314b2f890640cf41.jpg",
+  "palette": [
+   {
+    "hex": "#92321f",
+    "part": 0.261
+   },
+   {
+    "hex": "#5d1c13",
+    "part": 0.216
+   },
+   {
+    "hex": "#7d573f",
+    "part": 0.18
+   },
+   {
+    "hex": "#b95147",
+    "part": 0.137
+   },
+   {
+    "hex": "#d54f17",
+    "part": 0.137
+   },
+   {
+    "hex": "#da8a56",
+    "part": 0.069
+   }
+  ],
+  "part_fonce": 0.094,
+  "part_clair": 0.088,
+  "saturation_moy": 0.435,
+  "part_chaude": 1.0,
+  "familles_teintes": 2,
+  "type_palette": "tonale"
+ },
+ {
+  "n": 27,
+  "fichier": "3a8088397234387eb67572b4fdc3bcc2.jpg",
+  "palette": [
+   {
+    "hex": "#a76b53",
+    "part": 0.292
+   },
+   {
+    "hex": "#bb8f77",
+    "part": 0.22
+   },
+   {
+    "hex": "#e1b365",
+    "part": 0.149
+   },
+   {
+    "hex": "#724e3c",
+    "part": 0.126
+   },
+   {
+    "hex": "#de7aa2",
+    "part": 0.116
+   },
+   {
+    "hex": "#efa1cf",
+    "part": 0.098
+   }
+  ],
+  "part_fonce": 0.009,
+  "part_clair": 0.352,
+  "saturation_moy": 0.401,
+  "part_chaude": 0.968,
+  "familles_teintes": 4,
+  "type_palette": "multicolore"
+ },
+ {
+  "n": 28,
+  "fichier": "3e8e3cf29406db30c24b5278347a95f8.jpg",
+  "palette": [
+   {
+    "hex": "#691a2b",
+    "part": 0.252
+   },
+   {
+    "hex": "#441016",
+    "part": 0.238
+   },
+   {
+    "hex": "#982c4b",
+    "part": 0.164
+   },
+   {
+    "hex": "#af5868",
+    "part": 0.154
+   },
+   {
+    "hex": "#784946",
+    "part": 0.108
+   },
+   {
+    "hex": "#dd8f98",
+    "part": 0.084
+   }
+  ],
+  "part_fonce": 0.15,
+  "part_clair": 0.066,
+  "saturation_moy": 0.474,
+  "part_chaude": 0.989,
+  "familles_teintes": 1,
+  "type_palette": "tonale"
+ },
+ {
+  "n": 29,
+  "fichier": "402bb79fff4b729ced301e2c21e5a3fa.jpg",
+  "palette": [
+   {
+    "hex": "#af8c54",
+    "part": 0.231
+   },
+   {
+    "hex": "#d5969c",
+    "part": 0.186
+   },
+   {
+    "hex": "#7377a4",
+    "part": 0.167
+   },
+   {
+    "hex": "#b03955",
+    "part": 0.166
+   },
+   {
+    "hex": "#5c352c",
+    "part": 0.151
+   },
+   {
+    "hex": "#203f99",
+    "part": 0.099
+   }
+  ],
+  "part_fonce": 0.276,
+  "part_clair": 0.186,
+  "saturation_moy": 0.285,
+  "part_chaude": 0.707,
+  "familles_teintes": 6,
+  "type_palette": "multicolore"
+ },
+ {
+  "n": 30,
+  "fichier": "443f6ac3f09e3aab78d118869d96cabc.jpg",
+  "palette": [
+   {
+    "hex": "#edca34",
+    "part": 0.308
+   },
+   {
+    "hex": "#c3942b",
+    "part": 0.224
+   },
+   {
+    "hex": "#391c3e",
+    "part": 0.201
+   },
+   {
+    "hex": "#71502f",
+    "part": 0.113
+   },
+   {
+    "hex": "#5f3879",
+    "part": 0.1
+   },
+   {
+    "hex": "#ae8da6",
+    "part": 0.054
+   }
+  ],
+  "part_fonce": 0.345,
+  "part_clair": 0.222,
+  "saturation_moy": 0.431,
+  "part_chaude": 0.813,
+  "familles_teintes": 2,
+  "type_palette": "tonale"
+ },
+ {
+  "n": 31,
+  "fichier": "4ac459c8407ef61b4ef63f6724bf6de0.jpg",
+  "palette": [
+   {
+    "hex": "#3a1a1c",
+    "part": 0.276
+   },
+   {
+    "hex": "#54272d",
+    "part": 0.202
+   },
+   {
+    "hex": "#1b203b",
+    "part": 0.178
+   },
+   {
+    "hex": "#722b3c",
+    "part": 0.153
+   },
+   {
+    "hex": "#7b4d4b",
+    "part": 0.144
+   },
+   {
+    "hex": "#976d62",
+    "part": 0.047
+   }
+  ],
+  "part_fonce": 0.554,
+  "part_clair": 0.0,
+  "saturation_moy": 0.396,
+  "part_chaude": 0.839,
+  "familles_teintes": 3,
+  "type_palette": "analogue"
+ },
+ {
+  "n": 32,
+  "fichier": "4f50dcf7733d070e0be58b02d0697e09.jpg",
+  "palette": [
+   {
+    "hex": "#884e6f",
+    "part": 0.285
+   },
+   {
+    "hex": "#9a6585",
+    "part": 0.284
+   },
+   {
+    "hex": "#802e57",
+    "part": 0.161
+   },
+   {
+    "hex": "#b980a0",
+    "part": 0.132
+   },
+   {
+    "hex": "#6c1936",
+    "part": 0.101
+   },
+   {
+    "hex": "#8d7e58",
+    "part": 0.036
+   }
+  ],
+  "part_fonce": 0.001,
+  "part_clair": 0.018,
+  "saturation_moy": 0.403,
+  "part_chaude": 0.999,
+  "familles_teintes": 2,
+  "type_palette": "tonale"
+ },
+ {
+  "n": 33,
+  "fichier": "50c1f78cc8e135b6f4cf007940ae6ca6.jpg",
+  "palette": [
+   {
+    "hex": "#d0c150",
+    "part": 0.326
+   },
+   {
+    "hex": "#ede38a",
+    "part": 0.17
+   },
+   {
+    "hex": "#9b897e",
+    "part": 0.16
+   },
+   {
+    "hex": "#81854d",
+    "part": 0.152
+   },
+   {
+    "hex": "#425035",
+    "part": 0.098
+   },
+   {
+    "hex": "#576b72",
+    "part": 0.094
+   }
+  ],
+  "part_fonce": 0.017,
+  "part_clair": 0.192,
+  "saturation_moy": 0.25,
+  "part_chaude": 0.699,
+  "familles_teintes": 3,
+  "type_palette": "analogue"
+ },
+ {
+  "n": 34,
+  "fichier": "56dd33d46d1a2a0f7763560b2a79f4dc.jpg",
+  "palette": [
+   {
+    "hex": "#470f17",
+    "part": 0.27
+   },
+   {
+    "hex": "#731930",
+    "part": 0.207
+   },
+   {
+    "hex": "#903758",
+    "part": 0.171
+   },
+   {
+    "hex": "#514629",
+    "part": 0.143
+   },
+   {
+    "hex": "#a5657b",
+    "part": 0.114
+   },
+   {
+    "hex": "#987a2d",
+    "part": 0.095
+   }
+  ],
+  "part_fonce": 0.236,
+  "part_clair": 0.003,
+  "saturation_moy": 0.653,
+  "part_chaude": 0.929,
+  "familles_teintes": 4,
+  "type_palette": "multicolore"
+ },
+ {
+  "n": 35,
+  "fichier": "58396e8289c2be359339e3e8866e5495.jpg",
+  "palette": [
+   {
+    "hex": "#ad4758",
+    "part": 0.262
+   },
+   {
+    "hex": "#c56c77",
+    "part": 0.247
+   },
+   {
+    "hex": "#8e2138",
+    "part": 0.179
+   },
+   {
+    "hex": "#db939a",
+    "part": 0.174
+   },
+   {
+    "hex": "#e39d46",
+    "part": 0.082
+   },
+   {
+    "hex": "#f0c780",
+    "part": 0.056
+   }
+  ],
+  "part_fonce": 0.0,
+  "part_clair": 0.243,
+  "saturation_moy": 0.399,
+  "part_chaude": 1.0,
+  "familles_teintes": 3,
+  "type_palette": "analogue"
+ },
+ {
+  "n": 36,
+  "fichier": "59281ced60ea759d42684106f1890522.jpg",
+  "palette": [
+   {
+    "hex": "#603429",
+    "part": 0.365
+   },
+   {
+    "hex": "#7b3a2c",
+    "part": 0.259
+   },
+   {
+    "hex": "#462219",
+    "part": 0.232
+   },
+   {
+    "hex": "#9c8171",
+    "part": 0.065
+   },
+   {
+    "hex": "#b98492",
+    "part": 0.041
+   },
+   {
+    "hex": "#a86578",
+    "part": 0.039
+   }
+  ],
+  "part_fonce": 0.121,
+  "part_clair": 0.01,
+  "saturation_moy": 0.455,
+  "part_chaude": 0.999,
+  "familles_teintes": 2,
+  "type_palette": "tonale"
+ },
+ {
+  "n": 37,
+  "fichier": "5dd97209a65bb3268fe8fec0b07f1f53.jpg",
+  "palette": [
+   {
+    "hex": "#a2452d",
+    "part": 0.293
+   },
+   {
+    "hex": "#6c5a49",
+    "part": 0.218
+   },
+   {
+    "hex": "#4b2427",
+    "part": 0.165
+   },
+   {
+    "hex": "#8c5c83",
+    "part": 0.153
+   },
+   {
+    "hex": "#683b67",
+    "part": 0.123
+   },
+   {
+    "hex": "#a27eb3",
+    "part": 0.048
+   }
+  ],
+  "part_fonce": 0.168,
+  "part_clair": 0.04,
+  "saturation_moy": 0.315,
+  "part_chaude": 0.9,
+  "familles_teintes": 4,
+  "type_palette": "multicolore"
+ },
+ {
+  "n": 38,
+  "fichier": "61df36664035ac0aba82e2047ec8971d.jpg",
+  "palette": [
+   {
+    "hex": "#f0b392",
+    "part": 0.237
+   },
+   {
+    "hex": "#985e76",
+    "part": 0.21
+   },
+   {
+    "hex": "#e28566",
+    "part": 0.189
+   },
+   {
+    "hex": "#6a3930",
+    "part": 0.137
+   },
+   {
+    "hex": "#bf970f",
+    "part": 0.128
+   },
+   {
+    "hex": "#be4b49",
+    "part": 0.099
+   }
+  ],
+  "part_fonce": 0.07,
+  "part_clair": 0.33,
+  "saturation_moy": 0.419,
+  "part_chaude": 0.941,
+  "familles_teintes": 3,
+  "type_palette": "analogue"
+ },
+ {
+  "n": 39,
+  "fichier": "6850e41286873db45c15428c2f2fdf84.jpg",
+  "palette": [
+   {
+    "hex": "#3b1f20",
+    "part": 0.293
+   },
+   {
+    "hex": "#522d2c",
+    "part": 0.254
+   },
+   {
+    "hex": "#64433b",
+    "part": 0.194
+   },
+   {
+    "hex": "#765c4b",
+    "part": 0.136
+   },
+   {
+    "hex": "#8f715f",
+    "part": 0.086
+   },
+   {
+    "hex": "#ae8d7c",
+    "part": 0.037
+   }
+  ],
+  "part_fonce": 0.629,
+  "part_clair": 0.01,
+  "saturation_moy": 0.274,
+  "part_chaude": 0.956,
+  "familles_teintes": 3,
+  "type_palette": "analogue"
+ },
+ {
+  "n": 40,
+  "fichier": "6da1563aa101d8f32bd3e4cbf44f808d.jpg",
+  "palette": [
+   {
+    "hex": "#cdb373",
+    "part": 0.271
+   },
+   {
+    "hex": "#b09348",
+    "part": 0.242
+   },
+   {
+    "hex": "#a77d17",
+    "part": 0.16
+   },
+   {
+    "hex": "#daa81c",
+    "part": 0.136
+   },
+   {
+    "hex": "#e0cd98",
+    "part": 0.104
+   },
+   {
+    "hex": "#796b2f",
+    "part": 0.088
+   }
+  ],
+  "part_fonce": 0.353,
+  "part_clair": 0.223,
+  "saturation_moy": 0.419,
+  "part_chaude": 0.998,
+  "familles_teintes": 1,
+  "type_palette": "tonale"
+ },
+ {
+  "n": 41,
+  "fichier": "7368b5b88c41139e51c7fc0fa51c11f9.jpg",
+  "palette": [
+   {
+    "hex": "#6d3b2f",
+    "part": 0.327
+   },
+   {
+    "hex": "#3e2434",
+    "part": 0.299
+   },
+   {
+    "hex": "#886560",
+    "part": 0.117
+   },
+   {
+    "hex": "#992858",
+    "part": 0.108
+   },
+   {
+    "hex": "#c05382",
+    "part": 0.087
+   },
+   {
+    "hex": "#dc8cbb",
+    "part": 0.062
+   }
+  ],
+  "part_fonce": 0.343,
+  "part_clair": 0.059,
+  "saturation_moy": 0.512,
+  "part_chaude": 0.874,
+  "familles_teintes": 3,
+  "type_palette": "analogue"
+ },
+ {
+  "n": 42,
+  "fichier": "747dd6c4bda40e7d394841a2510c53d9.jpg",
+  "palette": [
+   {
+    "hex": "#8e111e",
+    "part": 0.279
+   },
+   {
+    "hex": "#4e0d19",
+    "part": 0.24
+   },
+   {
+    "hex": "#e42633",
+    "part": 0.146
+   },
+   {
+    "hex": "#9f5a59",
+    "part": 0.129
+   },
+   {
+    "hex": "#464a60",
+    "part": 0.125
+   },
+   {
+    "hex": "#7098c7",
+    "part": 0.08
+   }
+  ],
+  "part_fonce": 0.129,
+  "part_clair": 0.078,
+  "saturation_moy": 0.386,
+  "part_chaude": 0.818,
+  "familles_teintes": 3,
+  "type_palette": "analogue"
+ },
+ {
+  "n": 43,
+  "fichier": "75f80065fc23982242ffd357b0b9f6fb.jpg",
+  "palette": [
+   {
+    "hex": "#96735b",
+    "part": 0.197
+   },
+   {
+    "hex": "#814632",
+    "part": 0.186
+   },
+   {
+    "hex": "#32406f",
+    "part": 0.184
+   },
+   {
+    "hex": "#6b7aa2",
+    "part": 0.182
+   },
+   {
+    "hex": "#444e17",
+    "part": 0.159
+   },
+   {
+    "hex": "#b98792",
+    "part": 0.092
+   }
+  ],
+  "part_fonce": 0.408,
+  "part_clair": 0.054,
+  "saturation_moy": 0.274,
+  "part_chaude": 0.443,
+  "familles_teintes": 5,
+  "type_palette": "multicolore"
+ },
+ {
+  "n": 44,
+  "fichier": "77568bb9ad2429db5d805c4f23225c3f.jpg",
+  "palette": [
+   {
+    "hex": "#b08453",
+    "part": 0.232
+   },
+   {
+    "hex": "#c4a47d",
+    "part": 0.183
+   },
+   {
+    "hex": "#d65683",
+    "part": 0.171
+   },
+   {
+    "hex": "#e896b9",
+    "part": 0.151
+   },
+   {
+    "hex": "#c1282c",
+    "part": 0.133
+   },
+   {
+    "hex": "#93553b",
+    "part": 0.13
+   }
+  ],
+  "part_fonce": 0.0,
+  "part_clair": 0.425,
+  "saturation_moy": 0.466,
+  "part_chaude": 0.989,
+  "familles_teintes": 4,
+  "type_palette": "multicolore"
+ },
+ {
+  "n": 45,
+  "fichier": "77bdd2bb80895cc3c08620a672d44290.jpg",
+  "palette": [
+   {
+    "hex": "#34252e",
+    "part": 0.261
+   },
+   {
+    "hex": "#7b444b",
+    "part": 0.255
+   },
+   {
+    "hex": "#651e29",
+    "part": 0.23
+   },
+   {
+    "hex": "#9f6e6f",
+    "part": 0.152
+   },
+   {
+    "hex": "#4e4890",
+    "part": 0.079
+   },
+   {
+    "hex": "#dab8a2",
+    "part": 0.022
+   }
+  ],
+  "part_fonce": 0.344,
+  "part_clair": 0.021,
+  "saturation_moy": 0.278,
+  "part_chaude": 0.837,
+  "familles_teintes": 3,
+  "type_palette": "analogue"
+ },
+ {
+  "n": 46,
+  "fichier": "79a621390f1854cc8c134c325d9c81da.jpg",
+  "palette": [
+   {
+    "hex": "#957f51",
+    "part": 0.259
+   },
+   {
+    "hex": "#6f623a",
+    "part": 0.253
+   },
+   {
+    "hex": "#a33624",
+    "part": 0.176
+   },
+   {
+    "hex": "#523a1d",
+    "part": 0.156
+   },
+   {
+    "hex": "#da7527",
+    "part": 0.1
+   },
+   {
+    "hex": "#c1b36b",
+    "part": 0.057
+   }
+  ],
+  "part_fonce": 0.118,
+  "part_clair": 0.071,
+  "saturation_moy": 0.364,
+  "part_chaude": 0.932,
+  "familles_teintes": 3,
+  "type_palette": "analogue"
+ },
+ {
+  "n": 47,
+  "fichier": "7c8f0b8fae2308267073ddf4b5714b2a.jpg",
+  "palette": [
+   {
+    "hex": "#4b3328",
+    "part": 0.248
+   },
+   {
+    "hex": "#3d161a",
+    "part": 0.247
+   },
+   {
+    "hex": "#6a4a37",
+    "part": 0.19
+   },
+   {
+    "hex": "#7b1e33",
+    "part": 0.131
+   },
+   {
+    "hex": "#b15567",
+    "part": 0.096
+   },
+   {
+    "hex": "#c49788",
+    "part": 0.088
+   }
+  ],
+  "part_fonce": 0.542,
+  "part_clair": 0.043,
+  "saturation_moy": 0.483,
+  "part_chaude": 0.959,
+  "familles_teintes": 3,
+  "type_palette": "analogue"
+ },
+ {
+  "n": 48,
+  "fichier": "833d2baa5b1c219f40bf30e7e3259260.jpg",
+  "palette": [
+   {
+    "hex": "#c97687",
+    "part": 0.264
+   },
+   {
+    "hex": "#bd5573",
+    "part": 0.206
+   },
+   {
+    "hex": "#d8929d",
+    "part": 0.202
+   },
+   {
+    "hex": "#4f401e",
+    "part": 0.177
+   },
+   {
+    "hex": "#a52f54",
+    "part": 0.094
+   },
+   {
+    "hex": "#968441",
+    "part": 0.058
+   }
+  ],
+  "part_fonce": 0.086,
+  "part_clair": 0.286,
+  "saturation_moy": 0.482,
+  "part_chaude": 0.977,
+  "familles_teintes": 3,
+  "type_palette": "analogue"
+ },
+ {
+  "n": 49,
+  "fichier": "844dd7a6db2af5f4c027e8afc3d6cfd3.jpg",
+  "palette": [
+   {
+    "hex": "#9b824f",
+    "part": 0.284
+   },
+   {
+    "hex": "#ce6b6e",
+    "part": 0.2
+   },
+   {
+    "hex": "#d4b473",
+    "part": 0.158
+   },
+   {
+    "hex": "#3d2b2d",
+    "part": 0.139
+   },
+   {
+    "hex": "#be1f4d",
+    "part": 0.117
+   },
+   {
+    "hex": "#5e728c",
+    "part": 0.102
+   }
+  ],
+  "part_fonce": 0.312,
+  "part_clair": 0.172,
+  "saturation_moy": 0.394,
+  "part_chaude": 0.836,
+  "familles_teintes": 5,
+  "type_palette": "multicolore"
+ },
+ {
+  "n": 50,
+  "fichier": "85acfa4f389b48751f63f53dfcad219d.jpg",
+  "palette": [
+   {
+    "hex": "#3a2b34",
+    "part": 0.239
+   },
+   {
+    "hex": "#7e2f35",
+    "part": 0.194
+   },
+   {
+    "hex": "#b18057",
+    "part": 0.191
+   },
+   {
+    "hex": "#6e702c",
+    "part": 0.155
+   },
+   {
+    "hex": "#d29fa2",
+    "part": 0.127
+   },
+   {
+    "hex": "#88558f",
+    "part": 0.093
+   }
+  ],
+  "part_fonce": 0.29,
+  "part_clair": 0.104,
+  "saturation_moy": 0.43,
+  "part_chaude": 0.742,
+  "familles_teintes": 4,
+  "type_palette": "multicolore"
+ },
+ {
+  "n": 51,
+  "fichier": "88f311e20484fe400f7b6c5b50af3cf9.jpg",
+  "palette": [
+   {
+    "hex": "#6b3d48",
+    "part": 0.246
+   },
+   {
+    "hex": "#592134",
+    "part": 0.223
+   },
+   {
+    "hex": "#3e1021",
+    "part": 0.2
+   },
+   {
+    "hex": "#874c60",
+    "part": 0.189
+   },
+   {
+    "hex": "#a4697f",
+    "part": 0.119
+   },
+   {
+    "hex": "#2d313c",
+    "part": 0.023
+   }
+  ],
+  "part_fonce": 0.11,
+  "part_clair": 0.025,
+  "saturation_moy": 0.2,
+  "part_chaude": 0.984,
+  "familles_teintes": 3,
+  "type_palette": "analogue"
+ },
+ {
+  "n": 52,
+  "fichier": "913e0312d4eab77955303d689f7b78ea.jpg",
+  "palette": [
+   {
+    "hex": "#644842",
+    "part": 0.28
+   },
+   {
+    "hex": "#460d10",
+    "part": 0.232
+   },
+   {
+    "hex": "#46242d",
+    "part": 0.178
+   },
+   {
+    "hex": "#8e1832",
+    "part": 0.13
+   },
+   {
+    "hex": "#a16667",
+    "part": 0.124
+   },
+   {
+    "hex": "#d1909c",
+    "part": 0.056
+   }
+  ],
+  "part_fonce": 0.396,
+  "part_clair": 0.031,
+  "saturation_moy": 0.558,
+  "part_chaude": 0.947,
+  "familles_teintes": 2,
+  "type_palette": "tonale"
+ },
+ {
+  "n": 53,
+  "fichier": "992c6eaa074041f793f7807a5302d254.jpg",
+  "palette": [
+   {
+    "hex": "#481b1b",
+    "part": 0.294
+   },
+   {
+    "hex": "#67533b",
+    "part": 0.253
+   },
+   {
+    "hex": "#998a4e",
+    "part": 0.161
+   },
+   {
+    "hex": "#931b31",
+    "part": 0.138
+   },
+   {
+    "hex": "#c15667",
+    "part": 0.101
+   },
+   {
+    "hex": "#e5c59a",
+    "part": 0.052
+   }
+  ],
+  "part_fonce": 0.304,
+  "part_clair": 0.053,
+  "saturation_moy": 0.384,
+  "part_chaude": 0.991,
+  "familles_teintes": 3,
+  "type_palette": "analogue"
+ },
+ {
+  "n": 54,
+  "fichier": "9ab0f7e4e60b5701c47cbc9d9f77d3e0.jpg",
+  "palette": [
+   {
+    "hex": "#a81d1d",
+    "part": 0.238
+   },
+   {
+    "hex": "#cc4138",
+    "part": 0.186
+   },
+   {
+    "hex": "#570b0f",
+    "part": 0.175
+   },
+   {
+    "hex": "#987b59",
+    "part": 0.17
+   },
+   {
+    "hex": "#784e3a",
+    "part": 0.156
+   },
+   {
+    "hex": "#d79176",
+    "part": 0.076
+   }
+  ],
+  "part_fonce": 0.411,
+  "part_clair": 0.082,
+  "saturation_moy": 0.455,
+  "part_chaude": 0.998,
+  "familles_teintes": 3,
+  "type_palette": "analogue"
+ },
+ {
+  "n": 55,
+  "fichier": "9fd0013517d96c3df3d32b677658b162.jpg",
+  "palette": [
+   {
+    "hex": "#28343b",
+    "part": 0.289
+   },
+   {
+    "hex": "#7f723f",
+    "part": 0.241
+   },
+   {
+    "hex": "#355a91",
+    "part": 0.165
+   },
+   {
+    "hex": "#c7b769",
+    "part": 0.153
+   },
+   {
+    "hex": "#8bb1e5",
+    "part": 0.089
+   },
+   {
+    "hex": "#de6a13",
+    "part": 0.063
+   }
+  ],
+  "part_fonce": 0.23,
+  "part_clair": 0.116,
+  "saturation_moy": 0.418,
+  "part_chaude": 0.451,
+  "familles_teintes": 4,
+  "type_palette": "multicolore"
+ },
+ {
+  "n": 56,
+  "fichier": "a563c13641ae737e2ca0779abdf21c48.jpg",
+  "palette": [
+   {
+    "hex": "#655493",
+    "part": 0.217
+   },
+   {
+    "hex": "#866a2a",
+    "part": 0.202
+   },
+   {
+    "hex": "#421948",
+    "part": 0.177
+   },
+   {
+    "hex": "#7c1c3e",
+    "part": 0.154
+   },
+   {
+    "hex": "#d0a61e",
+    "part": 0.146
+   },
+   {
+    "hex": "#ac946d",
+    "part": 0.105
+   }
+  ],
+  "part_fonce": 0.091,
+  "part_clair": 0.103,
+  "saturation_moy": 0.586,
+  "part_chaude": 0.679,
+  "familles_teintes": 5,
+  "type_palette": "multicolore"
+ },
+ {
+  "n": 57,
+  "fichier": "a98ef67b27b67a524f37ffebdbe1c40f.jpg",
+  "palette": [
+   {
+    "hex": "#720b12",
+    "part": 0.289
+   },
+   {
+    "hex": "#480b0e",
+    "part": 0.251
+   },
+   {
+    "hex": "#6d292c",
+    "part": 0.168
+   },
+   {
+    "hex": "#804a4a",
+    "part": 0.118
+   },
+   {
+    "hex": "#ddc5a3",
+    "part": 0.091
+   },
+   {
+    "hex": "#947468",
+    "part": 0.082
+   }
+  ],
+  "part_fonce": 0.079,
+  "part_clair": 0.1,
+  "saturation_moy": 0.349,
+  "part_chaude": 1.0,
+  "familles_teintes": 3,
+  "type_palette": "analogue"
+ },
+ {
+  "n": 58,
+  "fichier": "aaf0c74c1232bba5ba4aa031fef44639.jpg",
+  "palette": [
+   {
+    "hex": "#cc283b",
+    "part": 0.256
+   },
+   {
+    "hex": "#da777c",
+    "part": 0.201
+   },
+   {
+    "hex": "#79161f",
+    "part": 0.201
+   },
+   {
+    "hex": "#834f67",
+    "part": 0.135
+   },
+   {
+    "hex": "#d22899",
+    "part": 0.113
+   },
+   {
+    "hex": "#bf76d2",
+    "part": 0.093
+   }
+  ],
+  "part_fonce": 0.024,
+  "part_clair": 0.4,
+  "saturation_moy": 0.67,
+  "part_chaude": 0.903,
+  "familles_teintes": 3,
+  "type_palette": "analogue"
+ },
+ {
+  "n": 59,
+  "fichier": "acfccedd21758287e0e865e54959e79a.jpg",
+  "palette": [
+   {
+    "hex": "#445a91",
+    "part": 0.314
+   },
+   {
+    "hex": "#69613c",
+    "part": 0.257
+   },
+   {
+    "hex": "#d08092",
+    "part": 0.17
+   },
+   {
+    "hex": "#e4bba2",
+    "part": 0.106
+   },
+   {
+    "hex": "#c5433d",
+    "part": 0.09
+   },
+   {
+    "hex": "#cf9c2f",
+    "part": 0.062
+   }
+  ],
+  "part_fonce": 0.174,
+  "part_clair": 0.24,
+  "saturation_moy": 0.446,
+  "part_chaude": 0.577,
+  "familles_teintes": 5,
+  "type_palette": "multicolore"
+ },
+ {
+  "n": 60,
+  "fichier": "b4ba71fd4d0fecb0fae4d4e261201e65.jpg",
+  "palette": [
+   {
+    "hex": "#4f0f20",
+    "part": 0.29
+   },
+   {
+    "hex": "#821a30",
+    "part": 0.222
+   },
+   {
+    "hex": "#1b2431",
+    "part": 0.143
+   },
+   {
+    "hex": "#6b4f45",
+    "part": 0.135
+   },
+   {
+    "hex": "#b03f51",
+    "part": 0.107
+   },
+   {
+    "hex": "#af7f71",
+    "part": 0.102
+   }
+  ],
+  "part_fonce": 0.373,
+  "part_clair": 0.025,
+  "saturation_moy": 0.587,
+  "part_chaude": 0.921,
+  "familles_teintes": 2,
+  "type_palette": "tonale"
+ },
+ {
+  "n": 61,
+  "fichier": "b90f228533ae3f6b63ca1ab2ee90f8ca.jpg",
+  "palette": [
+   {
+    "hex": "#8d5559",
+    "part": 0.205
+   },
+   {
+    "hex": "#784829",
+    "part": 0.199
+   },
+   {
+    "hex": "#ac7866",
+    "part": 0.187
+   },
+   {
+    "hex": "#b56b2b",
+    "part": 0.158
+   },
+   {
+    "hex": "#6e2748",
+    "part": 0.129
+   },
+   {
+    "hex": "#cba379",
+    "part": 0.122
+   }
+  ],
+  "part_fonce": 0.088,
+  "part_clair": 0.069,
+  "saturation_moy": 0.473,
+  "part_chaude": 0.991,
+  "familles_teintes": 4,
+  "type_palette": "multicolore"
+ },
+ {
+  "n": 62,
+  "fichier": "ba4a766faaf7ac6e4fc473b5f29c5ee3.jpg",
+  "palette": [
+   {
+    "hex": "#7c91c2",
+    "part": 0.489
+   },
+   {
+    "hex": "#5f749e",
+    "part": 0.187
+   },
+   {
+    "hex": "#e1a689",
+    "part": 0.119
+   },
+   {
+    "hex": "#ac9666",
+    "part": 0.098
+   },
+   {
+    "hex": "#b95e4e",
+    "part": 0.066
+   },
+   {
+    "hex": "#51615d",
+    "part": 0.043
+   }
+  ],
+  "part_fonce": 0.001,
+  "part_clair": 0.225,
+  "saturation_moy": 0.299,
+  "part_chaude": 0.281,
+  "familles_teintes": 2,
+  "type_palette": "tonale"
+ },
+ {
+  "n": 63,
+  "fichier": "bdac9a77ae762d68d16a4c93d2a5a45f.jpg",
+  "palette": [
+   {
+    "hex": "#3b1721",
+    "part": 0.279
+   },
+   {
+    "hex": "#582c3f",
+    "part": 0.222
+   },
+   {
+    "hex": "#3a3520",
+    "part": 0.158
+   },
+   {
+    "hex": "#ae6a90",
+    "part": 0.127
+   },
+   {
+    "hex": "#5d4c34",
+    "part": 0.12
+   },
+   {
+    "hex": "#873b63",
+    "part": 0.095
+   }
+  ],
+  "part_fonce": 0.735,
+  "part_clair": 0.013,
+  "saturation_moy": 0.4,
+  "part_chaude": 0.952,
+  "familles_teintes": 3,
+  "type_palette": "analogue"
+ },
+ {
+  "n": 64,
+  "fichier": "bddf4cb8a6f4309dce3af0270bc047a0.jpg",
+  "palette": [
+   {
+    "hex": "#3b2b25",
+    "part": 0.204
+   },
+   {
+    "hex": "#360f0f",
+    "part": 0.202
+   },
+   {
+    "hex": "#570c0c",
+    "part": 0.199
+   },
+   {
+    "hex": "#583c34",
+    "part": 0.181
+   },
+   {
+    "hex": "#78554c",
+    "part": 0.17
+   },
+   {
+    "hex": "#c99c8e",
+    "part": 0.044
+   }
+  ],
+  "part_fonce": 0.55,
+  "part_clair": 0.015,
+  "saturation_moy": 0.461,
+  "part_chaude": 0.995,
+  "familles_teintes": 3,
+  "type_palette": "analogue"
+ },
+ {
+  "n": 65,
+  "fichier": "c2657995e74e7e6dbf2a70613dae0c5f.jpg",
+  "palette": [
+   {
+    "hex": "#61453b",
+    "part": 0.327
+   },
+   {
+    "hex": "#876366",
+    "part": 0.206
+   },
+   {
+    "hex": "#776a41",
+    "part": 0.167
+   },
+   {
+    "hex": "#a59b70",
+    "part": 0.12
+   },
+   {
+    "hex": "#d6d698",
+    "part": 0.115
+   },
+   {
+    "hex": "#b6ace2",
+    "part": 0.065
+   }
+  ],
+  "part_fonce": 0.041,
+  "part_clair": 0.109,
+  "saturation_moy": 0.212,
+  "part_chaude": 0.949,
+  "familles_teintes": 5,
+  "type_palette": "multicolore"
+ },
+ {
+  "n": 66,
+  "fichier": "c3ad0430c74547a99bb49c7e96bedcd8.jpg",
+  "palette": [
+   {
+    "hex": "#3a2826",
+    "part": 0.281
+   },
+   {
+    "hex": "#9c755f",
+    "part": 0.209
+   },
+   {
+    "hex": "#514e41",
+    "part": 0.155
+   },
+   {
+    "hex": "#bf977a",
+    "part": 0.129
+   },
+   {
+    "hex": "#8a4a47",
+    "part": 0.121
+   },
+   {
+    "hex": "#65818d",
+    "part": 0.105
+   }
+  ],
+  "part_fonce": 0.624,
+  "part_clair": 0.012,
+  "saturation_moy": 0.282,
+  "part_chaude": 0.78,
+  "familles_teintes": 4,
+  "type_palette": "multicolore"
+ },
+ {
+  "n": 67,
+  "fichier": "c5c87be49730ba87b34a1a263f119a94.jpg",
+  "palette": [
+   {
+    "hex": "#df8351",
+    "part": 0.268
+   },
+   {
+    "hex": "#c2643a",
+    "part": 0.248
+   },
+   {
+    "hex": "#994628",
+    "part": 0.178
+   },
+   {
+    "hex": "#e9a678",
+    "part": 0.122
+   },
+   {
+    "hex": "#9d765a",
+    "part": 0.103
+   },
+   {
+    "hex": "#472b20",
+    "part": 0.082
+   }
+  ],
+  "part_fonce": 0.541,
+  "part_clair": 0.191,
+  "saturation_moy": 0.347,
+  "part_chaude": 1.0,
+  "familles_teintes": 1,
+  "type_palette": "tonale"
+ },
+ {
+  "n": 68,
+  "fichier": "d8c4343d6cd26b43b24b651cbb48dc69.jpg",
+  "palette": [
+   {
+    "hex": "#3c0711",
+    "part": 0.265
+   },
+   {
+    "hex": "#b07380",
+    "part": 0.259
+   },
+   {
+    "hex": "#590b1c",
+    "part": 0.172
+   },
+   {
+    "hex": "#4a2229",
+    "part": 0.13
+   },
+   {
+    "hex": "#79172f",
+    "part": 0.091
+   },
+   {
+    "hex": "#583e37",
+    "part": 0.083
+   }
+  ],
+  "part_fonce": 0.416,
+  "part_clair": 0.025,
+  "saturation_moy": 0.534,
+  "part_chaude": 0.989,
+  "familles_teintes": 1,
+  "type_palette": "tonale"
+ },
+ {
+  "n": 69,
+  "fichier": "dc1678c89ccb93abf3a82ba3e42761a0.jpg",
+  "palette": [
+   {
+    "hex": "#574a3a",
+    "part": 0.361
+   },
+   {
+    "hex": "#6c363f",
+    "part": 0.191
+   },
+   {
+    "hex": "#78544c",
+    "part": 0.172
+   },
+   {
+    "hex": "#642231",
+    "part": 0.114
+   },
+   {
+    "hex": "#976f62",
+    "part": 0.114
+   },
+   {
+    "hex": "#bb9a79",
+    "part": 0.048
+   }
+  ],
+  "part_fonce": 0.1,
+  "part_clair": 0.004,
+  "saturation_moy": 0.33,
+  "part_chaude": 0.959,
+  "familles_teintes": 3,
+  "type_palette": "analogue"
+ },
+ {
+  "n": 70,
+  "fichier": "de3ffd15e18d7d31f2c65b3de337caed.jpg",
+  "palette": [
+   {
+    "hex": "#553c28",
+    "part": 0.417
+   },
+   {
+    "hex": "#756f34",
+    "part": 0.194
+   },
+   {
+    "hex": "#694558",
+    "part": 0.173
+   },
+   {
+    "hex": "#ab9c58",
+    "part": 0.078
+   },
+   {
+    "hex": "#976895",
+    "part": 0.072
+   },
+   {
+    "hex": "#7f3737",
+    "part": 0.066
+   }
+  ],
+  "part_fonce": 0.067,
+  "part_clair": 0.009,
+  "saturation_moy": 0.433,
+  "part_chaude": 0.941,
+  "familles_teintes": 4,
+  "type_palette": "multicolore"
+ },
+ {
+  "n": 71,
+  "fichier": "e324586ea5437dc02960f1f3aeebbf7c.jpg",
+  "palette": [
+   {
+    "hex": "#50472f",
+    "part": 0.197
+   },
+   {
+    "hex": "#752b3e",
+    "part": 0.193
+   },
+   {
+    "hex": "#421e23",
+    "part": 0.186
+   },
+   {
+    "hex": "#c8888f",
+    "part": 0.153
+   },
+   {
+    "hex": "#a44156",
+    "part": 0.145
+   },
+   {
+    "hex": "#e44670",
+    "part": 0.126
+   }
+  ],
+  "part_fonce": 0.432,
+  "part_clair": 0.122,
+  "saturation_moy": 0.456,
+  "part_chaude": 0.957,
+  "familles_teintes": 2,
+  "type_palette": "tonale"
+ },
+ {
+  "n": 72,
+  "fichier": "e7126e16f05f5ff7ec4366de86425ed4.jpg",
+  "palette": [
+   {
+    "hex": "#db7343",
+    "part": 0.243
+   },
+   {
+    "hex": "#c0412d",
+    "part": 0.217
+   },
+   {
+    "hex": "#947948",
+    "part": 0.158
+   },
+   {
+    "hex": "#b3a45a",
+    "part": 0.148
+   },
+   {
+    "hex": "#71412b",
+    "part": 0.122
+   },
+   {
+    "hex": "#deaa7d",
+    "part": 0.112
+   }
+  ],
+  "part_fonce": 0.003,
+  "part_clair": 0.365,
+  "saturation_moy": 0.586,
+  "part_chaude": 0.953,
+  "familles_teintes": 4,
+  "type_palette": "multicolore"
+ },
+ {
+  "n": 73,
+  "fichier": "e8039d88128e048e82c98a9ea2bba951.jpg",
+  "palette": [
+   {
+    "hex": "#9e5a5f",
+    "part": 0.214
+   },
+   {
+    "hex": "#b98371",
+    "part": 0.208
+   },
+   {
+    "hex": "#541d23",
+    "part": 0.196
+   },
+   {
+    "hex": "#964430",
+    "part": 0.185
+   },
+   {
+    "hex": "#685542",
+    "part": 0.163
+   },
+   {
+    "hex": "#e8ba83",
+    "part": 0.036
+   }
+  ],
+  "part_fonce": 0.516,
+  "part_clair": 0.03,
+  "saturation_moy": 0.371,
+  "part_chaude": 0.939,
+  "familles_teintes": 3,
+  "type_palette": "analogue"
+ },
+ {
+  "n": 74,
+  "fichier": "ea5ae36c3bd53d224aabb663e41215ad.jpg",
+  "palette": [
+   {
+    "hex": "#92684e",
+    "part": 0.25
+   },
+   {
+    "hex": "#b16a6b",
+    "part": 0.196
+   },
+   {
+    "hex": "#c8858a",
+    "part": 0.192
+   },
+   {
+    "hex": "#482e18",
+    "part": 0.164
+   },
+   {
+    "hex": "#e3a1b2",
+    "part": 0.127
+   },
+   {
+    "hex": "#cf9a4e",
+    "part": 0.071
+   }
+  ],
+  "part_fonce": 0.253,
+  "part_clair": 0.274,
+  "saturation_moy": 0.392,
+  "part_chaude": 0.991,
+  "familles_teintes": 3,
+  "type_palette": "analogue"
+ },
+ {
+  "n": 75,
+  "fichier": "eb478300edfc2b832949eea0935b789c.jpg",
+  "palette": [
+   {
+    "hex": "#481b1f",
+    "part": 0.307
+   },
+   {
+    "hex": "#693c36",
+    "part": 0.24
+   },
+   {
+    "hex": "#976c51",
+    "part": 0.197
+   },
+   {
+    "hex": "#903a56",
+    "part": 0.145
+   },
+   {
+    "hex": "#d1aa87",
+    "part": 0.065
+   },
+   {
+    "hex": "#c76fb8",
+    "part": 0.047
+   }
+  ],
+  "part_fonce": 0.277,
+  "part_clair": 0.084,
+  "saturation_moy": 0.49,
+  "part_chaude": 1.0,
+  "familles_teintes": 4,
+  "type_palette": "multicolore"
+ },
+ {
+  "n": 76,
+  "fichier": "f454cbfece3104dab80eba1d8d6ccc08.jpg",
+  "palette": [
+   {
+    "hex": "#564050",
+    "part": 0.326
+   },
+   {
+    "hex": "#7f5e6e",
+    "part": 0.225
+   },
+   {
+    "hex": "#362036",
+    "part": 0.205
+   },
+   {
+    "hex": "#b4a953",
+    "part": 0.134
+   },
+   {
+    "hex": "#738bb0",
+    "part": 0.086
+   },
+   {
+    "hex": "#e3e0a2",
+    "part": 0.024
+   }
+  ],
+  "part_fonce": 0.121,
+  "part_clair": 0.072,
+  "saturation_moy": 0.32,
+  "part_chaude": 0.7,
+  "familles_teintes": 6,
+  "type_palette": "multicolore"
+ },
+ {
+  "n": 77,
+  "fichier": "f4afe2bc89146849f7519e07136cf889.jpg",
+  "palette": [
+   {
+    "hex": "#b0767f",
+    "part": 0.208
+   },
+   {
+    "hex": "#3a1a1e",
+    "part": 0.193
+   },
+   {
+    "hex": "#573938",
+    "part": 0.177
+   },
+   {
+    "hex": "#9e656c",
+    "part": 0.167
+   },
+   {
+    "hex": "#c28790",
+    "part": 0.144
+   },
+   {
+    "hex": "#875055",
+    "part": 0.11
+   }
+  ],
+  "part_fonce": 0.441,
+  "part_clair": 0.054,
+  "saturation_moy": 0.368,
+  "part_chaude": 1.0,
+  "familles_teintes": 2,
+  "type_palette": "tonale"
+ },
+ {
+  "n": 78,
+  "fichier": "f66b995ee9851e431a0bffc88357203b.jpg",
+  "palette": [
+   {
+    "hex": "#35331e",
+    "part": 0.32
+   },
+   {
+    "hex": "#4c5222",
+    "part": 0.294
+   },
+   {
+    "hex": "#6d7140",
+    "part": 0.148
+   },
+   {
+    "hex": "#563a47",
+    "part": 0.141
+   },
+   {
+    "hex": "#a9a663",
+    "part": 0.059
+   },
+   {
+    "hex": "#88536c",
+    "part": 0.039
+   }
+  ],
+  "part_fonce": 0.499,
+  "part_clair": 0.0,
+  "saturation_moy": 0.433,
+  "part_chaude": 0.72,
+  "familles_teintes": 3,
+  "type_palette": "analogue"
+ },
+ {
+  "n": 79,
+  "fichier": "fbf46cebb73a3bf3b685c56eb8f35ca1.jpg",
+  "palette": [
+   {
+    "hex": "#716c4e",
+    "part": 0.233
+   },
+   {
+    "hex": "#41112c",
+    "part": 0.223
+   },
+   {
+    "hex": "#652357",
+    "part": 0.183
+   },
+   {
+    "hex": "#414421",
+    "part": 0.143
+   },
+   {
+    "hex": "#8d4890",
+    "part": 0.129
+   },
+   {
+    "hex": "#b975c9",
+    "part": 0.088
+   }
+  ],
+  "part_fonce": 0.374,
+  "part_clair": 0.024,
+  "saturation_moy": 0.487,
+  "part_chaude": 0.762,
+  "familles_teintes": 5,
+  "type_palette": "multicolore"
+ },
+ {
+  "n": 80,
+  "fichier": "fc9e6fbfc9057bf455df8e6e61afa5a2.jpg",
+  "palette": [
+   {
+    "hex": "#2d2036",
+    "part": 0.356
+   },
+   {
+    "hex": "#3c2c4b",
+    "part": 0.272
+   },
+   {
+    "hex": "#4f3a69",
+    "part": 0.139
+   },
+   {
+    "hex": "#6d5595",
+    "part": 0.1
+   },
+   {
+    "hex": "#73603b",
+    "part": 0.072
+   },
+   {
+    "hex": "#ac9453",
+    "part": 0.061
+   }
+  ],
+  "part_fonce": 0.446,
+  "part_clair": 0.001,
+  "saturation_moy": 0.202,
+  "part_chaude": 0.204,
+  "familles_teintes": 3,
+  "type_palette": "analogue"
+ },
+ {
+  "n": 81,
+  "fichier": "ff53d09a7bb6b7c406b2405b33993b79.jpg",
+  "palette": [
+   {
+    "hex": "#3b2f25",
+    "part": 0.313
+   },
+   {
+    "hex": "#7a3e4e",
+    "part": 0.266
+   },
+   {
+    "hex": "#5a5a35",
+    "part": 0.175
+   },
+   {
+    "hex": "#917f44",
+    "part": 0.107
+   },
+   {
+    "hex": "#3e417b",
+    "part": 0.078
+   },
+   {
+    "hex": "#b479a3",
+    "part": 0.061
+   }
+  ],
+  "part_fonce": 0.268,
+  "part_clair": 0.017,
+  "saturation_moy": 0.361,
+  "part_chaude": 0.734,
+  "familles_teintes": 5,
+  "type_palette": "multicolore"
+ },
+ {
+  "n": 82,
+  "fichier": "ff91df6443e18e98b7629c60631e9d3e.jpg",
+  "palette": [
+   {
+    "hex": "#735a4e",
+    "part": 0.289
+   },
+   {
+    "hex": "#6c392d",
+    "part": 0.174
+   },
+   {
+    "hex": "#ad6541",
+    "part": 0.156
+   },
+   {
+    "hex": "#461e1a",
+    "part": 0.151
+   },
+   {
+    "hex": "#d89252",
+    "part": 0.119
+   },
+   {
+    "hex": "#dba38f",
+    "part": 0.111
+   }
+  ],
+  "part_fonce": 0.08,
+  "part_clair": 0.135,
+  "saturation_moy": 0.388,
+  "part_chaude": 0.976,
+  "familles_teintes": 3,
+  "type_palette": "analogue"
+ }
+]

@@ -1,0 +1,143 @@
+<p>L’algorithme compose comme un fleuriste, en huit passes dans un ordre fixe : silhouette, lignes, fleurs focales, masse, remplissage, retombées, feuillage, couleur. Il produit plusieurs propositions, les note selon les critères de l’étude et garde la meilleure. Chaque chiffre entre crochets vient des 76 bouquets analysés.</p>
+
+<h3>1. Le profil graphique de chaque fleur</h3>
+<p>Chaque fleur du catalogue reçoit un profil, qui décide de son rôle et de sa façon d’être placée : forme, taille, poids visuel, couleur (teinte, saturation, valeur), texture et type de tige.</p>
+<table>
+<thead><tr><th>Forme</th><th>Exemples</th><th>Rôle naturel</th><th>Règle de placement</th></tr></thead>
+<tbody>
+<tr><td>Spathe (face plate)</td><td>anthurium</td><td>focale</td><td>En zigzag, jamais deux à la même hauteur, face légèrement tournée.</td></tr>
+<tr><td>Disque, rosette</td><td>dahlia, rose de jardin, pivoine, renoncule, anémone, cosmos</td><td>focale ou secondaire</td><td>Trio en triangle scalène, tailles décroissantes vers l’extérieur.</td></tr>
+<tr><td>Étoile</td><td>lys, gloriosa, nérine</td><td>focale ou ligne</td><td>Têtes isolées hors de la masse ; gloriosa et nérine en échos dispersés.</td></tr>
+<tr><td>Orchidée (fleur ou grappe)</td><td>phalaenopsis, cymbidium, vanda, oncidium</td><td>focale, ligne ou retombée</td><td>Grappes en arc ou pendantes ; vanda massée.</td></tr>
+<tr><td>Coupe, cornet</td><td>tulipe, calla</td><td>secondaire ou ligne</td><td>Calla sur tige courbe et nue, hors de la masse.</td></tr>
+<tr><td>Sphère</td><td>allium, hortensia</td><td>ligne ou appui</td><td>Allium en ligne à tige bouclée ; hortensia en appui bas.</td></tr>
+<tr><td>Épi</td><td>delphinium, muflier, glaïeul, sanguisorbe</td><td>ligne</td><td>Un à trois épis, à des angles différents.</td></tr>
+<tr><td>Grappe fine, ombelle</td><td>pois de senteur, ammi, statice</td><td>remplissage</td><td>Dans les creux, en retrait.</td></tr>
+<tr><td>Retombante</td><td>amarante, jasmin, grappe de phalaenopsis</td><td>retombée</td><td>Un faisceau dominant, du côté bas.</td></tr>
+<tr><td>Ligne nue</td><td>tige, saule, herbe d’ours, fil</td><td>structure</td><td>Un à cinq, courbes, au-delà de la silhouette.</td></tr>
+<tr><td>Texture</td><td>baies, gousses, célosie, panicaut, fustet</td><td>accent</td><td>5 à 12 points, ou un à trois amas.</td></tr>
+<tr><td>Feuille</td><td>anthurium vert, caladium, bégonia, eucalyptus teinté</td><td>feuillage (budget)</td><td>Sculpturale, tonale ou sombre, jamais en collerette.</td></tr>
+</tbody></table>
+
+<h3>2. Les gabarits de silhouette</h3>
+<p>Le gabarit est tiré au sort selon les fréquences de l’étude, pondérées par les fleurs disponibles. Une amarante rend la cascade probable, beaucoup de lignes favorisent le vertical ou le libre, beaucoup de grandes faces favorisent l’éventail ou le dôme.</p>
+<table>
+<thead><tr><th>Gabarit</th><th>Fréquence</th><th>Largeur / hauteur</th><th>Hauteur / contenant</th><th>Décalage de masse</th><th>Lignes</th><th>Retombée</th><th>Espace négatif</th></tr></thead>
+<tbody>
+<tr><td>Éventail</td><td>24 %</td><td>0,9–1,1</td><td>3–4</td><td>0,15–0,25</td><td>3–7</td><td>légère</td><td>moyen</td></tr>
+<tr><td>Libre, sauvage</td><td>20 %</td><td>0,8–1,0</td><td>3–5</td><td>0,2–0,35</td><td>4–8</td><td>légère ou longue</td><td>moyen à fort</td></tr>
+<tr><td>Triangle scalène</td><td>16 %</td><td>0,7–0,9</td><td>2,7–4</td><td>0,25–0,35</td><td>2–4</td><td>légère</td><td>moyen</td></tr>
+<tr><td>Cascade</td><td>12 %</td><td>0,5–0,7</td><td>3–5</td><td>0,15–0,3</td><td>1–3</td><td>longue (0,3–0,45 H)</td><td>moyen</td></tr>
+<tr><td>Dôme</td><td>11 %</td><td>1,0–1,3</td><td>1,6–2,5</td><td>0–0,1</td><td>0–2</td><td>légère</td><td>faible</td></tr>
+<tr><td>Vertical aérien</td><td>8 %</td><td>0,5–0,7</td><td>4–7</td><td>0,1–0,25</td><td>3–6 (dominantes)</td><td>légère</td><td>fort</td></tr>
+<tr><td>L, croissant</td><td>9 %</td><td>0,8–1,2</td><td>2,5–3,5</td><td>0,35–0,5</td><td>2–3</td><td>légère</td><td>moyen</td></tr>
+</tbody></table>
+<p>Le dôme est le seul gabarit autorisé à être presque symétrique.</p>
+
+<h3>3. Les points d’ancrage</h3>
+<p>H est la hauteur totale, W la largeur, et s un côté tiré au hasard (+1 ou −1). Toutes les tiges partent du point de liaison B : le col du vase ou la main.</p>
+<ul>
+<li><b>F, le cœur focal</b> : au tiers bas (−0,30 H), décalé de s × décalage × W, du côté de la masse.</li>
+<li><b>A, le sommet</b> : la ligne la plus haute, penchée du côté opposé (−s).</li>
+<li><b>D, le départ de la retombée</b> : sur le col, du côté de la masse (s), à l’opposé du sommet.</li>
+<li><b>Les ailes</b> : extrémités gauche et droite, de longueurs inégales (une aile longue et une aile courte pour le triangle).</li>
+</ul>
+
+<h3>4. Les huit passes</h3>
+<pre>pour chaque proposition (24 graines différentes) :
+  1. GABARIT   tirer un gabarit (fréquences de l'étude × fleurs disponibles)
+               poser B, F, A, D et les ailes
+  2. LIGNES    la tige-ligne la plus longue va en A ; les autres rayonnent depuis B
+               en nombre impair, jamais parallèles (écart ≥ 18°), longueur 1,2 à 2 × le rayon
+               de masse, courbure alternée en S ; chaque ligne finit par un bouton
+  3. FOCALES   1 à 3 groupes ; un trio = triangle scalène autour de F, à 3 hauteurs
+               (écart ≥ 0,08 H), tailles décroissantes vers le haut ;
+               orientations : 1 de face, 1 de trois-quarts (25–40°), 1 de profil (50–70°) ;
+               faces plates (anthurium, orchidées) en zigzag
+  4. MASSE     échantillonnage de Poisson dans l'ellipse de masse, sous F :
+               55–70 % du volume sous 0,45 H ; chaque espèce secondaire suit une traînée
+               (diagonale de F vers une aile) + 1 ou 2 échos isolés ; chevauchement 10–25 %
+  5. REMPLIR   remplissage et textures dans les creux et en lisière, en retrait ;
+               accents répétés en 5 à 12 points ; viser au moins 4 textures différentes
+  6. RETOMBER  si une retombée existe : un faisceau dominant en D, 3 à 5 brins inégaux
+               (0,2–0,45 H) qui passent devant le contenant et franchissent son bord
+  7. FEUILLAGE budget ≤ 10 % de la surface (≤ 20 % en style jardin) : feuilles isolées,
+               tonales ou sombres, derrière une focale claire ; jamais de collerette
+  8. COULEUR   carte des valeurs (foncé au cœur, derrière et sur les bords ; clair devant
+               au centre) ; accent placé en triangle ; contenant = teinte la plus sombre
+  noter la proposition (contrôle qualité)
+garder la meilleure ; « Une autre disposition » = la suivante du classement</pre>
+
+<h3>5. La couleur</h3>
+<ul>
+<li><b>Quand le client choisit ses fleurs une par une</b>, la palette lui appartient. L’algorithme ne fait que l’organiser par la valeur : chaque tige reçoit sa clarté L, les 30 % les plus sombres vont au cœur, à l’arrière et sur les bords, les 20 % les plus claires devant au centre ou en zone lumineuse unique près de F.</li>
+<li><b>Quand l’application compose</b> (bouquet surprise, occasion), elle tire un mode de palette selon l’étude :
+  <ul>
+  <li>une seule famille, 67 % ;</li>
+  <li>une paire complémentaire, 12 % ;</li>
+  <li>multicolore hiérarchisé, 12 % ;</li>
+  <li>neutres et accent, 5 % ;</li>
+  <li>triade, 4 %.</li>
+  </ul></li>
+<li><b>Fleur focale</b> : celle qui a le plus fort contraste de valeur avec ses trois voisines.</li>
+<li><b>Accent</b> : toute tige à plus de 90° de la teinte dominante, ou très saturée par rapport au reste. Il couvre au maximum 10 % de la surface et se place en 3 points formant un triangle de côtés supérieurs à 0,3 H, jamais collés entre eux.</li>
+<li><b>Dégradé</b> (palettes analogues multiples) : l’ordre des teintes est projeté sur une diagonale, comme dans le bouquet 37, qui passe du rouge en haut à l’orange puis au violet en bas.</li>
+</ul>
+
+<h3>6. Profondeur et orientation</h3>
+<ul>
+<li><b>Trois plans</b> :
+  <ul>
+  <li>à l’arrière, les lignes, le remplissage et les feuilles sombres, à l’échelle 0,85 ;</li>
+  <li>au milieu, la masse ;</li>
+  <li>à l’avant, les focales basses et les retombées, à l’échelle 1 à 1,1.</li>
+  </ul>
+  Les superpositions vont de 10 à 25 %.</li>
+<li><b>Toutes les tiges convergent vers B</b>, comme la spirale d’un bouquet tenu en main. Chaque fleur regarde dans la direction de sa tige, tournée de 30 à 70 % vers le spectateur, avec un aplatissement vertical de 0,7 à 1 selon l’angle.</li>
+<li><b>L’inclinaison dépend de la position</b> : les fleurs du bas penchent vers l’avant, celles du haut vers le ciel, celles des côtés se montrent de profil.</li>
+</ul>
+
+<h3>7. Le contrôle qualité</h3>
+<table>
+<thead><tr><th>Critère</th><th>Cible, d’après l’étude</th><th>Poids</th></tr></thead>
+<tbody>
+<tr><td>Équilibre asymétrique</td><td>Poids visuel gauche/droite entre 58/42 et 70/30 (dôme : 50 à 55 %)</td><td>3</td></tr>
+<tr><td>Hiérarchie focale</td><td>La focale a le plus fort contraste local, et la plus grande taille ou la valeur extrême</td><td>3</td></tr>
+<tr><td>Focales visibles</td><td>Aucune focale cachée à plus de 40 %</td><td>3</td></tr>
+<tr><td>Lignes qui dépassent</td><td>2 à 8 lignes qui dépassent l’enveloppe de 20 à 100 %</td><td>2</td></tr>
+<tr><td>Débordement vers le bas</td><td>Présent si une retombée est disponible, de 0,2 à 0,45 H</td><td>2</td></tr>
+<tr><td>Espace négatif</td><td>Selon le gabarit : faible 5–15 %, moyen 15–30 %, fort 30–45 %</td><td>2</td></tr>
+<tr><td>Budget feuillage</td><td>10 % maximum (20 % en style jardin)</td><td>2</td></tr>
+<tr><td>Groupements</td><td>Regroupement par espèce entre 0,4 et 0,7, nombres impairs</td><td>1</td></tr>
+<tr><td>Accent en triangle</td><td>3 points, côtés supérieurs à 0,3 H, moins de 10 % de la surface</td><td>1</td></tr>
+<tr><td>Textures</td><td>Au moins 4 textures si les fleurs le permettent</td><td>1</td></tr>
+</tbody></table>
+<p>Le score est la somme des poids multipliés par le degré de réussite (de 0 à 1). L’algorithme génère 24 propositions, en quelques dizaines de millisecondes chacune, et garde la meilleure.</p>
+
+<h3>8. Paramètres par défaut</h3>
+<p>Ils sont enregistrés dans <code>regles_composition.json</code>, à côté de cette page, pour être lus directement par le code de l’application.</p>
+
+<h3>9. Ce qu’il faut dessiner pour que l’algorithme tienne ses promesses</h3>
+<p>Par ordre de fréquence dans tes références :</p>
+<ul>
+<li><b>Les fleurs</b> :
+  <ul>
+  <li>anthurium, à refaire en plusieurs coloris dont l’obake et le vert (40 bouquets) ;</li>
+  <li><b>amarante retombante</b> (29) ;</li>
+  <li>calla sur tige courbe (28) ;</li>
+  <li>phalaenopsis en fleur et en grappe arquée ou pendante (21) ;</li>
+  <li>cymbidium (19) ;</li>
+  <li>rose de jardin (18) ;</li>
+  <li>hortensia (15) et lys oriental (15) ;</li>
+  <li>allium en sphère avec tige bouclée (14) ;</li>
+  <li>dahlia (14) ;</li>
+  <li>œillet (13) et tulipe (12) ;</li>
+  <li>chrysanthème araignée (11) ;</li>
+  <li>pois de senteur (10) et nérine (10) ;</li>
+  <li>renoncule (9) et scabieuse (9) ;</li>
+  <li>eucalyptus teinté (8) et gloriosa (8).</li>
+  </ul></li>
+<li><b>Les éléments de structure</b> : tiges nues courbes, saule, boucles d’herbe d’ours, fil.</li>
+<li><b>Les contenants</b> : coupe à pied noire, boule chromée, vase en verre fumé, socle blanc.</li>
+</ul>
+<p>Le moteur actuel couvre déjà la tulipe, le calla vu de côté, le lys étoilé, le cattleya, l’oncidium, l’hortensia, la pivoine, l’anémone, le cosmos et les épis. Les manques les plus urgents sont l’amarante, la phalaenopsis, le cymbidium, le nouvel anthurium et les lignes nues.</p>
