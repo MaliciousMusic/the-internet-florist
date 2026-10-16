@@ -1,5 +1,5 @@
 /* fleurs_page.js: the page side of decor/fleurs_moteur.mjs. It only calls the flower engine (engine.js, built from
-   flower-claude/demo/src, never edited): whole plants of the meadow drawn by the engine (head, stem, leaves), each saved
+   demo/src, never edited): whole plants of the meadow drawn by the engine (head, stem, leaves), each saved
    as one standalone SVG with the defs it uses. */
 window.__FLEURS = (() => {
   const SIDS = ['tulipe-simple', 'tulipe-double', 'tulipe-perroquet', 'tulipe-frangee', 'anemone-coronaria', 'narcisse-trompette',

@@ -24,7 +24,7 @@ export const HORIZON = 722;
 export const SKY_BOTTOM = HORIZON + 60;
 
 // One sun for the whole shop scene (x right, y up, z towards the viewer): same azimuth as LV in
-// flower-claude/demo/src/v1a.js, about 57 deg high, left and a little behind the viewer.
+// demo/src/v1a.js, about 57 deg high, left and a little behind the viewer.
 const n3 = (v) => {
   const l = Math.hypot(...v);
   return v.map((x) => x / l);

@@ -26,7 +26,7 @@ Cible : 3 M de tokens « équivalent entrée Opus » par sorte (`--cap`).
 | finition | Sonnet : matières des coloris | éléments et Ko par tête à DET 1 (rouge au-delà de 1,2 x 300 / 50) |
 | temoins | anémone contre `base_before.png` ou `base_v2.png` (0,00 %) ; `rtest` des SKU de la sorte IDENTIQUE (les témoins tulipes ne doivent pas faire pire que dans l'atelier principal) ; budget | les trois |
 | qa | `qawatch.sh`, lots de 2 (RAM libre 4,2 à 5 Go) ou 4 ; attend sous 4,2 Go | flottants, sous le vase, plis : 0 |
-| planches | sku et plante, copiées dans `flower-claude/.../pilote-printemps/sheets/<sid>-sku-p1.png` et `-plante-p1.png` | image écrite |
+| planches | sku et plante, copiées dans `catalogue/serre/pilote-printemps/sheets/<sid>-sku-p1.png` et `-plante-p1.png` | image écrite |
 La plante reprend `targets.json` (il contient déjà les cibles tige et feuille). Aucun commit ni fusion : les planches sont seulement copiées.
 
 ## État et facture

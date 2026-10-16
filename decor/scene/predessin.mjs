@@ -4,7 +4,7 @@
 //       [--vignettes-seules] [--seuils '{"TINY":1.5,...}'] [--sortie <dir>] [--sonde]
 //
 // For each product of boutique.json (or the ids given), it runs the engine (engine.js, built by mkengine.sh from
-// flower-claude/demo/src, never edited) in one headless Chrome, draws the bouquet exactly as the shop drew it (buildBq at
+// demo/src, never edited) in one headless Chrome, draws the bouquet exactly as the shop drew it (buildBq at
 // LOD 0, the vessel's own stage and plinth left out, the table shadow hidden), cuts it exactly as growBq / aliveBq do
 // (z5.js: same runs, same stacking order, same growth order and times, same breeze), and writes, instead of canvases,
 // one folder per bouquet in decor/scene/bouquets/<id>/:

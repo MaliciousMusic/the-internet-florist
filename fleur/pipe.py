@@ -17,7 +17,7 @@ import sys, os, re, json, time, math, glob, shutil, argparse, subprocess, thread
 sys.stdout.reconfigure(encoding='utf-8', errors='replace')
 HERE = os.path.dirname(os.path.abspath(__file__))
 MAIN = 'C:/Users/agent/Desktop/flower/flower-atelier'  # the shared atelier: gate, locks, servers (never modified here)
-FC = 'C:/Users/agent/Desktop/flower/flower-claude'     # the repository: standards read here, sheets copied there, never committed
+FC = 'C:/Users/agent/Desktop/flower/flower-atelier'    # the-internet-florist: standards read in docs/, sheets copied to catalogue/serre
 STEPS = ['census', 'refs', 'coloris', 'targets', 'forme', 'fit', 'plante', 'finition', 'temoins', 'qa', 'planches']
 MODELS = {'haiku': 'claude-haiku-5-5', 'sonnet': 'claude-sonnet-5-5', 'opus': 'claude-opus-5-5'}
 W = {'in': 1, 'cw': 1.25, 'cr': .1, 'out': 5}  # Opus input-equivalent weights (bill.py)
@@ -514,7 +514,7 @@ def need_servers(ctx):
 
 
 def ensure_docs(ctx):
-    """copies of the standards the models need, inside the working copy (cwd of every call): no --add-dir, no write access to flower-claude"""
+    """copies of the standards the models need, inside the working copy (cwd of every call): no --add-dir, no write access to the repository"""
     d = ctx.rc + '/ref'
     os.makedirs(d, exist_ok=True)
     try:
@@ -528,7 +528,7 @@ def ensure_docs(ctx):
 
 
 def bouquet_skus(a, sid):
-    """[{sku, cultivar}] from --skus "lilas~0:Ruhm von Horstenstein,..." or, read-only, from flower-claude's sources json (sku_bouquet)"""
+    """[{sku, cultivar}] from --skus "lilas~0:Ruhm von Horstenstein,..." or, read-only, from the catalogue's sources json (sku_bouquet)"""
     out = []
     for x in [s.strip() for s in (getattr(a, 'skus', '') or '').split(',') if s.strip()]:
         k, _, c = x.partition(':')

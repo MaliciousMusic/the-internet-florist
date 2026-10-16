@@ -215,7 +215,7 @@ const shadowHex = (D, depth = 1) => { const c = byDistance(MEADOW, D)[0]; const 
 
 // ---------- light ----------
 // Screen x right, y UP, z toward the viewer. One sun for the whole scene: normalize(-0.5, 1.2, 0.6), the
-// azimuth of the shop light LV (flower-claude demo/src/v1a.js), ~57 deg high, left and behind the viewer.
+// azimuth of the shop light LV (demo/src/v1a.js), ~57 deg high, left and behind the viewer.
 const SUN = (() => { const v = [-0.5, 1.2, 0.6]; const n = Math.hypot(...v); return v.map((c) => c / n); })();
 // Ground offset of a cast shadow per metre of height: right (x) and away from the viewer (depth).
 const SHX = -SUN[0] / SUN[1], SHD = SUN[2] / SUN[1];
