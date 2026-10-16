@@ -49,4 +49,5 @@ Le porteur a fourni `carpes-dorees/out/model.glb`. Chaîne nouvelle, sans projet
    Réglage retenu : `ddy=7 dstep=1.6 dy=4 step=3 q=.1 rdp=.5` → 360 Ko gzip, ΔE(svg, champ) 2,4.
 - Verdicts : les trous des nageoires sont corrigés par le détourage SAM ; la carpe centrale du déroulé est hors de la vue (ignorée).
 - À faire : faire valider les carpes ; appliquer la même chaîne aux autres vases à partir de leurs GLB ; reprendre les chantiers en pause.
+- **Prisme jaune publié (soir)** : version v1 validée (« MAGNIFIQUE »), générateur `prisme-jaune/mk_v1.py`, fiche `prisme-jaune`, verre clair.
 - **Clos et publié (soir)** : vase `jarre-carpes` (svgb `carpes-dorees`), carpes en terre cuite comme la panse (matière `or` = `patine`), version retenue par le porteur. `fixdecor.py` (bouchage des encoches, calage des bords sur l'arête du relief par ligne de partage des eaux) a servi avant ce choix.
