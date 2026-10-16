@@ -13,42 +13,104 @@
 //   so the loop has no seam and the sky is never empty. "lumiere" (optional) is a static brightness across the world,
 //   [x %, factor], set as a mask on the band's plane (it stays put while the band slides under it).
 // - otherwise (one cloud per image): it crosses the world from just off the left edge to just off the right edge.
+// The order of loading (2026-10-16, measured on a phone): the sky and the horizon, then the veils and the ground (the
+// static layers cut to the phone's column when it is all that shows; ?plein=1 always takes the full ones), then
+// boutique.js prepares the bouquet whole and grows it, then the clumps on screen come, one at a time when the page is idle.
 (() => {
   const q = new URLSearchParams(location.search);
   const scene = document.getElementById('scene');
   const OUT = `../${q.get('out') || 'out'}/`;
   if (q.has('debug')) scene.classList.add('debug');
 
+  // The part of the world on screen, in world units (x of the 2400-unit frame): the world covers the screen, centred
+  // (scene.css), so it is the middle of the frame, as wide as the screen. Read from the layout, not the close-up's transform.
+  const monde = document.getElementById('monde');
+  const seen = () => {
+    const half = monde.offsetWidth ? (innerWidth / 2 / monde.offsetWidth) * 2400 : 1200;
+    return [1200 - half, 1200 + half];
+  };
+  window.SCENE_VUE = seen;
+
   // Static layers: one SVG file each, drawn once by the browser; a missing file is skipped.
-  for (const el of document.querySelectorAll('img[data-src]')) {
-    el.onerror = () => el.remove();
-    el.src = OUT + el.dataset.src;
-  }
+  // A phone held upright sees only the central column of the world, yet the browser reads, styles and records every
+  // element of a layer, seen or not: the layers listed in CUT also come cut to that column (decor/out/colonne/, written by
+  // recadre.mjs; the same picture inside it). The cut is loaded when the whole visible part lies in the column; if the
+  // window grows past it (a phone turned sideways), the full layers replace the cut ones for good.
+  const COLONNE = [780, 1620];
+  const CUT = new Set(['horizon.svg', 'sol-loin.svg', 'sol-milieu.svg', 'sol-pres.svg']);
+  const inColumn = () => {
+    const [a, b] = seen();
+    return a >= COLONNE[0] && b <= COLONNE[1];
+  };
+  const layers = [...document.querySelectorAll('img[data-src]')];
+  let cut = !q.has('plein') && inColumn();
+  const load = (el) => {
+    const name = el.dataset.src;
+    el.dataset.on = '1';
+    return new Promise((done) => {
+      el.addEventListener('load', done, { once: true });
+      if (cut && CUT.has(name)) {
+        // no cut file: the full layer
+        el.onerror = () => {
+          el.onerror = () => (el.remove(), done());
+          el.src = OUT + name;
+        };
+        el.src = `${OUT}colonne/${name}`;
+      } else {
+        el.onerror = () => (el.remove(), done());
+        el.src = OUT + name;
+      }
+    });
+  };
+  if (cut)
+    addEventListener('resize', function full() {
+      if (inColumn()) return;
+      cut = false;
+      removeEventListener('resize', full);
+      for (const el of layers) if (CUT.has(el.dataset.src) && el.dataset.on && el.isConnected) el.src = OUT + el.dataset.src;
+    });
+
+  // In stages, so something shows at once and nothing waits on what comes after it: the sky and the horizon (light), then,
+  // once they are on screen, the drifting veils (light too, see below) and the ground with its pillar, its three layers revealed together (the meadow comes in one go,
+  // never layer by layer). window.SCENE_DECOR resolves once the ground is on screen (two frames after it is revealed):
+  // boutique.js loads the bouquet's pieces only then, so they never hold back the first picture.
+  const frame = () => new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
+  const FIRST = new Set(['ciel.svg', 'horizon.svg']);
+  const first = layers.filter((el) => FIRST.has(el.dataset.src));
+  const ground = layers.filter((el) => !FIRST.has(el.dataset.src));
+  for (const el of ground) el.style.visibility = 'hidden';
+  const skyIn = Promise.all(first.map(load)).then(frame);
+  window.SCENE_DECOR = skyIn
+    .then(() => Promise.all(ground.map(load)))
+    .then(() => {
+      for (const el of ground) el.style.visibility = '';
+      return frame();
+    })
+    .then(() => Math.round(performance.now()));
 
   const img = (src, style) => {
     const el = new Image();
     el.alt = '';
     el.decoding = 'async';
-    el.src = OUT + src;
+    if (src) el.src = OUT + src;
     el.onerror = () => el.remove();
     for (const [k, v] of Object.entries(style)) el.style.setProperty(k, v);
     return el;
   };
 
-  // the moving planes come last (decor/PLAN.md): the foreground and the clouds once the first bouquet has grown
-  // (boutique.js tells it with the event "boutique:bouquet"; 9 s at most), so they never hold its growth back
+  // the foreground's clumps come last (decor/PLAN.md), once the first bouquet has grown (boutique.js tells it with the
+  // event "boutique:bouquet"; 15 s at most), so they never hold its growth back
   const afterBouquet = new Promise((r) => {
     document.addEventListener('boutique:bouquet', r, { once: true });
-    setTimeout(r, 9000);
+    setTimeout(r, 15000);
   });
-  Promise.all([
-    fetch(OUT + 'scene.json')
-      .then((r) => (r.ok ? r.json() : {}))
-      .catch(() => ({})),
-    afterBouquet,
-  ])
-    .then(([m]) => m)
-    .then((m) => {
+  const sceneJson = fetch(OUT + 'scene.json')
+    .then((r) => (r.ok ? r.json() : {}))
+    .catch(() => ({}));
+  // the veils come with the sky, right after it is on screen: a few hundred ellipses, read in a moment, and the largest
+  // picture of the page for the browser's measures (the full-screen layers count as a background)
+  Promise.all([sceneJson, skyIn])
+    .then(([m]) => {
       for (const n of m.nuages || []) {
         const plan = document.getElementById(n.rang === 'bas' ? 'nuages-bas' : 'nuages-hauts');
         if (n.boucle) {
@@ -66,13 +128,46 @@
         el.className = 'nuage';
         plan.append(el);
       }
-      // The gust crosses the field left to right in about 1.6 s.
-      for (const t of m.touffes || []) {
-        const el = img(t.src, { '--x': `${t.x}%`, '--b': `${t.b}%`, '--w': `${t.w}%`, '--a': `${t.a}deg`, '--t': `${t.t}s`, '--d': `${-t.t + (t.x / 100) * 1.6}s` });
-        el.className = 'touffe';
-        document.getElementById('premier').append(el);
-      }
     });
+  Promise.all([sceneJson, afterBouquet])
+    .then(([m]) => m)
+    .then((m) => {
+      // The gust crosses the field left to right in about 1.6 s.
+      // Only the clumps on screen are read (each is a whole SVG document for the main thread), one at a time when the page
+      // is idle, so the breeze never stalls; the others when the window grows to show them. Each one has its place in the
+      // stacking order from the start (an <img> without a source draws nothing), and its sway only once it has a source:
+      // an animation on an empty element cannot run on the graphics card, it would cost the main thread every frame.
+      const clumps = [];
+      for (const t of m.touffes || []) {
+        const el = img(null, { '--x': `${t.x}%`, '--b': `${t.b}%`, '--w': `${t.w}%`, '--a': `${t.a}deg`, '--t': `${t.t}s`, '--d': `${-t.t + (t.x / 100) * 1.6}s` });
+        document.getElementById('premier').append(el);
+        // its extent in world units, a little wider for its sway
+        clumps.push({ el, src: t.src, x0: (t.x - 2) * 24, x1: (t.x + t.w + 2) * 24 });
+      }
+      let busy = false;
+      const more = async () => {
+        if (busy) return;
+        busy = true;
+        for (;;) {
+          const [a, b] = seen();
+          const c = clumps.find((c) => !c.on && c.x1 > a && c.x0 < b);
+          if (!c) break;
+          c.on = true;
+          await new Promise((r) => {
+            c.el.addEventListener('load', r, { once: true });
+            c.el.addEventListener('error', r, { once: true });
+            c.el.className = 'touffe';
+            c.el.src = OUT + c.src;
+          });
+          await idle();
+        }
+        busy = false;
+        if (clumps.every((c) => c.on)) removeEventListener('resize', more);
+      };
+      addEventListener('resize', more);
+      more();
+    });
+  const idle = () => new Promise((r) => (window.requestIdleCallback ? requestIdleCallback(() => r(), { timeout: 300 }) : setTimeout(r, 30)));
 
   // Nothing moves while the scene is off screen or the tab is hidden.
   let visible = true;

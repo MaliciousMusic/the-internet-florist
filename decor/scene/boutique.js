@@ -8,7 +8,8 @@
 //   a swipe or the arrow keys bring another one to the middle (one rail, one transform).
 // - The bouquet of the chosen frame grows in on the pillar (plane z8): its vessel first, whole, then the engine's growth
 //   replayed by transforms only (eclosion.js), then the breeze. Another card: the bouquet folds back by transforms only, the
-//   vessel goes at once, the new one grows in. The growth waits for the pillar (and the sky and horizon) to be in.
+//   vessel goes at once, the new one grows in. The pieces load once the static layers are in, and the growth waits for
+//   all of them (6 s at most): the bouquet is prepared whole, hidden, then only moved.
 // - The Buy button (bottom) for the bouquet on the pillar; the purchase (Seaport) is not wired yet: it only says "soon".
 // - The shelves under the header (entete.js): the bouquets are the gallery itself; the soliflores and the bouquets sold
 //   open a panel, one at a time, folded by their icon. ?rayon=<name> picks the first one (default: the bouquets).
@@ -524,34 +525,26 @@
   const decorTimes = {};
   for (const im of document.querySelectorAll('img[data-src]')) {
     const note = () => (decorTimes[im.dataset.src] = Math.round(performance.now()));
-    if (im.complete) note();
+    if (im.complete && im.currentSrc) note();
     else im.addEventListener('load', note, { once: true });
   }
 
-  // ---------- the decor under the bouquet: the growth starts once the sky, the horizon and the pillar are in (2.5 s at most)
-  const decorIn = (() => {
-    const want = new Set(['ciel.svg', 'horizon.svg', 'pilier.svg']);
-    const one = (im) =>
-      im.complete || !im.isConnected
-        ? Promise.resolve()
-        : new Promise((r) => {
-            im.addEventListener('load', r, { once: true });
-            im.addEventListener('error', r, { once: true });
-          });
-    const imgs = [...document.querySelectorAll('img[data-src]')].filter((im) => want.has(im.dataset.src));
-    return Promise.race([Promise.all(imgs.map(one)), new Promise((r) => setTimeout(r, 2500))]).then(() => Math.round(performance.now()));
-  })();
+  // ---------- the decor under the bouquet: the bouquet's pieces load once the static layers are on screen (the sky, the
+  // horizon and the ground with its pillar: scene.js tells it with SCENE_DECOR; 6 s at most). Each layer is one long task of
+  // the main thread: pieces read meanwhile would only push back the first picture and come no sooner
+  const decorIn = Promise.race([window.SCENE_DECOR || Promise.resolve(), new Promise((r) => setTimeout(r, 6000))]).then(() => Math.round(performance.now()));
 
   // ---------- the bouquet on the pillar
   let cur = null;
   let gen = 0;
+  const PREPARE = 6000;
   let firstDone = null;
   const first = new Promise((res) => (firstDone = res));
-  // the first bouquet grown (all its pieces in and grown, 9 s at most): the thumbnails, the foreground and the clouds come
+  // the first bouquet grown (all its pieces in and grown, 15 s at most): the thumbnails, the foreground and the clouds come
   // after it, never during it (each new image costs the main thread and the graphics card a moment: the growth would stall)
   let allInRes = null;
   const firstAllIn = new Promise((res) => (allInRes = res));
-  setTimeout(() => allInRes(), 9000);
+  setTimeout(() => allInRes(), 15000);
   firstAllIn.then(() => document.dispatchEvent(new Event('boutique:bouquet')));
 
   async function showBouquet(p) {
@@ -562,6 +555,8 @@
       await old.repli();
       if (my !== gen) return;
     }
+    await decorIn;
+    if (my !== gen) return;
     const t0 = performance.now();
     let b;
     try {
@@ -579,9 +574,11 @@
     if (q.has('debug')) console.info(`[boutique] ${p.id}: échelle ${b.manifeste.echelle.s}, sommet y ${b.manifeste.echelle.sommet}${b.manifeste.echelle.reduit ? ', réduit (' + b.manifeste.echelle.reduit + ')' : ''}`);
     await b.vase;
     const tVase = performance.now();
-    await b.pret;
+    // the bouquet prepared whole before it grows (PREPARE ms at most, then the late pieces join as they come): every piece
+    // read and drawn once, hidden, so the growth only moves layers already drawn and never stalls on a new one
+    await Promise.race([b.tout, new Promise((r) => setTimeout(r, PREPARE))]);
+    await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
     const t1 = performance.now();
-    await decorIn;
     if (my !== gen || cur !== b) return;
     const tGo = performance.now();
     const t2 = await b.depart();
@@ -603,16 +600,25 @@
   }
 
   // ---------- thumbnails: one light SVG file per frame, as an <img>, one after the other (the chosen card's first, then the
-  // cards on screen, then the others), each when the page is idle: reading one is a single task of the main thread, and a
-  // touch waits at most for that one
+  // others from the middle out), each when the page is idle: reading one is a single task of the main thread, and a touch
+  // waits at most for that one. Only the frames on screen or next to it: the others when the gallery or the window
+  // brings them near (more frames are drawn than a phone shows)
   const idle = (ms) => new Promise((r) => (window.requestIdleCallback ? requestIdleCallback(() => r(), { timeout: ms }) : setTimeout(r, 50)));
+  // a frame on screen, or the next one beyond either edge, once the gallery has settled (from its place, not its slide)
+  const nearScreen = (c) => {
+    const [a, b] = window.SCENE_VUE ? window.SCENE_VUE() : [0, WW];
+    const pas = parseFloat(rail.style.getPropertyValue('--pas')) || FW;
+    const x = WW / 2 + (c.d || 0) * pas;
+    return x - FW / 2 < b + pas && x + FW / 2 > a - pas;
+  };
+  let thumbsBusy = false;
   async function loadThumbs() {
-    const seen = (c) => {
-      const r = c.b.getBoundingClientRect();
-      return r.right > 0 && r.left < innerWidth;
-    };
-    const order = cards.slice().sort((a, b) => (b === cards[chosen]) - (a === cards[chosen]) || seen(b) - seen(a));
-    for (const c of order) {
+    if (thumbsBusy) return;
+    thumbsBusy = true;
+    for (;;) {
+      const c = cards.filter((c) => !c.thumb && nearScreen(c)).sort((a, b) => Math.abs(a.d || 0) - Math.abs(b.d || 0))[0];
+      if (!c) break;
+      c.thumb = true;
       await new Promise((res) => {
         c.img.addEventListener('load', res, { once: true });
         c.img.addEventListener('error', res, { once: true });
@@ -622,6 +628,7 @@
       });
       await idle(400);
     }
+    thumbsBusy = false;
   }
 
   // ---------- measures (?perf=1)
@@ -751,6 +758,10 @@
     }
     thumbsDoneRes();
     report();
+    // the frames the gallery or the window brings near later
+    addEventListener('resize', loadThumbs);
+    rail.addEventListener('transitionend', loadThumbs);
+    document.addEventListener('keyup', loadThumbs);
   }
 
   // nothing grows or sways while the tab is hidden (only what was running starts again: a finished entrance stays finished)

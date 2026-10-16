@@ -263,3 +263,11 @@ l'identité de son éditeur dans ses mentions légales.
   (`decor/AUDIT-LEGAL.md`).
 - 2026-10-16, suite 2 (porteur) : micro-entreprise en franchise de TVA ; « toutes taxes comprises » devient « TVA non
   applicable, art. 293 B du CGI » dans les cinq langues, le pied de page et le reçu.
+- 2026-10-16, performances (porteur : « le site est trop lent ») : mesuré sur téléphone simulé et PC ; le décor fixe en
+  SVG (26 000 éléments, lus et dessinés en entier même hors champ) faisait l'essentiel du blocage. Sans rien changer au
+  dessin : le téléphone charge le décor recadré sur sa colonne (`decor/out/colonne/`, écrit par `scene/recadre.mjs`,
+  vérifié au pixel près, à relancer après tout changement d'une couche) ; le chargement est étagé (ciel et horizon, puis
+  voiles et sol d'un coup, puis le bouquet préparé entier avant sa pousse, puis les touffes et vignettes à l'écran
+  seulement). Téléphone : premier affichage 5,3 → 0,7 s, plus grand affichage 13,8 → 2,6 s, pousse 1 → 50 images/s.
+  Ordinateur : plus grand affichage 20,9 → 3,0 s, mais la pousse reste à 12 images/s et le bouquet part vers 10 à 13 s.
+  Question ouverte au porteur : servir le décor fixe en WebP pré-rendu depuis les SVG (le produit reste en SVG) ?
