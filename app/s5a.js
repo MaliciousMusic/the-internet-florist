@@ -22,7 +22,12 @@ const CW_DDEC=[
  {id:'rose',n:'Rose profond',c:'#e05a8a',c2:'#c83a6a'},{id:'fuchsia',n:'Fuchsia',c:'#c62a6c',c2:'#a01a50'},{id:'lavande',n:'Bleu lavande',c:'#b7a6d8',c2:'#9a88c8'},
  {id:'pourpre',n:'Pourpre sombre',c:'#6a1a4a',c2:'#4a0a32'},{id:'rouge',n:'Rouge',c:'#c41f2e',c2:'#a0101e'},{id:'rouge-noir',n:'Rouge noir velouté',c:'#4a0c1e',c2:'#2a0410'},
  {id:'orange',n:'Orange',c:'#ef8c2a',c2:'#e06a1a'},{id:'jaune',n:'Jaune tendre',c:'#f6dc6a',c2:'#f2c840'},{id:'jaune-rose',n:'Jaune et rose mauve',c:'#f4d070',tip:'#d880a8'},
- {id:'blanc-lavande',n:'Blanc et rose lavande',c:'#f6eef4',c2:'#c8a0d0',k2:.9},{id:'corail-jaune',n:'Corail et jaune',c:'#f08a6a',c2:'#f4cc5a',k2:.9},{id:'karma-yin',n:'Pourpre à pointes blanches',c:'#8a2a5a',tip:'#f8f2f2'}];
+ {id:'blanc-lavande',n:'Blanc et rose lavande',c:'#f6eef4',c2:'#c8a0d0',k2:.9},{id:'corail-jaune',n:'Corail et jaune',c:'#f08a6a',c2:'#f4cc5a',k2:.9},{id:'karma-yin',n:'Pourpre à pointes blanches',c:'#8a2a5a',tip:'#f8f2f2'},
+ /* added late (wave late:9, after the SKU numbers already published): the documented colourways of catalogue/serre/sources/dahlia-decoratif.json
+    (manquants), at the end so that no number moves; their SVG colours in DAH_MAT (y-dahlia.js) */
+ {id:'rouge-blanc',late:9,n:'Rouge à pointes blanches',c:'#c70a07',tip:'#f6ece8'},{id:'rose-strie-blanc',late:9,n:'Rose strié de blanc',c:'#dc8aa2',c2:'#f4e6ec',k2:.3},
+ {id:'blanc-bordeaux',late:9,n:'Blanc moucheté de bordeaux',c:'#ebdbd9',c2:'#a37a7e',k2:.3},{id:'violet-vif',late:9,n:'Violet vif',c:'#5a0a67'},
+ {id:'caramel',late:9,n:'Caramel doré',c:'#c4601d',c2:'#c14b05'}];
 const CW_DBAL=[
  {id:'blanc',n:'Blanc',c:'#f6f2ea',mouth:'#e8e0c8'},{id:'creme',n:'Crème',c:'#f2e6c6'},{id:'jaune',n:'Jaune',c:'#f2c23a'},{id:'abricot',n:'Abricot bronze',c:'#e8a25a',c2:'#d8843a'},
  {id:'jowey',n:'Saumon, mauve et pêche',c:'#f0a088',c2:'#c88aa8',k2:.85},{id:'corail',n:'Corail pêche',c:'#f29a7c'},{id:'orange',n:'Orange',c:'#e8782a'},{id:'bronze',n:'Bronze orangé',c:'#c8682a',c2:'#a85020'},
