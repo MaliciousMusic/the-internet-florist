@@ -2,7 +2,7 @@
  "vases": {
   "kenzan-laiton-rond": {
    "name": "Kenzan rond en laiton",
-   "version": 1,
+   "version": 2,
    "scale": null,
    "engineScale": 1,
    "engineHeightCm": 4.1,
@@ -13,19 +13,32 @@
      "w": 0.4332119360902255,
      "text": "pas au niveau graphiquement",
      "type": "",
-     "status": "sent",
+     "status": "done",
      "date": "2026-10-16T21:46:30.639Z",
      "scale": 1,
      "v": 1,
-     "sent": "2026-10-17_002426"
+     "sent": "2026-10-17_002426",
+     "doneIn": 2
     }
    ],
    "valid": null,
-   "history": []
+   "history": [
+    {
+     "version": 2,
+     "date": "2026-10-17T02:17:25.414Z",
+     "summary": "Refait en SVG au niveau du pilote validé (vases5/tour.py) : socle de plomb mat et champ dense d'aiguilles de laiton modélisés, les aiguilles de devant passent devant les tiges, celles du fond derrière ; sans socle de présentation",
+     "notes": [
+      1
+     ],
+     "scale": null,
+     "commit": "f00497e"
+    }
+   ],
+   "validSent": false
   },
   "suiban-ovale-peint": {
    "name": "Suiban ovale peint",
-   "version": 1,
+   "version": 2,
    "scale": null,
    "engineScale": 1,
    "engineHeightCm": 8.1,
@@ -36,22 +49,35 @@
      "w": 0.5029830642526141,
      "text": "pas au niveau graphiquement",
      "type": "",
-     "status": "sent",
+     "status": "done",
      "date": "2026-10-16T21:46:25.025Z",
      "scale": 1,
      "v": 1,
-     "sent": "2026-10-17_002426"
+     "sent": "2026-10-17_002426",
+     "doneIn": 2
     }
    ],
    "valid": null,
-   "history": []
+   "history": [
+    {
+     "version": 2,
+     "date": "2026-10-17T02:48:51.293Z",
+     "summary": "Refait en SVG au niveau du pilote (vases5/tour.py, forme d'après le contour) : la silhouette mesurée gonflée rangée par rangée en volume (pieds, lobes et profil compris), ouverture sur la bouche mesurée avec sa lèvre et son intérieur, studio de la boutique, sans socle ; porcelaine crème, filets et objets précieux peints en bleu-vert",
+     "notes": [
+      1
+     ],
+     "scale": null,
+     "commit": "f00497e"
+    }
+   ],
+   "validSent": false
   },
   "vase-ovoide-chocolat": {
    "name": "Vase ovoïde chocolat",
-   "version": 5,
+   "version": 6,
    "scale": null,
-   "engineScale": 1.13,
-   "engineHeightCm": 16.9,
+   "engineScale": 1.58,
+   "engineHeightCm": null,
    "notes": [
     {
      "num": 1,
@@ -102,6 +128,14 @@
      "notes": [],
      "scale": null,
      "commit": "7e9d935"
+    },
+    {
+     "version": 6,
+     "date": "2026-10-17T03:09:20.926Z",
+     "summary": "Échelle demandée inscrite (1,58)",
+     "notes": [],
+     "scale": "vase-ovoide-chocolat 1.13 → 1.58",
+     "commit": "f00497e"
     }
    ],
    "scaleSent": false,
@@ -109,7 +143,7 @@
   },
   "vase-tete-veine-sable": {
    "name": "Vase tête veiné sable",
-   "version": 1,
+   "version": 2,
    "scale": null,
    "engineScale": 1.02,
    "engineHeightCm": 22.4,
@@ -120,16 +154,29 @@
      "w": 0.6110703261582168,
      "text": "pas au niveau graphiquement",
      "type": "",
-     "status": "sent",
+     "status": "done",
      "date": "2026-10-16T21:46:05.683Z",
      "scale": 1,
      "v": 1,
-     "sent": "2026-10-17_002426"
+     "sent": "2026-10-17_002426",
+     "doneIn": 2
     }
    ],
    "valid": null,
-   "history": [],
-   "scaleSent": false
+   "history": [
+    {
+     "version": 2,
+     "date": "2026-10-17T02:48:51.624Z",
+     "summary": "Refait en SVG au niveau du pilote (vases5/tour.py, forme d'après le contour) : la silhouette mesurée gonflée rangée par rangée en volume (pieds, lobes et profil compris), ouverture sur la bouche mesurée avec sa lèvre et son intérieur, studio de la boutique, sans socle ; onyx veiné en biais (le visage n'est porté que par le profil, pas peint)",
+     "notes": [
+      1
+     ],
+     "scale": null,
+     "commit": "f00497e"
+    }
+   ],
+   "scaleSent": false,
+   "validSent": false
   },
   "vase-conique-blanc": {
    "name": "Vase conique blanc",
@@ -152,7 +199,10 @@
      "doneIn": 2
     }
    ],
-   "valid": null,
+   "valid": {
+    "version": 2,
+    "date": "2026-10-17T02:37:52.730Z"
+   },
    "history": [
     {
      "version": 2,
@@ -189,7 +239,10 @@
      "doneIn": 2
     }
    ],
-   "valid": null,
+   "valid": {
+    "version": 2,
+    "date": "2026-10-17T02:37:56.769Z"
+   },
    "history": [
     {
      "version": 2,
@@ -225,7 +278,10 @@
      "doneIn": 2
     }
    ],
-   "valid": null,
+   "valid": {
+    "version": 2,
+    "date": "2026-10-17T02:38:01.237Z"
+   },
    "history": [
     {
      "version": 2,
@@ -261,7 +317,10 @@
      "doneIn": 2
     }
    ],
-   "valid": null,
+   "valid": {
+    "version": 2,
+    "date": "2026-10-17T02:45:45.787Z"
+   },
    "history": [
     {
      "version": 2,
@@ -298,7 +357,10 @@
      "doneIn": 2
     }
    ],
-   "valid": null,
+   "valid": {
+    "version": 2,
+    "date": "2026-10-17T02:38:09.226Z"
+   },
    "history": [
     {
      "version": 2,
@@ -335,7 +397,10 @@
      "doneIn": 2
     }
    ],
-   "valid": null,
+   "valid": {
+    "version": 2,
+    "date": "2026-10-17T02:38:14.465Z"
+   },
    "history": [
     {
      "version": 2,
@@ -352,7 +417,7 @@
   },
   "vase-coeur-anthracite": {
    "name": "Vase cœur anthracite",
-   "version": 1,
+   "version": 2,
    "scale": null,
    "engineScale": 0.79,
    "engineHeightCm": 24.4,
@@ -363,16 +428,29 @@
      "w": 0.6103351486631599,
      "text": "pas au niveau graphiquement",
      "type": "",
-     "status": "sent",
+     "status": "done",
      "date": "2026-10-16T21:44:52.577Z",
      "scale": 1,
      "v": 1,
-     "sent": "2026-10-17_002426"
+     "sent": "2026-10-17_002426",
+     "doneIn": 2
     }
    ],
    "valid": null,
-   "history": [],
-   "scaleSent": false
+   "history": [
+    {
+     "version": 2,
+     "date": "2026-10-17T02:48:51.788Z",
+     "summary": "Refait en SVG au niveau du pilote (vases5/tour.py, forme d'après le contour) : la silhouette mesurée gonflée rangée par rangée en volume (pieds, lobes et profil compris), ouverture sur la bouche mesurée avec sa lèvre et son intérieur, studio de la boutique, sans socle ; pierre taillée en facettes plates à arêtes claires",
+     "notes": [
+      1
+     ],
+     "scale": null,
+     "commit": "f00497e"
+    }
+   ],
+   "scaleSent": false,
+   "validSent": false
   },
   "coupe-pied-blanche": {
    "name": "Coupe sur pied blanche",
@@ -395,7 +473,10 @@
      "doneIn": 2
     }
    ],
-   "valid": null,
+   "valid": {
+    "version": 5,
+    "date": "2026-10-17T02:38:20.641Z"
+   },
    "history": [
     {
      "version": 2,
@@ -455,7 +536,10 @@
      "doneIn": 2
     }
    ],
-   "valid": null,
+   "valid": {
+    "version": 2,
+    "date": "2026-10-17T02:38:18.245Z"
+   },
    "history": [
     {
      "version": 2,
@@ -491,7 +575,10 @@
      "doneIn": 2
     }
    ],
-   "valid": null,
+   "valid": {
+    "version": 2,
+    "date": "2026-10-17T02:38:24.391Z"
+   },
    "history": [
     {
      "version": 2,
@@ -528,7 +615,10 @@
      "doneIn": 2
     }
    ],
-   "valid": null,
+   "valid": {
+    "version": 2,
+    "date": "2026-10-17T02:38:28.328Z"
+   },
    "history": [
     {
      "version": 2,
@@ -565,7 +655,10 @@
      "doneIn": 2
     }
    ],
-   "valid": null,
+   "valid": {
+    "version": 2,
+    "date": "2026-10-17T02:38:31.637Z"
+   },
    "history": [
     {
      "version": 2,
@@ -602,7 +695,10 @@
      "doneIn": 2
     }
    ],
-   "valid": null,
+   "valid": {
+    "version": 2,
+    "date": "2026-10-17T02:38:38.878Z"
+   },
    "history": [
     {
      "version": 2,
@@ -620,7 +716,7 @@
   },
   "coupe-cobalt-mouchetee": {
    "name": "Coupe soufflée cobalt",
-   "version": 2,
+   "version": 3,
    "scale": null,
    "engineScale": 1.17,
    "engineHeightCm": 16.9,
@@ -637,6 +733,18 @@
      "v": 1,
      "sent": "2026-10-17_002426",
      "doneIn": 2
+    },
+    {
+     "num": 2,
+     "u": 0.036685013325607196,
+     "w": 0.4369792766549044,
+     "text": "horrible, a refaire autrement ",
+     "type": "",
+     "status": "done",
+     "date": "2026-10-17T02:45:20.149Z",
+     "scale": 1.17,
+     "v": 2,
+     "doneIn": 3
     }
    ],
    "valid": null,
@@ -650,6 +758,16 @@
      ],
      "scale": null,
      "commit": "7e9d935"
+    },
+    {
+     "version": 3,
+     "date": "2026-10-17T03:03:46.896Z",
+     "summary": "Refaite autrement : verre soufflé cobalt translucide (on voit le fond et les tiges à travers), fines inclusions blanches dans la masse au lieu de la mouchetures opaque, reflets nets et épaisseur au bord",
+     "notes": [
+      2
+     ],
+     "scale": null,
+     "commit": "f00497e"
     }
    ],
    "scaleSent": false,
@@ -676,7 +794,10 @@
      "doneIn": 2
     }
    ],
-   "valid": null,
+   "valid": {
+    "version": 5,
+    "date": "2026-10-17T02:38:41.927Z"
+   },
    "history": [
     {
      "version": 2,
@@ -718,7 +839,7 @@
   },
   "bulbe-pied-sable": {
    "name": "Bulbe sur pied sable",
-   "version": 2,
+   "version": 3,
    "scale": null,
    "engineScale": 1.29,
    "engineHeightCm": 21.2,
@@ -735,6 +856,18 @@
      "v": 1,
      "sent": "2026-10-17_002426",
      "doneIn": 2
+    },
+    {
+     "num": 2,
+     "u": 0.08032940090702127,
+     "w": 0.594820473392709,
+     "text": "fais une texture granito",
+     "type": "",
+     "status": "done",
+     "date": "2026-10-17T02:45:04.352Z",
+     "scale": 1.29,
+     "v": 2,
+     "doneIn": 3
     }
    ],
    "valid": null,
@@ -748,6 +881,16 @@
      ],
      "scale": null,
      "commit": "7e9d935"
+    },
+    {
+     "version": 3,
+     "date": "2026-10-17T02:55:38.696Z",
+     "summary": "Façon granito : éclats anguleux de quatre pierres (blanc, gris, brique, noir) de tailles variées, quelques gros, incrustés à fleur dans le corps et poli satiné",
+     "notes": [
+      2
+     ],
+     "scale": null,
+     "commit": "f00497e"
     }
    ],
    "scaleSent": false,
@@ -755,7 +898,7 @@
   },
   "calice-celadon-pans": {
    "name": "Vase céladon à pans",
-   "version": 2,
+   "version": 3,
    "scale": null,
    "engineScale": 1.22,
    "engineHeightCm": 25,
@@ -772,6 +915,18 @@
      "v": 1,
      "sent": "2026-10-17_002426",
      "doneIn": 2
+    },
+    {
+     "num": 2,
+     "u": -0.010280096748020714,
+     "w": 0.5520346136166037,
+     "text": "pas encore assez beau la texture",
+     "type": "",
+     "status": "done",
+     "date": "2026-10-17T02:44:49.310Z",
+     "scale": 1.22,
+     "v": 2,
+     "doneIn": 3
     }
    ],
    "valid": null,
@@ -785,6 +940,16 @@
      ],
      "scale": null,
      "commit": "7e9d935"
+    },
+    {
+     "version": 3,
+     "date": "2026-10-17T03:00:43.294Z",
+     "summary": "Céladon refait : émail profond qui s'accumule plus vert et plus sombre dans le creux des pans et vers le bas, fine craquelure, éclat de l'émail plus large",
+     "notes": [
+      2
+     ],
+     "scale": null,
+     "commit": "f00497e"
     }
    ],
    "scaleSent": false,
@@ -811,7 +976,10 @@
      "doneIn": 2
     }
    ],
-   "valid": null,
+   "valid": {
+    "version": 5,
+    "date": "2026-10-17T02:38:51.269Z"
+   },
    "history": [
     {
      "version": 2,
@@ -852,7 +1020,7 @@
   },
   "colonne-blanche": {
    "name": "Colonne blanche",
-   "version": 1,
+   "version": 2,
    "scale": null,
    "engineScale": 0.42,
    "engineHeightCm": 25.2,
@@ -863,16 +1031,29 @@
      "w": 0.49611334981208033,
      "text": "pas au niveau graphique du haut du panier a refaire en bien mieux",
      "type": "",
-     "status": "sent",
+     "status": "done",
      "date": "2026-10-16T21:34:48.230Z",
      "scale": 0.42,
      "v": 1,
-     "sent": "2026-10-17_002426"
+     "sent": "2026-10-17_002426",
+     "doneIn": 2
     }
    ],
    "valid": null,
-   "history": [],
-   "scaleSent": false
+   "history": [
+    {
+     "version": 2,
+     "date": "2026-10-17T02:29:20.547Z",
+     "summary": "Refaite en SVG au niveau du pilote (vases5/tour.py) : vraie colonne à section carrée tournée de 22° (deux faces visibles), haut repris : lèvre carrée nette, ouverture et parois intérieures carrées, laque blanche mate ; échelle 0,42",
+     "notes": [
+      1
+     ],
+     "scale": null,
+     "commit": "f00497e"
+    }
+   ],
+   "scaleSent": false,
+   "validSent": false
   },
   "pot-agate-rose": {
    "name": "Pot agate rosé",
@@ -895,7 +1076,10 @@
      "doneIn": 2
     }
    ],
-   "valid": null,
+   "valid": {
+    "version": 2,
+    "date": "2026-10-17T02:39:02.829Z"
+   },
    "history": [
     {
      "version": 2,
@@ -932,7 +1116,10 @@
      "doneIn": 2
     }
    ],
-   "valid": null,
+   "valid": {
+    "version": 2,
+    "date": "2026-10-17T02:39:06.415Z"
+   },
    "history": [
     {
      "version": 2,
@@ -969,7 +1156,10 @@
      "doneIn": 2
     }
    ],
-   "valid": null,
+   "valid": {
+    "version": 2,
+    "date": "2026-10-17T02:39:08.702Z"
+   },
    "history": [
     {
      "version": 2,
@@ -1005,7 +1195,10 @@
      "doneIn": 2
     }
    ],
-   "valid": null,
+   "valid": {
+    "version": 5,
+    "date": "2026-10-17T02:39:11.171Z"
+   },
    "history": [
     {
      "version": 2,
@@ -1066,7 +1259,10 @@
      "doneIn": 2
     }
    ],
-   "valid": null,
+   "valid": {
+    "version": 2,
+    "date": "2026-10-17T02:39:14.850Z"
+   },
    "history": [
     {
      "version": 2,
@@ -1083,7 +1279,7 @@
   },
   "cylindre-chinoiserie": {
    "name": "Cylindre chinoiserie",
-   "version": 1,
+   "version": 2,
    "scale": null,
    "engineScale": 1,
    "engineHeightCm": 20.5,
@@ -1094,19 +1290,32 @@
      "w": 0.6147399535766236,
      "text": "pas au niveau graphiquement",
      "type": "",
-     "status": "sent",
+     "status": "done",
      "date": "2026-10-16T21:36:34.882Z",
      "scale": 1,
      "v": 1,
-     "sent": "2026-10-17_002426"
+     "sent": "2026-10-17_002426",
+     "doneIn": 2
     }
    ],
    "valid": null,
-   "history": []
+   "history": [
+    {
+     "version": 2,
+     "date": "2026-10-17T02:29:20.747Z",
+     "summary": "Refait au niveau du pilote : décor bleu et blanc peint dans l'espace du vase (doubles filets au col et au pied, rinceau continu avec feuilles, vrilles et pivoines, lavis inégal au bord plus sombre), éclairé comme la porcelaine — première proposition de décor, à commenter",
+     "notes": [
+      1
+     ],
+     "scale": null,
+     "commit": "f00497e"
+    }
+   ],
+   "validSent": false
   },
   "ovoide-verre-glacier": {
    "name": "Ovoïde verre glacier",
-   "version": 2,
+   "version": 3,
    "scale": null,
    "engineScale": 1,
    "engineHeightCm": 15,
@@ -1123,6 +1332,18 @@
      "v": 1,
      "sent": "2026-10-17_002426",
      "doneIn": 2
+    },
+    {
+     "num": 2,
+     "u": 0.09913688300821191,
+     "w": 0.48033045357234155,
+     "text": "manque de transparence",
+     "type": "",
+     "status": "done",
+     "date": "2026-10-17T02:44:31.267Z",
+     "scale": 1,
+     "v": 2,
+     "doneIn": 3
     }
    ],
    "valid": null,
@@ -1136,6 +1357,16 @@
      ],
      "scale": null,
      "commit": "7e9d935"
+    },
+    {
+     "version": 3,
+     "date": "2026-10-17T03:03:47.081Z",
+     "summary": "Bien plus transparent : verre clair très peu dense, la teinte bleue ne monte que depuis le pied, reflets plus vifs",
+     "notes": [
+      2
+     ],
+     "scale": null,
+     "commit": "f00497e"
     }
    ],
    "scaleSent": false,
@@ -1162,7 +1393,10 @@
      "doneIn": 2
     }
    ],
-   "valid": null,
+   "valid": {
+    "version": 2,
+    "date": "2026-10-17T02:39:32.486Z"
+   },
    "history": [
     {
      "version": 2,
@@ -1180,7 +1414,7 @@
   },
   "balustre-email-reticule": {
    "name": "Balustre émail réticulé",
-   "version": 2,
+   "version": 3,
    "scale": null,
    "engineScale": 1,
    "engineHeightCm": 21.4,
@@ -1197,6 +1431,18 @@
      "v": 1,
      "sent": "2026-10-17_002426",
      "doneIn": 2
+    },
+    {
+     "num": 2,
+     "u": 0.07043597341954023,
+     "w": 0.44395271388963725,
+     "text": "changer les couleur pour une pallette plus clair et des touches plus coloré",
+     "type": "",
+     "status": "done",
+     "date": "2026-10-17T02:39:48.459Z",
+     "scale": 1,
+     "v": 2,
+     "doneIn": 3
     }
    ],
    "valid": null,
@@ -1210,6 +1456,16 @@
      ],
      "scale": null,
      "commit": "7e9d935"
+    },
+    {
+     "version": 3,
+     "date": "2026-10-17T03:00:43.684Z",
+     "summary": "Palette éclaircie : fond ivoire et or pâle, touches de céladon, turquoise, corail et jaune, cernes plus doux, émail plus brillant",
+     "notes": [
+      2
+     ],
+     "scale": null,
+     "commit": "f00497e"
     }
    ],
    "validSent": false
@@ -1235,7 +1491,10 @@
      "doneIn": 2
     }
    ],
-   "valid": null,
+   "valid": {
+    "version": 2,
+    "date": "2026-10-17T02:39:42.336Z"
+   },
    "history": [
     {
      "version": 2,
@@ -1272,7 +1531,10 @@
      "doneIn": 2
     }
    ],
-   "valid": null,
+   "valid": {
+    "version": 2,
+    "date": "2026-10-17T02:40:31.558Z"
+   },
    "history": [
     {
      "version": 2,
@@ -1290,7 +1552,7 @@
   },
   "coupe-medicis-anses": {
    "name": "Coupe Médicis à anses",
-   "version": 2,
+   "version": 3,
    "scale": null,
    "engineScale": 1.52,
    "engineHeightCm": 12.6,
@@ -1299,14 +1561,25 @@
      "num": 1,
      "u": 0.08634154559576024,
      "w": 0.677218818292748,
-     "text": "pas au niveau graphiquement",
+     "text": "pas beau, pas assez fin et élégant",
      "type": "",
      "status": "done",
      "date": "2026-10-16T21:37:31.696Z",
      "scale": 1.52,
-     "v": 1,
-     "sent": "2026-10-17_002426",
-     "doneIn": 2
+     "v": 2,
+     "doneIn": 3
+    },
+    {
+     "num": 2,
+     "u": 0.9358024968970822,
+     "w": 0.39921587670755665,
+     "text": ":/",
+     "type": "",
+     "status": "done",
+     "date": "2026-10-17T02:44:21.899Z",
+     "scale": 1.52,
+     "v": 2,
+     "doneIn": 3
     }
    ],
    "valid": null,
@@ -1320,6 +1593,17 @@
      ],
      "scale": null,
      "commit": "7e9d935"
+    },
+    {
+     "version": 3,
+     "date": "2026-10-17T03:06:19.019Z",
+     "summary": "Plus fine et élégante : lèvre amincie soulignée d'un filet doré, anses fines qui s'élèvent un peu au-dessus du bord, godrons plus discrets, porcelaine blanche brillante sans grain",
+     "notes": [
+      1,
+      2
+     ],
+     "scale": null,
+     "commit": "f00497e"
     }
    ],
    "scaleSent": false,
@@ -1327,7 +1611,7 @@
   },
   "coupe-basse-anthracite": {
    "name": "Coupe basse anthracite",
-   "version": 1,
+   "version": 2,
    "scale": null,
    "engineScale": 0.86,
    "engineHeightCm": 8.6,
@@ -1338,20 +1622,33 @@
      "w": 1.861186837894119,
      "text": "cette coupe est censé fonctionné comme un pique fleur ",
      "type": "",
-     "status": "sent",
+     "status": "done",
      "date": "2026-10-16T21:38:08.818Z",
      "scale": 0.86,
      "v": 1,
-     "sent": "2026-10-17_002426"
+     "sent": "2026-10-17_002426",
+     "doneIn": 2
     }
    ],
    "valid": null,
-   "history": [],
-   "scaleSent": false
+   "history": [
+    {
+     "version": 2,
+     "date": "2026-10-17T02:17:25.804Z",
+     "summary": "Fonctionne maintenant comme un pique-fleurs (un kenzan caché au fond) : le bouquet se tient debout comme en moribana ; refaite au niveau du pilote, grès anthracite satiné, sans plateau de marbre",
+     "notes": [
+      1
+     ],
+     "scale": null,
+     "commit": "f00497e"
+    }
+   ],
+   "scaleSent": false,
+   "validSent": false
   },
   "calice-mouchete": {
    "name": "Calice moucheté",
-   "version": 2,
+   "version": 3,
    "scale": null,
    "engineScale": 1.18,
    "engineHeightCm": 20.1,
@@ -1360,14 +1657,13 @@
      "num": 1,
      "u": 0.032613950141762216,
      "w": 0.6673882349346193,
-     "text": "pas au niveau graphiquement",
+     "text": "fais le facon granito avec des tache comme des insertion",
      "type": "",
      "status": "done",
      "date": "2026-10-16T21:38:47.181Z",
      "scale": 1.18,
-     "v": 1,
-     "sent": "2026-10-17_002426",
-     "doneIn": 2
+     "v": 2,
+     "doneIn": 3
     }
    ],
    "valid": null,
@@ -1381,6 +1677,16 @@
      ],
      "scale": null,
      "commit": "7e9d935"
+    },
+    {
+     "version": 3,
+     "date": "2026-10-17T02:55:38.875Z",
+     "summary": "Façon granito : taches devenues des éclats anguleux incrustés (noir, gris, blanc, brique), denses, quelques gros, poli satiné",
+     "notes": [
+      1
+     ],
+     "scale": null,
+     "commit": "f00497e"
     }
    ],
    "scaleSent": false,
@@ -1388,7 +1694,7 @@
   },
   "suiban-lobe-rose": {
    "name": "Suiban lobé rose",
-   "version": 1,
+   "version": 2,
    "scale": null,
    "engineScale": 1,
    "engineHeightCm": 9.5,
@@ -1399,15 +1705,28 @@
      "w": 0.6205590978845373,
      "text": "pas au niveau graphiquement",
      "type": "",
-     "status": "sent",
+     "status": "done",
      "date": "2026-10-16T21:43:09.633Z",
      "scale": 1,
      "v": 1,
-     "sent": "2026-10-17_002426"
+     "sent": "2026-10-17_002426",
+     "doneIn": 2
     }
    ],
    "valid": null,
-   "history": []
+   "history": [
+    {
+     "version": 2,
+     "date": "2026-10-17T02:48:51.458Z",
+     "summary": "Refait en SVG au niveau du pilote (vases5/tour.py, forme d'après le contour) : la silhouette mesurée gonflée rangée par rangée en volume (pieds, lobes et profil compris), ouverture sur la bouche mesurée avec sa lèvre et son intérieur, studio de la boutique, sans socle ; huit lobes",
+     "notes": [
+      1
+     ],
+     "scale": null,
+     "commit": "f00497e"
+    }
+   ],
+   "validSent": false
   },
   "boule-inox-brossee": {
    "name": "Boule en inox brossé",
@@ -1430,7 +1749,10 @@
      "doneIn": 2
     }
    ],
-   "valid": null,
+   "valid": {
+    "version": 2,
+    "date": "2026-10-17T02:40:51.722Z"
+   },
    "history": [
     {
      "version": 2,
@@ -1466,7 +1788,10 @@
      "doneIn": 2
     }
    ],
-   "valid": null,
+   "valid": {
+    "version": 2,
+    "date": "2026-10-17T02:40:56.634Z"
+   },
    "history": [
     {
      "version": 2,
@@ -1502,7 +1827,10 @@
      "doneIn": 2
     }
    ],
-   "valid": null,
+   "valid": {
+    "version": 2,
+    "date": "2026-10-17T02:40:59.400Z"
+   },
    "history": [
     {
      "version": 2,
@@ -1539,7 +1867,10 @@
      "doneIn": 2
     }
    ],
-   "valid": null,
+   "valid": {
+    "version": 2,
+    "date": "2026-10-17T02:41:01.807Z"
+   },
    "history": [
     {
      "version": 2,
@@ -1576,7 +1907,10 @@
      "doneIn": 2
     }
    ],
-   "valid": null,
+   "valid": {
+    "version": 2,
+    "date": "2026-10-17T02:41:05.191Z"
+   },
    "history": [
     {
      "version": 2,
@@ -1594,7 +1928,7 @@
   },
   "jarre-gres-chamotte": {
    "name": "Jarre en grès chamotté",
-   "version": 2,
+   "version": 3,
    "scale": null,
    "engineScale": 0.89,
    "engineHeightCm": 18.7,
@@ -1611,6 +1945,18 @@
      "v": 1,
      "sent": "2026-10-17_002426",
      "doneIn": 2
+    },
+    {
+     "num": 2,
+     "u": 0.009273213948095443,
+     "w": 0.6859786854794316,
+     "text": "fais une meilleur texture terre cuite comme sur le vase carpe",
+     "type": "",
+     "status": "done",
+     "date": "2026-10-17T02:46:17.650Z",
+     "scale": 0.89,
+     "v": 2,
+     "doneIn": 3
     }
    ],
    "valid": null,
@@ -1624,6 +1970,16 @@
      ],
      "scale": null,
      "commit": "7e9d935"
+    },
+    {
+     "version": 3,
+     "date": "2026-10-17T03:00:43.895Z",
+     "summary": "Terre cuite comme la jarre aux carpes : argile chaude inégale (zones plus sombres et plus claires), surface sèche et mate, chamotte",
+     "notes": [
+      2
+     ],
+     "scale": null,
+     "commit": "f00497e"
     }
    ],
    "scaleSent": false,
@@ -1631,7 +1987,7 @@
   },
   "boule-cotelee-bleue": {
    "name": "Boule côtelée bleue",
-   "version": 2,
+   "version": 3,
    "scale": null,
    "engineScale": 0.89,
    "engineHeightCm": 20.5,
@@ -1648,6 +2004,18 @@
      "v": 1,
      "sent": "2026-10-17_002426",
      "doneIn": 2
+    },
+    {
+     "num": 2,
+     "u": 0.03265040258845026,
+     "w": 0.42462817156204197,
+     "text": "la texture est pas encore assez belle, met plus de strie blanc verticaux",
+     "type": "",
+     "status": "done",
+     "date": "2026-10-17T02:46:37.857Z",
+     "scale": 0.89,
+     "v": 2,
+     "doneIn": 3
     }
    ],
    "valid": null,
@@ -1661,6 +2029,16 @@
      ],
      "scale": null,
      "commit": "7e9d935"
+    },
+    {
+     "version": 3,
+     "date": "2026-10-17T03:00:43.497Z",
+     "summary": "Beaucoup plus de stries blanches verticales : une soixantaine de coulées fines depuis la lèvre, entre les filets des côtes",
+     "notes": [
+      2
+     ],
+     "scale": null,
+     "commit": "f00497e"
     }
    ],
    "scaleSent": false,
@@ -1687,7 +2065,10 @@
      "doneIn": 2
     }
    ],
-   "valid": null,
+   "valid": {
+    "version": 2,
+    "date": "2026-10-17T02:41:15.668Z"
+   },
    "history": [
     {
      "version": 2,
@@ -1724,7 +2105,10 @@
      "doneIn": 2
     }
    ],
-   "valid": null,
+   "valid": {
+    "version": 2,
+    "date": "2026-10-17T02:41:18.784Z"
+   },
    "history": [
     {
      "version": 2,
@@ -1761,7 +2145,10 @@
      "doneIn": 2
     }
    ],
-   "valid": null,
+   "valid": {
+    "version": 2,
+    "date": "2026-10-17T02:41:21.650Z"
+   },
    "history": [
     {
      "version": 2,
@@ -1798,7 +2185,10 @@
      "doneIn": 2
     }
    ],
-   "valid": null,
+   "valid": {
+    "version": 2,
+    "date": "2026-10-17T02:41:24.045Z"
+   },
    "history": [
     {
      "version": 2,
@@ -1835,7 +2225,10 @@
      "doneIn": 2
     }
    ],
-   "valid": null,
+   "valid": {
+    "version": 2,
+    "date": "2026-10-17T02:41:27.379Z"
+   },
    "history": [
     {
      "version": 2,
@@ -1853,7 +2246,7 @@
   },
   "pique-fleurs-laiton": {
    "name": "Pique-fleurs en laiton",
-   "version": 1,
+   "version": 2,
    "scale": null,
    "engineScale": 1.22,
    "engineHeightCm": 5.5,
@@ -1864,20 +2257,33 @@
      "w": 0.4472456271798857,
      "text": "pas au niveau graphiquement",
      "type": "",
-     "status": "sent",
+     "status": "done",
      "date": "2026-10-16T21:41:05.124Z",
      "scale": 1.22,
      "v": 1,
-     "sent": "2026-10-17_002426"
+     "sent": "2026-10-17_002426",
+     "doneIn": 2
     }
    ],
    "valid": null,
-   "history": [],
-   "scaleSent": false
+   "history": [
+    {
+     "version": 2,
+     "date": "2026-10-17T02:17:25.603Z",
+     "summary": "Refait en SVG au niveau du pilote validé (vases5/tour.py) : socle de plomb mat et champ dense d'aiguilles de laiton modélisés, les aiguilles de devant passent devant les tiges, celles du fond derrière ; sans socle de présentation",
+     "notes": [
+      1
+     ],
+     "scale": null,
+     "commit": "f00497e"
+    }
+   ],
+   "scaleSent": false,
+   "validSent": false
   },
   "coupelle-laiton-console": {
    "name": "Coupelle en laiton",
-   "version": 2,
+   "version": 3,
    "scale": null,
    "engineScale": 1.63,
    "engineHeightCm": 8.1,
@@ -1894,6 +2300,18 @@
      "v": 1,
      "sent": "2026-10-17_002426",
      "doneIn": 2
+    },
+    {
+     "num": 2,
+     "u": -0.08163099302442191,
+     "w": 0.8622784184756962,
+     "text": "tige dans le vide",
+     "type": "",
+     "status": "done",
+     "date": "2026-10-17T02:41:44.189Z",
+     "scale": 1.63,
+     "v": 2,
+     "doneIn": 3
     }
    ],
    "valid": null,
@@ -1907,6 +2325,16 @@
      ],
      "scale": null,
      "commit": "7e9d935"
+    },
+    {
+     "version": 3,
+     "date": "2026-10-17T03:07:32.987Z",
+     "summary": "Plus de tiges dans le vide : la coupelle fonctionne comme un pique-fleurs caché au fond, les tiges y sont plantées et le bouquet tient debout",
+     "notes": [
+      2
+     ],
+     "scale": null,
+     "commit": "f00497e"
     }
    ],
    "scaleSent": false,
@@ -2028,12 +2456,10 @@
      "w": 0.7086246582968126,
      "text": "la portion de tige vers le haut et celle vers le bas crée une cassure et des bug, le goulot resserer a un acceuil limité mais le corps ouvert au dessus du papillion peut egalement acceuillir des flerus peut etre deux zones de départ",
      "type": "",
-     "status": "done",
+     "status": "open",
      "date": "2026-10-16T21:21:33.412Z",
      "scale": 0.98,
-     "v": 1,
-     "sent": "2026-10-16_233158",
-     "doneIn": 2
+     "v": 2
     }
    ],
    "valid": null,
@@ -2073,7 +2499,10 @@
      "doneIn": 2
     }
    ],
-   "valid": null,
+   "valid": {
+    "version": 2,
+    "date": "2026-10-17T02:42:00.308Z"
+   },
    "history": [
     {
      "version": 2,
@@ -2136,7 +2565,7 @@
   },
   "jardiniere-cristaux": {
    "name": "Jardinière Art nouveau aux cristaux",
-   "version": 2,
+   "version": 3,
    "scale": null,
    "engineScale": 0.8,
    "engineHeightCm": 28.8,
@@ -2150,9 +2579,8 @@
      "status": "done",
      "date": "2026-10-16T21:27:04.096Z",
      "scale": 0.8,
-     "v": 1,
-     "sent": "2026-10-16_233158",
-     "doneIn": 2
+     "v": 2,
+     "doneIn": 3
     }
    ],
    "valid": null,
@@ -2166,6 +2594,16 @@
      ],
      "scale": null,
      "commit": "6265150"
+    },
+    {
+     "version": 3,
+     "date": "2026-10-17T03:08:20.328Z",
+     "summary": "Bouquet bien plus large : le vase porte un facteur de bouquet (fiche bq = 1,8), le compositeur y met 1,8 fois plus de tiges du modèle, réparties sur toute l'ouverture mesurée sur le GLB",
+     "notes": [
+      1
+     ],
+     "scale": null,
+     "commit": "f00497e"
     }
    ],
    "scaleSent": false,
@@ -2205,7 +2643,10 @@
      "doneIn": 2
     }
    ],
-   "valid": null,
+   "valid": {
+    "version": 2,
+    "date": "2026-10-17T02:42:48.441Z"
+   },
    "history": [
     {
      "version": 2,
@@ -2243,7 +2684,10 @@
      "doneIn": 2
     }
    ],
-   "valid": null,
+   "valid": {
+    "version": 2,
+    "date": "2026-10-17T02:42:55.892Z"
+   },
    "history": [
     {
      "version": 2,
@@ -2306,7 +2750,10 @@
      "doneIn": 2
     }
    ],
-   "valid": null,
+   "valid": {
+    "version": 2,
+    "date": "2026-10-17T02:43:00.233Z"
+   },
    "history": [
     {
      "version": 2,
@@ -2356,7 +2803,7 @@
   },
   "dragon-cloisonne": {
    "name": "Balustre noir au dragon",
-   "version": 1,
+   "version": 2,
    "scale": null,
    "engineScale": 1.36,
    "engineHeightCm": 69.4,
@@ -2367,11 +2814,12 @@
      "w": 0.29401325208569007,
      "text": "ajouter la pointe de la queue",
      "type": "",
-     "status": "sent",
+     "status": "done",
      "date": "2026-10-16T21:32:23.240Z",
      "scale": 1,
      "v": 1,
-     "sent": "2026-10-17_002426"
+     "sent": "2026-10-17_002426",
+     "doneIn": 2
     },
     {
      "num": 2,
@@ -2379,16 +2827,30 @@
      "w": 0.8404795098628394,
      "text": "faire la continuité du decor pour compler le trou jusqu'au bord",
      "type": "",
-     "status": "sent",
+     "status": "done",
      "date": "2026-10-16T21:32:39.657Z",
      "scale": 1,
      "v": 1,
-     "sent": "2026-10-17_002426"
+     "sent": "2026-10-17_002426",
+     "doneIn": 2
     }
    ],
    "valid": null,
-   "history": [],
-   "scaleSent": false
+   "history": [
+    {
+     "version": 2,
+     "date": "2026-10-17T02:52:04.750Z",
+     "summary": "Pointe de la queue ajoutée (effilée dans le prolongement de la queue, chaque section reprise de la dernière) ; décor de l'épaule prolongé jusqu'au bord (écailles et flammes voisines reflétées, fondues, plus de bande noire) ; retouches dans vases5/dragon-cloisonne/patch.py, appliquées à la texture avant le tracé ; échelle 1,36",
+     "notes": [
+      1,
+      2
+     ],
+     "scale": null,
+     "commit": "f00497e"
+    }
+   ],
+   "scaleSent": false,
+   "validSent": false
   },
   "ronces-noires": {
    "name": "Verre camée aux ronces",

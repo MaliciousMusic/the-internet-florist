@@ -127,6 +127,8 @@ def main():
         if name in CLEAR:
             body['clear'] = 1                                           # clear glass: the stems inside are seen sharp
         cfg = os.path.join(HERE, name, 'glbsvg.json')
+        if os.path.exists(cfg) and json.load(open(cfg, encoding='cp1252')).get('bq'):
+            fiche['bq'] = float(json.load(open(cfg, encoding='cp1252'))['bq'])     # a larger bouquet for a wide opening
         if os.path.exists(cfg):
             m2 = json.load(open(cfg, encoding='cp1252')).get('m2')
             if m2:                                                      # the vessel's other mouths, each with its share of the stems

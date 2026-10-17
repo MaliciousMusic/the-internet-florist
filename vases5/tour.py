@@ -128,14 +128,14 @@ def sphere(c, rad, n=40):
 
 
 # ---------------------------------------------------------------- the model, part by part (labels of the field)
-OUTER, LIP, INNER, FLOOR, BEAD = 0, 1, 2, 3, 4
+OUTER, LIP, INNER, FLOOR, BEAD, PIN = 0, 1, 2, 3, 4, 5
 SCULPTED = False
-NAMES = ['outer', 'lip', 'inner', 'floor', 'bead']
+NAMES = ['outer', 'lip', 'inner', 'floor', 'bead', 'pin']
 
 
 def relief_of(v):
     tp = v.get('tp') or {}
-    return any(k in tp for k in ('facets', 'lobes', 'dimples', 'squarefoot'))
+    return v.get('shape') == 'box' or any(k in tp for k in ('facets', 'lobes', 'dimples', 'squarefoot'))
 
 
 def radius_mod(v, H, PHI, R):
@@ -143,11 +143,12 @@ def radius_mod(v, H, PHI, R):
     of carved hollows (tp.dimples); heights of tp in cm"""
     tp = v.get('tp') or {}
     out = R.copy()
-    nf = tp.get('facets')
+    nf = tp.get('facets') or (4 if v.get('shape') == 'box' else None)
     if nf:
-        # flat faces: the radius of a regular polygon inscribed in the turned circle, its corners on the circle
+        # flat faces: the radius of a regular polygon inscribed in the turned circle, its corners on the circle (a box turned
+        # a little on its axis, yaw in degrees, so two of its faces are seen)
         k = 2 * math.pi / int(nf)
-        a = (PHI + k / 2) % k - k / 2
+        a = (PHI + k / 2 + math.radians(F('yaw', 22 if v.get('shape') == 'box' else 0))) % k - k / 2
         out = out * math.cos(k / 2) / np.cos(a)
     lb = tp.get('lobes')
     if lb:
@@ -172,7 +173,7 @@ def radius_mod(v, H, PHI, R):
     return out
 
 
-def sculpt(v, h, r, nphi):
+def sculpt(v, h, r, nphi, sign=1.0):
     """the outer wall turned and then carved: points from the modulated radius, normals from the surface's own tangents"""
     phi = np.linspace(0, 2 * math.pi, nphi, endpoint=False)
     H = np.repeat(h[:, None], nphi, 1); PHI = np.repeat(phi[None], len(h), 0)
@@ -182,11 +183,226 @@ def sculpt(v, h, r, nphi):
     N = np.cross(du, dv)
     N /= np.maximum(np.linalg.norm(N, axis=-1, keepdims=True), 1e-9)
     radial = np.stack([np.cos(PHI), np.zeros_like(PHI), np.sin(PHI)], -1)
-    N = np.where(((N * radial).sum(-1) < 0)[..., None], -N, N)        # outwards
+    N = np.where((((N * radial).sum(-1) * sign) < 0)[..., None], -N, N)     # outwards (inwards for an inner wall)
     return P.reshape(-1, 3), N.reshape(-1, 3)
 
 
+def kenzan_model(v, RES):
+    """a kenzan: the leaded base turned from the lower part of the profile (up to its step), and the field of brass needles
+    standing on it, one per hole of a square grid inside the base (tp.kz.rows across)"""
+    P0 = np.array(v['prof'], float)
+    step = next((i for i in range(1, len(P0)) if P0[i][1] < P0[i - 1][1] - .25 and P0[i][0] > 3), len(P0) - 1)
+    hb = float(P0[step][0])
+    v2 = dict(v); v2['prof'] = [list(q) for q in P0[:step + 1]] + [[hb + .01, 1.0]]
+    h, r = profile(v2, n=600)
+    nphi = int(F('ns', 1.7) * RES * 2 * math.pi * float(r.max()))
+    parts = []
+    P, N, PHI = revolve(h, r, nphi); parts.append((OUTER, P, N, PHI))
+    rr = np.linspace(0, float(np.interp(hb - .01, h, r)), 40)
+    P, N, PHI = revolve(np.full_like(rr, hb), rr, nphi); N[:] = (0, 1, 0); parts.append((LIP, P, N, PHI))
+    kz = (v.get('tp') or {}).get('kz', {})
+    rows = int(int(kz.get('rows', 9)) * F('kzk', 1)); rf = float(v.get('mo', r.max())) * .92; H = float(v['h'])
+    sp = 2 * rf / rows; pr = F('pinr', .55)
+    ww = np.linspace(0, 2 * math.pi, max(10, int(RES * pr * 7)), endpoint=False)
+    zz = np.linspace(hb, H, max(8, int((H - hb) * RES * 1.2)))
+    for i in range(rows + 1):
+        for j in range(rows + 1):
+            x, z = -rf + i * sp + (sp / 2 if j % 2 else 0), -rf + j * sp
+            if x * x + z * z > rf * rf:
+                continue
+            X = x + pr * np.cos(ww)[None]; Z = z + pr * np.sin(ww)[None]
+            Pn = np.stack([np.repeat(X, len(zz), 0), np.repeat(zz[:, None], len(ww), 1), np.repeat(Z, len(zz), 0)], -1).reshape(-1, 3)
+            Nn = np.stack([np.repeat(np.cos(ww)[None], len(zz), 0), np.zeros((len(zz), len(ww))), np.repeat(np.sin(ww)[None], len(zz), 0)], -1).reshape(-1, 3)
+            parts.append((PIN, Pn, Nn, np.full(len(Pn), math.atan2(z, x))))
+            Pt, Nt = sphere(np.array([x, H, z]), pr * 1.05, 6); parts.append((PIN, Pt, Nt, np.zeros(len(Pt))))
+    return parts, dict(h=h, r=r, htop=H, w=1.0, fh=hb, rt=float(r.max()))
+
+
+def outline_field(v, RES):
+    """a vessel drawn from its measured outline (a basin on feet, a head, a heart): the outline inflated row by row, each
+    interval of a row a rounded section as deep as its width allows (the vessel's depth ol.d at its widest), so lobes, feet
+    and profiles come with the outline; the opening on the measured mouth (mx, mh, mry), its inside behind the stems and its
+    rim in front"""
+    ol = v['ol']; Pp = np.array(ol['pts'], float); H = float(v['h']); D = float(ol.get('d', H))
+    tp = v.get('tp') or {}
+    x0, x1 = VX + Pp[:, 0].min() - 4, VX + Pp[:, 0].max() + 4
+    mo_t = (float(ol['mouth'][1]) - float(ol['mouth'][0])) / 2
+    y0, y1 = FL - float(v.get('mh', H)) - (float(v['mry']) if v.get('mry') else mo_t * RY) - 8, FL + 4
+    W, Hh = int(math.ceil((x1 - x0) * RES)), int(math.ceil((y1 - y0) * RES))
+    poly = np.c_[(VX + Pp[:, 0] - x0) * RES, (FL - Pp[:, 1] - y0) * RES]
+    m8 = np.zeros((Hh, W), np.uint8)
+    cv2.fillPoly(m8, [np.round(poly * 4).astype(np.int32)], 1, lineType=cv2.LINE_8, shift=2)
+    m = m8.astype(bool)
+    # the far half of the rim, seen from a little above, stands over the measured outline: the mouth's ellipse joins the shape
+    mx0, mh0 = float(v.get('mx', 0)), float(v.get('mh', H))
+    mo0 = (float(ol['mouth'][1]) - float(ol['mouth'][0])) / 2
+    mry0 = float(v['mry']) if v.get('mry') else mo0 * RY
+    gxs = x0 + (np.arange(W) + .5) / RES - VX; gys = FL - (y0 + (np.arange(Hh) + .5) / RES)
+    EX, EY = np.meshgrid((gxs - mx0) / max(mo0, 1), (gys - mh0) / max(mry0, 1))
+    m = m | ((EX * EX + EY * EY) <= 1)
+    amax = float((Pp[:, 0].max() - Pp[:, 0].min()) / 2)
+    bk = (D / 2) / max(amax, 1)
+    Z = np.zeros((Hh, W), np.float32); CX = np.zeros((Hh, W), np.float32); A = np.ones((Hh, W), np.float32)
+    nexp = F('sexp', 2.0)
+    for yy in range(Hh):
+        row = m[yy]
+        if not row.any():
+            continue
+        d = np.diff(np.r_[0, row.astype(np.int8), 0])
+        st, en = np.nonzero(d == 1)[0], np.nonzero(d == -1)[0]
+        for a_, b_ in zip(st, en):
+            cxp = (a_ + b_ - 1) / 2; ap = max((b_ - a_) / 2, .5)
+            u = np.clip((np.arange(a_, b_) - cxp) / ap, -1, 1)
+            Z[yy, a_:b_] = ap / RES * bk * (1 - np.abs(u) ** nexp) ** (1 / nexp)
+            CX[yy, a_:b_] = x0 + (cxp + .5) / RES - VX; A[yy, a_:b_] = ap / RES
+    lb = tp.get('lobes')
+    Xw = x0 + (np.arange(W) + .5) / RES - VX
+    Yw = FL - (y0 + (np.arange(Hh) + .5) / RES)
+    XX, YY = np.meshgrid(Xw, Yw)
+    if lb:
+        # lobes round the body between two heights (the section's radius pinched n times round)
+        y0l, y1l = float(lb.get('y0', 0)) * UPC, float(lb.get('y1', 99)) * UPC
+        band = ss(y0l, y0l + 4, YY) * ss(y1l, y1l - 4, YY)
+        ph = np.arccos(np.clip((XX - CX) / np.maximum(A, 1e-3), -1, 1))
+        Z = Z * (1 - F('lobek', .5) * float(lb.get('d', .5)) * UPC / max(amax, 1) * 6 * band * (1 - np.abs(np.cos(int(lb.get('n', 8)) * ph / 2))) ** 1.5)
+    Z = cv2.GaussianBlur(Z, (0, 0), F('zsm', 1.2) * RES / 4) * m
+    gy, gx = np.gradient(Z * RES)                                       # per unit
+    N = np.dstack([-gx, gy, np.ones_like(Z)])                            # screen y down = world y up
+    N /= np.maximum(np.linalg.norm(N, axis=-1, keepdims=True), 1e-6)
+    lab = np.where(m, OUTER, -1).astype(np.int8)
+    P = np.dstack([XX, YY, Z]).astype(np.float32)
+    phi = (math.pi / 2 - np.arcsin(np.clip((XX - CX) / np.maximum(A, 1e-3), -1, 1))).astype(np.float32)
+    # the opening: its inside (behind the stems) and its rim
+    mx_, mh_ = float(v.get('mx', 0)), float(v.get('mh', H))
+    m0, m1 = [float(t) for t in ol['mouth'][:2]]
+    mo_ = (m1 - m0) / 2; mry = max(2.5, float(v.get('mry', mo_ * RY)) if v.get('mry') else mo_ * RY)
+    w = max(1.5, float(v.get('lipw', 3)))
+    ex = (XX - mx_) / max(mo_, 1); ey = (YY - mh_) / max(mry, 1)
+    rr = np.sqrt(ex * ex + ey * ey)
+    rim = (rr <= 1) & (rr > 1 - w / max(mo_, 1) * 1.6)
+    hole = rr <= 1 - w / max(mo_, 1) * 1.6
+    lab[rim] = LIP; N[rim] = (0, 1, 0)
+    N[rim] = np.dstack([ex * .35, np.ones_like(ex), -ey * .35])[rim]
+    N /= np.maximum(np.linalg.norm(N, axis=-1, keepdims=True), 1e-6)
+    lab[hole] = INNER
+    deep = np.clip(ey, -1, 1) * .5 + .5                                    # the far wall lit, the near side in shadow
+    P[..., 1] = np.where(hole, mh_ - (1 - deep) * mo_ * .6, P[..., 1])
+    P[..., 0] = np.where(hole, XX * .3, P[..., 0]); P[..., 2] = np.where(hole, 0, P[..., 2])
+    N[hole] = np.dstack([-ex * .4, np.full_like(ex, .2), np.ones_like(ex)])[hole]
+    N /= np.maximum(np.linalg.norm(N, axis=-1, keepdims=True), 1e-6)
+    fld = dict(lab=lab, N=N.astype(np.float32), P=P, phi=phi, x0=x0, y0=y0, W=W, H=Hh)
+    hs = np.linspace(0, H, 400)
+    r_eq = np.array([max(1, float(A[min(Hh - 1, max(0, int((FL - h - y0) * RES)))].max())) for h in hs])
+    return fld, dict(h=hs, r=r_eq, htop=mh_, w=w, fh=max(2, mh_ - mo_ * .6), rt=mo_)
+
+
+def ol_spans(P, h):
+    """the horizontal intervals of the closed outline P at height h, left to right"""
+    xs = []
+    for (x0, y0), (x1, y1) in zip(P, np.roll(P, -1, 0)):
+        if (y0 - h) * (y1 - h) < 0 or (y0 == h and y1 != h):
+            xs.append(x0 + (x1 - x0) * (h - y0) / (y1 - y0))
+    xs.sort()
+    return [(xs[i], xs[i + 1]) for i in range(0, len(xs) - 1, 2)]
+
+
+def superell(cx, a, b, n, phi):
+    """points and outward directions of a superellipse section (exponent n: 2 an ellipse, larger a rounded rectangle)"""
+    c, s = np.cos(phi), np.sin(phi)
+    e = 2.0 / n
+    X = cx + a * np.sign(c) * np.abs(c) ** e
+    Z = b * np.sign(s) * np.abs(s) ** e
+    return X, Z
+
+
+def grid_surface(H, X, Z, centre, sign=1.0):
+    """a surface given on a (height x angle) grid: points, and normals from its tangents, turned outwards (or inwards)"""
+    P = np.stack([X, H, Z], -1)
+    du = np.gradient(P, axis=1); dv = np.gradient(P, axis=0)
+    N = np.cross(du, dv)
+    N /= np.maximum(np.linalg.norm(N, axis=-1, keepdims=True), 1e-9)
+    rad = np.stack([X - centre, np.zeros_like(X), Z], -1)
+    N = np.where((((N * rad).sum(-1) * sign) < 0)[..., None], -N, N)
+    return P.reshape(-1, 3), N.reshape(-1, 3)
+
+
+def outline_model(v, RES):
+    """a vessel drawn from its measured outline (shape outline: a basin on feet, a head, a heart): at each height a superellipse
+    section as wide as the outline there and as deep as the vessel (ol.d, in proportion to the width), the feet modelled apart
+    where the outline splits near the floor, the opening on the measured mouth with its rim and its inside"""
+    ol = v['ol']; P = np.array(ol['pts'], float); H = float(v['h']); D = float(ol.get('d', H))
+    tp = v.get('tp') or {}
+    nexp = F('sexp', 3.2 if (v.get('fam') == 'sculpture' and D > H) else 2.0)
+    hs = np.linspace(0, H, max(200, int(H * RES * 1.4)))
+    spans = [ol_spans(P, h) for h in hs]
+    single = np.array([len(s) == 1 for s in spans])
+    hb = float(hs[np.argmax(single)]) if single.any() else 0.0          # where the body stands on its feet
+    keep = single & (hs >= hb)
+    hk = hs[keep]; sp = np.array([spans[i][0] for i in np.nonzero(keep)[0]])
+    cx = (sp[:, 0] + sp[:, 1]) / 2; a = (sp[:, 1] - sp[:, 0]) / 2
+    amax = float(a.max()); b = a * (D / 2) / amax
+    nphi = int(F('ns', 1.7) * RES * 2 * math.pi * amax * .8)
+    phi = np.linspace(0, 2 * math.pi, nphi, endpoint=False)
+    PH = np.repeat(phi[None], len(hk), 0); HH = np.repeat(hk[:, None], nphi, 1)
+    lb = tp.get('lobes'); fac = np.ones_like(PH)
+    if lb:
+        y0, y1 = float(lb.get('y0', 0)) * UPC, float(lb.get('y1', 99)) * UPC
+        band = ss(y0, y0 + 4, HH) * ss(y1, y1 - 4, HH)
+        fac = 1 - float(lb.get('d', .5)) * UPC * F('lobek', .5) / amax * band * (1 - np.abs(np.cos(int(lb.get('n', 8)) * PH / 2))) ** 1.5
+    X, Z = superell(cx[:, None], a[:, None] * fac, b[:, None] * fac, nexp, PH)
+    parts = []
+    Pg, Ng = grid_surface(HH, X, Z, cx[:, None])
+    parts.append((OUTER, Pg, Ng, PH.ravel()))
+    # the opening: the mouth's span at its height, its rim, its inside down to a floor
+    m0, m1, my = [float(t) for t in ol['mouth']]
+    w = max(1.5, float(v.get('lipw', 3)))
+    mcx, ma = (m0 + m1) / 2, (m1 - m0) / 2
+    mb = ma * (D / 2) / amax
+    lphi = phi[None]
+    bb = np.linspace(0, math.pi, max(16, int(RES * w * 2)))[:, None]
+    ra, rb_ = ma - w / 2 + w / 2 * np.cos(bb), mb - w / 2 * (mb / ma) + w / 2 * (mb / ma) * np.cos(bb)
+    LH = np.repeat((my - w / 2 + w / 2 * np.sin(bb)), nphi, 1)
+    LX, LZ = superell(mcx, ra, rb_, nexp, np.repeat(lphi, len(bb), 0))
+    Pl, Nl = grid_surface(LH, LX, LZ, mcx)
+    parts.append((LIP, Pl, Nl, np.repeat(lphi, len(bb), 0).ravel()))
+    fl = max(hb + 2, my - F('ideep', .8) * (my - hb))
+    ih = np.linspace(fl, my - w / 2, max(20, int((my - fl) * RES)))[:, None]
+    IX, IZ = superell(mcx, np.full_like(ih, ma - w), np.full_like(ih, mb - w * mb / ma), nexp, np.repeat(lphi, len(ih), 0))
+    Pi, Ni = grid_surface(np.repeat(ih, nphi, 1), IX, IZ, mcx, sign=-1)
+    parts.append((INNER, Pi, Ni, np.repeat(lphi, len(ih), 0).ravel()))
+    fr_ = np.linspace(0, 1, 30)[:, None]
+    FX, FZ = superell(mcx, (ma - w) * fr_, (mb - w * mb / ma) * fr_, nexp, np.repeat(lphi, 30, 0))
+    Pf = np.stack([FX, np.full_like(FX, fl), FZ], -1).reshape(-1, 3); Nf = np.tile([0, 1., 0], (len(Pf), 1))
+    parts.append((FLOOR, Pf, Nf, np.repeat(lphi, 30, 0).ravel()))
+    # the feet: where the outline splits below the body, each interval a small rounded block, front and back
+    lows = [(h, s) for h, s in zip(hs, spans) if h < hb and len(s) > 1]
+    if lows:
+        h_ = np.array([q[0] for q in lows])
+        for (f0, f1) in lows[len(lows) // 2][1]:
+            fcx, fa = (f0 + f1) / 2, (f1 - f0) / 2
+            if fa < 1:
+                continue
+            for zc in ((-1, 1) if abs(fcx) > amax * .25 else (0,)):
+                zc_ = zc * (D / 2) * math.sqrt(max(0, 1 - (fcx / amax) ** 2)) * .8
+                fh_ = np.linspace(0, hb + 1, max(8, int(hb * RES)))[:, None]
+                fphi = np.linspace(0, 2 * math.pi, 48, endpoint=False)[None]
+                FX2, FZ2 = superell(fcx, np.full_like(fh_, fa), np.full_like(fh_, fa * .7), 3, np.repeat(fphi, len(fh_), 0))
+                Pft, Nft = grid_surface(np.repeat(fh_, 48, 1), FX2, FZ2 + zc_, fcx)
+                parts.append((BEAD, Pft, Nft, np.repeat(fphi, len(fh_), 0).ravel()))
+    r_eq = np.interp(np.linspace(0, H, 400), hk, a)
+    return parts, dict(h=np.linspace(0, H, 400), r=r_eq, htop=my, w=w, fh=fl, rt=ma)
+
+
 def model(v, RES):
+    global SCULPTED
+    if v.get('shape') == 'outline':
+        SCULPTED = True
+        return outline_model(v, RES)
+    if v.get('shape') == 'box' and not v.get('_sq'):
+        # a box's profile gives its half width: the turned radius reaching the corners is larger
+        v['prof'] = [[q[0], q[1] / math.cos(math.radians(45))] for q in v['prof']]; v['_sq'] = 1
+    if v.get('kind') == 'kenzan' and (v.get('tp') or {}).get('kz'):
+        return kenzan_model(v, RES)
     h, r = profile(v, n=max(600, int(F('ns', 1.7) * RES * np.hypot(*np.diff(np.array(v['prof'], float), axis=0).T).sum())))
     rings = (v.get('tp') or {}).get('rings')
     if rings:
@@ -201,24 +417,28 @@ def model(v, RES):
     parts = []
     keep = h <= htop - w / 2
     P, N, PHI = revolve(h[keep], r[keep], nphi)
-    global SCULPTED
     SCULPTED = relief_of(v)
     if SCULPTED:
         P, N = sculpt(v, h[keep], r[keep], nphi)
     parts.append((OUTER, P, N, PHI))
     # the lip: a half round joining the outer wall to the inner one
     rt = float(np.interp(htop - w / 2, h, r))
+    box = v.get('shape') == 'box'
     b = np.linspace(0, math.pi, max(24, int(RES * w * 2.5)))
     lh, lr = htop - w / 2 + w / 2 * np.sin(b), rt - w / 2 + w / 2 * np.cos(b)
     P, N, PHI = revolve(lh, lr, nphi)
+    if box:
+        P, N = sculpt(v, lh, lr, nphi)
     parts.append((LIP, P, N, PHI))
     # the inner wall, the outer one offset by the wall's thickness, down to the floor of the inside
     fh = F('floor', max(3.0, htop * .05))
     ki = (h >= fh) & (h <= htop - w / 2)
     ri = np.maximum(r[ki] - w, .5)
     P, N, PHI = revolve(h[ki], ri, nphi, normal_sign=-1)
+    if box:
+        P, N = sculpt(v, h[ki], ri, nphi, sign=-1)
     parts.append((INNER, P, N, PHI))
-    rf = float(np.interp(fh, h, r)) - w
+    rf = float(np.interp(fh, h, r)) * (math.cos(math.radians(45)) if box else 1) - w      # inside a box: within its flats
     if rf > 1:
         rr = np.linspace(0, rf, max(8, int(RES * rf * 1.7)))
         P, N, PHI = revolve(np.full_like(rr, fh), rr, nphi)
@@ -238,9 +458,10 @@ def model(v, RES):
     if hd:
         # handles (hd: count, attached between y0 and y1, reaching out, thickness; scroll: a curl at the top), each a tube swept
         # along its curve in the vessel's own plane
-        y0h, y1h = float(hd['y0']), float(hd['y1']); outh = float(hd['out']); th = float(hd.get('th', 5)) / 2
+        y0h, y1h = float(hd['y0']), float(hd['y1']); outh = float(hd['out']) * F('hdout', 1); th = float(hd.get('th', 5)) / 2 * F('hdk', 1)
+        rise = F('hdrise', 0) * UPC
         r0h, r1h = float(np.interp(y0h, h, r)), float(np.interp(y1h, h, r))
-        Pc = np.array([[r1h - th * .3, y1h], [r1h + outh * .9, y1h + th * .6], [r1h + outh * 1.05, (y0h + y1h) / 2], [r0h + outh * .2, y0h + 2], [r0h - th * .3, y0h]])
+        Pc = np.array([[r1h - th * .3, y1h], [r1h + outh * .9, y1h + th * .6 + rise], [r1h + outh * 1.05, (y0h + y1h) / 2 + rise * .3], [r0h + outh * .2, y0h + 2], [r0h - th * .3, y0h]])
         tt = np.linspace(0, 1, 120)
         def bz(Q, t):
             n = len(Q) - 1
@@ -256,13 +477,13 @@ def model(v, RES):
                 parts.append((BEAD, P_, N_, np.full(len(P_), az)))
         T = np.gradient(C, axis=0); T /= np.maximum(np.linalg.norm(T, axis=1, keepdims=True), 1e-9)
         Nn = np.c_[-T[:, 1], T[:, 0]]
-        w = np.linspace(0, 2 * math.pi, max(16, int(RES * th * 4)), endpoint=False)
+        wring = np.linspace(0, 2 * math.pi, max(16, int(RES * th * 4)), endpoint=False)
         for j in range(int(hd.get('n', 2))):
             az = math.pi * j                                         # left and right
             ca, sa = math.cos(az), math.sin(az)
             ring = []; nr_ = []
             for (x_, y_), (nx_, ny_) in zip(C, Nn):
-                for ww in w:
+                for ww in wring:
                     o = np.array([nx_ * math.cos(ww), ny_ * math.cos(ww), math.sin(ww)])   # (radial, up, tangential)
                     pr = np.array([x_ + th * o[0], y_ + th * o[1], th * o[2]])
                     ring.append([pr[0] * ca - pr[2] * sa, pr[1], pr[0] * sa + pr[2] * ca]); nr_.append([o[0] * ca - o[2] * sa, o[1], o[0] * sa + o[2] * ca])
@@ -309,7 +530,7 @@ def rasterise(parts, RES):
     lab = np.full(H * W, -1, np.int8); Nf = np.zeros((H * W, 3), np.float32); Pf = np.zeros((H * W, 3), np.float32)
     phif = np.zeros(H * W, np.float32)
     for l, P, N, PHI in parts:
-        if l in (OUTER, LIP, BEAD) and not (l == OUTER and SCULPTED):
+        if l in (OUTER, LIP, BEAD, PIN) and not (l == OUTER and SCULPTED):
             f = (N @ EYE) > -.02                                        # the far side of a convex part is never seen
             P, N, PHI = P[f], N[f], PHI[f]
         sx, sy, dz = project(P)
@@ -425,9 +646,37 @@ def noise2(u, v, freq, seed):
 
 def shade_opaque(v, fld, geo, mat):
     lab, N, P, phi = fld['lab'], fld['N'], fld['P'], fld['phi']
+    cl = (v.get('tp') or {}).get('cells')
+    EDGE = None
+    if cl:
+        # a carved stone of flat facets: the surface's normal averaged over each facet (cells on the drawing), crisp edges
+        Hh, W = lab.shape; RESf = 1
+        n_ = int(cl.get('n', 24)) * 6
+        rng = np.random.default_rng(3)
+        m_ = lab == OUTER
+        ys, xs = np.nonzero(m_)
+        pick = rng.choice(len(ys), size=min(n_, len(ys)), replace=False)
+        sites = np.c_[xs[pick], ys[pick]].astype(np.float32)
+        gy, gx = np.mgrid[0:Hh, 0:W]
+        best = np.full((Hh, W), 1e9, np.float32); second = best.copy(); cid = np.zeros((Hh, W), np.int32)
+        for i, (sx, sy) in enumerate(sites):
+            dd = (gx - sx) ** 2 + (gy - sy) ** 2
+            nb = dd < best
+            second = np.where(nb, best, np.minimum(second, dd)); cid = np.where(nb, i, cid); best = np.where(nb, dd, best)
+        N = N.copy()
+        for c in range(3):
+            sm = np.bincount(cid[m_], weights=N[..., c][m_], minlength=len(sites))
+            N[..., c] = np.where(m_, sm[cid], N[..., c])
+        N /= np.maximum(np.linalg.norm(N, axis=-1, keepdims=True), 1e-6)
+        EDGE = (np.sqrt(second) - np.sqrt(best) < 1.6) & m_
+        fld = dict(fld, N=N)
     m = lab >= 0
     base = srgb2lin(hexrgb(v.get('col', '#cccccc')))
     alb = np.broadcast_to(base, N.shape).copy()
+    kz = (v.get('tp') or {}).get('kz')
+    if kz:
+        alb[(lab == OUTER) | (lab == LIP)] = srgb2lin(hexrgb(kz.get('base', '#9fa3a6')))
+        alb[lab == PIN] = srgb2lin(hexrgb(kz.get('pin', '#c8b48a')))
     rough = np.full(lab.shape, mat['rough'], np.float32)
     metal = np.full(lab.shape, float(mat['metal']), np.float32)
     u = phi / (2 * math.pi); hh = P[..., 1]
@@ -449,6 +698,15 @@ def shade_opaque(v, fld, geo, mat):
     if mat['metal'] == 0 and F('pool', .12) > 0:
         # a glaze pools a little darker low on the body and where the profile turns inwards
         alb = alb * (1 - F('pool', .12) * ss(.0, -1, (hh - geo['htop'] * .25) / max(geo['htop'] * .25, 1)))[..., None]
+    if F('terre', 0) > 0:
+        PH = phi % (2 * math.pi)
+        tc = noise2(PH / (2 * math.pi), hh / 18, (4, 1), 81) * .6 + noise2(PH / (2 * math.pi), hh / 6, (12, 1), 82) * .4
+        warm = srgb2lin(hexrgb('#c27a4e')); dark = srgb2lin(hexrgb('#7d4428')); pale = srgb2lin(hexrgb('#d9a07a'))
+        t_ = np.clip((tc - .3) * 1.8, 0, 1)
+        clay = dark * (1 - t_[..., None]) + warm * t_[..., None]
+        clay = clay * (1 - .35 * ss(.62, .8, tc)[..., None]) + pale * (.35 * ss(.62, .8, tc))[..., None]
+        on = ((lab == OUTER) | (lab == LIP))[..., None]
+        alb = np.where(on, clay, alb)
     if mat['metal'] == 0 and F('mot', .05) > 0:
         # a fired surface is never one flat colour: a faint mottle round and up the body
         mo = noise2(u, hh / 7, (11, 1), 21) + .5 * noise2(u, hh / 2.5, (29, 1), 22)
@@ -466,6 +724,43 @@ def shade_opaque(v, fld, geo, mat):
         alb = alb * (1 - k[..., None]) + np.clip(alb * 1.5 + .02, 0, 1) * k[..., None]
     tp = v.get('tp') or {}
     PH = phi % (2 * math.pi)
+    if EDGE is not None:
+        alb[EDGE] = srgb2lin(hexrgb(cl.get('edge', '#9aa6b2')))
+    vn = tp.get('veins')
+    if vn:
+        # onyx: veins running at an angle across the stone, warped, dark and light, some wide some thin
+        a_ = math.radians(float(vn.get('a', -30)))
+        t = (P[..., 0] * math.cos(a_) + P[..., 1] * math.sin(a_)) / UPC + 2.2 * noise2(P[..., 0] / 60, P[..., 1] / 60, (1, 1), 61)
+        nv = int(vn.get('n', 16)); w0, w1 = [float(q) for q in vn.get('w', [1, 4])]
+        rngv = np.random.default_rng(9); pos = np.sort(rngv.uniform(t[lab >= 0].min(), t[lab >= 0].max(), nv)); wd = rngv.uniform(w0, w1, nv) / UPC
+        for k, (p_, w_) in enumerate(zip(pos, wd)):
+            e = np.exp(-((t - p_) / max(w_, .05)) ** 2) * float(vn.get('o', .5)) * ((lab == OUTER) | (lab == LIP))
+            c = srgb2lin(hexrgb(vn.get('c' if k % 3 else 'l', '#8a6a48')))
+            alb = alb * (1 - e[..., None]) + c * e[..., None]
+    if tp.get('paint'):
+        # painted suiban: a teal band under the rim and small precious objects round the side, in the scholar's taste
+        c2 = srgb2lin(hexrgb(v.get('col2') or '#5d8590'))
+        top = float(v.get('mh', geo['htop']))
+        band = (ss(top - 5, top - 4, hh) * ss(top - 1.5, top - 2.5, hh) + ss(top - 7.2, top - 6.6, hh) * ss(top - 5.6, top - 6.2, hh)) * (lab == OUTER)
+        alb = alb * (1 - band[..., None]) + c2 * band[..., None]
+        objs = np.zeros(lab.shape, np.float32)
+        for k, cx_ in enumerate(np.linspace(-.6, .6, 4)):
+            xc = cx_ * float(np.abs(P[..., 0][lab == OUTER]).max()); yc = top * .45
+            if k % 2:
+                objs = np.maximum(objs, ((np.abs(P[..., 0] - xc) < 6) & (np.abs(P[..., 1] - yc) < 4)).astype(np.float32))       # a book
+            else:
+                rr_ = np.hypot((P[..., 0] - xc) / 4.2, (P[..., 1] - yc + 1) / 5.2)
+                objs = np.maximum(objs, (rr_ < 1).astype(np.float32))                                                       # a vase
+                objs = np.maximum(objs, ((np.abs(P[..., 0] - xc) < 1.4) & (P[..., 1] > yc + 3) & (P[..., 1] < yc + 7.5)).astype(np.float32))
+        objs = cv2.GaussianBlur(objs, (0, 0), .8) * (lab == OUTER)
+        alb = alb * (1 - .85 * objs[..., None]) + c2 * (.85 * objs)[..., None]
+    if F('celadon', 0) > 0:
+        k_ = 2 * math.pi / int(tp.get('facets') or 8); a_ = np.abs((PH + k_ / 2) % k_ - k_ / 2) / (k_ / 2)
+        pool = (1 - a_) ** 2 * .35 + .65 * ss(geo['htop'] * .5, 0, hh)
+        alb = alb * (1 - F('celpool', .35) * pool[..., None]) + srgb2lin(hexrgb('#3f6f63')) * (F('celpool', .35) * pool)[..., None]
+        cr = noise2(PH / (2 * math.pi), hh / 1.8, (40, 1), 71)
+        crack = ss(.03, 0, np.abs(cr - .5)) * ((lab == OUTER) | (lab == LIP)) * F('crackk', .35)
+        alb = alb * (1 - crack[..., None] * .5)
     if tp.get('facets') and tp.get('edges'):
         # the glaze runs thin on the facets' edges: a pale line along each
         k = 2 * math.pi / int(tp['facets']); a = np.abs((PH + k / 2) % k - k / 2)
@@ -476,6 +771,14 @@ def shade_opaque(v, fld, geo, mat):
         n_ = int(tp['lobes'].get('n', 8)); a = np.abs(np.cos(n_ * PH / 2))
         wl = float(tp['lines'].get('w', .35)) * UPC / max(float(np.median(np.hypot(P[..., 0], P[..., 2])[lab == OUTER])), 1)
         e = ss(wl * n_ / 2, 0, a) * (lab == OUTER)
+        ns_ = int(F('streaks', 0))
+        if ns_:
+            # thin white streaks run down the whole body between the lines, as glaze poured from the lip
+            rngs = np.random.default_rng(13); ang = rngs.uniform(0, 2 * math.pi, ns_); wd = rngs.uniform(.004, .014, ns_)
+            ln = rngs.uniform(.45, 1, ns_)
+            for a0, w0, l0 in zip(ang, wd, ln):
+                d_ = np.abs(np.angle(np.exp(1j * (PH - a0 - .03 * np.sin(hh / 9)))))
+                e = np.maximum(e, ss(w0, 0, d_) * ss(geo['htop'] * (1 - l0), geo['htop'] * (1 - l0) + 6, hh) * (lab == OUTER) * .85)
         alb = alb * (1 - e[..., None]) + srgb2lin(hexrgb(tp['lines'].get('c', '#ffffff'))) * e[..., None]
     dr = tp.get('drips')
     if dr:
@@ -518,11 +821,64 @@ def shade_opaque(v, fld, geo, mat):
         rim = ss(.07, .015, second - best) * F('rimk2', .8)
         kind = (cid % 20) // 2 + (cid % 20 >= 18) * 0   # mostly gold
         kind = np.where(cid % 20 < 15, 0, np.where(cid % 20 < 18, 6, 8))
-        cc = np.where((kind < 6)[..., None], srgb2lin(hexrgb(ce.get('c', '#b48a3c'))), np.where((kind < 8)[..., None], srgb2lin(hexrgb(ce.get('rust', '#8a4a22'))), srgb2lin(hexrgb(ce.get('olive', '#403a12')))))
+        pal = OPT.get('cellpal')
+        if pal:
+            pc = [srgb2lin(hexrgb(c)) for c in pal.split(',')]
+            wts = np.cumsum([float(w) for w in OPT.get('cellw', ','.join(['1'] * len(pc))).split(',')]); wts = wts / wts[-1]
+            q = (cid % 101) / 101.0
+            idx = np.searchsorted(wts, q)
+            cc = np.stack(pc)[np.clip(idx, 0, len(pc) - 1)]
+        else:
+            cc = np.where((kind < 6)[..., None], srgb2lin(hexrgb(ce.get('c', '#b48a3c'))), np.where((kind < 8)[..., None], srgb2lin(hexrgb(ce.get('rust', '#8a4a22'))), srgb2lin(hexrgb(ce.get('olive', '#403a12')))))
         cc = cc * (.85 + .3 * ((cid % 7) / 6.0))[..., None]
         on = ((lab == OUTER) | (lab == LIP))[..., None]
-        val = cc * (1 - rim[..., None]) + srgb2lin(hexrgb(ce.get('rim', '#3a2812'))) * rim[..., None]
+        val = cc * (1 - rim[..., None]) + srgb2lin(hexrgb(OPT.get('cellrim', ce.get('rim', '#3a2812')))) * rim[..., None]
         alb = np.where(on, val, alb)
+    ch = tp.get('china')
+    if ch:
+        # blue-and-white painting in the vessel's own space (angle round x height): double bands at the neck and the foot,
+        # a scrolling vine with curls, leaves and peonies round the body, the brush's wash uneven
+        Hc = geo['htop']; Rm = float(np.median(np.hypot(P[..., 0], P[..., 2])[lab == OUTER]))
+        k_ = 4; Wt = int(2 * math.pi * Rm * k_); Ht = int(Hc * k_) + 2
+        T = np.zeros((Ht, Wt), np.float32)
+        rng = np.random.default_rng(5)
+        Y = lambda hh_: int((Hc - hh_) * k_)
+        for yb in (Hc - 6, Hc - 9, 9, 6):
+            cv2.line(T, (0, Y(yb)), (Wt, Y(yb)), 1, max(1, int(.9 * k_)), cv2.LINE_AA)
+        n_ = int(ch.get('n', 16)); mid = Hc * .5; amp = Hc * .09
+        xs = np.arange(Wt); vine = mid + amp * np.sin(2 * math.pi * xs / Wt * (n_ / 2))
+        pts = np.c_[xs, [(Hc - y) * k_ for y in vine]].astype(np.int32)
+        cv2.polylines(T, [pts], False, 1, max(1, int(1.1 * k_)), cv2.LINE_AA)
+        for i in range(n_):
+            x0 = int((i + .5) / n_ * Wt); y0 = vine[min(x0, Wt - 1)]
+            side = 1 if i % 2 else -1
+            # a curl off the vine, a leaf pair, and on every other one a peony
+            t = np.linspace(0, 2.4 * math.pi, 60); rr = (1 - t / (2.6 * math.pi)) * amp * .5
+            cx, cy = x0 + side * amp * .5 * k_, (Hc - (y0 + side * amp * .55)) * k_
+            cv2.polylines(T, [np.c_[cx + rr * k_ * np.cos(t), cy + rr * k_ * np.sin(t) * side].astype(np.int32)], False, 1, max(1, int(.8 * k_)), cv2.LINE_AA)
+            for a_ in (-.6, .7):
+                lx, ly = int(x0 + math.cos(a_) * amp * .5 * k_), int((Hc - y0 - side * math.sin(a_) * amp * .35) * k_)
+                cv2.ellipse(T, (lx, ly), (int(amp * .32 * k_), int(amp * .12 * k_)), math.degrees(a_) * side, 0, 360, .85, -1, cv2.LINE_AA)
+            for jl in range(5):
+                # leaves all along the vine, alternating sides
+                xl = int(x0 + (jl - 2) * Wt / n_ / 5); yl = vine[xl % Wt]; sd = 1 if (jl + i) % 2 else -1
+                ang = math.degrees(math.atan2(-sd * amp * .5, Wt / n_ / 5)) + sd * 35
+                cv2.ellipse(T, (xl % Wt, int((Hc - yl - sd * amp * .32) * k_)), (int(amp * .28 * k_), int(amp * .1 * k_)), ang, 0, 360, .9, -1, cv2.LINE_AA)
+            if i % 2 == 0:
+                fx, fy = x0, int((Hc - y0 + amp * .05) * k_); R0 = int(amp * .62 * k_)
+                for j in range(8):
+                    a_ = j / 8 * 2 * math.pi
+                    cv2.ellipse(T, (int(fx + .5 * R0 * math.cos(a_)), int(fy + .5 * R0 * math.sin(a_))), (int(R0 * .55), int(R0 * .32)), math.degrees(a_), 0, 360, .7, -1, cv2.LINE_AA)
+                cv2.circle(T, (fx, fy), int(R0 * .32), 1, -1, cv2.LINE_AA)
+                cv2.circle(T, (fx, fy), int(R0 * .14), .35, -1, cv2.LINE_AA)
+        T = np.clip(T, 0, 1)
+        edge = np.clip(T - cv2.erode(T, np.ones((3, 3), np.uint8)), 0, 1)           # the brush's darker rim
+        T = cv2.GaussianBlur(T, (0, 0), .6) * (0.72 + 0.32 * cv2.resize(rng.random((Ht // 10 + 1, Wt // 10 + 1)).astype(np.float32), (Wt, Ht), interpolation=cv2.INTER_CUBIC))
+        T = np.clip(T + .35 * edge, 0, 1)
+        tx = ((PH / (2 * math.pi)) * Wt).astype(int) % Wt; ty = np.clip(((Hc - hh) * k_).astype(int), 0, Ht - 1)
+        ink = np.clip(T[ty, tx], 0, 1) * ((lab == OUTER) | (lab == LIP))
+        cob = srgb2lin(hexrgb(ch.get('c', '#2f4a8a'))) * F('cobk', .62)
+        alb = alb * (1 - ink[..., None]) + cob * ink[..., None]
     ag = tp.get('agate')
     if ag:
         # agate: bands of the clays swirled round the body, each band one of the measured colours
@@ -532,6 +888,11 @@ def shade_opaque(v, fld, geo, mat):
         i0 = np.floor(t).astype(int) % len(cs); fr = ss(.82, 1, t - np.floor(t))
         cA = cs[i0]; cB = cs[(i0 + 1) % len(cs)]
         alb = np.where((lab == OUTER)[..., None] | (lab == LIP)[..., None], cA * (1 - fr[..., None]) + cB * fr[..., None], alb)
+    if OPT.get('gilt'):
+        # a gilt line on the lip
+        gl_ = (lab == LIP) & (fld['P'][..., 1] > geo['htop'] - geo['w'] * .35)
+        alb[gl_] = srgb2lin(hexrgb(OPT['gilt']))
+        metal = np.where(gl_, 1.0, metal); rough = np.where(gl_, .12, rough)
     if v.get('col2') and v.get('fin') != 'patina':
         c2 = srgb2lin(hexrgb(v['col2']))
         alb = alb * (1 - F('c2k', .0)) + c2 * F('c2k', .0)
@@ -722,6 +1083,8 @@ def specks_svg(v, fld, disp, geo, mf, RES):
     lum = disp @ np.array([.3, .59, .11]) if disp.ndim == 3 else disp
     ref = float(np.percentile(lum[mf], 70)) if mf.any() else 1
     cols = [hexrgb(c) for c in sp.get('c', ['#555555'])]
+    if F('granito', 0) > 0:
+        cols += [hexrgb(c) for c in OPT.get('chips', '#f4f1ea,#9a9590,#c46a4a,#3b3a38').split(',')]
     r0, r1 = [float(t) * UPC for t in sp.get('r', [.05, .12])]
     op = float(sp.get('o', .6))
     out = []
@@ -735,14 +1098,21 @@ def specks_svg(v, fld, disp, geo, mf, RES):
         ix, iy = int((sx - x0) * RES), int((sy - y0) * RES)
         if not (0 <= iy < mf.shape[0] and 0 <= ix < mf.shape[1]) or not mf[iy, ix]:
             continue
-        big = i < int(sp.get('blots', 0))
+        big = i < int(sp.get('blots', 0)) or (F('granito', 0) > 0 and rng.random() < F('bigk', .07))
         rad = rng.uniform(r0, r1) * (3.2 if big else 1)
         fz = max(.12, math.cos(a))
         shade = float(np.clip(lum[iy, ix] / max(ref, 1), .25, 1.15))
         c = cols[rng.integers(len(cols))] * shade
-        out.append('<ellipse cx="%s" cy="%s" rx="%s" ry="%s" fill="%s"%s/>' % (
-            K.fmt(round(sx, 2)), K.fmt(round(sy, 2)), K.fmt(round(rad * fz, 2)), K.fmt(round(rad * rng.uniform(.75, 1), 2)),
-            K.hexc(np.clip(c, 0, 1) * 255), ' opacity="%s"' % K.fmt(round(op * (.45 if big else rng.uniform(.6, 1)), 2))))
+        if F('granito', 0) > 0:
+            # terrazzo: an angular chip of stone set flush in the body, foreshortened with the surface
+            nv = int(rng.integers(5, 8)); rot = rng.uniform(0, 2 * math.pi)
+            ang = np.sort(rng.uniform(0, 2 * math.pi, nv)); rr_ = rad * rng.uniform(.55, 1.15, nv) * F('chipk', 1.6)
+            pts = ' '.join('%s,%s' % (K.fmt(round(sx + math.cos(t + rot) * q * fz, 2)), K.fmt(round(sy + math.sin(t + rot) * q * .9, 2))) for t, q in zip(ang, rr_))
+            out.append('<polygon points="%s" fill="%s"/>' % (pts, K.hexc(np.clip(c, 0, 1) * 255)))
+        else:
+            out.append('<ellipse cx="%s" cy="%s" rx="%s" ry="%s" fill="%s"%s/>' % (
+                K.fmt(round(sx, 2)), K.fmt(round(sy, 2)), K.fmt(round(rad * fz, 2)), K.fmt(round(rad * rng.uniform(.75, 1), 2)),
+                K.hexc(np.clip(c, 0, 1) * 255), ' opacity="%s"' % K.fmt(round(op * (.45 if big else rng.uniform(.6, 1)), 2))))
         if len(out) >= n:
             break
     return '<g>%s</g>' % ''.join(out)
@@ -755,13 +1125,15 @@ def emit_opaque(v, fld, disp, mat, RES):
     K.RDP_EPS = 0; K.FIT_EPS = 0; K.AREA_MIN = F('amin', 4)
     if F('csm', .8) > 0:
         disp = cv2.GaussianBlur(disp, (0, 0), F('csm', .8))
-    back = np.isin(lab, (INNER, FLOOR)) | (np.isin(lab, (OUTER, LIP, BEAD)) & (P[..., 2] < 0))
+    back = np.isin(lab, (INNER, FLOOR)) | (np.isin(lab, (OUTER, LIP, BEAD, PIN)) & (P[..., 2] < 0))
+    if v.get('shape') == 'outline':
+        back = np.isin(lab, (INNER, FLOOR))
     defs, body, mouth = [], [], []
-    for l in (INNER, FLOOR, OUTER, LIP, BEAD):
+    for l in (INNER, FLOOR, OUTER, LIP, BEAD, PIN):
         mb = (lab == l) & back
         if mb.sum() > 12:
             mouth.append(part_svg(disp, mb, mapf, RES, 'b%d' % l, defs))
-    for l in (OUTER, LIP, BEAD):
+    for l in (OUTER, LIP, BEAD, PIN):
         mf = (lab == l) & ~back
         if mf.sum() > 12:
             over = texture(v, mat, mf, mapf, defs, 'f%d' % l) + specks_svg(v, fld, disp, GEO, mf, RES) if l == OUTER else ''
@@ -774,6 +1146,8 @@ def write_out(v, defs, body, mouth, extra=None):
     d = K.write_body(os.path.join(OUT, 'body.json'), defs, body, mouth=mouth, **(extra or {}))
     fiche = {k: val for k, val in v.items() if k not in ('st', 'sf', 'pl', 'svgb', 'vs')}
     fiche['svgb'] = VID
+    if 'kind' in OPT:
+        fiche['kind'] = OPT['kind']
     json.dump(fiche, open(os.path.join(OUT, 'fiche.json'), 'w', encoding='utf-8'), ensure_ascii=False)
     import gzip
     js = json.dumps(d, separators=(',', ':')).encode()
@@ -784,11 +1158,17 @@ def main():
     v = fiche_of(VID)
     mat = material(v)
     RES = F('res', 5.0)
-    parts, geo = model(v, RES)
     global GEO
-    GEO = geo
+    if v.get('shape') == 'outline':
+        fld, geo = outline_field(v, RES)
+        GEO = geo
+        parts = []
+    else:
+        parts, geo = model(v, RES)
+        GEO = geo
     log('%s: %s/%s, h %.1f, %d parts, %d samples' % (VID, v.get('mat'), v.get('fin'), geo['htop'], len(parts), sum(len(p[1]) for p in parts)))
-    fld = rasterise(parts, RES)
+    if parts:
+        fld = rasterise(parts, RES)
     log('field %dx%d, %d px' % (fld['W'], fld['H'], int((fld['lab'] >= 0).sum())))
     if v.get('mat') == 'glass':
         OPT.setdefault('stoptol', '2')                                 # a glass's field is soft: fewer stops do
@@ -816,7 +1196,7 @@ def shade_glass(v, fld, geo, mat, RES):
     mapf = lambda x, y: (x0 + (x + .5) / RES, y0 + (y + .5) / RES)
     K.RDP_EPS = 0; K.FIT_EPS = 0; K.AREA_MIN = F('amin', 4)
     m = lab >= 0
-    back = np.isin(lab, (INNER, FLOOR)) | (np.isin(lab, (OUTER, LIP, BEAD)) & (P[..., 2] < 0))
+    back = np.isin(lab, (INNER, FLOOR)) | (np.isin(lab, (OUTER, LIP, BEAD, PIN)) & (P[..., 2] < 0))
     front = m & ~back
     hh = P[..., 1]; htop = geo['htop']; h, r = geo['h'], geo['r']
     gw = F('gw', 2.6)                                                  # the glass wall's thickness (units, ~4 mm)
@@ -835,7 +1215,7 @@ def shade_glass(v, fld, geo, mat, RES):
     gL = F('gL', 2 * gw / CA * float(np.log(np.clip(tint, .03, .999)).mean()) / math.log(1 - op))
     absk = -np.log(np.clip(tint, .03, .999)) / max(gL, .5)
     grad = (v.get('tp') or {}).get('grad')
-    if grad:
+    if grad and F('gradk', 1) > 0:
         # a glass whose colour changes up the body (tp.grad: height in cm -> colour): its absorption follows
         hs_ = np.array([g[0] for g in grad], float) * UPC; cs_ = np.array([srgb2lin(hexrgb(g[1])) for g in grad])
         tz = np.stack([np.interp(hh, hs_, cs_[:, i]) for i in range(3)], -1)

@@ -320,6 +320,12 @@ def main():
     spec2 = F('ks2', 0) * (1 - rough) ** 2 * nh ** F('pw2', 220)
     S = np.where(m, (spec + spec2 + box + F('kst', 1.3) * studio(nb, rough)) * (1 - inside), 0)
     # ---- paint
+    pf = os.path.join(HERE, VASE, 'patch.py')
+    if os.path.exists(pf):
+        # the vase's own retouches of the texture before it is traced (a decor completed where the model left it short)
+        ns_ = dict(np=np, cv2=cv2, alb=alb, m=m, k=k, VIEW=VIEW, log=log)
+        exec(open(pf, encoding='utf-8').read(), ns_)
+        alb = ns_['alb']
     tpath, a8 = trace(alb, m, s)
     ntr = tpath.count('<path')
     pk = F('tk', 1.0)                                  # the paint laid at the lit side's light (the shade layers do the rest)

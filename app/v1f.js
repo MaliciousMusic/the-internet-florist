@@ -4,7 +4,7 @@ function vessel(par,id,t=0,o={}){const v=VZ[id]||VZ['coupe-pied-blanche'],g=G(pa
   if(v.kind==='hand'||v.kind==='wrap')return{g};let sg=null;if(!o.noPlinth&&back)sg=stage(g,v);
   if(v.shape==='outline')vOutline(g,v,back,front);
   else if(v.shape==='box')vBox(g,v,back,front);
-  else if(v.kind==='kenzan')vKenzan(g,v,back,front);
+  else if(v.kind==='kenzan'&&!(v.svgb&&typeof SVGB!=='undefined'&&SVGB[v.svgb]))vKenzan(g,v,back,front);   /* a kenzan drawn from its model goes the lathe way, its pins in its body */
   else{const S=profSamples(v.prof,LOD?28:90),n=S.length-1,top=FL-S[n][0],mwO=S[n][1],ry=vRy(mwO),glass=v.mat==='glass',tp=v.tp||{};
     const own=v.svgb&&typeof SVGB!=='undefined'&&SVGB[v.svgb]&&SVGB[v.svgb].own;
     if(back){const sb_=v.svgb&&typeof SVGB!=='undefined'&&SVGB[v.svgb];if(sb_&&sb_.shadow)svgbPut(g,sb_.shadow,'s',v.vs);else vShadow(g,S,glass?.14:.3,o.shClip||(sg&&sg.top));if(!own)vMouthBack(g,v,top,mwO,ry);if(v.svgb&&typeof svgMouth==='function')svgMouth(g,v);if(glass)goldfish(g,v,S)}

@@ -37,8 +37,10 @@ if (cmd === 'livrer') {
   if (!id || !summary || !s.vases[id]) { console.error('usage : livrer <id> "<ce qui a changé>" (id connu de la revue)'); process.exit(1); }
   const f = sheet(s, id), v = f.version + 1;
   let commit = null; try { commit = execSync('git rev-parse --short HEAD', { cwd: ROOT }).toString().trim(); } catch {}
-  const scaled = f.scaleSent ? writeScales([id]) : [];
-  const done = f.notes.filter(n => n.status === 'sent');
+  const scaled = (f.scaleSent || args.includes('--brouillons')) && f.scale != null ? writeScales([id]) : [];
+  // --brouillons: the owner asked for his notes to be treated before he sent them (the review was closed)
+  const drafts = args.includes('--brouillons');
+  const done = f.notes.filter(n => n.status === 'sent' || (drafts && n.status === 'open'));
   for (const n of done) { n.status = 'done'; n.doneIn = v; }
   f.history.push({ version: v, date: new Date().toISOString(), summary, notes: done.map(n => n.num), scale: scaled[0] || null, commit });
   f.version = v; f.valid = null; f.validSent = false;

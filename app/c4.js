@@ -401,7 +401,10 @@ function composeMouths(ids,sv,occ,vid,model,recipe){const v=VZ[vid],keep={mx:v.m
           its=c2.out.filter(o=>o.kind!=='leaf'&&o.kind!=='drape'),nk=Math.max(1,Math.round(its.length*(m.k||.3))),st=its.length/nk;
         for(let i=0;i<nk;i++){const o=its[Math.floor(i*st)];o.mouth=mo;c.out.push(o)}}finally{Object.assign(v,keep)}});
     LEANMAX=lean0;return c}finally{COMPOSE_SUB=false}}
-function compose(ids,sv,occ,vid,model,recipe){if(!COMPOSE_SUB&&VZ[vid]&&VZ[vid].m2&&VZ[vid].m2.length)return composeMouths(ids,sv,occ,vid,model,recipe);LEANMAX=vLean(vid,basePoint(vid));const P=model?planModel(model):recipe?planRecipe(recipe,occ,vid):plan(ids,occ,vid);sd(sv*31+7);const tk=model&&TPL[model.tpl]?model.tpl:pickTpl(P,vid);let best=null;for(let k=0;k<8;k++){const c=candidate(P,sv*97+k*13+1,vid,tk),sc=scoreC(c);if(!best||sc>best.score){best=c;best.score=sc}}
+function compose(ids,sv,occ,vid,model,recipe){if(!COMPOSE_SUB&&VZ[vid]&&VZ[vid].m2&&VZ[vid].m2.length)return composeMouths(ids,sv,occ,vid,model,recipe);LEANMAX=vLean(vid,basePoint(vid));
+  /* a vessel made for a larger bouquet (v.bq: its wide opening, owner 2026-10-17) holds more stems of the model, in the same proportions */
+  const BQK=VZ[vid]&&VZ[vid].bq;if(model&&BQK&&BQK!==1)model=Object.assign({},model,{els:model.els.map(e=>Object.assign({},e,{n:Math.max(1,Math.round((e.n||1)*BQK))}))});
+  const P=model?planModel(model):recipe?planRecipe(recipe,occ,vid):plan(ids,occ,vid);sd(sv*31+7);const tk=model&&TPL[model.tpl]?model.tpl:pickTpl(P,vid);let best=null;for(let k=0;k<8;k++){const c=candidate(P,sv*97+k*13+1,vid,tk),sc=scoreC(c);if(!best||sc>best.score){best=c;best.score=sc}}
   /* a variety set forward or back by the player: its lines, leaves and drapes drawn after or before the others (its heads were placed
      at their depth); 1–3 goes into the back layer, behind every flower; 7–10 into the mass, where it can come in front of them */
   if(P.ex&&!P.recipe)for(const o of best.out){const s=o.it&&o.it.pos;if(!s||s===5)continue;if(o.role==='line'||o.role==='foliage'||o.kind==='drape')o.z+=(s-5)*.12;o.back=s<=3;o.fwd=s>=7}
