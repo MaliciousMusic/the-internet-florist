@@ -54,3 +54,14 @@ découpage des traits actif à DET 1.5 seulement. **Questions** : 88 et 89 (D) ;
 deux sortes ; noms sous ® (dénomination ou nom générique).
 **Incident** : le PC a planté vers 18 h 25 avec 4 chantiers en parallèle ; `fleur/bills.json` corrompu, restauré depuis git et
 marques du jour reconstruites (heures approchées notées dans le fichier).
+
+## Lot 3, spathes (17 octobre 2026)
+
+| Sorte | Coloris | Preuves | Facture du chef | Retouches |
+|---|---|---|---|---|
+| anthurium-andraeanum | 15 | 7 B, le reste C (couleur du catalogue) | 6,2 M | profil, 3/4, fané, rtest |
+| arum-calla | 16 + 3 ajoutés | 4 mesurés, le reste C ; KAVB 63/76 noms | 6,3 M | spirale, gorge, lèvre, rtest |
+
+**rtest** : la tête neuve, plus grande, faisait poser un anthurium de plus dans 2 bouquets sur 10 ; corrigé en posant la tête
+dans la boîte de l'ancien dessin (arum ouvert à 0,74-0,83 de sa taille vraie en bouquet). **Imparfait** : boutons d'arum .06/.2
+un peu larges ; anthurium .4 maladroit, profil ouvert en bande ; fané recroquevillé non prouvé par photo.

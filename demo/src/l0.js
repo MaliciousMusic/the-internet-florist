@@ -87,7 +87,7 @@ function lsHeadS(k,o,S){const B=frameOf(o,S.rr??.25,!!S.axisFirst),up=B.upV?V3.n
   const res=lsTurtle(lsDerive([['A',{n:nN}]],rules,nN+2),{p:[0,0,0],H:up,U:U0,wig:S.wig??.03,seg:D*.2,T:[0,1,0],e:S.e??.03,w:w*1.18});/* S.post(res): the species may reshape the grown axis before it is drawn (a wilting neck on the sheets) */if(S.post)S.post(res);const main=res.organs.find(q=>q.t==='K'),apex=main.pos;
   res.chains[0].c=S.cols;for(const ch of res.chains)ch.c=S.cols;
   lsPlant(k,res,{O:[0,0,0],apex,cols:S.cols,organ:(og,pos)=>{
-    if(og.t==='K')return{parts:[{z:pos[2],fn:par=>S.flower(par,B,pos,D,op)}]};
+    if(og.t==='K')return{parts:[{z:pos[2],fn:par=>S.flower(par,B,pos,D,op,og)}]};
     if(og.t==='Kb'){const a=Math.min(og.p.age,(op??1)*1.1),Bf=lsFrame(og,null,R(-.3,.3));return{parts:[{z:pos[2],fn:par=>{if(a<(S.budMax??.4)||!S.young)S.bud(par,Bf,pos,D*(S.budD??.3)*(.75+.5*a),a);else S.young(par,Bf,pos,D*(.5+.3*a),a)}}]}}
     if(og.t==='Lv'&&S.leaf){const pt=S.leaf(og,pos);return pt?{ext:1,parts:[].concat(pt)}:null}
     if(og.t==='Nd'&&S.node){const pt=S.node(og,pos);return pt?{ext:1,parts:[].concat(pt)}:null}
