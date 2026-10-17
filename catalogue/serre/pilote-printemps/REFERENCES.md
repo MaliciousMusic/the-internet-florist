@@ -1634,3 +1634,10 @@ rouge à 1:.6 sans plaques pâles (BP 3.3). Même fané appliqué à `rose-aspec
 - Mesures et proportions (brief, à l'œil, confiance faible) : cornet haut de 1,5 à 2 fois la largeur de l'ouverture (68, 91, 21) ; acumen court roulé dehors (89, 26, 32) ; spadice à la moitié de la spathe (84, 46) ; macule pourpre de gorge (30) ; bouton fermé et pointu, H/L ≈ 3 (15, 17) ; tige 1/8 (109) à 1/4 (73) de la largeur de la spathe ; fané : bord qui brunit (84), le reste d'après la littérature.
 - Rendu : 19 coloris (16 + 3 late:11) ; tête 1,3 × la longueur de recette sur la plante (12 cm → 15,6 cm sur 50 cm) ; 83 éléments et 15 Ko par tête à DET 1 (planche c19d), 100 à 116 éléments et 21 à 24 Ko à DET 1,5.
 - Planches : arum-calla-sku-v1.png (rasante et profil, gros plans, fané), arum-calla-coloris-v1.png (19 coloris, op .4 et 1, vue 3/4).
+
+## amarante-retombante (Amaranthus caudatus, relais 6, 2026-10-17)
+- Sources : refcache/amarante-retombante/brief-refs.md (Wikimedia Commons, 128 candidats CC BY / BY-SA / CC0 ; iNaturalist API v1, 140 photos CC BY / BY-NC, phénologie 13-15 ; auteur et licence par vignette dans cands.json). Aucune photo ajoutée au dépôt.
+- Mesures (à l'œil, sauf couleurs refs.py) : chenille de diamètre 1/8 à 1/12 de sa longueur (17, 146, 191) ; tige 0,3 à 0,5 du diamètre d'une chenille (165, 142) ; 2 à 4 chenilles par nœud (5, 2) ; arc jusqu'à 180° sous le poids (197) ; feuille ovale alterne, longueur sur largeur 1,2 à 1,5 (24, 241) ; fané : chenille rose puis beige puis brune (266, 64, 37), feuilles jaunes puis rouges (18, 64).
+- Rendu : 16 coloris (rouge, pourpre, bordeaux, corail, bronze, vert, lime, mira, fuchsia, prune-boules ; 6 stabilisés teints qui ne fanent pas) ; kit y3-chenille.js (svChenCord, svChenBalls, svChenHang, svChenPanicle) ; fiche y-amaranthus.js.
+- Poids (mesure seule, consigne porteur « le poids ne compte plus ») : tête de grille ≈ 2 400 éléments et 4,9 Mo à DET 1 (chenilles seules 3,7 Mo, une feuille 1 Mo) ; plante entière ≈ 2 300 éléments et 5,9 Mo.
+- Planches : amarante-retombante-sku-v1.png (16 coloris x 5 stades, vue 3/4) ; comparaisons 9.3b dans refcache/amarante-retombante/cmp93_1.jpg.
