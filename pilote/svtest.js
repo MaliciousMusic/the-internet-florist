@@ -1,6 +1,13 @@
 window.snapSvg=async function(svg,W,name,bg){const XS=new XMLSerializer(),vb=svg.getAttribute('viewBox').trim().split(/\s+/).map(Number),H=Math.round(W*vb[3]/vb[2]);
   const find=id=>svg.querySelector('#'+CSS.escape(id))||document.getElementById(id);let out='';const seen=new Set();
   const add=x=>{for(const m of x.matchAll(/url\(#([^)"'\s]+)\)|href="#([^"]+)"/g)){const id=m[1]||m[2];if(seen.has(id))continue;seen.add(id);const el=find(id);if(el){const s=XS.serializeToString(el);out+=s;add(s)}}};
+  /* ?pix=x:y,x:y (pixels of the snap): the shapes that paint there (point in fill or stroke), to name a stray piece */
+  {const pq=new URLSearchParams(location.search).get('pix');if(pq){const SC=svg.getScreenCTM(),R=[];for(const t of pq.split(',')){const[x,y]=t.split(':').map(Number),X=vb[0]+(x+.5)*vb[2]/W,Y=vb[1]+(y+.5)*vb[3]/H,sp=new DOMPoint(X,Y).matrixTransform(SC),hs=[];
+    for(const el of svg.querySelectorAll('path,ellipse,circle,rect,polygon')){let M;try{M=el.getScreenCTM().inverse()}catch(_){continue}const lp=sp.matrixTransform(M);let f=0,k=0;try{f=el.isPointInFill(lp);k=!f&&el.getAttribute('stroke')&&el.getAttribute('stroke')!=='none'&&el.isPointInStroke(lp)}catch(_){}
+      if(f||k){const ch=[];let n=el.parentNode;while(n&&n!==svg&&ch.length<6){ch.push(n.tagName+(n.getAttribute('clip-path')?'C':'')+(n.dataset&&Object.keys(n.dataset).length?JSON.stringify(n.dataset):''));n=n.parentNode}
+        hs.push([k?'S':'F',el.getAttribute('fill'),el.getAttribute('fill-opacity')||el.getAttribute('opacity'),el.getAttribute('stroke'),el.getAttribute('stroke-width'),el.getAttribute('clip-path'),ch.join('<'),(el.getAttribute('d')||'').slice(0,90)])}}
+    const top=hs.filter(h=>/^url/.test(h[1]||'')).pop()||null,sp2=top&&/^url/.test(top[1]||'')?[...svg.querySelectorAll('path[stroke]')].filter(e=>e.getAttribute('stroke')===top[1]).map(e=>e.getAttribute('d')):[];
+    R.push({p:t,hs:hs.slice(-6),full:(top&&([...svg.querySelectorAll('path')].find(e=>e.getAttribute('fill')===top[1]&&/^url/.test(top[1]||''))||{getAttribute:()=>''}).getAttribute('d'))||'',spine:sp2})}window.__svtDbg=R}}
   const body=[...svg.children].filter(n=>n.tagName!=='defs').map(n=>XS.serializeToString(n)).join('');add(body);
   const src=`<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="${W}" height="${H}" viewBox="${vb.join(' ')}"><defs>${out}</defs>${body}</svg>`;
   const img=new Image(),url=URL.createObjectURL(new Blob([src],{type:'image/svg+xml'}));img.src=url;await img.decode();URL.revokeObjectURL(url);
@@ -16,6 +23,7 @@ window.svtOut=(svg,n,ms,snapP)=>{const el=svg.querySelectorAll('*').length,pat=[
       /* the defs by kind: id prefix (letters) -> count, elements, KB */const by={};for(const c of d.children){const k=c.tagName.slice(0,3)+':'+(c.id||'').replace(/[0-9_-].*$/,''),b=by[k]||(by[k]=[0,0,0]);b[0]++;b[1]+=c.querySelectorAll('*').length+1;b[2]+=XS.serializeToString(c).length/1024}
       /* &dump=1: the whole markup, to analyse offline (one stage) */if(new URLSearchParams(location.search).get('dump'))o.dump=XS.serializeToString(svg);
       o.defsBy=Object.fromEntries(Object.entries(by).sort((a,b)=>b[1][2]-a[1][2]).map(([k,v])=>[k,v[0]+'x '+v[1]+'el '+v[2].toFixed(1)+'KB']))}}
+  /* window.__svtDbg (a probe a module may fill while debugging): copied into the measures */if(window.__svtDbg)o.dbg=window.__svtDbg;
   const fin=r=>{const pre=document.createElement('pre');pre.id='out';pre.textContent=JSON.stringify(Object.assign(o,r?{snap:r.join('x')}:{}));document.body.append(pre)};
   if(snapP)snapP.then(fin,e=>fin(['err '+e]));else fin()};
 /* SVG pilot sheet: heads at several views and seeds. URL: cw, op, D, seeds, views (indices), cols, det, bg, sp (species) */
@@ -72,7 +80,7 @@ if(new URLSearchParams(location.search).get('plant'))setTimeout(()=>{const Q=new
     const b=k.getBBox(),s=Math.min(cellW*.9/b.width,cellW*2.1/b.height);(window.__svtFit=window.__svtFit||[]).push([k,b,i,s]);k.setAttribute('transform',`translate(${f(cellW*(i+.5)-(b.x+b.width/2)*s)},${f(cellW*1.1-(b.y+b.height/2)*s)}) scale(${s.toFixed(4)})`)});
   /* same=1: one scale for every cell (the smallest), the stems standing on one ground line: their lengths compare */
   if(Q.get('same')&&window.__svtFit){const s=Math.min(...window.__svtFit.map(q=>q[3]));for(const[k,b,i]of window.__svtFit)k.setAttribute('transform',`translate(${f(cellW*(i+.5)-(b.x+b.width/2)*s)},${f(cellW*2.15-(b.y+b.height)*s)}) scale(${s.toFixed(4)})`)}
-  document.title='plant ok';const sp=Q.get('snap')?snapSvg(svg,+(Q.get('sw')||cellW*st.length*2),Q.get('snap'),'#e9e4dc'):null;if(sp)sp.then(r=>{document.title+=' snap '+r.join(',')});svtOut(svg,st.length,ms,sp)},400);
+  document.title='plant ok';const sp=Q.get('snap')?snapSvg(svg,+(Q.get('sw')||cellW*st.length*2),Q.get('snap'),Q.get('bg')||'#e9e4dc'):null;if(sp)sp.then(r=>{document.title+=' snap '+r.join(',')});svtOut(svg,st.length,ms,sp)},400);
 /* the stem below a head's neck (r: what the head hands back), cm long, with its leaves */
 window.svtStem=(par,r,sid,cm)=>{const e=r.neck,nd=r.nd||[0,1],L=cm*UPC,P3=e,P2=[e[0]+nd[0]*L*.3,e[1]+nd[1]*L*.3],P0=[e[0]+nd[0]*L*.3,e[1]+L],P1=[P0[0],P0[1]-L*.35],P=[P0,P1,P2,P3],C=[],W=[],w=(r.nw||3)*1.12;
   for(let i=0;i<=24;i++){C.push(bz(P,i/24));W.push(w*(1.08-.08*i/24))}
@@ -157,7 +165,7 @@ if(new URLSearchParams(location.search).get('bq'))setTimeout(()=>{const Q=new UR
   renderStatic(()=>{buildBq(svg,[],+(Q.get('sv')||11),Q.get('v')||'cylindre-verre-clair',0,'juste',null,rc)});
   const XS=new XMLSerializer(),m=hs.map(k=>[k.querySelectorAll('*').length,Math.round(XS.serializeToString(k).length/1024*10)/10]);
   const o={st:Q.get('stat')?ST:undefined,n:hs.length,heads:m.map(x=>x.join('el/')+'KB').join(' '),el:svg.querySelectorAll('*').length,kb:Math.round(XS.serializeToString(svg).length/1024)};
-  const sp=Q.get('snap')?snapSvg(svg,+(Q.get('sw')||900),Q.get('snap'),'#e9e4dc'):null;const fin=r=>{const pre=document.createElement('pre');pre.id='out';pre.textContent=JSON.stringify(Object.assign(o,r?{snap:r.join('x')}:{}));document.body.append(pre)};
+  const sp=Q.get('snap')?snapSvg(svg,+(Q.get('sw')||900),Q.get('snap'),Q.get('bg')||'#e9e4dc'):null;const fin=r=>{const pre=document.createElement('pre');pre.id='out';pre.textContent=JSON.stringify(Object.assign(o,r?{snap:r.join('x')}:{}));document.body.append(pre)};
   if(sp)sp.then(fin,e=>fin(['err '+e]));else fin()},400);
 /* the junctions of a woody branch (porteur 2026-10-09: no gap between a flower and its calyx, the calyx and its pedicel, the pedicel and its spur):
    ?plant=1&...&jn=1 → each flower svBranch draws goes in its own group; after the sheet's measures come "JN" (one row per flower: cell, x, y in snap

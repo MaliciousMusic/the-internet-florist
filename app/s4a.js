@@ -6,7 +6,10 @@ const CW_HMOP=[
  {id:'lilas',n:'Lilas',c:'#c3a6dc',c2:'#d8b8e0',k2:.4},{id:'rose-pale',n:'Rose pâle',c:'#f2c8d6',c2:'#f6e0e6',k2:.4},{id:'rose',n:'Rose',c:'#ec9ab8',c2:'#f2b4c8',k2:.4},
  {id:'rose-fonce',n:'Rose foncé',c:'#d8608e',c2:'#e07aa0',k2:.4},{id:'rouge',n:'Rouge profond',c:'#b82a4a',c2:'#c84a5a',k2:.35},{id:'pourpre',n:'Pourpre',c:'#8a3a7a',c2:'#a04a88',k2:.4},
  {id:'aubergine',n:'Aubergine',c:'#5a2448',c2:'#7a3a5a',k2:.35},{id:'coeur-blanc',n:'Rose à cœur blanc',c:'#e88aaa',eye2:'#fbf2f4',k2:0},
- {id:'antique-bleu',n:'Antique bleu-vert',c:'#7aa0a8',c2:'#a8c08a',k2:.55},{id:'antique-rouge',n:'Antique vert et bordeaux',c:'#9aac78',c2:'#9a3a52',k2:.5}];
+ {id:'antique-bleu',n:'Antique bleu-vert',c:'#7aa0a8',c2:'#a8c08a',k2:.55},{id:'antique-rouge',n:'Antique vert et bordeaux',c:'#9aac78',c2:'#9a3a52',k2:.5},
+ {id:'lisere-blanc',n:'Rose à liseré blanc',c:'#e9638c',edge:'#f2e8ea',late:12,lvl:'C'},{id:'rose-vert-citron',n:'Rose profond et vert citron',c:'#cf4f71',c2:'#b8c969',k2:.4,late:12,lvl:'C'},
+ {id:'rouge-brique',n:'Rouge brique sombre',c:'#792930',late:12,lvl:'C'},{id:'creme-bleu-poudre',n:'Crème verte à bleu poudré, sépales frisés',c:'#cfccbd',c2:'#b4bbd4',k2:.45,late:12,lvl:'C'},
+ {id:'rose-antique',n:'Rose antique',c:'#cfaba8',c2:'#cdc7ad',k2:.42,late:12,lvl:'C'},{id:'bordeaux-antique',n:'Bordeaux antique sombre',c:'#753e39',c2:'#6b5c41',k2:.3,late:12,lvl:'C'}];
 const CW_HDRY=[
  {id:'naturel-vert',n:'Naturel vert antique',c:'#a9b38d',c2:'#c9b0a0',k2:.5},{id:'naturel-rose',n:'Naturel rose antique',c:'#c79aa1',c2:'#b8b890',k2:.5},{id:'blanc',n:'Blanc',c:'#f1eee5',c2:'#e8e2d0',k2:.3},
  {id:'creme',n:'Crème',c:'#eee2c4',c2:'#e4d4b0',k2:.3},{id:'noisette',n:'Noisette',c:'#c8a882',c2:'#b89470',k2:.35},{id:'cafe',n:'Café',c:'#8a6a52',c2:'#7a5a44',k2:.3},
@@ -48,7 +51,10 @@ const patch=(n,sd)=>.5+.5*Math.sin(n[0]*3.1+sd)*Math.cos(n[1]*2.7+sd*1.3)*Math.s
 function hydraHead(g,t,o,kd,list){const cw=o.cw||cwNear(list,o.col)||list[0],op=Math.max(.05,Math.min(1,o.op??1)),D=(o.cm||18)*UPC,k=G(g),B=o.Bf||frameOf(o,.5),Rd=D/2,sd=R(0,6),pts=[];
   const grow=.55+.45*sm01(op/.8),green=op<.6?(1-op/.6):0,colAt=(n,yN)=>{let c=cw.c;if(cw.c2&&cw.k2)c=mix(c,cw.c2,cw.k2*sm01((patch(n,sd)-.35)/.4));if(cw.base)c=mix(c,cw.base,sm01((.58-yN)/.5)*.95);
     c=mix(c,shd(c,R(-.12,.12)),.6);if(green)c=mix(c,'#b8cc80',green*.85);return c};
-  if(kd==='mop'||kd==='dry'||kd==='arb'){/* a dome (flattened for Annabelle), lumpy with its sub-clusters */
+  /* the mophead in SVG (y-hydrangea.js): the old dome's draws are consumed (3 a floret), then the ball is drawn from its own seed */
+  const hsv=kd==='mop'&&typeof hydSvgPut==='function'&&typeof SV_ON!=='undefined'&&SV_ON&&cw&&cw.id;
+  if(hsv){const N=Math.round(90*(LOD?.55:1));for(let i=0;i<N;i++){R(.82,1.18);R(0,6.28);R(-.12,.12)}hydSvgPut(k,B,D,cw,op,sd,grow)}
+  else if(kd==='mop'||kd==='dry'||kd==='arb'){/* a dome (flattened for Annabelle), lumpy with its sub-clusters */
     const N=Math.round((kd==='arb'?150:kd==='dry'?80:90)*(LOD?.55:1)),th0=kd==='arb'?1.75:1.85,flat=kd==='arb'?.78:.92,s0=Rd*(kd==='arb'?.15:kd==='dry'?.3:.27)*grow;
     for(let i=0;i<N;i++){const yy=1-(i+.5)/N*(1-Math.cos(th0)),rr=Math.sqrt(Math.max(0,1-yy*yy)),a=i*2.39996+sd,n0=[Math.cos(a)*rr,Math.sin(a)*rr,yy],lump=1+.06*Math.sin(a*3+yy*7)+.04*Math.sin(a*7.3+sd),
         p=[n0[0]*Rd*lump*grow,n0[1]*Rd*lump*grow,(n0[2]*Rd*flat-Rd*.15)*grow],n=V3.nz([n0[0],n0[1],n0[2]*1.1]);
@@ -76,7 +82,7 @@ function hydraHead(g,t,o,kd,list){const cw=o.cw||cwNear(list,o.col)||list[0],op=
     floretDome(k,B,[0,0,0],pts,cw,{cup:.1,lobe:.42,eye:'#e8e4c0',under:'none'})}
   /* the neck: a short woody peduncle below the head */
   /* the neck: a short woody peduncle from the back of the head, bending into its stem */
-  const F={k:G(k),B,O:[0,0,0],parts:[]},wc=kd==='dry'?['#4a3a22','#5a4a32','#7a6a4a','#9a8a62']:kd==='pan'?['#4a2a1a','#5a3a2a','#7a4a3a','#9a6a52']:['#2a4a1e','#3a5a28','#5f7a3a','#86a050'];
+  const F={k:G(k),B,O:[0,0,0],parts:[]},wc=hsv?hydStemCols(1):kd==='dry'?['#4a3a22','#5a4a32','#7a6a4a','#9a8a62']:kd==='pan'?['#4a2a1a','#5a3a2a','#7a4a3a','#9a6a52']:['#2a4a1e','#3a5a28','#5f7a3a','#86a050'];
   const nkp=kd==='pan'?neckPart(B,[0,0,0],[0,0,-.4*D*1.1*grow],[0,0,-1],D*.4,D*.056,{cols:wc}):neckPart(B,[0,0,0],[0,0,-Rd*.32*grow],[0,0,-1],D*.42,D*.056,{cols:wc});
   if(!o.noNeck)F.parts.push(nkp.part);drawParts(F.k,F.parts);k.insertBefore(F.k,k.firstChild);if(!o.noNeck)open(k,t,1000,6,.3);return neckOut(nkp)}
 const xHydMop=(g,t,o)=>hydraHead(g,t,o,'mop',CW_HMOP),xHydDry=(g,t,o)=>hydraHead(g,t,o,'dry',CW_HDRY),xHydLace=(g,t,o)=>hydraHead(g,t,o,'lace',CW_HLACE),xHydPan=(g,t,o)=>hydraHead(g,t,o,'pan',CW_HPAN),xHydArb=(g,t,o)=>hydraHead(g,t,o,'arb',CW_HARB);
