@@ -163,7 +163,7 @@ const hi=DET>=1.5;wash(hi?m.dark||[.92,.8,.68,.56,.44]:m.darkLo||m.dark||[.9,.76
 /* ---------- stems in SVG: a lit cylinder along any centre line ----------
    The outline; inside it, washes laid along the stem (the side away from the light darker, a soft highlight on the lit side, a thin gloss) blurred
    together and clipped; fine hairs standing out of the silhouette, leaning toward the flower; a tint toward the head (an anemone's stem reddens under
-   its collar). A colour list carries its style in c.sv = {hair, hairK (spacing × width), red, redF (where the tint starts, 0..1 toward the head), gloss}. */
+   its collar). A colour list carries its style in c.sv = {hair, hairK (spacing × width), hairL / hairA (length and angle from the stem, × 1), hairOp / hairFOp (opacity of the edge and face hairs), red, redF (where the tint starts, 0..1 toward the head), gloss}. */
 function svStemLine(par,C,Wd0,c){const n=C.length,g=G(par);if(n<2)return g;const T=[],N=[],sv=c.sv||{},ph=(C[0][0]*.37+C[0][1]*.11)%6.28;
   /* a slow swell of the width along the stem (a living stem is never a ruled tube) */
   let acc0=0;const Wd=Wd0.map((w,i)=>{if(i)acc0+=Math.hypot(C[i][0]-C[i-1][0],C[i][1]-C[i-1][1]);return w*(1+(sv.swell??.05)*Math.sin(acc0/(w*9)+ph)+.025*Math.sin(acc0/(w*3.1)+ph*2))});
@@ -187,13 +187,13 @@ function svStemLine(par,C,Wd0,c){const n=C.length,g=G(par);if(n<2)return g;const
     const f0=sv.redF??.75;stops(gr,[[0,sv.red,0],[f0,sv.red,0],[1,sv.red,sv.redA??.45]]);E('path',{d:od,fill:`url(#${gid2})`},cg)}
   /* silky hairs pressed along the stem, leaning toward its end: many, fine, short, half transparent; on the silhouette they stand a little out of it, on the
      face they catch the light as a sheen */
-  if(sv.hair){let de='',df='';const step=W0*(sv.hairK??.7)*(DET>=1.5?.6:1.2);let acc=0,k=0;for(let i=1;i<n;i++){acc+=Math.hypot(C[i][0]-C[i-1][0],C[i][1]-C[i-1][1]);while(acc>=step){acc-=step;k++;
+  if(sv.hair){let de='',df='';const step=W0*(sv.hairK??.7)*(DET>=1.5?.6:1.2);let acc=0,k=0;for(let i=1;i<n;i++){const sl=Math.hypot(C[i][0]-C[i-1][0],C[i][1]-C[i-1][1]);acc+=sl;while(acc>=step){acc-=step;k++;/* hairI: each hair at its own place along the segment (a continuous fur), not all at its end */const u=sv.hairI&&sl>0?Math.min(1,acc/sl):0,X=[C[i][0]+(C[i-1][0]-C[i][0])*u,C[i][1]+(C[i-1][1]-C[i][1])*u];
       const w=Wd[i]/2,r1=pxHashS(k,3,n),r2=pxHashS(k,5,n),r3=pxHashS(k,7,n);
-      for(const s of[1,-1]){const h=w*(.35+.4*r1),q=[C[i][0]+N[i][0]*w*s*(.82+.1*r2),C[i][1]+N[i][1]*w*s*(.82+.1*r2)],a=.22+.3*r3,dir=[N[i][0]*s*a+T[i][0],N[i][1]*s*a+T[i][1]],dl=Math.hypot(dir[0],dir[1]);
+      for(const s of[1,-1]){const h=w*(.35+.4*r1)*(sv.hairL??1),q=[X[0]+N[i][0]*w*s*(.82+.1*r2),X[1]+N[i][1]*w*s*(.82+.1*r2)],a=(.22+.3*r3)*(sv.hairA??1),dir=[N[i][0]*s*a+T[i][0],N[i][1]*s*a+T[i][1]],dl=Math.hypot(dir[0],dir[1]);
         de+='M'+svJ([svR(q[0]),svR(q[1])])+'l'+svJ([svR(dir[0]/dl*h),svR(dir[1]/dl*h)])}
-      if(DET>=1.5&&r1<.6){const o=(r2*2-1)*.7*w,q=[C[i][0]+N[i][0]*o,C[i][1]+N[i][1]*o],h=w*(.3+.3*r3);df+='M'+svJ([svR(q[0]),svR(q[1])])+'l'+svJ([svR(T[i][0]*h),svR(T[i][1]*h)])}}}
-    if(de)E('path',{d:de,fill:'none',stroke:sv.hair,'stroke-width':svF(Math.max(.04,W0*.026)),'stroke-opacity':.38,'stroke-linecap':'round'},g);
-    if(df)E('path',{d:df,fill:'none',stroke:sv.hair,'stroke-width':svF(Math.max(.04,W0*.022)),'stroke-opacity':.1,'stroke-linecap':'round'},cg)}
+      if(DET>=1.5&&r1<.6){const o=(r2*2-1)*.7*w,q=[X[0]+N[i][0]*o,X[1]+N[i][1]*o],h=w*(.3+.3*r3);df+='M'+svJ([svR(q[0]),svR(q[1])])+'l'+svJ([svR(T[i][0]*h),svR(T[i][1]*h)])}}}
+    if(de)E('path',{d:de,fill:'none',stroke:sv.hair,'stroke-width':svF(Math.max(.04,W0*.026)),'stroke-opacity':sv.hairOp??.38,'stroke-linecap':'round'},g);
+    if(df)E('path',{d:df,fill:'none',stroke:sv.hair,'stroke-width':svF(Math.max(.04,W0*.022)),'stroke-opacity':sv.hairFOp??.1,'stroke-linecap':'round'},cg)}
   /* a kind's own surface marks (lenticels, nodes of a woody stem): sv.post(g, clipped group, centre line, widths, normals, tangents, mean width) */
   if(sv.post)sv.post(g,cg,C,Wd,N,T,W0);
   return g}

@@ -9,8 +9,8 @@ function l27StemDeco(k,r,cr,o={}){if(LOD||!r||!r.np||r.np.length<3)return;const 
         /* the wire: a helix of pitch ~4 widths, only its front half shows */
         if(o.wire){const th=(o.ph||0)+acc/(w*8)*6.283;if(Math.cos(th)>0){const q=[x+nx*w*1.04*Math.sin(th),y+ny*w*1.04*Math.sin(th)];if(!run){run=[];runs.push(run)}run.push(q)}else run=null}}}
     for(const q of runs)if(q.length>1)dw+=pD(q);
-    if(dh)E('path',{d:dh,stroke:o.furc||'#c8d4b0',fill:'none','stroke-width':.3,'stroke-opacity':.75,'stroke-linecap':'round'},par);
-    if(dw){E('path',{d:dw,stroke:'#55595c',fill:'none','stroke-width':.8,'stroke-linecap':'round','stroke-linejoin':'round'},par);E('path',{d:dw,stroke:'#d2d6d8',fill:'none','stroke-width':.3,'stroke-linecap':'round'},par)}};
+    if(dh&&!o.ghost)E('path',{d:dh,stroke:o.furc||'#c8d4b0',fill:'none','stroke-width':.3,'stroke-opacity':.75,'stroke-linecap':'round'},par);
+    if(dw&&!o.ghost){E('path',{d:dw,stroke:'#55595c',fill:'none','stroke-width':.8,'stroke-linecap':'round','stroke-linejoin':'round'},par);E('path',{d:dw,stroke:'#d2d6d8',fill:'none','stroke-width':.3,'stroke-linecap':'round'},par)}};
   if(NECK_X&&EXT)EXT.push(draw);else draw(k)}
 /* the back of a head: the receptacle, a flattened green dome behind the rays (a z-sorted item of spPetals) */
 function l27Recep(B,O,r,dep,col){const p=PJ(B,O,[0,0,-dep*.6]);return{z:p[2],fn:par=>{const pts=[];for(let i=0;i<=5;i++)for(let j=0;j<14;j++){const u=i/5*Math.PI/2,a=j/14*6.283,q=PJ(B,O,[Math.cos(a)*Math.sin(u)*r,Math.sin(a)*Math.sin(u)*r,-Math.cos(u)*dep]);pts.push([q[0],q[1]])}
@@ -24,18 +24,29 @@ function l27Hairs(par,B,O,r,z,n,col,len){if(LOD)return;let d='';for(let i=0;i<n;
 /* ---------- gerbera (Gerbera × hybrida: G. jamesonii × G. viridifolia): a large flat capitulum — one or two rows of long rays, narrow oblong with two or three small teeth,
    round a ring of short trans florets (a fine crown of tubular florets, ray-coloured, often dark tipped) and a flat disc (green, black or yellow) ringed with pollen;
    doubles carry three rows, spiders thin fringed rays; the bare, slightly downy scape, often held straight by a coiled wire ---------- */
-const L27_CW_GERB=[{id:'blanc',n:'Blanc à cœur vert',c:'#f8f6ee',eye:'#7a9a3a'},{id:'blanc-noir',n:'Blanc à cœur noir',c:'#f7f4ec',eye:'#2a1a16'},{id:'creme',n:'Crème vanille',c:'#f4e6c0',eye:'#8aa040'},
-  {id:'jaune',n:'Jaune à cœur noir',c:'#f6c81e',eye:'#2a1a12'},{id:'citron',n:'Jaune citron à cœur vert',c:'#f4dc3a',eye:'#7a9a30'},{id:'orange',n:'Orange à cœur noir',c:'#f07a1e',eye:'#2a160e'},
-  {id:'abricot',n:'Abricot',c:'#f6b06a',c2:'#f29a50',eye:'#3a2216'},{id:'saumon',n:'Saumon',c:'#f29a7a',eye:'#3a2418'},{id:'corail',n:'Corail',c:'#f2725a',eye:'#2a1a16'},
-  {id:'rouge',n:'Rouge à cœur noir',c:'#d01e2a',eye:'#1e0e0e'},{id:'rouge-vert',n:'Rouge à cœur vert',c:'#c8182a',eye:'#6a8a2e'},{id:'bordeaux',n:'Bordeaux',c:'#8a1630',eye:'#1e0a0e'},
-  {id:'rose-pale',n:'Rose pâle',c:'#f6c4d0',eye:'#6e7a2e'},{id:'rose',n:'Rose à cœur vert',c:'#ec6f96',eye:'#6e7a2e'},{id:'fuchsia',n:'Fuchsia',c:'#d81f72',eye:'#2a1420'},
-  {id:'halo',n:'Rouge à halo jaune',c:'#d0262a',ring:'#f4c030',eye:'#2a1410'},{id:'pointes',n:'Blanc à pointes rose',c:'#f8f0f0',tip:'#e8709c',eye:'#6e7a2e'},
-  {id:'double-rose',n:'Double rose saumon',c:'#f4a0a8',eye:'#6e7a2e',dbl:1},{id:'double-orange',n:'Double orange',c:'#f28a2a',eye:'#3a2214',dbl:1},{id:'spider',n:'Spider orange',c:'#f2862a',eye:'#3a2214',k:'spider'}];
+const L27_CW_GERB=[{id:'blanc',n:'Blanc à cœur vert-jaune',c:'#f8f6ee',eye:'#7a9a3a'},{id:'blanc-noir',n:'Blanc à cœur noir',c:'#f7f4ec',eye:'#2a1a16'},{id:'creme',n:'Crème vanille',c:'#f4e6c0',eye:'#8aa040'},
+  {id:'jaune',n:'Jaune à cœur noir',c:'#f6c81e',eye:'#2a1a12'},{id:'citron',n:'Jaune d’or à cœur vert',c:'#eeb816',eye:'#8f7a28'},{id:'orange',n:'Orange à cœur noir',c:'#f07203',eye:'#150503'},
+  {id:'abricot',n:'Abricot',c:'#ec671f',c2:'#ed7718',eye:'#7c8420'},{id:'saumon',n:'Saumon',c:'#e5a288',eye:'#7a7424'},{id:'corail',n:'Corail',c:'#ec3618',eye:'#160a0a'},
+  {id:'rouge',n:'Rouge à cœur noir',c:'#bc041e',eye:'#1c0a0c'},{id:'rouge-vert',n:'Rouge à cœur vert',c:'#c10c23',eye:'#8e8630'},{id:'bordeaux',n:'Bordeaux',c:'#ae0b1c',eye:'#180708'},
+  {id:'rose-pale',n:'Rose pâle',c:'#f2aac4',eye:'#150608'},{id:'rose',n:'Rose à cœur vert',c:'#e67882',eye:'#8a7226'},{id:'fuchsia',n:'Fuchsia',c:'#d1015b',eye:'#1a0610'},
+  {id:'halo',n:'Orange à halo jaune',c:'#eb6a1f',ring:'#f0b020',eye:'#1d150c'},{id:'pointes',n:'Blanc à pointes rose',c:'#eed4cd',tip:'#e9739b',eye:'#24100c'},
+  {id:'double-rose',n:'Double rose',c:'#dd375c',eye:'#7a8030',dbl:1},{id:'double-orange',n:'Double orange',c:'#d25c0f',eye:'#6a7430',dbl:1},{id:'spider',n:'Spider orange',c:'#f08a1d',eye:'#1c0e08',k:'spider'},
+  /* added late (wave late:8, after the SKU numbers already published): the colourways of the measured table (gerbera.json, level B), at the end so that no number moves */
+  {id:'vermillon',late:8,n:'Orange vermillon à cœur noir',c:'#e23719',eye:'#180808'},{id:'orange-vert',late:8,n:'Orange à cœur vert olive',c:'#ea630f',eye:'#767a24'},
+  {id:'prune',late:8,n:'Prune à cœur noir',c:'#96024f',eye:'#180610'},{id:'blanc-anneau',late:8,n:'Blanc à anneau rose',c:'#e3bbc2',ring:'#d65f95',eye:'#2e1216'},
+  {id:'fuchsia-pointes',late:8,n:'Fuchsia à pointes blanches',c:'#da478c',tip:'#ebb6ca',eye:'#1a0e10'},{id:'rose-noir',late:8,n:'Rose à cœur noir',c:'#fb8db0',eye:'#120405'}];
 const L27_CW_GERM=[{id:'blanc',n:'Blanc à cœur vert',c:'#f8f6ee',eye:'#7a9a3a'},{id:'creme',n:'Crème à cœur noir',c:'#f4e6c0',eye:'#2a1a16'},{id:'jaune',n:'Jaune à cœur noir',c:'#f6c81e',eye:'#2a1a12'},
-  {id:'orange',n:'Orange',c:'#f07a1e',eye:'#2a160e'},{id:'peche',n:'Pêche',c:'#f6b88a',eye:'#3a2418'},{id:'corail',n:'Corail à cœur vert',c:'#f2725a',eye:'#6a8a2e'},
-  {id:'rouge',n:'Rouge à cœur noir',c:'#d01e2a',eye:'#1e0e0e'},{id:'cerise',n:'Cerise',c:'#c41848',eye:'#2a1018'},{id:'rose-pale',n:'Rose pâle',c:'#f6c4d0',eye:'#6e7a2e'},
-  {id:'rose',n:'Rose vif',c:'#ec5f8e',eye:'#2a1420'},{id:'fuchsia',n:'Fuchsia',c:'#d01f78',eye:'#6e7a2e'},{id:'lilas',n:'Rose lilas',c:'#e0a0c8',eye:'#3a2030'},
-  {id:'halo',n:'Orange à halo jaune',c:'#ee6a1e',ring:'#f6c83a',eye:'#2a160e'},{id:'double',n:'Double rose',c:'#f08aa8',eye:'#6e7a2e',dbl:1}];
+  {id:'orange',n:'Orange',c:'#f07a1e',eye:'#2a160e'},
+  /* from the fifth on, c and eye are the measures (refcache/germini/coloris.md; c4.js reads only the first four colours for the bouquets' families) */
+  {id:'peche',n:'Pêche',c:'#e7a176',eye:'#9c6711'},{id:'corail',n:'Saumon corail à cœur vert',c:'#f9a588',eye:'#bd7d23'},
+  {id:'rouge',n:'Rouge à cœur noir',c:'#c20218',eye:'#0b0304'},{id:'cerise',n:'Cerise',c:'#b02540',eye:'#1c1114'},{id:'rose-pale',n:'Rose pâle',c:'#f3a8c2',eye:'#b17d10'},
+  {id:'rose',n:'Rose vif',c:'#f182b2',eye:'#ab842d'},{id:'fuchsia',n:'Fuchsia',c:'#d30369',eye:'#5e391d'},{id:'lilas',n:'Rose lilas',c:'#ee9ad0',eye:'#1e0c0e'},
+  {id:'halo',n:'Orange à bord jaune (bicolore)',c:'#de2727',tip:'#f7a52b',eye:'#4e1c09'},{id:'double',n:'Double rose',c:'#f398a5',eye:'#723628',dbl:1},
+  /* added late (wave late:8, after the SKU numbers already published): the measured colourways of level B (germini.json), at the end so that no number moves */
+  {id:'blanc-noir',late:8,n:'Blanc à cœur noir',c:'#e4e4db',eye:'#130808'},{id:'jaune-vert',late:8,n:'Jaune à cœur vert',c:'#f0bb01',eye:'#bd9310'},
+  {id:'creme-vert',late:8,n:'Crème à cœur vert',c:'#e3c4a6',eye:'#ac8d39'},{id:'citron-vert',late:8,n:'Jaune citron pâle à cœur vert',c:'#e8d676',eye:'#a69811'},
+  {id:'rouge-vert',late:8,n:'Rouge à cœur vert',c:'#bd0f1a',eye:'#a78224'},{id:'vermillon',late:8,n:'Orange rouge (vermillon)',c:'#f54420',eye:'#201606'},
+  {id:'blanc-anneau',late:8,n:'Blanc à anneau rose ou fuchsia (cœur noir)',c:'#eaded7',ring:'#cb3f50',eye:'#0b0201'},{id:'fuchsia-pointes',late:8,n:'Fuchsia à pointes claires',c:'#ad0c42',tip:'#dc94a4',eye:'#a79620'}];
 const L27_CW_GSPI=[{id:'blanc',n:'Blanc (Spider)',c:'#f8f6ee',eye:'#7a9a3a',k:'spider'},{id:'creme',n:'Crème (Pasta)',c:'#f4e6c0',eye:'#6e7a2e',k:'pasta'},{id:'jaune',n:'Jaune (Spider)',c:'#f6c81e',eye:'#2a1a12',k:'spider'},
   {id:'orange',n:'Orange (Pasta)',c:'#f2862a',eye:'#3a2214',k:'pasta'},{id:'abricot',n:'Abricot (Spider)',c:'#f2a07a',eye:'#3a2a1e',k:'spider'},{id:'corail',n:'Corail (Pasta)',c:'#f2725a',eye:'#3a2418',k:'pasta'},
   {id:'rouge',n:'Rouge (Spider)',c:'#d8302a',eye:'#1e0e0e',k:'spider'},{id:'rose',n:'Rose vif (Pasta)',c:'#e05a8a',eye:'#3a2030',k:'pasta'},{id:'rose-pale',n:'Rose tendre (Spider)',c:'#f2b8c8',eye:'#6e7a2e',k:'spider'},
@@ -60,10 +71,16 @@ function l27GerbFlower(par,B,O,D,cw,op,o={}){const k=G(par),R0=D/2,nz=B[2][2],o2
       E('path',{d,stroke:crc,'stroke-width':f(Math.max(.5,R0*.05)),'stroke-linecap':'round',fill:'none'},par);E('path',{d:dt,stroke:tipk,'stroke-width':f(Math.max(.4,R0*.04)),'stroke-linecap':'round',fill:'none','stroke-opacity':.8},par);
       if(cw.pollen!==0)E('path',{d:dp,fill:cw.pc||'#f2d24a',opacity:.9},par)}})}
   spPetals(k,it,cache);return k}
-function l27GerbPlant(g,t,o,cws,cm0,mini){const cw=o.cw||cwNear(cws,o.col)||cws[0],op=Math.max(.05,Math.min(1,o.op??1)),D=(o.cm||cm0)*UPC,k=G(g),sc=['#3a5a28','#5f8a3e','#86ac62','#b8d098'];
-  const r=lsHeadS(k,o,{D,w:D*(mini?.075:.06),cols:sc,op,rr:.45,nodes:0,lp:mini?2.6:2.1,aimK:.22,wig:.015,e:.02,
-    flower:(par,B,O,D2,op2)=>{if(op2<.3){capBud(par,B,O,D2*.2,cw.c,.25+op2,'#55783a');return}l27GerbFlower(par,B,O,D2,cw,op2,{mini})}});
-  l27StemDeco(k,r,D*.5,{fur:D*.018,furc:'#d6e0c4',wire:rnd()<(mini?.25:.5),ph:R(0,6.28)});
+function l27GerbPlant(g,t,o,cws,cm0,mini){const cw=o.cw||cwNear(cws,o.col)||cws[0],op=Math.max(.05,Math.min(1,o.op??1)),D=(o.cm||cm0)*UPC,k=G(g),sc0=['#3a5a28','#5f8a3e','#86ac62','#b8d098'],
+    /* the SVG gerbera (y-gerbera.js): its head on the capitulum piece, its bare downy scape drawn by svStemLine; the bouquet's chance unchanged */
+    sid=mini?'germini':'gerbera',put=mini?(cws===L27_CW_GERM&&typeof grmSvgPut==='function'?grmSvgPut:null):cws===L27_CW_GERB&&typeof grbSvgPut==='function'?grbSvgPut:null,/* germini: y-germini.js */
+    sv=!!put&&typeof SV_ON!=='undefined'&&SV_ON&&GHI[sid]&&GHI[sid].scSv,sc=sv?Object.assign(['#3e6028','#6a9644','#96bc6a','#c4dca2'],{sv:GHI[sid].scSv}):sc0;/* the SVG scape a paler, yellower green (146, 165) */
+  let nb=null;/* the fading neck bends on the sheets only (grbNeckBend), the head's frame turning with it */
+  const r=lsHeadS(k,o,{D,w:D*(mini&&!sv?.075:.06),/* the SVG germini's scape .06 of the head too (112), its decoration sampled at the old width */cols:sc,op,rr:.45,nodes:0,lp:mini?2.6:2.1,aimK:.22,wig:.015,e:.02,
+    post:sv&&typeof SVA_LIFE!=='undefined'&&SVA_LIFE!=null&&typeof grbNeckBend==='function'?res=>{nb=grbNeckBend(res,SVA_LIFE)}:undefined,
+    flower:(par,B,O,D2,op2)=>{if(sv&&put(par,grbBendB(B,nb),O,D2,cw,op2,cws))return;if(op2<.3){capBud(par,B,O,D2*.2,cw.c,.25+op2,'#55783a');return}l27GerbFlower(par,B,O,D2,cw,op2,{mini})}});
+  /* the SVG scape keeps the old width, .06 D at the neck (146: about .05 of the head; the sheet's full stem widens to .07 at its foot) */
+  l27StemDeco(k,mini&&sv?Object.assign({},r,{nw:r.nw*1.25}):r,D*.5,{fur:D*.018,furc:'#d6e0c4',wire:rnd()<(mini?.25:.5),ph:R(0,6.28),ghost:!!sv});
   open(k,t,1000,10,.3);return r}
 /* ---------- sunflower (Helianthus annuus): a broad disc of florets set in Fibonacci spirals (21/34/55 parastichies: Vogel's 137.5° model), green or brown at its heart, the open florets
    ringed with pollen at its rim (none in the pollenless cut varieties); one or two rows of pointed golden rays; 'Teddy Bear' fully double, a pompon of short fringed rays;

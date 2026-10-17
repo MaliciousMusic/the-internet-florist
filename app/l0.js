@@ -84,7 +84,7 @@ function lsHeadS(k,o,S){const B=frameOf(o,S.rr??.25,!!S.axisFirst),up=B.upV?V3.n
       for(let j=0;j<nl;j++)out.push(['[',{}],['/',{a:r0+j*360/nl+R(-14,14)}],['&',{a:(S.leafAng??55)+R(-8,8)}],['Lv',{i:p.i,j}],[']',{}]);
       if(sd&&p.i<=(sd.top??1))for(let j=0;j<(sd.n||1);j++)if(rnd()<(sd.p??.5)){out.push(['[',{w:w*.62}],['/',{a:r0+(S.opp?90:60)+j*180+R(-20,20)}],['&',{a:(sd.ang||35)+R(-8,8)}],['F',{l:D*(sd.len||.6)*sc*R(.8,1.15),w1:w*.5,e:.07}],['Kb',{age:R(sd.age[0],sd.age[1]),i:p.i}],[']',{}])}
       return out}};
-  const res=lsTurtle(lsDerive([['A',{n:nN}]],rules,nN+2),{p:[0,0,0],H:up,U:U0,wig:S.wig??.03,seg:D*.2,T:[0,1,0],e:S.e??.03,w:w*1.18}),main=res.organs.find(q=>q.t==='K'),apex=main.pos;
+  const res=lsTurtle(lsDerive([['A',{n:nN}]],rules,nN+2),{p:[0,0,0],H:up,U:U0,wig:S.wig??.03,seg:D*.2,T:[0,1,0],e:S.e??.03,w:w*1.18});/* S.post(res): the species may reshape the grown axis before it is drawn (a wilting neck on the sheets) */if(S.post)S.post(res);const main=res.organs.find(q=>q.t==='K'),apex=main.pos;
   res.chains[0].c=S.cols;for(const ch of res.chains)ch.c=S.cols;
   lsPlant(k,res,{O:[0,0,0],apex,cols:S.cols,organ:(og,pos)=>{
     if(og.t==='K')return{parts:[{z:pos[2],fn:par=>S.flower(par,B,pos,D,op)}]};
