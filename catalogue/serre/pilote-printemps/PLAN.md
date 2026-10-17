@@ -244,6 +244,10 @@ par sorte), en groupant les sortes qui partagent une pièce du kit. Bilan : `cat
   pièces `y3-hortensia.js` et `y3-boule.js` (viorne inchangée). Fleurons en sépales fins séparés par des jours, contour bosselé,
   fané par vraies couleurs. Validé par le porteur (« super l'hortensia boule !!! »). Reste : cœur brun visible entre les fleurons du
   rose pâle, feuilles un peu régulières, 944 plus corail que bordeaux ; poids 7 à 12 Mo par bouquet (question au porteur).
+- **Amarante retombante publiée (18 octobre)** : 16 coloris (12 du catalogue, 4 ajoutés `late:13`, SKU 3883-3886), pièce
+  `y3-chenille.js` (cordes de pompons, boules, panicule). Feuille refaite quatre fois après la critique du porteur ; validée :
+  « amarante nickel et la feuille de l'amarante super ! ». Reste : planche SKU à refaire avec le nouveau grain ; amarante
+  dressée non commencée (même pièce).
 - **Ordre révisé (porteur, 2026-10-17)** : les sortes les plus utilisées dans les 76 recettes de bouquets d'abord (anthurium 47,
   arum 42, amarante retombante 37, phalaenopsis 33, cymbidium 19, gloriosa 18…). Liste de contrôle obligatoire :
   `catalogue/serre/methode/BONNES-PRATIQUES.md`.

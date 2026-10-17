@@ -77,3 +77,14 @@ un peu larges ; anthurium .4 maladroit, profil ouvert en bande ; fané recroquev
 9 tiges ; RAM libre descendue à 2,4 Go en QA. **Questions** : niveau de détail réduit sous 200 px ; 930 (D) ; bord crêpé et
 sépales dentés à étendre ; marques Mon Amour, Glowing Alps, My Terracotta, Margarita Classic, Tivoli : noms génériques (porteur,
 18 octobre : « le reste sous nom générique »).
+
+## Amarante retombante (publiée le 18 octobre 2026)
+
+| Sorte | Coloris | Preuves | Facture du chef | Retouches |
+|---|---|---|---|---|
+| amarante-retombante | 12 + 4 ajoutés (`late:13`) | 10 B, 2 C ; ajoutés 2 B, 2 C | 14,5 M (6 relais Opus) | pompons, feuille ×4 (porteur), drapé fané |
+
+**Témoins** : 0 SKU déplacé (3882 → 3886), anémone 0,00 %, rtest des sortes voisines identique, tulipes témoins comme avant
+(3 écarts préexistants, mêmes empreintes). **QA** : 12 bouquets, 0 flottante, 0 sous le vase. **Décisions appliquées** : coloris
+stabilisés prouvés par le négoce (C, validé par le porteur) ; vert et vert lime gardés tous deux (aucun coloris retiré) ; poids
+gardé. Le hortensia 930 vert émeraude est validé par le porteur sur rendu (« vert pour sûr, très beau, on prend »).
