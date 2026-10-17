@@ -14,7 +14,9 @@ function faceTex(par,st,x0,y0,x1,y1,clip){const k=G(par,clip?{'clip-path':`url(#
   return k}
 function rectClip(x0,y0,x1,y1){return vClip(`M${f(x0)},${f(y0)}H${f(x1)}V${f(y1)}H${f(x0)}Z`)}
 /* returns how far below the floor line the stand should stay in frame, and the clip of its top face for the vessel's shadow */
-function stage(par,v){const st=v.st,g=G(par);if(!st){const sf=v.sf||'none';if(sf!=='none')plinth(g,sf);return{show:sf==='none'?14:26,top:null}}
+/* the owner's decision of 2026-10-17 (vase review): no stand, plinth or table top under any vessel, they stand on the scene itself */
+const STAGES=false;
+function stage(par,v){if(!STAGES)return{show:14,top:null};const st=v.st,g=G(par);if(!st){const sf=v.sf||'none';if(sf!=='none')plinth(g,sf);return{show:sf==='none'?14:26,top:null}}
   const c=stCols(st),w=st.w/2,dep=Math.min(st.w,260)*.16,k=st.k;
   if(k==='box'||k==='huaji'||k==='books'){const yb=FL-dep/2,yf=FL+dep/2,fh=Math.max(40,st.h);
     if(k==='books'){const bk=[[0,st.h*.55,'#e8306a'],[st.h*.55,st.h*.45,'#3a5f8a']];let yy=yf;for(const[,th,cc]of bk.reverse()){}

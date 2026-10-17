@@ -59,3 +59,6 @@ vases5/.venv-depth/
 revue-vases/boite.jsonl
 revue-vases/etat.json.tmp
 revue-vases/_apercus/
+revue-vases/demandes/_vues/
+revue-vases/demandes/_vues/
+vases5/tours/*/out/

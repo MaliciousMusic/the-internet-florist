@@ -148,7 +148,7 @@ function buildBq(svg,ids,sv,vid,t0=150,occ,model,recipe){if(svg._alive)svg._aliv
   /* one stage for every head (LIFE_ALL): a bud or a half-open head opens within its own footprint (its size kept), the composition untouched */
   if(LIFE_ALL)for(const o of list){if(!o.st||o.st==='open'||o.kind!=='head'&&o.kind!=='self')continue;if(o.kind==='head')o.cm=(o.cm||cmOf(o.it.p))*(o.st==='bud'?.62:.86);o.st='open'}
   let n=0;list.forEach((o,i)=>{o.dd=list.length>1?1-i/(list.length-1):0});const TF=[0,1,2,3,4].map(depthTint);const step=Math.max(40,1500/list.length),T=i=>t0+380+i*step;
-  const pl=model?(model.plinth==='none'?null:model.plinth||v.pl):v.pl;
+  const pl=!STAGES?null:model?(model.plinth==='none'?null:model.plinth||v.pl):v.pl;
   /* the cut stems in the glass (or on the pins) rise first, from their cut ends */
   let stShow=22;
   /* glass: the stems under the mouth are drawn last, each continuing its own stem (feet gathered while the bouquet is drawn) */

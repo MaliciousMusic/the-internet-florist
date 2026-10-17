@@ -12,6 +12,8 @@ const ROOT = path.resolve(HERE, '..');
 const PORT = +(process.env.PORT || 8803);
 const REQUESTS = path.join(HERE, 'demandes');
 const INBOX = path.join(HERE, 'boite.jsonl');
+// the annotated views of the send in progress, one request each (fifty views in one request passed the size limit)
+const STAGED = path.join(REQUESTS, '_vues');
 
 const TYPES = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.mjs': 'text/javascript; charset=utf-8',
   '.json': 'application/json; charset=utf-8', '.css': 'text/css; charset=utf-8', '.png': 'image/png', '.jpg': 'image/jpeg',
@@ -81,10 +83,10 @@ function send(body) {
       L.push(`- **Note ${n.num}**${n.type ? ` [${n.type}]` : ''}${where} : ${(n.text || '').trim() || '(sans texte)'}`);
       n.status = 'sent'; n.sent = ts;
     }
-    const img = body.images && body.images[id];
-    if (typeof img === 'string' && img.startsWith('data:image/png;base64,')) {
+    const staged = path.join(STAGED, id + '.png');
+    if (fs.existsSync(staged)) {
       fs.mkdirSync(dir, { recursive: true });
-      fs.writeFileSync(path.join(dir, id + '.png'), Buffer.from(img.slice(22), 'base64'));
+      fs.renameSync(staged, path.join(dir, id + '.png'));
       L.push(`- Vue annotée : \`${rel(path.join(dir, id + '.png'))}\``);
     }
     blocks.push(L.join('\n'));
@@ -140,6 +142,13 @@ const server = http.createServer(async (req, res) => {
       const dir = path.join(HERE, '_apercus'); fs.mkdirSync(dir, { recursive: true });
       fs.writeFileSync(path.join(dir, name + '.png'), Buffer.from(png.slice(22), 'base64'));
       return json(res, 200, { file: rel(path.join(dir, name + '.png')) });
+    }
+    if (p === '/api/vue' && req.method === 'POST') {
+      const { id, png } = await readBody(req);
+      if (!/^[\w-]+$/.test(id || '') || typeof png !== 'string' || !png.startsWith('data:image/png;base64,')) return json(res, 400, { error: 'id/png' });
+      fs.mkdirSync(STAGED, { recursive: true });
+      fs.writeFileSync(path.join(STAGED, id + '.png'), Buffer.from(png.slice(22), 'base64'));
+      return json(res, 200, { ok: true });
     }
     if (p === '/api/envoyer' && req.method === 'POST') {
       const r = send(await readBody(req));

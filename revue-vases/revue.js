@@ -141,11 +141,11 @@ function shot(svg){return new Promise(res=>{try{const c=svg.cloneNode(true),vb=s
     const url=URL.createObjectURL(new Blob([new XMLSerializer().serializeToString(c)],{type:'image/svg+xml'})),im=new Image();
     im.onload=()=>{const cv=document.createElement('canvas');cv.width=W;cv.height=H;cv.getContext('2d').drawImage(im,0,0,W,H);URL.revokeObjectURL(url);res(cv.toDataURL('image/png'))};
     im.onerror=()=>{URL.revokeObjectURL(url);res(null)};im.src=url}catch(e){console.error(e);res(null)}})}
-$$('send').onclick=async()=>{const busy=$$('busy'),todo=IDS.filter(id=>sheetOf(id).notes.some(n=>n.status==='open')),images={};
+$$('send').onclick=async()=>{const busy=$$('busy'),todo=IDS.filter(id=>sheetOf(id).notes.some(n=>n.status==='open'));
   busy.hidden=false;const host=$$('stage'),keep=cur;
   try{for(const [i,id] of todo.entries()){busy.textContent=`Vues annotées : ${i+1} / ${todo.length}…`;await new Promise(r=>setTimeout(r,20));
-      frame=null;const s=drawInto(host,id,false);images[id]=await shot(s)}
-    busy.textContent='Envoi…';const r=await api('POST','/api/envoyer',{images});
+      frame=null;try{const s=drawInto(host,id,false),png=await shot(s);if(png)await api('POST','/api/vue',{id,png})}catch(e){console.error(id,e)}}
+    busy.textContent='Envoi…';const r=await api('POST','/api/envoyer',{});
     state=await api('GET','/api/etat');
     if(r.empty){alert('Rien de nouveau à envoyer.')}
     else{$$('dlgs').textContent=`Écrit dans ${r.file}. Si la session de Claude qui surveille la revue est ouverte, elle reçoit l'envoi tout de suite ; sinon, colle-lui ce message.`;

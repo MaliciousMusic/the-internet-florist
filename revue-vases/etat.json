@@ -13,10 +13,11 @@
      "w": 0.4332119360902255,
      "text": "pas au niveau graphiquement",
      "type": "",
-     "status": "open",
+     "status": "sent",
      "date": "2026-10-16T21:46:30.639Z",
      "scale": 1,
-     "v": 1
+     "v": 1,
+     "sent": "2026-10-17_002426"
     }
    ],
    "valid": null,
@@ -35,10 +36,11 @@
      "w": 0.5029830642526141,
      "text": "pas au niveau graphiquement",
      "type": "",
-     "status": "open",
+     "status": "sent",
      "date": "2026-10-16T21:46:25.025Z",
      "scale": 1,
-     "v": 1
+     "v": 1,
+     "sent": "2026-10-17_002426"
     }
    ],
    "valid": null,
@@ -46,10 +48,10 @@
   },
   "vase-ovoide-chocolat": {
    "name": "Vase ovoïde chocolat",
-   "version": 1,
-   "scale": 1.13,
-   "engineScale": 1,
-   "engineHeightCm": 15,
+   "version": 5,
+   "scale": null,
+   "engineScale": 1.13,
+   "engineHeightCm": 16.9,
    "notes": [
     {
      "num": 1,
@@ -57,22 +59,60 @@
      "w": 0.5065335787259615,
      "text": "pas au niveau graphiquement",
      "type": "",
-     "status": "open",
+     "status": "done",
      "date": "2026-10-16T21:46:18.790Z",
      "scale": 1,
-     "v": 1
+     "v": 1,
+     "sent": "2026-10-17_002426",
+     "doneIn": 2
     }
    ],
    "valid": null,
-   "history": [],
-   "scaleSent": false
+   "history": [
+    {
+     "version": 2,
+     "date": "2026-10-16T22:45:21.566Z",
+     "summary": "Refait en SVG au niveau du prisme jaune (vases5/tour.py) : modèle tourné depuis le profil mesuré (paroi, lèvre arrondie, intérieur, fond), lumière du studio de la boutique calculée par pixel (reflets de Fresnel flous selon la matière, occlusion), écrit en bandes de ton ; plus de socle ; émail brillant chocolat",
+     "notes": [
+      1
+     ],
+     "scale": null,
+     "commit": "7e9d935"
+    },
+    {
+     "version": 3,
+     "date": "2026-10-16T22:56:26.665Z",
+     "summary": "Reprise demandée : contours nets (courbes de Bézier), surface lisse (rangées de dégradés au lieu des bandes), studio avec deux grandes boîtes verticales (reflets en bandes), textures de matière ; émail qui s'éclaircit sur la lèvre, léger moiré",
+     "notes": [],
+     "scale": null,
+     "commit": "7e9d935"
+    },
+    {
+     "version": 4,
+     "date": "2026-10-16T23:07:23.083Z",
+     "summary": "Reprise : studio aux boîtes rectangulaires à bords nets (reflets dessinés, plus de taches), vernis net par-dessus la couleur ; émail plus profond là où il s'épaissit, plus clair où il s'amincit",
+     "notes": [],
+     "scale": null,
+     "commit": "7e9d935"
+    },
+    {
+     "version": 5,
+     "date": "2026-10-17T00:00:19.913Z",
+     "summary": "Passe des reflets : studio aux tons chauds de la boutique, boîtes de lumière dégradées comme de vrais diffuseurs, bandes verticales plus vives, ligne d'horizon nette, carte de débouchage ; vernis à deux lobes (reflet net + éclat de l'émail) ; surface sans rangées visibles (fondu vertical)",
+     "notes": [],
+     "scale": null,
+     "commit": "7e9d935"
+    }
+   ],
+   "scaleSent": false,
+   "validSent": false
   },
   "vase-tete-veine-sable": {
    "name": "Vase tête veiné sable",
    "version": 1,
-   "scale": 1.02,
-   "engineScale": 1,
-   "engineHeightCm": 22,
+   "scale": null,
+   "engineScale": 1.02,
+   "engineHeightCm": 22.4,
    "notes": [
     {
      "num": 1,
@@ -80,10 +120,11 @@
      "w": 0.6110703261582168,
      "text": "pas au niveau graphiquement",
      "type": "",
-     "status": "open",
+     "status": "sent",
      "date": "2026-10-16T21:46:05.683Z",
      "scale": 1,
-     "v": 1
+     "v": 1,
+     "sent": "2026-10-17_002426"
     }
    ],
    "valid": null,
@@ -92,10 +133,10 @@
   },
   "vase-conique-blanc": {
    "name": "Vase conique blanc",
-   "version": 1,
-   "scale": 0.99,
-   "engineScale": 1,
-   "engineHeightCm": 26,
+   "version": 2,
+   "scale": null,
+   "engineScale": 0.99,
+   "engineHeightCm": 25.7,
    "notes": [
     {
      "num": 1,
@@ -103,19 +144,33 @@
      "w": 0.577600603272929,
      "text": "pas au niveau graphiquement",
      "type": "",
-     "status": "open",
+     "status": "done",
      "date": "2026-10-16T21:45:54.449Z",
      "scale": 1,
-     "v": 1
+     "v": 1,
+     "sent": "2026-10-17_002426",
+     "doneIn": 2
     }
    ],
    "valid": null,
-   "history": [],
-   "scaleSent": false
+   "history": [
+    {
+     "version": 2,
+     "date": "2026-10-17T00:08:49.897Z",
+     "summary": "Refait en SVG au niveau du pilote validé (vases5/tour.py) : modèle tourné depuis le profil mesuré, studio de la boutique (boîtes dégradées, bandes verticales, horizon), reflets à deux lobes, surface lisse en rangées de dégradés, contours nets, sans socle",
+     "notes": [
+      1
+     ],
+     "scale": null,
+     "commit": "7e9d935"
+    }
+   ],
+   "scaleSent": false,
+   "validSent": false
   },
   "coupe-pied-rosee": {
    "name": "Coupe sur pied rosée",
-   "version": 1,
+   "version": 2,
    "scale": null,
    "engineScale": 1,
    "engineHeightCm": 14.5,
@@ -126,18 +181,32 @@
      "w": 0.5837526746616242,
      "text": "pas au niveau graphiquement",
      "type": "",
-     "status": "open",
+     "status": "done",
      "date": "2026-10-16T21:45:49.833Z",
      "scale": 1,
-     "v": 1
+     "v": 1,
+     "sent": "2026-10-17_002426",
+     "doneIn": 2
     }
    ],
    "valid": null,
-   "history": []
+   "history": [
+    {
+     "version": 2,
+     "date": "2026-10-17T00:08:50.096Z",
+     "summary": "Refait en SVG au niveau du pilote validé (vases5/tour.py) : modèle tourné depuis le profil mesuré, studio de la boutique (boîtes dégradées, bandes verticales, horizon), reflets à deux lobes, surface lisse en rangées de dégradés, contours nets, sans socle",
+     "notes": [
+      1
+     ],
+     "scale": null,
+     "commit": "7e9d935"
+    }
+   ],
+   "validSent": false
   },
   "boule-verre-bouteille": {
    "name": "Boule en verre bouteille",
-   "version": 1,
+   "version": 2,
    "scale": null,
    "engineScale": 1,
    "engineHeightCm": 20,
@@ -148,21 +217,35 @@
      "w": 0.5627878042367789,
      "text": "pas au niveau graphiquement",
      "type": "",
-     "status": "open",
+     "status": "done",
      "date": "2026-10-16T21:45:44.664Z",
      "scale": 1,
-     "v": 1
+     "v": 1,
+     "sent": "2026-10-17_002426",
+     "doneIn": 2
     }
    ],
    "valid": null,
-   "history": []
+   "history": [
+    {
+     "version": 2,
+     "date": "2026-10-17T01:13:38.477Z",
+     "summary": "Refait en SVG au niveau du pilote validé (vases5/tour.py) : verre modélisé avec son épaisseur et sa densité mesurée (gl.op), teinté dans la masse, reflets nets doublés par la paroi arrière, sans socle",
+     "notes": [
+      1
+     ],
+     "scale": null,
+     "commit": "7e9d935"
+    }
+   ],
+   "validSent": false
   },
   "coupe-pied-sable": {
    "name": "Coupe sur pied sable",
-   "version": 1,
-   "scale": 1.42,
-   "engineScale": 1,
-   "engineHeightCm": 8.2,
+   "version": 2,
+   "scale": null,
+   "engineScale": 1.42,
+   "engineHeightCm": 11.6,
    "notes": [
     {
      "num": 1,
@@ -170,22 +253,36 @@
      "w": 0.577138360401032,
      "text": "pas au niveau graphiquement",
      "type": "",
-     "status": "open",
+     "status": "done",
      "date": "2026-10-16T21:45:28.666Z",
      "scale": 1,
-     "v": 1
+     "v": 1,
+     "sent": "2026-10-17_002426",
+     "doneIn": 2
     }
    ],
    "valid": null,
-   "history": [],
-   "scaleSent": false
+   "history": [
+    {
+     "version": 2,
+     "date": "2026-10-17T01:16:13.907Z",
+     "summary": "Refait en SVG au niveau du pilote validé (vases5/tour.py) : modèle tourné, studio de la boutique, mouchetures posées sur la surface (raccourcies sur les bords, ombrées par la lumière), sans socle",
+     "notes": [
+      1
+     ],
+     "scale": null,
+     "commit": "7e9d935"
+    }
+   ],
+   "scaleSent": false,
+   "validSent": false
   },
   "pot-boule-blanc-perle": {
    "name": "Pot boule blanc perle",
-   "version": 1,
-   "scale": 1.11,
-   "engineScale": 1,
-   "engineHeightCm": 9.4,
+   "version": 2,
+   "scale": null,
+   "engineScale": 1.11,
+   "engineHeightCm": 10.4,
    "notes": [
     {
      "num": 1,
@@ -193,19 +290,33 @@
      "w": 0.39859553210668985,
      "text": "pas au niveau graphiquement",
      "type": "",
-     "status": "open",
+     "status": "done",
      "date": "2026-10-16T21:45:13.531Z",
      "scale": 1,
-     "v": 1
+     "v": 1,
+     "sent": "2026-10-17_002426",
+     "doneIn": 2
     }
    ],
    "valid": null,
-   "history": [],
-   "scaleSent": false
+   "history": [
+    {
+     "version": 2,
+     "date": "2026-10-17T00:15:46.010Z",
+     "summary": "Refait en SVG au niveau du pilote validé (vases5/tour.py) : modèle tourné depuis le profil mesuré, studio de la boutique, reflets à deux lobes, surface lisse, contours nets, sans socle",
+     "notes": [
+      1
+     ],
+     "scale": null,
+     "commit": "7e9d935"
+    }
+   ],
+   "scaleSent": false,
+   "validSent": false
   },
   "bouteille-verre-fume": {
    "name": "Bouteille en verre fumé",
-   "version": 1,
+   "version": 2,
    "scale": null,
    "engineScale": 1,
    "engineHeightCm": 26,
@@ -216,21 +327,35 @@
      "w": 0.4107348199426775,
      "text": "pas au niveau graphiquement",
      "type": "",
-     "status": "open",
+     "status": "done",
      "date": "2026-10-16T21:45:09.128Z",
      "scale": 1,
-     "v": 1
+     "v": 1,
+     "sent": "2026-10-17_002426",
+     "doneIn": 2
     }
    ],
    "valid": null,
-   "history": []
+   "history": [
+    {
+     "version": 2,
+     "date": "2026-10-17T01:13:38.646Z",
+     "summary": "Refait en SVG au niveau du pilote validé (vases5/tour.py) : verre modélisé avec son épaisseur et sa densité mesurée (gl.op), teinté dans la masse, reflets nets doublés par la paroi arrière, sans socle",
+     "notes": [
+      1
+     ],
+     "scale": null,
+     "commit": "7e9d935"
+    }
+   ],
+   "validSent": false
   },
   "vase-coeur-anthracite": {
    "name": "Vase cœur anthracite",
    "version": 1,
-   "scale": 0.79,
-   "engineScale": 1,
-   "engineHeightCm": 30.9,
+   "scale": null,
+   "engineScale": 0.79,
+   "engineHeightCm": 24.4,
    "notes": [
     {
      "num": 1,
@@ -238,10 +363,11 @@
      "w": 0.6103351486631599,
      "text": "pas au niveau graphiquement",
      "type": "",
-     "status": "open",
+     "status": "sent",
      "date": "2026-10-16T21:44:52.577Z",
      "scale": 1,
-     "v": 1
+     "v": 1,
+     "sent": "2026-10-17_002426"
     }
    ],
    "valid": null,
@@ -250,7 +376,7 @@
   },
   "coupe-pied-blanche": {
    "name": "Coupe sur pied blanche",
-   "version": 1,
+   "version": 5,
    "scale": null,
    "engineScale": 1,
    "engineHeightCm": 10.1,
@@ -261,18 +387,56 @@
      "w": 0.6388408381764482,
      "text": "pas au niveau graphiquement",
      "type": "",
-     "status": "open",
+     "status": "done",
      "date": "2026-10-16T21:44:48.305Z",
      "scale": 1,
-     "v": 1
+     "v": 1,
+     "sent": "2026-10-17_002426",
+     "doneIn": 2
     }
    ],
    "valid": null,
-   "history": []
+   "history": [
+    {
+     "version": 2,
+     "date": "2026-10-16T22:45:21.731Z",
+     "summary": "Refait en SVG au niveau du prisme jaune (vases5/tour.py) : modèle tourné depuis le profil mesuré (paroi, lèvre arrondie, intérieur, fond), lumière du studio de la boutique calculée par pixel (reflets de Fresnel flous selon la matière, occlusion), écrit en bandes de ton ; plus de socle ; céramique mate blanche, grain fin",
+     "notes": [
+      1
+     ],
+     "scale": null,
+     "commit": "7e9d935"
+    },
+    {
+     "version": 3,
+     "date": "2026-10-16T22:56:26.830Z",
+     "summary": "Reprise demandée : contours nets (courbes de Bézier), surface lisse (rangées de dégradés au lieu des bandes), studio avec deux grandes boîtes verticales (reflets en bandes), textures de matière ; grain fin de la céramique mate",
+     "notes": [],
+     "scale": null,
+     "commit": "7e9d935"
+    },
+    {
+     "version": 4,
+     "date": "2026-10-16T23:07:23.255Z",
+     "summary": "Reprise : studio aux boîtes rectangulaires à bords nets (reflets dessinés, plus de taches), vernis net par-dessus la couleur ; surface parfaitement lisse (ni rainures ni bosses), grain très fin",
+     "notes": [],
+     "scale": null,
+     "commit": "7e9d935"
+    },
+    {
+     "version": 5,
+     "date": "2026-10-17T00:00:20.109Z",
+     "summary": "Passe des reflets : studio aux tons chauds de la boutique, boîtes de lumière dégradées comme de vrais diffuseurs, bandes verticales plus vives, ligne d'horizon nette, carte de débouchage ; vernis à deux lobes (reflet net + éclat de l'émail) ; surface sans rangées visibles (fondu vertical)",
+     "notes": [],
+     "scale": null,
+     "commit": "7e9d935"
+    }
+   ],
+   "validSent": false
   },
   "boule-vert-sapin": {
    "name": "Boule vert sapin",
-   "version": 1,
+   "version": 2,
    "scale": null,
    "engineScale": 1,
    "engineHeightCm": 21.2,
@@ -283,21 +447,35 @@
      "w": 0.5337071401498009,
      "text": "pas au niveau graphiquement",
      "type": "",
-     "status": "open",
+     "status": "done",
      "date": "2026-10-16T21:44:42.132Z",
      "scale": 1,
-     "v": 1
+     "v": 1,
+     "sent": "2026-10-17_002426",
+     "doneIn": 2
     }
    ],
    "valid": null,
-   "history": []
+   "history": [
+    {
+     "version": 2,
+     "date": "2026-10-17T00:15:46.371Z",
+     "summary": "Refait en SVG au niveau du pilote validé (vases5/tour.py) : modèle tourné depuis le profil mesuré, studio de la boutique, reflets à deux lobes, surface lisse, contours nets, sans socle",
+     "notes": [
+      1
+     ],
+     "scale": null,
+     "commit": "7e9d935"
+    }
+   ],
+   "validSent": false
   },
   "urne-medicis-noire": {
    "name": "Urne Médicis noire",
-   "version": 1,
-   "scale": 1.13,
-   "engineScale": 1,
-   "engineHeightCm": 18.9,
+   "version": 2,
+   "scale": null,
+   "engineScale": 1.13,
+   "engineHeightCm": 21.3,
    "notes": [
     {
      "num": 1,
@@ -305,22 +483,36 @@
      "w": 0.6886694097363599,
      "text": "pas au niveau graphiquement",
      "type": "",
-     "status": "open",
+     "status": "done",
      "date": "2026-10-16T21:44:30.694Z",
      "scale": 1,
-     "v": 1
+     "v": 1,
+     "sent": "2026-10-17_002426",
+     "doneIn": 2
     }
    ],
    "valid": null,
-   "history": [],
-   "scaleSent": false
+   "history": [
+    {
+     "version": 2,
+     "date": "2026-10-17T01:21:23.431Z",
+     "summary": "Refait en SVG au niveau du pilote validé (vases5/tour.py) : modèle tourné puis sculpté (pans, côtes, creux ciselés calculés en relief, normales de la surface sculptée), studio de la boutique, sans socle ; pans, godrons et colonnes de perles",
+     "notes": [
+      1
+     ],
+     "scale": null,
+     "commit": "7e9d935"
+    }
+   ],
+   "scaleSent": false,
+   "validSent": false
   },
   "cylindre-chrome": {
    "name": "Cylindre chromé",
-   "version": 1,
-   "scale": 0.94,
-   "engineScale": 1,
-   "engineHeightCm": 13.4,
+   "version": 2,
+   "scale": null,
+   "engineScale": 0.94,
+   "engineHeightCm": 12.6,
    "notes": [
     {
      "num": 1,
@@ -328,22 +520,36 @@
      "w": 0.5999530844974078,
      "text": "pas au niveau graphiquement",
      "type": "",
-     "status": "open",
+     "status": "done",
      "date": "2026-10-16T21:44:20.547Z",
      "scale": 1,
-     "v": 1
+     "v": 1,
+     "sent": "2026-10-17_002426",
+     "doneIn": 2
     }
    ],
    "valid": null,
-   "history": [],
-   "scaleSent": false
+   "history": [
+    {
+     "version": 2,
+     "date": "2026-10-17T00:15:46.552Z",
+     "summary": "Refait en SVG au niveau du pilote validé (vases5/tour.py) : modèle tourné depuis le profil mesuré, studio de la boutique, reflets à deux lobes, surface lisse, contours nets, sans socle",
+     "notes": [
+      1
+     ],
+     "scale": null,
+     "commit": "7e9d935"
+    }
+   ],
+   "scaleSent": false,
+   "validSent": false
   },
   "tube-acier-disque": {
    "name": "Soliflore tube acier",
-   "version": 1,
-   "scale": 0.9,
-   "engineScale": 1,
-   "engineHeightCm": 14.8,
+   "version": 2,
+   "scale": null,
+   "engineScale": 0.9,
+   "engineHeightCm": 13.3,
    "notes": [
     {
      "num": 1,
@@ -351,22 +557,36 @@
      "w": 0.47913294838720144,
      "text": "pas au niveau graphiquement",
      "type": "",
-     "status": "open",
+     "status": "done",
      "date": "2026-10-16T21:44:09.650Z",
      "scale": 1,
-     "v": 1
+     "v": 1,
+     "sent": "2026-10-17_002426",
+     "doneIn": 2
     }
    ],
    "valid": null,
-   "history": [],
-   "scaleSent": false
+   "history": [
+    {
+     "version": 2,
+     "date": "2026-10-17T00:15:46.721Z",
+     "summary": "Refait en SVG au niveau du pilote validé (vases5/tour.py) : modèle tourné depuis le profil mesuré, studio de la boutique, reflets à deux lobes, surface lisse, contours nets, sans socle",
+     "notes": [
+      1
+     ],
+     "scale": null,
+     "commit": "7e9d935"
+    }
+   ],
+   "scaleSent": false,
+   "validSent": false
   },
   "coupe-pied-noire": {
    "name": "Coupe sur pied noire",
-   "version": 1,
-   "scale": 0.91,
-   "engineScale": 1,
-   "engineHeightCm": 11.7,
+   "version": 2,
+   "scale": null,
+   "engineScale": 0.91,
+   "engineHeightCm": 10.7,
    "notes": [
     {
      "num": 1,
@@ -374,22 +594,36 @@
      "w": 0.7647353106057504,
      "text": "pas au niveau graphiquement",
      "type": "",
-     "status": "open",
+     "status": "done",
      "date": "2026-10-16T21:44:00.578Z",
      "scale": 1,
-     "v": 1
+     "v": 1,
+     "sent": "2026-10-17_002426",
+     "doneIn": 2
     }
    ],
    "valid": null,
-   "history": [],
-   "scaleSent": false
+   "history": [
+    {
+     "version": 2,
+     "date": "2026-10-17T00:08:50.292Z",
+     "summary": "Refait en SVG au niveau du pilote validé (vases5/tour.py) : modèle tourné depuis le profil mesuré, studio de la boutique (boîtes dégradées, bandes verticales, horizon), reflets à deux lobes, surface lisse en rangées de dégradés, contours nets, sans socle",
+     "notes": [
+      1
+     ],
+     "scale": null,
+     "commit": "7e9d935"
+    }
+   ],
+   "scaleSent": false,
+   "validSent": false
   },
   "coupe-cobalt-mouchetee": {
    "name": "Coupe soufflée cobalt",
-   "version": 1,
-   "scale": 1.17,
-   "engineScale": 1,
-   "engineHeightCm": 14.5,
+   "version": 2,
+   "scale": null,
+   "engineScale": 1.17,
+   "engineHeightCm": 16.9,
    "notes": [
     {
      "num": 1,
@@ -397,22 +631,36 @@
      "w": 0.6314356091425346,
      "text": "pas au niveau graphiquement",
      "type": "",
-     "status": "open",
+     "status": "done",
      "date": "2026-10-16T21:43:50.974Z",
      "scale": 1,
-     "v": 1
+     "v": 1,
+     "sent": "2026-10-17_002426",
+     "doneIn": 2
     }
    ],
    "valid": null,
-   "history": [],
-   "scaleSent": false
+   "history": [
+    {
+     "version": 2,
+     "date": "2026-10-17T01:13:38.827Z",
+     "summary": "Refait en SVG au niveau du pilote validé (vases5/tour.py) : verre modélisé avec son épaisseur et sa densité mesurée (gl.op), teinté dans la masse, reflets nets doublés par la paroi arrière, sans socle",
+     "notes": [
+      1
+     ],
+     "scale": null,
+     "commit": "7e9d935"
+    }
+   ],
+   "scaleSent": false,
+   "validSent": false
   },
   "balustre-argent-patine": {
    "name": "Vase balustre argenté",
-   "version": 1,
-   "scale": 1.01,
-   "engineScale": 1,
-   "engineHeightCm": 26.7,
+   "version": 5,
+   "scale": null,
+   "engineScale": 1.01,
+   "engineHeightCm": 27,
    "notes": [
     {
      "num": 1,
@@ -420,22 +668,60 @@
      "w": 0.540388477349597,
      "text": "pas au niveau graphiquement",
      "type": "",
-     "status": "open",
+     "status": "done",
      "date": "2026-10-16T21:43:40.859Z",
      "scale": 1,
-     "v": 1
+     "v": 1,
+     "sent": "2026-10-17_002426",
+     "doneIn": 2
     }
    ],
    "valid": null,
-   "history": [],
-   "scaleSent": false
+   "history": [
+    {
+     "version": 2,
+     "date": "2026-10-16T22:45:21.895Z",
+     "summary": "Refait en SVG au niveau du prisme jaune (vases5/tour.py) : modèle tourné depuis le profil mesuré (paroi, lèvre arrondie, intérieur, fond), lumière du studio de la boutique calculée par pixel (reflets de Fresnel flous selon la matière, occlusion), écrit en bandes de ton ; plus de socle ; métal argenté terni, lèvre ondulée",
+     "notes": [
+      1
+     ],
+     "scale": null,
+     "commit": "7e9d935"
+    },
+    {
+     "version": 3,
+     "date": "2026-10-16T22:56:26.995Z",
+     "summary": "Reprise demandée : contours nets (courbes de Bézier), surface lisse (rangées de dégradés au lieu des bandes), studio avec deux grandes boîtes verticales (reflets en bandes), textures de matière ; métal brossé, ternissure douce",
+     "notes": [],
+     "scale": null,
+     "commit": "7e9d935"
+    },
+    {
+     "version": 4,
+     "date": "2026-10-16T23:07:22.901Z",
+     "summary": "Reprise : studio aux boîtes rectangulaires à bords nets (reflets dessinés, plus de taches), vernis net par-dessus la couleur ; plus de brossage, miroir d'argent, ternissure gris-brun seulement dans les creux",
+     "notes": [],
+     "scale": null,
+     "commit": "7e9d935"
+    },
+    {
+     "version": 5,
+     "date": "2026-10-17T00:00:20.282Z",
+     "summary": "Passe des reflets : studio aux tons chauds de la boutique, boîtes de lumière dégradées comme de vrais diffuseurs, bandes verticales plus vives, ligne d'horizon nette, carte de débouchage ; vernis à deux lobes (reflet net + éclat de l'émail) ; surface sans rangées visibles (fondu vertical) ; voile du métal poli",
+     "notes": [],
+     "scale": null,
+     "commit": "7e9d935"
+    }
+   ],
+   "scaleSent": false,
+   "validSent": false
   },
   "bulbe-pied-sable": {
    "name": "Bulbe sur pied sable",
-   "version": 1,
-   "scale": 1.29,
-   "engineScale": 1,
-   "engineHeightCm": 16.4,
+   "version": 2,
+   "scale": null,
+   "engineScale": 1.29,
+   "engineHeightCm": 21.2,
    "notes": [
     {
      "num": 1,
@@ -443,22 +729,36 @@
      "w": 0.6858326022998114,
      "text": "pas au niveau graphiquement",
      "type": "",
-     "status": "open",
+     "status": "done",
      "date": "2026-10-16T21:43:37.061Z",
      "scale": 1.29,
-     "v": 1
+     "v": 1,
+     "sent": "2026-10-17_002426",
+     "doneIn": 2
     }
    ],
    "valid": null,
-   "history": [],
-   "scaleSent": false
+   "history": [
+    {
+     "version": 2,
+     "date": "2026-10-17T01:16:14.100Z",
+     "summary": "Refait en SVG au niveau du pilote validé (vases5/tour.py) : modèle tourné, studio de la boutique, mouchetures posées sur la surface (raccourcies sur les bords, ombrées par la lumière), sans socle",
+     "notes": [
+      1
+     ],
+     "scale": null,
+     "commit": "7e9d935"
+    }
+   ],
+   "scaleSent": false,
+   "validSent": false
   },
   "calice-celadon-pans": {
    "name": "Vase céladon à pans",
-   "version": 1,
-   "scale": 1.22,
-   "engineScale": 1,
-   "engineHeightCm": 20.5,
+   "version": 2,
+   "scale": null,
+   "engineScale": 1.22,
+   "engineHeightCm": 25,
    "notes": [
     {
      "num": 1,
@@ -466,19 +766,33 @@
      "w": 0.6659160284661998,
      "text": "pas au niveau graphiquement",
      "type": "",
-     "status": "open",
+     "status": "done",
      "date": "2026-10-16T21:43:20.736Z",
      "scale": 1.09,
-     "v": 1
+     "v": 1,
+     "sent": "2026-10-17_002426",
+     "doneIn": 2
     }
    ],
    "valid": null,
-   "history": [],
-   "scaleSent": false
+   "history": [
+    {
+     "version": 2,
+     "date": "2026-10-17T01:21:23.250Z",
+     "summary": "Refait en SVG au niveau du pilote validé (vases5/tour.py) : modèle tourné puis sculpté (pans, côtes, creux ciselés calculés en relief, normales de la surface sculptée), studio de la boutique, sans socle ; huit pans, émail clair sur les arêtes, rang de perles",
+     "notes": [
+      1
+     ],
+     "scale": null,
+     "commit": "7e9d935"
+    }
+   ],
+   "scaleSent": false,
+   "validSent": false
   },
   "cylindre-verre-bouquet": {
    "name": "Cylindre de verre",
-   "version": 1,
+   "version": 5,
    "scale": null,
    "engineScale": 1,
    "engineHeightCm": 17.5,
@@ -489,21 +803,59 @@
      "w": 0.46648129427998686,
      "text": "il faut refaire ce vase completement pour qu'il soit au niveau de nos beau vase, faire un verre frosté gradient du bas et plus transparent vers le haut",
      "type": "",
-     "status": "open",
+     "status": "done",
      "date": "2026-10-16T21:33:41.241Z",
      "scale": 1,
-     "v": 1
+     "v": 1,
+     "sent": "2026-10-17_002426",
+     "doneIn": 2
     }
    ],
    "valid": null,
-   "history": []
+   "history": [
+    {
+     "version": 2,
+     "date": "2026-10-16T22:45:22.227Z",
+     "summary": "Refait en SVG au niveau du prisme jaune (vases5/tour.py) : modèle tourné depuis le profil mesuré (paroi, lèvre arrondie, intérieur, fond), lumière du studio de la boutique calculée par pixel (reflets de Fresnel flous selon la matière, occlusion), écrit en bandes de ton ; plus de socle ; verre dépoli en dégradé, dense en bas et presque clair en haut, liseré de bord, tiges floutées derrière",
+     "notes": [
+      1
+     ],
+     "scale": null,
+     "commit": "7e9d935"
+    },
+    {
+     "version": 3,
+     "date": "2026-10-16T22:56:26.498Z",
+     "summary": "Reprise demandée : contours nets (courbes de Bézier), surface lisse (rangées de dégradés au lieu des bandes), studio avec deux grandes boîtes verticales (reflets en bandes), textures de matière ; verre : vraie épaisseur (longueur de verre traversée : bords et fond massif teintés), anneau de la lèvre vu en coupe, peau brillante aux reflets nets sur le dépoli, liserés de bord",
+     "notes": [],
+     "scale": null,
+     "commit": "7e9d935"
+    },
+    {
+     "version": 4,
+     "date": "2026-10-16T23:07:23.609Z",
+     "summary": "Reprise : studio aux boîtes rectangulaires à bords nets (reflets dessinés, plus de taches), vernis net par-dessus la couleur",
+     "notes": [],
+     "scale": null,
+     "commit": "7e9d935"
+    },
+    {
+     "version": 5,
+     "date": "2026-10-17T00:00:20.631Z",
+     "summary": "Passe des reflets : studio aux tons chauds de la boutique, boîtes de lumière dégradées comme de vrais diffuseurs, bandes verticales plus vives, ligne d'horizon nette, carte de débouchage ; vernis à deux lobes (reflet net + éclat de l'émail) ; surface sans rangées visibles (fondu vertical) ; reflets doublés par la paroi arrière, liseré clair de Fresnel sur les bords",
+     "notes": [],
+     "scale": null,
+     "commit": "7e9d935"
+    }
+   ],
+   "validSent": false
   },
   "colonne-blanche": {
    "name": "Colonne blanche",
    "version": 1,
-   "scale": 0.42,
-   "engineScale": 1,
-   "engineHeightCm": 60,
+   "scale": null,
+   "engineScale": 0.42,
+   "engineHeightCm": 25.2,
    "notes": [
     {
      "num": 1,
@@ -511,10 +863,11 @@
      "w": 0.49611334981208033,
      "text": "pas au niveau graphique du haut du panier a refaire en bien mieux",
      "type": "",
-     "status": "open",
+     "status": "sent",
      "date": "2026-10-16T21:34:48.230Z",
      "scale": 0.42,
-     "v": 1
+     "v": 1,
+     "sent": "2026-10-17_002426"
     }
    ],
    "valid": null,
@@ -523,10 +876,10 @@
   },
   "pot-agate-rose": {
    "name": "Pot agate rosé",
-   "version": 1,
-   "scale": 1.09,
-   "engineScale": 1,
-   "engineHeightCm": 13.4,
+   "version": 2,
+   "scale": null,
+   "engineScale": 1.09,
+   "engineHeightCm": 14.6,
    "notes": [
     {
      "num": 1,
@@ -534,22 +887,36 @@
      "w": 0.5412611651917208,
      "text": "pas au niveau graphiquement",
      "type": "",
-     "status": "open",
+     "status": "done",
      "date": "2026-10-16T21:35:17.637Z",
      "scale": 1.09,
-     "v": 1
+     "v": 1,
+     "sent": "2026-10-17_002426",
+     "doneIn": 2
     }
    ],
    "valid": null,
-   "history": [],
-   "scaleSent": false
+   "history": [
+    {
+     "version": 2,
+     "date": "2026-10-17T01:21:23.815Z",
+     "summary": "Refait en SVG au niveau du pilote validé (vases5/tour.py) : modèle tourné puis sculpté (pans, côtes, creux ciselés calculés en relief, normales de la surface sculptée), studio de la boutique, sans socle ; marbrure d'agate des cinq argiles",
+     "notes": [
+      1
+     ],
+     "scale": null,
+     "commit": "7e9d935"
+    }
+   ],
+   "scaleSent": false,
+   "validSent": false
   },
   "coupe-cone-noire": {
    "name": "Coupe sur cône noire",
-   "version": 1,
-   "scale": 1.06,
-   "engineScale": 1,
-   "engineHeightCm": 20.4,
+   "version": 2,
+   "scale": null,
+   "engineScale": 1.06,
+   "engineHeightCm": 21.6,
    "notes": [
     {
      "num": 1,
@@ -557,19 +924,33 @@
      "w": 0.6358140470651721,
      "text": "pas au niveau graphiquement",
      "type": "",
-     "status": "open",
+     "status": "done",
      "date": "2026-10-16T21:35:54.450Z",
      "scale": 1.06,
-     "v": 1
+     "v": 1,
+     "sent": "2026-10-17_002426",
+     "doneIn": 2
     }
    ],
    "valid": null,
-   "history": [],
-   "scaleSent": false
+   "history": [
+    {
+     "version": 2,
+     "date": "2026-10-17T00:08:50.462Z",
+     "summary": "Refait en SVG au niveau du pilote validé (vases5/tour.py) : modèle tourné depuis le profil mesuré, studio de la boutique (boîtes dégradées, bandes verticales, horizon), reflets à deux lobes, surface lisse en rangées de dégradés, contours nets, sans socle",
+     "notes": [
+      1
+     ],
+     "scale": null,
+     "commit": "7e9d935"
+    }
+   ],
+   "scaleSent": false,
+   "validSent": false
   },
   "urne-sablier-noire": {
    "name": "Urne sablier noire",
-   "version": 1,
+   "version": 2,
    "scale": null,
    "engineScale": 1,
    "engineHeightCm": 20,
@@ -580,21 +961,35 @@
      "w": 0.6972689115084134,
      "text": "pas au niveau graphiquement",
      "type": "",
-     "status": "open",
+     "status": "done",
      "date": "2026-10-16T21:36:09.013Z",
      "scale": 1,
-     "v": 1
+     "v": 1,
+     "sent": "2026-10-17_002426",
+     "doneIn": 2
     }
    ],
    "valid": null,
-   "history": []
+   "history": [
+    {
+     "version": 2,
+     "date": "2026-10-17T00:08:50.634Z",
+     "summary": "Refait en SVG au niveau du pilote validé (vases5/tour.py) : modèle tourné depuis le profil mesuré, studio de la boutique (boîtes dégradées, bandes verticales, horizon), reflets à deux lobes, surface lisse en rangées de dégradés, contours nets, sans socle",
+     "notes": [
+      1
+     ],
+     "scale": null,
+     "commit": "7e9d935"
+    }
+   ],
+   "validSent": false
   },
   "boule-perlee-porcelaine": {
    "name": "Boule perlée sur pied",
-   "version": 1,
-   "scale": 1.31,
-   "engineScale": 1,
-   "engineHeightCm": 9,
+   "version": 5,
+   "scale": null,
+   "engineScale": 1.31,
+   "engineHeightCm": 11.8,
    "notes": [
     {
      "num": 1,
@@ -602,19 +997,57 @@
      "w": 0.4679123047257291,
      "text": "pas au niveau graphiquement",
      "type": "",
-     "status": "open",
+     "status": "done",
      "date": "2026-10-16T21:36:23.165Z",
      "scale": 1.31,
-     "v": 1
+     "v": 1,
+     "sent": "2026-10-17_002426",
+     "doneIn": 2
     }
    ],
    "valid": null,
-   "history": [],
-   "scaleSent": false
+   "history": [
+    {
+     "version": 2,
+     "date": "2026-10-16T22:45:22.060Z",
+     "summary": "Refait en SVG au niveau du prisme jaune (vases5/tour.py) : modèle tourné depuis le profil mesuré (paroi, lèvre arrondie, intérieur, fond), lumière du studio de la boutique calculée par pixel (reflets de Fresnel flous selon la matière, occlusion), écrit en bandes de ton ; plus de socle ; porcelaine émaillée, perles en relief au col et au pied",
+     "notes": [
+      1
+     ],
+     "scale": null,
+     "commit": "7e9d935"
+    },
+    {
+     "version": 3,
+     "date": "2026-10-16T22:56:27.158Z",
+     "summary": "Reprise demandée : contours nets (courbes de Bézier), surface lisse (rangées de dégradés au lieu des bandes), studio avec deux grandes boîtes verticales (reflets en bandes), textures de matière ; porcelaine émaillée, perles nettes",
+     "notes": [],
+     "scale": null,
+     "commit": "7e9d935"
+    },
+    {
+     "version": 4,
+     "date": "2026-10-16T23:07:23.439Z",
+     "summary": "Reprise : studio aux boîtes rectangulaires à bords nets (reflets dessinés, plus de taches), vernis net par-dessus la couleur",
+     "notes": [],
+     "scale": null,
+     "commit": "7e9d935"
+    },
+    {
+     "version": 5,
+     "date": "2026-10-17T00:00:20.461Z",
+     "summary": "Passe des reflets : studio aux tons chauds de la boutique, boîtes de lumière dégradées comme de vrais diffuseurs, bandes verticales plus vives, ligne d'horizon nette, carte de débouchage ; vernis à deux lobes (reflet net + éclat de l'émail) ; surface sans rangées visibles (fondu vertical)",
+     "notes": [],
+     "scale": null,
+     "commit": "7e9d935"
+    }
+   ],
+   "scaleSent": false,
+   "validSent": false
   },
   "urne-ardoise-bleutee": {
    "name": "Urne ardoise bleutée",
-   "version": 1,
+   "version": 2,
    "scale": null,
    "engineScale": 1,
    "engineHeightCm": 16,
@@ -625,14 +1058,28 @@
      "w": 0.6082658034104568,
      "text": "pas au niveau graphiquement",
      "type": "",
-     "status": "open",
+     "status": "done",
      "date": "2026-10-16T21:36:28.773Z",
      "scale": 1,
-     "v": 1
+     "v": 1,
+     "sent": "2026-10-17_002426",
+     "doneIn": 2
     }
    ],
    "valid": null,
-   "history": []
+   "history": [
+    {
+     "version": 2,
+     "date": "2026-10-17T00:11:27.173Z",
+     "summary": "Refait en SVG au niveau du pilote validé (vases5/tour.py) : modèle tourné depuis le profil mesuré, studio de la boutique, reflets à deux lobes, surface lisse, contours nets, sans socle",
+     "notes": [
+      1
+     ],
+     "scale": null,
+     "commit": "7e9d935"
+    }
+   ],
+   "validSent": false
   },
   "cylindre-chinoiserie": {
    "name": "Cylindre chinoiserie",
@@ -647,10 +1094,11 @@
      "w": 0.6147399535766236,
      "text": "pas au niveau graphiquement",
      "type": "",
-     "status": "open",
+     "status": "sent",
      "date": "2026-10-16T21:36:34.882Z",
      "scale": 1,
-     "v": 1
+     "v": 1,
+     "sent": "2026-10-17_002426"
     }
    ],
    "valid": null,
@@ -658,7 +1106,7 @@
   },
   "ovoide-verre-glacier": {
    "name": "Ovoïde verre glacier",
-   "version": 1,
+   "version": 2,
    "scale": null,
    "engineScale": 1,
    "engineHeightCm": 15,
@@ -669,22 +1117,36 @@
      "w": 0.59285593448549,
      "text": "pas au niveau graphiquement",
      "type": "",
-     "status": "open",
+     "status": "done",
      "date": "2026-10-16T21:36:45.313Z",
      "scale": 1.14,
-     "v": 1
+     "v": 1,
+     "sent": "2026-10-17_002426",
+     "doneIn": 2
     }
    ],
    "valid": null,
-   "history": [],
-   "scaleSent": false
+   "history": [
+    {
+     "version": 2,
+     "date": "2026-10-17T01:13:39.004Z",
+     "summary": "Refait en SVG au niveau du pilote validé (vases5/tour.py) : verre modélisé avec son épaisseur et sa densité mesurée (gl.op), teinté dans la masse, reflets nets doublés par la paroi arrière, sans socle",
+     "notes": [
+      1
+     ],
+     "scale": null,
+     "commit": "7e9d935"
+    }
+   ],
+   "scaleSent": false,
+   "validSent": false
   },
   "pot-shino-marbre": {
    "name": "Pot shino sur marbre",
-   "version": 1,
-   "scale": 1.45,
-   "engineScale": 1,
-   "engineHeightCm": 6.4,
+   "version": 2,
+   "scale": null,
+   "engineScale": 1.45,
+   "engineHeightCm": 9.3,
    "notes": [
     {
      "num": 1,
@@ -692,19 +1154,33 @@
      "w": 0.3561135898665748,
      "text": "pas au niveau graphiquement",
      "type": "",
-     "status": "open",
+     "status": "done",
      "date": "2026-10-16T21:36:57.617Z",
      "scale": 1.45,
-     "v": 1
+     "v": 1,
+     "sent": "2026-10-17_002426",
+     "doneIn": 2
     }
    ],
    "valid": null,
-   "history": [],
-   "scaleSent": false
+   "history": [
+    {
+     "version": 2,
+     "date": "2026-10-17T01:26:48.373Z",
+     "summary": "Refait en SVG au niveau du pilote validé (vases5/tour.py) : modèle tourné, studio de la boutique, sans socle ; émail shino blanc trempé depuis la lèvre avec ses coulures, pied cru rougi",
+     "notes": [
+      1
+     ],
+     "scale": null,
+     "commit": "7e9d935"
+    }
+   ],
+   "scaleSent": false,
+   "validSent": false
   },
   "balustre-email-reticule": {
    "name": "Balustre émail réticulé",
-   "version": 1,
+   "version": 2,
    "scale": null,
    "engineScale": 1,
    "engineHeightCm": 21.4,
@@ -715,21 +1191,35 @@
      "w": 0.6182865712834501,
      "text": "pas au niveau graphiquement",
      "type": "",
-     "status": "open",
+     "status": "done",
      "date": "2026-10-16T21:37:02.651Z",
      "scale": 1,
-     "v": 1
+     "v": 1,
+     "sent": "2026-10-17_002426",
+     "doneIn": 2
     }
    ],
    "valid": null,
-   "history": []
+   "history": [
+    {
+     "version": 2,
+     "date": "2026-10-17T01:26:48.555Z",
+     "summary": "Refait en SVG au niveau du pilote validé (vases5/tour.py) : modèle tourné, studio de la boutique, sans socle ; émail réticulé or rétracté en petites îles, cernes sombres, quelques îles rouille et olive",
+     "notes": [
+      1
+     ],
+     "scale": null,
+     "commit": "7e9d935"
+    }
+   ],
+   "validSent": false
   },
   "coupelle-argentee": {
    "name": "Coupelle argentée",
-   "version": 1,
-   "scale": 1.67,
-   "engineScale": 1,
-   "engineHeightCm": 5.9,
+   "version": 2,
+   "scale": null,
+   "engineScale": 1.67,
+   "engineHeightCm": 9.9,
    "notes": [
     {
      "num": 1,
@@ -737,22 +1227,36 @@
      "w": 0.49956354076514936,
      "text": "pas au niveau graphiquement",
      "type": "",
-     "status": "open",
+     "status": "done",
      "date": "2026-10-16T21:37:11.580Z",
      "scale": 1.67,
-     "v": 1
+     "v": 1,
+     "sent": "2026-10-17_002426",
+     "doneIn": 2
     }
    ],
    "valid": null,
-   "history": [],
-   "scaleSent": false
+   "history": [
+    {
+     "version": 2,
+     "date": "2026-10-17T00:36:38.725Z",
+     "summary": "Refait en SVG au niveau du pilote validé (vases5/tour.py) : modèle tourné depuis le profil mesuré, studio de la boutique, reflets métal nets, surface lisse, contours nets, sans socle",
+     "notes": [
+      1
+     ],
+     "scale": null,
+     "commit": "7e9d935"
+    }
+   ],
+   "scaleSent": false,
+   "validSent": false
   },
   "boule-aubergine": {
    "name": "Boule aubergine",
-   "version": 1,
-   "scale": 1.24,
-   "engineScale": 1,
-   "engineHeightCm": 11,
+   "version": 2,
+   "scale": null,
+   "engineScale": 1.24,
+   "engineHeightCm": 13.6,
    "notes": [
     {
      "num": 1,
@@ -760,22 +1264,36 @@
      "w": 0.47835563661389013,
      "text": "pas au niveau graphiquement",
      "type": "",
-     "status": "open",
+     "status": "done",
      "date": "2026-10-16T21:37:20.197Z",
      "scale": 1.24,
-     "v": 1
+     "v": 1,
+     "sent": "2026-10-17_002426",
+     "doneIn": 2
     }
    ],
    "valid": null,
-   "history": [],
-   "scaleSent": false
+   "history": [
+    {
+     "version": 2,
+     "date": "2026-10-17T00:11:27.694Z",
+     "summary": "Refait en SVG au niveau du pilote validé (vases5/tour.py) : modèle tourné depuis le profil mesuré, studio de la boutique, reflets à deux lobes, surface lisse, contours nets, sans socle",
+     "notes": [
+      1
+     ],
+     "scale": null,
+     "commit": "7e9d935"
+    }
+   ],
+   "scaleSent": false,
+   "validSent": false
   },
   "coupe-medicis-anses": {
    "name": "Coupe Médicis à anses",
-   "version": 1,
-   "scale": 1.52,
-   "engineScale": 1,
-   "engineHeightCm": 8.3,
+   "version": 2,
+   "scale": null,
+   "engineScale": 1.52,
+   "engineHeightCm": 12.6,
    "notes": [
     {
      "num": 1,
@@ -783,22 +1301,36 @@
      "w": 0.677218818292748,
      "text": "pas au niveau graphiquement",
      "type": "",
-     "status": "open",
+     "status": "done",
      "date": "2026-10-16T21:37:31.696Z",
      "scale": 1.52,
-     "v": 1
+     "v": 1,
+     "sent": "2026-10-17_002426",
+     "doneIn": 2
     }
    ],
    "valid": null,
-   "history": [],
-   "scaleSent": false
+   "history": [
+    {
+     "version": 2,
+     "date": "2026-10-17T01:26:48.726Z",
+     "summary": "Refait en SVG au niveau du pilote validé (vases5/tour.py) : modèle tourné, studio de la boutique, sans socle ; godrons, deux anses en volute avec leur bouton ; pied rond (le pied carré donnait un artefact, à reprendre si tu le veux carré)",
+     "notes": [
+      1
+     ],
+     "scale": null,
+     "commit": "7e9d935"
+    }
+   ],
+   "scaleSent": false,
+   "validSent": false
   },
   "coupe-basse-anthracite": {
    "name": "Coupe basse anthracite",
    "version": 1,
-   "scale": 0.86,
-   "engineScale": 1,
-   "engineHeightCm": 10,
+   "scale": null,
+   "engineScale": 0.86,
+   "engineHeightCm": 8.6,
    "notes": [
     {
      "num": 1,
@@ -806,10 +1338,11 @@
      "w": 1.861186837894119,
      "text": "cette coupe est censé fonctionné comme un pique fleur ",
      "type": "",
-     "status": "open",
+     "status": "sent",
      "date": "2026-10-16T21:38:08.818Z",
      "scale": 0.86,
-     "v": 1
+     "v": 1,
+     "sent": "2026-10-17_002426"
     }
    ],
    "valid": null,
@@ -818,10 +1351,10 @@
   },
   "calice-mouchete": {
    "name": "Calice moucheté",
-   "version": 1,
-   "scale": 1.18,
-   "engineScale": 1,
-   "engineHeightCm": 17,
+   "version": 2,
+   "scale": null,
+   "engineScale": 1.18,
+   "engineHeightCm": 20.1,
    "notes": [
     {
      "num": 1,
@@ -829,15 +1362,29 @@
      "w": 0.6673882349346193,
      "text": "pas au niveau graphiquement",
      "type": "",
-     "status": "open",
+     "status": "done",
      "date": "2026-10-16T21:38:47.181Z",
      "scale": 1.18,
-     "v": 1
+     "v": 1,
+     "sent": "2026-10-17_002426",
+     "doneIn": 2
     }
    ],
    "valid": null,
-   "history": [],
-   "scaleSent": false
+   "history": [
+    {
+     "version": 2,
+     "date": "2026-10-17T01:16:14.296Z",
+     "summary": "Refait en SVG au niveau du pilote validé (vases5/tour.py) : modèle tourné, studio de la boutique, mouchetures posées sur la surface (raccourcies sur les bords, ombrées par la lumière), sans socle",
+     "notes": [
+      1
+     ],
+     "scale": null,
+     "commit": "7e9d935"
+    }
+   ],
+   "scaleSent": false,
+   "validSent": false
   },
   "suiban-lobe-rose": {
    "name": "Suiban lobé rose",
@@ -852,10 +1399,11 @@
      "w": 0.6205590978845373,
      "text": "pas au niveau graphiquement",
      "type": "",
-     "status": "open",
+     "status": "sent",
      "date": "2026-10-16T21:43:09.633Z",
      "scale": 1,
-     "v": 1
+     "v": 1,
+     "sent": "2026-10-17_002426"
     }
    ],
    "valid": null,
@@ -863,7 +1411,7 @@
   },
   "boule-inox-brossee": {
    "name": "Boule en inox brossé",
-   "version": 1,
+   "version": 2,
    "scale": null,
    "engineScale": 1,
    "engineHeightCm": 15.4,
@@ -874,18 +1422,32 @@
      "w": 0.5016687414148352,
      "text": "pas au niveau graphiquement",
      "type": "",
-     "status": "open",
+     "status": "done",
      "date": "2026-10-16T21:43:05.164Z",
      "scale": 1,
-     "v": 1
+     "v": 1,
+     "sent": "2026-10-17_002426",
+     "doneIn": 2
     }
    ],
    "valid": null,
-   "history": []
+   "history": [
+    {
+     "version": 2,
+     "date": "2026-10-17T00:36:39.047Z",
+     "summary": "Refait en SVG au niveau du pilote validé (vases5/tour.py) : modèle tourné depuis le profil mesuré, studio de la boutique, reflets métal nets, surface lisse, contours nets, sans socle",
+     "notes": [
+      1
+     ],
+     "scale": null,
+     "commit": "7e9d935"
+    }
+   ],
+   "validSent": false
   },
   "calice-souffle-col-tube": {
    "name": "Calice soufflé à col",
-   "version": 1,
+   "version": 2,
    "scale": null,
    "engineScale": 1,
    "engineHeightCm": 37,
@@ -896,21 +1458,35 @@
      "w": 0.6273695852553275,
      "text": "pas au niveau graphiquement",
      "type": "",
-     "status": "open",
+     "status": "done",
      "date": "2026-10-16T21:43:00.372Z",
      "scale": 1,
-     "v": 1
+     "v": 1,
+     "sent": "2026-10-17_002426",
+     "doneIn": 2
     }
    ],
    "valid": null,
-   "history": []
+   "history": [
+    {
+     "version": 2,
+     "date": "2026-10-17T01:13:39.205Z",
+     "summary": "Refait en SVG au niveau du pilote validé (vases5/tour.py) : verre modélisé avec son épaisseur et sa densité mesurée (gl.op), teinté dans la masse, reflets nets doublés par la paroi arrière, sans socle",
+     "notes": [
+      1
+     ],
+     "scale": null,
+     "commit": "7e9d935"
+    }
+   ],
+   "validSent": false
   },
   "calice-etain": {
    "name": "Calice en étain",
-   "version": 1,
-   "scale": 1.12,
-   "engineScale": 1,
-   "engineHeightCm": 16.5,
+   "version": 2,
+   "scale": null,
+   "engineScale": 1.12,
+   "engineHeightCm": 18.5,
    "notes": [
     {
      "num": 1,
@@ -918,22 +1494,36 @@
      "w": 0.532088208554396,
      "text": "pas au niveau graphiquement",
      "type": "",
-     "status": "open",
+     "status": "done",
      "date": "2026-10-16T21:42:48.292Z",
      "scale": 1,
-     "v": 1
+     "v": 1,
+     "sent": "2026-10-17_002426",
+     "doneIn": 2
     }
    ],
    "valid": null,
-   "history": [],
-   "scaleSent": false
+   "history": [
+    {
+     "version": 2,
+     "date": "2026-10-17T00:36:38.383Z",
+     "summary": "Refait en SVG au niveau du pilote validé (vases5/tour.py) : modèle tourné depuis le profil mesuré, studio de la boutique, reflets métal nets, surface lisse, contours nets, sans socle",
+     "notes": [
+      1
+     ],
+     "scale": null,
+     "commit": "7e9d935"
+    }
+   ],
+   "scaleSent": false,
+   "validSent": false
   },
   "cylindre-verre-clair": {
    "name": "Cylindre de verre",
-   "version": 1,
-   "scale": 1.25,
-   "engineScale": 1,
-   "engineHeightCm": 14.5,
+   "version": 2,
+   "scale": null,
+   "engineScale": 1.25,
+   "engineHeightCm": 18.1,
    "notes": [
     {
      "num": 1,
@@ -941,22 +1531,36 @@
      "w": 0.6361159144440021,
      "text": "pas au niveau graphiquement",
      "type": "",
-     "status": "open",
+     "status": "done",
      "date": "2026-10-16T21:42:39.853Z",
      "scale": 1,
-     "v": 1
+     "v": 1,
+     "sent": "2026-10-17_002426",
+     "doneIn": 2
     }
    ],
    "valid": null,
-   "history": [],
-   "scaleSent": false
+   "history": [
+    {
+     "version": 2,
+     "date": "2026-10-17T01:13:39.377Z",
+     "summary": "Refait en SVG au niveau du pilote validé (vases5/tour.py) : verre modélisé avec son épaisseur et sa densité mesurée (gl.op), teinté dans la masse, reflets nets doublés par la paroi arrière, sans socle",
+     "notes": [
+      1
+     ],
+     "scale": null,
+     "commit": "7e9d935"
+    }
+   ],
+   "scaleSent": false,
+   "validSent": false
   },
   "petite-boule-taupe": {
    "name": "Petite boule taupe",
-   "version": 1,
-   "scale": 1.4,
-   "engineScale": 1,
-   "engineHeightCm": 8.6,
+   "version": 2,
+   "scale": null,
+   "engineScale": 1.4,
+   "engineHeightCm": 12,
    "notes": [
     {
      "num": 1,
@@ -964,22 +1568,36 @@
      "w": 0.4070645611882667,
      "text": "pas au niveau graphiquement",
      "type": "",
-     "status": "open",
+     "status": "done",
      "date": "2026-10-16T21:42:35.028Z",
      "scale": 1.4,
-     "v": 1
+     "v": 1,
+     "sent": "2026-10-17_002426",
+     "doneIn": 2
     }
    ],
    "valid": null,
-   "history": [],
-   "scaleSent": false
+   "history": [
+    {
+     "version": 2,
+     "date": "2026-10-17T00:11:27.340Z",
+     "summary": "Refait en SVG au niveau du pilote validé (vases5/tour.py) : modèle tourné depuis le profil mesuré, studio de la boutique, reflets à deux lobes, surface lisse, contours nets, sans socle",
+     "notes": [
+      1
+     ],
+     "scale": null,
+     "commit": "7e9d935"
+    }
+   ],
+   "scaleSent": false,
+   "validSent": false
   },
   "jarre-gres-chamotte": {
    "name": "Jarre en grès chamotté",
-   "version": 1,
-   "scale": 0.89,
-   "engineScale": 1,
-   "engineHeightCm": 21,
+   "version": 2,
+   "scale": null,
+   "engineScale": 0.89,
+   "engineHeightCm": 18.7,
    "notes": [
     {
      "num": 1,
@@ -987,22 +1605,36 @@
      "w": 0.5193309294871795,
      "text": "pas au niveau graphiquement",
      "type": "",
-     "status": "open",
+     "status": "done",
      "date": "2026-10-16T21:42:21.723Z",
      "scale": 1,
-     "v": 1
+     "v": 1,
+     "sent": "2026-10-17_002426",
+     "doneIn": 2
     }
    ],
    "valid": null,
-   "history": [],
-   "scaleSent": false
+   "history": [
+    {
+     "version": 2,
+     "date": "2026-10-17T01:16:14.469Z",
+     "summary": "Refait en SVG au niveau du pilote validé (vases5/tour.py) : modèle tourné, studio de la boutique, mouchetures posées sur la surface (raccourcies sur les bords, ombrées par la lumière), sans socle ; cercles de tournage sur tout le corps",
+     "notes": [
+      1
+     ],
+     "scale": null,
+     "commit": "7e9d935"
+    }
+   ],
+   "scaleSent": false,
+   "validSent": false
   },
   "boule-cotelee-bleue": {
    "name": "Boule côtelée bleue",
-   "version": 1,
-   "scale": 0.89,
-   "engineScale": 1,
-   "engineHeightCm": 23,
+   "version": 2,
+   "scale": null,
+   "engineScale": 0.89,
+   "engineHeightCm": 20.5,
    "notes": [
     {
      "num": 1,
@@ -1010,22 +1642,36 @@
      "w": 0.5865893428997877,
      "text": "pas au niveau graphiquement",
      "type": "",
-     "status": "open",
+     "status": "done",
      "date": "2026-10-16T21:42:17.009Z",
      "scale": 0.89,
-     "v": 1
+     "v": 1,
+     "sent": "2026-10-17_002426",
+     "doneIn": 2
     }
    ],
    "valid": null,
-   "history": [],
-   "scaleSent": false
+   "history": [
+    {
+     "version": 2,
+     "date": "2026-10-17T01:21:23.599Z",
+     "summary": "Refait en SVG au niveau du pilote validé (vases5/tour.py) : modèle tourné puis sculpté (pans, côtes, creux ciselés calculés en relief, normales de la surface sculptée), studio de la boutique, sans socle ; côtes et filets blancs dans les creux",
+     "notes": [
+      1
+     ],
+     "scale": null,
+     "commit": "7e9d935"
+    }
+   ],
+   "scaleSent": false,
+   "validSent": false
   },
   "soliflore-balustre-noir": {
    "name": "Soliflore balustre noir",
-   "version": 1,
-   "scale": 0.97,
-   "engineScale": 1,
-   "engineHeightCm": 21.5,
+   "version": 2,
+   "scale": null,
+   "engineScale": 0.97,
+   "engineHeightCm": 20.9,
    "notes": [
     {
      "num": 1,
@@ -1033,22 +1679,36 @@
      "w": 0.5458020890368972,
      "text": "pas au niveau graphiquement",
      "type": "",
-     "status": "open",
+     "status": "done",
      "date": "2026-10-16T21:42:07.985Z",
      "scale": 0.97,
-     "v": 1
+     "v": 1,
+     "sent": "2026-10-17_002426",
+     "doneIn": 2
     }
    ],
    "valid": null,
-   "history": [],
-   "scaleSent": false
+   "history": [
+    {
+     "version": 2,
+     "date": "2026-10-17T00:11:27.877Z",
+     "summary": "Refait en SVG au niveau du pilote validé (vases5/tour.py) : modèle tourné depuis le profil mesuré, studio de la boutique, reflets à deux lobes, surface lisse, contours nets, sans socle",
+     "notes": [
+      1
+     ],
+     "scale": null,
+     "commit": "7e9d935"
+    }
+   ],
+   "scaleSent": false,
+   "validSent": false
   },
   "coupe-pied-blanche-ciselee": {
    "name": "Vase sur pied ciselé",
-   "version": 1,
-   "scale": 1.25,
-   "engineScale": 1,
-   "engineHeightCm": 16.4,
+   "version": 2,
+   "scale": null,
+   "engineScale": 1.25,
+   "engineHeightCm": 20.5,
    "notes": [
     {
      "num": 1,
@@ -1056,22 +1716,36 @@
      "w": 0.5556758572862922,
      "text": "pas au niveau graphiquement",
      "type": "",
-     "status": "open",
+     "status": "done",
      "date": "2026-10-16T21:41:45.508Z",
      "scale": 1,
-     "v": 1
+     "v": 1,
+     "sent": "2026-10-17_002426",
+     "doneIn": 2
     }
    ],
    "valid": null,
-   "history": [],
-   "scaleSent": false
+   "history": [
+    {
+     "version": 2,
+     "date": "2026-10-17T01:21:23.080Z",
+     "summary": "Refait en SVG au niveau du pilote validé (vases5/tour.py) : modèle tourné puis sculpté (pans, côtes, creux ciselés calculés en relief, normales de la surface sculptée), studio de la boutique, sans socle ; creux ciselés en quinconce",
+     "notes": [
+      1
+     ],
+     "scale": null,
+     "commit": "7e9d935"
+    }
+   ],
+   "scaleSent": false,
+   "validSent": false
   },
   "cylindre-inox-miroir": {
    "name": "Cylindre inox miroir",
-   "version": 1,
-   "scale": 0.9,
-   "engineScale": 1,
-   "engineHeightCm": 12.8,
+   "version": 2,
+   "scale": null,
+   "engineScale": 0.9,
+   "engineHeightCm": 11.5,
    "notes": [
     {
      "num": 1,
@@ -1079,22 +1753,36 @@
      "w": 0.6283055818997897,
      "text": "pas au niveau graphiquement",
      "type": "",
-     "status": "open",
+     "status": "done",
      "date": "2026-10-16T21:41:25.728Z",
      "scale": 1,
-     "v": 1
+     "v": 1,
+     "sent": "2026-10-17_002426",
+     "doneIn": 2
     }
    ],
    "valid": null,
-   "history": [],
-   "scaleSent": false
+   "history": [
+    {
+     "version": 2,
+     "date": "2026-10-17T00:36:38.562Z",
+     "summary": "Refait en SVG au niveau du pilote validé (vases5/tour.py) : modèle tourné depuis le profil mesuré, studio de la boutique, reflets métal nets, surface lisse, contours nets, sans socle",
+     "notes": [
+      1
+     ],
+     "scale": null,
+     "commit": "7e9d935"
+    }
+   ],
+   "scaleSent": false,
+   "validSent": false
   },
   "compotier-noir-laque": {
    "name": "Compotier noir laqué",
-   "version": 1,
-   "scale": 1.3,
-   "engineScale": 1,
-   "engineHeightCm": 13.2,
+   "version": 2,
+   "scale": null,
+   "engineScale": 1.3,
+   "engineHeightCm": 17.2,
    "notes": [
     {
      "num": 1,
@@ -1102,22 +1790,36 @@
      "w": 0.6765183997192711,
      "text": "pas au niveau graphiquement",
      "type": "",
-     "status": "open",
+     "status": "done",
      "date": "2026-10-16T21:41:21.792Z",
      "scale": 1.3,
-     "v": 1
+     "v": 1,
+     "sent": "2026-10-17_002426",
+     "doneIn": 2
     }
    ],
    "valid": null,
-   "history": [],
-   "scaleSent": false
+   "history": [
+    {
+     "version": 2,
+     "date": "2026-10-17T00:15:46.197Z",
+     "summary": "Refait en SVG au niveau du pilote validé (vases5/tour.py) : modèle tourné depuis le profil mesuré, studio de la boutique, reflets à deux lobes, surface lisse, contours nets, sans socle",
+     "notes": [
+      1
+     ],
+     "scale": null,
+     "commit": "7e9d935"
+    }
+   ],
+   "scaleSent": false,
+   "validSent": false
   },
   "coupe-pied-blanche-mate": {
    "name": "Petite coupe sur pied",
-   "version": 1,
-   "scale": 1.72,
-   "engineScale": 1,
-   "engineHeightCm": 9.5,
+   "version": 2,
+   "scale": null,
+   "engineScale": 1.72,
+   "engineHeightCm": 16.4,
    "notes": [
     {
      "num": 1,
@@ -1125,22 +1827,36 @@
      "w": 0.49342780401396813,
      "text": "pas au niveau graphiquement",
      "type": "",
-     "status": "open",
+     "status": "done",
      "date": "2026-10-16T21:41:14.246Z",
      "scale": 1.72,
-     "v": 1
+     "v": 1,
+     "sent": "2026-10-17_002426",
+     "doneIn": 2
     }
    ],
    "valid": null,
-   "history": [],
-   "scaleSent": false
+   "history": [
+    {
+     "version": 2,
+     "date": "2026-10-17T00:11:27.514Z",
+     "summary": "Refait en SVG au niveau du pilote validé (vases5/tour.py) : modèle tourné depuis le profil mesuré, studio de la boutique, reflets à deux lobes, surface lisse, contours nets, sans socle",
+     "notes": [
+      1
+     ],
+     "scale": null,
+     "commit": "7e9d935"
+    }
+   ],
+   "scaleSent": false,
+   "validSent": false
   },
   "pique-fleurs-laiton": {
    "name": "Pique-fleurs en laiton",
    "version": 1,
-   "scale": 1.22,
-   "engineScale": 1,
-   "engineHeightCm": 4.5,
+   "scale": null,
+   "engineScale": 1.22,
+   "engineHeightCm": 5.5,
    "notes": [
     {
      "num": 1,
@@ -1148,10 +1864,11 @@
      "w": 0.4472456271798857,
      "text": "pas au niveau graphiquement",
      "type": "",
-     "status": "open",
+     "status": "sent",
      "date": "2026-10-16T21:41:05.124Z",
      "scale": 1.22,
-     "v": 1
+     "v": 1,
+     "sent": "2026-10-17_002426"
     }
    ],
    "valid": null,
@@ -1160,10 +1877,10 @@
   },
   "coupelle-laiton-console": {
    "name": "Coupelle en laiton",
-   "version": 1,
-   "scale": 1.63,
-   "engineScale": 1,
-   "engineHeightCm": 5,
+   "version": 2,
+   "scale": null,
+   "engineScale": 1.63,
+   "engineHeightCm": 8.1,
    "notes": [
     {
      "num": 1,
@@ -1171,15 +1888,29 @@
      "w": 0.4310458850725578,
      "text": "pas au niveau graphiquement",
      "type": "",
-     "status": "open",
+     "status": "done",
      "date": "2026-10-16T21:40:51.313Z",
      "scale": 1.63,
-     "v": 1
+     "v": 1,
+     "sent": "2026-10-17_002426",
+     "doneIn": 2
     }
    ],
    "valid": null,
-   "history": [],
-   "scaleSent": false
+   "history": [
+    {
+     "version": 2,
+     "date": "2026-10-17T00:36:38.886Z",
+     "summary": "Refait en SVG au niveau du pilote validé (vases5/tour.py) : modèle tourné depuis le profil mesuré, studio de la boutique, reflets métal nets, surface lisse, contours nets, sans socle",
+     "notes": [
+      1
+     ],
+     "scale": null,
+     "commit": "7e9d935"
+    }
+   ],
+   "scaleSent": false,
+   "validSent": false
   },
   "bronze-carpe": {
    "name": "Vase en bronze à la carpe",
@@ -1193,14 +1924,14 @@
     "date": "2026-10-16T21:40:38.414Z"
    },
    "history": [],
-   "validSent": false
+   "validSent": true
   },
   "verre-danseuses": {
    "name": "Vase en verre aux danseuses",
    "version": 1,
-   "scale": 0.7,
-   "engineScale": 1,
-   "engineHeightCm": 36.8,
+   "scale": null,
+   "engineScale": 0.7,
+   "engineHeightCm": 25.7,
    "notes": [],
    "valid": {
     "version": 1,
@@ -1208,14 +1939,14 @@
    },
    "history": [],
    "scaleSent": false,
-   "validSent": false
+   "validSent": true
   },
   "jarre-carpes": {
    "name": "Jarre aux carpes en relief",
    "version": 1,
-   "scale": 0.78,
-   "engineScale": 1,
-   "engineHeightCm": 39,
+   "scale": null,
+   "engineScale": 0.78,
+   "engineHeightCm": 30.4,
    "notes": [],
    "valid": {
     "version": 1,
@@ -1223,14 +1954,14 @@
    },
    "history": [],
    "scaleSent": false,
-   "validSent": false
+   "validSent": true
   },
   "prisme-jaune": {
    "name": "Prisme jaune à cœur suspendu",
    "version": 1,
-   "scale": 0.82,
-   "engineScale": 1,
-   "engineHeightCm": 37.5,
+   "scale": null,
+   "engineScale": 0.82,
+   "engineHeightCm": 30.8,
    "notes": [],
    "valid": {
     "version": 1,
@@ -1238,7 +1969,7 @@
    },
    "history": [],
    "scaleSent": false,
-   "validSent": false
+   "validSent": true
   },
   "balustre-perce-neige": {
    "name": "Balustre aux perce-neige",
@@ -1252,7 +1983,7 @@
     "date": "2026-10-16T21:39:44.879Z"
    },
    "history": [],
-   "validSent": false
+   "validSent": true
   },
   "gres-chauve-souris": {
    "name": "Grès à la chauve-souris",
@@ -1621,14 +2352,14 @@
    },
    "history": [],
    "scaleSent": false,
-   "validSent": false
+   "validSent": true
   },
   "dragon-cloisonne": {
    "name": "Balustre noir au dragon",
    "version": 1,
-   "scale": 1.36,
-   "engineScale": 1,
-   "engineHeightCm": 51,
+   "scale": null,
+   "engineScale": 1.36,
+   "engineHeightCm": 69.4,
    "notes": [
     {
      "num": 1,
@@ -1636,10 +2367,11 @@
      "w": 0.29401325208569007,
      "text": "ajouter la pointe de la queue",
      "type": "",
-     "status": "open",
+     "status": "sent",
      "date": "2026-10-16T21:32:23.240Z",
      "scale": 1,
-     "v": 1
+     "v": 1,
+     "sent": "2026-10-17_002426"
     },
     {
      "num": 2,
@@ -1647,10 +2379,11 @@
      "w": 0.8404795098628394,
      "text": "faire la continuité du decor pour compler le trou jusqu'au bord",
      "type": "",
-     "status": "open",
+     "status": "sent",
      "date": "2026-10-16T21:32:39.657Z",
      "scale": 1,
-     "v": 1
+     "v": 1,
+     "sent": "2026-10-17_002426"
     }
    ],
    "valid": null,
@@ -1660,9 +2393,9 @@
   "ronces-noires": {
    "name": "Verre camée aux ronces",
    "version": 1,
-   "scale": 0.8,
-   "engineScale": 1,
-   "engineHeightCm": 42,
+   "scale": null,
+   "engineScale": 0.8,
+   "engineHeightCm": 33.6,
    "notes": [],
    "valid": {
     "version": 1,
@@ -1670,14 +2403,14 @@
    },
    "history": [],
    "scaleSent": false,
-   "validSent": false
+   "validSent": true
   },
   "colonne-art-nouveau": {
    "name": "Colonne Art nouveau",
    "version": 1,
-   "scale": 0.59,
-   "engineScale": 1,
-   "engineHeightCm": 54,
+   "scale": null,
+   "engineScale": 0.59,
+   "engineHeightCm": 31.9,
    "notes": [],
    "valid": {
     "version": 1,
@@ -1685,7 +2418,7 @@
    },
    "history": [],
    "scaleSent": false,
-   "validSent": false
+   "validSent": true
   }
  },
  "sends": [
@@ -1713,6 +2446,79 @@
     "bronze-lys (v1)",
     "cristal-ginkgo (v1)",
     "gui-argent (v1)"
+   ]
+  },
+  {
+   "ts": "2026-10-17_002426",
+   "vases": [
+    "kenzan-laiton-rond",
+    "suiban-ovale-peint",
+    "vase-ovoide-chocolat",
+    "vase-tete-veine-sable",
+    "vase-conique-blanc",
+    "coupe-pied-rosee",
+    "boule-verre-bouteille",
+    "coupe-pied-sable",
+    "pot-boule-blanc-perle",
+    "bouteille-verre-fume",
+    "vase-coeur-anthracite",
+    "coupe-pied-blanche",
+    "boule-vert-sapin",
+    "urne-medicis-noire",
+    "cylindre-chrome",
+    "tube-acier-disque",
+    "coupe-pied-noire",
+    "coupe-cobalt-mouchetee",
+    "balustre-argent-patine",
+    "bulbe-pied-sable",
+    "calice-celadon-pans",
+    "cylindre-verre-bouquet",
+    "colonne-blanche",
+    "pot-agate-rose",
+    "coupe-cone-noire",
+    "urne-sablier-noire",
+    "boule-perlee-porcelaine",
+    "urne-ardoise-bleutee",
+    "cylindre-chinoiserie",
+    "ovoide-verre-glacier",
+    "pot-shino-marbre",
+    "balustre-email-reticule",
+    "coupelle-argentee",
+    "boule-aubergine",
+    "coupe-medicis-anses",
+    "coupe-basse-anthracite",
+    "calice-mouchete",
+    "suiban-lobe-rose",
+    "boule-inox-brossee",
+    "calice-souffle-col-tube",
+    "calice-etain",
+    "cylindre-verre-clair",
+    "petite-boule-taupe",
+    "jarre-gres-chamotte",
+    "boule-cotelee-bleue",
+    "soliflore-balustre-noir",
+    "coupe-pied-blanche-ciselee",
+    "cylindre-inox-miroir",
+    "compotier-noir-laque",
+    "coupe-pied-blanche-mate",
+    "pique-fleurs-laiton",
+    "coupelle-laiton-console",
+    "verre-danseuses",
+    "jarre-carpes",
+    "prisme-jaune",
+    "dragon-cloisonne",
+    "ronces-noires",
+    "colonne-art-nouveau"
+   ],
+   "validated": [
+    "bronze-carpe (v1)",
+    "verre-danseuses (v1)",
+    "jarre-carpes (v1)",
+    "prisme-jaune (v1)",
+    "balustre-perce-neige (v1)",
+    "feuilles-vertes (v1)",
+    "ronces-noires (v1)",
+    "colonne-art-nouveau (v1)"
    ]
   }
  ]
