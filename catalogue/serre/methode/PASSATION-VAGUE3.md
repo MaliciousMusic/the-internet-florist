@@ -223,7 +223,19 @@ Chantiers en cours au 17 octobre, 20 h :
 - **hortensia** (`ch/hortensia`) : hortensia-boule (demandé par le porteur : « super hâte de voir la boule refaite »).
 - **amarante** (`ch/amarante`) : amarante-retombante (SKU 2172-2183), pièce `y3-chenille.js` ; puis amarante-dressee (2184-2198).
 
-État à la bascule : _à remplir_.
+État au 18 octobre, 0 h 30 (quota 76 %) :
+- **phalaenopsis : fini (v5), validé par le porteur (« bien mieux ! »)**, planches v2 dans `ch/orchidees/catalogue/serre/pilote-printemps/`,
+  comparaisons dans `ch/orchidees/refcache/phalaenopsis/comparaison/` (face-v6, plante-v5, fane-v4…). Non publié : il partage le
+  chantier et les branchements de bouquet (`r3a.js`, `s1c.js`, `s1d.js`, `y1.js`) avec le cymbidium ; publier les deux ensemble, ou
+  séparer proprement le cymbidium (garder son ancien dessin) et publier le phalaenopsis seul.
+- **cymbidium : en pause** au relais 5 de la finition v2, refusé par l'orchestrateur et critiqué par le porteur (pointes,
+  zones de couleur, translucidité, cœur propre à chaque variété, centre en « figurine »). État et prochaines actions :
+  `ch/orchidees/refcache/cymbidium-grandes-fleurs/etat.md` et `journal.md` ; comparaisons `comparaison/*-v3a-encours.jpg`. Le
+  reprendre APRÈS l'audit (§0), avec la fiche morphologique et la paire par coloris (9.3c) : labelle à ~45 % de la largeur de la
+  fleur en U large, tépales moins étroits, zones et translucidité, labelle de chaque variété.
+- **amarante-retombante : livrée par le chef**, en attente du verdict du porteur (feuille, chenille raide en bouquet). Planche SKU
+  à refaire avec le nouveau grain avant publication. Amarante dressée non commencée.
+- **hortensia-boule** : voir le compte rendu du chef (fleurons fins et légers demandés par le porteur).
 
 ## 8. La suite, dans l'ordre
 
