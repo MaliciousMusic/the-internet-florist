@@ -3517,20 +3517,28 @@ const CW_RINT=[
  {id:'lavande',n:'Lavande',c:'#b8a0c8'},{id:'brun',n:'Brun',c:'#9a6a50'},{id:'jumilia',n:'Blanc bordé de rose vif',c:'#fbf4f4',edge:'#e0407a'},{id:'bicolore-jaune',n:'Jaune bicolore',c:'#f6d23a',c2:'#f08a3a',k2:.8},
  {id:'rose-creme',n:'Rose et crème',c:'#f4e6d6',edge:'#e87aa0'}];
 const CW_RJAR=[
- {id:'blanc-creme',n:'Blanc crème à cœur ivoire',c:'#f6ecd9',c2:'#f2dcc0'},{id:'ivoire',n:'Ivoire',c:'#f4ecd8'},{id:'beurre',n:'Beurre',c:'#f4e2a8',c2:'#efd080'},{id:'blush',n:'Rose blush',c:'#f6d6d4'},
- {id:'rose-pale',n:'Rose pâle',c:'#f2b9c4',c2:'#ec9aac'},{id:'dragee',n:'Rose dragée',c:'#f4a8c0'},{id:'rose',n:'Rose moyen',c:'#e07f9c',c2:'#c85a80'},{id:'vieux-rose',n:'Vieux rose saumoné',c:'#d0909a',c2:'#e09878'},
- {id:'magenta',n:'Magenta (Yves Piaget)',c:'#c64d8a',ruf:1},{id:'fuchsia',n:'Fuchsia',c:'#c2306e'},{id:'peche',n:'Pêche',c:'#f4b98e',c2:'#f0a070'},{id:'abricot',n:'Abricot',c:'#f2a060'},
- {id:'corail',n:'Corail',c:'#ef7a62'},{id:'orange',n:'Orange',c:'#ee8a3a'},{id:'citron',n:'Jaune citron dans une coupe verte',c:'#f2e48a',green:'#c8dca0'},{id:'moutarde',n:'Jaune moutarde',c:'#d8b050',c2:'#c89830'},
- {id:'caramel',n:'Caramel',c:'#c9965f',c2:'#a87040'},{id:'sable',n:'Brun sable bordé de vert',c:'#cfae8a',green:'#b8c890'},{id:'rouge',n:'Rouge écarlate (Piano)',c:'#c01a26',c2:'#8a0a18'},
- {id:'cramoisi',n:'Rouge cramoisi',c:'#9a0a26'},{id:'rouille',n:'Rouge rouille',c:'#a8402a'},{id:'lavande',n:'Lavande',c:'#b8a4cc'},{id:'moka',n:'Mauve moka (Café Latte)',c:'#b89a96',c2:'#a07a78'},
- {id:'creme-rose',n:'Crème bordé de rose',c:'#f6ecdc',edge:'#e888a4'},{id:'blanc-vert',n:'Blanc bordé de vert',c:'#f6f2e6',green:'#c0d498'}];
+ {id:'blanc-creme',n:'Blanc crème à cœur ivoire',c:'#f6ecd9',c2:'#f2dcc0'},{id:'ivoire',n:'Ivoire',c:'#f4ecd8'},{id:'beurre',lvl:'C',n:'Beurre',c:'#f4e2a8',c2:'#efd080'},{id:'blush',n:'Rose blush',c:'#f6d6d4'},
+ {id:'rose-pale',lvl:'C',n:'Rose pâle',c:'#f2b9c4',c2:'#ec9aac'},{id:'dragee',lvl:'C',n:'Rose dragée',c:'#f4a8c0'},{id:'rose',n:'Rose moyen',c:'#e07f9c',c2:'#c85a80'},{id:'vieux-rose',lvl:'C',n:'Vieux rose saumoné',c:'#d0909a',c2:'#e09878'},
+ {id:'magenta',n:'Magenta',c:'#c64d8a',ruf:1},{id:'fuchsia',n:'Fuchsia',c:'#c2306e'},{id:'peche',n:'Pêche',c:'#f4b98e',c2:'#f0a070'},{id:'abricot',n:'Abricot',c:'#f2a060'},
+ {id:'corail',lvl:'C',n:'Corail',c:'#ef7a62'},{id:'orange',lvl:'C',n:'Orange',c:'#ee8a3a'},{id:'citron',lvl:'C',n:'Jaune citron dans une coupe verte',c:'#f2e48a',green:'#c8dca0'},{id:'moutarde',lvl:'C',n:'Jaune moutarde',c:'#d8b050',c2:'#c89830'},
+ {id:'caramel',n:'Caramel',c:'#c9965f',c2:'#a87040'},{id:'sable',lvl:'C',n:'Brun sable bordé de vert',c:'#cfae8a',green:'#b8c890'},{id:'rouge',lvl:'C',n:'Rouge écarlate',c:'#c01a26',c2:'#8a0a18'},
+ {id:'cramoisi',lvl:'C',n:'Rouge cramoisi',c:'#9a0a26'},{id:'rouille',lvl:'D',n:'Rouge rouille',c:'#a8402a'},{id:'lavande',lvl:'D',n:'Lavande',c:'#b8a4cc'},{id:'moka',n:'Mauve moka',c:'#b89a96',c2:'#a07a78'},
+ {id:'creme-rose',n:'Crème bordé de rose',c:'#f6ecdc',edge:'#e888a4'},{id:'blanc-vert',lvl:'C',n:'Blanc bordé de vert',c:'#f6f2e6',green:'#c0d498'},
+ /* late:10 (finishing 2026-10-17, colours in ROSA_JAR_CWX; lvl C = drawn, not for the shop) */
+ {id:'blanc-lisere-rose',n:'Blanc liseré de rose vif',c:'#efe0e6',late:10,lvl:'C'},{id:'brique-nuance',n:'Rouge brique nuancé de cuivre',c:'#bf6a5c',late:10,lvl:'C'}
+];
 const CW_RASP=[
- {id:'blanc',n:'Blanc nacré',c:'#f7f3ec'},{id:'creme',n:'Crème',c:'#f4e8d0'},{id:'champagne',n:'Champagne (tons terre)',c:'#eadcc4',c2:'#d8c0a0'},{id:'rose-pale',n:'Rose pâle',c:'#f4ccd2'},
+ {id:'blanc',n:'Blanc nacré',c:'#f7f3ec'},{id:'creme',n:'Crème',c:'#f4e8d0'},{id:'champagne',n:'Champagne sable',c:'#eadcc4',c2:'#d8c0a0'},{id:'rose-pale',n:'Rose pâle',c:'#f4ccd2'},
  {id:'rose',n:'Rose moyen',c:'#e07f9c'},{id:'bonbon',n:'Rose bonbon',c:'#f08ab0'},{id:'rose-vif',n:'Rose vif',c:'#e04a80'},{id:'peche',n:'Pêche',c:'#f4c2a1',c2:'#f0a880'},
- {id:'mandarin',n:'Pêche à œil vert',c:'#f4b08a',c2:'#e8608a',eye:'green'},{id:'abricot',n:'Abricot',c:'#f3a66d'},{id:'corail',n:'Corail',c:'#f08a6a'},{id:'orange',n:'Orange',c:'#ee7a32'},
- {id:'sunset',n:'Orange à cœur jaune',c:'#ee6a3a',c2:'#f4b030',k2:.9},{id:'moutarde',n:'Jaune moutarde',c:'#dab858'},{id:'jaune',n:'Jaune',c:'#f4d24a'},{id:'cramoisi',n:'Rouge cramoisi',c:'#a8102e'},
- {id:'lavande',n:'Lavande',c:'#a77ab0',c2:'#c0a0c8'},{id:'lilas',n:'Lilas froid',c:'#c4b0d6'},{id:'vert',n:'Vert (Wasabi)',c:'#d4e0b4',green:'#b8cc90'},{id:'terre',n:'Tons terre',c:'#ecd6b8',c2:'#c89a7a'},
- {id:'free-spirit',n:'Cuivre multicolore',c:'#f08a4a',c2:'#d8406a',k2:.6,green:'#c8b070'},{id:'rose-vert',n:'Rose bordé de vert',c:'#f0b8c4',green:'#c0d098'}];
+ {id:'mandarin',n:'Orange à cœur vert',c:'#f4b08a',c2:'#e8608a',eye:'green'},{id:'abricot',n:'Abricot',c:'#f3a66d'},{id:'corail',n:'Corail',c:'#f08a6a'},{id:'orange',n:'Orange',c:'#ee7a32'},
+ {id:'sunset',n:'Orange à cœur jaune',c:'#ee6a3a',c2:'#f4b030',k2:.9},{id:'moutarde',n:'Jaune doré',c:'#dab858'},{id:'jaune',n:'Jaune',c:'#f4d24a'},{id:'cramoisi',n:'Rouge cramoisi',c:'#a8102e'},
+ {id:'lavande',n:'Lavande',c:'#a77ab0',c2:'#c0a0c8'},{id:'lilas',n:'Gris lilas',c:'#c4b0d6'},{id:'vert',n:'Vert tendre',c:'#d4e0b4',green:'#b8cc90'},{id:'terre',n:'Caramel café',c:'#ecd6b8',c2:'#c89a7a'},
+ {id:'free-spirit',n:'Cuivre multicolore',c:'#f08a4a',c2:'#d8406a',k2:.6,green:'#c8b070'},{id:'rose-vert',n:'Rose bordé de vert',c:'#f0b8c4',green:'#c0d098'},
+ /* late:10 (finishing 2026-10-17, colours in ROSA_ASP_CWX; lvl C = drawn, not for the shop) */
+ {id:'magenta',n:'Magenta intense',c:'#d23f84',late:10},{id:'jaune-bord-rouge',n:'Jaune bordé de rouge',c:'#ebae4e',late:10},
+ {id:'mauve-taupe',n:'Mauve gris taupe',c:'#ccb0a7',late:10,lvl:'C'},{id:'blanc-coeur-vert',n:'Blanc à cœur vert',c:'#efeee0',late:10,lvl:'C'},
+ {id:'chocolat',n:'Brun chocolat',c:'#a34543',late:10,lvl:'C'},{id:'rose-bord-blanc',n:'Rose à bordure blanche',c:'#e0587f',late:10,lvl:'C'}
+];
 const CW_RANG=[
  {id:'juliet',n:'Pêche à cœur abricot (Juliet)',c:'#f6c8a8',c2:'#f0a060',k2:.9},{id:'patience',n:'Blanc laiteux à cœur beurre',c:'#f8f2e6',c2:'#f4e0b0'},{id:'keira',n:'Crème marbré de framboise',c:'#f6e8e0',marble:'#d84a78'},
  {id:'miranda',n:'Rose dragée à cœur cerise',c:'#f2b0c4',c2:'#e05a80'},{id:'constance',n:'Rose ballerine à cœur crème',c:'#f2c0cc',c2:'#f6ead8'},{id:'charity',n:'Rose pêche à étamines vertes',c:'#f2b8a8',eye:'green'},
@@ -4420,12 +4428,12 @@ function dahliaPlant(g,t,o,kd,list){const cw=o.cw||cwNear(list,o.col)||list[0],o
 function roseHip(par,B,O,D){const Rr=D/2,F={B,O,parts:[]};F.parts.push(tube3(F,[[0,0,-Rr*.08],[0,0,-Rr*.2],[0,0,-Rr*.32]],q=>Rr*(.16-.08*q),{cols:['#5f8a3e','#4a7032'],cap:1,hl:.35,dk:.45,spec:.2,ink:'#2e4a20',eo:.3,cast:0}));drawParts(par,F.parts)}
 function rosePlant(g,t,o,kd,list){const cw=o.cw||cwNear(list,o.col)||list[0],op=Math.max(.05,Math.min(1,o.op??1)),D=(o.cm||8)*UPC,k=G(g),sc=['#2e4a20','#4a7032','#6e9a48','#a4c47a'],soft=kd==='jar'||kd==='ang'||kd==='asp',
     lc=kd==='std'||kd==='int'?'#2f5a26':'#3f6a2c';
-  /* the standard and intermediate roses are drawn in SVG (y-rosa.js), the bouquet's chance consumed as before */const sv=(kd==='std'||kd==='int')&&typeof rosaSvgPut==='function'&&typeof SV_ON!=='undefined'&&SV_ON&&cw&&cw.id,iS=kd==='int'?ROSA_INT_PBQ:undefined,iSid=kd==='int'?ROSA_INT_SID:undefined;
-  const r=lsHeadS(k,o,Object.assign({D,w:D*.05,cols:sv?(kd==='int'?ROSA_INT_SVSC:ROSA_SVSC):sc,op,rr:1,nodes:soft?2:1,li:.7,lp:soft?.95:.8,opp:0,leafAng:46,side:soft?{p:.42,n:1,top:2,len:.72,ang:30,age:[0,.7]}:null,budD:.5,budMax:.45,
+  /* the standard and intermediate roses are drawn in SVG (y-rosa.js), the bouquet's chance consumed as before */const sv=(kd==='std'||kd==='int'||kd==='asp'||kd==='jar')&&typeof rosaSvgPut==='function'&&typeof SV_ON!=='undefined'&&SV_ON&&cw&&cw.id,iS=kd==='int'?ROSA_INT_PBQ:sv&&kd==='asp'?ROSA_ASP_BQ:sv&&kd==='jar'?ROSA_JAR_BQ:undefined,iSid=kd==='int'?ROSA_INT_SID:sv&&kd==='asp'?ROSA_ASP_SID:sv&&kd==='jar'?ROSA_JAR_SID:undefined;
+  const r=lsHeadS(k,o,Object.assign({D,w:D*.05,cols:sv?(kd==='int'?ROSA_INT_SVSC:kd==='asp'?ROSA_ASP_SVSC:kd==='jar'?ROSA_JAR_SVSC:ROSA_SVSC):sc,op,rr:1,nodes:soft?2:1,li:.7,lp:soft?.95:.8,opp:0,leafAng:46,side:soft?{p:.42,n:1,top:2,len:.72,ang:30,age:[0,.7]}:null,budD:.5,budMax:.45,
     flower:sv?(par,B,O,D2,op2)=>{rosaSvgPut(par,B,O,D2,cw,op2,o,iS)}:(par,B,O,D2,op2)=>{roseHip(par,B,O,D2);roseFlower(par,B,O,D2,cw,op2,kd)},
     bud:sv?(par,B,O,s)=>{rosaBudSvgPut(par,B,O,s,cw,0,iS)}:(par,B,O,s)=>{roseHip(par,B,O,s);roseFlower(par,B,O,s,cw,.14,kd)},
     young:sv?(par,B,O,s,a)=>{rosaSvgPut(par,B,O,s,cw,.3+.5*a,o,iS)}:(par,B,O,s,a)=>{roseHip(par,B,O,s);roseFlower(par,B,O,s,cw,.3+.5*a,kd)},
-    leaf:sv?rosaLeafSv(D,cw,o,iSid,kd==='int'?.92:1):(og,pos)=>lsLeaf2D(og,pos,D*R(1.05,1.35),(par,x,y,a,l)=>pinnateLeaf(par,x,y,a,l,lc,og.p.i>1?5:og.p.i===1&&rnd()<.5?3:5,{w:.55,gloss:.45,side:.4})),
+    leaf:sv?rosaLeafSv(D,cw,o,iSid,kd==='int'?.92:1,kd==='asp'?ROSA_ASP_LEAF:kd==='jar'?ROSA_JAR_LEAF:undefined):(og,pos)=>lsLeaf2D(og,pos,D*R(1.05,1.35),(par,x,y,a,l)=>pinnateLeaf(par,x,y,a,l,lc,og.p.i>1?5:og.p.i===1&&rnd()<.5?3:5,{w:.55,gloss:.45,side:.4})),
     node:soft?(og,pos)=>({z:pos[2]+.2,cast:false,fn:par=>{const p=[pos[0],-pos[1]],h=[og.H[0],-og.H[1]],l=Math.hypot(h[0],h[1])||1,ux=h[0]/l,uy=h[1]/l,w=D*.05;let d='';
       for(const s of[-1,1]){const bx=p[0]-ux*w*1.4+(-uy)*s*w*.5,by=p[1]-uy*w*1.4+ux*s*w*.5,tx=bx+(-uy)*s*w*.9-ux*w*.5,ty=by+ux*s*w*.9-uy*w*.5;d+=`M${f(bx-ux*w*.5)},${f(by-uy*w*.5)}L${f(tx)},${f(ty)}L${f(bx+ux*w*.5)},${f(by+uy*w*.5)}Z`}
       E('path',{d,fill:'#7a5a3a',stroke:'#4a3420','stroke-width':.3},par)}}):null},sv&&ROSA_STEMO?rosaStemOpts(D,o):null));
@@ -25870,14 +25878,16 @@ function svStemLine(par,C,Wd0,c){const n=C.length,g=G(par);if(n<2)return g;const
   /* a cut stem (sv.cut: the slant of the cut, as a tangent): its first end C[0] cut straight across or slanted, never rounded; a pale lip on the cut */
   const ct=sv.cut!=null;if(ct){const s=sv.cut*Wd[0]/2,m=out.length-1;out[0]=[out[0][0]+T[0][0]*s,out[0][1]+T[0][1]*s];out[m]=[out[m][0]-T[0][0]*s,out[m][1]-T[0][1]*s]}
   const od=ct?svSpl(svSimp(out,tol),false)+'Z':svSpl(svSimp(out,tol));E('path',{d:od,fill:c[1]},g);if(LOD)return g;
-  const id='sc'+(gid++);E('path',{d:od},E('clipPath',{id},GDEF||defs));const cg=G(g,{'clip-path':`url(#${id})`}),bg=G(cg,{filter:svBlur(W0*.16)});
-  E('path',{d:svSpl(svSimp(off(-1.4,-.25),tol)),fill:c[0],'fill-opacity':.85},bg);E('path',{d:svSpl(svSimp(off(-1.4,-.68),tol)),fill:c[0],'fill-opacity':.6},bg);
-  E('path',{d:svSpl(svSimp(off(.02,.62),tol)),fill:c[2],'fill-opacity':.8},bg);E('path',{d:svSpl(svSimp(off(.18,.42),tol)),fill:c[3],'fill-opacity':sv.gloss??.5},bg);
+  /* sv.lean (a plant's stem seen whole, below DET 1.5): one shaded wash inside the outline (no clip, no blur) instead of two, no gloss stripe,
+     no tint toward the head */
+  const lean=sv.lean&&DET<1.5;let cg=g,bg=g;if(!lean){const id='sc'+(gid++);E('path',{d:od},E('clipPath',{id},GDEF||defs));cg=G(g,{'clip-path':`url(#${id})`});bg=G(cg,{filter:svBlur(W0*.16)})}
+  E('path',{d:svSpl(svSimp(lean?off(-.97,-.3):off(-1.4,-.25),tol)),fill:c[0],'fill-opacity':lean?.7:.85},bg);if(!lean)E('path',{d:svSpl(svSimp(off(-1.4,-.68),tol)),fill:c[0],'fill-opacity':.6},bg);
+  E('path',{d:svSpl(svSimp(lean?off(.1,.55):off(.02,.62),tol)),fill:c[2],'fill-opacity':lean?.55:.8},bg);if(!lean)E('path',{d:svSpl(svSimp(off(.18,.42),tol)),fill:c[3],'fill-opacity':sv.gloss??.5},bg);
   /* fine striations along the stem (its ribs), darker on the shaded side */
   if(sv.ribs&&DET>=1){let d='';for(const f0 of sv.ribs)d+=svSpl(svSimpO(line(f0),tol),false);E('path',{d,fill:'none',stroke:c[0],'stroke-width':svF(Math.max(.06,W0*.05)),'stroke-opacity':.28},cg)}
   if(ct){const a=out[0],b=out[out.length-1];E('path',{d:'M'+svJ([svR(a[0]),svR(a[1])])+'L'+svJ([svR(b[0]),svR(b[1])]),fill:'none',stroke:sv.cutC||'#dde6c4','stroke-width':svF(Wd[0]*.34),'stroke-opacity':.9},cg)}
   /* the tint toward the head (only where a whole stem is drawn in one piece) */
-  if(sv.red){const a=C[0],b=C[n-1],gid2='sg'+(gid++),gr=E('linearGradient',{id:gid2,gradientUnits:'userSpaceOnUse',x1:svF(a[0]),y1:svF(a[1]),x2:svF(b[0]),y2:svF(b[1])},GDEF||defs);
+  if(sv.red&&!lean){const a=C[0],b=C[n-1],gid2='sg'+(gid++),gr=E('linearGradient',{id:gid2,gradientUnits:'userSpaceOnUse',x1:svF(a[0]),y1:svF(a[1]),x2:svF(b[0]),y2:svF(b[1])},GDEF||defs);
     const f0=sv.redF??.75;stops(gr,[[0,sv.red,0],[f0,sv.red,0],[1,sv.red,sv.redA??.45]]);E('path',{d:od,fill:`url(#${gid2})`},cg)}
   /* silky hairs pressed along the stem, leaning toward its end: many, fine, short, half transparent; on the silhouette they stand a little out of it, on the
      face they catch the light as a sheen */
@@ -29233,6 +29243,36 @@ function svPapLeaf(p,t,Out,D,o0,r,wl){const o=Object.assign({},SVPL_DEF,o0),lf=O
       P=[pt(-st.lobe,s*1.1),pt(-.03,s*1.05),pt(.3,s*1),pt(.66,s*.55),pt(1,0),pt(.6,-s*.42),pt(.22,-s*.62),pt(0,-s*.25),pt(-.04,s*.35)].map(svPapP2),fc=shade(col(o.up),V3.nz([0,.3,1]));
     parts.push({z:p[2]+D*.04,fn:par=>E('path',{d:svSpl(P),fill:fc,stroke:fc,'stroke-width':svF(Math.max(.3,D*.005)),'stroke-linejoin':'round'},par)})}
   return parts}
+/* ================= Pilote : la plante coupée (feuilles engainantes sur la tige du bouquet), pièces génériques =================
+   For the cut stems whose leaves clasp the stem low down (tulip, daffodil, hyacinth, iris...): the generic leaf placer of the bouquet (stemLeaves,
+   s0.js) spreads n leaves evenly over the visible stem, from just above the mouth (.75 of a leaf length) up to the head: with two leaves, one of
+   them sits right under the flower, which no tulip does (its top leaf clasps the stem at a third of its height; the flower stalk above is bare).
+   STEML[sid].place = [[f] for one leaf, [f0,f1] for two, ...]: where each leaf clasps the stem, as fractions of the window from its foot (0) to the
+   head (1); STEML[sid].low (in leaf lengths, default .75 as before): how far above the mouth that window starts (a leaf that rises from its
+   sheath can clasp the stem just above the rim). The leaf function (sl.sv) then also gets {n, f, qs} (how many leaves, this one's fraction, its
+   place on the stem path) to give each leaf its own form (the lowest the broadest).
+   The bouquet's chance is untouched: the same draws in the same order (n, side, then per leaf R(.92,1.02), R(.8,1.15), R(.8,1.1), R(0,6)), and the
+   same early return when the original window is empty. Species without `place` (or with SV off, or without sl.sv) keep the original placer. */
+const SVP_LEAVES0=typeof stemLeaves==='function'?stemLeaves:null;
+if(SVP_LEAVES0)stemLeaves=function(par,P,sid,yMax,headR,t){const sl=STEML[sid];
+  if(!sl||LOD||!sl.place||!sl.sv||sl.arr==='whorl'||sl.arr==='opp'||typeof SV_ON==='undefined'||!SV_ON)return SVP_LEAVES0(par,P,sid,yMax,headR,t);
+  const n=Array.isArray(sl.n)?Math.round(R(sl.n[0],sl.n[1])):sl.n||2,L0=(sl.len||10)*UPC;let side=rnd()<.5?-1:1;
+  /* the original window decides whether any leaf is drawn (and so whether the draws below happen) */
+  const cand=[],own=[],low=sl.low??.75;for(let i=0;i<=40;i++){const q=i/40,p=bz(P,q),far=Math.hypot(p[0]-P[3][0],p[1]-P[3][1])>headR*.9;
+    if(p[1]<yMax-L0*.75&&far)cand.push(q);if(p[1]<yMax-L0*low&&far)own.push(q)}if(!cand.length)return;
+  const q0=own.length?own[0]:cand[0],q1=cand[cand.length-1],pl=sl.place[Math.min(n,sl.place.length)-1]||[];
+  for(let k=0;k<n;k++){const fk=pl[k]??(n===1?.5:k/(n-1)),q=Math.min(q1,q0+(q1-q0)*fk*R(.92,1.02)),p=bz(P,q),p2=bz(P,Math.min(1,q+.02)),ta=Math.atan2(p2[1]-p[1],p2[0]-p[0]);
+    const s=side,ang=ta+s*(sl.up||38)*D*R(.8,1.15),len=L0*R(.8,1.1)*(1-.12*k),wr=G(par);R(0,6);sl.sv(wr,p[0],p[1],ang,len,{ta,s,k,j:0,n,f:fk,qs:q});
+    growUp(wr,p[0],p[1],Math.max(0,t-300),500);side=-side}};
+/* the cut end of a stem drawn alone (plant sheets, GHI[sid].cut): svStemLine's outline is a closed spline, which draws the end of a long simplified
+   stem as a spike; the stem is drawn on past its cut and clipped square at it, then the cut face is laid on: a pale disc seen a little from above,
+   its rind darker. draw(g,C,W) draws the stem (stemPoly). */
+function svStemCut(par,C,W,c,draw){const u0=[C[1][0]-C[0][0],C[1][1]-C[0][1]],l=Math.hypot(u0[0],u0[1])||1,u=[u0[0]/l,u0[1]/l],nn=[-u[1],u[0]],p=C[0],w=W[0],e=w*2,B=1e5,
+    id='ct'+(gid++),cp=E('clipPath',{id},GDEF||defs),q=(a,b)=>svF(p[0]+nn[0]*a+u[0]*b)+','+svF(p[1]+nn[1]*a+u[1]*b);
+  E('path',{d:'M'+q(B,0)+'L'+q(-B,0)+'L'+q(-B,B)+'L'+q(B,B)+'Z'},cp);
+  const g=G(par,{'clip-path':`url(#${id})`});draw(g,[[p[0]-u[0]*e,p[1]-u[1]*e]].concat(C),[w].concat(W));
+  E('ellipse',{cx:svF(p[0]),cy:svF(p[1]),rx:svF(w*.5),ry:svF(w*.17),transform:`rotate(${svF(Math.atan2(nn[1],nn[0])*180/Math.PI)} ${svF(p[0])} ${svF(p[1])})`,
+    fill:'#d6dcb8',stroke:c[0],'stroke-width':svF(w*.07),'stroke-opacity':.55},par);return g}
 /* ================= Pilote : la plante du narcisse (hampe lisse à deux arêtes, coupe creuse, feuille en lanière à carène) =================
    Generic pieces for smooth, flattened, hollow scapes and keeled strap leaves (daffodil; later the other Narcissus, amaryllis, nerine, agapanthus).
    Nothing here replaces an engine function: a stem colour list names its own drawers (c.sv.line, c.sv.cut: see the dispatch in y-narcissus.js), and
@@ -29334,36 +29374,6 @@ function svStrapLeafX(par,pos,H,Out,o0){const o=Object.assign({},SVL_DEF,{keel:0
         return[...(hi?[[L,.0035,front?mix(o.up,'#2a4a34',.35):mix(o.low,'#e0eadc',.4),front?.32:.3]]:[]),[[[[0,.02],[0,.4],[0,.8],[0,.98]]],.008,front?mix(o.up,'#24402c',.5):mix(o.low,'#f0f4ea',.5),front?.45:.5]]}};
   if(!hi)Object.assign(m,{dark:[.8,.6],darkLo:[.8,.6],lit:[1.1],litLo:[1.1],rw:0});
   return svDraw(par,[svSheet(I3,[0,0,0],S,{nu:hi?o.nu+2:o.nu-2,nv:hi?o.nv+4:o.nv-4,mat:m})],{D:len*.55,sd:.02,sb:.02,so:.3,shadow:hi})}
-/* ================= Pilote : la plante coupée (feuilles engainantes sur la tige du bouquet), pièces génériques =================
-   For the cut stems whose leaves clasp the stem low down (tulip, daffodil, hyacinth, iris...): the generic leaf placer of the bouquet (stemLeaves,
-   s0.js) spreads n leaves evenly over the visible stem, from just above the mouth (.75 of a leaf length) up to the head: with two leaves, one of
-   them sits right under the flower, which no tulip does (its top leaf clasps the stem at a third of its height; the flower stalk above is bare).
-   STEML[sid].place = [[f] for one leaf, [f0,f1] for two, ...]: where each leaf clasps the stem, as fractions of the window from its foot (0) to the
-   head (1); STEML[sid].low (in leaf lengths, default .75 as before): how far above the mouth that window starts (a leaf that rises from its
-   sheath can clasp the stem just above the rim). The leaf function (sl.sv) then also gets {n, f, qs} (how many leaves, this one's fraction, its
-   place on the stem path) to give each leaf its own form (the lowest the broadest).
-   The bouquet's chance is untouched: the same draws in the same order (n, side, then per leaf R(.92,1.02), R(.8,1.15), R(.8,1.1), R(0,6)), and the
-   same early return when the original window is empty. Species without `place` (or with SV off, or without sl.sv) keep the original placer. */
-const SVP_LEAVES0=typeof stemLeaves==='function'?stemLeaves:null;
-if(SVP_LEAVES0)stemLeaves=function(par,P,sid,yMax,headR,t){const sl=STEML[sid];
-  if(!sl||LOD||!sl.place||!sl.sv||sl.arr==='whorl'||sl.arr==='opp'||typeof SV_ON==='undefined'||!SV_ON)return SVP_LEAVES0(par,P,sid,yMax,headR,t);
-  const n=Array.isArray(sl.n)?Math.round(R(sl.n[0],sl.n[1])):sl.n||2,L0=(sl.len||10)*UPC;let side=rnd()<.5?-1:1;
-  /* the original window decides whether any leaf is drawn (and so whether the draws below happen) */
-  const cand=[],own=[],low=sl.low??.75;for(let i=0;i<=40;i++){const q=i/40,p=bz(P,q),far=Math.hypot(p[0]-P[3][0],p[1]-P[3][1])>headR*.9;
-    if(p[1]<yMax-L0*.75&&far)cand.push(q);if(p[1]<yMax-L0*low&&far)own.push(q)}if(!cand.length)return;
-  const q0=own.length?own[0]:cand[0],q1=cand[cand.length-1],pl=sl.place[Math.min(n,sl.place.length)-1]||[];
-  for(let k=0;k<n;k++){const fk=pl[k]??(n===1?.5:k/(n-1)),q=Math.min(q1,q0+(q1-q0)*fk*R(.92,1.02)),p=bz(P,q),p2=bz(P,Math.min(1,q+.02)),ta=Math.atan2(p2[1]-p[1],p2[0]-p[0]);
-    const s=side,ang=ta+s*(sl.up||38)*D*R(.8,1.15),len=L0*R(.8,1.1)*(1-.12*k),wr=G(par);R(0,6);sl.sv(wr,p[0],p[1],ang,len,{ta,s,k,j:0,n,f:fk,qs:q});
-    growUp(wr,p[0],p[1],Math.max(0,t-300),500);side=-side}};
-/* the cut end of a stem drawn alone (plant sheets, GHI[sid].cut): svStemLine's outline is a closed spline, which draws the end of a long simplified
-   stem as a spike; the stem is drawn on past its cut and clipped square at it, then the cut face is laid on: a pale disc seen a little from above,
-   its rind darker. draw(g,C,W) draws the stem (stemPoly). */
-function svStemCut(par,C,W,c,draw){const u0=[C[1][0]-C[0][0],C[1][1]-C[0][1]],l=Math.hypot(u0[0],u0[1])||1,u=[u0[0]/l,u0[1]/l],nn=[-u[1],u[0]],p=C[0],w=W[0],e=w*2,B=1e5,
-    id='ct'+(gid++),cp=E('clipPath',{id},GDEF||defs),q=(a,b)=>svF(p[0]+nn[0]*a+u[0]*b)+','+svF(p[1]+nn[1]*a+u[1]*b);
-  E('path',{d:'M'+q(B,0)+'L'+q(-B,0)+'L'+q(-B,B)+'L'+q(B,B)+'Z'},cp);
-  const g=G(par,{'clip-path':`url(#${id})`});draw(g,[[p[0]-u[0]*e,p[1]-u[1]*e]].concat(C),[w].concat(W));
-  E('ellipse',{cx:svF(p[0]),cy:svF(p[1]),rx:svF(w*.5),ry:svF(w*.17),transform:`rotate(${svF(Math.atan2(nn[1],nn[0])*180/Math.PI)} ${svF(p[0])} ${svF(p[1])})`,
-    fill:'#d6dcb8',stroke:c[0],'stroke-width':svF(w*.07),'stroke-opacity':.55},par);return g}
 /* ---------- y3-rose.js: the rose of the florist (svRose), a kit piece for every rose: high-centred, sweetheart, garden, English, spray ----------
    A rose is a spiral of broad petals on an urn (the hip): the outer ones (rank f = 0) open first and roll their margins back into points, the
    inner ones stay furled round each other into a tall cone (the high centre of a hybrid tea), the heart opens last on a ring of stamens. Five
@@ -29423,8 +29433,10 @@ const SVROSE_DEF={
     pleat:{n:[3,5],len:[.22,.5],w:.006,a:.22,c:'#24100a',lc:null,la:.2}}};
 /* the faded material: a copy of the colourway's, matte and dry by fan (fanM) */
 function svRoseFanMat(cw,fan,M){const o=Object.assign({},cw),fr=f=>svrC(cw.fr,f),k=fan;
-  o.bk=Array.isArray(cw.bk)?cw.bk.map(([f,x])=>[f,mix(x,mix(fr(f),'#000000',M.bkD),M.bk*k)]):mix(cw.bk,mix(fr(.5),'#000000',M.bkD),M.bk*k);
-  o.lite=mix(cw.lite,fr(.5),M.lt*k);o.blite=mix(cw.blite||cw.lite,fr(.5),M.lt*k);o.bshade=mix(cw.bshade||cw.shade,cw.shade,k);
+  /* bkP < 1: the backs reach the face's colour early in the fading (no pale plates on a red, 3.3) */const kb=M.bkP?Math.pow(k,M.bkP):k;
+  o.bk=Array.isArray(cw.bk)?cw.bk.map(([f,x])=>[f,mix(x,mix(fr(f),'#000000',M.bkD),M.bk*kb)]):mix(cw.bk,mix(fr(.5),'#000000',M.bkD),M.bk*kb);
+  /* ltP < 1: the lights pulled to the tone early too (a white's lit backs no cream plates on the declining head, 3.3) */const kl=M.lt*(M.ltP?Math.pow(k,M.ltP):k);
+  o.lite=mix(cw.lite,fr(.5),kl);o.blite=mix(cw.blite||cw.lite,fr(.5),kl);o.bshade=mix(cw.bshade||cw.shade,cw.shade,k);
   o.edge=mix(cw.edge||cw.shade,M.edge,M.edgeK*k);o.brim=mix(cw.brim||cw.rim,cw.rim,k);return o}
 /* the section of a piece at u (-1..1): [across, lift toward the axis] for half width hw, arc half angle 2cf, the margin rolled back by rl
    (radians at the edge) past ru: the arc in closed form, then the rolled part integrated */
@@ -29436,7 +29448,8 @@ function svRoseSec(u,hw,cf,rl,ru){const s=Math.abs(u),sg=u<0?-1:1,k=2*cf,arc=t=>
    limp,bud,Hb,sc,wrap,top,t (genes), wp (an outline by length instead of claw and round top), lob ([[v, side, amp]...] appendages)} */
 function svRoseSurf(P,B,R0,q){const t=q.t,rad=[Math.cos(q.phi),Math.sin(q.phi),0],T=[-Math.sin(q.phi),Math.cos(q.phi),0],ns=DET>=1.5?16:12,sp=[],dv=[],
     dn0=[0,-1,0],dnL=[V3.dot(B[0],dn0),V3.dot(B[1],dn0),V3.dot(B[2],dn0)];
-  let p=[rad[0]*q.r0,rad[1]*q.r0,q.z0];
+  /* (q.cx, q.cy: a centre of its own off the axis, a quarter's, y3-rose2.js) */
+  const qx=q.cx||0,qy=q.cy||0;let p=[rad[0]*q.r0+qx,rad[1]*q.r0+qy,q.z0];
   for(let j=0;j<=ns;j++){const v=j/ns,a=q.a0+(q.a1-q.a0)*Math.pow(v,P.aPow)+q.curl*svSm((v-.6)/.4);let d=[rad[0]*Math.sin(a),rad[1]*Math.sin(a),Math.cos(a)];
     if(q.limp>0){const hk=Math.min(.94,q.limp*Math.pow(v,.5)*(.55+.45*(t.hang||1)));let dn=dnL,c=V3.dot(d,dn);if(c<-.25){dn=V3.nz(V3.add(dnL,[0,0,1.5]));c=V3.dot(d,dn)}
       const an=Math.acos(Math.max(-1,Math.min(1,c)));if(an>1e-3){const s0=Math.sin(an);d=V3.nz(V3.add(V3.sc(d,Math.sin((1-hk)*an)/s0),V3.sc(dn,Math.sin(hk*an)/s0)))}}
@@ -29448,7 +29461,7 @@ function svRoseSurf(P,B,R0,q){const t=q.t,rad=[Math.cos(q.phi),Math.sin(q.phi),0
     tp=(t.tip||2.4)*(q.tipK||1),Lu=u=>q.wp?1:vb+(1-vb)*Math.pow(Math.max(0,1-Math.pow(Math.abs(u),tp)),1/tp)-nt*Math.max(0,1-Math.abs(u)/.22);
   return(u,v)=>{const vv=v*Lu(u),c=at(sp,vv),d=V3.nz(at(dv,vv)),nrm=V3.cr(d,T),ca=Math.cos(q.tw*vv),sa=Math.sin(q.tw*vv),A=V3.add(V3.sc(T,ca),V3.sc(nrm,sa)),
       hw=half(vv,u)*(1+(t.asym||0)*Math.sign(u)),cf0=q.cup*(.2+.8*svSm(vv/.45)),
-      cf=q.conc>0?cf0+(Math.min(P.concK,hw/Math.max(R0*.03,Math.hypot(c[0],c[1])))/2-cf0)*q.conc:cf0,rl=q.roll*svSm((vv-P.rv)/(1-P.rv)),[tx,ly]=svRoseSec(u,hw,cf,rl,P.ru*(1-(P.ruTip||0)*svSm((vv-.65)/.35))),
+      cf=q.conc>0?cf0+(Math.min(P.concK,hw/Math.max(R0*.03,Math.hypot(c[0]-qx,c[1]-qy)))/2-cf0)*q.conc:cf0,rl=q.roll*svSm((vv-P.rv)/(1-P.rv)),[tx,ly]=svRoseSec(u,hw,cf,rl,P.ru*(1-(P.ruTip||0)*svSm((vv-.65)/.35))),
       lift=ly+P.lap*u*hw*svSm(vv/.3)+q.wav*hw*Math.pow(Math.abs(u),1.5)*Math.sin((t.wk||2)*Math.PI*vv+(t.wph||0)+u*.8)*svSm(vv/.35)
         -q.rev*hw*Math.pow(Math.abs(u),4)+q.crk*hw*Math.sin(u*Math.PI*(2.2+(t.wk||2)*.4)+(t.wph||0)*2+vv*5)*svSm(vv/.25),
       Pt=V3.add(V3.add(c,V3.sc(A,tx)),V3.sc(nrm,lift));if(!(q.bud>0))return Pt;
@@ -29457,7 +29470,7 @@ function svRoseSurf(P,B,R0,q){const t=q.t,rad=[Math.cos(q.phi),Math.sin(q.phi),0
       th=q.phi+u*q.wrap*(.5+.5*svSm(ve/.35))+(q.twb||0)*Math.max(0,ve-.7),zb=q.z0*.3+q.Hb*q.sc*ve-R0*.05;
     return V3.add(V3.sc(Pt,1-q.bud),V3.sc([Math.cos(th)*rr,Math.sin(th)*rr,zb],q.bud))}}
 /* the colourway's margin band and flames, laid on each run of petals over their tone (svrDraw's run hook) */
-function svRoseRun(cw,Dm,tol,fan,items,hs,FM){const band=cw.band,fl=cw.flames,dry=fan>.02?{c:h2l(svrC(cw.fr,.5))[2]>.62?'#7a5432':'#3a2414',w:.03+.09*fan,op:Math.min(.7,.2+.5*fan),b:FM?.008+(FM.dryB-.008)*fan:.008}:null;if(!band&&!fl&&!dry)return null;
+function svRoseRun(cw,Dm,tol,fan,items,hs,FM){const band=cw.band,fl=cw.flames,dry=fan>.02?{c:h2l(svrC(cw.fr,.5))[2]>.62?'#7a5432':'#3a2414',w:(.03+.09*fan)*(FM&&FM.dryW||1),op:Math.min(.7,.2+.5*fan),b:FM?.008+(FM.dryB-.008)*fan:.008}:null;if(!band&&!fl&&!dry)return null;
   /* the distance to the outline at grid (u, v), as a share of the petal's length: to the top (the outline's length Lu at u) or to a side (the half
      width by height: the claw, then the broad top), so that a margin keeps one width all round, on the rolled part too */
   const eD=(u,v)=>{const au=Math.abs(u),Lu=.66+.34*Math.pow(Math.max(0,1-Math.pow(au,2.4)),1/2.4),l=v*Lu;return Math.min((1-v)*Lu,(1-au)*.5*(.3+.7*Math.sin(Math.PI/2*Math.min(1,l/.66))))},
@@ -29529,7 +29542,10 @@ function svRose(par,B,O,D,S,cwx,op,seed,wl,bent){const P=S._r||(S._r=Object.assi
     oOf=f=>svSm((op+(g.op||0)-(ol[0]+ol[1]*f))/ol[2])*(1-ol[3]*Math.pow(f,1.5)),
     dA=q=>toV(B0,V3.add(V3.sc([Math.cos(q.phi),Math.sin(q.phi),0],Math.sin(q.a1)),[0,0,Math.cos(q.a1)]))[1]*-1;
   const piece=(q,grp,mt,f,o2)=>{const S0=svRoseSurf(P,B0,R0,q),v0=grp==='p'?svrT(P.vTrim,f):0;
-    const it=svrItem(P,B,O,v0>0?(u,v)=>S0(u,v0+(1-v0)*v):S0,mt,f,grp,Object.assign({shift:sh0,gt,tol,face:P.budFace>0&&bud>=P.budFace},o2||{}));if(it)items.push(it);return it};
+    /* fanVar: each faded petal its own brown (three classes, a hash of the petal: darker, browner, nearly its own), the strength varying with it (6.6) */
+    const vh=P.fanVar&&fan>.05&&grp==='p'?pxHashS(Math.round(q.phi*1000),71,g.sd||1):null,
+      shv=vh==null?sh0:c=>sh0(mix(c,vh<.34?'#2a140c':vh<.67?'#7a4a2a':'#5a3a26',P.fanVar*fan*(vh<.67?.25+.5*((vh*3)%1):.08+.15*((vh*3)%1))));
+    const it=svrItem(P,B,O,v0>0?(u,v)=>S0(u,v0+(1-v0)*v):S0,mt,f,grp,Object.assign({shift:shv,gt,tol,face:P.budFace>0&&bud>=P.budFace},o2||{}));if(it)items.push(it);return it};
   const FM=fan>.01&&P.fanM?P.fanM:null,fmt=FM?svRoseFanMat(cw,fan,FM):cw,
     /* the faded shape (fanM.curl: the hanging petals' tips flared back) on sheets only: in a bouquet (noTip) the head keeps its v2 measure (c5) */
     fG=FM&&(!P.noTip||(typeof SVA_LIFE!=='undefined'&&SVA_LIFE!=null))?1:0;
@@ -29549,7 +29565,9 @@ function svRose(par,B,O,D,S,cwx,op,seed,wl,bent){const P=S._r||(S._r=Object.assi
        loosened as the head declines and fades */
     {const cb=P.coneB?svrT(P.coneB,f)*(1-svSm(dec/.7))*(1-fan):0;if(cb>q.bud)q.bud=cb}
     q.a1+=(P.sag[0]+P.sag[1]*o+P.sag[2]*dec)*(1-bud)*Math.max(0,dA(q))*(1-f);q.a0+=P.peel[0]*peel;q.a1+=P.peel[1]*peel;q.a1-=P.fanIn*fan*svSm((f-.45)/.35);
-    piece(q,'p',fmt,f)}
+    /* qmod (a sort's hook, y3-rose2.js): the petal reshaped before it is drawn (quarters, a button eye); none on the hybrid tea */
+    if(P.qmod)P.qmod(q,{i,f,o,op,g,bud,dec,fan,R0,N});
+    if(!q.skip)piece(q,'p',fmt,f)}
   /* the calyx: five sepals clasping the bud, parting, then turned down under the flower; yellowing as it fades */
   const SP=P.sep;if(SP&&!SVR_OFF.includes('sep')){const so=svSm((op-SP.open[0])/SP.open[1]),sm=cw.sep,smt=fan>0||dec>0?Object.assign({},sm,{fr:mix(mix(sm.fr,sm.yel||'#a89a58',Math.min(1,.4*dec+.5*fan)),'#5a4026',.75*fan),bk:mix(mix(sm.bk,sm.yel||'#a89a58',Math.min(1,.35*dec+.5*fan)),'#4a3420',.8*fan)}):sm;
     for(let i=0;i<SP.n;i++){const t=g.sep?g.sep[i]:g.tep[i%N],phi=g.rot+(i+.5)/SP.n*6.2832+(t.dph||0)*.5,nl=SP.lob[(i+(g.sl||0))%SP.n],lob=[];
@@ -29585,8 +29603,8 @@ function svRose(par,B,O,D,S,cwx,op,seed,wl,bent){const P=S._r||(S._r=Object.assi
     /* the furled heart beyond band.f shows little but its margins, in broken slivers between its neighbours: no band there, the colour of
        the margins goes into the tone instead (the heart of a picotee reads flushed with it, on the photographs) */
     if(!LOD&&cw.band&&cw.band.hk&&it.f>cw.band.f)it.tone=mix(it.tone,cw.band.c,cw.band.hk*svSm((it.f-cw.band.f)/.2))}}
-  const fx=FM?{wclip:1,pedge:1,wbK:(1-.3*fan)*(1-FM.wb*fan),ewK:1+(FM.ew-1)*fan,daK:1-FM.da*fan,rimK:1-FM.rimW*fan,edgeA:P.edgeA+(FM.ea-P.edgeA)*fan,shK:1-FM.sh*fan,
-    pleat:FM.pleat?Object.assign({},FM.pleat,{a:FM.pleat.a*fan,la:FM.pleat.la*fan,lc:FM.pleat.lc||fmt.lite}):null}:{wbK:1-.3*fan};
+  const fx=FM?{wclip:1,pedge:1,lclip:FM.lclip&&hi?1:0,wbK:(1-.3*fan)*(1-FM.wb*fan),ewK:1+(FM.ew-1)*fan,daK:1-FM.da*fan,rimK:1-FM.rimW*fan,edgeA:P.edgeA+(FM.ea-P.edgeA)*fan,shK:1-(hi||FM.shLo==null?FM.sh:FM.shLo)*fan,
+    pleat:FM.pleat?Object.assign({},FM.pleat,{a:FM.pleat.a*fan,la:FM.pleat.la*fan*(hi||FM.pleat.laLo==null?1:FM.pleat.laLo),lc:FM.pleat.lc||fmt.lite,c:FM.pleat.c||fmt.shade}):null}:{wbK:1-.3*fan};
   return svrDraw(par,items,P,cw,Dm,tol,Object.assign({patchLate:1,zvis:1,dec,fan,core,bud,sepLay:P.sepLay>0&&bud>=P.sepLay,run:svRoseRun(cw,Dm,tol,fan,items,g.sd||Math.round(seed)||1,FM)},fx))}
 /* ---------- the compound leaf: from its node (x, y on the screen, angle ang, length len), a petiole with its stipules, the rachis arching under its
    weight, n leaflets (pairs, the lowest smaller, and the terminal one), each ovate, double-toothed, folded on its midrib, its upper face darker and
@@ -29594,14 +29612,14 @@ function svRose(par,B,O,D,S,cwx,op,seed,wl,bent){const P=S._r||(S._r=Object.assi
    o: {n (3, 5, 7), wl, sd, side (the face: + upper, - under, 0..1 how much), ar (leaflet length / width), cols {up, upL, upD, low, lowL, vein, rach, stip}} */
 const SVROSE_LEAF={n:5,ar:1.6,tooth:[13,.085],pet:.22,stip:.2,spread:58,droop:.35,fold:.32,arch:.18,face:.55,
   up:'#2f5428',upL:'#5f8a46',upD:'#1a3214',low:'#7d9a66',lowL:'#a9bf92',vein:'#8fb07a',veinLow:'#c7d6b4',rach:'#4a6a30',stip:'#6e8a4a',edge:'#7a5a30',red:'#7a3a2a'};
-function svRoseLeaf(par,x,y,ang,len,o={}){const P=Object.assign({},SVROSE_LEAF,o),r=svRng(P.sd||1),wl=P.wl||0,hi=DET>=1.5,k=G(par),fan=svSm((wl-.4)/.45),
+function svRoseLeaf(par,x,y,ang,len,o={}){const P=Object.assign({},SVROSE_LEAF,o),r=svRng(P.sd||1),wl=P.wl||0,hi=DET>=1.5,lean=P.lean&&!hi,k=G(par),fan=svSm((wl-.4)/.45),
     np=(P.n-1)>>1,droop=P.droop+.5*fan,fold=P.fold+.35*fan,Lt=len,pl=Lt*P.pet,ra=Lt*.55,lightV=V3.nz([LIGHT[0],LIGHT[1],LIGHT[2]||.6]);
   /* the leaf's frame on the screen (y down): forward H, its normal N (in the screen), and z toward the viewer; the face turned by side */
   const H=[Math.cos(ang),Math.sin(ang)],Nn=[-H[1],H[0]],sideK=P.side==null?.6:P.side,S2=p=>[x+p[0],y+p[1]];
   /* a 3D point in the leaf's frame (a along H, b along N, c toward the viewer) to the screen, with the rachis's arch and droop (toward +y) */
   const scr=(a,b)=>{const dy=droop*Lt*Math.pow(Math.max(0,a/Lt),2)*.6;return S2([H[0]*a+Nn[0]*b,H[1]*a+Nn[1]*b+dy])},
     rach=t=>scr(pl+ra*t,Lt*P.arch*Math.sin(Math.PI*t)*.15);
-  const items=[];
+  const items=[],lsh={d:'',c:null};
   /* the petiole and rachis (one stroke), the stipules (two narrow wings at its foot) */
   {const pts=[S2([0,0])];for(let i=0;i<=8;i++)pts.push(rach(i/8));items.push({z:-1,draw:g=>{E('path',{d:svQuad(pts),fill:'none',stroke:mix(P.rach,P.red,.25),'stroke-width':svF(Math.max(.25,Lt*.016)),'stroke-linecap':'round'},g)}});
     /* the stipules: a broad wing fused to the petiole's foot on both sides, ending in two free pointed auricles that diverge (photos 1031, 1032) */
@@ -29611,9 +29629,10 @@ function svRoseLeaf(par,x,y,ang,len,o={}){const P=Object.assign({},SVROSE_LEAF,o
       items.push({z:-.5,draw:g=>{E('path',{d:svSpl(sl),fill:P.stip,stroke:P.upD,'stroke-width':svF(Lt*.004),'stroke-opacity':.55,'stroke-linejoin':'round'},g);
         E('path',{d:`M${svF(ve[0][0])},${svF(ve[0][1])}L${svF(ve[1][0])},${svF(ve[1][1])}M${svF(ve[2][0])},${svF(ve[2][1])}L${svF(ve[3][0])},${svF(ve[3][1])}M${svF(vm[0][0])},${svF(vm[0][1])}L${svF(vm[1][0])},${svF(vm[1][1])}`,fill:'none',stroke:P.upD,'stroke-width':svF(Lt*.003),'stroke-opacity':.35},g)}})}
     /* fine prickles under the petiole and rachis: small hooks bent toward the leaf's foot */
+    /* o.lean (below DET 1.5): no prickles under the rachis (their chance still drawn), fewer and single teeth, no gloss stroke on the blade */
     {let d='';const pw=Lt*.007,ph=Lt*.024;for(let i=0;i<5;i++){const a=pl*.9+ra*(i*.19+.06*r()),sd=i%2?1:.6,b0=scr(a-pw,0),b1=scr(a+pw,0),tp=scr(a-ph*.55,ph*sd),c=scr(a+pw*.2,ph*sd*.45);
         d+=`M${svF(b0[0])},${svF(b0[1])}Q${svF(c[0])},${svF(c[1])} ${svF(tp[0])},${svF(tp[1])}L${svF(b1[0])},${svF(b1[1])}Z`}
-      items.push({z:-.4,draw:g=>{E('path',{d,fill:mix(P.rach,P.red,.55),stroke:'none'},g)}})}}
+      if(!lean)items.push({z:-.4,draw:g=>{E('path',{d,fill:mix(P.rach,P.red,.55),stroke:'none'},g)}})}}
   /* each leaflet: its foot on the rachis, its axis (2D), its size; the blade as two halves around the midrib, folded (the half away from the light
      darker), the margin with forward teeth (doubled in close-up) */
   const lfs=[];for(let i=0;i<np;i++){const t=(i+.55)/(np+.4),q=i/Math.max(1,np-1);for(const s of[-1,1])lfs.push({t,s,sz:(.72+.28*q)*(.92+.16*r()),an:(P.spread-10*q+r.in(-8,8))*Math.PI/180})}
@@ -29622,7 +29641,7 @@ function svRoseLeaf(par,x,y,ang,len,o={}){const P=Object.assign({},SVROSE_LEAF,o
   for(const lf of lfs){const p0=rach(lf.t),ah=ang+(lf.s===0?lf.an:lf.s*lf.an)+droop*.5*(lf.s===0?0:1)*Math.sign(Math.cos(ang))*.3,ax=[Math.cos(ah),Math.sin(ah)],nx=[-ax[1],ax[0]],
       L=Lf*lf.sz*(1-.08*fan),Wh=L/P.ar/2*(1-.25*fan),dr=droop*(.5+.5*r())+(lf.s?.15:0),tw=sideK*(lf.s||1)*(.6+.4*r());
     /* the half-width along the blade (ovate: broadest a third up, acute tip, rounded foot) */
-    const hwf=s=>Math.pow(Math.sin(Math.PI*Math.min(1,.12+.88*Math.pow(s,.85))),.7)*(1-.2*s),M=hi?96:40,nT=Math.round(P.tooth[0]*(hi?1:.7)),
+    const hwf=s=>Math.pow(Math.sin(Math.PI*Math.min(1,.12+.88*Math.pow(s,.85))),.7)*(1-.2*s),M=hi?96:40,nT=Math.round(P.tooth[0]*(hi?1:lean?P.lean:.7)),
       pt=(s,b)=>{const a=s*L,dy=dr*L*s*s*.5,wd=b*Wh*(1-.35*fold*Math.abs(b))*(b<0?1-tw*.15:1);return[p0[0]+ax[0]*a+nx[0]*wd,p0[1]+ax[1]*a+nx[1]*wd+dy-fold*Math.abs(b)*Wh*.25]};
     const am=P.tooth[1]*(hi?1:.8),k0=Math.ceil(.08*nT),k1=Math.floor(.95*nT),half=sg=>{const out=[],tp=(s,a)=>out.push(pt(s,sg*(hwf(s)+a)));
         for(let m=0;m<=5;m++)tp(k0/nT*m/5,0);
@@ -29632,28 +29651,150 @@ function svRoseLeaf(par,x,y,ang,len,o={}){const P=Object.assign({},SVROSE_LEAF,o
     /* which face shows: the leaf's own (side) and the fold */
     const up=(lf.s===0?sideK:sideK*(lf.s>0?1:.7))>=0,lk=V3.dot([nx[0],-nx[1],.6],lightV),cU=up?P.up:P.low,cL=up?P.upL:P.lowL,cD=up?P.upD:mix(P.low,P.upD,.45);
     const z=lf.t*.8+(lf.s===0?.5:0)+lf.s*.01*Math.sign(Math.sin(ang));
-    items.push({z,draw:g=>{E('path',{d:'M'+blade.map(p=>svF(p[0])+','+svF(p[1])).join('L')+'Z',fill:mix(cU,cL,.2+.2*Math.max(0,lk)),stroke:mix(cD,P.edge,fan*.6),'stroke-width':svF(Math.max(.15,Lt*.004)),'stroke-opacity':.6,'stroke-linejoin':'miter'},g);
-      const sh=(lk>0?Bh:A).concat(mid.slice().reverse());E('path',{d:svSpl(svSimp(sh,.08)),fill:cD,'fill-opacity':.32+.15*fold},g);
-      if(up)E('path',{d:svQuad(A.slice(Math.round(A.length*.15),Math.round(A.length*.7)).map((p,i,arr)=>{const m=mid[Math.min(6,Math.round(i/arr.length*6))];return[p[0]*.55+m[0]*.45,p[1]*.55+m[1]*.45]})),fill:'none',stroke:cL,'stroke-width':svF(Lt*.02),'stroke-opacity':.28,'stroke-linecap':'round'},g);
+    items.push({z,draw:g=>{E('path',{d:'M'+(lean?svSimp(blade,Lt*.005):blade).map(p=>svF(p[0])+','+svF(p[1])).join('L')+'Z',fill:mix(cU,cL,.2+.2*Math.max(0,lk)),stroke:mix(cD,P.edge,fan*.6),'stroke-width':svF(Math.max(.15,Lt*.004)),'stroke-opacity':.6,'stroke-linejoin':'miter'},g);
+      const sh=(lk>0?Bh:A).concat(mid.slice().reverse());if(lean){lsh.d+=svSpl(svSimp(sh,.15));lsh.c=cD}else E('path',{d:svSpl(svSimp(sh,.08)),fill:cD,'fill-opacity':.32+.15*fold},g);
+      if(up&&!lean)E('path',{d:svQuad(A.slice(Math.round(A.length*.15),Math.round(A.length*.7)).map((p,i,arr)=>{const m=mid[Math.min(6,Math.round(i/arr.length*6))];return[p[0]*.55+m[0]*.45,p[1]*.55+m[1]*.45]})),fill:'none',stroke:cL,'stroke-width':svF(Lt*.02),'stroke-opacity':.28,'stroke-linecap':'round'},g);
       let dv=svQuad(mid);if(hi){const nv2=Math.min(8,nT-2);for(let m=0;m<nv2;m++){const se=(Math.round(1+m*(nT-3)/Math.max(1,nv2-1))+.9)/nT,s0=Math.max(.04,se-.2),a=pt(s0,0);
         for(const sg of[-1,1]){const b=pt(se,sg*(hwf(se)+am*.7)),c=pt(s0+.08,sg*hwf(s0+.08)*.6);dv+=`M${svF(a[0])},${svF(a[1])}Q${svF(c[0])},${svF(c[1])} ${svF(b[0])},${svF(b[1])}`}}}
-      E('path',{d:dv,fill:'none',stroke:up?P.vein:P.veinLow,'stroke-width':svF(Lt*(hi?.004:.006)),'stroke-opacity':up?.2:.36,'stroke-linecap':'round'},g)}})}
-  items.sort((a,b)=>a.z-b.z);for(const it of items)it.draw(k);return k}
+      if(!lean)E('path',{d:dv,fill:'none',stroke:up?P.vein:P.veinLow,'stroke-width':svF(Lt*(hi?.004:.006)),'stroke-opacity':up?.2:.36,'stroke-linecap':'round'},g)}})}
+  /* lean: the shaded halves of all the leaflets in one wash laid over the blades */
+  items.sort((a,b)=>a.z-b.z);for(const it of items)it.draw(k);if(lsh.d)E('path',{d:lsh.d,fill:lsh.c,'fill-opacity':.32+.15*fold},k);return k}
 /* ---------- the stem's prickles (svStemLine post hook): a gene per stem decides a thorny stem or a dethorned one (florists strip them: pale
    scars remain); prickles broad-based, hooked toward the foot, reddish brown, set on the silhouette alternately, sparser close to the head.
    o: {p (share of thorny stems), step (x width), len (x width), col [body, tip], scar} */
 function svRoseThorns(o={}){const P=Object.assign({p:.5,step:[5,9],len:.95,col:['#6e7a3c','#8a3a26'],scar:'#b9b48a',scarE:'#7d7a52'},o);
-  return(g,cg,C,Wd,N,T,W0)=>{const n=C.length;if(n<3||LOD)return;const sd=Math.round(C[0][0]*7+C[0][1]*13),thorny=pxHashS(sd,7,11)<P.p;let acc=0,k=0,d='',ds='',next=W0*P.step[0];
-    for(let i=1;i<n-1;i++){acc+=Math.hypot(C[i][0]-C[i-1][0],C[i][1]-C[i-1][1]);if(acc<next)continue;acc=0;k++;next=W0*(P.step[0]+(P.step[1]-P.step[0])*pxHashS(k,3,sd));
+  return(g,cg,C,Wd,N,T,W0)=>{const n=C.length;if(n<3||LOD)return;const sd=Math.round(C[0][0]*7+C[0][1]*13),thorny=pxHashS(sd,7,11)<P.p,lean=P.lean&&DET<1.5,sk=lean?P.lean:1;let acc=0,k=0,d='',ds='',next=W0*P.step[0]*sk;
+    for(let i=1;i<n-1;i++){acc+=Math.hypot(C[i][0]-C[i-1][0],C[i][1]-C[i-1][1]);if(acc<next)continue;acc=0;k++;next=W0*(P.step[0]+(P.step[1]-P.step[0])*pxHashS(k,3,sd))*sk;
       const w=Wd[i]/2,s=pxHashS(k,5,sd)<.5?1:-1,h=pxHashS(k,9,sd);
       if(thorny){const L=W0*P.len*(.7+.6*h),b=W0*(.55+.3*h),bx=C[i][0]+N[i][0]*w*s*.92,by=C[i][1]+N[i][1]*w*s*.92,
           a0=[bx-T[i][0]*b*.5,by-T[i][1]*b*.5],a1=[bx+T[i][0]*b*.5,by+T[i][1]*b*.5],tp=[bx+N[i][0]*s*L-T[i][0]*L*.55,by+N[i][1]*s*L-T[i][1]*L*.55];
         d+=`M${svF(a1[0])},${svF(a1[1])}Q${svF(bx+N[i][0]*s*L*.35+T[i][0]*b*.1)},${svF(by+N[i][1]*s*L*.35+T[i][1]*b*.1)} ${svF(tp[0])},${svF(tp[1])}Q${svF(bx+N[i][0]*s*L*.25-T[i][0]*b*.45)},${svF(by+N[i][1]*s*L*.25-T[i][1]*b*.45)} ${svF(a0[0])},${svF(a0[1])}Z`}
       else if(h<.75){const o2=(pxHashS(k,13,sd)*2-1)*.75*w,cx=C[i][0]+N[i][0]*o2,cy=C[i][1]+N[i][1]*o2,rl=W0*.2,rw=W0*.11,an=Math.atan2(T[i][1],T[i][0])*180/Math.PI;
         ds+=`M${svF(cx-T[i][0]*rl)},${svF(cy-T[i][1]*rl)}A${svF(rl)},${svF(rw)} ${svF(an)} 1,0 ${svF(cx+T[i][0]*rl)},${svF(cy+T[i][1]*rl)}A${svF(rl)},${svF(rw)} ${svF(an)} 1,0 ${svF(cx-T[i][0]*rl)},${svF(cy-T[i][1]*rl)}Z`}}
-    if(d){const id='rt'+(gid++),gr=E('linearGradient',{id,x1:0,y1:1,x2:1,y2:0},GDEF||defs);stops(gr,[[0,P.col[0]],[.55,mix(P.col[0],P.col[1],.6)],[1,P.col[1]]]);
+    if(d&&lean)E('path',{d,fill:mix(P.col[0],P.col[1],.55),stroke:mix(P.col[1],'#2a1408',.5),'stroke-width':svF(W0*.03),'stroke-opacity':.6},g);
+    else if(d){const id='rt'+(gid++),gr=E('linearGradient',{id,x1:0,y1:1,x2:1,y2:0},GDEF||defs);stops(gr,[[0,P.col[0]],[.55,mix(P.col[0],P.col[1],.6)],[1,P.col[1]]]);
       E('path',{d,fill:`url(#${id})`,stroke:mix(P.col[1],'#2a1408',.5),'stroke-width':svF(W0*.03),'stroke-opacity':.6},g)}
     if(ds)E('path',{d:ds,fill:P.scar,stroke:P.scarE,'stroke-width':svF(W0*.025),'stroke-opacity':.5},cg)}}
+/* ---------- y3-rose2.js: the garden rose's heart on the rose kit (svRose, y3-rose.js): quarters and a button eye ----------
+   A full cupped rose (garden-look florist roses, garden roses, old roses) does not keep a high furled cone: its many short petals stand in a ball
+   inside the cup of the outer ones, and as the head ages the heart parts into quarters (three to five fans of folded petals, a radial furrow
+   between them, photographs Toffee, Pierre de Ronsard 191, 196, Augusta Luise 179, 180), sometimes round a button eye (the innermost petals
+   tiny and folded in over the centre). Both are a petal hook (svRose's qmod): each petal q is reshaped by its rank f, its place round the head
+   and the head's genes (qn quarters, qk strength, qr their turn, eye 0..1), so any rose sort reuses it with its own parameters:
+   ROSA_ASP (y-rosa.js, rose-aspect-jardin) now, the rosette garden rose next. */
+const SVROSE2_Q={
+  /* the ranks that part into quarters (from f0, over fw), how strongly by age: svSm((op + decK.dec - at0)/at1), the bud never */
+  f0:.3,fw:.25,at:[.6,.45],decK:.6,
+  /* a quarter is a small rosette of its own: its centre at rq x R0 from the axis (on the middle of its sector), its petals set round that centre
+     over spread radians (the sector's petals spread round it: the inner ranks closer, r0 x rr), nested round it (conc kept, x conK), each a little
+     longer in the quarter's middle (lift), the heart lowered (drop x R0) */
+  rq:.26,spread:2.6,rr:.5,conK:1,lift:.25,drop:.06,
+  /* the furrow between two quarters (Toffee 149, Pierre de Ronsard 191, 196: a dark radial suture): the petals at a sector's edge (|s| beyond
+     furS) sunk by fur x R0 and shortened by furL, so the gap shows the dark depth of the heart */
+  fur:0,furL:0,furS:.55,
+  /* its petals stand up round their own centre: the angles of the spine blended toward a0q, a1q (radians from the axis) */
+  a0q:.32,a1q:-.22,
+  /* the button eye: the ranks beyond f (over fw) short (L), folded in over the centre (a1, radians from the axis: negative = inward), low */
+  eye:{f:.86,fw:.1,L:.42,a1:-1.15,a0:.05,z:.05,r:.5}};
+function svRose2Quarter(o){const Q=Object.assign({},SVROSE2_Q,o||{}),E2=Object.assign({},SVROSE2_Q.eye,(o&&o.eye)||{});
+  return(q,c)=>{const g=c.g,f=q.f,nb=1-c.bud;if(nb<=0)return;
+    /* the button eye first: its petals are the innermost, a knot of small petals bent in over the centre */
+    const ee=(g.eye||0)*svSm((f-E2.f)/E2.fw)*nb;
+    if(ee>0){q.L*=1-(1-E2.L)*ee;q.a1=q.a1+(E2.a1-q.a1)*ee;q.a0=q.a0+(E2.a0-q.a0)*ee;q.z0-=c.R0*E2.z*ee;q.r0*=1-E2.r*ee;q.roll*=1-ee;q.conc*=1-.5*ee}
+    const k=(g.qk==null?1:g.qk)*svSm((c.op+Q.decK*(c.dec||0)-Q.at[0])/Q.at[1])*svSm((f-Q.f0)/Q.fw)*nb*(1-ee);if(k<=.001)return;
+    const n=Math.max(2,g.qn||4),SC=Q.irr&&typeof svRose3Sec==='function'?svRose3Sec(g,n,Q.irr,Q.bend||0):null;let sec=2*Math.PI/n,rot=g.qr||0,rk=1;
+    /* irregular quarters (svRose3Sec): this petal's own sector, of its own width */if(SC){const j=SC.at(q.phi);rot=SC.a[j];sec=SC.a[j+1]-SC.a[j];rk=SC.rk[j]}
+    let d=(q.phi-rot)%(SC?2*Math.PI:sec);if(d<0)d+=SC?2*Math.PI:sec;d-=sec/2;const s=Math.max(-1,Math.min(1,d/(sec/2))),m=1-Math.abs(s),cq=q.phi-d;
+    /* the petal moves to its quarter's centre and turns round it */
+    q.phi+=s*(Q.spread-sec/2)*k;q.cx=Math.cos(cq)*c.R0*Q.rq*rk*k;q.cy=Math.sin(cq)*c.R0*Q.rq*rk*k;q.r0*=1-(1-Q.rr)*k;q.conc=Math.min(1,q.conc*(1+(Q.conK-1)*k));
+    q.z0-=c.R0*Q.drop*k;if(Q.fur||Q.furL){const e=svSm((Math.abs(s)-Q.furS)/(1-Q.furS))*k;q.z0-=c.R0*Q.fur*e;q.L*=1-Q.furL*e}q.L*=1+Q.lift*k*(m-.35);q.a0+=(Q.a0q-q.a0)*k;q.a1+=(Q.a1q-q.a1)*k}}
+/* ---------- y3-rose3.js: the quartered garden rose's sutures on the rose kit (svRose, y3-rose.js; quarters: svRose2Quarter, y3-rose2.js) ----------
+   An old rose seen from above (Charles de Mills 94, 103, Mme Hardy 118, Koenigin von Daenemark 177, Jacques Cartier 68): its flat heart parts
+   into three to five quarters, each a fan of short folded petals round its own centre, and between two quarters runs a dark crease from the
+   eye toward the rim. svRose2Quarter sinks the petals at a sector's edge; the crease itself is drawn here, as a thin strip lying on the heart
+   along each sector's border, sorted in depth with the petals (the quarters' middles rise over its edges, a front outer petal patches over it
+   on a three-quarter view). It is a heart hook of svRose (P.heart): svRose3Sutures(o) returns it; it draws nothing on the bud or a head seen
+   from behind, and fades as the head fades. o: the strip from r0 to r1 (x R0) from the axis, its half width w (x R0) widest at wm, its height
+   z (x R0) on the heart dipping by zr toward the rim, its darkness (op, the heart's shade mixed toward deep by dk), its age at [start, span]
+   (op + decK x dec), like the quarters'. */
+/* Irregular quarters (irr > 0; the photographs: Mme Hardy 118, Charles de Mills 94 never part into equal sectors): the head's quarters get
+   unequal widths (irr), their borders bend along the radius (bend, radians at x = r/R0 = .5, an S by a second term) and their centres sit at
+   unequal distances; all from a hash of the head (g.sd), cached on the genes. svRose3Sec(g,n,irr,bend) -> {a: borders' angles at the axis
+   (n+1, the last = the first + 2 pi), b(j,x): border j's angle at x, at(phi): the quarter j holding angle phi near the axis, rk: centres' radius factors} */
+function svRose3Sec(g,n,irr,bend){const key=n+':'+irr+':'+bend;if(g._s3&&g._s3.key===key)return g._s3;const sd=g.sd||1,rot=g.qr||0,w=[];let tw=0;
+  for(let j=0;j<n;j++){const x=1+irr*(pxHashS(j,41,sd)-.5)*1.6;w.push(x);tw+=x}const a=[rot];for(let j=0;j<n;j++)a.push(a[j]+2*Math.PI*w[j]/tw);
+  const bw=[],bs=[],rk=[];for(let j=0;j<=n;j++){bw.push(bend*(pxHashS(j%n,43,sd)-.5)*2);bs.push(bend*.6*(pxHashS(j%n,47,sd)-.5)*2)}
+  for(let j=0;j<n;j++)rk.push(1+irr*.5*(pxHashS(j,53,sd)-.5));
+  const b=(j,x)=>a[j]+bw[j]*4*x*x+bs[j]*Math.sin(Math.PI*Math.min(1,x/.55)),
+    at=phi=>{let d=(phi-a[0])%(2*Math.PI);if(d<0)d+=2*Math.PI;for(let j=0;j<n;j++)if(d<a[j+1]-a[0])return j;return n-1};
+  return g._s3={key,a,b,at,rk}}
+const SVROSE3_SUT={r0:.05,r1:.6,w:.035,wm:.35,z:.3,zr:-.06,op:.8,dk:.35,deep:'#1a0a0c',at:[.42,.35],decK:.6,nv:7};
+function svRose3Sutures(o){const Q=Object.assign({},SVROSE3_SUT,o||{});
+  return c=>{const{B,O,R0,g,cw,op,bud,dec,fan,items}=c;if(bud>.2||toV(B,[0,0,1])[2]<-.05)return;
+    const k=(g.qk==null?1:g.qk)*svSm((op+Q.decK*(dec||0)-Q.at[0])/Q.at[1])*(1-bud)*(1-(1-(Q.fk||0))*svSm((fan||0)/.6));if(k<.05)return;
+    const n=Math.max(2,g.qn||4),sec=2*Math.PI/n,rot=g.qr||0,col=mix(mix(cw.shade,'#3a2014',(Q.fk||0)*svSm((fan||0)/.6)),Q.deep,Q.dk),SC=Q.irr?svRose3Sec(g,n,Q.irr,Q.bend||0):null;
+    for(let j=0;j<n;j++){const a=SC?SC.a[j]:rot+j*sec+.12*(pxHashS(j,5,g.sd||1)-.5),ca=Math.cos(a),sa=Math.sin(a),
+        /* the crease bends a little, as the folded petals push it (a hash of the head and the border) */bw=.18*(pxHashS(j,9,g.sd||1)-.5),
+        r0j=Q.r0*(SC?.6+.9*pxHashS(j,59,g.sd||1):1),Sf=(u,v)=>{const r=R0*(r0j+(Q.r1-r0j)*v),b=SC?SC.b(j,r/R0):a+bw*v*v,hw=R0*Q.w*k*Math.pow(v<Q.wm?Math.sin(Math.PI/2*v/Q.wm):Math.cos(Math.PI/2*(v-Q.wm)/(1-Q.wm)),.8)+R0*.004,
+          cb=Math.cos(b),sb=Math.sin(b);return[cb*r-sb*hw*u,sb*r+cb*hw*u,R0*(Q.z+Q.zr*v)]},
+        px=svSheet(B,O,Sf,{nu:2,nv:Q.nv});
+      items.push(Object.assign(svrFn(k2=>{const L=[],Rr=[],nv=DET<1.5&&Q.lo?Math.min(Q.nv,4):Q.nv;for(let i=0;i<=nv;i++){const v=i/nv;L.push(PJ(B,O,Sf(-1,v)));Rr.push(PJ(B,O,Sf(1,v)))}
+        const pts=L.concat(Rr.reverse()).map(p=>[p[0],p[1]]);E('path',{d:svSpl(pts),fill:col,'fill-opacity':Q.op*k},k2)},px,R0*.01),{sut:1}))}}}
+/* The quarters themselves (Mme Hardy 118, Charles de Mills 94, Souvenir de la Malmaison): each quarter is a group of short petals folded down
+   toward its own centre, so from above it reads as petal margins lying in a spiral round that centre, their ends running into the creases.
+   svRose3Rings(o) is a heart hook that lays them on the flat heart: per quarter its floor (one path: the heart's tone, dk darker, bounded by
+   rho x R0 round the quarter's centre, rq x R0 out on the sector's middle), then S margins round the centre (radius from rho down to rho x
+   (1-shrink), turned by the golden angle, each spanning sp radians): the shadow under each margin (one path for all, sh) and the lit lips
+   (one path for all, th thick, lip lighter). Every point is squeezed softly into its sector (gap x R0 from the crease) and inside r1 x R0,
+   on a low dome (z, dome x R0). Three paths a quarter. Fades as the sutures do. */
+const SVROSE3_RG={fh:.55,rq:.3,rho:.26,fl:1.15,S:9,shrink:.85,sp:[.8,1.25],th:.05,sh:.035,gap:.025,r1:.52,z:.42,dome:.1,dk:.25,lip:.3,shOp:.5,jit:.06,at:[.42,.35],decK:.6,nt:9};
+function svRose3Rings(o){const Q=Object.assign({},SVROSE3_RG,o||{}),ss=(x,p)=>x/Math.pow(1+Math.pow(Math.abs(x),p),1/p);
+  return c=>{const{B,O,R0,g,cw,op,bud,dec,fan,items}=c;if(bud>.2||toV(B,[0,0,1])[2]<-.05)return;
+    const k=(g.qk==null?1:g.qk)*svSm((op+Q.decK*(dec||0)-Q.at[0])/Q.at[1])*(1-bud)*(1-(1-(Q.fk||0))*svSm((fan||0)/.6));if(k<.05)return;
+    const n=Math.max(2,g.qn||4),sec=2*Math.PI/n,rot=g.qr||0,sd=g.sd||1,fr=cw.fr,base=fr[fr.length-1][1],mid=(fr.find(x=>x[0]>=.6)||fr[fr.length-1])[1],
+      R1=R0*Q.r1,fz=(Q.fk||0)*svSm((fan||0)/.6),tone=mix(mix(mix(mid,base,.5),cw.shade,Q.dk*k),'#5a3622',.6*fz),lipC=mix(tone,mix(cw.lite||'#ffffff','#b89878',fz),Q.lip*(1-.4*fz)),shC=mix(cw.shade,'#000000',.2+.3*fz),
+      SC=Q.irr?svRose3Sec(g,n,Q.irr,Q.bend||0):null,
+      /* the sector of quarter j at radius r: its middle angle and half width (bent borders when irregular) */
+      sw=(j,r)=>{if(!SC){const cq=rot+(j+.5)*sec;return[cq,sec/2]}const x=Math.min(r,R1)/R0,lo=SC.b(j,x),hi=SC.b(j+1,x)+(j+1===n?0:0);return[(lo+hi)/2,(hi-lo)/2]},
+      pt=(j,r,an)=>{const[cm,hs]=sw(j,r);let da=an-cm;da=Math.atan2(Math.sin(da),Math.cos(da));const m=Math.max(.05,hs-Q.gap*R0/Math.max(r,R0*.03)),a=cm+m*ss(da/m,4),rr=R1*ss(r/R1,6),h=1-(rr/R1)*(rr/R1);
+        return[Math.cos(a)*rr,Math.sin(a)*rr,R0*(Q.z+Q.dome*h)]},
+      P2=(j,x,y)=>{const p=PJ(B,O,pt(j,Math.hypot(x,y),Math.atan2(y,x)));return[p[0],p[1]]};
+    for(let j=0;j<n;j++){const cq0=sw(j,R0*Q.rq)[0],cq=SC?cq0+.25*(sw(j,R0*Q.rq)[1])*(pxHashS(j,61,sd)-.5):cq0,rqj=Q.rq*(SC?SC.rk[j]:1),Cx=Math.cos(cq)*R0*rqj,Cy=Math.sin(cq)*R0*rqj,th0=6.28*pxHashS(j,17,sd),
+        Sf=(u,v)=>{const r=R1*(.08+.92*v),[cm,hs]=sw(j,r);return pt(j,r,cm+u*hs)},px=svSheet(B,O,Sf,{nu:2,nv:4});
+      /* arc mode (Q.arc; Mme Hardy 118, Charles de Mills 94, Souvenir de la Malmaison): the quarter is its whole SECTOR filled to the cup's rim, its
+         short petals folded over as open arcs spanning the sector from fold to fold (bowed toward the rim, their ends tucked down into the folds),
+         nested from the rim toward the eye, none closed round a centre; each quarter its own count, bow, tilt and tone (no repeated motif) */
+      if(Q.arc){const hq=(i,s)=>pxHashS(j*29+i,s,sd),bow=Q.arc[0]+(Q.arc[1]-Q.arc[0])*hq(0,71),tilt=(hq(0,73)-.5)*Q.arc[2];let tq=mix(tone,cw.shade,.16*hq(0,79)*k);
+        /* soft (Q.soft [floor, lip, shadow]): the quarters in the petals' own tone, read by folds and shades, never by dark floors (BP 3.6):
+           the floor the body's tone a little shaded, the lips lit toward lite, the shade under a lip between the shade and the floor */
+        let lC=lipC,sC=shC;if(Q.soft){const s=Q.soft,m0=mix(mid,fr[0][1],.5);tq=mix(mix(m0,cw.shade,s[0]*(.75+.5*hq(0,79))*k),'#5a3622',.6*fz);lC=mix(m0,cw.lite||'#ffffff',s[1]);sC=mix(cw.shade,tq,s[2])}
+        items.push(Object.assign(svrFn(k2=>{const lo=DET<1.5,nt=lo?5:11,nS=Math.max(4,Math.round((lo?Q.S*(Q.lo||.7):Q.S)*(.8+.4*hq(0,83)))),SP=(u,v)=>{const p=PJ(B,O,Sf(u,v));return[p[0],p[1]]};
+          const so=[];for(let t=0;t<=nt;t++)so.push(SP(-1+2*t/nt,1));for(let t=nt;t>=0;t-=2)so.push(SP(-1+2*t/nt,.02));E('path',{d:svSpl(so),fill:tq},k2);
+          let dS='',dL='',dI='';
+          /* one fold: the arc from u0 to u1 at depth v (its middle bowed out by bw), a lens back toward the eye from d0 to d1 (v units) */
+          const arc=(v,u0,u1,bw,d0,d1)=>{const A=[],Bk=[];for(let t=0;t<=nt;t++){const s=t/nt,u=u0+(u1-u0)*s,b=.18+.82*Math.pow(Math.sin(Math.PI*s),.7),x=(2*s-1),vv=v+bw*(1-x*x)+tilt*u+(Q.wav||0)*.5*Math.sin(Math.PI*s*(Q.wn||3)+v*9)*b;
+              A.push(SP(u,Math.min(1,vv-d0*b)));Bk.push(SP(u,Math.max(.01,vv-d1*b)))}return svSpl(A.concat(Bk.reverse()))};
+          const gv=[];let gs=0;for(let i=0;i<nS;i++){const gg=.45+1.1*hq(i+1,23);gv.push(gs+gg);gs+=gg}
+          for(let i=0;i<nS;i++){const x=i/Math.max(1,nS-1),h1=hq(i+1,11),h2=hq(i+1,19),v=.97-.86*Math.pow(gv[i]/gs,.85),
+              c0=(h2-.5)*.9*(1-.4*x),hl=(.45+.5*h1)*(1-.2*x),u0=Math.max(-.92,c0-hl),u1=Math.min(.92,c0+hl),bw=bow*(1-.5*x)*(.7+.6*h2),th=Q.th*2.4*(.6+.4*(1-x));
+            dS+=arc(v-th*.4,u0,u1,bw,0,Q.sh*2.6+th*.6);if(x>.55)dI+=arc(v,u0+.04,u1-.04,bw,0,th);else dL+=arc(v,u0+.04,u1-.04,bw,0,th)}
+          E('path',{d:dS,fill:sC,'fill-opacity':Q.shOp*k},k2);E('path',{d:dL,fill:lC},k2);if(dI)E('path',{d:dI,fill:mix(lC,tq,.45)},k2)},px,R0*.01),{sut:1}));continue}
+      items.push(Object.assign(svrFn(k2=>{const fl=[];
+        const nF=DET<1.5&&Q.lo?12:20;for(let t=0;t<nF;t++){const a=t/nF*6.283,w=1+Q.jit*Math.sin(2*a+th0)+Q.jit*Math.sin(3*a+2*th0);fl.push(P2(j,Cx+Math.cos(a)*R0*Q.rho*Q.fl*w,Cy+Math.sin(a)*R0*Q.rho*Q.fl*w))}
+        E("path",{d:svSpl(fl),fill:tone},k2);let dS='',dL='';
+        /* below DET 1.5 fewer margins, of fewer points (the budget) */const lo=DET<1.5,nt=lo?Math.max(4,Q.nt-4):Q.nt,nS=lo?Math.round(Q.S*(Q.lo||.7)):Q.S;
+        /* a margin: the arc at radius r from a-s to a+s round the centre, and back along r - d x bump (a lens) */
+        const lens=(r,a,s,d0,d1)=>{const A=[],Bk=[];for(let t=0;t<=nt;t++){const u=t/nt,b=Math.sin(Math.PI*u),aa=a-s+2*s*u,ca=Math.cos(aa),sa=Math.sin(aa);
+            const wv=1+(Q.wav||0)*Math.sin(Math.PI*u*(Q.wn||3)+a*3.7)*b;A.push(P2(j,Cx+ca*(r*wv-d0*b),Cy+sa*(r*wv-d0*b)));Bk.push(P2(j,Cx+ca*(r*wv-d1*b),Cy+sa*(r*wv-d1*b)))}return svSpl(A.concat(Bk.reverse()))};
+        for(let i=0;i<nS;i++){const u=i/Math.max(1,nS-1),h1=pxHashS(j*13+i,11,sd),h2=pxHashS(j*13+i,19,sd),r=R0*Q.rho*(1-Q.shrink*u)*(1+Q.jit*(h1-.5)),
+            a=th0+i*2.39996+.4*(h2-.5),s=Q.sp[0]+(Q.sp[1]-Q.sp[0])*h1,th=R0*Q.th*(.55+.45*(1-u));
+          dS+=lens(r-th*.4,a,s*1.02,0,R0*Q.sh+th*.6);dL+=lens(r,a,s,0,th)}
+        E('path',{d:dS,fill:shC,'fill-opacity':Q.shOp*k},k2);E('path',{d:dL,fill:lipC},k2)},px,R0*.01),{sut:1}))}}}
+/* the heart's petals under the quarters: once the quarters are laid (svRose3Rings, same age law), the ranks beyond fh would only poke through
+   them (and cost elements), so the petal hook base (svRose2Quarter) is followed by q.skip on those ranks (svRose draws no piece for them) */
+function svRose3Under(base,o){const Q=Object.assign({},SVROSE3_RG,o||{});
+  return(q,c)=>{if(base)base(q,c);const g=c.g;if(q.f<=Q.fh||c.bud>.2)return;
+    const k=(g.qk==null?1:g.qk)*svSm((c.op+Q.decK*(c.dec||0)-Q.at[0])/Q.at[1])*(1-c.bud)*(1-(1-(Q.fk||0))*svSm((c.fan||0)/.6));if(k>=.05)q.skip=1}}
 /* ---------- y3-rosette.js: the double rosette (svRosette), a kit piece for every flower of many petals on a spiral ----------
    Double ranunculi, peonies, roses, camellias: dozens of spoon-shaped petals, from the outermost (rank f = 0) to the heart (f = 1), on one spiral
    (the golden angle) or in staggered whorls; each petal cupped across in a true arc and incurved along its length, tight and folded over the heart
@@ -29881,19 +30022,21 @@ function svrDraw(par,items,P,cw,Dm,tol,lf={}){const k=G(par),dd=GDEF||defs,hi=DE
     /* a kind's own layer on the piece (e.xd: the rose's margin band, flames), cut the same way, so that a patch never shows the bare piece */
     if(e.xd)for(const x of e.xd)E('path',Object.assign({},x,{'clip-path':`url(#${pc})`}),k);
     /* lf.pedge: the patch carries the piece's outline too (a patch without it reads as a plate pasted on) */
-    if(lf.pedge&&!SVR_OFF.includes('edge'))E('path',{d:e.d,fill:'none',stroke:e.mt.edge||e.mt.shade,'stroke-width':ew,'stroke-opacity':eA,'stroke-linejoin':'round','clip-path':`url(#${pc})`},k)}};
+    if(lf.pedge&&e.mt&&e.d&&!SVR_OFF.includes('edge'))E('path',{d:e.d,fill:'none',stroke:e.mt.edge||e.mt.shade,'stroke-width':ew,'stroke-opacity':eA,'stroke-linejoin':'round','clip-path':`url(#${pc})`},k)}};
   if(lf.core)E('path',{d:lf.core[0],fill:lf.core[1]},k);
   /* lf.patchLate: each run's patches go over its washes and rims (else a piece's shades and margins, drawn after it, show through the piece
      patched in front of it) */
   const drawRun=(run,ri)=>{
     if(run[0].kind==='fn'){const it=run[0];it.fn(it.pid?G(k,{id:it.pid}):k);patch(it);return}
+    /* lf.lclip: the run's lines (edge, rims, veins, pleats) clipped to its pieces' fills (by reference: no path copied), so that no stroke runs on past a petal into the void */
+    let lcid=null;const lgr=()=>{if(!lf.lclip||run[0].grp!=='p')return k;if(!lcid){lcid='sl'+(gid++);const cp=E('clipPath',{id:lcid},dd);for(const it of run)E('use',{href:'#'+(it.pid||it.lid)},cp)}return G(k,{'clip-path':`url(#${lcid})`})};
     const mt=run[0].mt,gk=run[0].gk||0,so=P.shd[2]*(1-P.shdB*(lf.bud||0))*(lf.shK==null?1:lf.shK);
     /* the shadow this run casts on what lies behind it */
     if(hid&&ri>0&&so>.01&&!SVR_OFF.includes('shadow')){let d='';for(const it of run)if(hi||(it.bb[2]-it.bb[0])+(it.bb[3]-it.bb[1])>Dm*P.wmin)d+=svSpl(svSimp(it.out.map(p=>[p[0]+ox,p[1]+oy]),tol*(hi?3:6)));svrSt('shadow',d);E('path',{d,fill:mt.cast,'fill-opacity':so,filter:svBlur(Dm*P.shd[1]),'clip-path':`url(#${hid})`},k)}
     /* the run's pieces in one group carrying their edge (a thin dark stroke; the young bud's green reaches it, and its margins) */
     const ea={stroke:gk?mix(mt.edge||mt.shade,mix(P.greenC,'#0e1a06',.65),gk):mt.edge||mt.shade,'stroke-width':ew,'stroke-opacity':SVR_OFF.includes('edge')?0:eA,'stroke-linejoin':'round'},
       rg=zHid?G(k):G(k,ea);
-    for(const it of run){svrSt('petal',it.d);const a={d:it.d,fill:it.tone};if(it.pid)a.id=it.pid;if(zHid&&!it.ouv)Object.assign(a,ea);E('path',a,rg);if(!lf.patchLate)patch(it)}
+    for(const it of run){svrSt('petal',it.d);const a={d:it.d,fill:it.tone};if(it.pid)a.id=it.pid;else if(lf.lclip&&run[0].grp==='p')a.id=it.lid='sl'+(gid++);if(zHid&&!it.ouv)Object.assign(a,ea);E('path',a,rg);if(!lf.patchLate)patch(it)}
     /* under zvis the edge: the outline's runs where the piece is the nearest surface (sampled twice between the outline's points) */
     if(zHid&&!SVR_OFF.includes('edge')){let d='';for(const it of run){if(!it.ouv)continue;const n=it.ouv.length,pts=[],vs=[];
         for(let i=0;i<n;i++){const a=it.ouv[i],b=it.ouv[(i+1)%n];for(const t of[0,.5]){const u=a[0]+(b[0]-a[0])*t,v=a[1]+(b[1]-a[1])*t,p=t?svAt(it.sh,u,v):it.out[i];pts.push(p);vs.push(!zHid(it,p[0],p[1],svLerp(it.sh,it.sh.Z,u,v)))}}
@@ -29901,7 +30044,7 @@ function svrDraw(par,items,P,cw,Dm,tol,lf={}){const k=G(par),dd=GDEF||defs,hi=DE
         const m=pts.length;for(let i=0;i<m;i++)if(!vs[i]&&vs[(i+m-1)%m]&&vs[(i+1)%m])vs[i]=2;let s0=vs.indexOf(false);if(s0<0){d+=svSpl(svSimp(pts,tol));continue}let r=[];
         const fl=()=>{let L=0;for(let i=1;i<r.length;i++)L+=Math.hypot(r[i][0]-r[i-1][0],r[i][1]-r[i-1][1]);if(r.length>1&&L>Dm*(P.eMin||.03))d+=svSpl(svSimpO(r,tol),false);r=[]};
         for(let i=1;i<=m;i++){const q=(s0+i)%m;if(vs[q])r.push(pts[q]);else fl()}fl()}
-      svrSt('edge',d);if(d)E('path',Object.assign({d,fill:'none','stroke-linecap':'round'},ea),k)}
+      svrSt('edge',d);if(d)E('path',Object.assign({d,fill:'none','stroke-linecap':'round'},ea),lgr())}
     if(LOD||SVR_OFF.includes('wash'))return;
     /* what the later pieces of the run hide of each one (its grid's vertices, then any point) */
     const hid2=(j,x,y)=>{for(let m=j+1;m<run.length;m++){const b=run[m].bb;if(x<b[0]||x>b[2]||y<b[1]||y>b[3])continue;if(svrIn(run[m].out,x,y))return true}return false};
@@ -29918,6 +30061,7 @@ function svrDraw(par,items,P,cw,Dm,tol,lf={}){const k=G(par),dd=GDEF||defs,hi=DE
     let wk=k;if(lf.wclip){const cid='sw'+(gid++);E('path',{d:run.map(it=>it.d).join('')},E('clipPath',{id:cid},dd));wk=G(k,{'clip-path':`url(#${cid})`})}
     const wg=G(wk,{filter:svBlur(Dm*P.wb*(lf.wbK||1))});P.aoV[hi?1:0].forEach(lv=>foot(lv,P.aoA[hi?1:0]));for(const lv of P.dark[hi?1:0])wash(lv,mt.shade,P.da[hi?1:0]*(lf.daK==null?1:lf.daK),1);for(const lv of P.lit[hi?1:0])wash(lv,mt.lite,P.la[hi?1:0],0);
     if(SVR_OFF.includes('rim'))return;
+    const lk=lgr();
     /* the paler margin (the inner face's, fainter on a back), and the veins in close-ups */
     const runsOf=(it,j,pl,face,inO)=>{const out=[];let r=[];for(const[u,v]of pl){const p=svAt(it.sh,u,v);if(face*it.s>0&&svLerp(it.sh,it.sh.F,u,v)*it.s>.02&&!(zHid&&it.ouv?zHid(it,p[0],p[1],svLerp(it.sh,it.sh.Z,u,v)):hid2(j,p[0],p[1]))&&(!inO||svrIn(it.out,p[0],p[1])))r.push(p);else{if(r.length>1)out.push(r);r=[]}}if(r.length>1)out.push(r);return out};
     /* the spoon's crease: a soft shade down the middle of each inner face, where nothing of the run covers it (one blurred path per run) */
@@ -29929,17 +30073,17 @@ function svrDraw(par,items,P,cw,Dm,tol,lf={}){const k=G(par),dd=GDEF||defs,hi=DE
     const rimL=[];for(let q=0;q<=3;q++)rimL.push([-.975,.55+.43*q/3]);for(let q=1;q<10;q++)rimL.push([-1+2*q/10,.975]);for(let q=3;q>=0;q--)rimL.push([.975,.55+.43*q/3]);
     for(const face of[1,-1]){let d='';run.forEach((it,j)=>{for(const r of runsOf(it,j,rimL,face))d+=svSpl(svSimpO(r,tol*(hi?1:2)),false)});
       svrSt('rim',d);const bw=Math.min(1,P.edgeB[0]*(lf.dec||0)+P.edgeB[1]*(lf.fan||0)),rc0=face>0?mt.rim:mt.brim||mt.rim,rc=gk?mix(rc0,mix(P.greenC,'#f4f8e0',.45),gk):rc0;
-      if(d)E('path',{d,fill:'none',stroke:bw>0?mix(rc,P.brown,bw):rc,'stroke-width':svF(Dm*(mt.rimW||P.rimW)*(1+P.edgeBW*bw)*(lf.rimK==null?1:lf.rimK)),'stroke-opacity':face>0?mt.rimA||P.rimA:P.brimA,'stroke-linecap':'round','stroke-linejoin':'round'},k)}
+      if(d)E('path',{d,fill:'none',stroke:bw>0?mix(rc,P.brown,bw):rc,'stroke-width':svF(Dm*(mt.rimW||P.rimW)*(1+P.edgeBW*bw)*(lf.rimK==null?1:lf.rimK)),'stroke-opacity':face>0?mt.rimA||P.rimA:P.brimA,'stroke-linecap':'round','stroke-linejoin':'round'},lk)}
     if((hi||mt.veinLo)&&mt.vein){let d='';run.forEach((it,j)=>{for(const u of mt.veinU||[-.62,-.3,0,.3,.62]){const pl=[];for(let q=0;q<=6;q++)pl.push([u*(.3+.7*svSm(q/4)),.06+.8*q/6]);for(const r of runsOf(it,j,pl,1,P.midIn))d+=svQuad(r)}});
-      if(d)E('path',{d,fill:'none',stroke:mt.vein,'stroke-width':svF(Dm*(mt.veinW||P.veinW)),'stroke-opacity':mt.veinA||P.veinA,'stroke-linecap':'round'},k)}
+      if(d)E('path',{d,fill:'none',stroke:mt.vein,'stroke-width':svF(Dm*(mt.veinW||P.veinW)),'stroke-opacity':mt.veinA||P.veinA,'stroke-linecap':'round'},lk)}
     /* lf.pleat {n [lo, hi], len [min, max] of the length from the tip, w, c, a, lc, la}: a dried piece's creases along its length, from its
        margin inward, on whichever face is seen (a dark fold and a faint lit ridge beside it), uneven in place and length */
     if(lf.pleat&&lf.pleat.a>.01&&!SVR_OFF.includes('pleat')){const Q=lf.pleat,n=Q.n[hi?1:0];let d='',dl='';run.forEach((it,j)=>{if(it.grp!=='p'||!big(it))return;const sd=Math.round(it.f*97)+3;
         for(let m=0;m<n;m++){const u0=-.82+1.64*(m+.5+.7*(pxHashS(m,7,sd)-.5))/n,ln=Q.len[0]+(Q.len[1]-Q.len[0])*pxHashS(m,11,sd),wv=.05*(pxHashS(m,13,sd)-.5),pl=[],pr=[];
-          for(let q=0;q<=6;q++){const v=.97-ln*q/6,u=u0*(1-.25*(q/6))+wv*Math.sin(q*1.3+m);pl.push([u,v]);pr.push([u+.035,v])}
+          for(let q=0;q<=6;q++){const v=(Q.v0||.97)-ln*q/6,u=u0*(1-.25*(q/6))+wv*Math.sin(q*1.3+m);pl.push([u,v]);pr.push([u+.035,v])}
           for(const r of runsOf(it,j,pl,it.s,1))d+=svQuad(r);if(Q.la>.01)for(const r of runsOf(it,j,pr,it.s,1))dl+=svQuad(r)}});svrSt('pleat',d+dl);
-      if(dl)E('path',{d:dl,fill:'none',stroke:Q.lc,'stroke-width':svF(Dm*Q.w*.8),'stroke-opacity':Q.la,'stroke-linecap':'round'},k);
-      if(d)E('path',{d,fill:'none',stroke:Q.c,'stroke-width':svF(Dm*Q.w),'stroke-opacity':Q.a,'stroke-linecap':'round'},k)}};
+      if(dl)E('path',{d:dl,fill:'none',stroke:Q.lc,'stroke-width':svF(Dm*Q.w*.8),'stroke-opacity':Q.la,'stroke-linecap':'round'},lk);
+      if(d)E('path',{d,fill:'none',stroke:Q.c,'stroke-width':svF(Dm*Q.w),'stroke-opacity':Q.a,'stroke-linecap':'round'},lk)}};
   runs.forEach((run,ri)=>{drawRun(run,ri);if(lf.patchLate&&run[0].kind!=='fn')for(const it of run)patch(it)});
   return k}
 
@@ -32560,14 +32704,14 @@ const ROSA_STD_CWX={
   poudre:{c:'#d29aa4',base:'#cf7881',tip:'#c8acb1'},
   rose:{c:'#f6609e',base:'#f8569c',tip:'#f67cc2'},
   'vieux-rose':{c:'#cd7c97',base:'#da748f',tip:'#827877'},
-  'rose-vif':{c:'#d3273f',base:'#e21a51',tip:'#db4262'},
+  'rose-vif':{c:'#d9456d',base:'#d65a82',tip:'#c0416c'},
   fuchsia:{},
   cerise:{c:'#f7295d',base:'#eb083b',tip:'#f5327c'},
-  peche:{c:'#ffb190',base:'#ffad7f',tip:'#f7a990'},
+  peche:{c:'#eca590',base:'#eab09b',tip:'#d68d72'},
   abricot:{c:'#ff8e4d',base:'#ff8646',tip:'#ffaa70'},
   saumon:{c:'#ff7075',base:'#ff946f',tip:'#ff7873'},
   corail:{c:'#ef5d57',base:'#f95253',tip:'#ee7f66'},
-  jaune:{c:'#fccc53',base:'#ffd57e',tip:'#e5ce63'},
+  jaune:{c:'#f8cc45',base:'#f0d57a',tip:'#e9bb2e'},
   'jaune-pale':{c:'#fed988',base:'#f1d7a4',tip:'#f7d795'},
   rouge:{c:'#9c0f36',base:'#8b242d',tip:'#a20714'},
   'rouge-velours':{c:'#88343f',base:'#7e283c',tip:'#903c43'},
@@ -32586,7 +32730,7 @@ const ROSA_STD_BQ=Object.assign({},ROSA_STD,{noTip:1});
 function rosaSvg(par,B,O,D,cwId,op,seed,wl,S,bent){S=S||ROSA_STD;if(S.pick)S=S.pick(seed);const sid=S.sid||ROSA_SID,cwx=S.cwl().find(x=>x.id===cwId)||{id:cwId,c:'#c8183a'};
   /* the rose has no GHI card (one would change how the composer treats it, e5.js recInfo): its head wilts by its own colours here, whatever
      filter the bouquet or the sheet has set (lifeCol, svaWiltCol), at the head's own life */
-  const w=wl==null?rosaLife(null,sid):wl,W0=typeof WILT!=='undefined'?WILT:null;if(w>0&&typeof lifeWilt==='function')WILT=lifeWilt(w,rosaWiltCol,sid);
+  const w=wl==null?rosaLife(null,sid):wl,W0=typeof WILT!=='undefined'?WILT:null;if(w>0&&typeof lifeWilt==='function')WILT=lifeWilt(w,S.wilt||rosaWiltCol,sid);
   try{return svRose(par,B,O,D*(S.dK||1),S,cwx,op,seed,w,bent)}finally{WILT=W0}}
 SV_HEAD[ROSA_SID]=rosaSvg;
 if(typeof GHI!=='undefined'&&GHI[ROSA_SID])GHI[ROSA_SID].wilt=rosaWiltCol;
@@ -32612,7 +32756,7 @@ function rosaNeck(par,B,O,D,seed,wl,S){const tip=SVROSE_DEF.tip.reduce((a,[k2,x0
   /* the crook's end hangs at af from the upright (to the side), whatever the stem's own lean a0 there: the neck turns by af - a0 */
   const a0=Math.atan2(side*t0[0],t0[1]),af=Math.min(2.95,tip*1.75),
     A=[0,0,-side],th=crook?Math.max(.05,af-a0):Math.min(2.45,tip*1.45),n=crook?16:12,w=D*.05,
-    cs=S&&S.sid===ROSA_INT_SID?ROSA_INT_SVSC:ROSA_SVSC,hv=S&&S.noTip&&!crook?0:svSm((th-1.2)/.9),
+    cs=S&&S.svsc?S.svsc:S&&S.sid===ROSA_INT_SID?ROSA_INT_SVSC:ROSA_SVSC,hv=S&&S.noTip&&!crook?0:svSm((th-1.2)/.9),
     r=crook?Math.max(D*(.36+.12*pxHashS(sd,11,5))*Math.min(1,tip/.5)/th,hv*(D*.47*Math.max(0,-Math.cos(af))+w*1.6)/Math.max(.3,Math.cos(a0)-Math.cos(af)))
       :Math.max(D*(.36+.12*pxHashS(sd,11,5))*Math.min(1,tip/.5)/th,hv*D*Math.max(0,.62-.32*Math.sin(th))/Math.max(.3,1-Math.cos(th))),Ln=r*th;
   /* the head's frame turned onto that line (its own roll kept), then bowed with the neck */
@@ -32624,24 +32768,39 @@ function rosaNeck(par,B,O,D,seed,wl,S){const tip=SVROSE_DEF.tip.reduce((a,[k2,x0
   svStemLine(par,C,W,cs);return{B:Bs.map(v=>rotA(v,A,th)),O:p}}
 /* the leaves of the plant being drawn (rosaLeafSv): where they leave the stem and toward where, for the crook to turn away from them */
 const ROSA_LV=[];let ROSA_HG=null;
-function rosaSvgPut(par,B,O,D,cw,op,o,S){S=S||ROSA_STD_BQ;if(!SV_ON||!cw||!cw.id)return false;const x=rnd(),k=S.sid===ROSA_SID?'':S.sid,sd=svSeed('rose'+k,cw.id,Math.floor(x*1e6)),wl=rosaLife(o,S.sid),
+/* the composer measures a bouquet's head (c5.js getBBox: a head near the rim is raised and drawn again, new draws of chance). A card with okd
+   (the old drawing's kind) hands it the old head's box: the old hip and head drawn in a scratch group (their one draw of chance kept for the
+   seed), measured, thrown away, and an invisible rectangle left in their place; the SVG head is then drawn out of the measure (rosaObMark) */
+function rosaOldBox(par,B,O,D,cw,op,S){const r0=rnd;let x0=null;rnd=()=>{const v=r0();if(x0===null)x0=v;return v};const tmp=G(par),g0=GDEF;GDEF=document.createElementNS('http://www.w3.org/2000/svg','g');let b=null;
+  try{roseHip(tmp,B,O,D);roseFlower(tmp,B,O,D,cw,op,S.okd);const q=tmp.getBBox();if(q.width||q.height)b=q}catch(_){b=null}finally{rnd=r0;GDEF=g0;tmp.remove()}
+  if(x0===null)x0=rnd();if(b)E('rect',{x:f(b.x),y:f(b.y),width:f(b.width),height:f(b.height),fill:'none',stroke:'none'},par);return{x:x0,b}}
+/* the SVG head drawn whole, out of the composer's measure: inside a marker (getBBox leaves markers out) set on a point of zero length at the old
+   box's centre, its content in the head's own coordinates (refX, refY = that point); without an old box, or without defs, a plain group */
+function rosaObMark(par,b,draw){const dh=GDEF;if(!b||!dh){draw(G(par));return}const cx=b.x+b.width/2,cy=b.y+b.height/2,id='rjm'+(gid++),
+  m=E('marker',{id,markerUnits:'userSpaceOnUse',markerWidth:1,markerHeight:1,refX:f(cx),refY:f(cy),orient:0,overflow:'visible'},dh);draw(G(m));
+  E('path',{d:`M${f(cx)},${f(cy)}h0`,fill:'none',stroke:'none','marker-start':`url(#${id})`},par)}
+function rosaSvgPut(par,B,O,D,cw,op,o,S){S=S||ROSA_STD_BQ;if(!SV_ON||!cw||!cw.id)return false;const sheet0=typeof SVA_LIFE!=='undefined'&&SVA_LIFE!=null,ob=S.okd&&!sheet0?rosaOldBox(par,B,O,D,cw,op,S):null;
+  if(ob){const sd=svSeed('rose'+S.sid,cw.id,Math.floor(ob.x*1e6)),wl=rosaLife(o,S.sid);rosaObMark(par,ob.b,g=>{const nk=rosaNeck(g,B,O,D,sd,wl,S);rosaSvg(g,nk?nk.B:B,nk?nk.O:O,D,cw.id,op,sd,wl,S,!!nk)});ROSA_HG=null;return true}
+  const x=rnd(),k=S.sid===ROSA_SID?'':S.sid,sd=svSeed('rose'+k,cw.id,Math.floor(x*1e6)),wl=rosaLife(o,S.sid),
     sheet=typeof SVA_LIFE!=='undefined'&&SVA_LIFE!=null,hg=sheet?G(par):par,nk=rosaNeck(hg,B,O,D,sd,wl,S);rosaSvg(hg,nk?nk.B:B,nk?nk.O:O,D,cw.id,op,sd,wl,S,!!nk);
   /* on a sheet the hanging head stays over the leaves drawn after it (their parts come later in depth order, rosaLeafSv slips them under) */
   ROSA_HG=sheet&&nk?hg:null;return true}
-function rosaBudSvgPut(par,B,O,s,cw,a,S){S=S||ROSA_STD_BQ;const x=rnd(),k=S.sid===ROSA_SID?'':S.sid;rosaSvg(par,B,O,s*1.3,cw.id,.03+.1*(a||0),svSeed('rose-bouton'+k,cw.id,Math.floor(x*1e6)),rosaLife(null,S.sid),S)}
+function rosaBudSvgPut(par,B,O,s,cw,a,S){S=S||ROSA_STD_BQ;const sheet0=typeof SVA_LIFE!=='undefined'&&SVA_LIFE!=null;
+  if(S.okd&&!sheet0){const ob=rosaOldBox(par,B,O,s,cw,.14,S);rosaObMark(par,ob.b,g=>rosaSvg(g,B,O,s*1.3,cw.id,.03+.1*(a||0),svSeed('rose-bouton'+S.sid,cw.id,Math.floor(ob.x*1e6)),rosaLife(null,S.sid),S));return}
+  const x=rnd(),k=S.sid===ROSA_SID?'':S.sid;rosaSvg(par,B,O,s*1.3,cw.id,.03+.1*(a||0),svSeed('rose-bouton'+k,cw.id,Math.floor(x*1e6)),rosaLife(null,S.sid),S)}
 /* the old leaf drawn into a detached group (its defs too) and thrown away: its chance (pinnateLeaf, and petS in each stemLeaf, which depends on
    the leaflets drawn) consumed exactly */
 function rosaOldLeaf(x,y,a,l,col,lf,opt){const dm=document.createElementNS('http://www.w3.org/2000/svg','g'),g0=GDEF;GDEF=dm;try{pinnateLeaf(dm,x,y,a,l,col,lf,opt)}finally{GDEF=g0}}
-const rosaLeafSv=(D,cw,o,sid,lk)=>{ROSA_LV.length=0;ROSA_HG=null;return(og,pos)=>{ROSA_LV.push({pos:pos.slice(),H:og.H.slice()});
+const rosaLeafSv=(D,cw,o,sid,lk,lo)=>{ROSA_LV.length=0;ROSA_HG=null;return(og,pos)=>{ROSA_LV.push({pos:pos.slice(),H:og.H.slice()});
   const pt=lsLeaf2D(og,pos,D*R(1.05,1.35),(par,x,y,a,l)=>{const nl=og.p.i>1?5:og.p.i===1&&rnd()<.5?3:5;
   rosaOldLeaf(x,y,a,l,'#2f5a26',nl,{w:.55,gloss:.45,side:.4});const s=svSeed('rose-feuille',cw.id,Math.round(x*8),Math.round(y*8),Math.round(l*8));
-  svRoseLeaf(par,x,y,a,l*(lk||1),{n:nl,wl:rosaLife(o,sid),sd:s,side:s%5===0?-.6:.7})});
+  svRoseLeaf(par,x,y,a,l*(lk||1),Object.assign({n:nl,wl:rosaLife(o,sid),sd:s,side:s%5===0?-.6:.7},lo))});
   /* a leaf drawn after the hanging head of a sheet goes under it (same order of drawing, so the same chance) */
   if(pt&&pt.fn){const f0=pt.fn;pt.fn=par=>{const hg=ROSA_HG;if(hg&&hg.parentNode===par){const t=G(par);par.insertBefore(t,hg);f0(t)}else f0(par)}}return pt}};
 /* the bouquet's stem leaf: s0.js draws no R before this hook (svNoR), the old pinnate leaf's chance is consumed here */
-function rosaStemLeafHook(sid,lk){if(typeof STEML==='undefined'||!STEML[sid])return;const sl=STEML[sid];sl.svNoR=1;sl.sheetY=.5;sl.sv=(par,x,y,a,l,q)=>{const nl=sl.lf||3;
+function rosaStemLeafHook(sid,lk,lo){if(typeof STEML==='undefined'||!STEML[sid])return;const sl=STEML[sid];sl.svNoR=1;sl.sheetY=.5;sl.sv=(par,x,y,a,l,q)=>{const nl=sl.lf||3;
   rosaOldLeaf(x,y,a,l,sl.col||'#3f6a2c',nl,{side:(q&&q.s||1)*.5,w:sl.w||.5,gloss:sl.gloss,teeth:sl.teeth});const s=svSeed('rose-feuille-tige',Math.round(x*8),Math.round(y*8),Math.round(l*8));
-  svRoseLeaf(par,x,y,a,l*(lk||1),{n:nl,wl:rosaLife(null,sid),sd:s,side:s%5===0?-.6:.7})};
+  svRoseLeaf(par,x,y,a,l*(lk||1),Object.assign({n:nl,wl:rosaLife(null,sid),sd:s,side:s%5===0?-.6:.7},lo))};
   /* the cut rose's upper third (photographs 1238, 1265, 1267, 1268, 1346): besides the leaf at the head's node, 1 to 3 more compound leaves,
      alternate, spaced 4 to 6.5 cm down the stem from the neck, never under the vessel's mouth; the foot stripped. Their number, places and
      sizes come from a hash of the stem's end (svRng): none of the bouquet's chance */
@@ -32653,7 +32812,7 @@ function rosaStemLeafHook(sid,lk){if(typeof STEML==='undefined'||!STEML[sid])ret
       if(c.qs.some(q2=>Math.abs(sOf(q2)-sOf(q))<2.5*UPC))continue;
       const p2=bz(P,Math.min(1,q+.02)),ta=Math.atan2(p2[1]-p[1],p2[0]-p[0]),ang=ta+side*(sl.up||38)*Math.PI/180*(.85+.3*r()),len=L0*(.85+.25*r())*(1-.1*k),
         sd=svSeed('rose-feuille-haut',sid,Math.round(p[0]*8),Math.round(p[1]*8)),wr=G(par);
-      svRoseLeaf(wr,p[0],p[1],ang,len*(lk||1),{n:r()<.3?3:5,wl:rosaLife(null,sid),sd,side:sd%5===0?-.6:.7});if(typeof growUp==='function')growUp(wr,p[0],p[1],Math.max(0,(c.t||0)-300),500);side=-side}}}
+      svRoseLeaf(wr,p[0],p[1],ang,len*(lk||1),Object.assign({n:r()<.3?3:5,wl:rosaLife(null,sid),sd,side:sd%5===0?-.6:.7},lo));if(typeof growUp==='function')growUp(wr,p[0],p[1],Math.max(0,(c.t||0)-300),500);side=-side}}}
 rosaStemLeafHook(ROSA_SID);
 /* the stem: smooth and glossy, reddening a little under the head; prickles on half the stems (the gene: a florist's stem thorny or dethorned) */
 const ROSA_SVSC=['#26401a','#4c7630','#86ac5a','#d6e8bc'];ROSA_SVSC.sv={swell:.022,gloss:.55,red:'#6e3a28',redF:.82,redA:.22,post:svRoseThorns({p:.5})};
@@ -32712,8 +32871,197 @@ SV_HEAD[ROSA_INT_SID]=(par,B,O,D,cwId,op,seed,wl)=>rosaSvg(par,B,O,D,cwId,op,see
 rosaStemLeafHook(ROSA_INT_SID,.92);
 /* the stem: a clearer, bluer green than the hybrid tea's (photographs 41, 42, 94: #2e6b2d at its middle), mostly dethorned */
 const ROSA_INT_SVSC=['#1c3e18','#2f6c2c','#5f9a48','#c4e0a8'];ROSA_INT_SVSC.sv={swell:.02,gloss:.6,red:'#5e3a26',redF:.86,redA:.14,post:svRoseThorns({p:.3})};
+/* ---------- rose-aspect-jardin: florist's roses with a garden rose's look (SKU 46 to 67), a full round cup ----------
+   After the photographs (refcache/rose-aspect-jardin: Yves Piaget 123, 133, Toffee 149, 150, Sahara 78, 79, Pierre de Ronsard 163 to 201,
+   Augusta Luise 176 to 180, Garden Caramel Antike 187; measures in REFERENCES.md): a broad round cup, wider than high, of many short round
+   petals (45 to 60 here; 60 and more on the garden roses themselves), the outer ones cupped round the ball, only the outermost two or three
+   rolling back at their tips; no high cone: the heart stands as a low dome of incurved petals inside the cup, then with age parts into quarters
+   round a button eye on some heads (svRose2Quarter, y3-rose2.js). The bud is round, blunt topped, widest at its middle, in long sepals with
+   leafy appendages. The stem is thorny (a cut garden-look rose keeps most of its prickles), the leaves matte, their underside pale and dull.
+   Its fading after the photographs of the bouquets (Cafe Latte 160, Sahara Sensation 162: the petals crumple and brown at their margins, the cup
+   sags open) and the hybrid tea's bent neck (1396, 590). Colours: the catalogue's (CW_RASP, ids and order unchanged) until the finishing
+   writes the measured ones into ROSA_ASP_CWX; the structure of the bicolours (an eye, a heart, a green margin) is in ROSA_ASP_ST. */
+const ROSA_ASP_SID='rose-aspect-jardin';
+const ROSA_ASP_GENES={n:[[46,.25],[52,.45],[58,.3]],
+  tep:Object.assign({},ROSA_GENES.tep,{wav:[.03,.08],tip:[1.9,2.6],dL:[.86,1.1],roll:[.7,1.2]}),late:ROSA_GENES.late,
+  head:Object.assign({},ROSA_GENES.head,{qn:[3,5,'r'],qk:[.45,1],qr:[0,6.28],eye:[.6,1,.45]})};
+/* the measured colours by colourway (fleur-finition fills them, coloris.md): c = body, base = the outer ranks, tip = the heart; an empty entry keeps
+   the catalogue's colour */
+/* v2 (finishing): the measured colourways (refcache/rose-aspect-jardin/coloris.md): c = the lit body of the petal, base = the outer ranks, tip = the heart.
+   Median of the named photographs (light backgrounds first; the black backgrounds of the FSQ sleeves warm the hue), hue within 10 degrees LCh of the
+   photographs, lightness free; the doubtful measures were decided by eye on the photographs (46, 50, 52, 56, 58, 59, 62, 64, 65, 67). lvl C = drawn but
+   not for the shop (fewer than 3 cultivars or one source). The late:10 ones (magenta, jaune-bord-rouge, then the C ones) are added to CW_RASP. */
+const ROSA_ASP_CWX={
+  blanc:{c:'#eeeadf',base:'#e6e1d0',tip:'#e9dfc2',c2:null}, /* 46 Blanc nacré lvl C */
+  creme:{c:'#ead0a0',base:'#eed8b0',tip:'#e2bd8a',c2:null}, /* 47 Crème lvl C */
+  champagne:{c:'#d2a888',base:'#c9a07e',tip:'#b88f68',c2:null}, /* 48 Champagne sable lvl C */
+  'rose-pale':{c:'#eabbbb',base:'#eac3bd',tip:'#d9a0a4',c2:null}, /* 49 Rose pâle lvl B */
+  rose:{c:'#e583ac',base:'#dd7aa0',tip:'#c46a88',c2:null}, /* 50 Rose moyen lvl C */
+  bonbon:{c:'#ef9ba5',base:'#e68592',tip:'#d68a9a',c2:null}, /* 51 Rose bonbon lvl B */
+  'rose-vif':{c:'#d84475',base:'#d65a84',tip:'#c0416e',c2:null}, /* 52 Rose vif lvl B */
+  peche:{c:'#e8a58a',base:'#e8b09a',tip:'#d68d70',c2:null}, /* 53 Pêche lvl B */
+  mandarin:{c:'#f27826',base:'#f26e1c',tip:'#e0661c',c2:null}, /* 54 Orange à cœur vert lvl C */
+  abricot:{c:'#f09462',base:'#e88850',tip:'#e48552',c2:null}, /* 55 Abricot lvl B */
+  corail:{c:'#ec6a58',base:'#e05a46',tip:'#d9584a',c2:null}, /* 56 Corail lvl B */
+  orange:{c:'#ee7a3e',base:'#ed6c30',tip:'#d9622c',c2:null}, /* 57 Orange lvl B */
+  sunset:{c:'#ee8058',base:'#f09a74',tip:'#e8873a',c2:null}, /* 58 Orange à cœur jaune lvl B */
+  moutarde:{c:'#e8b43c',base:'#e8c46a',tip:'#dca02a',c2:null}, /* 59 Jaune doré lvl C */
+  jaune:{c:'#f2d044',base:'#efd777',tip:'#e9bd2c',c2:null}, /* 60 Jaune lvl B */
+  cramoisi:{c:'#bd152c',base:'#a40f26',tip:'#a8132c',c2:null}, /* 61 Rouge cramoisi lvl B */
+  lavande:{c:'#c496b6',base:'#b886aa',tip:'#a67297',c2:null}, /* 62 Lavande lvl B */
+  lilas:{c:'#cab6c2',base:'#b79fb3',tip:'#bca7b9',c2:null}, /* 63 Gris lilas lvl C */
+  vert:{c:'#d3dc78',base:'#c6d26a',tip:'#b9c654',c2:null}, /* 64 Vert tendre lvl C */
+  terre:{c:'#d19a82',base:'#cf9c86',tip:'#b9805e',c2:null}, /* 65 Caramel café lvl B */
+  'free-spirit':{c:'#ee8650',base:'#f09a64',tip:'#c8553a',c2:null}, /* 66 Cuivre multicolore lvl B */
+  'rose-vert':{c:'#e8c4c0',base:'#e6dcc0',tip:'#d3949e',c2:null}, /* 67 Rose bordé de vert lvl B */
+  magenta:{c:'#d23f84',base:'#c44283',tip:'#b83a70',c2:null}, /* late:10 Magenta intense lvl B */
+  'jaune-bord-rouge':{c:'#ebae4e',base:'#e8bf5a',tip:'#dc9a34',c2:null}, /* late:10 Jaune bordé de rouge lvl B */
+  'mauve-taupe':{c:'#ccb0a7',base:'#bf9f98',tip:'#a88079',c2:null}, /* late:10 Mauve gris taupe lvl C */
+  'blanc-coeur-vert':{c:'#efeee0',base:'#e6e8d4',tip:'#d6dcb8',c2:null}, /* late:10 Blanc à cœur vert lvl C */
+  chocolat:{c:'#a34543',base:'#8a3a34',tip:'#722c2a',c2:null}, /* late:10 Brun chocolat lvl C */
+  'rose-bord-blanc':{c:'#e0587f',base:'#e87a9a',tip:'#c4406a',c2:null}, /* late:10 Rose à bordure blanche lvl C */
+};
+/* the structure of the bicolours and shaded ones (not their colours): eye = the button eye's colour mixed into the innermost ranks (green eye),
+   heartF = where the heart's colour (c2) starts by rank, band = a margin of another colour on the outer ranks [colour, width, opacity, up to rank] */
+const ROSA_ASP_ST={mandarin:{eye:'#a9bd6e'},sunset:{heartF:.3},'free-spirit':{heartF:.2,band:['#c0583a',.22,.55,.5]},'rose-vert':{band:['#c2cf92',.24,.8,.55]},
+  vert:{eye:'#b4c482'},'jaune-bord-rouge':{band:['#d8502c',.2,.6,.55]},'blanc-coeur-vert':{eye:'#8fae5a'},'rose-bord-blanc':{band:['#f2bcc8',.3,.85,.7]}};
+function rosaAspMat(cw){return rosaStMat(cw,'asp:',ROSA_ASP_CWX,ROSA_ASP_ST)}
+/* the faded colours of the garden-look rose, after the bouquets photographed to day 10 (Cafe Latte 160: mauve caramel to mauve brown #9f6662,
+   margins #7d4542; Sahara Sensation 162: apricot beige to buff #c2a17d, margins browner; Quicksand 156: beige mauve to grey mauve): the pinks
+   and mauves dull toward a dusty mauve then a mauve brown (never the crimson's wine), the pale warm ones (peach, apricot, cream, champagne,
+   caramel) toward buff then a light brown; the reds, yellows, greens and whites by the hybrid tea's rule. v2: a grey lilac (chroma .06 to .12: Mammy Blue, Quicksand 156) also goes dusty mauve, not cream */
+function rosaAspWiltCol(c,w){if(w<=0||typeof c!=='string'||c.length!==7||c[0]!=='#')return c;const[h,s,l]=h2l(c);
+  if(s>.06&&l>.45&&l<.93&&(h>=290||h<12)){let o=mix(c,'#b8909c',.5*Math.min(1,w/.5));o=mix(o,'#8e646c',.6*svSm((w-.4)/.4));return mix(o,'#5e4044',.3*svSm((w-.75)/.25))}
+  if(s>.12&&l>.55&&l<.93&&h>=12&&h<50){let o=mix(c,'#d2b292',.5*Math.min(1,w/.5));o=mix(o,'#a8845e',.55*svSm((w-.4)/.4));return mix(o,'#6e5034',.3*svSm((w-.75)/.25))}
+  return rosaWiltCol(c,w)}
+const ROSA_ASP_RG={arc:[.06,.15,.12],th:.075,S:8,rho:.3,rq:.29,fl:1.35,lip:.45,dk:.15,soft:[.3,.35,.4],shOp:.3,sh:.028,gap:.008,irr:.7,bend:.22,jit:.13,wav:.02,wn:2,fk:0,lo:.55};
+const ROSA_ASP={sid:ROSA_ASP_SID,dK:1.1,cwl:()=>typeof CW_RASP!=='undefined'?CW_RASP:[],genes:s=>svGenes(s,ROSA_ASP_GENES),mat:rosaAspMat,wilt:rosaAspWiltCol,life:()=>rosaLife(null,ROSA_ASP_SID),
+  /* short round petals, broad, the heart low inside the cup */
+  L:[[0,.94],[.3,.88],[.6,.8],[.85,.68],[1,.58]],W:[[0,1.22],[.3,1.18],[.6,1.04],[.85,.86],[1,.72]],r0:[[0,.2],[.4,.16],[.8,.1],[1,.05]],
+  z0:[[0,-.04],[.4,.06],[.8,.2],[1,.28]],tipF:[[0,1.25],[.5,1.4],[1,1.5]],
+  /* deep cupped petals; the outermost roll back at their tips only */
+  cupo:[[0,.6],[.3,.82],[.6,1],[1,1.15]],rollc:[[0,.4],[.4,.1],[1,0]],rollo:[[0,.65],[.12,.3],[.3,.06],[.5,0],[1,0]],
+  /* the bowl seen in profile as a ball (Pierre de Ronsard 165, 171, 190, 195: width over height 1 to 1.2): feet spread out, the guard petals'
+     tips barely flared (no flat wings), the inner ones curved in over a dome that reaches the rim */
+  a0o:[[0,.8],[.12,.72],[.3,.62],[.5,.52],[.75,.42],[1,.3]],a1o:[[0,.5],[.12,.18],[.3,-.12],[.5,-.3],[.75,-.45],[1,-.5]],
+  oLaw:[.3,.4,.5,.55],coneB:null,
+  /* the round bud, blunt, widest at its middle */
+  budH:[.58,.4],budR:.42,budK:1.15,budE:[.04,.86],budP:.72,
+  /* long sepals with leafy appendages */
+  sep:Object.assign({},SVROSE_DEF.sep,{L:.95,W:.27,lob:[2,2,1,0,0],lobA:1}),stN:[40,64],
+  /* ruffled, crumpling as it fades */
+  crk:[.05,.025],wav:[.5,1.6,.5],edgeB:[.3,.4],edgeBW:.6,peelP:.06,peel:[.14,.28],pmax:[12,24],
+  /* the faded head stays full longer (Cafe Latte 160, Sahara Sensation 162 at day 10: a crumpled full cup, few petals fallen): fewer petals shed,
+     later, the outer ones limp and curled back much less than the hybrid tea's (else they hang past the calyx in two flat lobes); with fifty petals the dry outlines and pleats lighter than the hybrid tea's (else a scribbled ball) */
+  shed:[.78,.2],shedF:.2,limp:[.35,.1],rev:[.1,.08],curl:[.05,.06],fanM:Object.assign({},SVROSE_DEF.fanM,{bk:1,bkP:.35,lt:.85,ltP:.35,ea:.3,ew:1,edgeK:.25,dryW:.5,dryB:.015,curl:.12,lclip:1,pleat:Object.assign({},SVROSE_DEF.fanM.pleat,{a:.12,w:.0042,c:null,v0:.86,n:[2,4]})}),
+  /* the heart darker toward the axis and the quarters parted by sunk furrows (dark sutures, Toffee 149, Pierre de Ronsard 191, 196) */
+  /* v3: the quarters read from the front as the garden rose's (y3-rose3.js): the petals parted round four centres, laid over as margins with
+     soft creases (Q.soft: floors in the petal's own body tone), the heart's own ranks beyond fh dropped under them */
+  heartSh:.55,qmod:typeof svRose3Under==='function'?svRose3Under(svRose2Quarter({fur:.3,furL:.55,furS:.3,rq:.36,at:[.42,.35],f0:.15,spread:3.4,rr:.4,conK:1.4,irr:.7,bend:.22}),{fh:.4,fk:0}):null,
+  heart:typeof svRose3Rings==='function'?svRose3Rings(ROSA_ASP_RG):null};
+const ROSA_ASP_BQ=Object.assign({},ROSA_ASP,{noTip:1});
+SV_HEAD[ROSA_ASP_SID]=(par,B,O,D,cwId,op,seed,wl)=>rosaSvg(par,B,O,D,cwId,op,seed,wl,ROSA_ASP);
+/* matte leaves: little shine on the upper face, a dull grey-green underside */
+const ROSA_ASP_LEAF={lean:.45,up:'#34552a',upL:'#55784a',upD:'#1e3418',low:'#86997a',lowL:'#a3b196',vein:'#7f9a6c',veinLow:'#bccab0'};
+rosaStemLeafHook(ROSA_ASP_SID,1,ROSA_ASP_LEAF);
+/* the stem: thorny on most stems, a little duller than the hybrid tea's */
+const ROSA_ASP_SVSC=['#263f1a','#46702e','#7ca356','#cfe0b4'];ROSA_ASP_SVSC.sv={lean:1,swell:.025,gloss:.42,red:'#6e3a28',redF:.8,redA:.24,post:svRoseThorns({p:.78,step:[4,8],lean:1.7})};
+ROSA_ASP.svsc=ROSA_ASP_SVSC;ROSA_ASP_BQ.svsc=ROSA_ASP_SVSC;
+/* ---------- the garden rose (rose-de-jardin: old roses and their kind, Souvenir de la Malmaison, Mme Hardy, Charles de Mills, Ispahan, Mme Pierre
+   Oger, Jacques Cartier, Reine des Violettes, Comte de Chambord, Koenigin von Daenemark) ----------
+   A cup that opens into a FLAT rosette: very many short petals packed tight (more than the garden-look rose), the heart filling the cup up to its rim
+   and parting into three to five sharp quarters (dark sutures between them), often round a button eye (the innermost petals folded in over the
+   centre, green on Mme Hardy); the outer petals stay a cup round them, their margins waving. A round bud under long feathery sepals, a thorny cut
+   stem, matte compound leaves. Fading (Mme Pierre Oger 49): the cup sags open, the petals crumple and brown at their margins, then FALL (a few
+   petals and the heart remain), the neck bends. Colours: the catalogue's (CW_RJAR, ids and order unchanged) until the finishing writes the measured
+   ones into ROSA_JAR_CWX; the structure of the bicolours and shaded ones is in ROSA_JAR_ST. */
+const ROSA_JAR_SID='rose-de-jardin';
+const ROSA_JAR_RG={arc:[.06,.15,.12],th:.075,S:8,rho:.3,rq:.29,fl:1.35,lip:.45,dk:.15,soft:[.3,.35,.4],shOp:.3,sh:.028,gap:.008,irr:.7,bend:.22,jit:.13,wav:.02,wn:2,fk:0,lo:.55};
+const ROSA_JAR_GENES={n:[[68,.3],[76,.45],[84,.25]],
+  tep:Object.assign({},ROSA_GENES.tep,{wav:[.04,.1],tip:[2,2.8],dL:[.86,1.12],roll:[.6,1.1]}),late:ROSA_GENES.late,
+  head:Object.assign({},ROSA_GENES.head,{qn:[3,5,'r'],qk:[.8,1],qr:[0,6.28],eye:[.6,1,.55]})};
+/* the measured colours by colourway (fleur-finition fills them): c = the lit body of the petal, base = the outer ranks, tip = the heart; an empty
+   entry keeps the catalogue's colour. Ids and order of CW_RJAR (SKU 68 to 92) */
+const ROSA_JAR_CWX={
+  /* v2 (finishing): the measured colourways (refcache/rose-de-jardin/coloris.md): c = the lit body of the petal, base = the outer ranks, tip = the heart.
+     Hue within 10 degrees LCh of the photographs (light backgrounds first), lightness free; the doubtful measures were decided by eye on the
+     photographs (68, 69, 71, 74, 75, 77, 78, 79, 80, 81, 82, 85, 86, 87, 91, 92). lvl C = drawn but not for the shop. 88 and 89 have no proof (lvl D):
+     the catalogue's colour stays. The late:10 ones are added to CW_RJAR. */
+  'blanc-creme':{c:'#eee6d6',base:'#e0d8c2',tip:'#e6d6ae',c2:null}, /* 68 lvl B */
+  ivoire:{c:'#efe6cf',base:'#e4d9bc',tip:'#ecdcb6',c2:null}, /* 69 lvl B (near 68) */
+  beurre:{c:'#f0e4a8',base:'#e6d484',tip:'#ecc864',c2:null}, /* 70 lvl C */
+  blush:{c:'#f1d8d6',base:'#ecd2cc',tip:'#e0aaac',c2:null}, /* 71 lvl B */
+  'rose-pale':{c:'#ebc2d0',base:'#eed0d6',tip:'#dc9aab',c2:null}, /* 72 lvl C */
+  dragee:{c:'#f4b4c4',base:'#f4bfcc',tip:'#e8809c',c2:null}, /* 73 lvl C */
+  rose:{c:'#e07aa6',base:'#e690ac',tip:'#cf6a92',c2:null}, /* 74 lvl B (Misaki pink; Meivility is the lilac-edged white of 91) */
+  'vieux-rose':{c:'#d9a898',base:'#e0b4a4',tip:'#d49478',c2:null}, /* 75 lvl C (Moon Dust: salmon taupe, not rose) */
+  magenta:{c:'#cf4a8e',base:'#d65a9c',tip:'#b92a6c',c2:null}, /* 76 lvl B */
+  fuchsia:{c:'#d6086a',base:'#dc3a84',tip:'#a8024f',c2:null}, /* 77 lvl B */
+  peche:{c:'#eebc9e',base:'#f0c8b0',tip:'#e2a085',c2:null}, /* 78 lvl B */
+  abricot:{c:'#eaa95a',base:'#eec088',tip:'#e09a48',c2:null}, /* 79 lvl B */
+  corail:{c:'#ec7466',base:'#f08a7c',tip:'#d9503e',c2:null}, /* 80 lvl C (2 cultivars) */
+  orange:{c:'#e5663f',base:'#dc5a46',tip:'#f08a44',c2:null}, /* 81 lvl C (Vuvuzela: red orange) */
+  citron:{c:'#efe1a0',base:'#e8ecc0',tip:'#d6b050',c2:null}, /* 82 lvl C */
+  moutarde:{c:'#e2b030',base:'#e8c050',tip:'#d09418',c2:null}, /* 83 lvl C */
+  caramel:{c:'#d6a678',base:'#dcb890',tip:'#bd8458',c2:null}, /* 84 lvl B */
+  sable:{c:'#dccfbc',base:'#e4d8ce',tip:'#c8b4a6',c2:null}, /* 85 lvl C (taupe ivory, no green seen) */
+  rouge:{c:'#cc1634',base:'#c8203c',tip:'#a00c28',c2:null}, /* 86 lvl C */
+  cramoisi:{c:'#a8082a',base:'#b0102e',tip:'#860220',c2:null}, /* 87 lvl C */
+  rouille:{}, /* 88 lvl D: no proof, the catalogue's colour */
+  lavande:{}, /* 89 lvl D: no proof, the catalogue's colour */
+  moka:{c:'#c99a98',base:'#d4acaa',tip:'#b47a72',c2:null}, /* 90 lvl B */
+  'creme-rose':{c:'#efdde3',base:'#f3e8e8',tip:'#d98ab0',c2:null}, /* 91 lvl B (Meivility: white, pink heart and fringe) */
+  'blanc-vert':{c:'#efeadb',base:'#e8ebd2',tip:'#e0dcc0',c2:null}, /* 92 lvl C */
+  'blanc-lisere-rose':{c:'#efe0e6',base:'#f0e6ea',tip:'#d86a9c',c2:null}, /* late:10 lvl C (Meivility again) */
+  'brique-nuance':{c:'#bf6a5c',base:'#c98a62',tip:'#a8483f',c2:null}, /* late:10 lvl C (Princess Pinku spray, one photo) */
+};
+/* the structure (not the colours): eye = the button eye's colour mixed into the innermost ranks, heartF = where the heart's colour (c2) starts by
+   rank, band = a margin of another colour on the outer ranks [colour, width, opacity, up to rank], cup = the outer ranks' colour (a green cup) */
+const ROSA_JAR_ST={citron:{cup:'#d8e2a8'},sable:{},'creme-rose':{band:['#dc7aa6',.22,.75,.65]},
+  'blanc-vert':{band:['#d2dcae',.2,.4,.55]},'vieux-rose':{heartF:.35},caramel:{heartF:.3},'blanc-lisere-rose':{band:['#d8609a',.28,.85,.7]},'brique-nuance':{heartF:.3,band:['#d6a45a',.2,.5,.6]}};
+/* a rose card's colours with its structure (the garden-look rose and the garden rose): K the cache key's prefix, X the measured colours, T the structure */
+function rosaStMat(cw,K0,X,T){const K=K0+cw.id;if(ROSA_M[K])return ROSA_M[K];const st=T[cw.id]||{},m=rosaMat(Object.assign({},cw,X[cw.id]||{}),K);
+  if(st.heartF!=null){const o=m.fr[0][1],i2=m.fr[m.fr.length-1][1],mid=m.fr.find(x=>x[0]>=.5)[1];m.fr=[[0,o],[st.heartF,mid],[Math.min(.95,st.heartF+.35),mix(mid,i2,.7)],[1,i2]];
+    m.bk=m.fr.map(([f,x])=>[f,mix(x,'#ffffff',.12)])}
+  if(st.eye){const i2=m.fr[m.fr.length-1][1];m.fr=m.fr.filter(x=>x[0]<.8).concat([[.82,i2],[.9,mix(i2,st.eye,.45)],[1,st.eye]]);m.bk=m.fr.map(([f,x])=>[f,mix(x,'#ffffff',.1)])}
+  if(st.cup){m.fr=[[0,st.cup],[.18,mix(st.cup,m.fr[1][1],.5)]].concat(m.fr.filter(x=>x[0]>=.3));m.bk=m.fr.map(([f,x])=>[f,mix(x,'#ffffff',.1)])}
+  if(st.band)m.band={c:st.band[0],w:st.band[1],op:st.band[2],b:.006,f:st.band[3],hk:0};
+  return m}
+const rosaJarMat=cw=>rosaStMat(cw,'jar:',ROSA_JAR_CWX,ROSA_JAR_ST);
+const ROSA_JAR={sid:ROSA_JAR_SID,dK:1.1,cwl:()=>typeof CW_RJAR!=='undefined'?CW_RJAR:[],genes:s=>svGenes(s,ROSA_JAR_GENES),mat:rosaJarMat,wilt:rosaAspWiltCol,life:()=>rosaLife(null,ROSA_JAR_SID),
+  /* short broad petals, the inner ones very short; the heart high, filling the cup to its rim (flat top) */
+  L:[[0,.86],[.1,.7],[.25,.52],[.5,.42],[.8,.36],[1,.3]],W:[[0,1.2],[.3,1.12],[.6,.98],[.85,.82],[1,.7]],r0:[[0,.22],[.2,.26],[.45,.22],[.7,.15],[1,.06]],
+  z0:[[0,-.04],[.2,.1],[.5,.2],[.8,.26],[1,.3]],tipF:[[0,1.3],[.5,1.5],[1,1.6]],
+  cupo:[[0,.55],[.3,.8],[.6,1],[1,1.15]],rollc:[[0,.35],[.4,.08],[1,0]],rollo:[[0,.55],[.12,.25],[.3,.05],[.5,0],[1,0]],
+  /* the open head a flat rosette: the outer petals spread wide (a shallow saucer), the inner ones standing up round their quarters' centres */
+  a0o:[[0,1.05],[.12,.9],[.3,.72],[.5,.58],[.75,.45],[1,.32]],a1o:[[0,.85],[.12,.5],[.3,.12],[.5,-.12],[.75,-.3],[1,-.4]],
+  oLaw:[.28,.36,.5,.5],coneB:null,
+  budH:[.56,.38],budR:.44,budK:1.12,budE:[.04,.86],budP:.75,
+  sep:Object.assign({},SVROSE_DEF.sep,{L:1,W:.26,lob:[2,2,1,0,0],lobA:1.1}),stN:[40,64],
+  edgeB:[.3,.4],edgeBW:.6,peelP:.04,peel:[.14,.28],pmax:[6,24],thin:[.2,2],
+  /* the fall (6.3): at .75 half the outer ranks stripped, at .9 a few narrow flat petals hanging apart round a crumpled heart (no bag: shedK .86,
+     fanK W .55 and cup .8, limpF 1 keeps the heart ranks up); each faded petal its own brown, kept faint (fanVar .3: no rust plates) */
+  shed:[.6,.22],shedF:.5,shedK:.86,fanVar:.3,limp:[.9,.2],limpF:1,rev:[.2,.6],curl:[.1,.45],rollD:[0,.4],wav:[.5,.5,1.2],crk:[.015,.07],fanK:[.1,.55,.8],
+  /* the faded lines fine and in the petal's own darkened tint, clipped to the petals (lclip), the creases stopping short of the margin (v0) */
+  fanM:Object.assign({},SVROSE_DEF.fanM,{bk:1,bkP:.35,ea:.42,ew:1,edgeK:.18,wb:.5,dryW:.6,dryB:.01,curl:.3,lclip:1,shLo:1,pleat:Object.assign({},SVROSE_DEF.fanM.pleat,{a:.13,w:.0042,c:null,v0:.86,n:[2,5],len:[.22,.5],laLo:0})}),
+  /* the quarters: the petals parted (svRose2Quarter), then laid over as margins round four centres with creases in a cross (svRose3Rings,
+     svRose3Sutures), the heart's own ranks beyond fh dropped under them (svRose3Under) */
+  heartSh:.3,qmod:typeof svRose3Under==='function'?svRose3Under(svRose2Quarter({fur:.3,furL:.55,furS:.3,rq:.36,at:[.42,.35],f0:.15,spread:3.4,rr:.4,conK:1.4,irr:.7,bend:.22}),{fh:.4,fk:0}):null,
+  heart:typeof svRose3Rings==='function'?(()=>{const h2=svRose3Rings(ROSA_JAR_RG);return c=>h2(c)})():null};
+const ROSA_JAR_BQ=Object.assign({},ROSA_JAR,{noTip:1,okd:'jar'});
+SV_HEAD[ROSA_JAR_SID]=(par,B,O,D,cwId,op,seed,wl)=>rosaSvg(par,B,O,D,cwId,op,seed,wl,ROSA_JAR);
+/* matte leaves, 5 to 7 leaflets, a dull grey-green underside */
+const ROSA_JAR_LEAF={lean:.45,up:'#36552c',upL:'#56764a',upD:'#1f3419',low:'#8a9b7e',lowL:'#a6b39a',vein:'#7f9a6c',veinLow:'#bccab0'};
+rosaStemLeafHook(ROSA_JAR_SID,1,ROSA_JAR_LEAF);
+/* the stem: thorny (garden roses are cut with their prickles), a little duller than the hybrid tea's */
+const ROSA_JAR_SVSC=['#263f1a','#44692c','#789e54','#cbdcb0'];ROSA_JAR_SVSC.sv={lean:1,swell:.03,gloss:.36,red:'#6e3a28',redF:.8,redA:.26,post:svRoseThorns({p:.9,step:[3.5,7],lean:1.7})};
+ROSA_JAR.svsc=ROSA_JAR_SVSC;ROSA_JAR_BQ.svsc=ROSA_JAR_SVSC;
+/* sheets only, for tuning: ?jarp={"thin":[0.5,2]} patches the garden rose's card (ROSA_JAR, ROSA_JAR_BQ) ; "q":{..} = the quarters' options */
+if(typeof location!=='undefined'){const m=/[?&]jarp=([^&]*)/.exec(location.search);if(m)try{const o=JSON.parse(decodeURIComponent(m[1]));if(o.q){o.qmod=svRose2Quarter(o.q);delete o.q}if(o.fh!=null){o.qmod=svRose3Under(o.qmod||ROSA_JAR.qmod,Object.assign({},o.rg||{},{fh:o.fh}));delete o.fh}if(o.su||o.rg){const h1=o.su?svRose3Sutures(o.su):null,h2=o.rg?svRose3Rings(o.rg):null;o.heart=c=>{if(h1)h1(c);if(h2)h2(c)};delete o.su;delete o.rg}if(o.fanMx){o.fanM=Object.assign({},ROSA_JAR.fanM,o.fanMx);delete o.fanMx}Object.assign(ROSA_JAR,o);Object.assign(ROSA_JAR_BQ,o)}catch(e){}}
 /* sheets only, for tuning: ?rosap={"limp":[0.5,0.2]} patches the rose card's defaults (SVROSE_DEF) before any head is drawn */
 if(typeof location!=='undefined'){const m=/[?&]rosap=([^&]*)/.exec(location.search);if(m)try{Object.assign(SVROSE_DEF,JSON.parse(decodeURIComponent(m[1])))}catch(e){}}
+/* sheets only, for tuning: ?aspp={"peelP":0} patches the garden-look rose's card (ROSA_ASP, ROSA_ASP_BQ) ; "q" quarters, "rg" rings heart, "fh" heart under, "fanMx" merged into fanM */
+if(typeof location!=='undefined'){const m=/[?&]aspp=([^&]*)/.exec(location.search);if(m)try{const o=JSON.parse(decodeURIComponent(m[1]));if(o.q){o.qmod=svRose2Quarter(o.q);delete o.q}if(o.fh!=null){o.qmod=svRose3Under(o.qmod||ROSA_ASP.qmod,Object.assign({},o.rg||{},{fh:o.fh}));delete o.fh}if(o.rg){o.heart=svRose3Rings(o.rg);delete o.rg}if(o.fanMx){o.fanM=Object.assign({},ROSA_ASP.fanM,o.fanMx);delete o.fanMx}Object.assign(ROSA_ASP,o);Object.assign(ROSA_ASP_BQ,o)}catch(e){}}
 /* ================= The genus Syringa in native SVG (y-syringa.js) =================
    One module per genus, one sheet per kind. The common lilac (Syringa vulgaris), sid 'lilas': the head is the whole inflorescence, a thyrse
    (panicle) drawn by the kit piece svPanicle (y3-panicule.js). Measured on photographs (refcache/lilas, targets.json): length over width about

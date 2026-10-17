@@ -41,3 +41,16 @@ relecture en gros plan : matière plate (aplats), profil en pomme de pin, fané 
 crosse ; fond sombre non vérifiable (sv.html ignore bg en mode bouquet).
 **Questions** : 1054 bleu teinté (garder ou retirer) ; 703 Bridezilla (nymphéa chez l'obtenteur) ; 711 « lilas lavande » ;
 1043 et 1055 en C ; séries sous marque présumée ; DutchGrown N2 ou N3 ; guide ADS (formulaire) ; budget à 55-65 Ko par tige.
+
+## Lot 2, roses de jardin (17 octobre 2026)
+
+| Sorte | Coloris | Preuves | Facture du chef | Retouches |
+|---|---|---|---|---|
+| rose-aspect-jardin | 22 + 6 ajoutés | 15 B, 7 C | 12,7 M | quartiers, plaques crème |
+| rose-de-jardin | 25 + 2 ajoutés | 11 B, 12 C, 2 D (88, 89) | 14,6 M | cœur en croix, déclin en éclats, fané en sac, traits grossiers (porteur) |
+
+**Imparfait** : tête seule fanée en « nœud papillon » de profil ; plante de 50 cm à 71-75 Ko à DET 1 (1,4 fois la cible) ;
+découpage des traits actif à DET 1.5 seulement. **Questions** : 88 et 89 (D) ; doublons 57/58 et 68/69 ; cultivars communs aux
+deux sortes ; noms sous ® (dénomination ou nom générique).
+**Incident** : le PC a planté vers 18 h 25 avec 4 chantiers en parallèle ; `fleur/bills.json` corrompu, restauré depuis git et
+marques du jour reconstruites (heures approchées notées dans le fichier).

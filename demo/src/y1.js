@@ -176,14 +176,16 @@ function svStemLine(par,C,Wd0,c){const n=C.length,g=G(par);if(n<2)return g;const
   /* a cut stem (sv.cut: the slant of the cut, as a tangent): its first end C[0] cut straight across or slanted, never rounded; a pale lip on the cut */
   const ct=sv.cut!=null;if(ct){const s=sv.cut*Wd[0]/2,m=out.length-1;out[0]=[out[0][0]+T[0][0]*s,out[0][1]+T[0][1]*s];out[m]=[out[m][0]-T[0][0]*s,out[m][1]-T[0][1]*s]}
   const od=ct?svSpl(svSimp(out,tol),false)+'Z':svSpl(svSimp(out,tol));E('path',{d:od,fill:c[1]},g);if(LOD)return g;
-  const id='sc'+(gid++);E('path',{d:od},E('clipPath',{id},GDEF||defs));const cg=G(g,{'clip-path':`url(#${id})`}),bg=G(cg,{filter:svBlur(W0*.16)});
-  E('path',{d:svSpl(svSimp(off(-1.4,-.25),tol)),fill:c[0],'fill-opacity':.85},bg);E('path',{d:svSpl(svSimp(off(-1.4,-.68),tol)),fill:c[0],'fill-opacity':.6},bg);
-  E('path',{d:svSpl(svSimp(off(.02,.62),tol)),fill:c[2],'fill-opacity':.8},bg);E('path',{d:svSpl(svSimp(off(.18,.42),tol)),fill:c[3],'fill-opacity':sv.gloss??.5},bg);
+  /* sv.lean (a plant's stem seen whole, below DET 1.5): one shaded wash inside the outline (no clip, no blur) instead of two, no gloss stripe,
+     no tint toward the head */
+  const lean=sv.lean&&DET<1.5;let cg=g,bg=g;if(!lean){const id='sc'+(gid++);E('path',{d:od},E('clipPath',{id},GDEF||defs));cg=G(g,{'clip-path':`url(#${id})`});bg=G(cg,{filter:svBlur(W0*.16)})}
+  E('path',{d:svSpl(svSimp(lean?off(-.97,-.3):off(-1.4,-.25),tol)),fill:c[0],'fill-opacity':lean?.7:.85},bg);if(!lean)E('path',{d:svSpl(svSimp(off(-1.4,-.68),tol)),fill:c[0],'fill-opacity':.6},bg);
+  E('path',{d:svSpl(svSimp(lean?off(.1,.55):off(.02,.62),tol)),fill:c[2],'fill-opacity':lean?.55:.8},bg);if(!lean)E('path',{d:svSpl(svSimp(off(.18,.42),tol)),fill:c[3],'fill-opacity':sv.gloss??.5},bg);
   /* fine striations along the stem (its ribs), darker on the shaded side */
   if(sv.ribs&&DET>=1){let d='';for(const f0 of sv.ribs)d+=svSpl(svSimpO(line(f0),tol),false);E('path',{d,fill:'none',stroke:c[0],'stroke-width':svF(Math.max(.06,W0*.05)),'stroke-opacity':.28},cg)}
   if(ct){const a=out[0],b=out[out.length-1];E('path',{d:'M'+svJ([svR(a[0]),svR(a[1])])+'L'+svJ([svR(b[0]),svR(b[1])]),fill:'none',stroke:sv.cutC||'#dde6c4','stroke-width':svF(Wd[0]*.34),'stroke-opacity':.9},cg)}
   /* the tint toward the head (only where a whole stem is drawn in one piece) */
-  if(sv.red){const a=C[0],b=C[n-1],gid2='sg'+(gid++),gr=E('linearGradient',{id:gid2,gradientUnits:'userSpaceOnUse',x1:svF(a[0]),y1:svF(a[1]),x2:svF(b[0]),y2:svF(b[1])},GDEF||defs);
+  if(sv.red&&!lean){const a=C[0],b=C[n-1],gid2='sg'+(gid++),gr=E('linearGradient',{id:gid2,gradientUnits:'userSpaceOnUse',x1:svF(a[0]),y1:svF(a[1]),x2:svF(b[0]),y2:svF(b[1])},GDEF||defs);
     const f0=sv.redF??.75;stops(gr,[[0,sv.red,0],[f0,sv.red,0],[1,sv.red,sv.redA??.45]]);E('path',{d:od,fill:`url(#${gid2})`},cg)}
   /* silky hairs pressed along the stem, leaning toward its end: many, fine, short, half transparent; on the silhouette they stand a little out of it, on the
      face they catch the light as a sheen */

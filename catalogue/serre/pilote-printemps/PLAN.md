@@ -234,6 +234,9 @@ par sorte), en groupant les sortes qui partagent une pièce du kit. Bilan : `cat
 - **Lot 2, capitules doubles publié** : dahlia décoratif (SKU 703-720, 23 coloris dont 5 ajoutés) et chrysanthème à grosse fleur
   (1042-1055, 17 dont 3 ajoutés), `late:9` (SKU 3858-3865). Matière éclairée (`lit`), dôme bas du dahlia d'après photo, fané
   du chrysanthème ligule par ligule ; quatre retouches Opus après relecture en gros plan. Témoins verts.
+- **Lot 2, roses de jardin publié** : rose d'aspect jardin (SKU 46-67, 28 coloris dont 6 ajoutés) et rose de jardin (68-92,
+  27 dont 2 ajoutés), `late:10` (SKU 3866-3873). Cœur à quartiers par plis et ombres, fané au cou en crosse, traits fins
+  découpés au contour (critique du porteur). Reste : « nœud papillon » de la tête seule fanée de profil (grille).
 - **Ordre révisé (porteur, 2026-10-17)** : les sortes les plus utilisées dans les 76 recettes de bouquets d'abord (anthurium 47,
   arum 42, amarante retombante 37, phalaenopsis 33, cymbidium 19, gloriosa 18…). Liste de contrôle obligatoire :
   `catalogue/serre/methode/BONNES-PRATIQUES.md`.
