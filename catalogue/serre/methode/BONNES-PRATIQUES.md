@@ -49,6 +49,9 @@ Rappel de base : SVG natif seulement, ni 3D, ni image incorporée, ni ruban, ni 
     (`pedge`), le liseré reste fin (rose fané : liseré ×3 = halo brun hors contour ; viorne : halo de bord). Ombre portée nette hors de la fleur,
     jamais de lueur ni de grain (shop-design-rules, 2026-10-03).
 3.6 Pas de contour de dessin ni de cerne : le liseré se fond (tulipe tour 2 : « liseré en contour de dessin » ; jacinthe séchée sans cerne, tour 5).
+3.6b Traits de bord et de nervure fins, dans la teinte du pétale assombrie (jamais brun-noir), découpés au contour de leur pièce :
+    aucun trait ne continue hors d'une surface visible ; nervures fondues qui s'arrêtent avant le bord (porteur, 2026-10-17, rose de
+    jardin fanée : « traits grossiers, certains flottent dans le vide »).
 3.7 Ombres des blancs et crèmes chaudes, jamais grises ni vert-gris : teinte d'ombre tirée vers 36° pour une crème qui virait olive, ombre crème jamais
     saumon, ombre non mêlée au gris #8a7e76 ni portée presque noire (rose v3) ; bord gris minimal sur les blancs (`shMin`, gerbera) ; blanc de dahlia
     « grisâtre » corrigé (tour 10-13) ; blancs de chrysanthème moins gris.
