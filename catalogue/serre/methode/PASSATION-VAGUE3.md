@@ -207,7 +207,9 @@ Publié dans main (non poussé), témoins verts à chaque fois :
 | 4 | hortensia-boule 22 (validé : « super l'hortensia boule !!! ») | 12 | 3877-3882 | 73a8657 | y3-hortensia.js, y3-boule.js |
 | 4 | amarante-retombante 16 (validée : « nickel ») | 13 | 3883-3886 | 7e42dc8 | y3-chenille.js |
 
-Prochaine vague `late` libre : **14** (le phalaenopsis et le cymbidium portaient `late:12` dans leur chantier : à renuméroter).
+| 5 | phalaenopsis 21 (validé), cymbidium-grandes-fleurs 22 (« bien mieux ») | 14 | 3887-3895 | 9bf3c2c | y3-orchidee.js |
+
+Prochaine vague `late` libre : **15**. Main poussé sur GitHub le 18 octobre (accord du porteur).
 
 Avant la vague 3, le pilote de printemps avait refait les 22 espèces du bouquet bronze (anémone, tulipes, narcisses, renoncules,
 jacinthe, muscari, lilas, glycine, freesia, iris, cerisier, cognassier, forsythia, pois de senteur, fritillaire, viorne,
@@ -228,15 +230,10 @@ Chantiers en cours au 17 octobre, 20 h :
 - **amarante** (`ch/amarante`) : amarante-retombante (SKU 2172-2183), pièce `y3-chenille.js` ; puis amarante-dressee (2184-2198).
 
 État au 18 octobre, 0 h 30 (quota 76 %) :
-- **phalaenopsis : fini (v5), validé par le porteur (« bien mieux ! »)**, planches v2 dans `ch/orchidees/catalogue/serre/pilote-printemps/`,
-  comparaisons dans `ch/orchidees/refcache/phalaenopsis/comparaison/` (face-v6, plante-v5, fane-v4…). Non publié : il partage le
-  chantier et les branchements de bouquet (`r3a.js`, `s1c.js`, `s1d.js`, `y1.js`) avec le cymbidium ; publier les deux ensemble, ou
-  séparer proprement le cymbidium (garder son ancien dessin) et publier le phalaenopsis seul.
-- **cymbidium : en pause** au relais 5 de la finition v2, refusé par l'orchestrateur et critiqué par le porteur (pointes,
-  zones de couleur, translucidité, cœur propre à chaque variété, centre en « figurine »). État et prochaines actions :
-  `ch/orchidees/refcache/cymbidium-grandes-fleurs/etat.md` et `journal.md` ; comparaisons `comparaison/*-v3a-encours.jpg`. Le
-  reprendre APRÈS l'audit (§0), avec la fiche morphologique et la paire par coloris (9.3c) : labelle à ~45 % de la largeur de la
-  fleur en U large, tépales moins étroits, zones et translucidité, labelle de chaque variété.
+- **orchidées : publiées** (9bf3c2c). Restes du cymbidium pour l'audit : lobes latéraux du rouge trop pâles (c16 : cramoisis
+  liserés de blanc), gorge du blanc en bande (t119 : jaune au centre, anneau de taches), vert-menthe plus pâle que t121, vues de
+  3/4 et de profil non revérifiées, planches plante, fané et bouquet du cymbidium à refaire (seules SKU et coloris sont à jour).
+  Question : t121 rangée « vert-pomme » dans le brief, mais son labelle correspond à vert-menthe (1426).
 - **amarante-retombante : publiée** (7e42dc8). Planche SKU à refaire avec le nouveau grain. Amarante dressée non commencée.
 - **hortensia-boule : publié** (73a8657) ; 930 vert émeraude validé sur rendu par le porteur. Restes : cœur brun visible entre les
   fleurons du rose pâle, blanc encore un peu fantomatique en bas de boule, feuilles régulières, 944 corail ; poids de 7 à
