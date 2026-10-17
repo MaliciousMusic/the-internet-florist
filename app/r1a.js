@@ -9,13 +9,15 @@ function dahliaPlant(g,t,o,kd,list){const cw=o.cw||cwNear(list,o.col)||list[0],o
 function roseHip(par,B,O,D){const Rr=D/2,F={B,O,parts:[]};F.parts.push(tube3(F,[[0,0,-Rr*.08],[0,0,-Rr*.2],[0,0,-Rr*.32]],q=>Rr*(.16-.08*q),{cols:['#5f8a3e','#4a7032'],cap:1,hl:.35,dk:.45,spec:.2,ink:'#2e4a20',eo:.3,cast:0}));drawParts(par,F.parts)}
 function rosePlant(g,t,o,kd,list){const cw=o.cw||cwNear(list,o.col)||list[0],op=Math.max(.05,Math.min(1,o.op??1)),D=(o.cm||8)*UPC,k=G(g),sc=['#2e4a20','#4a7032','#6e9a48','#a4c47a'],soft=kd==='jar'||kd==='ang'||kd==='asp',
     lc=kd==='std'||kd==='int'?'#2f5a26':'#3f6a2c';
-  const r=lsHeadS(k,o,{D,w:D*.05,cols:sc,op,rr:1,nodes:soft?2:1,li:.7,lp:soft?.95:.8,opp:0,leafAng:46,side:soft?{p:.42,n:1,top:2,len:.72,ang:30,age:[0,.7]}:null,budD:.5,budMax:.45,
-    flower:(par,B,O,D2,op2)=>{roseHip(par,B,O,D2);roseFlower(par,B,O,D2,cw,op2,kd)},
-    bud:(par,B,O,s)=>{roseHip(par,B,O,s);roseFlower(par,B,O,s,cw,.14,kd)},young:(par,B,O,s,a)=>{roseHip(par,B,O,s);roseFlower(par,B,O,s,cw,.3+.5*a,kd)},
-    leaf:(og,pos)=>lsLeaf2D(og,pos,D*R(1.05,1.35),(par,x,y,a,l)=>pinnateLeaf(par,x,y,a,l,lc,og.p.i>1?5:og.p.i===1&&rnd()<.5?3:5,{w:.55,gloss:.45,side:.4})),
+  /* the standard and intermediate roses are drawn in SVG (y-rosa.js), the bouquet's chance consumed as before */const sv=(kd==='std'||kd==='int')&&typeof rosaSvgPut==='function'&&typeof SV_ON!=='undefined'&&SV_ON&&cw&&cw.id,iS=kd==='int'?ROSA_INT_PBQ:undefined,iSid=kd==='int'?ROSA_INT_SID:undefined;
+  const r=lsHeadS(k,o,Object.assign({D,w:D*.05,cols:sv?(kd==='int'?ROSA_INT_SVSC:ROSA_SVSC):sc,op,rr:1,nodes:soft?2:1,li:.7,lp:soft?.95:.8,opp:0,leafAng:46,side:soft?{p:.42,n:1,top:2,len:.72,ang:30,age:[0,.7]}:null,budD:.5,budMax:.45,
+    flower:sv?(par,B,O,D2,op2)=>{rosaSvgPut(par,B,O,D2,cw,op2,o,iS)}:(par,B,O,D2,op2)=>{roseHip(par,B,O,D2);roseFlower(par,B,O,D2,cw,op2,kd)},
+    bud:sv?(par,B,O,s)=>{rosaBudSvgPut(par,B,O,s,cw,0,iS)}:(par,B,O,s)=>{roseHip(par,B,O,s);roseFlower(par,B,O,s,cw,.14,kd)},
+    young:sv?(par,B,O,s,a)=>{rosaSvgPut(par,B,O,s,cw,.3+.5*a,o,iS)}:(par,B,O,s,a)=>{roseHip(par,B,O,s);roseFlower(par,B,O,s,cw,.3+.5*a,kd)},
+    leaf:sv?rosaLeafSv(D,cw,o,iSid,kd==='int'?.92:1):(og,pos)=>lsLeaf2D(og,pos,D*R(1.05,1.35),(par,x,y,a,l)=>pinnateLeaf(par,x,y,a,l,lc,og.p.i>1?5:og.p.i===1&&rnd()<.5?3:5,{w:.55,gloss:.45,side:.4})),
     node:soft?(og,pos)=>({z:pos[2]+.2,cast:false,fn:par=>{const p=[pos[0],-pos[1]],h=[og.H[0],-og.H[1]],l=Math.hypot(h[0],h[1])||1,ux=h[0]/l,uy=h[1]/l,w=D*.05;let d='';
       for(const s of[-1,1]){const bx=p[0]-ux*w*1.4+(-uy)*s*w*.5,by=p[1]-uy*w*1.4+ux*s*w*.5,tx=bx+(-uy)*s*w*.9-ux*w*.5,ty=by+ux*s*w*.9-uy*w*.5;d+=`M${f(bx-ux*w*.5)},${f(by-uy*w*.5)}L${f(tx)},${f(ty)}L${f(bx+ux*w*.5)},${f(by+uy*w*.5)}Z`}
-      E('path',{d,fill:'#7a5a3a',stroke:'#4a3420','stroke-width':.3},par)}}):null});
+      E('path',{d,fill:'#7a5a3a',stroke:'#4a3420','stroke-width':.3},par)}}):null},sv&&ROSA_STEMO?rosaStemOpts(D,o):null));
   open(k,t,1000,8,.3);return r}
 /* the standard carnation: disbudded, two pairs of narrow glaucous leaves clasping swollen nodes, the long last internode under the calyx */
 function carnPlant(g,t,o,list){const cw=o.cw||cwNear(list,o.col)||list[0],op=Math.max(.05,Math.min(1,o.op??1)),D=(o.cm||7)*UPC,k=G(g),sc=['#2e4a3a','#5f7f6a','#88a894','#b4ccbc'];

@@ -204,10 +204,12 @@ function stemLeaf(par,x,y,ang,len,w,col,o={}){const g=G(par,{transform:`translat
 /* the leaves of one stem path P (cubic, from the base to the head) above the height yMax (the mouth), below the head */
 function stemLeaves(par,P,sid,yMax,headR,t){const sl=STEML[sid];if(!sl||LOD)return;const n=Array.isArray(sl.n)?Math.round(R(sl.n[0],sl.n[1])):sl.n||2,L0=(sl.len||10)*UPC;let side=rnd()<.5?-1:1;
   const cand=[];for(let i=0;i<=40;i++){const q=i/40,p=bz(P,q);if(p[1]<yMax-L0*.75&&Math.hypot(p[0]-P[3][0],p[1]-P[3][1])>headR*.9)cand.push(q)}if(!cand.length)return;
-  const q0=cand[0],q1=cand[cand.length-1];for(let k=0;k<n;k++){const q=q0+(q1-q0)*(n===1?.5:k/(n-1))*R(.92,1.02),p=bz(P,q),p2=bz(P,Math.min(1,q+.02)),ta=Math.atan2(p2[1]-p[1],p2[0]-p[0]);
+  const q0=cand[0],q1=cand[cand.length-1],qs=[];for(let k=0;k<n;k++){const q=q0+(q1-q0)*(n===1?.5:k/(n-1))*R(.92,1.02),p=bz(P,q);qs.push(q);const p2=bz(P,Math.min(1,q+.02)),ta=Math.atan2(p2[1]-p[1],p2[0]-p[0]);
     const whorl=sl.arr==='whorl'?3:sl.arr==='opp'?2:1;for(let j=0;j<whorl;j++){const s=whorl===1?side:(j%2?1:-1)*(j===2?.3:1),ang=ta+s*(sl.up||38)*D*R(.8,1.15),len=L0*R(.8,1.1)*(1-.12*k);
-      const wr=G(par);if(sl.sv&&typeof SV_ON!=='undefined'&&SV_ON){R(0,6);sl.sv(wr,p[0],p[1],ang,len,{ta,s,k,j})}else if(sl.shape==='pinnate')pinnateLeaf(wr,p[0],p[1],ang,len,sl.col||'#3f6a2c',sl.lf||3,{side:s*.5,w:sl.w||.5,gloss:sl.gloss,teeth:sl.teeth});else stemLeaf(wr,p[0],p[1],ang,len,sl.w||.22,sl.col||'#3f6a2c',{side:s*.5,arch:sl.arch||12,shape:sl.shape,par:sl.par,gloss:sl.gloss,tendril:sl.shape==='tendril'});growUp(wr,p[0],p[1],Math.max(0,t-300),500)}
-    side=-side}}
+      const wr=G(par);if(sl.sv&&typeof SV_ON!=='undefined'&&SV_ON){if(!sl.svNoR)R(0,6);sl.sv(wr,p[0],p[1],ang,len,{ta,s,k,j})}else if(sl.shape==='pinnate')pinnateLeaf(wr,p[0],p[1],ang,len,sl.col||'#3f6a2c',sl.lf||3,{side:s*.5,w:sl.w||.5,gloss:sl.gloss,teeth:sl.teeth});else stemLeaf(wr,p[0],p[1],ang,len,sl.w||.22,sl.col||'#3f6a2c',{side:s*.5,arch:sl.arch||12,shape:sl.shape,par:sl.par,gloss:sl.gloss,tendril:sl.shape==='tendril'});growUp(wr,p[0],p[1],Math.max(0,t-300),500)}
+    side=-side}
+  /* sl.after: a kind's own leaves on top of these (the rose's upper third), drawing none of the bouquet's chance */
+  if(sl.after)sl.after(par,P,{yMax,headR,t,qs,side})}
 /* a compound leaf (rose, dahlia, peony): a rachis along ang carrying pairs of ovate leaflets and one at its tip; lf = 3, 5 or 7 leaflets */
 function pinnateLeaf(par,x,y,ang,len,col,lf,o={}){const g=G(par),pairs=(lf-1)>>1,rl=len*.95,P=pal7(col),ex=x+Math.cos(ang)*rl,ey=y+Math.sin(ang)*rl;
   E('path',{d:`M${f(x)},${f(y)}Q${f(x+Math.cos(ang)*rl*.5-Math.sin(ang)*len*.05)},${f(y+Math.sin(ang)*rl*.5+Math.cos(ang)*len*.05)} ${f(ex)},${f(ey)}`,stroke:P.d1,'stroke-width':f(Math.max(.6,len*.025)),fill:'none','stroke-linecap':'round'},g);
