@@ -201,3 +201,15 @@ Ouvrir une session dans `C:/Users/agent/Desktop/flower/flower-atelier` et lui do
 > Lis `catalogue/serre/methode/PASSATION-VAGUE3.md` et applique-le. Tu es l'orchestrateur léger de la vague 3 : vérifie les
 > services (section 3), puis lance les sortes de la section 8 avec `pipe.py`, trois au
 > plus. Sois sévère : rien n'est publié sans planches de comparaison, verdict ok du juge et ta propre relecture des gros plans.
+
+## 12. L'inventaire des fleurs : le choix du porteur
+
+`inventaire/` (servi par l'atelier : http://127.0.0.1:8805/inventaire/) montre les 3 876 SKU de `demo/index.html`, rangés par
+catégorie, espèce et coloris, chacun dessiné en direct à chaque état (bouton, mi-ouvert, ouvert de face, 3/4, profil, déclin,
+fané, botte), avec un gros plan zoomable. Filtres : version du dessin, chantier en cours (§7), prévues ensuite (§8), famille de
+couleur, coloris retirés ou ajoutés (`late`).
+- **Le porteur y choisit les espèces et les coloris à refaire**, puis colle dans la conversation le texte de « Copier ma
+  sélection » (une ligne par espèce : `sid`, nom, version, SKU ; une ligne par coloris : SKU et id). C'est la liste d'entrée de
+  la vague suivante, à la place de l'ordre du §8 quand elle existe.
+- **Après chaque publication**, ajouter le lot et ses `sid` en tête de `VERSIONS` dans `inventaire/inv.js` (sinon la sorte
+  apparaît en « Refait (autre) »), et tenir `CHANTIER` et `SUITE` à jour avec les §7 et §8.

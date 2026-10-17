@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Inventaire des fleurs</title>
+<style>body{margin:0;background:#f3efe9;color:#2b2420;font:15px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif;display:grid;place-items:center;min-height:100vh}</style>
+</head>
+<body>
+<p id="msg">Chargement du moteur des fleurs…</p>
+<script>
+/* The inventory runs on the published app (demo/index.html): it loads that page, appends inv.js after the app's own scripts and writes the
+   whole into this document, so every flower is drawn by the very modules the shop uses. Needs a local server (fetch), e.g. the atelier's. */
+(async()=>{try{
+  const [app,inv]=await Promise.all([fetch('../demo/index.html',{cache:'no-store'}),fetch('inv.js',{cache:'no-store'})].map(p=>p.then(r=>{if(!r.ok)throw new Error(r.url+' '+r.status);return r.text()})));
+  /* the shop stays hidden behind a loading note until inv.js takes over (it removes every style of the app, this one included) */
+  const i=app.lastIndexOf('</body>'),h=app.indexOf('<head>')+6,
+    wait='<style>body{visibility:hidden}html::after{content:"Chargement des fleurs…";position:fixed;inset:0;display:grid;place-items:center;background:#f3efe9;color:#6e625a;font:15px system-ui,sans-serif}</style>',
+    html=app.slice(0,h)+wait+app.slice(h,i)+'<script>'+inv+'\n<\/script>'+app.slice(i);
+  document.open();document.write(html);document.close();
+}catch(e){document.getElementById('msg').textContent='Impossible de charger le moteur ('+e.message+'). Ouvre cette page par le serveur local de l’atelier, par exemple http://127.0.0.1:8805/inventaire/.'}})();
+</script>
+</body>
+</html>
