@@ -1349,3 +1349,120 @@ bouton .06, .3, .38, ouvert, fané .6 et .9 ; profil et 3/4). Aucune photo de ti
 - Anémone à 0,00 % contre `base_v2.png` ; `rtest` 10 IDENTIQUE sur 10 pour le germini et pour le gerbera ; fané du gerbera inchangé par le
   dernier tour (`grb_f1` contre `grb_f2` : 0,00 %).
 - Gerbera : `gerbera-sku-v1.png` refaite avec le fané commun (ligules molles qui pendent en jupe, `wGrav`) et les 26 coloris (20 + 6 late:9).
+
+## Rosa × hybrida (rose de fleuriste, sid rose-standard) : tête SVG native sur le kit rosette, 17 octobre 2026
+
+Photos de référence du modelage (index de `refcache/rose-standard/cands.json` ; Wikimedia Commons et iNaturalist, licences ouvertes ; jamais commitées) :
+
+- 1190 : Rosa Black Baccara 2022-06-17 1499.jpg (Salicyna, CC BY-SA 4.0)
+- 1242 : Rosa Mister Lincoln 0zz.jpg (Photo by David J. Stang, CC BY-SA 4.0)
+- 1263 : Rose Papa Meilland on black background.jpg (Filo gèn', CC BY-SA 4.0)
+- 1267 : RosePapaMeillandInAutumn.jpg (サフィル, CC BY-SA 4.0)
+- 1268 : RosePapaMeillandInAutumn02.jpg (サフィル, CC BY-SA 4.0)
+- 1346 : Red rose in collapsible vase - April 30, 2013.jpg (Julia Butler, CC BY-SA 3.0)
+- 1238 : Rosa 'Mister Lincoln' kz01.jpg (Krzysztof Ziarnek, Kenraiz, CC BY-SA 4.0)
+- 1265 : Rose Papa Meilland1.jpg (Touzrimounir, CC BY-SA 4.0)
+- 131 : inat-377295088 (observateur iNaturalist johnic, CC (licence cc-by-nc))
+- 0 : 4548 - Bern - Rosengarten - Hybrid Tea.JPG (Andrew Bossi, CC BY-SA 2.5)
+- 13 : Pink Peace YR.AARS1974 Hybrid Tea 006.jpg (Jacob.jose, CC BY 3.0)
+- 52 : Rosa Oregold 4zz.jpg (Photo by David J. Stang, CC BY-SA 4.0)
+- 57 : Rosa Tiffany 2zz.jpg (Photo by David J. Stang, CC BY-SA 4.0)
+- 1188 : Rosa Black Baccara 2022-06-06 0425.jpg (Salicyna, CC BY-SA 4.0)
+- 1243 : Rosa Mister Lincoln 1zz.jpg (Photo by David J. Stang, CC BY-SA 4.0)
+- 1297 : Double Delight Rosebud (1249773460).jpg (Audrey from Central Pennsylvan, CC BY 2.0)
+- 1269 : A rose.JPG (Mrmariokartguy, CC BY-SA 4.0)
+- 1394 : 37 - Flickr - erix!.jpg (Erich Ferdinand from germany, CC BY 2.0)
+- 1396 : Fall Rose - Flickr - holl7510.jpg (Brian Holland from New York, N, CC BY 2.0)
+- 1399 : Hurden 2011-11-27 14-01-10.jpg (Roland zh, CC BY-SA 3.0)
+- 1400 : Last breath - Flickr - Alcino.jpg (Alcino, CC BY-SA 2.0)
+- 1403 : Moscow - 2025 - Pink-red roses, Cathedral of Christ the (Юрий Д.К., CC BY 4.0)
+- 1411 : Rose flowers almost dried on the plant 01.jpg (Kritzolina, CC BY-SA 4.0)
+- 1412 : Rose flowers almost dried on the plant 02.jpg (Kritzolina, CC BY-SA 4.0)
+- 96 : Rosa El Toro 0zz.jpg (Photo by David J. Stang, CC BY-SA 4.0)
+- 97 : Rosa Sterling Silver 4zz.jpg (Photo by David J. Stang, CC BY-SA 4.0)
+- 98 : Rosa Tahitian Sunset 0zz.jpg (Photo by David J. Stang, CC BY-SA 4.0)
+- 580 : inat-17790345 (observateur iNaturalist dleepe, CC (licence cc-by-sa))
+- 590 : inat-18171200 (observateur iNaturalist gabrie, CC (licence None))
+
+### Mesures (img.py pair, boîte du masque ; à l'œil quand le fond de la photo est chargé)
+
+- Bouton serré vert (52, 57, 1188) : œuf pointu, hauteur/largeur 1,6 à 1,8, plus large au tiers bas ; rendu 1,6 à 1,7 (budR .31, budK .7). Urne 0,4 à 0,5 de la largeur du bouton.
+- Bouton de coupe coloré (131, 1243, 1190) : h/w 1,1 à 1,3 avec les sépales rabattus ; rendu 1,15.
+- Mi-ouverte et ouverte de profil (1190, 1242, 1267) : gobelet, pétales extérieurs à 30-50° de l'axe, bords roulés en pointe, cœur dressé au-dessus ; rendu op .8 W/H 1,19 avant correction, gobelet après (rangs externes a0o .62, a1o 1.55).
+- Tête sur tige (1238, 1265) : largeur de tête / diamètre de tige 26 et 22 (tiges de jardin, fines) ; rose de coupe (connaissance du genre, non mesurée sur photo) 13 à 16 ; rendu 14 (tête 8 cm, tige D x .05). Foliole l/w environ 2 (1265) ; rendu 1,6 de forme, environ 2,4 vu de biais.
+- Fané (1396, 1403, 1411, 1412 rouges ; 1399, 1400 orange ; 590 blanc ; 96, 97, 98 roses) : tête penchée au cou, pétales externes mous en jupe ou tombés, bords secs. Couleurs : rouge vers vin noir (1411 #55121f), blanc vers beige brun, rose vers mauve vin. Jaune : déduit de l'orange (ocre), pas de photo.
+
+### Relais 3 et 4 (17 octobre 2026) : cœur vu de face, feuille, bicolores, fané
+
+Photos ajoutées (même cache, jamais commitées) :
+
+- Cœur de face : 1263 (Papa Meilland, ci-dessus), 1180 : Rosa Black Baccara 2021-06-23 9175.jpg (Salicyna, CC BY-SA 4.0), 1214 : Rosa Marilyn
+  Monroe 0zz.jpg (David J. Stang, CC BY-SA 4.0), 1197 : Rosa Carte Blanche.jpg (Anna reg, CC BY-SA 3.0), 0, 13, 131 (ci-dessus), 491 :
+  inat-48652540 (observateur iNaturalist sebast, licence non précisée).
+- Feuille, rachis, stipules : 956, 989, 1070 : inat-43885620, -43885754, -43885662 (iNaturalist tsn, CC BY) ; 1018 : inat-49958340, 1024 :
+  inat-53188604 (tsn, CC BY) ; 1031, 1032 : inat-295273487, -295273513 (john_baur, CC BY).
+
+Lu sur ces photos et repris dans le dessin :
+
+- Foliole ovale-elliptique, plus large au tiers bas, pointe aiguë, base arrondie ; marge dentée en scie, dents dirigées vers la pointe, une
+  petite dent sur le flanc montant de chacune (dents doubles, visibles en gros plan) ; 6 à 9 paires de nervures secondaires courbes qui
+  finissent dans une dent ; dessus vert foncé lustré, dessous vert pâle mat (956, 989, 1070, 1018).
+- Feuille de 5 folioles (3 en haut de tige), rachis portant de fins aiguillons crochus dessous ; stipules soudées au pétiole sur presque toute
+  leur longueur, en aile large, finies par deux oreillettes libres pointues et divergentes (1031, 1032).
+- Bicolores bordés : la couleur du bord suit le contour du pétale à largeur constante, plus diffuse vers l'intérieur ; flammés : stries fines
+  le long des nervures depuis la marge (pas de photo nommée par coloris dans ce relais : forme d'après la connaissance du groupe, couleurs à
+  mesurer par fleur-finition).
+- Fané (1396, 1403, 1411, 1412) : bords des pétales externes bruns et secs, cœur resserré, sépales réfléchis, secs et bruns.
+
+Budget mesuré (`shot_r.sh`, `det=1`, tige entière de 40 cm, rouge ouverte) : 164 éléments, 43 Ko. Grille DET 1.5 : 102 éléments et
+62 Ko par tête (D 150, 96 têtes).
+
+### Retouche v2 (17 octobre 2026) : opacité, cœur haut, fané au cou plié, blancs
+
+- Cœur haut et pétales extérieurs roulés en pointe : photos 9 (« Just Joey », CC0, profil trois-quarts), 84, 85, 241 (même index
+  `cands.json`) ; angle des extérieurs 35 à 55° de l'horizontale à l'ouverture du fleuriste (brief : 40 à 60°), ouverture à plat au déclin.
+- Cou plié et tête pendue de côté sous le cou : 1396 (rouge), 590 (blanc crème, bords bruns) ; marge sèche brun moyen pour les clairs (590).
+- Blancs : la mesure du corps (#c7d7cb, C≈6) n'a pas de teinte significative ; rendu blanc crème #f2f0e8 (à valider par le chef).
+  Intermédiaire : mesure #d7ca95 (C 25) rendue #f0e9d2.
+- Planches : `rose-standard-sku-v2.png`, `rose-intermediaire-kenya-sku-v2.png`.
+
+
+### Retouche v3 (17 octobre 2026) : fané au cou en crosse, tête pendue lisible, blancs aux ombres chaudes
+
+- Cou en crosse et tête pendue sous le cou, dégagée de la tige : 1396 (Brian Holland, CC BY 2.0, rouge), 590 (iNaturalist, blanc crème,
+  bords bruns) ; feuille du nœud de tête glissée sous la tête.
+- Tête pendue (d'après 1396, 1403, 1411, 590) : pétales extérieurs mous et pendants, chacun avec son contour sombre net, plissés en long
+  (3 à 5 plis par pétale), pointes recourbées, marges sèches brunes ; matière mate (dos au ton de la face, pas de reflet clair) ; lavis
+  découpés au contour des pétales (plus de halo).
+- Couleurs du fané rouge mesurées (médiane des pixels rouges de la tête) : 1396 h 0°, L .32 ; 1403 h −5°, L .37 ; 1411 (presque sec)
+  h −11°, L .17. Rendu : fané .75 h −5°, L .25 ; fané .9 h −8°, L .17. Le cramoisi vire au rouge brique, puis au noir rouge.
+- Blancs : ombres crème à ivoire (teinte du pétale, sinon 36°), jamais grises ni saumon ; fané crème puis beige (#c4a87e), bords bruns (590).
+- Planches : `rose-standard-sku-v3.png`, `rose-intermediaire-kenya-sku-v3.png`, `rose-standard-fane-v3.png` (fané rouge et blanc en gros plan).
+- Budget à DET 1 (plante rouge ouverte 40 cm) : 177 éléments / 50 Ko sans graine (comme en v2) ; 190 / 59 Ko avec seed=7 ;
+  intermédiaire (50 cm, seed=7) 214 / 67 Ko. Le fané n'ajoute rien à la fleur fraîche (options du fané seulement si fan > 0).
+
+## Rosa × hybrida, roses intermédiaires et sweethearts de Kenya et d'Éthiopie (sid rose-intermediaire-kenya) : fiche sur le kit rose, 17 octobre 2026
+
+Photos de référence (index de `refcache/rose-intermediaire-kenya/photos-a-mesurer.json` ; fiches variétés des producteurs De Ruiter,
+Interplant, Kikwetu et exportateurs, niveau N2 ; jamais commitées, jamais publiées) :
+- forme de la tête en profil (stade de vente, coupe droite) : 14 Ti Sento, 31-32 Almanza, 41-42 Basanti, 46 Lunetta, 48-49 Red Calypso,
+  51-53 Red Dime, 19-20 Wild Calypso, 60 Flanna, 94-95 Tropical Amazone ;
+- sweethearts (petite tête ronde, petites feuilles, tige fine) : 7 Buttercup, 16 Smoothie, 39 Moonwalk, 66 Cool Blue, 71 Thriller ;
+- tige et feuilles : 41, 42, 94 (couleur de la tige), 39, 66, 71 (feuilles, deux faces) ;
+- bicolore jaune : 81-84 Fire Flare (jaune lavé de rouge orangé aux pointes) ; bordé : 78 Fluence (seule photo, rose vif uniforme : le blanc
+  bordé n'est pas prouvé, voir coloris.md) ; 86 Mindset (rose et crème, pêche).
+- fané : aucune photo propre à la sorte ; le fané est celui de la rose standard (refcache/rose-standard 1396, 1403, 1411, 1399, 590).
+
+Mesures (masque de fond par photo, ligne la plus large ; script du modeleur, ±15 %) :
+
+| mesure | valeur | photos |
+|---|---|---|
+| tête en profil, h/l (urne et sépales compris) | médiane 1,02 (0,78 à 1,34) | 26 photos de profil |
+| tige / largeur de tête | médiane 0,08 (0,05 à 0,13) | les mêmes |
+| couleur du milieu de la tige | #2e6b2d | 41, 42, 94 |
+| `img.py pair` Almanza 31 contre le rendu de profil | photo H/W 1,18, flancs 8° ; rendu op .6 1,24 / -1°, op .8 1,17 / 14° | i3 |
+| tête | 4,5 à 5,5 cm (catalogue, Kikwetu « super intermediate » 4,5 à 6 cm) | export-lists.json |
+
+À l'œil (non mesuré) : 25 à 32 pétales larges et ronds, centre plus bas que la grande tête, pointes peu roulées ; sépales longs et étroits
+rabattus le long de l'urne ; sweethearts : 20 à 26 pétales, bouton rond, tête environ 12 % plus petite. Feuilles de 5 folioles, un peu
+plus petites (×0,92). Budget DET 1, tige entière de 50 cm : 151 éléments, 39 Ko.

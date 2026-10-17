@@ -61,21 +61,24 @@ if(new URLSearchParams(location.search).get('plant'))setTimeout(()=>{const Q=new
   if(Q.get('seed'))sd(+Q.get('seed'));
   DET=+(Q.get('det')||1.5);LOD=0;const sid=Q.get('sid')||'anemone-coronaria',rec=RBY[sid],cw=(CWS[sid]||[]).find(x=>x.id===(Q.get('cw')||'bleu')),st=(Q.get('st')||'.1:0,.3:0,.6:0,1:0,1:.4,1:.75').split(',').map(x=>x.split(':').map(Number)),
     vw=(Q.get('vw')||'-.45,.15,.88').split(',').map(Number),cellW=+(Q.get('cell')||170),svg=E('svg',{width:cellW*st.length,height:cellW*2.2,viewBox:`0 0 ${cellW*st.length} ${cellW*2.2}`},document.body);GDEF=E('defs',{},svg);
-  /* full=<cm>: the whole cut stem below the head's neck, with the leaves its species carries in a bouquet (STEML, stemLeaves), as in the vase */
-  const full=+(Q.get('full')||0),own=(GHI[sid]&&GHI[sid].wilt)||svaWiltCol;let ms=0;
-  st.forEach(([op,wl],i)=>{const g=G(svg),k=G(g),sk=full?G(k):null;SVA_LIFE=wl||null;const T0=WILT;if(wl>0)WILT=lifeWilt(wl,own,sid);const t0=performance.now();
+  /* full=<cm>[,<cm>...] (cycled over the cells): the whole cut stem below the head's neck, with the leaves its species carries in a bouquet (STEML, stemLeaves), as in the vase */
+  const fulls=(Q.get('full')||'0').split(',').map(Number);let full=fulls[0];const own=(GHI[sid]&&GHI[sid].wilt)||svaWiltCol;let ms=0;
+  st.forEach(([op,wl],i)=>{full=fulls[i%fulls.length];const g=G(svg),k=G(g),sk=full?G(k):null;SVA_LIFE=wl||null;const T0=WILT;if(wl>0)WILT=lifeWilt(wl,own,sid);const t0=performance.now();
     /* &strand=60,48,37 (cm, one per cell, cycled): a free strand of that length (o.len: the wisteria's strand as in a bouquet, room unbounded) */
     const sl=(Q.get('strand')||'').split(',').filter(Boolean).map(Number);
     /* (the cells' strands as the three strands of one stem held in the hand: one shared drape, its room unbounded) */
     if(sl.length&&typeof DRAPEX!=='undefined'){if(!window.__svtDr)window.__svtDr={x:0,y:0,side:1,held:true,top:0,mw:26,mcx:0,FL:0};DRAPEX=window.__svtDr}
     try{renderStatic(()=>{const r=drawRec(k,0,rec,Object.assign({vw,ax:Q.get('axv')?vw:undefined,op,cw,col:cw&&cw.c,roll:0},sl.length?{len:sl[i%sl.length]*UPC}:{}));if(sk&&r&&r.neck)svtStem(sk,r,sid,full)})}finally{WILT=T0;SVA_LIFE=null;if(sl.length&&typeof DRAPEX!=='undefined')DRAPEX=null}ms+=performance.now()-t0;
-    const b=k.getBBox(),s=Math.min(cellW*.9/b.width,cellW*2.1/b.height);k.setAttribute('transform',`translate(${f(cellW*(i+.5)-(b.x+b.width/2)*s)},${f(cellW*1.1-(b.y+b.height/2)*s)}) scale(${s.toFixed(4)})`)});
+    const b=k.getBBox(),s=Math.min(cellW*.9/b.width,cellW*2.1/b.height);(window.__svtFit=window.__svtFit||[]).push([k,b,i,s]);k.setAttribute('transform',`translate(${f(cellW*(i+.5)-(b.x+b.width/2)*s)},${f(cellW*1.1-(b.y+b.height/2)*s)}) scale(${s.toFixed(4)})`)});
+  /* same=1: one scale for every cell (the smallest), the stems standing on one ground line: their lengths compare */
+  if(Q.get('same')&&window.__svtFit){const s=Math.min(...window.__svtFit.map(q=>q[3]));for(const[k,b,i]of window.__svtFit)k.setAttribute('transform',`translate(${f(cellW*(i+.5)-(b.x+b.width/2)*s)},${f(cellW*2.15-(b.y+b.height)*s)}) scale(${s.toFixed(4)})`)}
   document.title='plant ok';const sp=Q.get('snap')?snapSvg(svg,+(Q.get('sw')||cellW*st.length*2),Q.get('snap'),'#e9e4dc'):null;if(sp)sp.then(r=>{document.title+=' snap '+r.join(',')});svtOut(svg,st.length,ms,sp)},400);
 /* the stem below a head's neck (r: what the head hands back), cm long, with its leaves */
 window.svtStem=(par,r,sid,cm)=>{const e=r.neck,nd=r.nd||[0,1],L=cm*UPC,P3=e,P2=[e[0]+nd[0]*L*.3,e[1]+nd[1]*L*.3],P0=[e[0]+nd[0]*L*.3,e[1]+L],P1=[P0[0],P0[1]-L*.35],P=[P0,P1,P2,P3],C=[],W=[],w=(r.nw||3)*1.12;
   for(let i=0;i<=24;i++){C.push(bz(P,i/24));W.push(w*(1.08-.08*i/24))}
-  /* GHI[sid].basal(par,P,L,w,side): the whole plant's leaves from the foot of the stem (sheets only), behind (-1) then in front (1) of it */
-  const bl=GHI[sid]&&GHI[sid].basal;if(bl)bl(par,P,L,W[0],-1);if(GHI[sid]&&GHI[sid].cut&&typeof svStemCut==='function')svStemCut(par,C,W,r.ncols||SG,(g2,C2,W2)=>stemPoly(g2,C2,W2,r.ncols||SG));else stemPoly(par,C,W,r.ncols||SG);if(STEML[sid])stemLeaves(par,P,sid,P0[1]+L,L*.3,0);if(bl)bl(par,P,L,W[0],1)};
+  /* STEML[sid].sheetY: the stem's leaves only above that share of its length (the rose's stripped foot), as a vessel's mouth would
+     GHI[sid].basal(par,P,L,w,side): the whole plant's leaves from the foot of the stem (sheets only), behind (-1) then in front (1) of it */
+  const bl=GHI[sid]&&GHI[sid].basal;if(bl)bl(par,P,L,W[0],-1);if(GHI[sid]&&GHI[sid].cut&&typeof svStemCut==='function')svStemCut(par,C,W,r.ncols||SG,(g2,C2,W2)=>stemPoly(g2,C2,W2,r.ncols||SG));else stemPoly(par,C,W,r.ncols||SG);if(STEML[sid])stemLeaves(par,P,sid,STEML[sid].sheetY?e[1]+L*STEML[sid].sheetY:P0[1]+L,L*.3,0);if(bl)bl(par,P,L,W[0],1)};
 /* the bouquet's chance, old drawing against the new: ?rtest=1&rc=tulipe-simple~7:7,tulipe-simple~12:6 → for each life stage and vessel, the bouquet's
    seed once it is drawn, with the SVG heads off and on (the same: the composition does not move) */
 if(new URLSearchParams(location.search).get('rtest'))setTimeout(()=>{const Q=new URLSearchParams(location.search),rc=(Q.get('rc')||'tulipe-simple~7:7,tulipe-simple~12:6').split(',').map(x=>{const[a,b]=x.split(':');return[a,+b]}),out=[];
