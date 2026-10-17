@@ -23,7 +23,7 @@ const SUITE=['gloriosa','oeillet-standard','giroflee-matthiole','nerine','lis-or
   'allium-petit','asparagus-setaceus-plumosus','saule-tortueux','leucadendron-rouges'];
 const STATES=[
   {k:'bud',l:'Bouton',op:.14},{k:'half',l:'Mi-ouvert',op:.5},{k:'face',l:'Ouvert, face',op:1,ax:[0,0,1]},{k:'tq',l:'Ouvert, 3/4',op:1},
-  {k:'pro',l:'Profil',op:1,ax:[0,.97,.24]},{k:'dec',l:'Déclin',op:1,st:2},{k:'fan',l:'Fané',op:1,st:3},{k:'botte',l:'Botte',card:1}];
+  {k:'pro',l:'Profil',op:1,ax:[0,.97,.24]},{k:'dec',l:'Déclin',op:1,st:2},{k:'fan',l:'Fané',op:1,st:3}];
 const FAMS={blanc:['Blanc','#f4f1ea'],peche:['Pêche','#f3c4a2'],rose:['Rose','#f0a6c0'],fuchsia:['Fuchsia','#d63f8c'],rouge:['Rouge','#c8202f'],orange:['Orange','#ee8a2a'],
   jaune:['Jaune','#f2d23c'],bordeaux:['Bordeaux','#6e1a2c'],violet:['Violet','#7d55b8'],vert:['Vert','#8fb35a'],bleu:['Bleu','#4a78c8'],noir:['Noir','#2a2226']};
 const CW=1,TW=256,TH=320; /* raster of a cell: 4:5 like fitBox, twice the shown size */

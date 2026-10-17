@@ -40,6 +40,9 @@ session neuve « mieux organisée, plus sévère, pour la meilleure qualité pos
   posée, sans réponse au 17 octobre ; main est en avance sur origin).
 - Une décision qui n'est pas la nôtre s'écrit comme une question, et le travail continue.
 
+- **Plus de bottes** (porteur, 2026-10-18 : « arrête de faire des bottes ! c'est inutile ») : aucun rendu, planche ni retouche
+  de la vue en botte (`bunchArt`) pour les sortes refaites ; la colonne « Botte » de l'inventaire est retirée.
+
 ## 3. Le PC (il a planté le 17 octobre à 18 h 25)
 
 Plantage avec 4 chantiers en parallèle (RAM libre entre 2 et 2,5 Go juste avant). Depuis :
@@ -206,7 +209,7 @@ Ouvrir une session dans `C:/Users/agent/Desktop/flower/flower-atelier` et lui do
 
 `inventaire/` (servi par l'atelier : http://127.0.0.1:8805/inventaire/) montre les 3 876 SKU de `demo/index.html`, rangés par
 catégorie, espèce et coloris, chacun dessiné en direct à chaque état (bouton, mi-ouvert, ouvert de face, 3/4, profil, déclin,
-fané, botte), avec un gros plan zoomable. Filtres : version du dessin, chantier en cours (§7), prévues ensuite (§8), famille de
+fané), avec un gros plan zoomable. Filtres : version du dessin, chantier en cours (§7), prévues ensuite (§8), famille de
 couleur, coloris retirés ou ajoutés (`late`).
 - **Le porteur y choisit les espèces et les coloris à refaire**, puis colle dans la conversation le texte de « Copier ma
   sélection » (une ligne par espèce : `sid`, nom, version, SKU ; une ligne par coloris : SKU et id). C'est la liste d'entrée de
