@@ -2,23 +2,28 @@
 """pipe.py: the deterministic pilot of ONE flower sort through the whole /fleur method (Belai's Flowers).
 
   python fleur/pipe.py run <sid> --taxon "<Genus species>" [--family F] [--ch <copy>] [--from <step>] [--only <step>] [--cap <M>]
-                              [--skus "lilas~0:Ruhm von Horstenstein,..."] [--genus G] [--group "..."] [--kavb] [--dry]
+                              [--skus "lilas~0:Ruhm von Horstenstein,..."] [--genus G] [--group "..."] [--kavb] [--skip-census]
+                              [--kit y3-rose.js] [--late N] [--juge-tours 2] [--opus-effort xhigh] [--dry]
   python fleur/pipe.py status <sid>      the steps, their checks, the bill so far
   python fleur/pipe.py bill <sid>        the bill by step, in Opus input-equivalent tokens
   python fleur/pipe.py models            three tiny calls: which models the chosen CLI accepts (bills them under refcache/pipe-test)
 
 Every step that needs a model is a fresh `claude -p` call (short prompt, empty context, closed tool list, capped turns); between two
 steps the checks are numbers computed here in Python. State: refcache/<sid>/pipe-state.json (resume with --from), bill:
-refcache/<sid>/pipe-bill.json (one line per call). Steps: census refs coloris targets forme fit plante finition temoins qa planches.
+refcache/<sid>/pipe-bill.json (one line per call). Steps: census refs coloris targets forme fit plante finition comparaison juge temoins
+qa planches. Pipe v3: Opus at effort xhigh, the atelier server on FLEUR_PORT (8805; 8765 belongs to another application and is never
+touched), private copies of the shared scripts that aimed at 8765 (fleur/shot_p.sh...), census levels A/B/C accepted (D = a question),
+photos kept only once looked at, a photo/render comparison pair by pair and an adversarial judge that is not the modeller.
 Rules kept from the method: one Opus at a time per working copy, three sorts at most on the PC (ws/locks/pipe-<n>), renders through
-the gate (shot.sh), no commit and no merge anywhere, never a process that this script did not start itself."""
+the gate (shot_p.sh), ramwait.sh before every Opus call and heavy render, no commit and no merge anywhere, never a process that this
+script did not start itself."""
 import sys, os, re, json, time, math, glob, shutil, argparse, subprocess, threading, queue, contextlib, io, importlib.util, unicodedata, statistics
 
 sys.stdout.reconfigure(encoding='utf-8', errors='replace')
 HERE = os.path.dirname(os.path.abspath(__file__))
 MAIN = 'C:/Users/agent/Desktop/flower/flower-atelier'  # the shared atelier: gate, locks, servers (never modified here)
 FC = 'C:/Users/agent/Desktop/flower/flower-atelier'    # the-internet-florist: standards read in docs/, sheets copied to catalogue/serre
-STEPS = ['census', 'refs', 'coloris', 'targets', 'forme', 'fit', 'plante', 'finition', 'temoins', 'qa', 'planches']
+STEPS = ['census', 'refs', 'coloris', 'targets', 'forme', 'fit', 'plante', 'finition', 'comparaison', 'juge', 'temoins', 'qa', 'planches']
 MODELS = {'haiku': 'claude-haiku-5-5', 'sonnet': 'claude-sonnet-5-5', 'opus': 'claude-opus-5-5'}
 W = {'in': 1, 'cw': 1.25, 'cr': .1, 'out': 5}  # Opus input-equivalent weights (bill.py)
 M = {'opus': 1, 'sonnet': .6, 'haiku': .2}
@@ -29,18 +34,33 @@ try:  # one source of truth when bill.py is next to us
         W, M = dict(_bill.W), dict(_bill.M)
 except Exception:
     pass
-TURNS = {'haiku': 40, 'sonnet': 40, 'opus': 36}          # --max-turns per call
-LIMIT = {'haiku': 1200, 'sonnet': 1800, 'opus': 3000}   # wall-clock seconds per call
-EFFORT = {'haiku': 'low', 'sonnet': 'medium', 'opus': 'medium'}
-TARGET_EL, TARGET_KB = 300, 50                          # budget per head at DET 1; red beyond 1.2 x
+TURNS = {'haiku': 40, 'sonnet': 40, 'opus': 60}          # --max-turns per call
+LIMIT = {'haiku': 1200, 'sonnet': 1800, 'opus': 5400}   # wall-clock seconds per call
+EFFORT = {'haiku': 'low', 'sonnet': 'medium', 'opus': 'xhigh'}
+TARGET_EL, TARGET_KB = 300, 50                          # budget per head at DET 1: a MEASURE only since 2026-10-17 (the owner: quality first)
+SEED = 7                                                # every sheet of the pipeline is drawn with &seed=7 (BONNES-PRATIQUES 9.1)
+OLD_PORT = 8765                                         # another application of the owner: never used, never probed
+PRIVATE = ('shot.sh', 'skudump.sh', 'offerdump.sh')     # shared scripts copied as <name>_p.sh with the atelier's port (always)
+RAMWAIT = MAIN + '/fleur/res/ramwait.sh'                # waits for 4.5 GB of free RAM (PIPE_RAMWAIT overrides; '' = off)
+JUGE_TOURS = 2                                          # judge ko -> comparaison -> judge: round trips at most, then refusal (exit 2)
+
+
+def port():
+    """the atelier server's port: FLEUR_PORT, 8805 by default (read at every use: the selftest changes it)"""
+    p = int(os.environ.get('FLEUR_PORT') or 8805)
+    if p in (OLD_PORT, 8766):
+        raise SystemExit('FLEUR_PORT=%d is forbidden (another application of the owner)' % p)
+    return p
+
+
 SYSTEM = ("You are one worker of a scripted pipeline for Belai's Flowers (a flower game: stems, bouquets, auction house). Work in the current "
           "directory only. Every Bash command prints 20 lines at most (pipe to head or tail; details go to files read by chunks). Write files in "
           "French for docs and reports, English for code and comments. Game vocabulary only (never invest, yield, trading, speculation). "
           "No 3D, no embedded images, no ribbons, never a bulb, root or soil. No git commit, merge or push. Never stop, kill or suspend a "
-          "process you did not start; never use port 8766. No secret in any file. Third-party photos stay in refcache/. "
-          "Your LAST line is one single-line JSON object as the step asks; nothing after it.")
+          "process you did not start; never use port 8766 nor 8765 (other applications): renders go through fleur/shot_p.sh. No secret in "
+          "any file. Third-party photos stay in refcache/. Your LAST line is one single-line JSON object as the step asks; nothing after it.")
 DENY = ['Bash(kill*)', 'Bash(taskkill*)', 'Bash(*Stop-Process*)', 'Bash(pkill*)', 'Bash(rm -rf*)', 'Bash(git commit*)', 'Bash(git push*)',
-        'Bash(git merge*)', 'Bash(git reset*)', 'Bash(*8766*)']
+        'Bash(git merge*)', 'Bash(git reset*)', 'Bash(*8766*)', 'Bash(*:8765*)', 'Bash(sh fleur/shot.sh*)']
 READ = ['Read', 'Grep', 'Glob']
 SAFE_BASH = ['Bash(python *)', 'Bash(sh *)', 'Bash(cd *)', 'Bash(ls *)', 'Bash(cat *)', 'Bash(head *)', 'Bash(tail *)', 'Bash(wc *)', 'Bash(grep *)',
              'Bash(sed -n *)', 'Bash(echo *)', 'Bash(mkdir *)', 'Bash(cp *)', 'Bash(date*)']
@@ -230,14 +250,14 @@ class Bill:
             for k in ('in', 'cw', 'cr', 'out', 'eq'):
                 s[k] += r.get(k, 0)
         tot = sum(s['eq'] for s in by.values()) or 1
-        L = ['%-10s %5s %6s %9s %9s %10s %8s %9s %6s' % ('step', 'calls', 'turns', 'in', 'cache-w', 'cache-r', 'out', 'eq-Opus', 'share')]
+        L = ['%-11s %5s %6s %9s %9s %10s %8s %9s %6s' % ('step', 'calls', 'turns', 'in', 'cache-w', 'cache-r', 'out', 'eq-Opus', 'share')]
         for k in order:
             s = by[k]
-            L.append('%-10s %5d %6d %9d %9d %10d %8d %9d %5.0f%%' % (k, s['calls'], s['turns'], s['in'], s['cw'], s['cr'], s['out'], s['eq'], 100 * s['eq'] / tot))
+            L.append('%-11s %5d %6d %9d %9d %10d %8d %9d %5.0f%%' % (k, s['calls'], s['turns'], s['in'], s['cw'], s['cr'], s['out'], s['eq'], 100 * s['eq'] / tot))
         mod = {}
         for r in self.rows():
             mod[r['model']] = mod.get(r['model'], 0) + r.get('eq', 0)
-        L.append('%-10s %5d %6d %9d %9d %10d %8d %9d' % ('TOTAL', sum(s['calls'] for s in by.values()), sum(s['turns'] for s in by.values()),
+        L.append('%-11s %5d %6d %9d %9d %10d %8d %9d' % ('TOTAL', sum(s['calls'] for s in by.values()), sum(s['turns'] for s in by.values()),
                  *(sum(s[k] for s in by.values()) for k in ('in', 'cw', 'cr', 'out', 'eq'))))
         L.append('by model (eq-Opus): ' + ', '.join('%s %d' % (k, v) for k, v in mod.items()) + ' ; time %d min' % (sum(s['s'] for s in by.values()) / 60))
         return L
@@ -259,12 +279,31 @@ class Ctx:
         self.rc = '%s/refcache/%s' % (self.ch, sid)          # absolute
         self.rel = 'refcache/%s' % sid                       # what the prompts say (cwd = the working copy)
         self.dry = bool(getattr(a, 'dry', False))
-        self.cap = float(getattr(a, 'cap', 3)) * 1e6
+        self.cap = float(getattr(a, 'cap', 40) or 40) * 1e6
         self.bill = Bill(self.rc + '/pipe-bill.json')
         self.claude = getattr(a, 'claude', None) or find_claude()
         self.rel_url = fwd(os.path.relpath(self.ch, MAIN)) if fwd(self.ch).startswith(MAIN) else ''  # ch/outils, in the server's URLs
         self.lock_opus = None
+        self.reads = {}  # step -> the files the model calls of that step opened with Read (normalised paths)
         os.makedirs(self.rc + '/pipe-logs', exist_ok=True)
+
+    def url(self, path, main=False):
+        """an URL of the atelier server (port of FLEUR_PORT) for a page of this copy (or of the main atelier)"""
+        rel = '' if main else self.rel_url
+        return 'http://localhost:%d/%s%s' % (port(), (rel + '/') if rel else '', path)
+
+    def npath(self, p):
+        """a path as the model wrote it (relative to the copy, absolute, or /c/... of Git Bash), normalised for comparisons"""
+        p = fwd(p or '').strip()
+        m = re.match(r'^/([a-zA-Z])/(.*)$', p)
+        if m:
+            p = '%s:/%s' % (m[1], m[2])
+        if not re.match(r'^[A-Za-z]:/', p):
+            p = self.ch + '/' + p
+        return os.path.normcase(os.path.normpath(p))
+
+    def read_by(self, step, rel):
+        return self.npath(rel) in self.reads.get(step, set())
 
     @property
     def taxon(self):
@@ -275,7 +314,7 @@ class Ctx:
         return self.st.get('genus') or self.taxon.split()[0]
 
     def sub(self, **kw):
-        base = dict(sid=self.sid, taxon=self.taxon, genus=self.genus, family=self.st.get('family') or '', rc=self.rel,
+        base = dict(sid=self.sid, taxon=self.taxon, genus=self.genus, family=self.st.get('family') or '', rc=self.rel, late=self.st.get('late') or 1,
                     skus='; '.join('%s = %s' % (x['sku'], x.get('cultivar') or '?') for x in self.st.get('skus', [])) or '-', ch=self.ch)
         base.update(kw)
         return base
@@ -321,7 +360,7 @@ def run_cmd(ctx, argv, tag, timeout=1800, quiet=False):
     """a deterministic command in the working copy; the whole output goes to pipe-logs/<tag>.log, the caller gets (code, text)"""
     line = ' '.join(a if not re.search(r'\s', a) else '"%s"' % a for a in argv)
     if ctx.dry:
-        say('  [dry] $ ' + line[:200])
+        say('  [dry] $ ' + line[:400])
         return 0, ''
     if not quiet:
         say('  $ ' + line[:160])
@@ -383,6 +422,8 @@ def call_model(ctx, step, tag, model, prompt, tools, turns=None, effort='default
         raise CapReached('cap %.2f M reached (%.2f M spent) before %s/%s' % (ctx.cap / 1e6, spent / 1e6, step, tag))
     turns = turns or TURNS[model]
     limit = limit or LIMIT[model]
+    if model == 'opus':
+        ramwait(ctx, '%s/%s' % (step, tag))
     ctx.beat()
     eff = EFFORT[model] if effort == 'default' else effort
     builtin = sorted({t.split('(')[0] for t in tools})
@@ -393,14 +434,16 @@ def call_model(ctx, step, tag, model, prompt, tools, turns=None, effort='default
         cmd += ['--effort', eff]
     nlines = len(prompt.strip().splitlines())
     if ctx.dry:
-        say('  [dry] model call %s/%s: %s, %d turns max, tools %s, prompt %d lines %d chars' % (step, tag, MODELS[model], turns, ','.join(builtin), nlines, len(prompt)))
-        return {'ok': True, 'dry': True, 'final': {'status': 'dry'}, 'text': '', 'subtype': 'dry', 'maxturns': False, 'timeout': False, 'eq': 0, 'turns': 0, 'ctx_peak': 0, 'denials': 0}
+        say('  [dry] model call %s/%s: %s effort %s, %d turns max, %d s max, tools %s, prompt %d lines %d chars' % (step, tag, MODELS[model], eff or '-', turns, limit,
+            ','.join(builtin), nlines, len(prompt)))
+        return {'ok': True, 'dry': True, 'final': {'status': 'dry'}, 'text': '', 'subtype': 'dry', 'maxturns': False, 'timeout': False, 'eq': 0, 'turns': 0, 'ctx_peak': 0,
+                'denials': 0, 'reads': [], 'tools': []}
     n = len(glob.glob('%s/pipe-logs/*.jsonl' % ctx.rc)) + 1
     logp = '%s/pipe-logs/%02d-%s-%s.jsonl' % (ctx.rc, n, step, tag)
     t0 = time.time()
     errf = open(logp + '.err', 'wb')
     p = subprocess.Popen(cmd, cwd=ctx.ch, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=errf, env=child_env())
-    st = {'result': None, 'msgs': {}, 'order': [], 'peak': 0}
+    st = {'result': None, 'msgs': {}, 'order': [], 'peak': 0, 'tools': []}
     log = open(logp, 'w', encoding='utf-8')
 
     def reader():
@@ -424,6 +467,8 @@ def call_model(ctx, step, tag, model, prompt, tools, turns=None, effort='default
                 for b in m.get('content') or []:
                     if isinstance(b, dict):
                         st['msgs'][mid]['ch'] += len(b.get('text') or '') + len(b.get('thinking') or '') + (len(json.dumps(b.get('input'))) if b.get('type') == 'tool_use' else 0)
+                        if b.get('type') == 'tool_use':  # what the model opened: the checks of refs, comparaison and juge read it
+                            st['tools'].append((b.get('name'), b.get('input') or {}))
                 st['peak'] = max(st['peak'], (u.get('input_tokens') or 0) + (u.get('cache_creation_input_tokens') or 0) + (u.get('cache_read_input_tokens') or 0))
     th = threading.Thread(target=reader, daemon=True)
     th.start()
@@ -462,10 +507,13 @@ def call_model(ctx, step, tag, model, prompt, tools, turns=None, effort='default
         eq = Bill.eq(model, row_u)
     text = (r or {}).get('result') or ''
     sub = (r or {}).get('subtype') or ('timeout' if timed else 'no-result')
+    reads = [ctx.npath(i.get('file_path') or i.get('path')) for n, i in st['tools'] if n == 'Read' and isinstance(i, dict) and (i.get('file_path') or i.get('path'))]
+    ctx.reads.setdefault(step, set()).update(reads)
     out = {'ok': bool(r) and not r.get('is_error'), 'final': parse_final(text), 'text': text, 'subtype': sub, 'maxturns': sub == 'error_max_turns', 'timeout': timed,
-           'eq': eq, 'turns': (r or {}).get('num_turns', len(st['order'])), 'ctx_peak': st['peak'], 'denials': len((r or {}).get('permission_denials') or [])}
+           'eq': eq, 'turns': (r or {}).get('num_turns', len(st['order'])), 'ctx_peak': st['peak'], 'denials': len((r or {}).get('permission_denials') or []),
+           'reads': reads, 'tools': [n for n, i in st['tools']]}
     ctx.bill.add(dict(row_u, step=step, tag=tag, model=model, eq=round(eq), usd=(r or {}).get('total_cost_usd'), turns=out['turns'], dur=round(dur), ctx_peak=st['peak'],
-                      denials=out['denials'], ok=out['ok'], subtype=sub, ts=now(), log=os.path.basename(logp)))
+                      denials=out['denials'], ok=out['ok'], subtype=sub, ts=now(), log=os.path.basename(logp), tools=','.join(builtin), effort=eff or ''))
     say('  [%s/%s] %s %d turns, eq %.0f k, context peak %d k, %d s, %s%s' % (step, tag, model, out['turns'], eq / 1e3, st['peak'] / 1e3, dur, sub,
         ', %d denied' % out['denials'] if out['denials'] else ''))
     if not r and not timed:
@@ -505,12 +553,75 @@ def server_up(port):
         return False
 
 
+def server_ports():
+    """the servers a render needs: the atelier (FLEUR_PORT, 8805) and recv.py; never the old port (another application)"""
+    return [(port(), 'the atelier server'), (8781, 'recv.py')]
+
+
 def need_servers(ctx):
     if ctx.dry:
         return
-    for port, what in ((8765, 'the atelier server'), (8781, 'recv.py')):
-        if not server_up(port):
-            raise StepFailed('%s (port %d) is not running: start it (never 8766) and resume with --from %s' % (what, port, ctx.st.get('current')))
+    for p, what in server_ports():
+        if not server_up(p):
+            raise StepFailed('%s (port %d) is not running: start it (never 8765 nor 8766) and resume with --from %s' % (what, p, ctx.st.get('current')))
+
+
+def ramwait(ctx, why=''):
+    """fleur/res/ramwait.sh (waits for 4.5 GB of free RAM, 30 min at most) before every Opus call and every heavy render: the PC crashed"""
+    rw = os.environ.get('PIPE_RAMWAIT', RAMWAIT)
+    if not rw:
+        return
+    if ctx.dry:
+        say('  [dry] ramwait.sh before %s' % why)
+        return
+    c, t = run_cmd(ctx, [sh_exe(), rw], 'ramwait', timeout=2400, quiet=True)
+    ctx.ramwaits = getattr(ctx, 'ramwaits', 0) + 1
+    if c:
+        raise StepFailed('free RAM stayed low for 30 minutes before %s (%s): resume later' % (why, (t.strip().splitlines() or [''])[-1][:80]))
+
+
+def private_scripts(ctx):
+    """the shared shell scripts that aim at the old port get a private copy in the working copy, fleur/<name>_p.sh, with the port of
+    FLEUR_PORT (the shared ones are never modified); fleur/portwrap_p.py sends the shared Python tools (fit.py) to these copies.
+    Returns the names written or up to date."""
+    d = ctx.ch + '/fleur'
+    if not os.path.isdir(d):
+        return []
+    names = sorted({os.path.basename(p) for p in glob.glob(d + '/*.sh') if not p.endswith('_p.sh')})
+    old = re.compile(r'localhost:%d\b' % OLD_PORT)
+    pick = []
+    for n in names:
+        t = open('%s/%s' % (d, n), encoding='utf-8', errors='replace').read()
+        live = [ln for ln in t.splitlines() if old.search(ln) and not ln.lstrip().startswith('#')]
+        if n in PRIVATE or live:
+            pick.append((n, t))
+    done = []
+    for n, t in pick:
+        p = '%s/%s_p.sh' % (d, n[:-3])
+        u = re.sub(r'\b%d\b' % OLD_PORT, str(port()), t)
+        for m, _ in pick:  # a private script calls the private copies of the others
+            u = u.replace('fleur/' + m, 'fleur/%s_p.sh' % m[:-3])
+        head = '# PRIVATE COPY of fleur/%s written by fleur/pipe.py: server port %d (FLEUR_PORT). Never edit, never commit: rewritten at every run.\n' % (n, port())
+        lines = u.split('\n')
+        u = '\n'.join(lines[:1] + [head.rstrip('\n')] + lines[1:]) if lines and lines[0].startswith('#!') else head + u
+        u = u.replace('\r\n', '\n')
+        if ctx.dry:
+            say('  [dry] private copy fleur/%s_p.sh (port %d)' % (n[:-3], port()))
+        elif not os.path.exists(p) or open(p, encoding='utf-8', errors='replace').read() != u:
+            with open(p, 'w', encoding='utf-8', newline='\n') as f:  # LF: the repositories are LF (python's 'w' writes CRLF here)
+                f.write(u)
+        done.append(n[:-3] + '_p.sh')
+    src, dst = HERE + '/pipe/portwrap.py', d + '/portwrap_p.py'
+    if os.path.exists(src) and fwd(os.path.abspath(src)) != fwd(os.path.abspath(dst)):
+        if ctx.dry:
+            say('  [dry] private copy fleur/portwrap_p.py')
+        elif not os.path.exists(dst) or open(dst, 'rb').read() != open(src, 'rb').read():
+            shutil.copyfile(src, dst)
+        done.append('portwrap_p.py')
+    return done
+
+
+BP = 'BONNES-PRATIQUES.md'
 
 
 def ensure_docs(ctx):
@@ -525,6 +636,17 @@ def ensure_docs(ctx):
         open(d + '/STANDARD-RENDU-4bis.md', 'w', encoding='utf-8').write(''.join(keep) or t[:12000])
     except Exception as e:
         say('  standards not copied: %s' % e)
+    for src in (FC + '/catalogue/serre/methode/' + BP, ctx.ch + '/catalogue/serre/methode/' + BP):  # the newest checklist: the main atelier's
+        if os.path.exists(src):
+            try:
+                shutil.copyfile(src, d + '/' + BP)
+                break
+            except Exception as e:
+                say('  %s not copied: %s' % (BP, e))
+
+
+def bp_rel(ctx):
+    return '%s/ref/%s' % (ctx.rel, BP)
 
 
 def bouquet_skus(a, sid):
@@ -564,12 +686,133 @@ def census_table(ctx):
         lvl = str(v.get('niveau') or c.get('niveau_provisoire') or c.get('niveau') or 'D').strip().upper()[:1]
         mq = c.get('marque')
         hint = bool(mq.get('indice')) if isinstance(mq, dict) else bool(mq)
-        br = str(v.get('marque') or ('a_verifier' if hint else 'libre')).lower()
+        br = str(v.get('marque') or c.get('marque_verdict') or ('a_verifier' if hint else 'libre')).lower()
         br = 'deposee' if br.startswith('dep') else 'a_verifier' if br.startswith('a_') or br.startswith('à') else 'libre'
         syn = c.get('synonymes') or []
         out.append({'nom': n, 'niveau': lvl if lvl in 'ABCD' else 'D', 'marque': br, 'photos': c.get('photos') or [], 'verdict': bool(v),
-                    'names': [norm(n)] + [norm(s) for s in (syn if isinstance(syn, list) else str(syn).split(','))], 'groupe': c.get('groupe')})
+                    'names': [norm(n)] + [norm(s) for s in (syn if isinstance(syn, list) else str(syn).split(','))], 'groupe': c.get('groupe'), 'cid': c.get('cid')})
     return out
+
+
+def set_questions(ctx, key, title, lines):
+    """refcache/<sid>/questions.md: the open questions of the sort, by section (never blocking); questions.json keeps the sections"""
+    if ctx.dry:
+        return
+    p = ctx.rc + '/questions.json'
+    Q = jload(p, {}) or {}
+    if lines:
+        Q[key] = {'title': title, 'lines': lines, 't': now()}
+    else:
+        Q.pop(key, None)
+    jsave(p, Q)
+    L = ['# Questions ouvertes de %s' % ctx.sid, '', 'Écrites par pipe.py ; aucune ne bloque la sorte. Une réponse du porteur se reporte dans les sources, puis `run %s --from <étape>`.' % ctx.sid]
+    for k, q in Q.items():
+        L += ['', '## ' + q['title'], ''] + ['- ' + x for x in q['lines']]
+    open(ctx.rc + '/questions.md', 'w', encoding='utf-8', newline='\n').write('\n'.join(L) + '\n')
+
+
+TRADE_SKIP = {'wikidata', 'wikimedia commons', 'commons', 'inaturalist', 'gbif', 'kavb'}  # not trade lists
+
+
+def catalogue_names(ctx):
+    """the names of the catalogue's colourways of the sort (read-only: catalogue/serre/sources/<sid>.json) and of the bouquet SKUs"""
+    out = {norm(x.get('cultivar')) for x in ctx.st.get('skus', []) if x.get('cultivar')}
+    for f in ('%s/catalogue/serre/sources/%s.json' % (FC, ctx.sid), '%s/catalogue/serre/sources/%s-coloris.json' % (FC, ctx.sid)):
+        j = jload(f, {}) or {}
+        cw = j.get('coloris') or []
+        for c in (cw.values() if isinstance(cw, dict) else cw):
+            if not isinstance(c, dict):
+                continue
+            for k in ('nom_enregistre', 'nom', 'cultivar', 'nom_libre', 'cle_inventaire', 'nom_variete'):
+                if isinstance(c.get(k), str):
+                    out.add(norm(c[k]))
+            for x in (c.get('cultivars_retenus') or []) + (c.get('photos') or []):
+                if isinstance(x, dict):
+                    for k in ('nom', 'nom_variete'):
+                        if isinstance(x.get(k), str):
+                            out.add(norm(x[k]))
+    return {n for n in out if n}
+
+
+def census_relevant(c, cat):
+    """the light census (owner, 2026-10-17): Haiku proofs only for the catalogue's colourways and the colourways that trade lists document;
+    the hundreds of register cultivars without a photo are left as they are"""
+    names = [norm(cult_name(c))] + [norm(s) for s in (c.get('synonymes') if isinstance(c.get('synonymes'), list) else str(c.get('synonymes') or '').split(','))]
+    names = [n for n in names if n]
+    if any(n in cat or any(len(k) > 3 and (k in n or n in k) for k in cat) for n in names):
+        return 'catalogue'
+    for p in (c.get('preuves') or []) + (c.get('photos') or []):
+        if isinstance(p, dict) and str(p.get('niveau') or '').upper() in ('N2', 'N3') and not p.get('registre') and norm(p.get('source')) not in TRADE_SKIP:
+            return 'negoce'
+    return None
+
+
+def census_lot(ctx, b):
+    """the lot sent to Haiku for one doubtful batch of census.py: only its relevant cultivars (lot-<n>.json); an empty lot is settled as is"""
+    n = re.findall(r'\d+', os.path.basename(b))[0]
+    cat = catalogue_names(ctx)
+    raw = jload(b, []) or []
+    keep = [dict(c, pertinence=census_relevant(c, cat)) for c in raw if isinstance(c, dict) and census_relevant(c, cat)]
+    lot = '%s/census/lot-%s.json' % (ctx.rc, n)
+    jsave(lot, keep)
+    if not keep:
+        jsave(b.replace('douteux-', 'verdict-'), [])
+    return lot, len(keep), len(raw) - len(keep)
+
+
+IMG_KEYS = ('image', 'img', 'url_image', 'thumb', 'url')
+IMG_SKIP = re.compile(r'variante|appoint|ecart|exclu|rejet|hors', re.I)  # photos of another variety or set aside: never a colourway's measure
+
+
+def import_photos(o):
+    """the named photos of a colourway of a sources file, wherever the wave put them (photos[], cultivars_retenus[].photos_a_mesurer[],
+    sources[].fichiers[], mesures.photos_retenues[]...): every object with an image URL, outside the branches of other varieties"""
+    if isinstance(o, list):
+        for v in o:
+            yield from import_photos(v)
+    elif isinstance(o, dict):
+        img = next((o[k] for k in IMG_KEYS if isinstance(o.get(k), str) and o[k].startswith('http') and re.search(r'\.(jpe?g|png|webp)(\?|$)', o[k], re.I)), None)
+        if img:
+            yield {'img': img, 'page': o.get('page') or o.get('url_page') or o.get('page_url') or img, 'niveau': o.get('niveau_source') or o.get('niveau') or 'N4'}
+        for k, v in o.items():
+            if isinstance(v, (dict, list)) and not IMG_SKIP.search(k):
+                yield from import_photos(v)
+
+
+def census_import(ctx):
+    """--skip-census without refcache/<sid>/census/census.json: the census already made (catalogue/serre/sources/<sid>.json, read-only) becomes
+    census.json, with loose aliases (the files of waves 1 to 3 differ); the colourway ids are kept (cid) so that coloris.json keeps them"""
+    d = ctx.rc + '/census'
+    if os.path.exists(d + '/census.json'):
+        return 'census.json already there'
+    src = next((f for f in ('%s/catalogue/serre/sources/%s.json' % (FC, ctx.sid), '%s/catalogue/serre/sources/%s-coloris.json' % (FC, ctx.sid)) if os.path.exists(f)), None)
+    j = jload(src, {}) if src else {}
+    cw = (j or {}).get('coloris') or []
+    cw = list(cw.values()) if isinstance(cw, dict) else cw
+    if not cw:
+        raise StepFailed('--skip-census: no refcache/%s/census/census.json and no colourways in catalogue/serre/sources/%s.json' % (ctx.sid, ctx.sid))
+    out = []
+    for c in cw:
+        if not isinstance(c, dict):
+            continue
+        ret = c.get('cultivars_retenus') or []
+        r0 = ret[0] if ret and isinstance(ret[0], dict) else {}
+        nom = next((x for x in (c.get('nom_enregistre'), c.get('nom'), c.get('cultivar'), c.get('nom_libre'), r0.get('nom'), c.get('nom_affiche'), str(c.get('id') or ''))
+                    if isinstance(x, str) and x.strip()), '')
+        ph, seen = [], set()
+        for x in import_photos(c):
+            if x['img'] not in seen:
+                seen.add(x['img'])
+                ph.append(x)
+        lvl = next((str(x).strip().upper()[:1] for x in (c.get('niveau_retenu'), c.get('niveau'), r0.get('niveau'), c.get('niveau_preuve'), c.get('niveau_provisoire')) if x), '')
+        lvl = lvl if lvl in 'ABCD' and lvl else ('C' if ph else 'D')
+        mq = c.get('marque') if c.get('marque') is not None else r0.get('marque')
+        stt = norm(mq.get('statut') if isinstance(mq, dict) else mq if isinstance(mq, str) else '')
+        br = 'deposee' if stt.startswith('depos') else 'a_verifier' if stt.startswith('a verifier') or '®' in str(mq if isinstance(mq, str) else '') else 'libre'
+        out.append({'nom': nom, 'cid': str(c['id']) if c.get('id') is not None else None, 'niveau_provisoire': lvl, 'photos': ph,
+                    'marque': {'indice': br != 'libre', 'statut_source': stt} if br != 'libre' else None, 'marque_verdict': br, 'synonymes': c.get('synonymes') or []})
+    jsave(d + '/census.json', {'sid': ctx.sid, 'importe_de': fwd(os.path.relpath(src, FC)), 'importe_le': now(), 'cultivars': out})
+    return 'imported %d colourways from %s' % (len(out), fwd(os.path.relpath(src, FC)))
 
 
 def sku_cultivar(rows, cname):
@@ -580,29 +823,39 @@ def sku_cultivar(rows, cname):
     return sorted(hit, key=lambda r: 'AB'.find(r['niveau']) if r['niveau'] in 'AB' else 9)[0] if hit else None
 
 
+OK_LEVELS = 'ABC'  # owner, 2026-10-17: a colourway is validated up to level C (named photos and a referenced colourway); only D is a question
+
+
 def check_census(ctx):
+    """a cultivar at A, B or C per bouquet SKU, free of brand (brand rule unchanged); a SKU at D or not found is a question (questions.md), never a block"""
     rows = census_table(ctx)
     if not rows:
         return {'ok': False, 'msg': 'census.json missing or without cultivars'}
     lv = {k: sum(1 for r in rows if r['niveau'] == k) for k in 'ABCD'}
-    good = [r for r in rows if r['niveau'] in 'AB' and r['marque'] == 'libre']
+    good = [r for r in rows if r['niveau'] in OK_LEVELS and r['marque'] == 'libre']
     waiting = [r['nom'] for r in rows if r['marque'] == 'a_verifier']
-    if waiting:
+    if waiting and not ctx.dry:
         open(ctx.rc + '/marques-a-verifier.txt', 'w', encoding='utf-8').write('\n'.join(waiting) + '\n')
-    bad, unresolved = [], []
+    bad, unresolved, dsku = [], [], []
     for x in ctx.st.get('skus', []):
         r = sku_cultivar(rows, x.get('cultivar'))
         if r is None:
             unresolved.append(x['sku'])
-        elif not (r['niveau'] in 'AB' and r['marque'] == 'libre'):
+        elif r['niveau'] == 'D':
+            dsku.append('%s (%s)' % (x['sku'], r['nom']))
+        elif r['marque'] != 'libre':
             bad.append('%s (%s: level %s, brand %s)' % (x['sku'], r['nom'], r['niveau'], r['marque']))
-    ok = not bad and bool(good) and (len(unresolved) < len(ctx.st.get('skus', [])) or not ctx.st.get('skus'))
-    msg = '%d cultivars, A %d B %d C %d D %d, %d A/B free of brand, %d brand to check' % (len(rows), lv['A'], lv['B'], lv['C'], lv['D'], len(good), len(waiting))
+    q = ['SKU %s : cultivar au niveau D (aucune photo nommée trouvée). Proposition : garder la couleur actuelle du catalogue, chercher une photo nommée '
+         '(obtenteur, producteur) ; le niveau C suffit.' % s for s in dsku]
+    q += ['SKU %s : son cultivar ne figure pas au recensement. Proposition : vérifier le nom (synonyme, orthographe) dans les sources de la sorte.' % s for s in unresolved]
+    set_questions(ctx, 'census', 'Recensement : coloris du bouquet au niveau D ou introuvables (non bloquant)', q)
+    ok = not bad and bool(rows)
+    msg = '%d cultivars, A %d B %d C %d D %d, %d A/B/C free of brand, %d brand to check' % (len(rows), lv['A'], lv['B'], lv['C'], lv['D'], len(good), len(waiting))
     if bad:
-        msg += '; BOUQUET SKU WITHOUT A/B: ' + ', '.join(bad)
-    if unresolved:
-        msg += '; SKU cultivar not found in the census: ' + ', '.join(unresolved)
-    return {'ok': ok, 'msg': msg, 'levels': lv, 'good': len(good)}
+        msg += '; BOUQUET SKU UNDER A BRAND TO CHECK: ' + ', '.join(bad)
+    if dsku or unresolved:
+        msg += '; questions (questions.md): %d SKU at D, %d SKU not found' % (len(dsku), len(unresolved))
+    return {'ok': ok, 'msg': msg, 'levels': lv, 'good': len(good), 'd_skus': dsku, 'unresolved': unresolved}
 
 
 def step_census(ctx):
@@ -626,13 +879,24 @@ def step_census(ctx):
         if not ctx.dry and (code not in (0,) or not os.path.exists(d + '/census.json')):
             raise StepFailed('census.py code %d: %s' % (code, text.strip().splitlines()[-1] if text.strip() else ''))
     batches = sorted(glob.glob(d + '/douteux-*.json'), key=lambda p: int(re.findall(r'\d+', os.path.basename(p))[0]))
-    todo = [b for b in batches if not os.path.exists(b.replace('douteux-', 'verdict-'))]
-    say('  %d doubtful batches, %d to settle with Haiku' % (len(batches), len(todo)))
+    batches = [b for b in batches if not os.path.basename(b).startswith('douteux-900')]
+    todo, skipped = [], 0
+    for b in batches:
+        if os.path.exists(b.replace('douteux-', 'verdict-')):
+            continue
+        if ctx.dry:
+            todo.append(b)
+            continue
+        lot, n_in, n_out = census_lot(ctx, b)
+        skipped += n_out
+        if n_in:
+            todo.append(lot)
+    say('  %d doubtful batches, %d lots to settle with Haiku (catalogue and trade colourways only; %d register cultivars left as they are)' % (len(batches), len(todo), skipped))
 
     def one(b):
         n = re.findall(r'\d+', os.path.basename(b))[0]
         for k in (1, 2):  # a second pass finishes a batch cut by the turn cap
-            p = prompt_text('census', **ctx.sub(n=n, batch='%s/census/douteux-%s.json' % (ctx.rel, n), verdict='%s/census/verdict-%s.json' % (ctx.rel, n)))
+            p = prompt_text('census', **ctx.sub(n=n, batch='%s/census/%s' % (ctx.rel, os.path.basename(b)), verdict='%s/census/verdict-%s.json' % (ctx.rel, n)))
             r = call_model(ctx, 'census', 'lot%s.%d' % (n, k), 'haiku', p, READ + ['Write'] + WEB + ['Bash(python *)', 'Bash(ls *)', 'Bash(head *)', 'Bash(tail *)', 'Bash(cat *)', 'Bash(wc *)'], turns=60)
             if (r.get('final') or {}).get('status') == 'done' or ctx.dry:
                 return
@@ -642,19 +906,20 @@ def step_census(ctx):
         for f in futs:
             f.result()
     c = check_census(ctx)
-    if not c['ok'] and 'BOUQUET SKU WITHOUT A/B' in c['msg'] and not os.path.exists(d + '/verdict-900.json'):
-        # the bouquet's cultivars below B get one targeted Haiku search for N2/N3 photos (lot 900), then the check again
+    if c.get('d_skus') and not os.path.exists(d + '/verdict-900.json'):
+        # the bouquet's cultivars at D get one targeted Haiku search for a named photo (lot 900; level C is enough), then the check again
         raw = {norm(x.get('nom', '')): x for x in jload(d + '/census.json', {}).get('cultivars', [])}
         lot = []
         for x in ctx.st.get('skus', []):
             k = norm(x.get('cultivar') or '')
             r = raw.get(k) or next((v for n, v in raw.items() if k and n and (n in k or k in n)), None)  # same loose match as sku_cultivar
-            if r is not None:
-                lot.append(dict(r, consigne='SKU du bouquet %s sous le niveau B : cherche par WebSearch ciblée au moins une photo nommée N2 ou N3 de ce cultivar '
-                                         '(obtenteur, arboretum, jardin botanique, collection nationale, société du genre, pépinière spécialisée) et une seconde photo '
-                                         'indépendante ; donne les URL des images. Si rien ne se trouve, dis-le.' % x['sku']))
+            rr = sku_cultivar(census_table(ctx), x.get('cultivar'))
+            if r is not None and rr is not None and rr['niveau'] == 'D':
+                lot.append(dict(r, consigne='SKU du bouquet %s au niveau D : cherche par WebSearch ciblée UNE photo nommée de ce cultivar (obtenteur, producteur, '
+                                         'exportateur, jardin botanique, société du genre) ; le niveau C suffit, ne cherche pas au-delà. Donne l\'URL de l\'image. '
+                                         'Si rien ne se trouve, dis-le.' % x['sku']))
         if lot:
-            say('  bouquet cultivars below B: one targeted search (lot 900)')
+            say('  bouquet cultivars at D: one targeted search (lot 900)')
             jsave(d + '/douteux-900.json', lot)
             one(d + '/douteux-900.json')
             c = check_census(ctx)
@@ -674,7 +939,70 @@ REFS_MIN = {  # tag family -> {value: soft minimum}; hard minimum below
     'stade': {'bouton': 2, 'entrouvert': 2, 'ouvert': 3, 'declin': 1, 'fane': 2},
     'vue': {'face': 2, 'profil': 2, 'trois-quarts': 1, 'dos': 1},
     'organe': {'feuille-dessus': 2, 'feuille-dessous': 1, 'tige': 2, 'bourgeon': 1, 'feuille-fanee': 1, 'plante': 1}}
-REFS_HARD = [('stade', 'bouton'), ('stade', 'ouvert'), ('stade', 'fane'), ('organe', 'feuille-dessus'), ('organe', 'tige')]
+REFS_HARD = [('stade', 'bouton'), ('stade', 'ouvert'), ('stade', 'fane'), ('organe', 'feuille-dessus'), ('organe', 'tige'),
+             ('vue', 'face'), ('vue', 'trois-quarts'), ('vue', 'profil')]  # the views of the comparison pairs (BONNES-PRATIQUES 9.3b)
+VU_RE = re.compile(r'\bvu\s*:\s*([^;]*)', re.I)
+VU_KV = re.compile(r'(stade|vue|organe)\s*=\s*([^\s;,=]+)', re.I)
+
+
+def vu_parse(m):
+    """the "vu" field of a kept photo (refs.py keep --m "vu: stade=ouvert+declin vue=profil organe=tige ; note"): what was SEEN on the image"""
+    mm = VU_RE.search(m or '')
+    if not mm:
+        return None
+    out = {}
+    for k, v in VU_KV.findall(mm.group(1)):
+        fam = k.lower()
+        vals = [norm_tag(x) for x in v.split('+') if norm(x) and norm(x) not in ('aucun', 'aucune', 'na')]
+        vals = ['bourgeon' if fam == 'organe' and x == 'bouton' else x for x in vals]
+        out.setdefault(fam, []).extend(vals)
+    return out if any(out.values()) else None
+
+
+def refs_seen(ctx):
+    """the thumbnails and contact sheets the refs calls opened (refs-vus.json: kept across calls and resumptions)"""
+    p = ctx.rc + '/refs-vus.json'
+    seen = set(jload(p, []) or [])
+    rc = ctx.npath(ctx.rel)
+    for f in ctx.reads.get('refs', set()):
+        if f.startswith(rc):
+            seen.add(os.path.basename(f))
+    if not ctx.dry:
+        jsave(p, sorted(seen))
+    return seen
+
+
+def refs_audit(ctx):
+    """a kept photo stays only if a refs call LOOKED at it (its thumbnail t<NNN>.jpg or the contact sheet that holds it was opened with Read)
+    and its "vu" field states the stage / view / organ seen, agreeing with its tags; the others leave keep.json (keep-ecartes.json says why)"""
+    K = jload(ctx.rc + '/keep.json', []) or []
+    seen = refs_seen(ctx)
+    sheets = [int(m) for s in seen for m in re.findall(r'^sheet_(\d+)\.jpg$', s)]
+    good, bad = [], []
+    for x in K:
+        i = int(x.get('i', -1))
+        looked = 't%03d.jpg' % i in seen or any(f <= i < f + 20 for f in sheets)
+        vu = vu_parse(x.get('m'))
+        why = []
+        if not looked:
+            why.append('not looked at (neither its thumbnail nor its sheet was opened)')
+        if not vu:
+            why.append('no "vu:" field (stage, view, organ seen)')
+        else:
+            for t in x.get('tags', []):
+                fam, _, v = t.partition(':')
+                fam = fam.strip().lower()
+                if fam in ('stade', 'vue', 'organe'):
+                    v = norm_tag(v)
+                    v = 'bourgeon' if fam == 'organe' and v == 'bouton' else v
+                    if v not in vu.get(fam, []):
+                        why.append('tag %s not in its "vu" field' % t)
+        (bad if why else good).append(dict(x, raison='; '.join(why)) if why else x)
+    if bad and not ctx.dry:
+        old = jload(ctx.rc + '/keep-ecartes.json', []) or []
+        jsave(ctx.rc + '/keep-ecartes.json', old + [dict(b, ecarte=now()) for b in bad])
+        jsave(ctx.rc + '/keep.json', good)
+    return len(good), bad
 
 
 def refs_counts(ctx):
@@ -749,20 +1077,32 @@ def step_refs(ctx):
             refs_find(ctx, R)
         sheets = refs_sheets(ctx, R)
     tools = READ + ['Bash(python *)', 'Bash(ls *)', 'Bash(head *)', 'Bash(tail *)', 'Bash(wc *)', 'Bash(cat *)']
+    keep_before = json.dumps([x.get('title') for x in jload(ctx.rc + '/keep.json', []) or []])
+    n0, bad0 = refs_audit(ctx)  # photos kept blind by an earlier run (no "vu", never opened) leave first
+    if bad0:
+        say('  %d kept photos set aside (never looked at or without "vu"): keep-ecartes.json' % len(bad0))
+    dropped = len(bad0)
     if not jload(ctx.rc + '/keep.json', []) or ctx.dry:
         sh = '' if ctx.dry else '\n'.join('- ' + s for s in sheets)
-        r = call_model(ctx, 'refs', 'pick', 'haiku', prompt_text('refs', **ctx.sub(task='pick', sheets=sh or '-', missing='-')), tools, turns=45)
+        r = call_model(ctx, 'refs', 'pick', 'haiku', prompt_text('refs', **ctx.sub(task='pick', sheets=sh or '-', missing='-')), tools, turns=60)
+        n1, bad = refs_audit(ctx)
+        dropped += len(bad)
     c = check_refs(ctx)
     if not c['ok'] or len(c['soft']) > 3:
         miss = ', '.join(c['hard'] + c['soft'])
-        r = call_model(ctx, 'refs', 'fill', 'haiku', prompt_text('refs', **ctx.sub(task='fill', sheets='-', missing=miss or '-')), tools + WEB + ['Write'], turns=45)
+        r = call_model(ctx, 'refs', 'fill', 'haiku', prompt_text('refs', **ctx.sub(task='fill', sheets='-', missing=miss or '-')), tools + WEB + ['Write'], turns=60)
+        n2, bad = refs_audit(ctx)
+        dropped += len(bad)
         c = check_refs(ctx)
     if not ctx.dry and c['n']:
         quiet(R.kept, ctx.sid, 220)
-    if not os.path.exists(ctx.rc + '/brief.md') or ctx.dry:
+    changed = json.dumps([x.get('title') for x in jload(ctx.rc + '/keep.json', []) or []]) != keep_before
+    if not os.path.exists(ctx.rc + '/brief.md') or changed or ctx.dry:  # the brief follows the photos actually kept
         call_model(ctx, 'refs', 'brief', 'haiku', prompt_text('brief', **ctx.sub()), tools + ['Write'], turns=30)
     if not ctx.dry and not os.path.exists(ctx.rc + '/brief.md'):
         c['ok'], c['msg'] = False, c['msg'] + '; brief.md not written'
+    c['set_aside'] = dropped
+    c['msg'] += '; %d photos set aside by the "looked at" check' % dropped
     return {'status': 'done' if c['ok'] else 'failed', 'msg': c['msg'], 'checks': c, 'gaps': c['soft']}
 
 
@@ -801,9 +1141,10 @@ def step_coloris(ctx):
     if ctx.dry:
         say('  [dry] refs.py url/auto on up to 3 photos of each A/B cultivar, medians, then Haiku for the low-confidence ones')
         return {'status': 'done', 'msg': 'dry', 'checks': {}}
-    rows = [r for r in census_table(ctx) if r['niveau'] in 'AB' and r['marque'] == 'libre' and r['photos']]
+    # levels A to C are measured (owner, 2026-10-17); a cultivar under a brand is measured too: its NAME is never shown (BONNES-PRATIQUES 4.9)
+    rows = [r for r in census_table(ctx) if r['niveau'] in OK_LEVELS and r['photos']]
     if not rows:
-        raise StepFailed('no A/B cultivar with photos in the census (run census first)')
+        raise StepFailed('no A/B/C cultivar with photos in the census (run census first)')
     first = {sku_cultivar(rows, x.get('cultivar'))['nom'] for x in ctx.st.get('skus', []) if sku_cultivar(rows, x.get('cultivar'))}
     rows.sort(key=lambda r: (r['nom'] not in first, r['niveau'], -len(r['photos'])))
     rows = rows[:int(getattr(ctx.a, 'max_coloris', 60) or 60)]
@@ -834,11 +1175,11 @@ def step_coloris(ctx):
     for r in rows:
         res = meas.get(r['nom']) or []
         good = [m for m in res if m['conf'] >= .5]
-        cid = slug(r['nom'])[:24] or 'c'
+        cid = r.get('cid') or slug(r['nom'])[:24] or 'c'  # an imported census keeps the catalogue's ids (never change an id: 4.9)
         while cid in used:
             cid += 'x'
         used.add(cid)
-        e = {'id': cid, 'cultivar': r['nom'], 'niveau': r['niveau'], 'photos': [m['page'] for m in res], 'mesure': 'auto'}
+        e = {'id': cid, 'cultivar': r['nom'], 'niveau': r['niveau'], 'marque': r['marque'], 'photos': [m['page'] for m in res], 'mesure': 'auto'}
         if good:
             for k in ('base', 'corps', 'pointe'):
                 e[k] = med_hex([m[k] for m in good])
@@ -868,22 +1209,23 @@ def step_coloris(ctx):
         if m and all(re.match(r'^#[0-9a-fA-F]{6}$', str(m.get(k) or '')) for k in ('base', 'corps', 'pointe')):
             e.update({k: m[k] for k in ('base', 'corps', 'pointe')}, mesure='main')
             e.update({k: m[k] for k in ('revers', 'macule', 'eclairage') if m.get(k)})
-        if all(re.match(r'^#[0-9a-fA-F]{6}$', str(e.get(k) or '')) for k in ('base', 'corps', 'pointe')) and e['niveau'] in 'AB':
+        if all(re.match(r'^#[0-9a-fA-F]{6}$', str(e.get(k) or '')) for k in ('base', 'corps', 'pointe')) and e['niveau'] in OK_LEVELS:
             keep.append(e)
         else:
             drop.append({'id': e['id'], 'cultivar': e['cultivar'], 'raison': 'no measure'})
     jsave(ctx.rc + '/coloris.json', keep)
     jsave(ctx.rc + '/coloris-ecartes.json', drop)
-    L = ['# Coloris mesurés de %s (%d, %d écartés)' % (ctx.sid, len(keep), len(drop)), '', '| id | cultivar | base | corps | pointe | revers | macule | niveau | remarques |', '|---|---|---|---|---|---|---|---|---|']
+    L = ['# Coloris mesurés de %s (%d, %d écartés)' % (ctx.sid, len(keep), len(drop)), '', 'marque différente de « libre » : le nom du cultivar ne s\'affiche jamais (nom de couleur générique, BONNES-PRATIQUES 4.9).', '',
+         '| id | cultivar | base | corps | pointe | revers | macule | niveau | marque | remarques |', '|---|---|---|---|---|---|---|---|---|---|']
     for e in keep:
-        L.append('| %s | %s | %s | %s | %s | %s | %s | %s | %s |' % (e['id'], e['cultivar'], e['base'], e['corps'], e['pointe'], e.get('revers') or '', e.get('macule') or '', e['niveau'],
-                 '%s, dE %s, %d photos' % (e['mesure'], e.get('ecart_dE', '-'), len(e['photos']))))
+        L.append('| %s | %s | %s | %s | %s | %s | %s | %s | %s | %s |' % (e['id'], e['cultivar'], e['base'], e['corps'], e['pointe'], e.get('revers') or '', e.get('macule') or '', e['niveau'],
+                 e.get('marque') or 'libre', '%s, dE %s, %d photos' % (e['mesure'], e.get('ecart_dE', '-'), len(e['photos']))))
     open(ctx.rc + '/coloris.md', 'w', encoding='utf-8').write('\n'.join(L) + '\n')
     allr, kept_ids, ids = census_table(ctx), {e['id'] for e in keep}, {e['cultivar']: e['id'] for e in out}
     miss = []
     for x in ctx.st.get('skus', []):
         r = sku_cultivar(allr, x.get('cultivar'))
-        if r is not None and ids.get(r['nom']) not in kept_ids:  # a SKU whose cultivar is not in the census is the census check's business
+        if r is not None and r['niveau'] != 'D' and ids.get(r['nom']) not in kept_ids:  # a SKU not in the census or at D is a question (census)
             miss.append(x['sku'])
     ok = bool(keep) and not miss
     return {'status': 'done' if ok else 'failed', 'msg': '%d colourways measured, %d dropped, %d sent to Haiku%s' % (len(keep), len(drop), len(low), '; bouquet SKU without colour: ' + ', '.join(miss) if miss else ''),
@@ -892,9 +1234,12 @@ def step_coloris(ctx):
 
 # ---------------------------------------------------------------------------------------------------------------- targets
 
+FIT = ['fleur/portwrap_p.py', 'fleur/fit.py']  # fit.py renders through fleur/shot.sh: the wrapper sends it to the private shot_p.sh
+
+
 def targets_cmd(ctx):
     """fit.py targets on the kept photos; the form family (grappe: an inflorescence, not a radial flower) is passed on, fit.py decides what it means"""
-    cmd = [sys.executable, 'fleur/fit.py', 'targets', ctx.sid, '--refs', ctx.rel, '--out', ctx.rel + '/targets.json']
+    cmd = [sys.executable] + FIT + ['targets', ctx.sid, '--refs', ctx.rel, '--out', ctx.rel + '/targets.json']
     fam = (ctx.st.get('family') or '').strip()
     return cmd + ['--family', fam] if fam else cmd
 
@@ -927,7 +1272,7 @@ def step_targets(ctx):
 
 # ---------------------------------------------------------------------------------------------------------------- Opus / Sonnet loops
 
-LOCKED = ('forme', 'fit', 'plante', 'finition', 'temoins', 'qa', 'planches')  # they edit, rebuild or render the working copy: one at a time per copy
+LOCKED = ('forme', 'fit', 'plante', 'finition', 'comparaison', 'juge', 'temoins', 'qa', 'planches')  # they edit, rebuild, render or judge the copy: one at a time
 
 
 def get_lock(ctx, kind):
@@ -938,9 +1283,11 @@ def get_lock(ctx, kind):
     return lk
 
 
-def model_loop(ctx, step, pname, model, tools, max_calls, done_check, turns=None, extra=None):
+def model_loop(ctx, step, pname, model, tools, max_calls, done_check, turns=None, extra=None, must_read=()):
     """calls with an empty context until the model says done AND the check passes; a call that stops on the turn cap, the clock or 'relay' is
-    followed by a fresh one that reads etat-<step>.md (written by the model, or by us as a stub). Returns ('done'|'relay'|'blocked', last final)"""
+    followed by a fresh one that reads etat-<step>.md (written by the model; a stub of ours is APPENDED, the model's state is never lost).
+    must_read: files the step must open with Read (BONNES-PRATIQUES.md): a call that did not is told so, and the step cannot end without them.
+    Returns ('done'|'relay'|'blocked', last final)"""
     etat = '%s/etat-%s.md' % (ctx.rel, step)
     why = ''
     fin = {}
@@ -957,10 +1304,16 @@ def model_loop(ctx, step, pname, model, tools, max_calls, done_check, turns=None
         if ctx.dry:
             done_check()
             return 'done', fin
+        unread = [m for m in must_read if ctx.npath(m) not in set(r.get('reads') or [])]
+        if unread:
+            say('  %s/r%d did not open %s' % (step, k, ', '.join(os.path.basename(m) for m in unread)))
         if fin.get('status') == 'blocked':
             return 'blocked', fin
         if fin.get('status') == 'done' and not r['timeout']:
             ok, why = done_check()
+            never = [m for m in must_read if not ctx.read_by(step, m)]
+            if never:
+                ok, why = False, ('; '.join(x for x in (why, 'you never opened %s in full: read it, then check your work against it' % ', '.join(never)) if x))
             if ok:
                 return 'done', fin
             say('  %s: check failed: %s' % (step, why[:200]))
@@ -968,22 +1321,42 @@ def model_loop(ctx, step, pname, model, tools, max_calls, done_check, turns=None
             why = ''
             p = ctx.rc + '/etat-%s.md' % step
             if not os.path.exists(p) or os.path.getmtime(p) < t0:
-                open(p, 'w', encoding='utf-8').write('# État (écrit par pipe.py)\n\nL\'appel %d de l\'étape %s s\'est arrêté (%s, %d tours) sans écrire son état.\n'
-                                                     'Lis la fin de journal.md et `git status --short` pour voir ce qui est fait, puis continue.\n' % (k, step, r['subtype'], r['turns']))
+                with open(p, 'a', encoding='utf-8', newline='\n') as f:
+                    f.write('\n\n# Note de pipe.py (%s)\n\nL\'appel %d de l\'étape %s s\'est arrêté (%s, %d tours) sans mettre cet état à jour.\n'
+                            'Lis la fin de journal.md et `git status --short` pour voir ce qui est fait, puis continue.\n' % (now(), k, step, r['subtype'], r['turns']))
     return 'relay', fin
+
+
+def sv_heads(ctx):
+    """{sid: the sheet file} of every head registered in app/y-*.js and yz-*.js (SV_HEAD['sid'] or SV_HEAD[CONST] with CONST='sid')"""
+    files = sorted(glob.glob(ctx.ch + '/app/y-*.js') + glob.glob(ctx.ch + '/app/yz-*.js'))
+    text = {f: open(f, encoding='utf-8', errors='replace').read() for f in files}
+    consts = {}
+    for t in text.values():
+        for k, v in re.findall(r'(?:const|let|var)\s+(\w+)\s*=\s*[\'"]([^\'"]+)[\'"]', t):
+            consts.setdefault(k, v)
+    out = {}
+    for f, t in text.items():
+        for x in re.findall(r'SV_HEAD\[\s*[\'"]([^\'"]+)[\'"]\s*\]', t) + [consts[i] for i in re.findall(r'SV_HEAD\[\s*([A-Za-z_]\w*)\s*\]', t) if i in consts]:
+            out.setdefault(x, 'app/' + os.path.basename(f))
+    return out
 
 
 def check_forme(ctx, space='space.json'):
     g = slug(ctx.genus)
     why = []
     js = 'app/y-%s.js' % g
-    if not have(ctx, js):
-        why.append(js + ' missing')
-    else:
-        for f in ('mkapp.sh', 'mkqa.sh', 'mkpl.sh'):
+    heads = sv_heads(ctx)
+    if ctx.sid in heads:
+        js = heads[ctx.sid]  # a sort of a genus already drawn (yz-*.js, a shared genus sheet)
+    elif not have(ctx, js):
+        why.append('%s missing and no SV_HEAD[\'%s\'] in app/y-*.js, yz-*.js' % (js, ctx.sid))
+    if have(ctx, js):
+        for f in ('mkapp.sh', 'mkqa.sh', 'mkpl.sh'):  # the build scripts take app/y-*.js and yz-*.js by themselves (ls): registered either way
             try:
-                if 'y-%s.js' % g not in open('%s/%s' % (ctx.ch, f), encoding='utf-8').read():
-                    why.append('y-%s.js not registered in %s' % (g, f))
+                t = open('%s/%s' % (ctx.ch, f), encoding='utf-8').read()
+                if os.path.basename(js) not in t and 'ls %s-*.js' % os.path.basename(js).split('-')[0] not in t:
+                    why.append('%s not registered in %s' % (os.path.basename(js), f))
             except Exception:
                 why.append(f + ' unreadable')
     sp = jload('%s/%s' % (ctx.rc, space), None)
@@ -1003,8 +1376,10 @@ def check_forme(ctx, space='space.json'):
 
 def step_forme(ctx):
     ensure_docs(ctx)
+    witness_before(ctx)  # the SKU dump and the kit sorts' sheets BEFORE the modeller touches app/ (compared at temoins)
     tools = READ + ['Write', 'Edit'] + SAFE_BASH
-    res, fin = model_loop(ctx, 'forme', 'forme', 'opus', tools, int(getattr(ctx.a, 'relays', 4)), lambda: check_forme(ctx))
+    res, fin = model_loop(ctx, 'forme', 'forme', 'opus', tools, int(getattr(ctx.a, 'relays', 4)), lambda: check_forme(ctx),
+                          extra={'kit': kit_text(ctx)}, must_read=[bp_rel(ctx)])
     if res == 'blocked':
         raise StepFailed('forme blocked by the modeller: %s' % (fin.get('question') or fin.get('note') or fin))
     ok, why = check_forme(ctx)
@@ -1023,7 +1398,8 @@ def fit_summary(path):
 
 
 def run_fit(ctx, space, outdir):
-    cmd = [sys.executable, 'fleur/fit.py', ctx.sid, '--space', '%s/%s' % (ctx.rel, space), '--targets', ctx.rel + '/targets.json', '--budget', str(getattr(ctx.a, 'budget', 60)), '--out', '%s/%s' % (ctx.rel, outdir)]
+    ramwait(ctx, 'fit.py (%s)' % outdir)
+    cmd = [sys.executable] + FIT + [ctx.sid, '--space', '%s/%s' % (ctx.rel, space), '--targets', ctx.rel + '/targets.json', '--budget', str(getattr(ctx.a, 'budget', 60)), '--out', '%s/%s' % (ctx.rel, outdir)]
     if getattr(ctx.a, 'cw', None) is not None:
         cmd += ['--cw', str(ctx.a.cw)]
     return run_cmd(ctx, cmd, 'fit-' + outdir, timeout=3600)
@@ -1042,7 +1418,7 @@ def step_fit(ctx, part='forme'):
         raise StepFailed('fit.py code %d: %s' % (code, (text.strip().splitlines() or [''])[-1][:160]))
     summ = fit_summary(d + '/fit.json') if not ctx.dry else 'dry'
     r = call_model(ctx, 'fit' if part == 'forme' else 'plante', 'look', 'opus', prompt_text('fit', **ctx.sub(part=part, space='%s/%s' % (ctx.rel, space), out='%s/%s' % (ctx.rel, outdir), summary=summ)),
-                   READ + ['Write', 'Edit'] + SAFE_BASH, turns=26)  # 16 ran out on a lilac look (a render with the wrong sid, then the journal)
+                   READ + ['Write', 'Edit'] + SAFE_BASH, turns=40)  # 16 ran out on a lilac look (a render with the wrong sid, then the journal); xhigh thinks longer
     fin = r.get('final') or {}
     ok = ctx.dry or (fin.get('status') == 'done' and os.path.exists(d + '/fit.png'))
     return {'status': 'done' if ok else 'failed', 'msg': '%s; look: %s' % (summ, fin.get('verdict') or fin.get('note') or r['subtype']), 'checks': {'fit_png': os.path.exists(d + '/fit.png')}}
@@ -1050,7 +1426,8 @@ def step_fit(ctx, part='forme'):
 
 def step_plante(ctx):
     ensure_docs(ctx)
-    res, fin = model_loop(ctx, 'plante', 'plante', 'opus', READ + ['Write', 'Edit'] + SAFE_BASH, int(getattr(ctx.a, 'relays', 4)), lambda: check_forme(ctx, 'space-plante.json'))
+    res, fin = model_loop(ctx, 'plante', 'plante', 'opus', READ + ['Write', 'Edit'] + SAFE_BASH, int(getattr(ctx.a, 'relays', 4)), lambda: check_forme(ctx, 'space-plante.json'),
+                          must_read=[bp_rel(ctx)])
     if res == 'blocked':
         raise StepFailed('plante blocked by the modeller: %s' % (fin.get('question') or fin.get('note') or fin))
     if res != 'done':
@@ -1074,9 +1451,10 @@ def last_json(text):
 
 
 def shot(ctx, name, query, tag):
-    """fleur/shot.sh through the gate: (png written?, the measures {n, el, kb, patch}, text)"""
+    """fleur/shot_p.sh (the private copy: port of FLEUR_PORT) through the gate: (png written?, the measures {n, el, kb, patch}, text)"""
     need_servers(ctx)
-    code, text = run_cmd(ctx, [sh_exe(), 'fleur/shot.sh', name, query], tag, timeout=1500)
+    ramwait(ctx, 'render ' + name)
+    code, text = run_cmd(ctx, [sh_exe(), 'fleur/shot_p.sh', name, query], tag, timeout=1500)
     ok = os.path.exists('%s/fleur/out/%s.png' % (ctx.ch, name)) and 'PAS D\'IMAGE' not in text
     return ok, last_json(text), text
 
@@ -1090,17 +1468,19 @@ STAGES = '.06:0,.2:0,.4:0,.75:0,1:0,1:.35,1:.6,1:.75,1:.9'
 
 
 def budget(ctx, tag):
+    """elements and KB per head at DET 1: a MEASURE only (owner, 2026-10-17: « le poids je m'en fiche »); fails only when nothing renders"""
     ids = cw_ids(ctx, 2)
     if not ids and not ctx.dry:
         raise StepFailed('no coloris.json: no colourway to measure')
-    q = 'grid=1&sid=%s&cws=%s&st=.06:0,.4:0,.85:0,1:.6,1:.9&view=2,0&D=120&det=1' % (ctx.sid, ','.join(ids))
+    q = 'grid=1&sid=%s&cws=%s&st=.06:0,.4:0,.85:0,1:.6,1:.9&view=2,0&D=120&det=1&seed=%d' % (ctx.sid, ','.join(ids), SEED)
     ok, m, text = shot(ctx, tag, q, 'budget-' + tag)
     if ctx.dry:
         return True, 'dry', {}
     if not ok or not m:
         return False, 'no render (%s)' % (text.strip().splitlines() or [''])[-1][:100], {}
     over = m.get('el', 0) > 1.2 * TARGET_EL or m.get('kb', 0) > 1.2 * TARGET_KB
-    return (not over), '%s elements and %s KB per head at DET 1 (target %d / %d, red beyond 1.2 x)' % (m.get('el'), m.get('kb'), TARGET_EL, TARGET_KB), m
+    return True, '%s elements and %s KB per head at DET 1 (measure only; about %d / %d%s)' % (m.get('el'), m.get('kb'), TARGET_EL, TARGET_KB,
+                                                                                         ', above 1.2 x' if over else ''), m
 
 
 def step_finition(ctx):
@@ -1111,6 +1491,399 @@ def step_finition(ctx):
     ok, msg, m = budget(ctx, 'fin_' + ctx.sid) if not ctx.dry else (True, 'dry', {})
     return {'status': 'done' if (res == 'done' and ok) else 'failed', 'msg': 'finition %s; %s' % (res, msg), 'checks': m}
 
+
+# ---------------------------------------------------------------------------------------------------------------- kit sorts
+
+def kit_names(text):
+    """the top-level names a kit piece defines (function X, const/let/var X =)"""
+    return [a or b for a, b in re.findall(r'(?m)^(?:function\s+(\w+)|(?:const|let|var)\s+(\w+)\s*=)', text)]
+
+
+def kit_prefix(names):
+    """the family prefix of a kit piece: for its lower-case and its upper-case names, the longest start shared by 60 % of them (svRose|SVROSE_)"""
+    from collections import Counter
+    out = []
+    for grp in ([n for n in names if n[:1].islower()], [n for n in names if n[:1].isupper()]):
+        if not grp:
+            continue
+        best = None
+        for L in range(max(len(n) for n in grp), 2, -1):
+            c = Counter(n[:L] for n in grp if len(n) >= L)
+            if c and c.most_common(1)[0][1] >= .6 * len(grp):
+                best = c.most_common(1)[0][0]
+                break
+        if best:
+            if best[:1].isupper() and '_' in best:
+                best = best[:best.index('_') + 1]
+            out.append(best)
+    return '|'.join(out)
+
+
+def kit_sorts(ctx, prefix, names):
+    """the sorts already drawn with a kit piece: the heads of the sheets app/y-*.js, yz-*.js that use one of the names it defines with its prefix
+    (whole names: svRose must not catch svRosette)"""
+    pre = [p for p in (prefix or '').split('|') if p]
+    used = [n for n in names if any(n.startswith(p) for p in pre)] or names
+    if not used:
+        return []
+    pat = re.compile(r'\b(?:%s)\b' % '|'.join(re.escape(n) for n in sorted(used, key=len, reverse=True)))
+    heads = sv_heads(ctx)
+    files = {f: open('%s/%s' % (ctx.ch, f), encoding='utf-8', errors='replace').read() for f in sorted(set(heads.values()))}
+    return sorted(sid for sid, f in heads.items() if pat.search(files[f]))
+
+
+def kit_info(ctx):
+    """--kit <module>: {module, prefix, sids (the sorts already drawn with it, this one excepted)} or None"""
+    k = (ctx.st.get('kit') or '').strip()
+    if not k:
+        return None
+    mod = os.path.basename(k if k.endswith('.js') else k + '.js')
+    p = '%s/app/%s' % (ctx.ch, mod)
+    if not os.path.exists(p):
+        raise StepFailed('--kit %s: app/%s not found in the working copy' % (k, mod))
+    names = kit_names(open(p, encoding='utf-8', errors='replace').read())
+    prefix = ctx.st.get('kit_prefix') or kit_prefix(names)
+    sids = [x.strip() for x in (ctx.st.get('kit_sids') or '').split(',') if x.strip()] or kit_sorts(ctx, prefix, names)
+    return {'module': mod, 'prefix': prefix, 'sids': [x for x in sids if x != ctx.sid]}
+
+
+def kit_text(ctx):
+    ki = kit_info(ctx)
+    if not ki:
+        return ('Une pièce de kit absente (couronne, rosette, grappe...) : générique et paramétrée, dans app/y3-<famille>.js, jamais dans y3.js. Si tu touches au moteur : '
+                'l\'anémone reste à 0,00 % (fleur/img.py diff) et rtest reste IDENTIQUE.')
+    return ('Sorte du kit app/%s (préfixe %s) : étends cette pièce, sans changer le rendu des sortes déjà faites avec elle (%s) : leur planche reste à 0,00 %% et '
+            'leur rtest IDENTIQUE (contrôlés aux témoins). Tout nom nouveau de la pièce garde le préfixe %s ; ce qui ne sert qu\'à cette sorte va dans sa fiche. '
+            'En bouquet, la tête nouvelle se place dans la boîte de l\'ancien dessin (comme svSpdKeepBox, app/y3-spathe.js). L\'anémone reste à 0,00 %%.'
+            % (ki['module'], ki['prefix'] or '?', ', '.join(ki['sids']) or 'aucune trouvée', ki['prefix'] or 'de la famille'))
+
+
+def kit_query(k):
+    return 'grid=1&sid=%s&st=.2:0,.75:0,1:0,1:.6&view=2,0,7&D=140&det=1&seed=%d' % (k, SEED)
+
+
+def sku_dump(ctx, when):
+    """skudump_p.sh: the shop's products in order (sku;id;sid;...) -> refcache/<sid>/temoins/sku-<when>.csv; [[sku, id, ...]]"""
+    need_servers(ctx)
+    ramwait(ctx, 'skudump ' + when)
+    run_cmd(ctx, [sh_exe(), 'mkapp.sh'], 'sku-build-' + when, timeout=600, quiet=True)  # skudump reads demo7.html
+    tag = 'pipe-%s-%s' % (ctx.sid, when)
+    c, t = run_cmd(ctx, [sh_exe(), 'fleur/skudump_p.sh', tag], 'skudump-' + when, timeout=1500)
+    if ctx.dry:
+        return []
+    src = '%s/refcache/sku-%s.csv' % (ctx.ch, tag)
+    lines = open(src, encoding='utf-8', errors='replace').read().splitlines() if os.path.exists(src) else []
+    rows = [ln.split(';') for ln in lines[1:] if ln.count(';') >= 2]
+    if not rows:
+        raise StepFailed('skudump_p.sh gave no product (%s)' % ((t.strip().splitlines() or [''])[-1][:100]))
+    os.makedirs(ctx.rc + '/temoins', exist_ok=True)
+    shutil.copyfile(src, '%s/temoins/sku-%s.csv' % (ctx.rc, when))
+    return rows
+
+
+def sku_moved(before, after):
+    """the SKU numbers whose product changed (a colourway added at the end, late:N, is not a move)"""
+    A = {r[0]: r[1] for r in after}
+    return ['%s: %s -> %s' % (r[0], r[1], A.get(r[0], 'absent')) for r in before if A.get(r[0]) != r[1]]
+
+
+def witness_before(ctx):
+    """before the modeller touches app/: the shop's SKU dump and, for a kit sort, a sheet of each sort already drawn with the kit (taken once)"""
+    d = ctx.rc + '/temoins'
+    if ctx.dry or not os.path.exists(d + '/sku-avant.csv'):
+        sku_dump(ctx, 'avant')
+    ki = kit_info(ctx)
+    for k in (ki or {}).get('sids', []):
+        dst = '%s/kit-avant-%s.png' % (d, k)
+        if ctx.dry or not os.path.exists(dst):
+            ok, m, t = shot(ctx, 'kit_%s' % slug(k), kit_query(k), 'kit-avant-' + k)
+            if ctx.dry:
+                continue
+            if not ok:
+                raise StepFailed('kit witness %s: no render before the modelling (%s)' % (k, (t.strip().splitlines() or [''])[-1][:80]))
+            os.makedirs(d, exist_ok=True)
+            shutil.copyfile('%s/fleur/out/kit_%s.png' % (ctx.ch, slug(k)), dst)
+
+
+# ---------------------------------------------------------------------------------------------------------------- comparaison and juge
+
+PAIRS = [  # BONNES-PRATIQUES 9.2 and 9.3b: a kept photo and the render at the same angle and the same stage (want: tag sets, best first)
+    {'k': 'face', 'label': 'tête ouverte de face', 'want': [['stade:ouvert', 'vue:face'], ['stade:ouvert'], ['stade:entrouvert', 'vue:face']], 'st': '.85:0', 'view': 0, 'D': 600},
+    {'k': 'trois-quarts', 'label': 'tête ouverte de trois-quarts', 'want': [['stade:ouvert', 'vue:trois-quarts'], ['vue:trois-quarts'], ['stade:entrouvert', 'vue:trois-quarts']],
+     'st': '.85:0', 'view': 2, 'D': 600},
+    {'k': 'profil', 'label': 'tête ouverte de profil', 'want': [['stade:ouvert', 'vue:profil'], ['vue:profil'], ['stade:entrouvert', 'vue:profil']], 'st': '.85:0', 'view': 7, 'D': 600},
+    {'k': 'bouton', 'label': 'bouton', 'want': [['stade:bouton'], ['organe:bourgeon']], 'st': '.2:0', 'view': 7, 'D': 600, 'kind': 'bud', 'op': '.2'},
+    {'k': 'fane-1', 'label': 'déclin (fané .6)', 'want': [['stade:declin'], ['stade:fane']], 'st': '1:.6', 'view': 2, 'D': 600, 'op': '1'},
+    {'k': 'fane-2', 'label': 'fané avancé (.9)', 'want': [['stade:fane'], ['stade:declin']], 'st': '1:.9', 'view': 2, 'D': 600, 'op': '1'},
+    {'k': 'plante', 'label': 'plante entière (tige coupée, feuilles)', 'want': [['organe:plante'], ['organe:tige']], 'plant': 1},
+    {'k': 'gros-plan', 'label': 'gros plan D 800 d\'une tête ouverte', 'want': [['stade:ouvert', 'vue:face'], ['stade:ouvert', 'vue:trois-quarts'], ['stade:ouvert']],
+     'st': '.85:0', 'view': 0, 'D': 800},
+]
+
+
+def kept_tags(x):
+    out = set()
+    for t in x.get('tags', []):
+        fam, _, v = t.partition(':')
+        fam = fam.strip().lower()
+        if fam == 'coloris':
+            out.add('coloris:' + norm(v))
+        elif fam in REFS_MIN:
+            v = norm_tag(v)
+            out.add('%s:%s' % (fam, 'bourgeon' if fam == 'organe' and v == 'bouton' else v))
+    return out
+
+
+def pair_plan(ctx):
+    """one kept photo per pair (the bouquet's first colourway preferred, a photo used once when possible) and the render that answers it"""
+    K = jload(ctx.rc + '/keep.json', []) or []
+    cws = jload(ctx.rc + '/coloris.json', []) or []
+    cw = cws[0]['id'] if cws else ''
+    cult = norm(cws[0].get('cultivar')) if cws else ''
+    full = int(getattr(ctx.a, 'full', 40) or 40)
+    used, plan, missing = {}, [], []
+    for P in PAIRS:
+        best = None
+        for alt in P['want']:
+            cands = [x for x in K if set(alt) <= kept_tags(x)]
+            if cands:
+                same = lambda x: any(t.startswith('coloris:') and cult and (t[8:] in cult or cult in t[8:]) for t in kept_tags(x))
+                cands.sort(key=lambda x: (used.get(x.get('i'), 0), not same(x)))
+                best = cands[0]
+                break
+        if not best:
+            missing.append(P['k'])
+            continue
+        used[best.get('i')] = used.get(best.get('i'), 0) + 1
+        name = 'cmp_%s_%s' % (slug(ctx.sid)[:24], P['k'])
+        if P.get('plant'):
+            q, cell = 'plant=1&sid=%s&cw=%s&st=1:0&axv=1&full=%d&det=1.5&seed=%d' % (ctx.sid, cw, full, SEED), ''
+        else:
+            q, cell = 'grid=1&sid=%s&cws=%s&st=%s&view=%d&D=%d&det=1.5&seed=%d' % (ctx.sid, cw, P['st'], P['view'], P['D'], SEED), '0,0@%d' % P['D']
+        plan.append({'k': P['k'], 'label': P['label'], 'photo': best.get('i'), 'title': best.get('title'), 'page': best.get('page'), 'tags': best.get('tags'),
+                     'vu': best.get('m'), 'thumb': '%s/t%03d.jpg' % (ctx.rel, int(best.get('i', 0))), 'query': q, 'name': name, 'render': 'fleur/out/%s.png' % name,
+                     'cell': cell, 'kind': P.get('kind', 'cup'), 'op': P.get('op', '.85'), 'cw': cw,
+                     'png': '%s/comparaison/%s.png' % (ctx.rel, P['k']), 'txt': '%s/comparaison/%s.txt' % (ctx.rel, P['k'])})
+    return plan, missing
+
+
+def write_pairs(ctx, plan):
+    """comparaison/pairs.json, pairs.md (what the modeller and the judge read) and refaire.sh (redoes some or all pairs)"""
+    d = ctx.rc + '/comparaison'
+    if ctx.dry:
+        for p in plan:
+            say('  [dry] pair %-12s photo %s (%s) vs %s' % (p['k'], p['photo'], ' '.join(p['tags'] or []), p['query']))
+        return
+    os.makedirs(d, exist_ok=True)
+    jsave(d + '/pairs.json', plan)
+    L = ['# Paires de comparaison de %s' % ctx.sid, '', 'Photo à gauche, rendu à droite (`<clé>.png`), mesures de silhouette dans `<clé>.txt`. Refaire : `sh %s/comparaison/refaire.sh [clé...]`.' % ctx.rel,
+         'Photos de tiers : elles restent dans refcache.', '', '| clé | ce qui se compare | photo | étiquettes | rendu |', '|---|---|---|---|---|']
+    for p in plan:
+        L.append('| %s | %s | %s (%s) | %s | `%s` |' % (p['k'], p['label'], p['thumb'], p['page'], ' '.join(p['tags'] or []), p['query']))
+    open(d + '/pairs.md', 'w', encoding='utf-8', newline='\n').write('\n'.join(L) + '\n')
+    rw = os.environ.get('PIPE_RAMWAIT', RAMWAIT)
+    S = ['#!/bin/sh', '# refaire.sh [paire...]: redoes the comparison pairs of %s (written by fleur/pipe.py; never edit). Render through fleur/shot_p.sh (seed %d),' % (ctx.sid, SEED),
+         '# then python fleur/img.py pair photo / render -> %s/comparaison/<paire>.png and .txt. Without argument: every pair.' % ctx.rel,
+         'cd "$(dirname "$0")/../../.." || exit 1']
+    if rw:
+        S.append('sh "%s" >/dev/null' % rw)
+    S.append('box() { python -c "import sys;from PIL import Image;print(\'0,0,%d,%d\'%Image.open(sys.argv[1]).size)" "$1"; }')
+    for p in plan:
+        o, t = p['png'], p['txt']
+        S += ['p_%s() {' % p['k'].replace('-', '_'),
+              '  rm -f "%s" "%s"' % (o, t),
+              '  sh fleur/shot_p.sh %s "%s" > "%s/comparaison/%s.log" 2>&1' % (p['name'], p['query'], ctx.rel, p['k']),
+              '  if grep -q "PAS D" "%s/comparaison/%s.log" || [ ! -f %s ]; then echo "%s: PAS D\'IMAGE"; return 1; fi' % (ctx.rel, p['k'], p['render'], p['k']),
+              '  python fleur/img.py pair %s "$(box %s)" %s "%s" --kind %s --op %s --out "%s" > "%s" 2>&1' % (
+                  p['thumb'], p['thumb'], p['render'], p['cell'] or '$(box %s)' % p['render'], p['kind'], p['op'], o, t),
+              '  echo "%s: $(tail -3 "%s" | tr \'\\n\' \' \')"' % (p['k'], t),
+              '}']
+    S.append('for k in ${*:-%s}; do "p_$(echo "$k" | tr - _)" || echo "$k: ERREUR"; done' % ' '.join(p['k'] for p in plan))
+    open(d + '/refaire.sh', 'w', encoding='utf-8', newline='\n').write('\n'.join(S) + '\n')
+
+
+def run_pairs(ctx, plan):
+    """makes every pair (renders through the gate): sh refaire.sh"""
+    need_servers(ctx)
+    ramwait(ctx, 'comparison pairs')
+    c, t = run_cmd(ctx, [sh_exe(), '%s/comparaison/refaire.sh' % ctx.rel], 'comparaison-pairs', timeout=3600)
+    return t
+
+
+RUN_PAIRS = run_pairs  # the selftest puts a stand-in here (no Chrome)
+
+
+def table_rows(p):
+    """the « contrôle 9.2 » table of etat-comparaison.md: {pair key: {verdict, ecart}} (first cell = the key)"""
+    out = {}
+    try:
+        lines = open(p, encoding='utf-8', errors='replace').read().splitlines()
+    except Exception:
+        return out
+    for ln in lines:
+        if not ln.strip().startswith('|'):
+            continue
+        cells = [c.strip().strip('*`').strip() for c in ln.strip().strip('|').split('|')]
+        k = norm(cells[0]).replace(' ', '-') if cells else ''
+        if len(cells) >= 2 and k and k not in out and not set(cells[1]) <= set('-: '):
+            out[k] = {'verdict': norm(cells[1]), 'ecart': ' | '.join(cells[2:]).strip(), 'raw': ln.strip()}
+    return out
+
+
+def app_mtime(ctx):
+    return max([os.path.getmtime(f) for f in glob.glob(ctx.ch + '/app/*.js')] or [0])
+
+
+def check_comparaison(ctx, plan, ko_file=None, reads=True):
+    """every pair present (PNG not empty), made after the last change of app/, looked at by the modeller; the table complete (ok or the gap);
+    after a judge's ko: the drawing changed and the table was rewritten since"""
+    why = []
+    at = app_mtime(ctx)
+    for p in plan:
+        f = '%s/%s' % (ctx.ch, p['png'])
+        if not os.path.exists(f) or os.path.getsize(f) == 0:
+            why.append('%s: pair missing (sh %s/comparaison/refaire.sh %s)' % (p['k'], ctx.rel, p['k']))
+        elif os.path.getmtime(f) < at:
+            why.append('%s: pair older than the last change in app/ (redo it)' % p['k'])
+        elif reads and not ctx.read_by('comparaison', p['png']):
+            why.append('%s: pair never looked at (Read %s)' % (p['k'], p['png']))
+    etat = ctx.rc + '/etat-comparaison.md'
+    rows = table_rows(etat)
+    for p in plan:
+        r = rows.get(p['k'])
+        if not r:
+            why.append('%s: no line in the table of etat-comparaison.md' % p['k'])
+        elif r['verdict'] != 'ok' and not (r['ecart'] or len(r['verdict']) > 3):
+            why.append('%s: line without verdict nor gap' % p['k'])
+    if ko_file and os.path.exists(ko_file):
+        kt = os.path.getmtime(ko_file)
+        if at <= kt:
+            why.append('the judge said ko and nothing changed in app/ since')
+        if not os.path.exists(etat) or os.path.getmtime(etat) <= kt:
+            why.append('the table was not rewritten after the judge')
+    return (not why), '; '.join(why[:12])
+
+
+def step_comparaison(ctx, ko=None, trip=0):
+    """Python makes the photo/render pairs; then the modeller (Opus) looks at each, corrects the drawing, redoes the pairs and writes the table"""
+    ensure_docs(ctx)
+    plan, missing = pair_plan(ctx)
+    if missing:
+        msg = 'no kept photo for the pairs %s: complete the refs first (python fleur/pipe.py run %s --from refs)' % (', '.join(missing), ctx.sid)
+        if not ctx.dry:
+            raise StepFailed(msg)
+        say('  [dry] ' + msg)
+    write_pairs(ctx, plan)
+    kof = None
+    if ko:
+        kof = '%s/comparaison/ko-%d.json' % (ctx.rc, trip)
+        jsave(kof, ko)
+    RUN_PAIRS(ctx, plan)
+    ctx.reads['comparaison'] = set()  # each round looks at the pairs again
+    extra = {'pairs': '%s/comparaison/pairs.md' % ctx.rel, 'refaire': '%s/comparaison/refaire.sh' % ctx.rel,
+             'ko': '%s/comparaison/ko-%d.json' % (ctx.rel, trip) if ko else '-'}
+    res, fin = model_loop(ctx, 'comparaison', 'comparaison', 'opus', READ + ['Write', 'Edit'] + SAFE_BASH, int(getattr(ctx.a, 'relays', 4) or 4),
+                          lambda: check_comparaison(ctx, plan, kof), extra=extra, must_read=[bp_rel(ctx)])
+    if res == 'blocked':
+        raise StepFailed('comparaison blocked by the modeller: %s' % (fin.get('question') or fin.get('note') or fin))
+    if ctx.dry:
+        return {'status': 'done', 'msg': 'dry: %d pairs planned%s' % (len(plan), ', missing on the disk: ' + ', '.join(missing) if missing else '')}
+    ok, why = check_comparaison(ctx, plan, kof)
+    rows = table_rows(ctx.rc + '/etat-comparaison.md')
+    nok = sum(1 for p in plan if rows.get(p['k'], {}).get('verdict') == 'ok')
+    return {'status': 'done' if res == 'done' and ok else 'failed', 'trip': trip, 'checks': {'pairs': len(plan), 'ok': nok},
+            'msg': 'comparaison %s%s: %d pairs, %d ok, %d with a gap stated%s' % (res, ' (after the judge, round trip %d)' % trip if trip else '', len(plan), nok, len(plan) - nok,
+                                                                                '' if ok else '; check: ' + why)}
+
+
+def judge_once(ctx, plan, trips, k):
+    prev = ('Le juge précédent avait refusé : %s/comparaison/ko-%d.json. Vérifie d\'abord ces points, sans t\'y limiter.' % (ctx.rel, trips)) if trips else '-'
+    p = prompt_text('juge', **ctx.sub(pairs='%s/comparaison/pairs.md' % ctx.rel, table='%s/etat-comparaison.md' % ctx.rel, prev=prev))
+    ctx.reads['juge'] = set()
+    r = call_model(ctx, 'juge', 't%d.%d' % (trips, k), 'opus', p, READ + ['Bash(python fleur/img.py *)'], turns=40)
+    if ctx.dry:
+        return {'verdict': 'ok', 'ko': [], 'issues': [], 'dry': True}
+    fin = r.get('final') or {}
+    verdict = norm(str(fin.get('verdict') or ''))
+    key = lambda s: norm(str(s or '')).replace(' ', '-')
+    noted = {key(x.get('paire')): x for x in fin.get('lignes') or [] if isinstance(x, dict)}
+    ko = [x for x in fin.get('ko') or [] if isinstance(x, dict)]
+    ko += [{'paire': kk, 'raison': x.get('raison') or 'ko'} for kk, x in noted.items() if norm(str(x.get('note') or '')) != 'ok' and not any(key(y.get('paire')) == kk for y in ko)]
+    issues = []
+    if verdict not in ('ok', 'ko'):
+        issues.append('no verdict (%s)' % r.get('subtype'))
+    unseen = [p['k'] for p in plan if not ctx.read_by('juge', p['png'])]
+    if unseen:
+        issues.append('pairs not looked at: ' + ', '.join(unseen))
+    unnoted = [p['k'] for p in plan if p['k'] not in noted]
+    if unnoted:
+        issues.append('pairs not noted: ' + ', '.join(unnoted))
+    return {'verdict': 'ok' if verdict == 'ok' and not ko and not issues else 'ko', 'ko': ko, 'issues': issues, 'lignes': list(noted.values()), 'call': r.get('subtype')}
+
+
+def judge(ctx, plan, trips):
+    """the adversarial judge (a fresh Opus that is not the modeller, read-only): ok only if every pair was looked at, noted and found right;
+    a judge that did not judge (no verdict, pairs unseen or unnoted) is asked once more, then it counts as ko (a doubt = ko)"""
+    for k in (1, 2):
+        v = judge_once(ctx, plan, trips, k)
+        if not v['issues'] or ctx.dry:
+            break
+        say('  judge %d: %s' % (k, '; '.join(v['issues'])))
+    v['ko'] = v['ko'] + [{'paire': '-', 'raison': 'le juge n\'a pas pu juger : ' + x} for x in v['issues']]
+    if not ctx.dry:
+        jsave('%s/comparaison/juge-%d.json' % (ctx.rc, trips), v)
+    return v
+
+
+def write_refusal(ctx, v, trips):
+    p = '%s/comparaison/refus.md' % ctx.rc
+    L = ['# Refus du juge : %s' % ctx.sid, '', 'Après %d aller(s)-retour(s) entre le juge et le modeleur, le juge refuse la sorte : pipe.py ne la déclare pas finie.' % trips, '',
+         '| paire | raison |', '|---|---|'] + ['| %s | %s |' % (x.get('paire'), str(x.get('raison') or '').replace('|', '/')) for x in v['ko']]
+    L += ['', 'Paires : `%s/comparaison/<clé>.png` ; verdicts : `juge-<n>.json` ; tableau du modeleur : `etat-comparaison.md`.' % ctx.rel,
+          'Reprendre après correction : `python fleur/pipe.py run %s --from comparaison`.' % ctx.sid]
+    open(p, 'w', encoding='utf-8', newline='\n').write('\n'.join(L) + '\n')
+    return '%s/comparaison/refus.md' % ctx.rel
+
+
+def step_juge(ctx):
+    """ok -> done; ko -> comparaison with the ko list, then the judge again, --juge-tours round trips at most; then REFUSED (exit 2)"""
+    s = ctx.st['steps'].get('juge', {})
+    if s.get('refused') and not ctx.dry:
+        return {'status': 'failed', 'refused': True, 'report': s.get('report'), 'trips': s.get('trips'),
+                'msg': 'REFUSED earlier by the judge (%s): correct the drawing, then run --from comparaison' % s.get('report')}
+    tours = getattr(ctx.a, 'juge_tours', None)
+    tours = JUGE_TOURS if tours is None else int(tours)
+    plan = jload(ctx.rc + '/comparaison/pairs.json', None)
+    if not plan:
+        if not ctx.dry:
+            raise StepFailed('no comparison pairs: run --from comparaison')
+        plan = pair_plan(ctx)[0]
+    if not ctx.dry:
+        ok, why = check_comparaison(ctx, plan, reads=False)
+        if not ok:
+            raise StepFailed('the comparison is not complete (%s): run --from comparaison' % why)
+    trips = int(s.get('trips') or 0)
+    if ctx.dry:
+        say('  [dry] on ko: comparaison again with the ko list, %d round trips at most, then refusal (exit 2)' % tours)
+    while True:
+        v = judge(ctx, plan, trips)
+        ctx.note('juge', trips=trips, last=v['verdict'])
+        if v['verdict'] == 'ok':
+            return {'status': 'done', 'trips': trips, 'msg': 'the judge accepts every pair (%d round trips)%s' % (trips, ' (dry)' if ctx.dry else '')}
+        if trips >= tours:
+            rep = write_refusal(ctx, v, trips)
+            return {'status': 'failed', 'refused': True, 'trips': trips, 'report': rep,
+                    'msg': 'REFUSED by the judge after %d round trips: %s; report %s' % (trips, '; '.join('%s %s' % (x.get('paire'), str(x.get('raison'))[:60]) for x in v['ko'][:4]), rep)}
+        trips += 1
+        ctx.note('juge', trips=trips)
+        say('  judge: ko on %s: back to comparaison (round trip %d/%d)' % (', '.join(str(x.get('paire')) for x in v['ko'][:6]), trips, tours))
+        r = step_comparaison(ctx, ko=v['ko'], trip=trips)
+        ctx.note('comparaison', **{k: r[k] for k in ('status', 'msg') if k in r})
+        if r['status'] != 'done':
+            return {'status': 'failed', 'trips': trips, 'msg': 'comparaison after the judge (round trip %d) not finished: %s' % (trips, r['msg'])}
+
+
+# ---------------------------------------------------------------------------------------------------------------- witnesses
 
 def rtest_parse(txt):
     """{'stage vessel': 'IDENTIQUE' | 'DIFFERENT' | 'ERR'} from the page's rtest line (items separated by ' | ')"""
@@ -1124,7 +1897,8 @@ def rtest_parse(txt):
 
 def rtest_run(ctx, rel_url, rcs, tag):
     """one rtest page (in the copy, or in the main atelier with rel_url ''), through the gate; {} when dry or unreadable"""
-    url = 'http://localhost:8765/%spilote/sv.html?rtest=1&rc=%s&sv=11&nc=%d' % ((rel_url + '/') if rel_url else '', ','.join(rcs), time.time())
+    ramwait(ctx, 'rtest ' + tag)
+    url = '%s?rtest=1&rc=%s&sv=11&nc=%d' % (ctx.url('pilote/sv.html', main=not rel_url), ','.join(rcs), time.time())
     outp = 'fleur/out/%s.json' % tag
     c, t = run_cmd(ctx, [sh_exe(), 'ws/gate.sh', sh_exe(), 'ws/chrome1.sh', 'dom', url, outp], tag, timeout=1700, quiet=True)
     p = '%s/%s' % (ctx.ch, outp)
@@ -1134,6 +1908,13 @@ def rtest_run(ctx, rel_url, rcs, tag):
 def step_temoins(ctx):
     out = []
     ok = True
+    # the build: mkapp.sh must say « app syntax ok »
+    c, t = run_cmd(ctx, [sh_exe(), 'mkapp.sh'], 'temoin-build', timeout=600, quiet=True)
+    c2, t2 = run_cmd(ctx, [sys.executable, 'pilote/mksv.py'], 'temoin-build-sv', timeout=600, quiet=True)
+    if not ctx.dry:
+        syn = 'app syntax ok' in t
+        ok = ok and syn and not c2
+        out.append('mkapp %s%s' % ('app syntax ok' if syn else 'WITHOUT "app syntax ok" (%s)' % (t.strip().splitlines() or [''])[-1][:80], '' if not c2 else ', mksv failed'))
     q = ''
     try:
         q = open(MAIN + '/fleur/out/base_q.txt', encoding='utf-8').read().strip().splitlines()[0]
@@ -1155,23 +1936,57 @@ def step_temoins(ctx):
             mm = re.search(r'changed ([\d.]+)%', t)
             pct = float(mm.group(1)) if mm else None
             ok = ok and pct == 0.0
-            out.append('anemone %s %%' % (pct if pct is not None else '?'))
-    # rtest = the bouquet's random stream with the SVG heads off and on (the composition must not move). The sort's own SKUs must be IDENTIQUE;
-    # the tulip witnesses must do no worse than in the main atelier (they can already differ there: a failure of the witness is not the sort's)
+            out.append('anemone %s %% (%s)' % (pct if pct is not None else '?', os.path.basename(base)))
+    # rtest = the bouquet's random stream with the SVG heads off and on (the composition must not move). The sort's own SKUs and the kit's
+    # sorts must be IDENTIQUE; the tulip witnesses must do no worse than in the main atelier (a failure already there is not the sort's)
     own = ['%s:%s' % (x['sku'], x.get('tiges') or 6) for x in ctx.st.get('skus', []) if x.get('sku')]
+    ki = kit_info(ctx)
+    kit_rc = ['%s~%d:6' % (k, n) for k in (ki or {}).get('sids', []) for n in (0, 1)]
     wit = ['tulipe-simple~7:7', 'tulipe-simple~12:6']
     need_servers(ctx)
     r_own = rtest_run(ctx, ctx.rel_url, own, 'temoin-rtest') if own else {}
+    r_kit = rtest_run(ctx, ctx.rel_url, kit_rc, 'temoin-rtest-kit') if kit_rc else {}
     r_wit = rtest_run(ctx, ctx.rel_url, wit, 'temoin-rtest-tulipes')
     r_ref = rtest_run(ctx, '', wit, 'temoin-rtest-principal') if ctx.rel_url else r_wit
     if not ctx.dry:
         nd_own = [k for k, v in r_own.items() if v != 'IDENTIQUE']
+        nd_kit = [k for k, v in r_kit.items() if v != 'IDENTIQUE']
         worse = [k for k, v in r_wit.items() if v != 'IDENTIQUE' and r_ref.get(k) == 'IDENTIQUE']
         known = [k for k, v in r_wit.items() if v != 'IDENTIQUE' and r_ref.get(k) != 'IDENTIQUE']
-        ok = ok and bool(r_own) == bool(own) and not nd_own and not worse and bool(r_wit)
+        ok = ok and bool(r_own) == bool(own) and not nd_own and bool(r_kit) == bool(kit_rc) and not nd_kit and not worse and bool(r_wit)
         out.append('rtest of the sort %d IDENTIQUE, %d different%s; tulip witnesses %d IDENTIQUE, %d different%s' % (
             len(r_own) - len(nd_own), len(nd_own), ' (%s)' % ', '.join(nd_own) if nd_own else '', len(r_wit) - len(known) - len(worse), len(known) + len(worse),
             ' (%d already so in the main atelier%s)' % (len(known), '; WORSE: ' + ', '.join(worse) if worse else '') if known or worse else ''))
+        if kit_rc:
+            out.append('rtest of the kit sorts %d IDENTIQUE, %d different%s' % (len(r_kit) - len(nd_kit), len(nd_kit), ' (%s)' % ', '.join(nd_kit) if nd_kit else ''))
+    # the kit sorts' sheets: unchanged to the pixel against the sheets taken before the modelling
+    for k in (ki or {}).get('sids', []):
+        before = '%s/temoins/kit-avant-%s.png' % (ctx.rc, k)
+        good, m, text = shot(ctx, 'kit_%s' % slug(k), kit_query(k), 'kit-apres-' + k)
+        if ctx.dry:
+            continue
+        if not os.path.exists(before) or not good:
+            ok = False
+            out.append('kit sort %s: %s' % (k, 'no sheet taken before the modelling' if not os.path.exists(before) else 'render failed'))
+            continue
+        shutil.copyfile('%s/fleur/out/kit_%s.png' % (ctx.ch, slug(k)), '%s/temoins/kit-apres-%s.png' % (ctx.rc, k))
+        c, t = run_cmd(ctx, [sys.executable, 'fleur/img.py', 'diff', before, '%s/temoins/kit-apres-%s.png' % (ctx.rc, k)], 'kit-diff-' + k, timeout=120, quiet=True)
+        mm = re.search(r'changed ([\d.]+)%', t)
+        pct = float(mm.group(1)) if mm else None
+        ok = ok and pct == 0.0
+        out.append('kit sort %s %s %%' % (k, pct if pct is not None else '?'))
+    # no SKU moved: the shop's products in the same order as before the modelling
+    pb = ctx.rc + '/temoins/sku-avant.csv'
+    if ctx.dry:
+        sku_dump(ctx, 'apres')
+    elif not os.path.exists(pb):
+        ok = False
+        out.append('no SKU dump before the modelling (temoins/sku-avant.csv, taken at the start of forme)')
+    else:
+        before = [ln.split(';') for ln in open(pb, encoding='utf-8', errors='replace').read().splitlines()[1:] if ln.count(';') >= 2]
+        moved = sku_moved(before, sku_dump(ctx, 'apres'))
+        ok = ok and not moved
+        out.append('SKU: %d before, %s' % (len(before), 'none moved' if not moved else '%d MOVED (%s)' % (len(moved), ', '.join(moved[:4]))))
     b_ok, b_msg, m = budget(ctx, 'bud_' + ctx.sid)
     out.append(b_msg)
     return {'status': 'done' if (ok and b_ok) or ctx.dry else 'failed', 'msg': '; '.join(out), 'checks': m}
@@ -1198,21 +2013,22 @@ def step_qa(ctx):
     tot = {'floating': 0, 'under': 0, 'kinks': 0, 'bouquets': 0}
     minram, killed = 99.0, 0
     if ctx.dry:
-        say('  [dry] qawatch.sh by lots of 2 (4.2 to 5 GB free) or 4 (beyond), %d bouquets in all, then the budget' % total)
+        say('  [dry] ramwait.sh, then qawatch.sh by lots of 4 (4.5 GB free at least), %d bouquets in all, then the budget (measure)' % total)
         done = total
     while done < total:
+        ramwait(ctx, 'QA lot')
         waits = 0
         ram = free_ram_gb()
-        while ram < 4.2:
+        while ram < 4.5:
             waits += 1
             if waits > 6:
-                raise StepFailed('free RAM stayed under 4.2 GB for 12 minutes (%.1f GB): resume with --from qa when the PC is free' % ram)
+                raise StepFailed('free RAM stayed under 4.5 GB for 12 minutes (%.1f GB): resume with --from qa when the PC is free' % ram)
             say('  RAM %.1f GB, waiting 2 minutes (%d/6)' % (ram, waits))
             time.sleep(120)
             ram = free_ram_gb()
-        lot = 2 if ram < 5 else 4
+        lot = 4
         seed += 1
-        url = 'http://localhost:8765/%s/lab/qa13.html?run=composed&n=%d&seed=%d&inc=%s' % (ctx.rel_url, lot, seed, ctx.sid)
+        url = ctx.url('lab/qa13.html') + '?run=composed&n=%d&seed=%d&inc=%s' % (lot, seed, ctx.sid)
         outp = 'pilote/qa_%s_%d.json' % (ctx.sid, seed)
         for attempt in (1, 2):
             c, t = run_cmd(ctx, [sh_exe(), 'ws/qawatch.sh', url, outp], 'qa-%d' % seed, timeout=1700, quiet=True)
@@ -1247,13 +2063,15 @@ def step_qa(ctx):
 # ---------------------------------------------------------------------------------------------------------------- sheets
 
 def step_planches(ctx):
+    if ctx.st['steps'].get('juge', {}).get('status') != 'done' and not ctx.dry:
+        raise StepFailed('the judge has not accepted this sort (step juge %s): no sheet for the catalogue' % ctx.st['steps'].get('juge', {}).get('status', '-'))
     ids = cw_ids(ctx, 6)
     if not ids and not ctx.dry:
         raise StepFailed('no coloris.json: no sheet')
     dest = FC + '/catalogue/serre/pilote-printemps/sheets'
     full = int(getattr(ctx.a, 'full', 40) or 40)
-    jobs = [('sku', 'grid=1&sid=%s&cws=%s&st=%s&view=2,0,3&D=110' % (ctx.sid, ','.join(ids), STAGES)),
-            ('plante', 'plant=1&sid=%s&cw=%s&st=.1:0,.3:0,.6:0,1:0,1:.4,1:.75&axv=1&full=%d' % (ctx.sid, ids[0] if ids else '', full))]
+    jobs = [('sku', 'grid=1&sid=%s&cws=%s&st=%s&view=2,0,3&D=110&seed=%d' % (ctx.sid, ','.join(ids), STAGES, SEED)),
+            ('plante', 'plant=1&sid=%s&cw=%s&st=.1:0,.3:0,.6:0,1:0,1:.4,1:.75&axv=1&full=%d&seed=%d' % (ctx.sid, ids[0] if ids else '', full, SEED))]
     got = []
     for kind, q in jobs:
         name = 'pl_%s_%s' % (kind, ctx.sid)
@@ -1274,14 +2092,16 @@ def step_planches(ctx):
 
 
 STEPFN = {'census': step_census, 'refs': step_refs, 'coloris': step_coloris, 'targets': step_targets, 'forme': step_forme, 'fit': step_fit,
-          'plante': step_plante, 'finition': step_finition, 'temoins': step_temoins, 'qa': step_qa, 'planches': step_planches}
+          'plante': step_plante, 'finition': step_finition, 'comparaison': step_comparaison, 'juge': step_juge, 'temoins': step_temoins, 'qa': step_qa,
+          'planches': step_planches}
 
 
 # ---------------------------------------------------------------------------------------------------------------- the commands
 
-COMMON_KEYS = {'sid', 'taxon', 'genus', 'family', 'rc', 'skus', 'ch'}
+COMMON_KEYS = {'sid', 'taxon', 'genus', 'family', 'rc', 'skus', 'ch', 'late'}
 PROMPT_KEYS = {'census': {'n', 'batch', 'verdict'}, 'refs': {'task', 'sheets', 'missing'}, 'brief': set(), 'coloris': {'n', 'low', 'manual'},
-               'forme': {'relay', 'etat'}, 'plante': {'relay', 'etat'}, 'finition': {'relay', 'etat'}, 'fit': {'part', 'space', 'out', 'summary'}}
+               'forme': {'relay', 'etat', 'kit'}, 'plante': {'relay', 'etat'}, 'finition': {'relay', 'etat'}, 'fit': {'part', 'space', 'out', 'summary'},
+               'comparaison': {'relay', 'etat', 'pairs', 'ko', 'refaire'}, 'juge': {'pairs', 'table', 'prev'}}
 
 
 def resolve_ch(name):
@@ -1315,7 +2135,7 @@ def validate_prompts():
 def state_line(ctx, name):
     s = ctx.st['steps'].get(name, {})
     eq = sum(r.get('eq', 0) for r in ctx.bill.rows() if r['step'] == name)
-    return '%-9s %-8s %7.0f k  %s' % (name, s.get('status', '-'), eq / 1e3, (s.get('msg') or '')[:120])
+    return '%-11s %-8s %7.0f k  %s' % (name, s.get('status', '-'), eq / 1e3, (s.get('msg') or '')[:120])
 
 
 def cmd_run(a):
@@ -1328,7 +2148,7 @@ def cmd_run(a):
         st['taxon'] = a.taxon
     if 'taxon' not in st:
         raise SystemExit('first run of %s: --taxon "<Genus species>" is needed' % sid)
-    for k in ('family', 'genus', 'group'):
+    for k in ('family', 'genus', 'group', 'kit', 'kit_prefix', 'kit_sids', 'late'):
         if getattr(a, k, None):
             st[k] = getattr(a, k)
     if a.kavb:
@@ -1339,11 +2159,22 @@ def cmd_run(a):
     if getattr(a, 'opus_effort', None):
         EFFORT['opus'] = a.opus_effort
     ctx = Ctx(sid, ch, a, st)
-    if not ctx.claude or not os.path.exists(ctx.claude):
+    if (not ctx.claude or not os.path.exists(ctx.claude)) and not ctx.dry:
         raise SystemExit('no Claude Code binary found (desktop application: %APPDATA%/Claude/claude-code/<version>/*/claude.exe); set PIPE_CLAUDE or --claude')
     st['claude'] = ctx.claude
     st['cap_M'] = a.cap
     names = list(STEPS)
+    if getattr(a, 'skip_census', False) and st['steps'].get('census', {}).get('status') not in ('done', 'skipped'):
+        # a census exists already: refcache/<sid>/census/census.json, or the catalogue's sources file (imported, read-only)
+        if ctx.dry:
+            say('[dry] --skip-census: census.json %s' % ('present' if os.path.exists(ctx.rc + '/census/census.json') else 'imported from catalogue/serre/sources/%s.json' % sid))
+        else:
+            try:
+                msg = census_import(ctx)
+            except StepFailed as e:
+                raise SystemExit(str(e))
+            c = check_census(ctx)
+            ctx.note('census', status='skipped', msg='--skip-census: %s; %s' % (msg, c['msg']), ended=now())
     if a.only:
         todo = [a.only]
     else:
@@ -1355,11 +2186,18 @@ def cmd_run(a):
         if a.from_ and not ctx.dry:
             for n in todo:
                 st['steps'].pop(n, None)
+        if getattr(a, 'skip_census', False) and todo and todo[0] == 'census':
+            todo = todo[1:]
     bad = validate_prompts()
     if bad:
         raise SystemExit('prompts: ' + '; '.join(bad))
-    say('%s (%s): steps %s ; CLI %s ; cap %.1f M ; spent %.2f M%s' % (sid, st['taxon'], ' '.join(todo), os.path.basename(os.path.dirname(os.path.dirname(ctx.claude))) or ctx.claude,
-        ctx.cap / 1e6, ctx.bill.total() / 1e6, ' ; DRY RUN' if ctx.dry else ''))
+    priv = private_scripts(ctx)
+    ki = kit_info(ctx) if st.get('kit') else None
+    say('%s (%s): steps %s ; CLI %s ; Opus effort %s ; server port %d ; private %s ; cap %.1f M (measure) ; spent %.2f M%s%s' % (
+        sid, st['taxon'], ' '.join(todo), os.path.basename(os.path.dirname(os.path.dirname(ctx.claude or ''))) or ctx.claude, EFFORT['opus'], port(), ','.join(priv) or '-',
+        ctx.cap / 1e6, ctx.bill.total() / 1e6, ' ; kit %s (%s) with %s' % (ki['module'], ki['prefix'], ','.join(ki['sids']) or '-') if ki else '', ' ; DRY RUN' if ctx.dry else ''))
+    if not ctx.dry and 'shot_p.sh' not in priv and any(n in todo for n in LOCKED):
+        raise SystemExit('fleur/shot.sh not found in %s: no private copy fleur/shot_p.sh for the renders' % ch)
     slot = Lock(['pipe-1', 'pipe-2', 'pipe-3'], sid)
     if not ctx.dry:
         for n in os.listdir(LOCKS) if os.path.isdir(LOCKS) else []:
@@ -1401,7 +2239,10 @@ def cmd_run(a):
             ctx.note(n, **res)
             say('%s %s' % (res['status'].upper(), res.get('msg', '')))
             if res['status'] == 'failed' and not ctx.dry:
-                say('stopped. Fix the cause, then: python fleur/pipe.py run %s --from %s' % (sid, n))
+                if res.get('refused'):
+                    say('REFUSED by the judge: the sort is NOT finished. Report: %s ; after correcting: python fleur/pipe.py run %s --from comparaison' % (res.get('report'), sid))
+                else:
+                    say('stopped. Fix the cause, then: python fleur/pipe.py run %s --from %s' % (sid, n))
                 code = 2
                 break
             if ctx.bill.total() >= ctx.cap and n != todo[-1]:
@@ -1411,7 +2252,9 @@ def cmd_run(a):
     finally:
         slot.release()
     say('-- %s' % ' | '.join('%s %s' % (n, st['steps'].get(n, {}).get('status', '-')) for n in names))
-    say('-- bill: %.2f M eq-Opus of %.1f M' % (ctx.bill.total() / 1e6, ctx.cap / 1e6))
+    say('-- bill: %.2f M eq-Opus (cap %.1f M, a measure)' % (ctx.bill.total() / 1e6, ctx.cap / 1e6))
+    if not ctx.dry and all(st['steps'].get(n, {}).get('status') in ('done', 'skipped') for n in names) and st['steps'].get('juge', {}).get('status') == 'done':
+        say('-- FINI: %s accepted by the judge, witnesses and QA green' % sid)
     return code
 
 
@@ -1420,14 +2263,14 @@ def load_ctx(a):
     st = jload('%s/refcache/%s/pipe-state.json' % (ch, a.sid), None)
     if st is None:
         raise SystemExit('no state for %s in %s' % (a.sid, ch))
-    a.cap = st.get('cap_M', 3)
+    a.cap = st.get('cap_M', 40)
     return Ctx(a.sid, ch, a, st)
 
 
 def cmd_status(a):
     ctx = load_ctx(a)
     say('%s (%s) in %s ; current %s ; updated %s' % (ctx.sid, ctx.taxon, ctx.ch, ctx.st.get('current'), ctx.st.get('updated')))
-    say('%-9s %-8s %9s  %s' % ('step', 'status', 'eq-Opus', 'message'))
+    say('%-11s %-8s %9s  %s' % ('step', 'status', 'eq-Opus', 'message'))
     for n in STEPS:
         say(state_line(ctx, n))
     say('bill %.2f M of %.1f M' % (ctx.bill.total() / 1e6, ctx.cap / 1e6))
@@ -1459,8 +2302,10 @@ def cmd_models(a):
 def cmd_selftest(a):
     """no model, no network: the weights, the parsers, the locks, the checks, and the relay / cap / timeout logic against fake_claude"""
     import tempfile
-    global LOCKS
+    global LOCKS, need_servers, RUN_PAIRS
     ok, bad = [], []
+    old_ns, old_rp = need_servers, RUN_PAIRS
+    old_env = {k: os.environ.get(k) for k in ('FLEUR_PORT', 'PIPE_RAMWAIT', 'FAKE_SEQ')}
 
     def t(name, cond, info=''):
         (ok if cond else bad).append(name)
@@ -1504,7 +2349,7 @@ def cmd_selftest(a):
         t('bill row = usage of the call', rows and (rows[0]['in'], rows[0]['cw'], rows[0]['cr'], rows[0]['out']) == (10, 1000, 2000, 100) and rows[0]['eq'] == 392, str(rows[:1]))
         t('denials counted', rows[1]['denials'] == 1)
         seq('blocked')
-        res, fin = model_loop(ctx, 'forme', 'forme', 'haiku', ['Read'], 3, lambda: (True, ''))
+        res, fin = model_loop(ctx, 'forme', 'forme', 'haiku', ['Read'], 3, lambda: (True, ''), extra={'kit': '-'})
         t('blocked is reported', res == 'blocked' and fin.get('question') == 'which one?')
         seq('crash')
         r = call_model(ctx, 'x', 'crash', 'haiku', 'hi', ['Read'])
@@ -1562,14 +2407,232 @@ def cmd_selftest(a):
             t('fit.py thyrse: tilt-proof outline of a cone', False, str(e))
         rp = rtest_parse('- cylindre-verre-clair IDENTIQUE 5877:1/10 / 5877:1/12 | 2:0.5 coupe-pied-blanche DIFFERENT 5593:1/84 / 5669:2/10 | 3:1 cylindre-verre-clair ERR boom')
         t('rtest line parsed', rp == {'- cylindre-verre-clair': 'IDENTIQUE', '2:0.5 coupe-pied-blanche': 'DIFFERENT', '3:1 cylindre-verre-clair': 'ERR'}, str(rp))
+        # ---- pipe v3: the port, the private scripts, the light census, the "vu" field, the comparison pairs, the judge
+        os.environ.pop('FLEUR_PORT', None)
+        t('port: 8805 by default', port() == 8805)
+        t('port: the servers checked are 8805 and 8781, never 8765', [p for p, _ in server_ports()] == [8805, 8781])
+        os.environ['FLEUR_PORT'] = '8899'
+        t('port: FLEUR_PORT is read at every use', port() == 8899)
+        os.environ['FLEUR_PORT'] = '8765'
+        try:
+            port()
+            t('port: 8765 is refused', False)
+        except SystemExit:
+            t('port: 8765 is refused', True)
+        os.environ.pop('FLEUR_PORT', None)
+        ctxd = Ctx('selftest-d', tmp, argparse.Namespace(dry=True, cap=40, claude=fake), {'sid': 'selftest-d', 'taxon': 'Test test', 'steps': {}, 'skus': []})
+        ctxd.rel_url = 'ch/demo'
+        t('port: page URLs on 8805', ctxd.url('pilote/sv.html') == 'http://localhost:8805/ch/demo/pilote/sv.html' and ctxd.url('x', main=True) == 'http://localhost:8805/x')
+        buf = io.StringIO()
+        with contextlib.redirect_stdout(buf):
+            rtest_run(ctxd, ctxd.rel_url, ['a~0:6'], 'rt')
+        t('port: the rtest page is asked on 8805', ':8805/ch/demo/pilote/sv.html?rtest=1' in buf.getvalue() and '8765' not in buf.getvalue(), buf.getvalue()[-200:])
+        cp = tmp + '/copy'
+        os.makedirs(cp + '/fleur')
+        os.makedirs(cp + '/app')
+        shot_src = '#!/bin/sh\n# shot.sh: server 8765\nsh gate.sh "http://localhost:8765/${REL:+$REL/}pilote/sv.html?$2"\n'
+        open(cp + '/fleur/shot.sh', 'w', newline='\n').write(shot_src)
+        open(cp + '/fleur/other.sh', 'w', newline='\n').write('#!/bin/sh\necho "http://localhost:8765/x"\nsh fleur/shot.sh a b\n')
+        open(cp + '/fleur/quiet.sh', 'w', newline='\n').write('#!/bin/sh\n# the server (8765) in a comment only\necho hi\n')
+        ctxp = Ctx('selftest-p', cp, argparse.Namespace(dry=False, cap=40, claude=fake), {'sid': 'selftest-p', 'taxon': 'Test test', 'steps': {}, 'skus': []})
+        got = private_scripts(ctxp)
+        sp_ = open(cp + '/fleur/shot_p.sh', 'rb').read().decode() if os.path.exists(cp + '/fleur/shot_p.sh') else ''
+        t('private: shot_p.sh written on 8805, the shared shot.sh untouched', 'localhost:8805/' in sp_ and '8765' not in sp_ and open(cp + '/fleur/shot.sh').read() == shot_src, sp_)
+        t('private: shot_p.sh in LF, its shebang first', '\r\n' not in sp_ and sp_.startswith('#!/bin/sh\n# PRIVATE COPY'))
+        op_ = open(cp + '/fleur/other_p.sh').read() if os.path.exists(cp + '/fleur/other_p.sh') else ''
+        t('private: another shared script aiming at 8765 gets its copy, which calls shot_p.sh', 'localhost:8805' in op_ and 'fleur/shot_p.sh' in op_, op_)
+        t('private: a script naming 8765 in a comment only is left alone', not os.path.exists(cp + '/fleur/quiet_p.sh'))
+        t('private: portwrap_p.py copied', os.path.exists(cp + '/fleur/portwrap_p.py') and 'portwrap_p.py' in got)
+        open(cp + '/fleur/probe.sh', 'w', newline='\n').write('#!/bin/sh\necho public\n')
+        open(cp + '/fleur/probe_p.sh', 'w', newline='\n').write('#!/bin/sh\necho private\n')
+        open(cp + '/fleur/caller.py', 'w').write('import os, subprocess\nHERE = os.path.dirname(os.path.abspath(__file__))\n'
+                                                 'r = subprocess.run(["sh", os.path.join(HERE, "probe.sh")], capture_output=True, text=True)\nprint("OUT", r.stdout.strip())\n')
+        env = dict(os.environ, PATH=os.path.dirname(sh_exe()) + os.pathsep + os.environ.get('PATH', ''))
+        pr = subprocess.run([sys.executable, 'fleur/portwrap_p.py', 'fleur/caller.py'], cwd=cp, capture_output=True, text=True, env=env)
+        t('portwrap: a shared tool calling shot.sh reaches the private copy', 'OUT private' in pr.stdout, pr.stdout + pr.stderr[-200:])
+        # the kit: prefix and sorts already drawn with it
+        t('kit: prefix inferred', kit_prefix(['svRose', 'svRoseLeaf', 'svRoseThorns', 'svRoseRun', 'SVROSE_DEF', 'SVROSE_INT']) == 'svRose|SVROSE_',
+          kit_prefix(['svRose', 'svRoseLeaf', 'svRoseThorns', 'svRoseRun', 'SVROSE_DEF', 'SVROSE_INT']))
+        open(cp + '/app/y3-kit.js', 'w').write('const SVKIT_DEF={};\nfunction svKit(p){}\nfunction svKitLeaf(p){}\nconst svKitT=1;\n')
+        open(cp + '/app/y-a.js', 'w').write("const A_SID='sorte-a';\nSV_HEAD[A_SID]=(p)=>svKit(p);\n")
+        open(cp + '/app/y-b.js', 'w').write("SV_HEAD['sorte-b']=(p)=>svKitLeaf(p);\n")
+        open(cp + '/app/y-c.js', 'w').write("SV_HEAD['sorte-c']=(p)=>other(p);\n")
+        ctxp.st['kit'] = 'y3-kit'
+        ki = kit_info(ctxp)
+        t('kit: the sorts already drawn with the piece are found (const and literal keys)', ki and ki['prefix'] == 'svKit|SVKIT_' and ki['sids'] == ['sorte-a', 'sorte-b'], str(ki))
+        t('kit: the forme prompt names the piece, its prefix and its sorts', all(x in kit_text(ctxp) for x in ('y3-kit.js', 'svKit', 'sorte-a', 'IDENTIQUE')))
+        t('kit: no move when colourways are only added', sku_moved([['1', 'a~0'], ['2', 'a~1']], [['1', 'a~0'], ['2', 'a~1'], ['3', 'a~2']]) == [])
+        t('kit: a SKU moved is caught', sku_moved([['1', 'a~0'], ['2', 'a~1']], [['1', 'a~0'], ['2', 'b~0']]) == ['2: a~1 -> b~0'])
+        # census: A, B or C per SKU; D is a question, never a block; the Haiku lots hold only the catalogue's and the trade's colourways
+        jsave(rc + '/census/census.json', {'cultivars': [{'nom': 'Alba', 'niveau_provisoire': 'B', 'marque': None, 'photos': [{'img': 'u'}]},
+                                                         {'nom': 'Cee', 'niveau_provisoire': 'C', 'marque': None, 'photos': [{'img': 'u'}]},
+                                                         {'nom': 'Dee', 'niveau_provisoire': 'D', 'marque': None, 'photos': []}]})
+        ctx.st['skus'] = [{'sku': 't~2', 'cultivar': 'Cee'}]
+        c = check_census(ctx)
+        t('census: a bouquet SKU at C passes', c['ok'], c['msg'])
+        ctx.st['skus'] = [{'sku': 't~3', 'cultivar': 'Dee'}, {'sku': 't~4', 'cultivar': 'Nobody'}]
+        c = check_census(ctx)
+        qmd = open(rc + '/questions.md', encoding='utf-8').read() if os.path.exists(rc + '/questions.md') else ''
+        t('census: a SKU at D (or not found) is a question, not a block', c['ok'] and 'SKU t~3' in qmd and 'SKU t~4' in qmd, c['msg'] + ' | ' + qmd[-200:])
+        ctx.st['skus'] = [{'sku': 't~0', 'cultivar': 'Alba'}]
+        jsave(rc + '/census/douteux-1.json', [{'nom': 'Alba', 'preuves': [{'niveau': 'N4', 'source': 'Wikidata'}]},
+                                              {'nom': 'Trade One', 'preuves': [{'niveau': 'N2', 'source': 'Jan de Wit', 'registre': False}]},
+                                              {'nom': 'Register Only', 'preuves': [{'niveau': 'N1', 'source': 'KAVB', 'registre': True}], 'photos': []}])
+        lot, n_in, n_out = census_lot(ctx, rc + '/census/douteux-1.json')
+        names_ = [x['nom'] for x in jload(lot, [])]
+        t('census: the Haiku lot keeps the catalogue and trade colourways, not the register-only ones', names_ == ['Alba', 'Trade One'] and n_out == 1, str(names_))
+        # refs: a photo stays only if it was looked at and its "vu" field states what its tags say
+        t('refs: "vu" parsed', vu_parse('vu: stade=ouvert+declin vue=profil organe=- ; feuille au fond') == {'stade': ['ouvert', 'declin'], 'vue': ['profil'], 'organe': []},
+          str(vu_parse('vu: stade=ouvert+declin vue=profil organe=- ; feuille au fond')))
+        jsave(rc + '/keep.json', [{'i': 0, 'title': 'a', 'tags': ['stade:ouvert', 'vue:face'], 'm': 'vu: stade=ouvert vue=face ; ok'},
+                                  {'i': 1, 'title': 'b', 'tags': ['stade:bouton'], 'm': 'bouton serré (titre)'},
+                                  {'i': 2, 'title': 'c', 'tags': ['stade:fane'], 'm': 'vu: stade=ouvert'},
+                                  {'i': 25, 'title': 'd', 'tags': ['stade:ouvert'], 'm': 'vu: stade=ouvert'},
+                                  {'i': 26, 'title': 'e', 'tags': ['organe:tige'], 'm': 'vu: organe=tige'}])
+        ctx.reads['refs'] = {ctx.npath(ctx.rel + '/sheet_0.jpg'), ctx.npath(ctx.rc + '/t026.jpg')}
+        n_, bad_ = refs_audit(ctx)
+        why_ = {b['title']: b['raison'] for b in bad_}
+        t('refs: kept photos seen on their sheet or thumbnail, with their "vu", stay', n_ == 2 and [x['title'] for x in jload(rc + '/keep.json', [])] == ['a', 'e'], str(why_))
+        t('refs: a photo without "vu" is set aside', '"vu:"' in why_.get('b', ''), str(why_))
+        t('refs: a tag the "vu" field does not state is set aside', 'stade:fane' in why_.get('c', ''), str(why_))
+        t('refs: a photo never opened is set aside', 'not looked at' in why_.get('d', ''), str(why_))
+        t('refs: what was opened is kept across calls (refs-vus.json)', 't026.jpg' in (jload(rc + '/refs-vus.json', []) or []))
+        # comparaison: the pairs, their check; the judge's round trips through cmd_run (the fake model writes and reads like a model)
+        need_servers = lambda c: None
+
+        def fake_pairs(c, plan):
+            for p in plan:
+                f = '%s/%s' % (c.ch, p['png'])
+                os.makedirs(os.path.dirname(f), exist_ok=True)
+                open(f, 'w').write('png')
+        RUN_PAIRS = fake_pairs
+        open(tmp + '/ramwait.sh', 'w', newline='\n').write('#!/bin/sh\necho x >> "%s/ramwait.log"\necho "RAM OK"\n' % tmp)
+        os.environ['PIPE_RAMWAIT'] = tmp + '/ramwait.sh'
+        os.makedirs(tmp + '/fleur', exist_ok=True)
+        open(tmp + '/fleur/shot.sh', 'w', newline='\n').write('#!/bin/sh\necho "http://localhost:8765/"\n')
+        os.makedirs(tmp + '/app', exist_ok=True)
+        KEEP = [{'i': 0, 'title': 'p0', 'page': 'u0', 'tags': ['stade:ouvert', 'vue:face', 'coloris:Alba'], 'm': 'vu: stade=ouvert vue=face'},
+                {'i': 1, 'title': 'p1', 'page': 'u1', 'tags': ['stade:ouvert', 'vue:trois-quarts'], 'm': 'vu: stade=ouvert vue=trois-quarts'},
+                {'i': 2, 'title': 'p2', 'page': 'u2', 'tags': ['stade:ouvert', 'vue:profil'], 'm': 'vu: stade=ouvert vue=profil'},
+                {'i': 3, 'title': 'p3', 'page': 'u3', 'tags': ['stade:bouton', 'vue:profil'], 'm': 'vu: stade=bouton vue=profil'},
+                {'i': 4, 'title': 'p4', 'page': 'u4', 'tags': ['stade:declin'], 'm': 'vu: stade=declin'},
+                {'i': 5, 'title': 'p5', 'page': 'u5', 'tags': ['stade:fane'], 'm': 'vu: stade=fane'},
+                {'i': 6, 'title': 'p6', 'page': 'u6', 'tags': ['organe:plante', 'organe:tige'], 'm': 'vu: organe=plante+tige'},
+                {'i': 7, 'title': 'p7', 'page': 'u7', 'tags': ['stade:ouvert', 'vue:face'], 'm': 'vu: stade=ouvert vue=face'}]
+        KEYS = [P['k'] for P in PAIRS]
+        TABLE = '# État\n\n| paire | verdict | écart restant |\n|---|---|---|\n' + ''.join('| %s | ok | |\n' % k for k in KEYS)
+
+        def setup(sid):
+            r_ = '%s/refcache/%s' % (tmp, sid)
+            os.makedirs(r_, exist_ok=True)
+            jsave(r_ + '/keep.json', KEEP)
+            jsave(r_ + '/coloris.json', [{'id': 'blanc', 'cultivar': 'Alba'}])
+            open(tmp + '/app/y-test.js', 'w').write('// drawing v1\n')
+            return 'refcache/%s' % sid
+
+        def comp(rel, n):  # the modeller: retouches app/, redoes the pairs, writes the table, after reading the checklist and every pair
+            w = {'app/y-test.js': '// drawing v%d\n' % n}
+            w.update({'%s/comparaison/%s.png' % (rel, k): 'png%d' % n for k in KEYS})
+            w['%s/etat-comparaison.md' % rel] = TABLE
+            return {'mode': 'done', 'write': w, 'read': ['%s/ref/%s' % (rel, BP)] + ['%s/comparaison/%s.png' % (rel, k) for k in KEYS],
+                    'final': '{"status":"done","ok":8,"ecarts":0}'}
+
+        def jg(rel, verdict):  # the judge: reads every pair, notes every line
+            ko_ = [] if verdict == 'ok' else [{'paire': 'profil', 'raison': 'flancs trop droits contre la photo'}]
+            fin_ = {'verdict': verdict, 'lignes': [{'paire': k, 'note': 'ko' if ko_ and k == 'profil' else 'ok', 'raison': ''} for k in KEYS], 'ko': ko_}
+            return {'mode': 'done', 'read': ['%s/comparaison/%s.png' % (rel, k) for k in KEYS], 'final': json.dumps(fin_, ensure_ascii=False)}
+
+        def run_(args):
+            buf = io.StringIO()
+            with contextlib.redirect_stdout(buf):
+                code_ = cmd_run(make_parser().parse_args(['run'] + args + ['--ch', tmp, '--claude', fake, '--taxon', 'Test test']))
+            return code_, buf.getvalue()
+        rel3 = setup('selftest3')
+        ctx3 = Ctx('selftest3', tmp, argparse.Namespace(dry=False, cap=40, claude=fake), {'sid': 'selftest3', 'taxon': 'Test test', 'steps': {}, 'skus': []})
+        plan_, miss_ = pair_plan(ctx3)
+        t('comparaison: one kept photo per pair, %d pairs' % len(PAIRS), not miss_ and [p['k'] for p in plan_] == KEYS and plan_[0]['photo'] == 0 and plan_[-1]['photo'] == 7,
+          str(miss_) + str([(p['k'], p['photo']) for p in plan_]))
+        t('comparaison: same angle and stage (profile view 7, faded .6 and .9, plant sheet)', 'view=7' in plan_[2]['query'] and '1:.6' in plan_[4]['query'] and '1:.9' in plan_[5]['query']
+          and plan_[6]['query'].startswith('plant=1') and all('seed=7' in p['query'] for p in plan_))
+        write_pairs(ctx3, plan_)
+        rs_ = open('%s/comparaison/refaire.sh' % ctx3.rc).read()
+        t('comparaison: refaire.sh renders through shot_p.sh and pairs with img.py, never 8765', 'fleur/shot_p.sh' in rs_ and 'img.py pair' in rs_ and '8765' not in rs_ and 'D=800' in rs_)
+        fake_pairs(ctx3, plan_)
+        okc, whyc = check_comparaison(ctx3, plan_, reads=False)
+        t('comparaison: the check wants the full table', not okc and 'no line in the table' in whyc, whyc)
+        open(ctx3.rc + '/etat-comparaison.md', 'w').write(TABLE.replace('| bouton | ok | |', '| bouton | | |'))
+        okc, whyc = check_comparaison(ctx3, plan_, reads=False)
+        t('comparaison: a line without verdict nor gap fails', not okc and 'bouton' in whyc, whyc)
+        open(ctx3.rc + '/etat-comparaison.md', 'w').write(TABLE)
+        os.remove('%s/%s' % (tmp, plan_[3]['png']))
+        okc, whyc = check_comparaison(ctx3, plan_, reads=False)
+        t('comparaison: a missing pair fails', not okc and 'bouton: pair missing' in whyc, whyc)
+        fake_pairs(ctx3, plan_)
+        time.sleep(.05)
+        open(tmp + '/app/y-test.js', 'w').write('// drawing v1b\n')
+        okc, whyc = check_comparaison(ctx3, plan_, reads=False)
+        t('comparaison: pairs older than the last retouch of app/ fail', not okc and 'older than the last change' in whyc, whyc)
+        seq(comp(rel3, 2))
+        code_, out_ = run_(['selftest3', '--only', 'comparaison'])
+        st3 = jload(ctx3.rc + '/pipe-state.json', {})
+        t('comparaison: the step ends when the pairs are fresh, looked at and the table full', code_ == 0 and st3['steps']['comparaison']['status'] == 'done', out_[-400:])
+        n_rw = len(open(tmp + '/ramwait.log').read().split()) if os.path.exists(tmp + '/ramwait.log') else 0
+        t('ramwait.sh before the Opus call', n_rw >= 1, str(n_rw))
+        seq(jg(rel3, 'ko'), comp(rel3, 3), jg(rel3, 'ok'))
+        code_, out_ = run_(['selftest3', '--only', 'juge'])
+        st3 = jload(ctx3.rc + '/pipe-state.json', {})
+        jr = [r for r in Bill(ctx3.rc + '/pipe-bill.json').rows() if r['step'] == 'juge']
+        t('juge: ko -> comparaison -> ok ends the step (1 round trip)', code_ == 0 and st3['steps']['juge']['status'] == 'done' and st3['steps']['juge'].get('trips') == 1
+          and len(jr) == 2 and os.path.exists(ctx3.rc + '/comparaison/ko-1.json'), out_[-500:])
+        t('juge: the judge is a fresh Opus xhigh call, read-only (Read, Glob, Grep, Bash for img.py only)', all(r['model'] == 'opus' and r.get('tools') == 'Bash,Glob,Grep,Read'
+          and r.get('effort') == 'xhigh' for r in jr), str([(r.get('tools'), r.get('effort')) for r in jr]))
+        P_ = {n: open('%s/pipe/prompts/%s.md' % (HERE, n), encoding='utf-8').read() for n in ('forme', 'plante', 'finition', 'fit', 'comparaison', 'juge')}
+        t('prompts: forme, plante, comparaison and juge make BONNES-PRATIQUES compulsory', all('BONNES-PRATIQUES.md' in P_[n] and 'EN ENTIER' in P_[n] for n in ('forme', 'plante', 'comparaison', 'juge')))
+        t('prompts: renders through shot_p.sh with seed=7, never fleur/shot.sh', all('fleur/shot.sh' not in v for v in P_.values()) and all('shot_p.sh' in P_[n] and 'seed=7' in P_[n] for n in ('forme', 'plante', 'finition')))
+        t('prompts: the known traps are listed (transparency, paper cut-out, profile, faded stem, coarse strokes)', all(x in P_['forme'] for x in ('transparents', 'papier découpé', 'profil', 'traverse', '3.6b')))
+        rel4 = setup('selftest4')
+        seq(comp(rel4, 2))
+        run_(['selftest4', '--only', 'comparaison'])
+        seq(jg(rel4, 'ko'), comp(rel4, 3), jg(rel4, 'ko'))
+        code_, out_ = run_(['selftest4', '--only', 'juge', '--juge-tours', '1'])
+        st4 = jload(tmp + '/refcache/selftest4/pipe-state.json', {})
+        t('juge: refused after 2 ko (--juge-tours 1): exit 2, report written, not finished', code_ == 2 and st4['steps']['juge'].get('refused') and 'REFUSED' in out_
+          and os.path.exists(tmp + '/refcache/selftest4/comparaison/refus.md') and 'FINI' not in out_, out_[-500:])
+        nb = len(Bill(tmp + '/refcache/selftest4/pipe-bill.json').rows())
+        code_, out_ = run_(['selftest4', '--only', 'juge'])
+        t('juge: a refused sort stays refused without --from (no new call)', code_ == 2 and len(Bill(tmp + '/refcache/selftest4/pipe-bill.json').rows()) == nb, out_[-300:])
+        rel5 = setup('selftest5')
+        seq(comp(rel5, 2))
+        run_(['selftest5', '--only', 'comparaison'])
+        seq(jg(rel5, 'ko'), comp(rel5, 3), jg(rel5, 'ko'), comp(rel5, 4), jg(rel5, 'ko'))
+        code_, out_ = run_(['selftest5', '--only', 'juge'])
+        st5 = jload(tmp + '/refcache/selftest5/pipe-state.json', {})
+        n5 = len([r for r in Bill(tmp + '/refcache/selftest5/pipe-bill.json').rows() if r['step'] == 'juge'])
+        t('juge: refused after 2 round trips (default --juge-tours 2): 3 verdicts, exit 2', code_ == 2 and st5['steps']['juge'].get('refused') and st5['steps']['juge'].get('trips') == 2 and n5 == 3,
+          '%s %s %s' % (code_, n5, out_[-300:]))
+        seq({'mode': 'done', 'read': [], 'final': '{"verdict":"ok","lignes":[],"ko":[]}'}, {'mode': 'done', 'read': [], 'final': 'no json'})
+        v_ = judge(ctx3, plan_, 0)
+        t('juge: a judge that looked at nothing is asked again, then counts as ko', v_['verdict'] == 'ko' and any('not looked at' in x for x in v_['issues']), str(v_)[:300])
+        ctx4 = Ctx('selftest4', tmp, argparse.Namespace(dry=False, cap=40, claude=fake), st4)
+        try:
+            step_planches(ctx4)
+            t('planches: no catalogue sheet for a sort the judge refused', False)
+        except StepFailed:
+            t('planches: no catalogue sheet for a sort the judge refused', True)
+        t('table_rows: the key is the first cell, the header and the rule are skipped', set(table_rows(ctx3.rc + '/etat-comparaison.md')) == set(KEYS) | {'paire'})
         say('selftest: %d ok, %d failed' % (len(ok), len(bad)))
     finally:
-        LOCKS = old_locks
+        LOCKS, need_servers, RUN_PAIRS = old_locks, old_ns, old_rp
+        for k, v in old_env.items():
+            if v is None:
+                os.environ.pop(k, None)
+            else:
+                os.environ[k] = v
         shutil.rmtree(tmp, ignore_errors=True)
     return 1 if bad else 0
 
 
-def main():
+def make_parser():
     ap = argparse.ArgumentParser(prog='pipe.py', description=__doc__.split('\n')[0])
     sp = ap.add_subparsers(dest='cmd', required=True)
     r = sp.add_parser('run')
@@ -1583,7 +2646,7 @@ def main():
     r.add_argument('--ch', help='working copy: a name under flower-atelier/ch or a path (default: the copy this script is in)')
     r.add_argument('--from', dest='from_', choices=STEPS)
     r.add_argument('--only', choices=STEPS)
-    r.add_argument('--cap', type=float, default=3.0, help='millions of Opus input-equivalent tokens')
+    r.add_argument('--cap', type=float, default=40.0, help='millions of Opus input-equivalent tokens: a measure kept in pipe-bill.json, the run stops beyond it')
     r.add_argument('--skus', default='', help='bouquet SKUs "lilas~0:Ruhm von Horstenstein,..." (default: sku_bouquet of the sources json)')
     r.add_argument('--dry', action='store_true', help='no model, no command: print what would run and run the disk checks')
     r.add_argument('--claude', help='path of the claude binary (default: the newest of the desktop application)')
@@ -1593,7 +2656,13 @@ def main():
     r.add_argument('--cw', help='fit.py --cw')
     r.add_argument('--relays', type=int, default=4, help='most fresh Opus calls in one modelling step')
     r.add_argument('--full', type=int, default=40, help='stem length in cm of the plant sheet')
-    r.add_argument('--opus-effort', dest='opus_effort', choices=['low', 'medium', 'high', 'xhigh', 'max'], help='--effort of the Opus calls (default medium)')
+    r.add_argument('--opus-effort', dest='opus_effort', choices=['low', 'medium', 'high', 'xhigh', 'max'], help='--effort of the Opus calls (default xhigh)')
+    r.add_argument('--skip-census', dest='skip_census', action='store_true', help='a census exists already (census.json, or catalogue/serre/sources/<sid>.json imported)')
+    r.add_argument('--kit', help='a published kit piece the sort extends (app/y3-rose.js...): the sorts already drawn with it must not change')
+    r.add_argument('--kit-prefix', dest='kit_prefix', help='the kit family prefix (default: inferred from the module, e.g. svRose|SVROSE_)')
+    r.add_argument('--kit-sids', dest='kit_sids', help='the sorts already drawn with the kit, comma separated (default: found in app/y-*.js)')
+    r.add_argument('--late', type=int, help='the late:N wave of the colourways added (default 1)')
+    r.add_argument('--juge-tours', dest='juge_tours', type=int, default=JUGE_TOURS, help='judge ko -> comparaison round trips before the refusal (exit 2)')
     for n in ('status', 'bill'):
         s = sp.add_parser(n)
         s.add_argument('sid')
@@ -1603,7 +2672,11 @@ def main():
     m.add_argument('--ch')
     m.add_argument('--which', default='haiku,sonnet,opus')
     m.add_argument('--claude')
-    a = ap.parse_args()
+    return ap
+
+
+def main():
+    a = make_parser().parse_args()
     return {'run': cmd_run, 'status': cmd_status, 'bill': cmd_bill, 'models': cmd_models, 'selftest': cmd_selftest}[a.cmd](a)
 
 
