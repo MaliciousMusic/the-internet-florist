@@ -12,7 +12,12 @@ Pour CHAQUE paire de la liste :
    - opacité : aucun contour ni pièce de derrière vus à travers, surtout sur un blanc ou une crème ;
    - volume et lumière par pièce : pas de forme plate « papier découpé » ;
    - traits de bord et nervures fins, dans la teinte du pétale, découpés à leur pièce, aucun qui flotte ;
-   - couleur ; cœur ; attache à la tige, rien qui flotte ;
+   - pointes et contour des pièces comme sur la photo (aigu, acuminé, arrondi), jamais le défaut du kit (2.11) ;
+   - zones de couleur de la photo (base, corps, pointe, marge, veines colorées, mouchetures), jamais un aplat (4.8d) ;
+   - légère translucidité lumineuse des bords et zones minces, sans aucun contour de dessous visible (4.8e) ;
+   - richesse : jamais plus terne ni plus pauvre que la photo (4.8b) ; finesse des pièces minces (4.8c) ;
+   - couleur ; cœur de CETTE variété (forme, fond, taches, liseré : 2.12), jamais un cœur générique ni une « figurine » ; attache à la tige, rien qui flotte ;
+   - paires `cw-<id>` : le coloris contre la photo de SA variété (9.3c) ;
    - fané : la tige ne traverse pas la tête, ni sac ni boule, succession conforme à la photo ;
    - tige, coupe et feuilles en volume, disposées comme sur la photo.
 3. Note la ligne `ok` seulement si rien ne cloche ; sinon `ko` avec une raison précise et visible (où, quoi, contre quoi sur la photo).

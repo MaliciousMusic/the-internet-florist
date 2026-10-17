@@ -103,6 +103,10 @@ tard : les défauts n'étaient vus qu'à la relecture des gros plans par l'orche
    - fleurons épais, mous, cernés au lieu de fins et légers (hortensia, porteur, 4.8c) ;
    - feuille plate, schématique, nervures en traits droits (amarante, porteur : « bien trop mauvaise qualité ») : une feuille
      se courbe, se gaufre, a des nervures en creux et des reflets (section 7) ;
+   - pointes de pièces arrondies par défaut du kit, aplats de couleur sans zones, aucune translucidité, un seul cœur recoloré
+     pour toutes les variétés (cymbidium, porteur, 2026-10-18 : 2.11, 2.12, 4.8d, 4.8e) ; d'où la paire par coloris contre la
+     photo de SA variété (9.3c, `cw-<id>` dans pipe.py) ;
+   - centre qui se lit comme une figurine (colonne en cylindre, points jaunes en « yeux ») : cymbidium v2, refusé ;
    - colonne, labelle et veines absents ou génériques (orchidées : « jupe » au lieu d'un labelle trilobé).
 4. **La recherche hors des modèles chers** : recensement et photos en Haiku, ou par Codex si le porteur le décide (question posée,
    sans réponse). Une **bibliothèque de références par genre** (photos d'organes triées : face, profil, bouton, fané, feuille,

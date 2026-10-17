@@ -1667,6 +1667,23 @@ def pair_plan(ctx):
                      'vu': best.get('m'), 'thumb': '%s/t%03d.jpg' % (ctx.rel, int(best.get('i', 0))), 'query': q, 'name': name, 'render': 'fleur/out/%s.png' % name,
                      'cell': cell, 'kind': P.get('kind', 'cup'), 'op': P.get('op', '.85'), 'cw': cw,
                      'png': '%s/comparaison/%s.png' % (ctx.rel, P['k']), 'txt': '%s/comparaison/%s.txt' % (ctx.rel, P['k'])})
+    # BONNES-PRATIQUES 9.3c (owner, 2026-10-18, cymbidium): every colourway with a photo of its own variety is compared to THAT photo
+    # (tip shape, colour zones, translucency, its own heart), face on and open; up to --cw-pairs of them (10 by default)
+    for c in cws[:int(getattr(ctx.a, 'cw_pairs', 10) or 10) * 3]:
+        if sum(1 for q in plan if q['k'].startswith('cw-')) >= int(getattr(ctx.a, 'cw_pairs', 10) or 10):
+            break
+        names = [n for n in (norm(c.get('cultivar')), norm(c.get('id'))) if n]
+        own = [x for x in K if any(t.startswith('coloris:') and any(t[8:] in n or n in t[8:] for n in names) for t in kept_tags(x))]
+        if not own:
+            continue
+        own.sort(key=lambda x: (not ({'stade:ouvert', 'vue:face'} <= kept_tags(x)), used.get(x.get('i'), 0)))
+        best, k = own[0], 'cw-' + slug(str(c.get('id')))[:20]
+        name = 'cmp_%s_%s' % (slug(ctx.sid)[:24], k)
+        plan.append({'k': k, 'label': 'coloris %s contre la photo de sa variété (pointes, zones de couleur, translucidité, cœur)' % c.get('id'),
+                     'photo': best.get('i'), 'title': best.get('title'), 'page': best.get('page'), 'tags': best.get('tags'), 'vu': best.get('m'),
+                     'thumb': '%s/t%03d.jpg' % (ctx.rel, int(best.get('i', 0))), 'name': name, 'render': 'fleur/out/%s.png' % name,
+                     'query': 'grid=1&sid=%s&cws=%s&st=.85:0&view=0&D=600&det=1.5&seed=%d' % (ctx.sid, c.get('id'), SEED), 'cell': '0,0@600',
+                     'kind': 'cup', 'op': '.85', 'cw': c.get('id'), 'png': '%s/comparaison/%s.png' % (ctx.rel, k), 'txt': '%s/comparaison/%s.txt' % (ctx.rel, k)})
     return plan, missing
 
 
@@ -2522,7 +2539,7 @@ def cmd_selftest(a):
                 {'i': 5, 'title': 'p5', 'page': 'u5', 'tags': ['stade:fane'], 'm': 'vu: stade=fane'},
                 {'i': 6, 'title': 'p6', 'page': 'u6', 'tags': ['organe:plante', 'organe:tige'], 'm': 'vu: organe=plante+tige'},
                 {'i': 7, 'title': 'p7', 'page': 'u7', 'tags': ['stade:ouvert', 'vue:face'], 'm': 'vu: stade=ouvert vue=face'}]
-        KEYS = [P['k'] for P in PAIRS]
+        KEYS = [P['k'] for P in PAIRS] + ['cw-blanc']  # the fixed pairs and one colourway compared to its own variety (9.3c)
         TABLE = '# État\n\n| paire | verdict | écart restant |\n|---|---|---|\n' + ''.join('| %s | ok | |\n' % k for k in KEYS)
 
         def setup(sid):
@@ -2553,7 +2570,7 @@ def cmd_selftest(a):
         rel3 = setup('selftest3')
         ctx3 = Ctx('selftest3', tmp, argparse.Namespace(dry=False, cap=40, claude=fake), {'sid': 'selftest3', 'taxon': 'Test test', 'steps': {}, 'skus': []})
         plan_, miss_ = pair_plan(ctx3)
-        t('comparaison: one kept photo per pair, %d pairs' % len(PAIRS), not miss_ and [p['k'] for p in plan_] == KEYS and plan_[0]['photo'] == 0 and plan_[-1]['photo'] == 7,
+        t('comparaison: one kept photo per pair, %d pairs + 1 colourway pair' % len(PAIRS), not miss_ and [p['k'] for p in plan_] == KEYS and plan_[0]['photo'] == 0 and plan_[len(PAIRS) - 1]['photo'] == 7 and plan_[-1]['cw'] == 'blanc',
           str(miss_) + str([(p['k'], p['photo']) for p in plan_]))
         t('comparaison: same angle and stage (profile view 7, faded .6 and .9, plant sheet)', 'view=7' in plan_[2]['query'] and '1:.6' in plan_[4]['query'] and '1:.9' in plan_[5]['query']
           and plan_[6]['query'].startswith('plant=1') and all('seed=7' in p['query'] for p in plan_))
@@ -2647,6 +2664,7 @@ def make_parser():
     r.add_argument('--kavb', action='store_true')
     r.add_argument('--max', type=int, help='most KAVB lookups (census.py --max)')
     r.add_argument('--ch', help='working copy: a name under flower-atelier/ch or a path (default: the copy this script is in)')
+    r.add_argument('--cw-pairs', dest='cw_pairs', type=int, default=10, help='colourways compared to the photo of their own variety (comparaison)')
     r.add_argument('--from', dest='from_', choices=STEPS)
     r.add_argument('--only', choices=STEPS)
     r.add_argument('--cap', type=float, default=40.0, help='millions of Opus input-equivalent tokens: a measure kept in pipe-bill.json, the run stops beyond it')

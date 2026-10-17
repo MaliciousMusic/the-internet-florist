@@ -36,6 +36,11 @@ Rappel de base : SVG natif seulement, ni 3D, ni image incorporée, ni ruban, ni 
     géométrie, pas l'ordre (tulipe v1 : 12 ; tour 9 : 18 ; chantiers récents 3,4 à 5,3). Pièce plus large que son verticille : `cupArc` ; pièces
     qui se recouvrent : `lap`. Pied : onglets étroits plus fond de coupe, une base droite et large fait des X (tulipe v2, 7 ter).
 2.10 La tête garde son orientation réelle sur la tige entière (tulipe : le U se voit de profil ; `axv=1` sur les planches plante, sinon tête de face).
+2.11 Pointes et contour de chaque pièce mesurés sur la photo de la sorte, jamais le défaut du kit (porteur, 2026-10-18,
+    cymbidium : « le bout des pétales n'est pas en pointe ») : acuminé, aigu, arrondi, échancré ; pointe recourbée ou non.
+2.12 Le cœur dépend de la variété (porteur, 2026-10-18 : « selon les espèces et variantes la forme du centre change ») :
+    labelle, cœur, étamines, macule ont la forme, le fond, les taches et le liseré de la photo de CHAQUE variété ; jamais un
+    seul cœur recoloré pour tous les coloris.
 
 ## 3. Pétales et matière
 3.1 Pétales opaques, formes organiques et asymétriques, jamais raides ni facettées (porteur, 2026-10-08 : « stiff », pétales qui se chevauchent et se
@@ -81,6 +86,12 @@ Rappel de base : SVG natif seulement, ni 3D, ni image incorporée, ni ruban, ni 
 4.8c Finesse et légèreté (porteur, 2026-10-17, hortensia : « ne font pas fins et légers ») : une pièce mince se dessine mince,
     bord net et fin, sans cerne épais, petits jours entre les pièces qui laissent voir la couche plus profonde ; jamais de
     pastilles molles et uniformes. Contrôle : gros plan D 800 de 5-6 pièces contre un recadrage serré de la photo.
+4.8d Zones de couleur, jamais un aplat (porteur, 2026-10-18, cymbidium : « les variations de couleur des pétales ont des aplats
+    avec zones ») : chaque coloris porte les zones de SA photo : base, corps, pointe, marge ou liseré, veines colorées,
+    mouchetures, flammes, dégradés.
+4.8e Légère translucidité (même critique : « les pétales ont de légères transparences ») : bords et zones minces plus lumineux,
+    comme éclairés par derrière, par la lumière et la couleur ; les pièces restent opaques, aucun contour de dessous visible
+    (3.1).
 4.9 Tous les coloris vendus, nommés d'après les variétés et mesurés (anémone : 23). Un coloris ajouté porte `late:N` (numéros de SKU inchangés) ; ne jamais changer id, ordre ni `c` d'un coloris existant ; un cultivar sous marque (® ou ™) ne donne
     jamais son nom (nom de couleur générique, ou `ret:1` si le coloris n'est pas prouvé) ; la matière est en cache par sorte et par id (les id « rouge », « rose » se répètent : clé par sorte).
 
@@ -166,4 +177,7 @@ Rappel de base : SVG natif seulement, ni 3D, ni image incorporée, ni ruban, ni 
 9.3b Planche de comparaison photo/rendu côte à côte, même angle et même stade, pour la tête de face, de 3/4 et de profil, le bouton,
     le fané et la plante entière ; chaque écart visible est corrigé ou dit en tête du rapport (porteur, 2026-10-17 : « resserre la vis
     sur le contrôle qualité » ; orchidées v1 jugées « bien mais pas aussi bien que d'habitude »). Elle reste dans refcache.
+9.3c Paire par coloris (porteur, 2026-10-18 : « une pipeline de recréation particulièrement sévère ») : chaque coloris qui a
+    une photo de sa variété est comparé côte à côte à CETTE photo (de face, ouvert) : pointes, zones de couleur,
+    translucidité, cœur propre ; pipe.py en fait jusqu'à 10 (`cw-<id>`), le juge les note comme les autres.
 9.4 Chiffrer : rustines par tête, éléments et Ko à DET 1, jours en mm, pièces isolées (`conn.py`). Cocher 4 ter point par point, écrire les défauts restants et les décisions manquantes au rapport (jamais les cacher), noter la facture (`bill.py report`).
