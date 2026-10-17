@@ -27,3 +27,17 @@ germini 1018, 1029) ; SKU en C (1013, 1016, 1018, 1021, 1030) ; spider et double
 séries d'obtenteur sous marque ; roses : noms commerciaux sous ®, motifs non prouvés (4, 27, 28, 30, 43, 44), coloris à
 ajouter (jaune lavé de rose, corail pêche, orange bordé de rouge), sweethearts en SKU à part ; blancs des roses hors de la
 règle des 10° (mesures presque neutres) ; port de l'atelier.
+
+## Lot 2, capitules doubles (17 octobre 2026)
+
+| Sorte | Coloris | Preuves | Facture du chef | Retouches |
+|---|---|---|---|---|
+| dahlia-decoratif | 18 + 5 ajoutés | 5 A (KAVB), 12 B, 1 C ; 3 ajoutés sur une photo | 13,9 M | matière, profil (2 relais), planches |
+| chrysantheme-disbud | 14 + 3 ajoutés | 11 B, 3 C ; pas de registre N1 | 12,8 M | matière, fané |
+
+Le chef a lancé les 13 lots de preuves avant la consigne d'économie (environ 1 % par sorte visé). Les retouches ont suivi la
+relecture en gros plan : matière plate (aplats), profil en pomme de pin, fané du chrysanthème en masse plate.
+**Imparfait** : fané du dahlia en facettes plates ; blanc du dahlia peu modelé à DET 1 ; boutons du chrysanthème sur un col en
+crosse ; fond sombre non vérifiable (sv.html ignore bg en mode bouquet).
+**Questions** : 1054 bleu teinté (garder ou retirer) ; 703 Bridezilla (nymphéa chez l'obtenteur) ; 711 « lilas lavande » ;
+1043 et 1055 en C ; séries sous marque présumée ; DutchGrown N2 ou N3 ; guide ADS (formulaire) ; budget à 55-65 Ko par tige.
