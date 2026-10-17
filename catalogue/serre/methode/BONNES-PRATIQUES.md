@@ -128,7 +128,7 @@ Rappel de base : SVG natif seulement, ni 3D, ni image incorporée, ni ruban, ni 
 8.3 Tout élément d'une sorte (cou, axes, feuilles) entre dans les couches de tiges et se raccorde à la tige du bouquet en tangente (`frameOf`, `neckPart`, `neckOut` ;
     porteur, 2026-10-03 : « tiges qui semblent cassées »). Contrôle : audit de coudes `qa13` à 0 (coude = virage > 75° sur 16 unités).
 8.4 QA de la boutique : 0 flottante, 0 sous le bord, 0 cassure, sur au moins 30 bouquets, un lot à la fois, plus de 5 Go libres, jamais plus de 3 Chrome sans fenêtre.
-8.5 Budget à DET 1 : environ 300 éléments et 50 Ko par tige (tulipe : 362 él. refusés comme 20 % de trop). Mesurer par organe (tête, col, tige, feuilles) ; plein
+8.5 (Mesure seulement, plus une limite : porteur, 2026-10-17, « le poids je m'en fiche, je veux la meilleure qualité possible ».) Budget à DET 1 : environ 300 éléments et 50 Ko par tige (tulipe : 362 él. refusés comme 20 % de trop). Mesurer par organe (tête, col, tige, feuilles) ; plein
     détail réservé aux gros plans et exports.
 8.6 Regarder soi-même un bouquet contenant la sorte, à la taille de la boutique et à 2400 px (pas un agent Haiku) : chaque fleur se lit comme une fleur de sa sorte,
     attachée, aux bonnes proportions face à l'iris ou à l'anémone voisine (pois v1 : « pétales roses plats » et folioles aussi grandes qu'un iris).
@@ -150,4 +150,7 @@ Rappel de base : SVG natif seulement, ni 3D, ni image incorporée, ni ruban, ni 
     - un bouquet normal, `life=open` et `life=fane`, sur fond clair et sur fond sombre.
 9.3 Regarder une case à la loupe avant de corriger le dessin : tête à 35 % (animation non finie), feuilles invisibles, axe ignoré, serveur arrêté (« NO OUTPUT »),
     PNG RGBA à composer sur #e9e4dc, `img.py cell` décalé (préférer `zoom` en pixels).
+9.3b Planche de comparaison photo/rendu côte à côte, même angle et même stade, pour la tête de face, de 3/4 et de profil, le bouton,
+    le fané et la plante entière ; chaque écart visible est corrigé ou dit en tête du rapport (porteur, 2026-10-17 : « resserre la vis
+    sur le contrôle qualité » ; orchidées v1 jugées « bien mais pas aussi bien que d'habitude »). Elle reste dans refcache.
 9.4 Chiffrer : rustines par tête, éléments et Ko à DET 1, jours en mm, pièces isolées (`conn.py`). Cocher 4 ter point par point, écrire les défauts restants et les décisions manquantes au rapport (jamais les cacher), noter la facture (`bill.py report`).
