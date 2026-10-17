@@ -4,6 +4,64 @@
 besoin de relire l'ancienne. **Décision du porteur (17 octobre, soir)** : finir les chantiers en cours, puis passer sur une
 session neuve « mieux organisée, plus sévère, pour la meilleure qualité possible », sans chefs de chantier, avec `pipe.py`.
 
+## 0. Première tâche : passe d'analyse et audit (avant toute nouvelle sorte)
+
+**Demande du porteur (18 octobre)** : « comme on doit recréer les espèces sans les décalquer, et qu'il y a les stades de vie de la
+fleur, il faut qu'on soit encore meilleurs sur la description de la forme des pétales et des composants, sur les dégradés, les
+ombrages, les transparences, l'intégrité globale ; faire un moteur plus individuel et granulaire des jointures et des sections,
+avec le même soin pour les feuillages et les tiges, afin que structurellement on soit le plus réaliste possible. Ces fleurs
+doivent être presque indiscernables des vraies. » La session neuve **commence** par une passe d'analyse et un audit qui
+améliorent les processus à tous les niveaux, **de manière atomique** ; aucune sorte nouvelle n'est lancée avant.
+
+**Principe.** On recrée, on ne décalque pas : les photos servent à mesurer et à décrire (proportions, angles, courbures, zones,
+couleurs), jamais à copier un contour. La description structurée de la plante est la source du dessin ; le moteur la rend à tous
+les stades de vie, sous tous les angles, avec la graine qui rend chaque tige unique.
+
+**Ce que l'audit examine**, chaque point avec des exemples tirés des sortes déjà faites (anémone, tulipes, roses, phalaenopsis,
+cymbidium, hortensia, amarante) et des critiques du porteur (§4.3) :
+1. **Description morphologique.** Une fiche structurée par sorte (schéma commun, versionné) qui décrit chaque organe :
+   - nombre, disposition et recouvrement des pièces ;
+   - contour (base, épaules, pointe : aiguë, acuminée, arrondie, échancrée, ondulée), largeur le long de la pièce ;
+   - courbures longitudinale et transversale (gouttière, creux, revers) ;
+   - section, épaisseur, texture (cire, velours, satin, papier de soie) ;
+   - nervation ; zones de couleur (base, corps, pointe, marge, veines, mouchetures, flammes) ;
+   - variations par variété (dont le cœur, 2.12) et par stade (bouton, ouverture, plein, déclin, fané).
+   Chaque valeur porte sa source : photo mesurée ou référence botanique. Mesurer dans cet état : quelles sortes en ont l'équivalent,
+   où les fiches actuelles (`space.json`, `targets.json`, briefs) laissent des trous.
+2. **Matière et lumière.** Comment le moteur rend aujourd'hui les dégradés, ombres propres et portées, occlusions entre pièces,
+   translucidité (4.8e), reflets, grain ; où il retombe sur des aplats ou du « papier découpé ». Proposer des primitives
+   communes (une par effet, réglée par la fiche) plutôt que des retouches par sorte.
+3. **Intégrité structurelle : jointures et sections.** Un moteur granulaire et individuel des liaisons :
+   - pièce-réceptacle, réceptacle-pédicelle, pédicelle-hampe ;
+   - nœud, gaine et pétiole des feuilles ; ramifications ;
+   - sections de tige (ronde, carrée, ailée, creuse) et leur ombrage ;
+   - tête portée par la tige à chaque stade (le fané ne traverse rien), et aucune pièce qui flotte.
+   Inventorier les jointures existantes (`frameOf`, `neckPart`, `neckOut`, kits `y3-*.js`, `y3-plante.js`), leurs défauts connus
+   (BONNES-PRATIQUES §2.4, §8.3, mémoire « stem physics ») et ce qui manque.
+4. **Feuillages et tiges au même niveau que la fleur** : forme, gaufrage, nervures en creux, revers, torsion, insertion, bord,
+   matière (critique de la feuille d'amarante).
+5. **Stades de vie** : continuité bouton → ouvert → déclin → fané pilotée par la fiche, et non par des courbes empruntées (2.2).
+6. **Processus.** Pour chaque étape (recensement, photos, coloris, forme, plante, finition, comparaison, juge, témoins,
+   publication) : ce qui a raté pendant la vague 3, combien ça a coûté (factures), et quel contrôle chiffré ou quelle paire l'aurait
+   attrapé plus tôt. Outils qui manquent (déjà notés dans les journaux de chantier : affichage des axes des pièces dans svtest,
+   montage photo/rendu, mesure des chenilles, fond sombre des bouquets `bq=1`).
+
+**Livrables**, dans `catalogue/serre/methode/` :
+- `AUDIT-V4.md` : constats, chacun avec sa preuve (fichier, rendu, critique du porteur) ;
+- une liste d'améliorations **atomiques** : une modification, un test ou une planche avant/après, un témoin (anémone 0,00 %,
+  rtest identique) ; classées par gain de réalisme attendu ;
+- le schéma de la fiche morphologique, avec une sorte pilote décrite entièrement (proposition : le phalaenopsis, validé par le
+  porteur, ou l'anémone de référence) ;
+- les décisions qui ne sont pas les nôtres, écrites en questions au porteur.
+
+**Méthode.**
+- Lire, mesurer, proposer. Puis appliquer une amélioration à la fois, chacune vérifiée et committée seule.
+- Les changements du moteur commun ne modifient jamais le rendu des sortes publiées sans le dire : les témoins le montrent.
+- Une refonte qui changerait les sortes déjà faites se propose au porteur avec planches avant/après, et ne s'impose pas.
+- Recherche et lecture en agents économes ; jugement et conception en Opus `xhigh`.
+- Présenter au porteur l'audit et les premières planches avant/après, **puis seulement** reprendre la file du §8 avec le
+  processus amélioré.
+
 ## 1. Ce que veut le porteur
 
 - **Refaire les sortes du catalogue au niveau de l'anémone** (docs/STANDARD-RENDU.md 4 bis et 4 ter) : fleur, tige, feuilles,
@@ -205,9 +263,11 @@ recettes ?
 
 Ouvrir une session dans `C:/Users/agent/Desktop/flower/flower-atelier` et lui donner :
 
-> Lis `catalogue/serre/methode/PASSATION-VAGUE3.md` et applique-le. Tu es l'orchestrateur léger de la vague 3 : vérifie les
-> services (section 3), puis lance les sortes de la section 8 avec `pipe.py`, trois au
-> plus. Sois sévère : rien n'est publié sans planches de comparaison, verdict ok du juge et ta propre relecture des gros plans.
+> Lis `catalogue/serre/methode/PASSATION-VAGUE3.md` et applique-le. Vérifie les services (section 3). Commence par la passe
+> d'analyse et l'audit de la section 0 : livre `AUDIT-V4.md`, le schéma de fiche morphologique avec une sorte pilote, et les
+> premières améliorations atomiques avec leurs planches avant/après. Montre-les-moi avant de lancer les sortes de la section 8
+> avec `pipe.py` (trois au plus). Sois sévère : rien n'est publié sans planches de comparaison, verdict ok du juge et ta propre
+> relecture des gros plans.
 
 ## 12. L'inventaire des fleurs : le choix du porteur
 
