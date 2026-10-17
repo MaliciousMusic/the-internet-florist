@@ -485,8 +485,8 @@ function svbPedJ(par,items,S,cw){const fx=DET>=1.5?n=>Math.round(n*10)/10:Math.r
    (doubly serrate: every other tooth smaller), aris (bristle tip of the teeth, x tooth), green (age at which the young colour lf turns to lf2), two (at DET 1
    the shaded half is drawn on leaves longer than two x fD; two1: the same below DET 1.5), glands (on the top of the petiole), glC, stip (stipules, x L: narrow,
    fringed, falling early: drawn on young leaves only; stipF 'reni': kidney-shaped, toothed, persistent, at DET 1 only past stip0 units), petC; hang (0..1: a young blade turned down from its petiole, limp: cherry t203), Wy (a young
-   blade narrower by that share), und/undK (the underside's colour when young, mixed in: copper-pink under a bronze leaf), gloss (0..1: wider tones
-   and a pale streak on the lit half at close range), vd (0..1: veins as dark grooves on a young pleated blade), open (with the branch fading, the
+   blade narrower by that share), petW (petiole width x len, .022), sheen (the gloss streak's strength, 1), wk (how much wilting folds, curls and droops the blade, 1; .15 if open), und/undK (the underside's colour when young, mixed in: copper-pink under a bronze leaf), gloss (0..1: wider tones
+   and a pale streak on the lit half at close range), vd (0..1: veins as dark grooves on a young pleated blade), quilt (0..1: bullate panels, sunken veins, glints), warp (a low twist of the surface), vMid/vEnd (the lateral veins' run toward the tip, .06/.13), ovB (0..1: a broad ovate blade, wide to 3/4 then a short tip), open (with the branch fading, the
    leaves go on growing: they unfold, spread and green by that share of the wilt instead of hanging and rolling). Each half-blade lit by its own normals (the upper face darker than the paler underside), its
    margin band lit apart (the curl reads as volume), midrib and lateral veins, teeth with bristle tips at close range; bronze when young, then green;
    in a fading branch the leaves hang, roll and dull toward olive-brown. At DET 1 one path (two for long leaves: the shaded half). */
@@ -497,16 +497,16 @@ function svbLeaf(par,a,H0,len,S,cw,o){const Lf=S.leaf,r=svRng(o.seed>>>0),hi=DET
   if(svbLifeAll()==='open'){const[h,sa,l]=h2l(col);col=l2h(h<82||h>300?82:h,Math.max(sa,.38),Math.max(.3,Math.min(.5,l)))}
   const pl=len*Lf.pet,yk=Math.max(0,1-age/(Lf.green??.9)),Xp=V3.nz(H0),hg=Math.min(1,(Lf.hang||0)*yk),th=Math.acos(Math.max(-1,Math.min(1,Xp[1]))),hz=Math.hypot(Xp[0],Xp[2]),hh=hz>.05?[Xp[0]/hz,0,Xp[2]/hz]:[1,0,0],
     t2=th<2.7?th+(2.7-th)*hg:th,X0=hg>0?[hh[0]*Math.sin(t2),Math.cos(t2),hh[2]*Math.sin(t2)]:Xp,acu=Lf.acu??.6,gl=Lf.gloss||0;
-  let N=V3s([0,1,0],V3.sc(X0,X0[1]));if(V3l(N)<.15)N=V3s([0,0,1],V3.sc(X0,X0[2]));N=V3.nz(N);const rl=r.in(-.5,.5),S2=V3.cr(X0,N),Nn=V3.nz(V3.add(V3.sc(N,Math.cos(rl)),V3.sc(S2,Math.sin(rl)))),Sd=V3.cr(X0,Nn);
-  const wk=Lf.open?.15:1,fold=Math.min(1.35,Lf.fold*(1-.6*Math.min(1,age*.8))*(.8+.4*r())+.35*wl*wk),curl=(Lf.curl??.5)*(.7+.6*r())+.5*wl*wk,tw=(Lf.tw??.35)*r.in(-1,1),dr=Lf.droop*(.7+.6*r())+.35*wl*wk,
+  let N=V3s([0,1,0],V3.sc(X0,X0[1]));if(V3l(N)<.15)N=V3s([0,0,1],V3.sc(X0,X0[2]));N=V3.nz(N);const S2=V3.cr(X0,N),rl=r.in(-.5,.5)+(Lf.face?Lf.face*Math.atan2(S2[2],N[2]):0),Nn=V3.nz(V3.add(V3.sc(N,Math.cos(rl)),V3.sc(S2,Math.sin(rl)))),Sd=V3.cr(X0,Nn);
+  const wk=Lf.wk??(Lf.open?.15:1),fold=Math.min(1.35,Lf.fold*(1-.6*Math.min(1,age*.8))*(.8+.4*r())+.35*wl*wk),curl=(Lf.curl??.5)*(.7+.6*r())+.5*wl*wk,tw=(Lf.tw??.35)*r.in(-1,1),dr=Lf.droop*(.7+.6*r())+.35*wl*wk,
     wid=len*Lf.W*(1-(Lf.Wy||0)*yk),p=V3.add(a,V3.sc(hg>0?V3.nz(V3.add(Xp,X0)):Xp,pl)),down=[0,-1,0],wph=r()*6.28;
   const cAt=v=>V3.add(V3.add(p,V3.sc(X0,len*v*(1-dr*.35*v))),V3.sc(down,len*dr*v*v)),fr=v=>{const t2=tw*v;return[rotA(Sd,X0,t2),rotA(Nn,X0,t2)]},
     /* a point of the half-blade s at v along, f across (0 midrib .. 1 margin; f>1 a tooth's bristle) */
-    at=(v,f,s)=>{const[sd,nn]=fr(v),w=wid*.5*SVB_LWP(v,acu),th=curl,al=fold+th*Math.min(1,f),X=Math.abs(th)<1e-3?f*Math.cos(fold):(Math.sin(al)-Math.sin(fold))/th+Math.max(0,f-1)*Math.cos(al),
-      Y=(Math.abs(th)<1e-3?f*Math.sin(fold):(Math.cos(fold)-Math.cos(al))/th+Math.max(0,f-1)*Math.sin(al))+.05*f*f*Math.sin(v*9+wph)*(1-.5*age);
+    at=(v,f,s)=>{const[sd,nn]=fr(v),w=wid*.5*(Lf.ovB&&v>.4?(1-Lf.ovB)*SVB_LWP(v,acu)+Lf.ovB*Math.pow(Math.max(0,1-Math.pow((v-.4)/.6,2.2)),.9)*(1+acu*.6*(v-.4)):SVB_LWP(v,acu)),th=curl,al=fold+th*Math.min(1,f),X=Math.abs(th)<1e-3?f*Math.cos(fold):(Math.sin(al)-Math.sin(fold))/th+Math.max(0,f-1)*Math.cos(al),
+      Y=(Math.abs(th)<1e-3?f*Math.sin(fold):(Math.cos(fold)-Math.cos(al))/th+Math.max(0,f-1)*Math.sin(al))+.05*f*f*Math.sin(v*9+wph)*(1-.5*age)+(Lf.warp||0)*f*Math.sin(v*3.3+wph*1.7+(s>0?.9:0));
       return V3.add(V3.add(cAt(v),V3.sc(sd,s*w*X)),V3.sc(nn,w*Y))},
     nrmAt=(v,f,s)=>{const[sd,nn]=fr(v),al=fold+curl*f;return V3.nz(V3s(V3.sc(nn,Math.cos(al)),V3.sc(sd,s*Math.sin(al))))},
-    P=pal7(col),Pu=pal7(mix(col,Lf.und?mix('#c8d0a8',Lf.und,yk):'#c8ccb0',Lf.undK??.42)),A=[a[0],-a[1]],Pp=[p[0],-p[1]],sp=q=>[q[0],-q[1]],pw=Math.max(.4,len*.022),
+    P=pal7(col),Pu=pal7(mix(col,Lf.und?mix('#c8d0a8',Lf.und,yk):'#c8ccb0',Lf.undK??.42)),A=[a[0],-a[1]],Pp=[p[0],-p[1]],sp=q=>[q[0],-q[1]],pw=Math.max(.4,len*(Lf.petW||.022)),
     tone=(n,top)=>toneAt(top?P:Pu,(top?.3-.08*gl:.3)+(top?.62-.04*gl:.62)*Math.max(0,Math.min(1.1,lightI(top?n:V3.sc(n,-1))))),
     /* the margin of a half, base to tip: teeth leaning to the tip, every other one smaller, a bristle on each at close range */
     marg=(s,nT)=>{const M=[];for(let k=0;k<nT;k++){const v0=.02+.95*k/nT,dv=.95/nT;if(!hi||!Lf.serr){M.push(at(v0,1,s));continue}const big=Lf.dbl&&k%2?.55:1,dep=(Lf.tooth??.05)*big;
@@ -534,11 +534,23 @@ function svbLeaf(par,a,H0,len,S,cw,o){const Lf=S.leaf,r=svRng(o.seed>>>0),hi=DET
     /* the margin band, lit by its own normal: the curl of the half-blade */
     if(h.fill2!==h.fill){const inr=[];for(let i=0;i<=8;i++)inr.push(sp(at(.02+.95*i/8,.55,h.s)));E('path',{d:svbPoly(inr.concat(h.M.map(sp).reverse()),fx),fill:h.fill2,'fill-opacity':.6},g)}
     /* its lateral veins, curving to the margin: paler on the face, raised below */
-    let d='';for(let j=1;j<=8;j++){const v=j/9.5,q0=sp(cAt(v)),q1=sp(at(v+.06,.5,h.s)),q2=sp(at(v+.13,.88,h.s));d+=`M${fx(q0[0])},${fx(q0[1])}Q${fx(q1[0])},${fx(q1[1])} ${fx(q2[0])},${fx(q2[1])}`}
+    const vM=Lf.vMid??.06,vE=Lf.vEnd??.13;let d='';for(let j=1;j<=8;j++){const v=j/9.5,q0=sp(cAt(v)),q1=sp(at(v+vM,.5,h.s)),q2=sp(at(v+vE,.88,h.s));d+=`M${fx(q0[0])},${fx(q0[1])}Q${fx(q1[0])},${fx(q1[1])} ${fx(q2[0])},${fx(q2[1])}`}
     const vd=(Lf.vd||0)*(.4+.6*yk);E('path',{d,stroke:h.top?(vd>.2?P.d2:P.l1):Pu.l2,'stroke-width':fx(Math.max(.12,len*.006*(1+.5*vd))),fill:'none','stroke-opacity':h.top?(.35+.25*vd)*(Lf.vO??1):.5},g);
+    /* quilt (0..1): a bullate blade (hydrangea 99, 115): sunken veins (a dark groove and the lit ridge of the puffed panel beyond it), each
+       intercostal panel puffed (a pale lens on the face, fainter below) and, on the lit half of a glossy blade, a small bright glint */
+    if(Lf.quilt&&hi){const qk=Lf.quilt,dv=1/9.5,li=Math.max(0,Math.min(1,lightI(h.top?nrmAt(.45,.5,h.s):V3.sc(nrmAt(.45,.5,h.s),-1))));let dl='',dg='',dr='';
+      for(let j=1;j<=8;j++){const v=j/9.5,q0=sp(cAt(v+.012)),q1=sp(at(v+vM+.012,.5,h.s)),q2=sp(at(v+vE+.012,.86,h.s));dr+=`M${fx(q0[0])},${fx(q0[1])}Q${fx(q1[0])},${fx(q1[1])} ${fx(q2[0])},${fx(q2[1])}`;
+        if(j>7)continue;const U=[],D=[],GU=[],GD=[];
+        for(let i=0;i<=6;i++){const f=.12+.68*i/6,vc=v+dv*.52+vE*1.1*f*f,hw=dv*.34*Math.sin(Math.PI*i/6)*(1-.35*f);U.push(sp(at(vc+hw,f,h.s)));D.push(sp(at(vc-hw*.55,f,h.s)));
+          const f2=.22+.3*i/6,hw2=dv*.13*Math.sin(Math.PI*i/6);GU.push(sp(at(v+dv*.62+vE*1.1*f2*f2+hw2,f2,h.s)));GD.push(sp(at(v+dv*.62+vE*1.1*f2*f2-hw2*.5,f2,h.s)))}
+        dl+=svbPoly(U.concat(D.reverse()),fx);if(j%2===(h.s>0?1:0))dg+=svbPoly(GU.concat(GD.reverse()),fx)}
+      E('path',{d:dl,fill:h.top?P.l1:Pu.l2,'fill-opacity':svF((h.top?.16+.3*li:.1)*qk)},g);
+      E('path',{d:dr,stroke:h.top?P.l1:Pu.l2,'stroke-width':fx(Math.max(.15,len*.007)),fill:'none','stroke-opacity':svF((h.top?.25+.35*li:.2)*qk)},g);
+      E('path',{d,stroke:h.top?P.ink:P.d1,'stroke-width':fx(Math.max(.15,len*.007)),fill:'none','stroke-opacity':svF((h.top?.28:.18)*qk)},g);
+      if(gl&&h.top&&li>.25&&dg)E('path',{d:dg,fill:'#f2f7e6','fill-opacity':svF(.55*gl*qk*li)},g)}
     /* the sheen of a glossy young blade: a pale streak along the lit half, between the midrib and the margin */
     if(gl&&h.top&&h===halves[1]){let e='';for(let i=0;i<=6;i++){const q=sp(at(.1+.7*i/6,.3+.1*Math.sin(i),h.s));e+=(i?'L':'M')+fx(q[0])+','+fx(q[1])}
-      E('path',{d:e,stroke:'#fff4ea','stroke-width':fx(Math.max(.2,len*.035)),'stroke-opacity':.45*gl,fill:'none','stroke-linecap':'round','stroke-linejoin':'round'},g)}}
+      E('path',{d:e,stroke:'#fff4ea','stroke-width':fx(Math.max(.2,len*.035)),'stroke-opacity':.45*gl*(Lf.sheen??1),fill:'none','stroke-linecap':'round','stroke-linejoin':'round'},g)}}
   /* the midrib */
   let d='';mids.forEach((q,i)=>{d+=(i?'L':'M')+fx(q[0])+','+fx(-q[1])});const tp=halves[1].top;
   /* (a young bronze blade: the midrib a pale line, t203) */

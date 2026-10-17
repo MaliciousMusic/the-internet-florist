@@ -65,3 +65,15 @@ marques du jour reconstruites (heures approchées notées dans le fichier).
 **rtest** : la tête neuve, plus grande, faisait poser un anthurium de plus dans 2 bouquets sur 10 ; corrigé en posant la tête
 dans la boîte de l'ancien dessin (arum ouvert à 0,74-0,83 de sa taille vraie en bouquet). **Imparfait** : boutons d'arum .06/.2
 un peu larges ; anthurium .4 maladroit, profil ouvert en bande ; fané recroquevillé non prouvé par photo.
+
+## Hortensia boule (publié le 18 octobre 2026)
+
+| Sorte | Coloris | Preuves | Facture du chef | Retouches |
+|---|---|---|---|---|
+| hortensia-boule | 16 + 6 ajoutés (`late:12`) | 6 B, 9 C, 1 D (930 vert émeraude) ; ajoutés C | 27,0 M (10 relais Opus) | fleurons fins et légers (porteur), blanc et rose pâle lumineux, contour bosselé |
+
+**Témoins** : 0 SKU déplacé (3876 → 3882), anémone 0,00 %, rtest tulipes, renoncules et sortes voisines identiques, viorne 0,00 %.
+**QA** : 24 bouquets, 0 coude, 0 sous le bord, 0 cassure (une tête flottante corrigée). **Poids** : 7 à 12 Mo de SVG par bouquet de
+9 tiges ; RAM libre descendue à 2,4 Go en QA. **Questions** : niveau de détail réduit sous 200 px ; 930 (D) ; bord crêpé et
+sépales dentés à étendre ; marques Mon Amour, Glowing Alps, My Terracotta, Margarita Classic, Tivoli : noms génériques (porteur,
+18 octobre : « le reste sous nom générique »).

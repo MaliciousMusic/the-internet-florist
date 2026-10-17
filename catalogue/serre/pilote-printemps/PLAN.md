@@ -240,6 +240,10 @@ par sorte), en groupant les sortes qui partagent une pièce du kit. Bilan : `cat
 - **Lot 3, spathes publié** : anthurium (SKU 1652-1666, 15 coloris) et arum (1178-1193, 19 dont 3 ajoutés, `late:11`, SKU
   3874-3876). Pièce `y3-spathe.js` (cœur, cornet, lance pour l'obake). En bouquet, la tête est posée dans la boîte de l'ancien
   dessin (`svSpdKeepBox`) : rtest identique. Couleurs : niveau C accepté (porteur).
+- **Hortensia boule publié (18 octobre)** : 22 coloris (16 du catalogue, 6 ajoutés `late:12`, SKU 3877-3882, noms génériques),
+  pièces `y3-hortensia.js` et `y3-boule.js` (viorne inchangée). Fleurons en sépales fins séparés par des jours, contour bosselé,
+  fané par vraies couleurs. Validé par le porteur (« super l'hortensia boule !!! »). Reste : cœur brun visible entre les fleurons du
+  rose pâle, feuilles un peu régulières, 944 plus corail que bordeaux ; poids 7 à 12 Mo par bouquet (question au porteur).
 - **Ordre révisé (porteur, 2026-10-17)** : les sortes les plus utilisées dans les 76 recettes de bouquets d'abord (anthurium 47,
   arum 42, amarante retombante 37, phalaenopsis 33, cymbidium 19, gloriosa 18…). Liste de contrôle obligatoire :
   `catalogue/serre/methode/BONNES-PRATIQUES.md`.
