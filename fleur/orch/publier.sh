@@ -46,7 +46,8 @@ EOF
     MSG=$2; shift 2
     (cd ws/pub-apres && P=catalogue/serre && git add demo/index.html demo/src $P/pilote-printemps/PLAN.md $P/methode/factures/vague3.md "$@" \
       && git -c user.name=MaliciousMusic -c user.email=noreply@anthropic.com commit -q -m "$MSG" -m "Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>" \
-      && git log --oneline -1 && git status --short | grep -v "^??") || exit 1
+      && git log --oneline -1) || { echo "commit impossible dans ws/pub-apres"; exit 1; }
+    (cd ws/pub-apres && git status --short | grep -v "^??"; true)
     if ! git merge --ff-only "$(git -C ws/pub-apres rev-parse HEAD)" > ws/locks/publier/ff.log 2>&1; then
       tail -5 ws/locks/publier/ff.log; echo "avance rapide refusée (main a bougé, ou un fichier local s'y oppose) : rien retiré, relancer fin"; exit 1; fi
     git log --oneline -1
