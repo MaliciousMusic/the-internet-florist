@@ -1686,3 +1686,91 @@ Sources (`refs.py list hortensia-boule`) :
 - Rendu : 16 coloris (rouge, pourpre, bordeaux, corail, bronze, vert, lime, mira, fuchsia, prune-boules ; 6 stabilisés teints qui ne fanent pas) ; kit y3-chenille.js (svChenCord, svChenBalls, svChenHang, svChenPanicle) ; fiche y-amaranthus.js.
 - Poids (mesure seule, consigne porteur « le poids ne compte plus ») : tête de grille ≈ 2 400 éléments et 4,9 Mo à DET 1 (chenilles seules 3,7 Mo, une feuille 1 Mo) ; plante entière ≈ 2 300 éléments et 5,9 Mo.
 - Planches : amarante-retombante-sku-v1.png (16 coloris x 5 stades, vue 3/4) ; comparaisons 9.3b dans refcache/amarante-retombante/cmp93_1.jpg.
+
+## Phalaenopsis (orchidée papillon, sid phalaenopsis) : hampe coupée en SVG natif, chantier ch/orchidees, 17 octobre 2026
+
+Kit d'orchidée générique `app/y3-orchidee.js` (préfixe `svor` : sépales, pétales, labelle à lobes latéraux et médian, callosité, cirres,
+colonne, hampe arquée à pédicelles, boutons, fané ouvert et pendant, dessin maigre à DET 1 à dégradés partagés) et fiche
+`app/y-phalaenopsis.js` (proportions mesurées sur les photos 27 et 13, 21 coloris dont 3 `late:12`, `phalWiltCol`). Jamais de pot, de
+racine ni de feuille basale : une hampe coupée en vase. Planches : `phalaenopsis-sku-v1*.png`. Aucune photo de tiers n'est publiée.
+
+Mesures : forme de face W/H 1,37 contre 1,46 (photo 27) et 1,38 contre 1,25 (photo 13, recadrée) ; pétales L 1,06 W 1,12 phi 13,
+dorsal L .86 W .6, latéraux L .84, labelle lobes L .42 ; budget DET 1 (hampe entière, `plant=1&det=1&st=1:0&seed=7`) : blanc 300 él./60 Ko, fuchsia 234/54, pourpre 265/56, moucheté 304/62, tigré 357/74, rose 322/70 (11 fleurs). Coloris : mesurés à la main
+sur 71 vignettes (`refcache/phalaenopsis/coloris.md`, niveaux A à C, indices de `refcache/phalaenopsis-coloris/map.json`).
+
+### Sources de la forme (`refs.py list phalaenopsis`, `refcache/phalaenopsis/brief.md` section 6)
+
+- vue:face stade:ouverte coloris:blanc : [Biały storczyk - (10.03.2024.).jpg](https://commons.wikimedia.org/wiki/File%3ABia%C5%82y_storczyk_-_%2810.03.2024.%29.jpg) (Aw58, CC BY-SA 4.0) : fleur blanche crème, face
+- vue:face stade:ouverte coloris:blanc-labelle-rouge : [A and B Larsen orchids - Phalaenopsis Spanish Dance 768-29.jpg](https://commons.wikimedia.org/wiki/File%3AA_and_B_Larsen_orchids_-_Phalaenopsis_Spanish_Dance_768-29.jpg) (Arne and Bent Larsen (Haarby, Danemark), CC BY-SA 2.5 dk) : blanc, labelle rouge
+- vue:face stade:ouverte coloris:jaune : [Gelbe Phalaenopsis Orchidee (5184514403).jpg](https://commons.wikimedia.org/wiki/File%3AGelbe_Phalaenopsis_Orchidee_%285184514403%29.jpg) (Maja Dumat (Allemagne), CC BY 2.0) : jaune, labelle rouge-brun
+- vue:face stade:ouverte coloris:jaune-moucheté : [A and B Larsen orchids - Phalaenopsis Barbara Moler x Johanna 52-24.jpg](https://commons.wikimedia.org/wiki/File%3AA_and_B_Larsen_orchids_-_Phalaenopsis_Barbara_Moler_x_Johanna_52-24.jpg) (Arne and Bent Larsen (Haarby, Danemark), CC BY-SA 2.5 dk) : fond jaune, taches brunes
+- vue:face stade:ouverte coloris:orange-moucheté : [A and B Larsen orchids - Phalaenopsis Barbara Moler x Johanna 53-00.jpg](https://commons.wikimedia.org/wiki/File%3AA_and_B_Larsen_orchids_-_Phalaenopsis_Barbara_Moler_x_Johanna_53-00.jpg) (Arne and Bent Larsen (Haarby, Danemark), CC BY-SA 2.5 dk) : orange, taches
+- vue:face stade:ouverte coloris:rose : [Little orchid D1212 pink.jpg](https://commons.wikimedia.org/wiki/File%3ALittle_orchid_D1212_pink.jpg) (Tangopaso, Domaine public) : rose vif
+- vue:face stade:ouverte coloris:rose : [Phalaenopsis Pink White Close-Up 01.jpg](https://commons.wikimedia.org/wiki/File%3APhalaenopsis_Pink_White_Close-Up_01.jpg) (Jedesto, CC BY-SA 4.0) : rose, labelle foncé
+- vue:face stade:ouverte coloris:rose : [Bright Pink Orchid.jpg](https://commons.wikimedia.org/wiki/File%3ABright_Pink_Orchid.jpg) (Brandon Oh, CC BY-SA 3.0) : rose, pétales à reflet
+- vue:face stade:ouverte coloris:fuchsia : [Falenopsis Flower.jpg](https://commons.wikimedia.org/wiki/File%3AFalenopsis_Flower.jpg) (Margoz, CC BY-SA 4.0) : fuchsia uni, sur noir
+- vue:face stade:ouverte coloris:pourpre : [Anggrek Bulan Ungu (Phalaenopsis cultivar).jpg](https://commons.wikimedia.org/wiki/File%3AAnggrek_Bulan_Ungu_%28Phalaenopsis_cultivar%29.jpg) (Arnandho Harra, CC BY-SA 4.0) : magenta pourpre
+- organe:hampe stade:ouverte coloris:pourpre : [Another Phaleonopsis (2252750743).jpg](https://commons.wikimedia.org/wiki/File%3AAnother_Phaleonopsis_%282252750743%29.jpg) (Benson Kua, CC BY-SA 2.0) : grappe pourpre
+- organe:hampe stade:ouverte coloris:lilas : [Little orchid D1212 light pink.jpg](https://commons.wikimedia.org/wiki/File%3ALittle_orchid_D1212_light_pink.jpg) (Tangopaso, Domaine public) : lilas rosé, grappe
+- vue:face stade:ouverte coloris:lilas-moucheté : [Storczyk - 25.04.2024.jpg](https://commons.wikimedia.org/wiki/File%3AStorczyk_-_25.04.2024.jpg) (Aw58, CC BY-SA 4.0) : lilas, taches blanches
+- vue:face stade:ouverte coloris:strié : [HK CWB Victoria Park Chinese New Year Flower Fair F08 Purple.jpg](https://commons.wikimedia.org/wiki/File%3AHK_CWB_Victoria_Park_Chinese_New_Year_Flower_Fair_F08_Purple.jpg) (Victorcny2010, CC BY-SA 3.0) : lilas strié
+- vue:face stade:ouverte coloris:arlequin : [Erfurt Egapark BUGA 2021 Phalaenopsis.jpg](https://commons.wikimedia.org/wiki/File%3AErfurt_Egapark_BUGA_2021_Phalaenopsis.jpg) (Dguendel, CC BY 3.0) : blanc-rouge arlequin
+- vue:face stade:ouverte coloris:strié : [Orchid purple and white.JPG](https://commons.wikimedia.org/wiki/File%3AOrchid_purple_and_white.JPG) (Elegantsynergy, CC BY-SA 4.0) : magenta sur blanc, veiné
+- vue:face stade:ouverte coloris:moucheté : [Phalaenopsis Carmela s Brite Lites x Sally Taylor 0zz.jpg](https://commons.wikimedia.org/wiki/File%3APhalaenopsis_Carmela_s_Brite_Lites_x_Sally_Taylor_0zz.jpg) (David J. Stang, CC BY-SA 4.0) : magenta, taches
+- vue:face stade:ouverte coloris:rouge-vin : [Phalaenopsis Buddha's Treasure 01.JPG](https://commons.wikimedia.org/wiki/File%3APhalaenopsis_Buddha%27s_Treasure_01.JPG) (AfroBrazilian, CC BY-SA 3.0) : rouge vin uni
+- vue:face stade:ouverte coloris:rouge-vin-moucheté : [Phalaenopsis Tropical Ruby x Brother Pirate King 1zz.jpg](https://commons.wikimedia.org/wiki/File%3APhalaenopsis_Tropical_Ruby_x_Brother_Pirate_King_1zz.jpg) (David J. Stang, CC BY-SA 4.0) : rouge vin, moucheté
+- organe:hampe stade:bouton coloris:vert-jaune : [Yellow orchids and buds.jpg](https://commons.wikimedia.org/wiki/File%3AYellow_orchids_and_buds.jpg) (non indiqué (Wikimedia Commons), non indiquée) : vert-jaune, boutons
+- organe:hampe stade:bouton : [Knospenvielfalt (22295765220).jpg](https://commons.wikimedia.org/wiki/File%3AKnospenvielfalt_%2822295765220%29.jpg) (Maja Dumat (Allemagne), CC BY 2.0) : hampe arquée, boutons
+- organe:bouton stade:bouton : [Phalaenopsis buds.jpg](https://commons.wikimedia.org/wiki/File%3APhalaenopsis_buds.jpg) (Downtowngal, CC BY-SA 4.0) : boutons ronds en bout
+- organe:bouton stade:fane : [Welkende Knospen (24246742470).jpg](https://commons.wikimedia.org/wiki/File%3AWelkende_Knospen_%2824246742470%29.jpg) (Maja Dumat (Allemagne), CC BY 2.0) : boutons qui sèchent
+- organe:port : [Asparagales - Phalaenopsis cultivars - 20150401.jpg](https://commons.wikimedia.org/wiki/File%3AAsparagales_-_Phalaenopsis_cultivars_-_20150401.jpg) (Emőke Dénes, CC BY-SA 4.0) : port de la plante
+- vue:face stade:ouverte coloris:lilas-moucheté : [Phalaenopsis.hybrid.1.jpg](https://commons.wikimedia.org/wiki/File%3APhalaenopsis.hybrid.1.jpg) (Florapic, CC BY-SA 4.0) : lilas tacheté
+
+### Passe v2 (relectures du porteur et de l'orchestrateur, 17 octobre 2026 au soir)
+Planches : `phalaenopsis-sku-v2.png` (stades x vues 0, 2, 3, 8 et dos 3/4 ; fuchsia, blanc, blanc-rouge, vin), `-plante`, `-fane`, `-coloris`
+(les 21), `-gros-plan`, `-bouquet` (normal, ouvert, fané, fond sombre), `-bouquet-modeles` (19, 33, 47). Nos rendus seulement.
+Mesures prises sur les photos ci-dessus (refcache, jamais publiées) : fuchsia, médiane de 8 photos bien éclairées L60 C61 h343 (rendu
+L58,7 C61,8 h346) ; labelle à l'échelle de la photo 27 (R0 = demi-envergure) ; callosité large de 0,156 R0 aux cornes, 0,07 R0 au pied,
+haute de 0,18 R0, orangée tachée et striée de cramoisi ; hampe : 8 à 10 fleurs, centres espacés de 0,74 à 0,84 diamètre, une ou deux de
+dos, presque de face avec des lacets de 8 à 32° (photo c7). Budget à DET 1 : environ 410 éléments et 180 Ko par tête (plein détail en boutique).
+
+## Cymbidium à grandes fleurs (Cymbidium hybrides, sid cymbidium-grandes-fleurs) : hampe coupée en SVG natif, chantier ch/orchidees, 17 octobre 2026
+
+Fiche `app/y-cymbidium.js` sur le kit d'orchidée `app/y3-orchidee.js` (options ajoutées, sans effet sur la phalaenopsis : `budTip`, `innerBud`,
+`sideV`, `scape.pD`, `scape.pli`, motifs et fané propres au labelle `patK` / `wiltK`, callosité en crêtes, colonne tachée, marge ondulée `ruf`).
+Tépales larges et obtus (W/L .5 à .54, pointe 2,2), labelle trilobé : lobes latéraux en capuchon strié autour de la colonne, lobe médian large,
+recourbé, ondulé, taché ; deux crêtes jaunes ; colonne crème à capuchon jaune. Bouton rond-ovoïde à bout mousse (H/L 1,25). Hampe dressée
+puis arquée, 6 à 11 fleurs serrées (entre-nœuds .42 à .5 D) et 2 à 4 boutons ronds au bout ; fleur ~1/10 de la hampe. En bouquet : le haut
+fleuri (4 à 7 fleurs) dans la boîte de l'ancien dessin (rtest identique). 22 coloris dont 6 `late:12`. Planches : `cymbidium-grandes-fleurs-sku-v1*.png`.
+Fané : hypothèse, aucune photo (tépales ternis et amincis, labelle qui rougit puis brunit, chute depuis la base). Aucune photo de tiers n'est publiée.
+
+Mesures : paire photo 98 / rendu (face, caramel) à l'œil : la mesure `img.py pair` prend toute la photo (fond chargé) ; budget DET 1 (hampe
+entière, `plant=1&det=1&st=1:0&full=30&seed=7`) : rose 342 él./69 Ko, brun 300/61 (11 fleurs) ; tête de bouquet 62 à 150 él. / 15 à 38 Ko.
+Coloris : mesurés à la main (`refcache/cymbidium-grandes-fleurs/coloris.md`), recensement `recensement.md`.
+
+### Sources de la forme (`refcache/cymbidium-grandes-fleurs/brief.md`, keep.json)
+
+- organe:hampe stade:ouverte vue:port coloris:ivoire : [A and B Larsen orchids - Cymbidium Awakening Whiteout 557-13.jpg](https://commons.wikimedia.org/wiki/File%3AA_and_B_Larsen_orchids_-_Cymbidium_Awakening_Whiteout_557-13.jpg) (Arne and Bent Larsen, Haarby, Denmark, CC BY-SA 2.5 dk)
+- organe:hampe stade:ouverte vue:port coloris:vert-pomme : [A and B Larsen orchids - Cymbidium Eastern Star Kawano DSCN4732.JPG](https://commons.wikimedia.org/wiki/File%3AA_and_B_Larsen_orchids_-_Cymbidium_Eastern_Star_Kawano_DSCN4732.JPG) (Arne and Bent Larsen, Haarby, Denmark, CC BY-SA 2.5 dk)
+- organe:hampe stade:ouverte vue:port coloris:saumon : [A and B Larsen orchids - Cymbidium Lillian Stewart St Shereii 287-28.jpg](https://commons.wikimedia.org/wiki/File%3AA_and_B_Larsen_orchids_-_Cymbidium_Lillian_Stewart_St_Shereii_287-28.jpg) (Arne and Bent Larsen, Haarby, Denmark, CC BY-SA 2.5 dk)
+- organe:hampe stade:ouverte vue:port coloris:jaune : [A and B Larsen orchids - Cymbidium Swallow Exbury 242-5.jpg](https://commons.wikimedia.org/wiki/File%3AA_and_B_Larsen_orchids_-_Cymbidium_Swallow_Exbury_242-5.jpg) (Arne and Bent Larsen, Haarby, Denmark, CC BY-SA 2.5 dk)
+- organe:hampe stade:ouverte vue:port coloris:rose : [Asparagales - Cymbidium 'Gaddon Loch Vieux' - 1.jpg](https://commons.wikimedia.org/wiki/File%3AAsparagales_-_Cymbidium_%27Gaddon_Loch_Vieux%27_-_1.jpg) (Emőke Dénes, CC BY-SA 4.0)
+- organe:hampe vue:vase coloris:vert-pomme : [Orchid Flowers.jpg](https://commons.wikimedia.org/wiki/File%3AOrchid_Flowers.jpg) (FabSubeject, CC BY-SA 3.0)
+- organe:fleur vue:face coloris:bordeaux : [A and B Larsen orchids - Cymbidium Black Flame 710-22.jpg](https://commons.wikimedia.org/wiki/File%3AA_and_B_Larsen_orchids_-_Cymbidium_Black_Flame_710-22.jpg) (Arne and Bent Larsen, Haarby, Denmark, CC BY-SA 2.5 dk)
+- organe:fleur vue:face coloris:rose-pale : [A and B Larsen orchids - Cymbidium Lillian Stewart St Shereii 288-31.jpg](https://commons.wikimedia.org/wiki/File%3AA_and_B_Larsen_orchids_-_Cymbidium_Lillian_Stewart_St_Shereii_288-31.jpg) (Arne and Bent Larsen, Haarby, Denmark, CC BY-SA 2.5 dk)
+- organe:fleur vue:face coloris:creme-labelle-rose : [A and B Larsen orchids - Cymbidium Valley Moon Radiant DSCN4730.JPG](https://commons.wikimedia.org/wiki/File%3AA_and_B_Larsen_orchids_-_Cymbidium_Valley_Moon_Radiant_DSCN4730.JPG) (Arne and Bent Larsen, Haarby, Denmark, CC BY-SA 2.5 dk)
+- organe:fleur vue:face coloris:orange-bronze : [A and B Larsen orchids - Cymbidium Valley Picture Temptation 526-12.jpg](https://commons.wikimedia.org/wiki/File%3AA_and_B_Larsen_orchids_-_Cymbidium_Valley_Picture_Temptation_526-12.jpg) (Arne and Bent Larsen, Haarby, Denmark, CC BY-SA 2.5 dk)
+- organe:fleur vue:face coloris:pourpre-noir : [A and B Larsen orchids - Cymbidium Valley Regent Reggae DSCN4674.JPG](https://commons.wikimedia.org/wiki/File%3AA_and_B_Larsen_orchids_-_Cymbidium_Valley_Regent_Reggae_DSCN4674.JPG) (Arne and Bent Larsen, Haarby, Denmark, CC BY-SA 2.5 dk)
+- organe:fleur vue:face coloris:blanc-labelle-rouge : [Asparagales - Cymbidium 'Holy Loch' Lewes - 2.jpg](https://commons.wikimedia.org/wiki/File%3AAsparagales_-_Cymbidium_%27Holy_Loch%27_Lewes_-_2.jpg) (Emőke Dénes, CC BY-SA 4.0)
+- organe:fleur vue:face coloris:rose : [Cymbidium c.v. orchid (49368844677).jpg](https://commons.wikimedia.org/wiki/File%3ACymbidium_c.v._orchid_(49368844677).jpg) (geoff mckay from Palmerston North, New Zealand, CC BY 2.0)
+- organe:fleur vue:face coloris:caramel : [Cymbidium-cultivar1.jpg](https://commons.wikimedia.org/wiki/File%3ACymbidium-cultivar1.jpg) (The original uploader was JoJan at English Wikipedia., Attribution)
+- organe:fleur vue:face coloris:bordeaux : [Boat orchid (Cymbidium tapestry 'Red Glory') flower close-up.jpg](https://commons.wikimedia.org/wiki/File%3ABoat_orchid_(Cymbidium_tapestry_%27Red_Glory%27)_flower_close-up.jpg) (Pseudopanax at English Wikipedia, Public domain)
+- organe:fleur vue:face coloris:vert-pomme : [inat-193590112-340092560](https://www.inaturalist.org/observations/193590112) ((c) Apipa, some rights reserved (CC BY-NC), cc-by-nc)
+- organe:fleur vue:face coloris:jaune : [inat-272033043-489383240](https://www.inaturalist.org/observations/272033043) ((c) David W K Foster, some rights reserved (CC BY-NC-ND), cc-by-nc-nd)
+- organe:fleur vue:face coloris:blanc-labelle-rouge : [inat-59217023-94605274](https://www.inaturalist.org/observations/59217023) ((c) gloriag1, some rights reserved (CC BY-NC), cc-by-nc)
+- organe:fleur vue:face coloris:brun : [inat-156952336-271439825](https://www.inaturalist.org/observations/156952336) ((c) hernandez_gabriela, some rights reserved (CC BY-NC), cc-by-nc)
+- organe:fleur vue:profil coloris:jaune : [inat-20334107-31398528](https://www.inaturalist.org/observations/20334107) ((c) Colin Ralston, some rights reserved (CC BY-NC), cc-by-nc)
+- organe:bouton stade:bouton coloris:rose : [Cymbidium hybrid-10-shevaroy nursery-yercaud-salem-India.jpg](https://commons.wikimedia.org/wiki/File%3ACymbidium_hybrid-10-shevaroy_nursery-yercaud-salem-India.jpg) (Yercaud-elango, CC BY-SA 4.0)
+- organe:bouton stade:bouton coloris:pourpre : [Asparagales - Cymbidium 'Loch Heilen' Hamsey - 4.jpg](https://commons.wikimedia.org/wiki/File%3AAsparagales_-_Cymbidium_%27Loch_Heilen%27_Hamsey_-_4.jpg) (Emőke Dénes, CC BY-SA 4.0)
+- organe:labelle vue:labelle coloris:rose : [Flower of unknown Cymbidium species or hybrid.jpg](https://commons.wikimedia.org/wiki/File%3AFlower_of_unknown_Cymbidium_species_or_hybrid.jpg) (Magnus Hagdorn from UK, CC BY-SA 2.0)
+- stade:fane-douteux organe:fleur coloris:brun : [蕙蘭 Cymbidium Green Valley Emerald 'Three Lip' -台南國際蘭展 Taiwan International Orchid Show- (39964907225).jpg](https://commons.wikimedia.org/wiki/File%3A%E8%95%99%E8%98%AD_Cymbidium_Green_Valley_Emerald_%27Three_Lip%27_-%E5%8F%B0%E5%8D%97%E5%9C%8B%E9%9A%9B%E8%98%AD%E5%B1%95_Taiwan_International_Orchid_Show-_(39964907225).jpg) (阿橋 HQ, CC BY-SA 2.0)

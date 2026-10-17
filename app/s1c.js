@@ -34,7 +34,7 @@ const CW_PHAL=[
 const PH_PET=prof([[0,.14],[.12,.2],[.3,.62],[.5,.94],[.66,1],[.8,.9],[.92,.62],[1,.08]]),PH_SEP=prof([[0,.3],[.15,.62],[.45,1],[.7,.94],[.88,.66],[1,.08]]),
   PH_MID=prof([[0,.35],[.2,.62],[.45,1],[.65,.8],[.85,.42],[1,.12]]),PH_SIDE=prof([[0,.5],[.3,1],[.7,.9],[1,.3]]);
 /* one moth orchid in its own frame (B, O view-space offset); D = flower diameter in units */
-function phalFlower(par,B,O,D,cw,op,t){const F={k:G(par),B,O,parts:[],so:.18,sd:null,neck:null},Pc=pal7(cw.c),PcB=pal7(mix(shd(cw.c,.12),'#e8e4d0',.18)),Pl=pal7(cw.lip),Pl2=pal7(cw.lip2||cw.lip),
+function phalFlower(par,B,O,D,cw,op,t){if(SV_ON&&typeof phalSvPut==='function')return phalSvPut(par,B,O,D,cw,op);const F={k:G(par),B,O,parts:[],so:.18,sd:null,neck:null},Pc=pal7(cw.c),PcB=pal7(mix(shd(cw.c,.12),'#e8e4d0',.18)),Pl=pal7(cw.lip),Pl2=pal7(cw.lip2||cw.lip),
     o2=sm01((op-.25)/.75),A=a=>90-(90-a)*(.35+.65*o2),r=D/2;
   /* patterns painted on a tepal: veins, stripes, spots, blotches, picotee, eye */
   const deco=(S,seed)=>(g,front,X)=>{if(!front||LOD)return;const rs=seed*7919;
@@ -73,7 +73,7 @@ function phalBud(par,B,O,s,cw){const c=mix(cw.c,'#c8d4a0',.35),P=pal7(c),pts=[],
   const sm=[0,.3,.6,.9].map(v=>PJ(B,O,ov(.35,v)));if(!LOD)E('path',{d:smooth(sm.map(p=>[p[0],p[1]]),false),stroke:P.d1,'stroke-width':.5,'stroke-opacity':.55,fill:'none'},g);
   E('path',{d,fill:'none',stroke:P.ink,'stroke-width':.5,'stroke-opacity':.35},g)}
 /* the spray: an arching raceme, flowers hanging from it on their pedicels and facing out, graded to buds at the tip */
-function x3PhalSpray2(g,t,o){const cw=o.cw||cwNear(CW_PHAL,o.col)||CW_PHAL[0],op=Math.max(.05,Math.min(1,o.op??1)),D=(o.cm||9)*UPC*(o.cw?1:1),k=G(g),Bc=frameOf(o,.3,true),r=D/2;
+function x3PhalSpray2(g,t,o){const cw=o.cw||cwNear(CW_PHAL.filter(x=>!x.late),o.col)||CW_PHAL[0],op=Math.max(.05,Math.min(1,o.op??1)),D=(o.cm||9)*UPC*(o.cw?1:1),k=G(g),Bc=frameOf(o,.3,true),r=D/2;
   const nf=o.nf||(op<.3?0:op<.7?2:3+(rnd()<.5?1:0)),nb=op<.3?5:3,sd=o.side??(rnd()<.5?-1:1);
   /* raceme in the spray frame: rises from behind and below, arches over toward one side */
   const C=[fitDown(Bc,[-sd*r*.5,-r*1.9,-r*.35],.3),[-sd*r*.6,-r*.2,-r*.3],[sd*r*.2,r*1.05,-r*.35],[sd*r*1.25,r*.75,-r*.5]],cb=q=>{const a=(1-q)**3,b=3*(1-q)**2*q,c=3*(1-q)*q*q,d=q**3;return[0,1,2].map(i=>a*C[0][i]+b*C[1][i]+c*C[2][i]+d*C[3][i])};

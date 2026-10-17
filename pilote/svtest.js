@@ -58,13 +58,14 @@ if(new URLSearchParams(location.search).get('cmp'))setTimeout(()=>svCmp(new URLS
 /* stages × colourways: ?grid=1&cws=bleu,rouge&st=.06:0,.2:0,.4:0,.75:0,1:.35,1:.75&view=2&D=120 */
 if(new URLSearchParams(location.search).get('grid'))setTimeout(()=>{const Q=new URLSearchParams(location.search),dS=typeof defs!=='undefined'&&defs.closest?defs.closest('svg'):null;document.body.innerHTML='';if(dS)document.body.append(dS);
   DET=+(Q.get('det')||1.5);LOD=0;const cws=(Q.get('cws')||'bleu').split(','),st=(Q.get('st')||'.06:0,.2:0,.4:0,.75:0,1:.35,1:.75').split(',').map(x=>x.split(':').map(Number)),D=+(Q.get('D')||120),
-    VIEWS=[[0,0,1,0],[0,.5,.87,0],[.38,.55,.74,.4],[0,.86,.5,0],[-.55,.25,.8,-.3],[0,-.42,.91,0],[.7,.1,.7,.2],[0,.97,.24,0],[.97,-.17,.17,0],[-.62,-.26,.74,0],[0,-.97,-.24,0],[.35,-.9,.26,.3],[0,-.55,.83,0]],VL=(Q.get('view')||'2').split(',').map(x=>VIEWS[+x]),rws=[];for(const cw of cws)for(const V of VL)rws.push([cw,V]);const gap=D*+(Q.get('gapk')||1.15),W=Math.round(st.length*gap+D*.3),H=Math.round(rws.length*gap+D*.2),
+    VIEWS=[[0,0,1,0],[0,.5,.87,0],[.38,.55,.74,.4],[0,.86,.5,0],[-.55,.25,.8,-.3],[0,-.42,.91,0],[.7,.1,.7,.2],[0,.97,.24,0],[.97,-.17,.17,0],[-.62,-.26,.74,0],[0,-.97,-.24,0],[.35,-.9,.26,.3],[0,-.55,.83,0],[.5,.1,-.86,0]],VL=(Q.get('view')||'2').split(',').map(x=>VIEWS[+x]),rws=[];for(const cw of cws)for(const V of VL)rws.push([cw,V]);const gap=D*+(Q.get('gapk')||1.15),W=Math.round(st.length*gap+D*.3),H=Math.round(rws.length*gap+D*.2),
     svg=E('svg',{width:W,height:H,viewBox:`0 0 ${W} ${H}`},document.body);GDEF=E('defs',{},svg);let ms=0,n=0;
   rws.forEach(([cw,V],r)=>st.forEach(([op,wl],c)=>{const B=basis(V3.nz([V[0],V[1],V[2]]),V[3]),X=D*.2+gap*(c+.5),Y=D*.1+gap*(r+.55),t0=performance.now(),seed=+(Q.get('seed')||3)+r*7+c;
     const sid=Q.get('sid')||'anemone-coronaria',spec=/^SVT_[A-Z]+$/.test(Q.get('spec')||'')?eval(Q.get('spec')):null,hf=spec?(p,B2,O2,D2,c2,o2,s2,w2)=>tulSvg(p,B2,O2,D2,c2,o2,s2,w2,spec):(typeof SV_HEAD!=='undefined'&&SV_HEAD[sid])||anemSvg,T0=WILT;if(wl>0&&typeof lifeWilt==='function')WILT=lifeWilt(wl,(GHI[sid]&&GHI[sid].wilt)||svaWiltCol,sid);const oz=+(Q.get('oz')||0),Vn=V3.nz([V[0],V[1],V[2]]);try{hf(G(svg),B,[X-Vn[0]*oz*D,-Y-Vn[1]*oz*D,-Vn[2]*oz*D],D,cw,op,seed,wl)}finally{WILT=T0}ms+=performance.now()-t0;n++}));
   document.title='grid '+n+' '+Math.round(ms/n)+'ms';const sp=Q.get('snap')?snapSvg(svg,+(Q.get('sw')||W),Q.get('snap'),'#e9e4dc'):null;if(sp)sp.then(r=>{document.title+=' snap '+r.join(',')});svtOut(svg,n,ms,sp)},400);
 /* whole stems: ?plant=1&cw=bleu&st=.1:0,.3:0,.6:0,1:0,1:.4,1:.75&vw=-.45,.15,.88 → drawRec of the species, one cell per stage, fitted */
-if(new URLSearchParams(location.search).get('plant'))setTimeout(()=>{const Q=new URLSearchParams(location.search),dS=typeof defs!=='undefined'&&defs.closest?defs.closest('svg'):null;document.body.innerHTML='';if(dS)document.body.append(dS);
+if(new URLSearchParams(location.search).get('plant'))setTimeout(()=>{/* &ordbg=1: the orchid scapes' flowers (svorScape) after the measures */if(new URLSearchParams(location.search).get('ordbg')&&window.svtOut){window.SVOR_DBGL=[];const f0=window.svtOut;window.svtOut=function(){const r=f0.apply(this,arguments),add=()=>{const p=document.getElementById('out');if(!p)return setTimeout(add,50);p.textContent+=String.fromCharCode(10)+'ORDBG '+JSON.stringify(window.SVOR_DBGL)};add();return r}}
+  const Q=new URLSearchParams(location.search),dS=typeof defs!=='undefined'&&defs.closest?defs.closest('svg'):null;document.body.innerHTML='';if(dS)document.body.append(dS);
   /* seed=<n>: the sheet's own chance, whatever the page drew before it (to compare two builds) */
   if(Q.get('seed'))sd(+Q.get('seed'));
   DET=+(Q.get('det')||1.5);LOD=0;const sid=Q.get('sid')||'anemone-coronaria',rec=RBY[sid],cw=(CWS[sid]||[]).find(x=>x.id===(Q.get('cw')||'bleu')),st=(Q.get('st')||'.1:0,.3:0,.6:0,1:0,1:.4,1:.75').split(',').map(x=>x.split(':').map(Number)),
@@ -164,10 +165,13 @@ if(new URLSearchParams(location.search).get('bq'))setTimeout(()=>{const Q=new UR
       GR_FLORET[nm]=function(c,f,lod){const p0=c.put;ST['n'+lod]=(ST['n'+lod]||0)+1;c.put=p=>{const kk='l'+lod+'y'+(p.ly??'');ST[kk]=(ST[kk]||0)+(p.d||'').length;return p0(p)};try{return f0(c,f,lod)}finally{c.put=p0}};
       if(gp)GR_FLORET[nm].grp=function(c,cl){const p0=c.put;c.put=p=>{ST.grp=(ST.grp||0)+(p.d||'').length;return p0(p)};try{return gp(c,cl)}finally{c.put=p0}}}
     const g0=window.grDraw;window.grDraw=function(...a){const k=g0(...a);ST.pan=(ST.pan||0)+new XMLSerializer().serializeToString(k).length;ST.panEl=(ST.panEl||0)+k.querySelectorAll('*').length;ST.np=(ST.np||0)+1;return k}}
-  renderStatic(()=>{buildBq(svg,[],+(Q.get('sv')||11),Q.get('v')||'cylindre-verre-clair',0,'juste',null,rc)});
+  if(Q.get('dbg'))window.SVDBG=[];
+  /* &mdl=<i>: the model bouquet MODELS[i] (its vase and background), as the site's model cards draw it */
+  const MD=Q.get('mdl')!=null&&typeof MODELS!=='undefined'?MODELS[+Q.get('mdl')]:null;
+  renderStatic(()=>{if(MD)buildBq(svg,[],+(Q.get('sv')||7),MD.vase,0,null,MD);else buildBq(svg,[],+(Q.get('sv')||11),Q.get('v')||'cylindre-verre-clair',0,'juste',null,rc)});
   const XS=new XMLSerializer(),m=hs.map(k=>[k.querySelectorAll('*').length,Math.round(XS.serializeToString(k).length/1024*10)/10]);
-  const o={st:Q.get('stat')?ST:undefined,n:hs.length,heads:m.map(x=>x.join('el/')+'KB').join(' '),el:svg.querySelectorAll('*').length,kb:Math.round(XS.serializeToString(svg).length/1024)};
-  const sp=Q.get('snap')?snapSvg(svg,+(Q.get('sw')||900),Q.get('snap'),Q.get('bg')||'#e9e4dc'):null;const fin=r=>{const pre=document.createElement('pre');pre.id='out';pre.textContent=JSON.stringify(Object.assign(o,r?{snap:r.join('x')}:{}));document.body.append(pre)};
+  const o={dbg:window.SVDBG||undefined,st:Q.get('stat')?ST:undefined,n:hs.length,heads:m.map(x=>x.join('el/')+'KB').join(' '),el:svg.querySelectorAll('*').length,kb:Math.round(XS.serializeToString(svg).length/1024)};
+  const sp=Q.get('snap')?snapSvg(svg,+(Q.get('sw')||900),Q.get('snap'),Q.get('bg')||(MD&&MD.bg)||'#e9e4dc'):null;const fin=r=>{const pre=document.createElement('pre');pre.id='out';pre.textContent=JSON.stringify(Object.assign(o,r?{snap:r.join('x')}:{}));document.body.append(pre)};
   if(sp)sp.then(fin,e=>fin(['err '+e]));else fin()},400);
 /* the junctions of a woody branch (porteur 2026-10-09: no gap between a flower and its calyx, the calyx and its pedicel, the pedicel and its spur):
    ?plant=1&...&jn=1 → each flower svBranch draws goes in its own group; after the sheet's measures come "JN" (one row per flower: cell, x, y in snap

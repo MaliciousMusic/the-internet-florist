@@ -1,0 +1,4413 @@
+{
+ "sid": "cymbidium-grandes-fleurs",
+ "genre": "Cymbidium",
+ "famille": "Orchidaceae",
+ "date_consultation": "2026-10-17",
+ "redige_par": "fleur-recensement (sonnet), passage unique plafonné",
+ "etat": "photos regardées en vignettes (sheet_169..309, sheetL, kept.jpg) ; registre RHS interrogé jusqu'à blocage ; 8 pages Commons rouvertes ; mesures de couleur faites a la main le 2026-10-17 (champ mesures de chaque coloris, champ late)",
+ "taxonomie": "Cymbidium Sw. (Orchidaceae), hybrides de grandes fleurs (type « standard »), hampe arquée de 8 à 15 fleurs, labelle trilobé ; les grex viennent surtout de C. insigne, eburneum, lowianum, tracyanum, hookerianum, mais l'ascendance n'a pas été relue ici",
+ "notice": "Registre : International Orchid Register (RHS, ICRA des orchidées), recherche en lecture seule. Un grex enregistré est un nom libre ; le nom du clone (entre apostrophes) est un nom d'exposition. Aucun nom de marque retenu.",
+ "niveaux_de_preuve_regle": "B = au moins 3 photos nommées de fleurs du coloris, de plus d'un auteur si possible ; « B source unique » = un seul auteur. Aucun A : aucune photo N2 (Floricode fermé, pas de liste de coupe publique nommant des grex). C = moins de 3 photos ou fleur approchante seulement.",
+ "coloris": [
+  {
+   "id": "cymbidium-grandes-fleurs~1421",
+   "sku": 1421,
+   "nom_affiche": "blanc",
+   "nom_generique": "blanc",
+   "niveau_preuve": "B",
+   "source_unique": false,
+   "statut": "en production (B), sous réserve des questions",
+   "grex": [
+    {
+     "nom_commons": "Winter Glory 'Winter White'",
+     "registre_rhs": {
+      "epithete": "Winter Glory",
+      "id_rhs": "38371",
+      "annee": "1979",
+      "enregistre_par": "Asbell"
+     }
+    },
+    {
+     "nom_commons": "Snow White",
+     "registre_rhs": {
+      "epithete": "Snow White",
+      "id_rhs": "959471",
+      "annee": "2013",
+      "enregistre_par": "J.D.Coker"
+     }
+    },
+    {
+     "nom_commons": "Ice Nymph",
+     "registre_rhs": "non vérifié (registre RHS injoignable le 2026-10-17 après ~140 requêtes ; à reprendre)"
+    }
+   ],
+   "photos": [
+    {
+     "cand": 323,
+     "grex": "Winter Glory 'Winter White'",
+     "image": "https://upload.wikimedia.org/wikipedia/commons/9/92/Cymbidium_Winter_Glory_Winter_White_0zz.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+     "page": "https://commons.wikimedia.org/wiki/File:Cymbidium_Winter_Glory_Winter_White_0zz.jpg",
+     "titre_commons": "Cymbidium Winter Glory Winter White 0zz.jpg",
+     "auteur": "David J. Stang",
+     "licence": "CC BY-SA 4.0",
+     "niveau_source": "N3",
+     "description_page": "Location taken: United States Botanic Garden, Washington D.C.. Names: Cymbidium Winter Glory 'Winter White'   Classification: Plantae &gt; A"
+    },
+    {
+     "cand": 287,
+     "grex": "Snow White",
+     "image": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Cymbidium_Snow_White_0zz.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+     "page": "https://commons.wikimedia.org/wiki/File:Cymbidium_Snow_White_0zz.jpg",
+     "titre_commons": "Cymbidium Snow White 0zz.jpg",
+     "auteur": "David J. Stang",
+     "licence": "CC BY-SA 4.0",
+     "niveau_source": "N3",
+     "description_page": "Location taken: United States Botanic Garden. Names: Cymbidium 'Snow White'   Classification: Plantae &gt; Angiosperms &gt; Monocots &gt; As"
+    },
+    {
+     "cand": 169,
+     "grex": "Ice Nymph",
+     "image": "https://upload.wikimedia.org/wikipedia/commons/2/27/Asparagales_-_Cymbidium_%27Ice_Nymph%27_-_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+     "page": "https://commons.wikimedia.org/wiki/File:Asparagales_-_Cymbidium_%27Ice_Nymph%27_-_2.jpg",
+     "titre_commons": "Asparagales - Cymbidium 'Ice Nymph' - 2.jpg",
+     "auteur": "Emőke Dénes",
+     "licence": "CC BY-SA 4.0",
+     "niveau_source": "N3",
+     "description_page": "Cymbidium 'Ice Nymph' in Kew Gardens, England."
+    },
+    {
+     "cand": 324,
+     "grex": "Winter Glory 'Winter White'",
+     "image": "https://upload.wikimedia.org/wikipedia/commons/8/88/Cymbidium_Winter_Glory_Winter_White_1zz.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+     "page": "https://commons.wikimedia.org/wiki/File:Cymbidium_Winter_Glory_Winter_White_1zz.jpg",
+     "titre_commons": "Cymbidium Winter Glory Winter White 1zz.jpg",
+     "auteur": "David J. Stang",
+     "licence": "CC BY-SA 4.0",
+     "niveau_source": "N3",
+     "description_page": "Location taken: United States Botanic Garden, Washington D.C.. Names: Cymbidium Winter Glory 'Winter White'   Classification: Plantae &gt; A"
+    },
+    {
+     "cand": 288,
+     "grex": "Snow White",
+     "image": "https://upload.wikimedia.org/wikipedia/commons/a/aa/Cymbidium_Snow_White_1zz.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+     "page": "https://commons.wikimedia.org/wiki/File:Cymbidium_Snow_White_1zz.jpg",
+     "titre_commons": "Cymbidium Snow White 1zz.jpg",
+     "auteur": "David J. Stang",
+     "licence": "CC BY-SA 4.0",
+     "niveau_source": "N3",
+     "description_page": "Location taken: United States Botanic Garden. Names: Cymbidium 'Snow White'   Classification: Plantae &gt; Angiosperms &gt; Monocots &gt; As"
+    }
+   ],
+   "nb_photos": 5,
+   "auteurs": [
+    "David J. Stang",
+    "Emőke Dénes"
+   ],
+   "marque": null,
+   "mesures": {
+    "methode": "boites a la main photo par photo (specs.py), valeur = mediane des pixels eclaires (percentiles 30-75 de L), puis mediane des photos ; refs.pal grey en controle",
+    "photos_mesurees": [
+     0,
+     1,
+     4
+    ],
+    "photos_ecartees": [
+     {
+      "cand": 2,
+      "raison": "non retenue (face ouverte, fond ou eclairage non convenables, motif non consigne par le passage interrompu)"
+     },
+     {
+      "cand": 3,
+      "raison": "non retenue (face ouverte, fond ou eclairage non convenables, motif non consigne par le passage interrompu)"
+     }
+    ],
+    "zones": {
+     "pet": {
+      "zone": "petale corps",
+      "valeur_retenue": "#dcdfdc",
+      "LCh": [
+       89,
+       2,
+       145
+      ],
+      "photos": {
+       "1": "#e6e7e3",
+       "0": "#d2d7d5"
+      },
+      "dE_max_entre_photos": 6.2
+     },
+     "pbase": {
+      "zone": "petale base",
+      "valeur_retenue": "#e8e8e5",
+      "LCh": [
+       92,
+       2,
+       110
+      ],
+      "photos": {
+       "1": "#e8e8e5"
+      },
+      "dE_max_entre_photos": 0
+     },
+     "sep": {
+      "zone": "sepale dorsal/haut",
+      "valeur_retenue": "#d1d2d2",
+      "LCh": [
+       84,
+       0,
+       201
+      ],
+      "photos": {
+       "1": "#d1d2d2",
+       "0": "#bec3c2",
+       "4": "#f6f5ec"
+      },
+      "dE_max_entre_photos": 18.6
+     },
+     "sep2": {
+      "zone": "sepale lateral/bas",
+      "valeur_retenue": "#bcbebc",
+      "LCh": [
+       77,
+       1,
+       145
+      ],
+      "photos": {
+       "1": "#bcbdbc",
+       "0": "#bcbfbc"
+      },
+      "dE_max_entre_photos": 1.4
+     },
+     "lm": {
+      "zone": "labelle (lobe median)",
+      "valeur_retenue": "#a89a9f",
+      "LCh": [
+       65,
+       6,
+       353
+      ],
+      "photos": {
+       "1": "#a89a9f"
+      },
+      "dE_max_entre_photos": 0
+     },
+     "ld": {
+      "zone": "labelle disque/crete",
+      "valeur_retenue": "#eadd5a",
+      "LCh": [
+       87,
+       65,
+       100
+      ],
+      "photos": {
+       "1": "#eadd5a"
+      },
+      "dE_max_entre_photos": 0
+     },
+     "ll": {
+      "zone": "labelle lobes lateraux",
+      "valeur_retenue": "#d9cece",
+      "LCh": [
+       84,
+       4,
+       20
+      ],
+      "photos": {
+       "1": "#d9cece"
+      },
+      "dE_max_entre_photos": 0
+     },
+     "col": {
+      "zone": "colonne",
+      "valeur_retenue": "#b27a23",
+      "LCh": [
+       56,
+       55,
+       75
+      ],
+      "photos": {
+       "1": "#b27a23"
+      },
+      "dE_max_entre_photos": 0
+     }
+    },
+    "dominante_eclairage": {
+     "petale": "#dcdfdc",
+     "gains_RVB_vers_neutre": [
+      1.005,
+      0.991,
+      1.005
+     ],
+     "lecture": "neutre"
+    },
+    "blanc_corrige": "#dddddd",
+    "blanc_corrige_note": "teinte neutre au niveau de clarte mesure (petale non au soleil) ; clarte libre ; dominante: neutre",
+    "ecart_teinte_petales_deg": 50.0,
+    "dE_petale_max": 6.2,
+    "x_hors_coloris": null
+   }
+  },
+  {
+   "id": "cymbidium-grandes-fleurs~1422",
+   "sku": 1422,
+   "nom_affiche": "ivoire",
+   "nom_generique": "ivoire",
+   "niveau_preuve": "B",
+   "source_unique": false,
+   "statut": "en production (B), sous réserve des questions",
+   "grex": [
+    {
+     "nom_commons": "President Polk",
+     "registre_rhs": {
+      "epithete": "President Polk",
+      "id_rhs": "38270",
+      "annee": "1977",
+      "enregistre_par": "Bianchi Inc."
+     }
+    },
+    {
+     "nom_commons": "Pine Clash 'Moon Venus'",
+     "registre_rhs": {
+      "epithete": "Pine Clash",
+      "id_rhs": "46700",
+      "annee": "1985",
+      "enregistre_par": "Kawano Mericlone"
+     }
+    },
+    {
+     "nom_commons": "Awakening 'Whiteout'",
+     "registre_rhs": {
+      "epithete": "Awakening",
+      "id_rhs": "46048",
+      "annee": "1983",
+      "enregistre_par": "Valley Orchids"
+     }
+    }
+   ],
+   "photos": [
+    {
+     "cand": 275,
+     "grex": "President Polk",
+     "image": "https://upload.wikimedia.org/wikipedia/commons/8/8f/Cymbidium_President_Polk_0zz.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+     "page": "https://commons.wikimedia.org/wiki/File:Cymbidium_President_Polk_0zz.jpg",
+     "titre_commons": "Cymbidium President Polk 0zz.jpg",
+     "auteur": "David J. Stang",
+     "licence": "CC BY-SA 4.0",
+     "niveau_source": "N3",
+     "description_page": "Location taken: Smithsonian National Museum of Natural History. Names: Cymbidium President Polk  , Cymbidium President Polk Orchi Classifica"
+    },
+    {
+     "cand": 273,
+     "grex": "Pine Clash 'Moon Venus'",
+     "image": "https://upload.wikimedia.org/wikipedia/commons/0/09/Cymbidium_Pine_Clash_%27Moon_Venus%271.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+     "page": "https://commons.wikimedia.org/wiki/File:Cymbidium_Pine_Clash_%27Moon_Venus%271.jpg",
+     "titre_commons": "Cymbidium Pine Clash 'Moon Venus'1.jpg",
+     "auteur": "KENPEI",
+     "licence": "CC BY 3.0",
+     "niveau_source": "N4",
+     "description_page": "Cymbidium Pine Clash 'Moon_Venus'\n\nPlace:Osaka Prefectural Flower Garden,Osaka,Japan"
+    },
+    {
+     "cand": 15,
+     "grex": "Awakening 'Whiteout'",
+     "image": "https://upload.wikimedia.org/wikipedia/commons/0/01/A_and_B_Larsen_orchids_-_Cymbidium_Awakening_Whiteout_557-13.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+     "page": "https://commons.wikimedia.org/wiki/File:A_and_B_Larsen_orchids_-_Cymbidium_Awakening_Whiteout_557-13.jpg",
+     "titre_commons": "A and B Larsen orchids - Cymbidium Awakening Whiteout 557-13.jpg",
+     "auteur": "Arne and Bent Larsen, Haarby, Denmark",
+     "licence": "CC BY-SA 2.5 dk",
+     "niveau_source": "N3",
+     "description_page": null
+    },
+    {
+     "cand": 276,
+     "grex": "President Polk",
+     "image": "https://upload.wikimedia.org/wikipedia/commons/5/57/Cymbidium_President_Polk_1zz.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+     "page": "https://commons.wikimedia.org/wiki/File:Cymbidium_President_Polk_1zz.jpg",
+     "titre_commons": "Cymbidium President Polk 1zz.jpg",
+     "auteur": "David J. Stang",
+     "licence": "CC BY-SA 4.0",
+     "niveau_source": "N3",
+     "description_page": "Location taken: Smithsonian National Museum of Natural History. Names: Cymbidium President Polk  , Cymbidium President Polk Orchi Classifica"
+    },
+    {
+     "cand": 274,
+     "grex": "Pine Clash 'Moon Venus'",
+     "image": "https://upload.wikimedia.org/wikipedia/commons/3/31/Cymbidium_Pine_Clash_%27Moon_Venus%272.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+     "page": "https://commons.wikimedia.org/wiki/File:Cymbidium_Pine_Clash_%27Moon_Venus%272.jpg",
+     "titre_commons": "Cymbidium Pine Clash 'Moon Venus'2.jpg",
+     "auteur": "KENPEI",
+     "licence": "CC BY 3.0",
+     "niveau_source": "N4",
+     "description_page": "Cymbidium Pine Clash 'Moon Venus'\n\nPlace:Osaka Prefectural Flower Garden,Osaka,Japan"
+    }
+   ],
+   "nb_photos": 5,
+   "auteurs": [
+    "Arne and Bent Larsen, Haarby, Denmark",
+    "David J. Stang",
+    "KENPEI"
+   ],
+   "marque": null,
+   "mesures": {
+    "methode": "boites a la main photo par photo (specs.py), valeur = mediane des pixels eclaires (percentiles 30-75 de L), puis mediane des photos ; refs.pal grey en controle",
+    "photos_mesurees": [
+     5,
+     6,
+     7,
+     8
+    ],
+    "photos_ecartees": [
+     {
+      "cand": 9,
+      "raison": "non retenue (face ouverte, fond ou eclairage non convenables, motif non consigne par le passage interrompu)"
+     }
+    ],
+    "zones": {
+     "pet": {
+      "zone": "petale corps",
+      "valeur_retenue": "#c4bfb0",
+      "LCh": [
+       77,
+       8,
+       96
+      ],
+      "photos": {
+       "5": "#bcb3a0",
+       "6": "#b7b294",
+       "8": "#cbcbbf",
+       "7": "#f3e5ce"
+      },
+      "dE_max_entre_photos": 19.9
+     },
+     "sep": {
+      "zone": "sepale dorsal/haut",
+      "valeur_retenue": "#c2c2be",
+      "LCh": [
+       78,
+       2,
+       110
+      ],
+      "photos": {
+       "5": "#aaabac",
+       "6": "#9fa2a3",
+       "8": "#dadadb",
+       "7": "#eadcd0"
+      },
+      "dE_max_entre_photos": 24.0
+     },
+     "sep2": {
+      "zone": "sepale lateral/bas",
+      "valeur_retenue": "#a5a498",
+      "LCh": [
+       67,
+       7,
+       106
+      ],
+      "photos": {
+       "5": "#b0b0af",
+       "6": "#9a9980"
+      },
+      "dE_max_entre_photos": 16.2
+     },
+     "ld": {
+      "zone": "labelle disque/crete",
+      "valeur_retenue": "#f0d9a1",
+      "LCh": [
+       87,
+       31,
+       90
+      ],
+      "photos": {
+       "5": "#e2cfa1",
+       "8": "#f0d980",
+       "7": "#f4dda3"
+      },
+      "dE_max_entre_photos": 21.7
+     },
+     "col": {
+      "zone": "colonne",
+      "valeur_retenue": "#b6987a",
+      "LCh": [
+       65,
+       21,
+       71
+      ],
+      "photos": {
+       "5": "#c0b292",
+       "6": "#ac7e61"
+      },
+      "dE_max_entre_photos": 22.1
+     },
+     "lm": {
+      "zone": "labelle (lobe median)",
+      "valeur_retenue": "#b7aeb1",
+      "LCh": [
+       72,
+       4,
+       354
+      ],
+      "photos": {
+       "6": "#b7aeb1"
+      },
+      "dE_max_entre_photos": 0
+     }
+    },
+    "dominante_eclairage": {
+     "petale": "#c4bfb0",
+     "gains_RVB_vers_neutre": [
+      0.957,
+      0.983,
+      1.066
+     ],
+     "lecture": "chaud",
+     "note": "creme/ivoire : la teinte chaude est la couleur de la fleur, pas de correction de blanc"
+    },
+    "ecart_teinte_petales_deg": 24.0,
+    "dE_petale_max": 19.9,
+    "x_hors_coloris": null
+   }
+  },
+  {
+   "id": "cymbidium-grandes-fleurs~1423",
+   "sku": 1423,
+   "nom_affiche": "crème à labelle rose",
+   "nom_generique": "crème à labelle rose",
+   "niveau_preuve": "B",
+   "source_unique": false,
+   "statut": "en production (B), sous réserve des questions",
+   "grex": [
+    {
+     "nom_commons": "Valley Moon 'Radiant'",
+     "registre_rhs": {
+      "epithete": "Valley Moon",
+      "id_rhs": "90726",
+      "annee": "1992",
+      "enregistre_par": "Valley Orchids"
+     }
+    },
+    {
+     "nom_commons": "Splash 'Awesome'",
+     "registre_rhs": "non vérifié (registre RHS injoignable le 2026-10-17 après ~140 requêtes ; à reprendre)"
+    },
+    {
+     "nom_commons": "Sweetheart 'Sensation'",
+     "registre_rhs": {
+      "epithete": "Sweetheart",
+      "id_rhs": "73402",
+      "annee": "1955",
+      "enregistre_par": "Arno H.Bowers"
+     }
+    }
+   ],
+   "photos": [
+    {
+     "cand": 43,
+     "grex": "Valley Moon 'Radiant'",
+     "image": "https://upload.wikimedia.org/wikipedia/commons/2/29/A_and_B_Larsen_orchids_-_Cymbidium_Valley_Moon_Radiant_DSCN4730.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+     "page": "https://commons.wikimedia.org/wiki/File:A_and_B_Larsen_orchids_-_Cymbidium_Valley_Moon_Radiant_DSCN4730.JPG",
+     "titre_commons": "A and B Larsen orchids - Cymbidium Valley Moon Radiant DSCN4730.JPG",
+     "auteur": "Arne and Bent Larsen, Haarby, Denmark",
+     "licence": "CC BY-SA 2.5 dk",
+     "niveau_source": "N3",
+     "description_page": null
+    },
+    {
+     "cand": 35,
+     "grex": "Splash 'Awesome'",
+     "image": "https://upload.wikimedia.org/wikipedia/commons/7/72/A_and_B_Larsen_orchids_-_Cymbidium_Splash_Awesome_602-14.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+     "page": "https://commons.wikimedia.org/wiki/File:A_and_B_Larsen_orchids_-_Cymbidium_Splash_Awesome_602-14.jpg",
+     "titre_commons": "A and B Larsen orchids - Cymbidium Splash Awesome 602-14.jpg",
+     "auteur": "Arne and Bent Larsen, Haarby, Denmark",
+     "licence": "CC BY-SA 2.5 dk",
+     "niveau_source": "N3",
+     "description_page": null
+    },
+    {
+     "cand": 292,
+     "grex": "Sweetheart 'Sensation'",
+     "image": "https://upload.wikimedia.org/wikipedia/commons/0/06/Cymbidium_Sweetheart_Sensation_0zz.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+     "page": "https://commons.wikimedia.org/wiki/File:Cymbidium_Sweetheart_Sensation_0zz.jpg",
+     "titre_commons": "Cymbidium Sweetheart Sensation 0zz.jpg",
+     "auteur": "David J. Stang",
+     "licence": "CC BY-SA 4.0",
+     "niveau_source": "N3",
+     "description_page": "Location taken: Hillwood Gardens, Washington, DC. Names: Cymbidium Sweetheart 'Sensation'   Classification: Plantae &gt; Angiosperms &gt; Mo"
+    },
+    {
+     "cand": 44,
+     "grex": "Valley Moon 'Radiant'",
+     "image": "https://upload.wikimedia.org/wikipedia/commons/4/43/A_and_B_Larsen_orchids_-_Cymbidium_Valley_Moon_Radiant_DSCN4731.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+     "page": "https://commons.wikimedia.org/wiki/File:A_and_B_Larsen_orchids_-_Cymbidium_Valley_Moon_Radiant_DSCN4731.JPG",
+     "titre_commons": "A and B Larsen orchids - Cymbidium Valley Moon Radiant DSCN4731.JPG",
+     "auteur": "Arne and Bent Larsen, Haarby, Denmark",
+     "licence": "CC BY-SA 2.5 dk",
+     "niveau_source": "N3",
+     "description_page": null
+    },
+    {
+     "cand": 293,
+     "grex": "Sweetheart 'Sensation'",
+     "image": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Cymbidium_Sweetheart_Sensation_1zz.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+     "page": "https://commons.wikimedia.org/wiki/File:Cymbidium_Sweetheart_Sensation_1zz.jpg",
+     "titre_commons": "Cymbidium Sweetheart Sensation 1zz.jpg",
+     "auteur": "David J. Stang",
+     "licence": "CC BY-SA 4.0",
+     "niveau_source": "N3",
+     "description_page": "Location taken: Hillwood Gardens, Washington, DC. Names: Cymbidium Sweetheart 'Sensation'   Classification: Plantae &gt; Angiosperms &gt; Mo"
+    }
+   ],
+   "nb_photos": 5,
+   "auteurs": [
+    "Arne and Bent Larsen, Haarby, Denmark",
+    "David J. Stang"
+   ],
+   "marque": null,
+   "mesures": {
+    "methode": "boites a la main photo par photo (specs.py), valeur = mediane des pixels eclaires (percentiles 30-75 de L), puis mediane des photos ; refs.pal grey en controle",
+    "photos_mesurees": [
+     10,
+     11,
+     13
+    ],
+    "photos_ecartees": [
+     {
+      "cand": 12,
+      "raison": "fleur blanc bleute (lumiere froide), pas la creme du coloris ; mesure gardee a part (1423x)"
+     },
+     {
+      "cand": 14,
+      "raison": "non retenue (face ouverte, fond ou eclairage non convenables, motif non consigne par le passage interrompu)"
+     }
+    ],
+    "zones": {
+     "pet": {
+      "zone": "petale corps",
+      "valeur_retenue": "#c4ae91",
+      "LCh": [
+       72,
+       18,
+       79
+      ],
+      "photos": {
+       "10": "#c6b997",
+       "13": "#c4ae72",
+       "11": "#c1a691"
+      },
+      "dE_max_entre_photos": 20.5
+     },
+     "sep": {
+      "zone": "sepale dorsal/haut",
+      "valeur_retenue": "#d9c09e",
+      "LCh": [
+       79,
+       21,
+       80
+      ],
+      "photos": {
+       "10": "#d9c0a2",
+       "13": "#e1c793",
+       "11": "#d3ba9e"
+      },
+      "dE_max_entre_photos": 13.0
+     },
+     "sep2": {
+      "zone": "sepale lateral/bas",
+      "valeur_retenue": "#b79a66",
+      "LCh": [
+       65,
+       31,
+       83
+      ],
+      "photos": {
+       "10": "#c4b06e",
+       "13": "#b79a5c",
+       "11": "#a28e66"
+      },
+      "dE_max_entre_photos": 17.7
+     },
+     "lm": {
+      "zone": "labelle (lobe median)",
+      "valeur_retenue": "#d0708a",
+      "LCh": [
+       59,
+       41,
+       4
+      ],
+      "photos": {
+       "10": "#d09b96",
+       "13": "#db708a",
+       "11": "#9f6256"
+      },
+      "dE_max_entre_photos": 27.3
+     },
+     "ll": {
+      "zone": "labelle lobes lateraux",
+      "valeur_retenue": "#c9978a",
+      "LCh": [
+       67,
+       22,
+       40
+      ],
+      "photos": {
+       "10": "#c9978a"
+      },
+      "dE_max_entre_photos": 0
+     },
+     "col": {
+      "zone": "colonne",
+      "valeur_retenue": "#dabd91",
+      "LCh": [
+       78,
+       26,
+       81
+      ],
+      "photos": {
+       "10": "#cbbd91",
+       "13": "#e6b481",
+       "11": "#dabd95"
+      },
+      "dE_max_entre_photos": 16.2
+     },
+     "spot": {
+      "zone": "motif labelle",
+      "valeur_retenue": "#a2324a",
+      "LCh": [
+       39,
+       49,
+       14
+      ],
+      "photos": {
+       "10": "#c25f7a",
+       "13": "#83061a"
+      },
+      "dE_max_entre_photos": 35.3
+     }
+    },
+    "dominante_eclairage": {
+     "petale": "#c4ae91",
+     "gains_RVB_vers_neutre": [
+      0.876,
+      0.987,
+      1.184
+     ],
+     "lecture": "chaud",
+     "note": "creme/ivoire : la teinte chaude est la couleur de la fleur, pas de correction de blanc"
+    },
+    "ecart_teinte_petales_deg": 27.0,
+    "dE_petale_max": 20.5,
+    "x_hors_coloris": {
+     "pet": {
+      "zone": "petale corps",
+      "valeur_retenue": "#d1d9dc",
+      "LCh": [
+       86,
+       3,
+       229
+      ],
+      "photos": {
+       "12": "#d1d9dc"
+      },
+      "dE_max_entre_photos": 0
+     },
+     "sep": {
+      "zone": "sepale dorsal/haut",
+      "valeur_retenue": "#e8ebea",
+      "LCh": [
+       93,
+       1,
+       174
+      ],
+      "photos": {
+       "12": "#e8ebea"
+      },
+      "dE_max_entre_photos": 0
+     },
+     "sep2": {
+      "zone": "sepale lateral/bas",
+      "valeur_retenue": "#ced6d9",
+      "LCh": [
+       85,
+       3,
+       229
+      ],
+      "photos": {
+       "12": "#ced6d9"
+      },
+      "dE_max_entre_photos": 0
+     },
+     "lm": {
+      "zone": "labelle (lobe median)",
+      "valeur_retenue": "#bc9ab4",
+      "LCh": [
+       67,
+       19,
+       333
+      ],
+      "photos": {
+       "12": "#bc9ab4"
+      },
+      "dE_max_entre_photos": 0
+     },
+     "col": {
+      "zone": "colonne",
+      "valeur_retenue": "#ebd3b1",
+      "LCh": [
+       86,
+       20,
+       81
+      ],
+      "photos": {
+       "12": "#ebd3b1"
+      },
+      "dE_max_entre_photos": 0
+     },
+     "spot": {
+      "zone": "motif labelle",
+      "valeur_retenue": "#be97b4",
+      "LCh": [
+       67,
+       22,
+       334
+      ],
+      "photos": {
+       "12": "#be97b4"
+      },
+      "dE_max_entre_photos": 0
+     }
+    }
+   }
+  },
+  {
+   "id": "cymbidium-grandes-fleurs~1424",
+   "sku": 1424,
+   "nom_affiche": "blanc à labelle rouge",
+   "nom_generique": "blanc à labelle rouge",
+   "niveau_preuve": "B",
+   "source_unique": false,
+   "statut": "en production (B), sous réserve des questions",
+   "grex": [
+    {
+     "nom_commons": "Holy Loch (Lewes)",
+     "registre_rhs": "non vérifié (registre RHS injoignable le 2026-10-17 après ~140 requêtes ; à reprendre)"
+    },
+    {
+     "nom_commons": "Showgirl 'Kate Hepburn'",
+     "registre_rhs": {
+      "epithete": "Showgirl",
+      "id_rhs": "73343",
+      "annee": "1962",
+      "enregistre_par": "H.Baker"
+     }
+    },
+    {
+     "nom_commons": "Via Nogales 'Louise'",
+     "registre_rhs": {
+      "epithete": "Via Nogales",
+      "id_rhs": "47016",
+      "annee": "1973",
+      "enregistre_par": "Gallup & Stribling"
+     }
+    },
+    {
+     "nom_commons": "Pink Ice",
+     "registre_rhs": {
+      "epithete": "Pink Ice",
+      "id_rhs": "73237",
+      "annee": "1971",
+      "enregistre_par": "Lady Hothfield"
+     }
+    }
+   ],
+   "photos": [
+    {
+     "cand": 57,
+     "grex": "Holy Loch (Lewes)",
+     "image": "https://upload.wikimedia.org/wikipedia/commons/e/e0/Asparagales_-_Cymbidium_%27Holy_Loch%27_Lewes_-_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+     "page": "https://commons.wikimedia.org/wiki/File:Asparagales_-_Cymbidium_%27Holy_Loch%27_Lewes_-_1.jpg",
+     "titre_commons": "Asparagales - Cymbidium 'Holy Loch' Lewes - 1.jpg",
+     "auteur": "Emőke Dénes",
+     "licence": "CC BY-SA 4.0",
+     "niveau_source": "N3",
+     "description_page": null
+    },
+    {
+     "cand": 281,
+     "grex": "Showgirl 'Kate Hepburn'",
+     "image": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Cymbidium_Showgirl_Kate_Hepburn_0zz.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+     "page": "https://commons.wikimedia.org/wiki/File:Cymbidium_Showgirl_Kate_Hepburn_0zz.jpg",
+     "titre_commons": "Cymbidium Showgirl Kate Hepburn 0zz.jpg",
+     "auteur": "David J. Stang",
+     "licence": "CC BY-SA 4.0",
+     "niveau_source": "N3",
+     "description_page": "Location taken: United States Botanic Garden. Names: Cymbidium 'Showgirl Kate Hepburn'   Classification: Plantae &gt; Angiosperms &gt; Monoc"
+    },
+    {
+     "cand": 314,
+     "grex": "Via Nogales 'Louise'",
+     "image": "https://upload.wikimedia.org/wikipedia/commons/a/a6/Cymbidium_Via_Nogales_Louise_0zz.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+     "page": "https://commons.wikimedia.org/wiki/File:Cymbidium_Via_Nogales_Louise_0zz.jpg",
+     "titre_commons": "Cymbidium Via Nogales Louise 0zz.jpg",
+     "auteur": "David J. Stang",
+     "licence": "CC BY-SA 4.0",
+     "niveau_source": "N3",
+     "description_page": "Location taken: United States Botanic Garden, Washington D.C.. Names: Cymbidium Via Nogales 'Louise'   Classification: Plantae &gt; Angiospe"
+    },
+    {
+     "cand": 191,
+     "grex": "Pink Ice",
+     "image": "https://upload.wikimedia.org/wikipedia/commons/f/f0/Cymbidium_%27Pink_Ice%27%2C_Jard%C3%ADn_Bot%C3%A1nico_de_M%C3%BAnich%2C_Alemania%2C_2013-05-04%2C_DD_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+     "page": "https://commons.wikimedia.org/wiki/File:Cymbidium_%27Pink_Ice%27,_Jard%C3%ADn_Bot%C3%A1nico_de_M%C3%BAnich,_Alemania,_2013-05-04,_DD_01.jpg",
+     "titre_commons": "Cymbidium 'Pink Ice', Jardín Botánico de Múnich, Alemania, 2013-05-04, DD 01.jpg",
+     "auteur": "Diego Delso",
+     "licence": "CC BY-SA 3.0",
+     "niveau_source": "N4",
+     "description_page": "Cymbidium 'Pink Ice', Munich Botanical Garden, Germany"
+    },
+    {
+     "cand": 58,
+     "grex": "Holy Loch (Lewes)",
+     "image": "https://upload.wikimedia.org/wikipedia/commons/7/79/Asparagales_-_Cymbidium_%27Holy_Loch%27_Lewes_-_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+     "page": "https://commons.wikimedia.org/wiki/File:Asparagales_-_Cymbidium_%27Holy_Loch%27_Lewes_-_2.jpg",
+     "titre_commons": "Asparagales - Cymbidium 'Holy Loch' Lewes - 2.jpg",
+     "auteur": "Emőke Dénes",
+     "licence": "CC BY-SA 4.0",
+     "niveau_source": "N3",
+     "description_page": null
+    }
+   ],
+   "nb_photos": 5,
+   "auteurs": [
+    "David J. Stang",
+    "Diego Delso",
+    "Emőke Dénes"
+   ],
+   "marque": null,
+   "mesures": {
+    "methode": "boites a la main photo par photo (specs.py), valeur = mediane des pixels eclaires (percentiles 30-75 de L), puis mediane des photos ; refs.pal grey en controle",
+    "photos_mesurees": [
+     16,
+     17,
+     18,
+     19
+    ],
+    "photos_ecartees": [
+     {
+      "cand": 15,
+      "raison": "non retenue (face ouverte, fond ou eclairage non convenables, motif non consigne par le passage interrompu)"
+     }
+    ],
+    "zones": {
+     "pet": {
+      "zone": "petale corps",
+      "valeur_retenue": "#d8e0e2",
+      "LCh": [
+       89,
+       3,
+       220
+      ],
+      "photos": {
+       "16": "#c9d9d6",
+       "17": "#dee8eb",
+       "18": "#d3d8da",
+       "19": "#e4edee"
+      },
+      "dE_max_entre_photos": 8.4
+     },
+     "sep": {
+      "zone": "sepale dorsal/haut",
+      "valeur_retenue": "#d4d6d7",
+      "LCh": [
+       86,
+       1,
+       236
+      ],
+      "photos": {
+       "16": "#aaa2a7",
+       "17": "#d1d2d1",
+       "18": "#d7dadd",
+       "19": "#dbe4e5"
+      },
+      "dE_max_entre_photos": 23.5
+     },
+     "sep2": {
+      "zone": "sepale lateral/bas",
+      "valeur_retenue": "#e0e8e6",
+      "LCh": [
+       91,
+       3,
+       179
+      ],
+      "photos": {
+       "16": "#e1ede8",
+       "17": "#e7f1f1",
+       "18": "#c1bfbd",
+       "19": "#dee2e5"
+      },
+      "dE_max_entre_photos": 17.5
+     },
+     "lm": {
+      "zone": "labelle (lobe median)",
+      "valeur_retenue": "#c37480",
+      "LCh": [
+       58,
+       33,
+       12
+      ],
+      "photos": {
+       "16": "#a6365e",
+       "17": "#e5b2d3",
+       "18": "#7d3740",
+       "19": "#e0b2a1"
+      },
+      "dE_max_entre_photos": 51.6
+     },
+     "ll": {
+      "zone": "labelle lobes lateraux",
+      "valeur_retenue": "#d174a7",
+      "LCh": [
+       61,
+       44,
+       345
+      ],
+      "photos": {
+       "16": "#d174a7"
+      },
+      "dE_max_entre_photos": 0
+     },
+     "col": {
+      "zone": "colonne",
+      "valeur_retenue": "#dcb29c",
+      "LCh": [
+       76,
+       21,
+       55
+      ],
+      "photos": {
+       "16": "#f9f2b5",
+       "17": "#fce4f1",
+       "18": "#8e5651",
+       "19": "#c08182"
+      },
+      "dE_max_entre_photos": 62.3
+     },
+     "spot": {
+      "zone": "motif labelle",
+      "valeur_retenue": "#dc85b4",
+      "LCh": [
+       66,
+       41,
+       345
+      ],
+      "photos": {
+       "16": "#dc85b4"
+      },
+      "dE_max_entre_photos": 0
+     },
+     "pet2": {
+      "zone": "petale (autre lobe/teinte)",
+      "valeur_retenue": "#b7a5ad",
+      "LCh": [
+       69,
+       8,
+       348
+      ],
+      "photos": {
+       "18": "#b7a5ad"
+      },
+      "dE_max_entre_photos": 0
+     }
+    },
+    "dominante_eclairage": {
+     "petale": "#d8e0e2",
+     "gains_RVB_vers_neutre": [
+      1.028,
+      0.991,
+      0.982
+     ],
+     "lecture": "neutre"
+    },
+    "blanc_corrige": "#dedede",
+    "blanc_corrige_note": "teinte neutre au niveau de clarte mesure (petale non au soleil) ; clarte libre ; dominante: neutre",
+    "ecart_teinte_petales_deg": 47.0,
+    "dE_petale_max": 8.4,
+    "x_hors_coloris": null
+   }
+  },
+  {
+   "id": "cymbidium-grandes-fleurs~1425",
+   "sku": 1425,
+   "nom_affiche": "vert pomme",
+   "nom_generique": "vert pomme",
+   "niveau_preuve": "B",
+   "source_unique": false,
+   "statut": "en production (B), sous réserve des questions",
+   "grex": [
+    {
+     "nom_commons": "Eastern Star 'Kawano'",
+     "registre_rhs": {
+      "epithete": "Eastern Star",
+      "id_rhs": "46285",
+      "annee": "1982",
+      "enregistre_par": "I.& E.Whitcombe"
+     }
+    },
+    {
+     "nom_commons": "Valley Bay 'Perfection'",
+     "registre_rhs": {
+      "epithete": "Valley Bay",
+      "id_rhs": "46952",
+      "annee": "1982",
+      "enregistre_par": "Valley Orchids"
+     }
+    },
+    {
+     "nom_commons": "Mount Everest 'Heidi'",
+     "registre_rhs": {
+      "epithete": "Mount Everest",
+      "id_rhs": "46623",
+      "annee": "1953",
+      "enregistre_par": "Parmentier"
+     }
+    },
+    {
+     "nom_commons": "Kings Loch 'Cooksbridge'",
+     "registre_rhs": {
+      "epithete": "Kings Loch",
+      "id_rhs": "46478",
+      "annee": "1985",
+      "enregistre_par": "McBean's"
+     }
+    },
+    {
+     "nom_commons": "Green Sour 'Fresh'",
+     "registre_rhs": {
+      "epithete": "Green Sour",
+      "id_rhs": "46382",
+      "annee": "1983",
+      "enregistre_par": "Kawano Mericlone"
+     }
+    }
+   ],
+   "photos": [
+    {
+     "cand": 22,
+     "grex": "Eastern Star 'Kawano'",
+     "image": "https://upload.wikimedia.org/wikipedia/commons/8/83/A_and_B_Larsen_orchids_-_Cymbidium_Eastern_Star_Kawano_DSCN4732.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+     "page": "https://commons.wikimedia.org/wiki/File:A_and_B_Larsen_orchids_-_Cymbidium_Eastern_Star_Kawano_DSCN4732.JPG",
+     "titre_commons": "A and B Larsen orchids - Cymbidium Eastern Star Kawano DSCN4732.JPG",
+     "auteur": "Arne and Bent Larsen, Haarby, Denmark",
+     "licence": "CC BY-SA 2.5 dk",
+     "niveau_source": "N3",
+     "description_page": null
+    },
+    {
+     "cand": 38,
+     "grex": "Valley Bay 'Perfection'",
+     "image": "https://upload.wikimedia.org/wikipedia/commons/5/55/A_and_B_Larsen_orchids_-_Cymbidium_Valley_Bay_Perfection_544-20.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+     "page": "https://commons.wikimedia.org/wiki/File:A_and_B_Larsen_orchids_-_Cymbidium_Valley_Bay_Perfection_544-20.jpg",
+     "titre_commons": "A and B Larsen orchids - Cymbidium Valley Bay Perfection 544-20.jpg",
+     "auteur": "Arne and Bent Larsen, Haarby, Denmark",
+     "licence": "CC BY-SA 2.5 dk",
+     "niveau_source": "N3",
+     "description_page": null
+    },
+    {
+     "cand": 265,
+     "grex": "Mount Everest 'Heidi'",
+     "image": "https://upload.wikimedia.org/wikipedia/commons/b/b0/Cymbidium_Mount_Everest_Heidi_0zz.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+     "page": "https://commons.wikimedia.org/wiki/File:Cymbidium_Mount_Everest_Heidi_0zz.jpg",
+     "titre_commons": "Cymbidium Mount Everest Heidi 0zz.jpg",
+     "auteur": "David J. Stang",
+     "licence": "CC BY-SA 4.0",
+     "niveau_source": "N3",
+     "description_page": "Location taken: Hillwood Gardens, Washington, DC. Names: Cymbidium Mount Everest 'Heidi'   Classification: Plantae &gt; Angiosperms &gt; Mon"
+    },
+    {
+     "cand": 242,
+     "grex": "Kings Loch 'Cooksbridge'",
+     "image": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Cymbidium_Kingsloch_Cooksbridge_0zz.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+     "page": "https://commons.wikimedia.org/wiki/File:Cymbidium_Kingsloch_Cooksbridge_0zz.jpg",
+     "titre_commons": "Cymbidium Kingsloch Cooksbridge 0zz.jpg",
+     "auteur": "David J. Stang",
+     "licence": "CC BY-SA 4.0",
+     "niveau_source": "N3",
+     "description_page": "Location taken: United States Botanic Garden. Names: Cymbidium Kingsloch 'Cooksbridge'  , Cooksbridge Standard Green Hybrid Cymbidiu Classif"
+    },
+    {
+     "cand": 237,
+     "grex": "Green Sour 'Fresh'",
+     "image": "https://upload.wikimedia.org/wikipedia/commons/2/28/Cymbidium_Green_Sour_%27Fresh%271.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+     "page": "https://commons.wikimedia.org/wiki/File:Cymbidium_Green_Sour_%27Fresh%271.jpg",
+     "titre_commons": "Cymbidium Green Sour 'Fresh'1.jpg",
+     "auteur": "KENPEI",
+     "licence": "CC BY 3.0",
+     "niveau_source": "N4",
+     "description_page": "Cymbidium　 Green Sour 'Fresh'\n\nPlace:Osaka Prefectural Flower Garden,Osaka,Japan"
+    }
+   ],
+   "nb_photos": 5,
+   "auteurs": [
+    "Arne and Bent Larsen, Haarby, Denmark",
+    "David J. Stang",
+    "KENPEI"
+   ],
+   "marque": null,
+   "mesures": {
+    "methode": "boites a la main photo par photo (specs.py), valeur = mediane des pixels eclaires (percentiles 30-75 de L), puis mediane des photos ; refs.pal grey en controle",
+    "photos_mesurees": [
+     20,
+     21,
+     22,
+     24
+    ],
+    "photos_ecartees": [
+     {
+      "cand": 23,
+      "raison": "non retenue (face ouverte, fond ou eclairage non convenables, motif non consigne par le passage interrompu)"
+     }
+    ],
+    "zones": {
+     "pet": {
+      "zone": "petale corps",
+      "valeur_retenue": "#bab66c",
+      "LCh": [
+       73,
+       39,
+       104
+      ],
+      "photos": {
+       "22": "#e2e482",
+       "21": "#b4ad57",
+       "20": "#b2ae37",
+       "24": "#c0bd83"
+      },
+      "dE_max_entre_photos": 29.8
+     },
+     "sep": {
+      "zone": "sepale dorsal/haut",
+      "valeur_retenue": "#cecd4c",
+      "LCh": [
+       80,
+       64,
+       104
+      ],
+      "photos": {
+       "22": "#cdd73a",
+       "21": "#9aa754",
+       "20": "#cec345",
+       "24": "#d4deb2"
+      },
+      "dE_max_entre_photos": 52.0
+     },
+     "sep2": {
+      "zone": "sepale lateral/bas",
+      "valeur_retenue": "#99a248",
+      "LCh": [
+       64,
+       48,
+       110
+      ],
+      "photos": {
+       "22": "#acbb59",
+       "21": "#8c9637",
+       "20": "#8c8f17",
+       "24": "#a6af76"
+      },
+      "dE_max_entre_photos": 31.2
+     },
+     "lm": {
+      "zone": "labelle (lobe median)",
+      "valeur_retenue": "#ddd292",
+      "LCh": [
+       84,
+       34,
+       100
+      ],
+      "photos": {
+       "22": "#b3a895",
+       "21": "#efd9c6",
+       "20": "#f9dc56",
+       "24": "#cbcb8e"
+      },
+      "dE_max_entre_photos": 59.1
+     },
+     "ll": {
+      "zone": "labelle lobes lateraux",
+      "valeur_retenue": "#b9af7e",
+      "LCh": [
+       71,
+       27,
+       99
+      ],
+      "photos": {
+       "22": "#b9af7e"
+      },
+      "dE_max_entre_photos": 0
+     },
+     "spot": {
+      "zone": "motif labelle",
+      "valeur_retenue": "#f2ded1",
+      "LCh": [
+       90,
+       10,
+       62
+      ],
+      "photos": {
+       "21": "#f2ded1"
+      },
+      "dE_max_entre_photos": 0
+     }
+    },
+    "ecart_teinte_petales_deg": 5.0,
+    "dE_petale_max": 29.8,
+    "x_hors_coloris": null
+   }
+  },
+  {
+   "id": "cymbidium-grandes-fleurs~1426",
+   "sku": 1426,
+   "nom_affiche": "vert menthe",
+   "nom_generique": "vert menthe",
+   "niveau_preuve": "B",
+   "source_unique": false,
+   "statut": "en production (B), sous réserve des questions",
+   "grex": [
+    {
+     "nom_commons": "Happy Days 'SanBar's Green Envy'",
+     "registre_rhs": {
+      "epithete": "Happy Days",
+      "id_rhs": "38130",
+      "annee": "1978",
+      "enregistre_par": "Santa Barbara"
+     }
+    },
+    {
+     "nom_commons": "Showgirl 'Memoria Rose Greer'",
+     "registre_rhs": {
+      "epithete": "Showgirl",
+      "id_rhs": "73343",
+      "annee": "1962",
+      "enregistre_par": "H.Baker"
+     }
+    },
+    {
+     "nom_commons": "Loch Insh (Lewes)",
+     "registre_rhs": {
+      "epithete": "Loch Insh",
+      "id_rhs": "166072",
+      "annee": "2007",
+      "enregistre_par": "McBean's"
+     }
+    }
+   ],
+   "photos": [
+    {
+     "cand": 239,
+     "grex": "Happy Days 'SanBar's Green Envy'",
+     "image": "https://upload.wikimedia.org/wikipedia/commons/d/d5/Cymbidium_Happy_Days_SanBars_Green_Envy_0zz.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+     "page": "https://commons.wikimedia.org/wiki/File:Cymbidium_Happy_Days_SanBars_Green_Envy_0zz.jpg",
+     "titre_commons": "Cymbidium Happy Days SanBars Green Envy 0zz.jpg",
+     "auteur": "David J. Stang",
+     "licence": "CC BY-SA 4.0",
+     "niveau_source": "N3",
+     "description_page": "Location taken: Hillwood Gardens, Washington, DC. Names: Cymbidium Happy Days 'SanBar's Green Envy'   Classification: Plantae &gt; Angiosper"
+    },
+    {
+     "cand": 284,
+     "grex": "Showgirl 'Memoria Rose Greer'",
+     "image": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Cymbidium_Showgirl_Mem._Rose_Greer_0zz.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+     "page": "https://commons.wikimedia.org/wiki/File:Cymbidium_Showgirl_Mem._Rose_Greer_0zz.jpg",
+     "titre_commons": "Cymbidium Showgirl Mem. Rose Greer 0zz.jpg",
+     "auteur": "David J. Stang",
+     "licence": "CC BY-SA 4.0",
+     "niveau_source": "N3",
+     "description_page": "Location taken: United States Botanic Garden, Washington D.C.. Names: Cymbidium Showgirl 'Mem. Rose Greer'   Classification: Plantae &gt; An"
+    },
+    {
+     "cand": 180,
+     "grex": "Loch Insh (Lewes)",
+     "image": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Asparagales_-_Cymbidium_%27Loch_Insh%27_Lewes_-_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+     "page": "https://commons.wikimedia.org/wiki/File:Asparagales_-_Cymbidium_%27Loch_Insh%27_Lewes_-_1.jpg",
+     "titre_commons": "Asparagales - Cymbidium 'Loch Insh' Lewes - 1.jpg",
+     "auteur": "Emőke Dénes",
+     "licence": "CC BY-SA 4.0",
+     "niveau_source": "N3",
+     "description_page": "Cymbidium 'Loch Insh' Lewes in Kew Gardens, England."
+    },
+    {
+     "cand": 240,
+     "grex": "Happy Days 'SanBar's Green Envy'",
+     "image": "https://upload.wikimedia.org/wikipedia/commons/c/c1/Cymbidium_Happy_Days_SanBars_Green_Envy_1zz.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+     "page": "https://commons.wikimedia.org/wiki/File:Cymbidium_Happy_Days_SanBars_Green_Envy_1zz.jpg",
+     "titre_commons": "Cymbidium Happy Days SanBars Green Envy 1zz.jpg",
+     "auteur": "David J. Stang",
+     "licence": "CC BY-SA 4.0",
+     "niveau_source": "N3",
+     "description_page": "Location taken: Hillwood Gardens, Washington, DC. Names: Cymbidium Happy Days 'SanBar's Green Envy'   Classification: Plantae &gt; Angiosper"
+    },
+    {
+     "cand": 181,
+     "grex": "Loch Insh (Lewes)",
+     "image": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Asparagales_-_Cymbidium_%27Loch_Insh%27_Lewes_-_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+     "page": "https://commons.wikimedia.org/wiki/File:Asparagales_-_Cymbidium_%27Loch_Insh%27_Lewes_-_2.jpg",
+     "titre_commons": "Asparagales - Cymbidium 'Loch Insh' Lewes - 2.jpg",
+     "auteur": "Emőke Dénes",
+     "licence": "CC BY-SA 4.0",
+     "niveau_source": "N3",
+     "description_page": "Cymbidium 'Loch Insh' Lewes in Kew Gardens, England."
+    }
+   ],
+   "nb_photos": 5,
+   "auteurs": [
+    "David J. Stang",
+    "Emőke Dénes"
+   ],
+   "marque": null,
+   "mesures": {
+    "methode": "boites a la main photo par photo (specs.py), valeur = mediane des pixels eclaires (percentiles 30-75 de L), puis mediane des photos ; refs.pal grey en controle",
+    "photos_mesurees": [
+     25,
+     26,
+     28,
+     29
+    ],
+    "photos_ecartees": [
+     {
+      "cand": 27,
+      "raison": "non retenue (face ouverte, fond ou eclairage non convenables, motif non consigne par le passage interrompu)"
+     }
+    ],
+    "zones": {
+     "pet": {
+      "zone": "petale corps",
+      "valeur_retenue": "#b0c07e",
+      "LCh": [
+       75,
+       35,
+       117
+      ],
+      "photos": {
+       "25": "#a8b973",
+       "26": "#9fb388",
+       "28": "#b7c764",
+       "29": "#dce692"
+      },
+      "dE_max_entre_photos": 28.9
+     },
+     "sep": {
+      "zone": "sepale dorsal/haut",
+      "valeur_retenue": "#c0c86c",
+      "LCh": [
+       78,
+       48,
+       110
+      ],
+      "photos": {
+       "25": "#afc34d",
+       "26": "#a0b382",
+       "28": "#dce980",
+       "29": "#d2ce58"
+      },
+      "dE_max_entre_photos": 36.5
+     },
+     "pet2": {
+      "zone": "petale (autre lobe/teinte)",
+      "valeur_retenue": "#cad892",
+      "LCh": [
+       84,
+       37,
+       116
+      ],
+      "photos": {
+       "25": "#bcce8e",
+       "26": "#baceae",
+       "28": "#d7e38d",
+       "29": "#dae796"
+      },
+      "dE_max_entre_photos": 28.3
+     },
+     "sep2": {
+      "zone": "sepale lateral/bas",
+      "valeur_retenue": "#adbc64",
+      "LCh": [
+       73,
+       46,
+       114
+      ],
+      "photos": {
+       "25": "#bece9f",
+       "26": "#869966",
+       "28": "#9cac62",
+       "29": "#c0cb62"
+      },
+      "dE_max_entre_photos": 31.8
+     },
+     "lm": {
+      "zone": "labelle (lobe median)",
+      "valeur_retenue": "#decda2",
+      "LCh": [
+       83,
+       24,
+       92
+      ],
+      "photos": {
+       "25": "#eaddce",
+       "26": "#8a5d72",
+       "28": "#d1bd88",
+       "29": "#f1e1bb"
+      },
+      "dE_max_entre_photos": 56.1
+     },
+     "col": {
+      "zone": "colonne",
+      "valeur_retenue": "#e0e0c0",
+      "LCh": [
+       88,
+       17,
+       109
+      ],
+      "photos": {
+       "25": "#fbf6fa",
+       "26": "#c4cb85"
+      },
+      "dE_max_entre_photos": 42.6
+     }
+    },
+    "ecart_teinte_petales_deg": 15.0,
+    "dE_petale_max": 28.9,
+    "x_hors_coloris": null
+   }
+  },
+  {
+   "id": "cymbidium-grandes-fleurs~1427",
+   "sku": 1427,
+   "nom_affiche": "jaune",
+   "nom_generique": "jaune",
+   "niveau_preuve": "B",
+   "source_unique": false,
+   "statut": "en production (B), sous réserve des questions",
+   "grex": [
+    {
+     "nom_commons": "Loch Coruisk",
+     "registre_rhs": {
+      "epithete": "Loch Coruisk",
+      "id_rhs": "166051",
+      "annee": "2007",
+      "enregistre_par": "McBean's"
+     }
+    },
+    {
+     "nom_commons": "El Toro",
+     "registre_rhs": "non vérifié (registre RHS injoignable le 2026-10-17 après ~140 requêtes ; à reprendre)"
+    },
+    {
+     "nom_commons": "Lingar 'Yellow Alba'",
+     "registre_rhs": "non vérifié (registre RHS injoignable le 2026-10-17 après ~140 requêtes ; à reprendre)"
+    },
+    {
+     "nom_commons": "Maureen Grabes 'Maribel'",
+     "registre_rhs": "non vérifié (registre RHS injoignable le 2026-10-17 après ~140 requêtes ; à reprendre)"
+    },
+    {
+     "nom_commons": "Swallow 'Exbury'",
+     "registre_rhs": "non vérifié (registre RHS injoignable le 2026-10-17 après ~140 requêtes ; à reprendre)"
+    }
+   ],
+   "photos": [
+    {
+     "cand": 174,
+     "grex": "Loch Coruisk",
+     "image": "https://upload.wikimedia.org/wikipedia/commons/d/d3/Asparagales_-_Cymbidium_%27Loch_Coruisk%27_-_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+     "page": "https://commons.wikimedia.org/wiki/File:Asparagales_-_Cymbidium_%27Loch_Coruisk%27_-_1.jpg",
+     "titre_commons": "Asparagales - Cymbidium 'Loch Coruisk' - 1.jpg",
+     "auteur": "Emőke Dénes",
+     "licence": "CC BY-SA 4.0",
+     "niveau_source": "N3",
+     "description_page": "Cymbidium 'Loch Coruisk' in Kew Gardens, England."
+    },
+    {
+     "cand": 220,
+     "grex": "El Toro",
+     "image": "https://upload.wikimedia.org/wikipedia/commons/d/d7/Cymbidium_El_Toro_0zz.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+     "page": "https://commons.wikimedia.org/wiki/File:Cymbidium_El_Toro_0zz.jpg",
+     "titre_commons": "Cymbidium El Toro 0zz.jpg",
+     "auteur": "David J. Stang",
+     "licence": "CC BY-SA 4.0",
+     "niveau_source": "N3",
+     "description_page": "Location taken: Hillwood Gardens, Washington, DC. Names: Cymbidium El Toro   Classification: Plantae &gt; Angiosperms &gt; Monocots &gt; Asp"
+    },
+    {
+     "cand": 256,
+     "grex": "Lingar 'Yellow Alba'",
+     "image": "https://upload.wikimedia.org/wikipedia/commons/8/86/Cymbidium_Lingar_Yellow_Alba_0zz.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+     "page": "https://commons.wikimedia.org/wiki/File:Cymbidium_Lingar_Yellow_Alba_0zz.jpg",
+     "titre_commons": "Cymbidium Lingar Yellow Alba 0zz.jpg",
+     "auteur": "David J. Stang",
+     "licence": "CC BY-SA 4.0",
+     "niveau_source": "N3",
+     "description_page": "Location taken: Maryland Orchid Society Annual Spring Show, Timonium MD.. Names: Cymbidium Lingar Yellow Alba   Classification: Plantae &gt;"
+    },
+    {
+     "cand": 30,
+     "grex": "Maureen Grabes 'Maribel'",
+     "image": "https://upload.wikimedia.org/wikipedia/commons/8/82/A_and_B_Larsen_orchids_-_Cymbidium_Maureen_Grabes_Maribel_227-4.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+     "page": "https://commons.wikimedia.org/wiki/File:A_and_B_Larsen_orchids_-_Cymbidium_Maureen_Grabes_Maribel_227-4.jpg",
+     "titre_commons": "A and B Larsen orchids - Cymbidium Maureen Grabes Maribel 227-4.jpg",
+     "auteur": "Arne and Bent Larsen, Haarby, Denmark",
+     "licence": "CC BY-SA 2.5 dk",
+     "niveau_source": "N3",
+     "description_page": null
+    },
+    {
+     "cand": 37,
+     "grex": "Swallow 'Exbury'",
+     "image": "https://upload.wikimedia.org/wikipedia/commons/4/4d/A_and_B_Larsen_orchids_-_Cymbidium_Swallow_Exbury_242-5.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+     "page": "https://commons.wikimedia.org/wiki/File:A_and_B_Larsen_orchids_-_Cymbidium_Swallow_Exbury_242-5.jpg",
+     "titre_commons": "A and B Larsen orchids - Cymbidium Swallow Exbury 242-5.jpg",
+     "auteur": "Arne and Bent Larsen, Haarby, Denmark",
+     "licence": "CC BY-SA 2.5 dk",
+     "niveau_source": "N3",
+     "description_page": null
+    }
+   ],
+   "nb_photos": 5,
+   "auteurs": [
+    "Arne and Bent Larsen, Haarby, Denmark",
+    "David J. Stang",
+    "Emőke Dénes"
+   ],
+   "marque": null,
+   "mesures": {
+    "methode": "boites a la main photo par photo (specs.py), valeur = mediane des pixels eclaires (percentiles 30-75 de L), puis mediane des photos ; refs.pal grey en controle",
+    "photos_mesurees": [
+     31,
+     33,
+     34
+    ],
+    "photos_ecartees": [
+     {
+      "cand": 30,
+      "raison": "non retenue (face ouverte, fond ou eclairage non convenables, motif non consigne par le passage interrompu)"
+     },
+     {
+      "cand": 32,
+      "raison": "non retenue (face ouverte, fond ou eclairage non convenables, motif non consigne par le passage interrompu)"
+     }
+    ],
+    "zones": {
+     "pet": {
+      "zone": "petale corps",
+      "valeur_retenue": "#bda136",
+      "LCh": [
+       67,
+       57,
+       91
+      ],
+      "photos": {
+       "31": "#bda12a",
+       "33": "#9d9c36",
+       "34": "#c1b23f"
+      },
+      "dE_max_entre_photos": 15.2
+     },
+     "sep": {
+      "zone": "sepale dorsal/haut",
+      "valeur_retenue": "#beaf46",
+      "LCh": [
+       71,
+       55,
+       98
+      ],
+      "photos": {
+       "31": "#e7c940",
+       "33": "#979a47",
+       "34": "#beaf46"
+      },
+      "dE_max_entre_photos": 33.8
+     },
+     "sep2": {
+      "zone": "sepale lateral/bas",
+      "valeur_retenue": "#c4b345",
+      "LCh": [
+       72,
+       57,
+       97
+      ],
+      "photos": {
+       "31": "#c4b345",
+       "33": "#d4cf78",
+       "34": "#86852d"
+      },
+      "dE_max_entre_photos": 27.9
+     },
+     "lm": {
+      "zone": "labelle (lobe median)",
+      "valeur_retenue": "#d2a85d",
+      "LCh": [
+       71,
+       45,
+       81
+      ],
+      "photos": {
+       "31": "#dbb67c",
+       "33": "#bf674b",
+       "34": "#d2a85d"
+      },
+      "dE_max_entre_photos": 35.4
+     },
+     "ll": {
+      "zone": "labelle lobes lateraux",
+      "valeur_retenue": "#c79d38",
+      "LCh": [
+       67,
+       57,
+       85
+      ],
+      "photos": {
+       "31": "#d0aa27",
+       "33": "#be9048"
+      },
+      "dE_max_entre_photos": 25.1
+     },
+     "col": {
+      "zone": "colonne",
+      "valeur_retenue": "#eec93f",
+      "LCh": [
+       82,
+       70,
+       91
+      ],
+      "photos": {
+       "31": "#eec93f"
+      },
+      "dE_max_entre_photos": 0
+     }
+    },
+    "ecart_teinte_petales_deg": 12.0,
+    "dE_petale_max": 15.2,
+    "x_hors_coloris": null
+   }
+  },
+  {
+   "id": "cymbidium-grandes-fleurs~1428",
+   "sku": 1428,
+   "nom_affiche": "rose pâle",
+   "nom_generique": "rose pâle",
+   "niveau_preuve": "B",
+   "source_unique": false,
+   "statut": "en production (B), sous réserve des questions",
+   "grex": [
+    {
+     "nom_commons": "Gareth 'Rosemont'",
+     "registre_rhs": "non vérifié (registre RHS injoignable le 2026-10-17 après ~140 requêtes ; à reprendre)"
+    },
+    {
+     "nom_commons": "Eliot Rogers 'Pinkie'",
+     "registre_rhs": {
+      "epithete": "Eliot Rogers",
+      "id_rhs": "57866",
+      "annee": "1958",
+      "enregistre_par": "Gallup & Stribling"
+     }
+    },
+    {
+     "nom_commons": "Lillian Stewart 'St Shereii'",
+     "registre_rhs": {
+      "epithete": "Lillian Stewart",
+      "id_rhs": null,
+      "annee": null,
+      "enregistre_par": null,
+      "remarque": "existence confirmée à la recherche RHS du 2026-10-17, fiche détaillée non lue"
+     }
+    },
+    {
+     "nom_commons": "Via Rosita 'Pink Diamond'",
+     "registre_rhs": "non vérifié (registre RHS injoignable le 2026-10-17 après ~140 requêtes ; à reprendre)"
+    }
+   ],
+   "photos": [
+    {
+     "cand": 234,
+     "grex": "Gareth 'Rosemont'",
+     "image": "https://upload.wikimedia.org/wikipedia/commons/d/d7/Cymbidium_Gareth_Rosemont_0zz.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+     "page": "https://commons.wikimedia.org/wiki/File:Cymbidium_Gareth_Rosemont_0zz.jpg",
+     "titre_commons": "Cymbidium Gareth Rosemont 0zz.jpg",
+     "auteur": "David J. Stang",
+     "licence": "CC BY-SA 4.0",
+     "niveau_source": "N3",
+     "description_page": "Location taken: Hillwood Gardens, Washington, DC. Names: Cymbidium Gareth 'Rosemont'   Classification: Plantae &gt; Angiosperms &gt; Monocot"
+    },
+    {
+     "cand": 223,
+     "grex": "Eliot Rogers 'Pinkie'",
+     "image": "https://upload.wikimedia.org/wikipedia/commons/1/19/Cymbidium_Eliot_Rogers_Pinkie_0zz.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+     "page": "https://commons.wikimedia.org/wiki/File:Cymbidium_Eliot_Rogers_Pinkie_0zz.jpg",
+     "titre_commons": "Cymbidium Eliot Rogers Pinkie 0zz.jpg",
+     "auteur": "David J. Stang",
+     "licence": "CC BY-SA 4.0",
+     "niveau_source": "N3",
+     "description_page": "Location taken: United States Botanic Garden. Names: Cymbidium 'Eliot Rogers Pinkie'   Classification: Plantae &gt; Angiosperms &gt; Monocot"
+    },
+    {
+     "cand": 29,
+     "grex": "Lillian Stewart 'St Shereii'",
+     "image": "https://upload.wikimedia.org/wikipedia/commons/c/c7/A_and_B_Larsen_orchids_-_Cymbidium_Lillian_Stewart_St_Shereii_288-31.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+     "page": "https://commons.wikimedia.org/wiki/File:A_and_B_Larsen_orchids_-_Cymbidium_Lillian_Stewart_St_Shereii_288-31.jpg",
+     "titre_commons": "A and B Larsen orchids - Cymbidium Lillian Stewart St Shereii 288-31.jpg",
+     "auteur": "Arne and Bent Larsen, Haarby, Denmark",
+     "licence": "CC BY-SA 2.5 dk",
+     "niveau_source": "N3",
+     "description_page": null
+    },
+    {
+     "cand": 320,
+     "grex": "Via Rosita 'Pink Diamond'",
+     "image": "https://upload.wikimedia.org/wikipedia/commons/e/ed/Cymbidium_Via_Rosita_Pink_Diamond_0zz.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+     "page": "https://commons.wikimedia.org/wiki/File:Cymbidium_Via_Rosita_Pink_Diamond_0zz.jpg",
+     "titre_commons": "Cymbidium Via Rosita Pink Diamond 0zz.jpg",
+     "auteur": "David J. Stang",
+     "licence": "CC BY-SA 4.0",
+     "niveau_source": "N3",
+     "description_page": "Location taken: United States Botanic Garden, Washington D.C.. Names: Cymbidium Via Rosita 'Pink Diamond'   Classification: Plantae &gt; Ang"
+    },
+    {
+     "cand": 235,
+     "grex": "Gareth 'Rosemont'",
+     "image": "https://upload.wikimedia.org/wikipedia/commons/3/3c/Cymbidium_Gareth_Rosemont_1zz.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+     "page": "https://commons.wikimedia.org/wiki/File:Cymbidium_Gareth_Rosemont_1zz.jpg",
+     "titre_commons": "Cymbidium Gareth Rosemont 1zz.jpg",
+     "auteur": "David J. Stang",
+     "licence": "CC BY-SA 4.0",
+     "niveau_source": "N3",
+     "description_page": "Location taken: Hillwood Gardens, Washington, DC. Names: Cymbidium Gareth 'Rosemont'   Classification: Plantae &gt; Angiosperms &gt; Monocot"
+    }
+   ],
+   "nb_photos": 5,
+   "auteurs": [
+    "Arne and Bent Larsen, Haarby, Denmark",
+    "David J. Stang"
+   ],
+   "marque": null,
+   "mesures": {
+    "methode": "boites a la main photo par photo (specs.py), valeur = mediane des pixels eclaires (percentiles 30-75 de L), puis mediane des photos ; refs.pal grey en controle",
+    "photos_mesurees": [
+     35,
+     36,
+     38,
+     39
+    ],
+    "photos_ecartees": [
+     {
+      "cand": 37,
+      "raison": "cliche delave, brume claire melee aux petales ; mesure a part (1428x)"
+     }
+    ],
+    "zones": {
+     "pet": {
+      "zone": "petale corps",
+      "valeur_retenue": "#ded8e0",
+      "LCh": [
+       87,
+       5,
+       317
+      ],
+      "photos": {
+       "35": "#eef0f0",
+       "38": "#d0a8ba",
+       "39": "#edeae6",
+       "36": "#c5c6d9"
+      },
+      "dE_max_entre_photos": 28.6
+     },
+     "sep": {
+      "zone": "sepale dorsal/haut",
+      "valeur_retenue": "#c6b4b5",
+      "LCh": [
+       75,
+       7,
+       15
+      ],
+      "photos": {
+       "35": "#f7e7f3",
+       "38": "#a47477",
+       "39": "#d3bfb7",
+       "36": "#b8aab3"
+      },
+      "dE_max_entre_photos": 42.3
+     },
+     "sep2": {
+      "zone": "sepale lateral/bas",
+      "valeur_retenue": "#ccc9e2",
+      "LCh": [
+       82,
+       13,
+       296
+      ],
+      "photos": {
+       "35": "#ebddee",
+       "38": "#b98696",
+       "36": "#ccc9e2"
+      },
+      "dE_max_entre_photos": 32.2
+     },
+     "pet2": {
+      "zone": "petale (autre lobe/teinte)",
+      "valeur_retenue": "#d5c8cc",
+      "LCh": [
+       82,
+       5,
+       356
+      ],
+      "photos": {
+       "35": "#d5c8d1",
+       "38": "#dccecc",
+       "36": "#ad94af"
+      },
+      "dE_max_entre_photos": 25.6
+     },
+     "lm": {
+      "zone": "labelle (lobe median)",
+      "valeur_retenue": "#dab0ae",
+      "LCh": [
+       75,
+       16,
+       24
+      ],
+      "photos": {
+       "35": "#bc7284",
+       "38": "#f7eff1",
+       "39": "#c86f7d",
+       "36": "#ebf3d9"
+      },
+      "dE_max_entre_photos": 57.7
+     },
+     "col": {
+      "zone": "colonne",
+      "valeur_retenue": "#ccaa9e",
+      "LCh": [
+       72,
+       15,
+       46
+      ],
+      "photos": {
+       "35": "#cc9674",
+       "36": "#cbbdc8"
+      },
+      "dE_max_entre_photos": 33.1
+     }
+    },
+    "ecart_teinte_petales_deg": 242.0,
+    "dE_petale_max": 28.6,
+    "x_hors_coloris": {
+     "pet": {
+      "zone": "petale corps",
+      "valeur_retenue": "#e2bcb2",
+      "LCh": [
+       79,
+       16,
+       40
+      ],
+      "photos": {
+       "37": "#e2bcb2"
+      },
+      "dE_max_entre_photos": 0
+     },
+     "sep": {
+      "zone": "sepale dorsal/haut",
+      "valeur_retenue": "#eab6a9",
+      "LCh": [
+       78,
+       22,
+       39
+      ],
+      "photos": {
+       "37": "#eab6a9"
+      },
+      "dE_max_entre_photos": 0
+     },
+     "sep2": {
+      "zone": "sepale lateral/bas",
+      "valeur_retenue": "#d79c8d",
+      "LCh": [
+       70,
+       26,
+       40
+      ],
+      "photos": {
+       "37": "#d79c8d"
+      },
+      "dE_max_entre_photos": 0
+     },
+     "pet2": {
+      "zone": "petale (autre lobe/teinte)",
+      "valeur_retenue": "#dd9487",
+      "LCh": [
+       68,
+       32,
+       35
+      ],
+      "photos": {
+       "37": "#dd9487"
+      },
+      "dE_max_entre_photos": 0
+     },
+     "lm": {
+      "zone": "labelle (lobe median)",
+      "valeur_retenue": "#e19866",
+      "LCh": [
+       69,
+       43,
+       59
+      ],
+      "photos": {
+       "37": "#e19866"
+      },
+      "dE_max_entre_photos": 0
+     }
+    }
+   }
+  },
+  {
+   "id": "cymbidium-grandes-fleurs~1429",
+   "sku": 1429,
+   "nom_affiche": "rose",
+   "nom_generique": "rose",
+   "niveau_preuve": "B",
+   "source_unique": false,
+   "statut": "en production (B), sous réserve des questions",
+   "grex": [
+    {
+     "nom_commons": "Loch Heilen 'Hamsey'",
+     "registre_rhs": {
+      "epithete": "Loch Heilen",
+      "id_rhs": "114107",
+      "annee": "1999",
+      "enregistre_par": "McBean's"
+     }
+    },
+    {
+     "nom_commons": "Valley Torch 'The Lip'",
+     "registre_rhs": {
+      "epithete": "Valley Torch",
+      "id_rhs": "156701",
+      "annee": "2006",
+      "enregistre_par": "P.J.Hockey"
+     }
+    },
+    {
+     "nom_commons": "Via Diablo 'Mrs. Claus'",
+     "registre_rhs": "non vérifié (registre RHS injoignable le 2026-10-17 après ~140 requêtes ; à reprendre)"
+    },
+    {
+     "nom_commons": "Kirby Lesh",
+     "registre_rhs": "non vérifié (registre RHS injoignable le 2026-10-17 après ~140 requêtes ; à reprendre)"
+    },
+    {
+     "nom_commons": "Gaddon (Loch Vieux)",
+     "registre_rhs": "non vérifié (registre RHS injoignable le 2026-10-17 après ~140 requêtes ; à reprendre)"
+    }
+   ],
+   "photos": [
+    {
+     "cand": 177,
+     "grex": "Loch Heilen 'Hamsey'",
+     "image": "https://upload.wikimedia.org/wikipedia/commons/6/69/Asparagales_-_Cymbidium_%27Loch_Heilen%27_Hamsey_-_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+     "page": "https://commons.wikimedia.org/wiki/File:Asparagales_-_Cymbidium_%27Loch_Heilen%27_Hamsey_-_1.jpg",
+     "titre_commons": "Asparagales - Cymbidium 'Loch Heilen' Hamsey - 1.jpg",
+     "auteur": "Emőke Dénes",
+     "licence": "CC BY-SA 4.0",
+     "niveau_source": "N3",
+     "description_page": "Cymbidium 'Loch Heilen' Hamsey in Kew Gardens, England."
+    },
+    {
+     "cand": 100,
+     "grex": "Valley Torch 'The Lip'",
+     "image": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Cymbidium_Valley_Torch_%27The_Lip%27.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+     "page": "https://commons.wikimedia.org/wiki/File:Cymbidium_Valley_Torch_%27The_Lip%27.jpg",
+     "titre_commons": "Cymbidium Valley Torch 'The Lip'.jpg",
+     "auteur": "Nadiatalent",
+     "licence": "CC BY-SA 4.0",
+     "niveau_source": "N4",
+     "description_page": null
+    },
+    {
+     "cand": 308,
+     "grex": "Via Diablo 'Mrs. Claus'",
+     "image": "https://upload.wikimedia.org/wikipedia/commons/d/d1/Cymbidium_Via_Diablo_Mrs._Claus_0zz.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+     "page": "https://commons.wikimedia.org/wiki/File:Cymbidium_Via_Diablo_Mrs._Claus_0zz.jpg",
+     "titre_commons": "Cymbidium Via Diablo Mrs. Claus 0zz.jpg",
+     "auteur": "David J. Stang",
+     "licence": "CC BY-SA 4.0",
+     "niveau_source": "N3",
+     "description_page": "Location taken: United States Botanic Garden, Washington D.C.. Names: Cymbidium Via Diablo 'Mrs. Claus'   Classification: Plantae &gt; Angio"
+    },
+    {
+     "cand": 245,
+     "grex": "Kirby Lesh",
+     "image": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Cymbidium_Kirby_Lesh_%27Lonsdale%27.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+     "page": "https://commons.wikimedia.org/wiki/File:Cymbidium_Kirby_Lesh_%27Lonsdale%27.jpg",
+     "titre_commons": "Cymbidium Kirby Lesh 'Lonsdale'.jpg",
+     "auteur": "Nadiatalent",
+     "licence": "CC BY-SA 4.0",
+     "niveau_source": "N4",
+     "description_page": "Cymbidium Kirby Lesh 'Lonsdale', grown by G&amp;L Shrubsole, Mystic Park, Victoria, Australia"
+    },
+    {
+     "cand": 54,
+     "grex": "Gaddon (Loch Vieux)",
+     "image": "https://upload.wikimedia.org/wikipedia/commons/d/da/Asparagales_-_Cymbidium_%27Gaddon_Loch_Vieux%27_-_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+     "page": "https://commons.wikimedia.org/wiki/File:Asparagales_-_Cymbidium_%27Gaddon_Loch_Vieux%27_-_1.jpg",
+     "titre_commons": "Asparagales - Cymbidium 'Gaddon Loch Vieux' - 1.jpg",
+     "auteur": "Emőke Dénes",
+     "licence": "CC BY-SA 4.0",
+     "niveau_source": "N3",
+     "description_page": null
+    }
+   ],
+   "nb_photos": 5,
+   "auteurs": [
+    "David J. Stang",
+    "Emőke Dénes",
+    "Nadiatalent"
+   ],
+   "marque": null,
+   "mesures": {
+    "methode": "boites a la main photo par photo (specs.py), valeur = mediane des pixels eclaires (percentiles 30-75 de L), puis mediane des photos ; refs.pal grey en controle",
+    "photos_mesurees": [
+     40,
+     41,
+     42,
+     43
+    ],
+    "photos_ecartees": [
+     {
+      "cand": 44,
+      "raison": "non retenue (face ouverte, fond ou eclairage non convenables, motif non consigne par le passage interrompu)"
+     }
+    ],
+    "zones": {
+     "pet": {
+      "zone": "petale corps",
+      "valeur_retenue": "#c692a7",
+      "LCh": [
+       66,
+       23,
+       352
+      ],
+      "photos": {
+       "42": "#c68fae",
+       "43": "#d6b1c8",
+       "41": "#c596a0",
+       "40": "#b67fa0"
+      },
+      "dE_max_entre_photos": 19.0
+     },
+     "sep": {
+      "zone": "sepale dorsal/haut",
+      "valeur_retenue": "#dac2d1",
+      "LCh": [
+       81,
+       12,
+       338
+      ],
+      "photos": {
+       "42": "#c597ae",
+       "43": "#e8c8d8",
+       "41": "#cdbcca",
+       "40": "#efd9f4"
+      },
+      "dE_max_entre_photos": 24.0
+     },
+     "sep2": {
+      "zone": "sepale lateral/bas",
+      "valeur_retenue": "#c48db4",
+      "LCh": [
+       65,
+       30,
+       336
+      ],
+      "photos": {
+       "42": "#c48db4",
+       "43": "#e9c8dd",
+       "41": "#a15467"
+      },
+      "dE_max_entre_photos": 43.8
+     },
+     "lm": {
+      "zone": "labelle (lobe median)",
+      "valeur_retenue": "#d795a7",
+      "LCh": [
+       69,
+       27,
+       1
+      ],
+      "photos": {
+       "42": "#d77ba7",
+       "43": "#dbc0bf",
+       "41": "#c495a5"
+      },
+      "dE_max_entre_photos": 38.0
+     },
+     "col": {
+      "zone": "colonne",
+      "valeur_retenue": "#e6cdae",
+      "LCh": [
+       84,
+       19,
+       78
+      ],
+      "photos": {
+       "42": "#e5cabc",
+       "41": "#e6d0a1"
+      },
+      "dE_max_entre_photos": 17.0
+     }
+    },
+    "ecart_teinte_petales_deg": 26.0,
+    "dE_petale_max": 19.0,
+    "x_hors_coloris": null
+   }
+  },
+  {
+   "id": "cymbidium-grandes-fleurs~1430",
+   "sku": 1430,
+   "nom_affiche": "rose saumon",
+   "nom_generique": "rose saumon",
+   "niveau_preuve": "B",
+   "source_unique": false,
+   "statut": "en production (B), sous réserve des questions",
+   "grex": [
+    {
+     "nom_commons": "Showgirl",
+     "registre_rhs": {
+      "epithete": "Showgirl",
+      "id_rhs": "73343",
+      "annee": "1962",
+      "enregistre_par": "H.Baker"
+     }
+    },
+    {
+     "nom_commons": "Lillian Stewart 'St Shereii'",
+     "registre_rhs": {
+      "epithete": "Lillian Stewart",
+      "id_rhs": null,
+      "annee": null,
+      "enregistre_par": null,
+      "remarque": "existence confirmée à la recherche RHS du 2026-10-17, fiche détaillée non lue"
+     }
+    },
+    {
+     "nom_commons": "Latigo 'Cooksbridge Sunset'",
+     "registre_rhs": {
+      "epithete": "Latigo",
+      "id_rhs": "73051",
+      "annee": "1983",
+      "enregistre_par": "Santa Barbara"
+     }
+    },
+    {
+     "nom_commons": "Sandridge Torch",
+     "registre_rhs": "non vérifié (registre RHS injoignable le 2026-10-17 après ~140 requêtes ; à reprendre)"
+    }
+   ],
+   "photos": [
+    {
+     "cand": 278,
+     "grex": "Showgirl",
+     "image": "https://upload.wikimedia.org/wikipedia/commons/b/b7/Cymbidium_Showgirl_0zz.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+     "page": "https://commons.wikimedia.org/wiki/File:Cymbidium_Showgirl_0zz.jpg",
+     "titre_commons": "Cymbidium Showgirl 0zz.jpg",
+     "auteur": "David J. Stang",
+     "licence": "CC BY-SA 4.0",
+     "niveau_source": "N3",
+     "description_page": "Location taken: National Capital Orchid Society Auction, the United States National Arboretum, Washington D.C.. Names: Cymbidium Showgirl  ,"
+    },
+    {
+     "cand": 28,
+     "grex": "Lillian Stewart 'St Shereii'",
+     "image": "https://upload.wikimedia.org/wikipedia/commons/d/dc/A_and_B_Larsen_orchids_-_Cymbidium_Lillian_Stewart_St_Shereii_287-28.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+     "page": "https://commons.wikimedia.org/wiki/File:A_and_B_Larsen_orchids_-_Cymbidium_Lillian_Stewart_St_Shereii_287-28.jpg",
+     "titre_commons": "A and B Larsen orchids - Cymbidium Lillian Stewart St Shereii 287-28.jpg",
+     "auteur": "Arne and Bent Larsen, Haarby, Denmark",
+     "licence": "CC BY-SA 2.5 dk",
+     "niveau_source": "N3",
+     "description_page": null
+    },
+    {
+     "cand": 171,
+     "grex": "Latigo 'Cooksbridge Sunset'",
+     "image": "https://upload.wikimedia.org/wikipedia/commons/3/30/Asparagales_-_Cymbidium_%27Latigo%27_Cooksbridge_Sunset_-_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+     "page": "https://commons.wikimedia.org/wiki/File:Asparagales_-_Cymbidium_%27Latigo%27_Cooksbridge_Sunset_-_1.jpg",
+     "titre_commons": "Asparagales - Cymbidium 'Latigo' Cooksbridge Sunset - 1.jpg",
+     "auteur": "Emőke Dénes",
+     "licence": "CC BY-SA 4.0",
+     "niveau_source": "N3",
+     "description_page": "Cymbidium 'Latigo' Cooksbridge Sunset in Kew Gardens, England."
+    },
+    {
+     "cand": 193,
+     "grex": "Sandridge Torch",
+     "image": "https://upload.wikimedia.org/wikipedia/commons/7/78/Cymbidium_%27Sandridge_Torch%27_%28Orchidaceae%29_flower_HDR.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+     "page": "https://commons.wikimedia.org/wiki/File:Cymbidium_%27Sandridge_Torch%27_(Orchidaceae)_flower_HDR.jpg",
+     "titre_commons": "Cymbidium 'Sandridge Torch' (Orchidaceae) flower HDR.jpg",
+     "auteur": "Magnus Manske",
+     "licence": "CC BY-SA 3.0",
+     "niveau_source": "N4",
+     "description_page": "Taken in the Cambridge University Botanic Garden."
+    },
+    {
+     "cand": 280,
+     "grex": "Showgirl",
+     "image": "https://upload.wikimedia.org/wikipedia/commons/9/99/Cymbidium_Showgirl_4zz.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+     "page": "https://commons.wikimedia.org/wiki/File:Cymbidium_Showgirl_4zz.jpg",
+     "titre_commons": "Cymbidium Showgirl 4zz.jpg",
+     "auteur": "David J. Stang",
+     "licence": "CC BY-SA 4.0",
+     "niveau_source": "N3",
+     "description_page": "Location taken: National Capital Orchid Society Auction, the United States National Arboretum, Washington D.C.. Names: Cymbidium Showgirl  ,"
+    }
+   ],
+   "nb_photos": 5,
+   "auteurs": [
+    "Arne and Bent Larsen, Haarby, Denmark",
+    "David J. Stang",
+    "Emőke Dénes",
+    "Magnus Manske"
+   ],
+   "marque": null,
+   "mesures": {
+    "methode": "boites a la main photo par photo (specs.py), valeur = mediane des pixels eclaires (percentiles 30-75 de L), puis mediane des photos ; refs.pal grey en controle",
+    "photos_mesurees": [
+     45,
+     46,
+     49
+    ],
+    "photos_ecartees": [
+     {
+      "cand": 47,
+      "raison": "non retenue (face ouverte, fond ou eclairage non convenables, motif non consigne par le passage interrompu)"
+     },
+     {
+      "cand": 48,
+      "raison": "cliche HDR sursature (orange vif irreel) ; mesure a part (1430x)"
+     }
+    ],
+    "zones": {
+     "pet": {
+      "zone": "petale corps",
+      "valeur_retenue": "#d8987c",
+      "LCh": [
+       68,
+       32,
+       50
+      ],
+      "photos": {
+       "45": "#c6987c",
+       "49": "#d8a992",
+       "46": "#e2856a"
+      },
+      "dE_max_entre_photos": 23.5
+     },
+     "sep": {
+      "zone": "sepale dorsal/haut",
+      "valeur_retenue": "#e0a390",
+      "LCh": [
+       72,
+       28,
+       43
+      ],
+      "photos": {
+       "45": "#e0b094",
+       "49": "#bc755e",
+       "46": "#e6a390"
+      },
+      "dE_max_entre_photos": 22.7
+     },
+     "sep2": {
+      "zone": "sepale lateral/bas",
+      "valeur_retenue": "#c6957d",
+      "LCh": [
+       66,
+       25,
+       53
+      ],
+      "photos": {
+       "45": "#c6957d",
+       "49": "#bc8979",
+       "46": "#e39f8c"
+      },
+      "dE_max_entre_photos": 12.0
+     },
+     "pet2": {
+      "zone": "petale (autre lobe/teinte)",
+      "valeur_retenue": "#d49087",
+      "LCh": [
+       66,
+       29,
+       32
+      ],
+      "photos": {
+       "45": "#d9a594",
+       "49": "#c08a79",
+       "46": "#d49087"
+      },
+      "dE_max_entre_photos": 10.0
+     },
+     "lm": {
+      "zone": "labelle (lobe median)",
+      "valeur_retenue": "#d2976b",
+      "LCh": [
+       67,
+       36,
+       62
+      ],
+      "photos": {
+       "45": "#e2aa7b",
+       "49": "#d2976b",
+       "46": "#c76a54"
+      },
+      "dE_max_entre_photos": 27.5
+     }
+    },
+    "ecart_teinte_petales_deg": 16.0,
+    "dE_petale_max": 23.5,
+    "x_hors_coloris": {
+     "pet": {
+      "zone": "petale corps",
+      "valeur_retenue": "#fe936f",
+      "LCh": [
+       72,
+       52,
+       45
+      ],
+      "photos": {
+       "48": "#fe936f"
+      },
+      "dE_max_entre_photos": 0
+     },
+     "sep": {
+      "zone": "sepale dorsal/haut",
+      "valeur_retenue": "#f95f4d",
+      "LCh": [
+       61,
+       71,
+       35
+      ],
+      "photos": {
+       "48": "#f95f4d"
+      },
+      "dE_max_entre_photos": 0
+     },
+     "pet2": {
+      "zone": "petale (autre lobe/teinte)",
+      "valeur_retenue": "#fc7f5b",
+      "LCh": [
+       67,
+       61,
+       43
+      ],
+      "photos": {
+       "48": "#fc7f5b"
+      },
+      "dE_max_entre_photos": 0
+     },
+     "sep2": {
+      "zone": "sepale lateral/bas",
+      "valeur_retenue": "#fe9e79",
+      "LCh": [
+       74,
+       47,
+       47
+      ],
+      "photos": {
+       "48": "#fe9e79"
+      },
+      "dE_max_entre_photos": 0
+     },
+     "lm": {
+      "zone": "labelle (lobe median)",
+      "valeur_retenue": "#e32a34",
+      "LCh": [
+       50,
+       80,
+       31
+      ],
+      "photos": {
+       "48": "#e32a34"
+      },
+      "dE_max_entre_photos": 0
+     }
+    }
+   }
+  },
+  {
+   "id": "cymbidium-grandes-fleurs~1431",
+   "sku": 1431,
+   "nom_affiche": "orange bronze",
+   "nom_generique": "orange bronze",
+   "niveau_preuve": "B",
+   "source_unique": false,
+   "statut": "en production (B), sous réserve des questions",
+   "grex": [
+    {
+     "nom_commons": "Valley Picture 'Temptation'",
+     "registre_rhs": "non vérifié (registre RHS injoignable le 2026-10-17 après ~140 requêtes ; à reprendre)"
+    },
+    {
+     "nom_commons": "Frida",
+     "registre_rhs": "non vérifié (registre RHS injoignable le 2026-10-17 après ~140 requêtes ; à reprendre)"
+    },
+    {
+     "nom_commons": "Valley Legend 'Eternity'",
+     "registre_rhs": {
+      "epithete": "Valley Legend",
+      "id_rhs": "90725",
+      "annee": "1992",
+      "enregistre_par": "Valley Orchids"
+     }
+    },
+    {
+     "nom_commons": "Maureen Carter",
+     "registre_rhs": "non vérifié (registre RHS injoignable le 2026-10-17 après ~140 requêtes ; à reprendre)"
+    }
+   ],
+   "photos": [
+    {
+     "cand": 46,
+     "grex": "Valley Picture 'Temptation'",
+     "image": "https://upload.wikimedia.org/wikipedia/commons/c/c0/A_and_B_Larsen_orchids_-_Cymbidium_Valley_Picture_Temptation_526-12.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+     "page": "https://commons.wikimedia.org/wiki/File:A_and_B_Larsen_orchids_-_Cymbidium_Valley_Picture_Temptation_526-12.jpg",
+     "titre_commons": "A and B Larsen orchids - Cymbidium Valley Picture Temptation 526-12.jpg",
+     "auteur": "Arne and Bent Larsen, Haarby, Denmark",
+     "licence": "CC BY-SA 2.5 dk",
+     "niveau_source": "N3",
+     "description_page": null
+    },
+    {
+     "cand": 24,
+     "grex": "Frida",
+     "image": "https://upload.wikimedia.org/wikipedia/commons/7/74/A_and_B_Larsen_orchids_-_Cymbidium_Frida_DSCN4670.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+     "page": "https://commons.wikimedia.org/wiki/File:A_and_B_Larsen_orchids_-_Cymbidium_Frida_DSCN4670.JPG",
+     "titre_commons": "A and B Larsen orchids - Cymbidium Frida DSCN4670.JPG",
+     "auteur": "Arne and Bent Larsen, Haarby, Denmark",
+     "licence": "CC BY-SA 2.5 dk",
+     "niveau_source": "N3",
+     "description_page": null
+    },
+    {
+     "cand": 41,
+     "grex": "Valley Legend 'Eternity'",
+     "image": "https://upload.wikimedia.org/wikipedia/commons/5/5a/A_and_B_Larsen_orchids_-_Cymbidium_Valley_Legend_Eternity_DSCN4683.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+     "page": "https://commons.wikimedia.org/wiki/File:A_and_B_Larsen_orchids_-_Cymbidium_Valley_Legend_Eternity_DSCN4683.JPG",
+     "titre_commons": "A and B Larsen orchids - Cymbidium Valley Legend Eternity DSCN4683.JPG",
+     "auteur": "Arne and Bent Larsen, Haarby, Denmark",
+     "licence": "CC BY-SA 2.5 dk",
+     "niveau_source": "N3",
+     "description_page": null
+    },
+    {
+     "cand": 259,
+     "grex": "Maureen Carter",
+     "image": "https://upload.wikimedia.org/wikipedia/commons/c/ca/Cymbidium_Maureen_Carter_0zz.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+     "page": "https://commons.wikimedia.org/wiki/File:Cymbidium_Maureen_Carter_0zz.jpg",
+     "titre_commons": "Cymbidium Maureen Carter 0zz.jpg",
+     "auteur": "David J. Stang",
+     "licence": "CC BY-SA 4.0",
+     "niveau_source": "N3",
+     "description_page": "Location taken: National Capital Orchid Society Auction, the United States National Arboretum, Washington D.C.. Names: Cymbidium Maureen Car"
+    },
+    {
+     "cand": 25,
+     "grex": "Frida",
+     "image": "https://upload.wikimedia.org/wikipedia/commons/7/7d/A_and_B_Larsen_orchids_-_Cymbidium_Frida_DSCN4721.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+     "page": "https://commons.wikimedia.org/wiki/File:A_and_B_Larsen_orchids_-_Cymbidium_Frida_DSCN4721.JPG",
+     "titre_commons": "A and B Larsen orchids - Cymbidium Frida DSCN4721.JPG",
+     "auteur": "Arne and Bent Larsen, Haarby, Denmark",
+     "licence": "CC BY-SA 2.5 dk",
+     "niveau_source": "N3",
+     "description_page": null
+    }
+   ],
+   "nb_photos": 5,
+   "auteurs": [
+    "Arne and Bent Larsen, Haarby, Denmark",
+    "David J. Stang"
+   ],
+   "marque": null,
+   "mesures": {
+    "methode": "boites a la main photo par photo (specs.py), valeur = mediane des pixels eclaires (percentiles 30-75 de L), puis mediane des photos ; refs.pal grey en controle",
+    "photos_mesurees": [
+     50,
+     51,
+     54
+    ],
+    "photos_ecartees": [
+     {
+      "cand": 52,
+      "raison": "non retenue (face ouverte, fond ou eclairage non convenables, motif non consigne par le passage interrompu)"
+     },
+     {
+      "cand": 53,
+      "raison": "cliche sombre, jaune brun, fleurs superposees ; mesure a part (1431x)"
+     }
+    ],
+    "zones": {
+     "pet": {
+      "zone": "petale corps",
+      "valeur_retenue": "#c6765f",
+      "LCh": [
+       58,
+       39,
+       42
+      ],
+      "photos": {
+       "50": "#ddbd8b",
+       "51": "#a56834",
+       "54": "#c6765f"
+      },
+      "dE_max_entre_photos": 33.6
+     },
+     "sep": {
+      "zone": "sepale dorsal/haut",
+      "valeur_retenue": "#a0603a",
+      "LCh": [
+       47,
+       39,
+       55
+      ],
+      "photos": {
+       "50": "#d8a97f",
+       "51": "#a0603a",
+       "54": "#9e4235"
+      },
+      "dE_max_entre_photos": 41.2
+     },
+     "sep2": {
+      "zone": "sepale lateral/bas",
+      "valeur_retenue": "#9e6157",
+      "LCh": [
+       48,
+       29,
+       34
+      ],
+      "photos": {
+       "50": "#c28d7f",
+       "51": "#975d30",
+       "54": "#9e6157"
+      },
+      "dE_max_entre_photos": 26.9
+     },
+     "pet2": {
+      "zone": "petale (autre lobe/teinte)",
+      "valeur_retenue": "#bd7362",
+      "LCh": [
+       56,
+       35,
+       39
+      ],
+      "photos": {
+       "50": "#c38462",
+       "51": "#73401f",
+       "54": "#bd7367"
+      },
+      "dE_max_entre_photos": 28.1
+     },
+     "lm": {
+      "zone": "labelle (lobe median)",
+      "valeur_retenue": "#c99f62",
+      "LCh": [
+       68,
+       38,
+       78
+      ],
+      "photos": {
+       "50": "#eed7b9",
+       "51": "#784026",
+       "54": "#c99f62"
+      },
+      "dE_max_entre_photos": 57.3
+     }
+    },
+    "ecart_teinte_petales_deg": 39.0,
+    "dE_petale_max": 33.6,
+    "x_hors_coloris": {
+     "pet": {
+      "zone": "petale corps",
+      "valeur_retenue": "#a88134",
+      "LCh": [
+       56,
+       47,
+       82
+      ],
+      "photos": {
+       "53": "#a88134"
+      },
+      "dE_max_entre_photos": 0
+     },
+     "sep": {
+      "zone": "sepale dorsal/haut",
+      "valeur_retenue": "#b1842f",
+      "LCh": [
+       58,
+       51,
+       80
+      ],
+      "photos": {
+       "53": "#b1842f"
+      },
+      "dE_max_entre_photos": 0
+     },
+     "lm": {
+      "zone": "labelle (lobe median)",
+      "valeur_retenue": "#8e6a1f",
+      "LCh": [
+       47,
+       46,
+       81
+      ],
+      "photos": {
+       "53": "#8e6a1f"
+      },
+      "dE_max_entre_photos": 0
+     }
+    }
+   }
+  },
+  {
+   "id": "cymbidium-grandes-fleurs~1432",
+   "sku": 1432,
+   "nom_affiche": "caramel",
+   "nom_generique": "caramel",
+   "niveau_preuve": "C",
+   "source_unique": false,
+   "statut": "à confirmer (C), hors boutique",
+   "grex": [
+    {
+     "nom_commons": "Valley Picture 'Temptation'",
+     "registre_rhs": "non vérifié (registre RHS injoignable le 2026-10-17 après ~140 requêtes ; à reprendre)"
+    },
+    {
+     "nom_commons": "Sylvia Miller 'Goldenrod'",
+     "registre_rhs": {
+      "epithete": "Sylvia Miller",
+      "id_rhs": "73394",
+      "annee": "1968",
+      "enregistre_par": "Dos Pueblos"
+     }
+    }
+   ],
+   "photos": [
+    {
+     "cand": 45,
+     "grex": "Valley Picture 'Temptation'",
+     "image": "https://upload.wikimedia.org/wikipedia/commons/1/16/A_and_B_Larsen_orchids_-_Cymbidium_Valley_Picture_Temptation_521-20.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+     "page": "https://commons.wikimedia.org/wiki/File:A_and_B_Larsen_orchids_-_Cymbidium_Valley_Picture_Temptation_521-20.jpg",
+     "titre_commons": "A and B Larsen orchids - Cymbidium Valley Picture Temptation 521-20.jpg",
+     "auteur": "Arne and Bent Larsen, Haarby, Denmark",
+     "licence": "CC BY-SA 2.5 dk",
+     "niveau_source": "N3",
+     "description_page": null
+    },
+    {
+     "cand": 295,
+     "grex": "Sylvia Miller 'Goldenrod'",
+     "image": "https://upload.wikimedia.org/wikipedia/commons/e/eb/Cymbidium_Sylvia_Miller_Goldenrod_0zz.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+     "page": "https://commons.wikimedia.org/wiki/File:Cymbidium_Sylvia_Miller_Goldenrod_0zz.jpg",
+     "titre_commons": "Cymbidium Sylvia Miller Goldenrod 0zz.jpg",
+     "auteur": "David J. Stang",
+     "licence": "CC BY-SA 4.0",
+     "niveau_source": "N3",
+     "description_page": "Location taken: Smithsonian National Museum of Natural History. Names: Cymbidium 'Goldenrod'   Classification: Plantae &gt; Angiosperms &gt;"
+    },
+    {
+     "cand": 296,
+     "grex": "Sylvia Miller 'Goldenrod'",
+     "image": "https://upload.wikimedia.org/wikipedia/commons/3/3c/Cymbidium_Sylvia_Miller_Goldenrod_1zz.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+     "page": "https://commons.wikimedia.org/wiki/File:Cymbidium_Sylvia_Miller_Goldenrod_1zz.jpg",
+     "titre_commons": "Cymbidium Sylvia Miller Goldenrod 1zz.jpg",
+     "auteur": "David J. Stang",
+     "licence": "CC BY-SA 4.0",
+     "niveau_source": "N3",
+     "description_page": "Location taken: Smithsonian National Museum of Natural History. Names: Cymbidium 'Goldenrod'   Classification: Plantae &gt; Angiosperms &gt;"
+    },
+    {
+     "cand": 297,
+     "grex": "Sylvia Miller 'Goldenrod'",
+     "image": "https://upload.wikimedia.org/wikipedia/commons/e/ef/Cymbidium_Sylvia_Miller_Goldenrod_2zz.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+     "page": "https://commons.wikimedia.org/wiki/File:Cymbidium_Sylvia_Miller_Goldenrod_2zz.jpg",
+     "titre_commons": "Cymbidium Sylvia Miller Goldenrod 2zz.jpg",
+     "auteur": "David J. Stang",
+     "licence": "CC BY-SA 4.0",
+     "niveau_source": "N3",
+     "description_page": "Location taken: Smithsonian National Museum of Natural History. Names: Cymbidium 'Goldenrod'   Classification: Plantae &gt; Angiosperms &gt;"
+    }
+   ],
+   "nb_photos": 4,
+   "auteurs": [
+    "Arne and Bent Larsen, Haarby, Denmark",
+    "David J. Stang"
+   ],
+   "marque": null,
+   "mesures": {
+    "methode": "boites a la main photo par photo (specs.py), valeur = mediane des pixels eclaires (percentiles 30-75 de L), puis mediane des photos ; refs.pal grey en controle",
+    "photos_mesurees": [
+     55,
+     56,
+     57,
+     58
+    ],
+    "photos_ecartees": [],
+    "zones": {
+     "pet": {
+      "zone": "petale corps",
+      "valeur_retenue": "#a89222",
+      "LCh": [
+       61,
+       58,
+       93
+      ],
+      "photos": {
+       "57": "#977b0c",
+       "56": "#a79526",
+       "55": "#cca469",
+       "58": "#aa901d"
+      },
+      "dE_max_entre_photos": 27.1
+     },
+     "sep": {
+      "zone": "sepale dorsal/haut",
+      "valeur_retenue": "#b08d28",
+      "LCh": [
+       60,
+       55,
+       87
+      ],
+      "photos": {
+       "57": "#a08c0b",
+       "56": "#a38e27",
+       "55": "#bd8b4e",
+       "58": "#d2b628"
+      },
+      "dE_max_entre_photos": 36.0
+     },
+     "pet2": {
+      "zone": "petale (autre lobe/teinte)",
+      "valeur_retenue": "#9c7224",
+      "LCh": [
+       51,
+       48,
+       79
+      ],
+      "photos": {
+       "57": "#a89616",
+       "55": "#8f4d31"
+      },
+      "dE_max_entre_photos": 50.4
+     },
+     "sep2": {
+      "zone": "sepale lateral/bas",
+      "valeur_retenue": "#aa831a",
+      "LCh": [
+       57,
+       57,
+       84
+      ],
+      "photos": {
+       "57": "#856f12",
+       "56": "#aa901a",
+       "55": "#b98357"
+      },
+      "dE_max_entre_photos": 32.8
+     },
+     "lm": {
+      "zone": "labelle (lobe median)",
+      "valeur_retenue": "#d2c07b",
+      "LCh": [
+       78,
+       37,
+       95
+      ],
+      "photos": {
+       "57": "#9c8a4d",
+       "56": "#c5b268",
+       "55": "#f6dcc0",
+       "58": "#decd8e"
+      },
+      "dE_max_entre_photos": 36.7
+     }
+    },
+    "ecart_teinte_petales_deg": 17.0,
+    "dE_petale_max": 27.1,
+    "x_hors_coloris": null
+   }
+  },
+  {
+   "id": "cymbidium-grandes-fleurs~1433",
+   "sku": 1433,
+   "nom_affiche": "rouge",
+   "nom_generique": "rouge",
+   "niveau_preuve": "B",
+   "source_unique": true,
+   "statut": "en production (B), sous réserve des questions",
+   "grex": [
+    {
+     "nom_commons": "Black Flame",
+     "registre_rhs": {
+      "epithete": "Black Flame",
+      "id_rhs": "46137",
+      "annee": "1985",
+      "enregistre_par": "R.Tucker"
+     }
+    },
+    {
+     "nom_commons": "Bruterra",
+     "registre_rhs": "non vérifié (registre RHS injoignable le 2026-10-17 après ~140 requêtes ; à reprendre)"
+    },
+    {
+     "nom_commons": "Rolf Bolin 'Red Velvet'",
+     "registre_rhs": "non vérifié (registre RHS injoignable le 2026-10-17 après ~140 requêtes ; à reprendre)"
+    }
+   ],
+   "photos": [
+    {
+     "cand": 16,
+     "grex": "Black Flame",
+     "image": "https://upload.wikimedia.org/wikipedia/commons/9/9c/A_and_B_Larsen_orchids_-_Cymbidium_Black_Flame_710-22.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+     "page": "https://commons.wikimedia.org/wiki/File:A_and_B_Larsen_orchids_-_Cymbidium_Black_Flame_710-22.jpg",
+     "titre_commons": "A and B Larsen orchids - Cymbidium Black Flame 710-22.jpg",
+     "auteur": "Arne and Bent Larsen, Haarby, Denmark",
+     "licence": "CC BY-SA 2.5 dk",
+     "niveau_source": "N3",
+     "description_page": null
+    },
+    {
+     "cand": 18,
+     "grex": "Bruterra",
+     "image": "https://upload.wikimedia.org/wikipedia/commons/3/3a/A_and_B_Larsen_orchids_-_Cymbidium_bruterra_491-2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+     "page": "https://commons.wikimedia.org/wiki/File:A_and_B_Larsen_orchids_-_Cymbidium_bruterra_491-2.jpg",
+     "titre_commons": "A and B Larsen orchids - Cymbidium bruterra 491-2.jpg",
+     "auteur": "Arne and Bent Larsen, Haarby, Denmark",
+     "licence": "CC BY-SA 2.5 dk",
+     "niveau_source": "N3",
+     "description_page": null
+    },
+    {
+     "cand": 33,
+     "grex": "Rolf Bolin 'Red Velvet'",
+     "image": "https://upload.wikimedia.org/wikipedia/commons/9/9d/A_and_B_Larsen_orchids_-_Cymbidium_Rolf_Bolin_Red_Velvet_DSCN4704.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+     "page": "https://commons.wikimedia.org/wiki/File:A_and_B_Larsen_orchids_-_Cymbidium_Rolf_Bolin_Red_Velvet_DSCN4704.JPG",
+     "titre_commons": "A and B Larsen orchids - Cymbidium Rolf Bolin Red Velvet DSCN4704.JPG",
+     "auteur": "Arne and Bent Larsen, Haarby, Denmark",
+     "licence": "CC BY-SA 2.5 dk",
+     "niveau_source": "N3",
+     "description_page": null
+    },
+    {
+     "cand": 17,
+     "grex": "Black Flame",
+     "image": "https://upload.wikimedia.org/wikipedia/commons/1/18/A_and_B_Larsen_orchids_-_Cymbidium_Black_Flame_711-24.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+     "page": "https://commons.wikimedia.org/wiki/File:A_and_B_Larsen_orchids_-_Cymbidium_Black_Flame_711-24.jpg",
+     "titre_commons": "A and B Larsen orchids - Cymbidium Black Flame 711-24.jpg",
+     "auteur": "Arne and Bent Larsen, Haarby, Denmark",
+     "licence": "CC BY-SA 2.5 dk",
+     "niveau_source": "N3",
+     "description_page": null
+    },
+    {
+     "cand": 19,
+     "grex": "Bruterra",
+     "image": "https://upload.wikimedia.org/wikipedia/commons/6/67/A_and_B_Larsen_orchids_-_Cymbidium_bruterra_504-8.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+     "page": "https://commons.wikimedia.org/wiki/File:A_and_B_Larsen_orchids_-_Cymbidium_bruterra_504-8.jpg",
+     "titre_commons": "A and B Larsen orchids - Cymbidium bruterra 504-8.jpg",
+     "auteur": "Arne and Bent Larsen, Haarby, Denmark",
+     "licence": "CC BY-SA 2.5 dk",
+     "niveau_source": "N3",
+     "description_page": null
+    }
+   ],
+   "nb_photos": 5,
+   "auteurs": [
+    "Arne and Bent Larsen, Haarby, Denmark"
+   ],
+   "marque": null,
+   "mesures": {
+    "methode": "boites a la main photo par photo (specs.py), valeur = mediane des pixels eclaires (percentiles 30-75 de L), puis mediane des photos ; refs.pal grey en controle",
+    "photos_mesurees": [
+     59,
+     60,
+     62
+    ],
+    "photos_ecartees": [
+     {
+      "cand": 61,
+      "raison": "fuchsia, pas rouge : photo deplacee vers le coloris late:13 (1433x)"
+     },
+     {
+      "cand": 63,
+      "raison": "non retenue (face ouverte, fond ou eclairage non convenables, motif non consigne par le passage interrompu)"
+     }
+    ],
+    "zones": {
+     "sep": {
+      "zone": "sepale dorsal/haut",
+      "valeur_retenue": "#d97a82",
+      "LCh": [
+       62,
+       40,
+       18
+      ],
+      "photos": {
+       "59": "#d97a82",
+       "62": "#e59493",
+       "60": "#a64438"
+      },
+      "dE_max_entre_photos": 32.3
+     },
+     "pet": {
+      "zone": "petale corps",
+      "valeur_retenue": "#d8685e",
+      "LCh": [
+       57,
+       51,
+       32
+      ],
+      "photos": {
+       "59": "#e99ea0",
+       "62": "#c45a5e",
+       "60": "#d8685d"
+      },
+      "dE_max_entre_photos": 26.9
+     },
+     "pet2": {
+      "zone": "petale (autre lobe/teinte)",
+      "valeur_retenue": "#dd7472",
+      "LCh": [
+       61,
+       45,
+       26
+      ],
+      "photos": {
+       "59": "#c17472",
+       "62": "#e1928a",
+       "60": "#dd745f"
+      },
+      "dE_max_entre_photos": 18.7
+     },
+     "sep2": {
+      "zone": "sepale lateral/bas",
+      "valeur_retenue": "#aa443e",
+      "LCh": [
+       43,
+       48,
+       31
+      ],
+      "photos": {
+       "59": "#873b39",
+       "62": "#aa443e",
+       "60": "#b96045"
+      },
+      "dE_max_entre_photos": 21.2
+     },
+     "lm": {
+      "zone": "labelle (lobe median)",
+      "valeur_retenue": "#864f46",
+      "LCh": [
+       40,
+       27,
+       35
+      ],
+      "photos": {
+       "59": "#854f46",
+       "62": "#864a3f",
+       "60": "#f4c6b8"
+      },
+      "dE_max_entre_photos": 46.4
+     }
+    },
+    "ecart_teinte_petales_deg": 12.0,
+    "dE_petale_max": 26.9,
+    "x_hors_coloris": {
+     "pet": {
+      "zone": "petale corps",
+      "valeur_retenue": "#dc6188",
+      "LCh": [
+       58,
+       52,
+       3
+      ],
+      "photos": {
+       "61": "#dc6188"
+      },
+      "dE_max_entre_photos": 0
+     },
+     "pet2": {
+      "zone": "petale (autre lobe/teinte)",
+      "valeur_retenue": "#d44d77",
+      "LCh": [
+       53,
+       57,
+       5
+      ],
+      "photos": {
+       "61": "#d44d77"
+      },
+      "dE_max_entre_photos": 0
+     },
+     "sep": {
+      "zone": "sepale dorsal/haut",
+      "valeur_retenue": "#bb193e",
+      "LCh": [
+       41,
+       66,
+       20
+      ],
+      "photos": {
+       "61": "#bb193e"
+      },
+      "dE_max_entre_photos": 0
+     },
+     "sep2": {
+      "zone": "sepale lateral/bas",
+      "valeur_retenue": "#b63357",
+      "LCh": [
+       43,
+       56,
+       10
+      ],
+      "photos": {
+       "61": "#b63357"
+      },
+      "dE_max_entre_photos": 0
+     },
+     "lm": {
+      "zone": "labelle (lobe median)",
+      "valeur_retenue": "#6e010f",
+      "LCh": [
+       21,
+       51,
+       31
+      ],
+      "photos": {
+       "61": "#6e010f"
+      },
+      "dE_max_entre_photos": 0
+     }
+    }
+   }
+  },
+  {
+   "id": "cymbidium-grandes-fleurs~1434",
+   "sku": 1434,
+   "nom_affiche": "bordeaux",
+   "nom_generique": "bordeaux",
+   "niveau_preuve": "B",
+   "source_unique": false,
+   "statut": "en production (B), sous réserve des questions",
+   "grex": [
+    {
+     "nom_commons": "Valley Regent 'Reggae'",
+     "registre_rhs": "non vérifié (registre RHS injoignable le 2026-10-17 après ~140 requêtes ; à reprendre)"
+    },
+    {
+     "nom_commons": "Ruby Valley 'Clare'",
+     "registre_rhs": "non vérifié (registre RHS injoignable le 2026-10-17 après ~140 requêtes ; à reprendre)"
+    },
+    {
+     "nom_commons": "Fuss 'Fantasy'",
+     "registre_rhs": "non vérifié (registre RHS injoignable le 2026-10-17 après ~140 requêtes ; à reprendre)"
+    },
+    {
+     "nom_commons": "Tapestry 'Red Glory'",
+     "registre_rhs": {
+      "epithete": "Tapestry",
+      "id_rhs": "73391",
+      "annee": "1963",
+      "enregistre_par": "Rod McLellan Co."
+     }
+    }
+   ],
+   "photos": [
+    {
+     "cand": 47,
+     "grex": "Valley Regent 'Reggae'",
+     "image": "https://upload.wikimedia.org/wikipedia/commons/9/9c/A_and_B_Larsen_orchids_-_Cymbidium_Valley_Regent_Reggae_DSCN4671.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+     "page": "https://commons.wikimedia.org/wiki/File:A_and_B_Larsen_orchids_-_Cymbidium_Valley_Regent_Reggae_DSCN4671.JPG",
+     "titre_commons": "A and B Larsen orchids - Cymbidium Valley Regent Reggae DSCN4671.JPG",
+     "auteur": "Arne and Bent Larsen, Haarby, Denmark",
+     "licence": "CC BY-SA 2.5 dk",
+     "niveau_source": "N3",
+     "description_page": null
+    },
+    {
+     "cand": 99,
+     "grex": "Ruby Valley 'Clare'",
+     "image": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Cymbidium_Ruby_Valley_%27Clare%27.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+     "page": "https://commons.wikimedia.org/wiki/File:Cymbidium_Ruby_Valley_%27Clare%27.jpg",
+     "titre_commons": "Cymbidium Ruby Valley 'Clare'.jpg",
+     "auteur": "Nadiatalent",
+     "licence": "CC BY-SA 4.0",
+     "niveau_source": "N4",
+     "description_page": null
+    },
+    {
+     "cand": 228,
+     "grex": "Fuss 'Fantasy'",
+     "image": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Cymbidium_Fuss_Fantasy_0zz.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+     "page": "https://commons.wikimedia.org/wiki/File:Cymbidium_Fuss_Fantasy_0zz.jpg",
+     "titre_commons": "Cymbidium Fuss Fantasy 0zz.jpg",
+     "auteur": "David J. Stang",
+     "licence": "CC BY-SA 4.0",
+     "niveau_source": "N3",
+     "description_page": "Location taken: Hillwood Gardens, Washington, DC. Names: Cymbidium Fuss 'Fantasy'   Classification: Plantae &gt; Angiosperms &gt; Monocots &"
+    },
+    {
+     "cand": 106,
+     "grex": "Tapestry 'Red Glory'",
+     "image": "https://upload.wikimedia.org/wikipedia/commons/6/60/Boat_orchid_%28Cymbidium_tapestry_%27Red_Glory%27%29_flower_close-up.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+     "page": "https://commons.wikimedia.org/wiki/File:Boat_orchid_(Cymbidium_tapestry_%27Red_Glory%27)_flower_close-up.jpg",
+     "titre_commons": "Boat orchid (Cymbidium tapestry 'Red Glory') flower close-up.jpg",
+     "auteur": "Pseudopanax at English Wikipedia",
+     "licence": "Public domain",
+     "niveau_source": "N4",
+     "description_page": null
+    },
+    {
+     "cand": 48,
+     "grex": "Valley Regent 'Reggae'",
+     "image": "https://upload.wikimedia.org/wikipedia/commons/4/4a/A_and_B_Larsen_orchids_-_Cymbidium_Valley_Regent_Reggae_DSCN4671zw.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+     "page": "https://commons.wikimedia.org/wiki/File:A_and_B_Larsen_orchids_-_Cymbidium_Valley_Regent_Reggae_DSCN4671zw.jpg",
+     "titre_commons": "A and B Larsen orchids - Cymbidium Valley Regent Reggae DSCN4671zw.jpg",
+     "auteur": "Arne and Bent Larsen, Haarby, Denmark",
+     "licence": "CC BY-SA 2.5 dk",
+     "niveau_source": "N3",
+     "description_page": null
+    }
+   ],
+   "nb_photos": 5,
+   "auteurs": [
+    "Arne and Bent Larsen, Haarby, Denmark",
+    "David J. Stang",
+    "Nadiatalent",
+    "Pseudopanax at English Wikipedia"
+   ],
+   "marque": null,
+   "mesures": {
+    "methode": "boites a la main photo par photo (specs.py), valeur = mediane des pixels eclaires (percentiles 30-75 de L), puis mediane des photos ; refs.pal grey en controle",
+    "photos_mesurees": [
+     64,
+     65,
+     66,
+     68
+    ],
+    "photos_ecartees": [
+     {
+      "cand": 67,
+      "raison": "non retenue (face ouverte, fond ou eclairage non convenables, motif non consigne par le passage interrompu)"
+     }
+    ],
+    "zones": {
+     "pet": {
+      "zone": "petale corps",
+      "valeur_retenue": "#a1304c",
+      "LCh": [
+       38,
+       49,
+       12
+      ],
+      "photos": {
+       "64": "#ab3550",
+       "65": "#972a49",
+       "68": "#c53d51",
+       "66": "#751a26"
+      },
+      "dE_max_entre_photos": 26.1
+     },
+     "pet2": {
+      "zone": "petale (autre lobe/teinte)",
+      "valeur_retenue": "#aa3a48",
+      "LCh": [
+       41,
+       50,
+       20
+      ],
+      "photos": {
+       "64": "#b64b57",
+       "65": "#9f274a",
+       "68": "#ba4147",
+       "66": "#8d3243"
+      },
+      "dE_max_entre_photos": 19.0
+     },
+     "sep": {
+      "zone": "sepale dorsal/haut",
+      "valeur_retenue": "#ac445e",
+      "LCh": [
+       44,
+       45,
+       9
+      ],
+      "photos": {
+       "64": "#cb4456",
+       "65": "#9e456b",
+       "68": "#9d293e",
+       "66": "#ba4e65"
+      },
+      "dE_max_entre_photos": 27.8
+     },
+     "sep2": {
+      "zone": "sepale lateral/bas",
+      "valeur_retenue": "#b43e47",
+      "LCh": [
+       44,
+       53,
+       24
+      ],
+      "photos": {
+       "64": "#b43e47",
+       "65": "#881c38",
+       "66": "#b55570"
+      },
+      "dE_max_entre_photos": 20.7
+     },
+     "lm": {
+      "zone": "labelle (lobe median)",
+      "valeur_retenue": "#e8b9aa",
+      "LCh": [
+       79,
+       20,
+       44
+      ],
+      "photos": {
+       "64": "#f9cac2",
+       "65": "#924c55",
+       "68": "#eea896",
+       "66": "#e3d6bd"
+      },
+      "dE_max_entre_photos": 54.3
+     }
+    },
+    "ecart_teinte_petales_deg": 13.0,
+    "dE_petale_max": 26.1,
+    "x_hors_coloris": null
+   }
+  },
+  {
+   "id": "cymbidium-grandes-fleurs~1435",
+   "sku": 1435,
+   "nom_affiche": "brun",
+   "nom_generique": "brun",
+   "niveau_preuve": "B",
+   "source_unique": false,
+   "statut": "en production (B), sous réserve des questions",
+   "grex": [
+    {
+     "nom_commons": "Persuasive Miss 'Black Eyes'",
+     "registre_rhs": {
+      "epithete": "Persuasive Miss",
+      "id_rhs": "91292",
+      "annee": "1992",
+      "enregistre_par": "P.Gomes"
+     }
+    },
+    {
+     "nom_commons": "Millerai 'Popai'",
+     "registre_rhs": "non vérifié (registre RHS injoignable le 2026-10-17 après ~140 requêtes ; à reprendre)"
+    },
+    {
+     "nom_commons": "Highland Hill x Pontac",
+     "registre_rhs": "non vérifié (registre RHS injoignable le 2026-10-17 après ~140 requêtes ; à reprendre)"
+    },
+    {
+     "nom_commons": "Green Valley Emerald 'Three Lip'",
+     "registre_rhs": {
+      "epithete": "Green Valley Emerald",
+      "id_rhs": "920169",
+      "annee": "2009",
+      "enregistre_par": "Green Valley Orch. [Taiwan]"
+     }
+    }
+   ],
+   "photos": [
+    {
+     "cand": 270,
+     "grex": "Persuasive Miss 'Black Eyes'",
+     "image": "https://upload.wikimedia.org/wikipedia/commons/1/16/Cymbidium_Persuasive_Miss_Black_Eyes_0zz.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+     "page": "https://commons.wikimedia.org/wiki/File:Cymbidium_Persuasive_Miss_Black_Eyes_0zz.jpg",
+     "titre_commons": "Cymbidium Persuasive Miss Black Eyes 0zz.jpg",
+     "auteur": "David J. Stang",
+     "licence": "CC BY-SA 4.0",
+     "niveau_source": "N3",
+     "description_page": "Location taken: National Capital Orchid Society Auction, the United States National Arboretum, Washington D.C.. Names: Cymbidium Persuasive "
+    },
+    {
+     "cand": 262,
+     "grex": "Millerai 'Popai'",
+     "image": "https://upload.wikimedia.org/wikipedia/commons/4/49/Cymbidium_Millerai_Popai_0zz.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+     "page": "https://commons.wikimedia.org/wiki/File:Cymbidium_Millerai_Popai_0zz.jpg",
+     "titre_commons": "Cymbidium Millerai Popai 0zz.jpg",
+     "auteur": "David J. Stang",
+     "licence": "CC BY-SA 4.0",
+     "niveau_source": "N3",
+     "description_page": "Location taken: National Capital Orchid Society Auction, the United States National Arboretum, Washington D.C.. Names: Cymbidium Millerai Po"
+    },
+    {
+     "cand": 186,
+     "grex": "Highland Hill x Pontac",
+     "image": "https://upload.wikimedia.org/wikipedia/commons/0/01/Asparagales_-_Cymbidium_Highland_Hill_x_Pontac_-_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+     "page": "https://commons.wikimedia.org/wiki/File:Asparagales_-_Cymbidium_Highland_Hill_x_Pontac_-_1.jpg",
+     "titre_commons": "Asparagales - Cymbidium Highland Hill x Pontac - 1.jpg",
+     "auteur": "Emőke Dénes",
+     "licence": "CC BY-SA 4.0",
+     "niveau_source": "N3",
+     "description_page": "Cymbidium Highland Hill x Pontac in Kew Gardens, England."
+    },
+    {
+     "cand": 101,
+     "grex": "Green Valley Emerald 'Three Lip'",
+     "image": "https://upload.wikimedia.org/wikipedia/commons/2/27/%E8%95%99%E8%98%AD_Cymbidium_Green_Valley_Emerald_%27Three_Lip%27_-%E5%8F%B0%E5%8D%97%E5%9C%8B%E9%9A%9B%E8%98%AD%E5%B1%95_Taiwan_International_Orchid_Show-_%2839964907225%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+     "page": "https://commons.wikimedia.org/wiki/File:%E8%95%99%E8%98%AD_Cymbidium_Green_Valley_Emerald_%27Three_Lip%27_-%E5%8F%B0%E5%8D%97%E5%9C%8B%E9%9A%9B%E8%98%AD%E5%B1%95_Taiwan_International_Orchid_Show-_(39964907225).jpg",
+     "titre_commons": "蕙蘭 Cymbidium Green Valley Emerald 'Three Lip' -台南國際蘭展 Taiwan International Orchid Show- (39964907225).jpg",
+     "auteur": "阿橋 HQ",
+     "licence": "CC BY-SA 2.0",
+     "niveau_source": "N4",
+     "description_page": null
+    },
+    {
+     "cand": 271,
+     "grex": "Persuasive Miss 'Black Eyes'",
+     "image": "https://upload.wikimedia.org/wikipedia/commons/c/c5/Cymbidium_Persuasive_Miss_Black_Eyes_2zz.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+     "page": "https://commons.wikimedia.org/wiki/File:Cymbidium_Persuasive_Miss_Black_Eyes_2zz.jpg",
+     "titre_commons": "Cymbidium Persuasive Miss Black Eyes 2zz.jpg",
+     "auteur": "David J. Stang",
+     "licence": "CC BY-SA 4.0",
+     "niveau_source": "N3",
+     "description_page": "Location taken: National Capital Orchid Society Auction, the United States National Arboretum, Washington D.C.. Names: Cymbidium Persuasive "
+    }
+   ],
+   "nb_photos": 5,
+   "auteurs": [
+    "David J. Stang",
+    "Emőke Dénes",
+    "阿橋 HQ"
+   ],
+   "marque": null,
+   "mesures": {
+    "methode": "boites a la main photo par photo (specs.py), valeur = mediane des pixels eclaires (percentiles 30-75 de L), puis mediane des photos ; refs.pal grey en controle",
+    "photos_mesurees": [
+     69,
+     70,
+     73
+    ],
+    "photos_ecartees": [
+     {
+      "cand": 71,
+      "raison": "non retenue (face ouverte, fond ou eclairage non convenables, motif non consigne par le passage interrompu)"
+     },
+     {
+      "cand": 72,
+      "raison": "non retenue (face ouverte, fond ou eclairage non convenables, motif non consigne par le passage interrompu)"
+     }
+    ],
+    "zones": {
+     "pet": {
+      "zone": "petale corps",
+      "valeur_retenue": "#aa4c3a",
+      "LCh": [
+       44,
+       47,
+       38
+      ],
+      "photos": {
+       "69": "#581d0e",
+       "73": "#99391d",
+       "70": "#ba6057",
+       "71": "#d1816d"
+      },
+      "dE_max_entre_photos": 42.0
+     },
+     "sep": {
+      "zone": "sepale dorsal/haut",
+      "valeur_retenue": "#be6346",
+      "LCh": [
+       52,
+       47,
+       44
+      ],
+      "photos": {
+       "69": "#912918",
+       "73": "#bc5529",
+       "70": "#bf7164",
+       "71": "#d9b396"
+      },
+      "dE_max_entre_photos": 55.9
+     },
+     "pet2": {
+      "zone": "petale (autre lobe/teinte)",
+      "valeur_retenue": "#763428",
+      "LCh": [
+       31,
+       35,
+       37
+      ],
+      "photos": {
+       "69": "#58160b",
+       "70": "#955144"
+      },
+      "dE_max_entre_photos": 24.0
+     },
+     "sep2": {
+      "zone": "sepale lateral/bas",
+      "valeur_retenue": "#834025",
+      "LCh": [
+       35,
+       40,
+       48
+      ],
+      "photos": {
+       "69": "#833d25",
+       "73": "#814024",
+       "70": "#8d4738"
+      },
+      "dE_max_entre_photos": 8.3
+     },
+     "lm": {
+      "zone": "labelle (lobe median)",
+      "valeur_retenue": "#190903",
+      "LCh": [
+       4,
+       7,
+       40
+      ],
+      "photos": {
+       "69": "#150501",
+       "73": "#190903",
+       "70": "#c8887a"
+      },
+      "dE_max_entre_photos": 64.6
+     }
+    },
+    "ecart_teinte_petales_deg": 12.0,
+    "dE_petale_max": 42.0,
+    "x_hors_coloris": null
+   }
+  },
+  {
+   "id": "cymbidium-grandes-fleurs~1436",
+   "sku": 1436,
+   "nom_affiche": "pourpre noir",
+   "nom_generique": "pourpre noir",
+   "niveau_preuve": "C",
+   "source_unique": false,
+   "statut": "à confirmer (C), hors boutique",
+   "grex": [
+    {
+     "nom_commons": "Lillian Stewart 'Sundown'",
+     "registre_rhs": {
+      "epithete": "Lillian Stewart",
+      "id_rhs": null,
+      "annee": null,
+      "enregistre_par": null,
+      "remarque": "existence confirmée à la recherche RHS du 2026-10-17, fiche détaillée non lue"
+     }
+    },
+    {
+     "nom_commons": "Valley Regent 'Reggae'",
+     "registre_rhs": "non vérifié (registre RHS injoignable le 2026-10-17 après ~140 requêtes ; à reprendre)"
+    }
+   ],
+   "photos": [
+    {
+     "cand": 253,
+     "grex": "Lillian Stewart 'Sundown'",
+     "image": "https://upload.wikimedia.org/wikipedia/commons/c/c6/Cymbidium_Lillian_Stewart_Sundown_0zz.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+     "page": "https://commons.wikimedia.org/wiki/File:Cymbidium_Lillian_Stewart_Sundown_0zz.jpg",
+     "titre_commons": "Cymbidium Lillian Stewart Sundown 0zz.jpg",
+     "auteur": "David J. Stang",
+     "licence": "CC BY-SA 4.0",
+     "niveau_source": "N3",
+     "description_page": "Location taken: Hillwood Gardens, Washington, DC. Names: Cymbidium Lillian Stewart 'Sundown'   Classification: Plantae &gt; Angiosperms &gt;"
+    },
+    {
+     "cand": 49,
+     "grex": "Valley Regent 'Reggae'",
+     "image": "https://upload.wikimedia.org/wikipedia/commons/4/44/A_and_B_Larsen_orchids_-_Cymbidium_Valley_Regent_Reggae_DSCN4674.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+     "page": "https://commons.wikimedia.org/wiki/File:A_and_B_Larsen_orchids_-_Cymbidium_Valley_Regent_Reggae_DSCN4674.JPG",
+     "titre_commons": "A and B Larsen orchids - Cymbidium Valley Regent Reggae DSCN4674.JPG",
+     "auteur": "Arne and Bent Larsen, Haarby, Denmark",
+     "licence": "CC BY-SA 2.5 dk",
+     "niveau_source": "N3",
+     "description_page": null
+    },
+    {
+     "cand": 254,
+     "grex": "Lillian Stewart 'Sundown'",
+     "image": "https://upload.wikimedia.org/wikipedia/commons/9/9e/Cymbidium_Lillian_Stewart_Sundown_1zz.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+     "page": "https://commons.wikimedia.org/wiki/File:Cymbidium_Lillian_Stewart_Sundown_1zz.jpg",
+     "titre_commons": "Cymbidium Lillian Stewart Sundown 1zz.jpg",
+     "auteur": "David J. Stang",
+     "licence": "CC BY-SA 4.0",
+     "niveau_source": "N3",
+     "description_page": "Location taken: Hillwood Gardens, Washington, DC. Names: Cymbidium Lillian Stewart 'Sundown'   Classification: Plantae &gt; Angiosperms &gt;"
+    }
+   ],
+   "nb_photos": 3,
+   "auteurs": [
+    "Arne and Bent Larsen, Haarby, Denmark",
+    "David J. Stang"
+   ],
+   "marque": null,
+   "mesures": {
+    "methode": "boites a la main photo par photo (specs.py), valeur = mediane des pixels eclaires (percentiles 30-75 de L), puis mediane des photos ; refs.pal grey en controle",
+    "photos_mesurees": [
+     74,
+     75,
+     76
+    ],
+    "photos_ecartees": [],
+    "zones": {
+     "pet": {
+      "zone": "petale corps",
+      "valeur_retenue": "#a33b4c",
+      "LCh": [
+       40,
+       46,
+       16
+      ],
+      "photos": {
+       "74": "#894548",
+       "75": "#bd3151"
+      },
+      "dE_max_entre_photos": 28.6
+     },
+     "pet2": {
+      "zone": "petale (autre lobe/teinte)",
+      "valeur_retenue": "#8c2d3e",
+      "LCh": [
+       34,
+       43,
+       16
+      ],
+      "photos": {
+       "74": "#6e232d",
+       "75": "#a9374e"
+      },
+      "dE_max_entre_photos": 20.6
+     },
+     "sep": {
+      "zone": "sepale dorsal/haut",
+      "valeur_retenue": "#a32f44",
+      "LCh": [
+       38,
+       51,
+       17
+      ],
+      "photos": {
+       "74": "#ad3f54",
+       "75": "#991f33"
+      },
+      "dE_max_entre_photos": 12.7
+     },
+     "back": {
+      "zone": "revers",
+      "valeur_retenue": "#c3888d",
+      "LCh": [
+       63,
+       24,
+       15
+      ],
+      "photos": {
+       "74": "#a67b75",
+       "76": "#e095a5"
+      },
+      "dE_max_entre_photos": 21.1
+     },
+     "lm": {
+      "zone": "labelle (lobe median)",
+      "valeur_retenue": "#c8aca8",
+      "LCh": [
+       73,
+       11,
+       31
+      ],
+      "photos": {
+       "74": "#b8aaa7",
+       "75": "#d8adaa"
+      },
+      "dE_max_entre_photos": 12.1
+     },
+     "sep2": {
+      "zone": "sepale lateral/bas",
+      "valeur_retenue": "#7e0d1f",
+      "LCh": [
+       26,
+       51,
+       26
+      ],
+      "photos": {
+       "75": "#7e0d1f"
+      },
+      "dE_max_entre_photos": 0
+     },
+     "back2": {
+      "zone": "revers (2)",
+      "valeur_retenue": "#811427",
+      "LCh": [
+       28,
+       49,
+       23
+      ],
+      "photos": {
+       "76": "#811427"
+      },
+      "dE_max_entre_photos": 0
+     }
+    },
+    "ecart_teinte_petales_deg": 7.0,
+    "dE_petale_max": 28.6,
+    "x_hors_coloris": null
+   }
+  }
+ ],
+ "propositions_late": [
+  {
+   "id": "late:14",
+   "nom_generique": "vert olive",
+   "grex": "Peter Pan",
+   "niveau": "C",
+   "photos": [
+    {
+     "cand": 32,
+     "page": "https://commons.wikimedia.org/wiki/File:A_and_B_Larsen_orchids_-_Cymbidium_Peter_Pan_227-2.jpg",
+     "auteur": "Arne and Bent Larsen",
+     "licence": "CC BY-SA 2.5 dk"
+    }
+   ],
+   "note": "une seule photo nommée (fleur vert olive, labelle crème à taches brunes) ; grex enregistré 1957 (Dos Pueblos) ; il faut deux photos de plus pour B"
+  },
+  {
+   "id": "late:13",
+   "nom_generique": "fuchsia",
+   "grex": "Rolf Bolin 'Red Velvet'",
+   "niveau": "C",
+   "photos": [
+    {
+     "cand": 33,
+     "page": "https://commons.wikimedia.org/wiki/File:A_and_B_Larsen_orchids_-_Cymbidium_Rolf_Bolin_Red_Velvet_DSCN4704.JPG",
+     "auteur": "Arne and Bent Larsen",
+     "licence": "CC BY-SA 2.5 dk"
+    },
+    {
+     "cand": 34,
+     "page": "https://commons.wikimedia.org/wiki/File:A_and_B_Larsen_orchids_-_Cymbidium_Rolf_Bolin_Red_Velvet_DSCN4712.JPG",
+     "auteur": "Arne and Bent Larsen",
+     "licence": "CC BY-SA 2.5 dk"
+    }
+   ],
+   "note": "magenta-rouge vif à liseré blanc ; un seul auteur ; proposé en plus du rouge et du bordeaux du catalogue"
+  }
+ ],
+ "trous": [
+  "1436 pourpre noir : aucune photo nommée d'une fleur franchement noire ; Lillian Stewart 'Sundown' (bordeaux très sombre) et Valley Regent 'Reggae' (cramoisi sombre) sont les plus proches. Reste C.",
+  "1432 caramel : seule Valley Picture 'Temptation' (une photo) est caramel net ; Sylvia Miller 'Goldenrod' tire vers l'ambre doré. Reste C.",
+  "1433 rouge : toutes les photos viennent de Larsen (un auteur) ; les rouges de Stang sont étiquetés par croisement (Tender Love x Dream Girl), écartés.",
+  "Aucun grex confirmé vendu en fleur coupée (pas de source N2) : les plantes photographiées sont en pot ou en exposition."
+ ],
+ "questions": [
+  "Les 14 SKU en B sont-ils acceptés sans photo N2 ? Proposition : oui, la forme à grandes fleurs est la même pour tous les grex ; seule la couleur compte, et elle est mesurée sur les photos.",
+  "1424 / 1426 : les noms affichés restent-ils ? Proposition : oui. 1426 vert menthe est en fait un vert tendre jaunâtre (Happy Days, Loch Insh) ; proposition d'écrire « vert tendre » à la prochaine révision des noms.",
+  "late:14 et late:13 : les ajouter ? Proposition : late:13 (fuchsia) seulement après deux photos d'un second auteur."
+ ],
+ "ecartes_marque": [
+  "aucun : les noms Valley (Valley Moon, Valley Bay, etc.) sont des grex enregistrés de Valley Orchids, pas des marques ; non vérifié au registre des marques (TMview), à faire par l'orchestrateur si ces SKU partent en production."
+ ],
+ "ecartes_autres": [
+  "Tender Love 'Gold Bar' x Mizuha Okada (298-300) et Tender Love x Dream Girl (301-303) : étiquettes de croisement, grex petite fleur (sanderae x ensifolium) ; écartés.",
+  "Highland Hill x Pontac (Kew) : étiquette de croisement ; gardée seulement en appoint pour le brun.",
+  "Gallant Beau 'George Vasquez' (231-233) : photos de Phalaenopsis sous un faux titre de Cymbidium ; Lamplighter Aladdin (249-250) : pseudobulbes, pas de fleur.",
+  "Minuet, Tiger Moth, Mighty Mouse, Egret, Sarah Jean, Fruity Forest, Dilly Del Mar : miniatures, pour la sorte cymbidium-mini.",
+  "Cameliard 'French Mustard' (207-209) : vert beige ocre, trop terne pour le vert menthe."
+ ],
+ "limites": [
+  "Registre RHS : après environ 140 requêtes, le serveur ne renvoie plus de résultats (blocage temporaire, reprise brève puis nouveau blocage) ; 33 entrées grex sur 58 gardées sont confirmées avec fiche, les autres sont marquées « non vérifié ».",
+  "Commons : photos surtout de D. J. Stang (jardins botaniques, étiquettes des jardins, erreurs possibles), de Larsen (producteur danois) et de Kew ; peu de photos de fleurs coupées.",
+  "Couleurs non mesurées dans ce passage : fleur-coloris les mesure sur les photos désignées."
+ ],
+ "sondage": {
+  "date": "2026-10-17",
+  "methode": "8 pages Commons ouvertes (WebFetch) : titre, auteur, licence, nom",
+  "fiches": [
+   {
+    "photo": "Cymbidium Winter Glory Winter White 0zz",
+    "resultat": "ok : D. J. Stang, CC BY-SA 4.0, US Botanic Garden, grex Winter Glory clone 'Winter White'"
+   },
+   {
+    "photo": "Cymbidium Persuasive Miss Black Eyes 1zz",
+    "resultat": "ok : Stang, CC BY-SA 4.0, page dit grex Persuasive clone 'Black Eyes' ; RHS donne « Persuasive Miss » (P. Gomes 1992) : écart à régler"
+   },
+   {
+    "photo": "Cymbidium Mount Everest Heidi 0zz",
+    "resultat": "ok : Stang, CC BY-SA 4.0, Hillwood Gardens"
+   },
+   {
+    "photo": "Cymbidium 'Loch Coruisk' - 1",
+    "resultat": "ok : Emőke Dénes, Kew ; licence CC BY-SA 4.0 en résumé mais 2.5 dans la section licence (incohérence de la page)"
+   },
+   {
+    "photo": "Larsen Valley Regent Reggae DSCN4671",
+    "resultat": "ok : Larsen, CC BY-SA 2.5 dk"
+   },
+   {
+    "photo": "Cymbidium Pine Clash 'Moon Venus'1",
+    "resultat": "ok : KENPEI, CC BY 3.0 ou GFDL, Osaka"
+   },
+   {
+    "photo": "Cymbidium Gareth Rosemont 0zz",
+    "resultat": "ok : Stang, grex Gareth clone 'Rosemont'"
+   },
+   {
+    "photo": "Cymbidium Showgirl Kate Hepburn 0zz",
+    "resultat": "ok : Stang, nom entre apostrophes sans séparer grex et clone"
+   }
+  ]
+ },
+ "late": [
+  {
+   "id": "late:14",
+   "nom_generique": "vert olive",
+   "grex": "Peter Pan",
+   "niveau_preuve": "C",
+   "photos": [
+    {
+     "cand_coloris_cache": 77,
+     "grex": "Peter Pan",
+     "page": "https://commons.wikimedia.org/wiki/File:A_and_B_Larsen_orchids_-_Cymbidium_Peter_Pan_227-2.jpg",
+     "auteur": "Arne and Bent Larsen",
+     "licence": "CC BY-SA 2.5 dk"
+    }
+   ],
+   "remarque": "une seule photo (Larsen) ; labelle creme a taches brunes",
+   "mesures": {
+    "photos_mesurees": [
+     77
+    ],
+    "zones": {
+     "sep": {
+      "zone": "sepale dorsal/haut",
+      "valeur_retenue": "#615f36",
+      "LCh": [
+       40,
+       24,
+       104
+      ],
+      "photos": {
+       "77": "#615f36"
+      },
+      "dE_max_entre_photos": 0
+     },
+     "pet": {
+      "zone": "petale corps",
+      "valeur_retenue": "#93a658",
+      "LCh": [
+       65,
+       43,
+       117
+      ],
+      "photos": {
+       "77": "#93a658"
+      },
+      "dE_max_entre_photos": 0
+     },
+     "pet2": {
+      "zone": "petale (autre lobe/teinte)",
+      "valeur_retenue": "#959747",
+      "LCh": [
+       61,
+       43,
+       106
+      ],
+      "photos": {
+       "77": "#959747"
+      },
+      "dE_max_entre_photos": 0
+     },
+     "sep2": {
+      "zone": "sepale lateral/bas",
+      "valeur_retenue": "#6d8540",
+      "LCh": [
+       52,
+       40,
+       121
+      ],
+      "photos": {
+       "77": "#6d8540"
+      },
+      "dE_max_entre_photos": 0
+     },
+     "sep3": {
+      "zone": "sepale (3e)",
+      "valeur_retenue": "#727d3b",
+      "LCh": [
+       50,
+       37,
+       113
+      ],
+      "photos": {
+       "77": "#727d3b"
+      },
+      "dE_max_entre_photos": 0
+     },
+     "lm": {
+      "zone": "labelle (lobe median)",
+      "valeur_retenue": "#826946",
+      "LCh": [
+       46,
+       24,
+       78
+      ],
+      "photos": {
+       "77": "#826946"
+      },
+      "dE_max_entre_photos": 0
+     },
+     "col": {
+      "zone": "colonne",
+      "valeur_retenue": "#e8cd65",
+      "LCh": [
+       83,
+       54,
+       93
+      ],
+      "photos": {
+       "77": "#e8cd65"
+      },
+      "dE_max_entre_photos": 0
+     }
+    }
+   }
+  },
+  {
+   "id": "late:13",
+   "nom_generique": "fuchsia",
+   "grex": "Rolf Bolin 'Red Velvet'",
+   "niveau_preuve": "C",
+   "photos": [
+    {
+     "cand_coloris_cache": 61,
+     "grex": "Rolf Bolin 'Red Velvet'",
+     "page": "https://commons.wikimedia.org/wiki/File:A_and_B_Larsen_orchids_-_Cymbidium_Rolf_Bolin_Red_Velvet_DSCN4704.JPG",
+     "auteur": "Arne and Bent Larsen, Haarby, Denmark",
+     "licence": "CC BY-SA 2.5 dk"
+    },
+    {
+     "cand_coloris_cache": 78,
+     "grex": "Rolf Bolin 'Red Velvet'",
+     "page": "https://commons.wikimedia.org/wiki/File:A_and_B_Larsen_orchids_-_Cymbidium_Rolf_Bolin_Red_Velvet_DSCN4712.JPG",
+     "auteur": "Arne and Bent Larsen",
+     "licence": "CC BY-SA 2.5 dk"
+    }
+   ],
+   "remarque": "deux photos du meme auteur (Larsen) ; fuchsia a lisere blanc ; labelle bordeaux sombre",
+   "mesures": {
+    "photos_mesurees": [
+     61,
+     78
+    ],
+    "zones": {
+     "pet": {
+      "zone": "petale corps",
+      "valeur_retenue": "#dd4e79",
+      "LCh": [
+       54,
+       59,
+       6
+      ],
+      "photos": {
+       "61": "#dc6188",
+       "78": "#de3a6a"
+      },
+      "dE_max_entre_photos": 17.4
+     },
+     "pet2": {
+      "zone": "petale (autre lobe/teinte)",
+      "valeur_retenue": "#d4507a",
+      "LCh": [
+       53,
+       56,
+       4
+      ],
+      "photos": {
+       "61": "#d44d77",
+       "78": "#d5547d"
+      },
+      "dE_max_entre_photos": 2.9
+     },
+     "sep": {
+      "zone": "sepale dorsal/haut",
+      "valeur_retenue": "#bb193e",
+      "LCh": [
+       41,
+       66,
+       20
+      ],
+      "photos": {
+       "61": "#bb193e"
+      },
+      "dE_max_entre_photos": 0
+     },
+     "sep2": {
+      "zone": "sepale lateral/bas",
+      "valeur_retenue": "#9a1c42",
+      "LCh": [
+       34,
+       53,
+       12
+      ],
+      "photos": {
+       "61": "#b63357",
+       "78": "#7e062d"
+      },
+      "dE_max_entre_photos": 18.2
+     },
+     "lm": {
+      "zone": "labelle (lobe median)",
+      "valeur_retenue": "#750214",
+      "LCh": [
+       23,
+       52,
+       30
+      ],
+      "photos": {
+       "61": "#6e010f",
+       "78": "#7c031a"
+      },
+      "dE_max_entre_photos": 5.6
+     }
+    }
+   }
+  },
+  {
+   "id": "late:14",
+   "nom_generique": "brun cafe au lait, veine",
+   "grex": "Cafe Au Lait",
+   "niveau_preuve": "C",
+   "photos": [
+    {
+     "cand_coloris_cache": 79,
+     "grex": "Cafe Au Lait",
+     "page": "https://commons.wikimedia.org/wiki/File:Cymbidium_Cafe_Au_Lait_0zz.jpg",
+     "auteur": "Photo by David J. Stang",
+     "licence": "CC BY-SA 4.0"
+    },
+    {
+     "cand_coloris_cache": 80,
+     "grex": "Cafe Au Lait",
+     "page": "https://commons.wikimedia.org/wiki/File:Cymbidium_Cafe_Au_Lait_1zz.jpg",
+     "auteur": "Photo by David J. Stang",
+     "licence": "CC BY-SA 4.0"
+    },
+    {
+     "cand_coloris_cache": 81,
+     "grex": "Cafe Au Lait",
+     "page": "https://commons.wikimedia.org/wiki/File:Cymbidium_Cafe_Au_Lait_2zz.jpg",
+     "auteur": "Photo by David J. Stang",
+     "licence": "CC BY-SA 4.0"
+    }
+   ],
+   "remarque": "trois photos du meme auteur (Stang) ; petales brun rose veines, labelle blanc rose pique de bordeaux",
+   "mesures": {
+    "photos_mesurees": [
+     79,
+     80,
+     81
+    ],
+    "zones": {
+     "sep": {
+      "zone": "sepale dorsal/haut",
+      "valeur_retenue": "#bb9388",
+      "LCh": [
+       64,
+       18,
+       41
+      ],
+      "photos": {
+       "79": "#c8a294",
+       "80": "#b68f7f",
+       "81": "#bb9388"
+      },
+      "dE_max_entre_photos": 7.2
+     },
+     "sep2": {
+      "zone": "sepale lateral/bas",
+      "valeur_retenue": "#9c7b60",
+      "LCh": [
+       54,
+       22,
+       66
+      ],
+      "photos": {
+       "79": "#9c7b60"
+      },
+      "dE_max_entre_photos": 0
+     },
+     "lm": {
+      "zone": "labelle (lobe median)",
+      "valeur_retenue": "#d4b49d",
+      "LCh": [
+       75,
+       18,
+       63
+      ],
+      "photos": {
+       "79": "#e8c2be",
+       "80": "#d09a92",
+       "81": "#d4b49d"
+      },
+      "dE_max_entre_photos": 15.3
+     },
+     "col": {
+      "zone": "colonne",
+      "valeur_retenue": "#eff4bb",
+      "LCh": [
+       95,
+       29,
+       112
+      ],
+      "photos": {
+       "79": "#f6fac0",
+       "80": "#e8edb6"
+      },
+      "dE_max_entre_photos": 4.7
+     },
+     "pet": {
+      "zone": "petale corps",
+      "valeur_retenue": "#bd927e",
+      "LCh": [
+       64,
+       21,
+       52
+      ],
+      "photos": {
+       "80": "#bd9e90",
+       "81": "#bd866d"
+      },
+      "dE_max_entre_photos": 15.0
+     },
+     "pet2": {
+      "zone": "petale (autre lobe/teinte)",
+      "valeur_retenue": "#c4a38d",
+      "LCh": [
+       69,
+       18,
+       61
+      ],
+      "photos": {
+       "80": "#c4a38d"
+      },
+      "dE_max_entre_photos": 0
+     }
+    }
+   }
+  },
+  {
+   "id": "late:15",
+   "nom_generique": "vert chartreuse a labelle blanc pique rouge",
+   "grex": "Debbie Adams",
+   "niveau_preuve": "C",
+   "photos": [
+    {
+     "cand_coloris_cache": 82,
+     "grex": "Debbie Adams",
+     "page": "https://commons.wikimedia.org/wiki/File:Cymbidium_Debbie_Adams_0zz.jpg",
+     "auteur": "Photo by David J. Stang",
+     "licence": "CC BY-SA 4.0"
+    },
+    {
+     "cand_coloris_cache": 83,
+     "grex": "Debbie Adams",
+     "page": "https://commons.wikimedia.org/wiki/File:Cymbidium_Debbie_Adams_1zz.jpg",
+     "auteur": "Photo by David J. Stang",
+     "licence": "CC BY-SA 4.0"
+    },
+    {
+     "cand_coloris_cache": 84,
+     "grex": "Debbie Adams",
+     "page": "https://commons.wikimedia.org/wiki/File:Cymbidium_Debbie_Adams_2zz.jpg",
+     "auteur": "Photo by David J. Stang",
+     "licence": "CC BY-SA 4.0"
+    }
+   ],
+   "remarque": "trois photos du meme auteur (Stang), 83 ombree",
+   "mesures": {
+    "photos_mesurees": [
+     82,
+     83,
+     84
+    ],
+    "zones": {
+     "sep": {
+      "zone": "sepale dorsal/haut",
+      "valeur_retenue": "#a9a625",
+      "LCh": [
+       66,
+       63,
+       102
+      ],
+      "photos": {
+       "82": "#c9cf6f",
+       "83": "#7b761c",
+       "84": "#a9a625"
+      },
+      "dE_max_entre_photos": 33.0
+     },
+     "pet": {
+      "zone": "petale corps",
+      "valeur_retenue": "#aaa445",
+      "LCh": [
+       66,
+       50,
+       102
+      ],
+      "photos": {
+       "82": "#c8d164",
+       "83": "#959845",
+       "84": "#aaa440"
+      },
+      "dE_max_entre_photos": 23.0
+     },
+     "sep2": {
+      "zone": "sepale lateral/bas",
+      "valeur_retenue": "#b8b759",
+      "LCh": [
+       73,
+       49,
+       105
+      ],
+      "photos": {
+       "82": "#b8bb3f",
+       "83": "#a7a859",
+       "84": "#cbb75c"
+      },
+      "dE_max_entre_photos": 20.9
+     },
+     "lm": {
+      "zone": "labelle (lobe median)",
+      "valeur_retenue": "#e3b8b8",
+      "LCh": [
+       79,
+       17,
+       21
+      ],
+      "photos": {
+       "82": "#eac1c7",
+       "84": "#dcb0aa"
+      },
+      "dE_max_entre_photos": 9.1
+     },
+     "col": {
+      "zone": "colonne",
+      "valeur_retenue": "#eaf6ac",
+      "LCh": [
+       94,
+       38,
+       114
+      ],
+      "photos": {
+       "82": "#e8fdb9",
+       "84": "#ebf09e"
+      },
+      "dE_max_entre_photos": 10.3
+     }
+    }
+   }
+  },
+  {
+   "id": "late:16",
+   "nom_generique": "vert tendre a labelle bordeaux",
+   "grex": "Drusilla Pearl and Shirley",
+   "niveau_preuve": "C",
+   "photos": [
+    {
+     "cand_coloris_cache": 85,
+     "grex": "Drusilla Pearl and Shirley",
+     "page": "https://commons.wikimedia.org/wiki/File:Cymbidium_Drusilla_Pearl_and_Shirley_0zz.jpg",
+     "auteur": "Photo by David J. Stang",
+     "licence": "CC BY-SA 4.0"
+    }
+   ],
+   "remarque": "une seule photo (fleur mi-ouverte, labelle bordeaux liseré jaune) ; la 2e photo est un bouton",
+   "mesures": {
+    "photos_mesurees": [
+     85
+    ],
+    "zones": {
+     "pet": {
+      "zone": "petale corps",
+      "valeur_retenue": "#a8a461",
+      "LCh": [
+       66,
+       36,
+       104
+      ],
+      "photos": {
+       "85": "#a8a461"
+      },
+      "dE_max_entre_photos": 0
+     },
+     "pet2": {
+      "zone": "petale (autre lobe/teinte)",
+      "valeur_retenue": "#ac9a3c",
+      "LCh": [
+       64,
+       50,
+       95
+      ],
+      "photos": {
+       "85": "#ac9a3c"
+      },
+      "dE_max_entre_photos": 0
+     },
+     "sep": {
+      "zone": "sepale dorsal/haut",
+      "valeur_retenue": "#e6deb9",
+      "LCh": [
+       88,
+       19,
+       99
+      ],
+      "photos": {
+       "85": "#e6deb9"
+      },
+      "dE_max_entre_photos": 0
+     },
+     "lm": {
+      "zone": "labelle (lobe median)",
+      "valeur_retenue": "#421305",
+      "LCh": [
+       13,
+       29,
+       40
+      ],
+      "photos": {
+       "85": "#421305"
+      },
+      "dE_max_entre_photos": 0
+     }
+    }
+   }
+  },
+  {
+   "id": "late:19",
+   "nom_generique": "jaune moutarde a labelle rose rouge",
+   "grex": "Cameliard French Mustard",
+   "niveau_preuve": "C",
+   "photos": [
+    {
+     "cand_coloris_cache": 93,
+     "grex": "Cameliard French Mustard",
+     "page": "https://commons.wikimedia.org/wiki/File:Cymbidium_Cameliard_French_Mustard_0zz.jpg",
+     "auteur": "Photo by David J. Stang",
+     "licence": "CC BY-SA 4.0"
+    },
+    {
+     "cand_coloris_cache": 95,
+     "grex": "Cameliard French Mustard",
+     "page": "https://commons.wikimedia.org/wiki/File:Cymbidium_Cameliard_French_Mustard_4zz.jpg",
+     "auteur": "Photo by David J. Stang",
+     "licence": "CC BY-SA 4.0"
+    }
+   ],
+   "remarque": "deux photos (Stang) avec labelle de ton different (rose pale / rose rouge) : ecart de lumiere ou de maturite",
+   "mesures": {
+    "photos_mesurees": [
+     93,
+     95
+    ],
+    "zones": {
+     "sep": {
+      "zone": "sepale dorsal/haut",
+      "valeur_retenue": "#9f8947",
+      "LCh": [
+       58,
+       38,
+       90
+      ],
+      "photos": {
+       "93": "#b3a35f",
+       "95": "#8b6f2f"
+      },
+      "dE_max_entre_photos": 20.0
+     },
+     "pet": {
+      "zone": "petale corps",
+      "valeur_retenue": "#cccf8a",
+      "LCh": [
+       81,
+       36,
+       109
+      ],
+      "photos": {
+       "93": "#e2e7c5",
+       "95": "#b6b74f"
+      },
+      "dE_max_entre_photos": 40.5
+     },
+     "sep2": {
+      "zone": "sepale lateral/bas",
+      "valeur_retenue": "#bba480",
+      "LCh": [
+       69,
+       22,
+       82
+      ],
+      "photos": {
+       "93": "#a68e7d",
+       "95": "#d0b983"
+      },
+      "dE_max_entre_photos": 24.3
+     },
+     "lm": {
+      "zone": "labelle (lobe median)",
+      "valeur_retenue": "#d98398",
+      "LCh": [
+       64,
+       36,
+       5
+      ],
+      "photos": {
+       "93": "#dbaac4",
+       "95": "#d75c6b"
+      },
+      "dE_max_entre_photos": 40.5
+     },
+     "col": {
+      "zone": "colonne",
+      "valeur_retenue": "#f8f69e",
+      "LCh": [
+       95,
+       44,
+       106
+      ],
+      "photos": {
+       "93": "#fcfac6",
+       "95": "#f3f276"
+      },
+      "dE_max_entre_photos": 35.1
+     },
+     "pet2": {
+      "zone": "petale (autre lobe/teinte)",
+      "valeur_retenue": "#a18b2d",
+      "LCh": [
+       58,
+       51,
+       93
+      ],
+      "photos": {
+       "95": "#a18b2d"
+      },
+      "dE_max_entre_photos": 0
+     }
+    }
+   }
+  }
+ ]
+}

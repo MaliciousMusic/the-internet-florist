@@ -18,7 +18,7 @@ const CW_CYMB=[
  {id:'brun',n:'Brun',c:'#7e4a30',vein:'#5e321e',lip:'#f0dcc4',dots:'#5a1410',cal:'#f0b838',col:'#946048'},
  {id:'noir',n:'Pourpre noir',c:'#3e1424',vein:'#2a0814',lip:'#e6c4cc',dots:'#2a0410',cal:'#eeb438',col:'#5a2638'}];
 const CY_TEP=prof([[0,.36],[.14,.7],[.4,.96],[.62,1],[.8,.86],[.93,.55],[1,.16]]),CY_LIP=prof([[0,.42],[.25,.78],[.55,1],[.78,.92],[.92,.6],[1,.2]]),CY_SIDE=prof([[0,.6],[.35,1],[.75,.85],[1,.3]]);
-function cymbFlower(par,B,O,D,cw,op,t){const F={k:G(par),B,O,parts:[],so:.2,sd:null},Pc=pal7(cw.c),PcB=pal7(mix(shd(cw.c,.08),'#d8d8b8',.15)),Pl=pal7(cw.lip),o2=sm01((op-.25)/.75),A=a=>a*(.45+.55*o2),r=D/2;
+function cymbFlower(par,B,O,D,cw,op,t){if(SV_ON&&typeof cymbSvPut==='function'&&CW_CYMB.indexOf(cw)>=0)return cymbSvPut(par,B,O,D,cw,op);const F={k:G(par),B,O,parts:[],so:.2,sd:null},Pc=pal7(cw.c),PcB=pal7(mix(shd(cw.c,.08),'#d8d8b8',.15)),Pl=pal7(cw.lip),o2=sm01((op-.25)/.75),A=a=>a*(.45+.55*o2),r=D/2;
   /* waxy tepal: a central flush, fine parallel veins, a soft waxy sheen */
   const deco=S=>(g,front,X)=>{if(!front||LOD)return;
     if(cw.flush)E('path',{d:X.d,fill:ugrad(...PJ3(F,S(0,.05)).slice(0,2),...PJ3(F,S(0,.9)).slice(0,2),[[0,cw.flush,.8],[.6,cw.flush,.35],[1,cw.flush,0]])},g);
@@ -47,7 +47,7 @@ function cymbFlower(par,B,O,D,cw,op,t){const F={k:G(par),B,O,parts:[],so:.2,sd:n
   const pd=[[0,0,-D*.02],[0,-D*.03,-D*.1],[0,-D*.05,-D*.18]];F.parts.push(tube3(F,pd,D*.026,{cols:[mix(cw.c,'#9ab07a',.5),'#8aa06a'],cap:0,hl:.3,dk:.4,spec:.2,ink:'#3a4a2a',eo:.3,cast:0,zb:-D*.05}));
   render3(F,D*.5);return F}
 /* the spike: upright and gently arching, flowers facing out on short pedicels, round buds at the top */
-function x3CymbSpray2(g,t,o){const cw=o.cw||cwNear(CW_CYMB,o.col)||CW_CYMB[0],op=Math.max(.05,Math.min(1,o.op??1)),D=(o.cm||9)*UPC,k=G(g),Bc=frameOf(o,.25,true),r=D/2,sd=o.side??(rnd()<.5?-1:1);
+function x3CymbSpray2(g,t,o){const cw=o.cw||cwNear(CW_CYMB.filter(x=>!x.late),o.col)||CW_CYMB[0],op=Math.max(.05,Math.min(1,o.op??1)),D=(o.cm||9)*UPC,k=G(g),Bc=frameOf(o,.25,true),r=D/2,sd=o.side??(rnd()<.5?-1:1);
   const nf=o.nf||(op<.3?0:op<.7?2:4),nb=op<.3?5:2;
   const C=[fitDown(Bc,[-sd*r*.2,-r*1.7,-r*.4],.3),[-sd*r*.15,-r*.5,-r*.35],[sd*r*.05,r*.7,-r*.35],[sd*r*.4,r*1.65,-r*.45]],cb=q=>{const a=(1-q)**3,b=3*(1-q)**2*q,c=3*(1-q)*q*q,d=q**3;return[0,1,2].map(i=>a*C[0][i]+b*C[1][i]+c*C[2][i]+d*C[3][i])};
   const items=[],stem=[];for(let i=0;i<=14;i++)stem.push(cb(i/14));
