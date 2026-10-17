@@ -1244,3 +1244,108 @@ Le lilas est la première sorte passée de bout en bout par le pipeline (`fleur/
 
 - Fusion du chantier `ch/lilas` dans l'atelier ; `mkapp.sh`, `mkqa.sh` et `mkpl.sh` gardent leurs listes automatiques (`y-*.js`, `y3-*.js`) : `y-syringa.js` et `y3-panicule.js` y entrent sans inscription. `y1.js` reçoit le crochet `sv.post` (marques de surface propres à une sorte, par exemple les lenticelles d'une tige ligneuse).
 - Pas de nouveau coloris, donc pas de vague `late:N` : tous les SKU déjà publiés restent identiques et dans l'ordre.
+
+
+## Gerbera × hybrida (gerbera, sid gerbera) : capitule en SVG natif, chantier ch/capitules, 17 octobre 2026
+
+Pièce générique `app/y3-capitule.js` (rangs de ligules, couronne, disque, involucre, réceptacle, bouton, fané) et fiche `app/y-gerbera.js`
+(formes simple, semi, double, spider ; `grbWiltCol` ; cou qui plie au fané sur les planches). Planche : `gerbera-sku-v1.png` (20 coloris,
+stades bouton, demi-ouvert, ouvert, fané .6 et .9, de face). Aucune photo de tiers n'est publiée ; 137 (iNaturalist, tous droits réservés) reste une
+garde privée.
+
+### Sources (`refs.py list gerbera`, `refcache/gerbera/keep.json`)
+
+- 14 : [Dahlia Flower 5.jpg](https://commons.wikimedia.org/wiki/File:Dahlia_Flower_5.jpg) (Durga_bhat_bollurodi, CC BY 3.0) ; vue:face, stade:ouverte, coloris:rose-pale, organe:pointes
+- 15 : [Dead Gerbera (2931429907).jpg](https://commons.wikimedia.org/wiki/File:Dead_Gerbera_(2931429907).jpg) (Anderson Mancini from Sao Paulo, Brazil, CC BY 2.0) ; stade:fane, vue:face, organe:tete
+- 22 : [Flor cor vermelha.jpg](https://commons.wikimedia.org/wiki/File:Flor_cor_vermelha.jpg) (Debora Sabine, CC BY-SA 4.0) ; vue:dos, organe:involucre, coloris:rouge
+- 25 : [Flower 2 (25936794514).jpg](https://commons.wikimedia.org/wiki/File:Flower_2_(25936794514).jpg) (Rodrigo Paredes from Ciudad Autónoma de Buenos Aires, Argentina, CC BY 2.0) ; vue:profil, organe:tige, coloris:nb
+- 29 : [Flower bud glisten with dew.jpg](https://commons.wikimedia.org/wiki/File:Flower_bud_glisten_with_dew.jpg) (Athirashijinair, CC BY-SA 4.0) ; stade:bouton, vue:profil, organe:bouton
+- 41 : [Gerber Daisies (512177035).jpg](https://commons.wikimedia.org/wiki/File:Gerber_Daisies_(512177035).jpg) (Audrey from Central Pennsylvania, USA, CC BY 2.0) ; vue:dos, organe:involucre, coloris:rose-pale
+- 46 : [Gerbera (94736029).jpeg](https://commons.wikimedia.org/wiki/File:Gerbera_(94736029).jpeg) (Nanny Henne, CC BY-SA 3.0) ; type:double, vue:face, organe:rangs, coloris:orange
+- 47 : [Gerbera (Transvaal daisy) D35 5959 01.jpg](https://commons.wikimedia.org/wiki/File:Gerbera_(Transvaal_daisy)_D35_5959_01.jpg) (Adarsh Patel, CC BY-SA 4.0) ; type:spider, vue:face, coloris:blanc
+- 48 : [Gerbera - 2024.03.19.jpg](https://commons.wikimedia.org/wiki/File:Gerbera_-_2024.03.19.jpg) (Aw58, CC BY-SA 4.0) ; vue:face, coloris:saumon
+- 56 : [Gerbera flower at Bharat Bhavan garden.jpg](https://commons.wikimedia.org/wiki/File:Gerbera_flower_at_Bharat_Bhavan_garden.jpg) (Suyash Dwivedi, CC BY-SA 4.0) ; type:spider, vue:face, coloris:rose
+- 63 : [African Daisy - 22800206616.jpg](https://commons.wikimedia.org/wiki/File:African_Daisy_-_22800206616.jpg) (Anup Shah, CC BY-SA 2.0) ; type:semi-double, vue:face, coloris:rouge
+- 66 : [Barberton Daisy (2077215021).jpg](https://commons.wikimedia.org/wiki/File:Barberton_Daisy_(2077215021).jpg) (Dinesh Valke from Thane, India, CC BY-SA 2.0) ; vue:face, coloris:jaune
+- 70 : [Barberton Daisy (Gerbera jamesonii) (32805728530).jpg](https://commons.wikimedia.org/wiki/File:Barberton_Daisy_(Gerbera_jamesonii)_(32805728530).jpg) (Bernard DUPONT from FRANCE, CC BY-SA 2.0) ; stade:fane, vue:profil, organe:cou, coloris:orange
+- 74 : [Barberton Daisy.jpg](https://commons.wikimedia.org/wiki/File:Barberton_Daisy.jpg) (Ankurpandey2115, CC BY 4.0) ; type:double, vue:face, coloris:bordeaux
+- 79 : [Barbeton daisy (6177170186).jpg](https://commons.wikimedia.org/wiki/File:Barbeton_daisy_(6177170186).jpg) (grace_kat, CC BY-SA 2.0) ; vue:face, coloris:fuchsia
+- 92 : [Gerbera jamesonii (372150683).jpg](https://commons.wikimedia.org/wiki/File:Gerbera_jamesonii_(372150683).jpg) (Dinesh Valke from Thane, India, CC BY-SA 2.0) ; organe:feuille, coloris:jaune
+- 101 : [Gerbera jamesonii 1.jpg](https://commons.wikimedia.org/wiki/File:Gerbera_jamesonii_1.jpg) (Franz Xaver, CC BY-SA 4.0) ; type:spider, vue:3/4, organe:tige, coloris:rouge
+- 105 : [Gerbera jamesonii 1DS-II 1-1114.jpg](https://commons.wikimedia.org/wiki/File:Gerbera_jamesonii_1DS-II_1-1114.jpg) (SAplants, CC BY-SA 4.0) ; vue:face, organe:disque, coloris:orange
+- 107 : [Gerbera jamesonii 1DS-II 1-7275.jpg](https://commons.wikimedia.org/wiki/File:Gerbera_jamesonii_1DS-II_1-7275.jpg) (SAplants, CC BY-SA 4.0) ; vue:face, organe:disque, coloris:rouge
+- 110 : [Gerbera jamesonii 3.jpg](https://commons.wikimedia.org/wiki/File:Gerbera_jamesonii_3.jpg) (Franz Xaver, CC BY-SA 4.0) ; type:spider, stade:ouverte, vue:profil, organe:tige, coloris:rouge
+- 121 : [Bajouca, Portugal (5050987015).jpg](https://commons.wikimedia.org/wiki/File:Bajouca,_Portugal_(5050987015).jpg) (Rosino, CC BY-SA 2.0) ; stade:fane, vue:face, organe:cou, coloris:creme
+- 124 : [iNat 47108238 Gerbera viridifolia cc-by](https://www.inaturalist.org/observations/47108238) (, tiers (mesure locale)) ; stade:ouverte, vue:trois-quarts, organe:involucre, coloris:blanc
+- 132 : [iNat 145202139 Gerbera viridifolia cc-by-sa](https://www.inaturalist.org/observations/145202139) (, tiers (mesure locale)) ; organe:feuille, vue:dessus
+- 133 : [iNat 158297487 Gerbera cc-by](https://www.inaturalist.org/observations/158297487) (, tiers (mesure locale)) ; stade:bouton, vue:face, organe:bouton
+- 137 : [iNat 289728043 Gerbera jamesonii ](https://www.inaturalist.org/observations/289728043) (, tiers (mesure locale)) ; stade:fane, vue:sol, organe:tige, coloris:rose
+- 144 : [Freaky red double-gerbera.jpg](https://commons.wikimedia.org/wiki/File:Freaky_red_double-gerbera.jpg) (Dave Henderson, CC BY 2.0) ; type:double, stade:ouverte, vue:face, coloris:rouge, organe:rangs
+- 146 : [Gerbera (457317263).jpg](https://commons.wikimedia.org/wiki/File:Gerbera_(457317263).jpg) (Dinesh Valke from Thane, India, CC BY-SA 2.0) ; stade:ouverte, vue:trois-quarts, organe:tige
+- 148 : [Gerbera cv. (red) 05.JPG](https://commons.wikimedia.org/wiki/File:Gerbera_cv._(red)_05.JPG) (Kor!An (Андрей Корзун), CC BY-SA 3.0) ; organe:feuille, organe:tige, coloris:rouge
+- 149 : [Gerbera double flower (42598368).jpg](https://commons.wikimedia.org/wiki/File:Gerbera_double_flower_(42598368).jpg) (Joey Van Amerongen, CC BY 3.0) ; type:double, stade:ouverte, vue:face, coloris:orange, organe:rangs
+- 151 : [Gerbera flower bud - DSC3946- (32548765597).jpg](https://commons.wikimedia.org/wiki/File:Gerbera_flower_bud_-_DSC3946-_(32548765597).jpg) (SHANTANU DUTTA from Kolkata, INDIA, CC BY-SA 2.0) ; stade:bouton, vue:profil, organe:bouton, organe:tige
+- 156 : [Gerbera rosa.jpg](https://commons.wikimedia.org/wiki/File:Gerbera_rosa.jpg) (Heikey, CC BY-SA 2.5) ; stade:ouverte, vue:face, coloris:rose, organe:disque
+- 160 : [Close-ups of Gerbera flowers 01.jpg](https://commons.wikimedia.org/wiki/File:Close-ups_of_Gerbera_flowers_01.jpg) (RamaGaspar, CC BY-SA 4.0) ; stade:ouverte, vue:face, coloris:rouge, organe:disque
+- 163 : [Close-ups of Gerbera flowers 07.jpg](https://commons.wikimedia.org/wiki/File:Close-ups_of_Gerbera_flowers_07.jpg) (RamaGaspar, CC BY-SA 4.0) ; stade:ouverte, vue:face, coloris:rouge, organe:disque, type:double
+- 165 : [Gerbera Israel 2024.jpg](https://commons.wikimedia.org/wiki/File:Gerbera_Israel_2024.jpg) (Laliv g, CC BY-SA 4.0) ; organe:botte, vue:face, coloris:rose
+- 166 : [Gerbera bloom closeup.jpg](https://commons.wikimedia.org/wiki/File:Gerbera_bloom_closeup.jpg) (fir0002  flagstaffotos [at] gmail.com
+		Canon 20D + Sigma 15, GFDL 1.2) ; stade:ouverte, vue:face, coloris:creme, organe:disque
+- 168 : [Gerbera cv. (red) 04.JPG](https://commons.wikimedia.org/wiki/File:Gerbera_cv._(red)_04.JPG) (Kor!An (Андрей Корзун), CC BY-SA 3.0) ; stade:ouverte, vue:face, coloris:rouge, organe:disque
+- 170 : [非洲菊 Gerbera Spider -香港公園 Hong Kong Park- (9190646035).jpg](https://commons.wikimedia.org/wiki/File:%E9%9D%9E%E6%B4%B2%E8%8F%8A_Gerbera_Spider_-%E9%A6%99%E6%B8%AF%E5%85%AC%E5%9C%92_Hong_Kong_Park-_(9190646035).jpg) (阿橋 HQ, CC BY-SA 2.0) ; type:double, stade:ouverte, vue:face, coloris:rose
+- 171 : [非洲菊 Gerbera Spider -香港公園 Hong Kong Park- (9204857907).jpg](https://commons.wikimedia.org/wiki/File:%E9%9D%9E%E6%B4%B2%E8%8F%8A_Gerbera_Spider_-%E9%A6%99%E6%B8%AF%E5%85%AC%E5%9C%92_Hong_Kong_Park-_(9204857907).jpg) (阿橋 HQ, CC BY-SA 2.0) ; type:spider, stade:ouverte, vue:face, coloris:rouge, organe:disque
+- 172 : [非洲菊 Gerbera Spider -香港公園 Hong Kong Park- (9216130060).jpg](https://commons.wikimedia.org/wiki/File:%E9%9D%9E%E6%B4%B2%E8%8F%8A_Gerbera_Spider_-%E9%A6%99%E6%B8%AF%E5%85%AC%E5%9C%92_Hong_Kong_Park-_(9216130060).jpg) (阿橋 HQ, CC BY-SA 2.0) ; type:spider, stade:ouverte, vue:face, coloris:creme
+- 173 : [非洲菊 Gerbera Spider -香港公園 Hong Kong Park- (9219902613).jpg](https://commons.wikimedia.org/wiki/File:%E9%9D%9E%E6%B4%B2%E8%8F%8A_Gerbera_Spider_-%E9%A6%99%E6%B8%AF%E5%85%AC%E5%9C%92_Hong_Kong_Park-_(9219902613).jpg) (阿橋 HQ, CC BY-SA 2.0) ; type:spider, stade:ouverte, vue:face, coloris:jaune
+
+### Mesures retenues (brief et coloris.md)
+
+- Capitule simple : ligules oblongues 4,5:1, pointe à 2-3 dents ; cœur (disque + couronne) 0,27 du diamètre ; bouton H/L 1,2 à 1,5 (151, rendu 1,34).
+- Double : 4 à 5 rangs raccourcis vers le cœur, crête dense dressée (149, 163, 170) ; spider : ligules 6 à 8:1, roulées, tordues, 4 à 6 rangs (171-173).
+- Hampe nue, creuse, duvet clair ; largeur mesurée sur 146 : 0,05 de la tête (rendu 0,06 au cou, 0,07 au pied), coupe nette.
+- Fané : crème vers abricot passé `#cdaa7f` (121), roses qui gardent leur teinte (137), puis brun-paille sec (15) ; le cou plie, la tête pend (70, 137).
+
+### Budget et contrôles
+
+- DET 1 (D 110) : simple 103 éléments / 27 Ko ; semi 134 / 32 ; double 251 / 44 ; spider 116 / 29 (cible 300 / 50).
+- Anémone à 0,00 % contre `base_v2.png` ; `rtest` élargi (simple, double-rose, double-orange, spider) : 10 IDENTIQUE sur 10.
+- Couleurs : les coloris gardent encore les teintes de `L27_CW_GERB` ; `GRB_MAT` sera rempli par fleur-finition depuis `coloris.md`.
+
+## Germini (gerbera mini, Gerbera × hybrida à petites têtes, sid germini) : capitule en SVG natif, chantier ch/capitules, 17 octobre 2026
+
+Même pièce que le gerbera (`app/y3-capitule.js`) et même vie (`GRB_LIFE`, `grbWiltCol`, cou qui plie) ; fiche `app/y-germini.js` : seulement ce
+qui diffère du standard (formes `mini` et `mini-double`, involucre `GRM_INV`, bouton `GRM_LIFE`, matières `GRM_MAT`, hampe duveteuse).
+Planches : `germini-sku-v1.png` (22 coloris, op .3, .55, 1, fané .6 et .9, vue 3/4, D 80) et `germini-stades-v1.png` (rose, jaune, pompon ;
+bouton .06, .3, .38, ouvert, fané .6 et .9 ; profil et 3/4). Aucune photo de tiers n'est publiée : les vignettes des fournisseurs restent dans
+`refcache/germini/img` (privé).
+
+### Sources (`refcache/germini/brief.md`, `refs.py list germini`, `catalogue/serre/sources/germini.json`)
+
+- Commons, « Flori Line Mini » (Hong Kong Park, CC BY-SA 2.0) : 94, 95 (Mini Double rose), 96 (Mini Double jaune), 97 et 98 (Zwart Hart) ; seule
+  série où le titre atteste « mini ».
+- Commons, Ks.mini (CC BY-SA 3.0) : 82, 83, 86, 88, 89 (taille non établie) ; « Backwards » (aussiegall, CC BY 2.0) : 112, dos, bractées et cou
+  poilu ; « Gerbera flower bud » (SHANTANU DUTTA, CC BY-SA 2.0) : 115, bouton.
+- Fournisseurs (tiers, mesure locale) : Thursd Oudijk Exclusive Mix (102, 104), Thursd Gerbera Mini Bizar (105, 106, 107), Danziger Genki (108) ;
+  fiches Danziger Petiwaei (tête 5 à 6 cm, tige 50 à 55 cm) et Microwhite (7 à 9 cm).
+- Coloris : 246 vignettes de variétés nommées (Coloured by Gerbera, Hilverda Florist), mesurées en médiane par coloris (`coloris.md`) ; formes
+  prouvées par `formes_preuves` (pompon : Terra Cupid, Panucci, Hades, Amando, Terra Maga).
+- Fané : aucune photo de mini fanée ; celles du gerbera standard valent (121, 70, 15, 137 de la section gerbera).
+
+### Mesures retenues
+
+- Tête 5 à 9 cm (taille de la recette, pas de la planche) ; 2 à 3 rangs de ligules étroites, arrondies, serrées sans trou (102, 105, 108) :
+  n 26/24/21, largeur .21/.2/.165 x R ; cœur (disque + couronne) environ un tiers du diamètre (83, 105, 108) : r .34 (gerbera .29).
+- Bouton : ovoïde pointu de bractées closes, H/L 1,67 fermé (29, 133 ≈ 2), 1,46 à 1,16 en s'ouvrant (115, 151 ≈ 1,0 à 1,3) ; largeur ≈ .22 de la
+  tête ouverte ; les pointes des ligules sortent en cône rose (115, 151).
+- Pompon (1030) : six rangs courts sur réceptacle bombé, jupe externe rabattue, rangs internes dressés autour d'un petit disque en cratère ;
+  profil H/L .58 (Panucci ≈ .65 à .7). Disque vert-jaune d'après le type (Terra Cupid #889220 au centre, #9b9e36 au bord, couronne ocre #be8849 ;
+  Panucci #ac8b32), et non la moyenne des photos du coloris (#723628, brun, prise sur d'autres formes).
+- Hampe nue, duveteuse, cou feutré sous la tête (112) ; largeur .06 de la tête.
+- Coloris : 1029 rouge à pointes jaunes (sept photos ; catalogue « orange à halo jaune ») ; 1018 beige crème ; niveau C : 1018, 1021, 1030.
+
+### Budget et contrôles
+
+- DET 1 (D 110, une tête de face 3/4) : mini 160 éléments / 38 Ko ; pompon 238 / 43 (cible 300 / 50). Gerbera, même mesure : simple 105 / 27 ;
+  double 245 / 43 ; spider 157 / 41.
+- Anémone à 0,00 % contre `base_v2.png` ; `rtest` 10 IDENTIQUE sur 10 pour le germini et pour le gerbera ; fané du gerbera inchangé par le
+  dernier tour (`grb_f1` contre `grb_f2` : 0,00 %).
+- Gerbera : `gerbera-sku-v1.png` refaite avec le fané commun (ligules molles qui pendent en jupe, `wGrav`) et les 26 coloris (20 + 6 late:9).
