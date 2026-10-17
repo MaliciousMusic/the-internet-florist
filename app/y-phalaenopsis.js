@@ -35,9 +35,9 @@ const PHAL_CW={
 /* the colourways added (late:14, after the waves of the other chantiers; appended at the end, no SKU number moves): the photographs' new
    cultivars of coloris.md (the bright red is already 1414, not doubled). Level C (1-2 photographs each): questions in etat.md */
 if(typeof CW_PHAL!=='undefined'&&!CW_PHAL.some(x=>x.id==='tigre'))CW_PHAL.push(
- {id:'tigre',n:'Tigré orange (Mambo)',c:'#d9b675',spots:'#b95833',lip:'#e8c87c',lip2:'#d8a050',cal:'#c86a30',dots:'#7a2a10',late:14},
- {id:'blanc-mouchete-rouge',n:'Blanc moucheté de rouge (Taiwan Glory)',c:'#f9f4f0',spots:'#85121b',lip:'#e0a898',lip2:'#b0624e',cal:'#c0402a',dots:'#6a0a10',late:14},
- {id:'grandes-levres',n:'Rose à grand labelle (Lipperose)',c:'#dd68ac',lip:'#fdead9',lip2:'#e6aaae',cal:'#b34435',dots:'#8a1a20',late:14});
+ {id:'tigre',n:'Tigré orange',c:'#d9b675',spots:'#b95833',lip:'#e8c87c',lip2:'#d8a050',cal:'#c86a30',dots:'#7a2a10',late:14},
+ {id:'blanc-mouchete-rouge',n:'Blanc moucheté de rouge',c:'#f9f4f0',spots:'#85121b',lip:'#e0a898',lip2:'#b0624e',cal:'#c0402a',dots:'#6a0a10',late:14},
+ {id:'grandes-levres',n:'Rose à grand labelle',c:'#dd68ac',lip:'#fdead9',lip2:'#e6aaae',cal:'#b34435',dots:'#8a1a20',late:14});
 const PHAL_MAT={};
 function phalMat(cwx){const id=cwx&&cwx.id;if(PHAL_MAT[id])return PHAL_MAT[id];const c=PHAL_CW[id]||{body:(cwx&&cwx.c)||'#f7f4ee',lip:(cwx&&cwx.lip)||'#c83070',side:(cwx&&cwx.lip2)||'#e05a8a',cal:'#f2c240',dot:'#8a1040'};
   const base=c.base||c.body,tip=c.tip||c.body,back=c.back||mix(c.body,'#ffffff',h2l(c.body)[2]>.8?.3:.12),l=h2l(c.body)[2],light=l>.8,

@@ -34,12 +34,12 @@ const CYMB_CW={
   'vert-labelle-bordeaux':{body:'#c4c078',base:'#bab468',tip:'#b8a648',sep:'#e6deb9',sepL:'#d8d0a4',lip:'#5a1a0a',side:'#6a2410',sideV:'#260101',dot:'#2a0402',n:61,cal:'#e0c040',col:'#e8e0b0',colDot:'#4a1008',lipB:'#c8a040',src:'late:14 C (Drusilla) : vert tendre, labelle bordeaux liseré jaune'},
   'moutarde':{body:'#cccf8a',base:'#c4c070',tip:'#b4a040',sep:'#bfa858',sepL:'#c8b48c',lip:'#d97a92',side:'#d88aa0',sideV:'#a84060',dot:'#b84a68',n:49,cal:'#f0d050',col:'#f8f69e',colDot:'#b84a68',src:'late:14 C (French Mustard) : jaune moutarde, labelle rose rouge'}};
 if(typeof CW_CYMB!=='undefined'&&!CW_CYMB.some(x=>x.id==='vert-olive'))CW_CYMB.push(
- {id:'vert-olive',n:'Vert olive (Peter Pan)',c:'#a8b864',lip:'#d0b07a',dots:'#5f4533',cal:'#e8cd65',col:'#ecd884',late:14},
- {id:'fuchsia',n:'Fuchsia à labelle bordeaux (Rolf Bolin)',c:'#dd4e79',lip:'#8a1424',dots:'#5a0010',cal:'#e8c040',col:'#e8b8c0',solid:1,late:14},
- {id:'cafe-au-lait',n:'Brun café au lait veiné (Cafe Au Lait)',c:'#bd927e',vein:'#94564e',lip:'#f0dcd8',dots:'#7e3642',cal:'#ecd070',col:'#eff2bb',late:14},
- {id:'chartreuse-picote',n:'Chartreuse à labelle picoté (Debbie Adams)',c:'#c4be52',lip:'#f2e4e4',dots:'#6e2f26',cal:'#ecd060',col:'#eaf2ac',late:14},
- {id:'vert-labelle-bordeaux',n:'Vert tendre à labelle bordeaux (Drusilla)',c:'#c4c078',lip:'#5a1a0a',dots:'#2a0402',cal:'#e0c040',col:'#e8e0b0',solid:1,late:14},
- {id:'moutarde',n:'Jaune moutarde à labelle rose (French Mustard)',c:'#cccf8a',lip:'#d97a92',dots:'#b84a68',cal:'#f0d050',col:'#f8f69e',late:14});
+ {id:'vert-olive',n:'Vert olive',c:'#a8b864',lip:'#d0b07a',dots:'#5f4533',cal:'#e8cd65',col:'#ecd884',late:14},
+ {id:'fuchsia',n:'Fuchsia à labelle bordeaux',c:'#dd4e79',lip:'#8a1424',dots:'#5a0010',cal:'#e8c040',col:'#e8b8c0',solid:1,late:14},
+ {id:'cafe-au-lait',n:'Brun café au lait veiné',c:'#bd927e',vein:'#94564e',lip:'#f0dcd8',dots:'#7e3642',cal:'#ecd070',col:'#eff2bb',late:14},
+ {id:'chartreuse-picote',n:'Chartreuse à labelle picoté',c:'#c4be52',lip:'#f2e4e4',dots:'#6e2f26',cal:'#ecd060',col:'#eaf2ac',late:14},
+ {id:'vert-labelle-bordeaux',n:'Vert tendre à labelle bordeaux',c:'#c4c078',lip:'#5a1a0a',dots:'#2a0402',cal:'#e0c040',col:'#e8e0b0',solid:1,late:14},
+ {id:'moutarde',n:'Jaune moutarde à labelle rose',c:'#cccf8a',lip:'#d97a92',dots:'#b84a68',cal:'#f0d050',col:'#f8f69e',late:14});
 /* the material of a colourway: ramps by kind for the kit (svorMatOf), cached by id; the lip's own patterns (patK): the mid-lobe's spots, densest
    toward its foot (photographs 29, 46, 98, 84) and its coloured margin; the side lobes' stripes converging to their tips (84, 98) */
 const CYMB_MAT={};

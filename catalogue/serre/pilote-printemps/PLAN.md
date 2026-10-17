@@ -248,6 +248,12 @@ par sorte), en groupant les sortes qui partagent une pièce du kit. Bilan : `cat
   `y3-chenille.js` (cordes de pompons, boules, panicule). Feuille refaite quatre fois après la critique du porteur ; validée :
   « amarante nickel et la feuille de l'amarante super ! ». Reste : planche SKU à refaire avec le nouveau grain ; amarante
   dressée non commencée (même pièce).
+- **Orchidées publiées (18 octobre)** : phalaenopsis (21 coloris dont 3 ajoutés) et cymbidium à grandes fleurs (22 dont 6
+  ajoutés), `late:14` (SKU 3887-3895, noms génériques). Pièce `y3-orchidee.js` (colonne, callosité, labelle trilobé, casque,
+  orientation des fleurs sur la hampe, grain, zones de couleur). Phalaenopsis validé (« bien mieux ! ») ; cymbidium « bien
+  mieux » après sept relais (pointes, mouchetures, cœur par variété). Restes : lobes latéraux du rouge trop pâles, gorge du blanc
+  en bande, vert-menthe plus pâle que t121, vues de 3/4 et de profil du cymbidium à revoir, planches plante/fané/bouquet du
+  cymbidium à refaire (celles de la v2 publiées : SKU et coloris seulement).
 - **Ordre révisé (porteur, 2026-10-17)** : les sortes les plus utilisées dans les 76 recettes de bouquets d'abord (anthurium 47,
   arum 42, amarante retombante 37, phalaenopsis 33, cymbidium 19, gloriosa 18…). Liste de contrôle obligatoire :
   `catalogue/serre/methode/BONNES-PRATIQUES.md`.

@@ -2,7 +2,7 @@
 /* an orchid spray: the peduncle rises, the raceme arches under its own weight (gravitropism after the first flowers), flowers alternate along it on short pedicels,
    all turned to face the same side (resupinate, lip down), the oldest at the base; buds toward the tip on curving pedicels, ever smaller and greener.
    Rules: S → F(peduncle) A(0)   A(i<n) → F(li) [ /φ &α F(pedicel, e) K(age_i) ] /(180±δ) A(i+1)   A(n) → F(tip) */
-function orchidPlant(g,t,o,P){const cw=o.cw||cwNear(P.list,o.col)||P.list[0],op=Math.max(.05,Math.min(1,o.op??1)),D=(o.cm||P.cm)*UPC,k=G(g),sc=P.scol||['#2e3f22','#4f6534','#76884a','#a8b878'];
+function orchidPlant(g,t,o,P){const cw=o.cw||cwNear(P.list.filter(x=>!x.late),o.col)||P.list[0],op=Math.max(.05,Math.min(1,o.op??1)),D=(o.cm||P.cm)*UPC,k=G(g),sc=P.scol||['#2e3f22','#4f6534','#76884a','#a8b878'];
   if(o.rim){const r=lsHeadS(k,o,{D,w:D*P.sw*1.4,cols:sc,op,rr:.3,nodes:0,lp:.45,flower:(par,B,O,D2,op2)=>P.flower(par,B,O,D2,cw,op2)});open(k,t,1000,10,.3);return r}
   const B=frameOf(o,.3,true),up=B.upV?V3.nz([B.upV[0],B.upV[1],B.upV[2]||0]):[0,1,0],face=B[2];let U0=V3s(face,V3.sc(up,V3.dot(face,up)));if(V3l(U0)<1e-3)U0=[0,0,1];
   const nf=op<.3?0:op<.7?Math.max(1,Math.ceil(P.nf[0]*.5)):Math.round(R(P.nf[0],P.nf[1])),nb=P.nb+(op<.3?2:0),n=nf+nb,kr=B.reach?Math.min(1,Math.max(.15,B.reach*.4/(D*(P.pd0+.5)))):1,li=D*P.li*kr,sd=rnd()<.5?-1:1;
@@ -14,10 +14,13 @@ function orchidPlant(g,t,o,P){const cw=o.cw||cwNear(P.list,o.col)||P.list[0],op=
   const main=res.organs.find(q=>q.t==='K')||res.organs.find(q=>q.t==='Kb'),apex=main.pos;
   /* every flower of the spray faces the same side, its lip down: its axis between the spray's face and its pedicel, its top toward the sky */
   const fFrame=og=>{const Z=V3.nz(V3.add(V3.add(V3.sc(face,.82),V3.sc(og.H,.3)),[R(-.08,.08),R(-.06,.06),0]));let Y=V3s([0,1,0],V3.sc(Z,Z[1]));if(V3l(Y)<1e-3)Y=V3s(og.U,V3.sc(Z,V3.dot(og.U,Z)));Y=V3.nz(Y);const X=V3.cr(Y,Z),j=R(-.12,.12),c=Math.cos(j),s=Math.sin(j);return[V3.add(V3.sc(X,c),V3.sc(Y,s)),V3.add(V3.sc(Y,c),V3.sc(X,-s)),Z]};
-  lsPlant(k,res,{O:[0,0,0],apex,cols:sc,organ:(og,pos)=>{
+  const organ=(og,pos)=>{
     if(og.t==='K'){const sz=1-P.grade*og.p.i/Math.max(1,nf),Bf=fFrame(og);return{parts:[{z:pos[2],fn:par=>P.flower(par,Bf,pos,D*sz,cw,op)}]}}
     if(og.t==='Kb'){const a=og.p.age,Bf=lsFrame(og,null,0),s=D*P.bs*(.45+1.6*a);return{parts:[{z:pos[2],fn:par=>phalBud(par,Bf,pos,s,{c:P.budc?P.budc(cw,a):mix(cw.c,'#b8c48a',.55-.8*a)})}]}}
-    return null}});
+    return null};
+  /* a sort drawn by the SVG kit (P.sv: the phalaenopsis, y-phalaenopsis.js) is handed the old drawing (old(par): its chance, its box) */
+  if(P.sv&&SV_ON)return P.sv(k,t,o,P,{res,apex,op,cw,D,face,up,sd,old:par=>lsPlant(par,res,{O:[0,0,0],apex,cols:sc,organ})});
+  lsPlant(k,res,{O:[0,0,0],apex,cols:sc,organ});
   open(k,t,1000,10,.3);return lsNeck(res,[0,0,0],apex)}
 const ORP={
   phalaenopsis:{list:CW_PHAL,cm:9,nf:[3,5],nb:3,pd0:.85,li:.5,ped:.32,pa:48,e:-.11,lean:34,sw:.045,grade:.07,bs:.3,flower:(par,B,O,D,cw,op)=>phalFlower(par,B,O,D,cw,op,0),scol:['#2e3f22','#4a5e30','#6c7f44','#9fb070']},

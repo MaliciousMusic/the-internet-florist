@@ -146,18 +146,23 @@ function svDraw(par,pieces,o){const Dm=o.D,tol=Math.max(.06,Dm*.0035),k=G(par),i
       if(on>(n+1)*1.2){const fl=svFaceFill(sh,[[0,b.c,b.op],[b.v*(b.cv??.5),b.c,b.op],[b.v*.8,b.e||b.c,b.op*.9],[b.v*1.04,b.e||b.c,0]],Dm),d=svSpl(L.concat(Rr.reverse()));
         if(hi)E('path',{d,fill:fl},bg);E('path',{d,fill:fl,'fill-opacity':hi?.85:1},cg)}}
 /* a picotee: a band of a second colour along the margin from b.v0 (sides) over the tip, soft inward (blurred) and crisp at the edge */
-    if(m.band){const hi=DET>=1.5,b=m.band,ns=12,pl=[];for(let q=0;q<=ns;q++)pl.push([-1,b.v0+(1-b.v0)*q/ns]);for(let q=1;q<2*ns;q++)pl.push([-1+q/ns,1]);for(let q=0;q<=ns;q++)pl.push([1,1-(1-b.v0)*q/ns]);
+    /* (b.edge: the band hugs the piece's margin: sampled densely (48 points a side) so its spline never wanders inside the outline nor out of
+       it (12 points drew a light line detached from the edge here and none there: orchid petals, BONNES-PRATIQUES 3.6b); the crisp stroke
+       centred on the margin and clipped, its visible inner half b.w; its soft inner glow (b.glow x b.w) in the blurred washes; off by default) */
+    if(m.band){const hi=DET>=1.5,b=m.band,ed=!!b.edge,ns=ed?48:12,pl=[];for(let q=0;q<=ns;q++)pl.push([-1,b.v0+(1-b.v0)*q/ns]);for(let q=1;q<2*ns;q++)pl.push([-1+q/ns,1]);for(let q=0;q<=ns;q++)pl.push([1,1-(1-b.v0)*q/ns]);
       let run=[],d='';const flush=()=>{if(run.length>2)d+=svSpl(run,false);run=[]};for(const[u,v]of pl){if(it.s*svLerp(sh,sh.F,u,v)>-.02)run.push(svAt(sh,u,v));else flush()}flush();
-      if(d){const w=Dm*b.w*(front?1:b.bk??.8);if(hi)E('path',{d,fill:'none',stroke:b.c,'stroke-width':svF(w*3.2),'stroke-opacity':b.op*.55,'stroke-linejoin':'round'},bg);
-        E('path',{d,fill:'none',stroke:b.c,'stroke-width':svF(w*.8),'stroke-opacity':b.op,'stroke-linejoin':'round'},cg)}}
+      if(d){const w=Dm*b.w*(front?1:b.bk??.8);if(hi)E('path',{d,fill:'none',stroke:b.c,'stroke-width':svF(w*(ed?2*(b.glow??5):3.2)),'stroke-opacity':b.op*(ed?.45:.55),'stroke-linejoin':'round'},bg);
+        E('path',{d,fill:'none',stroke:b.c,'stroke-width':svF(w*(ed?2:.8)),'stroke-opacity':b.op,'stroke-linejoin':'round'},cg)}}
 /* blotches (browning tissue): soft spots at given (u,v), in the blurred washes */
     if(m.spots){for(const[u,v,r0,col,op]of m.spots){if(it.s*svLerp(sh,sh.F,u,v)<=0)continue;const p=svAt(sh,u,v),q=svAt(sh,Math.min(1,u+.12),v),rr=Math.max(.3,Math.hypot(q[0]-p[0],q[1]-p[1])*r0*8);
       E('path',{d:'M'+svJ([svR(p[0]-rr),svR(p[1])])+'a'+svJ([svR(rr),svR(rr*.7)])+' 0 1,0 '+svJ([svR(2*rr),0])+'a'+svJ([svR(rr),svR(rr*.7)])+' 0 1,0 '+svJ([svR(-2*rr),0]),fill:col,'fill-opacity':op},bg)}}
 const hi=DET>=1.5;wash(hi?m.dark||[.92,.8,.68,.56,.44]:m.darkLo||m.dark||[.9,.76,.62],front?m.shade:m.bshade,hi?m.da??.2:m.daLo??m.da??.26,1);wash(hi?m.lit||[1.08,1.2]:m.litLo||m.lit||[1.1],front?m.lite:m.blite,hi?m.la??.22:m.laLo??m.la??.24,0);
     /* veins: their runs on this face only */
-    if(m.veins&&(DET>=1||!o.small)){const VL=m.veins(sh,front);for(const[set,w,col,op]of VL){let d='';for(const pl of set){let run=[];const flush=()=>{if(run.length>1)d+=svQuad(run);run=[]};
+    if(m.veins&&(DET>=1||!o.small)){const VL=m.veins(sh,front);for(const[set,w,col,op,fl]of VL){let d='';for(const pl of set){let run=[];const flush=()=>{if(run.length>1)d+=svQuad(run);run=[]};
           for(const[u,v]of pl){if(it.s*svLerp(sh,sh.F,u,v)>.03)run.push(svAt(sh,u,v));else flush()}flush()}
-        if(d)E('path',{d,fill:'none',stroke:hi?svFaceFill(sh,[[0,col,0],[.12,col,op],[.55,col,op*.75],[1,col,op*.3]],Dm):col,'stroke-opacity':hi?1:op*.7,'stroke-width':svF(Dm*w),'stroke-linecap':'round','stroke-linejoin':'round'},cg)}}
+        if(d)E('path',{d,fill:'none',stroke:hi&&!fl?svFaceFill(sh,[[0,col,0],[.12,col,op],[.55,col,op*.75],[1,col,op*.3]],Dm):col,'stroke-opacity':fl?op:hi?1:op*.7,'stroke-width':svF(Dm*w),'stroke-linecap':'round','stroke-linejoin':'round'},cg)}}
+    /* m.over(cg,it,sh,front,Dm): a sort's own layer over the washes and veins, under the rim, clipped to the piece (orchids: the tissue's grain); none by default */
+    if(m.over)m.over(cg,it,sh,front,Dm);
     if(m.rw)E('use',{href:'#'+it.id,fill:'none',stroke:front?m.rim:m.brim||m.rim,'stroke-width':svF(Dm*m.rw),'stroke-opacity':m.ro??.4},cg);patch(it)}
   return k}
 /* ---------- stems in SVG: a lit cylinder along any centre line ----------

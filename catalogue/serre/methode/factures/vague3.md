@@ -88,3 +88,15 @@ sépales dentés à étendre ; marques Mon Amour, Glowing Alps, My Terracotta, M
 (3 écarts préexistants, mêmes empreintes). **QA** : 12 bouquets, 0 flottante, 0 sous le vase. **Décisions appliquées** : coloris
 stabilisés prouvés par le négoce (C, validé par le porteur) ; vert et vert lime gardés tous deux (aucun coloris retiré) ; poids
 gardé. Le hortensia 930 vert émeraude est validé par le porteur sur rendu (« vert pour sûr, très beau, on prend »).
+
+## Orchidées (publiées le 18 octobre 2026)
+
+| Sorte | Coloris | Retouches |
+|---|---|---|
+| phalaenopsis | 18 + 3 ajoutés (`late:14`) | v1 « pas aussi bien que d'habitude » ; v2-v5 : colonne, labelle, couleur (fuchsia remesuré sur 8 photos), hampe orientée (8.1b), fané lisse, grain fin |
+| cymbidium-grandes-fleurs | 16 + 6 ajoutés (`late:14`) | v2 refusée (« figurine ») ; casque, gouttière, lobes, pointes (2.11), zones (4.8d), translucidité (4.8e), cœur par variété (2.12) |
+
+**Témoins** : 0 SKU déplacé (3886 → 3895), anémone 0,00 %, rtest des sortes voisines identique, tulipes témoins comme avant.
+**Fusion** : conflit de `pilote/svtest.js` résolu en gardant les deux apports (vue 13 et `mdl`/`dbg` du chantier, `gapk` de main).
+Noms de cultivar retirés des 9 coloris ajoutés (porteur : « le reste sous nom générique »). Coût : une douzaine de relais Opus
+`xhigh` au total (factures des chantiers dans `ch/orchidees/refcache/`).
