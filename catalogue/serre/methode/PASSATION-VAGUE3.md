@@ -74,8 +74,9 @@ tard : les défauts n'étaient vus qu'à la relecture des gros plans par l'orche
    `zoom`) plutôt qu'en pleine taille. Il passe la main à une session neuve dès que son contexte dépasse environ 250 000 tokens,
    en mettant à jour ce fichier (section 7).
 2. **`pipe.py` à la place des chefs** (`fleur/PIPE.md`) : chaque étape est un `claude -p` neuf à contexte vide, les contrôles
-   entre étapes sont chiffrés en Python. **pipe v3** (chantier `ch/pipe-v3`, à fusionner après relecture) ajoute :
-   Opus en `xhigh` ; port 8805 et copie privée de shot.sh ; recensement allégé (A, B ou C par SKU, D en question) ; choix des
+   entre étapes sont chiffrés en Python. **pipe v3** (fusionné dans main le 17 octobre, 5f52e8e ; selftest 80/80, jamais encore lancé sur une vraie sorte : surveiller la
+   première) ajoute :
+   Opus en `xhigh` ; port 8805 et copie privée de shot.sh ; recensement allégé (A, B ou C par SKU ; D, introuvable ou sous marque en question, nom générique) ; photos choisies par Sonnet ; choix des
    photos en les regardant (champ « vu ») ; bonnes pratiques citées dès la v1 ; `--kit` et `--late` ; et deux étapes de sévérité :
    - **comparaison** : paires photo/rendu au même angle et au même stade (face, 3/4, profil, bouton, fané, plante entière, gros
      plan D 800 d'une tête ouverte) dans `refcache/<sid>/comparaison/` ; le modeleur corrige jusqu'à ce que chaque ligne du
@@ -192,5 +193,5 @@ recettes ?
 Ouvrir une session dans `C:/Users/agent/Desktop/flower/flower-atelier` et lui donner :
 
 > Lis `catalogue/serre/methode/PASSATION-VAGUE3.md` et applique-le. Tu es l'orchestrateur léger de la vague 3 : vérifie les
-> services (section 3), fusionne pipe v3 si ce n'est pas fait, puis lance les sortes de la section 8 avec `pipe.py`, trois au
+> services (section 3), puis lance les sortes de la section 8 avec `pipe.py`, trois au
 > plus. Sois sévère : rien n'est publié sans planches de comparaison, verdict ok du juge et ta propre relecture des gros plans.
