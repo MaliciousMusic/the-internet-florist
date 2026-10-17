@@ -1,7 +1,7 @@
 Tu règles UN lot de cultivars douteux de la sorte <<sid>> (<<taxon>>), selon les règles de sourcing du projet. Tu t'arrêtes à la fin du lot.
 
 Entrées :
-- <<batch>> : le lot (20 cultivars au plus, avec preuves, photos, indice de marque, doutes, et la consigne du recensement).
+- <<batch>> : le lot (20 cultivars au plus, avec preuves, photos, indice de marque, doutes, et la consigne du recensement). Il ne contient que les coloris du catalogue et ceux que des listes de négoce documentent (« pertinence ») : les cultivars de registre sans photo ne sont pas à prouver.
 - <<rc>>/ref/STANDARD-SOURCES.md : lis UNE fois les sections 2 (niveaux de source) et 3 (preuve exigée) et la règle des marques.
 SKU du bouquet de cette sorte (leurs cultivars passent en premier) : <<skus>>.
 
@@ -9,7 +9,8 @@ Sortie : <<verdict>>, une liste JSON, une fiche par cultivar du lot. Écris-la a
   {"nom":"...","niveau":"A|B|C|D","marque":"libre|a_verifier|deposee","preuves_nom":["url"],"photos":[{"img":"url de l'image","page":"url","niveau":"N2|N3|N4"}],"note":"..."}
 
 Règles :
-- Niveau : A = preuve de nom N1 et photo N2 concordantes. B = N2 ou N3 plus une autre source indépendante. C = une seule photo nommée. D = estimé ou sans photo. Pour A ou B : deux photos nommées indépendantes, dont une N2 ou N3. Jamais de place de marché ni d'image générée.
+- Niveau : A = preuve de nom N1 et photo N2 concordantes. B = N2 ou N3 plus une autre source indépendante. C = une photo nommée et le coloris référencé. D = estimé ou sans photo. Jamais de place de marché ni d'image générée.
+- Règle du porteur (2026-10-17) : un coloris est validé jusqu'au niveau C (« tant qu'il y a des photos et que le coloris est référencé, ça suffit »). Ne cherche jamais à monter un C en B ; ta tâche : confirmer le nom, la marque et au moins une photo nommée.
 - Marque : "deposee" seulement si un registre des marques (TMview, EUIPO, INPI, WIPO) la donne ; mets l'URL dans "note". Un ® ou un ™ vu seulement chez un vendeur donne "a_verifier". Sinon "libre".
 - N'invente rien : une preuve absente s'écrit dans "note". Un nom proche d'un autre, un synonyme, une année discordante : dis-le.
 - N'interroge pas le formulaire du KAVB. Pas de navigateur, de compte, de formulaire ni d'achat. Cookies non essentiels refusés.
