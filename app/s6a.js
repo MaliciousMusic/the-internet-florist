@@ -24,20 +24,28 @@ const CW_RINT=[
  {id:'lavande',n:'Lavande',c:'#b8a0c8'},{id:'brun',n:'Brun',c:'#9a6a50'},{id:'jumilia',n:'Blanc bordé de rose vif',c:'#fbf4f4',edge:'#e0407a'},{id:'bicolore-jaune',n:'Jaune bicolore',c:'#f6d23a',c2:'#f08a3a',k2:.8},
  {id:'rose-creme',n:'Rose et crème',c:'#f4e6d6',edge:'#e87aa0'}];
 const CW_RJAR=[
- {id:'blanc-creme',n:'Blanc crème à cœur ivoire',c:'#f6ecd9',c2:'#f2dcc0'},{id:'ivoire',n:'Ivoire',c:'#f4ecd8'},{id:'beurre',n:'Beurre',c:'#f4e2a8',c2:'#efd080'},{id:'blush',n:'Rose blush',c:'#f6d6d4'},
- {id:'rose-pale',n:'Rose pâle',c:'#f2b9c4',c2:'#ec9aac'},{id:'dragee',n:'Rose dragée',c:'#f4a8c0'},{id:'rose',n:'Rose moyen',c:'#e07f9c',c2:'#c85a80'},{id:'vieux-rose',n:'Vieux rose saumoné',c:'#d0909a',c2:'#e09878'},
- {id:'magenta',n:'Magenta (Yves Piaget)',c:'#c64d8a',ruf:1},{id:'fuchsia',n:'Fuchsia',c:'#c2306e'},{id:'peche',n:'Pêche',c:'#f4b98e',c2:'#f0a070'},{id:'abricot',n:'Abricot',c:'#f2a060'},
- {id:'corail',n:'Corail',c:'#ef7a62'},{id:'orange',n:'Orange',c:'#ee8a3a'},{id:'citron',n:'Jaune citron dans une coupe verte',c:'#f2e48a',green:'#c8dca0'},{id:'moutarde',n:'Jaune moutarde',c:'#d8b050',c2:'#c89830'},
- {id:'caramel',n:'Caramel',c:'#c9965f',c2:'#a87040'},{id:'sable',n:'Brun sable bordé de vert',c:'#cfae8a',green:'#b8c890'},{id:'rouge',n:'Rouge écarlate (Piano)',c:'#c01a26',c2:'#8a0a18'},
- {id:'cramoisi',n:'Rouge cramoisi',c:'#9a0a26'},{id:'rouille',n:'Rouge rouille',c:'#a8402a'},{id:'lavande',n:'Lavande',c:'#b8a4cc'},{id:'moka',n:'Mauve moka (Café Latte)',c:'#b89a96',c2:'#a07a78'},
- {id:'creme-rose',n:'Crème bordé de rose',c:'#f6ecdc',edge:'#e888a4'},{id:'blanc-vert',n:'Blanc bordé de vert',c:'#f6f2e6',green:'#c0d498'}];
+ {id:'blanc-creme',n:'Blanc crème à cœur ivoire',c:'#f6ecd9',c2:'#f2dcc0'},{id:'ivoire',n:'Ivoire',c:'#f4ecd8'},{id:'beurre',lvl:'C',n:'Beurre',c:'#f4e2a8',c2:'#efd080'},{id:'blush',n:'Rose blush',c:'#f6d6d4'},
+ {id:'rose-pale',lvl:'C',n:'Rose pâle',c:'#f2b9c4',c2:'#ec9aac'},{id:'dragee',lvl:'C',n:'Rose dragée',c:'#f4a8c0'},{id:'rose',n:'Rose moyen',c:'#e07f9c',c2:'#c85a80'},{id:'vieux-rose',lvl:'C',n:'Vieux rose saumoné',c:'#d0909a',c2:'#e09878'},
+ {id:'magenta',n:'Magenta',c:'#c64d8a',ruf:1},{id:'fuchsia',n:'Fuchsia',c:'#c2306e'},{id:'peche',n:'Pêche',c:'#f4b98e',c2:'#f0a070'},{id:'abricot',n:'Abricot',c:'#f2a060'},
+ {id:'corail',lvl:'C',n:'Corail',c:'#ef7a62'},{id:'orange',lvl:'C',n:'Orange',c:'#ee8a3a'},{id:'citron',lvl:'C',n:'Jaune citron dans une coupe verte',c:'#f2e48a',green:'#c8dca0'},{id:'moutarde',lvl:'C',n:'Jaune moutarde',c:'#d8b050',c2:'#c89830'},
+ {id:'caramel',n:'Caramel',c:'#c9965f',c2:'#a87040'},{id:'sable',lvl:'C',n:'Brun sable bordé de vert',c:'#cfae8a',green:'#b8c890'},{id:'rouge',lvl:'C',n:'Rouge écarlate',c:'#c01a26',c2:'#8a0a18'},
+ {id:'cramoisi',lvl:'C',n:'Rouge cramoisi',c:'#9a0a26'},{id:'rouille',lvl:'D',n:'Rouge rouille',c:'#a8402a'},{id:'lavande',lvl:'D',n:'Lavande',c:'#b8a4cc'},{id:'moka',n:'Mauve moka',c:'#b89a96',c2:'#a07a78'},
+ {id:'creme-rose',n:'Crème bordé de rose',c:'#f6ecdc',edge:'#e888a4'},{id:'blanc-vert',lvl:'C',n:'Blanc bordé de vert',c:'#f6f2e6',green:'#c0d498'},
+ /* late:10 (finishing 2026-10-17, colours in ROSA_JAR_CWX; lvl C = drawn, not for the shop) */
+ {id:'blanc-lisere-rose',n:'Blanc liseré de rose vif',c:'#efe0e6',late:10,lvl:'C'},{id:'brique-nuance',n:'Rouge brique nuancé de cuivre',c:'#bf6a5c',late:10,lvl:'C'}
+];
 const CW_RASP=[
- {id:'blanc',n:'Blanc nacré',c:'#f7f3ec'},{id:'creme',n:'Crème',c:'#f4e8d0'},{id:'champagne',n:'Champagne (tons terre)',c:'#eadcc4',c2:'#d8c0a0'},{id:'rose-pale',n:'Rose pâle',c:'#f4ccd2'},
+ {id:'blanc',n:'Blanc nacré',c:'#f7f3ec'},{id:'creme',n:'Crème',c:'#f4e8d0'},{id:'champagne',n:'Champagne sable',c:'#eadcc4',c2:'#d8c0a0'},{id:'rose-pale',n:'Rose pâle',c:'#f4ccd2'},
  {id:'rose',n:'Rose moyen',c:'#e07f9c'},{id:'bonbon',n:'Rose bonbon',c:'#f08ab0'},{id:'rose-vif',n:'Rose vif',c:'#e04a80'},{id:'peche',n:'Pêche',c:'#f4c2a1',c2:'#f0a880'},
- {id:'mandarin',n:'Pêche à œil vert',c:'#f4b08a',c2:'#e8608a',eye:'green'},{id:'abricot',n:'Abricot',c:'#f3a66d'},{id:'corail',n:'Corail',c:'#f08a6a'},{id:'orange',n:'Orange',c:'#ee7a32'},
- {id:'sunset',n:'Orange à cœur jaune',c:'#ee6a3a',c2:'#f4b030',k2:.9},{id:'moutarde',n:'Jaune moutarde',c:'#dab858'},{id:'jaune',n:'Jaune',c:'#f4d24a'},{id:'cramoisi',n:'Rouge cramoisi',c:'#a8102e'},
- {id:'lavande',n:'Lavande',c:'#a77ab0',c2:'#c0a0c8'},{id:'lilas',n:'Lilas froid',c:'#c4b0d6'},{id:'vert',n:'Vert (Wasabi)',c:'#d4e0b4',green:'#b8cc90'},{id:'terre',n:'Tons terre',c:'#ecd6b8',c2:'#c89a7a'},
- {id:'free-spirit',n:'Cuivre multicolore',c:'#f08a4a',c2:'#d8406a',k2:.6,green:'#c8b070'},{id:'rose-vert',n:'Rose bordé de vert',c:'#f0b8c4',green:'#c0d098'}];
+ {id:'mandarin',n:'Orange à cœur vert',c:'#f4b08a',c2:'#e8608a',eye:'green'},{id:'abricot',n:'Abricot',c:'#f3a66d'},{id:'corail',n:'Corail',c:'#f08a6a'},{id:'orange',n:'Orange',c:'#ee7a32'},
+ {id:'sunset',n:'Orange à cœur jaune',c:'#ee6a3a',c2:'#f4b030',k2:.9},{id:'moutarde',n:'Jaune doré',c:'#dab858'},{id:'jaune',n:'Jaune',c:'#f4d24a'},{id:'cramoisi',n:'Rouge cramoisi',c:'#a8102e'},
+ {id:'lavande',n:'Lavande',c:'#a77ab0',c2:'#c0a0c8'},{id:'lilas',n:'Gris lilas',c:'#c4b0d6'},{id:'vert',n:'Vert tendre',c:'#d4e0b4',green:'#b8cc90'},{id:'terre',n:'Caramel café',c:'#ecd6b8',c2:'#c89a7a'},
+ {id:'free-spirit',n:'Cuivre multicolore',c:'#f08a4a',c2:'#d8406a',k2:.6,green:'#c8b070'},{id:'rose-vert',n:'Rose bordé de vert',c:'#f0b8c4',green:'#c0d098'},
+ /* late:10 (finishing 2026-10-17, colours in ROSA_ASP_CWX; lvl C = drawn, not for the shop) */
+ {id:'magenta',n:'Magenta intense',c:'#d23f84',late:10},{id:'jaune-bord-rouge',n:'Jaune bordé de rouge',c:'#ebae4e',late:10},
+ {id:'mauve-taupe',n:'Mauve gris taupe',c:'#ccb0a7',late:10,lvl:'C'},{id:'blanc-coeur-vert',n:'Blanc à cœur vert',c:'#efeee0',late:10,lvl:'C'},
+ {id:'chocolat',n:'Brun chocolat',c:'#a34543',late:10,lvl:'C'},{id:'rose-bord-blanc',n:'Rose à bordure blanche',c:'#e0587f',late:10,lvl:'C'}
+];
 const CW_RANG=[
  {id:'juliet',n:'Pêche à cœur abricot (Juliet)',c:'#f6c8a8',c2:'#f0a060',k2:.9},{id:'patience',n:'Blanc laiteux à cœur beurre',c:'#f8f2e6',c2:'#f4e0b0'},{id:'keira',n:'Crème marbré de framboise',c:'#f6e8e0',marble:'#d84a78'},
  {id:'miranda',n:'Rose dragée à cœur cerise',c:'#f2b0c4',c2:'#e05a80'},{id:'constance',n:'Rose ballerine à cœur crème',c:'#f2c0cc',c2:'#f6ead8'},{id:'charity',n:'Rose pêche à étamines vertes',c:'#f2b8a8',eye:'green'},

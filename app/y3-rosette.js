@@ -225,19 +225,21 @@ function svrDraw(par,items,P,cw,Dm,tol,lf={}){const k=G(par),dd=GDEF||defs,hi=DE
     /* a kind's own layer on the piece (e.xd: the rose's margin band, flames), cut the same way, so that a patch never shows the bare piece */
     if(e.xd)for(const x of e.xd)E('path',Object.assign({},x,{'clip-path':`url(#${pc})`}),k);
     /* lf.pedge: the patch carries the piece's outline too (a patch without it reads as a plate pasted on) */
-    if(lf.pedge&&!SVR_OFF.includes('edge'))E('path',{d:e.d,fill:'none',stroke:e.mt.edge||e.mt.shade,'stroke-width':ew,'stroke-opacity':eA,'stroke-linejoin':'round','clip-path':`url(#${pc})`},k)}};
+    if(lf.pedge&&e.mt&&e.d&&!SVR_OFF.includes('edge'))E('path',{d:e.d,fill:'none',stroke:e.mt.edge||e.mt.shade,'stroke-width':ew,'stroke-opacity':eA,'stroke-linejoin':'round','clip-path':`url(#${pc})`},k)}};
   if(lf.core)E('path',{d:lf.core[0],fill:lf.core[1]},k);
   /* lf.patchLate: each run's patches go over its washes and rims (else a piece's shades and margins, drawn after it, show through the piece
      patched in front of it) */
   const drawRun=(run,ri)=>{
     if(run[0].kind==='fn'){const it=run[0];it.fn(it.pid?G(k,{id:it.pid}):k);patch(it);return}
+    /* lf.lclip: the run's lines (edge, rims, veins, pleats) clipped to its pieces' fills (by reference: no path copied), so that no stroke runs on past a petal into the void */
+    let lcid=null;const lgr=()=>{if(!lf.lclip||run[0].grp!=='p')return k;if(!lcid){lcid='sl'+(gid++);const cp=E('clipPath',{id:lcid},dd);for(const it of run)E('use',{href:'#'+(it.pid||it.lid)},cp)}return G(k,{'clip-path':`url(#${lcid})`})};
     const mt=run[0].mt,gk=run[0].gk||0,so=P.shd[2]*(1-P.shdB*(lf.bud||0))*(lf.shK==null?1:lf.shK);
     /* the shadow this run casts on what lies behind it */
     if(hid&&ri>0&&so>.01&&!SVR_OFF.includes('shadow')){let d='';for(const it of run)if(hi||(it.bb[2]-it.bb[0])+(it.bb[3]-it.bb[1])>Dm*P.wmin)d+=svSpl(svSimp(it.out.map(p=>[p[0]+ox,p[1]+oy]),tol*(hi?3:6)));svrSt('shadow',d);E('path',{d,fill:mt.cast,'fill-opacity':so,filter:svBlur(Dm*P.shd[1]),'clip-path':`url(#${hid})`},k)}
     /* the run's pieces in one group carrying their edge (a thin dark stroke; the young bud's green reaches it, and its margins) */
     const ea={stroke:gk?mix(mt.edge||mt.shade,mix(P.greenC,'#0e1a06',.65),gk):mt.edge||mt.shade,'stroke-width':ew,'stroke-opacity':SVR_OFF.includes('edge')?0:eA,'stroke-linejoin':'round'},
       rg=zHid?G(k):G(k,ea);
-    for(const it of run){svrSt('petal',it.d);const a={d:it.d,fill:it.tone};if(it.pid)a.id=it.pid;if(zHid&&!it.ouv)Object.assign(a,ea);E('path',a,rg);if(!lf.patchLate)patch(it)}
+    for(const it of run){svrSt('petal',it.d);const a={d:it.d,fill:it.tone};if(it.pid)a.id=it.pid;else if(lf.lclip&&run[0].grp==='p')a.id=it.lid='sl'+(gid++);if(zHid&&!it.ouv)Object.assign(a,ea);E('path',a,rg);if(!lf.patchLate)patch(it)}
     /* under zvis the edge: the outline's runs where the piece is the nearest surface (sampled twice between the outline's points) */
     if(zHid&&!SVR_OFF.includes('edge')){let d='';for(const it of run){if(!it.ouv)continue;const n=it.ouv.length,pts=[],vs=[];
         for(let i=0;i<n;i++){const a=it.ouv[i],b=it.ouv[(i+1)%n];for(const t of[0,.5]){const u=a[0]+(b[0]-a[0])*t,v=a[1]+(b[1]-a[1])*t,p=t?svAt(it.sh,u,v):it.out[i];pts.push(p);vs.push(!zHid(it,p[0],p[1],svLerp(it.sh,it.sh.Z,u,v)))}}
@@ -245,7 +247,7 @@ function svrDraw(par,items,P,cw,Dm,tol,lf={}){const k=G(par),dd=GDEF||defs,hi=DE
         const m=pts.length;for(let i=0;i<m;i++)if(!vs[i]&&vs[(i+m-1)%m]&&vs[(i+1)%m])vs[i]=2;let s0=vs.indexOf(false);if(s0<0){d+=svSpl(svSimp(pts,tol));continue}let r=[];
         const fl=()=>{let L=0;for(let i=1;i<r.length;i++)L+=Math.hypot(r[i][0]-r[i-1][0],r[i][1]-r[i-1][1]);if(r.length>1&&L>Dm*(P.eMin||.03))d+=svSpl(svSimpO(r,tol),false);r=[]};
         for(let i=1;i<=m;i++){const q=(s0+i)%m;if(vs[q])r.push(pts[q]);else fl()}fl()}
-      svrSt('edge',d);if(d)E('path',Object.assign({d,fill:'none','stroke-linecap':'round'},ea),k)}
+      svrSt('edge',d);if(d)E('path',Object.assign({d,fill:'none','stroke-linecap':'round'},ea),lgr())}
     if(LOD||SVR_OFF.includes('wash'))return;
     /* what the later pieces of the run hide of each one (its grid's vertices, then any point) */
     const hid2=(j,x,y)=>{for(let m=j+1;m<run.length;m++){const b=run[m].bb;if(x<b[0]||x>b[2]||y<b[1]||y>b[3])continue;if(svrIn(run[m].out,x,y))return true}return false};
@@ -262,6 +264,7 @@ function svrDraw(par,items,P,cw,Dm,tol,lf={}){const k=G(par),dd=GDEF||defs,hi=DE
     let wk=k;if(lf.wclip){const cid='sw'+(gid++);E('path',{d:run.map(it=>it.d).join('')},E('clipPath',{id:cid},dd));wk=G(k,{'clip-path':`url(#${cid})`})}
     const wg=G(wk,{filter:svBlur(Dm*P.wb*(lf.wbK||1))});P.aoV[hi?1:0].forEach(lv=>foot(lv,P.aoA[hi?1:0]));for(const lv of P.dark[hi?1:0])wash(lv,mt.shade,P.da[hi?1:0]*(lf.daK==null?1:lf.daK),1);for(const lv of P.lit[hi?1:0])wash(lv,mt.lite,P.la[hi?1:0],0);
     if(SVR_OFF.includes('rim'))return;
+    const lk=lgr();
     /* the paler margin (the inner face's, fainter on a back), and the veins in close-ups */
     const runsOf=(it,j,pl,face,inO)=>{const out=[];let r=[];for(const[u,v]of pl){const p=svAt(it.sh,u,v);if(face*it.s>0&&svLerp(it.sh,it.sh.F,u,v)*it.s>.02&&!(zHid&&it.ouv?zHid(it,p[0],p[1],svLerp(it.sh,it.sh.Z,u,v)):hid2(j,p[0],p[1]))&&(!inO||svrIn(it.out,p[0],p[1])))r.push(p);else{if(r.length>1)out.push(r);r=[]}}if(r.length>1)out.push(r);return out};
     /* the spoon's crease: a soft shade down the middle of each inner face, where nothing of the run covers it (one blurred path per run) */
@@ -273,16 +276,16 @@ function svrDraw(par,items,P,cw,Dm,tol,lf={}){const k=G(par),dd=GDEF||defs,hi=DE
     const rimL=[];for(let q=0;q<=3;q++)rimL.push([-.975,.55+.43*q/3]);for(let q=1;q<10;q++)rimL.push([-1+2*q/10,.975]);for(let q=3;q>=0;q--)rimL.push([.975,.55+.43*q/3]);
     for(const face of[1,-1]){let d='';run.forEach((it,j)=>{for(const r of runsOf(it,j,rimL,face))d+=svSpl(svSimpO(r,tol*(hi?1:2)),false)});
       svrSt('rim',d);const bw=Math.min(1,P.edgeB[0]*(lf.dec||0)+P.edgeB[1]*(lf.fan||0)),rc0=face>0?mt.rim:mt.brim||mt.rim,rc=gk?mix(rc0,mix(P.greenC,'#f4f8e0',.45),gk):rc0;
-      if(d)E('path',{d,fill:'none',stroke:bw>0?mix(rc,P.brown,bw):rc,'stroke-width':svF(Dm*(mt.rimW||P.rimW)*(1+P.edgeBW*bw)*(lf.rimK==null?1:lf.rimK)),'stroke-opacity':face>0?mt.rimA||P.rimA:P.brimA,'stroke-linecap':'round','stroke-linejoin':'round'},k)}
+      if(d)E('path',{d,fill:'none',stroke:bw>0?mix(rc,P.brown,bw):rc,'stroke-width':svF(Dm*(mt.rimW||P.rimW)*(1+P.edgeBW*bw)*(lf.rimK==null?1:lf.rimK)),'stroke-opacity':face>0?mt.rimA||P.rimA:P.brimA,'stroke-linecap':'round','stroke-linejoin':'round'},lk)}
     if((hi||mt.veinLo)&&mt.vein){let d='';run.forEach((it,j)=>{for(const u of mt.veinU||[-.62,-.3,0,.3,.62]){const pl=[];for(let q=0;q<=6;q++)pl.push([u*(.3+.7*svSm(q/4)),.06+.8*q/6]);for(const r of runsOf(it,j,pl,1,P.midIn))d+=svQuad(r)}});
-      if(d)E('path',{d,fill:'none',stroke:mt.vein,'stroke-width':svF(Dm*(mt.veinW||P.veinW)),'stroke-opacity':mt.veinA||P.veinA,'stroke-linecap':'round'},k)}
+      if(d)E('path',{d,fill:'none',stroke:mt.vein,'stroke-width':svF(Dm*(mt.veinW||P.veinW)),'stroke-opacity':mt.veinA||P.veinA,'stroke-linecap':'round'},lk)}
     /* lf.pleat {n [lo, hi], len [min, max] of the length from the tip, w, c, a, lc, la}: a dried piece's creases along its length, from its
        margin inward, on whichever face is seen (a dark fold and a faint lit ridge beside it), uneven in place and length */
     if(lf.pleat&&lf.pleat.a>.01&&!SVR_OFF.includes('pleat')){const Q=lf.pleat,n=Q.n[hi?1:0];let d='',dl='';run.forEach((it,j)=>{if(it.grp!=='p'||!big(it))return;const sd=Math.round(it.f*97)+3;
         for(let m=0;m<n;m++){const u0=-.82+1.64*(m+.5+.7*(pxHashS(m,7,sd)-.5))/n,ln=Q.len[0]+(Q.len[1]-Q.len[0])*pxHashS(m,11,sd),wv=.05*(pxHashS(m,13,sd)-.5),pl=[],pr=[];
-          for(let q=0;q<=6;q++){const v=.97-ln*q/6,u=u0*(1-.25*(q/6))+wv*Math.sin(q*1.3+m);pl.push([u,v]);pr.push([u+.035,v])}
+          for(let q=0;q<=6;q++){const v=(Q.v0||.97)-ln*q/6,u=u0*(1-.25*(q/6))+wv*Math.sin(q*1.3+m);pl.push([u,v]);pr.push([u+.035,v])}
           for(const r of runsOf(it,j,pl,it.s,1))d+=svQuad(r);if(Q.la>.01)for(const r of runsOf(it,j,pr,it.s,1))dl+=svQuad(r)}});svrSt('pleat',d+dl);
-      if(dl)E('path',{d:dl,fill:'none',stroke:Q.lc,'stroke-width':svF(Dm*Q.w*.8),'stroke-opacity':Q.la,'stroke-linecap':'round'},k);
-      if(d)E('path',{d,fill:'none',stroke:Q.c,'stroke-width':svF(Dm*Q.w),'stroke-opacity':Q.a,'stroke-linecap':'round'},k)}};
+      if(dl)E('path',{d:dl,fill:'none',stroke:Q.lc,'stroke-width':svF(Dm*Q.w*.8),'stroke-opacity':Q.la,'stroke-linecap':'round'},lk);
+      if(d)E('path',{d,fill:'none',stroke:Q.c,'stroke-width':svF(Dm*Q.w),'stroke-opacity':Q.a,'stroke-linecap':'round'},lk)}};
   runs.forEach((run,ri)=>{drawRun(run,ri);if(lf.patchLate&&run[0].kind!=='fn')for(const it of run)patch(it)});
   return k}
