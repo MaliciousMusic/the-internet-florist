@@ -239,8 +239,8 @@ Chantiers en cours au 17 octobre, 20 h :
   fleur en U large, tépales moins étroits, zones et translucidité, labelle de chaque variété.
 - **amarante-retombante : publiée** (7e42dc8). Planche SKU à refaire avec le nouveau grain. Amarante dressée non commencée.
 - **hortensia-boule : publié** (73a8657) ; 930 vert émeraude validé sur rendu par le porteur. Restes : cœur brun visible entre les
-  fleurons du rose pâle, blanc encore un peu fantomatique en bas de boule, feuilles régulières, 944 corail ; question du poids
-  (7 à 12 Mo par bouquet : niveau de détail réduit sous 200 px ?).
+  fleurons du rose pâle, blanc encore un peu fantomatique en bas de boule, feuilles régulières, 944 corail ; poids de 7 à
+  12 Mo par bouquet gardé (porteur, 18 octobre : « le poids ne me dérange pas »).
 
 ## 8. La suite, dans l'ordre
 
