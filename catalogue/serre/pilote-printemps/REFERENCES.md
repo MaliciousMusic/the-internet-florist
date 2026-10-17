@@ -1466,3 +1466,89 @@ Mesures (masque de fond par photo, ligne la plus large ; script du modeleur, ±1
 À l'œil (non mesuré) : 25 à 32 pétales larges et ronds, centre plus bas que la grande tête, pointes peu roulées ; sépales longs et étroits
 rabattus le long de l'urne ; sweethearts : 20 à 26 pétales, bouton rond, tête environ 12 % plus petite. Feuilles de 5 folioles, un peu
 plus petites (×0,92). Budget DET 1, tige entière de 50 cm : 151 éléments, 39 Ko.
+
+## Dahlia pinnata hybrides, groupe Decorative (dahlia décoratif, sid dahlia-decoratif) : capitule double en SVG natif, chantier ch/capitules-doubles, 17 octobre 2026
+
+Pièce capitule (`app/y3-capitule.js`, étendue : couleur des rangs internes, stries et mouchetures, rang interne d'involucre rond, angles par rang,
+involucre sous les rayons d'une tête pleine, ombre séparée du ton, budget à DET 1, feuille pennée `svcapLeaf`) ; fiche `app/y-dahlia.js` (formes
+`formel` et `informel`, `DAH_MAT` 23 coloris, involucre, vie, fané `dahWiltCol`, tige verte ou pourprée, nœud, feuille). Planches :
+`dahlia-decoratif-sku-v1.png` (reprise v2 : blanc, bicolore jaune et rose, fuchsia ; bouton .06 et .2, .4, .75, ouvert, fané .35, .6, .75 et .9 ;
+3/4 et profil, graine 7), `dahlia-decoratif-coloris.png` (23 coloris, op .75, 3/4 et profil), `dahlia-decoratif-plante.png` (tige entière),
+`dahlia-decoratif-fane.png` (pêche, rouge, blanc, violet vif ; fané 0 à .9). Aucune photo de tiers n'est publiée : elles restent dans
+`refcache/dahlia-decoratif` (privé).
+
+### Sources (`refcache/dahlia-decoratif/brief.md`, `keep.json`, `catalogue/serre/sources/dahlia-decoratif.json`)
+
+- Stanford Dahlia Genetics, fiches de cultivars sur règle graduée (tiers, mesure locale) : profils 158 (Duet), 168 (Aitara Diadem) ; feuilles 156
+  (Duet), 160 (Camano Titan), 169 (Aitara Diadem), 172 (Spartacus) ; tiges 163, 164, 165 (page de terminologie).
+- backyardnature.net (tiers) : 181 (côté et dos), 182 (bractées de l'involucre), 183 (feuille).
+- Commons : boutons 173 (Dahlia Blooming Bud), 175, 176, 177, 178 ; 152 (Nilotpal Hazarika123, CC BY-SA 4.0) ; têtes 126 (Tomepcooke21, CC BY-SA
+  4.0), 138 Eveline (Marktee1, CC BY-SA 3.0).
+- iNaturalist (CC BY-NC, refcache seulement) : 244 (dos et involucre, gillemi), 209 (bouton, Sandy Wolkenberg, CC BY), 190 et 192 (têtes sèches).
+- Coloris : vignettes des variétés nommées du json (dahlias.com, Swan Island), médianes de `coloris-a.md` et `coloris-b.md`.
+
+### Mesures retenues
+
+- Tête pleine, sans disque : formel 9 rangs (17 à 8 ligules, larges, 2:1, bout arrondi), informel 8 rangs (ligules 3:1, pointues, ondulées) ;
+  pointes posées sur une sphère : profondeur/diamètre de profil 0,69 (158 : 0,64 ; brief 0,7 à 0,8). Rangs externes rabattus au-delà du plat
+  (168), internes dressés et refermés sur le cœur.
+- Involucre (182, 244) : 5 bractées foliacées vertes étalées puis rabattues, 8 bractées internes larges, membraneuses, vert-jaune pâle, serrées
+  autour du bouton ; sous les rayons dès l'ouverture.
+- Bouton (173, 176, 177, 178) : boule verte un peu plus large que haute ; la couleur sort au sommet (175, op .3), touffe ovoïde (152, 209), puis les
+  rangs s'écartent de l'extérieur vers l'intérieur.
+- Plante : tige creuse, ronde, finement striée, verte ou pourprée (163 à 165, une tige sur trois), renflée aux nœuds, diamètre 0,07 de la tête ;
+  feuilles opposées, pennées, 3 ou 5 folioles ovales dentées acuminées, la terminale la plus grande (156, 160, 169, 172) ; jamais de tubercule.
+- Fané (d'après proxy, noté comme tel : aucune photo de décoratif nommé fané) : texte du brief, têtes sèches 190 et 192, involucre 182 ; rangs
+  externes mous et pendants, bruns depuis la pointe et les marges, rangs internes refermés en cône, chute partielle, tête qui s'incline ; la tige
+  porte la tête par l'involucre (dessiné vu de face dès le fané) ; blanc vers le beige brun, couleurs vives vers le vin ou l'ocre.
+- Couleurs : médianes des photos, clarté relevée sous feuillage (règle validée) ; recalées à l'œil sur les vignettes : 703 blanc pur (ombre
+  chaude claire, aucun contour sombre), 704 rose nacré à cœur crème, 706, 707 (teinte ramenée vers la médiane), 711 lilas violet, 719 corail à cœur
+  jaune, et les late:10 (violet vif et caramel éclaircis). Niveaux de preuve inchangés.
+- Budget : rtest des bouquets (9 tiges) : la tige SVG compte moins d'éléments que l'ancien dessin (3:0.3 : 51197 contre 49761) ; plein détail
+  (9 rangs, ombres de tous les rangs, nervures de toutes les folioles) réservé à DET 1.5.
+
+### Reprise v2 (critiques du porteur sur la planche t1, 17 octobre 2026)
+- Forme des ligules d'après les photos Swan Island (refcache, privées) : Center Court (blanc formel), Sheer Heaven (jaune et rose), Labyrinth
+  (informel). Ligules larges, plates à cuillère, bout arrondi ou à peine pointu, en rangs réguliers jusqu'au cœur ; rang externe de 13 ligules
+  (formel) ou 12 (informel) au lieu de 17 et 15 ; largeur rapportée au diamètre de la tête 0,11 (v1) → environ 0,17 (photo Sheer Heaven 0,18).
+  Informel : largeur 0,46 R, effilement 0,24, bout 2,05/0,88 (v1 0,32, 0,42, 1,75/1,15 : lame de chrysanthème), torsion et pli réduits.
+- Paire de face Sheer Heaven / bicolore : l/h 1,03 photo, 1,18 rendu (vue 0 un peu inclinée) ; profil h/l 0,69 (fiche 0,7 à 0,8).
+- Blancs et crèmes : ombre en croissant le long de la marge relevée (option `shLens`, plus de ligne dure sur la nervure), ombres portées
+  arrondies (`shR`), bouts à 5 points à DET 1 (`tipN1`), ombres chaudes (blanc : ombre #c9ae80, ton d'ombre #e0d2b2, encre #cdbb98 ; aucune
+  teinte grise) ; fané des pâles vers un tan clair (`wTone` par coloris : médiane du blanc fané .75 h 35° s .40 l .66, v1 s .17).
+- Cœur : rangs internes en écailles couchées (plus d'étoile d'éclats), fond du cœur à la couleur des rangs internes (`heart.wallI`, `wallNz`).
+- Budget à DET 1 dans le bouquet (rc décoratif) : 103 à 157 éléments et 27 à 41 Ko par tige (ancien dessin 123 à 197 él., 71 à 112 Ko).
+
+## Chrysanthemum × morifolium, chrysanthème disbud de coupe (sid chrysantheme-disbud) : capitule double en SVG natif, chantier ch/capitules-doubles, 17 octobre 2026
+
+Pièce capitule (`app/y3-capitule.js`, étendue : courbure par rang `aPow`, nombre et largeur des rayons à DET 1 `nK1`/`wK1`, feuille lobée
+`svcapLobed`) ; fiche `app/y-chrysanthemum.js` (formes `reflexe` et `incurve`, `CHRY_MAT` 17 coloris dont 3 nouveaux `late:10` dans `CW_MUMD`,
+involucre de bractées rondes, vie, fané `chryWiltCol`, tige duveteuse, feuille lobée). L'araignée garde l'ancien dessin (`mumPlant`). Planches :
+`chrysantheme-disbud-sku-v1.png` (blanc, rose, bordeaux ; bouton .06 et .2, couleur au sommet .4, .75, ouvert, fané .35, .6, .9 ; 3/4 et profil),
+`chrysantheme-disbud-coloris.png` (17 coloris, 3/4 et profil), `chrysantheme-disbud-plante.png` (tige entière, DET 1.5),
+`chrysantheme-disbud-fane.png` (blanc, jaune, rose, orange, violet, rouille ; fané 0 à 1). Aucune photo de tiers n'est publiée : elles restent
+dans `refcache/chrysantheme-disbud` (privé).
+
+### Reprise v2 (17 octobre 2026, exigence « chaque fleur magnifique »)
+Planches remplacées : `chrysantheme-disbud-sku-v1.png` (blanc, crème, rose, bordeaux x 9 stades x 3/4 et profil, D 300),
+`chrysantheme-disbud-coloris.png` (17 coloris, 3/4 et profil, 2610 px), `chrysantheme-disbud-fane.png` (blanc, rose, bordeaux, bleu ; fané .6, .75,
+.9 ; face et profil), `chrysantheme-disbud-plante.png` (bordeaux 3/4 et blanc vue de côté, bouton à fané, tige de 40 cm, `jn=1`),
+`chrysantheme-disbud-bouquet.png` (bouquet ouvert, fané, ouvert composé sur fond sombre). Mesures : réflexe 14 rangs (9 à DET 1), 30/28/12 ligules
+par rang, ligule en cuillère (onglet .2, plus large à .8 de la longueur, gouttière .45), dôme incurvé de rayon ~1 R0 sur la jupe, profil h/l .61
+(prof.py ; brief .6 à .7) ; comparé à Salma, Whooper, Leonov, Boda, Fiebre, t062 (vignettes `ph/`). Budget DET 1 : 254 éléments, 58 Ko par tige.
+
+### Sources (`refcache/chrysantheme-disbud/brief.md`, `keep.json`, `ph/`, `coloris-a.md`, `coloris-b.md`)
+
+- Variétés de coupe nommées (photos d'obtenteurs et de grossistes, tiers, `ph/`) : type réflexe d'après Salma, Whooper, Leonov, Fiebre, Pibe,
+  Boda, Annie Girl, Honeymoon, Desna Dark, Campari, Balance, Bellavista, Gaviria ; type incurvé (boule) d'après Fuzzball et Greenbelt (vert).
+- Involucre : 267, 160, 491 (trois rangs de bractées rondes gris-vert, feutrées). Tige : 96, 334, 482, 59 (ligneuse, striée, duvet court).
+  Feuille : 420, 257, 138, 96 (pétiolée, ovale, cinq lobes arrondis entaillés à mi-limbe, dents obtuses ; longueur/largeur 1,4).
+- Fané : photos de jardin 502, 423, 424, 455 (aucune photo de disbud de coupe nommé fané : fané « d'après proxy »).
+
+### Mesures
+
+- Profil réflexe : Boda h/l 0,83 (photo de côté, un peu de dessus) ; rendu 0,78 au calcul du profil pur (rangs : rmax sur un cercle) ; incurvé
+  t059 0,96, rendu 0,98. Couleurs : `coloris-a.md` et `coloris-b.md`, recalées à l'œil contre les vignettes (violet, rouille, orange, saumon,
+  blanc à cœur vert, vert ; bleu teint #2c6cbe à cœur vert-jaune ; lilas mauve-rose de Vanya Pink et Rossano).
+- Budget à DET 1 : plante 205 éléments et 42 Ko ; dans le bouquet (9 tiges), 155 à 184 éléments par tige contre 135 pour l'ancien dessin. Le
+  rtest compte à DET 1.5 (tête détaillée, 489 éléments) : son écart (+380 par tige) n'est pas le budget DET 1.
