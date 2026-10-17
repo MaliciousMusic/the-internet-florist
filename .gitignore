@@ -63,3 +63,6 @@ revue-vases/demandes/_vues/
 revue-vases/demandes/_vues/
 vases5/tours/*/out/
 vases5/tours/_apercu.html
+# private port copies written by pipe.py v3 in each working copy
+fleur/*_p.sh
+fleur/portwrap_p.py
