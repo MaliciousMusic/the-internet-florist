@@ -1623,3 +1623,14 @@ rouge à 1:.6 sans plaques pâles (BP 3.3). Même fané appliqué à `rose-aspec
   (photos 1396, 1403, 1411, 590) et sur Mme Pierre Oger 49 : quelques pétales étroits pendants, le reste tombé.
 - Mesures de rendu : budget DET 1 de la plante de 50 cm (vieux-rose, graine 7), par stade, ancien code / nouveau : .1 150/36 - 150/36 ;
   1:0 180/63 - 166/61 ; 1:.5 189/55 - 194/54 ; 1:.75 211/53 - 189/52 ; 1:.9 209/48 - 191/48 (éléments/Ko).
+
+## anthurium-andraeanum (relais 4, 2026-10-17)
+- Sources : refcache/anthurium-andraeanum/brief.md (41 photos gardées, kept.jpg ; Wikimedia Commons, licences CC BY, CC BY-SA, CC0 notées au brief).
+- Mesures : spathe à 40-50° de la tige (photos 35, 36, 54) ; spadice presque à angle droit de la spathe (NC State) ; pas de photo libre du dos ni du profil de cambrure (brief « Manques »).
+- Rendu : 15 coloris (coloris.md, à transcrire par fleur-finition), 123 éléments et 27 Ko par tête à DET 1.
+
+## arum-calla (Zantedeschia, relais 2, 2026-10-17)
+- Sources : refcache/arum-calla/brief.md (23 photos iNaturalist, observations de recherche sous licences CC, auteur et licence notés au brief ; kept.jpg). Aucune photo ajoutée au dépôt.
+- Mesures et proportions (brief, à l'œil, confiance faible) : cornet haut de 1,5 à 2 fois la largeur de l'ouverture (68, 91, 21) ; acumen court roulé dehors (89, 26, 32) ; spadice à la moitié de la spathe (84, 46) ; macule pourpre de gorge (30) ; bouton fermé et pointu, H/L ≈ 3 (15, 17) ; tige 1/8 (109) à 1/4 (73) de la largeur de la spathe ; fané : bord qui brunit (84), le reste d'après la littérature.
+- Rendu : 19 coloris (16 + 3 late:11) ; tête 1,3 × la longueur de recette sur la plante (12 cm → 15,6 cm sur 50 cm) ; 83 éléments et 15 Ko par tête à DET 1 (planche c19d), 100 à 116 éléments et 21 à 24 Ko à DET 1,5.
+- Planches : arum-calla-sku-v1.png (rasante et profil, gros plans, fané), arum-calla-coloris-v1.png (19 coloris, op .4 et 1, vue 3/4).

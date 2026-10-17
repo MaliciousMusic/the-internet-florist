@@ -1,0 +1,1387 @@
+{
+ "sid": "arum-calla",
+ "sources": [
+  "refcache/arum-calla/preuves/lot-p3.json",
+  "refcache/arum-calla/preuves/lot-p4.json",
+  "refcache/arum-calla/kavb.json (lecture seule)"
+ ],
+ "methode": {
+  "mesure": "refs.py auto (base, corps, pointe) ; pal a la main sur boite approchee quand auto illisible ; ring au centre",
+  "ecart": "DeltaE76 entre photos du meme SKU ; ecart de teinte LCh en degres",
+  "mediane": "mediane Lab des photos retenues (a 2 photos : moyenne)",
+  "seuil": "DeltaE > 10 entre photos : signale, 3e photo demandee"
+ },
+ "eclairage_note": "fonds souvent non neutres (feuillage, pot, champ, packaging) ; blancs en ombre sur plusieurs photos : valeurs blanches non fiables",
+ "skus": {
+  "1178": {
+   "cultivars": [
+    "captain-ventura",
+    "crowborough"
+   ],
+   "photos": [
+    "0",
+    "1"
+   ],
+   "mediane_base": "#d2cea6",
+   "mediane_corps": "#d8dacb",
+   "ecart_dE_max": 16.7,
+   "ecart_teinte_deg": 7.7,
+   "niveau_calcule_meilleur": "B",
+   "niveau_production": "non : provisoire",
+   "remarques": [
+    "2 photo(s) mesurable(s) sur 3 requises",
+    "DeltaE max 16.7 entre photos : 3e photo demandee"
+   ],
+   "remarques_manuelles": "crowborough (N3, ombre sur la spathe) et captain-ventura (N3) : ecart DeltaE 16.7 ; le blanc est en ombre sur les deux photos ; 3e photo sur le plein eclaire demandee",
+   "niveau_v2": "C",
+   "v2": {
+    "date": "2026-10-17, vague 3 (regle 3 photos, 2 sources, dE<=10)",
+    "niveau": "C",
+    "note": "C : 2 photos (N3), dE 16,7 ; photos Dutch Grown et Burncoose re-mesurees, conf 0,65 : non retenues."
+   }
+  },
+  "1179": {
+   "cultivars": [
+    "green-goddess"
+   ],
+   "photos": [
+    "2"
+   ],
+   "mediane_base": "#e8e9db",
+   "mediane_corps": "#f0f0ee",
+   "ecart_dE_max": 0.0,
+   "ecart_teinte_deg": 0,
+   "niveau_calcule_meilleur": "B",
+   "niveau_production": "non : provisoire",
+   "remarques": [
+    "1 photo(s) mesurable(s) sur 3 requises"
+   ],
+   "remarques_manuelles": "une seule photo (green-goddess, N3, plein air) ; vert marbre en pointe non mesure",
+   "niveau_v2": "C",
+   "v2": {
+    "date": "2026-10-17, vague 3 (regle 3 photos, 2 sources, dE<=10)",
+    "niveau": "C",
+    "note": "C : une seule photo (N3)."
+   }
+  },
+  "1180": {
+   "cultivars": [
+    "captain-ventura",
+    "pink-mist"
+   ],
+   "photos": [
+    "1",
+    "3"
+   ],
+   "mediane_base": "#d7cab2",
+   "mediane_corps": "#d7d4c5",
+   "ecart_dE_max": 23.4,
+   "ecart_teinte_deg": 57.7,
+   "niveau_calcule_meilleur": "B",
+   "niveau_production": "non : provisoire",
+   "remarques": [
+    "2 photo(s) mesurable(s) sur 3 requises",
+    "DeltaE max 23.4 entre photos : 3e photo demandee",
+    "ecart de teinte 57.7 deg"
+   ],
+   "remarques_manuelles": "captain-ventura (creme) et pink-mist (gorge rose, auto lit un gris) : teintes incompatibles ; pas de rose fiable",
+   "niveau_v2": "C",
+   "v2": {
+    "date": "2026-10-17, vague 3 (regle 3 photos, 2 sources, dE<=10)",
+    "niveau": "C",
+    "note": "C : 2 photos, dE 23,4."
+   }
+  },
+  "1181": {
+   "cultivars": [],
+   "photos": [],
+   "mediane_base": null,
+   "mediane_corps": null,
+   "ecart_dE_max": null,
+   "ecart_teinte_deg": null,
+   "niveau_calcule_meilleur": "D",
+   "niveau_production": "non : provisoire",
+   "remarques": [
+    "0 photo(s) mesurable(s) sur 3 requises"
+   ],
+   "remarques_manuelles": "aucune photo nommee (intimate-ivory N4 sans URL, ivory-queen et mint-julip absents) ; non mesure",
+   "niveau_v2": "D",
+   "v2": {
+    "date": "2026-10-17, vague 3 (regle 3 photos, 2 sources, dE<=10)",
+    "niveau": "D",
+    "note": "D : aucune photo."
+   }
+  },
+  "1182": {
+   "cultivars": [
+    "black-eyed-beauty"
+   ],
+   "photos": [
+    "6"
+   ],
+   "mediane_base": "#979758",
+   "mediane_corps": "#bab268",
+   "ecart_dE_max": 0.0,
+   "ecart_teinte_deg": 0.0,
+   "niveau_calcule_meilleur": "B",
+   "niveau_production": "non : provisoire",
+   "remarques": [
+    "1 photo(s) mesurable(s) sur 3 requises"
+   ],
+   "remarques_manuelles": "picasso : photo 4 (champ) et photo 5 (ombre) inexploitables ; seule black-eyed-beauty mesuree, olive-jaune, ne represente pas une creme a gorge pourpre ; a reprendre",
+   "niveau_v2": "C",
+   "v2": {
+    "date": "2026-10-17, vague 3 (regle 3 photos, 2 sources, dE<=10)",
+    "niveau": "C",
+    "note": "C : une seule photo (N3)."
+   }
+  },
+  "1183": {
+   "cultivars": [
+    "captain-solo"
+   ],
+   "photos": [
+    "7"
+   ],
+   "mediane_base": "#d6c03a",
+   "mediane_corps": "#d9c226",
+   "ecart_dE_max": 0.0,
+   "ecart_teinte_deg": 0.0,
+   "niveau_calcule_meilleur": "B",
+   "niveau_production": "non : provisoire",
+   "remarques": [
+    "1 photo(s) mesurable(s) sur 3 requises"
+   ],
+   "remarques_manuelles": "captain-solo, seule photo (N3, fond sombre) mesuree a la main ; mention PBR a verifier (CPVO)",
+   "niveau_v2": "C",
+   "v2": {
+    "date": "2026-10-17, vague 3 (regle 3 photos, 2 sources, dE<=10)",
+    "niveau": "C",
+    "note": "C : une seule photo (N3)."
+   }
+  },
+  "1184": {
+   "cultivars": [
+    "gold-rush"
+   ],
+   "photos": [
+    "8"
+   ],
+   "mediane_base": "#d4b419",
+   "mediane_corps": "#3f5821",
+   "ecart_dE_max": 0.0,
+   "ecart_teinte_deg": 0.0,
+   "niveau_calcule_meilleur": "B",
+   "niveau_production": "non : provisoire",
+   "remarques": [
+    "1 photo(s) mesurable(s) sur 3 requises"
+   ],
+   "remarques_manuelles": "gold-rush, seule photo (N3) ; corps sur feuillage non retenu ; gold-fever et gold-crown sans photo",
+   "niveau_v2": "C",
+   "v2": {
+    "date": "2026-10-17, vague 3 (regle 3 photos, 2 sources, dE<=10)",
+    "niveau": "C",
+    "note": "C : une seule photo (N3)."
+   }
+  },
+  "1185": {
+   "cultivars": [
+    "captain-alma"
+   ],
+   "photos": [
+    "16",
+    "17"
+   ],
+   "mediane_base": "#b86e72",
+   "mediane_corps": "#ca7f87",
+   "ecart_dE_max": 23.4,
+   "ecart_teinte_deg": 30.4,
+   "niveau_calcule_meilleur": "A",
+   "niveau_production": "non : provisoire",
+   "remarques": [
+    "2 photo(s) mesurable(s) sur 3 requises",
+    "DeltaE max 23.4 entre photos : 3e photo demandee",
+    "ecart de teinte 30.4 deg"
+   ],
+   "remarques_manuelles": "captain-alma (N2 + N3) : niveau A calcule, mais ecart DeltaE 23 ; peach-pazazz, apricot-lady, salmon-parfait sans photo : le nom peche/abricot n est pas prouve",
+   "niveau_v2": "C",
+   "v2": {
+    "date": "2026-10-17, vague 3 (regle 3 photos, 2 sources, dE<=10)",
+    "niveau": "C",
+    "note": "C : 2 photos (Kapiteyn N2 + N3), dE 23,4 ; Kapiteyn captain-alma re-mesure conf 0,83 (rose #d27d92) : troisieme photo."
+   }
+  },
+  "1186": {
+   "cultivars": [
+    "captain-odeon",
+    "captain-trinity",
+    "mango"
+   ],
+   "photos": [
+    "9",
+    "10",
+    "11",
+    "13"
+   ],
+   "mediane_base": "#cd6447",
+   "mediane_corps": "#d66f44",
+   "ecart_dE_max": 39.3,
+   "ecart_teinte_deg": 27.8,
+   "niveau_calcule_meilleur": "B",
+   "niveau_production": "non : provisoire",
+   "remarques": [
+    "DeltaE max 39.3 entre photos : 3e photo demandee",
+    "ecart de teinte 27.8 deg"
+   ],
+   "remarques_manuelles": "trinity rouge-orange, odeon orange-rouge, mango orange : ecart DeltaE 39 ; photo 12 (odeon, vin) exclue",
+   "niveau_v2": "C",
+   "v2": {
+    "date": "2026-10-17, vague 3 (regle 3 photos, 2 sources, dE<=10)",
+    "niveau": "C",
+    "note": "C : 4 photos, dE 39,3 (cultivars differents)."
+   }
+  },
+  "1187": {
+   "cultivars": [
+    "captain-alma",
+    "captain-romance",
+    "captain-samba"
+   ],
+   "photos": [
+    "14",
+    "15",
+    "16",
+    "17",
+    "43",
+    "44"
+   ],
+   "mediane_base": "#c9656f",
+   "mediane_corps": "#d76f7f",
+   "ecart_dE_max": 53.3,
+   "ecart_teinte_deg": 44.3,
+   "niveau_calcule_meilleur": "A",
+   "niveau_production": "non : provisoire",
+   "remarques": [
+    "DeltaE max 53.3 entre photos : 3e photo demandee",
+    "ecart de teinte 44.3 deg"
+   ],
+   "remarques_manuelles": "romance saumon-rose, samba rose profond, alma rose pale : ecart DeltaE 53 ; le SKU melange plusieurs roses",
+   "niveau_v2": "C",
+   "v2": {
+    "date": "2026-10-17, vague 3 (regle 3 photos, 2 sources, dE<=10)",
+    "niveau": "C",
+    "note": "C : 6 photos, dE 53,3 : separer captain-alma / romance / samba."
+   }
+  },
+  "1188": {
+   "cultivars": [
+    "garnet-glow"
+   ],
+   "photos": [
+    "20",
+    "21"
+   ],
+   "mediane_base": "#bb8094",
+   "mediane_corps": "#9a5272",
+   "ecart_dE_max": 10.4,
+   "ecart_teinte_deg": 4.8,
+   "niveau_calcule_meilleur": "B",
+   "niveau_production": "non : provisoire",
+   "remarques": [
+    "2 photo(s) mesurable(s) sur 3 requises",
+    "DeltaE max 10.4 entre photos : 3e photo demandee"
+   ],
+   "remarques_manuelles": "garnet-glow seul cultivar mesure (2 photos, ecart DeltaE 10.4) ; captain-hollywood exclue (fond terre cuite)",
+   "niveau_v2": "C",
+   "v2": {
+    "date": "2026-10-17, vague 3 (regle 3 photos, 2 sources, dE<=10)",
+    "niveau": "C",
+    "note": "C : 2 photos, dE 10,4."
+   }
+  },
+  "1189": {
+   "cultivars": [
+    "majestic-red",
+    "red-alert"
+   ],
+   "photos": [
+    "22",
+    "23",
+    "24",
+    "25"
+   ],
+   "mediane_base": "#cd1b3f",
+   "mediane_corps": "#b4343b",
+   "ecart_dE_max": 31.9,
+   "ecart_teinte_deg": 20.8,
+   "niveau_calcule_meilleur": "B",
+   "niveau_production": "non : provisoire",
+   "remarques": [
+    "DeltaE max 31.9 entre photos : 3e photo demandee",
+    "ecart de teinte 20.8 deg"
+   ],
+   "remarques_manuelles": "red-alert rouge vif et majestic-red rose-rouge : ecart DeltaE 32 ; captain-hollywood exclue",
+   "niveau_v2": "C",
+   "v2": {
+    "date": "2026-10-17, vague 3 (regle 3 photos, 2 sources, dE<=10)",
+    "niveau": "C",
+    "note": "C : 4 photos, dE 31,9."
+   }
+  },
+  "1190": {
+   "cultivars": [
+    "majestic-red"
+   ],
+   "photos": [
+    "24",
+    "25"
+   ],
+   "mediane_base": "#e42a58",
+   "mediane_corps": "#c74b68",
+   "ecart_dE_max": 8.4,
+   "ecart_teinte_deg": 5.0,
+   "niveau_calcule_meilleur": "B",
+   "niveau_production": "non : provisoire",
+   "remarques": [
+    "2 photo(s) mesurable(s) sur 3 requises"
+   ],
+   "remarques_manuelles": "bordeaux : aucune photo bordeaux ; seul majestic-red (rose-rouge) ; merlot-blz, hot-cherry-blz, bordeaux sans photo ; teinte a reprendre",
+   "niveau_v2": "C",
+   "v2": {
+    "date": "2026-10-17, vague 3 (regle 3 photos, 2 sources, dE<=10)",
+    "niveau": "C",
+    "note": "C : 2 photos, dE 8,4."
+   }
+  },
+  "1191": {
+   "cultivars": [
+    "captain-carrera",
+    "captain-promise",
+    "red-charm"
+   ],
+   "photos": [
+    "26",
+    "27",
+    "28",
+    "30"
+   ],
+   "mediane_base": "#682432",
+   "mediane_corps": "#823c4d",
+   "ecart_dE_max": 47.2,
+   "ecart_teinte_deg": 14.7,
+   "niveau_calcule_meilleur": "A",
+   "niveau_production": "non : provisoire",
+   "remarques": [
+    "DeltaE max 47.2 entre photos : 3e photo demandee",
+    "ecart de teinte 14.7 deg"
+   ],
+   "remarques_manuelles": "captain-promise (N2, pourpre-vin), captain-carrera (N2, noir), red-charm (magenta) : ecart DeltaE 47 ; ranomi non traite",
+   "niveau_v2": "C",
+   "v2": {
+    "date": "2026-10-17, vague 3 (regle 3 photos, 2 sources, dE<=10)",
+    "niveau": "C",
+    "note": "C : 4 photos, dE 47,2."
+   }
+  },
+  "1192": {
+   "cultivars": [
+    "black-star",
+    "captain-carrera"
+   ],
+   "photos": [
+    "29",
+    "30"
+   ],
+   "mediane_base": "#3c1e1f",
+   "mediane_corps": "#271513",
+   "ecart_dE_max": 15.1,
+   "ecart_teinte_deg": 2.1,
+   "niveau_calcule_meilleur": "B",
+   "niveau_production": "non : provisoire",
+   "remarques": [
+    "2 photo(s) mesurable(s) sur 3 requises",
+    "DeltaE max 15.1 entre photos : 3e photo demandee"
+   ],
+   "remarques_manuelles": "black-star (N3) et captain-carrera (N2) : quasi noir, ecart DeltaE 15 ; deux photos seulement ; captain-beretta non traite",
+   "niveau_v2": "C",
+   "v2": {
+    "date": "2026-10-17, vague 3 (regle 3 photos, 2 sources, dE<=10)",
+    "niveau": "C",
+    "note": "C : 2 photos, dE 15,1."
+   }
+  },
+  "1193": {
+   "cultivars": [
+    "hot-chocolate"
+   ],
+   "photos": [
+    "31",
+    "32"
+   ],
+   "mediane_base": "#6c151f",
+   "mediane_corps": "#9a5b6b",
+   "ecart_dE_max": 16.0,
+   "ecart_teinte_deg": 7.3,
+   "niveau_calcule_meilleur": "B",
+   "niveau_production": "non : provisoire",
+   "remarques": [
+    "2 photo(s) mesurable(s) sur 3 requises",
+    "DeltaE max 16.0 entre photos : 3e photo demandee"
+   ],
+   "remarques_manuelles": "hot-chocolate : photo 31 brun-rubis (mesure a la main) et photo 32 magenta-vin (ecart DeltaE 16) ; deux photos seulement",
+   "niveau_v2": "C",
+   "v2": {
+    "date": "2026-10-17, vague 3 (regle 3 photos, 2 sources, dE<=10)",
+    "niveau": "C",
+    "note": "C : 2 photos, dE 16,0."
+   }
+  }
+ },
+ "coloris_sans_sku": {
+  "captain-murano": {
+   "photos": [
+    "33"
+   ],
+   "mediane_base": "#e87831",
+   "mediane_corps": "#e3773c",
+   "niveau_calcule": "B",
+   "remarques": [
+    "1 photo(s) mesurable(s) sur 3 requises"
+   ],
+   "remarques_manuelles": "une photo (N3, orange saumon, plein air) ; second cliche exclu (feuillage)"
+  },
+  "captain-safari": {
+   "photos": [
+    "35"
+   ],
+   "mediane_base": "#c72a1e",
+   "mediane_corps": "#e57041",
+   "niveau_calcule": "B",
+   "remarques": [
+    "1 photo(s) mesurable(s) sur 3 requises"
+   ],
+   "remarques_manuelles": "une photo utilisable (N3, orange-rouge, fond souci) ; second cliche exclu (fond blanc, confiance auto basse)"
+  },
+  "captain-chelsea": {
+   "photos": [
+    "37"
+   ],
+   "mediane_base": "#bcab6f",
+   "mediane_corps": "#816157",
+   "niveau_calcule": "B",
+   "remarques": [
+    "1 photo(s) mesurable(s) sur 3 requises"
+   ],
+   "remarques_manuelles": "une photo (N3, Astra Flowers, fond blanc) mesuree a la main : base jaune, gorge pourpre-noir"
+  },
+  "captain-osorno": {
+   "photos": [],
+   "mediane_base": null,
+   "mediane_corps": null,
+   "niveau_calcule": "D",
+   "remarques": [
+    "0 photo(s) mesurable(s) sur 3 requises",
+    "aucune photo nommee"
+   ],
+   "remarques_manuelles": "aucune photo nommee (texte seul)"
+  },
+  "montevideo": {
+   "photos": [],
+   "mediane_base": null,
+   "mediane_corps": null,
+   "niveau_calcule": "D",
+   "remarques": [
+    "0 photo(s) mesurable(s) sur 3 requises",
+    "aucune photo nommee"
+   ],
+   "remarques_manuelles": "aucune photo nommee (texte seul)"
+  },
+  "lemon-drop": {
+   "photos": [],
+   "mediane_base": null,
+   "mediane_corps": null,
+   "niveau_calcule": "D",
+   "remarques": [
+    "0 photo(s) mesurable(s) sur 3 requises",
+    "aucune photo nommee"
+   ],
+   "remarques_manuelles": "photo N4 sans URL ; aucune description de couleur"
+  },
+  "lavender-gem": {
+   "photos": [],
+   "mediane_base": null,
+   "mediane_corps": null,
+   "niveau_calcule": "D",
+   "remarques": [
+    "0 photo(s) mesurable(s) sur 3 requises",
+    "aucune photo nommee"
+   ],
+   "remarques_manuelles": "photo N4 sans URL ; lavande-bleu : a verifier"
+  },
+  "call-aruna": {
+   "photos": [],
+   "mediane_base": null,
+   "mediane_corps": null,
+   "niveau_calcule": "D",
+   "remarques": [
+    "0 photo(s) mesurable(s) sur 3 requises",
+    "aucune photo nommee"
+   ],
+   "remarques_manuelles": "aucune photo nommee"
+  },
+  "z-albomaculata": {
+   "photos": [
+    "38"
+   ],
+   "mediane_base": "#c6c293",
+   "mediane_corps": "#696b2e",
+   "niveau_calcule": "B",
+   "remarques": [
+    "1 photo(s) mesurable(s) sur 3 requises",
+    "espece, pas un coloris"
+   ],
+   "remarques_manuelles": "espece (pas un coloris) ; une photo utilisable (N3)"
+  },
+  "z-elliottiana": {
+   "photos": [],
+   "mediane_base": null,
+   "mediane_corps": null,
+   "niveau_calcule": "C",
+   "remarques": [
+    "0 photo(s) mesurable(s) sur 3 requises",
+    "espece, pas un coloris",
+    "aucune photo nommee"
+   ],
+   "remarques_manuelles": "espece ; photo N4 en erreur 404 : non mesuree"
+  },
+  "z-pentlandii": {
+   "photos": [
+    "41"
+   ],
+   "mediane_base": "#c79f04",
+   "mediane_corps": "#ceb00e",
+   "niveau_calcule": "C",
+   "remarques": [
+    "1 photo(s) mesurable(s) sur 3 requises",
+    "espece, pas un coloris"
+   ],
+   "remarques_manuelles": "espece ; une photo N4 utilisable (jaune citron) ; gros plan exclu"
+  },
+  "z-rehmannii": {
+   "photos": [],
+   "mediane_base": null,
+   "mediane_corps": null,
+   "niveau_calcule": "D",
+   "remarques": [
+    "0 photo(s) mesurable(s) sur 3 requises",
+    "espece, pas un coloris",
+    "aucune photo nommee"
+   ],
+   "remarques_manuelles": "espece ; aucune photo nommee"
+  }
+ },
+ "photos": {
+  "0": {
+   "cultivar": "crowborough",
+   "skus": [
+    1178
+   ],
+   "niveau_photo": "N3",
+   "source": "Burncoose Nurseries (pepiniere UK)",
+   "page": "https://www.burncoose.co.uk/site/plants.cfm?pl_id=4383",
+   "image": "https://www.burncoose.co.uk/site/img/products/main500/zantedeshia_aethiopica_crowborough_4383a.jpg",
+   "conf_auto": 0.72,
+   "base": "#bfb78d",
+   "corps": "#c7c9c0",
+   "pointe_auto": "#61716f",
+   "centre_ring": "0.2:#c3be9a 0.8:#c1bda7",
+   "eclairage": "studio fond noir, ombre",
+   "manuel": "pal a la main, boite 0.30-0.60 x 0.25-0.60 : ombre sur la spathe",
+   "exclue": null
+  },
+  "1": {
+   "cultivar": "captain-ventura",
+   "skus": [
+    1178,
+    1180
+   ],
+   "niveau_photo": "N3",
+   "source": "DutchGrown (exportateur bulbes NL)",
+   "page": "https://www.dutchgrown.com/products/calla-lily-captain-ventura",
+   "image": "https://www.dutchgrown.com/cdn/shop/files/Calla_Lily_Captain_Ventura-1.jpg?v=1695133526",
+   "conf_auto": 0.65,
+   "base": "#e6e5c0",
+   "corps": "#eaebd7",
+   "pointe_auto": "#e6e8d6",
+   "centre_ring": "0.2:#e2dfb4 0.8:#e6e5c1",
+   "eclairage": "studio fond vert",
+   "manuel": null,
+   "exclue": null
+  },
+  "2": {
+   "cultivar": "green-goddess",
+   "skus": [
+    1179
+   ],
+   "niveau_photo": "N3",
+   "source": "San Marcos Growers (pepiniere US)",
+   "page": "https://www.smgrowers.com/products/plants/plantdisplay.asp?plant_id=1632",
+   "image": "https://www.smgrowers.com/imagedb/ZantedeschiaGreenGoddess.jpg",
+   "conf_auto": 0.6,
+   "base": "#e8e9db",
+   "corps": "#f0f0ee",
+   "pointe_auto": "#edecd0",
+   "centre_ring": "0.2:#e1e4ca 0.8:#e8eadc",
+   "eclairage": "plein air, feuillage",
+   "manuel": null,
+   "exclue": null
+  },
+  "3": {
+   "cultivar": "pink-mist",
+   "skus": [
+    1180
+   ],
+   "niveau_photo": "N4",
+   "source": "Flickr, J. Shejbal, 03-06-2013",
+   "page": "https://www.flickr.com/photos/29675262@N04/8937141821",
+   "image": "https://live.staticflickr.com/5342/8937141821_bbe92ecacf.jpg",
+   "conf_auto": 1.0,
+   "base": "#c7afa5",
+   "corps": "#c5beb4",
+   "pointe_auto": "#cac8bf",
+   "centre_ring": "0.2:#c6aca2 0.8:#c7afa5",
+   "eclairage": "plein air",
+   "manuel": null,
+   "exclue": null
+  },
+  "4": {
+   "cultivar": "picasso",
+   "skus": [
+    1182
+   ],
+   "niveau_photo": "N3",
+   "source": "Plant Delights (pepiniere US), photo Lidia Churakova",
+   "page": "https://www.plantdelights.com/products/zantedeschia-picasso-purple-calla-lilies",
+   "image": "https://www.plantdelights.com/cdn/shop/files/Zantedeschia-Picasso.i-8324.s-67691.r-2_635caca6-03a8-40ac-85b8-a48db02e2f34.jpg?v=1791989058&width=1946",
+   "conf_auto": 0.28,
+   "base": "#bbb6ab",
+   "corps": "#aea99f",
+   "pointe_auto": "#9c9ca2",
+   "centre_ring": "0.2:#5d7348 0.8:#537e31",
+   "eclairage": "non note",
+   "manuel": null,
+   "exclue": "champ, bouquet en plante : approche"
+  },
+  "5": {
+   "cultivar": "picasso",
+   "skus": [
+    1182
+   ],
+   "niveau_photo": "N3",
+   "source": "Pacific Bulb Society, photo Giorgio Pozzi, juin 2007",
+   "page": "https://www.pacificbulbsociety.org/pbswiki/index.php/zantedeschia",
+   "image": "https://www.pacificbulbsociety.org/pbswiki/files/Zantedeschia/Zantedeschia_picasso_gp.jpg",
+   "conf_auto": 0.52,
+   "base": "#12140a",
+   "corps": "#746c76",
+   "pointe_auto": "#171b11",
+   "centre_ring": "0.2:#1c210c 0.8:#13160a",
+   "eclairage": "non note",
+   "manuel": null,
+   "exclue": "ombre sur les spathes blanches, auto et pal illisibles"
+  },
+  "6": {
+   "cultivar": "black-eyed-beauty",
+   "skus": [
+    1182
+   ],
+   "niveau_photo": "N3",
+   "source": "Callas New Zealand Ltd (producteur), credit photo",
+   "page": "https://www.qualitycallas.co.nz/flower/black-eyed-beauty/",
+   "image": "https://www.qualitycallas.co.nz/wp-content/uploads/2013/04/black-eyed-beauty345x345.jpg",
+   "conf_auto": 0.68,
+   "base": "#979758",
+   "corps": "#bab268",
+   "pointe_auto": "#aca889",
+   "centre_ring": "0.2:#67733a 0.8:#878b4f",
+   "eclairage": "fond gris clair",
+   "manuel": null,
+   "exclue": null
+  },
+  "7": {
+   "cultivar": "captain-solo",
+   "skus": [
+    1183
+   ],
+   "niveau_photo": "N3",
+   "source": "Devil Mountain Wholesale Nursery, photo principale produit",
+   "page": "https://devilmountainnursery.com/zantedeschia-sprengeri-captain-solo/",
+   "image": "https://cdn11.bigcommerce.com/s-ifhig5mh0a/products/3126/images/1915/media__57772.1678813174.386.513.jpg?c=1",
+   "conf_auto": 0.32,
+   "base": "#d6c03a",
+   "corps": "#d9c226",
+   "pointe_auto": "#274045",
+   "centre_ring": "0.2:#c8a715 0.8:#dbc52c",
+   "eclairage": "fond sombre studio",
+   "manuel": "pal a la main, boite 0.30-0.50 x 0.20-0.45",
+   "exclue": null
+  },
+  "8": {
+   "cultivar": "gold-rush",
+   "skus": [
+    1184
+   ],
+   "niveau_photo": "N3",
+   "source": "Roger's Gardens (pepiniere US)",
+   "page": "https://plants.rogersgardens.com/12290002/Plant/20152/Gold_Rush_Calla_Lily/",
+   "image": "https://plants.rogersgardens.com/Content/Images/Photos/H036-13.jpg",
+   "conf_auto": 0.51,
+   "base": "#d4b419",
+   "corps": "#3f5821",
+   "pointe_auto": "#31475a",
+   "centre_ring": "0.2:#d9b715 0.8:#ceae18",
+   "eclairage": "plein air, feuillage bleu",
+   "manuel": "pal a la main, boite 0.40-0.60 x 0.20-0.50",
+   "exclue": null
+  },
+  "9": {
+   "cultivar": "captain-trinity",
+   "skus": [
+    1186
+   ],
+   "niveau_photo": "N3",
+   "source": "Bulb Specialists (bulbes, UK)",
+   "page": "https://www.bulbspecialists.co.uk/product/zantedeschia-captain-trinity/",
+   "image": "https://www.bulbspecialists.co.uk/wp-content/uploads/2024/01/zantedeschiacaptaintrinity.jpg",
+   "conf_auto": 0.61,
+   "base": "#cb3f3a",
+   "corps": "#d8594f",
+   "pointe_auto": "#d3776e",
+   "centre_ring": "0.2:#c67354 0.8:#c45037",
+   "eclairage": "non note",
+   "manuel": null,
+   "exclue": null
+  },
+  "10": {
+   "cultivar": "captain-trinity",
+   "skus": [
+    1186
+   ],
+   "niveau_photo": "N3",
+   "source": "RHS Plant Selector (photo officielle, serie Captain)",
+   "page": "https://www.rhs.org.uk/plants/330200/zantedeschia-captain-trinity-pbr-(captain-series)/details",
+   "image": "https://apps.rhs.org.uk/plantselectorimages/detail/visi143705.jpg",
+   "conf_auto": 0.98,
+   "base": "#ae492e",
+   "corps": "#d6692b",
+   "pointe_auto": "#cc765c",
+   "centre_ring": "0.2:#da553b 0.8:#a6472d",
+   "eclairage": "non note",
+   "manuel": null,
+   "exclue": null
+  },
+  "11": {
+   "cultivar": "captain-odeon",
+   "skus": [
+    1186
+   ],
+   "niveau_photo": "N3",
+   "source": "RHS Plant Selector (photo officielle, serie Captain)",
+   "page": "https://www.rhs.org.uk/plants/341958/zantedeschia-captain-odeon-captain-series/details",
+   "image": "https://apps.rhs.org.uk/plantselectorimages/detail/Web_Use-RHS-0010623_13303.jpg",
+   "conf_auto": 0.47,
+   "base": "#f6886e",
+   "corps": "#d5765d",
+   "pointe_auto": "#e9605d",
+   "centre_ring": "0.2:#f9a9a4 0.8:#e87364",
+   "eclairage": "non note",
+   "manuel": null,
+   "exclue": null
+  },
+  "12": {
+   "cultivar": "captain-odeon",
+   "skus": [
+    1186
+   ],
+   "niveau_photo": "N3",
+   "source": "Urban Tree Farm (pepiniere, vente en ligne)",
+   "page": "https://www.urbantreefarm.com/product/zantedeschia-x-captain-odeon/",
+   "image": "https://www.urbantreefarm.com/wp-content/uploads/2023/12/Zantedeschia-x-Captain-Odeon-a.jpg",
+   "conf_auto": 0.67,
+   "base": "#932c47",
+   "corps": "#902b37",
+   "pointe_auto": "#5e3841",
+   "centre_ring": "0.2:#70683c 0.8:#6d5d38",
+   "eclairage": "non note",
+   "manuel": null,
+   "exclue": "teinte vin fonce, hors coloris de son SKU (captain-odeon orange)"
+  },
+  "13": {
+   "cultivar": "mango",
+   "skus": [
+    1186
+   ],
+   "niveau_photo": "N3",
+   "source": "J. Parker's (bulbes, UK)",
+   "page": "https://www.jparkers.co.uk/zantedeschia-mango-calla-lily/",
+   "image": "https://cdn11.bigcommerce.com/s-i7i23daso6/images/stencil/1280x1280/products/12257/36802/Zantedeschia_Mango_0002411__69384.1698151748.jpg?c=1",
+   "conf_auto": 0.86,
+   "base": "#e77506",
+   "corps": "#fba30c",
+   "pointe_auto": "#a65107",
+   "centre_ring": "0.2:#729450 0.8:#b88219",
+   "eclairage": "plein air",
+   "manuel": null,
+   "exclue": null
+  },
+  "14": {
+   "cultivar": "captain-romance",
+   "skus": [
+    1187
+   ],
+   "niveau_photo": "N3",
+   "source": "RHS Plant Selector (photo officielle, serie Captain)",
+   "page": "https://www.rhs.org.uk/plants/213286/zantedeschia-captain-romance-pbr-(captain-series)/details",
+   "image": "https://apps.rhs.org.uk/plantselectorimages/detail/RHS_WSYD0010672_8991.JPG",
+   "conf_auto": 0.96,
+   "base": "#eb7782",
+   "corps": "#eaa08d",
+   "pointe_auto": "#e1a690",
+   "centre_ring": "0.2:#eb7986 0.8:#ed7884",
+   "eclairage": "non note",
+   "manuel": null,
+   "exclue": null
+  },
+  "15": {
+   "cultivar": "captain-romance",
+   "skus": [
+    1187
+   ],
+   "niveau_photo": "N3",
+   "source": "Van Noort Bulb (bulbes, Pays-Bas)",
+   "page": "https://www.vannoortbulb.com/products/calla-zant-captain-romance",
+   "image": "https://www.vannoortbulb.com/cdn/shop/products/ScreenShot2020-11-19at1.41.07PM.png?v=1629875627&width=1214",
+   "conf_auto": 0.67,
+   "base": "#b7836d",
+   "corps": "#c64c6a",
+   "pointe_auto": "#bd4b64",
+   "centre_ring": "0.2:#a38d61 0.8:#b0ca83",
+   "eclairage": "non note",
+   "manuel": null,
+   "exclue": null
+  },
+  "16": {
+   "cultivar": "captain-alma",
+   "skus": [
+    1185,
+    1187
+   ],
+   "niveau_photo": "N2",
+   "source": "Kapiteyn (obtenteur, fiche variete)",
+   "page": "https://kapiteyn.nl/captain-calla/assortment/cut-callas/captain-alma/",
+   "image": "https://kapiteyn.nl/wp-content/uploads/2019/06/Snij-Captain-Alma.jpg",
+   "conf_auto": 0.83,
+   "base": "#d27d92",
+   "corps": "#d38499",
+   "pointe_auto": "#d17a91",
+   "centre_ring": "0.2:#db7da7 0.8:#ce788d",
+   "eclairage": "non note",
+   "manuel": null,
+   "exclue": null
+  },
+  "17": {
+   "cultivar": "captain-alma",
+   "skus": [
+    1185,
+    1187
+   ],
+   "niveau_photo": "N3",
+   "source": "Dutch-Bulbs (bulbes, Pays-Bas)",
+   "page": "https://dutch-bulbs.com/calla-lily-zantedeschia-alma/",
+   "image": "https://dutch-bulbs.com/media/catalog/product/cache/8b4b156149734da31ed7cd1d8cb94284/c/a/calla-lily-zantedeschia-alma-2.jpg",
+   "conf_auto": 0.68,
+   "base": "#9e5f54",
+   "corps": "#c17b76",
+   "pointe_auto": "#ba736f",
+   "centre_ring": "0.2:#69662b 0.8:#6f5f3a",
+   "eclairage": "non note",
+   "manuel": null,
+   "exclue": null
+  },
+  "18": {
+   "cultivar": "captain-hollywood",
+   "skus": [
+    1188,
+    1189
+   ],
+   "niveau_photo": "N2",
+   "source": "Kapiteyn (obtenteur, fiche variete)",
+   "page": "https://kapiteyn.nl/captain-calla/assortment/cut-callas/captain-hollywood/",
+   "image": "https://kapiteyn.nl/wp-content/uploads/2019/06/Captain-Hollywood.jpg",
+   "conf_auto": 0.68,
+   "base": "#a4462e",
+   "corps": "#cc726c",
+   "pointe_auto": "#977684",
+   "centre_ring": "0.2:#293e1e 0.8:#425b27",
+   "eclairage": "non note",
+   "manuel": null,
+   "exclue": "fond terre cuite contamine la mesure"
+  },
+  "19": {
+   "cultivar": "captain-hollywood",
+   "skus": [
+    1188,
+    1189
+   ],
+   "niveau_photo": "N3",
+   "source": "Armstrong Garden Centers (vente de plantes, US)",
+   "page": "https://shop.armstronggarden.com/products/captain-hollywood-calla-lily",
+   "image": "https://shop.armstronggarden.com/cdn/shop/products/pink-flowers-and-green-leaves-of-zantedeschia-in-a-pink-pot-isolated__11350.1679325767.1280.1280.jpg?v=1707540948",
+   "conf_auto": 0.26,
+   "base": "#2a2a0b",
+   "corps": "#cf749c",
+   "pointe_auto": "#a24b57",
+   "centre_ring": "0.2:#3e5608 0.8:#4e6911",
+   "eclairage": "fond blanc",
+   "manuel": null,
+   "exclue": "auto confiance 0.26 (fond blanc, pot)"
+  },
+  "20": {
+   "cultivar": "garnet-glow",
+   "skus": [
+    1188
+   ],
+   "niveau_photo": "N3",
+   "source": "Roger's Gardens (pepiniere, Californie)",
+   "page": "https://plants.rogersgardens.com/12290002/Plant/13316/Garnet_Glow_Calla_Lily/",
+   "image": "https://plants.rogersgardens.com/Content/Images/Photos/F675-14.jpg",
+   "conf_auto": 0.41,
+   "base": "#c47c94",
+   "corps": "#864357",
+   "pointe_auto": "#10150b",
+   "centre_ring": "0.2:#913b56 0.8:#a95469",
+   "eclairage": "plein air",
+   "manuel": "pal a la main, boite 0.25-0.45 x 0.30-0.55",
+   "exclue": null
+  },
+  "21": {
+   "cultivar": "garnet-glow",
+   "skus": [
+    1188
+   ],
+   "niveau_photo": "N4",
+   "source": "Millette Photo Media (photographe botanique, nom du cultivar)",
+   "page": "https://millettephotomedia.com/photos/zantedeschia_garnet_glow_calla_lily_1.html",
+   "image": "https://millettephotomedia.com/imgs/photos/small/zantedeschiagarnetglowchw100526009mpmtw13514.jpg",
+   "conf_auto": 0.59,
+   "base": "#b28395",
+   "corps": "#ae618f",
+   "pointe_auto": "#b75e93",
+   "centre_ring": "0.2:#b38598 0.8:#b38799",
+   "eclairage": "stock filigrane",
+   "manuel": null,
+   "exclue": null
+  },
+  "22": {
+   "cultivar": "red-alert",
+   "skus": [
+    1189
+   ],
+   "niveau_photo": "N3",
+   "source": "J. Parker's (bulbes, UK)",
+   "page": "https://www.jparkers.co.uk/zantedeschia-red-alert/",
+   "image": "https://cdn11.bigcommerce.com/s-i7i23daso6/images/stencil/1280x1280/products/6846/28206/Zantedeschia_Red_Alert_0006734__75704.1641553243.jpg?c=1",
+   "conf_auto": 0.7,
+   "base": "#c1121c",
+   "corps": "#e82022",
+   "pointe_auto": "#f84e3f",
+   "centre_ring": "0.2:#b41822 0.8:#b9321e",
+   "eclairage": "feuillage tachete",
+   "manuel": null,
+   "exclue": null
+  },
+  "23": {
+   "cultivar": "red-alert",
+   "skus": [
+    1189
+   ],
+   "niveau_photo": "N3",
+   "source": "Van Noort Bulb (bulbes, Pays-Bas)",
+   "page": "https://www.vannoortbulb.com/products/calla-zant-red-alert",
+   "image": "https://www.vannoortbulb.com/cdn/shop/products/ScreenShot2020-11-19at1.56.39PM.png?v=1629875635&width=1214",
+   "conf_auto": 0.69,
+   "base": "#9f3429",
+   "corps": "#922c28",
+   "pointe_auto": "#a4312f",
+   "centre_ring": "0.2:#992d22 0.8:#893f2d",
+   "eclairage": "packaging",
+   "manuel": null,
+   "exclue": null
+  },
+  "24": {
+   "cultivar": "majestic-red",
+   "skus": [
+    1189,
+    1190
+   ],
+   "niveau_photo": "N3",
+   "source": "Pacific Bulb Society (societe savante, photo G. Pozzi, 2007)",
+   "page": "https://www.pacificbulbsociety.org/pbswiki/index.php/zantedeschia",
+   "image": "https://www.pacificbulbsociety.org/pbswiki/files/Zantedeschia/Zantedeschia_Majestic_red_gp.jpg",
+   "conf_auto": 0.54,
+   "base": "#ec3759",
+   "corps": "#962329",
+   "pointe_auto": "#242309",
+   "centre_ring": "0.2:#cc273d 0.8:#f23e5c",
+   "eclairage": "non note",
+   "manuel": null,
+   "exclue": null
+  },
+  "25": {
+   "cultivar": "majestic-red",
+   "skus": [
+    1189,
+    1190
+   ],
+   "niveau_photo": "N4",
+   "source": "PlantLust (photo Dancing Oaks Nursery, droits reserves)",
+   "page": "https://plantlust.com/plants/11301/zantedeschia-majestic-red/",
+   "image": "https://d3bbsv6h7qkr8y.cloudfront.net/43/be/43be2bf0812a0006f54ec46681fed0c7.jpg",
+   "conf_auto": 0.74,
+   "base": "#dc1a56",
+   "corps": "#f774ac",
+   "pointe_auto": "#96999a",
+   "centre_ring": "0.2:#dd1b58 0.8:#da1952",
+   "eclairage": "non note",
+   "manuel": null,
+   "exclue": null
+  },
+  "26": {
+   "cultivar": "captain-promise",
+   "skus": [
+    1191
+   ],
+   "niveau_photo": "N2",
+   "source": "Flamingo Holland (exportateur de bulbes, Pays-Bas)",
+   "page": "https://www.flamingoholland.com/wholesale-flower-bulbs/calla-lily-bulbs-and-zantandeschia-tubers/captain-promise",
+   "image": "https://www.flamingoholland.com/media/3639/captain-promise.png",
+   "conf_auto": 0.79,
+   "base": "#48282f",
+   "corps": "#4e2d34",
+   "pointe_auto": "#6c4049",
+   "centre_ring": "0.2:#472130 0.8:#523136",
+   "eclairage": "fond blanc-gris",
+   "manuel": null,
+   "exclue": null
+  },
+  "27": {
+   "cultivar": "captain-promise",
+   "skus": [
+    1191
+   ],
+   "niveau_photo": "N3",
+   "source": "Agriko (bulbiculteur, Pays-Bas)",
+   "page": "https://www.agriko.nl/calla-varieties/calla-captain-promise/",
+   "image": "https://agriko.nl/attachments/Image/Calla-Captain-Promise.jpg?template=generic",
+   "conf_auto": 0.99,
+   "base": "#9b2240",
+   "corps": "#ba4a66",
+   "pointe_auto": "#bfbcba",
+   "centre_ring": "0.2:#840923 0.8:#9e2848",
+   "eclairage": "bouquet fond gris studio",
+   "manuel": null,
+   "exclue": null
+  },
+  "28": {
+   "cultivar": "red-charm",
+   "skus": [
+    1191
+   ],
+   "niveau_photo": "N3",
+   "source": "Plant Delights Nursery (pepiniere, Etats-Unis)",
+   "page": "https://www.plantdelights.com/products/zantedeschia-red-charm",
+   "image": "https://www.plantdelights.com/cdn/shop/files/Zantedeschia-Red-Charm.i-18234.s-67988.r-1_372768ab-6ef1-43a4-9225-b61bad9d6e81.jpg?v=1791990001&width=1946",
+   "conf_auto": 0.73,
+   "base": "#881736",
+   "corps": "#e2176e",
+   "pointe_auto": "#aa2864",
+   "centre_ring": "0.2:#415e23 0.8:#5c3730",
+   "eclairage": "non note",
+   "manuel": null,
+   "exclue": null
+  },
+  "29": {
+   "cultivar": "black-star",
+   "skus": [
+    1192
+   ],
+   "niveau_photo": "N3",
+   "source": "Roger's Gardens (pepiniere, Californie), nom du cultivar",
+   "page": "https://plants.rogersgardens.com/12290002/Plant/20151/Black_Star_Calla_Lily/",
+   "image": "https://plants.rogersgardens.com/Content/Images/Photos/H068-01.jpg",
+   "conf_auto": 0.66,
+   "base": "#401419",
+   "corps": "#2c0e0d",
+   "pointe_auto": "#3f1013",
+   "centre_ring": "0.2:#441b22 0.8:#4b2d30",
+   "eclairage": "non note",
+   "manuel": null,
+   "exclue": null
+  },
+  "30": {
+   "cultivar": "captain-carrera",
+   "skus": [
+    1191,
+    1192
+   ],
+   "niveau_photo": "N2",
+   "source": "Kapiteyn (obtenteur, fiche variete)",
+   "page": "https://kapiteyn.nl/captain-calla/assortment/cut-callas/captain-carrera/",
+   "image": "https://kapiteyn.nl/wp-content/uploads/2019/06/Snij-Captain-Carrera.jpg",
+   "conf_auto": 0.63,
+   "base": "#372626",
+   "corps": "#211a18",
+   "pointe_auto": "#282521",
+   "centre_ring": "0.2:#3f4734 0.8:#3a3527",
+   "eclairage": "non note",
+   "manuel": null,
+   "exclue": null
+  },
+  "31": {
+   "cultivar": "hot-chocolate",
+   "skus": [
+    1193
+   ],
+   "niveau_photo": "N3",
+   "source": "Buchanan's Native Plants (pepiniere, Etats-Unis)",
+   "page": "https://buchanansplants.com/plant-library/perennials/hot-chocolate-calla-lily/",
+   "image": "https://buchanansplants.com/wp-content/uploads/2021/09/Hot-Chocolate-Calla-Lily.jpg",
+   "conf_auto": 0.41,
+   "base": "#5c1819",
+   "corps": "#824c4b",
+   "pointe_auto": "#3b331c",
+   "centre_ring": "0.2:#5e0e0d 0.8:#693221",
+   "eclairage": "pepiniere",
+   "manuel": "pal a la main, boite 0.40-0.62 x 0.25-0.45",
+   "exclue": null
+  },
+  "32": {
+   "cultivar": "hot-chocolate",
+   "skus": [
+    1193
+   ],
+   "niveau_photo": "N3",
+   "source": "Mahoney's Garden Centers (pepiniere, base NetPS)",
+   "page": "https://plants.mahoneysgarden.com/12150028/Plant/22390/Hot_Chocolate_Calla_Lily/",
+   "image": "https://plants.mahoneysgarden.com/Content/Images/Photos/H182-06.jpg",
+   "conf_auto": 0.28,
+   "base": "#7d0e25",
+   "corps": "#b36a8d",
+   "pointe_auto": "#362a02",
+   "centre_ring": "0.2:#75020d 0.8:#830d28",
+   "eclairage": "non note",
+   "manuel": "pal a la main, boite 0.35-0.65 x 0.30-0.60 ; feuillage vert present",
+   "exclue": null
+  },
+  "33": {
+   "cultivar": "captain-murano",
+   "skus": [],
+   "niveau_photo": "N3",
+   "source": "Plant Delights Nursery (pepiniere, Etats-Unis)",
+   "page": "https://www.plantdelights.com/products/zantedeschia-captain-murano",
+   "image": "https://www.plantdelights.com/cdn/shop/products/Zantedeschia-Captain-Murano.i-9547.s-62623.r-1_b9dd4643-bb8e-49e0-97a6-6fb5e523cbe1.jpg?v=1660135746&width=1946",
+   "conf_auto": 0.61,
+   "base": "#e87831",
+   "corps": "#e3773c",
+   "pointe_auto": "#c8794b",
+   "centre_ring": "0.2:#f98a4a 0.8:#e97631",
+   "eclairage": "non note",
+   "manuel": null,
+   "exclue": null
+  },
+  "34": {
+   "cultivar": "captain-murano",
+   "skus": [],
+   "niveau_photo": "N3",
+   "source": "Roger's Gardens (pepiniere, base NetPS)",
+   "page": "https://plants.rogersgardens.com/12290002/Plant/17744/Captain_Murano_Calla_Lily/",
+   "image": "https://plants.rogersgardens.com/Content/Images/Photos/F946-04.jpg",
+   "conf_auto": 0.41,
+   "base": "#fa7085",
+   "corps": "#c62835",
+   "pointe_auto": "#c24049",
+   "centre_ring": "0.2:#222112 0.8:#182410",
+   "eclairage": "non note",
+   "manuel": null,
+   "exclue": "feuillage dominant, auto et pal illisibles"
+  },
+  "35": {
+   "cultivar": "captain-safari",
+   "skus": [],
+   "niveau_photo": "N3",
+   "source": "Farmer Gracy (bulbes, Royaume-Uni)",
+   "page": "https://www.farmergracy.co.uk/products/calla-captain-safari-bulbs-uk",
+   "image": "https://www.farmergracy.co.uk/cdn/shop/products/calla-capatin-safari-1.jpg?quality=75&v=1702463709&width=996",
+   "conf_auto": 0.74,
+   "base": "#c72a1e",
+   "corps": "#e57041",
+   "pointe_auto": "#db5827",
+   "centre_ring": "0.2:#cd301e 0.8:#c53020",
+   "eclairage": "non note",
+   "manuel": null,
+   "exclue": null
+  },
+  "36": {
+   "cultivar": "captain-safari",
+   "skus": [],
+   "niveau_photo": "N3",
+   "source": "Astra Flowers (fleuriste grossiste, catalogue)",
+   "page": "https://astraflowers.com/en/zantedeschia/zantedeschia-captain-safari/",
+   "image": "https://astraflowers.com/images/image/21872/watermarked_zantedeschia-captain-safari_1553001892.jpg",
+   "conf_auto": 0.27,
+   "base": "#b2633c",
+   "corps": "#ba7853",
+   "pointe_auto": "#8d7094",
+   "centre_ring": "0.2:#c17d38 0.8:#b4683c",
+   "eclairage": "fond blanc studio",
+   "manuel": null,
+   "exclue": "auto confiance 0.27 (fleur petite)"
+  },
+  "37": {
+   "cultivar": "captain-chelsea",
+   "skus": [],
+   "niveau_photo": "N3",
+   "source": "Astra Flowers (catalogue, filigrane)",
+   "page": "https://astraflowers.com/zantedeschia/zantedeschia-captain-chelsea/",
+   "image": "https://astraflowers.com/images/image/21843/watermarked_zantedeschia-captain-chelsea_1553000566.jpg",
+   "conf_auto": 0.45,
+   "base": "#bcab6f",
+   "corps": "#816157",
+   "pointe_auto": "#ac964d",
+   "centre_ring": "0.2:#47303c 0.8:#48323c",
+   "eclairage": "fond blanc studio",
+   "manuel": "pal a la main, boite 0.42-0.62 x 0.22-0.50 : base jaune, gorge pourpre",
+   "exclue": null
+  },
+  "38": {
+   "cultivar": "z-albomaculata",
+   "skus": [],
+   "niveau_photo": "N3",
+   "source": "Pacific Bulb Society (societe savante), photo G. Pozzi, 2007",
+   "page": "https://www.pacificbulbsociety.org/pbswiki/index.php/Zantedeschia_albomaculata",
+   "image": "https://www.pacificbulbsociety.org/pbswiki/files/Zantedeschia/Zantedeschia_albomaculata_gp.jpg",
+   "conf_auto": 0.75,
+   "base": "#c6c293",
+   "corps": "#696b2e",
+   "pointe_auto": "#2f300f",
+   "centre_ring": "0.2:#d7d1a9 0.8:#a7a266",
+   "eclairage": "non note",
+   "manuel": null,
+   "exclue": null
+  },
+  "39": {
+   "cultivar": "z-albomaculata",
+   "skus": [],
+   "niveau_photo": "N3",
+   "source": "Pacific Bulb Society, photo Cameron McMaster",
+   "page": "https://www.pacificbulbsociety.org/pbswiki/index.php/Zantedeschia_albomaculata",
+   "image": "https://www.pacificbulbsociety.org/pbswiki/files/Zantedeschia/Zantedeschia_albomaculata_CM.jpg",
+   "conf_auto": 0.25,
+   "base": "#fbfaf3",
+   "corps": "#868c67",
+   "pointe_auto": "#665e42",
+   "centre_ring": "0.2:#fbfbf6 0.8:#bbbf7b",
+   "eclairage": "non note",
+   "manuel": null,
+   "exclue": "auto confiance 0.25"
+  },
+  "40": {
+   "cultivar": "z-elliottiana",
+   "skus": [],
+   "niveau_photo": "N4",
+   "source": "Blog The Panda's Thumb, photo Tom Harnish, 2010",
+   "page": "https://pandasthumb.org/archives/2010/06/zantedeschia-el.html",
+   "image": "http://pandasthumb.org/archives/2010/05/31/Harnish_Zantedeschia_elliottiana_600.jpg",
+   "conf_auto": null,
+   "base": null,
+   "corps": null,
+   "pointe_auto": null,
+   "centre_ring": null,
+   "eclairage": "non note",
+   "manuel": null,
+   "exclue": "image absente (HTTP 404)"
+  },
+  "41": {
+   "cultivar": "z-pentlandii",
+   "skus": [],
+   "niveau_photo": "N4",
+   "source": "Chris Gladis (photographe, CC BY-ND 2.0), via EIT Plant Toolbox",
+   "page": "https://plants.ces.ncsu.edu/plants/zantedeschia-pentlandii/",
+   "image": "https://eit-planttoolbox-prod.s3.amazonaws.com/media/images/Zantedeschia-pentlandii--Chris-Gladis--cc-by-nd-2-0.jpg",
+   "conf_auto": 0.88,
+   "base": "#c79f04",
+   "corps": "#ceb00e",
+   "pointe_auto": "#716a20",
+   "centre_ring": "0.2:#c6a003 0.8:#c79e03",
+   "eclairage": "non note",
+   "manuel": null,
+   "exclue": null
+  },
+  "42": {
+   "cultivar": "z-pentlandii",
+   "skus": [],
+   "niveau_photo": "N4",
+   "source": "Christien Steyn (photographe), via EIT Plant Toolbox",
+   "page": "https://plants.ces.ncsu.edu/plants/zantedeschia-pentlandii/",
+   "image": "https://eit-planttoolbox-prod.s3.amazonaws.com/media/images/Zantedeschia_pentlan_OKeod5YdACI8.jpeg",
+   "conf_auto": 0.18,
+   "base": "#a29303",
+   "corps": "#b7af01",
+   "pointe_auto": "#bab001",
+   "centre_ring": "0.2:#ac9805 0.8:#a09e08",
+   "eclairage": "non note",
+   "manuel": null,
+   "exclue": "gros plan, auto confiance 0.18"
+  },
+  "43": {
+   "cultivar": "captain-samba",
+   "skus": [
+    1187
+   ],
+   "niveau_photo": "N3",
+   "source": "Dutch-Bulbs (bulbes, Pays-Bas)",
+   "page": "https://dutch-bulbs.com/calla-captain-samba/",
+   "image": "https://dutch-bulbs.com/media/catalog/product/cache/8b4b156149734da31ed7cd1d8cb94284/c/a/calla-captain-samba-1.jpg",
+   "conf_auto": 0.69,
+   "base": "#db2d6a",
+   "corps": "#ea6092",
+   "pointe_auto": "#c49374",
+   "centre_ring": "0.2:#7b422a 0.8:#c73050",
+   "eclairage": "pot terrasse",
+   "manuel": null,
+   "exclue": null
+  },
+  "44": {
+   "cultivar": "captain-samba",
+   "skus": [
+    1187
+   ],
+   "niveau_photo": "N3",
+   "source": "NZ Bulbs (bulbes, Nouvelle-Zelande)",
+   "page": "https://nzbulbs.co.nz/Item/ZANCAPSAM",
+   "image": "https://nzbulbs.co.nz/media/ecom/prodlg/ZanCapSamba600.webp",
+   "conf_auto": 0.87,
+   "base": "#dc3569",
+   "corps": "#b22f51",
+   "pointe_auto": "#c63162",
+   "centre_ring": "0.2:#de3668 0.8:#d63565",
+   "eclairage": "plein air",
+   "manuel": null,
+   "exclue": null
+  }
+ },
+ "pointe_note": "valeurs pointe issues de auto (fond inclus) : non fiables, non retenues dans le tableau",
+ "revers_note": "revers non visible sur les photos retenues",
+ "macule_spadice_note": "macule : pourpre vu sur picasso (ombre) et chelsea (gorge #52383f a la main) ; spadice non mesure (trop petit sur les miniatures) sauf 7 et 8 (jaune)",
+ "v2_note": "2026-10-17, vague 3 (regle 3 photos, 2 sources, dE<=10) : aucun SKU ne passe en B. Les 4 photos Kapiteyn / Dutch Grown mesurees ont une confiance < 0,9 : non retenues."
+}
