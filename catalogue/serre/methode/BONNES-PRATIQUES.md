@@ -78,6 +78,9 @@ Rappel de base : SVG natif seulement, ni 3D, ni image incorporée, ni ruban, ni 
     marqués, réseau de veines, grain satiné ou scintillant quand la fleur en a, ombres portées nettes entre pièces
     superposées, lumière franche ; un blanc n'est jamais un aplat. Contrôle : rendu et photo côte à côte en D 800, même
     impression de richesse au premier regard.
+4.8c Finesse et légèreté (porteur, 2026-10-17, hortensia : « ne font pas fins et légers ») : une pièce mince se dessine mince,
+    bord net et fin, sans cerne épais, petits jours entre les pièces qui laissent voir la couche plus profonde ; jamais de
+    pastilles molles et uniformes. Contrôle : gros plan D 800 de 5-6 pièces contre un recadrage serré de la photo.
 4.9 Tous les coloris vendus, nommés d'après les variétés et mesurés (anémone : 23). Un coloris ajouté porte `late:N` (numéros de SKU inchangés) ; ne jamais changer id, ordre ni `c` d'un coloris existant ; un cultivar sous marque (® ou ™) ne donne
     jamais son nom (nom de couleur générique, ou `ret:1` si le coloris n'est pas prouvé) ; la matière est en cache par sorte et par id (les id « rouge », « rose » se répètent : clé par sorte).
 

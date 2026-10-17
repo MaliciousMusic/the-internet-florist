@@ -97,6 +97,9 @@ tard : les défauts n'étaient vus qu'à la relecture des gros plans par l'orche
    - couleurs ternes et dessin pauvre face à la photo (phalaenopsis, porteur : « très terne et pauvre face aux vraies
      fleurs », 4.8b) ;
    - fleurs d'une même hampe ou grappe toutes de face (phalaenopsis : « pas très crédible », 8.1b) ;
+   - fleurons épais, mous, cernés au lieu de fins et légers (hortensia, porteur, 4.8c) ;
+   - feuille plate, schématique, nervures en traits droits (amarante, porteur : « bien trop mauvaise qualité ») : une feuille
+     se courbe, se gaufre, a des nervures en creux et des reflets (section 7) ;
    - colonne, labelle et veines absents ou génériques (orchidées : « jupe » au lieu d'un labelle trilobé).
 4. **La recherche hors des modèles chers** : recensement et photos en Haiku, ou par Codex si le porteur le décide (question posée,
    sans réponse). Une **bibliothèque de références par genre** (photos d'organes triées : face, profil, bouton, fané, feuille,
