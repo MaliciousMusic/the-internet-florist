@@ -827,7 +827,8 @@ OK_LEVELS = 'ABC'  # owner, 2026-10-17: a colourway is validated up to level C (
 
 
 def check_census(ctx):
-    """a cultivar at A, B or C per bouquet SKU, free of brand (brand rule unchanged); a SKU at D or not found is a question (questions.md), never a block"""
+    """a cultivar at A, B or C per bouquet SKU, free of brand; a SKU at D, not found or under a brand is a question (questions.md), never a block: a brand keeps a
+    generic colour name (BONNES-PRATIQUES 4.9), never the brand's name"""
     rows = census_table(ctx)
     if not rows:
         return {'ok': False, 'msg': 'census.json missing or without cultivars'}
@@ -848,11 +849,13 @@ def check_census(ctx):
     q = ['SKU %s : cultivar au niveau D (aucune photo nommée trouvée). Proposition : garder la couleur actuelle du catalogue, chercher une photo nommée '
          '(obtenteur, producteur) ; le niveau C suffit.' % s for s in dsku]
     q += ['SKU %s : son cultivar ne figure pas au recensement. Proposition : vérifier le nom (synonyme, orthographe) dans les sources de la sorte.' % s for s in unresolved]
-    set_questions(ctx, 'census', 'Recensement : coloris du bouquet au niveau D ou introuvables (non bloquant)', q)
-    ok = not bad and bool(rows)
+    q += ['SKU %s : cultivar sous marque à vérifier. Proposition : nom de couleur générique (jamais le nom de marque), ou `ret:1` si le porteur le '
+          'préfère.' % s for s in bad]
+    set_questions(ctx, 'census', 'Recensement : coloris du bouquet au niveau D, introuvables ou sous marque (non bloquant)', q)
+    ok = bool(rows)
     msg = '%d cultivars, A %d B %d C %d D %d, %d A/B/C free of brand, %d brand to check' % (len(rows), lv['A'], lv['B'], lv['C'], lv['D'], len(good), len(waiting))
     if bad:
-        msg += '; BOUQUET SKU UNDER A BRAND TO CHECK: ' + ', '.join(bad)
+        msg += '; bouquet SKU under a brand (generic name, question): ' + ', '.join(bad)
     if dsku or unresolved:
         msg += '; questions (questions.md): %d SKU at D, %d SKU not found' % (len(dsku), len(unresolved))
     return {'ok': ok, 'msg': msg, 'levels': lv, 'good': len(good), 'd_skus': dsku, 'unresolved': unresolved}
@@ -1084,13 +1087,13 @@ def step_refs(ctx):
     dropped = len(bad0)
     if not jload(ctx.rc + '/keep.json', []) or ctx.dry:
         sh = '' if ctx.dry else '\n'.join('- ' + s for s in sheets)
-        r = call_model(ctx, 'refs', 'pick', 'haiku', prompt_text('refs', **ctx.sub(task='pick', sheets=sh or '-', missing='-')), tools, turns=60)
+        r = call_model(ctx, 'refs', 'pick', 'sonnet', prompt_text('refs', **ctx.sub(task='pick', sheets=sh or '-', missing='-')), tools, turns=60)
         n1, bad = refs_audit(ctx)
         dropped += len(bad)
     c = check_refs(ctx)
     if not c['ok'] or len(c['soft']) > 3:
         miss = ', '.join(c['hard'] + c['soft'])
-        r = call_model(ctx, 'refs', 'fill', 'haiku', prompt_text('refs', **ctx.sub(task='fill', sheets='-', missing=miss or '-')), tools + WEB + ['Write'], turns=60)
+        r = call_model(ctx, 'refs', 'fill', 'sonnet', prompt_text('refs', **ctx.sub(task='fill', sheets='-', missing=miss or '-')), tools + WEB + ['Write'], turns=60)
         n2, bad = refs_audit(ctx)
         dropped += len(bad)
         c = check_refs(ctx)
@@ -2378,7 +2381,7 @@ def cmd_selftest(a):
         t('census: bouquet SKU at B passes', c['ok'], c['msg'])
         ctx.st['skus'] = [{'sku': 't~1', 'cultivar': 'Bleu'}]
         c = check_census(ctx)
-        t('census: bouquet SKU at C with a brand hint fails', not c['ok'], c['msg'])
+        t('census: bouquet SKU at C under a brand passes as a question', c['ok'] and 'generic name' in c['msg'], c['msg'])
         jsave(rc + '/keep.json', [{'tags': ['stade:bouton']}, {'tags': ['stade:fané']}, {'tags': ['stade:ouverte']}, {'tags': ['organe:tige']}, {'tags': ['organe:feuille-dessus']}])
         c = check_refs(ctx)
         t('refs: hard minimum (10 photos) fails with 5', not c['ok'] and c['n'] == 5, c['msg'])
