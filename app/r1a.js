@@ -27,11 +27,12 @@ function carnPlant(g,t,o,list){const cw=o.cw||cwNear(list,o.col)||list[0],op=Mat
     node:(og,pos)=>({z:pos[2]+.15,cast:false,fn:par=>{const p=[pos[0],-pos[1]],a=Math.atan2(-og.H[1],og.H[0])/D;E('ellipse',{cx:f(p[0]),cy:f(p[1]),rx:f(D*.05*.75),ry:f(D*.05*.95),fill:sc[1],stroke:sc[0],'stroke-width':.35,transform:`rotate(${f(a)} ${f(p[0])} ${f(p[1])})`},par)}})});
   open(k,t,1000,8,.3);return r}
 /* hydrangeas: the woody stem ends in the head just above a pair of large toothed leaves (dried heads keep no leaves) */
-function hydraPlant(g,t,o,kd,list){const cw=o.cw||cwNear(list,o.col)||list[0],op=Math.max(.05,Math.min(1,o.op??1)),D=(o.cm||18)*UPC,k=G(g),sc=['#3a4a28','#5a6e3c','#80965a','#b0c08a'],dry=kd==='dry';
-  const r=lsHeadS(k,o,{D,w:D*.05,cols:dry?['#5a4a32','#7a6a4a','#9a8a68','#c0b090']:sc,op,rr:.5,nodes:dry?0:1,li:.35,lp:dry?.55:.72,opp:1,leafAng:74,side:null,aimK:.3,
+function hydraPlant(g,t,o,kd,list){const cw=o.cw||cwNear(list,o.col)||list[0],op=Math.max(.05,Math.min(1,o.op??1)),D=(o.cm||18)*UPC,k=G(g),sc=['#3a4a28','#5a6e3c','#80965a','#b0c08a'],dry=kd==='dry',
+    hv=kd==='mop'&&typeof hydLeafPart==='function'&&typeof SV_ON!=='undefined'&&SV_ON;/* the SVG mophead (y-hydrangea.js): woody bark and its own leaves */
+  const r=lsHeadS(k,o,{D,w:D*(hv?HYD_PLANT.w:.05),cols:dry?['#5a4a32','#7a6a4a','#9a8a68','#c0b090']:hv?hydStemCols(1):sc,op,rr:.5,nodes:dry?0:1,li:.35,lp:dry?.55:.72,opp:1,leafAng:74,side:null,aimK:.3,
     flower:(par,B)=>hydraHead(par,0,{Bf:B,noNeck:1,cm:o.cm,op,cw,col:o.col},kd,list),
-    leaf:(og,pos)=>{const pp=[];lsLeafParts(Object.assign({},og,{pos}),D*R(.72,.88),.6,'#3f6a2e',pp,{wp:LS_OVATE,droop:.22,arch:.06,fold:.18,gloss:.3,par:1,face:.6});return pp}});
-  open(k,t,1000,6,.3);return r}
+    leaf:(og,pos)=>{const pp=[],lL=D*R(.72,.88);if(hv)return hydLeafPart(og,pos,lL,D);lsLeafParts(Object.assign({},og,{pos}),lL,.6,'#3f6a2e',pp,{wp:LS_OVATE,droop:.22,arch:.06,fold:.18,gloss:.3,par:1,face:.6});return pp}});
+  if(hv&&r){r.ncols=hydStemCols();HYD_PLANT.rw=(r.nw||0)*1.12/2}open(k,t,1000,6,.3);return r}
 /* gloriosa: a leafy climbing shoot; each upper leaf ends in a tendril; from the axils, long pedicels arching out, the flowers nodding with their tepals swept up; buds above, the shoot's tip with young leaves */
 function gloriosaPlant(g,t,o){const cw=o.cw||cwNear(CW_GLOR,o.col)||CW_GLOR[0],op=Math.max(.05,Math.min(1,o.op??1)),D=(o.cm||9)*UPC,k=G(g),B=frameOf(o,.3,true),sc=['#2e4a20','#4a7432','#6e9a48','#a4c47a'];
   const up=B.upV?V3.nz([B.upV[0],B.upV[1],B.upV[2]||0]):[0,1,0];let U0=V3s(B[2],V3.sc(up,V3.dot(B[2],up)));if(V3l(U0)<1e-3)U0=[0,0,1];

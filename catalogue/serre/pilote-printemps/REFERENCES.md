@@ -1634,3 +1634,48 @@ rouge à 1:.6 sans plaques pâles (BP 3.3). Même fané appliqué à `rose-aspec
 - Mesures et proportions (brief, à l'œil, confiance faible) : cornet haut de 1,5 à 2 fois la largeur de l'ouverture (68, 91, 21) ; acumen court roulé dehors (89, 26, 32) ; spadice à la moitié de la spathe (84, 46) ; macule pourpre de gorge (30) ; bouton fermé et pointu, H/L ≈ 3 (15, 17) ; tige 1/8 (109) à 1/4 (73) de la largeur de la spathe ; fané : bord qui brunit (84), le reste d'après la littérature.
 - Rendu : 19 coloris (16 + 3 late:11) ; tête 1,3 × la longueur de recette sur la plante (12 cm → 15,6 cm sur 50 cm) ; 83 éléments et 15 Ko par tête à DET 1 (planche c19d), 100 à 116 éléments et 21 à 24 Ko à DET 1,5.
 - Planches : arum-calla-sku-v1.png (rasante et profil, gros plans, fané), arum-calla-coloris-v1.png (19 coloris, op .4 et 1, vue 3/4).
+
+## Hydrangea macrophylla, hortensia boule (sid hortensia-boule) : boule de fleurons en SVG natif, chantier ch/hortensia, 17 octobre 2026
+
+Pièces : `app/y3-boule.js` (boule de fleurons, option `sepDraw`), `app/y3-hortensia.js` (`svHySep` : fleuron entier, sépales minces à
+onglet, dégradé gorge-pointe, bord crêpé, fané froissé et moucheté ; options `hy.w0`, `upY`, `pY`, `hS`), `app/y3-branche.js`
+(`svbLeaf` : options neuves `quilt`, `warp`, `vMid`/`vEnd`, `ovB`, nulles par défaut) ; fiche `app/y-hydrangea.js` (22 coloris
+`HYD_MAT` dont 6 `late:11`, fané en trois temps `hydFade` par famille de teinte, feuilles, écorce). Planches :
+`hortensia-boule-sku-v1.png` (blanc, bleu, rouge × 9 stades ; 22 coloris), `hortensia-boule-plante-v1.png` (bleu .3, .6, 1, 1:.6, 1:.9,
+tige de 45 cm), `hortensia-boule-bouquets-v1.png` (normal, ouvert, fané, fond sombre). Aucune photo de tiers n'est publiée : elles restent
+dans `refcache/hortensia-boule` (privé).
+
+Mesures (brief et tours de modelage) : fleurons 76-84 par boule, 5 à 7 en travers (44, 52) ; bleu c L63 C48 h278 (44), bleu-profond
+L52 C30 h283, ombres h 286-289 (70) ; rose-pâle L88 C12 h345, ombres h 354-357 (61) ; rouge L48 C62 h10 (84) ; blanc L95 C2, ombres crème
+L82 C10 h82 (52) ; fané (35, 81, 85, 55) : C médiane 27 sur 81, bleu -> gris-mauve -> brun-pourpre, rose -> poussiéreux -> rouille, rouge ->
+vin -> brun, blanc -> ivoire -> beige, parchemin beige h 74 ; feuille (99, 115, 123, 131) : ovale large, pointe courte, 18 dents par côté,
+nervures arquées en creux, limbe gaufré et brillant, vert L48 C50 h122 ; écorce (92, 91) : L58-66 C16-20 h65 ; jonction tête-tige : jour
+0 mm (7 stades × 3 vues, 0,4 mm/px).
+
+Sources (`refs.py list hortensia-boule`) :
+- stade:bouton coloris:vert vue:face : [Hortensia-1.jpg](https://commons.wikimedia.org/wiki/File:Hortensia-1.jpg) (Alvesgaspar, CC BY 2.5)
+- stade:intermediaire coloris:vert vue:face : [Hortensia Boutons FR 2013.jpg](https://commons.wikimedia.org/wiki/File:Hortensia_Boutons_FR_2013.jpg) (JLPC, CC BY-SA 3.0)
+- stade:ouverte coloris:rose vue:face : [Bigleaf Hydrangea (Hydrangea macrophylla) 4.jpg](https://commons.wikimedia.org/wiki/File:Bigleaf_Hydrangea_(Hydrangea_macrophylla)_4.jpg) (Mokkie, CC BY-SA 3.0)
+- stade:ouverte coloris:rose-fonce vue:face : [Bigleaf Hydrangea (Hydrangea macrophylla) 3.jpg](https://commons.wikimedia.org/wiki/File:Bigleaf_Hydrangea_(Hydrangea_macrophylla)_3.jpg) (Mokkie, CC BY-SA 3.0)
+- stade:ouverte coloris:rose-pale vue:face : [Flower in Dordogne 04.jpg](https://commons.wikimedia.org/wiki/File:Flower_in_Dordogne_04.jpg) (John Samuel, CC BY-SA 4.0)
+- stade:ouverte coloris:rose-coeur-blanc vue:face : [Fiori Hydrangea macrophilla.jpg](https://commons.wikimedia.org/wiki/File:Fiori_Hydrangea_macrophilla.jpg) (RockPoetry, Public domain)
+- stade:ouverte coloris:rouge-profond vue:face : [Hydrangea macrophylla Glowing Embers 1zz.jpg](https://commons.wikimedia.org/wiki/File:Hydrangea_macrophylla_Glowing_Embers_1zz.jpg) (Photo by David J. Stang, CC BY-SA 4.0)
+- stade:ouverte coloris:pourpre vue:face : [Blue Hydrangea macrophylla.jpg](https://commons.wikimedia.org/wiki/File:Blue_Hydrangea_macrophylla.jpg) (Islander61, CC BY-SA 4.0)
+- stade:ouverte coloris:aubergine vue:face : [Bigleaf hydrangea.jpg](https://commons.wikimedia.org/wiki/File:Bigleaf_hydrangea.jpg) (V.B.Speranza, CC BY-SA 4.0)
+- stade:ouverte coloris:bleu vue:face : [Blue Hydrangea Mathilda Gutges -blueflower.jpg](https://commons.wikimedia.org/wiki/File:Blue_Hydrangea_Mathilda_Gutges_-blueflower.jpg) (Michele Dorsey Walfred, CC BY 2.0)
+- stade:ouverte coloris:bleu-violet vue:face : [Hortensia (Hydrangea macrophylla) (14415509945).jpg](https://commons.wikimedia.org/wiki/File:Hortensia_(Hydrangea_macrophylla)_(14415509945).jpg) (Alejandro  Bayer Tamayo from Armenia, Colombia, CC BY-SA 2.0)
+- stade:ouverte coloris:lavande vue:face : [Blue violet hydrangea.jpg](https://commons.wikimedia.org/wiki/File:Blue_violet_hydrangea.jpg) (Michele Dorsey Walfred, CC BY 2.0)
+- stade:ouverte coloris:lilas vue:face : [Chikusa 2020608-50.jpg](https://commons.wikimedia.org/wiki/File:Chikusa_2020608-50.jpg) (円周率３パーセント, CC BY-SA 4.0)
+- stade:ouverte coloris:blanc vue:face : [Close up of H. Macrophylla “Schnee Ball” may come in other names.jpg](https://commons.wikimedia.org/wiki/File:Close_up_of_H._Macrophylla_%E2%80%9CSchnee_Ball%E2%80%9D_may_come_in_other_names.jpg) (Michele Dorsey Walfred, CC BY 2.0)
+- stade:ouverte coloris:antique-bleu-vert vue:face : [End of season faded bloom of Mathilda Gutges.jpg](https://commons.wikimedia.org/wiki/File:End_of_season_faded_bloom_of_Mathilda_Gutges.jpg) (Michele Dorsey Walfred, CC BY 2.0)
+- stade:ouverte coloris:antique-vert vue:face : [Starr-090521-8430-Hydrangea macrophylla subsp macrophylla-flowers and buds-Polipoli-Maui (24325291164).jpg](https://commons.wikimedia.org/wiki/File:Starr-090521-8430-Hydrangea_macrophylla_subsp_macrophylla-flowers_and_buds-Polipoli-Maui_(24325291164).jpg) (Forest and Kim Starr, CC BY 3.0 us)
+- stade:declin coloris:pêche-fane vue:face : [Bigleaf Hydrangea (Hydrangea macrophylla) 5.jpg](https://commons.wikimedia.org/wiki/File:Bigleaf_Hydrangea_(Hydrangea_macrophylla)_5.jpg) (Mokkie, CC BY-SA 3.0)
+- stade:fanee coloris:bordeaux vue:face : [Wilting bigleaf hydrangea (Hydrangea macrophylla), Ponte de Sor, Portugal (approx. GPS location) julesvernex2.jpg](https://commons.wikimedia.org/wiki/File:Wilting_bigleaf_hydrangea_(Hydrangea_macrophylla),_Ponte_de_Sor,_Portugal_(approx._GPS_location)_julesvernex2.jpg) (Jules Verne Times Two, CC BY-SA 4.0)
+- stade:declin coloris:vert-rose-fane vue:face : [Hydrangea macrophylla Glowing Embers 2zz.jpg](https://commons.wikimedia.org/wiki/File:Hydrangea_macrophylla_Glowing_Embers_2zz.jpg) (Photo by David J. Stang, CC BY-SA 4.0)
+- organe:feuille organe:bouton vue:dessus : [iNat bud 191979433](https://www.inaturalist.org/observations/191979433) (, tiers (mesure locale))
+- organe:feuille vue:dessus : [Hortensia-3.JPG](https://commons.wikimedia.org/wiki/File:Hortensia-3.JPG) (Alvesgaspar, CC BY 2.5)
+- organe:feuille vue:port : [Hydrangea macrophylla Lady in Red 0zz.jpg](https://commons.wikimedia.org/wiki/File:Hydrangea_macrophylla_Lady_in_Red_0zz.jpg) (Photo by David J. Stang, CC BY-SA 4.0)
+- organe:feuille stade:jeune : [Hydrangea germoglio.jpg](https://commons.wikimedia.org/wiki/File:Hydrangea_germoglio.jpg) (Luigi Chiesa, CC BY-SA 3.0)
+- organe:tige vue:gros-plan : [Hydrangea macrophylla leaf scars.jpg](https://commons.wikimedia.org/wiki/File:Hydrangea_macrophylla_leaf_scars.jpg) (Kingfiser, CC BY-SA 4.0)
+- organe:tige organe:attache vue:gros-plan : [Hydrangea macrophylla leaf scar, close-up.jpg](https://commons.wikimedia.org/wiki/File:Hydrangea_macrophylla_leaf_scar,_close-up.jpg) (Kingfiser, CC BY-SA 4.0)
+- feuille : [iNat leaf](https://www.inaturalist.org) (, tiers (mesure locale)) : feuilles sombres luisantes, nervures

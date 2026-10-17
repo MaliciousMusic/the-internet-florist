@@ -35,7 +35,16 @@ async function qaSvg(svg,c,vid,opt={}){const vb=svg.viewBox.baseVal,W=opt.W||480
   for(const k of out.slice(1)){if(k.area<(opt.minA||5))continue;const[cx,cy]=toS(k.cx,k.cy),cand=[...B.entries()].filter(([i,b])=>i>=0&&cx>=b[0]-2&&cx<=b[2]+2&&cy>=b[1]-2&&cy<=b[3]+2);
     let owner=null;for(const[i]of cand.sort((a,b)=>(a[1][2]-a[1][0])*(a[1][3]-a[1][1])-(b[1][2]-b[1][0])*(b[1][3]-b[1][1]))){const mm=await raster(svgXml(svg,W,H,{hide:['plinth'],oi:i,noShadow:1}),W,H);let hit=0;
       for(let y=k.y0;y<=k.y1;y++)for(let x=k.x0;x<=k.x1;x++){const p=y*W+x;if(lab[p]===k.id&&mm[p*4+3]>14)hit++}if(hit>k.area*.5){owner=desc(c,i);break}}
-    res.floating.push({area:k.area,at:[Math.round(cx),Math.round(cy)],box:[k.x0,k.y0,k.x1,k.y1],owner})}
+    res.floating.push({area:k.area,at:[Math.round(cx),Math.round(cy)],box:[k.x0,k.y0,k.x1,k.y1],owner});
+    /* ?dbg=1: which leaf shapes paint this floating piece (point-in-fill on its pixels), with their paint, opacity chain and ancestors */
+    if(window.QADBG&&owner){const SC=svg.getScreenCTM(),pts=[];for(let y=k.y0;y<=k.y1;y++)for(let x=k.x0;x<=k.x1;x++)if(lab[y*W+x]===k.id)pts.push(toS(x,y));const hits=new Map();
+      for(const g of svg.querySelectorAll(`[data-o="${owner.i}"]`))for(const el of [g,...g.querySelectorAll('*')]){if(!(el instanceof SVGGeometryElement))continue;let M;try{M=el.getScreenCTM().inverse()}catch(_){continue}
+        let h=0;for(const[X,Y]of pts){const sp=new DOMPoint(X,Y).matrixTransform(SC),lp=sp.matrixTransform(M);try{if(el.isPointInFill(lp)||(el.getAttribute('stroke')&&el.getAttribute('stroke')!=='none'&&el.isPointInStroke(lp)))h++}catch(_){}}
+        if(h)hits.set(el,h)}
+      const chain=el=>{const a=[];let n=el;while(n&&n!==svg){const o=n.getAttribute&&n.getAttribute('opacity');a.push(n.tagName+(o?'@'+o:'')+(n.dataset&&Object.keys(n.dataset).length?JSON.stringify(n.dataset):'')+(n.getAttribute('transform')?'T':''));n=n.parentNode}return a.slice(0,8).join('<')};
+      window.QADBG.push({at:[Math.round(cx),Math.round(cy)],area:k.area,npts:pts.length,hits:[...hits.entries()].sort((a,b)=>b[1]-a[1]).slice(0,8).map(([el,h])=>{let b={};try{const bb=el.getBBox();b=[bb.x,bb.y,bb.width,bb.height].map(v=>+v.toFixed(1))}catch(_){}
+        const Mi=svg.getScreenCTM().inverse().multiply(el.getScreenCTM()),sib=el.parentNode?[...el.parentNode.children].filter(n=>/^url\(#hy/.test(n.getAttribute('fill')||'')).map(n=>n.getAttribute('d')):[];
+        return{h,M:[Mi.a,Mi.b,Mi.c,Mi.d,Mi.e,Mi.f],vb:[vb.x,vb.y,vb.width,vb.height,W,H],full:/^url\(#hy/.test(el.getAttribute('fill')||'')?el.getAttribute('d'):'',sib,tag:el.tagName,fill:el.getAttribute('fill'),fo:el.getAttribute('fill-opacity'),op:el.getAttribute('opacity'),st:el.getAttribute('stroke'),sw:el.getAttribute('stroke-width'),bb:b,chain:chain(el),d:(el.getAttribute('d')||'').slice(0,160)}})})}}
   /* 2. underlaps: no flower, leaf or cluster may be hidden by the body of the vessel (only stems go into the mouth) */
   const v=VZ[vid]||{};
   if(v.kind!=='hand'&&v.kind!=='wrap'){const V=await raster(svgXml(svg,W,H,{only:['vase']}),W,H),top=FL-vMh(v),mw=vMouth(v),ry=vRy(mw),mcx=VX+vMx(v);
