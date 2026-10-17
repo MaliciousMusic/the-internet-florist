@@ -220,3 +220,17 @@ Planches : `sheets/carpe-final-normal.png`, `carpe-final-ouvert.png` (`?life=ope
 - **Mesures** : transpercements 1 (graine 23) et 0 (graine 7) au lieu de 6 et 7 avec b18498e seul ; QA de la carpe 0 flottante, 0 sous le vase,
   0 cassure dans les trois stades ; QA composée de 20 bouquets à 0 ; anémone 0,00 % ; `rtest` identique.
 - Reste : au stade fané, 12 transpercements (graine 23), dont 5 par l'iris du fond peint par-dessus les tiges des têtes de devant.
+
+## Vague 3 (17 octobre 2026) : le reste du catalogue, par lots de 3 à 4 sortes
+
+Demande du porteur : refaire les sortes suivantes du catalogue au niveau de l'anémone (fleur, tige, feuilles, boutons, fané,
+tous les coloris), par lots de 3 ou 4 selon la RAM. Ordre : la demande prévue au lancement (`catalogue/lancement.csv`, somme
+par sorte), en groupant les sortes qui partagent une pièce du kit. Bilan : `catalogue/serre/methode/factures/vague3.md`.
+
+- **Lot 1, publié** : rose standard (SKU 1-30), rose intermédiaire et sweetheart (31-45), gerbera (997-1016), germini
+  (1017-1030). Pièces neuves `y3-rose.js` (prête pour jardin, David Austin, branchue, teintée, stabilisée) et
+  `y3-capitule.js` (prête pour zinnia, tournesol, reine-marguerite, chrysanthème, dahlia). 14 coloris ajoutés en fin
+  (`late:8`, SKU 3844-3857) ; aucun SKU déplacé, anémone 0,00 %, rtest identiques (dont tulipes et renoncules).
+- **Prochains lots**, dans l'ordre de la demande : rose de jardin, rose stabilisée, rose d'aspect jardin, rose anglaise
+  David Austin (pièce rose) ; dahlia décoratif, chrysanthème disbud, zinnia (pièce capitule) ; puis tulipe fleur de lys,
+  œillet standard, arum.

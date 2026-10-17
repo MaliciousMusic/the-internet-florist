@@ -110,14 +110,15 @@ function svrItem(P,B,O,Sf,mt,f,grp,o={}){const hi=DET>=1.5,nu=o.nu||P.nu[hi?1:0]
     if(!fo)return null;for(const[q,a]of ls)if(a>ba*.05)fd+=svSpl(svSimp(q,tol*(P.simp?P.simp[hi?1:0]:1)))}
   for(let j=0;j<=nv;j++)for(let i=0;i<=nu;i++){const k=j*sh.W+i,fr=sh.F[k]>=0,n=fr?sh.N[k]:V3.sc(sh.N[k],-1),v=j/nv,ao=fr?1-P.ao[0]*(1-svSm((v-.02)/P.ao[1])):1-P.ao[2]*(1-svSm(v/P.ao[3]));
     K[k]=svLight(n,light,ao)/ref;if(fr===(s>0)){kS+=K[k];kN++}}
-  const km=kN?kS/kN:1;let out=[];if(fo)out=fo;else{for(let j=0;j<=nv;j++)out.push(sh.P[j*sh.W]);const nt=hi?11:8;for(let i=1;i<nt;i++)out.push(svAt(sh,-1+2*i/nt,1));for(let j=nv;j>=0;j--)out.push(sh.P[j*sh.W+nu]);out.push(svAt(sh,0,0))}
+  const km=kN?kS/kN:1;let out=[],ouv=null;if(fo)out=fo;else{ouv=[];for(let j=0;j<=nv;j++){out.push(sh.P[j*sh.W]);ouv.push([-1,j/nv])}const nt=hi?11:8;for(let i=1;i<nt;i++){out.push(svAt(sh,-1+2*i/nt,1));ouv.push([-1+2*i/nt,1])}
+    for(let j=nv;j>=0;j--){out.push(sh.P[j*sh.W+nu]);ouv.push([1,j/nv])}out.push(svAt(sh,0,0));ouv.push([0,0])}
   const col=sh0(s>0?svrC(mt.fr,f):svrC(mt.bk,f)),gk=gt>0&&mt.green!==false?Math.min(1,gt*(s>0?.85:1)*(1-.4*f)):0,c2=gk?mix(col,P.greenC,gk):col,
     /* the young bud's green reaches its shade and its light too (else a green bud lit from above turns the colourway's pale) */
     dk=mix(sh0(s>0?mt.shade:mt.bshade),mix(P.greenC,'#0e1a06',.65),gk),lt=mix(sh0(s>0?mt.lite:mt.blite),mix(P.greenC,'#f4f8e0',.45),gk),tone=svrTone(P,c2,dk,lt,km,o.kref||1);
   /* for the order, the cells of its seen face only (a cupped piece seen edge-on folds over itself: its far layer would blur the comparison) */
   let cells=svCells(sh,s);if(cells.length<3)cells=svCells(sh,0);let x0=1e9,y0=1e9,x1=-1e9,y1=-1e9,z=0;for(const c of cells){x0=Math.min(x0,c.x0);y0=Math.min(y0,c.y0);x1=Math.max(x1,c.x1);y1=Math.max(y1,c.y1);z+=c.cz}
   sh._i=grp==='p'?Math.round(f*100):grp==='s'?-1:-2;/* the piece's rank, for the patch report (?dbgp=1) */
-  return{kind:'pet',grp,sh,px:sh,s,K,km,out,tone,c2,dk,lt,mt,f,gk,face:!!fo,cells,bb:[x0,y0,x1,y1],z:z/cells.length,d:fo?fd:svSpl(svSimp(out,tol*(P.simp?P.simp[hi?1:0]:1)))}}
+  return{kind:'pet',grp,sh,px:sh,s,K,km,out,ouv,tone,c2,dk,lt,mt,f,gk,face:!!fo,cells,bb:[x0,y0,x1,y1],z:z/cells.length,d:fo?fd:svSpl(svSimp(out,tol*(P.simp?P.simp[hi?1:0]:1)))}}
 /* a drawn part of the head (the heart) for the order: fn draws it, px is a sheet over its visible surface (for the order and the patches) */
 function svrFn(fn,px,zb){const cells=svCells(px,0);let x0=1e9,y0=1e9,x1=-1e9,y1=-1e9,z=0;for(const c of cells){x0=Math.min(x0,c.x0);y0=Math.min(y0,c.y0);x1=Math.max(x1,c.x1);y1=Math.max(y1,c.y1);z+=c.cz}
   return{kind:'fn',fn,px,cells,bb:cells.length?[x0,y0,x1,y1]:[0,0,-1,-1],z:(cells.length?z/cells.length:0)+(zb||0)}}
@@ -182,6 +183,13 @@ function svRosette(par,B,O,D,S,cwx,op,seed,wl){const P=S._r||(S._r=Object.assign
 const SVR_OFF=typeof location!=='undefined'?((/[?&]svroff=([^&]*)/.exec(location.search)||[])[1]||''):'';
 const SVR_ST=typeof location!=='undefined'&&/[?&]svrstat=1/.test(location.search)?{}:null;
 const svrSt=(k,d)=>{if(SVR_ST&&d){SVR_ST[k]=(SVR_ST[k]||0)+d.length;if(!SVR_ST._w&&typeof window!=='undefined'&&window.svtOut){SVR_ST._w=1;const o=window.svtOut;window.svtOut=(svg,n,ms,sp)=>{o(svg,n,ms,sp);const r={};for(const q in SVR_ST)if(q!=='_w')r[q]=Math.round(SVR_ST[q]/1024/n*10)/10;const put=()=>{const e=document.getElementById('out');if(e)e.textContent+=' '+JSON.stringify(r);else setTimeout(put,50)};put()}}}};
+/* a sheet's quads with their boxes (cached on it), and the nearest depth of the sheet under a screen point over all its quads, both faces
+   (-Infinity where it is not): the depth test of lf.zvis */
+function svrZq(sh){if(sh._zq)return sh._zq;const W=sh.W,q=[];let X0=1e9,Y0=1e9,X1=-1e9,Y1=-1e9;for(let j=0;j<sh.nv;j++)for(let i=0;i<sh.nu;i++){const ks=[j*W+i,j*W+i+1,(j+1)*W+i+1,(j+1)*W+i],P=ks.map(n=>sh.P[n]),Z=ks.map(n=>sh.Z[n]);
+    let x0=1e9,y0=1e9,x1=-1e9,y1=-1e9;for(const p of P){x0=Math.min(x0,p[0]);x1=Math.max(x1,p[0]);y0=Math.min(y0,p[1]);y1=Math.max(y1,p[1])}q.push({P,Z,x0,y0,x1,y1});X0=Math.min(X0,x0);Y0=Math.min(Y0,y0);X1=Math.max(X1,x1);Y1=Math.max(Y1,y1)}
+  q.bb=[X0,Y0,X1,Y1];return sh._zq=q}
+function svrZTop(sh,x,y){let best=-Infinity;for(const c of svrZq(sh)){if(x<c.x0||x>c.x1||y<c.y0||y>c.y1)continue;for(const[a,b,d]of[[0,1,2],[0,2,3]]){const A=c.P[a],B2=c.P[b],C=c.P[d],den=(B2[1]-C[1])*(A[0]-C[0])+(C[0]-B2[0])*(A[1]-C[1]);if(Math.abs(den)<1e-12)continue;
+    const l1=((B2[1]-C[1])*(x-C[0])+(C[0]-B2[0])*(y-C[1]))/den,l2=((C[1]-A[1])*(x-C[0])+(A[0]-C[0])*(y-C[1]))/den,l3=1-l1-l2;if(l1>=-1e-6&&l2>=-1e-6&&l3>=-1e-6){const z=l1*c.Z[a]+l2*c.Z[b]+l3*c.Z[d];if(z>best)best=z}}}return best}
 /* draw the pieces of one rosette in the engine's order, in runs (see the header) */
 function svrDraw(par,items,P,cw,Dm,tol,lf={}){const k=G(par),dd=GDEF||defs,hi=DET>=1.5,eps=Dm*P.eps;if(!items.length)return k;
   /* the closed bud's calyx (lf.sepLay): wrapped round the egg with the petals, the pairwise order runs into cycles whose breaker sinks the sepals
@@ -196,41 +204,66 @@ function svrDraw(par,items,P,cw,Dm,tol,lf={}){const k=G(par),dd=GDEF||defs,hi=DE
     for(const p of pts){for(let j=i+1;j<order0.length;j++){const b=order0[j];if(!b.out||p[0]<b.bb[0]||p[0]>b.bb[2]||p[1]<b.bb[1]||p[1]>b.bb[3])continue;if(svrIn(b.out,p[0],p[1])){cov++;break}}}
     if(cov>=pts.length*P.cull)it.gone=1}
   const order=order0.filter(it=>!it.gone);order.fr=order0.fr.filter(([A,B2])=>!A.gone&&!B2.gone);order.forEach((it,i)=>it.oi=i);
+  /* lf.zvis: what a piece shows is decided by the depth of every surface of the head (its own too: a cupped or rolled piece hides its own far
+     margin), not by the paint order alone. Its edge, washes, margins and veins are laid only where it is the nearest surface, so that a piece the
+     order cannot place (the furled heart overlaps in a spiral, a cycle) never shows its outline or its shades through the one in front */
+  const zE=Dm*(P.zEps||.012),zHid=lf.zvis?(it,x,y,z)=>{for(const X of order){const s=X.px||X.sh;if(!s)continue;const Q=svrZq(s);if(x<Q.bb[0]||x>Q.bb[2]||y<Q.bb[1]||y>Q.bb[3])continue;
+      if(svrZTop(s,x,y)>z+zE)return true}return false}:null;
+  if(zHid)for(const it of order)if(it.kind==='pet'&&it.sh)it.zv=it.sh.P.map((p,q)=>zHid(it,p[0],p[1],it.sh.Z[q])?-1:1);
   /* the patches: where a piece drawn earlier is in front of a later one, the earlier is drawn again over it, clipped to where it is in front */
   /* (the largest few only: a small crossing deep in the rosette is not seen) */
   const cand=[];if(SV_PATCH)for(const[A,B2,fa,fb]of order.fr){const[e,l,c]=A.oi<B2.oi?[A,B2,fa]:[B2,A,fb];if(c<Math.max(P.pmin,P.pshare*Math.min(e.cells.length,l.cells.length)))continue;
     let ca=0;for(const q of e.cells)ca+=(q.x1-q.x0)*(q.y1-q.y0);const a=c*ca/e.cells.length;if(a>=(Dm*P.parea)**2)cand.push([a,e,l])}
-  cand.sort((x,y)=>y[0]-x[0]);for(const[,e,l]of cand.slice(0,P.pmax)){const d=svFrontD(e,l,eps,tol,Dm);if(!d)continue;
+  cand.sort((x,y)=>y[0]-x[0]);for(const[,e,l]of cand.slice(0,Array.isArray(P.pmax)?P.pmax[hi?1:0]:P.pmax)){const d=svFrontD(e,l,eps,tol,Dm);if(!d)continue;
     (l.patch=l.patch||[]).push([e.oi,e,d]);if(!e.pid)e.pid='sr'+(gid++)}
   /* runs: consecutive pieces of one kind */
   const runs=[];let cur=null;for(const it of order){if(it.kind==='fn'){runs.push([it]);cur=null;continue}if(!cur||cur.length>=P.run[hi?1:0]||cur[0].grp!==it.grp){cur=[];runs.push(cur)}cur.push(it)}
   /* the head's outline (for the cast shadows), the light's offset */
   let hid=null;if(!LOD){const hp=[];for(const it of items)if(it.out)for(const p of it.out)hp.push(p);if(hp.length>2){hid='sc'+(gid++);E('path',{d:svSpl(hull2(hp))},E('clipPath',{id:hid},dd))}}
-  const L2=Math.hypot(LIGHT[0],LIGHT[1])||1,ox=-LIGHT[0]/L2*Dm*P.shd[0],oy=LIGHT[1]/L2*Dm*P.shd[0],ew=svF(Math.max(.18,Dm*P.edgeW));
-  const patch=it=>{if(!it.patch)return;it.patch.sort((a,b)=>a[0]-b[0]);for(const[,e,d]of it.patch){const pc='sq'+(gid++);E('path',{d,'clip-rule':'evenodd'},E('clipPath',{id:pc},dd));E('use',{href:'#'+e.pid,'clip-path':`url(#${pc})`},k)}};
+  const L2=Math.hypot(LIGHT[0],LIGHT[1])||1,ox=-LIGHT[0]/L2*Dm*P.shd[0],oy=LIGHT[1]/L2*Dm*P.shd[0],ew=svF(Math.max(.18,Dm*P.edgeW*(lf.ewK||1))),eA=lf.edgeA!=null?lf.edgeA:P.edgeA;
+  const patch=it=>{if(!it.patch)return;it.patch.sort((a,b)=>a[0]-b[0]);for(const[,e,d]of it.patch){const pc='sq'+(gid++);E('path',{d,'clip-rule':'evenodd'},E('clipPath',{id:pc},dd));E('use',{href:'#'+e.pid,'clip-path':`url(#${pc})`},k);
+    /* a kind's own layer on the piece (e.xd: the rose's margin band, flames), cut the same way, so that a patch never shows the bare piece */
+    if(e.xd)for(const x of e.xd)E('path',Object.assign({},x,{'clip-path':`url(#${pc})`}),k);
+    /* lf.pedge: the patch carries the piece's outline too (a patch without it reads as a plate pasted on) */
+    if(lf.pedge&&!SVR_OFF.includes('edge'))E('path',{d:e.d,fill:'none',stroke:e.mt.edge||e.mt.shade,'stroke-width':ew,'stroke-opacity':eA,'stroke-linejoin':'round','clip-path':`url(#${pc})`},k)}};
   if(lf.core)E('path',{d:lf.core[0],fill:lf.core[1]},k);
-  runs.forEach((run,ri)=>{
+  /* lf.patchLate: each run's patches go over its washes and rims (else a piece's shades and margins, drawn after it, show through the piece
+     patched in front of it) */
+  const drawRun=(run,ri)=>{
     if(run[0].kind==='fn'){const it=run[0];it.fn(it.pid?G(k,{id:it.pid}):k);patch(it);return}
-    const mt=run[0].mt,gk=run[0].gk||0,so=P.shd[2]*(1-P.shdB*(lf.bud||0));
+    const mt=run[0].mt,gk=run[0].gk||0,so=P.shd[2]*(1-P.shdB*(lf.bud||0))*(lf.shK==null?1:lf.shK);
     /* the shadow this run casts on what lies behind it */
     if(hid&&ri>0&&so>.01&&!SVR_OFF.includes('shadow')){let d='';for(const it of run)if(hi||(it.bb[2]-it.bb[0])+(it.bb[3]-it.bb[1])>Dm*P.wmin)d+=svSpl(svSimp(it.out.map(p=>[p[0]+ox,p[1]+oy]),tol*(hi?3:6)));svrSt('shadow',d);E('path',{d,fill:mt.cast,'fill-opacity':so,filter:svBlur(Dm*P.shd[1]),'clip-path':`url(#${hid})`},k)}
     /* the run's pieces in one group carrying their edge (a thin dark stroke; the young bud's green reaches it, and its margins) */
-    const rg=G(k,{stroke:gk?mix(mt.edge||mt.shade,mix(P.greenC,'#0e1a06',.65),gk):mt.edge||mt.shade,'stroke-width':ew,'stroke-opacity':SVR_OFF.includes('edge')?0:P.edgeA,'stroke-linejoin':'round'});
-    for(const it of run){svrSt('petal',it.d);const a={d:it.d,fill:it.tone};if(it.pid)a.id=it.pid;E('path',a,rg);patch(it)}
+    const ea={stroke:gk?mix(mt.edge||mt.shade,mix(P.greenC,'#0e1a06',.65),gk):mt.edge||mt.shade,'stroke-width':ew,'stroke-opacity':SVR_OFF.includes('edge')?0:eA,'stroke-linejoin':'round'},
+      rg=zHid?G(k):G(k,ea);
+    for(const it of run){svrSt('petal',it.d);const a={d:it.d,fill:it.tone};if(it.pid)a.id=it.pid;if(zHid&&!it.ouv)Object.assign(a,ea);E('path',a,rg);if(!lf.patchLate)patch(it)}
+    /* under zvis the edge: the outline's runs where the piece is the nearest surface (sampled twice between the outline's points) */
+    if(zHid&&!SVR_OFF.includes('edge')){let d='';for(const it of run){if(!it.ouv)continue;const n=it.ouv.length,pts=[],vs=[];
+        for(let i=0;i<n;i++){const a=it.ouv[i],b=it.ouv[(i+1)%n];for(const t of[0,.5]){const u=a[0]+(b[0]-a[0])*t,v=a[1]+(b[1]-a[1])*t,p=t?svAt(it.sh,u,v):it.out[i];pts.push(p);vs.push(!zHid(it,p[0],p[1],svLerp(it.sh,it.sh.Z,u,v)))}}
+        /* a lone hidden sample between seen ones is seen (no broken line), a seen run shorter than eMin x D is dropped (no scribbles) */
+        const m=pts.length;for(let i=0;i<m;i++)if(!vs[i]&&vs[(i+m-1)%m]&&vs[(i+1)%m])vs[i]=2;let s0=vs.indexOf(false);if(s0<0){d+=svSpl(svSimp(pts,tol));continue}let r=[];
+        const fl=()=>{let L=0;for(let i=1;i<r.length;i++)L+=Math.hypot(r[i][0]-r[i-1][0],r[i][1]-r[i-1][1]);if(r.length>1&&L>Dm*(P.eMin||.03))d+=svSpl(svSimpO(r,tol),false);r=[]};
+        for(let i=1;i<=m;i++){const q=(s0+i)%m;if(vs[q])r.push(pts[q]);else fl()}fl()}
+      svrSt('edge',d);if(d)E('path',Object.assign({d,fill:'none','stroke-linecap':'round'},ea),k)}
     if(LOD||SVR_OFF.includes('wash'))return;
     /* what the later pieces of the run hide of each one (its grid's vertices, then any point) */
     const hid2=(j,x,y)=>{for(let m=j+1;m<run.length;m++){const b=run[m].bb;if(x<b[0]||x>b[2]||y<b[1]||y>b[3])continue;if(svrIn(run[m].out,x,y))return true}return false};
-    const vis=run.map((it,j)=>it.sh.P.map((p,q)=>(it.face&&it.sh.F[q]>0)||hid2(j,p[0],p[1])?-1:1));
+    const vis=run.map((it,j)=>it.sh.P.map((p,q)=>(it.face&&it.sh.F[q]>0)||(it.zv?it.zv[q]<0:hid2(j,p[0],p[1]))?-1:1));
+    /* a kind's own layer over the run's pieces, under the washes (lf.run: the rose's margin band and flames, y3-rose.js) */
+    if(lf.run)lf.run(run,vis,k);
     /* the washes: shade and light on each piece's surface, relative to its tone, hidden under the later pieces of the run */
-    const big=it=>(it.bb[2]-it.bb[0])+(it.bb[3]-it.bb[1])>Dm*(hi?P.wmin*.6:P.wmin),wash=(lv,col,a,dark)=>{let d='';run.forEach((it,j)=>{if(!big(it))return;const V=Array.from(it.K,(x,q)=>Math.min(dark?lv*it.km-x:x-lv*it.km,vis[j][q]*.5));if(!V.some(x=>x>0))return;
+    const big=it=>(P.washF==null||!(it.f>P.washF))&&(it.bb[2]-it.bb[0])+(it.bb[3]-it.bb[1])>Dm*(hi?P.wmin*.6:P.wmin),wash=(lv,col,a,dark)=>{let d='';run.forEach((it,j)=>{if(!big(it))return;const V=Array.from(it.K,(x,q)=>Math.min(dark?lv*it.km-x:x-lv*it.km,vis[j][q]*.5));if(!V.some(x=>x>0))return;
         d+=svLoopsD(it.sh,svIso(it.sh.nu,it.sh.nv,V,0),Math.max(tol*3,Dm*(hi?.008:.016)))});svrSt('wash',d);if(d)E('path',{d,fill:col,'fill-opacity':a,'fill-rule':'evenodd'},wg)};
     /* the foot of each piece darker, where it sinks into the cups round it (bands along its length, not the light: a folded piece stays clean) */
     const foot=(lv,a)=>{let d='';run.forEach((it,j)=>{if(!big(it))return;const W=it.sh.W,nv=it.sh.nv,V=Array.from(it.K,(x,q)=>Math.min(lv-Math.floor(q/W)/nv,vis[j][q]*.5));if(!V.some(x=>x>0))return;
         d+=svLoopsD(it.sh,svIso(it.sh.nu,nv,V,0),Math.max(tol*3,Dm*(hi?.008:.016)))});svrSt('wash',d);if(d)E('path',{d,fill:mt.shade,'fill-opacity':a,'fill-rule':'evenodd'},wg)};
-    const wg=G(k,{filter:svBlur(Dm*P.wb)});P.aoV[hi?1:0].forEach(lv=>foot(lv,P.aoA[hi?1:0]));for(const lv of P.dark[hi?1:0])wash(lv,mt.shade,P.da[hi?1:0],1);for(const lv of P.lit[hi?1:0])wash(lv,mt.lite,P.la[hi?1:0],0);
+    /* lf.wclip: the run's washes clipped to its pieces' outlines (soft shades that never spill past a petal's edge as a halo) */
+    let wk=k;if(lf.wclip){const cid='sw'+(gid++);E('path',{d:run.map(it=>it.d).join('')},E('clipPath',{id:cid},dd));wk=G(k,{'clip-path':`url(#${cid})`})}
+    const wg=G(wk,{filter:svBlur(Dm*P.wb*(lf.wbK||1))});P.aoV[hi?1:0].forEach(lv=>foot(lv,P.aoA[hi?1:0]));for(const lv of P.dark[hi?1:0])wash(lv,mt.shade,P.da[hi?1:0]*(lf.daK==null?1:lf.daK),1);for(const lv of P.lit[hi?1:0])wash(lv,mt.lite,P.la[hi?1:0],0);
     if(SVR_OFF.includes('rim'))return;
     /* the paler margin (the inner face's, fainter on a back), and the veins in close-ups */
-    const runsOf=(it,j,pl,face,inO)=>{const out=[];let r=[];for(const[u,v]of pl){const p=svAt(it.sh,u,v);if(face*it.s>0&&svLerp(it.sh,it.sh.F,u,v)*it.s>.02&&!hid2(j,p[0],p[1])&&(!inO||svrIn(it.out,p[0],p[1])))r.push(p);else{if(r.length>1)out.push(r);r=[]}}if(r.length>1)out.push(r);return out};
+    const runsOf=(it,j,pl,face,inO)=>{const out=[];let r=[];for(const[u,v]of pl){const p=svAt(it.sh,u,v);if(face*it.s>0&&svLerp(it.sh,it.sh.F,u,v)*it.s>.02&&!(zHid&&it.ouv?zHid(it,p[0],p[1],svLerp(it.sh,it.sh.Z,u,v)):hid2(j,p[0],p[1]))&&(!inO||svrIn(it.out,p[0],p[1])))r.push(p);else{if(r.length>1)out.push(r);r=[]}}if(r.length>1)out.push(r);return out};
     /* the spoon's crease: a soft shade down the middle of each inner face, where nothing of the run covers it (one blurred path per run) */
     const mA=P.midA[hi?1:0];if(mA>0&&!SVR_OFF.includes('mid')){let d='',dl='';const pl=[];for(let q=0;q<=4;q++)pl.push([0,P.mid[0]+(P.mid[1]-P.mid[0])*q/4]);
       const lr=Math.hypot(ox,oy)||1,mx=ox/lr*Dm*P.midO,my=oy/lr*Dm*P.midO;
@@ -240,7 +273,16 @@ function svrDraw(par,items,P,cw,Dm,tol,lf={}){const k=G(par),dd=GDEF||defs,hi=DE
     const rimL=[];for(let q=0;q<=3;q++)rimL.push([-.975,.55+.43*q/3]);for(let q=1;q<10;q++)rimL.push([-1+2*q/10,.975]);for(let q=3;q>=0;q--)rimL.push([.975,.55+.43*q/3]);
     for(const face of[1,-1]){let d='';run.forEach((it,j)=>{for(const r of runsOf(it,j,rimL,face))d+=svSpl(svSimpO(r,tol*(hi?1:2)),false)});
       svrSt('rim',d);const bw=Math.min(1,P.edgeB[0]*(lf.dec||0)+P.edgeB[1]*(lf.fan||0)),rc0=face>0?mt.rim:mt.brim||mt.rim,rc=gk?mix(rc0,mix(P.greenC,'#f4f8e0',.45),gk):rc0;
-      if(d)E('path',{d,fill:'none',stroke:bw>0?mix(rc,P.brown,bw):rc,'stroke-width':svF(Dm*(mt.rimW||P.rimW)*(1+P.edgeBW*bw)),'stroke-opacity':face>0?mt.rimA||P.rimA:P.brimA,'stroke-linecap':'round','stroke-linejoin':'round'},k)}
+      if(d)E('path',{d,fill:'none',stroke:bw>0?mix(rc,P.brown,bw):rc,'stroke-width':svF(Dm*(mt.rimW||P.rimW)*(1+P.edgeBW*bw)*(lf.rimK==null?1:lf.rimK)),'stroke-opacity':face>0?mt.rimA||P.rimA:P.brimA,'stroke-linecap':'round','stroke-linejoin':'round'},k)}
     if((hi||mt.veinLo)&&mt.vein){let d='';run.forEach((it,j)=>{for(const u of mt.veinU||[-.62,-.3,0,.3,.62]){const pl=[];for(let q=0;q<=6;q++)pl.push([u*(.3+.7*svSm(q/4)),.06+.8*q/6]);for(const r of runsOf(it,j,pl,1,P.midIn))d+=svQuad(r)}});
-      if(d)E('path',{d,fill:'none',stroke:mt.vein,'stroke-width':svF(Dm*(mt.veinW||P.veinW)),'stroke-opacity':mt.veinA||P.veinA,'stroke-linecap':'round'},k)}});
+      if(d)E('path',{d,fill:'none',stroke:mt.vein,'stroke-width':svF(Dm*(mt.veinW||P.veinW)),'stroke-opacity':mt.veinA||P.veinA,'stroke-linecap':'round'},k)}
+    /* lf.pleat {n [lo, hi], len [min, max] of the length from the tip, w, c, a, lc, la}: a dried piece's creases along its length, from its
+       margin inward, on whichever face is seen (a dark fold and a faint lit ridge beside it), uneven in place and length */
+    if(lf.pleat&&lf.pleat.a>.01&&!SVR_OFF.includes('pleat')){const Q=lf.pleat,n=Q.n[hi?1:0];let d='',dl='';run.forEach((it,j)=>{if(it.grp!=='p'||!big(it))return;const sd=Math.round(it.f*97)+3;
+        for(let m=0;m<n;m++){const u0=-.82+1.64*(m+.5+.7*(pxHashS(m,7,sd)-.5))/n,ln=Q.len[0]+(Q.len[1]-Q.len[0])*pxHashS(m,11,sd),wv=.05*(pxHashS(m,13,sd)-.5),pl=[],pr=[];
+          for(let q=0;q<=6;q++){const v=.97-ln*q/6,u=u0*(1-.25*(q/6))+wv*Math.sin(q*1.3+m);pl.push([u,v]);pr.push([u+.035,v])}
+          for(const r of runsOf(it,j,pl,it.s,1))d+=svQuad(r);if(Q.la>.01)for(const r of runsOf(it,j,pr,it.s,1))dl+=svQuad(r)}});svrSt('pleat',d+dl);
+      if(dl)E('path',{d:dl,fill:'none',stroke:Q.lc,'stroke-width':svF(Dm*Q.w*.8),'stroke-opacity':Q.la,'stroke-linecap':'round'},k);
+      if(d)E('path',{d,fill:'none',stroke:Q.c,'stroke-width':svF(Dm*Q.w),'stroke-opacity':Q.a,'stroke-linecap':'round'},k)}};
+  runs.forEach((run,ri)=>{drawRun(run,ri);if(lf.patchLate&&run[0].kind!=='fn')for(const it of run)patch(it)});
   return k}
