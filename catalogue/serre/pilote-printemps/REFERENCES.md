@@ -1679,3 +1679,10 @@ Sources (`refs.py list hortensia-boule`) :
 - organe:tige vue:gros-plan : [Hydrangea macrophylla leaf scars.jpg](https://commons.wikimedia.org/wiki/File:Hydrangea_macrophylla_leaf_scars.jpg) (Kingfiser, CC BY-SA 4.0)
 - organe:tige organe:attache vue:gros-plan : [Hydrangea macrophylla leaf scar, close-up.jpg](https://commons.wikimedia.org/wiki/File:Hydrangea_macrophylla_leaf_scar,_close-up.jpg) (Kingfiser, CC BY-SA 4.0)
 - feuille : [iNat leaf](https://www.inaturalist.org) (, tiers (mesure locale)) : feuilles sombres luisantes, nervures
+
+## amarante-retombante (Amaranthus caudatus, relais 6, 2026-10-17)
+- Sources : refcache/amarante-retombante/brief-refs.md (Wikimedia Commons, 128 candidats CC BY / BY-SA / CC0 ; iNaturalist API v1, 140 photos CC BY / BY-NC, phénologie 13-15 ; auteur et licence par vignette dans cands.json). Aucune photo ajoutée au dépôt.
+- Mesures (à l'œil, sauf couleurs refs.py) : chenille de diamètre 1/8 à 1/12 de sa longueur (17, 146, 191) ; tige 0,3 à 0,5 du diamètre d'une chenille (165, 142) ; 2 à 4 chenilles par nœud (5, 2) ; arc jusqu'à 180° sous le poids (197) ; feuille ovale alterne, longueur sur largeur 1,2 à 1,5 (24, 241) ; fané : chenille rose puis beige puis brune (266, 64, 37), feuilles jaunes puis rouges (18, 64).
+- Rendu : 16 coloris (rouge, pourpre, bordeaux, corail, bronze, vert, lime, mira, fuchsia, prune-boules ; 6 stabilisés teints qui ne fanent pas) ; kit y3-chenille.js (svChenCord, svChenBalls, svChenHang, svChenPanicle) ; fiche y-amaranthus.js.
+- Poids (mesure seule, consigne porteur « le poids ne compte plus ») : tête de grille ≈ 2 400 éléments et 4,9 Mo à DET 1 (chenilles seules 3,7 Mo, une feuille 1 Mo) ; plante entière ≈ 2 300 éléments et 5,9 Mo.
+- Planches : amarante-retombante-sku-v1.png (16 coloris x 5 stades, vue 3/4) ; comparaisons 9.3b dans refcache/amarante-retombante/cmp93_1.jpg.

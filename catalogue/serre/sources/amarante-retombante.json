@@ -1,0 +1,2247 @@
+{
+ "sid": "amarante-retombante",
+ "schema": "STANDARD-SOURCES.md section 5",
+ "genre": "Amaranthus",
+ "famille": "Amaranthaceae",
+ "date_consultation": "2026-10-17",
+ "redige_par": "fleur-recensement (passage unique, recensement ciblé, consigne du porteur du 2026-10-17 : économie stricte)",
+ "perimetre": "Amaranthus caudatus L. et ses formes pendantes en fleur coupée et en tige stabilisée ; A. cruentus, A. hypochondriacus, A. tricolor et A. gangeticus (Elephant Head) hors sorte (formes dressées : voir amarante-dressee).",
+ "taxonomie": {
+  "nom_accepte": "Amaranthus caudatus L. (GBIF 6109611, ACCEPTED, famille Amaranthaceae)",
+  "autorite_enregistrement": "aucune : le genre Amaranthus est absent de la liste des ICRA de l'ISHS (page A relue le 2026-10-17). Pas de N1 pour un cultivar, donc pas de niveau A possible.",
+  "groupe": "aucun groupe horticole ; formes botaniques synonymes : var. albiflorus Moq. (blanche), var. atropurpureus L.H.Bailey (pourpre foncé), var. alopecurus Moq. ; var. gibbosus (type Dreadlocks, cordes en boules)",
+  "melanges": "Les noms de graines (Pony Tails, Dreadlocks, Mira) sont des noms commerciaux sans registre ; certains désignent des plantes différentes selon le vendeur."
+ },
+ "sources_trame": {
+  "ISHS": {
+   "niveau": "N1",
+   "url": "https://ishs.org/sci/taxlist/ataxlist.htm",
+   "constat": "Amaranthus absent"
+  },
+  "GBIF": {
+   "niveau": "N1",
+   "url": "https://www.gbif.org/species/6109611"
+  },
+  "iNaturalist": {
+   "niveau": "N3",
+   "url": "https://api.inaturalist.org/v1/observations?taxon_id=75392&quality_grade=research",
+   "note": "424 photos d observations de recherche parcourues en planches"
+  },
+  "Commons": {
+   "niveau": "N4",
+   "url": "https://commons.wikimedia.org/wiki/Category:Amaranthus_caudatus_(cultivars)"
+  },
+  "Select Seeds": {
+   "niveau": "N3",
+   "url": "https://www.selectseeds.com/"
+  },
+  "Johnnys": {
+   "niveau": "N2",
+   "url": "https://www.johnnyseeds.com/flowers/amaranthus/emerald-tassels-amaranthus-seed-1786.html"
+  },
+  "Florabundance": {
+   "niveau": "N2",
+   "url": "https://florabundance.com/flowers/amaranthus-hanging-green/"
+  },
+  "Holex": {
+   "niveau": "N2",
+   "url": "https://holexflower.com/"
+  },
+  "Barn Florist": {
+   "niveau": "N2",
+   "url": "https://barnflorist.co.uk/dried-flowers-by-variety/amaranthus/",
+   "note": "noms de couleurs lus, images non extraites"
+  }
+ },
+ "coloris": [
+  {
+   "id": "rouge-cramoisi",
+   "sku": "2172",
+   "numero_skus_csv": 2172,
+   "nom_affiche": "rouge cramoisi",
+   "couleur_catalogue": "#9c1c3b",
+   "niveau_preuve": "B",
+   "statut": "en production possible (B)",
+   "cultivars_rattaches": [
+    "forme type Love-Lies-Bleeding (A. caudatus L., sans cultivar)"
+   ],
+   "photos_designees": [
+    {
+     "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/20141108Amaranthus_caudatus4.jpg/500px-20141108Amaranthus_caudatus4.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+     "url_page": "https://commons.wikimedia.org/wiki/File:20141108Amaranthus_caudatus4.jpg",
+     "niveau": "N4",
+     "source": "Wikimedia Commons, 20141108Amaranthus caudatus4.jpg",
+     "auteur": "AnRo0002",
+     "licence": "CC0",
+     "eclairage": "plein jour",
+     "role": "inflorescence pleine, rouge profond",
+     "vu": ""
+    },
+    {
+     "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/26/Amarante_queue_de_renard_Lalinde_%281%29.JPG/500px-Amarante_queue_de_renard_Lalinde_%281%29.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+     "url_page": "https://commons.wikimedia.org/wiki/File:Amarante_queue_de_renard_Lalinde_(1).JPG",
+     "niveau": "N4",
+     "source": "Wikimedia Commons, Amarante queue de renard Lalinde (1).JPG",
+     "auteur": "Père Igor",
+     "licence": "CC BY-SA 3.0",
+     "eclairage": "plein jour",
+     "role": "traîne dense, tige et feuille",
+     "vu": ""
+    },
+    {
+     "url_image": "https://inaturalist-open-data.s3.amazonaws.com/photos/429792769/large.jpeg",
+     "url_page": "https://www.inaturalist.org/observations/241176238",
+     "niveau": "N3",
+     "source": "iNaturalist, observation de recherche Amaranthus caudatus (French Creek Precinct, IL, USA, 2024-09-08)",
+     "auteur": "Perry Garner",
+     "licence": "CC BY NC",
+     "eclairage": "plein jour, jardin",
+     "role": "traîne cramoisi sur feuillage",
+     "vu": ""
+    }
+   ],
+   "note": "Rouge profond de la forme type, coloris le plus courant de la sorte. Les sources de graines disent burgundy ou rich red (Epic Gardening ; Select Seeds Dreadlocks : claret).",
+   "mesure_couleur": {
+    "date": "2026-10-17",
+    "methode": "refs.py url + outils.py (boite sur la chenille, filtre sans vert sauf vert/vert-sapin, ou creme, ou bleu) ; valeur = median des photos designees, bande ombre/mediane/lumiere par luminance",
+    "ombre": "#580819",
+    "mediane": "#9c2342",
+    "lumiere": "#c77983",
+    "base": null,
+    "pointe": null,
+    "photos": [
+     {
+      "i": 1,
+      "k": 0,
+      "niveau": "N4",
+      "eclairage": "plein jour",
+      "n": 62065,
+      "ombre": "#580817",
+      "mediane": "#9c2039",
+      "lumiere": "#b2a094",
+      "box": [
+       0.3,
+       0.2,
+       0.62,
+       0.85
+      ],
+      "filtre": "defaut"
+     },
+     {
+      "i": 2,
+      "k": 1,
+      "niveau": "N4",
+      "eclairage": "plein jour",
+      "n": 67820,
+      "ombre": "#560519",
+      "mediane": "#922342",
+      "lumiere": "#d35f83",
+      "box": [
+       0.25,
+       0.05,
+       0.5,
+       0.95
+      ],
+      "filtre": "defaut"
+     },
+     {
+      "i": 3,
+      "k": 2,
+      "niveau": "N3",
+      "eclairage": "plein jour, jardin",
+      "n": 76073,
+      "ombre": "#891534",
+      "mediane": "#a92d52",
+      "lumiere": "#c77982",
+      "box": [
+       0.15,
+       0.05,
+       0.8,
+       0.75
+      ],
+      "filtre": "defaut"
+     }
+    ],
+    "ecart_entre_photos_dE_max": 10.4,
+    "ecart_teinte_catalogue_deg": 3.0,
+    "hex_catalogue": "#9c1c3b",
+    "alertes": [
+     "ecart entre photos ΔE 10.4 > 10 : troisieme photo demandee"
+    ],
+    "licence_photos": "mesure locale seulement ; aucune photo copiee dans le depot"
+   },
+   "eclairage_photos": [
+    "plein jour",
+    "plein jour, jardin"
+   ],
+   "niveau_preuve_final": "B",
+   "statut_couleur": "a confirmer (ΔE 10.4, 3e photo demandee)"
+  },
+  {
+   "id": "rouge-pourpre",
+   "sku": "2173",
+   "numero_skus_csv": 2173,
+   "nom_affiche": "rouge pourpre",
+   "couleur_catalogue": "#842451",
+   "niveau_preuve": "B",
+   "statut": "en production possible (B)",
+   "cultivars_rattaches": [
+    "Dreadlocks (A. caudatus var. gibbosus, héritage mexicain, catalogues de 1881)",
+    "Pony Tails (nom de graines, voir questions)"
+   ],
+   "photos_designees": [
+    {
+     "url_image": "https://www.selectseeds.com/cdn/shop/files/614-4-2500_1000x1000.jpg?v=1763519867",
+     "url_page": "https://www.selectseeds.com/products/amaranth-dreadlocks-seeds",
+     "niveau": "N3",
+     "source": "Select Seeds, Dreadlocks (gibbosus)",
+     "auteur": "boutique ou négoce (photo commerciale, non reproduite)",
+     "licence": "tous droits réservés : mesure locale seulement, jamais stockée",
+     "eclairage": "jardin, jour",
+     "role": "boules pourpre-magenta",
+     "vu": "boules magenta-pourpre"
+    },
+    {
+     "url_image": "https://www.selectseeds.com/cdn/shop/products/614-3-zoom_1000x1000.jpg?v=1763519867",
+     "url_page": "https://www.selectseeds.com/products/amaranth-dreadlocks-seeds",
+     "niveau": "N3",
+     "source": "Select Seeds, Dreadlocks (gibbosus)",
+     "auteur": "boutique ou négoce (photo commerciale, non reproduite)",
+     "licence": "tous droits réservés : mesure locale seulement, jamais stockée",
+     "eclairage": "jardin, jour",
+     "role": "boules pourpre-magenta",
+     "vu": "boules magenta-pourpre"
+    },
+    {
+     "url_image": "https://inaturalist-open-data.s3.amazonaws.com/photos/53364156/large.jpg",
+     "url_page": "https://www.inaturalist.org/observations/33941621",
+     "niveau": "N3",
+     "source": "iNaturalist, observation de recherche Amaranthus caudatus (Naturpark Altmühltal, Berching, Bayern, , 2019-10-06)",
+     "auteur": "spierling",
+     "licence": "CC BY NC",
+     "eclairage": "plein jour, jardin",
+     "role": "traîne magenta",
+     "vu": ""
+    }
+   ],
+   "note": "Cordes en boules magenta-pourpre. Le magenta des photos est plus clair que #842451 : la teinte se mesure sur la médiane des trois photos.",
+   "motif": "boules (var. gibbosus) pour Dreadlocks ; traîne lisse pour la forme type",
+   "mesure_couleur": {
+    "date": "2026-10-17",
+    "methode": "refs.py url + outils.py (boite sur la chenille, filtre sans vert sauf vert/vert-sapin, ou creme, ou bleu) ; valeur = median des photos designees, bande ombre/mediane/lumiere par luminance",
+    "ombre": "#591637",
+    "mediane": "#9e3563",
+    "lumiere": "#ce5f94",
+    "base": null,
+    "pointe": null,
+    "photos": [
+     {
+      "i": 4,
+      "k": 0,
+      "niveau": "N3",
+      "eclairage": "jardin, jour",
+      "n": 15748,
+      "ombre": "#43161b",
+      "mediane": "#9e355d",
+      "lumiere": "#ce5f8b",
+      "box": [
+       0.4,
+       0.4,
+       0.6,
+       0.9
+      ],
+      "filtre": "defaut"
+     },
+     {
+      "i": 5,
+      "k": 1,
+      "niveau": "N3",
+      "eclairage": "jardin, jour",
+      "n": 46393,
+      "ombre": "#761249",
+      "mediane": "#b23d7f",
+      "lumiere": "#e586b9",
+      "box": [
+       0.6,
+       0.1,
+       0.8,
+       0.95
+      ],
+      "filtre": "defaut"
+     },
+     {
+      "i": 6,
+      "k": 2,
+      "niveau": "N3",
+      "eclairage": "plein jour, jardin",
+      "n": 34854,
+      "ombre": "#591637",
+      "mediane": "#912963",
+      "lumiere": "#c54e94",
+      "box": [
+       0.4,
+       0.1,
+       0.6,
+       0.9
+      ],
+      "filtre": "defaut"
+     }
+    ],
+    "ecart_entre_photos_dE_max": 15.0,
+    "ecart_teinte_catalogue_deg": 1.0,
+    "hex_catalogue": "#842451",
+    "alertes": [
+     "ecart entre photos ΔE 15.0 > 10 : troisieme photo demandee"
+    ],
+    "licence_photos": "mesure locale seulement ; aucune photo copiee dans le depot"
+   },
+   "eclairage_photos": [
+    "jardin, jour",
+    "plein jour, jardin"
+   ],
+   "niveau_preuve_final": "B",
+   "statut_couleur": "a confirmer (ΔE 15.0, 3e photo demandee)"
+  },
+  {
+   "id": "bordeaux",
+   "sku": "2174",
+   "numero_skus_csv": 2174,
+   "nom_affiche": "bordeaux",
+   "couleur_catalogue": "#6a1931",
+   "niveau_preuve": "B",
+   "statut": "en production possible (B)",
+   "cultivars_rattaches": [
+    "Burgundy Hanging (négoce, forme type foncée)",
+    "Dreadlocks (claret, Select Seeds)"
+   ],
+   "photos_designees": [
+    {
+     "url_image": "https://flowermoxie.com/cdn/shop/files/Burgundy_Hanging_Amaranthus-2.jpg?v=1767627931&width=1000",
+     "url_page": "https://flowermoxie.com/collections/amaranthus/products/burgundy-hanging-amaranthus",
+     "niveau": "N2",
+     "source": "Flower Moxie, Burgundy Hanging Amaranthus",
+     "auteur": "boutique ou négoce (photo commerciale, non reproduite)",
+     "licence": "tous droits réservés : mesure locale seulement, jamais stockée",
+     "eclairage": "studio, fond neutre",
+     "role": "bouquet coupé, traînes bordeaux",
+     "vu": "traînes bordeaux"
+    },
+    {
+     "url_image": "https://inaturalist-open-data.s3.amazonaws.com/photos/468155034/large.jpg",
+     "url_page": "https://www.inaturalist.org/observations/257511064",
+     "niveau": "N3",
+     "source": "iNaturalist, observation de recherche Amaranthus caudatus (North Island / Te Ika-a-Māui, Warkworth,, 2025-01-06)",
+     "auteur": "maprevell",
+     "licence": "CC BY NC",
+     "eclairage": "plein jour, jardin",
+     "role": "traîne bordeaux, jardin",
+     "vu": ""
+    },
+    {
+     "url_image": "https://inaturalist-open-data.s3.amazonaws.com/photos/724819996/large.jpg",
+     "url_page": "https://www.inaturalist.org/observations/395308043",
+     "niveau": "N3",
+     "source": "iNaturalist, observation de recherche Amaranthus caudatus (Fontrabiouse, France, 2026-08-28)",
+     "auteur": "Christophe Bara",
+     "licence": "CC BY NC",
+     "eclairage": "plein jour, jardin",
+     "role": "boules bordeaux foncé",
+     "vu": ""
+    }
+   ],
+   "note": "Bordeaux : le négoce (Flower Moxie, Holex, Barn Florist, AFW listent Burgundy) et le jardin concordent.",
+   "mesure_couleur": {
+    "date": "2026-10-17",
+    "methode": "refs.py url + outils.py (boite sur la chenille, filtre sans vert sauf vert/vert-sapin, ou creme, ou bleu) ; valeur = median des photos designees, bande ombre/mediane/lumiere par luminance",
+    "ombre": "#360917",
+    "mediane": "#7c2642",
+    "lumiere": "#b76780",
+    "base": null,
+    "pointe": null,
+    "photos": [
+     {
+      "i": 7,
+      "k": 0,
+      "niveau": "N2",
+      "eclairage": "studio, fond neutre",
+      "n": 50763,
+      "ombre": "#590c25",
+      "mediane": "#7c3042",
+      "lumiere": "#b78c84",
+      "box": [
+       0.15,
+       0.15,
+       0.5,
+       0.9
+      ],
+      "filtre": "defaut"
+     },
+     {
+      "i": 8,
+      "k": 1,
+      "niveau": "N3",
+      "eclairage": "plein jour, jardin",
+      "n": 21103,
+      "ombre": "#360717",
+      "mediane": "#7f2645",
+      "lumiere": "#ba5a80",
+      "box": [
+       0.4,
+       0.3,
+       0.6,
+       0.7
+      ],
+      "filtre": "defaut"
+     },
+     {
+      "i": 9,
+      "k": 2,
+      "niveau": "N3",
+      "eclairage": "plein jour, jardin",
+      "n": 45965,
+      "ombre": "#2d0915",
+      "mediane": "#521e2e",
+      "lumiere": "#956766",
+      "box": [
+       0.3,
+       0.1,
+       0.6,
+       0.85
+      ],
+      "filtre": "defaut"
+     }
+    ],
+    "ecart_entre_photos_dE_max": 18.1,
+    "ecart_teinte_catalogue_deg": 4.1,
+    "hex_catalogue": "#6a1931",
+    "alertes": [
+     "ecart entre photos ΔE 18.1 > 10 : troisieme photo demandee"
+    ],
+    "licence_photos": "mesure locale seulement ; aucune photo copiee dans le depot"
+   },
+   "eclairage_photos": [
+    "plein jour, jardin",
+    "studio, fond neutre"
+   ],
+   "niveau_preuve_final": "B",
+   "statut_couleur": "a confirmer (ΔE 18.1, 3e photo demandee)"
+  },
+  {
+   "id": "vieux-rose-corail",
+   "sku": "2175",
+   "numero_skus_csv": 2175,
+   "nom_affiche": "vieux rose corail",
+   "couleur_catalogue": "#d98a82",
+   "niveau_preuve": "B",
+   "statut": "en production possible (B)",
+   "cultivars_rattaches": [
+    "Coral Fountain (sélection rare de A. caudatus : Select Seeds, Adaptive Seeds, Chiltern, Seedaholic)"
+   ],
+   "photos_designees": [
+    {
+     "url_image": "https://www.selectseeds.com/cdn/shop/files/557-6-2500_1000x1000.jpg?v=1759196865",
+     "url_page": "https://www.selectseeds.com/products/amaranth-coral-fountain-seeds",
+     "niveau": "N3",
+     "source": "Select Seeds, Coral Fountain (pépiniériste de collection)",
+     "auteur": "boutique ou négoce (photo commerciale, non reproduite)",
+     "licence": "tous droits réservés : mesure locale seulement, jamais stockée",
+     "eclairage": "jardin, plein jour",
+     "role": "plante en fleur, traînes corail-brique",
+     "vu": "corail-brique poudré"
+    },
+    {
+     "url_image": "https://www.selectseeds.com/cdn/shop/files/557-7-2500_1000x1000.jpg?v=1759196865",
+     "url_page": "https://www.selectseeds.com/products/amaranth-coral-fountain-seeds",
+     "niveau": "N3",
+     "source": "Select Seeds, Coral Fountain",
+     "auteur": "boutique ou négoce (photo commerciale, non reproduite)",
+     "licence": "tous droits réservés : mesure locale seulement, jamais stockée",
+     "eclairage": "jardin, plein jour",
+     "role": "plante en fleur",
+     "vu": "corail-brique poudré"
+    },
+    {
+     "url_image": "https://inaturalist-open-data.s3.amazonaws.com/photos/725441188/large.jpg",
+     "url_page": "https://www.inaturalist.org/observations/395632237",
+     "niveau": "N3",
+     "source": "iNaturalist, observation de recherche Amaranthus caudatus (Zürich, 2025-08-23)",
+     "auteur": "miraculux72",
+     "licence": "CC BY NC",
+     "eclairage": "plein jour, jardin",
+     "role": "inflorescence saumon-corail",
+     "vu": ""
+    },
+    {
+     "url_image": "https://inaturalist-open-data.s3.amazonaws.com/photos/716548564/large.jpg",
+     "url_page": "https://www.inaturalist.org/observations/391076516",
+     "niveau": "N3",
+     "source": "iNaturalist, observation de recherche Amaranthus caudatus (Fleece, Boxford, Sudbury CO10 5DX, UK, 2026-08-09)",
+     "auteur": "bigfoot2010",
+     "licence": "CC BY NC",
+     "eclairage": "plein jour, jardin",
+     "role": "traîne rose saumoné",
+     "vu": ""
+    }
+   ],
+   "note": "Coral Fountain est décrite coral-pink à coral-peach, pâlissant en crème avec l'âge (Chiltern, Select Seeds). Les photos de la fiche sont plus brique que #d98a82 : à mesurer sur la médiane.",
+   "mesure_couleur": {
+    "date": "2026-10-17",
+    "methode": "refs.py url + outils.py (boite sur la chenille, filtre sans vert sauf vert/vert-sapin, ou creme, ou bleu) ; valeur = median des photos designees, bande ombre/mediane/lumiere par luminance",
+    "ombre": "#622e16",
+    "mediane": "#a6594a",
+    "lumiere": "#eb948b",
+    "base": null,
+    "pointe": null,
+    "photos": [
+     {
+      "i": 10,
+      "k": 0,
+      "niveau": "N3",
+      "eclairage": "jardin, plein jour",
+      "n": 18429,
+      "ombre": "#5a190d",
+      "mediane": "#8e4836",
+      "lumiere": "#d97f7a",
+      "box": [
+       0.1,
+       0.2,
+       0.3,
+       0.6
+      ],
+      "filtre": "defaut"
+     },
+     {
+      "i": 11,
+      "k": 1,
+      "niveau": "N3",
+      "eclairage": "jardin, plein jour",
+      "n": 15244,
+      "ombre": "#4b200e",
+      "mediane": "#a04340",
+      "lumiere": "#e3797a",
+      "box": [
+       0.05,
+       0.6,
+       0.3,
+       0.95
+      ],
+      "filtre": "defaut"
+     },
+     {
+      "i": 12,
+      "k": 2,
+      "niveau": "N3",
+      "eclairage": "plein jour, jardin",
+      "n": 13538,
+      "ombre": "#6b3b1f",
+      "mediane": "#ad6a55",
+      "lumiere": "#f3ab9c",
+      "box": [
+       0.45,
+       0.25,
+       0.7,
+       0.6
+      ],
+      "filtre": "defaut"
+     },
+     {
+      "i": 13,
+      "k": 3,
+      "niveau": "N3",
+      "eclairage": "plein jour, jardin",
+      "n": 71497,
+      "ombre": "#a63d49",
+      "mediane": "#cc7371",
+      "lumiere": "#f8a9b0",
+      "box": [
+       0.35,
+       0.1,
+       0.6,
+       0.95
+      ],
+      "filtre": "defaut"
+     }
+    ],
+    "ecart_entre_photos_dE_max": 21.8,
+    "ecart_teinte_catalogue_deg": 6.6,
+    "hex_catalogue": "#d98a82",
+    "alertes": [
+     "ecart entre photos ΔE 21.8 > 10 : troisieme photo demandee"
+    ],
+    "licence_photos": "mesure locale seulement ; aucune photo copiee dans le depot"
+   },
+   "eclairage_photos": [
+    "jardin, plein jour",
+    "plein jour, jardin"
+   ],
+   "niveau_preuve_final": "B",
+   "statut_couleur": "a confirmer (ΔE 21.8, 3e photo demandee)"
+  },
+  {
+   "id": "bronze",
+   "sku": "2176",
+   "numero_skus_csv": 2176,
+   "nom_affiche": "bronze",
+   "couleur_catalogue": "#8a5a3c",
+   "niveau_preuve": "C",
+   "statut": "à confirmer (C)",
+   "cultivars_rattaches": [
+    "Hanging Bronze (négoce Florabundance)",
+    "Coral Brown / Brown Spider (négoce : Potomac, Triangle Nursery 403)"
+   ],
+   "photos_designees": [
+    {
+     "url_image": "https://florabundance.com/wp-content/uploads/2018/03/Amaranthus-hanging-bronze-scaled.jpg",
+     "url_page": "https://florabundance.com/flowers/amaranthus-hanging-bronze/",
+     "niveau": "N2",
+     "source": "Florabundance (grossiste US), Hanging Bronze AMARHGBR",
+     "auteur": "boutique ou négoce (photo commerciale, non reproduite)",
+     "licence": "tous droits réservés : mesure locale seulement, jamais stockée",
+     "eclairage": "fleur coupée, intérieur, fond blanc",
+     "role": "traînes bronze orangé",
+     "vu": "traînes bronze orangé, feuillage vert"
+    },
+    {
+     "url_image": "https://inaturalist-open-data.s3.amazonaws.com/photos/734492250/large.jpg",
+     "url_page": "https://www.inaturalist.org/observations/400272669",
+     "niveau": "N3",
+     "source": "iNaturalist, observation de recherche Amaranthus caudatus (Orange Rd, Montclair, NJ, US, 2026-09-14)",
+     "auteur": "Ruth Nasrullah",
+     "licence": "CC BY NC",
+     "eclairage": "plein jour, jardin",
+     "role": "traînes brun-corail",
+     "vu": ""
+    },
+    {
+     "url_image": "https://inaturalist-open-data.s3.amazonaws.com/photos/413897370/large.jpeg",
+     "url_page": "https://www.inaturalist.org/observations/232933383",
+     "niveau": "N3",
+     "source": "iNaturalist, observation de recherche Amaranthus caudatus (Garden Trail, Clemson, SC, US, 2024-07-31)",
+     "auteur": "Britney Conney",
+     "licence": "CC BY NC",
+     "eclairage": "plein jour, jardin",
+     "role": "traînes brunes, fin de floraison",
+     "vu": ""
+    }
+   ],
+   "note": "Une seule photo de négoce montre le bronze frais ; les deux photos de jardin sont proches du brun, l'une en fin de floraison. Les trois sont plus orangées ou plus pâles que #8a5a3c. Niveau C accepté par le porteur ; pas de chasse C vers B.",
+   "mesure_couleur": {
+    "date": "2026-10-17",
+    "methode": "refs.py url + outils.py (boite sur la chenille, filtre sans vert sauf vert/vert-sapin, ou creme, ou bleu) ; valeur = median des photos designees, bande ombre/mediane/lumiere par luminance",
+    "ombre": "#31200d",
+    "mediane": "#614024",
+    "lumiere": "#bb8165",
+    "base": null,
+    "pointe": null,
+    "photos": [
+     {
+      "i": 14,
+      "k": 0,
+      "niveau": "N2",
+      "eclairage": "fleur coupée, intérieur, fond blanc",
+      "n": 62386,
+      "ombre": "#312105",
+      "mediane": "#6f5024",
+      "lumiere": "#bb8f58",
+      "box": [
+       0.25,
+       0.35,
+       0.7,
+       0.8
+      ],
+      "filtre": "defaut"
+     },
+     {
+      "i": 15,
+      "k": 1,
+      "niveau": "N3",
+      "eclairage": "plein jour, jardin",
+      "n": 45758,
+      "ombre": "#3b150d",
+      "mediane": "#613221",
+      "lumiere": "#c67d6d",
+      "box": [
+       0.25,
+       0.2,
+       0.5,
+       0.9
+      ],
+      "filtre": "defaut"
+     },
+     {
+      "i": 16,
+      "k": 2,
+      "niveau": "N3",
+      "eclairage": "plein jour, jardin",
+      "n": 17320,
+      "ombre": "#25200e",
+      "mediane": "#59402b",
+      "lumiere": "#9c8165",
+      "box": [
+       0.3,
+       0.35,
+       0.45,
+       0.85
+      ],
+      "filtre": "defaut"
+     }
+    ],
+    "ecart_entre_photos_dE_max": 18.4,
+    "ecart_teinte_catalogue_deg": 6.9,
+    "hex_catalogue": "#8a5a3c",
+    "alertes": [
+     "ecart entre photos ΔE 18.4 > 10 : troisieme photo demandee"
+    ],
+    "licence_photos": "mesure locale seulement ; aucune photo copiee dans le depot"
+   },
+   "eclairage_photos": [
+    "fleur coupée, intérieur, fond blanc",
+    "plein jour, jardin"
+   ],
+   "niveau_preuve_final": "C",
+   "statut_couleur": "a confirmer (ΔE 18.4, 3e photo demandee)"
+  },
+  {
+   "id": "vert",
+   "sku": "2177",
+   "numero_skus_csv": 2177,
+   "nom_affiche": "vert",
+   "couleur_catalogue": "#7f9f42",
+   "niveau_preuve": "B",
+   "statut": "en production possible (B)",
+   "cultivars_rattaches": [
+    "Green Cascade = Viridis",
+    "Emerald Tassels (Johnny's ; photo Commons nommée)",
+    "Green Hanging (négoce)"
+   ],
+   "photos_designees": [
+    {
+     "url_image": "https://florabundance.com/wp-content/uploads/2018/03/AMARANTHUS-HANGING-GREEN.jpg",
+     "url_page": "https://florabundance.com/flowers/amaranthus-hanging-green/",
+     "niveau": "N2",
+     "source": "Florabundance, Hanging Green",
+     "auteur": "boutique ou négoce (photo commerciale, non reproduite)",
+     "licence": "tous droits réservés : mesure locale seulement, jamais stockée",
+     "eclairage": "fleur coupée, intérieur",
+     "role": "traînes vert",
+     "vu": "traînes vert-jaune"
+    },
+    {
+     "url_image": "https://flowermoxie.com/cdn/shop/files/Green_Hanging_Amaranthus-3.jpg?v=1767628064&width=1000",
+     "url_page": "https://flowermoxie.com/collections/amaranthus/products/green-hanging-amaranthus-flower",
+     "niveau": "N2",
+     "source": "Flower Moxie, Green Hanging Amaranthus",
+     "auteur": "boutique ou négoce (photo commerciale, non reproduite)",
+     "licence": "tous droits réservés : mesure locale seulement, jamais stockée",
+     "eclairage": "studio, fond neutre",
+     "role": "bouquet coupé, studio",
+     "vu": "traînes vert pomme pâle"
+    },
+    {
+     "url_image": "https://www.johnnyseeds.com/dw/image/v2/BJGJ_PRD/on/demandware.static/-/Sites-jss-master/default/dw332c2f41/images/products/flowers/01786_01_emerald_tassels.jpg?sw=800&cx=394&cy=0&cw=1196&ch=1196",
+     "url_page": "https://www.johnnyseeds.com/flowers/amaranthus/emerald-tassels-amaranthus-seed-1786.html",
+     "niveau": "N2",
+     "source": "Johnny's Selected Seeds, Emerald Tassels",
+     "auteur": "boutique ou négoce (photo commerciale, non reproduite)",
+     "licence": "tous droits réservés : mesure locale seulement, jamais stockée",
+     "eclairage": "bouquet coupé, fond sombre",
+     "role": "cordes vert pistache",
+     "vu": "cordes vert pistache pâle"
+    },
+    {
+     "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/Amaranthus_caudatus_%27Emerald_Tassels%27_JRVdH_01.jpg/500px-Amaranthus_caudatus_%27Emerald_Tassels%27_JRVdH_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+     "url_page": "https://commons.wikimedia.org/wiki/File:Amaranthus_caudatus_%27Emerald_Tassels%27_JRVdH_01.jpg",
+     "niveau": "N4",
+     "source": "Wikimedia Commons, Amaranthus caudatus 'Emerald Tassels' JRVdH 01.jpg",
+     "auteur": "Cephas",
+     "licence": "CC BY-SA 4.0",
+     "eclairage": "plein jour",
+     "role": "Emerald Tassels, rapprochée",
+     "vu": ""
+    }
+   ],
+   "note": "Vert type du négoce. Les sources de graines disent lime-green, soft green ou pistachio : la médiane des quatre photos donne le vert.",
+   "mesure_couleur": {
+    "date": "2026-10-17",
+    "methode": "refs.py url + outils.py (boite sur la chenille, filtre sans vert sauf vert/vert-sapin, ou creme, ou bleu) ; valeur = median des photos designees, bande ombre/mediane/lumiere par luminance",
+    "ombre": "#5e672e",
+    "mediane": "#909a59",
+    "lumiere": "#bdc27e",
+    "base": null,
+    "pointe": null,
+    "photos": [
+     {
+      "i": 17,
+      "k": 0,
+      "niveau": "N2",
+      "eclairage": "fleur coupée, intérieur",
+      "n": 160010,
+      "ombre": "#444714",
+      "mediane": "#777735",
+      "lumiere": "#b9c079",
+      "box": [
+       0.1,
+       0.45,
+       0.9,
+       0.95
+      ],
+      "filtre": "vert"
+     },
+     {
+      "i": 18,
+      "k": 1,
+      "niveau": "N2",
+      "eclairage": "studio, fond neutre",
+      "n": 66521,
+      "ombre": "#737833",
+      "mediane": "#a1a55d",
+      "lumiere": "#c1c381",
+      "box": [
+       0.25,
+       0.15,
+       0.6,
+       0.8
+      ],
+      "filtre": "vert"
+     },
+     {
+      "i": 19,
+      "k": 2,
+      "niveau": "N2",
+      "eclairage": "bouquet coupé, fond sombre",
+      "n": 149815,
+      "ombre": "#4f5629",
+      "mediane": "#868e56",
+      "lumiere": "#aeb57c",
+      "box": [
+       0.15,
+       0.3,
+       0.8,
+       0.9
+      ],
+      "filtre": "vert"
+     },
+     {
+      "i": 20,
+      "k": 3,
+      "niveau": "N4",
+      "eclairage": "plein jour",
+      "n": 14780,
+      "ombre": "#6c7a33",
+      "mediane": "#9bac5c",
+      "lumiere": "#c7d68d",
+      "box": [
+       0.45,
+       0.3,
+       0.55,
+       0.85
+      ],
+      "filtre": "vert"
+     }
+    ],
+    "ecart_entre_photos_dE_max": 21.0,
+    "ecart_teinte_catalogue_deg": 8.0,
+    "hex_catalogue": "#7f9f42",
+    "alertes": [
+     "ecart entre photos ΔE 21.0 > 10 : troisieme photo demandee"
+    ],
+    "licence_photos": "mesure locale seulement ; aucune photo copiee dans le depot"
+   },
+   "eclairage_photos": [
+    "bouquet coupé, fond sombre",
+    "fleur coupée, intérieur",
+    "plein jour",
+    "studio, fond neutre"
+   ],
+   "niveau_preuve_final": "B",
+   "statut_couleur": "a confirmer (ΔE 21.0, 3e photo demandee)"
+  },
+  {
+   "id": "vert-lime",
+   "sku": "2178",
+   "numero_skus_csv": 2178,
+   "nom_affiche": "vert lime",
+   "couleur_catalogue": "#b6c64e",
+   "niveau_preuve": "B",
+   "statut": "en production possible (B)",
+   "cultivars_rattaches": [
+    "Green Tails (Select Seeds : chartreuse pâle)",
+    "Green Hanging Spider (négoce)"
+   ],
+   "photos_designees": [
+    {
+     "url_image": "https://eadn-wc01-13476690.nxedge.io/wp-content/uploads/2025/07/Amaranthus-hanging-green-spider.jpg",
+     "url_page": "https://fabulousflorals.com/wholesale-flowers/green-hanging-amaranthus-spider/",
+     "niveau": "N2",
+     "source": "Fabulous Florals, Green Hanging Spider",
+     "auteur": "boutique ou négoce (photo commerciale, non reproduite)",
+     "licence": "tous droits réservés : mesure locale seulement, jamais stockée",
+     "eclairage": "fleur coupée, intérieur",
+     "role": "traînes lime vif",
+     "vu": "vert lime vif"
+    },
+    {
+     "url_image": "https://www.selectseeds.com/cdn/shop/products/300-2-zoom_1000x1000.jpg?v=1687464178",
+     "url_page": "https://www.selectseeds.com/products/amaranth-green-tails-seeds",
+     "niveau": "N3",
+     "source": "Select Seeds, Green Tails",
+     "auteur": "boutique ou négoce (photo commerciale, non reproduite)",
+     "licence": "tous droits réservés : mesure locale seulement, jamais stockée",
+     "eclairage": "jardin, jour",
+     "role": "plante en fleur, chartreuse pâle",
+     "vu": "chartreuse pâle"
+    },
+    {
+     "url_image": "https://florabundance.com/wp-content/uploads/2018/03/Amaranthus-hanging-green-2.jpg",
+     "url_page": "https://florabundance.com/flowers/amaranthus-hanging-green/",
+     "niveau": "N2",
+     "source": "Florabundance, Hanging Green (2)",
+     "auteur": "boutique ou négoce (photo commerciale, non reproduite)",
+     "licence": "tous droits réservés : mesure locale seulement, jamais stockée",
+     "eclairage": "fleur coupée, intérieur",
+     "role": "traînes lime",
+     "vu": "traînes vert lime"
+    }
+   ],
+   "note": "Lime vif à chartreuse pâle. Voir les questions sur la distinction avec vert (même gamme dans les sources).",
+   "mesure_couleur": {
+    "date": "2026-10-17",
+    "methode": "refs.py url + outils.py (boite sur la chenille, filtre sans vert sauf vert/vert-sapin, ou creme, ou bleu) ; valeur = median des photos designees, bande ombre/mediane/lumiere par luminance",
+    "ombre": "#444512",
+    "mediane": "#838339",
+    "lumiere": "#c1c06d",
+    "base": null,
+    "pointe": null,
+    "photos": [
+     {
+      "i": 21,
+      "k": 0,
+      "niveau": "N2",
+      "eclairage": "fleur coupée, intérieur",
+      "n": 159125,
+      "ombre": "#44450e",
+      "mediane": "#838339",
+      "lumiere": "#c1c06d",
+      "box": [
+       0.15,
+       0.2,
+       0.75,
+       0.9
+      ],
+      "filtre": "vert"
+     },
+     {
+      "i": 22,
+      "k": 1,
+      "niveau": "N3",
+      "eclairage": "jardin, jour",
+      "n": 30635,
+      "ombre": "#628329",
+      "mediane": "#a0ba65",
+      "lumiere": "#cfe09f",
+      "box": [
+       0.45,
+       0.2,
+       0.6,
+       0.7
+      ],
+      "filtre": "vert"
+     },
+     {
+      "i": 23,
+      "k": 2,
+      "niveau": "N2",
+      "eclairage": "fleur coupée, intérieur",
+      "n": 39704,
+      "ombre": "#404112",
+      "mediane": "#6d6e36",
+      "lumiere": "#abad68",
+      "box": [
+       0.3,
+       0.5,
+       0.55,
+       0.9
+      ],
+      "filtre": "vert"
+     }
+    ],
+    "ecart_entre_photos_dE_max": 31.3,
+    "ecart_teinte_catalogue_deg": 6.0,
+    "hex_catalogue": "#b6c64e",
+    "alertes": [
+     "ecart entre photos ΔE 31.3 > 10 : troisieme photo demandee"
+    ],
+    "licence_photos": "mesure locale seulement ; aucune photo copiee dans le depot"
+   },
+   "eclairage_photos": [
+    "fleur coupée, intérieur",
+    "jardin, jour"
+   ],
+   "niveau_preuve_final": "B",
+   "statut_couleur": "a confirmer (ΔE 31.3, 3e photo demandee)"
+  },
+  {
+   "id": "vert-pointes-roses",
+   "sku": "2179",
+   "numero_skus_csv": 2179,
+   "nom_affiche": "vert à pointes roses",
+   "couleur_catalogue": "#9fb058",
+   "niveau_preuve": "B",
+   "statut": "en production possible (B)",
+   "cultivars_rattaches": [
+    "Mira (Select Seeds : rose and pale green bicolored ; Chiltern : sauge, lilas, pourpre)",
+    "Hanging Bicolor (négoce, fichier Flower Moxie nommé Mira)"
+   ],
+   "photos_designees": [
+    {
+     "url_image": "https://www.selectseeds.com/cdn/shop/files/1695-3-2500_1000x1000.jpg?v=1763520333",
+     "url_page": "https://www.selectseeds.com/products/amaranth-mira-seeds",
+     "niveau": "N3",
+     "source": "Select Seeds, Mira",
+     "auteur": "boutique ou négoce (photo commerciale, non reproduite)",
+     "licence": "tous droits réservés : mesure locale seulement, jamais stockée",
+     "eclairage": "jardin, jour",
+     "role": "plante en fleur, bicolore",
+     "vu": "rose et vert pâle bicolore"
+    },
+    {
+     "url_image": "https://eadn-wc01-13476690.nxedge.io/wp-content/uploads/2026/05/Amaranthus-hanging-bicolor-import.jpg",
+     "url_page": "https://fabulousflorals.com/wholesale-flowers/bicolor-hanging-amaranthus/",
+     "niveau": "N2",
+     "source": "Fabulous Florals, Bicolor Hanging",
+     "auteur": "boutique ou négoce (photo commerciale, non reproduite)",
+     "licence": "tous droits réservés : mesure locale seulement, jamais stockée",
+     "eclairage": "fleur coupée, extérieur ombre",
+     "role": "bouquet coupé, boules rose et vert",
+     "vu": "boules rose bordeaux et vert"
+    },
+    {
+     "url_image": "https://inaturalist-open-data.s3.amazonaws.com/photos/262290365/large.jpg",
+     "url_page": "https://www.inaturalist.org/observations/151970130",
+     "niveau": "N3",
+     "source": "iNaturalist, observation de recherche Amaranthus caudatus (Christchurch including Banks Peninsula, , 2023-03-21)",
+     "auteur": "Julia Palmer",
+     "licence": "CC BY SA",
+     "eclairage": "plein jour, jardin",
+     "role": "inflorescence verte à pointes roses (main)",
+     "vu": ""
+    }
+   ],
+   "note": "Bicolore rose et vert pâle. Sur les photos de négoce le rose domine (rose-brun) ; la photo iNaturalist 87 montre mieux le vert à pointes roses. À mesurer : zone verte et zone rose séparées.",
+   "motif": "bicolore, dégradé du vert à la pointe rose",
+   "mesure_couleur": {
+    "date": "2026-10-17",
+    "methode": "refs.py url + outils.py (boite sur la chenille, filtre sans vert sauf vert/vert-sapin, ou creme, ou bleu) ; valeur = median des photos designees, bande ombre/mediane/lumiere par luminance",
+    "ombre": "#472e1e",
+    "mediane": "#906a5a",
+    "lumiere": "#d3b096",
+    "base": "#90765d",
+    "pointe": "#a37364",
+    "photos": [
+     {
+      "i": 24,
+      "k": 0,
+      "niveau": "N3",
+      "eclairage": "jardin, jour",
+      "n": 40753,
+      "ombre": "#4d3a20",
+      "mediane": "#9d7763",
+      "lumiere": "#dcb79e",
+      "box": [
+       0.55,
+       0.25,
+       0.75,
+       0.75
+      ],
+      "filtre": "vert"
+     },
+     {
+      "i": 25,
+      "k": 1,
+      "niveau": "N2",
+      "eclairage": "fleur coupée, extérieur ombre",
+      "n": 207333,
+      "ombre": "#41231d",
+      "mediane": "#835d51",
+      "lumiere": "#caa98e",
+      "box": [
+       0.15,
+       0.1,
+       0.85,
+       0.9
+      ],
+      "filtre": "defaut"
+     },
+     {
+      "i": 26,
+      "erreur": "exclue (peau de la main, pas de chenille)"
+     }
+    ],
+    "ecart_entre_photos_dE_max": 10.9,
+    "ecart_teinte_catalogue_deg": 65.3,
+    "hex_catalogue": "#9fb058",
+    "alertes": [
+     "ecart entre photos ΔE 10.9 > 10 : troisieme photo demandee",
+     "ecart de teinte 65.3 deg avec le hex du catalogue (#9fb058)"
+    ],
+    "licence_photos": "mesure locale seulement ; aucune photo copiee dans le depot"
+   },
+   "eclairage_photos": [
+    "fleur coupée, extérieur ombre",
+    "jardin, jour",
+    "plein jour, jardin"
+   ],
+   "niveau_preuve_final": "B",
+   "statut_couleur": "a confirmer : pas de vert net mesurable, teinte rose-brun ; base verte a verifier"
+  },
+  {
+   "id": "blanchi",
+   "sku": "2180",
+   "numero_skus_csv": 2180,
+   "nom_affiche": "blanchi",
+   "couleur_catalogue": "#ece2cc",
+   "niveau_preuve": "B",
+   "statut": "en production possible (B), produit blanchi",
+   "cultivars_rattaches": [
+    "Amaranthus blanchi (conservé, blanc crème)",
+    "var. albiflorus Moq. (forme blanche botanique, synonyme, GBIF 6710348 ; aucune photo trouvée)"
+   ],
+   "photos_designees": [
+    {
+     "url_image": "https://abraflora.com/wp-content/uploads/2022/12/DSC_0008.jpg",
+     "url_page": "https://abraflora.com/product/hanging-amaranthus-white/",
+     "niveau": "N2",
+     "source": "Abraflora (grossiste), Hanging Amaranthus White (conservé)",
+     "auteur": "boutique ou négoce (photo commerciale, non reproduite)",
+     "licence": "tous droits réservés : mesure locale seulement, jamais stockée",
+     "eclairage": "studio, fond gris clair",
+     "role": "traînes blanc crème",
+     "vu": "blanc crème"
+    },
+    {
+     "url_image": "https://bloomsbythebox.sirv.com/img/product/xlarge/09519A__Amaranthus_Bleached_White.jpg",
+     "url_page": "https://www.bloomsbythebox.com/dried-floral-bunches/amaranthus-bleached-white_9519/",
+     "niveau": "N2",
+     "source": "Blooms By The Box, Amaranthus Bleached White (conservé)",
+     "auteur": "boutique ou négoce (photo commerciale, non reproduite)",
+     "licence": "tous droits réservés : mesure locale seulement, jamais stockée",
+     "eclairage": "studio, fond blanc",
+     "role": "conservé, blanc crème",
+     "vu": "blanc crème"
+    },
+    {
+     "url_image": "https://afw.market/wp-content/uploads/2021/12/img_0930_jpg-scaled.jpeg",
+     "url_page": "https://afw.market/product/amaranthus-white/",
+     "niveau": "N2",
+     "source": "AFW (grossiste), amaranthus ivory white (conservé)",
+     "auteur": "boutique ou négoce (photo commerciale, non reproduite)",
+     "licence": "tous droits réservés : mesure locale seulement, jamais stockée",
+     "eclairage": "studio, fond blanc",
+     "role": "conservé, ivoire",
+     "vu": "ivoire"
+    }
+   ],
+   "note": "Le blanchi du commerce est une tige séchée puis décolorée, pas une fleur fraîche (voir questions). Les photos de négoce concordent : blanc crème chaud.",
+   "mesure_couleur": {
+    "date": "2026-10-17",
+    "methode": "refs.py url + outils.py (boite sur la chenille, filtre sans vert sauf vert/vert-sapin, ou creme, ou bleu) ; valeur = median des photos designees, bande ombre/mediane/lumiere par luminance",
+    "ombre": "#9f9260",
+    "mediane": "#cbc094",
+    "lumiere": "#e9e4c4",
+    "base": null,
+    "pointe": null,
+    "photos": [
+     {
+      "i": 27,
+      "k": 0,
+      "niveau": "N2",
+      "eclairage": "studio, fond gris clair",
+      "n": 30148,
+      "ombre": "#cec8b3",
+      "mediane": "#dfd9cb",
+      "lumiere": "#e9e4d9",
+      "box": [
+       0.1,
+       0.15,
+       0.7,
+       0.9
+      ],
+      "filtre": "creme"
+     },
+     {
+      "i": 28,
+      "k": 1,
+      "niveau": "N2",
+      "eclairage": "studio, fond blanc",
+      "n": 44901,
+      "ombre": "#9f925c",
+      "mediane": "#cbc094",
+      "lumiere": "#f5edc2",
+      "box": [
+       0.4,
+       0.1,
+       0.65,
+       0.9
+      ],
+      "filtre": "creme"
+     },
+     {
+      "i": 29,
+      "k": 2,
+      "niveau": "N2",
+      "eclairage": "studio, fond blanc",
+      "n": 66678,
+      "ombre": "#9c9060",
+      "mediane": "#c1b491",
+      "lumiere": "#e4dec4",
+      "box": [
+       0.1,
+       0.2,
+       0.6,
+       0.8
+      ],
+      "filtre": "creme"
+     }
+    ],
+    "ecart_entre_photos_dE_max": 18.7,
+    "ecart_teinte_catalogue_deg": 6.2,
+    "hex_catalogue": "#ece2cc",
+    "alertes": [
+     "ecart entre photos ΔE 18.7 > 10 : troisieme photo demandee"
+    ],
+    "licence_photos": "mesure locale seulement ; aucune photo copiee dans le depot"
+   },
+   "eclairage_photos": [
+    "studio, fond blanc",
+    "studio, fond gris clair"
+   ],
+   "niveau_preuve_final": "B",
+   "statut_couleur": "a confirmer (ΔE 18.7, 3e photo demandee)"
+  },
+  {
+   "id": "rose-poudre-stabilise",
+   "sku": "2181",
+   "numero_skus_csv": 2181,
+   "nom_affiche": "rose poudré (stabilisé)",
+   "couleur_catalogue": "#e6aebe",
+   "niveau_preuve": "B",
+   "statut": "en production possible (B), teinte de fleuriste",
+   "cultivars_rattaches": [
+    "teinte de fleuriste sur tige stabilisée (négoce)"
+   ],
+   "photos_designees": [
+    {
+     "url_image": "https://cdn.holexflower.com/image/live/?height=320&image=/https%3A%2F%2Fhlximages.flowerwebshop.com%2FM_9b17a9c2-1c0b-4db3-95c1-fb32d26dd5e4.jpg",
+     "url_page": "https://holexflower.com/en_US/All-products/Dried-Preserved-Products/More-Dried-Products/Amaranthus-Preserved-/Amaranthus-Preserved-Per-Bunch/Amaranthus-Preserved-Per-Bunch-Hang-Light-Pink/p/282182",
+     "niveau": "N2",
+     "source": "Holex (grossiste), Amaranthus Preserved Hang Light Pink",
+     "auteur": "boutique ou négoce (photo commerciale, non reproduite)",
+     "licence": "tous droits réservés : mesure locale seulement, jamais stockée",
+     "eclairage": "détouré fond blanc",
+     "role": "conservé, rose clair",
+     "vu": "rose clair poudré"
+    },
+    {
+     "url_image": "https://idlewildfloral.com/cdn/shop/products/blush-hanging-amaranthus-blush-hanging-amaranthus-preserved-pink-blush-modern-wedding-install-best-dried-flowers-and-dried-bouquets-29951380160564_1800x1800.jpg?v=1668004879",
+     "url_page": "https://idlewildfloral.com/products/blush-hanging-amaranthus-preserved-flowers",
+     "niveau": "N2",
+     "source": "Idlewild Floral, Blush Hanging Amaranthus (conservé, teint)",
+     "auteur": "boutique ou négoce (photo commerciale, non reproduite)",
+     "licence": "tous droits réservés : mesure locale seulement, jamais stockée",
+     "eclairage": "studio, mur blanc",
+     "role": "conservé, rose pêche",
+     "vu": "rose pêche pâle"
+    },
+    {
+     "url_image": "https://afw.market/wp-content/uploads/2022/09/dscf2409-1-680x680.jpeg",
+     "url_page": "https://afw.market/product/amaranthus-sakura-pink/",
+     "niveau": "N2",
+     "source": "AFW, amaranthus sakura pink (conservé, teint)",
+     "auteur": "boutique ou négoce (photo commerciale, non reproduite)",
+     "licence": "tous droits réservés : mesure locale seulement, jamais stockée",
+     "eclairage": "studio, fond clair",
+     "role": "conservé, rose saumoné",
+     "vu": "rose saumoné poudré"
+    }
+   ],
+   "note": "La couleur vient de la teinture. Les trois roses sont plus saumon que #e6aebe ; la médiane le dira.",
+   "mesure_couleur": {
+    "date": "2026-10-17",
+    "methode": "refs.py url + outils.py (boite sur la chenille, filtre sans vert sauf vert/vert-sapin, ou creme, ou bleu) ; valeur = median des photos designees, bande ombre/mediane/lumiere par luminance",
+    "ombre": "#c8a07f",
+    "mediane": "#eab8b0",
+    "lumiere": "#f6c7c2",
+    "base": null,
+    "pointe": null,
+    "photos": [
+     {
+      "i": 30,
+      "k": 0,
+      "niveau": "N2",
+      "eclairage": "détouré fond blanc",
+      "n": 27550,
+      "ombre": "#dfa59d",
+      "mediane": "#ebb8b2",
+      "lumiere": "#f6c7c2",
+      "box": [
+       0.1,
+       0.05,
+       0.75,
+       0.75
+      ],
+      "filtre": "defaut"
+     },
+     {
+      "i": 31,
+      "k": 1,
+      "niveau": "N2",
+      "eclairage": "studio, mur blanc",
+      "n": 23573,
+      "ombre": "#c8a07f",
+      "mediane": "#eac8b0",
+      "lumiere": "#faddc8",
+      "box": [
+       0.33,
+       0.45,
+       0.6,
+       0.85
+      ],
+      "filtre": "defaut"
+     },
+     {
+      "i": 32,
+      "k": 2,
+      "niveau": "N2",
+      "eclairage": "studio, fond clair",
+      "n": 44706,
+      "ombre": "#9f4d49",
+      "mediane": "#b06a67",
+      "lumiere": "#cc9797",
+      "box": [
+       0.42,
+       0.15,
+       0.65,
+       0.95
+      ],
+      "filtre": "defaut"
+     }
+    ],
+    "ecart_entre_photos_dE_max": 36.1,
+    "ecart_teinte_catalogue_deg": 33.5,
+    "hex_catalogue": "#e6aebe",
+    "alertes": [
+     "ecart entre photos ΔE 36.1 > 10 : troisieme photo demandee",
+     "ecart de teinte 33.5 deg avec le hex du catalogue (#e6aebe)"
+    ],
+    "licence_photos": "mesure locale seulement ; aucune photo copiee dans le depot"
+   },
+   "eclairage_photos": [
+    "détouré fond blanc",
+    "studio, fond clair",
+    "studio, mur blanc"
+   ],
+   "niveau_preuve_final": "B",
+   "statut_couleur": "a confirmer (ΔE 36.1, 3e photo demandee)"
+  },
+  {
+   "id": "bleu-nuit-stabilise",
+   "sku": "2182",
+   "numero_skus_csv": 2182,
+   "nom_affiche": "bleu nuit (stabilisé)",
+   "couleur_catalogue": "#2c3c6c",
+   "niveau_preuve": "C",
+   "statut": "à confirmer (C)",
+   "cultivars_rattaches": [
+    "teinte de fleuriste sur tige stabilisée (négoce)"
+   ],
+   "photos_designees": [
+    {
+     "url_image": "https://afw.market/wp-content/uploads/2024/11/preserved-amaranthus-in-navy-blue-680x680.jpeg",
+     "url_page": "https://afw.market/product/amaranthus-navy-blue/",
+     "niveau": "N2",
+     "source": "AFW, amaranthus navy blue (conservé, teint)",
+     "auteur": "boutique ou négoce (photo commerciale, non reproduite)",
+     "licence": "tous droits réservés : mesure locale seulement, jamais stockée",
+     "eclairage": "studio, fond blanc",
+     "role": "conservé, bleu marine",
+     "vu": "bleu marine"
+    },
+    {
+     "url_image": "https://cdn.holexflower.com/image/live/?height=320&image=/https%3A%2F%2Fhlximages.flowerwebshop.com%2FM_d639ac53-5b2f-4978-81aa-0d073210ff7f.jpg",
+     "url_page": "https://holexflower.com/en_US/All-products/Dried-Preserved-Products/More-Dried-Products/Amaranthus-Preserved-/Amaranthus-Preserved-Per-Bunch/Amaranthus-Preserved-Per-Bunch-Hang-Claud-Dark-Blue/p/281009",
+     "niveau": "N2",
+     "source": "Holex, Amaranthus Preserved Hang Dark Blue",
+     "auteur": "boutique ou négoce (photo commerciale, non reproduite)",
+     "licence": "tous droits réservés : mesure locale seulement, jamais stockée",
+     "eclairage": "détouré fond blanc",
+     "role": "conservé, bleu roi",
+     "vu": "bleu roi (plus clair que nuit)"
+    },
+    {
+     "url_image": "https://abraflora.com/wp-content/uploads/2024/12/AMARANTHUS-DARK-BLUE.jpg",
+     "url_page": "https://abraflora.com/product/hanging-amaranthus-dark-blue/",
+     "niveau": "N2",
+     "source": "Abraflora, Hanging Amaranthus Dark Blue (teint, conservé)",
+     "auteur": "boutique ou négoce (photo commerciale, non reproduite)",
+     "licence": "tous droits réservés : mesure locale seulement, jamais stockée",
+     "eclairage": "studio, fond kraft",
+     "role": "conservé, bleu vif",
+     "vu": "bleu vif (plus clair que nuit)"
+    }
+   ],
+   "note": "Une seule photo vraiment marine (AFW navy). Holex et Abraflora donnent un bleu roi plus clair : s'en servir pour la teinte, pas pour la clarté. Barn Florist (Blue Black, Dusky Blue) listé sans image lisible.",
+   "mesure_couleur": {
+    "date": "2026-10-17",
+    "methode": "refs.py url + outils.py (boite sur la chenille, filtre sans vert sauf vert/vert-sapin, ou creme, ou bleu) ; valeur = median des photos designees, bande ombre/mediane/lumiere par luminance",
+    "ombre": "#05127e",
+    "mediane": "#0f1e98",
+    "lumiere": "#3d50b6",
+    "base": null,
+    "pointe": null,
+    "photos": [
+     {
+      "i": 33,
+      "k": 0,
+      "niveau": "N2",
+      "eclairage": "studio, fond blanc",
+      "n": 37622,
+      "ombre": "#051231",
+      "mediane": "#0f1e40",
+      "lumiere": "#293859",
+      "box": [
+       0.4,
+       0.1,
+       0.75,
+       0.85
+      ],
+      "filtre": "defaut"
+     },
+     {
+      "i": 34,
+      "k": 1,
+      "niveau": "N2",
+      "eclairage": "détouré fond blanc",
+      "n": 20050,
+      "ombre": "#193b7e",
+      "mediane": "#335798",
+      "lumiere": "#8ea5d0",
+      "box": [
+       0.2,
+       0.15,
+       0.8,
+       0.8
+      ],
+      "filtre": "defaut"
+     },
+     {
+      "i": 35,
+      "k": 2,
+      "niveau": "N2",
+      "eclairage": "studio, fond kraft",
+      "n": 15857,
+      "ombre": "#0007a0",
+      "mediane": "#0c1bb3",
+      "lumiere": "#3d50b6",
+      "box": [
+       0.15,
+       0.2,
+       0.4,
+       0.8
+      ],
+      "filtre": "bleu"
+     }
+    ],
+    "ecart_entre_photos_dE_max": 71.5,
+    "ecart_teinte_catalogue_deg": 15.2,
+    "hex_catalogue": "#2c3c6c",
+    "alertes": [
+     "ecart entre photos ΔE 71.5 > 10 : troisieme photo demandee",
+     "ecart de teinte 15.2 deg avec le hex du catalogue (#2c3c6c)"
+    ],
+    "licence_photos": "mesure locale seulement ; aucune photo copiee dans le depot"
+   },
+   "eclairage_photos": [
+    "détouré fond blanc",
+    "studio, fond blanc",
+    "studio, fond kraft"
+   ],
+   "niveau_preuve_final": "C",
+   "statut_couleur": "a confirmer (ΔE 71.5, 3e photo demandee)"
+  },
+  {
+   "id": "vert-sapin-stabilise",
+   "sku": "2183",
+   "numero_skus_csv": 2183,
+   "nom_affiche": "vert sapin (stabilisé)",
+   "couleur_catalogue": "#35532c",
+   "niveau_preuve": "B",
+   "statut": "en production possible (B), teinte de fleuriste",
+   "cultivars_rattaches": [
+    "teinte de fleuriste sur tige stabilisée (négoce)"
+   ],
+   "photos_designees": [
+    {
+     "url_image": "https://cdn.holexflower.com/image/live/?height=320&image=/https%3A%2F%2Fhlximages.flowerwebshop.com%2FM_79992c64-ad37-4ccd-8ac1-79523a44c4ee.jpg",
+     "url_page": "https://holexflower.com/en_US/All-products/Dried-Preserved-Products/More-Dried-Products/Amaranthus-Preserved-/Amaranthus-Preserved-Per-Bunch/Amaranthus-Preserved-Per-Bunch-Hanging-Dark-Green/p/293391_STOCK",
+     "niveau": "N2",
+     "source": "Holex, Amaranthus Preserved Hanging Dark Green",
+     "auteur": "boutique ou négoce (photo commerciale, non reproduite)",
+     "licence": "tous droits réservés : mesure locale seulement, jamais stockée",
+     "eclairage": "détouré fond blanc",
+     "role": "conservé, vert sapin foncé",
+     "vu": "vert sapin foncé"
+    },
+    {
+     "url_image": "https://www.secondflor.com/34154-zen_home_default_square/preserved-amaranthus-green.webp",
+     "url_page": "https://www.secondflor.com/en/preserved-amaranthus/2985-preserved-amaranthus-green.html",
+     "niveau": "N2",
+     "source": "SecondFlor (grossiste), Preserved Amaranthus Green",
+     "auteur": "boutique ou négoce (photo commerciale, non reproduite)",
+     "licence": "tous droits réservés : mesure locale seulement, jamais stockée",
+     "eclairage": "décor intérieur",
+     "role": "conservé, émeraude profond",
+     "vu": "vert émeraude profond"
+    },
+    {
+     "url_image": "https://www.drieddecor.com/cdn/shop/products/FL-AMAR-DGR.01_1024x.jpg?v=1741981435",
+     "url_page": "https://www.drieddecor.com/products/hanging-amaranthus-preserved-dried",
+     "niveau": "N2",
+     "source": "Dried Decor (grossiste), Hanging Amaranthus Dark Green",
+     "auteur": "boutique ou négoce (photo commerciale, non reproduite)",
+     "licence": "tous droits réservés : mesure locale seulement, jamais stockée",
+     "eclairage": "studio",
+     "role": "conservé, vert foncé olive",
+     "vu": "vert foncé olive"
+    }
+   ],
+   "note": "Vert foncé de teinture. Noms de négoce : Dark Green (Holex, Dried Decor, Barn Florist, Eos Blooms), Forest Green (Barn Florist).",
+   "mesure_couleur": {
+    "date": "2026-10-17",
+    "methode": "refs.py url + outils.py (boite sur la chenille, filtre sans vert sauf vert/vert-sapin, ou creme, ou bleu) ; valeur = median des photos designees, bande ombre/mediane/lumiere par luminance",
+    "ombre": "#14280b",
+    "mediane": "#303c1b",
+    "lumiere": "#5f674b",
+    "base": null,
+    "pointe": null,
+    "photos": [
+     {
+      "i": 36,
+      "k": 0,
+      "niveau": "N2",
+      "eclairage": "détouré fond blanc",
+      "n": 13031,
+      "ombre": "#14280b",
+      "mediane": "#253b1b",
+      "lumiere": "#55674b",
+      "box": [
+       0.25,
+       0.25,
+       0.7,
+       0.85
+      ],
+      "filtre": "vert"
+     },
+     {
+      "i": 37,
+      "k": 1,
+      "niveau": "N2",
+      "eclairage": "décor intérieur",
+      "n": 8162,
+      "ombre": "#0c2c0f",
+      "mediane": "#305834",
+      "lumiere": "#73896c",
+      "box": [
+       0.5,
+       0.05,
+       0.75,
+       0.45
+      ],
+      "filtre": "vert"
+     },
+     {
+      "i": 38,
+      "k": 2,
+      "niveau": "N2",
+      "eclairage": "studio",
+      "n": 38663,
+      "ombre": "#1b1f05",
+      "mediane": "#373c16",
+      "lumiere": "#5f6332",
+      "box": [
+       0.35,
+       0.45,
+       0.75,
+       0.8
+      ],
+      "filtre": "vert"
+     }
+    ],
+    "ecart_entre_photos_dE_max": 18.0,
+    "ecart_teinte_catalogue_deg": 13.8,
+    "hex_catalogue": "#35532c",
+    "alertes": [
+     "ecart entre photos ΔE 18.0 > 10 : troisieme photo demandee",
+     "ecart de teinte 13.8 deg avec le hex du catalogue (#35532c)"
+    ],
+    "licence_photos": "mesure locale seulement ; aucune photo copiee dans le depot"
+   },
+   "eclairage_photos": [
+    "décor intérieur",
+    "détouré fond blanc",
+    "studio"
+   ],
+   "niveau_preuve_final": "B",
+   "statut_couleur": "a confirmer (ΔE 18.0, 3e photo demandee)"
+  },
+  {
+   "id": "rose-fuchsia",
+   "sku": "late:13",
+   "numero_skus_csv": null,
+   "nom_affiche": "rose fuchsia",
+   "couleur_catalogue": "#b02a72",
+   "niveau_preuve": "C",
+   "statut": "proposé (late:13), à confirmer (C)",
+   "cultivars_rattaches": [
+    "Dreadlocks (Swallowtail : magenta pink flowers)",
+    "forme type à fleurs rose vif"
+   ],
+   "photos_designees": [
+    {
+     "url_image": "https://inaturalist-open-data.s3.amazonaws.com/photos/241611019/large.jpeg",
+     "url_page": "https://www.inaturalist.org/observations/141083857",
+     "niveau": "N3",
+     "source": "iNaturalist, observation de recherche Amaranthus caudatus (cecile Park London, UK, 2022-11-03)",
+     "auteur": "Lesley Marrion-Cole",
+     "licence": "CC BY",
+     "eclairage": "plein jour, jardin",
+     "role": "traînes rose fuchsia, plein jour",
+     "vu": ""
+    },
+    {
+     "url_image": "https://inaturalist-open-data.s3.amazonaws.com/photos/166433441/large.jpeg",
+     "url_page": "https://www.inaturalist.org/observations/99791963",
+     "niveau": "N3",
+     "source": "iNaturalist, observation de recherche Amaranthus caudatus (Fitzwilliam, Pontefract WF9 5AY, UK, 2021-10-30)",
+     "auteur": "sezzylou",
+     "licence": "CC BY NC",
+     "eclairage": "plein jour, jardin",
+     "role": "traîne magenta sur feuillage clair",
+     "vu": ""
+    },
+    {
+     "url_image": "https://inaturalist-open-data.s3.amazonaws.com/photos/9755160/large.jpeg",
+     "url_page": "https://www.inaturalist.org/observations/7490103",
+     "niveau": "N3",
+     "source": "iNaturalist, observation de recherche Amaranthus caudatus (Calle Buendía, 11 19200 Azuqueca de Hena, 2017-08-14)",
+     "auteur": "Dario Ossola",
+     "licence": "CC BY NC",
+     "eclairage": "plein jour, jardin",
+     "role": "traînes rose-magenta",
+     "vu": ""
+    }
+   ],
+   "note": "Rose vif, entre cramoisi et corail ; absent du catalogue. Trois photos de jardin cohérentes ; aucune photo de négoce.",
+   "late": "late:13",
+   "mesure_couleur": {
+    "date": "2026-10-17",
+    "methode": "refs.py url + outils.py (boite sur la chenille, filtre sans vert sauf vert/vert-sapin, ou creme, ou bleu) ; valeur = median des photos designees, bande ombre/mediane/lumiere par luminance",
+    "ombre": "#981f5a",
+    "mediane": "#ba4783",
+    "lumiere": "#d77cb1",
+    "base": null,
+    "pointe": null,
+    "photos": [
+     {
+      "i": 39,
+      "k": 0,
+      "niveau": "N3",
+      "eclairage": "plein jour, jardin",
+      "n": 36318,
+      "ombre": "#981f6d",
+      "mediane": "#ba4794",
+      "lumiere": "#d77cb8",
+      "box": [
+       0.5,
+       0.2,
+       0.72,
+       0.85
+      ],
+      "filtre": "defaut"
+     },
+     {
+      "i": 40,
+      "k": 1,
+      "niveau": "N3",
+      "eclairage": "plein jour, jardin",
+      "n": 42653,
+      "ombre": "#7a0245",
+      "mediane": "#aa0b71",
+      "lumiere": "#cf37a5",
+      "box": [
+       0.3,
+       0.2,
+       0.65,
+       0.9
+      ],
+      "filtre": "defaut"
+     },
+     {
+      "i": 41,
+      "k": 2,
+      "niveau": "N3",
+      "eclairage": "plein jour, jardin",
+      "n": 108619,
+      "ombre": "#9e3d5a",
+      "mediane": "#c06983",
+      "lumiere": "#e69eb1",
+      "box": [
+       0.15,
+       0.05,
+       0.7,
+       0.95
+      ],
+      "filtre": "defaut"
+     }
+    ],
+    "ecart_entre_photos_dE_max": 34.8,
+    "ecart_teinte_catalogue_deg": 1.8,
+    "hex_catalogue": "#b02a72",
+    "alertes": [
+     "ecart entre photos ΔE 34.8 > 10 : troisieme photo demandee"
+    ],
+    "licence_photos": "mesure locale seulement ; aucune photo copiee dans le depot"
+   },
+   "eclairage_photos": [
+    "plein jour, jardin"
+   ],
+   "niveau_preuve_final": "C",
+   "statut_couleur": "a confirmer (ΔE 34.8, 3e photo demandee)"
+  },
+  {
+   "id": "prune-boules",
+   "sku": "late:13",
+   "numero_skus_csv": null,
+   "nom_affiche": "prune (boules)",
+   "couleur_catalogue": "#6b2a5e",
+   "niveau_preuve": "C",
+   "statut": "proposé (late:13), à confirmer (C)",
+   "cultivars_rattaches": [
+    "Centurion (nom sur Commons)",
+    "Pony Tails (photos Commons nommées : boules prune)"
+   ],
+   "photos_designees": [
+    {
+     "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/Amaranthus_caudatus_%22Centurion%22.JPG/500px-Amaranthus_caudatus_%22Centurion%22.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+     "url_page": "https://commons.wikimedia.org/wiki/File:Amaranthus_caudatus_%22Centurion%22.JPG",
+     "niveau": "N4",
+     "source": "Wikimedia Commons, Amaranthus caudatus \"Centurion\".JPG",
+     "auteur": "Dinkum",
+     "licence": "CC0",
+     "eclairage": "plein jour",
+     "role": "boules prune, Centurion",
+     "vu": ""
+    },
+    {
+     "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/90/Amaranthus_caudatus_%22Centurion%22_2.JPG/500px-Amaranthus_caudatus_%22Centurion%22_2.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+     "url_page": "https://commons.wikimedia.org/wiki/File:Amaranthus_caudatus_%22Centurion%22_2.JPG",
+     "niveau": "N4",
+     "source": "Wikimedia Commons, Amaranthus caudatus \"Centurion\" 2.JPG",
+     "auteur": "Dinkum",
+     "licence": "CC0",
+     "eclairage": "plein jour",
+     "role": "boules prune, Centurion",
+     "vu": ""
+    },
+    {
+     "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/92/Amaranthus_caudatus_%27Pony_Tails%27_01.jpg/500px-Amaranthus_caudatus_%27Pony_Tails%27_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+     "url_page": "https://commons.wikimedia.org/wiki/File:Amaranthus_caudatus_%27Pony_Tails%27_01.jpg",
+     "niveau": "N4",
+     "source": "Wikimedia Commons, Amaranthus caudatus 'Pony Tails' 01.jpg",
+     "auteur": "FreCha",
+     "licence": "CC BY-SA 4.0",
+     "eclairage": "plein jour",
+     "role": "boules prune, Pony Tails",
+     "vu": ""
+    }
+   ],
+   "note": "Cordes en boules prune-pourpre foncé (var. gibbosus), photos nommées Commons. Voir la question Pony Tails.",
+   "late": "late:13",
+   "motif": "boules (gibbosus)",
+   "mesure_couleur": {
+    "date": "2026-10-17",
+    "methode": "refs.py url + outils.py (boite sur la chenille, filtre sans vert sauf vert/vert-sapin, ou creme, ou bleu) ; valeur = median des photos designees, bande ombre/mediane/lumiere par luminance",
+    "ombre": "#3a0924",
+    "mediane": "#76315d",
+    "lumiere": "#ba79a9",
+    "base": null,
+    "pointe": null,
+    "photos": [
+     {
+      "i": 42,
+      "k": 0,
+      "niveau": "N4",
+      "eclairage": "plein jour",
+      "n": 55463,
+      "ombre": "#48173d",
+      "mediane": "#7e4277",
+      "lumiere": "#ab99b8",
+      "box": [
+       0.45,
+       0.15,
+       0.95,
+       0.9
+      ],
+      "filtre": "defaut"
+     },
+     {
+      "i": 43,
+      "k": 1,
+      "niveau": "N4",
+      "eclairage": "plein jour",
+      "n": 73176,
+      "ombre": "#3a0824",
+      "mediane": "#76315d",
+      "lumiere": "#ba79a9",
+      "box": [
+       0.05,
+       0.1,
+       0.9,
+       0.9
+      ],
+      "filtre": "defaut"
+     },
+     {
+      "i": 44,
+      "k": 2,
+      "niveau": "N4",
+      "eclairage": "plein jour",
+      "n": 13837,
+      "ombre": "#380910",
+      "mediane": "#6c2934",
+      "lumiere": "#cd7184",
+      "box": [
+       0.4,
+       0.0,
+       0.5,
+       0.9
+      ],
+      "filtre": "defaut"
+     }
+    ],
+    "ecart_entre_photos_dE_max": 29.6,
+    "ecart_teinte_catalogue_deg": 7.5,
+    "hex_catalogue": "#6b2a5e",
+    "alertes": [
+     "ecart entre photos ΔE 29.6 > 10 : troisieme photo demandee"
+    ],
+    "licence_photos": "mesure locale seulement ; aucune photo copiee dans le depot"
+   },
+   "eclairage_photos": [
+    "plein jour"
+   ],
+   "niveau_preuve_final": "C",
+   "statut_couleur": "a confirmer (ΔE 29.6, 3e photo demandee)"
+  },
+  {
+   "id": "orange-or-stabilise",
+   "sku": "late:13",
+   "numero_skus_csv": null,
+   "nom_affiche": "orange doré (stabilisé)",
+   "couleur_catalogue": "#d9822b",
+   "niveau_preuve": "B",
+   "statut": "proposé (late:13), teinte de fleuriste",
+   "cultivars_rattaches": [
+    "teinte de fleuriste sur tige stabilisée (négoce)"
+   ],
+   "photos_designees": [
+    {
+     "url_image": "https://afw.market/wp-content/uploads/2023/01/dscf0595-680x680.jpeg",
+     "url_page": "https://afw.market/product/amaranthus-orange/",
+     "niveau": "N2",
+     "source": "AFW, amaranthus orange (conservé, teint)",
+     "auteur": "boutique ou négoce (photo commerciale, non reproduite)",
+     "licence": "tous droits réservés : mesure locale seulement, jamais stockée",
+     "eclairage": "atelier",
+     "role": "conservé, orange vif",
+     "vu": "orange vif"
+    },
+    {
+     "url_image": "https://afw.market/wp-content/uploads/2021/03/preserved-amaranthus-in-champagne-1-680x680.jpeg",
+     "url_page": "https://afw.market/product/amaranthus-champagne-colour/",
+     "niveau": "N2",
+     "source": "AFW, amaranthus champagne (conservé, teint)",
+     "auteur": "boutique ou négoce (photo commerciale, non reproduite)",
+     "licence": "tous droits réservés : mesure locale seulement, jamais stockée",
+     "eclairage": "studio",
+     "role": "conservé, pêche-or",
+     "vu": "pêche-or"
+    },
+    {
+     "url_image": "https://www.secondflor.com/30296-zen_home_default_square/preserved-amaranthus-marmalade.webp",
+     "url_page": "https://www.secondflor.com/en/preserved-amaranthus/2828-preserved-amaranthus-marmalade.html",
+     "niveau": "N2",
+     "source": "SecondFlor, Preserved Amaranthus Marmalade",
+     "auteur": "boutique ou négoce (photo commerciale, non reproduite)",
+     "licence": "tous droits réservés : mesure locale seulement, jamais stockée",
+     "eclairage": "studio",
+     "role": "conservé, orange confiture",
+     "vu": "orange confiture"
+    }
+   ],
+   "note": "Orange et or de teinture (aussi Gold, Deep Orange chez Barn Florist). Aucune forme fraîche orange de A. caudatus trouvée en fleur coupée.",
+   "late": "late:13",
+   "mesure_couleur": {
+    "date": "2026-10-17",
+    "methode": "refs.py url + outils.py (boite sur la chenille, filtre sans vert sauf vert/vert-sapin, ou creme, ou bleu) ; valeur = median des photos designees, bande ombre/mediane/lumiere par luminance",
+    "ombre": "#5d1609",
+    "mediane": "#b84a17",
+    "lumiere": "#cda3a5",
+    "base": null,
+    "pointe": null,
+    "photos": [
+     {
+      "i": 45,
+      "k": 0,
+      "niveau": "N2",
+      "eclairage": "atelier",
+      "n": 104954,
+      "ombre": "#501609",
+      "mediane": "#b84a17",
+      "lumiere": "#c5a3ac",
+      "box": [
+       0.1,
+       0.0,
+       0.7,
+       0.95
+      ],
+      "filtre": "fort"
+     },
+     {
+      "i": 46,
+      "k": 1,
+      "niveau": "N2",
+      "eclairage": "studio",
+      "n": 40702,
+      "ombre": "#dca264",
+      "mediane": "#eabb82",
+      "lumiere": "#f0cca5",
+      "box": [
+       0.4,
+       0.1,
+       0.65,
+       0.95
+      ],
+      "filtre": "defaut"
+     },
+     {
+      "i": 47,
+      "k": 2,
+      "niveau": "N2",
+      "eclairage": "studio",
+      "n": 32089,
+      "ombre": "#5d1000",
+      "mediane": "#993407",
+      "lumiere": "#cd631b",
+      "box": [
+       0.05,
+       0.55,
+       0.95,
+       0.9
+      ],
+      "filtre": "defaut"
+     }
+    ],
+    "ecart_entre_photos_dE_max": 53.4,
+    "ecart_teinte_catalogue_deg": 15.3,
+    "hex_catalogue": "#d9822b",
+    "alertes": [
+     "ecart entre photos ΔE 53.4 > 10 : troisieme photo demandee",
+     "ecart de teinte 15.3 deg avec le hex du catalogue (#d9822b)"
+    ],
+    "licence_photos": "mesure locale seulement ; aucune photo copiee dans le depot"
+   },
+   "eclairage_photos": [
+    "atelier",
+    "studio"
+   ],
+   "niveau_preuve_final": "B",
+   "statut_couleur": "a confirmer (ΔE 53.4, 3e photo demandee)"
+  },
+  {
+   "id": "lavande-stabilise",
+   "sku": "late:13",
+   "numero_skus_csv": null,
+   "nom_affiche": "lavande (stabilisé)",
+   "couleur_catalogue": "#a99bc8",
+   "niveau_preuve": "B",
+   "statut": "proposé (late:13), teinte de fleuriste",
+   "cultivars_rattaches": [
+    "teinte de fleuriste sur tige stabilisée (négoce)"
+   ],
+   "photos_designees": [
+    {
+     "url_image": "https://afw.market/wp-content/uploads/2023/01/dscf0589-680x680.jpeg",
+     "url_page": "https://afw.market/product/amaranthus-lavender-colour/",
+     "niveau": "N2",
+     "source": "AFW, amaranthus lavender (conservé, teint)",
+     "auteur": "boutique ou négoce (photo commerciale, non reproduite)",
+     "licence": "tous droits réservés : mesure locale seulement, jamais stockée",
+     "eclairage": "atelier",
+     "role": "conservé, lavande",
+     "vu": "lavande"
+    },
+    {
+     "url_image": "https://abraflora.com/wp-content/uploads/2022/12/DSC_8296.jpg",
+     "url_page": "https://abraflora.com/product/hanging-amaranthus-lavender/",
+     "niveau": "N2",
+     "source": "Abraflora, Hanging Amaranthus Lavender (teint, conservé)",
+     "auteur": "boutique ou négoce (photo commerciale, non reproduite)",
+     "licence": "tous droits réservés : mesure locale seulement, jamais stockée",
+     "eclairage": "studio",
+     "role": "conservé, lavande",
+     "vu": "lavande"
+    },
+    {
+     "url_image": "https://www.secondflor.com/30124-zen_home_default_square/preserved-amaranthus-lavender-lane.webp",
+     "url_page": "https://www.secondflor.com/en/preserved-amaranthus/2795-preserved-amaranthus-lavender-lane.html",
+     "niveau": "N2",
+     "source": "SecondFlor, Preserved Amaranthus Lavender Lane",
+     "auteur": "boutique ou négoce (photo commerciale, non reproduite)",
+     "licence": "tous droits réservés : mesure locale seulement, jamais stockée",
+     "eclairage": "studio",
+     "role": "conservé, lavande",
+     "vu": "lavande"
+    }
+   ],
+   "note": "Lavande de teinture, très demandée en conservé (aussi Lilac, Deep Periwinkle chez Eos Blooms).",
+   "late": "late:13",
+   "mesure_couleur": {
+    "date": "2026-10-17",
+    "methode": "refs.py url + outils.py (boite sur la chenille, filtre sans vert sauf vert/vert-sapin, ou creme, ou bleu) ; valeur = median des photos designees, bande ombre/mediane/lumiere par luminance",
+    "ombre": "#42515d",
+    "mediane": "#9b8dba",
+    "lumiere": "#b3add7",
+    "base": null,
+    "pointe": null,
+    "photos": [
+     {
+      "i": 48,
+      "k": 0,
+      "niveau": "N2",
+      "eclairage": "atelier",
+      "n": 57517,
+      "ombre": "#42515d",
+      "mediane": "#9b8dba",
+      "lumiere": "#b3addf",
+      "box": [
+       0.2,
+       0.15,
+       0.55,
+       0.85
+      ],
+      "filtre": "defaut"
+     },
+     {
+      "i": 49,
+      "k": 1,
+      "niveau": "N2",
+      "eclairage": "studio",
+      "n": 44279,
+      "ombre": "#786c96",
+      "mediane": "#a49ac0",
+      "lumiere": "#bbb1d7",
+      "box": [
+       0.1,
+       0.1,
+       0.6,
+       0.9
+      ],
+      "filtre": "defaut"
+     },
+     {
+      "i": 50,
+      "k": 2,
+      "niveau": "N2",
+      "eclairage": "studio",
+      "n": 31864,
+      "ombre": "#3f1f31",
+      "mediane": "#785067",
+      "lumiere": "#b0859d",
+      "box": [
+       0.02,
+       0.55,
+       0.95,
+       0.88
+      ],
+      "filtre": "defaut"
+     }
+    ],
+    "ecart_entre_photos_dE_max": 30.5,
+    "ecart_teinte_catalogue_deg": 0.1,
+    "hex_catalogue": "#a99bc8",
+    "alertes": [
+     "ecart entre photos ΔE 30.5 > 10 : troisieme photo demandee"
+    ],
+    "licence_photos": "mesure locale seulement ; aucune photo copiee dans le depot"
+   },
+   "eclairage_photos": [
+    "atelier",
+    "studio"
+   ],
+   "niveau_preuve_final": "B",
+   "statut_couleur": "a confirmer (ΔE 30.5, 3e photo demandee)"
+  }
+ ],
+ "cultivars": [
+  {
+   "nom": "Coral Fountain",
+   "couleur": "coral-pink à coral-peach",
+   "sources": [
+    "Select Seeds",
+    "Adaptive Seeds",
+    "Chiltern Seeds",
+    "Seedaholic"
+   ],
+   "niveau": "N3",
+   "marque": null,
+   "marque_preuve": "aucun ® ni ™ lu dans les extraits ; TMview non consulté"
+  },
+  {
+   "nom": "Viridis = Green Cascade (synonymes de graines)",
+   "couleur": "vert acide pâle",
+   "sources": [
+    "Sarah Raven",
+    "Chiltern",
+    "Swallowtail"
+   ],
+   "niveau": "N3",
+   "marque": null
+  },
+  {
+   "nom": "Green Tails",
+   "couleur": "chartreuse pâle",
+   "sources": [
+    "Select Seeds",
+    "Applewood"
+   ],
+   "niveau": "N3",
+   "marque": null
+  },
+  {
+   "nom": "Emerald Tassels",
+   "couleur": "lime ou pistache, tan en séchant",
+   "sources": [
+    "Johnny's",
+    "Hudson Valley Seed",
+    "Siskiyou",
+    "Commons"
+   ],
+   "niveau": "N2",
+   "marque": null
+  },
+  {
+   "nom": "Mira",
+   "couleur": "rose et vert pâle bicolore, devient lilas puis pourpre",
+   "sources": [
+    "Select Seeds",
+    "Chiltern",
+    "Seedaholic"
+   ],
+   "niveau": "N3",
+   "marque": null
+  },
+  {
+   "nom": "Dreadlocks",
+   "couleur": "claret, burgundy ou magenta selon le vendeur ; cordes en boules (var. gibbosus), héritage mexicain de 1881",
+   "sources": [
+    "Select Seeds",
+    "Swallowtail",
+    "Harris Seeds"
+   ],
+   "niveau": "N3",
+   "marque": null
+  },
+  {
+   "nom": "Pony Tails",
+   "couleur": "rouge à traînes longues (Ferris) ; rouge et vert (Thompson & Morgan, mélange) ; boules prune (Commons)",
+   "sources": [
+    "Ferris Seeds",
+    "Thompson & Morgan",
+    "Commons"
+   ],
+   "niveau": "N3/N4",
+   "marque": null,
+   "doute": "nom donné à des plantes différentes"
+  },
+  {
+   "nom": "Centurion",
+   "couleur": "boules prune",
+   "sources": [
+    "Commons CC0"
+   ],
+   "niveau": "N4",
+   "marque": null,
+   "doute": "aucun vendeur trouvé"
+  },
+  {
+   "nom": "Red Cascade",
+   "couleur": "rouge",
+   "sources": [
+    "3 Porch Farm",
+    "Country Home and Blooms"
+   ],
+   "niveau": "N4",
+   "marque": null,
+   "doute": "pas de photo trouvée"
+  },
+  {
+   "nom": "Noms de grossistes (sans variété)",
+   "couleur": "Hanging Green, Red, Bronze, Bicolor, Coral Brown, Burgundy, Brown Spider",
+   "sources": [
+    "Florabundance",
+    "Potomac Floral",
+    "Triangle Nursery",
+    "Flower Moxie",
+    "Fabulous Florals"
+   ],
+   "niveau": "N2",
+   "marque": null
+  }
+ ],
+ "hors_taxon": [
+  "Elephant Head : Territorial Seed la classe A. caudatus (plumes dressées bordeaux), Rich Farm Garden A. gangeticus : incertain, dressée, voir amarante-dressee",
+  "Intense Purple : aucune source trouvée, non retenu",
+  "Velvet Curtains, Hot Biscuits, Golden Giant : A. cruentus ou hypochondriacus dressés, déjà dans amarante-dressee"
+ ],
+ "couverture": {
+  "sku_catalogue": 12,
+  "niveaux": {
+   "A": 0,
+   "B": 9,
+   "C": 2,
+   "D": 0,
+   "note": "C : bronze et bleu nuit"
+  },
+  "late12_proposes": 4
+ },
+ "marques": {
+  "vues": "aucune marque lue sur les noms de variétés retenus ; TMview, EUIPO, INPI, WIPO non consultés (à l'orchestrateur)",
+  "regle": "le catalogue n'affiche que des noms de couleurs génériques : Coral Fountain, Mira, Dreadlocks ne figurent jamais dans le jeu"
+ },
+ "questions_orchestrateur": [
+  "Stabilisés : source de négoce (N2) seule ; la couleur est une teinture, la mesure ne dit rien du végétal. Accepter ?",
+  "Blanchi (2180) : tige décolorée, pas une fleur fraîche ; garder dans la sorte retombante ?",
+  "Vert (2177) et vert lime (2178) : mêmes sources (lime-green, chartreuse, soft green) ; mesurer d abord, fusionner si l écart est inférieur à ΔE 10.",
+  "Pony Tails : la plante nommée varie selon les vendeurs (traînes rouges, boules prune) ; nom écarté, remplacé par des noms de couleur.",
+  "Vert à pointes roses (2179) : le négoce bicolore est plutôt rose-brun ; la chenille verte à pointes roses est à construire sur la photo iNaturalist 87.",
+  "late:13 proposés : rose fuchsia, prune (boules), orange doré (stabilisé), lavande (stabilisé). Les deux stabilisés dépendent de la réponse sur les teintes de fleuriste."
+ ],
+ "limites": [
+  "aucun N1 pour un cultivar : pas de niveau A",
+  "WebSearch et WebFetch utilisés ; refusés : Triangle Nursery 403, Whole Blossoms 403, Flublu 403, florapodium certificat expiré ; Etsy et Amazon exclus par le standard",
+  "photos iNaturalist en CC BY-NC : mesure locale seulement",
+  "Barn Florist : liste de couleurs lue, images non extraites",
+  "photos de négoce non reproduites : adresses et nombres seulement"
+ ],
+ "statut_fichier": "un seul passage ; mesures à faire par fleur-coloris sur les photos désignées par coloris"
+}
