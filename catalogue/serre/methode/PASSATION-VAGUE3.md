@@ -204,6 +204,10 @@ Publié dans main (non poussé), témoins verts à chaque fois :
 | 2 | dahlia-decoratif 23, chrysantheme-disbud 17 | 9 | 3858-3865 | df68e68 | y3-capitule.js (`lit`) |
 | 2 | rose-aspect-jardin 28, rose-de-jardin 27 | 10 | 3866-3873 | 84b0cb9 | y3-rose2.js, y3-rose3.js |
 | 3 | anthurium-andraeanum 15, arum-calla 19 | 11 | 3874-3876 | ecba018 | y3-spathe.js |
+| 4 | hortensia-boule 22 (validé : « super l'hortensia boule !!! ») | 12 | 3877-3882 | 73a8657 | y3-hortensia.js, y3-boule.js |
+| 4 | amarante-retombante 16 (validée : « nickel ») | 13 | 3883-3886 | 7e42dc8 | y3-chenille.js |
+
+Prochaine vague `late` libre : **14** (le phalaenopsis et le cymbidium portaient `late:12` dans leur chantier : à renuméroter).
 
 Avant la vague 3, le pilote de printemps avait refait les 22 espèces du bouquet bronze (anémone, tulipes, narcisses, renoncules,
 jacinthe, muscari, lilas, glycine, freesia, iris, cerisier, cognassier, forsythia, pois de senteur, fritillaire, viorne,
@@ -233,9 +237,10 @@ Chantiers en cours au 17 octobre, 20 h :
   `ch/orchidees/refcache/cymbidium-grandes-fleurs/etat.md` et `journal.md` ; comparaisons `comparaison/*-v3a-encours.jpg`. Le
   reprendre APRÈS l'audit (§0), avec la fiche morphologique et la paire par coloris (9.3c) : labelle à ~45 % de la largeur de la
   fleur en U large, tépales moins étroits, zones et translucidité, labelle de chaque variété.
-- **amarante-retombante : livrée par le chef**, en attente du verdict du porteur (feuille, chenille raide en bouquet). Planche SKU
-  à refaire avec le nouveau grain avant publication. Amarante dressée non commencée.
-- **hortensia-boule** : voir le compte rendu du chef (fleurons fins et légers demandés par le porteur).
+- **amarante-retombante : publiée** (7e42dc8). Planche SKU à refaire avec le nouveau grain. Amarante dressée non commencée.
+- **hortensia-boule : publié** (73a8657) ; 930 vert émeraude validé sur rendu par le porteur. Restes : cœur brun visible entre les
+  fleurons du rose pâle, blanc encore un peu fantomatique en bas de boule, feuilles régulières, 944 corail ; question du poids
+  (7 à 12 Mo par bouquet : niveau de détail réduit sous 200 px ?).
 
 ## 8. La suite, dans l'ordre
 
