@@ -1466,3 +1466,14 @@ Mesures (masque de fond par photo, ligne la plus large ; script du modeleur, ±1
 À l'œil (non mesuré) : 25 à 32 pétales larges et ronds, centre plus bas que la grande tête, pointes peu roulées ; sépales longs et étroits
 rabattus le long de l'urne ; sweethearts : 20 à 26 pétales, bouton rond, tête environ 12 % plus petite. Feuilles de 5 folioles, un peu
 plus petites (×0,92). Budget DET 1, tige entière de 50 cm : 151 éléments, 39 Ko.
+
+## anthurium-andraeanum (relais 4, 2026-10-17)
+- Sources : refcache/anthurium-andraeanum/brief.md (41 photos gardées, kept.jpg ; Wikimedia Commons, licences CC BY, CC BY-SA, CC0 notées au brief).
+- Mesures : spathe à 40-50° de la tige (photos 35, 36, 54) ; spadice presque à angle droit de la spathe (NC State) ; pas de photo libre du dos ni du profil de cambrure (brief « Manques »).
+- Rendu : 15 coloris (coloris.md, à transcrire par fleur-finition), 123 éléments et 27 Ko par tête à DET 1.
+
+## arum-calla (Zantedeschia, relais 2, 2026-10-17)
+- Sources : refcache/arum-calla/brief.md (23 photos iNaturalist, observations de recherche sous licences CC, auteur et licence notés au brief ; kept.jpg). Aucune photo ajoutée au dépôt.
+- Mesures et proportions (brief, à l'œil, confiance faible) : cornet haut de 1,5 à 2 fois la largeur de l'ouverture (68, 91, 21) ; acumen court roulé dehors (89, 26, 32) ; spadice à la moitié de la spathe (84, 46) ; macule pourpre de gorge (30) ; bouton fermé et pointu, H/L ≈ 3 (15, 17) ; tige 1/8 (109) à 1/4 (73) de la largeur de la spathe ; fané : bord qui brunit (84), le reste d'après la littérature.
+- Rendu : 19 coloris (16 + 3 late:11) ; tête 1,3 × la longueur de recette sur la plante (12 cm → 15,6 cm sur 50 cm) ; 83 éléments et 15 Ko par tête à DET 1 (planche c19d), 100 à 116 éléments et 21 à 24 Ko à DET 1,5.
+- Planches : arum-calla-sku-v1.png (rasante et profil, gros plans, fané), arum-calla-coloris-v1.png (19 coloris, op .4 et 1, vue 3/4).

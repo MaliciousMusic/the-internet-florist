@@ -1,0 +1,4079 @@
+{
+ "sid": "anthurium-andraeanum",
+ "source_entree": "refcache/anthurium-andraeanum/preuves/lot-p1.json et lot-p2.json (pas de sources/<sid>.json : fusion du recensement absente)",
+ "methode": "refs.py auto sur chaque photo ; médiane par zone sur les photos principales ; spadice par colonne centrale ; B si 2 sources indépendantes et N2, sinon C",
+ "photos_non_recuperees": [
+  {
+   "cid": "rambla",
+   "source": "ozexport.nl (exportateur NL)",
+   "raison": "HTTP 404"
+  },
+  {
+   "cid": "farao",
+   "source": "OzExport (exportateur NL, grower Anthogether Oosterzon)",
+   "raison": "HTTP 404"
+  }
+ ],
+ "coloris": [
+  {
+   "id": "rambla",
+   "nom": "Rambla",
+   "skus": [
+    1652
+   ],
+   "marque": "RAMBLA®",
+   "niveau_provisoire": "B",
+   "niveau_retenu": "C",
+   "groupes": [
+    "obtenteur"
+   ],
+   "n_principal": 1,
+   "photos": [
+    {
+     "idx": 0,
+     "source": "Anthura (obtenteur), fiche produit",
+     "niveau": "N2",
+     "role": "principal",
+     "eclairage": "studio, fond clair, non précisé",
+     "url": "https://d3v3mlq4pl7g24.cloudfront.net/dXBkYXRlLW1pbmRjbXMtbmw%3D/66d8a9a2e6dee/anthurium-cut-rambla-red-208999-4_100.jpg",
+     "page": "https://anthura.nl/en/products/anthurium-cut/rambla/",
+     "mes": {
+      "centre": [
+       0.48,
+       0.54
+      ],
+      "rayon": 0.46,
+      "thr": 16,
+      "conf": 1.0,
+      "n_spadice": 302,
+      "base": [
+       45.317167948818906,
+       70.41958575037287,
+       45.01010657374963
+      ],
+      "corps": [
+       46.06908772867661,
+       71.21343502631072,
+       44.28028167574693
+      ],
+      "pointe": [
+       45.168813270912054,
+       69.12138366140802,
+       42.52802924727983
+      ],
+      "nervures": [
+       43.52799237138796,
+       68.93697122644538,
+       44.60229130331599
+      ],
+      "spadice_tip": [
+       79.35620494721108,
+       20.96495676884286,
+       15.353719990162574
+      ],
+      "spadice_base": [
+       60.418407310664946,
+       51.910838076160175,
+       17.73379513346054
+      ]
+     }
+    },
+    {
+     "idx": 2,
+     "source": "AIPH, article de lancement",
+     "niveau": "N3",
+     "role": "appoint (approche)",
+     "eclairage": "non précisé",
+     "url": "https://aiph.org/wp-content/uploads/2022/09/anthurium-rambla-scaled.jpg",
+     "page": "https://aiph.org/floraculture/news/sophisticated-in-red-antogether-bouman-anthurium-launches-anthurium-rambla/",
+     "mes": {
+      "centre": [
+       0.51,
+       0.49
+      ],
+      "rayon": 0.49,
+      "thr": 16,
+      "conf": 0.88,
+      "n_spadice": 13761,
+      "base": [
+       35.629069975581686,
+       41.563755552126686,
+       21.96777790908144
+      ],
+      "corps": [
+       66.71228500590388,
+       7.11015175564364,
+       5.871100447520838
+      ],
+      "pointe": [
+       87.98256836200704,
+       -4.090084479510758,
+       5.073576516408362
+      ],
+      "nervures": [
+       14.563672730192437,
+       24.80188462921891,
+       9.91301477960106
+      ],
+      "spadice_tip": [
+       61.46532767651503,
+       2.778891019193777,
+       6.149743896824777
+      ],
+      "spadice_base": [
+       39.97956118745229,
+       50.730585623371184,
+       27.217461006722786
+      ]
+     }
+    }
+   ],
+   "retenu": {
+    "base": [
+     45.317167948818906,
+     70.41958575037287,
+     45.01010657374963
+    ],
+    "corps": [
+     46.06908772867661,
+     71.21343502631072,
+     44.28028167574693
+    ],
+    "pointe": [
+     45.168813270912054,
+     69.12138366140802,
+     42.52802924727983
+    ],
+    "nervures": [
+     43.52799237138796,
+     68.93697122644538,
+     44.60229130331599
+    ],
+    "spadice_base": [
+     60.418407310664946,
+     51.910838076160175,
+     17.73379513346054
+    ],
+    "spadice_tip": [
+     79.35620494721108,
+     20.96495676884286,
+     15.353719990162574
+    ]
+   },
+   "ecart": {},
+   "sans_photo": []
+  },
+  {
+   "id": "calisto",
+   "nom": "Calisto",
+   "skus": [
+    1652
+   ],
+   "marque": "CALISTO®",
+   "niveau_provisoire": "B",
+   "niveau_retenu": "B",
+   "groupes": [
+    "holex",
+    "obtenteur"
+   ],
+   "n_principal": 2,
+   "photos": [
+    {
+     "idx": 3,
+     "source": "Holex Flower (grossiste NL), fiche produit",
+     "niveau": "N3",
+     "role": "principal",
+     "eclairage": "non précisé ; image redimensionnée par le CDN",
+     "url": "https://cdn.holexflower.com/image/live/?height=320&image=/https%3A%2F%2Fhlximages.flowerwebshop.com%2FM_7f42df7b-de24-4127-8589-ebbda2794fe1.jpg",
+     "page": "https://shop.holex.com/en_US/All-products/Flowers/Anthurium/Anthurium-Andreanum/Anthurium/Anthurium-Calisto/p/208981",
+     "mes": {
+      "centre": [
+       0.46,
+       0.54
+      ],
+      "rayon": 0.42,
+      "thr": 16,
+      "conf": 1.0,
+      "n_spadice": 834,
+      "base": [
+       44.46175440464237,
+       61.58283834981876,
+       41.7270397156972
+      ],
+      "corps": [
+       44.122441389123715,
+       59.132075547236816,
+       39.45068224662547
+      ],
+      "pointe": [
+       44.503399791481826,
+       58.258146110034936,
+       37.20315587439447
+      ],
+      "nervures": [
+       38.191502989062435,
+       59.226397564382914,
+       43.67005472053479
+      ],
+      "spadice_tip": [
+       84.16157694666552,
+       8.330385244432803,
+       26.980684433901093
+      ],
+      "spadice_base": [
+       58.40402906218704,
+       44.13903784515674,
+       21.830065816120644
+      ]
+     }
+    },
+    {
+     "idx": 4,
+     "source": "Anthura (obtenteur), fiche produit",
+     "niveau": "N2",
+     "role": "principal",
+     "eclairage": "studio, fond clair, non précisé",
+     "url": "https://d3v3mlq4pl7g24.cloudfront.net/dXBkYXRlLW1pbmRjbXMtbmw%3D/66d8abc2d719f/anthurium-cut-calisto-red-200455_100.jpg",
+     "page": "https://anthura.nl/en/products/anthurium-cut/calisto/",
+     "mes": {
+      "centre": [
+       0.51,
+       0.51
+      ],
+      "rayon": 0.45,
+      "thr": 16,
+      "conf": 1.0,
+      "n_spadice": 91,
+      "base": [
+       42.63150669654958,
+       44.45278984948081,
+       34.033709553885295
+      ],
+      "corps": [
+       40.11937659601824,
+       42.558468057817656,
+       31.729511213800663
+      ],
+      "pointe": [
+       40.14855191529148,
+       41.16952282271092,
+       29.81381021724644
+      ],
+      "nervures": [
+       31.712138357916395,
+       35.178471157624735,
+       28.01799283988624
+      ],
+      "spadice_tip": [
+       91.76286288896776,
+       1.810169955502261,
+       23.688931206369944
+      ],
+      "spadice_base": [
+       81.24921896978935,
+       11.665072511891472,
+       26.552063864237894
+      ]
+     }
+    }
+   ],
+   "retenu": {
+    "base": [
+     43.54663055059598,
+     53.01781409964978,
+     37.88037463479125
+    ],
+    "corps": [
+     42.120908992570975,
+     50.845271802527236,
+     35.59009673021306
+    ],
+    "pointe": [
+     42.32597585338665,
+     49.71383446637293,
+     33.508483045820455
+    ],
+    "nervures": [
+     34.951820673489415,
+     47.202434361003824,
+     35.84402378021052
+    ],
+    "spadice_base": [
+     69.8266240159882,
+     27.902055178524108,
+     24.19106484017927
+    ],
+    "spadice_tip": [
+     87.96221991781664,
+     5.070277599967532,
+     25.334807820135516
+    ]
+   },
+   "ecart": {
+    "corps": 18.7,
+    "spadice_base": 40.0,
+    "spadice_tip": 10.5
+   },
+   "sans_photo": []
+  },
+  {
+   "id": "cantello",
+   "nom": "Cantello",
+   "skus": [
+    1653,
+    1656
+   ],
+   "marque": "CANTELLO®",
+   "niveau_provisoire": "B",
+   "niveau_retenu": "B",
+   "groupes": [
+    "gulf",
+    "obtenteur"
+   ],
+   "n_principal": 2,
+   "photos": [
+    {
+     "idx": 5,
+     "source": "Anthura (obtenteur), fiche produit",
+     "niveau": "N2",
+     "role": "principal",
+     "eclairage": "studio, fond clair, non précisé",
+     "url": "https://d3v3mlq4pl7g24.cloudfront.net/dXBkYXRlLW1pbmRjbXMtbmw%3D/66d904ff0de46/anthurium-cut-cantello-red-208577-2_100.jpg",
+     "page": "https://anthura.nl/en/products/anthurium-cut/cantello/",
+     "mes": {
+      "centre": [
+       0.5,
+       0.54
+      ],
+      "rayon": 0.46,
+      "thr": 16,
+      "conf": 1.0,
+      "n_spadice": 260,
+      "base": [
+       46.12919223783751,
+       54.340097946318835,
+       38.51548769764213
+      ],
+      "corps": [
+       47.594514048754064,
+       51.00694597441824,
+       35.157827943580465
+      ],
+      "pointe": [
+       45.55516988618141,
+       48.98754172552772,
+       32.96497564690769
+      ],
+      "nervures": [
+       26.04517585101462,
+       41.92816041184652,
+       30.671230766533842
+      ],
+      "spadice_tip": [
+       18.376300650725685,
+       34.51276322300248,
+       23.149031499911253
+      ],
+      "spadice_base": [
+       22.772119764030922,
+       32.50226278746729,
+       15.91365973883008
+      ]
+     }
+    },
+    {
+     "idx": 6,
+     "source": "gulf.flowers (grossiste Dubai, fiche catalogue)",
+     "niveau": "N3",
+     "role": "principal",
+     "eclairage": "non précisé ; image hébergée sur un CDN tiers, à vérifier",
+     "url": "https://img.webcdn.ru/catalog/Photo/%D0%A3%D0%A2-00051445.jpg",
+     "page": "https://gulf.flowers/catalog/cut-flowers/anthurium-cantello/",
+     "mes": {
+      "centre": [
+       0.47,
+       0.53
+      ],
+      "rayon": 0.31,
+      "thr": 16,
+      "conf": 0.99,
+      "n_spadice": 2071,
+      "base": [
+       43.416801616019825,
+       44.4743378575369,
+       24.06748949122472
+      ],
+      "corps": [
+       45.88169372906235,
+       38.46926485281947,
+       20.722052826894497
+      ],
+      "pointe": [
+       42.89101464256511,
+       33.45397460428004,
+       18.41870837601426
+      ],
+      "nervures": [
+       29.654970511962624,
+       31.99761592111544,
+       19.17687847214875
+      ],
+      "spadice_tip": [
+       31.076685453454182,
+       28.72311254681109,
+       4.186480691528022
+      ],
+      "spadice_base": [
+       28.254110273631014,
+       29.458462898926452,
+       5.612633768653685
+      ]
+     }
+    }
+   ],
+   "retenu": {
+    "base": [
+     44.77299692692867,
+     49.407217901927865,
+     31.291488594433424
+    ],
+    "corps": [
+     46.738103888908206,
+     44.738105413618854,
+     27.93994038523748
+    ],
+    "pointe": [
+     44.223092264373264,
+     41.220758164903884,
+     25.691842011460974
+    ],
+    "nervures": [
+     27.85007318148862,
+     36.96288816648098,
+     24.924054619341298
+    ],
+    "spadice_base": [
+     25.513115018830966,
+     30.980362843196872,
+     10.763146753741882
+    ],
+    "spadice_tip": [
+     24.726493052089936,
+     31.617937884906787,
+     13.667756095719637
+    ]
+   },
+   "ecart": {
+    "corps": 19.2,
+    "spadice_base": 12.1,
+    "spadice_tip": 23.5
+   },
+   "sans_photo": []
+  },
+  {
+   "id": "eterno",
+   "nom": "Eterno",
+   "skus": [
+    1653
+   ],
+   "marque": "ETERNO®",
+   "niveau_provisoire": "B",
+   "niveau_retenu": "B",
+   "groupes": [
+    "aoc",
+    "obtenteur"
+   ],
+   "n_principal": 2,
+   "photos": [
+    {
+     "idx": 7,
+     "source": "Anthura (obtenteur), fiche produit",
+     "niveau": "N2",
+     "role": "principal",
+     "eclairage": "studio, fond clair, non précisé",
+     "url": "https://d3v3mlq4pl7g24.cloudfront.net/dXBkYXRlLW1pbmRjbXMtbmw%3D/66d911dd95de8/anthurium-cut-eterno-red-200881-1_100.jpg",
+     "page": "https://anthura.nl/en/products/anthurium-cut/eterno/",
+     "mes": {
+      "centre": [
+       0.49,
+       0.53
+      ],
+      "rayon": 0.48,
+      "thr": 16,
+      "conf": 1.0,
+      "n_spadice": 270,
+      "base": [
+       41.55702191551038,
+       60.106758813456565,
+       38.027366270621734
+      ],
+      "corps": [
+       42.53919420586412,
+       62.697419394392895,
+       39.347167900576565
+      ],
+      "pointe": [
+       43.00210315731118,
+       61.67195448354856,
+       36.89567802224903
+      ],
+      "nervures": [
+       37.473232538351574,
+       59.52150998048117,
+       40.27565172530805
+      ],
+      "spadice_tip": [
+       85.59615884569831,
+       6.921202845695751,
+       24.333351887025746
+      ],
+      "spadice_base": [
+       78.16982268904775,
+       26.49966028436254,
+       22.23032694542392
+      ]
+     }
+    },
+    {
+     "idx": 8,
+     "source": "All Occasions Wholesale (grossiste UK), fiche produit",
+     "niveau": "N3",
+     "role": "principal",
+     "eclairage": "non précisé",
+     "url": "https://alloccasionswholesale.co.uk/cdn/shop/files/AnthuriumEterno.png?v=1719994401&width=1946",
+     "page": "https://alloccasionswholesale.co.uk/products/anthurium-eterno",
+     "mes": {
+      "centre": [
+       0.49,
+       0.52
+      ],
+      "rayon": 0.36,
+      "thr": 16,
+      "conf": 1.0,
+      "n_spadice": 5507,
+      "base": [
+       43.083825450733826,
+       60.91385262539967,
+       38.54541221128748
+      ],
+      "corps": [
+       43.257491666230074,
+       62.63284334074959,
+       40.476653481056935
+      ],
+      "pointe": [
+       42.95128354448493,
+       62.12344039282447,
+       39.526410363477105
+      ],
+      "nervures": [
+       38.11566007124715,
+       59.407486789180425,
+       38.411100716145
+      ],
+      "spadice_tip": [
+       86.17308501704801,
+       5.680386138255167,
+       26.875622427056744
+      ],
+      "spadice_base": [
+       82.6639974647237,
+       10.657607637910571,
+       23.42853369074993
+      ]
+     }
+    }
+   ],
+   "retenu": {
+    "base": [
+     42.3204236831221,
+     60.51030571942812,
+     38.286389240954605
+    ],
+    "corps": [
+     42.8983429360471,
+     62.66513136757124,
+     39.911910690816754
+    ],
+    "pointe": [
+     42.97669335089806,
+     61.89769743818651,
+     38.21104419286307
+    ],
+    "nervures": [
+     37.794446304799365,
+     59.4644983848308,
+     39.343376220726526
+    ],
+    "spadice_base": [
+     80.41691007688573,
+     18.578633961136557,
+     22.829430318086924
+    ],
+    "spadice_tip": [
+     85.88462193137316,
+     6.300794491975459,
+     25.604487157041245
+    ]
+   },
+   "ecart": {
+    "corps": 1.3,
+    "spadice_base": 16.5,
+    "spadice_tip": 2.9
+   },
+   "sans_photo": []
+  },
+  {
+   "id": "nero",
+   "nom": "Nero",
+   "skus": [
+    1654,
+    1655
+   ],
+   "marque": "NERO®",
+   "niveau_provisoire": "B",
+   "niveau_retenu": "C",
+   "groupes": [
+    "obtenteur"
+   ],
+   "n_principal": 1,
+   "photos": [
+    {
+     "idx": 9,
+     "source": "Anthura (obtenteur), fiche produit",
+     "niveau": "N2",
+     "role": "principal",
+     "eclairage": "studio, fond clair, non précisé",
+     "url": "https://d3v3mlq4pl7g24.cloudfront.net/dXBkYXRlLW1pbmRjbXMtbmw%3D/66d911d6ad1dd/anthurium-cut-nero-brown-208071-2_100.jpg",
+     "page": "https://anthura.nl/en/products/anthurium-cut/nero/",
+     "mes": {
+      "centre": [
+       0.47,
+       0.55
+      ],
+      "rayon": 0.47,
+      "thr": 16,
+      "conf": 1.0,
+      "n_spadice": 21,
+      "base": [
+       24.279072554641246,
+       19.535070280796983,
+       4.611864870177948
+      ],
+      "corps": [
+       25.82288417947919,
+       12.405664350412932,
+       5.539130688871316
+      ],
+      "pointe": [
+       19.557163669191503,
+       12.207565535546,
+       7.1578044782840635
+      ],
+      "nervures": [
+       9.318081413547727,
+       13.657838679770412,
+       6.546996882650519
+      ],
+      "spadice_tip": null,
+      "spadice_base": [
+       43.49905330264261,
+       22.105897373219495,
+       1.6397805558797884
+      ]
+     }
+    },
+    {
+     "idx": 10,
+     "source": "APH (enchère NL, grower Anthogether Spek Flowers)",
+     "niveau": "N2",
+     "role": "appoint (approche)",
+     "eclairage": "non précisé ; vignette redimensionnée par un proxy, à retrouver en pleine taille",
+     "url": "https://img.ozexport.nl/artikelfotos/Floriday/51D32DBA36CAED1AFFBCCE135AF27406CE5ED5D706AAB9B9936CF8E865955E22.jpg",
+     "page": "https://shop.aphnl.com/aph/en/EUR/All-products/All-Flowers/Anthuriums/ANTAND/Anthurium-nero/p/00C2C58C7713C2E9760FEA5DFE7A0D55",
+     "mes": {
+      "centre": [
+       0.52,
+       0.51
+      ],
+      "rayon": 0.45,
+      "thr": 16,
+      "conf": 1.0,
+      "n_spadice": 2215,
+      "base": [
+       87.1327465362899,
+       -0.20081923056980422,
+       -0.5818508221975605
+      ],
+      "corps": [
+       87.89462106588292,
+       0.00526049995830391,
+       -0.010408184525267927
+      ],
+      "pointe": [
+       51.99988032570229,
+       4.785464864186073,
+       2.37967510353454
+      ],
+      "nervures": [
+       18.524191261018984,
+       12.042073833983146,
+       5.649289782081546
+      ],
+      "spadice_tip": [
+       37.51314382126242,
+       4.613948161020953,
+       6.05025474310954
+      ],
+      "spadice_base": [
+       1.6450409761427771,
+       0.00022380592326620707,
+       -0.0004428305453219039
+      ]
+     }
+    }
+   ],
+   "retenu": {
+    "base": [
+     24.279072554641246,
+     19.535070280796983,
+     4.611864870177948
+    ],
+    "corps": [
+     25.82288417947919,
+     12.405664350412932,
+     5.539130688871316
+    ],
+    "pointe": [
+     19.557163669191503,
+     12.207565535546,
+     7.1578044782840635
+    ],
+    "nervures": [
+     9.318081413547727,
+     13.657838679770412,
+     6.546996882650519
+    ],
+    "spadice_base": [
+     43.49905330264261,
+     22.105897373219495,
+     1.6397805558797884
+    ]
+   },
+   "ecart": {},
+   "sans_photo": []
+  },
+  {
+   "id": "tropic-night",
+   "nom": "Tropic Night",
+   "skus": [
+    1654
+   ],
+   "marque": "Tropic Night®",
+   "niveau_provisoire": "B",
+   "niveau_retenu": "C",
+   "groupes": [],
+   "n_principal": 0,
+   "photos": [
+    {
+     "idx": 11,
+     "source": "APH (enchère NL, grower Anthogether Hubers)",
+     "niveau": "N2",
+     "role": "appoint (approche)",
+     "eclairage": "non précisé",
+     "url": "https://img.ozexport.nl/artikelfotos/LIVE_fotos/0xED2072F81CDEB26E6052583268920CADE3A2D73D.jpg",
+     "page": "https://shop.aphnl.com/aph/en/EUR/All-products/All-Flowers/Anthuriums/ANTAND/Anthurium-tropic-night/p/CA1522B793967902F97446A7260A9412",
+     "mes": {
+      "centre": [
+       0.51,
+       0.52
+      ],
+      "rayon": 0.45,
+      "thr": 40,
+      "conf": 1.0,
+      "n_spadice": 1224,
+      "base": [
+       99.65492223276894,
+       0.00526049995830391,
+       -0.010408184525267927
+      ],
+      "corps": [
+       88.03957414059022,
+       0.00526049995830391,
+       0.2349675567734799
+      ],
+      "pointe": [
+       33.386693443824086,
+       9.861081980814202,
+       6.195560999264127
+      ],
+      "nervures": [
+       10.893295573645574,
+       21.7979883892993,
+       12.18834128664854
+      ],
+      "spadice_tip": [
+       40.61926075603424,
+       4.38601944259831,
+       13.100175339132068
+      ],
+      "spadice_base": [
+       2.467561464214171,
+       0.00022380592326620707,
+       -0.00040592799987748673
+      ]
+     }
+    },
+    {
+     "idx": 12,
+     "source": "Thursd (vendeur de fleurs), visuel promotionnel",
+     "niveau": "N3",
+     "role": "appoint (approche)",
+     "eclairage": "visuel promotionnel, éclairage inconnu, peut être retouché",
+     "url": "https://thursd.com/storage/media/30421/anthurium-tropic-night%C2%AE-cut-flower-on-thursd-facebook.jpg",
+     "page": "https://thursd.com/products/cut-flowers/anthuriums/anthurium-tropic-night",
+     "mes": {
+      "centre": [
+       0.5,
+       0.45
+      ],
+      "rayon": 0.45,
+      "thr": 40,
+      "conf": 1.0,
+      "n_spadice": 9276,
+      "base": [
+       67.10903185365363,
+       -0.2052413144438825,
+       4.024387981391575
+      ],
+      "corps": [
+       64.9095660817004,
+       -0.5655084752039796,
+       4.014358294270701
+      ],
+      "pointe": [
+       32.98586535528361,
+       -1.5213797425916442,
+       3.8128981467442813
+      ],
+      "nervures": [
+       5.858217338350382,
+       -1.493159508687475,
+       5.90341070835661
+      ],
+      "spadice_tip": [
+       87.20415784313597,
+       -0.5414007228586315,
+       2.555736799257602
+      ],
+      "spadice_base": [
+       24.139250818028202,
+       0.9105685835160693,
+       13.530948882027937
+      ]
+     }
+    }
+   ],
+   "retenu": {},
+   "ecart": {},
+   "sans_photo": []
+  },
+  {
+   "id": "showtime",
+   "nom": "Showtime",
+   "skus": [
+    1654
+   ],
+   "marque": "SHOWTIME®",
+   "niveau_provisoire": "B",
+   "niveau_retenu": "C",
+   "groupes": [
+    "holex"
+   ],
+   "n_principal": 1,
+   "photos": [
+    {
+     "idx": 13,
+     "source": "Holex Flower (grossiste NL), fiche produit",
+     "niveau": "N3",
+     "role": "principal",
+     "eclairage": "non précisé",
+     "url": "https://cdn.holexflower.com/image/live/?height=320&image=/https%3A%2F%2Fhlximages.flowerwebshop.com%2FM_8864fdf9-c32c-49e8-a471-d2fb5bc312d2.jpg",
+     "page": "https://shop.holex.com/en_US/All-products/Flowers/Anthurium/Anthurium-Andreanum/Anthurium/Anthurium-Showtime/p/209086",
+     "mes": {
+      "centre": [
+       0.45,
+       0.53
+      ],
+      "rayon": 0.4,
+      "thr": 16,
+      "conf": 0.93,
+      "n_spadice": 1004,
+      "base": [
+       37.40482792680478,
+       21.959306606835067,
+       14.976961351435293
+      ],
+      "corps": [
+       22.438883204459923,
+       25.52089884491479,
+       12.398494054841422
+      ],
+      "pointe": [
+       25.16132582115634,
+       22.917036323036044,
+       10.531821617287296
+      ],
+      "nervures": [
+       14.385956650922397,
+       26.514695922953134,
+       13.891135534995591
+      ],
+      "spadice_tip": [
+       56.015260311012014,
+       4.114731983151682,
+       25.326423465334493
+      ],
+      "spadice_base": [
+       47.6727925894974,
+       18.98894168035309,
+       8.130839257250532
+      ]
+     }
+    },
+    {
+     "idx": 14,
+     "source": "Thursd (vendeur de fleurs), visuel promotionnel",
+     "niveau": "N3",
+     "role": "appoint (approche)",
+     "eclairage": "visuel promotionnel",
+     "url": "https://thursd.com/storage/media/30417/anthurium-showtime%C2%AE-cut-flower-on-thursd-facebook.jpg",
+     "page": "https://thursd.com/products/cut-flowers/anthuriums/anthurium-showtime",
+     "mes": {
+      "centre": [
+       0.57,
+       0.46
+      ],
+      "rayon": 0.46,
+      "thr": 16,
+      "conf": 0.94,
+      "n_spadice": 8740,
+      "base": [
+       30.073929061720563,
+       18.858519873660633,
+       3.3848400755898123
+      ],
+      "corps": [
+       79.010333641353,
+       0.7746514983917596,
+       0.9760205674850919
+      ],
+      "pointe": [
+       91.61917084676413,
+       0.387603901214284,
+       -0.9671871123076325
+      ],
+      "nervures": [
+       23.43080596320425,
+       18.65228484968898,
+       5.405343858858513
+      ],
+      "spadice_tip": [
+       26.739016092260655,
+       19.11453545352004,
+       3.131028716354467
+      ],
+      "spadice_base": [
+       36.5222418359413,
+       14.845476061116164,
+       1.063512256905419
+      ]
+     }
+    }
+   ],
+   "retenu": {
+    "base": [
+     37.40482792680478,
+     21.959306606835067,
+     14.976961351435293
+    ],
+    "corps": [
+     22.438883204459923,
+     25.52089884491479,
+     12.398494054841422
+    ],
+    "pointe": [
+     25.16132582115634,
+     22.917036323036044,
+     10.531821617287296
+    ],
+    "nervures": [
+     14.385956650922397,
+     26.514695922953134,
+     13.891135534995591
+    ],
+    "spadice_base": [
+     47.6727925894974,
+     18.98894168035309,
+     8.130839257250532
+    ],
+    "spadice_tip": [
+     56.015260311012014,
+     4.114731983151682,
+     25.326423465334493
+    ]
+   },
+   "ecart": {},
+   "sans_photo": []
+  },
+  {
+   "id": "terrasol",
+   "nom": "Terrasol",
+   "skus": [
+    1655,
+    1656
+   ],
+   "marque": "TERRASOL®",
+   "niveau_provisoire": "B",
+   "niveau_retenu": "C",
+   "groupes": [
+    "obtenteur"
+   ],
+   "n_principal": 2,
+   "photos": [
+    {
+     "idx": 15,
+     "source": "Anthura (obtenteur), fiche produit",
+     "niveau": "N2",
+     "role": "principal",
+     "eclairage": "studio, fond clair, non précisé",
+     "url": "https://d3v3mlq4pl7g24.cloudfront.net/dXBkYXRlLW1pbmRjbXMtbmw%3D/67ffa8dc6e203/enanthurium-cut-terrasol-brown-200676_100.jpg",
+     "page": "https://anthura.nl/en/products/anthurium-cut/terrasol/",
+     "mes": {
+      "centre": [
+       0.47,
+       0.48
+      ],
+      "rayon": 0.44,
+      "thr": 16,
+      "conf": 1.0,
+      "n_spadice": 174,
+      "base": [
+       49.285451093745806,
+       31.195160228467632,
+       37.14874345848609
+      ],
+      "corps": [
+       48.04312787840837,
+       40.01623025826595,
+       42.31758544375015
+      ],
+      "pointe": [
+       49.54740583780818,
+       38.323544456526456,
+       40.16523415807234
+      ],
+      "nervures": [
+       37.71039361638747,
+       43.15357239317991,
+       42.34350239377543
+      ],
+      "spadice_tip": [
+       74.75061910931335,
+       13.624836402624908,
+       26.342327700672463
+      ],
+      "spadice_base": [
+       68.8184866549302,
+       25.803221139407196,
+       27.823794945777223
+      ]
+     }
+    },
+    {
+     "idx": 16,
+     "source": "Anthogether (association de six producteurs NL), fiche produit",
+     "niveau": "N2",
+     "role": "principal",
+     "eclairage": "non précisé",
+     "url": "https://anthogether.nl/wp-content/uploads/2024/02/Anthogether-anthurium-Terrasol.jpg",
+     "page": "https://anthogether.nl/assortiment/terrasol/",
+     "mes": {
+      "centre": [
+       0.47,
+       0.49
+      ],
+      "rayon": 0.4,
+      "thr": 16,
+      "conf": 1.0,
+      "n_spadice": 3273,
+      "base": [
+       49.031430023103816,
+       27.146237102265463,
+       32.1879647682315
+      ],
+      "corps": [
+       46.23983221158528,
+       33.44235837983944,
+       35.53174246187572
+      ],
+      "pointe": [
+       46.9747373281949,
+       33.47328505726732,
+       35.23994195016334
+      ],
+      "nervures": [
+       37.15486916989288,
+       37.07419489104005,
+       34.83073592092904
+      ],
+      "spadice_tip": [
+       79.62255529683287,
+       3.9795974957732017,
+       19.105620575293436
+      ],
+      "spadice_base": [
+       69.5742579422656,
+       19.10439945488293,
+       20.7381328416118
+      ]
+     }
+    }
+   ],
+   "retenu": {
+    "base": [
+     49.158440558424815,
+     29.170698665366547,
+     34.668354113358795
+    ],
+    "corps": [
+     47.141480044996825,
+     36.7292943190527,
+     38.924663952812935
+    ],
+    "pointe": [
+     48.26107158300154,
+     35.898414756896884,
+     37.70258805411784
+    ],
+    "nervures": [
+     37.43263139314018,
+     40.11388364210998,
+     38.587119157352234
+    ],
+    "spadice_base": [
+     69.19637229859791,
+     22.45381029714506,
+     24.280963893694512
+    ],
+    "spadice_tip": [
+     77.18658720307312,
+     8.802216949199055,
+     22.72397413798295
+    ]
+   },
+   "ecart": {
+    "corps": 9.6,
+    "spadice_base": 9.8,
+    "spadice_tip": 13.0
+   },
+   "sans_photo": []
+  },
+  {
+   "id": "naranja",
+   "nom": "Naranja",
+   "skus": [
+    1657
+   ],
+   "marque": "NARANJA®",
+   "niveau_provisoire": "C",
+   "niveau_retenu": "C",
+   "groupes": [],
+   "n_principal": 0,
+   "photos": [
+    {
+     "idx": 17,
+     "source": "Barendsen (négoce NL), journal des producteurs Anthogether, avril 2026",
+     "niveau": "N3",
+     "role": "appoint (approche)",
+     "eclairage": "non précisé",
+     "url": "https://barendsen.nl/images/Florapodium/Kwekers/Anthogether%20apr%202026/Anthurium%20Naranja%209.jpg",
+     "page": "https://barendsen.nl/en/florapodium-en/growers-journal/anthurium-anthogether",
+     "mes": {
+      "centre": [
+       0.55,
+       0.59
+      ],
+      "rayon": 0.44,
+      "thr": 40,
+      "conf": 1.0,
+      "n_spadice": 3513,
+      "base": [
+       39.01162929271932,
+       61.623543519794154,
+       50.46696028175974
+      ],
+      "corps": [
+       42.58306743353142,
+       62.59379745299171,
+       50.27782532981764
+      ],
+      "pointe": [
+       52.74794354849078,
+       6.29609873376416,
+       18.767701902021482
+      ],
+      "nervures": [
+       33.4736521217662,
+       56.03060325508835,
+       45.45075518666415
+      ],
+      "spadice_tip": [
+       53.82344321801668,
+       40.98446175804012,
+       39.09301819381296
+      ],
+      "spadice_base": [
+       45.50294788328862,
+       18.829392636011523,
+       29.716839172966335
+      ]
+     }
+    }
+   ],
+   "retenu": {},
+   "ecart": {},
+   "sans_photo": []
+  },
+  {
+   "id": "nitta",
+   "nom": "Nitta",
+   "skus": [
+    1657
+   ],
+   "marque": null,
+   "niveau_provisoire": "D",
+   "niveau_retenu": "C",
+   "groupes": [],
+   "n_principal": 0,
+   "photos": [
+    {
+     "idx": 18,
+     "source": "Akatsuka Orchid Gardens (Hawaï), fiche de plante en pot",
+     "niveau": "N3",
+     "role": "appoint (approche)",
+     "eclairage": "non précisé ; plante en pot, pas fleur coupée",
+     "url": "https://www.akatsukaorchid.com/cdn/shop/files/Orange_Anth.__65567.jpg?v=1761725772&width=1946",
+     "page": "https://www.akatsukaorchid.com/products/anth-nitta-orange",
+     "mes": {
+      "centre": [
+       0.49,
+       0.46
+      ],
+      "rayon": 0.44,
+      "thr": 40,
+      "conf": 0.83,
+      "n_spadice": 2273,
+      "base": [
+       56.26246504208598,
+       67.16193658915049,
+       35.03027621386045
+      ],
+      "corps": [
+       57.430584399713325,
+       65.5133310042234,
+       34.607682604468735
+      ],
+      "pointe": [
+       33.3561396623775,
+       -0.2945586670655004,
+       8.302286495145122
+      ],
+      "nervures": [
+       51.27581347670251,
+       68.4147680600046,
+       44.83500835767713
+      ],
+      "spadice_tip": [
+       78.47886670655924,
+       26.056795996099197,
+       21.326765531551196
+      ],
+      "spadice_base": [
+       98.88991951076434,
+       -0.3434716643457847,
+       6.212622504019949
+      ]
+     }
+    }
+   ],
+   "retenu": {},
+   "ecart": {},
+   "sans_photo": []
+  },
+  {
+   "id": "kuduro",
+   "nom": "Kuduro",
+   "skus": [
+    1658
+   ],
+   "marque": "KUDURO®",
+   "niveau_provisoire": "B",
+   "niveau_retenu": "C",
+   "groupes": [
+    "obtenteur"
+   ],
+   "n_principal": 1,
+   "photos": [
+    {
+     "idx": 19,
+     "source": "Anthura (obtenteur), fiche produit",
+     "niveau": "N2",
+     "role": "principal",
+     "eclairage": "studio, fond clair, non précisé",
+     "url": "https://d3v3mlq4pl7g24.cloudfront.net/dXBkYXRlLW1pbmRjbXMtbmw%3D/67ffa6b65043a/enanthurium-cut-kuduro-pink-209046-1_100.jpg",
+     "page": "https://anthura.nl/en/products/anthurium-cut/kuduro/",
+     "mes": {
+      "centre": [
+       0.51,
+       0.45
+      ],
+      "rayon": 0.35,
+      "thr": 16,
+      "conf": 1.0,
+      "n_spadice": 81,
+      "base": [
+       69.19666054115223,
+       37.43797999251,
+       27.711607350368276
+      ],
+      "corps": [
+       70.94831765987459,
+       34.82470095863632,
+       24.218638414747918
+      ],
+      "pointe": [
+       72.72337572489512,
+       32.11035272270585,
+       21.390410601051514
+      ],
+      "nervures": [
+       64.15477117985549,
+       36.77589173005214,
+       26.879454823215674
+      ],
+      "spadice_tip": [
+       80.85771742476459,
+       13.321696103672675,
+       29.646385135923836
+      ],
+      "spadice_base": null
+     }
+    },
+    {
+     "idx": 20,
+     "source": "Barendsen (négoce NL), journal des producteurs Anthogether, avril 2026",
+     "niveau": "N3",
+     "role": "appoint (approche)",
+     "eclairage": "non précisé",
+     "url": "https://barendsen.nl/images/Florapodium/Kwekers/Anthogether%20apr%202026/Anthurium%20Kuduro%204.jpg",
+     "page": "https://barendsen.nl/en/florapodium-en/growers-journal/anthurium-anthogether",
+     "mes": {
+      "centre": [
+       0.57,
+       0.58
+      ],
+      "rayon": 0.46,
+      "thr": 40,
+      "conf": 0.93,
+      "n_spadice": 6339,
+      "base": [
+       49.52311669452267,
+       36.68671604955248,
+       27.555560975643132
+      ],
+      "corps": [
+       54.67114301070802,
+       31.976184414591714,
+       23.46709489642309
+      ],
+      "pointe": [
+       46.29015128085883,
+       7.041636879219257,
+       12.648910817368343
+      ],
+      "nervures": [
+       19.31750569463815,
+       6.123018045808504,
+       9.301334993974496
+      ],
+      "spadice_tip": [
+       71.76146128276088,
+       33.64674389112052,
+       26.41763527565172
+      ],
+      "spadice_base": [
+       29.279139001492474,
+       7.429298213202346,
+       12.555739827866097
+      ]
+     }
+    }
+   ],
+   "retenu": {
+    "base": [
+     69.19666054115223,
+     37.43797999251,
+     27.711607350368276
+    ],
+    "corps": [
+     70.94831765987459,
+     34.82470095863632,
+     24.218638414747918
+    ],
+    "pointe": [
+     72.72337572489512,
+     32.11035272270585,
+     21.390410601051514
+    ],
+    "nervures": [
+     64.15477117985549,
+     36.77589173005214,
+     26.879454823215674
+    ],
+    "spadice_tip": [
+     80.85771742476459,
+     13.321696103672675,
+     29.646385135923836
+    ]
+   },
+   "ecart": {},
+   "sans_photo": []
+  },
+  {
+   "id": "farao",
+   "nom": "Farao",
+   "skus": [
+    1658,
+    1659
+   ],
+   "marque": "FARAO®",
+   "niveau_provisoire": "B",
+   "niveau_retenu": "B",
+   "groupes": [
+    "holex",
+    "obtenteur"
+   ],
+   "n_principal": 2,
+   "photos": [
+    {
+     "idx": 21,
+     "source": "Anthura (obtenteur), fiche produit",
+     "niveau": "N2",
+     "role": "principal",
+     "eclairage": "studio, fond clair, non précisé",
+     "url": "https://d3v3mlq4pl7g24.cloudfront.net/dXBkYXRlLW1pbmRjbXMtbmw%3D/66d8ab261b57d/anthurium-cut-farao-pink-202888-2_100.jpg",
+     "page": "https://anthura.nl/en/products/anthurium-cut/farao/",
+     "mes": {
+      "centre": [
+       0.49,
+       0.54
+      ],
+      "rayon": 0.48,
+      "thr": 16,
+      "conf": 1.0,
+      "n_spadice": 251,
+      "base": [
+       65.71729479945665,
+       42.26346301812922,
+       23.62676637672605
+      ],
+      "corps": [
+       66.01808229201443,
+       42.25466568722802,
+       23.31579552498404
+      ],
+      "pointe": [
+       68.61721569377062,
+       38.37348864818546,
+       18.872853809114254
+      ],
+      "nervures": [
+       58.78609015388555,
+       47.27623725887914,
+       26.866047901227695
+      ],
+      "spadice_tip": [
+       86.19272772225725,
+       7.8932034688786175,
+       11.687862525176929
+      ],
+      "spadice_base": [
+       84.22445250539515,
+       9.269036592049417,
+       14.259981835252823
+      ]
+     }
+    },
+    {
+     "idx": 23,
+     "source": "Holex Flower (grossiste NL), fiche produit",
+     "niveau": "N3",
+     "role": "principal",
+     "eclairage": "non précisé",
+     "url": "https://cdn.holexflower.com/image/live/?height=320&image=/https%3A%2F%2Fhlximages.flowerwebshop.com%2FM_BDE62C41-3DFB-4310-8F0E-E54FA4B0AC02.jpg",
+     "page": "https://shop.holex.com/en_US/All-products/Flowers/Anthurium/Anthurium-Andreanum/Anthurium/Anthurium-Farao/p/247372",
+     "mes": {
+      "centre": [
+       0.5,
+       0.54
+      ],
+      "rayon": 0.39,
+      "thr": 16,
+      "conf": 1.0,
+      "n_spadice": 1493,
+      "base": [
+       72.28446581797866,
+       37.606223528975136,
+       22.13319587885818
+      ],
+      "corps": [
+       71.77301245577962,
+       38.733281270416086,
+       22.574642204515726
+      ],
+      "pointe": [
+       73.72443322855538,
+       35.30332879844844,
+       18.469385812387706
+      ],
+      "nervures": [
+       66.9408477016845,
+       47.06534936899154,
+       27.578473895819556
+      ],
+      "spadice_tip": [
+       85.88634667643989,
+       6.816163017469873,
+       24.324365626701393
+      ],
+      "spadice_base": [
+       87.27017316980854,
+       7.610466851183939,
+       20.281277218119875
+      ]
+     }
+    }
+   ],
+   "retenu": {
+    "base": [
+     69.00088030871765,
+     39.934843273552175,
+     22.879981127792114
+    ],
+    "corps": [
+     68.89554737389702,
+     40.493973478822056,
+     22.945218864749883
+    ],
+    "pointe": [
+     71.170824461163,
+     36.838408723316945,
+     18.67111981075098
+    ],
+    "nervures": [
+     62.86346892778503,
+     47.17079331393534,
+     27.222260898523626
+    ],
+    "spadice_base": [
+     85.74731283760184,
+     8.439751721616679,
+     17.27062952668635
+    ],
+    "spadice_tip": [
+     86.03953719934856,
+     7.354683243174245,
+     18.00611407593916
+    ]
+   },
+   "ecart": {
+    "corps": 6.8,
+    "spadice_base": 6.9,
+    "spadice_tip": 12.7
+   },
+   "sans_photo": []
+  },
+  {
+   "id": "caribo",
+   "nom": "Caribo",
+   "skus": [
+    1658,
+    1659
+   ],
+   "marque": "CARIBO®",
+   "niveau_provisoire": "B",
+   "niveau_retenu": "B",
+   "groupes": [
+    "aoc",
+    "obtenteur"
+   ],
+   "n_principal": 2,
+   "photos": [
+    {
+     "idx": 24,
+     "source": "Anthura (obtenteur), fiche produit",
+     "niveau": "N2",
+     "role": "principal",
+     "eclairage": "studio, fond clair, non précisé",
+     "url": "https://d3v3mlq4pl7g24.cloudfront.net/dXBkYXRlLW1pbmRjbXMtbmw%3D/66d8a9ae2bc90/anthurium-cut-caribo-pink-209014-2_100.jpg",
+     "page": "https://anthura.nl/en/products/anthurium-cut/caribo/",
+     "mes": {
+      "centre": [
+       0.51,
+       0.51
+      ],
+      "rayon": 0.47,
+      "thr": 16,
+      "conf": 1.0,
+      "n_spadice": 218,
+      "base": [
+       52.0802223235955,
+       56.80816997168981,
+       25.233341154367178
+      ],
+      "corps": [
+       56.0941927388817,
+       54.85005963238871,
+       19.673893871232128
+      ],
+      "pointe": [
+       56.6884272937417,
+       52.783124700964464,
+       16.165532546902917
+      ],
+      "nervures": [
+       48.42389852654884,
+       55.05712062293472,
+       22.095935169862585
+      ],
+      "spadice_tip": [
+       81.66702615649811,
+       11.19316353526223,
+       21.75547087234615
+      ],
+      "spadice_base": [
+       94.57560575113764,
+       7.088554974390426,
+       2.0134799264905023
+      ]
+     }
+    },
+    {
+     "idx": 25,
+     "source": "OzExport (exportateur NL, grower Anthogether Wijnen)",
+     "niveau": "N2",
+     "role": "appoint (approche)",
+     "eclairage": "non précisé",
+     "url": "https://img.ozexport.nl/artikelfotos/LIVE_fotos/0x6588E58C334D22F351BE10798CBF0EE984B5E7D4.jpg",
+     "page": "https://www.ozexport.nl/ozexport/en/EUR/All-products/All-Flowers/Anthuriums/ANTAND/Anthurium-caribo/p/396CE0AC533C8684D42EEB17FC9412CB",
+     "mes": {
+      "centre": [
+       0.55,
+       0.26
+      ],
+      "rayon": 0.46,
+      "thr": 16,
+      "conf": 0.78,
+      "n_spadice": 5501,
+      "base": [
+       56.83182278746406,
+       33.65807667381732,
+       20.489033067939722
+      ],
+      "corps": [
+       57.4425607515694,
+       31.234117906531523,
+       18.351377899375265
+      ],
+      "pointe": [
+       56.81690510576672,
+       42.71641407434636,
+       19.160939557668367
+      ],
+      "nervures": [
+       45.904898527301675,
+       43.26979556989835,
+       24.686714103716522
+      ],
+      "spadice_tip": [
+       68.16844758028876,
+       2.121574295545603,
+       10.920017233936496
+      ],
+      "spadice_base": [
+       100.0,
+       0.00526049995830391,
+       -0.010408184525267927
+      ]
+     }
+    },
+    {
+     "idx": 26,
+     "source": "All Occasions Wholesale (grossiste UK), fiche produit",
+     "niveau": "N3",
+     "role": "principal",
+     "eclairage": "non précisé",
+     "url": "https://alloccasionswholesale.co.uk/cdn/shop/files/AnthuriumCaribo.png?v=1719994235&width=1946",
+     "page": "https://alloccasionswholesale.co.uk/products/anthurium-caribo",
+     "mes": {
+      "centre": [
+       0.51,
+       0.52
+      ],
+      "rayon": 0.39,
+      "thr": 16,
+      "conf": 1.0,
+      "n_spadice": 5694,
+      "base": [
+       51.72863021486535,
+       57.6704902569668,
+       25.944189832733354
+      ],
+      "corps": [
+       55.71628288450583,
+       55.45112168030175,
+       20.241015286878007
+      ],
+      "pointe": [
+       56.061766568796344,
+       54.36878717542653,
+       17.862717177145537
+      ],
+      "nervures": [
+       48.430806592476614,
+       56.31876381774101,
+       24.17577072337029
+      ],
+      "spadice_tip": [
+       81.45131909367475,
+       6.24396448496195,
+       19.98786164236135
+      ],
+      "spadice_base": [
+       87.3894323330567,
+       -4.41972469364943,
+       1.6507181134629567
+      ]
+     }
+    }
+   ],
+   "retenu": {
+    "base": [
+     51.90442626923043,
+     57.239330114328304,
+     25.588765493550266
+    ],
+    "corps": [
+     55.905237811693766,
+     55.15059065634523,
+     19.957454579055067
+    ],
+    "pointe": [
+     56.37509693126902,
+     53.5759559381955,
+     17.014124862024225
+    ],
+    "nervures": [
+     48.42735255951273,
+     55.68794222033786,
+     23.13585294661644
+    ],
+    "spadice_base": [
+     90.98251904209718,
+     1.3344151403704982,
+     1.8320990199767295
+    ],
+    "spadice_tip": [
+     81.55917262508643,
+     8.71856401011209,
+     20.871666257353752
+    ]
+   },
+   "ecart": {
+    "corps": 0.9,
+    "spadice_base": 13.6,
+    "spadice_tip": 5.3
+   },
+   "sans_photo": []
+  },
+  {
+   "id": "sonate-royal",
+   "nom": "Sonate Royal",
+   "skus": [
+    1659,
+    1660
+   ],
+   "marque": null,
+   "niveau_provisoire": "C",
+   "niveau_retenu": "C",
+   "groupes": [],
+   "n_principal": 0,
+   "photos": [
+    {
+     "idx": 27,
+     "source": "Thursd (vendeur de fleurs), visuel de la fiche produit",
+     "niveau": "N3",
+     "role": "appoint (approche)",
+     "eclairage": "visuel promotionnel, inconnu",
+     "url": "https://thursd.com/storage/media/31273/anthurium-sonate-royal-product-on-thursd-feature.jpg",
+     "page": "https://thursd.com/products/cut-flowers/anthuriums/anthurium-sonate-royal",
+     "mes": {
+      "centre": [
+       0.5,
+       0.48
+      ],
+      "rayon": 0.38,
+      "thr": 40,
+      "conf": 0.99,
+      "n_spadice": 6162,
+      "base": [
+       78.87167375408367,
+       16.161684251324274,
+       3.738023572085325
+      ],
+      "corps": [
+       75.54450564835902,
+       5.029299619185634,
+       2.243176172096417
+      ],
+      "pointe": [
+       72.22618319373552,
+       18.790591779939497,
+       2.232867164665553
+      ],
+      "nervures": [
+       50.242418724511765,
+       43.27483548549621,
+       14.464461570160935
+      ],
+      "spadice_tip": [
+       1.17777565159761,
+       0.5078276311630547,
+       -0.00014761018177766871
+      ],
+      "spadice_base": [
+       72.7660984420355,
+       36.39447516510924,
+       6.033567160397446
+      ]
+     }
+    }
+   ],
+   "retenu": {},
+   "ecart": {},
+   "sans_photo": []
+  },
+  {
+   "id": "candy",
+   "nom": "Candy",
+   "skus": [
+    1660,
+    1661
+   ],
+   "marque": "CANDY®",
+   "niveau_provisoire": "B",
+   "niveau_retenu": "B",
+   "groupes": [
+    "obtenteur",
+    "petaldriven"
+   ],
+   "n_principal": 2,
+   "photos": [
+    {
+     "idx": 28,
+     "source": "Anthura (obtenteur), fiche produit",
+     "niveau": "N2",
+     "role": "principal",
+     "eclairage": "studio, fond clair, non precise",
+     "url": "https://d3v3mlq4pl7g24.cloudfront.net/dXBkYXRlLW1pbmRjbXMtbmw%3D/66d90510f05c8/anthurium-cut-candy-pink-200756-1_100.jpg",
+     "page": "https://anthura.nl/en/products/anthurium-cut/candy/",
+     "mes": {
+      "centre": [
+       0.46,
+       0.54
+      ],
+      "rayon": 0.44,
+      "thr": 16,
+      "conf": 1.0,
+      "n_spadice": 257,
+      "base": [
+       68.79370346826106,
+       37.715802441535494,
+       8.498054789394516
+      ],
+      "corps": [
+       68.91937402410974,
+       37.72701342463853,
+       8.733380414217674
+      ],
+      "pointe": [
+       65.21228071063766,
+       42.32286311396732,
+       11.227322157629438
+      ],
+      "nervures": [
+       56.68716874939075,
+       43.24795034817741,
+       12.160208908084869
+      ],
+      "spadice_tip": [
+       32.22336262591554,
+       38.55431019080199,
+       7.462793192626089
+      ],
+      "spadice_base": [
+       34.793834487983354,
+       41.449953579892615,
+       10.742877141059793
+      ]
+     }
+    },
+    {
+     "idx": 29,
+     "source": "PetalDriven (grossiste fleurs coupees), fiche Candy 13 cm",
+     "niveau": "N3",
+     "role": "principal",
+     "eclairage": "non precise",
+     "url": "https://petaldriven.com/cdn/shop/products/111512_3ff6a879-7463-473d-8abb-dd3aab271f91.jpg?v=1762527788&width=1080",
+     "page": "https://petaldriven.com/products/anthurium-candy-13cm-12-stem-pack",
+     "mes": {
+      "centre": [
+       0.47,
+       0.53
+      ],
+      "rayon": 0.39,
+      "thr": 16,
+      "conf": 1.0,
+      "n_spadice": 9013,
+      "base": [
+       68.88764019591977,
+       35.032034791984465,
+       8.611451071210595
+      ],
+      "corps": [
+       68.3956304356933,
+       37.539961421939104,
+       8.805211348915076
+      ],
+      "pointe": [
+       64.18049406927841,
+       42.97882966007982,
+       10.966883416835271
+      ],
+      "nervures": [
+       55.83947071211975,
+       46.30020232339138,
+       12.468433348658081
+      ],
+      "spadice_tip": [
+       31.545976980790705,
+       38.38729101101834,
+       6.733510052653024
+      ],
+      "spadice_base": [
+       36.61450223485896,
+       40.20923653737002,
+       7.309563234584537
+      ]
+     }
+    }
+   ],
+   "retenu": {
+    "base": [
+     68.84067183209041,
+     36.37391861675998,
+     8.554752930302556
+    ],
+    "corps": [
+     68.65750222990152,
+     37.63348742328881,
+     8.769295881566375
+    ],
+    "pointe": [
+     64.69638738995803,
+     42.65084638702357,
+     11.097102787232355
+    ],
+    "nervures": [
+     56.26331973075525,
+     44.7740763357844,
+     12.314321128371475
+    ],
+    "spadice_base": [
+     35.704168361421154,
+     40.82959505863131,
+     9.026220187822165
+    ],
+    "spadice_tip": [
+     31.884669803353123,
+     38.47080060091017,
+     7.0981516226395565
+    ]
+   },
+   "ecart": {
+    "corps": 0.6,
+    "spadice_base": 4.1,
+    "spadice_tip": 1.0
+   },
+   "sans_photo": []
+  },
+  {
+   "id": "marian-seefurth",
+   "nom": "Marian Seefurth",
+   "skus": [
+    1660
+   ],
+   "marque": null,
+   "niveau_provisoire": "B",
+   "niveau_retenu": "C",
+   "groupes": [],
+   "n_principal": 0,
+   "photos": [
+    {
+     "idx": 30,
+     "source": "Anthurium Hawaii (producteur-vendeur hawaiien), fiche variete",
+     "niveau": "N3",
+     "role": "appoint (approche)",
+     "eclairage": "non precise",
+     "url": "https://anthuriumhi.com/wp-content/uploads/2011/06/Marian-Seefurth-Anthurium.jpg",
+     "page": "https://anthuriumhi.com/marian-seefurth-anthurium/",
+     "mes": {
+      "centre": [
+       0.39,
+       0.35
+      ],
+      "rayon": 0.43,
+      "thr": 40,
+      "conf": 0.59,
+      "n_spadice": 7464,
+      "base": [
+       74.28326209813106,
+       1.1565814140060415,
+       3.087952356243029
+      ],
+      "corps": [
+       60.19135590870667,
+       -1.729800140748694,
+       3.000245372885746
+      ],
+      "pointe": [
+       45.57882838578161,
+       -1.844475323019068,
+       5.689288357314504
+      ],
+      "nervures": [
+       49.1373516549576,
+       -3.2751366923093883,
+       5.7847339807423515
+      ],
+      "spadice_tip": [
+       91.10131476946353,
+       -0.1860093557015663,
+       4.646700972105089
+      ],
+      "spadice_base": [
+       79.17395349834267,
+       23.74764163473192,
+       -6.737681713758514
+      ]
+     }
+    }
+   ],
+   "retenu": {},
+   "ecart": {},
+   "sans_photo": []
+  },
+  {
+   "id": "orange-crush",
+   "nom": "Orange Crush",
+   "skus": [],
+   "marque": null,
+   "niveau_provisoire": "D",
+   "niveau_retenu": "C",
+   "groupes": [],
+   "n_principal": 0,
+   "photos": [],
+   "retenu": {},
+   "ecart": {},
+   "sans_photo": []
+  },
+  {
+   "id": "impreza",
+   "nom": "Impreza",
+   "skus": [
+    1662
+   ],
+   "marque": "IMPREZA®",
+   "niveau_provisoire": "C",
+   "niveau_retenu": "C",
+   "groupes": [
+    "obtenteur"
+   ],
+   "n_principal": 1,
+   "photos": [
+    {
+     "idx": 31,
+     "source": "Anthura (obtenteur), fiche produit",
+     "niveau": "N2",
+     "role": "principal",
+     "eclairage": "studio, fond clair, non precise",
+     "url": "https://d3v3mlq4pl7g24.cloudfront.net/dXBkYXRlLW1pbmRjbXMtbmw%3D/66d8a9b6589d2/anthurium-cut-impreza-purple-209066-1_100.jpg",
+     "page": "https://anthura.nl/en/products/anthurium-cut/impreza/",
+     "mes": {
+      "centre": [
+       0.47,
+       0.54
+      ],
+      "rayon": 0.46,
+      "thr": 16,
+      "conf": 1.0,
+      "n_spadice": 259,
+      "base": [
+       37.416789850192266,
+       42.50172754678905,
+       -4.515055456311757
+      ],
+      "corps": [
+       43.1085072198021,
+       43.6341286809455,
+       -8.599028012027633
+      ],
+      "pointe": [
+       44.948311283207346,
+       42.39141784240816,
+       -7.8497283537393265
+      ],
+      "nervures": [
+       31.031224103374726,
+       45.00492439946854,
+       -6.791401220293835
+      ],
+      "spadice_tip": [
+       85.1904219488902,
+       13.459740013930688,
+       10.61678414266476
+      ],
+      "spadice_base": [
+       77.64464961467857,
+       18.760475709935026,
+       10.00171600791
+      ]
+     }
+    }
+   ],
+   "retenu": {
+    "base": [
+     37.416789850192266,
+     42.50172754678905,
+     -4.515055456311757
+    ],
+    "corps": [
+     43.1085072198021,
+     43.6341286809455,
+     -8.599028012027633
+    ],
+    "pointe": [
+     44.948311283207346,
+     42.39141784240816,
+     -7.8497283537393265
+    ],
+    "nervures": [
+     31.031224103374726,
+     45.00492439946854,
+     -6.791401220293835
+    ],
+    "spadice_base": [
+     77.64464961467857,
+     18.760475709935026,
+     10.00171600791
+    ],
+    "spadice_tip": [
+     85.1904219488902,
+     13.459740013930688,
+     10.61678414266476
+    ]
+   },
+   "ecart": {},
+   "sans_photo": []
+  },
+  {
+   "id": "kaleo",
+   "nom": "Kaleo",
+   "skus": [
+    1662
+   ],
+   "marque": "KALEO®",
+   "niveau_provisoire": "C",
+   "niveau_retenu": "C",
+   "groupes": [
+    "obtenteur"
+   ],
+   "n_principal": 1,
+   "photos": [
+    {
+     "idx": 32,
+     "source": "Anthura (obtenteur), fiche produit",
+     "niveau": "N2",
+     "role": "principal",
+     "eclairage": "studio, fond clair, non precise",
+     "url": "https://d3v3mlq4pl7g24.cloudfront.net/dXBkYXRlLW1pbmRjbXMtbmw%3D/66d9c0eac68f7/anthurium-cut-kaleo-purple-208708_100.jpg",
+     "page": "https://anthura.nl/en/products/anthurium-cut/kaleo/",
+     "mes": {
+      "centre": [
+       0.45,
+       0.55
+      ],
+      "rayon": 0.48,
+      "thr": 16,
+      "conf": 1.0,
+      "n_spadice": 242,
+      "base": [
+       49.00197691847295,
+       34.14822084652202,
+       0.7912558165092731
+      ],
+      "corps": [
+       52.09825985699899,
+       33.385899200343296,
+       -3.158505644872256
+      ],
+      "pointe": [
+       51.333328617939046,
+       30.095650963120057,
+       -2.5275098681182495
+      ],
+      "nervures": [
+       32.45244456585927,
+       36.3467770504417,
+       0.6776967571536896
+      ],
+      "spadice_tip": [
+       45.461075911798176,
+       21.436968303612566,
+       27.199336467505788
+      ],
+      "spadice_base": [
+       64.03294248351928,
+       25.60217819743166,
+       5.509743507116049
+      ]
+     }
+    }
+   ],
+   "retenu": {
+    "base": [
+     49.00197691847295,
+     34.14822084652202,
+     0.7912558165092731
+    ],
+    "corps": [
+     52.09825985699899,
+     33.385899200343296,
+     -3.158505644872256
+    ],
+    "pointe": [
+     51.333328617939046,
+     30.095650963120057,
+     -2.5275098681182495
+    ],
+    "nervures": [
+     32.45244456585927,
+     36.3467770504417,
+     0.6776967571536896
+    ],
+    "spadice_base": [
+     64.03294248351928,
+     25.60217819743166,
+     5.509743507116049
+    ],
+    "spadice_tip": [
+     45.461075911798176,
+     21.436968303612566,
+     27.199336467505788
+    ]
+   },
+   "ecart": {},
+   "sans_photo": []
+  },
+  {
+   "id": "maxima-violeta",
+   "nom": "Maxima Violeta",
+   "skus": [
+    1662
+   ],
+   "marque": "MAXIMA® VIOLETA",
+   "niveau_provisoire": "C",
+   "niveau_retenu": "C",
+   "groupes": [
+    "obtenteur"
+   ],
+   "n_principal": 1,
+   "photos": [
+    {
+     "idx": 33,
+     "source": "Anthura (obtenteur), fiche produit",
+     "niveau": "N2",
+     "role": "principal",
+     "eclairage": "studio, fond clair, non precise",
+     "url": "https://d3v3mlq4pl7g24.cloudfront.net/dXBkYXRlLW1pbmRjbXMtbmw%3D/66d905180afcd/anthurium-cut-maxima-violeta-white-200858-1_100.jpg",
+     "page": "https://anthura.nl/en/products/anthurium-cut/maxima-violeta/",
+     "mes": {
+      "centre": [
+       0.48,
+       0.49
+      ],
+      "rayon": 0.42,
+      "thr": 16,
+      "conf": 1.0,
+      "n_spadice": 65,
+      "base": [
+       82.58663397675527,
+       14.43189283227314,
+       3.687595979175262
+      ],
+      "corps": [
+       83.13703531504119,
+       9.300308317268136,
+       5.599705915532915
+      ],
+      "pointe": [
+       81.84419959866793,
+       2.653941731058429,
+       12.297129919295324
+      ],
+      "nervures": [
+       21.456951085192735,
+       19.50975351888279,
+       4.199205735496991
+      ],
+      "spadice_tip": null,
+      "spadice_base": [
+       68.06808250160047,
+       31.480406984478293,
+       0.7597332560919323
+      ]
+     }
+    }
+   ],
+   "retenu": {
+    "base": [
+     82.58663397675527,
+     14.43189283227314,
+     3.687595979175262
+    ],
+    "corps": [
+     83.13703531504119,
+     9.300308317268136,
+     5.599705915532915
+    ],
+    "pointe": [
+     81.84419959866793,
+     2.653941731058429,
+     12.297129919295324
+    ],
+    "nervures": [
+     21.456951085192735,
+     19.50975351888279,
+     4.199205735496991
+    ],
+    "spadice_base": [
+     68.06808250160047,
+     31.480406984478293,
+     0.7597332560919323
+    ]
+   },
+   "ecart": {},
+   "sans_photo": []
+  },
+  {
+   "id": "graciosa",
+   "nom": "Graciosa",
+   "skus": [
+    1663
+   ],
+   "marque": "GRACIOSA®",
+   "niveau_provisoire": "C",
+   "niveau_retenu": "C",
+   "groupes": [
+    "obtenteur"
+   ],
+   "n_principal": 1,
+   "photos": [
+    {
+     "idx": 34,
+     "source": "Anthura (obtenteur), fiche produit",
+     "niveau": "N2",
+     "role": "principal",
+     "eclairage": "studio, fond clair, non precise",
+     "url": "https://d3v3mlq4pl7g24.cloudfront.net/dXBkYXRlLW1pbmRjbXMtbmw%3D/66d8ab1e2ab46/anthurium-cut-graciosa-white-209043-3_100.jpg",
+     "page": "https://anthura.nl/en/products/anthurium-cut/graciosa/",
+     "mes": {
+      "centre": [
+       0.5,
+       0.43
+      ],
+      "rayon": 0.45,
+      "thr": 16,
+      "conf": 1.0,
+      "n_spadice": 72,
+      "base": [
+       88.53369023753183,
+       -1.9536199876742377,
+       21.29116694183405
+      ],
+      "corps": [
+       89.66854909424615,
+       -1.630051062058574,
+       14.876845019232142
+      ],
+      "pointe": [
+       89.95069810864699,
+       -1.3900619233608857,
+       12.209060007995266
+      ],
+      "nervures": [
+       81.90763455203299,
+       -2.1495387447348637,
+       19.056506736509917
+      ],
+      "spadice_tip": [
+       76.94705205215328,
+       -1.7002879172257068,
+       30.798266732898515
+      ],
+      "spadice_base": [
+       78.66163702459944,
+       -6.9543008339773005,
+       37.31750323496219
+      ]
+     }
+    }
+   ],
+   "retenu": {
+    "base": [
+     88.53369023753183,
+     -1.9536199876742377,
+     21.29116694183405
+    ],
+    "corps": [
+     89.66854909424615,
+     -1.630051062058574,
+     14.876845019232142
+    ],
+    "pointe": [
+     89.95069810864699,
+     -1.3900619233608857,
+     12.209060007995266
+    ],
+    "nervures": [
+     81.90763455203299,
+     -2.1495387447348637,
+     19.056506736509917
+    ],
+    "spadice_base": [
+     78.66163702459944,
+     -6.9543008339773005,
+     37.31750323496219
+    ],
+    "spadice_tip": [
+     76.94705205215328,
+     -1.7002879172257068,
+     30.798266732898515
+    ]
+   },
+   "ecart": {},
+   "sans_photo": []
+  },
+  {
+   "id": "moments",
+   "nom": "Moments",
+   "skus": [
+    1663
+   ],
+   "marque": "MOMENTS®",
+   "niveau_provisoire": "C",
+   "niveau_retenu": "C",
+   "groupes": [
+    "obtenteur"
+   ],
+   "n_principal": 1,
+   "photos": [
+    {
+     "idx": 35,
+     "source": "Anthura (obtenteur), fiche produit",
+     "niveau": "N2",
+     "role": "principal",
+     "eclairage": "studio, fond clair, non precise",
+     "url": "https://d3v3mlq4pl7g24.cloudfront.net/dXBkYXRlLW1pbmRjbXMtbmw%3D/66d903c533ce6/anthurium-cut-moments-white-200864-2_100.jpg",
+     "page": "https://anthura.nl/en/products/anthurium-cut/moments/",
+     "mes": {
+      "centre": [
+       0.56,
+       0.53
+      ],
+      "rayon": 0.48,
+      "thr": 16,
+      "conf": 1.0,
+      "n_spadice": 7,
+      "base": [
+       84.2025570968606,
+       -1.5414392588578851,
+       14.935034192859021
+      ],
+      "corps": [
+       85.12867659027215,
+       -1.9597399620548683,
+       13.41151625960082
+      ],
+      "pointe": [
+       83.90025369407545,
+       -1.9922593416195622,
+       10.4861778220113
+      ],
+      "nervures": [
+       79.09446335246503,
+       -1.9114406841955756,
+       13.865208230081016
+      ],
+      "spadice_tip": null,
+      "spadice_base": null
+     }
+    }
+   ],
+   "retenu": {
+    "base": [
+     84.2025570968606,
+     -1.5414392588578851,
+     14.935034192859021
+    ],
+    "corps": [
+     85.12867659027215,
+     -1.9597399620548683,
+     13.41151625960082
+    ],
+    "pointe": [
+     83.90025369407545,
+     -1.9922593416195622,
+     10.4861778220113
+    ],
+    "nervures": [
+     79.09446335246503,
+     -1.9114406841955756,
+     13.865208230081016
+    ]
+   },
+   "ecart": {},
+   "sans_photo": []
+  },
+  {
+   "id": "kaseko",
+   "nom": "Kaseko",
+   "skus": [
+    1664
+   ],
+   "marque": "KASEKO®",
+   "niveau_provisoire": "C",
+   "niveau_retenu": "C",
+   "groupes": [
+    "obtenteur"
+   ],
+   "n_principal": 1,
+   "photos": [
+    {
+     "idx": 36,
+     "source": "Anthura (obtenteur), fiche produit",
+     "niveau": "N2",
+     "role": "principal",
+     "eclairage": "studio, fond clair, non precise",
+     "url": "https://d3v3mlq4pl7g24.cloudfront.net/dXBkYXRlLW1pbmRjbXMtbmw%3D/66d8abb5b8448/anthurium-cut-kaseko-white-208378-4_100.jpg",
+     "page": "https://anthura.nl/en/products/anthurium-cut/kaseko/",
+     "mes": {
+      "centre": [
+       0.5,
+       0.56
+      ],
+      "rayon": 0.43,
+      "thr": 16,
+      "conf": 1.0,
+      "n_spadice": 222,
+      "base": [
+       79.45106486416873,
+       9.317956684877254,
+       37.3766204397396
+      ],
+      "corps": [
+       83.2935113180153,
+       0.887932741035935,
+       38.29048661544168
+      ],
+      "pointe": [
+       79.56981167121054,
+       -1.2711471899278237,
+       36.90519288083878
+      ],
+      "nervures": [
+       71.04732459672672,
+       7.5995758201148895,
+       42.22624722132781
+      ],
+      "spadice_tip": [
+       52.55718219379179,
+       41.44001927495577,
+       28.194571478061153
+      ],
+      "spadice_base": [
+       59.02763578641529,
+       36.455741383734136,
+       34.77111700791063
+      ]
+     }
+    }
+   ],
+   "retenu": {
+    "base": [
+     79.45106486416873,
+     9.317956684877254,
+     37.3766204397396
+    ],
+    "corps": [
+     83.2935113180153,
+     0.887932741035935,
+     38.29048661544168
+    ],
+    "pointe": [
+     79.56981167121054,
+     -1.2711471899278237,
+     36.90519288083878
+    ],
+    "nervures": [
+     71.04732459672672,
+     7.5995758201148895,
+     42.22624722132781
+    ],
+    "spadice_base": [
+     59.02763578641529,
+     36.455741383734136,
+     34.77111700791063
+    ],
+    "spadice_tip": [
+     52.55718219379179,
+     41.44001927495577,
+     28.194571478061153
+    ]
+   },
+   "ecart": {},
+   "sans_photo": []
+  },
+  {
+   "id": "marysia",
+   "nom": "Marysia",
+   "skus": [
+    1664
+   ],
+   "marque": "MARYSIA®",
+   "niveau_provisoire": "C",
+   "niveau_retenu": "C",
+   "groupes": [
+    "obtenteur"
+   ],
+   "n_principal": 1,
+   "photos": [
+    {
+     "idx": 37,
+     "source": "Anthura (obtenteur), fiche produit",
+     "niveau": "N2",
+     "role": "principal",
+     "eclairage": "studio, fond clair, non precise",
+     "url": "https://d3v3mlq4pl7g24.cloudfront.net/dXBkYXRlLW1pbmRjbXMtbmw%3D/66d903d16e81f/anthurium-cut-marysia-yellow-200837-1_100.jpg",
+     "page": "https://anthura.nl/en/products/anthurium-cut/marysia/",
+     "mes": {
+      "centre": [
+       0.49,
+       0.56
+      ],
+      "rayon": 0.45,
+      "thr": 16,
+      "conf": 1.0,
+      "n_spadice": 34,
+      "base": [
+       83.18145404817763,
+       -6.610431631495328,
+       40.86403515599457
+      ],
+      "corps": [
+       84.07415068724293,
+       -9.350953754237057,
+       46.737163666484484
+      ],
+      "pointe": [
+       82.7355076354614,
+       -9.542018465742208,
+       44.529434829414186
+      ],
+      "nervures": [
+       76.37347343424022,
+       -10.486169514287491,
+       51.78860296828751
+      ],
+      "spadice_tip": [
+       91.29160318529341,
+       -2.467642854480201,
+       30.743496480934375
+      ],
+      "spadice_base": null
+     }
+    }
+   ],
+   "retenu": {
+    "base": [
+     83.18145404817763,
+     -6.610431631495328,
+     40.86403515599457
+    ],
+    "corps": [
+     84.07415068724293,
+     -9.350953754237057,
+     46.737163666484484
+    ],
+    "pointe": [
+     82.7355076354614,
+     -9.542018465742208,
+     44.529434829414186
+    ],
+    "nervures": [
+     76.37347343424022,
+     -10.486169514287491,
+     51.78860296828751
+    ],
+    "spadice_tip": [
+     91.29160318529341,
+     -2.467642854480201,
+     30.743496480934375
+    ]
+   },
+   "ecart": {},
+   "sans_photo": []
+  },
+  {
+   "id": "extase",
+   "nom": "Extase",
+   "skus": [
+    1665
+   ],
+   "marque": "EXTASE®",
+   "niveau_provisoire": "C",
+   "niveau_retenu": "C",
+   "groupes": [
+    "obtenteur"
+   ],
+   "n_principal": 1,
+   "photos": [
+    {
+     "idx": 38,
+     "source": "Anthura (obtenteur), fiche produit",
+     "niveau": "N2",
+     "role": "principal",
+     "eclairage": "studio, fond clair, non precise",
+     "url": "https://d3v3mlq4pl7g24.cloudfront.net/dXBkYXRlLW1pbmRjbXMtbmw%3D/66d8a994132fe/anthurium-cut-extase-white-208986-6_100.jpg",
+     "page": "https://anthura.nl/en/products/anthurium-cut/extase/",
+     "mes": {
+      "centre": [
+       0.49,
+       0.6
+      ],
+      "rayon": 0.44,
+      "thr": 16,
+      "conf": 1.0,
+      "n_spadice": 94,
+      "base": [
+       75.6003122277259,
+       -4.746662340990582,
+       24.209810657060515
+      ],
+      "corps": [
+       74.82134746828196,
+       -8.215241953677289,
+       29.7946328039514
+      ],
+      "pointe": [
+       74.33047106714612,
+       -8.46714378743718,
+       29.110038190828426
+      ],
+      "nervures": [
+       62.851180554607126,
+       -11.14081010258322,
+       41.333227480475074
+      ],
+      "spadice_tip": [
+       74.65239351777502,
+       -4.6833865673131525,
+       49.9233475288859
+      ],
+      "spadice_base": [
+       58.34768545019756,
+       -15.492212099514457,
+       51.39638016370384
+      ]
+     }
+    }
+   ],
+   "retenu": {
+    "base": [
+     75.6003122277259,
+     -4.746662340990582,
+     24.209810657060515
+    ],
+    "corps": [
+     74.82134746828196,
+     -8.215241953677289,
+     29.7946328039514
+    ],
+    "pointe": [
+     74.33047106714612,
+     -8.46714378743718,
+     29.110038190828426
+    ],
+    "nervures": [
+     62.851180554607126,
+     -11.14081010258322,
+     41.333227480475074
+    ],
+    "spadice_base": [
+     58.34768545019756,
+     -15.492212099514457,
+     51.39638016370384
+    ],
+    "spadice_tip": [
+     74.65239351777502,
+     -4.6833865673131525,
+     49.9233475288859
+    ]
+   },
+   "ecart": {},
+   "sans_photo": []
+  },
+  {
+   "id": "olivius",
+   "nom": "Olivius",
+   "skus": [
+    1666
+   ],
+   "marque": "OLIVIUS®",
+   "niveau_provisoire": "C",
+   "niveau_retenu": "C",
+   "groupes": [
+    "obtenteur"
+   ],
+   "n_principal": 1,
+   "photos": [
+    {
+     "idx": 39,
+     "source": "Anthura (obtenteur), fiche produit",
+     "niveau": "N2",
+     "role": "principal",
+     "eclairage": "studio, fond clair, non precise",
+     "url": "https://d3v3mlq4pl7g24.cloudfront.net/dXBkYXRlLW1pbmRjbXMtbmw%3D/66d8ab406de57/anthurium-cut-olivius-green-208780-3_100.jpg",
+     "page": "https://anthura.nl/en/products/anthurium-cut/olivius/",
+     "mes": {
+      "centre": [
+       0.52,
+       0.54
+      ],
+      "rayon": 0.46,
+      "thr": 16,
+      "conf": 1.0,
+      "n_spadice": 179,
+      "base": [
+       35.56887486133665,
+       1.5696449497140108,
+       36.95696588287406
+      ],
+      "corps": [
+       36.85052218463424,
+       0.7662039793027708,
+       39.51214104955447
+      ],
+      "pointe": [
+       42.70355153818681,
+       2.312256199885121,
+       40.66557641582638
+      ],
+      "nervures": [
+       28.369917883579937,
+       2.2743906443583874,
+       35.42804977087617
+      ],
+      "spadice_tip": [
+       79.92300594448227,
+       -0.6518342942204991,
+       28.452804121552933
+      ],
+      "spadice_base": [
+       78.89471721508468,
+       1.010329346307931,
+       26.861973973315457
+      ]
+     }
+    }
+   ],
+   "retenu": {
+    "base": [
+     35.56887486133665,
+     1.5696449497140108,
+     36.95696588287406
+    ],
+    "corps": [
+     36.85052218463424,
+     0.7662039793027708,
+     39.51214104955447
+    ],
+    "pointe": [
+     42.70355153818681,
+     2.312256199885121,
+     40.66557641582638
+    ],
+    "nervures": [
+     28.369917883579937,
+     2.2743906443583874,
+     35.42804977087617
+    ],
+    "spadice_base": [
+     78.89471721508468,
+     1.010329346307931,
+     26.861973973315457
+    ],
+    "spadice_tip": [
+     79.92300594448227,
+     -0.6518342942204991,
+     28.452804121552933
+    ]
+   },
+   "ecart": {},
+   "sans_photo": []
+  },
+  {
+   "id": "grand-slam",
+   "nom": "Grand Slam",
+   "skus": [
+    1666
+   ],
+   "marque": "GRAND SLAM®",
+   "niveau_provisoire": "C",
+   "niveau_retenu": "C",
+   "groupes": [
+    "obtenteur"
+   ],
+   "n_principal": 1,
+   "photos": [
+    {
+     "idx": 40,
+     "source": "Anthura (obtenteur), fiche produit",
+     "niveau": "N2",
+     "role": "principal",
+     "eclairage": "studio, fond clair, non precise",
+     "url": "https://d3v3mlq4pl7g24.cloudfront.net/dXBkYXRlLW1pbmRjbXMtbmw%3D/66d8ab91c6fb7/anthurium-cut-grand-slam-green-208311-7_100.jpg",
+     "page": "https://anthura.nl/en/products/anthurium-cut/grand-slam/",
+     "mes": {
+      "centre": [
+       0.48,
+       0.52
+      ],
+      "rayon": 0.48,
+      "thr": 16,
+      "conf": 1.0,
+      "n_spadice": 193,
+      "base": [
+       66.37527464002564,
+       -22.33714569520681,
+       60.20464286368578
+      ],
+      "corps": [
+       64.98241527550417,
+       -24.009344893331065,
+       62.49653069059977
+      ],
+      "pointe": [
+       65.36418207217827,
+       -24.09480899209665,
+       60.10842391468589
+      ],
+      "nervures": [
+       46.95559973098427,
+       -22.374402650490204,
+       49.95417522640653
+      ],
+      "spadice_tip": [
+       82.79948699616905,
+       -8.700383320405681,
+       38.46346992270671
+      ],
+      "spadice_base": [
+       98.34745442089763,
+       -7.549086879779843,
+       20.140483246061635
+      ]
+     }
+    }
+   ],
+   "retenu": {
+    "base": [
+     66.37527464002564,
+     -22.33714569520681,
+     60.20464286368578
+    ],
+    "corps": [
+     64.98241527550417,
+     -24.009344893331065,
+     62.49653069059977
+    ],
+    "pointe": [
+     65.36418207217827,
+     -24.09480899209665,
+     60.10842391468589
+    ],
+    "nervures": [
+     46.95559973098427,
+     -22.374402650490204,
+     49.95417522640653
+    ],
+    "spadice_base": [
+     98.34745442089763,
+     -7.549086879779843,
+     20.140483246061635
+    ],
+    "spadice_tip": [
+     82.79948699616905,
+     -8.700383320405681,
+     38.46346992270671
+    ]
+   },
+   "ecart": {},
+   "sans_photo": []
+  },
+  {
+   "id": "cheers",
+   "nom": "Cheers",
+   "skus": [
+    1661
+   ],
+   "marque": "CHEERS®",
+   "niveau_provisoire": "C",
+   "niveau_retenu": "C",
+   "groupes": [],
+   "n_principal": 0,
+   "photos": [],
+   "retenu": {},
+   "ecart": {},
+   "sans_photo": []
+  },
+  {
+   "id": "mauna-kea",
+   "nom": "Mauna Kea",
+   "skus": [
+    1665
+   ],
+   "marque": null,
+   "niveau_provisoire": "D",
+   "niveau_retenu": "C",
+   "groupes": [],
+   "n_principal": 0,
+   "photos": [],
+   "retenu": {},
+   "ecart": {},
+   "sans_photo": []
+  },
+  {
+   "id": "midori",
+   "nom": "Midori",
+   "skus": [
+    1666
+   ],
+   "marque": null,
+   "niveau_provisoire": "C",
+   "niveau_retenu": "C",
+   "groupes": [],
+   "n_principal": 0,
+   "photos": [
+    {
+     "idx": 41,
+     "source": "Anthurium Hawaii (producteur-vendeur hawaiien), fiche variete",
+     "niveau": "N3",
+     "role": "appoint (approche)",
+     "eclairage": "non precise",
+     "url": "https://anthuriumhi.com/wp-content/uploads/2012/03/midori-anthurium2.jpg",
+     "page": "https://anthuriumhi.com/midori-anthurium/",
+     "mes": {
+      "centre": [
+       0.53,
+       0.79
+      ],
+      "rayon": 0.53,
+      "thr": 40,
+      "conf": 0.05,
+      "n_spadice": 11279,
+      "base": [
+       0.39217776871243615,
+       -0.8011658817792255,
+       0.5726677804664904
+      ],
+      "corps": [
+       0.2741734960237956,
+       -0.13906562257823274,
+       0.3784536093600577
+      ],
+      "pointe": [
+       0.2741734960237956,
+       0.0,
+       0.19414036601554385
+      ],
+      "nervures": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "spadice_tip": [
+       71.7372863130621,
+       -19.020945333121595,
+       41.32559746613378
+      ],
+      "spadice_base": [
+       28.964515073684122,
+       -20.494803988799035,
+       26.395685222408094
+      ]
+     }
+    }
+   ],
+   "retenu": {},
+   "ecart": {},
+   "sans_photo": []
+  }
+ ],
+ "sku": {
+  "1652": {
+   "cultivars": [
+    "tropical",
+    "rambla",
+    "calisto",
+    "ozaki"
+   ],
+   "niveaux": {
+    "tropical": "absent",
+    "rambla": "C",
+    "calisto": "B",
+    "ozaki": "absent"
+   },
+   "niveau": "C",
+   "photos_principales": 3,
+   "photos_appoint": 1,
+   "zones": {
+    "base": "#ca2727",
+    "corps": "#c62c2a",
+    "pointe": "#c62f2f",
+    "nervures": "#b31415",
+    "spadice_base": "#e16f6e",
+    "spadice_tip": "#f2cba6"
+   },
+   "lch": {
+    "base": "74/34°",
+    "corps": "71/34°",
+    "pointe": "69/33°",
+    "nervures": "74/36°",
+    "spadice_base": "49/26°",
+    "spadice_tip": "25/71°"
+   },
+   "ecart_dE_entre_cultivars": {
+    "corps": 22.5,
+    "spadice_base": 26.6,
+    "spadice_tip": 20.6
+   },
+   "v2": {
+    "date": "2026-10-17, vague 3 (regle 3 photos, 2 sources, dE<=10)",
+    "couleur_retenue": "#dd0126",
+    "niveau": "C",
+    "photos": "rambla (Anthura N2, 1 photo utile), calisto (Anthura N2, 1 photo utile) ; dE entre cultivars 29,1",
+    "question": "Troisieme photo neutre de rambla ou calisto (ecart > 10)."
+   }
+  },
+  "1653": {
+   "cultivars": [
+    "cantello",
+    "eterno",
+    "safari",
+    "kaumana"
+   ],
+   "niveaux": {
+    "cantello": "B",
+    "eterno": "B",
+    "safari": "absent",
+    "kaumana": "absent"
+   },
+   "niveau": "B",
+   "photos_principales": 4,
+   "photos_appoint": 0,
+   "zones": {
+    "base": "#c12d2a",
+    "corps": "#c4322f",
+    "pointe": "#bd302f",
+    "nervures": "#9b1b1b",
+    "spadice_base": "#b56b60",
+    "spadice_tip": "#b78064"
+   },
+   "lch": {
+    "base": "69/34°",
+    "corps": "68/33°",
+    "pointe": "65/32°",
+    "nervures": "61/34°",
+    "spadice_base": "34/34°",
+    "spadice_tip": "30/53°"
+   },
+   "ecart_dE_entre_cultivars": {
+    "corps": 21.9,
+    "spadice_base": 57.6,
+    "spadice_tip": 67.3
+   },
+   "v2": {
+    "date": "2026-10-17, vague 3 (regle 3 photos, 2 sources, dE<=10)",
+    "couleur_retenue": "#ca1520",
+    "niveau": "B",
+    "photos": "eterno (Anthura N2 + All Occasions N3, 2 photos) ; cantello (Anthura N2, 1 photo) ; dE max 9,7",
+    "question": "Seconde source pour cantello (gulf.flowers 404) : confirmer."
+   }
+  },
+  "1654": {
+   "cultivars": [
+    "showtime",
+    "black-love",
+    "tropic-night",
+    "nero"
+   ],
+   "niveaux": {
+    "showtime": "C",
+    "black-love": "absent",
+    "tropic-night": "C",
+    "nero": "C"
+   },
+   "niveau": "C",
+   "photos_principales": 2,
+   "photos_appoint": 4,
+   "zones": {
+    "base": "#6b3b3a",
+    "corps": "#572e2d",
+    "pointe": "#512b29",
+    "nervures": "#3a1212",
+    "spadice_base": "#8f5f65",
+    "spadice_tip": "#9c825a"
+   },
+   "lch": {
+    "base": "23/25°",
+    "corps": "21/25°",
+    "pointe": "20/27°",
+    "nervures": "23/27°",
+    "spadice_base": "21/13°",
+    "spadice_tip": "26/81°"
+   },
+   "ecart_dE_entre_cultivars": {
+    "corps": 15.2,
+    "spadice_base": 8.3
+   },
+   "v2": {
+    "date": "2026-10-17, vague 3 (regle 3 photos, 2 sources, dE<=10)",
+    "couleur_retenue": "#503030",
+    "niveau": "C",
+    "photos": "nero (Anthura N2, 1 photo utile) ; showtime et tropic-night sans photo neutre utile",
+    "question": "Deux photos neutres de plus (nero, showtime)."
+   }
+  },
+  "1655": {
+   "cultivars": [
+    "choco",
+    "terrasol",
+    "nero",
+    "terra"
+   ],
+   "niveaux": {
+    "choco": "absent",
+    "terrasol": "C",
+    "nero": "C",
+    "terra": "absent"
+   },
+   "niveau": "C",
+   "photos_principales": 3,
+   "photos_appoint": 1,
+   "zones": {
+    "base": "#ac613f",
+    "corps": "#ac5433",
+    "pointe": "#ae5635",
+    "nervures": "#963a20",
+    "spadice_base": "#da9884",
+    "spadice_tip": "#deb895"
+   },
+   "lch": {
+    "base": "42/50°",
+    "corps": "49/47°",
+    "pointe": "49/46°",
+    "nervures": "51/43°",
+    "spadice_base": "30/43°",
+    "spadice_tip": "24/69°"
+   },
+   "ecart_dE_entre_cultivars": {
+    "corps": 46.5,
+    "spadice_base": 34.3
+   },
+   "v2": {
+    "date": "2026-10-17, vague 3 (regle 3 photos, 2 sources, dE<=10)",
+    "couleur_retenue": "#bd4e1d",
+    "niveau": "C",
+    "photos": "terrasol (Anthura N2, 1 photo utile)",
+    "question": "Deux photos neutres de plus (terrasol, choco ou terra)."
+   }
+  },
+  "1656": {
+   "cultivars": [
+    "terra",
+    "cognac",
+    "terrasol",
+    "cantello"
+   ],
+   "niveaux": {
+    "terra": "absent",
+    "cognac": "absent",
+    "terrasol": "C",
+    "cantello": "B"
+   },
+   "niveau": "C",
+   "photos_principales": 4,
+   "photos_appoint": 0,
+   "zones": {
+    "base": "#b65438",
+    "corps": "#b65036",
+    "pointe": "#af5236",
+    "nervures": "#8d2e1c",
+    "spadice_base": "#a76056",
+    "spadice_tip": "#ab705b"
+   },
+   "lch": {
+    "base": "51/42°",
+    "corps": "53/42°",
+    "pointe": "50/44°",
+    "nervures": "51/40°",
+    "spadice_base": "33/34°",
+    "spadice_tip": "30/45°"
+   },
+   "ecart_dE_entre_cultivars": {
+    "corps": 13.6,
+    "spadice_base": 46.5,
+    "spadice_tip": 57.9
+   },
+   "v2": {
+    "date": "2026-10-17, vague 3 (regle 3 photos, 2 sources, dE<=10)",
+    "couleur_retenue": "#bd4e1d",
+    "niveau": "C",
+    "photos": "terrasol (Anthura N2) ; cantello (Anthura N2) ; dE 15,8",
+    "question": "Troisieme photo ; trancher terrasol (brun-orange) contre cantello (rouge)."
+   }
+  },
+  "1657": {
+   "cultivars": [
+    "naranja",
+    "nitta"
+   ],
+   "niveaux": {
+    "naranja": "C",
+    "nitta": "C"
+   },
+   "niveau": "C",
+   "photos_principales": 0,
+   "photos_appoint": 2,
+   "zones": {
+    "base": "#d82c2d",
+    "corps": "#df3533",
+    "pointe": "#736350",
+    "nervures": "#c41d1c",
+    "spadice_base": "#ceaa91",
+    "spadice_tip": "#e6886c"
+   },
+   "lch": {
+    "base": "77/34°",
+    "corps": "77/34°",
+    "pointe": "14/77°",
+    "nervures": "77/36°",
+    "spadice_base": "20/63°",
+    "spadice_tip": "45/42°"
+   },
+   "ecart_dE_entre_cultivars": {},
+   "v2": {
+    "date": "2026-10-17, vague 3 (regle 3 photos, 2 sources, dE<=10)",
+    "couleur_retenue": null,
+    "niveau": "C",
+    "photos": "aucune photo neutre utilisable (naranja, nitta : fond non neutre ou confiance < 0,9)",
+    "question": "Trouver une photo neutre de naranja ou nitta ; le rouge de la photo Barendsen reste a trancher."
+   }
+  },
+  "1658": {
+   "cultivars": [
+    "kuduro",
+    "farao",
+    "caribo"
+   ],
+   "niveaux": {
+    "kuduro": "C",
+    "farao": "B",
+    "caribo": "B"
+   },
+   "niveau": "C",
+   "photos_principales": 5,
+   "photos_appoint": 2,
+   "zones": {
+    "base": "#f07f75",
+    "corps": "#f0807a",
+    "pointe": "#f18b88",
+    "nervures": "#e26761",
+    "spadice_base": "#efd6cc",
+    "spadice_tip": "#e9c5a3"
+   },
+   "lch": {
+    "base": "49/31°",
+    "corps": "48/28°",
+    "pointe": "43/26°",
+    "nervures": "54/30°",
+    "spadice_base": "11/48°",
+    "spadice_tip": "23/70°"
+   },
+   "ecart_dE_entre_cultivars": {
+    "corps": 25.6,
+    "spadice_base": 17.8,
+    "spadice_tip": 14.1
+   },
+   "v2": {
+    "date": "2026-10-17, vague 3 (regle 3 photos, 2 sources, dE<=10)",
+    "couleur_retenue": "#f47e78",
+    "niveau": "C",
+    "photos": "kuduro, farao, caribo (Anthura N2 ; caribo aussi All Occasions N3) ; dE max 43,5",
+    "question": "Ecart trop grand entre cultivars : demander une troisieme photo par cultivar (kuduro, caribo)."
+   }
+  },
+  "1659": {
+   "cultivars": [
+    "farao",
+    "caribo",
+    "sonate-royal"
+   ],
+   "niveaux": {
+    "farao": "B",
+    "caribo": "B",
+    "sonate-royal": "C"
+   },
+   "niveau": "C",
+   "photos_principales": 4,
+   "photos_appoint": 2,
+   "zones": {
+    "base": "#e56566",
+    "corps": "#e96c70",
+    "pointe": "#e9747a",
+    "nervures": "#d75557",
+    "spadice_base": "#efd6cc",
+    "spadice_tip": "#edcbaa"
+   },
+   "lch": {
+    "base": "55/26°",
+    "corps": "53/24°",
+    "pointe": "49/22°",
+    "nervures": "57/27°",
+    "spadice_base": "11/48°",
+    "spadice_tip": "22/71°"
+   },
+   "ecart_dE_entre_cultivars": {
+    "corps": 19.8,
+    "spadice_base": 17.8,
+    "spadice_tip": 5.5
+   },
+   "v2": {
+    "date": "2026-10-17, vague 3 (regle 3 photos, 2 sources, dE<=10)",
+    "couleur_retenue": "#f47e78",
+    "niveau": "C",
+    "photos": "farao, caribo (memes photos que 1658) ; dE max 43,5",
+    "question": "Meme demande que 1658 ; caribo et farao sont a separer."
+   }
+  },
+  "1660": {
+   "cultivars": [
+    "candy",
+    "sonate-royal",
+    "marian-seefurth"
+   ],
+   "niveaux": {
+    "candy": "B",
+    "sonate-royal": "C",
+    "marian-seefurth": "C"
+   },
+   "niveau": "C",
+   "photos_principales": 2,
+   "photos_appoint": 2,
+   "zones": {
+    "base": "#ea8e9a",
+    "corps": "#eb8c99",
+    "pointe": "#e87d8b",
+    "nervures": "#d26474",
+    "spadice_base": "#903447",
+    "spadice_tip": "#822d42"
+   },
+   "lch": {
+    "base": "37/13°",
+    "corps": "39/13°",
+    "pointe": "44/15°",
+    "nervures": "46/15°",
+    "spadice_base": "42/12°",
+    "spadice_tip": "39/10°"
+   },
+   "ecart_dE_entre_cultivars": {},
+   "v2": {
+    "date": "2026-10-17, vague 3 (regle 3 photos, 2 sources, dE<=10)",
+    "couleur_retenue": "#ee8a97",
+    "niveau": "C",
+    "photos": "candy (Anthura N2 + PetalDriven N3, 2 photos concordantes, dE 1,2)",
+    "question": "Troisieme photo de candy (B possible si elle concorde)."
+   }
+  },
+  "1661": {
+   "cultivars": [
+    "cheers",
+    "candy",
+    "pink-love",
+    "tender-love"
+   ],
+   "niveaux": {
+    "cheers": "C",
+    "candy": "B",
+    "pink-love": "absent",
+    "tender-love": "absent"
+   },
+   "niveau": "C",
+   "photos_principales": 2,
+   "photos_appoint": 0,
+   "zones": {
+    "base": "#ea8e9a",
+    "corps": "#eb8c99",
+    "pointe": "#e87d8b",
+    "nervures": "#d26474",
+    "spadice_base": "#903447",
+    "spadice_tip": "#822d42"
+   },
+   "lch": {
+    "base": "37/13°",
+    "corps": "39/13°",
+    "pointe": "44/15°",
+    "nervures": "46/15°",
+    "spadice_base": "42/12°",
+    "spadice_tip": "39/10°"
+   },
+   "ecart_dE_entre_cultivars": {},
+   "v2": {
+    "date": "2026-10-17, vague 3 (regle 3 photos, 2 sources, dE<=10)",
+    "couleur_retenue": "#ee8a97",
+    "niveau": "C",
+    "photos": "candy (meme photos que 1660)",
+    "question": "Meme demande que 1660."
+   }
+  },
+  "1662": {
+   "cultivars": [
+    "impreza",
+    "kaleo",
+    "maxima-violeta",
+    "lavender-lady"
+   ],
+   "niveaux": {
+    "impreza": "C",
+    "kaleo": "C",
+    "maxima-violeta": "C",
+    "lavender-lady": "absent"
+   },
+   "niveau": "C",
+   "photos_principales": 3,
+   "photos_appoint": 0,
+   "zones": {
+    "base": "#aa5d74",
+    "corps": "#af6683",
+    "pointe": "#a96680",
+    "nervures": "#7b2e49",
+    "spadice_base": "#d6959d",
+    "spadice_tip": "#c8927e"
+   },
+   "lch": {
+    "base": "34/1°",
+    "corps": "34/355°",
+    "pointe": "30/355°",
+    "nervures": "36/1°",
+    "spadice_base": "26/12°",
+    "spadice_tip": "26/47°"
+   },
+   "ecart_dE_entre_cultivars": {
+    "corps": 54.6,
+    "spadice_base": 18.4,
+    "spadice_tip": 43.8
+   },
+   "v2": {
+    "date": "2026-10-17, vague 3 (regle 3 photos, 2 sources, dE<=10)",
+    "couleur_retenue": "#a33c71",
+    "niveau": "C",
+    "photos": "impreza (Anthura N2), kaleo (Anthura N2) ; dE 14,5",
+    "question": "Troisieme photo ; maxima-violeta sans photo utilisable."
+   }
+  },
+  "1663": {
+   "cultivars": [
+    "graciosa",
+    "moments",
+    "acropolis",
+    "ellison-onizuka"
+   ],
+   "niveaux": {
+    "graciosa": "C",
+    "moments": "C",
+    "acropolis": "absent",
+    "ellison-onizuka": "absent"
+   },
+   "niveau": "C",
+   "photos_principales": 2,
+   "photos_appoint": 0,
+   "zones": {
+    "base": "#e3d8b6",
+    "corps": "#e3dbc0",
+    "pointe": "#e0dac4",
+    "nervures": "#d0c8a9",
+    "spadice_base": "#cec57d",
+    "spadice_tip": "#cfbd85"
+   },
+   "lch": {
+    "base": "18/96°",
+    "corps": "14/97°",
+    "pointe": "11/98°",
+    "nervures": "17/97°",
+    "spadice_base": "38/101°",
+    "spadice_tip": "31/93°"
+   },
+   "ecart_dE_entre_cultivars": {
+    "corps": 4.8
+   },
+   "v2": {
+    "date": "2026-10-17, vague 3 (regle 3 photos, 2 sources, dE<=10)",
+    "couleur_retenue": "#eadfc4",
+    "niveau": "C",
+    "photos": "graciosa, moments (Anthura N2) ; dE 4,4 ; spadice non isole",
+    "question": "Seconde source (graciosa ou moments)."
+   }
+  },
+  "1664": {
+   "cultivars": [
+    "kaseko",
+    "anthineo",
+    "marysia"
+   ],
+   "niveaux": {
+    "kaseko": "C",
+    "anthineo": "absent",
+    "marysia": "C"
+   },
+   "niveau": "C",
+   "photos_principales": 2,
+   "photos_appoint": 0,
+   "zones": {
+    "base": "#e5c780",
+    "corps": "#e4d180",
+    "pointe": "#daca7c",
+    "nervures": "#cdb35d",
+    "spadice_base": "#d67253",
+    "spadice_tip": "#e3a27c"
+   },
+   "lch": {
+    "base": "39/88°",
+    "corps": "43/96°",
+    "pointe": "41/98°",
+    "nervures": "47/92°",
+    "spadice_base": "50/44°",
+    "spadice_tip": "35/57°"
+   },
+   "ecart_dE_entre_cultivars": {
+    "corps": 13.3,
+    "spadice_tip": 58.6
+   },
+   "v2": {
+    "date": "2026-10-17, vague 3 (regle 3 photos, 2 sources, dE<=10)",
+    "couleur_retenue": "#eacb85",
+    "niveau": "C",
+    "photos": "kaseko, marysia (Anthura N2) ; dE 14,2",
+    "question": "Troisieme photo."
+   }
+  },
+  "1665": {
+   "cultivars": [
+    "extase",
+    "mauna-kea"
+   ],
+   "niveaux": {
+    "extase": "C",
+    "mauna-kea": "C"
+   },
+   "niveau": "C",
+   "photos_principales": 1,
+   "photos_appoint": 0,
+   "zones": {
+    "base": "#c3bb8e",
+    "corps": "#bdbb81",
+    "pointe": "#bbba81",
+    "nervures": "#9d9c4c",
+    "spadice_base": "#8c922a",
+    "spadice_tip": "#ccb859"
+   },
+   "lch": {
+    "base": "25/101°",
+    "corps": "31/105°",
+    "pointe": "30/106°",
+    "nervures": "43/105°",
+    "spadice_base": "54/107°",
+    "spadice_tip": "50/95°"
+   },
+   "ecart_dE_entre_cultivars": {},
+   "v2": {
+    "date": "2026-10-17, vague 3 (regle 3 photos, 2 sources, dE<=10)",
+    "couleur_retenue": "#c3bd8c",
+    "niveau": "C",
+    "photos": "extase (Anthura N2, 1 photo utile) ; mauna-kea sans photo",
+    "question": "Deux photos de plus (extase, mauna-kea)."
+   }
+  },
+  "1666": {
+   "cultivars": [
+    "olivius",
+    "grand-slam",
+    "midori",
+    "pistache"
+   ],
+   "niveaux": {
+    "olivius": "C",
+    "grand-slam": "C",
+    "midori": "C",
+    "pistache": "absent"
+   },
+   "niveau": "C",
+   "photos_principales": 2,
+   "photos_appoint": 1,
+   "zones": {
+    "base": "#807d1e",
+    "corps": "#7e7d16",
+    "pointe": "#888522",
+    "nervures": "#5c5c07",
+    "spadice_base": "#eadfb2",
+    "spadice_tip": "#d8cb8b"
+   },
+   "lch": {
+    "base": "50/102°",
+    "corps": "52/103°",
+    "pointe": "52/102°",
+    "nervures": "44/103°",
+    "spadice_base": "24/98°",
+    "spadice_tip": "34/98°"
+   },
+   "ecart_dE_entre_cultivars": {
+    "corps": 44.0,
+    "spadice_base": 22.3,
+    "spadice_tip": 13.2
+   },
+   "v2": {
+    "date": "2026-10-17, vague 3 (regle 3 photos, 2 sources, dE<=10)",
+    "couleur_retenue": "#6a5509",
+    "niveau": "C",
+    "photos": "olivius (Anthura N2, 1 photo utile) ; grand-slam : photo a fond non neutre (confiance 0,98 douteuse)",
+    "question": "Photos neutres de olivius et midori."
+   }
+  }
+ },
+ "manquants": [
+  {
+   "lot": 1,
+   "id": "tropical",
+   "skus": [
+    1652
+   ],
+   "marque": null
+  },
+  {
+   "lot": 1,
+   "id": "ozaki",
+   "skus": [
+    1652
+   ],
+   "marque": null
+  },
+  {
+   "lot": 1,
+   "id": "safari",
+   "skus": [
+    1653
+   ],
+   "marque": null
+  },
+  {
+   "lot": 1,
+   "id": "kaumana",
+   "skus": [
+    1653
+   ],
+   "marque": null
+  },
+  {
+   "lot": 1,
+   "id": "black-love",
+   "skus": [
+    1654
+   ],
+   "marque": null
+  },
+  {
+   "lot": 1,
+   "id": "choco",
+   "skus": [
+    1655
+   ],
+   "marque": "Choco®"
+  },
+  {
+   "lot": 1,
+   "id": "terra",
+   "skus": [
+    1655,
+    1656
+   ],
+   "marque": null
+  },
+  {
+   "lot": 1,
+   "id": "cognac",
+   "skus": [
+    1656
+   ],
+   "marque": null
+  },
+  {
+   "lot": 1,
+   "id": "pink-love",
+   "skus": [
+    1661
+   ],
+   "marque": null
+  },
+  {
+   "lot": 1,
+   "id": "tender-love",
+   "skus": [
+    1661
+   ],
+   "marque": null
+  },
+  {
+   "lot": 1,
+   "id": "lavender-lady",
+   "skus": [
+    1662
+   ],
+   "marque": null
+  },
+  {
+   "lot": 1,
+   "id": "acropolis",
+   "skus": [
+    1663
+   ],
+   "marque": null
+  },
+  {
+   "lot": 1,
+   "id": "ellison-onizuka",
+   "skus": [
+    1663
+   ],
+   "marque": null
+  },
+  {
+   "lot": 1,
+   "id": "anthineo",
+   "skus": [
+    1664
+   ],
+   "marque": null
+  },
+  {
+   "lot": 1,
+   "id": "pistache",
+   "skus": [
+    1666
+   ],
+   "marque": "PISTACHE®"
+  },
+  {
+   "lot": 2,
+   "id": "absolute",
+   "skus": [],
+   "marque": "ABSOLUTE®"
+  },
+  {
+   "lot": 2,
+   "id": "cumbia",
+   "skus": [],
+   "marque": "CUMBIA®"
+  },
+  {
+   "lot": 2,
+   "id": "zafira",
+   "skus": [],
+   "marque": "ZAFIRA®"
+  },
+  {
+   "lot": 2,
+   "id": "lucardi",
+   "skus": [],
+   "marque": "LUCARDI®"
+  },
+  {
+   "lot": 2,
+   "id": "tequila",
+   "skus": [],
+   "marque": "TEQUILA®"
+  },
+  {
+   "lot": 2,
+   "id": "red-love",
+   "skus": [],
+   "marque": null
+  },
+  {
+   "lot": 2,
+   "id": "exciting-love",
+   "skus": [],
+   "marque": null
+  },
+  {
+   "lot": 2,
+   "id": "sunny-love",
+   "skus": [],
+   "marque": null
+  },
+  {
+   "lot": 2,
+   "id": "true-love",
+   "skus": [],
+   "marque": null
+  },
+  {
+   "lot": 2,
+   "id": "gentle-love",
+   "skus": [],
+   "marque": null
+  },
+  {
+   "lot": 2,
+   "id": "fresh-love",
+   "skus": [],
+   "marque": null
+  },
+  {
+   "lot": 2,
+   "id": "jennyrijn",
+   "skus": [],
+   "marque": null
+  },
+  {
+   "lot": 2,
+   "id": "kozohara",
+   "skus": [],
+   "marque": null
+  },
+  {
+   "lot": 2,
+   "id": "tropic-lime",
+   "skus": [],
+   "marque": null
+  },
+  {
+   "lot": 2,
+   "id": "new-era",
+   "skus": [],
+   "marque": null
+  },
+  {
+   "lot": 2,
+   "id": "centennial",
+   "skus": [],
+   "marque": null
+  },
+  {
+   "lot": 2,
+   "id": "pumehana",
+   "skus": [],
+   "marque": null
+  },
+  {
+   "lot": 2,
+   "id": "hitomi-gilliam",
+   "skus": [],
+   "marque": null
+  },
+  {
+   "lot": 2,
+   "id": "arena",
+   "skus": [],
+   "marque": "ARENA®"
+  },
+  {
+   "lot": 2,
+   "id": "carisma",
+   "skus": [],
+   "marque": "CARISMA®"
+  }
+ ],
+ "remarques": {
+  "rambla": "Une seule photo neutre (Anthura, N2) ; AIPH = bouquet (appoint, hors médiane). Marque RAMBLA® : ne peut pas entrer au jeu sous ce nom.",
+  "calisto": "Holex (N3) et Anthura (N2) : corps ΔE 18,9 ; spadice ΔE 38,6 : troisième photo demandée. Marque CALISTO®.",
+  "cantello": "Anthura (N2) et gulf (N3) : corps ΔE 19,2 ; spadice ΔE 23,5 : troisième photo demandée. Marque CANTELLO®. Partage le SKU 1656.",
+  "eterno": "Anthura (N2) et All Occasions (N3) concordent (corps ΔE 1,3) ; spadice ΔE 16,5 : troisième photo pour le spadice. Marque ETERNO®.",
+  "nero": "Une seule photo neutre (Anthura, N2) ; APH (carte Anthogether, appoint) hors médiane. Les annonces divergent (brun à presque noir) : la photo donne un bordeaux très sombre. Marque NERO®.",
+  "tropic-night": "Aucune photo neutre : carte APH et visuel de champ Thursd, appoint seulement, approché. Marque Tropic Night®.",
+  "showtime": "Une seule photo neutre (Holex, N3) ; Thursd (étagère, appoint) ; annonces de brun à presque noir. Marque SHOWTIME®.",
+  "terrasol": "Anthura et Anthogether : même famille de l'obtenteur, indépendance non établie, donc C. Corps ΔE 9,6 ; spadice ΔE 13 : troisième photo. Marque TERRASOL®.",
+  "naranja": "Aucune photo neutre. La photo Barendsen (appoint, spathes sur bois) mesure un rouge (base #bb0303), et non l'orange annoncé : à trancher. Marque NARANJA®.",
+  "nitta": "Photo Akatsuka = plante en pot sur feuillage (appoint) : rouge-orangé ; non retenue. Ancien cultivar sans marque.",
+  "kuduro": "Anthura seul (neutre), rose saumon ; Barendsen (spathes sur bois, appoint) hors médiane. Une seconde source indépendante manque. Marque KUDURO®.",
+  "farao": "Anthura (N2) et Holex (N3) concordent (corps ΔE 6,8) ; spadice ΔE 12,9 : troisième photo conseillée. OzExport introuvable (404). Marque FARAO®.",
+  "caribo": "Anthura (N2) et All Occasions (N3) concordent (corps ΔE 0,9) ; spadice ΔE 13,5. Carte OzExport (appoint) hors médiane. Marque CARIBO®.",
+  "sonate-royal": "Seul visuel : couronne florale Thursd (appoint, non mesurée). Fiore et Decorum inaccessibles. Pas de photo de spathe.",
+  "candy": "Anthura (N2) et PetalDriven (N3) concordent (corps ΔE 0,6 ; spadice ΔE 4,1). Nom CANDY® : ne pas utiliser comme nom de coloris.",
+  "marian-seefurth": "Seules sources : photo de serre (appoint) et figure UH non extraite. Non mesurée.",
+  "impreza": "Une seule photo (Anthura, N2) : B impossible sans seconde source. Marque IMPREZA®.",
+  "kaleo": "Une seule photo (Anthura, N2). Marque KALEO®.",
+  "maxima-violeta": "Une seule photo (Anthura, N2). Bicolore : violet sur les bords, crème au centre ; la moyenne ne rend pas le violet des bords. Marque MAXIMA® VIOLETA.",
+  "graciosa": "Une seule photo (Anthura, N2) ; spadice non isolé (même teinte que la spathe). Marque GRACIOSA®.",
+  "moments": "Une seule photo (Anthura, N2) ; spadice non isolé. Marque MOMENTS®.",
+  "kaseko": "Une seule photo (Anthura, N2) ; motif de pointe rouge : la pointe est mesurée sur la photo, pas le motif. Marque KASEKO®.",
+  "marysia": "Une seule photo (Anthura, N2). Marque MARYSIA®.",
+  "extase": "Une seule photo (Anthura, N2), vert pâle à blanc-vert. Marque EXTASE®.",
+  "olivius": "Une seule photo (Anthura, N2) : olive brunâtre mesuré, pas un vert franc ; « vert changeant » à confirmer. Marque OLIVIUS®.",
+  "grand-slam": "Une seule photo (Anthura, N2), vert franc. Marque GRAND SLAM®.",
+  "cheers": "Aucune URL d'image extraite (Anthura et Holex). Non mesurée.",
+  "mauna-kea": "Aucune photo nommée (texte seul), D. Non mesurée.",
+  "midori": "Une seule photo N3 (site Anthurium Hawaii, feuillage sombre) : vert clair, origine non confirmée. C."
+ },
+ "v2_note": "2026-10-17, vague 3 (regle 3 photos, 2 sources, dE<=10) : seul 1653 passe en B. Les 14 autres restent C faute de trois photos concordantes de deux sources."
+}
