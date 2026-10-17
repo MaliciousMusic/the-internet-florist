@@ -47,7 +47,9 @@ EOF
     (cd ws/pub-apres && P=catalogue/serre && git add demo/index.html demo/src $P/pilote-printemps/PLAN.md $P/methode/factures/vague3.md "$@" \
       && git -c user.name=MaliciousMusic -c user.email=noreply@anthropic.com commit -q -m "$MSG" -m "Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>" \
       && git log --oneline -1 && git status --short | grep -v "^??") || exit 1
-    git merge --ff-only "$(git -C ws/pub-apres rev-parse HEAD)" | tail -1 && git log --oneline -1 || { echo "main a bougé : pas d'avance rapide, rien retiré"; exit 1; }
+    if ! git merge --ff-only "$(git -C ws/pub-apres rev-parse HEAD)" > ws/locks/publier/ff.log 2>&1; then
+      tail -5 ws/locks/publier/ff.log; echo "avance rapide refusée (main a bougé, ou un fichier local s'y oppose) : rien retiré, relancer fin"; exit 1; fi
+    git log --oneline -1
     git worktree remove --force ws/pub-avant && git worktree remove --force ws/pub-apres && rm -rf ws/locks/publier && echo "copies retirées, verrou rendu" ;;
   abandon)
     git worktree remove --force ws/pub-avant 2>/dev/null; git worktree remove --force ws/pub-apres 2>/dev/null; rm -rf ws/locks/publier; echo "publication abandonnée" ;;
