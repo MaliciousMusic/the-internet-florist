@@ -57,8 +57,10 @@ const SVROSE_DEF={
     pleat:{n:[3,5],len:[.22,.5],w:.006,a:.22,c:'#24100a',lc:null,la:.2}}};
 /* the faded material: a copy of the colourway's, matte and dry by fan (fanM) */
 function svRoseFanMat(cw,fan,M){const o=Object.assign({},cw),fr=f=>svrC(cw.fr,f),k=fan;
-  o.bk=Array.isArray(cw.bk)?cw.bk.map(([f,x])=>[f,mix(x,mix(fr(f),'#000000',M.bkD),M.bk*k)]):mix(cw.bk,mix(fr(.5),'#000000',M.bkD),M.bk*k);
-  o.lite=mix(cw.lite,fr(.5),M.lt*k);o.blite=mix(cw.blite||cw.lite,fr(.5),M.lt*k);o.bshade=mix(cw.bshade||cw.shade,cw.shade,k);
+  /* bkP < 1: the backs reach the face's colour early in the fading (no pale plates on a red, 3.3) */const kb=M.bkP?Math.pow(k,M.bkP):k;
+  o.bk=Array.isArray(cw.bk)?cw.bk.map(([f,x])=>[f,mix(x,mix(fr(f),'#000000',M.bkD),M.bk*kb)]):mix(cw.bk,mix(fr(.5),'#000000',M.bkD),M.bk*kb);
+  /* ltP < 1: the lights pulled to the tone early too (a white's lit backs no cream plates on the declining head, 3.3) */const kl=M.lt*(M.ltP?Math.pow(k,M.ltP):k);
+  o.lite=mix(cw.lite,fr(.5),kl);o.blite=mix(cw.blite||cw.lite,fr(.5),kl);o.bshade=mix(cw.bshade||cw.shade,cw.shade,k);
   o.edge=mix(cw.edge||cw.shade,M.edge,M.edgeK*k);o.brim=mix(cw.brim||cw.rim,cw.rim,k);return o}
 /* the section of a piece at u (-1..1): [across, lift toward the axis] for half width hw, arc half angle 2cf, the margin rolled back by rl
    (radians at the edge) past ru: the arc in closed form, then the rolled part integrated */
@@ -70,7 +72,8 @@ function svRoseSec(u,hw,cf,rl,ru){const s=Math.abs(u),sg=u<0?-1:1,k=2*cf,arc=t=>
    limp,bud,Hb,sc,wrap,top,t (genes), wp (an outline by length instead of claw and round top), lob ([[v, side, amp]...] appendages)} */
 function svRoseSurf(P,B,R0,q){const t=q.t,rad=[Math.cos(q.phi),Math.sin(q.phi),0],T=[-Math.sin(q.phi),Math.cos(q.phi),0],ns=DET>=1.5?16:12,sp=[],dv=[],
     dn0=[0,-1,0],dnL=[V3.dot(B[0],dn0),V3.dot(B[1],dn0),V3.dot(B[2],dn0)];
-  let p=[rad[0]*q.r0,rad[1]*q.r0,q.z0];
+  /* (q.cx, q.cy: a centre of its own off the axis, a quarter's, y3-rose2.js) */
+  const qx=q.cx||0,qy=q.cy||0;let p=[rad[0]*q.r0+qx,rad[1]*q.r0+qy,q.z0];
   for(let j=0;j<=ns;j++){const v=j/ns,a=q.a0+(q.a1-q.a0)*Math.pow(v,P.aPow)+q.curl*svSm((v-.6)/.4);let d=[rad[0]*Math.sin(a),rad[1]*Math.sin(a),Math.cos(a)];
     if(q.limp>0){const hk=Math.min(.94,q.limp*Math.pow(v,.5)*(.55+.45*(t.hang||1)));let dn=dnL,c=V3.dot(d,dn);if(c<-.25){dn=V3.nz(V3.add(dnL,[0,0,1.5]));c=V3.dot(d,dn)}
       const an=Math.acos(Math.max(-1,Math.min(1,c)));if(an>1e-3){const s0=Math.sin(an);d=V3.nz(V3.add(V3.sc(d,Math.sin((1-hk)*an)/s0),V3.sc(dn,Math.sin(hk*an)/s0)))}}
@@ -82,7 +85,7 @@ function svRoseSurf(P,B,R0,q){const t=q.t,rad=[Math.cos(q.phi),Math.sin(q.phi),0
     tp=(t.tip||2.4)*(q.tipK||1),Lu=u=>q.wp?1:vb+(1-vb)*Math.pow(Math.max(0,1-Math.pow(Math.abs(u),tp)),1/tp)-nt*Math.max(0,1-Math.abs(u)/.22);
   return(u,v)=>{const vv=v*Lu(u),c=at(sp,vv),d=V3.nz(at(dv,vv)),nrm=V3.cr(d,T),ca=Math.cos(q.tw*vv),sa=Math.sin(q.tw*vv),A=V3.add(V3.sc(T,ca),V3.sc(nrm,sa)),
       hw=half(vv,u)*(1+(t.asym||0)*Math.sign(u)),cf0=q.cup*(.2+.8*svSm(vv/.45)),
-      cf=q.conc>0?cf0+(Math.min(P.concK,hw/Math.max(R0*.03,Math.hypot(c[0],c[1])))/2-cf0)*q.conc:cf0,rl=q.roll*svSm((vv-P.rv)/(1-P.rv)),[tx,ly]=svRoseSec(u,hw,cf,rl,P.ru*(1-(P.ruTip||0)*svSm((vv-.65)/.35))),
+      cf=q.conc>0?cf0+(Math.min(P.concK,hw/Math.max(R0*.03,Math.hypot(c[0]-qx,c[1]-qy)))/2-cf0)*q.conc:cf0,rl=q.roll*svSm((vv-P.rv)/(1-P.rv)),[tx,ly]=svRoseSec(u,hw,cf,rl,P.ru*(1-(P.ruTip||0)*svSm((vv-.65)/.35))),
       lift=ly+P.lap*u*hw*svSm(vv/.3)+q.wav*hw*Math.pow(Math.abs(u),1.5)*Math.sin((t.wk||2)*Math.PI*vv+(t.wph||0)+u*.8)*svSm(vv/.35)
         -q.rev*hw*Math.pow(Math.abs(u),4)+q.crk*hw*Math.sin(u*Math.PI*(2.2+(t.wk||2)*.4)+(t.wph||0)*2+vv*5)*svSm(vv/.25),
       Pt=V3.add(V3.add(c,V3.sc(A,tx)),V3.sc(nrm,lift));if(!(q.bud>0))return Pt;
@@ -91,7 +94,7 @@ function svRoseSurf(P,B,R0,q){const t=q.t,rad=[Math.cos(q.phi),Math.sin(q.phi),0
       th=q.phi+u*q.wrap*(.5+.5*svSm(ve/.35))+(q.twb||0)*Math.max(0,ve-.7),zb=q.z0*.3+q.Hb*q.sc*ve-R0*.05;
     return V3.add(V3.sc(Pt,1-q.bud),V3.sc([Math.cos(th)*rr,Math.sin(th)*rr,zb],q.bud))}}
 /* the colourway's margin band and flames, laid on each run of petals over their tone (svrDraw's run hook) */
-function svRoseRun(cw,Dm,tol,fan,items,hs,FM){const band=cw.band,fl=cw.flames,dry=fan>.02?{c:h2l(svrC(cw.fr,.5))[2]>.62?'#7a5432':'#3a2414',w:.03+.09*fan,op:Math.min(.7,.2+.5*fan),b:FM?.008+(FM.dryB-.008)*fan:.008}:null;if(!band&&!fl&&!dry)return null;
+function svRoseRun(cw,Dm,tol,fan,items,hs,FM){const band=cw.band,fl=cw.flames,dry=fan>.02?{c:h2l(svrC(cw.fr,.5))[2]>.62?'#7a5432':'#3a2414',w:(.03+.09*fan)*(FM&&FM.dryW||1),op:Math.min(.7,.2+.5*fan),b:FM?.008+(FM.dryB-.008)*fan:.008}:null;if(!band&&!fl&&!dry)return null;
   /* the distance to the outline at grid (u, v), as a share of the petal's length: to the top (the outline's length Lu at u) or to a side (the half
      width by height: the claw, then the broad top), so that a margin keeps one width all round, on the rolled part too */
   const eD=(u,v)=>{const au=Math.abs(u),Lu=.66+.34*Math.pow(Math.max(0,1-Math.pow(au,2.4)),1/2.4),l=v*Lu;return Math.min((1-v)*Lu,(1-au)*.5*(.3+.7*Math.sin(Math.PI/2*Math.min(1,l/.66))))},
@@ -163,7 +166,10 @@ function svRose(par,B,O,D,S,cwx,op,seed,wl,bent){const P=S._r||(S._r=Object.assi
     oOf=f=>svSm((op+(g.op||0)-(ol[0]+ol[1]*f))/ol[2])*(1-ol[3]*Math.pow(f,1.5)),
     dA=q=>toV(B0,V3.add(V3.sc([Math.cos(q.phi),Math.sin(q.phi),0],Math.sin(q.a1)),[0,0,Math.cos(q.a1)]))[1]*-1;
   const piece=(q,grp,mt,f,o2)=>{const S0=svRoseSurf(P,B0,R0,q),v0=grp==='p'?svrT(P.vTrim,f):0;
-    const it=svrItem(P,B,O,v0>0?(u,v)=>S0(u,v0+(1-v0)*v):S0,mt,f,grp,Object.assign({shift:sh0,gt,tol,face:P.budFace>0&&bud>=P.budFace},o2||{}));if(it)items.push(it);return it};
+    /* fanVar: each faded petal its own brown (three classes, a hash of the petal: darker, browner, nearly its own), the strength varying with it (6.6) */
+    const vh=P.fanVar&&fan>.05&&grp==='p'?pxHashS(Math.round(q.phi*1000),71,g.sd||1):null,
+      shv=vh==null?sh0:c=>sh0(mix(c,vh<.34?'#2a140c':vh<.67?'#7a4a2a':'#5a3a26',P.fanVar*fan*(vh<.67?.25+.5*((vh*3)%1):.08+.15*((vh*3)%1))));
+    const it=svrItem(P,B,O,v0>0?(u,v)=>S0(u,v0+(1-v0)*v):S0,mt,f,grp,Object.assign({shift:shv,gt,tol,face:P.budFace>0&&bud>=P.budFace},o2||{}));if(it)items.push(it);return it};
   const FM=fan>.01&&P.fanM?P.fanM:null,fmt=FM?svRoseFanMat(cw,fan,FM):cw,
     /* the faded shape (fanM.curl: the hanging petals' tips flared back) on sheets only: in a bouquet (noTip) the head keeps its v2 measure (c5) */
     fG=FM&&(!P.noTip||(typeof SVA_LIFE!=='undefined'&&SVA_LIFE!=null))?1:0;
@@ -183,7 +189,9 @@ function svRose(par,B,O,D,S,cwx,op,seed,wl,bent){const P=S._r||(S._r=Object.assi
        loosened as the head declines and fades */
     {const cb=P.coneB?svrT(P.coneB,f)*(1-svSm(dec/.7))*(1-fan):0;if(cb>q.bud)q.bud=cb}
     q.a1+=(P.sag[0]+P.sag[1]*o+P.sag[2]*dec)*(1-bud)*Math.max(0,dA(q))*(1-f);q.a0+=P.peel[0]*peel;q.a1+=P.peel[1]*peel;q.a1-=P.fanIn*fan*svSm((f-.45)/.35);
-    piece(q,'p',fmt,f)}
+    /* qmod (a sort's hook, y3-rose2.js): the petal reshaped before it is drawn (quarters, a button eye); none on the hybrid tea */
+    if(P.qmod)P.qmod(q,{i,f,o,op,g,bud,dec,fan,R0,N});
+    if(!q.skip)piece(q,'p',fmt,f)}
   /* the calyx: five sepals clasping the bud, parting, then turned down under the flower; yellowing as it fades */
   const SP=P.sep;if(SP&&!SVR_OFF.includes('sep')){const so=svSm((op-SP.open[0])/SP.open[1]),sm=cw.sep,smt=fan>0||dec>0?Object.assign({},sm,{fr:mix(mix(sm.fr,sm.yel||'#a89a58',Math.min(1,.4*dec+.5*fan)),'#5a4026',.75*fan),bk:mix(mix(sm.bk,sm.yel||'#a89a58',Math.min(1,.35*dec+.5*fan)),'#4a3420',.8*fan)}):sm;
     for(let i=0;i<SP.n;i++){const t=g.sep?g.sep[i]:g.tep[i%N],phi=g.rot+(i+.5)/SP.n*6.2832+(t.dph||0)*.5,nl=SP.lob[(i+(g.sl||0))%SP.n],lob=[];
@@ -219,8 +227,8 @@ function svRose(par,B,O,D,S,cwx,op,seed,wl,bent){const P=S._r||(S._r=Object.assi
     /* the furled heart beyond band.f shows little but its margins, in broken slivers between its neighbours: no band there, the colour of
        the margins goes into the tone instead (the heart of a picotee reads flushed with it, on the photographs) */
     if(!LOD&&cw.band&&cw.band.hk&&it.f>cw.band.f)it.tone=mix(it.tone,cw.band.c,cw.band.hk*svSm((it.f-cw.band.f)/.2))}}
-  const fx=FM?{wclip:1,pedge:1,wbK:(1-.3*fan)*(1-FM.wb*fan),ewK:1+(FM.ew-1)*fan,daK:1-FM.da*fan,rimK:1-FM.rimW*fan,edgeA:P.edgeA+(FM.ea-P.edgeA)*fan,shK:1-FM.sh*fan,
-    pleat:FM.pleat?Object.assign({},FM.pleat,{a:FM.pleat.a*fan,la:FM.pleat.la*fan,lc:FM.pleat.lc||fmt.lite}):null}:{wbK:1-.3*fan};
+  const fx=FM?{wclip:1,pedge:1,lclip:FM.lclip&&hi?1:0,wbK:(1-.3*fan)*(1-FM.wb*fan),ewK:1+(FM.ew-1)*fan,daK:1-FM.da*fan,rimK:1-FM.rimW*fan,edgeA:P.edgeA+(FM.ea-P.edgeA)*fan,shK:1-(hi||FM.shLo==null?FM.sh:FM.shLo)*fan,
+    pleat:FM.pleat?Object.assign({},FM.pleat,{a:FM.pleat.a*fan,la:FM.pleat.la*fan*(hi||FM.pleat.laLo==null?1:FM.pleat.laLo),lc:FM.pleat.lc||fmt.lite,c:FM.pleat.c||fmt.shade}):null}:{wbK:1-.3*fan};
   return svrDraw(par,items,P,cw,Dm,tol,Object.assign({patchLate:1,zvis:1,dec,fan,core,bud,sepLay:P.sepLay>0&&bud>=P.sepLay,run:svRoseRun(cw,Dm,tol,fan,items,g.sd||Math.round(seed)||1,FM)},fx))}
 /* ---------- the compound leaf: from its node (x, y on the screen, angle ang, length len), a petiole with its stipules, the rachis arching under its
    weight, n leaflets (pairs, the lowest smaller, and the terminal one), each ovate, double-toothed, folded on its midrib, its upper face darker and
@@ -228,14 +236,14 @@ function svRose(par,B,O,D,S,cwx,op,seed,wl,bent){const P=S._r||(S._r=Object.assi
    o: {n (3, 5, 7), wl, sd, side (the face: + upper, - under, 0..1 how much), ar (leaflet length / width), cols {up, upL, upD, low, lowL, vein, rach, stip}} */
 const SVROSE_LEAF={n:5,ar:1.6,tooth:[13,.085],pet:.22,stip:.2,spread:58,droop:.35,fold:.32,arch:.18,face:.55,
   up:'#2f5428',upL:'#5f8a46',upD:'#1a3214',low:'#7d9a66',lowL:'#a9bf92',vein:'#8fb07a',veinLow:'#c7d6b4',rach:'#4a6a30',stip:'#6e8a4a',edge:'#7a5a30',red:'#7a3a2a'};
-function svRoseLeaf(par,x,y,ang,len,o={}){const P=Object.assign({},SVROSE_LEAF,o),r=svRng(P.sd||1),wl=P.wl||0,hi=DET>=1.5,k=G(par),fan=svSm((wl-.4)/.45),
+function svRoseLeaf(par,x,y,ang,len,o={}){const P=Object.assign({},SVROSE_LEAF,o),r=svRng(P.sd||1),wl=P.wl||0,hi=DET>=1.5,lean=P.lean&&!hi,k=G(par),fan=svSm((wl-.4)/.45),
     np=(P.n-1)>>1,droop=P.droop+.5*fan,fold=P.fold+.35*fan,Lt=len,pl=Lt*P.pet,ra=Lt*.55,lightV=V3.nz([LIGHT[0],LIGHT[1],LIGHT[2]||.6]);
   /* the leaf's frame on the screen (y down): forward H, its normal N (in the screen), and z toward the viewer; the face turned by side */
   const H=[Math.cos(ang),Math.sin(ang)],Nn=[-H[1],H[0]],sideK=P.side==null?.6:P.side,S2=p=>[x+p[0],y+p[1]];
   /* a 3D point in the leaf's frame (a along H, b along N, c toward the viewer) to the screen, with the rachis's arch and droop (toward +y) */
   const scr=(a,b)=>{const dy=droop*Lt*Math.pow(Math.max(0,a/Lt),2)*.6;return S2([H[0]*a+Nn[0]*b,H[1]*a+Nn[1]*b+dy])},
     rach=t=>scr(pl+ra*t,Lt*P.arch*Math.sin(Math.PI*t)*.15);
-  const items=[];
+  const items=[],lsh={d:'',c:null};
   /* the petiole and rachis (one stroke), the stipules (two narrow wings at its foot) */
   {const pts=[S2([0,0])];for(let i=0;i<=8;i++)pts.push(rach(i/8));items.push({z:-1,draw:g=>{E('path',{d:svQuad(pts),fill:'none',stroke:mix(P.rach,P.red,.25),'stroke-width':svF(Math.max(.25,Lt*.016)),'stroke-linecap':'round'},g)}});
     /* the stipules: a broad wing fused to the petiole's foot on both sides, ending in two free pointed auricles that diverge (photos 1031, 1032) */
@@ -245,9 +253,10 @@ function svRoseLeaf(par,x,y,ang,len,o={}){const P=Object.assign({},SVROSE_LEAF,o
       items.push({z:-.5,draw:g=>{E('path',{d:svSpl(sl),fill:P.stip,stroke:P.upD,'stroke-width':svF(Lt*.004),'stroke-opacity':.55,'stroke-linejoin':'round'},g);
         E('path',{d:`M${svF(ve[0][0])},${svF(ve[0][1])}L${svF(ve[1][0])},${svF(ve[1][1])}M${svF(ve[2][0])},${svF(ve[2][1])}L${svF(ve[3][0])},${svF(ve[3][1])}M${svF(vm[0][0])},${svF(vm[0][1])}L${svF(vm[1][0])},${svF(vm[1][1])}`,fill:'none',stroke:P.upD,'stroke-width':svF(Lt*.003),'stroke-opacity':.35},g)}})}
     /* fine prickles under the petiole and rachis: small hooks bent toward the leaf's foot */
+    /* o.lean (below DET 1.5): no prickles under the rachis (their chance still drawn), fewer and single teeth, no gloss stroke on the blade */
     {let d='';const pw=Lt*.007,ph=Lt*.024;for(let i=0;i<5;i++){const a=pl*.9+ra*(i*.19+.06*r()),sd=i%2?1:.6,b0=scr(a-pw,0),b1=scr(a+pw,0),tp=scr(a-ph*.55,ph*sd),c=scr(a+pw*.2,ph*sd*.45);
         d+=`M${svF(b0[0])},${svF(b0[1])}Q${svF(c[0])},${svF(c[1])} ${svF(tp[0])},${svF(tp[1])}L${svF(b1[0])},${svF(b1[1])}Z`}
-      items.push({z:-.4,draw:g=>{E('path',{d,fill:mix(P.rach,P.red,.55),stroke:'none'},g)}})}}
+      if(!lean)items.push({z:-.4,draw:g=>{E('path',{d,fill:mix(P.rach,P.red,.55),stroke:'none'},g)}})}}
   /* each leaflet: its foot on the rachis, its axis (2D), its size; the blade as two halves around the midrib, folded (the half away from the light
      darker), the margin with forward teeth (doubled in close-up) */
   const lfs=[];for(let i=0;i<np;i++){const t=(i+.55)/(np+.4),q=i/Math.max(1,np-1);for(const s of[-1,1])lfs.push({t,s,sz:(.72+.28*q)*(.92+.16*r()),an:(P.spread-10*q+r.in(-8,8))*Math.PI/180})}
@@ -256,7 +265,7 @@ function svRoseLeaf(par,x,y,ang,len,o={}){const P=Object.assign({},SVROSE_LEAF,o
   for(const lf of lfs){const p0=rach(lf.t),ah=ang+(lf.s===0?lf.an:lf.s*lf.an)+droop*.5*(lf.s===0?0:1)*Math.sign(Math.cos(ang))*.3,ax=[Math.cos(ah),Math.sin(ah)],nx=[-ax[1],ax[0]],
       L=Lf*lf.sz*(1-.08*fan),Wh=L/P.ar/2*(1-.25*fan),dr=droop*(.5+.5*r())+(lf.s?.15:0),tw=sideK*(lf.s||1)*(.6+.4*r());
     /* the half-width along the blade (ovate: broadest a third up, acute tip, rounded foot) */
-    const hwf=s=>Math.pow(Math.sin(Math.PI*Math.min(1,.12+.88*Math.pow(s,.85))),.7)*(1-.2*s),M=hi?96:40,nT=Math.round(P.tooth[0]*(hi?1:.7)),
+    const hwf=s=>Math.pow(Math.sin(Math.PI*Math.min(1,.12+.88*Math.pow(s,.85))),.7)*(1-.2*s),M=hi?96:40,nT=Math.round(P.tooth[0]*(hi?1:lean?P.lean:.7)),
       pt=(s,b)=>{const a=s*L,dy=dr*L*s*s*.5,wd=b*Wh*(1-.35*fold*Math.abs(b))*(b<0?1-tw*.15:1);return[p0[0]+ax[0]*a+nx[0]*wd,p0[1]+ax[1]*a+nx[1]*wd+dy-fold*Math.abs(b)*Wh*.25]};
     const am=P.tooth[1]*(hi?1:.8),k0=Math.ceil(.08*nT),k1=Math.floor(.95*nT),half=sg=>{const out=[],tp=(s,a)=>out.push(pt(s,sg*(hwf(s)+a)));
         for(let m=0;m<=5;m++)tp(k0/nT*m/5,0);
@@ -266,25 +275,27 @@ function svRoseLeaf(par,x,y,ang,len,o={}){const P=Object.assign({},SVROSE_LEAF,o
     /* which face shows: the leaf's own (side) and the fold */
     const up=(lf.s===0?sideK:sideK*(lf.s>0?1:.7))>=0,lk=V3.dot([nx[0],-nx[1],.6],lightV),cU=up?P.up:P.low,cL=up?P.upL:P.lowL,cD=up?P.upD:mix(P.low,P.upD,.45);
     const z=lf.t*.8+(lf.s===0?.5:0)+lf.s*.01*Math.sign(Math.sin(ang));
-    items.push({z,draw:g=>{E('path',{d:'M'+blade.map(p=>svF(p[0])+','+svF(p[1])).join('L')+'Z',fill:mix(cU,cL,.2+.2*Math.max(0,lk)),stroke:mix(cD,P.edge,fan*.6),'stroke-width':svF(Math.max(.15,Lt*.004)),'stroke-opacity':.6,'stroke-linejoin':'miter'},g);
-      const sh=(lk>0?Bh:A).concat(mid.slice().reverse());E('path',{d:svSpl(svSimp(sh,.08)),fill:cD,'fill-opacity':.32+.15*fold},g);
-      if(up)E('path',{d:svQuad(A.slice(Math.round(A.length*.15),Math.round(A.length*.7)).map((p,i,arr)=>{const m=mid[Math.min(6,Math.round(i/arr.length*6))];return[p[0]*.55+m[0]*.45,p[1]*.55+m[1]*.45]})),fill:'none',stroke:cL,'stroke-width':svF(Lt*.02),'stroke-opacity':.28,'stroke-linecap':'round'},g);
+    items.push({z,draw:g=>{E('path',{d:'M'+(lean?svSimp(blade,Lt*.005):blade).map(p=>svF(p[0])+','+svF(p[1])).join('L')+'Z',fill:mix(cU,cL,.2+.2*Math.max(0,lk)),stroke:mix(cD,P.edge,fan*.6),'stroke-width':svF(Math.max(.15,Lt*.004)),'stroke-opacity':.6,'stroke-linejoin':'miter'},g);
+      const sh=(lk>0?Bh:A).concat(mid.slice().reverse());if(lean){lsh.d+=svSpl(svSimp(sh,.15));lsh.c=cD}else E('path',{d:svSpl(svSimp(sh,.08)),fill:cD,'fill-opacity':.32+.15*fold},g);
+      if(up&&!lean)E('path',{d:svQuad(A.slice(Math.round(A.length*.15),Math.round(A.length*.7)).map((p,i,arr)=>{const m=mid[Math.min(6,Math.round(i/arr.length*6))];return[p[0]*.55+m[0]*.45,p[1]*.55+m[1]*.45]})),fill:'none',stroke:cL,'stroke-width':svF(Lt*.02),'stroke-opacity':.28,'stroke-linecap':'round'},g);
       let dv=svQuad(mid);if(hi){const nv2=Math.min(8,nT-2);for(let m=0;m<nv2;m++){const se=(Math.round(1+m*(nT-3)/Math.max(1,nv2-1))+.9)/nT,s0=Math.max(.04,se-.2),a=pt(s0,0);
         for(const sg of[-1,1]){const b=pt(se,sg*(hwf(se)+am*.7)),c=pt(s0+.08,sg*hwf(s0+.08)*.6);dv+=`M${svF(a[0])},${svF(a[1])}Q${svF(c[0])},${svF(c[1])} ${svF(b[0])},${svF(b[1])}`}}}
-      E('path',{d:dv,fill:'none',stroke:up?P.vein:P.veinLow,'stroke-width':svF(Lt*(hi?.004:.006)),'stroke-opacity':up?.2:.36,'stroke-linecap':'round'},g)}})}
-  items.sort((a,b)=>a.z-b.z);for(const it of items)it.draw(k);return k}
+      if(!lean)E('path',{d:dv,fill:'none',stroke:up?P.vein:P.veinLow,'stroke-width':svF(Lt*(hi?.004:.006)),'stroke-opacity':up?.2:.36,'stroke-linecap':'round'},g)}})}
+  /* lean: the shaded halves of all the leaflets in one wash laid over the blades */
+  items.sort((a,b)=>a.z-b.z);for(const it of items)it.draw(k);if(lsh.d)E('path',{d:lsh.d,fill:lsh.c,'fill-opacity':.32+.15*fold},k);return k}
 /* ---------- the stem's prickles (svStemLine post hook): a gene per stem decides a thorny stem or a dethorned one (florists strip them: pale
    scars remain); prickles broad-based, hooked toward the foot, reddish brown, set on the silhouette alternately, sparser close to the head.
    o: {p (share of thorny stems), step (x width), len (x width), col [body, tip], scar} */
 function svRoseThorns(o={}){const P=Object.assign({p:.5,step:[5,9],len:.95,col:['#6e7a3c','#8a3a26'],scar:'#b9b48a',scarE:'#7d7a52'},o);
-  return(g,cg,C,Wd,N,T,W0)=>{const n=C.length;if(n<3||LOD)return;const sd=Math.round(C[0][0]*7+C[0][1]*13),thorny=pxHashS(sd,7,11)<P.p;let acc=0,k=0,d='',ds='',next=W0*P.step[0];
-    for(let i=1;i<n-1;i++){acc+=Math.hypot(C[i][0]-C[i-1][0],C[i][1]-C[i-1][1]);if(acc<next)continue;acc=0;k++;next=W0*(P.step[0]+(P.step[1]-P.step[0])*pxHashS(k,3,sd));
+  return(g,cg,C,Wd,N,T,W0)=>{const n=C.length;if(n<3||LOD)return;const sd=Math.round(C[0][0]*7+C[0][1]*13),thorny=pxHashS(sd,7,11)<P.p,lean=P.lean&&DET<1.5,sk=lean?P.lean:1;let acc=0,k=0,d='',ds='',next=W0*P.step[0]*sk;
+    for(let i=1;i<n-1;i++){acc+=Math.hypot(C[i][0]-C[i-1][0],C[i][1]-C[i-1][1]);if(acc<next)continue;acc=0;k++;next=W0*(P.step[0]+(P.step[1]-P.step[0])*pxHashS(k,3,sd))*sk;
       const w=Wd[i]/2,s=pxHashS(k,5,sd)<.5?1:-1,h=pxHashS(k,9,sd);
       if(thorny){const L=W0*P.len*(.7+.6*h),b=W0*(.55+.3*h),bx=C[i][0]+N[i][0]*w*s*.92,by=C[i][1]+N[i][1]*w*s*.92,
           a0=[bx-T[i][0]*b*.5,by-T[i][1]*b*.5],a1=[bx+T[i][0]*b*.5,by+T[i][1]*b*.5],tp=[bx+N[i][0]*s*L-T[i][0]*L*.55,by+N[i][1]*s*L-T[i][1]*L*.55];
         d+=`M${svF(a1[0])},${svF(a1[1])}Q${svF(bx+N[i][0]*s*L*.35+T[i][0]*b*.1)},${svF(by+N[i][1]*s*L*.35+T[i][1]*b*.1)} ${svF(tp[0])},${svF(tp[1])}Q${svF(bx+N[i][0]*s*L*.25-T[i][0]*b*.45)},${svF(by+N[i][1]*s*L*.25-T[i][1]*b*.45)} ${svF(a0[0])},${svF(a0[1])}Z`}
       else if(h<.75){const o2=(pxHashS(k,13,sd)*2-1)*.75*w,cx=C[i][0]+N[i][0]*o2,cy=C[i][1]+N[i][1]*o2,rl=W0*.2,rw=W0*.11,an=Math.atan2(T[i][1],T[i][0])*180/Math.PI;
         ds+=`M${svF(cx-T[i][0]*rl)},${svF(cy-T[i][1]*rl)}A${svF(rl)},${svF(rw)} ${svF(an)} 1,0 ${svF(cx+T[i][0]*rl)},${svF(cy+T[i][1]*rl)}A${svF(rl)},${svF(rw)} ${svF(an)} 1,0 ${svF(cx-T[i][0]*rl)},${svF(cy-T[i][1]*rl)}Z`}}
-    if(d){const id='rt'+(gid++),gr=E('linearGradient',{id,x1:0,y1:1,x2:1,y2:0},GDEF||defs);stops(gr,[[0,P.col[0]],[.55,mix(P.col[0],P.col[1],.6)],[1,P.col[1]]]);
+    if(d&&lean)E('path',{d,fill:mix(P.col[0],P.col[1],.55),stroke:mix(P.col[1],'#2a1408',.5),'stroke-width':svF(W0*.03),'stroke-opacity':.6},g);
+    else if(d){const id='rt'+(gid++),gr=E('linearGradient',{id,x1:0,y1:1,x2:1,y2:0},GDEF||defs);stops(gr,[[0,P.col[0]],[.55,mix(P.col[0],P.col[1],.6)],[1,P.col[1]]]);
       E('path',{d,fill:`url(#${id})`,stroke:mix(P.col[1],'#2a1408',.5),'stroke-width':svF(W0*.03),'stroke-opacity':.6},g)}
     if(ds)E('path',{d:ds,fill:P.scar,stroke:P.scarE,'stroke-width':svF(W0*.025),'stroke-opacity':.5},cg)}}

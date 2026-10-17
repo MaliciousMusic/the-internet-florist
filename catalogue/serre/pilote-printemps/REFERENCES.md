@@ -1552,3 +1552,74 @@ par rang, ligule en cuillère (onglet .2, plus large à .8 de la longueur, goutt
   blanc à cœur vert, vert ; bleu teint #2c6cbe à cœur vert-jaune ; lilas mauve-rose de Vanya Pink et Rossano).
 - Budget à DET 1 : plante 205 éléments et 42 Ko ; dans le bouquet (9 tiges), 155 à 184 éléments par tige contre 135 pour l'ancien dessin. Le
   rtest compte à DET 1.5 (tête détaillée, 489 éléments) : son écart (+380 par tige) n'est pas le budget DET 1.
+
+## Rosa × hybrida, roses de fleuriste d'aspect jardin (sid rose-aspect-jardin) : fiche ROSA_ASP sur le kit rose, 17 octobre 2026
+
+Planches : `rose-aspect-jardin-sku-v1.png` (stades x blanc, rose, abricot x vues 3/4, face, profil ; 22 coloris ; plante en gros plan au
+fané ; tige entière 50 cm) et `rose-aspect-jardin-fane-v1.png`. Code : `app/y-rosa.js` (bloc rose-aspect-jardin), `app/y3-rose2.js`
+(quartiers, œil bouton, sillons), crochet `qmod` dans `app/y3-rose.js`, branchement `rosePlant(...,'asp')` dans `app/r1a.js`.
+
+Photos de référence (index de `refcache/rose-aspect-jardin/cands.json`, gardées par `refs.py keep` ; jamais commitées, jamais publiées) :
+- brief (refs de couleur et de fané) : Yves Piaget 123, 133 (Roland zh, CC BY-SA 3.0 ; David J., CC BY-SA 4.0 ; T.Kiya, CC BY-SA 2.0),
+  Sahara Tantau 78, 79 (Geolina163, CC BY-SA 4.0), Toffee 149, 150 (baby-bear.org, CC BY 4.0), Café Latte 152, 160, Quicksand 154, 156,
+  Sahara Sensation 162 (Flirty Fleurs, bouquets jours 1 à 10, licence inconnue : refcache seulement) ; feuilles 20, 48, 122, 150 ;
+- forme (relais 2) : Pierre de Ronsard 165, 171, 172 (Thomon, CC BY-SA 4.0), 201 (Manfred Heyde, CC BY-SA 3.0) ; Eden Rose 190
+  (Patrick Nouhailler, CC BY-SA 2.0), 194 (Raita Futo, CC BY 2.0), 196 (domaine public) ; Cœur de Ronsard 191 (CC BY 2.0) ;
+  Augusta Luise 179, 180 (Geolina163, CC BY-SA 4.0).
+
+Mesures (à l'œil sur grille, `refcache/rose-aspect-jardin/grid.py` ; la segmentation de `img.py pair` échoue sur fond de feuillage) :
+
+| mesure | photos | rendu |
+|---|---|---|
+| tête de profil au stade vendu, l/h | 165, 171, 190, 195, 201 : 1,0 à 1,2 (boule en coupe) | boule en coupe, gardes à peine évasées |
+| tête ouverte, l/h | 179, 180 : 1,15 à 1,35 | coupe large, cœur en dôme au ras du bord |
+| bouton, h/l | 164, 172 : 1,2 à 1,3, pointe ronde (Yves Piaget 132 plus ovoïde) | budH .58/.4, budR .42 |
+| pétales | 45 à 60 (à l'œil ; 60 et plus sur les roses de jardin) | 46/52/58 (gène n) |
+| cœur | 191, 196, 149 : dense, 3 à 5 quartiers, sutures sombres | quartiers (qn 3 à 5) + sillons fur/furL, heartSh .55 |
+| fané | 160, 162 (j10) : coupe pleine froissée, bords bruns, peu de chute | chute tardive (shed .78), gardes peu pendantes (limp .35) |
+| couleur fanée | 160 : #9f6662, bords #7d4542 ; 162 : #c2a17d | roses -> mauve poussiéreux puis brun mauve ; pêches, crèmes -> chamois |
+
+Coloris : les 22 du catalogue (CW_RASP, SKU 46 à 67, ids et ordre inchangés) ; les mesures de la finition s'écrivent dans `ROSA_ASP_CWX`.
+Structure des bicolores dans `ROSA_ASP_ST` (œil vert de mandarin et vert, cœur c2 de sunset et free-spirit, marge de free-spirit et
+rose-vert). Budget DET 1 : tête seule 154 éléments / 48 Ko (rose standard 123 / 37) ; tige entière de 50 cm 300 à 400 éléments,
+92 à 110 Ko selon les têtes latérales (rose standard 252 / 75) : au-dessus du budget de 50 Ko, comme la rose standard.
+Témoins : anémone 0,00 %, rose standard et intermédiaire 0,00 %, rtest 10/10 IDENTIQUE (hasard d'avant branchement).
+
+## Rosa (roses anciennes et de jardin, sid rose-de-jardin, SKU 68 à 92) : fiche ROSA_JAR sur le kit rose, 17 octobre 2026
+
+Planches : `rose-de-jardin-sku-v1.png` (stades x blanc-crème, rose, cramoisi x vues 3/4, face, profil ; 25 coloris ; plante en gros
+plan ; tige entière 50 cm) et `rose-de-jardin-fane-v1.png`. Code : `app/y-rosa.js` (bloc « garden rose » : ROSA_JAR, ROSA_JAR_GENES,
+ROSA_JAR_CWX, ROSA_JAR_ST, ROSA_JAR_RG, ROSA_JAR_LEAF, ROSA_JAR_SVSC), `app/y3-rose3.js` (neuf : `svRose3Sutures` plis en croix,
+`svRose3Rings` quartiers en marges de pétales autour de quatre centres, `svRose3Under` rangs du cœur retirés sous les quartiers),
+`app/y3-rose.js` (`q.skip` : une pièce non dessinée), branchement `rosePlant(...,'jar')` dans `app/r1a.js`.
+
+Photos de référence (29 gardées, index de `refcache/rose-de-jardin/keep.json` ; refcache seulement, jamais commitées ni publiées) :
+- forme ouverte, face : Souvenir de la Malmaison 2, 6, 11 (Nadiatalent, Salicyna, Huhu ; CC BY-SA) ; Mme Hardy 118 (Gmihail, CC BY-SA
+  3.0), 127 (Salicyna, CC BY-SA 4.0) ; Charles de Mills 94, 103 (Amanda Slater, CC BY-SA 2.0) ; Ispahan 108 (Wilrooij, CC BY-SA 4.0) ;
+  Jacques Cartier 63, 68, 74 ; Reine des Violettes 36, 40 ; Comte de Chambord 16, 27 ; Königin von Dänemark 177 (Salicyna, Shuvaev,
+  Tournasol7, Acabashi ; CC BY-SA 4.0 / CC BY 4.0) ;
+- bouton : Ispahan 113 (Schurdl), Jacques Cartier 83 (Salicyna), Königin von Dänemark 163 (A. Barra) ; fané : Mme Pierre Oger 49
+  (Salicyna) ; feuille 82 ; port 53, 79.
+
+Mesures (à l'œil, vignettes 500 px, `refcache/_rd-work/rose-de-jardin/`) et rendu :
+
+| mesure | photos | rendu |
+|---|---|---|
+| quartiers vus de face | 94, 118, 177, 68 : 4 (Mme Hardy 4 à 5), séparés par des plis droits en croix | qn 3 à 5 (gènes), plis `svRose3Sutures` (z .58, w .014), secteurs pleins jusqu'au bord de la coupe, pétales courts en arcs ouverts d'un pli à l'autre (`svRose3Rings` mode `arc`, relais 4 ; avant : marges en spirale autour de 4 centres à .29 R |
+| œil | 0,06 à 0,08 du diamètre, pip vert (118), étamines (94) | œil bouton 55 % des têtes (eye), vert pour citron |
+| bords de pétales visibles | 70 à 90 | 68 / 76 / 84 pétales ; le cœur (rangs > .4) remplacé par 12 marges par quartier |
+| cœur / diamètre | ~75 %, plat sur le dessus | r1 .52 R, dôme bas (z .42, +.1) |
+| fané (49) | coupe affaissée, bords bruns froissés, puis chute : restent quelques pétales et le cœur | shed [.6,.22], shedF .6, shedK .05 ; quartiers effacés au fané (fk 0 : le cœur redevient des pétales froissés, pas des plaques) ; liseré brun fin (edgeB [.3,.4], edgeBW .6) ; revers à la couleur de la face tôt (fanM bkP .35) ; rosaAspWiltCol |
+
+Coloris : ceux du catalogue (CW_RJAR, ids et ordre inchangés) ; les valeurs mesurées restent à écrire dans ROSA_JAR_CWX (finition).
+
+Relais 4 (17 octobre 2026) : quartiers en secteurs (critique « 4 petites roses »), fané sans facettes ni contour brun (BP 3.6, 3.9, 6.6), revers du
+rouge à 1:.6 sans plaques pâles (BP 3.3). Même fané appliqué à `rose-aspect-jardin` (edgeB, edgeBW, bkP, crk et wav du fané réduits ; planches
+`rose-aspect-jardin-sku-v2.png` et `-fane-v1.png` refaites). Budget DET 1 : tête 148 él./50 Ko (12 têtes, D 120) ; plante 50 cm ouverte 193 él./68 Ko
+(standard même requête 213/65). Témoins anémone, std, int, plantes std/int à 0,00 % ; rtest 10/10 jar et asp.
+
+### Retouche v3 des roses de jardin (rose-de-jardin, rose-aspect-jardin), 17 octobre 2026, relais 6
+- Aucune photo nouvelle : mêmes sources que les deux sections ci-dessus. Fané de la rose de jardin réglé sur la rose standard v3 publiée
+  (photos 1396, 1403, 1411, 590) et sur Mme Pierre Oger 49 : quelques pétales étroits pendants, le reste tombé.
+- Mesures de rendu : budget DET 1 de la plante de 50 cm (vieux-rose, graine 7), par stade, ancien code / nouveau : .1 150/36 - 150/36 ;
+  1:0 180/63 - 166/61 ; 1:.5 189/55 - 194/54 ; 1:.75 211/53 - 189/52 ; 1:.9 209/48 - 191/48 (éléments/Ko).
