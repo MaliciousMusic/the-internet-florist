@@ -73,6 +73,11 @@ Rappel de base : SVG natif seulement, ni 3D, ni image incorporée, ni ruban, ni 
 4.6 Contrôler le rendu par un chiffre : médiane des pixels de la tête ouverte contre la couleur retenue (teinte, clarté, chroma ; `hmed.py`), pas à l'œil à 700 px
     (rose). Une mesure de champ ou d'emballage est « approchée » et se revérifie sur une fleur isolée (tulipe).
 4.7 Bicolores : marge à largeur constante le long du contour, flammes en stries effilées de longueurs inégales, jamais une bande uniforme (rose, relais 4) ; damier : réseau fin et continu, cases plus petites vers la base (fritillaire « un peu carrelage »).
+4.8b Jamais plus terne ni plus pauvre que la photo (porteur, 2026-10-17, phalaenopsis : « très terne et pauvre face aux vraies
+    fleurs ») : saturation de la photo bien éclairée (pas de mauve délavé pour un magenta), bases plus foncées et dégradés
+    marqués, réseau de veines, grain satiné ou scintillant quand la fleur en a, ombres portées nettes entre pièces
+    superposées, lumière franche ; un blanc n'est jamais un aplat. Contrôle : rendu et photo côte à côte en D 800, même
+    impression de richesse au premier regard.
 4.9 Tous les coloris vendus, nommés d'après les variétés et mesurés (anémone : 23). Un coloris ajouté porte `late:N` (numéros de SKU inchangés) ; ne jamais changer id, ordre ni `c` d'un coloris existant ; un cultivar sous marque (® ou ™) ne donne
     jamais son nom (nom de couleur générique, ou `ret:1` si le coloris n'est pas prouvé) ; la matière est en cache par sorte et par id (les id « rouge », « rose » se répètent : clé par sorte).
 
@@ -123,6 +128,11 @@ Rappel de base : SVG natif seulement, ni 3D, ni image incorporée, ni ruban, ni 
 ## 8. En bouquet
 8.1 `rtest=1` doit dire IDENTIQUE sur 5 stades × 2 vases, SV coupé puis allumé : la sorte consomme les mêmes tirages `R()` que l'ancien dessin (anémone : 28 `R(0,1)`
     si op ≥ .3 et 10 par bractée ; tulipe : 24 `rnd`). Défaut dû au hasard : un crochet sans tirage (hachage de la graine ou de la position), comme `rosaNeck`.
+8.1b Fleurs d'une même tige jamais toutes de face (porteur, 2026-10-17, hampe du phalaenopsis : « pas très crédible ») :
+    chacune s'oriente selon sa place (lacet ±20-45°, tangage suivant la courbe, quelques profils), s'étage en alternance,
+    chevauche sa voisine, pédicelle visible ; tailles décroissantes vers la pointe. Les orientations viennent d'un
+    générateur propre à la tige, jamais du hasard du bouquet (rtest identique). Contrôle : planche plante à côté d'une
+    photo de tige entière.
 8.2 Après toute retouche du moteur : planche témoin de l'anémone à 0,00 % (`img.py diff`) et `rtest` identique ; une silhouette plus longue en bouquet change `rtest`
     (c5 mesure la tête par `getBBox`) : la garder hors bouquet ou la faire passer au test.
 8.3 Tout élément d'une sorte (cou, axes, feuilles) entre dans les couches de tiges et se raccorde à la tige du bouquet en tangente (`frameOf`, `neckPart`, `neckOut` ;
