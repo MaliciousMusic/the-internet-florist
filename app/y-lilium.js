@@ -124,7 +124,8 @@ function lilOver(C){const dots=lilDots(C);
       if(lt)E('path',{d:lt,fill:'none',stroke:'#ffffff','stroke-width':svF(Math.max(.15,Dm*.0012)),'stroke-opacity':svF(.06*k),'stroke-linecap':'round'},cg);
       if(band.length){let d='';for(const[u0,v0,v1,ph]of band)d+=path(along(u0,v0,v1,ph,0));
         E('path',{d,fill:'none',stroke:S.c,'stroke-width':svF(Math.max(.2,Dm*S.w)),'stroke-opacity':svF(S.op*k*fade),'stroke-linecap':'round'},cg)}
-      if(fr.length){let dh='',ds='';for(const[v,sg,len,tl]of fr){const a=svAt(sh,sg*.015,v),b=svAt(sh,sg*(.015+len),v+len*.35+tl*.02);if(!seen(sg*.015,v))continue;
+      if(fr.length){let dh='',ds='';for(const[v,sg,len,tl]of fr){const a=svAt(sh,sg*.015,v),b=svAt(sh,sg*(.015+len),v+len*.35+tl*.02);  /* only where the throat faces the eye at both ends (seen edge-on from the side, a fringe reads as teeth) */
+          if(!(it.s*svLerp(sh,sh.F,sg*.015,v)>.35&&it.s*svLerp(sh,sh.F,Math.min(1,sg*(.015+len)),Math.min(1,v+len*.35))>.35))continue;
           dh+='M'+svF(a[0])+','+svF(a[1])+'L'+svF(b[0])+','+svF(b[1]);ds+='M'+svF(a[0]+.6)+','+svF(a[1]+.6)+'L'+svF(b[0]+.6)+','+svF(b[1]+.6)}
         if(ds)E('path',{d:ds,fill:'none',stroke:C.shade,'stroke-width':svF(Math.max(.2,Dm*.0026)),'stroke-opacity':svF(.25*k),'stroke-linecap':'round'},cg);
         if(dh)E('path',{d:dh,fill:'none',stroke:F.c,'stroke-width':svF(Math.max(.2,Dm*.0024)),'stroke-opacity':svF(.9*k),'stroke-linecap':'round'},cg)}}}}
@@ -251,20 +252,23 @@ function lilHeart(o0){const o=Object.assign({},LILH_DEF,o0);
         /* the knob in volume (owner: « la boule du bout fait toute plate »; photo p002: brown at the rim, paler at the centre, a soft wet sheen):
            a dark occlusion where it sits on the style, then each lobe from the back, its own light from the lit side and its own dark rim,
            the grooves between them, one dull sheen */
-        const rl=Math.max(.35,rk*.68),lobe=(x,y,r,k)=>{const id='lsg'+(gid++),gr=E('radialGradient',{id,gradientUnits:'userSpaceOnUse',cx:svF(x+lt[0]*r*.38),cy:svF(y+lt[1]*r*.38),r:svF(r*1.25)},GDEF||defs);
-            for(const[o2,c2]of[[0,mix(sgC,'#fff4e8',.34)],[.42,mix(sgC,'#fff4e8',.1)],[.78,sgC],[1,mix(sgC,'#24120a',.55)]])E('stop',{offset:o2,'stop-color':c2},gr);
-            E('circle',{cx:svF(x),cy:svF(y),r:svF(r),fill:`url(#${id})`},hk)};
-        E('ellipse',{cx:svF(ce[0]-lt[0]*rk*.25),cy:svF(ce[1]-lt[1]*rk*.25),rx:svF(rk*1.25),ry:svF(rk*1.05),fill:mix(styT,'#1a1206',.6),'fill-opacity':.45,filter:svBlur(rk*.25)},hk);
-        for(const c of cs)lobe(c[0],c[1],rl);lobe(ce[0],ce[1],rk*.7);
-        if(!LOD){let gv='';for(const c of cs)gv+=`M${svF(ce[0])},${svF(ce[1])}L${svF(ce[0]+(c[0]-ce[0])*.6)},${svF(ce[1]+(c[1]-ce[1])*.6)}`;
-          E('path',{d:gv,fill:'none',stroke:mix(sgC,'#24120a',.6),'stroke-width':svF(Math.max(.12,rk*.12)),'stroke-opacity':.45,'stroke-linecap':'round',filter:svBlur(rk*.05)},hk);
-          E('ellipse',{cx:svF(ce[0]+lt[0]*rk*.45),cy:svF(ce[1]+lt[1]*rk*.45),rx:svF(Math.max(.15,rk*.28)),ry:svF(Math.max(.1,rk*.16)),fill:'#fffaf0','fill-opacity':.3,filter:svBlur(rk*.1)},hk)}})}}}
+        /* the knob as ONE body in volume (owner: no fuzzy glow, no flat discs): the three lobes and the centre fused in one outline, shaded as a
+           whole from the lit side (light, body, dark under-rim), a crisp darker rim, the three shallow grooves, one small dull sheen inside it */
+        const rl=Math.max(.35,rk*.66),disc=(x,y,r)=>`M${svF(x-r)},${svF(y)}a${svF(r)},${svF(r)} 0 1,0 ${svF(2*r)},0a${svF(r)},${svF(r)} 0 1,0 ${svF(-2*r)},0`,
+          un=k=>cs.map(c=>disc(c[0],c[1],rl*k)).join('')+disc(ce[0],ce[1],rk*.78*k),id='lsg'+(gid++),
+          gr=E('radialGradient',{id,gradientUnits:'userSpaceOnUse',cx:svF(ce[0]+lt[0]*rk*.5),cy:svF(ce[1]+lt[1]*rk*.5),r:svF(rk*1.7)},GDEF||defs);
+        for(const[o2,c2]of[[0,mix(sgC,'#fff8ec',.42)],[.32,mix(sgC,'#fff8ec',.12)],[.62,sgC],[.84,mix(sgC,'#24120a',.38)],[1,mix(sgC,'#24120a',.62)]])E('stop',{offset:o2,'stop-color':c2},gr);
+        E('path',{d:un(1.06),fill:mix(sgC,'#24120a',.55)},hk);E('path',{d:un(1),fill:`url(#${id})`},hk);
+        if(!LOD){let gv='';for(const c of cs)gv+=`M${svF(ce[0])},${svF(ce[1])}L${svF(ce[0]+(c[0]-ce[0])*.62)},${svF(ce[1]+(c[1]-ce[1])*.62)}`;
+          E('path',{d:gv,fill:'none',stroke:mix(sgC,'#24120a',.6),'stroke-width':svF(Math.max(.12,rk*.1)),'stroke-opacity':.5,'stroke-linecap':'round'},hk);
+          const cl='lsk'+(gid++);E('path',{d:un(1)},E('clipPath',{id:cl},GDEF||defs));
+          E('ellipse',{cx:svF(ce[0]+lt[0]*rk*.42),cy:svF(ce[1]+lt[1]*rk*.42),rx:svF(Math.max(.15,rk*.26)),ry:svF(Math.max(.1,rk*.15)),fill:'#fffaf0','fill-opacity':.32,filter:svBlur(rk*.06)},G(hk,{'clip-path':`url(#${cl})`}))}})}}}
 const LIL_ORI_GENES={n:[[6,1]],tep:{dL:[.95,1.05],dW:[.93,1.07],dph:[-.05,.05],da:[-.08,.08],dt:[-.3,.3],tw:[-.34,.34],lat:[-.05,.05],wav:[.09,.14],wk:[2.5,4],wph:[0,6.28],
     ew:[.015,.03],tip:[1.2,1.5],asym:[-.07,.07],sd:'sd'},late:{hang:[.6,1.3],wl:[.85,1.2]},
   head:{rot:[0,6.2832],op:[-.03,.03],dh:[-3,3],ds:[-.04,.04],dl:[-.02,.015],sty:[0,6.2832],stL:[.94,1.06],sd:'sd'}};
-const LIL_ORI=Object.assign({},LIL_ODBL,{L:[1.2,1.12],W:[.21,.32],z0:[0,.02],cup:[.12,.24],wavW:[.45,1.2],floorV:.04,floor:1.5,floorO:.4,nu:[16,20],nv:46,mrx:.08,light:Object.assign({},SVRX_DEF.light,{wrap:.12,amb:.2,dif:.82,ks:.2,gloss:22,da:.27,la:.24}),
+const LIL_ORI=Object.assign({},LIL_ODBL,{L:[1.2,1.12],W:[.21,.3],z0:[0,.07],cup:[.12,.24],wavW:[.45,1],nest:[-.05,.05],floorV:.04,floor:1.5,floorO:.4,nu:[30,34],nv:64,mrx:.08,light:Object.assign({},SVRX_DEF.light,{wrap:.12,amb:.2,dif:.82,ks:.2,gloss:22,da:.27,la:.24}),
   wp:[[0,.2],[.08,.34],[.2,.6],[.34,.84],[.48,.97],[.6,1],[.72,.92],[.83,.72],[.91,.46],[.97,.18],[1,.02]],vb:.62,
-  aS:[[.15,.38,.5],[.14,.3,.22]],aB:[[.04,.42,1.66],[.03,.36,1.12]],aT:[[-.26,1.05,2.75],[-.24,.9,2.05]],f0:[.72,.7],cup:[.1,.08],
+  aS:[[.15,.38,.56],[.14,.3,.22]],aB:[[.04,.42,1.66],[.03,.36,1.12]],aT:[[-.26,1.05,2.75],[-.24,.9,2.05]],f0:[.72,.7],cup:[.1,.08],
   genes:s=>svGenes(s,LIL_ORI_GENES),mat:lilOriMat,heart:lilHeart({cb:.9}),life:()=>lilLifeOf('lis-oriental')});
 function lilLifeOf(sid){if(typeof SVA_LIFE!=='undefined'&&SVA_LIFE!=null)return SVA_LIFE;
   return typeof LIFE!=='undefined'&&LIFE&&typeof lifeWEl==='function'?lifeWEl(LIFE,lifeProfile({sid,rec:{}})):0}

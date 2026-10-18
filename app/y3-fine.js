@@ -10,6 +10,7 @@
    close-ups. Without `fine` in a material nothing here runs: every other sort is drawn as before. */
 const SVFN_DEF={chroma:1,cell:2.4,q:5,blur:.9,grain:.025,gloss:34,ks:.16,amb:.46,dif:.54,sky:.08,wrap:.3,ao:.28,glow:.4,sat:.35,maxV:320,maxU:180};
 const SVFN_X={};
+const SVFN_OFF=typeof location!=='undefined'&&/[?&]nofine=1/.test(location.search||'');  /* test only: &nofine=1 draws every sort without the fine layer */
 const svfRgb=h=>SVFN_X[h]||(SVFN_X[h]=[parseInt(h.slice(1,3),16),parseInt(h.slice(3,5),16),parseInt(h.slice(5,7),16)]);
 const svfMix=(a,b,t)=>[a[0]+(b[0]-a[0])*t,a[1]+(b[1]-a[1])*t,a[2]+(b[2]-a[2])*t];
 function svfRamp(S,v){for(let j=1;j<S.length;j++)if(v<=S[j][0]){const a=S[j-1],b=S[j];return svfMix(svfRgb(a[1]),svfRgb(b[1]),Math.max(0,Math.min(1,(v-a[0])/Math.max(1e-6,b[0]-a[0]))))}
@@ -57,7 +58,7 @@ function svFine(cg,it,sh,front,Dm){const m=sh.mat,F=m.fine===true?SVFN_DEF:Objec
   const C=new Array(S.length);for(let j=0;j<=NV;j++)for(let i=0;i<=NU;i++)C[j*W+i]=col(i,j);
   /* the facets of this region's side (its clip trims the fold), farthest first in a few slabs, each slab one path per colour */
   const cells=[],sg=it.s,qq=F.q;
-  for(let j=0;j<NV;j++)for(let i=0;i<NU;i++){const a=j*W+i,b=a+1,c2=a+W+1,d=a+W;if(Fz[a]*sg<=0&&Fz[b]*sg<=0&&Fz[c2]*sg<=0&&Fz[d]*sg<=0)continue;
+  for(let j=0;j<NV;j++)for(let i=0;i<NU;i++){const a=j*W+i,b=a+1,c2=a+W+1,d=a+W;if(Math.max(Fz[a]*sg,Fz[b]*sg,Fz[c2]*sg,Fz[d]*sg)<-.18)continue;  /* along a fold the region's smoothed outline reaches past the turn: its cells stay (the clip trims them), never a notch of the fill */
     const z=(S[a][2]+S[b][2]+S[c2][2]+S[d][2])/4,key=[0,1,2].map(k=>Math.max(0,Math.min(255,Math.round((C[a][k]+C[b][k]+C[c2][k]+C[d][k])/4/qq)*qq)));cells.push([z,a,b,c2,d,key])}
   if(!cells.length)return;
   cells.sort((x,y)=>x[0]-y[0]);

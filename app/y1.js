@@ -170,6 +170,7 @@ function svTrans(cg,it,sh,front,Dm,Ls,tol){const t=sh.mat.transmit,hi=DET>=1.5,f
     stops(gr,[[0,'white',svF(Math.min(1,eo[1]/(eo[0]||1)))],[1,'white',1]]);svLevels(it,sh,Ge,FF,(t.en||[4,3])[hi?0:1],t.ec||t.tc||own(lk[1]),cg,tol,null,`url(#${id})`)}}
 /* draw the pieces of one flower: pieces are sheets (svSheet with a material) or drawn parts {fn, proxy (a sheet, for the order only)} */
 function svDraw(par,pieces,o){const Dm=o.D,tol=Math.max(.06,Dm*.0035),k=G(par),items=[];
+  if(typeof SVQA_ON!=='undefined'&&SVQA_ON)svQa3d(pieces);  /* test only (&qa3d=1): sheets that pass through one another, y3-qa3d.js */
   for(const p of pieces){if(p.fn){const cells=svCells(p.proxy,0);if(!cells.length){items.push({kind:'fn',fn:p.fn,cells:[],bb:[0,0,-1,-1],z:p.z??0});continue}let x0=1e9,y0=1e9,x1=-1e9,y1=-1e9,z=0;
       for(const c of cells){x0=Math.min(x0,c.x0);y0=Math.min(y0,c.y0);x1=Math.max(x1,c.x1);y1=Math.max(y1,c.y1);z+=c.cz}items.push({kind:'fn',fn:p.fn,px:p.proxy,cells,bb:[x0,y0,x1,y1],z:z/cells.length+(p.zb||0)})}
     else items.push(...svRegions(p,{tol}))}
@@ -190,7 +191,7 @@ function svDraw(par,pieces,o){const Dm=o.D,tol=Math.max(.06,Dm*.0035),k=G(par),i
       bg=G(cg,{filter:svBlur(Ls*(m.soft??.05))}),wash=(lv,col,a,dark)=>{for(const t of lv){const V=Array.from(K,(x,q)=>Math.min(dark?t-x:x-t,FF[q]));if(!V.some(x=>x>0))continue;
         const d=svLoopsD(sh,svIso(sh.nu,sh.nv,V,0),Math.max(tol*2.5,Dm*.008));if(d)E('path',{d,fill:col,'fill-opacity':a,'fill-rule':'evenodd'},bg)}};
     /* (m.fine: the colour-and-light layer shaded sample by sample at DET >= 1.5, y3-fine.js; it takes the place of the zones and the washes) */
-    const fine=m.fine&&DET>=1.5&&typeof svFine==='function';if(fine)svFine(cg,it,sh,front,Dm);
+    const fine=m.fine&&DET>=1.5&&typeof svFine==='function'&&!SVFN_OFF;if(fine)svFine(cg,it,sh,front,Dm);
     /* (m.cross: colour zones across the piece, under everything else: svCross above; none by default) */
     if(m.cross&&!fine)svCross(cg,bg,it,sh,front,Dm,Ls,tol);
     /* flames (streaks of a second colour along the tissue: the flamed anemones), soft wide strokes in the blurred washes */

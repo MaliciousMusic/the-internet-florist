@@ -61,7 +61,10 @@ function svReflex(par,B,O,D,S,cwx,op,seed,wl){const P=Object.assign({},SVRX_DEF,
         lift=(1-Math.cos(th))/kk+wv*L*Math.pow(Math.abs(u),1.6)*Math.sin(t.wk*Math.PI*vv+t.wph+side*2.1)*svSm((vv-.08)/.3)*(1-.85*bud)
           +crk*L*Math.sin(u*Math.PI*(2.2+t.wk*.3)+t.wph*2+vv*9)*svSm(vv/.25)
           /* opt-in mrx (absent: 0, unchanged): the margins rolled back past the blade (oriental lilies), from the shoulder on */
-          -(P.mrx||0)*L*Math.pow(Math.abs(u),2.4)*svSm((vv-.12)/.3)*(1-bud)*(1-.5*fan);
+          -(P.mrx||0)*L*Math.pow(Math.abs(u),2.4)*svSm((vv-.12)/.3)*(1-bud)*(1-.5*fan)
+          /* opt-in nest [outer, inner] (absent: 0): when the tepals gather (the bud, the column, the faded) the inner whorl passes inside the outer one, never
+             through it (y3-qa3d.js: 0 crossings); it fades as the flower opens */
+          +(P.nest?P.nest[w]*L*Math.min(1,(1-r2)+.9*fan)*svSm(vv/.15):0);
       return V3.add(V3.add(c,V3.sc(A,Math.sin(th)/kk)),V3.sc(N,lift))};
     const vr=svRng(t.sd),vn=svVeins(vr,(hi?P.veinN[0]:P.veinN[1])+vr.in(0,2),hi?P.veinNet[0]:P.veinNet[1],hi?P.veinFork[0]:P.veinFork[1]),vc=shv(cw0.vein,.5),vo=cw0.vo??.22;
     const fl=cw0.flames,flames=fl&&r1>.3?(()=>{const fr=svRng(t.sd+13),nf=Math.round(fr.in(fl.n[0],fl.n[1])),L2=[];for(let q=0;q<nf;q++){const u0=fr.in(-.75,.75),v0=fl.from*fr.in(.6,1.3),v1=Math.min(.95,fl.to*fr.in(.7,1.1)),pl=[],ph=fr.in(0,6.3);
@@ -84,7 +87,7 @@ function svReflex(par,B,O,D,S,cwx,op,seed,wl){const P=Object.assign({},SVRX_DEF,
   if(P.floor&&kF>.02){const dF=dec*(1-svSm(fan/.45)),rf=kF*Math.min(R0*P.r0*P.floor*(1+P.floorO*r2*(1-dF)+P.floorD*dF),P.floorC*rCl),zk=P.floorK*Math.max(dF,.5*r2),
       rampAt=(S,v)=>{for(let j=1;j<S.length;j++)if(v<=S[j][0])return mix(S[j-1][1],S[j][1],(v-S[j-1][0])/Math.max(1e-6,S[j][0]-S[j-1][0]));return S[S.length-1][1]},
       bc=rampAt(mat.stops,P.floorV*.7),fm=Object.assign({},mat,{stops:[[0,mix(rampAt(mat.stops,0),'#3a3a10',.2)],[.6,bc],[1,bc]],bstops:[[0,bc],[1,bc]],cross:null,transmit:null,flames:null,veins:null,grid:null,bgrid:null});  /* the floor: the claws' own colour, never the tepal's grid */
-    pieces.push(svSheet(B,O,(u,v)=>{const a=(u+1)*Math.PI;return[Math.cos(a)*rf*v,Math.sin(a)*rf*v,R0*(.012-.02*v)-zk*rf*v*v]},{nu:10,nv:3,mat:fm,zb:-.003}))}
+    pieces.push(svSheet(B,O,(u,v)=>{const a=(u+1)*Math.PI;return[Math.cos(a)*rf*v,Math.sin(a)*rf*v,R0*(.012-.02*v)-zk*rf*v*v]},{nu:10,nv:3,mat:fm,zb:-.003,qa:false}))}  /* qa:false: the floor lies under the claws by design (y3-qa3d.js skips it) */
   if(P.heart&&!SVRX_NOHRT)P.heart({par,B,O,D,R0,g,cw0,op:oo,r1,r2,bud,dec,fan,det,pieces,dn});
   return svDraw(par,pieces,{D:R0*2,pmin:P.pmin,shadow:hi})}
 
