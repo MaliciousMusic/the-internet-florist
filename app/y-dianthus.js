@@ -188,7 +188,8 @@ function dianPleat(){const f=svSm((DIAN_W-.45)/.4),m=DIAN_MT;if(f>.01)return{n:[
    kit's core, read through the lf getter); r and z in R0 */
 const DIAN_HOL={z:[.12,.25,.4,.55,.7,.82,.92],r:[.18,.36,.48,.52,.46,.32,.12],k:.5,sk:[[.26,.06],[.4,.13],[.5,.21]]};
 function dianCore(ctx){const{B,O,R0,op,fan,bud,cw}=ctx,H=DIAN_HOL,ob=svSm((op-.3)/.35);DIAN_MT=cw;DIAN_CORE=null;
-  if(ob<.05||bud>.2||fan>.7||!cw)return;const sc=1-.35*fan,pts=[];
+  /* kept to the dry tuft (it closed the gaps of the fading head: white holes at 1:.75 and 1:.9), smaller with it */
+  if(ob<.05||bud>.2||!cw)return;const sc=1-.4*fan,pts=[];
   for(let i=0;i<H.z.length;i++)for(let j=0;j<16;j++){const a=j/16*2*Math.PI,r=R0*H.r[i]*sc,p=PJ(B,O,[Math.cos(a)*r,Math.sin(a)*r,R0*H.z[i]*sc*(.6+.4*ob)]);pts.push([p[0],p[1]])}
   /* the skirt: the spread outer rank's mass, from the calyx's mouth out to its petals' middle (the egg alone left the background showing
      between the petals' feet over the calyx, seen from the side and from above: the owner's sheet, 2026-10-18) */
@@ -200,14 +201,17 @@ const SVR_DIAN={genes:s=>svGenes(s,DIAN_GENES),mat:dianMat,heart:dianCalyx,life:
   a0c:[[0,.28],[1,.06]],a1c:[[0,.12],[1,-.2]],a0o:[[0,1.22],[.3,.92],[.6,.41],[1,.12]],a1o:[[0,1.44],[.3,1.1],[.6,.74],[.88,.42],[1,.12]],wA0:[[0,-.12],[1,0]],wA1:[[0,-.16],[1,0]],
   oLaw:[.3,.25,.6,.45],oTip:1.1,sag:[.03,.05,.2],
   bud:[.1,.32],budH:[.02,.66],budR:.34,budE:[.08,.86],budP:.75,budW:1.3,budIn:.4,budVis:-.01,budT:.1,
-  wav:[.6,1.5,2.4],rev:[.15,.12],crk:[.05,.12],curl:[.2,.5],shed:[2,.1],shedF:0,fan:[.5,.25],dec:[.08,.4],fanK:[.68,.3,0],limp:[.5,.2],limpF:.5,
+  /* fading (a cut carnation in its vase): the margins dry and roll in, the tips turn back toward the heart (curl < 0 by fan), the crown closes
+     into a crumpled tuft on the calyx; never splayed out in spikes (the owner's sheet, 2026-10-18: "l'état fané me semble étrange") */
+  wav:[.6,1.5,1.6],rev:[.15,.04],crk:[.05,.06],curl:[.2,-.7],shed:[2,.1],shedF:0,fan:[.5,.25],dec:[.08,.4],fanK:[.62,.06,0],limp:[.5,.2],limpF:.5,
   tip:[[.06,.2,.4],[.25,.55,.3]],brown:'#7a5636',edgeB:[.4,.75],edgeBW:1.5,green:[.25,.1,.2],greenC:'#88a660',floor:0,
   nu:[13,18],nv:[7,10],run:[8,10],tipN:[56,96],dark:[[.88,.72],[.9,.78,.66]],da:[.26,.26],lit:[[1.1],[1.08,1.18]],la:[.24,.27],aoV:[[.22],[.2,.36]],aoA:[.16,.12],
   /* the depth test's tolerance (lf.zvis) tighter than the kit's .012: in the crowded heart a piece lies within .012 D behind the one in front,
      and its edge and rim were laid over it (pale zigzags across the heart in close-ups: 3.3, 3.6b) */
   zEps:.005,
   kd:1.15,kl:1,shd:[.011,.004,.34],rimW:.0055,rimA:.32,edgeW:.0035,edgeA:.5,veinW:.0016,veinA:.15,pmax:[4,6],
-  marg:svDent({n:[24,34],dp:[.02,.048],sk:.3,p:1.15,t2:.25}),ruf:svRuffle({a:.4,fk:.35,w:2,edge:.35}),rimN:[30,48],
+  /* the teeth shrivel as the margin dries (a dry carnation's edge is crumpled, no longer toothed) */
+  marg:(()=>{const d=svDent({n:[24,34],dp:[.02,.048],sk:.3,p:1.15,t2:.25});return(u,t,q)=>d(u,t,q)*(1-.7*svSm((DIAN_W-.4)/.45))})(),ruf:svRuffle({a:.4,fk:.35,w:2,edge:.35}),rimN:[30,48],
   /* the pleated fans seen edge-on (the outer rank in profile): their folds' faces filled, never slivers (3.8, 7.6); in 4 hulls across, and
      never on the heart's crumpled petals seen from above (one hull across a ruffled piece filled its hollows: a dull film over the heart) */
   fold:[1,.95,[8,12],8,.7],
