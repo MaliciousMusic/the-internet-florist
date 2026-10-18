@@ -6,23 +6,23 @@
    not a publication: the colours are tuned by eye against the kept photographs of the colourways (refcache, never copied) and the measured
    colourways (catalogue/serre/sources/<sid>.json). */
 const SVFX_KEYS={cross:['cross'],trans:['transmit']};
-/* the cymbidium's tepals (sepals and petals alike). blanc: a cream-green middle fading out from the claw, the margins pure white, a warm cream light
-   through the turned-away halves (never grey) and along the edges (kept 15, 58, 119, 84); rouge: a deeper midline (the keel, c16, 49), paler rosy
-   margins and tip, a warm coral light through the tissue */
+/* the cymbidium's tepals (sepals and petals alike). blanc: a cream-green middle fading out from the claw, the margins pure white, the light through the
+   turned-away halves and along the edges lifting the white itself (never grey; kept 15, 58, 119, 84); rouge: a deeper midline (the keel, c16, 49),
+   paler rosy margins and tip, the edges lit through in its own red, only lighter (porteur, 2026-10-18: the light through only lightens) */
 const SVFX_CYMB={
   blanc:{cross:[{st:[[0,'#e8e6c4',.34],[.32,'#e8e6c4',0],[.7,'#ffffff',0],[1,'#ffffff',.55]],tip:.8,v:[.04,.22]}],
-    transmit:{tc:'#fff4d4',a:.5,wr:.3,thin:[.35,1.4,1.2],w:.026,ec:'#fffdf6',eo:[.6,.25]}},
+    transmit:{a:.5,wr:.3,thin:[.35,1.4,1.2],w:.026,eo:[.6,.25],lk:[.6,.8]}},
   rouge:{cross:[{st:[[0,'#a42a44',.46],[.22,'#a42a44',0],[.6,'#f0a0a6',0],[1,'#f0a0a6',.44]],tip:.85,v:[.08,.26]}],
-    transmit:{tc:'#ff6450',a:.38,thin:[.35,1.4,1.2],w:.022,ec:'#ffb4a4',eo:[.5,.18]}}};
+    transmit:{a:.38,thin:[.35,1.4,1.2],w:.022,eo:[.5,.18],lk:[.3,.45]}}};
 const SVFX_DEMO={
   /* the anemone (svBloom: the colourway's material itself). bleu: the midline a little deeper and more violet, the margins and the tip paler and
-     more luminous, a warmer violet light through the tissue (Mister Fokker: veined, lighter edges); blanc: a creamier middle, the margins pure white,
-     a warm cream light through it (The Bride: never a grey flat) */
+     more luminous, lit through in its own blue, only lighter (Mister Fokker: veined, lighter edges); blanc: a creamier middle, the margins pure
+     white, the light through lifting its shade toward its own white (The Bride: never a grey flat) */
   'anemone-coronaria':{spec:()=>typeof SVA_P!=='undefined'?SVA_P:null,cw:{
     bleu:{cross:[{st:[[0,'#3a2a9c',.3],[.28,'#3a2a9c',0],[.6,'#8c78ea',0],[1,'#8c78ea',.42]],tip:.8,v:[.1,.3]}],
-      transmit:{tc:'#9258f4',a:.42,thin:[.3,1.3,1.1],w:.02,ec:'#b09cff',eo:[.42,.15]}},
+      transmit:{a:.42,thin:[.3,1.3,1.1],w:.02,eo:[.42,.15],lk:[.35,.5]}},
     blanc:{cross:[{st:[[0,'#ece4cc',.32],[.42,'#ece4cc',0],[.72,'#ffffff',0],[1,'#ffffff',.6]],tip:.82,v:[.12,.34,.86,1]}],
-      transmit:{tc:'#fff4dc',a:.6,wr:.35,thin:[.3,1.3,1.1],w:.022,ec:'#fffdf8',eo:[.55,.22]}}}},
+      transmit:{a:.55,wr:.35,thin:[.3,1.3,1.1],w:.022,eo:[.55,.22],lk:[.6,.8]}}}},
   /* the cymbidium (svorFlower: the material by kind) */
   'cymbidium-grandes-fleurs':{spec:()=>typeof CYMB_S!=='undefined'?CYMB_S:null,kinds:['sep','pet'],
     cw:{blanc:{sep:SVFX_CYMB.blanc,pet:SVFX_CYMB.blanc},rouge:{sep:SVFX_CYMB.rouge,pet:SVFX_CYMB.rouge}}}};
