@@ -41,8 +41,8 @@ LIMIT = {'haiku': 1200, 'sonnet': 1800, 'opus': 5400}   # wall-clock seconds per
 EFFORT = {'haiku': 'low', 'sonnet': 'medium', 'opus': 'high'}  # opus xhigh -> high (RATE-OEILLET M1; --opus-effort overrides)
 # RATE-OEILLET M1: one complete flower for 8 M at most (owner, 2026-10-18), each step cut at its own share; --caps forme=4,plante=1.5 overrides.
 # A step's spend is summed over every run of the sort (pipe-bill.json): a resumed step keeps what it already spent.
-STEP_CAP = {'census': .2, 'refs': .15, 'coloris': .1, 'targets': .05, 'fiche': .25, 'forme': 3.0, 'fit': .2, 'plante': 1.0, 'finition': .8,
-            'temoins': .05, 'comparaison': .6, 'juge': .4, 'qa': .1, 'planches': .1}  # comparaison .3 -> .6: one Opus call of 40 turns is .6 (oeillet)
+STEP_CAP = {'census': .1, 'refs': .3, 'coloris': .1, 'targets': .05, 'fiche': .25, 'forme': 3.0, 'fit': .2, 'plante': 1.0, 'finition': .8,
+            'temoins': .05, 'comparaison': .6, 'juge': .4, 'qa': .1, 'planches': .1}  # comparaison .3 -> .6: one Opus call of 40 turns is .6 (oeillet); refs .15 -> .3, census .2 -> .1: pick + fill + brief run .17 to .27, a census .1 (wave 3)
 CAP_DEFAULT = 8.0
 PIPE_SLOTS = 4  # sorts running at once on the PC (owner, 2026-10-18: four flowers in parallel; the gate still holds 3 headless Chromes)
 NL = chr(10)
