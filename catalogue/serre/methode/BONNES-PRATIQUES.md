@@ -249,3 +249,15 @@ Rappel de base : SVG natif seulement, ni 3D, ni image incorporée, ni ruban, ni 
 12.7 La forme se lit aussi sur la mise à plat : profil de largeur, rapport longueur/largeur visible, endroit où la pièce se recourbe. Un
     tépale qui se recourbe trop tôt cache, de face, sa partie haute (lys oriental : pointe à 3,45 rad, 64 % de la longueur, ramenée à 2,2 rad,
     72 %) : la couleur paraît fausse alors que c'est la forme.
+
+## 13. Volumes et couches (porteur, 2026-10-18, sur le lys oriental)
+13.1 Une fleur se construit en couches. Le lys a deux verticilles de trois tépales : les externes plus étroits, insérés plus bas, qui
+    s'écartent et plongent en se recourbant ; les internes plus larges, aux marges ondulées, insérés un peu plus haut, qui montent en coupe
+    avant de s'ouvrir, décalés de 60°. Dessinés comme un seul plan de six pièces semblables, la fleur est fausse même si chaque pièce est juste.
+13.2 La fiche décrit la structure des couches (SCHEMA §4, `disposition`) : nombre de couches, insertion de chacune, décalage, laquelle passe
+    devant, ce qui les distingue, profondeur de la gorge. Chaque verticille a ses réglages (largeur, longueur, angles, ondulation) quand le
+    moteur le permet (svReflex : L, W, z0, cup, aS, aB, aT et wavW par verticille).
+13.3 La profondeur se juge de profil et de trois-quarts, jamais seulement de face : vue de face, un centre plat et un centre profond se
+    ressemblent. `python fleur/volume.py paire` compare la silhouette de profil (hauteur sur largeur, remplissage, profil de largeur par
+    rangée, profondeur de l'entonnoir), à angle égal seulement : une photo prise d'au-dessus ne juge pas un profil.
+13.4 Toute planche de validation porte au moins une vue de profil et une de trois-quarts par coloris, à côté de leurs photos.

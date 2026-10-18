@@ -38,9 +38,9 @@ ROLE = {
 NOW_BY = {'forme': 'session', 'fit': 'session', 'finition': 'session', 'comparaison': 'session'}  # heads drawn by hand since the lilies
 TOOLS_FOR = {'census': 'census.py, kavb.py', 'refs': 'refs.py, img.py', 'coloris': 'refs.py pal, apparence.py grille', 'targets': 'meas.py, prof.py, sil.py',
              'fiche': 'fiche.py', 'forme': 'apparence.py, shot_p.sh, sil.py, trous.py', 'fit': 'fit.py', 'plante': 'organ.py, jgap.py',
-             'finition': 'td-de.py, td-back.py', 'temoins': 'shot_p.sh, img.py', 'comparaison': 'apparence.py paire, img.py, heads.py', 'juge': 'img.py',
+             'finition': 'td-de.py, td-back.py', 'temoins': 'shot_p.sh, img.py', 'comparaison': 'apparence.py paire, volume.py paire, img.py', 'juge': 'img.py',
              'qa': 'qawatch.sh, wsq.sh', 'planches': 'shot_p.sh, td-mont.py'}
-KIND = {'apparence.py': 'mesure', 'census.py': 'recherche', 'kavb.py': 'recherche', 'refs.py': 'mesure', 'img.py': 'image', 'heads.py': 'image', 'td-mont.py': 'image',
+KIND = {'apparence.py': 'mesure', 'volume.py': 'mesure', 'census.py': 'recherche', 'kavb.py': 'recherche', 'refs.py': 'mesure', 'img.py': 'image', 'heads.py': 'image', 'td-mont.py': 'image',
         'meas.py': 'mesure', 'prof.py': 'mesure', 'sil.py': 'mesure', 'trous.py': 'mesure', 'gstat.py': 'mesure', 'organ.py': 'mesure',
         'jgap.py': 'mesure', 'td-de.py': 'mesure', 'td-back.py': 'mesure', 'cwmed.py': 'mesure', 'qt.py': 'mesure', 'fit.py': 'modelage',
         'fiche.py': 'contrôle', 'pipe.py': 'pilote', 'bill.py': 'coût', 'labo.py': 'coût', 'chantier.sh': 'pilote', 'shot.sh': 'rendu',

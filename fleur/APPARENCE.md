@@ -53,6 +53,12 @@ Ces seuils sont une proposition (question au porteur) : ils se resserrent quand 
 sous une autre lumière se compare sur les rapports (le haut plus blanc que la gorge, la marge plus pâle que le milieu) plus que sur les
 couleurs absolues.
 
+## Le volume
+
+`python fleur/volume.py paire <photo> "x0,y0,x1,y1" <rendu.png> --out refcache/<sid>/volume/<clé>` : la silhouette de la tête de profil ou
+de trois-quarts (hauteur sur largeur, remplissage, profil de largeur par rangée, profondeur de l'entonnoir), photo contre rendu, **à angle
+égal** (BONNES-PRATIQUES §13). La boîte entoure la tête sur la photo, sans la tige.
+
 ## Où ça sert
 
 - **Avant de dessiner** : la fiche d'apparence de chaque composant, sur deux ou trois photos, fixe les rampes, les zones, les taches et
