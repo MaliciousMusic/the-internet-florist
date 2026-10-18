@@ -1327,8 +1327,8 @@ def step_refs(ctx):
         n1, bad = refs_audit(ctx)
         dropped += len(bad)
     c = check_refs(ctx)
-    sis, sis_sheets = refs_sisters(ctx, R, c)
     gaps = refs_pairs(ctx, R)  # P11: the photos the comparison pairs need, checked now (eligible: group, 1 000 px, colour audit), not after forme
+    sis, sis_sheets = refs_sisters(ctx, R, c, gaps)
     if not c['ok'] or len(c['soft']) > 3 or gaps:
         miss = ', '.join(c['hard'] + c['soft'] + ['paire %s (%s)' % (k, v) for k, v in gaps.items()])
         if sis:
@@ -1363,11 +1363,14 @@ def step_refs(ctx):
     return {'status': 'done' if c['ok'] else 'failed', 'msg': c['msg'], 'checks': c, 'gaps': c['soft']}
 
 
-def refs_sisters(ctx, R, c):
+def refs_sisters(ctx, R, c, gaps=None):
     """--refs-taxa: the sister species searched when a stage or an organ is missing for good (nerine, 2026-10-18: no Nerine bowdenii
-    faded on Commons); their candidates go on new sheets the fill call reads. Returns (taxa, sheets)."""
+    faded on Commons), or when a comparison pair has no usable photo (lis-tigre, 2026-10-18: two short stages only, the faded pairs empty,
+    and no search was made); without --refs-taxa, the genus. Their candidates go on new sheets the fill call reads. Returns (taxa, sheets)."""
     taxa = [t.strip() for t in (getattr(ctx.a, 'refs_taxa', None) or '').split(',') if t.strip()]
-    if not taxa or (not c['hard'] and len(c['soft']) <= 3):
+    if not taxa and ctx.st.get('genus') and ctx.st['genus'].strip().lower() != (ctx.taxon or '').strip().lower():
+        taxa = [ctx.st['genus'].strip()]
+    if not taxa or (not c['hard'] and len(c['soft']) <= 3 and not gaps):
         return [], []
     if ctx.dry:
         say('  [dry] sister species for the gaps: %s' % ', '.join(taxa))
@@ -4204,6 +4207,14 @@ def cmd_selftest(a):
         t('eol_guard: a CRLF module edited with LF lines gets its CRLF back; an LF module is left alone', fx_ == ['app/y-crlf.js']
           and open(eg_ + '/app/y-crlf.js', 'rb').read() == b'a' + CR + LF + b'b' + CR + LF + b'c' + CR + LF
           and open(eg_ + '/app/y-lf.js', 'rb').read() == b'a' + LF + b'b' + LF + b'c' + LF, str(fx_))
+        NS_ = argparse.Namespace
+        sc_ = lambda rt, g: NS_(a=NS_(refs_taxa=rt), st={'genus': g}, taxon='Lilium lancifolium', dry=True)
+        with contextlib.redirect_stdout(io.StringIO()):
+            r1_ = refs_sisters(sc_(None, 'Lilium'), None, {'hard': [], 'soft': ['stade:fane']}, {'fane-1': 'groupe autre'})
+            r2_ = refs_sisters(sc_(None, 'Lilium'), None, {'hard': [], 'soft': ['stade:fane']}, {})
+            r3_ = refs_sisters(sc_('Lilium henryi', 'Lilium'), None, {'hard': ['stade:fane'], 'soft': []}, {})
+        t('refs: a pair without photo searches the sisters, the genus by default; nothing missing, no search', r1_[0] == ['Lilium'] and r2_ == ([], []) and r3_[0] == ['Lilium henryi'],
+          '%s %s %s' % (r1_, r2_, r3_))
         heavy_question(ctx3, {'el': 4909, 'kb': 1200})
         q_ = jload(ctx3.rc + '/questions.json', {}) or {}
         heavy_question(ctx3, {'el': 400, 'kb': 60})
