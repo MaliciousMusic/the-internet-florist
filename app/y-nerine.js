@@ -155,20 +155,27 @@ SV_HEAD['nerine']=nerSvg;
    tapering; they yellow from the tip when the stem fades, and the scape goes soft, thin and straw-green. No bulb, no root: the foot is the cut. */
 const NER_PL={sw:.045,len:.95,neck:.32,leafW:.115};
 const NER_SC=['#44662a','#8fb148','#c0db78','#e6f4b6'];
-NER_SC.sv={swell:.035,ribs:[-.4,.3],gloss:.3,red:'#c76f90',redF:.6,redA:0};/* no rose wash: it showed as a tan band down the scape's middle; the photos' scape is green to the spathe */
+NER_SC.sv={swell:.05,ribs:[-.4,.3],gloss:.3,red:'#c76f90',redF:.6,redA:0};/* no rose wash: it showed as a tan band down the scape's middle; the photos' scape is green to the spathe */
 const NER_SCW=['#52502e','#9a9558','#bbb27e','#d8d0a6'];
 function nerScW(sc,wl){const k=.6*svSm((wl-.4)/.45);if(!(k>0))return sc;const r=sc.map((c,i)=>mix(c,NER_SCW[i],k));r.sv=sc.sv;return r}
 /* [azimuth round the scape (rad, x toward z), length (x the whole stem), lean from the scape (rad), droop, fold, twist, sheath rank, flop, flopAt] */
-const NER_BAS=[[3.7,.52,.5,.5,[.5,.5,.35,0],.5,3,.7,.35],[.6,.46,.4,.42,0,.6,2,.6,.4],[2.4,.38,.34,.3,0,.4,1,.5,.5],[5.3,.3,.26,.26,0,.5,0,.4,.6]];
-const NER_LEAF={wp:[[0,.66],[.05,.86],[.12,1],[.5,.97],[.75,.8],[.9,.5],[1,.03]],sheath:.07,gut:.56,keel:.35,wav:.022,wavN:3,hood:.12,nu:5,nv:16,bloom:.5,flopDn:.7,
-  up:'#4d7430',low:'#7fa05e',base:'#d6dcae',fade:{yel:'#c8c455',tan:'#a98f52',dry:'#d6c9a0',w0:.2,dw:.6}};
+/* comparaison 2026-10-18: the long leaf's fold is spread over .32 of its length (a soft arch as on p003/p083, no kink); droops a little deeper */
+/* comparaison relais (judge ko-1): blades lean out further and arch over (no stiff V), a round lit channel (keel .18), satin gloss (bloom .3) */
+const NER_BAS=[[3.7,.52,.64,.66,[.42,.55,.4,0,.34],.5,3,.7,.35],[.6,.46,.56,.62,0,.6,2,.6,.4],[2.4,.38,.47,.5,0,.4,1,.5,.5],[5.3,.3,.37,.44,0,.5,0,.4,.6]];
+const NER_LEAF={wp:[[0,.66],[.05,.86],[.12,1],[.5,.97],[.75,.8],[.9,.5],[1,.03]],sheath:.07,gut:.62,keel:.18,wav:.022,wavN:3,hood:.12,nu:5,nv:16,bloom:.3,flopDn:.7,
+  up:'#4d7430',low:'#6c9050'/* the under face a deeper sage, not washed out behind the scape */,base:'#71904e'/* the sheaths a dense green like the blade's foot (p083), never a pale see-through tube (judge ko-1) */,fade:{yel:'#c8c455',tan:'#a98f52',dry:'#d6c9a0',w0:.2,dw:.6}};
+/* the leaves' own neck beside the scape (x w: left, behind; its radius): the scape rises naked from the bulb's side, the leaves sheath each
+   other, never the scape (judge ko-1: "feuilles gainant la hampe comme un poireau") */
+const NER_NECK={dx:-1.75,dz:-.7,r:.5};
 /* the sheets' leaves (svtStem calls it behind (-1) then in front (1) of the scape); the sheaths are clipped at the cut, the cut face laid on in front */
-function nerBasal(par,P,L,w,side){const p0=[P[0][0],-P[0][1],0],wl=nerLife(),D=w/(NER_PL.sw*1.188),Lt=L+D*(NER_PL.len+NER_PL.neck),W0=WILT,f=svF,x0=P[0][0],y0=P[0][1],bw=w*2.2,id='nb'+(gid++);
+function nerBasal(par,P,L,w,side){const N=NER_NECK,p0=[P[0][0]+N.dx*w,-P[0][1],N.dz*w],wl=nerLife(),D=w/(NER_PL.sw*1.188),Lt=L+D*(NER_PL.len+NER_PL.neck),W0=WILT,f=svF,x0=P[0][0],y0=P[0][1],bw=w*3.2,id='nb'+(gid++);
   E('path',{d:`M-1e5 -1e5H1e5V1e5H-1e5ZM${f(x0-bw)} ${f(y0)}H${f(x0+bw)}V${f(y0+bw*4)}H${f(x0-bw)}Z`,'clip-rule':'evenodd'},E('clipPath',{id},GDEF||defs));
   const g=G(par,{'clip-path':`url(#${id})`});WILT=null;
   try{NER_BAS.forEach(([az,k,ln,dr,fo,tw,rk,fl,fa],i)=>{const Out=[Math.cos(az),0,Math.sin(az)];if((Out[2]<0?-1:1)!==side)return;
-      svStrapLeafX(g,p0,[0,1,0],Out,Object.assign({},NER_LEAF,{len:Lt*k,w:NER_PL.leafW*D/(Lt*k),sr:w*(.62+.14*rk),lean:ln,droop:dr,fold:fo||null,flop:fl,flopAt:fa,tw,sd:svSeed('nerine-feuille',i),wl}))});
-    if(side>0){const sc=nerScW(NER_SC,wl);svCutFace(par,[x0,y0],[1,0],w,sc,sc.sv,{bundle:1.25,rings:[.86,.72],bc:'#d2d9ae'})}}
+      svStrapLeafX(g,p0,[0,1,0],Out,Object.assign({},NER_LEAF,{len:Lt*k,w:NER_PL.leafW*D/(Lt*k),sr:w*(N.r+.06*rk),lean:ln,droop:dr,fold:fo||null,flop:fl,flopAt:fa,tw,sd:svSeed('nerine-feuille',i),wl}))});
+    /* two clean cuts side by side: the leaves' neck (pale tissue, no rings) and the naked scape */
+    if(side>0){const sc=nerScW(NER_SC,wl),lc=['#5a7a3c','#8aa860','#b4c488','#d8e0b8'];
+      svCutFace(par,[x0+N.dx*w,y0],[1,0],w*(N.r+.2)*2.1,lc,{cutY:.2,cutC:'#dfe4c4'});svCutFace(par,[x0,y0],[1,0],w,sc,sc.sv)}}
   finally{WILT=W0}}
 if(typeof GHI!=='undefined'){/* the bouquet's old head info is kept as recInfo gave it (form, size, k, r 44 at 13 cm) */
   GHI['nerine']=Object.assign(GHI['nerine']||{},{form:'ombelle',size:1.6,k:'head',rk:44/(6.5*UPC),sc:NER_SC,sw:NER_PL.sw,cut:1,basal:nerBasal})}
@@ -180,9 +187,11 @@ function nerPlant(g,t,o){const cw=o.cw||cwNear(CW_NER,o.col)||CW_NER[0],op=Math.
   try{const wl=nerLife(o),fan=svSm((wl-.45)/.4),bend=svSm((wl-.2)/.55),B=frameOf(o,.6,true),up=B.upV?V3.nz([B.upV[0],B.upV[1],B.upV[2]||0]):[0,1,0],face=B[2];
     let U0=V3s(face,V3.sc(up,V3.dot(face,up)));if(V3l(U0)<1e-3)U0=[0,0,1];
     const kr=B.reach?Math.min(1,Math.max(.2,B.reach*.4/(D*(NER_PL.len+NER_PL.neck)))):1,w=D*NER_PL.sw*(1-.2*svSm((wl-.4)/.5)),
-      fax=V3.nz(V3.add(face,V3.sc(up,.5-1.4*bend))),sc=nerScW(NER_SC,wl),
-      rules={S:()=>[['F',{l:D*NER_PL.len*kr,w0:w*1.1,w1:w,e:.012}],['F',{l:D*NER_PL.neck*kr,w1:w*.9,aim:fax,k:.5}],['K',{main:1}]]};
-    const res=lsTurtle(lsDerive([['S',{}]],rules,2),{p:[0,0,0],H:up,U:U0,wig:.012,seg:D*.08,T:[0,1,0],e:.01,w:w*1.1});for(const ch of res.chains)ch.c=sc;
+      /* fresh, the umbel sits on top of the scape facing up and out (no crook: judge ko-1); fading, it bows as before (same aim at bend 1) */
+      fax=V3.nz(V3.add(V3.sc(face,.35+.65*bend),V3.sc(up,1.4-2.3*bend))),nkA=.2+.3*bend/* gentle aim fresh: no kink at the neck's first step */,sc=nerScW(NER_SC,wl),
+      /* the scape thicker at the foot, tapering to the spathe (photos 3, 8), with a slight easy curve */
+      rules={S:()=>[['F',{l:D*NER_PL.len*kr,w0:w*1.22,w1:w*.96,e:.02}],['F',{l:D*NER_PL.neck*kr,w1:w*.84,aim:fax,k:nkA}],['K',{main:1}]]};
+    const res=lsTurtle(lsDerive([['S',{}]],rules,2),{p:[0,0,0],H:up,U:U0,wig:.018,seg:D*.08,T:[0,1,0],e:.016,w:w*1.22});for(const ch of res.chains)ch.c=sc;
     const main=res.organs.find(q=>q.t==='K'),apex=main.pos,roll=pr()*6.28;
     lsPlant(k,res,{O:[0,0,0],apex,cols:sc,piece:99,organ:(og,pos)=>{
       if(og.t==='K'){const ax=V3.nz(V3.add(og.H,V3.sc(fax,.8))),Bf=l41Fr(ax,up,roll),c=V3.add(pos,V3.sc(ax,D*NER_UMB.Lt*NER_UMB.zc)),
