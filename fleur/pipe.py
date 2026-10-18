@@ -1684,12 +1684,22 @@ def kept_tags(x):
     return out
 
 
+def cw_names(c):
+    """the names a colourway answers to on a photo's coloris: tag (normalised: its catalogue id and its cultivar)"""
+    return {n for n in (norm(c.get('cultivar')), norm(c.get('id'))) if n}
+
+
+def photo_cws(x):
+    """the colourways a kept photo is tagged with (coloris:<name>, normalised)"""
+    return {t[8:] for t in kept_tags(x) if t.startswith('coloris:')}
+
+
 def pair_plan(ctx):
     """one kept photo per pair (the bouquet's first colourway preferred, a photo used once when possible) and the render that answers it"""
     K = jload(ctx.rc + '/keep.json', []) or []
     cws = jload(ctx.rc + '/coloris.json', []) or []
     cw = cws[0]['id'] if cws else ''
-    cult = norm(cws[0].get('cultivar')) if cws else ''
+    first = cw_names(cws[0]) if cws else set()
     full = int(getattr(ctx.a, 'full', 40) or 40)
     views, vsrc = pair_views(ctx)
     used, plan, missing = {}, [], []
@@ -1698,7 +1708,7 @@ def pair_plan(ctx):
         for alt in P['want']:
             cands = [x for x in K if set(alt) <= kept_tags(x)]
             if cands:
-                same = lambda x: any(t.startswith('coloris:') and cult and (t[8:] in cult or cult in t[8:]) for t in kept_tags(x))
+                same = lambda x: bool(photo_cws(x) & first)  # the same colourway: equal names, never a substring (rose is not rose-vif)
                 cands.sort(key=lambda x: (used.get(x.get('i'), 0), not same(x)))
                 best = cands[0]
                 break
@@ -1718,21 +1728,25 @@ def pair_plan(ctx):
                      'png': '%s/comparaison/%s.png' % (ctx.rel, P['k']), 'txt': '%s/comparaison/%s.txt' % (ctx.rel, P['k'])})
     # BONNES-PRATIQUES 9.3c (owner, 2026-10-18, cymbidium): every colourway with a photo of its own variety is compared to THAT photo
     # (tip shape, colour zones, translucency, its own heart), face on and open; up to --cw-pairs of them (10 by default)
-    for c in cws[:int(getattr(ctx.a, 'cw_pairs', 10) or 10) * 3]:
-        if sum(1 for q in plan if q['k'].startswith('cw-')) >= int(getattr(ctx.a, 'cw_pairs', 10) or 10):
+    ncw, absent = int(getattr(ctx.a, 'cw_pairs', 10) or 10), []
+    for c in cws[:ncw * 3]:
+        if sum(1 for q in plan if q['k'].startswith('cw-')) >= ncw:
             break
-        names = [n for n in (norm(c.get('cultivar')), norm(c.get('id'))) if n]
-        own = [x for x in K if any(t.startswith('coloris:') and any(t[8:] in n or n in t[8:] for n in names) for t in kept_tags(x))]
-        if not own:
+        names = cw_names(c)
+        own = [x for x in K if photo_cws(x) & names]
+        if not own:  # said, never skipped in silence: the owner decides (a named photo to find, or no pair for it)
+            absent.append('coloris %s (%s) : aucune photo gardée balisée `coloris:` %s ; pas de paire cw- (ajouter une photo nommée de la variété à refs, ou dire que la paire est inutile)'
+                          % (c.get('id'), c.get('cultivar') or 'nom générique', ' ou '.join(sorted(names)) or '-'))
             continue
         own.sort(key=lambda x: (not ({'stade:ouvert', 'vue:face'} <= kept_tags(x)), used.get(x.get('i'), 0)))
-        best, k = own[0], 'cw-' + slug(str(c.get('id')))[:20]
+        best, k = own[0], 'cw-' + slug(str(c.get('id')))[:20].strip('-')
         name = 'cmp_%s_%s' % (slug(ctx.sid)[:24], k)
         plan.append({'k': k, 'label': 'coloris %s contre la photo de sa variété (pointes, zones de couleur, translucidité, cœur)' % c.get('id'),
                      'photo': best.get('i'), 'title': best.get('title'), 'page': best.get('page'), 'tags': best.get('tags'), 'vu': best.get('m'),
                      'thumb': '%s/t%03d.jpg' % (ctx.rel, int(best.get('i', 0))), 'name': name, 'render': 'fleur/out/%s.png' % name,
                      'query': 'grid=1&sid=%s&cws=%s&st=.85:0&view=0&D=600&det=1.5&seed=%d' % (ctx.sid, c.get('id'), SEED), 'cell': '0,0@600',
                      'kind': 'cup', 'op': '.85', 'cw': c.get('id'), 'png': '%s/comparaison/%s.png' % (ctx.rel, k), 'txt': '%s/comparaison/%s.txt' % (ctx.rel, k)})
+    set_questions(ctx, 'paires-coloris', 'Coloris sans paire photo/rendu (comparaison, 9.3c)', absent)
     return plan, missing
 
 
@@ -2680,6 +2694,18 @@ def cmd_selftest(a):
           str(miss_) + str([(p['k'], p['photo']) for p in plan_]))
         t('comparaison: same angle and stage (profile view 7, faded .6 and .9, plant sheet)', 'view=7' in plan_[2]['query'] and '1:.6' in plan_[4]['query'] and '1:.9' in plan_[5]['query']
           and plan_[6]['query'].startswith('plant=1') and all('seed=7' in p['query'] for p in plan_))
+        r7 = tmp + '/refcache/selftest7'
+        os.makedirs(r7, exist_ok=True)
+        jsave(r7 + '/keep.json', KEEP[:7] + [dict(KEEP[7], tags=['stade:ouvert', 'vue:face', 'coloris:rose-vif'])])
+        jsave(r7 + '/coloris.json', [{'id': 'rose', 'cultivar': ''}, {'id': 'rose-vif', 'cultivar': 'Rose Vif'}, {'id': 'x' * 19 + '-y', 'cultivar': ''}])
+        ctx7 = Ctx('selftest7', tmp, argparse.Namespace(dry=False, cap=40, claude=fake), {'sid': 'selftest7', 'taxon': 'Test test', 'steps': {}, 'skus': []})
+        p7 = pair_plan(ctx7)[0]
+        q7 = open(r7 + '/questions.md', encoding='utf-8').read() if os.path.exists(r7 + '/questions.md') else ''
+        t('pairs: cw-* by equal colourway names: rose does not take the photo of rose-vif', [p['k'] for p in p7 if p['k'].startswith('cw-')] == ['cw-rose-vif']
+          and p7[-1]['photo'] == 7, str([(p['k'], p['photo']) for p in p7]))
+        t('pairs: a colourway without its own photo is a question, not a silent skip', 'coloris rose (nom générique)' in q7 and 'coloris ' + 'x' * 19 + '-y' in q7, q7[-400:])
+        jsave(r7 + '/keep.json', KEEP[:7] + [dict(KEEP[7], tags=['stade:ouvert', 'vue:face', 'coloris:' + 'x' * 19 + '-y'])])
+        t('pairs: a cw- key cut at 20 characters keeps no trailing dash (the table key matches)', [p['k'] for p in pair_plan(ctx7)[0] if p['k'].startswith('cw-')] == ['cw-' + 'x' * 19])
         q_ = {p['k']: p for p in plan_}
         t('pairs: a tulip keeps view 7 for the profile and the bud (no family)', view_family(ctx3) == '' and q_['profil']['view'] == 7 and q_['bouton']['view'] == 7)
         ctx3.st.update(taxon='Cymbidium hybrida', kit='y3-orchidee.js')

@@ -53,6 +53,8 @@ photo/rendu paire par paire, puis un juge adversarial qui n'est pas le modeleur.
 | temoins | `mkapp.sh` dit « app syntax ok » ; anémone contre `base_v2.png` (ou `base_before.png` avant d227daa) à 0,00 % ; `rtest` des SKU de la sorte et des sortes du kit IDENTIQUE (tulipes témoins pas pires que dans l'atelier principal) ; planches des sortes du kit à 0,00 % contre celles d'avant ; `skudump` après = avant (aucun SKU déplacé) ; budget mesuré | tous |
 | qa | `qawatch.sh` par lots de 4, `ramwait.sh` avant chaque lot | flottants, sous le vase, plis : 0 |
 | planches | sku et plante (graine 7), copiées dans `catalogue/serre/pilote-printemps/sheets/<sid>-sku-pN.png` et `-plante-pN.png` | refusé si le juge n'a pas accepté la sorte, ou si `app/*.js` ou `pilote/svtest.js` ont changé depuis son `ok` (empreinte sha1 `fp` gardée dans `pipe-state.json` au verdict) |
+Paires `cw-<id>` : une photo gardée balisée `coloris:` du même nom (id ou cultivar, normalisés, égalité stricte : « rose » ne prend pas « rose-vif ») ;
+un coloris sans photo à lui devient une question (`questions.md`, section « Coloris sans paire »), jamais un saut silencieux.
 La plante reprend `targets.json`. Toutes les planches de pipe.py et des prompts portent `&seed=7`. Aucun commit ni fusion : les planches sont seulement copiées.
 pipe.py ne déclare « FINI » qu'une sorte dont toutes les étapes sont faites et que le juge a acceptée, avec le code qu'il a jugé (même empreinte) ;
 sinon « NOT FINISHED » et le code 2.
