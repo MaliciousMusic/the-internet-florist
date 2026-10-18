@@ -2105,7 +2105,13 @@ def step_forme(ctx):
                           numbers=lambda: forme_numbers(ctx))
     if res == 'blocked':
         raise StepFailed('forme blocked by the modeller: %s' % (fin.get('question') or fin.get('note') or fin))
-    ok, why = check_forme(ctx)
+    if res == 'relay' and not ctx.dry:
+        # the relays ran out without a "done": the pipe still makes the proofs itself (M2) and judges by the numbers; a forme that passes
+        # them is done, else its real reason shows, never "face pair older" (scabieuse, 2026-10-18: 3 relays, proofs left to the model)
+        ok, why = closed_check(ctx, 'forme')
+        res = 'done' if ok else res
+    else:
+        ok, why = check_forme(ctx)
     ar = (ctx.st.get('fiche_a_relier') or {}).get('liste') or []
     return {'status': 'done' if res == 'done' else 'failed', 'msg': 'forme %s%s; %s%s' % (res, '' if ok else ' (check: %s)' % why, fin.get('note', ''),
             '; constantes à relier (fiche, non bloquant) : ' + ', '.join(ar) if ar else ''), 'relays_used': True}
