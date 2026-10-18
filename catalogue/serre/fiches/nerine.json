@@ -1,0 +1,2132 @@
+{
+ "schema": "fiche-morpho/1",
+ "sid": "nerine",
+ "nom": "Nérine de Bowden",
+ "taxon": {
+  "genre": "Nerine",
+  "espece": "Nerine bowdenii W.Watson",
+  "groupe": "espèce type et hybrides de jardin à tépales ondulés (lis du Cap) ; N. sarniensis, flexuosa et hybrides à part",
+  "famille": "Amaryllidaceae"
+ },
+ "kit": {
+  "moteur": "svBloom (ombelle de fleurs en étoile à tépales linéaires, à adapter par le modeleur)",
+  "module": "app/y-nerine.js"
+ },
+ "etat": {
+  "date": "2026-10-18",
+  "auteur": "pipe.py (squelette), puis l'étape fiche",
+  "note": "Fiche remplie d'après kept.jpg, coloris.json, targets.json et mesures organ.py de l'étape ; photos des autres espèces (undulata, sarniensis) citées seulement pour le port, jamais pour les mesures de la fleur.",
+  "pilote": false
+ },
+ "photos": {
+  "nerine:add949aa": {
+   "titre": "File:Cluster of Nerine bowdenii flowerheads.jpg",
+   "auteur": "Sinbad 28 (talk)",
+   "licence": "Public domain",
+   "url": "https://commons.wikimedia.org/wiki/File:Cluster_of_Nerine_bowdenii_flowerheads.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/Cluster_of_Nerine_bowdenii_flowerheads.jpg/500px-Cluster_of_Nerine_bowdenii_flowerheads.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/nerine/refcache/nerine/t000.jpg",
+   "tags": [
+    "stade:ouvert",
+    "vue:face"
+   ],
+   "vu": "stade=ouvert vue=face organe=- groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 0,
+   "groupe": "jardin"
+  },
+  "nerine:09909c30": {
+   "titre": "File:Nerine bowdenii (Amaryllidaceae) flower.JPG",
+   "auteur": "Magnus Manske",
+   "licence": "CC BY-SA 3.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Nerine_bowdenii_(Amaryllidaceae)_flower.JPG",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Nerine_bowdenii_%28Amaryllidaceae%29_flower.JPG/500px-Nerine_bowdenii_%28Amaryllidaceae%29_flower.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/nerine/refcache/nerine/t001.jpg",
+   "tags": [
+    "stade:ouvert",
+    "stade:bouton",
+    "vue:trois-quarts",
+    "organe:tige",
+    "organe:bourgeon"
+   ],
+   "vu": "stade=ouvert+bouton vue=trois-quarts organe=tige+bourgeon groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 1,
+   "groupe": "jardin"
+  },
+  "nerine:fc0cf2c6": {
+   "titre": "File:Nerine bowdenii (Amaryllidaceae) plant.JPG",
+   "auteur": "Magnus Manske",
+   "licence": "CC BY-SA 3.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Nerine_bowdenii_(Amaryllidaceae)_plant.JPG",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/Nerine_bowdenii_%28Amaryllidaceae%29_plant.JPG/500px-Nerine_bowdenii_%28Amaryllidaceae%29_plant.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/nerine/refcache/nerine/t002.jpg",
+   "tags": [
+    "stade:bouton",
+    "stade:ouvert",
+    "vue:profil",
+    "organe:tige",
+    "organe:bourgeon",
+    "organe:plante"
+   ],
+   "vu": "stade=bouton+ouvert vue=profil organe=tige+bourgeon+plante groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 2,
+   "groupe": "jardin"
+  },
+  "nerine:e928447f": {
+   "titre": "File:Nerine bowdenii 1c.JPG",
+   "auteur": "Consultaplantas",
+   "licence": "CC BY-SA 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Nerine_bowdenii_1c.JPG",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/Nerine_bowdenii_1c.JPG/500px-Nerine_bowdenii_1c.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/nerine/refcache/nerine/t003.jpg",
+   "tags": [
+    "stade:ouvert",
+    "vue:trois-quarts",
+    "organe:plante",
+    "organe:feuille-dessus"
+   ],
+   "vu": "stade=ouvert vue=trois-quarts organe=plante+feuille-dessus groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 3,
+   "groupe": "jardin"
+  },
+  "nerine:ee8378c3": {
+   "titre": "File:Nerine bowdenii 2c.JPG",
+   "auteur": "Consultaplantas",
+   "licence": "CC BY-SA 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Nerine_bowdenii_2c.JPG",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/23/Nerine_bowdenii_2c.JPG/500px-Nerine_bowdenii_2c.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/nerine/refcache/nerine/t004.jpg",
+   "tags": [
+    "stade:ouvert",
+    "vue:trois-quarts"
+   ],
+   "vu": "stade=ouvert vue=trois-quarts organe=- groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 4,
+   "groupe": "jardin"
+  },
+  "nerine:ed57e981": {
+   "titre": "File:Nerine bowdenii HRM1.JPG",
+   "auteur": "Cillas",
+   "licence": "CC BY-SA 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Nerine_bowdenii_HRM1.JPG",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/Nerine_bowdenii_HRM1.JPG/500px-Nerine_bowdenii_HRM1.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/nerine/refcache/nerine/t005.jpg",
+   "tags": [
+    "stade:ouvert",
+    "vue:face"
+   ],
+   "vu": "stade=ouvert vue=face organe=- groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 5,
+   "groupe": "jardin"
+  },
+  "nerine:8b3fa568": {
+   "titre": "File:Nerine bowdenii HRM2.JPG",
+   "auteur": "Cillas",
+   "licence": "CC BY-SA 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Nerine_bowdenii_HRM2.JPG",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/Nerine_bowdenii_HRM2.JPG/500px-Nerine_bowdenii_HRM2.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/nerine/refcache/nerine/t006.jpg",
+   "tags": [
+    "stade:ouvert",
+    "vue:face"
+   ],
+   "vu": "stade=ouvert vue=face organe=- groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 6,
+   "groupe": "jardin"
+  },
+  "nerine:331c1734": {
+   "titre": "File:Nerine bowdenii subsp. bowdenii 1DS-II 1-8715.jpg",
+   "auteur": "SAplants",
+   "licence": "CC BY-SA 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Nerine_bowdenii_subsp._bowdenii_1DS-II_1-8715.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/Nerine_bowdenii_subsp._bowdenii_1DS-II_1-8715.jpg/500px-Nerine_bowdenii_subsp._bowdenii_1DS-II_1-8715.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/nerine/refcache/nerine/t007.jpg",
+   "tags": [
+    "stade:ouvert",
+    "vue:trois-quarts"
+   ],
+   "vu": "stade=ouvert vue=trois-quarts organe=- groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 7,
+   "groupe": "jardin"
+  },
+  "nerine:81eb8ca2": {
+   "titre": "File:Nerine bowdenii subsp. bowdenii 1DS-II 1-8717.jpg",
+   "auteur": "SAplants",
+   "licence": "CC BY-SA 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Nerine_bowdenii_subsp._bowdenii_1DS-II_1-8717.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/Nerine_bowdenii_subsp._bowdenii_1DS-II_1-8717.jpg/500px-Nerine_bowdenii_subsp._bowdenii_1DS-II_1-8717.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/nerine/refcache/nerine/t008.jpg",
+   "tags": [
+    "stade:ouvert",
+    "vue:profil",
+    "organe:tige"
+   ],
+   "vu": "stade=ouvert vue=profil organe=tige groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 8,
+   "groupe": "jardin"
+  },
+  "nerine:8e13edde": {
+   "titre": "File:Nerine bowdenii.JPG",
+   "auteur": "Sb616",
+   "licence": "CC BY-SA 3.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Nerine_bowdenii.JPG",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/Nerine_bowdenii.JPG/500px-Nerine_bowdenii.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/nerine/refcache/nerine/t009.jpg",
+   "tags": [
+    "stade:ouvert",
+    "vue:trois-quarts"
+   ],
+   "vu": "stade=ouvert vue=trois-quarts organe=- groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 9,
+   "groupe": "jardin"
+  },
+  "nerine:ec3c1149": {
+   "titre": "File:Nerine bowdenii0.jpg",
+   "auteur": "Kurt Stüber [1]",
+   "licence": "CC BY-SA 3.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Nerine_bowdenii0.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/Nerine_bowdenii0.jpg/500px-Nerine_bowdenii0.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/nerine/refcache/nerine/t010.jpg",
+   "tags": [
+    "stade:ouvert",
+    "vue:profil"
+   ],
+   "vu": "stade=ouvert vue=profil organe=- groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 10,
+   "groupe": "jardin"
+  },
+  "nerine:754152e1": {
+   "titre": "File:Nerine bowdenii02.jpg",
+   "auteur": "Paul venter",
+   "licence": "CC BY-SA 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Nerine_bowdenii02.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/Nerine_bowdenii02.jpg/500px-Nerine_bowdenii02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/nerine/refcache/nerine/t012.jpg",
+   "tags": [
+    "stade:ouvert",
+    "vue:trois-quarts"
+   ],
+   "vu": "stade=ouvert vue=trois-quarts organe=- groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 12,
+   "groupe": "jardin"
+  },
+  "nerine:84919aa9": {
+   "titre": "File:Nerine bowdenii1.jpg",
+   "auteur": "Kurt Stüber [1]",
+   "licence": "CC BY-SA 3.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Nerine_bowdenii1.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1f/Nerine_bowdenii1.jpg/500px-Nerine_bowdenii1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/nerine/refcache/nerine/t013.jpg",
+   "tags": [
+    "stade:ouvert",
+    "vue:trois-quarts",
+    "organe:tige"
+   ],
+   "vu": "stade=ouvert vue=trois-quarts organe=tige groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 13,
+   "groupe": "jardin"
+  },
+  "nerine:3f707b98": {
+   "titre": "File:Nerine bowdenii2.jpg",
+   "auteur": "Kurt Stüber [1]",
+   "licence": "CC BY-SA 3.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Nerine_bowdenii2.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/80/Nerine_bowdenii2.jpg/500px-Nerine_bowdenii2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/nerine/refcache/nerine/t014.jpg",
+   "tags": [
+    "stade:ouvert",
+    "organe:plante",
+    "organe:tige"
+   ],
+   "vu": "stade=ouvert vue=- organe=plante+tige groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 14,
+   "groupe": "jardin"
+  },
+  "nerine:0139a717": {
+   "titre": "File:Nerine-bowdenii-flowers.jpg",
+   "auteur": "Sten Porse",
+   "licence": "CC BY-SA 3.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Nerine-bowdenii-flowers.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/81/Nerine-bowdenii-flowers.jpg/500px-Nerine-bowdenii-flowers.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/nerine/refcache/nerine/t015.jpg",
+   "tags": [
+    "stade:ouvert",
+    "vue:face",
+    "organe:plante"
+   ],
+   "vu": "stade=ouvert vue=face organe=plante groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 15,
+   "groupe": "jardin"
+  },
+  "nerine:b02d11cf": {
+   "titre": "File:Nerine.jpg",
+   "auteur": "Juni from Kyoto, Japan",
+   "licence": "CC BY 2.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Nerine.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/eb/Nerine.jpg/500px-Nerine.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/nerine/refcache/nerine/t016.jpg",
+   "tags": [
+    "stade:ouvert",
+    "vue:face"
+   ],
+   "vu": "stade=ouvert vue=face organe=- groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 16,
+   "groupe": "jardin"
+  },
+  "nerine:fe0db9b7": {
+   "titre": "File:Lis du Cap.jpg",
+   "auteur": "Chaumot",
+   "licence": "CC BY-SA 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Lis_du_Cap.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/Lis_du_Cap.jpg/500px-Lis_du_Cap.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/nerine/refcache/nerine/t022.jpg",
+   "tags": [
+    "stade:ouvert",
+    "vue:face"
+   ],
+   "vu": "stade=ouvert vue=face organe=- groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 22,
+   "groupe": "jardin"
+  },
+  "nerine:2429cdef": {
+   "titre": "File:Nerine undulata 02.jpg",
+   "auteur": "Michael Wolf",
+   "licence": "CC BY-SA 3.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Nerine_undulata_02.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/30/Nerine_undulata_02.jpg/500px-Nerine_undulata_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/nerine/refcache/nerine/t084.jpg",
+   "tags": [
+    "stade:declin",
+    "stade:entrouvert",
+    "vue:trois-quarts",
+    "organe:tige"
+   ],
+   "vu": "stade=declin+entrouvert vue=trois-quarts organe=tige groupe=espece-sauvage",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 84,
+   "groupe": "espece-sauvage"
+  },
+  "nerine:7ee2dcc3": {
+   "titre": "File:Nerine undulata 01.jpg",
+   "auteur": "Michael Wolf",
+   "licence": "CC BY-SA 3.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Nerine_undulata_01.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Nerine_undulata_01.jpg/500px-Nerine_undulata_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/nerine/refcache/nerine/t083.jpg",
+   "tags": [
+    "stade:entrouvert",
+    "stade:ouvert",
+    "vue:trois-quarts",
+    "organe:feuille-dessus",
+    "organe:tige"
+   ],
+   "vu": "stade=entrouvert+ouvert vue=trois-quarts organe=feuille-dessus+tige groupe=espece-sauvage",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 83,
+   "groupe": "espece-sauvage"
+  },
+  "nerine:e6074bf6": {
+   "titre": "File:Nerine sarniensis-1-bsi-yercaud-salem-India.JPG",
+   "auteur": "Yercaud-elango",
+   "licence": "CC BY-SA 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Nerine_sarniensis-1-bsi-yercaud-salem-India.JPG",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/87/Nerine_sarniensis-1-bsi-yercaud-salem-India.JPG/500px-Nerine_sarniensis-1-bsi-yercaud-salem-India.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/nerine/refcache/nerine/t068.jpg",
+   "tags": [
+    "organe:feuille-dessus",
+    "organe:feuille-fanee"
+   ],
+   "vu": "stade=- vue=- organe=feuille-dessus+feuille-fanee groupe=espece-sauvage",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 68,
+   "groupe": "espece-sauvage"
+  },
+  "nerine:eeef76ec": {
+   "titre": "File:Nerine sarniensis-2-bsi-yercaud-salem-India.JPG",
+   "auteur": "Yercaud-elango",
+   "licence": "CC BY-SA 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Nerine_sarniensis-2-bsi-yercaud-salem-India.JPG",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/48/Nerine_sarniensis-2-bsi-yercaud-salem-India.JPG/500px-Nerine_sarniensis-2-bsi-yercaud-salem-India.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/nerine/refcache/nerine/t069.jpg",
+   "tags": [
+    "organe:feuille-fanee"
+   ],
+   "vu": "stade=- vue=- organe=feuille-fanee groupe=espece-sauvage",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 69,
+   "groupe": "espece-sauvage"
+  }
+ },
+ "organes": {
+  "tepale.externe": {
+   "role": "perianthe",
+   "nombre": {
+    "v": 3,
+    "unite": "n",
+    "methode": "reference",
+    "photos": [
+     "nerine:331c1734"
+    ],
+    "ref": "Flore : Nerine bowdenii W.Watson, Amaryllidaceae, Afrique du Sud (Drakensberg) ; hampe 45-60 cm, ombelle de 7-12 fleurs, six tépales linéaires ondulés de 6-7 cm, étamines déclinées",
+    "conf": "A",
+    "ecart": {
+     "type": "confirme",
+     "texte": "svBloom partage n = 6 (NER_GENES.n, app/y-nerine.js) en 3 tépales externes et 3 internes (ceil(n/2)) : la fiche compte un verticille."
+    }
+   },
+   "disposition": {
+    "type": "verticilles",
+    "verticilles": {
+     "v": 2,
+     "unite": "n",
+     "methode": "oeil",
+     "photos": [
+      "nerine:331c1734",
+      "nerine:add949aa"
+     ],
+     "conf": "B",
+     "ecart": {
+      "type": "confirme",
+      "texte": "svBloom pose deux verticilles alternés, comme la fiche."
+     }
+    },
+    "recouvrement": {
+     "v": 0.0,
+     "unite": "ratio",
+     "methode": "oeil",
+     "photos": [
+      "nerine:331c1734"
+     ],
+     "conf": "C",
+     "ecart": {
+      "type": "confirme",
+      "texte": "Pièces en étoile, bases étroites (SV_NERINE.claw, app/y-nerine.js) : recouvrement nul à l'ouvert."
+     }
+    },
+    "ordre": {
+     "v": "trois tépales externes alternent avec trois internes ; en étoile, presque sans recouvrement",
+     "methode": "oeil",
+     "photos": [
+      "nerine:331c1734"
+     ],
+     "conf": "C"
+    }
+   },
+   "contour": {
+    "base": {
+     "v": "cunee",
+     "methode": "oeil",
+     "photos": [
+      "nerine:331c1734"
+     ],
+     "conf": "C"
+    },
+    "pointe": {
+     "type": {
+      "v": "arrondie",
+      "methode": "oeil",
+      "photos": [
+       "nerine:331c1734"
+      ],
+      "conf": "C"
+     },
+     "recourbee": {
+      "v": "pointe enroulée vers le dos sur certaines pièces",
+      "methode": "oeil",
+      "photos": [
+       "nerine:331c1734"
+      ],
+      "conf": "C"
+     }
+    },
+    "L_sur_l": {
+     "v": 5,
+     "plage": [
+      4.5,
+      6.0
+     ],
+     "unite": "ratio",
+     "n": 4,
+     "methode": "regle",
+     "photos": [
+      "nerine:331c1734"
+     ],
+     "conf": "C",
+     "ecart": {
+      "type": "confirme",
+      "texte": "SV_NERINE.Wd = [.2,.21] pour L = [1,.97] : L/l voisin de 5 (plage 4,5 à 6)."
+     }
+    },
+    "marge": {
+     "type": {
+      "v": "ondulee",
+      "methode": "oeil",
+      "photos": [
+       "nerine:331c1734",
+       "nerine:add949aa",
+       "nerine:ed57e981"
+      ],
+      "conf": "C"
+     }
+    }
+   },
+   "taille": {
+    "longueur": {
+     "v": 1.0,
+     "plage": [
+      0.9,
+      1.1
+     ],
+     "unite": "R0",
+     "n": 3,
+     "methode": "regle",
+     "photos": [
+      "nerine:331c1734"
+     ],
+     "conf": "C",
+     "ecart": {
+      "type": "confirme",
+      "texte": "SV_NERINE.L[0] = 1 R0 ; gène tep.dL .92 à 1,06."
+     }
+    },
+    "rapport_tete": {
+     "v": 1.28,
+     "unite": "ratio",
+     "n": 1,
+     "methode": "segmente",
+     "photos": [
+      "nerine:331c1734"
+     ],
+     "conf": "C",
+     "ecart": {
+      "type": "confirme",
+      "texte": "hauteur/largeur de la fleur (364/285 px, photo 7, vue trois-quarts) : ordre de grandeur"
+     }
+    },
+    "longueur_cm": {
+     "v": 6.5,
+     "plage": [
+      6,
+      7
+     ],
+     "unite": "cm",
+     "methode": "reference",
+     "ref": "Flore : Nerine bowdenii W.Watson, Amaryllidaceae, Afrique du Sud (Drakensberg) ; hampe 45-60 cm, ombelle de 7-12 fleurs, six tépales linéaires ondulés de 6-7 cm, étamines déclinées",
+     "conf": "A",
+     "ecart": {
+      "type": "confirme",
+      "texte": "R0 = 6,5 cm au bouquet (GHI.nerine.rk = 44/(6.5*UPC), app/y-nerine.js) : 1 R0 = 6,5 cm."
+     }
+    }
+   },
+   "courbure": {
+    "longitudinale": {
+     "profil": {
+      "v": "reflechie",
+      "methode": "oeil",
+      "photos": [
+       "nerine:331c1734",
+       "nerine:ec3c1149"
+      ],
+      "conf": "C"
+     }
+    },
+    "transversale": {
+     "type": {
+      "v": "gouttiere",
+      "methode": "oeil",
+      "photos": [
+       "nerine:331c1734"
+      ],
+      "conf": "C"
+     },
+     "profondeur": {
+      "v": null,
+      "methode": "hypothese",
+      "conf": "D"
+     }
+    },
+    "ondulation": {
+     "n": {
+      "v": null,
+      "methode": "hypothese",
+      "conf": "D"
+     },
+     "amplitude": {
+      "v": "marges froncées sur toute la longueur",
+      "methode": "oeil",
+      "photos": [
+       "nerine:331c1734",
+       "nerine:add949aa"
+      ],
+      "conf": "C"
+     }
+    }
+   },
+   "matiere": {
+    "epaisseur": {
+     "v": "fine",
+     "methode": "oeil",
+     "photos": [
+      "nerine:331c1734"
+     ],
+     "conf": "C"
+    },
+    "translucidite": {
+     "v": 0.3,
+     "methode": "oeil",
+     "photos": [
+      "nerine:331c1734"
+     ],
+     "conf": "C",
+     "ecart": {
+      "type": "confirme",
+      "texte": "Matière nerMat (app/y-nerine.js) : lumière du bord et de la base d'après la photo ; valeur non réglée seule."
+     }
+    },
+    "texture": {
+     "v": "satin",
+     "methode": "oeil",
+     "photos": [
+      "nerine:331c1734"
+     ],
+     "conf": "C"
+    },
+    "brillance": {
+     "v": 0.5,
+     "methode": "oeil",
+     "photos": [
+      "nerine:331c1734"
+     ],
+     "conf": "C",
+     "ecart": {
+      "type": "confirme",
+      "texte": "nerMat : satin à grain scintillant, brillance posée dans la matière du coloris."
+     }
+    },
+    "grain": {
+     "v": "scintillant",
+     "methode": "oeil",
+     "photos": [
+      "nerine:331c1734"
+     ],
+     "conf": "C"
+    }
+   },
+   "nervation": {
+    "type": {
+     "v": "parallele",
+     "methode": "oeil",
+     "photos": [
+      "nerine:331c1734"
+     ],
+     "conf": "C"
+    },
+    "n": {
+     "v": null,
+     "methode": "hypothese",
+     "conf": "D"
+    },
+    "relief": {
+     "v": "plat",
+     "methode": "oeil",
+     "photos": [
+      "nerine:331c1734"
+     ],
+     "conf": "C"
+    },
+    "visible": {
+     "v": "face",
+     "methode": "oeil",
+     "photos": [
+      "nerine:331c1734"
+     ],
+     "conf": "C"
+    },
+    "couleur": {
+     "v": "plus-sombre",
+     "methode": "oeil",
+     "photos": [
+      "nerine:331c1734"
+     ],
+     "conf": "C"
+    }
+   },
+   "zones": [
+    {
+     "zone": "nervures",
+     "etendue": {
+      "v": [
+       0.0,
+       1.0
+      ],
+      "u": [
+       0.4,
+       0.6
+      ],
+      "methode": "oeil",
+      "conf": "C",
+      "photos": [
+       "nerine:331c1734"
+      ],
+      "ecart": {
+       "type": "confirme",
+       "texte": "Zone des nervures : lavis sur toute la longueur du tépale (nerMat)."
+      }
+     },
+     "motif": {
+      "type": "bande médiane plus soutenue"
+     },
+     "bord": "fondu"
+    },
+    {
+     "zone": "marge",
+     "etendue": {
+      "v": [
+       0.0,
+       1.0
+      ],
+      "u": [
+       0.85,
+       1.0
+      ],
+      "methode": "oeil",
+      "conf": "C",
+      "photos": [
+       "nerine:331c1734"
+      ],
+      "ecart": {
+       "type": "confirme",
+       "texte": "Zone de marge : bord plus clair sur toute la longueur (nerMat)."
+      }
+     },
+     "motif": {
+      "type": "plus claire, froncée"
+     },
+     "bord": "fondu"
+    },
+    {
+     "zone": "base",
+     "etendue": {
+      "v": [
+       0.0,
+       0.2
+      ],
+      "u": [
+       0.0,
+       1.0
+      ],
+      "methode": "oeil",
+      "conf": "C",
+      "photos": [
+       "nerine:331c1734"
+      ],
+      "ecart": {
+       "type": "confirme",
+       "texte": "Zone de base : pâle sur le premier cinquième (SV_NERINE.claw .35 à .65 de la longueur)."
+      }
+     },
+     "motif": {
+      "type": "plus pâle"
+     },
+     "bord": "fondu"
+    }
+   ],
+   "jointures": [
+    {
+     "vers": "receptacle",
+     "type": "insertion",
+     "params": {
+      "texte": "six pièces en étoile au sommet du pédicelle, sans tube"
+     }
+    }
+   ],
+   "stades": {
+    "bouton": {
+     "v": "pièces closes et dressées dans la spathe",
+     "methode": "oeil",
+     "photos": [
+      "nerine:fc0cf2c6"
+     ],
+     "conf": "C"
+    },
+    "gonfle": {
+     "v": "pointes rose vif sorties de la spathe, pièces serrées",
+     "methode": "oeil",
+     "photos": [
+      "nerine:fc0cf2c6"
+     ],
+     "conf": "C"
+    },
+    "entrouvert": {
+     "v": "pièces dressées en gerbe, pointes écartées",
+     "methode": "oeil",
+     "photos": [
+      "nerine:fc0cf2c6",
+      "nerine:2429cdef"
+     ],
+     "conf": "C"
+    },
+    "ouvert": {
+     "v": "pièces étalées en étoile, pointes enroulées",
+     "methode": "oeil",
+     "photos": [
+      "nerine:331c1734"
+     ],
+     "conf": "C"
+    },
+    "plein": {
+     "v": "pièces rejetées en arrière, marges très froncées",
+     "methode": "oeil",
+     "photos": [
+      "nerine:ec3c1149",
+      "nerine:add949aa"
+     ],
+     "conf": "C"
+    },
+    "declin": {
+     "v": "pièces pâlies et flasques",
+     "methode": "oeil",
+     "photos": [
+      "nerine:2429cdef"
+     ],
+     "conf": "C"
+    },
+    "fane": {
+     "v": "pièces collées, brunies, pendantes",
+     "methode": "hypothese",
+     "conf": "D"
+    }
+   }
+  },
+  "tepale.interne": {
+   "role": "perianthe",
+   "nombre": {
+    "v": 3,
+    "unite": "n",
+    "methode": "reference",
+    "photos": [
+     "nerine:331c1734"
+    ],
+    "ref": "Flore : Nerine bowdenii W.Watson, Amaryllidaceae, Afrique du Sud (Drakensberg) ; hampe 45-60 cm, ombelle de 7-12 fleurs, six tépales linéaires ondulés de 6-7 cm, étamines déclinées",
+    "conf": "A",
+    "ecart": {
+     "type": "confirme",
+     "texte": "svBloom : les 3 tépales internes sont le reste de n = 6."
+    }
+   },
+   "disposition": {
+    "suit": "tepale.externe.disposition"
+   },
+   "contour": {
+    "suit": "tepale.externe.contour"
+   },
+   "taille": {
+    "suit": "tepale.externe.taille"
+   },
+   "courbure": {
+    "suit": "tepale.externe.courbure"
+   },
+   "matiere": {
+    "suit": "tepale.externe.matiere"
+   },
+   "nervation": {
+    "suit": "tepale.externe.nervation"
+   },
+   "zones": {
+    "suit": "tepale.externe.zones"
+   },
+   "jointures": {
+    "suit": "tepale.externe.jointures"
+   },
+   "stades": {
+    "suit": "tepale.externe.stades"
+   }
+  },
+  "coeur.etamines": {
+   "role": "coeur",
+   "nombre": {
+    "v": 6,
+    "unite": "n",
+    "methode": "reference",
+    "photos": [
+     "nerine:331c1734"
+    ],
+    "ref": "Flore : Nerine bowdenii W.Watson, Amaryllidaceae, Afrique du Sud (Drakensberg) ; hampe 45-60 cm, ombelle de 7-12 fleurs, six tépales linéaires ondulés de 6-7 cm, étamines déclinées",
+    "conf": "A",
+    "ecart": {
+     "type": "confirme",
+     "texte": "nerHeart (app/y-nerine.js) pose six étamines déclinées."
+    }
+   },
+   "disposition": {
+    "type": {
+     "v": "déclinées : filets groupés vers le bas",
+     "methode": "oeil",
+     "photos": [
+      "nerine:331c1734"
+     ],
+     "conf": "C"
+    }
+   },
+   "contour": {
+    "forme": {
+     "v": "filets rose vif courbés vers le bas puis relevés en pointe",
+     "methode": "oeil",
+     "photos": [
+      "nerine:331c1734"
+     ],
+     "conf": "C"
+    }
+   },
+   "taille": {
+    "longueur": {
+     "v": 0.85,
+     "plage": [
+      0.7,
+      1.0
+     ],
+     "unite": "R0",
+     "n": 3,
+     "methode": "regle",
+     "photos": [
+      "nerine:331c1734"
+     ],
+     "conf": "C",
+     "ecart": {
+      "type": "confirme",
+      "texte": "NER_H.fl = .86 R0 pour le filet (app/y-nerine.js)."
+     }
+    }
+   },
+   "matiere": {
+    "texture": {
+     "v": "mat",
+     "methode": "oeil",
+     "photos": [
+      "nerine:331c1734"
+     ],
+     "conf": "C"
+    },
+    "epaisseur": {
+     "v": "filets fins",
+     "methode": "oeil",
+     "photos": [
+      "nerine:331c1734"
+     ],
+     "conf": "C"
+    }
+   },
+   "zones": [
+    {
+     "zone": "corps",
+     "etendue": {
+      "v": [
+       0,
+       0.85
+      ],
+      "u": [
+       0,
+       1
+      ],
+      "methode": "oeil",
+      "conf": "C",
+      "photos": [
+       "nerine:331c1734"
+      ],
+      "ecart": {
+       "type": "confirme",
+       "texte": "Filet sur toute sa longueur (nerHeart)."
+      }
+     },
+     "motif": {
+      "type": "filet rose"
+     },
+     "bord": "net"
+    },
+    {
+     "zone": "pointe",
+     "etendue": {
+      "v": [
+       0.85,
+       1
+      ],
+      "u": [
+       0,
+       1
+      ],
+      "methode": "oeil",
+      "conf": "C",
+      "photos": [
+       "nerine:331c1734"
+      ],
+      "ecart": {
+       "type": "confirme",
+       "texte": "Anthère au bout du filet, NER_H.an = .05 (nerHeart)."
+      }
+     },
+     "motif": {
+      "type": "anthère crème, petite"
+     },
+     "bord": "net"
+    }
+   ],
+   "jointures": [
+    {
+     "vers": "receptacle",
+     "type": "insertion",
+     "params": {
+      "texte": "filets nés au centre"
+     }
+    }
+   ],
+   "stades": {
+    "bouton": {
+     "v": "cachées",
+     "methode": "oeil",
+     "photos": [
+      "nerine:fc0cf2c6"
+     ],
+     "conf": "C"
+    },
+    "ouvert": {
+     "v": "étalées, anthères crème",
+     "methode": "oeil",
+     "photos": [
+      "nerine:331c1734"
+     ],
+     "conf": "C"
+    },
+    "declin": {
+     "v": "flétries, anthères brunes",
+     "methode": "hypothese",
+     "conf": "D"
+    }
+   }
+  },
+  "coeur.pistil": {
+   "role": "coeur",
+   "nombre": {
+    "v": 1,
+    "unite": "n",
+    "methode": "reference",
+    "ref": "Flore : Nerine bowdenii W.Watson, Amaryllidaceae, Afrique du Sud (Drakensberg) ; hampe 45-60 cm, ombelle de 7-12 fleurs, six tépales linéaires ondulés de 6-7 cm, étamines déclinées",
+    "conf": "A",
+    "ecart": {
+     "type": "confirme",
+     "texte": "nerHeart pose un seul style."
+    }
+   },
+   "disposition": {
+    "type": {
+     "v": "style filiforme rose, dépasse les étamines",
+     "methode": "oeil",
+     "photos": [
+      "nerine:331c1734"
+     ],
+     "conf": "C"
+    }
+   },
+   "contour": {
+    "forme": {
+     "v": "stigmate fin en pointe",
+     "methode": "oeil",
+     "photos": [
+      "nerine:331c1734"
+     ],
+     "conf": "C"
+    }
+   },
+   "taille": {
+    "longueur": {
+     "v": 1.0,
+     "unite": "R0",
+     "methode": "oeil",
+     "photos": [
+      "nerine:331c1734"
+     ],
+     "conf": "C",
+     "ecart": {
+      "type": "confirme",
+      "texte": "NER_H.sl = .98 R0 pour le style (app/y-nerine.js)."
+     }
+    }
+   },
+   "matiere": {
+    "texture": {
+     "v": "mat",
+     "methode": "oeil",
+     "photos": [
+      "nerine:331c1734"
+     ],
+     "conf": "C"
+    }
+   },
+   "zones": [
+    {
+     "zone": "corps",
+     "etendue": {
+      "v": [
+       0,
+       1
+      ],
+      "u": [
+       0,
+       1
+      ],
+      "methode": "oeil",
+      "conf": "C",
+      "photos": [
+       "nerine:331c1734"
+      ],
+      "ecart": {
+       "type": "confirme",
+       "texte": "Style sur toute sa longueur (nerHeart)."
+      }
+     },
+     "motif": {
+      "type": "rose uni"
+     },
+     "bord": "net"
+    }
+   ],
+   "jointures": [
+    {
+     "vers": "receptacle",
+     "type": "insertion",
+     "params": {
+      "texte": "au centre, ovaire infère"
+     }
+    }
+   ],
+   "stades": {
+    "ouvert": {
+     "v": "visible sous les étamines",
+     "methode": "oeil",
+     "photos": [
+      "nerine:331c1734"
+     ],
+     "conf": "C"
+    }
+   }
+  },
+  "receptacle": {
+   "role": "receptacle",
+   "taille": {
+    "v": "petit renflement vert sous les pièces, à peine visible",
+    "methode": "oeil",
+    "photos": [
+     "nerine:331c1734"
+    ],
+    "conf": "C"
+   },
+   "matiere": {
+    "v": "vert mat",
+    "methode": "oeil",
+    "photos": [
+     "nerine:331c1734"
+    ],
+    "conf": "C"
+   },
+   "zones": [
+    {
+     "zone": "base",
+     "etendue": {
+      "v": [
+       0,
+       1
+      ],
+      "u": [
+       0,
+       1
+      ],
+      "methode": "oeil",
+      "conf": "C",
+      "photos": [
+       "nerine:331c1734"
+      ],
+      "ecart": {
+       "type": "confirme",
+       "texte": "Gorge verte sous les tépales : SV_NERINE.green [.25,.02,.15] (app/y-nerine.js)."
+      }
+     },
+     "motif": {
+      "type": "vert uni"
+     },
+     "bord": "net"
+    }
+   ],
+   "jointures": [
+    {
+     "vers": "pedicelle",
+     "type": "articulation",
+     "params": {
+      "texte": "se prolonge sans rupture dans le pédicelle"
+     }
+    }
+   ],
+   "stades": {
+    "declin": {
+     "v": "gonfle en capsule verte à trois lobes",
+     "methode": "hypothese",
+     "conf": "D"
+    }
+   }
+  },
+  "bouton": {
+   "role": "bouton",
+   "disposition": {
+    "type": {
+     "v": "spathe de deux valves papyracées enfermant les boutons de l'ombelle",
+     "methode": "oeil",
+     "photos": [
+      "nerine:fc0cf2c6",
+      "nerine:09909c30"
+     ],
+     "conf": "C"
+    }
+   },
+   "contour": {
+    "base": {
+     "v": "arrondie",
+     "methode": "oeil",
+     "photos": [
+      "nerine:fc0cf2c6"
+     ],
+     "conf": "C"
+    },
+    "pointe": {
+     "type": {
+      "v": "aigue",
+      "methode": "oeil",
+      "photos": [
+       "nerine:fc0cf2c6"
+      ],
+      "conf": "C"
+     }
+    }
+   },
+   "taille": {
+    "longueur": {
+     "v": 0.5,
+     "plage": [
+      0.4,
+      0.6
+     ],
+     "unite": "R0",
+     "methode": "oeil",
+     "photos": [
+      "nerine:fc0cf2c6"
+     ],
+     "conf": "C",
+     "ecart": {
+      "type": "confirme",
+      "texte": "Bouton : SV_NERINE.bud [.12,.3] (app/y-nerine.js), pointes sorties de la spathe."
+     }
+    }
+   },
+   "matiere": {
+    "texture": {
+     "v": "papier-de-soie",
+     "methode": "oeil",
+     "photos": [
+      "nerine:fc0cf2c6"
+     ],
+     "conf": "C"
+    },
+    "epaisseur": "fine"
+   },
+   "zones": [
+    {
+     "zone": "corps",
+     "etendue": {
+      "v": [
+       0,
+       1
+      ],
+      "u": [
+       0,
+       1
+      ],
+      "methode": "oeil",
+      "conf": "C",
+      "photos": [
+       "nerine:331c1734"
+      ],
+      "ecart": {
+       "type": "confirme",
+       "texte": "Bouton vert à pointe rose : SV_NERINE.green, greenTip .8."
+      }
+     },
+     "motif": {
+      "type": "vert pâle à rosé, pointe orangée"
+     },
+     "bord": "fondu"
+    }
+   ],
+   "jointures": [
+    {
+     "vers": "pedicelle",
+     "type": "gaine",
+     "params": {
+      "texte": "la spathe coiffe la base de la tête"
+     }
+    }
+   ],
+   "stades": {
+    "bouton": {
+     "v": "spathe fermée, pointue, penchée sur la hampe",
+     "methode": "oeil",
+     "photos": [
+      "nerine:fc0cf2c6"
+     ],
+     "conf": "C"
+    },
+    "gonfle": {
+     "v": "spathe fendue, boutons rose vif pointant",
+     "methode": "oeil",
+     "photos": [
+      "nerine:fc0cf2c6"
+     ],
+     "conf": "C"
+    },
+    "entrouvert": {
+     "v": "spathe rabattue en deux valves sèches",
+     "methode": "oeil",
+     "photos": [
+      "nerine:09909c30"
+     ],
+     "conf": "C"
+    }
+   }
+  },
+  "pedicelle": {
+   "role": "pedicelle",
+   "taille": {
+    "longueur": {
+     "v": 1.8,
+     "plage": [
+      1.2,
+      2.5
+     ],
+     "unite": "R0",
+     "methode": "oeil",
+     "photos": [
+      "nerine:add949aa",
+      "nerine:331c1734"
+     ],
+     "conf": "C",
+     "ecart": {
+      "type": "confirme",
+      "texte": "Pédicelle NER_UMB.pl = [.85,1.1] tépale, allongé avec l'ouverture (NER_UMB.pg) : 1 à 1,3 R0 de dessin contre 1,8 R0 de la fiche (plage 1,2 à 2,5), le fléchissement du fait de la calotte serrée ; écart de la tête, voir la planche trous."
+     }
+    },
+    "longueur_cm": {
+     "v": 5,
+     "unite": "cm",
+     "methode": "reference",
+     "ref": "Flore : Nerine bowdenii W.Watson, Amaryllidaceae, Afrique du Sud (Drakensberg) ; hampe 45-60 cm, ombelle de 7-12 fleurs, six tépales linéaires ondulés de 6-7 cm, étamines déclinées",
+     "conf": "C",
+     "ecart": {
+      "type": "confirme",
+      "texte": "Idem : NER_UMB.pl x R0 de 6,5 cm."
+     }
+    }
+   },
+   "courbure": {
+    "profil": {
+     "v": "droit, divergeant en éventail depuis le sommet de la hampe",
+     "methode": "oeil",
+     "photos": [
+      "nerine:add949aa",
+      "nerine:e928447f"
+     ],
+     "conf": "C"
+    }
+   },
+   "matiere": {
+    "texture": {
+     "v": "mat",
+     "methode": "oeil",
+     "photos": [
+      "nerine:add949aa"
+     ],
+     "conf": "C"
+    },
+    "epaisseur": "fine"
+   },
+   "zones": [
+    {
+     "zone": "corps",
+     "etendue": {
+      "v": [
+       0,
+       1
+      ],
+      "u": [
+       0,
+       1
+      ],
+      "methode": "oeil",
+      "conf": "C",
+      "photos": [
+       "nerine:331c1734"
+      ],
+      "ecart": {
+       "type": "confirme",
+       "texte": "Pédicelle vert, rosé vers la fleur, sur toute sa longueur (nerUmbel)."
+      }
+     },
+     "motif": {
+      "type": "vert, rosé vers la fleur"
+     },
+     "bord": "fondu"
+    }
+   ],
+   "jointures": [
+    {
+     "vers": "tige",
+     "type": "noeud",
+     "params": {
+      "texte": "7 à 12 pédicelles partent du même point"
+     }
+    }
+   ],
+   "section": {
+    "type": {
+     "v": "ronde",
+     "methode": "oeil",
+     "photos": [
+      "nerine:add949aa"
+     ],
+     "conf": "C"
+    },
+    "diametre": {
+     "v": null,
+     "methode": "hypothese",
+     "conf": "D"
+    }
+   },
+   "stades": {
+    "bouton": {
+     "v": "dressés, serrés dans la spathe",
+     "methode": "oeil",
+     "photos": [
+      "nerine:fc0cf2c6"
+     ],
+     "conf": "C"
+    },
+    "ouvert": {
+     "v": "divergents en éventail",
+     "methode": "oeil",
+     "photos": [
+      "nerine:add949aa"
+     ],
+     "conf": "C"
+    },
+    "declin": {
+     "v": "flasques, inclinés",
+     "methode": "hypothese",
+     "conf": "D"
+    }
+   }
+  },
+  "tige": {
+   "role": "tige",
+   "taille": {
+    "longueur_cm": {
+     "v": 50,
+     "plage": [
+      45,
+      60
+     ],
+     "unite": "cm",
+     "methode": "reference",
+     "ref": "Flore : Nerine bowdenii W.Watson, Amaryllidaceae, Afrique du Sud (Drakensberg) ; hampe 45-60 cm, ombelle de 7-12 fleurs, six tépales linéaires ondulés de 6-7 cm, étamines déclinées",
+     "conf": "A",
+     "ecart": {
+      "type": "confirme",
+      "texte": "NER_PL.len + NER_PL.neck = 1,27 x D (app/y-nerine.js) : la hampe de bouquet est raccourcie à la hauteur du vase ; 50 cm sur plante entière (full=40 à 50)."
+     }
+    },
+    "rapport_tete": {
+     "v": 0.044,
+     "unite": "ratio",
+     "n": 1,
+     "methode": "segmente",
+     "photos": [
+      "nerine:fc0cf2c6"
+     ],
+     "conf": "C",
+     "ecart": {
+      "type": "confirme",
+      "texte": "largeur de la hampe sur largeur de la fleur (13,3 px / 300 px), photo 2, hampe de droite"
+     }
+    },
+    "L_sur_D": {
+     "v": 21.3,
+     "unite": "ratio",
+     "n": 1,
+     "methode": "segmente",
+     "photos": [
+      "nerine:fc0cf2c6"
+     ],
+     "conf": "C",
+     "ecart": {
+      "type": "confirme",
+      "texte": "longueur sur largeur du segment visible de 284 px, hampe coupée par le cadre"
+     }
+    }
+   },
+   "courbure": {
+    "profil": {
+     "v": "presque droite, légèrement arquée sur la hampe penchée",
+     "methode": "oeil",
+     "photos": [
+      "nerine:fc0cf2c6"
+     ],
+     "conf": "C"
+    },
+    "fleche": {
+     "v": 0.01,
+     "plage": [
+      0.01,
+      0.068
+     ],
+     "unite": "L",
+     "n": 2,
+     "methode": "segmente",
+     "photos": [
+      "nerine:fc0cf2c6"
+     ],
+     "conf": "C",
+     "ecart": {
+      "type": "confirme",
+      "texte": "deux hampes sur la même photo"
+     }
+    }
+   },
+   "matiere": {
+    "texture": {
+     "v": "mat",
+     "methode": "oeil",
+     "photos": [
+      "nerine:fc0cf2c6",
+      "nerine:09909c30"
+     ],
+     "conf": "C"
+    },
+    "epaisseur": "moyenne"
+   },
+   "zones": [
+    {
+     "zone": "corps",
+     "etendue": {
+      "v": [
+       0,
+       1
+      ],
+      "u": [
+       0,
+       1
+      ],
+      "methode": "oeil",
+      "conf": "C",
+      "photos": [
+       "nerine:331c1734"
+      ],
+      "ecart": {
+       "type": "confirme",
+       "texte": "Hampe verte unie sur toute sa longueur, lavée de rose sous la tête (NER_SC.sv.red, redF .6)."
+      }
+     },
+     "motif": {
+      "type": "vert uni, lavé de rose sous la tête"
+     },
+     "bord": "fondu"
+    }
+   ],
+   "couleurs": {
+    "corps": {
+     "v": "#a4c54c",
+     "unite": "hex",
+     "methode": "segmente",
+     "photos": [
+      "nerine:fc0cf2c6"
+     ],
+     "n": 1,
+     "plage": [
+      "#a4c54c",
+      "#627e23"
+     ],
+     "conf": "C"
+    },
+    "ombre": {
+     "v": "#2c3722",
+     "unite": "hex",
+     "methode": "segmente",
+     "photos": [
+      "nerine:fc0cf2c6"
+     ],
+     "n": 1,
+     "conf": "C"
+    },
+    "lumiere": {
+     "v": "#d9f781",
+     "unite": "hex",
+     "methode": "segmente",
+     "photos": [
+      "nerine:fc0cf2c6"
+     ],
+     "n": 1,
+     "conf": "C"
+    }
+   },
+   "jointures": [
+    {
+     "vers": "pedicelle",
+     "type": "noeud",
+     "params": {
+      "texte": "le sommet de la hampe porte la spathe et l'ombelle"
+     }
+    }
+   ],
+   "section": {
+    "type": {
+     "v": "ronde",
+     "methode": "oeil",
+     "photos": [
+      "nerine:fc0cf2c6"
+     ],
+     "conf": "C"
+    },
+    "diametre": {
+     "v": 13.3,
+     "unite": "ratio",
+     "n": 1,
+     "methode": "segmente",
+     "photos": [
+      "nerine:fc0cf2c6"
+     ],
+     "conf": "C",
+     "ecart": {
+      "type": "confirme",
+      "texte": "largeur médiane en pixels, sans échelle ; voir tige.taille.rapport_tete"
+     }
+    },
+    "effilement": {
+     "v": 0.86,
+     "plage": [
+      0.47,
+      0.86
+     ],
+     "unite": "ratio",
+     "n": 2,
+     "methode": "segmente",
+     "photos": [
+      "nerine:fc0cf2c6"
+     ],
+     "conf": "C",
+     "ecart": {
+      "type": "divergence",
+      "texte": "bas/haut : 0,86 sur la hampe droite, 0,47 sur la gauche dont le haut est la spathe ; Q2"
+     }
+    }
+   },
+   "stades": {
+    "bouton": {
+     "v": "droite, bouton penché au sommet",
+     "methode": "oeil",
+     "photos": [
+      "nerine:fc0cf2c6"
+     ],
+     "conf": "C"
+    },
+    "ouvert": {
+     "v": "dressée, ombelle horizontale",
+     "methode": "oeil",
+     "photos": [
+      "nerine:add949aa"
+     ],
+     "conf": "C"
+    },
+    "declin": {
+     "v": "s'arque sous le poids de la tête",
+     "methode": "oeil",
+     "photos": [
+      "nerine:81eb8ca2"
+     ],
+     "conf": "C"
+    },
+    "fane": {
+     "v": "couchée",
+     "methode": "hypothese",
+     "conf": "D"
+    }
+   }
+  },
+  "feuille": {
+   "role": "feuille",
+   "dessinee": false,
+   "nombre": {
+    "v": 4,
+    "plage": [
+     3,
+     6
+    ],
+    "unite": "n",
+    "methode": "reference",
+    "ref": "Flore : Nerine bowdenii W.Watson, Amaryllidaceae, Afrique du Sud (Drakensberg) ; hampe 45-60 cm, ombelle de 7-12 fleurs, six tépales linéaires ondulés de 6-7 cm, étamines déclinées ; 4 à 6 feuilles en lanière",
+    "conf": "C"
+   },
+   "disposition": {
+    "type": "rosette"
+   },
+   "contour": {
+    "base": {
+     "v": "engainante",
+     "methode": "oeil",
+     "photos": [
+      "nerine:e928447f"
+     ],
+     "conf": "C"
+    },
+    "pointe": {
+     "type": {
+      "v": "aigue",
+      "methode": "oeil",
+      "photos": [
+       "nerine:e928447f"
+      ],
+      "conf": "C"
+     }
+    },
+    "L_sur_l": {
+     "v": 5.6,
+     "plage": [
+      5.1,
+      6.1
+     ],
+     "unite": "ratio",
+     "n": 2,
+     "methode": "segmente",
+     "photos": [
+      "nerine:fc0cf2c6"
+     ],
+     "conf": "C",
+     "ecart": {
+      "type": "divergence",
+      "texte": "feuilles coupées par le cadre : minorant ; la flore donne 10 à 15 ; Q3"
+     }
+    },
+    "marge": {
+     "type": {
+      "v": "entiere",
+      "methode": "oeil",
+      "photos": [
+       "nerine:e928447f"
+      ],
+      "conf": "C"
+     }
+    }
+   },
+   "taille": {
+    "longueur_cm": {
+     "v": 30,
+     "plage": [
+      20,
+      40
+     ],
+     "unite": "cm",
+     "methode": "reference",
+     "ref": "Flore : Nerine bowdenii W.Watson, Amaryllidaceae, Afrique du Sud (Drakensberg) ; hampe 45-60 cm, ombelle de 7-12 fleurs, six tépales linéaires ondulés de 6-7 cm, étamines déclinées ; feuilles en lanière de 20-40 x 1-2 cm",
+     "conf": "C"
+    },
+    "largeur_cm": {
+     "v": 1.5,
+     "unite": "cm",
+     "methode": "reference",
+     "ref": "Flore : Nerine bowdenii W.Watson, Amaryllidaceae, Afrique du Sud (Drakensberg) ; hampe 45-60 cm, ombelle de 7-12 fleurs, six tépales linéaires ondulés de 6-7 cm, étamines déclinées",
+     "conf": "C"
+    }
+   },
+   "courbure": {
+    "longitudinale": {
+     "profil": {
+      "v": "arquee",
+      "methode": "oeil",
+      "photos": [
+       "nerine:e928447f"
+      ],
+      "conf": "C"
+     }
+    },
+    "transversale": {
+     "type": {
+      "v": "gouttiere",
+      "methode": "oeil",
+      "photos": [
+       "nerine:e928447f"
+      ],
+      "conf": "C"
+     }
+    }
+   },
+   "matiere": {
+    "texture": {
+     "v": "mat",
+     "methode": "oeil",
+     "photos": [
+      "nerine:e928447f"
+     ],
+     "conf": "C"
+    },
+    "epaisseur": "moyenne"
+   },
+   "nervation": {
+    "type": {
+     "v": "parallele",
+     "methode": "oeil",
+     "photos": [
+      "nerine:e928447f"
+     ],
+     "conf": "C"
+    }
+   },
+   "zones": [
+    {
+     "zone": "corps",
+     "etendue": {
+      "v": [
+       0,
+       1
+      ],
+      "u": [
+       0,
+       1
+      ],
+      "methode": "oeil",
+      "conf": "C",
+      "photos": [
+       "nerine:331c1734"
+      ]
+     },
+     "motif": {
+      "type": "vert uni"
+     },
+     "bord": "net"
+    }
+   ],
+   "couleurs": {
+    "corps": {
+     "v": "#446229",
+     "unite": "hex",
+     "methode": "segmente",
+     "photos": [
+      "nerine:e928447f"
+     ],
+     "n": 1,
+     "conf": "C"
+    },
+    "ombre": {
+     "v": "#153503",
+     "unite": "hex",
+     "methode": "segmente",
+     "photos": [
+      "nerine:e928447f"
+     ],
+     "n": 1,
+     "conf": "C"
+    },
+    "lumiere": {
+     "v": "#7b9761",
+     "unite": "hex",
+     "methode": "segmente",
+     "photos": [
+      "nerine:e928447f"
+     ],
+     "n": 1,
+     "conf": "C"
+    }
+   },
+   "jointures": [
+    {
+     "vers": "tige",
+     "type": "gaine",
+     "params": {
+      "texte": "gaine basale, hors de la hampe"
+     }
+    }
+   ],
+   "section": {
+    "type": {
+     "v": "plate",
+     "methode": "oeil",
+     "photos": [
+      "nerine:e928447f"
+     ],
+     "conf": "C"
+    },
+    "petiole": {
+     "v": 0.0,
+     "unite": "L",
+     "n": 1,
+     "methode": "segmente",
+     "photos": [
+      "nerine:e928447f"
+     ],
+     "conf": "C",
+     "ecart": {
+      "type": "confirme",
+      "texte": "pas de pétiole, limbe engainant"
+     }
+    }
+   },
+   "stades": {
+    "ouvert": {
+     "v": "verte, couchée",
+     "methode": "oeil",
+     "photos": [
+      "nerine:e928447f"
+     ],
+     "conf": "C"
+    },
+    "fane": {
+     "v": "jaunie à la base et à la pointe",
+     "methode": "hypothese",
+     "conf": "D"
+    }
+   }
+  }
+ },
+ "varietes": {
+  "rose-vif": {
+   "forme": "non-mesure"
+  },
+  "rose": {
+   "forme": "espece",
+   "photos": [
+    "nerine:331c1734",
+    "nerine:add949aa"
+   ]
+  },
+  "rose-pale": {
+   "forme": "non-mesure"
+  },
+  "blanc": {
+   "forme": "non-mesure"
+  },
+  "rouge": {
+   "forme": "non-mesure"
+  },
+  "cerise": {
+   "forme": "non-mesure"
+  },
+  "ecarlate": {
+   "forme": "non-mesure"
+  },
+  "saumon": {
+   "forme": "non-mesure"
+  },
+  "lipstick": {
+   "forme": "non-mesure"
+  },
+  "bionce": {
+   "forme": "non-mesure"
+  }
+ },
+ "stades": {
+  "table": [
+   {
+    "stade": "bouton",
+    "op": {
+     "v": 1,
+     "methode": "hypothese",
+     "conf": "D"
+    },
+    "wl": {
+     "v": 0,
+     "methode": "hypothese",
+     "conf": "D"
+    },
+    "photos": [
+     "nerine:fc0cf2c6"
+    ],
+    "statut": "hypothese"
+   },
+   {
+    "stade": "gonfle",
+    "op": {
+     "v": 1,
+     "methode": "hypothese",
+     "conf": "D"
+    },
+    "wl": {
+     "v": 0.1,
+     "methode": "hypothese",
+     "conf": "D"
+    },
+    "photos": [
+     "nerine:fc0cf2c6"
+    ],
+    "statut": "hypothese"
+   },
+   {
+    "stade": "entrouvert",
+    "op": {
+     "v": 1,
+     "methode": "hypothese",
+     "conf": "D"
+    },
+    "wl": {
+     "v": 0.3,
+     "methode": "hypothese",
+     "conf": "D"
+    },
+    "photos": [
+     "nerine:fc0cf2c6",
+     "nerine:2429cdef"
+    ],
+    "statut": "hypothese"
+   },
+   {
+    "stade": "ouvert",
+    "op": {
+     "v": 1,
+     "methode": "hypothese",
+     "conf": "D"
+    },
+    "wl": {
+     "v": 0.5,
+     "methode": "hypothese",
+     "conf": "D"
+    },
+    "photos": [
+     "nerine:331c1734",
+     "nerine:add949aa"
+    ],
+    "statut": "hypothese"
+   },
+   {
+    "stade": "plein",
+    "op": {
+     "v": 1,
+     "methode": "hypothese",
+     "conf": "D"
+    },
+    "wl": {
+     "v": 0.7,
+     "methode": "hypothese",
+     "conf": "D"
+    },
+    "photos": [
+     "nerine:ec3c1149",
+     "nerine:add949aa"
+    ],
+    "statut": "hypothese"
+   },
+   {
+    "stade": "declin",
+    "op": {
+     "v": 0.8,
+     "methode": "hypothese",
+     "conf": "D"
+    },
+    "wl": {
+     "v": 0.9,
+     "methode": "hypothese",
+     "conf": "D"
+    },
+    "photos": [
+     "nerine:2429cdef"
+    ],
+    "statut": "hypothese"
+   },
+   {
+    "stade": "fane",
+    "op": {
+     "v": 0.5,
+     "methode": "hypothese",
+     "conf": "D"
+    },
+    "wl": {
+     "v": 1,
+     "methode": "hypothese",
+     "conf": "D"
+    },
+    "photos": [],
+    "statut": "hypothese"
+   }
+  ]
+ },
+ "rendu": {},
+ "questions": [
+  {
+   "id": "Q1",
+   "organe": "tepale.externe",
+   "question": "Ondulation et enroulement des pointes : nombre d'ondes et angle ? Photos trop obliques pour mesurer.",
+   "proposition": "3 ondes par pièce, pointe enroulée de 90° vers le dos"
+  },
+  {
+   "id": "Q2",
+   "organe": "tige",
+   "question": "Effilement de la hampe : les deux mesures divergent (0,86 et 0,47).",
+   "proposition": "0,9 hors spathe"
+  },
+  {
+   "id": "Q3",
+   "organe": "feuille",
+   "question": "Longueur de la feuille : les photos la coupent.",
+   "proposition": "L/l = 12 d'après la flore, feuille non dessinée en bouquet"
+  },
+  {
+   "id": "Q4",
+   "organe": "stades",
+   "question": "op, wl, jours des stades : aucune courbe de vase pour la nérine.",
+   "proposition": "courbes de la famille des lis (hérité), à remplacer"
+  },
+  {
+   "id": "Q5",
+   "organe": "varietes",
+   "question": "Coloris blanc, rouge, saumon, bordés : forme non comparée, aucune photo de coloris.",
+   "proposition": "suivre l'espèce"
+  }
+ ]
+}
