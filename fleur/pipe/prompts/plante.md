@@ -22,7 +22,7 @@ Tu produis :
 
 Boucle de travail : UNE commande par tour, une seule petite image (1 000 px au plus) :
   sh mkapp.sh | tail -1 && python pilote/mksv.py && sh fleur/shot_p.sh p_<<sid>> "plant=1&sid=<<sid>>&cw=<un coloris>&st=.1:0,.3:0,.6:0,1:0,1:.4,1:.75&axv=1&full=40&seed=7" && python fleur/img.py small fleur/out/p_<<sid>>.png --w 1000
-Les chiffres d'abord : python fleur/img.py pair contre une photo de feuille et une photo de tige du brief. Les rendus passent par shot_p.sh ; 20 lignes de sortie par commande. Une planche plante en gros plan (tête, col, feuilles dessus et dessous, coupe) passe avant la fin.
+Les chiffres d'abord : sh <<rc>>/comparaison/refaire.sh feuille tige plante (photo de feuille dessus, de tige ou de nœud, de plante, contre le rendu plant=1 recadré sur la plus grande feuille et sur son attache), regarde les trois paires ; pipe.py vérifie aussi par fleur/jgap.py qu'aucune pièce ne flotte (0 pièce détachée, 6 stades). Les rendus passent par shot_p.sh ; 20 lignes de sortie par commande. Une planche plante en gros plan (tête, col, feuilles dessus et dessous, coupe) passe avant la fin.
 
 Tours : 10 tours de rendu au plus par appel. Ensuite, ou si ton contexte dépasse environ 100 000 tokens : écris <<etat>> (80 lignes : fait, réglages en cours et raison, fichiers touchés, défauts, 3 prochaines actions) et finis par RELAIS.
 Journal : une ligne par tour dans <<rc>>/journal.md : tour N | ce qui change | pourquoi | erreur éventuelle.

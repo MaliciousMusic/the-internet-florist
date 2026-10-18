@@ -1681,16 +1681,58 @@ def step_fit(ctx, part='forme'):
     return {'status': 'done' if ok else 'failed', 'msg': '%s; look: %s' % (summ, fin.get('verdict') or fin.get('note') or r['subtype']), 'checks': {'fit_png': os.path.exists(d + '/fit.png')}}
 
 
+JGAP_ST = '.1:0,.3:0,.6:0,1:0,1:.4,1:.75'  # the plant sheet jgap.py reads: one cell per stage, full=40 cm
+
+
+def plant_gaps(ctx):
+    """P5: fleur/jgap.py on a plant=1 sheet (6 stages, full 40 cm): no detached piece in any cell (BONNES-PRATIQUES: nothing floats).
+    (ok, message, per-cell counts)"""
+    ids = cw_ids(ctx, 1)
+    full = int(getattr(ctx.a, 'full', 40) or 40)
+    q = 'plant=1&sid=%s&cw=%s&st=%s&axv=1&full=%d&seed=%d' % (ctx.sid, ids[0] if ids else '', JGAP_ST, full, SEED)
+    name = 'jg_%s' % slug(ctx.sid)[:30]
+    good, m, text = shot(ctx, name, q, 'jgap-render')
+    if ctx.dry:
+        run_cmd(ctx, [sys.executable, 'fleur/jgap.py', 'fleur/out/%s.png' % name, str(len(JGAP_ST.split(','))), str(full)], 'jgap', timeout=300, quiet=True)
+        return True, 'dry', []
+    if not good:
+        return False, 'jgap: no plant render (%s)' % (text.strip().splitlines() or [''])[-1][:160], []
+    c, t = run_cmd(ctx, [sys.executable, 'fleur/jgap.py', 'fleur/out/%s.png' % name, str(len(JGAP_ST.split(','))), str(full)], 'jgap', timeout=300, quiet=True)
+    return jgap_verdict(t)
+
+
+def jgap_verdict(t):
+    rows = [ln for ln in t.splitlines() if re.match(r'^(cell)?\d+', ln.strip())]
+    n = [int(m.group(1)) for m in (re.search(r'pieces apart: (\d+)', ln) for ln in rows) if m]
+    empty = [ln for ln in rows if 'empty' in ln]
+    if not rows or len(n) + len(empty) != len(rows):
+        return False, 'jgap.py gave no reading (%s)' % (t.strip().splitlines() or [''])[-1][:120], n
+    bad = ['cell %d: %d piece(s) apart' % (i, k) for i, k in enumerate(n) if k]
+    if empty:
+        bad.append('%d empty cell(s)' % len(empty))
+    return (not bad), ('jgap: no detached piece in %d cells' % len(n)) if not bad else 'jgap (fleur/jgap.py): ' + '; '.join(bad), n
+
+
+def check_plante(ctx):
+    ok, why = check_forme(ctx, 'space-plante.json')
+    if ok and not ctx.dry:
+        ok, why, n = plant_gaps(ctx)
+    return ok, why
+
+
 def step_plante(ctx):
     ensure_docs(ctx)
-    res, fin = model_loop(ctx, 'plante', 'plante', 'opus', READ + ['Write', 'Edit'] + SAFE_BASH, int(getattr(ctx.a, 'relays', 4)), lambda: check_forme(ctx, 'space-plante.json'),
+    res, fin = model_loop(ctx, 'plante', 'plante', 'opus', READ + ['Write', 'Edit'] + SAFE_BASH, int(getattr(ctx.a, 'relays', 4)), lambda: check_plante(ctx),
                           extra={'fiche': fiche_rel(ctx)}, must_read=[bp_rel(ctx)])
     if res == 'blocked':
         raise StepFailed('plante blocked by the modeller: %s' % (fin.get('question') or fin.get('note') or fin))
     if res != 'done':
         return {'status': 'failed', 'msg': 'plante not finished after the relays (resume with --from plante)'}
     r = step_fit(ctx, 'plante')
-    r['msg'] = 'plante done; ' + r['msg']
+    g_ok, g_msg, n = plant_gaps(ctx)  # the fit and its look may change the stem: nothing may float after them either
+    r['msg'] = 'plante done; %s; %s' % (r['msg'], g_msg)
+    if not g_ok:
+        r['status'] = 'failed'
     return r
 
 
@@ -1864,6 +1906,7 @@ def witness_before(ctx):
 
 # ---------------------------------------------------------------------------------------------------------------- comparaison and juge
 
+PLANT_CELL = 900  # the plant pairs' render: svtest's plant cell in px (the snap is twice as wide), so that a leaf or a junction crop keeps its detail
 PAIRS = [  # BONNES-PRATIQUES 9.2 and 9.3b: a kept photo and the render at the same angle and the same stage (want: tag sets, best first)
     {'k': 'face', 'label': 'tête ouverte de face', 'want': [['stade:ouvert', 'vue:face'], ['stade:ouvert'], ['stade:entrouvert', 'vue:face']], 'st': '.85:0', 'view': 0, 'D': 600},
     {'k': 'trois-quarts', 'label': 'tête ouverte de trois-quarts', 'want': [['stade:ouvert', 'vue:trois-quarts'], ['vue:trois-quarts'], ['stade:entrouvert', 'vue:trois-quarts']],
@@ -1872,7 +1915,12 @@ PAIRS = [  # BONNES-PRATIQUES 9.2 and 9.3b: a kept photo and the render at the s
     {'k': 'bouton', 'label': 'bouton', 'want': [['stade:bouton'], ['organe:bourgeon']], 'st': '.2:0', 'view': 7, 'D': 600, 'kind': 'bud', 'op': '.2'},
     {'k': 'fane-1', 'label': 'déclin (fané .6)', 'want': [['stade:declin'], ['stade:fane']], 'st': '1:.6', 'view': 2, 'D': 600, 'op': '1'},
     {'k': 'fane-2', 'label': 'fané avancé (.9)', 'want': [['stade:fane'], ['stade:declin']], 'st': '1:.9', 'view': 2, 'D': 600, 'op': '1'},
-    {'k': 'plante', 'label': 'plante entière (tige coupée, feuilles)', 'want': [['organe:plante'], ['organe:tige']], 'plant': 1},
+    # the plant pairs share one plant=1 render (loc=1: svtStem says where the stem and the leaves are): the whole stem, then the render cropped
+    # to a leaf and to a stem junction at the photo's framing (P5); a whole plant is compared to a whole plant only (no fallback on a stem close-up)
+    {'k': 'plante', 'label': 'plante entière (tige coupée, feuilles)', 'want': [['organe:plante']], 'plant': 1},
+    {'k': 'feuille', 'label': 'feuille, face du dessus, cadrée comme la photo (la plus grande feuille du rendu)', 'want': [['organe:feuille-dessus']], 'plant': 1,
+     'crop': 'feuille'},
+    {'k': 'tige', 'label': 'tige et jonction (nœud, attache d\'une feuille), cadrées comme la photo', 'want': [['organe:noeud'], ['organe:tige']], 'plant': 1, 'crop': 'tige'},
     {'k': 'gros-plan', 'label': 'gros plan D 800 d\'une tête ouverte', 'want': [['stade:ouvert', 'vue:face'], ['stade:ouvert', 'vue:trois-quarts'], ['stade:ouvert']],
      'st': '.85:0', 'view': 0, 'D': 800},
 ]
@@ -1968,9 +2016,9 @@ def pair_plan(ctx):
             missing.append(P['k'])
             continue
         used[best.get('i')] = used.get(best.get('i'), 0) + 1
-        name = 'cmp_%s_%s' % (slug(ctx.sid)[:24], P['k'])
-        if P.get('plant'):
-            q, cell = 'plant=1&sid=%s&cw=%s&st=1:0&axv=1&full=%d&det=1.5&seed=%d' % (ctx.sid, cw, full, SEED), ''
+        name = 'cmp_%s_%s' % (slug(ctx.sid)[:24], 'plante' if P.get('plant') else P['k'])
+        if P.get('plant'):  # one render for the plant pairs, large (cell 900: 1 800 px wide), with the stem and leaf boxes (loc=1)
+            q, cell = 'plant=1&sid=%s&cw=%s&st=1:0&axv=1&full=%d&det=1.5&cell=%d&loc=1&seed=%d' % (ctx.sid, cw, full, PLANT_CELL, SEED), ('loc:' + P['crop']) if P.get('crop') else ''
         else:
             q, cell = 'grid=1&sid=%s&cws=%s&st=%s&view=%d&D=%d&det=1.5&seed=%d' % (ctx.sid, cw, P['st'], views[P['k']], P['D'], SEED), '0,0@%d' % P['D']
         plan.append({'k': P['k'], 'label': P['label'], 'photo': best.get('i'), 'title': best.get('title'), 'page': best.get('page'), 'tags': best.get('tags'),
@@ -2024,14 +2072,24 @@ def write_pairs(ctx, plan):
     if rw:
         S.append('sh "%s" >/dev/null' % rw)
     S.append('box() { python -c "import sys;from PIL import Image;print(\'0,0,%d,%d\'%Image.open(sys.argv[1]).size)" "$1"; }')
+    # a render is reused while it is newer than every app/*.js and pilote/svtest.js and was made by the same query (<render>.q): the plant pairs
+    # share one render, and redoing a pair whose drawing did not change costs no Chrome
+    S.append('fresh() { [ -f "$1" ] && [ "$(cat "${1%.png}.q" 2>/dev/null)" = "$2" ] || return 1; for f in app/*.js pilote/svtest.js; do [ "$f" -nt "$1" ] && return 1; done; return 0; }')
     for p in plan:
         o, t = p['png'], p['txt']
+        cell = p['cell'] or '$(box %s)' % p['render']
+        if cell.startswith('loc:'):  # a crop of the plant render where svtest located the leaf or the junction (pipe.py locbox)
+            cell = '$(python fleur/pipe.py locbox %s %s)' % (p['render'][:-4] + '.json', cell[4:])
+        log = '%s/comparaison/%s.log' % (ctx.rel, p['k'])
         S += ['p_%s() {' % p['k'].replace('-', '_'),
               '  rm -f "%s" "%s"' % (o, t),
-              '  sh fleur/shot_p.sh %s "%s" > "%s/comparaison/%s.log" 2>&1' % (p['name'], p['query'], ctx.rel, p['k']),
-              '  if grep -q "PAS D" "%s/comparaison/%s.log" || [ ! -f %s ]; then echo "%s: PAS D\'IMAGE"; return 1; fi' % (ctx.rel, p['k'], p['render'], p['k']),
+              '  if ! fresh %s "%s"; then' % (p['render'], p['query']),
+              '    rm -f %s "%s"; sh fleur/shot_p.sh %s "%s" > "%s" 2>&1' % (p['render'], p['render'][:-4] + '.q', p['name'], p['query'], log),
+              '    if grep -q "PAS D" "%s" || [ ! -f %s ]; then echo "%s: PAS D\'IMAGE $(grep -m1 "ERREUR JS" "%s")"; return 1; fi' % (log, p['render'], p['k'], log),
+              '    echo "%s" > "%s"' % (p['query'], p['render'][:-4] + '.q'),
+              '  fi',
               '  python fleur/img.py pair %s "$(box %s)" %s "%s" --kind %s --op %s --h %d --w %d --brief %s/brief.md --out "%s" > "%s" 2>&1' % (
-                  p['thumb'], p['thumb'], p['render'], p['cell'] or '$(box %s)' % p['render'], p['kind'], p['op'], PAIR_H, PAIR_W, ctx.rel, o, t),
+                  p['thumb'], p['thumb'], p['render'], cell, p['kind'], p['op'], PAIR_H, PAIR_W, ctx.rel, o, t),
               '  echo "%s: $(tail -3 "%s" | tr \'\\n\' \' \')"' % (p['k'], t),
               '}']
     S.append('for k in ${*:-%s}; do "p_$(echo "$k" | tr - _)" || echo "$k: ERREUR"; done' % ' '.join(p['k'] for p in plan))
@@ -2679,6 +2737,50 @@ def cmd_bill(a):
     return 0
 
 
+def loc_box(loc, kind):
+    """the crop of a plant render (svtest &loc=1, first cell) for a pair: 'feuille' = the biggest leaf, padded 6 %; 'tige' = a square on the stem
+    where the biggest leaf joins it (the stem point nearest to the leaf's box), 12 stem widths and 14 to 30 % of the stem's height wide;
+    clamped to the snap. Returns (x0, y0, x1, y1) or raises ValueError with the reason"""
+    cells = (loc or {}).get('cells') or []
+    if not cells:
+        raise ValueError('no located stem in the render (loc=1 needs a plant sheet with full=<cm>: svtStem)')
+    c, (W, H) = cells[0], (loc.get('size') or [10 ** 6, 10 ** 6])
+    leaves = sorted(c.get('leaves') or [], key=lambda b: -(b[2] - b[0]) * (b[3] - b[1]))
+    clamp = lambda b: (max(0, int(b[0])), max(0, int(b[1])), min(W, int(b[2])), min(H, int(b[3])))
+    if kind == 'feuille':
+        if not leaves:
+            raise ValueError('no leaf located (svtStem draws the leaves of STEML / GHI[sid].basal; a leaf drawn elsewhere is not located)')
+        b = leaves[0]
+        px, py = .06 * (b[2] - b[0]), .06 * (b[3] - b[1])
+        return clamp((b[0] - px, b[1] - py, b[2] + px, b[3] + py))
+    st = c.get('stem') or []
+    if not st:
+        raise ValueError('no stem midline located')
+    ys = [p[1] for p in st]
+    if leaves:
+        b = leaves[0]
+        cx, cy = (b[0] + b[2]) / 2, (b[1] + b[3]) / 2
+        x, y = min(st, key=lambda p: (p[0] - cx) ** 2 + (p[1] - cy) ** 2)
+    else:
+        x, y = st[len(st) // 2]
+    h = max(ys) - min(ys)
+    side = min(max(12 * float(c.get('w') or 4), .14 * h), .3 * h)
+    return clamp((x - side / 2, y - side / 2, x + side / 2, y + side / 2))
+
+
+def cmd_locbox(a):
+    """refaire.sh: the crop box of the plant render for the pairs feuille and tige, x0,y0,x1,y1 (stderr and exit 1 when nothing is located)"""
+    j = jload(a.json, None)
+    try:
+        if not isinstance(j, dict):
+            raise ValueError('%s: no measures (the render failed?)' % a.json)
+        say('%d,%d,%d,%d' % loc_box(j.get('loc'), a.kind))
+        return 0
+    except ValueError as e:
+        sys.stderr.write('locbox %s: %s\n' % (a.kind, e))
+        return 1
+
+
 def cmd_rtsum(a):
     """rtest.sh's last line: what forme writes in its journal"""
     n, same, diff, err = rtest_counts(a.file)
@@ -2922,7 +3024,8 @@ def cmd_selftest(a):
                 {'i': 4, 'title': 'p4', 'page': 'u4', 'tags': ['stade:declin'], 'm': 'vu: stade=declin'},
                 {'i': 5, 'title': 'p5', 'page': 'u5', 'tags': ['stade:fane'], 'm': 'vu: stade=fane'},
                 {'i': 6, 'title': 'p6', 'page': 'u6', 'tags': ['organe:plante', 'organe:tige'], 'm': 'vu: organe=plante+tige'},
-                {'i': 7, 'title': 'p7', 'page': 'u7', 'tags': ['stade:ouvert', 'vue:face'], 'm': 'vu: stade=ouvert vue=face'}]
+                {'i': 7, 'title': 'p7', 'page': 'u7', 'tags': ['stade:ouvert', 'vue:face'], 'm': 'vu: stade=ouvert vue=face'},
+                {'i': 8, 'title': 'p8', 'page': 'u8', 'tags': ['organe:feuille-dessus'], 'm': 'vu: organe=feuille-dessus'}]
         KEYS = [P['k'] for P in PAIRS] + ['cw-blanc']  # the fixed pairs and one colourway compared to its own variety (9.3c)
         TABLE = '# État\n\n| paire | verdict | écart restant |\n|---|---|---|\n' + ''.join('| %s | ok | |\n' % k for k in KEYS)
 
@@ -2962,7 +3065,7 @@ def cmd_selftest(a):
           and plan_[6]['query'].startswith('plant=1') and all('seed=7' in p['query'] for p in plan_))
         r7 = tmp + '/refcache/selftest7'
         os.makedirs(r7, exist_ok=True)
-        jsave(r7 + '/keep.json', KEEP[:7] + [dict(KEEP[7], tags=['stade:ouvert', 'vue:face', 'coloris:rose-vif'])])
+        jsave(r7 + '/keep.json', KEEP[:7] + [dict(KEEP[7], tags=['stade:ouvert', 'vue:face', 'coloris:rose-vif'])] + KEEP[8:])
         jsave(r7 + '/coloris.json', [{'id': 'rose', 'cultivar': ''}, {'id': 'rose-vif', 'cultivar': 'Rose Vif'}, {'id': 'x' * 19 + '-y', 'cultivar': ''}])
         ctx7 = Ctx('selftest7', tmp, argparse.Namespace(dry=False, cap=40, claude=fake), {'sid': 'selftest7', 'taxon': 'Test test', 'steps': {}, 'skus': []})
         p7 = pair_plan(ctx7)[0]
@@ -2970,7 +3073,7 @@ def cmd_selftest(a):
         t('pairs: cw-* by equal colourway names: rose does not take the photo of rose-vif', [p['k'] for p in p7 if p['k'].startswith('cw-')] == ['cw-rose-vif']
           and p7[-1]['photo'] == 7, str([(p['k'], p['photo']) for p in p7]))
         t('pairs: a colourway without its own photo is a question, not a silent skip', 'coloris rose (nom générique)' in q7 and 'coloris ' + 'x' * 19 + '-y' in q7, q7[-400:])
-        jsave(r7 + '/keep.json', KEEP[:7] + [dict(KEEP[7], tags=['stade:ouvert', 'vue:face', 'coloris:' + 'x' * 19 + '-y'])])
+        jsave(r7 + '/keep.json', KEEP[:7] + [dict(KEEP[7], tags=['stade:ouvert', 'vue:face', 'coloris:' + 'x' * 19 + '-y'])] + KEEP[8:])
         t('pairs: a cw- key cut at 20 characters keeps no trailing dash (the table key matches)', [p['k'] for p in pair_plan(ctx7)[0] if p['k'].startswith('cw-')] == ['cw-' + 'x' * 19])
         q_ = {p['k']: p for p in plan_}
         t('pairs: a tulip keeps view 7 for the profile and the bud (no family)', view_family(ctx3) == '' and q_['profil']['view'] == 7 and q_['bouton']['view'] == 7)
@@ -3206,6 +3309,45 @@ def cmd_selftest(a):
         with contextlib.redirect_stdout(buf):
             cr_ = cmd_rtsum(argparse.Namespace(file=ctxP.rc + '/temoins/rtest-forme.txt'))
         t('rtsum: the journal line of an rtest', cr_ == 0 and buf.getvalue().strip() == 'rtest | 2 bouquets changés sur 4', buf.getvalue())
+        # ---- P5: leaf and stem pairs from one located plant render; nothing floats at plante (jgap.py)
+        pp_ = {p['k']: p for p in plan_}
+        t('pairs: feuille (top side) and tige (junction) from the kept organ photos, one shared plant render with loc=1',
+          pp_['feuille']['photo'] == 8 and pp_['tige']['photo'] == 6 and pp_['feuille']['render'] == pp_['plante']['render'] == pp_['tige']['render']
+          and 'loc=1' in pp_['plante']['query'] and 'cell=%d' % PLANT_CELL in pp_['tige']['query'] and pp_['feuille']['cell'] == 'loc:feuille', str({k: (p['photo'], p['cell']) for k, p in pp_.items()}))
+        t('pairs: a whole plant is compared to a whole plant only (no fallback on a stem close-up)', [P['want'] for P in PAIRS if P['k'] == 'plante'] == [[['organe:plante']]])
+        t('pairs: refaire.sh crops the plant render with locbox and reuses a fresh render of the same query', 'pipe.py locbox fleur/out/cmp_selftest3_plante.json feuille' in rs_
+          and 'fresh() {' in rs_ and rs_.count('if ! fresh ') == len(plan_), rs_[-400:])
+        LOCX = {'size': [1800, 3960], 'cells': [{'stem': [[900, 3800 - 140 * i] for i in range(25)], 'w': 14, 'sbox': [880, 440, 920, 3800],
+                                                 'leaves': [[700, 2000, 880, 2300], [920, 1500, 1300, 1700]]}]}
+        t('locbox: the leaf crop is the biggest leaf, padded', loc_box(LOCX, 'feuille') == (897, 1488, 1322, 1712), str(loc_box(LOCX, 'feuille')))
+        bt_ = loc_box(LOCX, 'tige')
+        t('locbox: the stem crop is centred on the stem where that leaf joins it', bt_[0] < 900 < bt_[2] and bt_[1] < 1560 < bt_[3] and abs((bt_[2] - bt_[0]) - .14 * 3360) < 2, str(bt_))
+        try:
+            loc_box({'cells': [{'stem': [[1, 1]], 'leaves': []}]}, 'feuille')
+            t('locbox: no leaf located is said, not guessed', False)
+        except ValueError as e:
+            t('locbox: no leaf located is said, not guessed', 'no leaf located' in str(e))
+        sv_ = open(root + '/pilote/svtest.js', encoding='utf-8').read()
+        t('svtest: loc=1 is opt-in (read-only: children counted, boxes measured after the drawing)', "get('loc')" in sv_ and 'if(LOC){' in sv_ and 'o.loc=' in sv_)
+        try:
+            import numpy as np
+            from PIL import Image, ImageDraw
+            for nb, name_ in ((0, 'jg0'), (1, 'jg1')):
+                im = Image.new('RGB', (400, 300), (233, 228, 220))
+                d_ = ImageDraw.Draw(im)
+                for c in range(2):
+                    d_.rectangle([c * 200 + 95, 40, c * 200 + 105, 280], fill=(60, 110, 50))
+                    d_.ellipse([c * 200 + 70, 20, c * 200 + 130, 70], fill=(200, 40, 60))
+                if nb:
+                    d_.ellipse([140, 150, 160, 170], fill=(60, 110, 50))  # a leaf apart from the stem in cell 0
+                im.save('%s/%s.png' % (tmp, name_))
+            o0 = subprocess.run([sys.executable, HERE + '/jgap.py', tmp + '/jg0.png', '2', '40'], capture_output=True, text=True).stdout
+            o1 = subprocess.run([sys.executable, HERE + '/jgap.py', tmp + '/jg1.png', '2', '40'], capture_output=True, text=True).stdout
+            t('jgap: a plant sheet without a detached piece passes, one with a piece apart fails', jgap_verdict(o0)[0] and not jgap_verdict(o1)[0] and 'cell 0: 1 piece' in jgap_verdict(o1)[1],
+              o0 + o1)
+        except ImportError as e:
+            t('jgap: a plant sheet without a detached piece passes, one with a piece apart fails', False, str(e))
+        t('prompts: plante redoes the leaf and stem pairs and knows the jgap check', all(x in open('%s/pipe/prompts/plante.md' % HERE, encoding='utf-8').read() for x in ('refaire.sh feuille tige', 'jgap')))
         t('prompts: forme names its proofs (refaire.sh face, rtest.sh, the journal lines)', all(x in P_['forme'] or x in open('%s/pipe/prompts/forme.md' % HERE, encoding='utf-8').read()
                                                                                       for x in ('refaire.sh face', 'rtest.sh', 'paire face | photo W/H', '<<rtest>>')))
         say('selftest: %d ok, %d failed' % (len(ok), len(bad)))
@@ -3260,6 +3402,9 @@ def make_parser():
         s.add_argument('sid')
         s.add_argument('--ch')
     sp.add_parser('selftest')
+    s = sp.add_parser('locbox', help='the crop of a plant render (shot json with loc=1) for the pairs feuille and tige: x0,y0,x1,y1')
+    s.add_argument('json')
+    s.add_argument('kind', choices=['feuille', 'tige'])
     s = sp.add_parser('rtsum', help='the journal line of an rtest output file (rtest | IDENTIQUE, or n bouquets changés sur N)')
     s.add_argument('file')
     m = sp.add_parser('models')
@@ -3271,7 +3416,7 @@ def make_parser():
 
 def main():
     a = make_parser().parse_args()
-    return {'run': cmd_run, 'status': cmd_status, 'bill': cmd_bill, 'models': cmd_models, 'selftest': cmd_selftest, 'rtsum': cmd_rtsum}[a.cmd](a)
+    return {'run': cmd_run, 'status': cmd_status, 'bill': cmd_bill, 'models': cmd_models, 'selftest': cmd_selftest, 'rtsum': cmd_rtsum, 'locbox': cmd_locbox}[a.cmd](a)
 
 
 if __name__ == '__main__':
