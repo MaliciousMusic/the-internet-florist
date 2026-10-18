@@ -1438,7 +1438,7 @@
     "conf": "C",
     "ref": "Flore (Flora of Tropical East Africa, flores d'Inde) : Gloriosa superba L., Colchicaceae : pédicelle 6 à 12 cm, à confirmer",
     "code": "GLR_PL.pedL*9",
-    "retenu": 8.01
+    "retenu": 8.1
    },
    "courbure": {
     "profil": {
@@ -1514,7 +1514,11 @@
      "methode": "hypothese",
      "conf": "D",
      "code": "GLR_PL.pw",
-     "retenu": 0.04
+     "retenu": 0.041,
+     "ecart": {
+      "type": "divergence",
+      "texte": "auto 2026-10-18 : valeur du code 0.041 (v mesuré 0.04)"
+     }
     }
    },
    "stades": {
@@ -1626,7 +1630,7 @@
      "conf": "C",
      "note": "largeur 53 px sur un cadre de 795 px de long (organ.py stem --green, photo 121) ; effilement non fiable",
      "code": "GLR_PL.sw",
-     "retenu": 0.05
+     "retenu": 0.051
     },
     "effilement": {
      "v": 1.0,
@@ -1758,7 +1762,7 @@
       "type": "divergence",
       "texte": "longueur de lame = GLR_PL.leafL x tête de 9 cm, tirée entre .85 et 1,05 par feuille (moyenne ~9,5 cm) ; 10 cm au centre de la plage de la flore."
      },
-     "retenu": 9.99
+     "retenu": 10.080000000000002
     }
    },
    "courbure": {
@@ -1784,7 +1788,7 @@
       "repere": "tige",
       "note": "leafang de fit.py targets ; repère supposé la tige, très dispersé (sd 32 degrés)",
       "code": "GLR_PL.ang",
-      "retenu": 61.3
+      "retenu": 62
      }
     }
    },
