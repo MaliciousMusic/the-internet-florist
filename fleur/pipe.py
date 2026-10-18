@@ -1025,6 +1025,7 @@ def pair_photo(ctx, R, x, info):
     try:
         from PIL import Image
         if not os.path.exists(p):
+            time.sleep(1.5)  # one original at a time, slowly (Wikimedia robot policy)
             im = Image.open(io.BytesIO(R.get(url))).convert('RGB')
             im.thumbnail((PAIR_LONG, PAIR_LONG))
             im.save(p, quality=90)

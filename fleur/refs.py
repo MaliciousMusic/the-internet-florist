@@ -19,7 +19,7 @@ from PIL import Image, ImageDraw
 
 sys.stdout.reconfigure(encoding='utf-8', errors='replace')
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'refcache')
-UA = {'User-Agent': 'BelaisFlowersRefs/0.1 (local reference measurement)'}
+UA = {'User-Agent': 'BelaisFlowersRefs/0.2 (https://github.com/MaliciousMusic/the-internet-florist; reference photo measurement, low rate)'}  # Wikimedia robot policy: a contact
 API = 'https://commons.wikimedia.org/w/api.php?'
 SKIP = re.compile(r'stamp|марк|briefmarke|timbre|postage|envelope|herbarium|drawing|illustrat|k[oö]hler|plate|botanical|\.svg|\.tif|\.pdf|map|logo|coat of arms|painting', re.I)
 
@@ -45,7 +45,7 @@ def get(url, tries=3):
         except Exception as e:
             if t == tries - 1:
                 raise
-            time.sleep(2 + 3 * t)
+            time.sleep((30 + 30 * t) if '429' in str(e) else (2 + 3 * t))  # Wikimedia asks to slow down on 429
 
 
 def api(**q):
