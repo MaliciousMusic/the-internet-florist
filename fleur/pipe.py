@@ -1308,9 +1308,13 @@ def step_refs(ctx):
         n1, bad = refs_audit(ctx)
         dropped += len(bad)
     c = check_refs(ctx)
+    sis, sis_sheets = refs_sisters(ctx, R, c)
     gaps = refs_pairs(ctx, R)  # P11: the photos the comparison pairs need, checked now (eligible: group, 1 000 px, colour audit), not after forme
     if not c['ok'] or len(c['soft']) > 3 or gaps:
         miss = ', '.join(c['hard'] + c['soft'] + ['paire %s (%s)' % (k, v) for k, v in gaps.items()])
+        if sis:
+            miss += ('. Espèces sœurs admises pour ces manques seulement (stades déclin et fané, organes) : %s ; leurs candidats sont sur les planches '
+                     '%s ; garde-les avec groupe=jardin ou espece-sauvage et le nom de l’espèce dans « vu »') % (', '.join(sis), ', '.join(sis_sheets) or '-')
         r = call_model(ctx, 'refs', 'fill', 'sonnet', prompt_text('refs', **ctx.sub(task='fill', sheets='-', missing=miss or '-', groupes=', '.join(pair_groupes(ctx)))), tools + WEB + ['Write'], turns=60)
         n2, bad = refs_audit(ctx)
         dropped += len(bad)
@@ -1332,6 +1336,32 @@ def step_refs(ctx):
     c['msg'] += '; %d photos set aside by the "looked at" check' % dropped
     c['msg'] += '; ' + refs_pair_audit(ctx, R)
     return {'status': 'done' if c['ok'] else 'failed', 'msg': c['msg'], 'checks': c, 'gaps': c['soft']}
+
+
+def refs_sisters(ctx, R, c):
+    """--refs-taxa: the sister species searched when a stage or an organ is missing for good (nerine, 2026-10-18: no Nerine bowdenii
+    faded on Commons); their candidates go on new sheets the fill call reads. Returns (taxa, sheets)."""
+    taxa = [t.strip() for t in (getattr(ctx.a, 'refs_taxa', None) or '').split(',') if t.strip()]
+    if not taxa or (not c['hard'] and len(c['soft']) <= 3):
+        return [], []
+    if ctx.dry:
+        say('  [dry] sister species for the gaps: %s' % ', '.join(taxa))
+        return taxa, []
+    n0 = len(jload(ctx.rc + '/cands.json', []))
+    for t in taxa:
+        for q in ('Category:' + t, t + ' wilted faded withered', t + ' seed head', t + ' flower stem leaves'):
+            try:
+                say('  find (sister): ' + quiet(R.find, ctx.sid, q, 40 if q.startswith('Category:') else 20, 1).strip()[:100])
+            except Exception as e:
+                say('  find failed (%s): %s' % (q, str(e)[:80]))
+            time.sleep(1)
+    n1 = len(jload(ctx.rc + '/cands.json', []))
+    out = []
+    for f in range(n0, n1, 20):
+        quiet(R.sheet, ctx.sid, f, 20, 200)
+        out.append('%s/sheet_%d.jpg' % (ctx.rel, f))
+    say('  %d sister candidates (%s)' % (n1 - n0, ', '.join(taxa)))
+    return taxa, out
 
 
 def refs_pairs(ctx, R=None):
@@ -4454,6 +4484,7 @@ def make_parser():
     r.add_argument('--num-cws', dest='num_cws', help='the two colourways of the numbers sheet (default: the darkest and lightest measured)')
     r.add_argument('--pair-min', dest='pair_min', type=int, help='short side in px a comparison photo needs (default 1000, 600 at least: a sort whose buds are only in smaller photos)')
     r.add_argument('--cw-table', dest='cw_table', help='a species without registered cultivars: the colourway table of app/*.js its coloris.json is made from (CW_GLOR)')
+    r.add_argument('--refs-taxa', dest='refs_taxa', help='sister species searched for the stages and organs the taxon has no photo of, "Nerine sarniensis,Nerine undulata"')
     r.add_argument('--caps', default='', help='step caps in M overriding STEP_CAP, "forme=4,plante=1.5" (summed over every run of the sort)')
     r.add_argument('--skus', default='', help='bouquet SKUs "lilas~0:Ruhm von Horstenstein,..." (default: sku_bouquet of the sources json)')
     r.add_argument('--dry', action='store_true', help='no model, no command: print what would run and run the disk checks')
