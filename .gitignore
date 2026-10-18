@@ -66,3 +66,8 @@ vases5/tours/_apercu.html
 # private port copies written by pipe.py v3 in each working copy
 fleur/*_p.sh
 fleur/portwrap_p.py
+
+# the lab dashboard's data (labo.py): names the commands of the session, local only
+labo/data.json
+labo/.cache.json
+labo/*.tmp

@@ -4,6 +4,7 @@ photograph and on a render alike, so that the two compare region by region (BONN
   python fleur/apparence.py piece <img> <frame> [--out <base>] [--bg photo|render]
   python fleur/apparence.py compare <photo.json> <render.json> [--out <base>]
   python fleur/apparence.py paire <photo> <frame> <render> <frame> --out <base>      (both pieces, then compare)
+  python fleur/apparence.py grille <out.json> <map.npy>...                           (the measured colour grid of a piece)
 
 <frame> = "x,y;x,y;...;w": points on the piece's midrib from its base to its tip (two for a straight piece, more for a bent one: a spline
 through them), then its half-width at its widest (pixels of the image).
@@ -287,10 +288,15 @@ def measure(rgbmap, meta):
                 couleur=spot_col), lumiere=dict(axe=along, travers=across), marge=margin, couverture=round(float(ok.mean()), 3))
 
 
-def piece(img, frame, kind, out=None):
+def piece(img, frame, kind, out=None, exclure=None):
     rgb = load(img)
     pts, w = parse_frame(frame)
     msk = mask_of(rgb, pts, w, kind)
+    if exclure:  # another component lying over the piece (filaments, an anther): its colours are cut out, it has its own sheet
+        lab = color.rgb2lab(rgb)
+        for h, de in exclure:
+            c = color.rgb2lab(np.array([[[int(h[1:3], 16), int(h[3:5], 16), int(h[5:7], 16)]]]) / 255.0)[0, 0]
+            msk &= np.linalg.norm(lab - c, axis=2) >= de
     m, meta, mid, hw = sample_piece(rgb, msk, pts, w)
     pts2, w2 = refit(pts, w, mid, hw)  # second pass on the corrected axis (the mask is kept: it does not depend much on the axis)
     m, meta, mid, hw = sample_piece(rgb, msk, pts2, w2)
@@ -390,6 +396,62 @@ def montage(mp, mr, path, H=420):
     out.save(path)
 
 
+def tissue(lab):
+    """the colour of the tissue itself in a cell: the well-lit samples (L* between its 35th and 85th percentiles: a cast shadow, a fold's
+    shade are darker), then without the colour outliers (a filament, an anther, a neighbour seen through: chroma or hue beyond 2.5 MAD), median"""
+    L = lab[:, 0]
+    lo, hi = np.percentile(L, [35, 85])
+    s = lab[(L >= lo) & (L <= hi)]
+    if len(s) < 4:
+        s = lab
+    med = np.median(s, 0)
+    d = np.linalg.norm(s[:, 1:] - med[1:], axis=1)
+    mad = np.median(d) + 1e-6
+    s2 = s[d <= med[0] * 0 + 2.5 * mad * 1.4826 + 1.0]
+    return np.median(s2 if len(s2) >= 3 else s, 0)
+
+
+def grille(maps, nu=6, nv=24):
+    """the measured colour grid of a piece: its maps (one per photo, in the piece's frame) folded on the axis (u and -u together: a hidden
+    half is filled by the other, the noise halved), cut into nu bands of |u| (axis to edge) by nv rows (base to tip); the median CIELAB of each
+    cell over every photo; an empty cell is filled along v then across u. Spots and fine lines vanish in the medians (they are drawn apart)."""
+    acc = [[[] for _ in range(nu)] for _ in range(nv)]
+    for m in maps:
+        NV, NU = m.shape[:2]
+        lab = color.rgb2lab(np.nan_to_num(m))
+        ok = ~np.isnan(m[:, :, 0])
+        uu = np.abs(np.linspace(-1, 1, NU))
+        for j in range(NV):
+            r = min(nv - 1, int(j / NV * nv))
+            for i in range(NU):
+                if ok[j, i]:
+                    acc[r][min(nu - 1, int(uu[i] * nu))].append(lab[j, i])
+    G = np.full((nv, nu, 3), np.nan)
+    N = np.zeros((nv, nu), int)
+    for r in range(nv):
+        for c in range(nu):
+            if len(acc[r][c]) >= 4:
+                G[r, c] = tissue(np.array(acc[r][c]))
+                N[r, c] = len(acc[r][c])
+    for c in range(nu):  # fill along v, then across u
+        ok = ~np.isnan(G[:, c, 0])
+        if ok.sum() >= 2:
+            for k in range(3):
+                G[:, c, k] = np.interp(np.arange(nv), np.nonzero(ok)[0], G[ok, c, k])
+    for r in range(nv):
+        ok = ~np.isnan(G[r, :, 0])
+        if ok.sum() >= 1:
+            for k in range(3):
+                G[r, :, k] = np.interp(np.arange(nu), np.nonzero(ok)[0], G[r, ok, k])
+    # the photo's exposure is the camera's: its lightest cells (95th percentile of L*) are brought to L* 95, by at most 15 %
+    q = np.nanpercentile(G[:, :, 0], 95)
+    expo = float(np.clip(95.0 / max(1.0, q), 1.0, 1.15))
+    G[:, :, 0] = np.minimum(100, G[:, :, 0] * expo)
+    rgb = color.lab2rgb(np.nan_to_num(G, nan=80))
+    hexes = [['#%02x%02x%02x' % tuple(int(round(np.clip(x, 0, 1) * 255)) for x in rgb[r, c]) for c in range(nu)] for r in range(nv)]
+    return dict(nu=nu, nv=nv, c=hexes, n=N.tolist(), photos=len(maps), expo=round(expo, 3))
+
+
 def main():
     a = argparse.ArgumentParser(description=__doc__.split('\n')[0])
     s = a.add_subparsers(dest='cmd', required=True)
@@ -398,10 +460,16 @@ def main():
     p.add_argument('frame')
     p.add_argument('--out')
     p.add_argument('--bg', choices=['photo', 'render'], default='photo')
+    p.add_argument('--exclure', help='"#hex:dE,#hex:dE": colours of another component over the piece, cut out (CIE76 under dE)')
     c = s.add_parser('compare')
     c.add_argument('photo')
     c.add_argument('render')
     c.add_argument('--out')
+    g = s.add_parser('grille')
+    g.add_argument('out')
+    g.add_argument('maps', nargs='+', help='the .npy maps written by piece (one per photo)')
+    g.add_argument('--nu', type=int, default=6)
+    g.add_argument('--nv', type=int, default=24)
     q = s.add_parser('paire')
     q.add_argument('photo')
     q.add_argument('pframe')
@@ -410,8 +478,14 @@ def main():
     q.add_argument('--out', required=True)
     o = a.parse_args()
     if o.cmd == 'piece':
-        r, _ = piece(o.img, o.frame, o.bg, o.out)
+        ex = [(x.split(':')[0], float(x.split(':')[1])) for x in o.exclure.split(',')] if o.exclure else None
+        r, _ = piece(o.img, o.frame, o.bg, o.out, ex)
         print(json.dumps({k: r[k] for k in ('nervures', 'taches', 'marge', 'couverture')}, ensure_ascii=False))
+    elif o.cmd == 'grille':
+        r = grille([np.load(x) for x in o.maps], o.nu, o.nv)
+        with open(o.out, 'w', encoding='utf-8', newline=chr(10)) as f:
+            json.dump(r, f, ensure_ascii=False)
+        print('grid %dx%d from %d map(s): js {nu:%d,nv:%d,c:%s}' % (r['nv'], r['nu'], r['photos'], r['nu'], r['nv'], json.dumps(sum(r['c'], []))[:120] + '...'))
     elif o.cmd == 'compare':
         P, R = [json.load(open(x, encoding='utf-8')) for x in (o.photo, o.render)]
         mp = np.load(o.photo[:-5] + '.npy') if os.path.exists(o.photo[:-5] + '.npy') else None

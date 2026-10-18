@@ -224,3 +224,28 @@ Rappel de base : SVG natif seulement, ni 3D, ni image incorporée, ni ruban, ni 
 11.4 Le porteur ne voit une tête qu'après ma propre revue des paires recadrées et celle d'un juge neuf sur les mêmes recadrages. Une sorte à la
     fois jusqu'à ce que la tête soit validée ; le plafond de 8 M ne s'applique pas à la tête, il reste mesuré.
 
+
+## 12. De la photo au dessin : la fiche d'apparence, la grille, la matière fine (porteur, 2026-10-18)
+12.1 Le diagnostic (porteur, 2026-10-18 : « les fleurs finies ne sont pas incroyablement réalistes ») : la chaîne vérifiait qu'une fleur est
+    juste (forme, comptes, couleurs moyennes), pas qu'elle a l'air vraie. Ce qui rend une photo réelle (lumière qui traverse, dégradés continus,
+    nervures, grain, ombres entre pièces) n'était ni extrait des photos, ni dessinable, ni mesuré. Les trois se règlent ensemble.
+12.2 Chaque composant visible a sa fiche d'apparence (fleur/APPARENCE.md) : tépale ou pétale, gorge et nectaires, filet, anthère, style,
+    stigmate, taches et papilles, sépale, bractée, revers. Le pistil spécial et le composant qui détonne sont traités avec le même soin que la
+    pièce principale : ce sont eux qu'on rate le plus souvent. Un composant sans fiche d'apparence n'est pas fini.
+12.3 La mise à plat : `python fleur/apparence.py piece` déplie la pièce dans son repère (nervure de la base à la pointe, en travers d'un bord
+    à l'autre), sur trois à cinq vues de deux photos au moins. Un composant posé dessus (filets, anthère) est retiré par sa couleur
+    (`--exclure`) : il a sa propre fiche. Sur le rendu, la pièce est rendue seule (`&solo=k`, `&nohrt=1` pour svReflex) : son masque est exact.
+12.4 La grille : `python fleur/apparence.py grille` tire de ces mises à plat une grille de couleurs (bandes de |u| par rangées de la base à
+    la pointe, couleur du tissu bien éclairé, médiane sur les photos, exposition ramenée). La matière la lit (`grid`, et `gridV` quand la base des
+    photos est à l'ombre) au lieu de zones posées à l'œil. Ce sont des nombres mesurés, comme une couleur de coloris : jamais l'image. Une zone
+    d'un autre composant (le sillon vert des nectaires) se garde par-dessus (`fine:1`), les médianes la perdraient.
+12.5 La matière fine (app/y3-fine.js, clé `fine` d'une matière) : en gros plan (DET >= 1,5), chaque nappe est ombrée échantillon par échantillon
+    (lumière, ciel, occlusion, satin le long des nervures, lumière à travers les bords, grain), sous un léger flou et dans le clip de sa région ;
+    taches, flammes, bandes, nervures propres et liserés restent dessinés par-dessus. Aux tailles du bouquet (DET 1) rien ne change. Poids
+    mesuré sur le lys : 430 Ko à D110, 760 Ko à D200, 3,1 Mo à D520 ; dessin en 140 à 500 ms. Aucune autre sorte ne bouge sans la clé
+    (témoins identiques au pixel près).
+12.6 La boucle : chaque retouche se vérifie par `apparence.py paire` (ΔE2000, contraste, grain, nervures, taches, lumière le long et en
+    travers, région par région), puis à l'œil sur les paires recadrées. Les chiffres disent où regarder ; la photo dit si c'est fini.
+12.7 La forme se lit aussi sur la mise à plat : profil de largeur, rapport longueur/largeur visible, endroit où la pièce se recourbe. Un
+    tépale qui se recourbe trop tôt cache, de face, sa partie haute (lys oriental : pointe à 3,45 rad, 64 % de la longueur, ramenée à 2,2 rad,
+    72 %) : la couleur paraît fausse alors que c'est la forme.
