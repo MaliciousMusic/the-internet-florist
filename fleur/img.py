@@ -4,8 +4,9 @@
   python img.py cell <in.png> <cols> <rows> "c,r;c,r..." [--h 280] [--out z.png]      the same by grid cell (a shot.sh grid: stages x rows)
   python img.py diff <a.png> <b.png> [--t 24] [--out d.png]                           how much changed (share of pixels, box), and a map
   python img.py small <in.png> [--w 900] [--out s.jpg]                                 a lighter copy to look at (fewer tokens)
-  python img.py pair <photo.jpg> "x0,y0,x1,y1" <render.png> "x0,y0,x1,y1"|"c,r@D" [--kind bud|cup] [--op .6] [--h 420] [--out p.png]
-      a kept photograph (cropped) beside the rendered cell (a shot.sh grid cell: column c, row r, head size D), 900 px wide at most,
+  python img.py pair <photo.jpg> "x0,y0,x1,y1" <render.png> "x0,y0,x1,y1"|"c,r@D" [--kind bud|cup] [--op .6] [--h 420] [--w 900] [--out p.png]
+      a kept photograph (cropped) beside the rendered cell (a shot.sh grid cell: column c, row r, head size D), --h px high and --w px wide at most
+      (420 and 900 by default; pipe.py's refaire.sh asks --h 1100 --w 2400 so the judge sees tips, zones and translucency),
       and the silhouette measures of both (the subject: the blob at the centre of the crop): height/width (a bud's slenderness),
       width/height (a cup), the opening angle (how far the sides part from the axis, measured on a profile), against the brief
   python img.py ring <render.png> "c,r@D"|"x0,y0,x1,y1" [--ref "#base,#body,#tip"]
@@ -137,11 +138,11 @@ def pair(a):
         out.append(f"brief: coupe op {op} W/H {t[1]} a {t[2]} ; angle des flancs (profil) {BRIEF['angle'][0]} a {BRIEF['angle'][1]} deg")
     h = int(o.get('h', 420))
     tiles = [im.resize((max(1, int(im.width * h / im.height)), h), Image.LANCZOS) for im in (ph, rd)]
-    W = tiles[0].width + tiles[1].width + 8
-    if W > 900:
-        k = 900 / W
+    W, cap = tiles[0].width + tiles[1].width + 8, int(o.get('w', 900))
+    if W > cap:
+        k = cap / W
         tiles = [t.resize((max(1, int(t.width * k)), max(1, int(t.height * k))), Image.LANCZOS) for t in tiles]
-        W = 900
+        W = cap
     oi = Image.new('RGB', (W, tiles[0].height), '#e9e4dc')
     oi.paste(tiles[0], (0, 0))
     oi.paste(tiles[1], (W - tiles[1].width, 0))
