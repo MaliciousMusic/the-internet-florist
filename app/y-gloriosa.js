@@ -83,22 +83,25 @@ if(typeof lilyFlower==='function'){const glrOld=lilyFlower;lilyFlower=function(p
    with a rounded clasping base and a long acuminate point drawn out into a coiled tendril of 1 to 2 turns; entire margin; three or four parallel veins
    arching to the point, the upper face dark and the underside paler with the veins showing. Pedicel: a round arch from the axil, bent over at its top
    where the bud or the flower hangs. The free settings are GLR_PL (fit.py edits it in place). */
-const GLR_PL={sw:.051,tap:.3,pw:.041,pedL:.9,leafL:1.12,lw:1.7,ang:62,droop:.25,gut:.5,tw:.3,wav:.035,wavN:2.2,tendL:.42,tendN:1.5,tendW:.012,nodeSw:.22,nodeLen:1.5};
+const GLR_PL={sw:.051,tap:.3,pw:.041,pedL:.9,leafL:1.12,lw:2.8,ang:62,droop:.25,gut:.5,tw:.3,wav:.035,wavN:2.2,tendL:.42,tendN:1.5,tendW:.012,nodeSw:.22,nodeLen:1.5};
 /* leaf colours (photos 85 and 75: upper face #5b7d30 in the shade to #7baa2d lit, underside #8cb63c) */
-const GLR_LEAF={stops:[[0,'#4a7a22'],[.4,'#356b1e'],[1,'#44742a']],bstops:[[0,'#a2c458'],[.5,'#8cb63c'],[1,'#94bc46']],shade:'#183a0c',lite:'#8fc058',bshade:'#3c6420',blite:'#cfe68e',
-  rim:'#78a83a',cast:'#0c1c06',wrap:.28,amb:.3,dif:.7,sky:.16,trans:.28,ks:.34,gloss:26,dark:[.8,.6,.42],da:.34,lit:[1.05],la:.22,darkLo:[.72],daLo:.32,litLo:[],laLo:.22,rw:.01,ro:.3,soft:.05};
+const GLR_LEAF={stops:[[0,'#4a7a22'],[.4,'#356b1e'],[1,'#44742a']],bstops:[[0,'#8eb446'],[.5,'#7aa634'],[1,'#84ae3e']],shade:'#183a0c',lite:'#8fc058',bshade:'#36601c',blite:'#b4d474',
+  rim:'#78a83a',cast:'#0c1c06',wrap:.28,amb:.3,dif:.7,sky:.16,trans:.28,ks:1,gloss:9,dark:[.8,.6,.42],da:.34,lit:[1.05],la:.22,darkLo:[.72],daLo:.32,litLo:[],laLo:.22,rw:.007,ro:.3,soft:.05};
 const GLR_LM={};
 function glrLeafMat(wl,det){const key=(wl*20|0)+(det?'h':'l');if(GLR_LM[key])return GLR_LM[key];
   /* the point yellows first, then the whole blade (limp, ochre) */
   const wc=(c,v)=>{const a=Math.min(1,Math.max(0,wl*1.6-(1-v)*.85));return a>0?mix(mix(c,'#c2b044',Math.min(1,a*1.2)),'#8a6a30',Math.max(0,a-.7)*1.3):c};
   const ws=L=>L.map(([v,c])=>[v,wc(c,v)]),m=Object.assign({},GLR_LEAF,{stops:ws(GLR_LEAF.stops),bstops:ws(GLR_LEAF.bstops)});
   /* parallel veins: the midrib and two arching pairs at constant u (the blade's width follows the margin), thin, the underside's showing more */
-  m.veins=(s,front)=>[[[[[0,.03],[0,.3],[0,.6],[0,.92]]],.012,front?'#8fbf56':'#6a9230',.55],
-    [[-.6,-.3,.3,.6].map(u0=>[[u0,.05],[u0,.35],[u0,.65],[u0*.75,.9]]),.008,front?'#86b64a':'#5f8a2c',front?.42:.5]];
+  /* comparison pair 'feuille' (photo 75): many fine veins converging to the point, faint on the upper face; the earlier .012/.008 strokes read as pale bands */
+  m.veins=(s,front)=>[[[[[0,.03],[0,.3],[0,.6],[0,.9]]],.0055,front?'#86b64e':'#6a9230',.5],
+    [[-.72,-.48,-.24,.24,.48,.72].map(u0=>[[u0,.06],[u0*.96,.35],[u0*.8,.62],[u0*.45,.86]]),.0032,front?'#6e9c3c':'#5f8a2c',front?.22:.42]];
   if(!det)m.veins=null;return GLR_LM[key]=m}
 /* width profile of the blade (share of the maximum): the rounded clasping base, the widest a fifth along, then drawn out into the point */
-const GLR_WP=[[0,.5],[.05,.78],[.2,1],[.45,.88],[.7,.55],[.88,.24],[1,.03]];
-function glrWp(v){const P=GLR_WP;if(v<=0)return P[0][1];for(let i=1;i<P.length;i++)if(v<=P[i][0]){const a=P[i-1],b=P[i],t=(v-a[0])/(b[0]-a[0]),s=t*t*(3-2*t);return a[1]+(b[1]-a[1])*s}return P[P.length-1][1]}
+/* comparison pair 'feuille' (photo 75): the base narrows round onto the stem; the earlier .5 at v=0 cut the blade square against it */
+const GLR_WP=[[0,.16],[.2,1],[.45,.9],[.7,.56],[.88,.24],[1,.03]];
+/* the base is a quarter ellipse (no step: smoothstep between close stops left a corner on the margin) */
+function glrWp(v){const P=GLR_WP;if(v<=0)return P[0][1];if(v<P[1][0]){const q=1-v/P[1][0];return P[0][1]+(P[1][1]-P[0][1])*Math.sqrt(1-q*q)}for(let i=1;i<P.length;i++)if(v<=P[i][0]){const a=P[i-1],b=P[i],t=(v-a[0])/(b[0]-a[0]),s=t*t*(3-2*t);return a[1]+(b[1]-a[1])*s}return P[P.length-1][1]}
 /* one leaf: pos the base (y up), H its direction, U the axis' side; len its length; sd the seed; wl the fading (0..1) */
 function glrLeaf(par,pos,H,U,len,sd,wl,o){o=o||{};const P=GLR_PL,r=svRng(sd),det=DET>=1.5,Hn=V3.nz(H),up=[0,1,0],dn=[0,-1,0],
     limp=.1+.75*svSm((wl-.15)/.6),dr=Math.min(1.3,P.droop*(.8+.4*r())+limp*.85),ns=14,tw=P.tw*r.in(-1,1),wph=r()*6.28,halfW=len/P.lw/2,
@@ -118,8 +121,9 @@ function glrLeaf(par,pos,H,U,len,sd,wl,o){o=o||{};const P=GLR_PL,r=svRng(sd),det
   for(let i=0;i<=n;i++){const s=i/n,P3=V3.add(V3.add(pe,V3.sc(tp,x)),V3.sc(fe.s,sg*y));pts.push([P3[0],-P3[1]]);ws.push(Math.max(.3,len*P.tendW*(1-.55*s)));
     const sh=Math.max(0,(s-.28)/.72),dsx=L/n;x+=Math.cos(ph)*dsx;y+=Math.sin(ph)*dsx;ph+=kk/(1-.8*sh)*dsx}
   svStemLine(g,pts,ws,c);return g}
-/* the stem's colours: shade, body (#69893d), light, glint; the style: a faint glaucous veil, fine ribs, a slow swell, and nodes where the leaves leave */
-function glrStemCols(nodes){const c=['#34521c','#69893d','#8fae58','#bcd68c'];c.sv={swell:.04,gloss:.35,ribs:[-.4,.15],bloom:.12};if(nodes)c.sv.nodes=nodes;return c}
+/* the stem's colours: shade, body (#69893d), light, glint; the style: smooth and glossy (the glaucous veil down to .03: pair 'tige'
+   read its .12 streaks as flat pale bands; kept above 0, since the prepared section is what cuts the base square), four fine ribs, a slow swell, and nodes where the leaves leave */
+function glrStemCols(nodes){const c=['#34521c','#69893d','#8fae58','#bcd68c'];c.sv={swell:.04,gloss:.35,ribs:[-.55,-.2,.15,.5],bloom:.03};if(nodes)c.sv.nodes=nodes;return c}
 /* the leaves of a bouquet's stem (STEML hook): screen to view space, leaning toward the eye on alternate sides */
 function glrLeafSv(par,x,y,ang,len,o){const s=o&&o.s>0?1:-1,zk=.25+.3*pxHashS(o&&o.k||0,5,Math.round(x*7+y*13));
   return glrLeaf(par,[x,-y,0],[Math.cos(ang),-Math.sin(ang),zk*s],[0,0,1],len,svSeed('glr-feuille',Math.round(x*8),Math.round(y*8)),glrLife(),{roll:.4*s})}
