@@ -1,0 +1,2145 @@
+{
+ "schema": "fiche-morpho/1",
+ "sid": "gloriosa",
+ "nom": "Gloriosa (lis de feu, lis de la Victoire)",
+ "taxon": {
+  "genre": "Gloriosa",
+  "espece": "Gloriosa superba L.",
+  "groupe": "espèce et coloris de fleuriste (type Rothschildiana) ; aucun cultivar nommé dans les sources",
+  "famille": "Colchicaceae (référence botanique)"
+ },
+ "kit": {
+  "moteur": "svReflex (app/y3-reflexe.js) + svReflexHeart",
+  "module": "app/y-gloriosa.js",
+  "defauts": "SVRX_DEF",
+  "spec": "GLR_SPEC"
+ },
+ "etat": {
+  "date": "2026-10-18",
+  "auteur": "agent fiche (étape fiche de pipe.py)",
+  "note": "Mesures sur les photos gardées (organ.py head/leaf/stem, fit.py targets) ; aucune échelle calibrée : tout est en rapports. Pas de code : le dessin n'existe pas."
+ },
+ "photos": {
+  "gloriosa:99db3122": {
+   "titre": "File:Curled Perfection (5967683296).jpg",
+   "auteur": "LadyDragonflyCC - &gt;;&lt; from Michigan, USA",
+   "licence": "CC BY 2.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Curled_Perfection_(5967683296).jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/Curled_Perfection_%285967683296%29.jpg/500px-Curled_Perfection_%285967683296%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/gloriosa/refcache/gloriosa/t003.jpg",
+   "tags": [
+    "stade:ouvert",
+    "vue:face"
+   ],
+   "vu": "stade=ouvert vue=face organe=- groupe=espece-sauvage",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 3,
+   "groupe": "espece-sauvage"
+  },
+  "gloriosa:e7c461c0": {
+   "titre": "File:121215 Fata Morgana Gloriosa superba 1.JPG",
+   "auteur": "kasparova",
+   "licence": "CC BY-SA 3.0",
+   "url": "https://commons.wikimedia.org/wiki/File:121215_Fata_Morgana_Gloriosa_superba_1.JPG",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/121215_Fata_Morgana_Gloriosa_superba_1.JPG/500px-121215_Fata_Morgana_Gloriosa_superba_1.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/gloriosa/refcache/gloriosa/t001.jpg",
+   "tags": [
+    "stade:ouvert",
+    "vue:trois-quarts"
+   ],
+   "vu": "stade=ouvert vue=trois-quarts organe=- groupe=espece-sauvage",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 1,
+   "groupe": "espece-sauvage"
+  },
+  "gloriosa:ab679a7c": {
+   "titre": "File:Flame Lily (52545721451).jpg",
+   "auteur": "Geoff McKay from Palmerston North, New Zealand",
+   "licence": "CC BY 2.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Flame_Lily_(52545721451).jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/Flame_Lily_%2852545721451%29.jpg/500px-Flame_Lily_%2852545721451%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/gloriosa/refcache/gloriosa/t011.jpg",
+   "tags": [
+    "stade:ouvert",
+    "vue:profil"
+   ],
+   "vu": "stade=ouvert vue=profil organe=- groupe=espece-sauvage",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 11,
+   "groupe": "espece-sauvage"
+  },
+  "gloriosa:e0b54edd": {
+   "titre": "File:Flower of Gloriosa superba looking like UFO.jpg",
+   "auteur": "Dr.Subhransu",
+   "licence": "CC BY-SA 3.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Flower_of_Gloriosa_superba_looking_like_UFO.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/76/Flower_of_Gloriosa_superba_looking_like_UFO.jpg/500px-Flower_of_Gloriosa_superba_looking_like_UFO.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/gloriosa/refcache/gloriosa/t022.jpg",
+   "tags": [
+    "stade:ouvert",
+    "vue:profil"
+   ],
+   "vu": "stade=ouvert vue=profil organe=- groupe=espece-sauvage",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 22,
+   "groupe": "espece-sauvage"
+  },
+  "gloriosa:e1b445c8": {
+   "titre": "File:Flame lily.png",
+   "auteur": "Nativeplants garden",
+   "licence": "CC BY-SA 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Flame_lily.png",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fe/Flame_lily.png/500px-Flame_lily.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/gloriosa/refcache/gloriosa/t017.jpg",
+   "tags": [
+    "stade:ouvert",
+    "vue:trois-quarts"
+   ],
+   "vu": "stade=ouvert vue=trois-quarts organe=- groupe=espece-sauvage",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 17,
+   "groupe": "espece-sauvage"
+  },
+  "gloriosa:a6e03217": {
+   "titre": "File:Gloriosa superba 2236.jpg",
+   "auteur": "SAplants",
+   "licence": "CC BY-SA 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Gloriosa_superba_2236.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/93/Gloriosa_superba_2236.jpg/500px-Gloriosa_superba_2236.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/gloriosa/refcache/gloriosa/t064.jpg",
+   "tags": [
+    "stade:ouvert",
+    "vue:face"
+   ],
+   "vu": "stade=ouvert vue=face organe=- groupe=espece-sauvage",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 64,
+   "groupe": "espece-sauvage"
+  },
+  "gloriosa:5d283bbb": {
+   "titre": "File:Gloriosa superba 4.jpg",
+   "auteur": "George Muttathil Pulikurumba",
+   "licence": "CC BY-SA 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Gloriosa_superba_4.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/Gloriosa_superba_4.jpg/500px-Gloriosa_superba_4.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/gloriosa/refcache/gloriosa/t070.jpg",
+   "tags": [
+    "stade:ouvert",
+    "vue:dos"
+   ],
+   "vu": "stade=ouvert vue=dos organe=- groupe=espece-sauvage",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 70,
+   "groupe": "espece-sauvage"
+  },
+  "gloriosa:84b26384": {
+   "titre": "File:Gloriosa superba bud Toti 14 01 2011.JPG",
+   "auteur": "Purves, M.",
+   "licence": "CC BY-SA 3.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Gloriosa_superba_bud_Toti_14_01_2011.JPG",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ad/Gloriosa_superba_bud_Toti_14_01_2011.JPG/500px-Gloriosa_superba_bud_Toti_14_01_2011.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/gloriosa/refcache/gloriosa/t082.jpg",
+   "tags": [
+    "stade:bouton",
+    "vue:profil",
+    "organe:bourgeon"
+   ],
+   "vu": "stade=bouton vue=profil organe=bourgeon groupe=espece-sauvage",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 82,
+   "groupe": "espece-sauvage"
+  },
+  "gloriosa:2997cab4": {
+   "titre": "File:Gloriosa Lily Kabini Sep22 A7C 03204.jpg",
+   "auteur": "This Photo was taken by Timothy A. Gonsalves.  Feel free to use my photos, but p",
+   "licence": "CC BY-SA 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Gloriosa_Lily_Kabini_Sep22_A7C_03204.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Gloriosa_Lily_Kabini_Sep22_A7C_03204.jpg/500px-Gloriosa_Lily_Kabini_Sep22_A7C_03204.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/gloriosa/refcache/gloriosa/t036.jpg",
+   "tags": [
+    "stade:entrouvert",
+    "vue:profil"
+   ],
+   "vu": "stade=entrouvert vue=profil organe=- groupe=espece-sauvage",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 36,
+   "groupe": "espece-sauvage"
+  },
+  "gloriosa:53ac20b0": {
+   "titre": "File:Gloriosa superba 8962.jpg",
+   "auteur": "Vaikoovery",
+   "licence": "CC BY 3.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Gloriosa_superba_8962.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/29/Gloriosa_superba_8962.jpg/500px-Gloriosa_superba_8962.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/gloriosa/refcache/gloriosa/t071.jpg",
+   "tags": [
+    "stade:entrouvert",
+    "vue:profil"
+   ],
+   "vu": "stade=entrouvert vue=profil organe=- groupe=espece-sauvage",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 71,
+   "groupe": "espece-sauvage"
+  },
+  "gloriosa:621a2b3e": {
+   "titre": "File:Gloriosa superba 3.jpg",
+   "auteur": "George Muttathil Pulikurumba",
+   "licence": "CC BY-SA 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Gloriosa_superba_3.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1e/Gloriosa_superba_3.jpg/500px-Gloriosa_superba_3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/gloriosa/refcache/gloriosa/t069.jpg",
+   "tags": [
+    "stade:declin",
+    "stade:fane",
+    "vue:face",
+    "organe:feuille-fanee"
+   ],
+   "vu": "stade=declin+fane vue=face organe=feuille-fanee groupe=espece-sauvage",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 69,
+   "groupe": "espece-sauvage"
+  },
+  "gloriosa:9459b001": {
+   "titre": "File:Gloriosa superba from Coimbatore JEG5594.JPG",
+   "auteur": "P Jeganathan",
+   "licence": "CC BY-SA 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Gloriosa_superba_from_Coimbatore_JEG5594.JPG",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Gloriosa_superba_from_Coimbatore_JEG5594.JPG/500px-Gloriosa_superba_from_Coimbatore_JEG5594.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/gloriosa/refcache/gloriosa/t079.jpg",
+   "tags": [
+    "stade:declin",
+    "vue:profil"
+   ],
+   "vu": "stade=declin vue=profil organe=- groupe=espece-sauvage",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 79,
+   "groupe": "espece-sauvage"
+  },
+  "gloriosa:c85ff2fd": {
+   "titre": "File:Gloriosa superba 1DS-II 3-1863.jpg",
+   "auteur": "SAplants",
+   "licence": "CC BY-SA 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Gloriosa_superba_1DS-II_3-1863.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ae/Gloriosa_superba_1DS-II_3-1863.jpg/500px-Gloriosa_superba_1DS-II_3-1863.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/gloriosa/refcache/gloriosa/t085.jpg",
+   "tags": [
+    "organe:feuille-dessous",
+    "vue:profil"
+   ],
+   "vu": "stade=- vue=profil organe=feuille-dessous groupe=espece-sauvage",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 85,
+   "groupe": "espece-sauvage"
+  },
+  "gloriosa:7783e2a4": {
+   "titre": "File:Gloriosa superba Blütenknospe.jpg",
+   "auteur": "Danny S.",
+   "licence": "CC BY-SA 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Gloriosa_superba_Bl%C3%BCtenknospe.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/be/Gloriosa_superba_Bl%C3%BCtenknospe.jpg/500px-Gloriosa_superba_Bl%C3%BCtenknospe.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/gloriosa/refcache/gloriosa/t075.jpg",
+   "tags": [
+    "organe:feuille-dessus",
+    "vue:trois-quarts"
+   ],
+   "vu": "stade=- vue=trois-quarts organe=feuille-dessus groupe=espece-sauvage",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 75,
+   "groupe": "espece-sauvage"
+  },
+  "gloriosa:7e05dbda": {
+   "titre": "File:Gloriosa superba (BG Zurich)-04.JPG",
+   "auteur": "Guérin Nicolas (messages) 20:25, 25 September 2008 (UTC)",
+   "licence": "CC BY-SA 3.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Gloriosa_superba_(BG_Zurich)-04.JPG",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/Gloriosa_superba_%28BG_Zurich%29-04.JPG/500px-Gloriosa_superba_%28BG_Zurich%29-04.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/gloriosa/refcache/gloriosa/t045.jpg",
+   "tags": [
+    "organe:tige",
+    "vue:profil"
+   ],
+   "vu": "stade=ouvert vue=profil organe=tige groupe=espece-sauvage",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 45,
+   "groupe": "espece-sauvage"
+  },
+  "gloriosa:2cd30102": {
+   "titre": "File:Gardenology.org-IMG 0731 rbgs10dec.jpg",
+   "auteur": "Raffi Kojian",
+   "licence": "CC BY-SA 3.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Gardenology.org-IMG_0731_rbgs10dec.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Gardenology.org-IMG_0731_rbgs10dec.jpg/500px-Gardenology.org-IMG_0731_rbgs10dec.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/gloriosa/refcache/gloriosa/t025.jpg",
+   "tags": [
+    "organe:plante",
+    "vue:profil"
+   ],
+   "vu": "stade=ouvert vue=profil organe=plante groupe=espece-sauvage",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 25,
+   "groupe": "espece-sauvage"
+  },
+  "gloriosa:3f7981ea": {
+   "titre": "File:Gloriosa superba (BG Zurich)-01.JPG",
+   "auteur": "Guérin Nicolas (messages) 20:15, 25 September 2008 (UTC)",
+   "licence": "CC BY-SA 3.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Gloriosa_superba_(BG_Zurich)-01.JPG",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/Gloriosa_superba_%28BG_Zurich%29-01.JPG/500px-Gloriosa_superba_%28BG_Zurich%29-01.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/gloriosa/refcache/gloriosa/t042.jpg",
+   "tags": [
+    "organe:plante",
+    "vue:profil"
+   ],
+   "vu": "stade=ouvert vue=profil organe=plante groupe=espece-sauvage",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 42,
+   "groupe": "espece-sauvage"
+  },
+  "gloriosa:38a473ad": {
+   "titre": "File:Gloriosa superba (82654).jpg",
+   "auteur": "Nativeplants garden",
+   "licence": "CC BY-SA 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Gloriosa_superba_(82654).jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/Gloriosa_superba_%2882654%29.jpg/500px-Gloriosa_superba_%2882654%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/gloriosa/refcache/gloriosa/t041.jpg",
+   "tags": [
+    "organe:feuille-dessus",
+    "vue:trois-quarts"
+   ],
+   "vu": "stade=- vue=trois-quarts organe=feuille-dessus groupe=espece-sauvage",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 41,
+   "groupe": "espece-sauvage"
+  },
+  "gloriosa:0206ef67": {
+   "titre": "File:Gloriosa superba 1.jpg",
+   "auteur": "Brian Gratwicke",
+   "licence": "CC BY 2.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Gloriosa_superba_1.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bc/Gloriosa_superba_1.jpg/500px-Gloriosa_superba_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/gloriosa/refcache/gloriosa/t095.jpg",
+   "tags": [
+    "stade:ouvert",
+    "vue:trois-quarts"
+   ],
+   "vu": "stade=ouvert vue=trois-quarts organe=- groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 95,
+   "groupe": "jardin"
+  },
+  "gloriosa:f8491a39": {
+   "titre": "File:Gloriosa superba IMG 1327.jpg",
+   "auteur": "JonRichfield",
+   "licence": "CC BY-SA 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Gloriosa_superba_IMG_1327.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/09/Gloriosa_superba_IMG_1327.jpg/500px-Gloriosa_superba_IMG_1327.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/gloriosa/refcache/gloriosa/t096.jpg",
+   "tags": [
+    "stade:ouvert",
+    "vue:profil"
+   ],
+   "vu": "stade=ouvert vue=profil organe=- groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 96,
+   "groupe": "jardin"
+  },
+  "gloriosa:2c397818": {
+   "titre": "File:Gloriosa superba-072.jpg",
+   "auteur": "Danny S.",
+   "licence": "CC BY-SA 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Gloriosa_superba-072.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/Gloriosa_superba-072.jpg/500px-Gloriosa_superba-072.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/gloriosa/refcache/gloriosa/t092.jpg",
+   "tags": [
+    "stade:ouvert",
+    "vue:profil",
+    "organe:feuille-dessous"
+   ],
+   "vu": "stade=ouvert vue=profil organe=feuille-dessous groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 92,
+   "groupe": "jardin"
+  },
+  "gloriosa:145f16e9": {
+   "titre": "File:Gloriosa superba kz01.jpg",
+   "auteur": "Krzysztof Ziarnek, Kenraiz",
+   "licence": "CC BY-SA 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Gloriosa_superba_kz01.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b4/Gloriosa_superba_kz01.jpg/500px-Gloriosa_superba_kz01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/gloriosa/refcache/gloriosa/t098.jpg",
+   "tags": [
+    "stade:ouvert",
+    "stade:fane",
+    "vue:trois-quarts",
+    "organe:feuille-fanee"
+   ],
+   "vu": "stade=ouvert+fane vue=trois-quarts organe=feuille-fanee groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 98,
+   "groupe": "jardin"
+  },
+  "gloriosa:6c33f6ca": {
+   "titre": "File:Gloriosa superba buds Lombok",
+   "auteur": "",
+   "licence": "tiers (mesure locale)",
+   "url": "https://anbg.gov.au/photo/apii/id/dig/11379",
+   "url_image": "https://anbg.gov.au/images/photo_cd/WILSON1/Gloriosa-superbaCD9-94_2.jpg",
+   "local": "ch/gloriosa/refcache/gloriosa/t125.jpg",
+   "tags": [
+    "stade:bouton",
+    "stade:ouvert",
+    "vue:profil",
+    "organe:bourgeon"
+   ],
+   "vu": "stade=bouton+ouvert vue=profil organe=bourgeon groupe=espece-sauvage",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 125,
+   "groupe": "espece-sauvage"
+  },
+  "gloriosa:3836e09b": {
+   "titre": "File:Gloriosa superba stem 2",
+   "auteur": "",
+   "licence": "tiers (mesure locale)",
+   "url": "https://wild.blrhikes.com/species/268",
+   "url_image": "https://admin.aurovilleherbarium.org/img/plants/stem/Gl.su_st2.jpg",
+   "local": "ch/gloriosa/refcache/gloriosa/t121.jpg",
+   "tags": [
+    "organe:tige",
+    "organe:feuille-dessous"
+   ],
+   "vu": "stade=- vue=- organe=tige+feuille-dessous groupe=espece-sauvage",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 121,
+   "groupe": "espece-sauvage"
+  },
+  "gloriosa:c006f9fd": {
+   "titre": "File:Gloriosa superba L. - Flickr - lalithamba.jpg",
+   "auteur": "Lalithamba from India",
+   "licence": "CC BY 2.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Gloriosa_superba_L._-_Flickr_-_lalithamba.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/80/Gloriosa_superba_L._-_Flickr_-_lalithamba.jpg/500px-Gloriosa_superba_L._-_Flickr_-_lalithamba.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/gloriosa/refcache/gloriosa/t086.jpg",
+   "tags": [
+    "stade:bouton",
+    "vue:profil",
+    "organe:bourgeon"
+   ],
+   "vu": "stade=bouton vue=profil organe=bourgeon groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 86,
+   "groupe": "jardin"
+  }
+ },
+ "organes": {
+  "tepale.externe": {
+   "role": "perianthe",
+   "nombre": {
+    "v": 6,
+    "plage": [
+     6,
+     6
+    ],
+    "unite": "n",
+    "methode": "reference",
+    "conf": "A",
+    "ref": "Flore (Flora of Tropical East Africa, flores d'Inde) : Gloriosa superba L., Colchicaceae : 6 tépales libres en deux verticilles de 3, presque identiques",
+    "code": "GLR_GENES.n[0][0]",
+    "retenu": 6
+   },
+   "disposition": {
+    "type": {
+     "v": "verticilles",
+     "methode": "oeil",
+     "photos": [
+      "gloriosa:ab679a7c",
+      "gloriosa:e0b54edd",
+      "gloriosa:6c33f6ca",
+      "gloriosa:53ac20b0"
+     ],
+     "conf": "C"
+    },
+    "verticilles": {
+     "v": 2,
+     "unite": "n",
+     "methode": "oeil",
+     "photos": [
+      "gloriosa:ab679a7c",
+      "gloriosa:e0b54edd",
+      "gloriosa:6c33f6ca",
+      "gloriosa:53ac20b0"
+     ],
+     "conf": "C",
+     "note": "les deux verticilles se distinguent à peine",
+     "code": "P.L.length",
+     "retenu": 2
+    },
+    "recouvrement": {
+     "v": "faible : tépales libres relevés en gerbe, ils se touchent à la base et s'écartent vers la pointe",
+     "methode": "oeil",
+     "photos": [
+      "gloriosa:ab679a7c",
+      "gloriosa:53ac20b0"
+     ],
+     "conf": "C"
+    },
+    "ordre": {
+     "v": "l'externe passe sous l'interne à la base ; en bouton les pointes se touchent en cône",
+     "methode": "oeil",
+     "photos": [
+      "gloriosa:84b26384",
+      "gloriosa:53ac20b0"
+     ],
+     "conf": "C"
+    }
+   },
+   "contour": {
+    "base": {
+     "v": "cunee",
+     "methode": "oeil",
+     "photos": [
+      "gloriosa:ab679a7c",
+      "gloriosa:e0b54edd",
+      "gloriosa:6c33f6ca"
+     ],
+     "conf": "C"
+    },
+    "pointe": {
+     "type": {
+      "v": "acuminee",
+      "methode": "oeil",
+      "photos": [
+       "gloriosa:ab679a7c",
+       "gloriosa:e0b54edd",
+       "gloriosa:99db3122"
+      ],
+      "conf": "C"
+     },
+     "recourbee": {
+      "v": "pointe retournée vers l'extérieur, en crochet",
+      "methode": "oeil",
+      "photos": [
+       "gloriosa:99db3122",
+       "gloriosa:ab679a7c"
+      ],
+      "conf": "C"
+     }
+    },
+    "L_sur_l": {
+     "v": 4.0,
+     "unite": "ratio",
+     "methode": "oeil",
+     "photos": [
+      "gloriosa:ab679a7c",
+      "gloriosa:e0b54edd",
+      "gloriosa:6c33f6ca"
+     ],
+     "conf": "C",
+     "note": "lanière environ 4 fois plus longue que large (±25 %), non calibrée",
+     "code": "P.L[0]/(2*P.W[0]*Math.max(...P.wp.map(x=>x[1])))",
+     "ecart": {
+      "type": "divergence",
+      "texte": "L/l 3,3 au lieu de 4 : le milieu du tépale élargi (wp 1,06) ferme les jours entre tépales voisins que les filets enferment (trous de pipe.py, seuil 1,5 %)."
+     },
+     "retenu": 3.2859868560525753
+    },
+    "marge": {
+     "type": {
+      "v": "ondulee",
+      "methode": "oeil",
+      "photos": [
+       "gloriosa:ab679a7c",
+       "gloriosa:99db3122",
+       "gloriosa:0206ef67"
+      ],
+      "conf": "C",
+      "note": "marge fortement ondulée et crispée, surtout dans la moitié basse"
+     }
+    }
+   },
+   "taille": {
+    "longueur": {
+     "v": 6.5,
+     "plage": [
+      5,
+      8
+     ],
+     "unite": "cm",
+     "methode": "reference",
+     "conf": "B",
+     "ref": "Flore (Flora of Tropical East Africa, flores d'Inde) : Gloriosa superba L., Colchicaceae : tépales 5 à 8 cm (jusqu'à 10 cm)",
+     "code": "P.L[0]*(SZG['gloriosa'].reduce((a,b)=>a+b)/SZG['gloriosa'].length)/2",
+     "retenu": 5.89
+    },
+    "rapport_tete": {
+     "v": 1.16,
+     "plage": [
+      0.9,
+      1.4
+     ],
+     "unite": "ratio",
+     "n": 3,
+     "methode": "segmente",
+     "photos": [
+      "gloriosa:ab679a7c",
+      "gloriosa:e0b54edd",
+      "gloriosa:6c33f6ca"
+     ],
+     "conf": "B",
+     "note": "largeur / hauteur de la silhouette de la fleur ouverte (fit.py targets ouverte.wh, 3 photos) ; organ.py head sur la photo 11 : 804 px de large pour 693 px de haut, soit 1,16",
+     "code": "P.L[0]",
+     "retenu": 1.24
+    }
+   },
+   "courbure": {
+    "longitudinale": {
+     "profil": {
+      "v": "reflechie : dressé sur le tiers bas puis courbé en arrière, pointe en crochet",
+      "methode": "oeil",
+      "photos": [
+       "gloriosa:ab679a7c",
+       "gloriosa:53ac20b0",
+       "gloriosa:99db3122"
+      ],
+      "conf": "C"
+     },
+     "pointe_deg": {
+      "v": -16.3,
+      "plage": [
+       -17,
+       -15
+      ],
+      "unite": "deg",
+      "n": 3,
+      "methode": "segmente",
+      "photos": [
+       "gloriosa:ab679a7c",
+       "gloriosa:e0b54edd",
+       "gloriosa:6c33f6ca"
+      ],
+      "conf": "B",
+      "repere": "horizontale",
+      "note": "valeur ang de fit.py targets (ouverte.ang) ; repère supposé l'horizontale (Q3)",
+      "ecart": {
+       "type": "budget",
+       "texte": "angle des flancs mesuré par fit.py (ouverte.ang) sur la silhouette, sans expression du code : la pointe est réglée par aT ouvert (1,95 rad), laissé libre dans space.json pour que fit.py l'ajuste."
+      }
+     }
+    },
+    "transversale": {
+     "type": {
+      "v": "gouttiere",
+      "methode": "oeil",
+      "photos": [
+       "gloriosa:ab679a7c",
+       "gloriosa:e0b54edd"
+      ],
+      "conf": "C"
+     }
+    },
+    "ondulation": {
+     "n": {
+      "v": 5,
+      "unite": "n",
+      "methode": "oeil",
+      "photos": [
+       "gloriosa:ab679a7c"
+      ],
+      "conf": "C",
+      "note": "5 à 6 ondes par marge sur la photo 11",
+      "code": "GLR_GENES.tep.wk[0]",
+      "retenu": 5
+     },
+     "amplitude": {
+      "v": 0.08,
+      "unite": "L",
+      "methode": "hypothese",
+      "conf": "D",
+      "code": "GLR_GENES.tep.wav[1]*P.wavO[1]",
+      "ecart": {
+       "type": "divergence",
+       "texte": "ondulation hors plan 0,03 à 0,055 L, à laquelle s'ajoute le contour ondulé (gène ew 0,06 à 0,12) : ensemble la crispation du bord ; plus haute, les bords voisins se croisent."
+      },
+      "retenu": 0.055
+     }
+    }
+   },
+   "matiere": {
+    "epaisseur": {
+     "v": "fine",
+     "methode": "oeil",
+     "photos": [
+      "gloriosa:ab679a7c",
+      "gloriosa:e0b54edd",
+      "gloriosa:6c33f6ca"
+     ],
+     "conf": "C"
+    },
+    "translucidite": {
+     "v": 0.3,
+     "methode": "hypothese",
+     "conf": "D",
+     "code": "glrMat({id:'jaune'}).transmit.a",
+     "ecart": {
+      "type": "divergence",
+      "texte": "lumière traversante 0,22 au bord seulement (transmit) : à 0,3 les tépales jaunes laissent voir les pièces de derrière (BONNES-PRATIQUES 3.1)."
+     },
+     "retenu": 0.22
+    },
+    "texture": {
+     "v": "satin",
+     "methode": "oeil",
+     "photos": [
+      "gloriosa:ab679a7c"
+     ],
+     "conf": "C"
+    },
+    "brillance": {
+     "v": 0.35,
+     "methode": "hypothese",
+     "conf": "D",
+     "code": "P.light.ks",
+     "ecart": {
+      "type": "divergence",
+      "texte": "reflet du kit ks 0,12 (gloss 16) : un satiné ; plus fort, le reflet blanchit les bordeaux."
+     },
+     "retenu": 0.12
+    },
+    "grain": {
+     "v": "lisse",
+     "methode": "oeil",
+     "photos": [
+      "gloriosa:ab679a7c"
+     ],
+     "conf": "C"
+    }
+   },
+   "nervation": {
+    "type": {
+     "v": "parallele",
+     "methode": "oeil",
+     "photos": [
+      "gloriosa:ab679a7c"
+     ],
+     "conf": "C"
+    },
+    "relief": {
+     "v": "plat",
+     "methode": "oeil",
+     "photos": [
+      "gloriosa:ab679a7c"
+     ],
+     "conf": "C"
+    },
+    "visible": {
+     "v": "face",
+     "methode": "oeil",
+     "photos": [
+      "gloriosa:ab679a7c"
+     ],
+     "conf": "C"
+    },
+    "couleur": {
+     "v": "coloree",
+     "methode": "oeil",
+     "photos": [
+      "gloriosa:ab679a7c"
+     ],
+     "conf": "C",
+     "note": "une bande centrale plus rouge suit la nervure médiane"
+    }
+   },
+   "zones": [
+    {
+     "zone": "base",
+     "etendue": {
+      "v": [
+       0,
+       0.3
+      ],
+      "u": [
+       "L",
+       "L"
+      ],
+      "methode": "oeil",
+      "conf": "C",
+      "photos": [
+       "gloriosa:ab679a7c"
+      ],
+      "code": "[0,GLR_CW.rothschildiana.st[3][0]]",
+      "retenu": [
+       0,
+       0.36
+      ],
+      "ecart": {
+       "type": "divergence",
+       "texte": "auto 2026-10-18 : valeur du code [0, 0.36] (v mesuré [0, 0.3])"
+      }
+     },
+     "motif": {
+      "type": "uni"
+     },
+     "bord": "fondu",
+     "note": "vert-jaune, plus pâle"
+    },
+    {
+     "zone": "corps",
+     "etendue": {
+      "v": [
+       0.3,
+       0.85
+      ],
+      "u": [
+       "L",
+       "L"
+      ],
+      "methode": "oeil",
+      "conf": "C",
+      "photos": [
+       "gloriosa:ab679a7c"
+      ],
+      "code": "[GLR_CW.rothschildiana.st[3][0],glrMat({id:'rothschildiana'}).cross[0].tip]",
+      "retenu": [
+       0.36,
+       0.86
+      ],
+      "ecart": {
+       "type": "divergence",
+       "texte": "auto 2026-10-18 : valeur du code [0.36, 0.86] (v mesuré [0.3, 0.85])"
+      }
+     },
+     "motif": {
+      "type": "flammes"
+     },
+     "bord": "fondu",
+     "note": "bande médiane plus saturée (rouge ou orange) entre deux marges jaunes"
+    },
+    {
+     "zone": "marge",
+     "etendue": {
+      "v": [
+       0,
+       1
+      ],
+      "u": [
+       "L",
+       "L"
+      ],
+      "methode": "oeil",
+      "conf": "C",
+      "photos": [
+       "gloriosa:ab679a7c"
+      ],
+      "code": "[0,glrMat({id:'rothschildiana'}).cross[0].st[3][0]]",
+      "retenu": [
+       0,
+       1
+      ]
+     },
+     "motif": {
+      "type": "uni"
+     },
+     "bord": "fondu",
+     "note": "liseré jaune sur les coloris rouges (photos 3, 95)"
+    },
+    {
+     "zone": "pointe",
+     "etendue": {
+      "v": [
+       0.85,
+       1
+      ],
+      "u": [
+       "L",
+       "L"
+      ],
+      "methode": "oeil",
+      "conf": "C",
+      "photos": [
+       "gloriosa:ab679a7c"
+      ],
+      "code": "[glrMat({id:'rothschildiana'}).cross[0].tip,1]",
+      "retenu": [
+       0.86,
+       1
+      ]
+     },
+     "motif": {
+      "type": "uni"
+     },
+     "bord": "net"
+    }
+   ],
+   "jointures": [
+    {
+     "vers": "receptacle",
+     "type": "insertion",
+     "params": {
+      "note": "six tépales sortent du même point, en gerbe"
+     }
+    }
+   ],
+   "stades": {
+    "bouton": {
+     "note": "tépales dressés, pointes jointes, vert-jaune pâle"
+    },
+    "entrouvert": {
+     "note": "pointes s'écartent, base verte"
+    },
+    "ouvert": {
+     "note": "tépales relevés au-dessus de la tige, pointes retournées"
+    },
+    "declin": {
+     "note": "marges brunissent, tépales mollissent"
+    },
+    "fane": {
+     "note": "brun sec, enroulés"
+    }
+   }
+  },
+  "tepale.interne": {
+   "role": "perianthe",
+   "nombre": {
+    "v": 3,
+    "unite": "n",
+    "methode": "reference",
+    "conf": "A",
+    "ref": "Flore (Flora of Tropical East Africa, flores d'Inde) : Gloriosa superba L., Colchicaceae",
+    "code": "GLR_GENES.n[0][0]-Math.ceil(GLR_GENES.n[0][0]/2)",
+    "retenu": 3
+   },
+   "disposition": {
+    "suit": "tepale.externe.disposition"
+   },
+   "contour": {
+    "suit": "tepale.externe.contour"
+   },
+   "taille": {
+    "suit": "tepale.externe.taille"
+   },
+   "courbure": {
+    "suit": "tepale.externe.courbure"
+   },
+   "matiere": {
+    "suit": "tepale.externe.matiere"
+   },
+   "nervation": {
+    "suit": "tepale.externe.nervation"
+   },
+   "zones": {
+    "suit": "tepale.externe.zones"
+   },
+   "jointures": {
+    "suit": "tepale.externe.jointures"
+   },
+   "stades": {
+    "suit": "tepale.externe.stades"
+   }
+  },
+  "coeur.etamines": {
+   "role": "coeur",
+   "nombre": {
+    "v": 6,
+    "unite": "n",
+    "methode": "reference",
+    "conf": "A",
+    "ref": "Flore (Flora of Tropical East Africa, flores d'Inde) : Gloriosa superba L., Colchicaceae : 6 étamines",
+    "code": "Object.assign({},SVRXH_DEF,GLR_HEART).n",
+    "retenu": 6
+   },
+   "disposition": {
+    "type": {
+     "v": "verticilles",
+     "methode": "oeil",
+     "photos": [
+      "gloriosa:ab679a7c",
+      "gloriosa:e0b54edd"
+     ],
+     "conf": "C"
+    },
+    "note": "filets rayonnant à l'horizontale, comme les rayons d'une roue sous les tépales relevés"
+   },
+   "contour": {
+    "longueur_filet": {
+     "v": 0.6,
+     "unite": "R0",
+     "methode": "oeil",
+     "photos": [
+      "gloriosa:ab679a7c",
+      "gloriosa:e0b54edd"
+     ],
+     "conf": "C",
+     "note": "les filets dépassent la gerbe de tépales d'environ 0,5 fois la largeur de tête (±25 %) ; flore : filet de 4 à 5 cm",
+     "code": "Object.assign({},SVRXH_DEF,GLR_HEART).filL",
+     "ecart": {
+      "type": "divergence",
+      "texte": "filet 0,82 R0 (0,66 du tépale, la fiche dit environ 0,7) : la valeur 0,6 R0 de la fiche donnait des étamines trop courtes devant la photo 22."
+     },
+     "retenu": 0.82
+    },
+    "anthere": {
+     "v": "allongée, versatile, jaune-orangé, repliée vers le haut",
+     "methode": "oeil",
+     "photos": [
+      "gloriosa:ab679a7c"
+     ],
+     "conf": "C"
+    }
+   },
+   "taille": {
+    "longueur": {
+     "v": 4.5,
+     "plage": [
+      4,
+      5
+     ],
+     "unite": "cm",
+     "methode": "reference",
+     "conf": "B",
+     "ref": "Flore (Flora of Tropical East Africa, flores d'Inde) : Gloriosa superba L., Colchicaceae",
+     "code": "Object.assign({},SVRXH_DEF,GLR_HEART).filL*(SZG['gloriosa'].reduce((a,b)=>a+b)/SZG['gloriosa'].length)/2",
+     "ecart": {
+      "type": "divergence",
+      "texte": "3,9 cm pour une tête moyenne de 9,5 cm (SZG) : un peu sous 4 cm ; plus longs, les filets croisent les jours entre tépales (trous)."
+     },
+     "retenu": 3.8949999999999996
+    }
+   },
+   "matiere": {
+    "texture": {
+     "v": "lisse",
+     "methode": "oeil",
+     "photos": [
+      "gloriosa:ab679a7c"
+     ],
+     "conf": "C"
+    }
+   },
+   "zones": [
+    {
+     "zone": "base",
+     "etendue": {
+      "v": [
+       0,
+       0.85
+      ],
+      "u": [
+       "L",
+       "L"
+      ],
+      "methode": "oeil",
+      "conf": "C",
+      "photos": [
+       "gloriosa:ab679a7c"
+      ],
+      "code": "[0,1-Object.assign({},SVRXH_DEF,GLR_HEART).anL]",
+      "retenu": [
+       0,
+       0.85
+      ]
+     },
+     "motif": {
+      "type": "uni"
+     },
+     "bord": "fondu",
+     "note": "filet vert-jaune"
+    },
+    {
+     "zone": "pointe",
+     "etendue": {
+      "v": [
+       0.85,
+       1
+      ],
+      "u": [
+       "L",
+       "L"
+      ],
+      "methode": "oeil",
+      "conf": "C",
+      "photos": [
+       "gloriosa:ab679a7c"
+      ],
+      "code": "[1-Object.assign({},SVRXH_DEF,GLR_HEART).anL,1]",
+      "retenu": [
+       0.85,
+       1
+      ]
+     },
+     "motif": {
+      "type": "uni"
+     },
+     "bord": "net",
+     "note": "anthère jaune-orangé"
+    }
+   ],
+   "jointures": [
+    {
+     "vers": "receptacle",
+     "type": "insertion",
+     "params": {
+      "note": "naît à la base des tépales ; le filet se coude à angle droit vers l'extérieur"
+     }
+    }
+   ],
+   "stades": {
+    "bouton": {
+     "note": "cachées par les tépales"
+    },
+    "entrouvert": {
+     "note": "filets s'étalent"
+    },
+    "ouvert": {
+     "note": "à l'horizontale, anthères relevées"
+    },
+    "declin": {
+     "note": "anthères brunes"
+    }
+   }
+  },
+  "coeur.pistil": {
+   "role": "coeur",
+   "nombre": {
+    "v": 1,
+    "unite": "n",
+    "methode": "reference",
+    "conf": "A",
+    "ref": "Flore (Flora of Tropical East Africa, flores d'Inde) : Gloriosa superba L., Colchicaceae : 1 style à 3 stigmates",
+    "ecart": {
+     "type": "confirme",
+     "texte": "un pistil : svReflexHeart dessine un ovaire, un style coudé et trois stigmates."
+    }
+   },
+   "disposition": {
+    "type": {
+     "v": "verticilles",
+     "methode": "oeil",
+     "photos": [
+      "gloriosa:ab679a7c"
+     ],
+     "conf": "C"
+    },
+    "note": "un seul style, au centre"
+   },
+   "contour": {
+    "forme": {
+     "v": "style fin, coudé près de la base, puis arqué ; 3 stigmates courts",
+     "methode": "reference",
+     "conf": "B",
+     "ref": "Flore (Flora of Tropical East Africa, flores d'Inde) : Gloriosa superba L., Colchicaceae"
+    }
+   },
+   "taille": {
+    "longueur": {
+     "v": 5.5,
+     "plage": [
+      4,
+      7
+     ],
+     "unite": "cm",
+     "methode": "reference",
+     "conf": "C",
+     "ref": "Flore (Flora of Tropical East Africa, flores d'Inde) : Gloriosa superba L., Colchicaceae (à confirmer)",
+     "code": "Object.assign({},SVRXH_DEF,GLR_HEART).styL*(SZG['gloriosa'].reduce((a,b)=>a+b)/SZG['gloriosa'].length)/2",
+     "retenu": 4.275
+    }
+   },
+   "matiere": {
+    "texture": {
+     "v": "lisse",
+     "methode": "oeil",
+     "photos": [
+      "gloriosa:ab679a7c"
+     ],
+     "conf": "C"
+    }
+   },
+   "zones": [
+    {
+     "zone": "corps",
+     "etendue": {
+      "v": [
+       0,
+       1
+      ],
+      "u": [
+       "L",
+       "L"
+      ],
+      "methode": "oeil",
+      "conf": "C",
+      "photos": [
+       "gloriosa:ab679a7c"
+      ],
+      "ecart": {
+       "type": "confirme",
+       "texte": "une seule zone, le style de bout en bout (couleur sty)."
+      }
+     },
+     "motif": {
+      "type": "uni"
+     },
+     "bord": "fondu",
+     "note": "vert-jaune"
+    }
+   ],
+   "jointures": [
+    {
+     "vers": "receptacle",
+     "type": "insertion",
+     "params": {}
+    }
+   ],
+   "stades": {
+    "ouvert": {
+     "note": "style visible entre les filets"
+    }
+   }
+  },
+  "receptacle": {
+   "role": "receptacle",
+   "taille": {
+    "v": 0.08,
+    "unite": "ratio",
+    "methode": "oeil",
+    "photos": [
+     "gloriosa:ab679a7c",
+     "gloriosa:53ac20b0"
+    ],
+    "conf": "C",
+    "note": "petit renflement vert au sommet du pédicelle, ~8 % de la largeur de la tête",
+    "code": "P.r0",
+    "retenu": 0.07,
+    "ecart": {
+     "type": "divergence",
+     "texte": "auto 2026-10-18 : valeur du code 0.07 (v mesuré 0.08)"
+    }
+   },
+   "matiere": {
+    "texture": {
+     "v": "mat",
+     "methode": "oeil",
+     "photos": [
+      "gloriosa:ab679a7c"
+     ],
+     "conf": "C"
+    }
+   },
+   "zones": [
+    {
+     "zone": "base",
+     "etendue": {
+      "v": [
+       0,
+       1
+      ],
+      "u": [
+       "L",
+       "L"
+      ],
+      "methode": "oeil",
+      "conf": "C",
+      "photos": [
+       "gloriosa:ab679a7c"
+      ],
+      "ecart": {
+       "type": "confirme",
+       "texte": "le plancher (floor) et l'ovaire, une teinte sur tout le réceptacle."
+      }
+     },
+     "motif": {
+      "type": "uni"
+     },
+     "bord": "fondu",
+     "note": "vert foncé, ovaire supère"
+    }
+   ],
+   "jointures": [
+    {
+     "vers": "pedicelle",
+     "type": "col",
+     "params": {}
+    }
+   ],
+   "stades": {
+    "fane": {
+     "note": "reste vert"
+    }
+   }
+  },
+  "bouton": {
+   "role": "bouton",
+   "disposition": {
+    "type": {
+     "v": "verticilles",
+     "methode": "oeil",
+     "photos": [
+      "gloriosa:84b26384"
+     ],
+     "conf": "C"
+    },
+    "note": "six tépales dressés, joints"
+   },
+   "contour": {
+    "forme": {
+     "v": "fuseau ovoïde, pointe obtuse",
+     "methode": "oeil",
+     "photos": [
+      "gloriosa:84b26384"
+     ],
+     "conf": "C"
+    },
+    "L_sur_l": {
+     "v": 1.32,
+     "plage": [
+      1.26,
+      1.38
+     ],
+     "unite": "ratio",
+     "n": 1,
+     "methode": "segmente",
+     "photos": [
+      "gloriosa:84b26384"
+     ],
+     "conf": "C",
+     "note": "hauteur / largeur du bouton pendant (fit.py targets bouton.hw, 1 photo)",
+     "ecart": {
+      "type": "budget",
+      "texte": "forme du bouton issue des angles aB/aT au stade bouton et de budW, sans expression simple ; fit.py (bouton, hw) la mesure au rendu."
+     }
+    }
+   },
+   "taille": {
+    "rapport_ouvert": {
+     "v": 0.45,
+     "unite": "ratio",
+     "methode": "oeil",
+     "photos": [
+      "gloriosa:6c33f6ca",
+      "gloriosa:c006f9fd"
+     ],
+     "conf": "C",
+     "note": "longueur du bouton ≈ 0,45 fois la hauteur d'une fleur ouverte voisine ; ±25 %",
+     "code": "P.grow[0]",
+     "retenu": 0.5,
+     "ecart": {
+      "type": "divergence",
+      "texte": "auto 2026-10-18 : valeur du code 0.5 (v mesuré 0.45)"
+     }
+    }
+   },
+   "matiere": {
+    "epaisseur": {
+     "v": "moyenne",
+     "methode": "oeil",
+     "photos": [
+      "gloriosa:84b26384"
+     ],
+     "conf": "C"
+    },
+    "texture": {
+     "v": "cire",
+     "methode": "oeil",
+     "photos": [
+      "gloriosa:84b26384"
+     ],
+     "conf": "C"
+    },
+    "translucidite": {
+     "v": 0.1,
+     "methode": "hypothese",
+     "conf": "D",
+     "code": "const",
+     "ligne": "app/y3-reflexe.js:29",
+     "retenu": 0.1
+    }
+   },
+   "zones": [
+    {
+     "zone": "corps",
+     "etendue": {
+      "v": [
+       0,
+       1
+      ],
+      "u": [
+       "L",
+       "L"
+      ],
+      "methode": "oeil",
+      "conf": "C",
+      "photos": [
+       "gloriosa:ab679a7c"
+      ],
+      "ecart": {
+       "type": "confirme",
+       "texte": "une zone : le bouton vert pâle (green, greenC) de la base à la pointe."
+      }
+     },
+     "motif": {
+      "type": "uni"
+     },
+     "bord": "fondu",
+     "note": "vert très pâle au centre, plus sombre au bord"
+    }
+   ],
+   "jointures": [
+    {
+     "vers": "pedicelle",
+     "type": "col",
+     "params": {
+      "note": "pendu, la pointe regarde le bas"
+     }
+    }
+   ],
+   "stades": {
+    "bouton": {
+     "note": "pendant, vert pâle"
+    },
+    "gonfle": {
+     "note": "s'allonge, vire au vert-jaune puis orange en pointe"
+    }
+   }
+  },
+  "pedicelle": {
+   "role": "pedicelle",
+   "taille": {
+    "v": 8,
+    "plage": [
+     5,
+     12
+    ],
+    "unite": "cm",
+    "methode": "reference",
+    "conf": "C",
+    "ref": "Flore (Flora of Tropical East Africa, flores d'Inde) : Gloriosa superba L., Colchicaceae : pédicelle 6 à 12 cm, à confirmer"
+   },
+   "courbure": {
+    "profil": {
+     "v": "crosse : coudé à son sommet, il porte le bouton pendant",
+     "methode": "oeil",
+     "photos": [
+      "gloriosa:84b26384",
+      "gloriosa:c006f9fd"
+     ],
+     "conf": "C"
+    }
+   },
+   "matiere": {
+    "texture": {
+     "v": "mat",
+     "methode": "oeil",
+     "photos": [
+      "gloriosa:84b26384"
+     ],
+     "conf": "C"
+    }
+   },
+   "zones": [
+    {
+     "zone": "corps",
+     "etendue": {
+      "v": [
+       0,
+       1
+      ],
+      "u": [
+       "L",
+       "L"
+      ],
+      "methode": "oeil",
+      "conf": "C",
+      "photos": [
+       "gloriosa:ab679a7c"
+      ]
+     },
+     "motif": {
+      "type": "uni"
+     },
+     "bord": "fondu",
+     "note": "vert"
+    }
+   ],
+   "jointures": [
+    {
+     "vers": "tige",
+     "type": "noeud",
+     "params": {
+      "note": "naît à l'aisselle d'une feuille"
+     }
+    }
+   ],
+   "section": {
+    "type": {
+     "v": "ronde",
+     "methode": "oeil",
+     "photos": [
+      "gloriosa:84b26384"
+     ],
+     "conf": "C"
+    },
+    "diametre": {
+     "v": 0.04,
+     "unite": "D",
+     "methode": "hypothese",
+     "conf": "D"
+    }
+   },
+   "stades": {
+    "declin": {
+     "note": "s'arque davantage, la fleur pend"
+    }
+   }
+  },
+  "tige": {
+   "role": "tige",
+   "taille": {
+    "v": null,
+    "unite": "cm",
+    "methode": "hypothese",
+    "conf": "D",
+    "note": "liane de 2 à 4 m (flore) ; tige coupée de bouquet non mesurée : Q2"
+   },
+   "courbure": {
+    "profil": {
+     "v": "souple, ondulante, grimpe par les vrilles",
+     "methode": "oeil",
+     "photos": [
+      "gloriosa:3f7981ea",
+      "gloriosa:3836e09b"
+     ],
+     "conf": "C"
+    }
+   },
+   "matiere": {
+    "texture": {
+     "v": "lisse",
+     "methode": "oeil",
+     "photos": [
+      "gloriosa:3836e09b"
+     ],
+     "conf": "C"
+    },
+    "couleur": {
+     "v": "#69893d",
+     "plage": [
+      "#4b6c1b",
+      "#9bb672"
+     ],
+     "unite": "hex",
+     "n": 1,
+     "methode": "segmente",
+     "photos": [
+      "gloriosa:3836e09b"
+     ],
+     "conf": "C",
+     "note": "ton du corps de la tige (organ.py stem --green)"
+    }
+   },
+   "zones": [
+    {
+     "zone": "corps",
+     "etendue": {
+      "v": [
+       0,
+       1
+      ],
+      "u": [
+       "L",
+       "L"
+      ],
+      "methode": "oeil",
+      "conf": "C",
+      "photos": [
+       "gloriosa:ab679a7c"
+      ]
+     },
+     "motif": {
+      "type": "uni"
+     },
+     "bord": "fondu",
+     "note": "vert"
+    }
+   ],
+   "jointures": [
+    {
+     "vers": "feuille",
+     "type": "noeud",
+     "params": {
+      "note": "feuilles alternes, opposées ou en verticilles de 3"
+     }
+    }
+   ],
+   "section": {
+    "type": {
+     "v": "ronde",
+     "methode": "oeil",
+     "photos": [
+      "gloriosa:3836e09b"
+     ],
+     "conf": "C"
+    },
+    "diametre": {
+     "v": 0.05,
+     "unite": "ratio",
+     "n": 1,
+     "methode": "segmente",
+     "photos": [
+      "gloriosa:3836e09b"
+     ],
+     "conf": "C",
+     "note": "largeur 53 px sur un cadre de 795 px de long (organ.py stem --green, photo 121) ; effilement non fiable"
+    },
+    "effilement": {
+     "v": 1.0,
+     "unite": "ratio",
+     "methode": "hypothese",
+     "conf": "D"
+    }
+   },
+   "stades": {
+    "fane": {
+     "note": "la tige reste verte plus longtemps que la fleur"
+    }
+   }
+  },
+  "feuille": {
+   "role": "feuille",
+   "nombre": {
+    "v": "alternes, opposées ou verticillées par 3",
+    "methode": "reference",
+    "conf": "B",
+    "ref": "Flore (Flora of Tropical East Africa, flores d'Inde) : Gloriosa superba L., Colchicaceae"
+   },
+   "disposition": {
+    "type": {
+     "v": "alternes",
+     "methode": "oeil",
+     "photos": [
+      "gloriosa:3f7981ea",
+      "gloriosa:2cd30102"
+     ],
+     "conf": "C",
+     "note": "opposées ou en verticilles de 3 aussi (flore)"
+    }
+   },
+   "contour": {
+    "base": {
+     "v": "arrondie",
+     "methode": "oeil",
+     "photos": [
+      "gloriosa:3836e09b"
+     ],
+     "conf": "C"
+    },
+    "pointe": {
+     "type": {
+      "v": "acuminee",
+      "methode": "oeil",
+      "photos": [
+       "gloriosa:c85ff2fd",
+       "gloriosa:7783e2a4",
+       "gloriosa:38a473ad",
+       "gloriosa:2c397818",
+       "gloriosa:145f16e9",
+       "gloriosa:3836e09b"
+      ],
+      "conf": "C"
+     },
+     "recourbee": {
+      "v": "prolongée en vrille enroulée de 1 à 2 spires",
+      "methode": "oeil",
+      "photos": [
+       "gloriosa:c85ff2fd",
+       "gloriosa:38a473ad"
+      ],
+      "conf": "C"
+     }
+    },
+    "L_sur_l": {
+     "v": 1.69,
+     "plage": [
+      1.2,
+      3.7
+     ],
+     "unite": "ratio",
+     "n": 6,
+     "methode": "segmente",
+     "photos": [
+      "gloriosa:c85ff2fd",
+      "gloriosa:7783e2a4",
+      "gloriosa:38a473ad",
+      "gloriosa:2c397818",
+      "gloriosa:145f16e9",
+      "gloriosa:3836e09b"
+     ],
+     "conf": "B",
+     "note": "L/l de fit.py targets (feuille.leaflw, 6 photos, dispersion 0,48) ; photo 85 (feuille jeune étirée) 3,71 par organ.py leaf"
+    },
+    "marge": {
+     "type": {
+      "v": "entiere",
+      "methode": "oeil",
+      "photos": [
+       "gloriosa:c85ff2fd",
+       "gloriosa:7783e2a4",
+       "gloriosa:38a473ad",
+       "gloriosa:2c397818",
+       "gloriosa:145f16e9",
+       "gloriosa:3836e09b"
+      ],
+      "conf": "C"
+     }
+    }
+   },
+   "taille": {
+    "longueur": {
+     "v": 10,
+     "plage": [
+      7,
+      13
+     ],
+     "unite": "cm",
+     "methode": "reference",
+     "conf": "B",
+     "ref": "Flore (Flora of Tropical East Africa, flores d'Inde) : Gloriosa superba L., Colchicaceae : feuilles 7 à 13 cm (à confirmer)"
+    }
+   },
+   "courbure": {
+    "longitudinale": {
+     "pointe_deg": {
+      "v": 61.3,
+      "plage": [
+       29,
+       93
+      ],
+      "unite": "deg",
+      "n": 6,
+      "methode": "segmente",
+      "photos": [
+       "gloriosa:c85ff2fd",
+       "gloriosa:7783e2a4",
+       "gloriosa:38a473ad",
+       "gloriosa:2c397818",
+       "gloriosa:145f16e9",
+       "gloriosa:3836e09b"
+      ],
+      "conf": "C",
+      "repere": "tige",
+      "note": "leafang de fit.py targets ; repère supposé la tige, très dispersé (sd 32 degrés)"
+     }
+    }
+   },
+   "matiere": {
+    "epaisseur": {
+     "v": "fine",
+     "methode": "oeil",
+     "photos": [
+      "gloriosa:c85ff2fd",
+      "gloriosa:7783e2a4",
+      "gloriosa:38a473ad",
+      "gloriosa:2c397818",
+      "gloriosa:145f16e9",
+      "gloriosa:3836e09b"
+     ],
+     "conf": "C"
+    },
+    "texture": {
+     "v": "mat",
+     "methode": "oeil",
+     "photos": [
+      "gloriosa:c85ff2fd"
+     ],
+     "conf": "C"
+    },
+    "couleur": {
+     "v": "#7baa2d",
+     "plage": [
+      "#7baa2d",
+      "#94b32a"
+     ],
+     "unite": "hex",
+     "n": 2,
+     "methode": "segmente",
+     "photos": [
+      "gloriosa:c85ff2fd"
+     ],
+     "conf": "C",
+     "note": "ton du corps (organ.py leaf, photos 85 et 41)"
+    }
+   },
+   "nervation": {
+    "type": {
+     "v": "parallele",
+     "methode": "oeil",
+     "photos": [
+      "gloriosa:3836e09b",
+      "gloriosa:c85ff2fd"
+     ],
+     "conf": "C"
+    },
+    "relief": {
+     "v": "plat",
+     "methode": "oeil",
+     "photos": [
+      "gloriosa:3836e09b"
+     ],
+     "conf": "C"
+    },
+    "visible": {
+     "v": "dos",
+     "methode": "oeil",
+     "photos": [
+      "gloriosa:3836e09b"
+     ],
+     "conf": "C"
+    }
+   },
+   "zones": [
+    {
+     "zone": "corps",
+     "etendue": {
+      "v": [
+       0,
+       0.9
+      ],
+      "u": [
+       "L",
+       "L"
+      ],
+      "methode": "oeil",
+      "conf": "C",
+      "photos": [
+       "gloriosa:ab679a7c"
+      ]
+     },
+     "motif": {
+      "type": "uni"
+     },
+     "bord": "fondu"
+    },
+    {
+     "zone": "pointe",
+     "etendue": {
+      "v": [
+       0.9,
+       1
+      ],
+      "u": [
+       "L",
+       "L"
+      ],
+      "methode": "oeil",
+      "conf": "C",
+      "photos": [
+       "gloriosa:ab679a7c"
+      ]
+     },
+     "motif": {
+      "type": "uni"
+     },
+     "bord": "net",
+     "note": "vrille fine"
+    }
+   ],
+   "jointures": [
+    {
+     "vers": "tige",
+     "type": "petiole",
+     "params": {
+      "note": "sessile ou subsessile ; pétiole 0,07 de la longueur (organ.py leaf, cadre incertain)"
+     }
+    }
+   ],
+   "section": {
+    "type": {
+     "v": "plate",
+     "methode": "oeil",
+     "photos": [
+      "gloriosa:3836e09b"
+     ],
+     "conf": "C"
+    }
+   },
+   "stades": {
+    "declin": {
+     "note": "jaunit à la pointe"
+    },
+    "fane": {
+     "note": "brune"
+    }
+   }
+  }
+ },
+ "varietes": {
+  "rothschildiana": {
+   "cultivar": "rouge bordé de jaune",
+   "forme": "non-mesure"
+  },
+  "jaune": {
+   "cultivar": "jaune",
+   "forme": "non-mesure"
+  },
+  "orange": {
+   "cultivar": "orange",
+   "forme": "non-mesure"
+  },
+  "rouge": {
+   "cultivar": "rouge",
+   "forme": "non-mesure"
+  },
+  "bordeaux": {
+   "cultivar": "bordeaux",
+   "forme": "non-mesure"
+  }
+ },
+ "stades": {
+  "table": [
+   {
+    "stade": "bouton",
+    "op": {
+     "v": 0.08,
+     "unite": "ratio",
+     "methode": "reference",
+     "conf": "C",
+     "ref": "refcache/gloriosa/targets.json (stades bouton 0.08, entrouverte 0.55, ouverte 0.9)"
+    },
+    "wl": {
+     "v": 0,
+     "unite": "ratio",
+     "methode": "hypothese",
+     "conf": "D"
+    },
+    "photos": [
+     "gloriosa:84b26384",
+     "gloriosa:c006f9fd"
+    ],
+    "statut": "mesure",
+    "note": "bouton pendant vert pâle",
+    "jours": {
+     "v": 1,
+     "unite": "jours",
+     "methode": "hypothese",
+     "conf": "D"
+    }
+   },
+   {
+    "stade": "gonfle",
+    "op": {
+     "v": 0.25,
+     "unite": "ratio",
+     "methode": "hypothese",
+     "conf": "D"
+    },
+    "wl": {
+     "v": 0,
+     "unite": "ratio",
+     "methode": "hypothese",
+     "conf": "D"
+    },
+    "photos": [
+     "gloriosa:2997cab4"
+    ],
+    "statut": "mesure",
+    "note": "bouton allongé, teinte orange en pointe"
+   },
+   {
+    "stade": "entrouvert",
+    "op": {
+     "v": 0.55,
+     "unite": "ratio",
+     "methode": "reference",
+     "conf": "C",
+     "ref": "refcache/gloriosa/targets.json (stades bouton 0.08, entrouverte 0.55, ouverte 0.9)"
+    },
+    "wl": {
+     "v": 0,
+     "unite": "ratio",
+     "methode": "hypothese",
+     "conf": "D"
+    },
+    "photos": [
+     "gloriosa:53ac20b0",
+     "gloriosa:2997cab4"
+    ],
+    "statut": "mesure",
+    "note": "pointes écartées",
+    "jours": {
+     "v": 1,
+     "unite": "jours",
+     "methode": "hypothese",
+     "conf": "D"
+    }
+   },
+   {
+    "stade": "ouvert",
+    "op": {
+     "v": 0.9,
+     "unite": "ratio",
+     "methode": "reference",
+     "conf": "C",
+     "ref": "refcache/gloriosa/targets.json (stades bouton 0.08, entrouverte 0.55, ouverte 0.9)"
+    },
+    "wl": {
+     "v": 0,
+     "unite": "ratio",
+     "methode": "hypothese",
+     "conf": "D"
+    },
+    "photos": [
+     "gloriosa:ab679a7c",
+     "gloriosa:e0b54edd",
+     "gloriosa:6c33f6ca"
+    ],
+    "statut": "mesure",
+    "note": "tépales relevés, étamines étalées",
+    "jours": {
+     "v": 2,
+     "unite": "jours",
+     "methode": "hypothese",
+     "conf": "D"
+    }
+   },
+   {
+    "stade": "plein",
+    "op": {
+     "v": 1.0,
+     "unite": "ratio",
+     "methode": "hypothese",
+     "conf": "D"
+    },
+    "wl": {
+     "v": 0,
+     "unite": "ratio",
+     "methode": "hypothese",
+     "conf": "D"
+    },
+    "photos": [
+     "gloriosa:99db3122",
+     "gloriosa:a6e03217"
+    ],
+    "statut": "mesure",
+    "note": "fleur à plein, pointes retournées"
+   },
+   {
+    "stade": "declin",
+    "op": {
+     "v": 1.0,
+     "unite": "ratio",
+     "methode": "hypothese",
+     "conf": "D"
+    },
+    "wl": {
+     "v": 0.35,
+     "unite": "ratio",
+     "methode": "hypothese",
+     "conf": "D"
+    },
+    "photos": [
+     "gloriosa:9459b001",
+     "gloriosa:621a2b3e"
+    ],
+    "statut": "mesure",
+    "note": "brunit, mollit",
+    "jours": {
+     "v": 2,
+     "unite": "jours",
+     "methode": "hypothese",
+     "conf": "D"
+    }
+   },
+   {
+    "stade": "fane",
+    "op": {
+     "v": 1.0,
+     "unite": "ratio",
+     "methode": "hypothese",
+     "conf": "D"
+    },
+    "wl": {
+     "v": 0.75,
+     "unite": "ratio",
+     "methode": "hypothese",
+     "conf": "D"
+    },
+    "photos": [
+     "gloriosa:621a2b3e",
+     "gloriosa:145f16e9"
+    ],
+    "statut": "mesure",
+    "note": "tépales bruns enroulés",
+    "jours": {
+     "v": 1,
+     "unite": "jours",
+     "methode": "hypothese",
+     "conf": "D"
+    }
+   }
+  ]
+ },
+ "rendu": {
+  "note": "rien de mesuré ; le modeleur décide du niveau de détail"
+ },
+ "questions": [
+  {
+   "id": "Q1",
+   "organe": "coeur.etamines",
+   "question": "Longueur exacte des filets et angle du coude : aucune échelle sur les photos.",
+   "proposition": "Prendre 0,6 R0 pour le filet et un coude à 90 degrés tant qu'aucune photo calibrée n'existe."
+  },
+  {
+   "id": "Q2",
+   "organe": "tige",
+   "question": "Longueur de la tige coupée de bouquet et nombre de fleurs par tige : non documentés.",
+   "proposition": "Proposer 60 à 90 cm, 3 à 5 fleurs, à confirmer au catalogue."
+  },
+  {
+   "id": "Q3",
+   "organe": "tepale.externe",
+   "question": "Repère des angles ang de fit.py targets : non précisé.",
+   "proposition": "Les lire comme angle des flancs sur l'horizontale."
+  },
+  {
+   "id": "Q4",
+   "organe": "varietes",
+   "question": "Aucun coloris du catalogue n'a de photo propre ; formes non comparées à l'espèce.",
+   "proposition": "Garder la forme de l'espèce pour les 5 coloris, niveau D."
+  },
+  {
+   "id": "Q5",
+   "organe": "tepale.externe",
+   "question": "Translucidité, brillance, amplitude d'ondulation : à lire sur un contre-jour.",
+   "proposition": "Garder les hypothèses (0,3 ; 0,35 ; 0,08)."
+  },
+  {
+   "id": "Q6",
+   "organe": "feuille",
+   "question": "Pétiole et angle de feuille sur tige coupée : cadres de mesure bruités.",
+   "proposition": "Feuille sessile lancéolée, pointe en vrille ; reprendre sur photo de tige coupée."
+  }
+ ]
+}
