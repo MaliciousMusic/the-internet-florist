@@ -299,17 +299,27 @@ function dianLsPlant(k,res,o,wl,D){const parts=[],off=V3s(o.O,o.apex||[0,0,0]),c
 function dianPlant(g,t,o){if(typeof SV_ON==='undefined'||!SV_ON||typeof acoNeck!=='function')return carnPlant(g,t,o,CW_CARN);
   const cw=o.cw||cwNear(CW_CARN,o.col)||CW_CARN[0],op=Math.max(.05,Math.min(1,o.op??1)),D=(o.cm||7)*UPC,k=G(g),wl=dianLife(o),o2=svSm((op-.15)/.6),wk=svSm((wl-.3)/.5);
   const B0=acoBudUp(frameOf(o,1),op),Z=B0[2],hW=Math.hypot(Z[0],Z[2])>.05?V3.nz([Z[0],0,Z[2]]):[1,0,0],A2=V3.nz(V3.cr([0,1,0],hW)),
-    b={dC:D*(.25+.2*o2+.25*wk),a2:.5*wk,A2,gW:.12*svSm((wl-.2)/.6)},
-    /* the head turns with the neck as drawn: the chain is drawn y down, so the head turns by -a2 (+a2 left the calyx pointing up over a hanging tuft) */
-    rotB=B=>{if(b.a2<1e-4)return B;const R2=B.slice(0,3).map(v=>rotA(v,A2,-b.a2));R2.upV=B.upV;R2.reach=B.reach;return R2};
+    /* the kit tips a wilting head about its centre: on a stem the calyx then swung up off the stem's end while the tuft fell beside it; with a stem
+       the neck takes that angle (tp) and the head none (SVR_DIAN.tip held at 0 while the plant draws) */
+    tp=SVR_DIAN.tip.reduce((a,[k2,x0,x1])=>a+k2*svSm((wl-x0)/x1),0),
+    b={dC:D*(.25+.2*o2+.25*wk),a2:.5*wk+tp,A2,gW:.12*svSm((wl-.2)/.6)},
+    /* the head sits on the stem's last tangent (b.T, kept by the turtle's hook after the neck's bend): the stem bends gently and the calyx
+       carries on from it at every stage; turning the head by the neck's angle left it beside the calyx or hanging off a crook when fading
+       (the owner's plant sheet, 2026-10-18: "la tête de l'état fané n'est toujours pas accrochée") */
+    rotB=B=>{const T=b.T;if(!T)return B;const z=V3.nz(B[2]),c=Math.max(-1,Math.min(1,V3.dot(z,T)));let ax=V3.cr(z,T);const sl=V3l(ax);
+      if(sl<1e-6)return B;ax=V3.sc(ax,1/sl);const a=Math.atan2(sl,c),R2=B.slice(0,3).map(v=>rotA(v,ax,a));R2.upV=B.upV&&rotA(B.upV,ax,a);R2.reach=B.reach;return R2};
   /* acoNeck puts every node and leaf at the anemone's collar, under the head; the carnation's pair stays where the L-system grew it, down the
      stem (the owner's plant sheet, 2026-10-18: the pair rose over the open head as a green stroke, and was gone from the stem) */
-  const T0=lsTurtle,P0=lsPlant;let n0=0,r;lsTurtle=function(m,oo){const res=T0(m,oo);if(!n0++){const keep=res.organs.filter(q=>q.t==='Nd'||q.t==='Lv').map(q=>[q,q.pos]);acoNeck(res,b);for(const[q,p]of keep)q.pos=p}return res};
+  const T0=lsTurtle,P0=lsPlant;let n0=0,r;lsTurtle=function(m,oo){const res=T0(m,oo);if(!n0++){const keep=res.organs.filter(q=>q.t==='Nd'||q.t==='Lv').map(q=>[q,q.pos]);acoNeck(res,b);for(const[q,p]of keep)q.pos=p;const P=res.chains[0].pts,m=P.length;if(m>1)b.T=V3.nz(V3s(P[m-1],P[m-2]))}return res};
   lsPlant=function(k2,res,o3){return dianLsPlant(k2,res,o3,wl,D)};
-  try{r=lsHeadS(k,Object.assign({},o,{Bf:B0}),{D,w:D*DIANP.w,cols:DIAN_SC,op,rr:1,nodes:DIANP.nodes,li:DIANP.li,lp:DIANP.lp,opp:1,leafAng:DIANP.leafAng,side:null,wig:.02,aimK:.9,/* the neck's last piece along the head's axis, its foot in the calyx (aimK .24 left the stem under the petals, the calyx beside them) */
-    flower:(par,B,O,D2,op2)=>carnFlower(par,rotB(B),O,D2,cw,op2),
+  const RP=SVR_DIAN._r||(SVR_DIAN._r=Object.assign({},SVR_DEF,SVR_DIAN)),tip0=RP.tip;RP.tip=[];
+  try{r=lsHeadS(k,Object.assign({},o,{Bf:B0}),{D,w:D*DIANP.w,cols:DIAN_SC,op,rr:1,nodes:DIANP.nodes,li:DIANP.li,lp:DIANP.lp,opp:1,leafAng:DIANP.leafAng,side:null,wig:.02,aimK:.3,/* the neck turns toward the head's axis a little at each piece (.9 turned it all at once under the calyx: a broken neck), the head then takes the stem's last tangent (rotB) */
+    /* the head's O is the calyx's mouth, its tube runs back Lc from there (dianCalyx): the head goes forward Lc along the stem's last tangent so the
+       stem ends in the calyx's foot (it ended at the mouth and ran along the tube: hidden green on green, plain on the faded grey calyx) */
+    flower:(par,B,O,D2,op2)=>{const B2=rotB(B),Lc=D2/2*(DIAN_CAL.L[0]+(DIAN_CAL.L[1]-DIAN_CAL.L[0])*svSm((op2-.04)/.42));
+      carnFlower(par,B2,V3.add(O,V3.sc(V3.nz(B2[2]),Lc)),D2,cw,op2)},
     leaf:(og,pos)=>{const len=D*R(.85,1.1);dianOld(dm=>{stemLeaf(dm,0,0,0,len,.09,'#7f9f8a',{side:og.p.j?.4:-.4,arch:14})});
       return{z:pos[2]+og.H[2]*len*.4,cast:false,fn:par=>{const P=pos,lv=og.H;/* dianLeafAt works y up, as the turtle (dianLeafSv turns the screen's y over): flipped here, the pair stood mirrored over the head */
-        dianLeafAt(par,P,[0,1,0],lv,len*DIANP.lenK*DIANP.rankK[Math.min(3,og.p.i)],svSeed('oeillet-feuille',cw.id,Math.round(pos[0]*8),Math.round(pos[1]*8),og.p.j||0),wl)}}}})}finally{lsTurtle=T0;lsPlant=P0}
+        dianLeafAt(par,P,[0,1,0],lv,len*DIANP.lenK*DIANP.rankK[Math.min(3,og.p.i)],svSeed('oeillet-feuille',cw.id,Math.round(pos[0]*8),Math.round(pos[1]*8),og.p.j||0),wl)}}}})}finally{lsTurtle=T0;lsPlant=P0;RP.tip=tip0}
   open(k,t,1000,8,.3);return r}
 if(typeof GH!=='undefined'&&typeof carnPlant==='function')GH['oeillet-standard']=dianPlant;
