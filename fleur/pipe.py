@@ -996,6 +996,7 @@ COMMONS_STEPS = (250, 330, 500, 960, 1280, 1920, 3840)  # the only thumbnail wid
 
 def commons_size(url, ow, want):
     """a Commons thumbnail URL at the smallest standard width >= want; the original file when it is not wider than that step"""
+    url = url.split('?')[0].replace('//thumb.wikimedia.org/', '//upload.wikimedia.org/')
     step = next((s for s in COMMONS_STEPS if s >= want), COMMONS_STEPS[-1])
     if ow and ow <= step:
         return re.sub(r'/thumb(/.+?)/[^/]+$', r'\1', url)
@@ -1043,7 +1044,7 @@ def pair_photos(ctx, R=None):
         return info
     want = {t for P in PAIRS for alt in P['want'] for t in alt}
     K = jload(ctx.rc + '/keep.json', []) or []
-    todo = [x for x in K if (kept_tags(x) & want or photo_cws(x)) and str(x.get('i')) not in info]
+    todo = [x for x in K if (kept_tags(x) & want or photo_cws(x)) and (str(x.get('i')) not in info or str((info[str(x.get('i'))] or {}).get('err', '')).startswith('download'))]
     if todo:
         R = R or load_mod(ctx, 'refs')
         for x in todo:
