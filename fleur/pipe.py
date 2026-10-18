@@ -2264,7 +2264,9 @@ def cw_verdict(text):
 def colour_check(ctx, tag='couleur'):
     """every colourway of coloris.json rendered open (.85) face on at D 200, one column, CW_CHUNK rows a sheet; cwmed.py against its corps.
     (ok, message, rows); the rows go to refcache/<sid>/couleur.json and couleur.md"""
-    cws = [e for e in jload(ctx.rc + '/coloris.json', []) or [] if re.match(r'^#[0-9a-fA-F]{6}$', str(e.get('corps') or ''))]
+    # a measure that caught the background (cw_usable) is never a target: finition painted the off-white Cornelia slate grey to meet its
+    # foliage (oeillet, 2026-10-18); it stays a question of the coloris step
+    cws = [e for e in jload(ctx.rc + '/coloris.json', []) or [] if re.match(r'^#[0-9a-fA-F]{6}$', str(e.get('corps') or '')) and cw_usable(e)]
     if not cws and not ctx.dry:
         return False, 'no measured colourway in coloris.json (corps)', []
     rows, miss = [], []
