@@ -12,6 +12,7 @@ Lis seulement : <<etat>> s'il existe ; <<rc>>/coloris.md (une ligne par coloris 
    sh mkapp.sh | tail -1 && python pilote/mksv.py && sh fleur/shot_p.sh fi_<<sid>> "grid=1&sid=<<sid>>&cws=<3 coloris>&st=.06:0,.4:0,.85:0,1:.6,1:.9&view=2,0&D=120&det=1&seed=7" && python fleur/img.py small fleur/out/fi_<<sid>>.png --w 700
    Les rendus passent par shot_p.sh (la porte).
 4. Les éléments et Ko par tête (sortie de shot_p.sh) sont une MESURE : note-les dans la réponse, ne simplifie jamais le dessin pour eux.
+5. Contrôle de couleur de pipe.py : chaque coloris, tête ouverte de face, mesuré par fleur/cwmed.py contre son corps de coloris.md : |dL| ≤ 7 et |dh| ≤ 10° ; blancs, crèmes et gris (chroma de la cible sous 15) : |dL| ≤ 7 et |dC| ≤ 6, sans regarder la teinte (BONNES-PRATIQUES 4.4). Un coloris hors de ces écarts te revient nommé, avec ses écarts (<<rc>>/couleur.md) : corrige sa matière (st, revers), jamais la forme.
 
 6 tours au plus ; si ce n'est pas fini, écris <<etat>> (40 lignes) et finis par RELAIS. 20 lignes de sortie par commande.
 Dernière ligne, seule : {"status":"done"|"relay","coloris":<nombre transcrits>,"el":<éléments par tête>,"kb":<Ko par tête>}

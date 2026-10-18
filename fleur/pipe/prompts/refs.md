@@ -8,8 +8,10 @@ Rejette : une autre espèce (même du même genre), un stade autre que celui de 
 Si la tâche est "pick" :
 - Les planches de contact sont faites. Regarde chacune avec Read :
 <<sheets>>
-- Pour chaque photo utile : python fleur/refs.py keep <<sid>> <i> <étiquettes> --m "vu: stade=<...> vue=<...> organe=<...> ; note courte". Enchaîne plusieurs keep dans UNE commande Bash.
+- Pour chaque photo utile : python fleur/refs.py keep <<sid>> <i> <étiquettes> --m "vu: stade=<...> vue=<...> organe=<...> groupe=<...> ; note courte". Enchaîne plusieurs keep dans UNE commande Bash.
   Le champ « vu » dit ce que TU vois sur l'image (plusieurs valeurs : ouvert+declin ; « - » si sans objet) ; chaque étiquette stade, vue, organe doit y figurer.
+  groupe = ce que montre la photo : hybride-de-coupe (fleur de fleuriste), jardin (forme de jardin), espece-sauvage, autre (autre espèce ou hybride voisin). Les paires de comparaison ne prennent que : <<groupes>>, et des photos dont l'original fait au moins 1 000 px de côté court (w, h dans <<rc>>/cands.json ; pipe.py en télécharge la copie p<NNN>.jpg).
+  coloris:<nom> seulement si la photo montre CE coloris (nom du catalogue) : pipe.py compare la couleur de la fleur à celle du coloris et écarte de ses paires une photo à plus de ΔE 15.
 - Vise 18 à 28 photos gardées. Étiquettes, au moins une de chaque famille quand elle s'applique :
   stade:bouton|entrouvert|ouvert|declin|fane ; vue:face|trois-quarts|profil|dos ; organe:feuille-dessus|feuille-dessous|tige|bourgeon|feuille-fanee|plante ; coloris:<nom>
 - Indispensables (la comparaison photo/rendu les demande) : tête ouverte de face, de trois-quarts et de profil ; bouton ; déclin et fané ; plante entière ou tige coupée. Au moins 10 photos d'organes : feuille dessus et dessous (attache, marge, nervures), tige en gros plan, tige coupée ou port, feuilles fanées, bourgeon.

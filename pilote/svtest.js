@@ -29,6 +29,15 @@ window.svtOut=(svg,n,ms,snapP)=>{const el=svg.querySelectorAll('*').length,pat=[
   /* &bbox=1: every head's getBBox [x, y, w, h] (c5 places the bouquet's heads by it: a material layer must never grow it, svfx before / after) */
   if(new URLSearchParams(location.search).get('bbox'))o.bbox=[...svg.children].filter(g=>g.tagName==='g').map(g=>{const b=g.getBBox();return[b.x,b.y,b.width,b.height].map(x=>Math.round(x*1000)/1000)});
   /* window.__svtDbg (a probe a module may fill while debugging): copied into the measures */if(window.__svtDbg)o.dbg=window.__svtDbg;
+  /* the page's JavaScript errors so far (window.SVT_ERR, kept by the hook mksv.py puts before the app): with the measures, so a sheet that drew
+     but stumbled somewhere says so */if(window.SVT_ERR&&SVT_ERR.length)o.jserr=SVT_ERR.slice(0,5);
+  /* &loc=1 on a plant sheet (fleur/pipe.py pairs feuille and tige): where svtStem put the stem and its leaves, in pixels of the snap: per cell the
+     stem's midline (25 points), its width at mid-length, the box of the stem and the box of each leaf; size = the snap's width and height */
+  if(new URLSearchParams(location.search).get('loc')&&window.__svtLoc){const Q=new URLSearchParams(location.search),W0=+svg.getAttribute('width'),H0=+svg.getAttribute('height'),k=(+(Q.get('sw'))||2*W0)/W0,R=svg.getBoundingClientRect(),
+      bx=e=>{const b=e.getBoundingClientRect();return[b.left-R.left,b.top-R.top,b.right-R.left,b.bottom-R.top].map(v=>Math.round(v*k))},un=(a,b)=>[Math.min(a[0],b[0]),Math.min(a[1],b[1]),Math.max(a[2],b[2]),Math.max(a[3],b[3])];
+    o.loc={k:+k.toFixed(4),size:[Math.round(W0*k),Math.round(H0*k)],cells:window.__svtLoc.map(q=>{const M=svg.getScreenCTM().inverse().multiply(q.par.getScreenCTM()),sc=Math.sqrt(Math.abs(M.a*M.d-M.b*M.c));
+      return{stem:q.C.map(p=>[Math.round((M.a*p[0]+M.c*p[1]+M.e)*k),Math.round((M.b*p[0]+M.d*p[1]+M.f)*k)]),w:+(q.W[12]*sc*k).toFixed(1),
+        sbox:q.stem.length?q.stem.map(bx).reduce(un):null,leaves:q.leaves.map(bx).filter(b=>b[2]>b[0]&&b[3]>b[1])}})}}
   const fin=r=>{const pre=document.createElement('pre');pre.id='out';pre.textContent=JSON.stringify(Object.assign(o,r?{snap:r.join('x')}:{}));document.body.append(pre)};
   if(snapP)snapP.then(fin,e=>fin(['err '+e]));else fin()};
 /* SVG pilot sheet: heads at several views and seeds. URL: cw, op, D, seeds, views (indices), cols, det, bg, sp (species) */
@@ -92,7 +101,10 @@ window.svtStem=(par,r,sid,cm)=>{const e=r.neck,nd=r.nd||[0,1],L=cm*UPC,P3=e,P2=[
   for(let i=0;i<=24;i++){C.push(bz(P,i/24));W.push(w*(1.08-.08*i/24))}
   /* STEML[sid].sheetY: the stem's leaves only above that share of its length (the rose's stripped foot), as a vessel's mouth would
      GHI[sid].basal(par,P,L,w,side): the whole plant's leaves from the foot of the stem (sheets only), behind (-1) then in front (1) of it */
-  const bl=GHI[sid]&&GHI[sid].basal;if(bl)bl(par,P,L,W[0],-1);if(GHI[sid]&&GHI[sid].cut&&typeof svStemCut==='function')svStemCut(par,C,W,r.ncols||SG,(g2,C2,W2)=>stemPoly(g2,C2,W2,r.ncols||SG));else stemPoly(par,C,W,r.ncols||SG);if(STEML[sid])stemLeaves(par,P,sid,STEML[sid].sheetY?e[1]+L*STEML[sid].sheetY:P0[1]+L,L*.3,0);if(bl)bl(par,P,L,W[0],1)};
+  /* &loc=1 (fleur/pipe.py, pairs feuille and tige): which children of par are the stem and which the leaves, kept for svtOut (read only, nothing drawn) */
+  const LOC=new URLSearchParams(location.search).get('loc'),k0=par.children.length;let k1=k0,k2=k0;
+  const bl=GHI[sid]&&GHI[sid].basal;if(bl)bl(par,P,L,W[0],-1);k1=par.children.length;if(GHI[sid]&&GHI[sid].cut&&typeof svStemCut==='function')svStemCut(par,C,W,r.ncols||SG,(g2,C2,W2)=>stemPoly(g2,C2,W2,r.ncols||SG));else stemPoly(par,C,W,r.ncols||SG);k2=par.children.length;if(STEML[sid])stemLeaves(par,P,sid,STEML[sid].sheetY?e[1]+L*STEML[sid].sheetY:P0[1]+L,L*.3,0);if(bl)bl(par,P,L,W[0],1);
+  if(LOC){const ch=[...par.children];(window.__svtLoc=window.__svtLoc||[]).push({par,C,W,stem:ch.slice(k1,k2),leaves:ch.slice(k0,k1).concat(ch.slice(k2))})}};
 /* the bouquet's chance, old drawing against the new: ?rtest=1&rc=tulipe-simple~7:7,tulipe-simple~12:6 → for each life stage and vessel, the bouquet's
    seed once it is drawn, with the SVG heads off and on (the same: the composition does not move) */
 if(new URLSearchParams(location.search).get('rtest'))setTimeout(()=>{const Q=new URLSearchParams(location.search),rc=(Q.get('rc')||'tulipe-simple~7:7,tulipe-simple~12:6').split(',').map(x=>{const[a,b]=x.split(':');return[a,+b]}),out=[];
@@ -262,3 +274,12 @@ if(new URLSearchParams(location.search).get('tige'))setTimeout(()=>{try{const Q=
       cells.push([nm,k.querySelectorAll('*').length+1+(GDEF.children.length-dn),+((XS.serializeToString(k).length+XS.serializeToString(GDEF).length-d0)/1024).toFixed(1),parts.length]);
       E('text',{x:svF(x),y:svF(ch-6),'text-anchor':'middle','font-size':12,'font-family':'sans-serif',fill:'#5a5048'},svg).textContent=nm})}
   window.__svtDbg=cells;document.title='tige ok';const sp=Q.get('snap')?snapSvg(svg,+(Q.get('sw')||cols*cw),Q.get('snap'),Q.get('bg')||'#e9e4dc'):null;if(sp)sp.then(r=>{document.title+=' snap '+r.join(',')});svtOut(svg,cells.length,0,sp)}catch(e){const pre=document.createElement('pre');pre.id='out';pre.textContent='ERR '+e.message+' | '+String(e.stack).slice(0,600);document.body.append(pre)}},400);
+/* a sheet that throws (fleur/shot.sh used to print a bare NO OUTPUT): 3 s after the sheet's start, if no measures were written and the page caught
+   errors (window.SVT_ERR, mksv.py's hook), they are written in place of the measures, {"jserr":[...],"fallback":1}; measures written later replace
+   them (the first <pre id="out"> is the one read). Read only: nothing is drawn, nothing changes when the page does not throw. */
+(()=>{const Q=new URLSearchParams(location.search);if(!['grid','plant','bq','rtest','fit','cmp'].some(k=>Q.get(k)))return;
+  const put=()=>{if(document.getElementById('out')||!(window.SVT_ERR&&SVT_ERR.length))return;const pre=document.createElement('pre');pre.id='out';pre._svtErr=1;
+    pre.textContent=JSON.stringify({jserr:SVT_ERR.slice(0,5),fallback:1});document.body.append(pre)};
+  /* (the mark is a property, not an attribute: ws/chrome1.sh reads exactly <pre id="out">) */
+  new MutationObserver(()=>{const P=[...document.querySelectorAll('pre')].filter(p=>p.id==='out'),e=P.find(p=>p._svtErr);if(e&&P.some(p=>!p._svtErr))e.remove()}).observe(document.body,{childList:true});
+  setTimeout(put,3000)})();

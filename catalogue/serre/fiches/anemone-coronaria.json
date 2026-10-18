@@ -863,7 +863,10 @@
        0.08
       ]
      ],
-     "ecart": "Loi de tirage du dessin : 9 tépales (poids .08) est hors de REFERENCES.md (5 à 8) mais dans l'en-tête de y2.js (5 à 9). Les poids .06/.44/.24/.18/.08 n'ont aucune source (audit v4 §3.1). Le mode documenté est 6 ; la loi du code a pour mode 6 (.44)."
+     "ecart": {
+      "type": "divergence",
+      "texte": "Loi de tirage du dessin : 9 tépales (poids .08) est hors de REFERENCES.md (5 à 8) mais dans l'en-tête de y2.js (5 à 9). Les poids .06/.44/.24/.18/.08 n'ont aucune source (audit v4 §3.1). Le mode documenté est 6 ; la loi du code a pour mode 6 (.44)."
+     }
     }
    },
    "disposition": {
@@ -1087,7 +1090,10 @@
      "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:97 « largeur maximale vers 0,65 L » ; app/y2.js:3-4 « 0.62 to 0.7 of their length »",
      "code": "P.vb",
      "retenu": 0.64,
-     "ecart": "0,64 codé contre 0,65 documenté : dans la plage 0,62-0,70."
+     "ecart": {
+      "type": "confirme",
+      "texte": "0,64 codé contre 0,65 documenté : dans la plage 0,62-0,70."
+     }
     },
     "L_sur_l": {
      "v": [
@@ -1104,7 +1110,10 @@
      "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:97 « obovale large (L/l de 1,1 à 1,25) »",
      "code": "1/P.Wd[0]",
      "retenu": 0.9803921568627451,
-     "ecart": "Le code trace un tépale externe plus large que long : l/L = Wd[0] = 1.02 (× dW de .9 à 1.08 par individu), soit L/l = 0.98, hors de la plage 1,1-1,25 documentée (le rendu est de 12 à 25 % trop large). Question Q2.",
+     "ecart": {
+      "type": "divergence",
+      "texte": "Le code trace un tépale externe plus large que long : l/L = Wd[0] = 1.02 (× dW de .9 à 1.08 par individu), soit L/l = 0.98, hors de la plage 1,1-1,25 documentée (le rendu est de 12 à 25 % trop large). Question Q2."
+     },
      "note": "Rapport longueur sur largeur maximale. Pas de photo rattachée dans REFERENCES.md."
     },
     "asymetrie": {
@@ -1195,7 +1204,11 @@
       "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:98-101 « Coupe : verticille extérieur : 25 à 40° à la base, 5 à 15° à la pointe »",
       "code": "90-(P.a0[0][0]+P.a0[0][1])*180/Math.PI",
       "retenu": 26.974642535609433,
-      "ecart": "Convention d'angle SUPPOSÉE : élévation au-dessus du plan de la fleur = 90° moins l'angle à l'axe du code (a0 ouvert = 1.10 rad = 63° de l'axe, soit 27° d'élévation). REFERENCES.md ne dit pas à quoi se mesure l'angle. Q3."
+      "ecart": {
+       "type": "divergence",
+       "texte": "Convention d'angle SUPPOSÉE : élévation au-dessus du plan de la fleur = 90° moins l'angle à l'axe du code (a0 ouvert = 1.10 rad = 63° de l'axe, soit 27° d'élévation). REFERENCES.md ne dit pas à quoi se mesure l'angle. Q3."
+      },
+      "repere": "plan"
      },
      "pointe_deg": {
       "v": [
@@ -1212,7 +1225,11 @@
       "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:98-101",
       "code": "90-(P.a1[0][0]+P.a1[0][1])*180/Math.PI",
       "retenu": 9.78590868168476,
-      "ecart": "Même convention supposée (a1 ouvert = 1.40 rad = 80° de l'axe, soit 10° d'élévation). Le tassement du dessin (sag) abaisse encore la pointe."
+      "ecart": {
+       "type": "divergence",
+       "texte": "Même convention supposée (a1 ouvert = 1.40 rad = 80° de l'axe, soit 10° d'élévation). Le tassement du dessin (sag) abaisse encore la pointe."
+      },
+      "repere": "plan"
      },
      "affaissement": {
       "v": 0.37,
@@ -1254,7 +1271,8 @@
       -11.46,
       11.46
      ],
-     "note": "Torsion totale du tépale autour de sa nervure médiane, tirage par tépale."
+     "note": "Torsion totale du tépale autour de sa nervure médiane, tirage par tépale.",
+     "repere": "piece"
     },
     "ondulation": {
      "n": {
@@ -1275,7 +1293,10 @@
        1.6,
        2.8
       ],
-      "ecart": "wk (1.6 à 2.8) est le nombre de demi-périodes de sin(π·wk·v) le long du tépale ; l'équivalence avec « deux ou trois ondes » est supposée (1.6 à 2.8 demi-ondes ≈ 1 à 1,4 onde complète)."
+      "ecart": {
+       "type": "divergence",
+       "texte": "wk (1.6 à 2.8) est le nombre de demi-périodes de sin(π·wk·v) le long du tépale ; l'équivalence avec « deux ou trois ondes » est supposée (1.6 à 2.8 demi-ondes ≈ 1 à 1,4 onde complète)."
+      }
      },
      "amplitude": {
       "v": [
@@ -1324,7 +1345,10 @@
      "methode": "oeil",
      "conf": "C",
      "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:103 « satinée »",
-     "ecart": "docs/STANDARD-RENDU.md:145 écrit « velours pour la rose et l'anémone (éclat rasant) » : deux mots pour la même matière. Q4."
+     "ecart": {
+      "type": "divergence",
+      "texte": "docs/STANDARD-RENDU.md:145 écrit « velours pour la rose et l'anémone (éclat rasant) » : deux mots pour la même matière. Q4."
+     }
     },
     "brillance": {
      "v": 0.09,
@@ -1373,7 +1397,10 @@
       16,
       8
      ],
-     "ecart": "Le code dessine 16 (+0 à 3) nervures au plein détail (DET 1,5) et 8 (+0 à 3) à DET 1 : 8 est sous la plage, c'est un réglage de budget (rendu), pas de botanique. (audit v4 §3.1 : pas de lien 12-20 / veinN)"
+     "ecart": {
+      "type": "budget",
+      "texte": "Le code dessine 16 (+0 à 3) nervures au plein détail (DET 1,5) et 8 (+0 à 3) à DET 1 : 8 est sous la plage, c'est un réglage de budget (rendu), pas de botanique. (audit v4 §3.1 : pas de lien 12-20 / veinN)"
+     }
     },
     "relief": {
      "v": null,
@@ -1400,7 +1427,10 @@
       0.75,
       0.35
      ],
-     "ecart": "Le code tire une fourche par nervure avec la probabilité .75 (zoom) ou .35 (normal), à partir de v = .3-.6 : pas seulement près du bord.",
+     "ecart": {
+      "type": "divergence",
+      "texte": "Le code tire une fourche par nervure avec la probabilité .75 (zoom) ou .35 (normal), à partir de v = .3-.6 : pas seulement près du bord."
+     },
      "note": "[probabilité au plein détail, probabilité normale]."
     },
     "couleur": {
@@ -1545,7 +1575,8 @@
         "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:37 « jeune fleur en bol (pointes du rang arrière à 35-45° de l'axe) »",
         "code": "P.a1[0][0]*180/Math.PI",
         "retenu": 35.523383298111035,
-        "note": "Ici l'angle est mesuré À L'AXE (convention différente de courbure.longitudinale). Code : a1 fermé de l'externe (op = 0)."
+        "note": "Ici l'angle est mesuré À L'AXE (convention différente de courbure.longitudinale). Code : a1 fermé de l'externe (op = 0).",
+        "repere": "axe"
        }
       }
      }
@@ -1568,8 +1599,12 @@
         "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:37 « puis ouverte à 70-80° » ; catalogue/serre/pilote-printemps/REFERENCES.md:98-101",
         "code": "(P.a1[0][0]+P.a1[0][1])*180/Math.PI",
         "retenu": 80.21409131831524,
-        "ecart": "80,2° codé contre 70-80 : 0,2° au-dessus, dans l'incertitude de l'œil.",
-        "note": "À l'axe, fleur ouverte (o2 = 1)."
+        "ecart": {
+         "type": "confirme",
+         "texte": "80,2° codé contre 70-80 : 0,2° au-dessus, dans l'incertitude de l'œil."
+        },
+        "note": "À l'axe, fleur ouverte (o2 = 1).",
+        "repere": "axe"
        }
       }
      }
@@ -1594,7 +1629,8 @@
         "conf": "D",
         "code": "(P.a1[0][0]+P.a1[0][1]+P.wA1[0])*180/Math.PI",
         "retenu": 108.86198107485642,
-        "note": "À l'axe, déclin plein : au-delà de l'horizontale (90°), pointe renversée vers le bas."
+        "note": "À l'axe, déclin plein : au-delà de l'horizontale (90°), pointe renversée vers le bas.",
+        "repere": "axe"
        }
       }
      },
@@ -1726,7 +1762,10 @@
      "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:97",
      "code": "1/P.Wd[1]",
      "retenu": 1.0638297872340425,
-     "ecart": "Interne : l/L = Wd[1] = .94, soit L/l = 1.06 : juste sous la plage 1,1-1,25 (écart de 4 %) ; moins que l'externe. Q2."
+     "ecart": {
+      "type": "divergence",
+      "texte": "Interne : l/L = Wd[1] = .94, soit L/l = 1.06 : juste sous la plage 1,1-1,25 (écart de 4 %) ; moins que l'externe. Q2."
+     }
     },
     "marge": {
      "suit": "tepale.externe.contour.marge"
@@ -1760,7 +1799,11 @@
       "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:98-101 « verticille intérieur : 40 à 60° à la base, 10 à 25° à la pointe »",
       "code": "90-(P.a0[1][0]+P.a0[1][1])*180/Math.PI",
       "retenu": 33.85013607717932,
-      "ecart": "Même convention d'élévation supposée que pour l'externe. Le code donne 33,9° (a0 ouvert .98 rad = 56° de l'axe), 6° sous la plage 40-60. Q3."
+      "ecart": {
+       "type": "divergence",
+       "texte": "Même convention d'élévation supposée que pour l'externe. Le code donne 33,9° (a0 ouvert .98 rad = 56° de l'axe), 6° sous la plage 40-60. Q3."
+      },
+      "repere": "plan"
      },
      "pointe_deg": {
       "v": [
@@ -1776,7 +1819,8 @@
       "conf": "C",
       "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:98-101",
       "code": "90-(P.a1[1][0]+P.a1[1][1])*180/Math.PI",
-      "retenu": 18.380275608647096
+      "retenu": 18.380275608647096,
+      "repere": "plan"
      }
     },
     "transversale": {
@@ -1856,7 +1900,11 @@
         "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:37",
         "code": "P.a1[1][0]*180/Math.PI",
         "retenu": 29.79380534680281,
-        "ecart": "29,8° codé : 5° sous la plage ; « rang arrière » n'est pas relié à un verticille dans REFERENCES.md (peut-être l'externe)."
+        "ecart": {
+         "type": "divergence",
+         "texte": "29,8° codé : 5° sous la plage ; « rang arrière » n'est pas relié à un verticille dans REFERENCES.md (peut-être l'externe)."
+        },
+        "repere": "axe"
        }
       }
      }
@@ -1879,7 +1927,11 @@
         "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:37",
         "code": "(P.a1[1][0]+P.a1[1][1])*180/Math.PI",
         "retenu": 71.6197243913529,
-        "ecart": "71,6° : dans la plage."
+        "ecart": {
+         "type": "confirme",
+         "texte": "71,6° : dans la plage."
+        },
+        "repere": "axe"
        }
       }
      }
@@ -1912,7 +1964,10 @@
      220,
      "r"
     ],
-    "ecart": "Le code tire stN = 165 à 220 (arrondi) : au-dessus de REFERENCES.md (80-150) et de y2.js (90-140). Mais svaHeart en dessine stN × .62 = 102 à 136 à DET 1 (boutique) et stN × 1 = 165 à 220 seulement à DET 1,5 (gros plans) : l'écart n'existe qu'au plein détail. Non expliqué dans les documents. Q1.",
+    "ecart": {
+     "type": "divergence",
+     "texte": "Le code tire stN = 165 à 220 (arrondi) : au-dessus de REFERENCES.md (80-150) et de y2.js (90-140). Mais svaHeart en dessine stN × .62 = 102 à 136 à DET 1 (boutique) et stN × 1 = 165 à 220 seulement à DET 1,5 (gros plans) : l'écart n'existe qu'au plein détail. Non expliqué dans les documents. Q1."
+    },
     "note": "Aucune photo n'est rattachée au chiffre dans REFERENCES.md ; l'audit v4 §3.2 l'avait noté (écart de 40 %)."
    },
    "disposition": {
@@ -1974,7 +2029,10 @@
      ],
      "conf": "C",
      "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:33 « couronne d'étamines dense jusqu'à 0,31 à 0,34 R (R : rayon de la fleur ouverte) »",
-     "ecart": "Autre chiffre dans REFERENCES.md:109 : « anneau de 0,30 à 0,36 D » (D = diamètre, soit .60-.72 R0) : les deux lignes ne sont pas dans la même unité. Le code n'a pas de paramètre direct (rayon = rb + Ls·cos(be) dans svaHeart) : estimation à la main .18 à .30 R0 avec les constantes du code, à mesurer sur un rendu (organ.py). Q8."
+     "ecart": {
+      "type": "divergence",
+      "texte": "Autre chiffre dans REFERENCES.md:109 : « anneau de 0,30 à 0,36 D » (D = diamètre, soit .60-.72 R0) : les deux lignes ne sont pas dans la même unité. Le code n'a pas de paramètre direct (rayon = rb + Ls·cos(be) dans svaHeart) : estimation à la main .18 à .30 R0 avec les constantes du code, à mesurer sur un rendu (organ.py). Q8."
+     }
     },
     "filet_longueur": {
      "v": [
@@ -1989,7 +2047,10 @@
      "methode": "oeil",
      "conf": "C",
      "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:109 « longs de 0,08 à 0,12 D »",
-     "ecart": "Le code : Ls = R0 · .2 · stL · (.75 + .4q) · (.62 + .38·o2), soit .15 à .23 R0 = .075 à .115 D fleur ouverte : cohérent. Constantes en dur dans svaHeart (non évaluables)."
+     "ecart": {
+      "type": "confirme",
+      "texte": "Le code : Ls = R0 · .2 · stL · (.75 + .4q) · (.62 + .38·o2), soit .15 à .23 R0 = .075 à .115 D fleur ouverte : cohérent. Constantes en dur dans svaHeart (non évaluables)."
+     }
     },
     "anthere_dimensions": {
      "v": [
@@ -2027,7 +2088,11 @@
       "methode": "oeil",
       "conf": "C",
       "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:109 « entre 40 et 65° »",
-      "ecart": "Cohérent avec le code : l'angle du filet au-dessus de l'horizontale est be = 1,12 - .42q rad = 40° à 64° (svaHeart, constantes en dur). Aucune photo rattachée."
+      "ecart": {
+       "type": "confirme",
+       "texte": "Cohérent avec le code : l'angle du filet au-dessus de l'horizontale est be = 1,12 - .42q rad = 40° à 64° (svaHeart, constantes en dur). Aucune photo rattachée."
+      },
+      "repere": "horizontale"
      }
     }
    },
@@ -2172,7 +2237,13 @@
      ],
      "conf": "C",
      "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:33 « dôme sombre de 0,12 à 0,13 R » (TR 108 : « environ 0,12 D », unité D)",
-     "ecart": "Le code : rd = R0 · .125 · g.dome (tirage .9 à 1.12) : cohérent avec .12-.13 R. REFERENCES.md:108 dit « 0,12 D » : D et R confondus, Q8."
+     "ecart": {
+      "type": "confirme",
+      "texte": "Le code : rd = R0 · .125 · g.dome (tirage .9 à 1.12) : cohérent avec .12-.13 R. REFERENCES.md:108 dit « 0,12 D » : D et R confondus, Q8."
+     },
+     "code": "const",
+     "ligne": "app/y2.js:86",
+     "retenu": 0.125
     },
     "variation_individu": {
      "v": [
@@ -2193,7 +2264,10 @@
      "unite": "ratio",
      "methode": "code",
      "conf": "D",
-     "note": "hd = rd · .62 (svaHeart, en dur) ; s'allonge de 75 % au fané."
+     "note": "hd = rd · .62 (svaHeart, en dur) ; s'allonge de 75 % au fané.",
+     "code": "const",
+     "ligne": "app/y2.js:86",
+     "retenu": 0.62
     }
    },
    "matiere": {
@@ -2495,7 +2569,10 @@
        ],
        "conf": "C",
        "ref": "ch/anemones/refcache/anemone-coronaria/etat.md « bouton dressé (t121, t188, t198) » ; app/y3-anemone2.js:acoBudUp",
-       "ecart": "Boutons PENCHÉS sur d'autres photos : P9, P25, P29, P30 (iNaturalist), Flora della Sardegna 220 (05) et REFERENCES.md:28. Le port dépend-il de la forme sauvage ou cultivée, ou du moment ? Le dessin dresse le bouton (acoBudUp). Q7."
+       "ecart": {
+        "type": "divergence",
+        "texte": "Boutons PENCHÉS sur d'autres photos : P9, P25, P29, P30 (iNaturalist), Flora della Sardegna 220 (05) et REFERENCES.md:28. Le port dépend-il de la forme sauvage ou cultivée, ou du moment ? Le dessin dresse le bouton (acoBudUp). Q7."
+       }
       }
      }
     }
@@ -2669,7 +2746,10 @@
      "ref": "ch/anemones/refcache/anemone-coronaria/etat.md « (l/L 0,06-0,1) » (règle maison, pixels)",
      "code": "probe.bract(1,0).ws",
      "retenu": 0.13,
-     "ecart": "ws = .13 est la demi-largeur / longueur d'une lanière avant incisions (largeur pleine .26) ; la mesure est la largeur pleine / longueur de la lanière entière. Les deux ne se comparent pas sans mesurer le rendu (incisions incS de profondeur .5). Q6."
+     "ecart": {
+      "type": "divergence",
+      "texte": "ws = .13 est la demi-largeur / longueur d'une lanière avant incisions (largeur pleine .26) ; la mesure est la largeur pleine / longueur de la lanière entière. Les deux ne se comparent pas sans mesurer le rendu (incisions incS de profondeur .5). Q6."
+     }
     },
     "paires_lanieres": {
      "v": [
@@ -2694,7 +2774,10 @@
       1.4,
       2.3
      ],
-     "ecart": "Le code tire 1.4 à 2.3 paires par lobe (arrondi : 1 à 2) au plein détail et la moitié hors zoom (sideLo .5), plus des incisions de la marge (inc, incS) : sous les 2 à 3 documentées. Q6."
+     "ecart": {
+      "type": "divergence",
+      "texte": "Le code tire 1.4 à 2.3 paires par lobe (arrondi : 1 à 2) au plein détail et la moitié hors zoom (sideLo .5), plus des incisions de la marge (inc, incS) : sous les 2 à 3 documentées. Q6."
+     }
     },
     "marge": {
      "type": {
@@ -2754,7 +2837,10 @@
       0.33,
       0.52
      ],
-     "ecart": "La sonde donne .33 à .52 D (len = D·R(.5,.65) de s10a.js:78, recopié ici, × (.66 + .14·o2)) ; etat.md écrit « 0,33 à 0,48 d ». Dans l'incertitude."
+     "ecart": {
+      "type": "confirme",
+      "texte": "La sonde donne .33 à .52 D (len = D·R(.5,.65) de s10a.js:78, recopié ici, × (.66 + .14·o2)) ; etat.md écrit « 0,33 à 0,48 d ». Dans l'incertitude."
+     }
     },
     "sur_bouton": {
      "v": 0.9,
@@ -2799,7 +2885,11 @@
       "methode": "oeil",
       "conf": "C",
       "ref": "app/y2.js:118-121 « spreading at 60 to 80 degrees from the stem » (commentaire de svaBract3, mesuré sur photos)",
-      "ecart": "Le dessin actuel pose les bractées à leafAng = 80 + 8·o2 + 8·wl-fané degrés (app/s10a.js:76), soit 80 à 96° : au-dessus de la plage 60-80 de l'ancien commentaire, sans trace de la raison. Q6b."
+      "ecart": {
+       "type": "divergence",
+       "texte": "Le dessin actuel pose les bractées à leafAng = 80 + 8·o2 + 8·wl-fané degrés (app/s10a.js:76), soit 80 à 96° : au-dessus de la plage 60-80 de l'ancien commentaire, sans trace de la raison. Q6b."
+      },
+      "repere": "tige"
      },
      "profil": {
       "v": "retombante",
@@ -2957,7 +3047,10 @@
        ],
        "conf": "B",
        "ref": "ch/anemones/refcache/anemone-coronaria/etat.md « t197 0,19 d ; t157 (sauvage) 0,56 d » ; bouton : contre le bouton (t188, t198)",
-       "ecart": "Dessinée dC = D·(.04 + .26·o2 + .2·wk) (app/s10a.js:72) : .04 D au bouton, .30 D fleur ouverte, .50 D fané. L'ouverte à .30 D n'est ni sur .19 (t197) ni sur .56 (sauvage), et REFERENCES.md:121 écrit « 3 à 6 cm sous la fleur » (.43 à .86 D pour 7 cm). Pas de justification dans etat.md. Q5."
+       "ecart": {
+        "type": "divergence",
+        "texte": "Dessinée dC = D·(.04 + .26·o2 + .2·wk) (app/s10a.js:72) : .04 D au bouton, .30 D fleur ouverte, .50 D fané. L'ouverte à .30 D n'est ni sur .19 (t197) ni sur .56 (sauvage), et REFERENCES.md:121 écrit « 3 à 6 cm sous la fleur » (.43 à .86 D pour 7 cm). Pas de justification dans etat.md. Q5."
+       }
       },
       "distance_cm": {
        "v": [
@@ -3256,7 +3349,13 @@
      ],
      "conf": "B",
      "ref": "ch/anemones/refcache/anemone-coronaria/etat.md « t197 18 px / 350 = 0,051 d ; t121 12-14 px sous un bouton de 140 px ; t157 (sauvage) 0,037 d » ; catalogue/serre/methode/BONNES-PRATIQUES.md 7.3",
-     "ecart": "Dessinée .055 D sous la fleur, .061 D à la collerette, .065 D à la coupe (etat.md, w:D*.055 en dur dans app/s10a.js:76) : 8 à 27 % au-dessus de la mesure .051. t197 est « probablement sauvage » (BP 1.3). Q9."
+     "ecart": {
+      "type": "divergence",
+      "texte": "Dessinée .055 D sous la fleur, .061 D à la collerette, .065 D à la coupe (etat.md, w:D*.055 en dur dans app/s10a.js:76) : 8 à 27 % au-dessus de la mesure .051. t197 est « probablement sauvage » (BP 1.3). Q9."
+     },
+     "code": "const",
+     "ligne": "app/s10a.js:76",
+     "retenu": 0.055
     },
     "effilement": {
      "v": [
@@ -3361,7 +3460,8 @@
         "methode": "code",
         "conf": "D",
         "ref": "catalogue/fanaison (lot04.json) « se courbe »",
-        "note": "a2 = .26·wk rad (app/s10a.js:72) = 14,9° au fané plein, vers où regarde la tête ; la valeur .26 est un réglage sans photo (etat.md : « Fané : pédoncule courbé de 0,26 rad »)."
+        "note": "a2 = .26·wk rad (app/s10a.js:72) = 14,9° au fané plein, vers où regarde la tête ; la valeur .26 est un réglage sans photo (etat.md : « Fané : pédoncule courbé de 0,26 rad »).",
+        "repere": "tige"
        }
       }
      },
@@ -3500,7 +3600,10 @@
         "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:116 « Cœur et étamines noir violacé (#1e1628) » ; sources/anemone-coronaria.json (f_blanche : « centre violet-noir »)",
         "code": "SVA_CW[\"blanc\"].dome",
         "retenu": "#17101f",
-        "ecart": "Le code a #17101f (plus sombre) ; #1e1628 est la valeur du catalogue (CW_ANEM.eye) et du pilote. Aucune mesure de couleur pour ce coloris (sources/anemone-coronaria.json : mesures = {})."
+        "ecart": {
+         "type": "divergence",
+         "texte": "Le code a #17101f (plus sombre) ; #1e1628 est la valeur du catalogue (CW_ANEM.eye) et du pilote. Aucune mesure de couleur pour ce coloris (sources/anemone-coronaria.json : mesures = {})."
+        }
        }
       }
      ]
@@ -3521,7 +3624,10 @@
         "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:116",
         "code": "SVA_CW[\"blanc\"].fil",
         "retenu": "#1d1627",
-        "ecart": "Filets codés #1d1627 contre #1e1628 documenté : un niveau par canal."
+        "ecart": {
+         "type": "confirme",
+         "texte": "Filets codés #1d1627 contre #1e1628 documenté : un niveau par canal."
+        }
        }
       }
      ]
@@ -3555,7 +3661,10 @@
         "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:583-590 (« Mesures retenues », cinq coloris libres)",
         "code": "SVA_CW[\"blanc-vert\"].dome",
         "retenu": "#8c9c42",
-        "ecart": "coloris.md (médiane de `refs.py auto`) donne l'œil #b3b395, vert-jaune pâle ; REFERENCES.md donne #939e3f (n° 2) et #a0b169 (n° 3), retenu #8c9c42 : deux mesures du même dôme, ΔE 14 entre les photos. Q10.",
+        "ecart": {
+         "type": "divergence",
+         "texte": "coloris.md (médiane de `refs.py auto`) donne l'œil #b3b395, vert-jaune pâle ; REFERENCES.md donne #939e3f (n° 2) et #a0b169 (n° 3), retenu #8c9c42 : deux mesures du même dôme, ΔE 14 entre les photos. Q10."
+        },
         "note": "couleur du dôme de pistils, médiane des photos de plein jour"
        }
       }
@@ -3581,7 +3690,10 @@
         "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:583-590 (« Mesures retenues », cinq coloris libres)",
         "code": "SVA_CW[\"blanc-vert\"].fil",
         "retenu": "#d4d0ae",
-        "ecart": "Filets codés #d4d0ae (plus clairs) contre mesure #b1ac76 (n° 2) et #ccccab (n° 3) : couronne « crème-olive » ; coloris.md : #d8d29a « visuel ».",
+        "ecart": {
+         "type": "divergence",
+         "texte": "Filets codés #d4d0ae (plus clairs) contre mesure #b1ac76 (n° 2) et #ccccab (n° 3) : couronne « crème-olive » ; coloris.md : #d8d29a « visuel »."
+        },
         "note": "couleur de la couronne d'étamines (crème-olive) ; anthères #bdb780 = SVA_CW['blanc-vert'].anth"
        }
       }
@@ -3618,7 +3730,10 @@
         "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:583-590 (« Mesures retenues », cinq coloris libres)",
         "code": "SVA_CW[\"rouge\"].dome",
         "retenu": "#26142a",
-        "ecart": "coloris.md avait mesuré l'œil #57091c (rouge sombre) : REFERENCES.md corrige : le dôme est violet-noir.",
+        "ecart": {
+         "type": "confirme",
+         "texte": "coloris.md avait mesuré l'œil #57091c (rouge sombre) : REFERENCES.md corrige : le dôme est violet-noir."
+        },
         "note": "couleur du dôme de pistils, médiane des photos de plein jour"
        }
       }
@@ -3640,7 +3755,10 @@
         "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:583-590 (« Mesures retenues », cinq coloris libres) ; ch/anemones/refcache/anemone-coronaria/coloris.md (« visuel, non mesuré »)",
         "code": "SVA_CW[\"rouge\"].fil",
         "retenu": "#2c1620",
-        "ecart": "sources/anemone-coronaria.json (photos_forme, Pacific Bulb Society, David Pilling) décrit « couronne d'étamines bleu acier à filets rose-pourpre » ; REFERENCES.md retient « noir pourpre #2c1620 », lu à l'œil. Q10.",
+        "ecart": {
+         "type": "divergence",
+         "texte": "sources/anemone-coronaria.json (photos_forme, Pacific Bulb Society, David Pilling) décrit « couronne d'étamines bleu acier à filets rose-pourpre » ; REFERENCES.md retient « noir pourpre #2c1620 », lu à l'œil. Q10."
+        },
         "note": "couleur des filets / de la couronne d'étamines",
         "photos_contradictoires": [
          "anemone-coronaria:2f9d9c20"
@@ -3673,7 +3791,10 @@
          0.36,
          0.48
         ],
-        "ecart": "Le code place l'anneau en position le long du tépale (v) : blanc rosé jusqu'à .36, fondu en rouge à .48 ; la mesure est en fraction du rayon de la fleur (r = r0 + L·v·sin a, environ .5 à .6 R0 pour v = .36 à .48). Unités différentes : comparer par rendu."
+        "ecart": {
+         "type": "divergence",
+         "texte": "Le code place l'anneau en position le long du tépale (v) : blanc rosé jusqu'à .36, fondu en rouge à .48 ; la mesure est en fraction du rayon de la fleur (r = r0 + L·v·sin a, environ .5 à .6 R0 pour v = .36 à .48). Unités différentes : comparer par rendu."
+        }
        },
        "bord": {
         "v": "fondu",
@@ -3753,7 +3874,10 @@
         "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:583-590 (« Mesures retenues », cinq coloris libres) ; ch/anemones/refcache/anemone-coronaria/coloris.md (« visuel, non mesuré »)",
         "code": "SVA_CW[\"bleu\"].fil",
         "retenu": "#201b40",
-        "ecart": "coloris.md : couronne #2b2740 « visuel, filets et anthères sombres, non mesuré » ; REFERENCES.md : noir-bleu #201b40 (retenu).",
+        "ecart": {
+         "type": "confirme",
+         "texte": "coloris.md : couronne #2b2740 « visuel, filets et anthères sombres, non mesuré » ; REFERENCES.md : noir-bleu #201b40 (retenu)."
+        },
         "note": "couleur des filets / de la couronne d'étamines"
        }
       }
@@ -3791,7 +3915,10 @@
          "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:583-590 (« Mesures retenues », cinq coloris libres) (base #3c3494 ; n° 9 #432aa1, n° 11 #373371)",
          "code": "SVA_CW[\"bleu\"].st[0][1]",
          "retenu": "#3c3494",
-         "ecart": "REFERENCES.md:115 (pilote, « Bleu violet ») écrit « Base un peu plus pâle (#8a82d8) sur 0,1 à 0,15 L » et la photo de Bucarest « base plus pâle de 0,30 à 0,40 R » : coloris et photos différents de Mister Fokker. La base pâle de l'ancien bleu a été déclarée fausse pour le coloris de boutique (REFERENCES.md:583-590). Q13."
+         "ecart": {
+          "type": "divergence",
+          "texte": "REFERENCES.md:115 (pilote, « Bleu violet ») écrit « Base un peu plus pâle (#8a82d8) sur 0,1 à 0,15 L » et la photo de Bucarest « base plus pâle de 0,30 à 0,40 R » : coloris et photos différents de Mister Fokker. La base pâle de l'ancien bleu a été déclarée fausse pour le coloris de boutique (REFERENCES.md:583-590). Q13."
+         }
         }
        }
       }
@@ -3833,7 +3960,10 @@
         "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:583-590 (« Mesures retenues », cinq coloris libres)",
         "code": "SVA_CW[\"fuchsia\"].dome",
         "retenu": "#3a2456",
-        "ecart": "Le dôme violet mêle un fond #3a2456 et des points #5a4480 (pist) : plage = n° 15 #543677 à #472f55, n° 12 #31153d à #632661. Les photos 12 et 15 ont un canal saturé (valeurs hautes).",
+        "ecart": {
+         "type": "confirme",
+         "texte": "Le dôme violet mêle un fond #3a2456 et des points #5a4480 (pist) : plage = n° 15 #543677 à #472f55, n° 12 #31153d à #632661. Les photos 12 et 15 ont un canal saturé (valeurs hautes)."
+        },
         "note": "couleur du dôme de pistils, médiane des photos de plein jour"
        }
       }
@@ -3929,7 +4059,10 @@
         "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:583-590 (« Mesures retenues », cinq coloris libres) ; ch/anemones/refcache/anemone-coronaria/coloris.md (« visuel, non mesuré »)",
         "code": "SVA_CW[\"bicolore\"].fil",
         "retenu": "#1c1830",
-        "ecart": "coloris.md : couronne #2a1c31 « visuel » ; REFERENCES.md retient #1c1830 (noir marine).",
+        "ecart": {
+         "type": "confirme",
+         "texte": "coloris.md : couronne #2a1c31 « visuel » ; REFERENCES.md retient #1c1830 (noir marine)."
+        },
         "note": "couleur des filets / de la couronne d'étamines"
        }
       }
@@ -3958,7 +4091,10 @@
          0.5,
          0.6
         ],
-        "ecart": "coloris.md : « anneau rayon 0,5 » (photo 18, #fc7fa5). Le code range l'anneau à .14-.6 le long du tépale (rouge de .14 à .5, fondu rose .6, blanc .7) : position le long du tépale et fraction du rayon ne sont pas la même unité."
+        "ecart": {
+         "type": "divergence",
+         "texte": "coloris.md : « anneau rayon 0,5 » (photo 18, #fc7fa5). Le code range l'anneau à .14-.6 le long du tépale (rouge de .14 à .5, fondu rose .6, blanc .7) : position le long du tépale et fraction du rayon ne sont pas la même unité."
+        }
        },
        "couleur": {
         "v": "#d4142e",
@@ -3976,7 +4112,10 @@
         "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:583-590 (« Mesures retenues », cinq coloris libres)",
         "code": "SVA_CW[\"bicolore\"].st[1][1]",
         "retenu": "#d4142e",
-        "ecart": "coloris.md mesure l'anneau #fc7fa5 (médiane incluant le fondu rose et les rayons blancs) ; REFERENCES.md retient le rouge des pixels les plus saturés, teinte 347 à 352°. Écart ΔE 26 entre les photos 16 et 18."
+        "ecart": {
+         "type": "confirme",
+         "texte": "coloris.md mesure l'anneau #fc7fa5 (médiane incluant le fondu rose et les rayons blancs) ; REFERENCES.md retient le rouge des pixels les plus saturés, teinte 347 à 352°. Écart ΔE 26 entre les photos 16 et 18."
+        }
        },
        "motif": {
         "type": {
@@ -4359,7 +4498,10 @@
     "ref": "catalogue/fanaison/lot04.json (anemone-coronaria) : https://postharvest.ucdavis.edu/node/8206 ; https://floralife.com/2023/08/23/anemone-timeless-beauty/",
     "code": "LIFE_SP['anemone-coronaria'][4]",
     "retenu": 5.5,
-    "ecart": "Le code garde 5,5 jours (milieu de 3-8) pour mettre à l'échelle le déclin ; le jeu compte en jours de bouquet (seuils 3/20/30), pas en jours de vase. Q12."
+    "ecart": {
+     "type": "divergence",
+     "texte": "Le code garde 5,5 jours (milieu de 3-8) pour mettre à l'échelle le déclin ; le jeu compte en jours de bouquet (seuils 3/20/30), pas en jours de vase. Q12."
+    }
    },
    "seuils_jeu": {
     "v": [
