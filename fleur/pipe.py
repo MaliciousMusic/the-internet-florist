@@ -2826,6 +2826,7 @@ TETE_JUGE = ('La tête est validée par le porteur (« %s ») : juge la tête co
              'refuser ; ton verdict porte sur la tige, les feuilles, le pédicelle et la fleur sur sa tige.')
 # the head sheet that must not move once the owner validated the head (gloriosa, 2026-10-18: the comparison nodded every view of the
 # validated v2 down, narrowed the tepals and tinted Rothschildiana's foot lime)
+PLANT_PAIRS = ('plante', 'feuille', 'tige')  # the comparison pairs that are not the head's
 TETE_Q = 'grid=1&sid=%s&cws=%s&st=.2:0,1:0,1:.6,1:.9&view=0,2,10&D=200&det=1&seed=%d'
 
 
@@ -3014,6 +3015,16 @@ def step_juge(ctx):
     while True:
         v = judge(ctx, plan, trips)
         ctx.note('juge', trips=trips, last=v['verdict'])
+        if ctx.st.get('tete_validee') and v['verdict'] != 'ok':
+            # the head is the owner's (--tete-validee): a ko on head pairs only sends nothing back, the comparison may not touch the head
+            # (nerine, 2026-10-18: a round trip on six head pairs spent .85 M for nothing); the plant's pairs still go back
+            head = [x for x in v['ko'] if str(x.get('paire')) not in PLANT_PAIRS]
+            v = dict(v, ko=[x for x in v['ko'] if str(x.get('paire')) in PLANT_PAIRS])
+            if head:
+                say('  judge: head pairs ko (%s), the head validated by the owner: reported, not sent back' % ', '.join(str(x.get('paire')) for x in head[:6]))
+                jsave(ctx.rc + '/comparaison/tete-ecarts.json', head)  # for the owner's sheets, not a refusal
+            if not v['ko']:
+                v['verdict'] = 'ok'
         if v['verdict'] == 'ok':
             fp = code_fp(ctx)  # what was judged: planches and FINI refuse a code that changed since
             tm = ctx.st['steps'].get('temoins', {})
