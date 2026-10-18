@@ -860,6 +860,14 @@ def check_census(ctx):
     """a cultivar at A, B or C per bouquet SKU, free of brand; a SKU at D, not found or under a brand is a question (questions.md), never a block: a brand keeps a
     generic colour name (BONNES-PRATIQUES 4.9), never the brand's name"""
     rows = census_table(ctx)
+    cen = jload(ctx.rc + '/census/census.json', {}) or {}
+    if not rows and cen and (cen.get('photos_taxon') or []):
+        # a species sold by its forms, without registered cultivars (gloriosa, 2026-10-18: Wikidata, Commons, iNaturalist and GBIF give none): the
+        # catalogue's colourways stay, a question for the owner, never a block (OK_LEVELS: only D is a question)
+        set_questions(ctx, 'census-vide', 'Recensement sans cultivar enregistré (non bloquant)',
+                      ['%s : aucune des sources ne nomme de cultivar ; %d photos du taxon. Proposition : garder les coloris du catalogue, nommés par leur '
+                       'couleur, au niveau D, et documenter les formes botaniques au fil des photos' % (ctx.taxon, len(cen.get('photos_taxon') or []))])
+        return {'ok': True, 'msg': '0 cultivar registered, %d taxon photos: the catalogue colourways stay (question, census-vide)' % len(cen.get('photos_taxon') or [])}
     if not rows:
         return {'ok': False, 'msg': 'census.json missing or without cultivars'}
     lv = {k: sum(1 for r in rows if r['niveau'] == k) for k in 'ABCD'}
