@@ -973,7 +973,7 @@ def main():
     ap.add_argument('sid')
     ap.add_argument('--taxon', required=True)
     ap.add_argument('--genus')
-    ap.add_argument('--group')
+    ap.add_argument('--group', help='horticultural group, or several: "Asiatic|LA"')
     ap.add_argument('--kavb', action='store_true', help='look the cultivars up in the KAVB register (read-only, 1 request every 2 s)')
     ap.add_argument('--max', type=int, default=400, help='most KAVB lookups of the run (names are taken from the best documented)')
     ap.add_argument('--out', required=True)
@@ -1035,7 +1035,8 @@ def main():
     if a.group:
         keep = []
         for c in cults:
-            if c['groupe'] and fold(a.group) not in fold(c['groupe']) and fold(c['groupe']) not in fold(a.group):
+            # --group "Asiatic|LA": one of several groups (lis-asiatique-la, 2026-10-18: the KAVB files its cultivars under Asiatic Group)
+            if c['groupe'] and not any(fold(g) in fold(c['groupe']) or fold(c['groupe']) in fold(g) for g in a.group.split('|') if g.strip()):
                 hors.append({'nom': c['nom'], 'taxon': c['taxon'], 'groupe': c['groupe'], 'sources': []})
             else:
                 keep.append(c)
