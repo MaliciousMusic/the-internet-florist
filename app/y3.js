@@ -55,6 +55,8 @@ function svBloom(par,B,O,D,S,cwx,op,seed,wl){const P=S._m||(S._m=Object.assign({
     st=cw0.st.map(([v,c],i)=>[i<2?v*g.ring:v,i>=3&&dec>0?mix(shv(c,v),light?P.edge.light:redish?P.edge.red:P.edge.other,(i===3?P.edge.a[0]:P.edge.a[1])*dec):shv(c,v)]),
     mat=Object.assign({st,stops:st,bstops:bud>.25&&P.budPale!==false?bstB:bst0,shade:sh(cw0.shade),lite:cw0.lite,bshade:cw0.bshade,blite:cw0.blite,rim:dec>0?mix(cw0.rim,light?'#b08a58':'#ffffff',.6*dec):cw0.rim,cast:cw0.cast},P.light,
       {trans:P.trans[0]+P.trans[1]*dec,rw:P.rim[0]+P.rim[1]*dec,ro:P.rim[2]+P.rim[3]*dec});
+  /* (the colourway's own opt-in layers, svDraw's m.cross: its colours shaded as the individual's, faded in the bud; none by default) */
+  if(cw0.cross)mat.cross=svCrossL(cw0.cross).map(z=>Object.assign({},z,{st:(z.st||z).map(([x,c,a])=>[x,sh(c),a]),k:(z.k??1)*(1-bud)}));
   const down=[0,-1,0],nO=Math.ceil(g.n/2),nI=g.n-nO;let k=0;
   /* faded: the petals fall all at once; one or two of the lower ones hang on (their rank: low in the world first, then chance) */
   const shed=svSm((wl-P.shed[0])/P.shed[1]),keep=new Set();if(shed>0){const sc=[];let kk=0;for(let w=0;w<2;w++){const nw=w?nI:nO;for(let i=0;i<nw;i++,kk++){const ph=g.rot+(i+(w?.5:0))/nw*6.2832+g.tep[kk].dph;const dv2=toV(B,[Math.cos(ph),Math.sin(ph),0]);sc.push([Math.abs(dv2[1])+.35*pxHashS(kk,31,g.sd),kk])}}

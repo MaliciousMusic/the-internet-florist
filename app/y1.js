@@ -112,6 +112,29 @@ function svFaceFill(sh,st,Dm){const pb=svAt(sh,0,0),pt=svAt(sh,0,1),dx=pt[0]-pb[
 /* the light of every vertex of a sheet, relative to its face lit straight on */
 function svShade(sh){if(sh.K)return sh.K;const m=sh.mat,r=svLight([0,0,1],m,1),K=new Float32Array(sh.F.length);
   for(let j=0;j<=sh.nv;j++)for(let i=0;i<=sh.nu;i++){const q=j*sh.W+i,n=sh.N[q],nf=sh.F[q]>=0?n:V3.sc(n,-1),ao=sh.ao?sh.ao(-1+2*i/sh.nu,j/sh.nv,sh.F[q]>=0):1;K[q]=svLight(nf,m,ao)/r}return sh.K=K}
+/* ---------- opt-in layers of a material (2026-10-18, audit v4 A5): read only when the material has the key (m.cross); without it svDraw writes the
+   same bytes. Drawn from the piece's own sheet, inside its clip: nothing outside the piece, no outline of another piece, no chance drawn ---------- */
+/* nested level sets of a coverage field G (0..1 at the grid's vertices) on one face of a sheet (FF > 0): n paths, each a little more opaque inside the
+   last, so that together they lay G rounded to n steps; fill: a colour or a paint server (the paths' fill-opacity multiplies it) */
+function svLevels(sh,G,FF,n,fill,par,tol){let gm=0;for(let q=0;q<G.length;q++)if(FF[q]>0&&G[q]>gm)gm=G[q];if(gm<.004)return;gm=Math.min(.96,gm);let c0=0;
+  for(let i=1;i<=n;i++){const t=gm*(i-.5)/n,c1=gm*i/n,a=1-(1-c1)/(1-c0);c0=c1;const V=Array.from(G,(x,q)=>Math.min(x-t,FF[q]));if(!V.some(x=>x>0))continue;
+    const d=svLoopsD(sh,svIso(sh.nu,sh.nv,V,0),tol);if(d)E('path',{d,fill,'fill-opacity':svF(a),'fill-rule':'evenodd'},par)}}
+/* m.cross: colour zones ACROSS a piece, not only along it (porteur, cymbidium: « des aplats avec zones », BONNES-PRATIQUES 4.8d): a darker midline,
+   paler margins, a hue that changes from the middle to the edge. One zone or a list of zones {st, sg, tip, v, bk, k, n, soft} (or the stops alone):
+   st [[x, colour, alpha]...] on x = |u| (0 the midline .. 1 the margin; sg:1 x = u, -1 .. 1: one half unlike the other); tip: from v = tip on, the tip
+   counts as margin (x = max(|u|, (v-tip)/(1-tip))); v [a,b] or [a,b,c,d]: only along v, in from a to b (out from c to d); bk: on the back face (× its
+   alpha, 0 by default); k: an overall factor (the kit's bud); n [zoom, normal]: steps per colour ([6,3]); soft: their blur (× the piece's length, .025;
+   0 crisp). Each colour of the stops is its own field (its share of the stops' alpha), laid as nested level sets (svLevels) over the face's colour and
+   under every wash, flame, blotch and band (inserted before the washes' group bg), so the light still models the zone */
+const svCrossL=c=>Array.isArray(c)?typeof c[0][0]==='number'?[{st:c}]:c:[c];
+function svCross(cg,bg,it,sh,front,Dm,Ls,tol){const hi=DET>=1.5,FF=sh.F.map(x=>it.s*x*3),tw=Math.max(tol*1.5,Dm*.005);
+  for(const z of svCrossL(sh.mat.cross)){const f=(front?1:z.bk||0)*(z.k??1);if(f<=0)continue;const st=(z.st||z).map(([x,c,a])=>[x,c,a??1]).sort((a,b)=>a[0]-b[0]),ns=st.length,vw=z.v,
+      par=G(cg,z.soft===0?{}:{filter:svBlur(Ls*(z.soft??.025))}),X=[],W=[];cg.insertBefore(par,bg);
+    for(let j=0;j<=sh.nv;j++)for(let i=0;i<=sh.nu;i++){const u=-1+2*i/sh.nu,v=j/sh.nv;let x=z.sg?u:Math.abs(u);if(z.tip!=null&&!z.sg&&v>z.tip)x=Math.max(x,(v-z.tip)/(1-z.tip));X.push(x);
+      W.push(vw?svSm((v-vw[0])/((vw[1]-vw[0])||1e-6))*(vw.length>3?1-svSm((v-vw[2])/((vw[3]-vw[2])||1e-6)):1):1)}
+    for(const c of new Set(st.map(s=>s[1]))){const Gc=X.map((x,q)=>{let a=0;if(x<=st[0][0])a=st[0][1]===c?st[0][2]:0;else if(x>=st[ns-1][0])a=st[ns-1][1]===c?st[ns-1][2]:0;
+        else for(let i=0;i+1<ns;i++)if(x<=st[i+1][0]){const t=(x-st[i][0])/((st[i+1][0]-st[i][0])||1e-9);a=(st[i][1]===c?(1-t)*st[i][2]:0)+(st[i+1][1]===c?t*st[i+1][2]:0);break}
+        return a*W[q]*f});svLevels(sh,Gc,FF,(z.n||[6,3])[hi?0:1],c,par,tw)}}}
 /* draw the pieces of one flower: pieces are sheets (svSheet with a material) or drawn parts {fn, proxy (a sheet, for the order only)} */
 function svDraw(par,pieces,o){const Dm=o.D,tol=Math.max(.06,Dm*.0035),k=G(par),items=[];
   for(const p of pieces){if(p.fn){const cells=svCells(p.proxy,0);if(!cells.length){items.push({kind:'fn',fn:p.fn,cells:[],bb:[0,0,-1,-1],z:p.z??0});continue}let x0=1e9,y0=1e9,x1=-1e9,y1=-1e9,z=0;
@@ -133,6 +156,8 @@ function svDraw(par,pieces,o){const Dm=o.D,tol=Math.max(.06,Dm*.0035),k=G(par),i
     const cg=G(ik,{'clip-path':`url(#${it.cid})`}),K=svShade(sh),FF=sh.F.map(x=>it.s*x*3),pb=svAt(sh,0,0),pt=svAt(sh,0,1),Ls=Math.max(Math.hypot(pt[0]-pb[0],pt[1]-pb[1]),(it.bb[2]-it.bb[0]+it.bb[3]-it.bb[1])*.35),
       bg=G(cg,{filter:svBlur(Ls*(m.soft??.05))}),wash=(lv,col,a,dark)=>{for(const t of lv){const V=Array.from(K,(x,q)=>Math.min(dark?t-x:x-t,FF[q]));if(!V.some(x=>x>0))continue;
         const d=svLoopsD(sh,svIso(sh.nu,sh.nv,V,0),Math.max(tol*2.5,Dm*.008));if(d)E('path',{d,fill:col,'fill-opacity':a,'fill-rule':'evenodd'},bg)}};
+    /* (m.cross: colour zones across the piece, under everything else: svCross above; none by default) */
+    if(m.cross)svCross(cg,bg,it,sh,front,Dm,Ls,tol);
     /* flames (streaks of a second colour along the tissue: the flamed anemones), soft wide strokes in the blurred washes */
     if(m.flames&&!(m.flames.side&&m.flames.side!==it.s)){let k2=0;for(const[pl,w]of m.flames.list){k2++;let run=[],dF='',dH='';const flush=()=>{if(run.length>2){const n=run.length,L=[],Rr=[];for(let q=0;q<n;q++){const a=run[Math.max(0,q-1)],b=run[Math.min(n-1,q+1)],dx=b[0]-a[0],dy=b[1]-a[1],l=Math.hypot(dx,dy)||1,t=q/(n-1),
           ww=Dm*w*.5*Math.pow(Math.sin(Math.PI*Math.min(.97,.04+.93*t)),.7)*(.75+.5*pxHashS(q,k2,7));L.push([run[q][0]-dy/l*ww,run[q][1]+dx/l*ww]);Rr.push([run[q][0]+dy/l*ww*(.6+.4*pxHashS(q,k2,9)),run[q][1]-dx/l*ww*(.6+.4*pxHashS(q,k2,9))])}

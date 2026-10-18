@@ -1,3 +1,6 @@
+/* &svfx=cross,trans: the material trials of app/y3-fx.js merged over the sorts that have a demo block, before any drawing (a published sort
+   shown before / after a new primitive, its sheet unchanged); nothing without svfx */
+if(typeof svfxApply==='function')window.__svfx=svfxApply();
 window.snapSvg=async function(svg,W,name,bg){const XS=new XMLSerializer(),vb=svg.getAttribute('viewBox').trim().split(/\s+/).map(Number),H=Math.round(W*vb[3]/vb[2]);
   const find=id=>svg.querySelector('#'+CSS.escape(id))||document.getElementById(id);let out='';const seen=new Set();
   const add=x=>{for(const m of x.matchAll(/url\(#([^)"'\s]+)\)|href="#([^"]+)"/g)){const id=m[1]||m[2];if(seen.has(id))continue;seen.add(id);const el=find(id);if(el){const s=XS.serializeToString(el);out+=s;add(s)}}};
