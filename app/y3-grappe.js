@@ -76,6 +76,8 @@ GR_LAYOUT.dresse=(S,g,H,st)=>{const P=S.lay,n=g.n,fl=[],D2=Math.PI/180,SP=P.ster
     let th=ster?(SP.th[0]+(SP.th[1]-SP.th[0])*svSm(st.op/.8))*(1-.6*(i-(n-ns))/Math.max(1,ns-1))+gt.dth*.5+P.droop*.5*svSm((lw.w-.25)/.5)
       :thB+(P.th[1]-thB)*svSm((lw.o-.1)/.6)+P.nod*lw.o*(1-q)*svSm((st.op-(P.nodAt||0))/.35)+P.droop*svSm((lw.w-.25)/.5)+gt.dth;
     if(P.thMax!=null)th=Math.min(th,P.thMax);
+    /* (option wTh [angle, from w, over]) a floret whose sepals have fallen draws in to the axis: its pods stand up, the raceme narrows */
+    if(P.wTh)th+=(P.wTh[0]-th)*svSm((lw.w-P.wTh[1])/P.wTh[2]);
     const L=Hf*P.L*(1-P.taper*q)*gt.dL*(ster?SP.L:1),dir=[rad[0]*Math.sin(th),rad[1]*Math.sin(th),Math.cos(th)],pd=L*(ster&&SP.ped!=null?SP.ped:P.ped||0)*(P.pedq?1-P.pedq*q:1)*(P.pedO?1-P.pedO*(1-lw.o):1);
     /* the pedicel: straight along the floret (hyacinth), or leaving the axis at pedTh at most and bending to the floret's own direction */
     let pos,pc=null;if(P.pedTh!=null&&pd>0){const tp=Math.min(th,P.pedTh),d0=[rad[0]*Math.sin(tp),rad[1]*Math.sin(tp),Math.cos(tp)],p0=[rad[0]*r,rad[1]*r,z],
@@ -740,3 +742,118 @@ function grPI(P){if(P.length<3)return'';let x=Math.round(P[0][0]),y=Math.round(P
 function grQI(P,k=2){const n=P.length;if(n<3)return'';const rq=x=>Math.round(x*k)/k,R=P.map(p=>[rq(p[0]),rq(p[1])]),md=i=>{const a=R[i%n],b=R[(i+1)%n];return[rq((a[0]+b[0])/2),rq((a[1]+b[1])/2)]},
     j=(a,b)=>a+(b<0?'':' ')+rq(b);let c=md(0),d='M'+c[0]+' '+c[1];
   for(let i=1;i<=n;i++){const v=R[i%n],m=md(i);d+='q'+j(j(j(v[0]-c[0],v[1]-c[1]),m[0]-c[0]),m[1]-c[1]);c=m}return d+'z'}
+/* ---------- the spurred floret (delphinium; any raceme of spurred, five-sepalled florets): five petaloid sepals spread nearly flat round a small
+   'bee' (the inner petals: two small upper ones, two lower ones bilobed and bearded), the upper sepal drawn back into a spur that runs up toward the
+   raceme's axis; a semi-double adds an inner whorl of smaller petals (m.inn, else S.fl.inn[0]: their number). The floret's frame: z its face
+   (outward), y toward the raceme's tip. L is the floret's diameter. S.fl: budAt, bud [size, + growth] x L, budHW (the bud's length/width);
+   sep (a sepal's length x L), sepK and sepW (each sepal's length factor, width/length: top, lateral, lateral, lower, lower), psi (their angles
+   round the face, degrees, 90 the spur's side), a [closed, open] (from the floret's axis, rad), ap (the tip bent back), cup (cupped across, x
+   the half-width), r0 (insertion x L), wp (half-width profile [[v,w]]); spur [length x L, its angle from the raceme's axis toward the stem (rad),
+   width at its foot x L, arch]; inn [n, length x sep, width/length, angle]; bee [radius x L, forward x L, down x L]; dec, dry [from w, over]; sag
+   (limp sepals toward the ground), crk (crumpled), shed [from dry, + spread] (the sepals fall one by one), keep (the share of sepals kept,
+   hanging shrivelled), pod [length, width] x L (the three follicles left when the sepals have fallen). Material ramps: fr, bk, bs (the pale zone
+   toward the throat), be (the bee), grn, bud; m.beard (the bee's tuft). LOD 2: each sepal lit on its two halves, its pale base, the shade at its
+   foot, the lit margin, the veins (zoom), the spur lit as a tube, the bee with its tuft and its shadow; 1: the sepals and their lit halves, the
+   bee; 0: one outline ---------- */
+const GR_EP_WP=[[0,.22],[.1,.46],[.25,.76],[.45,.96],[.6,1],[.75,.94],[.87,.76],[.95,.48],[1,.1]],GR_EP_V=[0,.1,.25,.42,.58,.72,.84,.93,1];
+/* one sepal (or inner petal) in the floret's frame: its spine and both margins at GR_EP_V, its face normal nk, the normals of its two halves */
+function grEpSep(P,ps,ll,W,a,ap,cup,r0,sag,dn,crk,hs){const rad=[Math.cos(ps),Math.sin(ps),0],t=[-Math.sin(ps),Math.cos(ps),0],
+    d=V3.add([0,0,Math.cos(a)],V3.sc(rad,Math.sin(a))),nk=V3.add([0,0,Math.sin(a)],V3.sc(rad,-Math.cos(a))),wp=P.wp||GR_EP_WP,sp=[],E0=[],E1=[];
+  GR_EP_V.forEach((v,i)=>{const hw=.5*W*ll*grProf(wp,v),S=V3.add(V3.add(V3.sc(rad,r0),V3.sc(d,ll*v)),V3.add(V3.sc(nk,-ap*ll*v*v),V3.sc(dn,sag*ll*v*v))),
+      k0=crk*(hs(i)-.5)*hw,k1=crk*(hs(i+11)-.5)*hw,lift=cup*hw;
+    sp.push(S);E0.push(V3.add(S,V3.add(V3.sc(t,-hw),V3.sc(nk,lift+k0))));E1.push(V3.add(S,V3.add(V3.sc(t,hw),V3.sc(nk,lift+k1))))});
+  const tl=2*cup;return{sp,E0,E1,nk,ctr:sp[4],nP:V3.nz(V3.add(nk,V3.sc(t,-tl))),nM:V3.nz(V3.add(nk,V3.sc(t,tl)))}}
+/* a tube along points Q (floret frame) of widths W, as a closed screen outline; k: width factor, off: shifted toward the light (x half-width) */
+function grEpTube(c,Q,W,k=1,off=0){const S=Q.map(p=>sc0(c.V(p))),n=S.length,lt=[LIGHT[0],-LIGHT[1]],Lf=[],Rg=[];
+  for(let i=0;i<n;i++){const a=S[Math.max(0,i-1)],b=S[Math.min(n-1,i+1)];let tx=b[0]-a[0],ty=b[1]-a[1];const tl=Math.hypot(tx,ty)||1;tx/=tl;ty/=tl;
+    const nx=-ty,ny=tx,sg=(nx*lt[0]+ny*lt[1])>=0?1:-1,w=W[i]*.5,cx=S[i][0]+nx*sg*off*w,cy=S[i][1]+ny*sg*off*w;
+    Lf.push([cx+nx*w*k,cy+ny*w*k]);Rg.push([cx-nx*w*k,cy-ny*w*k])}
+  return grQ(grCCW(Lf.concat(Rg.reverse())))}
+/* the spur's centreline from A: up toward the raceme's tip and in toward its axis (the floret's angle th from the axis plus spur[1]), arched */
+function grEpSpurQ(f,P,A,Ls,w0,dec){const th=Math.acos(Math.max(-1,Math.min(1,f.dir[2]))),be=th+P.spur[1]*(1+.8*dec),dir=[0,Math.sin(be),Math.cos(be)],
+    bn=[0,Math.cos(be),-Math.sin(be)],Q=[],W=[];
+  for(let i=0;i<=6;i++){const t=i/6;Q.push(V3.add(A,V3.add(V3.sc(dir,Ls*t),V3.sc(bn,-P.spur[3]*Ls*t*t))));W.push(w0*(1-.84*Math.pow(t,.75)))}
+  return{Q,W,dir}}
+/* the spur drawn: a lit tube, its highlight toward the light (LOD 2) */
+function grEpSpurDraw(c,f,lod,s,ramp,gb){const n=V3.nz(V3.cr(s.dir,[1,0,0])),v=.5*(c.lit(V3.nz(c.Vd(n)))+c.lit(V3.nz(c.Vd(V3.sc(n,-1)))))+.1;
+  c.put({d:grEpTube(c,s.Q,s.W),f:c.col(v*.8,f,ramp,gb)});
+  if(lod>1)c.put({d:grEpTube(c,s.Q.slice(0,6),s.W.slice(0,6),.42,.5),f:c.col(Math.min(1,v*.8+.2),f,ramp,gb)})}
+/* one sepal painted: the darker half's tone, the lit half, the pale base, the shade at the foot, the veins (zoom), the lit margin */
+function grEpPaint(c,f,s,lod,vk){const V=p=>c.V(p),front=V3.dot(c.eye,s.nk)>=0,sg=front?1:-1,ramp=front?'fr':'bk',L=f.L,
+    lp=c.lit(V3.nz(c.Vd(V3.sc(s.nP,sg)))),lm=c.lit(V3.nz(c.Vd(V3.sc(s.nM,sg)))),lo=Math.min(lp,lm)*vk,hi=Math.max(lp,lm)*vk,
+    E0=s.E0.map(V),E1=s.E1.map(V),SP=s.sp.map(V),Eh=lp>=lm?E1:E0,mx=(A,B,k)=>[A[0]+(B[0]-A[0])*k,A[1]+(B[1]-A[1])*k,A[2]+(B[2]-A[2])*k];
+  c.put({d:c.d2(E0.concat(E1.slice().reverse())),f:c.col(lo,f,ramp)});if(lod<1)return;
+  if(hi-lo>.04)c.put({d:c.d2(SP.concat(Eh.slice().reverse())),f:c.col(hi,f,ramp)});if(lod<2)return;
+  if(front&&c.m.bs)c.put({d:c.d2(E0.slice(0,4).map((p,j)=>mx(SP[j],p,.96)).concat(E1.slice(0,4).map((p,j)=>mx(SP[j],p,.96)).reverse())),f:c.col((lo+hi)*.5,f,'bs')});
+  c.put({d:c.d2(E0.slice(0,2).concat(E1.slice(0,2).reverse())),f:c.col(lo*.55,f,ramp)});
+  if(c.det&&front){let dv='';for(const u of[0,-.42,.42,-.74,.74]){const j1=u===0?7:Math.abs(u)<.5?6:5,E=u<0?E0:E1,Q=[];
+      for(let j=1;j<=j1;j++)Q.push(mx(SP[j],E[j],Math.abs(u)*(.6+.4*j/j1)));dv+=c.l2(Q)}
+    c.put({d:dv,s:c.col(lo*.74,f,ramp),sw:svF(L*.005),so:.45})}
+  c.put({d:c.l2(SP.map((p,j)=>mx(p,Eh[j],.9)).slice(3,8)),s:c.col(Math.min(1,hi+.26),f,ramp),sw:svF(L*.012),so:.5})}
+/* the bee: two bilobed lower petals with their tuft, two small upper ones, its shadow on the sepals */
+function grEpBee(c,f,lod,e,dec){const P=c.P,L=f.L,B=P.bee,rb=L*B[0]*(.55+.45*e)*(1-.3*dec),C=[0,-L*B[2],L*B[1]],X=c.Vd([1,0,0]),Y=c.Vd([0,1,0]),
+    at=(x,y,z)=>V3.add(C,[x*rb,y*rb,(z||0)*L]),el=(p,rx,ry)=>grEll(sc0(c.V(p)),sc0(V3.sc(X,rx*rb)),sc0(V3.sc(Y,ry*rb))),v0=c.lit(V3.nz(c.Vd([0,0,1])));
+  if(lod>1){const C2=sc0(c.V(at(0,.1))),Xs=sc0(V3.sc(X,rb*.95)),Ys=sc0(V3.sc(Y,rb*1.15));c.put({d:grEll([C2[0]+rb*.2,C2[1]+rb*.26],Xs,Ys),f:c.col(.08,f,'fr'),fo:.32})}
+  /* the two upper petals, half hidden, curving up over the lower pair; the lower pair one rounded tuft, notched at its foot */
+  c.put({d:el(at(-.26,.62,-.01),.34,.46)+el(at(.26,.62,-.01),.34,.46),f:c.col(v0*.62,f,'be')});
+  c.put({d:el(at(-.3,-.02),.56,.66)+el(at(.3,-.02),.56,.66)+el(at(0,.12),.5,.5),f:c.col(v0*.88,f,'be')});if(lod<1)return;
+  if(lod>1){c.put({d:el(at(-.3,.16,.004),.36,.36)+el(at(.16,.2,.004),.3,.3),f:c.col(Math.min(1,v0*.88+.14),f,'be')});
+    c.put({d:c.l2([c.V(at(0,-.3)),c.V(at(.01,-.5)),c.V(at(0,-.66))]),s:c.col(v0*.5,f,'be'),sw:svF(rb*.07),so:.7})}
+  /* the tuft: a short crescent of hairs over the upper half (fine hairs at zoom) */
+  const bd=c.wc(c.m.beard||'#e2cc78',f);c.put({d:c.l2([c.V(at(-.5,.22)),c.V(at(0,.36)),c.V(at(.5,.22))]),s:bd,sw:svF(rb*.22),so:.85});
+  if(lod>1&&c.det){let dh='';for(let i=0;i<11;i++){const x=-.62+1.24*i/10,y=.14+.1*Math.cos(x*2.2);dh+=c.l2([c.V(at(x,y)),c.V(at(x*1.12,y+.2))])}
+    c.put({d:dh,s:mix(bd,'#ffffff',.35),sw:svF(rb*.045),so:.75})}}
+/* the three follicles left on the pedicel when the sepals have fallen (photographs: green, then brown and papery) */
+function grEpPods(c,f,lod,dry){const P=c.P,L=f.L,Lp=L*P.pod[0]*(.6+.4*dry),wp=L*P.pod[1],v=c.lit(V3.nz(c.Vd([0,1,.4])));let d='';
+  for(let k=0;k<3;k++){const ps=(90+k*120)*Math.PI/180,cs=Math.cos(ps),sn=Math.sin(ps),o=[cs*wp*.5,sn*wp*.5,0],tp=[cs*Lp*.22,sn*Lp*.22,Lp];
+    d+=grEpTube(c,[o,[cs*wp*.9,sn*wp*.9,Lp*.5],tp],[wp*1.5,wp*2,wp*.45])}
+  c.put({d,f:c.col(.3+.45*v,f,'grn')});
+  if(lod>1)c.put({d:grEpTube(c,[[0,wp*.4,Lp*.2],[0,wp*.6,Lp*.6],[0,wp*.3,Lp*.95]],[wp*.6,wp*.8,wp*.2]),f:c.col(Math.min(1,.5+.45*v),f,'grn')})}
+/* the bud: an egg on its pedicel, green from the foot, the colour arriving by its tip, its spur along its upper side */
+function grEpBud(c,f,lod){const P=c.P,L=f.L,gr=f.gr??1,gb=f.gb??0,wl=svSm(f.w/.6),Lb=L*(P.bud[0]+P.bud[1]*gr)*(1-.2*wl),a=Lb*.5,b=a/(P.budHW||1.25)*(f.gt.W||1),
+    ez=c.eye[2],C3=[0,0,a*1.02],C2=sc0(c.V(C3)),zs=sc0(c.Vd([0,0,1])),zl=Math.hypot(zs[0],zs[1]),zu=zl>1e-3?[zs[0]/zl,zs[1]/zl]:[1,0],
+    al=Math.sqrt(Math.pow(a*zl,2)+Math.pow(b*ez,2)),side=V3.nz(V3s(c.eye,V3.sc([0,0,1],ez))),v0=c.lit(V3l(side)>.1?V3.nz(c.Vd(side)):c.Vd([0,0,1])),
+    ell=(C,k1,k2)=>grEll(C,[zu[0]*al*k1,zu[1]*al*k1],[-zu[1]*b*k2,zu[0]*b*k2]);
+  if(lod===0){c.put({d:ell(C2,1,1),f:c.col(v0*.85,f,'bud',gb)});return}
+  const s=grEpSpurQ(f,P,[0,b*.55,a*.45],Lb*P.spur[0]*1.1,b*.95,0),back=c.V(s.Q[3])[2]<c.V(C3)[2],spur=()=>grEpSpurDraw(c,f,lod,s,'bud',gb);
+  if(back)spur();
+  /* (P.budCap) the body greener and the colour a cap on the tip, never a half mix of the two (violet + green = grey) */
+  const gB=P.budCap?Math.min(1,gb*1.3):gb;
+  /* (P.budCap) a lit egg in flat layers: its shadow side a crescent (the body in the shade tone, then the lit body shifted toward the light),
+     the coloured cap likewise, and a small dull sheen on the cap (velvet, never a bead) */
+  if(P.budCap){const lt=[LIGHT[0],-LIGHT[1]],ll=Math.hypot(lt[0],lt[1])||1,sh=(C,k)=>[C[0]+lt[0]/ll*b*k,C[1]+lt[1]/ll*b*k],cap=gB>.12&&ez>-.35,gc=cap?gb*.12:gB,
+      T=sc0(c.V([0,0,a*1.46])),vd=v0*.58,vl=Math.min(1,v0*.9+.06);
+    /* the colour arrives by the tip in two steps (a band a third green, then the cap): every shade layer first, then every lit one, so no
+       layer's edge draws a dark ring inside the egg */
+    const T1=sc0(c.V([0,0,a*1.2])),gm=gb*.25,Ly=[[C2,1,1,.9,.82,.16,gB]].concat(cap?[[T1,.78,.95,.7,.8,.15,gm],[T,.58,.9,.5,.74,.14,gc]]:[]);
+    for(const q of Ly)c.put({d:ell(q[0],q[1],q[2]),f:c.col(vd,f,'bud',q[6])});
+    for(const q of Ly)c.put({d:ell(sh(q[0],q[5]),q[3],q[4]),f:c.col(vl,f,'bud',q[6])});
+    if(lod>1)c.put({d:ell(sh(cap?T:C2,.36),.24,.26),f:c.col(Math.min(1,vl+(P.budLit??.1)),f,'bud',gc)});
+    if(!back)spur();return}
+  c.put({d:ell(C2,1,1),f:c.col(v0*.85,f,'bud',gB)});
+  if(gB>.12){const T=sc0(c.V([0,0,a*(P.budCap?1.42:1.5)]));c.put({d:P.budCap?ell(T,.62,.88):ell(T,.46,.74),f:c.col(v0*.85,f,'bud',P.budCap?gb*.12:gb*.3)})}
+  const lt=[LIGHT[0],-LIGHT[1]],ll=Math.hypot(lt[0],lt[1])||1;c.put({d:ell([C2[0]+lt[0]/ll*b*.22,C2[1]+lt[1]/ll*b*.22],.66,.58),f:c.col(Math.min(1,v0+(P.budLit??.2)),f,'bud',gb*.8)});
+  if(lod>1&&c.det&&ez>.2){const p0=Math.atan2(c.eye[1],c.eye[0]);let d='';
+    for(const dp of[-.7,.7]){const ps=p0+dp,Q=[];for(let i=0;i<=4;i++){const t=i/4*Math.PI/2;Q.push(c.V([b*.98*Math.sin(t)*Math.cos(ps),b*.98*Math.sin(t)*Math.sin(ps),a+a*Math.cos(t)]))}d+=c.l2(Q)}
+    c.put({d,s:c.col(v0*.55,f,'bud',gb),sw:svF(L*.007),so:.55})}
+  if(!back)spur()}
+GR_FLORET.eperon=(c,f,lod)=>{const P=c.P,m=c.m,gt=f.gt,L=f.L,dec=svSm((f.w-P.dec[0])/P.dec[1]),dry=svSm((f.w-P.dry[0])/P.dry[1]);
+  if(f.o<P.budAt&&f.w<.6)return grEpBud(c,f,lod);
+  const e=f.o<P.budAt?.3:svSm((f.o-P.budAt)/(1-P.budAt)),ez=c.eye[2],dn=c.down,sdk=Math.floor((gt.ph||0)*1e4)+f.i*7,hs=k=>pxHashS(k,5,sdk),D2=Math.PI/180,
+    SH=P.shed||[.15,.6],thr=j=>hs(j+20)<(P.keep??.1)?9:SH[0]+SH[1]*hs(j),a=(P.a[0]+(P.a[1]-P.a[0])*e)*(1-.15*dec),sag=(P.sag??.45)*dec+.25*dry,
+    crk=(P.crk??.5)*(dec*.5+dry),S=[];
+  for(let j=0;j<5;j++){if(dry>thr(j))continue;const ll=L*P.sep*P.sepK[j]*(.62+.38*e)*(1-.2*dry),W=P.sepW[j]*(gt.W||1)*(1-.22*dec-.3*dry),ps=(P.psi[j]+(hs(j+40)-.5)*10)*D2;
+    S.push(Object.assign(grEpSep(P,ps,ll,W,a+(hs(j+60)-.5)*.1,P.ap*(1+dec),P.cup*(1+1.2*dec+1.5*dry),L*P.r0,sag,dn,crk,k=>hs(k+j*23)),{j}))}
+  const IN=P.inn,ni=m.inn??(IN?IN[0]:0),SI=[];
+  if(ni>0&&dry<.4)for(let j=0;j<ni;j++){const ll=L*P.sep*IN[1]*(.55+.45*e),ps=(90+180/ni+j*360/ni+(hs(j+80)-.5)*14)*D2;
+    SI.push(grEpSep(P,ps,ll,IN[2]*(1-.3*dec),Math.min(a,IN[3])*(.7+.3*e),P.ap,P.cup*1.4,L*P.r0*.6,sag*.6,dn,crk,k=>hs(k+j*31+200)))}
+  const face=ez>=0,v0=c.lit(V3.nz(c.Vd([0,0,face?1:-1])));
+  /* LOD 0: every sepal's own outline in one paint (one element), never their hull (a flat paddle) */
+  if(lod===0){let d='';for(const s of S)d+=c.d2(s.E0.concat(s.E1.slice().reverse()).map(p=>c.V(p)));
+    if(d)c.put({d,f:c.col(v0*.85,f,face?'fr':'bk')});else if(dry>.12)grEpPods(c,f,0,dry);return}
+  const zs=s=>c.V(s.ctr)[2],top=S.find(s=>s.j===0),sp=top&&dry<.9?grEpSpurQ(f,P,[0,L*(P.r0+.04),-L*.03],L*P.spur[0]*(.55+.45*e)*(1-.2*dec),L*P.spur[2],dec):null,
+    spBack=sp&&c.V(sp.Q[3])[2]<c.V([0,0,0])[2],spur=()=>{if(sp)grEpSpurDraw(c,f,lod,sp,'bk',0)},pods=()=>{if(dry>.12)grEpPods(c,f,lod,dry)},
+    paint=A=>A.slice().sort((p,q)=>zs(p)-zs(q)).forEach(s=>grEpPaint(c,f,s,lod,1)),bee=()=>{if(face&&ez>.12&&dry<SH[0]*.8&&e>.35)grEpBee(c,f,lod,e,dec)};
+  if(spBack)spur();
+  if(face){paint(S);paint(SI);pods();bee()}else{pods();paint(SI);paint(S)}
+  if(!spBack)spur()};
