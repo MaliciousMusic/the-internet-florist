@@ -991,14 +991,25 @@ def pair_groupes(ctx):
     return [g for g in (ctx.st.get('groupes') or PAIR_GROUPES).split(',') if g in GROUPES and g != 'autre']
 
 
+COMMONS_STEPS = (250, 330, 500, 960, 1280, 1920, 3840)  # the only thumbnail widths Commons serves (HTTP 400 otherwise, https://w.wiki/GHai)
+
+
+def commons_size(url, ow, want):
+    """a Commons thumbnail URL at the smallest standard width >= want; the original file when it is not wider than that step"""
+    step = next((s for s in COMMONS_STEPS if s >= want), COMMONS_STEPS[-1])
+    if ow and ow <= step:
+        return re.sub(r'/thumb(/.+?)/[^/]+$', r'\1', url)
+    return re.sub(r'/(\d+)px-', '/%dpx-' % step, url)
+
+
 def pair_photo(ctx, R, x, info):
     """P7: the local copy of a kept photo for the comparison pairs, refcache/<sid>/p<NNN>.jpg, at its original size (long side <= PAIR_LONG);
     its size goes to info[i] = {w, h, short, file}. A Commons thumbnail URL asks the width of the original (cands.json w); an original known to be
     small is not downloaded. Network errors are noted, never raised."""
     i = int(x.get('i', -1))
     key = str(i)
-    if key in info and (info[key].get('file') or info[key].get('err') or info[key].get('short')):
-        return info[key]
+    if key in info and (info[key].get('file') or info[key].get('short') or (info[key].get('err') and not info[key]['err'].startswith('download'))):
+        return info[key]  # a failed download is tried again
     C = jload(ctx.rc + '/cands.json', []) or []
     c = C[i] if 0 <= i < len(C) else {}
     url, ow, oh = c.get('thumb') or '', int(c.get('w') or 0), int(c.get('h') or 0)
@@ -1007,8 +1018,8 @@ def pair_photo(ctx, R, x, info):
         rec.update(w=ow, h=oh, short=min(ow, oh), err='original %dx%d' % (ow, oh))
         info[key] = rec
         return rec
-    if ow and re.search(r'/thumb/.*/\d+px-', url):
-        url = re.sub(r'/(\d+)px-', '/%dpx-' % min(ow, 2 * PAIR_LONG), url)
+    if re.search(r'/thumb/.*/\d+px-', url):
+        url = commons_size(url, ow, 1920)
     p = '%s/p%03d.jpg' % (ctx.rc, i)
     try:
         from PIL import Image
@@ -3777,7 +3788,7 @@ def cmd_selftest(a):
                                         {'thumb': 'https://x/small.jpg', 'w': 800, 'h': 600}])
         inf_ = {}
         r0_, r1_ = pair_photo(ctxE, FakeR, {'i': 0}, inf_), pair_photo(ctxE, FakeR, {'i': 1}, inf_)
-        t('pairs: the copy is the original (Commons width asked), long side brought to 2 400; a small original is not fetched', '/3000px-X.jpg' in FakeR.calls[0]
+        t('pairs: the copy is a standard Commons width (1920, HTTP 400 otherwise), long side brought to 2 400; a small original is not fetched', '/1920px-X.jpg' in FakeR.calls[0]
           and len(FakeR.calls) == 1 and (r0_.get('w'), r0_.get('h'), r0_.get('short')) == (2400, 1600, 1600) and os.path.exists(ctxE.rc + '/p000.jpg')
           and r1_.get('short') == 600 and 'original 800x600' in r1_.get('err', ''), str((FakeR.calls, r0_, r1_)))
         # the colour audit: a coloris:rouge photo whose flower is yellow leaves the pairs of rouge, and is said
