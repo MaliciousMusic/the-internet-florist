@@ -4,10 +4,14 @@
   python img.py cell <in.png> <cols> <rows> "c,r;c,r..." [--h 280] [--out z.png]      the same by grid cell (a shot.sh grid: stages x rows)
   python img.py diff <a.png> <b.png> [--t 24] [--out d.png]                           how much changed (share of pixels, box), and a map
   python img.py small <in.png> [--w 900] [--out s.jpg]                                 a lighter copy to look at (fewer tokens)
-  python img.py pair <photo.jpg> "x0,y0,x1,y1" <render.png> "x0,y0,x1,y1"|"c,r@D" [--kind bud|cup] [--op .6] [--h 420] [--out p.png]
-      a kept photograph (cropped) beside the rendered cell (a shot.sh grid cell: column c, row r, head size D), 900 px wide at most,
+  python img.py pair <photo.jpg> "x0,y0,x1,y1" <render.png> "x0,y0,x1,y1"|"c,r@D" [--kind bud|cup] [--op .6] [--h 420] [--w 900] [--out p.png]
+      a kept photograph (cropped) beside the rendered cell (a shot.sh grid cell: column c, row r, head size D), --h px high and --w px wide at most
+      (420 and 900 by default; pipe.py's refaire.sh asks --h 1100 --w 2400 so the judge sees tips, zones and translucency),
       and the silhouette measures of both (the subject: the blob at the centre of the crop): height/width (a bud's slenderness),
-      width/height (a cup), the opening angle (how far the sides part from the axis, measured on a profile), against the brief
+      width/height (a cup), the opening angle (how far the sides part from the axis, measured on a profile), against the sort's ranges:
+      the ```fourchettes``` block of its brief (--brief <brief.md>, else refcache/<sid>/brief.md beside the photo), one JSON object
+      {"bud":[H/W min,max],"cup.6":[W/H min,max],"cup.85":[W/H min,max],"angle":[deg min,max]} (keys optional); none: « pas de fourchette »
+      (tulipe-simple keeps its built-in ranges)
   python img.py ring <render.png> "c,r@D"|"x0,y0,x1,y1" [--ref "#base,#body,#tip"]
       the colour of a rendered head seen face on, as fleur-coloris measures a photo (refs.py ring): median of the base (centre .12-.35 of the radius),
       body (.35-.7) and tip (.7-.95) rings of the silhouette, and their CIE76 distance to the measured colourway (--ref)
@@ -57,6 +61,32 @@ def strip(boxes, im, h, out):
 
 # the targets of the brief (tulipe-simple): bud height/width, cup width/height by opening, the sides' angle from the axis (degrees)
 BRIEF = {'bud': ('H/W', 1.6, 2.0), 'cup.6': ('W/H', .75, .9), 'cup.85': ('W/H', .85, 1.05), 'angle': (0, 18)}
+BRIEF_SID = 'tulipe-simple'
+
+
+def sort_ranges(photo, brief=None):
+    """the ranges of the sort: the ```fourchettes``` JSON block of its brief.md (given, or refcache/<sid>/brief.md beside the photo);
+    tulipe-simple without a block keeps BRIEF. Returns (ranges like BRIEF or None, where they come from)"""
+    import os, re, json
+    ph = os.path.abspath(photo).replace(chr(92), '/')
+    m = re.search(r'^(.*/refcache/([^/]+))/', ph)
+    sid = m.group(2) if m else ''
+    brief = brief or (m.group(1) + '/brief.md' if m else '')
+    if brief and os.path.exists(brief):
+        b = re.search(r'```fourchettes[^\n]*\n(.*?)```', open(brief, encoding='utf-8', errors='replace').read(), re.S)
+        if b:
+            try:
+                o = json.loads(b.group(1))
+                R = {k: (('H/W' if k == 'bud' else 'W/H'),) + tuple(float(x) for x in o[k]) for k in ('bud', 'cup.6', 'cup.85') if k in o}
+                if 'angle' in o:
+                    R['angle'] = tuple(float(x) for x in o['angle'])
+                return R, os.path.basename(os.path.dirname(brief)) or brief
+            except Exception as e:
+                return None, 'bloc fourchettes illisible dans %s (%s)' % (brief, e)
+    if sid == BRIEF_SID:
+        return BRIEF, sid
+    short = re.sub(r'^.*/(refcache/)', lambda m: m.group(1), brief.replace(chr(92), '/'))
+    return None, ('aucun bloc fourchettes dans %s' % short) if brief and os.path.exists(brief) else ('pas de brief.md pour %s' % (sid or 'cette photo'))
 
 
 def blob(im, bg=None, tol=None):
@@ -129,19 +159,23 @@ def pair(a):
             out.append(f"{name}: H/W {mm['H/W']:.2f}  W/H {mm['W/H']:.2f}  angle {mm['angle']:.0f} deg  ({mm['px'][0]}x{mm['px'][1]} px)")
         else:
             out.append(f'{name}: pas de silhouette')
-    if kind == 'bud':
-        t = BRIEF['bud']
+    R, src = sort_ranges(p[1], o.get('brief'))
+    ck = 'bud' if kind == 'bud' else ('cup.6' if float(op) < .75 else 'cup.85')
+    if not R or ck not in R:
+        out.append('brief: pas de fourchette (%s)' % (src if not R else '%s : pas de %s' % (src, ck)))
+    elif kind == 'bud':
+        t = R['bud']
         out.append(f'brief: bouton H/W {t[1]} a {t[2]}')
     else:
-        t = BRIEF['cup.6'] if float(op) < .75 else BRIEF['cup.85']
-        out.append(f"brief: coupe op {op} W/H {t[1]} a {t[2]} ; angle des flancs (profil) {BRIEF['angle'][0]} a {BRIEF['angle'][1]} deg")
+        t = R[ck]
+        out.append(f"brief: coupe op {op} W/H {t[1]} a {t[2]}" + (f" ; angle des flancs (profil) {R['angle'][0]:g} a {R['angle'][1]:g} deg" if 'angle' in R else ''))
     h = int(o.get('h', 420))
     tiles = [im.resize((max(1, int(im.width * h / im.height)), h), Image.LANCZOS) for im in (ph, rd)]
-    W = tiles[0].width + tiles[1].width + 8
-    if W > 900:
-        k = 900 / W
+    W, cap = tiles[0].width + tiles[1].width + 8, int(o.get('w', 900))
+    if W > cap:
+        k = cap / W
         tiles = [t.resize((max(1, int(t.width * k)), max(1, int(t.height * k))), Image.LANCZOS) for t in tiles]
-        W = 900
+        W = cap
     oi = Image.new('RGB', (W, tiles[0].height), '#e9e4dc')
     oi.paste(tiles[0], (0, 0))
     oi.paste(tiles[1], (W - tiles[1].width, 0))

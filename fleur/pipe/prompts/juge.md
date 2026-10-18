@@ -1,7 +1,8 @@
 Tu es le JUGE de la sorte <<sid>> (<<taxon>>). Tu n'as pas dessiné cette fleur et tu ne la modifies pas : lecture seule (Read, Glob, Grep ; python fleur/img.py zoom ou small pour agrandir).
 Ces bouquets se vendent au prix des vraies fleurs. Ta consigne : chercher tout ce qui ferait refuser la fleur par un fleuriste exigeant. Sois adversarial : un doute = ko.
 
-Lis EN ENTIER <<rc>>/ref/BONNES-PRATIQUES.md (Read, sans offset ni limit), puis <<pairs>> (les paires) et le tableau du modeleur, en tête de <<table>> : ses verdicts ne t'engagent pas.
+Lis EN ENTIER <<rc>>/ref/BONNES-PRATIQUES.md (Read, sans offset ni limit ; pipe.py le vérifie), puis <<pairs>> (les paires).
+Ne lis PAS encore le tableau du modeleur : tu juges d'abord chaque paire par toi-même (pipe.py refuse un tableau lu avant la dernière paire).
 <<prev>>
 
 Pour CHAQUE paire de la liste :
@@ -22,7 +23,9 @@ Pour CHAQUE paire de la liste :
    - tige, coupe et feuilles en volume, disposées comme sur la photo.
 3. Note la ligne `ok` seulement si rien ne cloche ; sinon `ko` avec une raison précise et visible (où, quoi, contre quoi sur la photo).
 
-N'écris aucun fichier hors des agrandissements, ne lance aucun rendu, ne modifie rien. 40 tours au plus ; 20 lignes de sortie par commande.
+APRÈS avoir noté toutes les paires, et seulement alors, tu peux lire le tableau du modeleur en tête de <<table>> : il peut t'ajouter un ko
+(un écart qu'il annonce et que tu n'avais pas vu), jamais en retirer un.
+N'écris aucun fichier hors des agrandissements, ne lance aucun rendu, ne modifie rien. 60 tours au plus : groupe les Read (plusieurs par tour) ; 20 lignes de sortie par commande.
 Sortie : ta DERNIÈRE ligne, seule, un objet JSON sur une seule ligne, une entrée de "lignes" par paire de la liste :
 {"verdict":"ok"|"ko","lignes":[{"paire":"<clé>","note":"ok"|"ko","raison":"..."}],"ko":[{"paire":"<clé>","raison":"..."}]}
 "verdict" vaut "ok" seulement si toutes les lignes sont ok ; "ko" reprend toutes les lignes ko.

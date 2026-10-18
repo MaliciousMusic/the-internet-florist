@@ -17,7 +17,7 @@ photos kept only once looked at, a photo/render comparison pair by pair and an a
 Rules kept from the method: one Opus at a time per working copy, three sorts at most on the PC (ws/locks/pipe-<n>), renders through
 the gate (shot_p.sh), ramwait.sh before every Opus call and heavy render, no commit and no merge anywhere, never a process that this
 script did not start itself."""
-import sys, os, re, json, time, math, glob, shutil, argparse, subprocess, threading, queue, contextlib, io, importlib.util, unicodedata, statistics
+import sys, os, re, json, time, math, glob, shutil, argparse, subprocess, threading, queue, contextlib, io, importlib.util, unicodedata, statistics, hashlib
 
 sys.stdout.reconfigure(encoding='utf-8', errors='replace')
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -42,6 +42,8 @@ SEED = 7                                                # every sheet of the pip
 OLD_PORT = 8765                                         # another application of the owner: never used, never probed
 PRIVATE = ('shot.sh', 'skudump.sh', 'offerdump.sh')     # shared scripts copied as <name>_p.sh with the atelier's port (always)
 RAMWAIT = MAIN + '/fleur/res/ramwait.sh'                # waits for 4.5 GB of free RAM (PIPE_RAMWAIT overrides; '' = off)
+PAIR_H, PAIR_W = 1100, 2400                             # img.py pair tiles of refaire.sh: height, width cap (img.py alone: 420, 900)
+JUGE_TURNS = 60                                         # --max-turns of a judge call: up to 18 pairs, each image and its .txt, plus zooms
 JUGE_TOURS = 2                                          # judge ko -> comparaison -> judge: round trips at most, then refusal (exit 2)
 
 
@@ -1624,6 +1626,51 @@ PAIRS = [  # BONNES-PRATIQUES 9.2 and 9.3b: a kept photo and the render at the s
 ]
 
 
+# the grid views of the pairs that differ by form family (svtest's grid VIEWS: 7 = [0,.97,.24] an upright axis, 8 = [.97,-.17,.17] a side view).
+# Journals: an orchid's true profile is view 8, view 7 is not a profile for it (phalaenopsis « Trous », tour v2-6); the anthurium's profile is
+# unreadable at view 7 (spathes tour 3: views 0, 4, 8). A sort may override any pair's view: --views "profil:8,bouton:8" (kept in pipe-state.json).
+VIEWS_FAMILY = {'orchidee': {'profil': 8, 'bouton': 8}, 'spathe': {'profil': 8, 'bouton': 8}}
+FAMILY_ALIAS = {'orchidee': 'orchidee', 'orchidees': 'orchidee', 'orchid': 'orchidee', 'orchidaceae': 'orchidee', 'spathe': 'spathe', 'spathes': 'spathe', 'araceae': 'spathe'}
+GENUS_FAMILY = {'phalaenopsis': 'orchidee', 'cymbidium': 'orchidee', 'dendrobium': 'orchidee', 'oncidium': 'orchidee', 'vanda': 'orchidee', 'cattleya': 'orchidee',
+                'paphiopedilum': 'orchidee', 'miltonia': 'orchidee', 'anthurium': 'spathe', 'zantedeschia': 'spathe', 'spathiphyllum': 'spathe'}
+
+
+def view_family(ctx):
+    """the form family whose pair views apply: --family, else the kit module (y3-orchidee.js -> orchidee), else the genus; '' when none"""
+    fam = norm(ctx.st.get('family') or '').replace(' ', '-')
+    if fam in FAMILY_ALIAS:
+        return FAMILY_ALIAS[fam]
+    kit = re.sub(r'^y3-|\.js$', '', os.path.basename((ctx.st.get('kit') or '').strip()))
+    if kit in FAMILY_ALIAS:
+        return FAMILY_ALIAS[kit]
+    return GENUS_FAMILY.get(norm(ctx.genus), '')
+
+
+def parse_views(s):
+    """--views "profil:8,bouton:8" (or a dict) -> {pair key: view index}"""
+    if isinstance(s, dict):
+        return {str(k): int(v) for k, v in s.items()}
+    out = {}
+    for it in (s or '').split(','):
+        k, _, v = it.partition(':')
+        if k.strip() and v.strip().lstrip('-').isdigit():
+            out[k.strip()] = int(v)
+    return out
+
+
+def pair_views(ctx):
+    """{pair key: grid view} of the head pairs: PAIRS, then the family's table, then the sort's own override; and where each came from"""
+    v = {P['k']: P['view'] for P in PAIRS if 'view' in P}
+    src = {k: 'PAIRS' for k in v}
+    fam = view_family(ctx)
+    for k, x in VIEWS_FAMILY.get(fam, {}).items():
+        v[k], src[k] = x, 'famille ' + fam
+    for k, x in parse_views(ctx.st.get('views')).items():
+        if k in v:
+            v[k], src[k] = x, 'sorte'
+    return v, src
+
+
 def kept_tags(x):
     out = set()
     for t in x.get('tags', []):
@@ -1637,20 +1684,31 @@ def kept_tags(x):
     return out
 
 
+def cw_names(c):
+    """the names a colourway answers to on a photo's coloris: tag (normalised: its catalogue id and its cultivar)"""
+    return {n for n in (norm(c.get('cultivar')), norm(c.get('id'))) if n}
+
+
+def photo_cws(x):
+    """the colourways a kept photo is tagged with (coloris:<name>, normalised)"""
+    return {t[8:] for t in kept_tags(x) if t.startswith('coloris:')}
+
+
 def pair_plan(ctx):
     """one kept photo per pair (the bouquet's first colourway preferred, a photo used once when possible) and the render that answers it"""
     K = jload(ctx.rc + '/keep.json', []) or []
     cws = jload(ctx.rc + '/coloris.json', []) or []
     cw = cws[0]['id'] if cws else ''
-    cult = norm(cws[0].get('cultivar')) if cws else ''
+    first = cw_names(cws[0]) if cws else set()
     full = int(getattr(ctx.a, 'full', 40) or 40)
+    views, vsrc = pair_views(ctx)
     used, plan, missing = {}, [], []
     for P in PAIRS:
         best = None
         for alt in P['want']:
             cands = [x for x in K if set(alt) <= kept_tags(x)]
             if cands:
-                same = lambda x: any(t.startswith('coloris:') and cult and (t[8:] in cult or cult in t[8:]) for t in kept_tags(x))
+                same = lambda x: bool(photo_cws(x) & first)  # the same colourway: equal names, never a substring (rose is not rose-vif)
                 cands.sort(key=lambda x: (used.get(x.get('i'), 0), not same(x)))
                 best = cands[0]
                 break
@@ -1662,28 +1720,33 @@ def pair_plan(ctx):
         if P.get('plant'):
             q, cell = 'plant=1&sid=%s&cw=%s&st=1:0&axv=1&full=%d&det=1.5&seed=%d' % (ctx.sid, cw, full, SEED), ''
         else:
-            q, cell = 'grid=1&sid=%s&cws=%s&st=%s&view=%d&D=%d&det=1.5&seed=%d' % (ctx.sid, cw, P['st'], P['view'], P['D'], SEED), '0,0@%d' % P['D']
+            q, cell = 'grid=1&sid=%s&cws=%s&st=%s&view=%d&D=%d&det=1.5&seed=%d' % (ctx.sid, cw, P['st'], views[P['k']], P['D'], SEED), '0,0@%d' % P['D']
         plan.append({'k': P['k'], 'label': P['label'], 'photo': best.get('i'), 'title': best.get('title'), 'page': best.get('page'), 'tags': best.get('tags'),
+                     'view': views.get(P['k']), 'view_from': vsrc.get(P['k']),
                      'vu': best.get('m'), 'thumb': '%s/t%03d.jpg' % (ctx.rel, int(best.get('i', 0))), 'query': q, 'name': name, 'render': 'fleur/out/%s.png' % name,
                      'cell': cell, 'kind': P.get('kind', 'cup'), 'op': P.get('op', '.85'), 'cw': cw,
                      'png': '%s/comparaison/%s.png' % (ctx.rel, P['k']), 'txt': '%s/comparaison/%s.txt' % (ctx.rel, P['k'])})
     # BONNES-PRATIQUES 9.3c (owner, 2026-10-18, cymbidium): every colourway with a photo of its own variety is compared to THAT photo
     # (tip shape, colour zones, translucency, its own heart), face on and open; up to --cw-pairs of them (10 by default)
-    for c in cws[:int(getattr(ctx.a, 'cw_pairs', 10) or 10) * 3]:
-        if sum(1 for q in plan if q['k'].startswith('cw-')) >= int(getattr(ctx.a, 'cw_pairs', 10) or 10):
+    ncw, absent = int(getattr(ctx.a, 'cw_pairs', 10) or 10), []
+    for c in cws[:ncw * 3]:
+        if sum(1 for q in plan if q['k'].startswith('cw-')) >= ncw:
             break
-        names = [n for n in (norm(c.get('cultivar')), norm(c.get('id'))) if n]
-        own = [x for x in K if any(t.startswith('coloris:') and any(t[8:] in n or n in t[8:] for n in names) for t in kept_tags(x))]
-        if not own:
+        names = cw_names(c)
+        own = [x for x in K if photo_cws(x) & names]
+        if not own:  # said, never skipped in silence: the owner decides (a named photo to find, or no pair for it)
+            absent.append('coloris %s (%s) : aucune photo gardée balisée `coloris:` %s ; pas de paire cw- (ajouter une photo nommée de la variété à refs, ou dire que la paire est inutile)'
+                          % (c.get('id'), c.get('cultivar') or 'nom générique', ' ou '.join(sorted(names)) or '-'))
             continue
         own.sort(key=lambda x: (not ({'stade:ouvert', 'vue:face'} <= kept_tags(x)), used.get(x.get('i'), 0)))
-        best, k = own[0], 'cw-' + slug(str(c.get('id')))[:20]
+        best, k = own[0], 'cw-' + slug(str(c.get('id')))[:20].strip('-')
         name = 'cmp_%s_%s' % (slug(ctx.sid)[:24], k)
         plan.append({'k': k, 'label': 'coloris %s contre la photo de sa variété (pointes, zones de couleur, translucidité, cœur)' % c.get('id'),
                      'photo': best.get('i'), 'title': best.get('title'), 'page': best.get('page'), 'tags': best.get('tags'), 'vu': best.get('m'),
                      'thumb': '%s/t%03d.jpg' % (ctx.rel, int(best.get('i', 0))), 'name': name, 'render': 'fleur/out/%s.png' % name,
                      'query': 'grid=1&sid=%s&cws=%s&st=.85:0&view=0&D=600&det=1.5&seed=%d' % (ctx.sid, c.get('id'), SEED), 'cell': '0,0@600',
                      'kind': 'cup', 'op': '.85', 'cw': c.get('id'), 'png': '%s/comparaison/%s.png' % (ctx.rel, k), 'txt': '%s/comparaison/%s.txt' % (ctx.rel, k)})
+    set_questions(ctx, 'paires-coloris', 'Coloris sans paire photo/rendu (comparaison, 9.3c)', absent)
     return plan, missing
 
 
@@ -1692,7 +1755,8 @@ def write_pairs(ctx, plan):
     d = ctx.rc + '/comparaison'
     if ctx.dry:
         for p in plan:
-            say('  [dry] pair %-12s photo %s (%s) vs %s' % (p['k'], p['photo'], ' '.join(p['tags'] or []), p['query']))
+            say('  [dry] pair %-12s photo %s (%s) vs %s%s' % (p['k'], p['photo'], ' '.join(p['tags'] or []), p['query'],
+                ' (view %s: %s)' % (p['view'], p['view_from']) if p.get('view_from') and p['view_from'] != 'PAIRS' else ''))
         return
     os.makedirs(d, exist_ok=True)
     jsave(d + '/pairs.json', plan)
@@ -1714,8 +1778,8 @@ def write_pairs(ctx, plan):
               '  rm -f "%s" "%s"' % (o, t),
               '  sh fleur/shot_p.sh %s "%s" > "%s/comparaison/%s.log" 2>&1' % (p['name'], p['query'], ctx.rel, p['k']),
               '  if grep -q "PAS D" "%s/comparaison/%s.log" || [ ! -f %s ]; then echo "%s: PAS D\'IMAGE"; return 1; fi' % (ctx.rel, p['k'], p['render'], p['k']),
-              '  python fleur/img.py pair %s "$(box %s)" %s "%s" --kind %s --op %s --out "%s" > "%s" 2>&1' % (
-                  p['thumb'], p['thumb'], p['render'], p['cell'] or '$(box %s)' % p['render'], p['kind'], p['op'], o, t),
+              '  python fleur/img.py pair %s "$(box %s)" %s "%s" --kind %s --op %s --h %d --w %d --brief %s/brief.md --out "%s" > "%s" 2>&1' % (
+                  p['thumb'], p['thumb'], p['render'], p['cell'] or '$(box %s)' % p['render'], p['kind'], p['op'], PAIR_H, PAIR_W, ctx.rel, o, t),
               '  echo "%s: $(tail -3 "%s" | tr \'\\n\' \' \')"' % (p['k'], t),
               '}']
     S.append('for k in ${*:-%s}; do "p_$(echo "$k" | tr - _)" || echo "$k: ERREUR"; done' % ' '.join(p['k'] for p in plan))
@@ -1752,6 +1816,28 @@ def table_rows(p):
 
 def app_mtime(ctx):
     return max([os.path.getmtime(f) for f in glob.glob(ctx.ch + '/app/*.js')] or [0])
+
+
+def code_fp(ctx):
+    """sha1 of the drawing code a verdict is about: every app/*.js and pilote/svtest.js of the copy (path and content)"""
+    h = hashlib.sha1()
+    for f in sorted(glob.glob(ctx.ch + '/app/*.js')) + [ctx.ch + '/pilote/svtest.js']:
+        if os.path.exists(f):
+            h.update(fwd(os.path.relpath(f, ctx.ch)).encode() + b'\0' + open(f, 'rb').read() + b'\0')
+    return h.hexdigest()
+
+
+def judged_code(ctx):
+    """(ok, why): the judge accepted the sort and the code is still the one it judged (fingerprint taken at its ok)"""
+    j = ctx.st['steps'].get('juge', {})
+    if j.get('status') != 'done':
+        return False, 'the judge has not accepted this sort (step juge %s)' % j.get('status', '-')
+    if not j.get('fp'):
+        return False, 'no code fingerprint was recorded at the judge\'s ok: run --from juge'
+    fp = code_fp(ctx)
+    if fp != j['fp']:
+        return False, 'app/*.js or pilote/svtest.js changed since the judge\'s ok (fingerprint %s, now %s): run --from comparaison' % (j['fp'][:10], fp[:10])
+    return True, ''
 
 
 def check_comparaison(ctx, plan, ko_file=None, reads=True):
@@ -1820,7 +1906,7 @@ def judge_once(ctx, plan, trips, k):
     prev = ('Le juge précédent avait refusé : %s/comparaison/ko-%d.json. Vérifie d\'abord ces points, sans t\'y limiter.' % (ctx.rel, trips)) if trips else '-'
     p = prompt_text('juge', **ctx.sub(pairs='%s/comparaison/pairs.md' % ctx.rel, table='%s/etat-comparaison.md' % ctx.rel, prev=prev))
     ctx.reads['juge'] = set()
-    r = call_model(ctx, 'juge', 't%d.%d' % (trips, k), 'opus', p, READ + ['Bash(python fleur/img.py *)'], turns=40)
+    r = call_model(ctx, 'juge', 't%d.%d' % (trips, k), 'opus', p, READ + ['Bash(python fleur/img.py *)'], turns=JUGE_TURNS)
     if ctx.dry:
         return {'verdict': 'ok', 'ko': [], 'issues': [], 'dry': True}
     fin = r.get('final') or {}
@@ -1838,6 +1924,18 @@ def judge_once(ctx, plan, trips, k):
     unnoted = [p['k'] for p in plan if p['k'] not in noted]
     if unnoted:
         issues.append('pairs not noted: ' + ', '.join(unnoted))
+    if not ctx.read_by('juge', bp_rel(ctx)):  # like the modeller's must_read: the checklist is read in full by the judge too
+        issues.append('BONNES-PRATIQUES.md never opened (Read %s in full first)' % bp_rel(ctx))
+    # anti-anchoring: the modeller's table may be read only once every pair has been looked at (its verdicts come after the judge's own)
+    seq = [x for x in r.get('reads') or []]
+    tab = ctx.npath('%s/etat-comparaison.md' % ctx.rel)
+    if tab in seq:
+        first = {}
+        for i, x in enumerate(seq):
+            first.setdefault(x, i)
+        early = [p['k'] for p in plan if first.get(ctx.npath(p['png']), len(seq)) > first[tab]]
+        if early:
+            issues.append('the modeller\'s table was read before the pairs %s were looked at (anchoring: judge every pair first)' % ', '.join(early[:6]))
     return {'verdict': 'ok' if verdict == 'ok' and not ko and not issues else 'ko', 'ko': ko, 'issues': issues, 'lignes': list(noted.values()), 'call': r.get('subtype')}
 
 
@@ -1889,7 +1987,8 @@ def step_juge(ctx):
         v = judge(ctx, plan, trips)
         ctx.note('juge', trips=trips, last=v['verdict'])
         if v['verdict'] == 'ok':
-            return {'status': 'done', 'trips': trips, 'msg': 'the judge accepts every pair (%d round trips)%s' % (trips, ' (dry)' if ctx.dry else '')}
+            fp = code_fp(ctx)  # what was judged: planches and FINI refuse a code that changed since
+            return {'status': 'done', 'trips': trips, 'fp': fp, 'msg': 'the judge accepts every pair (%d round trips; code %s)%s' % (trips, fp[:10], ' (dry)' if ctx.dry else '')}
         if trips >= tours:
             rep = write_refusal(ctx, v, trips)
             return {'status': 'failed', 'refused': True, 'trips': trips, 'report': rep,
@@ -2083,8 +2182,9 @@ def step_qa(ctx):
 # ---------------------------------------------------------------------------------------------------------------- sheets
 
 def step_planches(ctx):
-    if ctx.st['steps'].get('juge', {}).get('status') != 'done' and not ctx.dry:
-        raise StepFailed('the judge has not accepted this sort (step juge %s): no sheet for the catalogue' % ctx.st['steps'].get('juge', {}).get('status', '-'))
+    ok, why = judged_code(ctx)
+    if not ok and not ctx.dry:
+        raise StepFailed('%s: no sheet for the catalogue' % why)
     ids = cw_ids(ctx, 6)
     if not ids and not ctx.dry:
         raise StepFailed('no coloris.json: no sheet')
@@ -2173,6 +2273,8 @@ def cmd_run(a):
             st[k] = getattr(a, k)
     if a.kavb:
         st['kavb'] = True
+    if getattr(a, 'views', None):
+        st['views'] = parse_views(a.views)
     sk = bouquet_skus(a, sid)
     if sk or 'skus' not in st:
         st['skus'] = sk
@@ -2201,6 +2303,10 @@ def cmd_run(a):
         start = a.from_ or next((n for n in names if st['steps'].get(n, {}).get('status') not in ('done', 'skipped')), None)
         if start is None:
             say('every step is done: nothing to run (use --from <step> to redo)')
+            fin = None if ctx.dry else fini(ctx)
+            if fin:
+                say(fin[1])
+                return 0 if fin[0] else 2
             return 0
         todo = names[names.index(start):]
         if a.from_ and not ctx.dry:
@@ -2273,9 +2379,21 @@ def cmd_run(a):
         slot.release()
     say('-- %s' % ' | '.join('%s %s' % (n, st['steps'].get(n, {}).get('status', '-')) for n in names))
     say('-- bill: %.2f M eq-Opus (cap %.1f M, a measure)' % (ctx.bill.total() / 1e6, ctx.cap / 1e6))
-    if not ctx.dry and all(st['steps'].get(n, {}).get('status') in ('done', 'skipped') for n in names) and st['steps'].get('juge', {}).get('status') == 'done':
-        say('-- FINI: %s accepted by the judge, witnesses and QA green' % sid)
+    if not ctx.dry:
+        fin = fini(ctx)
+        if fin:
+            say(fin[1])
+            code = code or (0 if fin[0] else 2)
     return code
+
+
+def fini(ctx):
+    """None while a step is not done; else (True, the FINI line) when the judge accepted THIS code, or (False, why not)"""
+    st = ctx.st
+    if not all(st['steps'].get(n, {}).get('status') in ('done', 'skipped') for n in STEPS) or st['steps'].get('juge', {}).get('status') != 'done':
+        return None
+    ok, why = judged_code(ctx)
+    return (True, '-- FINI: %s accepted by the judge, witnesses and QA green' % ctx.sid) if ok else (False, '-- NOT FINISHED: ' + why)
 
 
 def load_ctx(a):
@@ -2557,10 +2675,12 @@ def cmd_selftest(a):
             return {'mode': 'done', 'write': w, 'read': ['%s/ref/%s' % (rel, BP)] + ['%s/comparaison/%s.png' % (rel, k) for k in KEYS],
                     'final': '{"status":"done","ok":8,"ecarts":0}'}
 
-        def jg(rel, verdict):  # the judge: reads every pair, notes every line
+        def jg(rel, verdict, bp=True, table_first=False):  # the judge: reads the checklist, every pair, then (maybe) the table; notes every line
             ko_ = [] if verdict == 'ok' else [{'paire': 'profil', 'raison': 'flancs trop droits contre la photo'}]
             fin_ = {'verdict': verdict, 'lignes': [{'paire': k, 'note': 'ko' if ko_ and k == 'profil' else 'ok', 'raison': ''} for k in KEYS], 'ko': ko_}
-            return {'mode': 'done', 'read': ['%s/comparaison/%s.png' % (rel, k) for k in KEYS], 'final': json.dumps(fin_, ensure_ascii=False)}
+            rd = ['%s/comparaison/%s.png' % (rel, k) for k in KEYS]
+            rd = ([rel + '/etat-comparaison.md'] + rd) if table_first else (rd + [rel + '/etat-comparaison.md'])
+            return {'mode': 'done', 'read': (['%s/ref/%s' % (rel, BP)] if bp else []) + rd, 'final': json.dumps(fin_, ensure_ascii=False)}
 
         def run_(args):
             buf = io.StringIO()
@@ -2574,9 +2694,38 @@ def cmd_selftest(a):
           str(miss_) + str([(p['k'], p['photo']) for p in plan_]))
         t('comparaison: same angle and stage (profile view 7, faded .6 and .9, plant sheet)', 'view=7' in plan_[2]['query'] and '1:.6' in plan_[4]['query'] and '1:.9' in plan_[5]['query']
           and plan_[6]['query'].startswith('plant=1') and all('seed=7' in p['query'] for p in plan_))
+        r7 = tmp + '/refcache/selftest7'
+        os.makedirs(r7, exist_ok=True)
+        jsave(r7 + '/keep.json', KEEP[:7] + [dict(KEEP[7], tags=['stade:ouvert', 'vue:face', 'coloris:rose-vif'])])
+        jsave(r7 + '/coloris.json', [{'id': 'rose', 'cultivar': ''}, {'id': 'rose-vif', 'cultivar': 'Rose Vif'}, {'id': 'x' * 19 + '-y', 'cultivar': ''}])
+        ctx7 = Ctx('selftest7', tmp, argparse.Namespace(dry=False, cap=40, claude=fake), {'sid': 'selftest7', 'taxon': 'Test test', 'steps': {}, 'skus': []})
+        p7 = pair_plan(ctx7)[0]
+        q7 = open(r7 + '/questions.md', encoding='utf-8').read() if os.path.exists(r7 + '/questions.md') else ''
+        t('pairs: cw-* by equal colourway names: rose does not take the photo of rose-vif', [p['k'] for p in p7 if p['k'].startswith('cw-')] == ['cw-rose-vif']
+          and p7[-1]['photo'] == 7, str([(p['k'], p['photo']) for p in p7]))
+        t('pairs: a colourway without its own photo is a question, not a silent skip', 'coloris rose (nom générique)' in q7 and 'coloris ' + 'x' * 19 + '-y' in q7, q7[-400:])
+        jsave(r7 + '/keep.json', KEEP[:7] + [dict(KEEP[7], tags=['stade:ouvert', 'vue:face', 'coloris:' + 'x' * 19 + '-y'])])
+        t('pairs: a cw- key cut at 20 characters keeps no trailing dash (the table key matches)', [p['k'] for p in pair_plan(ctx7)[0] if p['k'].startswith('cw-')] == ['cw-' + 'x' * 19])
+        q_ = {p['k']: p for p in plan_}
+        t('pairs: a tulip keeps view 7 for the profile and the bud (no family)', view_family(ctx3) == '' and q_['profil']['view'] == 7 and q_['bouton']['view'] == 7)
+        ctx3.st.update(taxon='Cymbidium hybrida', kit='y3-orchidee.js')
+        plo_ = {p['k']: p for p in pair_plan(ctx3)[0]}
+        t('pairs: an orchid (kit y3-orchidee.js) gets view 8 for the profile and the bud, written in the plan', view_family(ctx3) == 'orchidee' and 'view=8' in plo_['profil']['query']
+          and 'view=8' in plo_['bouton']['query'] and plo_['profil']['view'] == 8 and plo_['profil']['view_from'] == 'famille orchidee' and 'view=0' in plo_['face']['query'],
+          str([(p['k'], p.get('view'), p.get('view_from')) for p in plo_.values()]))
+        ctx3.st.update(taxon='Phalaenopsis hybrida', kit='')
+        t('pairs: an orchid found by its genus alone', view_family(ctx3) == 'orchidee' and pair_views(ctx3)[0]['profil'] == 8)
+        ctx3.st.update(taxon='Anthurium andraeanum', views={'profil': 4})
+        t('pairs: a sort with --views beats the family table (spathe)', pair_views(ctx3)[0]['profil'] == 4 and pair_views(ctx3)[0]['bouton'] == 8
+          and parse_views('profil:8, bouton:8,x') == {'profil': 8, 'bouton': 8})
+        ctx3.st.update(taxon='Test test')
+        ctx3.st.pop('views')
+        ctx3.st.pop('kit')
         write_pairs(ctx3, plan_)
         rs_ = open('%s/comparaison/refaire.sh' % ctx3.rc).read()
         t('comparaison: refaire.sh renders through shot_p.sh and pairs with img.py, never 8765', 'fleur/shot_p.sh' in rs_ and 'img.py pair' in rs_ and '8765' not in rs_ and 'D=800' in rs_)
+        t('comparaison: refaire.sh asks big pairs (img.py pair --h 1100 --w 2400)', rs_.count('--h 1100 --w 2400') == len(plan_), str(rs_.count('--h 1100 --w 2400')))
+        t('comparaison: refaire.sh gives img.py pair the brief of the sort (its own ranges)', rs_.count('--brief %s/brief.md' % rel3) == len(plan_))
         fake_pairs(ctx3, plan_)
         okc, whyc = check_comparaison(ctx3, plan_, reads=False)
         t('comparaison: the check wants the full table', not okc and 'no line in the table' in whyc, whyc)
@@ -2604,6 +2753,9 @@ def cmd_selftest(a):
         jr = [r for r in Bill(ctx3.rc + '/pipe-bill.json').rows() if r['step'] == 'juge']
         t('juge: ko -> comparaison -> ok ends the step (1 round trip)', code_ == 0 and st3['steps']['juge']['status'] == 'done' and st3['steps']['juge'].get('trips') == 1
           and len(jr) == 2 and os.path.exists(ctx3.rc + '/comparaison/ko-1.json'), out_[-500:])
+        fp3 = st3['steps']['juge'].get('fp')
+        t('juge: the ok keeps the fingerprint of app/*.js and pilote/svtest.js', fp3 and fp3 == code_fp(ctx3) and judged_code(Ctx('selftest3', tmp, argparse.Namespace(dry=False, cap=40, claude=fake), st3))[0],
+          str(fp3))
         t('juge: the judge is a fresh Opus xhigh call, read-only (Read, Glob, Grep, Bash for img.py only)', all(r['model'] == 'opus' and r.get('tools') == 'Bash,Glob,Grep,Read'
           and r.get('effort') == 'xhigh' for r in jr), str([(r.get('tools'), r.get('effort')) for r in jr]))
         P_ = {n: open('%s/pipe/prompts/%s.md' % (HERE, n), encoding='utf-8').read() for n in ('forme', 'plante', 'finition', 'fit', 'comparaison', 'juge')}
@@ -2633,6 +2785,31 @@ def cmd_selftest(a):
         seq({'mode': 'done', 'read': [], 'final': '{"verdict":"ok","lignes":[],"ko":[]}'}, {'mode': 'done', 'read': [], 'final': 'no json'})
         v_ = judge(ctx3, plan_, 0)
         t('juge: a judge that looked at nothing is asked again, then counts as ko', v_['verdict'] == 'ko' and any('not looked at' in x for x in v_['issues']), str(v_)[:300])
+        seq(jg(rel3, 'ok', bp=False), jg(rel3, 'ok', bp=False))
+        v_ = judge(ctx3, plan_, 0)
+        t('juge: a judge that never opened BONNES-PRATIQUES is asked again, then counts as ko', v_['verdict'] == 'ko' and any('BONNES-PRATIQUES' in x for x in v_['issues']), str(v_)[:300])
+        seq(jg(rel3, 'ok', table_first=True), jg(rel3, 'ok', table_first=True))
+        v_ = judge(ctx3, plan_, 0)
+        t('juge: reading the modeller table before the pairs counts as ko (anchoring)', v_['verdict'] == 'ko' and any('anchoring' in x for x in v_['issues']), str(v_)[:300])
+        seq(jg(rel3, 'ok'))
+        v_ = judge(ctx3, plan_, 0)
+        t('juge: checklist, every pair, then the table: ok', v_['verdict'] == 'ok' and not v_['issues'], str(v_)[:300])
+        buf = io.StringIO()
+        with contextlib.redirect_stdout(buf):
+            judge_once(ctxd, plan_, 0, 1)
+        P_j = open('%s/pipe/prompts/juge.md' % HERE, encoding='utf-8').read()
+        t('juge: 60 turns, and the prompt gives the modeller table after the judge verdicts', '60 turns max' in buf.getvalue() and P_j.index('APRÈS') < P_j.index('<<table>>')
+          and '60 tours' in P_j, buf.getvalue()[-200:])
+        open(tmp + '/app/y-test.js', 'a').write('// retouched after the judge\n')
+        ctx3b = Ctx('selftest3', tmp, argparse.Namespace(dry=False, cap=40, claude=fake), st3)
+        try:
+            step_planches(ctx3b)
+            t('planches: refused when app/ changed after the judge said ok (no FINI either)', False)
+        except StepFailed as e:
+            ctx3b.st = dict(st3, steps={n: {'status': 'done', **({'fp': fp3} if n == 'juge' else {})} for n in STEPS})
+            f_ = fini(ctx3b)
+            t('planches: refused when app/ changed after the judge said ok (no FINI either)', 'changed since the judge' in str(e) and f_ and not f_[0] and 'NOT FINISHED' in f_[1],
+              str(e) + str(f_))
         ctx4 = Ctx('selftest4', tmp, argparse.Namespace(dry=False, cap=40, claude=fake), st4)
         try:
             step_planches(ctx4)
@@ -2683,6 +2860,7 @@ def make_parser():
     r.add_argument('--kit-prefix', dest='kit_prefix', help='the kit family prefix (default: inferred from the module, e.g. svRose|SVROSE_)')
     r.add_argument('--kit-sids', dest='kit_sids', help='the sorts already drawn with the kit, comma separated (default: found in app/y-*.js)')
     r.add_argument('--late', type=int, help='the late:N wave of the colourways added (default 1)')
+    r.add_argument('--views', help='grid views of the head pairs for this sort, "profil:8,bouton:8" (default: PAIRS, then the form family: orchids and spathes 8)')
     r.add_argument('--juge-tours', dest='juge_tours', type=int, default=JUGE_TOURS, help='judge ko -> comparaison round trips before the refusal (exit 2)')
     for n in ('status', 'bill'):
         s = sp.add_parser(n)
