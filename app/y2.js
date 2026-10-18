@@ -67,8 +67,8 @@ let SVA_LIFE=null;
 /* how far the anemone has wilted now (0 fresh .. 1 dry): the override, else the bouquet's life stage */
 function svaLife(){return SVA_LIFE!=null?SVA_LIFE:(typeof LIFE!=='undefined'&&LIFE&&typeof lifeWEl==='function'?lifeWEl(LIFE,lifeProfile({sid:'anemone-coronaria',rec:{}})):0)}
 /* genes of one anemone (a table for svGenes: the draws in this order) */
-const SVA_GENES={n:[[5,.06],[6,.44],[7,.24],[8,.18],[9,.08]],tep:{dL:[.92,1.06],dW:[.9,1.08],dph:[-.14,.14],da0:[-.1,.1],da1:[-.12,.12],tw:[-.2,.2],wav:[.04,.12],wk:[1.6,2.8],wph:[0,6.28],
-    notch:[.02,.055,.2],tip:[1.7,2.3],asym:[-.08,.08],curl:[.05,.3,.45],cup:[.85,1.15],sd:'sd'},late:{hang:[.6,1.25],wl:[.85,1.2]},
+const SVA_GENES={n:[[5,.06],[6,.44],[7,.24],[8,.18],[9,.08]],tep:{dL:[.92,1.06],dW:[.9,1.08],dph:[-.14,.14],da0:[-.1,.1],da1:[-.12,.12],tw:[-.1,.1],wav:[.02,.06],wk:[1.6,2.8],wph:[0,6.28],
+    notch:[.02,.055,.2],tip:[1.7,2.3],asym:[-.08,.08],curl:[.02,.1,.45],cup:[.85,1.15],sd:'sd'},late:{hang:[.6,1.25],wl:[.85,1.2]},
   head:{rot:[0,6.2832],cup:[.85,1.15],op:[-.06,.06],dome:[.9,1.12],stN:[165,220,'r'],stL:[.88,1.12],stA:[-.08,.08],ring:[.8,1.15],dh:[-4,4],ds:[-.07,.06],dl:[-.03,.025],sd:'sd'}};
 function svaGenes(seed){return svGenes(seed,SVA_GENES)}
 /* the anemone head: tepals (sheets), the heart (drawn), in the frame B at O, D across, opening op; wl how far it has wilted (0..1; by default the
@@ -113,7 +113,10 @@ function svaHeart({B,O,R0,g,cw0,o2,bud,dec,fan,det,pieces}){
     pieces.push({fn:k2=>{const hk=G(k2);if(!LOD&&fan<.8&&B[2][2]>.25)recep(hk);drawSt(hk,stam.filter(s=>s.z<cz));dome(hk);drawSt(hk,stam.filter(s=>s.z>=cz))},proxy:prox})}
 }
 /* the anemone for svBloom: everything else is the engine's default (the anemone is the reference) */
-const SVA_P={genes:svaGenes,mat:svaMat,heart:svaHeart};
+/* no patches (pmin out of reach; the kit's is 3): a patch redraws an earlier tepal over a later one where it is in front; on the anemone's broad
+   overlapping tepals a near-tie made thin dark slivers across a tepal, even past 8 cells (the owner's sheets, 2026-10-18: "des sérieux problèmes de
+   clipping"); the order alone draws its heads right (?nopatch=1 on 4 seeds, 3 stages, 3 views) */
+const SVA_P={genes:svaGenes,mat:svaMat,heart:svaHeart,pmin:1e9};
 
 /* the involucre: three sessile bracts round the stem (one per organ), each cut into three lobes, these into narrow pointed segments: every segment a
    real sheet in the view (folded along its midrib into a shallow gutter, arching out then sagging under its weight, a little twisted), drawn by the engine:
