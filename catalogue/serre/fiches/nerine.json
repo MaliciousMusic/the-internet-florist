@@ -405,7 +405,11 @@
      "nerine:331c1734"
     ],
     "ref": "Flore : Nerine bowdenii W.Watson, Amaryllidaceae, Afrique du Sud (Drakensberg) ; hampe 45-60 cm, ombelle de 7-12 fleurs, six tépales linéaires ondulés de 6-7 cm, étamines déclinées",
-    "conf": "A"
+    "conf": "A",
+    "ecart": {
+     "type": "confirme",
+     "texte": "svBloom partage n = 6 (NER_GENES.n, app/y-nerine.js) en 3 tépales externes et 3 internes (ceil(n/2)) : la fiche compte un verticille."
+    }
    },
    "disposition": {
     "type": "verticilles",
@@ -417,7 +421,11 @@
       "nerine:331c1734",
       "nerine:add949aa"
      ],
-     "conf": "B"
+     "conf": "B",
+     "ecart": {
+      "type": "confirme",
+      "texte": "svBloom pose deux verticilles alternés, comme la fiche."
+     }
     },
     "recouvrement": {
      "v": 0.0,
@@ -426,7 +434,11 @@
      "photos": [
       "nerine:331c1734"
      ],
-     "conf": "C"
+     "conf": "C",
+     "ecart": {
+      "type": "confirme",
+      "texte": "Pièces en étoile, bases étroites (SV_NERINE.claw, app/y-nerine.js) : recouvrement nul à l'ouvert."
+     }
     },
     "ordre": {
      "v": "trois tépales externes alternent avec trois internes ; en étoile, presque sans recouvrement",
@@ -476,7 +488,11 @@
      "photos": [
       "nerine:331c1734"
      ],
-     "conf": "C"
+     "conf": "C",
+     "ecart": {
+      "type": "confirme",
+      "texte": "SV_NERINE.Wd = [.2,.21] pour L = [1,.97] : L/l voisin de 5 (plage 4,5 à 6)."
+     }
     },
     "marge": {
      "type": {
@@ -504,7 +520,11 @@
      "photos": [
       "nerine:331c1734"
      ],
-     "conf": "C"
+     "conf": "C",
+     "ecart": {
+      "type": "confirme",
+      "texte": "SV_NERINE.L[0] = 1 R0 ; gène tep.dL .92 à 1,06."
+     }
     },
     "rapport_tete": {
      "v": 1.28,
@@ -529,7 +549,11 @@
      "unite": "cm",
      "methode": "reference",
      "ref": "Flore : Nerine bowdenii W.Watson, Amaryllidaceae, Afrique du Sud (Drakensberg) ; hampe 45-60 cm, ombelle de 7-12 fleurs, six tépales linéaires ondulés de 6-7 cm, étamines déclinées",
-     "conf": "A"
+     "conf": "A",
+     "ecart": {
+      "type": "confirme",
+      "texte": "R0 = 6,5 cm au bouquet (GHI.nerine.rk = 44/(6.5*UPC), app/y-nerine.js) : 1 R0 = 6,5 cm."
+     }
     }
    },
    "courbure": {
@@ -591,7 +615,11 @@
      "photos": [
       "nerine:331c1734"
      ],
-     "conf": "C"
+     "conf": "C",
+     "ecart": {
+      "type": "confirme",
+      "texte": "Matière nerMat (app/y-nerine.js) : lumière du bord et de la base d'après la photo ; valeur non réglée seule."
+     }
     },
     "texture": {
      "v": "satin",
@@ -607,7 +635,11 @@
      "photos": [
       "nerine:331c1734"
      ],
-     "conf": "C"
+     "conf": "C",
+     "ecart": {
+      "type": "confirme",
+      "texte": "nerMat : satin à grain scintillant, brillance posée dans la matière du coloris."
+     }
     },
     "grain": {
      "v": "scintillant",
@@ -673,7 +705,11 @@
       "conf": "C",
       "photos": [
        "nerine:331c1734"
-      ]
+      ],
+      "ecart": {
+       "type": "confirme",
+       "texte": "Zone des nervures : lavis sur toute la longueur du tépale (nerMat)."
+      }
      },
      "motif": {
       "type": "bande médiane plus soutenue"
@@ -695,7 +731,11 @@
       "conf": "C",
       "photos": [
        "nerine:331c1734"
-      ]
+      ],
+      "ecart": {
+       "type": "confirme",
+       "texte": "Zone de marge : bord plus clair sur toute la longueur (nerMat)."
+      }
      },
      "motif": {
       "type": "plus claire, froncée"
@@ -717,7 +757,11 @@
       "conf": "C",
       "photos": [
        "nerine:331c1734"
-      ]
+      ],
+      "ecart": {
+       "type": "confirme",
+       "texte": "Zone de base : pâle sur le premier cinquième (SV_NERINE.claw .35 à .65 de la longueur)."
+      }
      },
      "motif": {
       "type": "plus pâle"
@@ -802,7 +846,11 @@
      "nerine:331c1734"
     ],
     "ref": "Flore : Nerine bowdenii W.Watson, Amaryllidaceae, Afrique du Sud (Drakensberg) ; hampe 45-60 cm, ombelle de 7-12 fleurs, six tépales linéaires ondulés de 6-7 cm, étamines déclinées",
-    "conf": "A"
+    "conf": "A",
+    "ecart": {
+     "type": "confirme",
+     "texte": "svBloom : les 3 tépales internes sont le reste de n = 6."
+    }
    },
    "disposition": {
     "suit": "tepale.externe.disposition"
@@ -842,7 +890,11 @@
      "nerine:331c1734"
     ],
     "ref": "Flore : Nerine bowdenii W.Watson, Amaryllidaceae, Afrique du Sud (Drakensberg) ; hampe 45-60 cm, ombelle de 7-12 fleurs, six tépales linéaires ondulés de 6-7 cm, étamines déclinées",
-    "conf": "A"
+    "conf": "A",
+    "ecart": {
+     "type": "confirme",
+     "texte": "nerHeart (app/y-nerine.js) pose six étamines déclinées."
+    }
    },
    "disposition": {
     "type": {
@@ -877,7 +929,11 @@
      "photos": [
       "nerine:331c1734"
      ],
-     "conf": "C"
+     "conf": "C",
+     "ecart": {
+      "type": "confirme",
+      "texte": "NER_H.fl = .86 R0 pour le filet (app/y-nerine.js)."
+     }
     }
    },
    "matiere": {
@@ -914,7 +970,11 @@
       "conf": "C",
       "photos": [
        "nerine:331c1734"
-      ]
+      ],
+      "ecart": {
+       "type": "confirme",
+       "texte": "Filet sur toute sa longueur (nerHeart)."
+      }
      },
      "motif": {
       "type": "filet rose"
@@ -936,7 +996,11 @@
       "conf": "C",
       "photos": [
        "nerine:331c1734"
-      ]
+      ],
+      "ecart": {
+       "type": "confirme",
+       "texte": "Anthère au bout du filet, NER_H.an = .05 (nerHeart)."
+      }
      },
      "motif": {
       "type": "anthère crème, petite"
@@ -984,7 +1048,11 @@
     "unite": "n",
     "methode": "reference",
     "ref": "Flore : Nerine bowdenii W.Watson, Amaryllidaceae, Afrique du Sud (Drakensberg) ; hampe 45-60 cm, ombelle de 7-12 fleurs, six tépales linéaires ondulés de 6-7 cm, étamines déclinées",
-    "conf": "A"
+    "conf": "A",
+    "ecart": {
+     "type": "confirme",
+     "texte": "nerHeart pose un seul style."
+    }
    },
    "disposition": {
     "type": {
@@ -1014,7 +1082,11 @@
      "photos": [
       "nerine:331c1734"
      ],
-     "conf": "C"
+     "conf": "C",
+     "ecart": {
+      "type": "confirme",
+      "texte": "NER_H.sl = .98 R0 pour le style (app/y-nerine.js)."
+     }
     }
    },
    "matiere": {
@@ -1043,7 +1115,11 @@
       "conf": "C",
       "photos": [
        "nerine:331c1734"
-      ]
+      ],
+      "ecart": {
+       "type": "confirme",
+       "texte": "Style sur toute sa longueur (nerHeart)."
+      }
      },
      "motif": {
       "type": "rose uni"
@@ -1105,7 +1181,11 @@
       "conf": "C",
       "photos": [
        "nerine:331c1734"
-      ]
+      ],
+      "ecart": {
+       "type": "confirme",
+       "texte": "Gorge verte sous les tépales : SV_NERINE.green [.25,.02,.15] (app/y-nerine.js)."
+      }
      },
      "motif": {
       "type": "vert uni"
@@ -1175,7 +1255,11 @@
      "photos": [
       "nerine:fc0cf2c6"
      ],
-     "conf": "C"
+     "conf": "C",
+     "ecart": {
+      "type": "confirme",
+      "texte": "Bouton : SV_NERINE.bud [.12,.3] (app/y-nerine.js), pointes sorties de la spathe."
+     }
     }
    },
    "matiere": {
@@ -1205,7 +1289,11 @@
       "conf": "C",
       "photos": [
        "nerine:331c1734"
-      ]
+      ],
+      "ecart": {
+       "type": "confirme",
+       "texte": "Bouton vert à pointe rose : SV_NERINE.green, greenTip .8."
+      }
      },
      "motif": {
       "type": "vert pâle à rosé, pointe orangée"
@@ -1264,14 +1352,22 @@
       "nerine:add949aa",
       "nerine:331c1734"
      ],
-     "conf": "C"
+     "conf": "C",
+     "ecart": {
+      "type": "confirme",
+      "texte": "Pédicelle NER_UMB.pl = [.85,1.1] tépale, allongé avec l'ouverture (NER_UMB.pg) : 1 à 1,3 R0 de dessin contre 1,8 R0 de la fiche (plage 1,2 à 2,5), le fléchissement du fait de la calotte serrée ; écart de la tête, voir la planche trous."
+     }
     },
     "longueur_cm": {
      "v": 5,
      "unite": "cm",
      "methode": "reference",
      "ref": "Flore : Nerine bowdenii W.Watson, Amaryllidaceae, Afrique du Sud (Drakensberg) ; hampe 45-60 cm, ombelle de 7-12 fleurs, six tépales linéaires ondulés de 6-7 cm, étamines déclinées",
-     "conf": "C"
+     "conf": "C",
+     "ecart": {
+      "type": "confirme",
+      "texte": "Idem : NER_UMB.pl x R0 de 6,5 cm."
+     }
     }
    },
    "courbure": {
@@ -1312,7 +1408,11 @@
       "conf": "C",
       "photos": [
        "nerine:331c1734"
-      ]
+      ],
+      "ecart": {
+       "type": "confirme",
+       "texte": "Pédicelle vert, rosé vers la fleur, sur toute sa longueur (nerUmbel)."
+      }
      },
      "motif": {
       "type": "vert, rosé vers la fleur"
@@ -1380,7 +1480,11 @@
      "unite": "cm",
      "methode": "reference",
      "ref": "Flore : Nerine bowdenii W.Watson, Amaryllidaceae, Afrique du Sud (Drakensberg) ; hampe 45-60 cm, ombelle de 7-12 fleurs, six tépales linéaires ondulés de 6-7 cm, étamines déclinées",
-     "conf": "A"
+     "conf": "A",
+     "ecart": {
+      "type": "confirme",
+      "texte": "NER_PL.len + NER_PL.neck = 1,27 x D (app/y-nerine.js) : la hampe de bouquet est raccourcie à la hauteur du vase ; 50 cm sur plante entière (full=40 à 50)."
+     }
     },
     "rapport_tete": {
      "v": 0.044,
@@ -1467,7 +1571,11 @@
       "conf": "C",
       "photos": [
        "nerine:331c1734"
-      ]
+      ],
+      "ecart": {
+       "type": "confirme",
+       "texte": "Hampe verte unie sur toute sa longueur, lavée de rose sous la tête (NER_SC.sv.red, redF .6)."
+      }
      },
      "motif": {
       "type": "vert uni, lavé de rose sous la tête"

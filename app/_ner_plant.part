@@ -1,0 +1,46 @@
+
+/* ---------- the plant: the scape and its leaves (Plante v1; photos 1, 2, 3, 13, 14, 15; the fiche's tige and feuille) ----------
+   The scape: a leafless, round, smooth stem, light fresh green (#a4c54c; the fiche's body), washed with rose just under the umbel, its width
+   .045 of the umbel's diameter (the fiche's .044; targets .048), nearly straight, a little arched under the head; it ends in the spathe. The
+   florist's stem is cut across with the sheaths of its leaves still round it: four strap leaves, 1.5 cm wide, 20 to 30 cm long, dull mid green
+   above and paler below, a channel along the midrib, arching out and lying down under their weight (photos 3, 13, 14); the entire margin, the tip
+   tapering; they yellow from the tip when the stem fades, and the scape goes soft, thin and straw-green. No bulb, no root: the foot is the cut. */
+const NER_PL={sw:.045,len:.95,neck:.32,leafW:.115};
+const NER_SC=['#44662a','#8fb148','#c0db78','#e6f4b6'];
+NER_SC.sv={swell:.035,ribs:[-.4,.3],gloss:.3,red:'#c76f90',redF:.6,redA:.42};
+const NER_SCW=['#52502e','#9a9558','#bbb27e','#d8d0a6'];
+function nerScW(sc,wl){const k=.6*svSm((wl-.4)/.45);if(!(k>0))return sc;const r=sc.map((c,i)=>mix(c,NER_SCW[i],k));r.sv=sc.sv;return r}
+/* [azimuth round the scape (rad, x toward z), length (x the whole stem), lean from the scape (rad), droop, fold, twist, sheath rank, flop, flopAt] */
+const NER_BAS=[[3.7,.52,.5,.5,[.5,.5,.35,0],.5,3,.7,.35],[.6,.46,.4,.42,0,.6,2,.6,.4],[2.4,.38,.34,.3,0,.4,1,.5,.5],[5.3,.3,.26,.26,0,.5,0,.4,.6]];
+const NER_LEAF={wp:[[0,.66],[.05,.86],[.12,1],[.5,.97],[.75,.8],[.9,.5],[1,.03]],sheath:.07,gut:.55,keel:.35,wav:.02,wavN:3,hood:.12,nu:5,nv:16,bloom:.5,flopDn:.7,
+  up:'#4d7430',low:'#7fa05e',base:'#d6dcae',fade:{yel:'#c8c455',tan:'#a98f52',dry:'#d6c9a0',w0:.2,dw:.6}};
+/* the sheets' leaves (svtStem calls it behind (-1) then in front (1) of the scape); the sheaths are clipped at the cut, the cut face laid on in front */
+function nerBasal(par,P,L,w,side){const p0=[P[0][0],-P[0][1],0],wl=nerLife(),D=w/(NER_PL.sw*1.188),Lt=L+D*(NER_PL.len+NER_PL.neck),W0=WILT,f=svF,x0=P[0][0],y0=P[0][1],bw=w*2.2,id='nb'+(gid++);
+  E('path',{d:`M-1e5 -1e5H1e5V1e5H-1e5ZM${f(x0-bw)} ${f(y0)}H${f(x0+bw)}V${f(y0+bw*4)}H${f(x0-bw)}Z`,'clip-rule':'evenodd'},E('clipPath',{id},GDEF||defs));
+  const g=G(par,{'clip-path':`url(#${id})`});WILT=null;
+  try{NER_BAS.forEach(([az,k,ln,dr,fo,tw,rk,fl,fa],i)=>{const Out=[Math.cos(az),0,Math.sin(az)];if((Out[2]<0?-1:1)!==side)return;
+      svStrapLeafX(g,p0,[0,1,0],Out,Object.assign({},NER_LEAF,{len:Lt*k,w:NER_PL.leafW*D/(Lt*k),sr:w*(.62+.14*rk),lean:ln,droop:dr,fold:fo||null,flop:fl,flopAt:fa,tw,sd:svSeed('nerine-feuille',i),wl}))});
+    if(side>0){const sc=nerScW(NER_SC,wl);svCutFace(par,[x0,y0],[1,0],w,sc,sc.sv,{bundle:1.25,rings:[.86,.72],bc:'#d2d9ae'})}}
+  finally{WILT=W0}}
+if(typeof GHI!=='undefined'){/* the bouquet's old head info is kept as recInfo gave it (form, size, k, r 44 at 13 cm) */
+  GHI['nerine']=Object.assign(GHI['nerine']||{},{form:'ombelle',size:1.6,k:'head',rk:44/(6.5*UPC),sc:NER_SC,sw:NER_PL.sw,cut:1,basal:nerBasal})}
+/* the plant: the old drawing's share of the bouquet's chance is consumed in a scratch group (umbelPlant, r2a.js), then the scape and the umbel are drawn
+   with a private generator (rnd swapped for this call only): the bouquet's composition does not move */
+function nerPlant(g,t,o){const cw=o.cw||cwNear(CW_NER,o.col)||CW_NER[0],op=Math.max(.05,Math.min(1,o.op??1)),D=(o.cm||13)*UPC,k=G(g);
+  const tmp=G(g);let r0=null;try{r0=umbelPlant(tmp,t,o,CW_NER,'ner')}finally{tmp.remove()}
+  const nk=r0&&r0.neck?r0.neck:[0,0],sd=svSeed('nerine-plante',cw.id,Math.round(nk[0]*8),Math.round(nk[1]*8)),pr=svRng(sd),rn0=rnd;rnd=()=>pr();
+  try{const wl=nerLife(o),fan=svSm((wl-.45)/.4),bend=svSm((wl-.2)/.55),B=frameOf(o,.6,true),up=B.upV?V3.nz([B.upV[0],B.upV[1],B.upV[2]||0]):[0,1,0],face=B[2];
+    let U0=V3s(face,V3.sc(up,V3.dot(face,up)));if(V3l(U0)<1e-3)U0=[0,0,1];
+    const kr=B.reach?Math.min(1,Math.max(.2,B.reach*.4/(D*(NER_PL.len+NER_PL.neck)))):1,w=D*NER_PL.sw*(1-.2*svSm((wl-.4)/.5)),
+      fax=V3.nz(V3.add(face,V3.sc(up,.5-1.4*bend))),sc=nerScW(NER_SC,wl),
+      rules={S:()=>[['F',{l:D*NER_PL.len*kr,w0:w*1.1,w1:w,e:.012}],['F',{l:D*NER_PL.neck*kr,w1:w*.9,aim:fax,k:.5}],['K',{main:1}]]};
+    const res=lsTurtle(lsDerive([['S',{}]],rules,2),{p:[0,0,0],H:up,U:U0,wig:.012,seg:D*.08,T:[0,1,0],e:.01,w:w*1.1});for(const ch of res.chains)ch.c=sc;
+    const main=res.organs.find(q=>q.t==='K'),apex=main.pos,roll=pr()*6.28;
+    lsPlant(k,res,{O:[0,0,0],apex,cols:sc,piece:99,organ:(og,pos)=>{
+      if(og.t==='K'){const ax=V3.nz(V3.add(og.H,V3.sc(fax,.8))),Bf=l41Fr(ax,up,roll),c=V3.add(pos,V3.sc(ax,D*NER_UMB.Lt*NER_UMB.zc)),
+          sd2=svSeed('nerine',cw.id,Math.round(pos[0]*8),Math.round(pos[1]*8),Math.round(op*20));
+        return{parts:[{z:c[2]+ax[2]*D*.2,fn:par=>nerSvg(par,Bf,c,D,cw.id,op,sd2,wl)}]}}
+      return null}});
+    open(k,t,1000,8,.3);return lsNeck(res,[0,0,0],apex)}
+  finally{rnd=rn0}}
+if(typeof GH!=='undefined')GH['nerine']=nerPlant;
