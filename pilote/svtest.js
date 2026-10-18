@@ -19,7 +19,7 @@ window.snapSvg=async function(svg,W,name,bg){const XS=new XMLSerializer(),vb=svg
 
 /* the measures of a sheet, for a headless run (fleur/shot.sh): heads, elements and KB per head, patches per head, ms per head */
 window.svtOut=(svg,n,ms,snapP)=>{const el=svg.querySelectorAll('*').length,pat=[...svg.querySelectorAll('use')].filter(u=>(u.getAttribute('clip-path')||'').includes('#sq')).length,
-    kb=new XMLSerializer().serializeToString(svg).length/1024,o={n,el:Math.round(el/n),kb:Math.round(kb/n),patch:+(pat/n).toFixed(1)};
+    kb=new XMLSerializer().serializeToString(svg).length/1024,o={n,el:Math.round(el/n),kb:Math.round(kb/n),patch:+(pat/n).toFixed(1),ms:typeof SVT!=='undefined'&&SVT.n?Math.round(SVT.ms/SVT.n):undefined};
   /* &bd=1 (chantier grappes): per cell, the elements / KB of each top-level piece of the drawing (stem, leaves, head...), then the shared defs */
   if(new URLSearchParams(location.search).get('bd')){const XS=new XMLSerializer(),m=k=>k.querySelectorAll('*').length+1+'/'+(XS.serializeToString(k).length/1024).toFixed(1)+(new URLSearchParams(location.search).get('bd')==='2'?'/'+(k.getAttribute('fill')||k.tagName):'');
     o.bd=[...svg.children].filter(g=>g.tagName==='g').map(g=>{let k=g;while(k&&k.children.length===1)k=k.firstElementChild;return k?[...k.children].map(m).join(' '):''});const d=svg.querySelector('defs');if(d){o.defs=m(d);

@@ -19,6 +19,9 @@ const SVRX_DEF={bud:[.08,.24],rf:[.2,.28],sp:[.46,.44],dec:[.1,.4],fan:[.5,.32],
   fanL:.32,fanW:.6,wavD:1.2,decB:.25,fanIn:.85,limp:[.5,.1],crk:[.025,.09],twF:1.2,twD:.6,
   ao:[.5,.26,.2,.3],nu:[7,11],nv:20,pmin:3,veinN:[11,6],veinNet:[.2,0],veinFork:[.45,.2],floor:3,floorO:0,floorD:0,floorK:0,floorV:.14,floorC:.95,
   light:Object.assign({},SVB_DEF.light,{ks:.12,gloss:16})};
+/* test only: &nohrt=1 draws the perianth without its heart (fleur/apparence.py measures a tepal without the stamens over it) */
+const SVRX_SOLO=typeof location!=='undefined'&&/[?&]solo=(\d+)/.test(location.search||'')?+RegExp.$1:-1;  /* test only: &solo=k draws tepal k alone */
+const SVRX_NOHRT=typeof location!=='undefined'&&/[?&]nohrt=1/.test(location.search||'');
 function svReflex(par,B,O,D,S,cwx,op,seed,wl){const P=Object.assign({},SVRX_DEF,S),g=P.genes(seed),cw0=P.mat(cwx),R0=D/2*(cw0.sz||1),pieces=[],hi=DET>=1.5,det=hi?1.3:.8;
   if(wl==null)wl=P.life?P.life():0;
   const oo=op+g.op,bud=1-svSm((oo-P.bud[0])/P.bud[1]),r1=svSm((oo-P.rf[0])/P.rf[1]),r2=svSm((oo-P.sp[0])/P.sp[1]),dec=svSm((wl-P.dec[0])/P.dec[1]),fan=svSm((wl-P.fan[0])/P.fan[1]),
@@ -27,6 +30,9 @@ function svReflex(par,B,O,D,S,cwx,op,seed,wl){const P=Object.assign({},SVRX_DEF,
     ramp=st=>st.map(([v,c])=>[v,shv(c,v)]),
     mat=Object.assign({stops:ramp(cw0.st),bstops:ramp(cw0.bst),shade:shv(cw0.shade,.5),lite:cw0.lite,bshade:shv(cw0.bshade,.5),blite:cw0.blite,rim:cw0.rim,cast:cw0.cast},P.light,
       {trans:.1+.12*dec,rw:hi?.003+.003*dec:0,ro:.22});
+  if(cw0.soft!=null)mat.soft=cw0.soft;  /* opt-in: the washes' softening (svDraw m.soft, default .05) */
+  /* opt-in: the fine material (y3-fine.js) and the piece's measured colour grids (fleur/apparence.py grille); a fading flower keeps its hand ramps (they fade) */
+  if(cw0.fine){mat.fine=cw0.fine;if(dec<.05){if(cw0.grid)mat.grid=cw0.grid;if(cw0.bgrid)mat.bgrid=cw0.bgrid;if(cw0.gridV)mat.gridV=cw0.gridV}}
   if(cw0.cross)mat.cross=cw0.cross.map(z=>Object.assign({},z,{st:z.st.map(([x,c,a])=>[x,shv(c,.6),(a??1)*(1-.7*gt)])}));
   if(cw0.transmit&&hi)mat.transmit=cw0.transmit;
   /* the angle of a whorl's table at this stage: bud -> column (r1) -> open (r2); the faded gathers back toward the column (fanIn) */
@@ -53,14 +59,21 @@ function svReflex(par,B,O,D,S,cwx,op,seed,wl){const P=Object.assign({},SVRX_DEF,
         side=u<0?1:0,hO=hW*wpf(vv)*(1+t.asym*Math.sign(u))*(1+ew*Math.sin(t.wk*1.3*Math.PI*vv+t.wph*1.7+side*2.3)*svSm((vv-.1)/.25)),
         hB=P.budW[w]*r*1.0472,hw=bud>0?hO*(1-bud)+Math.max(hO,hB)*bud:hO,rhoB=r/Math.max(.3,Math.abs(d[2])),kk=Math.max(1e-5,bud/rhoB+(1-bud)*cup/Math.max(1e-4,hw)),th=u*hw*kk,
         lift=(1-Math.cos(th))/kk+wv*L*Math.pow(Math.abs(u),1.6)*Math.sin(t.wk*Math.PI*vv+t.wph+side*2.1)*svSm((vv-.08)/.3)*(1-.85*bud)
-          +crk*L*Math.sin(u*Math.PI*(2.2+t.wk*.3)+t.wph*2+vv*9)*svSm(vv/.25);
+          +crk*L*Math.sin(u*Math.PI*(2.2+t.wk*.3)+t.wph*2+vv*9)*svSm(vv/.25)
+          /* opt-in mrx (absent: 0, unchanged): the margins rolled back past the blade (oriental lilies), from the shoulder on */
+          -(P.mrx||0)*L*Math.pow(Math.abs(u),2.4)*svSm((vv-.12)/.3)*(1-bud)*(1-.5*fan);
       return V3.add(V3.add(c,V3.sc(A,Math.sin(th)/kk)),V3.sc(N,lift))};
     const vr=svRng(t.sd),vn=svVeins(vr,(hi?P.veinN[0]:P.veinN[1])+vr.in(0,2),hi?P.veinNet[0]:P.veinNet[1],hi?P.veinFork[0]:P.veinFork[1]),vc=shv(cw0.vein,.5),vo=cw0.vo??.22;
     const fl=cw0.flames,flames=fl&&r1>.3?(()=>{const fr=svRng(t.sd+13),nf=Math.round(fr.in(fl.n[0],fl.n[1])),L2=[];for(let q=0;q<nf;q++){const u0=fr.in(-.75,.75),v0=fl.from*fr.in(.6,1.3),v1=Math.min(.95,fl.to*fr.in(.7,1.1)),pl=[],ph=fr.in(0,6.3);
         for(let s2=0;s2<=9;s2++){const v=v0+(v1-v0)*s2/9;pl.push([Math.max(-.9,Math.min(.9,u0*(.5+.5*svSm(v/.5))+.06*Math.sin(v*9+ph))),v])}L2.push([pl,fl.w*fr.in(.6,1.4)])}return L2})():null;
     const m=Object.assign({},mat,{flames:flames?{c:shv(fl.c,.3),op:fl.op*(hi?1:.8),list:flames}:null,
       veins:!hi&&vo<.3?null:(s2,front)=>front?[[vn.main,.0024,vc,vo*.8+.2*dec],[vn.fine,.0017,vc,vo*.45]]:[[vn.main,.0024,shv(cw0.bvein||cw0.vein,.5),vo*.8+.15*dec]]});
+    /* opt-in (absent: unchanged): the colourway's own layer per piece (spots, papillae), made from the piece's seed and the stage; svDraw's m.over */
+    if(cw0.over){const ov=cw0.over(t.sd,w,{r1,r2,dec,fan,hi,gt});if(ov)m.over=ov}
     if(!hi)for(const q of['stops','bstops'])if(m[q].length>3)m[q]=[m[q][0],m[q][Math.floor(m[q].length/2)],m[q][m[q].length-1]];
+    /* opt-in tepalFn (absent: unchanged): the sort draws the tepal itself (lily: the fine material), a piece {fn, proxy} for the order */
+    if(SVRX_SOLO>=0&&k!==SVRX_SOLO)continue;
+    if(P.tepalFn){const pc=P.tepalFn({B,O,Sf,w,t,m,cw0,R0,L,hi,r1,r2,dec,fan,bud});if(pc){pieces.push(pc);continue}}
     pieces.push(svSheet(B,O,Sf,{nu:Math.round((fan>.2&&hi?P.nu[1]:P.nu[0])*det),nv:Math.round(P.nv*det),mat:m,zb:w?.002:0,
       ao:(u,v,front)=>front?1-P.ao[0]*(1-svSm((v-.02)/P.ao[1])):1-P.ao[2]*(1-svSm(v/P.ao[3]))}))}
   /* the floor: a small disc round the ovary where the claws meet, so that nothing shows between their feet (the base colour, darker) */
@@ -70,9 +83,9 @@ function svReflex(par,B,O,D,S,cwx,op,seed,wl){const P=Object.assign({},SVRX_DEF,
   const kF=bud<.9?1-svSm(fan/.45):0;
   if(P.floor&&kF>.02){const dF=dec*(1-svSm(fan/.45)),rf=kF*Math.min(R0*P.r0*P.floor*(1+P.floorO*r2*(1-dF)+P.floorD*dF),P.floorC*rCl),zk=P.floorK*Math.max(dF,.5*r2),
       rampAt=(S,v)=>{for(let j=1;j<S.length;j++)if(v<=S[j][0])return mix(S[j-1][1],S[j][1],(v-S[j-1][0])/Math.max(1e-6,S[j][0]-S[j-1][0]));return S[S.length-1][1]},
-      bc=rampAt(mat.stops,P.floorV*.7),fm=Object.assign({},mat,{stops:[[0,mix(rampAt(mat.stops,0),'#3a3a10',.2)],[.6,bc],[1,bc]],bstops:[[0,bc],[1,bc]],cross:null,transmit:null,flames:null,veins:null});
+      bc=rampAt(mat.stops,P.floorV*.7),fm=Object.assign({},mat,{stops:[[0,mix(rampAt(mat.stops,0),'#3a3a10',.2)],[.6,bc],[1,bc]],bstops:[[0,bc],[1,bc]],cross:null,transmit:null,flames:null,veins:null,grid:null,bgrid:null});  /* the floor: the claws' own colour, never the tepal's grid */
     pieces.push(svSheet(B,O,(u,v)=>{const a=(u+1)*Math.PI;return[Math.cos(a)*rf*v,Math.sin(a)*rf*v,R0*(.012-.02*v)-zk*rf*v*v]},{nu:10,nv:3,mat:fm,zb:-.003}))}
-  if(P.heart)P.heart({par,B,O,D,R0,g,cw0,op:oo,r1,r2,bud,dec,fan,det,pieces,dn});
+  if(P.heart&&!SVRX_NOHRT)P.heart({par,B,O,D,R0,g,cw0,op:oo,r1,r2,bud,dec,fan,det,pieces,dn});
   return svDraw(par,pieces,{D:R0*2,pmin:P.pmin,shadow:hi})}
 
 /* ---------- svReflexHeart(o): the heart of a reflexed flower, its parts spread out across the axis ----------
@@ -109,7 +122,8 @@ function svReflexHeart(o0){const o=Object.assign({},SVRXH_DEF,o0);
         const mid=[(A[0]+Bq[0])/2+nx*aw*.12,(A[1]+Bq[1])/2+ny*aw*.12];
         E('path',{d:'M'+svJ([svR(A[0]),svR(A[1])])+'Q'+svJ([svR(mid[0]),svR(mid[1])])+' '+svJ([svR(Bq[0]),svR(Bq[1])]),fill:'none',stroke:anth,'stroke-width':svF(aw),'stroke-linecap':'round'},hk);
         if(!LOD&&!lo)E('path',{d:'M'+svJ([svR(A[0]+nx*aw*.22*sg+dx*.15),svR(A[1]+ny*aw*.22*sg+dy*.15)])+'l'+svJ([svR(dx*.68),svR(dy*.68)]),fill:'none',stroke:pol,'stroke-width':svF(aw*.4),'stroke-linecap':'round','stroke-opacity':.6},hk);
-        E('circle',{cx:svF(C[0]),cy:svF(C[1]),r:svF(Math.max(.2,aw*.28)),fill:mix(fil,'#000000',.2)},hk)})}
+        /* opt-in anDot 0 (default 1: unchanged): no joint drawn over the anther (lilies: the filament meets it from behind) */
+        if(o.anDot!==0)E('circle',{cx:svF(C[0]),cy:svF(C[1]),r:svF(Math.max(.2,aw*.28)),fill:mix(fil,'#000000',.2)},hk)})}
     /* the pistil: the ovary, the style bent square to one side, three short stigmas */
     if(ost>.05){const sa=g.sty??0,sr=[Math.cos(sa),Math.sin(sa),0],sL=R0*o.styL*sz*(.5+.5*ost),P3=[[0,0,R0*o.ovH]];let p=P3[0];
       for(let j=1;j<=8;j++){const v=j/8,a=v<.18?.1:(o.styA*ost+.1*(1-ost))-.12*(v-.18);let d=[sr[0]*Math.sin(a),sr[1]*Math.sin(a),Math.cos(a)];if(fan>0)d=V3.nz(V3.add(d,V3.sc(dn,.6*fan*v)));
@@ -118,4 +132,8 @@ function svReflexHeart(o0){const o=Object.assign({},SVRXH_DEF,o0);
         E('path',{d:svSpl(hull2(pts.map(q=>[q[0],q[1]]))),fill:ovC,stroke:mix(ovC,'#2a3010',.4),'stroke-width':svF(Math.max(.15,R0*.006)),'stroke-opacity':.5},k2)};
       const end=P3[P3.length-1],tg=V3.nz(V3s(end,P3[P3.length-2]));
       strap(P3,R0*o.styW*1.3,R0*o.styW,styC,hk=>{if(!lo)ov(hk);let d='';for(let q=0;q<3;q++){const bq=V3.nz(V3.add(tg,V3.sc([Math.cos(q*2.09+sa),Math.sin(q*2.09+sa),Math.cos(q*2.09)*.6],.8))),a=PJ(B,O,end),b=PJ(B,O,V3.add(end,V3.sc(bq,R0*o.sgL*sz)));
-          d+='M'+svJ([svR(a[0]),svR(a[1])])+'L'+svJ([svR(b[0]),svR(b[1])])}E('path',{d,fill:'none',stroke:sgC,'stroke-width':svF(Math.max(.3,R0*o.styW*.9)),'stroke-linecap':'round'},hk)})}}}
+          d+='M'+svJ([svR(a[0]),svR(a[1])])+'L'+svJ([svR(b[0]),svR(b[1])])}E('path',{d,fill:'none',stroke:sgC,'stroke-width':svF(Math.max(.3,R0*o.styW*.9)),'stroke-linecap':'round'},hk);
+          /* opt-in sgK (0: none): a swollen three-lobed stigma head (lilies), three lobes round the style's end, lit on the light's side */
+          if(o.sgK>0){const rk=R0*o.sgK*sz*(.6+.4*ost),cs=[];for(let q=0;q<3;q++){const aq=q*2.0944+sa,bq=V3.nz(V3.add(tg,V3.sc([Math.cos(aq),Math.sin(aq),0],.9)));cs.push(PJ(B,O,V3.add(end,V3.sc(bq,rk*.75))))}
+            cs.sort((p,q)=>q[2]-p[2]);for(const c of cs){E('circle',{cx:svF(c[0]),cy:svF(c[1]),r:svF(Math.max(.4,rk)),fill:sgC,stroke:mix(sgC,'#2a1810',.45),'stroke-width':svF(Math.max(.12,rk*.12)),'stroke-opacity':.6},hk);
+              if(!LOD&&!lo)E('circle',{cx:svF(c[0]+lt[0]*rk*.35),cy:svF(c[1]+lt[1]*rk*.35),r:svF(Math.max(.2,rk*.42)),fill:mix(sgC,'#ffffff',.4),'fill-opacity':.55},hk)}}})}}}
