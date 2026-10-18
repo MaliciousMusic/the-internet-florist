@@ -1763,8 +1763,8 @@ def write_pairs(ctx, plan):
               '  rm -f "%s" "%s"' % (o, t),
               '  sh fleur/shot_p.sh %s "%s" > "%s/comparaison/%s.log" 2>&1' % (p['name'], p['query'], ctx.rel, p['k']),
               '  if grep -q "PAS D" "%s/comparaison/%s.log" || [ ! -f %s ]; then echo "%s: PAS D\'IMAGE"; return 1; fi' % (ctx.rel, p['k'], p['render'], p['k']),
-              '  python fleur/img.py pair %s "$(box %s)" %s "%s" --kind %s --op %s --h %d --w %d --out "%s" > "%s" 2>&1' % (
-                  p['thumb'], p['thumb'], p['render'], p['cell'] or '$(box %s)' % p['render'], p['kind'], p['op'], PAIR_H, PAIR_W, o, t),
+              '  python fleur/img.py pair %s "$(box %s)" %s "%s" --kind %s --op %s --h %d --w %d --brief %s/brief.md --out "%s" > "%s" 2>&1' % (
+                  p['thumb'], p['thumb'], p['render'], p['cell'] or '$(box %s)' % p['render'], p['kind'], p['op'], PAIR_H, PAIR_W, ctx.rel, o, t),
               '  echo "%s: $(tail -3 "%s" | tr \'\\n\' \' \')"' % (p['k'], t),
               '}']
     S.append('for k in ${*:-%s}; do "p_$(echo "$k" | tr - _)" || echo "$k: ERREUR"; done' % ' '.join(p['k'] for p in plan))
@@ -2644,6 +2644,7 @@ def cmd_selftest(a):
         rs_ = open('%s/comparaison/refaire.sh' % ctx3.rc).read()
         t('comparaison: refaire.sh renders through shot_p.sh and pairs with img.py, never 8765', 'fleur/shot_p.sh' in rs_ and 'img.py pair' in rs_ and '8765' not in rs_ and 'D=800' in rs_)
         t('comparaison: refaire.sh asks big pairs (img.py pair --h 1100 --w 2400)', rs_.count('--h 1100 --w 2400') == len(plan_), str(rs_.count('--h 1100 --w 2400')))
+        t('comparaison: refaire.sh gives img.py pair the brief of the sort (its own ranges)', rs_.count('--brief %s/brief.md' % rel3) == len(plan_))
         fake_pairs(ctx3, plan_)
         okc, whyc = check_comparaison(ctx3, plan_, reads=False)
         t('comparaison: the check wants the full table', not okc and 'no line in the table' in whyc, whyc)
