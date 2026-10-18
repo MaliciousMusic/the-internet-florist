@@ -108,6 +108,27 @@ if(new URLSearchParams(location.search).get('dbgp')){const PC={},oDraw=svDraw,oO
   svOrder=function(items,eps){const out=oOrd(items,eps);for(const[A,B2,fa,fb]of out.fr){const a=A.oi,b=B2.oi;const[e,l,c]=a<b?[A,B2,fa]:[B2,A,fb];if(c<3)continue;
       const sa=(A.sh||A.px||{}),sb=(B2.sh||B2.px||{}),nm=q=>(q._i!=null&&window._dbT&&window._dbT[q._i])||(q._i==null?'?':q._i<3?'o'+q._i:q._i<6?'i'+q._i:'h'+q._i),k=[nm(sa),nm(sb)].sort().join('-');PC[k]=(PC[k]||0)+1}return out};
   window.svtOut0=window.svtOut;window.svtOut=(svg,n,ms,sp)=>{const pre=document.createElement('pre');pre.id='out';const L=Object.entries(PC).sort((a,b)=>b[1]-a[1]).map(([k,v])=>k+':'+v);pre.textContent=L.join(' ');document.body.append(pre)}}
+/* wireframe of the sheets: ?grid=1&...&axes=1 → over every svSheet piece a head draws through svDraw (its sheets, and the proxies of its drawn
+   parts, dashed grey) three thin lines in the piece's own frame: the midrib (u=0, v from 0 to 1, a dot at the base v=0), the +u direction at v=.5
+   (from u=0 to u=+.5 along the sheet, a dot at its +u end) and the normal of the inner face at the centre (u=0, v=.5; svSheet's cross product
+   dS/dv x dS/du, a quarter of the midrib long, dashed). One colour per whorl: the piece's tag w<n>, else its depth bias zb, else its index.
+   Opt-in: without axes=1 nothing is wrapped and nothing changes. svDraw (app/y1.js) is wrapped here, never edited. */
+if(new URLSearchParams(location.search).get('grid')&&new URLSearchParams(location.search).get('axes')==='1'){const aDraw=svDraw,
+    PAL=['#e6194b','#1f9e3a','#2b5bd7','#f58231','#911eb4','#0fb5c9','#e0218a','#8a5a14'],NSA='http://www.w3.org/2000/svg',
+    el=(t,a,p)=>{const e=document.createElementNS(NSA,t);for(const k in a)e.setAttribute(k,a[k]);p.appendChild(e);return e},f=x=>Math.round(x*10)/10;
+  window.SVT_AXES=0;
+  svDraw=function(par,pieces,o){const k=aDraw(par,pieces,o),D=(o&&o.D)||100,sw=Math.max(.5,D*.0035),grp=new Map(),g=el('g',{'data-axes':'1',fill:'none','stroke-linecap':'round'},k);
+    pieces.forEach((p,i)=>{const sh=p&&p.fn?p.proxy:p;if(!sh||typeof sh.S!=='function'||!sh.B||!sh.O)return;
+      const m=/^w(\d+)/.exec(String(p.tag||sh.tag||'')),key=m?'w'+m[1]:sh.zb!=null?'z'+Math.round(sh.zb*1e4):'i'+i;if(!grp.has(key))grp.set(key,PAL[grp.size%PAL.length]);
+      const col=p.fn?'#7a7a7a':grp.get(key),S=(u,v)=>sh.S(Math.max(-1,Math.min(1,u)),Math.max(0,Math.min(1,v))),at=q=>{const s=PJ(sh.B,sh.O,q);return[s[0],s[1]]},
+        line=(P,w,dash)=>{const a={d:'M'+P.map(q=>f(q[0])+','+f(q[1])).join('L'),stroke:col,'stroke-width':f(w*10)/10};if(dash)a['stroke-dasharray']=f(w*3)+' '+f(w*2);el('path',a,g)},
+        dot=(q,r)=>el('circle',{cx:f(q[0]),cy:f(q[1]),r:f(r*10)/10,fill:col,stroke:'none'},g);
+      const mid=[];let len=0;for(let j=0;j<=16;j++){const q=S(0,j/16);if(j){const r=S(0,(j-1)/16);len+=Math.hypot(q[0]-r[0],q[1]-r[1],q[2]-r[2])}mid.push(q)}
+      line(mid.map(at),sw,p.fn);dot(at(mid[0]),sw*1.6);
+      const pu=[];for(let j=0;j<=8;j++)pu.push(at(S(j/16,.5)));line(pu,sw*1.4,false);dot(pu[pu.length-1],sw*1.4);
+      const e=1e-3,c0=S(0,.5),dv=V3s(S(0,.5+e),S(0,.5-e)),du=V3s(S(e,.5),S(-e,.5)),n=V3.nz(V3.cr(dv,du)),L=len*.25;
+      line([at(c0),at([c0[0]+n[0]*L,c0[1]+n[1]*L,c0[2]+n[2]*L])],sw,true);window.SVT_AXES++});
+    return k}}
 /* fit mode (fleur/fit.py): many candidate settings of one kind drawn in one headless run, one cell per (candidate, cell of the job).
    ?fit=1&job=<url of a json>&sp=fit&seeds=1&views=0&snap=  (the empty snap and sp=fit keep the default anemone sheet from drawing and saving;
    shot.sh appends the real snap name). The job: {sid, spec: the global name of the kind's sheet (SVA_P, SVT_SIMPLE...), cw: id or index in CWS[sid],
