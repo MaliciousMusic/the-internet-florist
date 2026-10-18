@@ -1782,13 +1782,78 @@ def budget(ctx, tag):
                                                                                          ', above 1.2 x' if over else ''), m
 
 
+# P6: the colour of every colourway, rendered open and face on, against its measured body colour (coloris.json corps), with fleur/cwmed.py
+CW_D, CW_CHUNK = 200, 12           # head size of the colour sheet; colourways per sheet (one column, one row each)
+CW_DL, CW_DH, CW_DC = 7, 10, 6     # |dL| <= 7 and |dh| <= 10 deg (AUDIT-V4 P6); low chroma (whites, creams, greys): |dL| <= 7 and |dC| <= 6 (BP 4.4)
+CW_LOWC = 15                       # target chroma under which the hue means nothing (BONNES-PRATIQUES 4.4: compare lightness and chroma)
+CWMED_RE = re.compile(r'^(\S+)\s+L(-?\d+) C(\d+) h(\d+) \| cible #([0-9a-fA-F]{6}) L(-?\d+) C(\d+) h(\d+) dL=([+-]?\d+) dh=([+-]?\d+)', re.M)
+
+
+def cw_verdict(text):
+    """cwmed.py's lines -> [{id, L, C, h, cible, L2, C2, h2, dL, dh, dC, rule, ok}]: low chroma targets by lightness and chroma, the others by
+    lightness and hue"""
+    out = []
+    for m in CWMED_RE.finditer(text or ''):
+        L, C, h, L2, C2, h2, dL, dh = (int(m.group(i)) for i in (2, 3, 4, 6, 7, 8, 9, 10))
+        low = C2 < CW_LOWC
+        ok = abs(dL) <= CW_DL and (abs(C - C2) <= CW_DC if low else abs(dh) <= CW_DH)
+        out.append({'id': m.group(1), 'L': L, 'C': C, 'h': h, 'cible': '#' + m.group(5).lower(), 'L2': L2, 'C2': C2, 'h2': h2, 'dL': dL, 'dh': dh, 'dC': C - C2,
+                    'rule': 'L+C' if low else 'L+h', 'ok': ok})
+    return out
+
+
+def colour_check(ctx, tag='couleur'):
+    """every colourway of coloris.json rendered open (.85) face on at D 200, one column, CW_CHUNK rows a sheet; cwmed.py against its corps.
+    (ok, message, rows); the rows go to refcache/<sid>/couleur.json and couleur.md"""
+    cws = [e for e in jload(ctx.rc + '/coloris.json', []) or [] if re.match(r'^#[0-9a-fA-F]{6}$', str(e.get('corps') or ''))]
+    if not cws and not ctx.dry:
+        return False, 'no measured colourway in coloris.json (corps)', []
+    rows, miss = [], []
+    for k in range(0, max(1, len(cws)), CW_CHUNK):
+        part = cws[k:k + CW_CHUNK]
+        ids = [e['id'] for e in part]
+        name = '%s_%s_%d' % (tag, slug(ctx.sid)[:24], k // CW_CHUNK)
+        q = 'grid=1&sid=%s&cws=%s&st=.85:0&view=0&D=%d&det=1&seed=%d' % (ctx.sid, ','.join(ids), CW_D, SEED)
+        good, m, text = shot(ctx, name, q, '%s-%d' % (tag, k // CW_CHUNK))
+        targets = ','.join('%s=%s' % (e['id'], e['corps'].lstrip('#')) for e in part)
+        c, t = run_cmd(ctx, [sys.executable, 'fleur/cwmed.py', 'fleur/out/%s.png' % name, str(CW_D), ','.join(ids), '0', targets], '%s-cwmed-%d' % (tag, k // CW_CHUNK),
+                       timeout=300, quiet=True)
+        if ctx.dry:
+            continue
+        if not good:
+            return False, 'colour sheet not rendered (%s)' % (text.strip().splitlines() or [''])[-1][:160], rows
+        got = cw_verdict(t)
+        miss += [i for i in ids if i not in {r['id'] for r in got}]
+        rows += got
+    if ctx.dry:
+        return True, 'dry', []
+    bad = [r for r in rows if not r['ok']]
+    jsave(ctx.rc + '/couleur.json', rows)
+    L = ['# Couleur rendue contre la mesure (%s)' % ctx.sid, '', 'Tête ouverte (.85) de face, D %d, médiane par `fleur/cwmed.py` contre `corps` de coloris.json. '
+         'Règle : |dL| ≤ %d et |dh| ≤ %d° ; chroma de la cible sous %d (blancs, crèmes, gris) : |dL| ≤ %d et |dC| ≤ %d (BONNES-PRATIQUES 4.4).' % (CW_D, CW_DL, CW_DH, CW_LOWC, CW_DL, CW_DC), '',
+         '| coloris | rendu L C h | cible | dL | dh | dC | règle | verdict |', '|---|---|---|---|---|---|---|---|']
+    L += ['| %s | %d %d %d | %s | %+d | %+d | %+d | %s | %s |' % (r['id'], r['L'], r['C'], r['h'], r['cible'], r['dL'], r['dh'], r['dC'], r['rule'], 'ok' if r['ok'] else 'À REPRENDRE')
+          for r in rows]
+    open(ctx.rc + '/couleur.md', 'w', encoding='utf-8', newline='\n').write('\n'.join(L) + '\n')
+    why = ['%s (dL %+d, %s)' % (r['id'], r['dL'], 'dC %+d' % r['dC'] if r['rule'] == 'L+C' else 'dh %+d°' % r['dh']) for r in bad]
+    if miss:
+        why.append('not measured on the sheet: ' + ', '.join(miss))
+    msg = ('colour of %d colourways within dL %d / dh %d° (dC %d for whites)' % (len(rows), CW_DL, CW_DH, CW_DC)) if not why else \
+        'colourways off their measure (%s/couleur.md): %s' % (ctx.rel, ', '.join(why))
+    return (not why), msg, rows
+
+
 def step_finition(ctx):
     def chk():
         ok, msg, m = budget(ctx, 'fin_' + ctx.sid)
-        return ok, msg
+        if not ok:
+            return ok, msg
+        return colour_check(ctx)[:2]  # P6: a colourway off its measure is sent back to the finition, by name
     res, fin = model_loop(ctx, 'finition', 'finition', 'sonnet', READ + ['Write', 'Edit'] + SAFE_BASH, 2, chk)
     ok, msg, m = budget(ctx, 'fin_' + ctx.sid) if not ctx.dry else (True, 'dry', {})
-    return {'status': 'done' if (res == 'done' and ok) else 'failed', 'msg': 'finition %s; %s' % (res, msg), 'checks': m}
+    c_ok, c_msg, rows = colour_check(ctx) if not ctx.dry else (True, 'dry', [])
+    return {'status': 'done' if (res == 'done' and ok and c_ok) else 'failed', 'msg': 'finition %s; %s; %s' % (res, msg, c_msg), 'checks': dict(m or {}, couleur=len(rows),
+            couleur_ko=[r['id'] for r in rows if not r['ok']])}
 
 
 # ---------------------------------------------------------------------------------------------------------------- kit sorts
@@ -3348,6 +3413,29 @@ def cmd_selftest(a):
         except ImportError as e:
             t('jgap: a plant sheet without a detached piece passes, one with a piece apart fails', False, str(e))
         t('prompts: plante redoes the leaf and stem pairs and knows the jgap check', all(x in open('%s/pipe/prompts/plante.md' % HERE, encoding='utf-8').read() for x in ('refaire.sh feuille tige', 'jgap')))
+        # ---- P6: the colour of each colourway against its measure, in finition (cwmed.py on a sheet: a fake shot_p.sh copies a made-up sheet)
+        try:
+            from PIL import Image, ImageDraw
+            G_ = [('rouge', '#c83c50'), ('bleu', '#3a4fc0'), ('blanc', '#fbfaf6')]
+            im = Image.new('RGB', (290, 230 * len(G_) + 40), (233, 228, 220))
+            d_ = ImageDraw.Draw(im)
+            for r, (cid, hx) in enumerate(G_):
+                d_.ellipse([75, 20 + 230 * r + 46, 235, 20 + 230 * r + 206], fill=hex_rgb(hx))
+            im.save(tmp + '/cw_sheet.png')
+            shutil.copyfile(HERE + '/cwmed.py', tmp + '/fleur/cwmed.py')
+            open(tmp + '/fleur/shot_p.sh', 'w', newline='\n').write('#!/bin/sh\nmkdir -p fleur/out\ncp "%s" "fleur/out/$1.png"\necho "fleur/out/$1.png"\necho \'{"n":3,"el":120,"kb":12}\'\n' % (tmp + '/cw_sheet.png'))
+            ctxC = Ctx('fx-c', tmp, argparse.Namespace(dry=False, cap=40, claude=fake), {'sid': 'fx-c', 'taxon': 'Test test', 'steps': {}, 'skus': []})
+            jsave(ctxC.rc + '/coloris.json', [{'id': 'rouge', 'corps': '#c83c50'}, {'id': 'bleu', 'corps': '#3a4fc0'}, {'id': 'blanc', 'corps': '#f7f4ec'}])
+            okc, msgc, rowsc = colour_check(ctxC)
+            t('finition: colourways rendered at their measure pass (a white by lightness and chroma, not hue)', okc and len(rowsc) == 3
+              and [r['rule'] for r in rowsc] == ['L+h', 'L+h', 'L+C'], msgc + str(rowsc))
+            jsave(ctxC.rc + '/coloris.json', [{'id': 'rouge', 'corps': '#c83c50'}, {'id': 'bleu', 'corps': '#8a3fc0'}, {'id': 'blanc', 'corps': '#d8d2c0'}])
+            okc, msgc, rowsc = colour_check(ctxC)
+            t('finition: a colourway off its hue and a white too dark are refused, by name, and written in couleur.md', not okc and 'bleu (dL' in msgc and 'blanc (dL' in msgc
+              and 'rouge' not in msgc.split(':', 1)[-1] and 'À REPRENDRE' in open(ctxC.rc + '/couleur.md', encoding='utf-8').read(), msgc)
+        except ImportError as e:
+            t('finition: colourways rendered at their measure pass (a white by lightness and chroma, not hue)', False, str(e))
+        t('prompts: finition knows the colour rule', all(x in open('%s/pipe/prompts/finition.md' % HERE, encoding='utf-8').read() for x in ('cwmed.py', 'dL', 'dC')))
         t('prompts: forme names its proofs (refaire.sh face, rtest.sh, the journal lines)', all(x in P_['forme'] or x in open('%s/pipe/prompts/forme.md' % HERE, encoding='utf-8').read()
                                                                                       for x in ('refaire.sh face', 'rtest.sh', 'paire face | photo W/H', '<<rtest>>')))
         say('selftest: %d ok, %d failed' % (len(ok), len(bad)))
