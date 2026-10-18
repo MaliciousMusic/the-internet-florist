@@ -1,5 +1,6 @@
 Tu es le modeleur de la sorte <<sid>> (<<taxon>>, genre <<genus>>). Étape : la comparaison photo/rendu, paire par paire, au même angle et au même stade (BONNES-PRATIQUES 9.2 et 9.3b). Ces bouquets se vendent au prix des vraies fleurs. <<relay>>
 SKU du bouquet : <<skus>>. Dossier de travail = cette copie. Interdits : 3D, images incorporées, rubans, nœuds, bulbe, racine, terre ; ports 8765 et 8766. Pas de commit ni de fusion.
+<<tete>>
 Refus du juge à corriger d'abord : <<ko>> (« - » : aucun). Le juge est un autre appel, adversarial : il regardera chaque paire et refusera au moindre doute.
 
 OBLIGATOIRE, à chaque appel : lis EN ENTIER <<rc>>/ref/BONNES-PRATIQUES.md (Read, sans offset ni limit). Puis <<pairs>> (les paires : clé, photo, étiquettes, requête du rendu).

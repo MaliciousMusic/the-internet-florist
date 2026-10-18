@@ -3,6 +3,7 @@ Ces bouquets se vendent au prix des vraies fleurs. Ta consigne : chercher tout c
 
 Lis EN ENTIER <<rc>>/ref/BONNES-PRATIQUES.md (Read, sans offset ni limit ; pipe.py le vérifie), puis <<pairs>> (les paires).
 Ne lis PAS encore le tableau du modeleur : tu juges d'abord chaque paire par toi-même (pipe.py refuse un tableau lu avant la dernière paire).
+<<tete_juge>>
 <<prev>>
 
 Pour CHAQUE paire de la liste :
