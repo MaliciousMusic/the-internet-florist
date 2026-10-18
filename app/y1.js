@@ -112,13 +112,17 @@ function svFaceFill(sh,st,Dm){const pb=svAt(sh,0,0),pt=svAt(sh,0,1),dx=pt[0]-pb[
 /* the light of every vertex of a sheet, relative to its face lit straight on */
 function svShade(sh){if(sh.K)return sh.K;const m=sh.mat,r=svLight([0,0,1],m,1),K=new Float32Array(sh.F.length);
   for(let j=0;j<=sh.nv;j++)for(let i=0;i<=sh.nu;i++){const q=j*sh.W+i,n=sh.N[q],nf=sh.F[q]>=0?n:V3.sc(n,-1),ao=sh.ao?sh.ao(-1+2*i/sh.nu,j/sh.nv,sh.F[q]>=0):1;K[q]=svLight(nf,m,ao)/r}return sh.K=K}
-/* ---------- opt-in layers of a material (2026-10-18, audit v4 A5): read only when the material has the key (m.cross); without it svDraw writes the
+/* ---------- opt-in layers of a material (2026-10-18, audit v4 A5): read only when the material has the key (m.cross, m.transmit); without it svDraw writes the
    same bytes. Drawn from the piece's own sheet, inside its clip: nothing outside the piece, no outline of another piece, no chance drawn ---------- */
-/* nested level sets of a coverage field G (0..1 at the grid's vertices) on one face of a sheet (FF > 0): n paths, each a little more opaque inside the
-   last, so that together they lay G rounded to n steps; fill: a colour or a paint server (the paths' fill-opacity multiplies it) */
-function svLevels(sh,G,FF,n,fill,par,tol){let gm=0;for(let q=0;q<G.length;q++)if(FF[q]>0&&G[q]>gm)gm=G[q];if(gm<.004)return;gm=Math.min(.96,gm);let c0=0;
-  for(let i=1;i<=n;i++){const t=gm*(i-.5)/n,c1=gm*i/n,a=1-(1-c1)/(1-c0);c0=c1;const V=Array.from(G,(x,q)=>Math.min(x-t,FF[q]));if(!V.some(x=>x>0))continue;
-    const d=svLoopsD(sh,svIso(sh.nu,sh.nv,V,0),tol);if(d)E('path',{d,fill,'fill-opacity':svF(a),'fill-rule':'evenodd'},par)}}
+/* nested level sets of a coverage field C (0..1 at the grid's vertices) on one face of a sheet (FF > 0): n paths, each a little more opaque inside the
+   last, so that together they lay C rounded to n steps (blur: softened by a filter). They are the luminance of a mask (white at their opacity, never
+   tinted by WILT or TINT, which only move #rrggbb) over the piece's own outline (it.id) painted with fill (a colour or a paint server): the layer can
+   never pass the piece, not even by a spline's overshoot at a pointed tip, and the head's getBBox (c5 places a bouquet's heads by it) stays the piece's */
+function svLevels(it,sh,C,FF,n,fill,par,tol,blur){let gm=0;for(let q=0;q<C.length;q++)if(FF[q]>0&&C[q]>gm)gm=C[q];if(gm<.004)return;gm=Math.min(.96,gm);let c0=0;const L=[];
+  for(let i=1;i<=n;i++){const t=gm*(i-.5)/n,c1=gm*i/n,a=1-(1-c1)/(1-c0);c0=c1;const V=Array.from(C,(x,q)=>Math.min(x-t,FF[q]));if(!V.some(x=>x>0))continue;
+    const d=svLoopsD(sh,svIso(sh.nu,sh.nv,V,0),tol);if(d)L.push([d,a])}
+  if(!L.length)return;const id='sm'+(gid++),mk=E('mask',{id},GDEF||defs),mg=blur?G(mk,{filter:blur}):mk;for(const[d,a]of L)E('path',{d,fill:'white','fill-opacity':svF(a),'fill-rule':'evenodd'},mg);
+  E('use',{href:'#'+it.id,fill,mask:`url(#${id})`},par)}
 /* m.cross: colour zones ACROSS a piece, not only along it (porteur, cymbidium: « des aplats avec zones », BONNES-PRATIQUES 4.8d): a darker midline,
    paler margins, a hue that changes from the middle to the edge. One zone or a list of zones {st, sg, tip, v, bk, k, n, soft} (or the stops alone):
    st [[x, colour, alpha]...] on x = |u| (0 the midline .. 1 the margin; sg:1 x = u, -1 .. 1: one half unlike the other); tip: from v = tip on, the tip
@@ -129,12 +133,36 @@ function svLevels(sh,G,FF,n,fill,par,tol){let gm=0;for(let q=0;q<G.length;q++)if
 const svCrossL=c=>Array.isArray(c)?typeof c[0][0]==='number'?[{st:c}]:c:[c];
 function svCross(cg,bg,it,sh,front,Dm,Ls,tol){const hi=DET>=1.5,FF=sh.F.map(x=>it.s*x*3),tw=Math.max(tol*1.5,Dm*.005);
   for(const z of svCrossL(sh.mat.cross)){const f=(front?1:z.bk||0)*(z.k??1);if(f<=0)continue;const st=(z.st||z).map(([x,c,a])=>[x,c,a??1]).sort((a,b)=>a[0]-b[0]),ns=st.length,vw=z.v,
-      par=G(cg,z.soft===0?{}:{filter:svBlur(Ls*(z.soft??.025))}),X=[],W=[];cg.insertBefore(par,bg);
+      par=G(cg),bl=z.soft===0?null:svBlur(Ls*(z.soft??.025)),X=[],W=[];cg.insertBefore(par,bg);
     for(let j=0;j<=sh.nv;j++)for(let i=0;i<=sh.nu;i++){const u=-1+2*i/sh.nu,v=j/sh.nv;let x=z.sg?u:Math.abs(u);if(z.tip!=null&&!z.sg&&v>z.tip)x=Math.max(x,(v-z.tip)/(1-z.tip));X.push(x);
       W.push(vw?svSm((v-vw[0])/((vw[1]-vw[0])||1e-6))*(vw.length>3?1-svSm((v-vw[2])/((vw[3]-vw[2])||1e-6)):1):1)}
     for(const c of new Set(st.map(s=>s[1]))){const Gc=X.map((x,q)=>{let a=0;if(x<=st[0][0])a=st[0][1]===c?st[0][2]:0;else if(x>=st[ns-1][0])a=st[ns-1][1]===c?st[ns-1][2]:0;
         else for(let i=0;i+1<ns;i++)if(x<=st[i+1][0]){const t=(x-st[i][0])/((st[i+1][0]-st[i][0])||1e-9);a=(st[i][1]===c?(1-t)*st[i][2]:0)+(st[i+1][1]===c?t*st[i+1][2]:0);break}
-        return a*W[q]*f});svLevels(sh,Gc,FF,(z.n||[6,3])[hi?0:1],c,par,tw)}}}
+        return a*W[q]*f});svLevels(it,sh,Gc,FF,(z.n||[6,3])[hi?0:1],c,par,tw,bl)}}}
+/* m.transmit: the light through the thin tissue (porteur, cymbidium: « les pétales ont de légères transparences », 4.8e): the margins and the thin zones
+   brighter, as lit from behind, by the light and by its colour; the piece stays opaque. {tc, a, thin, dk, wr, n, w, ec, eo, ev, ep, en, bk, k}: tc the colour of
+   the light through the tissue (warmer and more saturated than lite; lite by default); bk on the back face (× the alphas, 1); k an overall factor.
+   (a) a wash of tc where the visible face turns from the light (its other face is lit: the light comes through), × a thinness map thin [t0, ku, kv]
+   (1 - (1-t0)·(1-|u|)^ku·(1-v)^kv: t0 at the foot of the midrib, 1 at the margins and the tip; [.3,1.4,1.2]) at alpha a (none without it), whole once
+   the face turns dk from the light (.5); wr: how far it reaches into the lit side (0: only where the face turns from the light; up to .4: the soft
+   glow of a thin white even where it is half lit, its shade warm and never grey, 3.7); n [zoom, normal] steps ([4,2]); softened as the washes, over them.
+   (b) the edge light (w): a band of constant width w × D inside the margins and over the tip (the distance to the outline measured along the sheet in
+   3D: never along the claw nor a fold), luminous at the edge and fading inward as (1-d/w)^ep (1.4) in en steps (4), from v = ev[0] to ev[1] on ([.06,.26]: the thick
+   foot without it), in ec (tc by default) at alpha eo[0] on the side toward the light down to eo[1] on the far side (a gradient along the light's
+   direction on the screen, [.55,.2]): the hortensia's band of light (y3-hortensia.js) and the orchids' band edge + glow (above), for any svDraw
+   piece; crisp, over the washes, under the veins and the rim */
+function svTrans(cg,it,sh,front,Dm,Ls,tol){const t=sh.mat.transmit,hi=DET>=1.5,f=(front?1:t.bk??1)*(t.k??1);if(f<=0)return;const FF=sh.F.map(x=>it.s*x*3),nu=sh.nu,nv=sh.nv,W=sh.W,tc=t.tc||sh.mat.lite;
+  if(t.a){const th=t.thin||[.3,1.4,1.2],wr=t.wr||0,dk=(t.dk||.5)+wr,Ga=new Array(sh.P.length);for(let j=0;j<=nv;j++)for(let i=0;i<=nu;i++){const q=j*W+i,n=sh.F[q]>=0?sh.N[q]:V3.sc(sh.N[q],-1),
+        tn=1-(1-th[0])*Math.pow(1-Math.abs(-1+2*i/nu),th[1])*Math.pow(1-j/nv,th[2]);Ga[q]=t.a*f*tn*Math.min(1,Math.max(0,wr-V3.dot(n,LIGHT))/dk)}
+    svLevels(it,sh,Ga,FF,(t.n||[4,2])[hi?0:1],tc,cg,Math.max(tol*2.5,Dm*.008),svBlur(Ls*(sh.mat.soft??.05)))}
+  if(t.w){/* the distance of every vertex to the margins (along its row) and to the tip (along its column), on the sheet in 3D; kept on the sheet for its other face */
+    if(!sh.E){const P3=[],d3=(a,b)=>Math.hypot(a[0]-b[0],a[1]-b[1],a[2]-b[2]);for(let j=0;j<=nv;j++)for(let i=0;i<=nu;i++)P3.push(sh.S(-1+2*i/nu,j/nv));const E2=new Float32Array(P3.length);
+      for(let j=0;j<=nv;j++){const a=[0];for(let i=1;i<=nu;i++)a.push(a[i-1]+d3(P3[j*W+i],P3[j*W+i-1]));for(let i=0;i<=nu;i++)E2[j*W+i]=Math.min(a[i],a[nu]-a[i])}
+      for(let i=0;i<=nu;i++){let b=0;for(let j=nv;j>=0;j--){if(j<nv)b+=d3(P3[j*W+i],P3[(j+1)*W+i]);if(b<E2[j*W+i])E2[j*W+i]=b}}sh.E=E2}
+    const bw=Dm*t.w,eo=t.eo||[.55,.2],ev=t.ev||[.06,.26],Ge=Array.from(sh.E,(e,q)=>{const s=e/bw;return s>=1?0:eo[0]*f*Math.pow(1-s,t.ep??1.4)*svSm((Math.floor(q/W)/nv-ev[0])/((ev[1]-ev[0])||1e-6))}),
+      b=it.bb,cx=(b[0]+b[2])/2,cy=(b[1]+b[3])/2,r=Math.hypot(b[2]-b[0],b[3]-b[1])/2,ll=Math.hypot(LIGHT[0],LIGHT[1])||1,lx=LIGHT[0]/ll,ly=-LIGHT[1]/ll,id='sg'+(gid++),
+      gr=E('linearGradient',{id,gradientUnits:'userSpaceOnUse',x1:svF(cx-lx*r),y1:svF(cy-ly*r),x2:svF(cx+lx*r),y2:svF(cy+ly*r)},GDEF||defs);
+    stops(gr,[[0,t.ec||tc,svF(Math.min(1,eo[1]/(eo[0]||1)))],[1,t.ec||tc,1]]);svLevels(it,sh,Ge,FF,t.en||4,`url(#${id})`,cg,tol,null)}}
 /* draw the pieces of one flower: pieces are sheets (svSheet with a material) or drawn parts {fn, proxy (a sheet, for the order only)} */
 function svDraw(par,pieces,o){const Dm=o.D,tol=Math.max(.06,Dm*.0035),k=G(par),items=[];
   for(const p of pieces){if(p.fn){const cells=svCells(p.proxy,0);if(!cells.length){items.push({kind:'fn',fn:p.fn,cells:[],bb:[0,0,-1,-1],z:p.z??0});continue}let x0=1e9,y0=1e9,x1=-1e9,y1=-1e9,z=0;
@@ -182,6 +210,8 @@ function svDraw(par,pieces,o){const Dm=o.D,tol=Math.max(.06,Dm*.0035),k=G(par),i
     if(m.spots){for(const[u,v,r0,col,op]of m.spots){if(it.s*svLerp(sh,sh.F,u,v)<=0)continue;const p=svAt(sh,u,v),q=svAt(sh,Math.min(1,u+.12),v),rr=Math.max(.3,Math.hypot(q[0]-p[0],q[1]-p[1])*r0*8);
       E('path',{d:'M'+svJ([svR(p[0]-rr),svR(p[1])])+'a'+svJ([svR(rr),svR(rr*.7)])+' 0 1,0 '+svJ([svR(2*rr),0])+'a'+svJ([svR(rr),svR(rr*.7)])+' 0 1,0 '+svJ([svR(-2*rr),0]),fill:col,'fill-opacity':op},bg)}}
 const hi=DET>=1.5;wash(hi?m.dark||[.92,.8,.68,.56,.44]:m.darkLo||m.dark||[.9,.76,.62],front?m.shade:m.bshade,hi?m.da??.2:m.daLo??m.da??.26,1);wash(hi?m.lit||[1.08,1.2]:m.litLo||m.lit||[1.1],front?m.lite:m.blite,hi?m.la??.22:m.laLo??m.la??.24,0);
+    /* (m.transmit: the light through the thin tissue, over the washes and under the veins: svTrans above; none by default) */
+    if(m.transmit)svTrans(cg,it,sh,front,Dm,Ls,tol);
     /* veins: their runs on this face only */
     if(m.veins&&(DET>=1||!o.small)){const VL=m.veins(sh,front);for(const[set,w,col,op,fl]of VL){let d='';for(const pl of set){let run=[];const flush=()=>{if(run.length>1)d+=svQuad(run);run=[]};
           for(const[u,v]of pl){if(it.s*svLerp(sh,sh.F,u,v)>.03)run.push(svAt(sh,u,v));else flush()}flush()}

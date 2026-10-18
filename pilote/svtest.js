@@ -26,6 +26,8 @@ window.svtOut=(svg,n,ms,snapP)=>{const el=svg.querySelectorAll('*').length,pat=[
       /* the defs by kind: id prefix (letters) -> count, elements, KB */const by={};for(const c of d.children){const k=c.tagName.slice(0,3)+':'+(c.id||'').replace(/[0-9_-].*$/,''),b=by[k]||(by[k]=[0,0,0]);b[0]++;b[1]+=c.querySelectorAll('*').length+1;b[2]+=XS.serializeToString(c).length/1024}
       /* &dump=1: the whole markup, to analyse offline (one stage) */if(new URLSearchParams(location.search).get('dump'))o.dump=XS.serializeToString(svg);
       o.defsBy=Object.fromEntries(Object.entries(by).sort((a,b)=>b[1][2]-a[1][2]).map(([k,v])=>[k,v[0]+'x '+v[1]+'el '+v[2].toFixed(1)+'KB']))}}
+  /* &bbox=1: every head's getBBox [x, y, w, h] (c5 places the bouquet's heads by it: a material layer must never grow it, svfx before / after) */
+  if(new URLSearchParams(location.search).get('bbox'))o.bbox=[...svg.children].filter(g=>g.tagName==='g').map(g=>{const b=g.getBBox();return[b.x,b.y,b.width,b.height].map(x=>Math.round(x*1000)/1000)});
   /* window.__svtDbg (a probe a module may fill while debugging): copied into the measures */if(window.__svtDbg)o.dbg=window.__svtDbg;
   const fin=r=>{const pre=document.createElement('pre');pre.id='out';pre.textContent=JSON.stringify(Object.assign(o,r?{snap:r.join('x')}:{}));document.body.append(pre)};
   if(snapP)snapP.then(fin,e=>fin(['err '+e]));else fin()};

@@ -112,8 +112,9 @@ function svorMatOf(P,m0,kind,c,g,t,wf,mk){const base=(mk&&m0[mk])||m0[kind]||m0.
     st=base.st.map(([v,x])=>[v,cf(x,v)]),bst=(base.bst||base.st).map(([v,x])=>[v,cf(x,v)]),
     m=Object.assign({stops:st,bstops:bst,shade:cf(base.shade),lite:base.lite||'#ffffff',bshade:cf(base.bshade||base.shade),blite:base.blite||base.lite||'#ffffff',rim:cf(base.rim||st[st.length-1][1]),cast:m0.cast||'#2a1830',sdv:base.vein?cf(base.vein):null,sdvS:svorSideV(P)},
       P.light,{rw:.004+.006*c.dec,ro:.22+.2*c.dec});
-  /* (the kind's own opt-in layers, svDraw's m.cross: its colours moved as every other, faded in the bud; none by default) */
+  /* (the kind's own opt-in layers, svDraw's m.cross and m.transmit: their colours moved as every other, faded in the bud; none by default) */
   if(base.cross)m.cross=svCrossL(base.cross).map(z=>Object.assign({},z,{st:(z.st||z).map(([x,y,a])=>[x,cf(y),a]),k:(z.k??1)*(1-c.bud)}));
+  if(base.transmit){const t=base.transmit;m.transmit=Object.assign({},t,{tc:t.tc&&cf(t.tc),ec:t.ec&&cf(t.ec),k:(t.k??1)*(1-.7*c.bud)})}
   /* the side lobes' stripes in full detail too (the lean drawing has its own, svorLeanPiece): converging toward the lobe's tip */
   if(kind==='side'&&m.sdv&&c.bud<.6&&(c.lod!=null?c.lod>1:DET>=1.5)){const sv=svorSideV(P),sl=sv.u.map((u,i)=>{const pl=[];for(let s=0;s<=5;s++)pl.push([u*(1-.3*s/5),.06+sv.len[i]*s/5]);return pl});
     m.veins=(sh,front)=>front?[[sl,sv.w,m.sdv,sv.op]]:[]}
