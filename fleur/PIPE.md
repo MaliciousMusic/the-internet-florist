@@ -18,6 +18,9 @@ photo/rendu paire par paire, puis un juge adversarial qui n'est pas le modeleur.
     pour forcer). Le prompt forme demande d'étendre la pièce sans changer ces sortes ; les témoins le contrôlent.
   - `--late N` : la vague `late:N` des coloris ajoutés (1 par défaut). `--juge-tours` : allers-retours juge → comparaison avant le refus (2).
   - `--opus-effort` : force un autre effort que `xhigh` pour toutes les étapes Opus.
+  - `--views "profil:8,bouton:8"` : vues de la grille des paires de tête pour cette sorte (gardées dans `pipe-state.json`). Sans elle : `PAIRS`, puis la
+    table `VIEWS_FAMILY` (orchidées et spathes : profil et bouton en vue 8 ; famille lue dans `--family`, le module `--kit`, puis le genre).
+    La vue retenue et sa source sont écrites dans `pairs.json` (`view`, `view_from`).
 - `python fleur/pipe.py status <sid>` : étapes, contrôles, facture. `bill <sid>` : le tableau par étape. `selftest` : 80 vérifications sans modèle ni Chrome.
 - `python fleur/pipe.py models` : trois appels minuscules, un par modèle (facturés sous `refcache/pipe-test`).
 - `--dry` : aucun modèle, aucune commande ; liste les étapes, les appels (modèle, effort, tours, délai, outils, taille du prompt) et les commandes.

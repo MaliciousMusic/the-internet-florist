@@ -1624,6 +1624,51 @@ PAIRS = [  # BONNES-PRATIQUES 9.2 and 9.3b: a kept photo and the render at the s
 ]
 
 
+# the grid views of the pairs that differ by form family (svtest's grid VIEWS: 7 = [0,.97,.24] an upright axis, 8 = [.97,-.17,.17] a side view).
+# Journals: an orchid's true profile is view 8, view 7 is not a profile for it (phalaenopsis « Trous », tour v2-6); the anthurium's profile is
+# unreadable at view 7 (spathes tour 3: views 0, 4, 8). A sort may override any pair's view: --views "profil:8,bouton:8" (kept in pipe-state.json).
+VIEWS_FAMILY = {'orchidee': {'profil': 8, 'bouton': 8}, 'spathe': {'profil': 8, 'bouton': 8}}
+FAMILY_ALIAS = {'orchidee': 'orchidee', 'orchidees': 'orchidee', 'orchid': 'orchidee', 'orchidaceae': 'orchidee', 'spathe': 'spathe', 'spathes': 'spathe', 'araceae': 'spathe'}
+GENUS_FAMILY = {'phalaenopsis': 'orchidee', 'cymbidium': 'orchidee', 'dendrobium': 'orchidee', 'oncidium': 'orchidee', 'vanda': 'orchidee', 'cattleya': 'orchidee',
+                'paphiopedilum': 'orchidee', 'miltonia': 'orchidee', 'anthurium': 'spathe', 'zantedeschia': 'spathe', 'spathiphyllum': 'spathe'}
+
+
+def view_family(ctx):
+    """the form family whose pair views apply: --family, else the kit module (y3-orchidee.js -> orchidee), else the genus; '' when none"""
+    fam = norm(ctx.st.get('family') or '').replace(' ', '-')
+    if fam in FAMILY_ALIAS:
+        return FAMILY_ALIAS[fam]
+    kit = re.sub(r'^y3-|\.js$', '', os.path.basename((ctx.st.get('kit') or '').strip()))
+    if kit in FAMILY_ALIAS:
+        return FAMILY_ALIAS[kit]
+    return GENUS_FAMILY.get(norm(ctx.genus), '')
+
+
+def parse_views(s):
+    """--views "profil:8,bouton:8" (or a dict) -> {pair key: view index}"""
+    if isinstance(s, dict):
+        return {str(k): int(v) for k, v in s.items()}
+    out = {}
+    for it in (s or '').split(','):
+        k, _, v = it.partition(':')
+        if k.strip() and v.strip().lstrip('-').isdigit():
+            out[k.strip()] = int(v)
+    return out
+
+
+def pair_views(ctx):
+    """{pair key: grid view} of the head pairs: PAIRS, then the family's table, then the sort's own override; and where each came from"""
+    v = {P['k']: P['view'] for P in PAIRS if 'view' in P}
+    src = {k: 'PAIRS' for k in v}
+    fam = view_family(ctx)
+    for k, x in VIEWS_FAMILY.get(fam, {}).items():
+        v[k], src[k] = x, 'famille ' + fam
+    for k, x in parse_views(ctx.st.get('views')).items():
+        if k in v:
+            v[k], src[k] = x, 'sorte'
+    return v, src
+
+
 def kept_tags(x):
     out = set()
     for t in x.get('tags', []):
@@ -1644,6 +1689,7 @@ def pair_plan(ctx):
     cw = cws[0]['id'] if cws else ''
     cult = norm(cws[0].get('cultivar')) if cws else ''
     full = int(getattr(ctx.a, 'full', 40) or 40)
+    views, vsrc = pair_views(ctx)
     used, plan, missing = {}, [], []
     for P in PAIRS:
         best = None
@@ -1662,8 +1708,9 @@ def pair_plan(ctx):
         if P.get('plant'):
             q, cell = 'plant=1&sid=%s&cw=%s&st=1:0&axv=1&full=%d&det=1.5&seed=%d' % (ctx.sid, cw, full, SEED), ''
         else:
-            q, cell = 'grid=1&sid=%s&cws=%s&st=%s&view=%d&D=%d&det=1.5&seed=%d' % (ctx.sid, cw, P['st'], P['view'], P['D'], SEED), '0,0@%d' % P['D']
+            q, cell = 'grid=1&sid=%s&cws=%s&st=%s&view=%d&D=%d&det=1.5&seed=%d' % (ctx.sid, cw, P['st'], views[P['k']], P['D'], SEED), '0,0@%d' % P['D']
         plan.append({'k': P['k'], 'label': P['label'], 'photo': best.get('i'), 'title': best.get('title'), 'page': best.get('page'), 'tags': best.get('tags'),
+                     'view': views.get(P['k']), 'view_from': vsrc.get(P['k']),
                      'vu': best.get('m'), 'thumb': '%s/t%03d.jpg' % (ctx.rel, int(best.get('i', 0))), 'query': q, 'name': name, 'render': 'fleur/out/%s.png' % name,
                      'cell': cell, 'kind': P.get('kind', 'cup'), 'op': P.get('op', '.85'), 'cw': cw,
                      'png': '%s/comparaison/%s.png' % (ctx.rel, P['k']), 'txt': '%s/comparaison/%s.txt' % (ctx.rel, P['k'])})
@@ -1692,7 +1739,8 @@ def write_pairs(ctx, plan):
     d = ctx.rc + '/comparaison'
     if ctx.dry:
         for p in plan:
-            say('  [dry] pair %-12s photo %s (%s) vs %s' % (p['k'], p['photo'], ' '.join(p['tags'] or []), p['query']))
+            say('  [dry] pair %-12s photo %s (%s) vs %s%s' % (p['k'], p['photo'], ' '.join(p['tags'] or []), p['query'],
+                ' (view %s: %s)' % (p['view'], p['view_from']) if p.get('view_from') and p['view_from'] != 'PAIRS' else ''))
         return
     os.makedirs(d, exist_ok=True)
     jsave(d + '/pairs.json', plan)
@@ -2173,6 +2221,8 @@ def cmd_run(a):
             st[k] = getattr(a, k)
     if a.kavb:
         st['kavb'] = True
+    if getattr(a, 'views', None):
+        st['views'] = parse_views(a.views)
     sk = bouquet_skus(a, sid)
     if sk or 'skus' not in st:
         st['skus'] = sk
@@ -2574,6 +2624,21 @@ def cmd_selftest(a):
           str(miss_) + str([(p['k'], p['photo']) for p in plan_]))
         t('comparaison: same angle and stage (profile view 7, faded .6 and .9, plant sheet)', 'view=7' in plan_[2]['query'] and '1:.6' in plan_[4]['query'] and '1:.9' in plan_[5]['query']
           and plan_[6]['query'].startswith('plant=1') and all('seed=7' in p['query'] for p in plan_))
+        q_ = {p['k']: p for p in plan_}
+        t('pairs: a tulip keeps view 7 for the profile and the bud (no family)', view_family(ctx3) == '' and q_['profil']['view'] == 7 and q_['bouton']['view'] == 7)
+        ctx3.st.update(taxon='Cymbidium hybrida', kit='y3-orchidee.js')
+        plo_ = {p['k']: p for p in pair_plan(ctx3)[0]}
+        t('pairs: an orchid (kit y3-orchidee.js) gets view 8 for the profile and the bud, written in the plan', view_family(ctx3) == 'orchidee' and 'view=8' in plo_['profil']['query']
+          and 'view=8' in plo_['bouton']['query'] and plo_['profil']['view'] == 8 and plo_['profil']['view_from'] == 'famille orchidee' and 'view=0' in plo_['face']['query'],
+          str([(p['k'], p.get('view'), p.get('view_from')) for p in plo_.values()]))
+        ctx3.st.update(taxon='Phalaenopsis hybrida', kit='')
+        t('pairs: an orchid found by its genus alone', view_family(ctx3) == 'orchidee' and pair_views(ctx3)[0]['profil'] == 8)
+        ctx3.st.update(taxon='Anthurium andraeanum', views={'profil': 4})
+        t('pairs: a sort with --views beats the family table (spathe)', pair_views(ctx3)[0]['profil'] == 4 and pair_views(ctx3)[0]['bouton'] == 8
+          and parse_views('profil:8, bouton:8,x') == {'profil': 8, 'bouton': 8})
+        ctx3.st.update(taxon='Test test')
+        ctx3.st.pop('views')
+        ctx3.st.pop('kit')
         write_pairs(ctx3, plan_)
         rs_ = open('%s/comparaison/refaire.sh' % ctx3.rc).read()
         t('comparaison: refaire.sh renders through shot_p.sh and pairs with img.py, never 8765', 'fleur/shot_p.sh' in rs_ and 'img.py pair' in rs_ and '8765' not in rs_ and 'D=800' in rs_)
@@ -2683,6 +2748,7 @@ def make_parser():
     r.add_argument('--kit-prefix', dest='kit_prefix', help='the kit family prefix (default: inferred from the module, e.g. svRose|SVROSE_)')
     r.add_argument('--kit-sids', dest='kit_sids', help='the sorts already drawn with the kit, comma separated (default: found in app/y-*.js)')
     r.add_argument('--late', type=int, help='the late:N wave of the colourways added (default 1)')
+    r.add_argument('--views', help='grid views of the head pairs for this sort, "profil:8,bouton:8" (default: PAIRS, then the form family: orchids and spathes 8)')
     r.add_argument('--juge-tours', dest='juge_tours', type=int, default=JUGE_TOURS, help='judge ko -> comparaison round trips before the refusal (exit 2)')
     for n in ('status', 'bill'):
         s = sp.add_parser(n)
