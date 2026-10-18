@@ -170,17 +170,25 @@ def sample_piece(rgb, msk, pts, w):
             b += 1
         if b - a >= 2:
             ab[j] = a, b
-    # the edges, smoothed along the piece (a row that leaks into a neighbour or a gap of the mask does not make a jump)
+    # the edges: a petal's outline is a smooth curve. Each edge is fitted along the piece (a Gaussian of about NV/25 rows) and the rows that
+    # leave it (a run leaking into a neighbour, a bite of an overlapping piece) are dropped and the fit made again, three times; the map is then
+    # resampled between the smooth edges, and a cell outside the piece's mask (a hidden part, a hole) stays empty, never stretched
     good = ~np.isnan(ab[:, 0])
     if good.sum() > 5:
+        sig = max(2.0, NV / 25)
         for q in (0, 1):
-            col = np.interp(np.arange(NV), np.nonzero(good)[0], ab[good, q])
-            sm = ndi.median_filter(col, size=max(5, NV // 30) | 1)
-            tol = NW * .04
-            # the smoothed edge only cuts a leak (a run that jumps outward); it never widens the piece beyond its own mask
-            raw = np.where(good, ab[:, q], np.nan)
-            fix = np.where(q == 0, np.fmax(raw, sm - tol), np.fmin(raw, sm + tol))
-            ab[:, q] = np.where(good, fix, np.nan)
+            keep = good.copy()
+            for _ in range(3):
+                idx = np.nonzero(keep)[0]
+                col = np.interp(np.arange(NV), idx, ab[idx, q])
+                sm = ndi.gaussian_filter1d(col, sig, mode='nearest')
+                res = np.abs(ab[:, q] - sm)
+                tol = max(2.0, np.nanpercentile(res[keep], 75) * 2.5)
+                nk = good & (res <= tol)
+                if nk.sum() < max(6, good.sum() * .4) or (nk == keep).all():
+                    break
+                keep = nk
+            ab[:, q] = np.where(good | ((np.arange(NV) > np.nonzero(good)[0][0]) & (np.arange(NV) < np.nonzero(good)[0][-1])), sm, np.nan)
     mid = np.full((NV, 2), np.nan)
     for j in range(NV):
         if np.isnan(ab[j, 0]):
@@ -190,8 +198,9 @@ def sample_piece(rgb, msk, pts, w):
         mid[j] = np.interp(cm, np.arange(NW), X[j]), np.interp(cm, np.arange(NW), Y[j])
         hw[j] = (b - a) / (NW - 1) * 2.5 / 2
         t = np.linspace(a, b, NU)
+        inside = np.interp(t, np.arange(NW), mk[j].astype(float)) > .5
         for k in range(3):
-            out[j, :, k] = np.interp(t, np.arange(NW), ch[k][j])
+            out[j, :, k] = np.where(inside, np.interp(t, np.arange(NW), ch[k][j]), np.nan)
     return out, dict(NV=NV, NU=NU, len_px=float(L), w_px=float(w), width_profile=[round(float(x), 3) for x in hw[::max(1, NV // 20)]]), mid, hw
 
 
