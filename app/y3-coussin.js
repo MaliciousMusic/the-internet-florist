@@ -54,7 +54,7 @@ function svcuMat(cwx,tab){const t=tab||{},c=t.body||cwx.c||'#5a1030',[h,s,l]=h2l
   const m={body:c,rim:t.rim||c,top:t.top||cwx.dome||(dark?shd(c,-.2):mix(c,'#f4f0e0',.25)),bud:t.bud||'#a7ad78',throat:t.throat||(pale?mix(shade,c,.2):l2h(h,s,l*.42)),
     gap:t.gap||(pale?shade:l2h(h,s,l*.38)),back:t.back||mix(c,pale?'#e8e4d4':'#c8b0b8',dark?.18:.3),shade,lite,ink:t.ink||(pale?mix(shade,c,.3):l2h(h,s,l*.55)),
     pin:t.pin||cwx.pin||'#f4eef0',anth:t.anth||cwx.pin||'#f8f2f4',anthSh:t.anthSh||(pale?shade:l2h(h,s,Math.max(.12,l*.6))),bract:t.bract||'#5f8048',recep:t.recep||'#6f8f52',
-    dry:t.dry||'#8a7458',fruit:t.fruit||'#8f8a58',fruitD:t.fruitD||'#5e5236',fruitL:t.fruitL||'#c8bc98'};
+    dry:t.dry||'#8a7458',fruit:t.fruit||'#8f8a58',fruitD:t.fruitD||'#5e5236',fruitL:t.fruitL||'#c8bc98',fruitB:t.fruitB||t.fruitD||'#5e5236'};
   if(t.fil)m.fil=t.fil;else m.fil=mix(m.pin,c,dark?.45:.3);return m}
 /* the light-facing tone of a colour on a view-space normal (y3-capitule's light) */
 const svcuTone=(c,n,m,Lg)=>svcapTone(c,svcapI(n,Lg),m,Lg);
@@ -77,18 +77,20 @@ function svcuDraw(par,B,O,D,S,cwx,op,seed,wl){const P=(Object.assign({},SVCU_DEF
   const items=[],pinsF=[],pinsA=[],pinsS=[];
   /* the backing: the ball's floor under the florets (its colour turns to the fruit's as they wither and fall) */
   {const W=[],rb=rs*(1-.06*(1-o2))-(rs-rsF);for(let i=0;i<=5;i++){const th=cap*i/5;for(let j=0;j<14;j++){const p=PJ(B,O,ball(th,j/14*6.283,rb));W.push([p[0],p[1]])}}
-    const fr=Math.max(shed,.5*fan),gc=mix(mix(nz>=0?mm.body:m.back,m.gap,nz>=0?1:.55),m.fruit,fr),gcol=svcuTone(gc,[0,0,1],{shade:shd(gc,-.5),lite:mix(gc,'#ffffff',.2)},Lg);
+    /* the young bud's floor is green like its pearls (no dark gap between them), the fruit ball turns from green to the dry tan */
+    const fr=Math.max(shed,.5*fan),dk=svSm((wl-.75)/.2),gc=mix(mix(mix(shd(m.bud,-.3),mix(nz>=0?mm.body:m.back,m.gap,nz>=0?1:.55),co),shd(m.fruit,-.18),Math.min(1,1.4*fr)),mix(m.dry,m.fruitD,.5),dk*fr),gcol=svcuTone(gc,[0,0,1],{shade:shd(gc,-.5),lite:mix(gc,'#ffffff',.2)},Lg);
     items.push({key:-1e9,draw:kk=>E('path',{d:smooth(hull2(W)),fill:gcol,stroke:'none'},kk)})}
   /* the florets */
   const nF=Math.round(P.n[hi?1:0]*(1+P.nJ*r.in(-1,1))),dq=P.dq,nh=hi?4:2,c1=1-Math.cos(cap);
   for(let i=0;i<nF;i++){const g1=r(),g2=r.in(-1,1),g3=r.in(-1,1),g4=r(),g5=r();
-    if(g1<shed*1.04)continue;/* fallen corolla (its draws consumed) */
     const u=(i+.5)/nF,ct=1-Math.pow(u,dq)*c1,th=Math.acos(Math.max(-1,Math.min(1,ct))),t=th/cap,ph=rot+i*2.39996;
+    if(g1<svSm(shed*2.2-1.2*t)*1.04)continue;/* fallen corolla, the top's first, the rim's last (its draws consumed) */
     /* the florets sit on the ball as it contracts toward the fruit (no gap opens between the withering florets and the backing) */
     const sT=Math.sin(th),cph=Math.cos(ph),sph=Math.sin(ph),N=[sT*cph,sT*sph,ct],E1=[ct*cph,ct*sph,-sT],E2=[-sph,cph,0],C=ball(th,ph,rsF);
     const nvC=toV(B,N)[2];if(nvC<-.42)continue;/* on the far side of the ball */
-    const of=svSm((o2-P.lag*(1-t))/(1-P.lag)),marg=svSm((t-P.mT)/(1-P.mT))*svSm((of-.3)/.5),tau=-P.mTilt*marg*(1-.5*fan),Nf=V3.add(V3.sc(N,Math.cos(tau)),V3.sc(E1,Math.sin(tau))),E1f=V3.add(V3.sc(E1,Math.cos(tau)),V3.sc(N,-Math.sin(tau)));
-    const sp=rsF*Math.sqrt(2*c1*dq*Math.pow(u,dq-1)/nF),s=sp*(P.sK[0]+(P.sK[1]-P.sK[0])*of)*(1+P.jS*g2)*(1-P.wS*fan),nvF=toV(B,Nf),front=nvF[2]>=-.05;
+    /* core: the top's florets stay closed in the open head (a dark knob), share of the cap's rank */
+    const of=P.core?Math.min(svSm((o2-P.lag*(1-t))/(1-P.lag)),svSm((t-.5*P.core)/P.core)):svSm((o2-P.lag*(1-t))/(1-P.lag)),marg=svSm((t-P.mT)/(1-P.mT))*svSm((of-.3)/.5),tau=-P.mTilt*marg*(1-.5*fan),Nf=V3.add(V3.sc(N,Math.cos(tau)),V3.sc(E1,Math.sin(tau))),E1f=V3.add(V3.sc(E1,Math.cos(tau)),V3.sc(N,-Math.sin(tau)));
+    const sp=rsF*Math.sqrt(2*c1*dq*Math.pow(u,dq-1)/nF),s=sp*(P.sK[0]+(P.sK[1]-P.sK[0])*of)*(1+P.jS*g2)*(1-P.wS*fan*(1-.6*marg)),nvF=toV(B,Nf),front=nvF[2]>=-.05;
     const cf=svSm((co*1.5-.5*t)/1),/* the colour arrives from the top */col0=t>P.mT?mm.rim:mix(mm.top,mm.body,svSm((of-.2)/.6)),col=mix(m.bud,col0,cf);
     const key=PJ(B,O,V3.add(C,V3.sc(Nf,s*.3)))[2];
     if(of<.42){/* a pearl: the closed floret, a round bump, five shallow folds; the colour of the folded tips in a dot at its top */
@@ -96,7 +98,7 @@ function svcuDraw(par,B,O,D,S,cwx,op,seed,wl){const P=(Object.assign({},SVCU_DEF
       for(let j=0;j<np;j++){const a=j/np*6.283+g3,rr=rp*(1+.07*Math.cos(5*a+g3*3)+crk*(pxHashS(i,j,sd)-.5));pts.push([cen[0]+Math.cos(a)*rr,cen[1]+Math.sin(a)*rr])}
       const tc=svcuTone(col,toV(B,N),{shade:mix(mm.shade,m.bud,(1-cf)*.5),lite:mix(mm.lite,'#f4f6e0',(1-cf)*.5)},Lg),tipC=mix(col,mix(mm.body,mm.lite,.25),Math.max(.25,cf)),Ls=[LIGHT[0],-LIGHT[1]];
       items.push({key,draw:kk=>{E('path',{d:svSpl(pts),fill:tc},kk);
-        if(hi||rp>R0*.05){const tr=rp*.32;E('path',{d:`M${svN(cen[0]+Ls[0]*rp*.2-tr)} ${svN(cen[1]+Ls[1]*rp*.2)}a${svN(tr)} ${svN(tr)} 0 1 0 ${svN(2*tr)} 0a${svN(tr)} ${svN(tr)} 0 1 0 ${svN(-2*tr)} 0`,fill:svcuTone(tipC,toV(B,N),mm,Lg),'fill-opacity':.55,stroke:'none'},kk)}}});continue}
+        if(hi||rp>R0*.05){const tr=rp*.32;E('path',{d:`M${svN(cen[0]+Ls[0]*rp*.2-tr)} ${svN(cen[1]+Ls[1]*rp*.2)}a${svN(tr)} ${svN(tr)} 0 1 0 ${svN(2*tr)} 0a${svN(tr)} ${svN(tr)} 0 1 0 ${svN(-2*tr)} 0`,fill:svcuTone(tipC,toV(B,N),mm,Lg),'fill-opacity':svF(P.dotA==null?.55:P.dotA),stroke:'none'},kk)}}});continue}
     /* an open floret: nl lobes round its throat, the outer ones of a marginal floret enlarged into a frilled fan hanging over the rim */
     const ofc=svSm((of-.42)/.58),nl=g4<P.nl4?4:5,ps0=g3*.35,Lj=[],wj=[];let tot=0;
     for(let j=0;j<nl;j++){const psi=ps0+j/nl*6.283,big=marg*P.mE*Math.pow(Math.max(0,Math.cos(psi)),1.3);Lj.push(s*(.62+.38*ofc)*(1+big)*(1+.14*(pxHashS(i,j+20,sd)-.5))*(1-.25*fan*(1-marg)));const w=Math.pow(1+big,.75);wj.push(w);tot+=w}
@@ -133,18 +135,27 @@ function svcuDraw(par,B,O,D,S,cwx,op,seed,wl){const P=(Object.assign({},SVCU_DEF
         pinsF.push(`M${svN(pb[0])} ${svN(pb[1])}Q${svN(pm[0])} ${svN(pm[1])} ${svN(pt[0])} ${svN(pt[1])}`);
         pinsA.push(`M${svN(pt[0])} ${svN(pt[1])}L${svN(pa[0])} ${svN(pa[1])}`)}}}
   /* the involucre and the receptacle: under the ball seen from the face, by depth from the side and behind */
-  const ob=svSm((op-.18)/.6),nb=Math.max(5,Math.round(P.br.n+P.br.nJ*nbJ)),Pb={light:Lg,inv:{round:0,edge:P.br.edge}},under=nz>=.15,colB=mix(m.bract,m.dry,.6*fan);
+  const ob=svSm((op-.18)/.6),nb=Math.max(5,Math.round(P.br.n+P.br.nJ*nbJ)),Pb={light:Lg,inv:{round:0,edge:P.br.edge}},under=nz>=.15,colB=mix(m.bract,m.dry,(P.br.dk==null?.6:P.br.dk)*fan);
   if(nz<.75||op<.5||fan>.3){const rc=svcapRecep(B,O,R0,{recep:P.recep,light:Lg},{recep:mix(m.recep,m.dry,.5*fan),dry:m.dry},gs,0);rc.key=under?-2e9:rc.key;items.push(rc);
     for(let j=0;j<nb;j++){const ph=rot+.3+j/nb*6.283+(pxHashS(j,1,sd)-.5)*.35,dL=.85+.3*pxHashS(j,2,sd),
         q={phi:ph,r0:P.br.r0*R0*gs*(1-.5*(1-P.fruit.k)*fan),z0:P.br.z0*R0*gs,L:P.br.L*R0*(.55+.45*gs)*dL*(1-P.br.wk*fan),W:P.br.W*R0*(.7+.3*gs)*(1-.3*P.br.wk*fan),R0:1,Rh:R0,a0:P.br.a0c+(P.br.a0o-P.br.a0c)*ob+P.br.wa*fan,a1:P.br.a1c+(P.br.a1o-P.br.a1c)*ob+1.6*P.br.wa*fan,aPow:1,curl:0,wav:0,wph:0,tw:(pxHashS(j,3,sd)-.5)*.5,kap:0,cupK:.5/(P.br.W*R0)};
       const bt=svcapBract(B,O,q,Pb,colB);if(under)bt.key=-2e9+1+j;items.push(bt)}}
   /* the fruiting ball's stars, once the corollas wither and fall: a cup and its five bristles on each achene */
-  if(Math.max(shed,fan*.5)>.05){const nfr=P.fruit.n[hi?1:0],fl=P.fruit.L*R0*gs,vis=Math.max(shed,fan*.5);let dB='',dC='';
-    for(let i=0;i<nfr;i++){const u=(i+.5)/nfr,ct=1-u*c1,th=Math.acos(Math.max(-1,Math.min(1,ct))),ph=rot+.7+i*2.39996,N=[Math.sin(th)*Math.cos(ph),Math.sin(th)*Math.sin(ph),ct];
-      if(toV(B,N)[2]<.05||pxHashS(i,7,sd)>vis*1.1)continue;const C=ball(th,ph,rsF),E1=[ct*Math.cos(ph),ct*Math.sin(ph),-Math.sin(th)],E2=[-Math.sin(ph),Math.cos(ph),0],pc=PJ(B,O,C);
-      dC+=`M${svN(pc[0])} ${svN(pc[1])}h0`;for(let q=0;q<P.fruit.nb;q++){const a=q/P.fruit.nb*6.283+i,d=V3.add(V3.add(V3.sc(E1,Math.cos(a)),V3.sc(E2,Math.sin(a))),V3.sc(N,.55)),pe=PJ(B,O,V3.add(C,V3.sc(d,fl)));dB+=`M${svN(pc[0])} ${svN(pc[1])}L${svN(pe[0])} ${svN(pe[1])}`}}
-    if(dB)items.push({key:1e8,draw:kk=>{E('path',{d:dB,fill:'none',stroke:m.fruitD,'stroke-width':svF(Math.max(.2,R0*.007)),'stroke-opacity':.8,'stroke-linecap':'round'},kk);
-      E('path',{d:dC,fill:'none',stroke:m.fruitL,'stroke-width':svF(Math.max(.4,R0*.032)),'stroke-linecap':'round','stroke-opacity':.9},kk)}})}
+  /* each achene a papery crown (the epicalyx: a frilled cup, raised on the ball, lit by its own normal so the ball reads round), a dark eye in
+     its middle and the calyx's awns out of it; the crowns show where the corollas have fallen (the top first), packed so the floor hardly shows */
+  if(Math.max(shed,fan*.5)>.05){const nfr=P.fruit.n[hi?1:0],fl=P.fruit.L*R0*gs,vis=Math.max(shed,fan*.5),dkF=svSm((wl-.72)/.22),cB=mix(m.fruitB,m.fruitD,dkF),
+      cupC=mix(mix(m.fruit,m.fruitL,.45),m.fruitL,dkF),eyeC=mix(m.fruit,m.fruitD,.35+.5*dkF),spF=rsF*Math.sqrt(2*c1/nfr),nq=hi?14:10;
+    for(let i=0;i<nfr;i++){const u=(i+.5)/nfr,ct=1-u*c1,th=Math.acos(Math.max(-1,Math.min(1,ct))),t=th/cap,ph=rot+.7+i*2.39996,N=[Math.sin(th)*Math.cos(ph),Math.sin(th)*Math.sin(ph),ct];
+      const nv=toV(B,N);if(nv[2]<.05||pxHashS(i,7,sd)>svSm(vis*2.2-1.2*t)*1.1+.04)continue;
+      const C=ball(th,ph,rsF),E1=[ct*Math.cos(ph),ct*Math.sin(ph),-Math.sin(th)],E2=[-Math.sin(ph),Math.cos(ph),0],pc=PJ(B,O,C),sc=spF*(.86+.12*pxHashS(i,8,sd));
+      const on=(rho,a,h)=>PJ(B,O,V3.add(V3.add(C,V3.add(V3.sc(E1,Math.cos(a)*rho),V3.sc(E2,Math.sin(a)*rho))),V3.sc(N,h)));
+      const rim=[],eye=[];for(let q=0;q<nq;q++){const a=q/nq*6.283+i,fr=(q%2?.88:1.04)+.1*(pxHashS(i,q+30,sd)-.5);rim.push(on(sc*fr,a,sc*.32));if(q%2===0)eye.push(on(sc*.3,a,sc*.08))}
+      let dB='';for(let q=0;q<P.fruit.nb;q++){const a=q/P.fruit.nb*6.283+i*1.3,d=V3.add(V3.add(V3.sc(E1,Math.cos(a)),V3.sc(E2,Math.sin(a))),V3.sc(N,.5)),pm=PJ(B,O,V3.add(C,V3.sc(d,fl*.5))),pe=PJ(B,O,V3.add(V3.add(C,V3.sc(d,fl)),V3.sc(N,fl*.15)));
+        dB+=`M${svN(pc[0])} ${svN(pc[1])}Q${svN(pm[0])} ${svN(pm[1])} ${svN(pe[0])} ${svN(pe[1])}`}
+      const tC=svcuTone(cupC,nv,{shade:shd(cupC,-.32),lite:mix(cupC,'#ffffff',.45)},Lg),tE=svcuTone(eyeC,nv,{shade:shd(eyeC,-.4),lite:mix(eyeC,'#ffffff',.25)},Lg);
+      items.push({key:PJ(B,O,V3.add(C,V3.sc(N,sc*.3)))[2],draw:kk=>{E('path',{d:svSpl(rim),fill:tC,stroke:shd(cupC,-.3),'stroke-width':svF(Math.max(.2,R0*.003)),'stroke-opacity':.5},kk);
+        E('path',{d:svSpl(eye),fill:tE,stroke:'none'},kk);
+        E('path',{d:dB,fill:'none',stroke:cB,'stroke-width':svF(Math.max(.2,R0*.005)),'stroke-opacity':.9,'stroke-linecap':'round'},kk)}})}}
   items.sort((a,b)=>a.key-b.key);for(const it of items)it.draw(k);
   /* the pins over the florets: filaments, the anthers' shadow, the anthers */
   if(pinsF.length&&!LOD){const aw=svF(Math.max(.5,R0*gs*P.pin.ar*2)),Ls=[LIGHT[0],-LIGHT[1]],sh=pinsA.join('').replace(/-?[\d.]+ -?[\d.]+/g,m0=>{const[x,y]=m0.split(' ').map(Number);return svN(x-Ls[0]*R0*.012)+' '+svN(y-Ls[1]*R0*.012)});
