@@ -2,7 +2,9 @@
 # -*- coding: utf-8 -*-
 """fiche.py : controle d'une fiche morphologique `fiche-morpho/1` (catalogue/serre/methode/fiche/SCHEMA.md).
 
-    python fleur/fiche.py check <sid | chemin.json> [--no-code] [--quiet] [--lien tete|plante|tout]
+    python fleur/fiche.py check <sid | chemin.json> [--no-code] [--quiet] [--lien tete|plante|tout] [--souple-const]
+    python fleur/fiche.py sync <sid | chemin.json> [--lien tete|plante|tout] [--write]
+    python fleur/fiche.py resume <sid | chemin.json> [--out refcache/<sid>/fiche-resume.md | -]
 
 Ne rend rien, ne lance aucun navigateur, aucun serveur. Les expressions `code` sont lues par node (fleur/fiche_eval.js : l'application
 construite comme le fait mkapp.sh, chargee dans un contexte vm avec des bouchons pour document/window), sans dessiner.
@@ -33,9 +35,19 @@ Regles du schema verifiees en plus (SCHEMA §2) : un angle (deg, rad) porte `rep
 `hex` (#rrggbb, plage = les mesures par photo) ; `ecart` est type {type: confirme | divergence | budget, texte} ; methodes segmente,
 mesure-echelle et regle exigent leurs photos. La derniere ligne imprimee est un objet JSON (comptes de la fiche) lu par pipe.py.
 
+sync (pipe.py le lance seul a la fin de forme et de plante, avant le controle : le modeleur ne relie plus la fiche a la main) :
+  pour chaque valeur des organes du groupe (et des varietes, des stades) dont `code` est une expression, `retenu` prend la valeur du code ;
+  une constante en dur retrouvee a quelques lignes de sa `ligne` prend sa nouvelle ligne ; une valeur du code hors de la plage (ou loin de `v`
+  sans plage) sans `ecart` recoit {type: divergence, texte: "auto <date> : valeur du code ..."} (sync ne reecrit ou ne retire que ses propres
+  ecarts « auto ») ; une constante dont les nombres ont quitte leur ligne n'est pas devinee : elle est listee « constante a relier » (non
+  bloquante a forme avec check --souple-const, un ecart chacune avant les planches). Ne touche jamais v, plage, methode ni photos. Sans --write :
+  ce qui changerait. Idempotent ; derniere ligne : un objet JSON (lu par pipe.py).
+resume : refcache/<sid>/fiche-resume.md, 200 lignes au plus : par organe les valeurs (mesurees d'abord) avec plage, methode, lien au code et
+  type d'ecart, les zones, les stades, les questions ouvertes. C'est ce que lisent les modeleurs (la fiche entiere seulement pour une valeur).
+
 Code de sortie : 0 fiche valide ; 1 erreurs de schema ou ecarts de code non declares ; 2 probleme d'environnement (fiche absente, node absent).
 """
-import argparse, hashlib, json, os, re, subprocess, sys
+import argparse, datetime, hashlib, json, math, os, re, subprocess, sys
 from collections import Counter, OrderedDict, defaultdict
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -348,7 +360,7 @@ def nums(x):
     return None
 
 
-NUM = re.compile(r'(?<![\w.])(?:\d+\.\d*|\.\d+|\d+)(?:[eE][-+]?\d+)?')
+NUM = re.compile(r'(?<![\w.#])(?:\d+\.\d*|\.\d+|\d+)(?:[eE][-+]?\d+)?')   # not a hex colour ('#5e0408' is no 5e408)
 
 
 def read_const(v):
@@ -363,7 +375,7 @@ def read_const(v):
     if not want: return {'ok': False, 'err': 'code « const » : retenu sans nombre'}
 
     def miss_at(i):
-        found = [abs(float(x)) for x in NUM.findall(lines[i])]
+        found = [y for y in (abs(float(x)) for x in NUM.findall(lines[i])) if math.isfinite(y)]
         return [x for x in want if not any(abs(abs(x) - y) <= 1e-9 * (1 + y) for y in found)]
     miss = miss_at(n - 1)
     if not miss: return {'ok': True, 'v': v.get('retenu')}
@@ -375,7 +387,9 @@ def read_const(v):
     return {'ok': False, 'err': 'constante %s absente de %s ni à %d lignes autour (valeur changée ? corriger `retenu`)' % (', '.join('%g' % x for x in miss), v['ligne'], CONST_WIN)}
 
 
-def check_code(f, errs, warns):
+def check_code(f, errs, warns, souple=False):
+    """souple (--souple-const): a "const" whose numbers left its line is a « constante à relier » (listed, not an error): pipe.py's forme and
+    plante gates, where fiche.py sync relinks every expression but never guesses where a hard-coded constant went"""
     vs = [(p, v) for blk, name in ((f['organes'], 'organes'), (f['varietes'], 'varietes'), (f['stades'], 'stades')) for p, v in walk_vs(blk, [name])]
     coded = [(p, v) for p, v in vs if isinstance(v.get('code'), str) and v['code'] != 'const']
     consts = [(p, v) for p, v in vs if v.get('code') == 'const']
@@ -387,7 +401,7 @@ def check_code(f, errs, warns):
         errs.append("controle du code impossible : %s" % e); return None
     load = r['load']
     for fl in load.get('failed', []): warns.append("chargement de l'application : %s -> %s" % (fl.get('file'), fl.get('err')))
-    mism, plage_v, plage_r, v_vs_r, noeval, declared = [], [], [], [], [], []
+    mism, plage_v, plage_r, v_vs_r, noeval, declared, arelier = [], [], [], [], [], [], []
     for p, v in vs:   # v hors de sa plage sans ecart : toutes les valeurs, avec ou sans code
         pl = v.get('plage')
         if pl and all(is_num(x) for x in pl) and not v.get('ecart'):
@@ -397,6 +411,10 @@ def check_code(f, errs, warns):
         path = '/'.join(p)
         live = read_const(v) if v['code'] == 'const' else r['values'][v['code']]
         if not live['ok']:
+            if v['code'] == 'const':
+                arelier.append((path, v.get('ligne'), live['err'], bool(v.get('ecart'))))
+                if souple:
+                    continue
             noeval.append((path, v['code'], live['err'])); continue
         if not same(v.get('retenu'), live['v']): mism.append((path, v['code'], v.get('retenu'), live['v']))
         has_ecart = bool(v.get('ecart'))
@@ -415,7 +433,7 @@ def check_code(f, errs, warns):
         if v.get('ecart') and (isinstance(v.get('code'), str) or v.get('plage')):
             declared.append(('/'.join(p), v['ecart']))
     return dict(coded=len(coded) + len(consts), consts=len(consts), exprs=len(exprs), nopath=['/'.join(p) for p, v in nopath], mism=mism, plage_v=plage_v, plage_r=plage_r, v_vs_r=v_vs_r, noeval=noeval,
-                declared=declared, load=load)
+                declared=declared, load=load, arelier=arelier)
 
 
 def numeric(x):
@@ -463,14 +481,192 @@ def coverage(f):
     return table, detail
 
 
+# ------------------------------------------------------------------------------------------------------------------ 6. sync
+def scope_vs(f, groupe):
+    """(path, V) of the values `sync` looks at: every organ of the group (drawn or not), then the varietes and the stades"""
+    roles = GROUPES[groupe]
+    for oname, o in (f.get('organes') or {}).items():
+        if isinstance(o, dict) and o.get('role') in roles:
+            yield from walk_vs(o, ['organes', oname])
+    for blk in ('varietes', 'stades'):
+        yield from walk_vs(f.get(blk) or {}, [blk])
+
+
+def code_gap(v, live):
+    """why the code's value needs an `ecart` (check point 3), None when it does not: out of the plage, or away from `v` (2 %) with no plage"""
+    pl = v.get('plage')
+    pn = nums(pl) if pl and all(is_num(x) for x in pl) else None
+    rn, vn = nums(live), nums(v.get('v'))
+    if pn and rn:
+        lo, hi = min(pn), max(pn)
+        return 'hors de la plage %s' % fmt(pl) if (min(rn) < lo - 1e-9 or max(rn) > hi + 1e-9) else None
+    if vn and rn and len(vn) == len(rn) and not same(vn, rn, 0.02):
+        return 'v mesuré %s' % fmt(v.get('v'))
+    return None
+
+
+AUTO = 'auto '   # the texte of an ecart written by sync starts with it: sync may rewrite or remove its own, never the modeller's
+
+
+def sync(f, groupe, today):
+    """ties the fiche to the code as it is: `retenu` = the value of each `code` expression; a "const" found a few lines away gets its new `ligne`;
+    a code value that needs an ecart and has none gets {type: divergence, texte: "auto <date> : valeur du code ..."}. Never touches v, plage,
+    methode, photos. A "const" whose numbers left its line is NOT guessed: listed as « constante à relier ». Returns the report (dict)."""
+    vs = list(scope_vs(f, groupe))
+    coded = [(p, v) for p, v in vs if isinstance(v.get('code'), str) and v['code'] != 'const']
+    consts = [(p, v) for p, v in vs if v.get('code') == 'const']
+    rep = dict(retenus=[], lignes=[], ecarts_auto=[], ecarts_retires=[], a_relier=[], non_evaluables=[], ecarts_a_relire=[], liees=len(coded) + len(consts))
+    r = run_node(sorted({v['code'] for p, v in coded}), f['kit']) if coded else {'values': {}, 'load': {}}
+    rep['chargement'] = [fl.get('file') for fl in (r.get('load') or {}).get('failed', [])]
+    for p, v in coded + consts:
+        path = '/'.join(p)
+        if v['code'] == 'const':
+            live = read_const(v)
+            if not live['ok']:
+                rep['a_relier'].append({'chemin': path, 'ligne': v.get('ligne'), 'retenu': v.get('retenu'), 'ecart': bool(v.get('ecart')), 'err': live['err']})
+                continue
+            if live.get('moved') and live['moved'] != v.get('ligne'):
+                rep['lignes'].append((path, v.get('ligne'), live['moved']))
+                v['ligne'] = live['moved']
+        else:
+            live = r['values'].get(v['code']) or {'ok': False, 'err': 'non évaluée'}
+            if not live['ok']:
+                rep['non_evaluables'].append((path, v['code'], live['err']))
+                continue
+            if 'retenu' not in v or not same(v.get('retenu'), live['v']):
+                rep['retenus'].append((path, v['code'], v.get('retenu'), live['v']))
+                v['retenu'] = live['v']
+                e = v.get('ecart')
+                if isinstance(e, dict) and not str(e.get('texte', '')).startswith(AUTO):
+                    rep['ecarts_a_relire'].append(path)   # the modeller's text may speak of the old value: said, kept
+        gap, e = code_gap(v, live['v']), v.get('ecart')
+        mine = isinstance(e, dict) and str(e.get('texte', '')).startswith(AUTO)
+        if gap and (not e or mine):
+            txt = '%s%s : valeur du code %s (%s)' % (AUTO, today, fmt(live['v']), gap)
+            if not mine or e.get('texte', '').split(' : ', 1)[-1] != txt.split(' : ', 1)[-1]:   # same gap: keep its first date (idempotent)
+                v['ecart'] = {'type': 'divergence', 'texte': txt}
+                rep['ecarts_auto'].append(path)
+        elif not gap and mine:
+            del v['ecart']
+            rep['ecarts_retires'].append(path)
+    return rep
+
+
+# ------------------------------------------------------------------------------------------------------------------ 7. resume
+RESUME_MAX = 200
+MEASURED = ('mesure-echelle', 'segmente', 'regle', 'oeil', 'reference')
+
+
+def fmt(x):
+    if isinstance(x, bool) or x is None: return json.dumps(x)
+    if isinstance(x, float):
+        if not math.isfinite(x): return str(x)
+        return ('%.3f' % x).rstrip('0').rstrip('.') if abs(x) < 1000 else '%d' % round(x)
+    if isinstance(x, int): return str(x)
+    if isinstance(x, list): return '[' + ', '.join(fmt(y) for y in x) + ']'
+    if isinstance(x, dict): return '{' + ', '.join('%s: %s' % (k, fmt(y)) for k, y in x.items()) + '}'
+    return str(x)
+
+
+def cut(s, n):
+    s = ' '.join(str(s).split())
+    return s if len(s) <= n else s[:n - 1] + '…'
+
+
+def v_line(label, v, extra=''):
+    bits = ['%s%s' % (fmt(v.get('v')), (' ' + v['unite']) if v.get('unite') else '')]
+    if v.get('plage') is not None: bits.append('plage %s' % fmt(v['plage']))
+    if v.get('repere'): bits.append('repère %s' % v['repere'])
+    bits.append('%s %s%s' % (v.get('methode'), v.get('conf', ''), (' (%d photo%s)' % (len(v['photos']), 's' if len(v['photos']) > 1 else '')) if v.get('photos') else ''))
+    if isinstance(v.get('code'), str):
+        bits.append('code %s = %s' % (('const ' + str(v.get('ligne'))) if v['code'] == 'const' else cut(v['code'], 40), cut(fmt(v.get('retenu')), 40)))
+    if isinstance(v.get('ecart'), dict): bits.append('écart %s' % v['ecart'].get('type'))
+    return cut('- %s : %s%s' % (label, ' · '.join(bits), extra), 230)
+
+
+def organ_lines(oname, o):
+    """the summary lines of one organ: (rank, order, line) of its values, zones by name with their pattern and edge; rank 0 = measured on photos"""
+    rows = []
+    for p, v in walk_vs(o, []):
+        lab, extra = list(p), ''
+        if len(lab) >= 2 and lab[0] == 'zones' and lab[1].startswith('['):
+            try: z = o['zones'][int(lab[1][1:-1])]
+            except Exception: z = {}
+            name = z.get('zone') or lab[1]
+            if lab[2:] == ['etendue']:
+                mo = z.get('motif') if isinstance(z.get('motif'), dict) else {}
+                extra = ''.join(x for x in (' · motif %s' % cut(mo.get('type'), 60) if mo.get('type') else '', ' · bord %s' % z['bord'] if isinstance(z.get('bord'), str) else ''))
+            lab = ['zone ' + str(name)] + lab[2:]
+        rank = 0 if v.get('methode') in MESURES else 1 if v.get('methode') in MEASURED else 2
+        rows.append((rank, len(rows), v_line('/'.join(lab), v, extra)))
+    return rows
+
+
+def resume(f, sid, limit=RESUME_MAX):
+    """fiche-resume.md: what the modeller needs of the fiche in <= limit lines (the full JSON stays the reference, opened for one value)"""
+    tx, kit, et = f.get('taxon') or {}, f.get('kit') or {}, f.get('etat') or {}
+    allv = [v for blk in ('organes', 'varietes', 'stades') for _, v in walk_vs(f.get(blk) or {}, [])]
+    linked = sum(1 for v in allv if isinstance(v.get('code'), str))
+    head = ['# Résumé de la fiche %s (%s)' % (sid, f.get('nom') or ''), '',
+            cut('Fiche complète : catalogue/serre/fiches/%s.json (ne l\'ouvre que pour une valeur précise : Grep sur son chemin). Résumé fait par '
+                '`python fleur/fiche.py resume %s` le %s ; pipe.py le refait avant chaque appel.' % (sid, sid, datetime.date.today().isoformat()), 400),
+            cut('Taxon : %s (%s) ; kit : %s ; module %s ; P = %s + %s.' % (tx.get('espece') or tx.get('genre'), tx.get('groupe') or '-', kit.get('moteur'), kit.get('module'),
+                                                                    kit.get('defauts') or '{}', kit.get('spec') or '{}'), 400),
+            cut('État : %s, %s. %d valeurs, %d reliées au code, %d écarts écrits.' % (et.get('date'), et.get('auteur'), len(allv), linked,
+                                                                                sum(1 for v in allv if v.get('ecart'))), 300),
+            'Ligne : chemin : v unité · plage · méthode confiance (photos) · code = retenu · écart.', '']
+    organs = []
+    for oname, o in (f.get('organes') or {}).items():
+        if isinstance(o, dict):
+            organs.append(('## %s (%s%s)' % (oname, o.get('role'), ', non dessiné' if o.get('dessinee') is False else ''), organ_lines(oname, o)))
+    tail = ['', '## Stades']
+    for r in (f.get('stades') or {}).get('table') or []:
+        bits = ['%s %s' % (k, fmt(r[k].get('v')) + (' %s' % fmt(r[k]['plage']) if r[k].get('plage') is not None else '') if isinstance(r[k], dict) else fmt(r[k]))
+                for k in ('op', 'wl', 'jours') if k in r]
+        tail.append(cut('- %s : %s · statut %s · %d photo(s)' % (r.get('stade'), ' · '.join(bits), r.get('statut'), len(r.get('photos') or [])), 200))
+    other = [k for k in (f.get('stades') or {}) if k != 'table']
+    if other: tail.append('- aussi : %s' % ', '.join(other))
+    vv = f.get('varietes') or {}
+    if vv:
+        tail += ['', '## Variétés', cut('; '.join('%s : %s' % (k, (x.get('forme') if isinstance(x, dict) else x) or ', '.join((x.get('organes') or {}).keys()))
+                                             for k, x in vv.items()), 400)]
+    if f.get('rendu'):
+        tail += ['', '## Rendu', cut('; '.join('%s : %s' % (k, fmt(x) if not isinstance(x, dict) else ', '.join(x)) for k, x in f['rendu'].items()), 400)]
+    tail += ['', '## Questions ouvertes']
+    tail += [cut('- %s (%s) : %s → %s' % (q.get('id'), q.get('organe', '-'), q.get('question'), q.get('proposition')), 260) for q in f.get('questions') or []] or ['- aucune']
+    room = limit - len(head) - len(tail) - 2 * len(organs)   # each organ: its title and a blank line
+    rows_of = [rows for _, rows in organs]
+    cap = max((len(r) for r in rows_of), default=0)
+    size = lambda c: sum(min(len(r), c) + (1 if len(r) > c else 0) for r in rows_of)
+    while size(cap) > room and cap > 2:   # too long: the same cap per organ, the values measured on photos kept first
+        cap -= 1
+    body = []
+    for title, rows in organs:
+        keep = sorted(sorted(rows)[:cap], key=lambda x: x[1]) if len(rows) > cap else rows
+        body += [title] + [x[2] for x in keep]
+        if len(rows) > cap:
+            body.append('- … %d autres valeurs (à l\'œil, hypothèses) : voir la fiche' % (len(rows) - cap))
+        body.append('')
+    return '\n'.join(head + body[:-1] + tail) + '\n'
+
+
+def write_fiche(path, f, raw):
+    """the fiche written back as it was laid out (indent 1, LF, the final newline kept or not)"""
+    with open(path, 'w', encoding='utf-8', newline='\n') as fo:
+        fo.write(json.dumps(f, ensure_ascii=False, indent=1) + ('\n' if raw.endswith(b'\n') else ''))
+
+
 # ------------------------------------------------------------------------------------------------------------------ rapport
 def main():
     ap = argparse.ArgumentParser(description='controle d\'une fiche morphologique fiche-morpho/1')
-    ap.add_argument('cmd', choices=['check'])
+    ap.add_argument('cmd', choices=['check', 'sync', 'resume'])
     ap.add_argument('sid')
     ap.add_argument('--no-code', action='store_true', help="ne pas evaluer les expressions `code` (pas de node)")
     ap.add_argument('--quiet', action='store_true', help="n'imprime que les erreurs et la synthese")
     ap.add_argument('--lien', choices=sorted(GROUPES), help="chaque valeur chiffree des organes dessines du groupe porte `code` ou `ecart` (fin de forme : tete ; fin de plante : tout)")
+    ap.add_argument('--souple-const', action='store_true', help="check : une constante en dur sortie de sa ligne est « a relier » (listee, pas une erreur)")
+    ap.add_argument('--write', action='store_true', help="sync : ecrit la fiche (sans lui : ce qui changerait)")
+    ap.add_argument('--out', help="resume : le fichier (refcache/<sid>/fiche-resume.md par defaut ; - : la sortie)")
     a = ap.parse_args()
     try: sys.stdout.reconfigure(encoding='utf-8')
     except Exception: pass
@@ -480,11 +676,16 @@ def main():
         path = os.path.join(FICHES, a.sid + '.json')
     if not os.path.exists(path):
         out('fiche absente : ' + os.path.relpath(path, ROOT)); return 2
+    raw = open(path, 'rb').read()
     try:
-        f = json.load(open(path, encoding='utf-8'))
+        f = json.loads(raw.decode('utf-8'))
     except Exception as e:
         out('JSON invalide : %s' % e); return 1
-    if b'\r' in open(path, 'rb').read(): out('avertissement : la fiche contient des CR (fin de ligne attendue : LF)')
+    if a.cmd == 'sync':
+        return main_sync(a, path, f, raw)
+    if a.cmd == 'resume':
+        return main_resume(a, f)
+    if b'\r' in raw: out('avertissement : la fiche contient des CR (fin de ligne attendue : LF)')
     errs, warns = [], []
     out('=== fiche %s (%s) ===' % (a.sid, os.path.relpath(path, ROOT) if path.startswith(ROOT) else path))
 
@@ -518,7 +719,7 @@ def main():
     if a.no_code:
         out('\n[3] CODE : non évalué (--no-code)')
     else:
-        c = check_code(f, errs, warns)
+        c = check_code(f, errs, warns, souple=a.souple_const)
         if c is None:
             out('\n[3] CODE : évaluation impossible'); [out('  ERREUR : ' + e) for e in errs[-1:]]; code_ok = False
         else:
@@ -536,6 +737,10 @@ def main():
             show('code hors de la plage sans écart écrit', c['plage_r'], lambda x: '%s : code %s hors %s' % x)
             show('v différent du code sans écart écrit', c['v_vs_r'], lambda x: '%s : v %s, code %s' % x)
             show('expressions non évaluables', c['noeval'], lambda x: '%s : %s -> %s' % x)
+            if a.souple_const:
+                out('  constantes à relier (code « const » sorti de sa ligne ; --souple-const : listées, pas des erreurs) : %d' % len(c['arelier']))
+                for x in c['arelier']: out('    ? %s : %s%s' % (x[0], x[1], '' if x[3] else ' (SANS écart)'))
+                for x in c['arelier']: warns.append('constante à relier : %s (%s)' % (x[0], x[1]))
             out('  écarts DÉCLARÉS (divergences connues, avec `ecart` écrit) : %d' % len(c['declared']))
             if not a.quiet:
                 for p, e in c['declared']:
@@ -573,6 +778,7 @@ def main():
 
     # 5 (--lien): the fiche tied to the drawing
     nl = None
+    arel = (c or {}).get('arelier', []) if not a.no_code else []
     if a.lien:
         ul = unlinked(f, a.lien)
         nl = len(ul)
@@ -591,9 +797,58 @@ def main():
                     'mesures': sum(meth[m] for m in MESURES), 'code': meth['code'], 'code_pct': round(100 * meth['code'] / max(1, nvo), 1),
                     'hypothese': meth['hypothese'], 'photos': len(f.get('photos') or {}),
                     'roles': sorted({o.get('role') for o in f['organes'].values() if isinstance(o, dict) and o.get('role')}),
-                    'ecarts': dict(ecs), 'non_relies': nl}, ensure_ascii=False))
+                    'ecarts': dict(ecs), 'non_relies': nl, 'a_relier': [x[0] for x in arel],
+                    'a_relier_sans_ecart': [x[0] for x in arel if not x[3]]}, ensure_ascii=False))
     return 0 if nerr == 0 else 1
 
+
+
+def main_sync(a, path, f, raw):
+    """fiche.py sync <sid> [--lien tete|plante|tout] [--write]: one JSON line last (read by pipe.py)"""
+    g = a.lien or 'tout'
+    if not isinstance(f.get('kit'), dict) or not isinstance(f.get('organes'), dict):
+        out('fiche sans kit ni organes : rien à relier'); return 1
+    try:
+        rep = sync(f, g, datetime.date.today().isoformat())
+    except Exception as e:
+        out('sync impossible : %s' % e); return 2
+    changed = bool(rep['retenus'] or rep['lignes'] or rep['ecarts_auto'] or rep['ecarts_retires'])
+    out('=== sync %s (%s : %s) %s ===' % (a.sid, g, ', '.join(sorted(GROUPES[g])), 'écrit' if a.write and changed else 'à blanc (--write pour écrire)' if changed else 'rien à changer'))
+    out('  %d valeurs reliées au code ; retenu mis au code : %d ; lignes de constante suivies : %d ; écarts auto posés : %d, retirés : %d'
+        % (rep['liees'], len(rep['retenus']), len(rep['lignes']), len(rep['ecarts_auto']), len(rep['ecarts_retires'])))
+    for p, c, old, new in rep['retenus']: out('    = %s : retenu %s -> %s [%s]' % (p, fmt(old), fmt(new), cut(c, 50)))
+    for p, old, new in rep['lignes']: out('    > %s : ligne %s -> %s' % (p, old, new))
+    for p in rep['ecarts_auto']: out('    ~ %s : écart auto (divergence)' % p)
+    for p in rep['ecarts_retires']: out('    - %s : écart auto retiré (le code est revenu dans la plage)' % p)
+    if rep['ecarts_a_relire']:
+        out('  écarts du modeleur à relire (le retenu a changé, leur texte parle peut-être de l\'ancienne valeur) : %d' % len(rep['ecarts_a_relire']))
+        for p in rep['ecarts_a_relire']: out('    ? ' + p)
+    out('  constantes à relier (code « const » sorti de sa ligne : ni devinée ni bloquante à forme ; un écart chacune avant les planches) : %d' % len(rep['a_relier']))
+    for x in rep['a_relier']: out('    ! %s : %s, retenu %s%s' % (x['chemin'], x['ligne'], fmt(x['retenu']), '' if x['ecart'] else ', SANS écart'))
+    if rep['non_evaluables']:
+        out('  expressions non évaluables : %d' % len(rep['non_evaluables']))
+        for p, c, e in rep['non_evaluables']: out('    ! %s : %s -> %s' % (p, c, cut(e, 120)))
+    if a.write and changed:
+        write_fiche(path, f, raw)
+    out(json.dumps({'fiche': a.sid, 'lien': g, 'ecrit': bool(a.write and changed), 'change': changed, 'liees': rep['liees'], 'retenus': len(rep['retenus']),
+                    'lignes': len(rep['lignes']), 'ecarts_auto': len(rep['ecarts_auto']), 'ecarts_retires': len(rep['ecarts_retires']),
+                    'ecarts_a_relire': rep['ecarts_a_relire'], 'a_relier': [x['chemin'] for x in rep['a_relier']],
+                    'a_relier_sans_ecart': [x['chemin'] for x in rep['a_relier'] if not x['ecart']],
+                    'non_evaluables': [x[0] for x in rep['non_evaluables']]}, ensure_ascii=False))
+    return 1 if rep['non_evaluables'] else 0
+
+
+def main_resume(a, f):
+    """fiche.py resume <sid> [--out F]: refcache/<sid>/fiche-resume.md (200 lines at most)"""
+    text = resume(f, a.sid)
+    if a.out == '-':
+        out(text.rstrip('\n')); return 0
+    dst = a.out or os.path.join(ROOT, 'refcache', a.sid, 'fiche-resume.md')
+    os.makedirs(os.path.dirname(os.path.abspath(dst)), exist_ok=True)
+    with open(dst, 'w', encoding='utf-8', newline='\n') as fo:
+        fo.write(text)
+    out('%s : %d lignes' % (os.path.relpath(os.path.abspath(dst), ROOT).replace('\\', '/'), text.count('\n')))
+    return 0
 
 if __name__ == '__main__':
     sys.exit(main())

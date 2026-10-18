@@ -1553,11 +1553,122 @@ def fiche_skeleton(ctx):
     return state
 
 
-def fiche_check(ctx, lien=None, tag='fiche-check'):
-    """python fleur/fiche.py check <sid> [--lien]: (exit code, the JSON summary line or {}, the text)"""
-    cmd = [sys.executable, 'fleur/fiche.py', 'check', ctx.sid, '--quiet'] + (['--lien', lien] if lien else [])
+def fiche_check(ctx, lien=None, tag='fiche-check', souple=False):
+    """python fleur/fiche.py check <sid> [--lien] [--souple-const]: (exit code, the JSON summary line or {}, the text). souple: a hard-coded
+    constant that left its line is a « constante à relier » (listed in the summary: a_relier, a_relier_sans_ecart), not an error"""
+    cmd = [sys.executable, 'fleur/fiche.py', 'check', ctx.sid, '--quiet'] + (['--lien', lien] if lien else []) + (['--souple-const'] if souple else [])
     c, t = run_cmd(ctx, cmd, tag, timeout=600, quiet=True)
     return c, (last_json(t) or {}) if not ctx.dry else {}, t
+
+
+def resume_rel(ctx):
+    return '%s/fiche-resume.md' % ctx.rel
+
+
+def fiche_resume(ctx):
+    """refcache/<sid>/fiche-resume.md (fiche.py resume, 200 lines at most): what forme and plante read instead of the whole fiche JSON
+    (oeillet, 2026-10-18: 2 800 lines that the relays never opened). Remade before every call (sync changes the fiche). True when it exists"""
+    if not have(ctx, 'fleur/fiche.py') or not (have(ctx, fiche_rel(ctx)) or ctx.dry):
+        return False
+    run_cmd(ctx, [sys.executable, 'fleur/fiche.py', 'resume', ctx.sid, '--out', resume_rel(ctx)], 'fiche-resume', timeout=300, quiet=True)
+    return ctx.dry or have(ctx, resume_rel(ctx))
+
+
+def journal_add(ctx, line):
+    """one line at the end of refcache/<sid>/journal.md (the lines pipe.py writes itself say « pipe.py (auto) »)"""
+    p = ctx.rc + '/journal.md'
+    if ctx.dry:
+        say('  [dry] journal.md += ' + line[:200])
+        return
+    head = open(p, 'rb').read()[-1:] if os.path.exists(p) else b'\n'
+    with open(p, 'a', encoding='utf-8', newline='\n') as f:
+        f.write(('' if head in (b'\n', b'') else '\n') + line + '\n')
+
+
+def journal_text(ctx):
+    p = ctx.rc + '/journal.md'
+    return open(p, encoding='utf-8', errors='replace').read() if os.path.exists(p) else ''
+
+
+def fiche_sync(ctx, lien):
+    """fiche.py sync <sid> --lien <lien> --write (no model): every `code` expression's value into `retenu`, a moved constant's new `ligne`, a
+    typed auto ecart where the code left the plage. The hard-coded constants that left their line are NOT guessed: « constantes à relier »,
+    written to questions.md and the journal, kept in pipe-state.json (fiche_a_relier) for the final report and the planches step.
+    Returns (summary dict, notes)"""
+    if not have(ctx, 'fleur/fiche.py') or not (have(ctx, fiche_rel(ctx)) or ctx.dry):
+        return {}, []
+    c, t = run_cmd(ctx, [sys.executable, 'fleur/fiche.py', 'sync', ctx.sid, '--lien', lien, '--write'], 'fiche-sync-' + lien, timeout=600, quiet=True)
+    if ctx.dry:
+        return {}, []
+    s = last_json(t) or {}
+    if not s:
+        return {}, ['fiche.py sync: no summary (exit %d: %s)' % (c, (t.strip().splitlines() or [''])[-1][:160])]
+    notes = ['fiche.py sync: expressions that do not evaluate: ' + ', '.join(s['non_evaluables'][:6])] if s.get('non_evaluables') else []
+    rel = s.get('a_relier') or []
+    ctx.st['fiche_a_relier'] = {'liste': rel, 'sans_ecart': s.get('a_relier_sans_ecart') or [], 'etape': ctx.st.get('current'), 'date': now()}
+    set_questions(ctx, 'constantes', 'Constantes en dur à relier dans la fiche (sync, non bloquant à forme ; un écart chacune avant les planches)',
+                  ['%s : sa constante n\'est plus à sa `ligne` ; proposition : remettre `ligne` (et `retenu`) sur la constante du code, ou écrire un `ecart` typé%s'
+                   % (x, '' if x not in (s.get('a_relier_sans_ecart') or []) else ' (aucun écart pour l\'instant)') for x in rel])
+    line = 'pipe.py (auto) | fiche sync --lien %s | %d retenu(s) mis au code, %d ligne(s) suivie(s), %d écart(s) auto posé(s), %d retiré(s)%s%s' % (
+        lien, s.get('retenus', 0), s.get('lignes', 0), s.get('ecarts_auto', 0), s.get('ecarts_retires', 0),
+        (' | constantes à relier (non bloquant) : ' + ', '.join(rel)) if rel else '', (' | écarts à relire : ' + ', '.join(s['ecarts_a_relire'])) if s.get('ecarts_a_relire') else '')
+    old = [ln for ln in journal_text(ctx).splitlines() if ln.startswith('pipe.py (auto) | fiche sync')]
+    if s.get('change') or (rel and (not old or old[-1] != line)):
+        journal_add(ctx, line)
+    return s, notes
+
+
+def auto_close(ctx, part='forme'):
+    """the closure the modeller no longer does by hand (oeillet, 2026-10-18: twelve Opus relays spent their last turns on it and ran out):
+    fiche.py sync --write, then, at forme, the face pair (refaire.sh face) and the sort's rtest (rtest.sh) when app/ changed since their
+    outputs, and their journal lines written in the formats check_forme_proofs reads. No model. Returns notes for the check's message"""
+    lien = 'tete' if part == 'forme' else 'tout'
+    if ctx.dry:
+        say('  [dry] closure of %s by pipe.py, no model: fiche sync --lien %s%s; then the check' % (
+            part, lien, ', face pair and rtest when older than app/, their journal lines' if part == 'forme' else ''))
+    s, notes = fiche_sync(ctx, lien)
+    if part != 'forme':
+        return notes
+    at = app_mtime(ctx)
+    ft, fp = ctx.rc + '/comparaison/face.txt', ctx.rc + '/comparaison/face.png'
+    if have(ctx, ctx.rel + '/comparaison/refaire.sh') or ctx.dry:
+        redo = ctx.dry or not (os.path.exists(ft) and os.path.exists(fp)) or os.path.getmtime(ft) < at
+        if redo:
+            need_servers(ctx)
+            c, t = run_cmd(ctx, [sh_exe(), '%s/comparaison/refaire.sh' % ctx.rel, 'face'], 'auto-face', timeout=1800, quiet=True)
+            bad = [ln.strip() for ln in t.splitlines() if 'PAS D' in ln or 'ERREUR' in ln]
+            if bad:
+                notes.append('refaire.sh face: ' + bad[0][:200])
+        if not ctx.dry and os.path.exists(ft) and os.path.exists(fp) and os.path.getmtime(ft) >= at:
+            m = dict(FACE_RE.findall(open(ft, encoding='utf-8', errors='replace').read()))
+            got = J_FACE.findall(journal_text(ctx))
+            if 'photo' in m and 'rendu' in m and (redo or not got or abs(float(got[-1][0]) - float(m['photo'])) > .011 or abs(float(got[-1][1]) - float(m['rendu'])) > .011):
+                journal_add(ctx, 'pipe.py (auto) | paire face | photo W/H %s | rendu W/H %s | refaite après la dernière retouche de app/ (comparaison/face.png)' % (m['photo'], m['rendu']))
+    rt = ctx.rc + '/temoins/rtest-forme.txt'
+    if have(ctx, ctx.rel + '/rtest.sh') or ctx.dry:
+        redo = ctx.dry or not os.path.exists(rt) or os.path.getmtime(rt) < at
+        if redo:
+            need_servers(ctx)
+            c, t = run_cmd(ctx, [sh_exe(), '%s/rtest.sh' % ctx.rel], 'auto-rtest', timeout=1800, quiet=True)
+            if c and 'build failed' in t:
+                notes.append('rtest.sh: build failed')
+        n, same_, diff, err = rtest_counts(rt) if not ctx.dry else (0, 0, 0, 0)
+        if n and os.path.getmtime(rt) >= at:
+            lines = J_RTEST.findall(journal_text(ctx))
+            last = None if not lines else (0 if lines[-1] == '' else int(lines[-1]))
+            if redo or last is None or last != diff:   # a new result is written; an old one only when the journal disagrees
+                journal_add(ctx, 'pipe.py (auto) | %s' % rtest_line(rt))
+    return notes
+
+
+def closed_check(ctx, part='forme'):
+    """forme's and plante's done check: the mechanical closure first (auto_close), then the check; it fails only on real problems (an ERR
+    rtest line, a JS error or no face render, a fiche still invalid after sync, a missing file)"""
+    notes = auto_close(ctx, part)
+    ok, why = check_forme(ctx) if part == 'forme' else check_plante(ctx)
+    if not ok and notes:
+        why = '%s [%s]' % (why, '; '.join(notes))
+    return ok, why
 
 
 def fiche_cmds(ctx):
@@ -1633,10 +1744,11 @@ def get_lock(ctx, kind):
     return lk
 
 
-def model_loop(ctx, step, pname, model, tools, max_calls, done_check, turns=None, extra=None, must_read=()):
+def model_loop(ctx, step, pname, model, tools, max_calls, done_check, turns=None, extra=None, must_read=(), before=None):
     """calls with an empty context until the model says done AND the check passes; a call that stops on the turn cap, the clock or 'relay' is
     followed by a fresh one that reads etat-<step>.md (written by the model; a stub of ours is APPENDED, the model's state is never lost).
     must_read: files the step must open with Read (BONNES-PRATIQUES.md): a call that did not is told so, and the step cannot end without them.
+    before: run before every call after the first (forme, plante: the fiche summary remade, since sync changed the fiche).
     Returns ('done'|'relay'|'blocked', last final)"""
     etat = '%s/etat-%s.md' % (ctx.rel, step)
     why = ''
@@ -1648,6 +1760,8 @@ def model_loop(ctx, step, pname, model, tools, max_calls, done_check, turns=None
             relay = ('RELAIS %d: you resume work already started. Read %s first, then the last 15 lines of %s/journal.md; do not redo what is done.%s'
                      % (k, etat, ctx.rel, ' The pipeline check failed: ' + why if why else ''))
         t0 = time.time()
+        if before and k > 1:
+            before()
         subs = ctx.sub(relay=relay, etat=etat, **(extra or {}))
         r = call_model(ctx, step, 'r%d' % k, model, prompt_text(pname, **subs), tools, turns=turns)
         fin = r.get('final') or {}
@@ -1727,7 +1841,9 @@ def check_forme(ctx, space='space.json'):
         if not have(ctx, fiche_rel(ctx)) and not ctx.dry:
             why.append('%s missing (step fiche)' % fiche_rel(ctx))
         else:
-            c, s, t = fiche_check(ctx, lien, 'fiche-lien-' + lien)
+            c, s, t = fiche_check(ctx, lien, 'fiche-lien-' + lien, souple=True)  # a constant to relink is listed, not blocking (planches: an ecart each)
+            if s.get('a_relier') is not None:
+                ctx.st['fiche_a_relier'] = dict(ctx.st.get('fiche_a_relier') or {}, liste=s['a_relier'], sans_ecart=s.get('a_relier_sans_ecart') or [])
             if c and not ctx.dry:
                 bad = [ln.strip() for ln in t.splitlines() if ln.strip().startswith('!') or 'ERREUR' in ln][:6]
                 why.append('fiche.py check --lien %s: %d error(s), %s unlinked (%s)' % (lien, s.get('erreurs', -1), s.get('non_relies', '?'), '; '.join(bad)))
@@ -1847,12 +1963,16 @@ def step_forme(ctx):
     witness_before(ctx)  # the SKU dump and the kit sorts' sheets BEFORE the modeller touches app/ (compared at temoins)
     write_forme_tools(ctx)  # refaire.sh (the face pair) and rtest.sh: forme's proofs (P8)
     tools = READ + ['Write', 'Edit'] + SAFE_BASH
-    res, fin = model_loop(ctx, 'forme', 'forme', 'opus', tools, int(getattr(ctx.a, 'relays', 4)), lambda: check_forme(ctx),
-                          extra={'kit': kit_text(ctx), 'fiche': fiche_rel(ctx), 'rtest': rtest_text(ctx)}, must_read=[bp_rel(ctx), fiche_rel(ctx)])
+    has_res = fiche_resume(ctx)  # the fiche read through its summary (must_read), remade before every call
+    res, fin = model_loop(ctx, 'forme', 'forme', 'opus', tools, int(getattr(ctx.a, 'relays', 4)), lambda: closed_check(ctx, 'forme'),
+                          extra={'kit': kit_text(ctx), 'fiche': fiche_rel(ctx), 'resume': resume_rel(ctx), 'rtest': rtest_text(ctx)},
+                          must_read=[bp_rel(ctx)] + ([resume_rel(ctx)] if has_res else []), before=lambda: fiche_resume(ctx))
     if res == 'blocked':
         raise StepFailed('forme blocked by the modeller: %s' % (fin.get('question') or fin.get('note') or fin))
     ok, why = check_forme(ctx)
-    return {'status': 'done' if res == 'done' else 'failed', 'msg': 'forme %s%s; %s' % (res, '' if ok else ' (check: %s)' % why, fin.get('note', '')), 'relays_used': True}
+    ar = (ctx.st.get('fiche_a_relier') or {}).get('liste') or []
+    return {'status': 'done' if res == 'done' else 'failed', 'msg': 'forme %s%s; %s%s' % (res, '' if ok else ' (check: %s)' % why, fin.get('note', ''),
+            '; constantes à relier (fiche, non bloquant) : ' + ', '.join(ar) if ar else ''), 'relays_used': True}
 
 
 # ---------------------------------------------------------------------------------------------------------------- fit
@@ -1934,8 +2054,10 @@ def check_plante(ctx):
 
 def step_plante(ctx):
     ensure_docs(ctx)
-    res, fin = model_loop(ctx, 'plante', 'plante', 'opus', READ + ['Write', 'Edit'] + SAFE_BASH, int(getattr(ctx.a, 'relays', 4)), lambda: check_plante(ctx),
-                          extra={'fiche': fiche_rel(ctx)}, must_read=[bp_rel(ctx)])
+    has_res = fiche_resume(ctx)
+    res, fin = model_loop(ctx, 'plante', 'plante', 'opus', READ + ['Write', 'Edit'] + SAFE_BASH, int(getattr(ctx.a, 'relays', 4)), lambda: closed_check(ctx, 'plante'),
+                          extra={'fiche': fiche_rel(ctx), 'resume': resume_rel(ctx)}, must_read=[bp_rel(ctx)] + ([resume_rel(ctx)] if has_res else []),
+                          before=lambda: fiche_resume(ctx))
     if res == 'blocked':
         raise StepFailed('plante blocked by the modeller: %s' % (fin.get('question') or fin.get('note') or fin))
     if res != 'done':
@@ -2303,13 +2425,20 @@ def pair_plan(ctx, info=None):
     used, plan, missing = {}, [], []
     ctx.pair_gaps = {}
     pfile = lambda x: (info.get(str(x.get('i'))) or {}).get('file') or '%s/t%03d.jpg' % (ctx.rel, int(x.get('i', 0)))
+    order = [c.get('id') for c in cws]
+    names_of = {n: c.get('id') for c in reversed(cws) for n in cw_names(c)}
+
+    def photo_cw(x):
+        """the colourway a photo shows: its coloris: tag naming one of coloris.json (equal names) that the colour audit did not put out"""
+        hits = [names_of[n] for n in photo_cws(x) if n in names_of and cw_photo_ok(audit, x, n)]
+        return min(hits, key=order.index) if hits else ''
     for P in PAIRS:
         best = None
         for alt in P['want']:
             cands = [x for x in K if set(alt) <= kept_tags(x)]
             if cands:
                 same = lambda x: any(cw_photo_ok(audit, x, n) for n in photo_cws(x) & first)  # the same colourway: equal names, never a substring
-                cands.sort(key=lambda x: (used.get(x.get('i'), 0), not same(x)))
+                cands.sort(key=lambda x: (used.get(x.get('i'), 0), not same(x), not photo_cw(x)))
                 best = cands[0]
                 break
         if not best:
@@ -2320,14 +2449,17 @@ def pair_plan(ctx, info=None):
             continue
         used[best.get('i')] = used.get(best.get('i'), 0) + 1
         name = 'cmp_%s_%s' % (slug(ctx.sid)[:24], 'plante' if P.get('plant') else P['k'])
+        pcw, pcw_from = cw, 'premier coloris'
         if P.get('plant'):  # one render for the plant pairs, large (cell 900: 1 800 px wide), with the stem and leaf boxes (loc=1)
             q, cell = 'plant=1&sid=%s&cw=%s&st=1:0&axv=1&full=%d&det=1.5&cell=%d&loc=1&seed=%d' % (ctx.sid, cw, full, PLANT_CELL, SEED), ('loc:' + P['crop']) if P.get('crop') else ''
-        else:
-            q, cell = 'grid=1&sid=%s&cws=%s&st=%s&view=%d&D=%d&det=1.5&seed=%d' % (ctx.sid, cw, P['st'], views[P['k']], P['D'], SEED), '0,0@%d' % P['D']
+        else:  # a head pair renders the colourway of its photo when its coloris: tag says it (oeillet: a white cornelia against a pink photo)
+            if photo_cw(best):
+                pcw, pcw_from = photo_cw(best), 'coloris: de la photo'
+            q, cell = 'grid=1&sid=%s&cws=%s&st=%s&view=%d&D=%d&det=1.5&seed=%d' % (ctx.sid, pcw, P['st'], views[P['k']], P['D'], SEED), '0,0@%d' % P['D']
         plan.append({'k': P['k'], 'label': P['label'], 'photo': best.get('i'), 'title': best.get('title'), 'page': best.get('page'), 'tags': best.get('tags'),
                      'view': views.get(P['k']), 'view_from': vsrc.get(P['k']),
                      'vu': best.get('m'), 'thumb': pfile(best), 'query': q, 'name': name, 'render': 'fleur/out/%s.png' % name,
-                     'cell': cell, 'kind': P.get('kind', 'cup'), 'op': P.get('op', '.85'), 'cw': cw,
+                     'cell': cell, 'kind': P.get('kind', 'cup'), 'op': P.get('op', '.85'), 'cw': pcw, 'cw_from': pcw_from,
                      'png': '%s/comparaison/%s.png' % (ctx.rel, P['k']), 'txt': '%s/comparaison/%s.txt' % (ctx.rel, P['k'])})
     # BONNES-PRATIQUES 9.3c (owner, 2026-10-18, cymbidium): every colourway with a photo of its own variety is compared to THAT photo
     # (tip shape, colour zones, translucency, its own heart), face on and open; up to --cw-pairs of them (10 by default)
@@ -2366,9 +2498,12 @@ def write_pairs(ctx, plan):
     os.makedirs(d, exist_ok=True)
     jsave(d + '/pairs.json', plan)
     L = ['# Paires de comparaison de %s' % ctx.sid, '', 'Photo à gauche, rendu à droite (`<clé>.png`), mesures de silhouette dans `<clé>.txt`. Refaire : `sh %s/comparaison/refaire.sh [clé...]`.' % ctx.rel,
-         'Photos de tiers : elles restent dans refcache.', '', '| clé | ce qui se compare | photo | étiquettes | rendu |', '|---|---|---|---|---|']
+         'Recadrer la photo d\'une paire (une seule tête d\'une photo qui en montre plusieurs) : `%s/comparaison/boxes.json`, {"<clé>": [x0, y0, x1, y1]} en pixels de la photo de la paire'
+         ' (ou {"<clé>": {"box": [...], "photo": <n°>}} : la boîte ne sert qu\'à cette photo) ; refaire.sh la lit à chaque passage.' % ctx.rel,
+         'Photos de tiers : elles restent dans refcache.', '', '| clé | ce qui se compare | photo | étiquettes | coloris rendu | rendu |', '|---|---|---|---|---|---|']
     for p in plan:
-        L.append('| %s | %s | %s (%s) | %s | `%s` |' % (p['k'], p['label'], p['thumb'], p['page'], ' '.join(p['tags'] or []), p['query']))
+        L.append('| %s | %s | %s (%s) | %s | %s (%s) | `%s` |' % (p['k'], p['label'], p['thumb'], p['page'], ' '.join(p['tags'] or []), p.get('cw') or '-',
+                                                          p.get('cw_from') or 'premier coloris', p['query']))
     open(d + '/pairs.md', 'w', encoding='utf-8', newline='\n').write('\n'.join(L) + '\n')
     rw = os.environ.get('PIPE_RAMWAIT', RAMWAIT)
     S = ['#!/bin/sh', '# refaire.sh [paire...]: redoes the comparison pairs of %s (written by fleur/pipe.py; never edit). Render through fleur/shot_p.sh (seed %d),' % (ctx.sid, SEED),
@@ -2393,8 +2528,8 @@ def write_pairs(ctx, plan):
               '    if grep -q "PAS D" "%s" || [ ! -f %s ]; then echo "%s: PAS D\'IMAGE $(grep -m1 -E "ERREUR (JS|DE CONSTRUCTION)|PAS DE SORTIE" "%s")"; return 1; fi' % (log, p['render'], p['k'], log),
               '    echo "%s" > "%s"' % (p['query'], p['render'][:-4] + '.q'),
               '  fi',
-              '  python fleur/img.py pair %s "$(box %s)" %s "%s" --kind %s --op %s --h %d --w %d --brief %s/brief.md --out "%s" > "%s" 2>&1' % (
-                  p['thumb'], p['thumb'], p['render'], cell, p['kind'], p['op'], PAIR_H, PAIR_W, ctx.rel, o, t),
+              '  python fleur/img.py pair %s "$(python fleur/pipe.py pbox %s/comparaison/boxes.json %s %s %s)" %s "%s" --kind %s --op %s --h %d --w %d --brief %s/brief.md --out "%s" > "%s" 2>&1' % (
+                  p['thumb'], ctx.rel, p['k'], p['thumb'], p['photo'], p['render'], cell, p['kind'], p['op'], PAIR_H, PAIR_W, ctx.rel, o, t),
               '  echo "%s: $(tail -3 "%s" | tr \'\\n\' \' \')"' % (p['k'], t),
               '}']
     S.append('for k in ${*:-%s}; do "p_$(echo "$k" | tr - _)" || echo "$k: ERREUR"; done' % ' '.join(p['k'] for p in plan))
@@ -2819,10 +2954,31 @@ def step_qa(ctx):
 
 # ---------------------------------------------------------------------------------------------------------------- sheets
 
+def planches_fiche(ctx):
+    """(ok, why): before the catalogue sheets, the fiche synced to the judged code (sync --lien tout) and still valid; every « constante à
+    relier » (a hard-coded constant that left its line) has an ecart, else the sheets wait (non-blocking at forme and plante, blocking here)"""
+    if not have(ctx, 'fleur/fiche.py') or not have(ctx, fiche_rel(ctx)):
+        return True, ''
+    fiche_sync(ctx, 'tout')
+    c, s, t = fiche_check(ctx, 'tout', 'fiche-planches', souple=True)
+    if ctx.dry:
+        return True, ''
+    if s.get('a_relier_sans_ecart'):
+        return False, 'constantes à relier sans écart dans la fiche : %s (relier `ligne` et `retenu`, ou écrire un `ecart` typé)' % ', '.join(s['a_relier_sans_ecart'])
+    if c or not s.get('valide'):
+        bad = [ln.strip() for ln in t.splitlines() if ln.strip().startswith('!') or 'ERREUR' in ln][:4]
+        return False, 'fiche.py check --lien tout after sync: %s error(s) (%s)' % (s.get('erreurs', '?'), '; '.join(bad))
+    return True, ''
+
+
 def step_planches(ctx):
     ok, why = judged_code(ctx)
     if ok:
         ok, why = witnessed_code(ctx)
+    if ok:
+        ok, why = planches_fiche(ctx)
+    elif ctx.dry:
+        planches_fiche(ctx)
     if not ok and not ctx.dry:
         raise StepFailed('%s: no sheet for the catalogue' % why)
     ids = cw_ids(ctx, 6)
@@ -2860,7 +3016,7 @@ STEPFN = {'census': step_census, 'refs': step_refs, 'coloris': step_coloris, 'ta
 
 COMMON_KEYS = {'sid', 'taxon', 'genus', 'family', 'rc', 'skus', 'ch', 'late'}
 PROMPT_KEYS = {'census': {'n', 'batch', 'verdict'}, 'refs': {'task', 'sheets', 'missing', 'groupes'}, 'brief': set(), 'coloris': {'n', 'low', 'manual'}, 'fiche': {'relay', 'etat', 'fiche', 'schema'},
-               'forme': {'relay', 'etat', 'kit', 'fiche', 'rtest'}, 'plante': {'relay', 'etat', 'fiche'}, 'finition': {'relay', 'etat'}, 'fit': {'part', 'space', 'out', 'summary'},
+               'forme': {'relay', 'etat', 'kit', 'fiche', 'resume', 'rtest'}, 'plante': {'relay', 'etat', 'fiche', 'resume'}, 'finition': {'relay', 'etat'}, 'fit': {'part', 'space', 'out', 'summary'},
                'comparaison': {'relay', 'etat', 'pairs', 'ko', 'refaire'}, 'juge': {'pairs', 'table', 'prev'}}
 
 
@@ -3019,6 +3175,10 @@ def cmd_run(a):
         slot.release()
     say('-- %s' % ' | '.join('%s %s' % (n, st['steps'].get(n, {}).get('status', '-')) for n in names))
     say('-- bill: %.2f M eq-Opus (cap %.1f M, a measure)' % (ctx.bill.total() / 1e6, ctx.cap / 1e6))
+    ar = st.get('fiche_a_relier') or {}
+    if ar.get('liste'):
+        say('-- constantes à relier dans la fiche (non bloquant avant les planches, un écart chacune pour elles) : %s%s' % (
+            ', '.join(ar['liste']), (' ; sans écart : ' + ', '.join(ar['sans_ecart'])) if ar.get('sans_ecart') else ''))
     if not ctx.dry:
         fin = fini(ctx)
         if fin:
@@ -3148,14 +3308,52 @@ def cmd_locbox(a):
         return 1
 
 
-def cmd_rtsum(a):
-    """rtest.sh's last line: what forme writes in its journal"""
-    n, same, diff, err = rtest_counts(a.file)
+def pair_box(boxes, key, photo, idx=None):
+    """the photo box of a pair for img.py pair: boxes.json's {key: [x0,y0,x1,y1]} (or {key: {"box": [...], "photo": n}}, used only for photo
+    n), clipped to the photo; else the whole photo. (box string, why)"""
+    from PIL import Image
+    W, H = Image.open(photo).size
+    whole = '0,0,%d,%d' % (W, H)
+    b = (jload(boxes, {}) or {}).get(key) if os.path.exists(boxes) else None
+    if isinstance(b, dict):
+        if b.get('photo') is not None and idx is not None and str(b['photo']) != str(idx):
+            return whole, 'boxes.json: box of %s for photo %s, the pair shows photo %s: whole photo' % (key, b['photo'], idx)
+        b = b.get('box')
+    if b is None:
+        return whole, ''
+    if not (isinstance(b, list) and len(b) == 4 and all(isinstance(x, (int, float)) for x in b)):
+        return whole, 'boxes.json: box of %s is not [x0, y0, x1, y1]: whole photo' % key
+    x0, y0, x1, y1 = max(0, int(b[0])), max(0, int(b[1])), min(W, int(b[2])), min(H, int(b[3]))
+    if x1 - x0 < 8 or y1 - y0 < 8:
+        return whole, 'boxes.json: box of %s is empty on a %dx%d photo: whole photo' % (key, W, H)
+    return '%d,%d,%d,%d' % (x0, y0, x1, y1), ''
+
+
+def cmd_pbox(a):
+    """refaire.sh: the photo box of a pair (boxes.json or the whole photo); a warning on stderr"""
+    box, why = pair_box(a.boxes, a.key, a.photo, a.idx)
+    if why:
+        sys.stderr.write(why + '\n')
+    print(box)
+    return 0
+
+
+def rtest_line(path):
+    """the journal line of an rtest output (« rtest | IDENTIQUE » or « rtest | n bouquets changés sur N »), None without a result"""
+    n, same, diff, err = rtest_counts(path)
     if not n:
+        return None
+    return 'rtest | %s' % ('IDENTIQUE' if not diff and not err else '%d bouquets changés sur %d%s' % (diff, n, ', %d en erreur (ERR)' % err if err else ''))
+
+
+def cmd_rtsum(a):
+    """rtest.sh's last line: what forme writes in its journal (pipe.py writes it itself at the end of forme)"""
+    line = rtest_line(a.file)
+    if not line:
         say('rtest: no result in %s (%s)' % (a.file, (open(a.file, encoding='utf-8', errors='replace').read()[:160] if os.path.exists(a.file) else 'file missing').replace('\n', ' ')))
         return 1
-    say('rtest | %s' % ('IDENTIQUE' if not diff and not err else '%d bouquets changés sur %d%s' % (diff, n, ', %d en erreur (ERR)' % err if err else '')))
-    return 0 if not err else 1
+    say(line)
+    return 0 if 'ERR' not in line else 1
 
 
 def cmd_models(a):
@@ -3228,7 +3426,7 @@ def cmd_selftest(a):
         t('bill row = usage of the call', rows and (rows[0]['in'], rows[0]['cw'], rows[0]['cr'], rows[0]['out']) == (10, 1000, 2000, 100) and rows[0]['eq'] == 392, str(rows[:1]))
         t('denials counted', rows[1]['denials'] == 1)
         seq('blocked')
-        res, fin = model_loop(ctx, 'forme', 'forme', 'haiku', ['Read'], 3, lambda: (True, ''), extra={'kit': '-', 'fiche': '-', 'rtest': '-'})
+        res, fin = model_loop(ctx, 'forme', 'forme', 'haiku', ['Read'], 3, lambda: (True, ''), extra={'kit': '-', 'fiche': '-', 'resume': '-', 'rtest': '-'})
         t('blocked is reported', res == 'blocked' and fin.get('question') == 'which one?')
         seq('crash')
         r = call_model(ctx, 'x', 'crash', 'haiku', 'hi', ['Read'])
@@ -3447,6 +3645,11 @@ def cmd_selftest(a):
         jsave(r7 + '/coloris.json', [{'id': 'rose', 'cultivar': ''}, {'id': 'rose-vif', 'cultivar': 'Rose Vif'}, {'id': 'x' * 19 + '-y', 'cultivar': ''}])
         ctx7 = Ctx('selftest7', tmp, argparse.Namespace(dry=False, cap=40, claude=fake), {'sid': 'selftest7', 'taxon': 'Test test', 'steps': {}, 'skus': []})
         p7 = pair_plan(ctx7)[0]
+        q7_ = {p['k']: p for p in p7}
+        t('pairs: a head pair renders the colourway its photo is tagged with (face: photo 7, coloris:rose-vif), else the first colourway',
+          q7_['face']['photo'] == 7 and q7_['face']['cw'] == 'rose-vif' and 'cws=rose-vif&' in q7_['face']['query'] and q7_['face']['cw_from'] == 'coloris: de la photo'
+          and q7_['gros-plan']['cw'] == 'rose' and q7_['plante']['cw'] == 'rose' and 'cw=rose&' in q7_['plante']['query'],
+          str([(p['k'], p['photo'], p['cw']) for p in p7]))
         q7 = open(r7 + '/questions.md', encoding='utf-8').read() if os.path.exists(r7 + '/questions.md') else ''
         t('pairs: cw-* by equal colourway names: rose does not take the photo of rose-vif', [p['k'] for p in p7 if p['k'].startswith('cw-')] == ['cw-rose-vif']
           and p7[-1]['photo'] == 7, str([(p['k'], p['photo']) for p in p7]))
@@ -3687,6 +3890,125 @@ def cmd_selftest(a):
         with contextlib.redirect_stdout(buf):
             cr_ = cmd_rtsum(argparse.Namespace(file=ctxP.rc + '/temoins/rtest-forme.txt'))
         t('rtsum: the journal line of an rtest', cr_ == 0 and buf.getvalue().strip() == 'rtest | 2 bouquets changés sur 4', buf.getvalue())
+        # ---- oeillet (2026-10-18): the closure is mechanical (fiche sync, face pair, rtest and their journal lines by pipe.py), the fiche read
+        # through its summary, a crop box per pair photo; the model only draws
+        KP = 'fx-a:' + sha8('http://x/1.jpg')
+        VS = lambda v, **k: dict({'v': v, 'methode': 'segmente', 'photos': [KP], 'conf': 'C', 'n': 1}, **k)
+        sy = {'petale': {'role': 'perianthe', 'taille': {
+            'a': VS(.5, plage=[.4, .6], code='0.5+0.05', retenu=.5),          # the code moved inside its plage: retenu follows, no ecart
+            'b': VS(.5, plage=[.4, .6], code='0.9', retenu=.9),               # out of its plage, no ecart: an auto ecart
+            'c': VS(.125, unite='R0', code='const', ligne='app/y2.js:80', retenu=.125),   # a constant a few lines away: its new line
+            'd': VS(.4321, code='const', ligne='app/y2.js:1', retenu=.4321),  # a constant that left its line: « à relier », never guessed
+            'e': VS(.5, plage=[.4, .6], code='0.7', retenu=.7, ecart={'type': 'confirme', 'texte': 'voulu par le modeleur'})}},
+              'tige': {'role': 'tige', 'taille': {'l': VS(40, unite='cm', code='41', retenu=40)}}}
+        psy = fx + '/fx-a.json'
+
+        def fsync(*extra):
+            r_ = subprocess.run([sys.executable, 'fleur/fiche.py', 'sync', psy] + list(extra), cwd=root, capture_output=True, timeout=300)
+            return r_.returncode, r_.stdout.decode('utf-8', 'replace'), last_json(r_.stdout.decode('utf-8', 'replace')) or {}
+        with open(psy, 'w', encoding='utf-8', newline='\n') as fo:
+            fo.write(json.dumps(mini('fx-a', sy), ensure_ascii=False, indent=1))
+        raw0 = open(psy, 'rb').read()
+        c_, o_, j_ = fsync('--lien', 'tete')
+        t('fiche.py sync without --write: says what would change, writes nothing', c_ == 0 and j_.get('change') and not j_.get('ecrit') and open(psy, 'rb').read() == raw0, o_[-400:])
+        c_, o_, j_ = fsync('--lien', 'tete', '--write')
+        g_ = json.load(open(psy, encoding='utf-8'))['organes']
+        ta_ = g_['petale']['taille']
+        t('fiche.py sync --write: retenu = the code, a moved constant gets its line, an auto ecart where the code leaves the plage, v and plage untouched',
+          ta_['a']['retenu'] == .55 and 'ecart' not in ta_['a'] and ta_['b']['ecart']['type'] == 'divergence' and ta_['b']['ecart']['texte'].startswith('auto ')
+          and 'valeur du code' in ta_['b']['ecart']['texte'] and ta_['c']['ligne'] == 'app/y2.js:86' and ta_['a']['v'] == .5 and ta_['a']['plage'] == [.4, .6]
+          and ta_['e']['ecart']['texte'] == 'voulu par le modeleur', json.dumps(ta_)[:600])
+        t('fiche.py sync: a constant that left its line is « à relier », not guessed; the plant is left alone with --lien tete',
+          j_.get('a_relier') == ['organes/petale/taille/d'] and j_.get('a_relier_sans_ecart') == ['organes/petale/taille/d'] and ta_['d']['ligne'] == 'app/y2.js:1'
+          and g_['tige']['taille']['l']['retenu'] == 40 and 'constantes à relier' in o_, o_[-500:])
+        raw1 = open(psy, 'rb').read()
+        c_, o_, j_ = fsync('--lien', 'tete', '--write')
+        t('fiche.py sync is idempotent (a second pass changes nothing, the file stays byte for byte)', j_.get('change') is False and open(psy, 'rb').read() == raw1
+          and not raw1.endswith(b'\n') and b'\r' not in raw1, o_[-300:])
+        c_, o_, j_ = fsync('--lien', 'tout', '--write')
+        ltige = json.load(open(psy, encoding='utf-8'))['organes']['tige']['taille']['l']
+        t('fiche.py sync --lien tout: the plant too (retenu 41, an auto ecart: v 40 is 2.5 % away and no plage)', ltige['retenu'] == 41 and ltige['ecart']['texte'].startswith('auto '), str(ltige))
+        c1_, o1_ = subprocess.run([sys.executable, 'fleur/fiche.py', 'check', psy, '--quiet'], cwd=root, capture_output=True, timeout=300).returncode, ''
+        r_ = subprocess.run([sys.executable, 'fleur/fiche.py', 'check', psy, '--quiet', '--souple-const'], cwd=root, capture_output=True, timeout=300)
+        o_ = r_.stdout.decode('utf-8', 'replace')
+        t('fiche.py check --souple-const: after sync the fiche is valid, the constant to relink listed (an error without the flag)', c1_ == 1 and r_.returncode == 0
+          and '"a_relier": ["organes/petale/taille/d"]' in o_ and 'constantes à relier' in o_, o_[-500:])
+        sy2 = json.load(open(psy, encoding='utf-8'))
+        sy2['organes']['petale']['taille']['b']['code'] = '0.5'
+        with open(psy, 'w', encoding='utf-8', newline='\n') as fo:
+            fo.write(json.dumps(sy2, ensure_ascii=False, indent=1))
+        c_, o_, j_ = fsync('--lien', 'tete', '--write')
+        t('fiche.py sync: its own auto ecart goes when the code is back in the plage (never the modeller\'s)', j_.get('ecarts_retires') == 1
+          and 'ecart' not in json.load(open(psy, encoding='utf-8'))['organes']['petale']['taille']['b'], o_[-300:])
+        big = {'o%d' % k: {'role': 'perianthe', 'taille': {'x%03d' % i: VS(i / 100., plage=[0, 9], methode='oeil' if i % 3 else 'segmente') for i in range(90)}}
+               for k in range(4)}
+        pbig = fx + '/fx-a.json'
+        fb_ = mini('fx-a', big)
+        fb_['questions'] = [{'id': 'Q1', 'organe': 'o0', 'question': 'combien ?', 'proposition': 'trois'}]
+        with open(pbig, 'w', encoding='utf-8', newline='\n') as fo:
+            fo.write(json.dumps(fb_, ensure_ascii=False, indent=1))
+        r_ = subprocess.run([sys.executable, 'fleur/fiche.py', 'resume', pbig, '--out', tmp + '/resume.md'], cwd=root, capture_output=True, timeout=300)
+        rs_t = open(tmp + '/resume.md', encoding='utf-8').read() if os.path.exists(tmp + '/resume.md') else ''
+        t('fiche.py resume: 200 lines at most for a fiche of 360 values, measured values first, stades and questions kept', r_.returncode == 0
+          and len(rs_t.splitlines()) <= 200 and '## o3 (perianthe)' in rs_t and '## Stades' in rs_t and 'Q1 (o0) : combien ? → trois' in rs_t and 'autres valeurs' in rs_t
+          and '- taille/x000 : 0 · plage [0, 9] · segmente C (1 photo)' in rs_t, '%d lines; %s' % (len(rs_t.splitlines()), rs_t[:300]))
+        # the closure at forme: no model, the scripts run when app/ changed, their journal lines written in the check's formats
+        calls_ = ctxP.rc + '/calls.txt'
+        open(ctxP.rc + '/comparaison/refaire.sh', 'w', newline='\n').write(
+            '#!/bin/sh\necho face >> %s/calls.txt\nprintf "x.png (9, 9)\\nphoto: H/W 1.02  W/H 0.98  angle 4 deg  (98x100 px)\\nrendu: H/W 0.95  W/H 1.05  angle 6 deg  (105x100 px)\\n" > %s/comparaison/face.txt\n'
+            'echo png > %s/comparaison/face.png\necho "face: photo W/H 0.98"\n' % (ctxP.rel, ctxP.rel, ctxP.rel))
+        open(ctxP.rc + '/rtest.sh', 'w', newline='\n').write('#!/bin/sh\necho rtest >> %s/calls.txt\nprintf "%%s" "%s" > %s/temoins/rtest-forme.txt\n' % (ctxP.rel, RT, ctxP.rel))
+        jP = open(ctxP.rc + '/journal.md', encoding='utf-8').read()
+        nP = auto_close(ctxP, 'forme')
+        jP2 = open(ctxP.rc + '/journal.md', encoding='utf-8').read()
+        okP, whyP = check_forme_proofs(ctxP)
+        t('closure: pipe.py redoes the face pair and the rtest after a retouch and writes their journal lines itself; the proofs then pass', okP and not nP
+          and 'pipe.py (auto) | paire face | photo W/H 0.98 | rendu W/H 1.05' in jP2 and 'pipe.py (auto) | rtest | 2 bouquets changés sur 4' in jP2
+          and open(calls_).read().split() == ['face', 'rtest'], whyP + ' ' + str(nP) + jP2[len(jP):])
+        auto_close(ctxP, 'forme')
+        t('closure: idempotent (fresh outputs: no render, no new journal line)', open(ctxP.rc + '/journal.md', encoding='utf-8').read() == jP2
+          and open(calls_).read().split() == ['face', 'rtest'])
+        time.sleep(.05)
+        open(tmp + '/app/y-test.js', 'a').write('// retouched again\n')
+        open(ctxP.rc + '/comparaison/refaire.sh', 'w', newline='\n').write('#!/bin/sh\necho "face: PAS D\'IMAGE ERREUR JS : boom at svRosette@12"\n')
+        open(ctxP.rc + '/rtest.sh', 'w', newline='\n').write('#!/bin/sh\nprintf "%%s" "- a ERR x | 0:1 b IDENTIQUE 1:1/1 / 1:1/1" > %s/temoins/rtest-forme.txt\n' % ctxP.rel)
+        nP = auto_close(ctxP, 'forme')
+        okP, whyP = check_forme_proofs(ctxP)
+        t('closure: real problems still fail (a JS error, no fresh face render, an ERR rtest line)', not okP and any('ERREUR JS' in x for x in nP)
+          and 'face pair older' in whyP and 'in error (ERR)' in whyP, whyP + str(nP))
+        # the fiche synced by the closure; a constant to relink is written down, non-blocking at forme, blocking at planches without an ecart
+        os.makedirs(tmp + '/catalogue/serre/fiches', exist_ok=True)
+        KQ = KP.replace('fx-a', 'fx-p')
+        fq = mini('fx-p', {'petale': {'role': 'perianthe', 'taille': {'r': dict(VS(.4321, code='const', ligne='app/y-test.js:1', retenu=.4321), photos=[KQ])}}})
+        jsave(tmp + '/' + fiche_rel(ctxP), fq)
+        auto_close(ctxP, 'forme')
+        jP3, qP = open(ctxP.rc + '/journal.md', encoding='utf-8').read(), open(ctxP.rc + '/questions.md', encoding='utf-8').read() if os.path.exists(ctxP.rc + '/questions.md') else ''
+        t('closure: fiche sync runs first; a constant to relink goes to the journal and questions.md, kept for the final report',
+          'pipe.py (auto) | fiche sync --lien tete' in jP3 and 'constantes à relier (non bloquant) : organes/petale/taille/r' in jP3 and 'organes/petale/taille/r' in qP
+          and ctxP.st.get('fiche_a_relier', {}).get('sans_ecart') == ['organes/petale/taille/r'], jP3[-300:] + qP[-200:])
+        okq, whyq = planches_fiche(ctxP)
+        t('planches: a constant to relink without an ecart blocks the sheets', not okq and 'sans écart' in whyq, whyq)
+        fq['organes']['petale']['taille']['r']['ecart'] = {'type': 'divergence', 'texte': 'la constante a changé, à relier au prochain passage'}
+        jsave(tmp + '/' + fiche_rel(ctxP), fq)
+        okq, whyq = planches_fiche(ctxP)
+        t('planches: with an ecart each, the constants to relink no longer block', okq, whyq)
+        os.remove(tmp + '/' + fiche_rel(ctxP))
+        # a crop box per pair photo (comparaison/boxes.json), read by refaire.sh at each pass
+        from PIL import Image
+        Image.new('RGB', (200, 100), 'white').save(tmp + '/ph.jpg')
+        bx_ = tmp + '/boxes.json'
+        b0 = pair_box(bx_, 'face', tmp + '/ph.jpg', 6)
+        jsave(bx_, {'face': [10, 10, 90, 60], 'profil': {'box': [0, 0, 50, 50], 'photo': 5}, 'bouton': [-5, 0, 500, 80], 'fane-1': [1, 2, 3]})
+        t('boxes.json: a pair photo cropped by its box (clipped), the whole photo without one, for another photo, or with a malformed box',
+          b0 == ('0,0,200,100', '') and pair_box(bx_, 'face', tmp + '/ph.jpg', 6)[0] == '10,10,90,60' and pair_box(bx_, 'profil', tmp + '/ph.jpg', 6)[0] == '0,0,200,100'
+          and 'photo 5' in pair_box(bx_, 'profil', tmp + '/ph.jpg', 6)[1] and pair_box(bx_, 'bouton', tmp + '/ph.jpg', 6)[0] == '0,0,200,80'
+          and pair_box(bx_, 'fane-1', tmp + '/ph.jpg', 6)[0] == '0,0,200,100', str([pair_box(bx_, k, tmp + '/ph.jpg', 6) for k in ('face', 'profil', 'bouton', 'fane-1')]))
+        t('refaire.sh: the photo box of every pair comes from pipe.py pbox (comparaison/boxes.json)', rs_.count('fleur/pipe.py pbox %s/comparaison/boxes.json ' % rel3) == len(plan_)
+          and 'pipe.py pbox %s/comparaison/boxes.json face ' % rel3 in rs_, rs_[-500:])
+        P_fo, P_pl = open('%s/pipe/prompts/forme.md' % HERE, encoding='utf-8').read(), open('%s/pipe/prompts/plante.md' % HERE, encoding='utf-8').read()
+        t('prompts: forme and plante read the fiche summary (<<resume>>), pipe.py does the closure, the last 10 turns kept for the state',
+          '<<resume>>' in P_fo and '<<resume>>' in P_pl and 'fiche.py sync' in P_fo and 'fiche.py sync' in P_pl and 'pipe.py la fait seul' in P_fo and 'boxes.json' in P_fo
+          and all('10 derniers tours' in x for x in (P_fo, P_pl)))
         # ---- P5: leaf and stem pairs from one located plant render; nothing floats at plante (jgap.py)
         pp_ = {p['k']: p for p in plan_}
         t('pairs: feuille (top side) and tige (junction) from the kept organ photos, one shared plant render with loc=1',
@@ -3926,6 +4248,11 @@ def cmd_selftest(a):
 def make_parser():
     ap = argparse.ArgumentParser(prog='pipe.py', description=__doc__.split('\n')[0])
     sp = ap.add_subparsers(dest='cmd', required=True)
+    pb = sp.add_parser('pbox', help='the photo box of a comparison pair (refaire.sh): comparaison/boxes.json, else the whole photo')
+    pb.add_argument('boxes')
+    pb.add_argument('key')
+    pb.add_argument('photo')
+    pb.add_argument('idx', nargs='?')
     r = sp.add_parser('run')
     r.add_argument('sid')
     r.add_argument('--taxon')
@@ -3979,7 +4306,7 @@ def make_parser():
 
 def main():
     a = make_parser().parse_args()
-    return {'run': cmd_run, 'status': cmd_status, 'bill': cmd_bill, 'models': cmd_models, 'selftest': cmd_selftest, 'rtsum': cmd_rtsum, 'locbox': cmd_locbox}[a.cmd](a)
+    return {'run': cmd_run, 'status': cmd_status, 'bill': cmd_bill, 'models': cmd_models, 'selftest': cmd_selftest, 'rtsum': cmd_rtsum, 'locbox': cmd_locbox, 'pbox': cmd_pbox}[a.cmd](a)
 
 
 if __name__ == '__main__':
