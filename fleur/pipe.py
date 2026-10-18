@@ -1519,15 +1519,124 @@ def check_forme(ctx, space='space.json'):
             if c and not ctx.dry:
                 bad = [ln.strip() for ln in t.splitlines() if ln.strip().startswith('!') or 'ERREUR' in ln][:6]
                 why.append('fiche.py check --lien %s: %d error(s), %s unlinked (%s)' % (lien, s.get('erreurs', -1), s.get('non_relies', '?'), '; '.join(bad)))
+    # P8: forme is "done" only with its face pair measured and the sort's rtest, both after the last retouch and both written in the journal
+    if not why and space == 'space.json' and not ctx.dry:
+        ok8, why8 = check_forme_proofs(ctx)
+        if not ok8:
+            why.append(why8)
+    return (not why), '; '.join(why)
+
+
+# ---------------------------------------------------------------------------------------------------------------- forme's proofs (P8)
+
+FACE_RE = re.compile(r'^(photo|rendu): H/W [\d.]+\s+W/H ([\d.]+)', re.M)
+J_FACE = re.compile(r'paire face\b[^\n]*?photo\s+W/H\s+([\d.]+)[^\n]*?rendu\s+W/H\s+([\d.]+)', re.I)
+J_RTEST = re.compile(r'\brtest\b[^\n]*?(?:(\d+)\s+bouquets?\s+chang|\bIDENTIQUE\b)', re.I)
+
+
+def own_rc(ctx):
+    """the rtest recipe of the sort: its bouquet SKUs with their stems, else its first colourway with 6 stems"""
+    return ['%s:%s' % (x['sku'], x.get('tiges') or 6) for x in ctx.st.get('skus', []) if x.get('sku')] or ['%s~0:6' % ctx.sid]
+
+
+def rtest_policy(ctx):
+    """('strict' | 'report', why). Owner, 2026-10-18: real-size heads (anthurium) and curved wilted necks may move the bouquets
+    (« la composition peut bouger », --rtest-bouge); a sort whose sid already sells with an old drawing (it is in the SKU dump taken before
+    forme) is a NEW drawing replacing it: a changed rtest is reported (journal: how many bouquets changed), not blocking. Else IDENTIQUE."""
+    if ctx.st.get('rtest_bouge'):
+        return 'report', 'décision du porteur (--rtest-bouge : %s)' % ctx.st['rtest_bouge']
+    pb = ctx.rc + '/temoins/sku-avant.csv'
+    rows = [ln.split(';') for ln in open(pb, encoding='utf-8', errors='replace').read().splitlines()[1:]] if os.path.exists(pb) else []
+    n = sum(1 for r in rows if len(r) > 2 and r[2] == ctx.sid)
+    if n:
+        return 'report', 'la sorte remplace un ancien dessin (%d produits de %s dans la boutique avant forme)' % (n, ctx.sid)
+    return 'strict', 'sorte sans ancien dessin : le hasard des bouquets ne doit pas bouger'
+
+
+def rtest_text(ctx):
+    pol, why = rtest_policy(ctx)
+    if pol == 'strict':
+        return 'il doit être IDENTIQUE (%s) : la tête nouvelle se place dans la boîte de l\'ancien dessin' % why
+    return 'un rtest changé est admis (%s), mais le nombre de bouquets changés s\'écrit au journal' % why
+
+
+def rtest_counts(path):
+    """(items, identical, different, errors) of an rtest output file"""
+    r = rtest_parse(open(path, encoding='utf-8', errors='replace').read()) if os.path.exists(path) else {}
+    v = list(r.values())
+    return len(v), v.count('IDENTIQUE'), v.count('DIFFERENT'), v.count('ERR')
+
+
+def write_forme_tools(ctx):
+    """before forme: the comparison pairs (refaire.sh: `face` is forme's proof) and refcache/<sid>/rtest.sh (the sort's rtest through the gate)"""
+    plan, missing = pair_plan(ctx)
+    write_pairs(ctx, plan)
+    rw = os.environ.get('PIPE_RAMWAIT', RAMWAIT)
+    url = ctx.url('pilote/sv.html') + '?rtest=1&rc=%s&sv=11' % ','.join(own_rc(ctx))
+    S = ['#!/bin/sh', '# rtest.sh: the rtest of %s (rc %s: the bouquet with the SVG heads off and on) through the gate, after a rebuild.' % (ctx.sid, ','.join(own_rc(ctx))),
+         '# Written by fleur/pipe.py (never edit). Output: %s/temoins/rtest-forme.txt ; the line to copy into the journal is printed last.' % ctx.rel,
+         'cd "$(dirname "$0")/../.." || exit 1'] + (['sh "%s" >/dev/null' % rw] if rw else []) + [
+         'sh mkapp.sh | tail -1 && python pilote/mksv.py >/dev/null || { echo "rtest: build failed"; exit 1; }',
+         'mkdir -p %s/temoins' % ctx.rel,
+         'sh ws/gate.sh sh ws/chrome1.sh dom "%s&nc=$(date +%%s)" %s/temoins/rtest-forme.txt >/dev/null' % (url, ctx.rel),
+         'python fleur/pipe.py rtsum %s/temoins/rtest-forme.txt' % ctx.rel]
+    if ctx.dry:
+        say('  [dry] %s/rtest.sh: %s' % (ctx.rel, url))
+        return missing
+    with open(ctx.rc + '/rtest.sh', 'w', encoding='utf-8', newline='\n') as f:
+        f.write('\n'.join(S) + '\n')
+    return missing
+
+
+def check_forme_proofs(ctx):
+    """P8: (a) comparaison/face.png and face.txt made after the last change of app/, their W/H written in journal.md (« paire face | photo W/H x |
+    rendu W/H y »); (b) temoins/rtest-forme.txt made after the last change of app/: IDENTIQUE, or under the report policy the number of changed
+    bouquets written in journal.md (« rtest | n bouquets changés »); an ERR item always fails"""
+    why, at = [], app_mtime(ctx)
+    jt = open(ctx.rc + '/journal.md', encoding='utf-8', errors='replace').read() if os.path.exists(ctx.rc + '/journal.md') else ''
+    ft = ctx.rc + '/comparaison/face.txt'
+    if not os.path.exists(ft) or not os.path.exists(ctx.rc + '/comparaison/face.png'):
+        why.append('no face pair (sh %s/comparaison/refaire.sh face)' % ctx.rel)
+    elif os.path.getmtime(ft) < at:
+        why.append('face pair older than the last change of app/ (sh %s/comparaison/refaire.sh face)' % ctx.rel)
+    else:
+        m = dict(FACE_RE.findall(open(ft, encoding='utf-8', errors='replace').read()))
+        if 'photo' not in m or 'rendu' not in m:
+            why.append('face.txt without the W/H of the photo and of the render (no silhouette?)')
+        else:
+            got = [(float(a), float(b)) for a, b in J_FACE.findall(jt)]
+            if not got:
+                why.append('journal.md lacks « paire face | photo W/H %s | rendu W/H %s »' % (m['photo'], m['rendu']))
+            elif abs(got[-1][0] - float(m['photo'])) > .011 or abs(got[-1][1] - float(m['rendu'])) > .011:
+                why.append('the last « paire face » line of journal.md (%.2f / %.2f) is not face.txt (%s / %s)' % (got[-1] + (m['photo'], m['rendu'])))
+    rt = ctx.rc + '/temoins/rtest-forme.txt'
+    pol, pwhy = rtest_policy(ctx)
+    n, same, diff, err = rtest_counts(rt)
+    if not n:
+        why.append('no rtest of the sort (sh %s/rtest.sh)' % ctx.rel)
+    elif os.path.getmtime(rt) < at:
+        why.append('rtest older than the last change of app/ (sh %s/rtest.sh)' % ctx.rel)
+    elif err:
+        why.append('rtest: %d bouquet(s) in error (ERR)' % err)
+    else:
+        lines = J_RTEST.findall(jt)
+        last = None if not lines else (0 if lines[-1] == '' else int(lines[-1]))
+        if diff and pol == 'strict':
+            why.append('rtest: %d of %d bouquets changed; it must stay IDENTIQUE (%s)' % (diff, n, pwhy))
+        elif last is None:
+            why.append('journal.md lacks the rtest line (« rtest | %s »)' % ('IDENTIQUE' if not diff else '%d bouquets changés sur %d' % (diff, n)))
+        elif last != diff:
+            why.append('the last rtest line of journal.md says %d changed, the rtest %d' % (last, diff))
     return (not why), '; '.join(why)
 
 
 def step_forme(ctx):
     ensure_docs(ctx)
     witness_before(ctx)  # the SKU dump and the kit sorts' sheets BEFORE the modeller touches app/ (compared at temoins)
+    write_forme_tools(ctx)  # refaire.sh (the face pair) and rtest.sh: forme's proofs (P8)
     tools = READ + ['Write', 'Edit'] + SAFE_BASH
     res, fin = model_loop(ctx, 'forme', 'forme', 'opus', tools, int(getattr(ctx.a, 'relays', 4)), lambda: check_forme(ctx),
-                          extra={'kit': kit_text(ctx), 'fiche': fiche_rel(ctx)}, must_read=[bp_rel(ctx), fiche_rel(ctx)])
+                          extra={'kit': kit_text(ctx), 'fiche': fiche_rel(ctx), 'rtest': rtest_text(ctx)}, must_read=[bp_rel(ctx), fiche_rel(ctx)])
     if res == 'blocked':
         raise StepFailed('forme blocked by the modeller: %s' % (fin.get('question') or fin.get('note') or fin))
     ok, why = check_forme(ctx)
@@ -2199,9 +2308,11 @@ def step_temoins(ctx):
             pct = float(mm.group(1)) if mm else None
             ok = ok and pct == 0.0
             out.append('anemone %s %% (%s)' % (pct if pct is not None else '?', os.path.basename(base)))
-    # rtest = the bouquet's random stream with the SVG heads off and on (the composition must not move). The sort's own SKUs and the kit's
-    # sorts must be IDENTIQUE; the tulip witnesses must do no worse than in the main atelier (a failure already there is not the sort's)
-    own = ['%s:%s' % (x['sku'], x.get('tiges') or 6) for x in ctx.st.get('skus', []) if x.get('sku')]
+    # rtest = the bouquet's random stream with the SVG heads off and on (the composition must not move). The sort's own SKUs: IDENTIQUE, or
+    # reported under the owner's policy (rtest_policy: a new drawing replacing an old one, --rtest-bouge); the kit's sorts must be IDENTIQUE;
+    # the tulip witnesses must do no worse than in the main atelier (a failure already there is not the sort's)
+    own = own_rc(ctx)
+    pol, pwhy = rtest_policy(ctx)
     ki = kit_info(ctx)
     kit_rc = ['%s~%d:6' % (k, n) for k in (ki or {}).get('sids', []) for n in (0, 1)]
     wit = ['tulipe-simple~7:7', 'tulipe-simple~12:6']
@@ -2215,9 +2326,11 @@ def step_temoins(ctx):
         nd_kit = [k for k, v in r_kit.items() if v != 'IDENTIQUE']
         worse = [k for k, v in r_wit.items() if v != 'IDENTIQUE' and r_ref.get(k) == 'IDENTIQUE']
         known = [k for k, v in r_wit.items() if v != 'IDENTIQUE' and r_ref.get(k) != 'IDENTIQUE']
-        ok = ok and bool(r_own) == bool(own) and not nd_own and bool(r_kit) == bool(kit_rc) and not nd_kit and not worse and bool(r_wit)
+        stop_own = nd_own if pol == 'strict' else [k for k, v in r_own.items() if v == 'ERR']
+        ok = ok and bool(r_own) == bool(own) and not stop_own and bool(r_kit) == bool(kit_rc) and not nd_kit and not worse and bool(r_wit)
         out.append('rtest of the sort %d IDENTIQUE, %d different%s; tulip witnesses %d IDENTIQUE, %d different%s' % (
-            len(r_own) - len(nd_own), len(nd_own), ' (%s)' % ', '.join(nd_own) if nd_own else '', len(r_wit) - len(known) - len(worse), len(known) + len(worse),
+            len(r_own) - len(nd_own), len(nd_own), (' (%s%s)' % (', '.join(nd_own), '' if stop_own else '; reported, not blocking: ' + pwhy)) if nd_own else '',
+            len(r_wit) - len(known) - len(worse), len(known) + len(worse),
             ' (%d already so in the main atelier%s)' % (len(known), '; WORSE: ' + ', '.join(worse) if worse else '') if known or worse else ''))
         if kit_rc:
             out.append('rtest of the kit sorts %d IDENTIQUE, %d different%s' % (len(r_kit) - len(nd_kit), len(nd_kit), ' (%s)' % ', '.join(nd_kit) if nd_kit else ''))
@@ -2363,7 +2476,7 @@ STEPFN = {'census': step_census, 'refs': step_refs, 'coloris': step_coloris, 'ta
 
 COMMON_KEYS = {'sid', 'taxon', 'genus', 'family', 'rc', 'skus', 'ch', 'late'}
 PROMPT_KEYS = {'census': {'n', 'batch', 'verdict'}, 'refs': {'task', 'sheets', 'missing'}, 'brief': set(), 'coloris': {'n', 'low', 'manual'}, 'fiche': {'relay', 'etat', 'fiche', 'schema'},
-               'forme': {'relay', 'etat', 'kit', 'fiche'}, 'plante': {'relay', 'etat', 'fiche'}, 'finition': {'relay', 'etat'}, 'fit': {'part', 'space', 'out', 'summary'},
+               'forme': {'relay', 'etat', 'kit', 'fiche', 'rtest'}, 'plante': {'relay', 'etat', 'fiche'}, 'finition': {'relay', 'etat'}, 'fit': {'part', 'space', 'out', 'summary'},
                'comparaison': {'relay', 'etat', 'pairs', 'ko', 'refaire'}, 'juge': {'pairs', 'table', 'prev'}}
 
 
@@ -2411,7 +2524,7 @@ def cmd_run(a):
         st['taxon'] = a.taxon
     if 'taxon' not in st:
         raise SystemExit('first run of %s: --taxon "<Genus species>" is needed' % sid)
-    for k in ('family', 'genus', 'group', 'kit', 'kit_prefix', 'kit_sids', 'late'):
+    for k in ('family', 'genus', 'group', 'kit', 'kit_prefix', 'kit_sids', 'late', 'rtest_bouge'):
         if getattr(a, k, None):
             st[k] = getattr(a, k)
     if a.kavb:
@@ -2566,6 +2679,16 @@ def cmd_bill(a):
     return 0
 
 
+def cmd_rtsum(a):
+    """rtest.sh's last line: what forme writes in its journal"""
+    n, same, diff, err = rtest_counts(a.file)
+    if not n:
+        say('rtest: no result in %s (%s)' % (a.file, (open(a.file, encoding='utf-8', errors='replace').read()[:160] if os.path.exists(a.file) else 'file missing').replace('\n', ' ')))
+        return 1
+    say('rtest | %s' % ('IDENTIQUE' if not diff and not err else '%d bouquets changés sur %d%s' % (diff, n, ', %d en erreur (ERR)' % err if err else '')))
+    return 0 if not err else 1
+
+
 def cmd_models(a):
     ch = resolve_ch(a.ch)
     a.cap, a.dry = 1000, False
@@ -2630,7 +2753,7 @@ def cmd_selftest(a):
         t('bill row = usage of the call', rows and (rows[0]['in'], rows[0]['cw'], rows[0]['cr'], rows[0]['out']) == (10, 1000, 2000, 100) and rows[0]['eq'] == 392, str(rows[:1]))
         t('denials counted', rows[1]['denials'] == 1)
         seq('blocked')
-        res, fin = model_loop(ctx, 'forme', 'forme', 'haiku', ['Read'], 3, lambda: (True, ''), extra={'kit': '-', 'fiche': '-'})
+        res, fin = model_loop(ctx, 'forme', 'forme', 'haiku', ['Read'], 3, lambda: (True, ''), extra={'kit': '-', 'fiche': '-', 'rtest': '-'})
         t('blocked is reported', res == 'blocked' and fin.get('question') == 'which one?')
         seq('crash')
         r = call_model(ctx, 'x', 'crash', 'haiku', 'hi', ['Read'])
@@ -3041,6 +3164,50 @@ def cmd_selftest(a):
         t('prompts: fiche reads SCHEMA in full and runs fiche.py check; forme and plante tie the fiche to the code (--lien)', '<<schema>>' in P_f and 'EN ENTIER' in P_f
           and 'fiche.py check' in P_f and '--lien tete' in open('%s/pipe/prompts/forme.md' % HERE, encoding='utf-8').read()
           and '--lien tout' in open('%s/pipe/prompts/plante.md' % HERE, encoding='utf-8').read())
+        # ---- P8: forme is done only with its face pair measured and the sort's rtest, written in the journal
+        ctxP = Ctx('fx-p', tmp, argparse.Namespace(dry=False, cap=40, claude=fake), {'sid': 'fx-p', 'taxon': 'Test test', 'steps': {},
+                                                                                     'skus': [{'sku': 'fx-p~0', 'cultivar': 'A', 'tiges': 5}]})
+        os.makedirs(ctxP.rc + '/comparaison', exist_ok=True)
+        os.makedirs(ctxP.rc + '/temoins', exist_ok=True)
+        write_forme_tools(ctxP)
+        rts = open(ctxP.rc + '/rtest.sh', encoding='utf-8').read() if os.path.exists(ctxP.rc + '/rtest.sh') else ''
+        t('forme: rtest.sh asks the rtest of the sort (its SKUs) on 8805 through the gate, never 8765', 'rc=fx-p~0:5' in rts and ':8805/' in rts and 'ws/gate.sh' in rts
+          and '8765' not in rts and 'rtsum' in rts and os.path.exists(ctxP.rc + '/comparaison/refaire.sh'), rts[-300:])
+        t('forme: rtest policy strict for a sort without an old drawing', rtest_policy(ctxP)[0] == 'strict')
+        open(ctxP.rc + '/temoins/sku-avant.csv', 'w', newline='\n').write('sku;id;sid;cn;col;fam;ret\n1;fx-p~0;fx-p;a;b;c;0\n2;z~0;z;a;b;c;0\n')
+        t('forme: rtest policy report for a sort that replaces an old drawing (owner, 2026-10-18)', rtest_policy(ctxP)[0] == 'report')
+        okP, whyP = check_forme_proofs(ctxP)
+        t('forme: no face pair and no rtest: not done', not okP and 'no face pair' in whyP and 'no rtest' in whyP, whyP)
+        time.sleep(.05)
+        open(ctxP.rc + '/comparaison/face.png', 'w').write('png')
+        open(ctxP.rc + '/comparaison/face.txt', 'w').write('x.png (10, 10)\nphoto: H/W 1.02  W/H 0.98  angle 4 deg  (98x100 px)\nrendu: H/W 0.95  W/H 1.05  angle 6 deg  (105x100 px)\nbrief: pas de fourchette\n')
+        RT = '- cylindre-verre-clair IDENTIQUE 1:1/1 / 1:1/1 | 0:0.5 cylindre-verre-clair DIFFERENT 2:3/4 / 2:5/4 | 2:0.5 coupe-pied-blanche DIFFERENT 2:3/4 / 2:5/4 | 3:1 coupe-pied-blanche IDENTIQUE 1:1/1 / 1:1/1'
+        open(ctxP.rc + '/temoins/rtest-forme.txt', 'w').write(RT)
+        open(ctxP.rc + '/journal.md', 'w', encoding='utf-8').write('tour 1 | paire face | photo W/H 0.98 | rendu W/H 1.05 | trop large\ntour 2 | rtest | 1 bouquets changés sur 4\n')
+        okP, whyP = check_forme_proofs(ctxP)
+        t('forme: a journal rtest count that is not the rtest fails', not okP and 'says 1 changed, the rtest 2' in whyP, whyP)
+        open(ctxP.rc + '/journal.md', 'a', encoding='utf-8').write('tour 3 | rtest | 2 bouquets changés sur 4 | ancien dessin\n')
+        okP, whyP = check_forme_proofs(ctxP)
+        t('forme: face pair measured and rtest changed but reported (a new drawing replacing an old one): done', okP, whyP)
+        os.remove(ctxP.rc + '/temoins/sku-avant.csv')
+        okP, whyP = check_forme_proofs(ctxP)
+        t('forme: a changed rtest blocks a sort without an old drawing', not okP and 'must stay IDENTIQUE' in whyP, whyP)
+        ctxP.st['rtest_bouge'] = 'tête en vraie taille, comme l\'anthurium'
+        okP, whyP = check_forme_proofs(ctxP)
+        t('forme: --rtest-bouge (owner\'s exception) reports instead of blocking', okP and rtest_policy(ctxP)[0] == 'report', whyP)
+        open(ctxP.rc + '/journal.md', 'a', encoding='utf-8').write('tour 4 | paire face | photo W/H 0.98 | rendu W/H 1.00\n')
+        okP, whyP = check_forme_proofs(ctxP)
+        t('forme: the last face line of the journal must be face.txt', not okP and 'is not face.txt' in whyP, whyP)
+        time.sleep(.05)
+        open(tmp + '/app/y-test.js', 'a').write('// retouched after the proofs\n')
+        okP, whyP = check_forme_proofs(ctxP)
+        t('forme: proofs older than the last retouch of app/ fail', not okP and 'face pair older' in whyP and 'rtest older' in whyP, whyP)
+        buf = io.StringIO()
+        with contextlib.redirect_stdout(buf):
+            cr_ = cmd_rtsum(argparse.Namespace(file=ctxP.rc + '/temoins/rtest-forme.txt'))
+        t('rtsum: the journal line of an rtest', cr_ == 0 and buf.getvalue().strip() == 'rtest | 2 bouquets changés sur 4', buf.getvalue())
+        t('prompts: forme names its proofs (refaire.sh face, rtest.sh, the journal lines)', all(x in P_['forme'] or x in open('%s/pipe/prompts/forme.md' % HERE, encoding='utf-8').read()
+                                                                                      for x in ('refaire.sh face', 'rtest.sh', 'paire face | photo W/H', '<<rtest>>')))
         say('selftest: %d ok, %d failed' % (len(ok), len(bad)))
     finally:
         LOCKS, need_servers, RUN_PAIRS = old_locks, old_ns, old_rp
@@ -3086,11 +3253,15 @@ def make_parser():
     r.add_argument('--late', type=int, help='the late:N wave of the colourways added (default 1)')
     r.add_argument('--views', help='grid views of the head pairs for this sort, "profil:8,bouton:8" (default: PAIRS, then the form family: orchids and spathes 8)')
     r.add_argument('--juge-tours', dest='juge_tours', type=int, default=JUGE_TOURS, help='judge ko -> comparaison round trips before the refusal (exit 2)')
+    r.add_argument('--rtest-bouge', dest='rtest_bouge', help='the owner accepts that the sort moves the bouquets (real-size heads, curved wilted neck): its reason; '
+                   'a changed rtest of the sort is then reported in the journal, not blocking')
     for n in ('status', 'bill'):
         s = sp.add_parser(n)
         s.add_argument('sid')
         s.add_argument('--ch')
     sp.add_parser('selftest')
+    s = sp.add_parser('rtsum', help='the journal line of an rtest output file (rtest | IDENTIQUE, or n bouquets changés sur N)')
+    s.add_argument('file')
     m = sp.add_parser('models')
     m.add_argument('--ch')
     m.add_argument('--which', default='haiku,sonnet,opus')
@@ -3100,7 +3271,7 @@ def make_parser():
 
 def main():
     a = make_parser().parse_args()
-    return {'run': cmd_run, 'status': cmd_status, 'bill': cmd_bill, 'models': cmd_models, 'selftest': cmd_selftest}[a.cmd](a)
+    return {'run': cmd_run, 'status': cmd_status, 'bill': cmd_bill, 'models': cmd_models, 'selftest': cmd_selftest, 'rtsum': cmd_rtsum}[a.cmd](a)
 
 
 if __name__ == '__main__':
