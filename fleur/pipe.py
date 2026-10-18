@@ -359,6 +359,19 @@ class Ctx:
             jsave(self.rc + '/pipe-state.json', self.st)
 
 
+def bash_reads(cmd):
+    """files a Bash command shows in full: `cat <file>` (several files allowed), not piped into head/tail/cut/grep (nerine, 2026-10-18: the plante relays
+    read fiche-resume.md with cat and the must_read guard, which only saw Read, stopped the step)"""
+    out = []
+    for part in re.split(r'&&|\|\||;|\n', cmd):
+        segs = part.split('|')
+        m = re.match(r'^\s*cat\s+([^<>]+?)\s*$', segs[0])
+        if not m or any(re.match(r'^\s*(head|tail|cut|grep|sed|awk|wc)\b', x) for x in segs[1:]):
+            continue
+        out += [w.strip('"\'') for w in m[1].split() if not w.startswith('-')]
+    return out
+
+
 def prompt_text(name, **kw):
     p = '%s/pipe/prompts/%s.md' % (HERE, name)
     t = open(p, encoding='utf-8').read()
@@ -537,6 +550,7 @@ def call_model(ctx, step, tag, model, prompt, tools, turns=None, effort='default
     text = (r or {}).get('result') or ''
     sub = (r or {}).get('subtype') or ('timeout' if timed else 'no-result')
     reads = [ctx.npath(i.get('file_path') or i.get('path')) for n, i in st['tools'] if n == 'Read' and isinstance(i, dict) and (i.get('file_path') or i.get('path'))]
+    reads += [ctx.npath(x) for n, i in st['tools'] if n == 'Bash' and isinstance(i, dict) for x in bash_reads(str(i.get('command') or ''))]
     ctx.reads.setdefault(step, set()).update(reads)
     cmds = [str(i.get('command') or '') for n, i in st['tools'] if n == 'Bash' and isinstance(i, dict)]
     ctx.cmds.setdefault(step, []).extend(cmds)
@@ -3802,6 +3816,7 @@ def cmd_selftest(a):
         t('refs: a photo without "vu" is set aside', '"vu:"' in why_.get('b', ''), str(why_))
         t('refs: a tag the "vu" field does not state is set aside', 'stade:fane' in why_.get('c', ''), str(why_))
         t('refs: a photo never opened is set aside', 'not looked at' in why_.get('d', ''), str(why_))
+        t('must_read: a full cat counts as a read, a cut one does not', bash_reads('ls; cat a/r.md') == ['a/r.md'] and not bash_reads('cat a/r.md | head -60'))
         t('refs: what was opened is kept across calls (refs-vus.json)', 't026.jpg' in (jload(rc + '/refs-vus.json', []) or []))
         # comparaison: the pairs, their check; the judge's round trips through cmd_run (the fake model writes and reads like a model)
         need_servers = lambda c: None
