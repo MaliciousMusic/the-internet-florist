@@ -42,7 +42,7 @@ EFFORT = {'haiku': 'low', 'sonnet': 'medium', 'opus': 'high'}  # opus xhigh -> h
 # RATE-OEILLET M1: one complete flower for 8 M at most (owner, 2026-10-18), each step cut at its own share; --caps forme=4,plante=1.5 overrides.
 # A step's spend is summed over every run of the sort (pipe-bill.json): a resumed step keeps what it already spent.
 STEP_CAP = {'census': .2, 'refs': .15, 'coloris': .1, 'targets': .05, 'fiche': .25, 'forme': 3.0, 'fit': .2, 'plante': 1.0, 'finition': .8,
-            'temoins': .05, 'comparaison': .3, 'juge': .4, 'qa': .1, 'planches': .1}
+            'temoins': .05, 'comparaison': .6, 'juge': .4, 'qa': .1, 'planches': .1}  # comparaison .3 -> .6: one Opus call of 40 turns is .6 (oeillet)
 CAP_DEFAULT = 8.0
 NL = chr(10)
 CHECK_FAILS = 2  # a done check that fails this many times in a step stops the step (a question to the owner), never a fresh relay
