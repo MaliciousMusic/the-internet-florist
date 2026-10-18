@@ -24,6 +24,8 @@ window.svtOut=(svg,n,ms,snapP)=>{const el=svg.querySelectorAll('*').length,pat=[
       /* &dump=1: the whole markup, to analyse offline (one stage) */if(new URLSearchParams(location.search).get('dump'))o.dump=XS.serializeToString(svg);
       o.defsBy=Object.fromEntries(Object.entries(by).sort((a,b)=>b[1][2]-a[1][2]).map(([k,v])=>[k,v[0]+'x '+v[1]+'el '+v[2].toFixed(1)+'KB']))}}
   /* window.__svtDbg (a probe a module may fill while debugging): copied into the measures */if(window.__svtDbg)o.dbg=window.__svtDbg;
+  /* the page's JavaScript errors so far (window.SVT_ERR, kept by the hook mksv.py puts before the app): with the measures, so a sheet that drew
+     but stumbled somewhere says so */if(window.SVT_ERR&&SVT_ERR.length)o.jserr=SVT_ERR.slice(0,5);
   /* &loc=1 on a plant sheet (fleur/pipe.py pairs feuille and tige): where svtStem put the stem and its leaves, in pixels of the snap: per cell the
      stem's midline (25 points), its width at mid-length, the box of the stem and the box of each leaf; size = the snap's width and height */
   if(new URLSearchParams(location.search).get('loc')&&window.__svtLoc){const Q=new URLSearchParams(location.search),W0=+svg.getAttribute('width'),H0=+svg.getAttribute('height'),k=(+(Q.get('sw'))||2*W0)/W0,R=svg.getBoundingClientRect(),
@@ -228,3 +230,12 @@ if(new URLSearchParams(location.search).get('jn')&&typeof svBranch==='function')
     const jn=J.map(q=>{const[x,y,rr]=P(q.m),bb=q.g.getBBox();return[Math.floor(x/sk/cw),Math.round(x),Math.round(y),Math.round(rr),f2(q.az),f2(q.op),f2(q.wl||0),q.lod,f2(bb.width/q.D),f2(bb.height/q.D),gap(q),ordr(q)]}),
       se=SE.map(m=>{const[x,y]=P(m);return[Math.floor(x/sk/cw),Math.round(x),Math.round(y)]}),br=BR.map(q=>{const b=q.k.getBBox();return[f2(b.width/U),f2(b.height/U),f2(q.fD/U)]});
     const add=()=>{const p=document.getElementById('out');if(!p)return setTimeout(add,50);p.textContent+=' JN '+JSON.stringify(jn)+' SE '+JSON.stringify(se)+' BR '+JSON.stringify(br)};add();return r}}
+/* a sheet that throws (fleur/shot.sh used to print a bare NO OUTPUT): 3 s after the sheet's start, if no measures were written and the page caught
+   errors (window.SVT_ERR, mksv.py's hook), they are written in place of the measures, {"jserr":[...],"fallback":1}; measures written later replace
+   them (the first <pre id="out"> is the one read). Read only: nothing is drawn, nothing changes when the page does not throw. */
+(()=>{const Q=new URLSearchParams(location.search);if(!['grid','plant','bq','rtest','fit','cmp'].some(k=>Q.get(k)))return;
+  const put=()=>{if(document.getElementById('out')||!(window.SVT_ERR&&SVT_ERR.length))return;const pre=document.createElement('pre');pre.id='out';pre._svtErr=1;
+    pre.textContent=JSON.stringify({jserr:SVT_ERR.slice(0,5),fallback:1});document.body.append(pre)};
+  /* (the mark is a property, not an attribute: ws/chrome1.sh reads exactly <pre id="out">) */
+  new MutationObserver(()=>{const P=[...document.querySelectorAll('pre')].filter(p=>p.id==='out'),e=P.find(p=>p._svtErr);if(e&&P.some(p=>!p._svtErr))e.remove()}).observe(document.body,{childList:true});
+  setTimeout(put,3000)})();

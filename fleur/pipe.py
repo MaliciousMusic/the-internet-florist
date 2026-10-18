@@ -1895,7 +1895,7 @@ def plant_gaps(ctx):
         run_cmd(ctx, [sys.executable, 'fleur/jgap.py', 'fleur/out/%s.png' % name, str(len(JGAP_ST.split(','))), str(full)], 'jgap', timeout=300, quiet=True)
         return True, 'dry', []
     if not good:
-        return False, 'jgap: no plant render (%s)' % (text.strip().splitlines() or [''])[-1][:160], []
+        return False, 'jgap: no plant render (%s)' % shot_err(text), []
     c, t = run_cmd(ctx, [sys.executable, 'fleur/jgap.py', 'fleur/out/%s.png' % name, str(len(JGAP_ST.split(','))), str(full)], 'jgap', timeout=300, quiet=True)
     return jgap_verdict(t)
 
@@ -1957,6 +1957,16 @@ def shot(ctx, name, query, tag):
     return ok, last_json(text), text
 
 
+def shot_err(text):
+    """what a failed render says (O9): shot.sh's « ERREUR JS : ... » (the exception the page caught), a build error, else its last line"""
+    L = (text or '').strip().splitlines()
+    for key in ('ERREUR DE CONSTRUCTION', 'ERREUR JS', 'PAS DE SORTIE'):
+        hit = [ln for ln in L if ln.startswith(key)]
+        if hit:
+            return hit[0][:300]
+    return (L or [''])[-1][:160]
+
+
 def cw_ids(ctx, n=4):
     ids = [e['id'] for e in jload(ctx.rc + '/coloris.json', [])][:n]
     return ids
@@ -1975,7 +1985,7 @@ def budget(ctx, tag):
     if ctx.dry:
         return True, 'dry', {}
     if not ok or not m:
-        return False, 'no render (%s)' % (text.strip().splitlines() or [''])[-1][:100], {}
+        return False, 'no render (%s)' % shot_err(text), {}
     over = m.get('el', 0) > 1.2 * TARGET_EL or m.get('kb', 0) > 1.2 * TARGET_KB
     return True, '%s elements and %s KB per head at DET 1 (measure only; about %d / %d%s)' % (m.get('el'), m.get('kb'), TARGET_EL, TARGET_KB,
                                                                                          ', above 1.2 x' if over else ''), m
@@ -2020,7 +2030,7 @@ def colour_check(ctx, tag='couleur'):
         if ctx.dry:
             continue
         if not good:
-            return False, 'colour sheet not rendered (%s)' % (text.strip().splitlines() or [''])[-1][:160], rows
+            return False, 'colour sheet not rendered (%s)' % shot_err(text), rows
         got = cw_verdict(t)
         miss += [i for i in ids if i not in {r['id'] for r in got}]
         rows += got
@@ -2163,7 +2173,7 @@ def witness_before(ctx):
             if ctx.dry:
                 continue
             if not ok:
-                raise StepFailed('kit witness %s: no render before the modelling (%s)' % (k, (t.strip().splitlines() or [''])[-1][:80]))
+                raise StepFailed('kit witness %s: no render before the modelling (%s)' % (k, shot_err(t)))
             os.makedirs(d, exist_ok=True)
             shutil.copyfile('%s/fleur/out/kit_%s.png' % (ctx.ch, slug(k)), dst)
 
@@ -2367,7 +2377,7 @@ def write_pairs(ctx, plan):
               '  rm -f "%s" "%s"' % (o, t),
               '  if ! fresh %s "%s"; then' % (p['render'], p['query']),
               '    rm -f %s "%s"; sh fleur/shot_p.sh %s "%s" > "%s" 2>&1' % (p['render'], p['render'][:-4] + '.q', p['name'], p['query'], log),
-              '    if grep -q "PAS D" "%s" || [ ! -f %s ]; then echo "%s: PAS D\'IMAGE $(grep -m1 "ERREUR JS" "%s")"; return 1; fi' % (log, p['render'], p['k'], log),
+              '    if grep -q "PAS D" "%s" || [ ! -f %s ]; then echo "%s: PAS D\'IMAGE $(grep -m1 -E "ERREUR (JS|DE CONSTRUCTION)|PAS DE SORTIE" "%s")"; return 1; fi' % (log, p['render'], p['k'], log),
               '    echo "%s" > "%s"' % (p['query'], p['render'][:-4] + '.q'),
               '  fi',
               '  python fleur/img.py pair %s "$(box %s)" %s "%s" --kind %s --op %s --h %d --w %d --brief %s/brief.md --out "%s" > "%s" 2>&1' % (
@@ -2817,7 +2827,7 @@ def step_planches(ctx):
             say('  [dry] copy fleur/out/%s.png -> %s/%s-%s-p1.png' % (name, dest, ctx.sid, kind))
             continue
         if not ok:
-            raise StepFailed('sheet %s: no image (%s)' % (kind, (text.strip().splitlines() or [''])[-1][:100]))
+            raise StepFailed('sheet %s: no image (%s)' % (kind, shot_err(text)))
         os.makedirs(dest, exist_ok=True)
         # never overwrite an earlier sheet: the next free -pN (p1 for the pipeline's first pass, p2... after retouches)
         k = 1
@@ -3042,9 +3052,44 @@ def cmd_bill(a):
     return 0
 
 
-def loc_box(loc, kind):
+def leaf_base(png, b, stem, w):
+    """where a leaf joins the stem on a plant render: the leaf's pixels (inside its box, off the background) that lie in the ring just outside
+    the stem (between half its width and one width and a half from its midline): the stem point at their median height. (x, y) or (None, None)"""
+    try:
+        import numpy as np
+        from PIL import Image
+        im = np.asarray(Image.open(png).convert('RGB')).astype(int)
+    except Exception:
+        return None, None
+    H, W = im.shape[:2]
+    x0, y0, x1, y1 = max(0, int(b[0])), max(0, int(b[1])), min(W, int(b[2])), min(H, int(b[3]))
+    if x1 <= x0 or y1 <= y0:
+        return None, None
+    fg = np.abs(im[y0:y1, x0:x1] - im[2, 2]).sum(2) > 30
+    pts = []
+    for (ax, ay), (bx, by) in zip(stem, stem[1:]):  # the midline, densified
+        for k in range(8):
+            pts.append((ax + (bx - ax) * k / 8, ay + (by - ay) * k / 8))
+    P = np.array(pts + [tuple(stem[-1])], float)
+    yy, xx = np.nonzero(fg)
+    if not len(yy):
+        return None, None
+    X, Y = xx + x0, yy + y0
+    d = np.full(len(X), 1e9)
+    for px, py in P[::max(1, len(P) // 400)]:
+        d = np.minimum(d, np.hypot(X - px, Y - py))
+    ring = (d > w / 2 + 2) & (d < 1.5 * w + 4)
+    if ring.sum() < 4:
+        return None, None
+    ym = float(np.median(Y[ring]))
+    sx, sy = min(stem, key=lambda q: abs(q[1] - ym))
+    return sx, ym
+
+
+def loc_box(loc, kind, png=None):
     """the crop of a plant render (svtest &loc=1, first cell) for a pair: 'feuille' = the biggest leaf, padded 6 %; 'tige' = a square on the stem
-    where the biggest leaf joins it (the stem point nearest to the leaf's box), 12 stem widths and 14 to 30 % of the stem's height wide;
+    where the biggest leaf joins it (leaf_base on the render png, else the stem point nearest to the leaf's box), 12 stem widths and 14 to 30 %
+    of the stem's height wide;
     clamped to the snap. Returns (x0, y0, x1, y1) or raises ValueError with the reason"""
     cells = (loc or {}).get('cells') or []
     if not cells:
@@ -3062,11 +3107,14 @@ def loc_box(loc, kind):
     if not st:
         raise ValueError('no stem midline located')
     ys = [p[1] for p in st]
-    if leaves:
+    x = y = None
+    if leaves and png:
+        x, y = leaf_base(png, leaves[0], st, float(c.get('w') or 4))
+    if x is None and leaves:
         b = leaves[0]
         cx, cy = (b[0] + b[2]) / 2, (b[1] + b[3]) / 2
         x, y = min(st, key=lambda p: (p[0] - cx) ** 2 + (p[1] - cy) ** 2)
-    else:
+    elif x is None:
         x, y = st[len(st) // 2]
     h = max(ys) - min(ys)
     side = min(max(12 * float(c.get('w') or 4), .14 * h), .3 * h)
@@ -3079,7 +3127,8 @@ def cmd_locbox(a):
     try:
         if not isinstance(j, dict):
             raise ValueError('%s: no measures (the render failed?)' % a.json)
-        say('%d,%d,%d,%d' % loc_box(j.get('loc'), a.kind))
+        png = a.json[:-5] + '.png' if a.json.endswith('.json') else None
+        say('%d,%d,%d,%d' % loc_box(j.get('loc'), a.kind, png if png and os.path.exists(png) else None))
         return 0
     except ValueError as e:
         sys.stderr.write('locbox %s: %s\n' % (a.kind, e))
@@ -3632,6 +3681,14 @@ def cmd_selftest(a):
         t('locbox: the leaf crop is the biggest leaf, padded', loc_box(LOCX, 'feuille') == (897, 1488, 1322, 1712), str(loc_box(LOCX, 'feuille')))
         bt_ = loc_box(LOCX, 'tige')
         t('locbox: the stem crop is centred on the stem where that leaf joins it', bt_[0] < 900 < bt_[2] and bt_[1] < 1560 < bt_[3] and abs((bt_[2] - bt_[0]) - .14 * 3360) < 2, str(bt_))
+        from PIL import Image, ImageDraw
+        imL = Image.new('RGB', (300, 400), (233, 228, 220))
+        dL_ = ImageDraw.Draw(imL)
+        dL_.rectangle([96, 20, 104, 390], fill=(70, 120, 90))
+        dL_.polygon([(103, 300), (230, 150), (240, 160), (104, 312)], fill=(80, 140, 100))  # a leaf rising from the stem at y ~ 300-312
+        imL.save(tmp + '/leafbase.png')
+        bxL = leaf_base(tmp + '/leafbase.png', [100, 150, 240, 312], [[100, 390 - 15 * i] for i in range(25)], 8)
+        t('locbox: the junction is found on the render where the leaf leaves the stem (not at the leaf box centre)', bxL[1] is not None and 285 < bxL[1] < 318, str(bxL))
         try:
             loc_box({'cells': [{'stem': [[1, 1]], 'leaves': []}]}, 'feuille')
             t('locbox: no leaf located is said, not guessed', False)
@@ -3777,6 +3834,47 @@ def cmd_selftest(a):
             t('planches/FINI: witnesses on another code than the judged one refuse', not ok8 and 'another code' in why8, why8)
         finally:
             g_['step_temoins'] = old_tm
+        # ---- O9: shot.sh rebuilds a stale build and says the page's JS error; mkapp.sh's module order does not depend on the locale
+        fm = tmp + '/o9main'
+        os.makedirs(fm + '/ws', exist_ok=True)
+        os.makedirs(fm + '/bronze/out', exist_ok=True)
+        open(fm + '/ws/gate.sh', 'w', newline='\n').write('#!/bin/sh\n"$@"\n')
+        open(fm + '/ws/chrome1.sh', 'w', newline='\n').write('#!/bin/sh\necho "$2" >> "%s/urls.txt"\nprintf \'{"jserr":["Uncaught TypeError: x is undefined [svDraw@51 < ?@90]"],"fallback":1}\' > "$3"\n' % fm)
+        cr = tmp + '/o9copy'
+        for d_ in ('fleur', 'app', 'pilote'):
+            os.makedirs('%s/%s' % (cr, d_), exist_ok=True)
+        shutil.copyfile(HERE + '/shot.sh', cr + '/fleur/shot.sh')
+        open(cr + '/mkapp.sh', 'w', newline='\n').write('#!/bin/sh\necho built >> build.log\necho x > demo7.html\necho "app syntax ok 1 scripts 1KB"\n')
+        open(cr + '/pilote/mksv.py', 'w').write('open("pilote/sv.html","w").write("sv")\nopen("build.log","a").write("sv\\n")\nprint("ok")\n')
+        open(cr + '/pilote/svtest.js', 'w').write('//\n')
+        for f_ in ('demo7.html', 'pilote/sv.html'):
+            open('%s/%s' % (cr, f_), 'w').write('old')
+        time.sleep(.05)
+        open(cr + '/app/y-x.js', 'w').write('// retouched\n')
+        env = dict(os.environ, SHOT_MAIN=fm, PATH=os.path.dirname(sh_exe()) + os.pathsep + os.environ.get('PATH', ''))
+        so = subprocess.run([sh_exe(), 'fleur/shot.sh', 'essai', 'grid=1&sid=x'], cwd=cr, capture_output=True, text=True, env=env, timeout=120)
+        blog = open(cr + '/build.log').read() if os.path.exists(cr + '/build.log') else ''
+        t('shot.sh: an app/*.js newer than demo7.html rebuilds the app then sv.html before the render', blog.split() == ['built', 'sv'], blog + so.stderr[-300:])
+        t('shot.sh: a page that throws prints its JS error, not NO OUTPUT', "PAS D'IMAGE" in so.stdout and 'ERREUR JS : Uncaught TypeError: x is undefined [svDraw@51' in so.stdout
+          and shot_err(so.stdout).startswith('ERREUR JS'), so.stdout[-400:])
+        subprocess.run([sh_exe(), 'fleur/shot.sh', 'essai', 'grid=1&sid=x'], cwd=cr, capture_output=True, text=True, env=env, timeout=120)
+        t('shot.sh: a fresh build is not rebuilt', open(cr + '/build.log').read().split() == ['built', 'sv'])
+        ctxO = Ctx('fx-o9', cr, argparse.Namespace(dry=False, cap=40, claude=fake), {'sid': 'fx-o9', 'taxon': 'Test test', 'steps': {}, 'skus': []})
+        private_scripts(ctxO)
+        spo = open(cr + '/fleur/shot_p.sh', encoding='utf-8').read() if os.path.exists(cr + '/fleur/shot_p.sh') else ''
+        t('shot_p.sh (the private copy pipe.py renders with) carries the rebuild and the JS error', 'mksv.py' in spo and 'ERREUR JS' in spo and '8765' not in spo)
+        mk_ = open(root + '/mkapp.sh', encoding='utf-8').read()
+        ld_ = tmp + '/o9ls'
+        os.makedirs(ld_)
+        for f_ in ('y3-rose2.js', 'y3-plante-nar.js', 'y3-rose.js', 'y3-plante.js', 'y3-rosette.js'):
+            open('%s/%s' % (ld_, f_), 'w').write('')
+        envC = dict(env, LC_ALL='C')
+        so = subprocess.run([sh_exe(), '-c', 'ls y3-*.js 2>/dev/null | LC_ALL=C /usr/bin/sort -t. -k1,1'], cwd=ld_, capture_output=True, text=True, env=envC)
+        t('mkapp.sh: the globbed modules sorted on the name before .js, whatever the locale (main order: y3-plante.js before y3-plante-nar.js)', mk_.count('| LC_ALL=C /usr/bin/sort -t. -k1,1)') == 3
+          and so.stdout.split() == ['y3-plante.js', 'y3-plante-nar.js', 'y3-rose.js', 'y3-rose2.js', 'y3-rosette.js'], so.stdout + so.stderr)
+        fe_ = subprocess.run(['node', '-e', "const fs=require('fs');const s=fs.readFileSync('%s/fiche_eval.js','utf8');console.log(/sort\\(cmp\\)/.test(s)&&/2>\\\\\\/dev\\\\\\/null\\(\\?: /.test(s))" % HERE.replace('\\', '/')],
+                             capture_output=True, text=True)
+        t('fiche_eval.js reads the new mkapp.sh globs in the same order', 'true' in fe_.stdout, fe_.stdout + fe_.stderr)
         t('prompts: refs asks groupe= and says the 1 000 px and the colour audit', all(x in open('%s/pipe/prompts/refs.md' % HERE, encoding='utf-8').read()
                                                                                   for x in ('groupe=', '1 000 px', 'ΔE 15', '<<groupes>>')))
         t('prompts: finition knows the colour rule', all(x in open('%s/pipe/prompts/finition.md' % HERE, encoding='utf-8').read() for x in ('cwmed.py', 'dL', 'dC')))

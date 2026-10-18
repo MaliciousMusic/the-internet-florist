@@ -22,12 +22,14 @@ function fileList() {
   if (!line) throw new Error('mkapp.sh: no "cat a1.html ..." line');
   const body = line.replace(/^cat\s+/, '').replace(/\s*>\s*\.\.\/demo7\.html.*$/, '');
   const out = [];
-  const re = /\$\(ls ([^ )]+?) 2>\/dev\/null\)|(\S+)/g;
+  // a glob like $(ls y3-*.js 2>/dev/null | LC_ALL=C /usr/bin/sort -t. -k1,1): the files in mkapp.sh's order (the name before ".js", byte by byte)
+  const re = /\$\(ls ([^ )]+?) 2>\/dev\/null(?: \|[^)]*)?\)|(\S+)/g;
+  const key = f => f.split('.')[0], cmp = (a, b) => (key(a) < key(b) ? -1 : key(a) > key(b) ? 1 : a < b ? -1 : a > b ? 1 : 0);
   let m;
   while ((m = re.exec(body))) {
     if (m[1]) { // glob like y3-*.js
       const rx = new RegExp('^' + m[1].replace(/[.+^${}()|[\]\\]/g, '\\$&').replace(/\*/g, '.*') + '$');
-      fs.readdirSync(APP).filter(f => rx.test(f)).sort().forEach(f => out.push(path.join(APP, f)));
+      fs.readdirSync(APP).filter(f => rx.test(f)).sort(cmp).forEach(f => out.push(path.join(APP, f)));
     } else {
       const t = m[2];
       if (t === 'a1.html') continue;

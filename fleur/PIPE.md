@@ -24,13 +24,25 @@ photo/rendu paire par paire, puis un juge adversarial qui n'est pas le modeleur.
   - `--views "profil:8,bouton:8"` : vues de la grille des paires de tête pour cette sorte (gardées dans `pipe-state.json`). Sans elle : `PAIRS`, puis la
     table `VIEWS_FAMILY` (orchidées et spathes : profil et bouton en vue 8 ; famille lue dans `--family`, le module `--kit`, puis le genre).
     La vue retenue et sa source sont écrites dans `pairs.json` (`view`, `view_from`).
-- `python fleur/pipe.py status <sid>` : étapes, contrôles, facture. `bill <sid>` : le tableau par étape. `selftest` : 148 vérifications sans modèle ni Chrome.
+- `python fleur/pipe.py status <sid>` : étapes, contrôles, facture. `bill <sid>` : le tableau par étape. `selftest` : 155 vérifications sans modèle ni Chrome.
 - `python fleur/pipe.py locbox <rendu.json> feuille|tige` : la boîte de recadrage d'un rendu `plant=1&loc=1` (refaire.sh s'en sert).
 - `python fleur/pipe.py rtsum <fichier>` : la ligne de journal d'un rtest (« rtest | IDENTIQUE » ou « rtest | n bouquets changés sur N ») ; `rtest.sh` l'imprime.
 - `python fleur/pipe.py models` : trois appels minuscules, un par modèle (facturés sous `refcache/pipe-test`).
 - `--dry` : aucun modèle, aucune commande ; liste les étapes, les appels (modèle, effort, tours, délai, outils, taille du prompt) et les commandes.
 - Codes de sortie : 0 fini, 2 un contrôle a échoué ou le juge a refusé, 3 plafond atteint, 4 trois sortes déjà en cours. Tout se reprend par
   `run <sid>` (première étape non finie) ou `--from`.
+
+## Rendus (O9)
+- `fleur/shot.sh` (et donc sa copie privée `shot_p.sh`) reconstruit d'abord ce qui est périmé : `mkapp.sh` quand un `app/*.js` (ou `p2-p4.js`,
+  `mkapp.sh`) est plus récent que `demo7.html`, puis `pilote/mksv.py` quand `demo7.html` ou `pilote/svtest.js` est plus récent que `pilote/sv.html`.
+  Une construction ratée s'imprime « ERREUR DE CONSTRUCTION : ... » (et « PAS D'IMAGE »).
+- Une page qui lève une exception ne donne plus « NO OUTPUT » : `mksv.py` pose avant l'application un petit script qui garde les erreurs JavaScript
+  (`window.SVT_ERR` : message et premiers appels, fonction@ligne) ; `svtest.js` les écrit à la place des mesures 3 s après le début si aucune mesure
+  n'est venue (`{"jserr":[...],"fallback":1}`, remplacé si les mesures arrivent ensuite) et les joint aux mesures sinon ; `shot.sh` imprime
+  « ERREUR JS : ... » (ou « avertissement JS (image faite) »). `pipe.py` remonte cette ligne dans ses messages, `refaire.sh` aussi.
+- `mkapp.sh`, `mkqa.sh`, `mkpl.sh` : les modules `y3-*.js`, `y-*.js`, `yz-*.js` triés sur le nom avant « .js », octet par octet
+  (`LC_ALL=C /usr/bin/sort -t. -k1,1`), quelle que soit la locale du shell : `demo7.html` identique à l'octet à celui de main du 18 octobre
+  (vérifié sous C et en_US) ; un `ls` nu sous `LC_ALL=C` mettait `y3-plante-nar.js` avant `y3-plante.js`. `fleur/fiche_eval.js` lit le même ordre.
 
 ## Port, scripts privés, mémoire
 - Le serveur de l'atelier est sur `FLEUR_PORT` (8805 par défaut). Le port 8765 sert une autre application du porteur : pipe.py ne l'utilise ni ne le sonde
