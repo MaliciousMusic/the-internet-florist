@@ -41,9 +41,10 @@ LIMIT = {'haiku': 1200, 'sonnet': 1800, 'opus': 5400}   # wall-clock seconds per
 EFFORT = {'haiku': 'low', 'sonnet': 'medium', 'opus': 'high'}  # opus xhigh -> high (RATE-OEILLET M1; --opus-effort overrides)
 # RATE-OEILLET M1: one complete flower for 8 M at most (owner, 2026-10-18), each step cut at its own share; --caps forme=4,plante=1.5 overrides.
 # A step's spend is summed over every run of the sort (pipe-bill.json): a resumed step keeps what it already spent.
-STEP_CAP = {'census': .2, 'refs': .15, 'coloris': .1, 'targets': .05, 'fiche': .25, 'forme': 3.0, 'fit': .2, 'plante': 1.0, 'finition': .8,
-            'temoins': .05, 'comparaison': .6, 'juge': .4, 'qa': .1, 'planches': .1}  # comparaison .3 -> .6: one Opus call of 40 turns is .6 (oeillet)
+STEP_CAP = {'census': .1, 'refs': .3, 'coloris': .1, 'targets': .05, 'fiche': .25, 'forme': 3.0, 'fit': .2, 'plante': 1.0, 'finition': .8,
+            'temoins': .05, 'comparaison': .6, 'juge': .4, 'qa': .1, 'planches': .1}  # comparaison .3 -> .6: one Opus call of 40 turns is .6 (oeillet); refs .15 -> .3, census .2 -> .1: pick + fill + brief run .17 to .27, a census .1 (wave 3)
 CAP_DEFAULT = 8.0
+PIPE_SLOTS = 5  # sorts running at once on the PC (owner, 2026-10-18: four flowers in parallel, plus the oeillet's last checks; the gate still holds 3 headless Chromes)
 NL = chr(10)
 CHECK_FAILS = 2  # a done check that fails this many times in a step stops the step (a question to the owner), never a fresh relay
 TARGET_EL, TARGET_KB = 300, 50                          # budget per head at DET 1: a MEASURE only since 2026-10-17 (the owner: quality first)
@@ -989,7 +990,12 @@ GROUPES = ('hybride-de-coupe', 'espece-sauvage', 'jardin', 'autre')
 GROUPE_ALIAS = {'hybride': 'hybride-de-coupe', 'coupe': 'hybride-de-coupe', 'hybride-coupe': 'hybride-de-coupe', 'fleur-coupee': 'hybride-de-coupe',
                 'cultivar': 'hybride-de-coupe', 'sauvage': 'espece-sauvage', 'espece': 'espece-sauvage', 'wild': 'espece-sauvage', 'garden': 'jardin'}
 PAIR_GROUPES = 'hybride-de-coupe,jardin'  # the groups a comparison photo may show (--groupes; never "autre")
-PAIR_SHORT = 1000                         # a comparison photo's short side in px at least (P7): its local copy p<NNN>.jpg
+PAIR_SHORT = 1000                         # a comparison photo's short side in px wanted (P7): its local copy p<NNN>.jpg
+PAIR_SHORT_MIN = 600                      # the floor --pair-min may lower it to: a bud fills little of its frame (gloriosa, 2026-10-18: the best bud photo 655 px)
+
+
+def pair_min(ctx):
+    return max(PAIR_SHORT_MIN, int(getattr(ctx.a, 'pair_min', None) or PAIR_SHORT))
 PAIR_LONG = 2400                          # ... downloaded at its original size, its long side brought down to this
 CW_DE_MAX = 15                            # a coloris:<x> photo whose flower is further than this (CIE76) from the colourway's colour leaves the pairs
 CW_CONF_MIN = .5                          # ... when refs.py auto found the flower with this confidence at least (as the coloris step); below: no verdict
@@ -1040,13 +1046,15 @@ def pair_photo(ctx, R, x, info):
     small is not downloaded. Network errors are noted, never raised."""
     i = int(x.get('i', -1))
     key = str(i)
-    if key in info and (info[key].get('file') or info[key].get('short') or (info[key].get('err') and not info[key]['err'].startswith('download'))):
-        return info[key]  # a failed download is tried again
+    old = info.get(key) or {}
+    retry = old.get('err', '').startswith('original') and (old.get('short') or 0) >= pair_min(ctx) and not old.get('file')
+    if key in info and not retry and (old.get('file') or old.get('short') or (old.get('err') and not old['err'].startswith('download'))):
+        return info[key]  # a failed download is tried again, and a photo once refused under PAIR_SHORT that now passes PAIR_SHORT_MIN
     C = jload(ctx.rc + '/cands.json', []) or []
     c = C[i] if 0 <= i < len(C) else {}
     url, ow, oh = c.get('thumb') or '', int(c.get('w') or 0), int(c.get('h') or 0)
     rec = {'src': url}
-    if ow and oh and min(ow, oh) < PAIR_SHORT:
+    if ow and oh and min(ow, oh) < pair_min(ctx):
         rec.update(w=ow, h=oh, short=min(ow, oh), err='original %dx%d' % (ow, oh))
         info[key] = rec
         return rec
@@ -1095,8 +1103,8 @@ def pair_eligible(ctx, x, info):
     r = info.get(str(x.get('i'))) or {}
     if not r.get('short'):
         why.append('size unknown (%s)' % (r.get('err') or 'no pair copy'))
-    elif r['short'] < PAIR_SHORT or not r.get('file'):
-        why.append('short side %d px (< %d)' % (r['short'], PAIR_SHORT) if r['short'] < PAIR_SHORT else (r.get('err') or 'no pair copy'))
+    elif r['short'] < pair_min(ctx) or not r.get('file'):
+        why.append('short side %d px (< %d)' % (r['short'], pair_min(ctx)) if r['short'] < pair_min(ctx) else (r.get('err') or 'no pair copy'))
     return (not why), ', '.join(why)
 
 
@@ -1238,11 +1246,14 @@ def check_refs(ctx):
     n_org = sum(c['organe'].values())
     soft = ['%s:%s %d/%d' % (f, v, c[f].get(v, 0), m) for f, d in REFS_MIN.items() for v, m in d.items() if c[f].get(v, 0) < m]
     hard = ['%s:%s' % (f, v) for f, v in REFS_HARD if c[f].get(v, 0) < 1]
+    by_declin = 'stade:fane' in hard and c['stade'].get('declin', 0) >= 1
+    if by_declin:  # nerine, 2026-10-18: no faded photo of the taxon or its sisters; the decline photo shows the wilt's direction (a question)
+        hard.remove('stade:fane')
     if n < 10:
         hard.append('only %d photos kept (10 at least)' % n)
     if n_org < 10:
         soft.append('organs %d/10' % n_org)
-    return {'ok': not hard, 'n': n, 'organs': n_org, 'hard': hard, 'soft': soft,
+    return {'ok': not hard, 'n': n, 'organs': n_org, 'hard': hard, 'soft': soft, 'fane_by_declin': by_declin,
             'msg': '%d photos, %d organs; missing for good: %s; short: %s' % (n, n_org, ', '.join(hard) or '-', ', '.join(soft[:8]) or '-')}
 
 
@@ -1300,9 +1311,13 @@ def step_refs(ctx):
         n1, bad = refs_audit(ctx)
         dropped += len(bad)
     c = check_refs(ctx)
+    sis, sis_sheets = refs_sisters(ctx, R, c)
     gaps = refs_pairs(ctx, R)  # P11: the photos the comparison pairs need, checked now (eligible: group, 1 000 px, colour audit), not after forme
     if not c['ok'] or len(c['soft']) > 3 or gaps:
         miss = ', '.join(c['hard'] + c['soft'] + ['paire %s (%s)' % (k, v) for k, v in gaps.items()])
+        if sis:
+            miss += ('. Espèces sœurs admises pour ces manques seulement (stades déclin et fané, organes) : %s ; leurs candidats sont sur les planches '
+                     '%s ; garde-les avec groupe=jardin ou espece-sauvage et le nom de l’espèce dans « vu »') % (', '.join(sis), ', '.join(sis_sheets) or '-')
         r = call_model(ctx, 'refs', 'fill', 'sonnet', prompt_text('refs', **ctx.sub(task='fill', sheets='-', missing=miss or '-', groupes=', '.join(pair_groupes(ctx)))), tools + WEB + ['Write'], turns=60)
         n2, bad = refs_audit(ctx)
         dropped += len(bad)
@@ -1320,10 +1335,42 @@ def step_refs(ctx):
         call_model(ctx, 'refs', 'brief', 'haiku', prompt_text('brief', **ctx.sub()), tools + ['Write'], turns=30)
     if not ctx.dry and not os.path.exists(ctx.rc + '/brief.md'):
         c['ok'], c['msg'] = False, c['msg'] + '; brief.md not written'
+    if c.get('fane_by_declin'):
+        set_questions(ctx, 'fane-par-declin', 'Fané dessiné d’après le déclin (non bloquant)',
+                      ['%s : aucune photo de fané gardée, ni du taxon ni des espèces sœurs ; %d photo(s) de déclin. Proposition : dessiner le fané en '
+                       'prolongeant le déclin photographié (même sens de flétrissure, bords bruns), et le juge le compare à la photo de déclin'
+                       % (ctx.taxon, refs_counts(ctx)[1]['stade'].get('declin', 0))])
+        c['msg'] += '; fane drawn from the decline photo (question, fane-par-declin)'
     c['set_aside'] = dropped
     c['msg'] += '; %d photos set aside by the "looked at" check' % dropped
     c['msg'] += '; ' + refs_pair_audit(ctx, R)
     return {'status': 'done' if c['ok'] else 'failed', 'msg': c['msg'], 'checks': c, 'gaps': c['soft']}
+
+
+def refs_sisters(ctx, R, c):
+    """--refs-taxa: the sister species searched when a stage or an organ is missing for good (nerine, 2026-10-18: no Nerine bowdenii
+    faded on Commons); their candidates go on new sheets the fill call reads. Returns (taxa, sheets)."""
+    taxa = [t.strip() for t in (getattr(ctx.a, 'refs_taxa', None) or '').split(',') if t.strip()]
+    if not taxa or (not c['hard'] and len(c['soft']) <= 3):
+        return [], []
+    if ctx.dry:
+        say('  [dry] sister species for the gaps: %s' % ', '.join(taxa))
+        return taxa, []
+    n0 = len(jload(ctx.rc + '/cands.json', []))
+    for t in taxa:
+        for q in ('Category:' + t, t + ' wilted faded withered', t + ' seed head', t + ' flower stem leaves'):
+            try:
+                say('  find (sister): ' + quiet(R.find, ctx.sid, q, 40 if q.startswith('Category:') else 20, 1).strip()[:100])
+            except Exception as e:
+                say('  find failed (%s): %s' % (q, str(e)[:80]))
+            time.sleep(1)
+    n1 = len(jload(ctx.rc + '/cands.json', []))
+    out = []
+    for f in range(n0, n1, 20):
+        quiet(R.sheet, ctx.sid, f, 20, 200)
+        out.append('%s/sheet_%d.jpg' % (ctx.rel, f))
+    say('  %d sister candidates (%s)' % (n1 - n0, ', '.join(taxa)))
+    return taxa, out
 
 
 def refs_pairs(ctx, R=None):
@@ -1385,14 +1432,39 @@ def med_hex(hs):
 AUTO_RE = re.compile(r'base (#[0-9a-fA-F]{6}) corps (#[0-9a-fA-F]{6}) pointe (#[0-9a-fA-F]{6}) confiance ([0-9.]+)')
 
 
+CW_ROW = re.compile(r"\{id:'([^']+)',n:'([^']+)',c:'(#[0-9a-fA-F]{6})'(?:,edge:'(#[0-9a-fA-F]{6})')?(?:,base:'(#[0-9a-fA-F]{6})')?")
+
+
+def coloris_from_table(ctx, table):
+    """a species sold by its colours, without registered cultivars (gloriosa, 2026-10-18): coloris.json from the catalogue's own colourway table
+    in app/*.js (const <table>=[{id,n,c,edge,base}...]), level D, measure 'catalogue' (body c, tip edge); the photos measure them at finition"""
+    src = ''
+    for f in sorted(glob.glob(ctx.ch + '/app/*.js')):
+        t = open(f, encoding='utf-8', errors='replace').read()
+        m = re.search(r'const\s+%s\s*=\s*\[(.*?)\];' % re.escape(table), t, re.S)
+        if m:
+            src = m.group(1)
+            break
+    out = [{'id': i, 'cultivar': n, 'niveau': 'D', 'marque': 'libre', 'photos': [], 'mesure': 'catalogue', 'base': b or c, 'corps': c, 'pointe': e or c}
+           for i, n, c, e, b in CW_ROW.findall(src)]
+    if not out:
+        raise StepFailed('--cw-table %s: no {id,n,c} row found in app/*.js' % table)
+    jsave(ctx.rc + '/coloris.json', out)
+    set_questions(ctx, 'coloris-catalogue', 'Coloris du catalogue sans cultivar (niveau D)',
+                  ['%s (%s, %s) : couleur du catalogue, à confirmer sur les photos du taxon' % (x['id'], x['cultivar'], x['corps']) for x in out])
+    return {'status': 'done', 'msg': '%d catalogue colourways from %s (level D, a question): %s' % (len(out), table, ', '.join(x['id'] for x in out))}
+
+
 def step_coloris(ctx):
     if ctx.dry:
         say('  [dry] refs.py url/auto on up to 3 photos of each A/B cultivar, medians, then Haiku for the low-confidence ones')
         return {'status': 'done', 'msg': 'dry', 'checks': {}}
     # levels A to C are measured (owner, 2026-10-17); a cultivar under a brand is measured too: its NAME is never shown (BONNES-PRATIQUES 4.9)
     rows = [r for r in census_table(ctx) if r['niveau'] in OK_LEVELS and r['photos']]
+    if not rows and getattr(ctx.a, 'cw_table', None):
+        return coloris_from_table(ctx, ctx.a.cw_table)
     if not rows:
-        raise StepFailed('no A/B/C cultivar with photos in the census (run census first)')
+        raise StepFailed('no A/B/C cultivar with photos in the census (run census first; a species without cultivars: --cw-table CW_<X>)')
     first = {sku_cultivar(rows, x.get('cultivar'))['nom'] for x in ctx.st.get('skus', []) if sku_cultivar(rows, x.get('cultivar'))}
     rows.sort(key=lambda r: (r['nom'] not in first, r['niveau'], -len(r['photos'])))
     rows = rows[:int(getattr(ctx.a, 'max_coloris', 60) or 60)]
@@ -3245,7 +3317,7 @@ def cmd_run(a):
         ctx.cap / 1e6, ctx.bill.total() / 1e6, ' ; kit %s (%s) with %s' % (ki['module'], ki['prefix'], ','.join(ki['sids']) or '-') if ki else '', ' ; DRY RUN' if ctx.dry else ''))
     if not ctx.dry and 'shot_p.sh' not in priv and any(n in todo for n in LOCKED):
         raise SystemExit('fleur/shot.sh not found in %s: no private copy fleur/shot_p.sh for the renders' % ch)
-    slot = Lock(['pipe-1', 'pipe-2', 'pipe-3'], sid)
+    slot = Lock(['pipe-%d' % i for i in range(1, PIPE_SLOTS + 1)], sid)
     if not ctx.dry:
         for n in os.listdir(LOCKS) if os.path.isdir(LOCKS) else []:
             if n.startswith('pipe-'):
@@ -3253,7 +3325,7 @@ def cmd_run(a):
                 if info.get('sid') == sid and info.get('pid') != os.getpid() and pid_alive(info.get('pid', 0)):
                     raise SystemExit('%s is already running (pid %s)' % (sid, info.get('pid')))
         if not slot.acquire(wait=False):
-            say('three sorts are already running on this PC (ws/locks/pipe-1..3): try again later')
+            say('%d sorts are already running on this PC (ws/locks/pipe-1..%d): try again later' % (PIPE_SLOTS, PIPE_SLOTS))
             return 4
     ctx.slot = slot
     code = 0
@@ -4419,6 +4491,9 @@ def make_parser():
     r.add_argument('--cap', type=float, default=CAP_DEFAULT, help='millions of Opus input-equivalent tokens: a measure kept in pipe-bill.json, the run stops beyond it (8: one complete flower, RATE-OEILLET)')
     r.add_argument('--fiche-strict', dest='fiche_strict', action='store_true', help='fiche errors after sync block forme and plante (default: a question, RATE-OEILLET M2)')
     r.add_argument('--num-cws', dest='num_cws', help='the two colourways of the numbers sheet (default: the darkest and lightest measured)')
+    r.add_argument('--pair-min', dest='pair_min', type=int, help='short side in px a comparison photo needs (default 1000, 600 at least: a sort whose buds are only in smaller photos)')
+    r.add_argument('--cw-table', dest='cw_table', help='a species without registered cultivars: the colourway table of app/*.js its coloris.json is made from (CW_GLOR)')
+    r.add_argument('--refs-taxa', dest='refs_taxa', help='sister species searched for the stages and organs the taxon has no photo of, "Nerine sarniensis,Nerine undulata"')
     r.add_argument('--caps', default='', help='step caps in M overriding STEP_CAP, "forme=4,plante=1.5" (summed over every run of the sort)')
     r.add_argument('--skus', default='', help='bouquet SKUs "lilas~0:Ruhm von Horstenstein,..." (default: sku_bouquet of the sources json)')
     r.add_argument('--dry', action='store_true', help='no model, no command: print what would run and run the disk checks')
