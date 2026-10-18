@@ -1,0 +1,4552 @@
+{
+ "schema": "fiche-morpho/1",
+ "sid": "anemone-coronaria",
+ "nom": "Anémone des fleuristes",
+ "taxon": {
+  "genre": "Anemone",
+  "espece": "Anemone coronaria L.",
+  "groupe": "De Caen Group (simples) ; semi-doubles et doubles (St Brigid) à part",
+  "source": "catalogue/serre/sources/anemone-coronaria.json (GBIF 3033261, nom accepté)"
+ },
+ "kit": {
+  "moteur": "svBloom",
+  "module": "app/y2.js",
+  "defauts": "SVB_DEF",
+  "spec": "SVA_P",
+  "genes": "SVA_GENES",
+  "coeur": "svaHeart (app/y2.js)",
+  "plante": "anemPlant (app/s10a.js) + app/y3-anemone2.js (acoNeck, acoBract, acoCutLeaf, acoStemCols, acoFuzz)",
+  "collerette": "acoBract puis acoCutLeaf (copie de svCutLeaf, app/y3-anemone.js)",
+  "vie": "app/z1.js (lifeProfile, lifeWEl, lifeOp) ; app/z2.js (LIFE_SP)",
+  "fane_couleurs": "svaWiltCol (GHI[sid].wilt)",
+  "couleurs": "SVA_CW (app/y2.js) ; CW_ANEM (app/s10a.js) ; catalogue/serre/sources/anemone-coronaria.json",
+  "lecture_du_code": "Les expressions `code` sont évaluées par fleur/fiche_eval.js avec P = Object.assign({}, SVB_DEF, SVA_P) (le P de svBloom) ; `probe.bract(op, wl)` rend les options de la bractée."
+ },
+ "etat": {
+  "pilote": true,
+  "date": "2026-10-18",
+  "auteur": "agent (pilote du schéma fiche-morpho/1)",
+  "note": "Fiche pilote : écrite d'après REFERENCES.md, les briefs de refcache et le code, SANS nouvelle mesure ni nouveau rendu. Chaque valeur dit sa méthode ; aucune photo n'est copiée."
+ },
+ "photos": {
+  "anemone-coronaria:0118a758": {
+   "titre": "File:iNat obs 72645753 photo 118478667",
+   "auteur": "gnomes1009 (iNaturalist)",
+   "licence": "CC BY",
+   "url": "https://www.inaturalist.org/observations/72645753",
+   "url_image": "https://inaturalist-open-data.s3.amazonaws.com/photos/118478667/large.jpeg",
+   "local": "ch/anemones/refcache/anemone-coronaria-organes/t134.jpg",
+   "tags": [
+    "organe:feuille",
+    "organe:port",
+    "vue:face"
+   ],
+   "vu": "rosette de feuilles tres decoupees, bouton blanc",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 134
+  },
+  "anemone-coronaria:08d08459": {
+   "titre": "File:פארק הכרמל 6 - גנים לאומיים בצפון הארץ - אתרי מורשת 2016 (28).jpg",
+   "auteur": "Chenspec",
+   "licence": "CC BY-SA 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:%D7%A4%D7%90%D7%A8%D7%A7_%D7%94%D7%9B%D7%A8%D7%9E%D7%9C_6_-_%D7%92%D7%A0%D7%99%D7%9D_%D7%9C%D7%90%D7%95%D7%9E%D7%99%D7%99%D7%9D_%D7%91%D7%A6%D7%A4%D7%95%D7%9F_%D7%94%D7%90%D7%A8%D7%A5_-_%D7%90%D7%AA%D7%A8%D7%99_%D7%9E%D7%95%D7%A8%D7%A9%D7%AA_2016_(28).jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/23/%D7%A4%D7%90%D7%A8%D7%A7_%D7%94%D7%9B%D7%A8%D7%9E%D7%9C_6_-_%D7%92%D7%A0%D7%99%D7%9D_%D7%9C%D7%90%D7%95%D7%9E%D7%99%D7%99%D7%9D_%D7%91%D7%A6%D7%A4%D7%95%D7%9F_%D7%94%D7%90%D7%A8%D7%A5_-_%D7%90%D7%AA%D7%A8%D7%99_%D7%9E%D7%95%D7%A8%D7%A9%D7%AA_2016_%2828%29.jpg/960px-%D7%A4%D7%90%D7%A8%D7%A7_%D7%94%D7%9B%D7%A8%D7%9E%D7%9C_6_-_%D7%92%D7%A0%D7%99%D7%9D_%D7%9C%D7%90%D7%95%D7%9E%D7%99%D7%99%D7%9D_%D7%91%D7%A6%D7%A4%D7%95%D7%9F_%D7%94%D7%90%D7%A8%D7%A5_-_%D7%90%D7%AA%D7%A8%D7%99_%D7%9E%D7%95%D7%A8%D7%A9%D7%AA_2016_%2828%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/anemones/refcache/anemone-coronaria-organes/t187.jpg",
+   "tags": [
+    "organe:collerette",
+    "organe:tige",
+    "stade:bouton",
+    "vue:profil"
+   ],
+   "vu": "bouton rouge sous collerette de bractees lanieres, tige longue et fine courbee",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 187
+  },
+  "anemone-coronaria:13c7a018": {
+   "titre": "The Bride (Die Braut)",
+   "auteur": "Bulbi (éditeur de la page ; photographe non nommé)",
+   "licence": "droits réservés du tiers, mesure locale seulement",
+   "url": "https://www.bulbi.nl/en/the-bride-coronaria",
+   "url_image": "https://www.bulbi.nl/media/catalog/product/A/n/Anemone_coronaria_The_Bride_A_1_12.jpg",
+   "local": "ch/anemones/refcache/anemone-coronaria-coloris/t002.jpg",
+   "tags": [
+    "coloris:blanc-vert",
+    "vue:face"
+   ],
+   "vu": "photo de variété nommée, plein jour, massif (REFERENCES.md l.560-579)",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 2
+  },
+  "anemone-coronaria:1a25b49c": {
+   "titre": "Anemone in my garden (8600733848).jpg",
+   "auteur": null,
+   "licence": "CC BY 2.0",
+   "url": null,
+   "url_image": null,
+   "local": null,
+   "tags": [
+    "coloris:bleu",
+    "vue:face",
+    "organe:cœur"
+   ],
+   "vu": "violet vif, de face, gros plan : nervures, anthères, pollen",
+   "echelle": null,
+   "cle_depuis": "titre",
+   "note": "URL absente de REFERENCES.md : clé calculée sur 'File:'+titre (à remplacer par le sha1 de l'URL quand refs.py la fournira)"
+  },
+  "anemone-coronaria:1db6d6bc": {
+   "titre": "Hollandia",
+   "auteur": "Nijssen (éditeur de la page ; photographe non nommé)",
+   "licence": "droits réservés du tiers, mesure locale seulement",
+   "url": "https://www.nijssenbulbs.com/anemone/8051-anemone-coronaria-039hollandia039-8051.html",
+   "url_image": "https://www.nijssenbulbs.com/17503-large_default/anemone-coronaria-039hollandia039-8051.jpg",
+   "local": "ch/anemones/refcache/anemone-coronaria-coloris/t007.jpg",
+   "tags": [
+    "coloris:rouge",
+    "vue:face"
+   ],
+   "vu": "photo de variété nommée, ombre (REFERENCES.md l.560-579)",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 7
+  },
+  "anemone-coronaria:20ebff9c": {
+   "titre": "File:iNat obs 111702214 photo 188596022",
+   "auteur": "radoslawpuchalka (iNaturalist)",
+   "licence": "CC0",
+   "url": "https://www.inaturalist.org/observations/111702214",
+   "url_image": "https://inaturalist-open-data.s3.amazonaws.com/photos/188596022/large.jpg",
+   "local": "ch/anemones/refcache/anemone-coronaria-organes/t118.jpg",
+   "tags": [
+    "organe:feuille",
+    "vue:face"
+   ],
+   "vu": "feuilles basales decoupees dessus, tige sec",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 118
+  },
+  "anemone-coronaria:2192e522": {
+   "titre": "Bicolor",
+   "auteur": "RHS (Plant Selector) (éditeur de la page ; photographe non nommé)",
+   "licence": "droits réservés du tiers, mesure locale seulement",
+   "url": "https://www.rhs.org.uk/plants/210962/anemone-coronaria-de-caen-group-bicolor/details",
+   "url_image": "https://apps.rhs.org.uk/plantselectorimages/detail/elbo30325.jpg",
+   "local": "ch/anemones/refcache/anemone-coronaria-coloris/t016.jpg",
+   "tags": [
+    "coloris:bicolore",
+    "vue:face"
+   ],
+   "vu": "photo de variété nommée, plein jour, massif (REFERENCES.md l.560-579)",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 16
+  },
+  "anemone-coronaria:2efb61ad": {
+   "titre": "Anemone_coronaria_focus_stack-20220320-RM-144602.jpg",
+   "auteur": null,
+   "licence": "libre (Commons), version non notee dans REFERENCES.md",
+   "url": null,
+   "url_image": null,
+   "local": null,
+   "tags": [
+    "coloris:rouge",
+    "vue:trois-quarts",
+    "organe:tépale"
+   ],
+   "vu": "rouge, trois-quarts, à contre-jour : coupe, translucidité, nervures, couronne d'étamines, marges velues",
+   "echelle": null,
+   "cle_depuis": "titre",
+   "note": "URL absente de REFERENCES.md : clé calculée sur 'File:'+titre (à remplacer par le sha1 de l'URL quand refs.py la fournira)"
+  },
+  "anemone-coronaria:2f9d9c20": {
+   "titre": "Anemone_coronaria_Hollandia_DP1.jpg",
+   "auteur": "Pacific Bulb Society, David Pilling",
+   "licence": "droits réservés (non réutilisable ; mesure locale)",
+   "url": "https://www.pacificbulbsociety.org/pbswiki/index.php/Anemone",
+   "url_image": "https://www.pacificbulbsociety.org/pbswiki/files/Anemone/Anemone_coronaria_Hollandia_DP1.jpg",
+   "local": null,
+   "tags": [
+    "coloris:rouge",
+    "organe:coeur",
+    "vue:face"
+   ],
+   "vu": "macro de face du cœur de Hollandia : dôme vert-noir violacé, couronne d'étamines bleu acier à filets rose-pourpre, anneau blanc, pétales rouges",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "note": "description de sources/anemone-coronaria.json (photos_forme) ; non stockée"
+  },
+  "anemone-coronaria:30259990": {
+   "titre": "Purple Flower.jpg",
+   "auteur": null,
+   "licence": "CC BY 2.0",
+   "url": null,
+   "url_image": null,
+   "local": null,
+   "tags": [
+    "stade:entrouvert"
+   ],
+   "vu": "jeune fleur en coupe : base blanche, revers, marges",
+   "echelle": null,
+   "cle_depuis": "titre",
+   "note": "URL absente de REFERENCES.md : clé calculée sur 'File:'+titre (à remplacer par le sha1 de l'URL quand refs.py la fournira)"
+  },
+  "anemone-coronaria:31a94789": {
+   "titre": "File:iNaturalist obs 344884745 photo 628445525",
+   "auteur": "aress (iNaturalist)",
+   "licence": "CC-BY",
+   "url": "https://www.inaturalist.org/observations/344884745",
+   "url_image": "https://inaturalist-open-data.s3.amazonaws.com/photos/628445525/large.jpg",
+   "local": "ch/anemones/refcache/anemone-coronaria-organes/t029.jpg",
+   "tags": [
+    "stade:bouton",
+    "vue:profil",
+    "organe:tige"
+   ],
+   "vu": "bouton basculé, tige recourbée",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 29
+  },
+  "anemone-coronaria:32cfeb7f": {
+   "titre": "File:פארק הכרמל 6 - גנים לאומיים בצפון הארץ - אתרי מורשת 2016 (29).jpg",
+   "auteur": "Chenspec",
+   "licence": "CC BY-SA 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:%D7%A4%D7%90%D7%A8%D7%A7_%D7%94%D7%9B%D7%A8%D7%9E%D7%9C_6_-_%D7%92%D7%A0%D7%99%D7%9D_%D7%9C%D7%90%D7%95%D7%9E%D7%99%D7%99%D7%9D_%D7%91%D7%A6%D7%A4%D7%95%D7%9F_%D7%94%D7%90%D7%A8%D7%A5_-_%D7%90%D7%AA%D7%A8%D7%99_%D7%9E%D7%95%D7%A8%D7%A9%D7%AA_2016_(29).jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/%D7%A4%D7%90%D7%A8%D7%A7_%D7%94%D7%9B%D7%A8%D7%9E%D7%9C_6_-_%D7%92%D7%A0%D7%99%D7%9D_%D7%9C%D7%90%D7%95%D7%9E%D7%99%D7%99%D7%9D_%D7%91%D7%A6%D7%A4%D7%95%D7%9F_%D7%94%D7%90%D7%A8%D7%A5_-_%D7%90%D7%AA%D7%A8%D7%99_%D7%9E%D7%95%D7%A8%D7%A9%D7%AA_2016_%2829%29.jpg/960px-%D7%A4%D7%90%D7%A8%D7%A7_%D7%94%D7%9B%D7%A8%D7%9E%D7%9C_6_-_%D7%92%D7%A0%D7%99%D7%9D_%D7%9C%D7%90%D7%95%D7%9E%D7%99%D7%99%D7%9D_%D7%91%D7%A6%D7%A4%D7%95%D7%9F_%D7%94%D7%90%D7%A8%D7%A5_-_%D7%90%D7%AA%D7%A8%D7%99_%D7%9E%D7%95%D7%A8%D7%A9%D7%AA_2016_%2829%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/anemones/refcache/anemone-coronaria-organes/t188.jpg",
+   "tags": [
+    "organe:collerette",
+    "organe:tige",
+    "stade:bouton",
+    "vue:profil"
+   ],
+   "vu": "bouton rouge, collerette de lanieres vertes sous la fleur, bouton velu gris en tete de tige",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 188
+  },
+  "anemone-coronaria:34ca488e": {
+   "titre": "Mister Fokker",
+   "auteur": "Nijssen (éditeur de la page ; photographe non nommé)",
+   "licence": "droits réservés du tiers, mesure locale seulement",
+   "url": "https://www.nijssenbulbs.com/anemone/8053-anemone-coronaria-039mr-fokker039-8053.html",
+   "url_image": "https://www.nijssenbulbs.com/17502-large_default/anemone-coronaria-039mr-fokker039-8053.jpg",
+   "local": "ch/anemones/refcache/anemone-coronaria-coloris/t011.jpg",
+   "tags": [
+    "coloris:bleu",
+    "vue:face"
+   ],
+   "vu": "photo de variété nommée, plein jour, massif (REFERENCES.md l.560-579)",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 11
+  },
+  "anemone-coronaria:3da84e0f": {
+   "titre": "File:iNaturalist obs 349525608 photo 637618662",
+   "auteur": "geoexplorers (iNaturalist)",
+   "licence": "CC-BY",
+   "url": "https://www.inaturalist.org/observations/349525608",
+   "url_image": "https://inaturalist-open-data.s3.amazonaws.com/photos/637618662/large.jpg",
+   "local": "ch/anemones/refcache/anemone-coronaria-organes/t012.jpg",
+   "tags": [
+    "organe:port",
+    "stade:ouverte",
+    "vue:face"
+   ],
+   "vu": "plante sur rocher, tige longue relative à la fleur",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 12
+  },
+  "anemone-coronaria:40a75a5b": {
+   "titre": "File:Purple Anemone coronaria in Israel.jpg",
+   "auteur": "Davidbena",
+   "licence": "CC BY-SA 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Purple_Anemone_coronaria_in_Israel.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Purple_Anemone_coronaria_in_Israel.jpg/960px-Purple_Anemone_coronaria_in_Israel.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/anemones/refcache/anemone-coronaria-organes/t157.jpg",
+   "tags": [
+    "organe:tige",
+    "stade:ouverte",
+    "vue:profil"
+   ],
+   "vu": "tige longue et fine, fleur violette petite",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 157
+  },
+  "anemone-coronaria:46dd8028": {
+   "titre": "File:קיבוץ בית אורן 2009 (6).JPG",
+   "auteur": "Chenspec",
+   "licence": "CC BY-SA 3.0",
+   "url": "https://commons.wikimedia.org/wiki/File:%D7%A7%D7%99%D7%91%D7%95%D7%A5_%D7%91%D7%99%D7%AA_%D7%90%D7%95%D7%A8%D7%9F_2009_(6).JPG",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7f/%D7%A7%D7%99%D7%91%D7%95%D7%A5_%D7%91%D7%99%D7%AA_%D7%90%D7%95%D7%A8%D7%9F_2009_%286%29.JPG/960px-%D7%A7%D7%99%D7%91%D7%95%D7%A5_%D7%91%D7%99%D7%AA_%D7%90%D7%95%D7%A8%D7%9F_2009_%286%29.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/anemones/refcache/anemone-coronaria-organes/t197.jpg",
+   "tags": [
+    "organe:collerette",
+    "stade:ouverte",
+    "vue:face"
+   ],
+   "vu": "fleur violette, bractees decoupees et feuilles dessous",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 197
+  },
+  "anemone-coronaria:49511275": {
+   "titre": "Bicolor",
+   "auteur": "DutchGrown (éditeur de la page ; photographe non nommé)",
+   "licence": "droits réservés du tiers, mesure locale seulement",
+   "url": "https://www.dutchgrown.com/products/anemone-de-caen-bi-color",
+   "url_image": "https://www.dutchgrown.com/cdn/shop/products/Anemone_De_Caen_Bicolor-1.jpg",
+   "local": "ch/anemones/refcache/anemone-coronaria-coloris/t018.jpg",
+   "tags": [
+    "coloris:bicolore",
+    "vue:face"
+   ],
+   "vu": "photo de variété nommée, plein jour, gros plan (REFERENCES.md l.560-579)",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 18
+  },
+  "anemone-coronaria:4bce7cff": {
+   "titre": "File:Anémone FR 2013.jpg",
+   "auteur": "JLPC",
+   "licence": "CC BY-SA 3.0",
+   "url": "https://commons.wikimedia.org/wiki/File:An%C3%A9mone_FR_2013.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/An%C3%A9mone_FR_2013.jpg/960px-An%C3%A9mone_FR_2013.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/anemones/refcache/anemone-coronaria-organes/t175.jpg",
+   "tags": [
+    "organe:feuille",
+    "stade:ouverte",
+    "vue:face"
+   ],
+   "vu": "fleur violette, feuilles decoupees dessous",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 175
+  },
+  "anemone-coronaria:58efb8ce": {
+   "titre": "Flora della Sardegna 220 (05).JPG",
+   "auteur": null,
+   "licence": "CC BY-SA 4.0 (ordre des licences de REFERENCES.md l.28)",
+   "url": null,
+   "url_image": null,
+   "local": null,
+   "tags": [
+    "stade:bouton"
+   ],
+   "vu": "bouton penché sous la collerette",
+   "echelle": null,
+   "cle_depuis": "titre",
+   "note": "URL absente de REFERENCES.md : clé calculée sur 'File:'+titre (à remplacer par le sha1 de l'URL quand refs.py la fournira)"
+  },
+  "anemone-coronaria:5d9df86e": {
+   "titre": "Hollandia",
+   "auteur": "RHS (Plant Selector) (éditeur de la page ; photographe non nommé)",
+   "licence": "droits réservés du tiers, mesure locale seulement",
+   "url": "https://www.rhs.org.uk/plants/91632/anemone-coronaria-de-caen-group-hollandia/details",
+   "url_image": "https://apps.rhs.org.uk/plantselectorimages/detail/visi07531.jpg",
+   "local": "ch/anemones/refcache/anemone-coronaria-coloris/t005.jpg",
+   "tags": [
+    "coloris:rouge",
+    "vue:face"
+   ],
+   "vu": "photo de variété nommée, plein jour, fleur isolée (REFERENCES.md l.560-579)",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 5
+  },
+  "anemone-coronaria:68003d24": {
+   "titre": "Mister Fokker",
+   "auteur": "Nijssen (éditeur de la page ; photographe non nommé)",
+   "licence": "droits réservés du tiers, mesure locale seulement",
+   "url": "https://www.nijssenbulbs.com/anemone/8053-anemone-coronaria-039mr-fokker039-8053.html",
+   "url_image": "https://www.nijssenbulbs.com/17501-large_default/anemone-coronaria-039mr-fokker039-8053.jpg",
+   "local": "ch/anemones/refcache/anemone-coronaria-coloris/t010.jpg",
+   "tags": [
+    "coloris:bleu",
+    "vue:face"
+   ],
+   "vu": "photo de variété nommée, plein jour, massif (REFERENCES.md l.560-579)",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 10
+  },
+  "anemone-coronaria:6df056e2": {
+   "titre": "Nearly dead anemone flower hanging over its pot",
+   "auteur": "Brandt Bolding (Dreamstime)",
+   "licence": "banque d'images (droits réservés) ; vue dans le navigateur, non stockée",
+   "url": null,
+   "url_image": null,
+   "local": null,
+   "tags": [
+    "stade:fane"
+   ],
+   "vu": "même description que Anemone flowers falling (REFERENCES.md l.66-70)",
+   "echelle": null,
+   "cle_depuis": "titre",
+   "note": "REFERENCES.md l.64-72 : photo de banque d'images sans URL notee ; clé calculée sur 'stock:'+titre"
+  },
+  "anemone-coronaria:72c6fab6": {
+   "titre": "Anemone coronaria seeds.jpg",
+   "auteur": null,
+   "licence": "CC BY-SA 4.0",
+   "url": null,
+   "url_image": null,
+   "local": null,
+   "tags": [
+    "stade:sec"
+   ],
+   "vu": "tête à graines cotonneuse après la chute des tépales, sur la plante",
+   "echelle": null,
+   "cle_depuis": "titre",
+   "note": "URL absente de REFERENCES.md : clé calculée sur 'File:'+titre (à remplacer par le sha1 de l'URL quand refs.py la fournira)"
+  },
+  "anemone-coronaria:7eff67ed": {
+   "titre": "File:קיבוץ בית אורן (236).JPG",
+   "auteur": "Chenspec",
+   "licence": "CC BY-SA 3.0",
+   "url": "https://commons.wikimedia.org/wiki/File:%D7%A7%D7%99%D7%91%D7%95%D7%A5_%D7%91%D7%99%D7%AA_%D7%90%D7%95%D7%A8%D7%9F_(236).JPG",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bc/%D7%A7%D7%99%D7%91%D7%95%D7%A5_%D7%91%D7%99%D7%AA_%D7%90%D7%95%D7%A8%D7%9F_%28236%29.JPG/960px-%D7%A7%D7%99%D7%91%D7%95%D7%A5_%D7%91%D7%99%D7%AA_%D7%90%D7%95%D7%A8%D7%9F_%28236%29.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/anemones/refcache/anemone-coronaria-organes/t192.jpg",
+   "tags": [
+    "organe:collerette",
+    "stade:ouverte",
+    "vue:face"
+   ],
+   "vu": "fleur rouge ouverte, collerette de bractees decoupees dessous",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 192
+  },
+  "anemone-coronaria:81ce6028": {
+   "titre": "Bucuresti, Romania. Floare Anemona. Cimitirul Bellu Catolic….jpg",
+   "auteur": null,
+   "licence": "CC BY-SA 4.0",
+   "url": null,
+   "url_image": null,
+   "local": null,
+   "tags": [
+    "coloris:bleu",
+    "vue:face",
+    "organe:cœur"
+   ],
+   "vu": "bleu violet, exactement de face : couleurs anneau par anneau, rapports du cœur",
+   "echelle": null,
+   "cle_depuis": "titre",
+   "note": "URL absente de REFERENCES.md : clé calculée sur 'File:'+titre (à remplacer par le sha1 de l'URL quand refs.py la fournira)"
+  },
+  "anemone-coronaria:8527f663": {
+   "titre": "File:iNat obs 88244733 photo 145575099",
+   "auteur": "lucie_karna (iNaturalist)",
+   "licence": "CC BY",
+   "url": "https://www.inaturalist.org/observations/88244733",
+   "url_image": "https://inaturalist-open-data.s3.amazonaws.com/photos/145575099/large.jpeg",
+   "local": "ch/anemones/refcache/anemone-coronaria-organes/t123.jpg",
+   "tags": [
+    "organe:feuille",
+    "vue:face"
+   ],
+   "vu": "feuillage basal decoupe, pedoncule vert",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 123
+  },
+  "anemone-coronaria:865cc3ac": {
+   "titre": "Anemone coronaria 6.JPG",
+   "auteur": null,
+   "licence": "CC BY-SA 3.0 (ordre des licences de REFERENCES.md l.28)",
+   "url": null,
+   "url_image": null,
+   "local": null,
+   "tags": [
+    "stade:bouton"
+   ],
+   "vu": "bouton en œuf",
+   "echelle": null,
+   "cle_depuis": "titre",
+   "note": "URL absente de REFERENCES.md : clé calculée sur 'File:'+titre (à remplacer par le sha1 de l'URL quand refs.py la fournira)"
+  },
+  "anemone-coronaria:8b22de49": {
+   "titre": "Anemone flowers falling",
+   "auteur": "Brandt Bolding (Dreamstime)",
+   "licence": "banque d'images (droits réservés) ; vue dans le navigateur, non stockée",
+   "url": null,
+   "url_image": null,
+   "local": null,
+   "tags": [
+    "stade:fane"
+   ],
+   "vu": "tête qui bascule et pend ; tépales retombant en cloche froissée autour du cœur ; violet tournant au pourpre-magenta et restant à la base, bords blanchissant translucides ; collerette pendante, jaunie et recroquevillee",
+   "echelle": null,
+   "cle_depuis": "titre",
+   "note": "REFERENCES.md l.64-72 : photo de banque d'images sans URL notee ; clé calculée sur 'stock:'+titre"
+  },
+  "anemone-coronaria:8ea61f30": {
+   "titre": "Close-up of wilted anemone flower",
+   "auteur": "Freepik",
+   "licence": "banque d'images (droits réservés) ; vue dans le navigateur, non stockée",
+   "url": null,
+   "url_image": null,
+   "local": null,
+   "tags": [
+    "stade:fane"
+   ],
+   "vu": "tépales rose terne, marges enroulées vers l'arriere et frisees, nervures marquees, étamines clairsemees et recourbées",
+   "echelle": null,
+   "cle_depuis": "titre",
+   "note": "REFERENCES.md l.64-72 : photo de banque d'images sans URL notee ; clé calculée sur 'stock:'+titre"
+  },
+  "anemone-coronaria:9107d57b": {
+   "titre": "File:קיבוץ בית אורן 2009 (26).JPG",
+   "auteur": "Chenspec",
+   "licence": "CC BY-SA 3.0",
+   "url": "https://commons.wikimedia.org/wiki/File:%D7%A7%D7%99%D7%91%D7%95%D7%A5_%D7%91%D7%99%D7%AA_%D7%90%D7%95%D7%A8%D7%9F_2009_(26).JPG",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/35/%D7%A7%D7%99%D7%91%D7%95%D7%A5_%D7%91%D7%99%D7%AA_%D7%90%D7%95%D7%A8%D7%9F_2009_%2826%29.JPG/960px-%D7%A7%D7%99%D7%91%D7%95%D7%A5_%D7%91%D7%99%D7%AA_%D7%90%D7%95%D7%A8%D7%9F_2009_%2826%29.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/anemones/refcache/anemone-coronaria-organes/t196.jpg",
+   "tags": [
+    "organe:collerette",
+    "organe:feuille",
+    "stade:ouverte",
+    "vue:face"
+   ],
+   "vu": "fleur rouge, collerette tres decoupee, feuillage vert dessous",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 196
+  },
+  "anemone-coronaria:93977927": {
+   "titre": "File:iNat obs 159256977 photo 275145940",
+   "auteur": "wilderbombyx (iNaturalist)",
+   "licence": "CC0",
+   "url": "https://www.inaturalist.org/observations/159256977",
+   "url_image": "https://inaturalist-open-data.s3.amazonaws.com/photos/275145940/large.jpg",
+   "local": "ch/anemones/refcache/anemone-coronaria-organes/t105.jpg",
+   "tags": [
+    "organe:tige",
+    "stade:ouverte",
+    "vue:profil"
+   ],
+   "vu": "fleur violette ouverte, tige brune courbee sous la fleur",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 105
+  },
+  "anemone-coronaria:97bd3ea7": {
+   "titre": "White-Anemone-Sitia-Crete-Greece.jpg",
+   "auteur": "Petro Stelte",
+   "licence": "CC BY-SA 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:White-Anemone-Sitia-Crete-Greece.jpg",
+   "url_image": "https://upload.wikimedia.org/wikipedia/commons/d/d8/White-Anemone-Sitia-Crete-Greece.jpg",
+   "local": null,
+   "tags": [
+    "coloris:blanc",
+    "vue:face"
+   ],
+   "vu": "blanc à cœur noir, de face (disque central sombre brun-noir, Sitia, Crète)",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "note": "URL de sources/anemone-coronaria.json (formes_botaniques.f_blanche)"
+  },
+  "anemone-coronaria:98f44889": {
+   "titre": "File:iNat obs 17598361 photo 26796383",
+   "auteur": "crapfou (iNaturalist)",
+   "licence": "CC BY",
+   "url": "https://www.inaturalist.org/observations/17598361",
+   "url_image": "https://inaturalist-open-data.s3.amazonaws.com/photos/26796383/large.jpeg",
+   "local": "ch/anemones/refcache/anemone-coronaria-organes/t136.jpg",
+   "tags": [
+    "organe:feuille",
+    "stade:fanee",
+    "vue:face"
+   ],
+   "vu": "specimen seche et presse : tige fine, feuilles decoupees, fleur fanee",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 136
+  },
+  "anemone-coronaria:9a5e36b6": {
+   "titre": "File:קיבוץ בית אורן 2 2010 (19).JPG",
+   "auteur": "Chenspec",
+   "licence": "CC BY-SA 3.0",
+   "url": "https://commons.wikimedia.org/wiki/File:%D7%A7%D7%99%D7%91%D7%95%D7%A5_%D7%91%D7%99%D7%AA_%D7%90%D7%95%D7%A8%D7%9F_2_2010_(19).JPG",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/37/%D7%A7%D7%99%D7%91%D7%95%D7%A5_%D7%91%D7%99%D7%AA_%D7%90%D7%95%D7%A8%D7%9F_2_2010_%2819%29.JPG/960px-%D7%A7%D7%99%D7%91%D7%95%D7%A5_%D7%91%D7%99%D7%AA_%D7%90%D7%95%D7%A8%D7%9F_2_2010_%2819%29.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/anemones/refcache/anemone-coronaria-organes/t198.jpg",
+   "tags": [
+    "organe:collerette",
+    "organe:tige",
+    "stade:bouton",
+    "vue:profil"
+   ],
+   "vu": "bouton rouge pointu, tige longue, collerette decoupee",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 198
+  },
+  "anemone-coronaria:a899a490": {
+   "titre": "Hollandia",
+   "auteur": "Nijssen (éditeur de la page ; photographe non nommé)",
+   "licence": "droits réservés du tiers, mesure locale seulement",
+   "url": "https://www.nijssenbulbs.com/anemone/8051-anemone-coronaria-039hollandia039-8051.html",
+   "url_image": "https://www.nijssenbulbs.com/15544-large_default/anemone-coronaria-039hollandia039-8051.jpg",
+   "local": "ch/anemones/refcache/anemone-coronaria-coloris/t006.jpg",
+   "tags": [
+    "coloris:rouge",
+    "vue:face"
+   ],
+   "vu": "photo de variété nommée, plein jour, massif (REFERENCES.md l.560-579)",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 6
+  },
+  "anemone-coronaria:a99ecc60": {
+   "titre": "File:iNaturalist obs 346688931 photo 631999845",
+   "auteur": "pilmar (iNaturalist)",
+   "licence": "CC0",
+   "url": "https://www.inaturalist.org/observations/346688931",
+   "url_image": "https://inaturalist-open-data.s3.amazonaws.com/photos/631999845/large.jpg",
+   "local": "ch/anemones/refcache/anemone-coronaria-organes/t019.jpg",
+   "tags": [
+    "organe:tige",
+    "stade:ouverte",
+    "vue:profil"
+   ],
+   "vu": "fleur sur tige nue, sépales lisses, collerette peu visible",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 19
+  },
+  "anemone-coronaria:ad16e3ef": {
+   "titre": "Sylphide",
+   "auteur": "RHS (Plant Selector) (éditeur de la page ; photographe non nommé)",
+   "licence": "droits réservés du tiers, mesure locale seulement",
+   "url": "https://www.rhs.org.uk/plants/65288/anemone-coronaria-sylphide-mona-lisa-series/details",
+   "url_image": "https://apps.rhs.org.uk/plantselectorimages/detail/elbo15853.jpg",
+   "local": "ch/anemones/refcache/anemone-coronaria-coloris/t012.jpg",
+   "tags": [
+    "coloris:fuchsia",
+    "vue:face"
+   ],
+   "vu": "photo de variété nommée, plein jour, massif (REFERENCES.md l.560-579)",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 12
+  },
+  "anemone-coronaria:bd8d6b4c": {
+   "titre": "PikiWiki Israel 47632/47635 Plants of Israel.JPG",
+   "auteur": null,
+   "licence": "CC BY 2.5",
+   "url": null,
+   "url_image": null,
+   "local": null,
+   "tags": [
+    "coloris:blanc",
+    "organe:tépale"
+   ],
+   "vu": "blanc à cœur noir et halo violet, tépales ondulés (deux fichiers cites ensemble)",
+   "echelle": null,
+   "cle_depuis": "titre",
+   "note": "URL absente de REFERENCES.md : clé calculée sur 'File:'+titre (à remplacer par le sha1 de l'URL quand refs.py la fournira)"
+  },
+  "anemone-coronaria:c526352a": {
+   "titre": "Mister Fokker",
+   "auteur": "RHS (Plant Selector) (éditeur de la page ; photographe non nommé)",
+   "licence": "droits réservés du tiers, mesure locale seulement",
+   "url": "https://www.rhs.org.uk/plants/95644/anemone-coronaria-de-caen-group-mister-fokker/details",
+   "url_image": "https://apps.rhs.org.uk/plantselectorimages/detail/visi74605.jpg",
+   "local": "ch/anemones/refcache/anemone-coronaria-coloris/t009.jpg",
+   "tags": [
+    "coloris:bleu",
+    "vue:face"
+   ],
+   "vu": "photo de variété nommée, plein jour, fleur isolée, rosée (REFERENCES.md l.560-579)",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 9
+  },
+  "anemone-coronaria:c6901539": {
+   "titre": "Anemone \"de Caan\" (49730384412).jpg",
+   "auteur": null,
+   "licence": "CC BY 2.0",
+   "url": null,
+   "url_image": null,
+   "local": null,
+   "tags": [
+    "coloris:bleu",
+    "vue:trois-quarts"
+   ],
+   "vu": "De Caen bleu, trois-quarts : coupe profonde, réseau de nervures, collerette",
+   "echelle": null,
+   "cle_depuis": "titre",
+   "note": "URL absente de REFERENCES.md : clé calculée sur 'File:'+titre (à remplacer par le sha1 de l'URL quand refs.py la fournira)"
+  },
+  "anemone-coronaria:cbefa18a": {
+   "titre": "Poppy anemone not quite ready to open.jpg",
+   "auteur": null,
+   "licence": "CC BY 2.0",
+   "url": null,
+   "url_image": null,
+   "local": null,
+   "tags": [
+    "stade:bouton",
+    "organe:collerette"
+   ],
+   "vu": "bouton en globe, bases blanches au revers ; collerette de trois bractées à segments lancéolés dentes ; tige velue",
+   "echelle": null,
+   "cle_depuis": "titre",
+   "note": "URL absente de REFERENCES.md : clé calculée sur 'File:'+titre (à remplacer par le sha1 de l'URL quand refs.py la fournira)"
+  },
+  "anemone-coronaria:d2e8c1a5": {
+   "titre": "Rotten flower",
+   "auteur": "iStock",
+   "licence": "banque d'images (droits réservés) ; vue dans le navigateur, non stockée",
+   "url": null,
+   "url_image": null,
+   "local": null,
+   "tags": [
+    "stade:fane"
+   ],
+   "vu": "anemone blanche devenue beige, taches brunes depuis les bords et le long des nervures, tissu froissé et papier ; collerette brun-vert desséchée",
+   "echelle": null,
+   "cle_depuis": "titre",
+   "note": "REFERENCES.md l.64-72 : photo de banque d'images sans URL notee ; clé calculée sur 'stock:'+titre"
+  },
+  "anemone-coronaria:de974eb6": {
+   "titre": "File:Joanna Kosinska 2016-05-23 (Unsplash).jpg",
+   "auteur": "Joanna Kosinska joannakosinska",
+   "licence": "CC0",
+   "url": "https://commons.wikimedia.org/wiki/File:Joanna_Kosinska_2016-05-23_(Unsplash).jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6d/Joanna_Kosinska_2016-05-23_%28Unsplash%29.jpg/960px-Joanna_Kosinska_2016-05-23_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/anemones/refcache/anemone-coronaria-organes/t139.jpg",
+   "tags": [
+    "organe:port",
+    "stade:ouverte",
+    "vue:face"
+   ],
+   "vu": "fleur coupee en vase, tige et feuilles dessous",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 139
+  },
+  "anemone-coronaria:e4e6c502": {
+   "titre": "Sylphide",
+   "auteur": "Bulbi (éditeur de la page ; photographe non nommé)",
+   "licence": "droits réservés du tiers, mesure locale seulement",
+   "url": "https://www.bulbi.nl/en/sylphide-coronaria",
+   "url_image": "https://www.bulbi.nl/media/catalog/product/A/n/Anemone_de_caen_Sylphide_FA2_1_7.jpg",
+   "local": "ch/anemones/refcache/anemone-coronaria-coloris/t015.jpg",
+   "tags": [
+    "coloris:fuchsia",
+    "vue:face"
+   ],
+   "vu": "photo de variété nommée, plein jour, gros plan, saturée (REFERENCES.md l.560-579)",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 15
+  },
+  "anemone-coronaria:f0c8c3c2": {
+   "titre": "File:iNat obs 107116038 photo 180093717",
+   "auteur": "trailhapa (iNaturalist)",
+   "licence": "CC BY",
+   "url": "https://www.inaturalist.org/observations/107116038",
+   "url_image": "https://inaturalist-open-data.s3.amazonaws.com/photos/180093717/large.jpg",
+   "local": "ch/anemones/refcache/anemone-coronaria-organes/t121.jpg",
+   "tags": [
+    "organe:tige",
+    "stade:bouton",
+    "vue:profil"
+   ],
+   "vu": "bouton bleu sur tige longue, gaine de feuille a la base",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 121
+  },
+  "anemone-coronaria:f37e4854": {
+   "titre": "The Bride (Die Braut)",
+   "auteur": "DutchGrown (éditeur de la page ; photographe non nommé)",
+   "licence": "droits réservés du tiers, mesure locale seulement",
+   "url": "https://www.dutchgrown.com/products/anemone-de-caen-the-bride",
+   "url_image": "https://www.dutchgrown.com/cdn/shop/products/Anemone_De_Caen_The_Bride-2.jpg",
+   "local": "ch/anemones/refcache/anemone-coronaria-coloris/t003.jpg",
+   "tags": [
+    "coloris:blanc-vert",
+    "vue:face"
+   ],
+   "vu": "photo de variété nommée, plein jour, gros plan (REFERENCES.md l.560-579)",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 3
+  },
+  "anemone-sauvage:cdd1e4fe": {
+   "titre": "File:Anemone coronaria3.jpg",
+   "auteur": "Gordo06",
+   "licence": "CC BY-SA 3.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Anemone_coronaria3.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/82/Anemone_coronaria3.jpg/500px-Anemone_coronaria3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/anemones/refcache/anemone-sauvage-organes/t034.jpg",
+   "tags": [
+    "organe:bouton",
+    "organe:collerette",
+    "organe:tige",
+    "vue:profil"
+   ],
+   "vu": "sorte sœur (forme sauvage de la même espèce) : bouton dressé, bractées découpées en lanières sous le bouton, tige velue, poils couchés vers le haut",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 34
+  }
+ },
+ "organes": {
+  "tepale.externe": {
+   "role": "perianthe",
+   "nombre": {
+    "v": 6,
+    "plage": [
+     5,
+     8
+    ],
+    "unite": "n",
+    "methode": "oeil",
+    "conf": "C",
+    "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:96 « 6, parfois 5 à 8 » ; sources/anemone-coronaria.json sorte.forme « 5 à 8 pétales (tépales) » ; en-tête de app/y2.js:3 « five to nine »",
+    "note": "Nombre total de tépales de la fleur (les deux verticilles) : le verticille externe en porte ceil(n/2), l'interne le reste (app/y3.js, svBloom). Aucune photo n'est rattachée à ce chiffre dans REFERENCES.md.",
+    "loi": {
+     "v": [
+      [
+       5,
+       0.06
+      ],
+      [
+       6,
+       0.44
+      ],
+      [
+       7,
+       0.24
+      ],
+      [
+       8,
+       0.18
+      ],
+      [
+       9,
+       0.08
+      ]
+     ],
+     "unite": "n",
+     "methode": "code",
+     "conf": "D",
+     "code": "SVA_GENES.n",
+     "retenu": [
+      [
+       5,
+       0.06
+      ],
+      [
+       6,
+       0.44
+      ],
+      [
+       7,
+       0.24
+      ],
+      [
+       8,
+       0.18
+      ],
+      [
+       9,
+       0.08
+      ]
+     ],
+     "ecart": "Loi de tirage du dessin : 9 tépales (poids .08) est hors de REFERENCES.md (5 à 8) mais dans l'en-tête de y2.js (5 à 9). Les poids .06/.44/.24/.18/.08 n'ont aucune source (audit v4 §3.1). Le mode documenté est 6 ; la loi du code a pour mode 6 (.44)."
+    }
+   },
+   "disposition": {
+    "type": {
+     "v": "verticilles",
+     "methode": "oeil",
+     "conf": "C",
+     "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:96 « Deux verticilles de 3 décalés »"
+    },
+    "verticilles": {
+     "v": 2,
+     "unite": "n",
+     "methode": "oeil",
+     "conf": "C",
+     "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:96",
+     "code": "P.a0.length",
+     "retenu": 2
+    },
+    "recouvrement": {
+     "v": "large",
+     "methode": "oeil",
+     "conf": "C",
+     "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:101 « Les tépales se chevauchent largement »",
+     "note": "Pas de chiffre (part de largeur recouverte) : à mesurer sur une vue de face (organ.py)."
+    },
+    "ordre": {
+     "v": "le verticille interne est plus redressé ; en bouton l'externe passe par-dessus l'interne",
+     "methode": "oeil",
+     "conf": "C",
+     "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:96 « l'intérieur est plus redressé » ; app/y3.js:svBloom (commentaire du bouton) pour l'ordre en bouton",
+     "note": "Décalage d'un demi-pas entre les deux verticilles : (i + .5)/n dans le code (app/y3.js) ; « décalés » dans REFERENCES.md."
+    }
+   },
+   "contour": {
+    "base": {
+     "type": {
+      "v": "onglet",
+      "methode": "oeil",
+      "conf": "C",
+      "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:97 « onglet étroit à la base »"
+     },
+     "largeur_pied": {
+      "v": 0.24,
+      "unite": "ratio",
+      "methode": "code",
+      "conf": "D",
+      "code": "P.claw[0]",
+      "retenu": 0.24,
+      "note": "Largeur au pied de l'onglet, part de la plus grande largeur."
+     }
+    },
+    "epaules": {
+     "v": null,
+     "methode": "hypothese",
+     "conf": "D",
+     "note": "Forme des épaules (passage de l'onglet au plus large) : le code a clawK 1.15 (exposant de sin), rien dans les documents."
+    },
+    "pointe": {
+     "type": {
+      "v": "arrondie",
+      "methode": "oeil",
+      "conf": "C",
+      "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:97 « Pointe arrondie » ; app/y2.js:3-4 « the tip round to squarish, sometimes notched »"
+     },
+     "exposant": {
+      "v": [
+       1.7,
+       2.3
+      ],
+      "unite": "ratio",
+      "methode": "code",
+      "conf": "D",
+      "code": "SVA_GENES.tep.tip",
+      "retenu": [
+       1.7,
+       2.3
+      ],
+      "note": "Exposant de la superellipse du bout (tirage par tépale) : 1.7 presque rond, 2.3 plus carré."
+     },
+     "encoche": {
+      "v": [
+       0.02,
+       0.055,
+       0.2
+      ],
+      "methode": "code",
+      "conf": "D",
+      "code": "SVA_GENES.tep.notch",
+      "retenu": [
+       0.02,
+       0.055,
+       0.2
+      ],
+      "note": "[profondeur min, max, probabilité]. Document : « parfois une encoche peu profonde » (REFERENCES.md:97, œil, sans photo)."
+     },
+     "recourbee": {
+      "v": [
+       0.05,
+       0.3,
+       0.45
+      ],
+      "methode": "code",
+      "conf": "D",
+      "code": "SVA_GENES.tep.curl",
+      "retenu": [
+       0.05,
+       0.3,
+       0.45
+      ],
+      "note": "[amplitude min, max, probabilité] de la pointe qui se recourbe à l'état frais ; le déclin ajoute la sienne (stades)."
+     }
+    },
+    "profil_largeur": {
+     "v": [
+      [
+       0,
+       0.122
+      ],
+      [
+       0.1,
+       0.199
+      ],
+      [
+       0.2,
+       0.286
+      ],
+      [
+       0.3,
+       0.368
+      ],
+      [
+       0.4,
+       0.436
+      ],
+      [
+       0.5,
+       0.484
+      ],
+      [
+       0.64,
+       0.51
+      ],
+      [
+       0.75,
+       0.486
+      ],
+      [
+       0.85,
+       0.414
+      ],
+      [
+       0.95,
+       0.259
+      ],
+      [
+       1,
+       0
+      ]
+     ],
+     "unite": "L",
+     "methode": "code",
+     "conf": "D",
+     "code": "[0,.1,.2,.3,.4,.5,P.vb,.75,.85,.95,1].map(l=>[l,+((l<P.vb?P.claw[0]+P.claw[1]*Math.pow(Math.sin(l/P.vb*Math.PI/2),P.clawK):Math.pow(1-Math.pow((l-P.vb)/(1-P.vb),2),.5))*P.Wd[0]/2).toFixed(3)])",
+     "retenu": [
+      [
+       0,
+       0.122
+      ],
+      [
+       0.1,
+       0.199
+      ],
+      [
+       0.2,
+       0.286
+      ],
+      [
+       0.3,
+       0.368
+      ],
+      [
+       0.4,
+       0.436
+      ],
+      [
+       0.5,
+       0.484
+      ],
+      [
+       0.64,
+       0.51
+      ],
+      [
+       0.75,
+       0.486
+      ],
+      [
+       0.85,
+       0.414
+      ],
+      [
+       0.95,
+       0.259
+      ],
+      [
+       1,
+       0
+      ]
+     ],
+     "note": "[position le long du tépale (0 pied, 1 pointe), demi-largeur en L], calculé à partir de claw, clawK, vb, Wd[0] et d'un exposant de pointe 2 (milieu de [1.7, 2.3]). Aucune mesure : c'est le profil que le dessin trace, à comparer à `fit.py targets hw`."
+    },
+    "vb": {
+     "v": 0.65,
+     "plage": [
+      0.62,
+      0.7
+     ],
+     "unite": "L",
+     "methode": "oeil",
+     "conf": "C",
+     "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:97 « largeur maximale vers 0,65 L » ; app/y2.js:3-4 « 0.62 to 0.7 of their length »",
+     "code": "P.vb",
+     "retenu": 0.64,
+     "ecart": "0,64 codé contre 0,65 documenté : dans la plage 0,62-0,70."
+    },
+    "L_sur_l": {
+     "v": [
+      1.1,
+      1.25
+     ],
+     "plage": [
+      1.1,
+      1.25
+     ],
+     "unite": "ratio",
+     "methode": "oeil",
+     "conf": "C",
+     "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:97 « obovale large (L/l de 1,1 à 1,25) »",
+     "code": "1/P.Wd[0]",
+     "retenu": 0.9803921568627451,
+     "ecart": "Le code trace un tépale externe plus large que long : l/L = Wd[0] = 1.02 (× dW de .9 à 1.08 par individu), soit L/l = 0.98, hors de la plage 1,1-1,25 documentée (le rendu est de 12 à 25 % trop large). Question Q2.",
+     "note": "Rapport longueur sur largeur maximale. Pas de photo rattachée dans REFERENCES.md."
+    },
+    "asymetrie": {
+     "v": [
+      -0.08,
+      0.08
+     ],
+     "unite": "ratio",
+     "methode": "code",
+     "conf": "D",
+     "code": "SVA_GENES.tep.asym",
+     "retenu": [
+      -0.08,
+      0.08
+     ],
+     "note": "Écart de largeur entre les deux moitiés, tirage par tépale."
+    },
+    "marge": {
+     "type": {
+      "v": "ondulee",
+      "methode": "oeil",
+      "photos": [
+       "anemone-coronaria:bd8d6b4c"
+      ],
+      "conf": "C",
+      "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:97 « marge doucement ondulée (deux ou trois ondes) »"
+     },
+     "dents": {
+      "v": "aucune",
+      "methode": "oeil",
+      "conf": "C",
+      "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:97 (aucune dent signalée)"
+     }
+    }
+   },
+   "taille": {
+    "longueur": {
+     "v": 0.92,
+     "plage": [
+      0.92,
+      1.06
+     ],
+     "unite": "R0",
+     "methode": "code",
+     "conf": "D",
+     "code": "P.L[0]",
+     "retenu": 0.92,
+     "note": "Longueur du tépale externe, en demi-diamètre de la fleur ouverte, du bord de l'insertion à la pointe (tirage par individu dL : .92 à 1.06). Aucun document ne donne la longueur du tépale par rapport au diamètre."
+    },
+    "diametre_fleur": {
+     "v": [
+      6,
+      8
+     ],
+     "plage": [
+      5,
+      8
+     ],
+     "unite": "cm",
+     "methode": "reference",
+     "conf": "C",
+     "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:119 « Diamètre ouvert : 6 à 8 cm (5 à 8 au catalogue) » ; sources/anemone-coronaria.json doutes : formes sauvages de 35 à 75 mm, cultivars jusqu'à 8 à 10 cm (Wikipedia)",
+     "code": "SZG['anemone-coronaria']",
+     "retenu": [
+      5,
+      6,
+      7,
+      7,
+      8
+     ],
+     "note": "Source primaire du 6 à 8 cm non notée dans REFERENCES.md (d'où la confiance C). Le code garde cinq calibres [5, 6, 7, 7, 8] cm (s10a.js:122) ; RECIPES a cm = 7."
+    }
+   },
+   "courbure": {
+    "longitudinale": {
+     "pied_deg": {
+      "v": [
+       25,
+       40
+      ],
+      "plage": [
+       25,
+       40
+      ],
+      "unite": "deg",
+      "methode": "oeil",
+      "conf": "C",
+      "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:98-101 « Coupe : verticille extérieur : 25 à 40° à la base, 5 à 15° à la pointe »",
+      "code": "90-(P.a0[0][0]+P.a0[0][1])*180/Math.PI",
+      "retenu": 26.974642535609433,
+      "ecart": "Convention d'angle SUPPOSÉE : élévation au-dessus du plan de la fleur = 90° moins l'angle à l'axe du code (a0 ouvert = 1.10 rad = 63° de l'axe, soit 27° d'élévation). REFERENCES.md ne dit pas à quoi se mesure l'angle. Q3."
+     },
+     "pointe_deg": {
+      "v": [
+       5,
+       15
+      ],
+      "plage": [
+       5,
+       15
+      ],
+      "unite": "deg",
+      "methode": "oeil",
+      "conf": "C",
+      "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:98-101",
+      "code": "90-(P.a1[0][0]+P.a1[0][1])*180/Math.PI",
+      "retenu": 9.78590868168476,
+      "ecart": "Même convention supposée (a1 ouvert = 1.40 rad = 80° de l'axe, soit 10° d'élévation). Le tassement du dessin (sag) abaisse encore la pointe."
+     },
+     "affaissement": {
+      "v": 0.37,
+      "unite": "ratio",
+      "methode": "code",
+      "conf": "D",
+      "code": "P.sag[0]+P.sag[1]",
+      "retenu": 0.37,
+      "note": "Coefficient d'affaissement de la pointe sous son poids, fleur ouverte (sag[0] + sag[1]·o2), à multiplier par la composante vers le bas. Document : « les tépales du bas s'affaissent » (REFERENCES.md:37, œil)."
+     }
+    },
+    "transversale": {
+     "type": {
+      "v": "creux",
+      "methode": "code",
+      "conf": "D",
+      "note": "Déduit de P.cup (« cupping across », app/y3.js:7) : le bord se relève selon u² ; le sens n'est confirmé par aucun document."
+     },
+     "profondeur": {
+      "v": 0.33,
+      "unite": "ratio",
+      "methode": "code",
+      "conf": "D",
+      "code": "P.cup",
+      "retenu": 0.33,
+      "note": "Relèvement du bord / demi-largeur, avant les tirages cup (.85-1.15) ; ×1 pour l'externe, ×1.15 pour l'interne (cupW)."
+     }
+    },
+    "torsion_deg": {
+     "v": [
+      -11.5,
+      11.5
+     ],
+     "unite": "deg",
+     "methode": "code",
+     "conf": "D",
+     "code": "SVA_GENES.tep.tw.map(x=>+(x*180/Math.PI).toFixed(2))",
+     "retenu": [
+      -11.46,
+      11.46
+     ],
+     "note": "Torsion totale du tépale autour de sa nervure médiane, tirage par tépale."
+    },
+    "ondulation": {
+     "n": {
+      "v": [
+       2,
+       3
+      ],
+      "plage": [
+       2,
+       3
+      ],
+      "unite": "n",
+      "methode": "oeil",
+      "conf": "C",
+      "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:97 « deux ou trois ondes »",
+      "code": "SVA_GENES.tep.wk",
+      "retenu": [
+       1.6,
+       2.8
+      ],
+      "ecart": "wk (1.6 à 2.8) est le nombre de demi-périodes de sin(π·wk·v) le long du tépale ; l'équivalence avec « deux ou trois ondes » est supposée (1.6 à 2.8 demi-ondes ≈ 1 à 1,4 onde complète)."
+     },
+     "amplitude": {
+      "v": [
+       0.04,
+       0.12
+      ],
+      "unite": "ratio",
+      "methode": "code",
+      "conf": "D",
+      "code": "SVA_GENES.tep.wav",
+      "retenu": [
+       0.04,
+       0.12
+      ],
+      "note": "Hauteur de l'onde / demi-largeur, tirage par tépale (réduite en bouton)."
+     }
+    }
+   },
+   "matiere": {
+    "epaisseur": {
+     "v": "fine",
+     "methode": "oeil",
+     "conf": "C",
+     "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:103 « mince, satinée, translucide »"
+    },
+    "translucidite": {
+     "v": 0.26,
+     "unite": "ratio",
+     "methode": "code",
+     "conf": "D",
+     "code": "P.trans[0]",
+     "retenu": 0.26,
+     "note": "Translucidité du dessin à l'état frais (+ .2 au déclin). Document : « à contre-jour, le tépale s'allume et les nervures apparaissent » (REFERENCES.md:103).",
+     "qualitatif": {
+      "v": "translucide",
+      "methode": "oeil",
+      "photos": [
+       "anemone-coronaria:2efb61ad"
+      ],
+      "conf": "C",
+      "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:103"
+     }
+    },
+    "texture": {
+     "v": "satin",
+     "methode": "oeil",
+     "conf": "C",
+     "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:103 « satinée »",
+     "ecart": "docs/STANDARD-RENDU.md:145 écrit « velours pour la rose et l'anémone (éclat rasant) » : deux mots pour la même matière. Q4."
+    },
+    "brillance": {
+     "v": 0.09,
+     "unite": "ratio",
+     "methode": "code",
+     "conf": "D",
+     "code": "P.light.ks",
+     "retenu": 0.09,
+     "note": "Coefficient spéculaire du dessin (gloss 14, P.light.gloss)."
+    },
+    "grain": {
+     "v": null,
+     "methode": "hypothese",
+     "conf": "D",
+     "note": "Grain du tépale (lisse / papilleux) : non documenté ; le satin suggère lisse."
+    }
+   },
+   "nervation": {
+    "type": {
+     "v": "parallele",
+     "methode": "oeil",
+     "photos": [
+      "anemone-coronaria:c6901539",
+      "anemone-coronaria:1a25b49c",
+      "anemone-coronaria:2efb61ad"
+     ],
+     "conf": "C",
+     "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:104 « 12 à 20 nervures fines et parallèles partent de la base, s'écartent peu » ; catalogue/serre/pilote-printemps/REFERENCES.md:38 « nervures principales qui se fourchent à angle aigu, mailles allongées »",
+     "note": "Le code les fait partir de l'onglet et s'éventailler (u0 = 0,3·u) : cohérent avec « s'écartent peu ». Réseau secondaire de mailles allongées en plus."
+    },
+    "n": {
+     "v": [
+      12,
+      20
+     ],
+     "plage": [
+      12,
+      20
+     ],
+     "unite": "n",
+     "methode": "oeil",
+     "conf": "C",
+     "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:104",
+     "code": "P.veinN",
+     "retenu": [
+      16,
+      8
+     ],
+     "ecart": "Le code dessine 16 (+0 à 3) nervures au plein détail (DET 1,5) et 8 (+0 à 3) à DET 1 : 8 est sous la plage, c'est un réglage de budget (rendu), pas de botanique. (audit v4 §3.1 : pas de lien 12-20 / veinN)"
+    },
+    "relief": {
+     "v": null,
+     "methode": "hypothese",
+     "conf": "D",
+     "note": "Nervures en creux, en relief ou à plat : seul le fané les dit « marquées » (Freepik) ; frais : non documenté."
+    },
+    "visible": {
+     "v": "contre-jour",
+     "methode": "oeil",
+     "photos": [
+      "anemone-coronaria:2efb61ad"
+     ],
+     "conf": "C",
+     "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:103 « à contre-jour, ... les nervures apparaissent »"
+    },
+    "fourches": {
+     "v": "oui, près du bord",
+     "methode": "oeil",
+     "conf": "C",
+     "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:104 « se ramifient légèrement près du bord »",
+     "code": "P.veinFork",
+     "retenu": [
+      0.75,
+      0.35
+     ],
+     "ecart": "Le code tire une fourche par nervure avec la probabilité .75 (zoom) ou .35 (normal), à partir de v = .3-.6 : pas seulement près du bord.",
+     "note": "[probabilité au plein détail, probabilité normale]."
+    },
+    "couleur": {
+     "v": "plus-sombre",
+     "methode": "oeil",
+     "photos": [
+      "anemone-coronaria:c6901539",
+      "anemone-coronaria:2efb61ad"
+     ],
+     "conf": "C",
+     "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:38 « réseau fin plus sombre que le fond »"
+    }
+   },
+   "zones": [
+    {
+     "zone": "revers",
+     "etendue": {
+      "v": null,
+      "methode": "hypothese",
+      "conf": "D",
+      "note": "Part du tépale concernée non mesurée."
+     },
+     "motif": {
+      "type": {
+       "v": "duvet",
+       "methode": "oeil",
+       "photos": [
+        "anemone-coronaria:2efb61ad",
+        "anemone-coronaria:30259990"
+       ],
+       "conf": "C",
+       "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:105 « le revers est plus pâle et plus gris, avec un fin duvet le long des marges extérieures »"
+      },
+      "direction": {
+       "v": "le long des marges extérieures",
+       "methode": "oeil",
+       "conf": "C",
+       "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:105"
+      }
+     },
+     "bord": {
+      "v": "fondu",
+      "methode": "oeil",
+      "conf": "C",
+      "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:105",
+      "note": "Le dos est dérivé de la couleur du corps (non mesuré, REFERENCES.md:562)."
+     }
+    },
+    {
+     "zone": "base",
+     "etendue": {
+      "v": null,
+      "methode": "hypothese",
+      "conf": "D",
+      "note": "L'étendue de la zone du pied varie d'un coloris à l'autre : voir varietes.<coloris>.tepale.externe.zones."
+     },
+     "bord": {
+      "v": "fondu",
+      "methode": "code",
+      "conf": "D",
+      "note": "svBloom : rampe `st` de la matière (positions 0 à 1 le long du tépale)."
+     }
+    }
+   ],
+   "jointures": [
+    {
+     "vers": "coeur.plancher",
+     "type": "insertion",
+     "params": {
+      "rayon": {
+       "v": 0.13,
+       "unite": "R0",
+       "methode": "code",
+       "conf": "D",
+       "code": "P.r0",
+       "retenu": 0.13,
+       "note": "Rayon du cercle d'insertion des tépales (le dôme mesure .125 R0)."
+      },
+      "hauteur": {
+       "v": -0.012,
+       "unite": "R0",
+       "methode": "code",
+       "conf": "D",
+       "code": "P.z0[0]",
+       "retenu": -0.012,
+       "note": "Hauteur d'insertion (externe ; interne +.004)."
+      }
+     }
+    }
+   ],
+   "stades": {
+    "bouton": {
+     "forme": {
+      "v": "tépales courts, en cuillère, repliés sur le cœur en un œuf ; les dos plus pâles à la base",
+      "methode": "oeil",
+      "photos": [
+       "anemone-coronaria:cbefa18a",
+       "anemone-coronaria:865cc3ac",
+       "anemone-coronaria:08d08459",
+       "anemone-coronaria:32cfeb7f",
+       "anemone-coronaria:f0c8c3c2"
+      ],
+      "conf": "C",
+      "ref": "app/y2.js:76 « the tepals short, spoon-shaped, folded over the heart into an egg » ; docs/STANDARD-RENDU.md:158 « les tépales épousent un œuf »"
+     },
+     "teinte_verte": {
+      "v": [
+       0.5,
+       0.02,
+       0.14
+      ],
+      "methode": "code",
+      "conf": "D",
+      "code": "P.green",
+      "retenu": [
+       0.5,
+       0.02,
+       0.14
+      ],
+      "note": "[part de vert à op = 0, op où il s'efface, durée]. y2.js : « green-tinged when very young »."
+     }
+    },
+    "entrouvert": {
+     "courbure": {
+      "longitudinale": {
+       "pointe_deg": {
+        "v": [
+         35,
+         45
+        ],
+        "plage": [
+         35,
+         45
+        ],
+        "unite": "deg",
+        "methode": "oeil",
+        "photos": [
+         "anemone-coronaria:30259990",
+         "anemone-coronaria:c6901539"
+        ],
+        "conf": "C",
+        "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:37 « jeune fleur en bol (pointes du rang arrière à 35-45° de l'axe) »",
+        "code": "P.a1[0][0]*180/Math.PI",
+        "retenu": 35.523383298111035,
+        "note": "Ici l'angle est mesuré À L'AXE (convention différente de courbure.longitudinale). Code : a1 fermé de l'externe (op = 0)."
+       }
+      }
+     }
+    },
+    "ouvert": {
+     "courbure": {
+      "longitudinale": {
+       "pointe_deg": {
+        "v": [
+         70,
+         80
+        ],
+        "plage": [
+         70,
+         80
+        ],
+        "unite": "deg",
+        "methode": "oeil",
+        "conf": "C",
+        "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:37 « puis ouverte à 70-80° » ; catalogue/serre/pilote-printemps/REFERENCES.md:98-101",
+        "code": "(P.a1[0][0]+P.a1[0][1])*180/Math.PI",
+        "retenu": 80.21409131831524,
+        "ecart": "80,2° codé contre 70-80 : 0,2° au-dessus, dans l'incertitude de l'œil.",
+        "note": "À l'axe, fleur ouverte (o2 = 1)."
+       }
+      }
+     }
+    },
+    "declin": {
+     "courbure": {
+      "longitudinale": {
+       "profil": {
+        "v": "reflechie",
+        "methode": "oeil",
+        "photos": [
+         "anemone-coronaria:8ea61f30",
+         "anemone-coronaria:8b22de49"
+        ],
+        "conf": "C",
+        "ref": "app/y2.js:3-9 (commentaire d'en-tête, « measured on photographs ») « decline: opened too flat, the tips reflexed » ; docs/STANDARD-RENDU.md:160 ; catalogue/serre/pilote-printemps/REFERENCES.md:71 (Freepik : marges enroulées vers l'arrière)"
+       },
+       "pointe_deg": {
+        "v": 108.9,
+        "unite": "deg",
+        "methode": "code",
+        "conf": "D",
+        "code": "(P.a1[0][0]+P.a1[0][1]+P.wA1[0])*180/Math.PI",
+        "retenu": 108.86198107485642,
+        "note": "À l'axe, déclin plein : au-delà de l'horizontale (90°), pointe renversée vers le bas."
+       }
+      }
+     },
+     "matiere": {
+      "translucidite": {
+       "v": 0.46,
+       "unite": "ratio",
+       "methode": "code",
+       "conf": "D",
+       "code": "P.trans[0]+P.trans[1]",
+       "retenu": 0.46,
+       "note": "Tépale plus mince : translucidité .26 + .2 au déclin plein."
+      }
+     },
+     "contour": {
+      "marge": {
+       "v": "ondes plus fortes, marges qui s'enroulent et se froissent",
+       "methode": "oeil",
+       "photos": [
+        "anemone-coronaria:8ea61f30"
+       ],
+       "conf": "C",
+       "ref": "docs/STANDARD-RENDU.md:160 ; catalogue/serre/pilote-printemps/REFERENCES.md:71"
+      }
+     }
+    },
+    "fane": {
+     "nombre": {
+      "v": "tous tombent d'un coup, un ou deux restent pendants",
+      "methode": "oeil",
+      "photos": [
+       "anemone-coronaria:8b22de49",
+       "anemone-coronaria:6df056e2"
+      ],
+      "conf": "C",
+      "ref": "docs/STANDARD-RENDU.md:160 « il en reste un ou deux qui pendent » ; BONNES-PRATIQUES.md 6.3 ; catalogue/fanaison (lot04.json) « tombent en bloc »",
+      "code": "P.shed",
+      "retenu": [
+       0.78,
+       0.17
+      ],
+      "note": "Fenêtre de chute [début, durée] sur wl ; le code garde 1 ou 2 tépales (les plus bas), selon le tirage."
+     },
+     "courbure": {
+      "longitudinale": {
+       "profil": {
+        "v": "pendante",
+        "methode": "oeil",
+        "photos": [
+         "anemone-coronaria:8b22de49",
+         "anemone-coronaria:6df056e2"
+        ],
+        "conf": "C",
+        "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:66-70 « les tépales retombent en cloche froissée autour du cœur »"
+       }
+      }
+     },
+     "zones": [
+      {
+       "zone": "marge",
+       "motif": {
+        "type": {
+         "v": "bords qui blanchissent, translucides ; taches brunes depuis les bords et le long des nervures (blanc)",
+         "methode": "oeil",
+         "photos": [
+          "anemone-coronaria:8b22de49",
+          "anemone-coronaria:d2e8c1a5"
+         ],
+         "conf": "C",
+         "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:66-72"
+        }
+       }
+      }
+     ]
+    },
+    "sec": {
+     "forme": {
+      "v": null,
+      "methode": "hypothese",
+      "conf": "D",
+      "note": "Tépales secs : aucune photo de tépale sec sur fleur ; la fiche fanaison dit « peut être séchée » (Florist's Review), couleurs pâlies."
+     }
+    }
+   },
+   "code": {
+    "genes": "app/y2.js SVA_GENES.tep (tirage par tépale) ; head (tirage par fleur)",
+    "valeurs_par_defaut": "app/y3.js SVB_DEF : l'anémone n'écrase que genes, mat, heart (SVA_P, app/y2.js)"
+   }
+  },
+  "tepale.interne": {
+   "role": "perianthe",
+   "nombre": {
+    "suit": "tepale.externe.nombre",
+    "note": "L'interne porte n - ceil(n/2) tépales (3 sur 6)."
+   },
+   "disposition": {
+    "type": {
+     "suit": "tepale.externe.disposition.type"
+    },
+    "ordre": {
+     "v": "plus redressé que l'externe ; décalé d'un demi-pas",
+     "methode": "oeil",
+     "conf": "C",
+     "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:96"
+    }
+   },
+   "contour": {
+    "base": {
+     "suit": "tepale.externe.contour.base"
+    },
+    "pointe": {
+     "suit": "tepale.externe.contour.pointe"
+    },
+    "vb": {
+     "suit": "tepale.externe.contour.vb"
+    },
+    "L_sur_l": {
+     "v": [
+      1.1,
+      1.25
+     ],
+     "plage": [
+      1.1,
+      1.25
+     ],
+     "unite": "ratio",
+     "methode": "oeil",
+     "conf": "C",
+     "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:97",
+     "code": "1/P.Wd[1]",
+     "retenu": 1.0638297872340425,
+     "ecart": "Interne : l/L = Wd[1] = .94, soit L/l = 1.06 : juste sous la plage 1,1-1,25 (écart de 4 %) ; moins que l'externe. Q2."
+    },
+    "marge": {
+     "suit": "tepale.externe.contour.marge"
+    }
+   },
+   "taille": {
+    "longueur": {
+     "v": 0.86,
+     "unite": "R0",
+     "methode": "code",
+     "conf": "D",
+     "code": "P.L[1]",
+     "retenu": 0.86,
+     "note": "Un peu plus court que l'externe (.92)."
+    }
+   },
+   "courbure": {
+    "longitudinale": {
+     "pied_deg": {
+      "v": [
+       40,
+       60
+      ],
+      "plage": [
+       40,
+       60
+      ],
+      "unite": "deg",
+      "methode": "oeil",
+      "conf": "C",
+      "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:98-101 « verticille intérieur : 40 à 60° à la base, 10 à 25° à la pointe »",
+      "code": "90-(P.a0[1][0]+P.a0[1][1])*180/Math.PI",
+      "retenu": 33.85013607717932,
+      "ecart": "Même convention d'élévation supposée que pour l'externe. Le code donne 33,9° (a0 ouvert .98 rad = 56° de l'axe), 6° sous la plage 40-60. Q3."
+     },
+     "pointe_deg": {
+      "v": [
+       10,
+       25
+      ],
+      "plage": [
+       10,
+       25
+      ],
+      "unite": "deg",
+      "methode": "oeil",
+      "conf": "C",
+      "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:98-101",
+      "code": "90-(P.a1[1][0]+P.a1[1][1])*180/Math.PI",
+      "retenu": 18.380275608647096
+     }
+    },
+    "transversale": {
+     "profondeur": {
+      "v": 0.38,
+      "unite": "ratio",
+      "methode": "code",
+      "conf": "D",
+      "code": "P.cup*P.cupW[1]",
+      "retenu": 0.3795,
+      "note": "Plus creux que l'externe (cupW[1] = 1.15)."
+     }
+    }
+   },
+   "matiere": {
+    "epaisseur": {
+     "suit": "tepale.externe.matiere.epaisseur"
+    },
+    "texture": {
+     "suit": "tepale.externe.matiere.texture"
+    },
+    "translucidite": {
+     "suit": "tepale.externe.matiere.translucidite"
+    }
+   },
+   "nervation": {
+    "suit": "tepale.externe.nervation"
+   },
+   "zones": [
+    {
+     "suit": "tepale.externe.zones"
+    }
+   ],
+   "jointures": [
+    {
+     "vers": "coeur.plancher",
+     "type": "insertion",
+     "params": {
+      "rayon": {
+       "v": 0.13,
+       "unite": "R0",
+       "methode": "code",
+       "conf": "D",
+       "code": "P.r0",
+       "retenu": 0.13
+      },
+      "hauteur": {
+       "v": 0.004,
+       "unite": "R0",
+       "methode": "code",
+       "conf": "D",
+       "code": "P.z0[1]",
+       "retenu": 0.004
+      }
+     }
+    }
+   ],
+   "stades": {
+    "entrouvert": {
+     "courbure": {
+      "longitudinale": {
+       "pointe_deg": {
+        "v": [
+         35,
+         45
+        ],
+        "plage": [
+         35,
+         45
+        ],
+        "unite": "deg",
+        "methode": "oeil",
+        "photos": [
+         "anemone-coronaria:30259990"
+        ],
+        "conf": "C",
+        "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:37",
+        "code": "P.a1[1][0]*180/Math.PI",
+        "retenu": 29.79380534680281,
+        "ecart": "29,8° codé : 5° sous la plage ; « rang arrière » n'est pas relié à un verticille dans REFERENCES.md (peut-être l'externe)."
+       }
+      }
+     }
+    },
+    "ouvert": {
+     "courbure": {
+      "longitudinale": {
+       "pointe_deg": {
+        "v": [
+         70,
+         80
+        ],
+        "plage": [
+         70,
+         80
+        ],
+        "unite": "deg",
+        "methode": "oeil",
+        "conf": "C",
+        "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:37",
+        "code": "(P.a1[1][0]+P.a1[1][1])*180/Math.PI",
+        "retenu": 71.6197243913529,
+        "ecart": "71,6° : dans la plage."
+       }
+      }
+     }
+    },
+    "fane": {
+     "nombre": {
+      "suit": "tepale.externe.stades.fane.nombre"
+     }
+    }
+   }
+  },
+  "coeur.etamines": {
+   "role": "coeur",
+   "nombre": {
+    "v": [
+     80,
+     150
+    ],
+    "plage": [
+     80,
+     150
+    ],
+    "unite": "n",
+    "methode": "oeil",
+    "conf": "C",
+    "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:109 « 80 à 150 étamines » ; app/y2.js:7 « 90 to 140 »",
+    "code": "SVA_GENES.head.stN",
+    "retenu": [
+     165,
+     220,
+     "r"
+    ],
+    "ecart": "Le code tire stN = 165 à 220 (arrondi) : au-dessus de REFERENCES.md (80-150) et de y2.js (90-140). Mais svaHeart en dessine stN × .62 = 102 à 136 à DET 1 (boutique) et stN × 1 = 165 à 220 seulement à DET 1,5 (gros plans) : l'écart n'existe qu'au plein détail. Non expliqué dans les documents. Q1.",
+    "note": "Aucune photo n'est rattachée au chiffre dans REFERENCES.md ; l'audit v4 §3.2 l'avait noté (écart de 40 %)."
+   },
+   "disposition": {
+    "type": {
+     "v": "spirale",
+     "methode": "code",
+     "conf": "D",
+     "note": "Angle d'or (i·2,39996 rad), les extérieures plus longues et plus basses (app/y2.js:svaHeart) ; aucun document ne décrit la disposition réelle."
+    },
+    "ordre": {
+     "v": "anneau serré et sombre autour du dôme",
+     "methode": "oeil",
+     "photos": [
+      "anemone-coronaria:81ce6028"
+     ],
+     "conf": "C",
+     "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:33 « se lit comme un anneau sombre et serré »"
+    }
+   },
+   "contour": {
+    "anthere": {
+     "forme": {
+      "v": "oblongue",
+      "methode": "oeil",
+      "photos": [
+       "anemone-coronaria:1a25b49c"
+      ],
+      "conf": "C",
+      "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:33 « anthères oblongues » ; catalogue/serre/pilote-printemps/REFERENCES.md:109 « deux fois plus longues que larges »"
+     },
+     "L_sur_l": {
+      "v": 1.76,
+      "plage": [
+       1.76,
+       2
+      ],
+      "unite": "ratio",
+      "methode": "oeil",
+      "conf": "C",
+      "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:33 (0,03 R sur 0,017 R = 1,76) ; catalogue/serre/pilote-printemps/REFERENCES.md:109 (« deux fois plus longues que larges »)",
+      "note": "Le code dessine al = R0·.03 et aw = R0·.017 (constantes dans app/y2.js:svaHeart, pas de chemin évaluable) : 1,76."
+     }
+    }
+   },
+   "taille": {
+    "rayon_couronne": {
+     "v": [
+      0.31,
+      0.34
+     ],
+     "plage": [
+      0.31,
+      0.34
+     ],
+     "unite": "R0",
+     "methode": "oeil",
+     "photos": [
+      "anemone-coronaria:81ce6028"
+     ],
+     "conf": "C",
+     "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:33 « couronne d'étamines dense jusqu'à 0,31 à 0,34 R (R : rayon de la fleur ouverte) »",
+     "ecart": "Autre chiffre dans REFERENCES.md:109 : « anneau de 0,30 à 0,36 D » (D = diamètre, soit .60-.72 R0) : les deux lignes ne sont pas dans la même unité. Le code n'a pas de paramètre direct (rayon = rb + Ls·cos(be) dans svaHeart) : estimation à la main .18 à .30 R0 avec les constantes du code, à mesurer sur un rendu (organ.py). Q8."
+    },
+    "filet_longueur": {
+     "v": [
+      0.08,
+      0.12
+     ],
+     "plage": [
+      0.08,
+      0.12
+     ],
+     "unite": "D",
+     "methode": "oeil",
+     "conf": "C",
+     "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:109 « longs de 0,08 à 0,12 D »",
+     "ecart": "Le code : Ls = R0 · .2 · stL · (.75 + .4q) · (.62 + .38·o2), soit .15 à .23 R0 = .075 à .115 D fleur ouverte : cohérent. Constantes en dur dans svaHeart (non évaluables)."
+    },
+    "anthere_dimensions": {
+     "v": [
+      0.03,
+      0.017
+     ],
+     "unite": "R0",
+     "methode": "oeil",
+     "photos": [
+      "anemone-coronaria:1a25b49c"
+     ],
+     "conf": "C",
+     "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:33 « d'environ 0,03 R sur 0,017 R »",
+     "note": "[longueur, largeur]. Code : R0·.03 et R0·.017 en dur."
+    }
+   },
+   "courbure": {
+    "longitudinale": {
+     "profil": {
+      "v": "arquee",
+      "methode": "oeil",
+      "conf": "C",
+      "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:109 « Les filets sont arqués vers le haut et l'extérieur »"
+     },
+     "pied_deg": {
+      "v": [
+       40,
+       65
+      ],
+      "plage": [
+       40,
+       65
+      ],
+      "unite": "deg",
+      "methode": "oeil",
+      "conf": "C",
+      "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:109 « entre 40 et 65° »",
+      "ecart": "Cohérent avec le code : l'angle du filet au-dessus de l'horizontale est be = 1,12 - .42q rad = 40° à 64° (svaHeart, constantes en dur). Aucune photo rattachée."
+     }
+    }
+   },
+   "matiere": {
+    "grain": {
+     "v": "poudreux",
+     "methode": "oeil",
+     "photos": [
+      "anemone-coronaria:1a25b49c"
+     ],
+     "conf": "C",
+     "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:109 « anthères ... poudreuses » ; catalogue/serre/pilote-printemps/REFERENCES.md:33 « quelques-unes poudrées de pollen crème »"
+    },
+    "pollen_part": {
+     "v": 0.22,
+     "unite": "ratio",
+     "methode": "code",
+     "conf": "D",
+     "note": "Part des étamines dessinées avec une touche de pollen (pxHashS < .22 dans svaHeart) ; document : « quelques-unes ». Couleurs : par coloris."
+    }
+   },
+   "zones": [
+    {
+     "zone": "oeil",
+     "etendue": {
+      "v": null,
+      "methode": "hypothese",
+      "conf": "D",
+      "note": "Étamines, filets et anthères : couleurs par coloris (varietes)."
+     },
+     "motif": {
+      "type": {
+       "v": "anneau sombre et serré",
+       "methode": "oeil",
+       "photos": [
+        "anemone-coronaria:81ce6028"
+       ],
+       "conf": "C",
+       "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:33"
+      }
+     }
+    }
+   ],
+   "jointures": [
+    {
+     "vers": "coeur.pistils",
+     "type": "insertion",
+     "params": {
+      "rayon": {
+       "v": [
+        0.1125,
+        0.1275
+       ],
+       "unite": "R0",
+       "methode": "code",
+       "conf": "D",
+       "note": "rb = rd · (.9 + .12q) · (.86 + .14·o2), rd = R0 · .125 : base de chaque étamine autour du dôme (svaHeart)."
+      }
+     }
+    }
+   ],
+   "stades": {
+    "bouton": {
+     "forme": {
+      "v": "dressées et serrées tant que la fleur n'est pas ouverte ; cachées dans le bouton fermé",
+      "methode": "oeil",
+      "conf": "C",
+      "ref": "docs/STANDARD-RENDU.md:158 ; BONNES-PRATIQUES.md 5.3",
+      "note": "Le code ne dessine le cœur que si bud < .92."
+     }
+    },
+    "declin": {
+     "taille": {
+      "filet_longueur": {
+       "v": 0.85,
+       "unite": "ratio",
+       "methode": "code",
+       "conf": "D",
+       "note": "Les étamines raccourcissent de 15 % au déclin plein (ws = 1 - .15·dec)."
+      }
+     }
+    },
+    "fane": {
+     "forme": {
+      "v": "étamines clairsemées et recourbées ; la plupart tombent, le cœur sombre reste sur la tige",
+      "methode": "oeil",
+      "photos": [
+       "anemone-coronaria:8ea61f30"
+      ],
+      "conf": "C",
+      "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:71 (Freepik : étamines clairsemées et recourbées) ; catalogue/fanaison (lot04.json) « coeur sombre ... qui persiste après la chute »"
+     }
+    }
+   },
+   "code": {
+    "filet": "app/y2.js svaHeart : Ls = R0*.2*g.stL*(.75+.4q)*(.9+.2h)*ws*(1-.3bud)*(.62+.38*o2) ; be = (1.12+g.stA) - .42q + ...",
+    "nombre_dessine": "svaHeart : sn = round(stN * (LOD ? .4 : DET >= 1.5 ? 1 : .62))"
+   }
+  },
+  "coeur.pistils": {
+   "role": "coeur",
+   "nombre": {
+    "v": null,
+    "methode": "hypothese",
+    "conf": "D",
+    "note": "Nombre de carpelles : non documenté (le code dessine 150 × det points sur le dôme)."
+   },
+   "disposition": {
+    "type": {
+     "v": "capitule",
+     "methode": "code",
+     "conf": "D",
+     "note": "Pistils en points sur un dôme, spirale d'or (svaHeart) : forme documentée seulement comme « granuleux »."
+    }
+   },
+   "contour": {
+    "forme": {
+     "v": "dome",
+     "methode": "oeil",
+     "photos": [
+      "anemone-coronaria:81ce6028",
+      "anemone-coronaria:1a25b49c"
+     ],
+     "conf": "C",
+     "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:108 « Dôme de pistils » ; catalogue/serre/pilote-printemps/REFERENCES.md:33 « dôme sombre »"
+    }
+   },
+   "taille": {
+    "rayon": {
+     "v": [
+      0.12,
+      0.13
+     ],
+     "plage": [
+      0.12,
+      0.13
+     ],
+     "unite": "R0",
+     "methode": "oeil",
+     "photos": [
+      "anemone-coronaria:81ce6028"
+     ],
+     "conf": "C",
+     "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:33 « dôme sombre de 0,12 à 0,13 R » (TR 108 : « environ 0,12 D », unité D)",
+     "ecart": "Le code : rd = R0 · .125 · g.dome (tirage .9 à 1.12) : cohérent avec .12-.13 R. REFERENCES.md:108 dit « 0,12 D » : D et R confondus, Q8."
+    },
+    "variation_individu": {
+     "v": [
+      0.9,
+      1.12
+     ],
+     "unite": "ratio",
+     "methode": "code",
+     "conf": "D",
+     "code": "SVA_GENES.head.dome",
+     "retenu": [
+      0.9,
+      1.12
+     ]
+    },
+    "hauteur_sur_rayon": {
+     "v": 0.62,
+     "unite": "ratio",
+     "methode": "code",
+     "conf": "D",
+     "note": "hd = rd · .62 (svaHeart, en dur) ; s'allonge de 75 % au fané."
+    }
+   },
+   "matiere": {
+    "grain": {
+     "v": "papilleux",
+     "methode": "oeil",
+     "photos": [
+      "anemone-coronaria:81ce6028",
+      "anemone-coronaria:1a25b49c"
+     ],
+     "conf": "C",
+     "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:108 « granuleux »"
+    }
+   },
+   "zones": [
+    {
+     "zone": "oeil",
+     "etendue": {
+      "v": null,
+      "methode": "hypothese",
+      "conf": "D",
+      "note": "Dôme entier ; couleur par coloris."
+     },
+     "motif": {
+      "type": {
+       "v": "granuleux",
+       "methode": "oeil",
+       "photos": [
+        "anemone-coronaria:81ce6028"
+       ],
+       "conf": "C",
+       "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:108"
+      }
+     }
+    }
+   ],
+   "jointures": [
+    {
+     "vers": "coeur.plancher",
+     "type": "insertion",
+     "params": {
+      "hauteur": {
+       "v": 0.03,
+       "unite": "R0",
+       "methode": "code",
+       "conf": "D",
+       "note": "zc = R0 · .03 : hauteur du pied du dôme (svaHeart)."
+      }
+     }
+    }
+   ],
+   "stades": {
+    "fane": {
+     "taille": {
+      "hauteur_sur_rayon": {
+       "v": "le dôme s'allonge",
+       "methode": "oeil",
+       "photos": [
+        "anemone-coronaria:72c6fab6"
+       ],
+       "conf": "C",
+       "ref": "app/y2.js:74-79 « the dome lengthening » ; photo de la tête à graines cotonneuse",
+       "note": "Code : rd × (1 + .12 fan), hd × (1 + .75 fan)."
+      }
+     }
+    }
+   }
+  },
+  "coeur.plancher": {
+   "role": "receptacle",
+   "taille": {
+    "rayon_pied": {
+     "v": 1.55,
+     "unite": "ratio",
+     "methode": "code",
+     "conf": "D",
+     "note": "rr = rd · 1.55 : rayon du cône (en dur dans svaHeart `recep`)."
+    }
+   },
+   "matiere": {
+    "opacite": {
+     "v": 0.92,
+     "unite": "ratio",
+     "methode": "code",
+     "conf": "D",
+     "note": "Fond sombre des filets d'étamines (couleur du filet), fill-opacity .92."
+    }
+   },
+   "zones": [
+    {
+     "zone": "oeil",
+     "etendue": {
+      "v": null,
+      "methode": "hypothese",
+      "conf": "D",
+      "note": "Plancher de la couronne : même teinte que les filets (par coloris)."
+     },
+     "motif": {
+      "type": {
+       "v": "cône surbaissé sombre, mur plein vu de côté",
+       "methode": "code",
+       "conf": "D",
+       "note": "app/y2.js:svaHeart (commentaire de `recep`) ; aucun document botanique ne décrit le réceptacle."
+      }
+     }
+    }
+   ],
+   "jointures": [
+    {
+     "vers": "tepale.externe",
+     "type": "insertion",
+     "params": {
+      "visibilite": {
+       "v": "jamais sous une coupe ni un bouton (rien de sombre ne déborde)",
+       "methode": "oeil",
+       "conf": "C",
+       "ref": "catalogue/serre/methode/BONNES-PRATIQUES.md 2.7 (anémone v2) ; app/y2.js:svaHeart (commentaire)"
+      }
+     }
+    }
+   ],
+   "stades": {
+    "fane": {
+     "forme": {
+      "v": "n'est plus dessiné quand le fané passe .8",
+      "methode": "code",
+      "conf": "D",
+      "note": "Condition `fan < .8` dans svaHeart."
+     }
+    }
+   }
+  },
+  "bouton": {
+   "role": "bouton",
+   "disposition": {
+    "type": {
+     "v": "verticilles",
+     "methode": "oeil",
+     "conf": "C",
+     "ref": "docs/STANDARD-RENDU.md:158 « chez l'anémone, les tépales épousent un œuf »"
+    },
+    "ordre": {
+     "v": "le verticille externe passe par-dessus l'interne, les pointes se rejoignent au sommet",
+     "methode": "code",
+     "conf": "D",
+     "note": "app/y3.js svBloom (commentaire du bouton) ; aucun document ne le dit."
+    }
+   },
+   "contour": {
+    "forme": {
+     "v": "oeuf",
+     "methode": "oeil",
+     "photos": [
+      "anemone-coronaria:865cc3ac",
+      "anemone-coronaria:cbefa18a",
+      "anemone-coronaria:08d08459",
+      "anemone-coronaria:9a5e36b6"
+     ],
+     "conf": "C",
+     "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:28 (boutons : « globe à base blanche, œuf violet, bouton penché sous la collerette ») ; docs/STANDARD-RENDU.md:158 ; catalogue/serre/methode/BONNES-PRATIQUES.md 5.1"
+    },
+    "pointe": {
+     "type": {
+      "v": "arrondie",
+      "methode": "oeil",
+      "photos": [
+       "anemone-coronaria:cbefa18a",
+       "anemone-coronaria:865cc3ac"
+      ],
+      "conf": "C",
+      "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:28"
+     },
+     "variante": {
+      "v": "aigue",
+      "methode": "oeil",
+      "photos": [
+       "anemone-coronaria:9a5e36b6"
+      ],
+      "conf": "C",
+      "ref": "ch/anemones/refcache/anemone-coronaria-organes/organes.md « t198 : bouton rouge pointu »",
+      "note": "Les photos ne s'accordent pas : globe (Poppy), œuf (6.JPG), pointu (t198). Q7b : forme du bouton par variété ou par stade ?"
+     }
+    },
+    "H_sur_L": {
+     "v": 1.32,
+     "unite": "ratio",
+     "methode": "code",
+     "conf": "D",
+     "code": "1/(2*P.budR)",
+     "retenu": 1.3157894736842106,
+     "note": "Hauteur / largeur du bouton = 1/(2·budR). Aucun document ne la mesure (BONNES-PRATIQUES 5.1 demande de la mesurer)."
+    },
+    "plus_large": {
+     "v": null,
+     "methode": "hypothese",
+     "conf": "D",
+     "note": "Où est la plus grande largeur du bouton (BP 5.2) : non noté ; le code a budE [.1, .88], budP .85."
+    }
+   },
+   "taille": {
+    "hauteur": {
+     "v": [
+      0.5,
+      0.88
+     ],
+     "unite": "R0",
+     "methode": "code",
+     "conf": "D",
+     "code": "[P.budH[0],P.budH[0]+P.budH[1]]",
+     "retenu": [
+      0.5,
+      0.88
+     ],
+     "note": "Hauteur du bouton en demi-diamètre de la fleur ouverte, de op = .02 à op >= .32 (× .96 pour l'interne)."
+    },
+    "seuil_bouton": {
+     "v": [
+      0.1,
+      0.32
+     ],
+     "unite": "ratio",
+     "methode": "code",
+     "conf": "D",
+     "code": "P.bud",
+     "retenu": [
+      0.1,
+      0.32
+     ],
+     "note": "[op où la forme en œuf commence à s'ouvrir, durée] : plein bouton jusqu'à op .1, ouvert à op .42."
+    }
+   },
+   "matiere": {
+    "texture": {
+     "v": "duveteux",
+     "methode": "oeil",
+     "photos": [
+      "anemone-coronaria:32cfeb7f",
+      "anemone-coronaria:cbefa18a"
+     ],
+     "conf": "C",
+     "ref": "ch/anemones/refcache/anemone-coronaria-organes/organes.md « t188 : bouton velu gris en tête de tige » ; catalogue/serre/pilote-printemps/REFERENCES.md:28 « tige velue » (Poppy)"
+    },
+    "teinte_verte": {
+     "v": [
+      0.5,
+      0.02,
+      0.14
+     ],
+     "methode": "code",
+     "conf": "D",
+     "ref": "app/y2.js:76 « green-tinged when very young »",
+     "code": "P.green",
+     "retenu": [
+      0.5,
+      0.02,
+      0.14
+     ],
+     "note": "[part de vert à op = 0, op où elle s'efface, durée]. Couleur : P.greenC."
+    }
+   },
+   "zones": [
+    {
+     "zone": "base",
+     "etendue": {
+      "v": [
+       0,
+       0.4
+      ],
+      "unite": "L",
+      "methode": "code",
+      "conf": "D",
+      "note": "svBloom : le dos du bouton est pâle (blanc teinté) du pied jusqu'à .4 de la longueur (bstB) ; en dur."
+     },
+     "motif": {
+      "type": {
+       "v": "base blanche au revers",
+       "methode": "oeil",
+       "photos": [
+        "anemone-coronaria:cbefa18a"
+       ],
+       "conf": "C",
+       "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:28 « bases blanches au revers » (Poppy)"
+      }
+     }
+    }
+   ],
+   "jointures": [
+    {
+     "vers": "pedicelle",
+     "type": "col",
+     "params": {
+      "port": {
+       "v": "dresse",
+       "methode": "oeil",
+       "photos": [
+        "anemone-coronaria:f0c8c3c2",
+        "anemone-coronaria:32cfeb7f",
+        "anemone-coronaria:9a5e36b6"
+       ],
+       "conf": "C",
+       "ref": "ch/anemones/refcache/anemone-coronaria/etat.md « bouton dressé (t121, t188, t198) » ; app/y3-anemone2.js:acoBudUp",
+       "ecart": "Boutons PENCHÉS sur d'autres photos : P9, P25, P29, P30 (iNaturalist), Flora della Sardegna 220 (05) et REFERENCES.md:28. Le port dépend-il de la forme sauvage ou cultivée, ou du moment ? Le dessin dresse le bouton (acoBudUp). Q7."
+      }
+     }
+    }
+   ],
+   "stades": {
+    "bouton": {
+     "forme": {
+      "v": "fermé, œuf, étamines cachées",
+      "methode": "oeil",
+      "photos": [
+       "anemone-coronaria:865cc3ac",
+       "anemone-coronaria:cbefa18a"
+      ],
+      "conf": "C",
+      "ref": "docs/STANDARD-RENDU.md:158"
+     }
+    },
+    "gonfle": {
+     "taille": {
+      "hauteur": {
+       "v": 0.746,
+       "unite": "R0",
+       "methode": "code",
+       "conf": "D",
+       "code": "P.budH[0]+P.budH[1]*svSm((.2-.02)/.3)",
+       "retenu": 0.74624,
+       "note": "Hauteur du bouton à op = .2 (grille BP 5.5)."
+      }
+     }
+    },
+    "entrouvert": {
+     "forme": {
+      "v": "la forme en œuf s'ouvre : bol profond, pointes à 35-45° de l'axe",
+      "methode": "oeil",
+      "photos": [
+       "anemone-coronaria:30259990",
+       "anemone-coronaria:c6901539"
+      ],
+      "conf": "C",
+      "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:37"
+     }
+    }
+   }
+  },
+  "collerette": {
+   "role": "bractee",
+   "nombre": {
+    "v": 3,
+    "unite": "n",
+    "methode": "oeil",
+    "photos": [
+     "anemone-coronaria:cbefa18a",
+     "anemone-coronaria:08d08459",
+     "anemone-coronaria:32cfeb7f",
+     "anemone-coronaria:7eff67ed"
+    ],
+    "conf": "B",
+    "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:121 « trois feuilles très découpées, en collerette » ; sources/anemone-coronaria.json sorte.forme « collerette de trois bractées découpées » ; catalogue/serre/pilote-printemps/REFERENCES.md:28 (Poppy : « collerette de trois bractées »)",
+    "note": "Nombre de bractées (whorl: 3 en dur dans app/s10a.js:76, pas de chemin évaluable).",
+    "lobes": {
+     "v": 3,
+     "unite": "n",
+     "methode": "oeil",
+     "photos": [
+      "anemone-coronaria:46dd8028",
+      "anemone-coronaria:32cfeb7f",
+      "anemone-coronaria:de974eb6"
+     ],
+     "conf": "C",
+     "ref": "ch/anemones/refcache/anemone-coronaria/etat.md « 3 lobes, 2-3 paires de lanières dentées »",
+     "code": "probe.bract(1,0).lobes.length",
+     "retenu": 3
+    }
+   },
+   "disposition": {
+    "type": {
+     "v": "verticillees",
+     "methode": "oeil",
+     "conf": "C",
+     "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:121 « en collerette » ; app/y2.js:118 « three sessile bracts round the stem »"
+    },
+    "ordre": {
+     "v": "jamais devant la fleur",
+     "methode": "oeil",
+     "conf": "C",
+     "ref": "catalogue/serre/methode/BONNES-PRATIQUES.md 7.7 « anémone : bractées jamais devant la fleur »"
+    }
+   },
+   "contour": {
+    "lobes": {
+     "v": [
+      [
+       -0.6,
+       0.8
+      ],
+      [
+       0,
+       1
+      ],
+      [
+       0.6,
+       0.86
+      ]
+     ],
+     "unite": "ratio",
+     "methode": "code",
+     "conf": "D",
+     "code": "probe.bract(1,0).lobes",
+     "retenu": [
+      [
+       -0.6,
+       0.8
+      ],
+      [
+       0,
+       1
+      ],
+      [
+       0.6,
+       0.86
+      ]
+     ],
+     "note": "[angle autour de U en rad, longueur relative] des trois lobes de chaque bractée."
+    },
+    "base": {
+     "type": {
+      "v": "engainante",
+      "methode": "oeil",
+      "conf": "C",
+      "ref": "app/y3-anemone2.js « sessile » ; app/y2.js:118",
+      "note": "Courte base commune large qui entoure la tige, les lobes en partent (baseL .15, baseW .16)."
+     }
+    },
+    "pointe": {
+     "type": {
+      "v": "aigue",
+      "methode": "oeil",
+      "photos": [
+       "anemone-coronaria:32cfeb7f",
+       "anemone-coronaria:46dd8028"
+      ],
+      "conf": "C",
+      "ref": "ch/anemones/refcache/anemone-coronaria/etat.md « lanières pointues »"
+     }
+    },
+    "vb": {
+     "v": 0.36,
+     "unite": "L",
+     "methode": "code",
+     "conf": "D",
+     "code": "probe.bract(1,0).vb",
+     "retenu": 0.36,
+     "note": "Où la lanière est la plus large."
+    },
+    "lanieres_largeur": {
+     "v": [
+      0.06,
+      0.1
+     ],
+     "plage": [
+      0.06,
+      0.1
+     ],
+     "unite": "ratio",
+     "n": 1,
+     "methode": "segmente",
+     "photos": [
+      "anemone-coronaria:32cfeb7f"
+     ],
+     "conf": "C",
+     "ref": "ch/anemones/refcache/anemone-coronaria/etat.md « (l/L 0,06-0,1) » (règle maison, pixels)",
+     "code": "probe.bract(1,0).ws",
+     "retenu": 0.13,
+     "ecart": "ws = .13 est la demi-largeur / longueur d'une lanière avant incisions (largeur pleine .26) ; la mesure est la largeur pleine / longueur de la lanière entière. Les deux ne se comparent pas sans mesurer le rendu (incisions incS de profondeur .5). Q6."
+    },
+    "paires_lanieres": {
+     "v": [
+      2,
+      3
+     ],
+     "plage": [
+      2,
+      3
+     ],
+     "unite": "n",
+     "methode": "oeil",
+     "photos": [
+      "anemone-coronaria:32cfeb7f",
+      "anemone-coronaria:46dd8028",
+      "anemone-coronaria:de974eb6"
+     ],
+     "conf": "C",
+     "ref": "catalogue/serre/pilote-printemps/REFERENCES.md (section « plante v2 ») « deux ou trois paires de lanières pointues et dentées » ; ch/anemones/refcache/anemone-coronaria/etat.md",
+     "code": "probe.bract(1,0).side",
+     "retenu": [
+      1.4,
+      2.3
+     ],
+     "ecart": "Le code tire 1.4 à 2.3 paires par lobe (arrondi : 1 à 2) au plein détail et la moitié hors zoom (sideLo .5), plus des incisions de la marge (inc, incS) : sous les 2 à 3 documentées. Q6."
+    },
+    "marge": {
+     "type": {
+      "v": "dentee",
+      "methode": "oeil",
+      "photos": [
+       "anemone-coronaria:de974eb6",
+       "anemone-coronaria:32cfeb7f"
+      ],
+      "conf": "C",
+      "ref": "app/y3-anemone2.js:31 « toothed on the florists' forms (t139) » ; ch/anemones/refcache/anemone-coronaria/etat.md"
+     },
+     "incisions": {
+      "v": [
+       1,
+       2
+      ],
+      "unite": "n",
+      "methode": "code",
+      "conf": "D",
+      "code": "probe.bract(1,0).inc.n",
+      "retenu": [
+       1,
+       2
+      ],
+      "note": "[hors zoom, au zoom] lobes incisés par lanière."
+     }
+    },
+    "L_sur_l": {
+     "v": null,
+     "methode": "hypothese",
+     "conf": "D",
+     "note": "Rapport longueur / largeur de la bractée entière : non mesuré."
+    }
+   },
+   "taille": {
+    "longueur": {
+     "v": [
+      0.35,
+      0.5
+     ],
+     "plage": [
+      0.35,
+      0.5
+     ],
+     "unite": "D",
+     "n": 2,
+     "methode": "segmente",
+     "photos": [
+      "anemone-coronaria:46dd8028",
+      "anemone-coronaria:de974eb6"
+     ],
+     "conf": "B",
+     "ref": "ch/anemones/refcache/anemone-coronaria/etat.md « Bractées : t197 0,35-0,4 d ; t139 0,5 d pendantes » (règle maison, pixels)",
+     "code": "[.5*probe.bract(0,0).len,.65*probe.bract(1,0).len].map(x=>+x.toFixed(3))",
+     "retenu": [
+      0.33,
+      0.52
+     ],
+     "ecart": "La sonde donne .33 à .52 D (len = D·R(.5,.65) de s10a.js:78, recopié ici, × (.66 + .14·o2)) ; etat.md écrit « 0,33 à 0,48 d ». Dans l'incertitude."
+    },
+    "sur_bouton": {
+     "v": 0.9,
+     "unite": "ratio",
+     "n": 1,
+     "methode": "segmente",
+     "photos": [
+      "anemone-coronaria:32cfeb7f"
+     ],
+     "conf": "C",
+     "ref": "ch/anemones/refcache/anemone-coronaria/etat.md « t188 0,9 de la largeur du bouton »",
+     "note": "Rapport à la largeur du bouton (pas en D)."
+    },
+    "base_commune": {
+     "v": [
+      0.15,
+      0.16
+     ],
+     "unite": "L",
+     "methode": "code",
+     "conf": "D",
+     "code": "[probe.bract(1,0).baseL,probe.bract(1,0).baseW]",
+     "retenu": [
+      0.15,
+      0.16
+     ],
+     "note": "[longueur, largeur] de la base commune, en part de la longueur de la bractée (etat.md « base commune .15 x .16 »)."
+    }
+   },
+   "courbure": {
+    "longitudinale": {
+     "pied_deg": {
+      "v": [
+       60,
+       80
+      ],
+      "plage": [
+       60,
+       80
+      ],
+      "unite": "deg",
+      "methode": "oeil",
+      "conf": "C",
+      "ref": "app/y2.js:118-121 « spreading at 60 to 80 degrees from the stem » (commentaire de svaBract3, mesuré sur photos)",
+      "ecart": "Le dessin actuel pose les bractées à leafAng = 80 + 8·o2 + 8·wl-fané degrés (app/s10a.js:76), soit 80 à 96° : au-dessus de la plage 60-80 de l'ancien commentaire, sans trace de la raison. Q6b."
+     },
+     "profil": {
+      "v": "retombante",
+      "methode": "oeil",
+      "photos": [
+       "anemone-coronaria:08d08459",
+       "anemone-coronaria:32cfeb7f",
+       "anemone-coronaria:46dd8028"
+      ],
+      "conf": "C",
+      "ref": "ch/anemones/refcache/anemone-coronaria/etat.md « retombante comme t188/t197 »"
+     },
+     "souplesse": {
+      "v": [
+       0.5,
+       0.3
+      ],
+      "unite": "ratio",
+      "methode": "code",
+      "conf": "D",
+      "code": "probe.bract(1,0).limp",
+      "retenu": [
+       0.5,
+       0.3
+      ],
+      "note": "limp [frais + 0.08·o2, + fané] : la lanière s'incline vers le sol selon limp·v^1.2."
+     }
+    },
+    "transversale": {
+     "type": {
+      "v": "gouttiere",
+      "methode": "oeil",
+      "conf": "C",
+      "ref": "app/y2.js:119 « folded along its midrib into a shallow gutter »"
+     },
+     "profondeur": {
+      "v": [
+       0.45,
+       0.2
+      ],
+      "unite": "ratio",
+      "methode": "code",
+      "conf": "D",
+      "code": "probe.bract(1,0).gut",
+      "retenu": [
+       0.45,
+       0.2
+      ]
+     }
+    }
+   },
+   "matiere": {
+    "epaisseur": {
+     "v": null,
+     "methode": "hypothese",
+     "conf": "D",
+     "note": "Épaisseur des bractées : non documentée."
+    },
+    "texture": {
+     "v": "dessus plus foncé et un peu brillant, dessous plus pâle et mat (fin duvet)",
+     "methode": "oeil",
+     "photos": [
+      "anemone-sauvage:cdd1e4fe"
+     ],
+     "conf": "C",
+     "ref": "app/y3-anemone2.js:21 (commentaire d'ACO_BRACT, d'après la sorte sœur t034)"
+    },
+    "brillance": {
+     "v": 0.14,
+     "unite": "ratio",
+     "methode": "code",
+     "conf": "D",
+     "code": "probe.bract(1,0).mat.ks",
+     "retenu": 0.14
+    }
+   },
+   "nervation": {
+    "type": {
+     "v": "nervure mediane seule",
+     "methode": "code",
+     "conf": "D",
+     "note": "Nervure médiane plus claire sur chaque lanière (mid), nervures latérales vers chaque dent au zoom (lat .4) ; aucun document ne décrit les nervures de la bractée."
+    },
+    "couleur": {
+     "v": "plus-claire",
+     "methode": "code",
+     "conf": "D",
+     "note": "probe.bract(1,0).mid : #8cb46c (dessus), #c4d6ac (dessous)."
+    }
+   },
+   "zones": [
+    {
+     "zone": "corps",
+     "motif": {
+      "type": {
+       "v": "vert moyen",
+       "n": 2,
+       "methode": "segmente",
+       "photos": [
+        "anemone-coronaria:46dd8028",
+        "anemone-coronaria:de974eb6"
+       ],
+       "conf": "B",
+       "ref": "ch/anemones/refcache/anemone-coronaria/etat.md « Couleurs t197 #a8db88 / #6e9750 / #2e5821 ; t139 #2c3408 à #3e451b »"
+      }
+     },
+     "couleurs": {
+      "soleil": {
+       "v": [
+        "#a8db88",
+        "#6e9750",
+        "#2e5821"
+       ],
+       "n": 1,
+       "methode": "segmente",
+       "photos": [
+        "anemone-coronaria:46dd8028"
+       ],
+       "conf": "C",
+       "note": "[lumière, corps, ombre], échantillonnage de couleur sur la photo (csamp.py du scratchpad) ; rendu : ACO_BRACT.lite #a8cc84, stops #4e7a30, shade #14290b."
+      },
+      "interieur": {
+       "v": [
+        "#2c3408",
+        "#3e451b"
+       ],
+       "n": 1,
+       "methode": "segmente",
+       "photos": [
+        "anemone-coronaria:de974eb6"
+       ],
+       "conf": "C",
+       "note": "Bractées vues en intérieur : de l'ombre au corps ; lumière #958f4e (etat.md)."
+      }
+     }
+    }
+   ],
+   "jointures": [
+    {
+     "vers": "tige",
+     "type": "noeud",
+     "params": {
+      "distance_sous_fleur": {
+       "v": 0.19,
+       "plage": [
+        0.19,
+        0.56
+       ],
+       "unite": "D",
+       "n": 2,
+       "methode": "segmente",
+       "photos": [
+        "anemone-coronaria:46dd8028",
+        "anemone-coronaria:40a75a5b"
+       ],
+       "conf": "B",
+       "ref": "ch/anemones/refcache/anemone-coronaria/etat.md « t197 0,19 d ; t157 (sauvage) 0,56 d » ; bouton : contre le bouton (t188, t198)",
+       "ecart": "Dessinée dC = D·(.04 + .26·o2 + .2·wk) (app/s10a.js:72) : .04 D au bouton, .30 D fleur ouverte, .50 D fané. L'ouverte à .30 D n'est ni sur .19 (t197) ni sur .56 (sauvage), et REFERENCES.md:121 écrit « 3 à 6 cm sous la fleur » (.43 à .86 D pour 7 cm). Pas de justification dans etat.md. Q5."
+      },
+      "distance_cm": {
+       "v": [
+        3,
+        6
+       ],
+       "plage": [
+        3,
+        6
+       ],
+       "unite": "cm",
+       "methode": "oeil",
+       "conf": "C",
+       "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:121 « 3 à 6 cm sous la fleur »"
+      }
+     }
+    }
+   ],
+   "stades": {
+    "bouton": {
+     "courbure": {
+      "longitudinale": {
+       "profil": {
+        "v": "pressée contre le bouton, retombante",
+        "methode": "oeil",
+        "photos": [
+         "anemone-coronaria:08d08459",
+         "anemone-coronaria:32cfeb7f",
+         "anemone-coronaria:9a5e36b6"
+        ],
+        "conf": "C",
+        "ref": "ch/anemones/refcache/anemone-coronaria/etat.md (journal P1-P5)"
+       }
+      }
+     }
+    },
+    "ouvert": {
+     "taille": {
+      "longueur": {
+       "v": [
+        0.35,
+        0.4
+       ],
+       "unite": "D",
+       "n": 1,
+       "methode": "segmente",
+       "photos": [
+        "anemone-coronaria:46dd8028"
+       ],
+       "conf": "C",
+       "ref": "ch/anemones/refcache/anemone-coronaria/etat.md"
+      }
+     }
+    },
+    "fane": {
+     "matiere": {
+      "couleur": {
+       "v": "jaunit et ramollit, puis brunit par la pointe ; brun-vert desséchée",
+       "methode": "oeil",
+       "photos": [
+        "anemone-coronaria:8b22de49",
+        "anemone-coronaria:6df056e2",
+        "anemone-coronaria:d2e8c1a5"
+       ],
+       "conf": "C",
+       "ref": "catalogue/fanaison/lot04.json « collerette ... qui jaunit et ramollit » ; catalogue/serre/pilote-printemps/REFERENCES.md:66-72"
+      },
+      "fenetre": {
+       "v": [
+        0.28,
+        0.45
+       ],
+       "methode": "code",
+       "conf": "D",
+       "code": "probe.bract(1,0).wilt.k",
+       "retenu": [
+        0.28,
+        0.45
+       ],
+       "note": "[début, durée] sur wl du jaunissement ; jaune #b8a44e puis brun #7c5a32 (ACO_WILT)."
+      }
+     },
+     "courbure": {
+      "longitudinale": {
+       "profil": {
+        "v": "pendante",
+        "methode": "oeil",
+        "photos": [
+         "anemone-coronaria:8b22de49",
+         "anemone-coronaria:6df056e2"
+        ],
+        "conf": "C",
+        "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:66-70 « la collerette pend, jaunie et recroquevillée »"
+       }
+      }
+     },
+     "statut": "aucune photo d'anémone cultivée fanée avec collerette lisible (etat.md) : les photos de banque d'images ne permettent que la description"
+    }
+   }
+  },
+  "tige": {
+   "role": "tige",
+   "taille": {
+    "longueur": {
+     "v": 35,
+     "unite": "cm",
+     "methode": "code",
+     "conf": "D",
+     "code": "RECIPES.find(r=>r.id==='anemone-coronaria').stem.cm",
+     "retenu": 35,
+     "note": "Longueur de tige coupée par défaut (k0.js, RECIPES). Aucune mesure : ch/anemones/refcache/anemone-coronaria-organes/organes.md « Hauteur de tige coupée / d : non chiffré »."
+    },
+    "rapport_tete": {
+     "v": null,
+     "methode": "hypothese",
+     "conf": "D",
+     "note": "Rapport tête / tige (BP 2.3) : à mesurer sur 2 ou 3 photos de tiges entières (P171, P158, P139)."
+    }
+   },
+   "courbure": {
+    "longitudinale": {
+     "profil": {
+      "v": "arquee sous la fleur",
+      "methode": "oeil",
+      "photos": [
+       "anemone-coronaria:08d08459",
+       "anemone-coronaria:93977927",
+       "anemone-coronaria:31a94789"
+      ],
+      "conf": "C",
+      "ref": "ch/anemones/refcache/anemone-coronaria-organes/organes.md « tige longue et fine courbée »"
+     },
+     "note": "À l'état frais la tige est fine et longue, légèrement courbée sous la tête (BP 6.2 : tangente à l'axe de la tête)."
+    }
+   },
+   "matiere": {
+    "texture": {
+     "v": "velue fine",
+     "methode": "oeil",
+     "photos": [
+      "anemone-coronaria:46dd8028",
+      "anemone-coronaria:32cfeb7f"
+     ],
+     "conf": "C",
+     "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:120 « verte, finement velue »"
+    },
+    "poils": {
+     "presence": {
+      "v": "oui, soyeux, couchés vers le haut",
+      "methode": "oeil",
+      "photos": [
+       "anemone-coronaria:46dd8028",
+       "anemone-coronaria:32cfeb7f",
+       "anemone-sauvage:cdd1e4fe"
+      ],
+      "conf": "C",
+      "ref": "ch/anemones/refcache/anemone-coronaria/etat.md ; app/y3-anemone2.js (acoFuzz : « a fine grey down all over, the hairs pressed upward »)"
+     },
+     "longueur": {
+      "v": [
+       0.1,
+       0.2
+      ],
+      "plage": [
+       0.1,
+       0.2
+      ],
+      "unite": "ratio",
+      "methode": "oeil",
+      "photos": [
+       "anemone-coronaria:46dd8028"
+      ],
+      "conf": "C",
+      "ref": "app/y3-anemone2.js:106 (acoFuzz) « a tenth to a fifth of the stem across »",
+      "note": "Longueur des poils / largeur de la tige."
+     }
+    }
+   },
+   "zones": [
+    {
+     "zone": "corps",
+     "motif": {
+      "type": {
+       "v": "vert olive, poils clairs",
+       "n": 2,
+       "methode": "segmente",
+       "photos": [
+        "anemone-coronaria:46dd8028",
+        "anemone-coronaria:f0c8c3c2"
+       ],
+       "conf": "B",
+       "ref": "ch/anemones/refcache/anemone-coronaria/etat.md « Couleurs de tige : t197 #959b49 (soleil ; sombre #7f8c34, clair #a8ab52), t121 #535938 (ombre) »"
+      }
+     },
+     "couleurs": {
+      "soleil": {
+       "v": [
+        "#7f8c34",
+        "#959b49",
+        "#a8ab52"
+       ],
+       "n": 1,
+       "methode": "segmente",
+       "photos": [
+        "anemone-coronaria:46dd8028"
+       ],
+       "conf": "C",
+       "note": "[sombre, médiane, clair] ; rendu ACO_SC #323e1e #6c7d40 #a0ac68 #d8dcc0."
+      },
+      "ombre": {
+       "v": "#535938",
+       "n": 1,
+       "methode": "segmente",
+       "photos": [
+        "anemone-coronaria:f0c8c3c2"
+       ],
+       "conf": "C"
+      }
+     }
+    },
+    {
+     "zone": "rougeur",
+     "etendue": {
+      "v": "depuis la collerette vers la fleur, à partir d'une demi-fleur sous la collerette",
+      "methode": "code",
+      "conf": "D",
+      "note": "acoStemCols : rougeur (flush) de f (= 1 - D/2/Lo) au sommet ; en dur."
+     },
+     "motif": {
+      "type": {
+       "v": "pourpre-brun, plus rouge sur les formes rouges",
+       "methode": "oeil",
+       "photos": [
+        "anemone-coronaria:9107d57b",
+        "anemone-coronaria:f0c8c3c2",
+        "anemone-coronaria:93977927",
+        "anemone-sauvage:cdd1e4fe"
+       ],
+       "conf": "C",
+       "ref": "ch/anemones/refcache/anemone-coronaria/etat.md ; catalogue/serre/pilote-printemps/REFERENCES.md (section « plante v2 »)"
+      }
+     },
+     "bord": {
+      "v": "fondu",
+      "methode": "code",
+      "conf": "D",
+      "note": "Discrète à la taille de la boutique (défaut restant 3 d'etat.md)."
+     }
+    }
+   ],
+   "jointures": [
+    {
+     "vers": "collerette",
+     "type": "noeud",
+     "params": {
+      "bractees": {
+       "v": "sessiles",
+       "methode": "oeil",
+       "conf": "C",
+       "ref": "app/y2.js:118 « three sessile bracts round the stem »"
+      }
+     }
+    },
+    {
+     "vers": "pedicelle",
+     "type": "noeud",
+     "params": {
+      "note": "La tige continue au-dessus de la collerette en pédicelle (même axe, même loi de largeur)."
+     }
+    }
+   ],
+   "section": {
+    "type": {
+     "v": "cotelee",
+     "methode": "oeil",
+     "photos": [
+      "anemone-coronaria:46dd8028"
+     ],
+     "conf": "C",
+     "ref": "app/y3-anemone2.js:8-10 (commentaire sur t197) « finely ribbed »",
+     "note": "Aucun document botanique n'écrit la section ; côtes fines lues sur t197."
+    },
+    "diametre": {
+     "v": 0.051,
+     "plage": [
+      0.037,
+      0.051
+     ],
+     "unite": "D",
+     "n": 3,
+     "methode": "segmente",
+     "photos": [
+      "anemone-coronaria:46dd8028",
+      "anemone-coronaria:f0c8c3c2",
+      "anemone-coronaria:40a75a5b"
+     ],
+     "conf": "B",
+     "ref": "ch/anemones/refcache/anemone-coronaria/etat.md « t197 18 px / 350 = 0,051 d ; t121 12-14 px sous un bouton de 140 px ; t157 (sauvage) 0,037 d » ; catalogue/serre/methode/BONNES-PRATIQUES.md 7.3",
+     "ecart": "Dessinée .055 D sous la fleur, .061 D à la collerette, .065 D à la coupe (etat.md, w:D*.055 en dur dans app/s10a.js:76) : 8 à 27 % au-dessus de la mesure .051. t197 est « probablement sauvage » (BP 1.3). Q9."
+    },
+    "effilement": {
+     "v": [
+      0.055,
+      0.065
+     ],
+     "unite": "D",
+     "methode": "code",
+     "conf": "D",
+     "note": "La tige s'épaissit de la tête au pied : .055 / .061 / .065 D. Aucune photo ne montre l'effilement."
+    },
+    "cotes": {
+     "v": "fines",
+     "methode": "oeil",
+     "photos": [
+      "anemone-coronaria:46dd8028"
+     ],
+     "conf": "C",
+     "ref": "app/y3-anemone2.js (ACO_SC.sv.ribs)"
+    },
+    "poils": {
+     "suit": "tige.matiere.poils"
+    }
+   },
+   "stades": {
+    "fane": {
+     "matiere": {
+      "couleur": {
+       "v": "olive-paille",
+       "methode": "hypothese",
+       "conf": "D",
+       "note": "Mélange de 50 % vers #86784a au fané plein (acoStemCols) : choix du modeleur, aucune photo d'anémone cultivée fanée."
+      }
+     },
+     "taille": {
+      "allongement": {
+       "suit": "pedicelle.stades.fane.taille.allongement"
+      }
+     }
+    }
+   }
+  },
+  "pedicelle": {
+   "role": "pedicelle",
+   "taille": {
+    "longueur": {
+     "v": "de la collerette à la fleur : .04 D au bouton, .30 D ouverte, .50 D fanée",
+     "methode": "code",
+     "conf": "D",
+     "ref": "app/s10a.js:72 (dC) ; voir collerette.jointures",
+     "note": "La collerette glisse le long de la tige jusqu'à dC sous la fleur ; le pédicelle est la tige au-dessus d'elle."
+    }
+   },
+   "courbure": {
+    "longitudinale": {
+     "profil": {
+      "v": "droite puis arquee au fane",
+      "methode": "oeil",
+      "photos": [
+       "anemone-coronaria:8b22de49",
+       "anemone-coronaria:6df056e2"
+      ],
+      "conf": "C",
+      "ref": "catalogue/fanaison (lot04.json) « la tige continue de pousser et se courbe vers la lumière ; tête qui se tourne vers la lumière »"
+     }
+    }
+   },
+   "matiere": {
+    "poils": {
+     "suit": "tige.matiere.poils"
+    }
+   },
+   "zones": [
+    {
+     "suit": "tige.zones"
+    }
+   ],
+   "jointures": [
+    {
+     "vers": "tepale.externe",
+     "type": "col",
+     "params": {
+      "raccord": {
+       "v": "tangent a l'axe de la tete",
+       "methode": "oeil",
+       "conf": "C",
+       "ref": "catalogue/serre/methode/BONNES-PRATIQUES.md 6.2"
+      }
+     }
+    }
+   ],
+   "section": {
+    "suit": "tige.section"
+   },
+   "stades": {
+    "fane": {
+     "courbure": {
+      "longitudinale": {
+       "pointe_deg": {
+        "v": 14.9,
+        "unite": "deg",
+        "methode": "code",
+        "conf": "D",
+        "ref": "catalogue/fanaison (lot04.json) « se courbe »",
+        "note": "a2 = .26·wk rad (app/s10a.js:72) = 14,9° au fané plein, vers où regarde la tête ; la valeur .26 est un réglage sans photo (etat.md : « Fané : pédoncule courbé de 0,26 rad »)."
+       }
+      }
+     },
+     "taille": {
+      "allongement": {
+       "v": 0.1,
+       "unite": "ratio",
+       "methode": "code",
+       "conf": "D",
+       "ref": "catalogue/fanaison (lot04.json) « continue de s'allonger en vase »",
+       "note": "gW = .1·svSm((wl - .2)/.6) : +10 % de la tige au-dessus de la collerette (app/s10a.js:72)."
+      }
+     }
+    }
+   }
+  },
+  "feuille": {
+   "role": "feuille",
+   "dessinee": false,
+   "note_rendu": "Une tige de fleuriste ne porte pas d'autre feuille que sa collerette : aucune feuille basale n'est dessinée (etat.md ; REFERENCES.md, section « plante v2 »).",
+   "nombre": {
+    "v": 0,
+    "unite": "n",
+    "methode": "oeil",
+    "conf": "C",
+    "ref": "ch/anemones/refcache/anemone-coronaria/etat.md ; REFERENCES.md (section « plante v2 ») « aucune feuille basale n'est ajoutée »",
+    "note": "Sur la tige coupée ; la plante entière a une rosette de feuilles basales (P97, P134, P118, P123)."
+   },
+   "contour": {
+    "forme": {
+     "v": "tres decoupee, comme du persil",
+     "methode": "oeil",
+     "photos": [
+      "anemone-coronaria:20ebff9c",
+      "anemone-coronaria:8527f663",
+      "anemone-coronaria:0118a758"
+     ],
+     "conf": "C",
+     "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:122 « très découpé, comme du persil »"
+    },
+    "marge": {
+     "v": "decoupee en lanieres",
+     "methode": "oeil",
+     "photos": [
+      "anemone-coronaria:20ebff9c",
+      "anemone-coronaria:8527f663",
+      "anemone-coronaria:0118a758"
+     ],
+     "conf": "C",
+     "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:122"
+    }
+   },
+   "zones": [
+    {
+     "zone": "corps",
+     "motif": {
+      "type": {
+       "v": "vert vif a vert-jaune",
+       "methode": "oeil",
+       "conf": "C",
+       "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:122"
+      }
+     },
+     "couleurs": {
+      "dessus_P134": {
+       "v": [
+        "#4c9056",
+        "#284131",
+        "#78ae8d"
+       ],
+       "n": 1,
+       "methode": "segmente",
+       "photos": [
+        "anemone-coronaria:0118a758"
+       ],
+       "conf": "C",
+       "ref": "ch/anemones/refcache/anemone-coronaria-organes/organes.md (pal, plein cadre)",
+       "note": "[dominante, ombre, lumière]."
+      },
+      "dessus_P118": {
+       "v": [
+        "#c7da9e",
+        "#6a774f",
+        "#3a3c2b"
+       ],
+       "n": 1,
+       "methode": "segmente",
+       "photos": [
+        "anemone-coronaria:20ebff9c"
+       ],
+       "conf": "C",
+       "ref": "ch/anemones/refcache/anemone-coronaria-organes/organes.md (pal, plein cadre)",
+       "note": "[lumière, milieu, ombre]."
+      }
+     }
+    }
+   ],
+   "section": {
+    "petiole": {
+     "v": null,
+     "methode": "hypothese",
+     "conf": "D",
+     "note": "Pétiole : non mesuré (organes.md « Petiole / d, nombre de folioles, profondeur de decoupe : non chiffre »)."
+    }
+   },
+   "matiere": {
+    "dessous": {
+     "v": null,
+     "methode": "hypothese",
+     "conf": "D",
+     "note": "Dessous de la feuille : aucune photo libre (organes.md ; sources/anemone-coronaria.json limites)."
+    }
+   }
+  }
+ },
+ "varietes": {
+  "blanc": {
+   "cultivar": "forme blanche sauvage à cœur sombre (var. alba / f. albiflora), en remplacement de Mistral Plus Panda (marque)",
+   "statut_boutique": "à confirmer",
+   "niveau_preuve": "B",
+   "forme": "espece",
+   "organes": {
+    "coeur.pistils": {
+     "forme": "espece",
+     "zones": [
+      {
+       "zone": "oeil",
+       "couleur": {
+        "v": "#1e1628",
+        "methode": "oeil",
+        "photos": [
+         "anemone-coronaria:97bd3ea7",
+         "anemone-coronaria:bd8d6b4c"
+        ],
+        "conf": "C",
+        "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:116 « Cœur et étamines noir violacé (#1e1628) » ; sources/anemone-coronaria.json (f_blanche : « centre violet-noir »)",
+        "code": "SVA_CW[\"blanc\"].dome",
+        "retenu": "#17101f",
+        "ecart": "Le code a #17101f (plus sombre) ; #1e1628 est la valeur du catalogue (CW_ANEM.eye) et du pilote. Aucune mesure de couleur pour ce coloris (sources/anemone-coronaria.json : mesures = {})."
+       }
+      }
+     ]
+    },
+    "coeur.etamines": {
+     "forme": "espece",
+     "zones": [
+      {
+       "zone": "oeil",
+       "couleur": {
+        "v": "#1e1628",
+        "methode": "oeil",
+        "photos": [
+         "anemone-coronaria:97bd3ea7",
+         "anemone-coronaria:bd8d6b4c"
+        ],
+        "conf": "C",
+        "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:116",
+        "code": "SVA_CW[\"blanc\"].fil",
+        "retenu": "#1d1627",
+        "ecart": "Filets codés #1d1627 contre #1e1628 documenté : un niveau par canal."
+       }
+      }
+     ]
+    }
+   }
+  },
+  "blanc-vert": {
+   "cultivar": "The Bride (Die Braut), De Caen Group",
+   "statut_boutique": "en production",
+   "niveau_preuve": "B",
+   "forme": "espece",
+   "organes": {
+    "coeur.pistils": {
+     "forme": "espece",
+     "zones": [
+      {
+       "zone": "oeil",
+       "couleur": {
+        "v": "#8c9c42",
+        "plage": [
+         "#939e3f",
+         "#a0b169"
+        ],
+        "n": 2,
+        "methode": "segmente",
+        "photos": [
+         "anemone-coronaria:13c7a018",
+         "anemone-coronaria:f37e4854"
+        ],
+        "conf": "B",
+        "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:583-590 (« Mesures retenues », cinq coloris libres)",
+        "code": "SVA_CW[\"blanc-vert\"].dome",
+        "retenu": "#8c9c42",
+        "ecart": "coloris.md (médiane de `refs.py auto`) donne l'œil #b3b395, vert-jaune pâle ; REFERENCES.md donne #939e3f (n° 2) et #a0b169 (n° 3), retenu #8c9c42 : deux mesures du même dôme, ΔE 14 entre les photos. Q10.",
+        "note": "couleur du dôme de pistils, médiane des photos de plein jour"
+       }
+      }
+     ]
+    },
+    "coeur.etamines": {
+     "forme": "espece",
+     "zones": [
+      {
+       "zone": "oeil",
+       "couleur": {
+        "v": "#d4d0ae",
+        "plage": [
+         "#b1ac76",
+         "#ccccab"
+        ],
+        "methode": "segmente",
+        "photos": [
+         "anemone-coronaria:13c7a018",
+         "anemone-coronaria:f37e4854"
+        ],
+        "conf": "B",
+        "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:583-590 (« Mesures retenues », cinq coloris libres)",
+        "code": "SVA_CW[\"blanc-vert\"].fil",
+        "retenu": "#d4d0ae",
+        "ecart": "Filets codés #d4d0ae (plus clairs) contre mesure #b1ac76 (n° 2) et #ccccab (n° 3) : couronne « crème-olive » ; coloris.md : #d8d29a « visuel ».",
+        "note": "couleur de la couronne d'étamines (crème-olive) ; anthères #bdb780 = SVA_CW['blanc-vert'].anth"
+       }
+      }
+     ]
+    }
+   }
+  },
+  "rouge": {
+   "cultivar": "Hollandia, De Caen Group",
+   "statut_boutique": "en production",
+   "niveau_preuve": "B",
+   "forme": "espece",
+   "organes": {
+    "coeur.pistils": {
+     "forme": "espece",
+     "zones": [
+      {
+       "zone": "oeil",
+       "couleur": {
+        "v": "#26142a",
+        "plage": [
+         "#27081d",
+         "#242027",
+         "#1f1736"
+        ],
+        "n": 3,
+        "methode": "segmente",
+        "photos": [
+         "anemone-coronaria:5d9df86e",
+         "anemone-coronaria:a899a490",
+         "anemone-coronaria:1db6d6bc"
+        ],
+        "conf": "B",
+        "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:583-590 (« Mesures retenues », cinq coloris libres)",
+        "code": "SVA_CW[\"rouge\"].dome",
+        "retenu": "#26142a",
+        "ecart": "coloris.md avait mesuré l'œil #57091c (rouge sombre) : REFERENCES.md corrige : le dôme est violet-noir.",
+        "note": "couleur du dôme de pistils, médiane des photos de plein jour"
+       }
+      }
+     ]
+    },
+    "coeur.etamines": {
+     "forme": "espece",
+     "zones": [
+      {
+       "zone": "oeil",
+       "couleur": {
+        "v": "#2c1620",
+        "methode": "oeil",
+        "photos": [
+         "anemone-coronaria:5d9df86e",
+         "anemone-coronaria:a899a490"
+        ],
+        "conf": "C",
+        "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:583-590 (« Mesures retenues », cinq coloris libres) ; ch/anemones/refcache/anemone-coronaria/coloris.md (« visuel, non mesuré »)",
+        "code": "SVA_CW[\"rouge\"].fil",
+        "retenu": "#2c1620",
+        "ecart": "sources/anemone-coronaria.json (photos_forme, Pacific Bulb Society, David Pilling) décrit « couronne d'étamines bleu acier à filets rose-pourpre » ; REFERENCES.md retient « noir pourpre #2c1620 », lu à l'œil. Q10.",
+        "note": "couleur des filets / de la couronne d'étamines",
+        "photos_contradictoires": [
+         "anemone-coronaria:2f9d9c20"
+        ]
+       }
+      }
+     ]
+    },
+    "tepale.externe": {
+     "zones": [
+      {
+       "zone": "halo",
+       "etendue": {
+        "v": [
+         0.27,
+         0.46
+        ],
+        "unite": "R0",
+        "n": 3,
+        "methode": "segmente",
+        "photos": [
+         "anemone-coronaria:5d9df86e",
+         "anemone-coronaria:a899a490",
+         "anemone-coronaria:1db6d6bc"
+        ],
+        "conf": "B",
+        "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:583-590 « anneau blanc rosé net autour des étamines, de 0,27 à 0,46 du rayon, fondu en rouge »",
+        "code": "SVA_CW[\"rouge\"].st.slice(1,3).map(x=>x[0])",
+        "retenu": [
+         0.36,
+         0.48
+        ],
+        "ecart": "Le code place l'anneau en position le long du tépale (v) : blanc rosé jusqu'à .36, fondu en rouge à .48 ; la mesure est en fraction du rayon de la fleur (r = r0 + L·v·sin a, environ .5 à .6 R0 pour v = .36 à .48). Unités différentes : comparer par rendu."
+       },
+       "bord": {
+        "v": "fondu",
+        "n": 3,
+        "methode": "segmente",
+        "photos": [
+         "anemone-coronaria:5d9df86e",
+         "anemone-coronaria:a899a490"
+        ],
+        "conf": "C",
+        "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:583-590 (« Mesures retenues », cinq coloris libres)"
+       },
+       "motif": {
+        "type": {
+         "v": "anneau blanc rosé",
+         "n": 3,
+         "methode": "segmente",
+         "photos": [
+          "anemone-coronaria:5d9df86e",
+          "anemone-coronaria:a899a490",
+          "anemone-coronaria:1db6d6bc"
+         ],
+         "conf": "B",
+         "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:583-590 (« Mesures retenues », cinq coloris libres)"
+        }
+       }
+      }
+     ]
+    }
+   }
+  },
+  "bleu": {
+   "cultivar": "Mister Fokker (Mr Fokker), De Caen Group",
+   "statut_boutique": "en production",
+   "niveau_preuve": "B",
+   "forme": "espece",
+   "organes": {
+    "coeur.pistils": {
+     "forme": "espece",
+     "zones": [
+      {
+       "zone": "oeil",
+       "couleur": {
+        "v": "#1f1a3a",
+        "plage": [
+         "#202038",
+         "#181722"
+        ],
+        "n": 2,
+        "methode": "segmente",
+        "photos": [
+         "anemone-coronaria:68003d24",
+         "anemone-coronaria:34ca488e"
+        ],
+        "conf": "B",
+        "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:583-590 (« Mesures retenues », cinq coloris libres)",
+        "code": "SVA_CW[\"bleu\"].dome",
+        "retenu": "#1f1a3a",
+        "note": "couleur du dôme de pistils, médiane des photos de plein jour"
+       }
+      }
+     ]
+    },
+    "coeur.etamines": {
+     "forme": "espece",
+     "zones": [
+      {
+       "zone": "oeil",
+       "couleur": {
+        "v": "#201b40",
+        "methode": "oeil",
+        "photos": [
+         "anemone-coronaria:68003d24",
+         "anemone-coronaria:34ca488e"
+        ],
+        "conf": "C",
+        "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:583-590 (« Mesures retenues », cinq coloris libres) ; ch/anemones/refcache/anemone-coronaria/coloris.md (« visuel, non mesuré »)",
+        "code": "SVA_CW[\"bleu\"].fil",
+        "retenu": "#201b40",
+        "ecart": "coloris.md : couronne #2b2740 « visuel, filets et anthères sombres, non mesuré » ; REFERENCES.md : noir-bleu #201b40 (retenu).",
+        "note": "couleur des filets / de la couronne d'étamines"
+       }
+      }
+     ]
+    },
+    "tepale.externe": {
+     "zones": [
+      {
+       "zone": "base",
+       "etendue": {
+        "v": [
+         0,
+         0.14
+        ],
+        "unite": "L",
+        "methode": "code",
+        "conf": "D",
+        "code": "SVA_CW[\"bleu\"].st.slice(0,2).map(x=>x[0])",
+        "retenu": [
+         0,
+         0.14
+        ],
+        "note": "Zone du pied plus FONCÉE que le corps (positions de la rampe st : 0 à .14)."
+       },
+       "motif": {
+        "type": {
+         "v": "pied indigo plus foncé que le corps, pas de base pâle",
+         "n": 2,
+         "methode": "segmente",
+         "photos": [
+          "anemone-coronaria:c526352a",
+          "anemone-coronaria:34ca488e"
+         ],
+         "conf": "B",
+         "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:583-590 (« Mesures retenues », cinq coloris libres) (base #3c3494 ; n° 9 #432aa1, n° 11 #373371)",
+         "code": "SVA_CW[\"bleu\"].st[0][1]",
+         "retenu": "#3c3494",
+         "ecart": "REFERENCES.md:115 (pilote, « Bleu violet ») écrit « Base un peu plus pâle (#8a82d8) sur 0,1 à 0,15 L » et la photo de Bucarest « base plus pâle de 0,30 à 0,40 R » : coloris et photos différents de Mister Fokker. La base pâle de l'ancien bleu a été déclarée fausse pour le coloris de boutique (REFERENCES.md:583-590). Q13."
+        }
+       }
+      }
+     ]
+    }
+   }
+  },
+  "lilas": {
+   "forme": "espece",
+   "statut_boutique": "à confirmer",
+   "note": "Aucune description de forme propre au coloris ; couleurs dans SVA_SPEC (code) et sources/anemone-coronaria.json."
+  },
+  "fuchsia": {
+   "cultivar": "Sylphide (série commerciale à marque déposée selon la RHS ; nom non repris en vitrine)",
+   "statut_boutique": "en production",
+   "niveau_preuve": "B",
+   "forme": "espece",
+   "organes": {
+    "coeur.pistils": {
+     "forme": "espece",
+     "zones": [
+      {
+       "zone": "oeil",
+       "couleur": {
+        "v": "#3a2456",
+        "plage": [
+         "#543677",
+         "#472f55",
+         "#31153d",
+         "#632661"
+        ],
+        "n": 2,
+        "methode": "segmente",
+        "photos": [
+         "anemone-coronaria:ad16e3ef",
+         "anemone-coronaria:e4e6c502"
+        ],
+        "conf": "B",
+        "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:583-590 (« Mesures retenues », cinq coloris libres)",
+        "code": "SVA_CW[\"fuchsia\"].dome",
+        "retenu": "#3a2456",
+        "ecart": "Le dôme violet mêle un fond #3a2456 et des points #5a4480 (pist) : plage = n° 15 #543677 à #472f55, n° 12 #31153d à #632661. Les photos 12 et 15 ont un canal saturé (valeurs hautes).",
+        "note": "couleur du dôme de pistils, médiane des photos de plein jour"
+       }
+      }
+     ]
+    },
+    "coeur.etamines": {
+     "forme": "espece",
+     "zones": [
+      {
+       "zone": "oeil",
+       "couleur": {
+        "v": "#2b2650",
+        "methode": "segmente",
+        "photos": [
+         "anemone-coronaria:ad16e3ef",
+         "anemone-coronaria:e4e6c502"
+        ],
+        "conf": "B",
+        "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:583-590 (« Mesures retenues », cinq coloris libres)",
+        "code": "SVA_CW[\"fuchsia\"].fil",
+        "retenu": "#2b2650",
+        "note": "couronne bleu marine ; anneau de pollen jaune-vert #d8d070 (n° 15) = SVA_CW.fuchsia.pol"
+       }
+      }
+     ]
+    }
+   }
+  },
+  "rose-pale": {
+   "forme": "espece",
+   "statut_boutique": "à confirmer",
+   "note": "Aucune description de forme propre au coloris ; couleurs dans SVA_SPEC (code) et sources/anemone-coronaria.json."
+  },
+  "saumon": {
+   "forme": "espece",
+   "statut_boutique": "à retirer",
+   "note": "Aucune description de forme propre au coloris ; couleurs dans SVA_SPEC (code) et sources/anemone-coronaria.json."
+  },
+  "bordeaux": {
+   "forme": "espece",
+   "statut_boutique": "à retirer",
+   "note": "Aucune description de forme propre au coloris ; couleurs dans SVA_SPEC (code) et sources/anemone-coronaria.json."
+  },
+  "prune": {
+   "forme": "espece",
+   "statut_boutique": "à retirer",
+   "note": "Aucune description de forme propre au coloris ; couleurs dans SVA_SPEC (code) et sources/anemone-coronaria.json."
+  },
+  "bicolore": {
+   "cultivar": "Bicolor (Bi-Color), De Caen Group",
+   "statut_boutique": "en production",
+   "niveau_preuve": "B",
+   "forme": "espece",
+   "organes": {
+    "coeur.pistils": {
+     "forme": "espece",
+     "zones": [
+      {
+       "zone": "oeil",
+       "couleur": {
+        "v": "#17101f",
+        "plage": [
+         "#0f0a17",
+         "#150e1e"
+        ],
+        "n": 1,
+        "methode": "segmente",
+        "photos": [
+         "anemone-coronaria:49511275"
+        ],
+        "conf": "B",
+        "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:583-590 (« Mesures retenues », cinq coloris libres)",
+        "code": "SVA_CW[\"bicolore\"].dome",
+        "retenu": "#17101f",
+        "note": "couleur du dôme de pistils, médiane des photos de plein jour"
+       }
+      }
+     ]
+    },
+    "coeur.etamines": {
+     "forme": "espece",
+     "zones": [
+      {
+       "zone": "oeil",
+       "couleur": {
+        "v": "#1c1830",
+        "methode": "oeil",
+        "photos": [
+         "anemone-coronaria:49511275",
+         "anemone-coronaria:2192e522"
+        ],
+        "conf": "C",
+        "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:583-590 (« Mesures retenues », cinq coloris libres) ; ch/anemones/refcache/anemone-coronaria/coloris.md (« visuel, non mesuré »)",
+        "code": "SVA_CW[\"bicolore\"].fil",
+        "retenu": "#1c1830",
+        "ecart": "coloris.md : couronne #2a1c31 « visuel » ; REFERENCES.md retient #1c1830 (noir marine).",
+        "note": "couleur des filets / de la couronne d'étamines"
+       }
+      }
+     ]
+    },
+    "tepale.externe": {
+     "zones": [
+      {
+       "zone": "halo",
+       "etendue": {
+        "v": [
+         0.3,
+         0.4
+        ],
+        "unite": "R0",
+        "n": 1,
+        "methode": "oeil",
+        "photos": [
+         "anemone-coronaria:49511275"
+        ],
+        "conf": "C",
+        "ref": "catalogue/serre/sources/anemone-coronaria.json (coloris bicolore, mesures.anneau.largeur_rel : « environ 0,3 à 0,4 du rayon »)",
+        "code": "SVA_CW[\"bicolore\"].st.slice(1,4).map(x=>x[0])",
+        "retenu": [
+         0.14,
+         0.5,
+         0.6
+        ],
+        "ecart": "coloris.md : « anneau rayon 0,5 » (photo 18, #fc7fa5). Le code range l'anneau à .14-.6 le long du tépale (rouge de .14 à .5, fondu rose .6, blanc .7) : position le long du tépale et fraction du rayon ne sont pas la même unité."
+       },
+       "couleur": {
+        "v": "#d4142e",
+        "plage": [
+         "#fa1f3e",
+         "#ad0e24"
+        ],
+        "n": 2,
+        "methode": "segmente",
+        "photos": [
+         "anemone-coronaria:2192e522",
+         "anemone-coronaria:49511275"
+        ],
+        "conf": "B",
+        "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:583-590 (« Mesures retenues », cinq coloris libres)",
+        "code": "SVA_CW[\"bicolore\"].st[1][1]",
+        "retenu": "#d4142e",
+        "ecart": "coloris.md mesure l'anneau #fc7fa5 (médiane incluant le fondu rose et les rayons blancs) ; REFERENCES.md retient le rouge des pixels les plus saturés, teinte 347 à 352°. Écart ΔE 26 entre les photos 16 et 18."
+       },
+       "motif": {
+        "type": {
+         "v": "anneau rouge sur blanc, fondu rose puis blanc",
+         "n": 2,
+         "methode": "segmente",
+         "photos": [
+          "anemone-coronaria:2192e522",
+          "anemone-coronaria:49511275"
+         ],
+         "conf": "B",
+         "ref": "catalogue/serre/pilote-printemps/REFERENCES.md:583-590 (« Mesures retenues », cinq coloris libres)"
+        }
+       }
+      }
+     ]
+    }
+   }
+  },
+  "bleu-roi": {
+   "forme": "espece",
+   "statut_boutique": "à retirer",
+   "note": "Aucune description de forme propre au coloris ; couleurs dans SVA_SPEC (code) et sources/anemone-coronaria.json."
+  },
+  "bleu-lavande": {
+   "forme": "espece",
+   "statut_boutique": "à retirer",
+   "note": "Aucune description de forme propre au coloris ; couleurs dans SVA_SPEC (code) et sources/anemone-coronaria.json."
+  },
+  "azzurro": {
+   "forme": "espece",
+   "statut_boutique": "à retirer",
+   "note": "Aucune description de forme propre au coloris ; couleurs dans SVA_SPEC (code) et sources/anemone-coronaria.json."
+  },
+  "bleu-blanc": {
+   "forme": "espece",
+   "statut_boutique": "à retirer",
+   "note": "Aucune description de forme propre au coloris ; couleurs dans SVA_SPEC (code) et sources/anemone-coronaria.json."
+  },
+  "rose-vif": {
+   "forme": "espece",
+   "statut_boutique": "à confirmer",
+   "note": "Aucune description de forme propre au coloris ; couleurs dans SVA_SPEC (code) et sources/anemone-coronaria.json."
+  },
+  "rarity": {
+   "forme": "espece",
+   "statut_boutique": "à retirer",
+   "note": "Aucune description de forme propre au coloris ; couleurs dans SVA_SPEC (code) et sources/anemone-coronaria.json."
+  },
+  "ecarlate": {
+   "forme": "espece",
+   "statut_boutique": "à confirmer",
+   "note": "Aucune description de forme propre au coloris ; couleurs dans SVA_SPEC (code) et sources/anemone-coronaria.json."
+  },
+  "rouge-blanc": {
+   "forme": "espece",
+   "statut_boutique": "à confirmer",
+   "note": "Aucune description de forme propre au coloris ; couleurs dans SVA_SPEC (code) et sources/anemone-coronaria.json."
+  },
+  "tigre": {
+   "forme": "espece",
+   "statut_boutique": "à retirer",
+   "note": "Aucune description de forme propre au coloris ; couleurs dans SVA_SPEC (code) et sources/anemone-coronaria.json."
+  },
+  "tigre-vin": {
+   "forme": "espece",
+   "statut_boutique": "à retirer",
+   "note": "Aucune description de forme propre au coloris ; couleurs dans SVA_SPEC (code) et sources/anemone-coronaria.json."
+  },
+  "raisin": {
+   "forme": "espece",
+   "statut_boutique": "à retirer",
+   "note": "Aucune description de forme propre au coloris ; couleurs dans SVA_SPEC (code) et sources/anemone-coronaria.json."
+  },
+  "blush": {
+   "forme": "espece",
+   "statut_boutique": "à confirmer",
+   "note": "Aucune description de forme propre au coloris ; couleurs dans SVA_SPEC (code) et sources/anemone-coronaria.json."
+  }
+ },
+ "stades": {
+  "table": [
+   {
+    "stade": "bouton",
+    "op": {
+     "v": 0.06,
+     "unite": "ratio",
+     "methode": "reference",
+     "conf": "B",
+     "ref": "catalogue/serre/methode/BONNES-PRATIQUES.md 5.5 (grille .06, .2, .4, .75, 1:0, 1:.35, 1:.75)"
+    },
+    "wl": {
+     "v": 0,
+     "unite": "ratio",
+     "methode": "reference",
+     "conf": "B",
+     "ref": "catalogue/serre/methode/BONNES-PRATIQUES.md 5.5"
+    },
+    "photos": [
+     "anemone-coronaria:865cc3ac",
+     "anemone-coronaria:cbefa18a",
+     "anemone-coronaria:58efb8ce",
+     "anemone-coronaria:08d08459",
+     "anemone-coronaria:32cfeb7f",
+     "anemone-coronaria:f0c8c3c2",
+     "anemone-coronaria:9a5e36b6"
+    ],
+    "statut": "mesure",
+    "lecture": "oeil",
+    "jeu": {
+     "etape": "Bourgeon (< 3 jours)",
+     "op": {
+      "v": 0.1,
+      "unite": "ratio",
+      "methode": "code",
+      "conf": "D",
+      "code": "lifeOp({stage:0,u:0},'bud',1,0)",
+      "retenu": 0.1
+     }
+    },
+    "note": "Œuf fermé, étamines cachées ; port dressé sur tige coupée (acoBudUp)."
+   },
+   {
+    "stade": "gonfle",
+    "op": {
+     "v": 0.2,
+     "unite": "ratio",
+     "methode": "reference",
+     "conf": "B",
+     "ref": "catalogue/serre/methode/BONNES-PRATIQUES.md 5.5 (grille .06, .2, .4, .75, 1:0, 1:.35, 1:.75)"
+    },
+    "wl": {
+     "v": 0,
+     "unite": "ratio",
+     "methode": "reference",
+     "conf": "B",
+     "ref": "catalogue/serre/methode/BONNES-PRATIQUES.md 5.5"
+    },
+    "photos": [],
+    "statut": "hypothese",
+    "lecture": "hypothese",
+    "jeu": {
+     "etape": "Bourgeon, demi-ouvert",
+     "op": {
+      "v": 0.22,
+      "unite": "ratio",
+      "methode": "code",
+      "conf": "D",
+      "code": "lifeOp({stage:0,u:0},'half',1,0)",
+      "retenu": 0.22
+     }
+    },
+    "note": "Aucune photo n'est marquée comme bouton qui gonfle ; le nom du stade est la proposition de ce chantier pour .2 de la grille (BP 5.5 ne nomme pas les stades)."
+   },
+   {
+    "stade": "entrouvert",
+    "op": {
+     "v": 0.4,
+     "unite": "ratio",
+     "methode": "reference",
+     "conf": "B",
+     "ref": "catalogue/serre/methode/BONNES-PRATIQUES.md 5.5 (grille .06, .2, .4, .75, 1:0, 1:.35, 1:.75)"
+    },
+    "wl": {
+     "v": 0,
+     "unite": "ratio",
+     "methode": "reference",
+     "conf": "B",
+     "ref": "catalogue/serre/methode/BONNES-PRATIQUES.md 5.5"
+    },
+    "photos": [
+     "anemone-coronaria:30259990",
+     "anemone-coronaria:c6901539"
+    ],
+    "statut": "mesure",
+    "lecture": "oeil",
+    "note": "Bol profond, pointes à 35-45° de l'axe (REFERENCES.md:37)."
+   },
+   {
+    "stade": "ouvert",
+    "op": {
+     "v": 0.75,
+     "unite": "ratio",
+     "methode": "reference",
+     "conf": "B",
+     "ref": "catalogue/serre/methode/BONNES-PRATIQUES.md 5.5 (grille .06, .2, .4, .75, 1:0, 1:.35, 1:.75)"
+    },
+    "wl": {
+     "v": 0,
+     "unite": "ratio",
+     "methode": "reference",
+     "conf": "B",
+     "ref": "catalogue/serre/methode/BONNES-PRATIQUES.md 5.5"
+    },
+    "photos": [
+     "anemone-coronaria:7eff67ed",
+     "anemone-coronaria:9107d57b",
+     "anemone-coronaria:46dd8028",
+     "anemone-coronaria:93977927",
+     "anemone-coronaria:de974eb6",
+     "anemone-coronaria:40a75a5b",
+     "anemone-coronaria:4bce7cff",
+     "anemone-coronaria:3da84e0f",
+     "anemone-coronaria:a99ecc60",
+     "anemone-coronaria:2efb61ad",
+     "anemone-coronaria:81ce6028"
+    ],
+    "statut": "mesure",
+    "lecture": "oeil",
+    "note": "Coupe peu profonde, les tépales du bas s'affaissent ; ouverte à 70-80° de l'axe. Les photos « ouverte » ne sont pas triées entre .75 et 1 (à trier, Q10b)."
+   },
+   {
+    "stade": "plein",
+    "op": {
+     "v": 1,
+     "unite": "ratio",
+     "methode": "reference",
+     "conf": "B",
+     "ref": "catalogue/serre/methode/BONNES-PRATIQUES.md 5.5 (grille .06, .2, .4, .75, 1:0, 1:.35, 1:.75)"
+    },
+    "wl": {
+     "v": 0,
+     "unite": "ratio",
+     "methode": "reference",
+     "conf": "B",
+     "ref": "catalogue/serre/methode/BONNES-PRATIQUES.md 5.5"
+    },
+    "photos": [
+     "anemone-coronaria:7eff67ed",
+     "anemone-coronaria:9107d57b",
+     "anemone-coronaria:46dd8028",
+     "anemone-coronaria:93977927",
+     "anemone-coronaria:de974eb6",
+     "anemone-coronaria:40a75a5b",
+     "anemone-coronaria:4bce7cff",
+     "anemone-coronaria:3da84e0f",
+     "anemone-coronaria:a99ecc60",
+     "anemone-coronaria:2efb61ad",
+     "anemone-coronaria:81ce6028"
+    ],
+    "statut": "mesure",
+    "lecture": "oeil",
+    "jeu": {
+     "etape": "Éclosion (3 à 20 jours)",
+     "op": {
+      "v": 1,
+      "unite": "ratio",
+      "methode": "code",
+      "conf": "D",
+      "code": "lifeOp({stage:1,u:0},'open',1,0)",
+      "retenu": 1
+     }
+    },
+    "note": "Pleine fleur, étalée (mêmes photos que « ouvert » : tri non fait)."
+   },
+   {
+    "stade": "declin",
+    "op": {
+     "v": 1,
+     "unite": "ratio",
+     "methode": "reference",
+     "conf": "B",
+     "ref": "catalogue/serre/methode/BONNES-PRATIQUES.md 5.5 (grille .06, .2, .4, .75, 1:0, 1:.35, 1:.75)"
+    },
+    "wl": {
+     "v": 0.35,
+     "unite": "ratio",
+     "methode": "reference",
+     "conf": "B",
+     "ref": "catalogue/serre/methode/BONNES-PRATIQUES.md 5.5"
+    },
+    "photos": [
+     "anemone-coronaria:8ea61f30",
+     "anemone-coronaria:8b22de49",
+     "anemone-coronaria:6df056e2"
+    ],
+    "statut": "mesure",
+    "lecture": "oeil",
+    "jeu": {
+     "etape": "Déclin (20 à 30 jours)",
+     "wl": {
+      "v": [
+       0.363,
+       0.825
+      ],
+      "unite": "ratio",
+      "methode": "code",
+      "conf": "D",
+      "code": "[lifeWEl({stage:2,u:0},lifeProfile({sid:'anemone-coronaria',rec:{}})),lifeWEl({stage:2,u:1},lifeProfile({sid:'anemone-coronaria',rec:{}}))].map(x=>+x.toFixed(3))",
+      "retenu": [
+       0.363,
+       0.825
+      ],
+      "note": "Plage de wl du Déclin du jeu pour l'anémone (k 1.1, tenue 5.5 j)."
+     }
+    },
+    "note": "Ouverte trop à plat, pointes renversées, marges ondulées et minces ; la couleur se retire ; la tête commence à basculer."
+   },
+   {
+    "stade": "fane",
+    "op": {
+     "v": 1,
+     "unite": "ratio",
+     "methode": "reference",
+     "conf": "B",
+     "ref": "catalogue/serre/methode/BONNES-PRATIQUES.md 5.5 (grille .06, .2, .4, .75, 1:0, 1:.35, 1:.75)"
+    },
+    "wl": {
+     "v": 0.75,
+     "unite": "ratio",
+     "methode": "reference",
+     "conf": "B",
+     "ref": "catalogue/serre/methode/BONNES-PRATIQUES.md 5.5"
+    },
+    "photos": [
+     "anemone-coronaria:8b22de49",
+     "anemone-coronaria:6df056e2",
+     "anemone-coronaria:8ea61f30",
+     "anemone-coronaria:d2e8c1a5",
+     "anemone-coronaria:72c6fab6"
+    ],
+    "statut": "mesure",
+    "lecture": "oeil",
+    "jeu": {
+     "etape": "Fané (>= 30 jours)",
+     "wl": {
+      "v": [
+       0.818,
+       0.95
+      ],
+      "unite": "ratio",
+      "methode": "code",
+      "conf": "D",
+      "code": "[lifeWEl({stage:3,u:0},lifeProfile({sid:'anemone-coronaria',rec:{}})),lifeWEl({stage:3,u:1},lifeProfile({sid:'anemone-coronaria',rec:{}}))].map(x=>+x.toFixed(3))",
+      "retenu": [
+       0.818,
+       0.95
+      ]
+     }
+    },
+    "note": "Les tépales tombent d'un coup, un ou deux pendent ; le cœur sombre reste ; la collerette jaunit. Aucune photo d'anémone cultivée fanée en vase (REFERENCES.md:61)."
+   },
+   {
+    "stade": "sec",
+    "op": {
+     "v": 1,
+     "unite": "ratio",
+     "methode": "reference",
+     "conf": "B",
+     "ref": "catalogue/serre/methode/BONNES-PRATIQUES.md 5.5 (grille .06, .2, .4, .75, 1:0, 1:.35, 1:.75)"
+    },
+    "wl": {
+     "v": 0.95,
+     "unite": "ratio",
+     "methode": "reference",
+     "conf": "B",
+     "ref": "catalogue/serre/methode/BONNES-PRATIQUES.md 5.5"
+    },
+    "photos": [
+     "anemone-coronaria:98f44889"
+    ],
+    "statut": "hypothese",
+    "lecture": "oeil",
+    "note": "Seule P136 (spécimen pressé) montre le sec ; la fiche fanaison dit « peut être séchée » (seche_bien: true) alors que LIFE_SP donne dry = 0 pour l'anémone : le dessin ne fait pas de stade sec. Q11."
+   }
+  ],
+  "jours": {
+   "tenue_vase": {
+    "v": [
+     3,
+     8
+    ],
+    "plage": [
+     3,
+     8
+    ],
+    "unite": "jours",
+    "methode": "reference",
+    "conf": "B",
+    "ref": "catalogue/fanaison/lot04.json (anemone-coronaria) : https://postharvest.ucdavis.edu/node/8206 ; https://floralife.com/2023/08/23/anemone-timeless-beauty/",
+    "code": "LIFE_SP['anemone-coronaria'][4]",
+    "retenu": 5.5,
+    "ecart": "Le code garde 5,5 jours (milieu de 3-8) pour mettre à l'échelle le déclin ; le jeu compte en jours de bouquet (seuils 3/20/30), pas en jours de vase. Q12."
+   },
+   "seuils_jeu": {
+    "v": [
+     3,
+     20,
+     30
+    ],
+    "unite": "jours",
+    "methode": "code",
+    "conf": "D",
+    "ref": "catalogue/serre/methode/BONNES-PRATIQUES.md ; app/z1.js lifeAt",
+    "code": "[2.99,3,19.99,20,29.99,30].map(d=>lifeAt(d).stage)",
+    "retenu": [
+     0,
+     1,
+     1,
+     2,
+     2,
+     3
+    ],
+    "note": "Bourgeon < 3 j, Éclosion < 20 j, Déclin < 30 j, puis Fané. retenu = stade de lifeAt aux jours 2,99, 3, 19,99, 20, 29,99 et 30."
+   },
+   "profil_jeu": {
+    "v": [
+     1.1,
+     1,
+     1,
+     0,
+     5.5
+    ],
+    "methode": "code",
+    "conf": "D",
+    "code": "LIFE_SP['anemone-coronaria']",
+    "retenu": [
+     1.1,
+     1,
+     1,
+     0,
+     5.5
+    ],
+    "note": "[k couleur, nod, shed, dry, tenue en vase en jours] (app/z2.js)."
+   }
+  },
+  "heritage": "L'anémone est la sorte de référence (BONNES-PRATIQUES 2.2) : aucune courbe empruntée. Les autres sortes héritent de svBloom/SVB_DEF.",
+  "correspondance": "Les noms de la colonne `stade` (bouton ... sec) sont rattachés aux couples (op, wl) de la grille de BONNES-PRATIQUES 5.5 par une proposition de ce chantier : le dépôt ne les nomme nulle part. Q10b."
+ },
+ "rendu": {
+  "avertissement": "Rien ici n'est une mesure botanique (SCHEMA §7).",
+  "niveaux_de_detail": {
+   "DET 1": "boutique : étamines dessinées = stN × .62 (102 à 136), nervures 8 (+0 à 3), lanières 1 paire par lobe",
+   "DET 1,5": "gros plans et exports : étamines stN (165 à 220), nervures 16, lanières au plein détail",
+   "LOD": "étamines stN × .4 ; pas de dôme granuleux"
+  },
+  "budget_mesure": {
+   "tete_DET1": "162 têtes / 354 éléments / 83 Ko / 4,1 rustines (planche des têtes, etat.md)",
+   "tige_entiere_DET1_bleu": "910 éléments / 112 Ko (plafond 991 / 113)",
+   "tige_entiere_DET1_rouge": "812 / 97",
+   "tige_entiere_DET1_5": "environ 2050 à 2110 éléments / 280 Ko",
+   "source": "ch/anemones/refcache/anemone-coronaria/etat.md (Témoins)"
+  },
+  "tirages": {
+   "tete": "anemSvgPut consomme 28 R(0,1) quand op >= .3 (app/y2.js) ; la tête tire ensuite sur sa propre graine",
+   "bractee": "D·R(.5,.65) et dix R(0,1) par bractée (app/s10a.js, acoBract) : le hasard des bouquets reste celui de l'ancien dessin",
+   "temoin": "rtest=1 IDENTIQUE sur anemone-coronaria~1:2 et ~3:2 ; empreintes fleur/out/cor0_rtest_ref.json (BP 8.1)"
+  },
+  "bouquet": "Le fané des planches et celui du bouquet suivent le même LIFE (svaLife) ; SVA_LIFE force un stade pour les planches."
+ },
+ "questions": [
+  {
+   "id": "Q1",
+   "organe": "coeur.etamines",
+   "question": "Combien d'étamines doit-on dessiner au plein détail ? REFERENCES.md:109 dit 80 à 150, y2.js:7 dit 90 à 140, le code tire 165 à 220 (et en dessine 102 à 136 à DET 1).",
+   "proposition": "Garder le tirage tel quel à DET 1 (dans la plage) et ramener stN à [105, 150] à DET 1,5, après une mesure par segmentation du nombre d'étamines sur la photo de Bucarest (fit.py targets). Décision au porteur : cela change l'aspect des gros plans, donc les empreintes rtest."
+  },
+  {
+   "id": "Q2",
+   "organe": "tepale.externe",
+   "question": "Le tépale du dessin est plus large que long (l/L 1,02 externe, .94 interne) alors que REFERENCES.md:97 écrit L/l de 1,1 à 1,25. Lequel est juste, et sur combien de photos ?",
+   "proposition": "Mesurer l/L sur 5 photos de face (fit.py targets hw, organ.py) ; si la plage 1,1-1,25 tient, ramener P.Wd à [.84, .76]. Pas de changement avant la mesure."
+  },
+  {
+   "id": "Q3",
+   "organe": "tepale.interne",
+   "question": "À quoi se mesurent les angles de la coupe de REFERENCES.md:98-101 (25-40° à la base, 5-15° à la pointe, ...) : à l'axe de la fleur ou au-dessus du plan d'ouverture ?",
+   "proposition": "Élévation au-dessus du plan (90° moins l'angle du code à l'axe), ce qui fait coïncider le code et le document sauf le pied de l'interne (33,9° contre 40-60). À confirmer sur une vue de profil."
+  },
+  {
+   "id": "Q4",
+   "organe": "tepale.externe",
+   "question": "Texture du tépale : « satinée » (REFERENCES.md:103) ou « velours (éclat rasant) » (STANDARD-RENDU.md:145) ?",
+   "proposition": "Écrire « satin » dans la fiche et corriger le standard (l'éclat rasant du velours vient de P.light.ks .09 et du duvet des marges, pas du tépale lui-même)."
+  },
+  {
+   "id": "Q5",
+   "organe": "collerette",
+   "question": "À quelle distance sous la fleur ouverte la collerette est-elle ? Mesure .19 D (t197, une photo), sauvage .56 D (t157), REFERENCES.md:121 « 3 à 6 cm », dessin .30 D.",
+   "proposition": "Mesurer sur 3 photos de fleurs de fleuriste avec une règle (organ.py) ; en attendant garder .30 D (milieu de .19 et .43)."
+  },
+  {
+   "id": "Q6",
+   "organe": "collerette",
+   "question": "Lanières de la bractée : 2 à 3 paires de largeur .06-.10 L documentées, le dessin en trace 1 à 2 (et la moitié hors zoom) de demi-largeur .13 L avant incisions.",
+   "proposition": "Compter les lanières sur t188, t197, t139 et mesurer leur largeur au masque ; comparer au rendu à DET 1,5 par `img.py pair` avant de toucher side/ws."
+  },
+  {
+   "id": "Q6b",
+   "organe": "collerette",
+   "question": "Angle des bractées à la tige : 60-80° (commentaire de svaBract3) ou 80-96° (leafAng de anemPlant) ?",
+   "proposition": "Mesurer sur t196, t197 et t188 ; si 60-80 se confirme, ramener leafAng à 66 + 8·o2 + 8·wk."
+  },
+  {
+   "id": "Q7",
+   "organe": "bouton",
+   "question": "Le bouton de fleuriste est-il dressé ou penché ? Dressé : t121, t188, t198 ; penché : t9, t25, t29, t30, Flora della Sardegna, REFERENCES.md:28.",
+   "proposition": "Garder dressé (c'est le cas du bouquet coupé), et noter le port penché comme propre à la plante en place ; vérifier sur des photos de bouquets (t139, t140, t185)."
+  },
+  {
+   "id": "Q7b",
+   "organe": "bouton",
+   "question": "Forme du bouton : globe, œuf ou pointu selon les photos. Est-ce la variété, l'âge ou la vue ?",
+   "proposition": "Mesurer H/L sur 5 boutons de profil (organ.py) et noter la dispersion avant de décider d'une forme par variété (BP 2.12)."
+  },
+  {
+   "id": "Q8",
+   "organe": "coeur.etamines",
+   "question": "REFERENCES.md mélange R (rayon) et D (diamètre) pour le même cœur : « dôme 0,12 à 0,13 R » (l.33) et « environ 0,12 D » (l.108) ; « couronne 0,31 à 0,34 R » (l.33) et « anneau de 0,30 à 0,36 D » (l.109).",
+   "proposition": "Retenir les valeurs en R (l.33, issues des photos du 8 octobre) ; la section « Traits » (l.93-122) est antérieure et ses unités sont à relire."
+  },
+  {
+   "id": "Q9",
+   "organe": "tige",
+   "question": "La tige est dessinée à .055-.065 D, mesurée à .051 D sur une seule photo (t197, « probablement sauvage », BP 1.3), .037 D sur la sauvage.",
+   "proposition": "Mesurer 3 tiges de fleuriste avec une règle ; si .051 tient, ramener w à D·.051 (cela change le budget de la tige et l'empreinte rtest)."
+  },
+  {
+   "id": "Q10",
+   "organe": "varietes",
+   "question": "Cœur du blanc-vert, du rouge et du bleu : deux mesures par coloris (coloris.md et REFERENCES.md) et une description contraire (Pacific Bulb Society, Hollandia : couronne bleu acier à filets rose-pourpre).",
+   "proposition": "Remesurer le dôme et la couronne de ces trois coloris par segmentation sur les photos de plein jour (refs.py auto) ; ne garder que des couleurs mesurées dans la fiche."
+  },
+  {
+   "id": "Q10b",
+   "organe": "stades",
+   "question": "Les noms de stade (bouton, gonflé, entrouvert, ouvert, plein, déclin, fané, sec) ne sont rattachés à aucun couple (op, wl) dans le dépôt.",
+   "proposition": "Adopter la grille de BP 5.5 : .06:0, .2:0, .4:0, .75:0, 1:0, 1:.35, 1:.75, et .95 pour le sec ; l'écrire dans STANDARD-RENDU."
+  },
+  {
+   "id": "Q11",
+   "organe": "stades",
+   "question": "Y a-t-il un stade « sec » de l'anémone ? La fanaison dit seche_bien: true, LIFE_SP dit dry = 0, une seule photo (spécimen pressé).",
+   "proposition": "Pas de stade sec dans la boutique tant qu'aucune photo de fleur coupée séchée n'existe."
+  },
+  {
+   "id": "Q12",
+   "organe": "stades",
+   "question": "Les jours de la fiche sont-ils des jours de vase (3 à 8) ou des jours de bouquet du jeu (3, 20, 30) ?",
+   "proposition": "Garder les deux, nommés : `tenue_vase` (réel, fanaison) et `seuils_jeu` (le jeu) ; la fiche d'une sorte ne décide que de `tenue_vase`."
+  },
+  {
+   "id": "Q13",
+   "organe": "varietes.bleu",
+   "question": "Base du bleu : pâle (pilote, photo de Bucarest) ou plus foncée que le corps (Mister Fokker, mesure du 8 octobre) ? Ce sont deux coloris.",
+   "proposition": "Les séparer : le bleu de boutique est Mister Fokker (base foncée) ; le bleu violet de Bucarest n'est pas vendu. Retirer la ligne « Bleu violet » de la section Traits."
+  },
+  {
+   "id": "Q14",
+   "organe": "tous",
+   "question": "Rubriques inconnues (v: null) : épaules du tépale, grain du tépale, relief des nervures, nombre de carpelles, plus grande largeur du bouton, épaisseur des bractées, rapport tête/tige, pétiole, dessous de feuille, zone du revers.",
+   "proposition": "À mesurer ou lire sur les photos gardées (organ.py, fit.py targets) ; voir RAPPORT-pilote.md pour la liste ordonnée."
+  },
+  {
+   "id": "Q15",
+   "organe": "tepale.externe",
+   "question": "Les poids de la loi du nombre de tépales (.06 .44 .24 .18 .08) n'ont pas de source.",
+   "proposition": "Compter les tépales sur les 30 photos de face gardées et en tirer la loi."
+  },
+  {
+   "id": "Q16",
+   "organe": "photos",
+   "question": "Quatorze photos citées sur 47 n'ont pas d'URL dans le dépôt (REFERENCES.md ne note que le nom du fichier Commons ou le titre de la banque d'images).",
+   "proposition": "Compléter les URL depuis Commons au prochain passage de refs.py keep et remplacer les clés calculées sur le titre par le sha1 de l'URL."
+  },
+  {
+   "id": "Q17",
+   "organe": "varietes",
+   "question": "BONNES-PRATIQUES 2.12 demande une forme de cœur par variété : aucun document ne montre une différence de forme entre les coloris de l'anémone (seulement des couleurs). Le dôme du blanc-vert est-il plus petit ?",
+   "proposition": "Laisser « forme: espece » jusqu'à une mesure du rayon du dôme et de la couronne sur les 5 coloris (photos de gros plan n° 3, 15, 18)."
+  }
+ ]
+}
