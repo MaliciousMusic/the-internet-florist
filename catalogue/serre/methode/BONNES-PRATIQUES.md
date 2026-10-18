@@ -138,6 +138,13 @@ Rappel de base : SVG natif seulement, ni 3D, ni image incorporée, ni ruban, ni 
 7.8 Jamais de bulbe, de racine ni de terre : une fleur est une tige coupée en vase (porteur, 2026-10-08 : « pas de bulbe ! ce ne sera jamais visible » ; jacinthe et muscari v1
     retirés). `full=` ajoute une tige sous un bulbe : ne pas l'employer sur une plante à bulbe. Ni ruban, ni nœud, ni papier (shop-design-rules, 2026-10-04 ; pois tour 2 : ailes de face en « nœud papillon »).
 7.9 Coupe nette en équerre ou en biseau ; le contour fermé de `svStemLine` fait un bouchon qui dépasse (46 px en gros plan) : le couper (clip).
+7.10 Découpes de feuille jamais toutes pareilles : lobes et dents de longueurs différentes d'un lobe à l'autre et d'une feuille à l'autre, tirées d'une graine
+    propre à la feuille (`inc.jit` amplitude, `inc.jitS` sel, `inc.fall` retombée de la dent) ; jamais un gabarit répété (delphinium et scabieuse, 2026-10-18 : lobes
+    réguliers vus seulement à l'œil sur la planche plante).
+7.11 Longueur et largeur des feuilles de tige rapportées au diamètre de la tête, mesurées sur une photo de plante entière et écrites dans la fiche (rôle feuille) ;
+    jamais réglées à l'œil sur une planche seule (scabieuse : `lp` 3,6 ramené à 2,1, des feuilles plus longues que la tige entre deux nœuds).
+7.12 Toute retouche de `STEML` (n, len, up, sheetY) se regarde sur `plant=1` avant et après : `sheetY` a fait disparaître toutes les feuilles du delphinium,
+    puis les a tassées. pipe.py mesure la surface des feuilles de la planche plante (`jgap.py`, « leaf px ») : sous 40 % de celle d'avant l'étape, plante échoue.
 
 ## 8. En bouquet
 8.1 `rtest=1` doit dire IDENTIQUE sur 5 stades × 2 vases, SV coupé puis allumé : la sorte consomme les mêmes tirages `R()` que l'ancien dessin (anémone : 28 `R(0,1)`
@@ -154,6 +161,8 @@ Rappel de base : SVG natif seulement, ni 3D, ni image incorporée, ni ruban, ni 
 8.4 QA de la boutique : 0 flottante, 0 sous le bord, 0 cassure, sur au moins 30 bouquets, un lot à la fois, plus de 5 Go libres, jamais plus de 3 Chrome sans fenêtre.
 8.5 (Mesure seulement, plus une limite : porteur, 2026-10-17, « le poids je m'en fiche, je veux la meilleure qualité possible ».) Budget à DET 1 : environ 300 éléments et 50 Ko par tige (tulipe : 362 él. refusés comme 20 % de trop). Mesurer par organe (tête, col, tige, feuilles) ; plein
     détail réservé aux gros plans et exports.
+8.5b Une tête de plus de 2 000 éléments à DET 1 devient une question au porteur (`questions.md`, section Poids), avec une proposition d'allègement ; jamais
+    un refus (nérine, 2026-10-18 : 4 909 éléments, 1,2 Mo par planche).
 8.6 Regarder soi-même un bouquet contenant la sorte, à la taille de la boutique et à 2400 px (pas un agent Haiku) : chaque fleur se lit comme une fleur de sa sorte,
     attachée, aux bonnes proportions face à l'iris ou à l'anémone voisine (pois v1 : « pétales roses plats » et folioles aussi grandes qu'un iris).
 8.7 Ne pas créer `GHI[sid]` pour une sorte de l'ancien dessin : `recInfo` (e5.js) le lit et le bouquet change ; poser le fané dans la tête.
@@ -181,3 +190,22 @@ Rappel de base : SVG natif seulement, ni 3D, ni image incorporée, ni ruban, ni 
     une photo de sa variété est comparé côte à côte à CETTE photo (de face, ouvert) : pointes, zones de couleur,
     translucidité, cœur propre ; pipe.py en fait jusqu'à 10 (`cw-<id>`), le juge les note comme les autres.
 9.4 Chiffrer : rustines par tête, éléments et Ko à DET 1, jours en mm, pièces isolées (`conn.py`). Cocher 4 ter point par point, écrire les défauts restants et les décisions manquantes au rapport (jamais les cacher), noter la facture (`bill.py report`).
+9.5 Tête validée par le porteur = tête figée : la suite se lance avec `--tete-validee "<ses mots>"` ; pipe.py garde une planche de la tête
+    (`tete-validee.png`) et refuse toute comparaison qui la change d'un pixel (0,00 %). Seuls la tige, les feuilles et le pédicelle bougent (gloriosa, 2026-10-18 :
+    la comparaison avait refait les gènes, le cœur et le port d'une tête validée).
+9.6 Tête validée : un ko du juge sur les seules paires de la tête ne renvoie rien au modeleur ; il est écrit dans `comparaison/tete-ecarts.json` pour les
+    planches du porteur (nérine : un aller-retour sur six paires de tête, 0,85 M pour rien).
+9.7 Paire sans photo adaptée (autre angle, autre stade, autre variété, organe caché) : le modeleur écrit « photo inadaptée » et le juge note `photo` ; la ligne
+    n'est ni ok ni ko et part dans `comparaison/photos-inadaptees.json`. Plus d'un tiers de lignes `photo` vaut ko : compléter les refs (gloriosa, delphinium :
+    refus sur des photos qui ne montraient pas l'organe).
+9.8 Le tableau « contrôle 9.2 » est écrit par pipe.py avant la comparaison, une ligne « à voir » par paire ; le modeleur remplit chaque ligne dès qu'il a regardé sa
+    paire. Une ligne encore « à voir » fait échouer le contrôle (2026-10-18 : des appels Opus arrêtés à 41 tours sans aucun tableau, et le suivant repartait de zéro).
+9.9 Outillage vérifié sans modèle : une lecture exigée (BONNES-PRATIQUES, résumé de fiche) compte seulement si le fichier est ouvert en entier (`Read`, ou `cat`
+    sans `head` ni `grep`) ; après chaque appel, pipe.py rend à un module de `app/` ou `pilote/` ses fins de ligne de HEAD (y-delphinium.js est en CRLF : une
+    retouche en LF montrait tout le fichier changé).
+
+## 10. Coût
+10.1 Une fleur complète coûte 8 M au plus (porteur, 2026-10-18), plafond par étape (`STEP_CAP`). L'ordre qui tient le budget : forme sur deux coloris, planche
+    de forme validée par le porteur, puis `--tete-validee` ; plante et finition en Sonnet ; comparaison et juge 1 M à eux deux. Au-delà, la session principale écrit
+    le tableau elle-même et lance le juge une fois (`--juge-tours 0`), puis regarde les planches `plant=1` et corrige la tige et les feuilles elle-même
+    (vague 4 : gloriosa 6,06 M, nérine 4,31, delphinium 6,24, scabieuse 5,42).

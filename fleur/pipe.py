@@ -1867,6 +1867,33 @@ def get_lock(ctx, kind):
     return lk
 
 
+def eol_guard(ctx):
+    """a relay keeps each module's line endings: a file of app/ or pilote/ that was all CRLF (or all LF) in HEAD gets them back after the call,
+    no model (y-delphinium.js, 2026-10-18: Edit wrote LF lines into a CRLF file, the diff showed the whole file). Returns the files fixed."""
+    if ctx.dry:
+        return []
+    try:
+        names = subprocess.run(['git', 'diff', '--name-only', '--', 'app', 'pilote'], cwd=ctx.ch, capture_output=True, timeout=60).stdout.decode('utf-8', 'replace').split()
+    except Exception:
+        return []
+    fixed = []
+    for rel in names:
+        p = os.path.join(ctx.ch, rel)
+        if not os.path.isfile(p):
+            continue
+        head = subprocess.run(['git', 'show', 'HEAD:' + rel], cwd=ctx.ch, capture_output=True, timeout=60).stdout
+        nh, ch = head.count(b'\n'), head.count(b'\r\n')
+        if nh < 2 or 0 < ch < nh:  # empty, or mixed already in HEAD: not ours to choose
+            continue
+        data = open(p, 'rb').read()
+        lf = data.replace(b'\r\n', b'\n')
+        want = lf.replace(b'\n', b'\r\n') if ch == nh else lf
+        if want != data:
+            open(p, 'wb').write(want)
+            fixed.append(rel)
+    return fixed
+
+
 def model_loop(ctx, step, pname, model, tools, max_calls, done_check, turns=None, extra=None, must_read=(), before=None, numbers=None):
     """calls with an empty context until the model says done AND the check passes; a call that stops on the turn cap, the clock or 'relay' is
     followed by a fresh one that reads etat-<step>.md (written by the model; a stub of ours is APPENDED, the model's state is never lost).
@@ -1898,6 +1925,9 @@ def model_loop(ctx, step, pname, model, tools, max_calls, done_check, turns=None
         if ctx.dry:
             done_check()
             return 'done', fin
+        eol = eol_guard(ctx)
+        if eol:
+            say('  %s/r%d: line endings put back in %s' % (step, k, ', '.join(eol[:6])))
         for m in must_read:
             if ctx.npath(m) in set(r.get('reads') or []) and ctx.npath(m) not in seen:
                 seen.append(ctx.npath(m))
@@ -2188,7 +2218,25 @@ def plant_gaps(ctx):
     if not good:
         return False, 'jgap: no plant render (%s)' % shot_err(text), []
     c, t = run_cmd(ctx, [sys.executable, 'fleur/jgap.py', 'fleur/out/%s.png' % name, str(len(JGAP_ST.split(','))), str(full)], 'jgap', timeout=300, quiet=True)
+    ctx.st['leaf_px'] = leaf_px(t)
     return jgap_verdict(t)
+
+
+LEAF_KEEP, LEAF_MIN = .4, 400  # plante: the leaf px of the plant sheet may not fall under 40 % of what it was before the step (when it had 400 px)
+
+
+def leaf_px(t):
+    """jgap.py's « leaf px » per cell: what the plant has beyond its stem (leaves, sheaths, bracts)"""
+    return [int(m.group(1)) for m in re.finditer(r'leaf px (\d+)', t or '')]
+
+
+def leaf_verdict(before, after):
+    """(ok, why): the leaves of the plant sheet kept (2026-10-18: a STEML sheetY made every delphinium leaf vanish, seen only by eye)"""
+    b, a = sum(before or []), sum(after or [])
+    if not before or b < LEAF_MIN or a >= LEAF_KEEP * b:
+        return True, 'leaf px %d -> %d' % (b, a) if before else ''
+    return False, 'the leaves of the plant sheet vanished or shrank: leaf px %d before the step, %d now (%d %%; at least %d %% kept): see jg_<sid>.png' % (
+        b, a, round(100 * a / b), round(100 * LEAF_KEEP))
 
 
 def jgap_verdict(t):
@@ -2212,6 +2260,9 @@ def check_plante(ctx):
 
 def step_plante(ctx):
     ensure_docs(ctx)
+    if not ctx.dry and 'leaf_px0' not in ctx.st:  # the leaves before the step: kept across resumed runs
+        plant_gaps(ctx)
+        ctx.st['leaf_px0'] = ctx.st.get('leaf_px') or []
     has_res = fiche_resume(ctx)
     res, fin = model_loop(ctx, 'plante', 'plante', getattr(ctx.a, 'plante_model', None) or 'sonnet', READ + ['Write', 'Edit'] + SAFE_BASH, int(getattr(ctx.a, 'relays', 4)), lambda: closed_check(ctx, 'plante'),
                           extra={'fiche': fiche_rel(ctx), 'resume': resume_rel(ctx)}, must_read=[bp_rel(ctx)] + ([resume_rel(ctx)] if has_res else []),
@@ -2222,8 +2273,9 @@ def step_plante(ctx):
         return {'status': 'failed', 'msg': 'plante not finished after the relays (resume with --from plante)'}
     r = step_fit(ctx, 'plante')
     g_ok, g_msg, n = plant_gaps(ctx)  # the fit and its look may change the stem: nothing may float after them either
-    r['msg'] = 'plante done; %s; %s' % (r['msg'], g_msg)
-    if not g_ok:
+    l_ok, l_msg = leaf_verdict(ctx.st.get('leaf_px0'), ctx.st.get('leaf_px')) if not ctx.dry else (True, '')
+    r['msg'] = 'plante done; %s; %s%s' % (r['msg'], g_msg, '; ' + l_msg if l_msg else '')
+    if not g_ok or not l_ok:
         r['status'] = 'failed'
     return r
 
@@ -2325,6 +2377,17 @@ def forme_numbers(ctx):
     return ['trous (fond enfermé par la fleur, fleur/out/num_%s.png, fond vert) : pire %.2f %% (%s) ; seuil bloquant %.1f %% ; cases au-dessus de 0,5 %% : %s'
             % (ctx.sid, worst[0], worst[1] or '-', HOLES_MAX, ', '.join(bad[:8]) or 'aucune'),
             'fané %s contre ouvert 1:0 (largeur x hauteur de la tête) : %s' % (st[i_dry], ' ; '.join(size) or '-')]
+
+
+HEAVY_EL = 2000  # elements per head at DET 1 above which the weight goes to the owner as a question (nerine, 2026-10-18: 4 909, 1.2 MB a sheet)
+
+
+def heavy_question(ctx, m):
+    """the weight is a measure, never a refusal (BONNES-PRATIQUES 8.5); a head far above it is said to the owner, with a proposal"""
+    el = (m or {}).get('el') or 0
+    set_questions(ctx, 'poids', 'Poids de la tête', ['%s éléments et %s Ko par tête à DET 1 (repère %d / %d, seuil de question %d) : alléger ? Proposition : fondre '
+                                                    'les rustines et nervures invisibles à la taille de la boutique, garder le plein détail aux gros plans (DET 2).'
+                                                    % (el, (m or {}).get('kb'), TARGET_EL, TARGET_KB, HEAVY_EL)] if el > HEAVY_EL else [])
 
 
 def budget(ctx, tag):
@@ -2864,6 +2927,21 @@ def check_tete(ctx):
                    'head colours, SV_HEAD); only the stem, the leaves and the pedicel are yours' % (pct if pct is not None else '?', os.path.relpath(f, ctx.ch), ctx.rel))
 
 
+TABLE_TODO = 'à voir'  # the verdict of a line of the table pipe.py writes before the comparison: the modeller fills each line as it looks
+
+
+def table_skeleton(ctx, plan):
+    """the « contrôle 9.2 » table written by pipe.py at the head of etat-comparaison.md when it has none: one line per pair, « à voir »; a relay
+    stopped by its turn cap leaves the lines it filled (2026-10-18: Opus calls ended at 41 turns without any table, and the next one began again)"""
+    p = ctx.rc + '/etat-comparaison.md'
+    if ctx.dry or table_rows(p):
+        return False
+    old = open(p, encoding='utf-8', errors='replace').read() if os.path.exists(p) else ''
+    L = ['# État de la comparaison : %s' % ctx.sid, '', '| paire | verdict | écart restant |', '|---|---|---|'] + ['| %s | %s | |' % (x['k'], TABLE_TODO) for x in plan]
+    open(p, 'w', encoding='utf-8', newline='\n').write('\n'.join(L) + '\n' + ('\n' + old if old else ''))
+    return True
+
+
 def check_comparaison(ctx, plan, ko_file=None, reads=True):
     """every pair present (PNG not empty), made after the last change of app/, looked at by the modeller; the table complete (ok or the gap);
     after a judge's ko: the drawing changed and the table was rewritten since"""
@@ -2883,6 +2961,8 @@ def check_comparaison(ctx, plan, ko_file=None, reads=True):
         r = rows.get(p['k'])
         if not r:
             why.append('%s: no line in the table of etat-comparaison.md' % p['k'])
+        elif r['verdict'] == norm(TABLE_TODO):
+            why.append('%s: line still « %s » (look at the pair, then write ok or the gap)' % (p['k'], TABLE_TODO))
         elif r['verdict'] != 'ok' and not (r['ecart'] or len(r['verdict']) > 3):
             why.append('%s: line without verdict nor gap' % p['k'])
     if ko_file and os.path.exists(ko_file):
@@ -2913,6 +2993,7 @@ def step_comparaison(ctx, ko=None, trip=0):
         kof = '%s/comparaison/ko-%d.json' % (ctx.rc, trip)
         jsave(kof, ko)
     RUN_PAIRS(ctx, plan)
+    table_skeleton(ctx, plan)
     tete_ref(ctx)
     ctx.reads['comparaison'] = set()  # each round looks at the pairs again
     extra = {'pairs': '%s/comparaison/pairs.md' % ctx.rel, 'refaire': '%s/comparaison/refaire.sh' % ctx.rel,
@@ -2942,8 +3023,16 @@ def judge_once(ctx, plan, trips, k):
     verdict = norm(str(fin.get('verdict') or ''))
     key = lambda s: norm(str(s or '')).replace(' ', '-')
     noted = {key(x.get('paire')): x for x in fin.get('lignes') or [] if isinstance(x, dict)}
-    ko = [x for x in fin.get('ko') or [] if isinstance(x, dict)]
-    ko += [{'paire': kk, 'raison': x.get('raison') or 'ko'} for kk, x in noted.items() if norm(str(x.get('note') or '')) != 'ok' and not any(key(y.get('paire')) == kk for y in ko)]
+    # a pair whose kept photo cannot judge it (another angle, stage or variety) is noted « photo »: neither ok nor ko, it goes to the owner's
+    # sheets (gloriosa, delphinium, 2026-10-18: refusals on unsuitable photos paid round trips for nothing); more than a third of them is a ko
+    photo = [kk for kk, x in noted.items() if norm(str(x.get('note') or '')).startswith('photo')]
+    ko = [x for x in fin.get('ko') or [] if isinstance(x, dict) and key(x.get('paire')) not in photo]
+    ko += [{'paire': kk, 'raison': x.get('raison') or 'ko'} for kk, x in noted.items() if norm(str(x.get('note') or '')) != 'ok' and kk not in photo
+           and not any(key(y.get('paire')) == kk for y in ko)]
+    if photo and len(photo) * 3 > len(plan):
+        ko.append({'paire': '-', 'raison': 'trop de paires sans photo adaptée (%d sur %d : %s) : compléter les refs (--from refs)' % (len(photo), len(plan), ', '.join(photo[:8]))})
+    if photo and verdict == 'ko' and not ko:
+        verdict = 'ok'  # the judge's ko came from the « photo » lines only
     issues = []
     if verdict not in ('ok', 'ko'):
         issues.append('no verdict (%s)' % r.get('subtype'))
@@ -2965,7 +3054,8 @@ def judge_once(ctx, plan, trips, k):
         early = [p['k'] for p in plan if first.get(ctx.npath(p['png']), len(seq)) > first[tab]]
         if early:
             issues.append('the modeller\'s table was read before the pairs %s were looked at (anchoring: judge every pair first)' % ', '.join(early[:6]))
-    return {'verdict': 'ok' if verdict == 'ok' and not ko and not issues else 'ko', 'ko': ko, 'issues': issues, 'lignes': list(noted.values()), 'call': r.get('subtype')}
+    return {'verdict': 'ok' if verdict == 'ok' and not ko and not issues else 'ko', 'ko': ko, 'issues': issues, 'lignes': list(noted.values()), 'photo': photo,
+            'call': r.get('subtype')}
 
 
 def judge(ctx, plan, trips):
@@ -2979,6 +3069,8 @@ def judge(ctx, plan, trips):
     v['ko'] = v['ko'] + [{'paire': '-', 'raison': 'le juge n\'a pas pu juger : ' + x} for x in v['issues']]
     if not ctx.dry:
         jsave('%s/comparaison/juge-%d.json' % (ctx.rc, trips), v)
+        if v.get('photo'):
+            jsave('%s/comparaison/photos-inadaptees.json' % ctx.rc, [x for x in v['lignes'] if norm(str(x.get('note') or '')).startswith('photo')])
     return v
 
 
@@ -3226,6 +3318,7 @@ def step_qa(ctx):
         if seed > total:  # runs that give nothing must not loop for ever
             break
     b_ok, b_msg, m = budget(ctx, 'qa_' + ctx.sid)
+    heavy_question(ctx, m)
     green = (tot['floating'] == 0 and tot['under'] == 0 and tot['kinks'] == 0 and tot['bouquets'] > 0 and not tot.get('missing') and b_ok) or ctx.dry
     return {'status': 'done' if green else 'failed', 'msg': '%s: %d bouquets, floating %d, under the vase %d, kinks %d, min free RAM %.1f GB, %d lots killed; %s'
             % ('GREEN' if green else 'RED', tot['bouquets'], tot['floating'], tot['under'], tot['kinks'], minram if minram < 99 else 0, killed, b_msg), 'checks': tot}
@@ -4050,6 +4143,69 @@ def cmd_selftest(a):
         seq(jg(rel3, 'ok'))
         v_ = judge(ctx3, plan_, 0)
         t('juge: checklist, every pair, then the table: ok', v_['verdict'] == 'ok' and not v_['issues'], str(v_)[:300])
+        def jgp(rel, notes, verdict='ko'):  # a judge that read everything and noted the given pairs « photo » or « ko »
+            r_ = jg(rel, 'ok')
+            f_ = json.loads(r_['final'])
+            f_['verdict'] = verdict
+            for x in f_['lignes']:
+                x['note'] = notes.get(x['paire'], 'ok')
+            f_['ko'] = [{'paire': k_, 'raison': 'r'} for k_, n_ in notes.items() if n_ != 'ok']
+            r_['final'] = json.dumps(f_, ensure_ascii=False)
+            return r_
+        seq(jgp(rel3, {KEYS[0]: 'photo'}))
+        v_ = judge(ctx3, plan_, 0)
+        t('juge: a pair noted « photo » is neither ok nor ko, it goes to photos-inadaptees.json', v_['verdict'] == 'ok' and v_['photo'] == [KEYS[0]]
+          and os.path.exists(ctx3.rc + '/comparaison/photos-inadaptees.json'), str(v_)[:300])
+        seq(jgp(rel3, {k_: 'photo' for k_ in KEYS[:len(KEYS) // 3 + 1]}))
+        v_ = judge(ctx3, plan_, 0)
+        t('juge: more than a third of « photo » lines is a ko (refs to complete)', v_['verdict'] == 'ko' and any('sans photo adaptée' in x['raison'] for x in v_['ko']), str(v_)[:300])
+        seq(jgp(rel3, {KEYS[0]: 'photo', KEYS[1]: 'ko'}))
+        v_ = judge(ctx3, plan_, 0)
+        t('juge: a real ko next to a « photo » line stays a ko', v_['verdict'] == 'ko' and [x['paire'] for x in v_['ko']] == [KEYS[1]], str(v_)[:300])
+        sk_ = ctx3.rc + '/etat-comparaison.md'
+        keep_ = open(sk_, encoding='utf-8').read()
+        open(sk_, 'w', encoding='utf-8').write('# notes du relais' + NL)
+        made_ = table_skeleton(ctx3, plan_)
+        okc, whyc = check_comparaison(ctx3, plan_, reads=False)
+        t('comparaison: pipe.py writes the table « à voir » first; unfilled lines fail the check', made_ and set(KEYS) <= set(table_rows(sk_)) and not okc and 'à voir' in whyc
+          and 'notes du relais' in open(sk_, encoding='utf-8').read(), whyc)
+        t('comparaison: a table already there is never rewritten by pipe.py', not table_skeleton(ctx3, plan_))
+        open(sk_, 'w', encoding='utf-8').write(keep_)
+        t('plante: leaves kept passes, leaves gone fails, no leaves before says nothing', leaf_verdict([900, 1200], [800, 1000])[0] and not leaf_verdict([900, 1200], [0, 100])[0]
+          and leaf_verdict([0, 50], [0, 0]) == (True, 'leaf px 50 -> 0'))
+        try:
+            from PIL import Image, ImageDraw
+            for nb, name_ in ((0, 'jl0'), (1, 'jl1')):
+                im = Image.new('RGB', (200, 300), (233, 228, 220))
+                d_ = ImageDraw.Draw(im)
+                d_.rectangle([95, 40, 105, 280], fill=(60, 110, 50))
+                d_.ellipse([70, 20, 130, 70], fill=(200, 40, 60))
+                if nb:
+                    d_.ellipse([100, 150, 170, 180], fill=(60, 110, 50))  # a leaf on the stem
+                im.save('%s/%s.png' % (tmp, name_))
+            l0 = leaf_px(subprocess.run([sys.executable, HERE + '/jgap.py', tmp + '/jl0.png', '1', '40'], capture_output=True, text=True).stdout)
+            l1 = leaf_px(subprocess.run([sys.executable, HERE + '/jgap.py', tmp + '/jl1.png', '1', '40'], capture_output=True, text=True).stdout)
+            t('jgap: leaf px is 0 for a bare stem and counts a leaf on it', l0 == [0] and l1 and l1[0] > 400, '%s %s' % (l0, l1))
+        except ImportError as e:
+            t('jgap: leaf px is 0 for a bare stem and counts a leaf on it', False, str(e))
+        CR, LF = bytes([13]), bytes([10])
+        eg_ = tmp + '/eolrepo'
+        os.makedirs(eg_ + '/app', exist_ok=True)
+        open(eg_ + '/app/y-crlf.js', 'wb').write(b'a' + CR + LF + b'b' + CR + LF)
+        open(eg_ + '/app/y-lf.js', 'wb').write(b'a' + LF + b'b' + LF)
+        for c_ in (['init', '-q'], ['add', 'app'], ['-c', 'user.name=t', '-c', 'user.email=t@t', '-c', 'core.autocrlf=false', 'commit', '-qm', 'x']):
+            subprocess.run(['git', '-c', 'core.autocrlf=false'] + c_, cwd=eg_, capture_output=True)
+        open(eg_ + '/app/y-crlf.js', 'wb').write(b'a' + CR + LF + b'b' + LF + b'c' + LF)
+        open(eg_ + '/app/y-lf.js', 'wb').write(b'a' + LF + b'b' + LF + b'c' + LF)
+        fx_ = eol_guard(argparse.Namespace(ch=eg_, dry=False))
+        t('eol_guard: a CRLF module edited with LF lines gets its CRLF back; an LF module is left alone', fx_ == ['app/y-crlf.js']
+          and open(eg_ + '/app/y-crlf.js', 'rb').read() == b'a' + CR + LF + b'b' + CR + LF + b'c' + CR + LF
+          and open(eg_ + '/app/y-lf.js', 'rb').read() == b'a' + LF + b'b' + LF + b'c' + LF, str(fx_))
+        heavy_question(ctx3, {'el': 4909, 'kb': 1200})
+        q_ = jload(ctx3.rc + '/questions.json', {}) or {}
+        heavy_question(ctx3, {'el': 400, 'kb': 60})
+        q2_ = jload(ctx3.rc + '/questions.json', {}) or {}
+        t('qa: a head above 2000 elements is a question to the owner (never a refusal), withdrawn once lighter', 'poids' in q_ and '4909' in q_['poids']['lines'][0] and 'poids' not in q2_)
         buf = io.StringIO()
         with contextlib.redirect_stdout(buf):
             judge_once(ctxd, plan_, 0, 1)

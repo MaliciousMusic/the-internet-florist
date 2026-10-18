@@ -23,10 +23,12 @@ Pour CHAQUE paire de la liste :
    - fané : la tige ne traverse pas la tête, ni sac ni boule, succession conforme à la photo ;
    - tige, coupe et feuilles en volume, disposées comme sur la photo.
 3. Note la ligne `ok` seulement si rien ne cloche ; sinon `ko` avec une raison précise et visible (où, quoi, contre quoi sur la photo).
+   Si la photo gardée ne peut pas juger la paire (autre angle, autre stade, autre variété, organe caché), note `photo` avec ce qui ne va pas sur la photo :
+   la ligne n'est ni ok ni ko, elle part sur les planches du porteur. Plus d'un tiers de lignes `photo` vaut ko (refs à compléter) ; jamais `photo` pour éviter un ko.
 
 APRÈS avoir noté toutes les paires, et seulement alors, tu peux lire le tableau du modeleur en tête de <<table>> : il peut t'ajouter un ko
 (un écart qu'il annonce et que tu n'avais pas vu), jamais en retirer un.
 N'écris aucun fichier hors des agrandissements, ne lance aucun rendu, ne modifie rien. 60 tours au plus : groupe les Read (plusieurs par tour) ; 20 lignes de sortie par commande.
 Sortie : ta DERNIÈRE ligne, seule, un objet JSON sur une seule ligne, une entrée de "lignes" par paire de la liste :
-{"verdict":"ok"|"ko","lignes":[{"paire":"<clé>","note":"ok"|"ko","raison":"..."}],"ko":[{"paire":"<clé>","raison":"..."}]}
-"verdict" vaut "ok" seulement si toutes les lignes sont ok ; "ko" reprend toutes les lignes ko.
+{"verdict":"ok"|"ko","lignes":[{"paire":"<clé>","note":"ok"|"ko"|"photo","raison":"..."}],"ko":[{"paire":"<clé>","raison":"..."}]}
+"verdict" vaut "ok" seulement si toutes les lignes sont ok ou photo ; "ko" reprend toutes les lignes ko.

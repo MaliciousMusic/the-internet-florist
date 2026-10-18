@@ -1,6 +1,6 @@
 """jgap.py plant.png ncells cm : per cell of a plant=1 render (cells side by side): foreground components; for each piece apart from the main
 one (area > 12 px): its distance to the main body in px and mm (scale: the main body's height = cm of stem + head); also the head-stem neck:
-the narrowest foreground run width along the stem axis just under the head, and any background row between head and stem (gap)."""
+the narrowest foreground run width along the stem axis just under the head, and any background row between head and stem (gap); the leaf px (leaves gone or squashed: a plante relay is refused)."""
 import sys, numpy as np
 from PIL import Image
 from scipy import ndimage as nd
@@ -18,4 +18,7 @@ for c in range(n):
   # neck: rows from the head's lowest wide row downward; find min width of the main body in the band below the head
   wid=main.sum(1);top=ys[0];band=wid[top:top+int(hpx*.5)];hb=int(np.argmax(band))+top
   below=wid[hb:hb+int(hpx*.25)];nk=int(below.min()) if len(below) else 0
-  print('cell%d h%dpx %.2fmm/px pieces apart: %d %s | min width under head %dpx'%(c,hpx,mmpx,len(bits),bits[:5],nk))
+  # leaf px: under the head, what the main body has beyond twice the stem's width (its 20th percentile row), leaves pieces apart included
+  low=wid[hb+int(hpx*.15):ys[-1]+1];low=low[low>0];sw=float(np.percentile(low,20)) if len(low) else 0
+  lp=int(np.clip(low-2*sw,0,None).sum())+sum(a for _,a in bits)
+  print('cell%d h%dpx %.2fmm/px pieces apart: %d %s | min width under head %dpx | leaf px %d'%(c,hpx,mmpx,len(bits),bits[:5],nk,lp))
