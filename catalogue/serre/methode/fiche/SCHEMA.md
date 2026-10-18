@@ -1,6 +1,8 @@
 # Fiche morphologique d'une sorte : schéma `fiche-morpho/1`
 
-Proposition de l'audit V4 (18 octobre 2026), en attente de la décision du porteur sur le format (question Q1 d'`AUDIT-V4.md`).
+Proposition de l'audit V4 (18 octobre 2026) ; format retenu par le porteur le même jour (Q1 d'`AUDIT-V4.md` : un JSON par sorte, contrôlé
+par `fiche.py`). Révision du chantier `outils-v4b` : héritage `suit`, unités `jours`/`rad`/`hex`, repère des angles, constantes en dur
+(`code: "const"`), écarts typés, méthode `regle` (faiblesses W1, W3, W4, W5, W6, W10, W12, W13, W14 de `fiches/RAPPORT-pilote.md`).
 Une fiche décrit la plante comme un botaniste la décrirait à un dessinateur : chaque organe, sa forme, sa matière, ses zones de
 couleur et ce qui change d'un stade à l'autre et d'une variété à l'autre. Chaque nombre dit d'où il vient. Le dessin se règle
 d'après la fiche, et un contrôle (`fleur/fiche.py check`) signale tout écart entre la fiche et le code.
@@ -22,7 +24,8 @@ un contour. Les photos de tiers restent dans `refcache/` ; la fiche ne garde que
 | `varietes` | ce qui change d'un coloris à l'autre, forme comprise (§6) |
 | `stades` | table des stades de vie (§5) |
 | `rendu` | réglages qui ne sont pas de la botanique : bouquet, niveau de détail, budget (§7) |
-| `questions` | ce qui manque ou reste à décider, en clair |
+| `questions` | ce qui manque ou reste à décider : liste de `{"id": "Q1", "organe", "question", "proposition"}` ; un texte de la fiche qui cite `Q1` doit trouver la question (contrôlé) |
+| `etat` | facultatif : `{pilote, date, auteur, note}` |
 
 ## 2. La valeur et sa provenance
 
@@ -35,15 +38,26 @@ Toute valeur mesurable est un objet `V`, jamais un nombre nu :
 ```
 
 - `v` : valeur retenue pour le dessin ; `plage` : étendue observée (individus, photos) ; `n` : nombre de mesures.
-- `unite` : `L` (part de la longueur de la pièce), `R0` (demi-diamètre de la fleur ouverte), `D`, `deg`, `mm`, `cm`, `n` (compte),
-  `ratio`, ou rien pour un mot.
+- `unite` : `L` (part de la longueur de la pièce), `R0` (demi-diamètre de la fleur ouverte), `D`, `deg`, `rad`, `mm`, `cm`, `n`
+  (compte), `ratio`, `jours` (durée de vie en vase), `hex` (une couleur `#rrggbb`, ou une liste ; sa `plage` est la liste des mesures
+  par photo), ou rien pour un mot.
+- `repere` : obligatoire pour un angle (`deg`, `rad`), refusé sinon : `axe` (de l'axe de la fleur), `plan` (élévation au-dessus du
+  plan de la fleur), `horizontale`, `tige` (de la ligne de la tige ou du pédicelle droit), `piece` (autour de l'axe propre de la
+  pièce : une torsion). Un angle relevé sans repère connu prend le plus probable et le dit dans `ecart`.
 - `methode`, du plus sûr au moins sûr : `mesure-echelle` (photo avec échelle connue), `segmente` (masque de l'organe, pixels
-  comptés : `fleur/organ.py`, `fit.py targets`, `img.py pair`), `oeil` (lu à l'œil sur photo, ±25 %), `reference` (flore,
-  registre, obtenteur : le texte va dans `ref`), `code` (valeur qui n'existe que dans le code, sans source : à mesurer),
-  `hypothese` (aucune photo ni référence : à dire au porteur).
+  comptés : `fleur/organ.py`, `fit.py targets`, `img.py pair`), `regle` (une règle en pixels sur la photo, sans masque : deux
+  photos concordantes = confiance B), `oeil` (lu à l'œil sur photo, ±25 %), `reference` (flore, registre, obtenteur : le texte
+  va dans `ref`), `code` (valeur qui n'existe que dans le code, sans source : à mesurer), `hypothese` (aucune photo ni référence :
+  à dire au porteur). `mesure-echelle`, `segmente` et `regle` exigent leurs `photos`.
 - `conf` : A (plusieurs photos concordantes ou référence botanique), B (2 à 3 photos), C (une photo ou l'œil), D (hypothèse).
-- `code` : chemin de l'expression qui porte la valeur dans le dessin (`SVA_GENES.n`, `S_ANEM.a1[0][1]`) ; `retenu` : la valeur
-  lue dans le code au dernier contrôle ; `ecart` : pourquoi le code s'écarte de `v`, s'il s'en écarte.
+- `code` : chemin de l'expression qui porte la valeur dans le dessin (`SVA_GENES.n`, `S_ANEM.a1[0][1]`, évaluée par
+  `fleur/fiche_eval.js`) ; ou `"const"` pour une constante écrite en dur dans une fonction, avec `ligne` :
+  `"app/<fichier>.js:<n>"` (le contrôle relit la ligne : chaque nombre de `retenu` doit y figurer, sinon le code a bougé).
+  `retenu` : la valeur lue dans le code au dernier contrôle.
+- `ecart` : pourquoi le code (ou `v`) s'écarte de la mesure, typé : `{"type": "confirme" | "divergence" | "budget", "texte": "..."}`.
+  `confirme` : le code est dans la plage ou l'incertitude de la mesure, le texte le montre ; `divergence` : le code ou les sources
+  s'écartent de la mesure (une question `Qn` le plus souvent) ; `budget` : un choix de rendu (niveau de détail), pas de botanique.
+  Un écart en texte libre est refusé.
 - Raccourci admis pour un mot ou une liste sans mesure : `{"v": "aigue", "methode": "oeil", "photos": [...]}`.
 
 ## 3. Les photos
@@ -53,14 +67,27 @@ l'autre). Entrée : `{"titre", "auteur", "licence", "url", "local": "ch/<chantie
 ["stade:ouvert", "vue:face", "organe:tepale", "coloris:bleu"], "vu": "ce qu'on y voit, en une phrase", "echelle": null |
 {"mm_par_px": 0.08, "methode": "règle visible"}}`. Les champs viennent de `refs.py keep` (`keep.json`). Une photo n'est
 citée que si elle montre la sorte (BONNES-PRATIQUES 1.7) ; les photos d'une autre espèce ou d'un hybride voisin portent
-`"groupe": "autre"` et ne servent pas aux mesures.
+`"groupe": "autre"` et ne servent pas aux mesures. Clé : sha1 de `url_image` quand elle existe, sinon de `url` (la page), sinon de
+`"File:" + titre` (`"cle_depuis": "url_image" | "url" | "titre"`). Dans `pipe.py`, l'étape `fiche` pose le registre d'après
+`keep.json` (photos regardées, champ « vu ») : la fiche ne cite que des photos gardées.
 
 ## 4. Les organes
 
 `organes` est un objet dont chaque clé nomme un organe (`tepale`, `petale.externe`, `labelle`, `coeur.etamines`,
 `coeur.pistils`, `receptacle`, `bouton`, `calice`, `collerette`, `feuille`, `tige`, `pedicelle`, …). Chaque organe porte les
-rubriques suivantes ; une rubrique sans objet s'omet, une rubrique inconnue s'écrit `{"v": null, "methode": "hypothese"}` et
-part dans `questions`.
+rubriques de son rôle (table ci-dessous) ; une rubrique sans objet s'omet, une rubrique inconnue s'écrit `{"v": null, "methode":
+"hypothese"}` et part dans `questions`. Un organe que le dessin ne trace pas (la feuille d'une tige coupée) porte `"dessinee": false`.
+Héritage : une rubrique ou une valeur identique à celle d'un organe frère s'écrit `{"suit": "<organe>.<rubrique>[.<clé>...]"}`
+(ex. `{"suit": "tepale.externe.matiere"}`) ; le renvoi doit exister (contrôlé), la couverture compte la cible.
+
+| Rôle | Rubriques attendues |
+|---|---|
+| `perianthe`, `bractee` | nombre, disposition, contour, taille, courbure, matiere, nervation, zones, jointures, stades |
+| `coeur`, `calice` | nombre, disposition, contour, taille, matiere, zones, jointures, stades (une autre rubrique reste admise) |
+| `receptacle` | taille, matiere, zones, jointures, stades |
+| `bouton` | disposition, contour, taille, matiere, zones, jointures, stades |
+| `tige`, `pedicelle` | taille, courbure, matiere, zones, jointures, section, stades |
+| `feuille` | toutes, section comprise (pétiole) |
 
 | Rubrique | Contenu |
 |---|---|
@@ -92,7 +119,8 @@ Dans chaque organe, `stades.<stade>` décrit ce qui change : angles, taille, cou
 
 `varietes.<id de coloris>` surcharge les organes pour ce coloris : forme du cœur, labelle, macule, œil, pointe, nombre de
 pièces (BONNES-PRATIQUES 2.12 : « selon les espèces et variantes la forme du centre change »). Chaque surcharge porte ses photos
-de la variété. Une variété sans surcharge suit l'espèce, et le dit (`"forme": "espece"`).
+de la variété. Une variété sans surcharge suit l'espèce, et le dit : `"forme": "espece"` quand sa forme a été comparée à celle de
+l'espèce et la suit, `"forme": "non-mesure"` quand personne ne l'a encore comparée (W11).
 
 ## 7. Le rendu, séparé de la botanique
 
@@ -109,5 +137,13 @@ mesure.
 3. il lit dans le code les expressions `code` (app construite par `mkapp.sh`, évaluée par node) et signale tout `retenu`
    différent du code, et tout `v` qui sort de sa `plage` sans `ecart` écrit ;
 4. il imprime le tableau de couverture organe × rubrique (S sourcé, U chiffré sans source, C code seul, M manquant), le même que
-   celui d'`audit-v4/notes-morpho-stades.md` §6.
-Il ne rend rien et ne lance aucun navigateur.
+   celui d'`audit-v4/notes-morpho-stades.md` §6 ;
+5. avec `--lien tete|plante|tout` : chaque valeur chiffrée des organes dessinés du groupe (tête : périanthe, cœur, réceptacle,
+   bouton, bractée, calice ; plante : tige, pédicelle, feuille) porte un `code` ou un `ecart` typé.
+Il ne rend rien et ne lance aucun navigateur. Sa dernière ligne est un objet JSON (valide, erreurs, valeurs, mesures, part de
+`code`, rôles, écarts par type, valeurs non reliées) que lit `pipe.py`.
+
+Dans `pipe.py` : l'étape `fiche` (après `targets`, avant `forme`) remplit la fiche d'une sorte nouvelle ; elle est finie quand
+`check` sort à 0, que les valeurs `code` font moins de 30 % des valeurs des organes, qu'au moins 8 valeurs sont mesurées
+(`segmente`, `mesure-echelle`, `regle`) avec les outils de mesure lancés dans l'étape, et que les rôles périanthe, bouton, tige et
+feuille sont décrits. `forme` lit la fiche et finit sur `check --lien tete`, `plante` sur `check --lien tout`.

@@ -2,7 +2,7 @@ Tu modèles la PLANTE (tige et feuilles) de la sorte <<sid>> (<<taxon>>, genre <
 SKU du bouquet : <<skus>>. Dossier de travail = cette copie. Interdits : 3D, images incorporées, rubans, nœuds. JAMAIS de bulbe, de racine ni de terre : une tige coupée en vase, dessinée jusqu'à sa coupe. Pas de commit ni de fusion. Ports 8765 et 8766 interdits : les rendus passent par fleur/shot_p.sh.
 
 OBLIGATOIRE avant tout dessin : lis EN ENTIER <<rc>>/ref/BONNES-PRATIQUES.md (Read, sans offset ni limit), surtout les parties 6 et 7 ; au relais, relis-la en entier.
-Puis, dans cet ordre, rien d'autre de long : <<rc>>/brief.md (photos et mesures d'organes) ; <<rc>>/kept.jpg (Read, une fois) ; fleur/KIT.md (parties plante : svaStemCols, STEML, lsHeadS, feuilles SVL_DEF) ; la fiche app/y-<genre en minuscules>.js faite à l'étape forme ; <<rc>>/targets.json ; <<rc>>/ref/STANDARD-RENDU-4bis.md ; fleur/FIT.md.
+Puis, dans cet ordre, rien d'autre de long : <<fiche>> (fiche morphologique : tige, feuilles, pédicelle) ; <<rc>>/brief.md (photos et mesures d'organes) ; <<rc>>/kept.jpg (Read, une fois) ; fleur/KIT.md (parties plante : svaStemCols, STEML, lsHeadS, feuilles SVL_DEF) ; la fiche app/y-<genre en minuscules>.js faite à l'étape forme ; <<rc>>/targets.json ; <<rc>>/ref/STANDARD-RENDU-4bis.md ; fleur/FIT.md.
 
 Pièges connus, à éviter dès la v1 :
 - tige en bande plate ou feuilles en « papier découpé » : cylindre éclairé, gouttière, cambrure, dessus plus foncé que dessous, ombre d'une partie sur l'autre (7.2, 7.5, 3.10) ;
@@ -17,7 +17,8 @@ Tu produis :
    - feuilles : nombre, disposition, attache et gaine, forme et proportions mesurées, nervures, marge, ondulation, torsion, dessus et dessous, port ;
    - le fané des feuilles et de la tige (elles mollissent et jaunissent).
    Imite anemPlant (app/s10a.js).
-2. <<rc>>/space-plante.json (format de fleur/FIT.md ; chemins comme $GHI.<<sid>>.xx ou $SVL_DEF.xx) : les réglages libres de la tige et des feuilles, avec min, max, step et liens. fit.py les ajustera sur les cibles tige et feuille de targets.json.
+2. <<fiche>> reliée au dessin : chaque valeur chiffrée de la tige, des feuilles et du pédicelle porte `code` (ou "const" avec `ligne` "app/<fichier>.js:<n>") et `retenu`, ou un `ecart` typé ; python fleur/fiche.py check <<sid>> --lien tout finit par VALIDE.
+3. <<rc>>/space-plante.json (format de fleur/FIT.md ; chemins comme $GHI.<<sid>>.xx ou $SVL_DEF.xx) : les réglages libres de la tige et des feuilles, avec min, max, step et liens. fit.py les ajustera sur les cibles tige et feuille de targets.json.
 
 Boucle de travail : UNE commande par tour, une seule petite image (1 000 px au plus) :
   sh mkapp.sh | tail -1 && python pilote/mksv.py && sh fleur/shot_p.sh p_<<sid>> "plant=1&sid=<<sid>>&cw=<un coloris>&st=.1:0,.3:0,.6:0,1:0,1:.4,1:.75&axv=1&full=40&seed=7" && python fleur/img.py small fleur/out/p_<<sid>>.png --w 1000

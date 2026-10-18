@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """fiche.py : controle d'une fiche morphologique `fiche-morpho/1` (catalogue/serre/methode/fiche/SCHEMA.md).
 
-    python fleur/fiche.py check <sid | chemin.json> [--no-code] [--quiet]
+    python fleur/fiche.py check <sid | chemin.json> [--no-code] [--quiet] [--lien tete|plante|tout]
 
 Ne rend rien, ne lance aucun navigateur, aucun serveur. Les expressions `code` sont lues par node (fleur/fiche_eval.js : l'application
 construite comme le fait mkapp.sh, chargee dans un contexte vm avec des bouchons pour document/window), sans dessiner.
@@ -24,9 +24,14 @@ Controles (SCHEMA §8) :
 Ce que le controle de code sait faire, et ne sait pas faire :
   - sait : lire toute constante ou expression des fichiers de app/ listes dans mkapp.sh (SVB_DEF, SVA_GENES, SVA_CW, LIFE_SP, RECIPES, SZG, lifeAt,
     lifeWEl, lifeOp...), avec `P` = le P de svBloom (Object.assign({}, kit.defauts, kit.spec)) et `probe.bract(op, wl)` (options de la bractee) ;
-  - ne sait pas : lire une constante ecrite en dur dans le corps d'une fonction de dessin sans etre rangee dans une table (ex. le .125 du dome, le .2 du
-    filet dans svaHeart) ; ces valeurs portent `code: null` et sont comptees dans « code sans chemin evaluable » ;
+  - une constante ecrite en dur dans le corps d'une fonction de dessin (ex. le .125 du dome dans svaHeart) ne s'evalue pas : elle porte
+    `code: "const"` et `ligne: "app/<fichier>.js:<n>"` ; la ligne est relue et chaque nombre de `retenu` doit y figurer (sinon le code a bouge) ;
+    une valeur `methode: code` sans aucun `code` est comptee dans « code sans chemin evaluable » ;
   - ne lance pas de rendu : il ne mesure donc ni un rayon de couronne ni un nombre d'elements dessines.
+  5. (--lien tete|plante|tout) chaque valeur chiffree des organes dessines du groupe porte `code` ou un `ecart` type (fin de forme, fin de plante).
+Regles du schema verifiees en plus (SCHEMA §2) : un angle (deg, rad) porte `repere` (axe, plan, horizontale, tige, piece) ; une couleur a l'unite
+`hex` (#rrggbb, plage = les mesures par photo) ; `ecart` est type {type: confirme | divergence | budget, texte} ; methodes segmente,
+mesure-echelle et regle exigent leurs photos. La derniere ligne imprimee est un objet JSON (comptes de la fiche) lu par pipe.py.
 
 Code de sortie : 0 fiche valide ; 1 erreurs de schema ou ecarts de code non declares ; 2 probleme d'environnement (fiche absente, node absent).
 """
@@ -39,11 +44,18 @@ FICHES = os.path.join(ROOT, 'catalogue', 'serre', 'fiches')
 ROLES = ['perianthe', 'coeur', 'bouton', 'bractee', 'calice', 'receptacle', 'pedicelle', 'tige', 'feuille']
 RUBRIQUES = ['nombre', 'disposition', 'contour', 'taille', 'courbure', 'matiere', 'nervation', 'zones', 'jointures', 'section', 'stades']
 ORGAN_META = {'role', 'code', 'dessinee', 'note_rendu', 'note'}   # cles d'organe hors rubriques
-METHODES = ['mesure-echelle', 'segmente', 'oeil', 'reference', 'code', 'hypothese']
+METHODES = ['mesure-echelle', 'segmente', 'regle', 'oeil', 'reference', 'code', 'hypothese']
+MESURES = ('mesure-echelle', 'segmente', 'regle')   # methodes chiffrees sur photo : elles exigent leurs photos
 CONFS = ['A', 'B', 'C', 'D']
-UNITES = {'L', 'R0', 'D', 'deg', 'mm', 'cm', 'n', 'ratio'}
-UNITES_HORS_SCHEMA = {'jours'}          # utilisees par la fiche pilote, absentes du SCHEMA §2 : signalees en avertissement
-V_KEYS = {'v', 'plage', 'unite', 'n', 'methode', 'photos', 'conf', 'ref', 'code', 'retenu', 'ecart', 'note'}
+UNITES = {'L', 'R0', 'D', 'deg', 'rad', 'mm', 'cm', 'n', 'ratio', 'jours', 'hex'}
+ANGLES = {'deg', 'rad'}
+REPERES = {'axe', 'plan', 'horizontale', 'tige', 'piece'}   # SCHEMA §2 : a quoi se mesure un angle (W3)
+ECARTS = {'confirme', 'divergence', 'budget'}              # SCHEMA §2 : ecart type (W13)
+HEX = re.compile(r'^#[0-9a-fA-F]{6}$')
+LIGNE = re.compile(r'^((?:app|pilote|demo|lab)/[\w./-]+\.js):(\d+)$')   # code "const" : la ligne ou la constante est ecrite en dur (W4)
+V_KEYS = {'v', 'plage', 'unite', 'n', 'methode', 'photos', 'conf', 'ref', 'code', 'retenu', 'ecart', 'note', 'repere', 'ligne'}
+GROUPES = {'tete': {'perianthe', 'coeur', 'receptacle', 'bouton', 'bractee', 'calice'}, 'plante': {'tige', 'pedicelle', 'feuille'}}
+GROUPES['tout'] = GROUPES['tete'] | GROUPES['plante']
 STADES_OBLIGATOIRES = ['bouton', 'gonfle', 'entrouvert', 'ouvert', 'plein', 'declin', 'fane']
 STATUTS = {'mesure', 'hypothese'}
 ROLE_RUBRIQUES = {   # rubriques qui s'appliquent a chaque role (proposition de ce controle : le SCHEMA §4 dit « celles qui s'appliquent » sans les lister)
@@ -243,11 +255,16 @@ def check_v(path, v, photos, errs, warns):
     if v.get('v') is None and m != 'hypothese': errs.append("%s : v nul exige methode « hypothese »" % path)
     if v.get('conf') not in CONFS: errs.append("%s : conf %r (A, B, C ou D)" % (path, v.get('conf')))
     u = v.get('unite')
-    if u is not None and u not in UNITES:
-        if u in UNITES_HORS_SCHEMA:
-            if u not in warns_seen:
-                warns.append("unite %r (ex. %s) hors SCHEMA §2 : à ajouter au schéma ou à remplacer" % (u, path)); warns_seen.add(u)
-        else: errs.append("%s : unite %r inconnue" % (path, u))
+    if u is not None and u not in UNITES: errs.append("%s : unite %r inconnue (SCHEMA §2 : %s)" % (path, u, ', '.join(sorted(UNITES))))
+    if u in ANGLES:   # W3 : un angle dit a quoi il se mesure
+        if v.get('repere') not in REPERES: errs.append("%s : angle sans `repere` valide (%r ; attendu %s)" % (path, v.get('repere'), ', '.join(sorted(REPERES))))
+    elif 'repere' in v: warns.append("%s : `repere` sur une valeur qui n'est pas un angle" % path)
+    if u == 'hex':   # W6 : une couleur, ou une liste de couleurs ; la plage = les mesures par photo
+        hv = v.get('v')
+        if hv is not None and not all(isinstance(x, str) and HEX.match(x) for x in (hv if isinstance(hv, list) else [hv])):
+            errs.append("%s : unite hex mais v n'est pas #rrggbb (%r)" % (path, hv))
+        if v.get('plage') is not None and not all(isinstance(x, str) and HEX.match(x) for x in v['plage']):
+            errs.append("%s : unite hex mais la plage n'est pas une liste de #rrggbb" % path)
     pl = v.get('plage')
     if pl is not None and not (isinstance(pl, list) and len(pl) >= 2): errs.append("%s : plage doit etre une liste de 2 valeurs ou plus" % path)
     if 'n' in v and not (isinstance(v['n'], int) and v['n'] >= 0): errs.append("%s : n doit etre un entier" % path)
@@ -259,13 +276,25 @@ def check_v(path, v, photos, errs, warns):
                 if k not in photos: errs.append("%s : photo %s absente du registre" % (path, k))
     if 'code' in v and not isinstance(v['code'], str): errs.append("%s : code doit etre une chaine" % path)
     if isinstance(v.get('code'), str) and 'retenu' not in v: errs.append("%s : `code` sans `retenu`" % path)
+    if v.get('code') == 'const':   # W4 : constante en dur dans une fonction : son fichier et sa ligne, relus au point 3
+        if not LIGNE.match(str(v.get('ligne') or '')): errs.append("%s : code « const » sans `ligne` « app/<fichier>.js:<n> » (%r)" % (path, v.get('ligne')))
+    elif 'ligne' in v: warns.append("%s : `ligne` sans code « const »" % path)
+    e = v.get('ecart')
+    if e is not None:   # W13 : {type: confirme | divergence | budget, texte}
+        if not isinstance(e, dict): errs.append("%s : ecart non type (attendu {\"type\": %s, \"texte\": ...})" % (path, ' | '.join(sorted(ECARTS))))
+        else:
+            if e.get('type') not in ECARTS: errs.append("%s : ecart.type %r (attendu %s)" % (path, e.get('type'), ', '.join(sorted(ECARTS))))
+            if not (isinstance(e.get('texte'), str) and e['texte'].strip()): errs.append("%s : ecart sans `texte`" % path)
     if m == 'code' and v.get('conf') not in ('C', 'D'): warns.append("%s : methode code avec confiance %s" % (path, v.get('conf')))
     if m == 'hypothese' and v.get('conf') != 'D': warns.append("%s : hypothese avec confiance %s (attendu D)" % (path, v.get('conf')))
-    if m in ('segmente', 'mesure-echelle') and not v.get('photos'): errs.append("%s : %s sans photo" % (path, m))
+    if m in MESURES and not v.get('photos'): errs.append("%s : %s sans photo" % (path, m))
     if m == 'reference' and not (v.get('ref') or v.get('photos')): errs.append("%s : reference sans `ref`" % path)
 
 
-warns_seen = set()
+def ecart_txt(e):
+    return '[%s] %s' % (e.get('type'), e.get('texte')) if isinstance(e, dict) else str(e)
+
+
 
 
 # ------------------------------------------------------------------------------------------------------------------ 2. provenance
@@ -318,9 +347,29 @@ def nums(x):
     return None
 
 
+NUM = re.compile(r'(?<![\w.])(?:\d+\.\d*|\.\d+|\d+)(?:[eE][-+]?\d+)?')
+
+
+def read_const(v):
+    """code "const" (W4): the numbers of `retenu` must be written on the line `ligne` (app/<file>.js:<n>) of the copy; {ok, v} like fiche_eval.js"""
+    m = LIGNE.match(str(v.get('ligne') or ''))
+    if not m: return {'ok': False, 'err': 'ligne mal formee %r' % v.get('ligne')}
+    fp, n = os.path.join(ROOT, m.group(1)), int(m.group(2))
+    if not os.path.exists(fp): return {'ok': False, 'err': 'fichier %s absent' % m.group(1)}
+    lines = open(fp, encoding='utf-8', errors='replace').read().split('\n')
+    if not 1 <= n <= len(lines): return {'ok': False, 'err': 'ligne %d hors du fichier (%d lignes)' % (n, len(lines))}
+    found = [abs(float(x)) for x in NUM.findall(lines[n - 1])]
+    want = nums(v.get('retenu'))
+    if not want: return {'ok': False, 'err': 'code « const » : retenu sans nombre'}
+    miss = [x for x in want if not any(abs(abs(x) - y) <= 1e-9 * (1 + y) for y in found)]
+    if miss: return {'ok': False, 'err': 'constante %s absente de %s (le code a bougé : corriger `ligne`)' % (', '.join('%g' % x for x in miss), v['ligne'])}
+    return {'ok': True, 'v': v.get('retenu')}
+
+
 def check_code(f, errs, warns):
     vs = [(p, v) for blk, name in ((f['organes'], 'organes'), (f['varietes'], 'varietes'), (f['stades'], 'stades')) for p, v in walk_vs(blk, [name])]
-    coded = [(p, v) for p, v in vs if isinstance(v.get('code'), str)]
+    coded = [(p, v) for p, v in vs if isinstance(v.get('code'), str) and v['code'] != 'const']
+    consts = [(p, v) for p, v in vs if v.get('code') == 'const']
     nopath = [(p, v) for p, v in vs if v['methode'] == 'code' and not isinstance(v.get('code'), str)]
     exprs = sorted({v['code'] for p, v in coded})
     try:
@@ -335,9 +384,9 @@ def check_code(f, errs, warns):
         if pl and all(is_num(x) for x in pl) and not v.get('ecart'):
             vn = nums(v.get('v'))
             if vn and (min(vn) < min(pl) - 1e-9 or max(vn) > max(pl) + 1e-9): plage_v.append(('/'.join(p), v['v'], pl))
-    for p, v in coded:
+    for p, v in coded + consts:
         path = '/'.join(p)
-        live = r['values'][v['code']]
+        live = read_const(v) if v['code'] == 'const' else r['values'][v['code']]
         if not live['ok']:
             noeval.append((path, v['code'], live['err'])); continue
         if not same(v.get('retenu'), live['v']): mism.append((path, v['code'], v.get('retenu'), live['v']))
@@ -356,8 +405,29 @@ def check_code(f, errs, warns):
     for p, v in vs:
         if v.get('ecart') and (isinstance(v.get('code'), str) or v.get('plage')):
             declared.append(('/'.join(p), v['ecart']))
-    return dict(coded=len(coded), exprs=len(exprs), nopath=['/'.join(p) for p, v in nopath], mism=mism, plage_v=plage_v, plage_r=plage_r, v_vs_r=v_vs_r, noeval=noeval,
+    return dict(coded=len(coded) + len(consts), consts=len(consts), exprs=len(exprs), nopath=['/'.join(p) for p, v in nopath], mism=mism, plage_v=plage_v, plage_r=plage_r, v_vs_r=v_vs_r, noeval=noeval,
                 declared=declared, load=load)
+
+
+def numeric(x):
+    """a value the drawing must carry: a number, a list of numbers, or a law / profile (lists of numbers)"""
+    if is_num(x): return True
+    if isinstance(x, list) and x:
+        return all(is_num(y) or (isinstance(y, list) and y and all(is_num(z) for z in y)) for y in x)
+    return False
+
+
+def unlinked(f, groupe):
+    """--lien tete|plante|tout: the numeric values of the drawn organs of that group with neither `code` (an expression, or "const" + `ligne`)
+    nor a typed `ecart`: the fiche is not tied to the drawing there (pipe.py, end of forme and plante)"""
+    roles, out = GROUPES[groupe], []
+    for oname, o in (f.get('organes') or {}).items():
+        if not isinstance(o, dict) or o.get('role') not in roles or o.get('dessinee') is False:
+            continue
+        for p, v in walk_vs(o, [oname]):
+            if numeric(v.get('v')) and not isinstance(v.get('code'), str) and not v.get('ecart'):
+                out.append('/'.join(p))
+    return out
 
 
 # ------------------------------------------------------------------------------------------------------------------ 4. couverture
@@ -391,6 +461,7 @@ def main():
     ap.add_argument('sid')
     ap.add_argument('--no-code', action='store_true', help="ne pas evaluer les expressions `code` (pas de node)")
     ap.add_argument('--quiet', action='store_true', help="n'imprime que les erreurs et la synthese")
+    ap.add_argument('--lien', choices=sorted(GROUPES), help="chaque valeur chiffree des organes dessines du groupe porte `code` ou `ecart` (fin de forme : tete ; fin de plante : tout)")
     a = ap.parse_args()
     try: sys.stdout.reconfigure(encoding='utf-8')
     except Exception: pass
@@ -444,6 +515,7 @@ def main():
         else:
             ld = c['load']
             out('\n[3] CODE : %d expressions évaluées pour %d valeurs (application chargée : %d fichiers, %s)' % (c['exprs'], c['coded'], ld.get('files', 0), 'sans erreur' if not ld.get('failed') else '%d erreur(s)' % len(ld['failed'])))
+            out('  constantes en dur relues à leur ligne (code « const ») : %d' % c['consts'])
             out('  valeurs « code » sans chemin évaluable (constante en dur dans une fonction) : %d' % len(c['nopath']))
             if not a.quiet:
                 for p in c['nopath']: out('    - ' + p)
@@ -457,7 +529,9 @@ def main():
             show('expressions non évaluables', c['noeval'], lambda x: '%s : %s -> %s' % x)
             out('  écarts DÉCLARÉS (divergences connues, avec `ecart` écrit) : %d' % len(c['declared']))
             if not a.quiet:
-                for p, e in c['declared']: out('    ~ %s\n        %s' % (p, e if len(e) < 300 else e[:297] + '...'))
+                for p, e in c['declared']:
+                    e = ecart_txt(e)
+                    out('    ~ %s\n        %s' % (p, e if len(e) < 300 else e[:297] + '...'))
             for lst, t in ((c['mism'], 'retenu != code'), (c['plage_v'], 'v hors plage'), (c['plage_r'], 'code hors plage'), (c['v_vs_r'], 'v != code'), (c['noeval'], 'expression non évaluable')):
                 for x in lst: errs.append('code : %s : %s' % (t, x[0]))
             code_ok = not (c['mism'] or c['plage_v'] or c['plage_r'] or c['v_vs_r'] or c['noeval'])
@@ -488,8 +562,27 @@ def main():
     out('    stades : %s' % ', '.join('%s=%s' % (r['stade'], r['statut']) for r in rows))
     out('    questions ouvertes : %d' % len(f.get('questions', [])))
 
+    # 5 (--lien): the fiche tied to the drawing
+    nl = None
+    if a.lien:
+        ul = unlinked(f, a.lien)
+        nl = len(ul)
+        out('\n[5] LIEN fiche -> code (%s : %s) : %d valeur(s) chiffrée(s) sans `code` ni `ecart`' % (a.lien, ', '.join(sorted(GROUPES[a.lien])), nl))
+        for x in ul[:40]: out('    ! ' + x)
+        if nl > 40: out('    ... et %d autres' % (nl - 40))
+        errs.extend('lien : %s sans code ni ecart' % x for x in ul)
+
     nerr = len(errs)
     out('\n=> %s (%d erreur(s), %d avertissement(s))' % ('VALIDE' if nerr == 0 else 'NON VALIDE', nerr, len(warns)))
+    # one JSON line last (read by pipe.py): the counts of the fiche
+    meth = Counter(v.get('methode') for _, v in walk_vs(f['organes'], []))
+    nvo = sum(meth.values())
+    ecs = Counter(v['ecart'].get('type') for blk in (f['organes'], f['varietes'], f['stades']) for _, v in walk_vs(blk, []) if isinstance(v.get('ecart'), dict))
+    out(json.dumps({'fiche': a.sid, 'valide': nerr == 0, 'erreurs': nerr, 'avertissements': len(warns), 'valeurs': nvo,
+                    'mesures': sum(meth[m] for m in MESURES), 'code': meth['code'], 'code_pct': round(100 * meth['code'] / max(1, nvo), 1),
+                    'hypothese': meth['hypothese'], 'photos': len(f.get('photos') or {}),
+                    'roles': sorted({o.get('role') for o in f['organes'].values() if isinstance(o, dict) and o.get('role')}),
+                    'ecarts': dict(ecs), 'non_relies': nl}, ensure_ascii=False))
     return 0 if nerr == 0 else 1
 
 

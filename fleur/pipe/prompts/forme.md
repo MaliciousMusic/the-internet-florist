@@ -2,7 +2,7 @@ Tu modèles la FORME de la tête de la sorte <<sid>> (<<taxon>>, genre <<genus>>
 SKU du bouquet : <<skus>>. Dossier de travail = cette copie. Interdits : 3D, images incorporées, rubans, nœuds, bulbe, racine, terre. Pas de commit ni de fusion. Ports 8765 et 8766 interdits : les rendus passent par fleur/shot_p.sh.
 
 OBLIGATOIRE avant tout dessin : lis EN ENTIER <<rc>>/ref/BONNES-PRATIQUES.md (Read, sans offset ni limit) ; au relais, relis-la en entier. Chacune de ses règles se vérifie sur une planche ou par un chiffre.
-Puis, dans cet ordre, rien d'autre de long : <<rc>>/brief.md ; <<rc>>/coloris.md ; <<rc>>/kept.jpg (Read, une fois) ; fleur/KIT.md (le code seulement pour ce qu'il ne dit pas) ; <<rc>>/ref/STANDARD-RENDU-4bis.md ; <<rc>>/targets.json s'il existe ; fleur/FIT.md (format de space.json).
+Puis, dans cet ordre, rien d'autre de long : <<fiche>> (la fiche morphologique : le dessin se règle d'après ses valeurs et leurs plages) ; <<rc>>/brief.md ; <<rc>>/coloris.md ; <<rc>>/kept.jpg (Read, une fois) ; fleur/KIT.md (le code seulement pour ce qu'il ne dit pas) ; <<rc>>/ref/STANDARD-RENDU-4bis.md ; <<rc>>/targets.json s'il existe ; fleur/FIT.md (format de space.json).
 
 Pièges connus, à éviter dès la v1 (règles de BONNES-PRATIQUES entre parenthèses) :
 - pétales transparents, contour ou pièce de derrière visible à travers, surtout sur les blancs et les crèmes (3.1, 3.3, 3.7) ;
@@ -16,6 +16,7 @@ Tu produis :
 1. app/y-<genre en minuscules>.js (ou la fiche déjà faite de la sorte) : les gènes, la matière de chaque coloris de coloris.md (id identique ; coloris nouveaux avec late:<<late>> ; un cultivar sous marque n'affiche jamais son nom), le cœur propre à l'espèce, seulement les réglages qui diffèrent de SVB_DEF, SV_HEAD['<<sid>>'], GHI['<<sid>>'].wilt. mkapp.sh, mkqa.sh et mkpl.sh prennent d'eux-mêmes app/y3-*.js, y-*.js et yz-*.js : n'y inscris rien (le fichier serait chargé deux fois). Imite anemFlower/anemPlant (app/s10a.js) et la fiche de l'anémone (app/y2.js).
 2. <<kit>>
 3. <<rc>>/space.json (format de fleur/FIT.md) : les réglages libres qui font la silhouette et les angles par stade, avec min, max, step, x0 et les liens. fit.py les ajustera sur les cibles ; pas les couleurs.
+4. <<fiche>> reliée au dessin : kit.defauts et kit.spec (le P de la tête) ; pour chaque valeur chiffrée des organes de la tête, `code` (expression évaluable, ou "const" avec `ligne` "app/<fichier>.js:<n>" pour une constante en dur) et `retenu` (la valeur du code), ou un `ecart` typé {"type": "confirme"|"divergence"|"budget", "texte": "..."}. Contrôle : python fleur/fiche.py check <<sid>> --lien tete finit par VALIDE.
 
 Famille <<family>>. Si c'est une grappe (panicule, thyrse, racème) : la tête est l'inflorescence ENTIÈRE ; targets.json donne sa silhouette en rapports (ouverte.hw, .taper, .fill, face.lab.corps) ; mesure ton dessin pareil : python fleur/portwrap_p.py fleur/fit.py targets <<sid>> --render --space <<rc>>/space.json --family grappe --out <<rc>>/t-dessin.json, puis python fleur/fit.py cmp <<rc>>/targets.json <<rc>>/t-dessin.json.
 

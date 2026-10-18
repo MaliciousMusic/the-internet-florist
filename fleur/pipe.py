@@ -23,7 +23,7 @@ sys.stdout.reconfigure(encoding='utf-8', errors='replace')
 HERE = os.path.dirname(os.path.abspath(__file__))
 MAIN = 'C:/Users/agent/Desktop/flower/flower-atelier'  # the shared atelier: gate, locks, servers (never modified here)
 FC = 'C:/Users/agent/Desktop/flower/flower-atelier'    # the-internet-florist: standards read in docs/, sheets copied to catalogue/serre
-STEPS = ['census', 'refs', 'coloris', 'targets', 'forme', 'fit', 'plante', 'finition', 'comparaison', 'juge', 'temoins', 'qa', 'planches']
+STEPS = ['census', 'refs', 'coloris', 'targets', 'fiche', 'forme', 'fit', 'plante', 'finition', 'comparaison', 'juge', 'temoins', 'qa', 'planches']
 MODELS = {'haiku': 'claude-haiku-5-5', 'sonnet': 'claude-sonnet-5-5', 'opus': 'claude-opus-5-5'}
 W = {'in': 1, 'cw': 1.25, 'cr': .1, 'out': 5}  # Opus input-equivalent weights (bill.py)
 M = {'opus': 1, 'sonnet': .6, 'haiku': .2}
@@ -287,6 +287,7 @@ class Ctx:
         self.rel_url = fwd(os.path.relpath(self.ch, MAIN)) if fwd(self.ch).startswith(MAIN) else ''  # ch/outils, in the server's URLs
         self.lock_opus = None
         self.reads = {}  # step -> the files the model calls of that step opened with Read (normalised paths)
+        self.cmds = {}   # step -> the Bash commands the model calls of that step ran (the fiche check counts its measuring tools)
         os.makedirs(self.rc + '/pipe-logs', exist_ok=True)
 
     def url(self, path, main=False):
@@ -511,9 +512,11 @@ def call_model(ctx, step, tag, model, prompt, tools, turns=None, effort='default
     sub = (r or {}).get('subtype') or ('timeout' if timed else 'no-result')
     reads = [ctx.npath(i.get('file_path') or i.get('path')) for n, i in st['tools'] if n == 'Read' and isinstance(i, dict) and (i.get('file_path') or i.get('path'))]
     ctx.reads.setdefault(step, set()).update(reads)
+    cmds = [str(i.get('command') or '') for n, i in st['tools'] if n == 'Bash' and isinstance(i, dict)]
+    ctx.cmds.setdefault(step, []).extend(cmds)
     out = {'ok': bool(r) and not r.get('is_error'), 'final': parse_final(text), 'text': text, 'subtype': sub, 'maxturns': sub == 'error_max_turns', 'timeout': timed,
            'eq': eq, 'turns': (r or {}).get('num_turns', len(st['order'])), 'ctx_peak': st['peak'], 'denials': len((r or {}).get('permission_denials') or []),
-           'reads': reads, 'tools': [n for n, i in st['tools']]}
+           'reads': reads, 'tools': [n for n, i in st['tools']], 'bash': cmds}
     ctx.bill.add(dict(row_u, step=step, tag=tag, model=model, eq=round(eq), usd=(r or {}).get('total_cost_usd'), turns=out['turns'], dur=round(dur), ctx_peak=st['peak'],
                       denials=out['denials'], ok=out['ok'], subtype=sub, ts=now(), log=os.path.basename(logp), tools=','.join(builtin), effort=eff or ''))
     say('  [%s/%s] %s %d turns, eq %.0f k, context peak %d k, %d s, %s%s' % (step, tag, model, out['turns'], eq / 1e3, st['peak'] / 1e3, dur, sub,
@@ -1275,6 +1278,136 @@ def step_targets(ctx):
     return {'status': 'done' if ok else 'failed', 'msg': msg, 'checks': checks}
 
 
+# ---------------------------------------------------------------------------------------------------------------- fiche (P15)
+
+SCHEMA_REL = 'catalogue/serre/methode/fiche/SCHEMA.md'
+FICHE_MAX_CODE = 30          # % of the organ values with methode "code" at the fiche step (AUDIT-V4 P15)
+FICHE_MIN_MESURES = 8        # organ values measured on the kept photos (segmente, mesure-echelle, regle)
+FICHE_MIN_CMDS = 3           # measuring commands run by the step (organ.py, img.py pair, fit.py targets, refs.py ring/pal/auto)
+FICHE_ROLES = ('perianthe', 'bouton', 'tige', 'feuille')
+MEASURE_RE = re.compile(r'fleur/(?:organ\.py\s+(?:stem|leaf|head)|img\.py\s+pair|fit\.py\s+targets|refs\.py\s+(?:ring|pal|auto))\b')
+
+
+def fiche_rel(ctx):
+    return 'catalogue/serre/fiches/%s.json' % ctx.sid
+
+
+def sha8(s):
+    return hashlib.sha1(s.encode('utf-8')).hexdigest()[:8]
+
+
+def kept_registry(ctx):
+    """{fiche photo key: registry entry} of the kept photos (keep.json + cands.json): key <sid>:<sha1 of the image URL>[:8] (SCHEMA §3)"""
+    K = jload(ctx.rc + '/keep.json', []) or []
+    C = jload(ctx.rc + '/cands.json', []) or []
+    out = {}
+    for x in K:
+        i = int(x.get('i', -1))
+        img = (C[i].get('thumb') if 0 <= i < len(C) else None) or ''
+        src, frm = (img, 'url_image') if img else (x.get('page') or x.get('title') or '', 'url')
+        vu = VU_RE.search(x.get('m') or '')
+        out['%s:%s' % (ctx.sid, sha8(src))] = {
+            'titre': x.get('title'), 'auteur': x.get('author'), 'licence': x.get('lic'), 'url': x.get('page'), 'url_image': img or None,
+            'local': '%srefcache/%s/t%03d.jpg' % (ctx.rel_url + '/' if ctx.rel_url else '', ctx.sid, i), 'tags': x.get('tags') or [],
+            'vu': (vu.group(1).strip() if vu else x.get('m') or ''), 'echelle': None, 'cle_depuis': frm, 'local_index': i}
+    return out
+
+
+def fiche_skeleton(ctx):
+    """catalogue/serre/fiches/<sid>.json: written once with its photo registry (the kept photos); later runs add the photos kept since, never
+    remove what the step wrote. Returns 'new' | 'updated' | 'same'"""
+    p = '%s/%s' % (ctx.ch, fiche_rel(ctx))
+    reg = kept_registry(ctx)
+    f = jload(p, None)
+    if ctx.dry:
+        say('  [dry] fiche %s: %s, %d kept photos in its registry' % (fiche_rel(ctx), 'present' if f else 'skeleton to write', len(reg)))
+        return 'dry'
+    if f is None:
+        heads = sv_heads(ctx)
+        f = {'schema': 'fiche-morpho/1', 'sid': ctx.sid, 'nom': '', 'taxon': {'genre': ctx.genus, 'espece': ctx.taxon, 'groupe': ctx.st.get('group') or ''},
+             'kit': {'moteur': (os.path.basename(ctx.st.get('kit') or '') or 'à définir par le modeleur'), 'module': heads.get(ctx.sid) or 'app/y-%s.js' % slug(ctx.genus)},
+             'etat': {'date': now()[:10], 'auteur': 'pipe.py (squelette), puis l\'étape fiche', 'note': 'Registre des photos posé d\'après keep.json (photos regardées).'},
+             'photos': reg, 'organes': {}, 'varietes': {}, 'stades': {'table': []}, 'rendu': {}, 'questions': []}
+        state = 'new'
+    else:
+        add = {k: v for k, v in reg.items() if k not in (f.get('photos') or {})}
+        if not add:
+            return 'same'
+        f.setdefault('photos', {}).update(add)
+        state = 'updated'
+    os.makedirs(os.path.dirname(p), exist_ok=True)
+    with open(p, 'w', encoding='utf-8', newline='\n') as fo:
+        fo.write(json.dumps(f, ensure_ascii=False, indent=1) + '\n')
+    return state
+
+
+def fiche_check(ctx, lien=None, tag='fiche-check'):
+    """python fleur/fiche.py check <sid> [--lien]: (exit code, the JSON summary line or {}, the text)"""
+    cmd = [sys.executable, 'fleur/fiche.py', 'check', ctx.sid, '--quiet'] + (['--lien', lien] if lien else [])
+    c, t = run_cmd(ctx, cmd, tag, timeout=600, quiet=True)
+    return c, (last_json(t) or {}) if not ctx.dry else {}, t
+
+
+def fiche_cmds(ctx):
+    """the measuring commands of the fiche calls (Bash), kept across calls and resumptions in fiche-mesures.json"""
+    p = ctx.rc + '/fiche-mesures.json'
+    seen = jload(p, []) or []
+    seen += [c[:2000] for c in ctx.cmds.get('fiche', []) if MEASURE_RE.search(c)]
+    seen = list(dict.fromkeys(seen))
+    if not ctx.dry:
+        jsave(p, seen)
+    return sum(len(MEASURE_RE.findall(c)) for c in seen)
+
+
+def check_fiche(ctx):
+    """P15: fiche.py check exits 0; under 30 % of "code" values; at least 8 values measured on photos with the measuring tools run in the step;
+    the roles perianthe, bouton, tige, feuille described; only kept photos in its registry"""
+    why = []
+    p = '%s/%s' % (ctx.ch, fiche_rel(ctx))
+    if not os.path.exists(p) and not ctx.dry:
+        return False, '%s missing' % fiche_rel(ctx)
+    c, s, t = fiche_check(ctx)
+    if ctx.dry:
+        return True, ''
+    if c != 0 or not s.get('valide'):
+        errs = [ln.strip() for ln in t.splitlines() if 'ERREUR' in ln or ln.strip().startswith('!')][:6]
+        why.append('fiche.py check: %s (%s)' % ('NON VALIDE' if s else 'no summary, exit %d' % c, '; '.join(errs) or (t.strip().splitlines() or [''])[-1][:120]))
+    if s:
+        if s.get('code_pct', 100) >= FICHE_MAX_CODE:
+            why.append('%s %% of the values are "code" (under %d %% wanted: measure them)' % (s.get('code_pct'), FICHE_MAX_CODE))
+        if s.get('mesures', 0) < FICHE_MIN_MESURES:
+            why.append('%d values measured (segmente, mesure-echelle, regle), %d wanted' % (s.get('mesures', 0), FICHE_MIN_MESURES))
+        miss = [r for r in FICHE_ROLES if r not in (s.get('roles') or [])]
+        if miss:
+            why.append('roles not described: ' + ', '.join(miss))
+    n = fiche_cmds(ctx)
+    if n < FICHE_MIN_CMDS:
+        why.append('%d measuring commands run in the step (organ.py stem|leaf|head, img.py pair, fit.py targets, refs.py ring|pal|auto): %d wanted' % (n, FICHE_MIN_CMDS))
+    f = jload(p, {}) or {}
+    kept = set(kept_registry(ctx))
+    foreign = sorted(k for k in (f.get('photos') or {}) if k not in kept)
+    if foreign:
+        why.append('photos not kept (keep.json) in the registry: ' + ', '.join(foreign[:6]))
+    return (not why), '; '.join(why)
+
+
+def step_fiche(ctx):
+    ensure_docs(ctx)
+    if not have(ctx, 'fleur/fiche.py'):
+        return {'status': 'skipped', 'msg': 'fleur/fiche.py not delivered yet'}
+    st = fiche_skeleton(ctx)
+    tools = READ + ['Write', 'Edit'] + SAFE_BASH
+    res, fin = model_loop(ctx, 'fiche', 'fiche', 'sonnet', tools, int(getattr(ctx.a, 'relays', 4) or 4), lambda: check_fiche(ctx),
+                          extra={'fiche': fiche_rel(ctx), 'schema': SCHEMA_REL}, must_read=[SCHEMA_REL])
+    if res == 'blocked':
+        raise StepFailed('fiche blocked: %s' % (fin.get('question') or fin.get('note') or fin))
+    ok, why = check_fiche(ctx)
+    c, s, t = fiche_check(ctx) if not ctx.dry else (0, {}, '')
+    return {'status': 'done' if res == 'done' and ok else 'failed', 'checks': s,
+            'msg': 'fiche %s (%s): %s%s' % (res, st, ', '.join('%s %s' % (k, s[k]) for k in ('valeurs', 'mesures', 'code_pct', 'hypothese', 'photos') if k in s) or 'dry',
+                                          '' if ok else '; check: ' + why)}
+
+
 # ---------------------------------------------------------------------------------------------------------------- Opus / Sonnet loops
 
 LOCKED = ('forme', 'fit', 'plante', 'finition', 'comparaison', 'juge', 'temoins', 'qa', 'planches')  # they edit, rebuild, render or judge the copy: one at a time
@@ -1376,6 +1509,16 @@ def check_forme(ctx, space='space.json'):
         c2, t2 = run_cmd(ctx, [sys.executable, 'pilote/mksv.py'], 'build-sv', timeout=600, quiet=True)
         if c1 or c2:
             why.append('build failed: ' + (t1 if c1 else t2).strip().splitlines()[-1][:120])
+    # P15: the fiche tied to the drawing (fiche.py point 3: code/retenu as in the code, or a typed ecart); head values at forme, all at plante
+    lien = 'tete' if space == 'space.json' else 'tout'
+    if not why and have(ctx, 'fleur/fiche.py'):
+        if not have(ctx, fiche_rel(ctx)) and not ctx.dry:
+            why.append('%s missing (step fiche)' % fiche_rel(ctx))
+        else:
+            c, s, t = fiche_check(ctx, lien, 'fiche-lien-' + lien)
+            if c and not ctx.dry:
+                bad = [ln.strip() for ln in t.splitlines() if ln.strip().startswith('!') or 'ERREUR' in ln][:6]
+                why.append('fiche.py check --lien %s: %d error(s), %s unlinked (%s)' % (lien, s.get('erreurs', -1), s.get('non_relies', '?'), '; '.join(bad)))
     return (not why), '; '.join(why)
 
 
@@ -1384,7 +1527,7 @@ def step_forme(ctx):
     witness_before(ctx)  # the SKU dump and the kit sorts' sheets BEFORE the modeller touches app/ (compared at temoins)
     tools = READ + ['Write', 'Edit'] + SAFE_BASH
     res, fin = model_loop(ctx, 'forme', 'forme', 'opus', tools, int(getattr(ctx.a, 'relays', 4)), lambda: check_forme(ctx),
-                          extra={'kit': kit_text(ctx)}, must_read=[bp_rel(ctx)])
+                          extra={'kit': kit_text(ctx), 'fiche': fiche_rel(ctx)}, must_read=[bp_rel(ctx), fiche_rel(ctx)])
     if res == 'blocked':
         raise StepFailed('forme blocked by the modeller: %s' % (fin.get('question') or fin.get('note') or fin))
     ok, why = check_forme(ctx)
@@ -1432,7 +1575,7 @@ def step_fit(ctx, part='forme'):
 def step_plante(ctx):
     ensure_docs(ctx)
     res, fin = model_loop(ctx, 'plante', 'plante', 'opus', READ + ['Write', 'Edit'] + SAFE_BASH, int(getattr(ctx.a, 'relays', 4)), lambda: check_forme(ctx, 'space-plante.json'),
-                          must_read=[bp_rel(ctx)])
+                          extra={'fiche': fiche_rel(ctx)}, must_read=[bp_rel(ctx)])
     if res == 'blocked':
         raise StepFailed('plante blocked by the modeller: %s' % (fin.get('question') or fin.get('note') or fin))
     if res != 'done':
@@ -2211,7 +2354,7 @@ def step_planches(ctx):
     return {'status': 'done', 'msg': 'copied to %s: %s' % (dest, ', '.join(got) or 'dry')}
 
 
-STEPFN = {'census': step_census, 'refs': step_refs, 'coloris': step_coloris, 'targets': step_targets, 'forme': step_forme, 'fit': step_fit,
+STEPFN = {'census': step_census, 'refs': step_refs, 'coloris': step_coloris, 'targets': step_targets, 'fiche': step_fiche, 'forme': step_forme, 'fit': step_fit,
           'plante': step_plante, 'finition': step_finition, 'comparaison': step_comparaison, 'juge': step_juge, 'temoins': step_temoins, 'qa': step_qa,
           'planches': step_planches}
 
@@ -2219,8 +2362,8 @@ STEPFN = {'census': step_census, 'refs': step_refs, 'coloris': step_coloris, 'ta
 # ---------------------------------------------------------------------------------------------------------------- the commands
 
 COMMON_KEYS = {'sid', 'taxon', 'genus', 'family', 'rc', 'skus', 'ch', 'late'}
-PROMPT_KEYS = {'census': {'n', 'batch', 'verdict'}, 'refs': {'task', 'sheets', 'missing'}, 'brief': set(), 'coloris': {'n', 'low', 'manual'},
-               'forme': {'relay', 'etat', 'kit'}, 'plante': {'relay', 'etat'}, 'finition': {'relay', 'etat'}, 'fit': {'part', 'space', 'out', 'summary'},
+PROMPT_KEYS = {'census': {'n', 'batch', 'verdict'}, 'refs': {'task', 'sheets', 'missing'}, 'brief': set(), 'coloris': {'n', 'low', 'manual'}, 'fiche': {'relay', 'etat', 'fiche', 'schema'},
+               'forme': {'relay', 'etat', 'kit', 'fiche'}, 'plante': {'relay', 'etat', 'fiche'}, 'finition': {'relay', 'etat'}, 'fit': {'part', 'space', 'out', 'summary'},
                'comparaison': {'relay', 'etat', 'pairs', 'ko', 'refaire'}, 'juge': {'pairs', 'table', 'prev'}}
 
 
@@ -2487,7 +2630,7 @@ def cmd_selftest(a):
         t('bill row = usage of the call', rows and (rows[0]['in'], rows[0]['cw'], rows[0]['cr'], rows[0]['out']) == (10, 1000, 2000, 100) and rows[0]['eq'] == 392, str(rows[:1]))
         t('denials counted', rows[1]['denials'] == 1)
         seq('blocked')
-        res, fin = model_loop(ctx, 'forme', 'forme', 'haiku', ['Read'], 3, lambda: (True, ''), extra={'kit': '-'})
+        res, fin = model_loop(ctx, 'forme', 'forme', 'haiku', ['Read'], 3, lambda: (True, ''), extra={'kit': '-', 'fiche': '-'})
         t('blocked is reported', res == 'blocked' and fin.get('question') == 'which one?')
         seq('crash')
         r = call_model(ctx, 'x', 'crash', 'haiku', 'hi', ['Read'])
@@ -2817,6 +2960,87 @@ def cmd_selftest(a):
         except StepFailed:
             t('planches: no catalogue sheet for a sort the judge refused', True)
         t('table_rows: the key is the first cell, the header and the rule are skipped', set(table_rows(ctx3.rc + '/etat-comparaison.md')) == set(KEYS) | {'paire'})
+        # ---- outils-v4b, P15: the morphological fiche in the chain
+        t('fiche: a step between targets and forme', STEPS.index('targets') < STEPS.index('fiche') == STEPS.index('forme') - 1)
+        root = fwd(os.path.dirname(HERE))
+        fx = tmp + '/fx'
+        os.makedirs(fx)
+        K1 = 'fx-a:' + sha8('http://x/1.jpg')
+        V = lambda v, **k: dict({'v': v, 'methode': 'segmente', 'photos': [K1], 'conf': 'C', 'n': 1}, **k)
+
+        def mini(sid, organes):
+            return {'schema': 'fiche-morpho/1', 'sid': sid, 'nom': 'Essai', 'taxon': {'genre': 'Test'}, 'kit': {'moteur': 'svBloom', 'module': 'app/y2.js'},
+                    'photos': {K1.replace('fx-a', sid): {'titre': 'File:1', 'auteur': 'a', 'licence': 'CC BY', 'url': 'http://x/p1', 'url_image': 'http://x/1.jpg',
+                                                         'local': 'refcache/%s/t001.jpg' % sid, 'tags': ['stade:ouvert'], 'vu': 'ouvert', 'echelle': None}},
+                    'organes': organes, 'varietes': {}, 'stades': {'table': [{'stade': s, 'op': 0, 'wl': 0, 'photos': [], 'statut': 'hypothese'}
+                                                                             for s in ('bouton', 'gonfle', 'entrouvert', 'ouvert', 'plein', 'declin', 'fane')]},
+                    'rendu': {}, 'questions': []}
+
+        def fcheck(o, *extra):
+            p_ = '%s/fx-a.json' % fx
+            with open(p_, 'w', encoding='utf-8', newline='\n') as fo:
+                fo.write(json.dumps(mini('fx-a', o), ensure_ascii=False, indent=1))
+            r_ = subprocess.run([sys.executable, 'fleur/fiche.py', 'check', p_, '--quiet'] + list(extra), cwd=root, capture_output=True, timeout=300)
+            return r_.returncode, r_.stdout.decode('utf-8', 'replace')
+        good = {'petale': {'role': 'perianthe', 'courbure': {'pied_deg': V(30, unite='deg', repere='axe')},
+                           'taille': {'rayon': V(.125, unite='R0', code='const', ligne='app/y2.js:86', retenu=.125)}}}
+        c_, o_ = fcheck(good)
+        t('fiche.py: a fiche with an angle frame and a hard-coded constant read at its line is valid', c_ == 0 and '"valide": true' in o_, o_[-600:])
+        bad_ = json.loads(json.dumps(good))
+        del bad_['petale']['courbure']['pied_deg']['repere']
+        c_, o_ = fcheck(bad_)
+        t('fiche.py: an angle without `repere` is refused', c_ == 1 and 'repere' in o_, o_[-300:])
+        bad_ = json.loads(json.dumps(good))
+        bad_['petale']['taille']['rayon']['ecart'] = 'texte libre'
+        c_, o_ = fcheck(bad_)
+        t('fiche.py: a free-text ecart is refused (typed: confirme, divergence, budget)', c_ == 1 and 'ecart non type' in o_, o_[-300:])
+        bad_ = json.loads(json.dumps(good))
+        bad_['petale']['taille']['rayon']['ligne'] = 'app/y2.js:1'
+        c_, o_ = fcheck(bad_)
+        t('fiche.py: a "const" whose number is not on its line is refused (the code moved)', c_ == 1 and 'absente de app/y2.js:1' in o_, o_[-300:])
+        c_, o_ = fcheck(good, '--lien', 'tete')
+        t('fiche.py --lien tete: a head value without code nor ecart is refused', c_ == 1 and 'petale/courbure/pied_deg' in o_ and '"non_relies": 1' in o_, o_[-300:])
+        good['petale']['courbure']['pied_deg']['ecart'] = {'type': 'divergence', 'texte': 'pas encore relié au dessin'}
+        c_, o_ = fcheck(good, '--lien', 'tete')
+        t('fiche.py --lien tete: with a typed ecart it passes', c_ == 0, o_[-300:])
+        r_ = subprocess.run([sys.executable, 'fleur/fiche.py', 'check', 'anemone-coronaria', '--quiet'], cwd=root, capture_output=True, timeout=300)
+        t('fiche.py: the anemone pilot stays valid', r_.returncode == 0, r_.stdout.decode('utf-8', 'replace')[-300:])
+        # the step: registry from keep.json, then the numbers pipe.py adds to fiche.py
+        os.makedirs(tmp + '/fleur', exist_ok=True)
+        for f_ in ('fiche.py', 'fiche_eval.js'):
+            shutil.copyfile('%s/%s' % (HERE, f_), '%s/fleur/%s' % (tmp, f_))
+        open(tmp + '/mkapp.sh', 'w', newline='\n').write('#!/bin/sh\ncat a1.html y-test.js > ../demo7.html\n')
+        ctxF = Ctx('fx-b', tmp, argparse.Namespace(dry=False, cap=40, claude=fake), {'sid': 'fx-b', 'taxon': 'Test test', 'steps': {}, 'skus': []})
+        jsave(ctxF.rc + '/cands.json', [{'title': 'File:%d' % i, 'thumb': 'http://x/%d.jpg' % i, 'page': 'http://x/p%d' % i, 'author': 'a', 'lic': 'CC BY'} for i in range(3)])
+        jsave(ctxF.rc + '/keep.json', [{'i': 0, 'title': 'File:0', 'page': 'http://x/p0', 'author': 'a', 'lic': 'CC BY', 'tags': ['stade:ouvert'], 'm': 'vu: stade=ouvert vue=face'},
+                                       {'i': 2, 'title': 'File:2', 'page': 'http://x/p2', 'author': 'a', 'lic': 'CC BY', 'tags': ['organe:tige'], 'm': 'vu: organe=tige'}])
+        s1_ = fiche_skeleton(ctxF)
+        fb = jload(tmp + '/' + fiche_rel(ctxF), {})
+        k0_, k2_ = 'fx-b:' + sha8('http://x/0.jpg'), 'fx-b:' + sha8('http://x/2.jpg')
+        t('fiche: the skeleton holds the kept photos only, keyed by the sha1 of their image URL', s1_ == 'new' and sorted(fb.get('photos', {})) == sorted([k0_, k2_])
+          and fb['photos'][k2_]['local'] == 'refcache/fx-b/t002.jpg' and fb['photos'][k0_]['vu'] == 'stade=ouvert vue=face', str(fb.get('photos'))[:300])
+        org = {'petale': {'role': 'perianthe', 'taille': {'a': V(.5, photos=[k0_]), 'b': V(.6, photos=[k0_]), 'c': V(.7, photos=[k0_])}},
+               'bouton': {'role': 'bouton', 'taille': {'hw': V(1.4, photos=[k0_]), 'l': V(.3, photos=[k0_])}},
+               'tige': {'role': 'tige', 'section': {'d': V(.05, unite='D', photos=[k2_])}, 'taille': {'l': V(40, unite='cm', photos=[k2_])}},
+               'feuille': {'role': 'feuille', 'contour': {'L_sur_l': V(6, photos=[k2_])}}}
+        fb['organes'] = {'petale': org['petale']}
+        jsave(tmp + '/' + fiche_rel(ctxF), fb)
+        okf, whyf = check_fiche(ctxF)
+        t('fiche: too few measures, roles missing and no measuring command fail the step', not okf and 'values measured' in whyf and 'bouton, tige, feuille' in whyf and 'measuring commands' in whyf, whyf)
+        fb['organes'], fb['stades'] = org, mini('fx-b', {})['stades']
+        jsave(tmp + '/' + fiche_rel(ctxF), fb)
+        ctxF.cmds['fiche'] = ['python -P fleur/organ.py leaf refcache/fx-b/t002.jpg "0,0,9,9" && python -P fleur/organ.py stem refcache/fx-b/t002.jpg "0,0,9,9" | head',
+                              'python fleur/img.py pair refcache/fx-b/t000.jpg "0,0,9,9" fleur/out/a.png "0,0@600"']
+        okf, whyf = check_fiche(ctxF)
+        t('fiche: 8 values measured with 3 measuring commands, the four roles: the step can end', okf, whyf)
+        fb['photos']['fx-b:' + sha8('http://y/9.jpg')] = dict(fb['photos'][k0_], url_image='http://y/9.jpg')
+        jsave(tmp + '/' + fiche_rel(ctxF), fb)
+        okf, whyf = check_fiche(ctxF)
+        t('fiche: a photo that was not kept in the registry fails', not okf and 'not kept' in whyf, whyf)
+        P_f = open('%s/pipe/prompts/fiche.md' % HERE, encoding='utf-8').read()
+        t('prompts: fiche reads SCHEMA in full and runs fiche.py check; forme and plante tie the fiche to the code (--lien)', '<<schema>>' in P_f and 'EN ENTIER' in P_f
+          and 'fiche.py check' in P_f and '--lien tete' in open('%s/pipe/prompts/forme.md' % HERE, encoding='utf-8').read()
+          and '--lien tout' in open('%s/pipe/prompts/plante.md' % HERE, encoding='utf-8').read())
         say('selftest: %d ok, %d failed' % (len(ok), len(bad)))
     finally:
         LOCKS, need_servers, RUN_PAIRS = old_locks, old_ns, old_rp
