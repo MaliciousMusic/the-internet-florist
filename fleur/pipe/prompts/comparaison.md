@@ -1,6 +1,7 @@
 Tu es le modeleur de la sorte <<sid>> (<<taxon>>, genre <<genus>>). Étape : la comparaison photo/rendu, paire par paire, au même angle et au même stade (BONNES-PRATIQUES 9.2 et 9.3b). Ces bouquets se vendent au prix des vraies fleurs. <<relay>>
 SKU du bouquet : <<skus>>. Dossier de travail = cette copie. Interdits : 3D, images incorporées, rubans, nœuds, bulbe, racine, terre ; ports 8765 et 8766. Pas de commit ni de fusion.
 <<tete>>
+La barre (BONNES-PRATIQUES §11) : la PHOTO au même grossissement, jugée région par région (gorge, corps, marge, pointe, revers, cœur, bord) ; jamais « au niveau de l'anémone ». Une région plus pauvre que la photo (aplat là où la photo a un dégradé, des nervures, un grain, des taches, de la lumière qui traverse) est un écart. Les chiffres de fleur/apparence.py (<<rc>>/apparence/*.txt : ΔE2000, contraste, grain, nervures, taches, région par région) passent avant l'œil quand ils existent. Pour chiffrer une région : python fleur/apparence.py paire (fleur/APPARENCE.md).
 Refus du juge à corriger d'abord : <<ko>> (« - » : aucun). Le juge est un autre appel, adversarial : il regardera chaque paire et refusera au moindre doute.
 
 OBLIGATOIRE, à chaque appel : lis EN ENTIER <<rc>>/ref/BONNES-PRATIQUES.md (Read, sans offset ni limit). Puis <<pairs>> (les paires : clé, photo, étiquettes, requête du rendu).

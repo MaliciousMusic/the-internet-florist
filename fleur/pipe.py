@@ -44,6 +44,17 @@ EFFORT = {'haiku': 'low', 'sonnet': 'medium', 'opus': 'high'}  # opus xhigh -> h
 STEP_CAP = {'census': .1, 'refs': .3, 'coloris': .1, 'targets': .05, 'fiche': .25, 'forme': 3.0, 'fit': .2, 'plante': 1.0, 'finition': .8,
             'temoins': .05, 'comparaison': .6, 'juge': .4, 'qa': .1, 'planches': .1}  # comparaison .3 -> .6: one Opus call of 40 turns is .6 (oeillet); refs .15 -> .3, census .2 -> .1: pick + fill + brief run .17 to .27, a census .1 (wave 3)
 CAP_DEFAULT = 8.0
+# Owner, 2026-10-18: « pour la qualité il n'y a aucun plafond ». The steps that make the look of the flower (the photos it is drawn from, the
+# head, its comparison and its judge) are never cut at their share or at the flower's cap: both stay measures (pipe-bill.json), and only a
+# runaway guard of RUNAWAY times the share stops a step whose calls loop. The other steps (bookkeeping, measures, the stem) keep their caps.
+# Owner, same day: « ça prendra toujours moins de tokens d'être parfait direct que de faire des updates »: every step that DESCRIBES or SHAPES
+# the look (the photo pick, the colour measures, the fiche, the stem, the finishing) is an Opus call too, and is a quality step.
+QUALITY_STEPS = ('refs', 'coloris', 'fiche', 'forme', 'fit', 'plante', 'finition', 'comparaison', 'juge')
+RUNAWAY = 4.0
+HEAD_STEPS = ('forme', 'fit', 'comparaison')  # the head's Opus calls: highest effort, longer calls (fewer relays, each one starts cold)
+HEAD_EFFORT = 'xhigh'
+HEAD_TURNS = 80
+CLI = {}  # options of the command line read by call_model (opus_effort: --opus-effort overrides HEAD_EFFORT too)
 PIPE_SLOTS = 5  # sorts running at once on the PC (owner, 2026-10-18: four flowers in parallel, plus the oeillet's last checks; the gate still holds 3 headless Chromes)
 NL = chr(10)
 CHECK_FAILS = 2  # a done check that fails this many times in a step stops the step (a question to the owner), never a fresh relay
@@ -458,18 +469,21 @@ def short(o, n=2000):
 def call_model(ctx, step, tag, model, prompt, tools, turns=None, effort='default', limit=None):
     """ONE fresh `claude -p` call: prompt on stdin, closed tool list, capped turns; its usage goes to the bill. Returns a dict
     {ok, final, text, subtype, maxturns, timeout, eq, turns, ctx_peak, denials}. Raises CapReached before the call when the cap is spent."""
-    spent = ctx.bill.total()
-    if spent >= ctx.cap:
-        raise CapReached('cap %.2f M reached (%.2f M spent) before %s/%s' % (ctx.cap / 1e6, spent / 1e6, step, tag))
+    spent, q = ctx.bill.total(), step in QUALITY_STEPS
+    if spent >= ctx.cap * (RUNAWAY if q else 1):
+        raise CapReached('cap %.2f M reached (%.2f M spent) before %s/%s%s' % (ctx.cap / 1e6, spent / 1e6, step, tag, ' (runaway guard: %g times the cap)' % RUNAWAY if q else ''))
     sc, ss = ctx.step_cap(step), ctx.step_spent(step)
-    if sc is not None and ss >= sc:
-        raise CapReached('step cap of %s %.2f M reached (%.2f M spent by the step) before %s/%s' % (step, sc / 1e6, ss / 1e6, step, tag))
-    turns = turns or TURNS[model]
+    if sc is not None and ss >= sc * (RUNAWAY if q else 1):
+        raise CapReached('step cap of %s %.2f M reached (%.2f M spent by the step) before %s/%s%s' % (step, sc / 1e6, ss / 1e6, step, tag, ' (runaway guard: %g times the share)' % RUNAWAY if q else ''))
+    if q and ((sc is not None and ss >= sc) or spent >= ctx.cap):
+        say('  %s/%s: beyond its share (%.2f M spent, share %s), a measure only: quality steps are never cut' % (step, tag, ss / 1e6, '%.2f M' % (sc / 1e6) if sc is not None else '-'))
+    head = model == 'opus' and step in HEAD_STEPS
+    turns = turns or (HEAD_TURNS if head else TURNS[model])
     limit = limit or LIMIT[model]
     if model == 'opus':
         ramwait(ctx, '%s/%s' % (step, tag))
     ctx.beat()
-    eff = EFFORT[model] if effort == 'default' else effort
+    eff = ((CLI.get('opus_effort') or HEAD_EFFORT) if head else EFFORT[model]) if effort == 'default' else effort
     builtin = sorted({t.split('(')[0] for t in tools})
     cmd = [ctx.claude, '-p', '--model', MODELS[model], '--output-format', 'stream-json', '--verbose', '--max-turns', str(turns), '--no-session-persistence',
            '--strict-mcp-config', '--mcp-config', '{"mcpServers":{}}', '--disable-slash-commands', '--setting-sources', '', '--system-prompt', SYSTEM,
@@ -567,7 +581,7 @@ def call_model(ctx, step, tag, model, prompt, tools, turns=None, effort='default
         err = open(logp + '.err', 'rb').read().decode('utf-8', 'replace').strip()
         out['err'] = err[-300:]
         say('  claude: ' + err[-200:].replace('\n', ' '))
-    out['capped'] = ctx.bill.total() >= ctx.cap  # the next call raises CapReached; this one's result is still used
+    out['capped'] = ctx.bill.total() >= ctx.cap * (RUNAWAY if step in QUALITY_STEPS else 1)  # the next call raises CapReached; this one's result is still used
     return out
 
 
@@ -1323,7 +1337,7 @@ def step_refs(ctx):
     dropped = len(bad0)
     if not jload(ctx.rc + '/keep.json', []) or ctx.dry:
         sh = '' if ctx.dry else '\n'.join('- ' + s for s in sheets)
-        r = call_model(ctx, 'refs', 'pick', 'sonnet', prompt_text('refs', **ctx.sub(task='pick', sheets=sh or '-', missing='-', groupes=', '.join(pair_groupes(ctx)))), tools, turns=60)
+        r = call_model(ctx, 'refs', 'pick', 'opus', prompt_text('refs', **ctx.sub(task='pick', sheets=sh or '-', missing='-', groupes=', '.join(pair_groupes(ctx)))), tools, turns=60)
         n1, bad = refs_audit(ctx)
         dropped += len(bad)
     c = check_refs(ctx)
@@ -1535,7 +1549,7 @@ def step_coloris(ctx):
             continue
         chunk = low[k:k + 12]
         jsave('%s/coloris-low-%d.json' % (ctx.rc, n), chunk)
-        call_model(ctx, 'coloris', 'low%d' % n, 'haiku', prompt_text('coloris', **ctx.sub(n=n, low='%s/coloris-low-%d.json' % (ctx.rel, n), manual='%s/coloris-manual-%d.json' % (ctx.rel, n))),
+        call_model(ctx, 'coloris', 'low%d' % n, 'opus', prompt_text('coloris', **ctx.sub(n=n, low='%s/coloris-low-%d.json' % (ctx.rel, n), manual='%s/coloris-manual-%d.json' % (ctx.rel, n))),
                    READ + ['Write', 'Bash(python *)', 'Bash(ls *)', 'Bash(head *)', 'Bash(tail *)'], turns=40)
     man = {}
     for f in glob.glob(ctx.rc + '/coloris-manual-*.json'):
@@ -1846,7 +1860,7 @@ def step_fiche(ctx):
         return {'status': 'skipped', 'msg': 'fleur/fiche.py not delivered yet'}
     st = fiche_skeleton(ctx)
     tools = READ + ['Write', 'Edit'] + SAFE_BASH
-    res, fin = model_loop(ctx, 'fiche', 'fiche', 'sonnet', tools, int(getattr(ctx.a, 'relays', 4) or 4), lambda: check_fiche(ctx),
+    res, fin = model_loop(ctx, 'fiche', 'fiche', 'opus', tools, int(getattr(ctx.a, 'relays', 4) or 4), lambda: check_fiche(ctx),
                           extra={'fiche': fiche_rel(ctx), 'schema': SCHEMA_REL}, must_read=[SCHEMA_REL])
     if res == 'blocked':
         raise StepFailed('fiche blocked: %s' % (fin.get('question') or fin.get('note') or fin))
@@ -2267,7 +2281,7 @@ def step_plante(ctx):
         plant_gaps(ctx)
         ctx.st['leaf_px0'] = ctx.st.get('leaf_px') or []
     has_res = fiche_resume(ctx)
-    res, fin = model_loop(ctx, 'plante', 'plante', getattr(ctx.a, 'plante_model', None) or 'sonnet', READ + ['Write', 'Edit'] + SAFE_BASH, int(getattr(ctx.a, 'relays', 4)), lambda: closed_check(ctx, 'plante'),
+    res, fin = model_loop(ctx, 'plante', 'plante', getattr(ctx.a, 'plante_model', None) or 'opus', READ + ['Write', 'Edit'] + SAFE_BASH, int(getattr(ctx.a, 'relays', 4)), lambda: closed_check(ctx, 'plante'),
                           extra={'fiche': fiche_rel(ctx), 'resume': resume_rel(ctx)}, must_read=[bp_rel(ctx)] + ([resume_rel(ctx)] if has_res else []),
                           before=lambda: fiche_resume(ctx))
     if res == 'blocked':
@@ -2478,7 +2492,7 @@ def step_finition(ctx):
         if not ok:
             return ok, msg
         return colour_check(ctx)[:2]  # P6: a colourway off its measure is sent back to the finition, by name
-    res, fin = model_loop(ctx, 'finition', 'finition', 'sonnet', READ + ['Write', 'Edit'] + SAFE_BASH, 2, chk)
+    res, fin = model_loop(ctx, 'finition', 'finition', 'opus', READ + ['Write', 'Edit'] + SAFE_BASH, 2, chk)
     ok, msg, m = budget(ctx, 'fin_' + ctx.sid) if not ctx.dry else (True, 'dry', {})
     c_ok, c_msg, rows = colour_check(ctx) if not ctx.dry else (True, 'dry', [])
     return {'status': 'done' if (res == 'done' and ok and c_ok) else 'failed', 'msg': 'finition %s; %s; %s' % (res, msg, c_msg), 'checks': dict(m or {}, couleur=len(rows),
@@ -3450,7 +3464,7 @@ def cmd_run(a):
     if sk or 'skus' not in st:
         st['skus'] = sk
     if getattr(a, 'opus_effort', None):
-        EFFORT['opus'] = a.opus_effort
+        EFFORT['opus'] = CLI['opus_effort'] = a.opus_effort
     ctx = Ctx(sid, ch, a, st)
     if (not ctx.claude or not os.path.exists(ctx.claude)) and not ctx.dry:
         raise SystemExit('no Claude Code binary found (desktop application: %APPDATA%/Claude/claude-code/<version>/*/claude.exe); set PIPE_CLAUDE or --claude')
@@ -3740,7 +3754,7 @@ def cmd_models(a):
     ch = resolve_ch(a.ch)
     a.cap, a.dry = 1000, False
     if getattr(a, 'opus_effort', None):
-        EFFORT['opus'] = a.opus_effort
+        EFFORT['opus'] = CLI['opus_effort'] = a.opus_effort
     sid = 'pipe-test'
     ctx = Ctx(sid, ch, a, {'sid': sid, 'taxon': 'Test test', 'steps': {}})
     if not ctx.claude or not os.path.exists(ctx.claude):
@@ -3832,6 +3846,25 @@ def cmd_selftest(a):
             t('step cap (RATE-OEILLET M1): the step stops at its own share', False)
         except CapReached as e:
             t('step cap (RATE-OEILLET M1): the step stops at its own share', 'step cap of x' in str(e), str(e))
+        # owner, 2026-10-18: a quality step goes past its share (a measure), only the runaway guard stops it; the head's Opus calls run at xhigh
+        ctx4 = Ctx('selftest3q', tmp, argparse.Namespace(dry=False, cap=100, caps='forme=0.0005', claude=fake), {'sid': 'selftest3q', 'taxon': 'Test test', 'steps': {}, 'skus': []})
+        seq(*(['done'] * 40))
+        n_q, why_q = 0, ''
+        try:
+            for _ in range(40):
+                call_model(ctx4, 'forme', 'q%d' % n_q, 'haiku', 'hi', ['Read'])
+                n_q += 1
+        except CapReached as e:
+            why_q = str(e)
+        sp_q = ctx4.step_spent('forme')
+        t('quality steps: forme goes past its share and only the runaway guard (%g times) stops it' % RUNAWAY,
+          'runaway' in why_q and sp_q >= 500 * RUNAWAY and n_q > 2, '%d calls, %.0f spent, %s' % (n_q, sp_q, why_q))
+        ctx5 = Ctx('selftest3h', tmp, argparse.Namespace(dry=False, cap=100, caps='', claude=fake), {'sid': 'selftest3h', 'taxon': 'Test test', 'steps': {}, 'skus': []})
+        seq('done', 'done')
+        call_model(ctx5, 'forme', 'h', 'opus', 'hi', ['Read'])
+        call_model(ctx5, 'plante', 'h', 'opus', 'hi', ['Read'])
+        eh = [r.get('effort') for r in ctx5.bill.rows()]
+        t('head steps: the Opus calls of forme run at %s, other steps at %s' % (HEAD_EFFORT, EFFORT['opus']), eh == [HEAD_EFFORT, EFFORT['opus']], str(eh))
         seq('done', 'done', 'done')
         res, fin = model_loop(ctx, 'forme', 'forme', 'haiku', ['Read'], 3, lambda: (False, 'nope'), extra={'kit': '-', 'fiche': '-', 'resume': '-', 'rtest': '-'})
         t('a done check failing twice stops the step, no third relay (M1)', res == 'blocked' and 'failed 2 times' in (fin.get('question') or ''), str(fin))
@@ -4484,7 +4517,8 @@ def cmd_selftest(a):
         P_fo, P_pl = open('%s/pipe/prompts/forme.md' % HERE, encoding='utf-8').read(), open('%s/pipe/prompts/plante.md' % HERE, encoding='utf-8').read()
         t('prompts: forme and plante read the fiche summary (<<resume>>), pipe.py does the closure, the last 8 of 40 turns kept for the state, the budget said',
           '<<resume>>' in P_fo and '<<resume>>' in P_pl and 'fiche.py sync' in P_fo and 'fiche.py sync' in P_pl and 'pipe.py la fait seul' in P_fo and 'boxes.json' in P_fo
-          and all('8 derniers tours' in x and 'sur 40 tours' in x and 'RATE-OEILLET' in x for x in (P_fo, P_pl)) and 'Chiffres de pipe.py' in P_fo)
+          and '8 derniers tours' in P_pl and 'sur 40 tours' in P_pl and 'RATE-OEILLET' in P_pl and '8 derniers tours' in P_fo and 'sur %d tours' % HEAD_TURNS in P_fo
+          and 'garde-fou' in P_fo and 'Chiffres de pipe.py' in P_fo)
         # ---- P5: leaf and stem pairs from one located plant render; nothing floats at plante (jgap.py)
         pp_ = {p['k']: p for p in plan_}
         t('pairs: feuille (top side) and tige (junction) from the kept organ photos, one shared plant render with loc=1',
@@ -4757,7 +4791,7 @@ def make_parser():
     r.add_argument('--cw', help='fit.py --cw')
     r.add_argument('--relays', type=int, default=3, help='most fresh calls in one modelling step (the step cap stops it first)')
     r.add_argument('--full', type=int, default=40, help='stem length in cm of the plant sheet')
-    r.add_argument('--plante-model', dest='plante_model', choices=['sonnet', 'opus'], help='model of the plante step (default sonnet: kit pieces only, RATE-OEILLET)')
+    r.add_argument('--plante-model', dest='plante_model', choices=['sonnet', 'opus'], help='model of the plante step (default opus since 2026-10-18: quality first; sonnet for a cheap trial)')
     r.add_argument('--opus-effort', dest='opus_effort', choices=['low', 'medium', 'high', 'xhigh', 'max'], help='--effort of the Opus calls (default high)')
     r.add_argument('--skip-census', dest='skip_census', action='store_true', help='a census exists already (census.json, or catalogue/serre/sources/<sid>.json imported)')
     r.add_argument('--kit', help='a published kit piece the sort extends (app/y3-rose.js...): the sorts already drawn with it must not change')
