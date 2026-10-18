@@ -44,7 +44,7 @@ EFFORT = {'haiku': 'low', 'sonnet': 'medium', 'opus': 'high'}  # opus xhigh -> h
 STEP_CAP = {'census': .1, 'refs': .3, 'coloris': .1, 'targets': .05, 'fiche': .25, 'forme': 3.0, 'fit': .2, 'plante': 1.0, 'finition': .8,
             'temoins': .05, 'comparaison': .6, 'juge': .4, 'qa': .1, 'planches': .1}  # comparaison .3 -> .6: one Opus call of 40 turns is .6 (oeillet); refs .15 -> .3, census .2 -> .1: pick + fill + brief run .17 to .27, a census .1 (wave 3)
 CAP_DEFAULT = 8.0
-PIPE_SLOTS = 4  # sorts running at once on the PC (owner, 2026-10-18: four flowers in parallel; the gate still holds 3 headless Chromes)
+PIPE_SLOTS = 5  # sorts running at once on the PC (owner, 2026-10-18: four flowers in parallel, plus the oeillet's last checks; the gate still holds 3 headless Chromes)
 NL = chr(10)
 CHECK_FAILS = 2  # a done check that fails this many times in a step stops the step (a question to the owner), never a fresh relay
 TARGET_EL, TARGET_KB = 300, 50                          # budget per head at DET 1: a MEASURE only since 2026-10-17 (the owner: quality first)
