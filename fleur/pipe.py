@@ -43,6 +43,7 @@ OLD_PORT = 8765                                         # another application of
 PRIVATE = ('shot.sh', 'skudump.sh', 'offerdump.sh')     # shared scripts copied as <name>_p.sh with the atelier's port (always)
 RAMWAIT = MAIN + '/fleur/res/ramwait.sh'                # waits for 4.5 GB of free RAM (PIPE_RAMWAIT overrides; '' = off)
 PAIR_H, PAIR_W = 1100, 2400                             # img.py pair tiles of refaire.sh: height, width cap (img.py alone: 420, 900)
+JUGE_TURNS = 60                                         # --max-turns of a judge call: up to 18 pairs, each image and its .txt, plus zooms
 JUGE_TOURS = 2                                          # judge ko -> comparaison -> judge: round trips at most, then refusal (exit 2)
 
 
@@ -1891,7 +1892,7 @@ def judge_once(ctx, plan, trips, k):
     prev = ('Le juge précédent avait refusé : %s/comparaison/ko-%d.json. Vérifie d\'abord ces points, sans t\'y limiter.' % (ctx.rel, trips)) if trips else '-'
     p = prompt_text('juge', **ctx.sub(pairs='%s/comparaison/pairs.md' % ctx.rel, table='%s/etat-comparaison.md' % ctx.rel, prev=prev))
     ctx.reads['juge'] = set()
-    r = call_model(ctx, 'juge', 't%d.%d' % (trips, k), 'opus', p, READ + ['Bash(python fleur/img.py *)'], turns=40)
+    r = call_model(ctx, 'juge', 't%d.%d' % (trips, k), 'opus', p, READ + ['Bash(python fleur/img.py *)'], turns=JUGE_TURNS)
     if ctx.dry:
         return {'verdict': 'ok', 'ko': [], 'issues': [], 'dry': True}
     fin = r.get('final') or {}
@@ -1909,6 +1910,18 @@ def judge_once(ctx, plan, trips, k):
     unnoted = [p['k'] for p in plan if p['k'] not in noted]
     if unnoted:
         issues.append('pairs not noted: ' + ', '.join(unnoted))
+    if not ctx.read_by('juge', bp_rel(ctx)):  # like the modeller's must_read: the checklist is read in full by the judge too
+        issues.append('BONNES-PRATIQUES.md never opened (Read %s in full first)' % bp_rel(ctx))
+    # anti-anchoring: the modeller's table may be read only once every pair has been looked at (its verdicts come after the judge's own)
+    seq = [x for x in r.get('reads') or []]
+    tab = ctx.npath('%s/etat-comparaison.md' % ctx.rel)
+    if tab in seq:
+        first = {}
+        for i, x in enumerate(seq):
+            first.setdefault(x, i)
+        early = [p['k'] for p in plan if first.get(ctx.npath(p['png']), len(seq)) > first[tab]]
+        if early:
+            issues.append('the modeller\'s table was read before the pairs %s were looked at (anchoring: judge every pair first)' % ', '.join(early[:6]))
     return {'verdict': 'ok' if verdict == 'ok' and not ko and not issues else 'ko', 'ko': ko, 'issues': issues, 'lignes': list(noted.values()), 'call': r.get('subtype')}
 
 
@@ -2648,10 +2661,12 @@ def cmd_selftest(a):
             return {'mode': 'done', 'write': w, 'read': ['%s/ref/%s' % (rel, BP)] + ['%s/comparaison/%s.png' % (rel, k) for k in KEYS],
                     'final': '{"status":"done","ok":8,"ecarts":0}'}
 
-        def jg(rel, verdict):  # the judge: reads every pair, notes every line
+        def jg(rel, verdict, bp=True, table_first=False):  # the judge: reads the checklist, every pair, then (maybe) the table; notes every line
             ko_ = [] if verdict == 'ok' else [{'paire': 'profil', 'raison': 'flancs trop droits contre la photo'}]
             fin_ = {'verdict': verdict, 'lignes': [{'paire': k, 'note': 'ko' if ko_ and k == 'profil' else 'ok', 'raison': ''} for k in KEYS], 'ko': ko_}
-            return {'mode': 'done', 'read': ['%s/comparaison/%s.png' % (rel, k) for k in KEYS], 'final': json.dumps(fin_, ensure_ascii=False)}
+            rd = ['%s/comparaison/%s.png' % (rel, k) for k in KEYS]
+            rd = ([rel + '/etat-comparaison.md'] + rd) if table_first else (rd + [rel + '/etat-comparaison.md'])
+            return {'mode': 'done', 'read': (['%s/ref/%s' % (rel, BP)] if bp else []) + rd, 'final': json.dumps(fin_, ensure_ascii=False)}
 
         def run_(args):
             buf = io.StringIO()
@@ -2744,6 +2759,21 @@ def cmd_selftest(a):
         seq({'mode': 'done', 'read': [], 'final': '{"verdict":"ok","lignes":[],"ko":[]}'}, {'mode': 'done', 'read': [], 'final': 'no json'})
         v_ = judge(ctx3, plan_, 0)
         t('juge: a judge that looked at nothing is asked again, then counts as ko', v_['verdict'] == 'ko' and any('not looked at' in x for x in v_['issues']), str(v_)[:300])
+        seq(jg(rel3, 'ok', bp=False), jg(rel3, 'ok', bp=False))
+        v_ = judge(ctx3, plan_, 0)
+        t('juge: a judge that never opened BONNES-PRATIQUES is asked again, then counts as ko', v_['verdict'] == 'ko' and any('BONNES-PRATIQUES' in x for x in v_['issues']), str(v_)[:300])
+        seq(jg(rel3, 'ok', table_first=True), jg(rel3, 'ok', table_first=True))
+        v_ = judge(ctx3, plan_, 0)
+        t('juge: reading the modeller table before the pairs counts as ko (anchoring)', v_['verdict'] == 'ko' and any('anchoring' in x for x in v_['issues']), str(v_)[:300])
+        seq(jg(rel3, 'ok'))
+        v_ = judge(ctx3, plan_, 0)
+        t('juge: checklist, every pair, then the table: ok', v_['verdict'] == 'ok' and not v_['issues'], str(v_)[:300])
+        buf = io.StringIO()
+        with contextlib.redirect_stdout(buf):
+            judge_once(ctxd, plan_, 0, 1)
+        P_j = open('%s/pipe/prompts/juge.md' % HERE, encoding='utf-8').read()
+        t('juge: 60 turns, and the prompt gives the modeller table after the judge verdicts', '60 turns max' in buf.getvalue() and P_j.index('APRÈS') < P_j.index('<<table>>')
+          and '60 tours' in P_j, buf.getvalue()[-200:])
         open(tmp + '/app/y-test.js', 'a').write('// retouched after the judge\n')
         ctx3b = Ctx('selftest3', tmp, argparse.Namespace(dry=False, cap=40, claude=fake), st3)
         try:
