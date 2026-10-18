@@ -1392,14 +1392,39 @@ def med_hex(hs):
 AUTO_RE = re.compile(r'base (#[0-9a-fA-F]{6}) corps (#[0-9a-fA-F]{6}) pointe (#[0-9a-fA-F]{6}) confiance ([0-9.]+)')
 
 
+CW_ROW = re.compile(r"\{id:'([^']+)',n:'([^']+)',c:'(#[0-9a-fA-F]{6})'(?:,edge:'(#[0-9a-fA-F]{6})')?(?:,base:'(#[0-9a-fA-F]{6})')?")
+
+
+def coloris_from_table(ctx, table):
+    """a species sold by its colours, without registered cultivars (gloriosa, 2026-10-18): coloris.json from the catalogue's own colourway table
+    in app/*.js (const <table>=[{id,n,c,edge,base}...]), level D, measure 'catalogue' (body c, tip edge); the photos measure them at finition"""
+    src = ''
+    for f in sorted(glob.glob(ctx.ch + '/app/*.js')):
+        t = open(f, encoding='utf-8', errors='replace').read()
+        m = re.search(r'const\s+%s\s*=\s*\[(.*?)\];' % re.escape(table), t, re.S)
+        if m:
+            src = m.group(1)
+            break
+    out = [{'id': i, 'cultivar': n, 'niveau': 'D', 'marque': 'libre', 'photos': [], 'mesure': 'catalogue', 'base': b or c, 'corps': c, 'pointe': e or c}
+           for i, n, c, e, b in CW_ROW.findall(src)]
+    if not out:
+        raise StepFailed('--cw-table %s: no {id,n,c} row found in app/*.js' % table)
+    jsave(ctx.rc + '/coloris.json', out)
+    set_questions(ctx, 'coloris-catalogue', 'Coloris du catalogue sans cultivar (niveau D)',
+                  ['%s (%s, %s) : couleur du catalogue, à confirmer sur les photos du taxon' % (x['id'], x['cultivar'], x['corps']) for x in out])
+    return {'status': 'done', 'msg': '%d catalogue colourways from %s (level D, a question): %s' % (len(out), table, ', '.join(x['id'] for x in out))}
+
+
 def step_coloris(ctx):
     if ctx.dry:
         say('  [dry] refs.py url/auto on up to 3 photos of each A/B cultivar, medians, then Haiku for the low-confidence ones')
         return {'status': 'done', 'msg': 'dry', 'checks': {}}
     # levels A to C are measured (owner, 2026-10-17); a cultivar under a brand is measured too: its NAME is never shown (BONNES-PRATIQUES 4.9)
     rows = [r for r in census_table(ctx) if r['niveau'] in OK_LEVELS and r['photos']]
+    if not rows and getattr(ctx.a, 'cw_table', None):
+        return coloris_from_table(ctx, ctx.a.cw_table)
     if not rows:
-        raise StepFailed('no A/B/C cultivar with photos in the census (run census first)')
+        raise StepFailed('no A/B/C cultivar with photos in the census (run census first; a species without cultivars: --cw-table CW_<X>)')
     first = {sku_cultivar(rows, x.get('cultivar'))['nom'] for x in ctx.st.get('skus', []) if sku_cultivar(rows, x.get('cultivar'))}
     rows.sort(key=lambda r: (r['nom'] not in first, r['niveau'], -len(r['photos'])))
     rows = rows[:int(getattr(ctx.a, 'max_coloris', 60) or 60)]
@@ -4427,6 +4452,7 @@ def make_parser():
     r.add_argument('--fiche-strict', dest='fiche_strict', action='store_true', help='fiche errors after sync block forme and plante (default: a question, RATE-OEILLET M2)')
     r.add_argument('--num-cws', dest='num_cws', help='the two colourways of the numbers sheet (default: the darkest and lightest measured)')
     r.add_argument('--pair-min', dest='pair_min', type=int, help='short side in px a comparison photo needs (default 1000, 600 at least: a sort whose buds are only in smaller photos)')
+    r.add_argument('--cw-table', dest='cw_table', help='a species without registered cultivars: the colourway table of app/*.js its coloris.json is made from (CW_GLOR)')
     r.add_argument('--caps', default='', help='step caps in M overriding STEP_CAP, "forme=4,plante=1.5" (summed over every run of the sort)')
     r.add_argument('--skus', default='', help='bouquet SKUs "lilas~0:Ruhm von Horstenstein,..." (default: sku_bouquet of the sources json)')
     r.add_argument('--dry', action='store_true', help='no model, no command: print what would run and run the disk checks')
