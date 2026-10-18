@@ -31,8 +31,16 @@ function svcRows(nv,st,inc,det){if(inc&&!inc.n[det?1:0])inc=null;if(!st&&!inc)re
   for(let q=0;q<n;q++)for(const k of ks)R2.push(bl(a+(z-a)*(q+k)/n));R2.push(bl(z),bl(z+(1-z)*.5),1);return R2}
 /* the cut margin: 1 on a lobe's tip, 1-dp at the bottom of a narrow V sinus; from the sinus the margin climbs fast to a shoulder, then slowly to the
    tip, and falls back to the next sinus (each lobe broad, pointed, leaning toward the segment's tip; the lobes opposite); s: the side (-1, 1) */
-function svcInc(inc,det,b,s){const n=inc.n[det?1:0],a=inc.from??.18,z=inc.to??.88;if(!n||b<=a||b>=z||!s)return 1;let p=(b-a)/(z-a)*n;p-=Math.floor(p);const dp=inc.dp,k=1-(inc.sh??.5)*dp;
-  return p<.15?1-dp+(k-1+dp)*p/.15:p<.7?k+(1-k)*(p-.15)/.55:1-dp*(p-.7)/.3}
+/* inc.jit (optional, delphinium): each sinus its own depth, dp*(1-jit .. 1+jit), from a hash of the tooth, the side and inc.sd (no draw of chance);
+   the falling edge of a tooth meets the next sinus' depth, so the margin stays continuous; without jit the saw is even, as before */
+function svcIncD(inc,q,s){if(!inc.jit)return inc.dp;const h=Math.abs(Math.sin((q*12.9898+(s>0?78.233:37.719)+(inc.sd||0)*4.1414)*43758.5453))%1;return inc.dp*(1-inc.jit+2*inc.jit*h)}
+function svcInc(inc,det,b,s){const n=inc.n[det?1:0],a=inc.from??.18,z=inc.to??.88;if(!n||b<=a||b>=z||!s)return 1;let p=(b-a)/(z-a)*n;const q=Math.floor(p);p-=q;
+  let dp=svcIncD(inc,q,s),dq=inc.jit?svcIncD(inc,q+1,s):dp;
+  /* inc.jitS (optional, scabiosa: a salt): each lobe of each side its own depth, x .5 to 1.35 from a hash of its rank and side (no draw);
+     inc.fall: the share of the tooth taken by its falling edge (.3 as before) */
+  if(inc.jitS!=null){const h=Math.sin((q+1)*12.9898+(s>0?78.233:0)+inc.jitS*3.17)*43758.5453;dp*=.5+.85*(h-Math.floor(h));dq=dp}
+  const k=1-(inc.sh??.5)*dp,f=inc.fall??.3,e=1-f;
+  return p<.15?1-dp+(k-1+dp)*p/.15:p<e?k+(1-k)*(p-.15)/(e-.15):1-dq*(p-e)/f}
 function svCutLeaf(par,o){const P=Object.assign({},SVC_DEF,o),r=svRng(P.sd),H=V3.nz(P.H),dn=[0,-1,0],det=DET>=1.5,wl=P.wl||0,
     limp=P.limp[0]+P.limp[1]*svSm((wl-.2)/.5),pieces=[],mat=P.wilt&&wl>0?svcWiltMat(P.mat,wl,P.wilt):P.mat;
   /* the side the leaf arches toward, square to its direction */
@@ -47,14 +55,16 @@ function svCutLeaf(par,o){const P=Object.assign({},SVC_DEF,o),r=svRng(P.sd),H=V3
         half=(v,s)=>{if(st&&v<st)return Math.max(l*P.stalkW,w*.12)*(1-.25*v/st);const b=st?(v-st)/(1-st):v;return w*prof(b)*(inc?svcInc(inc,det,b,s):1)};
       const rows=svcRows(det?P.nv[1]:P.nv[0],st,inc,det),nr=rows?rows.length-1:0,
         g=t=>{if(!rows)return t;const x=Math.max(0,Math.min(1,t))*nr,j=Math.min(nr-1,Math.floor(x));return rows[j]+(rows[j+1]-rows[j])*(x-j)};
-      const S=(u,t)=>{const v=g(t),c=at(sp,v),tg=V3.nz(at(dv,v)),side0=V3.nz(V3.cr(U,tg)),nrm0=V3.nz(V3.cr(tg,side0)),a=tw*v,side=V3.add(V3.sc(side0,Math.cos(a)),V3.sc(nrm0,Math.sin(a))),nrm=V3.cr(tg,side),hw=half(v,u<0?-1:u>0?1:0);
-        return V3.add(V3.add(c,V3.sc(side,u*hw)),V3.sc(nrm,(P.gut[0]+P.gut[1]*limp)*Math.abs(u)*hw-.06*hw))};
+      const S=(u,t)=>{const v=g(t),c=at(sp,v),tg=V3.nz(at(dv,v)),side0=V3.nz(V3.cr(U,tg)),nrm0=V3.nz(V3.cr(tg,side0)),a=tw*v,side=V3.add(V3.sc(side0,Math.cos(a)),V3.sc(nrm0,Math.sin(a))),nrm=V3.cr(tg,side),hw=half(v,u<0?-1:u>0?1:0),
+          /* with uneven sinuses (inc.jit) the gutter follows the lobe's smooth width, not its teeth: else the sheet folds and its underside shows in loops */
+          hg=inc&&inc.jit?half(v,0):hw;
+        return V3.add(V3.add(c,V3.sc(side,u*hw)),V3.sc(nrm,(P.gut[0]+P.gut[1]*limp)*Math.abs(u)*hg-.06*hg))};
       /* the side veins (zoom): from the midrib to each lobe tip of a cut margin, in the sheet's own (u, row) coordinates */
       const tips=[];if(rows&&inc&&det&&inc.n[1])rows.forEach((v,j)=>{const b=st?(v-st)/(1-st):v;for(const s of[-1,1])if(b>(inc.from??.18)&&b<(inc.to??.88)&&svcInc(inc,det,b,s)>.995)tips.push([s,j/nr,Math.max(0,(j-2.5)/nr)])});
       const sh=svSheet(I3,[0,0,0],S,{nu:det?P.nu[1]:P.nu[0],nv:rows?nr:det?P.nv[1]:P.nv[0],mat,veins:null});sh._tips=tips;sh._st=rows&&st?2/nr:.04;pieces.push(sh);
       return{at:v=>at(sp,v),dir:v=>V3.nz(at(dv,v))}};
-  P.lobes.forEach(([a0,lk])=>{const d0=rot(H,U,a0+r.in(-P.lobeJ,P.lobeJ)),Ll=P.len*lk*r.in(P.lobeL[0],P.lobeL[1]),st=Math.abs(a0)<.2?P.stalk[0]:P.stalk[1],
-      lobe=seg(P.base,d0,Ll,Ll*P.w,r.in(-P.tw[0],P.tw[0]),st,P.inc),n=Math.round(r.in(P.side[0],P.side[1])*(det?1:P.sideLo));
+  P.lobes.forEach(([a0,lk],li)=>{const d0=rot(H,U,a0+r.in(-P.lobeJ,P.lobeJ)),Ll=P.len*lk*r.in(P.lobeL[0],P.lobeL[1]),st=Math.abs(a0)<.2?P.stalk[0]:P.stalk[1],
+      lobe=seg(P.base,d0,Ll,Ll*P.w,r.in(-P.tw[0],P.tw[0]),st,P.inc&&P.inc.jit?Object.assign({},P.inc,{sd:(P.inc.sd||0)+li*3.7}):P.inc),n=Math.round(r.in(P.side[0],P.side[1])*(det?1:P.sideLo));
     for(let k=0;k<n;k++){const t=(P.sideAll?0:st)+(P.sideAll?1:1-st)*(P.sideT[0]+P.sideT[1]*k/Math.max(1,n-1))+r.in(-.04,.04);for(const s of[-1,1]){if(r()<P.sideP)continue;
       const p=lobe.at(t),dd=rot(lobe.dir(t),U,s*r.in(P.sideA[0],P.sideA[1])),l=Ll*(P.sideL[0]-P.sideL[1]*(P.sideAll?t:(t-st)/(1-st)))*r.in(.85,1.1),sg=seg(p,dd,l,l*P.ws,r.in(-P.tw[1],P.tw[1]),0,P.incS);
       /* the teeth: short pointed segments along the outer side of a side segment (only in the zoom) */

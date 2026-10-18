@@ -1,0 +1,2667 @@
+{
+ "schema": "fiche-morpho/1",
+ "sid": "delphinium",
+ "nom": "Delphinium",
+ "taxon": {
+  "genre": "Delphinium",
+  "espece": "Delphinium elatum L.",
+  "groupe": "hybrides de jardin et de coupe (type Pacific / Elatum), epi de fleurs simples a semi-doubles"
+ },
+ "kit": {
+  "moteur": "svorDraw (grappe : une fleur zygomorphe repetee le long de l axe), a confirmer par le modeleur",
+  "module": "app/y-delphinium.js"
+ },
+ "etat": {
+  "pilote": false,
+  "date": "2026-10-18",
+  "auteur": "etape fiche (agent)",
+  "note": "Fiche remplie d apres les photos gardees (organ.py leaf/head, targets.json) et la flore ; aucun code relie a cette etape."
+ },
+ "photos": {
+  "delphinium:ec15f1f9": {
+   "titre": "File:Delphinium elatum-20200616-RM-080831.jpg",
+   "auteur": "Ermell",
+   "licence": "CC BY-SA 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Delphinium_elatum-20200616-RM-080831.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/75/Delphinium_elatum-20200616-RM-080831.jpg/500px-Delphinium_elatum-20200616-RM-080831.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/delphinium/refcache/delphinium/t014.jpg",
+   "tags": [
+    "stade:bouton",
+    "vue:profil",
+    "organe:bourgeon"
+   ],
+   "vu": "stade=bouton vue=profil organe=bourgeon groupe=espece-sauvage",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 14,
+   "groupe": "espece-sauvage"
+  },
+  "delphinium:ea2bb29b": {
+   "titre": "File:Delphinium elatum20110611 270.jpg",
+   "auteur": "Bff",
+   "licence": "CC BY-SA 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Delphinium_elatum20110611_270.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/23/Delphinium_elatum20110611_270.jpg/500px-Delphinium_elatum20110611_270.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/delphinium/refcache/delphinium/t017.jpg",
+   "tags": [
+    "stade:bouton",
+    "vue:profil",
+    "organe:bourgeon",
+    "organe:tige"
+   ],
+   "vu": "stade=bouton vue=profil organe=bourgeon+tige groupe=espece-sauvage",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 17,
+   "groupe": "espece-sauvage"
+  },
+  "delphinium:ec257f4c": {
+   "titre": "File:Delphinium elatum20140621 402.jpg",
+   "auteur": "Bff",
+   "licence": "CC BY-SA 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Delphinium_elatum20140621_402.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/63/Delphinium_elatum20140621_402.jpg/500px-Delphinium_elatum20140621_402.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/delphinium/refcache/delphinium/t018.jpg",
+   "tags": [
+    "stade:bouton",
+    "vue:profil",
+    "organe:bourgeon"
+   ],
+   "vu": "stade=bouton vue=profil organe=bourgeon groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 18,
+   "groupe": "jardin"
+  },
+  "delphinium:6f2d57fd": {
+   "titre": "File:Delphinium elatum 'Magic Fountains Cherry Blossom' JRVdH 02.jpg",
+   "auteur": "Cephas",
+   "licence": "CC BY-SA 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Delphinium_elatum_%27Magic_Fountains_Cherry_Blossom%27_JRVdH_02.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cb/Delphinium_elatum_%27Magic_Fountains_Cherry_Blossom%27_JRVdH_02.jpg/500px-Delphinium_elatum_%27Magic_Fountains_Cherry_Blossom%27_JRVdH_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/delphinium/refcache/delphinium/t040.jpg",
+   "tags": [
+    "stade:declin",
+    "stade:ouvert",
+    "vue:profil",
+    "organe:tige"
+   ],
+   "vu": "stade=declin+ouvert vue=profil organe=tige groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 40,
+   "groupe": "jardin"
+  },
+  "delphinium:05a946c2": {
+   "titre": "File:Delphinium-Hybrid 0516.JPG",
+   "auteur": "Danny S.",
+   "licence": "CC BY-SA 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Delphinium-Hybrid_0516.JPG",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/Delphinium-Hybrid_0516.JPG/500px-Delphinium-Hybrid_0516.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/delphinium/refcache/delphinium/t047.jpg",
+   "tags": [
+    "vue:dos",
+    "organe:feuille-dessus"
+   ],
+   "vu": "stade=- vue=dos organe=feuille-dessus groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 47,
+   "groupe": "jardin"
+  },
+  "delphinium:20bcbca2": {
+   "titre": "File:高翠雀花 Delphinium elatum -香港花展 Hong Kong Flower Show- (18003922315).jpg",
+   "auteur": "阿橋 HQ",
+   "licence": "CC BY-SA 2.0",
+   "url": "https://commons.wikimedia.org/wiki/File:%E9%AB%98%E7%BF%A0%E9%9B%80%E8%8A%B1_Delphinium_elatum_-%E9%A6%99%E6%B8%AF%E8%8A%B1%E5%B1%95_Hong_Kong_Flower_Show-_(18003922315).jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/%E9%AB%98%E7%BF%A0%E9%9B%80%E8%8A%B1_Delphinium_elatum_-%E9%A6%99%E6%B8%AF%E8%8A%B1%E5%B1%95_Hong_Kong_Flower_Show-_%2818003922315%29.jpg/500px-%E9%AB%98%E7%BF%A0%E9%9B%80%E8%8A%B1_Delphinium_elatum_-%E9%A6%99%E6%B8%AF%E8%8A%B1%E5%B1%95_Hong_Kong_Flower_Show-_%2818003922315%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/delphinium/refcache/delphinium/t070.jpg",
+   "tags": [
+    "stade:ouvert",
+    "vue:face"
+   ],
+   "vu": "stade=ouvert vue=face organe=- groupe=hybride-de-coupe",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 70,
+   "groupe": "hybride-de-coupe"
+  },
+  "delphinium:82146bfa": {
+   "titre": "File:4710 - Mürren - Flowers.JPG",
+   "auteur": "Andrew Bossi",
+   "licence": "CC BY-SA 2.5",
+   "url": "https://commons.wikimedia.org/wiki/File:4710_-_M%C3%BCrren_-_Flowers.JPG",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a8/4710_-_M%C3%BCrren_-_Flowers.JPG/500px-4710_-_M%C3%BCrren_-_Flowers.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/delphinium/refcache/delphinium/t035.jpg",
+   "tags": [
+    "stade:declin",
+    "stade:bouton",
+    "vue:trois-quarts"
+   ],
+   "vu": "stade=declin+bouton vue=trois-quarts organe=- groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 35,
+   "groupe": "jardin"
+  },
+  "delphinium:fa18f502": {
+   "titre": "File:Kwiaty - panoramio (2).jpg",
+   "auteur": "w kuszak",
+   "licence": "CC BY-SA 3.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Kwiaty_-_panoramio_(2).jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Kwiaty_-_panoramio_%282%29.jpg/500px-Kwiaty_-_panoramio_%282%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/delphinium/refcache/delphinium/t053.jpg",
+   "tags": [
+    "stade:ouvert",
+    "vue:face"
+   ],
+   "vu": "stade=ouvert vue=face organe=- groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 53,
+   "groupe": "jardin"
+  },
+  "delphinium:ab233f27": {
+   "titre": "File:Ostróżka wyniosła. Ostróżka ogrodowa.jpg",
+   "auteur": "Niepokój Zbigniew",
+   "licence": "CC BY-SA 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Ostr%C3%B3%C5%BCka_wynios%C5%82a._Ostr%C3%B3%C5%BCka_ogrodowa.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/Ostr%C3%B3%C5%BCka_wynios%C5%82a._Ostr%C3%B3%C5%BCka_ogrodowa.jpg/500px-Ostr%C3%B3%C5%BCka_wynios%C5%82a._Ostr%C3%B3%C5%BCka_ogrodowa.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/delphinium/refcache/delphinium/t064.jpg",
+   "tags": [
+    "stade:ouvert",
+    "vue:face"
+   ],
+   "vu": "stade=ouvert vue=face organe=- groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 64,
+   "groupe": "jardin"
+  },
+  "delphinium:1568d0cc": {
+   "titre": "File:Rittersporn (Delphinium elatum) mit Wassertropfen-20160612-RM-123819.jpg",
+   "auteur": "Reinhold Möller Ermell",
+   "licence": "CC BY-SA 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Rittersporn_(Delphinium_elatum)_mit_Wassertropfen-20160612-RM-123819.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5b/Rittersporn_%28Delphinium_elatum%29_mit_Wassertropfen-20160612-RM-123819.jpg/500px-Rittersporn_%28Delphinium_elatum%29_mit_Wassertropfen-20160612-RM-123819.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/delphinium/refcache/delphinium/t033.jpg",
+   "tags": [
+    "stade:ouvert",
+    "stade:bouton",
+    "vue:trois-quarts"
+   ],
+   "vu": "stade=ouvert+bouton vue=trois-quarts organe=- groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 33,
+   "groupe": "jardin"
+  },
+  "delphinium:1bd7fd60": {
+   "titre": "File:Delphinium at dawn - geograph.org.uk - 1468997.jpg",
+   "auteur": "Jonathan Billinger",
+   "licence": "CC BY-SA 2.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Delphinium_at_dawn_-_geograph.org.uk_-_1468997.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/Delphinium_at_dawn_-_geograph.org.uk_-_1468997.jpg/500px-Delphinium_at_dawn_-_geograph.org.uk_-_1468997.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/delphinium/refcache/delphinium/t037.jpg",
+   "tags": [
+    "stade:ouvert",
+    "vue:face"
+   ],
+   "vu": "stade=ouvert vue=face organe=- groupe=hybride-de-coupe",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 37,
+   "groupe": "hybride-de-coupe"
+  },
+  "delphinium:1b9a8fa1": {
+   "titre": "File:Delphiniums at Coleton Fishacre - geograph.org.uk - 1350896.jpg",
+   "auteur": "Derek Harper",
+   "licence": "CC BY-SA 2.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Delphiniums_at_Coleton_Fishacre_-_geograph.org.uk_-_1350896.jpg",
+   "url_image": "https://upload.wikimedia.org/wikipedia/commons/a/a7/Delphiniums_at_Coleton_Fishacre_-_geograph.org.uk_-_1350896.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "local": "ch/delphinium/refcache/delphinium/t020.jpg",
+   "tags": [
+    "stade:ouvert",
+    "vue:profil",
+    "organe:plante"
+   ],
+   "vu": "stade=ouvert vue=profil organe=plante groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 20,
+   "groupe": "jardin"
+  },
+  "delphinium:c6e4ee3b": {
+   "titre": "File:Ostróżka wyniosła.jpg",
+   "auteur": "Niepokój Zbigniew",
+   "licence": "CC BY-SA 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Ostr%C3%B3%C5%BCka_wynios%C5%82a.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/Ostr%C3%B3%C5%BCka_wynios%C5%82a.jpg/500px-Ostr%C3%B3%C5%BCka_wynios%C5%82a.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/delphinium/refcache/delphinium/t065.jpg",
+   "tags": [
+    "stade:ouvert",
+    "vue:profil",
+    "organe:plante"
+   ],
+   "vu": "stade=ouvert vue=profil organe=plante groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 65,
+   "groupe": "jardin"
+  },
+  "delphinium:32b732c5": {
+   "titre": "File:Delphinium elatum002.jpg",
+   "auteur": "Meneerke bloem",
+   "licence": "CC BY-SA 3.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Delphinium_elatum002.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/da/Delphinium_elatum002.jpg/500px-Delphinium_elatum002.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/delphinium/refcache/delphinium/t016.jpg",
+   "tags": [
+    "stade:ouvert",
+    "vue:profil",
+    "organe:feuille-dessus"
+   ],
+   "vu": "stade=ouvert vue=profil organe=feuille-dessus groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 16,
+   "groupe": "jardin"
+  },
+  "delphinium:d997c575": {
+   "titre": "File:Ostróżka ogrodowa. 03.jpg",
+   "auteur": "Niepokój Zbigniew",
+   "licence": "CC BY-SA 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Ostr%C3%B3%C5%BCka_ogrodowa._03.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Ostr%C3%B3%C5%BCka_ogrodowa._03.jpg/500px-Ostr%C3%B3%C5%BCka_ogrodowa._03.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/delphinium/refcache/delphinium/t059.jpg",
+   "tags": [
+    "stade:ouvert",
+    "vue:trois-quarts"
+   ],
+   "vu": "stade=ouvert vue=trois-quarts organe=- groupe=hybride-de-coupe",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 59,
+   "groupe": "hybride-de-coupe"
+  },
+  "delphinium:be354759": {
+   "titre": "File:Ostróżka ogrodowa 01.jpg",
+   "auteur": "Niepokój Zbigniew",
+   "licence": "CC BY-SA 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Ostr%C3%B3%C5%BCka_ogrodowa_01.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/Ostr%C3%B3%C5%BCka_ogrodowa_01.jpg/500px-Ostr%C3%B3%C5%BCka_ogrodowa_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/delphinium/refcache/delphinium/t055.jpg",
+   "tags": [
+    "stade:ouvert",
+    "vue:trois-quarts"
+   ],
+   "vu": "stade=ouvert vue=trois-quarts organe=- groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 55,
+   "groupe": "jardin"
+  },
+  "delphinium:4f98f52f": {
+   "titre": "File:Ostróżka ogrodowa 02.jpg",
+   "auteur": "Niepokój Zbigniew",
+   "licence": "CC BY-SA 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Ostr%C3%B3%C5%BCka_ogrodowa_02.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/63/Ostr%C3%B3%C5%BCka_ogrodowa_02.jpg/500px-Ostr%C3%B3%C5%BCka_ogrodowa_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/delphinium/refcache/delphinium/t056.jpg",
+   "tags": [
+    "stade:ouvert",
+    "vue:profil",
+    "organe:plante"
+   ],
+   "vu": "stade=ouvert vue=profil organe=plante groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 56,
+   "groupe": "jardin"
+  },
+  "delphinium:6194e627": {
+   "titre": "File:Delphinium elatum 'Pacific Giant King Arthur' JRVdH 01.jpg",
+   "auteur": "Cephas",
+   "licence": "CC BY-SA 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Delphinium_elatum_%27Pacific_Giant_King_Arthur%27_JRVdH_01.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/16/Delphinium_elatum_%27Pacific_Giant_King_Arthur%27_JRVdH_01.jpg/500px-Delphinium_elatum_%27Pacific_Giant_King_Arthur%27_JRVdH_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/delphinium/refcache/delphinium/t042.jpg",
+   "tags": [
+    "stade:ouvert",
+    "stade:bouton",
+    "vue:profil",
+    "organe:plante"
+   ],
+   "vu": "stade=ouvert+bouton vue=profil organe=plante groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 42,
+   "groupe": "jardin"
+  },
+  "delphinium:d303fe9f": {
+   "titre": "File:Delphinium elatum Kemi, Finland 15.07.2013.jpg",
+   "auteur": "Matti Virtala",
+   "licence": "CC0",
+   "url": "https://commons.wikimedia.org/wiki/File:Delphinium_elatum_Kemi,_Finland_15.07.2013.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/Delphinium_elatum_Kemi%2C_Finland_15.07.2013.jpg/500px-Delphinium_elatum_Kemi%2C_Finland_15.07.2013.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/delphinium/refcache/delphinium/t012.jpg",
+   "tags": [
+    "stade:ouvert",
+    "vue:profil",
+    "organe:feuille-dessus"
+   ],
+   "vu": "stade=ouvert vue=profil organe=feuille-dessus groupe=espece-sauvage",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 12,
+   "groupe": "espece-sauvage"
+  },
+  "delphinium:2e314025": {
+   "titre": "File:Delphinium elatum “Guardian Blue,” Phipps Conservatory, 2015-03-25, 01.jpg",
+   "auteur": "Cbaile19",
+   "licence": "CC0",
+   "url": "https://commons.wikimedia.org/wiki/File:Delphinium_elatum_%E2%80%9CGuardian_Blue,%E2%80%9D_Phipps_Conservatory,_2015-03-25,_01.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/Delphinium_elatum_%E2%80%9CGuardian_Blue%2C%E2%80%9D_Phipps_Conservatory%2C_2015-03-25%2C_01.jpg/500px-Delphinium_elatum_%E2%80%9CGuardian_Blue%2C%E2%80%9D_Phipps_Conservatory%2C_2015-03-25%2C_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/delphinium/refcache/delphinium/t045.jpg",
+   "tags": [
+    "stade:ouvert",
+    "vue:face"
+   ],
+   "vu": "stade=ouvert vue=face organe=- groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 45,
+   "groupe": "jardin"
+  },
+  "delphinium:f9e29b8e": {
+   "titre": "File:Delphinium × cultorum.JPG",
+   "auteur": "Prenn",
+   "licence": "CC BY-SA 3.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Delphinium_%C3%97_cultorum.JPG",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/Delphinium_%C3%97_cultorum.JPG/500px-Delphinium_%C3%97_cultorum.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/delphinium/refcache/delphinium/t106.jpg",
+   "tags": [
+    "stade:entrouvert",
+    "stade:ouvert",
+    "vue:face",
+    "organe:feuille-dessus",
+    "organe:tige"
+   ],
+   "vu": "stade=entrouvert+ouvert vue=face organe=feuille-dessus+tige groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 106,
+   "groupe": "jardin"
+  },
+  "delphinium:529b00fe": {
+   "titre": "File:Consolida ajacis 2021-09-01 9700.jpg",
+   "auteur": "Salicyna",
+   "licence": "CC BY-SA 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Consolida_ajacis_2021-09-01_9700.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/48/Consolida_ajacis_2021-09-01_9700.jpg/500px-Consolida_ajacis_2021-09-01_9700.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/delphinium/refcache/delphinium/t287.jpg",
+   "tags": [
+    "stade:fane",
+    "vue:profil",
+    "organe:tige"
+   ],
+   "vu": "stade=fane vue=profil organe=tige groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 287,
+   "groupe": "jardin"
+  },
+  "delphinium:37c4ba14": {
+   "titre": "File:Consolida ajacis 2021-09-01 9701.jpg",
+   "auteur": "Salicyna",
+   "licence": "CC BY-SA 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Consolida_ajacis_2021-09-01_9701.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/Consolida_ajacis_2021-09-01_9701.jpg/500px-Consolida_ajacis_2021-09-01_9701.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/delphinium/refcache/delphinium/t288.jpg",
+   "tags": [
+    "stade:fane",
+    "vue:profil",
+    "organe:tige"
+   ],
+   "vu": "stade=fane vue=profil organe=tige groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 288,
+   "groupe": "jardin"
+  },
+  "delphinium:92456f53": {
+   "titre": "File:Consolida ajacis MHNT.BOT.2004.0.jpg",
+   "auteur": "Didier Descouens",
+   "licence": "CC BY-SA 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Consolida_ajacis_MHNT.BOT.2004.0.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/Consolida_ajacis_MHNT.BOT.2004.0.jpg/500px-Consolida_ajacis_MHNT.BOT.2004.0.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/delphinium/refcache/delphinium/t295.jpg",
+   "tags": [
+    "stade:fane",
+    "vue:profil",
+    "organe:plante"
+   ],
+   "vu": "stade=fane vue=profil organe=plante groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 295,
+   "groupe": "jardin"
+  }
+ },
+ "organes": {
+  "sepale.lateral": {
+   "role": "perianthe",
+   "nombre": {
+    "v": 2,
+    "unite": "n",
+    "methode": "reference",
+    "conf": "A",
+    "ref": "Flora : Delphinium elatum L., grappe terminale ; fleur zygomorphe, 5 sepales petaloides dont le superieur porte un eperon, 4 petales petits (2 superieurs nectaires dans l eperon, 2 inferieurs formant l oeil), nombreuses etamines, 3 carpelles : 2 sepales lateraux",
+    "ecart": {
+     "type": "budget",
+     "texte": "Valeur de la tete du fleuron non reliee une a une a une expression du dessin (budget de l'etape plante) : elle est reglee par fit.py sur les cibles de space.json."
+    }
+   },
+   "disposition": {
+    "type": "verticilles",
+    "verticilles": {
+     "v": 1,
+     "unite": "n",
+     "methode": "reference",
+     "conf": "A",
+     "ref": "Flora : Delphinium elatum L., grappe terminale ; fleur zygomorphe, 5 sepales petaloides dont le superieur porte un eperon, 4 petales petits (2 superieurs nectaires dans l eperon, 2 inferieurs formant l oeil), nombreuses etamines, 3 carpelles",
+     "ecart": {
+      "type": "budget",
+      "texte": "Valeur de la tete du fleuron non reliee une a une a une expression du dessin (budget de l'etape plante) : elle est reglee par fit.py sur les cibles de space.json."
+     }
+    },
+    "recouvrement": {
+     "v": 0.2,
+     "unite": "ratio",
+     "methode": "oeil",
+     "photos": [
+      "delphinium:fa18f502",
+      "delphinium:ab233f27"
+     ],
+     "conf": "C",
+     "note": "bord recouvert par le voisin, lu a l oeil sur t064 et t053",
+     "ecart": {
+      "type": "budget",
+      "texte": "Valeur de la tete du fleuron non reliee une a une a une expression du dessin (budget de l'etape plante) : elle est reglee par fit.py sur les cibles de space.json."
+     }
+    },
+    "ordre": {
+     "v": "les lateraux passent devant les superieurs, l eperon derriere",
+     "methode": "oeil",
+     "photos": [
+      "delphinium:fa18f502",
+      "delphinium:ab233f27"
+     ],
+     "conf": "C"
+    }
+   },
+   "contour": {
+    "base": {
+     "v": "onglet",
+     "methode": "oeil",
+     "photos": [
+      "delphinium:fa18f502",
+      "delphinium:ab233f27"
+     ],
+     "conf": "C"
+    },
+    "pointe": {
+     "type": {
+      "v": "obtuse",
+      "methode": "oeil",
+      "photos": [
+       "delphinium:fa18f502",
+       "delphinium:ab233f27"
+      ],
+      "conf": "C"
+     }
+    },
+    "L_sur_l": {
+     "v": 1.2,
+     "unite": "ratio",
+     "methode": "oeil",
+     "photos": [
+      "delphinium:fa18f502",
+      "delphinium:ab233f27"
+     ],
+     "conf": "C",
+     "note": "ovale large, lu a l oeil",
+     "ecart": {
+      "type": "budget",
+      "texte": "Valeur de la tete du fleuron non reliee une a une a une expression du dessin (budget de l'etape plante) : elle est reglee par fit.py sur les cibles de space.json."
+     }
+    },
+    "marge": {
+     "v": "entiere",
+     "methode": "oeil",
+     "photos": [
+      "delphinium:fa18f502",
+      "delphinium:ab233f27"
+     ],
+     "conf": "C"
+    }
+   },
+   "taille": {
+    "rapport_hauteur_largeur": {
+     "v": 0.9,
+     "unite": "ratio",
+     "methode": "segmente",
+     "photos": [
+      "delphinium:ab233f27",
+      "delphinium:fa18f502"
+     ],
+     "conf": "B",
+     "n": 2,
+     "plage": [
+      0.88,
+      0.95
+     ],
+     "note": "H/W de la silhouette de la fleur de face : 254/268=0.95 (t064), 290/328=0.88 (t053), organ.py head ; plus large que haute",
+     "ecart": {
+      "type": "budget",
+      "texte": "Valeur de la tete du fleuron non reliee une a une a une expression du dessin (budget de l'etape plante) : elle est reglee par fit.py sur les cibles de space.json."
+     }
+    },
+    "diametre_cm": {
+     "v": [
+      3,
+      6
+     ],
+     "unite": "cm",
+     "methode": "reference",
+     "conf": "B",
+     "ref": "RHS / flore : fleur de 3 a 6 cm de diametre selon les hybrides",
+     "plage": [
+      3,
+      6
+     ],
+     "ecart": {
+      "type": "budget",
+      "texte": "Valeur de la tete du fleuron non reliee une a une a une expression du dessin (budget de l'etape plante) : elle est reglee par fit.py sur les cibles de space.json."
+     }
+    }
+   },
+   "courbure": {
+    "transversale": {
+     "type": {
+      "v": "creux",
+      "methode": "oeil",
+      "photos": [
+       "delphinium:fa18f502",
+       "delphinium:ab233f27"
+      ],
+      "conf": "C"
+     }
+    },
+    "longitudinale": {
+     "profil": {
+      "v": "arquee",
+      "methode": "oeil",
+      "photos": [
+       "delphinium:fa18f502",
+       "delphinium:ab233f27"
+      ],
+      "conf": "C"
+     }
+    }
+   },
+   "matiere": {
+    "epaisseur": {
+     "v": "fine",
+     "methode": "oeil",
+     "photos": [
+      "delphinium:fa18f502",
+      "delphinium:ab233f27",
+      "delphinium:20bcbca2"
+     ],
+     "conf": "C"
+    },
+    "translucidite": {
+     "v": 0.3,
+     "unite": "ratio",
+     "methode": "hypothese",
+     "conf": "D",
+     "note": "Pas de photo a contre-jour des sepales ; a mesurer.",
+     "ecart": {
+      "type": "budget",
+      "texte": "Valeur de la tete du fleuron non reliee une a une a une expression du dessin (budget de l'etape plante) : elle est reglee par fit.py sur les cibles de space.json."
+     }
+    },
+    "texture": {
+     "v": "satin",
+     "methode": "oeil",
+     "photos": [
+      "delphinium:fa18f502",
+      "delphinium:ab233f27",
+      "delphinium:20bcbca2"
+     ],
+     "conf": "C"
+    }
+   },
+   "nervation": {
+    "type": {
+     "v": "palmee",
+     "methode": "oeil",
+     "photos": [
+      "delphinium:fa18f502",
+      "delphinium:ab233f27"
+     ],
+     "conf": "C"
+    },
+    "visible": {
+     "v": "face",
+     "methode": "oeil",
+     "photos": [
+      "delphinium:fa18f502",
+      "delphinium:ab233f27"
+     ],
+     "conf": "C"
+    },
+    "couleur": {
+     "v": "plus-sombre",
+     "methode": "oeil",
+     "photos": [
+      "delphinium:fa18f502",
+      "delphinium:ab233f27"
+     ],
+     "conf": "C"
+    }
+   },
+   "zones": [
+    {
+     "zone": "base",
+     "etendue": {
+      "v": [
+       0,
+       0.25
+      ],
+      "u": [
+       0,
+       1
+      ],
+      "methode": "oeil",
+      "photos": [
+       "delphinium:fa18f502",
+       "delphinium:ab233f27"
+      ],
+      "conf": "C",
+      "ecart": {
+       "type": "budget",
+       "texte": "Valeur de la tete du fleuron non reliee une a une a une expression du dessin (budget de l'etape plante) : elle est reglee par fit.py sur les cibles de space.json."
+      }
+     },
+     "bord": "fondu",
+     "motif": {
+      "type": "plus clair vers la gorge"
+     }
+    },
+    {
+     "zone": "corps",
+     "etendue": {
+      "v": [
+       0.25,
+       0.9
+      ],
+      "u": [
+       0,
+       1
+      ],
+      "methode": "oeil",
+      "photos": [
+       "delphinium:fa18f502",
+       "delphinium:ab233f27"
+      ],
+      "conf": "C",
+      "ecart": {
+       "type": "budget",
+       "texte": "Valeur de la tete du fleuron non reliee une a une a une expression du dessin (budget de l'etape plante) : elle est reglee par fit.py sur les cibles de space.json."
+      }
+     },
+     "bord": "fondu"
+    },
+    {
+     "zone": "pointe",
+     "etendue": {
+      "v": [
+       0.9,
+       1
+      ],
+      "u": [
+       0,
+       1
+      ],
+      "methode": "oeil",
+      "photos": [
+       "delphinium:fa18f502",
+       "delphinium:ab233f27"
+      ],
+      "conf": "C",
+      "ecart": {
+       "type": "budget",
+       "texte": "Valeur de la tete du fleuron non reliee une a une a une expression du dessin (budget de l'etape plante) : elle est reglee par fit.py sur les cibles de space.json."
+      }
+     },
+     "bord": "fondu",
+     "motif": {
+      "type": "pointe un peu plus claire (t053, t045)"
+     }
+    }
+   ],
+   "jointures": [
+    {
+     "vers": "receptacle",
+     "type": "onglet",
+     "params": {
+      "note": "les 5 sepales s inserent en rond sur le receptacle"
+     }
+    }
+   ],
+   "stades": {
+    "bouton": {
+     "note": "sepales fermes en boule, vert puis teinte du coloris au bout"
+    },
+    "ouvert": {
+     "note": "etales en rosette plate, 5 sepales visibles de face"
+    },
+    "declin": {
+     "note": "sepales ternes, tombent un a un"
+    }
+   }
+  },
+  "sepale.superieur": {
+   "role": "perianthe",
+   "nombre": {
+    "v": 2,
+    "unite": "n",
+    "methode": "reference",
+    "conf": "A",
+    "ref": "Flora : Delphinium elatum L., grappe terminale ; fleur zygomorphe, 5 sepales petaloides dont le superieur porte un eperon, 4 petales petits (2 superieurs nectaires dans l eperon, 2 inferieurs formant l oeil), nombreuses etamines, 3 carpelles : 2 sepales superieurs",
+    "ecart": {
+     "type": "budget",
+     "texte": "Valeur de la tete du fleuron non reliee une a une a une expression du dessin (budget de l'etape plante) : elle est reglee par fit.py sur les cibles de space.json."
+    }
+   },
+   "disposition": {
+    "suit": "sepale.lateral.disposition"
+   },
+   "contour": {
+    "suit": "sepale.lateral.contour"
+   },
+   "taille": {
+    "suit": "sepale.lateral.taille"
+   },
+   "courbure": {
+    "transversale": {
+     "type": {
+      "v": "creux",
+      "methode": "oeil",
+      "photos": [
+       "delphinium:fa18f502",
+       "delphinium:ab233f27"
+      ],
+      "conf": "C"
+     }
+    },
+    "longitudinale": {
+     "profil": {
+      "v": "releve",
+      "methode": "oeil",
+      "photos": [
+       "delphinium:fa18f502",
+       "delphinium:ab233f27"
+      ],
+      "conf": "C"
+     }
+    }
+   },
+   "matiere": {
+    "suit": "sepale.lateral.matiere"
+   },
+   "nervation": {
+    "suit": "sepale.lateral.nervation"
+   },
+   "zones": {
+    "suit": "sepale.lateral.zones"
+   },
+   "jointures": {
+    "suit": "sepale.lateral.jointures"
+   },
+   "stades": {
+    "suit": "sepale.lateral.stades"
+   }
+  },
+  "sepale.eperon": {
+   "role": "perianthe",
+   "nombre": {
+    "v": 1,
+    "unite": "n",
+    "methode": "reference",
+    "conf": "A",
+    "ref": "Flora : Delphinium elatum L., grappe terminale ; fleur zygomorphe, 5 sepales petaloides dont le superieur porte un eperon, 4 petales petits (2 superieurs nectaires dans l eperon, 2 inferieurs formant l oeil), nombreuses etamines, 3 carpelles",
+    "ecart": {
+     "type": "budget",
+     "texte": "Valeur de la tete du fleuron non reliee une a une a une expression du dessin (budget de l'etape plante) : elle est reglee par fit.py sur les cibles de space.json."
+    }
+   },
+   "disposition": {
+    "type": "verticilles",
+    "verticilles": {
+     "v": 1,
+     "unite": "n",
+     "methode": "reference",
+     "conf": "A",
+     "ref": "Flora : Delphinium elatum L., grappe terminale ; fleur zygomorphe, 5 sepales petaloides dont le superieur porte un eperon, 4 petales petits (2 superieurs nectaires dans l eperon, 2 inferieurs formant l oeil), nombreuses etamines, 3 carpelles",
+     "ecart": {
+      "type": "budget",
+      "texte": "Valeur de la tete du fleuron non reliee une a une a une expression du dessin (budget de l'etape plante) : elle est reglee par fit.py sur les cibles de space.json."
+     }
+    },
+    "ordre": {
+     "v": "derriere les autres, a l arriere de la fleur",
+     "methode": "reference",
+     "conf": "B",
+     "ref": "Flora : Delphinium elatum L., grappe terminale ; fleur zygomorphe, 5 sepales petaloides dont le superieur porte un eperon, 4 petales petits (2 superieurs nectaires dans l eperon, 2 inferieurs formant l oeil), nombreuses etamines, 3 carpelles"
+    }
+   },
+   "contour": {
+    "base": {
+     "v": "cunee",
+     "methode": "oeil",
+     "photos": [
+      "delphinium:1568d0cc",
+      "delphinium:6194e627"
+     ],
+     "conf": "C"
+    },
+    "pointe": {
+     "type": {
+      "v": "aigue",
+      "methode": "oeil",
+      "photos": [
+       "delphinium:1568d0cc"
+      ],
+      "conf": "C"
+     }
+    },
+    "L_sur_l": {
+     "v": 2.0,
+     "unite": "ratio",
+     "methode": "hypothese",
+     "conf": "D",
+     "note": "Proportion hors de portee de la face ; a mesurer sur une vue de profil (Q1).",
+     "ecart": {
+      "type": "budget",
+      "texte": "Valeur de la tete du fleuron non reliee une a une a une expression du dessin (budget de l'etape plante) : elle est reglee par fit.py sur les cibles de space.json."
+     }
+    }
+   },
+   "taille": {
+    "eperon_cm": {
+     "v": [
+      1.5,
+      3.0
+     ],
+     "unite": "cm",
+     "methode": "reference",
+     "conf": "B",
+     "ref": "Flora : eperon de 1,5 a 3 cm chez D. elatum",
+     "plage": [
+      1.5,
+      3.0
+     ],
+     "ecart": {
+      "type": "budget",
+      "texte": "Valeur de la tete du fleuron non reliee une a une a une expression du dessin (budget de l'etape plante) : elle est reglee par fit.py sur les cibles de space.json."
+     }
+    },
+    "longueur": {
+     "v": 1.0,
+     "unite": "R0",
+     "methode": "hypothese",
+     "conf": "D",
+     "note": "Sepale eperonne aussi long que les autres ; hypothese.",
+     "ecart": {
+      "type": "budget",
+      "texte": "Valeur de la tete du fleuron non reliee une a une a une expression du dessin (budget de l'etape plante) : elle est reglee par fit.py sur les cibles de space.json."
+     }
+    }
+   },
+   "courbure": {
+    "longitudinale": {
+     "profil": {
+      "v": "arquee",
+      "methode": "oeil",
+      "photos": [
+       "delphinium:1568d0cc",
+       "delphinium:82146bfa"
+      ],
+      "conf": "C"
+     },
+     "pied_deg": {
+      "v": 0,
+      "unite": "deg",
+      "methode": "hypothese",
+      "conf": "D",
+      "repere": "axe",
+      "note": "a mesurer (Q1)",
+      "ecart": {
+       "type": "budget",
+       "texte": "Valeur de la tete du fleuron non reliee une a une a une expression du dessin (budget de l'etape plante) : elle est reglee par fit.py sur les cibles de space.json."
+      }
+     }
+    }
+   },
+   "matiere": {
+    "suit": "sepale.lateral.matiere"
+   },
+   "zones": {
+    "suit": "sepale.lateral.zones"
+   },
+   "jointures": {
+    "suit": "sepale.lateral.jointures"
+   },
+   "stades": {
+    "suit": "sepale.lateral.stades"
+   }
+  },
+  "petale.oeil": {
+   "role": "coeur",
+   "nombre": {
+    "v": 4,
+    "unite": "n",
+    "methode": "reference",
+    "conf": "A",
+    "ref": "Flora : Delphinium elatum L., grappe terminale ; fleur zygomorphe, 5 sepales petaloides dont le superieur porte un eperon, 4 petales petits (2 superieurs nectaires dans l eperon, 2 inferieurs formant l oeil), nombreuses etamines, 3 carpelles : 4 petales (2+2)",
+    "ecart": {
+     "type": "budget",
+     "texte": "Valeur de la tete du fleuron non reliee une a une a une expression du dessin (budget de l'etape plante) : elle est reglee par fit.py sur les cibles de space.json."
+    }
+   },
+   "disposition": {
+    "type": "verticilles",
+    "verticilles": {
+     "v": 1,
+     "unite": "n",
+     "methode": "reference",
+     "conf": "A",
+     "ref": "Flora : Delphinium elatum L., grappe terminale ; fleur zygomorphe, 5 sepales petaloides dont le superieur porte un eperon, 4 petales petits (2 superieurs nectaires dans l eperon, 2 inferieurs formant l oeil), nombreuses etamines, 3 carpelles",
+     "ecart": {
+      "type": "budget",
+      "texte": "Valeur de la tete du fleuron non reliee une a une a une expression du dessin (budget de l'etape plante) : elle est reglee par fit.py sur les cibles de space.json."
+     }
+    }
+   },
+   "contour": {
+    "pointe": {
+     "type": {
+      "v": "echancree",
+      "methode": "oeil",
+      "photos": [
+       "delphinium:20bcbca2",
+       "delphinium:ab233f27"
+      ],
+      "conf": "C"
+     }
+    },
+    "marge": {
+     "v": "frangee",
+     "methode": "oeil",
+     "photos": [
+      "delphinium:20bcbca2"
+     ],
+     "conf": "C"
+    }
+   },
+   "taille": {
+    "diametre": {
+     "v": 0.3,
+     "unite": "R0",
+     "methode": "hypothese",
+     "conf": "D",
+     "note": "Diametre de l oeil sur la fleur, environ un tiers (t064, t020) ; non segmente (Q2).",
+     "ecart": {
+      "type": "budget",
+      "texte": "Valeur de la tete du fleuron non reliee une a une a une expression du dessin (budget de l'etape plante) : elle est reglee par fit.py sur les cibles de space.json."
+     }
+    }
+   },
+   "matiere": {
+    "texture": {
+     "v": "velours poilu",
+     "methode": "oeil",
+     "photos": [
+      "delphinium:20bcbca2",
+      "delphinium:be354759"
+     ],
+     "conf": "C"
+    },
+    "grain": {
+     "v": "papilleux",
+     "methode": "oeil",
+     "photos": [
+      "delphinium:20bcbca2"
+     ],
+     "conf": "C"
+    }
+   },
+   "zones": [
+    {
+     "zone": "oeil",
+     "etendue": {
+      "v": [
+       0,
+       0.3
+      ],
+      "u": [
+       0,
+       1
+      ],
+      "methode": "oeil",
+      "photos": [
+       "delphinium:20bcbca2",
+       "delphinium:be354759",
+       "delphinium:ab233f27"
+      ],
+      "conf": "C",
+      "ecart": {
+       "type": "budget",
+       "texte": "Valeur de la tete du fleuron non reliee une a une a une expression du dessin (budget de l'etape plante) : elle est reglee par fit.py sur les cibles de space.json."
+      }
+     },
+     "bord": "net",
+     "motif": {
+      "type": "touffe de poils (abeille), blanche, jaune pale ou brune selon le coloris"
+     }
+    }
+   ],
+   "jointures": [
+    {
+     "vers": "receptacle",
+     "type": "insertion",
+     "params": {
+      "note": "au centre, devant les etamines"
+     }
+    }
+   ],
+   "stades": {
+    "entrouvert": {
+     "note": "oeil entrevu"
+    },
+    "ouvert": {
+     "note": "oeil net au centre"
+    },
+    "declin": {
+     "note": "oeil brunit"
+    }
+   }
+  },
+  "coeur.etamines": {
+   "role": "coeur",
+   "nombre": {
+    "v": [
+     25,
+     50
+    ],
+    "unite": "n",
+    "methode": "reference",
+    "conf": "B",
+    "ref": "Flora : etamines nombreuses chez Delphinium (env. 25 a 50)",
+    "plage": [
+     25,
+     50
+    ],
+    "ecart": {
+     "type": "budget",
+     "texte": "Valeur de la tete du fleuron non reliee une a une a une expression du dessin (budget de l'etape plante) : elle est reglee par fit.py sur les cibles de space.json."
+    }
+   },
+   "disposition": {
+    "type": "verticilles",
+    "verticilles": {
+     "v": 3,
+     "unite": "n",
+     "methode": "hypothese",
+     "conf": "D",
+     "note": "non compte (Q4)",
+     "ecart": {
+      "type": "budget",
+      "texte": "Valeur de la tete du fleuron non reliee une a une a une expression du dessin (budget de l'etape plante) : elle est reglee par fit.py sur les cibles de space.json."
+     }
+    }
+   },
+   "taille": {
+    "longueur": {
+     "v": 0.3,
+     "unite": "R0",
+     "methode": "hypothese",
+     "conf": "D",
+     "note": "Filets courts caches derriere l oeil ; hypothese.",
+     "ecart": {
+      "type": "budget",
+      "texte": "Valeur de la tete du fleuron non reliee une a une a une expression du dessin (budget de l'etape plante) : elle est reglee par fit.py sur les cibles de space.json."
+     }
+    }
+   },
+   "matiere": {
+    "texture": {
+     "v": "mat",
+     "methode": "hypothese",
+     "conf": "D"
+    }
+   },
+   "zones": [
+    {
+     "zone": "corps",
+     "etendue": {
+      "v": [
+       0,
+       1
+      ],
+      "u": [
+       0,
+       1
+      ],
+      "methode": "hypothese",
+      "conf": "D",
+      "ecart": {
+       "type": "budget",
+       "texte": "Valeur de la tete du fleuron non reliee une a une a une expression du dessin (budget de l'etape plante) : elle est reglee par fit.py sur les cibles de space.json."
+      }
+     },
+     "bord": "net",
+     "motif": {
+      "type": "filets pales, anthere sombre"
+     }
+    }
+   ],
+   "jointures": [
+    {
+     "vers": "receptacle",
+     "type": "insertion",
+     "params": {}
+    }
+   ],
+   "stades": {
+    "ouvert": {
+     "note": "dressees au centre"
+    },
+    "declin": {
+     "note": "tombent"
+    }
+   }
+  },
+  "coeur.pistils": {
+   "role": "coeur",
+   "nombre": {
+    "v": 3,
+    "unite": "n",
+    "methode": "reference",
+    "conf": "A",
+    "ref": "Flora : Delphinium elatum L., grappe terminale ; fleur zygomorphe, 5 sepales petaloides dont le superieur porte un eperon, 4 petales petits (2 superieurs nectaires dans l eperon, 2 inferieurs formant l oeil), nombreuses etamines, 3 carpelles",
+    "ecart": {
+     "type": "budget",
+     "texte": "Valeur de la tete du fleuron non reliee une a une a une expression du dessin (budget de l'etape plante) : elle est reglee par fit.py sur les cibles de space.json."
+    }
+   },
+   "disposition": {
+    "type": "verticilles",
+    "verticilles": {
+     "v": 1,
+     "unite": "n",
+     "methode": "reference",
+     "conf": "A",
+     "ref": "Flora : Delphinium elatum L., grappe terminale ; fleur zygomorphe, 5 sepales petaloides dont le superieur porte un eperon, 4 petales petits (2 superieurs nectaires dans l eperon, 2 inferieurs formant l oeil), nombreuses etamines, 3 carpelles",
+     "ecart": {
+      "type": "budget",
+      "texte": "Valeur de la tete du fleuron non reliee une a une a une expression du dessin (budget de l'etape plante) : elle est reglee par fit.py sur les cibles de space.json."
+     }
+    }
+   },
+   "taille": {
+    "longueur": {
+     "v": 0.2,
+     "unite": "R0",
+     "methode": "hypothese",
+     "conf": "D",
+     "note": "Style court ; hypothese.",
+     "ecart": {
+      "type": "budget",
+      "texte": "Valeur de la tete du fleuron non reliee une a une a une expression du dessin (budget de l'etape plante) : elle est reglee par fit.py sur les cibles de space.json."
+     }
+    }
+   },
+   "matiere": {
+    "texture": {
+     "v": "mat",
+     "methode": "hypothese",
+     "conf": "D"
+    }
+   },
+   "zones": [
+    {
+     "zone": "corps",
+     "etendue": {
+      "v": [
+       0,
+       1
+      ],
+      "u": [
+       0,
+       1
+      ],
+      "methode": "hypothese",
+      "conf": "D",
+      "ecart": {
+       "type": "budget",
+       "texte": "Valeur de la tete du fleuron non reliee une a une a une expression du dessin (budget de l'etape plante) : elle est reglee par fit.py sur les cibles de space.json."
+      }
+     },
+     "bord": "net"
+    }
+   ],
+   "jointures": [
+    {
+     "vers": "receptacle",
+     "type": "insertion",
+     "params": {}
+    }
+   ],
+   "stades": {
+    "declin": {
+     "note": "les 3 carpelles grossissent en follicules verts (t040)"
+    },
+    "fane": {
+     "note": "capsules allongees, fendues, graines noires (t295)"
+    }
+   }
+  },
+  "receptacle": {
+   "role": "receptacle",
+   "taille": {
+    "diametre": {
+     "v": 0.1,
+     "unite": "R0",
+     "methode": "hypothese",
+     "conf": "D",
+     "note": "Petit ; non mesure.",
+     "ecart": {
+      "type": "budget",
+      "texte": "Valeur de la tete du fleuron non reliee une a une a une expression du dessin (budget de l'etape plante) : elle est reglee par fit.py sur les cibles de space.json."
+     }
+    }
+   },
+   "matiere": {
+    "texture": {
+     "v": "mat",
+     "methode": "hypothese",
+     "conf": "D"
+    }
+   },
+   "zones": [
+    {
+     "zone": "corps",
+     "etendue": {
+      "v": [
+       0,
+       1
+      ],
+      "u": [
+       0,
+       1
+      ],
+      "methode": "hypothese",
+      "conf": "D",
+      "ecart": {
+       "type": "budget",
+       "texte": "Valeur de la tete du fleuron non reliee une a une a une expression du dessin (budget de l'etape plante) : elle est reglee par fit.py sur les cibles de space.json."
+      }
+     },
+     "bord": "net"
+    }
+   ],
+   "jointures": [
+    {
+     "vers": "pedicelle",
+     "type": "col",
+     "params": {}
+    }
+   ],
+   "stades": {
+    "declin": {
+     "note": "porte la capsule"
+    }
+   }
+  },
+  "bouton": {
+   "role": "bouton",
+   "disposition": {
+    "type": "grappe",
+    "verticilles": {
+     "v": 1,
+     "unite": "n",
+     "methode": "reference",
+     "conf": "A",
+     "ref": "Flora : fleurs en grappe, les plus jeunes au sommet",
+     "ecart": {
+      "type": "budget",
+      "texte": "Valeur de la tete du fleuron non reliee une a une a une expression du dessin (budget de l'etape plante) : elle est reglee par fit.py sur les cibles de space.json."
+     }
+    },
+    "ordre": {
+     "v": "boutons au sommet de l epi, plus serres vers la pointe",
+     "methode": "oeil",
+     "photos": [
+      "delphinium:ec15f1f9",
+      "delphinium:ea2bb29b",
+      "delphinium:ec257f4c"
+     ],
+     "conf": "B"
+    }
+   },
+   "contour": {
+    "L_sur_l": {
+     "v": 1.61,
+     "unite": "ratio",
+     "methode": "segmente",
+     "photos": [
+      "delphinium:6194e627"
+     ],
+     "conf": "C",
+     "n": 1,
+     "note": "targets.json bouton.hw = 1.61 (tol 0.10)",
+     "ecart": {
+      "type": "budget",
+      "texte": "Valeur de la tete du fleuron non reliee une a une a une expression du dessin (budget de l'etape plante) : elle est reglee par fit.py sur les cibles de space.json."
+     }
+    },
+    "taper": {
+     "v": 0.927,
+     "unite": "ratio",
+     "methode": "segmente",
+     "photos": [
+      "delphinium:6194e627"
+     ],
+     "conf": "C",
+     "n": 1,
+     "note": "targets.json bouton.taper",
+     "ecart": {
+      "type": "budget",
+      "texte": "Valeur de la tete du fleuron non reliee une a une a une expression du dessin (budget de l'etape plante) : elle est reglee par fit.py sur les cibles de space.json."
+     }
+    },
+    "pointe": {
+     "type": {
+      "v": "arrondie",
+      "methode": "oeil",
+      "photos": [
+       "delphinium:ec15f1f9",
+       "delphinium:ec257f4c"
+      ],
+      "conf": "C"
+     }
+    }
+   },
+   "taille": {
+    "remplissage": {
+     "v": 0.722,
+     "unite": "ratio",
+     "methode": "segmente",
+     "photos": [
+      "delphinium:6194e627"
+     ],
+     "conf": "C",
+     "n": 1,
+     "note": "targets.json bouton.fill, tol 0.06",
+     "ecart": {
+      "type": "budget",
+      "texte": "Valeur de la tete du fleuron non reliee une a une a une expression du dessin (budget de l'etape plante) : elle est reglee par fit.py sur les cibles de space.json."
+     }
+    },
+    "diametre": {
+     "v": 0.08,
+     "unite": "ratio",
+     "methode": "oeil",
+     "photos": [
+      "delphinium:ec15f1f9",
+      "delphinium:ec257f4c"
+     ],
+     "conf": "C",
+     "note": "bouton rond, environ 8 % de la hauteur de l epi visible (oeil sur t014 et t018)",
+     "ecart": {
+      "type": "budget",
+      "texte": "Valeur de la tete du fleuron non reliee une a une a une expression du dessin (budget de l'etape plante) : elle est reglee par fit.py sur les cibles de space.json."
+     }
+    }
+   },
+   "matiere": {
+    "texture": {
+     "v": "velu",
+     "methode": "oeil",
+     "photos": [
+      "delphinium:ec15f1f9"
+     ],
+     "conf": "C"
+    },
+    "epaisseur": {
+     "v": "epaisse",
+     "methode": "oeil",
+     "photos": [
+      "delphinium:ec15f1f9"
+     ],
+     "conf": "C"
+    },
+    "brillance": {
+     "v": 0.3,
+     "unite": "ratio",
+     "methode": "hypothese",
+     "conf": "D",
+     "ecart": {
+      "type": "budget",
+      "texte": "Valeur de la tete du fleuron non reliee une a une a une expression du dessin (budget de l'etape plante) : elle est reglee par fit.py sur les cibles de space.json."
+     }
+    }
+   },
+   "zones": [
+    {
+     "zone": "base",
+     "etendue": {
+      "v": [
+       0,
+       0.6
+      ],
+      "u": [
+       0,
+       1
+      ],
+      "methode": "oeil",
+      "photos": [
+       "delphinium:ec15f1f9",
+       "delphinium:ea2bb29b"
+      ],
+      "conf": "C",
+      "ecart": {
+       "type": "budget",
+       "texte": "Valeur de la tete du fleuron non reliee une a une a une expression du dessin (budget de l'etape plante) : elle est reglee par fit.py sur les cibles de space.json."
+      }
+     },
+     "bord": "fondu",
+     "motif": {
+      "type": "vert (#647f2c, #94a064 : brief.md, refs.py pal)"
+     }
+    },
+    {
+     "zone": "pointe",
+     "etendue": {
+      "v": [
+       0.6,
+       1
+      ],
+      "u": [
+       0,
+       1
+      ],
+      "methode": "oeil",
+      "photos": [
+       "delphinium:82146bfa",
+       "delphinium:1568d0cc"
+      ],
+      "conf": "C",
+      "ecart": {
+       "type": "budget",
+       "texte": "Valeur de la tete du fleuron non reliee une a une a une expression du dessin (budget de l'etape plante) : elle est reglee par fit.py sur les cibles de space.json."
+      }
+     },
+     "bord": "fondu",
+     "motif": {
+      "type": "teinte du coloris au bout (#8e79de sur t035)"
+     }
+    }
+   ],
+   "jointures": [
+    {
+     "vers": "pedicelle",
+     "type": "col",
+     "params": {
+      "note": "pedicelle court"
+     }
+    }
+   ],
+   "stades": {
+    "bouton": {
+     "note": "boule verte velue, goutte possible (t014)"
+    },
+    "gonfle": {
+     "note": "la pointe prend la couleur du coloris, le bouton s allonge"
+    }
+   }
+  },
+  "bractee": {
+   "role": "bractee",
+   "nombre": {
+    "v": 1,
+    "unite": "n",
+    "methode": "reference",
+    "conf": "B",
+    "ref": "Flora : une bractee a l aisselle de chaque pedicelle",
+    "ecart": {
+     "type": "budget",
+     "texte": "Valeur de la tete du fleuron non reliee une a une a une expression du dessin (budget de l'etape plante) : elle est reglee par fit.py sur les cibles de space.json."
+    }
+   },
+   "disposition": {
+    "type": "alternes",
+    "verticilles": {
+     "v": 1,
+     "unite": "n",
+     "methode": "reference",
+     "conf": "B",
+     "ref": "Flora",
+     "ecart": {
+      "type": "budget",
+      "texte": "Valeur de la tete du fleuron non reliee une a une a une expression du dessin (budget de l'etape plante) : elle est reglee par fit.py sur les cibles de space.json."
+     }
+    }
+   },
+   "contour": {
+    "L_sur_l": {
+     "v": 3.0,
+     "unite": "ratio",
+     "methode": "hypothese",
+     "conf": "D",
+     "note": "Bractee lineaire ; non mesuree.",
+     "ecart": {
+      "type": "budget",
+      "texte": "Valeur de la tete du fleuron non reliee une a une a une expression du dessin (budget de l'etape plante) : elle est reglee par fit.py sur les cibles de space.json."
+     }
+    },
+    "pointe": {
+     "type": {
+      "v": "aigue",
+      "methode": "hypothese",
+      "conf": "D"
+     }
+    }
+   },
+   "taille": {
+    "longueur": {
+     "v": 0.3,
+     "unite": "L",
+     "methode": "hypothese",
+     "conf": "D",
+     "note": "Longueur par rapport au pedicelle ; hypothese.",
+     "ecart": {
+      "type": "budget",
+      "texte": "Valeur de la tete du fleuron non reliee une a une a une expression du dessin (budget de l'etape plante) : elle est reglee par fit.py sur les cibles de space.json."
+     }
+    }
+   },
+   "matiere": {
+    "texture": {
+     "v": "mat",
+     "methode": "hypothese",
+     "conf": "D"
+    }
+   },
+   "zones": [
+    {
+     "zone": "corps",
+     "etendue": {
+      "v": [
+       0,
+       1
+      ],
+      "u": [
+       0,
+       1
+      ],
+      "methode": "hypothese",
+      "conf": "D",
+      "ecart": {
+       "type": "budget",
+       "texte": "Valeur de la tete du fleuron non reliee une a une a une expression du dessin (budget de l'etape plante) : elle est reglee par fit.py sur les cibles de space.json."
+      }
+     },
+     "bord": "net"
+    }
+   ],
+   "jointures": [
+    {
+     "vers": "pedicelle",
+     "type": "insertion",
+     "params": {}
+    }
+   ],
+   "courbure": {
+    "longitudinale": {
+     "profil": {
+      "v": "droite",
+      "methode": "hypothese",
+      "conf": "D"
+     }
+    }
+   },
+   "nervation": {
+    "type": {
+     "v": "parallele",
+     "methode": "hypothese",
+     "conf": "D"
+    }
+   },
+   "stades": {
+    "declin": {
+     "note": "seche"
+    }
+   }
+  },
+  "pedicelle": {
+   "role": "pedicelle",
+   "taille": {
+    "longueur": {
+     "v": [
+      1,
+      3
+     ],
+     "unite": "cm",
+     "methode": "reference",
+     "conf": "C",
+     "ref": "Flora : pedicelles de 1 a 3 cm, plus longs en bas de l epi",
+     "plage": [
+      1,
+      3
+     ],
+     "ecart": {
+      "type": "confirme",
+      "texte": "Pedicelle dessine a .42 de la longueur d'un fleuron (lay.ped, y-delphinium.js) : de l'ordre de 1 a 3 cm sur un fleuron de 4 a 6 cm."
+     }
+    }
+   },
+   "courbure": {
+    "longitudinale": {
+     "profil": {
+      "v": "arquee, puis releve a la capsule",
+      "methode": "oeil",
+      "photos": [
+       "delphinium:6f2d57fd",
+       "delphinium:82146bfa"
+      ],
+      "conf": "C"
+     },
+     "pied_deg": {
+      "v": 45,
+      "unite": "deg",
+      "methode": "hypothese",
+      "conf": "D",
+      "repere": "tige",
+      "note": "angle sur la tige a l ouverture, hypothese",
+      "ecart": {
+       "type": "confirme",
+       "texte": "Le pedicelle sort de l'axe de l'epi a peu pres a 45 degres (lay.pedq .55 / pedO .7) ; hypothese non mesuree."
+      }
+     }
+    }
+   },
+   "matiere": {
+    "texture": {
+     "v": "velu",
+     "methode": "oeil",
+     "photos": [
+      "delphinium:ec15f1f9"
+     ],
+     "conf": "C"
+    }
+   },
+   "zones": [
+    {
+     "zone": "corps",
+     "etendue": {
+      "v": [
+       0,
+       1
+      ],
+      "u": [
+       0,
+       1
+      ],
+      "methode": "oeil",
+      "photos": [
+       "delphinium:6f2d57fd"
+      ],
+      "conf": "C",
+      "ecart": {
+       "type": "confirme",
+       "texte": "Une seule zone, du pied a la tete, teinte verte du pedicelle (DLP_S.stem)."
+      }
+     },
+     "bord": "net",
+     "motif": {
+      "type": "vert"
+     }
+    }
+   ],
+   "jointures": [
+    {
+     "vers": "tige",
+     "type": "noeud",
+     "params": {
+      "note": "part de l axe a l aisselle de la bractee"
+     }
+    }
+   ],
+   "section": {
+    "forme": {
+     "v": "ronde",
+     "methode": "oeil",
+     "photos": [
+      "delphinium:6f2d57fd"
+     ],
+     "conf": "C"
+    },
+    "diametre": {
+     "v": 0.02,
+     "unite": "L",
+     "methode": "hypothese",
+     "conf": "D",
+     "note": "fin, hypothese",
+     "ecart": {
+      "type": "confirme",
+      "texte": "Largeur lay.pedW .04 de la longueur de l'epi, fin ; hypothese."
+     }
+    }
+   },
+   "stades": {
+    "declin": {
+     "note": "s epaissit sous la capsule, se redresse"
+    },
+    "fane": {
+     "note": "sec, brun"
+    }
+   }
+  },
+  "tige": {
+   "role": "tige",
+   "taille": {
+    "longueur": {
+     "v": [
+      100,
+      200
+     ],
+     "unite": "cm",
+     "methode": "reference",
+     "conf": "B",
+     "ref": "Flora : D. elatum 1 a 2 m ; hybrides de coupe 1 a 1,8 m",
+     "plage": [
+      100,
+      200
+     ],
+     "ecart": {
+      "type": "confirme",
+      "texte": "La tige est coupee par le bouquet ou la planche (full cm) : la longueur vient de la composition, pas du dessin de la plante."
+     }
+    },
+    "rapport_fleur": {
+     "v": 0.4286,
+     "unite": "ratio",
+     "methode": "segmente",
+     "photos": [
+      "delphinium:f9e29b8e"
+     ],
+     "conf": "C",
+     "n": 1,
+     "note": "targets.json tige.stem (tige sur fleur, t106, tol 0.02)",
+     "code": "GHI.delphinium.pl.stem",
+     "ecart": {
+      "type": "confirme",
+      "texte": "0,43 code contre 0,4286 mesure, dans la tolerance .02."
+     },
+     "retenu": 0.32
+    },
+    "epi_sur_tige": {
+     "v": 0.35,
+     "unite": "L",
+     "methode": "oeil",
+     "photos": [
+      "delphinium:1b9a8fa1",
+      "delphinium:c6e4ee3b",
+      "delphinium:4f98f52f"
+     ],
+     "conf": "C",
+     "note": "l epi fleuri occupe environ le tiers superieur de la tige sur t020 t065 t056, lu a l oeil",
+     "ecart": {
+      "type": "divergence",
+      "texte": "Le dessin fixe l'epi a pl.raceme x la hauteur de la plante, plafonne a .4 de la spine du bouquet ; le rendu donne un quart a un tiers de la tige : un peu moins que .35."
+     }
+    }
+   },
+   "courbure": {
+    "longitudinale": {
+     "profil": {
+      "v": "droite",
+      "methode": "oeil",
+      "photos": [
+       "delphinium:1b9a8fa1",
+       "delphinium:c6e4ee3b",
+       "delphinium:4f98f52f"
+      ],
+      "conf": "B"
+     },
+     "pied_deg": {
+      "v": 90,
+      "unite": "deg",
+      "methode": "oeil",
+      "photos": [
+       "delphinium:1b9a8fa1",
+       "delphinium:c6e4ee3b",
+       "delphinium:4f98f52f"
+      ],
+      "conf": "C",
+      "repere": "horizontale",
+      "note": "dressee verticale ; fleche 0.02 a 0.04 x L sur t287 et t288 (organ.py stem --green)",
+      "ecart": {
+       "type": "confirme",
+       "texte": "Tige dressee ; svStemLine donne la meme fleche faible (aimK .1, wig .02)."
+      }
+     }
+    }
+   },
+   "matiere": {
+    "texture": {
+     "v": "glauque lisse",
+     "methode": "oeil",
+     "photos": [
+      "delphinium:ea2bb29b",
+      "delphinium:6f2d57fd"
+     ],
+     "conf": "C"
+    },
+    "epaisseur": {
+     "v": "epaisse",
+     "methode": "oeil",
+     "photos": [
+      "delphinium:1b9a8fa1",
+      "delphinium:c6e4ee3b",
+      "delphinium:4f98f52f"
+     ],
+     "conf": "C"
+    }
+   },
+   "zones": [
+    {
+     "zone": "corps",
+     "etendue": {
+      "v": [
+       0,
+       1
+      ],
+      "u": [
+       0,
+       1
+      ],
+      "methode": "segmente",
+      "photos": [
+       "delphinium:529b00fe",
+       "delphinium:37c4ba14"
+      ],
+      "conf": "C",
+      "ecart": {
+       "type": "confirme",
+       "texte": "Une seule zone verte glauque sur toute la tige (DLP_SC), jaunie au fane par dlpStemCols."
+      }
+     },
+     "bord": "net",
+     "motif": {
+      "type": "vert uni ; ombre #2a3d19-#344514, corps #5f7132-#5c6c3a, lumiere #869660-#89975e (organ.py stem t287 t288)"
+     }
+    }
+   ],
+   "couleur": {
+    "v": [
+     "#5f7132",
+     "#5c6c3a"
+    ],
+    "unite": "hex",
+    "methode": "segmente",
+    "photos": [
+     "delphinium:529b00fe",
+     "delphinium:37c4ba14"
+    ],
+    "conf": "C",
+    "n": 2,
+    "plage": [
+     "#5f7132",
+     "#5c6c3a"
+    ],
+    "note": "tons du corps, organ.py stem --green t287 et t288"
+   },
+   "jointures": [
+    {
+     "vers": "feuille",
+     "type": "noeud",
+     "params": {
+      "note": "feuille alterne a chaque noeud, plus petite vers l epi"
+     }
+    },
+    {
+     "vers": "pedicelle",
+     "type": "noeud",
+     "params": {}
+    }
+   ],
+   "section": {
+    "forme": {
+     "v": "ronde, creuse",
+     "methode": "reference",
+     "conf": "B",
+     "ref": "Flora : Delphinium elatum L., grappe terminale ; fleur zygomorphe, 5 sepales petaloides dont le superieur porte un eperon, 4 petales petits (2 superieurs nectaires dans l eperon, 2 inferieurs formant l oeil), nombreuses etamines, 3 carpelles ; tige creuse"
+    },
+    "diametre": {
+     "v": 0.012,
+     "unite": "L",
+     "methode": "hypothese",
+     "conf": "D",
+     "note": "fraction de la tige entiere ; non mesuree (Q5)",
+     "ecart": {
+      "type": "divergence",
+      "texte": "Largeur de tige = pl.stem x largeur de fleur / 1,18 ; la fraction .012 L de la fiche est une hypothese non mesuree (Q5)."
+     }
+    },
+    "effilement": {
+     "v": 0.97,
+     "unite": "ratio",
+     "methode": "segmente",
+     "photos": [
+      "delphinium:529b00fe"
+     ],
+     "conf": "C",
+     "n": 1,
+     "note": "bas/haut 0.97 (t287), 1.00 (t288) : presque cylindrique ; masque contamine par les feuilles (Q5)",
+     "ecart": {
+      "type": "confirme",
+      "texte": "Effilement faible de svStemLine, presque cylindrique comme .97 mesure ; section a 12 stries fines (DLP_SC.sv)."
+     }
+    },
+    "poils": {
+     "v": "pubescente sous l epi",
+     "methode": "oeil",
+     "photos": [
+      "delphinium:ea2bb29b"
+     ],
+     "conf": "C"
+    }
+   },
+   "stades": {
+    "declin": {
+     "note": "la tige reste droite, le bas de l epi porte des capsules vertes (t040)"
+    },
+    "fane": {
+     "note": "capsules et tige se dessechent (t287, t295)"
+    },
+    "sec": {
+     "note": "tige brune, capsules fendues"
+    }
+   }
+  },
+  "feuille": {
+   "role": "feuille",
+   "nombre": {
+    "v": [
+     5,
+     7
+    ],
+    "unite": "n",
+    "methode": "reference",
+    "conf": "B",
+    "ref": "Flora : limbe palmatiparti a 5-7 lobes dentes",
+    "plage": [
+     5,
+     7
+    ],
+    "ecart": {
+     "type": "divergence",
+     "texte": "STEML.delphinium.n = 3 a 4 feuilles de tige dessinees, moins que les 5 a 7 de la fiche : la plante dessinee tient dans la fenetre du bouquet."
+    }
+   },
+   "disposition": {
+    "type": "alternes",
+    "verticilles": {
+     "v": 1,
+     "unite": "n",
+     "methode": "reference",
+     "conf": "A",
+     "ref": "Flora : feuilles alternes",
+     "ecart": {
+      "type": "confirme",
+      "texte": "Feuilles alternes (STEML.arr alt), une par noeud."
+     }
+    },
+    "ordre": {
+     "v": "la plus haute plus petite, a 3 lobes",
+     "methode": "oeil",
+     "photos": [
+      "delphinium:c6e4ee3b",
+      "delphinium:d303fe9f"
+     ],
+     "conf": "C"
+    }
+   },
+   "contour": {
+    "base": {
+     "v": "cordee",
+     "methode": "oeil",
+     "photos": [
+      "delphinium:05a946c2",
+      "delphinium:32b732c5",
+      "delphinium:d303fe9f"
+     ],
+     "conf": "C"
+    },
+    "pointe": {
+     "type": {
+      "v": "aigue",
+      "methode": "oeil",
+      "photos": [
+       "delphinium:05a946c2",
+       "delphinium:32b732c5",
+       "delphinium:d303fe9f"
+      ],
+      "conf": "C"
+     }
+    },
+    "L_sur_l": {
+     "v": 1.42,
+     "unite": "ratio",
+     "methode": "segmente",
+     "photos": [
+      "delphinium:05a946c2",
+      "delphinium:32b732c5",
+      "delphinium:d303fe9f"
+     ],
+     "conf": "B",
+     "n": 3,
+     "plage": [
+      1.32,
+      1.54
+     ],
+     "note": "organ.py leaf --green : 1.54 (t047), 1.32 (t016), 1.41 (t012) ; targets.json feuille.leaflw = 1.51 (tol 0.32, n 3) concorde",
+     "ecart": {
+      "type": "divergence",
+      "texte": "Limbe palmatifide a 5 lobes dentes (svCutLeaf) : le L/l 1,42 mesure n'est pas regle directement ; fit.py ajuste blade et lobeW."
+     }
+    },
+    "marge": {
+     "v": "dentee",
+     "methode": "oeil",
+     "photos": [
+      "delphinium:05a946c2",
+      "delphinium:32b732c5",
+      "delphinium:d303fe9f"
+     ],
+     "conf": "C"
+    },
+    "asymetrie": {
+     "v": "symetrique",
+     "methode": "oeil",
+     "photos": [
+      "delphinium:05a946c2",
+      "delphinium:32b732c5",
+      "delphinium:d303fe9f"
+     ],
+     "conf": "C"
+    }
+   },
+   "taille": {
+    "longueur_limbe": {
+     "v": 0.12,
+     "unite": "L",
+     "methode": "oeil",
+     "photos": [
+      "delphinium:1b9a8fa1",
+      "delphinium:c6e4ee3b",
+      "delphinium:4f98f52f"
+     ],
+     "conf": "C",
+     "note": "limbe de feuille basale, environ un huitieme de la tige, oeil",
+     "ecart": {
+      "type": "confirme",
+      "texte": "Limbe = pl.blade x la longueur de la feuille (STEML.len 28) ; lu a l'oeil."
+     }
+    },
+    "angle_lobes": {
+     "v": 64.6,
+     "unite": "deg",
+     "methode": "segmente",
+     "photos": [
+      "delphinium:05a946c2",
+      "delphinium:32b732c5",
+      "delphinium:d303fe9f"
+     ],
+     "conf": "B",
+     "n": 3,
+     "plage": [
+      56,
+      73
+     ],
+     "repere": "piece",
+     "note": "targets.json feuille.leafang 64.6 +/- 8.4",
+     "code": "GHI.delphinium.pl.lobeAng*180/Math.PI",
+     "ecart": {
+      "type": "confirme",
+      "texte": "pl.lobeAng 1,13 rad = 64,7 degres, cible feuille.leafang 64,6."
+     },
+     "retenu": 100.26761414789407
+    }
+   },
+   "courbure": {
+    "transversale": {
+     "type": {
+      "v": "plat",
+      "methode": "oeil",
+      "photos": [
+       "delphinium:05a946c2",
+       "delphinium:32b732c5",
+       "delphinium:d303fe9f"
+      ],
+      "conf": "C"
+     }
+    },
+    "longitudinale": {
+     "profil": {
+      "v": "arquee",
+      "methode": "oeil",
+      "photos": [
+       "delphinium:d303fe9f"
+      ],
+      "conf": "C"
+     }
+    }
+   },
+   "matiere": {
+    "epaisseur": {
+     "v": "fine",
+     "methode": "oeil",
+     "photos": [
+      "delphinium:05a946c2",
+      "delphinium:32b732c5",
+      "delphinium:d303fe9f"
+     ],
+     "conf": "C"
+    },
+    "texture": {
+     "v": "mat",
+     "methode": "oeil",
+     "photos": [
+      "delphinium:05a946c2",
+      "delphinium:32b732c5",
+      "delphinium:d303fe9f"
+     ],
+     "conf": "C"
+    },
+    "translucidite": {
+     "v": 0.1,
+     "unite": "ratio",
+     "methode": "hypothese",
+     "conf": "D",
+     "ecart": {
+      "type": "confirme",
+      "texte": "DLP_BLADE.trans .1 (hypothese)."
+     }
+    }
+   },
+   "nervation": {
+    "type": {
+     "v": "palmee",
+     "methode": "oeil",
+     "photos": [
+      "delphinium:05a946c2",
+      "delphinium:32b732c5"
+     ],
+     "conf": "C"
+    },
+    "visible": {
+     "v": "face",
+     "methode": "oeil",
+     "photos": [
+      "delphinium:05a946c2"
+     ],
+     "conf": "C"
+    },
+    "relief": {
+     "v": "creux",
+     "methode": "oeil",
+     "photos": [
+      "delphinium:05a946c2"
+     ],
+     "conf": "C"
+    },
+    "couleur": {
+     "v": "plus-claire",
+     "methode": "oeil",
+     "photos": [
+      "delphinium:05a946c2"
+     ],
+     "conf": "C"
+    },
+    "n": {
+     "v": [
+      5,
+      7
+     ],
+     "unite": "n",
+     "methode": "reference",
+     "conf": "B",
+     "ref": "Flora",
+     "ecart": {
+      "type": "divergence",
+      "texte": "Nervures du kit (svCutLeaf nu [3,4], nv [6,10]) : moins que 5 a 7 ; traits fins pour ne pas alourdir."
+     }
+    }
+   },
+   "zones": [
+    {
+     "zone": "corps",
+     "etendue": {
+      "v": [
+       0,
+       1
+      ],
+      "u": [
+       0,
+       1
+      ],
+      "methode": "segmente",
+      "photos": [
+       "delphinium:05a946c2",
+       "delphinium:32b732c5",
+       "delphinium:d303fe9f"
+      ],
+      "conf": "C",
+      "ecart": {
+       "type": "confirme",
+       "texte": "Une zone : dessus vert plus fonce, dessous gris-vert (DLP_BLADE.stops / bstops)."
+      }
+     },
+     "bord": "net",
+     "motif": {
+      "type": "vert franc ; ombre #324122-#537621, corps #687f52-#779951, lumiere #9bb87e-#a7c481 (organ.py leaf)"
+     }
+    }
+   ],
+   "couleur": {
+    "v": [
+     "#779951",
+     "#85ab4d",
+     "#687f52"
+    ],
+    "unite": "hex",
+    "methode": "segmente",
+    "photos": [
+     "delphinium:05a946c2",
+     "delphinium:32b732c5",
+     "delphinium:d303fe9f"
+    ],
+    "conf": "B",
+    "n": 3,
+    "plage": [
+     "#687f52",
+     "#85ab4d"
+    ],
+    "note": "tons du corps, organ.py leaf t047 t016 t012"
+   },
+   "jointures": [
+    {
+     "vers": "tige",
+     "type": "petiole",
+     "params": {
+      "note": "petiole long en bas, nul vers l epi"
+     }
+    }
+   ],
+   "section": {
+    "forme": {
+     "v": "ronde, canalicule",
+     "methode": "oeil",
+     "photos": [
+      "delphinium:05a946c2"
+     ],
+     "conf": "C"
+    },
+    "diametre": {
+     "v": 0.004,
+     "unite": "L",
+     "methode": "hypothese",
+     "conf": "D",
+     "ecart": {
+      "type": "confirme",
+      "texte": "Petiole de largeur len x .024 (dlpLeafSv w0), fin comme .004 L."
+     }
+    },
+    "petiole_sur_limbe": {
+     "v": 0.025,
+     "unite": "ratio",
+     "methode": "segmente",
+     "photos": [
+      "delphinium:05a946c2",
+      "delphinium:32b732c5"
+     ],
+     "conf": "C",
+     "n": 2,
+     "plage": [
+      0.02,
+      0.03
+     ],
+     "note": "organ.py leaf sur le limbe seul : minorant",
+     "code": "GHI.delphinium.pl.pet/GHI.delphinium.pl.blade",
+     "ecart": {
+      "type": "divergence",
+      "texte": "Petiole dessine long (pet .38 contre blade .62) pour que la feuille pende comme sur les photos 12 et 16 ; le .025 de la fiche est un minorant sur le limbe seul."
+     },
+     "retenu": 0.6129032258064516
+    }
+   },
+   "stades": {
+    "fane": {
+     "note": "jaunit et seche, bas de tige d abord"
+    }
+   }
+  }
+ },
+ "varietes": {
+  "guardian-blue": {
+   "forme": "non-mesure",
+   "note": "violet bleute ; photos de coloris non gardees : forme non comparee a l espece (Q2)"
+  },
+  "casa-blanca": {
+   "forme": "non-mesure",
+   "note": "blanc cremeux, oeil jaune pale a la gorge (coloris.md) ; photos de coloris non gardees : forme non comparee a l espece (Q2)"
+  },
+  "morning-lights": {
+   "forme": "non-mesure",
+   "note": "bleu lavande, oeil jaune pale (coloris.md) ; photos de coloris non gardees : forme non comparee a l espece (Q2)"
+  },
+  "black-knight": {
+   "forme": "non-mesure",
+   "note": "violet tres sombre ; photos de coloris non gardees : forme non comparee a l espece (Q2)"
+  },
+  "blue-indulgence": {
+   "forme": "non-mesure",
+   "note": "bleu moyen ; photos de coloris non gardees : forme non comparee a l espece (Q2)"
+  }
+ },
+ "stades": {
+  "table": [
+   {
+    "stade": "bouton",
+    "op": {
+     "v": 0.08,
+     "unite": "ratio",
+     "methode": "reference",
+     "conf": "B",
+     "ref": "targets.json stages (bouton 0.08, ouverte 0.9)"
+    },
+    "wl": {
+     "v": 0,
+     "unite": "ratio",
+     "methode": "reference",
+     "conf": "B",
+     "ref": "targets.json stages (wl 0)"
+    },
+    "photos": [
+     "delphinium:ec15f1f9",
+     "delphinium:ea2bb29b",
+     "delphinium:ec257f4c"
+    ],
+    "statut": "mesure",
+    "note": "boutons verts velus, serres",
+    "jours": {
+     "v": null,
+     "unite": "jours",
+     "methode": "hypothese",
+     "conf": "D",
+     "note": "duree en vase : Q3"
+    }
+   },
+   {
+    "stade": "gonfle",
+    "op": {
+     "v": 0.3,
+     "unite": "ratio",
+     "methode": "hypothese",
+     "conf": "D",
+     "note": "interpole entre les etats mesures"
+    },
+    "wl": {
+     "v": 0,
+     "unite": "ratio",
+     "methode": "hypothese",
+     "conf": "D"
+    },
+    "photos": [
+     "delphinium:82146bfa",
+     "delphinium:1568d0cc"
+    ],
+    "statut": "hypothese",
+    "note": "pointe coloree, bouton allonge",
+    "jours": {
+     "v": null,
+     "unite": "jours",
+     "methode": "hypothese",
+     "conf": "D",
+     "note": "duree en vase : Q3"
+    }
+   },
+   {
+    "stade": "entrouvert",
+    "op": {
+     "v": 0.55,
+     "unite": "ratio",
+     "methode": "hypothese",
+     "conf": "D",
+     "note": "interpole entre les etats mesures"
+    },
+    "wl": {
+     "v": 0,
+     "unite": "ratio",
+     "methode": "hypothese",
+     "conf": "D"
+    },
+    "photos": [
+     "delphinium:f9e29b8e",
+     "delphinium:6194e627"
+    ],
+    "statut": "hypothese",
+    "note": "sepales desserres, oeil entrevu",
+    "jours": {
+     "v": null,
+     "unite": "jours",
+     "methode": "hypothese",
+     "conf": "D",
+     "note": "duree en vase : Q3"
+    }
+   },
+   {
+    "stade": "ouvert",
+    "op": {
+     "v": 0.9,
+     "unite": "ratio",
+     "methode": "reference",
+     "conf": "B",
+     "ref": "targets.json stages (bouton 0.08, ouverte 0.9)"
+    },
+    "wl": {
+     "v": 0,
+     "unite": "ratio",
+     "methode": "reference",
+     "conf": "B",
+     "ref": "targets.json stages (wl 0)"
+    },
+    "photos": [
+     "delphinium:ab233f27",
+     "delphinium:fa18f502",
+     "delphinium:20bcbca2"
+    ],
+    "statut": "mesure",
+    "note": "rosette plate, oeil net",
+    "jours": {
+     "v": null,
+     "unite": "jours",
+     "methode": "hypothese",
+     "conf": "D",
+     "note": "duree en vase : Q3"
+    }
+   },
+   {
+    "stade": "plein",
+    "op": {
+     "v": 1.0,
+     "unite": "ratio",
+     "methode": "hypothese",
+     "conf": "D",
+     "note": "interpole entre les etats mesures"
+    },
+    "wl": {
+     "v": 0,
+     "unite": "ratio",
+     "methode": "hypothese",
+     "conf": "D"
+    },
+    "photos": [
+     "delphinium:be354759",
+     "delphinium:1bd7fd60"
+    ],
+    "statut": "hypothese",
+    "note": "sepales etales, etamines visibles",
+    "jours": {
+     "v": null,
+     "unite": "jours",
+     "methode": "hypothese",
+     "conf": "D",
+     "note": "duree en vase : Q3"
+    }
+   },
+   {
+    "stade": "declin",
+    "op": {
+     "v": 0.7,
+     "unite": "ratio",
+     "methode": "hypothese",
+     "conf": "D",
+     "note": "interpole entre les etats mesures"
+    },
+    "wl": {
+     "v": 0.4,
+     "unite": "ratio",
+     "methode": "hypothese",
+     "conf": "D"
+    },
+    "photos": [
+     "delphinium:6f2d57fd",
+     "delphinium:82146bfa"
+    ],
+    "statut": "hypothese",
+    "note": "bas de l epi : sepales tombes, capsules vertes",
+    "jours": {
+     "v": null,
+     "unite": "jours",
+     "methode": "hypothese",
+     "conf": "D",
+     "note": "duree en vase : Q3"
+    }
+   },
+   {
+    "stade": "fane",
+    "op": {
+     "v": 0.3,
+     "unite": "ratio",
+     "methode": "hypothese",
+     "conf": "D",
+     "note": "interpole entre les etats mesures"
+    },
+    "wl": {
+     "v": 1,
+     "unite": "ratio",
+     "methode": "hypothese",
+     "conf": "D"
+    },
+    "photos": [
+     "delphinium:529b00fe",
+     "delphinium:37c4ba14",
+     "delphinium:92456f53"
+    ],
+    "statut": "hypothese",
+    "note": "capsules brunes, fleurs tombees",
+    "jours": {
+     "v": null,
+     "unite": "jours",
+     "methode": "hypothese",
+     "conf": "D",
+     "note": "duree en vase : Q3"
+    }
+   },
+   {
+    "stade": "sec",
+    "op": {
+     "v": 0.1,
+     "unite": "ratio",
+     "methode": "hypothese",
+     "conf": "D",
+     "note": "interpole entre les etats mesures"
+    },
+    "wl": {
+     "v": 1,
+     "unite": "ratio",
+     "methode": "hypothese",
+     "conf": "D"
+    },
+    "photos": [
+     "delphinium:92456f53"
+    ],
+    "statut": "hypothese",
+    "note": "plante seche sur tige, capsules fendues, graines",
+    "jours": {
+     "v": null,
+     "unite": "jours",
+     "methode": "hypothese",
+     "conf": "D",
+     "note": "duree en vase : Q3"
+    }
+   }
+  ]
+ },
+ "rendu": {},
+ "questions": [
+  {
+   "id": "Q1",
+   "organe": "sepale.eperon",
+   "question": "Eperon : longueur et courbure non mesurees (aucune vue de profil de fleur seule dans les photos gardees).",
+   "proposition": "Garder 1,5 a 3 cm (flore), pointe arquee vers l arriere ; chercher une photo de profil."
+  },
+  {
+   "id": "Q2",
+   "organe": "petale.oeil",
+   "question": "Forme et couleur de l oeil par coloris non comparees a l espece.",
+   "proposition": "Oeil de poils clair (blanc ou jaune pale) par defaut ; sombre seulement apres une photo."
+  },
+  {
+   "id": "Q3",
+   "organe": "tige",
+   "question": "Duree en vase (jours) de chaque stade non fournie.",
+   "proposition": "Reprendre LIFE_SP et fanaison quand la sorte sera inscrite."
+  },
+  {
+   "id": "Q4",
+   "organe": "coeur.etamines",
+   "question": "Nombre et longueur des etamines non comptes sur photo.",
+   "proposition": "Segmenter un gros plan de face ; en attendant 25 a 50 etamines courtes derriere l oeil."
+  },
+  {
+   "id": "Q5",
+   "organe": "tige",
+   "question": "Largeur de la tige : organ.py stem confond tige et feuilles, mesure non retenue.",
+   "proposition": "Mesurer sur une tige coupee isolee ; a defaut 1 a 2 % de la hauteur."
+  }
+ ]
+}
