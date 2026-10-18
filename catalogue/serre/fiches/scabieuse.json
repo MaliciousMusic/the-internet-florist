@@ -1,0 +1,2080 @@
+{
+ "schema": "fiche-morpho/1",
+ "sid": "scabieuse",
+ "nom": "Scabieuse pourpre (fleur veuve)",
+ "taxon": {
+  "genre": "Scabiosa",
+  "espece": "Scabiosa atropurpurea L.",
+  "groupe": "scabieuses de jardin à capitule bombé, bordeaux à noir (type Black Knight), et formes lilas sauvages"
+ },
+ "kit": {
+  "moteur": "svcuDraw (app/y3-coussin.js, pièce coussin générique des Dipsacoideae)",
+  "module": "app/y-scabiosa.js",
+  "note": "P = SVCU_DEF + SCAB_STD ; matière par coloris : SCAB_MAT (bordeaux, blanc), les autres par svcuMat depuis CW_SCAB.",
+  "defauts": "SVCU_DEF",
+  "spec": "SCAB_STD",
+  "coeur": "fleurons du coussin et épingles (svcuDraw)"
+ },
+ "etat": {
+  "pilote": false,
+  "date": "2026-10-18",
+  "auteur": "agent (étape fiche)",
+  "note": "Mesures par organ.py (tige, feuille) et targets.json ; le reste à l'œil ou en hypothèse, dit valeur par valeur. Les photos de S. columbaria et S. caucasica portent groupe=autre."
+ },
+ "photos": {
+  "scabieuse:b7facfd7": {
+   "titre": "File:Scabiosa atropurpurea, bud, Sète 01.jpg",
+   "auteur": "Christian Ferrer",
+   "licence": "CC BY-SA 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Scabiosa_atropurpurea,_bud,_S%C3%A8te_01.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e9/Scabiosa_atropurpurea%2C_bud%2C_S%C3%A8te_01.jpg/500px-Scabiosa_atropurpurea%2C_bud%2C_S%C3%A8te_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/scabieuse/refcache/scabieuse/t000.jpg",
+   "tags": [
+    "stade:bouton",
+    "vue:profil",
+    "organe:bourgeon",
+    "organe:tige"
+   ],
+   "vu": "stade=bouton vue=profil organe=bourgeon+tige groupe=espece-sauvage",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 0,
+   "groupe": "espece-sauvage"
+  },
+  "scabieuse:467d93fe": {
+   "titre": "File:Scabiosa atropurpurea Flower Closeup DehesaBoyalPuertollano.jpg",
+   "auteur": "Javier martin",
+   "licence": "Public domain",
+   "url": "https://commons.wikimedia.org/wiki/File:Scabiosa_atropurpurea_Flower_Closeup_DehesaBoyalPuertollano.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/48/Scabiosa_atropurpurea_Flower_Closeup_DehesaBoyalPuertollano.jpg/500px-Scabiosa_atropurpurea_Flower_Closeup_DehesaBoyalPuertollano.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/scabieuse/refcache/scabieuse/t001.jpg",
+   "tags": [
+    "stade:ouvert",
+    "vue:face",
+    "organe:plante"
+   ],
+   "vu": "stade=ouvert vue=face organe=plante groupe=espece-sauvage",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 1,
+   "groupe": "espece-sauvage"
+  },
+  "scabieuse:2f6bd525": {
+   "titre": "File:Scabiosa atropurpurea Flowers Closeup SierraNevada.jpg",
+   "auteur": "Javier martin",
+   "licence": "Public domain",
+   "url": "https://commons.wikimedia.org/wiki/File:Scabiosa_atropurpurea_Flowers_Closeup_SierraNevada.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/16/Scabiosa_atropurpurea_Flowers_Closeup_SierraNevada.jpg/500px-Scabiosa_atropurpurea_Flowers_Closeup_SierraNevada.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/scabieuse/refcache/scabieuse/t002.jpg",
+   "tags": [
+    "stade:ouvert",
+    "vue:trois-quarts",
+    "organe:tige"
+   ],
+   "vu": "stade=ouvert vue=trois-quarts organe=tige groupe=espece-sauvage",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 2,
+   "groupe": "espece-sauvage"
+  },
+  "scabieuse:4473958a": {
+   "titre": "File:Black knight pincushion (74912).jpg",
+   "auteur": "Rhododendrites",
+   "licence": "CC BY-SA 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Black_knight_pincushion_(74912).jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/Black_knight_pincushion_%2874912%29.jpg/500px-Black_knight_pincushion_%2874912%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/scabieuse/refcache/scabieuse/t006.jpg",
+   "tags": [
+    "stade:ouvert",
+    "vue:face"
+   ],
+   "vu": "stade=ouvert vue=face organe=- groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 6,
+   "groupe": "jardin"
+  },
+  "scabieuse:fb0cc8c7": {
+   "titre": "File:Scabiosa atropurpurea-IMG 9138.jpg",
+   "auteur": "C T Johansson",
+   "licence": "CC BY 3.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Scabiosa_atropurpurea-IMG_9138.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/Scabiosa_atropurpurea-IMG_9138.jpg/500px-Scabiosa_atropurpurea-IMG_9138.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/scabieuse/refcache/scabieuse/t009.jpg",
+   "tags": [
+    "stade:ouvert",
+    "vue:trois-quarts"
+   ],
+   "vu": "stade=ouvert vue=trois-quarts organe=- groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 9,
+   "groupe": "jardin"
+  },
+  "scabieuse:ff094cc9": {
+   "titre": "File:Scabiosa atropurpurea 'Sweet scabious' (Dipsacaceae) flower.JPG",
+   "auteur": "Magnus Manske",
+   "licence": "CC BY-SA 2.5",
+   "url": "https://commons.wikimedia.org/wiki/File:Scabiosa_atropurpurea_%27Sweet_scabious%27_(Dipsacaceae)_flower.JPG",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bf/Scabiosa_atropurpurea_%27Sweet_scabious%27_%28Dipsacaceae%29_flower.JPG/500px-Scabiosa_atropurpurea_%27Sweet_scabious%27_%28Dipsacaceae%29_flower.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/scabieuse/refcache/scabieuse/t011.jpg",
+   "tags": [
+    "stade:ouvert",
+    "vue:trois-quarts",
+    "organe:plante"
+   ],
+   "vu": "stade=ouvert vue=trois-quarts organe=plante groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 11,
+   "groupe": "jardin"
+  },
+  "scabieuse:650f8cde": {
+   "titre": "File:Scabiosa atropurpurea 2021-09-01 0062.jpg",
+   "auteur": "Salicyna",
+   "licence": "CC BY-SA 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Scabiosa_atropurpurea_2021-09-01_0062.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6e/Scabiosa_atropurpurea_2021-09-01_0062.jpg/500px-Scabiosa_atropurpurea_2021-09-01_0062.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/scabieuse/refcache/scabieuse/t017.jpg",
+   "tags": [
+    "stade:ouvert",
+    "vue:profil"
+   ],
+   "vu": "stade=ouvert vue=profil organe=- groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 17,
+   "groupe": "jardin"
+  },
+  "scabieuse:c05fa7a3": {
+   "titre": "File:Scabiosa atropurpurea 2022-07-28 7584.jpg",
+   "auteur": "Salicyna",
+   "licence": "CC BY-SA 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Scabiosa_atropurpurea_2022-07-28_7584.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/Scabiosa_atropurpurea_2022-07-28_7584.jpg/500px-Scabiosa_atropurpurea_2022-07-28_7584.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/scabieuse/refcache/scabieuse/t029.jpg",
+   "tags": [
+    "stade:ouvert",
+    "vue:trois-quarts"
+   ],
+   "vu": "stade=ouvert vue=trois-quarts organe=- groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 29,
+   "groupe": "jardin"
+  },
+  "scabieuse:6ec23f44": {
+   "titre": "File:Scabiosa atropurpurea 2022-08-06 7865.jpg",
+   "auteur": "Salicyna",
+   "licence": "CC BY-SA 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Scabiosa_atropurpurea_2022-08-06_7865.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/Scabiosa_atropurpurea_2022-08-06_7865.jpg/500px-Scabiosa_atropurpurea_2022-08-06_7865.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/scabieuse/refcache/scabieuse/t032.jpg",
+   "tags": [
+    "stade:ouvert",
+    "vue:face",
+    "organe:tige"
+   ],
+   "vu": "stade=ouvert vue=face organe=tige groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 32,
+   "groupe": "jardin"
+  },
+  "scabieuse:c1e5ca46": {
+   "titre": "File:Scabiosa atropurpurea 2021-09-04 1186.jpg",
+   "auteur": "Salicyna",
+   "licence": "CC BY-SA 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Scabiosa_atropurpurea_2021-09-04_1186.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Scabiosa_atropurpurea_2021-09-04_1186.jpg/500px-Scabiosa_atropurpurea_2021-09-04_1186.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/scabieuse/refcache/scabieuse/t020.jpg",
+   "tags": [
+    "stade:bouton",
+    "vue:profil",
+    "organe:bourgeon",
+    "organe:tige"
+   ],
+   "vu": "stade=bouton vue=profil organe=bourgeon organe=tige groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 20,
+   "groupe": "jardin"
+  },
+  "scabieuse:bf7f83b9": {
+   "titre": "File:Scabiosa atropurpurea 2021-09-04 1187.jpg",
+   "auteur": "Salicyna",
+   "licence": "CC BY-SA 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Scabiosa_atropurpurea_2021-09-04_1187.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Scabiosa_atropurpurea_2021-09-04_1187.jpg/500px-Scabiosa_atropurpurea_2021-09-04_1187.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/scabieuse/refcache/scabieuse/t021.jpg",
+   "tags": [
+    "stade:entrouvert",
+    "vue:profil",
+    "organe:bourgeon"
+   ],
+   "vu": "stade=entrouvert vue=profil organe=bourgeon groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 21,
+   "groupe": "jardin"
+  },
+  "scabieuse:e6751d40": {
+   "titre": "File:Scabiosa atropurpurea 2022-07-02 2568.jpg",
+   "auteur": "Salicyna",
+   "licence": "CC BY-SA 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Scabiosa_atropurpurea_2022-07-02_2568.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/Scabiosa_atropurpurea_2022-07-02_2568.jpg/500px-Scabiosa_atropurpurea_2022-07-02_2568.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/scabieuse/refcache/scabieuse/t022.jpg",
+   "tags": [
+    "stade:entrouvert",
+    "vue:trois-quarts",
+    "organe:bourgeon"
+   ],
+   "vu": "stade=entrouvert vue=trois-quarts organe=bourgeon groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 22,
+   "groupe": "jardin"
+  },
+  "scabieuse:a6f977b6": {
+   "titre": "File:Scabiosa atropurpurea 2022-07-02 2570.jpg",
+   "auteur": "Salicyna",
+   "licence": "CC BY-SA 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Scabiosa_atropurpurea_2022-07-02_2570.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/Scabiosa_atropurpurea_2022-07-02_2570.jpg/500px-Scabiosa_atropurpurea_2022-07-02_2570.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/scabieuse/refcache/scabieuse/t023.jpg",
+   "tags": [
+    "stade:bouton",
+    "vue:profil",
+    "organe:bourgeon"
+   ],
+   "vu": "stade=bouton vue=profil organe=bourgeon groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 23,
+   "groupe": "jardin"
+  },
+  "scabieuse:e25dfbb8": {
+   "titre": "File:Scabiosa atropurpurea 2022-07-03 2637.jpg",
+   "auteur": "Salicyna",
+   "licence": "CC BY-SA 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Scabiosa_atropurpurea_2022-07-03_2637.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cb/Scabiosa_atropurpurea_2022-07-03_2637.jpg/500px-Scabiosa_atropurpurea_2022-07-03_2637.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/scabieuse/refcache/scabieuse/t026.jpg",
+   "tags": [
+    "stade:bouton",
+    "vue:trois-quarts",
+    "organe:bourgeon"
+   ],
+   "vu": "stade=bouton vue=trois-quarts organe=bourgeon groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 26,
+   "groupe": "jardin"
+  },
+  "scabieuse:607a6a96": {
+   "titre": "File:Scabiosa atropurpurea 2022-07-22 7462.jpg",
+   "auteur": "Salicyna",
+   "licence": "CC BY-SA 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Scabiosa_atropurpurea_2022-07-22_7462.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/63/Scabiosa_atropurpurea_2022-07-22_7462.jpg/500px-Scabiosa_atropurpurea_2022-07-22_7462.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/scabieuse/refcache/scabieuse/t028.jpg",
+   "tags": [
+    "stade:declin",
+    "vue:dos",
+    "organe:bourgeon"
+   ],
+   "vu": "stade=declin vue=dos organe=bourgeon groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 28,
+   "groupe": "jardin"
+  },
+  "scabieuse:93528430": {
+   "titre": "File:Scabiosa atropurpurea 2022-08-07 7919.jpg",
+   "auteur": "Salicyna",
+   "licence": "CC BY-SA 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Scabiosa_atropurpurea_2022-08-07_7919.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/Scabiosa_atropurpurea_2022-08-07_7919.jpg/500px-Scabiosa_atropurpurea_2022-08-07_7919.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/scabieuse/refcache/scabieuse/t034.jpg",
+   "tags": [
+    "stade:entrouvert",
+    "vue:face"
+   ],
+   "vu": "stade=entrouvert vue=face organe=- groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 34,
+   "groupe": "jardin"
+  },
+  "scabieuse:1608834d": {
+   "titre": "File:Scabiosa atropurpurea 2021-09-01 0070.jpg",
+   "auteur": "Salicyna",
+   "licence": "CC BY-SA 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Scabiosa_atropurpurea_2021-09-01_0070.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/07/Scabiosa_atropurpurea_2021-09-01_0070.jpg/500px-Scabiosa_atropurpurea_2021-09-01_0070.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/scabieuse/refcache/scabieuse/t018.jpg",
+   "tags": [
+    "organe:feuille-dessus",
+    "organe:tige"
+   ],
+   "vu": "stade=- vue=- organe=feuille-dessus organe=tige groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 18,
+   "groupe": "jardin"
+  },
+  "scabieuse:fe653dbf": {
+   "titre": "File:Scabiosa atropurpurea 2022-07-03 2624.jpg",
+   "auteur": "Salicyna",
+   "licence": "CC BY-SA 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Scabiosa_atropurpurea_2022-07-03_2624.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/Scabiosa_atropurpurea_2022-07-03_2624.jpg/500px-Scabiosa_atropurpurea_2022-07-03_2624.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/scabieuse/refcache/scabieuse/t025.jpg",
+   "tags": [
+    "organe:feuille-dessus"
+   ],
+   "vu": "stade=- vue=- organe=feuille-dessus groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 25,
+   "groupe": "jardin"
+  },
+  "scabieuse:b53b588f": {
+   "titre": "File:Scabiosa atropurpurea 2022-07-03 2623.jpg",
+   "auteur": "Salicyna",
+   "licence": "CC BY-SA 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Scabiosa_atropurpurea_2022-07-03_2623.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/03/Scabiosa_atropurpurea_2022-07-03_2623.jpg/500px-Scabiosa_atropurpurea_2022-07-03_2623.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/scabieuse/refcache/scabieuse/t024.jpg",
+   "tags": [
+    "organe:plante",
+    "organe:feuille-dessus"
+   ],
+   "vu": "stade=- vue=- organe=plante organe=feuille-dessus groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 24,
+   "groupe": "jardin"
+  },
+  "scabieuse:57576652": {
+   "titre": "File:Scabiosa atropurpurea 2021-09-01 0072.jpg",
+   "auteur": "Salicyna",
+   "licence": "CC BY-SA 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Scabiosa_atropurpurea_2021-09-01_0072.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Scabiosa_atropurpurea_2021-09-01_0072.jpg/500px-Scabiosa_atropurpurea_2021-09-01_0072.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/scabieuse/refcache/scabieuse/t019.jpg",
+   "tags": [
+    "organe:tige",
+    "organe:feuille-dessus"
+   ],
+   "vu": "stade=- vue=- organe=tige organe=feuille-dessus groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 19,
+   "groupe": "jardin"
+  },
+  "scabieuse:3189cd05": {
+   "titre": "File:Scabiosa atropurpurea 11.JPG",
+   "auteur": "Xemenendura",
+   "licence": "CC BY 3.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Scabiosa_atropurpurea_11.JPG",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/Scabiosa_atropurpurea_11.JPG/500px-Scabiosa_atropurpurea_11.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/scabieuse/refcache/scabieuse/t014.jpg",
+   "tags": [
+    "organe:feuille-dessus"
+   ],
+   "vu": "stade=- vue=- organe=feuille-dessus groupe=espece-sauvage",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 14,
+   "groupe": "autre"
+  },
+  "scabieuse:2ac1abad": {
+   "titre": "File:Scabiosa atropurpurea 2022-08-06 7864.jpg",
+   "auteur": "Salicyna",
+   "licence": "CC BY-SA 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Scabiosa_atropurpurea_2022-08-06_7864.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Scabiosa_atropurpurea_2022-08-06_7864.jpg/500px-Scabiosa_atropurpurea_2022-08-06_7864.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/scabieuse/refcache/scabieuse/t031.jpg",
+   "tags": [
+    "organe:plante"
+   ],
+   "vu": "stade=- vue=- organe=plante groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 31,
+   "groupe": "jardin"
+  },
+  "scabieuse:56a90164": {
+   "titre": "File:Scabiosa atropurpurea.jpg",
+   "auteur": "anniesannuals",
+   "licence": "CC BY 2.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Scabiosa_atropurpurea.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a0/Scabiosa_atropurpurea.jpg/500px-Scabiosa_atropurpurea.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/scabieuse/refcache/scabieuse/t010.jpg",
+   "tags": [
+    "organe:plante",
+    "organe:tige"
+   ],
+   "vu": "stade=- vue=- organe=plante organe=tige groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 10,
+   "groupe": "jardin"
+  },
+  "scabieuse:fed8d8d5": {
+   "titre": "File:Scabiosa atropurpurea in Aveyron 01.jpg",
+   "auteur": "Krzysztof Golik",
+   "licence": "CC BY-SA 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Scabiosa_atropurpurea_in_Aveyron_01.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/Scabiosa_atropurpurea_in_Aveyron_01.jpg/500px-Scabiosa_atropurpurea_in_Aveyron_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/scabieuse/refcache/scabieuse/t041.jpg",
+   "tags": [
+    "stade:ouvert",
+    "vue:face"
+   ],
+   "vu": "stade=ouvert vue=face organe=- groupe=espece-sauvage",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 41,
+   "groupe": "espece-sauvage"
+  },
+  "scabieuse:994b635e": {
+   "titre": "File:Scabiosa caucasica 'Perfection Blue' JRVdH 04.jpg",
+   "auteur": "Cephas",
+   "licence": "CC BY-SA 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Scabiosa_caucasica_%27Perfection_Blue%27_JRVdH_04.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/Scabiosa_caucasica_%27Perfection_Blue%27_JRVdH_04.jpg/500px-Scabiosa_caucasica_%27Perfection_Blue%27_JRVdH_04.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/scabieuse/refcache/scabieuse/t106.jpg",
+   "tags": [
+    "stade:fane",
+    "vue:face",
+    "organe:bourgeon"
+   ],
+   "vu": "stade=fane vue=face organe=bourgeon groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 106,
+   "groupe": "autre"
+  },
+  "scabieuse:68e12630": {
+   "titre": "File:Scabiosa columbaria in Aveyron (2).jpg",
+   "auteur": "Tournasol7",
+   "licence": "CC BY 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Scabiosa_columbaria_in_Aveyron_(2).jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Scabiosa_columbaria_in_Aveyron_%282%29.jpg/500px-Scabiosa_columbaria_in_Aveyron_%282%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/scabieuse/refcache/scabieuse/t065.jpg",
+   "tags": [
+    "stade:fane",
+    "organe:feuille-fanee",
+    "organe:tige"
+   ],
+   "vu": "stade=fane vue=- organe=feuille-fanee+tige groupe=espece-sauvage",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 65,
+   "groupe": "autre"
+  },
+  "scabieuse:ebf40dc3": {
+   "titre": "File:Scabiosa columbaria (GBIF 5995451240).jpg",
+   "auteur": "Styrelsen for Grøn Arealomlægning og Vandmiljø/The Danish Agency for Green Land ",
+   "licence": "CC BY 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Scabiosa_columbaria_(GBIF_5995451240).jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/Scabiosa_columbaria_%28GBIF_5995451240%29.jpg/500px-Scabiosa_columbaria_%28GBIF_5995451240%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/scabieuse/refcache/scabieuse/t054.jpg",
+   "tags": [
+    "organe:feuille-dessus"
+   ],
+   "vu": "stade=- vue=- organe=feuille-dessus groupe=espece-sauvage",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 54,
+   "groupe": "autre"
+  },
+  "scabieuse:1e1ec266": {
+   "titre": "File:Scabiosa caucasica 'Perfection Blue' JRVdH 05.jpg",
+   "auteur": "Cephas",
+   "licence": "CC BY-SA 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Scabiosa_caucasica_%27Perfection_Blue%27_JRVdH_05.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7d/Scabiosa_caucasica_%27Perfection_Blue%27_JRVdH_05.jpg/500px-Scabiosa_caucasica_%27Perfection_Blue%27_JRVdH_05.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/scabieuse/refcache/scabieuse/t107.jpg",
+   "tags": [
+    "stade:fane",
+    "vue:face",
+    "organe:bourgeon"
+   ],
+   "vu": "stade=fane vue=face organe=bourgeon groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 107,
+   "groupe": "autre"
+  },
+  "scabieuse:7d92e2fc": {
+   "titre": "File:Scabiosa columbaria Driakiew gołębia 2020-08-07 04.jpg",
+   "auteur": "Agnieszka Kwiecień, Nova",
+   "licence": "CC BY-SA 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Scabiosa_columbaria_Driakiew_go%C5%82%C4%99bia_2020-08-07_04.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/Scabiosa_columbaria_Driakiew_go%C5%82%C4%99bia_2020-08-07_04.jpg/500px-Scabiosa_columbaria_Driakiew_go%C5%82%C4%99bia_2020-08-07_04.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/scabieuse/refcache/scabieuse/t127.jpg",
+   "tags": [
+    "organe:feuille-dessous"
+   ],
+   "vu": "stade=- vue=- organe=feuille-dessous groupe=espece-sauvage",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 127,
+   "groupe": "autre"
+  }
+ },
+ "organes": {
+  "petale.rayon": {
+   "role": "perianthe",
+   "note": "Fleurons de la couronne du capitule : corolle en tube évasé à 5 lobes inégaux, lobes externes plus grands, formant l'aspect de pétales frangés autour de la tête. Sur les coloris sombres de jardin, les lobes sont courts et serrés ; sur l'espèce lilas, plus longs, étalés, plus lâches.",
+   "nombre": {
+    "lobes": {
+     "v": 5,
+     "methode": "hypothese",
+     "conf": "D",
+     "note": "5 lobes par fleuron (compte botanique usuel, non recompté sur photo)",
+     "retenu": 5,
+     "code": "P.nl4<.5?5:4"
+    },
+    "fleurons_couronne": {
+     "v": 12,
+     "methode": "hypothese",
+     "conf": "D",
+     "note": "ordre de grandeur lu à l'œil sur t001 et t006 : 10 à 20 fleurons en couronne (à compter, Q2)",
+     "retenu": 14,
+     "code": "Math.round(P.n[0]*(1-Math.pow((1-Math.cos(P.mT*P.capO))/(1-Math.cos(P.capO)),1/P.dq)))",
+     "ecart": {
+      "type": "divergence",
+      "texte": "Les fleurons de rang > .78 sur toute la boule (env. 15 sur 60 au détail 1) ; de face on en voit 10 à 12, comme la fiche."
+     }
+    }
+   },
+   "disposition": {
+    "type": "capitule",
+    "verticilles": {
+     "v": 2,
+     "methode": "oeil",
+     "photos": [
+      "scabieuse:467d93fe",
+      "scabieuse:4473958a",
+      "scabieuse:fed8d8d5"
+     ],
+     "conf": "C",
+     "note": "couronne de fleurons plus grands entourant un disque de fleurons plus petits (espèce) ; chez les formes sombres de jardin les deux se fondent en dôme dense",
+     "ecart": {
+      "type": "divergence",
+      "texte": "Fleurons posés en spirale à l'angle d'or sur la boule ; la couronne = fleurons de rang > mT (.78), sans verticille dessiné."
+     }
+    },
+    "recouvrement": {
+     "v": 0.3,
+     "methode": "hypothese",
+     "conf": "D",
+     "note": "lobes voisins se chevauchant en dôme dense (formes sombres) : lu sans mesure",
+     "retenu": 0.21999999999999997,
+     "code": "P.sK[1]-1",
+     "ecart": {
+      "type": "divergence",
+      "texte": "Fleurons agrandis de 22 % au plus sur leur pas local (sK[1]) : au-delà, la jupe couvre le dôme de face."
+     }
+    },
+    "ordre": "les fleurons du bord passent sous ceux du dessus du dôme"
+   },
+   "contour": {
+    "base": "onglet",
+    "pointe": {
+     "type": {
+      "v": "ondulee",
+      "methode": "oeil",
+      "photos": [
+       "scabieuse:4473958a",
+       "scabieuse:fb0cc8c7",
+       "scabieuse:ff094cc9"
+      ],
+      "conf": "C"
+     }
+    },
+    "marge": {
+     "v": "frangee",
+     "methode": "oeil",
+     "photos": [
+      "scabieuse:4473958a",
+      "scabieuse:ff094cc9",
+      "scabieuse:c05fa7a3"
+     ],
+     "conf": "C",
+     "note": "lobes irréguliers, bord denté, aspect froissé sur les formes de jardin"
+    }
+   },
+   "taille": {
+    "largeur_tete": {
+     "v": null,
+     "methode": "hypothese",
+     "conf": "D",
+     "note": "diamètre du capitule : à mesurer avec échelle ; description usuelle 3 à 5 cm"
+    },
+    "lobes_sur_tete": {
+     "v": null,
+     "methode": "hypothese",
+     "conf": "D",
+     "note": "longueur des lobes / diamètre du capitule : non mesuré, voir Q2"
+    }
+   },
+   "courbure": {
+    "transversale": {
+     "type": {
+      "v": "gouttiere",
+      "methode": "oeil",
+      "photos": [
+       "scabieuse:4473958a",
+       "scabieuse:ff094cc9",
+       "scabieuse:c05fa7a3"
+      ],
+      "conf": "C",
+      "note": "lobes en gouttière, bord relevé puis rabattu vers l'extérieur sur les formes sombres"
+     }
+    },
+    "longitudinale": {
+     "profil": {
+      "v": "arquee",
+      "methode": "oeil",
+      "photos": [
+       "scabieuse:4473958a",
+       "scabieuse:fb0cc8c7",
+       "scabieuse:c05fa7a3"
+      ],
+      "conf": "C",
+      "note": "lobes qui retombent en se frisant sur les fleurons du bord"
+     }
+    }
+   },
+   "matiere": {
+    "epaisseur": "fine",
+    "translucidite": {
+     "v": 0.2,
+     "methode": "hypothese",
+     "conf": "D",
+     "note": "pétales sombres presque opaques, bord plus clair à contre-jour",
+     "ecart": {
+      "type": "divergence",
+      "texte": "Lobes opaques (BP 3.1) : aucune pièce de derrière visible à travers."
+     }
+    },
+    "texture": {
+     "v": "velours",
+     "methode": "oeil",
+     "photos": [
+      "scabieuse:4473958a",
+      "scabieuse:650f8cde",
+      "scabieuse:c05fa7a3"
+     ],
+     "conf": "C",
+     "note": "surface mate et veloutée sur les formes bordeaux/noires"
+    },
+    "brillance": {
+     "v": 0.15,
+     "methode": "hypothese",
+     "conf": "D",
+     "note": "mat",
+     "ecart": {
+      "type": "budget",
+      "texte": "Velours mat : seule une lumière des lobes (liteA) en gros plan, pas de reflet."
+     }
+    },
+    "grain": "lisse"
+   },
+   "nervation": {
+    "type": "parallele",
+    "visible": {
+     "v": "les-deux",
+     "methode": "oeil",
+     "photos": [
+      "scabieuse:4473958a",
+      "scabieuse:ff094cc9"
+     ],
+     "conf": "C",
+     "note": "nervures fines, à peine visibles"
+    }
+   },
+   "zones": [
+    {
+     "zone": "corps",
+     "etendue": {
+      "v": [
+       0,
+       0.85
+      ],
+      "methode": "hypothese",
+      "conf": "D",
+      "ecart": {
+       "type": "budget",
+       "texte": "Corps uni dans la teinte du coloris ; zones non tracées."
+      }
+     },
+     "motif": {
+      "type": "uni"
+     },
+     "bord": "fondu"
+    },
+    {
+     "zone": "marge",
+     "etendue": {
+      "v": [
+       0.85,
+       1
+      ],
+      "methode": "hypothese",
+      "conf": "D",
+      "ecart": {
+       "type": "budget",
+       "texte": "Pas de liseré tracé : le bord éclairé vient de la lumière des lobes et du trait de bord."
+      }
+     },
+     "motif": {
+      "type": "liseré plus clair"
+     },
+     "bord": "fondu"
+    }
+   ],
+   "jointures": [
+    {
+     "vers": "receptacle",
+     "type": "insertion",
+     "params": {
+      "note": "fleurons plantés sur le réceptacle, tube de corolle serré"
+     }
+    }
+   ],
+   "stades": {
+    "bouton": {
+     "note": "pas de lobes visibles : fleurons clos sous les bractées"
+    },
+    "gonfle": {
+     "note": "les premiers fleurons du bord se colorent et pointent entre les bractées"
+    },
+    "entrouvert": {
+     "note": "capitule sombre bombé, lobes de la couronne encore dressés (t021, t022)"
+    },
+    "ouvert": {
+     "note": "lobes étalés autour du dôme, anthères blanches visibles (t006, t032)"
+    },
+    "plein": {
+     "note": "dôme complet, lobes largement ouverts, couronne aplatie"
+    },
+    "declin": {
+     "note": "pétales ternes, sombres, qui pendent ou tombent par endroits (t028)"
+    },
+    "fane": {
+     "note": "lobes tombés, il reste un capitule sec (hypothèse : t106 est une autre espèce)"
+    }
+   }
+  },
+  "petale.disque": {
+   "role": "perianthe",
+   "note": "Fleurons du centre : plus petits, dressés, serrés en dôme ; lobes courts, tube ramassé.",
+   "nombre": {
+    "fleurons": {
+     "v": 80,
+     "methode": "hypothese",
+     "conf": "D",
+     "note": "ordre de grandeur : plusieurs dizaines de fleurons au centre, à compter (Q2)",
+     "retenu": 80,
+     "code": "Math.round((P.n[0]+P.n[1])/2)"
+    }
+   },
+   "disposition": {
+    "type": "capitule",
+    "verticilles": {
+     "v": null,
+     "methode": "hypothese",
+     "conf": "D",
+     "note": "arrangement en spirale serrée sur le réceptacle, non relevé"
+    },
+    "recouvrement": {
+     "v": 0.4,
+     "methode": "hypothese",
+     "conf": "D",
+     "note": "dôme dense",
+     "ecart": {
+      "type": "budget",
+      "texte": "Recouvrement non réglé à part : fleurons au pas local de la spirale x sK [.9, 1.22]."
+     }
+    }
+   },
+   "contour": {
+    "base": {
+     "suit": "petale.rayon.contour.base"
+    },
+    "pointe": {
+     "type": {
+      "v": "arrondie",
+      "methode": "oeil",
+      "photos": [
+       "scabieuse:4473958a",
+       "scabieuse:650f8cde"
+      ],
+      "conf": "C"
+     }
+    }
+   },
+   "taille": {
+    "rapport_couronne": {
+     "v": 0.4,
+     "unite": "ratio",
+     "methode": "oeil",
+     "photos": [
+      "scabieuse:4473958a",
+      "scabieuse:650f8cde",
+      "scabieuse:c05fa7a3"
+     ],
+     "conf": "C",
+     "note": "taille des fleurons du centre / ceux du bord, lue à l'œil ±25 %",
+     "ecart": {
+      "type": "divergence",
+      "texte": "Le disque est la calotte sous la jupe : rang .78 de la calotte, soit environ .55 du diamètre de face (photos 6, 1)."
+     }
+    }
+   },
+   "courbure": {
+    "transversale": {
+     "type": "creux"
+    }
+   },
+   "matiere": {
+    "epaisseur": {
+     "suit": "petale.rayon.matiere.epaisseur"
+    },
+    "texture": {
+     "suit": "petale.rayon.matiere.texture"
+    }
+   },
+   "zones": [
+    {
+     "zone": "corps",
+     "etendue": {
+      "v": [
+       0,
+       1
+      ],
+      "methode": "hypothese",
+      "conf": "D",
+      "ecart": {
+       "type": "budget",
+       "texte": "Uni (top pour les fleurons clos du sommet, body ouverts)."
+      }
+     },
+     "motif": {
+      "type": "uni"
+     },
+     "bord": "net"
+    }
+   ],
+   "jointures": [
+    {
+     "vers": "receptacle",
+     "type": "insertion",
+     "params": {}
+    }
+   ],
+   "stades": {
+    "entrouvert": {
+     "note": "comme la couronne, avec un retard : le centre ouvre en dernier"
+    },
+    "ouvert": {
+     "note": "comme la couronne, avec un retard : le centre ouvre en dernier"
+    },
+    "plein": {
+     "note": "comme la couronne, avec un retard : le centre ouvre en dernier"
+    }
+   }
+  },
+  "coeur.etamines": {
+   "role": "coeur",
+   "nombre": {
+    "par_fleuron": {
+     "v": 4,
+     "methode": "hypothese",
+     "conf": "D",
+     "note": "4 étamines par fleuron (compte botanique usuel) ; anthères blanches ou rosées visibles comme des points clairs semés sur le dôme (t006, t032, t009)",
+     "ecart": {
+      "type": "budget",
+      "texte": "0 à 2 épingles dessinées par fleuron ouvert (pin.n), 4 en botanique : budget des chemins."
+     }
+    }
+   },
+   "disposition": {
+    "type": "capitule",
+    "verticilles": 1
+   },
+   "contour": {
+    "base": "cunee"
+   },
+   "taille": {
+    "saillie": {
+     "v": 0.15,
+     "unite": "L",
+     "methode": "oeil",
+     "photos": [
+      "scabieuse:4473958a",
+      "scabieuse:6ec23f44"
+     ],
+     "conf": "C",
+     "note": "les anthères dépassent des lobes d'environ 1/6 de la longueur des lobes",
+     "ecart": {
+      "type": "divergence",
+      "texte": "pin.L .075 x demi-largeur de tête, réglé au gros plan (D 480) contre les photos 6 et 32."
+     }
+    }
+   },
+   "matiere": {
+    "epaisseur": "fine",
+    "texture": "mat"
+   },
+   "zones": [
+    {
+     "zone": "pointe",
+     "etendue": {
+      "v": [
+       0.7,
+       1
+      ],
+      "methode": "hypothese",
+      "conf": "D",
+      "ecart": {
+       "type": "budget",
+       "texte": "L'anthère seule, ovale claire au bout du filet (anth), filet teinté (fil)."
+      }
+     },
+     "motif": {
+      "type": "anthère claire, blanche à rose pâle"
+     },
+     "bord": "net"
+    }
+   ],
+   "jointures": [
+    {
+     "vers": "petale.disque",
+     "type": "insertion",
+     "params": {}
+    }
+   ],
+   "stades": {
+    "entrouvert": {
+     "note": "cachées"
+    },
+    "ouvert": {
+     "note": "pointes claires apparentes (t006)"
+    },
+    "plein": {
+     "note": "plus nombreuses visibles, semis blanc"
+    },
+    "declin": {
+     "note": "brunies puis tombées"
+    }
+   }
+  },
+  "receptacle": {
+   "role": "receptacle",
+   "taille": {
+    "hauteur_sur_largeur": {
+     "v": 0.716,
+     "plage": [
+      0.61,
+      0.82
+     ],
+     "unite": "ratio",
+     "n": 2,
+     "methode": "segmente",
+     "photos": [
+      "scabieuse:a6f977b6",
+      "scabieuse:e25dfbb8"
+     ],
+     "conf": "C",
+     "note": "H/L de la silhouette du bouton (targets.json bouton.hw) : sert de forme du dôme du capitule fermé, bractées comprises",
+     "ecart": {
+      "type": "divergence",
+      "texte": "Mesure faite sur les boutons (23, 26) ; ici la boule ouverte suit capO et rs, réglés par fit.py (space.json)."
+     }
+    }
+   },
+   "matiere": {
+    "epaisseur": "epaisse",
+    "texture": "mat"
+   },
+   "zones": [
+    {
+     "zone": "corps",
+     "etendue": {
+      "v": [
+       0,
+       1
+      ],
+      "methode": "hypothese",
+      "conf": "D",
+      "ecart": {
+       "type": "budget",
+       "texte": "Réceptacle uni vert (recep), écailles non tracées."
+      }
+     },
+     "motif": {
+      "type": "écailles et soies vert pâle",
+      "densite": "forte"
+     },
+     "bord": "net"
+    }
+   ],
+   "jointures": [
+    {
+     "vers": "tige",
+     "type": "col",
+     "params": {
+      "note": "le réceptacle s'évase en cupule sur le haut de la tige, sous les bractées"
+     }
+    }
+   ],
+   "stades": {
+    "bouton": {
+     "note": "dôme aplati vert clair"
+    },
+    "ouvert": {
+     "note": "dôme bombé, masqué par les fleurons"
+    },
+    "fane": {
+     "note": "sec, brun, hérissé de soies (t106, t107, autre espèce)"
+    }
+   }
+  },
+  "bractee": {
+   "role": "bractee",
+   "note": "Involucre : une couronne de bractées vertes, étroites, pointues, sous le capitule ; elles s'écartent en étoile quand le capitule s'ouvre (t023, t026, t034).",
+   "nombre": {
+    "bractees": {
+     "v": 8,
+     "plage": [
+      6,
+      12
+     ],
+     "unite": "n",
+     "methode": "oeil",
+     "photos": [
+      "scabieuse:a6f977b6",
+      "scabieuse:e25dfbb8"
+     ],
+     "conf": "C",
+     "note": "8 à 12 bractées comptées à l'œil sur t023, t026",
+     "retenu": 8,
+     "code": "P.br.n"
+    }
+   },
+   "disposition": {
+    "type": "verticilles",
+    "verticilles": 1,
+    "recouvrement": 0
+   },
+   "contour": {
+    "base": "cunee",
+    "pointe": {
+     "type": {
+      "v": "aigue",
+      "methode": "oeil",
+      "photos": [
+       "scabieuse:a6f977b6",
+       "scabieuse:e25dfbb8",
+       "scabieuse:93528430"
+      ],
+      "conf": "C"
+     }
+    },
+    "L_sur_l": {
+     "v": 6,
+     "unite": "ratio",
+     "methode": "oeil",
+     "photos": [
+      "scabieuse:a6f977b6",
+      "scabieuse:e25dfbb8"
+     ],
+     "conf": "C",
+     "note": "lancéolée étroite",
+     "retenu": 8.275862068965518,
+     "code": "P.br.L/P.br.W",
+     "ecart": {
+      "type": "divergence",
+      "texte": "auto 2026-10-18 : valeur du code 8.276 (v mesuré 6)"
+     }
+    },
+    "marge": "entiere"
+   },
+   "taille": {
+    "longueur_sur_tete": {
+     "v": 0.45,
+     "unite": "ratio",
+     "methode": "oeil",
+     "photos": [
+      "scabieuse:a6f977b6",
+      "scabieuse:e25dfbb8",
+      "scabieuse:93528430"
+     ],
+     "conf": "C",
+     "note": "longueur de la bractée / largeur du capitule ouvert",
+     "ecart": {
+      "type": "divergence",
+      "texte": "br.L .52 x demi-largeur = .26 du diamètre : plus longues, elles dépassent la jupe de face (photos 6, 29)."
+     }
+    }
+   },
+   "courbure": {
+    "longitudinale": {
+     "profil": {
+      "v": "arquee",
+      "methode": "oeil",
+      "photos": [
+       "scabieuse:a6f977b6",
+       "scabieuse:e25dfbb8",
+       "scabieuse:93528430"
+      ],
+      "conf": "C",
+      "note": "dressées sur le bouton, étalées à ouverture"
+     }
+    }
+   },
+   "matiere": {
+    "epaisseur": "fine",
+    "translucidite": 0,
+    "texture": "mat"
+   },
+   "nervation": {
+    "type": "parallele"
+   },
+   "zones": [
+    {
+     "zone": "corps",
+     "etendue": {
+      "v": [
+       0,
+       1
+      ],
+      "methode": "hypothese",
+      "conf": "D",
+      "ecart": {
+       "type": "budget",
+       "texte": "Vert uni (bract), sans poils."
+      }
+     },
+     "motif": {
+      "type": "vert, légèrement poilu"
+     },
+     "bord": "net"
+    }
+   ],
+   "jointures": [
+    {
+     "vers": "receptacle",
+     "type": "insertion",
+     "params": {}
+    }
+   ],
+   "stades": {
+    "bouton": {
+     "note": "dressées contre le bouton"
+    },
+    "entrouvert": {
+     "note": "écartées"
+    },
+    "ouvert": {
+     "note": "étalées sous la tête, souvent cachées"
+    },
+    "fane": {
+     "note": "sèches, restent vertes un temps"
+    }
+   }
+  },
+  "calice": {
+   "role": "calice",
+   "note": "Chaque fleuron porte 5 soies (calice réduit en aigrette) ; elles deviennent visibles sur le capitule fané comme une étoile de soies (t106).",
+   "nombre": {
+    "soies": {
+     "v": 5,
+     "methode": "hypothese",
+     "conf": "D",
+     "note": "5 soies par fleuron, botanique usuel ; non vérifié sur photo de la sorte",
+     "retenu": 5,
+     "code": "P.fruit.nb"
+    }
+   },
+   "disposition": {
+    "type": "verticilles"
+   },
+   "contour": {
+    "base": "cunee",
+    "pointe": "aigue"
+   },
+   "taille": {
+    "longueur": {
+     "v": null,
+     "methode": "hypothese",
+     "conf": "D",
+     "note": "non mesuré"
+    }
+   },
+   "matiere": {
+    "epaisseur": "fine",
+    "texture": "mat"
+   },
+   "zones": [
+    {
+     "zone": "corps",
+     "etendue": {
+      "v": [
+       0,
+       1
+      ],
+      "methode": "hypothese",
+      "conf": "D",
+      "ecart": {
+       "type": "budget",
+       "texte": "Étoiles du fruit en deux chemins (fruitD, fruitL)."
+      }
+     },
+     "motif": {
+      "type": "uni, brun clair"
+     },
+     "bord": "net"
+    }
+   ],
+   "jointures": [
+    {
+     "vers": "receptacle",
+     "type": "insertion",
+     "params": {}
+    }
+   ],
+   "stades": {
+    "ouvert": {
+     "note": "cachées sous les lobes"
+    },
+    "fane": {
+     "note": "soies sèches dressées en étoile"
+    }
+   }
+  },
+  "bouton": {
+   "role": "bouton",
+   "disposition": {
+    "type": "capitule"
+   },
+   "contour": {
+    "base": "arrondie",
+    "profil": {
+     "v": "bille aplatie",
+     "methode": "oeil",
+     "photos": [
+      "scabieuse:a6f977b6",
+      "scabieuse:e25dfbb8"
+     ],
+     "conf": "C"
+    },
+    "hauteur_sur_largeur": {
+     "v": 0.716,
+     "plage": [
+      0.61,
+      0.82
+     ],
+     "unite": "ratio",
+     "n": 2,
+     "methode": "segmente",
+     "photos": [
+      "scabieuse:a6f977b6",
+      "scabieuse:e25dfbb8"
+     ],
+     "conf": "C",
+     "note": "targets.json bouton.hw (silhouette du bouton, bractées comprises)",
+     "ecart": {
+      "type": "divergence",
+      "texte": "Silhouette du bouton mesurée par fit.py (targets bouton.hw) ; budZ et capC réglés par le fit."
+     }
+    }
+   },
+   "taille": {
+    "sur_tete_ouverte": {
+     "v": 0.35,
+     "methode": "hypothese",
+     "conf": "D",
+     "note": "bouton fermé / capitule ouvert : à mesurer",
+     "retenu": 0.36,
+     "code": "P.grow[0]",
+     "ecart": {
+      "type": "confirme",
+      "texte": "grow[0] .36 : le bouton à op 0 fait .36 de la tête ouverte, dans l'hypothèse .35."
+     }
+    }
+   },
+   "matiere": {
+    "epaisseur": "moyenne",
+    "texture": "mat"
+   },
+   "zones": [
+    {
+     "zone": "corps",
+     "etendue": {
+      "v": [
+       0,
+       1
+      ],
+      "methode": "hypothese",
+      "conf": "D",
+      "ecart": {
+       "type": "budget",
+       "texte": "Perles vertes (bud), la couleur arrive du sommet (col)."
+      }
+     },
+     "motif": {
+      "type": "vert pâle à beige, fleurons clos en écailles serrées, pointes roses sur t026"
+     },
+     "bord": "fondu"
+    }
+   ],
+   "jointures": [
+    {
+     "vers": "tige",
+     "type": "col",
+     "params": {}
+    }
+   ],
+   "stades": {
+    "bouton": {
+     "note": "bille aplatie verte, bractées dressées"
+    },
+    "gonfle": {
+     "note": "pointes roses ou sombres sur les fleurons (t026)"
+    },
+    "entrouvert": {
+     "note": "bille sombre bordeaux presque noire, bractées écartées (t021, t022, t034)"
+    }
+   }
+  },
+  "tige": {
+   "role": "tige",
+   "taille": {
+    "diametre_sur_tete": {
+     "v": 0.11,
+     "plage": [
+      0.1,
+      0.12
+     ],
+     "unite": "ratio",
+     "n": 2,
+     "methode": "segmente",
+     "photos": [
+      "scabieuse:2f6bd525"
+     ],
+     "conf": "C",
+     "note": "largeur de la tige / largeur de la tête : organ.py stem sur t002 (1/9,8 = 0,10, tête estimée à 100 px) et targets.json tige.stem 0,1205 (t002)",
+     "ecart": {
+      "type": "confirme",
+      "texte": "les deux lectures (0,102 et 0,1205) sont sur la même photo t002 : n=1 réel, conf C"
+     }
+    },
+    "longueur": {
+     "v": null,
+     "methode": "hypothese",
+     "conf": "D",
+     "note": "tige longue et fine, plusieurs fois la tête ; non mesurée (Q1)"
+    }
+   },
+   "courbure": {
+    "longitudinale": {
+     "profil": {
+      "v": "droite",
+      "methode": "oeil",
+      "photos": [
+       "scabieuse:2f6bd525",
+       "scabieuse:56a90164"
+      ],
+      "conf": "C",
+      "note": "grêle, presque droite, légère courbe sous la tête (t002, t010)"
+     }
+    }
+   },
+   "matiere": {
+    "texture": {
+     "v": "mat",
+     "methode": "oeil",
+     "photos": [
+      "scabieuse:56a90164",
+      "scabieuse:2f6bd525"
+     ],
+     "conf": "C",
+     "note": "fine, légèrement poilue, vert à rougeâtre"
+    },
+    "epaisseur": "fine"
+   },
+   "zones": [
+    {
+     "zone": "corps",
+     "etendue": {
+      "v": [
+       0,
+       1
+      ],
+      "methode": "hypothese",
+      "conf": "D",
+      "ecart": {
+       "type": "budget",
+       "texte": "Tige verte unie (SCAB_SC) ; le rouge sous la tête vient de scabStemCols (red, redF), pas une zone tracée."
+      }
+     },
+     "motif": {
+      "type": "vert, parfois rougeâtre sous le capitule"
+     },
+     "bord": "fondu"
+    }
+   ],
+   "couleurs": {
+    "corps": {
+     "v": "#69763d",
+     "plage": [
+      "#3a4a11",
+      "#cce199"
+     ],
+     "unite": "hex",
+     "n": 1,
+     "methode": "segmente",
+     "photos": [
+      "scabieuse:2f6bd525"
+     ],
+     "conf": "C",
+     "note": "organ.py stem --green sur t002 : ombre #3a4a11, corps #69763d, lumière #cce199 (fond d'herbe possible dans le masque)"
+    }
+   },
+   "jointures": [
+    {
+     "vers": "bouton",
+     "type": "col",
+     "params": {}
+    },
+    {
+     "vers": "feuille",
+     "type": "noeud",
+     "params": {
+      "note": "feuilles opposées par paires"
+     }
+    }
+   ],
+   "section": {
+    "type": "ronde",
+    "effilement": {
+     "v": 1.0,
+     "methode": "hypothese",
+     "conf": "D",
+     "note": "non mesuré sur masque fiable : tige quasi cylindrique (t002 bas/haut 1,03)",
+     "ecart": {
+      "type": "divergence",
+      "texte": "Épaisseur donnée par la chaîne du L-système (ws) : léger effilement vers la tête, non réglé à 1."
+     }
+    },
+    "poils": {
+     "v": "fins, courts",
+     "methode": "oeil",
+     "photos": [
+      "scabieuse:2f6bd525"
+     ],
+     "conf": "C",
+     "note": "léger duvet"
+    }
+   },
+   "stades": {
+    "bouton": {
+     "note": "dressée"
+    },
+    "ouvert": {
+     "note": "dressée, tête de face à trois-quarts"
+    },
+    "declin": {
+     "note": "la tige reste droite, la tête s'incline un peu"
+    },
+    "fane": {
+     "note": "sèche, brune, la tête pend de côté"
+    }
+   }
+  },
+  "feuille": {
+   "role": "feuille",
+   "note": "Deux formes : feuilles de la base en rosette, ovales à dentées ; feuilles de la tige opposées par paires, de plus en plus découpées vers le haut (pennées à lobes étroits). Le dessin de bouquet ne trace que les feuilles de tige.",
+   "nombre": {
+    "paires": {
+     "v": 3,
+     "plage": [
+      2,
+      6
+     ],
+     "unite": "n",
+     "methode": "oeil",
+     "photos": [
+      "scabieuse:57576652",
+      "scabieuse:1608834d"
+     ],
+     "conf": "C",
+     "note": "2 à 3 paires sur la longueur de tige dessinée (t019, t018)",
+     "ecart": {
+      "type": "divergence",
+      "texte": "4 paires décussées sur la tige basse (SCAB_LOWN) plus la paire du col : 5 sur le rendu, la fiche en compte 3 [2, 6]."
+     }
+    }
+   },
+   "disposition": {
+    "type": "opposees"
+   },
+   "contour": {
+    "base": "cunee",
+    "pointe": "aigue",
+    "L_sur_l": {
+     "v": 1.75,
+     "plage": [
+      1.54,
+      1.95
+     ],
+     "unite": "ratio",
+     "n": 2,
+     "methode": "segmente",
+     "photos": [
+      "scabieuse:1608834d",
+      "scabieuse:fe653dbf"
+     ],
+     "conf": "C",
+     "note": "organ.py leaf : t018 limbe L/l 1,95, t025 1,54 (feuilles basales larges) ; targets.json feuille.leaflw donne 1,34 sur 6 photos dont 3 de S. columbaria (autre espèce)",
+     "ecart": {
+      "type": "divergence",
+      "texte": "Largeur w .21 de acoCutLeaf avec foliole terminale et pinnules de pied : le rapport suit le dessin, réglé par fit.py (space-plante.json)."
+     }
+    },
+    "marge": {
+     "v": "dentee",
+     "methode": "oeil",
+     "photos": [
+      "scabieuse:fe653dbf",
+      "scabieuse:1608834d"
+     ],
+     "conf": "C"
+    }
+   },
+   "taille": {
+    "longueur_sur_tete": {
+     "v": null,
+     "methode": "hypothese",
+     "conf": "D",
+     "note": "non mesuré"
+    }
+   },
+   "courbure": {
+    "longitudinale": {
+     "profil": {
+      "v": "arquee",
+      "methode": "oeil",
+      "photos": [
+       "scabieuse:1608834d",
+       "scabieuse:57576652"
+      ],
+      "conf": "C",
+      "note": "limbe qui retombe légèrement"
+     }
+    },
+    "transversale": {
+     "type": {
+      "v": "gouttiere",
+      "methode": "oeil",
+      "photos": [
+       "scabieuse:1608834d",
+       "scabieuse:fe653dbf"
+      ],
+      "conf": "C",
+      "note": "bords relevés"
+     }
+    }
+   },
+   "matiere": {
+    "epaisseur": "fine",
+    "texture": "mat",
+    "translucidite": 0
+   },
+   "nervation": {
+    "type": "pennee",
+    "visible": {
+     "v": "dos",
+     "methode": "oeil",
+     "photos": [
+      "scabieuse:fe653dbf"
+     ],
+     "conf": "C"
+    }
+   },
+   "zones": [
+    {
+     "zone": "corps",
+     "etendue": {
+      "v": [
+       0,
+       1
+      ],
+      "methode": "hypothese",
+      "conf": "D",
+      "ecart": {
+       "type": "budget",
+       "texte": "Dessus vert (SCAB_LF stops) et dessous plus pâle (bstops) : deux teintes, pas de zone tracée."
+      }
+     },
+     "motif": {
+      "type": "vert moyen, dessous plus pâle"
+     },
+     "bord": "net"
+    }
+   ],
+   "couleurs": {
+    "limbe": {
+     "v": "#819656",
+     "plage": [
+      "#2e4316",
+      "#b1c481"
+     ],
+     "unite": "hex",
+     "n": 1,
+     "methode": "segmente",
+     "photos": [
+      "scabieuse:1608834d"
+     ],
+     "conf": "C",
+     "note": "tons organ.py leaf sur t018 : ombre/corps/lumière ; t025 : corps #77914f"
+    }
+   },
+   "angle_feuille": {
+    "v": 53,
+    "plage": [
+     22,
+     84
+    ],
+    "unite": "deg",
+    "repere": "tige",
+    "n": 6,
+    "methode": "segmente",
+    "photos": [
+     "scabieuse:fe653dbf",
+     "scabieuse:b53b588f",
+     "scabieuse:57576652"
+    ],
+    "conf": "D",
+    "note": "targets.json feuille.leafang, tol 31 : valeur indicative ; repère de fit.py supposé la tige",
+    "ecart": {
+     "type": "divergence",
+     "texte": "dispersion de 31° sur 6 photos dont 3 d'une autre espèce ; voir Q3"
+    }
+   },
+   "jointures": [
+    {
+     "vers": "tige",
+     "type": "petiole",
+     "params": {}
+    }
+   ],
+   "section": {
+    "type": "plate",
+    "petiole": {
+     "v": 0.1,
+     "unite": "ratio",
+     "n": 1,
+     "methode": "segmente",
+     "photos": [
+      "scabieuse:1608834d"
+     ],
+     "conf": "C",
+     "note": "part du pétiole dans la longueur (organ.py leaf t018) : 0,10 ; t025 : 0,03",
+     "ecart": {
+      "type": "budget",
+      "texte": "Pas de pétiole : feuilles sessiles à gaine de nœud (SCABP.node.sheath)."
+     }
+    }
+   },
+   "stades": {
+    "ouvert": {
+     "note": "vertes"
+    },
+    "declin": {
+     "note": "bas de tige jaunissant"
+    },
+    "fane": {
+     "note": "sèches, enroulées, brunes (t065, autre espèce)"
+    }
+   }
+  }
+ },
+ "varietes": {
+  "noir": {
+   "forme": "surcharge",
+   "photos": [
+    "scabieuse:4473958a",
+    "scabieuse:fb0cc8c7",
+    "scabieuse:650f8cde",
+    "scabieuse:c05fa7a3"
+   ],
+   "organes": {
+    "petale.rayon": {
+     "note": "capitule bombé, dense, lobes courts froissés, anthères blanches en semis (t006, t009, t017)"
+    }
+   }
+  },
+  "bordeaux": {
+   "forme": "surcharge",
+   "photos": [
+    "scabieuse:4473958a",
+    "scabieuse:fb0cc8c7",
+    "scabieuse:650f8cde",
+    "scabieuse:c05fa7a3"
+   ],
+   "organes": {
+    "petale.rayon": {
+     "note": "capitule bombé, dense, lobes courts froissés, anthères blanches en semis (t006, t009, t017)"
+    }
+   }
+  },
+  "vin": {
+   "forme": "surcharge",
+   "photos": [
+    "scabieuse:4473958a",
+    "scabieuse:fb0cc8c7",
+    "scabieuse:650f8cde",
+    "scabieuse:c05fa7a3"
+   ],
+   "organes": {
+    "petale.rayon": {
+     "note": "capitule bombé, dense, lobes courts froissés, anthères blanches en semis (t006, t009, t017)"
+    }
+   }
+  },
+  "framboise": {
+   "forme": "non-mesure"
+  },
+  "rose": {
+   "forme": "non-mesure"
+  },
+  "rose-poudre": {
+   "forme": "non-mesure"
+  },
+  "lavande": {
+   "forme": "surcharge",
+   "photos": [
+    "scabieuse:467d93fe",
+    "scabieuse:2f6bd525",
+    "scabieuse:fed8d8d5"
+   ],
+   "organes": {
+    "petale.rayon": {
+     "note": "capitule plus plat, couronne de grands fleurons étalés autour d'un disque (t001, t041)"
+    }
+   }
+  },
+  "bleu": {
+   "forme": "surcharge",
+   "photos": [
+    "scabieuse:467d93fe",
+    "scabieuse:2f6bd525",
+    "scabieuse:fed8d8d5"
+   ],
+   "organes": {
+    "petale.rayon": {
+     "note": "capitule plus plat, couronne de grands fleurons étalés autour d'un disque (t001, t041)"
+    }
+   }
+  },
+  "blanc": {
+   "forme": "non-mesure"
+  },
+  "creme": {
+   "forme": "non-mesure"
+  },
+  "saumon": {
+   "forme": "non-mesure"
+  }
+ },
+ "stades": {
+  "table": [
+   {
+    "stade": "bouton",
+    "op": {
+     "v": 0.08,
+     "unite": "ratio",
+     "methode": "reference",
+     "conf": "B",
+     "ref": "refcache/scabieuse/targets.json (stages : bouton op 0.08, entrouverte op 0.55, wl 0)"
+    },
+    "wl": {
+     "v": 0,
+     "unite": "ratio",
+     "methode": "reference",
+     "conf": "B",
+     "ref": "refcache/scabieuse/targets.json (stages : bouton op 0.08, entrouverte op 0.55, wl 0)"
+    },
+    "photos": [
+     "scabieuse:b7facfd7",
+     "scabieuse:c1e5ca46",
+     "scabieuse:a6f977b6",
+     "scabieuse:e25dfbb8"
+    ],
+    "statut": "mesure",
+    "note": "bille verte aplatie, bractées dressées",
+    "jours": {
+     "v": null,
+     "unite": "jours",
+     "methode": "hypothese",
+     "conf": "D",
+     "note": "durée en vase non relevée (catalogue/fanaison) : Q4"
+    }
+   },
+   {
+    "stade": "gonfle",
+    "op": {
+     "v": 0.2,
+     "unite": "ratio",
+     "methode": "reference",
+     "conf": "B",
+     "ref": "catalogue/serre/methode/BONNES-PRATIQUES.md 5.5 (grille .06, .2, .4, .75, 1:0, 1:.35, 1:.75)"
+    },
+    "wl": {
+     "v": 0,
+     "unite": "ratio",
+     "methode": "reference",
+     "conf": "B",
+     "ref": "catalogue/serre/methode/BONNES-PRATIQUES.md 5.5"
+    },
+    "photos": [
+     "scabieuse:e25dfbb8",
+     "scabieuse:e6751d40"
+    ],
+    "statut": "hypothese",
+    "note": "bille gonflée, pointes roses ou sombres",
+    "jours": {
+     "v": null,
+     "unite": "jours",
+     "methode": "hypothese",
+     "conf": "D",
+     "note": "durée en vase non relevée (catalogue/fanaison) : Q4"
+    }
+   },
+   {
+    "stade": "entrouvert",
+    "op": {
+     "v": 0.55,
+     "unite": "ratio",
+     "methode": "reference",
+     "conf": "B",
+     "ref": "refcache/scabieuse/targets.json (stages : bouton op 0.08, entrouverte op 0.55, wl 0)"
+    },
+    "wl": {
+     "v": 0,
+     "unite": "ratio",
+     "methode": "reference",
+     "conf": "B",
+     "ref": "refcache/scabieuse/targets.json (stages : bouton op 0.08, entrouverte op 0.55, wl 0)"
+    },
+    "photos": [
+     "scabieuse:bf7f83b9",
+     "scabieuse:e6751d40",
+     "scabieuse:93528430"
+    ],
+    "statut": "mesure",
+    "note": "bille sombre, bractées écartées, tête inclinée",
+    "jours": {
+     "v": null,
+     "unite": "jours",
+     "methode": "hypothese",
+     "conf": "D",
+     "note": "durée en vase non relevée (catalogue/fanaison) : Q4"
+    }
+   },
+   {
+    "stade": "ouvert",
+    "op": {
+     "v": 0.75,
+     "unite": "ratio",
+     "methode": "reference",
+     "conf": "B",
+     "ref": "catalogue/serre/methode/BONNES-PRATIQUES.md 5.5 (grille .06, .2, .4, .75, 1:0, 1:.35, 1:.75)"
+    },
+    "wl": {
+     "v": 0,
+     "unite": "ratio",
+     "methode": "reference",
+     "conf": "B",
+     "ref": "catalogue/serre/methode/BONNES-PRATIQUES.md 5.5"
+    },
+    "photos": [
+     "scabieuse:4473958a",
+     "scabieuse:fb0cc8c7",
+     "scabieuse:650f8cde",
+     "scabieuse:6ec23f44"
+    ],
+    "statut": "hypothese",
+    "note": "lobes étalés, anthères claires",
+    "jours": {
+     "v": null,
+     "unite": "jours",
+     "methode": "hypothese",
+     "conf": "D",
+     "note": "durée en vase non relevée (catalogue/fanaison) : Q4"
+    }
+   },
+   {
+    "stade": "plein",
+    "op": {
+     "v": 1.0,
+     "unite": "ratio",
+     "methode": "reference",
+     "conf": "B",
+     "ref": "catalogue/serre/methode/BONNES-PRATIQUES.md 5.5 (grille .06, .2, .4, .75, 1:0, 1:.35, 1:.75)"
+    },
+    "wl": {
+     "v": 0,
+     "unite": "ratio",
+     "methode": "reference",
+     "conf": "B",
+     "ref": "catalogue/serre/methode/BONNES-PRATIQUES.md 5.5"
+    },
+    "photos": [
+     "scabieuse:4473958a",
+     "scabieuse:ff094cc9",
+     "scabieuse:c05fa7a3"
+    ],
+    "statut": "hypothese",
+    "note": "dôme complet, couronne aplatie",
+    "jours": {
+     "v": null,
+     "unite": "jours",
+     "methode": "hypothese",
+     "conf": "D",
+     "note": "durée en vase non relevée (catalogue/fanaison) : Q4"
+    }
+   },
+   {
+    "stade": "declin",
+    "op": {
+     "v": 1.0,
+     "unite": "ratio",
+     "methode": "reference",
+     "conf": "B",
+     "ref": "catalogue/serre/methode/BONNES-PRATIQUES.md 5.5 (grille .06, .2, .4, .75, 1:0, 1:.35, 1:.75)"
+    },
+    "wl": {
+     "v": 0.35,
+     "unite": "ratio",
+     "methode": "reference",
+     "conf": "B",
+     "ref": "catalogue/serre/methode/BONNES-PRATIQUES.md 5.5"
+    },
+    "photos": [
+     "scabieuse:607a6a96"
+    ],
+    "statut": "hypothese",
+    "note": "pétales sombres ternes, certains tombés",
+    "jours": {
+     "v": null,
+     "unite": "jours",
+     "methode": "hypothese",
+     "conf": "D",
+     "note": "durée en vase non relevée (catalogue/fanaison) : Q4"
+    }
+   },
+   {
+    "stade": "fane",
+    "op": {
+     "v": 1.0,
+     "unite": "ratio",
+     "methode": "reference",
+     "conf": "B",
+     "ref": "catalogue/serre/methode/BONNES-PRATIQUES.md 5.5 (grille .06, .2, .4, .75, 1:0, 1:.35, 1:.75)"
+    },
+    "wl": {
+     "v": 0.75,
+     "unite": "ratio",
+     "methode": "reference",
+     "conf": "B",
+     "ref": "catalogue/serre/methode/BONNES-PRATIQUES.md 5.5"
+    },
+    "photos": [],
+    "statut": "hypothese",
+    "note": "capitule sec brun à soies ; aucune photo gardée de la sorte (t106 et t107 sont d'une autre espèce)",
+    "jours": {
+     "v": null,
+     "unite": "jours",
+     "methode": "hypothese",
+     "conf": "D",
+     "note": "durée en vase non relevée (catalogue/fanaison) : Q4"
+    }
+   },
+   {
+    "stade": "sec",
+    "op": {
+     "v": 1.0,
+     "unite": "ratio",
+     "methode": "hypothese",
+     "conf": "D"
+    },
+    "wl": {
+     "v": 0.9,
+     "unite": "ratio",
+     "methode": "hypothese",
+     "conf": "D"
+    },
+    "photos": [],
+    "statut": "hypothese",
+    "jours": {
+     "v": null,
+     "unite": "jours",
+     "methode": "hypothese",
+     "conf": "D",
+     "note": "sèche sur tige : Q4"
+    },
+    "note": "la tête devient un globe sec à soies en étoile (t106, t107), tige brune"
+   }
+  ]
+ },
+ "rendu": {},
+ "questions": [
+  {
+   "id": "Q1",
+   "organe": "tige",
+   "question": "Quelle longueur de tige coupée et quel rapport tête/tige ? Aucune photo avec échelle.",
+   "proposition": "Prendre 35 à 50 cm pour la coupe, à confirmer avec la boutique."
+  },
+  {
+   "id": "Q2",
+   "organe": "petale.rayon",
+   "question": "Combien de fleurons et quelle longueur de lobes par rapport au capitule ? Non comptés.",
+   "proposition": "Compter sur t006 et t041 par segmentation lors de l'étape forme."
+  },
+  {
+   "id": "Q3",
+   "organe": "feuille",
+   "question": "Repère de l'angle de feuille de targets.json (53°, dispersion 31°) et trois photos de S. columbaria dans la moyenne.",
+   "proposition": "Refaire la mesure sur les seules photos de S. atropurpurea (t018, t019, t024, t025)."
+  },
+  {
+   "id": "Q4",
+   "organe": "stades",
+   "question": "Durée en vase de chaque stade et aspect du fané : aucune photo gardée de la sorte au stade fané.",
+   "proposition": "Reprendre les durées d'une sorte voisine de LIFE_SP puis chercher des photos de S. atropurpurea fanée."
+  },
+  {
+   "id": "Q5",
+   "organe": "varietes",
+   "question": "Les coloris rose, blanc, crème, saumon n'ont aucune photo de la sorte ; framboise non plus.",
+   "proposition": "Les laisser sans surcharge de forme jusqu'à comparaison."
+  },
+  {
+   "id": "Q6",
+   "organe": "bouton",
+   "question": "targets.json entrouverte.ang (−47°) et entrouverte.wh (2,37) : définition exacte du repère et du rapport.",
+   "proposition": "Les lire comme inclinaison de la tête et rapport largeur/hauteur de la silhouette t021 ; à confirmer avant usage."
+  }
+ ]
+}

@@ -28,7 +28,10 @@ function cosmosPlant(g,t,o){const cw=o.cw||cwNear(CW_COS,o.col)||CW_COS[0],op=Ma
 const CW_SCAB=[{id:'noir',n:'Pourpre noir',c:'#3a0c1c',pin:'#f2ece8'},{id:'bordeaux',n:'Bordeaux',c:'#5a1030',pin:'#f4eef0'},{id:'vin',n:'Lie-de-vin',c:'#7a1f3c',pin:'#f4eef0'},{id:'framboise',n:'Framboise',c:'#a8285a',pin:'#f6eef2'},
   {id:'rose',n:'Rose',c:'#e8a2bc',pin:'#fbf2f6'},{id:'rose-poudre',n:'Rose poudré',c:'#f0c8d4',pin:'#fbf4f6'},{id:'lavande',n:'Lavande',c:'#a29bd2',pin:'#f2f0fa',dome:'#c8c2e8'},{id:'bleu',n:'Bleu (Fama)',c:'#8a8ed0',pin:'#eef0fa',dome:'#b8bce6'},
   {id:'blanc',n:'Blanc',c:'#f6f2ea',pin:'#ffffff',dome:'#e8e4c8'},{id:'creme',n:'Crème abricot',c:'#f2dcb8',pin:'#fff6e8',dome:'#e6c890'},{id:'saumon',n:'Saumon',c:'#f2a890',pin:'#fff2ea'}];
-function scabFlower(par,B,O,D,cw,op){const k=G(par),R0=D/2,nz=B[2][2],o2=sm01((op-.25)/.75),items=[],rot=R(0,6.28),dome=cw.dome||shd(cw.c,-.25);if(nz<.45)capBracts(k,B,O,R0*.5,10,'#6a8a50',{len:.5,w:.08});
+function scabFlower(par,B,O,D,cw,op){if(typeof scabSvgPut==='function'){const k=G(par);if(scabSvgPut(k,B,O,D,cw,op,0))return k;par.removeChild(k)}return scabDrawn(par,B,O,D,cw,op)}
+/* the SVG head's bud (y-scabiosa.js), else the old round bud: the same draws */
+function scabBud(par,B,O,D,cw,op,s,age){if(typeof scabSvgPut==='function'&&scabSvgPut(par,B,O,D,cw,op,1))return;capBud(par,B,O,s,cw.c,age,'#6a8a50')}
+function scabDrawn(par,B,O,D,cw,op){const k=G(par),R0=D/2,nz=B[2][2],o2=sm01((op-.25)/.75),items=[],rot=R(0,6.28),dome=cw.dome||shd(cw.c,-.25);if(nz<.45)capBracts(k,B,O,R0*.5,10,'#6a8a50',{len:.5,w:.08});
   const n=10;for(let i=0;i<n;i++){const big=.8+.4*Math.abs(Math.sin(i*1.7+rot)),l=ligule(B,O,{phi:i/n*6.283+rot+R(-.1,.1),r0:R0*.32,z0:0,L:R0*.6*big,W:R0*.26*big,wp:prof([[0,.4],[.3,.85],[.7,1],[1,.7]]),a0:.9+.5*o2,a1:1.25+.4*o2,pw:1.3,th:.4,tip:'fringe',fr:3,fd:.55,wav:.55,wk:3,n:6,tw:R(-.4,.4)});
     items.push({l,c:mix(cw.c,shd(cw.c,R(-.12,.1)),.6)})}
   for(let i=0;i<12;i++){const l=ligule(B,O,{phi:i/12*6.283+rot+.26,r0:R0*.26,z0:R0*.06,L:R0*.32,W:R0*.14,wp:prof([[0,.4],[.4,1],[1,.6]]),a0:.6+.4*o2,a1:.9+.3*o2,pw:1.2,th:.5,tip:'fringe',fr:2,fd:.5,wav:.4,n:4});items.push({l,c:shd(cw.c,-.08)})}
@@ -40,7 +43,7 @@ function scabFlower(par,B,O,D,cw,op){const k=G(par),R0=D/2,nz=B[2][2],o2=sm01((o
   return k}
 function scabPlant(g,t,o){const cw=o.cw||cwNear(CW_SCAB,o.col)||CW_SCAB[0],op=Math.max(.05,Math.min(1,o.op??1)),D=(o.cm||5)*UPC,k=G(g),sc=['#33502a','#55784a','#7c9c6c','#adc69e'];
   const r=lsHeadS(k,o,{D,w:D*.05,cols:sc,op,rr:.6,nodes:2,li:1.2,lp:2.1,opp:1,leafAng:40,side:{p:.6,n:1,top:2,len:1.7,ang:26,age:[0,.55]},budD:.34,budMax:.45,wig:.055,e:.05,
-    flower:(par,B,O,D2,op2)=>{if(op2<.3)capBud(par,B,O,D2*.34,cw.c,.5,'#6a8a50');else scabFlower(par,B,O,D2,cw,op2)},bud:(par,B,O,s,a)=>capBud(par,B,O,s,cw.c,a,'#6a8a50'),young:(par,B,O,s,a)=>scabFlower(par,B,O,s*1.4,cw,.45+.5*a),
+    flower:(par,B,O,D2,op2)=>{if(op2<.3)scabBud(par,B,O,D2,cw,op2,D2*.34,.5);else scabFlower(par,B,O,D2,cw,op2)},bud:(par,B,O,s,a)=>scabBud(par,B,O,s/.34,cw,.04+.2*a,s,a),young:(par,B,O,s,a)=>scabFlower(par,B,O,s*1.4,cw,.45+.5*a),
     leaf:(og,pos)=>lsLeaf2D(og,pos,D*R(1,1.35),(par,x,y,a,l)=>stemLeaf(par,x,y,a,l,.1,'#55784a',{side:og.p.j?.4:-.4,arch:10}))});
   open(k,t,1000,10,.3);return r}
 /* ---------- anemone (Anemone coronaria): six to eight broad satin tepals, cupped, round a dark dome of pistils ringed with dark stamens (a white ring in some); the green ruff of cut bracts below the flower ---------- */
