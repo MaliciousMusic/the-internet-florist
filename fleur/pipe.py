@@ -17,7 +17,7 @@ photos kept only once looked at, a photo/render comparison pair by pair and an a
 Rules kept from the method: one Opus at a time per working copy, three sorts at most on the PC (ws/locks/pipe-<n>), renders through
 the gate (shot_p.sh), ramwait.sh before every Opus call and heavy render, no commit and no merge anywhere, never a process that this
 script did not start itself."""
-import sys, os, re, json, time, math, glob, shutil, argparse, subprocess, threading, queue, contextlib, io, importlib.util, unicodedata, statistics
+import sys, os, re, json, time, math, glob, shutil, argparse, subprocess, threading, queue, contextlib, io, importlib.util, unicodedata, statistics, hashlib
 
 sys.stdout.reconfigure(encoding='utf-8', errors='replace')
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -1803,6 +1803,28 @@ def app_mtime(ctx):
     return max([os.path.getmtime(f) for f in glob.glob(ctx.ch + '/app/*.js')] or [0])
 
 
+def code_fp(ctx):
+    """sha1 of the drawing code a verdict is about: every app/*.js and pilote/svtest.js of the copy (path and content)"""
+    h = hashlib.sha1()
+    for f in sorted(glob.glob(ctx.ch + '/app/*.js')) + [ctx.ch + '/pilote/svtest.js']:
+        if os.path.exists(f):
+            h.update(fwd(os.path.relpath(f, ctx.ch)).encode() + b'\0' + open(f, 'rb').read() + b'\0')
+    return h.hexdigest()
+
+
+def judged_code(ctx):
+    """(ok, why): the judge accepted the sort and the code is still the one it judged (fingerprint taken at its ok)"""
+    j = ctx.st['steps'].get('juge', {})
+    if j.get('status') != 'done':
+        return False, 'the judge has not accepted this sort (step juge %s)' % j.get('status', '-')
+    if not j.get('fp'):
+        return False, 'no code fingerprint was recorded at the judge\'s ok: run --from juge'
+    fp = code_fp(ctx)
+    if fp != j['fp']:
+        return False, 'app/*.js or pilote/svtest.js changed since the judge\'s ok (fingerprint %s, now %s): run --from comparaison' % (j['fp'][:10], fp[:10])
+    return True, ''
+
+
 def check_comparaison(ctx, plan, ko_file=None, reads=True):
     """every pair present (PNG not empty), made after the last change of app/, looked at by the modeller; the table complete (ok or the gap);
     after a judge's ko: the drawing changed and the table was rewritten since"""
@@ -1938,7 +1960,8 @@ def step_juge(ctx):
         v = judge(ctx, plan, trips)
         ctx.note('juge', trips=trips, last=v['verdict'])
         if v['verdict'] == 'ok':
-            return {'status': 'done', 'trips': trips, 'msg': 'the judge accepts every pair (%d round trips)%s' % (trips, ' (dry)' if ctx.dry else '')}
+            fp = code_fp(ctx)  # what was judged: planches and FINI refuse a code that changed since
+            return {'status': 'done', 'trips': trips, 'fp': fp, 'msg': 'the judge accepts every pair (%d round trips; code %s)%s' % (trips, fp[:10], ' (dry)' if ctx.dry else '')}
         if trips >= tours:
             rep = write_refusal(ctx, v, trips)
             return {'status': 'failed', 'refused': True, 'trips': trips, 'report': rep,
@@ -2132,8 +2155,9 @@ def step_qa(ctx):
 # ---------------------------------------------------------------------------------------------------------------- sheets
 
 def step_planches(ctx):
-    if ctx.st['steps'].get('juge', {}).get('status') != 'done' and not ctx.dry:
-        raise StepFailed('the judge has not accepted this sort (step juge %s): no sheet for the catalogue' % ctx.st['steps'].get('juge', {}).get('status', '-'))
+    ok, why = judged_code(ctx)
+    if not ok and not ctx.dry:
+        raise StepFailed('%s: no sheet for the catalogue' % why)
     ids = cw_ids(ctx, 6)
     if not ids and not ctx.dry:
         raise StepFailed('no coloris.json: no sheet')
@@ -2252,6 +2276,10 @@ def cmd_run(a):
         start = a.from_ or next((n for n in names if st['steps'].get(n, {}).get('status') not in ('done', 'skipped')), None)
         if start is None:
             say('every step is done: nothing to run (use --from <step> to redo)')
+            fin = None if ctx.dry else fini(ctx)
+            if fin:
+                say(fin[1])
+                return 0 if fin[0] else 2
             return 0
         todo = names[names.index(start):]
         if a.from_ and not ctx.dry:
@@ -2324,9 +2352,21 @@ def cmd_run(a):
         slot.release()
     say('-- %s' % ' | '.join('%s %s' % (n, st['steps'].get(n, {}).get('status', '-')) for n in names))
     say('-- bill: %.2f M eq-Opus (cap %.1f M, a measure)' % (ctx.bill.total() / 1e6, ctx.cap / 1e6))
-    if not ctx.dry and all(st['steps'].get(n, {}).get('status') in ('done', 'skipped') for n in names) and st['steps'].get('juge', {}).get('status') == 'done':
-        say('-- FINI: %s accepted by the judge, witnesses and QA green' % sid)
+    if not ctx.dry:
+        fin = fini(ctx)
+        if fin:
+            say(fin[1])
+            code = code or (0 if fin[0] else 2)
     return code
+
+
+def fini(ctx):
+    """None while a step is not done; else (True, the FINI line) when the judge accepted THIS code, or (False, why not)"""
+    st = ctx.st
+    if not all(st['steps'].get(n, {}).get('status') in ('done', 'skipped') for n in STEPS) or st['steps'].get('juge', {}).get('status') != 'done':
+        return None
+    ok, why = judged_code(ctx)
+    return (True, '-- FINI: %s accepted by the judge, witnesses and QA green' % ctx.sid) if ok else (False, '-- NOT FINISHED: ' + why)
 
 
 def load_ctx(a):
@@ -2672,6 +2712,9 @@ def cmd_selftest(a):
         jr = [r for r in Bill(ctx3.rc + '/pipe-bill.json').rows() if r['step'] == 'juge']
         t('juge: ko -> comparaison -> ok ends the step (1 round trip)', code_ == 0 and st3['steps']['juge']['status'] == 'done' and st3['steps']['juge'].get('trips') == 1
           and len(jr) == 2 and os.path.exists(ctx3.rc + '/comparaison/ko-1.json'), out_[-500:])
+        fp3 = st3['steps']['juge'].get('fp')
+        t('juge: the ok keeps the fingerprint of app/*.js and pilote/svtest.js', fp3 and fp3 == code_fp(ctx3) and judged_code(Ctx('selftest3', tmp, argparse.Namespace(dry=False, cap=40, claude=fake), st3))[0],
+          str(fp3))
         t('juge: the judge is a fresh Opus xhigh call, read-only (Read, Glob, Grep, Bash for img.py only)', all(r['model'] == 'opus' and r.get('tools') == 'Bash,Glob,Grep,Read'
           and r.get('effort') == 'xhigh' for r in jr), str([(r.get('tools'), r.get('effort')) for r in jr]))
         P_ = {n: open('%s/pipe/prompts/%s.md' % (HERE, n), encoding='utf-8').read() for n in ('forme', 'plante', 'finition', 'fit', 'comparaison', 'juge')}
@@ -2701,6 +2744,16 @@ def cmd_selftest(a):
         seq({'mode': 'done', 'read': [], 'final': '{"verdict":"ok","lignes":[],"ko":[]}'}, {'mode': 'done', 'read': [], 'final': 'no json'})
         v_ = judge(ctx3, plan_, 0)
         t('juge: a judge that looked at nothing is asked again, then counts as ko', v_['verdict'] == 'ko' and any('not looked at' in x for x in v_['issues']), str(v_)[:300])
+        open(tmp + '/app/y-test.js', 'a').write('// retouched after the judge\n')
+        ctx3b = Ctx('selftest3', tmp, argparse.Namespace(dry=False, cap=40, claude=fake), st3)
+        try:
+            step_planches(ctx3b)
+            t('planches: refused when app/ changed after the judge said ok (no FINI either)', False)
+        except StepFailed as e:
+            ctx3b.st = dict(st3, steps={n: {'status': 'done', **({'fp': fp3} if n == 'juge' else {})} for n in STEPS})
+            f_ = fini(ctx3b)
+            t('planches: refused when app/ changed after the judge said ok (no FINI either)', 'changed since the judge' in str(e) and f_ and not f_[0] and 'NOT FINISHED' in f_[1],
+              str(e) + str(f_))
         ctx4 = Ctx('selftest4', tmp, argparse.Namespace(dry=False, cap=40, claude=fake), st4)
         try:
             step_planches(ctx4)

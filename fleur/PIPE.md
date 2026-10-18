@@ -52,9 +52,10 @@ photo/rendu paire par paire, puis un juge adversarial qui n'est pas le modeleur.
 | juge | Opus xhigh, appel neuf qui n'est pas le modeleur, lecture seule (Read, Glob, Grep, `python fleur/img.py`) : note chaque paire `ok`/`ko`, de façon adversariale (un doute = ko) ; sortie `{"verdict":"ok"\|"ko","lignes":[...],"ko":[...]}` | `ok` seulement si chaque paire a été ouverte, notée et jugée juste (un juge qui n'a pas jugé est relancé une fois, puis compte ko) ; un `ko` renvoie à comparaison avec `ko-<n>.json`, au plus `--juge-tours` allers-retours, puis REFUS : `comparaison/refus.md`, code 2 ; une sorte refusée le reste tant qu'on ne relance pas `--from comparaison` (ou `--from juge`) |
 | temoins | `mkapp.sh` dit « app syntax ok » ; anémone contre `base_v2.png` (ou `base_before.png` avant d227daa) à 0,00 % ; `rtest` des SKU de la sorte et des sortes du kit IDENTIQUE (tulipes témoins pas pires que dans l'atelier principal) ; planches des sortes du kit à 0,00 % contre celles d'avant ; `skudump` après = avant (aucun SKU déplacé) ; budget mesuré | tous |
 | qa | `qawatch.sh` par lots de 4, `ramwait.sh` avant chaque lot | flottants, sous le vase, plis : 0 |
-| planches | sku et plante (graine 7), copiées dans `catalogue/serre/pilote-printemps/sheets/<sid>-sku-pN.png` et `-plante-pN.png` | refusé si le juge n'a pas accepté la sorte |
+| planches | sku et plante (graine 7), copiées dans `catalogue/serre/pilote-printemps/sheets/<sid>-sku-pN.png` et `-plante-pN.png` | refusé si le juge n'a pas accepté la sorte, ou si `app/*.js` ou `pilote/svtest.js` ont changé depuis son `ok` (empreinte sha1 `fp` gardée dans `pipe-state.json` au verdict) |
 La plante reprend `targets.json`. Toutes les planches de pipe.py et des prompts portent `&seed=7`. Aucun commit ni fusion : les planches sont seulement copiées.
-pipe.py ne déclare « FINI » qu'une sorte dont toutes les étapes sont faites et que le juge a acceptée.
+pipe.py ne déclare « FINI » qu'une sorte dont toutes les étapes sont faites et que le juge a acceptée, avec le code qu'il a jugé (même empreinte) ;
+sinon « NOT FINISHED » et le code 2.
 
 ## Les prompts
 `fleur/pipe/prompts/` : `census`, `refs`, `brief`, `coloris`, `forme`, `fit`, `plante`, `finition`, `comparaison`, `juge` (40 lignes au plus chacun,
