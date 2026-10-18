@@ -84,9 +84,14 @@ function scabSvgPut(par,B,O,D,cw,op,bud){if(typeof SV_ON==='undefined'||!SV_ON||
    mid green above and paler, dulled underneath, the midrib lighter; the peduncle bare and long under the head, a side bud in the upper axils (10, 31).
    Kit pieces only: svStemLine with sv.nodes, acoCutLeaf (a one-lobe cut leaf), acoNeck / acoBudUp (collar and bud stance), lsHeadS. */
 const SCAB_SC=['#2f4220','#5d7b37','#8aa656','#c3d69a'],SCAB_SCK={};
-const SCABP={w:.11,lw:.23,li:1.3,lp:2.1,nodes:2,leafAng:41,lenK:1.9,rankK:[1,.8,.6,.5],
+/* comparison pass 3 (pairs plante, tige, feuille): the florists' stem carries a long bare peduncle above its top pair (lp 2.1 -> 3.6: the top
+   leaves no longer reach the head's collar), the top pair the smallest (rankK by node, 1 = the top one); the leaf narrower (18: L/W about 5 with
+   its lobes, lw .23 -> .16) */
+/* (main session, plant sheet 2026-10-18) lp back 3.6 -> 2.1: the long bare peduncle bent over into a crook and the open head looked aside */
+const SCABP={w:.11,lw:.16,li:1.3,lp:2.1,nodes:2,leafAng:41,lenK:1.9,rankK:[1,.5,.72,.5],
   node:{sw:.3,len:1.8,sk:.1,ro:.3,rw:.045,sheath:{len:.45,t:.04,wrap:.8,ears:.35,a:.4}}};
-const SCAB_LF={stops:[[0,'#58773a'],[.5,'#4d6c33'],[1,'#5b7b3b']],bstops:[[0,'#9ab57a'],[.5,'#90ad72'],[1,'#98b47a']],shade:'#18260f',lite:'#a2c07a',bshade:'#445f30',
+/* comparison, call 4 (p018, sunlit leaf): a lighter, yellower green with zones (darker foot, lighter body and tip), not a near-even green */
+const SCAB_LF={stops:[[0,'#4a6a2e'],[.4,'#5f8738'],[.8,'#6c9442'],[1,'#77a04a']],bstops:[[0,'#9ab57a'],[.5,'#90ad72'],[1,'#98b47a']],shade:'#18260f',lite:'#a2c07a',bshade:'#445f30',
   blite:'#c4d6a8',rim:'#86a866',cast:'#0f1a09',wrap:.26,amb:.3,dif:.7,sky:.16,trans:.24,ks:.1,gloss:14,dark:[.86,.68,.5],da:.26,lit:[1.12],la:.22,darkLo:[.72],
   daLo:.3,litLo:[],laLo:.22,rw:.01,ro:.3,soft:.06};
 const SCAB_LWILT={y:'#b9a64e',b:'#7a5c34',k:[.25,.45]};
@@ -97,8 +102,13 @@ function scabOld(fn){const dm=document.createElementNS('http://www.w3.org/2000/s
 /* one leaf of a pair (og from the L-system): a one-lobe cut leaf, its few foot pinnae and its toothed margin */
 function scabLeafAt(par,og,pos,len,sd,wl){const H=V3.nz(og.H);
   return acoCutLeaf(par,{base:pos,H,U:og.U,len,sd,wl,mat:SCAB_LF,wilt:SCAB_LWILT,lobes:[[0,1]],lobeJ:0,w:SCABP.lw,vb:.42,
-    inc:{n:[2,4],dp:.3,sh:.3,from:.25,to:.92},side:[1.2,2],sideLo:.5,sideP:.2,sideA:[.8,1.1],sideT:[.04,.2],sideL:[.3,.12],ws:.09,incS:null,
-    up:.16,limp:[.3,.45],dip:.2,lobeDip:0,limpJ:.25,baseL:.08,baseW:.12,gut:[.5,.3],tw:[.25,.3],nu:[3,4],nv:[7,12],mid:['#7da05a','#b6cc98',.5,.3]})}
+    /* 18: three to five uneven lobes a side, deep and pointed forward (not saw steps), a few short pinnae at the foot */
+    /* comparison pass 4 (pair feuille, p018): five even lobes made a saw; two or three larger lobes on the lower two thirds, the tip third entire */
+    /* comparison, call 4 (p018): the lobes uneven in depth, each side its own (inc.jitS, a hash of the leaf's seed: no draw); the foot pinnae a
+       little broader than threads (ws .09 -> .14) */
+    inc:{n:[2,3],dp:.55,sh:.9,from:.12,to:.7,jitS:(sd%97),fall:.16},side:[1,2],sideLo:.5,sideP:.25,sideA:[.7,1],sideT:[.1,.16],sideL:[.17,.07],ws:.14,incS:null,
+    /* the foot narrow and sessile, a shallow gutter (a deep one folded the foot of a leaf seen end-on into a paper cone) */
+    up:.16,limp:[.3,.45],dip:.2,lobeDip:0,limpJ:.25,baseL:.08,baseW:.06,gut:[.2,.2],tw:[.25,.3],nu:[3,4],nv:[7,12],mid:['#7da05a','#b6cc98',.5,.3]})}
 function scabChain(ch,O,nd,wl){const n=ch.pts.length,P=[],W=[];
   for(let i=0;i<n;i++){const q=ch.pts[i],sq=[q[0]+O[0],-(q[1]+O[1])];if(!i){P.push(sq);W.push(ch.ws[i]);continue}
     const p0=ch.pts[Math.max(0,i-2)],p1=ch.pts[i-1],p3=ch.pts[Math.min(n-1,i+1)];for(const t of[1/3,2/3]){const t2=t*t,t3=t2*t,cr=j=>.5*((2*p1[j])+(-p0[j]+q[j])*t+(2*p0[j]-5*p1[j]+4*q[j]-p3[j])*t2+(-p0[j]+3*p1[j]-3*q[j]+p3[j])*t3);
@@ -123,7 +133,8 @@ function scabPlantSv(g,t,o){if(typeof SV_ON==='undefined'||!SV_ON||typeof acoNec
   lsTurtle=function(m,oo){const res=T0(m,oo);if(!n0++){const keep=res.organs.filter(q=>q.t==='Nd'||q.t==='Lv').map(q=>[q,q.pos]);acoNeck(res,b);for(const[q,p]of keep)q.pos=p;const P=res.chains[0].pts,m2=P.length;if(m2>1)b.T=V3.nz(V3s(P[m2-1],P[m2-2]))}return res};
   lsPlant=function(k2,res,o3){return scabLsPlant(k2,res,o3,wl)};
   try{r=lsHeadS(k,Object.assign({},o,{Bf:B0}),{D,w:D*SCABP.w,cols:SCAB_SC,op,rr:.6,nodes:SCABP.nodes,li:SCABP.li,lp:SCABP.lp,opp:1,leafAng:SCABP.leafAng,
-    side:{p:.6,n:1,top:2,len:1.7,ang:26,age:[0,.55]},budD:.34,budMax:.45,wig:.04,e:.05,aimK:.28,
+    /* the side shoot stays a bud on its own stalk (an open side head sat on the main stem as if pierced by it) */
+    side:{p:.6,n:1,top:2,len:2.4,ang:30,age:[0,.4]},budD:.34,budMax:.45,wig:.04,e:.05,aimK:.28,
     flower:(par,B,O,D2,op2)=>{const B2=rotB(B);if(op2<.3)scabBud(par,B2,O,D2,cw,op2,D2*.34,.5);else scabFlower(par,B2,O,D2,cw,op2)},
     bud:(par,B,O,s,a)=>scabBud(par,B,O,s/.34,cw,.04+.2*a,s,a),young:(par,B,O,s,a)=>scabFlower(par,B,O,s*1.4,cw,.45+.5*a),
     leaf:(og,pos)=>{const len=D*R(1,1.35);scabOld(dm=>{stemLeaf(dm,0,0,0,len,.1,'#55784a',{side:og.p.j?.4:-.4,arch:10})});
