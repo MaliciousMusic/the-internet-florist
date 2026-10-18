@@ -670,15 +670,6 @@
         "ang": "side"
       },
       {
-        "id": "ruban-soie-mousseline",
-        "col": "#efe0f5",
-        "n": 1,
-        "role": "line",
-        "pos": "right",
-        "h": 0.75,
-        "ang": "side"
-      },
-      {
         "id": "atriplex-hortensis-arroche",
         "col": "#7fb24a",
         "n": 3,
@@ -1829,15 +1820,6 @@
         "pos": "core",
         "h": 0.45,
         "ang": "face"
-      },
-      {
-        "id": "ruban-soie-mousseline",
-        "col": "#121214",
-        "n": 1,
-        "role": "drape",
-        "pos": "bottom",
-        "h": 0.0,
-        "ang": "side"
       }
     ],
     "notes": "Cœur serré de pivoines et de scabieuses bordeaux éclairé d'un anthurium corail, d'où fusent des alliums tambour sur tiges arquées, une branche noire tortueuse et un rameau rouge, tandis que l'amarante cramoisie et des rubans rouge et noir tombent sous le liage."

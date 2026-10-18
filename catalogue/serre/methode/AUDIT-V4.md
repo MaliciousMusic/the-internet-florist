@@ -270,3 +270,23 @@ Les résultats et les planches sont relevés au §10 quand ils sont relus.
    de l'ancien dessin ? (question déjà posée)
 10. **Trois nœuds de tige** (dahlia, hortensia, orchidée) : les unifier dans le moteur de jointures, au risque de retoucher des
     planches validées, ou laisser ces trois sortes telles quelles ?
+
+### Réponses du porteur (18 octobre 2026)
+
+| Q | Réponse |
+|---|---|
+| 1 Format de la fiche | JSON par sorte (`catalogue/serre/fiches/<sid>.json`), contrôlé par `fiche.py` |
+| 2 Formes sans photo | gardées, marquées `hypothese`, refaites dès qu'une photo existe |
+| 3 Plein détail à DET 1 | non : la boutique garde le détail allégé |
+| 4 Fané en bouquet | col courbé comme en planche, composition libre (les bouquets peuvent bouger) |
+| 5 Refontes des sortes publiées | non : les nouvelles matières ne servent qu'aux sortes nouvelles |
+| 6 Ombre sur les tiges | essai sur 3 bouquets, avant/après à 2 400 px |
+| 7 Contre-jour | éclaircir seulement, sans réchauffer ni saturer |
+| 8 Juge | Opus, avec l'anti-ancrage (il juge avant de lire le tableau du modeleur) |
+| 9 Anthurium en bouquet | la tête garde sa vraie taille ; les bouquets peuvent bouger |
+| 10 Trois nœuds de tige | laissés tels quels ; le moteur de nœuds sert aux sortes nouvelles |
+| Port 8765 des scripts communs | corrigé en 8805 |
+| Ruban de soie | retiré des 7 recettes de bouquet (il n'était pas dans `k0.js`) |
+| Recherche | Haiku et Sonnet ici, pas Codex |
+| GitHub | pousser main après chaque fusion verte de cette passe |
+| Première fleur de la nouvelle chaîne | œillet standard (après le moteur de sections et de nœuds, R8) |

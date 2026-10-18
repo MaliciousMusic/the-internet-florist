@@ -739,15 +739,6 @@
         "pos": "core",
         "h": 0.3,
         "ang": "face"
-      },
-      {
-        "id": "ruban-soie-mousseline",
-        "col": "#b8a8c8",
-        "n": 1,
-        "role": "accent",
-        "pos": "bottom",
-        "h": 0,
-        "ang": "side"
       }
     ],
     "notes": "Monochrome violet dressé devant un voile de papier crème plié, des anthuriums lilas au sommet jusqu'à la hampe de phalaenopsis qui coule devant le vase."
@@ -1003,15 +994,6 @@
         "pos": "left",
         "h": 0.45,
         "ang": "mixed"
-      },
-      {
-        "id": "ruban-soie-mousseline",
-        "col": "#e2d8c8",
-        "n": 1,
-        "role": "accent",
-        "pos": "bottom",
-        "h": 0,
-        "ang": "side"
       }
     ],
     "notes": "Bouquet de mariée lié de soie crème : diagonale de callas roses, grappe de cymbidiums framboise, anthuriums vert tendre en contrepoint et chute d'amarante bordeaux jusqu'au sol."
@@ -1402,15 +1384,6 @@
         "pos": "right",
         "h": 0.6,
         "ang": "side"
-      },
-      {
-        "id": "ruban-soie-mousseline",
-        "col": "#ef7a6a",
-        "n": 1,
-        "role": "accent",
-        "pos": "bottom",
-        "h": 0,
-        "ang": "side"
       }
     ],
     "notes": "Petite poignée printanière nichée dans une vaste collerette de papier de soie cobalt, avec saule et forsythia qui filent vers le haut et brins d'herbe en arc vers la droite."
@@ -1583,15 +1556,6 @@
         "pos": "core",
         "h": 0.3,
         "ang": "mixed"
-      },
-      {
-        "id": "ruban-soie-mousseline",
-        "col": "#ece6da",
-        "n": 1,
-        "role": "accent",
-        "pos": "bottom",
-        "h": 0,
-        "ang": "side"
       }
     ],
     "notes": "Dôme prune et chartreuse qui affleure un cône de papier blanc : dahlia noir en bas à gauche, cymbidium vert acide au sommet, pois de senteur et amarante verte qui s'échappent."

@@ -1,11 +1,11 @@
 #!/bin/sh
 # chantier.sh new <nom> | list | merge <nom> | drop <nom>
 #   new   : a working copy of the atelier for one flower chantier, ch/<nom> (git worktree on branch ch/<nom>), built and served on its own:
-#           http://localhost:8765/ch/<nom>/pilote/sv.html ; its shots go to ch/<nom>/fleur/out
+#           http://localhost:8805/ch/<nom>/pilote/sv.html ; its shots go to ch/<nom>/fleur/out
 #   list  : the chantiers and their last commit
 #   merge : brings a finished chantier into the main atelier (git merge; conflicts are reported, never forced)
 #   drop  : removes the working copy (its branch stays)
-# Shared by every chantier: the gate (3 headless Chromes), the QA lock (one QA at a time), recv.py (8781), the server (8765), bill.py.
+# Shared by every chantier: the gate (3 headless Chromes), the QA lock (one QA at a time), recv.py (8781), the server (8805), bill.py.
 MAIN="C:/Users/agent/Desktop/flower/flower-atelier"
 cd "$MAIN" || exit 1
 case "$1" in
