@@ -23,7 +23,9 @@ sys.stdout.reconfigure(encoding='utf-8', errors='replace')
 HERE = os.path.dirname(os.path.abspath(__file__))
 MAIN = 'C:/Users/agent/Desktop/flower/flower-atelier'  # the shared atelier: gate, locks, servers (never modified here)
 FC = 'C:/Users/agent/Desktop/flower/flower-atelier'    # the-internet-florist: standards read in docs/, sheets copied to catalogue/serre
-STEPS = ['census', 'refs', 'coloris', 'targets', 'fiche', 'forme', 'fit', 'plante', 'finition', 'comparaison', 'juge', 'temoins', 'qa', 'planches']
+# P13: the light witnesses (build, anemone, rtest, kit sheets, SKU order, budget: no QA batch) come BEFORE the costly comparison and judge, and are
+# redone without a model on the judged code when the comparison retouched app/; the QA batches come after the judge
+STEPS = ['census', 'refs', 'coloris', 'targets', 'fiche', 'forme', 'fit', 'plante', 'finition', 'temoins', 'comparaison', 'juge', 'qa', 'planches']
 MODELS = {'haiku': 'claude-haiku-5-5', 'sonnet': 'claude-sonnet-5-5', 'opus': 'claude-opus-5-5'}
 W = {'in': 1, 'cw': 1.25, 'cr': .1, 'out': 5}  # Opus input-equivalent weights (bill.py)
 M = {'opus': 1, 'sonnet': .6, 'haiku': .2}
@@ -1091,7 +1093,7 @@ def cw_photo_audit(ctx, R=None):
     hexes, out, rep = cw_hexes(ctx), {}, []
     for x in K:
         i = str(x.get('i'))
-        meas = old.get(i) if old.get(i, {}).get('corps') else None
+        meas = next(({'corps': r['corps'], 'conf': r.get('conf')} for r in (old.get(i) or {}).values() if r.get('corps')), None)  # measured once
         if not meas:
             try:
                 R = R or load_mod(ctx, 'refs')
@@ -1254,12 +1256,19 @@ def step_refs(ctx):
         n1, bad = refs_audit(ctx)
         dropped += len(bad)
     c = check_refs(ctx)
-    if not c['ok'] or len(c['soft']) > 3:
-        miss = ', '.join(c['hard'] + c['soft'])
+    gaps = refs_pairs(ctx, R)  # P11: the photos the comparison pairs need, checked now (eligible: group, 1 000 px, colour audit), not after forme
+    if not c['ok'] or len(c['soft']) > 3 or gaps:
+        miss = ', '.join(c['hard'] + c['soft'] + ['paire %s (%s)' % (k, v) for k, v in gaps.items()])
         r = call_model(ctx, 'refs', 'fill', 'sonnet', prompt_text('refs', **ctx.sub(task='fill', sheets='-', missing=miss or '-', groupes=', '.join(pair_groupes(ctx)))), tools + WEB + ['Write'], turns=60)
         n2, bad = refs_audit(ctx)
         dropped += len(bad)
         c = check_refs(ctx)
+        gaps = refs_pairs(ctx, R)
+    if gaps:
+        c['ok'] = False
+        c['hard'] = c['hard'] + ['pair %s' % k for k in gaps]
+        c['msg'] += '; comparison pairs without a usable photo: ' + '; '.join('%s (%s)' % (k, v) for k, v in gaps.items())
+    c['pairs_missing'] = gaps
     if not ctx.dry and c['n']:
         quiet(R.kept, ctx.sid, 220)
     changed = json.dumps([x.get('title') for x in jload(ctx.rc + '/keep.json', []) or []]) != keep_before
@@ -1271,6 +1280,19 @@ def step_refs(ctx):
     c['msg'] += '; %d photos set aside by the "looked at" check' % dropped
     c['msg'] += '; ' + refs_pair_audit(ctx, R)
     return {'status': 'done' if c['ok'] else 'failed', 'msg': c['msg'], 'checks': c, 'gaps': c['soft']}
+
+
+def refs_pairs(ctx, R=None):
+    """P11: {pair key: why} for the fixed comparison pairs (PAIRS) with no usable kept photo, from the pair copies and the colour audit
+    (computed here: downloads of the originals, refs.py auto); --dry reads what is on the disk and says the gaps"""
+    if not ctx.dry:
+        pair_photos(ctx, R)
+        cw_photo_audit(ctx, R)
+    plan, missing = pair_plan(ctx)
+    gaps = {k: ctx.pair_gaps.get(k, '') for k in missing}
+    if ctx.dry:
+        say('  [dry] comparison pairs without a usable photo on the disk: %s' % ('; '.join('%s (%s)' % kv for kv in gaps.items()) or 'none'))
+    return gaps
 
 
 def refs_pair_audit(ctx, R=None):
@@ -2397,6 +2419,16 @@ def code_fp(ctx):
     return h.hexdigest()
 
 
+def witnessed_code(ctx):
+    """(ok, why): the witnesses are green on the very code the judge accepted (P13)"""
+    t, j = ctx.st['steps'].get('temoins', {}), ctx.st['steps'].get('juge', {})
+    if t.get('status') != 'done':
+        return False, 'the witnesses are not green (step temoins %s)' % t.get('status', '-')
+    if t.get('fp') != j.get('fp'):
+        return False, 'the witnesses ran on another code than the one the judge accepted: run --only temoins'
+    return True, ''
+
+
 def judged_code(ctx):
     """(ok, why): the judge accepted the sort and the code is still the one it judged (fingerprint taken at its ok)"""
     j = ctx.st['steps'].get('juge', {})
@@ -2558,6 +2590,15 @@ def step_juge(ctx):
         ctx.note('juge', trips=trips, last=v['verdict'])
         if v['verdict'] == 'ok':
             fp = code_fp(ctx)  # what was judged: planches and FINI refuse a code that changed since
+            tm = ctx.st['steps'].get('temoins', {})
+            if not ctx.dry and tm.get('status') in ('done', 'failed') and tm.get('fp') != fp:  # P13: the comparison retouched app/ after the witnesses
+                say('  the drawing changed since the witnesses (comparison retouches): the light witnesses again, on the judged code (no model)')
+                r = step_temoins(ctx)
+                r['ended'] = now()
+                ctx.note('temoins', **r)
+                if r['status'] != 'done':
+                    return {'status': 'failed', 'trips': trips, 'msg': 'the judge accepts every pair, but the witnesses redone on the judged code are red: %s; '
+                            'correct the drawing, then run --from temoins' % r['msg']}
             return {'status': 'done', 'trips': trips, 'fp': fp, 'msg': 'the judge accepts every pair (%d round trips; code %s)%s' % (trips, fp[:10], ' (dry)' if ctx.dry else '')}
         if trips >= tours:
             rep = write_refusal(ctx, v, trips)
@@ -2682,7 +2723,7 @@ def step_temoins(ctx):
         out.append('SKU: %d before, %s' % (len(before), 'none moved' if not moved else '%d MOVED (%s)' % (len(moved), ', '.join(moved[:4]))))
     b_ok, b_msg, m = budget(ctx, 'bud_' + ctx.sid)
     out.append(b_msg)
-    return {'status': 'done' if (ok and b_ok) or ctx.dry else 'failed', 'msg': '; '.join(out), 'checks': m}
+    return {'status': 'done' if (ok and b_ok) or ctx.dry else 'failed', 'msg': '; '.join(out), 'checks': m, 'fp': code_fp(ctx)}
 
 
 # ---------------------------------------------------------------------------------------------------------------- QA
@@ -2757,6 +2798,8 @@ def step_qa(ctx):
 
 def step_planches(ctx):
     ok, why = judged_code(ctx)
+    if ok:
+        ok, why = witnessed_code(ctx)
     if not ok and not ctx.dry:
         raise StepFailed('%s: no sheet for the catalogue' % why)
     ids = cw_ids(ctx, 6)
@@ -2967,6 +3010,8 @@ def fini(ctx):
     if not all(st['steps'].get(n, {}).get('status') in ('done', 'skipped') for n in STEPS) or st['steps'].get('juge', {}).get('status') != 'done':
         return None
     ok, why = judged_code(ctx)
+    if ok:
+        ok, why = witnessed_code(ctx)
     return (True, '-- FINI: %s accepted by the judge, witnesses and QA green' % ctx.sid) if ok else (False, '-- NOT FINISHED: ' + why)
 
 
@@ -3689,6 +3734,49 @@ def cmd_selftest(a):
           and au_.get('1', {}).get('rouge', {}).get('ok') is False and 'photo 1 (coloris:rouge)' in qa_, str(au_) + qa_[-200:])
         pa_ = pair_plan(ctxA, {'0': {'short': 1200, 'file': 'x0'}, '1': {'short': 1200, 'file': 'x1'}})[0]
         t('pairs: the cw- pair takes the photo that passed the colour audit', [p['photo'] for p in pa_ if p['k'] == 'cw-rouge'] == [0], str([(p['k'], p['photo']) for p in pa_]))
+        # ---- P11 + P13: the pair photos at refs (fail early, said by --only refs --dry); the light witnesses before the comparison
+        t('order: the light witnesses before the comparison, the QA after the judge', STEPS.index('finition') + 1 == STEPS.index('temoins') == STEPS.index('comparaison') - 1
+          and STEPS.index('juge') < STEPS.index('qa') < STEPS.index('planches'))
+        code_, out_ = run_(['fx-o', '--from', 'finition', '--dry'])
+        t('--dry shows the order: finition temoins comparaison juge qa planches', 'steps finition temoins comparaison juge qa planches ;' in out_, out_[:400])
+        rR = tmp + '/refcache/fx-r'
+        os.makedirs(rR, exist_ok=True)
+        jsave(rR + '/keep.json', [x for x in KEEP if x['i'] not in (4, 5)] + [dict(KEEP[4], m='vu: stade=declin groupe=espece-sauvage')])
+        jsave(rR + '/pair-photos.json', BIG('fx-r'))
+        code_, out_ = run_(['fx-r', '--only', 'refs', '--dry'])
+        t('refs --dry: the comparison pairs without a usable photo are announced before any modelling', 'pairs without a usable photo on the disk' in out_
+          and 'fane-1 (kept photos that fit but cannot serve: 4 (groupe espece-sauvage))' in out_ and 'fane-2 (kept photos that fit' in out_, out_[-700:])
+        ctxR = Ctx('fx-r', tmp, argparse.Namespace(dry=False, cap=40, claude=fake), {'sid': 'fx-r', 'taxon': 'Test test', 'steps': {}, 'skus': []})
+        gR = refs_pairs(ctxR)
+        t('refs: the missing pairs come back with their reasons (a hard gap of refs)', sorted(gR) == ['fane-1', 'fane-2'], str(gR))
+        rel8 = setup('selftest8')
+        seq(comp(rel8, 2))
+        run_(['selftest8', '--only', 'comparaison'])
+        st8p = tmp + '/refcache/selftest8/pipe-state.json'
+        st8 = jload(st8p, {})
+        st8['steps']['temoins'] = {'status': 'done', 'fp': 'an-older-code'}
+        jsave(st8p, st8)
+        g_ = globals()
+        old_tm = g_['step_temoins']
+        try:
+            g_['step_temoins'] = lambda c: {'status': 'failed', 'msg': 'anemone 0.41 %'}
+            seq(jg(rel8, 'ok'))
+            code_, out_ = run_(['selftest8', '--only', 'juge'])
+            st8 = jload(st8p, {})
+            t('juge: an ok on a code retouched since the witnesses redoes them (no model); red: the sort is not accepted', code_ == 2 and st8['steps']['juge']['status'] == 'failed'
+              and 'witnesses redone on the judged code are red' in st8['steps']['juge']['msg'] and st8['steps']['temoins']['status'] == 'failed', out_[-400:])
+            g_['step_temoins'] = lambda c: {'status': 'done', 'msg': 'green', 'fp': code_fp(c)}
+            seq(jg(rel8, 'ok'))
+            code_, out_ = run_(['selftest8', '--only', 'juge'])
+            st8 = jload(st8p, {})
+            c8 = Ctx('selftest8', tmp, argparse.Namespace(dry=False, cap=40, claude=fake), st8)
+            t('juge: green witnesses on the judged code: accepted, and the witnesses carry its fingerprint', code_ == 0 and st8['steps']['juge']['status'] == 'done'
+              and st8['steps']['temoins'].get('fp') == st8['steps']['juge'].get('fp') and witnessed_code(c8)[0], out_[-400:])
+            st8['steps']['temoins']['fp'] = 'another'
+            ok8, why8 = witnessed_code(Ctx('selftest8', tmp, argparse.Namespace(dry=False, cap=40, claude=fake), st8))
+            t('planches/FINI: witnesses on another code than the judged one refuse', not ok8 and 'another code' in why8, why8)
+        finally:
+            g_['step_temoins'] = old_tm
         t('prompts: refs asks groupe= and says the 1 000 px and the colour audit', all(x in open('%s/pipe/prompts/refs.md' % HERE, encoding='utf-8').read()
                                                                                   for x in ('groupe=', '1 000 px', 'ΔE 15', '<<groupes>>')))
         t('prompts: finition knows the colour rule', all(x in open('%s/pipe/prompts/finition.md' % HERE, encoding='utf-8').read() for x in ('cwmed.py', 'dL', 'dC')))
