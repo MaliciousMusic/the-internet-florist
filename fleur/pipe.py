@@ -1246,11 +1246,14 @@ def check_refs(ctx):
     n_org = sum(c['organe'].values())
     soft = ['%s:%s %d/%d' % (f, v, c[f].get(v, 0), m) for f, d in REFS_MIN.items() for v, m in d.items() if c[f].get(v, 0) < m]
     hard = ['%s:%s' % (f, v) for f, v in REFS_HARD if c[f].get(v, 0) < 1]
+    by_declin = 'stade:fane' in hard and c['stade'].get('declin', 0) >= 1
+    if by_declin:  # nerine, 2026-10-18: no faded photo of the taxon or its sisters; the decline photo shows the wilt's direction (a question)
+        hard.remove('stade:fane')
     if n < 10:
         hard.append('only %d photos kept (10 at least)' % n)
     if n_org < 10:
         soft.append('organs %d/10' % n_org)
-    return {'ok': not hard, 'n': n, 'organs': n_org, 'hard': hard, 'soft': soft,
+    return {'ok': not hard, 'n': n, 'organs': n_org, 'hard': hard, 'soft': soft, 'fane_by_declin': by_declin,
             'msg': '%d photos, %d organs; missing for good: %s; short: %s' % (n, n_org, ', '.join(hard) or '-', ', '.join(soft[:8]) or '-')}
 
 
@@ -1332,6 +1335,12 @@ def step_refs(ctx):
         call_model(ctx, 'refs', 'brief', 'haiku', prompt_text('brief', **ctx.sub()), tools + ['Write'], turns=30)
     if not ctx.dry and not os.path.exists(ctx.rc + '/brief.md'):
         c['ok'], c['msg'] = False, c['msg'] + '; brief.md not written'
+    if c.get('fane_by_declin'):
+        set_questions(ctx, 'fane-par-declin', 'Fané dessiné d’après le déclin (non bloquant)',
+                      ['%s : aucune photo de fané gardée, ni du taxon ni des espèces sœurs ; %d photo(s) de déclin. Proposition : dessiner le fané en '
+                       'prolongeant le déclin photographié (même sens de flétrissure, bords bruns), et le juge le compare à la photo de déclin'
+                       % (ctx.taxon, refs_counts(ctx)[1]['stade'].get('declin', 0))])
+        c['msg'] += '; fane drawn from the decline photo (question, fane-par-declin)'
     c['set_aside'] = dropped
     c['msg'] += '; %d photos set aside by the "looked at" check' % dropped
     c['msg'] += '; ' + refs_pair_audit(ctx, R)
