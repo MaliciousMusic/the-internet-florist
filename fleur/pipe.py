@@ -341,7 +341,9 @@ class Ctx:
 
     def sub(self, **kw):
         base = dict(sid=self.sid, taxon=self.taxon, genus=self.genus, family=self.st.get('family') or '', rc=self.rel, late=self.st.get('late') or 1,
-                    skus='; '.join('%s = %s' % (x['sku'], x.get('cultivar') or '?') for x in self.st.get('skus', [])) or '-', ch=self.ch)
+                    skus='; '.join('%s = %s' % (x['sku'], x.get('cultivar') or '?') for x in self.st.get('skus', [])) or '-', ch=self.ch,
+                    tete=TETE_TXT % self.st['tete_validee'] if self.st.get('tete_validee') else '',
+                    tete_juge=TETE_JUGE % self.st['tete_validee'] if self.st.get('tete_validee') else '')
         base.update(kw)
         return base
 
@@ -2817,6 +2819,50 @@ def judged_code(ctx):
     return True, ''
 
 
+TETE_TXT = ('LA TÊTE EST VALIDÉE PAR LE PORTEUR (« %s ») : forme, gènes, cœur, coloris de la tête et dessin des planches (SV_HEAD) ne bougent plus. '
+            'Un écart de tête se dit en clair dans le tableau, il ne se corrige pas ; tes retouches portent sur la tige, les feuilles et le pédicelle. '
+            'pipe.py rend une planche de la tête avant et après l’étape : elle doit rester identique.')
+TETE_JUGE = ('La tête est validée par le porteur (« %s ») : juge la tête comme les autres et dis ses écarts, mais un écart de la seule tête ne fait pas '
+             'refuser ; ton verdict porte sur la tige, les feuilles, le pédicelle et la fleur sur sa tige.')
+# the head sheet that must not move once the owner validated the head (gloriosa, 2026-10-18: the comparison nodded every view of the
+# validated v2 down, narrowed the tepals and tinted Rothschildiana's foot lime)
+TETE_Q = 'grid=1&sid=%s&cws=%s&st=.2:0,1:0,1:.6,1:.9&view=0,2,10&D=200&det=1&seed=%d'
+
+
+def tete_shot(ctx, name):
+    cws = [e['id'] for e in jload(ctx.rc + '/coloris.json', []) or [] if e.get('id')][:2]
+    good, m, text = shot(ctx, name, TETE_Q % (ctx.sid, ','.join(cws) or '0', SEED), name)
+    return good, '%s/fleur/out/%s.png' % (ctx.ch, name)
+
+
+def tete_ref(ctx):
+    """refcache/<sid>/tete-validee.png, rendered once, the first time the step runs with --tete-validee"""
+    ref = ctx.rc + '/tete-validee.png'
+    if ctx.st.get('tete_validee') and not ctx.dry and not os.path.exists(ref):
+        good, f = tete_shot(ctx, 'tete_ref_%s' % slug(ctx.sid)[:24])
+        if not good:
+            raise StepFailed('head sheet for --tete-validee not rendered')
+        shutil.copyfile(f, ref)
+    return ref
+
+
+def check_tete(ctx):
+    """(ok, why): the head sheet against tete-validee.png, 0 % of pixels changed"""
+    if not ctx.st.get('tete_validee') or ctx.dry:
+        return True, ''
+    ref = tete_ref(ctx)
+    good, f = tete_shot(ctx, 'tete_now_%s' % slug(ctx.sid)[:24])
+    if not good:
+        return False, 'head sheet not rendered'
+    c, t = run_cmd(ctx, [sys.executable, 'fleur/img.py', 'diff', f, ref], 'tete-diff', timeout=120, quiet=True)
+    mm = re.search(r'changed ([\d.]+)%', t)
+    pct = float(mm.group(1)) if mm else None
+    if pct == 0.0:
+        return True, ''
+    return False, ('the head validated by the owner changed (%s %% of %s against %s/tete-validee.png): undo the head changes (spec, genes, heart, '
+                   'head colours, SV_HEAD); only the stem, the leaves and the pedicel are yours' % (pct if pct is not None else '?', os.path.relpath(f, ctx.ch), ctx.rel))
+
+
 def check_comparaison(ctx, plan, ko_file=None, reads=True):
     """every pair present (PNG not empty), made after the last change of app/, looked at by the modeller; the table complete (ok or the gap);
     after a judge's ko: the drawing changed and the table was rewritten since"""
@@ -2844,6 +2890,10 @@ def check_comparaison(ctx, plan, ko_file=None, reads=True):
             why.append('the judge said ko and nothing changed in app/ since')
         if not os.path.exists(etat) or os.path.getmtime(etat) <= kt:
             why.append('the table was not rewritten after the judge')
+    if not why:
+        ok_t, why_t = check_tete(ctx)
+        if not ok_t:
+            why.append(why_t)
     return (not why), '; '.join(why[:12])
 
 
@@ -2862,6 +2912,7 @@ def step_comparaison(ctx, ko=None, trip=0):
         kof = '%s/comparaison/ko-%d.json' % (ctx.rc, trip)
         jsave(kof, ko)
     RUN_PAIRS(ctx, plan)
+    tete_ref(ctx)
     ctx.reads['comparaison'] = set()  # each round looks at the pairs again
     extra = {'pairs': '%s/comparaison/pairs.md' % ctx.rel, 'refaire': '%s/comparaison/refaire.sh' % ctx.rel,
              'ko': '%s/comparaison/ko-%d.json' % (ctx.rel, trip) if ko else '-'}
@@ -3231,7 +3282,7 @@ STEPFN = {'census': step_census, 'refs': step_refs, 'coloris': step_coloris, 'ta
 
 # ---------------------------------------------------------------------------------------------------------------- the commands
 
-COMMON_KEYS = {'sid', 'taxon', 'genus', 'family', 'rc', 'skus', 'ch', 'late'}
+COMMON_KEYS = {'sid', 'tete', 'tete_juge', 'taxon', 'genus', 'family', 'rc', 'skus', 'ch', 'late'}
 PROMPT_KEYS = {'census': {'n', 'batch', 'verdict'}, 'refs': {'task', 'sheets', 'missing', 'groupes'}, 'brief': set(), 'coloris': {'n', 'low', 'manual'}, 'fiche': {'relay', 'etat', 'fiche', 'schema'},
                'forme': {'relay', 'etat', 'kit', 'fiche', 'resume', 'rtest'}, 'plante': {'relay', 'etat', 'fiche', 'resume'}, 'finition': {'relay', 'etat'}, 'fit': {'part', 'space', 'out', 'summary'},
                'comparaison': {'relay', 'etat', 'pairs', 'ko', 'refaire'}, 'juge': {'pairs', 'table', 'prev'}}
@@ -3281,7 +3332,7 @@ def cmd_run(a):
         st['taxon'] = a.taxon
     if 'taxon' not in st:
         raise SystemExit('first run of %s: --taxon "<Genus species>" is needed' % sid)
-    for k in ('family', 'genus', 'group', 'kit', 'kit_prefix', 'kit_sids', 'late', 'rtest_bouge', 'groupes'):
+    for k in ('family', 'genus', 'group', 'kit', 'kit_prefix', 'kit_sids', 'late', 'rtest_bouge', 'tete_validee', 'groupes'):
         if getattr(a, k, None):
             st[k] = getattr(a, k)
     if a.kavb:
@@ -4535,6 +4586,8 @@ def make_parser():
     r.add_argument('--views', help='grid views of the head pairs for this sort, "profil:8,bouton:8" (default: PAIRS, then the form family: orchids and spathes 8)')
     r.add_argument('--juge-tours', dest='juge_tours', type=int, default=JUGE_TOURS, help='judge ko -> comparaison round trips before the refusal (exit 2)')
     r.add_argument('--groupes', help='the groups a comparison photo may show, among hybride-de-coupe, jardin, espece-sauvage (default "%s"; never autre)' % PAIR_GROUPES)
+    r.add_argument('--tete-validee', dest='tete_validee', help='the owner validated the head (its sheet, by eye): his words; the comparison then keeps the head '
+                   'as it is (a head sheet rendered before the step must stay identical) and works on the stem, the leaves and the pedicel only')
     r.add_argument('--rtest-bouge', dest='rtest_bouge', help='the owner accepts that the sort moves the bouquets (real-size heads, curved wilted neck): its reason; '
                    'a changed rtest of the sort is then reported in the journal, not blocking')
     for n in ('status', 'bill'):
