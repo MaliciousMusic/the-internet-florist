@@ -131,7 +131,7 @@ const LIL_ORI_CW={
     spots:{c:'#b01650',n:[84,46],v:[.09,.5],u:[.05,.85],r:[.006,.013],k:1.05},pap:{c:'#f0b8cc',sh:'#a83a62',n:[26,0],v:[.04,.28],u:.4},
     shade:'#c4507e',lite:'#fffafc',bshade:'#b07084',soft:.1,blite:'#fff8fa',vein:'#d06a90',bvein:'#d2a0b0',vo:.2,
     transmit:{a:.2,w:.005,eo:[.42,.14],ev:[.12,.3],lk:[.32,.46]},
-    fil:'#d8dca0',filT:'#eef0d0',anth:'#9a3e18',pol:'#c8602a',sty:'#d4dca0',sg:'#9c6e5a',ov:'#a6bc66'},
+    fil:'#e6dcae',filT:'#bdb460',anth:'#9a3e18',pol:'#c8602a',sty:'#e0d6a6',styT:'#a49a3a',sg:'#a46a40',ov:'#a6bc66'},
   blanc:{fine:{amb:.6,dif:.42,sat:.5,ao:.2},grid:{nu:6,nv:24,c:[['#585f21','#575f21','#d5d3a8','#d3d1a7','#d4d2a9','#d6d4ab'],['#7d805c','#818361','#80835e','#848766','#888b69','#8b8f66'],['#848871','#8b8e78','#929583','#969886','#939676','#9da078'],['#9a9d96','#9a9d95','#9d9e96','#a1a29c','#a1a493','#a3a77f'],['#a0a19b','#a7a9a6','#abadaa','#acaeab','#afb2a6','#b2b28d'],['#b3b59d','#afb19a','#b4b79f','#b5b8a3','#b3b5b7','#b8baa4'],['#b5baa3','#b3b3a0','#b2b19e','#b2b3ac','#b5b9ba','#bbbfb7'],['#b8bba5','#aeb09b','#aeae9b','#b1b2ad','#b5b6b8','#c2c5b1'],['#b8bda7','#b8b9a6','#b6b7a6','#b5b6a6','#b8bab5','#c1c6b1'],['#bbbeaa','#babdaf','#b9bbac','#bbbaac','#bebeac','#caccb6'],['#c1c5b1','#c7ccbc','#cbccbc','#d2d2bf','#d2d4bd','#d1d4be'],['#caccbd','#cbcebd','#d3d3c5','#e6e6e9','#f2f2f4','#dde0ca'],['#c7ccbe','#c7c8bc','#d4d9cb','#e9ebef','#f3f3f7','#f0eff4'],['#c9ccc1','#d1d0c4','#dedfe3','#ecedf1','#f4f3f8','#eeeff3'],['#d2d4c6','#d8dacb','#e2e3e7','#eeeff3','#f2f1f6','#edeef3'],['#d4dacc','#dfe2d3','#e7e8ec','#eeeef3','#f2f3f7','#ecedf1'],['#d7d8dc','#e4e5df','#ebecf1','#eff0f5','#eeeff4','#eeeff3'],['#dde0d5','#e4e4e9','#ebecf1','#eeeff4','#f0f1f5','#ecedf1'],['#e1e3d3','#e5e6e8','#ebecf1','#f2f3f8','#f2f3f7','#ebecf1'],['#e1e3d3','#e5e8da','#e8e9ef','#eeeff3','#eeeff4','#ebecf1'],['#dbe3cc','#dee4cd','#e7e7dc','#e7e6db','#e9eaf0','#ebecf1'],['#d7ddce','#dae0cf','#e0e5d8','#e0e1e6','#d9dadf','#dddee3'],['#d7ddcd','#d7dfd0','#d2dbc6','#d5ddcb','#dee5d3','#e0e4dc'],['#d7dec8','#d5dbcb','#dae2d1','#d5decd','#dfe7d8','#dfe3dd']]},gridV:[.3,.45],st:[[0,'#9cb252'],[.06,'#cad890'],[.14,'#eef2dc'],[.28,'#f8f8f0'],[.6,'#fbfbf6'],[.86,'#fbfaf6'],[1,'#f8f8f0']],
     bst:[[0,'#9cb25a'],[.12,'#d6dab2'],[.3,'#f2f3e8'],[.7,'#f6f6ee'],[1,'#f4f4ea']],
     cross:[{st:[[0,'#a8c058',.8],[.025,'#c0d080',.45],[.06,'#e8ecd0',0]],v:[.0,.06,.62,.8],soft:.008},{st:[[0,'#d0dc90',.8],[.12,'#e0e6b2',.5],[.3,'#f2f4e4',0]],v:[.06,.14,.46,.66],bk:.2,soft:.025},
@@ -141,7 +141,7 @@ const LIL_ORI_CW={
     pap:{c:'#ffffff',sh:'#b8bc98',n:[28,0],v:[.04,.3],u:.42},
     shade:'#a0a690',lite:'#ffffff',bshade:'#a6ac94',soft:.1,blite:'#ffffff',vein:'#dcdcc8',bvein:'#d4d6bc',vo:.16,
     transmit:{a:.24,w:.006,eo:[.46,.16],ev:[.12,.3],lk:[.36,.5],wr:.25},
-    fil:'#c8d892',filT:'#e8eed0',anth:'#7a1e12',pol:'#a8301e',sty:'#cadc94',sg:'#a88a6e',ov:'#a6bc66'}};
+    fil:'#dfe2b4',filT:'#aab45e',anth:'#7a1e12',pol:'#a8301e',sty:'#e2e4b8',styT:'#9ca84c',sg:'#b8b890',ov:'#a6bc66'}};
 const LIL_ORI_M={};
 function lilOriSpec(cw){const c=cw.c||'#f2a6c4',l=h2l(c)[2],S=LIL_ORI_CW.stargazer,W=LIL_ORI_CW.blanc,base=l>.9?W:S;
   if(l>.9)return Object.assign({},W,cw.spots?{spots:Object.assign({},S.spots,{c:cw.spots,n:[22,12]}),pap:Object.assign({},S.pap,{c:cw.pap||S.pap.c})}:{});
@@ -154,7 +154,7 @@ function lilOriMat(cw){const key=cw.id;if(LIL_ORI_M[key])return LIL_ORI_M[key];
   const C=LIL_ORI_CW[cw.id]||lilOriSpec(cw),body=C.st[Math.floor(C.st.length*.6)][1];
   const M={st:C.st,bst:C.bst,shade:C.shade,lite:C.lite,bshade:C.bshade,blite:C.blite,vein:C.vein,bvein:C.bvein,vo:C.vo,
     soft:C.soft,fine:C.fine,grid:C.grid,bgrid:C.bgrid,gridV:C.gridV,rim:C.rim||mix(body,h2l(body)[2]>.85?'#8a8a68':'#5a1830',.3),cast:mix(C.shade,'#1a0a08',.45),cross:C.cross,transmit:C.transmit,over:lilOver(C),
-    fil:C.fil,filT:C.filT,anth:C.anth,pol:C.pol,sty:C.sty,sg:C.sg,ov:C.ov};
+    fil:C.fil,filT:C.filT,anth:C.anth,pol:C.pol,sty:C.sty,styT:C.styT,sg:C.sg,ov:C.ov};
   return LIL_ORI_M[key]=M}
 /* the lily's heart: filaments, anthers, style and stigma, each a drawn piece with a proxy sheet for the order (the tepals' svDraw) */
 const LILH_DEF={cb:.2,filR:.04,filL:.64,filW:.034,a0:.28,a1:.78,rise:.28,anL:.28,anW:.064,anTilt:1.1,styL:.72,styW:.045,styA:.62,styD:.3,sgR:.058,ovR:.04,ovH:.08,st:[.42,.38]};
@@ -162,8 +162,9 @@ function lilHeart(o0){const o=Object.assign({},LILH_DEF,o0);
   return({B,O,R0,g,cw0,op,bud,dec,fan,pieces,dn})=>{if(bud>.6)return;const hi=DET>=1.5,ost=svSm((op-o.st[0])/o.st[1]),sz=g.stL||1,
       lt=(()=>{const x=LIGHT[0],y=-LIGHT[1],l=Math.hypot(x,y)||1;return[x/l,y/l]})(),
       anth=mix(cw0.anth,'#3a2414',.6*fan),pol=mix(cw0.pol,'#3a2a18',.6*fan),fil=mix(cw0.fil,'#6a5a2a',.5*fan),filT=mix(cw0.filT||cw0.fil,'#6a5a2a',.5*fan),
-      styC=mix(cw0.sty,'#5a4a2a',.45*fan),sgC=mix(cw0.sg,'#5a4a30',.4*fan),ovC=mix(cw0.ov,'#7a6a40',.5*fan);
+      styC=mix(cw0.sty,'#5a4a2a',.45*fan),styT=mix(cw0.styT||mix(cw0.sty,'#f4f6e8',.25),'#5a4a2a',.45*fan),sgC=mix(cw0.sg,'#5a4a30',.4*fan),ovC=mix(cw0.ov,'#7a6a40',.5*fan);
     /* a round tube along 3D points, tapering w0 -> w1: its lit side, its shaded side, a thin highlight; the colour c0 at the foot to c1 at the end */
+    const foot=mix(cw0.ov||'#a6bc66','#8e7a2a',.45);
     const tube=(P3,w0,w1,c0,c1,extra)=>{const sp=v=>{const x=v*(P3.length-1),j=Math.min(P3.length-2,Math.floor(x)),f=x-j;return V3.add(V3.sc(P3[j],1-f),V3.sc(P3[j+1],f))},
         ax=V3.cr(V3s(P3[P3.length-1],P3[0]),[0,0,1]),side=V3l(ax)>1e-3?V3.nz(ax):[1,0,0],
         prox=svSheet(B,O,(u,v)=>V3.add(sp(v),V3.sc(side,u*Math.max(w0,R0*.015))),{nu:2,nv:Math.max(3,P3.length)});
@@ -171,12 +172,16 @@ function lilHeart(o0){const o=Object.assign({},LILH_DEF,o0);
         for(let q=0;q<n;q++){const a=S2[Math.max(0,q-1)],b=S2[Math.min(n-1,q+1)],dx=b[0]-a[0],dy=b[1]-a[1],l=Math.hypot(dx,dy)||1,ww=(w0+(w1-w0)*q/(n-1))*.5,nx=-dy/l,ny=dx/l;
           if(q===Math.floor(n/2))sg=nx*lt[0]+ny*lt[1]>0?1:-1;
           Lp.push([S2[q][0]+nx*ww,S2[q][1]+ny*ww]);Rp.push([S2[q][0]-nx*ww,S2[q][1]-ny*ww]);Hp.push([nx,ny,ww,S2[q]])}
+        /* matte (photo p002 at 1:1: filaments and style are velvety, never glassy): the colour along the tube, its foot fading into the throat;
+           the volume across as two soft bands (the shaded side, a dull light), blurred, under a faint outline */
         const hk=G(k2),a=S2[0],b=S2[n-1],gid2='lh'+(gid++),gr=E('linearGradient',{id:gid2,gradientUnits:'userSpaceOnUse',x1:svF(a[0]),y1:svF(a[1]),x2:svF(b[0]),y2:svF(b[1])},GDEF||defs);
-        E('stop',{offset:0,'stop-color':c0},gr);E('stop',{offset:1,'stop-color':c1},gr);
-        E('path',{d:svSpl(Lp.concat(Rp.slice().reverse())),fill:`url(#${gid2})`,stroke:mix(c0,'#1e2410',.4),'stroke-width':svF(Math.max(.12,w0*.1)),'stroke-opacity':.45},hk);
-        if(!LOD){const dk=Hp.map(([nx,ny,ww,p])=>[p[0]-nx*ww*.55*sg,p[1]-ny*ww*.55*sg]),hl=Hp.map(([nx,ny,ww,p])=>[p[0]+nx*ww*.42*sg,p[1]+ny*ww*.42*sg]);
-          E('path',{d:svSpl(dk,false),fill:'none',stroke:mix(c0,'#2a3010',.35),'stroke-width':svF(Math.max(.15,w0*.38)),'stroke-opacity':.32,'stroke-linecap':'round'},hk);
-          E('path',{d:svSpl(hl,false),fill:'none',stroke:'#ffffff','stroke-width':svF(Math.max(.12,w1*.32)),'stroke-opacity':.5,'stroke-linecap':'round'},hk)}
+        for(const[o2,c2,a2]of[[0,foot,.15],[.14,mix(foot,c0,.6),.85],[.3,c0,1],[1,c1,1]])E('stop',{offset:o2,'stop-color':c2,'stop-opacity':a2},gr);
+        const outl=svSpl(Lp.concat(Rp.slice().reverse()));
+        E('path',{d:outl,fill:`url(#${gid2})`,stroke:mix(c1,'#2a2a10',.3),'stroke-width':svF(Math.max(.1,w0*.06)),'stroke-opacity':.22},hk);
+        if(!LOD){const band=(k,ww)=>svSpl(Hp.map(([nx,ny,w2,p],q)=>[p[0]+nx*w2*k*sg,p[1]+ny*w2*k*sg]),false),cl='lt'+(gid++);
+          E('path',{d:outl},E('clipPath',{id:cl},GDEF||defs));const ck=G(hk,{'clip-path':`url(#${cl})`});
+          E('path',{d:band(-.62,0),fill:'none',stroke:mix(c1,'#3a3a12',.45),'stroke-width':svF(Math.max(.2,w0*.62)),'stroke-opacity':.34,'stroke-linecap':'round',filter:svBlur(Math.max(.2,w0*.22))},ck);
+          E('path',{d:band(.38,0),fill:'none',stroke:mix(c0,'#fffbe8',.45),'stroke-width':svF(Math.max(.15,w0*.42)),'stroke-opacity':.2,'stroke-linecap':'round',filter:svBlur(Math.max(.2,w0*.2))},ck)}
         if(extra)extra(hk)},proxy:prox})};
     /* an anther: a spindle covered with pollen, its axis a0 -> a1 (3D), w its width; drawn in the filament's hook (over its tip) */
     const anther=(hk,A3,B3,w,sd)=>{const A=PJ(B,O,A3),Bq=PJ(B,O,B3),dx=Bq[0]-A[0],dy=Bq[1]-A[1],l=Math.hypot(dx,dy);if(l<.3)return;
@@ -193,6 +198,14 @@ function lilHeart(o0){const o=Object.assign({},LILH_DEF,o0);
         if(hi){const r=svRng(g.sd+sd*31),k=Math.round(40+w*2.5);let dd='',dk='';for(let q=0;q<k;q++){const dark=r()<.45;const s=.08+.84*r(),u=(r()*2-1)*.8,hw=w*.5*Math.pow(Math.sin(Math.PI*s),.55),
             x=A[0]+dx*s+nx*(u*hw+bend*Math.sin(Math.PI*s)),y=A[1]+dy*s+ny*(u*hw+bend*Math.sin(Math.PI*s)),rr=Math.max(.15,w*(.035+.04*r())),c3=`M${svF(x-rr)},${svF(y)}a${svF(rr)},${svF(rr)} 0 1,0 ${svF(2*rr)},0a${svF(rr)},${svF(rr)} 0 1,0 ${svF(-2*rr)},0`;if(dark)dk+=c3;else dd+=c3}
           E('path',{d:dk,fill:mix(anth,'#1a0804',.4),'fill-opacity':.5},hk);E('path',{d:dd,fill:mix(pol,'#f6a860',.3),'fill-opacity':.65},hk)}}};
+    /* the throat (photo p002: the feet of the filaments and the style come out of an olive-gold hollow in shadow, fringed by the papillae):
+       a soft occlusion under the feet, drawn before them (its proxy is the hollow's floor), its rim fading into the tepals' bases */
+    if(hi&&!LOD){const z0=R0*.02,rT=R0*.15,prT=svSheet(B,O,(u,v)=>{const a2=(u+1)*Math.PI;return[Math.cos(a2)*rT*.5*v,Math.sin(a2)*rT*.5*v,z0]},{nu:8,nv:2});
+      pieces.push({fn:k2=>{const c=PJ(B,O,[0,0,z0]),e1=PJ(B,O,[rT,0,z0]),e2=PJ(B,O,[0,rT,z0]),rx=Math.hypot(e1[0]-c[0],e1[1]-c[1]),ry=Math.hypot(e2[0]-c[0],e2[1]-c[1]),
+          id='lth'+(gid++),gr=E('radialGradient',{id},GDEF||defs);
+        for(const[o2,c2,a2]of[[0,mix(foot,'#3a3008',.35),.62],[.45,foot,.42],[1,mix(foot,'#f4ecd0',.3),0]])E('stop',{offset:o2,'stop-color':c2,'stop-opacity':a2},gr);
+        const ang=Math.atan2(e1[1]-c[1],e1[0]-c[0])*180/Math.PI;
+        E('ellipse',{cx:svF(c[0]),cy:svF(c[1]),rx:svF(Math.max(.5,rx)),ry:svF(Math.max(.5,ry)),transform:`rotate(${svF(ang)} ${svF(c[0])} ${svF(c[1])})`,fill:`url(#${id})`,filter:svBlur(Math.max(rx,ry)*.12)},G(k2))},proxy:prT})}
     /* the stamens: one in front of each tepal, arching forward out of the throat, rising toward the end */
     const nT=g.n||6,nO=Math.ceil(nT/2);
     for(let i=0;i<6;i++){if(fan>.3&&pxHashS(i,17,g.sd)<(fan-.3)*1.3)continue;
@@ -212,19 +225,22 @@ function lilHeart(o0){const o=Object.assign({},LILH_DEF,o0);
       for(let j=1;j<=9;j++){const v=j/9,a=o.styA*ost*Math.pow(v,1.4);let d=[sr[0]*Math.sin(a),sr[1]*Math.sin(a),Math.cos(a)];
         d=V3.nz(V3.add(d,V3.sc(dn,o.styD*ost*v*v)));if(fan>0)d=V3.nz(V3.add(d,V3.sc(dn,.6*fan*v)));p=V3.add(p,V3.sc(d,sL/9));P3.push(p)}
       const end=P3[P3.length-1],tg=V3.nz(V3s(end,P3[P3.length-2]));
-      tube(P3,R0*o.styW*1.15,R0*o.styW*.9,styC,mix(styC,'#f4f6e8',.25),hk=>{const rk=R0*o.sgR*sz*(.6+.4*ost),cs=[];
-        for(let q=0;q<3;q++){const aq=q*2.0944+sa+.4,bq=V3.nz(V3.add(V3.sc(tg,.55),V3.sc([Math.cos(aq),Math.sin(aq),0],.8)));const c=PJ(B,O,V3.add(end,V3.sc(bq,rk*.55)));cs.push(c)}
+      tube(P3,R0*o.styW*1.05,R0*o.styW*1.25,styC,styT,hk=>{const rk=R0*o.sgR*sz*(.6+.4*ost),cs=[];
+        for(let q=0;q<3;q++){const aq=q*2.0944+sa+.4,bq=V3.nz(V3.add(V3.sc(tg,.55),V3.sc([Math.cos(aq),Math.sin(aq),0],.8)));const c=PJ(B,O,V3.add(end,V3.sc(bq,rk*.36)));cs.push(c)}
         const ce=PJ(B,O,V3.add(end,V3.sc(tg,rk*.35)));
         /* one knob of three fused lobes (photo p004: a soft, slightly wet, matte head, never three beads): the union drawn twice, a darker
            rim under the body, one radial shade from the lit side, the grooves between the lobes, a dull sheen */
-        const disc=(x,y,r)=>`M${svF(x-r)},${svF(y)}a${svF(r)},${svF(r)} 0 1,0 ${svF(2*r)},0a${svF(r)},${svF(r)} 0 1,0 ${svF(-2*r)},0`,
-          rl=Math.max(.35,rk*.66),un=k=>cs.map(c=>disc(c[0],c[1],rl*k)).join('')+disc(ce[0],ce[1],rk*.8*k),
-          sid='lsg'+(gid++),sgr=E('radialGradient',{id:sid,gradientUnits:'userSpaceOnUse',cx:svF(ce[0]+lt[0]*rk*.5),cy:svF(ce[1]+lt[1]*rk*.5),r:svF(rk*1.9)},GDEF||defs);
-        for(const[o2,c2]of[[0,mix(sgC,'#ffffff',.22)],[.55,sgC],[1,mix(sgC,'#2a1810',.42)]])E('stop',{offset:o2,'stop-color':c2},sgr);
-        E('path',{d:un(1.1),fill:mix(sgC,'#2a1810',.5)},hk);E('path',{d:un(1),fill:`url(#${sid})`},hk);
-        if(!LOD){let gv='';for(const c of cs)gv+=`M${svF(ce[0])},${svF(ce[1])}L${svF(ce[0]+(c[0]-ce[0])*.55)},${svF(ce[1]+(c[1]-ce[1])*.55)}`;
-          E('path',{d:gv,fill:'none',stroke:mix(sgC,'#2a1810',.55),'stroke-width':svF(Math.max(.12,rk*.14)),'stroke-opacity':.5,'stroke-linecap':'round'},hk);
-          E('circle',{cx:svF(ce[0]+lt[0]*rk*.35),cy:svF(ce[1]+lt[1]*rk*.35),r:svF(Math.max(.15,rk*.42)),fill:mix(sgC,'#ffffff',.55),'fill-opacity':.18,filter:svBlur(rk*.18)},hk)}})}}}
+        /* the knob in volume (owner: « la boule du bout fait toute plate »; photo p002: brown at the rim, paler at the centre, a soft wet sheen):
+           a dark occlusion where it sits on the style, then each lobe from the back, its own light from the lit side and its own dark rim,
+           the grooves between them, one dull sheen */
+        const rl=Math.max(.35,rk*.68),lobe=(x,y,r,k)=>{const id='lsg'+(gid++),gr=E('radialGradient',{id,gradientUnits:'userSpaceOnUse',cx:svF(x+lt[0]*r*.38),cy:svF(y+lt[1]*r*.38),r:svF(r*1.25)},GDEF||defs);
+            for(const[o2,c2]of[[0,mix(sgC,'#fff4e8',.34)],[.42,mix(sgC,'#fff4e8',.1)],[.78,sgC],[1,mix(sgC,'#24120a',.55)]])E('stop',{offset:o2,'stop-color':c2},gr);
+            E('circle',{cx:svF(x),cy:svF(y),r:svF(r),fill:`url(#${id})`},hk)};
+        E('ellipse',{cx:svF(ce[0]-lt[0]*rk*.25),cy:svF(ce[1]-lt[1]*rk*.25),rx:svF(rk*1.25),ry:svF(rk*1.05),fill:mix(styT,'#1a1206',.6),'fill-opacity':.45,filter:svBlur(rk*.25)},hk);
+        for(const c of cs)lobe(c[0],c[1],rl);lobe(ce[0],ce[1],rk*.7);
+        if(!LOD){let gv='';for(const c of cs)gv+=`M${svF(ce[0])},${svF(ce[1])}L${svF(ce[0]+(c[0]-ce[0])*.6)},${svF(ce[1]+(c[1]-ce[1])*.6)}`;
+          E('path',{d:gv,fill:'none',stroke:mix(sgC,'#24120a',.6),'stroke-width':svF(Math.max(.12,rk*.12)),'stroke-opacity':.45,'stroke-linecap':'round',filter:svBlur(rk*.05)},hk);
+          E('ellipse',{cx:svF(ce[0]+lt[0]*rk*.45),cy:svF(ce[1]+lt[1]*rk*.45),rx:svF(Math.max(.15,rk*.28)),ry:svF(Math.max(.1,rk*.16)),fill:'#fffaf0','fill-opacity':.3,filter:svBlur(rk*.1)},hk)}})}}}
 const LIL_ORI_GENES={n:[[6,1]],tep:{dL:[.95,1.05],dW:[.93,1.07],dph:[-.05,.05],da:[-.08,.08],dt:[-.3,.3],tw:[-.34,.34],lat:[-.05,.05],wav:[.09,.14],wk:[2.5,4],wph:[0,6.28],
     ew:[.015,.03],tip:[1.2,1.5],asym:[-.07,.07],sd:'sd'},late:{hang:[.6,1.3],wl:[.85,1.2]},
   head:{rot:[0,6.2832],op:[-.03,.03],dh:[-3,3],ds:[-.04,.04],dl:[-.02,.015],sty:[0,6.2832],stL:[.94,1.06],sd:'sd'}};
