@@ -989,7 +989,12 @@ GROUPES = ('hybride-de-coupe', 'espece-sauvage', 'jardin', 'autre')
 GROUPE_ALIAS = {'hybride': 'hybride-de-coupe', 'coupe': 'hybride-de-coupe', 'hybride-coupe': 'hybride-de-coupe', 'fleur-coupee': 'hybride-de-coupe',
                 'cultivar': 'hybride-de-coupe', 'sauvage': 'espece-sauvage', 'espece': 'espece-sauvage', 'wild': 'espece-sauvage', 'garden': 'jardin'}
 PAIR_GROUPES = 'hybride-de-coupe,jardin'  # the groups a comparison photo may show (--groupes; never "autre")
-PAIR_SHORT = 1000                         # a comparison photo's short side in px at least (P7): its local copy p<NNN>.jpg
+PAIR_SHORT = 1000                         # a comparison photo's short side in px wanted (P7): its local copy p<NNN>.jpg
+PAIR_SHORT_MIN = 600                      # the floor --pair-min may lower it to: a bud fills little of its frame (gloriosa, 2026-10-18: the best bud photo 655 px)
+
+
+def pair_min(ctx):
+    return max(PAIR_SHORT_MIN, int(getattr(ctx.a, 'pair_min', None) or PAIR_SHORT))
 PAIR_LONG = 2400                          # ... downloaded at its original size, its long side brought down to this
 CW_DE_MAX = 15                            # a coloris:<x> photo whose flower is further than this (CIE76) from the colourway's colour leaves the pairs
 CW_CONF_MIN = .5                          # ... when refs.py auto found the flower with this confidence at least (as the coloris step); below: no verdict
@@ -1040,13 +1045,15 @@ def pair_photo(ctx, R, x, info):
     small is not downloaded. Network errors are noted, never raised."""
     i = int(x.get('i', -1))
     key = str(i)
-    if key in info and (info[key].get('file') or info[key].get('short') or (info[key].get('err') and not info[key]['err'].startswith('download'))):
-        return info[key]  # a failed download is tried again
+    old = info.get(key) or {}
+    retry = old.get('err', '').startswith('original') and (old.get('short') or 0) >= pair_min(ctx) and not old.get('file')
+    if key in info and not retry and (old.get('file') or old.get('short') or (old.get('err') and not old['err'].startswith('download'))):
+        return info[key]  # a failed download is tried again, and a photo once refused under PAIR_SHORT that now passes PAIR_SHORT_MIN
     C = jload(ctx.rc + '/cands.json', []) or []
     c = C[i] if 0 <= i < len(C) else {}
     url, ow, oh = c.get('thumb') or '', int(c.get('w') or 0), int(c.get('h') or 0)
     rec = {'src': url}
-    if ow and oh and min(ow, oh) < PAIR_SHORT:
+    if ow and oh and min(ow, oh) < pair_min(ctx):
         rec.update(w=ow, h=oh, short=min(ow, oh), err='original %dx%d' % (ow, oh))
         info[key] = rec
         return rec
@@ -1095,8 +1102,8 @@ def pair_eligible(ctx, x, info):
     r = info.get(str(x.get('i'))) or {}
     if not r.get('short'):
         why.append('size unknown (%s)' % (r.get('err') or 'no pair copy'))
-    elif r['short'] < PAIR_SHORT or not r.get('file'):
-        why.append('short side %d px (< %d)' % (r['short'], PAIR_SHORT) if r['short'] < PAIR_SHORT else (r.get('err') or 'no pair copy'))
+    elif r['short'] < pair_min(ctx) or not r.get('file'):
+        why.append('short side %d px (< %d)' % (r['short'], pair_min(ctx)) if r['short'] < pair_min(ctx) else (r.get('err') or 'no pair copy'))
     return (not why), ', '.join(why)
 
 
@@ -4419,6 +4426,7 @@ def make_parser():
     r.add_argument('--cap', type=float, default=CAP_DEFAULT, help='millions of Opus input-equivalent tokens: a measure kept in pipe-bill.json, the run stops beyond it (8: one complete flower, RATE-OEILLET)')
     r.add_argument('--fiche-strict', dest='fiche_strict', action='store_true', help='fiche errors after sync block forme and plante (default: a question, RATE-OEILLET M2)')
     r.add_argument('--num-cws', dest='num_cws', help='the two colourways of the numbers sheet (default: the darkest and lightest measured)')
+    r.add_argument('--pair-min', dest='pair_min', type=int, help='short side in px a comparison photo needs (default 1000, 600 at least: a sort whose buds are only in smaller photos)')
     r.add_argument('--caps', default='', help='step caps in M overriding STEP_CAP, "forme=4,plante=1.5" (summed over every run of the sort)')
     r.add_argument('--skus', default='', help='bouquet SKUs "lilas~0:Ruhm von Horstenstein,..." (default: sku_bouquet of the sources json)')
     r.add_argument('--dry', action='store_true', help='no model, no command: print what would run and run the disk checks')
