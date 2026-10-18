@@ -43,6 +43,8 @@ const DIAN_CW={
   picotee:{p:'#faf4ea',c:'#f7efe2',b:'#ecdfd0',sh:'#b8987e',li:'#ffffff',band:['#ac1a56',.12,.95,.12],base:'#eef0dc',za:.3,strk:{c:'#b01858',n:[4,9],len:[.22,.64],w:.012,op:.78,tp:4}},
   bacarat:{p:'#f4e4ee',c:'#f0dcea',b:'#d8a8c8',sh:'#9a5a84',band:['#7a1a5a',.1,.85],base:'#9a2a7a',za:.55},
   /* late:15, the cultivars of coloris.md (level C, one or two photographs each) */
+  /* cornelia: an off-white, its petal the catalogue's #d4d0ca (the census' #565c57 body was the foliage behind it, see CW_CARN below: the slate
+     head it gave read as no carnation sold); warm shades (3.7), a greenish claw, the margin a little paler (4.8d, 4.8e) */
   cornelia:{p:'#ede9e1',c:'#e5e0d6',b:'#d6cfc2',sh:'#a8967e',li:'#ffffff',base:'#e6e8d2',za:.3},
   etincelant:{p:'#c81d1c',c:'#c61b1a',b:'#a71715',sh:'#62080a',li:'#ec4a40',base:'#d8342f',za:.5,tip:['#a71715',.78,.45]},
   'jeanne-dionis':{p:'#f2f1ea',c:'#eceae0',b:'#dedbcd',sh:'#aa9e88',li:'#ffffff',base:'#e8ead6',za:.3},
@@ -84,7 +86,7 @@ function dianMat(cw){const w=cw.wq||0,key=cw.id+'|'+w;if(DIAN_M[key])return DIAN
     bvein:pale?null:{c:W(mix(S.c,'#fff6f2',.45)),a:.36*(1-.5*w),w:.0016,v:[.04,.72],f:.6},
     lenZ,strk:S.strk?Object.assign({},S.strk,{c:W(S.strk.c)}):null,green:S.green,
     /* the whites' and creams' shade washes lighter (a white is shaded by its folds, never smudged: 3.7) */
-    daK:S.daK||(pale?.8:1)}}
+    daK:S.daK||(pale?.8:1),pale}}
 /* the colour of a fading carnation (photograph 34: the dry heads brown-grey on the plant, #a19c8c, #666556): the petals never fall, they dry in
    place; reds darken to wine then a brown-crimson, pinks dull to a dusty mauve then beige-brown, whites to ivory then parchment, yellows and
    oranges to ochre then brown, violets to a grey mauve-brown; greens (the calyx, a green colourway) yellow */
@@ -105,10 +107,13 @@ function dianLife(o){if(typeof SVA_LIFE!=='undefined'&&SVA_LIFE!=null)return SVA
    closed in a point, open: erect, a little out]; base: the tube's radius at its foot (× r), swell: the bud's belly; ribs: their number; brL, brW,
    brN: the bracteoles' height (× L), half width (radians), number (in opposite pairs); colours c [shade, body, light, bloom], rib, the teeth's
    tips washed with tipC (tipA) */
-const DIAN_CAL={L:[.98,1.12],r:[.28,.24],tL:[.46,.14],tR:[0,1.16],base:.62,swell:.38,ribs:16,brL:.24,brW:.5,brN:4,
-  c:['#36543f','#6f9279','#a9c4ad','#d6e4d4'],rib:'#3e5c48',tipC:'#7a4a64',tipA:.3,light:{wrap:.3,amb:.3,dif:.7,sky:.16,ks:.12,gloss:16}};
+/* (tL bud .46 gave a blunt dome on the closed bud; photograph 64: the buds end in a sharp cone about as tall as the tube is wide) */
+const DIAN_CAL={L:[.98,1.12],r:[.28,.24],tL:[.66,.14],tR:[0,1.16],base:.62,swell:.38,ribs:16,brL:.24,brW:.5,brN:4,
+  /* a little yellower and paler than the first glaucous blue-green (photographs 21, 53, 64: the calyx and buds light green, cream-green) */
+  c:['#3c5a3e','#7a9c7c','#b4caa8','#dce6d0'],rib:'#46644a',tipC:'#7a4a64',tipA:.3,light:{wrap:.3,amb:.3,dif:.7,sky:.16,ks:.12,gloss:16}};
 function dianCalyx(ctx){if(typeof dianCore==='function')dianCore(ctx);const hc=DIAN_CORE?DIAN_CORE[1]:null,{B,O,R0,D,g,op,fan,items,cw}=ctx,C=DIAN_CAL,hi=DET>=1.5,ob=svSm((op-.04)/.42),lr=svLight([0,0,1],C.light,1),
-    ot=svSm(ob*2.2),Lc=R0*(C.L[0]+(C.L[1]-C.L[0])*ob),rc=R0*(C.r[0]+(C.r[1]-C.r[0])*ob),Lt=R0*(C.tL[0]+(C.tL[1]-C.tL[0])*ob),rt=C.tR[0]+(C.tR[1]-C.tR[0])*ot,
+    /* the teeth stay closed in a point through the bud (stage .2, photograph 64: closed pointed buds), standing up only as it opens */
+    ot=svSm((ob-.3)*2.6),Lc=R0*(C.L[0]+(C.L[1]-C.L[0])*ob),rc=R0*(C.r[0]+(C.r[1]-C.r[0])*ob),Lt=R0*(C.tL[0]+(C.tL[1]-C.tL[0])*ob),rt=C.tR[0]+(C.tR[1]-C.tR[0])*ot,
     yc=c=>fan>0?mix(c,typeof lifeCol==='function'?lifeCol(c,fan):'#b4a46a',.7*fan):c,cc=C.c.map(yc),
     rad=v=>rc*(C.base+(1-C.base)*svSm((v+.05)/.42))*(1+C.swell*(1-ob)*Math.sin(Math.PI*Math.pow(Math.max(0,Math.min(1,v)),.8))),
     tube=(a,v)=>{const r=rad(v);return[Math.cos(a)*r,Math.sin(a)*r,-Lc*(1-v)]},r1=rad(1),
@@ -122,6 +127,8 @@ function dianCalyx(ctx){if(typeof dianCore==='function')dianCore(ctx);const hc=D
   const px=svSheet(B,O,(u,v)=>{const a=(u+1)*Math.PI;if(v<.82)return tube(a,v/.82);const w=(v-.82)/.18;return tooth(a,0,w*(.7+.28*(1-ob)))},{nu:12,nv:5});
   /* the teeth: the far ones first (their inner face, lighter and yellower), the near ones after the tube */
   const ew=svF(Math.max(.2,D*.0028)),T=[];for(let k=0;k<5;k++){const ak=rot+k*2*Math.PI/5,pts=[];for(let i=0;i<=6;i++)pts.push(tooth(ak,-1,i/6));for(let i=6;i>=0;i--)pts.push(tooth(ak,1,i/6));
+      /* the tooth's foot along the mouth (closed from corner to corner, the spline bulged out of the tube: a lip under the bud's cone) */
+      for(const u of[.5,0,-.5])pts.push(tooth(ak,u,0));
       const m=tooth(ak,0,.35),nr=V3.nz([Math.cos(ak),Math.sin(ak),Math.max(-.6,(r1-rt*r1)/Math.max(Lt,R0*.02))*(1-ob)+(1-rt)*ob*.4]),nv=toV(B,nr);
       T.push({pts:pts.map(pj),nv,ak,m})}
   const toothD=(t,front,k2)=>{const c0=front?tone(t.nv):mix(tone(t.nv),'#d8dca0',.25),id='dc'+(gid++),tip=pj(tooth(t.ak,0,1)),bs=pj(tooth(t.ak,0,0)),
@@ -182,7 +189,8 @@ let DIAN_W=0,DIAN_MT=null,DIAN_CORE=null;
    19), not as soft washes only; dry, the creases of crumpled brown paper */
 function dianPleat(){const f=svSm((DIAN_W-.45)/.4),m=DIAN_MT;if(f>.01)return{n:[3,5],len:[.3,.75],w:.0032,c:'#4a2c1c',a:.42*f,lc:'#f2e4cc',la:.2*f,fm:.15};
   /* (fresh: thin and faint, a.22: at .34 the creases read as dark scratches across the red petals in close-up, against photograph 13) */
-  return m?{n:[2,4],len:[.22,.62],w:.0022,c:mix(m.shade,m.edge,.25),a:.22,lc:m.lite,la:.26,fm:.25}:null}
+  /* (on the whites, .22 read as stray pencil ticks near the margins, face pair: fainter and paler there) */
+  return m?{n:[2,4],len:[.22,.62],w:.0022,c:mix(m.shade,m.edge,m.pale?.55:.25),a:m.pale?.11:.22,lc:m.lite,la:.26,fm:.25}:null}
 /* the hollow: the shade deep among the crowded petals (photographs 13, 31: the gaps between the folds are dark, never the background), an egg
    standing in the head (z from .12 R0, narrow at its foot so it never shows as a collar over the calyx), painted first under every petal (the
    kit's core, read through the lf getter); r and z in R0 */
@@ -190,20 +198,24 @@ const DIAN_HOL={z:[.12,.25,.4,.55,.7,.82,.92],r:[.18,.36,.48,.52,.46,.32,.12],k:
 function dianCore(ctx){const{B,O,R0,op,fan,bud,cw}=ctx,H=DIAN_HOL,ob=svSm((op-.3)/.35);DIAN_MT=cw;DIAN_CORE=null;
   /* kept to the dry tuft (it closed the gaps of the fading head: white holes at 1:.75 and 1:.9), smaller with it */
   if(ob<.05||bud>.2||!cw)return;const sc=1-.4*fan,pts=[];
-  for(let i=0;i<H.z.length;i++)for(let j=0;j<16;j++){const a=j/16*2*Math.PI,r=R0*H.r[i]*sc,p=PJ(B,O,[Math.cos(a)*r,Math.sin(a)*r,R0*H.z[i]*sc*(.6+.4*ob)]);pts.push([p[0],p[1]])}
+  for(let i=0;i<H.z.length;i++)for(let j=0;j<16;j++){const a=j/16*2*Math.PI,r=R0*H.r[i]*sc*(.45+.55*ob),p=PJ(B,O,[Math.cos(a)*r,Math.sin(a)*r,R0*H.z[i]*sc*(.6+.4*ob)]);pts.push([p[0],p[1]])}
+  /* (both grow with the opening: at .4 the half-open cup is narrow, a full-sized core showed round it) */
   /* the skirt: the spread outer rank's mass, from the calyx's mouth out to its petals' middle (the egg alone left the background showing
      between the petals' feet over the calyx, seen from the side and from above: the owner's sheet, 2026-10-18) */
-  for(const[r,z]of H.sk)for(let j=0;j<24;j++){const a=j/24*2*Math.PI,rr=R0*r*sc*(.5+.5*ob),p=PJ(B,O,[Math.cos(a)*rr,Math.sin(a)*rr,R0*z*sc]);pts.push([p[0],p[1]])}
+  for(const[r,z]of H.sk)for(let j=0;j<24;j++){const a=j/24*2*Math.PI,rr=R0*r*sc*ob,p=PJ(B,O,[Math.cos(a)*rr,Math.sin(a)*rr,R0*z*sc]);pts.push([p[0],p[1]])}
   DIAN_CORE=[svSpl(hull2(pts)),mix(svrC(cw.fr,.9),cw.shade,H.k+.2*fan)]}
 const SVR_DIAN={genes:s=>svGenes(s,DIAN_GENES),mat:dianMat,heart:dianCalyx,life:()=>dianLife(),
-  L:[[0,.82],[.35,1],[.7,.88],[1,.78]],W:[[0,1.12],[.35,1],[.7,.84],[1,.92]],r0:[[0,.25],[.5,.15],[1,.04]],z0:[[0,0],[.35,.26],[.7,.56],[1,.78]],cup:[[0,.58],[.5,.38],[1,.6]],
+  L:[[0,.82],[.35,1],[.7,.88],[1,.78]],W:[[0,1.12],[.35,1],[.7,.84],[1,.92]],r0:[[0,.25],[.5,.15],[1,.04]],z0:[[0,0],[.35,.21],[.7,.46],[1,.66]],cup:[[0,.58],[.5,.38],[1,.6]],
   vb:.5,claw:[.2,.8],clawK:1.4,aPow:1.1,lap:.18,vTrim:[[0,.18],[.3,.24],[1,.3]],
-  a0c:[[0,.28],[1,.06]],a1c:[[0,.12],[1,-.2]],a0o:[[0,1.22],[.3,.92],[.6,.41],[1,.12]],a1o:[[0,1.44],[.3,1.1],[.6,.74],[.88,.42],[1,.12]],wA0:[[0,-.12],[1,0]],wA1:[[0,-.16],[1,0]],
+  a0c:[[0,.28],[1,.06]],a1c:[[0,.12],[1,-.2]],a0o:[[0,1.22],[.3,.92],[.6,.41],[1,.12]],a1o:[[0,1.44],[.3,1.1],[.6,.74],[.88,.42],[1,.12]],
+  /* fading, the spread ranks rise and close round the heart into a narrow tuft on the calyx (photograph 34: the dry heads hardly wider than
+     their calyx); -.12/-.16 left a full-sized dome browning (comparison pairs fane-1, fane-2) */
+  wA0:[[0,-.72],[.4,-.42],[1,0]],wA1:[[0,-.98],[.4,-.55],[1,0]],
   oLaw:[.3,.25,.6,.45],oTip:1.1,sag:[.03,.05,.2],
   bud:[.1,.32],budH:[.02,.66],budR:.34,budE:[.08,.86],budP:.75,budW:1.3,budIn:.4,budVis:-.01,budT:.1,
   /* fading (a cut carnation in its vase): the margins dry and roll in, the tips turn back toward the heart (curl < 0 by fan), the crown closes
      into a crumpled tuft on the calyx; never splayed out in spikes (the owner's sheet, 2026-10-18: "l'état fané me semble étrange") */
-  wav:[.6,1.5,1.6],rev:[.15,.04],crk:[.05,.06],curl:[.2,-.7],shed:[2,.1],shedF:0,fan:[.5,.25],dec:[.08,.4],fanK:[.62,.06,0],limp:[.5,.2],limpF:.5,
+  wav:[.6,1.5,1.6],rev:[.15,.04],crk:[.05,.1],curl:[.2,-.4],shed:[2,.1],shedF:0,fan:[.5,.25],dec:[.2,.45],fanK:[.62,.06,0],limp:[.3,.2],limpF:.5,
   tip:[[.06,.2,.4],[.25,.55,.3]],brown:'#7a5636',edgeB:[.4,.75],edgeBW:1.5,green:[.25,.1,.2],greenC:'#88a660',floor:0,
   nu:[13,18],nv:[7,10],run:[8,10],tipN:[56,96],dark:[[.88,.72],[.9,.78,.66]],da:[.26,.26],lit:[[1.1],[1.08,1.18]],la:[.24,.27],aoV:[[.22],[.2,.36]],aoA:[.16,.12],
   /* the depth test's tolerance (lf.zvis) tighter than the kit's .012: in the crowded heart a piece lies within .012 D behind the one in front,
@@ -249,8 +261,9 @@ if(typeof CW_CARN!=='undefined'&&!CW_CARN.some(x=>x.id==='etincelant'))CW_CARN.p
    2026-10-18). Pieces of the kit only: svStemLine with
    sv.nodes (+ sheath), svStrapLeaf, acoNeck / acoBudUp (the collar's bend and the bud's upright stance, y3-anemone2.js). */
 const DIAN_SC=['#2d4a3d','#56806c','#86a996','#bed3c6'],DIANP={w:.05,li:1.5,lp:1.5,nodes:1,leafAng:62,lenK:1.3,rankK:[1,.55,.8,1],
-  leaf:{w:.12,wp:[[0,.5],[.07,.82],[.2,1],[.5,.82],[.8,.42],[1,0]],sheath:.09,sr:1.6,lean:.16,droop:.42,tw:.18,gut:.65,wav:.012,wavN:2.4,hood:0,bloom:.7,
-    up:'#5a8670',low:'#7fa592',base:'#b4cdb6',nu:7,nv:16},
+  /* linear, about 15 times as long as wide (photographs 37, 50, 63: narrow glaucous blades, never a leek's broad strap) */
+  leaf:{w:.065,wp:[[0,.5],[.07,.82],[.2,1],[.5,.82],[.8,.42],[1,0]],sheath:.06,sr:1.6,lean:.16,droop:.42,tw:.18,gut:.65,wav:.012,wavN:2.4,hood:0,bloom:.7,
+    up:'#5a8670',low:'#7fa592',base:'#93b4a2',nu:7,nv:16},
   node:{sw:.38,len:1.5,sk:.1,ro:.3,rw:.05,sheath:{len:1.1,t:.05,wrap:.9,ears:.3,a:.4}}};
 const DIAN_SCK={};
 function dianStemCols(wl,nodes){const y=.55*svSm((wl-.3)/.5),key=Math.round(y*20)+'|'+(nodes||[]).map(n=>Math.round(n.d)).join(',');if(DIAN_SCK[key])return DIAN_SCK[key];
