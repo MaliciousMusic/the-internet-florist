@@ -964,16 +964,16 @@
      },
      "recourbee": {
       "v": [
-       0.05,
-       0.3,
+       0.02,
+       0.1,
        0.45
       ],
       "methode": "code",
       "conf": "D",
       "code": "SVA_GENES.tep.curl",
       "retenu": [
-       0.05,
-       0.3,
+       0.02,
+       0.1,
        0.45
       ],
       "note": "[amplitude min, max, probabilité] de la pointe qui se recourbe à l'état frais ; le déclin ajoute la sienne (stades)."
@@ -1260,16 +1260,16 @@
     },
     "torsion_deg": {
      "v": [
-      -11.5,
-      11.5
+      -5.73,
+      5.73
      ],
      "unite": "deg",
      "methode": "code",
      "conf": "D",
      "code": "SVA_GENES.tep.tw.map(x=>+(x*180/Math.PI).toFixed(2))",
      "retenu": [
-      -11.46,
-      11.46
+      -5.73,
+      5.73
      ],
      "note": "Torsion totale du tépale autour de sa nervure médiane, tirage par tépale.",
      "repere": "piece"
@@ -1300,16 +1300,16 @@
      },
      "amplitude": {
       "v": [
-       0.04,
-       0.12
+       0.02,
+       0.06
       ],
       "unite": "ratio",
       "methode": "code",
       "conf": "D",
       "code": "SVA_GENES.tep.wav",
       "retenu": [
-       0.04,
-       0.12
+       0.02,
+       0.06
       ],
       "note": "Hauteur de l'onde / demi-largeur, tirage par tépale (réduite en bouton)."
      }
