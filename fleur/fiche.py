@@ -52,6 +52,7 @@ ANGLES = {'deg', 'rad'}
 REPERES = {'axe', 'plan', 'horizontale', 'tige', 'piece'}   # SCHEMA §2 : a quoi se mesure un angle (W3)
 ECARTS = {'confirme', 'divergence', 'budget'}              # SCHEMA §2 : ecart type (W13)
 HEX = re.compile(r'^#[0-9a-fA-F]{6}$')
+CONST_WIN = 60                                                              # lines searched around `ligne` when the code moved
 LIGNE = re.compile(r'^((?:app|pilote|demo|lab)/[\w./-]+\.js):(\d+)$')   # code "const" : la ligne ou la constante est ecrite en dur (W4)
 V_KEYS = {'v', 'plage', 'unite', 'n', 'methode', 'photos', 'conf', 'ref', 'code', 'retenu', 'ecart', 'note', 'repere', 'ligne'}
 GROUPES = {'tete': {'perianthe', 'coeur', 'receptacle', 'bouton', 'bractee', 'calice'}, 'plante': {'tige', 'pedicelle', 'feuille'}}
@@ -358,12 +359,20 @@ def read_const(v):
     if not os.path.exists(fp): return {'ok': False, 'err': 'fichier %s absent' % m.group(1)}
     lines = open(fp, encoding='utf-8', errors='replace').read().split('\n')
     if not 1 <= n <= len(lines): return {'ok': False, 'err': 'ligne %d hors du fichier (%d lignes)' % (n, len(lines))}
-    found = [abs(float(x)) for x in NUM.findall(lines[n - 1])]
     want = nums(v.get('retenu'))
     if not want: return {'ok': False, 'err': 'code « const » : retenu sans nombre'}
-    miss = [x for x in want if not any(abs(abs(x) - y) <= 1e-9 * (1 + y) for y in found)]
-    if miss: return {'ok': False, 'err': 'constante %s absente de %s (le code a bougé : corriger `ligne`)' % (', '.join('%g' % x for x in miss), v['ligne'])}
-    return {'ok': True, 'v': v.get('retenu')}
+
+    def miss_at(i):
+        found = [abs(float(x)) for x in NUM.findall(lines[i])]
+        return [x for x in want if not any(abs(abs(x) - y) <= 1e-9 * (1 + y) for y in found)]
+    miss = miss_at(n - 1)
+    if not miss: return {'ok': True, 'v': v.get('retenu')}
+    # an edit above shifts the line: the nearest line within CONST_WIN that holds every number of `retenu` is the same constant
+    for d in range(1, CONST_WIN + 1):
+        for i in (n - 1 - d, n - 1 + d):
+            if 0 <= i < len(lines) and not miss_at(i):
+                return {'ok': True, 'v': v.get('retenu'), 'moved': '%s:%d' % (m.group(1), i + 1)}
+    return {'ok': False, 'err': 'constante %s absente de %s ni à %d lignes autour (valeur changée ? corriger `retenu`)' % (', '.join('%g' % x for x in miss), v['ligne'], CONST_WIN)}
 
 
 def check_code(f, errs, warns):
