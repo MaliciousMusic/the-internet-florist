@@ -44,7 +44,7 @@ EFFORT = {'haiku': 'low', 'sonnet': 'medium', 'opus': 'high'}  # opus xhigh -> h
 STEP_CAP = {'census': .1, 'refs': .3, 'coloris': .1, 'targets': .05, 'fiche': .25, 'forme': 3.0, 'fit': .2, 'plante': 1.0, 'finition': .8,
             'temoins': .05, 'comparaison': .6, 'juge': .4, 'qa': .1, 'planches': .1}  # comparaison .3 -> .6: one Opus call of 40 turns is .6 (oeillet); refs .15 -> .3, census .2 -> .1: pick + fill + brief run .17 to .27, a census .1 (wave 3)
 CAP_DEFAULT = 8.0
-PIPE_SLOTS = 4  # sorts running at once on the PC (owner, 2026-10-18: four flowers in parallel; the gate still holds 3 headless Chromes)
+PIPE_SLOTS = 5  # sorts running at once on the PC (owner, 2026-10-18: four flowers in parallel, plus the oeillet's last checks; the gate still holds 3 headless Chromes)
 NL = chr(10)
 CHECK_FAILS = 2  # a done check that fails this many times in a step stops the step (a question to the owner), never a fresh relay
 TARGET_EL, TARGET_KB = 300, 50                          # budget per head at DET 1: a MEASURE only since 2026-10-17 (the owner: quality first)
@@ -2105,7 +2105,13 @@ def step_forme(ctx):
                           numbers=lambda: forme_numbers(ctx))
     if res == 'blocked':
         raise StepFailed('forme blocked by the modeller: %s' % (fin.get('question') or fin.get('note') or fin))
-    ok, why = check_forme(ctx)
+    if res == 'relay' and not ctx.dry:
+        # the relays ran out without a "done": the pipe still makes the proofs itself (M2) and judges by the numbers; a forme that passes
+        # them is done, else its real reason shows, never "face pair older" (scabieuse, 2026-10-18: 3 relays, proofs left to the model)
+        ok, why = closed_check(ctx, 'forme')
+        res = 'done' if ok else res
+    else:
+        ok, why = check_forme(ctx)
     ar = (ctx.st.get('fiche_a_relier') or {}).get('liste') or []
     return {'status': 'done' if res == 'done' else 'failed', 'msg': 'forme %s%s; %s%s' % (res, '' if ok else ' (check: %s)' % why, fin.get('note', ''),
             '; constantes à relier (fiche, non bloquant) : ' + ', '.join(ar) if ar else ''), 'relays_used': True}
