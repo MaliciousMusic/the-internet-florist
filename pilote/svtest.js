@@ -32,7 +32,7 @@ window.svtOut=(svg,n,ms,snapP)=>{const el=svg.querySelectorAll('*').length,pat=[
   const fin=r=>{const pre=document.createElement('pre');pre.id='out';pre.textContent=JSON.stringify(Object.assign(o,r?{snap:r.join('x')}:{}));document.body.append(pre)};
   if(snapP)snapP.then(fin,e=>fin(['err '+e]));else fin()};
 /* SVG pilot sheet: heads at several views and seeds. URL: cw, op, D, seeds, views (indices), cols, det, bg, sp (species) */
-if(!new URLSearchParams(location.search).get('cmp')&&!new URLSearchParams(location.search).get('grid')&&!new URLSearchParams(location.search).get('plant')&&!new URLSearchParams(location.search).get('bq'))setTimeout(()=>{const Q=new URLSearchParams(location.search),dS=typeof defs!=='undefined'&&defs.closest?defs.closest('svg'):null;document.body.innerHTML='';if(dS)document.body.append(dS);
+if(!new URLSearchParams(location.search).get('cmp')&&!new URLSearchParams(location.search).get('grid')&&!new URLSearchParams(location.search).get('plant')&&!new URLSearchParams(location.search).get('bq')&&!new URLSearchParams(location.search).get('tige'))setTimeout(()=>{const Q=new URLSearchParams(location.search),dS=typeof defs!=='undefined'&&defs.closest?defs.closest('svg'):null;document.body.innerHTML='';if(dS)document.body.append(dS);
   document.body.style.cssText='margin:0;background:'+(Q.get('bg')||'#e9e4dc');DET=+(Q.get('det')||1.5);LOD=0;
   const cw=Q.get('cw')||'bleu',op=+(Q.get('op')||1),D=+(Q.get('D')||240),seeds=(Q.get('seeds')||'1,2,3,4').split(',').map(Number),cols=+(Q.get('cols')||seeds.length),
     VIEWS=[[0,0,1,0],[0,.5,.87,0],[.38,.55,.74,.4],[0,.86,.5,0],[-.55,.25,.8,-.3],[0,-.42,.91,0],[.7,.1,.7,.2],[0,.97,.24,0],[0,-.97,-.24,0],[.35,-.9,.26,.3],[0,-.55,.83,0]],vi=(Q.get('views')||'0,1,2,3').split(',').map(Number),
@@ -223,3 +223,42 @@ if(new URLSearchParams(location.search).get('jn')&&typeof svBranch==='function')
     const jn=J.map(q=>{const[x,y,rr]=P(q.m),bb=q.g.getBBox();return[Math.floor(x/sk/cw),Math.round(x),Math.round(y),Math.round(rr),f2(q.az),f2(q.op),f2(q.wl||0),q.lod,f2(bb.width/q.D),f2(bb.height/q.D),gap(q),ordr(q)]}),
       se=SE.map(m=>{const[x,y]=P(m);return[Math.floor(x/sk/cw),Math.round(x),Math.round(y)]}),br=BR.map(q=>{const b=q.k.getBBox();return[f2(b.width/U),f2(b.height/U),f2(q.fD/U)]});
     const add=()=>{const p=document.getElementById('out');if(!p)return setTimeout(add,50);p.textContent+=' JN '+JSON.stringify(jn)+' SE '+JSON.stringify(se)+' BR '+JSON.stringify(br)};add();return r}}
+/* ?tige=1 (chantier noeuds-v4): svStemLine's opt-in keys (y1.js: sv.nodes, sv.section, sv.bloom, sv.join) on test stems drawn here only; no sort
+   and no catalogue entry is touched. tm=sheet: rows round, ribbed, square; columns plain, nodes, bloom, nodes + bloom (a stem 30 widths long);
+   tm=node: one node close up (D 700), per section, without and with bloom; tm=full: a 50 cm stem at the shop's scale (UPC), carnation-like
+   (6 nodes, sheaths, bloom) next to the plain stem, ribbed and square; tm=join: a chain drawn in pieces by lsChainParts, as today (seams), then
+   with sv.join, then joined with nodes measured along the whole chain (jsv=<JSON>: another style for that third stem). det, sw (PNG width), bg,
+   cell; measures per stem in the output (dbg) */
+if(new URLSearchParams(location.search).get('tige'))setTimeout(()=>{try{const Q=new URLSearchParams(location.search),dS=typeof defs!=='undefined'&&defs.closest?defs.closest('svg'):null;document.body.innerHTML='';if(dS)document.body.append(dS);
+  DET=+(Q.get('det')||1.5);LOD=0;const tm=Q.get('tm')||'sheet',SC=['#3f5a55','#6d8c84','#9cb5ac','#d2dfd9'],XS=new XMLSerializer(),
+    sty=o=>{const c=SC.slice();c.sv=Object.assign({swell:.02,gloss:.3},o);return c},SH={len:.8,t:.06,ears:.3},BL={a:.32},
+    ND=(o={})=>Object.assign({n:4,from:.14,to:.86,k:1.1,sw:.28,len:1.5,sk:.25,sheath:SH},o),SEC={round:{},ribbed:{section:'ribbed'},square:{section:'square'}},cells=[];let svg,cw,ch,cols,rows;
+  const mk=(nc,nr,w,h)=>{cw=w;ch=h;cols=nc;rows=nr;svg=E('svg',{width:nc*w,height:nr*h,viewBox:`0 0 ${nc*w} ${nr*h}`},document.body);GDEF=E('defs',{},svg)},
+    /* one test stem in cell (c,r): a gentle S cubic of length L and widths w0 (foot) .. w1, from the foot (bottom) up */
+    cell=(c,r,lab,cs,L,w0,w1,bend=.06)=>{const k=G(svg),x=cw*(c+.5),y0=r*ch+ch*.5+L/2,b=L*bend,P=[[x-b*.4,y0],[x+b,y0-L*.35],[x-b*.8,y0-L*.68],[x+b*.3,y0-L]],
+        dn=GDEF.children.length,d0=XS.serializeToString(GDEF).length,t0=performance.now();svStem3(k,P,w0,w1,cs,24);const ms=performance.now()-t0;
+      const el=k.querySelectorAll('*').length+1+(GDEF.children.length-dn),kb=(XS.serializeToString(k).length+XS.serializeToString(GDEF).length-d0)/1024;cells.push([lab,el,+kb.toFixed(1),+ms.toFixed(1)]);
+      E('text',{x:svF(x),y:svF(r*ch+ch-6),'text-anchor':'middle','font-size':svF(Math.min(14,cw*.07)),'font-family':'sans-serif',fill:'#5a5048'},svg).textContent=lab;return k};
+  if(tm==='sheet'){const W=+(Q.get('W')||10),L=W*30;mk(4,3,W*9,L*1.18);
+    ['round','ribbed','square'].forEach((s,r)=>[['plain',{}],['nodes',{nodes:ND()}],['bloom',{bloom:BL}],['nodes+bloom',{nodes:ND(),bloom:BL}]].forEach(([nm,o],c)=>cell(c,r,s+' '+nm,sty(Object.assign({},SEC[s],o)),L,W*1.06,W*.94)))}
+  else if(tm==='node'){const W=+(Q.get('W')||64),L=W*5.2;mk(4,2,W*4.2,700);
+    ['round','ribbed','square'].forEach((s,c)=>[[' node',{}],[' node+bloom',{bloom:BL}]].forEach(([nm,o],r)=>cell(c,r,s+nm,sty(Object.assign({},SEC[s],o,{nodes:[{s:.42,sw:.28,len:1.5,sk:.25,rot:Math.PI/2*(c%2)+.35,sheath:SH}]})),L,W*1.02,W*.98,.02)));
+    /* the hollow cut: svStemLine's own cut lip (sv.cut, no other key: the plain path), then svStemCut (y3-plante.js, plant sheets) with nodes and bloom */
+    cell(3,0,'hollow cut',sty({section:'hollow',cut:.3,hollow:.55}),L,W*1.02,W*.98,.02);
+    {const cs=sty({section:'hollow',hollow:.55,nodes:[{s:.6,sw:.28,len:1.5,sk:.25,rot:.35,sheath:SH}],bloom:BL}),k=G(svg),x=cw*3.5,y0=ch*1.5+L/2,P=[[x,y0],[x+W*.1,y0-L*.35],[x-W*.1,y0-L*.68],[x,y0-L]],C2=[],W2=[];
+      for(let i=0;i<=48;i++){C2.push(bz(P,i/48));W2.push(W*(1.02-.04*i/48))}const dn=GDEF.children.length,d0=XS.serializeToString(GDEF).length;svStemCut(k,C2,W2,cs,(g2,C3,W3)=>stemPoly(g2,C3,W3,cs));
+      cells.push(['svStemCut hollow+nodes+bloom',k.querySelectorAll('*').length+1+(GDEF.children.length-dn),+((XS.serializeToString(k).length+XS.serializeToString(GDEF).length-d0)/1024).toFixed(1),0]);
+      E('text',{x:svF(x),y:svF(2*ch-6),'text-anchor':'middle','font-size':14,'font-family':'sans-serif',fill:'#5a5048'},svg).textContent='svStemCut hollow+nodes+bloom'}}
+  else if(tm==='full'){const L=50*UPC,w=.5*UPC;mk(6,1,+(Q.get('cell')||90),L*1.1);
+    /* car: shares of the length from the foot, internodes 1.12 × longer toward the head; carH: units from the head (first node 12 cm under it,
+       then 7 cm, each internode .9 × the one above it toward the foot) */
+    const car=ND({n:6,from:.08,to:.76,k:1.12,sw:.3,len:1.6}),carH=ND({n:6,ref:'head',d0:12*UPC,l:7*UPC,k:.9,sw:.3,len:1.6});
+    [['plain',{}],['carnation',{nodes:car,bloom:BL}],['ribbed',{section:'ribbed',nodes:car,bloom:BL}],['square',{section:'square',nodes:car}],['carnation DET1',{nodes:car,bloom:BL,_d1:1}],['from head (cm)',{nodes:carH,bloom:BL}]].forEach(([nm,o],c)=>{
+      const D0=DET;if(o._d1)DET=1;try{cell(c,0,nm,sty(o),L,w,w*.86,.04)}finally{DET=D0}})}
+  else if(tm==='join'){const W=+(Q.get('W')||14),L=W*26;mk(3,1,W*9,L*1.2);
+    [['seams (today)',{ribs:[-.45,.1,.55],swell:.05,gloss:.3}],['sv.join',{ribs:[-.45,.1,.55],swell:.05,gloss:.3,join:1}],['join+nodes+bloom',Q.get('jsv')?JSON.parse(Q.get('jsv')):{join:1,nodes:ND({n:3,from:.2,to:.8}),bloom:BL}]].forEach(([nm,o],c)=>{
+      const cs=SC.slice();cs.sv=Object.assign({},o);const x=cw*(c+.5),y0=ch*.5+L/2,pts=[],ws=[],m=16;for(let i=0;i<m;i++){const t=i/(m-1);pts.push([x+Math.sin(t*2.6)*W*1.6,-(y0-L*t),0]);ws.push(W*(1.05-.12*t))}
+      const k=G(svg),parts=[],dn=GDEF.children.length,d0=XS.serializeToString(GDEF).length;lsChainParts([{pts,ws,c:cs,ord:0}],[0,0,0],cs,parts,{piece:6});for(const p of parts)p.fn(G(k));
+      cells.push([nm,k.querySelectorAll('*').length+1+(GDEF.children.length-dn),+((XS.serializeToString(k).length+XS.serializeToString(GDEF).length-d0)/1024).toFixed(1),parts.length]);
+      E('text',{x:svF(x),y:svF(ch-6),'text-anchor':'middle','font-size':12,'font-family':'sans-serif',fill:'#5a5048'},svg).textContent=nm})}
+  window.__svtDbg=cells;document.title='tige ok';const sp=Q.get('snap')?snapSvg(svg,+(Q.get('sw')||cols*cw),Q.get('snap'),Q.get('bg')||'#e9e4dc'):null;if(sp)sp.then(r=>{document.title+=' snap '+r.join(',')});svtOut(svg,cells.length,0,sp)}catch(e){const pre=document.createElement('pre');pre.id='out';pre.textContent='ERR '+e.message+' | '+String(e.stack).slice(0,600);document.body.append(pre)}},400);

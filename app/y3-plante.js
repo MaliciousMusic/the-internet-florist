@@ -27,4 +27,9 @@ function svStemCut(par,C,W,c,draw){const u0=[C[1][0]-C[0][0],C[1][1]-C[0][1]],l=
   E('path',{d:'M'+q(B,0)+'L'+q(-B,0)+'L'+q(-B,B)+'L'+q(B,B)+'Z'},cp);
   const g=G(par,{'clip-path':`url(#${id})`});draw(g,[[p[0]-u[0]*e,p[1]-u[1]*e]].concat(C),[w].concat(W));
   E('ellipse',{cx:svF(p[0]),cy:svF(p[1]),rx:svF(w*.5),ry:svF(w*.17),transform:`rotate(${svF(Math.atan2(nn[1],nn[0])*180/Math.PI)} ${svF(p[0])} ${svF(p[1])})`,
-    fill:'#d6dcb8',stroke:c[0],'stroke-width':svF(w*.07),'stroke-opacity':.55},par);return g}
+    fill:'#d6dcb8',stroke:c[0],'stroke-width':svF(w*.07),'stroke-opacity':.55},par);
+  /* section 'hollow' (c.sv.section, opt-in): the hollow in the middle of the cut face, its far inner wall lit */
+  if(c.sv&&c.sv.section==='hollow'){const k=c.sv.hollow??.55,hx=w*.5*k,hy=w*.17*k*.85,tf=`rotate(${svF(Math.atan2(nn[1],nn[0])*180/Math.PI)} ${svF(p[0])} ${svF(p[1])})`;
+    E('ellipse',{cx:svF(p[0]),cy:svF(p[1]),rx:svF(hx),ry:svF(hy),transform:tf,fill:c.sv.hollowC||'#2f3a2a','fill-opacity':.9},par);
+    E('path',{d:'M'+svJ([svR(p[0]-hx*.8),svR(p[1])])+'A'+svJ([svR(hx),svR(hy)])+' 0 0 1 '+svJ([svR(p[0]+hx*.8),svR(p[1])]),transform:tf,fill:'none',stroke:'#c9d2b0','stroke-width':svF(w*.05),'stroke-opacity':.6},par)}
+  return g}

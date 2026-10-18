@@ -41,6 +41,10 @@ function lsChainParts(chains,O,cols,parts,o={}){const mx=o.piece||6;for(const ch
     for(let i=a;i<=b;i++){const q=ch.pts[i];z+=q[2]+O[2];const sq=[q[0]+O[0],-(q[1]+O[1])];if(i===a){P.push(sq);W.push(ch.ws[i]);continue}
       const p0=ch.pts[Math.max(0,i-2)],p1=ch.pts[i-1],p3=ch.pts[Math.min(n-1,i+1)];for(const t of[1/3,2/3]){const t2=t*t,t3=t2*t,cr=j=>.5*((2*p1[j])+(-p0[j]+q[j])*t+(2*p0[j]-5*p1[j]+4*q[j]-p3[j])*t2+(-p0[j]+3*p1[j]-3*q[j]+p3[j])*t3);
         P.push([cr(0)+O[0],-(cr(1)+O[1])]);W.push(ch.ws[i-1]+(ch.ws[i]-ch.ws[i-1])*t)}P.push(sq);W.push(ch.ws[i])}
+    /* (c.sv.join only) each piece knows its neighbours, P.j = [point before it, point after it, where it starts along the chain, the chain's
+       length, the chain's mean width] (screen units): svStemLine joins the pieces without seams; without the key nothing is added */
+    if(c&&c.sv&&c.sv.join){const pv=ch.jp,len=Q=>Q.reduce((l,q,k)=>k?l+Math.hypot(q[0]-Q[k-1][0],q[1]-Q[k-1][1]):0,0),wm=ch.ws.reduce((x,y)=>x+y,0)/ch.ws.length;
+      if(pv){P.j=[pv.P[pv.P.length-2],null,pv.P.j[2]+len(pv.P),0,wm];pv.P.j[1]=P[1]}else P.j=[null,null,0,0,wm];ch.jp={P};(ch.jl=ch.jl||[]).push(P);if(b===n-1){const tot=P.j[2]+len(P);for(const Q of ch.jl)Q.j[3]=tot;delete ch.jp;delete ch.jl}}
     parts.push({z:z/(b-a+1)+(o.zb||0),cast:false,ax:1,fn:par=>stemPoly(par,P,W,c)})}}}
 /* ---------- a leaf on a node, in 3D: blade along H, its width along L, arched and folded on its midrib, drooping under its weight ---------- */
 const LS_LANCE=prof([[0,.18],[.12,.62],[.35,1],[.6,.86],[.85,.42],[1,.03]]),LS_OVATE=prof([[0,.3],[.15,.78],[.4,1],[.7,.8],[.9,.4],[1,.05]]),LS_STRAP=prof([[0,.5],[.1,.86],[.5,1],[.85,.8],[1,.08]]);
