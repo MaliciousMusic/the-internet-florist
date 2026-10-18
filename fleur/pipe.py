@@ -3482,6 +3482,9 @@ def cmd_run(a):
                 st['steps'].pop(n, None)
         if getattr(a, 'skip_census', False) and todo and todo[0] == 'census':
             todo = todo[1:]
+        upto = getattr(a, 'jusqua', None)
+        if upto and upto in todo:  # the owner looks at the forme sheet before any polishing (flower-budget-8m): --jusqua fit, then --from plante
+            todo = todo[:todo.index(upto) + 1]
     bad = validate_prompts()
     if bad:
         raise SystemExit('prompts: ' + '; '.join(bad))
@@ -4753,6 +4756,7 @@ def make_parser():
     r.add_argument('--views', help='grid views of the head pairs for this sort, "profil:8,bouton:8" (default: PAIRS, then the form family: orchids and spathes 8)')
     r.add_argument('--juge-tours', dest='juge_tours', type=int, default=JUGE_TOURS, help='judge ko -> comparaison round trips before the refusal (exit 2)')
     r.add_argument('--groupes', help='the groups a comparison photo may show, among hybride-de-coupe, jardin, espece-sauvage (default "%s"; never autre)' % PAIR_GROUPES)
+    r.add_argument('--jusqua', choices=STEPS, help='stop after this step (fit: the forme sheet goes to the owner before plante)')
     r.add_argument('--tete-validee', dest='tete_validee', help='the owner validated the head (its sheet, by eye): his words; the comparison then keeps the head '
                    'as it is (a head sheet rendered before the step must stay identical) and works on the stem, the leaves and the pedicel only')
     r.add_argument('--rtest-bouge', dest='rtest_bouge', help='the owner accepts that the sort moves the bouquets (real-size heads, curved wilted neck): its reason; '
