@@ -1,0 +1,2798 @@
+{
+ "schema": "fiche-morpho/1",
+ "sid": "oeillet-standard",
+ "nom": "Œillet standard",
+ "taxon": {
+  "genre": "Dianthus",
+  "espece": "Dianthus caryophyllus L.",
+  "groupe": "Œillet de fleuriste à grosse fleur (hybrides de coupe) ; types de jardin à part",
+  "famille": "Caryophyllaceae"
+ },
+ "kit": {
+  "moteur": "svRosette (app/y3-rosette.js) + svDent, svRuffle, svFrBand (app/y3-frange.js)",
+  "module": "app/y-dianthus.js",
+  "defauts": "SVR_DEF",
+  "spec": "SVR_DIAN",
+  "genes": "DIAN_GENES"
+ },
+ "etat": {
+  "date": "2026-10-18",
+  "auteur": "étape fiche (agent)",
+  "note": "Mesures : organ.py head/stem/leaf (p050, p054, p037) et targets.json."
+ },
+ "photos": {
+  "oeillet-standard:b5eff015": {
+   "titre": "File:BBC Gardeners World - 2017-06-15 - Andy Mabbett - 18.jpg",
+   "auteur": "Andy Mabbett",
+   "licence": "CC BY-SA 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:BBC_Gardeners_World_-_2017-06-15_-_Andy_Mabbett_-_18.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/be/BBC_Gardeners_World_-_2017-06-15_-_Andy_Mabbett_-_18.jpg/500px-BBC_Gardeners_World_-_2017-06-15_-_Andy_Mabbett_-_18.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/oeillet/refcache/oeillet-standard/t006.jpg",
+   "tags": [
+    "stade:ouvert",
+    "vue:face"
+   ],
+   "vu": "stade=ouvert vue=face organe=- groupe=hybride-de-coupe",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 6,
+   "groupe": "hybride-de-coupe"
+  },
+  "oeillet-standard:fd0aaf33": {
+   "titre": "File:BBC Gardeners World - 2017-06-15 - Andy Mabbett - 25.jpg",
+   "auteur": "Andy Mabbett",
+   "licence": "CC BY-SA 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:BBC_Gardeners_World_-_2017-06-15_-_Andy_Mabbett_-_25.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/BBC_Gardeners_World_-_2017-06-15_-_Andy_Mabbett_-_25.jpg/500px-BBC_Gardeners_World_-_2017-06-15_-_Andy_Mabbett_-_25.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/oeillet/refcache/oeillet-standard/t013.jpg",
+   "tags": [
+    "stade:ouvert",
+    "vue:face"
+   ],
+   "vu": "stade=ouvert vue=face organe=- groupe=hybride-de-coupe",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 13,
+   "groupe": "hybride-de-coupe"
+  },
+  "oeillet-standard:a699eb8d": {
+   "titre": "File:BBC Gardeners World - 2017-06-15 - Andy Mabbett - 24.jpg",
+   "auteur": "Andy Mabbett",
+   "licence": "CC BY-SA 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:BBC_Gardeners_World_-_2017-06-15_-_Andy_Mabbett_-_24.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/BBC_Gardeners_World_-_2017-06-15_-_Andy_Mabbett_-_24.jpg/500px-BBC_Gardeners_World_-_2017-06-15_-_Andy_Mabbett_-_24.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/oeillet/refcache/oeillet-standard/t012.jpg",
+   "tags": [
+    "stade:ouvert",
+    "vue:face"
+   ],
+   "vu": "stade=ouvert vue=face organe=- groupe=hybride-de-coupe",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 12,
+   "groupe": "hybride-de-coupe"
+  },
+  "oeillet-standard:4fde7ed2": {
+   "titre": "File:Carnation (54028429090).jpg",
+   "auteur": "Mustang Joe",
+   "licence": "CC0",
+   "url": "https://commons.wikimedia.org/wiki/File:Carnation_(54028429090).jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Carnation_%2854028429090%29.jpg/500px-Carnation_%2854028429090%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/oeillet/refcache/oeillet-standard/t021.jpg",
+   "tags": [
+    "stade:ouvert",
+    "stade:bouton",
+    "vue:trois-quarts",
+    "organe:bourgeon",
+    "organe:tige"
+   ],
+   "vu": "stade=ouvert+bouton vue=trois-quarts organe=bourgeon+tige groupe=hybride-de-coupe",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 21,
+   "groupe": "hybride-de-coupe"
+  },
+  "oeillet-standard:5dc45126": {
+   "titre": "File:Dianthus caryophullus kz1.JPG",
+   "auteur": "Kenraiz",
+   "licence": "CC BY-SA 3.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Dianthus_caryophullus_kz1.JPG",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/Dianthus_caryophullus_kz1.JPG/500px-Dianthus_caryophullus_kz1.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/oeillet/refcache/oeillet-standard/t038.jpg",
+   "tags": [
+    "stade:ouvert",
+    "vue:trois-quarts"
+   ],
+   "vu": "stade=ouvert vue=trois-quarts organe=- groupe=hybride-de-coupe",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 38,
+   "groupe": "hybride-de-coupe"
+  },
+  "oeillet-standard:c88d33de": {
+   "titre": "File:Dianthus caryophyllus apollo-2-xavier cottage-yercaud-salem-India.jpg",
+   "auteur": "Yercaud-elango",
+   "licence": "CC BY-SA 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Dianthus_caryophyllus_apollo-2-xavier_cottage-yercaud-salem-India.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/Dianthus_caryophyllus_apollo-2-xavier_cottage-yercaud-salem-India.jpg/500px-Dianthus_caryophyllus_apollo-2-xavier_cottage-yercaud-salem-India.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/oeillet/refcache/oeillet-standard/t050.jpg",
+   "tags": [
+    "stade:ouvert",
+    "vue:face",
+    "organe:tige"
+   ],
+   "vu": "stade=ouvert vue=face organe=tige groupe=hybride-de-coupe",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 50,
+   "groupe": "hybride-de-coupe"
+  },
+  "oeillet-standard:a3b3f48e": {
+   "titre": "File:Dianthus caryophyllus Blueboy 1zz.jpg",
+   "auteur": "Photo by David J. Stang",
+   "licence": "CC BY-SA 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Dianthus_caryophyllus_Blueboy_1zz.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e5/Dianthus_caryophyllus_Blueboy_1zz.jpg/500px-Dianthus_caryophyllus_Blueboy_1zz.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/oeillet/refcache/oeillet-standard/t053.jpg",
+   "tags": [
+    "stade:ouvert",
+    "vue:profil"
+   ],
+   "vu": "stade=ouvert vue=profil organe=- groupe=hybride-de-coupe",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 53,
+   "groupe": "hybride-de-coupe"
+  },
+  "oeillet-standard:770c1516": {
+   "titre": "File:Dianthus caryophyllus Blueboy 2zz.jpg",
+   "auteur": "Photo by David J. Stang",
+   "licence": "CC BY-SA 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Dianthus_caryophyllus_Blueboy_2zz.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0b/Dianthus_caryophyllus_Blueboy_2zz.jpg/500px-Dianthus_caryophyllus_Blueboy_2zz.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/oeillet/refcache/oeillet-standard/t054.jpg",
+   "tags": [
+    "stade:ouvert",
+    "vue:profil"
+   ],
+   "vu": "stade=ouvert vue=profil organe=- groupe=hybride-de-coupe",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 54,
+   "groupe": "hybride-de-coupe"
+  },
+  "oeillet-standard:28dc136f": {
+   "titre": "File:Dianthus caryophyllus Brocade 0zz.jpg",
+   "auteur": "Photo by David J. Stang",
+   "licence": "CC BY-SA 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Dianthus_caryophyllus_Brocade_0zz.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7a/Dianthus_caryophyllus_Brocade_0zz.jpg/500px-Dianthus_caryophyllus_Brocade_0zz.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/oeillet/refcache/oeillet-standard/t055.jpg",
+   "tags": [
+    "stade:ouvert",
+    "vue:face"
+   ],
+   "vu": "stade=ouvert vue=face organe=- groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 55,
+   "groupe": "jardin"
+  },
+  "oeillet-standard:e252007a": {
+   "titre": "File:Dianthus caryophyllus Brocade 2zz.jpg",
+   "auteur": "Photo by David J. Stang",
+   "licence": "CC BY-SA 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Dianthus_caryophyllus_Brocade_2zz.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1d/Dianthus_caryophyllus_Brocade_2zz.jpg/500px-Dianthus_caryophyllus_Brocade_2zz.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/oeillet/refcache/oeillet-standard/t057.jpg",
+   "tags": [
+    "stade:ouvert",
+    "vue:trois-quarts"
+   ],
+   "vu": "stade=ouvert vue=trois-quarts organe=- groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 57,
+   "groupe": "jardin"
+  },
+  "oeillet-standard:a754f07a": {
+   "titre": "File:Dianthus caryophyllus CFPC Malea 1zz.jpg",
+   "auteur": "Photo by David J. Stang",
+   "licence": "CC BY-SA 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Dianthus_caryophyllus_CFPC_Malea_1zz.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1d/Dianthus_caryophyllus_CFPC_Malea_1zz.jpg/500px-Dianthus_caryophyllus_CFPC_Malea_1zz.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/oeillet/refcache/oeillet-standard/t060.jpg",
+   "tags": [
+    "stade:ouvert",
+    "vue:trois-quarts"
+   ],
+   "vu": "stade=ouvert vue=trois-quarts organe=- groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 60,
+   "groupe": "jardin"
+  },
+  "oeillet-standard:5e65ab66": {
+   "titre": "File:Carnation dark maroon.jpg",
+   "auteur": "Aftabbanoori",
+   "licence": "CC BY-SA 3.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Carnation_dark_maroon.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/Carnation_dark_maroon.jpg/500px-Carnation_dark_maroon.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/oeillet/refcache/oeillet-standard/t031.jpg",
+   "tags": [
+    "stade:ouvert",
+    "vue:face"
+   ],
+   "vu": "stade=ouvert vue=face organe=- groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 31,
+   "groupe": "jardin"
+  },
+  "oeillet-standard:b93b381b": {
+   "titre": "File:Carnation (35219777634).jpg",
+   "auteur": "James Johnstone from Ecclefechan, Scotland",
+   "licence": "CC BY 2.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Carnation_(35219777634).jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/Carnation_%2835219777634%29.jpg/500px-Carnation_%2835219777634%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/oeillet/refcache/oeillet-standard/t019.jpg",
+   "tags": [
+    "stade:ouvert",
+    "vue:dos"
+   ],
+   "vu": "stade=ouvert vue=dos organe=- groupe=hybride-de-coupe",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 19,
+   "groupe": "hybride-de-coupe"
+  },
+  "oeillet-standard:c0138b75": {
+   "titre": "File:Carnation, Dianthus caryophyllus, Kingswood.jpg",
+   "auteur": "Ultimateplantman",
+   "licence": "CC BY-SA 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Carnation,_Dianthus_caryophyllus,_Kingswood.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/Carnation%2C_Dianthus_caryophyllus%2C_Kingswood.jpg/500px-Carnation%2C_Dianthus_caryophyllus%2C_Kingswood.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/oeillet/refcache/oeillet-standard/t034.jpg",
+   "tags": [
+    "stade:fane",
+    "stade:declin",
+    "vue:trois-quarts",
+    "organe:plante"
+   ],
+   "vu": "stade=fane+declin vue=trois-quarts organe=plante groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 34,
+   "groupe": "jardin"
+  },
+  "oeillet-standard:fc838b12": {
+   "titre": "File:Carnation buds.JPG",
+   "auteur": "JeannieNadja",
+   "licence": "CC BY-SA 3.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Carnation_buds.JPG",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6e/Carnation_buds.JPG/500px-Carnation_buds.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/oeillet/refcache/oeillet-standard/t030.jpg",
+   "tags": [
+    "stade:bouton",
+    "vue:profil",
+    "organe:bourgeon",
+    "organe:feuille-dessus"
+   ],
+   "vu": "stade=bouton vue=profil organe=bourgeon+feuille-dessus groupe=espece-sauvage",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 30,
+   "groupe": "espece-sauvage"
+  },
+  "oeillet-standard:3f8ac182": {
+   "titre": "File:Carnation bud.JPG",
+   "auteur": "JeannieNadja",
+   "licence": "CC BY-SA 3.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Carnation_bud.JPG",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/Carnation_bud.JPG/500px-Carnation_bud.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/oeillet/refcache/oeillet-standard/t029.jpg",
+   "tags": [
+    "stade:bouton",
+    "vue:profil",
+    "organe:bourgeon",
+    "organe:tige"
+   ],
+   "vu": "stade=bouton vue=profil organe=bourgeon+tige groupe=espece-sauvage",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 29,
+   "groupe": "espece-sauvage"
+  },
+  "oeillet-standard:7bdbc81d": {
+   "titre": "File:Dianthus caryophyllus Chabaud 'Magenta', Elfenau.jpg",
+   "auteur": "Sandstein",
+   "licence": "CC BY 3.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Dianthus_caryophyllus_Chabaud_%27Magenta%27,_Elfenau.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/Dianthus_caryophyllus_Chabaud_%27Magenta%27%2C_Elfenau.jpg/500px-Dianthus_caryophyllus_Chabaud_%27Magenta%27%2C_Elfenau.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/oeillet/refcache/oeillet-standard/t064.jpg",
+   "tags": [
+    "stade:bouton",
+    "organe:bourgeon",
+    "organe:plante",
+    "vue:trois-quarts"
+   ],
+   "vu": "stade=bouton vue=trois-quarts organe=bourgeon+plante groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 64,
+   "groupe": "jardin"
+  },
+  "oeillet-standard:448a9d47": {
+   "titre": "File:Dianthus caryophyllus Chabaud 'Etincelant', Elfenau.jpg",
+   "auteur": "Sandstein",
+   "licence": "CC BY 3.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Dianthus_caryophyllus_Chabaud_%27Etincelant%27,_Elfenau.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/Dianthus_caryophyllus_Chabaud_%27Etincelant%27%2C_Elfenau.jpg/500px-Dianthus_caryophyllus_Chabaud_%27Etincelant%27%2C_Elfenau.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/oeillet/refcache/oeillet-standard/t063.jpg",
+   "tags": [
+    "stade:ouvert",
+    "organe:plante",
+    "vue:trois-quarts"
+   ],
+   "vu": "stade=ouvert vue=trois-quarts organe=plante groupe=hybride-de-coupe",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 63,
+   "groupe": "hybride-de-coupe"
+  },
+  "oeillet-standard:5b04c008": {
+   "titre": "File:Carnation (red) in Athens on May 1, 2023.jpg",
+   "auteur": "George E. Koronaios",
+   "licence": "CC BY-SA 2.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Carnation_(red)_in_Athens_on_May_1,_2023.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ec/Carnation_%28red%29_in_Athens_on_May_1%2C_2023.jpg/500px-Carnation_%28red%29_in_Athens_on_May_1%2C_2023.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/oeillet/refcache/oeillet-standard/t028.jpg",
+   "tags": [
+    "stade:ouvert",
+    "organe:plante",
+    "vue:trois-quarts"
+   ],
+   "vu": "stade=ouvert vue=trois-quarts organe=plante groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 28,
+   "groupe": "jardin"
+  },
+  "oeillet-standard:86441df5": {
+   "titre": "File:Cravo Vermelho.JPG",
+   "auteur": "Marinabusato",
+   "licence": "CC BY-SA 3.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Cravo_Vermelho.JPG",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ee/Cravo_Vermelho.JPG/500px-Cravo_Vermelho.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/oeillet/refcache/oeillet-standard/t037.jpg",
+   "tags": [
+    "stade:bouton",
+    "organe:tige",
+    "organe:feuille-dessus",
+    "vue:profil"
+   ],
+   "vu": "stade=bouton vue=profil organe=tige+feuille-dessus groupe=hybride-de-coupe",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 37,
+   "groupe": "hybride-de-coupe"
+  },
+  "oeillet-standard:19fe6beb": {
+   "titre": "File:Carnation (Dianthus Caryophyllus) in Athens on May 25, 2023.jpg",
+   "auteur": "George E. Koronaios",
+   "licence": "CC BY-SA 2.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Carnation_(Dianthus_Caryophyllus)_in_Athens_on_May_25,_2023.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7a/Carnation_%28Dianthus_Caryophyllus%29_in_Athens_on_May_25%2C_2023.jpg/500px-Carnation_%28Dianthus_Caryophyllus%29_in_Athens_on_May_25%2C_2023.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/oeillet/refcache/oeillet-standard/t027.jpg",
+   "tags": [
+    "stade:ouvert",
+    "vue:face",
+    "organe:plante"
+   ],
+   "vu": "stade=ouvert vue=face organe=plante groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 27,
+   "groupe": "jardin"
+  },
+  "oeillet-standard:02bb7133": {
+   "titre": "File:Carnation (47984494377).jpg",
+   "auteur": "James Johnstone from Ecclefechan, Scotland",
+   "licence": "CC BY 2.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Carnation_(47984494377).jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b4/Carnation_%2847984494377%29.jpg/500px-Carnation_%2847984494377%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/oeillet/refcache/oeillet-standard/t020.jpg",
+   "tags": [
+    "stade:entrouvert",
+    "vue:trois-quarts",
+    "organe:tige"
+   ],
+   "vu": "stade=entrouvert vue=trois-quarts organe=tige groupe=hybride-de-coupe",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 20,
+   "groupe": "hybride-de-coupe"
+  },
+  "oeillet-standard:4238e494": {
+   "titre": "File:Bouquet of pink carnations.jpg",
+   "auteur": "Kain Kalju",
+   "licence": "CC BY 2.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Bouquet_of_pink_carnations.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Bouquet_of_pink_carnations.jpg/500px-Bouquet_of_pink_carnations.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/oeillet/refcache/oeillet-standard/t017.jpg",
+   "tags": [
+    "stade:entrouvert",
+    "stade:bouton",
+    "organe:tige",
+    "vue:trois-quarts"
+   ],
+   "vu": "stade=entrouvert+bouton vue=trois-quarts organe=tige groupe=hybride-de-coupe",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 17,
+   "groupe": "hybride-de-coupe"
+  }
+ },
+ "organes": {
+  "petale.externe": {
+   "role": "perianthe",
+   "nombre": {
+    "v": [
+     [
+      30,
+      1
+     ]
+    ],
+    "plage": [
+     20,
+     45
+    ],
+    "unite": "n",
+    "methode": "oeil",
+    "photos": [
+     "oeillet-standard:fd0aaf33",
+     "oeillet-standard:b5eff015",
+     "oeillet-standard:a699eb8d"
+    ],
+    "conf": "C",
+    "note": "fleur double de fleuriste (hybride de coupe) : une trentaine de pétales ; espèce sauvage : 5",
+    "code": "DIAN_GENES.n",
+    "retenu": [
+     [
+      36,
+      0.3
+     ],
+     [
+      42,
+      0.4
+     ],
+     [
+      48,
+      0.3
+     ]
+    ],
+    "ecart": {
+     "type": "divergence",
+     "texte": "une seule spirale de 36, 42 ou 48 pièces (fiche : 30 externes + 12 internes = 42, plage 20 à 45 pour le dehors) : les rangs f = i/(N-1) < .6 font le dehors (22 à 29 pièces, dans la plage), les autres le cœur froissé"
+    }
+   },
+   "disposition": {
+    "type": {
+     "v": "verticilles",
+     "methode": "oeil",
+     "conf": "C",
+     "photos": [
+      "oeillet-standard:fd0aaf33",
+      "oeillet-standard:b5eff015"
+     ]
+    },
+    "verticilles": {
+     "v": 4,
+     "plage": [
+      3,
+      6
+     ],
+     "unite": "n",
+     "methode": "oeil",
+     "photos": [
+      "oeillet-standard:fd0aaf33",
+      "oeillet-standard:b5eff015",
+      "oeillet-standard:c88d33de"
+     ],
+     "conf": "C",
+     "code": "P.L.length",
+     "retenu": 4
+    },
+    "recouvrement": {
+     "v": 0.6,
+     "unite": "ratio",
+     "methode": "oeil",
+     "photos": [
+      "oeillet-standard:fd0aaf33",
+      "oeillet-standard:b5eff015"
+     ],
+     "conf": "C",
+     "code": "P.lap",
+     "retenu": 0.18,
+     "ecart": {
+      "type": "divergence",
+      "texte": "lap est la rotation de chaque pièce sur sa nervure, pas une part recouverte ; le recouvrement (~.6 à l'œil sur la planche) vient de 40 à 52 pièces larges (W ~1) sur une spirale"
+     }
+    },
+    "ordre": {
+     "v": "les pétales du dehors recouvrent leur voisine, les internes se froissent et se chevauchent au hasard",
+     "methode": "oeil",
+     "conf": "C",
+     "photos": [
+      "oeillet-standard:c88d33de",
+      "oeillet-standard:fd0aaf33"
+     ]
+    }
+   },
+   "contour": {
+    "base": {
+     "v": "onglet",
+     "methode": "oeil",
+     "conf": "C",
+     "photos": [
+      "oeillet-standard:770c1516",
+      "oeillet-standard:b93b381b"
+     ]
+    },
+    "epaules": {
+     "v": "larges, limbe en éventail au-dessus d'un onglet étroit blanchâtre",
+     "methode": "oeil",
+     "conf": "C",
+     "photos": [
+      "oeillet-standard:770c1516"
+     ]
+    },
+    "pointe": {
+     "type": {
+      "v": "dentee",
+      "methode": "oeil",
+      "conf": "C",
+      "photos": [
+       "oeillet-standard:5dc45126",
+       "oeillet-standard:a699eb8d"
+      ]
+     },
+     "recourbee": {
+      "v": false,
+      "methode": "oeil",
+      "conf": "C",
+      "photos": [
+       "oeillet-standard:fd0aaf33"
+      ]
+     }
+    },
+    "L_sur_l": {
+     "v": 1.0,
+     "plage": [
+      0.8,
+      1.3
+     ],
+     "unite": "ratio",
+     "methode": "oeil",
+     "photos": [
+      "oeillet-standard:770c1516",
+      "oeillet-standard:c88d33de"
+     ],
+     "conf": "C",
+     "code": "P.W[0][1]",
+     "retenu": 1.12,
+     "ecart": {
+      "type": "confirme",
+      "texte": "W est la largeur en part de la longueur : L/l = 1/1,12 = 0,89, dans la plage .8 à 1,3"
+     }
+    },
+    "marge": {
+     "type": {
+      "v": "frangee",
+      "methode": "oeil",
+      "conf": "C",
+      "photos": [
+       "oeillet-standard:5dc45126",
+       "oeillet-standard:a699eb8d",
+       "oeillet-standard:28dc136f"
+      ]
+     },
+     "dents": {
+      "v": 9,
+      "plage": [
+       6,
+       14
+      ],
+      "unite": "n",
+      "methode": "oeil",
+      "photos": [
+       "oeillet-standard:5dc45126",
+       "oeillet-standard:28dc136f"
+      ],
+      "conf": "C",
+      "code": "const",
+      "ligne": "app/y-dianthus.js:207",
+      "retenu": [
+       24,
+       34
+      ],
+      "ecart": {
+       "type": "divergence",
+       "texte": "24 à 34 dents tirées sur toute la ligne de pointe, épaules sans dent (span .92) : 20 à 28 effectives ; plus nombreuses et plus fines que les 9 à l'œil : dents fines et serrées du gros plan de la photo 13 au même grossissement (relais 16, tour 69)"
+      }
+     },
+     "profondeur": {
+      "v": 0.1,
+      "unite": "L",
+      "methode": "oeil",
+      "photos": [
+       "oeillet-standard:5dc45126",
+       "oeillet-standard:a699eb8d"
+      ],
+      "conf": "C",
+      "code": "const",
+      "ligne": "app/y-dianthus.js:207",
+      "retenu": [
+       0.02,
+       0.048
+      ],
+      "ecart": {
+       "type": "divergence",
+       "texte": "profondeur .02 à .048 de la longueur, × .75 à 1,2 par pièce : .1 faisait des dents de scie au gros plan ; dents de la photo 13 fines (relais 3, tour 4 ; relais 16, tour 69)"
+      }
+     }
+    }
+   },
+   "taille": {
+    "largeur": {
+     "v": 1.0,
+     "unite": "R0",
+     "methode": "oeil",
+     "photos": [
+      "oeillet-standard:c88d33de",
+      "oeillet-standard:770c1516"
+     ],
+     "conf": "C",
+     "note": "la fleur ouverte vaut 1 R0 de demi-diamètre",
+     "code": "P.L[1][1]",
+     "retenu": 1,
+     "ecart": {
+      "type": "confirme",
+      "texte": "longueur des rangs moyens 1 R0 (L .82 au rang externe, étalé, qui fait le bord à ~1 R0)"
+     }
+    },
+    "rapport_tete": {
+     "v": 0.75,
+     "unite": "ratio",
+     "n": 1,
+     "methode": "segmente",
+     "photos": [
+      "oeillet-standard:c88d33de"
+     ],
+     "conf": "C",
+     "note": "hauteur / largeur de la tête ouverte, organ.py head p050 : 498 px / 664 px",
+     "ecart": {
+      "type": "divergence",
+      "texte": "mesure de rendu : profil (vue 7, op .9, calice compris) H/L 1,09 (fit.py targets --render, relais 14) ; le .75 de la fiche est la tête sans calice, de trois-quarts (p050)"
+     }
+    },
+    "tete_HW": {
+     "v": 0.99,
+     "unite": "ratio",
+     "n": 1,
+     "methode": "segmente",
+     "photos": [
+      "oeillet-standard:770c1516"
+     ],
+     "conf": "C",
+     "note": "profil, p054 : 578 px / 583 px",
+     "ecart": {
+      "type": "confirme",
+      "texte": "rendu de profil op .9, vue 7, calice compris : W/H .915 soit H/L 1,09 (fit.py targets --render, relais 14) ; la fiche (.99) et targets (W/H 1,12) mesurent la fleur rose penchée de la photo 54 ; la fleur de gauche, de vrai profil, calice et bractéoles compris : H/L 1,17 (img.py pair, boîte 12,98,142,256) ; le rendu est entre les deux"
+     }
+    },
+    "flancs": {
+     "v": 17.33,
+     "unite": "deg",
+     "n": 1,
+     "methode": "segmente",
+     "photos": [
+      "oeillet-standard:770c1516"
+     ],
+     "conf": "C",
+     "repere": "axe",
+     "note": "angle des flancs (targets ouverte.ang)",
+     "ecart": {
+      "type": "divergence",
+      "texte": "targets ouverte.ang 17° sur une seule photo (54) dont la fleur mesurée est penchée ; le rendu mesuré pareil donne 26° (fit.py targets --render, relais 14) : jupe étalée presque à l'horizontale (fiche, stade plein : rang externe à l'horizontale) ; à reprendre avec une seconde photo de profil"
+     }
+    }
+   },
+   "courbure": {
+    "longitudinale": {
+     "profil": {
+      "v": "arquee : l'onglet monte, le limbe retombe sur le dehors de la fleur",
+      "methode": "oeil",
+      "conf": "C",
+      "photos": [
+       "oeillet-standard:770c1516"
+      ]
+     }
+    },
+    "transversale": {
+     "type": {
+      "v": "creux",
+      "methode": "oeil",
+      "conf": "C",
+      "photos": [
+       "oeillet-standard:770c1516",
+       "oeillet-standard:c88d33de"
+      ]
+     }
+    },
+    "ondulation": {
+     "n": {
+      "v": 3,
+      "plage": [
+       2,
+       5
+      ],
+      "unite": "n",
+      "methode": "oeil",
+      "photos": [
+       "oeillet-standard:fd0aaf33",
+       "oeillet-standard:c88d33de"
+      ],
+      "conf": "C",
+      "code": "DIAN_GENES.tep.pn",
+      "retenu": [
+       2,
+       3.6
+      ],
+      "ecart": {
+       "type": "confirme",
+       "texte": "plis par pièce : 2 à 3,6 demi-ondes (gène pn, svRuffle) ; au-delà chaque pièce se replie en accordéon et se lit en coin pointu (relais 6, tour 21)"
+      }
+     },
+     "amplitude": {
+      "v": "forte : limbe froissé en plis",
+      "methode": "oeil",
+      "conf": "C",
+      "photos": [
+       "oeillet-standard:c88d33de",
+       "oeillet-standard:fd0aaf33"
+      ]
+     }
+    }
+   },
+   "matiere": {
+    "epaisseur": {
+     "v": "fine",
+     "methode": "oeil",
+     "conf": "C",
+     "photos": [
+      "oeillet-standard:c88d33de"
+     ]
+    },
+    "translucidite": {
+     "v": 0.3,
+     "unite": "ratio",
+     "methode": "oeil",
+     "photos": [
+      "oeillet-standard:c88d33de"
+     ],
+     "conf": "C",
+     "code": "P.light.trans",
+     "retenu": 0.32,
+     "ecart": {
+      "type": "confirme",
+      "texte": "trans .32 de la lumière de la fiche"
+     }
+    },
+    "texture": {
+     "v": "satin",
+     "methode": "oeil",
+     "conf": "C",
+     "photos": [
+      "oeillet-standard:c88d33de",
+      "oeillet-standard:b5eff015"
+     ]
+    },
+    "brillance": {
+     "v": 0.3,
+     "unite": "ratio",
+     "methode": "oeil",
+     "photos": [
+      "oeillet-standard:c88d33de"
+     ],
+     "conf": "C",
+     "code": "P.light.ks",
+     "retenu": 0.08,
+     "ecart": {
+      "type": "divergence",
+      "texte": "ks est le coefficient spéculaire du moteur (anémone .09), pas une part : satin réglé à l'œil"
+     }
+    },
+    "grain": {
+     "v": "lisse",
+     "methode": "oeil",
+     "conf": "C",
+     "photos": [
+      "oeillet-standard:c88d33de"
+     ]
+    }
+   },
+   "nervation": {
+    "type": {
+     "v": "eventail",
+     "methode": "oeil",
+     "conf": "C",
+     "photos": [
+      "oeillet-standard:770c1516",
+      "oeillet-standard:b93b381b"
+     ]
+    },
+    "relief": {
+     "v": "plat",
+     "methode": "oeil",
+     "conf": "C",
+     "photos": [
+      "oeillet-standard:770c1516"
+     ]
+    },
+    "visible": {
+     "v": "dos",
+     "methode": "oeil",
+     "conf": "C",
+     "photos": [
+      "oeillet-standard:b93b381b",
+      "oeillet-standard:770c1516"
+     ]
+    },
+    "couleur": {
+     "v": "plus-claire",
+     "methode": "oeil",
+     "conf": "C",
+     "photos": [
+      "oeillet-standard:770c1516"
+     ]
+    }
+   },
+   "zones": [
+    {
+     "zone": "base",
+     "etendue": {
+      "v": [
+       0,
+       0.3
+      ],
+      "u": [
+       0,
+       1
+      ],
+      "methode": "oeil",
+      "conf": "C",
+      "photos": [
+       "oeillet-standard:c88d33de",
+       "oeillet-standard:770c1516"
+      ],
+      "code": "const",
+      "ligne": "app/y-dianthus.js:58",
+      "retenu": [
+       -0.05,
+       0.2
+      ],
+      "ecart": {
+       "type": "confirme",
+       "texte": "zone de l'onglet de -.05 à .2 de la longueur, fondue sur .12 (dianMat, lenZ), couleur base et opacité za par coloris"
+      }
+     },
+     "motif": {
+      "type": "onglet blanchâtre, strié",
+      "direction": "radiale"
+     },
+     "bord": "fondu"
+    },
+    {
+     "zone": "corps",
+     "etendue": {
+      "v": [
+       0.3,
+       0.85
+      ],
+      "u": [
+       0,
+       1
+      ],
+      "methode": "oeil",
+      "conf": "C",
+      "photos": [
+       "oeillet-standard:c88d33de",
+       "oeillet-standard:770c1516"
+      ],
+      "ecart": {
+       "type": "confirme",
+       "texte": "le corps est ce qui reste entre l'onglet (jusqu'à .3) et la marge ou la pointe colorée (tip dès .72 à .78 selon coloris) : pas de constante propre"
+      }
+     },
+     "motif": {
+      "type": "uni, stries plus sombres vers l'onglet"
+     },
+     "bord": "fondu"
+    },
+    {
+     "zone": "marge",
+     "etendue": {
+      "v": [
+       0.85,
+       1
+      ],
+      "u": [
+       0,
+       1
+      ],
+      "methode": "oeil",
+      "conf": "C",
+      "photos": [
+       "oeillet-standard:c88d33de",
+       "oeillet-standard:770c1516"
+      ],
+      "code": "DIAN_CW.picotee.band[1]",
+      "retenu": 0.12,
+      "ecart": {
+       "type": "divergence",
+       "texte": "liseré du picoté .12 de la longueur (×.75 à 1,25 par pièce, cœur à .88), propre à chaque coloris (antigua .13, peppermint .04) ; .85 à 1 est l'étendue à l'œil ; mesuré sur les photos 55 et 38 (20 à 27 % de la tête vue, dents comprises : relais 17, tour 73), posé pièce par pièce (svFrBandP, relais 18)"
+      }
+     },
+     "motif": {
+      "type": "liseré de coloris différent selon le coloris (picoté, bicolore)",
+      "densite": "selon coloris"
+     },
+     "bord": "net"
+    }
+   ],
+   "jointures": [
+    {
+     "vers": "calice",
+     "type": "onglet",
+     "params": {
+      "note": "les onglets sortent ensemble du tube du calice en un faisceau serré"
+     }
+    }
+   ],
+   "stades": {
+    "bouton": {
+     "v": "invisibles, enfermés dans le calice",
+     "methode": "oeil",
+     "conf": "C",
+     "photos": [
+      "oeillet-standard:fc838b12"
+     ]
+    },
+    "gonfle": {
+     "v": "pointes colorées affleurent, onglet encore droit",
+     "methode": "oeil",
+     "conf": "C",
+     "photos": [
+      "oeillet-standard:4238e494"
+     ]
+    },
+    "entrouvert": {
+     "v": "limbes dressés, serrés en coupe",
+     "methode": "oeil",
+     "conf": "C",
+     "photos": [
+      "oeillet-standard:02bb7133",
+      "oeillet-standard:4238e494"
+     ]
+    },
+    "ouvert": {
+     "v": "limbes étalés, le rang externe retombe vers le calice",
+     "methode": "oeil",
+     "conf": "C",
+     "photos": [
+      "oeillet-standard:c88d33de",
+      "oeillet-standard:770c1516"
+     ]
+    },
+    "plein": {
+     "v": "tête pleine, frangée, rang externe à l'horizontale",
+     "methode": "oeil",
+     "conf": "C",
+     "photos": [
+      "oeillet-standard:fd0aaf33",
+      "oeillet-standard:b5eff015"
+     ]
+    },
+    "declin": {
+     "v": "limbes qui s'affaissent, bord qui brunit",
+     "methode": "oeil",
+     "conf": "C",
+     "photos": [
+      "oeillet-standard:c0138b75"
+     ]
+    },
+    "fane": {
+     "v": "papier brun roulé, pend",
+     "methode": "oeil",
+     "conf": "C",
+     "photos": [
+      "oeillet-standard:c0138b75"
+     ]
+    }
+   }
+  },
+  "petale.interne": {
+   "role": "perianthe",
+   "nombre": {
+    "v": [
+     [
+      12,
+      1
+     ]
+    ],
+    "plage": [
+     8,
+     20
+    ],
+    "unite": "n",
+    "methode": "oeil",
+    "photos": [
+     "oeillet-standard:fd0aaf33",
+     "oeillet-standard:b5eff015"
+    ],
+    "conf": "C",
+    "note": "petits pétales froissés du centre",
+    "ecart": {
+     "type": "divergence",
+     "texte": "pas de verticille interne séparé : sur la spirale de 40 à 52 pièces, les rangs f > .6 (16 à 21 pièces, plage de la fiche 8 à 20) font le cœur"
+    }
+   },
+   "disposition": {
+    "type": {
+     "v": "verticilles",
+     "methode": "oeil",
+     "conf": "C",
+     "photos": [
+      "oeillet-standard:fd0aaf33"
+     ]
+    },
+    "recouvrement": {
+     "v": 0.8,
+     "unite": "ratio",
+     "methode": "oeil",
+     "photos": [
+      "oeillet-standard:fd0aaf33"
+     ],
+     "conf": "C",
+     "code": "P.cup[2][1]",
+     "retenu": 0.6,
+     "ecart": {
+      "type": "divergence",
+      "texte": "creusement du cœur .6 : les pièces internes roulées se serrent ; recouvrement .8 à l'œil, pas une constante"
+     }
+    },
+    "ordre": {
+     "v": "serrés, dressés, froissés au centre",
+     "methode": "oeil",
+     "conf": "C",
+     "photos": [
+      "oeillet-standard:c88d33de"
+     ]
+    }
+   },
+   "contour": {
+    "base": {
+     "suit": "petale.externe.contour.base"
+    },
+    "pointe": {
+     "suit": "petale.externe.contour.pointe"
+    },
+    "marge": {
+     "suit": "petale.externe.contour.marge"
+    },
+    "L_sur_l": {
+     "v": 1.2,
+     "unite": "ratio",
+     "methode": "oeil",
+     "photos": [
+      "oeillet-standard:c88d33de"
+     ],
+     "conf": "C",
+     "code": "P.W[3][1]",
+     "retenu": 0.92,
+     "ecart": {
+      "type": "confirme",
+      "texte": "cœur à W .92 de la longueur (L/l 1,09 contre 1,2 à l'œil) : à .78 le cœur se lisait en éclats étroits, plus petit que celui de la photo 6 (40 % du diamètre contre 50 %) (relais 16, tour 67)"
+     }
+    }
+   },
+   "taille": {
+    "largeur": {
+     "v": 0.5,
+     "unite": "R0",
+     "methode": "oeil",
+     "photos": [
+      "oeillet-standard:c88d33de"
+     ],
+     "conf": "C",
+     "note": "environ la moitié des pétales externes",
+     "code": "P.L[3][1]",
+     "retenu": 0.78,
+     "ecart": {
+      "type": "divergence",
+      "texte": "rang interne long de .78 R0 et large de .92 × .78 = .72 R0 (fiche .5 R0 à l'œil) : cœur de la photo 6 à 50 % du diamètre, le rendu à .66 n'en faisait que 40 % ; à 1 les pièces dressées faisaient un peigne au sommet (relais 6, tour 25 ; relais 16, tour 67)"
+     }
+    }
+   },
+   "courbure": {
+    "longitudinale": {
+     "profil": {
+      "v": "arquee",
+      "methode": "oeil",
+      "conf": "C",
+      "photos": [
+       "oeillet-standard:c88d33de"
+      ]
+     }
+    },
+    "transversale": {
+     "type": {
+      "v": "roule",
+      "methode": "oeil",
+      "conf": "C",
+      "photos": [
+       "oeillet-standard:c88d33de"
+      ]
+     }
+    }
+   },
+   "matiere": {
+    "suit": "petale.externe.matiere"
+   },
+   "nervation": {
+    "suit": "petale.externe.nervation"
+   },
+   "zones": {
+    "suit": "petale.externe.zones"
+   },
+   "jointures": {
+    "suit": "petale.externe.jointures"
+   },
+   "stades": {
+    "bouton": {
+     "v": "invisibles",
+     "methode": "oeil",
+     "conf": "C",
+     "photos": [
+      "oeillet-standard:fc838b12"
+     ]
+    },
+    "ouvert": {
+     "v": "froissés, dressés au centre",
+     "methode": "oeil",
+     "conf": "C",
+     "photos": [
+      "oeillet-standard:c88d33de"
+     ]
+    },
+    "declin": {
+     "v": "rassemblés en pompon brun",
+     "methode": "oeil",
+     "conf": "C",
+     "photos": [
+      "oeillet-standard:c0138b75"
+     ]
+    }
+   }
+  },
+  "coeur": {
+   "role": "coeur",
+   "nombre": {
+    "v": 10,
+    "plage": [
+     0,
+     10
+    ],
+    "unite": "n",
+    "methode": "reference",
+    "conf": "C",
+    "ref": "Flore (Dianthus caryophyllus L.) : calice tubuleux, 4 bractéoles à la base, pétales onguiculés à limbe denté, feuilles opposées linéaires glauques, nœuds renflés ; 10 étamines, 2 styles ; cachés dans la fleur double"
+   },
+   "disposition": {
+    "v": "étamines et styles enfouis sous les pétales internes ; invisibles de face sur la fleur double",
+    "methode": "oeil",
+    "conf": "C",
+    "photos": [
+     "oeillet-standard:c88d33de",
+     "oeillet-standard:fd0aaf33"
+    ]
+   },
+   "taille": {
+    "v": 0.1,
+    "unite": "R0",
+    "methode": "oeil",
+    "photos": [
+     "oeillet-standard:c88d33de"
+    ],
+    "conf": "C"
+   },
+   "matiere": {
+    "v": "mat, filets blancs",
+    "methode": "oeil",
+    "conf": "C",
+    "photos": [
+     "oeillet-standard:c88d33de"
+    ]
+   },
+   "zones": [
+    {
+     "zone": "oeil",
+     "etendue": {
+      "v": [
+       0,
+       0.1
+      ],
+      "u": [
+       0,
+       1
+      ],
+      "methode": "oeil",
+      "conf": "C",
+      "photos": [
+       "oeillet-standard:c88d33de",
+       "oeillet-standard:770c1516"
+      ]
+     },
+     "motif": {
+      "type": "creux sombre entre les pétales internes"
+     },
+     "bord": "fondu"
+    }
+   ],
+   "jointures": [
+    {
+     "vers": "receptacle",
+     "type": "insertion",
+     "params": {}
+    }
+   ],
+   "stades": {
+    "ouvert": {
+     "v": "caché",
+     "methode": "oeil",
+     "conf": "C",
+     "photos": [
+      "oeillet-standard:c88d33de"
+     ]
+    }
+   },
+   "dessinee": false
+  },
+  "receptacle": {
+   "role": "receptacle",
+   "taille": {
+    "v": 0.12,
+    "unite": "R0",
+    "methode": "oeil",
+    "photos": [
+     "oeillet-standard:770c1516"
+    ],
+    "conf": "C"
+   },
+   "matiere": {
+    "v": "vert, caché par la base des onglets",
+    "methode": "oeil",
+    "conf": "C",
+    "photos": [
+     "oeillet-standard:770c1516"
+    ]
+   },
+   "zones": [
+    {
+     "zone": "corps",
+     "etendue": {
+      "v": [
+       0,
+       1
+      ],
+      "u": [
+       0,
+       1
+      ],
+      "methode": "oeil",
+      "conf": "C",
+      "photos": [
+       "oeillet-standard:c88d33de",
+       "oeillet-standard:770c1516"
+      ]
+     },
+     "motif": {
+      "type": "uni"
+     },
+     "bord": "net"
+    }
+   ],
+   "jointures": [
+    {
+     "vers": "calice",
+     "type": "col",
+     "params": {}
+    }
+   ],
+   "stades": {
+    "ouvert": {
+     "v": "inchangé",
+     "methode": "oeil",
+     "conf": "C",
+     "photos": [
+      "oeillet-standard:770c1516"
+     ]
+    }
+   },
+   "dessinee": false
+  },
+  "calice": {
+   "role": "calice",
+   "nombre": {
+    "v": 5,
+    "unite": "n",
+    "methode": "reference",
+    "photos": [
+     "oeillet-standard:770c1516",
+     "oeillet-standard:fc838b12"
+    ],
+    "conf": "A",
+    "ref": "Flore (Dianthus caryophyllus L.) : calice tubuleux, 4 bractéoles à la base, pétales onguiculés à limbe denté, feuilles opposées linéaires glauques, nœuds renflés : 5 dents",
+    "code": "const",
+    "ligne": "app/y-dianthus.js:124",
+    "retenu": 5
+   },
+   "disposition": {
+    "type": {
+     "v": "verticilles",
+     "methode": "oeil",
+     "conf": "C",
+     "photos": [
+      "oeillet-standard:770c1516"
+     ]
+    },
+    "note": "tube unique soudé à 5 dents"
+   },
+   "contour": {
+    "base": {
+     "v": "arrondie",
+     "methode": "oeil",
+     "conf": "C",
+     "photos": [
+      "oeillet-standard:770c1516"
+     ]
+    },
+    "pointe": {
+     "type": {
+      "v": "aigue",
+      "methode": "oeil",
+      "conf": "C",
+      "photos": [
+       "oeillet-standard:770c1516"
+      ]
+     }
+    },
+    "marge": {
+     "type": {
+      "v": "entiere",
+      "methode": "oeil",
+      "conf": "C",
+      "photos": [
+       "oeillet-standard:770c1516"
+      ]
+     },
+     "note": "liseré scarieux pâle entre les dents"
+    }
+   },
+   "taille": {
+    "longueur": {
+     "v": 0.9,
+     "unite": "R0",
+     "methode": "oeil",
+     "photos": [
+      "oeillet-standard:770c1516"
+     ],
+     "conf": "C",
+     "note": "tube de 0,9 R0 environ, cylindrique légèrement renflé, fendu à l'avant (p054)",
+     "code": "DIAN_CAL.L[1]",
+     "retenu": 1.12,
+     "ecart": {
+      "type": "divergence",
+      "texte": "tube de 1,12 R0 ouvert (.98 au bouton) : la photo 54 donne ~1,1 R0 jusqu'aux bractéoles"
+     }
+    },
+    "largeur": {
+     "v": 0.38,
+     "unite": "R0",
+     "methode": "oeil",
+     "photos": [
+      "oeillet-standard:770c1516"
+     ],
+     "conf": "C",
+     "code": "DIAN_CAL.r[1]",
+     "retenu": 0.24,
+     "ecart": {
+      "type": "divergence",
+      "texte": "rayon .24 R0 ouvert, .27 au bouton (diamètre .48) : la photo de profil 54 montre un tube épais ; .225 faisait une tige mince sous la tête (relais 3)"
+     }
+    }
+   },
+   "matiere": {
+    "epaisseur": {
+     "v": "epaisse",
+     "methode": "oeil",
+     "conf": "C",
+     "photos": [
+      "oeillet-standard:770c1516"
+     ]
+    },
+    "texture": {
+     "v": "cire",
+     "methode": "oeil",
+     "conf": "C",
+     "photos": [
+      "oeillet-standard:770c1516"
+     ]
+    },
+    "brillance": {
+     "v": 0.4,
+     "unite": "ratio",
+     "methode": "oeil",
+     "photos": [
+      "oeillet-standard:770c1516"
+     ],
+     "conf": "C",
+     "code": "DIAN_CAL.light.ks",
+     "retenu": 0.12,
+     "ecart": {
+      "type": "divergence",
+      "texte": "ks est le coefficient spéculaire du moteur, pas une part"
+     }
+    }
+   },
+   "zones": [
+    {
+     "zone": "corps",
+     "etendue": {
+      "v": [
+       0,
+       1
+      ],
+      "u": [
+       0,
+       1
+      ],
+      "methode": "oeil",
+      "conf": "C",
+      "photos": [
+       "oeillet-standard:c88d33de",
+       "oeillet-standard:770c1516"
+      ],
+      "ecart": {
+       "type": "confirme",
+       "texte": "tout le tube, côtes (16) plus sombres et voile glauque côté lumière"
+      }
+     },
+     "motif": {
+      "type": "vert clair à nervures longitudinales plus sombres",
+      "direction": "longitudinale"
+     },
+     "bord": "fondu"
+    },
+    {
+     "zone": "pointe",
+     "etendue": {
+      "v": [
+       0.85,
+       1
+      ],
+      "u": [
+       0,
+       1
+      ],
+      "methode": "oeil",
+      "conf": "C",
+      "photos": [
+       "oeillet-standard:c88d33de",
+       "oeillet-standard:770c1516"
+      ],
+      "code": "DIAN_CAL.tL[1]",
+      "retenu": 0.14,
+      "ecart": {
+       "type": "divergence",
+       "texte": "dents de .14 R0 ouvertes (.46 au bouton), pointes lavées de pourpre (tipA .3) : à .2 leurs pointes vertes sortaient entre les pieds des pétales (relais 6, tour 22)"
+      }
+     },
+     "motif": {
+      "type": "dents aiguës, parfois lavées de pourpre"
+     },
+     "bord": "net"
+    }
+   ],
+   "jointures": [
+    {
+     "vers": "petale.externe",
+     "type": "onglet",
+     "params": {}
+    },
+    {
+     "vers": "bractee",
+     "type": "insertion",
+     "params": {}
+    }
+   ],
+   "stades": {
+    "bouton": {
+     "v": "tube fermé, dents serrées, vert vif",
+     "methode": "oeil",
+     "conf": "C",
+     "photos": [
+      "oeillet-standard:fc838b12",
+      "oeillet-standard:3f8ac182"
+     ]
+    },
+    "ouvert": {
+     "v": "fendu d'un côté, dents écartées, tient la fleur",
+     "methode": "oeil",
+     "conf": "C",
+     "photos": [
+      "oeillet-standard:770c1516"
+     ]
+    },
+    "fane": {
+     "v": "jaunit, se dessèche",
+     "methode": "oeil",
+     "conf": "C",
+     "photos": [
+      "oeillet-standard:c0138b75"
+     ]
+    }
+   }
+  },
+  "bractee": {
+   "role": "bractee",
+   "nombre": {
+    "v": 4,
+    "unite": "n",
+    "methode": "reference",
+    "photos": [
+     "oeillet-standard:770c1516"
+    ],
+    "conf": "B",
+    "ref": "Flore (Dianthus caryophyllus L.) : calice tubuleux, 4 bractéoles à la base, pétales onguiculés à limbe denté, feuilles opposées linéaires glauques, nœuds renflés : 4 bractéoles (calicule) en 2 paires",
+    "code": "DIAN_CAL.brN",
+    "retenu": 4
+   },
+   "disposition": {
+    "type": {
+     "v": "opposees",
+     "methode": "oeil",
+     "conf": "C",
+     "photos": [
+      "oeillet-standard:770c1516"
+     ]
+    },
+    "verticilles": {
+     "v": 2,
+     "unite": "n",
+     "methode": "oeil",
+     "photos": [
+      "oeillet-standard:770c1516"
+     ],
+     "conf": "C",
+     "ecart": {
+      "type": "confirme",
+      "texte": "deux paires opposées (brN 4, la seconde paire décalée de .12 rad)"
+     }
+    }
+   },
+   "contour": {
+    "base": {
+     "v": "arrondie",
+     "methode": "oeil",
+     "conf": "C",
+     "photos": [
+      "oeillet-standard:770c1516"
+     ]
+    },
+    "pointe": {
+     "type": {
+      "v": "mucronee",
+      "methode": "oeil",
+      "conf": "C",
+      "photos": [
+       "oeillet-standard:770c1516"
+      ]
+     }
+    },
+    "L_sur_l": {
+     "v": 1.2,
+     "unite": "ratio",
+     "methode": "oeil",
+     "photos": [
+      "oeillet-standard:770c1516"
+     ],
+     "conf": "C",
+     "code": "DIAN_CAL.brW",
+     "retenu": 0.5,
+     "ecart": {
+      "type": "divergence",
+      "texte": "demi-largeur .5 rad sur le tube, ovale tiré en pointe ; L/l à l'œil sur planche, pas une constante"
+     }
+    }
+   },
+   "taille": {
+    "longueur": {
+     "v": 0.2,
+     "unite": "ratio",
+     "methode": "oeil",
+     "photos": [
+      "oeillet-standard:770c1516"
+     ],
+     "conf": "C",
+     "note": "environ le quart du tube du calice (p054 : bractéoles collées à la base)",
+     "code": "DIAN_CAL.brL",
+     "retenu": 0.24,
+     "ecart": {
+      "type": "confirme",
+      "texte": "un quart du tube (.24)"
+     }
+    }
+   },
+   "courbure": {
+    "transversale": {
+     "type": {
+      "v": "carene",
+      "methode": "oeil",
+      "conf": "C",
+      "photos": [
+       "oeillet-standard:770c1516"
+      ]
+     }
+    }
+   },
+   "matiere": {
+    "epaisseur": {
+     "v": "moyenne",
+     "methode": "oeil",
+     "conf": "C",
+     "photos": [
+      "oeillet-standard:770c1516"
+     ]
+    },
+    "texture": {
+     "v": "glauque",
+     "methode": "oeil",
+     "conf": "C",
+     "photos": [
+      "oeillet-standard:770c1516"
+     ]
+    }
+   },
+   "nervation": {
+    "type": {
+     "v": "parallele",
+     "methode": "oeil",
+     "conf": "C",
+     "photos": [
+      "oeillet-standard:770c1516"
+     ]
+    }
+   },
+   "zones": [
+    {
+     "zone": "corps",
+     "etendue": {
+      "v": [
+       0,
+       1
+      ],
+      "u": [
+       0,
+       1
+      ],
+      "methode": "oeil",
+      "conf": "C",
+      "photos": [
+       "oeillet-standard:c88d33de",
+       "oeillet-standard:770c1516"
+      ],
+      "ecart": {
+       "type": "confirme",
+       "texte": "toute la bractéole, vert du calice un peu assombri"
+      }
+     },
+     "motif": {
+      "type": "vert-bleu glauque"
+     },
+     "bord": "net"
+    }
+   ],
+   "jointures": [
+    {
+     "vers": "calice",
+     "type": "insertion",
+     "params": {}
+    }
+   ],
+   "stades": {
+    "ouvert": {
+     "v": "inchangé",
+     "methode": "oeil",
+     "conf": "C",
+     "photos": [
+      "oeillet-standard:770c1516"
+     ]
+    }
+   }
+  },
+  "bouton": {
+   "role": "bouton",
+   "disposition": {
+    "type": {
+     "v": "verticilles",
+     "methode": "oeil",
+     "conf": "C",
+     "photos": [
+      "oeillet-standard:fc838b12",
+      "oeillet-standard:3f8ac182"
+     ]
+    },
+    "note": "calice fermé sur les pétales (un bouton non ouvert n'a que le calice visible)"
+   },
+   "contour": {
+    "base": {
+     "v": "arrondie",
+     "methode": "oeil",
+     "conf": "C",
+     "photos": [
+      "oeillet-standard:fc838b12",
+      "oeillet-standard:3f8ac182"
+     ]
+    },
+    "pointe": {
+     "type": {
+      "v": "aigue",
+      "methode": "oeil",
+      "conf": "C",
+      "photos": [
+       "oeillet-standard:fc838b12",
+       "oeillet-standard:3f8ac182"
+      ]
+     }
+    },
+    "L_sur_l": {
+     "v": 1.2,
+     "plage": [
+      1.1,
+      1.4
+     ],
+     "unite": "ratio",
+     "n": 3,
+     "methode": "segmente",
+     "photos": [
+      "oeillet-standard:4fde7ed2",
+      "oeillet-standard:3f8ac182",
+      "oeillet-standard:4238e494"
+     ],
+     "conf": "C",
+     "note": "inverse de targets bouton.hw (0.831)",
+     "ecart": {
+      "type": "divergence",
+      "texte": "rendu du bouton .06 de profil : H/L 1,51 (img.py pair, relais 14) contre 1,50 sur la photo 29 (relais 3 ; au relais 14 le pair n'y découpe pas le bouton vert sur fond vert) ; fit.py donne 1,72 (bractéoles comprises) ; le 1,2 de la fiche est l'inverse de bouton.hw, cible douteuse"
+     }
+    }
+   },
+   "taille": {
+    "rapport_hw": {
+     "v": 0.831,
+     "plage": [
+      0.73,
+      0.93
+     ],
+     "unite": "ratio",
+     "n": 3,
+     "methode": "segmente",
+     "photos": [
+      "oeillet-standard:4fde7ed2",
+      "oeillet-standard:3f8ac182",
+      "oeillet-standard:4238e494"
+     ],
+     "conf": "C",
+     "note": "targets bouton.hw : hauteur / largeur du bouton",
+     "ecart": {
+      "type": "divergence",
+      "texte": "targets bouton.hw .83 (H/L < 1 pour un bouton ovoïde pointu : silhouette mal découpée) ; photo t029 mesurée 1,50 (relais 3), rendu 1,51 (img.py pair) et 1,72 (fit.py, bractéoles comprises), relais 14"
+     }
+    }
+   },
+   "matiere": {
+    "epaisseur": {
+     "v": "epaisse",
+     "methode": "oeil",
+     "conf": "C",
+     "photos": [
+      "oeillet-standard:fc838b12"
+     ]
+    },
+    "texture": {
+     "v": "cire",
+     "methode": "oeil",
+     "conf": "C",
+     "photos": [
+      "oeillet-standard:fc838b12",
+      "oeillet-standard:3f8ac182"
+     ]
+    },
+    "brillance": {
+     "v": 0.35,
+     "unite": "ratio",
+     "methode": "oeil",
+     "photos": [
+      "oeillet-standard:fc838b12"
+     ],
+     "conf": "C",
+     "code": "DIAN_CAL.light.ks",
+     "retenu": 0.12,
+     "ecart": {
+      "type": "divergence",
+      "texte": "ks du calice (moteur), pas une part"
+     }
+    }
+   },
+   "zones": [
+    {
+     "zone": "corps",
+     "etendue": {
+      "v": [
+       0,
+       1
+      ],
+      "u": [
+       0,
+       1
+      ],
+      "methode": "oeil",
+      "conf": "C",
+      "photos": [
+       "oeillet-standard:c88d33de",
+       "oeillet-standard:770c1516"
+      ],
+      "ecart": {
+       "type": "confirme",
+       "texte": "le bouton n'est que le calice : tube entier"
+      }
+     },
+     "motif": {
+      "type": "vert à nervures longitudinales"
+     },
+     "bord": "fondu"
+    },
+    {
+     "zone": "pointe",
+     "etendue": {
+      "v": [
+       0.85,
+       1
+      ],
+      "u": [
+       0,
+       1
+      ],
+      "methode": "oeil",
+      "conf": "C",
+      "photos": [
+       "oeillet-standard:c88d33de",
+       "oeillet-standard:770c1516"
+      ],
+      "ecart": {
+       "type": "confirme",
+       "texte": "pointes colorées des pétales qui sortent entre les dents dressées dès op .15 (stade .2) ; au bouton .06 les cinq dents jointives, sans fente (fiche : tube fermé, dents serrées ; relais 14)"
+      }
+     },
+     "motif": {
+      "type": "pointe des pétales parfois visible, colorée"
+     },
+     "bord": "fondu"
+    }
+   ],
+   "jointures": [
+    {
+     "vers": "tige",
+     "type": "col",
+     "params": {}
+    }
+   ],
+   "stades": {
+    "bouton": {
+     "v": "ovoïde vert fermé",
+     "methode": "oeil",
+     "conf": "C",
+     "photos": [
+      "oeillet-standard:fc838b12",
+      "oeillet-standard:3f8ac182"
+     ]
+    },
+    "gonfle": {
+     "v": "renflé, la pointe des pétales dépasse du calice",
+     "methode": "oeil",
+     "conf": "C",
+     "photos": [
+      "oeillet-standard:4238e494"
+     ]
+    }
+   }
+  },
+  "tige": {
+   "role": "tige",
+   "taille": {
+    "largeur": {
+     "v": 0.152,
+     "plage": [
+      0.0,
+      0.33
+     ],
+     "unite": "ratio",
+     "n": 5,
+     "methode": "segmente",
+     "photos": [
+      "oeillet-standard:4fde7ed2",
+      "oeillet-standard:c88d33de",
+      "oeillet-standard:3f8ac182",
+      "oeillet-standard:02bb7133",
+      "oeillet-standard:4238e494"
+     ],
+     "conf": "C",
+     "note": "targets tige.stem : largeur de tige / largeur de fleur (sd 0.177)"
+    },
+    "tige_sur_fleur": {
+     "v": 0.067,
+     "unite": "ratio",
+     "n": 1,
+     "methode": "segmente",
+     "photos": [
+      "oeillet-standard:c88d33de"
+     ],
+     "conf": "C",
+     "note": "organ.py stem p050 --head 664 --green : 44,6 px sous la fleur, entre deux nœuds"
+    },
+    "L_sur_l": {
+     "v": 4.5,
+     "unite": "ratio",
+     "n": 1,
+     "methode": "segmente",
+     "photos": [
+      "oeillet-standard:c88d33de"
+     ],
+     "conf": "C",
+     "note": "segment visible entre deux nœuds, p050"
+    }
+   },
+   "courbure": {
+    "profil": {
+     "v": "droite, légèrement arquée",
+     "methode": "oeil",
+     "conf": "C",
+     "photos": [
+      "oeillet-standard:c88d33de",
+      "oeillet-standard:02bb7133"
+     ]
+    },
+    "fleche": {
+     "v": 0.087,
+     "unite": "ratio",
+     "n": 1,
+     "methode": "segmente",
+     "photos": [
+      "oeillet-standard:c88d33de"
+     ],
+     "conf": "C",
+     "note": "flèche / longueur, p050"
+    }
+   },
+   "matiere": {
+    "epaisseur": {
+     "v": "moyenne",
+     "methode": "oeil",
+     "conf": "C",
+     "photos": [
+      "oeillet-standard:c88d33de"
+     ]
+    },
+    "texture": {
+     "v": "glauque",
+     "methode": "oeil",
+     "conf": "C",
+     "photos": [
+      "oeillet-standard:c88d33de",
+      "oeillet-standard:448a9d47"
+     ]
+    },
+    "brillance": {
+     "v": 0.2,
+     "unite": "ratio",
+     "methode": "oeil",
+     "photos": [
+      "oeillet-standard:c88d33de"
+     ],
+     "conf": "C"
+    }
+   },
+   "zones": [
+    {
+     "zone": "corps",
+     "etendue": {
+      "v": [
+       0,
+       1
+      ],
+      "u": [
+       0,
+       1
+      ],
+      "methode": "oeil",
+      "conf": "C",
+      "photos": [
+       "oeillet-standard:c88d33de",
+       "oeillet-standard:770c1516"
+      ]
+     },
+     "motif": {
+      "type": "vert glauque, nœuds renflés plus clairs",
+      "direction": "longitudinale"
+     },
+     "bord": "net"
+    }
+   ],
+   "jointures": [
+    {
+     "vers": "feuille",
+     "type": "noeud",
+     "params": {
+      "note": "feuilles opposées, gaine soudée autour du nœud renflé"
+     }
+    },
+    {
+     "vers": "calice",
+     "type": "col",
+     "params": {}
+    }
+   ],
+   "section": {
+    "type": {
+     "v": "ronde",
+     "methode": "oeil",
+     "conf": "C",
+     "photos": [
+      "oeillet-standard:c88d33de"
+     ]
+    },
+    "effilement": {
+     "v": 1.16,
+     "unite": "ratio",
+     "n": 1,
+     "methode": "segmente",
+     "photos": [
+      "oeillet-standard:c88d33de"
+     ],
+     "conf": "C",
+     "note": "bas / haut, organ.py stem p050 (cadre 820,820,1100,1440)"
+    },
+    "poils": {
+     "v": "aucun",
+     "methode": "oeil",
+     "conf": "C",
+     "photos": [
+      "oeillet-standard:c88d33de"
+     ]
+    }
+   },
+   "couleur": {
+    "v": [
+     "#292d1f",
+     "#2c694b"
+    ],
+    "plage": [
+     "#292d1f",
+     "#2c694b"
+    ],
+    "unite": "hex",
+    "n": 2,
+    "methode": "segmente",
+    "photos": [
+     "oeillet-standard:c88d33de",
+     "oeillet-standard:770c1516"
+    ],
+    "conf": "C",
+    "note": "corps de tige, organ.py : p050 et p054"
+   },
+   "stades": {
+    "ouvert": {
+     "v": "droite, nœuds visibles",
+     "methode": "oeil",
+     "conf": "C",
+     "photos": [
+      "oeillet-standard:c88d33de"
+     ]
+    },
+    "fane": {
+     "v": "le col sous la fleur s'arque",
+     "methode": "oeil",
+     "conf": "C",
+     "photos": [
+      "oeillet-standard:c0138b75"
+     ]
+    }
+   }
+  },
+  "feuille": {
+   "role": "feuille",
+   "nombre": {
+    "v": 2,
+    "unite": "n",
+    "methode": "reference",
+    "conf": "A",
+    "ref": "Flore (Dianthus caryophyllus L.) : calice tubuleux, 4 bractéoles à la base, pétales onguiculés à limbe denté, feuilles opposées linéaires glauques, nœuds renflés : feuilles opposées par paire à chaque nœud"
+   },
+   "disposition": {
+    "type": {
+     "v": "opposees",
+     "methode": "oeil",
+     "conf": "C",
+     "photos": [
+      "oeillet-standard:c88d33de",
+      "oeillet-standard:86441df5"
+     ]
+    },
+    "note": "paires successives croisées à 90 degrés"
+   },
+   "contour": {
+    "base": {
+     "v": "engainante",
+     "methode": "oeil",
+     "conf": "C",
+     "photos": [
+      "oeillet-standard:c88d33de"
+     ]
+    },
+    "pointe": {
+     "type": {
+      "v": "aigue",
+      "methode": "oeil",
+      "conf": "C",
+      "photos": [
+       "oeillet-standard:c88d33de",
+       "oeillet-standard:86441df5"
+      ]
+     }
+    },
+    "L_sur_l": {
+     "v": 6.8,
+     "plage": [
+      6.26,
+      7.32
+     ],
+     "unite": "ratio",
+     "n": 2,
+     "methode": "segmente",
+     "photos": [
+      "oeillet-standard:c88d33de",
+      "oeillet-standard:86441df5"
+     ],
+     "conf": "B",
+     "note": "limbe L/l, organ.py leaf --green (p050 6.26 ; p037 7.32) ; feuille effilée en lanière"
+    },
+    "marge": {
+     "type": {
+      "v": "entiere",
+      "methode": "oeil",
+      "conf": "C",
+      "photos": [
+       "oeillet-standard:c88d33de",
+       "oeillet-standard:86441df5"
+      ]
+     }
+    }
+   },
+   "taille": {
+    "longueur": {
+     "v": 0.2,
+     "unite": "ratio",
+     "methode": "hypothese",
+     "conf": "D",
+     "note": "à fixer par le modeleur (flore : 5 à 15 cm sur tige de 40 à 80 cm)"
+    },
+    "angle_tige": {
+     "v": 68.25,
+     "plage": [
+      51.7,
+      84.8
+     ],
+     "unite": "deg",
+     "n": 2,
+     "methode": "segmente",
+     "photos": [
+      "oeillet-standard:fc838b12",
+      "oeillet-standard:86441df5"
+     ],
+     "conf": "C",
+     "repere": "tige",
+     "note": "targets feuille.leafang"
+    }
+   },
+   "courbure": {
+    "longitudinale": {
+     "profil": {
+      "v": "arquee",
+      "methode": "oeil",
+      "conf": "C",
+      "photos": [
+       "oeillet-standard:c88d33de",
+       "oeillet-standard:86441df5"
+      ]
+     }
+    },
+    "transversale": {
+     "type": {
+      "v": "carene",
+      "methode": "oeil",
+      "conf": "C",
+      "photos": [
+       "oeillet-standard:86441df5"
+      ]
+     }
+    }
+   },
+   "matiere": {
+    "epaisseur": {
+     "v": "moyenne",
+     "methode": "oeil",
+     "conf": "C",
+     "photos": [
+      "oeillet-standard:86441df5"
+     ]
+    },
+    "texture": {
+     "v": "glauque",
+     "methode": "oeil",
+     "conf": "C",
+     "photos": [
+      "oeillet-standard:448a9d47",
+      "oeillet-standard:7bdbc81d"
+     ]
+    },
+    "brillance": {
+     "v": 0.2,
+     "unite": "ratio",
+     "methode": "oeil",
+     "photos": [
+      "oeillet-standard:448a9d47"
+     ],
+     "conf": "C"
+    },
+    "grain": {
+     "v": "lisse",
+     "methode": "oeil",
+     "conf": "C",
+     "photos": [
+      "oeillet-standard:86441df5"
+     ]
+    }
+   },
+   "nervation": {
+    "type": {
+     "v": "parallele",
+     "methode": "oeil",
+     "conf": "C",
+     "photos": [
+      "oeillet-standard:86441df5"
+     ]
+    },
+    "relief": {
+     "v": "creux",
+     "methode": "oeil",
+     "conf": "C",
+     "photos": [
+      "oeillet-standard:86441df5"
+     ]
+    },
+    "visible": {
+     "v": "dos",
+     "methode": "oeil",
+     "conf": "C",
+     "photos": [
+      "oeillet-standard:86441df5"
+     ]
+    },
+    "couleur": {
+     "v": "plus-claire",
+     "methode": "oeil",
+     "conf": "C",
+     "photos": [
+      "oeillet-standard:86441df5"
+     ]
+    }
+   },
+   "zones": [
+    {
+     "zone": "corps",
+     "etendue": {
+      "v": [
+       0,
+       1
+      ],
+      "u": [
+       0,
+       1
+      ],
+      "methode": "oeil",
+      "conf": "C",
+      "photos": [
+       "oeillet-standard:c88d33de",
+       "oeillet-standard:770c1516"
+      ]
+     },
+     "motif": {
+      "type": "vert bleuté glauque, nervure médiane plus claire"
+     },
+     "bord": "fondu"
+    }
+   ],
+   "jointures": [
+    {
+     "vers": "tige",
+     "type": "gaine",
+     "params": {
+      "petiole": {
+       "v": 0.02,
+       "unite": "ratio",
+       "n": 1,
+       "methode": "segmente",
+       "photos": [
+        "oeillet-standard:c88d33de"
+       ],
+       "conf": "C",
+       "note": "pétiole / longueur : feuille sessile"
+      }
+     }
+    }
+   ],
+   "section": {
+    "type": {
+     "v": "plate",
+     "methode": "oeil",
+     "conf": "C",
+     "photos": [
+      "oeillet-standard:86441df5"
+     ]
+    },
+    "diametre": {
+     "v": 0.4,
+     "unite": "cm",
+     "methode": "reference",
+     "conf": "C",
+     "ref": "Flore (Dianthus caryophyllus L.) : calice tubuleux, 4 bractéoles à la base, pétales onguiculés à limbe denté, feuilles opposées linéaires glauques, nœuds renflés : largeur 2 à 4 mm"
+    }
+   },
+   "couleur": {
+    "v": [
+     "#313a27",
+     "#517643"
+    ],
+    "plage": [
+     "#313a27",
+     "#517643"
+    ],
+    "unite": "hex",
+    "n": 2,
+    "methode": "segmente",
+    "photos": [
+     "oeillet-standard:c88d33de",
+     "oeillet-standard:86441df5"
+    ],
+    "conf": "C",
+    "note": "tons de corps, organ.py leaf (p050 ombre, p037 contre-jour)"
+   },
+   "stades": {
+    "ouvert": {
+     "v": "arquées, glauques",
+     "methode": "oeil",
+     "conf": "C",
+     "photos": [
+      "oeillet-standard:c88d33de"
+     ]
+    },
+    "fane": {
+     "v": "s'enroulent et jaunissent",
+     "methode": "oeil",
+     "conf": "C",
+     "photos": [
+      "oeillet-standard:c0138b75"
+     ]
+    }
+   }
+  },
+  "pedicelle": {
+   "role": "pedicelle",
+   "taille": {
+    "longueur": {
+     "v": 0.15,
+     "unite": "ratio",
+     "methode": "oeil",
+     "photos": [
+      "oeillet-standard:770c1516",
+      "oeillet-standard:7bdbc81d"
+     ],
+     "conf": "C",
+     "note": "portion de tige nue sous le calice (boutons latéraux)"
+    }
+   },
+   "courbure": {
+    "profil": {
+     "v": "droite, tenue de côté sur les boutons latéraux",
+     "methode": "oeil",
+     "conf": "C",
+     "photos": [
+      "oeillet-standard:7bdbc81d"
+     ]
+    }
+   },
+   "matiere": {
+    "suit": "tige.matiere"
+   },
+   "zones": {
+    "suit": "tige.zones"
+   },
+   "jointures": [
+    {
+     "vers": "calice",
+     "type": "col",
+     "params": {}
+    }
+   ],
+   "section": {
+    "suit": "tige.section"
+   },
+   "stades": {
+    "ouvert": {
+     "v": "inchangé",
+     "methode": "oeil",
+     "conf": "C",
+     "photos": [
+      "oeillet-standard:770c1516"
+     ]
+    }
+   }
+  }
+ },
+ "varietes": {
+  "cornelia": {
+   "forme": "non-mesure"
+  },
+  "etincelant": {
+   "forme": "non-mesure"
+  },
+  "jeanne-dionis": {
+   "forme": "non-mesure"
+  },
+  "magenta": {
+   "forme": "non-mesure"
+  },
+  "mondrian": {
+   "forme": "non-mesure"
+  }
+ },
+ "stades": {
+  "table": [
+   {
+    "stade": "bouton",
+    "jours": {
+     "v": 14,
+     "plage": [
+      10,
+      21
+     ],
+     "unite": "jours",
+     "methode": "reference",
+     "conf": "D",
+     "ref": "durée de vie en vase usuelle de l'œillet coupé, 2 à 3 semaines (usage horticole ; à confirmer par catalogue/fanaison)"
+    },
+    "op": {
+     "v": 0.08,
+     "plage": [
+      0.08,
+      0.08
+     ],
+     "n": 1,
+     "methode": "segmente",
+     "photos": [
+      "oeillet-standard:fc838b12",
+      "oeillet-standard:3f8ac182",
+      "oeillet-standard:7bdbc81d"
+     ],
+     "conf": "C",
+     "note": "op fixés par targets.json (bouton 0.08, ouverte 0.9)"
+    },
+    "wl": {
+     "v": 0.0,
+     "plage": [
+      0,
+      0
+     ],
+     "methode": "hypothese",
+     "conf": "D"
+    },
+    "photos": [
+     "oeillet-standard:fc838b12",
+     "oeillet-standard:3f8ac182",
+     "oeillet-standard:7bdbc81d"
+    ],
+    "statut": "mesure"
+   },
+   {
+    "stade": "gonfle",
+    "jours": {
+     "v": 14,
+     "plage": [
+      10,
+      21
+     ],
+     "unite": "jours",
+     "methode": "reference",
+     "conf": "D",
+     "ref": "durée de vie en vase usuelle de l'œillet coupé, 2 à 3 semaines (usage horticole ; à confirmer par catalogue/fanaison)"
+    },
+    "op": {
+     "v": 0.30000000000000004,
+     "plage": [
+      0.2,
+      0.4
+     ],
+     "methode": "hypothese",
+     "conf": "D"
+    },
+    "wl": {
+     "v": 0.0,
+     "plage": [
+      0,
+      0
+     ],
+     "methode": "hypothese",
+     "conf": "D"
+    },
+    "photos": [
+     "oeillet-standard:4238e494"
+    ],
+    "statut": "hypothese"
+   },
+   {
+    "stade": "entrouvert",
+    "jours": {
+     "v": 14,
+     "plage": [
+      10,
+      21
+     ],
+     "unite": "jours",
+     "methode": "reference",
+     "conf": "D",
+     "ref": "durée de vie en vase usuelle de l'œillet coupé, 2 à 3 semaines (usage horticole ; à confirmer par catalogue/fanaison)"
+    },
+    "op": {
+     "v": 0.55,
+     "plage": [
+      0.4,
+      0.7
+     ],
+     "methode": "hypothese",
+     "conf": "D"
+    },
+    "wl": {
+     "v": 0.0,
+     "plage": [
+      0,
+      0
+     ],
+     "methode": "hypothese",
+     "conf": "D"
+    },
+    "photos": [
+     "oeillet-standard:02bb7133",
+     "oeillet-standard:4238e494"
+    ],
+    "statut": "hypothese"
+   },
+   {
+    "stade": "ouvert",
+    "jours": {
+     "v": 14,
+     "plage": [
+      10,
+      21
+     ],
+     "unite": "jours",
+     "methode": "reference",
+     "conf": "D",
+     "ref": "durée de vie en vase usuelle de l'œillet coupé, 2 à 3 semaines (usage horticole ; à confirmer par catalogue/fanaison)"
+    },
+    "op": {
+     "v": 0.9,
+     "plage": [
+      0.7,
+      0.9
+     ],
+     "n": 1,
+     "methode": "segmente",
+     "photos": [
+      "oeillet-standard:c88d33de",
+      "oeillet-standard:770c1516"
+     ],
+     "conf": "C",
+     "note": "op fixés par targets.json (bouton 0.08, ouverte 0.9)"
+    },
+    "wl": {
+     "v": 0.0,
+     "plage": [
+      0,
+      0
+     ],
+     "methode": "hypothese",
+     "conf": "D"
+    },
+    "photos": [
+     "oeillet-standard:c88d33de",
+     "oeillet-standard:770c1516"
+    ],
+    "statut": "mesure"
+   },
+   {
+    "stade": "plein",
+    "jours": {
+     "v": 14,
+     "plage": [
+      10,
+      21
+     ],
+     "unite": "jours",
+     "methode": "reference",
+     "conf": "D",
+     "ref": "durée de vie en vase usuelle de l'œillet coupé, 2 à 3 semaines (usage horticole ; à confirmer par catalogue/fanaison)"
+    },
+    "op": {
+     "v": 0.95,
+     "plage": [
+      0.9,
+      1
+     ],
+     "methode": "hypothese",
+     "conf": "D"
+    },
+    "wl": {
+     "v": 0.05,
+     "plage": [
+      0,
+      0.1
+     ],
+     "methode": "hypothese",
+     "conf": "D"
+    },
+    "photos": [
+     "oeillet-standard:fd0aaf33",
+     "oeillet-standard:b5eff015"
+    ],
+    "statut": "hypothese"
+   },
+   {
+    "stade": "declin",
+    "jours": {
+     "v": 14,
+     "plage": [
+      10,
+      21
+     ],
+     "unite": "jours",
+     "methode": "reference",
+     "conf": "D",
+     "ref": "durée de vie en vase usuelle de l'œillet coupé, 2 à 3 semaines (usage horticole ; à confirmer par catalogue/fanaison)"
+    },
+    "op": {
+     "v": 0.95,
+     "plage": [
+      0.9,
+      1
+     ],
+     "methode": "hypothese",
+     "conf": "D"
+    },
+    "wl": {
+     "v": 0.5,
+     "plage": [
+      0.3,
+      0.7
+     ],
+     "methode": "hypothese",
+     "conf": "D"
+    },
+    "photos": [
+     "oeillet-standard:c0138b75"
+    ],
+    "statut": "hypothese"
+   },
+   {
+    "stade": "fane",
+    "jours": {
+     "v": 14,
+     "plage": [
+      10,
+      21
+     ],
+     "unite": "jours",
+     "methode": "reference",
+     "conf": "D",
+     "ref": "durée de vie en vase usuelle de l'œillet coupé, 2 à 3 semaines (usage horticole ; à confirmer par catalogue/fanaison)"
+    },
+    "op": {
+     "v": 0.95,
+     "plage": [
+      0.9,
+      1
+     ],
+     "methode": "hypothese",
+     "conf": "D"
+    },
+    "wl": {
+     "v": 0.9,
+     "plage": [
+      0.8,
+      1
+     ],
+     "methode": "hypothese",
+     "conf": "D"
+    },
+    "photos": [
+     "oeillet-standard:c0138b75"
+    ],
+    "statut": "hypothese"
+   }
+  ]
+ },
+ "rendu": {},
+ "questions": [
+  {
+   "id": "Q1",
+   "organe": "coeur",
+   "question": "Cœur invisible sur la fleur double : le dessiner (étamines visibles à l'entrouvert) ou non ?",
+   "proposition": "Ne pas le dessiner (dessinee false) ; creux sombre de 0,1 R0 au centre."
+  },
+  {
+   "id": "Q2",
+   "organe": "petale.externe",
+   "question": "Nombre exact de pétales et de rangs non compté, photos trop froissées (valeurs à l'œil).",
+   "proposition": "30 pétales en 4 rangs ; le modeleur ajuste au rendu."
+  },
+  {
+   "id": "Q3",
+   "organe": "feuille",
+   "question": "Longueur de la feuille non mesurée (aucune échelle sur les photos).",
+   "proposition": "0,2 de la tige ; à fixer d'après la flore (5 à 15 cm)."
+  },
+  {
+   "id": "Q4",
+   "organe": "stades",
+   "question": "Jours de vase et op/wl de gonfle, entrouvert, plein, declin, fane non mesurés (stades en hypothèse).",
+   "proposition": "Prendre catalogue/fanaison pour les jours ; interpoler op/wl entre bouton et ouvert."
+  },
+  {
+   "id": "Q5",
+   "organe": "varietes",
+   "question": "Les cinq coloris n'ont pas été comparés à la forme de l'espèce.",
+   "proposition": "Les laisser en non-mesure ; seule la couleur change."
+  }
+ ]
+}
