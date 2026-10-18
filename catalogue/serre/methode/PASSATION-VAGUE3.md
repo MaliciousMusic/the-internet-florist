@@ -294,3 +294,28 @@ couleur, coloris retirés ou ajoutés (`late`).
   la vague suivante, à la place de l'ordre du §8 quand elle existe.
 - **Après chaque publication**, ajouter le lot et ses `sid` en tête de `VERSIONS` dans `inventaire/inv.js` (sinon la sorte
   apparaît en « Refait (autre) »), et tenir `CHANTIER` et `SUITE` à jour avec les §7 et §8.
+
+## 13. Audit V4 fait (18 octobre, nuit) : où en est la vague 4
+
+- **Audit** : `catalogue/serre/methode/AUDIT-V4.md` (constats, améliorations atomiques classées §7, réponses du porteur à la fin),
+  notes détaillées `audit-v4/notes-*.md`, planches avant/après `audit-v4/planches/` des chantiers. Mémoire : décisions du porteur.
+- **Fusionné dans main et poussé** : `outils-v4` (vues des paires par famille, paires 1 100 px, fourchettes par sorte, empreinte
+  du juge, verdict des témoins qui bloque `publier.sh fin`, juge sévère et anti-ancrage, `svtest &axes=1`) ; `matiere-v4`
+  (`m.cross`, `m.transmit` dans `svDraw`, en option, démonstration `svfx=cross,trans`) ; `noeuds-v4` (`c.sv.nodes`,
+  `c.sv.section`, `c.sv.bloom`, `c.sv.join` dans `svStemLine`, démonstration `tige=1`) ; `outils-v4b` (étape `fiche` avant
+  `forme`, P5 à P8, P11, P13, P14, O9, ordre des modules de `mkapp.sh` stable). Selftest 156/156, anémone 0,00 % après chaque fusion.
+- **Fiche morphologique** : schéma `catalogue/serre/methode/fiche/SCHEMA.md`, pilote `catalogue/serre/fiches/anemone-coronaria.json`,
+  contrôle `python fleur/fiche.py check <sid>`.
+- **Scripts communs** sur 8805 (porteur) ; `shot_p.sh` reste utilisable.
+- **Les nouvelles matières ne servent qu'aux sortes nouvelles** ; les sortes publiées ne changent pas (porteur).
+- **En cours** : premier vrai passage de la nouvelle chaîne sur `oeillet-standard`, copie `ch/oeillet`, journal
+  `ch/oeillet/refcache/pipe-run.log`, état `ch/oeillet/refcache/oeillet-standard/pipe-state.json`. Commande de reprise :
+  `cd ch/oeillet && python fleur/pipe.py run oeillet-standard --taxon "Dianthus caryophyllus" --genus Dianthus --late 15 --opus-effort xhigh --cap 40`.
+  Recensement : 11 cultivars, C 6, D 5 (questions). À relire avant publication : planches de comparaison, verdict du juge, gros
+  plans D 800 (tête de face, profil, fané, un blanc, un bicolore), nœuds de tige contre photo. Publication par `publier.sh` en
+  nommant aussi les modules du moteur (`y1.js`, `y3.js`, `y3-orchidee.js`, `y3-fx.js`, `l0.js`, `y3-plante.js`) s'ils ne sont pas
+  encore dans `demo/src`.
+- **Reste de l'audit** (après l'œillet) : R3 rosette en dégradé (sortes nouvelles), R4 à R7, R9, R10 (col courbé du fané en
+  bouquet, composition libre : porteur), R13 essai d'ombre sur 3 bouquets, O2 à O8. Questions encore ouvertes des chantiers : seuils
+  ΔE 15 et blancs (dC ≤ 6), groupes de photos admis (hybride de coupe d'abord), `decor/scene/mkengine.sh` dépend de la locale.
+- Quota : 80 % au départ de l'œillet (plafond relevé à 100 % cette semaine par le porteur ; remise le 22 octobre à 4 h).

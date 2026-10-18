@@ -42,7 +42,7 @@ EFFORT = {'haiku': 'low', 'sonnet': 'medium', 'opus': 'high'}  # opus xhigh -> h
 # RATE-OEILLET M1: one complete flower for 8 M at most (owner, 2026-10-18), each step cut at its own share; --caps forme=4,plante=1.5 overrides.
 # A step's spend is summed over every run of the sort (pipe-bill.json): a resumed step keeps what it already spent.
 STEP_CAP = {'census': .2, 'refs': .15, 'coloris': .1, 'targets': .05, 'fiche': .25, 'forme': 3.0, 'fit': .2, 'plante': 1.0, 'finition': .8,
-            'temoins': .05, 'comparaison': .3, 'juge': .4, 'qa': .1, 'planches': .1}
+            'temoins': .05, 'comparaison': .6, 'juge': .4, 'qa': .1, 'planches': .1}  # comparaison .3 -> .6: one Opus call of 40 turns is .6 (oeillet)
 CAP_DEFAULT = 8.0
 NL = chr(10)
 CHECK_FAILS = 2  # a done check that fails this many times in a step stops the step (a question to the owner), never a fresh relay
@@ -860,6 +860,14 @@ def check_census(ctx):
     """a cultivar at A, B or C per bouquet SKU, free of brand; a SKU at D, not found or under a brand is a question (questions.md), never a block: a brand keeps a
     generic colour name (BONNES-PRATIQUES 4.9), never the brand's name"""
     rows = census_table(ctx)
+    cen = jload(ctx.rc + '/census/census.json', {}) or {}
+    if not rows and cen and (cen.get('photos_taxon') or []):
+        # a species sold by its forms, without registered cultivars (gloriosa, 2026-10-18: Wikidata, Commons, iNaturalist and GBIF give none): the
+        # catalogue's colourways stay, a question for the owner, never a block (OK_LEVELS: only D is a question)
+        set_questions(ctx, 'census-vide', 'Recensement sans cultivar enregistré (non bloquant)',
+                      ['%s : aucune des sources ne nomme de cultivar ; %d photos du taxon. Proposition : garder les coloris du catalogue, nommés par leur '
+                       'couleur, au niveau D, et documenter les formes botaniques au fil des photos' % (ctx.taxon, len(cen.get('photos_taxon') or []))])
+        return {'ok': True, 'msg': '0 cultivar registered, %d taxon photos: the catalogue colourways stay (question, census-vide)' % len(cen.get('photos_taxon') or [])}
     if not rows:
         return {'ok': False, 'msg': 'census.json missing or without cultivars'}
     lv = {k: sum(1 for r in rows if r['niveau'] == k) for k in 'ABCD'}
@@ -2264,7 +2272,9 @@ def cw_verdict(text):
 def colour_check(ctx, tag='couleur'):
     """every colourway of coloris.json rendered open (.85) face on at D 200, one column, CW_CHUNK rows a sheet; cwmed.py against its corps.
     (ok, message, rows); the rows go to refcache/<sid>/couleur.json and couleur.md"""
-    cws = [e for e in jload(ctx.rc + '/coloris.json', []) or [] if re.match(r'^#[0-9a-fA-F]{6}$', str(e.get('corps') or ''))]
+    # a measure that caught the background (cw_usable) is never a target: finition painted the off-white Cornelia slate grey to meet its
+    # foliage (oeillet, 2026-10-18); it stays a question of the coloris step
+    cws = [e for e in jload(ctx.rc + '/coloris.json', []) or [] if re.match(r'^#[0-9a-fA-F]{6}$', str(e.get('corps') or '')) and cw_usable(e)]
     if not cws and not ctx.dry:
         return False, 'no measured colourway in coloris.json (corps)', []
     rows, miss = [], []
