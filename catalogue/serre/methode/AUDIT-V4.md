@@ -192,7 +192,7 @@ pas.
 | P10 | `temoins.sh` écrit un verdict vert/rouge, `publier.sh fin` refuse le rouge | cas rouge fabriqué | rtest existants | en cours |
 | P9 | juge : 60 tours, BONNES-PRATIQUES lues, tableau du modeleur après ses propres verdicts | selftest | selftest | en cours |
 | P12 | appariement `cw-*` exact, paire manquante dite en question | « rose » ne prend plus « rose-vif » | — | en cours |
-| P14 | `pipe.py models` sur le binaire actuel avec `--effort xhigh` | les 3 appels répondent, `effort` facturé | — | à faire (5 k eq) |
+| P14 | `pipe.py models` sur le binaire actuel avec `--effort xhigh` | les 3 appels répondent, `effort` facturé | — | prêt (`ch/outils-v4b`, selftest) ; à lancer par l'orchestrateur (5 k eq) |
 
 ### 7.2 Réalisme, par gain attendu
 
@@ -225,8 +225,8 @@ pas.
 | O6 | coudes de `qa13` étendus aux axes et feuilles, total dans `qawatch` | tiges cassées | à faire |
 | O7 | audit « tige qui traverse sa tête » | fanés de rose et de tulipe | à faire |
 | O8 | fond sombre pour `bq=1` | bouquet modèle sur fond sombre (9.2) | à faire |
-| O9 | `shot_p.sh` qui reconstruit et renvoie l'exception JS au lieu de « NO OUTPUT » | rendus perdus | à faire |
-| O10 | `fleur/fiche.py check` : schéma, valeurs sans source, écarts fiche/code, couverture | fiche morphologique | en cours (pilote) |
+| O9 | `shot_p.sh` qui reconstruit et renvoie l'exception JS au lieu de « NO OUTPUT » | rendus perdus | fait (`ch/outils-v4b`, vérifié dans Chrome) |
+| O10 | `fleur/fiche.py check` : schéma, valeurs sans source, écarts fiche/code, couverture | fiche morphologique | fait ; `--lien` et schéma révisé (`ch/outils-v4b`) |
 
 ### 7.4 Processus, suite (après les préalables)
 
@@ -239,6 +239,9 @@ pas.
 | P11 | photos des paires exigées vérifiées dès `refs`, pas après le modelage | `--only refs --dry` annonce les manques |
 | P13 | témoins légers (rtest, anémone) avant `comparaison`, `qa` après le juge | ordre affiché par `--dry` |
 | P15 | fiche morphologique remplie à l'étape `refs`, lue par `forme` (dès que Q1 est tranchée) | `fiche.py check` sans erreur, valeurs `code` < 30 % |
+
+État après `ch/outils-v4b` (18 octobre) : P5, P6, P7, P8, P11, P13, P15 faits dans `pipe.py` (selftest 156/156) ; P15 en étape `fiche` après
+`targets` ; détail et questions dans `RAPPORT-outils-v4b.md` à la racine du chantier.
 
 ## 8. Appliqué dans cette passe
 
