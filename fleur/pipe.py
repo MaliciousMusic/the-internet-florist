@@ -36,9 +36,16 @@ try:  # one source of truth when bill.py is next to us
         W, M = dict(_bill.W), dict(_bill.M)
 except Exception:
     pass
-TURNS = {'haiku': 40, 'sonnet': 40, 'opus': 60}          # --max-turns per call
+TURNS = {'haiku': 40, 'sonnet': 40, 'opus': 40}          # --max-turns per call (opus 60 -> 40: RATE-OEILLET, 15 relays of 61 turns)
 LIMIT = {'haiku': 1200, 'sonnet': 1800, 'opus': 5400}   # wall-clock seconds per call
-EFFORT = {'haiku': 'low', 'sonnet': 'medium', 'opus': 'xhigh'}
+EFFORT = {'haiku': 'low', 'sonnet': 'medium', 'opus': 'high'}  # opus xhigh -> high (RATE-OEILLET M1; --opus-effort overrides)
+# RATE-OEILLET M1: one complete flower for 8 M at most (owner, 2026-10-18), each step cut at its own share; --caps forme=4,plante=1.5 overrides.
+# A step's spend is summed over every run of the sort (pipe-bill.json): a resumed step keeps what it already spent.
+STEP_CAP = {'census': .2, 'refs': .15, 'coloris': .1, 'targets': .05, 'fiche': .25, 'forme': 3.0, 'fit': .2, 'plante': 1.0, 'finition': .8,
+            'temoins': .05, 'comparaison': .3, 'juge': .4, 'qa': .1, 'planches': .1}
+CAP_DEFAULT = 8.0
+NL = chr(10)
+CHECK_FAILS = 2  # a done check that fails this many times in a step stops the step (a question to the owner), never a fresh relay
 TARGET_EL, TARGET_KB = 300, 50                          # budget per head at DET 1: a MEASURE only since 2026-10-17 (the owner: quality first)
 SEED = 7                                                # every sheet of the pipeline is drawn with &seed=7 (BONNES-PRATIQUES 9.1)
 OLD_PORT = 8765                                         # another application of the owner: never used, never probed
@@ -46,6 +53,7 @@ PRIVATE = ('shot.sh', 'skudump.sh', 'offerdump.sh')     # shared scripts copied 
 RAMWAIT = MAIN + '/fleur/res/ramwait.sh'                # waits for 4.5 GB of free RAM (PIPE_RAMWAIT overrides; '' = off)
 PAIR_H, PAIR_W = 1100, 2400                             # img.py pair tiles of refaire.sh: height, width cap (img.py alone: 420, 900)
 JUGE_TURNS = 60                                         # --max-turns of a judge call: up to 18 pairs, each image and its .txt, plus zooms
+JUGE_EFFORT = 'xhigh'                                    # the judge stays at xhigh (owner: Opus, anti-anchoring; a short call)
 JUGE_TOURS = 2                                          # judge ko -> comparaison -> judge: round trips at most, then refusal (exit 2)
 
 
@@ -283,7 +291,12 @@ class Ctx:
         self.rc = '%s/refcache/%s' % (self.ch, sid)          # absolute
         self.rel = 'refcache/%s' % sid                       # what the prompts say (cwd = the working copy)
         self.dry = bool(getattr(a, 'dry', False))
-        self.cap = float(getattr(a, 'cap', 40) or 40) * 1e6
+        self.cap = float(getattr(a, 'cap', CAP_DEFAULT) or CAP_DEFAULT) * 1e6
+        self.caps = dict(STEP_CAP)
+        for kv in (getattr(a, 'caps', '') or '').split(','):
+            if '=' in kv:
+                k, v = kv.split('=', 1)
+                self.caps[k.strip()] = float(v)
         self.bill = Bill(self.rc + '/pipe-bill.json')
         self.claude = getattr(a, 'claude', None) or find_claude()
         self.rel_url = fwd(os.path.relpath(self.ch, MAIN)) if fwd(self.ch).startswith(MAIN) else ''  # ch/outils, in the server's URLs
@@ -291,6 +304,13 @@ class Ctx:
         self.reads = {}  # step -> the files the model calls of that step opened with Read (normalised paths)
         self.cmds = {}   # step -> the Bash commands the model calls of that step ran (the fiche check counts its measuring tools)
         os.makedirs(self.rc + '/pipe-logs', exist_ok=True)
+
+    def step_cap(self, step):
+        v = self.caps.get(step)
+        return None if v is None else v * 1e6
+
+    def step_spent(self, step):
+        return sum(r.get('eq', 0) for r in self.bill.rows() if r.get('step') == step)
 
     def url(self, path, main=False):
         """an URL of the atelier server (port of FLEUR_PORT) for a page of this copy (or of the main atelier)"""
@@ -425,6 +445,9 @@ def call_model(ctx, step, tag, model, prompt, tools, turns=None, effort='default
     spent = ctx.bill.total()
     if spent >= ctx.cap:
         raise CapReached('cap %.2f M reached (%.2f M spent) before %s/%s' % (ctx.cap / 1e6, spent / 1e6, step, tag))
+    sc, ss = ctx.step_cap(step), ctx.step_spent(step)
+    if sc is not None and ss >= sc:
+        raise CapReached('step cap of %s %.2f M reached (%.2f M spent by the step) before %s/%s' % (step, sc / 1e6, ss / 1e6, step, tag))
     turns = turns or TURNS[model]
     limit = limit or LIMIT[model]
     if model == 'opus':
@@ -1666,6 +1689,10 @@ def closed_check(ctx, part='forme'):
     rtest line, a JS error or no face render, a fiche still invalid after sync, a missing file)"""
     notes = auto_close(ctx, part)
     ok, why = check_forme(ctx) if part == 'forme' else check_plante(ctx)
+    hm = (ctx.st.get('numbers') or {}).get('holes_max')
+    if part == 'forme' and hm is not None and hm > HOLES_MAX:
+        ok, why = False, '; '.join(x for x in (why if not ok else '', 'holes: %.2f %% of the head shows the background (%s), more than %.1f %%: fill the gaps (a core or skirt '
+                                              'under the ranks), see etat-forme.md « Chiffres de pipe.py »' % (hm, ctx.st['numbers'].get('where'), HOLES_MAX)) if x)
     if not ok and notes:
         why = '%s [%s]' % (why, '; '.join(notes))
     return ok, why
@@ -1744,16 +1771,23 @@ def get_lock(ctx, kind):
     return lk
 
 
-def model_loop(ctx, step, pname, model, tools, max_calls, done_check, turns=None, extra=None, must_read=(), before=None):
+def model_loop(ctx, step, pname, model, tools, max_calls, done_check, turns=None, extra=None, must_read=(), before=None, numbers=None):
     """calls with an empty context until the model says done AND the check passes; a call that stops on the turn cap, the clock or 'relay' is
     followed by a fresh one that reads etat-<step>.md (written by the model; a stub of ours is APPENDED, the model's state is never lost).
     must_read: files the step must open with Read (BONNES-PRATIQUES.md): a call that did not is told so, and the step cannot end without them.
     before: run before every call after the first (forme, plante: the fiche summary remade, since sync changed the fiche).
+    numbers: run after every call (no model): the step's measured defects (holes, wilt size), text lines appended to etat-<step>.md and given
+    to the next call, so a relay starts from numbers and not from re-looking at every sheet (RATE-OEILLET M3).
+    must_read is asked once per sort and step: a relay that follows a call which read them is not made to re-read 30 k of method (M4).
+    A done check failing CHECK_FAILS times stops the step ('blocked', its reason): the owner decides, no fresh relay pays for it (M1).
     Returns ('done'|'relay'|'blocked', last final)"""
     etat = '%s/etat-%s.md' % (ctx.rel, step)
     why = ''
     fin = {}
+    fails = 0
+    seen = ctx.st.setdefault('read_once', {}).setdefault(step, [])
     for k in range(1, max_calls + 1):
+        must_read = [m for m in must_read if ctx.npath(m) not in seen]
         resumed = k > 1 or os.path.exists(ctx.rc + '/etat-%s.md' % step)
         relay = ''
         if resumed:
@@ -1768,6 +1802,18 @@ def model_loop(ctx, step, pname, model, tools, max_calls, done_check, turns=None
         if ctx.dry:
             done_check()
             return 'done', fin
+        for m in must_read:
+            if ctx.npath(m) in set(r.get('reads') or []) and ctx.npath(m) not in seen:
+                seen.append(ctx.npath(m))
+        if numbers and not r['timeout']:
+            try:
+                nl = numbers() or []
+            except Exception as e:
+                nl = ['pipe.py numbers failed: %s' % e]
+            if nl:
+                with open(ctx.rc + '/etat-%s.md' % step, 'a', encoding='utf-8', newline=NL) as f:
+                    f.write(NL + NL + '# Chiffres de pipe.py après l\'appel %d (%s)' % (k, now()) + NL + NL + NL.join('- ' + x for x in nl) + NL)
+                say('  %s numbers: %s' % (step, ' | '.join(nl)[:300]))
         unread = [m for m in must_read if ctx.npath(m) not in set(r.get('reads') or [])]
         if unread:
             say('  %s/r%d did not open %s' % (step, k, ', '.join(os.path.basename(m) for m in unread)))
@@ -1781,6 +1827,9 @@ def model_loop(ctx, step, pname, model, tools, max_calls, done_check, turns=None
             if ok:
                 return 'done', fin
             say('  %s: check failed: %s' % (step, why[:200]))
+            fails += 1
+            if fails >= CHECK_FAILS:
+                return 'blocked', {'status': 'blocked', 'question': 'the done check failed %d times: %s' % (fails, why[:600])}
         else:
             why = ''
             p = ctx.rc + '/etat-%s.md' % step
@@ -1846,7 +1895,13 @@ def check_forme(ctx, space='space.json'):
                 ctx.st['fiche_a_relier'] = dict(ctx.st.get('fiche_a_relier') or {}, liste=s['a_relier'], sans_ecart=s.get('a_relier_sans_ecart') or [])
             if c and not ctx.dry:
                 bad = [ln.strip() for ln in t.splitlines() if ln.strip().startswith('!') or 'ERREUR' in ln][:6]
-                why.append('fiche.py check --lien %s: %d error(s), %s unlinked (%s)' % (lien, s.get('erreurs', -1), s.get('non_relies', '?'), '; '.join(bad)))
+                msg = 'fiche.py check --lien %s: %d error(s), %s unlinked (%s)' % (lien, s.get('erreurs', -1), s.get('non_relies', '?'), '; '.join(bad))
+                if getattr(ctx.a, 'fiche_strict', False):
+                    why.append(msg)
+                else:  # RATE-OEILLET M2: the fiche's bookkeeping never stops the drawing (four series of Opus relays were spent on it)
+                    set_questions(ctx, 'fiche-ecarts', 'Écarts de la fiche après sync (non bloquants ; à relire avant les planches)',
+                                  [ln.lstrip('! ') for ln in bad] or [msg])
+                    ctx.st['fiche_ecarts'] = {'n': s.get('erreurs', -1), 'lignes': bad, 'date': now()}
     # P8: forme is "done" only with its face pair measured and the sort's rtest, both after the last retouch and both written in the journal
     if not why and space == 'space.json' and not ctx.dry:
         ok8, why8 = check_forme_proofs(ctx)
@@ -1966,7 +2021,8 @@ def step_forme(ctx):
     has_res = fiche_resume(ctx)  # the fiche read through its summary (must_read), remade before every call
     res, fin = model_loop(ctx, 'forme', 'forme', 'opus', tools, int(getattr(ctx.a, 'relays', 4)), lambda: closed_check(ctx, 'forme'),
                           extra={'kit': kit_text(ctx), 'fiche': fiche_rel(ctx), 'resume': resume_rel(ctx), 'rtest': rtest_text(ctx)},
-                          must_read=[bp_rel(ctx)] + ([resume_rel(ctx)] if has_res else []), before=lambda: fiche_resume(ctx))
+                          must_read=[bp_rel(ctx)] + ([resume_rel(ctx)] if has_res else []), before=lambda: fiche_resume(ctx),
+                          numbers=lambda: forme_numbers(ctx))
     if res == 'blocked':
         raise StepFailed('forme blocked by the modeller: %s' % (fin.get('question') or fin.get('note') or fin))
     ok, why = check_forme(ctx)
@@ -2055,7 +2111,7 @@ def check_plante(ctx):
 def step_plante(ctx):
     ensure_docs(ctx)
     has_res = fiche_resume(ctx)
-    res, fin = model_loop(ctx, 'plante', 'plante', 'opus', READ + ['Write', 'Edit'] + SAFE_BASH, int(getattr(ctx.a, 'relays', 4)), lambda: closed_check(ctx, 'plante'),
+    res, fin = model_loop(ctx, 'plante', 'plante', getattr(ctx.a, 'plante_model', None) or 'sonnet', READ + ['Write', 'Edit'] + SAFE_BASH, int(getattr(ctx.a, 'relays', 4)), lambda: closed_check(ctx, 'plante'),
                           extra={'fiche': fiche_rel(ctx), 'resume': resume_rel(ctx)}, must_read=[bp_rel(ctx)] + ([resume_rel(ctx)] if has_res else []),
                           before=lambda: fiche_resume(ctx))
     if res == 'blocked':
@@ -2102,12 +2158,71 @@ def shot_err(text):
     return (L or [''])[-1][:160]
 
 
+def cw_usable(e):
+    """a measured colourway the sheets may show first: an automatic measure whose body is far from its base caught the background (Cornelia,
+    oeillet 2026-10-18: body #565c57, the foliage behind an off-white flower) and goes last"""
+    try:
+        return not (e.get('mesure') == 'auto' and delta_e(e['base'], e['corps']) > 35)
+    except Exception:
+        return True
+
+
 def cw_ids(ctx, n=4):
-    ids = [e['id'] for e in jload(ctx.rc + '/coloris.json', [])][:n]
-    return ids
+    L = jload(ctx.rc + '/coloris.json', []) or []
+    return [e['id'] for e in sorted(L, key=lambda e: not cw_usable(e))][:n]
 
 
 STAGES = '.06:0,.2:0,.4:0,.75:0,1:0,1:.35,1:.6,1:.75,1:.9'
+NUM_VIEWS = '2,0,3,7'   # the views of the numbers sheet (three-quarter, face, from above, profile)
+HOLES_MAX = 1.5         # % of a head's pixels: more background enclosed by the flower in one cell fails forme's check (RATE-OEILLET M3)
+
+
+def num_cws(ctx):
+    """the two colourways of the numbers sheet: --num-cws, else the darkest and the lightest measured body (a saturated one, a white)"""
+    if getattr(ctx.a, 'num_cws', None):
+        return [x.strip() for x in ctx.a.num_cws.split(',') if x.strip()][:2]
+    L = []
+    for e in jload(ctx.rc + '/coloris.json', []) or []:
+        h = str(e.get('corps') or '')
+        if re.match(r'^#[0-9a-fA-F]{6}$', h) and cw_usable(e):
+            L.append((rgb_lab(hex_rgb(h))[0], e['id']))
+    L.sort()
+    return list(dict.fromkeys([L[0][1], L[-1][1]])) if L else cw_ids(ctx, 2)
+
+
+def forme_numbers(ctx):
+    """after every forme call (no model): one sheet of the 9 stages x 4 views x 2 colourways on a green ground, then fleur/trous.py: the
+    background enclosed by the flower (holes) per cell, and the wilted head's size against the open one. Returns text lines; keeps the
+    worst hole share in ctx.st['numbers'] for the done check"""
+    ids = num_cws(ctx)
+    if ctx.dry or not ids or not have(ctx, 'fleur/trous.py'):
+        return []
+    ok, m, text = shot(ctx, 'num_' + ctx.sid, 'grid=1&sid=%s&cws=%s&st=%s&view=%s&D=160&det=1.5&seed=%d&bg=%%2300ff00' % (ctx.sid, ','.join(ids), STAGES, NUM_VIEWS, SEED), 'numbers')
+    if not ok:
+        return ['feuille des chiffres non rendue : ' + shot_err(text)]
+    st, vw = STAGES.split(','), NUM_VIEWS.split(',')
+    c, t = run_cmd(ctx, [sys.executable, 'fleur/trous.py', 'fleur/out/num_%s.png' % ctx.sid, str(len(st)), str(len(ids) * len(vw)), '--json'], 'trous', timeout=300, quiet=True)
+    try:
+        cells = json.loads(t.strip().splitlines()[-1])
+    except Exception:
+        return ['trous.py sans lecture : ' + (t.strip().splitlines() or [''])[-1][:160]]
+    worst, bad = (0, ''), []
+    for r, row in enumerate(cells):
+        for k, e in enumerate(row):
+            where = '%s vue %s stade %s' % (ids[r // len(vw)], vw[r % len(vw)], st[k])
+            if e['share'] > worst[0]:
+                worst = (e['share'], where)
+            if e['share'] > .5:
+                bad.append('%s %.1f %%' % (where, e['share']))
+    i_open, i_dry = st.index('1:0'), len(st) - 1
+    size = []
+    for r, row in enumerate(cells):
+        if row[i_open]['w'] and row[i_dry]['w']:
+            size.append('%s vue %s : %.2f x %.2f' % (ids[r // len(vw)], vw[r % len(vw)], row[i_dry]['w'] / row[i_open]['w'], row[i_dry]['h'] / row[i_open]['h']))
+    ctx.st['numbers'] = {'holes_max': worst[0], 'where': worst[1], 'date': now()}
+    return ['trous (fond enfermé par la fleur, fleur/out/num_%s.png, fond vert) : pire %.2f %% (%s) ; seuil bloquant %.1f %% ; cases au-dessus de 0,5 %% : %s'
+            % (ctx.sid, worst[0], worst[1] or '-', HOLES_MAX, ', '.join(bad[:8]) or 'aucune'),
+            'fané %s contre ouvert 1:0 (largeur x hauteur de la tête) : %s' % (st[i_dry], ' ; '.join(size) or '-')]
 
 
 def budget(ctx, tag):
@@ -2666,7 +2781,7 @@ def judge_once(ctx, plan, trips, k):
     prev = ('Le juge précédent avait refusé : %s/comparaison/ko-%d.json. Vérifie d\'abord ces points, sans t\'y limiter.' % (ctx.rel, trips)) if trips else '-'
     p = prompt_text('juge', **ctx.sub(pairs='%s/comparaison/pairs.md' % ctx.rel, table='%s/etat-comparaison.md' % ctx.rel, prev=prev))
     ctx.reads['juge'] = set()
-    r = call_model(ctx, 'juge', 't%d.%d' % (trips, k), 'opus', p, READ + ['Bash(python fleur/img.py *)'], turns=JUGE_TURNS)
+    r = call_model(ctx, 'juge', 't%d.%d' % (trips, k), 'opus', p, READ + ['Bash(python fleur/img.py *)'], turns=JUGE_TURNS, effort=JUGE_EFFORT)
     if ctx.dry:
         return {'verdict': 'ok', 'ko': [], 'issues': [], 'dry': True}
     fin = r.get('final') or {}
@@ -3445,6 +3560,32 @@ def cmd_selftest(a):
             t('cap: next call refused', False)
         except CapReached:
             t('cap: next call refused', True)
+        ctx3 = Ctx('selftest3c', tmp, argparse.Namespace(dry=False, cap=100, caps='x=0.0005', claude=fake), {'sid': 'selftest3c', 'taxon': 'Test test', 'steps': {}, 'skus': []})
+        seq('done', 'done', 'done')
+        call_model(ctx3, 'x', 'a', 'haiku', 'hi', ['Read'])
+        call_model(ctx3, 'x', 'b', 'haiku', 'hi', ['Read'])
+        try:
+            call_model(ctx3, 'x', 'c', 'haiku', 'hi', ['Read'])
+            t('step cap (RATE-OEILLET M1): the step stops at its own share', False)
+        except CapReached as e:
+            t('step cap (RATE-OEILLET M1): the step stops at its own share', 'step cap of x' in str(e), str(e))
+        seq('done', 'done', 'done')
+        res, fin = model_loop(ctx, 'forme', 'forme', 'haiku', ['Read'], 3, lambda: (False, 'nope'), extra={'kit': '-', 'fiche': '-', 'resume': '-', 'rtest': '-'})
+        t('a done check failing twice stops the step, no third relay (M1)', res == 'blocked' and 'failed 2 times' in (fin.get('question') or ''), str(fin))
+        try:
+            from PIL import Image as _I, ImageDraw as _D
+            sys.path.insert(0, HERE)
+            import trous as _tr
+            im_ = _I.new('RGB', (200, 100), (0, 255, 0))
+            d_ = _D.Draw(im_)
+            d_.ellipse((10, 10, 90, 90), fill=(200, 20, 30))
+            d_.ellipse((45, 45, 55, 55), fill=(0, 255, 0))
+            d_.ellipse((110, 10, 190, 90), fill=(200, 20, 30))
+            im_.save(tmp + '/trous.png')
+            c_ = _tr.measure(tmp + '/trous.png', 2, 1)
+            t('trous.py (M3): a hole enclosed by the flower is counted, a whole one is not', c_[0][0]['holes'] > 50 and c_[0][1]['holes'] == 0 and c_[0][0]['w'] >= 80, str(c_))
+        except ImportError as e:
+            t('trous.py (M3): a hole enclosed by the flower is counted, a whole one is not', False, 'missing module: %s' % e)
         # census and refs checks on a fixture
         rc = ctx.rc
         os.makedirs(rc + '/census', exist_ok=True)
@@ -4006,9 +4147,9 @@ def cmd_selftest(a):
         t('refaire.sh: the photo box of every pair comes from pipe.py pbox (comparaison/boxes.json)', rs_.count('fleur/pipe.py pbox %s/comparaison/boxes.json ' % rel3) == len(plan_)
           and 'pipe.py pbox %s/comparaison/boxes.json face ' % rel3 in rs_, rs_[-500:])
         P_fo, P_pl = open('%s/pipe/prompts/forme.md' % HERE, encoding='utf-8').read(), open('%s/pipe/prompts/plante.md' % HERE, encoding='utf-8').read()
-        t('prompts: forme and plante read the fiche summary (<<resume>>), pipe.py does the closure, the last 10 turns kept for the state',
+        t('prompts: forme and plante read the fiche summary (<<resume>>), pipe.py does the closure, the last 8 of 40 turns kept for the state, the budget said',
           '<<resume>>' in P_fo and '<<resume>>' in P_pl and 'fiche.py sync' in P_fo and 'fiche.py sync' in P_pl and 'pipe.py la fait seul' in P_fo and 'boxes.json' in P_fo
-          and all('10 derniers tours' in x for x in (P_fo, P_pl)))
+          and all('8 derniers tours' in x and 'sur 40 tours' in x and 'RATE-OEILLET' in x for x in (P_fo, P_pl)) and 'Chiffres de pipe.py' in P_fo)
         # ---- P5: leaf and stem pairs from one located plant render; nothing floats at plante (jgap.py)
         pp_ = {p['k']: p for p in plan_}
         t('pairs: feuille (top side) and tige (junction) from the kept organ photos, one shared plant render with loc=1',
@@ -4226,8 +4367,8 @@ def cmd_selftest(a):
         os.environ.pop('FAKE_ARGV', None)
         fl_ = {a_[a_.index('--model') + 1]: a_[a_.index('--effort') + 1] if '--effort' in a_ else None for a_ in av_ if '--model' in a_}
         mb_ = [r for r in Bill(tmp + '/refcache/pipe-test/pipe-bill.json').rows() if r['step'] == 'models']
-        t('models: three calls, Opus with --effort xhigh (Sonnet medium, Haiku low), the effort in the bill', cm_ == 0 and fl_ == {MODELS['haiku']: 'low', MODELS['sonnet']: 'medium',
-          MODELS['opus']: 'xhigh'} and [r.get('effort') for r in mb_][-3:] == ['low', 'medium', 'xhigh'] and 'effort xhigh' in buf.getvalue(), str(fl_) + buf.getvalue()[-300:])
+        t('models: three calls, Opus with --effort high (Sonnet medium, Haiku low), the effort in the bill', cm_ == 0 and fl_ == {MODELS['haiku']: 'low', MODELS['sonnet']: 'medium',
+          MODELS['opus']: 'high'} and [r.get('effort') for r in mb_][-3:] == ['low', 'medium', 'high'] and 'effort high' in buf.getvalue(), str(fl_) + buf.getvalue()[-300:])
         t('prompts: refs asks groupe= and says the 1 000 px and the colour audit', all(x in open('%s/pipe/prompts/refs.md' % HERE, encoding='utf-8').read()
                                                                                   for x in ('groupe=', '1 000 px', 'ΔE 15', '<<groupes>>')))
         t('prompts: finition knows the colour rule', all(x in open('%s/pipe/prompts/finition.md' % HERE, encoding='utf-8').read() for x in ('cwmed.py', 'dL', 'dC')))
@@ -4265,7 +4406,10 @@ def make_parser():
     r.add_argument('--cw-pairs', dest='cw_pairs', type=int, default=10, help='colourways compared to the photo of their own variety (comparaison)')
     r.add_argument('--from', dest='from_', choices=STEPS)
     r.add_argument('--only', choices=STEPS)
-    r.add_argument('--cap', type=float, default=40.0, help='millions of Opus input-equivalent tokens: a measure kept in pipe-bill.json, the run stops beyond it')
+    r.add_argument('--cap', type=float, default=CAP_DEFAULT, help='millions of Opus input-equivalent tokens: a measure kept in pipe-bill.json, the run stops beyond it (8: one complete flower, RATE-OEILLET)')
+    r.add_argument('--fiche-strict', dest='fiche_strict', action='store_true', help='fiche errors after sync block forme and plante (default: a question, RATE-OEILLET M2)')
+    r.add_argument('--num-cws', dest='num_cws', help='the two colourways of the numbers sheet (default: the darkest and lightest measured)')
+    r.add_argument('--caps', default='', help='step caps in M overriding STEP_CAP, "forme=4,plante=1.5" (summed over every run of the sort)')
     r.add_argument('--skus', default='', help='bouquet SKUs "lilas~0:Ruhm von Horstenstein,..." (default: sku_bouquet of the sources json)')
     r.add_argument('--dry', action='store_true', help='no model, no command: print what would run and run the disk checks')
     r.add_argument('--claude', help='path of the claude binary (default: the newest of the desktop application)')
@@ -4273,9 +4417,10 @@ def make_parser():
     r.add_argument('--qa-total', dest='qa_total', type=int, default=30)
     r.add_argument('--budget', type=int, default=60, help='fit.py --budget')
     r.add_argument('--cw', help='fit.py --cw')
-    r.add_argument('--relays', type=int, default=4, help='most fresh Opus calls in one modelling step')
+    r.add_argument('--relays', type=int, default=3, help='most fresh calls in one modelling step (the step cap stops it first)')
     r.add_argument('--full', type=int, default=40, help='stem length in cm of the plant sheet')
-    r.add_argument('--opus-effort', dest='opus_effort', choices=['low', 'medium', 'high', 'xhigh', 'max'], help='--effort of the Opus calls (default xhigh)')
+    r.add_argument('--plante-model', dest='plante_model', choices=['sonnet', 'opus'], help='model of the plante step (default sonnet: kit pieces only, RATE-OEILLET)')
+    r.add_argument('--opus-effort', dest='opus_effort', choices=['low', 'medium', 'high', 'xhigh', 'max'], help='--effort of the Opus calls (default high)')
     r.add_argument('--skip-census', dest='skip_census', action='store_true', help='a census exists already (census.json, or catalogue/serre/sources/<sid>.json imported)')
     r.add_argument('--kit', help='a published kit piece the sort extends (app/y3-rose.js...): the sorts already drawn with it must not change')
     r.add_argument('--kit-prefix', dest='kit_prefix', help='the kit family prefix (default: inferred from the module, e.g. svRose|SVROSE_)')
