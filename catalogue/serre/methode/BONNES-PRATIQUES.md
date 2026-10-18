@@ -261,3 +261,17 @@ Rappel de base : SVG natif seulement, ni 3D, ni image incorporée, ni ruban, ni 
     ressemblent. `python fleur/volume.py paire` compare la silhouette de profil (hauteur sur largeur, remplissage, profil de largeur par
     rangée, profondeur de l'entonnoir), à angle égal seulement : une photo prise d'au-dessus ne juge pas un profil.
 13.4 Toute planche de validation porte au moins une vue de profil et une de trois-quarts par coloris, à côté de leurs photos.
+
+## 14. Structure des calques : aucune pièce ne traverse une autre (porteur, 2026-10-18, règle très sévère)
+14.1 Aucune pièce ne passe à travers une autre, aucun bout ne dépasse là où il devrait être caché, aucun contour en escalier. Chaque calque
+    SVG est une pièce entière, posée devant ou derrière ses voisines, jamais coupée par elles.
+14.2 La mesure : `sh fleur/shot_p.sh <nom> "grid=1&sid=<sid>&cws=<tous>&st=<tous les stades>&view=0,2,7&D=300&det=2&seed=7&qa3d=1"` ; le
+    JSON porte `x3d` (app/y3-qa3d.js : pour chaque paire de nappes d'une tête, les arêtes d'une nappe qui passent de l'autre côté de sa
+    voisine, là où elles se touchent presque). La seule valeur admise est 0, sur tous les coloris, toutes les vues, tous les stades et trois
+    graines au moins. Une sorte qui n'est pas à 0 n'est pas validée.
+14.3 Les remèdes, dans cet ordre : séparer les couches (insertion plus haute du verticille intérieur, épaules plus ouvertes de l'extérieur,
+    `z0`, `aS`), emboîter les couches quand elles se resserrent (`nest`, bouton, colonne, fané), réduire l'ondulation ou la largeur qui fait
+    se toucher deux voisines ; un contour en escalier le long d'un pli : une nappe plus fine (`nu`, `nv`). Jamais un clip pour cacher.
+14.4 État au 2026-10-18 (lys oriental, graine 3, quatre coloris) : ouvert 0 ; trois-quarts ouvert 0,4 ; bouton qui s'ouvre 23 ; fané 2 à 58.
+    Le bouton et le fané restent à reprendre (les tépales d'un même verticille s'y chevauchent en se refermant et en se froissant). Mesuré
+    sur les autres sortes, ouvertes : tulipe simple 76, cymbidium 46, gloriosa 21, anémone 1, nérine 0,2 par tête : à reprendre à leur tour.

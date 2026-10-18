@@ -11,6 +11,7 @@ Pour CHAQUE paire de la liste :
 1. Read de son image <<rc>>/comparaison/<clé>.png (photo à gauche, rendu à droite) et de ses mesures <clé>.txt ; agrandis ce qui le mérite : python fleur/img.py zoom <<rc>>/comparaison/<clé>.png "x0,y0,x1,y1" --out <<rc>>/comparaison/zj_<clé>.png.
 2. Juge le rendu contre la photo : même fleur, même stade, même angle ? Vérifie au moins :
    - silhouette et proportions (les mesures de img.py pair contre celles de la photo) ;
+   - aucune pièce qui en traverse une autre, aucun bout qui dépasse, aucun contour en escalier (BONNES-PRATIQUES §14 : x3d = 0 sur &qa3d=1, tous stades et coloris) ; un x3d non nul vaut ko ;
    - volumes et couches (BONNES-PRATIQUES §13) : de profil et de trois-quarts, la profondeur de la gorge et la hauteur de la coupe comme la photo (python fleur/volume.py paire, à angle égal) ; les verticilles distincts, celui de devant devant, chacun avec sa largeur, sa marge, sa réflexion ;
    - nombre, forme, asymétrie et recouvrement des pièces ; rien de raide ni de facetté ;
    - opacité : aucun contour ni pièce de derrière vus à travers, surtout sur un blanc ou une crème ;
