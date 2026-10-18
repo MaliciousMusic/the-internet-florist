@@ -3146,14 +3146,20 @@ def cmd_rtsum(a):
 
 
 def cmd_models(a):
+    """P14: one tiny call per model on the chosen binary, with the efforts of a real run (Opus: --effort xhigh), billed under refcache/pipe-test;
+    the bill's `effort` column and each call's answer say whether the CLI took the flags"""
     ch = resolve_ch(a.ch)
     a.cap, a.dry = 1000, False
+    if getattr(a, 'opus_effort', None):
+        EFFORT['opus'] = a.opus_effort
     sid = 'pipe-test'
     ctx = Ctx(sid, ch, a, {'sid': sid, 'taxon': 'Test test', 'steps': {}})
+    if not ctx.claude or not os.path.exists(ctx.claude):
+        raise SystemExit('no Claude Code binary found (desktop application: %APPDATA%/Claude/claude-code/<version>/*/claude.exe); set PIPE_CLAUDE or --claude')
     say('CLI: %s' % ctx.claude)
     for key in [k.strip() for k in a.which.split(',')]:
         r = call_model(ctx, 'models', key, key, 'Answer with exactly this one line and nothing else: {"status":"done","word":"ok"}', ['Read'], turns=2)
-        say('  %s: ok=%s final=%s%s' % (MODELS[key], r['ok'], r['final'], ' error: ' + r.get('err', '') if not r['ok'] else ''))
+        say('  %s (effort %s): ok=%s final=%s%s' % (MODELS[key], EFFORT[key], r['ok'], r['final'], ' error: ' + r.get('err', '') if not r['ok'] else ''))
     for line in ctx.bill.table():
         say(line)
     return 0
@@ -3875,6 +3881,18 @@ def cmd_selftest(a):
         fe_ = subprocess.run(['node', '-e', "const fs=require('fs');const s=fs.readFileSync('%s/fiche_eval.js','utf8');console.log(/sort\\(cmp\\)/.test(s)&&/2>\\\\\\/dev\\\\\\/null\\(\\?: /.test(s))" % HERE.replace('\\', '/')],
                              capture_output=True, text=True)
         t('fiche_eval.js reads the new mkapp.sh globs in the same order', 'true' in fe_.stdout, fe_.stdout + fe_.stderr)
+        # ---- P14: pipe.py models gives each model its run effort (Opus: --effort xhigh), billed
+        os.environ['FAKE_ARGV'] = tmp + '/argv.jsonl'
+        seq('done', 'done', 'done')
+        buf = io.StringIO()
+        with contextlib.redirect_stdout(buf):
+            cm_ = cmd_models(argparse.Namespace(ch=tmp, which='haiku,sonnet,opus', claude=fake, opus_effort=None))
+        av_ = [json.loads(ln) for ln in open(tmp + '/argv.jsonl', encoding='utf-8')] if os.path.exists(tmp + '/argv.jsonl') else []
+        os.environ.pop('FAKE_ARGV', None)
+        fl_ = {a_[a_.index('--model') + 1]: a_[a_.index('--effort') + 1] if '--effort' in a_ else None for a_ in av_ if '--model' in a_}
+        mb_ = [r for r in Bill(tmp + '/refcache/pipe-test/pipe-bill.json').rows() if r['step'] == 'models']
+        t('models: three calls, Opus with --effort xhigh (Sonnet medium, Haiku low), the effort in the bill', cm_ == 0 and fl_ == {MODELS['haiku']: 'low', MODELS['sonnet']: 'medium',
+          MODELS['opus']: 'xhigh'} and [r.get('effort') for r in mb_][-3:] == ['low', 'medium', 'xhigh'] and 'effort xhigh' in buf.getvalue(), str(fl_) + buf.getvalue()[-300:])
         t('prompts: refs asks groupe= and says the 1 000 px and the colour audit', all(x in open('%s/pipe/prompts/refs.md' % HERE, encoding='utf-8').read()
                                                                                   for x in ('groupe=', '1 000 px', 'ΔE 15', '<<groupes>>')))
         t('prompts: finition knows the colour rule', all(x in open('%s/pipe/prompts/finition.md' % HERE, encoding='utf-8').read() for x in ('cwmed.py', 'dL', 'dC')))
@@ -3942,6 +3960,7 @@ def make_parser():
     m.add_argument('--ch')
     m.add_argument('--which', default='haiku,sonnet,opus')
     m.add_argument('--claude')
+    m.add_argument('--opus-effort', dest='opus_effort', choices=['low', 'medium', 'high', 'xhigh', 'max'], help='--effort of the Opus call (default xhigh, as in a run)')
     return ap
 
 

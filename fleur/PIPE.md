@@ -24,10 +24,12 @@ photo/rendu paire par paire, puis un juge adversarial qui n'est pas le modeleur.
   - `--views "profil:8,bouton:8"` : vues de la grille des paires de tête pour cette sorte (gardées dans `pipe-state.json`). Sans elle : `PAIRS`, puis la
     table `VIEWS_FAMILY` (orchidées et spathes : profil et bouton en vue 8 ; famille lue dans `--family`, le module `--kit`, puis le genre).
     La vue retenue et sa source sont écrites dans `pairs.json` (`view`, `view_from`).
-- `python fleur/pipe.py status <sid>` : étapes, contrôles, facture. `bill <sid>` : le tableau par étape. `selftest` : 155 vérifications sans modèle ni Chrome.
+- `python fleur/pipe.py status <sid>` : étapes, contrôles, facture. `bill <sid>` : le tableau par étape. `selftest` : 156 vérifications sans modèle ni Chrome.
 - `python fleur/pipe.py locbox <rendu.json> feuille|tige` : la boîte de recadrage d'un rendu `plant=1&loc=1` (refaire.sh s'en sert).
 - `python fleur/pipe.py rtsum <fichier>` : la ligne de journal d'un rtest (« rtest | IDENTIQUE » ou « rtest | n bouquets changés sur N ») ; `rtest.sh` l'imprime.
-- `python fleur/pipe.py models` : trois appels minuscules, un par modèle (facturés sous `refcache/pipe-test`).
+- `python fleur/pipe.py models [--which haiku,sonnet,opus] [--opus-effort xhigh]` : P14, trois appels minuscules sur le binaire choisi, chacun avec
+  l'effort d'un vrai passage (Haiku `low`, Sonnet `medium`, Opus `--effort xhigh`), facturés sous `refcache/pipe-test` (colonne `effort` de
+  `pipe-bill.json`) ; à lancer avant le premier vrai passage.
 - `--dry` : aucun modèle, aucune commande ; liste les étapes, les appels (modèle, effort, tours, délai, outils, taille du prompt) et les commandes.
 - Codes de sortie : 0 fini, 2 un contrôle a échoué ou le juge a refusé, 3 plafond atteint, 4 trois sortes déjà en cours. Tout se reprend par
   `run <sid>` (première étape non finie) ou `--from`.

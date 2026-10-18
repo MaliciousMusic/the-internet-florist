@@ -6,6 +6,9 @@ written (relative to the current directory, in order) and each path of "read" sh
 Usage numbers are fixed so the bill can be checked: input 10, cache write 1000, cache read 2000, output 100 (haiku)."""
 import sys, os, json, time
 
+if os.environ.get('FAKE_ARGV'):  # the selftest checks the flags a call was given (--model, --effort...)
+    with open(os.environ['FAKE_ARGV'], 'a', encoding='utf-8') as f:
+        f.write(json.dumps(sys.argv[1:]) + '\n')
 modes = json.load(open(os.environ['FAKE_SEQ'])) if os.path.exists(os.environ.get('FAKE_SEQ', '')) else ['done']
 spec = modes.pop(0) if modes else 'done'
 json.dump(modes, open(os.environ['FAKE_SEQ'], 'w'))
