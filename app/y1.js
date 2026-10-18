@@ -168,33 +168,135 @@ const hi=DET>=1.5;wash(hi?m.dark||[.92,.8,.68,.56,.44]:m.darkLo||m.dark||[.9,.76
 /* ---------- stems in SVG: a lit cylinder along any centre line ----------
    The outline; inside it, washes laid along the stem (the side away from the light darker, a soft highlight on the lit side, a thin gloss) blurred
    together and clipped; fine hairs standing out of the silhouette, leaning toward the flower; a tint toward the head (an anemone's stem reddens under
-   its collar). A colour list carries its style in c.sv = {hair, hairK (spacing × width), hairL / hairA (length and angle from the stem, × 1), hairOp / hairFOp (opacity of the edge and face hairs), red, redF (where the tint starts, 0..1 toward the head), gloss}. */
-function svStemLine(par,C,Wd0,c){const n=C.length,g=G(par);if(n<2)return g;const T=[],N=[],sv=c.sv||{},ph=(C[0][0]*.37+C[0][1]*.11)%6.28;
-  /* a slow swell of the width along the stem (a living stem is never a ruled tube) */
-  let acc0=0;const Wd=Wd0.map((w,i)=>{if(i)acc0+=Math.hypot(C[i][0]-C[i-1][0],C[i][1]-C[i-1][1]);return w*(1+(sv.swell??.05)*Math.sin(acc0/(w*9)+ph)+.025*Math.sin(acc0/(w*3.1)+ph*2))});
+   its collar). A colour list carries its style in c.sv = {hair, hairK (spacing × width), hairL / hairA (length and angle from the stem, × 1), hairOp / hairFOp (opacity of the edge and face hairs), red, redF (where the tint starts, 0..1 toward the head), gloss}.
+   Opt-in keys (all absent: the drawing above, to the byte). C[0] is the foot, C[n-1] the head's end (nodes.up -1 for the other way):
+   - sv.nodes: swollen nodes inside the stem's own outline (the outline bulges smoothly), their flanks lit by the same light, a fine ring, an
+     optional sheath of leaf bases; a list, a function or a generator (svNodeList, SVN_DEF, SVN_SH);
+   - sv.section: 'round' (default), 'ribbed' (ribN ribs around the stem modulate its light and, very slightly, its outline: ribD, ribTw, ribA,
+     ribPh), 'square' (two visible flat faces, each with its own light, lit edges: sqRot (.7), sqTw, edgeA, sqR), 'hollow' (the cut only: hollow, hollowC);
+   - sv.bloom: a glaucous waxy veil, bluish, stronger on the lit side, rubbed off in a few streaks (a number = its opacity, or SVB_BLOOM's keys);
+   - sv.join: a stem drawn in pieces (lsChainParts gives each piece C.j): the pieces meet cut square along a shared normal, the washes run on
+     past the joined ends under one mask, blurred alike, and the swell is read from the page: nothing fades, narrows or rounds at a join.
+   With any of them the ends are closed by half circles (no spike, BONNES-PRATIQUES 7.9). Chance only by hash (pxHashS) of sv.sd or of the
+   stem's place; nothing is drawn outside the outline, which never grows beyond the nodes' swell. */
+/* a node's defaults (× the local width w): sw the radius' swell at its peak, len the swell's length, sk where its peak is (-1 foot .. 1 head side),
+   ring / ro / rw its ring line (colour, null: the shade c[0]; opacity; width), lip a lit line just above the ring (× ro), bow the ring's sag toward
+   the foot (the stem seen a little from above), fk the light on the swell's two flanks, ra the ring's place (share of the half length, + toward the
+   head; null: at the peak), rot0 the first leaf pair's turn around the stem (rad; then a quarter turn per node: decussate; rot fixes one node's),
+   sheath: null or its keys (SVN_SH: len from the peak to the rim × w, t its thickness × w, wrap 1 a closed tube / less a slit between the leaves,
+   ears × w: the rim rises into the leaf bases, c null = body lightened, a opacity, rim null = c[3], ro rim opacity, rw rim width × w, soft × w:
+   how gently the sleeve's rim steps down to the stem) */
+const SVN_DEF={sw:.3,len:1.5,sk:.2,ring:null,ro:.25,rw:.045,lip:.6,bow:.12,fk:.4,ra:null,rot0:.6,sheath:null};
+const SVN_SH={len:.9,t:.045,wrap:1,ears:.2,c:null,a:.32,rim:null,ro:.45,rw:.04,soft:.22};
+/* the bloom's defaults: a opacity, c its colour, lit (× a on the lit side), n rubbed streaks per 10 widths of length (lit half), so their opacity (× a),
+   w their width (× w) */
+const SVB_BLOOM={a:.3,c:'#c3d1d6',lit:1.2,n:1.5,so:1,w:.16};
+/* the nodes along a whole stem (or chain) of length Lt: sv.nodes is a list [{s: share of the length | d: units, own keys}...], a function
+   (Lt,C,W) -> such a list, or a generator {n, from, to (shares of the length) | d0, l (units: the first node, the first internode), k (each
+   internode k × the one before it, counted from the ref end: < 1 shorter away from it), jit (hash jitter of the internodes, share), ref ('foot':
+   C[0], 'head'), up (1: the head is at C[n-1]), sd (seed)} with the nodes' own keys (SVN_DEF). Each node: d (distance from C[0]), i (rank) */
+function svNodeList(nd,Lt,C,W,sd){const base=Object.assign({},SVN_DEF,nd&&typeof nd==='object'&&!Array.isArray(nd)?nd:{}),hd=base.ref==='head',
+    raw=typeof nd==='function'?nd(Lt,C,W):Array.isArray(nd)?nd:null,L=[],h=(i,k)=>pxHashS(i,k,base.sd??sd),jit=base.jit??.06,k=base.k??1;
+  if(raw)raw.forEach((q,i)=>{const d=q.d!=null?q.d:(q.s??0)*Lt;L.push(Object.assign({},base,q,{d:hd?Lt-d:d,i}))});
+  else{const n=base.n||0,P=[];if(base.l!=null){let d=base.d0??0,l=base.l;for(let i=0;i<n;i++){P.push(d);d+=l*(1+jit*(2*h(i,3)-1));l*=k}}
+    else if(n>0){const a=base.from??.08,b=base.to??.9,ls=[];let l=1,s=0;for(let i=0;i<n-1;i++){ls.push(l*(1+jit*(2*h(i,3)-1)));s+=ls[i];l*=k}
+      let d=a;for(let i=0;i<n;i++){P.push(d*Lt);if(i<n-1)d+=(b-a)*ls[i]/(s||1)}}
+    P.forEach((d,i)=>L.push(Object.assign({},base,{d:hd?Lt-d:d,i})))}
+  return L}
+/* the centre line for the opt-in drawing: arc lengths S (of the line as given: the swell keeps its phase), both ends run on by e = 1.2 w (for the
+   washes; the outline uses C[i0..i1]), a joined end of a piece (C.j = [point before, point after, where the piece starts along its chain, the
+   chain's length, its mean width]) with the tangent shared with the neighbour, the line densified around the nodes (Catmull-Rom: the curve is
+   kept). Returns {C,W,S,i0,i1,t0,t1 (end tangents), j0,j1 (joined ends),nodes,Lt,sd,sOff,sTot,Wc} */
+function svStemPrep(C0,W0,sv,jn){const n0=C0.length,S0=[0];for(let i=1;i<n0;i++)S0.push(S0[i-1]+Math.hypot(C0[i][0]-C0[i-1][0],C0[i][1]-C0[i-1][1]));
+  /* (a piece of a chain: its seed, lengths and width those of the whole chain, so its nodes, ribs and streaks go on across the joins) */
+  const Lt=S0[n0-1],sOff=jn?jn[2]||0:0,sTot=jn&&jn[3]?jn[3]:Lt,sd=sv.sd??(jn?Math.round(sTot*7+(jn[4]||0)*131):Math.round(C0[0][0]*7+C0[0][1]*13)),nodes=[],zones=[],
+    wAt=s=>{let i=1;while(i<n0-1&&S0[i]<s)i++;const t=Math.max(0,Math.min(1,(s-S0[i-1])/((S0[i]-S0[i-1])||1)));return W0[i-1]+(W0[i]-W0[i-1])*t};
+  if(sv.nodes)for(const q of svNodeList(sv.nodes,sTot,C0,W0,sd)){const d=q.d-sOff,w=wAt(d),up=q.up??1,hl=q.len*w/2,p=Math.max(-.9,Math.min(.9,q.sk)),sw=q.sw,
+      sh=q.sheath?Object.assign({},SVN_SH,q.sheath):null,top=p*hl+(sh?(sh.len+(sh.ears||0)+(sh.soft??.22)+.05)*w:0);
+    /* the sheath stays inside the swell: thickness at most .45 sw, its flare into the leaf bases at most .85 sw with it */
+    if(sh){sh.t=Math.min(sh.t,sw*.45);sh.fl=Math.min(.5*(sh.ears||0),Math.max(0,sw*.85-sh.t))}
+    const a=up>0?d-hl*1.05:d-Math.max(hl,top)*1.05,b=up>0?d+Math.max(hl,top)*1.05:d+hl*1.05;if(b<-w||a>Lt+w)continue;
+    nodes.push(Object.assign({},q,{d,w,up,hl,p,sh,rot:q.rot??q.rot0+q.i*Math.PI/2}));zones.push([a,b,w*.08])}
+  const C=[C0[0]],W=[W0[0]],S=[0],cr=(i,t)=>{const p0=C0[Math.max(0,i-2)],p1=C0[i-1],p2=C0[i],p3=C0[Math.min(n0-1,i+1)],t2=t*t,t3=t2*t;
+      return[0,1].map(j=>.5*(2*p1[j]+(-p0[j]+p2[j])*t+(2*p0[j]-5*p1[j]+4*p2[j]-p3[j])*t2+(-p0[j]+3*p1[j]-3*p2[j]+p3[j])*t3))};
+  for(let i=1;i<n0;i++){const a=S0[i-1],b=S0[i],L=b-a;if(L>0)for(const[za,zb,st]of zones){if(zb<=a||za>=b)continue;const x1=Math.min(b,zb);
+      for(let s=Math.ceil(Math.max(a,za)/st)*st;s<x1;s+=st){if(s<=a+st*.3||s>=b-st*.3||S[S.length-1]>=s-st*.3)continue;const t=(s-a)/L;C.push(cr(i,t));W.push(W0[i-1]+(W0[i]-W0[i-1])*t);S.push(s)}}
+    C.push(C0[i]);W.push(W0[i]);S.push(b)}
+  let i0=0,i1=C.length-1,t0=null,t1=null;const e=W0.reduce((x,y)=>x+y,0)/n0*1.2,nz=v=>{const l=Math.hypot(v[0],v[1])||1;return[v[0]/l,v[1]/l]};
+  if(jn&&jn[0])t0=nz([C0[1][0]-jn[0][0],C0[1][1]-jn[0][1]]);if(jn&&jn[1])t1=nz([jn[1][0]-C0[n0-2][0],jn[1][1]-C0[n0-2][1]]);
+  /* both ends run on (a free end too: the washes and the veil then also cover its half-circle cap) */
+  const u0=t0||nz([C0[1][0]-C0[0][0],C0[1][1]-C0[0][1]]),u1=t1||nz([C0[n0-1][0]-C0[n0-2][0],C0[n0-1][1]-C0[n0-2][1]]);
+  C.unshift([C0[0][0]-u0[0]*e,C0[0][1]-u0[1]*e]);W.unshift(W0[0]);S.unshift(-e);i0=1;i1++;C.push([C0[n0-1][0]+u1[0]*e,C0[n0-1][1]+u1[1]*e]);W.push(W0[n0-1]);S.push(Lt+e);
+  return{C,W,S,i0,i1,t0:t0||u0,t1:t1||u1,j0:!!t0,j1:!!t1,nodes,Lt,sd,sOff,sTot,Wc:jn&&jn[4]||0}}
+/* a node's extra radius (share of the half width) at arc length s: the swell, a bell of length 2 hl with its peak at p, C2 at both ends (no kink),
+   plus its sheath's sleeve rising over the swell's head side, ending at the rim (higher at the sides where a leaf leaves: ears × sin² rot),
+   flaring a little into the leaf bases there */
+function svNodeK(q,s){const u=(s-q.d)*q.up/q.hl;let r=0;if(u>-1&&u<1){const t=u<q.p?(u-q.p)/(1+q.p):(u-q.p)/(1-q.p),b=1-t*t;r=q.sw*b*b*b}
+  const sh=q.sh;if(sh){const w=q.w,sg=(s-q.d)*q.up,s0=q.p*q.hl,sr2=Math.pow(Math.sin(q.rot),2),er=sh.ears*w*sr2,sr=s0+sh.len*w+er;
+    if(sg>s0&&sg<sr+sh.soft*w){const rise=svSm((sg-s0)/Math.max(1e-6,(1-q.p)*q.hl)),fall=1-svSm((sg-sr)/(sh.soft*w)),fl=er>0?sh.fl*sr2*svSm((sg-s0-sh.len*w*.6)/Math.max(1e-6,sh.len*w*.4+er)):0;r+=(sh.t+fl)*rise*fall}}
+  return r}
+function svStemLine(par,C0,Wd1,c){const g=G(par);if(C0.length<2)return g;const sv=c.sv||{},sec=sv.section,jn=sv.join&&C0.j||null,
+    X=!!(sv.nodes||sec==='ribbed'||sec==='square'||sv.bloom||jn),pr=X?svStemPrep(C0,Wd1,sv,jn):null,C=X?pr.C:C0,Wd0=X?pr.W:Wd1,n=C.length,T=[],N=[],ph=(C0[0][0]*.37+C0[0][1]*.11)%6.28;
+  /* a slow swell of the width along the stem (a living stem is never a ruled tube); joined pieces read it from the page (continuous at a join) */
+  let acc0=0;const Wd=Wd0.map((w,i)=>{if(X){if(jn){const s=(C[i][1]+C[i][0]*.3)/w;return w*(1+(sv.swell??.05)*Math.sin(s/9)+.025*Math.sin(s/3.1))}acc0=pr.S[i]}
+    else if(i)acc0+=Math.hypot(C[i][0]-C[i-1][0],C[i][1]-C[i-1][1]);return w*(1+(sv.swell??.05)*Math.sin(acc0/(w*9)+ph)+.025*Math.sin(acc0/(w*3.1)+ph*2))});
   for(let i=0;i<n;i++){const a=C[Math.max(0,i-1)],b=C[Math.min(n-1,i+1)],dx=b[0]-a[0],dy=b[1]-a[1],l=Math.hypot(dx,dy)||1;T.push([dx/l,dy/l]);N.push([-dy/l,dx/l])}
+  /* (opt-in) the shared tangent at a joined end; the half widths of each side: the nodes' swell and sheath, the ribs' ripple (the silhouette
+     falls on a rib or in a groove as they turn round the stem) */
+  let hA=null,hB=null,rPh=null;if(X){const fix=(i,t)=>{T[i]=t;N[i]=[-t[1],t[0]]};fix(0,pr.t0);fix(1,pr.t0);fix(n-1,pr.t1);fix(n-2,pr.t1)
+    hA=[];hB=[];const rib=sec==='ribbed',rn=sv.ribN||10,rd=sv.ribD??.035,W1=pr.Wc||Wd.reduce((a,b)=>a+b,0)/n;if(rib)rPh=pr.S.map(s=>(sv.ribPh??pxHashS(1,9,pr.sd)*6.28)+(sv.ribTw??.012)*(s+pr.sOff)/W1);
+    for(let i=0;i<n;i++){let k=1;for(const q of pr.nodes)k+=svNodeK(q,pr.S[i]);const w=Wd[i]/2*k;
+      hA.push(rib?w*(1-rd*(1-Math.cos(rn*(Math.PI/2-rPh[i])))/2):w);hB.push(rib?w*(1-rd*(1-Math.cos(rn*(-Math.PI/2-rPh[i])))/2):w)}}
   const lt=[LIGHT[0],-LIGHT[1]],ll=Math.hypot(lt[0],lt[1]),L=[lt[0]/ll,lt[1]/ll],kk=N.map(q=>Math.max(-1,Math.min(1,(q[0]*L[0]+q[1]*L[1])*2.5))),
-    off=(f0,f1)=>{const A=[],B2=[];for(let i=0;i<n;i++){const w=Wd[i]/2,s=kk[i],o0=w*f0*s,o1=w*f1*s;A.push([C[i][0]+N[i][0]*o0,C[i][1]+N[i][1]*o0]);B2.push([C[i][0]+N[i][0]*o1,C[i][1]+N[i][1]*o1])}return A.concat(B2.reverse())},
-    line=f0=>{const A=[];for(let i=0;i<n;i++){const o0=Wd[i]/2*f0;A.push([C[i][0]+N[i][0]*o0,C[i][1]+N[i][1]*o0])}return A},
-    tol=Math.max(.04,Math.min(...Wd)*.05),W0=Wd.reduce((a,b)=>a+b,0)/n;
-  const out=[];for(let i=0;i<n;i++)out.push([C[i][0]+N[i][0]*Wd[i]/2,C[i][1]+N[i][1]*Wd[i]/2]);for(let i=n-1;i>=0;i--)out.push([C[i][0]-N[i][0]*Wd[i]/2,C[i][1]-N[i][1]*Wd[i]/2]);
+    off=(f0,f1,ia=0,ib=n-1)=>{const A=[],B2=[];for(let i=ia;i<=ib;i++){const s=kk[i],w=hA?(f0*s>0?hA[i]:hB[i]):Wd[i]/2,w1=hA?(f1*s>0?hA[i]:hB[i]):w,o0=w*f0*s,o1=w1*f1*s;A.push([C[i][0]+N[i][0]*o0,C[i][1]+N[i][1]*o0]);B2.push([C[i][0]+N[i][0]*o1,C[i][1]+N[i][1]*o1])}return A.concat(B2.reverse())},
+    line=f0=>{const A=[];for(let i=0;i<n;i++){const o0=(hA?(f0>0?hA[i]:hB[i]):Wd[i]/2)*f0;A.push([C[i][0]+N[i][0]*o0,C[i][1]+N[i][1]*o0])}return A},
+    /* (joined pieces: the striations and washes simplified 3 times finer, else their lines jog at a join) */
+    tol=Math.max(.04,Math.min(...Wd)*(jn?.015:.05)),W0=Wd.reduce((a,b)=>a+b,0)/n;
+  const ct=sv.cut!=null;let od,out=null;
+  if(!X){out=[];for(let i=0;i<n;i++)out.push([C[i][0]+N[i][0]*Wd[i]/2,C[i][1]+N[i][1]*Wd[i]/2]);for(let i=n-1;i>=0;i--)out.push([C[i][0]-N[i][0]*Wd[i]/2,C[i][1]-N[i][1]*Wd[i]/2]);
   /* a cut stem (sv.cut: the slant of the cut, as a tangent): its first end C[0] cut straight across or slanted, never rounded; a pale lip on the cut */
-  const ct=sv.cut!=null;if(ct){const s=sv.cut*Wd[0]/2,m=out.length-1;out[0]=[out[0][0]+T[0][0]*s,out[0][1]+T[0][1]*s];out[m]=[out[m][0]-T[0][0]*s,out[m][1]-T[0][1]*s]}
-  const od=ct?svSpl(svSimp(out,tol),false)+'Z':svSpl(svSimp(out,tol));E('path',{d:od,fill:c[1]},g);if(LOD)return g;
+    if(ct){const s=sv.cut*Wd[0]/2,m=out.length-1;out[0]=[out[0][0]+T[0][0]*s,out[0][1]+T[0][1]*s];out[m]=[out[m][0]-T[0][0]*s,out[m][1]-T[0][1]*s]}
+    od=ct?svSpl(svSimp(out,tol),false)+'Z':svSpl(svSimp(out,tol))}
+  else{/* (opt-in) each side an open spline; each end cut square (a join: the far end running .2 w over the next piece), slanted (sv.cut) or closed
+     by a half circle tangent to both sides */
+    const i0=pr.i0,i1=pr.i1,sA=[],sB=[];for(let i=i0;i<=i1;i++){sA.push([C[i][0]+N[i][0]*hA[i],C[i][1]+N[i][1]*hA[i]]);sB.push([C[i][0]-N[i][0]*hB[i],C[i][1]-N[i][1]*hB[i]])}
+    if(pr.j1){const o=W0*.2,t=pr.t1;sA.push([sA[sA.length-1][0]+t[0]*o,sA[sA.length-1][1]+t[1]*o]);sB.push([sB[sB.length-1][0]+t[0]*o,sB[sB.length-1][1]+t[1]*o])}
+    if(ct&&!pr.j0){const s=sv.cut*Wd[i0]/2;sA[0]=[sA[0][0]+T[i0][0]*s,sA[0][1]+T[i0][1]*s];sB[0]=[sB[0][0]-T[i0][0]*s,sB[0][1]-T[i0][1]*s]}
+    /* (a finer tolerance than the washes': the swell and the sheath's step are small beside the width, simplified away they make corners) */
+    const tO=Math.max(.04,Math.min(...Wd)*.01),pA=sA[0],a=svSpl(svSimpO(sA,tO),false);sB.reverse();const pB=sB[0],b=svSpl(svSimpO(sB,tO),false),bc=b.slice(1+b.slice(1).search(/[a-zA-Z]/)),
+      cap=(r,p)=>'A'+svJ([svR(r),svR(r)])+' 0 0 0 '+svJ([svR(p[0]),svR(p[1])]);
+    od=a+(pr.j1?'L'+b.slice(1):cap((hA[i1]+hB[i1])/2,pB)+bc)+(pr.j0||ct?'Z':cap((hA[i0]+hB[i0])/2,pA)+'Z')}
+  /* (a joined piece: the body and everything over it painted as one layer under one mask, so the piece drawn later meets the other along a single
+     anti-aliased edge: two layers cut by the same clip left a light hairline at every join; the washes' blur from the chain's mean width, C.j[4],
+     the same for every piece: a blur per piece left a step of light at each join) */
+  const jm=X&&jn&&!LOD&&!(sv.lean&&DET<1.5);if(!jm)E('path',{d:od,fill:c[1]},g);if(LOD)return g;
   /* sv.lean (a plant's stem seen whole, below DET 1.5): one shaded wash inside the outline (no clip, no blur) instead of two, no gloss stripe,
      no tint toward the head */
-  const lean=sv.lean&&DET<1.5;let cg=g,bg=g;if(!lean){const id='sc'+(gid++);E('path',{d:od},E('clipPath',{id},GDEF||defs));cg=G(g,{'clip-path':`url(#${id})`});bg=G(cg,{filter:svBlur(W0*.16)})}
-  E('path',{d:svSpl(svSimp(lean?off(-.97,-.3):off(-1.4,-.25),tol)),fill:c[0],'fill-opacity':lean?.7:.85},bg);if(!lean)E('path',{d:svSpl(svSimp(off(-1.4,-.68),tol)),fill:c[0],'fill-opacity':.6},bg);
-  E('path',{d:svSpl(svSimp(lean?off(.1,.55):off(.02,.62),tol)),fill:c[2],'fill-opacity':lean?.55:.8},bg);if(!lean)E('path',{d:svSpl(svSimp(off(.18,.42),tol)),fill:c[3],'fill-opacity':sv.gloss??.5},bg);
+  /* (opt-in) a band wider than the stem over the whole run-on line: what fills the stem inside its clip or mask is cut by it alone (a fill along
+     the outline's own edge, under the same edge, is anti-aliased twice: a line at every join, a rim on the silhouette) */
+  const wide=X?(f=1.3)=>{const A=[],B=[];for(let i=0;i<n;i++){A.push([C[i][0]+N[i][0]*hA[i]*f,C[i][1]+N[i][1]*hA[i]*f]);B.push([C[i][0]-N[i][0]*hB[i]*f,C[i][1]-N[i][1]*hB[i]*f])}return svSpl(svSimp(A.concat(B.reverse()),tol))}:null;
+  const lean=sv.lean&&DET<1.5;let cg=g,bg=g;if(jm){const id='sm'+(gid++);E('path',{d:od,fill:'#fff'},E('mask',{id,maskUnits:'userSpaceOnUse'},GDEF||defs));cg=G(g,{mask:`url(#${id})`});E('path',{d:wide(),fill:c[1]},cg);bg=G(cg,{filter:svBlur((jn[4]||W0)*.16)})}
+  else if(!lean){const id='sc'+(gid++);E('path',{d:od},E('clipPath',{id},GDEF||defs));cg=G(g,{'clip-path':`url(#${id})`});bg=G(cg,{filter:svBlur(W0*.16)})}
+  if(sec==='square')svStemSquare(cg,bg,C,N,hA,hB,c,sv,pr,W0,tol,lean);
+  else{E('path',{d:svSpl(svSimp(lean?off(-.97,-.3):off(-1.4,-.25),tol)),fill:c[0],'fill-opacity':lean?.7:.85},bg);if(!lean)E('path',{d:svSpl(svSimp(off(-1.4,-.68),tol)),fill:c[0],'fill-opacity':.6},bg);
+    E('path',{d:svSpl(svSimp(lean?off(.1,.55):off(.02,.62),tol)),fill:c[2],'fill-opacity':lean?.55:.8},bg);if(!lean)E('path',{d:svSpl(svSimp(off(.18,.42),tol)),fill:c[3],'fill-opacity':sv.gloss??.5},bg)}
+  if(X&&pr.nodes.length&&!lean&&DET>=1.5)svNodeFlanks(bg,C,T,c,pr,L,off,tol);
+  if(X&&sv.bloom)svStemBloom(cg,bg,lean?od:wide(),C,N,T,hA,hB,c,sv,pr,L,off,tol,W0,lean);
+  if(sec==='ribbed'&&!lean)svStemRibs(cg,C,N,hA,hB,c,sv,pr,rPh,W0,tol);
   /* fine striations along the stem (its ribs), darker on the shaded side */
   if(sv.ribs&&DET>=1){let d='';for(const f0 of sv.ribs)d+=svSpl(svSimpO(line(f0),tol),false);E('path',{d,fill:'none',stroke:c[0],'stroke-width':svF(Math.max(.06,W0*.05)),'stroke-opacity':.28},cg)}
-  if(ct){const a=out[0],b=out[out.length-1];E('path',{d:'M'+svJ([svR(a[0]),svR(a[1])])+'L'+svJ([svR(b[0]),svR(b[1])]),fill:'none',stroke:sv.cutC||'#dde6c4','stroke-width':svF(Wd[0]*.34),'stroke-opacity':.9},cg)}
+  if(X&&pr.nodes.length)svNodeRings(cg,bg,C,N,T,hA,hB,c,pr,lean);
+  if(ct){const i0=X?pr.i0:0,s=sv.cut*Wd[i0]/2,a=X?[C[i0][0]+N[i0][0]*hA[i0]+T[i0][0]*s,C[i0][1]+N[i0][1]*hA[i0]+T[i0][1]*s]:out[0],b=X?[C[i0][0]-N[i0][0]*hB[i0]-T[i0][0]*s,C[i0][1]-N[i0][1]*hB[i0]-T[i0][1]*s]:out[out.length-1];
+    E('path',{d:'M'+svJ([svR(a[0]),svR(a[1])])+'L'+svJ([svR(b[0]),svR(b[1])]),fill:'none',stroke:sv.cutC||'#dde6c4','stroke-width':svF(Wd[i0]*.34),'stroke-opacity':.9},cg);
+    /* section 'hollow': the hollow seen in the cut, a dark core (sv.hollow: its share of the width) in the middle of the pale lip */
+    if(sec==='hollow'){const k=sv.hollow??.55,u=[a[0]+(b[0]-a[0])*(.5-k/2),a[1]+(b[1]-a[1])*(.5-k/2)],v=[a[0]+(b[0]-a[0])*(.5+k/2),a[1]+(b[1]-a[1])*(.5+k/2)];
+      E('path',{d:'M'+svJ([svR(u[0]),svR(u[1])])+'L'+svJ([svR(v[0]),svR(v[1])]),fill:'none',stroke:sv.hollowC||'#2f3a2a','stroke-width':svF(Wd[i0]*.2),'stroke-opacity':.85,'stroke-linecap':'round'},cg)}}
   /* the tint toward the head (only where a whole stem is drawn in one piece) */
-  if(sv.red&&!lean){const a=C[0],b=C[n-1],gid2='sg'+(gid++),gr=E('linearGradient',{id:gid2,gradientUnits:'userSpaceOnUse',x1:svF(a[0]),y1:svF(a[1]),x2:svF(b[0]),y2:svF(b[1])},GDEF||defs);
+  if(sv.red&&!lean){const a=C[X?pr.i0:0],b=C[X?pr.i1:n-1],gid2='sg'+(gid++),gr=E('linearGradient',{id:gid2,gradientUnits:'userSpaceOnUse',x1:svF(a[0]),y1:svF(a[1]),x2:svF(b[0]),y2:svF(b[1])},GDEF||defs);
     const f0=sv.redF??.75;stops(gr,[[0,sv.red,0],[f0,sv.red,0],[1,sv.red,sv.redA??.45]]);E('path',{d:od,fill:`url(#${gid2})`},cg)}
   /* silky hairs pressed along the stem, leaning toward its end: many, fine, short, half transparent; on the silhouette they stand a little out of it, on the
      face they catch the light as a sheen */
-  if(sv.hair){let de='',df='';const step=W0*(sv.hairK??.7)*(DET>=1.5?.6:1.2);let acc=0,k=0;for(let i=1;i<n;i++){const sl=Math.hypot(C[i][0]-C[i-1][0],C[i][1]-C[i-1][1]);acc+=sl;while(acc>=step){acc-=step;k++;/* hairI: each hair at its own place along the segment (a continuous fur), not all at its end */const u=sv.hairI&&sl>0?Math.min(1,acc/sl):0,X=[C[i][0]+(C[i-1][0]-C[i][0])*u,C[i][1]+(C[i-1][1]-C[i][1])*u];
+  if(sv.hair){let de='',df='';const step=W0*(sv.hairK??.7)*(DET>=1.5?.6:1.2),h0=X?pr.i0:0,h1=X?pr.i1:n-1;let acc=0,k=0;for(let i=h0+1;i<=h1;i++){const sl=Math.hypot(C[i][0]-C[i-1][0],C[i][1]-C[i-1][1]);acc+=sl;while(acc>=step){acc-=step;k++;/* hairI: each hair at its own place along the segment (a continuous fur), not all at its end */const u=sv.hairI&&sl>0?Math.min(1,acc/sl):0,X=[C[i][0]+(C[i-1][0]-C[i][0])*u,C[i][1]+(C[i-1][1]-C[i][1])*u];
       const w=Wd[i]/2,r1=pxHashS(k,3,n),r2=pxHashS(k,5,n),r3=pxHashS(k,7,n);
       for(const s of[1,-1]){const h=w*(.35+.4*r1)*(sv.hairL??1),q=[X[0]+N[i][0]*w*s*(.82+.1*r2),X[1]+N[i][1]*w*s*(.82+.1*r2)],a=(.22+.3*r3)*(sv.hairA??1),dir=[N[i][0]*s*a+T[i][0],N[i][1]*s*a+T[i][1]],dl=Math.hypot(dir[0],dir[1]);
         de+='M'+svJ([svR(q[0]),svR(q[1])])+'l'+svJ([svR(dir[0]/dl*h),svR(dir[1]/dl*h)])}
@@ -202,7 +304,89 @@ function svStemLine(par,C,Wd0,c){const n=C.length,g=G(par);if(n<2)return g;const
     if(de)E('path',{d:de,fill:'none',stroke:sv.hair,'stroke-width':svF(Math.max(.04,W0*.026)),'stroke-opacity':sv.hairOp??.38,'stroke-linecap':'round'},g);
     if(df)E('path',{d:df,fill:'none',stroke:sv.hair,'stroke-width':svF(Math.max(.04,W0*.022)),'stroke-opacity':sv.hairFOp??.1,'stroke-linecap':'round'},cg)}
   /* a kind's own surface marks (lenticels, nodes of a woody stem): sv.post(g, clipped group, centre line, widths, normals, tangents, mean width) */
-  if(sv.post)sv.post(g,cg,C,Wd,N,T,W0);
+  if(sv.post){if(X){const q=a=>a.slice(pr.i0,pr.i1+1);sv.post(g,cg,q(C),q(Wd),q(N),q(T),W0)}else sv.post(g,cg,C,Wd,N,T,W0)}
   return g}
+/* ---- the opt-in parts of svStemLine (nodes, sections, bloom) ---- */
+/* the stem's point, normal, tangent and half widths at arc length s (interpolated on the drawn line) */
+function svStemAt(C,N,hA,hB,S,s){let i=1;const n=C.length;while(i<n-1&&S[i]<s)i++;const t=Math.max(0,Math.min(1,(s-S[i-1])/((S[i]-S[i-1])||1))),l=(a,b)=>a+(b-a)*t,
+    nn=[l(N[i-1][0],N[i][0]),l(N[i-1][1],N[i][1])],nl=Math.hypot(nn[0],nn[1])||1,m=[nn[0]/nl,nn[1]/nl];
+  return{p:[l(C[i-1][0],C[i][0]),l(C[i-1][1],C[i][1])],n:m,t:[m[1],-m[0]],a:l(hA[i-1],hA[i]),b:l(hB[i-1],hB[i])}}
+/* a point x (-1..1 of the half widths, + toward N) across the stem at q (svStemAt) */
+const svAcross=(q,x)=>{const w=(x>0?q.a:q.b)*x;return[q.p[0]+q.n[0]*w,q.p[1]+q.n[1]*w]};
+/* a thin lens across the stem at arc length s (a ring, a rim): its middle sags toward the foot by bow × w, its ends taper to nothing; rise(x)
+   lifts it toward the head (× w: the sheath's rim climbing into the leaf bases). Path data */
+function svLensD(C,N,hA,hB,S,s,up,w,bow,th,rise,x0=-1,x1=1){const q=svStemAt(C,N,hA,hB,S,s),A=[],B=[],m=DET>=1.5?8:5;
+  for(let k=0;k<=m;k++){const x=x0+(x1-x0)*k/m,sg=-bow*w*Math.sqrt(Math.max(0,1-x*x))+(rise?rise(x)*w:0),t=th*w*Math.pow(Math.max(0,1-x*x),.6)/2,
+      c=svAcross(q,x*.985),d=[q.t[0]*up,q.t[1]*up];A.push([c[0]+d[0]*(sg+t),c[1]+d[1]*(sg+t)]);B.push([c[0]+d[0]*(sg-t),c[1]+d[1]*(sg-t)])}
+  return svSpl(A.concat(B.reverse()))}
+/* the light on the nodes' flanks: the flank turned toward the light along the stem a little lighter, the other darker (soft: in the blurred washes) */
+function svNodeFlanks(bg,C,T,c,pr,L,off,tol){let dl='',dd='',a=0;const S=pr.S,n=C.length,idx=s=>{let i=0;while(i<n-1&&S[i]<s)i++;return i},
+    band=(r,f0,f1)=>{const ia=idx(r[0]),ib=Math.min(n-1,Math.max(ia+1,idx(r[1])));return svSpl(svSimp(off(f0,f1,ia,ib),tol))};
+  for(const q of pr.nodes){const i=idx(q.d),lT=(T[i][0]*L[0]+T[i][1]*L[1])*q.up,s0=q.d+q.up*q.p*q.hl,s1=q.d-q.up*q.hl,s2=q.d+q.up*q.hl,
+      lo=[Math.min(s1,s0),Math.max(s1,s0)],hi=[Math.min(s0,s2),Math.max(s0,s2)];dl+=band(lT>=0?hi:lo,-.5,1.4);dd+=band(lT>=0?lo:hi,-1.4,.6);a+=Math.abs(lT)*q.fk}
+  a/=pr.nodes.length;if(dl)E('path',{d:dl,fill:c[2],'fill-opacity':svF(Math.min(.6,a*.5))},bg);if(dd)E('path',{d:dd,fill:c[0],'fill-opacity':svF(Math.min(.5,a*.45))},bg)}
+/* each node's ring (where the leaves are inserted: a fine tapered line, half transparent, never a dark outline) and its lit lip; the sheath of leaf
+   bases above it: a paler sleeve, its rim (rising into the leaf bases), its slit if it does not close. At DET 1: rings and rims only */
+function svNodeRings(cg,bg,C,N,T,hA,hB,c,pr,lean){const hi=DET>=1.5&&!lean,S=pr.S,q0=pr.nodes[0];let dr='',dp='',ds='',dm='',dsl='',sa=0,sro=0,ns=0,sh0=null;
+  for(const q of pr.nodes){const w=q.w,up=q.up,sr=q.d+up*q.hl*(q.ra??q.p);dr+=svLensD(C,N,hA,hB,S,sr,up,w,q.bow,q.rw);if(hi)dp+=svLensD(C,N,hA,hB,S,sr+up*q.rw*w*.9,up,w,q.bow,q.rw*.55);
+    const sh=q.sh;if(!sh)continue;sh0=sh0||sh;const s0=q.d+up*q.p*q.hl,s1=s0+up*sh.len*w,rot=q.rot,er=sh.ears||0,
+      rise=x=>er*Math.pow(Math.cos(Math.asin(Math.max(-1,Math.min(1,x)))-rot),2),rimAt=x=>svStemAt(C,N,hA,hB,S,s1+up*(rise(x)-q.bow*Math.sqrt(Math.max(0,1-x*x)))*w);
+    /* the slit (wrap < 1): centred between the two leaves, drawn where it faces the viewer */
+    let gap=null;if(sh.wrap<1){const g0=Math.PI*(1-sh.wrap);let ts=((rot+Math.PI/2)%(2*Math.PI)+3*Math.PI)%(2*Math.PI)-Math.PI;if(Math.abs(ts)>Math.PI/2)ts+=ts>0?-Math.PI:Math.PI;
+      const a=Math.max(-Math.PI/2,ts-g0),b=Math.min(Math.PI/2,ts+g0);if(b>a)gap=[Math.sin(a),Math.sin(b)]}
+    const spans=gap?[[-1,gap[0]],[gap[1],1]].filter(r=>r[1]-r[0]>.05):[[-1,1]];
+    if(hi){const a=svStemAt(C,N,hA,hB,S,s0-up*.25*q.hl);for(const[x0,x1]of spans){const A=[],B=[];for(let j=0;j<=8;j++){const x=x0+(x1-x0)*j/8;A.push(svAcross(a,x));B.push(svAcross(rimAt(x),x))}ds+=svSpl(A.concat(B.reverse()))}
+      if(gap)for(const x of gap)if(x>-.98&&x<.98){const p=svAcross(svStemAt(C,N,hA,hB,S,s0),x),r=svAcross(rimAt(x),x);dsl+='M'+svJ([svR(p[0]),svR(p[1])])+'L'+svJ([svR(r[0]),svR(r[1])])}}
+    for(const[x0,x1]of spans)dm+=svLensD(C,N,hA,hB,S,s1,up,w,q.bow,sh.rw,rise,x0,x1);sa+=sh.a;sro+=sh.ro;ns++}
+  if(ds)E('path',{d:ds,fill:sh0.c||mix(c[1],c[3],.3),'fill-opacity':svF(sa/ns)},bg);
+  if(dr)E('path',{d:dr,fill:q0.ring||c[0],'fill-opacity':svF(q0.ro)},cg);if(dp)E('path',{d:dp,fill:c[3],'fill-opacity':svF(q0.ro*q0.lip)},cg);
+  if(dsl)E('path',{d:dsl,fill:'none',stroke:c[0],'stroke-width':svF(Math.max(.04,q0.w*.03)),'stroke-opacity':.35,'stroke-linecap':'round'},cg);
+  if(dm)E('path',{d:dm,fill:sh0.rim||c[3],'fill-opacity':svF(sro/ns)},cg)}
+/* the glaucous bloom: a bluish waxy veil over the whole stem (vd: a band wider than the stem, cut by its clip; lean: the outline), stronger on
+   the lit side (blurred), rubbed off in a few soft streaks along the stem
+   where the green shows through, a few denser ones (hash-placed, mostly on the lit side where the wax shows). At DET 1: the two veils */
+function svStemBloom(cg,bg,vd,C,N,T,hA,hB,c,sv,pr,L,off,tol,W0,lean){const b=Object.assign({},SVB_BLOOM,typeof sv.bloom==='object'?sv.bloom:{a:sv.bloom}),S=pr.S;
+  E('path',{d:vd,fill:b.c,'fill-opacity':svF(b.a*.5)},cg);if(lean)return;
+  E('path',{d:svSpl(svSimp(off(-.15,1.4),tol)),fill:b.c,'fill-opacity':svF(Math.min(.9,b.a*.6*b.lit))},bg);
+  /* (along the whole chain for a joined piece: each piece draws the part of each streak it carries) */
+  if(DET<1.5||!(b.n>0))return;const s0=-pr.sOff,Ls=pr.sTot,m=Math.max(1,Math.round(Ls/((pr.Wc||W0)*10)*b.n)),sd=pr.sd,sMin=S[0],sMax=S[S.length-1];let d1='',d2='';
+  /* each streak a spindle along the stem (its width b.w × w at most, tapering to both ends), a little askew */
+  for(let k=0;k<m;k++){const h=j=>pxHashS(k,j,sd+71),a=s0+h(1)*Ls,len=W0*(1+2.5*h(2)),x=-.05+.85*h(3),dx=(h(4)-.5)*.2,ww=b.w*(.6+.6*h(6)),A=[],B=[];
+    for(let j=0;j<=6;j++){const t=j/6,s=Math.min(s0+Ls,a+len*t);if(s<sMin||s>sMax)continue;const q=svStemAt(C,N,hA,hB,S,s),sg=q.n[0]*L[0]+q.n[1]*L[1]>=0?1:-1,xc=x+dx*t,hw=ww*Math.pow(Math.sin(Math.PI*t),.8);
+      A.push(svAcross(q,Math.max(-.95,Math.min(.95,xc+hw))*sg));B.push(svAcross(q,Math.max(-.95,Math.min(.95,xc-hw))*sg))}
+    if(A.length<2)continue;const dd=svSpl(A.concat(B.reverse()));if(h(5)<.7)d1+=dd;else d2+=dd}
+  const sg=G(cg,{filter:svBlur(W0*.07)});if(d1)E('path',{d:d1,fill:c[1],'fill-opacity':svF(Math.min(.9,b.a*b.so))},sg);
+  if(d2)E('path',{d:d2,fill:b.c,'fill-opacity':svF(Math.min(.9,b.a*b.so*.8))},sg)}
+/* the cylinder's light at angle th around the stem (0: facing the viewer, + toward N), as svLight's wrapped diffuse (0..1) */
+const svRingLit=(Ni,th)=>Math.max(0,(V3.dot([Math.sin(th)*Ni[0],-Math.sin(th)*Ni[1],Math.cos(th)],LIGHT)+.3)/1.3);
+/* section 'ribbed': ribN ribs round the stem (turning slowly by ribTw rad per width of length from ribPh), each crest a fine light line, each
+   groove a fine dark one, their strength from the light where they face (3 classes); foreshortened toward the silhouette. At DET 1: the grooves */
+function svStemRibs(cg,C,N,hA,hB,c,sv,pr,rPh,W0,tol){const rn=sv.ribN||10,ra=sv.ribA??.55,hi=DET>=1.5,cr=['','',''],gr=['','',''],k2=hi?3:1,TP=2*Math.PI;
+  for(let k=0;k<rn;k++)for(const o of hi?[0,.5]:[.5]){let run=[],li=0;const flush=()=>{if(run.length>2){const cl=Math.min(k2-1,Math.floor(li/run.length*k2));(o?gr:cr)[cl]+=svSpl(svSimpO(run,tol*.6),false)}run=[];li=0};
+    for(let i=pr.i0;i<=pr.i1;i++){const th=((rPh[i]+TP*(k+o)/rn)%TP+TP*1.5)%TP-Math.PI;if(Math.cos(th)<.12){flush();continue}const x=Math.sin(th),w=(x>0?hA[i]:hB[i])*x;
+      run.push([C[i][0]+N[i][0]*w,C[i][1]+N[i][1]*w]);li+=svRingLit(N[i],th)}flush()}
+  const rg=G(cg,{filter:svBlur(W0*.035)});for(let q=0;q<k2;q++){const I=k2>1?(q+.5)/k2:.5;
+    if(gr[q])E('path',{d:gr[q],fill:'none',stroke:c[0],'stroke-width':svF(Math.max(.05,W0*.06)),'stroke-opacity':svF(ra*(.3+.4*(1-I)))},rg);
+    if(cr[q])E('path',{d:cr[q],fill:'none',stroke:c[3],'stroke-width':svF(Math.max(.05,W0*.05)),'stroke-opacity':svF(ra*.6*I)},rg)}}
+/* section 'square': four edges round the stem at sqRot rad (default .7: two faces of clearly different light) + sqTw rad per width of length; the two visible faces flat, each one colour from its own
+   light (a gradient along the stem as the stem bends), the edge between them and the lit silhouette edge catch a fine line of light (edgeA),
+   the faces' meeting a little rounded (sqR × w of blur). Drawn under the blurred group (the nodes' flanks and the bloom over them) */
+function svStemSquare(cg,bg,C,N,hA,hB,c,sv,pr,W0,tol,lean){const S=pr.S,i0=pr.i0,i1=pr.i1,hp=Math.PI/2,ea=sv.edgeA??.5,
+    psi=i=>{const v=(sv.sqRot??.7)+(sv.sqTw??0)*(S[i]+pr.sOff)/(pr.Wc||W0);return(v%hp+hp)%hp},xe=i=>{const t=psi(i)+Math.PI/4;return-Math.cos(t)/Math.sin(t)},
+    col=I=>I<.45?mix(c[0],c[1],I/.45):I<.85?mix(c[1],c[2],(I-.45)/.4):mix(c[2],c[3],Math.min(1,(I-.85)/.3)),
+    sq=G(cg,lean?{}:{filter:svBlur(W0*(sv.sqR??.05))});cg.insertBefore(sq,bg===cg?null:bg);
+  const K=8,smp=[];for(let k=0;k<=K;k++){const i=Math.round(i0+(i1-i0)*k/K),p=psi(i);smp.push([i,svRingLit(N[i],p-hp),svRingLit(N[i],p)])}
+  const a=C[i0],b=C[i1],dx=b[0]-a[0],dy=b[1]-a[1],l2=dx*dx+dy*dy||1,face=(xa,xb,f)=>{const A=[],B=[];for(let i=0;i<C.length;i++){const qa=xa(i),qb=xb(i),wa=(qa>0?hA[i]:hB[i])*qa,wb=(qb>0?hA[i]:hB[i])*qb;
+        A.push([C[i][0]+N[i][0]*wa,C[i][1]+N[i][1]*wa]);B.push([C[i][0]+N[i][0]*wb,C[i][1]+N[i][1]*wb])}
+      let fill;if(lean)fill=col(smp.reduce((s,q)=>s+q[f],0)/smp.length);else{const id='sg'+(gid++),gr=E('linearGradient',{id,gradientUnits:'userSpaceOnUse',x1:svF(a[0]),y1:svF(a[1]),x2:svF(b[0]),y2:svF(b[1])},GDEF||defs);
+        stops(gr,smp.map(([i,...I])=>[svF(Math.max(0,Math.min(1,((C[i][0]-a[0])*dx+(C[i][1]-a[1])*dy)/l2))),col(I[f-1])]).sort((p,q)=>p[0]-q[0]));fill=`url(#${id})`}
+      E('path',{d:svSpl(svSimp(A.concat(B.reverse()),tol)),fill},sq)},lim=lean?1:1.05;
+  face(()=>-lim,xe,1);face(xe,()=>lim,2);if(lean)return;
+  /* the edges: between the faces, then the silhouette edge of the lit face */
+  let de='',dsil='';const IL=smp.reduce((s,q)=>s+q[1],0)/smp.length,IR=smp.reduce((s,q)=>s+q[2],0)/smp.length;let run=[];
+  const flush=()=>{if(run.length>2)de+=svSpl(svSimpO(run,tol*.6),false);run=[]};for(let i=i0;i<=i1;i++){const x=xe(i);if(x<-.96||x>.96){flush();continue}const w=(x>0?hA[i]:hB[i])*x;run.push([C[i][0]+N[i][0]*w,C[i][1]+N[i][1]*w])}flush();
+  const xs=IR>=IL?.93:-.93;for(let i=i0;i<=i1;i++){const w=(xs>0?hA[i]:hB[i])*xs;run.push([C[i][0]+N[i][0]*w,C[i][1]+N[i][1]*w])}if(run.length>2)dsil=svSpl(svSimpO(run,tol*.6),false);
+  if(de)E('path',{d:de,fill:'none',stroke:c[3],'stroke-width':svF(Math.max(.05,W0*.06)),'stroke-opacity':svF(ea*Math.max(IL,IR))},sq);
+  if(dsil)E('path',{d:dsil,fill:'none',stroke:c[2],'stroke-width':svF(Math.max(.05,W0*.05)),'stroke-opacity':svF(ea*.6*Math.max(IL,IR))},sq)}
 /* the shared stem drawers hand a styled stem to svStemLine: a cubic (stem3) or a polyline with widths (stemPoly) */
 function svStem3(par,P,w0,w1,c,n){const C=[],W=[],m=Math.max(10,n*2);for(let i=0;i<=m;i++){const t=i/m,u=1-t,q=[0,1].map(j=>u*u*u*P[0][j]+3*u*u*t*P[1][j]+3*u*t*t*P[2][j]+t*t*t*P[3][j]);C.push(q);W.push(w0+(w1-w0)*t)}return svStemLine(par,C,W,c)}
