@@ -84,7 +84,8 @@ GR_LAYOUT.dresse=(S,g,H,st)=>{const P=S.lay,n=g.n,fl=[],D2=Math.PI/180,SP=P.ster
         c1=V3.add(p0,V3.sc(d0,pd*.55));pos=V3.add(c1,V3.sc(V3.nz(V3.add(V3.sc(d0,.35),V3.sc(dir,.65))),pd*.5));pc=[p0,c1,pos]}
     else pos=[rad[0]*r+dir[0]*pd,rad[1]*r+dir[1]*pd,z+dir[2]*pd];
     fl.push(Object.assign({i,q,gt,phi,rad,side,pos,dir,L,gr:svSm(st.op/.45+.3-.5*q),ster,pc},lw))}
-  return{fl,ax:{z0:0,z1:H*Math.min(1,P.z[1]+.04),r0:(st.Hf||H)*P.rr,r1:(st.Hf||H)*P.rr*.45}}};
+  /* (option coreK) the core shadow's reach x the florets' (absent: .26): an open raceme whose buds stand out shows its green axis between them */
+  return{fl,ax:{z0:0,z1:H*Math.min(1,P.z[1]+.04),r0:(st.Hf||H)*P.rr,r1:(st.Hf||H)*P.rr*.45,coreK:P.coreK,coreGr:P.coreGr}}};
 /* ---------- the one-sided spike (freesia): a wiry axis leaving the scape (z, at the head's foot) and turning through lay.bend toward +x over the
    first lay.arc of its length, then running on, curving down by lay.curve and its tip rising by lay.tipUp; along its upper (outer) side the florets
    alternate in two ranks, lay.ranks (rad) either side, the oldest at the elbow, the internodes shortening toward the tip (lay.gap: 0 even .. <1),
@@ -201,8 +202,9 @@ function grRaceme(k,B,O0,H,S,m,g,st,o){const lay=GR_LAYOUT[S.layout](S,g,H,st),f
   if(ax.core){const gb=1-svSm(st.op/.5);prims.push({d:(ax.coreB?ax.core:[ax.core]).map(Q=>grQ(grCCW(svSimp(hull2(Q.map(p=>sc(hv(p)))),H*.008)))).join(''),f:colAt(ax.coreV??.24,st.wl*.8,ax.coreR&&gb>.5?ax.coreR:(ax.coreF||'fr'),gb*(ax.coreG??.6))})}
   else{const lo=fl.filter(f=>f.w<.55);if(lo.length>11){const z0=Math.min(...lo.map(f=>f.pos[2]))+H*.02,z1=Math.max(...lo.map(f=>f.pos[2])),pts=[];
       const reach=z=>{let s=0,nn=0;for(const f of lo)if(Math.abs(f.pos[2]-z)<H*.12){s+=f.L*(f.o>.22?.5:.8)*Math.sin(Math.acos(Math.max(-1,Math.min(1,f.dir[2]))));nn++}return nn?s/nn:0};
-      for(let i=0;i<=6;i++){const z=z0+(z1-z0)*i/6,r=ax.r0+reach(z)*.26*Math.sin(Math.PI*(.12+.76*i/6));for(let j=0;j<12;j++){const a=j/12*6.2832;pts.push(sc(hv([Math.cos(a)*r,Math.sin(a)*r,z])))}}
-      const gb=1-svSm(st.op/.5);prims.push({d:grQ(grCCW(svSimp(hull2(pts),H*.008))),f:colAt(.24,st.wl*.8,'fr',gb*.6)})}}
+      for(let i=0;i<=6;i++){const z=z0+(z1-z0)*i/6,r=ax.r0+reach(z)*(ax.coreK??.26)*Math.sin(Math.PI*(.12+.76*i/6));for(let j=0;j<12;j++){const a=j/12*6.2832;pts.push(sc(hv([Math.cos(a)*r,Math.sin(a)*r,z])))}}
+      /* (option coreGr) the core's green weight whatever the stage (absent: by the stage): a green axis seen between florets, never a violet column */
+      const gb=1-svSm(st.op/.5);prims.push({d:grQ(grCCW(svSimp(hull2(pts),H*.008))),f:colAt(.24,st.wl*.8,'fr',ax.coreGr??gb*.6)})}}
   if(ax.br)grBranches(prims,ax.br,hv,sc,stc,st.wl,zA,true);const nM=prims.length;
   peds(front);for(const f of front)drawF(f);
   /* the slabs (S.slabs): each side of the axis, slab by slab, layer by layer, grouped by paint; the axis, core and stalks keep their order */
@@ -780,11 +782,12 @@ function grEpSpurDraw(c,f,lod,s,ramp,gb){const n=V3.nz(V3.cr(s.dir,[1,0,0])),v=.
   if(lod>1)c.put({d:grEpTube(c,s.Q.slice(0,6),s.W.slice(0,6),.42,.5),f:c.col(Math.min(1,v*.8+.2),f,ramp,gb)})}
 /* one sepal painted: the darker half's tone, the lit half, the pale base, the shade at the foot, the veins (zoom), the lit margin */
 function grEpPaint(c,f,s,lod,vk){const V=p=>c.V(p),front=V3.dot(c.eye,s.nk)>=0,sg=front?1:-1,ramp=front?'fr':'bk',L=f.L,
-    lp=c.lit(V3.nz(c.Vd(V3.sc(s.nP,sg)))),lm=c.lit(V3.nz(c.Vd(V3.sc(s.nM,sg)))),lo=Math.min(lp,lm)*vk,hi=Math.max(lp,lm)*vk,
+    lp=c.lit(V3.nz(c.Vd(V3.sc(s.nP,sg)))),lm=c.lit(V3.nz(c.Vd(V3.sc(s.nM,sg)))),lo=Math.min(lp,lm)*vk,hi=lo+(Math.max(lp,lm)*vk-lo)*(c.P.fold??1),
     E0=s.E0.map(V),E1=s.E1.map(V),SP=s.sp.map(V),Eh=lp>=lm?E1:E0,mx=(A,B,k)=>[A[0]+(B[0]-A[0])*k,A[1]+(B[1]-A[1])*k,A[2]+(B[2]-A[2])*k];
   c.put({d:c.d2(E0.concat(E1.slice().reverse())),f:c.col(lo,f,ramp)});if(lod<1)return;
   if(hi-lo>.04)c.put({d:c.d2(SP.concat(Eh.slice().reverse())),f:c.col(hi,f,ramp)});if(lod<2)return;
-  if(front&&c.m.bs)c.put({d:c.d2(E0.slice(0,4).map((p,j)=>mx(SP[j],p,.96)).concat(E1.slice(0,4).map((p,j)=>mx(SP[j],p,.96)).reverse())),f:c.col((lo+hi)*.5,f,'bs')});
+  /* (relay 3) the pale zone a narrow tongue up the sepal's middle (its sides were a full ring round the bee) */
+  if(front&&c.m.bs)c.put({d:c.d2(E0.slice(0,4).map((p,j)=>mx(SP[j],p,.5)).concat(E1.slice(0,4).map((p,j)=>mx(SP[j],p,.5)).reverse())),f:c.col((lo+hi)*.5,f,'bs')});
   c.put({d:c.d2(E0.slice(0,2).concat(E1.slice(0,2).reverse())),f:c.col(lo*.55,f,ramp)});
   if(c.det&&front){let dv='';for(const u of[0,-.42,.42,-.74,.74]){const j1=u===0?7:Math.abs(u)<.5?6:5,E=u<0?E0:E1,Q=[];
       for(let j=1;j<=j1;j++)Q.push(mx(SP[j],E[j],Math.abs(u)*(.6+.4*j/j1)));dv+=c.l2(Q)}
@@ -793,16 +796,27 @@ function grEpPaint(c,f,s,lod,vk){const V=p=>c.V(p),front=V3.dot(c.eye,s.nk)>=0,s
 /* the bee: two bilobed lower petals with their tuft, two small upper ones, its shadow on the sepals */
 function grEpBee(c,f,lod,e,dec){const P=c.P,L=f.L,B=P.bee,rb=L*B[0]*(.55+.45*e)*(1-.3*dec),C=[0,-L*B[2],L*B[1]],X=c.Vd([1,0,0]),Y=c.Vd([0,1,0]),
     at=(x,y,z)=>V3.add(C,[x*rb,y*rb,(z||0)*L]),el=(p,rx,ry)=>grEll(sc0(c.V(p)),sc0(V3.sc(X,rx*rb)),sc0(V3.sc(Y,ry*rb))),v0=c.lit(V3.nz(c.Vd([0,0,1])));
-  if(lod>1){const C2=sc0(c.V(at(0,.1))),Xs=sc0(V3.sc(X,rb*.95)),Ys=sc0(V3.sc(Y,rb*1.15));c.put({d:grEll([C2[0]+rb*.2,C2[1]+rb*.26],Xs,Ys),f:c.col(.08,f,'fr'),fo:.32})}
-  /* the two upper petals, half hidden, curving up over the lower pair; the lower pair one rounded tuft, notched at its foot */
-  c.put({d:el(at(-.26,.62,-.01),.34,.46)+el(at(.26,.62,-.01),.34,.46),f:c.col(v0*.62,f,'be')});
-  c.put({d:el(at(-.3,-.02),.56,.66)+el(at(.3,-.02),.56,.66)+el(at(0,.12),.5,.5),f:c.col(v0*.88,f,'be')});if(lod<1)return;
-  if(lod>1){c.put({d:el(at(-.3,.16,.004),.36,.36)+el(at(.16,.2,.004),.3,.3),f:c.col(Math.min(1,v0*.88+.14),f,'be')});
-    c.put({d:c.l2([c.V(at(0,-.3)),c.V(at(.01,-.5)),c.V(at(0,-.66))]),s:c.col(v0*.5,f,'be'),sw:svF(rb*.07),so:.7})}
+  /* (relay 3) the bee's shadow tight under it: a wide one read as a dark disc round the bee */
+  if(lod>1){const C2=sc0(c.V(at(0,0))),Xs=sc0(V3.sc(X,rb*.66)),Ys=sc0(V3.sc(Y,rb*.8));c.put({d:grEll([C2[0]+rb*.12,C2[1]+rb*.16],Xs,Ys),f:c.col(.08,f,'fr'),fo:.24})}
+  /* (comparison relay 3, photographs 53, 70) the bee is four ragged petaloids, never a rounded pad: two narrow upper ones notched at the tip,
+     two broad lower ones, bilobed and fringed, spreading down; a dark eye of stamens between them; each in shade, body and a lit inner part */
+  const hb=k=>pxHashS(k,5,(f.i||0)*13+7),poly=(Q,z)=>c.d2(Q.map(([x,y])=>c.V(at(x,y,z||0)))),up=s=>[[s*.02,.14],[s*.08,.5],[s*.14,.8],[s*.25,.72],[s*.32,.86],
+    [s*.47,.75],[s*.46,.42],[s*.22,.1]],lo=(s,k)=>{const Q=[[s*.04,.24],[s*.46,.32]];for(let i=0;i<=14;i++){const t=i/14,an=.3-1.75*t,
+      r=(.72+.1*(hb(k*40+i)-.5))*(i%2?.86:1)*(i===7?.62:1)*(1-.12*t);Q.push([s*Math.cos(an)*r,Math.sin(an)*r+.04])}Q.push([s*.02,-.08]);return Q},
+    shr=(Q,k,dx,dy)=>{let cx=0,cy=0;for(const p of Q){cx+=p[0];cy+=p[1]}cx/=Q.length;cy/=Q.length;return Q.map(([x,y])=>[cx+(x-cx)*k+dx,cy+(y-cy)*k+dy])};
+  let dU='',dL='',dS='',dH='';for(const s of[-1,1]){const U=up(s),Lq=lo(s,s>0?1:2);dU+=poly(U,-.004);dS+=poly(shr(Lq,1,.05*s,-.06),-.002);dL+=poly(Lq);
+    dH+=poly(shr(Lq,.55,-.06*s,.08),.003)}
+  c.put({d:dU,f:c.col(v0*.66,f,'be')});c.put({d:dS,f:c.col(v0*.5,f,'be')});c.put({d:dL,f:c.col(v0*.86,f,'be')});if(lod<1)return;
+  if(lod>1){c.put({d:dH,f:c.col(Math.min(1,v0*.88+.14),f,'be')});
+    c.put({d:el(at(.02,.17,.006),.1,.08)+el(at(-.05,.22,.006),.07,.06),f:mix(c.col(.14,f,'fr'),'#3a3a2a',.4)});
+    c.put({d:c.l2([c.V(at(0,.06)),c.V(at(.01,-.3)),c.V(at(0,-.6))]),s:c.col(v0*.5,f,'be'),sw:svF(rb*.04),so:.6})}
   /* the tuft: a short crescent of hairs over the upper half (fine hairs at zoom) */
-  const bd=c.wc(c.m.beard||'#e2cc78',f);c.put({d:c.l2([c.V(at(-.5,.22)),c.V(at(0,.36)),c.V(at(.5,.22))]),s:bd,sw:svF(rb*.22),so:.85});
-  if(lod>1&&c.det){let dh='';for(let i=0;i<11;i++){const x=-.62+1.24*i/10,y=.14+.1*Math.cos(x*2.2);dh+=c.l2([c.V(at(x,y)),c.V(at(x*1.12,y+.2))])}
-    c.put({d:dh,s:mix(bd,'#ffffff',.35),sw:svF(rb*.045),so:.75})}}
+  /* (P.beardW, optional: the crescent's width x rb, absent .22; a thin one reads as hairs, a thick one as a bar across the bee) */
+  /* (relay 3) a row of yellow hairs read as a comb of teeth: the tuft short, pale and soft, irregular in length (only the eperon floret draws it) */
+  const bd=mix(c.wc(c.m.beard||'#e2cc78',f),'#ffffff',.4);c.put({d:c.l2([c.V(at(-.36,.24)),c.V(at(0,.32)),c.V(at(.36,.24))]),s:bd,sw:svF(rb*(P.beardW??.22)),so:.4});
+  if(lod>1&&(c.det||P.beardW!=null)){let dh='';for(let i=0;i<9;i++){const x=-.4+.8*i/8,y=.18+.06*Math.cos(x*2.2),h=.06+.1*pxHashS(i,5,(f.i||0)*17+3);
+      dh+=c.l2([c.V(at(x,y)),c.V(at(x*1.1,y+h))])}
+    c.put({d:dh,s:bd,sw:svF(rb*.03),so:.45})}}
 /* the three follicles left on the pedicel when the sepals have fallen (photographs: green, then brown and papery) */
 function grEpPods(c,f,lod,dry){const P=c.P,L=f.L,Lp=L*P.pod[0]*(.6+.4*dry),wp=L*P.pod[1],v=c.lit(V3.nz(c.Vd([0,1,.4])));let d='';
   for(let k=0;k<3;k++){const ps=(90+k*120)*Math.PI/180,cs=Math.cos(ps),sn=Math.sin(ps),o=[cs*wp*.5,sn*wp*.5,0],tp=[cs*Lp*.22,sn*Lp*.22,Lp];
@@ -814,21 +828,28 @@ function grEpBud(c,f,lod){const P=c.P,L=f.L,gr=f.gr??1,gb=f.gb??0,wl=svSm(f.w/.6
     ez=c.eye[2],C3=[0,0,a*1.02],C2=sc0(c.V(C3)),zs=sc0(c.Vd([0,0,1])),zl=Math.hypot(zs[0],zs[1]),zu=zl>1e-3?[zs[0]/zl,zs[1]/zl]:[1,0],
     al=Math.sqrt(Math.pow(a*zl,2)+Math.pow(b*ez,2)),side=V3.nz(V3s(c.eye,V3.sc([0,0,1],ez))),v0=c.lit(V3l(side)>.1?V3.nz(c.Vd(side)):c.Vd([0,0,1])),
     ell=(C,k1,k2)=>grEll(C,[zu[0]*al*k1,zu[1]*al*k1],[-zu[1]*b*k2,zu[0]*b*k2]);
-  if(lod===0){c.put({d:ell(C2,1,1),f:c.col(v0*.85,f,'bud',gb)});return}
-  const s=grEpSpurQ(f,P,[0,b*.55,a*.45],Lb*P.spur[0]*1.1,b*.95,0),back=c.V(s.Q[3])[2]<c.V(C3)[2],spur=()=>grEpSpurDraw(c,f,lod,s,'bud',gb);
+  /* (P.budCap) the far buds and the spurs take the body's clear weight too: a half mix of green and violet reads grey */
+  const gQ=P.budCap?(gb<.2?gb*.5:Math.max(.78,Math.min(1,gb*1.3))):gb;
+  if(lod===0){c.put({d:ell(C2,1,1),f:c.col(v0*.85,f,'bud',gQ)});return}
+  const s=grEpSpurQ(f,P,[0,b*.55,a*.45],Lb*P.spur[0]*1.1,b*.95,0),back=c.V(s.Q[3])[2]<c.V(C3)[2],spur=()=>grEpSpurDraw(c,f,lod,s,'bud',gQ);
   if(back)spur();
   /* (P.budCap) the body greener and the colour a cap on the tip, never a half mix of the two (violet + green = grey) */
-  const gB=P.budCap?Math.min(1,gb*1.3):gb;
+  /* (comparison 2026-10-18) the body clearly green or clearly coloured: a half weight read as a grey ring round the egg */
+  const gB=P.budCap?(gb<.2?gb*.5:Math.max(.78,Math.min(1,gb*1.3))):gb;
   /* (P.budCap) a lit egg in flat layers: its shadow side a crescent (the body in the shade tone, then the lit body shifted toward the light),
      the coloured cap likewise, and a small dull sheen on the cap (velvet, never a bead) */
   if(P.budCap){const lt=[LIGHT[0],-LIGHT[1]],ll=Math.hypot(lt[0],lt[1])||1,sh=(C,k)=>[C[0]+lt[0]/ll*b*k,C[1]+lt[1]/ll*b*k],cap=gB>.12&&ez>-.35,gc=cap?gb*.12:gB,
-      T=sc0(c.V([0,0,a*1.46])),vd=v0*.58,vl=Math.min(1,v0*.9+.06);
+      T=sc0(c.V([0,0,a*1.46])),vd=v0*.74,vl=Math.min(1,v0*.9+.06);
     /* the colour arrives by the tip in two steps (a band a third green, then the cap): every shade layer first, then every lit one, so no
        layer's edge draws a dark ring inside the egg */
     const T1=sc0(c.V([0,0,a*1.2])),gm=gb*.25,Ly=[[C2,1,1,.9,.82,.16,gB]].concat(cap?[[T1,.78,.95,.7,.8,.15,gm],[T,.58,.9,.5,.74,.14,gc]]:[]);
     for(const q of Ly)c.put({d:ell(q[0],q[1],q[2]),f:c.col(vd,f,'bud',q[6])});
     for(const q of Ly)c.put({d:ell(sh(q[0],q[5]),q[3],q[4]),f:c.col(vl,f,'bud',q[6])});
     if(lod>1)c.put({d:ell(sh(cap?T:C2,.36),.24,.26),f:c.col(Math.min(1,vl+(P.budLit??.1)),f,'bud',gc)});
+    /* (zoom) the sepals' seams: three fine coloured veins from the tip down the egg, stopping short of its foot (photographs 14, 33) */
+    if(lod>1&&c.det){const p0=Math.atan2(c.eye[1],c.eye[0]);let dv='';
+      for(const dp of[-.75,0,.75]){const ps=p0+dp,Q=[];for(let i=0;i<=5;i++){const t=i/5*Math.PI*.42;Q.push(c.V([b*.94*Math.sin(t)*Math.cos(ps),b*.94*Math.sin(t)*Math.sin(ps),a+a*Math.cos(t)]))}dv+=c.l2(Q)}
+      c.put({d:dv,s:c.col(v0*.6,f,'bud',gc*.5),sw:svF(L*.006),so:.5})}
     if(!back)spur();return}
   c.put({d:ell(C2,1,1),f:c.col(v0*.85,f,'bud',gB)});
   if(gB>.12){const T=sc0(c.V([0,0,a*(P.budCap?1.42:1.5)]));c.put({d:P.budCap?ell(T,.62,.88):ell(T,.46,.74),f:c.col(v0*.85,f,'bud',P.budCap?gb*.12:gb*.3)})}
@@ -841,7 +862,7 @@ GR_FLORET.eperon=(c,f,lod)=>{const P=c.P,m=c.m,gt=f.gt,L=f.L,dec=svSm((f.w-P.dec
   if(f.o<P.budAt&&f.w<.6)return grEpBud(c,f,lod);
   const e=f.o<P.budAt?.3:svSm((f.o-P.budAt)/(1-P.budAt)),ez=c.eye[2],dn=c.down,sdk=Math.floor((gt.ph||0)*1e4)+f.i*7,hs=k=>pxHashS(k,5,sdk),D2=Math.PI/180,
     SH=P.shed||[.15,.6],thr=j=>hs(j+20)<(P.keep??.1)?9:SH[0]+SH[1]*hs(j),a=(P.a[0]+(P.a[1]-P.a[0])*e)*(1-.15*dec),sag=(P.sag??.45)*dec+.25*dry,
-    crk=(P.crk??.5)*(dec*.5+dry),S=[];
+    crk=(P.crk??.5)*(dec*.5+dry)+(P.crk0||0),S=[];
   for(let j=0;j<5;j++){if(dry>thr(j))continue;const ll=L*P.sep*P.sepK[j]*(.62+.38*e)*(1-.2*dry),W=P.sepW[j]*(gt.W||1)*(1-.22*dec-.3*dry),ps=(P.psi[j]+(hs(j+40)-.5)*10)*D2;
     S.push(Object.assign(grEpSep(P,ps,ll,W,a+(hs(j+60)-.5)*.1,P.ap*(1+dec),P.cup*(1+1.2*dec+1.5*dry),L*P.r0,sag,dn,crk,k=>hs(k+j*23)),{j}))}
   const IN=P.inn,ni=m.inn??(IN?IN[0]:0),SI=[];

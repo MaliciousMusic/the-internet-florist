@@ -456,7 +456,11 @@
     "unite": "n",
     "methode": "reference",
     "conf": "A",
-    "ref": "Flora : Delphinium elatum L., grappe terminale ; fleur zygomorphe, 5 sepales petaloides dont le superieur porte un eperon, 4 petales petits (2 superieurs nectaires dans l eperon, 2 inferieurs formant l oeil), nombreuses etamines, 3 carpelles : 2 sepales lateraux"
+    "ref": "Flora : Delphinium elatum L., grappe terminale ; fleur zygomorphe, 5 sepales petaloides dont le superieur porte un eperon, 4 petales petits (2 superieurs nectaires dans l eperon, 2 inferieurs formant l oeil), nombreuses etamines, 3 carpelles : 2 sepales lateraux",
+    "ecart": {
+     "type": "budget",
+     "texte": "Valeur de la tete du fleuron non reliee une a une a une expression du dessin (budget de l'etape plante) : elle est reglee par fit.py sur les cibles de space.json."
+    }
    },
    "disposition": {
     "type": "verticilles",
@@ -465,7 +469,11 @@
      "unite": "n",
      "methode": "reference",
      "conf": "A",
-     "ref": "Flora : Delphinium elatum L., grappe terminale ; fleur zygomorphe, 5 sepales petaloides dont le superieur porte un eperon, 4 petales petits (2 superieurs nectaires dans l eperon, 2 inferieurs formant l oeil), nombreuses etamines, 3 carpelles"
+     "ref": "Flora : Delphinium elatum L., grappe terminale ; fleur zygomorphe, 5 sepales petaloides dont le superieur porte un eperon, 4 petales petits (2 superieurs nectaires dans l eperon, 2 inferieurs formant l oeil), nombreuses etamines, 3 carpelles",
+     "ecart": {
+      "type": "budget",
+      "texte": "Valeur de la tete du fleuron non reliee une a une a une expression du dessin (budget de l'etape plante) : elle est reglee par fit.py sur les cibles de space.json."
+     }
     },
     "recouvrement": {
      "v": 0.2,
@@ -476,7 +484,11 @@
       "delphinium:ab233f27"
      ],
      "conf": "C",
-     "note": "bord recouvert par le voisin, lu a l oeil sur t064 et t053"
+     "note": "bord recouvert par le voisin, lu a l oeil sur t064 et t053",
+     "ecart": {
+      "type": "budget",
+      "texte": "Valeur de la tete du fleuron non reliee une a une a une expression du dessin (budget de l'etape plante) : elle est reglee par fit.py sur les cibles de space.json."
+     }
     },
     "ordre": {
      "v": "les lateraux passent devant les superieurs, l eperon derriere",
@@ -518,7 +530,11 @@
       "delphinium:ab233f27"
      ],
      "conf": "C",
-     "note": "ovale large, lu a l oeil"
+     "note": "ovale large, lu a l oeil",
+     "ecart": {
+      "type": "budget",
+      "texte": "Valeur de la tete du fleuron non reliee une a une a une expression du dessin (budget de l'etape plante) : elle est reglee par fit.py sur les cibles de space.json."
+     }
     },
     "marge": {
      "v": "entiere",
@@ -545,7 +561,11 @@
       0.88,
       0.95
      ],
-     "note": "H/W de la silhouette de la fleur de face : 254/268=0.95 (t064), 290/328=0.88 (t053), organ.py head ; plus large que haute"
+     "note": "H/W de la silhouette de la fleur de face : 254/268=0.95 (t064), 290/328=0.88 (t053), organ.py head ; plus large que haute",
+     "ecart": {
+      "type": "budget",
+      "texte": "Valeur de la tete du fleuron non reliee une a une a une expression du dessin (budget de l'etape plante) : elle est reglee par fit.py sur les cibles de space.json."
+     }
     },
     "diametre_cm": {
      "v": [
@@ -559,7 +579,11 @@
      "plage": [
       3,
       6
-     ]
+     ],
+     "ecart": {
+      "type": "budget",
+      "texte": "Valeur de la tete du fleuron non reliee une a une a une expression du dessin (budget de l'etape plante) : elle est reglee par fit.py sur les cibles de space.json."
+     }
     }
    },
    "courbure": {
@@ -602,7 +626,11 @@
      "unite": "ratio",
      "methode": "hypothese",
      "conf": "D",
-     "note": "Pas de photo a contre-jour des sepales ; a mesurer."
+     "note": "Pas de photo a contre-jour des sepales ; a mesurer.",
+     "ecart": {
+      "type": "budget",
+      "texte": "Valeur de la tete du fleuron non reliee une a une a une expression du dessin (budget de l'etape plante) : elle est reglee par fit.py sur les cibles de space.json."
+     }
     },
     "texture": {
      "v": "satin",
@@ -661,7 +689,11 @@
        "delphinium:fa18f502",
        "delphinium:ab233f27"
       ],
-      "conf": "C"
+      "conf": "C",
+      "ecart": {
+       "type": "budget",
+       "texte": "Valeur de la tete du fleuron non reliee une a une a une expression du dessin (budget de l'etape plante) : elle est reglee par fit.py sur les cibles de space.json."
+      }
      },
      "bord": "fondu",
      "motif": {
@@ -684,7 +716,11 @@
        "delphinium:fa18f502",
        "delphinium:ab233f27"
       ],
-      "conf": "C"
+      "conf": "C",
+      "ecart": {
+       "type": "budget",
+       "texte": "Valeur de la tete du fleuron non reliee une a une a une expression du dessin (budget de l'etape plante) : elle est reglee par fit.py sur les cibles de space.json."
+      }
      },
      "bord": "fondu"
     },
@@ -704,7 +740,11 @@
        "delphinium:fa18f502",
        "delphinium:ab233f27"
       ],
-      "conf": "C"
+      "conf": "C",
+      "ecart": {
+       "type": "budget",
+       "texte": "Valeur de la tete du fleuron non reliee une a une a une expression du dessin (budget de l'etape plante) : elle est reglee par fit.py sur les cibles de space.json."
+      }
      },
      "bord": "fondu",
      "motif": {
@@ -740,7 +780,11 @@
     "unite": "n",
     "methode": "reference",
     "conf": "A",
-    "ref": "Flora : Delphinium elatum L., grappe terminale ; fleur zygomorphe, 5 sepales petaloides dont le superieur porte un eperon, 4 petales petits (2 superieurs nectaires dans l eperon, 2 inferieurs formant l oeil), nombreuses etamines, 3 carpelles : 2 sepales superieurs"
+    "ref": "Flora : Delphinium elatum L., grappe terminale ; fleur zygomorphe, 5 sepales petaloides dont le superieur porte un eperon, 4 petales petits (2 superieurs nectaires dans l eperon, 2 inferieurs formant l oeil), nombreuses etamines, 3 carpelles : 2 sepales superieurs",
+    "ecart": {
+     "type": "budget",
+     "texte": "Valeur de la tete du fleuron non reliee une a une a une expression du dessin (budget de l'etape plante) : elle est reglee par fit.py sur les cibles de space.json."
+    }
    },
    "disposition": {
     "suit": "sepale.lateral.disposition"
@@ -798,7 +842,11 @@
     "unite": "n",
     "methode": "reference",
     "conf": "A",
-    "ref": "Flora : Delphinium elatum L., grappe terminale ; fleur zygomorphe, 5 sepales petaloides dont le superieur porte un eperon, 4 petales petits (2 superieurs nectaires dans l eperon, 2 inferieurs formant l oeil), nombreuses etamines, 3 carpelles"
+    "ref": "Flora : Delphinium elatum L., grappe terminale ; fleur zygomorphe, 5 sepales petaloides dont le superieur porte un eperon, 4 petales petits (2 superieurs nectaires dans l eperon, 2 inferieurs formant l oeil), nombreuses etamines, 3 carpelles",
+    "ecart": {
+     "type": "budget",
+     "texte": "Valeur de la tete du fleuron non reliee une a une a une expression du dessin (budget de l'etape plante) : elle est reglee par fit.py sur les cibles de space.json."
+    }
    },
    "disposition": {
     "type": "verticilles",
@@ -807,7 +855,11 @@
      "unite": "n",
      "methode": "reference",
      "conf": "A",
-     "ref": "Flora : Delphinium elatum L., grappe terminale ; fleur zygomorphe, 5 sepales petaloides dont le superieur porte un eperon, 4 petales petits (2 superieurs nectaires dans l eperon, 2 inferieurs formant l oeil), nombreuses etamines, 3 carpelles"
+     "ref": "Flora : Delphinium elatum L., grappe terminale ; fleur zygomorphe, 5 sepales petaloides dont le superieur porte un eperon, 4 petales petits (2 superieurs nectaires dans l eperon, 2 inferieurs formant l oeil), nombreuses etamines, 3 carpelles",
+     "ecart": {
+      "type": "budget",
+      "texte": "Valeur de la tete du fleuron non reliee une a une a une expression du dessin (budget de l'etape plante) : elle est reglee par fit.py sur les cibles de space.json."
+     }
     },
     "ordre": {
      "v": "derriere les autres, a l arriere de la fleur",
@@ -841,7 +893,11 @@
      "unite": "ratio",
      "methode": "hypothese",
      "conf": "D",
-     "note": "Proportion hors de portee de la face ; a mesurer sur une vue de profil (Q1)."
+     "note": "Proportion hors de portee de la face ; a mesurer sur une vue de profil (Q1).",
+     "ecart": {
+      "type": "budget",
+      "texte": "Valeur de la tete du fleuron non reliee une a une a une expression du dessin (budget de l'etape plante) : elle est reglee par fit.py sur les cibles de space.json."
+     }
     }
    },
    "taille": {
@@ -857,14 +913,22 @@
      "plage": [
       1.5,
       3.0
-     ]
+     ],
+     "ecart": {
+      "type": "budget",
+      "texte": "Valeur de la tete du fleuron non reliee une a une a une expression du dessin (budget de l'etape plante) : elle est reglee par fit.py sur les cibles de space.json."
+     }
     },
     "longueur": {
      "v": 1.0,
      "unite": "R0",
      "methode": "hypothese",
      "conf": "D",
-     "note": "Sepale eperonne aussi long que les autres ; hypothese."
+     "note": "Sepale eperonne aussi long que les autres ; hypothese.",
+     "ecart": {
+      "type": "budget",
+      "texte": "Valeur de la tete du fleuron non reliee une a une a une expression du dessin (budget de l'etape plante) : elle est reglee par fit.py sur les cibles de space.json."
+     }
     }
    },
    "courbure": {
@@ -884,7 +948,11 @@
       "methode": "hypothese",
       "conf": "D",
       "repere": "axe",
-      "note": "a mesurer (Q1)"
+      "note": "a mesurer (Q1)",
+      "ecart": {
+       "type": "budget",
+       "texte": "Valeur de la tete du fleuron non reliee une a une a une expression du dessin (budget de l'etape plante) : elle est reglee par fit.py sur les cibles de space.json."
+      }
      }
     }
    },
@@ -908,7 +976,11 @@
     "unite": "n",
     "methode": "reference",
     "conf": "A",
-    "ref": "Flora : Delphinium elatum L., grappe terminale ; fleur zygomorphe, 5 sepales petaloides dont le superieur porte un eperon, 4 petales petits (2 superieurs nectaires dans l eperon, 2 inferieurs formant l oeil), nombreuses etamines, 3 carpelles : 4 petales (2+2)"
+    "ref": "Flora : Delphinium elatum L., grappe terminale ; fleur zygomorphe, 5 sepales petaloides dont le superieur porte un eperon, 4 petales petits (2 superieurs nectaires dans l eperon, 2 inferieurs formant l oeil), nombreuses etamines, 3 carpelles : 4 petales (2+2)",
+    "ecart": {
+     "type": "budget",
+     "texte": "Valeur de la tete du fleuron non reliee une a une a une expression du dessin (budget de l'etape plante) : elle est reglee par fit.py sur les cibles de space.json."
+    }
    },
    "disposition": {
     "type": "verticilles",
@@ -917,7 +989,11 @@
      "unite": "n",
      "methode": "reference",
      "conf": "A",
-     "ref": "Flora : Delphinium elatum L., grappe terminale ; fleur zygomorphe, 5 sepales petaloides dont le superieur porte un eperon, 4 petales petits (2 superieurs nectaires dans l eperon, 2 inferieurs formant l oeil), nombreuses etamines, 3 carpelles"
+     "ref": "Flora : Delphinium elatum L., grappe terminale ; fleur zygomorphe, 5 sepales petaloides dont le superieur porte un eperon, 4 petales petits (2 superieurs nectaires dans l eperon, 2 inferieurs formant l oeil), nombreuses etamines, 3 carpelles",
+     "ecart": {
+      "type": "budget",
+      "texte": "Valeur de la tete du fleuron non reliee une a une a une expression du dessin (budget de l'etape plante) : elle est reglee par fit.py sur les cibles de space.json."
+     }
     }
    },
    "contour": {
@@ -947,7 +1023,11 @@
      "unite": "R0",
      "methode": "hypothese",
      "conf": "D",
-     "note": "Diametre de l oeil sur la fleur, environ un tiers (t064, t020) ; non segmente (Q2)."
+     "note": "Diametre de l oeil sur la fleur, environ un tiers (t064, t020) ; non segmente (Q2).",
+     "ecart": {
+      "type": "budget",
+      "texte": "Valeur de la tete du fleuron non reliee une a une a une expression du dessin (budget de l'etape plante) : elle est reglee par fit.py sur les cibles de space.json."
+     }
     }
    },
    "matiere": {
@@ -987,7 +1067,11 @@
        "delphinium:be354759",
        "delphinium:ab233f27"
       ],
-      "conf": "C"
+      "conf": "C",
+      "ecart": {
+       "type": "budget",
+       "texte": "Valeur de la tete du fleuron non reliee une a une a une expression du dessin (budget de l'etape plante) : elle est reglee par fit.py sur les cibles de space.json."
+      }
      },
      "bord": "net",
      "motif": {
@@ -1030,7 +1114,11 @@
     "plage": [
      25,
      50
-    ]
+    ],
+    "ecart": {
+     "type": "budget",
+     "texte": "Valeur de la tete du fleuron non reliee une a une a une expression du dessin (budget de l'etape plante) : elle est reglee par fit.py sur les cibles de space.json."
+    }
    },
    "disposition": {
     "type": "verticilles",
@@ -1039,7 +1127,11 @@
      "unite": "n",
      "methode": "hypothese",
      "conf": "D",
-     "note": "non compte (Q4)"
+     "note": "non compte (Q4)",
+     "ecart": {
+      "type": "budget",
+      "texte": "Valeur de la tete du fleuron non reliee une a une a une expression du dessin (budget de l'etape plante) : elle est reglee par fit.py sur les cibles de space.json."
+     }
     }
    },
    "taille": {
@@ -1048,7 +1140,11 @@
      "unite": "R0",
      "methode": "hypothese",
      "conf": "D",
-     "note": "Filets courts caches derriere l oeil ; hypothese."
+     "note": "Filets courts caches derriere l oeil ; hypothese.",
+     "ecart": {
+      "type": "budget",
+      "texte": "Valeur de la tete du fleuron non reliee une a une a une expression du dessin (budget de l'etape plante) : elle est reglee par fit.py sur les cibles de space.json."
+     }
     }
    },
    "matiere": {
@@ -1071,7 +1167,11 @@
        1
       ],
       "methode": "hypothese",
-      "conf": "D"
+      "conf": "D",
+      "ecart": {
+       "type": "budget",
+       "texte": "Valeur de la tete du fleuron non reliee une a une a une expression du dessin (budget de l'etape plante) : elle est reglee par fit.py sur les cibles de space.json."
+      }
      },
      "bord": "net",
      "motif": {
@@ -1102,7 +1202,11 @@
     "unite": "n",
     "methode": "reference",
     "conf": "A",
-    "ref": "Flora : Delphinium elatum L., grappe terminale ; fleur zygomorphe, 5 sepales petaloides dont le superieur porte un eperon, 4 petales petits (2 superieurs nectaires dans l eperon, 2 inferieurs formant l oeil), nombreuses etamines, 3 carpelles"
+    "ref": "Flora : Delphinium elatum L., grappe terminale ; fleur zygomorphe, 5 sepales petaloides dont le superieur porte un eperon, 4 petales petits (2 superieurs nectaires dans l eperon, 2 inferieurs formant l oeil), nombreuses etamines, 3 carpelles",
+    "ecart": {
+     "type": "budget",
+     "texte": "Valeur de la tete du fleuron non reliee une a une a une expression du dessin (budget de l'etape plante) : elle est reglee par fit.py sur les cibles de space.json."
+    }
    },
    "disposition": {
     "type": "verticilles",
@@ -1111,7 +1215,11 @@
      "unite": "n",
      "methode": "reference",
      "conf": "A",
-     "ref": "Flora : Delphinium elatum L., grappe terminale ; fleur zygomorphe, 5 sepales petaloides dont le superieur porte un eperon, 4 petales petits (2 superieurs nectaires dans l eperon, 2 inferieurs formant l oeil), nombreuses etamines, 3 carpelles"
+     "ref": "Flora : Delphinium elatum L., grappe terminale ; fleur zygomorphe, 5 sepales petaloides dont le superieur porte un eperon, 4 petales petits (2 superieurs nectaires dans l eperon, 2 inferieurs formant l oeil), nombreuses etamines, 3 carpelles",
+     "ecart": {
+      "type": "budget",
+      "texte": "Valeur de la tete du fleuron non reliee une a une a une expression du dessin (budget de l'etape plante) : elle est reglee par fit.py sur les cibles de space.json."
+     }
     }
    },
    "taille": {
@@ -1120,7 +1228,11 @@
      "unite": "R0",
      "methode": "hypothese",
      "conf": "D",
-     "note": "Style court ; hypothese."
+     "note": "Style court ; hypothese.",
+     "ecart": {
+      "type": "budget",
+      "texte": "Valeur de la tete du fleuron non reliee une a une a une expression du dessin (budget de l'etape plante) : elle est reglee par fit.py sur les cibles de space.json."
+     }
     }
    },
    "matiere": {
@@ -1143,7 +1255,11 @@
        1
       ],
       "methode": "hypothese",
-      "conf": "D"
+      "conf": "D",
+      "ecart": {
+       "type": "budget",
+       "texte": "Valeur de la tete du fleuron non reliee une a une a une expression du dessin (budget de l'etape plante) : elle est reglee par fit.py sur les cibles de space.json."
+      }
      },
      "bord": "net"
     }
@@ -1172,7 +1288,11 @@
      "unite": "R0",
      "methode": "hypothese",
      "conf": "D",
-     "note": "Petit ; non mesure."
+     "note": "Petit ; non mesure.",
+     "ecart": {
+      "type": "budget",
+      "texte": "Valeur de la tete du fleuron non reliee une a une a une expression du dessin (budget de l'etape plante) : elle est reglee par fit.py sur les cibles de space.json."
+     }
     }
    },
    "matiere": {
@@ -1195,7 +1315,11 @@
        1
       ],
       "methode": "hypothese",
-      "conf": "D"
+      "conf": "D",
+      "ecart": {
+       "type": "budget",
+       "texte": "Valeur de la tete du fleuron non reliee une a une a une expression du dessin (budget de l'etape plante) : elle est reglee par fit.py sur les cibles de space.json."
+      }
      },
      "bord": "net"
     }
@@ -1222,7 +1346,11 @@
      "unite": "n",
      "methode": "reference",
      "conf": "A",
-     "ref": "Flora : fleurs en grappe, les plus jeunes au sommet"
+     "ref": "Flora : fleurs en grappe, les plus jeunes au sommet",
+     "ecart": {
+      "type": "budget",
+      "texte": "Valeur de la tete du fleuron non reliee une a une a une expression du dessin (budget de l'etape plante) : elle est reglee par fit.py sur les cibles de space.json."
+     }
     },
     "ordre": {
      "v": "boutons au sommet de l epi, plus serres vers la pointe",
@@ -1245,7 +1373,11 @@
      ],
      "conf": "C",
      "n": 1,
-     "note": "targets.json bouton.hw = 1.61 (tol 0.10)"
+     "note": "targets.json bouton.hw = 1.61 (tol 0.10)",
+     "ecart": {
+      "type": "budget",
+      "texte": "Valeur de la tete du fleuron non reliee une a une a une expression du dessin (budget de l'etape plante) : elle est reglee par fit.py sur les cibles de space.json."
+     }
     },
     "taper": {
      "v": 0.927,
@@ -1256,7 +1388,11 @@
      ],
      "conf": "C",
      "n": 1,
-     "note": "targets.json bouton.taper"
+     "note": "targets.json bouton.taper",
+     "ecart": {
+      "type": "budget",
+      "texte": "Valeur de la tete du fleuron non reliee une a une a une expression du dessin (budget de l'etape plante) : elle est reglee par fit.py sur les cibles de space.json."
+     }
     },
     "pointe": {
      "type": {
@@ -1280,7 +1416,11 @@
      ],
      "conf": "C",
      "n": 1,
-     "note": "targets.json bouton.fill, tol 0.06"
+     "note": "targets.json bouton.fill, tol 0.06",
+     "ecart": {
+      "type": "budget",
+      "texte": "Valeur de la tete du fleuron non reliee une a une a une expression du dessin (budget de l'etape plante) : elle est reglee par fit.py sur les cibles de space.json."
+     }
     },
     "diametre": {
      "v": 0.08,
@@ -1291,7 +1431,11 @@
       "delphinium:ec257f4c"
      ],
      "conf": "C",
-     "note": "bouton rond, environ 8 % de la hauteur de l epi visible (oeil sur t014 et t018)"
+     "note": "bouton rond, environ 8 % de la hauteur de l epi visible (oeil sur t014 et t018)",
+     "ecart": {
+      "type": "budget",
+      "texte": "Valeur de la tete du fleuron non reliee une a une a une expression du dessin (budget de l'etape plante) : elle est reglee par fit.py sur les cibles de space.json."
+     }
     }
    },
    "matiere": {
@@ -1315,7 +1459,11 @@
      "v": 0.3,
      "unite": "ratio",
      "methode": "hypothese",
-     "conf": "D"
+     "conf": "D",
+     "ecart": {
+      "type": "budget",
+      "texte": "Valeur de la tete du fleuron non reliee une a une a une expression du dessin (budget de l'etape plante) : elle est reglee par fit.py sur les cibles de space.json."
+     }
     }
    },
    "zones": [
@@ -1335,7 +1483,11 @@
        "delphinium:ec15f1f9",
        "delphinium:ea2bb29b"
       ],
-      "conf": "C"
+      "conf": "C",
+      "ecart": {
+       "type": "budget",
+       "texte": "Valeur de la tete du fleuron non reliee une a une a une expression du dessin (budget de l'etape plante) : elle est reglee par fit.py sur les cibles de space.json."
+      }
      },
      "bord": "fondu",
      "motif": {
@@ -1358,7 +1510,11 @@
        "delphinium:82146bfa",
        "delphinium:1568d0cc"
       ],
-      "conf": "C"
+      "conf": "C",
+      "ecart": {
+       "type": "budget",
+       "texte": "Valeur de la tete du fleuron non reliee une a une a une expression du dessin (budget de l'etape plante) : elle est reglee par fit.py sur les cibles de space.json."
+      }
      },
      "bord": "fondu",
      "motif": {
@@ -1391,7 +1547,11 @@
     "unite": "n",
     "methode": "reference",
     "conf": "B",
-    "ref": "Flora : une bractee a l aisselle de chaque pedicelle"
+    "ref": "Flora : une bractee a l aisselle de chaque pedicelle",
+    "ecart": {
+     "type": "budget",
+     "texte": "Valeur de la tete du fleuron non reliee une a une a une expression du dessin (budget de l'etape plante) : elle est reglee par fit.py sur les cibles de space.json."
+    }
    },
    "disposition": {
     "type": "alternes",
@@ -1400,7 +1560,11 @@
      "unite": "n",
      "methode": "reference",
      "conf": "B",
-     "ref": "Flora"
+     "ref": "Flora",
+     "ecart": {
+      "type": "budget",
+      "texte": "Valeur de la tete du fleuron non reliee une a une a une expression du dessin (budget de l'etape plante) : elle est reglee par fit.py sur les cibles de space.json."
+     }
     }
    },
    "contour": {
@@ -1409,7 +1573,11 @@
      "unite": "ratio",
      "methode": "hypothese",
      "conf": "D",
-     "note": "Bractee lineaire ; non mesuree."
+     "note": "Bractee lineaire ; non mesuree.",
+     "ecart": {
+      "type": "budget",
+      "texte": "Valeur de la tete du fleuron non reliee une a une a une expression du dessin (budget de l'etape plante) : elle est reglee par fit.py sur les cibles de space.json."
+     }
     },
     "pointe": {
      "type": {
@@ -1425,7 +1593,11 @@
      "unite": "L",
      "methode": "hypothese",
      "conf": "D",
-     "note": "Longueur par rapport au pedicelle ; hypothese."
+     "note": "Longueur par rapport au pedicelle ; hypothese.",
+     "ecart": {
+      "type": "budget",
+      "texte": "Valeur de la tete du fleuron non reliee une a une a une expression du dessin (budget de l'etape plante) : elle est reglee par fit.py sur les cibles de space.json."
+     }
     }
    },
    "matiere": {
@@ -1448,7 +1620,11 @@
        1
       ],
       "methode": "hypothese",
-      "conf": "D"
+      "conf": "D",
+      "ecart": {
+       "type": "budget",
+       "texte": "Valeur de la tete du fleuron non reliee une a une a une expression du dessin (budget de l'etape plante) : elle est reglee par fit.py sur les cibles de space.json."
+      }
      },
      "bord": "net"
     }
@@ -1497,7 +1673,11 @@
      "plage": [
       1,
       3
-     ]
+     ],
+     "ecart": {
+      "type": "confirme",
+      "texte": "Pedicelle dessine a .42 de la longueur d'un fleuron (lay.ped, y-delphinium.js) : de l'ordre de 1 a 3 cm sur un fleuron de 4 a 6 cm."
+     }
     }
    },
    "courbure": {
@@ -1517,7 +1697,11 @@
       "methode": "hypothese",
       "conf": "D",
       "repere": "tige",
-      "note": "angle sur la tige a l ouverture, hypothese"
+      "note": "angle sur la tige a l ouverture, hypothese",
+      "ecart": {
+       "type": "confirme",
+       "texte": "Le pedicelle sort de l'axe de l'epi a peu pres a 45 degres (lay.pedq .55 / pedO .7) ; hypothese non mesuree."
+      }
      }
     }
    },
@@ -1547,7 +1731,11 @@
       "photos": [
        "delphinium:6f2d57fd"
       ],
-      "conf": "C"
+      "conf": "C",
+      "ecart": {
+       "type": "confirme",
+       "texte": "Une seule zone, du pied a la tete, teinte verte du pedicelle (DLP_S.stem)."
+      }
      },
      "bord": "net",
      "motif": {
@@ -1578,7 +1766,11 @@
      "unite": "L",
      "methode": "hypothese",
      "conf": "D",
-     "note": "fin, hypothese"
+     "note": "fin, hypothese",
+     "ecart": {
+      "type": "confirme",
+      "texte": "Largeur lay.pedW .04 de la longueur de l'epi, fin ; hypothese."
+     }
     }
    },
    "stades": {
@@ -1605,7 +1797,11 @@
      "plage": [
       100,
       200
-     ]
+     ],
+     "ecart": {
+      "type": "confirme",
+      "texte": "La tige est coupee par le bouquet ou la planche (full cm) : la longueur vient de la composition, pas du dessin de la plante."
+     }
     },
     "rapport_fleur": {
      "v": 0.4286,
@@ -1616,7 +1812,13 @@
      ],
      "conf": "C",
      "n": 1,
-     "note": "targets.json tige.stem (tige sur fleur, t106, tol 0.02)"
+     "note": "targets.json tige.stem (tige sur fleur, t106, tol 0.02)",
+     "code": "GHI.delphinium.pl.stem",
+     "ecart": {
+      "type": "confirme",
+      "texte": "0,43 code contre 0,4286 mesure, dans la tolerance .02."
+     },
+     "retenu": 0.32
     },
     "epi_sur_tige": {
      "v": 0.35,
@@ -1628,7 +1830,11 @@
       "delphinium:4f98f52f"
      ],
      "conf": "C",
-     "note": "l epi fleuri occupe environ le tiers superieur de la tige sur t020 t065 t056, lu a l oeil"
+     "note": "l epi fleuri occupe environ le tiers superieur de la tige sur t020 t065 t056, lu a l oeil",
+     "ecart": {
+      "type": "divergence",
+      "texte": "Le dessin fixe l'epi a pl.raceme x la hauteur de la plante, plafonne a .4 de la spine du bouquet ; le rendu donne un quart a un tiers de la tige : un peu moins que .35."
+     }
     }
    },
    "courbure": {
@@ -1654,7 +1860,11 @@
       ],
       "conf": "C",
       "repere": "horizontale",
-      "note": "dressee verticale ; fleche 0.02 a 0.04 x L sur t287 et t288 (organ.py stem --green)"
+      "note": "dressee verticale ; fleche 0.02 a 0.04 x L sur t287 et t288 (organ.py stem --green)",
+      "ecart": {
+       "type": "confirme",
+       "texte": "Tige dressee ; svStemLine donne la meme fleche faible (aimK .1, wig .02)."
+      }
      }
     }
    },
@@ -1696,7 +1906,11 @@
        "delphinium:529b00fe",
        "delphinium:37c4ba14"
       ],
-      "conf": "C"
+      "conf": "C",
+      "ecart": {
+       "type": "confirme",
+       "texte": "Une seule zone verte glauque sur toute la tige (DLP_SC), jaunie au fane par dlpStemCols."
+      }
      },
      "bord": "net",
      "motif": {
@@ -1749,7 +1963,11 @@
      "unite": "L",
      "methode": "hypothese",
      "conf": "D",
-     "note": "fraction de la tige entiere ; non mesuree (Q5)"
+     "note": "fraction de la tige entiere ; non mesuree (Q5)",
+     "ecart": {
+      "type": "divergence",
+      "texte": "Largeur de tige = pl.stem x largeur de fleur / 1,18 ; la fraction .012 L de la fiche est une hypothese non mesuree (Q5)."
+     }
     },
     "effilement": {
      "v": 0.97,
@@ -1760,7 +1978,11 @@
      ],
      "conf": "C",
      "n": 1,
-     "note": "bas/haut 0.97 (t287), 1.00 (t288) : presque cylindrique ; masque contamine par les feuilles (Q5)"
+     "note": "bas/haut 0.97 (t287), 1.00 (t288) : presque cylindrique ; masque contamine par les feuilles (Q5)",
+     "ecart": {
+      "type": "confirme",
+      "texte": "Effilement faible de svStemLine, presque cylindrique comme .97 mesure ; section a 12 stries fines (DLP_SC.sv)."
+     }
     },
     "poils": {
      "v": "pubescente sous l epi",
@@ -1797,7 +2019,11 @@
     "plage": [
      5,
      7
-    ]
+    ],
+    "ecart": {
+     "type": "divergence",
+     "texte": "STEML.delphinium.n = 3 a 4 feuilles de tige dessinees, moins que les 5 a 7 de la fiche : la plante dessinee tient dans la fenetre du bouquet."
+    }
    },
    "disposition": {
     "type": "alternes",
@@ -1806,7 +2032,11 @@
      "unite": "n",
      "methode": "reference",
      "conf": "A",
-     "ref": "Flora : feuilles alternes"
+     "ref": "Flora : feuilles alternes",
+     "ecart": {
+      "type": "confirme",
+      "texte": "Feuilles alternes (STEML.arr alt), une par noeud."
+     }
     },
     "ordre": {
      "v": "la plus haute plus petite, a 3 lobes",
@@ -1856,7 +2086,11 @@
       1.32,
       1.54
      ],
-     "note": "organ.py leaf --green : 1.54 (t047), 1.32 (t016), 1.41 (t012) ; targets.json feuille.leaflw = 1.51 (tol 0.32, n 3) concorde"
+     "note": "organ.py leaf --green : 1.54 (t047), 1.32 (t016), 1.41 (t012) ; targets.json feuille.leaflw = 1.51 (tol 0.32, n 3) concorde",
+     "ecart": {
+      "type": "divergence",
+      "texte": "Limbe palmatifide a 5 lobes dentes (svCutLeaf) : le L/l 1,42 mesure n'est pas regle directement ; fit.py ajuste blade et lobeW."
+     }
     },
     "marge": {
      "v": "dentee",
@@ -1890,7 +2124,11 @@
       "delphinium:4f98f52f"
      ],
      "conf": "C",
-     "note": "limbe de feuille basale, environ un huitieme de la tige, oeil"
+     "note": "limbe de feuille basale, environ un huitieme de la tige, oeil",
+     "ecart": {
+      "type": "confirme",
+      "texte": "Limbe = pl.blade x la longueur de la feuille (STEML.len 28) ; lu a l'oeil."
+     }
     },
     "angle_lobes": {
      "v": 64.6,
@@ -1908,7 +2146,13 @@
       73
      ],
      "repere": "piece",
-     "note": "targets.json feuille.leafang 64.6 +/- 8.4"
+     "note": "targets.json feuille.leafang 64.6 +/- 8.4",
+     "code": "GHI.delphinium.pl.lobeAng*180/Math.PI",
+     "ecart": {
+      "type": "confirme",
+      "texte": "pl.lobeAng 1,13 rad = 64,7 degres, cible feuille.leafang 64,6."
+     },
+     "retenu": 100.26761414789407
     }
    },
    "courbure": {
@@ -1960,7 +2204,11 @@
      "v": 0.1,
      "unite": "ratio",
      "methode": "hypothese",
-     "conf": "D"
+     "conf": "D",
+     "ecart": {
+      "type": "confirme",
+      "texte": "DLP_BLADE.trans .1 (hypothese)."
+     }
     }
    },
    "nervation": {
@@ -2005,7 +2253,11 @@
      "unite": "n",
      "methode": "reference",
      "conf": "B",
-     "ref": "Flora"
+     "ref": "Flora",
+     "ecart": {
+      "type": "divergence",
+      "texte": "Nervures du kit (svCutLeaf nu [3,4], nv [6,10]) : moins que 5 a 7 ; traits fins pour ne pas alourdir."
+     }
     }
    },
    "zones": [
@@ -2026,7 +2278,11 @@
        "delphinium:32b732c5",
        "delphinium:d303fe9f"
       ],
-      "conf": "C"
+      "conf": "C",
+      "ecart": {
+       "type": "confirme",
+       "texte": "Une zone : dessus vert plus fonce, dessous gris-vert (DLP_BLADE.stops / bstops)."
+      }
      },
      "bord": "net",
      "motif": {
@@ -2077,7 +2333,11 @@
      "v": 0.004,
      "unite": "L",
      "methode": "hypothese",
-     "conf": "D"
+     "conf": "D",
+     "ecart": {
+      "type": "confirme",
+      "texte": "Petiole de largeur len x .024 (dlpLeafSv w0), fin comme .004 L."
+     }
     },
     "petiole_sur_limbe": {
      "v": 0.025,
@@ -2093,7 +2353,13 @@
       0.02,
       0.03
      ],
-     "note": "organ.py leaf sur le limbe seul : minorant"
+     "note": "organ.py leaf sur le limbe seul : minorant",
+     "code": "GHI.delphinium.pl.pet/GHI.delphinium.pl.blade",
+     "ecart": {
+      "type": "divergence",
+      "texte": "Petiole dessine long (pet .38 contre blade .62) pour que la feuille pende comme sur les photos 12 et 16 ; le .025 de la fiche est un minorant sur le limbe seul."
+     },
+     "retenu": 0.6129032258064516
     }
    },
    "stades": {
