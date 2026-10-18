@@ -44,6 +44,7 @@ EFFORT = {'haiku': 'low', 'sonnet': 'medium', 'opus': 'high'}  # opus xhigh -> h
 STEP_CAP = {'census': .2, 'refs': .15, 'coloris': .1, 'targets': .05, 'fiche': .25, 'forme': 3.0, 'fit': .2, 'plante': 1.0, 'finition': .8,
             'temoins': .05, 'comparaison': .6, 'juge': .4, 'qa': .1, 'planches': .1}  # comparaison .3 -> .6: one Opus call of 40 turns is .6 (oeillet)
 CAP_DEFAULT = 8.0
+PIPE_SLOTS = 4  # sorts running at once on the PC (owner, 2026-10-18: four flowers in parallel; the gate still holds 3 headless Chromes)
 NL = chr(10)
 CHECK_FAILS = 2  # a done check that fails this many times in a step stops the step (a question to the owner), never a fresh relay
 TARGET_EL, TARGET_KB = 300, 50                          # budget per head at DET 1: a MEASURE only since 2026-10-17 (the owner: quality first)
@@ -3277,7 +3278,7 @@ def cmd_run(a):
         ctx.cap / 1e6, ctx.bill.total() / 1e6, ' ; kit %s (%s) with %s' % (ki['module'], ki['prefix'], ','.join(ki['sids']) or '-') if ki else '', ' ; DRY RUN' if ctx.dry else ''))
     if not ctx.dry and 'shot_p.sh' not in priv and any(n in todo for n in LOCKED):
         raise SystemExit('fleur/shot.sh not found in %s: no private copy fleur/shot_p.sh for the renders' % ch)
-    slot = Lock(['pipe-1', 'pipe-2', 'pipe-3'], sid)
+    slot = Lock(['pipe-%d' % i for i in range(1, PIPE_SLOTS + 1)], sid)
     if not ctx.dry:
         for n in os.listdir(LOCKS) if os.path.isdir(LOCKS) else []:
             if n.startswith('pipe-'):
@@ -3285,7 +3286,7 @@ def cmd_run(a):
                 if info.get('sid') == sid and info.get('pid') != os.getpid() and pid_alive(info.get('pid', 0)):
                     raise SystemExit('%s is already running (pid %s)' % (sid, info.get('pid')))
         if not slot.acquire(wait=False):
-            say('three sorts are already running on this PC (ws/locks/pipe-1..3): try again later')
+            say('%d sorts are already running on this PC (ws/locks/pipe-1..%d): try again later' % (PIPE_SLOTS, PIPE_SLOTS))
             return 4
     ctx.slot = slot
     code = 0
