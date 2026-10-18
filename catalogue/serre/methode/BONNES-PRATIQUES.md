@@ -209,3 +209,18 @@ Rappel de base : SVG natif seulement, ni 3D, ni image incorporée, ni ruban, ni 
     de forme validée par le porteur, puis `--tete-validee` ; plante et finition en Sonnet ; comparaison et juge 1 M à eux deux. Au-delà, la session principale écrit
     le tableau elle-même et lance le juge une fois (`--juge-tours 0`), puis regarde les planches `plant=1` et corrige la tige et les feuilles elle-même
     (vague 4 : gloriosa 6,06 M, nérine 4,31, delphinium 6,24, scabieuse 5,42).
+
+## 11. La barre : la photo, pas l'anémone (porteur, 2026-10-18)
+11.1 Le but est la meilleure qualité possible, quel qu'en soit le coût (porteur, 2026-10-18, sur le lys oriental redessiné : « really weak and bad
+    compare to the image »). La référence n'est plus l'anémone : vue au même grossissement, elle reste une illustration vectorielle propre. La
+    référence est la photo, recadrée au même angle et à la même échelle que le rendu.
+11.2 La tête se juge région par région, chaque région en paire recadrée photo/rendu à 100 % et 200 % : silhouette, corps du pétale (matière,
+    stries, brillance), bord et pointe (liseré, revers, ondulation), gorge et cœur, étamines et pollen, mouchetures, dos et revers. Une région est
+    finie quand plus aucun écart n'y est visible ; la liste des écarts restants est écrite à chaque passage.
+11.3 Le moteur d'abord : ce qui manque à une région (couleur portée par les nervures plutôt qu'en tache floue, stries fines et denses, ombres
+    portées et occlusion entre pièces qui se chevauchent, brillance satinée le long des nervures, mouchetures et papilles en relief, pollen
+    velouté, franges de la gorge, revers coloré des pointes roulées) devient une pièce du kit, essayée sur la sorte en cours, puis offerte aux
+    suivantes.
+11.4 Le porteur ne voit une tête qu'après ma propre revue des paires recadrées et celle d'un juge neuf sur les mêmes recadrages. Une sorte à la
+    fois jusqu'à ce que la tête soit validée ; le plafond de 8 M ne s'applique pas à la tête, il reste mesuré.
+
