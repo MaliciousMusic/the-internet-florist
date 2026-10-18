@@ -242,3 +242,54 @@ if(typeof CW_CARN!=='undefined'&&!CW_CARN.some(x=>x.id==='etincelant'))CW_CARN.p
   {id:'cornelia',n:'Blanc cassé (Cornelia)',c:'#d4d0ca',late:15,ret:1},{id:'etincelant',n:'Rouge vif (Etincelant)',c:'#c61b1a',late:15},
   {id:'jeanne-dionis',n:'Blanc pur (Jeanne Dionis)',c:'#dfdfd5',late:15},{id:'magenta',n:'Magenta (Chabaud Magenta)',c:'#a0288e',late:15},
   {id:'mondrian',n:'Rose à pointe rouge (Mondrian)',c:'#f174b6',late:15});
+
+/* ================= the plant: stem, nodes and leaves (relais 2, 2026-10-18) =================
+   A disbudded florist's carnation (photographs 54, 50, 37, 21): a round glaucous stem, swollen at its nodes where each pair of narrow, keeled,
+   bluish leaves clasps it in a short sheath; pairs along it, the last internode the longest (one node: its pair stands some 70 % down the stem on every stage; with two, the upper pair came up against the calyx and crossed the head, so a second pair is left open; one pair just under the calyx crossed the flower, the owner's sheet
+   2026-10-18). Pieces of the kit only: svStemLine with
+   sv.nodes (+ sheath), svStrapLeaf, acoNeck / acoBudUp (the collar's bend and the bud's upright stance, y3-anemone2.js). */
+const DIAN_SC=['#2d4a3d','#56806c','#86a996','#bed3c6'],DIANP={w:.05,li:1.5,lp:1.5,nodes:1,leafAng:62,lenK:1.3,rankK:[1,.55,.8,1],
+  leaf:{w:.12,wp:[[0,.5],[.07,.82],[.2,1],[.5,.82],[.8,.42],[1,0]],sheath:.09,sr:1.6,lean:.16,droop:.42,tw:.18,gut:.65,wav:.012,wavN:2.4,hood:0,bloom:.7,
+    up:'#5a8670',low:'#7fa592',base:'#b4cdb6',nu:7,nv:16},
+  node:{sw:.38,len:1.5,sk:.1,ro:.3,rw:.05,sheath:{len:1.1,t:.05,wrap:.9,ears:.3,a:.4}}};
+const DIAN_SCK={};
+function dianStemCols(wl,nodes){const y=.55*svSm((wl-.3)/.5),key=Math.round(y*20)+'|'+(nodes||[]).map(n=>Math.round(n.d)).join(',');if(DIAN_SCK[key])return DIAN_SCK[key];
+  const c=DIAN_SC.map(x=>mix(x,'#9a9460',y));c.sv={swell:.02,gloss:.22,bloom:{a:.34,n:1.2},nodes:(nodes||[]).map(n=>Object.assign({},DIANP.node,n))};return DIAN_SCK[key]=c}
+/* one leaf, in screen space: pos the foot on the stem's axis, H up the stem, lv the leaf's direction; wilted, it limps and yellows from the tip */
+function dianLeafAt(par,pos,H,lv,len,sd,wl){const pe=V3s(lv,V3.sc(H,V3.dot(lv,H))),pl=V3l(pe),Out=pl>1e-3?V3.sc(pe,1/pl):[1,0,0],
+    ang=Math.acos(Math.max(-1,Math.min(1,V3.dot(V3.nz(lv),H))));
+  return svStrapLeaf(par,pos,H,Out,Object.assign({},SVL_DEF,DIANP.leaf,{len,lean:DIANP.leaf.lean+ang*.55,sd,wl,dry:.8*svSm((wl-.45)/.45),dryC:'#a39a58'}))}
+/* a leaf of the bouquet's stem (STEML's hook): x, y the foot on the screen, ang the leaf's angle, o.ta the stem's, o.s the side */
+function dianLeafSv(par,x,y,ang,len,o){const H=[Math.cos(o.ta),-Math.sin(o.ta),0],Lv=[Math.cos(ang),-Math.sin(ang),0],k=o.k||0;
+  return dianLeafAt(par,[x,-y,0],H,V3.nz(V3.add(Lv,[0,0,.25+.3*pxHashS(k,3,Math.round(x*7+y*13))])),len*1.5,svSeed('oeillet-feuille',Math.round(x*8),Math.round(y*8),k),dianLife(null))}
+if(typeof STEML!=='undefined'&&STEML['oeillet-standard'])STEML['oeillet-standard'].sv=dianLeafSv;
+/* the old drawing run into a thrown-away group: the bouquet's chance it draws is consumed exactly */
+function dianOld(fn){const dm=document.createElementNS('http://www.w3.org/2000/svg','g'),g0=GDEF;GDEF=dm;try{fn(dm)}finally{GDEF=g0}}
+/* the head's stem as one whole piece, the nodes where the L-system put them (d: arc length on the drawn line) */
+function dianChain(ch,O,nd,wl){const n=ch.pts.length,P=[],W=[];
+  for(let i=0;i<n;i++){const q=ch.pts[i],sq=[q[0]+O[0],-(q[1]+O[1])];if(!i){P.push(sq);W.push(ch.ws[i]);continue}
+    const p0=ch.pts[Math.max(0,i-2)],p1=ch.pts[i-1],p3=ch.pts[Math.min(n-1,i+1)];for(const t of[1/3,2/3]){const t2=t*t,t3=t2*t,cr=j=>.5*((2*p1[j])+(-p0[j]+q[j])*t+(2*p0[j]-5*p1[j]+4*q[j]-p3[j])*t2+(-p0[j]+3*p1[j]-3*q[j]+p3[j])*t3);
+      P.push([cr(0)+O[0],-(cr(1)+O[1])]);W.push(ch.ws[i-1]+(ch.ws[i]-ch.ws[i-1])*t)}P.push(sq);W.push(ch.ws[i])}
+  const S=[0];for(let i=1;i<P.length;i++)S.push(S[i-1]+Math.hypot(P[i][0]-P[i-1][0],P[i][1]-P[i-1][1]));
+  const nodes=nd.map(q=>{let b=0,bd=1e9;for(let i=0;i<P.length;i++){const d=Math.hypot(P[i][0]-q[0],P[i][1]-q[1]);if(d<bd){bd=d;b=i}}return{d:S[b]}}),c=dianStemCols(wl,nodes);
+  return{ax:1,cast:false,fn:par=>{svStemLine(par,P,W,c)}}}
+function dianLsPlant(k,res,o,wl,D){const parts=[],off=V3s(o.O,o.apex||[0,0,0]),c0=res.chains[0],ci=lsCut(res,o.apex||[0,0,0]),
+    nd=res.organs.filter(q=>q.t==='Nd').map(q=>{const p=V3.add(q.pos,off);return[p[0],-p[1]]}),ch=dianChain({pts:c0.pts.slice(0,ci+1),ws:c0.ws.slice(0,ci+1)},off,nd,wl);
+  let z=0;for(const p of c0.pts)z+=p[2]+off[2];ch.z=Math.min(o.O[2]-.002,z/c0.pts.length);parts.push(ch);
+  lsChainParts(res.chains.slice(1),off,o.cols||SG,parts,{piece:1e4});
+  for(const og of res.organs){const pos=V3.add(og.pos,off),draw=o.organ&&o.organ(og,pos);if(draw)parts.push(...(draw.parts||[]))}
+  drawParts(k,parts)}
+function dianPlant(g,t,o){if(typeof SV_ON==='undefined'||!SV_ON||typeof acoNeck!=='function')return carnPlant(g,t,o,CW_CARN);
+  const cw=o.cw||cwNear(CW_CARN,o.col)||CW_CARN[0],op=Math.max(.05,Math.min(1,o.op??1)),D=(o.cm||7)*UPC,k=G(g),wl=dianLife(o),o2=svSm((op-.15)/.6),wk=svSm((wl-.3)/.5);
+  const B0=acoBudUp(frameOf(o,1),op),Z=B0[2],hW=Math.hypot(Z[0],Z[2])>.05?V3.nz([Z[0],0,Z[2]]):[1,0,0],A2=V3.nz(V3.cr([0,1,0],hW)),
+    b={dC:D*(.25+.2*o2+.25*wk),a2:.5*wk,A2,gW:.12*svSm((wl-.2)/.6)},
+    rotB=B=>{if(b.a2<1e-4)return B;const R2=B.slice(0,3).map(v=>rotA(v,A2,b.a2));R2.upV=B.upV;R2.reach=B.reach;return R2};
+  const T0=lsTurtle,P0=lsPlant;let n0=0,r;lsTurtle=function(m,oo){const res=T0(m,oo);if(!n0++)acoNeck(res,b);return res};
+  lsPlant=function(k2,res,o3){return dianLsPlant(k2,res,o3,wl,D)};
+  try{r=lsHeadS(k,Object.assign({},o,{Bf:B0}),{D,w:D*DIANP.w,cols:DIAN_SC,op,rr:1,nodes:DIANP.nodes,li:DIANP.li,lp:DIANP.lp,opp:1,leafAng:DIANP.leafAng,side:null,wig:.02,
+    flower:(par,B,O,D2,op2)=>carnFlower(par,rotB(B),O,D2,cw,op2),
+    leaf:(og,pos)=>{const len=D*R(.85,1.1);dianOld(dm=>{stemLeaf(dm,0,0,0,len,.09,'#7f9f8a',{side:og.p.j?.4:-.4,arch:14})});
+      return{z:pos[2]+og.H[2]*len*.4,cast:false,fn:par=>{const P=[pos[0],-pos[1],pos[2]],lv=[og.H[0],-og.H[1],og.H[2]];
+        dianLeafAt(par,P,[0,-1,0],lv,len*DIANP.lenK*DIANP.rankK[Math.min(3,og.p.i)],svSeed('oeillet-feuille',cw.id,Math.round(pos[0]*8),Math.round(pos[1]*8),og.p.j||0),wl)}}}})}finally{lsTurtle=T0;lsPlant=P0}
+  open(k,t,1000,8,.3);return r}
+if(typeof GH!=='undefined'&&typeof carnPlant==='function')GH['oeillet-standard']=dianPlant;

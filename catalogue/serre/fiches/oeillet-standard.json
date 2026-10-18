@@ -611,7 +611,7 @@
       ],
       "conf": "C",
       "code": "const",
-      "ligne": "app/y-dianthus.js:207",
+      "ligne": "app/y-dianthus.js:214",
       "retenu": [
        24,
        34
@@ -631,7 +631,7 @@
       ],
       "conf": "C",
       "code": "const",
-      "ligne": "app/y-dianthus.js:207",
+      "ligne": "app/y-dianthus.js:214",
       "retenu": [
        0.02,
        0.048
@@ -1949,7 +1949,11 @@
       "oeillet-standard:4238e494"
      ],
      "conf": "C",
-     "note": "targets tige.stem : largeur de tige / largeur de fleur (sd 0.177)"
+     "note": "targets tige.stem : largeur de tige / largeur de fleur (sd 0.177)",
+     "ecart": {
+      "type": "divergence",
+      "texte": "DIANP.w .05 : la tige est dessinee a .05 D (rapport tige/tete du dessin, regle au fit plante), la mesure photo (sd .177) est plus large que la dispersion"
+     }
     },
     "tige_sur_fleur": {
      "v": 0.067,
@@ -1960,7 +1964,11 @@
       "oeillet-standard:c88d33de"
      ],
      "conf": "C",
-     "note": "organ.py stem p050 --head 664 --green : 44,6 px sous la fleur, entre deux nœuds"
+     "note": "organ.py stem p050 --head 664 --green : 44,6 px sous la fleur, entre deux nœuds",
+     "ecart": {
+      "type": "divergence",
+      "texte": "tige coupee entre deux noeuds : le dessin la regle par DIANP.w (D*.05), pas par ce rapport de photo"
+     }
     },
     "L_sur_l": {
      "v": 4.5,
@@ -1971,7 +1979,11 @@
       "oeillet-standard:c88d33de"
      ],
      "conf": "C",
-     "note": "segment visible entre deux nœuds, p050"
+     "note": "segment visible entre deux nœuds, p050",
+     "ecart": {
+      "type": "divergence",
+      "texte": "les noeuds viennent de l'L-systeme de la tete (nodes:3), pas de ce rapport entre deux noeuds"
+     }
     }
    },
    "courbure": {
@@ -1993,7 +2005,11 @@
       "oeillet-standard:c88d33de"
      ],
      "conf": "C",
-     "note": "flèche / longueur, p050"
+     "note": "flèche / longueur, p050",
+     "ecart": {
+      "type": "divergence",
+      "texte": "wig .02 et col acoNeck : la courbure vient de la tete (col tangent), non chiffree par cette fleche"
+     }
     }
    },
    "matiere": {
@@ -2021,7 +2037,11 @@
      "photos": [
       "oeillet-standard:c88d33de"
      ],
-     "conf": "C"
+     "conf": "C",
+     "ecart": {
+      "type": "confirme",
+      "texte": "svStemLine sv.gloss .22 dans dianStemCols : brillance .2 retenue"
+     }
     }
    },
    "zones": [
@@ -2041,7 +2061,11 @@
       "photos": [
        "oeillet-standard:c88d33de",
        "oeillet-standard:770c1516"
-      ]
+      ],
+      "ecart": {
+       "type": "divergence",
+       "texte": "une seule zone dessinee : tige entiere en DIAN_SC, jaunie par dianStemCols au fane"
+      }
      },
      "motif": {
       "type": "vert glauque, nœuds renflés plus clairs",
@@ -2082,7 +2106,11 @@
       "oeillet-standard:c88d33de"
      ],
      "conf": "C",
-     "note": "bas / haut, organ.py stem p050 (cadre 820,820,1100,1440)"
+     "note": "bas / haut, organ.py stem p050 (cadre 820,820,1100,1440)",
+     "ecart": {
+      "type": "divergence",
+      "texte": "effilement donne par les largeurs ws de la chaine de la tete (lsHeadS), non regle seul"
+     }
     },
     "poils": {
      "v": "aucun",
@@ -2138,7 +2166,11 @@
     "unite": "n",
     "methode": "reference",
     "conf": "A",
-    "ref": "Flore (Dianthus caryophyllus L.) : calice tubuleux, 4 bractéoles à la base, pétales onguiculés à limbe denté, feuilles opposées linéaires glauques, nœuds renflés : feuilles opposées par paire à chaque nœud"
+    "ref": "Flore (Dianthus caryophyllus L.) : calice tubuleux, 4 bractéoles à la base, pétales onguiculés à limbe denté, feuilles opposées linéaires glauques, nœuds renflés : feuilles opposées par paire à chaque nœud",
+    "ecart": {
+     "type": "divergence",
+     "texte": "li:2 paires basses (nodes:3) : le dessin pose deux paires, la fiche en compte par noeud"
+    }
    },
    "disposition": {
     "type": {
@@ -2186,7 +2218,11 @@
       "oeillet-standard:86441df5"
      ],
      "conf": "B",
-     "note": "limbe L/l, organ.py leaf --green (p050 6.26 ; p037 7.32) ; feuille effilée en lanière"
+     "note": "limbe L/l, organ.py leaf --green (p050 6.26 ; p037 7.32) ; feuille effilée en lanière",
+     "ecart": {
+      "type": "divergence",
+      "texte": "DIANP.leaf.w .12 avec lenK 1.3 : rapport regle au fit plante (space-plante.json), voir comparaison feuille"
+     }
     },
     "marge": {
      "type": {
@@ -2206,7 +2242,11 @@
      "unite": "ratio",
      "methode": "hypothese",
      "conf": "D",
-     "note": "à fixer par le modeleur (flore : 5 à 15 cm sur tige de 40 à 80 cm)"
+     "note": "à fixer par le modeleur (flore : 5 à 15 cm sur tige de 40 à 80 cm)",
+     "ecart": {
+      "type": "divergence",
+      "texte": "longueur = D*R(.85,1.1)*lenK*rankK : hypothese de la fiche remplacee par le dessin, regle par DIANP.lenK"
+     }
     },
     "angle_tige": {
      "v": 68.25,
@@ -2223,7 +2263,11 @@
      ],
      "conf": "C",
      "repere": "tige",
-     "note": "targets feuille.leafang"
+     "note": "targets feuille.leafang",
+     "ecart": {
+      "type": "divergence",
+      "texte": "DIANP.leafAng 62 plus droite lean .16 et droop .42 : angle regle au fit plante"
+     }
     }
    },
    "courbure": {
@@ -2274,7 +2318,11 @@
      "photos": [
       "oeillet-standard:448a9d47"
      ],
-     "conf": "C"
+     "conf": "C",
+     "ecart": {
+      "type": "budget",
+      "texte": "feuille mate bleutee (bloom .7), pas de brillance reglee seule"
+     }
     },
     "grain": {
      "v": "lisse",
@@ -2336,7 +2384,11 @@
       "photos": [
        "oeillet-standard:c88d33de",
        "oeillet-standard:770c1516"
-      ]
+      ],
+      "ecart": {
+       "type": "divergence",
+       "texte": "dessus up/ dessous low/ base : trois teintes de DIANP.leaf, pas une etendue chiffree"
+      }
      },
      "motif": {
       "type": "vert bleuté glauque, nervure médiane plus claire"
@@ -2358,7 +2410,11 @@
         "oeillet-standard:c88d33de"
        ],
        "conf": "C",
-       "note": "pétiole / longueur : feuille sessile"
+       "note": "pétiole / longueur : feuille sessile",
+       "ecart": {
+        "type": "divergence",
+        "texte": "feuille sessile engainante : DIANP.leaf.sheath .09 tient lieu de petiole"
+       }
       }
      }
     }
@@ -2377,7 +2433,11 @@
      "unite": "cm",
      "methode": "reference",
      "conf": "C",
-     "ref": "Flore (Dianthus caryophyllus L.) : calice tubuleux, 4 bractéoles à la base, pétales onguiculés à limbe denté, feuilles opposées linéaires glauques, nœuds renflés : largeur 2 à 4 mm"
+     "ref": "Flore (Dianthus caryophyllus L.) : calice tubuleux, 4 bractéoles à la base, pétales onguiculés à limbe denté, feuilles opposées linéaires glauques, nœuds renflés : largeur 2 à 4 mm",
+     "ecart": {
+      "type": "budget",
+      "texte": "gouttiere gut .65 de svStrapLeaf, diametre non dessine separement"
+     }
     }
    },
    "couleur": {
@@ -2430,7 +2490,11 @@
       "oeillet-standard:7bdbc81d"
      ],
      "conf": "C",
-     "note": "portion de tige nue sous le calice (boutons latéraux)"
+     "note": "portion de tige nue sous le calice (boutons latéraux)",
+     "ecart": {
+      "type": "divergence",
+      "texte": "pedicelle = dernier entrenoeud de la chaine de la tete (acoNeck), longueur non reglee seule"
+     }
     }
    },
    "courbure": {
