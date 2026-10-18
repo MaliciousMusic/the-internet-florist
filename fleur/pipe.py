@@ -950,11 +950,21 @@ REFS_MIN = {  # tag family -> {value: soft minimum}; hard minimum below
 REFS_HARD = [('stade', 'bouton'), ('stade', 'ouvert'), ('stade', 'fane'), ('organe', 'feuille-dessus'), ('organe', 'tige'),
              ('vue', 'face'), ('vue', 'trois-quarts'), ('vue', 'profil')]  # the views of the comparison pairs (BONNES-PRATIQUES 9.3b)
 VU_RE = re.compile(r'\bvu\s*:\s*([^;]*)', re.I)
-VU_KV = re.compile(r'(stade|vue|organe)\s*=\s*([^\s;,=]+)', re.I)
+VU_KV = re.compile(r'(stade|vue|organe|groupe)\s*=\s*([^\s;,=]+)', re.I)
+# P7: what the photo shows, as a group (BONNES-PRATIQUES 1.3, 1.7): a cut-flower hybrid, the wild species, a garden form, or something else
+GROUPES = ('hybride-de-coupe', 'espece-sauvage', 'jardin', 'autre')
+GROUPE_ALIAS = {'hybride': 'hybride-de-coupe', 'coupe': 'hybride-de-coupe', 'hybride-coupe': 'hybride-de-coupe', 'fleur-coupee': 'hybride-de-coupe',
+                'cultivar': 'hybride-de-coupe', 'sauvage': 'espece-sauvage', 'espece': 'espece-sauvage', 'wild': 'espece-sauvage', 'garden': 'jardin'}
+PAIR_GROUPES = 'hybride-de-coupe,jardin'  # the groups a comparison photo may show (--groupes; never "autre")
+PAIR_SHORT = 1000                         # a comparison photo's short side in px at least (P7): its local copy p<NNN>.jpg
+PAIR_LONG = 2400                          # ... downloaded at its original size, its long side brought down to this
+CW_DE_MAX = 15                            # a coloris:<x> photo whose flower is further than this (CIE76) from the colourway's colour leaves the pairs
+CW_CONF_MIN = .5                          # ... when refs.py auto found the flower with this confidence at least (as the coloris step); below: no verdict
 
 
 def vu_parse(m):
-    """the "vu" field of a kept photo (refs.py keep --m "vu: stade=ouvert+declin vue=profil organe=tige ; note"): what was SEEN on the image"""
+    """the "vu" field of a kept photo (refs.py keep --m "vu: stade=ouvert+declin vue=profil organe=tige groupe=hybride-de-coupe ; note"): what was
+    SEEN on the image"""
     mm = VU_RE.search(m or '')
     if not mm:
         return None
@@ -963,8 +973,156 @@ def vu_parse(m):
         fam = k.lower()
         vals = [norm_tag(x) for x in v.split('+') if norm(x) and norm(x) not in ('aucun', 'aucune', 'na')]
         vals = ['bourgeon' if fam == 'organe' and x == 'bouton' else x for x in vals]
+        if fam == 'groupe':
+            vals = [GROUPE_ALIAS.get(x, x) for x in vals]
         out.setdefault(fam, []).extend(vals)
     return out if any(out.values()) else None
+
+
+def photo_groupe(x):
+    """the group the "vu" field of a kept photo states (P7), or None"""
+    g = (vu_parse(x.get('m')) or {}).get('groupe') or []
+    return g[0] if g and g[0] in GROUPES else None
+
+
+def pair_groupes(ctx):
+    return [g for g in (ctx.st.get('groupes') or PAIR_GROUPES).split(',') if g in GROUPES and g != 'autre']
+
+
+def pair_photo(ctx, R, x, info):
+    """P7: the local copy of a kept photo for the comparison pairs, refcache/<sid>/p<NNN>.jpg, at its original size (long side <= PAIR_LONG);
+    its size goes to info[i] = {w, h, short, file}. A Commons thumbnail URL asks the width of the original (cands.json w); an original known to be
+    small is not downloaded. Network errors are noted, never raised."""
+    i = int(x.get('i', -1))
+    key = str(i)
+    if key in info and (info[key].get('file') or info[key].get('err') or info[key].get('short')):
+        return info[key]
+    C = jload(ctx.rc + '/cands.json', []) or []
+    c = C[i] if 0 <= i < len(C) else {}
+    url, ow, oh = c.get('thumb') or '', int(c.get('w') or 0), int(c.get('h') or 0)
+    rec = {'src': url}
+    if ow and oh and min(ow, oh) < PAIR_SHORT:
+        rec.update(w=ow, h=oh, short=min(ow, oh), err='original %dx%d' % (ow, oh))
+        info[key] = rec
+        return rec
+    if ow and re.search(r'/thumb/.*/\d+px-', url):
+        url = re.sub(r'/(\d+)px-', '/%dpx-' % min(ow, 2 * PAIR_LONG), url)
+    p = '%s/p%03d.jpg' % (ctx.rc, i)
+    try:
+        from PIL import Image
+        if not os.path.exists(p):
+            im = Image.open(io.BytesIO(R.get(url))).convert('RGB')
+            im.thumbnail((PAIR_LONG, PAIR_LONG))
+            im.save(p, quality=90)
+        w, h = Image.open(p).size
+        rec.update(w=w, h=h, short=min(w, h), file='%s/p%03d.jpg' % (ctx.rel, i))
+    except Exception as e:
+        rec['err'] = 'download: %s' % str(e)[:80]
+    info[key] = rec
+    return rec
+
+
+def pair_photos(ctx, R=None):
+    """the sizes of the kept photos' pair copies (pair-photos.json), fetched for the photos a pair may use (tags of PAIRS, coloris:)"""
+    p = ctx.rc + '/pair-photos.json'
+    info = jload(p, {}) or {}
+    if ctx.dry:
+        return info
+    want = {t for P in PAIRS for alt in P['want'] for t in alt}
+    K = jload(ctx.rc + '/keep.json', []) or []
+    todo = [x for x in K if (kept_tags(x) & want or photo_cws(x)) and str(x.get('i')) not in info]
+    if todo:
+        R = R or load_mod(ctx, 'refs')
+        for x in todo:
+            pair_photo(ctx, R, x, info)
+        jsave(p, info)
+    return info
+
+
+def pair_eligible(ctx, x, info):
+    """(ok, why) a kept photo may face a render in a pair: its group is one the sort compares to (--groupes), its copy is >= PAIR_SHORT px"""
+    g, why = photo_groupe(x), []
+    if g is None:
+        why.append('no groupe= in its "vu" field')
+    elif g not in pair_groupes(ctx):
+        why.append('groupe %s' % g)
+    r = info.get(str(x.get('i'))) or {}
+    if not r.get('short'):
+        why.append('size unknown (%s)' % (r.get('err') or 'no pair copy'))
+    elif r['short'] < PAIR_SHORT or not r.get('file'):
+        why.append('short side %d px (< %d)' % (r['short'], PAIR_SHORT) if r['short'] < PAIR_SHORT else (r.get('err') or 'no pair copy'))
+    return (not why), ', '.join(why)
+
+
+def cw_hexes(ctx):
+    """{normalised colourway name: (hex, where from)}: the measured body colour of coloris.json (after the coloris step), else the colour of the
+    catalogue's sources file (read-only)"""
+    out = {}
+    for e in jload(ctx.rc + '/coloris.json', []) or []:
+        if re.match(r'^#[0-9a-fA-F]{6}$', str(e.get('corps') or '')):
+            for n in cw_names(e):
+                out[n] = (e['corps'], 'coloris.json')
+    if out:
+        return out
+    j = jload('%s/catalogue/serre/sources/%s.json' % (FC, ctx.sid), {}) or {}
+    cw = j.get('coloris') or []
+    for c in (cw.values() if isinstance(cw, dict) else cw):
+        if not isinstance(c, dict):
+            continue
+        ms = c.get('mesures') if isinstance(c.get('mesures'), dict) else {}
+        hx = next((v for v in (ms.get('corps'), ms.get('corps_hex'), ms.get('mediane_corps'), c.get('couleur_catalogue'), c.get('teinte_catalogue'), c.get('couleur_sku'),
+                               ms.get('catalogue_hex')) if isinstance(v, str) and re.match(r'^#[0-9a-fA-F]{6}$', v)), None)
+        if hx:
+            for k in ('id', 'nom', 'nom_enregistre', 'cultivar', 'nom_libre'):
+                if c.get(k) is not None and norm(str(c[k])):
+                    out[norm(str(c[k]))] = (hx, 'catalogue')
+    return out
+
+
+def cw_photo_audit(ctx, R=None):
+    """P7: every kept photo tagged coloris:<x>: the median of its flower (refs.py auto, body ring) against the colour of <x>; CIE76 above CW_DE_MAX:
+    the photo leaves the pairs of that colourway and is reported (questions.md). coloris-photos.json: {i: {cw, hex, src, corps, conf, dE, ok}}"""
+    p = ctx.rc + '/coloris-photos.json'
+    old = jload(p, {}) or {}
+    K = [x for x in jload(ctx.rc + '/keep.json', []) or [] if photo_cws(x)]
+    if ctx.dry:
+        say('  [dry] colour audit of the %d kept photos tagged coloris: (refs.py auto, dE > %d leaves the pairs)' % (len(K), CW_DE_MAX))
+        return old
+    hexes, out, rep = cw_hexes(ctx), {}, []
+    for x in K:
+        i = str(x.get('i'))
+        meas = old.get(i) if old.get(i, {}).get('corps') else None
+        if not meas:
+            try:
+                R = R or load_mod(ctx, 'refs')
+                m = AUTO_RE.search(quiet(R.auto, ctx.sid, int(x['i'])))
+                meas = {'corps': m[2], 'conf': float(m[4])} if m else {'err': 'no auto measure'}
+            except Exception as e:
+                meas = {'err': str(e)[:80]}
+        for n in sorted(photo_cws(x)):
+            hx = hexes.get(n)
+            r = dict(cw=n, corps=meas.get('corps'), conf=meas.get('conf'), err=meas.get('err'))
+            if not hx:
+                r.update(ok=None, why='no colour known for %s yet' % n)
+            elif not meas.get('corps'):
+                r.update(hex=hx[0], src=hx[1], ok=None, why=meas.get('err'))
+            elif (meas.get('conf') or 0) < CW_CONF_MIN:  # refs.py auto did not find the flower surely (busy background): no verdict, said
+                r.update(hex=hx[0], src=hx[1], dE=round(delta_e(meas['corps'], hx[0]), 1), ok=None, why='auto measure unsure (confidence %.2f)' % meas['conf'])
+            else:
+                de = round(delta_e(meas['corps'], hx[0]), 1)
+                r.update(hex=hx[0], src=hx[1], dE=de, ok=de <= CW_DE_MAX)
+                if de > CW_DE_MAX:
+                    rep.append('photo %s (coloris:%s) : fleur %s contre %s (%s), ΔE %.0f > %d : écartée des paires de ce coloris. Proposition : vérifier la variété de la photo '
+                               '(ou la couleur du coloris), ou la remplacer à refs.' % (i, n, meas['corps'], hx[0], hx[1], de, CW_DE_MAX))
+            out.setdefault(i, {})[n] = r
+    jsave(p, out)
+    set_questions(ctx, 'photos-coloris', 'Photos balisées coloris: trop loin de la couleur du coloris (refs, P7)', rep)
+    return out
+
+
+def cw_photo_ok(audit, x, name):
+    """False when the colour audit put photo x out of the pairs of colourway `name` (unknown stays usable)"""
+    return (audit.get(str(x.get('i'))) or {}).get(name, {}).get('ok') is not False
 
 
 def refs_seen(ctx):
@@ -1092,13 +1250,13 @@ def step_refs(ctx):
     dropped = len(bad0)
     if not jload(ctx.rc + '/keep.json', []) or ctx.dry:
         sh = '' if ctx.dry else '\n'.join('- ' + s for s in sheets)
-        r = call_model(ctx, 'refs', 'pick', 'sonnet', prompt_text('refs', **ctx.sub(task='pick', sheets=sh or '-', missing='-')), tools, turns=60)
+        r = call_model(ctx, 'refs', 'pick', 'sonnet', prompt_text('refs', **ctx.sub(task='pick', sheets=sh or '-', missing='-', groupes=', '.join(pair_groupes(ctx)))), tools, turns=60)
         n1, bad = refs_audit(ctx)
         dropped += len(bad)
     c = check_refs(ctx)
     if not c['ok'] or len(c['soft']) > 3:
         miss = ', '.join(c['hard'] + c['soft'])
-        r = call_model(ctx, 'refs', 'fill', 'sonnet', prompt_text('refs', **ctx.sub(task='fill', sheets='-', missing=miss or '-')), tools + WEB + ['Write'], turns=60)
+        r = call_model(ctx, 'refs', 'fill', 'sonnet', prompt_text('refs', **ctx.sub(task='fill', sheets='-', missing=miss or '-', groupes=', '.join(pair_groupes(ctx)))), tools + WEB + ['Write'], turns=60)
         n2, bad = refs_audit(ctx)
         dropped += len(bad)
         c = check_refs(ctx)
@@ -1111,7 +1269,23 @@ def step_refs(ctx):
         c['ok'], c['msg'] = False, c['msg'] + '; brief.md not written'
     c['set_aside'] = dropped
     c['msg'] += '; %d photos set aside by the "looked at" check' % dropped
+    c['msg'] += '; ' + refs_pair_audit(ctx, R)
     return {'status': 'done' if c['ok'] else 'failed', 'msg': c['msg'], 'checks': c, 'gaps': c['soft']}
+
+
+def refs_pair_audit(ctx, R=None):
+    """P7 at refs: the pair copies of the kept photos (>= PAIR_SHORT px), the colour audit of the coloris: photos, the photos without groupe="""
+    if ctx.dry:
+        cw_photo_audit(ctx)
+        return 'dry: pair copies (>= %d px) and colour audit of the coloris: photos' % PAIR_SHORT
+    K = jload(ctx.rc + '/keep.json', []) or []
+    info = pair_photos(ctx, R)
+    big = sum(1 for r in info.values() if (r.get('short') or 0) >= PAIR_SHORT and r.get('file'))
+    audit = cw_photo_audit(ctx, R)
+    off = sorted({i for i, d in audit.items() for r in d.values() if r.get('ok') is False})
+    nog = [str(x.get('i')) for x in K if photo_groupe(x) is None]
+    return 'pair copies of %d px or more: %d of %d; colour audit: %d coloris: photo(s) out of the pairs%s; %d kept photo(s) without groupe=%s' % (
+        PAIR_SHORT, big, len(info), len(off), (' (%s)' % ', '.join(off)) if off else '', len(nog), (' (%s)' % ', '.join(nog[:8])) if nog else '')
 
 
 # ---------------------------------------------------------------------------------------------------------------- coloris
@@ -1222,6 +1396,7 @@ def step_coloris(ctx):
         else:
             drop.append({'id': e['id'], 'cultivar': e['cultivar'], 'raison': 'no measure'})
     jsave(ctx.rc + '/coloris.json', keep)
+    cw_photo_audit(ctx)  # P7 again, against the measured colours: a coloris: photo far from its colourway leaves the pairs
     jsave(ctx.rc + '/coloris-ecartes.json', drop)
     L = ['# Coloris mesurés de %s (%d, %d écartés)' % (ctx.sid, len(keep), len(drop)), '', 'marque différente de « libre » : le nom du cultivar ne s\'affiche jamais (nom de couleur générique, BONNES-PRATIQUES 4.9).', '',
          '| id | cultivar | base | corps | pointe | revers | macule | niveau | marque | remarques |', '|---|---|---|---|---|---|---|---|---|---|']
@@ -1310,6 +1485,8 @@ def kept_registry(ctx):
             'titre': x.get('title'), 'auteur': x.get('author'), 'licence': x.get('lic'), 'url': x.get('page'), 'url_image': img or None,
             'local': '%srefcache/%s/t%03d.jpg' % (ctx.rel_url + '/' if ctx.rel_url else '', ctx.sid, i), 'tags': x.get('tags') or [],
             'vu': (vu.group(1).strip() if vu else x.get('m') or ''), 'echelle': None, 'cle_depuis': frm, 'local_index': i}
+        if photo_groupe(x):  # SCHEMA §3: a photo of group "autre" never serves a measure
+            out['%s:%s' % (ctx.sid, sha8(src))]['groupe'] = photo_groupe(x)
     return out
 
 
@@ -2059,26 +2236,42 @@ def photo_cws(x):
     return {t[8:] for t in kept_tags(x) if t.startswith('coloris:')}
 
 
-def pair_plan(ctx):
-    """one kept photo per pair (the bouquet's first colourway preferred, a photo used once when possible) and the render that answers it"""
-    K = jload(ctx.rc + '/keep.json', []) or []
+def pair_plan(ctx, info=None):
+    """one kept photo per pair (the bouquet's first colourway preferred, a photo used once when possible) and the render that answers it.
+    P7: only photos of a group the sort compares to, with a pair copy of PAIR_SHORT px or more (p<NNN>.jpg); a coloris: photo the colour audit
+    put out stays out of that colourway. ctx.pair_gaps says why a missing pair has no photo."""
+    K0 = jload(ctx.rc + '/keep.json', []) or []
+    info = pair_photos(ctx) if info is None else info
+    audit = jload(ctx.rc + '/coloris-photos.json', {}) or {}
+    K, unusable = [], {}
+    for x in K0:
+        ok_, why_ = pair_eligible(ctx, x, info)
+        if ok_:
+            K.append(x)
+        else:
+            unusable[x.get('i')] = why_
     cws = jload(ctx.rc + '/coloris.json', []) or []
     cw = cws[0]['id'] if cws else ''
     first = cw_names(cws[0]) if cws else set()
     full = int(getattr(ctx.a, 'full', 40) or 40)
     views, vsrc = pair_views(ctx)
     used, plan, missing = {}, [], []
+    ctx.pair_gaps = {}
+    pfile = lambda x: (info.get(str(x.get('i'))) or {}).get('file') or '%s/t%03d.jpg' % (ctx.rel, int(x.get('i', 0)))
     for P in PAIRS:
         best = None
         for alt in P['want']:
             cands = [x for x in K if set(alt) <= kept_tags(x)]
             if cands:
-                same = lambda x: bool(photo_cws(x) & first)  # the same colourway: equal names, never a substring (rose is not rose-vif)
+                same = lambda x: any(cw_photo_ok(audit, x, n) for n in photo_cws(x) & first)  # the same colourway: equal names, never a substring
                 cands.sort(key=lambda x: (used.get(x.get('i'), 0), not same(x)))
                 best = cands[0]
                 break
         if not best:
             missing.append(P['k'])
+            near = ['%s (%s)' % (x.get('i'), unusable[x.get('i')]) for x in K0 if x.get('i') in unusable and any(set(alt) <= kept_tags(x) for alt in P['want'])]
+            ctx.pair_gaps[P['k']] = ('kept photos that fit but cannot serve: ' + '; '.join(near[:4])) if near else (
+                'no kept photo tagged %s' % ' or '.join('+'.join(alt) for alt in P['want']))
             continue
         used[best.get('i')] = used.get(best.get('i'), 0) + 1
         name = 'cmp_%s_%s' % (slug(ctx.sid)[:24], 'plante' if P.get('plant') else P['k'])
@@ -2088,7 +2281,7 @@ def pair_plan(ctx):
             q, cell = 'grid=1&sid=%s&cws=%s&st=%s&view=%d&D=%d&det=1.5&seed=%d' % (ctx.sid, cw, P['st'], views[P['k']], P['D'], SEED), '0,0@%d' % P['D']
         plan.append({'k': P['k'], 'label': P['label'], 'photo': best.get('i'), 'title': best.get('title'), 'page': best.get('page'), 'tags': best.get('tags'),
                      'view': views.get(P['k']), 'view_from': vsrc.get(P['k']),
-                     'vu': best.get('m'), 'thumb': '%s/t%03d.jpg' % (ctx.rel, int(best.get('i', 0))), 'query': q, 'name': name, 'render': 'fleur/out/%s.png' % name,
+                     'vu': best.get('m'), 'thumb': pfile(best), 'query': q, 'name': name, 'render': 'fleur/out/%s.png' % name,
                      'cell': cell, 'kind': P.get('kind', 'cup'), 'op': P.get('op', '.85'), 'cw': cw,
                      'png': '%s/comparaison/%s.png' % (ctx.rel, P['k']), 'txt': '%s/comparaison/%s.txt' % (ctx.rel, P['k'])})
     # BONNES-PRATIQUES 9.3c (owner, 2026-10-18, cymbidium): every colourway with a photo of its own variety is compared to THAT photo
@@ -2098,17 +2291,19 @@ def pair_plan(ctx):
         if sum(1 for q in plan if q['k'].startswith('cw-')) >= ncw:
             break
         names = cw_names(c)
-        own = [x for x in K if photo_cws(x) & names]
+        own = [x for x in K if any(cw_photo_ok(audit, x, n) for n in photo_cws(x) & names)]
         if not own:  # said, never skipped in silence: the owner decides (a named photo to find, or no pair for it)
-            absent.append('coloris %s (%s) : aucune photo gardée balisée `coloris:` %s ; pas de paire cw- (ajouter une photo nommée de la variété à refs, ou dire que la paire est inutile)'
-                          % (c.get('id'), c.get('cultivar') or 'nom générique', ' ou '.join(sorted(names)) or '-'))
+            off = [str(x.get('i')) for x in K0 if photo_cws(x) & names]
+            absent.append('coloris %s (%s) : aucune photo gardée balisée `coloris:` %s%s ; pas de paire cw- (ajouter une photo nommée de la variété à refs, ou dire que la paire est inutile)'
+                          % (c.get('id'), c.get('cultivar') or 'nom générique', ' ou '.join(sorted(names)) or '-',
+                             (' qui serve (photos %s : groupe, taille ou couleur, voir pair-photos.json et coloris-photos.json)' % ', '.join(off)) if off else ''))
             continue
         own.sort(key=lambda x: (not ({'stade:ouvert', 'vue:face'} <= kept_tags(x)), used.get(x.get('i'), 0)))
         best, k = own[0], 'cw-' + slug(str(c.get('id')))[:20].strip('-')
         name = 'cmp_%s_%s' % (slug(ctx.sid)[:24], k)
         plan.append({'k': k, 'label': 'coloris %s contre la photo de sa variété (pointes, zones de couleur, translucidité, cœur)' % c.get('id'),
                      'photo': best.get('i'), 'title': best.get('title'), 'page': best.get('page'), 'tags': best.get('tags'), 'vu': best.get('m'),
-                     'thumb': '%s/t%03d.jpg' % (ctx.rel, int(best.get('i', 0))), 'name': name, 'render': 'fleur/out/%s.png' % name,
+                     'thumb': pfile(best), 'name': name, 'render': 'fleur/out/%s.png' % name,
                      'query': 'grid=1&sid=%s&cws=%s&st=.85:0&view=0&D=600&det=1.5&seed=%d' % (ctx.sid, c.get('id'), SEED), 'cell': '0,0@600',
                      'kind': 'cup', 'op': '.85', 'cw': c.get('id'), 'png': '%s/comparaison/%s.png' % (ctx.rel, k), 'txt': '%s/comparaison/%s.txt' % (ctx.rel, k)})
     set_questions(ctx, 'paires-coloris', 'Coloris sans paire photo/rendu (comparaison, 9.3c)', absent)
@@ -2598,7 +2793,7 @@ STEPFN = {'census': step_census, 'refs': step_refs, 'coloris': step_coloris, 'ta
 # ---------------------------------------------------------------------------------------------------------------- the commands
 
 COMMON_KEYS = {'sid', 'taxon', 'genus', 'family', 'rc', 'skus', 'ch', 'late'}
-PROMPT_KEYS = {'census': {'n', 'batch', 'verdict'}, 'refs': {'task', 'sheets', 'missing'}, 'brief': set(), 'coloris': {'n', 'low', 'manual'}, 'fiche': {'relay', 'etat', 'fiche', 'schema'},
+PROMPT_KEYS = {'census': {'n', 'batch', 'verdict'}, 'refs': {'task', 'sheets', 'missing', 'groupes'}, 'brief': set(), 'coloris': {'n', 'low', 'manual'}, 'fiche': {'relay', 'etat', 'fiche', 'schema'},
                'forme': {'relay', 'etat', 'kit', 'fiche', 'rtest'}, 'plante': {'relay', 'etat', 'fiche'}, 'finition': {'relay', 'etat'}, 'fit': {'part', 'space', 'out', 'summary'},
                'comparaison': {'relay', 'etat', 'pairs', 'ko', 'refaire'}, 'juge': {'pairs', 'table', 'prev'}}
 
@@ -2647,7 +2842,7 @@ def cmd_run(a):
         st['taxon'] = a.taxon
     if 'taxon' not in st:
         raise SystemExit('first run of %s: --taxon "<Genus species>" is needed' % sid)
-    for k in ('family', 'genus', 'group', 'kit', 'kit_prefix', 'kit_sids', 'late', 'rtest_bouge'):
+    for k in ('family', 'genus', 'group', 'kit', 'kit_prefix', 'kit_sids', 'late', 'rtest_bouge', 'groupes'):
         if getattr(a, k, None):
             st[k] = getattr(a, k)
     if a.kavb:
@@ -3091,6 +3286,9 @@ def cmd_selftest(a):
                 {'i': 6, 'title': 'p6', 'page': 'u6', 'tags': ['organe:plante', 'organe:tige'], 'm': 'vu: organe=plante+tige'},
                 {'i': 7, 'title': 'p7', 'page': 'u7', 'tags': ['stade:ouvert', 'vue:face'], 'm': 'vu: stade=ouvert vue=face'},
                 {'i': 8, 'title': 'p8', 'page': 'u8', 'tags': ['organe:feuille-dessus'], 'm': 'vu: organe=feuille-dessus'}]
+        for x in KEEP:  # P7: every pair photo says its group and has a big copy
+            x['m'] += ' groupe=hybride-de-coupe'
+        BIG = lambda sid: {str(x['i']): {'w': 1600, 'h': 1200, 'short': 1200, 'file': 'refcache/%s/p%03d.jpg' % (sid, x['i'])} for x in KEEP}
         KEYS = [P['k'] for P in PAIRS] + ['cw-blanc']  # the fixed pairs and one colourway compared to its own variety (9.3c)
         TABLE = '# État\n\n| paire | verdict | écart restant |\n|---|---|---|\n' + ''.join('| %s | ok | |\n' % k for k in KEYS)
 
@@ -3098,6 +3296,7 @@ def cmd_selftest(a):
             r_ = '%s/refcache/%s' % (tmp, sid)
             os.makedirs(r_, exist_ok=True)
             jsave(r_ + '/keep.json', KEEP)
+            jsave(r_ + '/pair-photos.json', BIG(sid))
             jsave(r_ + '/coloris.json', [{'id': 'blanc', 'cultivar': 'Alba'}])
             open(tmp + '/app/y-test.js', 'w').write('// drawing v1\n')
             return 'refcache/%s' % sid
@@ -3130,6 +3329,7 @@ def cmd_selftest(a):
           and plan_[6]['query'].startswith('plant=1') and all('seed=7' in p['query'] for p in plan_))
         r7 = tmp + '/refcache/selftest7'
         os.makedirs(r7, exist_ok=True)
+        jsave(r7 + '/pair-photos.json', BIG('selftest7'))
         jsave(r7 + '/keep.json', KEEP[:7] + [dict(KEEP[7], tags=['stade:ouvert', 'vue:face', 'coloris:rose-vif'])] + KEEP[8:])
         jsave(r7 + '/coloris.json', [{'id': 'rose', 'cultivar': ''}, {'id': 'rose-vif', 'cultivar': 'Rose Vif'}, {'id': 'x' * 19 + '-y', 'cultivar': ''}])
         ctx7 = Ctx('selftest7', tmp, argparse.Namespace(dry=False, cap=40, claude=fake), {'sid': 'selftest7', 'taxon': 'Test test', 'steps': {}, 'skus': []})
@@ -3435,6 +3635,62 @@ def cmd_selftest(a):
               and 'rouge' not in msgc.split(':', 1)[-1] and 'À REPRENDRE' in open(ctxC.rc + '/couleur.md', encoding='utf-8').read(), msgc)
         except ImportError as e:
             t('finition: colourways rendered at their measure pass (a white by lightness and chroma, not hue)', False, str(e))
+        # ---- P7: photo groups, pair copies of 1 000 px, colour audit of the coloris: photos
+        t('refs: "vu" states the group (aliases)', vu_parse('vu: stade=ouvert groupe=hybride ; x').get('groupe') == ['hybride-de-coupe']
+          and photo_groupe({'m': 'vu: vue=face groupe=espece-sauvage'}) == 'espece-sauvage' and photo_groupe({'m': 'vu: vue=face'}) is None)
+        ctxE = Ctx('fx-e', tmp, argparse.Namespace(dry=False, cap=40, claude=fake), {'sid': 'fx-e', 'taxon': 'Test test', 'steps': {}, 'skus': []})
+        ke = [{'i': 0, 'tags': ['stade:ouvert', 'vue:face'], 'm': 'vu: stade=ouvert vue=face groupe=espece-sauvage'},
+              {'i': 1, 'tags': ['stade:ouvert', 'vue:face'], 'm': 'vu: stade=ouvert vue=face groupe=hybride-de-coupe'},
+              {'i': 2, 'tags': ['stade:ouvert', 'vue:face'], 'm': 'vu: stade=ouvert vue=face groupe=jardin'},
+              {'i': 3, 'tags': ['stade:ouvert', 'vue:face'], 'm': 'vu: stade=ouvert vue=face'}]
+        jsave(ctxE.rc + '/keep.json', ke)
+        infoE = {'0': {'short': 1200, 'file': 'a'}, '1': {'short': 640, 'file': 'b', 'err': ''}, '2': {'short': 1100, 'file': 'refcache/fx-e/p002.jpg'}, '3': {'short': 1500, 'file': 'd'}}
+        el_ = [pair_eligible(ctxE, x, infoE) for x in ke]
+        t('pairs: only a cut hybrid or a garden form with a copy of 1 000 px or more (wild, small, no group: out)', [e[0] for e in el_] == [False, False, True, False]
+          and 'groupe espece-sauvage' in el_[0][1] and 'short side 640' in el_[1][1] and 'no groupe=' in el_[3][1], str(el_))
+        pe_ = pair_plan(ctxE, infoE)[0]
+        t('pairs: the eligible photo is used, from its big copy p<NNN>.jpg', [p['photo'] for p in pe_ if p['k'] == 'face'] == [2] and pe_[0]['thumb'] == 'refcache/fx-e/p002.jpg', str(pe_[:1]))
+        ctxE.st['groupes'] = 'espece-sauvage'
+        t('pairs: --groupes espece-sauvage for a wild sort', pair_eligible(ctxE, ke[0], infoE)[0] and not pair_eligible(ctxE, ke[2], infoE)[0])
+        ctxE.st.pop('groupes')
+        miss_e = pair_plan(ctxE, {'0': infoE['0'], '1': infoE['1']})[1]
+        t('pairs: a missing pair says which kept photos could not serve and why', 'face' in miss_e and 'short side 640' in ctxE.pair_gaps.get('face', ''), str(ctxE.pair_gaps))
+
+        class FakeR:
+            calls = []
+
+            @staticmethod
+            def get(url, tries=3):
+                FakeR.calls.append(url)
+                b = io.BytesIO()
+                Image.new('RGB', (3000, 2000), (90, 90, 90)).save(b, 'JPEG')
+                return b.getvalue()
+        jsave(ctxE.rc + '/cands.json', [{'thumb': 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/X.jpg/400px-X.jpg', 'w': 3000, 'h': 2000},
+                                        {'thumb': 'https://x/small.jpg', 'w': 800, 'h': 600}])
+        inf_ = {}
+        r0_, r1_ = pair_photo(ctxE, FakeR, {'i': 0}, inf_), pair_photo(ctxE, FakeR, {'i': 1}, inf_)
+        t('pairs: the copy is the original (Commons width asked), long side brought to 2 400; a small original is not fetched', '/3000px-X.jpg' in FakeR.calls[0]
+          and len(FakeR.calls) == 1 and (r0_.get('w'), r0_.get('h'), r0_.get('short')) == (2400, 1600, 1600) and os.path.exists(ctxE.rc + '/p000.jpg')
+          and r1_.get('short') == 600 and 'original 800x600' in r1_.get('err', ''), str((FakeR.calls, r0_, r1_)))
+        # the colour audit: a coloris:rouge photo whose flower is yellow leaves the pairs of rouge, and is said
+        shutil.copyfile(HERE + '/refs.py', tmp + '/fleur/refs.py')
+        ctxA = Ctx('fx-a2', tmp, argparse.Namespace(dry=False, cap=40, claude=fake), {'sid': 'fx-a2', 'taxon': 'Test test', 'steps': {}, 'skus': []})
+        for i_, col in ((0, (200, 40, 60)), (1, (230, 200, 40))):
+            im = Image.new('RGB', (400, 300), (128, 128, 128))
+            ImageDraw.Draw(im).ellipse([110, 60, 290, 240], fill=col)
+            im.save('%s/t%03d.jpg' % (ctxA.rc, i_), quality=95)
+        jsave(ctxA.rc + '/cands.json', [{'thumb': 'u0'}, {'thumb': 'u1'}])
+        ka = [dict(KEEP[0], i=0, tags=['stade:ouvert', 'vue:face', 'coloris:rouge']), dict(KEEP[0], i=1, tags=['stade:ouvert', 'vue:face', 'coloris:rouge'])]
+        jsave(ctxA.rc + '/keep.json', ka)
+        jsave(ctxA.rc + '/coloris.json', [{'id': 'rouge', 'cultivar': '', 'corps': '#c8283c'}])
+        au_ = cw_photo_audit(ctxA)
+        qa_ = open(ctxA.rc + '/questions.md', encoding='utf-8').read() if os.path.exists(ctxA.rc + '/questions.md') else ''
+        t('refs: colour audit: a coloris: photo of the right colour stays, one at dE > 15 leaves the pairs and is reported', au_.get('0', {}).get('rouge', {}).get('ok') is True
+          and au_.get('1', {}).get('rouge', {}).get('ok') is False and 'photo 1 (coloris:rouge)' in qa_, str(au_) + qa_[-200:])
+        pa_ = pair_plan(ctxA, {'0': {'short': 1200, 'file': 'x0'}, '1': {'short': 1200, 'file': 'x1'}})[0]
+        t('pairs: the cw- pair takes the photo that passed the colour audit', [p['photo'] for p in pa_ if p['k'] == 'cw-rouge'] == [0], str([(p['k'], p['photo']) for p in pa_]))
+        t('prompts: refs asks groupe= and says the 1 000 px and the colour audit', all(x in open('%s/pipe/prompts/refs.md' % HERE, encoding='utf-8').read()
+                                                                                  for x in ('groupe=', '1 000 px', 'ΔE 15', '<<groupes>>')))
         t('prompts: finition knows the colour rule', all(x in open('%s/pipe/prompts/finition.md' % HERE, encoding='utf-8').read() for x in ('cwmed.py', 'dL', 'dC')))
         t('prompts: forme names its proofs (refaire.sh face, rtest.sh, the journal lines)', all(x in P_['forme'] or x in open('%s/pipe/prompts/forme.md' % HERE, encoding='utf-8').read()
                                                                                       for x in ('refaire.sh face', 'rtest.sh', 'paire face | photo W/H', '<<rtest>>')))
@@ -3483,6 +3739,7 @@ def make_parser():
     r.add_argument('--late', type=int, help='the late:N wave of the colourways added (default 1)')
     r.add_argument('--views', help='grid views of the head pairs for this sort, "profil:8,bouton:8" (default: PAIRS, then the form family: orchids and spathes 8)')
     r.add_argument('--juge-tours', dest='juge_tours', type=int, default=JUGE_TOURS, help='judge ko -> comparaison round trips before the refusal (exit 2)')
+    r.add_argument('--groupes', help='the groups a comparison photo may show, among hybride-de-coupe, jardin, espece-sauvage (default "%s"; never autre)' % PAIR_GROUPES)
     r.add_argument('--rtest-bouge', dest='rtest_bouge', help='the owner accepts that the sort moves the bouquets (real-size heads, curved wilted neck): its reason; '
                    'a changed rtest of the sort is then reported in the journal, not blocking')
     for n in ('status', 'bill'):
