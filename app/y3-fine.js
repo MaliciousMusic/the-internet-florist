@@ -47,6 +47,13 @@ function svFine(cg,it,sh,front,Dm){const m=sh.mat,F=m.fine===true?SVFN_DEF:Objec
   const inner=front,col=(i,j)=>{const q=j*W+i,u=-1+2*i/NU,v=j/NV,n=Fz[q]>0?Nn[q]:V3.sc(Nn[q],-1);let c=svfTissue(m,u,v,inner);
     /* F.chroma: the tissue's saturation before the light (a grid of photos under a soft sky reads a little pale; the measures say by how much) */
     if(F.chroma!==1){const m0=(c[0]+c[1]+c[2])/3;c=c.map(x=>Math.max(0,Math.min(255,m0+(x-m0)*F.chroma)))}
+    /* F.tone: the tissue darker or lighter as a whole (a grid measured on a backlit leaf reads lighter than the leaf in the shade of the stem) */
+    if(F.tone&&F.tone!==1)c=c.map(x=>Math.max(0,Math.min(255,x*F.tone)))
+    /* F.ribs {n, a, w, c, conv, dk}: parallel veins in relief (lily and tulip leaves, monocots): n light ridges across the blade, each its own
+       width w (in u), converging toward the point (conv), the ridge lighter toward c and a fine groove beside it darker by dk */
+    if(F.ribs){const R=F.ribs,cv=1-(R.conv??.6)*Math.pow(v,1.5);let rg=0,gv=0;for(let k=0;k<R.n;k++){const uk=(-1+2*(k+.5)/R.n)*.94*cv,d=(u-uk)/(R.w*(.6+.4*cv));
+        rg=Math.max(rg,Math.exp(-d*d));gv=Math.max(gv,Math.exp(-Math.pow((u-uk-R.w*1.6)/(R.w*.8),2)))}
+      c=svfMix(c,svfRgb(R.c||'#c8dc8a'),Math.min(1,rg*(R.a??.3)));if(gv>0)c=c.map(x=>x*(1-(R.dk??.08)*gv))}
     const dl=V3.dot(n,LIGHT),dif=Math.max(0,(dl+F.wrap)/(1+F.wrap)),sky=.5+.5*n[1],th=V3.dot(Tv[q],HV3),
       sp=Math.pow(Math.sqrt(Math.max(0,1-th*th)),F.gloss)*F.ks*(inner?1:.6),ao=1-F.ao*(1-svSm(v/.2))*(inner?1:.6),
       gr=1+F.grain*(Math.sin(u*Math.PI*26+3.1*Math.sin(v*6+seed))*.7+(hsh(i,j)-.5)*.6),lum=ao*(F.amb+F.dif*dif+F.sky*sky)*gr;

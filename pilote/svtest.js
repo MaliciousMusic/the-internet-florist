@@ -82,6 +82,7 @@ if(new URLSearchParams(location.search).get('grid'))setTimeout(()=>{const Q=new 
 /* whole stems: ?plant=1&cw=bleu&st=.1:0,.3:0,.6:0,1:0,1:.4,1:.75&vw=-.45,.15,.88 → drawRec of the species, one cell per stage, fitted */
 if(new URLSearchParams(location.search).get('plant'))setTimeout(()=>{/* &ordbg=1: the orchid scapes' flowers (svorScape) after the measures */if(new URLSearchParams(location.search).get('ordbg')&&window.svtOut){window.SVOR_DBGL=[];const f0=window.svtOut;window.svtOut=function(){const r=f0.apply(this,arguments),add=()=>{const p=document.getElementById('out');if(!p)return setTimeout(add,50);p.textContent+=String.fromCharCode(10)+'ORDBG '+JSON.stringify(window.SVOR_DBGL)};add();return r}}
   const Q=new URLSearchParams(location.search),dS=typeof defs!=='undefined'&&defs.closest?defs.closest('svg'):null;document.body.innerHTML='';if(dS)document.body.append(dS);
+  if(typeof SVQA!=='undefined'){SVQA.heads=0;SVQA.cross=0;SVQA.pairs=0;SVQA.worst=null}  /* the 3D check counts this sheet's drawings only */
   /* seed=<n>: the sheet's own chance, whatever the page drew before it (to compare two builds) */
   if(Q.get('seed'))sd(+Q.get('seed'));
   DET=+(Q.get('det')||1.5);LOD=0;const sid=Q.get('sid')||'anemone-coronaria',rec=RBY[sid],cw=(CWS[sid]||[]).find(x=>x.id===(Q.get('cw')||'bleu')),st=(Q.get('st')||'.1:0,.3:0,.6:0,1:0,1:.4,1:.75').split(',').map(x=>x.split(':').map(Number)),
