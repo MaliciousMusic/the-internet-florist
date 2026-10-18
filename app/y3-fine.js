@@ -8,7 +8,7 @@
    satin sheen along the veins, the glow of the thin margins and of a face lit from behind, a fine grain; a shadow keeps its colour (darker and
    a little more saturated, never grey). Its weight follows the drawn size (facets of a fixed pixel size): light in a bouquet, heavy only in
    close-ups. Without `fine` in a material nothing here runs: every other sort is drawn as before. */
-const SVFN_DEF={cell:2.4,q:5,blur:.9,grain:.025,gloss:34,ks:.16,amb:.46,dif:.54,sky:.08,wrap:.3,ao:.28,glow:.4,sat:.35,maxV:320,maxU:180};
+const SVFN_DEF={chroma:1,cell:2.4,q:5,blur:.9,grain:.025,gloss:34,ks:.16,amb:.46,dif:.54,sky:.08,wrap:.3,ao:.28,glow:.4,sat:.35,maxV:320,maxU:180};
 const SVFN_X={};
 const svfRgb=h=>SVFN_X[h]||(SVFN_X[h]=[parseInt(h.slice(1,3),16),parseInt(h.slice(3,5),16),parseInt(h.slice(5,7),16)]);
 const svfMix=(a,b,t)=>[a[0]+(b[0]-a[0])*t,a[1]+(b[1]-a[1])*t,a[2]+(b[2]-a[2])*t];
@@ -43,7 +43,9 @@ function svFine(cg,it,sh,front,Dm){const m=sh.mat,F=m.fine===true?SVFN_DEF:Objec
   for(let j=0;j<=NV;j++)for(let i=0;i<=NU;i++){const u=-1+2*i/NU,v=j/NV,p=Sf(u,v),s=PJ(B,O,p),ua=Math.max(-1,u-e),ub=Math.min(1,u+e),va=Math.max(0,v-e),vb=Math.min(1,v+e),
       dv=V3s(Sf(u,vb),Sf(u,va)),du=V3s(Sf(ub,v),Sf(ua,v)),n=V3.nz(toV(B,V3.cr(dv,du)));S.push(s);Nn.push(n);Tv.push(V3.nz(toV(B,dv)));Fz.push(n[2])}
   const seed=(m.seed||1)+Math.round(lenPx),hsh=(i,j)=>{let h=Math.imul(i+1,374761393)^Math.imul(j+7,668265263)^seed;h=Math.imul(h^(h>>>13),1274126177);return((h^(h>>>16))>>>0)/4294967296};
-  const inner=front,col=(i,j)=>{const q=j*W+i,u=-1+2*i/NU,v=j/NV,n=Fz[q]>0?Nn[q]:V3.sc(Nn[q],-1),c=svfTissue(m,u,v,inner);
+  const inner=front,col=(i,j)=>{const q=j*W+i,u=-1+2*i/NU,v=j/NV,n=Fz[q]>0?Nn[q]:V3.sc(Nn[q],-1);let c=svfTissue(m,u,v,inner);
+    /* F.chroma: the tissue's saturation before the light (a grid of photos under a soft sky reads a little pale; the measures say by how much) */
+    if(F.chroma!==1){const m0=(c[0]+c[1]+c[2])/3;c=c.map(x=>Math.max(0,Math.min(255,m0+(x-m0)*F.chroma)))}
     const dl=V3.dot(n,LIGHT),dif=Math.max(0,(dl+F.wrap)/(1+F.wrap)),sky=.5+.5*n[1],th=V3.dot(Tv[q],HV3),
       sp=Math.pow(Math.sqrt(Math.max(0,1-th*th)),F.gloss)*F.ks*(inner?1:.6),ao=1-F.ao*(1-svSm(v/.2))*(inner?1:.6),
       gr=1+F.grain*(Math.sin(u*Math.PI*26+3.1*Math.sin(v*6+seed))*.7+(hsh(i,j)-.5)*.6),lum=ao*(F.amb+F.dif*dif+F.sky*sky)*gr;

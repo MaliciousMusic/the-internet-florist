@@ -38,18 +38,26 @@ const LIL_M={};
    fleshy points round the midline near the throat): drawn over the washes, clipped to the piece, only where its inner face is seen */
 function lilDots(C){return(sd,w,st)=>{if(!st.hi||st.r1<.45||(!C.spots&&!C.pap))return null;const r=svRng(sd+31),L=[];
     if(C.spots){const S=C.spots,n=Math.round(S.n[0]*r.in(.75,1.2));for(let i=0;i<n;i++){const x=Math.pow(r(),S.k??1.7),v=S.v[0]+(S.v[1]-S.v[0])*x,
-        u=(r()<.5?-1:1)*(S.u[0]+(S.u[1]-S.u[0])*(1-.45*x)*r());L.push([u,v,(S.r[0]+(S.r[1]-S.r[0])*r()*(1-.4*x)),0])}}
+        u=(r()<.5?-1:1)*(S.u[0]+(S.u[1]-S.u[0])*(1-.45*x)*r());L.push([u,v,(S.r[0]+(S.r[1]-S.r[0])*r()*(1-.4*x)),0,r(),r(),Math.floor(r()*1e6)])}}
     if(C.pap){const P=C.pap;for(let i=0;i<P.n[0];i++){const x=r(),v=P.v[0]+(P.v[1]-P.v[0])*x,u=(r()-.5)*2*P.u*(.4+.6*x);L.push([u,v,.0032+.0025*r(),1])}}
     const k=svSm((st.r1-.45)/.35),fan=st.fan,dec=st.dec,lt=(()=>{const x=LIGHT[0],y=-LIGHT[1],l=Math.hypot(x,y)||1;return[x/l,y/l]})();
     const sc=C.spots?mix(C.spots.c,'#4a2a14',.55*fan):null,pc=C.pap?mix(C.pap.c,'#c8a870',.6*dec+.3*fan):null,ps=C.pap?mix(C.pap.sh,'#6a4a28',.5*fan):null;
-    return(cg,it,sh,front,Dm)=>{if(!front||LOD)return;let ds='',dh='',dp='',dq='';
-      for(const[u,v,rad,kind]of L){if(it.s*svLerp(sh,sh.F,u,v)<=.05)continue;const p=svAt(sh,u,v),q=svAt(sh,u+.03,v),e=svAt(sh,u,v+.03),
+    return(cg,it,sh,front,Dm)=>{if(!front||LOD)return;let ds='',dh='',dp='',dq='',dw='',dc='';
+      for(const[u,v,rad,kind,e1,e2,sh2]of L){if(it.s*svLerp(sh,sh.F,u,v)<=.05)continue;const p=svAt(sh,u,v),q=svAt(sh,u+.03,v),e=svAt(sh,u,v+.03),
           fs=Math.min(1,Math.max(.35,Math.min(Math.hypot(q[0]-p[0],q[1]-p[1]),Math.hypot(e[0]-p[0],e[1]-p[1]))/(Dm*.012))),rr=Math.max(.25,Dm*rad*fs*(.5+.5*k)),
           c=(x,y,rx)=>`M${svF(x-rx)},${svF(y)}a${svF(rx)},${svF(rx)} 0 1,0 ${svF(2*rx)},0a${svF(rx)},${svF(rx)} 0 1,0 ${svF(-2*rx)},0`;
-        if(kind===0){ds+=c(p[0],p[1],rr);dh+=c(p[0]+lt[0]*rr*.32,p[1]+lt[1]*rr*.32,rr*.38)}
+        /* a spot is a fleshy papilla (photo p002 at 1:1): an irregular blob, longer along the tepal, raised (a soft shadow on the far side,
+           a darker core, a point of light); C.spots.blob:false keeps the round dots */
+        if(kind===0&&C.spots.blob!==false&&e1!=null){const ax0=e[0]-p[0],ay0=e[1]-p[1],al=Math.hypot(ax0,ay0)||1,tl=(e2-.5)*.8,ca=Math.cos(tl),sa=Math.sin(tl),
+            ax=(ax0*ca-ay0*sa)/al,ay=(ax0*sa+ay0*ca)/al,bx=-ay,by=ax,el=1+.9*e1*e1,blob=(cx,cy,k)=>{const P=[];for(let q=0;q<7;q++){const a=q/7*6.2832,j=.72+.56*pxHashS(sh2,q,7),
+              ra=rr*k*j;P.push([cx+(ax*Math.cos(a)*el+bx*Math.sin(a))*ra,cy+(ay*Math.cos(a)*el+by*Math.sin(a))*ra])}return svSpl(P)};
+          dw+=blob(p[0]-lt[0]*rr*.45,p[1]-lt[1]*rr*.45,1.08);ds+=blob(p[0],p[1],1);dc+=blob(p[0]-lt[0]*rr*.16,p[1]-lt[1]*rr*.16,.55);dh+=c(p[0]+lt[0]*rr*.36,p[1]+lt[1]*rr*.36,rr*.3)}
+        else if(kind===0){ds+=c(p[0],p[1],rr);dh+=c(p[0]+lt[0]*rr*.32,p[1]+lt[1]*rr*.32,rr*.38)}
         else{dq+=c(p[0]-lt[0]*rr*.35,p[1]-lt[1]*rr*.35,rr*.9);dp+=c(p[0],p[1],rr*.8)}}
       if(dq)E('path',{d:dq,fill:ps,'fill-opacity':.35*k},cg);if(dp)E('path',{d:dp,fill:pc,'fill-opacity':.9*k},cg);
-      if(ds)E('path',{d:ds,fill:sc,'fill-opacity':.92*k},cg);if(dh)E('path',{d:dh,fill:mix(sc,'#ffffff',.35),'fill-opacity':.45*k},cg)}}}
+      if(dw)E('path',{d:dw,fill:mix(sc,'#2a0010',.55),'fill-opacity':.26*k,filter:svBlur(Math.max(.2,Dm*.0018))},cg);
+      if(ds)E('path',{d:ds,fill:sc,'fill-opacity':.92*k},cg);if(dc)E('path',{d:dc,fill:mix(sc,'#3a0012',.38),'fill-opacity':.5*k,filter:svBlur(Math.max(.1,Dm*.0006))},cg);
+      if(dh)E('path',{d:dh,fill:mix(sc,'#ffffff',.42),'fill-opacity':.38*k,filter:svBlur(Math.max(.1,Dm*.0005))},cg)}}}
 function lilMat(cw){const key='lis-oriental-double:'+cw.id;if(LIL_M[key])return LIL_M[key];
   const C=LIL_CW[cw.id]||lilSpec(cw),body=C.st[Math.floor(C.st.length*.6)][1];
   const M={st:C.st,bst:C.bst,shade:C.shade,lite:C.lite,bshade:C.bshade,blite:C.blite,vein:C.vein,bvein:C.bvein,vo:C.vo,
@@ -121,17 +129,17 @@ function lilOver(C){const dots=lilDots(C);
         if(ds)E('path',{d:ds,fill:'none',stroke:C.shade,'stroke-width':svF(Math.max(.2,Dm*.0026)),'stroke-opacity':svF(.25*k),'stroke-linecap':'round'},cg);
         if(dh)E('path',{d:dh,fill:'none',stroke:F.c,'stroke-width':svF(Math.max(.2,Dm*.0024)),'stroke-opacity':svF(.9*k),'stroke-linecap':'round'},cg)}}}}
 const LIL_ORI_CW={
-  stargazer:{fine:{amb:.6,dif:.42,sat:.5,ao:.2},grid:{nu:6,nv:24,c:[['#f9b6c7','#f8b8ca','#f6acc3','#f6a2bc','#f394b1','#f29fba'],['#fd91a5','#f8baca','#f9b7cb','#f7a4be','#f59fbc','#f3a5c1'],['#e25471','#f67a98','#f18fac','#fdc0d3','#feb1cc','#f8aec9'],['#db4769','#e05779','#ee7fa0','#fcacc6','#ffb7d1','#ffc4d8'],['#d64166','#da5376','#f2799d','#ffb5cd','#ffc4d7','#ffd5e6'],['#d7456c','#de577e','#e36489','#f692b3','#fdbdd1','#ffcfdf'],['#e5567e','#e66088','#e86a92','#e87ca3','#ee9db8','#f6b9cd'],['#eb668d','#e86d94','#ef82a6','#ec8daf','#f2a5c0','#f2b9cc'],['#ed6e97','#ea779e','#ef8daf','#f09cbb','#f3aac4','#eeb3cb'],['#f378a2','#ec82a8','#e991b4','#f2aac5','#f2b1cb','#f3bfd3'],['#ef7da8','#f394b9','#e898ba','#f2b0cb','#f6c3d6','#f4c8d9'],['#f387b3','#f5a0c3','#eca3c3','#eeb5cd','#fad2e0','#f8d7e2'],['#f899c1','#f6a3c7','#f4b0cb','#eeb6ce','#fad3e0','#fbdfe8'],['#f9a0c6','#fca5c8','#faafcc','#f0b4cd','#f7cddd','#fbdfe7'],['#fb9dc3','#ffadce','#ffabcc','#f1aeca','#fbc9dd','#fce1e9'],['#fca4c6','#f9b0cd','#ffaccd','#ecb1cb','#f8c0d4','#ffe1ea'],['#fbb1ce','#f6b3ce','#f5b7d1','#e8abc5','#f1bbd1','#fed8e5'],['#ffcae1','#fcb8d3','#f2b6d0','#efb4cd','#efb9cf','#f7d2df'],['#ffe1f1','#ffcae2','#f5b7d0','#f2b8d0','#f9cbdb','#ece6e5'],['#ffe7f5','#fec7d9','#eaadc1','#f3bad3','#fad7e3','#ebe3e0'],['#ffecf6','#f2c1d0','#edb4c5','#f2c0d5','#f4dce3','#ede7e4'],['#fff5fa','#f5d1db','#ebc0cb','#f1cfd8','#efe4e4','#f3eeeb'],['#fdf6f1','#fffefc','#e8d6d8','#e0d3d3','#ece8e4','#efeeea'],['#f6f4eb','#f3f1e9','#fdfbf6','#fdfcf7','#eeece7','#edebe7']]},st:[[0,'#9cb252'],[.06,'#cadc8c'],[.13,'#f8e4ea'],[.24,'#f6c2d4'],[.42,'#f4b4c8'],[.66,'#f6c0d2'],[.86,'#fadce6'],[1,'#fceef3']],
+  stargazer:{fine:{amb:.56,dif:.42,sat:.5,ao:.2,chroma:1.22},grid:{nu:6,nv:24,c:[['#f9b6c7','#f8b8ca','#f6acc3','#f6a2bc','#f394b1','#f29fba'],['#fd91a5','#f8baca','#f9b7cb','#f7a4be','#f59fbc','#f3a5c1'],['#e25471','#f67a98','#f18fac','#fdc0d3','#feb1cc','#f8aec9'],['#db4769','#e05779','#ee7fa0','#fcacc6','#ffb7d1','#ffc4d8'],['#d64166','#da5376','#f2799d','#ffb5cd','#ffc4d7','#ffd5e6'],['#d7456c','#de577e','#e36489','#f692b3','#fdbdd1','#ffcfdf'],['#e5567e','#e66088','#e86a92','#e87ca3','#ee9db8','#f6b9cd'],['#eb668d','#e86d94','#ef82a6','#ec8daf','#f2a5c0','#f2b9cc'],['#ed6e97','#ea779e','#ef8daf','#f09cbb','#f3aac4','#eeb3cb'],['#f378a2','#ec82a8','#e991b4','#f2aac5','#f2b1cb','#f3bfd3'],['#ef7da8','#f394b9','#e898ba','#f2b0cb','#f6c3d6','#f4c8d9'],['#f387b3','#f5a0c3','#eca3c3','#eeb5cd','#fad2e0','#f8d7e2'],['#f899c1','#f6a3c7','#f4b0cb','#eeb6ce','#fad3e0','#fbdfe8'],['#f9a0c6','#fca5c8','#faafcc','#f0b4cd','#f7cddd','#fbdfe7'],['#fb9dc3','#ffadce','#ffabcc','#f1aeca','#fbc9dd','#fce1e9'],['#fca4c6','#f9b0cd','#ffaccd','#ecb1cb','#f8c0d4','#ffe1ea'],['#fbb1ce','#f6b3ce','#f5b7d1','#e8abc5','#f1bbd1','#fed8e5'],['#ffcae1','#fcb8d3','#f2b6d0','#efb4cd','#efb9cf','#f7d2df'],['#ffe1f1','#ffcae2','#f5b7d0','#f2b8d0','#f9cbdb','#ece6e5'],['#ffe7f5','#fec7d9','#eaadc1','#f3bad3','#fad7e3','#ebe3e0'],['#ffecf6','#f2c1d0','#edb4c5','#f2c0d5','#f4dce3','#ede7e4'],['#fff5fa','#f5d1db','#ebc0cb','#f1cfd8','#efe4e4','#f3eeeb'],['#fdf6f1','#fffefc','#e8d6d8','#e0d3d3','#ece8e4','#efeeea'],['#f6f4eb','#f3f1e9','#fdfbf6','#fdfcf7','#eeece7','#edebe7']]},st:[[0,'#9cb252'],[.06,'#cadc8c'],[.13,'#f8e4ea'],[.24,'#f6c2d4'],[.42,'#f4b4c8'],[.66,'#f6c0d2'],[.86,'#fadce6'],[1,'#fceef3']],
     bst:[[0,'#9cb25a'],[.12,'#d8d8b0'],[.3,'#f4d8e0'],[.7,'#f4d2dc'],[1,'#f6dce4']],
     cross:[{st:[[0,'#9a1048',.9],[.025,'#b01a56',.55],[.06,'#c0225e',0]],v:[.02,.1,.86,.96],soft:.008},{st:[[0,'#d82a6c',.94],[.1,'#e0447e',.82],[.3,'#ec7aa2',.5],[.5,'#f4a6c0',.22],[.68,'#f8c4d4',0]],v:[.04,.15,.86,.98],bk:.2,soft:.03},
       {st:[[0,'#a8c050',.98],[.2,'#bcd070',.85],[.45,'#e6ecd0',0]],v:[-.1,0,.11,.22],soft:.02,fine:1},
       {st:[[0,'#9cb848',.9],[.04,'#b2c860',.55],[.09,'#d8e0a8',0]],v:[-.1,0,.16,.26],soft:.015,fine:1},
       {st:[[0,'#ffffff',0],[.56,'#fdf4f7',0],[.78,'#fefafc',.85],[1,'#ffffff',1]],tip:.88,bk:.5,soft:.03}],
     streak:{c:'#c8205e',n:70,u:.38,w:.0018,op:.16,v1:[.35,.6]},fringe:{c:'#fbf2f0',n:22,v:.2},rim:'#f0c4d4',
-    spots:{c:'#b01650',n:[84,46],v:[.09,.5],u:[.05,.85],r:[.006,.013],k:1.05},pap:{c:'#f0b8cc',sh:'#a83a62',n:[26,0],v:[.04,.28],u:.4},
+    spots:{c:'#c01844',n:[84,46],v:[.12,.55],u:[.05,.85],r:[.005,.011],k:.9},pap:{c:'#f0b8cc',sh:'#a83a62',n:[26,0],v:[.04,.28],u:.4},
     shade:'#c4507e',lite:'#fffafc',bshade:'#b07084',soft:.1,blite:'#fff8fa',vein:'#d06a90',bvein:'#d2a0b0',vo:.2,
     transmit:{a:.2,w:.005,eo:[.42,.14],ev:[.12,.3],lk:[.32,.46]},
-    fil:'#e6dcae',filT:'#bdb460',anth:'#9a3e18',pol:'#c8602a',sty:'#e0d6a6',styT:'#a49a3a',sg:'#a46a40',ov:'#a6bc66'},
+    fil:'#e6dcae',filT:'#bdb460',anth:'#922a0c',pol:'#d85a24',sty:'#e0d6a6',styT:'#a49a3a',sg:'#a46a40',ov:'#a6bc66'},
   blanc:{fine:{amb:.6,dif:.42,sat:.5,ao:.2},grid:{nu:6,nv:24,c:[['#585f21','#575f21','#d5d3a8','#d3d1a7','#d4d2a9','#d6d4ab'],['#7d805c','#818361','#80835e','#848766','#888b69','#8b8f66'],['#848871','#8b8e78','#929583','#969886','#939676','#9da078'],['#9a9d96','#9a9d95','#9d9e96','#a1a29c','#a1a493','#a3a77f'],['#a0a19b','#a7a9a6','#abadaa','#acaeab','#afb2a6','#b2b28d'],['#b3b59d','#afb19a','#b4b79f','#b5b8a3','#b3b5b7','#b8baa4'],['#b5baa3','#b3b3a0','#b2b19e','#b2b3ac','#b5b9ba','#bbbfb7'],['#b8bba5','#aeb09b','#aeae9b','#b1b2ad','#b5b6b8','#c2c5b1'],['#b8bda7','#b8b9a6','#b6b7a6','#b5b6a6','#b8bab5','#c1c6b1'],['#bbbeaa','#babdaf','#b9bbac','#bbbaac','#bebeac','#caccb6'],['#c1c5b1','#c7ccbc','#cbccbc','#d2d2bf','#d2d4bd','#d1d4be'],['#caccbd','#cbcebd','#d3d3c5','#e6e6e9','#f2f2f4','#dde0ca'],['#c7ccbe','#c7c8bc','#d4d9cb','#e9ebef','#f3f3f7','#f0eff4'],['#c9ccc1','#d1d0c4','#dedfe3','#ecedf1','#f4f3f8','#eeeff3'],['#d2d4c6','#d8dacb','#e2e3e7','#eeeff3','#f2f1f6','#edeef3'],['#d4dacc','#dfe2d3','#e7e8ec','#eeeef3','#f2f3f7','#ecedf1'],['#d7d8dc','#e4e5df','#ebecf1','#eff0f5','#eeeff4','#eeeff3'],['#dde0d5','#e4e4e9','#ebecf1','#eeeff4','#f0f1f5','#ecedf1'],['#e1e3d3','#e5e6e8','#ebecf1','#f2f3f8','#f2f3f7','#ebecf1'],['#e1e3d3','#e5e8da','#e8e9ef','#eeeff3','#eeeff4','#ebecf1'],['#dbe3cc','#dee4cd','#e7e7dc','#e7e6db','#e9eaf0','#ebecf1'],['#d7ddce','#dae0cf','#e0e5d8','#e0e1e6','#d9dadf','#dddee3'],['#d7ddcd','#d7dfd0','#d2dbc6','#d5ddcb','#dee5d3','#e0e4dc'],['#d7dec8','#d5dbcb','#dae2d1','#d5decd','#dfe7d8','#dfe3dd']]},gridV:[.3,.45],st:[[0,'#9cb252'],[.06,'#cad890'],[.14,'#eef2dc'],[.28,'#f8f8f0'],[.6,'#fbfbf6'],[.86,'#fbfaf6'],[1,'#f8f8f0']],
     bst:[[0,'#9cb25a'],[.12,'#d6dab2'],[.3,'#f2f3e8'],[.7,'#f6f6ee'],[1,'#f4f4ea']],
     cross:[{st:[[0,'#a8c058',.8],[.025,'#c0d080',.45],[.06,'#e8ecd0',0]],v:[.0,.06,.62,.8],soft:.008},{st:[[0,'#d0dc90',.8],[.12,'#e0e6b2',.5],[.3,'#f2f4e4',0]],v:[.06,.14,.46,.66],bk:.2,soft:.025},
@@ -184,20 +192,30 @@ function lilHeart(o0){const o=Object.assign({},LILH_DEF,o0);
           E('path',{d:band(.38,0),fill:'none',stroke:mix(c0,'#fffbe8',.45),'stroke-width':svF(Math.max(.15,w0*.42)),'stroke-opacity':.2,'stroke-linecap':'round',filter:svBlur(Math.max(.2,w0*.2))},ck)}
         if(extra)extra(hk)},proxy:prox})};
     /* an anther: a spindle covered with pollen, its axis a0 -> a1 (3D), w its width; drawn in the filament's hook (over its tip) */
+    /* an anther (photo p002 at 1:1: a thick capsule with rounded ends, slightly bent, its two thecae parted by a dark suture, covered with a
+       velvety granular pollen whose grains break the outline): its body shaded across (dark flanks, a dull lit ridge), the suture, then the
+       pollen in three tones of grains, a few of them spilling past the silhouette; drawn in the filament's hook (over its tip) */
     const anther=(hk,A3,B3,w,sd)=>{const A=PJ(B,O,A3),Bq=PJ(B,O,B3),dx=Bq[0]-A[0],dy=Bq[1]-A[1],l=Math.hypot(dx,dy);if(l<.3)return;
-      const nx=-dy/l,ny=dx/l,sg=nx*lt[0]+ny*lt[1]>0?1:-1,bend=w*.35*(pxHashS(sd,5,g.sd)-.5),N=10,Lp=[],Rp=[],mid=[];
-      for(let q=0;q<=N;q++){const s=q/N,hw=w*.5*Math.pow(Math.sin(Math.PI*Math.min(.999,Math.max(.001,s))),.55),bx=A[0]+dx*s+nx*bend*Math.sin(Math.PI*s),by=A[1]+dy*s+ny*bend*Math.sin(Math.PI*s);
-        Lp.push([bx+nx*hw,by+ny*hw]);Rp.push([bx-nx*hw,by-ny*hw]);mid.push([bx,by])}
+      const nx=-dy/l,ny=dx/l,sg=nx*lt[0]+ny*lt[1]>0?1:-1,bend=w*.5*(pxHashS(sd,5,g.sd)-.5),N=14,Lp=[],Rp=[],mid=[],HW=[];
+      const hwAt=s=>w*.5*Math.pow(Math.max(0,1-Math.pow(Math.abs(2*s-1),2.8)),1/2.8);
+      for(let q=0;q<=N;q++){const s=q/N,hw=hwAt(s),bx=A[0]+dx*s+nx*bend*Math.sin(Math.PI*s),by=A[1]+dy*s+ny*bend*Math.sin(Math.PI*s);
+        Lp.push([bx+nx*hw,by+ny*hw]);Rp.push([bx-nx*hw,by-ny*hw]);mid.push([bx,by]);HW.push(hw)}
       const out=svSpl(Lp.concat(Rp.slice().reverse())),mx=(A[0]+Bq[0])/2,my=(A[1]+Bq[1])/2,ag='la'+(gid++),
         agr=E('linearGradient',{id:ag,gradientUnits:'userSpaceOnUse',x1:svF(mx+nx*sg*w*.55),y1:svF(my+ny*sg*w*.55),x2:svF(mx-nx*sg*w*.55),y2:svF(my-ny*sg*w*.55)},GDEF||defs);
-      for(const[o2,c2]of[[0,mix(pol,'#ffd0a0',.25)],[.35,pol],[.7,anth],[1,mix(anth,'#1a0804',.5)]])E('stop',{offset:o2,'stop-color':c2},agr);
-      E('path',{d:out,fill:`url(#${ag})`,stroke:mix(anth,'#1a0a04',.55),'stroke-width':svF(Math.max(.12,w*.05)),'stroke-opacity':.55},hk);
-      const lit=(sg>0?Lp:Rp).map((p,q)=>[mid[q][0]*.45+p[0]*.55,mid[q][1]*.45+p[1]*.55]);
-      E('path',{d:svSpl(mid.concat(lit.slice().reverse())),fill:pol,'fill-opacity':.25},hk);
-      if(!LOD){E('path',{d:svSpl(mid.map((p,q)=>[p[0]-nx*sg*w*.12,p[1]-ny*sg*w*.12]),false),fill:'none',stroke:mix(anth,'#1a0804',.55),'stroke-width':svF(Math.max(.1,w*.09)),'stroke-opacity':.55},hk);
-        if(hi){const r=svRng(g.sd+sd*31),k=Math.round(40+w*2.5);let dd='',dk='';for(let q=0;q<k;q++){const dark=r()<.45;const s=.08+.84*r(),u=(r()*2-1)*.8,hw=w*.5*Math.pow(Math.sin(Math.PI*s),.55),
-            x=A[0]+dx*s+nx*(u*hw+bend*Math.sin(Math.PI*s)),y=A[1]+dy*s+ny*(u*hw+bend*Math.sin(Math.PI*s)),rr=Math.max(.15,w*(.035+.04*r())),c3=`M${svF(x-rr)},${svF(y)}a${svF(rr)},${svF(rr)} 0 1,0 ${svF(2*rr)},0a${svF(rr)},${svF(rr)} 0 1,0 ${svF(-2*rr)},0`;if(dark)dk+=c3;else dd+=c3}
-          E('path',{d:dk,fill:mix(anth,'#1a0804',.4),'fill-opacity':.5},hk);E('path',{d:dd,fill:mix(pol,'#f6a860',.3),'fill-opacity':.65},hk)}}};
+      for(const[o2,c2]of[[0,mix(anth,'#1a0804',.35)],[.18,mix(pol,anth,.35)],[.4,mix(pol,'#ffc890',.18)],[.62,pol],[.86,anth],[1,mix(anth,'#1a0804',.6)]])E('stop',{offset:o2,'stop-color':c2},agr);
+      const cl='lac'+(gid++);E('path',{d:out},E('clipPath',{id:cl},GDEF||defs));
+      E('path',{d:out,fill:`url(#${ag})`},hk);const ck=G(hk,{'clip-path':`url(#${cl})`});
+      if(LOD)return;
+      /* the suture between the two thecae, a little off the axis toward the shade */
+      E('path',{d:svSpl(mid.map((p,q)=>[p[0]-nx*sg*HW[q]*.18,p[1]-ny*sg*HW[q]*.18]).slice(1,-1),false),fill:'none',stroke:mix(anth,'#1a0402',.6),'stroke-width':svF(Math.max(.12,w*.1)),'stroke-opacity':.6,'stroke-linecap':'round',filter:svBlur(Math.max(.1,w*.04))},ck);
+      if(!hi)return;
+      /* the pollen: grains in three tones (bright on the lit side, deep in the shade), denser than the outline, some past it (velvet edge) */
+      const r=svRng(g.sd+sd*31),k=Math.round(70+w*6);let dL='',dM='',dD='';
+      for(let q=0;q<k;q++){const s=.04+.92*r(),u=(r()*2-1)*1.08,hw=hwAt(s),bx=A[0]+dx*s+nx*bend*Math.sin(Math.PI*s),by=A[1]+dy*s+ny*bend*Math.sin(Math.PI*s),
+          x=bx+nx*u*hw,y=by+ny*u*hw,rr=Math.max(.13,w*(.03+.05*r()*r())),side=u*sg,c3=`M${svF(x-rr)},${svF(y)}a${svF(rr)},${svF(rr)} 0 1,0 ${svF(2*rr)},0a${svF(rr)},${svF(rr)} 0 1,0 ${svF(-2*rr)},0`;
+        if(side>.25&&r()<.75)dL+=c3;else if(side<-.3&&r()<.7)dD+=c3;else dM+=c3}
+      E('path',{d:dD,fill:mix(anth,'#1a0402',.45),'fill-opacity':.55},hk);E('path',{d:dM,fill:mix(pol,anth,.3),'fill-opacity':.6},hk);
+      E('path',{d:dL,fill:mix(pol,'#ffb070',.4),'fill-opacity':.7},hk)};
     /* the throat (photo p002: the feet of the filaments and the style come out of an olive-gold hollow in shadow, fringed by the papillae):
        a soft occlusion under the feet, drawn before them (its proxy is the hollow's floor), its rim fading into the tepals' bases */
     if(hi&&!LOD){const z0=R0*.02,rT=R0*.15,prT=svSheet(B,O,(u,v)=>{const a2=(u+1)*Math.PI;return[Math.cos(a2)*rT*.5*v,Math.sin(a2)*rT*.5*v,z0]},{nu:8,nv:2});
