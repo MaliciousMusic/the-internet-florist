@@ -105,7 +105,8 @@ const DLP_SC=['#2a3d19','#4d6428','#7f9650','#bccb92'];
 /* (comparison relay 3, photograph 17) still read as banded: two faint ribs only */
 DLP_SC.sv={swell:.03,section:'ribbed',ribN:12,ribD:.006,ribs:[-.35,.3],hair:null,gloss:.3,bloom:.1};
 /* the free settings of the plant (fit.py: refcache/delphinium/space-plante.json) */
-GHI['delphinium']=Object.assign(GHI['delphinium']||{},{sc:DLP_SC,sw:.05,sv:DLP_SC.sv,
+/* (comparison relay 4) cut:1 the plant sheet ends the stem in a clean square cut (svStemCut), never the rounded cap of the stem's outline (7.9) */
+GHI['delphinium']=Object.assign(GHI['delphinium']||{},{sc:DLP_SC,sw:.05,sv:DLP_SC.sv,cut:1,
   /* (comparison, photograph 16) the hand spread wider and its lobes narrower at the foot: lobeAng 1.13 -> 1.5, lobeW .25 -> .21 (they piled up
      into a rosette) */
   /* (comparison relay 2, photograph 16) broad wedge lobes with many sharp, shallow teeth, never oak-like round lobules: lobeW .21 -> .27,
@@ -127,9 +128,17 @@ function dlpLeafSv(par,x,y,ang,len,o){const P=GHI['delphinium'].pl,s=o.s>0?1:-1,
   const H=V3.nz([hd[0]/hl,-hd[1]/hl,.3-.25*svSm((wl-.3)/.5)]),A=[0,.5,.86],d=V3.dot(A,H),U=V3.nz([A[0]-H[0]*d,A[1]-H[1]*d,A[2]-H[2]*d]);
   const nl=kk<2?5:3,L7=[[-1.2,.66],[-.8,.88],[-.4,.98],[0,1],[.4,.98],[.8,.88],[1.2,.66]],L5=[[-1.13,.76],[-.57,.95],[0,1],[.57,.95],[1.13,.76]],L3=[[-.8,.8],[0,1],[.8,.8]],
     lobes=(nl===7?L7:nl===5?L5:L3).map(([an,l])=>[an*P.lobeAng/1.13,l]);
-  svCutLeaf(k,{base:[e[0],-e[1],0],H,U,len:len*P.blade,sd:svSeed('delphinium-feuille',Math.round(x*8),Math.round(y*8),kk),wl,mat:DLP_BLADE,wilt:DLP_WILT,lobes,lobeJ:.08,w:P.lobeW*1,vb:.4,
-    inc:{n:[5,7],dp:P.cut,sh:.8,from:.22,to:.93},side:[0,0],sideP:1,up:.1,limp:[.2,.55],gut:[P.gut*.4,.2],tw:[.06,.1],nu:[3,4],nv:[6,10],mid:['#a2c27a','#c4d4ac',.5,.35]});return k}
-STEML['delphinium']={shape:'lance',n:[3,4],len:28,w:.3,col:'#5c7a44',up:48,arr:'alt',sv:dlpLeafSv};
+  /* (comparison relay 4, photographs 16, 17) the lobes' broad feet overlapped into a pale rosette at the centre of the hand and the narrow lobes
+     with a regular saw read as a hemp leaf: each lobe now narrows to a short wedge stalk at the palm (stalk), broader in its body (lobeW .3),
+     fewer, coarser and less even teeth; the midrib a soft line, never a pale stripe */
+  svCutLeaf(k,{base:[e[0],-e[1],0],H,U,len:len*P.blade,sd:svSeed('delphinium-feuille',Math.round(x*8),Math.round(y*8),kk),wl,mat:DLP_BLADE,wilt:DLP_WILT,lobes,lobeJ:.1,w:P.lobeW*1.7,vb:.5,
+    stalk:[.1,.14],stalkW:.022,lobeL:[.86,1.08],
+    /* (comparison relay 5, photograph 16) the even saw still read as a comb (a fern, a hemp leaf): each sinus its own depth (jit .55),
+       some deep incisions between shallow teeth, different from lobe to lobe and leaf to leaf (sd from the leaf's place, no draw) */
+    inc:{n:[2,3],dp:P.cut*1.65,sh:.3,from:.24,to:.92,jit:.3,sd:Math.round(x*8+y*5+kk*11)%97},side:[0,0],sideP:1,up:.1,limp:[.2,.55],gut:[P.gut*.4,.2],tw:[.06,.1],nu:[3,4],nv:[6,10],mid:['#8eae68','#b8c8a0',.18,.12]});return k}
+/* (main session, judge's refusal 2026-10-18, photographs 16, 65) the leaves read as fern fronds: a palmate hand of broad lobes, each cut into two or
+   three coarse pointed segments (inc n [2,3], deep), its veins faint; on the stem they are shorter (18 cm) and spaced up to the raceme */
+STEML['delphinium']={shape:'lance',n:[3,4],len:18,w:.3,col:'#5c7a44',up:42,arr:'alt',sv:dlpLeafSv};
 /* the plant: the old drawing's chance is drawn on a scratch group first (the bouquet's composition does not move: rtest), then the kit's head with
    its own chance; the raceme stands on the end of the stem (its foot at the apex), the stem is cut below it by the bouquet or the board */
 function dlpPlant(g,t,o,old){const cw=cwPick(CW_DELPH,o),bel=cw.f==='bel',op=Math.max(.05,Math.min(1,o.op??.9)),P=GHI['delphinium'].pl;
