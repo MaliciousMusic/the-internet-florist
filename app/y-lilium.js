@@ -262,9 +262,9 @@ function lilHeart(o0){const o=Object.assign({},LILH_DEF,o0);
 const LIL_ORI_GENES={n:[[6,1]],tep:{dL:[.95,1.05],dW:[.93,1.07],dph:[-.05,.05],da:[-.08,.08],dt:[-.3,.3],tw:[-.34,.34],lat:[-.05,.05],wav:[.09,.14],wk:[2.5,4],wph:[0,6.28],
     ew:[.015,.03],tip:[1.2,1.5],asym:[-.07,.07],sd:'sd'},late:{hang:[.6,1.3],wl:[.85,1.2]},
   head:{rot:[0,6.2832],op:[-.03,.03],dh:[-3,3],ds:[-.04,.04],dl:[-.02,.015],sty:[0,6.2832],stL:[.94,1.06],sd:'sd'}};
-const LIL_ORI=Object.assign({},LIL_ODBL,{L:[1.2,1.12],W:[.255,.3],floorV:.04,floor:1.5,floorO:.4,nu:[16,20],nv:46,mrx:.08,light:Object.assign({},SVRX_DEF.light,{wrap:.12,amb:.2,dif:.82,ks:.2,gloss:22,da:.27,la:.24}),
+const LIL_ORI=Object.assign({},LIL_ODBL,{L:[1.2,1.12],W:[.21,.32],z0:[0,.02],cup:[.12,.24],wavW:[.45,1.2],floorV:.04,floor:1.5,floorO:.4,nu:[16,20],nv:46,mrx:.08,light:Object.assign({},SVRX_DEF.light,{wrap:.12,amb:.2,dif:.82,ks:.2,gloss:22,da:.27,la:.24}),
   wp:[[0,.2],[.08,.34],[.2,.6],[.34,.84],[.48,.97],[.6,1],[.72,.92],[.83,.72],[.91,.46],[.97,.18],[1,.02]],vb:.62,
-  aS:[[.15,.38,.7],[.14,.36,.66]],aB:[[.04,.42,1.48],[.03,.4,1.38]],aT:[[-.26,1.05,2.2],[-.24,.98,2.05]],f0:[.72,.7],cup:[.1,.08],
+  aS:[[.15,.38,.5],[.14,.3,.22]],aB:[[.04,.42,1.66],[.03,.36,1.12]],aT:[[-.26,1.05,2.75],[-.24,.9,2.05]],f0:[.72,.7],cup:[.1,.08],
   genes:s=>svGenes(s,LIL_ORI_GENES),mat:lilOriMat,heart:lilHeart({cb:.9}),life:()=>lilLifeOf('lis-oriental')});
 function lilLifeOf(sid){if(typeof SVA_LIFE!=='undefined'&&SVA_LIFE!=null)return SVA_LIFE;
   return typeof LIFE!=='undefined'&&LIFE&&typeof lifeWEl==='function'?lifeWEl(LIFE,lifeProfile({sid,rec:{}})):0}

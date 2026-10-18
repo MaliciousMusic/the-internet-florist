@@ -52,7 +52,7 @@ function svReflex(par,B,O,D,S,cwx,op,seed,wl){const P=Object.assign({},SVRX_DEF,
     {const q=sp[Math.round(P.floorV*ns)];rCl=Math.min(rCl,Math.hypot(q[0],q[1]))}
     const at=(A,v)=>{const x=Math.max(0,Math.min(1,v))*ns,j=Math.min(ns-1,Math.floor(x)),f2=x-j;return Array.isArray(A[0])?V3.add(V3.sc(A[j],1-f2),V3.sc(A[j+1],f2)):A[j]*(1-f2)+A[j+1]*f2};
     const vbB=P.vb+(1-P.vb)*bud*.9,Lu=u=>vbB+(1-vbB)*Math.pow(Math.max(0,1-Math.pow(Math.abs(u),t.tip)),1/t.tip),
-      wv=t.wav*(P.wavO[0]+(P.wavO[1]-P.wavO[0])*r1)*(1+P.wavD*dec)*(hi?1:.8),ew=t.ew*(P.ewO[0]+(P.ewO[1]-P.ewO[0])*r1)*(1+.6*fan),
+      wv=t.wav*(P.wavO[0]+(P.wavO[1]-P.wavO[0])*r1)*(1+P.wavD*dec)*(hi?1:.8)*(P.wavW?P.wavW[w]:1),ew=t.ew*(P.ewO[0]+(P.ewO[1]-P.ewO[0])*r1)*(1+.6*fan),
       tw=t.tw*r1*(1+P.twF*fan)+P.twD*dec*Math.sign(t.tw||1),crk=(P.crk[0]*dec+P.crk[1]*fan)*(hi?1:.5),
       hW=R0*P.W[w]*t.dW*grow*(1-P.fanW*fan),cup=P.cup[w]*(1-.5*fan);
     const Sf=(u,v)=>{const vv=v*Lu(u),c=at(sp,vv),d=V3.nz(at(dv,vv)),r=at(rr,vv),nrm=V3.cr(d,T),ca=Math.cos(tw*vv),sa=Math.sin(tw*vv),A=V3.add(V3.sc(T,ca),V3.sc(nrm,sa)),N=V3.add(V3.sc(nrm,ca),V3.sc(T,-sa)),
