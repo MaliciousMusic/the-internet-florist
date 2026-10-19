@@ -15,7 +15,7 @@ const CW_LASI=[
  {id:'abricot',n:'Abricot',c:'#f3a868',spots:'#8a3418',an:'#a8441a'},{id:'orange',n:'Orange',c:'#ec7a24',spots:'#5a1a0c',an:'#8a2c10'},
  {id:'rose',n:'Rose',c:'#ec8cae',spots:'#9a2a50',an:'#9a3c1a'},{id:'rouge',n:'Rouge',c:'#c0242e',spots:'#4a0a10',an:'#6a1a0c'},
  {id:'rouge-noir',n:'Rouge noir',c:'#5c0e1c',spots:'#1c0208',an:'#3a0a08'},{id:'coeur-noir',n:'Rouge à cœur noir',c:'#c8282e',heart:'#2a0610',spots:'#2a0610',an:'#4a0c0a'},
- {id:'pointes',n:'Blanc à pointes rouges',c:'#faf6ee',tips:'#d0283a',spots:'#c06a6a',an:'#b0602a'},{id:'coeur-pourpre',n:'Orange à cœur pourpre',c:'#f08a2a',heart:'#4a0a2a',spots:'#3a0820',an:'#5a1a0c'}];
+ {id:'pointes',n:'Blanc liseré',c:'#faf6ee',spots:'#260306',an:'#7a4a4c'},{id:'coeur-pourpre',n:'Jaune moucheté à cœur pourpre',c:'#eab212',heart:'#4a0c10',spots:'#5a1214',an:'#2c0b05'}];
 const CW_LDBL=[
  {id:'rose',n:'Rose',c:'#f2a6c4'},{id:'blanc',n:'Blanc',c:'#faf6ee'},{id:'creme',n:'Crème jaune',c:'#f6e6b8'},{id:'fuchsia',n:'Fuchsia',c:'#d8508a'},{id:'rose-pale',n:'Rose pâle',c:'#f6d0dc'}];
 const CW_LTIG=[
