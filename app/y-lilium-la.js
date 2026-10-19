@@ -10,10 +10,14 @@ const LIL_LA_GRID={
   jaune:{nu:6,nv:24,c:[['#808f02','#738803','#788e04','#919f04','#a4a804','#cca602'],['#8d9803','#7b9203','#9aa902','#aaae00','#caaa04','#cea903'],['#9aa004','#91a204','#acae00','#b4b300','#c9aa01','#cbab01'],['#baa303','#afaf00','#b4b300','#bdb800','#c3b200','#cfa902'],['#c6a402','#bfb801','#c3bc03','#cac102','#caba02','#cbb001'],['#c9a800','#bab100','#d1c703','#d7c801','#d5c202','#d4b903'],['#c0b400','#bdb101','#d9cb01','#dac801','#d8c202','#d5b702'],['#d8c603','#d0c105','#dccb00','#ddcb00','#dfc901','#dec002'],['#e0cc03','#d9c900','#dfce02','#e2ce01','#e4cf01','#e5cc02'],['#e5d201','#e2ce03','#e5d203','#e7d102','#e6d002','#e6d102'],['#e9d702','#e8d502','#e9d702','#ead502','#e9d402','#e8d303'],['#eddc03','#eede02','#eddc02','#ecda03','#ecd902','#ebd702'],['#f2e302','#f3e502','#f0e002','#efdf03','#eedb03','#edd803'],['#f8eb01','#f6e903','#f3e602','#f4e602','#f0df03','#f0dd04'],['#fcf203','#fbf103','#f8ef02','#f9ef01','#f6e901','#f3e402'],['#fdf703','#fcf606','#fcf604','#fcf401','#fcf101','#f6e902'],['#fefb05','#fdfa0d','#fdfa0a','#fcf907','#f9f203','#f7ea03'],['#fefe06','#fefd06','#fefb05','#fdfa08','#faf507','#f9ee06'],['#fefe0d','#fffe0c','#fefe06','#fefd0c','#fbf80d','#f9f008'],['#fffe18','#fefe15','#fffe16','#fefe11','#fdfa0d','#fbf109'],['#fefe1b','#fefe1e','#fefe1e','#fefe0a','#fdfb09','#faf205'],['#feff20','#fefe25','#fefe22','#fffe0d','#fefc10','#f9f206'],['#feff24','#feff27','#fefe27','#fefe13','#fdfb10','#f9f106'],['#fefe27','#fefe24','#fefe1d','#fefd18','#fcf705','#f4e804']]}};  /* p021, 4 tepals */
 if(typeof LIL_ORI_FINE!=='undefined')LIL_ORI_FINE['la:blanc']={tone:1.1};
 const LIL_LA_M={};
+const LIL_LA_SG={blanc:'#c2891c',jaune:'#954652'};  /* the stigma per colourway, measured (coeur.json) */
 function lilLaMat(cw){const key='la:'+cw.id;if(LIL_LA_M[key])return LIL_LA_M[key];
   const base=lilOriSpec(Object.assign({},cw,{id:key})),S=LIL_ORI_CW.stargazer;
   const spec=Object.assign({},base,{grid:LIL_LA_GRID[cw.id]||null,gridV:null,fringe:null,pap:Object.assign({},S.pap,{n:[0,0]}),streak:null,
-    spots:cw.spots?{c:cw.spots,n:[16,6],v:[.04,.32],u:[.05,.7],r:[.004,.008],k:.9}:null});
+    spots:cw.spots?{c:cw.spots,n:[16,6],v:[.04,.32],u:[.05,.7],r:[.004,.008],k:.9}:null},
+    /* the heart measured on the photos (refcache/lis-asiatique-la/coeur.json): chocolate anthers, pale green filaments, a yellow-green style,
+       the stigma ochre on the white, pink on the yellow */
+    {anth:'#3a1308',pol:'#4e1d06',fil:'#d5d388',filT:'#a8ac48',sty:'#bcc45b',styT:'#98a03a',sg:LIL_LA_SG[cw.id]||'#c2891c'});
   LIL_ORI_CW[key]=spec;const M=lilOriMat({id:key});return LIL_LA_M[key]=M}
 const LIL_LA=Object.assign({},LIL_ORI,{L:[1.1,1.04],W:[.26,.28],vb:.52,cup:[.32,.36],mrx:0,wavW:[.3,.45],
   aS:[[.15,.36,.62],[.14,.3,.52]],aB:[[.04,.4,1.12],[.03,.34,1.02]],aT:[[-.26,.95,1.62],[-.24,.85,1.46]],

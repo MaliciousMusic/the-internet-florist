@@ -33,10 +33,11 @@ ROLE = {
     'comparaison': ('Comparaison', 'photo et rendu au même cadrage, région par région'),
     'juge': ('Juge', 'un Opus neuf, en lecture seule, qui dit ok ou ko'),
     'qa': ('QA', 'lots headless surveillés, poids et éléments par tête'),
+    'sortie': ('Sortie', 'la liste de sortie : les 14 points des bonnes pratiques vérifiés, bloquante (sortie.py)'),
     'planches': ('Planches', 'les planches finales pour la validation'),
 }
 NOW_BY = {'forme': 'session', 'fit': 'session', 'finition': 'session', 'comparaison': 'session'}  # heads drawn by hand since the lilies
-TOOLS_FOR = {'census': 'census.py, kavb.py', 'refs': 'refs.py, img.py', 'coloris': 'refs.py pal, apparence.py grille', 'targets': 'meas.py, prof.py, sil.py',
+TOOLS_FOR = {'sortie': 'sortie.py, trous.py, banc3d.js, volume.py, apparence.py', 'census': 'census.py, kavb.py', 'refs': 'refs.py, img.py', 'coloris': 'refs.py pal, apparence.py grille', 'targets': 'meas.py, prof.py, sil.py',
              'fiche': 'fiche.py', 'forme': 'apparence.py, shot_p.sh, sil.py, trous.py', 'fit': 'fit.py', 'plante': 'organ.py, jgap.py',
              'finition': 'td-de.py, td-back.py', 'temoins': 'shot_p.sh, img.py', 'comparaison': 'apparence.py paire, volume.py paire, img.py', 'juge': 'img.py',
              'qa': 'qawatch.sh, wsq.sh', 'planches': 'shot_p.sh, td-mont.py'}
@@ -172,6 +173,7 @@ def sorts():
         q = rd(os.path.join(d, 'questions.json'), []) or []
         out.append(dict(sid=sid, chantier=ch, taxon=st.get('taxon'), group=st.get('group'), steps=steps, bill=by,
                         eq=sum(b['eq'] for b in by.values()), usd=sum(b['usd'] for b in by.values()), last=last,
+                        sortie=rd(os.path.join(d, 'sortie.json'), None),
                         questions=len(q) if isinstance(q, list) else len(q or {}), head_by_hand=os.path.exists(os.path.join(ROOT, 'ch', ch, 'app', 'y-lilium.js')) and sid.startswith('lis-')))
     out.sort(key=lambda s: s['last'] or '', reverse=True)
     return out
