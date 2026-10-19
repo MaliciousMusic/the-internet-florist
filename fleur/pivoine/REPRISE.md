@@ -3,6 +3,23 @@
 Branche `ch/pivoine`, copie `ch/pivoine`. Module `app/y-paeonia.js` (tête en nappes, `SV_HEAD['pivoine-herbacee-double']`).
 Main fusionné jusqu'à c2a78f1 (calibre.py, repere.py, sortie.py plus juste).
 
+## Avant de reprendre : écarts au protocole du 2026-10-20 (à lire en premier)
+
+Le protocole a été complété après la pause (BONNES-PRATIQUES §15 à §17, affiché au labo 8805/labo/). Main a été fusionné dans cette
+branche le 2026-10-20 : les outils sont à jour. Ce chantier n'est **pas** encore au niveau du lis LA sur ces points :
+
+1. **Grilles en 6 × 24** (30 dans `app/y-paeonia.js`) : à refaire en **18 × 72** par coloris, avec
+   `sh fleur/coloris_cw.sh pieces pivoine-herbacee-double <cw> <photo> "<cadre>" ...` (pétales et gardes à part). On regarde les cartes
+   .npy en image avant de faire la grille.
+2. **Étalonnage** avec `PUT="python fleur/pivoine/gridio.py put <cw> g {G}" sh fleur/coloris_cw.sh calib ...`, en n'appariant que
+   des gardes d'éclairage voisin (§16.3, la cause de la non-convergence notée plus bas).
+3. **Cœur par coloris** (§15.2 point 5) : `coeur.json` est mesuré par composant (gardes, pétaloïdes, creux, sépales, base), mais pas
+   par coloris. Il faut mesurer les carpelles, les stigmates, les étamines et le creux sur la photo de chaque coloris, et les mettre
+   dans une table lue par l'id du coloris. Les stigmates demandent le même soin que les pétales (§16.5) : forme réelle, couleur,
+   texture, jonction, regardés à D 900 à côté de la photo.
+4. **Fichier d'état** : ce fichier fait office de `<sid>-ETAT.md` (§15.4). Le labo le lit.
+5. **Banc** lancé détaché (§16.6).
+
 ## Liste de sortie (`python fleur/sortie.py pivoine-herbacee-double`)
 
 | point | état | reste à faire |
