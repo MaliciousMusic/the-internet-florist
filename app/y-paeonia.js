@@ -28,7 +28,7 @@
 /* whites (blanc, blush): the light through and around a white petal fills its shade (photos: the heart of Duchesse de Nemours luminous cream,
    never grey): more ambient, less direct, warm shade */
 const PEO_FGW={amb:.6,dif:.5,sat:.3,ao:.22,chroma:1,tone:1.04,q:3,ks:.05,gloss:18,grain:.01,glow:.4},PEO_FHW={amb:.62,dif:.48,sat:.45,ao:.3,chroma:1.06,tone:1.04,q:3,ks:.03,gloss:12,grain:.01,glow:.4};
-const PEO_FG={amb:.34,dif:.66,sat:.3,ao:.32,chroma:1,tone:.8,q:3,ks:.06,gloss:18,grain:.1,blur:.5,glow:.25},PEO_FH={amb:.6,dif:.42,sat:.3,ao:.2,chroma:1.15,tone:.98,q:3,ks:.035,gloss:12,grain:.01,glow:.3};
+const PEO_FG={amb:.56,dif:.44,sat:.4,ao:.24,chroma:1.12,tone:1,q:3,ks:.06,gloss:18,grain:.1,blur:.5,glow:.25},PEO_FH={amb:.6,dif:.42,sat:.3,ao:.2,chroma:1.15,tone:.98,q:3,ks:.035,gloss:12,grain:.01,glow:.3};
 const PEO_CW={
   /* rose: Sarah Bernhardt (3 flowers, refcache/.../cw/sarah-bernhardt_k.jpg, an ellipse placed by hand on one flower each: guards from .5 to .96 of it, the heart in its own circle) */
   'rose':{g:{st:[[0,'#eaa9c4'],[.45,'#e487c1'],[.72,'#e2a5cc'],[1,'#c294a8']],bst:[[0,'#e7acc4'],[.4,'#ebaed3'],[1,'#d5adbf']],shade:'#ba5586',lite:'#f3d6e8',bshade:'#ca789d',blite:'#ffffff',vein:'#cb75a1',bvein:'#e8b7d6',vo:.16,
@@ -276,6 +276,8 @@ function peoCarpels(B,O,R0,g,C,op,fan,pieces,ff){if(ff<.15)return;const r=svRng(
       E('path',{d:svSpl(cr.map(p=>[p[0]+lt[0]*R0*.005,p[1]+lt[1]*R0*.005]),false),fill:'none',stroke:mix(crest,'#ffd0d8',.35),'stroke-width':svF(Math.max(.2,R0*.008)),'stroke-opacity':.6,'stroke-linecap':'round'},hk)},
       proxy:prox,pmin:1,tube:{P:P3,r0:w(1),r1:w(7),ins:.15}})})}
 /* the head: in the frame B at O (Z from the stem to the face), D the open flower's diameter */
+/* test only: &solo=g3 / &solo=h12 draws guard 3 / petaloid 12 alone, no floor, receptacle nor carpels (fleur/repere.py, apparence.py paire) */
+const PEO_SOLO=typeof location!=='undefined'&&/[?&]solo=([gh])(\d+)/.test(location.search||'')?[RegExp.$1,+RegExp.$2]:null;
 function peoHead(par,B,O,D,S,cwx,op,seed,wl){const P=S?Object.assign({},PEO_DBL,S):PEO_DBL,hi=DET>=1.5,R0=D/2,r=svRng(seed||1),W0=typeof WILT!=='undefined'?WILT:null;
   const g={rot:r.in(0,6.2832),sd:Math.floor(r()*1e9),dop:r.in(-.025,.025)},oo=Math.max(.02,Math.min(1,op+g.dop)),wl0=wl||0,
     dec=svSm((wl0-P.dec[0])/P.dec[1]),fan=svSm((wl0-P.fan[0])/P.fan[1]),gt=1-svSm((oo-.12)/.26);
@@ -284,13 +286,15 @@ function peoHead(par,B,O,D,S,cwx,op,seed,wl){const P=S?Object.assign({},PEO_DBL,
     let L=peoPieces(P,g,oo,nG,nH);if(ff>0)L=L.filter(q=>q.kind==='s'||q.fall>=ff*(1-(q.kind==='g'||q.t<.3?P.keep*2:0)));  /* the last to hang on are guards and outer petaloids */
     peoGeom(P,L,sh,oo,dec,fan,R0);if(typeof SVQA_DBG!=='undefined'&&SVQA_DBG)PEO_LAST={L,sh,P,dec,fan,R0};
     const C=peoCol(cwx),M={g:peoMat(P,C,'g',gt,dec,fan,hi),h:peoMat(P,C,'h',gt*.6,dec,fan,hi),s:peoMat(P,C,'s',0,dec,fan,hi)},pieces=[],det=hi?1.25:.8;
-    for(const q of L){const vr=svRng(q.sd+5),vn=q.kind==='s'?svVeins(vr,5,0,.2):svVeins(vr,q.kind==='g'?(hi?24:11):(hi?9:5),hi?.2:0,hi?.35:.2),base=M[q.kind],vc=base.stops[Math.floor(base.stops.length/2)][1],
+    if(PEO_SOLO){const k=L.filter(q=>q.kind===PEO_SOLO[0]);L=k[PEO_SOLO[1]%k.length]?[k[PEO_SOLO[1]%k.length]]:[]}
+     for(const q of L){const vr=svRng(q.sd+5),vn=q.kind==='s'?svVeins(vr,5,0,.2):svVeins(vr,q.kind==='g'?(hi?24:11):(hi?9:5),hi?.2:0,hi?.35:.2),base=M[q.kind],vc=base.stops[Math.floor(base.stops.length/2)][1],
         K=C[q.kind],vo=K.vo;
       const m=Object.assign({},base,{fineVeins:false,veins:q.kind==='h'?null:(s2,front)=>front?[[vn.main,.0016,peoShv(K.vein,.5,gt,dec,fan,q.kind),Math.min(1,vo*1.8)+.15*dec],[vn.fine,.0011,peoShv(K.vein,.5,gt,dec,fan,q.kind),vo*1.1]]:[[vn.main,.0016,peoShv(K.bvein,.5,gt,dec,fan,q.kind),vo*.7]]});
       const big=q.kind==='g',nu=Math.round((big?P.gnu:P.nu)[hi?1:0]*(q.kind==='s'?.7:1)),nv=Math.round((big?P.gnv:P.nv)[hi?1:0]*(q.kind==='s'?.7:1)),dz=q.kind==='h'?.45:.3;
       const pc=svSheet(B,O,peoSurf(P,q,sh,R0,dec,fan),{nu,nv,mat:m,ao:(u,v,front)=>front?1-dz*(1-svSm((v-.02)/.4)):1-.2*(1-svSm(v/.25))});pc.wh=q.kind;pieces.push(pc)}
     /* the floor of the heart: the core's surface in the hollow's darkest colour, so that nothing shows through between the innermost
        petaloids (qa:false: it lies under them by design, as the lily's floor) */
+    if(PEO_SOLO)return svDraw(par,pieces,{D,pmin:P.pmin,shadow:false});
     if(ff<.5){const fc=mix(C.h.st[0][1],C.h.shade,.35),fm=Object.assign({},M.h,{stops:[[0,fc],[1,mix(fc,C.h.st[2][1],.35)]],bstops:[[0,fc],[1,fc]],fine:null,grid:null,cross:null,veins:null,transmit:null});
       pieces.push(svSheet(B,O,(u,v)=>{const a=(1-v)*PEO_PSI*.92,th=(u+1)*Math.PI,rr=Math.max(.01,sh.core(a))*.96*R0;return[rr*Math.sin(a)*Math.cos(th),rr*Math.sin(a)*Math.sin(th),sh.H*R0+rr*Math.cos(a)]},{nu:12,nv:8,mat:fm,qa:false,zb:-.004}))}
     /* the receptacle (fiche: a fleshy disc under the carpels, hidden while the petals hold; seen once they fall): a flattened dome from the

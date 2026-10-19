@@ -1,0 +1,3791 @@
+{
+ "schema": "fiche-morpho/1",
+ "sid": "pivoine-herbacee-double",
+ "nom": "Pivoine herbacée double",
+ "taxon": {
+  "genre": "Paeonia",
+  "espece": "Paeonia lactiflora Pall.",
+  "famille": "Paeoniaceae",
+  "groupe": "pivoines herbacées de Chine (Lactiflora Group) à fleurs doubles : formes bombe, couronne et rose ; les formes japonaise, anémone, semi-double et simple de la liste des coloris sont signalées dans varietes",
+  "source": "Flora of China vol. 6 (2001), Paeoniaceae, Paeonia lactiflora Pallas (Hong De-Yuan, Pan Kai-Yu) : forme sauvage simple"
+ },
+ "kit": {
+  "moteur": "peoSvg (SVG natif à coques emboîtées : peoShells, peoPieces, peoHead), à confirmer par le modeleur",
+  "module": "app/y-paeonia.js"
+ },
+ "etat": {
+  "date": "2026-10-19",
+  "auteur": "pipe.py (squelette, registre des photos), puis l'étape fiche",
+  "note": "Fiche d'après les photos gardées (keep.json), fit.py targets, organ.py (tête, tige, foliole), des règles en pixels sur agrandissements (refcache/pivoine-herbacee-double/look/fiche-z*.jpg) et Flora of China. Aucun code relié à cette étape. Les photos 201, 306, 308 et 333 (autre espèce) ne servent à aucune mesure."
+ },
+ "photos": {
+  "pivoine-herbacee-double:b64db975": {
+   "titre": "File:Paeonia 'Cincinnati' 5 2021 Lactiflora- (51207391566).jpg",
+   "auteur": "F. D. Richards from Clinton, MI",
+   "licence": "CC BY-SA 2.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Paeonia_%27Cincinnati%27_5_2021_Lactiflora-_(51207391566).jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/Paeonia_%27Cincinnati%27_5_2021_Lactiflora-_%2851207391566%29.jpg/500px-Paeonia_%27Cincinnati%27_5_2021_Lactiflora-_%2851207391566%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/pivoine/refcache/pivoine-herbacee-double/t093.jpg",
+   "tags": [
+    "stade:ouvert",
+    "vue:trois-quarts"
+   ],
+   "vu": "stade=ouvert vue=trois-quarts organe=- groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 93,
+   "groupe": "jardin"
+  },
+  "pivoine-herbacee-double:d60fd5ad": {
+   "titre": "File:Peony Close Up Top View.jpg",
+   "auteur": "Unibrow1994",
+   "licence": "CC BY-SA 3.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Peony_Close_Up_Top_View.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ee/Peony_Close_Up_Top_View.jpg/500px-Peony_Close_Up_Top_View.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/pivoine/refcache/pivoine-herbacee-double/t106.jpg",
+   "tags": [
+    "stade:ouvert",
+    "vue:face"
+   ],
+   "vu": "stade=ouvert vue=face organe=- groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 106,
+   "groupe": "jardin"
+  },
+  "pivoine-herbacee-double:bb1562fe": {
+   "titre": "File:Paeonia 'Do Tell' 5 2021 Lactiflora- (51212908357).jpg",
+   "auteur": "F. D. Richards from Clinton, MI",
+   "licence": "CC BY-SA 2.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Paeonia_%27Do_Tell%27_5_2021_Lactiflora-_(51212908357).jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6e/Paeonia_%27Do_Tell%27_5_2021_Lactiflora-_%2851212908357%29.jpg/500px-Paeonia_%27Do_Tell%27_5_2021_Lactiflora-_%2851212908357%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/pivoine/refcache/pivoine-herbacee-double/t098.jpg",
+   "tags": [
+    "stade:ouvert",
+    "vue:face"
+   ],
+   "vu": "stade=ouvert vue=face organe=- groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 98,
+   "groupe": "jardin"
+  },
+  "pivoine-herbacee-double:3587c6ce": {
+   "titre": "File:Paeonia 'Do Tell', 2017 (34195676634).jpg",
+   "auteur": "F. D. Richards from Clinton, MI",
+   "licence": "CC BY-SA 2.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Paeonia_%27Do_Tell%27,_2017_(34195676634).jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0a/Paeonia_%27Do_Tell%27%2C_2017_%2834195676634%29.jpg/500px-Paeonia_%27Do_Tell%27%2C_2017_%2834195676634%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/pivoine/refcache/pivoine-herbacee-double/t097.jpg",
+   "tags": [
+    "stade:ouvert",
+    "vue:trois-quarts"
+   ],
+   "vu": "stade=ouvert vue=trois-quarts organe=- groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 97,
+   "groupe": "jardin"
+  },
+  "pivoine-herbacee-double:26c402aa": {
+   "titre": "File:Paeonia 'Doris Cooper' 6 2021 Lactiflora- (51235284752).jpg",
+   "auteur": "F. D. Richards from Clinton, MI",
+   "licence": "CC BY-SA 2.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Paeonia_%27Doris_Cooper%27_6_2021_Lactiflora-_(51235284752).jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bc/Paeonia_%27Doris_Cooper%27_6_2021_Lactiflora-_%2851235284752%29.jpg/500px-Paeonia_%27Doris_Cooper%27_6_2021_Lactiflora-_%2851235284752%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/pivoine/refcache/pivoine-herbacee-double/t109.jpg",
+   "tags": [
+    "stade:ouvert",
+    "vue:trois-quarts"
+   ],
+   "vu": "stade=ouvert vue=trois-quarts organe=- groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 109,
+   "groupe": "jardin"
+  },
+  "pivoine-herbacee-double:448f5af8": {
+   "titre": "File:Paeonia 'Cincinnati' 5 2021 Lactiflora- (51208460115).jpg",
+   "auteur": "F. D. Richards from Clinton, MI",
+   "licence": "CC BY-SA 2.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Paeonia_%27Cincinnati%27_5_2021_Lactiflora-_(51208460115).jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bc/Paeonia_%27Cincinnati%27_5_2021_Lactiflora-_%2851208460115%29.jpg/500px-Paeonia_%27Cincinnati%27_5_2021_Lactiflora-_%2851208460115%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/pivoine/refcache/pivoine-herbacee-double/t096.jpg",
+   "tags": [
+    "stade:ouvert",
+    "vue:profil",
+    "organe:tige"
+   ],
+   "vu": "stade=ouvert vue=profil organe=tige groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 96,
+   "groupe": "jardin"
+  },
+  "pivoine-herbacee-double:4913d031": {
+   "titre": "File:Paeonia 'Cincinnati' 5 2021 Lactiflora- (51207390921).jpg",
+   "auteur": "F. D. Richards from Clinton, MI",
+   "licence": "CC BY-SA 2.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Paeonia_%27Cincinnati%27_5_2021_Lactiflora-_(51207390921).jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/Paeonia_%27Cincinnati%27_5_2021_Lactiflora-_%2851207390921%29.jpg/500px-Paeonia_%27Cincinnati%27_5_2021_Lactiflora-_%2851207390921%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/pivoine/refcache/pivoine-herbacee-double/t092.jpg",
+   "tags": [
+    "stade:ouvert",
+    "vue:face"
+   ],
+   "vu": "stade=ouvert vue=face organe=- groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 92,
+   "groupe": "jardin"
+  },
+  "pivoine-herbacee-double:4ca7a487": {
+   "titre": "File:Paeonia lactiflora 2025.jpg",
+   "auteur": "Refriedbeans52",
+   "licence": "CC0",
+   "url": "https://commons.wikimedia.org/wiki/File:Paeonia_lactiflora_2025.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ae/Paeonia_lactiflora_2025.jpg/500px-Paeonia_lactiflora_2025.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/pivoine/refcache/pivoine-herbacee-double/t052.jpg",
+   "tags": [
+    "stade:ouvert",
+    "vue:trois-quarts",
+    "organe:tige"
+   ],
+   "vu": "stade=ouvert vue=trois-quarts organe=tige groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 52,
+   "groupe": "jardin"
+  },
+  "pivoine-herbacee-double:0688d29c": {
+   "titre": "File:Paeonia 'Big Ben' (1992-1380*B) Flowers.jpg",
+   "auteur": "Photo by and (c)2008 Derek Ramsey (Ram-Man).  Co-attribution must be given to th",
+   "licence": "CC BY-SA 3.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Paeonia_%27Big_Ben%27_(1992-1380*B)_Flowers.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Paeonia_%27Big_Ben%27_%281992-1380%2AB%29_Flowers.jpg/500px-Paeonia_%27Big_Ben%27_%281992-1380%2AB%29_Flowers.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/pivoine/refcache/pivoine-herbacee-double/t090.jpg",
+   "tags": [
+    "stade:ouvert",
+    "vue:trois-quarts"
+   ],
+   "vu": "stade=ouvert vue=trois-quarts organe=- groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 90,
+   "groupe": "jardin"
+  },
+  "pivoine-herbacee-double:98fc6d58": {
+   "titre": "File:Paeonia 'Cytherea' 5 2021 xPeony- (51202914478).jpg",
+   "auteur": "F. D. Richards from Clinton, MI",
+   "licence": "CC BY-SA 2.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Paeonia_%27Cytherea%27_5_2021_xPeony-_(51202914478).jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dc/Paeonia_%27Cytherea%27_5_2021_xPeony-_%2851202914478%29.jpg/500px-Paeonia_%27Cytherea%27_5_2021_xPeony-_%2851202914478%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/pivoine/refcache/pivoine-herbacee-double/t138.jpg",
+   "tags": [
+    "stade:entrouvert",
+    "vue:face"
+   ],
+   "vu": "stade=entrouvert vue=face organe=- groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 138,
+   "groupe": "jardin"
+  },
+  "pivoine-herbacee-double:fc930ba8": {
+   "titre": "File:Paeonia 'Coral Charm' 5 2021 xPeony- (51207397126).jpg",
+   "auteur": "F. D. Richards from Clinton, MI",
+   "licence": "CC BY-SA 2.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Paeonia_%27Coral_Charm%27_5_2021_xPeony-_(51207397126).jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Paeonia_%27Coral_Charm%27_5_2021_xPeony-_%2851207397126%29.jpg/500px-Paeonia_%27Coral_Charm%27_5_2021_xPeony-_%2851207397126%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/pivoine/refcache/pivoine-herbacee-double/t121.jpg",
+   "tags": [
+    "stade:entrouvert",
+    "vue:profil",
+    "organe:tige",
+    "organe:bourgeon"
+   ],
+   "vu": "stade=entrouvert vue=profil organe=tige+bourgeon groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 121,
+   "groupe": "jardin"
+  },
+  "pivoine-herbacee-double:2d05d235": {
+   "titre": "File:Peony in rain (2599513747).jpg",
+   "auteur": "Randi Hausken from Bærum, Norway",
+   "licence": "CC BY-SA 2.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Peony_in_rain_(2599513747).jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Peony_in_rain_%282599513747%29.jpg/500px-Peony_in_rain_%282599513747%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/pivoine/refcache/pivoine-herbacee-double/t107.jpg",
+   "tags": [
+    "stade:bouton",
+    "vue:profil"
+   ],
+   "vu": "stade=bouton vue=profil organe=- groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 107,
+   "groupe": "jardin"
+  },
+  "pivoine-herbacee-double:2c0ab32c": {
+   "titre": "File:Paeonia 'Athena' 5 2021 xPeony- (51167933948).jpg",
+   "auteur": "F. D. Richards from Clinton, MI",
+   "licence": "CC BY-SA 2.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Paeonia_%27Athena%27_5_2021_xPeony-_(51167933948).jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c7/Paeonia_%27Athena%27_5_2021_xPeony-_%2851167933948%29.jpg/500px-Paeonia_%27Athena%27_5_2021_xPeony-_%2851167933948%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/pivoine/refcache/pivoine-herbacee-double/t082.jpg",
+   "tags": [
+    "stade:bouton",
+    "vue:trois-quarts"
+   ],
+   "vu": "stade=bouton vue=trois-quarts organe=- groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 82,
+   "groupe": "jardin"
+  },
+  "pivoine-herbacee-double:10786a4f": {
+   "titre": "File:Paeonia 'Big Ben' (1992-1380*B) Buds.jpg",
+   "auteur": "Photo by and (c)2008 Derek Ramsey (Ram-Man).  Co-attribution must be given to th",
+   "licence": "CC BY-SA 3.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Paeonia_%27Big_Ben%27_(1992-1380*B)_Buds.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/95/Paeonia_%27Big_Ben%27_%281992-1380%2AB%29_Buds.jpg/500px-Paeonia_%27Big_Ben%27_%281992-1380%2AB%29_Buds.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/pivoine/refcache/pivoine-herbacee-double/t089.jpg",
+   "tags": [
+    "stade:bouton",
+    "vue:profil",
+    "organe:bourgeon"
+   ],
+   "vu": "stade=bouton vue=profil organe=bourgeon groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 89,
+   "groupe": "jardin"
+  },
+  "pivoine-herbacee-double:51c94992": {
+   "titre": "File:Bud of paeonia.jpg",
+   "auteur": "",
+   "licence": "CC BY-SA 3.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Bud_of_paeonia.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/Bud_of_paeonia.jpg/500px-Bud_of_paeonia.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/pivoine/refcache/pivoine-herbacee-double/t080.jpg",
+   "tags": [
+    "stade:bouton",
+    "vue:profil",
+    "organe:tige",
+    "organe:bourgeon"
+   ],
+   "vu": "stade=bouton vue=profil organe=tige+bourgeon groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 80,
+   "groupe": "jardin"
+  },
+  "pivoine-herbacee-double:8328f74b": {
+   "titre": "File:Pivoines Boutons&feuilles FR 2013.jpg",
+   "auteur": "JLPC",
+   "licence": "CC BY-SA 3.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Pivoines_Boutons%26feuilles_FR_2013.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Pivoines_Boutons%26feuilles_FR_2013.jpg/500px-Pivoines_Boutons%26feuilles_FR_2013.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/pivoine/refcache/pivoine-herbacee-double/t074.jpg",
+   "tags": [
+    "stade:bouton",
+    "organe:bourgeon",
+    "organe:tige"
+   ],
+   "vu": "stade=bouton vue=- organe=bourgeon+tige groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 74,
+   "groupe": "jardin"
+  },
+  "pivoine-herbacee-double:003d4fe8": {
+   "titre": "File:Peony lactiflora \"Archangel\" blossoms.jpg",
+   "auteur": "Paradise Chronicle",
+   "licence": "CC BY-SA 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Peony_lactiflora_%22Archangel%22_blossoms.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/Peony_lactiflora_%22Archangel%22_blossoms.jpg/500px-Peony_lactiflora_%22Archangel%22_blossoms.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/pivoine/refcache/pivoine-herbacee-double/t068.jpg",
+   "tags": [
+    "organe:bourgeon",
+    "organe:feuille-dessus",
+    "organe:tige"
+   ],
+   "vu": "stade=bouton vue=- organe=bourgeon+feuille-dessus+tige groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 68,
+   "groupe": "jardin"
+  },
+  "pivoine-herbacee-double:27c94643": {
+   "titre": "File:Paeonia 'Athena' 5 2021 xPeony- (51167934173).jpg",
+   "auteur": "F. D. Richards from Clinton, MI",
+   "licence": "CC BY-SA 2.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Paeonia_%27Athena%27_5_2021_xPeony-_(51167934173).jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/Paeonia_%27Athena%27_5_2021_xPeony-_%2851167934173%29.jpg/500px-Paeonia_%27Athena%27_5_2021_xPeony-_%2851167934173%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/pivoine/refcache/pivoine-herbacee-double/t083.jpg",
+   "tags": [
+    "organe:plante"
+   ],
+   "vu": "stade=- vue=- organe=plante groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 83,
+   "groupe": "jardin"
+  },
+  "pivoine-herbacee-double:e3d6fb5e": {
+   "titre": "File:Paeonia 'Athena' 5 2021 xPeony- (51167707891).jpg",
+   "auteur": "F. D. Richards from Clinton, MI",
+   "licence": "CC BY-SA 2.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Paeonia_%27Athena%27_5_2021_xPeony-_(51167707891).jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/26/Paeonia_%27Athena%27_5_2021_xPeony-_%2851167707891%29.jpg/500px-Paeonia_%27Athena%27_5_2021_xPeony-_%2851167707891%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/pivoine/refcache/pivoine-herbacee-double/t081.jpg",
+   "tags": [
+    "organe:plante",
+    "stade:bouton"
+   ],
+   "vu": "stade=bouton vue=- organe=plante groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 81,
+   "groupe": "jardin"
+  },
+  "pivoine-herbacee-double:88b2e72e": {
+   "titre": "File:Paeonia 'Cincinnati' 5 2021 Lactiflora- (51207595493).jpg",
+   "auteur": "F. D. Richards from Clinton, MI",
+   "licence": "CC BY-SA 2.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Paeonia_%27Cincinnati%27_5_2021_Lactiflora-_(51207595493).jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/Paeonia_%27Cincinnati%27_5_2021_Lactiflora-_%2851207595493%29.jpg/500px-Paeonia_%27Cincinnati%27_5_2021_Lactiflora-_%2851207595493%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/pivoine/refcache/pivoine-herbacee-double/t094.jpg",
+   "tags": [
+    "organe:plante"
+   ],
+   "vu": "stade=- vue=- organe=plante groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 94,
+   "groupe": "jardin"
+  },
+  "pivoine-herbacee-double:a556cd8d": {
+   "titre": "File:Pivoine de Chine en croissance (10-04-2020).jpg",
+   "auteur": "Remont",
+   "licence": "CC BY-SA 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Pivoine_de_Chine_en_croissance_(10-04-2020).jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Pivoine_de_Chine_en_croissance_%2810-04-2020%29.jpg/500px-Pivoine_de_Chine_en_croissance_%2810-04-2020%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/pivoine/refcache/pivoine-herbacee-double/t073.jpg",
+   "tags": [
+    "organe:plante",
+    "organe:tige"
+   ],
+   "vu": "stade=- vue=- organe=plante+tige groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 73,
+   "groupe": "jardin"
+  },
+  "pivoine-herbacee-double:fd4223c3": {
+   "titre": "File:Gemeine Pfingstrose verblüht.JPG",
+   "auteur": "3268zauber",
+   "licence": "CC BY-SA 3.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Gemeine_Pfingstrose_verbl%C3%BCht.JPG",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/Gemeine_Pfingstrose_verbl%C3%BCht.JPG/500px-Gemeine_Pfingstrose_verbl%C3%BCht.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/pivoine/refcache/pivoine-herbacee-double/t201.jpg",
+   "tags": [
+    "stade:declin",
+    "vue:profil"
+   ],
+   "vu": "stade=declin vue=profil organe=- groupe=autre",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 201,
+   "groupe": "autre"
+  },
+  "pivoine-herbacee-double:4706f1de": {
+   "titre": "File:Paeonia 'Adolphe Rousseau' (Paeoniaceae) leaves.JPG",
+   "auteur": "Magnus Manske",
+   "licence": "CC BY-SA 3.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Paeonia_%27Adolphe_Rousseau%27_(Paeoniaceae)_leaves.JPG",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/Paeonia_%27Adolphe_Rousseau%27_%28Paeoniaceae%29_leaves.JPG/500px-Paeonia_%27Adolphe_Rousseau%27_%28Paeoniaceae%29_leaves.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/pivoine/refcache/pivoine-herbacee-double/t178.jpg",
+   "tags": [
+    "organe:feuille-dessus"
+   ],
+   "vu": "stade=- vue=- organe=feuille-dessus groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 178,
+   "groupe": "jardin"
+  },
+  "pivoine-herbacee-double:f3eb675b": {
+   "titre": "File:Tree peony.png",
+   "auteur": "Henryemix",
+   "licence": "CC0",
+   "url": "https://commons.wikimedia.org/wiki/File:Tree_peony.png",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/24/Tree_peony.png/500px-Tree_peony.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/pivoine/refcache/pivoine-herbacee-double/t271.jpg",
+   "tags": [
+    "organe:feuille-dessus"
+   ],
+   "vu": "stade=- vue=- organe=feuille-dessus groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 271,
+   "groupe": "jardin"
+  },
+  "pivoine-herbacee-double:190341a8": {
+   "titre": "File:Paeonia peregrina kz03.jpg",
+   "auteur": "Krzysztof Ziarnek, Kenraiz",
+   "licence": "CC BY-SA 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Paeonia_peregrina_kz03.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7a/Paeonia_peregrina_kz03.jpg/500px-Paeonia_peregrina_kz03.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/pivoine/refcache/pivoine-herbacee-double/t306.jpg",
+   "tags": [
+    "stade:declin",
+    "stade:fane",
+    "vue:trois-quarts"
+   ],
+   "vu": "stade=declin+fane vue=trois-quarts organe=- groupe=espece-sauvage",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 306,
+   "groupe": "espece-sauvage"
+  },
+  "pivoine-herbacee-double:784c6763": {
+   "titre": "File:Paeonia peregrina petal bumbelbee, Botanic Garden Cologne.JPG",
+   "auteur": "Orjen, Pavle Cikovac",
+   "licence": "CC BY-SA 3.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Paeonia_peregrina_petal_bumbelbee,_Botanic_Garden_Cologne.JPG",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Paeonia_peregrina_petal_bumbelbee%2C_Botanic_Garden_Cologne.JPG/500px-Paeonia_peregrina_petal_bumbelbee%2C_Botanic_Garden_Cologne.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/pivoine/refcache/pivoine-herbacee-double/t308.jpg",
+   "tags": [
+    "vue:dos",
+    "vue:profil",
+    "stade:ouvert",
+    "organe:tige"
+   ],
+   "vu": "stade=ouvert vue=dos+profil organe=tige groupe=espece-sauvage",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 308,
+   "groupe": "espece-sauvage"
+  },
+  "pivoine-herbacee-double:42a9f255": {
+   "titre": "File:Paeonia peregrina Piwonia obca 2009-07-20 01.jpg",
+   "auteur": "Agnieszka Kwiecień, Nova",
+   "licence": "CC BY-SA 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Paeonia_peregrina_Piwonia_obca_2009-07-20_01.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Paeonia_peregrina_Piwonia_obca_2009-07-20_01.jpg/500px-Paeonia_peregrina_Piwonia_obca_2009-07-20_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/pivoine/refcache/pivoine-herbacee-double/t333.jpg",
+   "tags": [
+    "stade:fane"
+   ],
+   "vu": "stade=fane vue=- organe=- groupe=espece-sauvage",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 333,
+   "groupe": "espece-sauvage"
+  }
+ },
+ "organes": {
+  "petale.garde": {
+   "role": "perianthe",
+   "note": "Pétales de garde : le ou les deux rangs externes, larges, qui forment la soucoupe autour de la boule du cœur. Ce sont les pétales de la forme simple.",
+   "nombre": {
+    "v": 10,
+    "plage": [
+     8,
+     13
+    ],
+    "unite": "n",
+    "methode": "reference",
+    "conf": "B",
+    "ref": "Flora of China vol. 6 (2001), Paeoniaceae, Paeonia lactiflora Pallas (Hong De-Yuan, Pan Kai-Yu) : forme sauvage simple : pétales 9-13 ; sur une double, ils restent les gardes (rangs externes)"
+   },
+   "disposition": {
+    "type": "spirale",
+    "verticilles": {
+     "v": 2,
+     "plage": [
+      1,
+      2
+     ],
+     "unite": "n",
+     "methode": "oeil",
+     "photos": [
+      "pivoine-herbacee-double:d60fd5ad",
+      "pivoine-herbacee-double:26c402aa",
+      "pivoine-herbacee-double:448f5af8"
+     ],
+     "conf": "C",
+     "note": "un rang large dessous, un second rang décalé qui le recouvre en partie"
+    },
+    "recouvrement": {
+     "v": 0.4,
+     "plage": [
+      0.3,
+      0.5
+     ],
+     "unite": "ratio",
+     "methode": "oeil",
+     "photos": [
+      "pivoine-herbacee-double:d60fd5ad",
+      "pivoine-herbacee-double:26c402aa"
+     ],
+     "conf": "C"
+    },
+    "ordre": {
+     "v": "les gardes passent devant et dessous : insérées le plus bas sur le réceptacle, elles enveloppent la base de la boule du cœur ; le second rang de gardes s'intercale entre les pièces du premier",
+     "methode": "oeil",
+     "photos": [
+      "pivoine-herbacee-double:448f5af8",
+      "pivoine-herbacee-double:fc930ba8",
+      "pivoine-herbacee-double:d60fd5ad"
+     ],
+     "conf": "C"
+    },
+    "insertion": {
+     "v": [
+      0,
+      0.05
+     ],
+     "unite": "L",
+     "methode": "hypothese",
+     "conf": "D",
+     "note": "rang externe à 0, second rang un peu plus haut (Q4)"
+    },
+    "decalage_deg": {
+     "v": 137.5,
+     "unite": "deg",
+     "repere": "axe",
+     "methode": "hypothese",
+     "conf": "D",
+     "note": "spirale continue supposée (angle d'or) ; non mesuré (Q4)"
+    },
+    "differences": {
+     "v": "gardes : larges, obovales, plus longues, bord arrondi irrégulièrement crénelé, peu froissées ; cœur : pièces étroites, nombreuses, plus courtes, chiffonnées et frangées au bout, souvent d'un ton plus clair ou plus vif selon le coloris",
+     "methode": "oeil",
+     "photos": [
+      "pivoine-herbacee-double:d60fd5ad",
+      "pivoine-herbacee-double:448f5af8",
+      "pivoine-herbacee-double:26c402aa",
+      "pivoine-herbacee-double:b64db975"
+     ],
+     "conf": "C"
+    },
+    "profondeur_gorge": {
+     "v": 0.6,
+     "unite": "L",
+     "n": 1,
+     "methode": "regle",
+     "photos": [
+      "pivoine-herbacee-double:448f5af8"
+     ],
+     "conf": "C",
+     "note": "profil 96 : du bord de la soucoupe des gardes au réceptacle, rapporté à la longueur d'une garde ; la gorge est remplie par la boule du cœur, qui la dépasse ; fleur/volume.py non lancé à cette étape"
+    }
+   },
+   "contour": {
+    "base": "cunee",
+    "epaules": {
+     "v": "larges, arrondies, dans le dernier tiers",
+     "methode": "oeil",
+     "photos": [
+      "pivoine-herbacee-double:d60fd5ad",
+      "pivoine-herbacee-double:26c402aa"
+     ],
+     "conf": "C"
+    },
+    "pointe": {
+     "type": "arrondie",
+     "angle_deg": {
+      "v": null,
+      "methode": "hypothese",
+      "conf": "D",
+      "note": "non mesuré"
+     },
+     "recourbee": {
+      "v": false,
+      "methode": "oeil",
+      "photos": [
+       "pivoine-herbacee-double:448f5af8",
+       "pivoine-herbacee-double:d60fd5ad"
+      ],
+      "conf": "C"
+     },
+     "note": "bout arrondi, irrégulièrement échancré ou crénelé (2-4 petites encoches)"
+    },
+    "profil_largeur": {
+     "v": [
+      [
+       0,
+       0.1
+      ],
+      [
+       0.25,
+       0.24
+      ],
+      [
+       0.5,
+       0.36
+      ],
+      [
+       0.75,
+       0.42
+      ],
+      [
+       0.9,
+       0.38
+      ],
+      [
+       1,
+       0.2
+      ]
+     ],
+     "unite": "L",
+     "methode": "oeil",
+     "photos": [
+      "pivoine-herbacee-double:d60fd5ad",
+      "pivoine-herbacee-double:26c402aa"
+     ],
+     "conf": "C",
+     "note": "obovale, onglet court"
+    },
+    "vb": {
+     "v": 0.75,
+     "plage": [
+      0.65,
+      0.8
+     ],
+     "unite": "L",
+     "methode": "oeil",
+     "photos": [
+      "pivoine-herbacee-double:d60fd5ad",
+      "pivoine-herbacee-double:26c402aa"
+     ],
+     "conf": "C"
+    },
+    "L_sur_l": {
+     "v": 1.4,
+     "plage": [
+      1.3,
+      2.3
+     ],
+     "unite": "ratio",
+     "methode": "reference",
+     "conf": "B",
+     "ref": "Flora of China vol. 6 (2001), Paeoniaceae, Paeonia lactiflora Pallas (Hong De-Yuan, Pan Kai-Yu) : forme sauvage simple : pétales obovales 3,5-6 x 1,5-4,5 cm"
+    },
+    "asymetrie": {
+     "v": 0.1,
+     "plage": [
+      0,
+      0.2
+     ],
+     "unite": "ratio",
+     "methode": "oeil",
+     "photos": [
+      "pivoine-herbacee-double:d60fd5ad"
+     ],
+     "conf": "C"
+    },
+    "marge": {
+     "type": "crenelee",
+     "dents": {
+      "v": [
+       2,
+       4
+      ],
+      "unite": "n",
+      "methode": "oeil",
+      "photos": [
+       "pivoine-herbacee-double:d60fd5ad",
+       "pivoine-herbacee-double:26c402aa"
+      ],
+      "conf": "C"
+     },
+     "profondeur": {
+      "v": 0.04,
+      "unite": "L",
+      "methode": "oeil",
+      "photos": [
+       "pivoine-herbacee-double:d60fd5ad"
+      ],
+      "conf": "C"
+     }
+    }
+   },
+   "taille": {
+    "longueur": {
+     "v": 1.16,
+     "plage": [
+      1.0,
+      1.2
+     ],
+     "unite": "R0",
+     "n": 1,
+     "methode": "regle",
+     "photos": [
+      "pivoine-herbacee-double:448f5af8"
+     ],
+     "conf": "C",
+     "note": "profil 96 : du réceptacle au bout d'une garde latérale 140 px pour une demi-largeur de fleur de 121 px (pièce arquée : plus longue que le rayon)"
+    },
+    "longueur_cm": {
+     "v": 5,
+     "plage": [
+      3.5,
+      6
+     ],
+     "unite": "cm",
+     "methode": "reference",
+     "conf": "B",
+     "ref": "Flora of China vol. 6 (2001), Paeoniaceae, Paeonia lactiflora Pallas (Hong De-Yuan, Pan Kai-Yu) : forme sauvage simple (forme simple ; les gardes des doubles cultivées sont souvent plus grandes : Q2)"
+    },
+    "largeur": {
+     "v": 0.7,
+     "plage": [
+      0.45,
+      0.75
+     ],
+     "unite": "L",
+     "methode": "reference",
+     "conf": "B",
+     "ref": "Flora of China vol. 6 (2001), Paeoniaceae, Paeonia lactiflora Pallas (Hong De-Yuan, Pan Kai-Yu) : forme sauvage simple : 1,5-4,5 cm de large pour 3,5-6 cm de long"
+    }
+   },
+   "courbure": {
+    "longitudinale": {
+     "profil": "arquee",
+     "pied_deg": {
+      "v": 35,
+      "plage": [
+       25,
+       50
+      ],
+      "unite": "deg",
+      "repere": "plan",
+      "methode": "oeil",
+      "photos": [
+       "pivoine-herbacee-double:448f5af8",
+       "pivoine-herbacee-double:fc930ba8"
+      ],
+      "conf": "C",
+      "note": "les gardes montent du réceptacle en soucoupe"
+     },
+     "pointe_deg": {
+      "v": 0,
+      "plage": [
+       -15,
+       15
+      ],
+      "unite": "deg",
+      "repere": "plan",
+      "methode": "oeil",
+      "photos": [
+       "pivoine-herbacee-double:448f5af8",
+       "pivoine-herbacee-double:d60fd5ad"
+      ],
+      "conf": "C",
+      "note": "le bout s'étale à plat ou retombe un peu sur la fleur ouverte"
+     }
+    },
+    "transversale": {
+     "type": "creux",
+     "profondeur": {
+      "v": 0.15,
+      "plage": [
+       0.1,
+       0.25
+      ],
+      "unite": "L",
+      "methode": "oeil",
+      "photos": [
+       "pivoine-herbacee-double:fc930ba8",
+       "pivoine-herbacee-double:448f5af8"
+      ],
+      "conf": "C"
+     }
+    },
+    "torsion_deg": {
+     "v": 5,
+     "plage": [
+      0,
+      15
+     ],
+     "unite": "deg",
+     "repere": "piece",
+     "methode": "oeil",
+     "photos": [
+      "pivoine-herbacee-double:d60fd5ad"
+     ],
+     "conf": "C"
+    },
+    "ondulation": {
+     "n": {
+      "v": 2,
+      "plage": [
+       1,
+       3
+      ],
+      "unite": "n",
+      "methode": "oeil",
+      "photos": [
+       "pivoine-herbacee-double:d60fd5ad",
+       "pivoine-herbacee-double:26c402aa"
+      ],
+      "conf": "C"
+     },
+     "amplitude": {
+      "v": 0.04,
+      "unite": "L",
+      "methode": "oeil",
+      "photos": [
+       "pivoine-herbacee-double:d60fd5ad"
+      ],
+      "conf": "C"
+     }
+    }
+   },
+   "matiere": {
+    "epaisseur": {
+     "v": "moyenne",
+     "methode": "oeil",
+     "photos": [
+      "pivoine-herbacee-double:fc930ba8",
+      "pivoine-herbacee-double:d60fd5ad"
+     ],
+     "conf": "C"
+    },
+    "translucidite": {
+     "v": 0.25,
+     "plage": [
+      0.15,
+      0.4
+     ],
+     "methode": "oeil",
+     "photos": [
+      "pivoine-herbacee-double:fc930ba8",
+      "pivoine-herbacee-double:26c402aa"
+     ],
+     "conf": "C",
+     "note": "bord éclairé plus clair, sans transparence nette"
+    },
+    "texture": {
+     "v": "satin",
+     "methode": "oeil",
+     "photos": [
+      "pivoine-herbacee-double:fc930ba8",
+      "pivoine-herbacee-double:d60fd5ad"
+     ],
+     "conf": "C"
+    },
+    "brillance": {
+     "v": 0.3,
+     "plage": [
+      0.2,
+      0.4
+     ],
+     "methode": "oeil",
+     "photos": [
+      "pivoine-herbacee-double:fc930ba8",
+      "pivoine-herbacee-double:d60fd5ad"
+     ],
+     "conf": "C"
+    },
+    "grain": {
+     "v": "lisse",
+     "methode": "oeil",
+     "photos": [
+      "pivoine-herbacee-double:fc930ba8"
+     ],
+     "conf": "C"
+    }
+   },
+   "nervation": {
+    "type": "eventail",
+    "n": {
+     "v": 15,
+     "plage": [
+      10,
+      20
+     ],
+     "unite": "n",
+     "methode": "oeil",
+     "photos": [
+      "pivoine-herbacee-double:fc930ba8"
+     ],
+     "conf": "C"
+    },
+    "relief": "creux",
+    "visible": "face",
+    "fourches": {
+     "v": 2,
+     "plage": [
+      1,
+      3
+     ],
+     "unite": "n",
+     "methode": "oeil",
+     "photos": [
+      "pivoine-herbacee-double:fc930ba8"
+     ],
+     "conf": "C"
+    },
+    "couleur": "plus-sombre",
+    "note": "stries fines et serrées en éventail depuis l'onglet, à peine plus sombres, visibles surtout sur les coloris roses (121)"
+   },
+   "zones": [
+    {
+     "zone": "base",
+     "etendue": {
+      "v": [
+       0,
+       0.15
+      ],
+      "unite": "L",
+      "methode": "oeil",
+      "photos": [
+       "pivoine-herbacee-double:fc930ba8",
+       "pivoine-herbacee-double:d60fd5ad"
+      ],
+      "conf": "C",
+      "note": "le long de la pièce, base 0, pointe 1 ; en travers u = [0, 1]"
+     },
+     "motif": {
+      "type": "uni",
+      "densite": null,
+      "taille": null,
+      "direction": null
+     },
+     "bord": "fondu",
+     "source": {
+      "v": "onglet plus pâle ou plus vert que le corps",
+      "methode": "oeil",
+      "photos": [
+       "pivoine-herbacee-double:fc930ba8",
+       "pivoine-herbacee-double:d60fd5ad"
+      ],
+      "conf": "C"
+     }
+    },
+    {
+     "zone": "corps",
+     "etendue": {
+      "v": [
+       0.15,
+       0.85
+      ],
+      "unite": "L",
+      "methode": "oeil",
+      "conf": "C",
+      "note": "le long de la pièce, base 0, pointe 1 ; en travers u = [0, 1]"
+     },
+     "motif": {
+      "type": "stries",
+      "densite": "fine",
+      "taille": null,
+      "direction": "radiale"
+     },
+     "bord": "fondu"
+    },
+    {
+     "zone": "marge",
+     "etendue": {
+      "v": [
+       0.85,
+       1
+      ],
+      "unite": "L",
+      "methode": "oeil",
+      "photos": [
+       "pivoine-herbacee-double:bb1562fe",
+       "pivoine-herbacee-double:3587c6ce",
+       "pivoine-herbacee-double:fc930ba8"
+      ],
+      "conf": "C",
+      "note": "le long de la pièce, base 0, pointe 1 ; en travers u = [0, 1]"
+     },
+     "motif": {
+      "type": "uni",
+      "densite": null,
+      "taille": null,
+      "direction": null
+     },
+     "bord": "fondu",
+     "source": {
+      "v": "bord des gardes souvent plus pâle que le centre de la fleur (98, 97 : gardes presque blanches autour d'un cœur rose)",
+      "methode": "oeil",
+      "photos": [
+       "pivoine-herbacee-double:bb1562fe",
+       "pivoine-herbacee-double:3587c6ce",
+       "pivoine-herbacee-double:fc930ba8"
+      ],
+      "conf": "C"
+     }
+    }
+   ],
+   "jointures": [
+    {
+     "vers": "receptacle",
+     "type": "insertion",
+     "params": {
+      "hauteur": {
+       "v": 0,
+       "unite": "L",
+       "methode": "hypothese",
+       "conf": "D",
+       "note": "rang le plus bas (Q4)"
+      },
+      "onglet": {
+       "v": "court, à peine rétréci",
+       "methode": "oeil",
+       "photos": [
+        "pivoine-herbacee-double:d60fd5ad"
+       ],
+       "conf": "C"
+      }
+     }
+    }
+   ],
+   "stades": {
+    "bouton": {
+     "v": "gardes refermées en coque sur le cœur, cachées par les sépales sauf au sommet",
+     "methode": "oeil",
+     "photos": [
+      "pivoine-herbacee-double:51c94992",
+      "pivoine-herbacee-double:10786a4f",
+      "pivoine-herbacee-double:8328f74b"
+     ],
+     "conf": "C"
+    },
+    "gonfle": {
+     "v": "le sommet de la coque se colore et pointe entre les sépales qui s'écartent",
+     "methode": "oeil",
+     "photos": [
+      "pivoine-herbacee-double:51c94992",
+      "pivoine-herbacee-double:2d05d235"
+     ],
+     "conf": "C"
+    },
+    "entrouvert": {
+     "description": {
+      "v": "gardes en coupe profonde, bords repliés vers l'intérieur ; le cœur reste caché ou affleure",
+      "methode": "oeil",
+      "photos": [
+       "pivoine-herbacee-double:fc930ba8",
+       "pivoine-herbacee-double:98fc6d58"
+      ],
+      "conf": "C"
+     },
+     "silhouette_W_sur_H": {
+      "v": 1.08,
+      "plage": [
+       1.03,
+       1.08
+      ],
+      "unite": "ratio",
+      "n": 2,
+      "methode": "segmente",
+      "photos": [
+       "pivoine-herbacee-double:fc930ba8"
+      ],
+      "conf": "C",
+      "note": "fit.py targets entrouverte.wh 1.0815 ; organ.py head 304 x 294 px ; 121 est un hybride (Q5)"
+     },
+     "angle_flancs": {
+      "v": -8.4,
+      "unite": "deg",
+      "repere": "axe",
+      "n": 1,
+      "methode": "segmente",
+      "photos": [
+       "pivoine-herbacee-double:fc930ba8"
+      ],
+      "conf": "C",
+      "note": "fit.py targets entrouverte.ang ; repère supposé : flancs de la silhouette par rapport à l'axe, négatif = coupe qui se referme vers le haut"
+     }
+    },
+    "ouvert": {
+     "description": {
+      "v": "gardes ouvertes en soucoupe, à peu près horizontales au bout ; la boule du cœur les dépasse vers le haut",
+      "methode": "oeil",
+      "photos": [
+       "pivoine-herbacee-double:448f5af8",
+       "pivoine-herbacee-double:b64db975",
+       "pivoine-herbacee-double:4ca7a487"
+      ],
+      "conf": "C"
+     },
+     "silhouette_W_sur_H": {
+      "v": 1.76,
+      "plage": [
+       1.71,
+       1.78
+      ],
+      "unite": "ratio",
+      "n": 3,
+      "methode": "segmente",
+      "photos": [
+       "pivoine-herbacee-double:448f5af8"
+      ],
+      "conf": "B",
+      "note": "fit.py targets ouverte.wh 1.7843 ; organ.py head 238 x 137 px (1,74) ; règle sur agrandissement 242 x 142 px (1,71)"
+     },
+     "angle_flancs": {
+      "v": 8.1,
+      "unite": "deg",
+      "repere": "axe",
+      "n": 1,
+      "methode": "segmente",
+      "photos": [
+       "pivoine-herbacee-double:448f5af8"
+      ],
+      "conf": "C",
+      "note": "fit.py targets ouverte.ang ; repère supposé : flancs de la silhouette par rapport à l'axe (s'évase vers le haut)"
+     }
+    },
+    "plein": {
+     "v": "gardes rabattues sous l'horizontale, la tête devient une boule bombée plus large que haute",
+     "methode": "oeil",
+     "photos": [
+      "pivoine-herbacee-double:d60fd5ad",
+      "pivoine-herbacee-double:26c402aa",
+      "pivoine-herbacee-double:4913d031"
+     ],
+     "conf": "C"
+    },
+    "declin": {
+     "v": "les gardes pâlissent, ramollissent et pendent ; le bord brunit",
+     "methode": "reference",
+     "conf": "C",
+     "ref": "catalogue/fanaison/fanaison.json, pivoine-herbacee-double (tenue en vase 5-7 jours ; chute des pétales en masse, tête lourde qui peut pencher)"
+    },
+    "fane": {
+     "v": "les pétales tombent presque tous d'un coup ; il reste le réceptacle, les sépales et les carpelles",
+     "methode": "reference",
+     "conf": "C",
+     "ref": "catalogue/fanaison/fanaison.json, pivoine-herbacee-double (tenue en vase 5-7 jours ; chute des pétales en masse, tête lourde qui peut pencher)"
+    }
+   }
+  },
+  "petale.coeur": {
+   "role": "perianthe",
+   "note": "Pétaloïdes du cœur : étamines changées en pétales, en boule serrée au-dessus des gardes ; c'est ce qui fait la fleur double. Les plus jeunes, au centre, sont plus courts et forment une couronne un peu creusée.",
+   "nombre": {
+    "v": 60,
+    "plage": [
+     40,
+     100
+    ],
+    "unite": "n",
+    "methode": "hypothese",
+    "conf": "D",
+    "note": "aucun comptage possible sur les vues gardées (Q1)"
+   },
+   "disposition": {
+    "type": "spirale",
+    "verticilles": {
+     "v": "nombreux rangs serrés, sans limite nette",
+     "methode": "oeil",
+     "photos": [
+      "pivoine-herbacee-double:d60fd5ad",
+      "pivoine-herbacee-double:26c402aa"
+     ],
+     "conf": "C"
+    },
+    "recouvrement": {
+     "v": 0.6,
+     "plage": [
+      0.5,
+      0.8
+     ],
+     "unite": "ratio",
+     "methode": "oeil",
+     "photos": [
+      "pivoine-herbacee-double:d60fd5ad",
+      "pivoine-herbacee-double:26c402aa"
+     ],
+     "conf": "C"
+    },
+    "ordre": {
+     "v": "insérés plus haut et en dedans des gardes ; du dehors vers le centre les pièces raccourcissent et se redressent, les centrales se courbent vers l'axe",
+     "methode": "oeil",
+     "photos": [
+      "pivoine-herbacee-double:448f5af8",
+      "pivoine-herbacee-double:d60fd5ad"
+     ],
+     "conf": "C"
+    },
+    "insertion": {
+     "v": [
+      0.05,
+      0.15
+     ],
+     "unite": "L",
+     "methode": "hypothese",
+     "conf": "D",
+     "note": "au-dessus des gardes sur le réceptacle bombé (Q4)"
+    },
+    "decalage_deg": {
+     "suit": "petale.garde.disposition.decalage_deg"
+    },
+    "differences": {
+     "suit": "petale.garde.disposition.differences"
+    },
+    "hauteur_au_dessus_des_gardes": {
+     "v": 0.41,
+     "unite": "ratio",
+     "n": 1,
+     "methode": "regle",
+     "photos": [
+      "pivoine-herbacee-double:448f5af8"
+     ],
+     "conf": "C",
+     "note": "profil 96 : la couronne du cœur dépasse le bord de la soucoupe des gardes de 0,41 fois la hauteur de la tête"
+    }
+   },
+   "contour": {
+    "base": "onglet",
+    "pointe": {
+     "type": "echancree",
+     "recourbee": {
+      "v": true,
+      "methode": "oeil",
+      "photos": [
+       "pivoine-herbacee-double:d60fd5ad",
+       "pivoine-herbacee-double:448f5af8"
+      ],
+      "conf": "C"
+     },
+     "note": "bout déchiqueté ou frangé, souvent replié vers le centre"
+    },
+    "profil_largeur": {
+     "v": [
+      [
+       0,
+       0.06
+      ],
+      [
+       0.3,
+       0.12
+      ],
+      [
+       0.6,
+       0.18
+      ],
+      [
+       0.85,
+       0.2
+      ],
+      [
+       1,
+       0.12
+      ]
+     ],
+     "unite": "L",
+     "methode": "oeil",
+     "photos": [
+      "pivoine-herbacee-double:d60fd5ad",
+      "pivoine-herbacee-double:26c402aa"
+     ],
+     "conf": "C",
+     "note": "spatulé, étroit"
+    },
+    "vb": {
+     "v": 0.8,
+     "plage": [
+      0.7,
+      0.9
+     ],
+     "unite": "L",
+     "methode": "oeil",
+     "photos": [
+      "pivoine-herbacee-double:d60fd5ad"
+     ],
+     "conf": "C"
+    },
+    "L_sur_l": {
+     "v": 3,
+     "plage": [
+      2,
+      5
+     ],
+     "unite": "ratio",
+     "methode": "oeil",
+     "photos": [
+      "pivoine-herbacee-double:d60fd5ad",
+      "pivoine-herbacee-double:26c402aa",
+      "pivoine-herbacee-double:b64db975"
+     ],
+     "conf": "C"
+    },
+    "marge": {
+     "type": "frangee",
+     "dents": {
+      "v": [
+       3,
+       8
+      ],
+      "unite": "n",
+      "methode": "oeil",
+      "photos": [
+       "pivoine-herbacee-double:d60fd5ad"
+      ],
+      "conf": "C"
+     },
+     "profondeur": {
+      "v": 0.08,
+      "unite": "L",
+      "methode": "oeil",
+      "photos": [
+       "pivoine-herbacee-double:d60fd5ad"
+      ],
+      "conf": "C"
+     }
+    }
+   },
+   "taille": {
+    "longueur": {
+     "v": 0.6,
+     "plage": [
+      0.35,
+      0.8
+     ],
+     "unite": "R0",
+     "methode": "oeil",
+     "photos": [
+      "pivoine-herbacee-double:448f5af8",
+      "pivoine-herbacee-double:d60fd5ad"
+     ],
+     "conf": "C",
+     "note": "du réceptacle au bout ; les centraux sont les plus courts"
+    },
+    "largeur_boule": {
+     "v": 0.75,
+     "plage": [
+      0.6,
+      0.8
+     ],
+     "unite": "D",
+     "methode": "oeil",
+     "photos": [
+      "pivoine-herbacee-double:448f5af8",
+      "pivoine-herbacee-double:d60fd5ad"
+     ],
+     "conf": "C",
+     "note": "largeur de la boule du cœur sur la largeur de la fleur"
+    }
+   },
+   "courbure": {
+    "longitudinale": {
+     "profil": "en-S",
+     "pied_deg": {
+      "v": 70,
+      "plage": [
+       50,
+       85
+      ],
+      "unite": "deg",
+      "repere": "plan",
+      "methode": "oeil",
+      "photos": [
+       "pivoine-herbacee-double:448f5af8"
+      ],
+      "conf": "C"
+     },
+     "pointe_deg": {
+      "v": -30,
+      "plage": [
+       -60,
+       0
+      ],
+      "unite": "deg",
+      "repere": "plan",
+      "methode": "oeil",
+      "photos": [
+       "pivoine-herbacee-double:448f5af8",
+       "pivoine-herbacee-double:d60fd5ad"
+      ],
+      "conf": "C",
+      "note": "le bout se replie vers l'axe"
+     }
+    },
+    "transversale": {
+     "type": "gouttiere",
+     "profondeur": {
+      "v": 0.25,
+      "unite": "L",
+      "methode": "oeil",
+      "photos": [
+       "pivoine-herbacee-double:d60fd5ad"
+      ],
+      "conf": "C"
+     }
+    },
+    "torsion_deg": {
+     "v": 20,
+     "plage": [
+      0,
+      45
+     ],
+     "unite": "deg",
+     "repere": "piece",
+     "methode": "oeil",
+     "photos": [
+      "pivoine-herbacee-double:d60fd5ad"
+     ],
+     "conf": "C"
+    },
+    "ondulation": {
+     "n": {
+      "v": 4,
+      "plage": [
+       2,
+       6
+      ],
+      "unite": "n",
+      "methode": "oeil",
+      "photos": [
+       "pivoine-herbacee-double:d60fd5ad",
+       "pivoine-herbacee-double:26c402aa"
+      ],
+      "conf": "C"
+     },
+     "amplitude": {
+      "v": 0.1,
+      "unite": "L",
+      "methode": "oeil",
+      "photos": [
+       "pivoine-herbacee-double:d60fd5ad"
+      ],
+      "conf": "C"
+     }
+    }
+   },
+   "matiere": {
+    "epaisseur": {
+     "v": "fine",
+     "methode": "oeil",
+     "photos": [
+      "pivoine-herbacee-double:d60fd5ad",
+      "pivoine-herbacee-double:26c402aa"
+     ],
+     "conf": "C"
+    },
+    "translucidite": {
+     "v": 0.3,
+     "methode": "oeil",
+     "photos": [
+      "pivoine-herbacee-double:26c402aa"
+     ],
+     "conf": "C"
+    },
+    "texture": {
+     "v": "papier-froisse",
+     "methode": "oeil",
+     "photos": [
+      "pivoine-herbacee-double:d60fd5ad",
+      "pivoine-herbacee-double:26c402aa"
+     ],
+     "conf": "C"
+    },
+    "brillance": {
+     "v": 0.25,
+     "methode": "oeil",
+     "photos": [
+      "pivoine-herbacee-double:d60fd5ad"
+     ],
+     "conf": "C"
+    },
+    "grain": {
+     "v": "lisse",
+     "methode": "oeil",
+     "photos": [
+      "pivoine-herbacee-double:d60fd5ad"
+     ],
+     "conf": "C"
+    }
+   },
+   "nervation": {
+    "type": "eventail",
+    "relief": "plat",
+    "visible": "contre-jour",
+    "couleur": "plus-sombre"
+   },
+   "zones": [
+    {
+     "zone": "corps",
+     "etendue": {
+      "v": [
+       0,
+       0.8
+      ],
+      "unite": "L",
+      "methode": "oeil",
+      "conf": "C",
+      "note": "le long de la pièce, base 0, pointe 1 ; en travers u = [0, 1]"
+     },
+     "motif": {
+      "type": "uni",
+      "densite": null,
+      "taille": null,
+      "direction": null
+     },
+     "bord": "fondu"
+    },
+    {
+     "zone": "pointe",
+     "etendue": {
+      "v": [
+       0.8,
+       1
+      ],
+      "unite": "L",
+      "methode": "oeil",
+      "photos": [
+       "pivoine-herbacee-double:d60fd5ad",
+       "pivoine-herbacee-double:b64db975"
+      ],
+      "conf": "C",
+      "note": "le long de la pièce, base 0, pointe 1 ; en travers u = [0, 1]"
+     },
+     "motif": {
+      "type": "uni",
+      "densite": null,
+      "taille": null,
+      "direction": null
+     },
+     "bord": "fondu",
+     "source": {
+      "v": "bouts du cœur souvent plus clairs ou plus vifs que leur base (106 : bouts rose clair sur un fond carmin)",
+      "methode": "oeil",
+      "photos": [
+       "pivoine-herbacee-double:d60fd5ad",
+       "pivoine-herbacee-double:b64db975"
+      ],
+      "conf": "C"
+     }
+    },
+    {
+     "zone": "macule",
+     "etendue": {
+      "v": [
+       0.6,
+       1
+      ],
+      "unite": "L",
+      "methode": "hypothese",
+      "conf": "D",
+      "note": "le long de la pièce, base 0, pointe 1 ; en travers u = [0.3, 0.7]"
+     },
+     "motif": {
+      "type": "flammes",
+      "densite": "rare",
+      "taille": null,
+      "direction": "radiale"
+     },
+     "bord": "net",
+     "source": {
+      "v": "flammèches carmin sur quelques pétaloïdes du centre, selon le coloris seulement (varietes la-perle, madame-emile-debatene)",
+      "methode": "hypothese",
+      "conf": "D",
+      "note": "Q9"
+     }
+    }
+   ],
+   "jointures": [
+    {
+     "vers": "receptacle",
+     "type": "insertion",
+     "params": {
+      "hauteur": {
+       "v": [
+        0.05,
+        0.15
+       ],
+       "unite": "L",
+       "methode": "hypothese",
+       "conf": "D",
+       "note": "Q4"
+      }
+     }
+    }
+   ],
+   "stades": {
+    "bouton": {
+     "v": "serré, caché dans la coque des gardes",
+     "methode": "oeil",
+     "photos": [
+      "pivoine-herbacee-double:51c94992",
+      "pivoine-herbacee-double:2d05d235"
+     ],
+     "conf": "C"
+    },
+    "gonfle": {
+     "v": "caché",
+     "methode": "oeil",
+     "photos": [
+      "pivoine-herbacee-double:51c94992"
+     ],
+     "conf": "C"
+    },
+    "entrouvert": {
+     "v": "affleure au fond de la coupe ou reste caché ; quelques étamines dorées visibles chez les semi-doubles (121, 138)",
+     "methode": "oeil",
+     "photos": [
+      "pivoine-herbacee-double:fc930ba8",
+      "pivoine-herbacee-double:98fc6d58"
+     ],
+     "conf": "C"
+    },
+    "ouvert": {
+     "v": "boule serrée qui dépasse les gardes, couronne centrale légèrement creusée",
+     "methode": "oeil",
+     "photos": [
+      "pivoine-herbacee-double:448f5af8",
+      "pivoine-herbacee-double:b64db975",
+      "pivoine-herbacee-double:d60fd5ad"
+     ],
+     "conf": "C"
+    },
+    "plein": {
+     "v": "la boule gonfle et s'aplatit au sommet ; les pièces se desserrent",
+     "methode": "oeil",
+     "photos": [
+      "pivoine-herbacee-double:d60fd5ad",
+      "pivoine-herbacee-double:26c402aa",
+      "pivoine-herbacee-double:4913d031"
+     ],
+     "conf": "C"
+    },
+    "declin": {
+     "v": "pétaloïdes pâlis, bouts brunis, la boule s'affaisse",
+     "methode": "reference",
+     "conf": "C",
+     "ref": "catalogue/fanaison/fanaison.json, pivoine-herbacee-double (tenue en vase 5-7 jours ; chute des pétales en masse, tête lourde qui peut pencher)"
+    },
+    "fane": {
+     "v": "tombent avec les gardes ; découvrent les carpelles",
+     "methode": "reference",
+     "conf": "C",
+     "ref": "catalogue/fanaison/fanaison.json, pivoine-herbacee-double (tenue en vase 5-7 jours ; chute des pétales en masse, tête lourde qui peut pencher)"
+    }
+   }
+  },
+  "coeur.etamines": {
+   "role": "coeur",
+   "note": "Étamines restantes : rares ou absentes chez une double pleine ; quelques-unes, jaune d'or, chez les semi-doubles et entre les pétaloïdes.",
+   "nombre": {
+    "v": 0,
+    "plage": [
+     0,
+     30
+    ],
+    "unite": "n",
+    "methode": "oeil",
+    "photos": [
+     "pivoine-herbacee-double:d60fd5ad",
+     "pivoine-herbacee-double:26c402aa",
+     "pivoine-herbacee-double:98fc6d58"
+    ],
+    "conf": "C",
+    "note": "0 sur les doubles pleines, une couronne dorée chez les semi-doubles (138)"
+   },
+   "disposition": {
+    "type": "spirale",
+    "ordre": {
+     "v": "entre les gardes et les pétaloïdes ou mêlées aux pétaloïdes",
+     "methode": "oeil",
+     "photos": [
+      "pivoine-herbacee-double:98fc6d58",
+      "pivoine-herbacee-double:fc930ba8"
+     ],
+     "conf": "C"
+    }
+   },
+   "contour": {
+    "v": "filet court, anthère linéaire jaune",
+    "methode": "reference",
+    "conf": "B",
+    "ref": "Flora of China vol. 6 (2001), Paeoniaceae, Paeonia lactiflora Pallas (Hong De-Yuan, Pan Kai-Yu) : forme sauvage simple : filets 0,7-1,2 cm, anthères jaunes"
+   },
+   "taille": {
+    "v": 0.15,
+    "plage": [
+     0.1,
+     0.25
+    ],
+    "unite": "R0",
+    "methode": "oeil",
+    "photos": [
+     "pivoine-herbacee-double:98fc6d58"
+    ],
+    "conf": "C"
+   },
+   "matiere": {
+    "v": "fine",
+    "methode": "oeil",
+    "photos": [
+     "pivoine-herbacee-double:98fc6d58"
+    ],
+    "conf": "C"
+   },
+   "zones": [
+    {
+     "zone": "corps",
+     "etendue": {
+      "v": [
+       0,
+       1
+      ],
+      "unite": "L",
+      "methode": "oeil",
+      "conf": "C",
+      "note": "le long de la pièce, base 0, pointe 1 ; en travers u = [0, 1]"
+     },
+     "motif": {
+      "type": "uni",
+      "densite": null,
+      "taille": null,
+      "direction": null
+     },
+     "bord": "net"
+    }
+   ],
+   "jointures": [
+    {
+     "vers": "receptacle",
+     "type": "insertion",
+     "params": {
+      "hauteur": {
+       "v": null,
+       "methode": "hypothese",
+       "conf": "D",
+       "note": "Q4"
+      }
+     }
+    }
+   ],
+   "stades": {
+    "ouvert": {
+     "v": "visibles seulement chez les semi-doubles",
+     "methode": "oeil",
+     "photos": [
+      "pivoine-herbacee-double:98fc6d58"
+     ],
+     "conf": "C"
+    },
+    "declin": {
+     "v": "brunissent",
+     "methode": "reference",
+     "conf": "C",
+     "ref": "catalogue/fanaison/fanaison.json, pivoine-herbacee-double (tenue en vase 5-7 jours ; chute des pétales en masse, tête lourde qui peut pencher)"
+    }
+   }
+  },
+  "coeur.carpelles": {
+   "role": "coeur",
+   "note": "Carpelles : au centre, cachés par la boule du cœur tant que les pétales tiennent ; visibles au fané.",
+   "nombre": {
+    "v": 4,
+    "plage": [
+     2,
+     5
+    ],
+    "unite": "n",
+    "methode": "reference",
+    "conf": "B",
+    "ref": "Flora of China vol. 6 (2001), Paeoniaceae, Paeonia lactiflora Pallas (Hong De-Yuan, Pan Kai-Yu) : forme sauvage simple : carpelles 2-5"
+   },
+   "disposition": {
+    "type": "verticilles",
+    "ordre": {
+     "v": "au centre du réceptacle, serrés, pointes recourbées vers l'extérieur",
+     "methode": "reference",
+     "conf": "B",
+     "ref": "Flora of China vol. 6 (2001), Paeoniaceae, Paeonia lactiflora Pallas (Hong De-Yuan, Pan Kai-Yu) : forme sauvage simple"
+    }
+   },
+   "contour": {
+    "v": "follicule ovoïde vert, bec court terminé par un stigmate recourbé rouge pourpre",
+    "methode": "reference",
+    "conf": "B",
+    "ref": "Flora of China vol. 6 (2001), Paeoniaceae, Paeonia lactiflora Pallas (Hong De-Yuan, Pan Kai-Yu) : forme sauvage simple ; stigmate : Q3"
+   },
+   "taille": {
+    "v": 0.15,
+    "unite": "R0",
+    "methode": "hypothese",
+    "conf": "D",
+    "note": "caché à l'ouverture ; non mesuré"
+   },
+   "matiere": {
+    "v": "glabres (lisses) chez P. lactiflora",
+    "methode": "reference",
+    "conf": "B",
+    "ref": "Flora of China vol. 6 (2001), Paeoniaceae, Paeonia lactiflora Pallas (Hong De-Yuan, Pan Kai-Yu) : forme sauvage simple : carpelles glabres ; le texte de app/y-paeonia.js les dit feutrés (Q3)"
+   },
+   "zones": [
+    {
+     "zone": "corps",
+     "etendue": {
+      "v": [
+       0,
+       0.85
+      ],
+      "unite": "L",
+      "methode": "oeil",
+      "conf": "C",
+      "note": "le long de la pièce, base 0, pointe 1 ; en travers u = [0, 1]"
+     },
+     "motif": {
+      "type": "uni",
+      "densite": null,
+      "taille": null,
+      "direction": null
+     },
+     "bord": "net"
+    },
+    {
+     "zone": "pointe",
+     "etendue": {
+      "v": [
+       0.85,
+       1
+      ],
+      "unite": "L",
+      "methode": "oeil",
+      "conf": "C",
+      "note": "le long de la pièce, base 0, pointe 1 ; en travers u = [0, 1]"
+     },
+     "motif": {
+      "type": "uni",
+      "densite": null,
+      "taille": null,
+      "direction": null
+     },
+     "bord": "net"
+    }
+   ],
+   "jointures": [
+    {
+     "vers": "receptacle",
+     "type": "insertion",
+     "params": {
+      "hauteur": {
+       "v": null,
+       "methode": "hypothese",
+       "conf": "D",
+       "note": "Q4"
+      }
+     }
+    }
+   ],
+   "stades": {
+    "ouvert": {
+     "v": "cachés",
+     "methode": "oeil",
+     "photos": [
+      "pivoine-herbacee-double:d60fd5ad",
+      "pivoine-herbacee-double:448f5af8"
+     ],
+     "conf": "C"
+    },
+    "fane": {
+     "v": "visibles une fois les pétales tombés",
+     "methode": "reference",
+     "conf": "C",
+     "ref": "catalogue/fanaison/fanaison.json, pivoine-herbacee-double (tenue en vase 5-7 jours ; chute des pétales en masse, tête lourde qui peut pencher)"
+    }
+   }
+  },
+  "calice": {
+   "role": "calice",
+   "note": "Sépales : charnus, verts, en cuvette sous la fleur, serrés autour du bouton.",
+   "nombre": {
+    "v": 4,
+    "plage": [
+     4,
+     5
+    ],
+    "unite": "n",
+    "methode": "reference",
+    "conf": "B",
+    "ref": "Flora of China vol. 6 (2001), Paeoniaceae, Paeonia lactiflora Pallas (Hong De-Yuan, Pan Kai-Yu) : forme sauvage simple : sépales 4, largement ovés"
+   },
+   "disposition": {
+    "type": "spirale",
+    "recouvrement": {
+     "v": 0.3,
+     "unite": "ratio",
+     "methode": "oeil",
+     "photos": [
+      "pivoine-herbacee-double:51c94992",
+      "pivoine-herbacee-double:10786a4f"
+     ],
+     "conf": "C"
+    },
+    "ordre": {
+     "v": "à l'extérieur des gardes, sous elles ; en bouton, ils embrassent la base de la coque",
+     "methode": "oeil",
+     "photos": [
+      "pivoine-herbacee-double:51c94992",
+      "pivoine-herbacee-double:10786a4f"
+     ],
+     "conf": "C"
+    }
+   },
+   "contour": {
+    "base": "tronquee",
+    "pointe": {
+     "type": "arrondie",
+     "note": "largement arrondis ; les plus externes peuvent finir en petite pointe foliacée"
+    },
+    "L_sur_l": {
+     "v": 1,
+     "plage": [
+      0.8,
+      1.2
+     ],
+     "unite": "ratio",
+     "methode": "reference",
+     "conf": "B",
+     "ref": "Flora of China vol. 6 (2001), Paeoniaceae, Paeonia lactiflora Pallas (Hong De-Yuan, Pan Kai-Yu) : forme sauvage simple : sépales largement ovés"
+    },
+    "marge": {
+     "type": "entiere"
+    }
+   },
+   "taille": {
+    "longueur_cm": {
+     "v": 1.25,
+     "plage": [
+      1,
+      1.5
+     ],
+     "unite": "cm",
+     "methode": "reference",
+     "conf": "B",
+     "ref": "Flora of China vol. 6 (2001), Paeoniaceae, Paeonia lactiflora Pallas (Hong De-Yuan, Pan Kai-Yu) : forme sauvage simple"
+    },
+    "rapport_bouton": {
+     "v": 0.45,
+     "plage": [
+      0.35,
+      0.55
+     ],
+     "unite": "ratio",
+     "methode": "oeil",
+     "photos": [
+      "pivoine-herbacee-double:51c94992"
+     ],
+     "conf": "C",
+     "note": "hauteur couverte par les sépales sur la hauteur du bouton"
+    }
+   },
+   "matiere": {
+    "epaisseur": {
+     "v": "epaisse",
+     "methode": "oeil",
+     "photos": [
+      "pivoine-herbacee-double:51c94992",
+      "pivoine-herbacee-double:10786a4f"
+     ],
+     "conf": "C"
+    },
+    "texture": {
+     "v": "cuir",
+     "methode": "oeil",
+     "photos": [
+      "pivoine-herbacee-double:51c94992"
+     ],
+     "conf": "C"
+    },
+    "brillance": {
+     "v": 0.35,
+     "methode": "oeil",
+     "photos": [
+      "pivoine-herbacee-double:51c94992"
+     ],
+     "conf": "C"
+    },
+    "couleur": {
+     "v": [
+      "#35480d",
+      "#546b24",
+      "#6e8b3c",
+      "#8aaa5f"
+     ],
+     "unite": "hex",
+     "methode": "oeil",
+     "photos": [
+      "pivoine-herbacee-double:51c94992"
+     ],
+     "conf": "C",
+     "note": "palette refs.py pal 0,2-0,8 de 80 (brief) ; la zone mêle sépales, tige et feuilles"
+    }
+   },
+   "zones": [
+    {
+     "zone": "corps",
+     "etendue": {
+      "v": [
+       0,
+       0.85
+      ],
+      "unite": "L",
+      "methode": "oeil",
+      "conf": "C",
+      "note": "le long de la pièce, base 0, pointe 1 ; en travers u = [0, 1]"
+     },
+     "motif": {
+      "type": "uni",
+      "densite": null,
+      "taille": null,
+      "direction": null
+     },
+     "bord": "fondu"
+    },
+    {
+     "zone": "marge",
+     "etendue": {
+      "v": [
+       0.85,
+       1
+      ],
+      "unite": "L",
+      "methode": "oeil",
+      "photos": [
+       "pivoine-herbacee-double:51c94992",
+       "pivoine-herbacee-double:10786a4f"
+      ],
+      "conf": "C",
+      "note": "le long de la pièce, base 0, pointe 1 ; en travers u = [0, 1]"
+     },
+     "motif": {
+      "type": "liseré",
+      "densite": null,
+      "taille": null,
+      "direction": null
+     },
+     "bord": "fondu",
+     "source": {
+      "v": "bord rougeâtre à pourpre",
+      "methode": "oeil",
+      "photos": [
+       "pivoine-herbacee-double:51c94992",
+       "pivoine-herbacee-double:10786a4f"
+      ],
+      "conf": "C"
+     }
+    }
+   ],
+   "jointures": [
+    {
+     "vers": "receptacle",
+     "type": "insertion",
+     "params": {
+      "hauteur": {
+       "v": -0.05,
+       "unite": "L",
+       "methode": "hypothese",
+       "conf": "D",
+       "note": "sous les gardes"
+      }
+     }
+    }
+   ],
+   "stades": {
+    "bouton": {
+     "v": "serrés autour de la coque, couvrent près de la moitié inférieure",
+     "methode": "oeil",
+     "photos": [
+      "pivoine-herbacee-double:51c94992",
+      "pivoine-herbacee-double:10786a4f"
+     ],
+     "conf": "C"
+    },
+    "ouvert": {
+     "v": "étalés ou réfléchis sous les gardes, à peine visibles de face",
+     "methode": "oeil",
+     "photos": [
+      "pivoine-herbacee-double:448f5af8"
+     ],
+     "conf": "C"
+    },
+    "fane": {
+     "v": "restent, verts, autour des carpelles",
+     "methode": "reference",
+     "conf": "C",
+     "ref": "catalogue/fanaison/fanaison.json, pivoine-herbacee-double (tenue en vase 5-7 jours ; chute des pétales en masse, tête lourde qui peut pencher)"
+    }
+   }
+  },
+  "bractee": {
+   "role": "bractee",
+   "note": "Bractées foliacées sous le calice : lancéolées, inégales, une ou deux plus longues que le bouton.",
+   "nombre": {
+    "v": 4,
+    "plage": [
+     3,
+     5
+    ],
+    "unite": "n",
+    "methode": "reference",
+    "conf": "B",
+    "ref": "Flora of China vol. 6 (2001), Paeoniaceae, Paeonia lactiflora Pallas (Hong De-Yuan, Pan Kai-Yu) : forme sauvage simple : bractées 4-5, lancéolées, inégales"
+   },
+   "disposition": {
+    "type": "spirale",
+    "ordre": {
+     "v": "à l'extérieur des sépales, écartées du bouton",
+     "methode": "oeil",
+     "photos": [
+      "pivoine-herbacee-double:51c94992",
+      "pivoine-herbacee-double:448f5af8"
+     ],
+     "conf": "C"
+    }
+   },
+   "contour": {
+    "base": "arrondie",
+    "pointe": {
+     "type": "acuminee"
+    },
+    "L_sur_l": {
+     "v": 4,
+     "plage": [
+      3,
+      6
+     ],
+     "unite": "ratio",
+     "methode": "oeil",
+     "photos": [
+      "pivoine-herbacee-double:51c94992"
+     ],
+     "conf": "C"
+    },
+    "marge": {
+     "type": "entiere"
+    }
+   },
+   "taille": {
+    "longueur_sur_bouton": {
+     "v": 1.26,
+     "unite": "ratio",
+     "n": 1,
+     "methode": "regle",
+     "photos": [
+      "pivoine-herbacee-double:51c94992"
+     ],
+     "conf": "C",
+     "note": "80 : bractée de droite 167 px (de (300,190) à (465,215)) pour un bouton large de 133 px ; les autres plus courtes"
+    }
+   },
+   "courbure": {
+    "longitudinale": {
+     "profil": "arquee",
+     "pied_deg": {
+      "v": 30,
+      "plage": [
+       15,
+       60
+      ],
+      "unite": "deg",
+      "repere": "tige",
+      "methode": "oeil",
+      "photos": [
+       "pivoine-herbacee-double:51c94992"
+      ],
+      "conf": "C"
+     }
+    }
+   },
+   "matiere": {
+    "suit": "feuille.matiere"
+   },
+   "nervation": {
+    "type": "pennee",
+    "relief": "creux",
+    "visible": "face",
+    "couleur": "plus-claire"
+   },
+   "zones": [
+    {
+     "zone": "corps",
+     "etendue": {
+      "v": [
+       0,
+       1
+      ],
+      "unite": "L",
+      "methode": "oeil",
+      "conf": "C",
+      "note": "le long de la pièce, base 0, pointe 1 ; en travers u = [0, 1]"
+     },
+     "motif": {
+      "type": "uni",
+      "densite": null,
+      "taille": null,
+      "direction": null
+     },
+     "bord": "fondu"
+    }
+   ],
+   "jointures": [
+    {
+     "vers": "pedicelle",
+     "type": "insertion",
+     "params": {
+      "hauteur": {
+       "v": "juste sous le calice",
+       "methode": "oeil",
+       "photos": [
+        "pivoine-herbacee-double:51c94992"
+       ],
+       "conf": "C"
+      }
+     }
+    }
+   ],
+   "stades": {
+    "ouvert": {
+     "v": "inchangées, cachées sous les gardes de face",
+     "methode": "oeil",
+     "photos": [
+      "pivoine-herbacee-double:448f5af8"
+     ],
+     "conf": "C"
+    },
+    "fane": {
+     "v": "jaunissent avec les feuilles",
+     "methode": "reference",
+     "conf": "C",
+     "ref": "catalogue/fanaison/fanaison.json, pivoine-herbacee-double (tenue en vase 5-7 jours ; chute des pétales en masse, tête lourde qui peut pencher)"
+    }
+   }
+  },
+  "receptacle": {
+   "role": "receptacle",
+   "taille": {
+    "v": 0.12,
+    "unite": "R0",
+    "methode": "hypothese",
+    "conf": "D",
+    "note": "disque charnu caché ; non mesuré"
+   },
+   "matiere": {
+    "v": "epaisse",
+    "methode": "hypothese",
+    "conf": "D"
+   },
+   "zones": [
+    {
+     "zone": "corps",
+     "etendue": {
+      "v": [
+       0,
+       1
+      ],
+      "unite": "L",
+      "methode": "oeil",
+      "conf": "C",
+      "note": "le long de la pièce, base 0, pointe 1 ; en travers u = [0, 1]"
+     },
+     "motif": {
+      "type": "uni",
+      "densite": null,
+      "taille": null,
+      "direction": null
+     },
+     "bord": "fondu"
+    }
+   ],
+   "jointures": [
+    {
+     "vers": "pedicelle",
+     "type": "col",
+     "params": {
+      "epaississement": {
+       "v": 2.0,
+       "unite": "ratio",
+       "n": 1,
+       "methode": "regle",
+       "photos": [
+        "pivoine-herbacee-double:448f5af8"
+       ],
+       "conf": "C",
+       "note": "96 : tige large de 17 px sous la tête contre environ 8,5 px plus bas (0,035 de la fleur, fit.py targets)"
+      }
+     }
+    }
+   ],
+   "stades": {
+    "fane": {
+     "v": "visible avec les sépales et les carpelles",
+     "methode": "reference",
+     "conf": "C",
+     "ref": "catalogue/fanaison/fanaison.json, pivoine-herbacee-double (tenue en vase 5-7 jours ; chute des pétales en masse, tête lourde qui peut pencher)"
+    }
+   }
+  },
+  "bouton": {
+   "role": "bouton",
+   "note": "Bouton : boule ferme, presque sphérique, serrée dans les sépales ; la couleur du coloris paraît d'abord au sommet.",
+   "disposition": {
+    "type": "grappe",
+    "ordre": {
+     "v": "un bouton terminal et 1 à 3 boutons latéraux plus petits à l'aisselle des feuilles du haut",
+     "methode": "oeil",
+     "photos": [
+      "pivoine-herbacee-double:448f5af8",
+      "pivoine-herbacee-double:8328f74b",
+      "pivoine-herbacee-double:51c94992"
+     ],
+     "conf": "C"
+    },
+    "boutons_lateraux": {
+     "v": 2,
+     "plage": [
+      0,
+      3
+     ],
+     "unite": "n",
+     "methode": "oeil",
+     "photos": [
+      "pivoine-herbacee-double:448f5af8",
+      "pivoine-herbacee-double:8328f74b"
+     ],
+     "conf": "C",
+     "note": "ôtés souvent par l'horticulteur pour la fleur coupée"
+    }
+   },
+   "contour": {
+    "H_sur_W": {
+     "v": 1.0,
+     "plage": [
+      0.89,
+      1.1
+     ],
+     "unite": "ratio",
+     "n": 4,
+     "methode": "segmente",
+     "photos": [
+      "pivoine-herbacee-double:51c94992",
+      "pivoine-herbacee-double:2c0ab32c"
+     ],
+     "conf": "B",
+     "note": "fit.py targets bouton.hw 1,075 (82, 80) ; organ.py head sur 80 : 112 x 113 px (1,01) ; règle sur 80 avec sépales : 133 x 118 px (0,89)"
+    },
+    "forme": {
+     "v": "sphérique à un peu aplatie, sommet arrondi",
+     "methode": "oeil",
+     "photos": [
+      "pivoine-herbacee-double:51c94992",
+      "pivoine-herbacee-double:10786a4f",
+      "pivoine-herbacee-double:8328f74b"
+     ],
+     "conf": "C"
+    }
+   },
+   "taille": {
+    "lateral_sur_fleur": {
+     "v": 0.22,
+     "unite": "D",
+     "n": 1,
+     "methode": "regle",
+     "photos": [
+      "pivoine-herbacee-double:448f5af8"
+     ],
+     "conf": "C",
+     "note": "96 : bouton latéral 52 px pour une fleur ouverte de 242 px"
+    },
+    "lateral_H_sur_W": {
+     "v": 0.87,
+     "unite": "ratio",
+     "n": 1,
+     "methode": "regle",
+     "photos": [
+      "pivoine-herbacee-double:448f5af8"
+     ],
+     "conf": "C",
+     "note": "96 : 52 x 45 px"
+    },
+    "pedoncule_sur_bouton": {
+     "v": 0.18,
+     "unite": "ratio",
+     "n": 1,
+     "methode": "regle",
+     "photos": [
+      "pivoine-herbacee-double:51c94992"
+     ],
+     "conf": "C",
+     "note": "80 : tige 24 px sous un bouton de 133 px"
+    },
+    "diametre_cm": {
+     "v": null,
+     "methode": "hypothese",
+     "conf": "D",
+     "note": "pas d'échelle (Q2)"
+    }
+   },
+   "matiere": {
+    "texture": {
+     "v": "cuir",
+     "methode": "oeil",
+     "photos": [
+      "pivoine-herbacee-double:51c94992",
+      "pivoine-herbacee-double:10786a4f"
+     ],
+     "conf": "C"
+    },
+    "brillance": {
+     "v": 0.4,
+     "methode": "oeil",
+     "photos": [
+      "pivoine-herbacee-double:51c94992",
+      "pivoine-herbacee-double:2d05d235"
+     ],
+     "conf": "C"
+    }
+   },
+   "zones": [
+    {
+     "zone": "base",
+     "etendue": {
+      "v": [
+       0,
+       0.5
+      ],
+      "unite": "L",
+      "methode": "oeil",
+      "photos": [
+       "pivoine-herbacee-double:51c94992",
+       "pivoine-herbacee-double:10786a4f"
+      ],
+      "conf": "C",
+      "note": "le long de la pièce, base 0, pointe 1 ; en travers u = [0, 1]"
+     },
+     "motif": {
+      "type": "uni",
+      "densite": null,
+      "taille": null,
+      "direction": null
+     },
+     "bord": "fondu",
+     "source": {
+      "v": "sépales verts à bord rougeâtre",
+      "methode": "oeil",
+      "photos": [
+       "pivoine-herbacee-double:51c94992",
+       "pivoine-herbacee-double:10786a4f"
+      ],
+      "conf": "C"
+     }
+    },
+    {
+     "zone": "pointe",
+     "etendue": {
+      "v": [
+       0.5,
+       1
+      ],
+      "unite": "L",
+      "methode": "oeil",
+      "photos": [
+       "pivoine-herbacee-double:51c94992",
+       "pivoine-herbacee-double:2d05d235",
+       "pivoine-herbacee-double:2c0ab32c"
+      ],
+      "conf": "C",
+      "note": "le long de la pièce, base 0, pointe 1 ; en travers u = [0, 1]"
+     },
+     "motif": {
+      "type": "uni",
+      "densite": null,
+      "taille": null,
+      "direction": null
+     },
+     "bord": "fondu",
+     "source": {
+      "v": "calotte de pétales à la couleur du coloris, d'abord voilée de vert",
+      "methode": "oeil",
+      "photos": [
+       "pivoine-herbacee-double:51c94992",
+       "pivoine-herbacee-double:2d05d235",
+       "pivoine-herbacee-double:2c0ab32c"
+      ],
+      "conf": "C"
+     }
+    }
+   ],
+   "jointures": [
+    {
+     "vers": "tige",
+     "type": "col",
+     "params": {
+      "note": {
+       "v": "la tige s'élargit juste sous le bouton",
+       "methode": "oeil",
+       "photos": [
+        "pivoine-herbacee-double:51c94992"
+       ],
+       "conf": "C"
+      }
+     }
+    }
+   ],
+   "stades": {
+    "bouton": {
+     "v": "boule verte et rouge, couleur au sommet seulement",
+     "methode": "oeil",
+     "photos": [
+      "pivoine-herbacee-double:51c94992",
+      "pivoine-herbacee-double:10786a4f",
+      "pivoine-herbacee-double:8328f74b"
+     ],
+     "conf": "C"
+    },
+    "gonfle": {
+     "v": "la calotte colorée s'élargit, les sépales s'écartent ; 82 et 107 (hybrides) montrent ce stade (Q5)",
+     "methode": "oeil",
+     "photos": [
+      "pivoine-herbacee-double:2c0ab32c",
+      "pivoine-herbacee-double:2d05d235"
+     ],
+     "conf": "C"
+    }
+   }
+  },
+  "tige": {
+   "role": "tige",
+   "note": "Tige florale annuelle, droite, ronde, glabre, feuillée jusqu'en haut, rouge au pied des feuilles.",
+   "taille": {
+    "hauteur_cm": {
+     "v": 55,
+     "plage": [
+      40,
+      70
+     ],
+     "unite": "cm",
+     "methode": "reference",
+     "conf": "B",
+     "ref": "Flora of China vol. 6 (2001), Paeoniaceae, Paeonia lactiflora Pallas (Hong De-Yuan, Pan Kai-Yu) : forme sauvage simple : tiges 40-70 cm"
+    },
+    "rapport_fleur": {
+     "v": 0.0351,
+     "unite": "D",
+     "n": 2,
+     "methode": "segmente",
+     "photos": [
+      "pivoine-herbacee-double:448f5af8",
+      "pivoine-herbacee-double:4ca7a487"
+     ],
+     "conf": "B",
+     "note": "fit.py targets tige.stem : largeur de tige sur largeur de fleur"
+    }
+   },
+   "courbure": {
+    "longitudinale": {
+     "profil": "droite",
+     "note": {
+      "v": "droite ; peut s'arquer sous le poids d'une tête pleine",
+      "methode": "reference",
+      "conf": "C",
+      "ref": "catalogue/fanaison/fanaison.json, pivoine-herbacee-double (tenue en vase 5-7 jours ; chute des pétales en masse, tête lourde qui peut pencher)"
+     }
+    },
+    "port": {
+     "v": "au jardin, tiges dressées en touffe dense, un peu évasées vers l'extérieur ; fleurs portées au-dessus du feuillage",
+     "methode": "oeil",
+     "photos": [
+      "pivoine-herbacee-double:27c94643",
+      "pivoine-herbacee-double:e3d6fb5e",
+      "pivoine-herbacee-double:88b2e72e"
+     ],
+     "conf": "C"
+    }
+   },
+   "matiere": {
+    "texture": {
+     "v": "satin",
+     "methode": "oeil",
+     "photos": [
+      "pivoine-herbacee-double:448f5af8",
+      "pivoine-herbacee-double:51c94992"
+     ],
+     "conf": "C"
+    },
+    "brillance": {
+     "v": 0.3,
+     "methode": "oeil",
+     "photos": [
+      "pivoine-herbacee-double:448f5af8"
+     ],
+     "conf": "C"
+    },
+    "couleur": {
+     "v": [
+      "#24560b",
+      "#51801a",
+      "#77a136",
+      "#91ba60"
+     ],
+     "unite": "hex",
+     "methode": "oeil",
+     "photos": [
+      "pivoine-herbacee-double:8328f74b"
+     ],
+     "conf": "C",
+     "note": "palette refs.py pal 0,2-0,8 de 74 (brief) : tiges et boutons, fond compris ; à remesurer par organ.py sur un masque (Q7)"
+    }
+   },
+   "zones": [
+    {
+     "zone": "corps",
+     "etendue": {
+      "v": [
+       0,
+       1
+      ],
+      "unite": "L",
+      "methode": "oeil",
+      "conf": "C",
+      "note": "le long de la pièce, base 0, pointe 1 ; en travers u = [0, 1]"
+     },
+     "motif": {
+      "type": "uni",
+      "densite": null,
+      "taille": null,
+      "direction": null
+     },
+     "bord": "fondu"
+    },
+    {
+     "zone": "noeud",
+     "etendue": {
+      "v": [
+       0,
+       1
+      ],
+      "unite": "L",
+      "methode": "oeil",
+      "photos": [
+       "pivoine-herbacee-double:51c94992",
+       "pivoine-herbacee-double:4706f1de",
+       "pivoine-herbacee-double:8328f74b"
+      ],
+      "conf": "C",
+      "note": "le long de la pièce, base 0, pointe 1 ; en travers u = [0, 1]"
+     },
+     "motif": {
+      "type": "tache",
+      "densite": null,
+      "taille": null,
+      "direction": null
+     },
+     "bord": "fondu",
+     "source": {
+      "v": "rougeâtre aux nœuds et au pied des pétioles",
+      "methode": "oeil",
+      "photos": [
+       "pivoine-herbacee-double:51c94992",
+       "pivoine-herbacee-double:4706f1de",
+       "pivoine-herbacee-double:8328f74b"
+      ],
+      "conf": "C"
+     }
+    }
+   ],
+   "jointures": [
+    {
+     "vers": "feuille",
+     "type": "noeud",
+     "params": {
+      "note": {
+       "v": "feuilles alternes, pétiole embrassant à peine la tige",
+       "methode": "oeil",
+       "photos": [
+        "pivoine-herbacee-double:448f5af8",
+        "pivoine-herbacee-double:8328f74b"
+       ],
+       "conf": "C"
+      }
+     }
+    },
+    {
+     "vers": "pedicelle",
+     "type": "noeud",
+     "params": {
+      "note": {
+       "v": "boutons latéraux à l'aisselle des feuilles du haut",
+       "methode": "oeil",
+       "photos": [
+        "pivoine-herbacee-double:448f5af8",
+        "pivoine-herbacee-double:8328f74b"
+       ],
+       "conf": "C"
+      }
+     }
+    }
+   ],
+   "section": {
+    "type": "ronde",
+    "diametre": {
+     "suit": "tige.taille.rapport_fleur"
+    },
+    "effilement": {
+     "v": 2.0,
+     "unite": "ratio",
+     "n": 1,
+     "methode": "regle",
+     "photos": [
+      "pivoine-herbacee-double:448f5af8"
+     ],
+     "conf": "C",
+     "note": "s'élargit sous la tête : 17 px au col contre environ 8,5 px plus bas"
+    },
+    "poils": {
+     "v": "glabre",
+     "methode": "reference",
+     "conf": "B",
+     "ref": "Flora of China vol. 6 (2001), Paeoniaceae, Paeonia lactiflora Pallas (Hong De-Yuan, Pan Kai-Yu) : forme sauvage simple"
+    }
+   },
+   "stades": {
+    "fane": {
+     "v": "reste droite ou fléchit sous la tête ; les feuilles jaunissent",
+     "methode": "reference",
+     "conf": "C",
+     "ref": "catalogue/fanaison/fanaison.json, pivoine-herbacee-double (tenue en vase 5-7 jours ; chute des pétales en masse, tête lourde qui peut pencher)"
+    }
+   }
+  },
+  "pedoncule": {
+   "role": "pedicelle",
+   "note": "Pédoncule des fleurs latérales, axillaire.",
+   "taille": {
+    "longueur": {
+     "v": 1.15,
+     "unite": "D",
+     "n": 1,
+     "methode": "regle",
+     "photos": [
+      "pivoine-herbacee-double:448f5af8"
+     ],
+     "conf": "C",
+     "note": "96 : pédoncule du bouton de droite, au moins 280 px pour une fleur de 242 px (l'aisselle sort du cadre)"
+    }
+   },
+   "courbure": {
+    "longitudinale": {
+     "profil": "arquee",
+     "pied_deg": {
+      "v": 20,
+      "plage": [
+       10,
+       40
+      ],
+      "unite": "deg",
+      "repere": "tige",
+      "methode": "oeil",
+      "photos": [
+       "pivoine-herbacee-double:448f5af8",
+       "pivoine-herbacee-double:8328f74b"
+      ],
+      "conf": "C"
+     }
+    }
+   },
+   "matiere": {
+    "suit": "tige.matiere"
+   },
+   "zones": {
+    "suit": "tige.zones"
+   },
+   "jointures": [
+    {
+     "vers": "tige",
+     "type": "noeud",
+     "params": {
+      "note": {
+       "v": "à l'aisselle d'une feuille",
+       "methode": "oeil",
+       "photos": [
+        "pivoine-herbacee-double:448f5af8"
+       ],
+       "conf": "C"
+      }
+     }
+    }
+   ],
+   "section": {
+    "type": "ronde",
+    "diametre": {
+     "v": 0.7,
+     "unite": "ratio",
+     "methode": "oeil",
+     "photos": [
+      "pivoine-herbacee-double:448f5af8"
+     ],
+     "conf": "C",
+     "note": "à peu près 0,7 fois la tige principale"
+    }
+   },
+   "stades": {
+    "fane": {
+     "suit": "tige.stades.fane"
+    }
+   }
+  },
+  "feuille": {
+   "role": "feuille",
+   "note": "Feuilles alternes, composées : les basses biternées (neuf folioles), les hautes ternées ou simples ; folioles lancéolées à elliptiques, vert sombre luisant, nervure médiane rougeâtre.",
+   "nombre": {
+    "v": 5,
+    "plage": [
+     3,
+     8
+    ],
+    "unite": "n",
+    "methode": "oeil",
+    "photos": [
+     "pivoine-herbacee-double:448f5af8",
+     "pivoine-herbacee-double:8328f74b"
+    ],
+    "conf": "C",
+    "note": "feuilles sur la partie florale d'une tige coupée"
+   },
+   "disposition": {
+    "type": "alternes",
+    "composition": {
+     "v": "basses biternées, hautes ternées",
+     "methode": "reference",
+     "conf": "B",
+     "ref": "Flora of China vol. 6 (2001), Paeoniaceae, Paeonia lactiflora Pallas (Hong De-Yuan, Pan Kai-Yu) : forme sauvage simple : feuilles inférieures biternées"
+    },
+    "folioles": {
+     "v": 9,
+     "plage": [
+      3,
+      9
+     ],
+     "unite": "n",
+     "methode": "reference",
+     "conf": "B",
+     "ref": "Flora of China vol. 6 (2001), Paeoniaceae, Paeonia lactiflora Pallas (Hong De-Yuan, Pan Kai-Yu) : forme sauvage simple"
+    }
+   },
+   "contour": {
+    "base": "cunee",
+    "pointe": {
+     "type": "acuminee",
+     "recourbee": {
+      "v": false,
+      "methode": "oeil",
+      "photos": [
+       "pivoine-herbacee-double:4706f1de"
+      ],
+      "conf": "C"
+     }
+    },
+    "profil_largeur": {
+     "v": [
+      [
+       0,
+       0.02
+      ],
+      [
+       0.2,
+       0.1
+      ],
+      [
+       0.53,
+       0.145
+      ],
+      [
+       0.8,
+       0.1
+      ],
+      [
+       1,
+       0
+      ]
+     ],
+     "unite": "L",
+     "methode": "oeil",
+     "photos": [
+      "pivoine-herbacee-double:4706f1de",
+      "pivoine-herbacee-double:51c94992"
+     ],
+     "conf": "C"
+    },
+    "vb": {
+     "v": 0.53,
+     "unite": "L",
+     "n": 1,
+     "methode": "regle",
+     "photos": [
+      "pivoine-herbacee-double:4706f1de"
+     ],
+     "conf": "C",
+     "note": "foliole centrale de 178 : plus grande largeur à 0,53 L depuis la base"
+    },
+    "L_sur_l": {
+     "v": 3.5,
+     "plage": [
+      3.46,
+      3.71
+     ],
+     "unite": "ratio",
+     "n": 3,
+     "methode": "regle",
+     "photos": [
+      "pivoine-herbacee-double:4706f1de"
+     ],
+     "conf": "C",
+     "note": "178 : trois folioles d'une même feuille, 256/74, 228/65, 256/69 px ; une foliole de 80 lue à l'œil vers 3,6"
+    },
+    "L_sur_l_feuille_entiere": {
+     "v": 1.44,
+     "unite": "ratio",
+     "n": 1,
+     "methode": "segmente",
+     "photos": [
+      "pivoine-herbacee-double:f3eb675b"
+     ],
+     "conf": "C",
+     "note": "fit.py targets feuille.leaflw : contour de la feuille composée sur 271 ; définition à confirmer (Q7)"
+    },
+    "marge": {
+     "type": "entiere",
+     "note": {
+      "v": "liseré cartilagineux clair, finement denticulé à la loupe ; liseré rougeâtre visible sur 178 et 80",
+      "methode": "reference",
+      "conf": "B",
+      "ref": "Flora of China vol. 6 (2001), Paeoniaceae, Paeonia lactiflora Pallas (Hong De-Yuan, Pan Kai-Yu) : forme sauvage simple : marge blanche cartilagineuse denticulée"
+     }
+    }
+   },
+   "taille": {
+    "foliole_cm": {
+     "v": null,
+     "methode": "hypothese",
+     "conf": "D",
+     "note": "pas d'échelle ; à mesurer ou à prendre dans une flore (Q2)"
+    },
+    "angle": {
+     "v": 74.5,
+     "unite": "deg",
+     "repere": "tige",
+     "n": 1,
+     "methode": "segmente",
+     "photos": [
+      "pivoine-herbacee-double:f3eb675b"
+     ],
+     "conf": "C",
+     "note": "fit.py targets feuille.leafang ; repère supposé : la tige ; vue de dessus, à confirmer (Q7)"
+    }
+   },
+   "courbure": {
+    "longitudinale": {
+     "profil": "arquee",
+     "pointe_deg": {
+      "v": -15,
+      "plage": [
+       -30,
+       0
+      ],
+      "unite": "deg",
+      "repere": "plan",
+      "methode": "oeil",
+      "photos": [
+       "pivoine-herbacee-double:4706f1de",
+       "pivoine-herbacee-double:51c94992"
+      ],
+      "conf": "C"
+     }
+    },
+    "transversale": {
+     "type": "gouttiere",
+     "profondeur": {
+      "v": 0.08,
+      "unite": "L",
+      "methode": "oeil",
+      "photos": [
+       "pivoine-herbacee-double:4706f1de"
+      ],
+      "conf": "C"
+     }
+    }
+   },
+   "matiere": {
+    "epaisseur": {
+     "v": "moyenne",
+     "methode": "oeil",
+     "photos": [
+      "pivoine-herbacee-double:4706f1de"
+     ],
+     "conf": "C"
+    },
+    "texture": {
+     "v": "cuir",
+     "methode": "oeil",
+     "photos": [
+      "pivoine-herbacee-double:4706f1de",
+      "pivoine-herbacee-double:51c94992"
+     ],
+     "conf": "C"
+    },
+    "brillance": {
+     "v": 0.5,
+     "methode": "oeil",
+     "photos": [
+      "pivoine-herbacee-double:4706f1de"
+     ],
+     "conf": "C"
+    },
+    "grain": {
+     "v": "lisse",
+     "methode": "reference",
+     "conf": "B",
+     "ref": "Flora of China vol. 6 (2001), Paeoniaceae, Paeonia lactiflora Pallas (Hong De-Yuan, Pan Kai-Yu) : forme sauvage simple : glabres dessus"
+    },
+    "couleur": {
+     "v": [
+      "#356806",
+      "#5d8f25",
+      "#a8d279"
+     ],
+     "plage": [
+      "#5d8f25",
+      "#61922b",
+      "#486722"
+     ],
+     "unite": "hex",
+     "n": 3,
+     "methode": "segmente",
+     "photos": [
+      "pivoine-herbacee-double:4706f1de",
+      "pivoine-herbacee-double:f3eb675b"
+     ],
+     "conf": "C",
+     "note": "organ.py leaf sur la foliole centrale de 178 (ombre, corps, lumière ; boîte presque entièrement occupée par le feuillage, masque non isolé) ; plage = corps par photo : 178 organ.py, 178 et 271 refs.py pal (brief)"
+    }
+   },
+   "nervation": {
+    "type": "pennee",
+    "n": {
+     "v": 8,
+     "plage": [
+      6,
+      10
+     ],
+     "unite": "n",
+     "methode": "oeil",
+     "photos": [
+      "pivoine-herbacee-double:4706f1de",
+      "pivoine-herbacee-double:51c94992"
+     ],
+     "conf": "C"
+    },
+    "relief": "creux",
+    "visible": "face",
+    "couleur": "plus-claire",
+    "note": "nervure médiane claire à rougeâtre, secondaires arquées vers la pointe"
+   },
+   "zones": [
+    {
+     "zone": "corps",
+     "etendue": {
+      "v": [
+       0,
+       1
+      ],
+      "unite": "L",
+      "methode": "oeil",
+      "conf": "C",
+      "note": "le long de la pièce, base 0, pointe 1 ; en travers u = [0, 1]"
+     },
+     "motif": {
+      "type": "uni",
+      "densite": null,
+      "taille": null,
+      "direction": null
+     },
+     "bord": "fondu"
+    },
+    {
+     "zone": "nervures",
+     "etendue": {
+      "v": [
+       0,
+       1
+      ],
+      "unite": "L",
+      "methode": "oeil",
+      "photos": [
+       "pivoine-herbacee-double:4706f1de"
+      ],
+      "conf": "C",
+      "note": "le long de la pièce, base 0, pointe 1 ; en travers u = [0.48, 0.52]"
+     },
+     "motif": {
+      "type": "ligne",
+      "densite": null,
+      "taille": null,
+      "direction": "longitudinale"
+     },
+     "bord": "net",
+     "source": {
+      "v": "nervure médiane claire, rougeâtre vers la base",
+      "methode": "oeil",
+      "photos": [
+       "pivoine-herbacee-double:4706f1de"
+      ],
+      "conf": "C"
+     }
+    },
+    {
+     "zone": "marge",
+     "etendue": {
+      "v": [
+       0,
+       1
+      ],
+      "unite": "L",
+      "methode": "oeil",
+      "photos": [
+       "pivoine-herbacee-double:4706f1de",
+       "pivoine-herbacee-double:51c94992"
+      ],
+      "conf": "C",
+      "note": "le long de la pièce, base 0, pointe 1 ; en travers u = [0, 0.02]"
+     },
+     "motif": {
+      "type": "liseré",
+      "densite": null,
+      "taille": null,
+      "direction": null
+     },
+     "bord": "net",
+     "source": {
+      "v": "liseré rougeâtre fin",
+      "methode": "oeil",
+      "photos": [
+       "pivoine-herbacee-double:4706f1de",
+       "pivoine-herbacee-double:51c94992"
+      ],
+      "conf": "C"
+     }
+    }
+   ],
+   "jointures": [
+    {
+     "vers": "tige",
+     "type": "petiole",
+     "params": {
+      "longueur": {
+       "v": 0.25,
+       "plage": [
+        0.1,
+        0.4
+       ],
+       "unite": "L",
+       "methode": "oeil",
+       "photos": [
+        "pivoine-herbacee-double:003d4fe8",
+        "pivoine-herbacee-double:51c94992"
+       ],
+       "conf": "C",
+       "note": "pétiole rapporté à la longueur de la feuille ; plus court vers le haut"
+      },
+      "couleur": {
+       "v": "rougeâtre",
+       "methode": "oeil",
+       "photos": [
+        "pivoine-herbacee-double:4706f1de"
+       ],
+       "conf": "C"
+      }
+     }
+    }
+   ],
+   "section": {
+    "type": "ronde",
+    "note": {
+     "v": "pétiole rond, un peu creusé dessus",
+     "methode": "hypothese",
+     "conf": "D"
+    }
+   },
+   "stades": {
+    "declin": {
+     "v": "folioles qui perdent leur fermeté et pendent",
+     "methode": "reference",
+     "conf": "C",
+     "ref": "catalogue/fanaison/fanaison.json, pivoine-feuillage"
+    },
+    "fane": {
+     "v": "jaunissent puis brunissent par les bords",
+     "methode": "reference",
+     "conf": "C",
+     "ref": "catalogue/fanaison/fanaison.json, pivoine-herbacee-double (tenue en vase 5-7 jours ; chute des pétales en masse, tête lourde qui peut pencher)"
+    }
+   }
+  }
+ },
+ "varietes": {
+  "amalia-olson": {
+   "forme": "non-mesure"
+  },
+  "auguste-dessert": {
+   "forme": "non-mesure"
+  },
+  "barbara": {
+   "forme": "non-mesure"
+  },
+  "best-man": {
+   "forme": "non-mesure"
+  },
+  "bowl-of-beauty": {
+   "forme": "non-mesure",
+   "note": "forme japonaise ou anémone : gardes roses, cœur de staminodes crème (référence horticole à vérifier sur photo : Q8)"
+  },
+  "carolina": {
+   "forme": "non-mesure"
+  },
+  "cheddar-gold": {
+   "forme": "non-mesure",
+   "note": "forme anémone ou bombe, cœur jaune (référence horticole à vérifier sur photo : Q8)"
+  },
+  "cora-stubbs": {
+   "forme": "non-mesure",
+   "note": "forme anémone ou bombe, cœur plus clair (référence horticole à vérifier sur photo : Q8)"
+  },
+  "coral-supreme": {
+   "forme": "non-mesure",
+   "note": "semi-double (hybride corail), étamines visibles (référence horticole à vérifier sur photo : Q8)"
+  },
+  "corinne-wersan": {
+   "forme": "non-mesure"
+  },
+  "do-tell": {
+   "organes": {
+    "petale.coeur": {
+     "note": "forme japonaise : le cœur n'est pas une boule de pétaloïdes mais une touffe de staminodes étroits, courts, roses à bout jaune, entourée d'un ou deux rangs de gardes",
+     "taille": {
+      "largeur_boule": {
+       "v": 0.4,
+       "plage": [
+        0.35,
+        0.5
+       ],
+       "unite": "D",
+       "methode": "oeil",
+       "photos": [
+        "pivoine-herbacee-double:bb1562fe",
+        "pivoine-herbacee-double:3587c6ce"
+       ],
+       "conf": "C",
+       "note": "touffe centrale sur la largeur de la fleur"
+      }
+     },
+     "contour": {
+      "L_sur_l": {
+       "v": 8,
+       "plage": [
+        5,
+        12
+       ],
+       "unite": "ratio",
+       "methode": "oeil",
+       "photos": [
+        "pivoine-herbacee-double:bb1562fe",
+        "pivoine-herbacee-double:3587c6ce"
+       ],
+       "conf": "C"
+      },
+      "pointe": {
+       "type": "aigue"
+      }
+     },
+     "courbure": {
+      "longitudinale": {
+       "profil": "droite",
+       "pied_deg": {
+        "v": 80,
+        "unite": "deg",
+        "repere": "plan",
+        "methode": "oeil",
+        "photos": [
+         "pivoine-herbacee-double:bb1562fe",
+         "pivoine-herbacee-double:3587c6ce"
+        ],
+        "conf": "C"
+       }
+      }
+     },
+     "zones": [
+      {
+       "zone": "pointe",
+       "etendue": {
+        "v": [
+         0.85,
+         1
+        ],
+        "unite": "L",
+        "methode": "oeil",
+        "photos": [
+         "pivoine-herbacee-double:bb1562fe",
+         "pivoine-herbacee-double:3587c6ce"
+        ],
+        "conf": "C",
+        "note": "le long de la pièce, base 0, pointe 1 ; en travers u = [0, 1]"
+       },
+       "motif": {
+        "type": "uni",
+        "densite": null,
+        "taille": null,
+        "direction": null
+       },
+       "bord": "net",
+       "source": {
+        "v": "bout jaune des staminodes",
+        "methode": "oeil",
+        "photos": [
+         "pivoine-herbacee-double:bb1562fe",
+         "pivoine-herbacee-double:3587c6ce"
+        ],
+        "conf": "C"
+       }
+      }
+     ]
+    },
+    "petale.garde": {
+     "nombre": {
+      "v": 10,
+      "plage": [
+       8,
+       14
+      ],
+      "unite": "n",
+      "methode": "oeil",
+      "photos": [
+       "pivoine-herbacee-double:bb1562fe",
+       "pivoine-herbacee-double:3587c6ce"
+      ],
+      "conf": "C"
+     }
+    }
+   }
+  },
+  "duchesse-de-nemours": {
+   "forme": "non-mesure"
+  },
+  "ensign-moriarti": {
+   "forme": "non-mesure"
+  },
+  "festiva-maxima": {
+   "forme": "non-mesure",
+   "note": "double ; flammèches carmin sur quelques pétales du centre (référence horticole à vérifier sur photo : Q8)"
+  },
+  "kansas": {
+   "forme": "non-mesure"
+  },
+  "la-perle": {
+   "forme": "non-mesure",
+   "note": "double ; flammèches carmin sur les pétales du centre (macule de coloris.md) (référence horticole à vérifier sur photo : Q8)"
+  },
+  "lady-alexandra-duff": {
+   "forme": "non-mesure"
+  },
+  "le-jour": {
+   "forme": "non-mesure"
+  },
+  "madame-calot": {
+   "forme": "non-mesure"
+  },
+  "mercedes": {
+   "forme": "non-mesure"
+  },
+  "mme-emile-galle": {
+   "forme": "non-mesure"
+  },
+  "mons-jules-elie": {
+   "forme": "non-mesure"
+  },
+  "moon-of-nippon": {
+   "forme": "non-mesure",
+   "note": "forme japonaise : gardes blanches, staminodes jaunes (référence horticole à vérifier sur photo : Q8)"
+  },
+  "neon": {
+   "forme": "non-mesure"
+  },
+  "nymphe": {
+   "forme": "non-mesure",
+   "note": "fleur simple : un rang de pétales, étamines jaunes (référence horticole à vérifier sur photo : Q8)"
+  },
+  "pamyati-akademika-kurcha": {
+   "forme": "non-mesure"
+  },
+  "pamyaty-gagarina": {
+   "forme": "non-mesure"
+  },
+  "princess-margaret": {
+   "forme": "non-mesure"
+  },
+  "reine-hortense": {
+   "forme": "non-mesure"
+  },
+  "ruth-clay": {
+   "forme": "non-mesure"
+  },
+  "sarah-bernhardt": {
+   "forme": "non-mesure"
+  },
+  "scarlett-o-hara": {
+   "forme": "non-mesure",
+   "note": "fleur simple (hybride) : étamines et carpelles visibles (référence horticole à vérifier sur photo : Q8)"
+  },
+  "shirley-temple": {
+   "forme": "non-mesure"
+  },
+  "top-brass": {
+   "forme": "non-mesure"
+  },
+  "varenka": {
+   "forme": "non-mesure"
+  },
+  "voskhod": {
+   "forme": "non-mesure"
+  },
+  "wadysawa": {
+   "forme": "non-mesure"
+  },
+  "yubileyniy-gbs": {
+   "forme": "non-mesure"
+  },
+  "zhemchuzhnaya-rossyp": {
+   "forme": "non-mesure",
+   "note": "forme japonaise possible (référence horticole à vérifier sur photo : Q8)"
+  },
+  "argentina": {
+   "forme": "non-mesure"
+  },
+  "beliy-parus": {
+   "forme": "non-mesure"
+  },
+  "cincinnati": {
+   "forme": "espece",
+   "photos": [
+    "pivoine-herbacee-double:4913d031",
+    "pivoine-herbacee-double:b64db975",
+    "pivoine-herbacee-double:448f5af8"
+   ],
+   "note": "les photos 92, 93 et 96 (Cincinnati) sont celles d'après lesquelles la forme de l'espèce est décrite"
+  },
+  "coral-pink": {
+   "forme": "non-mesure"
+  },
+  "fen-yu-nu": {
+   "forme": "non-mesure"
+  },
+  "kreyser-avrora": {
+   "forme": "non-mesure"
+  },
+  "maya-plisetskaya": {
+   "forme": "non-mesure"
+  },
+  "mons-martin-cahuzac": {
+   "forme": "non-mesure"
+  },
+  "pobeda": {
+   "forme": "non-mesure"
+  },
+  "prof-woycicki": {
+   "forme": "non-mesure"
+  },
+  "arcadiy-gaydar": {
+   "forme": "non-mesure"
+  },
+  "bowl-of-cream": {
+   "forme": "non-mesure"
+  },
+  "eleanor": {
+   "forme": "non-mesure"
+  },
+  "felix-crousse": {
+   "forme": "non-mesure"
+  },
+  "gay-paree": {
+   "forme": "non-mesure",
+   "note": "forme anémone : gardes cerise, cœur crème (référence horticole à vérifier sur photo : Q8)"
+  },
+  "gold-standard": {
+   "forme": "non-mesure",
+   "note": "forme japonaise : gardes ivoire, staminodes dorés (référence horticole à vérifier sur photo : Q8)"
+  },
+  "golden-bracelet": {
+   "forme": "non-mesure",
+   "note": "forme bombe, cœur jaune pâle (référence horticole à vérifier sur photo : Q8)"
+  },
+  "kinsui": {
+   "forme": "non-mesure"
+  },
+  "madame-emile-debatene": {
+   "forme": "non-mesure",
+   "note": "double ; flammèches carmin au centre (macule de coloris.md) (référence horticole à vérifier sur photo : Q8)"
+  },
+  "prairie-moon": {
+   "forme": "non-mesure",
+   "note": "semi-double (hybride), étamines visibles (référence horticole à vérifier sur photo : Q8)"
+  },
+  "red-emperor": {
+   "forme": "non-mesure"
+  }
+ },
+ "stades": {
+  "table": [
+   {
+    "stade": "bouton",
+    "jours": {
+     "v": 0,
+     "unite": "jours",
+     "methode": "reference",
+     "conf": "C",
+     "ref": "catalogue/fanaison/fanaison.json (5-7 j en vase)"
+    },
+    "op": [
+     0,
+     0.1
+    ],
+    "wl": [
+     0,
+     0
+    ],
+    "photos": [
+     "pivoine-herbacee-double:51c94992",
+     "pivoine-herbacee-double:10786a4f",
+     "pivoine-herbacee-double:8328f74b"
+    ],
+    "statut": "mesure",
+    "note": "fit.py targets : bouton op 0,08"
+   },
+   {
+    "stade": "gonfle",
+    "jours": {
+     "v": 1,
+     "unite": "jours",
+     "methode": "reference",
+     "conf": "C",
+     "ref": "catalogue/fanaison/fanaison.json (5-7 j en vase)"
+    },
+    "op": [
+     0.1,
+     0.3
+    ],
+    "wl": [
+     0,
+     0
+    ],
+    "photos": [
+     "pivoine-herbacee-double:51c94992",
+     "pivoine-herbacee-double:2d05d235",
+     "pivoine-herbacee-double:2c0ab32c"
+    ],
+    "statut": "hypothese",
+    "note": "107 et 82 : hybrides (Q5)"
+   },
+   {
+    "stade": "entrouvert",
+    "jours": {
+     "v": 2,
+     "plage": [
+      1,
+      3
+     ],
+     "unite": "jours",
+     "methode": "reference",
+     "conf": "C",
+     "ref": "catalogue/fanaison/fanaison.json (5-7 j en vase) : la boule s'ouvre en 4-6 jours"
+    },
+    "op": [
+     0.4,
+     0.6
+    ],
+    "wl": [
+     0,
+     0
+    ],
+    "photos": [
+     "pivoine-herbacee-double:fc930ba8",
+     "pivoine-herbacee-double:98fc6d58"
+    ],
+    "statut": "mesure",
+    "note": "fit.py targets : entrouverte op 0,55 ; photos d'hybrides (Q5)"
+   },
+   {
+    "stade": "ouvert",
+    "jours": {
+     "v": 4,
+     "plage": [
+      3,
+      5
+     ],
+     "unite": "jours",
+     "methode": "reference",
+     "conf": "C",
+     "ref": "catalogue/fanaison/fanaison.json (5-7 j en vase)"
+    },
+    "op": [
+     0.8,
+     0.95
+    ],
+    "wl": [
+     0,
+     0
+    ],
+    "photos": [
+     "pivoine-herbacee-double:448f5af8",
+     "pivoine-herbacee-double:b64db975",
+     "pivoine-herbacee-double:4ca7a487",
+     "pivoine-herbacee-double:bb1562fe",
+     "pivoine-herbacee-double:3587c6ce"
+    ],
+    "statut": "mesure",
+    "note": "fit.py targets : ouverte op 0,9"
+   },
+   {
+    "stade": "plein",
+    "jours": {
+     "v": 5,
+     "plage": [
+      5,
+      6
+     ],
+     "unite": "jours",
+     "methode": "reference",
+     "conf": "C",
+     "ref": "catalogue/fanaison/fanaison.json (5-7 j en vase) : reste 2-3 jours pleinement ouverte"
+    },
+    "op": [
+     0.95,
+     1
+    ],
+    "wl": [
+     0,
+     0.1
+    ],
+    "photos": [
+     "pivoine-herbacee-double:d60fd5ad",
+     "pivoine-herbacee-double:26c402aa",
+     "pivoine-herbacee-double:4913d031",
+     "pivoine-herbacee-double:0688d29c"
+    ],
+    "statut": "hypothese"
+   },
+   {
+    "stade": "declin",
+    "jours": {
+     "v": 6,
+     "unite": "jours",
+     "methode": "reference",
+     "conf": "C",
+     "ref": "catalogue/fanaison/fanaison.json (5-7 j en vase)"
+    },
+    "op": [
+     1,
+     1
+    ],
+    "wl": [
+     0.2,
+     0.5
+    ],
+    "photos": [],
+    "statut": "hypothese",
+    "note": "aucune photo de P. lactiflora double ; 201 (autre espèce) indique seulement le port (Q6)"
+   },
+   {
+    "stade": "fane",
+    "jours": {
+     "v": 7,
+     "unite": "jours",
+     "methode": "reference",
+     "conf": "C",
+     "ref": "catalogue/fanaison/fanaison.json (5-7 j en vase)"
+    },
+    "op": [
+     1,
+     1
+    ],
+    "wl": [
+     0.6,
+     1
+    ],
+    "photos": [],
+    "statut": "hypothese",
+    "note": "pétales tombés en masse ; ne sèche pas sur tige (pas de stade sec) (Q6)"
+   }
+  ]
+ },
+ "rendu": {
+  "note": "rien à cette étape : le dessin n'existe pas encore"
+ },
+ "questions": [
+  {
+   "id": "Q1",
+   "organe": "petale.coeur",
+   "question": "Combien de pétaloïdes forment la boule du cœur ? Aucune vue gardée ne permet de les compter.",
+   "proposition": "Prendre 60 (40 à 100) ; compter sur une fleur défaite ou une macro de face d'une double pleine."
+  },
+  {
+   "id": "Q2",
+   "organe": "petale.garde",
+   "question": "Quelle taille réelle (cm) pour la fleur double ouverte, le bouton et les folioles ? Aucune photo n'a d'échelle.",
+   "proposition": "Fleur ouverte 15 cm (12-20), bouton 3,5 cm, foliole 10 cm : à confirmer par une photo avec règle ou une fiche d'obtenteur."
+  },
+  {
+   "id": "Q3",
+   "organe": "coeur.carpelles",
+   "question": "Les carpelles sont glabres selon Flora of China pour P. lactiflora ; le texte de app/y-paeonia.js les décrit feutrés avec une crête rouge. Lequel garder ?",
+   "proposition": "Glabres, verts, stigmate recourbé rouge pourpre ; ne se voient qu'au fané."
+  },
+  {
+   "id": "Q4",
+   "organe": "petale.garde",
+   "question": "Hauteur d'insertion des rangs (gardes, pétaloïdes, étamines, carpelles) et décalage angulaire d'un rang à l'autre : non mesurés.",
+   "proposition": "Spirale continue à l'angle d'or (137,5°) ; gardes à 0, pétaloïdes de 0,05 à 0,15 L plus haut sur un réceptacle bombé ; mesurer de profil avec fleur/volume.py."
+  },
+  {
+   "id": "Q5",
+   "organe": "bouton",
+   "question": "Les photos 121 (Coral Charm), 138 (Cytherea), 82 et 107 (Athena, hybride ; 107 inconnue) sont d'hybrides : les mesures d'entrouvert et de bouton gonflé valent-elles pour P. lactiflora double ?",
+   "proposition": "Les garder en confiance C ; chercher une entrouverte et un bouton gonflé de lactiflora double (Sarah Bernhardt, Duchesse de Nemours) et remesurer."
+  },
+  {
+   "id": "Q6",
+   "organe": "petale.garde",
+   "question": "Aucune photo de déclin ni de fané pour une pivoine lactiflora double (201, 306, 333 : autres espèces).",
+   "proposition": "Suivre fanaison.json (pâlit, pétales qui tombent en masse, tête qui penche) ; photographier un bouquet de J4 à J7."
+  },
+  {
+   "id": "Q7",
+   "organe": "feuille",
+   "question": "Les cibles feuille.leafang (74,5°) et feuille.leaflw (1,44) de fit.py, prises sur 271 vue de dessus, ont un repère et un contour incertains ; la couleur de tige vient d'une palette avec le fond.",
+   "proposition": "Remesurer sur une feuille entière à plat et sur une tige isolée (organ.py --green) ; d'ici là, garder la foliole L/l 3,5 de 178."
+  },
+  {
+   "id": "Q8",
+   "organe": "petale.coeur",
+   "question": "Plusieurs coloris ne sont pas des doubles pleines (forme japonaise, anémone, semi-double, simple) : faut-il les dessiner avec un cœur différent ou les sortir de la sorte ?",
+   "proposition": "Garder la forme de l'espèce pour les doubles ; décrire japonaise et anémone en surcharge (comme do-tell) après avoir gardé une photo de chacune ; sortir les simples (nymphe, scarlett-o-hara)."
+  },
+  {
+   "id": "Q9",
+   "organe": "petale.coeur",
+   "question": "Flammèches carmin du centre (la-perle, madame-emile-debatene, festiva-maxima) : forme et étendue non mesurées.",
+   "proposition": "Quelques traits radiaux nets sur 3 à 8 pétaloïdes du centre, dans le dernier tiers ; à mesurer sur une photo gardée de chacun."
+  }
+ ]
+}
