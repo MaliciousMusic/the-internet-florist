@@ -1,0 +1,3495 @@
+{
+ "schema": "fiche-morpho/1",
+ "sid": "pensee",
+ "nom": "Pensée",
+ "taxon": {
+  "genre": "Viola",
+  "espece": "Viola × wittrockiana Gams",
+  "famille": "Violaceae",
+  "groupe": "pensées de jardin à grande fleur (séries F1 Delta, Matrix, Dynamite, Crown, Colossus, Majestic Giants…)",
+  "source": "refcache/pensee/brief.md ; coloris : refcache/pensee/coloris.md"
+ },
+ "kit": {
+  "moteur": "à définir par le modeleur (fleur zygomorphe plane à 5 pétales en 3 rangs : Q13)",
+  "module": "app/y-viola.js"
+ },
+ "etat": {
+  "date": "2026-10-19",
+  "auteur": "pipe.py (squelette), puis l'étape fiche",
+  "note": "Registre des photos posé d'après keep.json. Mesures de l'étape : organ.py (stem, leaf, head) sur t002, t008-t011, t014, t081 ; règle en pixels sur t009, t094, t081 ; fit.py targets recopié. Aucune valeur code."
+ },
+ "photos": {
+  "pensee:5e315505": {
+   "titre": "File:1760 - Salzburg - Stiftskirche St Peter - Viola.JPG",
+   "auteur": "Andrew Bossi",
+   "licence": "CC BY-SA 2.5",
+   "url": "https://commons.wikimedia.org/wiki/File:1760_-_Salzburg_-_Stiftskirche_St_Peter_-_Viola.JPG",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/1760_-_Salzburg_-_Stiftskirche_St_Peter_-_Viola.JPG/500px-1760_-_Salzburg_-_Stiftskirche_St_Peter_-_Viola.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/pensee/refcache/pensee/t008.jpg",
+   "tags": [
+    "stade:ouvert",
+    "vue:face"
+   ],
+   "vu": "stade=ouvert vue=face organe=- groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 8,
+   "groupe": "jardin"
+  },
+  "pensee:3a57366a": {
+   "titre": "File:1763 - Salzburg - Stiftskirche St Peter - Viola.JPG",
+   "auteur": "Andrew Bossi",
+   "licence": "CC BY-SA 2.5",
+   "url": "https://commons.wikimedia.org/wiki/File:1763_-_Salzburg_-_Stiftskirche_St_Peter_-_Viola.JPG",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/1763_-_Salzburg_-_Stiftskirche_St_Peter_-_Viola.JPG/500px-1763_-_Salzburg_-_Stiftskirche_St_Peter_-_Viola.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/pensee/refcache/pensee/t009.jpg",
+   "tags": [
+    "stade:ouvert",
+    "vue:face"
+   ],
+   "vu": "stade=ouvert vue=face organe=- groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 9,
+   "groupe": "jardin"
+  },
+  "pensee:77101d27": {
+   "titre": "File:1764 - Salzburg - Stiftskirche St Peter - Viola.JPG",
+   "auteur": "Andrew Bossi",
+   "licence": "CC BY-SA 2.5",
+   "url": "https://commons.wikimedia.org/wiki/File:1764_-_Salzburg_-_Stiftskirche_St_Peter_-_Viola.JPG",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dc/1764_-_Salzburg_-_Stiftskirche_St_Peter_-_Viola.JPG/500px-1764_-_Salzburg_-_Stiftskirche_St_Peter_-_Viola.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/pensee/refcache/pensee/t010.jpg",
+   "tags": [
+    "stade:ouvert",
+    "vue:face"
+   ],
+   "vu": "stade=ouvert vue=face organe=- groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 10,
+   "groupe": "jardin"
+  },
+  "pensee:35479e35": {
+   "titre": "File:1765 - Salzburg - Stiftskirche St Peter - Viola.JPG",
+   "auteur": "Andrew Bossi",
+   "licence": "CC BY-SA 2.5",
+   "url": "https://commons.wikimedia.org/wiki/File:1765_-_Salzburg_-_Stiftskirche_St_Peter_-_Viola.JPG",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/1765_-_Salzburg_-_Stiftskirche_St_Peter_-_Viola.JPG/500px-1765_-_Salzburg_-_Stiftskirche_St_Peter_-_Viola.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/pensee/refcache/pensee/t011.jpg",
+   "tags": [
+    "stade:ouvert",
+    "vue:face"
+   ],
+   "vu": "stade=ouvert vue=face organe=- groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 11,
+   "groupe": "jardin"
+  },
+  "pensee:99af6e55": {
+   "titre": "File:1766 - Salzburg - Stiftskirche St Peter - Viola.JPG",
+   "auteur": "Andrew Bossi",
+   "licence": "CC BY-SA 2.5",
+   "url": "https://commons.wikimedia.org/wiki/File:1766_-_Salzburg_-_Stiftskirche_St_Peter_-_Viola.JPG",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/1766_-_Salzburg_-_Stiftskirche_St_Peter_-_Viola.JPG/500px-1766_-_Salzburg_-_Stiftskirche_St_Peter_-_Viola.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/pensee/refcache/pensee/t012.jpg",
+   "tags": [
+    "stade:ouvert",
+    "vue:trois-quarts"
+   ],
+   "vu": "stade=ouvert vue=trois-quarts organe=- groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 12,
+   "groupe": "jardin"
+  },
+  "pensee:d6922e50": {
+   "titre": "File:2006 197.jpg",
+   "auteur": "",
+   "licence": "CC BY-SA 3.0",
+   "url": "https://commons.wikimedia.org/wiki/File:2006_197.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3b/2006_197.jpg/500px-2006_197.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/pensee/refcache/pensee/t014.jpg",
+   "tags": [
+    "stade:ouvert",
+    "vue:face",
+    "organe:tige"
+   ],
+   "vu": "stade=ouvert vue=face organe=tige groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 14,
+   "groupe": "jardin"
+  },
+  "pensee:280c6484": {
+   "titre": "File:3-kleurigViooltje.jpg",
+   "auteur": "Algont at Dutch Wikipedia",
+   "licence": "CC BY-SA 3.0",
+   "url": "https://commons.wikimedia.org/wiki/File:3-kleurigViooltje.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/3-kleurigViooltje.jpg/500px-3-kleurigViooltje.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/pensee/refcache/pensee/t067.jpg",
+   "tags": [
+    "stade:ouvert",
+    "vue:trois-quarts",
+    "organe:feuille-dessus"
+   ],
+   "vu": "stade=ouvert vue=trois-quarts organe=feuille-dessus groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 67,
+   "groupe": "jardin"
+  },
+  "pensee:f86834e8": {
+   "titre": "File:A Cool Flower.png",
+   "auteur": "Punch Card Pics",
+   "licence": "CC BY-SA 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:A_Cool_Flower.png",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/A_Cool_Flower.png/500px-A_Cool_Flower.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/pensee/refcache/pensee/t071.jpg",
+   "tags": [
+    "stade:ouvert",
+    "vue:face"
+   ],
+   "vu": "stade=ouvert vue=face organe=- groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 71,
+   "groupe": "jardin"
+  },
+  "pensee:06f06b1b": {
+   "titre": "File:A Hybrid Pansy (Viola tricolour) is attracting attention of visitors in the Mughal Garden, Rashtrapati Bhavan, in New Delhi on February 16, 2005 (1).jpg",
+   "auteur": "President's Secretariat",
+   "licence": "GODL-India",
+   "url": "https://commons.wikimedia.org/wiki/File:A_Hybrid_Pansy_(Viola_tricolour)_is_attracting_attention_of_visitors_in_the_Mughal_Garden,_Rashtrapati_Bhavan,_in_New_Delhi_on_February_16,_2005_(1).jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/A_Hybrid_Pansy_%28Viola_tricolour%29_is_attracting_attention_of_visitors_in_the_Mughal_Garden%2C_Rashtrapati_Bhavan%2C_in_New_Delhi_on_February_16%2C_2005_%281%29.jpg/500px-A_Hybrid_Pansy_%28Viola_tricolour%29_is_attracting_attention_of_visitors_in_the_Mughal_Garden%2C_Rashtrapati_Bhavan%2C_in_New_Delhi_on_February_16%2C_2005_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/pensee/refcache/pensee/t072.jpg",
+   "tags": [
+    "stade:ouvert",
+    "vue:trois-quarts",
+    "organe:feuille-dessus"
+   ],
+   "vu": "stade=ouvert vue=trois-quarts organe=feuille-dessus groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 72,
+   "groupe": "jardin"
+  },
+  "pensee:aeb7f5fa": {
+   "titre": "File:A Hybrid Pansy (Viola tricolour) is attracting attention of visitors in the Mughal Garden, Rashtrapati Bhavan, in New Delhi on February 16, 2005.jpg",
+   "auteur": "President's Secretariat",
+   "licence": "GODL-India",
+   "url": "https://commons.wikimedia.org/wiki/File:A_Hybrid_Pansy_(Viola_tricolour)_is_attracting_attention_of_visitors_in_the_Mughal_Garden,_Rashtrapati_Bhavan,_in_New_Delhi_on_February_16,_2005.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/A_Hybrid_Pansy_%28Viola_tricolour%29_is_attracting_attention_of_visitors_in_the_Mughal_Garden%2C_Rashtrapati_Bhavan%2C_in_New_Delhi_on_February_16%2C_2005.jpg/500px-A_Hybrid_Pansy_%28Viola_tricolour%29_is_attracting_attention_of_visitors_in_the_Mughal_Garden%2C_Rashtrapati_Bhavan%2C_in_New_Delhi_on_February_16%2C_2005.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/pensee/refcache/pensee/t073.jpg",
+   "tags": [
+    "stade:ouvert",
+    "vue:face"
+   ],
+   "vu": "stade=ouvert vue=face organe=- groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 73,
+   "groupe": "jardin"
+  },
+  "pensee:ac082d10": {
+   "titre": "File:Orange 003 2023 05 20.jpg",
+   "auteur": "Friedrich Haag",
+   "licence": "CC BY-SA 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Orange_003_2023_05_20.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/37/Orange_003_2023_05_20.jpg/500px-Orange_003_2023_05_20.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/pensee/refcache/pensee/t084.jpg",
+   "tags": [
+    "stade:ouvert",
+    "vue:face"
+   ],
+   "vu": "stade=ouvert vue=face organe=- groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 84,
+   "groupe": "jardin"
+  },
+  "pensee:b902b7a7": {
+   "titre": "File:Flowers of Iran by qom city 09.jpg",
+   "auteur": "Mostafameraji",
+   "licence": "CC BY-SA 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Flowers_of_Iran_by_qom_city_09.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ee/Flowers_of_Iran_by_qom_city_09.jpg/500px-Flowers_of_Iran_by_qom_city_09.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/pensee/refcache/pensee/t092.jpg",
+   "tags": [
+    "stade:ouvert",
+    "vue:face",
+    "organe:feuille-dessus"
+   ],
+   "vu": "stade=ouvert vue=face organe=feuille-dessus groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 92,
+   "groupe": "jardin"
+  },
+  "pensee:e64f0728": {
+   "titre": "File:Yellow flower close-up, Walthamstow Avenue, South Chingford, England.jpg",
+   "auteur": "Acabashi",
+   "licence": "CC BY-SA 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Yellow_flower_close-up,_Walthamstow_Avenue,_South_Chingford,_England.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/Yellow_flower_close-up%2C_Walthamstow_Avenue%2C_South_Chingford%2C_England.jpg/500px-Yellow_flower_close-up%2C_Walthamstow_Avenue%2C_South_Chingford%2C_England.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/pensee/refcache/pensee/t048.jpg",
+   "tags": [
+    "stade:ouvert",
+    "vue:face",
+    "organe:feuille-dessus"
+   ],
+   "vu": "stade=ouvert vue=face organe=feuille-dessus groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 48,
+   "groupe": "jardin"
+  },
+  "pensee:edc30f21": {
+   "titre": "File:2013-04-29 14-13-44-viola.jpg",
+   "auteur": "Thomas Bresson",
+   "licence": "CC BY 3.0",
+   "url": "https://commons.wikimedia.org/wiki/File:2013-04-29_14-13-44-viola.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f0/2013-04-29_14-13-44-viola.jpg/500px-2013-04-29_14-13-44-viola.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/pensee/refcache/pensee/t036.jpg",
+   "tags": [
+    "stade:ouvert",
+    "vue:face"
+   ],
+   "vu": "stade=ouvert vue=face organe=- groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 36,
+   "groupe": "jardin"
+  },
+  "pensee:f417c828": {
+   "titre": "File:2013-04-29 14-15-36-viola.jpg",
+   "auteur": "Thomas Bresson",
+   "licence": "CC BY 3.0",
+   "url": "https://commons.wikimedia.org/wiki/File:2013-04-29_14-15-36-viola.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/da/2013-04-29_14-15-36-viola.jpg/500px-2013-04-29_14-15-36-viola.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/pensee/refcache/pensee/t037.jpg",
+   "tags": [
+    "stade:ouvert",
+    "vue:face"
+   ],
+   "vu": "stade=ouvert vue=face organe=- groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 37,
+   "groupe": "jardin"
+  },
+  "pensee:cc057c03": {
+   "titre": "File:(Viola tricolor ) - panoramio.jpg",
+   "auteur": "collage bird's eye v…",
+   "licence": "CC BY-SA 3.0",
+   "url": "https://commons.wikimedia.org/wiki/File:(Viola_tricolor_)_-_panoramio.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bf/%28Viola_tricolor_%29_-_panoramio.jpg/500px-%28Viola_tricolor_%29_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/pensee/refcache/pensee/t002.jpg",
+   "tags": [
+    "stade:ouvert",
+    "vue:face",
+    "organe:feuille-dessus"
+   ],
+   "vu": "stade=ouvert vue=face organe=feuille-dessus groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 2,
+   "groupe": "jardin"
+  },
+  "pensee:535da19f": {
+   "titre": "File:-365 FairmontPansies (23109299296).jpg",
+   "auteur": "terri_bateman",
+   "licence": "CC0",
+   "url": "https://commons.wikimedia.org/wiki/File:-365_FairmontPansies_(23109299296).jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/-365_FairmontPansies_%2823109299296%29.jpg/500px--365_FairmontPansies_%2823109299296%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/pensee/refcache/pensee/t003.jpg",
+   "tags": [
+    "stade:ouvert",
+    "vue:trois-quarts",
+    "organe:plante"
+   ],
+   "vu": "stade=ouvert vue=trois-quarts organe=plante groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 3,
+   "groupe": "jardin"
+  },
+  "pensee:5d043593": {
+   "titre": "File:Flower in a planter.JPG",
+   "auteur": "Tael",
+   "licence": "CC0",
+   "url": "https://commons.wikimedia.org/wiki/File:Flower_in_a_planter.JPG",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7d/Flower_in_a_planter.JPG/500px-Flower_in_a_planter.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/pensee/refcache/pensee/t081.jpg",
+   "tags": [
+    "stade:bouton",
+    "vue:profil",
+    "organe:bourgeon"
+   ],
+   "vu": "stade=bouton vue=profil organe=bourgeon groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 81,
+   "groupe": "jardin"
+  },
+  "pensee:06e21cfa": {
+   "titre": "File:Եռագույն մանուշակ 1.jpg",
+   "auteur": "Լիլիթ85",
+   "licence": "CC BY-SA 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:%D4%B5%D5%BC%D5%A1%D5%A3%D5%B8%D6%82%D5%B5%D5%B6_%D5%B4%D5%A1%D5%B6%D5%B8%D6%82%D5%B7%D5%A1%D5%AF_1.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/95/%D4%B5%D5%BC%D5%A1%D5%A3%D5%B8%D6%82%D5%B5%D5%B6_%D5%B4%D5%A1%D5%B6%D5%B8%D6%82%D5%B7%D5%A1%D5%AF_1.jpg/500px-%D4%B5%D5%BC%D5%A1%D5%A3%D5%B8%D6%82%D5%B5%D5%B6_%D5%B4%D5%A1%D5%B6%D5%B8%D6%82%D5%B7%D5%A1%D5%AF_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/pensee/refcache/pensee/t082.jpg",
+   "tags": [
+    "stade:bouton",
+    "vue:profil",
+    "organe:bourgeon"
+   ],
+   "vu": "stade=bouton vue=profil organe=bourgeon groupe=autre",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 82,
+   "groupe": "autre"
+  },
+  "pensee:51d725b2": {
+   "titre": "File:Another pansy close-up.jpg",
+   "auteur": "globalquiz.org",
+   "licence": "CC BY 3.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Another_pansy_close-up.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fe/Another_pansy_close-up.jpg/500px-Another_pansy_close-up.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/pensee/refcache/pensee/t083.jpg",
+   "tags": [
+    "stade:ouvert",
+    "vue:trois-quarts"
+   ],
+   "vu": "stade=ouvert vue=trois-quarts organe=- groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 83,
+   "groupe": "jardin"
+  },
+  "pensee:24fe00c6": {
+   "titre": "File:Viola tricolor pansy flower close up.jpg",
+   "auteur": "Photos Public Domain",
+   "licence": "Public domain",
+   "url": "https://commons.wikimedia.org/wiki/File:Viola_tricolor_pansy_flower_close_up.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/76/Viola_tricolor_pansy_flower_close_up.jpg/500px-Viola_tricolor_pansy_flower_close_up.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/pensee/refcache/pensee/t085.jpg",
+   "tags": [
+    "stade:ouvert",
+    "vue:face",
+    "organe:feuille-dessus"
+   ],
+   "vu": "stade=ouvert vue=face organe=feuille-dessus groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 85,
+   "groupe": "jardin"
+  },
+  "pensee:5eec9228": {
+   "titre": "File:Wilting pansy (5461732294).jpg",
+   "auteur": "carrotmadman6 from Mauritius",
+   "licence": "CC BY 2.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Wilting_pansy_(5461732294).jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/34/Wilting_pansy_%285461732294%29.jpg/500px-Wilting_pansy_%285461732294%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/pensee/refcache/pensee/t114.jpg",
+   "tags": [
+    "stade:declin",
+    "vue:trois-quarts",
+    "organe:tige"
+   ],
+   "vu": "stade=declin vue=trois-quarts organe=tige groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 114,
+   "groupe": "jardin"
+  },
+  "pensee:3a31bf23": {
+   "titre": "File:Australian Garden and Field (20162308880).jpg",
+   "auteur": "Internet Archive Book Images",
+   "licence": "No restrictions",
+   "url": "https://commons.wikimedia.org/wiki/File:Australian_Garden_and_Field_(20162308880).jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/Australian_Garden_and_Field_%2820162308880%29.jpg/500px-Australian_Garden_and_Field_%2820162308880%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/pensee/refcache/pensee/t094.jpg",
+   "tags": [
+    "stade:ouvert",
+    "vue:face"
+   ],
+   "vu": "stade=ouvert vue=face organe=- groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 94,
+   "groupe": "jardin"
+  },
+  "pensee:06fa74d2": {
+   "titre": "File:Viola vallicola (6228780096).jpg",
+   "auteur": "Matt Lavin from Bozeman, Montana, USA",
+   "licence": "CC BY-SA 2.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Viola_vallicola_(6228780096).jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/Viola_vallicola_%286228780096%29.jpg/500px-Viola_vallicola_%286228780096%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/pensee/refcache/pensee/t154.jpg",
+   "tags": [
+    "stade:ouvert",
+    "vue:trois-quarts",
+    "organe:plante",
+    "organe:feuille-dessus"
+   ],
+   "vu": "stade=ouvert vue=trois-quarts organe=plante+feuille-dessus groupe=espece-sauvage",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 154,
+   "groupe": "espece-sauvage"
+  },
+  "pensee:5885347d": {
+   "titre": "File:Stream violet.jpg",
+   "auteur": "Forest Service Alaska Region, USDA",
+   "licence": "CC BY 2.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Stream_violet.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/Stream_violet.jpg/500px-Stream_violet.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/pensee/refcache/pensee/t189.jpg",
+   "tags": [
+    "stade:ouvert",
+    "vue:face",
+    "organe:feuille-dessus"
+   ],
+   "vu": "stade=ouvert vue=face organe=feuille-dessus groupe=espece-sauvage",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 189,
+   "groupe": "espece-sauvage"
+  },
+  "pensee:7bb4ae6f": {
+   "titre": "File:Noordwijk - Duinviooltje (Viola tricolor subsp. curtisii).jpg",
+   "auteur": "Rudolphous",
+   "licence": "CC BY-SA 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Noordwijk_-_Duinviooltje_(Viola_tricolor_subsp._curtisii).jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/Noordwijk_-_Duinviooltje_%28Viola_tricolor_subsp._curtisii%29.jpg/500px-Noordwijk_-_Duinviooltje_%28Viola_tricolor_subsp._curtisii%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/pensee/refcache/pensee/t267.jpg",
+   "tags": [
+    "stade:ouvert",
+    "vue:trois-quarts",
+    "organe:feuille-dessus",
+    "organe:plante"
+   ],
+   "vu": "stade=ouvert vue=trois-quarts organe=feuille-dessus+plante groupe=espece-sauvage",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 267,
+   "groupe": "espece-sauvage"
+  },
+  "pensee:a6313c84": {
+   "titre": "File:Heartsease or Wild Pansy (Viola tricolor) - geograph.org.uk - 1351285.jpg",
+   "auteur": "Anne Burgess",
+   "licence": "CC BY-SA 2.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Heartsease_or_Wild_Pansy_(Viola_tricolor)_-_geograph.org.uk_-_1351285.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/Heartsease_or_Wild_Pansy_%28Viola_tricolor%29_-_geograph.org.uk_-_1351285.jpg/500px-Heartsease_or_Wild_Pansy_%28Viola_tricolor%29_-_geograph.org.uk_-_1351285.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/pensee/refcache/pensee/t244.jpg",
+   "tags": [
+    "stade:ouvert",
+    "stade:declin",
+    "vue:trois-quarts"
+   ],
+   "vu": "stade=ouvert+declin vue=trois-quarts organe=- groupe=espece-sauvage",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 244,
+   "groupe": "espece-sauvage"
+  },
+  "pensee:11bb0c64": {
+   "titre": "File:(MHNT) Viola arvensis - immature fruits.jpg",
+   "auteur": "Didier Descouens",
+   "licence": "CC BY-SA 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:(MHNT)_Viola_arvensis_-_immature_fruits.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/%28MHNT%29_Viola_arvensis_-_immature_fruits.jpg/500px-%28MHNT%29_Viola_arvensis_-_immature_fruits.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/pensee/refcache/pensee/t582.jpg",
+   "tags": [
+    "stade:fane",
+    "vue:profil",
+    "organe:tige"
+   ],
+   "vu": "stade=fane vue=profil organe=tige groupe=autre",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 582,
+   "groupe": "autre"
+  },
+  "pensee:b2393244": {
+   "titre": "File:Semillas Viola cornuta Kartxela.JPG",
+   "auteur": "Joseba Garmendia",
+   "licence": "CC BY 3.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Semillas_Viola_cornuta_Kartxela.JPG",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/Semillas_Viola_cornuta_Kartxela.JPG/500px-Semillas_Viola_cornuta_Kartxela.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/pensee/refcache/pensee/t471.jpg",
+   "tags": [
+    "stade:fane",
+    "vue:face",
+    "organe:feuille-fanee"
+   ],
+   "vu": "stade=fane vue=face organe=feuille-fanee groupe=espece-sauvage",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 471,
+   "groupe": "espece-sauvage"
+  },
+  "pensee:a541536d": {
+   "titre": "File:Viola arvensis open seed capsule with mature seeds in Dnipro by baby-bear.org.jpg",
+   "auteur": "Natalka Ukraine (baby-bear.org)",
+   "licence": "CC BY 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Viola_arvensis_open_seed_capsule_with_mature_seeds_in_Dnipro_by_baby-bear.org.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ed/Viola_arvensis_open_seed_capsule_with_mature_seeds_in_Dnipro_by_baby-bear.org.jpg/500px-Viola_arvensis_open_seed_capsule_with_mature_seeds_in_Dnipro_by_baby-bear.org.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/pensee/refcache/pensee/t583.jpg",
+   "tags": [
+    "stade:fane",
+    "vue:profil",
+    "organe:feuille-fanee"
+   ],
+   "vu": "stade=fane vue=profil organe=feuille-fanee groupe=espece-sauvage",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 583,
+   "groupe": "espece-sauvage"
+  },
+  "pensee:5727eb0d": {
+   "titre": "File:20150412Viola arvensis2.jpg",
+   "auteur": "AnRo0002",
+   "licence": "CC0",
+   "url": "https://commons.wikimedia.org/wiki/File:20150412Viola_arvensis2.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/20150412Viola_arvensis2.jpg/500px-20150412Viola_arvensis2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/pensee/refcache/pensee/t348.jpg",
+   "tags": [
+    "stade:entrouvert",
+    "vue:profil"
+   ],
+   "vu": "stade=entrouvert vue=profil organe=- groupe=espece-sauvage",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 348,
+   "groupe": "espece-sauvage"
+  },
+  "pensee:13072cd7": {
+   "titre": "File:20160407Viola arvensis2.jpg",
+   "auteur": "AnRo0002",
+   "licence": "CC0",
+   "url": "https://commons.wikimedia.org/wiki/File:20160407Viola_arvensis2.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7a/20160407Viola_arvensis2.jpg/500px-20160407Viola_arvensis2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/pensee/refcache/pensee/t349.jpg",
+   "tags": [
+    "stade:entrouvert",
+    "vue:profil",
+    "organe:bourgeon"
+   ],
+   "vu": "stade=entrouvert vue=profil organe=bourgeon groupe=espece-sauvage",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 349,
+   "groupe": "espece-sauvage"
+  },
+  "pensee:5625b32a": {
+   "titre": "File:20190325 Viola odorata 1.jpg",
+   "auteur": "AnRo0002",
+   "licence": "CC0",
+   "url": "https://commons.wikimedia.org/wiki/File:20190325_Viola_odorata_1.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/20190325_Viola_odorata_1.jpg/500px-20190325_Viola_odorata_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/pensee/refcache/pensee/t382.jpg",
+   "tags": [
+    "vue:dos",
+    "organe:tige"
+   ],
+   "vu": "stade=ouvert vue=dos organe=tige groupe=espece-sauvage",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 382,
+   "groupe": "espece-sauvage"
+  },
+  "pensee:8c36499f": {
+   "titre": "File:20170328Viola odorata2.jpg",
+   "auteur": "AnRo0002",
+   "licence": "CC0",
+   "url": "https://commons.wikimedia.org/wiki/File:20170328Viola_odorata2.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/20170328Viola_odorata2.jpg/500px-20170328Viola_odorata2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/pensee/refcache/pensee/t373.jpg",
+   "tags": [
+    "vue:dos",
+    "organe:tige"
+   ],
+   "vu": "stade=ouvert vue=dos organe=tige groupe=espece-sauvage",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 373,
+   "groupe": "espece-sauvage"
+  },
+  "pensee:70ab6873": {
+   "titre": "File:Viola cornuta06062006feuille.JPG",
+   "auteur": "Henry Brisse (upload by user:Abalg)",
+   "licence": "CC BY-SA 3.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Viola_cornuta06062006feuille.JPG",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/95/Viola_cornuta06062006feuille.JPG/500px-Viola_cornuta06062006feuille.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/pensee/refcache/pensee/t460.jpg",
+   "tags": [
+    "organe:feuille-dessus",
+    "organe:tige"
+   ],
+   "vu": "stade=- vue=- organe=feuille-dessus organe=tige groupe=espece-sauvage",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 460,
+   "groupe": "espece-sauvage"
+  }
+ },
+ "organes": {
+  "petale.superieur": {
+   "role": "perianthe",
+   "nombre": {
+    "v": 2,
+    "unite": "n",
+    "methode": "reference",
+    "ref": "Flora of North America vol. 6 (Violaceae), Viola sect. Melanium et Viola × wittrockiana Gams",
+    "conf": "A"
+   },
+   "disposition": {
+    "type": "verticilles",
+    "verticilles": {
+     "v": 1,
+     "unite": "n",
+     "methode": "reference",
+     "ref": "Flora of North America vol. 6 (Violaceae), Viola sect. Melanium et Viola × wittrockiana Gams : corolle de 5 pétales libres en un verticille, zygomorphe ; un pétale inférieur éperonné",
+     "conf": "A",
+     "note": "un seul verticille botanique, mais trois rangs à dessiner, qui diffèrent : 2 supérieurs, 2 latéraux, 1 inférieur"
+    },
+    "rangs": {
+     "v": 3,
+     "unite": "n",
+     "n": 5,
+     "methode": "oeil",
+     "photos": [
+      "pensee:5e315505",
+      "pensee:3a57366a",
+      "pensee:3a31bf23",
+      "pensee:edc30f21",
+      "pensee:ac082d10"
+     ],
+     "conf": "A"
+    },
+    "ordre": {
+     "v": "de l'avant vers l'arrière : l'inférieur passe devant les deux latéraux, les latéraux passent devant les deux supérieurs ; des deux supérieurs, l'un recouvre l'autre (celui de droite sur t009 et t094, sens à vérifier : Q14)",
+     "n": 3,
+     "methode": "oeil",
+     "photos": [
+      "pensee:3a57366a",
+      "pensee:3a31bf23",
+      "pensee:edc30f21"
+     ],
+     "conf": "B"
+    },
+    "recouvrement": {
+     "entre_superieurs": {
+      "v": 0.55,
+      "unite": "ratio",
+      "n": 1,
+      "methode": "oeil",
+      "photos": [
+       "pensee:3a57366a"
+      ],
+      "conf": "C",
+      "note": "part de la largeur du supérieur arrière cachée par l'autre"
+     },
+     "lateraux_sur_superieurs": {
+      "v": 0.25,
+      "unite": "ratio",
+      "n": 2,
+      "methode": "oeil",
+      "photos": [
+       "pensee:3a57366a",
+       "pensee:3a31bf23"
+      ],
+      "conf": "C"
+     },
+     "inferieur_sur_lateraux": {
+      "v": 0.15,
+      "unite": "ratio",
+      "n": 2,
+      "methode": "oeil",
+      "photos": [
+       "pensee:3a57366a",
+       "pensee:3a31bf23"
+      ],
+      "conf": "C"
+     }
+    },
+    "insertion": {
+     "v": {
+      "inferieur": 0,
+      "lateraux": 0,
+      "superieurs": 0
+     },
+     "unite": "L",
+     "methode": "reference",
+     "ref": "Flora of North America vol. 6 (Violaceae), Viola sect. Melanium et Viola × wittrockiana Gams : pétales insérés au même niveau sous l'ovaire (hypogynes)",
+     "conf": "B",
+     "note": "vus de face, les supérieurs semblent naître plus haut : leur onglet se dresse derrière les latéraux"
+    },
+    "decalage_deg": {
+     "v": {
+      "superieur_droit": 62,
+      "superieur_gauche": 118,
+      "lateral_gauche": 154,
+      "inferieur": 270,
+      "lateral_droit": 12
+     },
+     "unite": "deg",
+     "repere": "horizontale",
+     "n": 1,
+     "methode": "oeil",
+     "photos": [
+      "pensee:3a57366a"
+     ],
+     "conf": "C",
+     "note": "azimut de l'axe de chaque pétale dans le plan de la face, compté depuis l'horizontale droite, sens antihoraire, l'œil comme centre"
+    },
+    "differences": {
+     "v": "inférieur : le plus large, porte l'éperon, le guide jaune et la plus grande macule, rayons sombres ; latéraux : touffe de poils blancs (barbe) à la base, macule moyenne ; supérieurs : les plus longs, dressés, sans barbe, sans macule sur la plupart des coloris (ailes d'une autre couleur chez les bicolores) ; même marge entière à faiblement ondulée sur les trois rangs",
+     "n": 6,
+     "methode": "oeil",
+     "photos": [
+      "pensee:3a57366a",
+      "pensee:3a31bf23",
+      "pensee:edc30f21",
+      "pensee:f417c828",
+      "pensee:280c6484",
+      "pensee:06f06b1b"
+     ],
+     "conf": "B"
+    },
+    "profondeur_gorge": {
+     "v": 0.06,
+     "unite": "L",
+     "n": 2,
+     "methode": "oeil",
+     "photos": [
+      "pensee:3a57366a",
+      "pensee:3a31bf23"
+     ],
+     "conf": "C",
+     "note": "fleur plane : la gorge n'est que l'entrée de l'éperon sous la tête du stigmate ; pas de profil de pensée mesuré (volume.py non lancé : Q5)"
+    },
+    "silhouette_face_W_sur_H": {
+     "v": 1.02,
+     "plage": [
+      0.97,
+      1.15
+     ],
+     "unite": "ratio",
+     "n": 4,
+     "methode": "segmente",
+     "photos": [
+      "pensee:5e315505",
+      "pensee:3a57366a",
+      "pensee:77101d27",
+      "pensee:35479e35"
+     ],
+     "conf": "C",
+     "note": "organ.py head : 430/415, 398/412, 455/394, 384/379 px ; silhouettes au bord du cadre (fit.py les écarte) : la plus haute est indicative"
+    },
+    "oeil_depuis_le_haut": {
+     "v": 0.57,
+     "plage": [
+      0.56,
+      0.58
+     ],
+     "unite": "ratio",
+     "n": 2,
+     "methode": "regle",
+     "photos": [
+      "pensee:3a57366a",
+      "pensee:3a31bf23"
+     ],
+     "conf": "B",
+     "note": "position de l'œil sur la hauteur de la face, depuis le haut : 225/400 px (t009), 215/370 px (t094) : les supérieurs montent plus haut que l'inférieur ne descend"
+    },
+    "diametre_fleur": {
+     "v": 6.5,
+     "plage": [
+      5,
+      10
+     ],
+     "unite": "cm",
+     "methode": "reference",
+     "ref": "séries F1 de pensées à grande fleur (catalogues d'obtenteurs : 5 à 10 cm selon la série)",
+     "conf": "C"
+    },
+    "oeil_diametre": {
+     "v": 0.08,
+     "plage": [
+      0.066,
+      0.096
+     ],
+     "unite": "D",
+     "n": 2,
+     "methode": "regle",
+     "photos": [
+      "pensee:3a57366a",
+      "pensee:3a31bf23"
+     ],
+     "conf": "B",
+     "note": "tache jaune du guide à l'entrée de l'éperon : 38/396 px (t009), 31/470 px (t094)"
+    },
+    "entrouvert_W_sur_H": {
+     "v": 1.25,
+     "plage": [
+      1.19,
+      1.31
+     ],
+     "unite": "ratio",
+     "n": 1,
+     "methode": "segmente",
+     "photos": [
+      "pensee:13072cd7"
+     ],
+     "conf": "D",
+     "note": "fit.py targets entrouverte.wh, sur Viola arvensis (Q2)"
+    },
+    "entrouvert_angle": {
+     "v": -2.6,
+     "plage": [
+      -5.6,
+      0.4
+     ],
+     "unite": "deg",
+     "repere": "horizontale",
+     "n": 1,
+     "methode": "segmente",
+     "photos": [
+      "pensee:13072cd7"
+     ],
+     "conf": "D",
+     "ecart": {
+      "type": "divergence",
+      "texte": "repère de fit.py non dit, « horizontale » supposé ; mesure prise sur une autre espèce (Q2)"
+     },
+     "note": "fit.py targets entrouverte.ang (tol 3), sur Viola arvensis (Q2)"
+    }
+   },
+   "contour": {
+    "base": {
+     "v": "onglet",
+     "methode": "reference",
+     "ref": "Flora Gallica (2014), Viola sect. Melanium (pensées) : pétales brièvement onguiculés",
+     "conf": "B"
+    },
+    "pointe": {
+     "type": {
+      "v": "arrondie",
+      "n": 3,
+      "methode": "oeil",
+      "photos": [
+       "pensee:3a57366a",
+       "pensee:3a31bf23",
+       "pensee:edc30f21"
+      ],
+      "conf": "B"
+     }
+    },
+    "vb": {
+     "v": 0.6,
+     "unite": "L",
+     "n": 1,
+     "methode": "oeil",
+     "photos": [
+      "pensee:3a57366a"
+     ],
+     "conf": "C"
+    },
+    "L_sur_l": {
+     "v": 1.04,
+     "unite": "ratio",
+     "n": 1,
+     "methode": "regle",
+     "photos": [
+      "pensee:3a57366a"
+     ],
+     "conf": "C",
+     "note": "245 px de l'œil à la pointe sur 235 px de large (t009)"
+    },
+    "marge": {
+     "v": "entiere",
+     "n": 3,
+     "methode": "oeil",
+     "photos": [
+      "pensee:3a57366a",
+      "pensee:3a31bf23",
+      "pensee:f417c828"
+     ],
+     "conf": "B",
+     "note": "faiblement ondulée sur les grandes fleurs (t037, t083)"
+    }
+   },
+   "taille": {
+    "longueur": {
+     "v": 1.15,
+     "plage": [
+      0.91,
+      1.24
+     ],
+     "unite": "R0",
+     "n": 2,
+     "methode": "regle",
+     "photos": [
+      "pensee:3a57366a",
+      "pensee:3a31bf23"
+     ],
+     "conf": "B",
+     "note": "de l'œil à la pointe : 245/198 px (t009), 215/235 px (t094, face inclinée vers l'arrière)"
+    },
+    "largeur": {
+     "v": 1.16,
+     "plage": [
+      1.13,
+      1.19
+     ],
+     "unite": "R0",
+     "n": 2,
+     "methode": "regle",
+     "photos": [
+      "pensee:3a57366a",
+      "pensee:3a31bf23"
+     ],
+     "conf": "B",
+     "note": "235/198 px (t009), 265/235 px (t094)"
+    }
+   },
+   "courbure": {
+    "longitudinale": {
+     "profil": {
+      "v": "reflechie",
+      "n": 2,
+      "methode": "oeil",
+      "photos": [
+       "pensee:3a57366a",
+       "pensee:99af6e55"
+      ],
+      "conf": "C",
+      "note": "à plat, le bord haut un peu renversé vers l'arrière"
+     },
+     "pointe_deg": {
+      "v": 15,
+      "unite": "deg",
+      "repere": "plan",
+      "n": 1,
+      "methode": "oeil",
+      "photos": [
+       "pensee:99af6e55"
+      ],
+      "conf": "C"
+     }
+    },
+    "transversale": {
+     "type": {
+      "v": "plat",
+      "n": 2,
+      "methode": "oeil",
+      "photos": [
+       "pensee:3a57366a",
+       "pensee:3a31bf23"
+      ],
+      "conf": "B"
+     }
+    }
+   },
+   "matiere": {
+    "epaisseur": {
+     "v": "fine",
+     "n": 2,
+     "methode": "oeil",
+     "photos": [
+      "pensee:3a57366a",
+      "pensee:ac082d10"
+     ],
+     "conf": "B"
+    },
+    "translucidite": {
+     "v": 0.15,
+     "n": 1,
+     "methode": "oeil",
+     "photos": [
+      "pensee:ac082d10"
+     ],
+     "conf": "C",
+     "note": "à contre-jour, les veines se lisent à travers (t084)"
+    },
+    "texture": {
+     "v": "velours",
+     "n": 3,
+     "methode": "oeil",
+     "photos": [
+      "pensee:3a57366a",
+      "pensee:edc30f21",
+      "pensee:3a31bf23"
+     ],
+     "conf": "B"
+    },
+    "brillance": {
+     "v": 0.25,
+     "n": 2,
+     "methode": "oeil",
+     "photos": [
+      "pensee:3a57366a",
+      "pensee:3a31bf23"
+     ],
+     "conf": "C",
+     "note": "reflets satinés sur le bombé, mat dans la macule"
+    },
+    "grain": {
+     "v": "papilleux",
+     "n": 1,
+     "methode": "oeil",
+     "photos": [
+      "pensee:3a57366a"
+     ],
+     "conf": "C"
+    }
+   },
+   "nervation": {
+    "type": {
+     "v": "eventail",
+     "n": 3,
+     "methode": "oeil",
+     "photos": [
+      "pensee:ac082d10",
+      "pensee:51d725b2",
+      "pensee:3a57366a"
+     ],
+     "conf": "B"
+    },
+    "relief": {
+     "v": "plat",
+     "n": 1,
+     "methode": "oeil",
+     "photos": [
+      "pensee:ac082d10"
+     ],
+     "conf": "C"
+    },
+    "visible": {
+     "v": "face",
+     "n": 2,
+     "methode": "oeil",
+     "photos": [
+      "pensee:ac082d10",
+      "pensee:51d725b2"
+     ],
+     "conf": "B"
+    },
+    "couleur": {
+     "v": "plus-sombre",
+     "n": 3,
+     "methode": "oeil",
+     "photos": [
+      "pensee:ac082d10",
+      "pensee:51d725b2",
+      "pensee:edc30f21"
+     ],
+     "conf": "B",
+     "note": "fines lignes rayonnant de l'œil (crayonné), surtout sur l'inférieur et les latéraux ; peu visibles sur les supérieurs"
+    }
+   },
+   "zones": [
+    {
+     "zone": "base",
+     "etendue": {
+      "v": [
+       0,
+       0.15
+      ],
+      "unite": "L",
+      "methode": "oeil",
+      "conf": "C",
+      "photos": [
+       "pensee:3a57366a"
+      ]
+     },
+     "bord": "fondu",
+     "note": "onglet plus clair ou plus sombre selon le coloris",
+     "methode": "oeil",
+     "v": "base",
+     "conf": "C",
+     "photos": [
+      "pensee:3a57366a"
+     ]
+    },
+    {
+     "zone": "corps",
+     "etendue": {
+      "v": [
+       0.15,
+       1
+      ],
+      "unite": "L",
+      "methode": "oeil",
+      "conf": "B",
+      "photos": [
+       "pensee:3a57366a",
+       "pensee:3a31bf23"
+      ]
+     },
+     "bord": "fondu",
+     "methode": "oeil",
+     "v": "corps",
+     "conf": "B",
+     "photos": [
+      "pensee:3a57366a",
+      "pensee:3a31bf23"
+     ]
+    },
+    {
+     "zone": "marge",
+     "etendue": {
+      "v": [
+       0.9,
+       1
+      ],
+      "unite": "L",
+      "methode": "oeil",
+      "conf": "C",
+      "photos": [
+       "pensee:edc30f21"
+      ]
+     },
+     "bord": "net",
+     "note": "liseré d'une autre couleur chez certains coloris (t036 : bord bordeaux sur jaune)",
+     "methode": "oeil",
+     "v": "marge",
+     "conf": "C",
+     "photos": [
+      "pensee:edc30f21"
+     ]
+    }
+   ],
+   "jointures": [
+    {
+     "vers": "receptacle",
+     "type": "onglet",
+     "params": {
+      "v": "onglet court dressé derrière les latéraux",
+      "n": 1,
+      "methode": "oeil",
+      "photos": [
+       "pensee:3a57366a"
+      ],
+      "conf": "C"
+     }
+    }
+   ],
+   "stades": {
+    "bouton": {
+     "v": "enroulé dans le bouton, en dehors des autres pétales (préfloraison)",
+     "methode": "reference",
+     "ref": "Flora Gallica (2014), Viola sect. Melanium (pensées)",
+     "conf": "C"
+    },
+    "gonfle": {
+     "v": "pointe colorée sortie des sépales, encore plissée",
+     "n": 1,
+     "methode": "oeil",
+     "photos": [
+      "pensee:5d043593"
+     ],
+     "conf": "C"
+    },
+    "entrouvert": {
+     "v": "se déplie le premier et se dresse ; la fleur encore penchée",
+     "n": 2,
+     "methode": "oeil",
+     "photos": [
+      "pensee:13072cd7",
+      "pensee:5727eb0d"
+     ],
+     "conf": "D",
+     "note": "vu sur Viola arvensis, pas sur la pensée (Q2)"
+    },
+    "ouvert": {
+     "v": "dressé, plan, dans le plan de la face",
+     "n": 2,
+     "methode": "oeil",
+     "photos": [
+      "pensee:3a57366a",
+      "pensee:3a31bf23"
+     ],
+     "conf": "B"
+    },
+    "plein": {
+     "v": "bord haut légèrement renversé, marge détendue",
+     "n": 2,
+     "methode": "oeil",
+     "photos": [
+      "pensee:f417c828",
+      "pensee:99af6e55"
+     ],
+     "conf": "C"
+    },
+    "declin": {
+     "v": "se replie vers l'avant sur l'œil, bord qui ondule et s'enroule, couleur qui pâlit",
+     "methode": "reference",
+     "photos": [
+      "pensee:5eec9228"
+     ],
+     "ref": "catalogue/fanaison/fanaison.json, entrée pensee (tenue_vase_jours 4 à 10, modes recroqueville, penche-tete, decolore ; seche_bien false)",
+     "conf": "C"
+    },
+    "fane": {
+     "v": "froissé comme un tissu, enroulé sur le cœur, brun selon le coloris",
+     "methode": "reference",
+     "ref": "catalogue/fanaison/fanaison.json, entrée pensee (tenue_vase_jours 4 à 10, modes recroqueville, penche-tete, decolore ; seche_bien false)",
+     "conf": "C"
+    }
+   }
+  },
+  "petale.lateral": {
+   "role": "perianthe",
+   "nombre": {
+    "v": 2,
+    "unite": "n",
+    "methode": "reference",
+    "ref": "Flora of North America vol. 6 (Violaceae), Viola sect. Melanium et Viola × wittrockiana Gams",
+    "conf": "A"
+   },
+   "disposition": {
+    "suit": "petale.superieur.disposition"
+   },
+   "contour": {
+    "base": {
+     "v": "onglet",
+     "methode": "reference",
+     "ref": "Flora Gallica (2014), Viola sect. Melanium (pensées)",
+     "conf": "B"
+    },
+    "pointe": {
+     "type": {
+      "v": "arrondie",
+      "n": 2,
+      "methode": "oeil",
+      "photos": [
+       "pensee:3a57366a",
+       "pensee:3a31bf23"
+      ],
+      "conf": "B"
+     }
+    },
+    "vb": {
+     "v": 0.55,
+     "unite": "L",
+     "n": 2,
+     "methode": "oeil",
+     "photos": [
+      "pensee:3a57366a",
+      "pensee:3a31bf23"
+     ],
+     "conf": "C"
+    },
+    "asymetrie": {
+     "v": 0.15,
+     "unite": "ratio",
+     "n": 2,
+     "methode": "oeil",
+     "photos": [
+      "pensee:3a57366a",
+      "pensee:3a31bf23"
+     ],
+     "conf": "C",
+     "note": "bord inférieur plus bombé que le bord supérieur"
+    },
+    "marge": {
+     "suit": "petale.superieur.contour.marge"
+    }
+   },
+   "taille": {
+    "longueur": {
+     "v": 0.98,
+     "plage": [
+      0.97,
+      1.0
+     ],
+     "unite": "R0",
+     "n": 2,
+     "methode": "regle",
+     "photos": [
+      "pensee:3a57366a",
+      "pensee:3a31bf23"
+     ],
+     "conf": "B",
+     "note": "192/198 px (t009), 235/235 px (t094, côté gauche)"
+    },
+    "largeur": {
+     "v": 1.0,
+     "plage": [
+      0.96,
+      1.06
+     ],
+     "unite": "R0",
+     "n": 2,
+     "methode": "regle",
+     "photos": [
+      "pensee:3a57366a",
+      "pensee:3a31bf23"
+     ],
+     "conf": "C",
+     "note": "hauteur visible, en partie cachée par l'inférieur"
+    },
+    "angle_dans_la_face": {
+     "v": 20,
+     "plage": [
+      12,
+      26
+     ],
+     "unite": "deg",
+     "repere": "horizontale",
+     "n": 1,
+     "methode": "oeil",
+     "photos": [
+      "pensee:3a57366a"
+     ],
+     "conf": "C",
+     "note": "les latéraux montent un peu au-dessus de l'horizontale"
+    }
+   },
+   "courbure": {
+    "longitudinale": {
+     "profil": {
+      "v": "droite",
+      "n": 2,
+      "methode": "oeil",
+      "photos": [
+       "pensee:3a57366a",
+       "pensee:3a31bf23"
+      ],
+      "conf": "C"
+     }
+    },
+    "transversale": {
+     "type": {
+      "v": "plat",
+      "n": 2,
+      "methode": "oeil",
+      "photos": [
+       "pensee:3a57366a",
+       "pensee:3a31bf23"
+      ],
+      "conf": "B"
+     }
+    }
+   },
+   "matiere": {
+    "suit": "petale.superieur.matiere"
+   },
+   "nervation": {
+    "suit": "petale.superieur.nervation"
+   },
+   "zones": [
+    {
+     "zone": "base",
+     "etendue": {
+      "v": [
+       0,
+       0.12
+      ],
+      "unite": "L",
+      "methode": "oeil",
+      "conf": "B",
+      "photos": [
+       "pensee:3a31bf23",
+       "pensee:edc30f21"
+      ]
+     },
+     "motif": {
+      "type": "barbe",
+      "densite": "dense",
+      "direction": "vers l'œil"
+     },
+     "bord": "fondu",
+     "note": "touffe de poils blancs à la base (barbe), devant la gorge",
+     "methode": "oeil",
+     "v": "barbe",
+     "conf": "B",
+     "photos": [
+      "pensee:3a31bf23",
+      "pensee:edc30f21"
+     ]
+    },
+    {
+     "zone": "macule",
+     "etendue": {
+      "v": [
+       0,
+       0.6
+      ],
+      "unite": "L",
+      "methode": "regle",
+      "conf": "C",
+      "photos": [
+       "pensee:3a31bf23"
+      ]
+     },
+     "bord": "fondu",
+     "motif": {
+      "type": "rayons",
+      "direction": "radiale"
+     },
+     "note": "selon le coloris ; règle t094 : de l'œil jusqu'à 0.52 (gauche) et 0.68 (droit, raccourci) de la longueur",
+     "methode": "regle",
+     "v": 0.6,
+     "plage": [
+      0.52,
+      0.68
+     ],
+     "unite": "L",
+     "n": 2,
+     "conf": "C",
+     "photos": [
+      "pensee:3a31bf23"
+     ]
+    },
+    {
+     "zone": "corps",
+     "etendue": {
+      "v": [
+       0.12,
+       1
+      ],
+      "unite": "L",
+      "methode": "oeil",
+      "conf": "B",
+      "photos": [
+       "pensee:3a57366a",
+       "pensee:3a31bf23"
+      ]
+     },
+     "bord": "fondu",
+     "methode": "oeil",
+     "v": "corps",
+     "conf": "B",
+     "photos": [
+      "pensee:3a57366a",
+      "pensee:3a31bf23"
+     ]
+    }
+   ],
+   "jointures": [
+    {
+     "vers": "receptacle",
+     "type": "onglet",
+     "params": {
+      "v": "onglet court, la barbe à son débouché",
+      "n": 1,
+      "methode": "oeil",
+      "photos": [
+       "pensee:3a31bf23"
+      ],
+      "conf": "C"
+     }
+    }
+   ],
+   "stades": {
+    "bouton": {
+     "suit": "petale.superieur.stades.bouton"
+    },
+    "gonfle": {
+     "suit": "petale.superieur.stades.gonfle"
+    },
+    "entrouvert": {
+     "v": "s'écartent après les supérieurs, encore creusés",
+     "n": 1,
+     "methode": "oeil",
+     "photos": [
+      "pensee:13072cd7"
+     ],
+     "conf": "D",
+     "note": "Viola arvensis (Q2)"
+    },
+    "ouvert": {
+     "v": "à plat, montant de 20° au-dessus de l'horizontale",
+     "n": 1,
+     "methode": "oeil",
+     "photos": [
+      "pensee:3a57366a"
+     ],
+     "conf": "C"
+    },
+    "plein": {
+     "suit": "petale.superieur.stades.plein"
+    },
+    "declin": {
+     "v": "se replient vers l'avant et vers le bas, bords roulés",
+     "methode": "reference",
+     "photos": [
+      "pensee:5eec9228"
+     ],
+     "ref": "catalogue/fanaison/fanaison.json, entrée pensee (tenue_vase_jours 4 à 10, modes recroqueville, penche-tete, decolore ; seche_bien false)",
+     "conf": "C"
+    },
+    "fane": {
+     "suit": "petale.superieur.stades.fane"
+    }
+   }
+  },
+  "petale.inferieur": {
+   "role": "perianthe",
+   "nombre": {
+    "v": 1,
+    "unite": "n",
+    "methode": "reference",
+    "ref": "Flora of North America vol. 6 (Violaceae), Viola sect. Melanium et Viola × wittrockiana Gams",
+    "conf": "A"
+   },
+   "disposition": {
+    "suit": "petale.superieur.disposition"
+   },
+   "contour": {
+    "base": {
+     "v": "onglet",
+     "methode": "reference",
+     "ref": "Flora of North America vol. 6 (Violaceae), Viola sect. Melanium et Viola × wittrockiana Gams : pétale inférieur prolongé en éperon",
+     "conf": "B"
+    },
+    "pointe": {
+     "type": {
+      "v": "arrondie",
+      "n": 3,
+      "methode": "oeil",
+      "photos": [
+       "pensee:3a57366a",
+       "pensee:3a31bf23",
+       "pensee:edc30f21"
+      ],
+      "conf": "B",
+      "note": "large, parfois très faiblement échancrée au milieu"
+     }
+    },
+    "vb": {
+     "v": 0.65,
+     "unite": "L",
+     "n": 2,
+     "methode": "oeil",
+     "photos": [
+      "pensee:3a57366a",
+      "pensee:3a31bf23"
+     ],
+     "conf": "C"
+    },
+    "L_sur_l": {
+     "v": 0.6,
+     "plage": [
+      0.47,
+      0.66
+     ],
+     "unite": "ratio",
+     "n": 2,
+     "methode": "regle",
+     "photos": [
+      "pensee:3a57366a",
+      "pensee:3a31bf23"
+     ],
+     "conf": "B",
+     "note": "179/270 px (t009), 155/327 px (t094) : plus large que long"
+    },
+    "marge": {
+     "suit": "petale.superieur.contour.marge"
+    },
+    "eperon": {
+     "longueur": {
+      "v": 4,
+      "plage": [
+       2,
+       6
+      ],
+      "unite": "mm",
+      "methode": "reference",
+      "ref": "Flora Gallica (2014), Viola sect. Melanium (pensées) ; Flora of North America vol. 6 (Violaceae), Viola sect. Melanium et Viola × wittrockiana Gams : éperon court, obtus",
+      "conf": "C",
+      "note": "caché derrière la fleur vue de face ; aucun profil de pensée parmi les photos (Q7)"
+     },
+     "forme": {
+      "v": "court, obtus, droit ou un peu courbé vers le haut, derrière la base du pétale inférieur",
+      "methode": "reference",
+      "ref": "Flora Gallica (2014), Viola sect. Melanium (pensées)",
+      "conf": "C"
+     }
+    }
+   },
+   "taille": {
+    "longueur": {
+     "v": 0.77,
+     "plage": [
+      0.66,
+      0.88
+     ],
+     "unite": "R0",
+     "n": 2,
+     "methode": "regle",
+     "photos": [
+      "pensee:3a57366a",
+      "pensee:3a31bf23"
+     ],
+     "conf": "B",
+     "note": "de l'œil au bord : 175/198 px (t009), 155/235 px (t094)"
+    },
+    "largeur": {
+     "v": 1.37,
+     "plage": [
+      1.36,
+      1.39
+     ],
+     "unite": "R0",
+     "n": 2,
+     "methode": "regle",
+     "photos": [
+      "pensee:3a57366a",
+      "pensee:3a31bf23"
+     ],
+     "conf": "B",
+     "note": "270/198 px (t009), 327/235 px (t094) : 0.68 et 0.70 du diamètre"
+    }
+   },
+   "courbure": {
+    "longitudinale": {
+     "profil": {
+      "v": "droite",
+      "n": 2,
+      "methode": "oeil",
+      "photos": [
+       "pensee:3a57366a",
+       "pensee:3a31bf23"
+      ],
+      "conf": "C"
+     },
+     "pointe_deg": {
+      "v": -10,
+      "unite": "deg",
+      "repere": "plan",
+      "n": 1,
+      "methode": "oeil",
+      "photos": [
+       "pensee:99af6e55"
+      ],
+      "conf": "C",
+      "note": "le bord bas retombe un peu en avant"
+     }
+    },
+    "transversale": {
+     "type": {
+      "v": "plat",
+      "n": 2,
+      "methode": "oeil",
+      "photos": [
+       "pensee:3a57366a",
+       "pensee:3a31bf23"
+      ],
+      "conf": "B"
+     }
+    }
+   },
+   "matiere": {
+    "suit": "petale.superieur.matiere"
+   },
+   "nervation": {
+    "suit": "petale.superieur.nervation"
+   },
+   "zones": [
+    {
+     "zone": "oeil",
+     "etendue": {
+      "v": [
+       0,
+       0.12
+      ],
+      "unite": "L",
+      "methode": "regle",
+      "conf": "B",
+      "photos": [
+       "pensee:3a57366a",
+       "pensee:3a31bf23"
+      ]
+     },
+     "bord": "net",
+     "note": "guide jaune (plus ou moins grand selon le coloris) à l'entrée de l'éperon",
+     "methode": "regle",
+     "v": 0.08,
+     "unite": "D",
+     "plage": [
+      0.066,
+      0.096
+     ],
+     "n": 2,
+     "conf": "B",
+     "photos": [
+      "pensee:3a57366a",
+      "pensee:3a31bf23"
+     ]
+    },
+    {
+     "zone": "macule",
+     "etendue": {
+      "v": [
+       0,
+       0.85
+      ],
+      "u": [
+       0.13,
+       0.87
+      ],
+      "unite": "L",
+      "methode": "regle",
+      "conf": "C",
+      "photos": [
+       "pensee:3a31bf23"
+      ]
+     },
+     "motif": {
+      "type": "rayons",
+      "direction": "radiale"
+     },
+     "bord": "fondu",
+     "note": "macule (« visage ») des coloris à macule : bord en flammes le long des nervures ; règle t094 : 243/327 px de large, 128/155 px de long",
+     "methode": "regle",
+     "v": 0.74,
+     "unite": "ratio",
+     "n": 1,
+     "conf": "C",
+     "photos": [
+      "pensee:3a31bf23"
+     ]
+    },
+    {
+     "zone": "nervures",
+     "etendue": {
+      "v": [
+       0,
+       0.7
+      ],
+      "unite": "L",
+      "methode": "oeil",
+      "conf": "B",
+      "photos": [
+       "pensee:ac082d10",
+       "pensee:51d725b2"
+      ]
+     },
+     "motif": {
+      "type": "rayons",
+      "densite": "moyenne",
+      "direction": "radiale"
+     },
+     "bord": "fondu",
+     "methode": "oeil",
+     "v": "nervures",
+     "conf": "B",
+     "photos": [
+      "pensee:ac082d10",
+      "pensee:51d725b2"
+     ],
+     "note": "coloris sans macule : lignes fines sombres seules"
+    },
+    {
+     "zone": "corps",
+     "etendue": {
+      "v": [
+       0.12,
+       1
+      ],
+      "unite": "L",
+      "methode": "oeil",
+      "conf": "B",
+      "photos": [
+       "pensee:3a57366a",
+       "pensee:3a31bf23"
+      ]
+     },
+     "bord": "fondu",
+     "methode": "oeil",
+     "v": "corps",
+     "conf": "B",
+     "photos": [
+      "pensee:3a57366a",
+      "pensee:3a31bf23"
+     ]
+    },
+    {
+     "zone": "marge",
+     "etendue": {
+      "v": [
+       0.9,
+       1
+      ],
+      "unite": "L",
+      "methode": "oeil",
+      "conf": "C",
+      "photos": [
+       "pensee:edc30f21"
+      ]
+     },
+     "bord": "net",
+     "methode": "oeil",
+     "v": "marge",
+     "conf": "C",
+     "photos": [
+      "pensee:edc30f21"
+     ],
+     "note": "liseré selon coloris"
+    }
+   ],
+   "jointures": [
+    {
+     "vers": "receptacle",
+     "type": "onglet",
+     "params": {
+      "v": "onglet qui file en arrière dans l'éperon",
+      "methode": "reference",
+      "ref": "Flora Gallica (2014), Viola sect. Melanium (pensées)",
+      "conf": "C"
+     }
+    }
+   ],
+   "stades": {
+    "bouton": {
+     "suit": "petale.superieur.stades.bouton"
+    },
+    "gonfle": {
+     "suit": "petale.superieur.stades.gonfle"
+    },
+    "entrouvert": {
+     "v": "le dernier à s'étaler, encore replié sous les latéraux",
+     "n": 2,
+     "methode": "oeil",
+     "photos": [
+      "pensee:5727eb0d",
+      "pensee:13072cd7"
+     ],
+     "conf": "D",
+     "note": "Viola arvensis (Q2)"
+    },
+    "ouvert": {
+     "v": "étalé, à plat, passe devant les latéraux",
+     "n": 2,
+     "methode": "oeil",
+     "photos": [
+      "pensee:3a57366a",
+      "pensee:3a31bf23"
+     ],
+     "conf": "B"
+    },
+    "plein": {
+     "v": "bord bas qui retombe un peu en avant",
+     "n": 2,
+     "methode": "oeil",
+     "photos": [
+      "pensee:99af6e55",
+      "pensee:f417c828"
+     ],
+     "conf": "C"
+    },
+    "declin": {
+     "v": "s'affaisse le premier, le bord se roule par-dessous ; la macule reste nette, le pourtour pâlit",
+     "methode": "reference",
+     "photos": [
+      "pensee:5eec9228"
+     ],
+     "ref": "catalogue/fanaison/fanaison.json, entrée pensee (tenue_vase_jours 4 à 10, modes recroqueville, penche-tete, decolore ; seche_bien false)",
+     "conf": "C"
+    },
+    "fane": {
+     "suit": "petale.superieur.stades.fane"
+    }
+   }
+  },
+  "coeur.stigmate": {
+   "role": "coeur",
+   "nombre": {
+    "v": 1,
+    "unite": "n",
+    "methode": "reference",
+    "ref": "Flora of North America vol. 6 (Violaceae), Viola sect. Melanium et Viola × wittrockiana Gams : style renflé au sommet en tête stigmatique globuleuse creuse ; 5 étamines serrées autour de l'ovaire, cachées",
+    "conf": "A"
+   },
+   "disposition": {
+    "v": "au centre de l'œil, au-dessus du guide jaune, dans la gorge entre les barbes des latéraux ; étamines non visibles",
+    "n": 2,
+    "methode": "oeil",
+    "photos": [
+     "pensee:3a57366a",
+     "pensee:3a31bf23"
+    ],
+    "conf": "B"
+   },
+   "contour": {
+    "v": "tête globuleuse percée d'un orifice tourné vers le bas",
+    "methode": "reference",
+    "ref": "Flora Gallica (2014), Viola sect. Melanium (pensées)",
+    "conf": "B"
+   },
+   "taille": {
+    "v": 0.045,
+    "unite": "D",
+    "n": 1,
+    "methode": "regle",
+    "photos": [
+     "pensee:3a31bf23"
+    ],
+    "conf": "C",
+    "note": "tête claire de 20 px sur 470 px de fleur (t094)"
+   },
+   "matiere": {
+    "texture": {
+     "v": "cire",
+     "n": 1,
+     "methode": "oeil",
+     "photos": [
+      "pensee:3a31bf23"
+     ],
+     "conf": "C"
+    },
+    "brillance": {
+     "v": 0.4,
+     "n": 1,
+     "methode": "oeil",
+     "photos": [
+      "pensee:3a31bf23"
+     ],
+     "conf": "C"
+    }
+   },
+   "zones": [
+    {
+     "zone": "corps",
+     "etendue": {
+      "v": [
+       0,
+       1
+      ],
+      "unite": "L",
+      "methode": "oeil",
+      "conf": "C",
+      "photos": [
+       "pensee:3a31bf23"
+      ]
+     },
+     "bord": "net",
+     "note": "blanc verdâtre, hors coloris",
+     "methode": "oeil",
+     "v": "corps",
+     "conf": "C",
+     "photos": [
+      "pensee:3a31bf23"
+     ]
+    }
+   ],
+   "jointures": [
+    {
+     "vers": "petale.inferieur",
+     "type": "insertion",
+     "params": {
+      "v": "posée sur l'entrée de l'éperon, juste au-dessus du guide jaune",
+      "n": 2,
+      "methode": "oeil",
+      "photos": [
+       "pensee:3a57366a",
+       "pensee:3a31bf23"
+      ],
+      "conf": "C"
+     }
+    }
+   ],
+   "stades": {
+    "ouvert": {
+     "v": "visible au centre",
+     "n": 2,
+     "methode": "oeil",
+     "photos": [
+      "pensee:3a57366a",
+      "pensee:3a31bf23"
+     ],
+     "conf": "B"
+    },
+    "declin": {
+     "v": "cachée par les pétales repliés",
+     "methode": "reference",
+     "ref": "catalogue/fanaison/fanaison.json, entrée pensee (tenue_vase_jours 4 à 10, modes recroqueville, penche-tete, decolore ; seche_bien false)",
+     "conf": "C"
+    },
+    "fane": {
+     "suit": "coeur.stigmate.stades.declin"
+    }
+   }
+  },
+  "calice": {
+   "role": "calice",
+   "nombre": {
+    "v": 5,
+    "unite": "n",
+    "methode": "reference",
+    "ref": "Flora of North America vol. 6 (Violaceae), Viola sect. Melanium et Viola × wittrockiana Gams : 5 sépales libres, lancéolés, à appendices basaux prolongés sous l'insertion",
+    "conf": "A"
+   },
+   "disposition": {
+    "v": "verticille sous la corolle, visible entre les pétales vu de dos et autour du bouton",
+    "n": 1,
+    "methode": "oeil",
+    "photos": [
+     "pensee:5d043593"
+    ],
+    "conf": "B"
+   },
+   "contour": {
+    "base": {
+     "v": "appendice basal (auricule) prolongé vers le pédoncule",
+     "methode": "reference",
+     "ref": "Flora Gallica (2014), Viola sect. Melanium (pensées)",
+     "conf": "B"
+    },
+    "pointe": {
+     "type": {
+      "v": "aigue",
+      "n": 1,
+      "methode": "oeil",
+      "photos": [
+       "pensee:5d043593"
+      ],
+      "conf": "C"
+     }
+    },
+    "L_sur_l": {
+     "v": null,
+     "methode": "hypothese",
+     "conf": "D",
+     "note": "non mesuré sur une pensée ouverte (Q6)"
+    }
+   },
+   "taille": {
+    "longueur": {
+     "v": null,
+     "unite": "R0",
+     "methode": "hypothese",
+     "conf": "D",
+     "note": "Q6"
+    },
+    "sur_bouton": {
+     "v": 0.7,
+     "unite": "L",
+     "n": 1,
+     "methode": "regle",
+     "photos": [
+      "pensee:5d043593"
+     ],
+     "conf": "C",
+     "note": "au stade gonflé, les sépales couvrent la base du bouton jusqu'à 0.7 de sa longueur (t081)"
+    }
+   },
+   "matiere": {
+    "epaisseur": {
+     "v": "moyenne",
+     "n": 1,
+     "methode": "oeil",
+     "photos": [
+      "pensee:5d043593"
+     ],
+     "conf": "C"
+    },
+    "texture": {
+     "v": "mat",
+     "n": 1,
+     "methode": "oeil",
+     "photos": [
+      "pensee:5d043593"
+     ],
+     "conf": "C"
+    }
+   },
+   "zones": [
+    {
+     "zone": "corps",
+     "etendue": {
+      "v": [
+       0,
+       1
+      ],
+      "unite": "L",
+      "methode": "oeil",
+      "conf": "C",
+      "photos": [
+       "pensee:5d043593"
+      ]
+     },
+     "bord": "fondu",
+     "note": "vert comme la tige ; marge parfois plus claire",
+     "methode": "oeil",
+     "v": "corps",
+     "conf": "C",
+     "photos": [
+      "pensee:5d043593"
+     ]
+    }
+   ],
+   "jointures": [
+    {
+     "vers": "pedicelle",
+     "type": "insertion",
+     "params": {
+      "v": "au sommet du crochet du pédoncule ; les auricules débordent vers l'arrière",
+      "n": 1,
+      "methode": "oeil",
+      "photos": [
+       "pensee:5d043593"
+      ],
+      "conf": "C"
+     }
+    }
+   ],
+   "stades": {
+    "bouton": {
+     "v": "enveloppe le bouton",
+     "n": 1,
+     "methode": "oeil",
+     "photos": [
+      "pensee:5d043593"
+     ],
+     "conf": "C"
+    },
+    "ouvert": {
+     "v": "caché derrière la corolle vue de face ; pointes visibles vues de dos",
+     "n": 1,
+     "methode": "oeil",
+     "photos": [
+      "pensee:3a57366a"
+     ],
+     "conf": "C"
+    },
+    "fane": {
+     "v": "reste vert et persistant autour de l'ovaire",
+     "methode": "reference",
+     "ref": "Flora Gallica (2014), Viola sect. Melanium (pensées)",
+     "conf": "C"
+    }
+   }
+  },
+  "bouton": {
+   "role": "bouton",
+   "disposition": {
+    "v": "solitaire au bout du pédoncule, penché tête en bas par le crochet du pédoncule",
+    "n": 1,
+    "methode": "oeil",
+    "photos": [
+     "pensee:5d043593"
+    ],
+    "conf": "B"
+   },
+   "contour": {
+    "forme": {
+     "v": "ovoïde pointu, pétales colorés tordus sortant des sépales",
+     "n": 1,
+     "methode": "oeil",
+     "photos": [
+      "pensee:5d043593"
+     ],
+     "conf": "C"
+    },
+    "hw_fit": {
+     "v": 0.3154,
+     "plage": [
+      0.2554,
+      0.3754
+     ],
+     "unite": "ratio",
+     "n": 1,
+     "methode": "segmente",
+     "photos": [
+      "pensee:5d043593"
+     ],
+     "conf": "C",
+     "note": "fit.py targets bouton.hw (tol 0.06), définition propre à fit.py ; à rapprocher de organ.py head 96/107 = 0.90 (Q4)"
+    },
+    "L_sur_l_petales": {
+     "v": 1.19,
+     "unite": "ratio",
+     "n": 1,
+     "methode": "regle",
+     "photos": [
+      "pensee:5d043593"
+     ],
+     "conf": "C",
+     "note": "partie colorée 96 x 81 px (boîte des pixels pourpres, t081)"
+    }
+   },
+   "taille": {
+    "largeur": {
+     "v": 0.27,
+     "unite": "ratio",
+     "n": 1,
+     "methode": "regle",
+     "photos": [
+      "pensee:5d043593"
+     ],
+     "conf": "C",
+     "note": "largeur de la partie colorée sur la longueur droite visible du pédoncule (81/300 px environ), indicatif ; à rapporter à R0 : Q4"
+    }
+   },
+   "matiere": {
+    "texture": {
+     "v": "velours",
+     "n": 1,
+     "methode": "oeil",
+     "photos": [
+      "pensee:5d043593"
+     ],
+     "conf": "C"
+    }
+   },
+   "zones": [
+    {
+     "zone": "base",
+     "etendue": {
+      "v": [
+       0,
+       0.7
+      ],
+      "unite": "L",
+      "methode": "regle",
+      "conf": "C",
+      "photos": [
+       "pensee:5d043593"
+      ]
+     },
+     "bord": "net",
+     "note": "sépales verts",
+     "methode": "regle",
+     "v": 0.7,
+     "unite": "L",
+     "n": 1,
+     "conf": "C",
+     "photos": [
+      "pensee:5d043593"
+     ]
+    },
+    {
+     "zone": "pointe",
+     "etendue": {
+      "v": [
+       0.7,
+       1
+      ],
+      "unite": "L",
+      "methode": "oeil",
+      "conf": "C",
+      "photos": [
+       "pensee:5d043593"
+      ]
+     },
+     "bord": "net",
+     "note": "pétales colorés du coloris, plus sombres que la fleur ouverte",
+     "methode": "oeil",
+     "v": "pointe",
+     "conf": "C",
+     "photos": [
+      "pensee:5d043593"
+     ]
+    }
+   ],
+   "jointures": [
+    {
+     "vers": "pedicelle",
+     "type": "col",
+     "params": {
+      "v": "crochet serré du pédoncule sous le bouton",
+      "n": 1,
+      "methode": "oeil",
+      "photos": [
+       "pensee:5d043593"
+      ],
+      "conf": "B"
+     }
+    }
+   ],
+   "stades": {
+    "bouton": {
+     "v": "tout vert, sépales fermés, pendant",
+     "methode": "reference",
+     "ref": "Flora Gallica (2014), Viola sect. Melanium (pensées)",
+     "conf": "C",
+     "note": "pas de photo de pensée à ce stade (Q8)"
+    },
+    "gonfle": {
+     "v": "pointe colorée qui dépasse des sépales, pendant",
+     "n": 1,
+     "methode": "oeil",
+     "photos": [
+      "pensee:5d043593"
+     ],
+     "conf": "C"
+    }
+   }
+  },
+  "pedicelle": {
+   "role": "pedicelle",
+   "taille": {
+    "longueur": {
+     "v": null,
+     "unite": "cm",
+     "methode": "hypothese",
+     "conf": "D",
+     "note": "long pédoncule axillaire ; la longueur coupée en bouquet est dans tige (Q11)"
+    },
+    "diametre": {
+     "v": 0.043,
+     "unite": "D",
+     "n": 1,
+     "methode": "regle",
+     "photos": [
+      "pensee:3a57366a"
+     ],
+     "conf": "C",
+     "note": "17 px sous une fleur de 396 px (t009)"
+    }
+   },
+   "courbure": {
+    "longitudinale": {
+     "profil": {
+      "v": "arquee",
+      "n": 2,
+      "methode": "oeil",
+      "photos": [
+       "pensee:5d043593",
+       "pensee:3a57366a"
+      ],
+      "conf": "B",
+      "note": "droit, puis un crochet serré sous la fleur ; la fleur se présente de face, perpendiculaire au bout du pédoncule"
+     },
+     "fleche": {
+      "v": 0.018,
+      "unite": "L",
+      "n": 1,
+      "methode": "segmente",
+      "photos": [
+       "pensee:5d043593"
+      ],
+      "conf": "C",
+      "note": "partie droite sous le crochet, organ.py stem"
+     }
+    },
+    "crochet_deg": {
+     "v": 150,
+     "unite": "deg",
+     "repere": "tige",
+     "n": 1,
+     "methode": "oeil",
+     "photos": [
+      "pensee:5d043593"
+     ],
+     "conf": "C",
+     "note": "au bouton, la tête retourne presque vers le bas"
+    }
+   },
+   "matiere": {
+    "texture": {
+     "v": "mat",
+     "n": 1,
+     "methode": "oeil",
+     "photos": [
+      "pensee:5d043593"
+     ],
+     "conf": "C"
+    },
+    "translucidite": {
+     "v": 0.2,
+     "n": 1,
+     "methode": "oeil",
+     "photos": [
+      "pensee:5d043593"
+     ],
+     "conf": "C",
+     "note": "contre-jour"
+    }
+   },
+   "zones": [
+    {
+     "zone": "corps",
+     "etendue": {
+      "v": [
+       0,
+       1
+      ],
+      "unite": "L",
+      "methode": "segmente",
+      "conf": "C",
+      "photos": [
+       "pensee:5d043593"
+      ]
+     },
+     "bord": "fondu",
+     "methode": "segmente",
+     "v": [
+      "#6d7b0c",
+      "#839b08",
+      "#bdcd4a"
+     ],
+     "unite": "hex",
+     "n": 1,
+     "conf": "C",
+     "photos": [
+      "pensee:5d043593"
+     ],
+     "note": "ombre, corps, lumière (organ.py stem --green, contre-jour : plus jaune que réel)"
+    }
+   ],
+   "jointures": [
+    {
+     "vers": "tige",
+     "type": "noeud",
+     "params": {
+      "v": "naît à l'aisselle d'une feuille, entre ses stipules",
+      "methode": "reference",
+      "ref": "Flora Gallica (2014), Viola sect. Melanium (pensées)",
+      "conf": "B"
+     }
+    },
+    {
+     "vers": "calice",
+     "type": "articulation",
+     "params": {
+      "v": "2 bractéoles minuscules sous le crochet",
+      "methode": "reference",
+      "ref": "Flora of North America vol. 6 (Violaceae), Viola sect. Melanium et Viola × wittrockiana Gams",
+      "conf": "C"
+     }
+    }
+   ],
+   "section": {
+    "forme": {
+     "v": "anguleuse",
+     "methode": "reference",
+     "ref": "Flora Gallica (2014), Viola sect. Melanium (pensées)",
+     "conf": "C",
+     "note": "ronde à 4-5 angles"
+    },
+    "effilement": {
+     "v": 0.97,
+     "unite": "ratio",
+     "n": 1,
+     "methode": "segmente",
+     "photos": [
+      "pensee:5d043593"
+     ],
+     "conf": "C",
+     "note": "bas/haut, organ.py stem : pas d'effilement"
+    }
+   },
+   "stades": {
+    "bouton": {
+     "v": "crochet serré, bouton pendant",
+     "n": 1,
+     "methode": "oeil",
+     "photos": [
+      "pensee:5d043593"
+     ],
+     "conf": "B"
+    },
+    "ouvert": {
+     "v": "crochet ouvert, la face regarde vers l'avant",
+     "n": 2,
+     "methode": "oeil",
+     "photos": [
+      "pensee:3a57366a",
+      "pensee:d6922e50"
+     ],
+     "conf": "B"
+    },
+    "declin": {
+     "v": "le pédoncule fin ramollit, la face s'incline",
+     "methode": "reference",
+     "photos": [
+      "pensee:5eec9228"
+     ],
+     "ref": "catalogue/fanaison/fanaison.json, entrée pensee (tenue_vase_jours 4 à 10, modes recroqueville, penche-tete, decolore ; seche_bien false)",
+     "conf": "C"
+    },
+    "fane": {
+     "v": "la tête pend au bout du pédoncule arqué",
+     "methode": "reference",
+     "ref": "catalogue/fanaison/fanaison.json, entrée pensee (tenue_vase_jours 4 à 10, modes recroqueville, penche-tete, decolore ; seche_bien false)",
+     "conf": "C"
+    }
+   }
+  },
+  "tige": {
+   "role": "tige",
+   "taille": {
+    "longueur": {
+     "v": 27,
+     "plage": [
+      20,
+      35
+     ],
+     "unite": "cm",
+     "methode": "reference",
+     "ref": "catalogue/fanaison/fanaison.json, entrée pensee (tenue_vase_jours 4 à 10, modes recroqueville, penche-tete, decolore ; seche_bien false) (tige fine de 20 à 35 cm)",
+     "conf": "C"
+    },
+    "diametre": {
+     "v": 0.043,
+     "unite": "D",
+     "n": 1,
+     "methode": "regle",
+     "photos": [
+      "pensee:3a57366a"
+     ],
+     "conf": "C",
+     "note": "mesuré sur le pédoncule sous la fleur ; la tige feuillée n'a pas pu être isolée (t014 : masque pris par le sol)"
+    }
+   },
+   "courbure": {
+    "longitudinale": {
+     "profil": {
+      "v": "arquee",
+      "n": 2,
+      "methode": "oeil",
+      "photos": [
+       "pensee:d6922e50",
+       "pensee:cc057c03"
+      ],
+      "conf": "C",
+      "note": "ascendante, un peu flexueuse"
+     },
+     "fleche": {
+      "v": 0.02,
+      "plage": [
+       0.018,
+       0.021
+      ],
+      "unite": "L",
+      "n": 2,
+      "methode": "segmente",
+      "photos": [
+       "pensee:d6922e50",
+       "pensee:5d043593"
+      ],
+      "conf": "C"
+     }
+    }
+   },
+   "matiere": {
+    "texture": {
+     "v": "mat",
+     "n": 1,
+     "methode": "oeil",
+     "photos": [
+      "pensee:d6922e50"
+     ],
+     "conf": "C"
+    },
+    "brillance": {
+     "v": 0.15,
+     "n": 1,
+     "methode": "oeil",
+     "photos": [
+      "pensee:d6922e50"
+     ],
+     "conf": "C"
+    }
+   },
+   "zones": [
+    {
+     "zone": "corps",
+     "etendue": {
+      "v": [
+       0,
+       1
+      ],
+      "unite": "L",
+      "methode": "segmente",
+      "conf": "C",
+      "photos": [
+       "pensee:d6922e50",
+       "pensee:5d043593"
+      ]
+     },
+     "bord": "fondu",
+     "methode": "segmente",
+     "v": "#2d4f0c",
+     "unite": "hex",
+     "plage": [
+      "#2d4f0c",
+      "#839b08"
+     ],
+     "n": 2,
+     "conf": "C",
+     "photos": [
+      "pensee:d6922e50",
+      "pensee:5d043593"
+     ],
+     "note": "corps de organ.py stem : t014 (ombre #1b3e02, lumière #647d3b), t081 contre-jour"
+    }
+   ],
+   "jointures": [
+    {
+     "vers": "feuille",
+     "type": "noeud",
+     "params": {
+      "v": "feuilles alternes, chaque nœud porte une paire de stipules foliacées",
+      "methode": "reference",
+      "ref": "Flora of North America vol. 6 (Violaceae), Viola sect. Melanium et Viola × wittrockiana Gams",
+      "conf": "A"
+     }
+    }
+   ],
+   "section": {
+    "forme": {
+     "v": "anguleuse",
+     "methode": "reference",
+     "ref": "Flora Gallica (2014), Viola sect. Melanium (pensées)",
+     "conf": "C"
+    },
+    "poils": {
+     "v": "glabre à finement pubescente",
+     "methode": "reference",
+     "ref": "Flora Gallica (2014), Viola sect. Melanium (pensées)",
+     "conf": "C"
+    },
+    "effilement": {
+     "v": 1.0,
+     "unite": "ratio",
+     "n": 1,
+     "methode": "segmente",
+     "photos": [
+      "pensee:d6922e50"
+     ],
+     "conf": "C",
+     "note": "organ.py stem, masque élargi par le sol : indicatif"
+    }
+   },
+   "stades": {
+    "ouvert": {
+     "v": "dressée ou ascendante",
+     "n": 1,
+     "methode": "oeil",
+     "photos": [
+      "pensee:d6922e50"
+     ],
+     "conf": "C"
+    },
+    "declin": {
+     "v": "ramollit et se courbe",
+     "methode": "reference",
+     "photos": [
+      "pensee:5eec9228"
+     ],
+     "ref": "catalogue/fanaison/fanaison.json, entrée pensee (tenue_vase_jours 4 à 10, modes recroqueville, penche-tete, decolore ; seche_bien false)",
+     "conf": "C"
+    },
+    "fane": {
+     "v": "molle, courbée, la tête ne se tient plus",
+     "methode": "reference",
+     "ref": "catalogue/fanaison/fanaison.json, entrée pensee (tenue_vase_jours 4 à 10, modes recroqueville, penche-tete, decolore ; seche_bien false)",
+     "conf": "C"
+    }
+   }
+  },
+  "feuille": {
+   "role": "feuille",
+   "nombre": {
+    "v": 4,
+    "plage": [
+     2,
+     6
+    ],
+    "unite": "n",
+    "methode": "hypothese",
+    "conf": "D",
+    "note": "par tige coupée : quelques feuilles seulement (Q11)"
+   },
+   "disposition": {
+    "type": {
+     "v": "alternes",
+     "methode": "reference",
+     "ref": "Flora of North America vol. 6 (Violaceae), Viola sect. Melanium et Viola × wittrockiana Gams",
+     "conf": "A"
+    }
+   },
+   "contour": {
+    "base": {
+     "v": "cordee",
+     "n": 2,
+     "methode": "oeil",
+     "photos": [
+      "pensee:cc057c03",
+      "pensee:5d043593"
+     ],
+     "conf": "B",
+     "note": "feuilles du bas ovales-cordées à arrondies ; celles du haut ovales-oblongues à base cunée (t014)"
+    },
+    "pointe": {
+     "type": {
+      "v": "obtuse",
+      "n": 2,
+      "methode": "oeil",
+      "photos": [
+       "pensee:cc057c03",
+       "pensee:5d043593"
+      ],
+      "conf": "B"
+     }
+    },
+    "L_sur_l": {
+     "v": 1.97,
+     "plage": [
+      1.23,
+      2.7
+     ],
+     "unite": "ratio",
+     "n": 10,
+     "methode": "segmente",
+     "photos": [
+      "pensee:280c6484",
+      "pensee:06f06b1b",
+      "pensee:b902b7a7",
+      "pensee:e64f0728",
+      "pensee:cc057c03",
+      "pensee:24fe00c6",
+      "pensee:06fa74d2",
+      "pensee:5885347d"
+     ],
+     "conf": "B",
+     "note": "fit.py targets feuille.leaflw (sd 0.73) ; t154 et t189 sont d'autres espèces de Viola (Q1)"
+    },
+    "L_sur_l_jardin": {
+     "v": 1.38,
+     "plage": [
+      1.19,
+      2.51
+     ],
+     "unite": "ratio",
+     "n": 5,
+     "methode": "segmente",
+     "photos": [
+      "pensee:cc057c03",
+      "pensee:5d043593",
+      "pensee:d6922e50"
+     ],
+     "conf": "C",
+     "note": "organ.py leaf : 1.38, 1.22, 1.19 (t002, feuilles qui se chevauchent : sous-estimé), 1.88 (t081), 2.51 (t014, feuille haute)"
+    },
+    "marge": {
+     "v": "crenelee",
+     "n": 3,
+     "methode": "oeil",
+     "photos": [
+      "pensee:cc057c03",
+      "pensee:5d043593",
+      "pensee:d6922e50"
+     ],
+     "conf": "A",
+     "note": "crénelures larges et peu profondes, 5 à 8 par côté"
+    }
+   },
+   "taille": {
+    "longueur": {
+     "v": null,
+     "unite": "R0",
+     "methode": "hypothese",
+     "conf": "D",
+     "note": "à rapporter au diamètre de la fleur (Q12)"
+    }
+   },
+   "courbure": {
+    "longitudinale": {
+     "profil": {
+      "v": "arquee",
+      "n": 1,
+      "methode": "oeil",
+      "photos": [
+       "pensee:cc057c03"
+      ],
+      "conf": "C"
+     }
+    },
+    "transversale": {
+     "type": {
+      "v": "gouttiere",
+      "n": 1,
+      "methode": "oeil",
+      "photos": [
+       "pensee:cc057c03"
+      ],
+      "conf": "C",
+      "note": "limbe un peu creusé le long de la nervure médiane"
+     }
+    },
+    "angle_tige": {
+     "v": 31.6,
+     "plage": [
+      0,
+      70
+     ],
+     "unite": "deg",
+     "repere": "tige",
+     "n": 10,
+     "methode": "segmente",
+     "photos": [
+      "pensee:280c6484",
+      "pensee:06f06b1b",
+      "pensee:b902b7a7",
+      "pensee:e64f0728",
+      "pensee:cc057c03",
+      "pensee:24fe00c6",
+      "pensee:06fa74d2",
+      "pensee:5885347d"
+     ],
+     "conf": "C",
+     "ecart": {
+      "type": "divergence",
+      "texte": "repère non dit par fit.py targets : « tige » supposé (Q3) ; deux photos d'autres espèces (Q1)"
+     },
+     "note": "fit.py targets feuille.leafang (sd 38)"
+    }
+   },
+   "matiere": {
+    "epaisseur": {
+     "v": "moyenne",
+     "n": 1,
+     "methode": "oeil",
+     "photos": [
+      "pensee:cc057c03"
+     ],
+     "conf": "C"
+    },
+    "texture": {
+     "v": "satin",
+     "n": 2,
+     "methode": "oeil",
+     "photos": [
+      "pensee:cc057c03",
+      "pensee:d6922e50"
+     ],
+     "conf": "C"
+    },
+    "brillance": {
+     "v": 0.35,
+     "n": 1,
+     "methode": "oeil",
+     "photos": [
+      "pensee:cc057c03"
+     ],
+     "conf": "C"
+    }
+   },
+   "nervation": {
+    "type": {
+     "v": "pennee",
+     "n": 2,
+     "methode": "oeil",
+     "photos": [
+      "pensee:cc057c03",
+      "pensee:5d043593"
+     ],
+     "conf": "B"
+    },
+    "relief": {
+     "v": "creux",
+     "n": 1,
+     "methode": "oeil",
+     "photos": [
+      "pensee:cc057c03"
+     ],
+     "conf": "C"
+    },
+    "visible": {
+     "v": "face",
+     "n": 1,
+     "methode": "oeil",
+     "photos": [
+      "pensee:cc057c03"
+     ],
+     "conf": "C"
+    },
+    "couleur": {
+     "v": "plus-claire",
+     "n": 1,
+     "methode": "oeil",
+     "photos": [
+      "pensee:cc057c03"
+     ],
+     "conf": "C"
+    }
+   },
+   "zones": [
+    {
+     "zone": "corps",
+     "etendue": {
+      "v": [
+       0,
+       1
+      ],
+      "unite": "L",
+      "methode": "segmente",
+      "conf": "B",
+      "photos": [
+       "pensee:cc057c03",
+       "pensee:d6922e50",
+       "pensee:5d043593"
+      ]
+     },
+     "bord": "fondu",
+     "methode": "segmente",
+     "v": "#618563",
+     "unite": "hex",
+     "n": 5,
+     "conf": "B",
+     "plage": [
+      "#71987d",
+      "#527d4c",
+      "#618563",
+      "#4b6942",
+      "#a6c577"
+     ],
+     "photos": [
+      "pensee:cc057c03",
+      "pensee:d6922e50",
+      "pensee:5d043593"
+     ],
+     "note": "corps (médiane) par organ.py leaf : t002 x3, t014, t081 (contre-jour) ; ombre #1b3615, lumière #83ad86 (t002)"
+    }
+   ],
+   "jointures": [
+    {
+     "vers": "tige",
+     "type": "petiole",
+     "params": {
+      "v": "pétiole net, aussi long que le limbe sur les feuilles du bas, court en haut",
+      "methode": "reference",
+      "ref": "Flora Gallica (2014), Viola sect. Melanium (pensées)",
+      "conf": "C",
+      "note": "organ.py leaf n'isole pas le pétiole (caché, part 0.00 à 0.05)"
+     }
+    },
+    {
+     "vers": "tige",
+     "type": "gaine",
+     "params": {
+      "v": "paire de stipules foliacées pennatifides à grand lobe terminal, à la base du pétiole",
+      "methode": "reference",
+      "photos": [
+       "pensee:d6922e50"
+      ],
+      "ref": "Flora of North America vol. 6 (Violaceae), Viola sect. Melanium et Viola × wittrockiana Gams ; Flora Gallica (2014), Viola sect. Melanium (pensées)",
+      "conf": "A",
+      "note": "visibles en t014 (lobes étroits à droite du pédoncule)"
+     }
+    }
+   ],
+   "section": {
+    "petiole": {
+     "v": "gouttiere",
+     "methode": "reference",
+     "ref": "Flora Gallica (2014), Viola sect. Melanium (pensées)",
+     "conf": "C",
+     "note": "pétiole canaliculé dessus"
+    }
+   },
+   "stades": {
+    "ouvert": {
+     "v": "étalées, vert franc",
+     "n": 2,
+     "methode": "oeil",
+     "photos": [
+      "pensee:cc057c03",
+      "pensee:d6922e50"
+     ],
+     "conf": "B"
+    },
+    "declin": {
+     "v": "ramollissent et jaunissent",
+     "methode": "reference",
+     "ref": "catalogue/fanaison/fanaison.json, entrée pensee (tenue_vase_jours 4 à 10, modes recroqueville, penche-tete, decolore ; seche_bien false)",
+     "conf": "C"
+    },
+    "fane": {
+     "v": "molles, jaunies, pendantes",
+     "methode": "reference",
+     "ref": "catalogue/fanaison/fanaison.json, entrée pensee (tenue_vase_jours 4 à 10, modes recroqueville, penche-tete, decolore ; seche_bien false)",
+     "conf": "C"
+    }
+   }
+  }
+ },
+ "varietes": {
+  "clear-sky-yellow": {
+   "forme": "non-mesure",
+   "note": "coloris à macule ou à œil sombre : zone macule de petale.inferieur et petale.lateral attendue, étendue non comparée (Q10)"
+  },
+  "crown-white": {
+   "forme": "non-mesure",
+   "note": "coloris à macule ou à œil sombre : zone macule de petale.inferieur et petale.lateral attendue, étendue non comparée (Q10)"
+  },
+  "delta-beaconsfield": {
+   "forme": "non-mesure",
+   "note": "coloris à macule ou à œil sombre : zone macule de petale.inferieur et petale.lateral attendue, étendue non comparée (Q10)"
+  },
+  "delta-lavender-blue-shad": {
+   "forme": "non-mesure",
+   "note": "coloris à macule ou à œil sombre : zone macule de petale.inferieur et petale.lateral attendue, étendue non comparée (Q10)"
+  },
+  "delta-pink-shades": {
+   "forme": "non-mesure",
+   "note": "coloris à macule ou à œil sombre : zone macule de petale.inferieur et petale.lateral attendue, étendue non comparée (Q10)"
+  },
+  "delta-premium-pure-yello": {
+   "forme": "non-mesure",
+   "note": "coloris à macule ou à œil sombre : zone macule de petale.inferieur et petale.lateral attendue, étendue non comparée (Q10)"
+  },
+  "delta-premium-yellow-wit": {
+   "forme": "non-mesure",
+   "note": "coloris à macule ou à œil sombre : zone macule de petale.inferieur et petale.lateral attendue, étendue non comparée (Q10)"
+  },
+  "delta-pure-deep-orange": {
+   "forme": "non-mesure",
+   "note": "coloris à macule ou à œil sombre : zone macule de petale.inferieur et petale.lateral attendue, étendue non comparée (Q10)"
+  },
+  "delta-pure-red": {
+   "forme": "non-mesure",
+   "note": "coloris à macule ou à œil sombre : zone macule de petale.inferieur et petale.lateral attendue, étendue non comparée (Q10)"
+  },
+  "delta-pure-rose": {
+   "forme": "non-mesure",
+   "note": "coloris à macule ou à œil sombre : zone macule de petale.inferieur et petale.lateral attendue, étendue non comparée (Q10)"
+  },
+  "delta-red-with-blotch": {
+   "forme": "non-mesure",
+   "note": "coloris à macule ou à œil sombre : zone macule de petale.inferieur et petale.lateral attendue, étendue non comparée (Q10)"
+  },
+  "delta-true-blue": {
+   "forme": "non-mesure",
+   "note": "coloris à macule ou à œil sombre : zone macule de petale.inferieur et petale.lateral attendue, étendue non comparée (Q10)"
+  },
+  "delta-white-blotch": {
+   "forme": "non-mesure",
+   "note": "coloris à macule ou à œil sombre : zone macule de petale.inferieur et petale.lateral attendue, étendue non comparée (Q10)"
+  },
+  "dynamite-blue-white": {
+   "forme": "non-mesure",
+   "note": "coloris à macule ou à œil sombre : zone macule de petale.inferieur et petale.lateral attendue, étendue non comparée (Q10)"
+  },
+  "dynamite-pure-white": {
+   "forme": "non-mesure",
+   "note": "coloris à macule ou à œil sombre : zone macule de petale.inferieur et petale.lateral attendue, étendue non comparée (Q10)"
+  },
+  "dynamite-purple": {
+   "forme": "non-mesure",
+   "note": "coloris à macule ou à œil sombre : zone macule de petale.inferieur et petale.lateral attendue, étendue non comparée (Q10)"
+  },
+  "matrix-blue-frost": {
+   "forme": "non-mesure",
+   "note": "coloris à macule ou à œil sombre : zone macule de petale.inferieur et petale.lateral attendue, étendue non comparée (Q10)"
+  },
+  "ultima-morpho": {
+   "forme": "non-mesure",
+   "note": "coloris à macule ou à œil sombre : zone macule de petale.inferieur et petale.lateral attendue, étendue non comparée (Q10)"
+  },
+  "accord-black-beauty": {
+   "forme": "non-mesure",
+   "note": "coloris à macule ou à œil sombre : zone macule de petale.inferieur et petale.lateral attendue, étendue non comparée (Q10)"
+  },
+  "delta-deep-blue-blotch": {
+   "forme": "non-mesure",
+   "note": "coloris à macule ou à œil sombre : zone macule de petale.inferieur et petale.lateral attendue, étendue non comparée (Q10)"
+  },
+  "delta-premium-pure-deep-": {
+   "forme": "non-mesure",
+   "note": "coloris à macule ou à œil sombre : zone macule de petale.inferieur et petale.lateral attendue, étendue non comparée (Q10)"
+  },
+  "delta-premium-pure-primr": {
+   "forme": "non-mesure",
+   "note": "coloris à macule ou à œil sombre : zone macule de petale.inferieur et petale.lateral attendue, étendue non comparée (Q10)"
+  },
+  "delta-premium-yellow-witx": {
+   "forme": "non-mesure",
+   "note": "coloris à macule ou à œil sombre : zone macule de petale.inferieur et petale.lateral attendue, étendue non comparée (Q10)"
+  },
+  "delta-tapestry": {
+   "forme": "non-mesure",
+   "note": "coloris à macule ou à œil sombre : zone macule de petale.inferieur et petale.lateral attendue, étendue non comparée (Q10)"
+  },
+  "imperial-antique-shades": {
+   "forme": "non-mesure",
+   "note": "coloris à macule ou à œil sombre : zone macule de petale.inferieur et petale.lateral attendue, étendue non comparée (Q10)"
+  },
+  "majestic-giants-ii-sherr": {
+   "forme": "non-mesure",
+   "note": "coloris à macule ou à œil sombre : zone macule de petale.inferieur et petale.lateral attendue, étendue non comparée (Q10)"
+  },
+  "matrix-yellow": {
+   "forme": "non-mesure",
+   "note": "coloris à macule ou à œil sombre : zone macule de petale.inferieur et petale.lateral attendue, étendue non comparée (Q10)"
+  },
+  "crown-azure": {
+   "forme": "non-mesure",
+   "note": "coloris à macule ou à œil sombre : zone macule de petale.inferieur et petale.lateral attendue, étendue non comparée (Q10)"
+  },
+  "delta-premium-pure-white": {
+   "forme": "non-mesure",
+   "note": "coloris à macule ou à œil sombre : zone macule de petale.inferieur et petale.lateral attendue, étendue non comparée (Q10)"
+  },
+  "delta-violet-with-face": {
+   "forme": "non-mesure",
+   "note": "coloris à macule ou à œil sombre : zone macule de petale.inferieur et petale.lateral attendue, étendue non comparée (Q10)"
+  },
+  "dynamite-lavender": {
+   "forme": "non-mesure",
+   "note": "coloris à macule ou à œil sombre : zone macule de petale.inferieur et petale.lateral attendue, étendue non comparée (Q10)"
+  },
+  "fama-deep-orange": {
+   "forme": "non-mesure",
+   "note": "coloris à macule ou à œil sombre : zone macule de petale.inferieur et petale.lateral attendue, étendue non comparée (Q10)"
+  },
+  "majestic-giants-ii-purpl": {
+   "forme": "non-mesure",
+   "note": "coloris à macule ou à œil sombre : zone macule de petale.inferieur et petale.lateral attendue, étendue non comparée (Q10)"
+  },
+  "matrix-red-yellow": {
+   "forme": "non-mesure",
+   "note": "coloris à macule ou à œil sombre : zone macule de petale.inferieur et petale.lateral attendue, étendue non comparée (Q10)"
+  },
+  "pink-shades": {
+   "forme": "non-mesure",
+   "note": "coloris à macule ou à œil sombre : zone macule de petale.inferieur et petale.lateral attendue, étendue non comparée (Q10)"
+  },
+  "yellow-blotch": {
+   "forme": "non-mesure",
+   "note": "coloris à macule ou à œil sombre : zone macule de petale.inferieur et petale.lateral attendue, étendue non comparée (Q10)"
+  },
+  "atlas-black": {
+   "forme": "non-mesure",
+   "note": "coloris à macule ou à œil sombre : zone macule de petale.inferieur et petale.lateral attendue, étendue non comparée (Q10)"
+  },
+  "azure": {
+   "forme": "non-mesure",
+   "note": "coloris à macule ou à œil sombre : zone macule de petale.inferieur et petale.lateral attendue, étendue non comparée (Q10)"
+  },
+  "black-delight": {
+   "forme": "non-mesure",
+   "note": "coloris à macule ou à œil sombre : zone macule de petale.inferieur et petale.lateral attendue, étendue non comparée (Q10)"
+  },
+  "blue-morpho": {
+   "forme": "non-mesure",
+   "note": "coloris à macule ou à œil sombre : zone macule de petale.inferieur et petale.lateral attendue, étendue non comparée (Q10)"
+  },
+  "colossus-white-with-blot": {
+   "forme": "non-mesure",
+   "note": "coloris à macule ou à œil sombre : zone macule de petale.inferieur et petale.lateral attendue, étendue non comparée (Q10)"
+  },
+  "colossus-yellow-with-blo": {
+   "forme": "non-mesure",
+   "note": "coloris à macule ou à œil sombre : zone macule de petale.inferieur et petale.lateral attendue, étendue non comparée (Q10)"
+  },
+  "crown-orange": {
+   "forme": "non-mesure",
+   "note": "coloris à macule ou à œil sombre : zone macule de petale.inferieur et petale.lateral attendue, étendue non comparée (Q10)"
+  },
+  "crown-purple": {
+   "forme": "non-mesure",
+   "note": "coloris à macule ou à œil sombre : zone macule de petale.inferieur et petale.lateral attendue, étendue non comparée (Q10)"
+  },
+  "delta-premium-deep-blue-": {
+   "forme": "non-mesure",
+   "note": "coloris à macule ou à œil sombre : zone macule de petale.inferieur et petale.lateral attendue, étendue non comparée (Q10)"
+  },
+  "delta-premium-pure-viole": {
+   "forme": "non-mesure",
+   "note": "coloris à macule ou à œil sombre : zone macule de petale.inferieur et petale.lateral attendue, étendue non comparée (Q10)"
+  },
+  "delta-white-with-rose-wi": {
+   "forme": "non-mesure",
+   "note": "coloris à macule ou à œil sombre : zone macule de petale.inferieur et petale.lateral attendue, étendue non comparée (Q10)"
+  },
+  "dynamite-light-blue": {
+   "forme": "non-mesure",
+   "note": "coloris à macule ou à œil sombre : zone macule de petale.inferieur et petale.lateral attendue, étendue non comparée (Q10)"
+  },
+  "dynamite-purple-rose-whi": {
+   "forme": "non-mesure",
+   "note": "coloris à macule ou à œil sombre : zone macule de petale.inferieur et petale.lateral attendue, étendue non comparée (Q10)"
+  },
+  "dynamite-red-yellow": {
+   "forme": "non-mesure",
+   "note": "coloris à macule ou à œil sombre : zone macule de petale.inferieur et petale.lateral attendue, étendue non comparée (Q10)"
+  },
+  "matrix-orange": {
+   "forme": "non-mesure",
+   "note": "coloris à macule ou à œil sombre : zone macule de petale.inferieur et petale.lateral attendue, étendue non comparée (Q10)"
+  },
+  "matrix-rose-blotch": {
+   "forme": "non-mesure",
+   "note": "coloris à macule ou à œil sombre : zone macule de petale.inferieur et petale.lateral attendue, étendue non comparée (Q10)"
+  },
+  "panola-beaconsfield": {
+   "forme": "non-mesure",
+   "note": "coloris à macule ou à œil sombre : zone macule de petale.inferieur et petale.lateral attendue, étendue non comparée (Q10)"
+  },
+  "ultima-baron-mahogany": {
+   "forme": "non-mesure",
+   "note": "coloris à macule ou à œil sombre : zone macule de petale.inferieur et petale.lateral attendue, étendue non comparée (Q10)"
+  },
+  "atlas-jack-o-lantern": {
+   "forme": "non-mesure",
+   "note": "coloris à macule ou à œil sombre : zone macule de petale.inferieur et petale.lateral attendue, étendue non comparée (Q10)"
+  },
+  "bingo-azure": {
+   "forme": "non-mesure",
+   "note": "coloris à macule ou à œil sombre : zone macule de petale.inferieur et petale.lateral attendue, étendue non comparée (Q10)"
+  },
+  "blue-blotch": {
+   "forme": "non-mesure",
+   "note": "coloris à macule ou à œil sombre : zone macule de petale.inferieur et petale.lateral attendue, étendue non comparée (Q10)"
+  },
+  "carneval-cherry": {
+   "forme": "non-mesure",
+   "note": "coloris à macule ou à œil sombre : zone macule de petale.inferieur et petale.lateral attendue, étendue non comparée (Q10)"
+  },
+  "clear-crystal-yellow": {
+   "forme": "non-mesure",
+   "note": "coloris à macule ou à œil sombre : zone macule de petale.inferieur et petale.lateral attendue, étendue non comparée (Q10)"
+  },
+  "colossus-rose-blotch": {
+   "forme": "non-mesure",
+   "note": "coloris à macule ou à œil sombre : zone macule de petale.inferieur et petale.lateral attendue, étendue non comparée (Q10)"
+  }
+ },
+ "stades": {
+  "table": [
+   {
+    "stade": "bouton",
+    "jours": [
+     0,
+     1
+    ],
+    "op": [
+     0,
+     0.1
+    ],
+    "wl": [
+     0,
+     0
+    ],
+    "photos": [],
+    "statut": "hypothese",
+    "note": "fit.py targets : bouton op 0.08 ; aucune photo de bouton fermé de pensée (Q8)"
+   },
+   {
+    "stade": "gonfle",
+    "jours": [
+     0,
+     1
+    ],
+    "op": [
+     0.1,
+     0.3
+    ],
+    "wl": [
+     0,
+     0
+    ],
+    "photos": [
+     "pensee:5d043593"
+    ],
+    "statut": "mesure",
+    "note": "bouton pendant, pointe colorée (t081 : fit.py bouton.hw)"
+   },
+   {
+    "stade": "entrouvert",
+    "jours": [
+     1,
+     2
+    ],
+    "op": [
+     0.3,
+     0.6
+    ],
+    "wl": [
+     0,
+     0
+    ],
+    "photos": [
+     "pensee:13072cd7",
+     "pensee:5727eb0d"
+    ],
+    "statut": "hypothese",
+    "note": "fit.py targets entrouverte op 0.55, mesuré sur Viola arvensis (Q2)"
+   },
+   {
+    "stade": "ouvert",
+    "jours": [
+     2,
+     4
+    ],
+    "op": [
+     0.6,
+     0.9
+    ],
+    "wl": [
+     0,
+     0
+    ],
+    "photos": [
+     "pensee:5e315505",
+     "pensee:3a57366a",
+     "pensee:77101d27",
+     "pensee:35479e35",
+     "pensee:3a31bf23"
+    ],
+    "statut": "mesure",
+    "note": "face plane ; W/H 1.02 (organ.py head), pétales réglés sur t009 et t094"
+   },
+   {
+    "stade": "plein",
+    "jours": [
+     4,
+     6
+    ],
+    "op": [
+     0.9,
+     1
+    ],
+    "wl": [
+     0,
+     0.1
+    ],
+    "photos": [
+     "pensee:f417c828",
+     "pensee:99af6e55"
+    ],
+    "statut": "hypothese",
+    "note": "à l'œil : marges détendues, bord des supérieurs renversé"
+   },
+   {
+    "stade": "declin",
+    "jours": [
+     6,
+     8
+    ],
+    "op": [
+     1,
+     1
+    ],
+    "wl": [
+     0.2,
+     0.6
+    ],
+    "photos": [
+     "pensee:5eec9228"
+    ],
+    "statut": "hypothese",
+    "note": "t114 regardée, non mesurée ; ordre de fanaison : catalogue/fanaison/fanaison.json"
+   },
+   {
+    "stade": "fane",
+    "jours": [
+     8,
+     10
+    ],
+    "op": [
+     1,
+     1
+    ],
+    "wl": [
+     0.6,
+     1
+    ],
+    "photos": [],
+    "statut": "hypothese",
+    "note": "ne sèche pas sur tige (seche_bien false) : pas de stade sec ; photos de fruits t471, t582, t583 d'autres espèces, non retenues (Q9)"
+   }
+  ],
+  "source_jours": "catalogue/fanaison/fanaison.json, entrée pensee (tenue_vase_jours 4 à 10, modes recroqueville, penche-tete, decolore ; seche_bien false)",
+  "sec": "absent : la pensée ne sèche pas bien (fanaison.json)"
+ },
+ "rendu": {},
+ "questions": [
+  {
+   "id": "Q1",
+   "organe": "feuille",
+   "question": "fit.py targets (L/l 1.97, angle 31.6°) mêle t154 (Viola vallicola) et t189 (Viola glabella) aux pensées de jardin.",
+   "proposition": "relancer fit.py targets sur les seules photos groupe jardin (t002, t014, t048, t067, t072, t085, t092) ; marquer t154, t189 groupe « autre »."
+  },
+  {
+   "id": "Q2",
+   "organe": "petale.inferieur",
+   "question": "les mesures d'entrouvert (W/H 1.25, angle -2.6°) et les photos t348, t349 sont de Viola arvensis.",
+   "proposition": "chercher une pensée de jardin entrouverte de profil (refs.py) et remesurer ; d'ici là, garder ces valeurs en conf D."
+  },
+  {
+   "id": "Q3",
+   "organe": "feuille",
+   "question": "à quoi se mesure l'angle leafang de fit.py (tige, verticale, horizontale) ?",
+   "proposition": "lire fit.py et corriger le repère."
+  },
+  {
+   "id": "Q4",
+   "organe": "bouton",
+   "question": "bouton.hw 0.315 (fit.py) contre 0.90 (organ.py head, t081) : définitions différentes ; taille du bouton par rapport à R0 inconnue.",
+   "proposition": "documenter la définition de hw dans fit.py ; mesurer le bouton contre une fleur ouverte de la même photo."
+  },
+  {
+   "id": "Q5",
+   "organe": "petale.superieur",
+   "question": "profondeur de la gorge non mesurée de profil (volume.py non lancé, pas de profil de pensée).",
+   "proposition": "garder 0.06 L (fleur plane) ; mesurer avec fleur/volume.py sur une photo de profil de pensée de jardin."
+  },
+  {
+   "id": "Q6",
+   "organe": "calice",
+   "question": "longueur et forme des sépales sur la fleur ouverte inconnues.",
+   "proposition": "photo de dos d'une pensée de jardin ; Flora Gallica pour l'ordre de grandeur."
+  },
+  {
+   "id": "Q7",
+   "organe": "petale.inferieur",
+   "question": "éperon : longueur (2 à 6 mm, flore) jamais vue de profil.",
+   "proposition": "photo de profil ou de dos ; sinon 4 mm, court et obtus."
+  },
+  {
+   "id": "Q8",
+   "organe": "bouton",
+   "question": "aucune photo de bouton fermé (tout vert) de pensée de jardin ; t082 est d'un autre groupe.",
+   "proposition": "ajouter une photo de bouton fermé."
+  },
+  {
+   "id": "Q9",
+   "organe": "petale.superieur",
+   "question": "aucune photo de pensée fanée en vase ; les photos de fruits (t471, t582, t583) sont d'autres espèces.",
+   "proposition": "dessiner le fané d'après fanaison.json (repli, froissé, tête pendante) ; chercher une photo de pensée fanée."
+  },
+  {
+   "id": "Q10",
+   "organe": "petale.inferieur",
+   "question": "les 60 coloris n'ont pas été comparés à l'espèce pour la forme (étendue de la macule, œil, liseré).",
+   "proposition": "comparer sur les photos de coloris (coloris-photos.json) et passer chaque coloris en « espece » ou en surcharge de zones."
+  },
+  {
+   "id": "Q11",
+   "organe": "tige",
+   "question": "en bouquet, la tige coupée est-elle le pédoncule seul ou une tige feuillée (nombre de feuilles) ?",
+   "proposition": "tige coupée de 20 à 35 cm avec 2 à 6 feuilles et leurs stipules, pédoncule terminé en crochet."
+  },
+  {
+   "id": "Q12",
+   "organe": "feuille",
+   "question": "taille de la feuille par rapport à la fleur non mesurée.",
+   "proposition": "mesurer feuille et fleur sur la même photo (t014 ou t002)."
+  },
+  {
+   "id": "Q13",
+   "organe": "petale.superieur",
+   "question": "quel moteur dessine une fleur plane zygomorphe à 3 rangs de pétales ?",
+   "proposition": "au modeleur : nouveau module app/y-viola.js."
+  },
+  {
+   "id": "Q14",
+   "organe": "petale.superieur",
+   "question": "lequel des deux pétales supérieurs recouvre l'autre : constant ou au hasard ?",
+   "proposition": "compter sur toutes les photos de face (t008 à t011, t036, t037, t094)."
+  }
+ ]
+}
