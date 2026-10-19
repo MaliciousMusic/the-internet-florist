@@ -209,3 +209,69 @@ Rappel de base : SVG natif seulement, ni 3D, ni image incorporée, ni ruban, ni 
     de forme validée par le porteur, puis `--tete-validee` ; plante et finition en Sonnet ; comparaison et juge 1 M à eux deux. Au-delà, la session principale écrit
     le tableau elle-même et lance le juge une fois (`--juge-tours 0`), puis regarde les planches `plant=1` et corrige la tige et les feuilles elle-même
     (vague 4 : gloriosa 6,06 M, nérine 4,31, delphinium 6,24, scabieuse 5,42).
+
+## 11. La barre : la photo, pas l'anémone (porteur, 2026-10-18)
+11.1 Le but est la meilleure qualité possible, quel qu'en soit le coût (porteur, 2026-10-18, sur le lys oriental redessiné : « really weak and bad
+    compare to the image »). La référence n'est plus l'anémone : vue au même grossissement, elle reste une illustration vectorielle propre. La
+    référence est la photo, recadrée au même angle et à la même échelle que le rendu.
+11.2 La tête se juge région par région, chaque région en paire recadrée photo/rendu à 100 % et 200 % : silhouette, corps du pétale (matière,
+    stries, brillance), bord et pointe (liseré, revers, ondulation), gorge et cœur, étamines et pollen, mouchetures, dos et revers. Une région est
+    finie quand plus aucun écart n'y est visible ; la liste des écarts restants est écrite à chaque passage.
+11.3 Le moteur d'abord : ce qui manque à une région (couleur portée par les nervures plutôt qu'en tache floue, stries fines et denses, ombres
+    portées et occlusion entre pièces qui se chevauchent, brillance satinée le long des nervures, mouchetures et papilles en relief, pollen
+    velouté, franges de la gorge, revers coloré des pointes roulées) devient une pièce du kit, essayée sur la sorte en cours, puis offerte aux
+    suivantes.
+11.4 Le porteur ne voit une tête qu'après ma propre revue des paires recadrées et celle d'un juge neuf sur les mêmes recadrages. Une sorte à la
+    fois jusqu'à ce que la tête soit validée ; le plafond de 8 M ne s'applique pas à la tête, il reste mesuré.
+
+
+## 12. De la photo au dessin : la fiche d'apparence, la grille, la matière fine (porteur, 2026-10-18)
+12.1 Le diagnostic (porteur, 2026-10-18 : « les fleurs finies ne sont pas incroyablement réalistes ») : la chaîne vérifiait qu'une fleur est
+    juste (forme, comptes, couleurs moyennes), pas qu'elle a l'air vraie. Ce qui rend une photo réelle (lumière qui traverse, dégradés continus,
+    nervures, grain, ombres entre pièces) n'était ni extrait des photos, ni dessinable, ni mesuré. Les trois se règlent ensemble.
+12.2 Chaque composant visible a sa fiche d'apparence (fleur/APPARENCE.md) : tépale ou pétale, gorge et nectaires, filet, anthère, style,
+    stigmate, taches et papilles, sépale, bractée, revers. Le pistil spécial et le composant qui détonne sont traités avec le même soin que la
+    pièce principale : ce sont eux qu'on rate le plus souvent. Un composant sans fiche d'apparence n'est pas fini.
+12.3 La mise à plat : `python fleur/apparence.py piece` déplie la pièce dans son repère (nervure de la base à la pointe, en travers d'un bord
+    à l'autre), sur trois à cinq vues de deux photos au moins. Un composant posé dessus (filets, anthère) est retiré par sa couleur
+    (`--exclure`) : il a sa propre fiche. Sur le rendu, la pièce est rendue seule (`&solo=k`, `&nohrt=1` pour svReflex) : son masque est exact.
+12.4 La grille : `python fleur/apparence.py grille` tire de ces mises à plat une grille de couleurs (bandes de |u| par rangées de la base à
+    la pointe, couleur du tissu bien éclairé, médiane sur les photos, exposition ramenée). La matière la lit (`grid`, et `gridV` quand la base des
+    photos est à l'ombre) au lieu de zones posées à l'œil. Ce sont des nombres mesurés, comme une couleur de coloris : jamais l'image. Une zone
+    d'un autre composant (le sillon vert des nectaires) se garde par-dessus (`fine:1`), les médianes la perdraient.
+12.5 La matière fine (app/y3-fine.js, clé `fine` d'une matière) : en gros plan (DET >= 1,5), chaque nappe est ombrée échantillon par échantillon
+    (lumière, ciel, occlusion, satin le long des nervures, lumière à travers les bords, grain), sous un léger flou et dans le clip de sa région ;
+    taches, flammes, bandes, nervures propres et liserés restent dessinés par-dessus. Aux tailles du bouquet (DET 1) rien ne change. Poids
+    mesuré sur le lys : 430 Ko à D110, 760 Ko à D200, 3,1 Mo à D520 ; dessin en 140 à 500 ms. Aucune autre sorte ne bouge sans la clé
+    (témoins identiques au pixel près).
+12.6 La boucle : chaque retouche se vérifie par `apparence.py paire` (ΔE2000, contraste, grain, nervures, taches, lumière le long et en
+    travers, région par région), puis à l'œil sur les paires recadrées. Les chiffres disent où regarder ; la photo dit si c'est fini.
+12.7 La forme se lit aussi sur la mise à plat : profil de largeur, rapport longueur/largeur visible, endroit où la pièce se recourbe. Un
+    tépale qui se recourbe trop tôt cache, de face, sa partie haute (lys oriental : pointe à 3,45 rad, 64 % de la longueur, ramenée à 2,2 rad,
+    72 %) : la couleur paraît fausse alors que c'est la forme.
+
+## 13. Volumes et couches (porteur, 2026-10-18, sur le lys oriental)
+13.1 Une fleur se construit en couches. Le lys a deux verticilles de trois tépales : les externes plus étroits, insérés plus bas, qui
+    s'écartent et plongent en se recourbant ; les internes plus larges, aux marges ondulées, insérés un peu plus haut, qui montent en coupe
+    avant de s'ouvrir, décalés de 60°. Dessinés comme un seul plan de six pièces semblables, la fleur est fausse même si chaque pièce est juste.
+13.2 La fiche décrit la structure des couches (SCHEMA §4, `disposition`) : nombre de couches, insertion de chacune, décalage, laquelle passe
+    devant, ce qui les distingue, profondeur de la gorge. Chaque verticille a ses réglages (largeur, longueur, angles, ondulation) quand le
+    moteur le permet (svReflex : L, W, z0, cup, aS, aB, aT et wavW par verticille).
+13.3 La profondeur se juge de profil et de trois-quarts, jamais seulement de face : vue de face, un centre plat et un centre profond se
+    ressemblent. `python fleur/volume.py paire` compare la silhouette de profil (hauteur sur largeur, remplissage, profil de largeur par
+    rangée, profondeur de l'entonnoir), à angle égal seulement : une photo prise d'au-dessus ne juge pas un profil.
+13.4 Toute planche de validation porte au moins une vue de profil et une de trois-quarts par coloris, à côté de leurs photos.
+
+## 14. Structure des calques : aucune pièce ne traverse une autre (porteur, 2026-10-18, règle très sévère)
+14.1 Aucune pièce ne passe à travers une autre, aucun bout ne dépasse là où il devrait être caché, aucun contour en escalier. Chaque calque
+    SVG est une pièce entière, posée devant ou derrière ses voisines, jamais coupée par elles.
+14.2 La mesure : `sh fleur/shot_p.sh <nom> "grid=1&sid=<sid>&cws=<tous>&st=<tous les stades>&view=0,2,7&D=300&det=2&seed=7&qa3d=1"` ; le
+    JSON porte `x3d` (app/y3-qa3d.js : pour chaque paire de nappes d'une tête, les arêtes d'une nappe qui passent de l'autre côté de sa
+    voisine, là où elles se touchent presque). La seule valeur admise est 0, sur tous les coloris, toutes les vues, tous les stades et trois
+    graines au moins. Une sorte qui n'est pas à 0 n'est pas validée.
+14.3 Les remèdes, dans cet ordre : séparer les couches (insertion plus haute du verticille intérieur, épaules plus ouvertes de l'extérieur,
+    `z0`, `aS`), emboîter les couches quand elles se resserrent (`nest`, bouton, colonne, fané), réduire l'ondulation ou la largeur qui fait
+    se toucher deux voisines ; un contour en escalier le long d'un pli : une nappe plus fine (`nu`, `nv`). Jamais un clip pour cacher.
+14.4 État au 2026-10-18 (lys oriental, graine 3, quatre coloris) : ouvert 0 ; trois-quarts ouvert 0,4 ; bouton qui s'ouvre 23 ; fané 2 à 58.
+    Le bouton et le fané restent à reprendre (les tépales d'un même verticille s'y chevauchent en se refermant et en se froissant). Mesuré
+    sur les autres sortes, ouvertes : tulipe simple 76, cymbidium 46, gloriosa 21, anémone 1, nérine 0,2 par tête : à reprendre à leur tour.

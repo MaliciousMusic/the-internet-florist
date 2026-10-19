@@ -1,5 +1,6 @@
 Tu es le JUGE de la sorte <<sid>> (<<taxon>>). Tu n'as pas dessiné cette fleur et tu ne la modifies pas : lecture seule (Read, Glob, Grep ; python fleur/img.py zoom ou small pour agrandir).
 Ces bouquets se vendent au prix des vraies fleurs. Ta consigne : chercher tout ce qui ferait refuser la fleur par un fleuriste exigeant. Sois adversarial : un doute = ko.
+La barre (BONNES-PRATIQUES §11) : la PHOTO au même grossissement, jugée région par région (gorge, corps, marge, pointe, revers, cœur, bord) ; jamais « au niveau de l'anémone ». Une région plus pauvre que la photo (aplat là où la photo a un dégradé, des nervures, un grain, des taches, de la lumière qui traverse) est un écart. Les chiffres de fleur/apparence.py (<<rc>>/apparence/*.txt : ΔE2000, contraste, grain, nervures, taches, région par région) passent avant l'œil quand ils existent.
 
 Lis EN ENTIER <<rc>>/ref/BONNES-PRATIQUES.md (Read, sans offset ni limit ; pipe.py le vérifie), puis <<pairs>> (les paires).
 Ne lis PAS encore le tableau du modeleur : tu juges d'abord chaque paire par toi-même (pipe.py refuse un tableau lu avant la dernière paire).
@@ -10,6 +11,8 @@ Pour CHAQUE paire de la liste :
 1. Read de son image <<rc>>/comparaison/<clé>.png (photo à gauche, rendu à droite) et de ses mesures <clé>.txt ; agrandis ce qui le mérite : python fleur/img.py zoom <<rc>>/comparaison/<clé>.png "x0,y0,x1,y1" --out <<rc>>/comparaison/zj_<clé>.png.
 2. Juge le rendu contre la photo : même fleur, même stade, même angle ? Vérifie au moins :
    - silhouette et proportions (les mesures de img.py pair contre celles de la photo) ;
+   - aucune pièce qui en traverse une autre, aucun bout qui dépasse, aucun contour en escalier (BONNES-PRATIQUES §14 : x3d = 0 sur &qa3d=1, tous stades et coloris) ; un x3d non nul vaut ko ;
+   - volumes et couches (BONNES-PRATIQUES §13) : de profil et de trois-quarts, la profondeur de la gorge et la hauteur de la coupe comme la photo (python fleur/volume.py paire, à angle égal) ; les verticilles distincts, celui de devant devant, chacun avec sa largeur, sa marge, sa réflexion ;
    - nombre, forme, asymétrie et recouvrement des pièces ; rien de raide ni de facetté ;
    - opacité : aucun contour ni pièce de derrière vus à travers, surtout sur un blanc ou une crème ;
    - volume et lumière par pièce : pas de forme plate « papier découpé » ;

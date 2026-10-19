@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Labo des fleurs</title>
+<style>
+:root{--bg:#f6f4ef;--card:#fff;--ink:#22201c;--mut:#77726a;--line:#e4e0d8;--soft:#f0ede6;
+  --haiku:#3f9d6b;--sonnet:#3a74c4;--opus:#8a4fc0;--fable:#c0507a;--python:#8a857c;--hand:#c46a1e;
+  --ok:#3f9d6b;--run:#3a74c4;--ko:#cc3d3d;--cap:#d98a1c;--skip:#b9b3a8}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#171614;--card:#211f1c;--ink:#ece8e1;--mut:#9c968c;--line:#35322d;--soft:#2a2824}}
+:root[data-theme=dark]{--bg:#171614;--card:#211f1c;--ink:#ece8e1;--mut:#9c968c;--line:#35322d;--soft:#2a2824}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.45 system-ui,-apple-system,"Segoe UI",sans-serif}
+main{max-width:1320px;margin:0 auto;padding:20px 16px 60px}
+h1{font-size:22px;margin:0}h2{font-size:16px;margin:28px 0 10px}h3{font-size:13px;margin:0 0 6px;color:var(--mut);font-weight:600;text-transform:uppercase;letter-spacing:.04em}
+.top{display:flex;flex-wrap:wrap;gap:12px;align-items:baseline;justify-content:space-between}
+.mut{color:var(--mut)}.small{font-size:12px}
+.grid{display:grid;gap:12px}.g4{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}.g2{grid-template-columns:repeat(auto-fit,minmax(420px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px}
+.kpi b{display:block;font-size:24px;font-weight:650}
+.chip{display:inline-block;padding:1px 8px;border-radius:99px;font-size:11.5px;font-weight:600;color:#fff;margin:1px 3px 1px 0;white-space:nowrap}
+.m-haiku{background:var(--haiku)}.m-sonnet{background:var(--sonnet)}.m-opus{background:var(--opus)}.m-fable{background:var(--fable)}.m-python{background:var(--python)}.m-hand{background:var(--hand)}
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+@media (max-width:900px){.flow{grid-template-columns:1fr}.g2{grid-template-columns:1fr}}
+.phase{background:var(--soft);border-radius:10px;padding:10px}
+.phase>h3{margin:2px 4px 8px}
+.step{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:9px 10px;margin-bottom:8px;position:relative}
+.step.hand{border-left:4px solid var(--hand)}
+.step .n{font-weight:650}.step .r{font-size:12px;color:var(--mut);margin:2px 0 5px}
+.step .t{font-size:11.5px;color:var(--mut);font-family:ui-monospace,Consolas,monospace}
+.step .cap{position:absolute;right:9px;top:8px;font-size:11.5px;color:var(--mut)}
+table{border-collapse:collapse;width:100%}th,td{padding:5px 6px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+#bymodel td,#bymodel th{white-space:nowrap}th{font-size:11.5px;color:var(--mut);font-weight:600}
+.mat td.s{padding:3px;text-align:center;width:44px}
+.st{display:block;height:22px;border-radius:4px;font-size:10.5px;line-height:22px;color:#fff;cursor:default}
+.st.done{background:var(--ok)}.st.running{background:var(--run);animation:pulse 1.6s infinite}.st.failed{background:var(--ko)}
+.st.capped,.st.blocked{background:var(--cap)}.st.skipped,.st.dry{background:var(--skip)}.st.none{background:var(--soft)}
+@keyframes pulse{50%{opacity:.55}}
+.scroll{overflow-x:auto}
+.bar{height:8px;background:var(--soft);border-radius:4px;overflow:hidden;min-width:80px}.bar i{display:block;height:100%}
+.feed{max-height:420px;overflow:auto;font-size:12.5px}
+.feed div{overflow-wrap:anywhere;padding:3px 0;border-bottom:1px dashed var(--line);display:grid;grid-template-columns:60px 70px 1fr;gap:6px}
+.feed .tool{font-weight:600}
+.legend span{margin-right:12px;font-size:12px}
+.dot{display:inline-block;width:10px;height:10px;border-radius:3px;vertical-align:-1px;margin-right:4px}
+.live{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--ok);margin-right:6px}
+.live.idle{background:var(--skip)}
+.tools .k{margin-bottom:10px}.tools .k div{font-size:12.5px;padding:2px 0}.tools code{font-weight:600}
+.note{font-size:12.5px;background:var(--soft);border-radius:8px;padding:10px 12px;margin:8px 0}
+svg text{fill:var(--mut);font-size:10px}
+</style>
+</head>
+<body>
+<main>
+  <div class="top">
+    <h1>Labo des fleurs</h1>
+    <div class="small mut"><span id="live" class="live"></span><span id="at">…</span> · mis à jour toutes les 15 s depuis le disque, sans appel de modèle</div>
+  </div>
+
+  <div class="grid g4" style="margin-top:14px" id="kpis"></div>
+
+  <h2>Comment une fleur est faite</h2>
+  <div class="note" id="regime"></div>
+  <div class="legend small" id="legend"></div>
+  <div class="flow" id="flow" style="margin-top:8px"></div>
+
+  <h2>Les sortes en cours</h2>
+  <div class="card scroll"><table class="mat" id="mat"></table>
+    <div class="legend small" style="margin-top:8px">
+      <span><i class="dot" style="background:var(--ok)"></i>faite</span><span><i class="dot" style="background:var(--run)"></i>en cours</span>
+      <span><i class="dot" style="background:var(--ko)"></i>échouée (une question)</span><span><i class="dot" style="background:var(--cap)"></i>arrêtée au plafond</span>
+      <span><i class="dot" style="background:var(--skip)"></i>sautée</span><span class="mut">Survole une case : son message et son coût.</span></div>
+  </div>
+
+  <h2>Cette session au travail</h2>
+  <div class="grid g2">
+    <div class="card"><h3>Coût par modèle</h3><table id="bymodel"></table>
+      <p class="small mut" style="margin:8px 0 0">eq-Opus : jetons ramenés à l'entrée d'Opus. Sortie ×5, écriture de cache ×1,25, lecture de cache ×0,1 ; Sonnet ×0,6 et Haiku ×0,2 d'Opus (fleur/bill.py).</p></div>
+    <div class="card"><h3>À quoi sert la dépense</h3><div id="acts"></div></div>
+    <div class="card"><h3>Dépense par heure (eq-Opus)</h3><div id="hours"></div></div>
+    <div class="card"><h3>Ce que tu m'as demandé</h3><div id="prompts" class="small"></div></div>
+    <div class="card"><h3>Dernières actions</h3><div class="feed" id="feed"></div></div>
+    <div class="card"><h3>Agents lancés par la session</h3><div class="scroll"><table id="subs"></table></div></div>
+  </div>
+
+  <h2>La machine</h2>
+  <div class="grid g2">
+    <div class="card"><h3>RAM libre (Go) — plancher 3 Go</h3><div id="ram"></div></div>
+    <div class="card"><h3>Rendus headless</h3><div id="gate"></div></div>
+  </div>
+
+  <h2>Les agents de la méthode</h2>
+  <div class="grid g4" id="agents"></div>
+
+  <h2>Les outils</h2>
+  <div class="card tools grid g4" id="tools"></div>
+</main>
+<script>
+const $=id=>document.getElementById(id);
+const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const M=x=>(x/1e6).toFixed(x>=1e7?0:x>=1e6?1:2)+' M';
+const fmt=n=>n>=1e6?(n/1e6).toFixed(1)+' M':n>=1e3?(n/1e3).toFixed(0)+' k':String(Math.round(n));
+const chip=m=>`<span class="chip m-${esc(m)}">${esc({haiku:'Haiku',sonnet:'Sonnet',opus:'Opus',fable:'Fable',python:'sans modèle',hand:'à la main'}[m]||m)}</span>`;
+const hhmm=ts=>{if(!ts)return'';const d=new Date(ts.endsWith('Z')||ts.length>19?ts:ts);return d.toLocaleTimeString('fr-FR',{hour:'2-digit',minute:'2-digit'})};
+const PHASES=[['Sources',['census','refs','coloris','targets','fiche']],['La tête',['forme','fit']],['La plante',['plante','finition']],['Contrôle',['temoins','comparaison','juge','qa','planches']]];
+const STL={done:'ok',running:'…',failed:'ko',capped:'cap',blocked:'bloq',skipped:'—',dry:'dry'};
+
+function render(d){
+  const S=d.session||{},me=d.method,pc=(d.machine||{}).pc||{};
+  const lastAct=S.last?new Date(S.last):null,busy=lastAct&&(Date.now()-lastAct)<180e3;
+  $('live').className='live'+(busy?'':' idle');
+  $('at').textContent=(busy?'la session travaille':'la session attend')+' · dernière action '+hhmm(S.last)+' · données de '+d.at.slice(11,16);
+  const sortsEq=d.sorts.reduce((a,s)=>a+s.eq,0);
+  const subEq=(S.subagents||[]).reduce((a,s)=>a+s.eq,0);
+  $('kpis').innerHTML=[
+    ['Cette session',M(S.eq||0)+' eq-Opus',`${S.calls||0} appels · dont ${M(subEq)} par ${(S.subagents||[]).length} agents`],
+    ['Appels de pipe.py',M(sortsEq)+' eq-Opus',`${d.sorts.length} sortes · ${d.sorts.reduce((a,s)=>a+s.usd,0).toFixed(0)} $ au tarif API`],
+    ['Plafond par fleur',(me.cap_flower||8)+' M',`une mesure ; la tête n'y est plus soumise (la qualité d'abord)`],
+    ['RAM libre',(pc.ram_free_gb||'?')+' Go',`CPU ${pc.cpu||'?'} % · Chrome headless ${pc.chrome_headless||0} / 3`]
+  ].map(([a,b,c])=>`<div class="card kpi"><h3>${a}</h3><b>${b}</b><span class="small mut">${c}</span></div>`).join('');
+
+  $('regime').innerHTML=`<b>Depuis le 18 octobre</b> : la qualité n'a plus de plafond. Les étapes qui décrivent ou dessinent l'apparence (photos, coloris, fiche, tige, finition, comparaison, juge) sont faites par Opus ; seul un garde-fou contre les boucles les arrête (4 fois leur part, en haut à droite de chaque carte). Les têtes sont dessinées <span class="chip m-hand">à la main</span> par cette session au niveau de la photo, composant par composant : fiche d'apparence (apparence.py), grille de couleurs mesurée, matière fine en gros plan (BONNES-PRATIQUES §12).`;
+  $('legend').innerHTML=['haiku','sonnet','opus','python','hand'].map(m=>`<span>${chip(m)}${{haiku:'Haiku 5.5 : tâches simples, effort bas',sonnet:'Sonnet 5.5 : fiches, photos, tige, effort moyen',opus:'Opus 5.5 : forme, regard, comparaison, juge',python:'script, aucun jeton',hand:'cette session'}[m]}</span>`).join('');
+  const byId=Object.fromEntries(me.steps.map(s=>[s.id,s]));
+  $('flow').innerHTML=PHASES.map(([t,ids])=>`<div class="phase"><h3>${t}</h3>${ids.map(id=>{const s=byId[id];if(!s)return'';const hand=s.now==='session';
+    return `<div class="step${hand?' hand':''}"><span class="cap">${s.cap!=null?s.cap+' M':''}</span><div class="n">${esc(s.name)}</div><div class="r">${esc(s.role)}</div>
+    ${hand?chip('hand'):''}${s.models.map((m,i)=>chip(m)+(s.effort[i]?`<span class="small mut">${esc(s.effort[i])} </span>`:'')).join('')}
+    <div class="t">${esc(s.tools)}</div></div>`}).join('')}</div>`).join('');
+
+  const cols=me.steps.map(s=>s.id);
+  $('mat').innerHTML=`<tr><th>Sorte</th><th>Chantier</th>${cols.map(c=>`<th title="${esc(byId[c].name)}">${esc(byId[c].name.split(' ')[0].slice(0,6))}</th>`).join('')}<th>Coût</th><th></th></tr>`+
+    d.sorts.map(s=>{const pct=Math.min(100,s.eq/((me.cap_flower||8)*1e6)*100);
+      return `<tr><td><b>${esc(s.sid)}</b><div class="small mut">${esc(s.taxon||'')}</div></td><td class="small">${esc(s.chantier)}</td>${cols.map(c=>{const t=s.steps[c],b=s.bill[c];
+        const tip=t?`${byId[c].name} : ${t.status}${b?` · ${fmt(b.eq)} eq-Opus, ${b.calls} appel(s), ${b.models.join('/')}, ${Math.round(b.dur/60)} min`:''}\n${t.msg||''}`:byId[c].name+' : pas encore';
+        return `<td class="s"><span class="st ${t?esc(t.status):'none'}" title="${esc(tip)}">${t?STL[t.status]||esc(t.status):''}</span></td>`}).join('')}
+        <td class="small" style="white-space:nowrap">${M(s.eq)}</td><td><div class="bar" title="part du plafond de 8 M"><i style="width:${pct}%;background:${pct>=100?'var(--ko)':'var(--sonnet)'}"></i></div></td></tr>`}).join('');
+
+  const U=S.usage||{};
+  $('bymodel').innerHTML='<tr><th>Modèle</th><th>Appels</th><th>Entrée</th><th>Cache écrit</th><th>Cache lu</th><th>Sortie</th><th>eq-Opus</th></tr>'+
+    Object.entries(U).sort((a,b)=>b[1].eq-a[1].eq).map(([m,v])=>`<tr><td>${chip(m)}</td><td>${v.calls}</td><td>${fmt(v.in)}</td><td>${fmt(v.cw)}</td><td>${fmt(v.cr)}</td><td>${fmt(v.out)}</td><td><b>${M(v.eq)}</b></td></tr>`).join('');
+  const A=Object.entries(S.acts||{}).sort((a,b)=>b[1]-a[1]),amax=A.length?A[0][1]:1;
+  $('acts').innerHTML='<table>'+A.slice(0,12).map(([a,v])=>`<tr><td style="width:120px">${esc(a)}</td><td><div class="bar"><i style="width:${v/amax*100}%;background:var(--opus)"></i></div></td><td class="small" style="width:60px">${M(v)}</td></tr>`).join('')+'</table>';
+  const H=S.hours||[],hm=Math.max(1,...H.map(h=>h[1])),bw=Math.max(6,Math.floor(560/Math.max(1,H.length)));
+  $('hours').innerHTML=`<svg viewBox="0 0 ${bw*H.length} 130" width="100%" height="130" preserveAspectRatio="none">${H.map(([h,v],i)=>{const y=110-v/hm*100;
+    return `<rect x="${i*bw+1}" y="${y}" width="${bw-2}" height="${110-y}" rx="2" fill="var(--opus)"><title>${new Date(h+':00:00Z').getHours()}h : ${M(v)}</title></rect>${i%3==0?`<text x="${i*bw+1}" y="125">${new Date(h+':00:00Z').getHours()}h</text>`:''}`}).join('')}</svg>`;
+  $('prompts').innerHTML=(S.prompts||[]).slice().reverse().map(([t,p])=>`<div style="padding:4px 0;border-bottom:1px dashed var(--line)"><span class="mut">${hhmm(t)}</span> ${esc(p.startsWith('This session is being continued')?'(reprise après compactage du contexte)':p)}</div>`).join('');
+  $('feed').innerHTML=(S.recent||[]).slice().reverse().map(([t,n,x])=>`<div><span class="mut">${hhmm(t)}</span><span class="tool">${esc(n.split('__').pop())}</span><span>${esc(x)}</span></div>`).join('');
+  $('subs').innerHTML='<tr><th>Agent</th><th>Modèle</th><th>Rôle</th><th>eq-Opus</th><th>Début</th></tr>'+(S.subagents||[]).map(s=>`<tr><td class="small">${esc(s.type||'')}</td><td>${chip(s.model||'?')}<span class="small mut">${esc(s.effort||'')}</span></td><td class="small">${esc(s.desc||'')}</td><td class="small">${M(s.eq)}</td><td class="small mut">${hhmm(s.first)}</td></tr>`).join('');
+
+  const R=pc.ram_series||[],C=pc.cpu_series||[],w=600,h=110,mx=Math.max(8,...R),X=i=>i/(Math.max(1,R.length-1))*w,Y=v=>h-v/mx*h;
+  $('ram').innerHTML=`<svg viewBox="0 0 ${w} ${h+14}" width="100%" height="${h+14}"><line x1="0" x2="${w}" y1="${Y(3)}" y2="${Y(3)}" stroke="var(--ko)" stroke-dasharray="4 4"/>
+    <polyline fill="none" stroke="var(--python)" stroke-width="1" opacity=".5" points="${C.map((v,i)=>X(i)+','+(h-v/100*h)).join(' ')}"/>
+    <polyline fill="none" stroke="var(--ok)" stroke-width="2" points="${R.map((v,i)=>X(i)+','+Y(v)).join(' ')}"/>
+    <text x="4" y="${Y(3)-4}">3 Go</text><text x="4" y="${h+12}">10 dernières minutes · vert : RAM libre · gris : CPU %</text></svg>`;
+  const G=(d.machine||{}).gate||[];
+  $('gate').innerHTML=`<div style="display:flex;gap:10px;margin-bottom:10px">${[1,2,3].map(i=>{const g=G.find(x=>x.slot===i);return `<div class="card" style="flex:1;text-align:center;padding:10px;${g?'border-color:var(--run)':''}"><b>${g?'occupé':'libre'}</b><div class="small mut">créneau ${i}${g&&g.since!=null?' · '+g.since+' s':''}</div></div>`}).join('')}</div>
+    <p class="small mut" style="margin:0">ws/gate.sh : au plus 3 Chrome headless, et seulement sous 85 % de CPU avec plus de 3,8 Go libres. Les rendus des fleurs (shot_p.sh) et les QA passent tous par là.</p>`;
+
+  $('agents').innerHTML=me.agents.map(a=>`<div class="card"><div style="display:flex;justify-content:space-between;align-items:center"><b>${esc(a.name)}</b>${chip(a.model)}</div><p class="small mut" style="margin:6px 0 0">${esc(a.desc)}</p></div>`).join('');
+  const K={};for(const t of me.tools)(K[t.kind]=K[t.kind]||[]).push(t);
+  const order=['pilote','recherche','mesure','image','modelage','rendu','contrôle','machine','coût','autre'];
+  $('tools').innerHTML=order.filter(k=>K[k]).map(k=>`<div class="k"><h3>${esc(k)}</h3>${K[k].map(t=>`<div><code>${esc(t.name)}</code> <span class="mut">${esc(t.desc)}</span></div>`).join('')}</div>`).join('');
+}
+let last='';
+async function tick(){try{const r=await fetch('data.json?'+Date.now(),{cache:'no-store'});const t=await r.text();if(t!==last){last=t;render(JSON.parse(t))}}catch(e){$('at').textContent='données introuvables : lance python fleur/labo.py'}}
+tick();setInterval(tick,15000);
+</script>
+</body>
+</html>

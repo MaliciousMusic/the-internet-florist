@@ -6,7 +6,7 @@ OBLIGATOIRE d'abord : lis EN ENTIER <<schema>> (Read, sans offset ni limit). Pui
 
 Remplis, en UTF-8, LF, indentation 1 :
 1. nom, taxon (genre, espece, groupe horticole), kit (moteur prévu, module app/y-<genre en minuscules>.js) ;
-2. organes : chaque organe de la sorte (pétales par verticille ou rang, cœur, calice ou bractées, bouton, réceptacle, tige, feuilles, pédicelle s'il existe), avec role et les rubriques de son rôle (SCHEMA §4) ; un organe frère identique : {"suit": "<organe>.<rubrique>"} ; un organe non dessiné : "dessinee": false ;
+2. organes : chaque organe de la sorte (un organe par verticille ou rang quand ils diffèrent : la structure des couches se décrit dans disposition, SCHEMA §4 : combien de couches, laquelle passe devant et s'insère plus haut, leur décalage, ce qui les distingue, la profondeur de la gorge vue de profil ; une fleur à deux verticilles dessinée comme un seul plan est fausse ; cœur, calice ou bractées, bouton, réceptacle, tige, feuilles, pédicelle s'il existe), avec role et les rubriques de son rôle (SCHEMA §4) ; un organe frère identique : {"suit": "<organe>.<rubrique>"} ; un organe non dessiné : "dessinee": false ;
 3. stades.table : bouton, gonfle, entrouvert, ouvert, plein, declin, fane (et sec si la sorte sèche sur tige), chacun avec op, wl, photos, statut, et dans les organes ce qui change d'un stade à l'autre ;
 4. varietes : une entrée par coloris de coloris.md : {"forme": "espece"} si comparé à l'espèce, {"forme": "non-mesure"} sinon, ou les surcharges de forme (cœur, pointe, macule) avec leurs photos ;
 5. questions : {id, organe, question, proposition} pour tout ce qui manque.
