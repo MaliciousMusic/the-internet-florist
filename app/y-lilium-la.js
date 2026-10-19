@@ -22,8 +22,8 @@ const LIL_LA_RIM={abricot:0,orange:0,rose:0,rouge:0,'rouge-noir':0,'coeur-pourpr
 /* the drying colours per colourway (svReflex opt-in cw.wilt: g the dulling, c the dried tissue, c2 the tips and margins, vein the streaks):
    measured on the dried orange lilies of fane/ (p146: L* quartiles #a24820 #c26638 #dc8555) and the faded Canada lily (a yellow pales to buff,
    then ochre); the white keeps the oriental's cream; the reds, the pink and the yellows by the same rule (no LA faded photo: to confirm) */
-const LIL_LA_WILT={orange:{g:'#c88a60',c:'#c26638',c2:'#a24820',vein:'#6a2a10'},abricot:{g:'#d0a07a',c:'#d08a58',c2:'#a85a30',vein:'#6a3a18'},
-  jaune:{g:'#d0bc88',c:'#d8b868',c2:'#a87a30',vein:'#6a4a1a'},'coeur-pourpre':{g:'#c8aa78',c:'#c8a050',c2:'#8a5a28',vein:'#5a2a14'},
+const LIL_LA_WILT={orange:{g:'#f09458',c:'#f88a46',c2:'#d86a32',vein:'#8a3a18',dull:.15,cast:'#a8502a'},abricot:{g:'#d0a07a',c:'#d08a58',c2:'#a85a30',vein:'#6a3a18'},
+  jaune:{g:'#ecd8a0',c:'#f0d89a',c2:'#c8a058',vein:'#8a6a30',dull:.3,cast:'#a08850'},'coeur-pourpre':{g:'#c8aa78',c:'#c8a050',c2:'#8a5a28',vein:'#5a2a14'},
   rose:{g:'#c8a8a0',c:'#c8968a',c2:'#8a5040',vein:'#5a2a22'},rouge:{g:'#a87068',c:'#9a3a2e',c2:'#5a1810',vein:'#3a0c08'},
   'rouge-noir':{g:'#8a5a58',c:'#7a2a26',c2:'#4a1210',vein:'#2a0806'},'coeur-noir':{g:'#a87068',c:'#9a3a2e',c2:'#5a1810',vein:'#3a0c08'}};
 /* the heart per colourway, measured on its own photo (owner 2026-10-19: the filaments are green only on the white and the yellow) */

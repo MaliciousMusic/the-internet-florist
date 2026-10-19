@@ -51,7 +51,7 @@ function svFine(cg,it,sh,front,Dm){const m=sh.mat,F=m.fine===true?SVFN_DEF:Objec
     if(F.tone&&F.tone!==1)c=c.map(x=>Math.max(0,Math.min(255,x*F.tone)))
     /* F.age {a, c, c2, vein, n} (a wilting tissue, 0..1): its colour dulls and warms toward the dry cream c, the tip and the margins first toward
        the tan c2, and fine brown streaks (n of them, vein) run along it, darker as it dries (owner's photos of faded lilies, 2026-10-19) */
-    if(F.age&&F.age.a>0){const A=F.age,a=Math.min(1,A.a),m0=(c[0]+c[1]+c[2])/3,dull=c.map(x=>m0+(x-m0)*(1-.75*a)),edge=Math.min(1,.25+.55*v+.35*Math.abs(u));
+    if(F.age&&F.age.a>0){const A=F.age,a=Math.min(1,A.a),m0=(c[0]+c[1]+c[2])/3,dull=c.map(x=>m0+(x-m0)*(1-(A.dull??.75)*a)),edge=Math.min(1,.25+.55*v+.35*Math.abs(u));
       let t=svfMix(dull,svfRgb(A.c||'#dcc4a2'),Math.min(1,a*(.6+.3*v)));t=svfMix(t,svfRgb(A.c2||'#a8835e'),Math.min(1,a*a*edge*edge*.7));
       if(A.n){let st=0;for(let k=0;k<A.n;k++){const uk=-1+2*(k+.5)/A.n+.04*Math.sin(v*7+k*1.7),d=(u-uk)/(.018+.01*Math.sin(k*2.3+v*4));st=Math.max(st,Math.exp(-d*d)*(.5+.5*Math.sin(k*1.9+v*3.1)))}
         t=svfMix(t,svfRgb(A.vein||'#7a5038'),Math.min(1,st*a*.55))}

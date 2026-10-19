@@ -31,11 +31,11 @@ function svReflex(par,B,O,D,S,cwx,op,seed,wl){const P=Object.assign({},SVRX_DEF,
     shv=(c,v)=>{let x=svShift(c,g.dh,g.ds,g.dl);const k2=gt*(1-P.greenTip*v);if(k2>0)x=mix(x,P.greenC,Math.min(1,k2*(1.15-v*.5)));
       if(age>0){x=mix(mix(x,P.wilt.g||'#c8b8a2',.6*age),P.wilt.c,Math.min(1,age*(.45+.4*v)));if(age>.4)x=mix(x,P.wilt.c2,Math.min(1,(age-.4)*v))}return x},
     ramp=st=>st.map(([v,c])=>[v,shv(c,v)]),
-    mat=Object.assign({stops:ramp(cw0.st),bstops:ramp(cw0.bst),shade:shv(cw0.shade,.5),lite:cw0.lite,bshade:shv(cw0.bshade,.5),blite:cw0.blite,rim:age>0&&cw0.rim?mix(cw0.rim,P.wilt.vein,Math.min(1,age*.8)):cw0.rim,cast:cw0.cast},P.light,
+    mat=Object.assign({stops:ramp(cw0.st),bstops:ramp(cw0.bst),shade:shv(cw0.shade,.5),lite:cw0.lite,bshade:shv(cw0.bshade,.5),blite:cw0.blite,rim:age>0&&cw0.rim?mix(cw0.rim,P.wilt.vein,Math.min(1,age*.8)):cw0.rim,cast:age>0&&P.wilt.cast?mix(cw0.cast,P.wilt.cast,Math.min(1,age)):cw0.cast},P.light,
       {trans:.1+.12*dec,rw:hi?(cw0.rw??.003)+.003*dec:0,ro:cw0.ro??.22});  /* opt-in rw, ro: a drawn margin line (the LA 'Eyeliner': a fine dark edge) */
   if(cw0.soft!=null)mat.soft=cw0.soft;  /* opt-in: the washes' softening (svDraw m.soft, default .05) */
   /* opt-in: the fine material (y3-fine.js) and the piece's measured colour grids (fleur/apparence.py grille); a fading flower keeps its hand ramps (they fade) */
-  if(cw0.fine){mat.fine=age>0?Object.assign({},cw0.fine===true?{}:cw0.fine,{age:{a:age,c:P.wilt.c,c2:P.wilt.c2,vein:P.wilt.vein,n:P.wilt.n}}):cw0.fine;
+  if(cw0.fine){mat.fine=age>0?Object.assign({},cw0.fine===true?{}:cw0.fine,{age:{a:age,c:P.wilt.c,c2:P.wilt.c2,vein:P.wilt.vein,n:P.wilt.n,dull:P.wilt.dull}}):cw0.fine;
     if(dec<.05||P.wilt){if(cw0.grid)mat.grid=cw0.grid;if(cw0.bgrid)mat.bgrid=cw0.bgrid;if(cw0.gridV)mat.gridV=cw0.gridV}}  /* with wilt the measured grid stays and dries */
   if(cw0.cross)mat.cross=cw0.cross.map(z=>Object.assign({},z,{st:z.st.map(([x,c,a])=>[x,shv(c,.6),(a??1)*(1-.7*gt)])}));
   if(cw0.transmit&&hi)mat.transmit=cw0.transmit;
