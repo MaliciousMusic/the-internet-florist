@@ -72,7 +72,7 @@ def mesurer(sid, cws, R, banc):
     sh = lambda name, q: subprocess.run(['sh', 'fleur/shot_p.sh', name, q], cwd=ROOT, capture_output=True, text=True)
     # the holes: a grid on a green ground, every stage, views 0,2,7
     st = STAGES.split(',')
-    sh('trous_' + sid, 'grid=1&sid=%s&cws=%s&st=%s&view=0,2,7&D=200&det=2&seed=7&bg=%%2300ff00' % (sid, ','.join(cws), STAGES))
+    sh('trous_' + sid, 'grid=1&sid=%s&cws=%s&st=%s&view=0,2,7&D=200&det=2&seed=7&nohrt=1&bg=%%2300ff00' % (sid, ','.join(cws), STAGES))  # the tissue's holes: a heart's filaments arcing out enclose real gaps, not holes
     png = os.path.join(ROOT, 'fleur', 'out', 'trous_%s.png' % sid)
     if os.path.exists(png):
         sys.path.insert(0, os.path.join(ROOT, 'fleur'))
@@ -96,9 +96,13 @@ def mesurer(sid, cws, R, banc):
         lines.append('%s : %s' % (w, 'identique' if n == 0 else 'DIFF %s px' % n))
     open(os.path.join(R, 'temoins.txt'), 'w', encoding='utf-8').write('\n'.join(lines) + '\n')
     if banc:
-        r = subprocess.run(['node', '--max-old-space-size=900', 'fleur/banc3d.js', '--head', "SV_HEAD['%s']({},B,O,200,CW,OP,SD,WL)" % sid, '--cws', ','.join(cws),
-                            '--seeds', '1,2,3,4,5,6,14,21'], cwd=ROOT, capture_output=True, text=True)
-        open(os.path.join(R, 'banc3d.txt'), 'w', encoding='utf-8').write(r.stdout)
+        # written as it runs (banc3d.part, renamed at the end): a session that ends mid-bench keeps what was measured, and a partial
+        # bench is never taken for a finished one. Launch it detached (BONNES-PRATIQUES §16.6) so it outlives the session.
+        part = os.path.join(R, 'banc3d.part')
+        with open(part, 'w', encoding='utf-8') as f:
+            subprocess.run(['node', '--max-old-space-size=900', 'fleur/banc3d.js', '--head', "SV_HEAD['%s']({},B,O,200,CW,OP,SD,WL)" % sid, '--cws', ','.join(cws),
+                            '--seeds', '1,2,3,4,5,6,14,21'], cwd=ROOT, stdout=f, stderr=subprocess.DEVNULL, text=True)
+        os.replace(part, os.path.join(R, 'banc3d.txt'))
 
 
 def main():
@@ -163,6 +167,11 @@ def main():
                 d = de2000(hx, cd[cw_])
                 if d > 6:
                     bad.append('%s/%s ΔE %.1f' % (k, cw_, d))
+    # the heart's parts are measured on every colourway's photo, not once for the sort (owner, 2026-10-19: green filaments on an orange LA)
+    for k in ('anthere', 'filet', 'style', 'stigmate'):
+        miss = [c for c in cws if c not in ((h.get(k) or {}).get('photo') or {})]
+        if h and miss:
+            bad.append('%s non mesuré : %s' % (k, ', '.join(miss)))
     line('5 composantes', len(h) >= 4 and nm > 0 and not bad, 'coeur.json absent' if not h else ('; '.join(bad[:6]) if bad else '%d composants, %d couleurs photo = code' % (len(h), nm)))
     # 6 profondeur
     vt = glob.glob(os.path.join(R, 'volume', '*.txt'))

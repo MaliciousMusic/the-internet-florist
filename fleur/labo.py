@@ -304,6 +304,55 @@ def session():
                 hours=sorted(hours.items())[-36:], tools=me.get('tools', {}), recent=me.get('recent', [])[-50:], prompts=me.get('prompts', []), subagents=subs)
 
 
+# ---------- the protocol and the chantiers (owner, 2026-10-20: the whole protocol lives in the dashboard, the reference for what to do)
+
+BP = os.path.join(ROOT, 'catalogue', 'serre', 'methode', 'BONNES-PRATIQUES.md')
+
+
+def protocole():
+    """BONNES-PRATIQUES from §15 on (the exit list, how to hold each point, session discipline), as markdown text."""
+    try:
+        t = open(BP, encoding='utf-8').read()
+    except OSError:
+        return ''
+    i = t.find('## 15.')
+    return t[i:] if i >= 0 else ''
+
+
+def git(*a):
+    import subprocess
+    r = subprocess.run(['git', '-C', ROOT] + list(a), capture_output=True, text=True, encoding='utf-8', errors='replace')
+    return r.stdout.strip() if r.returncode == 0 else None
+
+
+def chantiers():
+    """Each flower chantier with a state file: its last commit, whether it has main's latest tools and method, its grid sizes."""
+    tools = git('log', '-1', '--format=%H %cI', 'main', '--', 'fleur', 'catalogue/serre/methode')
+    th, tdate = (tools or ' ').split(' ', 1)
+    out = []
+    for d in sorted(glob.glob(os.path.join(ROOT, 'ch', '*'))):
+        n = os.path.basename(d)
+        etat = [os.path.relpath(f, d).replace(os.sep, '/') for f in glob.glob(os.path.join(d, 'catalogue', 'serre', 'fiches', '*-ETAT.md'))
+                + glob.glob(os.path.join(d, 'fleur', '*', 'REPRISE.md'))]
+        if not etat:
+            continue
+        br = 'refs/heads/ch/' + n
+        last = (git('log', '-1', '--format=%cI|%s', br, '--') or '|').split('|', 1)
+        changed = (git('diff', '--name-only', 'main...' + br, '--', 'app') or '').split()
+        grids = {}
+        for f in changed:
+            try:
+                for m in re.finditer(r'nu:(\d+),nv:(\d+)', open(os.path.join(d, f), encoding='utf-8', errors='replace').read()):
+                    k = m.group(1) + ' × ' + m.group(2)
+                    grids[k] = grids.get(k, 0) + 1
+            except OSError:
+                pass
+        up = th and git('merge-base', '--is-ancestor', th, br) is not None
+        out.append(dict(nom=n, last=last[0], msg=last[1][:160], etat=etat, outils_a_jour=bool(up), outils_main=tdate, grilles=grids))
+    out.sort(key=lambda c: c['last'], reverse=True)
+    return out
+
+
 # ---------- the PC
 
 def machine():
@@ -332,7 +381,8 @@ def machine():
 
 def main():
     os.makedirs(OUT, exist_ok=True)
-    d = dict(at=time.strftime('%Y-%m-%dT%H:%M:%S'), method=method(), sorts=sorts(), session=session(), machine=machine())
+    d = dict(at=time.strftime('%Y-%m-%dT%H:%M:%S'), method=method(), sorts=sorts(), session=session(), machine=machine(),
+             protocole=protocole(), chantiers=chantiers())
     tmp = os.path.join(OUT, 'data.json.tmp')
     with open(tmp, 'w', encoding='utf-8', newline='\n') as f:
         json.dump(d, f, ensure_ascii=False)
