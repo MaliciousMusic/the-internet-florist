@@ -75,6 +75,12 @@ function svLayers(list,pairs,o={}){const NU=o.nu||16,NV=o.nv||32,W=NU+1,n=W*(NV+
         /* the place on in, and the radii of in and out there */
         const pa=A.P[x],pb=Bg.P[s1[2]],inA=rl[1]===a,pin=inA?pa:pb,pout=inA?pb:pa,kin=rl[1],kout=rl[0],ri=Math.hypot(pin[0][0],pin[0][1]),ro=Math.hypot(pout[0][0],pout[0][1]),
           amt=Math.max(m,ri-ro+m)+Math.max(Math.abs(s1[0]),Math.abs(t1[0]));
+        /* a margin meeting a neighbour nearly edge-on (normals within 60 degrees of square): that edge tucks in toward its own blade's middle */
+        {const ex=x%CW,ey=y%CW,bk=s1[2],dt=Math.abs(V3.dot(A.N[x],Bg.N[bk]));if(dt<.5&&(ex===0||ex===CU||ey===0||ey===CU)){const e=(ex===0||ex===CU)?x:y,i=e%CW,pm=A.P[e],nb=A.P[e+(i===0?1:-1)][0],
+          dir=V3.nz(V3s(nb,pm[0])),amt=Math.max(Math.abs(s1[0]),Math.abs(t1[0]))+m*.5,ci=(pm[1]+1)/2*NU,cj=pm[2]*NV,pk=push[a];
+          for(let j=Math.max(0,Math.floor(cj-2));j<=Math.min(NV,Math.ceil(cj+2));j++)for(let i2=Math.max(0,Math.floor(ci-2));i2<=Math.min(NU,Math.ceil(ci+2));i2++){
+            const w=Math.max(0,1-Math.hypot(i2-ci,j-cj)/2.6),q=j*W+i2;if(w>0&&amt*w>pk[q*4+3]){pk[q*4]=dir[0]*amt*w;pk[q*4+1]=dir[1]*amt*w;pk[q*4+2]=dir[2]*amt*w;pk[q*4+3]=amt*w}}
+          return}}
         if(!nrm){if(ri-amt>=rminZ(pin[0][2]))put(kin,pin[1],(pin[2]),amt);else put(kout,pout[1],pout[2],-amt);return}
         /* past the first rounds (two margins meeting in a V, side by side around the axis, where a pull toward it does not part them): the end of
            the edge on the smaller side moves along the other sheet's normal to the side the rest of the edge is on, by what it lacks */
@@ -144,3 +150,21 @@ function svApart(T,gap,ins,rounds){let P=T.map(t=>t.P.map(p=>p.slice()));for(let
   P=P.map((Q,x)=>{const m=mv[x],e=m.map((v,k)=>{let b=v,bl=V3l(v);for(const[dk,w]of[[-1,.6],[1,.6],[-2,.3],[2,.3]]){const m2=m[k+dk];if(m2&&V3l(m2)*w>bl){b=V3.sc(m2,w);bl=V3l(m2)*w}}return b});
     return Q.map((p,k)=>k===0?p:V3.add(p,e[k]))})}
   return P}
+/* svClearT(pieces, P3, rad, ins, gap): the last word for a drawn tube against the head's final sheets, with the measure's own rule (y3-qa3d.js,
+   tube against sheet): each sheet sampled 13 x 25 from v .1, its inner samples only, near = 1.5 of its sample spacing; a point of the axis past
+   the insertion nearer a sheet's tangent plane than its radius, or on the other side of it than the rest of the tube, moves along that plane's
+   normal to its radius + gap on the tube's side; rounds until none is left (8 at most) */
+function svClearT(pieces,P3,rad,ins,gap){const S=pieces.filter(p=>!p.fn&&p.S&&p.qa!==false);if(!S.length)return P3;const NU=12,NV=24,W=NU+1,v0=.1;
+  const G=S.map(sh=>{const P=[];for(let j=0;j<=NV;j++)for(let i=0;i<=NU;i++)P.push(sh.S(-1+2*i/NU,v0+(1-v0)*j/NV));const N=[];
+    for(let j=0;j<=NV;j++)for(let i=0;i<=NU;i++){const a=P[j*W+Math.min(NU,i+1)],b=P[j*W+Math.max(0,i-1)],c=P[Math.min(NV,j+1)*W+i],e=P[Math.max(0,j-1)*W+i];N.push(V3.nz(V3.cr(V3s(c,e),V3s(a,b))))}
+    let sp=0,ns=0;for(let j=0;j<=NV;j++)for(let i=0;i<NU;i++){sp+=V3l(V3s(P[j*W+i+1],P[j*W+i]));ns++}for(let j=0;j<NV;j++)for(let i=0;i<=NU;i++){sp+=V3l(V3s(P[(j+1)*W+i],P[j*W+i]));ns++}
+    return{P,N,h:sp/ns}});
+  let Q=P3.map(p=>p.slice());const n=Q.length-1,k0=Math.ceil(n*ins);
+  for(let it=0;it<8;it++){let any=0;
+    for(const g of G){const near=x=>{let bd=1e18,bk=0;for(let k=0;k<g.P.length;k++){const q=g.P[k],dx=x[0]-q[0],dy=x[1]-q[1],dz=x[2]-q[2],d2=dx*dx+dy*dy+dz*dz;if(d2<bd){bd=d2;bk=k}}
+        const bi=bk%W,bj=Math.floor(bk/W);if(!(bi>0&&bi<NU&&bj>0&&bj<NV)||Math.sqrt(bd)>1.5*g.h)return null;return bk};
+      const hit=Q.map((p,k)=>{if(k<k0)return null;const bk=near(p);if(bk==null)return null;const q=g.P[bk],nn=g.N[bk];return[(p[0]-q[0])*nn[0]+(p[1]-q[1])*nn[1]+(p[2]-q[2])*nn[2],nn]});
+      let side=0;for(const h of hit)if(h)side+=Math.sign(h[0]);if(!side)side=1;const sg=Math.sign(side);
+      for(let k=k0;k<=n;k++){const h=hit[k];if(!h)continue;const r=rad(k),want=r+gap,s1=sg*h[0];if(s1<want*.95){Q[k]=V3.add(Q[k],V3.sc(h[1],sg*(want-s1)));any=1}}}
+    if(!any)break}
+  return Q}

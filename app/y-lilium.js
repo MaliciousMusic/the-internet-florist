@@ -258,7 +258,7 @@ function lilHeart(o0){const o=Object.assign({},LILH_DEF,o0);
         E('ellipse',{cx:svF(c[0]),cy:svF(c[1]),rx:svF(Math.max(.5,rx)),ry:svF(Math.max(.5,ry)),transform:`rotate(${svF(ang)} ${svF(c[0])} ${svF(c[1])})`,fill:`url(#${id})`,filter:svBlur(Math.max(rx,ry)*.12)},G(k2))},proxy:prT,qa:false})}  /* qa:false: the throat's shade lies under the feet by design */
     /* the stamens: one in front of each tepal, arching forward out of the throat, rising toward the end */
     const nT=g.n||6,nO=Math.ceil(nT/2);
-    for(let i=0;i<6;i++){if(fan>.3&&pxHashS(i,17,g.sd)<(fan-.3)*1.3)continue;
+    for(let i=0;i<6;i++){if(fan>.6&&pxHashS(i,17,g.sd)<(fan-.6)*.6)continue;  /* a faded lily keeps most of its shrivelled stamens */
       const kT=i%2?nO+(i-1)/2:i/2,dT=g.tep&&g.tep[kT]?g.tep[kT].dph:0,phi=g.rot+dT+(i%2?.5:0)/nO*6.2832+Math.floor(i/2)/nO*6.2832+.1*(pxHashS(i,4,g.sd)-.5),
         rad=[Math.cos(phi),Math.sin(phi),0],T=[-Math.sin(phi),Math.cos(phi),0],fl=R0*o.filL*sz*(.9+.16*pxHashS(i,3,g.sd))*(.55+.45*ost)*(1-.3*fan),
         e=.16*(pxHashS(i,8,g.sd)-.5),cb=o.cb*(pxHashS(i,11,g.sd)-.5),P3=[];let p=[rad[0]*R0*o.filR,rad[1]*R0*o.filR,R0*.03];P3.push(p);
@@ -273,7 +273,7 @@ function lilHeart(o0){const o=Object.assign({},LILH_DEF,o0);
     /* the pistil: the ovary's top, the style longer than the stamens, bending down and to one side (declinate), the three-lobed stigma */
     if(ost>.05){const sa=g.sty??0,sr=[Math.cos(sa),Math.sin(sa),0],sL=R0*o.styL*sz*(.55+.45*ost),P3=[[0,0,R0*o.ovH*.5]];let p=P3[0];
       for(let j=1;j<=9;j++){const v=j/9,a=o.styA*ost*Math.pow(v,1.4);let d=[sr[0]*Math.sin(a),sr[1]*Math.sin(a),Math.cos(a)];
-        d=V3.nz(V3.add(d,V3.sc(dn,o.styD*ost*v*v)));if(fan>0)d=V3.nz(V3.add(d,V3.sc(dn,.6*fan*v)));p=V3.add(p,V3.sc(d,sL/9));P3.push(p)}
+        d=V3.nz(V3.add(d,V3.sc(dn,o.styD*ost*v*v)));if(fan>0)d=V3.nz(V3.add(d,V3.sc(dn,.15*fan*v)));  /* the style stays up, long and stiff, as the tepals hang (photos of faded lilies) */p=V3.add(p,V3.sc(d,sL/9));P3.push(p)}
       const end0=P3[P3.length-1],tg=V3.nz(V3s(end0,P3[P3.length-2]));
       tube(P3,R0*o.styW*1.05,R0*o.styW*1.25,styC,styT,(hk,sh)=>{const end=sh?V3.add(end0,sh):end0,rk=R0*o.sgR*sz*(.6+.4*ost),cs=[];
         for(let q=0;q<3;q++){const aq=q*2.0944+sa+.4,bq=V3.nz(V3.add(V3.sc(tg,.55),V3.sc([Math.cos(aq),Math.sin(aq),0],.8)));const c=PJ(B,O,V3.add(end,V3.sc(bq,rk*.36)));cs.push(c)}
@@ -300,7 +300,8 @@ function lilHeart(o0){const o=Object.assign({},LILH_DEF,o0);
       /* fixT: the tubes already resolved (the dry run before the tepals were layered round them): drawn as they are; outT: where they are given back */
       if(fixT&&fixT.length===TQ.length){TQ.forEach((q,x)=>q.P3=fixT[x]);
         /* against the final tepals: a point that a sagging tepal still reaches is brought back in front of it, the tubes kept apart again */
-        if(ins){for(const q of TQ)q.P3=svInside(pieces,q.P3,R0*.01,R0*.1,rad(q),q.own,true);if(typeof svApart==='function')svApart(TQ.map(q=>({P:q.P3,rad:rad(q)})),R0*.008,.3).forEach((P,x)=>TQ[x].P3=P)}}
+        if(ins)for(let it=0;it<3;it++){for(const q of TQ)q.P3=typeof svClearT==='function'?svClearT(pieces,q.P3,rad(q),.3,R0*.004):svInside(pieces,q.P3,R0*.01,R0*.1,rad(q),q.own,true);
+          if(typeof svApart==='function')svApart(TQ.map(q=>({P:q.P3,rad:rad(q)})),R0*.008,.3).forEach((P,x)=>TQ[x].P3=P)}}
       else for(let it=0;it<3;it++){if(ins)for(const q of TQ)q.P3=svInside(pieces,q.P3,R0*.01,R0*.1,rad(q),q.own);
         if(typeof svApart==='function')svApart(TQ.map(q=>({P:q.P3,rad:rad(q)})),R0*.008,.3).forEach((P,x)=>TQ[x].P3=P)}
       if(outT)for(const q of TQ)outT.push(q.P3);
@@ -308,7 +309,7 @@ function lilHeart(o0){const o=Object.assign({},LILH_DEF,o0);
 const LIL_ORI_GENES={n:[[6,1]],tep:{dL:[.95,1.05],dW:[.93,1.07],dph:[-.05,.05],da:[-.08,.08],dt:[-.3,.3],tw:[-.34,.34],lat:[-.05,.05],wav:[.09,.14],wk:[2.5,4],wph:[0,6.28],
     ew:[.015,.03],tip:[1.2,1.5],asym:[-.07,.07],sd:'sd'},late:{hang:[.6,1.3],wl:[.85,1.2]},
   head:{rot:[0,6.2832],op:[-.03,.03],dh:[-3,3],ds:[-.04,.04],dl:[-.02,.015],sty:[0,6.2832],stL:[.94,1.06],sd:'sd'}};
-const LIL_ORI=Object.assign({},LIL_ODBL,{L:[1.2,1.12],W:[.21,.3],z0:[0,.07],cup:[.12,.24],wavW:[.45,1],nest:[0,0],layers:[[.012,.03],[.08,.12],2,24,48,16,10],budFit:[1,1],limpOut:1,crkV:[.4,.3],mrxO:1,wavP:1,budL:[0,.25],budTip:[.65,.35],floorV:.04,floor:1.5,floorO:.4,nu:[30,34],nv:64,mrx:.08,light:Object.assign({},SVRX_DEF.light,{wrap:.12,amb:.2,dif:.82,ks:.2,gloss:22,da:.27,la:.24}),
+const LIL_ORI=Object.assign({},LIL_ODBL,{L:[1.2,1.12],W:[.21,.3],z0:[0,.07],cup:[.12,.24],wavW:[.45,1],nest:[0,0],layers:[[.012,.03],[.08,.12],2,24,48,16,10],budFit:[1,1],limpOut:1,crkV:[.4,.3],wavD:0,wilt:{c:'#e2ceb0',c2:'#c09c76',vein:'#86603e',n:9,k:[.45,1],roll:1.5},fanIn:0,fanL:.1,fanW:.42,limp:[1.1,.12],mrxO:1,wavP:1,budL:[0,.25],budTip:[.65,.35],floorV:.04,floor:1.5,floorO:.4,nu:[30,34],nv:64,mrx:.08,light:Object.assign({},SVRX_DEF.light,{wrap:.12,amb:.2,dif:.82,ks:.2,gloss:22,da:.27,la:.24}),
   wp:[[0,.2],[.08,.34],[.2,.6],[.34,.84],[.48,.97],[.6,1],[.72,.92],[.83,.72],[.91,.46],[.97,.18],[1,.02]],vb:.62,
   aS:[[.15,.38,.56],[.14,.3,.22]],aB:[[.04,.42,1.66],[.03,.36,1.12]],aT:[[-.26,1.05,2.75],[-.24,.9,2.05]],f0:[.72,.7],cup:[.1,.08],
   genes:s=>svGenes(s,LIL_ORI_GENES),mat:lilOriMat,heart:lilHeart({cb:.9}),life:()=>lilLifeOf('lis-oriental')});

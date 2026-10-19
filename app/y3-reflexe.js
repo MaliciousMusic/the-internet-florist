@@ -26,13 +26,16 @@ function svReflex(par,B,O,D,S,cwx,op,seed,wl){const P=Object.assign({},SVRX_DEF,
   if(wl==null)wl=P.life?P.life():0;
   const oo=op+g.op,bud=1-svSm((oo-P.bud[0])/P.bud[1]),r1=svSm((oo-P.rf[0])/P.rf[1]),r2=svSm((oo-P.sp[0])/P.sp[1]),dec=svSm((wl-P.dec[0])/P.dec[1]),fan=svSm((wl-P.fan[0])/P.fan[1]),
     grow=P.grow[0]+(1-P.grow[0])*svSm(oo/P.grow[1]),gt=P.green[0]*(1-svSm((oo-P.green[1])/P.green[2])),
-    shv=(c,v)=>{const x=svShift(c,g.dh,g.ds,g.dl),k2=gt*(1-P.greenTip*v);return k2>0?mix(x,P.greenC,Math.min(1,k2*(1.15-v*.5))):x},
+    age=P.wilt?Math.min(1,P.wilt.k[0]*dec+P.wilt.k[1]*fan):0,  /* opt-in wilt {c, c2, vein, n, k [decline, faded], roll}: the tissue dries */
+    shv=(c,v)=>{let x=svShift(c,g.dh,g.ds,g.dl);const k2=gt*(1-P.greenTip*v);if(k2>0)x=mix(x,P.greenC,Math.min(1,k2*(1.15-v*.5)));
+      if(age>0){x=mix(mix(x,'#c8b8a2',.6*age),P.wilt.c,Math.min(1,age*(.45+.4*v)));if(age>.4)x=mix(x,P.wilt.c2,Math.min(1,(age-.4)*v))}return x},
     ramp=st=>st.map(([v,c])=>[v,shv(c,v)]),
     mat=Object.assign({stops:ramp(cw0.st),bstops:ramp(cw0.bst),shade:shv(cw0.shade,.5),lite:cw0.lite,bshade:shv(cw0.bshade,.5),blite:cw0.blite,rim:cw0.rim,cast:cw0.cast},P.light,
       {trans:.1+.12*dec,rw:hi?.003+.003*dec:0,ro:.22});
   if(cw0.soft!=null)mat.soft=cw0.soft;  /* opt-in: the washes' softening (svDraw m.soft, default .05) */
   /* opt-in: the fine material (y3-fine.js) and the piece's measured colour grids (fleur/apparence.py grille); a fading flower keeps its hand ramps (they fade) */
-  if(cw0.fine){mat.fine=cw0.fine;if(dec<.05){if(cw0.grid)mat.grid=cw0.grid;if(cw0.bgrid)mat.bgrid=cw0.bgrid;if(cw0.gridV)mat.gridV=cw0.gridV}}
+  if(cw0.fine){mat.fine=age>0?Object.assign({},cw0.fine===true?{}:cw0.fine,{age:{a:age,c:P.wilt.c,c2:P.wilt.c2,vein:P.wilt.vein,n:P.wilt.n}}):cw0.fine;
+    if(dec<.05||P.wilt){if(cw0.grid)mat.grid=cw0.grid;if(cw0.bgrid)mat.bgrid=cw0.bgrid;if(cw0.gridV)mat.gridV=cw0.gridV}}  /* with wilt the measured grid stays and dries */
   if(cw0.cross)mat.cross=cw0.cross.map(z=>Object.assign({},z,{st:z.st.map(([x,c,a])=>[x,shv(c,.6),(a??1)*(1-.7*gt)])}));
   if(cw0.transmit&&hi)mat.transmit=cw0.transmit;
   /* the angle of a whorl's table at this stage: bud -> column (r1) -> open (r2); the faded gathers back toward the column (fanIn) */
@@ -59,7 +62,7 @@ function svReflex(par,B,O,D,S,cwx,op,seed,wl){const P=Object.assign({},SVRX_DEF,
       wv=t.wav*(P.wavO[0]+(P.wavO[1]-P.wavO[0])*r1)*(1+P.wavD*dec)*(hi?1:.8)*(P.wavW?P.wavW[w]:1)*(P.wavP?1-P.wavP*(1-r2):1),  /* opt-in wavP: the margins wave as the tepals part (r2), pressed flat while one lies over another */
       ew=t.ew*(P.ewO[0]+(P.ewO[1]-P.ewO[0])*r1)*(1+.6*fan),
       tw=t.tw*r1*(1+P.twF*fan)+P.twD*dec*Math.sign(t.tw||1),crk=(P.crk[0]*dec+P.crk[1]*fan)*(hi?1:.5),
-      hW=R0*P.W[w]*t.dW*grow*(1-P.fanW*fan),cup=P.cup[w]*(1-.5*fan);
+      hW=R0*P.W[w]*t.dW*grow*(1-P.fanW*fan),cup=P.cup[w]*(1-.5*fan)+(P.wilt&&P.wilt.roll?P.wilt.roll*Math.min(1,.35*dec+fan):0);  /* wilt.roll: the drying blade rolls in on its inner face, toward a tube */
     const Sf=(u,v)=>{const vv=v*Lu(u),c=at(sp,vv),d=V3.nz(at(dv,vv)),r=at(rr,vv),nrm=V3.cr(d,T),ca=Math.cos(tw*vv),sa=Math.sin(tw*vv),A=V3.add(V3.sc(T,ca),V3.sc(nrm,sa)),N=V3.add(V3.sc(nrm,ca),V3.sc(T,-sa)),
         side=u<0?1:0,hO=hW*wpf(vv)*(1+t.asym*Math.sign(u))*(1+ew*Math.sin(t.wk*1.3*Math.PI*vv+t.wph*1.7+side*2.3)*svSm((vv-.1)/.25)),
         hB=P.budW[w]*r*1.0472,hw=bud>0?hO*(1-bud)+(P.budFit?hB*P.budFit[w]+Math.max(hO,hB)*(1-P.budFit[w]):Math.max(hO,hB))*bud:hO,rhoB=r/Math.max(.3,Math.abs(d[2])),kk=Math.max(1e-5,bud/rhoB+(1-bud)*cup/Math.max(1e-4,hw)),th=u*hw*kk,
@@ -97,7 +100,7 @@ function svReflex(par,B,O,D,S,cwx,op,seed,wl){const P=Object.assign({},SVRX_DEF,
       if(A.w===0&&Bq.w===1)pr.push([a,b]);else if(A.w===Bq.w&&ccw(Bq,A))pr.push([a,b,true])}  /* [out, in]: outer over inner; neighbours of a whorl in the order they mostly have */
     const lm=Array.isArray(P.layers[0])?P.layers[0][0]*bud+P.layers[0][1]*(1-bud):P.layers[0];  /* the gap: [in the bud, once it loosens] */
     const nr=(Array.isArray(P.layers[1])?P.layers[1][0]+(P.layers[1][1]-P.layers[1][0])*(1-bud)*(1-fan):P.layers[1])*R0,  /* the window: [gathered (bud, faded), open] */
-      lo={m:lm*R0*Math.max(.3,Math.min(1,10*gth)),it:P.layers[2],nu:P.layers[3],nv:P.layers[4],fix:P.layers[5],fixR:P.layers[6],sweep:gth+dec>.01,rmin:R0*P.r0*.8*(1-bud)};
+      lo={m:lm*R0*Math.max(.3,Math.min(1,10*gth)),it:P.layers[2],nu:P.layers[3],nv:P.layers[4],fix:P.layers[5],fixR:P.layers[6],v0:P.layers[7],sweep:gth+dec>.01,rmin:R0*P.r0*.8*(1-bud)};
     /* a head is tried with a few windows and phases, kept at the first that the measure finds clean (or the best): one set of numbers does not
        suit every seed, and a head clean at the first try pays nothing more */
     /* the heart built once dry (it draws nothing, the same every time): its tubes, obstacles the tepals lie under (always), and the radius they fill at each height, whole, while the
@@ -106,7 +109,7 @@ function svReflex(par,B,O,D,S,cwx,op,seed,wl){const P=Object.assign({},SVRX_DEF,
       if(TB.length){const zs=[];for(const T of TB)for(let i=0;i<T.P.length;i++){const q=T.P[i],rr=T.r0+(T.r1-T.r0)*i/(T.P.length-1);zs.push([q[2],Math.hypot(q[0],q[1])+rr])}
         const gp=lo.m,hz=R0*.04;lo.col=z=>{let r=0;for(const[zq,rq]of zs)if(Math.abs(zq-z)<hz)r=Math.max(r,rq);return r?r+gp:0}}}
     const S0=tq.map(q=>q.Sf);let best=null;
-    for(const[kn,fr,km]of[[1,P.layers[6],1],[1.5,P.layers[6],1],[.75,P.layers[6],1],[1.5,P.layers[6],2],[1,P.layers[6],2],[1,3,1],[1.5,3,1]]){tq.forEach((q,x)=>q.Sf=S0[x]);
+    for(const[kn,fr,km]of[[1,P.layers[6],1],[1.5,P.layers[6],1],[.75,P.layers[6],1],[1.5,P.layers[6],2],[1,P.layers[6],2],[1,3,1],[1.5,3,1],[2,P.layers[6],1],[1.5,P.layers[6],3],[2,P.layers[6],2]]){tq.forEach((q,x)=>q.Sf=S0[x]);
       svLayers(tq,pr.map(x=>x.slice()),Object.assign({},lo,{near:nr*kn,fixR:fr,m:lo.m*km}));const left=svLayers.left;
       if(!best||left<best.left)best={left,Sf:tq.map(q=>q.Sf)};if(!left)break}
     tq.forEach((q,x)=>q.Sf=best.Sf[x])}
