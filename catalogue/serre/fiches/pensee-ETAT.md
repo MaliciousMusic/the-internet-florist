@@ -3,6 +3,22 @@
 Chantier `ch/pensee` (copie `ch/pensee`). Mis en pause à la demande du porteur. **La sorte n'est pas finie** : `python fleur/sortie.py pensee`
 ne dit pas « finie ». Les preuves (photos, tableaux, planches) sont dans `refcache/pensee/` (ignoré par git, jamais publié).
 
+## Avant de reprendre : écarts au protocole du 2026-10-20 (à lire en premier)
+
+Le protocole a été complété après la pause (BONNES-PRATIQUES §15 à §17, affiché au labo 8805/labo/). Main a été fusionné dans cette
+branche le 2026-10-20 : les outils sont à jour. Ce chantier n'est **pas** encore au niveau du lis LA sur ces points :
+
+1. **Grilles en 6 × 24** (53 dans `app/y-viola-grilles.js`) : à refaire en **18 × 72** par coloris et par pétale, avec
+   `sh fleur/coloris_cw.sh pieces pensee <cw> <photo> "<cadre>" ...` sur 3 à 5 pétales. Les pensées sont des coloris à motif (macule,
+   rayons, œil) : `MOTIF=1`, sinon les centiles 35-85 effacent la macule. On regarde les cartes .npy en image avant de faire la grille.
+2. **Étalonnage** à refaire avec `PUT=... sh fleur/coloris_cw.sh calib pensee <cw> <photo> 3 "<cadre>" ...`, qui prend le repère
+   par `repere.py` et le masque érodé de 2 px. Cela remplace `refcache/pensee-work/paires.py`, dont le masque était faux. Un coloris à
+   motif s'étalonne sur plusieurs pétales à la fois.
+3. **Cœur par coloris** (§15.2 point 5) : gorge, stigmate, barbe et macule mesurés sur la photo de chaque coloris, et dans une table
+   lue par l'id du coloris, avec une valeur par défaut. Le stigmate et la barbe demandent le même soin que les pétales (§16.5) :
+   regarder la planche du cœur à D 900, à côté de la photo.
+4. **Banc** lancé détaché (§16.6) pour survivre à la fin de la session.
+
 ## Ce qui est fait
 
 - **Photos nommées** des 14 coloris du catalogue (`CW_PANS`, ids inchangés) : `refcache/pensee/coloris-photos.json`, `coloris/<cw>/`.
@@ -58,7 +74,6 @@ ne dit pas « finie ». Les preuves (photos, tableaux, planches) sont dans `refc
 
 ```
 cd ch/pensee
-git merge refs/heads/main
 python fleur/sortie.py pensee --json
 sh fleur/shot_p.sh tr1 "grid=1&sid=pensee&cws=violet,blanc&st=.06:0,.15:0,.2:0,.3:0,1:1&view=0,2,7&D=200&det=2&seed=7&bg=%2300ff00"
 node --max-old-space-size=900 fleur/banc3d.js --head "SV_HEAD['pensee']({},B,O,200,CW,OP,SD,WL)" --cws violet,blanc --seeds 1,2,3,4,5,6
