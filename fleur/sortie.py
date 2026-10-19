@@ -72,7 +72,7 @@ def mesurer(sid, cws, R, banc):
     sh = lambda name, q: subprocess.run(['sh', 'fleur/shot_p.sh', name, q], cwd=ROOT, capture_output=True, text=True)
     # the holes: a grid on a green ground, every stage, views 0,2,7
     st = STAGES.split(',')
-    sh('trous_' + sid, 'grid=1&sid=%s&cws=%s&st=%s&view=0,2,7&D=200&det=2&seed=7&bg=%%2300ff00' % (sid, ','.join(cws), STAGES))
+    sh('trous_' + sid, 'grid=1&sid=%s&cws=%s&st=%s&view=0,2,7&D=200&det=2&seed=7&nohrt=1&bg=%%2300ff00' % (sid, ','.join(cws), STAGES))  # the tissue's holes: a heart's filaments arcing out enclose real gaps, not holes
     png = os.path.join(ROOT, 'fleur', 'out', 'trous_%s.png' % sid)
     if os.path.exists(png):
         sys.path.insert(0, os.path.join(ROOT, 'fleur'))

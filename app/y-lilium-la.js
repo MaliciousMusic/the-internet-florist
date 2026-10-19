@@ -62,11 +62,13 @@ function lilLaMat(cw){const key='la:'+cw.id;if(LIL_LA_M[key])return LIL_LA_M[key
   spec.fine=Object.assign({},spec.fine,{grain:.12,glow:.2,ao:.1,
     ribs:{n:11,a:.12,w:.022,c:mix(cw.c||'#ffffff','#ffffff',.55),conv:.7,dk:.05}},LIL_ORI_FINE[key]||{});  /* the fiche: parallel veins, paler, on the face (blanc-paire-t0: contrast x0.3 without them) */
   spec.rim=mix(cw.c||'#ffffff','#ffffff',LIL_LA_RIM[cw.id]??.25);
+  /* the LA's back is its colour too, a little paler (Barolo, Menorca studio: orange on both faces), not the oriental's pale reverse */
+  if(spec.bst&&cw.c)spec.bst=spec.bst.map(([v,x])=>[v,v<.12?x:mix(cw.c,'#ffffff',.14)]);
   if(LIL_LA_EDGE[cw.id])Object.assign(spec,LIL_LA_EDGE[cw.id]);
   if(LIL_LA_WILT[cw.id])spec.wilt=LIL_LA_WILT[cw.id];
   if(LIL_LA_STREAK[cw.id])spec.streak=LIL_LA_STREAK[cw.id];  /* a light margin, not the oriental's dark rim (jaune-paire-t0: the margin darker and duller) */
   LIL_ORI_CW[key]=spec;const M=lilOriMat({id:key});return LIL_LA_M[key]=M}
-const LIL_LA=Object.assign({},LIL_ORI,{L:[1.1,1.04],W:[.26,.28],vb:.52,cup:[.32,.36],mrx:0,wavW:[.3,.45],
+const LIL_LA=Object.assign({},LIL_ORI,{budTip:[.97,.35],L:[1.1,1.04],W:[.26,.28],vb:.52,cup:[.32,.36],mrx:0,wavW:[.3,.45],
   aS:[[.15,.36,.62],[.14,.3,.52]],aB:[[.04,.4,1.12],[.03,.34,1.02]],aT:[[-.26,.95,1.62],[-.24,.85,1.46]],
   mat:lilLaMat,heart:lilHeart({cb:.6}),life:()=>lilLifeOf('lis-asiatique-la')});
 /* a colourway whose named photo is another build of flower keeps its own shape: 'Pup Art' (coeur-noir) is an Asiatic, not an LA (owner

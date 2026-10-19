@@ -20,10 +20,10 @@ const LIL_LEAF={stops:[[0,'#3c6624'],[.5,'#46722a'],[1,'#4e7a30']],bstops:[[0,'#
     ['#7ea843','#82ab49','#84ae4c','#82ab4b','#84ae4f','#87b054'],['#80aa45','#84ae4b','#86b04e','#83ac4d','#86b051','#88b155'],
     ['#83ad48','#88b452','#86b04f','#85ad4f','#87b253','#87b053'],['#86b04b','#8ab454','#88b252','#87b052','#89b456','#8ab557']]}};
 const LIL_LM={};
-function lilLeafMat(wl,det){const key=(wl*20|0)+(det?'h':'l');if(LIL_LM[key])return LIL_LM[key];
+function lilLeafMat(wl,det,LX){const key=(LX?LX.id:'')+(wl*20|0)+(det?'h':'l');if(LIL_LM[key])return LIL_LM[key];const LF=LX?Object.assign({},LIL_LEAF,LX,{fine:Object.assign({},LIL_LEAF.fine,LX.fine)}):LIL_LEAF;
   /* the point yellows first, then the blade (limp, straw) */
   const wc=(c,v)=>{const a=Math.min(1,Math.max(0,wl*1.6-(1-v)*.85));return a>0?mix(mix(c,'#c2b044',Math.min(1,a*1.2)),'#8a6a30',Math.max(0,a-.7)*1.3):c};
-  const ws=L=>L.map(([v,c])=>[v,wc(c,v)]),m=Object.assign({},LIL_LEAF,{stops:ws(LIL_LEAF.stops),bstops:ws(LIL_LEAF.bstops)});
+  const ws=L=>L.map(([v,c])=>[v,wc(c,v)]),m=Object.assign({},LF,{stops:ws(LF.stops),bstops:ws(LF.bstops)});
   if(wl>.05)m.grid=null;  /* a fading leaf keeps its fading ramps */
   /* the vector veins (DET 1, or the fine layer off): the midrib and three pairs at constant u converging to the point, faint above, clearer beneath */
   m.veins=det?(s,front)=>[[[[[0,.03],[0,.3],[0,.6],[0,.92]]],.0045,front?'#a6c866':'#6a9230',.45],
@@ -33,7 +33,7 @@ function lilLeafMat(wl,det){const key=(wl*20|0)+(det?'h':'l');if(LIL_LM[key])ret
 const LIL_WP=[[0,.3],[.12,.78],[.3,1],[.5,.93],[.7,.64],[.88,.26],[1,.02]];
 function lilWp(v){const P=LIL_WP;if(v<=0)return P[0][1];for(let i=1;i<P.length;i++)if(v<=P[i][0]){const a=P[i-1],b=P[i],t=(v-a[0])/(b[0]-a[0]),s=t*t*(3-2*t);return a[1]+(b[1]-a[1])*s}return P[P.length-1][1]}
 /* one leaf: pos its base, H its direction, U the axis' side, len its length, sd its seed, wl the fading; o.bract: a small bract (narrower, straighter) */
-function lilLeaf(par,pos,H,U,len,sd,wl,o){o=o||{};const P=LILP,r=svRng(sd),det=DET>=1.5,Hn=V3.nz(H),up=[0,1,0],dn=[0,-1,0],
+function lilLeaf(par,pos,H,U,len,sd,wl,o){o=o||{};const P=o.P||LILP,r=svRng(sd),det=DET>=1.5,Hn=V3.nz(H),up=[0,1,0],dn=[0,-1,0],
     limp=.1+.75*svSm((wl-.15)/.6),dr=Math.min(1.3,P.droop*(o.bract?.45:1)*(.8+.4*r())+limp*.85),ns=16,tw=P.tw*r.in(-1,1),wph=r()*6.28,halfW=len/(P.lw*(o.bract?1.5:1))/2,
     roll0=Math.max(-1,Math.min(1,r.in(-.6,.6)+(o.roll||0)));
   const sp=[],dv=[];let p=pos;
@@ -43,7 +43,7 @@ function lilLeaf(par,pos,H,U,len,sd,wl,o){o=o||{};const P=LILP,r=svRng(sd),det=D
   /* across: a keel (the blade folded up from its midrib, gut), flattening toward the point; the margin a slow wave */
   const S=(u,v)=>{const c=at(sp,v),f=frame(v),hw=halfW*lilWp(v),au=Math.abs(u);
     return V3.add(V3.add(c,V3.sc(f.s,u*hw)),V3.sc(f.n,P.gut*Math.pow(au,1.15)*hw*(1-.45*v)*(1-.4*limp)+P.wav*len*au*au*Math.sin(v*P.wavN*6.2832+wph)))};
-  const pieces=[svSheet(I3,[0,0,0],S,{nu:det?14:6,nv:det?32:10,mat:lilLeafMat(wl,det)})];
+  const pieces=[svSheet(I3,[0,0,0],S,{nu:det?14:6,nv:det?32:10,mat:lilLeafMat(wl,det,o.LX)})];
   const g=G(par);svDraw(g,pieces,{D:len*1.5,sd:.03,sb:.025,so:.3,shadow:det});return g}
 /* the stem's colours: shade, body, light, glint; smooth, a satin gloss, three faint ribs, a slow swell, nodes where the leaves leave */
 function lilStemCols(nodes){const c=['#28461a','#4a7a2c','#76a24e','#b2d088'];c.sv={swell:.03,gloss:.4,ribs:[-.45,0,.45],bloom:.02};if(nodes)c.sv.nodes=nodes;return c}
@@ -63,22 +63,23 @@ function lilBud(par,pos,H,U,D,cw,age,sd){const P=LIL_BUD,r=svRng(sd),Hn=V3.nz(H)
       return V3.add(c,V3.add(V3.sc(X,Math.cos(a)*rr),V3.sc(Y,Math.sin(a)*rr)))},{nu:DET>=1.5?10:5,nv:DET>=1.5?22:10,mat}))}
   const g=G(par);svDraw(g,pieces,{D:len,sd:.02,sb:.02,so:.25,shadow:DET>=1.5});return g}
 /* the whole stem: the leaves up the stem in a spiral, then the raceme; op the stage of the oldest flower (the others follow, younger) */
-function lilOriPlant(g,t,o){const cw=o.cw||cwNear(CW_LORI,o.col)||CW_LORI.find(x=>x.id==='stargazer')||CW_LORI[0],op=Math.max(.05,Math.min(1,o.op??1)),D=(o.cm||16)*UPC,k=G(g),
-    B=frameOf(o,.3,true),P=LILP,wl=typeof lilLifeOf==='function'?(lilLifeOf('lis-oriental').w||0):0,sc=lilStemCols();
+function lilOriPlant(g,t,o,X){X=X||{};const CWL=X.cws||CW_LORI,SID=X.sid||'lis-oriental',HEAD=X.head||lilOriSvg,  /* X: another lily on the same plant (the LA: its colourways, head, plant measures) */
+  cw=o.cw||cwNear(CWL,o.col)||CWL.find(x=>x.id===(X.cw0||'stargazer'))||CWL[0],op=Math.max(.05,Math.min(1,o.op??1)),D=(o.cm||16)*UPC,k=G(g),
+    B=frameOf(o,.3,true),P=X.P||LILP,wl=typeof lilLifeOf==='function'?(lilLifeOf(SID).w||0):0,sc=lilStemCols();
   const up=B.upV?V3.nz([B.upV[0],B.upV[1],B.upV[2]||0]):[0,1,0];let U0=V3s(B[2],V3.sc(up,V3.dot(B[2],up)));if(V3l(U0)<1e-3)U0=[0,0,1];
-  const nT=P.nL+P.nF,kr=B.reach?Math.min(1,Math.max(.12,B.reach*.4/(D*1.6))):1,li=D*.3*kr,ws=D*P.sw,age=i=>{const a=Math.max(0,Math.min(1,op*(1.15-.3*i)));return a>=.78?a:Math.min(.5,a*.6)},
+  const nT=P.nL+P.nF,kr=B.reach?Math.min(1,Math.max(.12,B.reach*.4/(D*1.6))):1,li=D*.3*kr,ws=D*P.sw,age=i=>{const a=Math.max(0,Math.min(1,op*(1.15-(P.stag??.3)*i)));return a>=.78?a:Math.min(.5,a*.6)},
     rules={A:p=>{if(p.n<=0)return[['F',{l:D*.2,w1:ws*(1-P.tap)}],['K',{age:age(P.nF)*.4,i:P.nF}]];const l=li*R(.85,1.15)*(p.n>P.nF?1:.8),w1=ws*(1-P.tap*(1-p.n/nT));
       if(p.n>P.nF)return[['F',{l,w1}],['[',{}],['&',{a:P.ang+R(-6,6)}],['Lv',{i:p.n,f:.7+.3*Math.min(1,(p.n-P.nF)/(P.nL*.6))}],[']',{}],['/',{a:137.5}],['A',{n:p.n-1}]];
-      const i=P.nF-p.n;return[['F',{l,w1}],['[',{w:D*P.pw*.45}],['/',{a:R(-20,20)}],['&',{a:48+R(-8,8)+i*4}],['F',{l:D*P.pedL*kr*(1-.18*i),w1:D*P.pw*.38,e:-.12}],['K',{age:age(i),i}],[']',{}],
+      const i=P.nF-p.n;return[['F',{l,w1}],['[',{w:D*P.pw*.45}],['/',{a:R(-20,20)}],['&',{a:(P.fA??48)+R(-8,8)+i*4}],['F',{l:D*P.pedL*kr*(1-.18*i),w1:D*P.pw*.38,e:-.12}],['K',{age:age(i),i}],[']',{}],
         ['[',{}],['&',{a:P.ang*.7}],['Lv',{i:p.n,bract:1,f:P.bract}],[']',{}],['/',{a:137.5}],['A',{n:p.n-1}]]}};
   const res=lsTurtle(lsDerive([['A',{n:nT}]],rules,nT+2),{p:[0,0,0],H:up,U:U0,wig:.04,seg:D*.16,T:[0,1,0],e:.02,w:ws*1.1}),Ks=res.organs.filter(q=>q.t==='K'),
     main=Ks.reduce((a,b)=>(!a||b.p.age>a.p.age)?b:a,null)||res.organs[res.organs.length-1],apex=main.pos;
   for(const ch of res.chains)ch.c=sc;
   lsPlant(k,res,{O:[0,0,0],apex,cols:sc,organ:(og,pos)=>{
-    if(og.t==='K'){const Bf=lsFrame(og,null,R(-.3,.3)),a=og.p.age,sd=svSeed('lis-oriental',cw.id,Math.round(pos[0]*8),Math.round(pos[1]*8));
-      return{parts:[{z:pos[2],fn:par=>a>.5?lilOriSvg(par,Bf,pos,D*(og===main?1.7:1.55),cw.id,Math.min(op,a),sd,wl):lilBud(par,pos,og.H,og.U,D,cw,a,sd)}]}}
+    if(og.t==='K'){const Bf=lsFrame(og,null,R(-.3,.3)),a=og.p.age,sd=svSeed(SID,cw.id,Math.round(pos[0]*8),Math.round(pos[1]*8));
+      return{parts:[{z:pos[2],fn:par=>a>.5?HEAD(par,Bf,pos,D*(og===main?1.7:1.55),cw.id,Math.min(op,a),sd,wl):lilBud(par,pos,og.H,og.U,D,cw,a,sd)}]}}
     if(og.t==='Lv'){const ln=D*P.leafL*(og.p.f||1)*R(.9,1.08);
-      return{ext:1,parts:[{z:pos[2]+og.H[2]*ln*.4,cast:false,fn:par=>lilLeaf(par,V3.add(pos,V3.sc(V3.nz(og.H),(og.w||2)*.4)),og.H,og.U,ln,svSeed('lil-feuille',cw.id,Math.round(pos[0]*8),Math.round(pos[1]*8),og.p.bract?1:0),wl,{bract:og.p.bract})}]}}
+      return{ext:1,parts:[{z:pos[2]+og.H[2]*ln*.4,cast:false,fn:par=>lilLeaf(par,V3.add(pos,V3.sc(V3.nz(og.H),(og.w||2)*.4)),og.H,og.U,ln,svSeed('lil-feuille',cw.id,Math.round(pos[0]*8),Math.round(pos[1]*8),og.p.bract?1:0),wl,{bract:og.p.bract,P,LX:X.leaf})}]}}
     return null}});
   open(k,t,1000,8,.3);const rn=lsNeck(res,[0,0,0],apex);if(rn){rn.ncols=lilStemCols();rn.nw=ws*.9}return rn}
 if(typeof GH!=='undefined'&&GH['lis-oriental']){const lilOldPlant=GH['lis-oriental'];GH['lis-oriental']=function(g,t,o){return typeof SV_ON!=='undefined'&&SV_ON?lilOriPlant(g,t,o):lilOldPlant(g,t,o)}}
@@ -86,3 +87,14 @@ if(typeof GH!=='undefined'&&GH['lis-oriental']){const lilOldPlant=GH['lis-orient
 function lilLeafSv(par,x,y,ang,len,o){const s=o&&o.s>0?1:-1,zk=.25+.3*pxHashS(o&&o.k||0,5,Math.round(x*7+y*13));
   return lilLeaf(par,[x,-y,0],[Math.cos(ang),-Math.sin(ang),zk*s],[0,0,1],len,svSeed('lil-feuille',Math.round(x*8),Math.round(y*8)),0,{roll:.4*s})}
 if(typeof STEML!=='undefined'&&STEML['lis-oriental'])Object.assign(STEML['lis-oriental'],{sv:lilLeafSv});
+
+/* the LA lily's plant (2026-10-19): the oriental's plant with the LA's head and colourways; the LA's own measures (studio photos of the
+   named colourways, Barolo and Menorca: a stiff upright stem, many narrow lance leaves close up the stem, the flowers held up and out on short
+   pedicels, the buds upright) */
+/* the LA's leaf, measured (apparence.py piece on two leaves of the Barolo studio photo): a dark glossy green on both faces, not the
+   oriental's fresh green with its pale reverse */
+const LIL_LEAF_LA={id:'la',grid:{nu:6,nv:16,c:[['#223c0d','#2d4415','#1d380c','#273c12','#42502e','#4c563d'],['#1f3b09','#27420f','#1a370a','#1c390b','#304418','#3e4d24'],['#25410e','#2e4b15','#2b4812','#2b4110','#49531f','#4d5421'],['#2b4716','#3d5523','#485b26','#27420f','#2d410d','#344810'],['#3d581e','#496128','#4f642f','#344d19','#2f4710','#2c490e'],['#375214','#3d591e','#445f25','#3c561b','#304a14','#2c470d'],['#2b480d','#314c0f','#375316','#314d13','#29450b','#2a460c'],['#2c4b0a','#2f4c0c','#324f0e','#345011','#324f0f','#2c480a'],['#2d4b09','#2d4b0c','#314e0d','#304d0c','#2e4d0a','#2e4c0b'],['#2e4c0d','#2e4c0b','#304e0d','#2e4c0b','#2d4c0a','#355311'],['#355111','#345111','#375211','#344e0e','#335311','#44611e'],['#395515','#3b5516','#3b5517','#365012','#345511','#63744b'],['#355313','#365312','#325112','#315111','#335613','#446028'],['#31510f','#2e4e0c','#2f4f11','#315010','#325411','#456226'],['#30500e','#305211','#30520f','#315410','#395c16','#577336'],['#325610','#335713','#355814','#375a16','#547231','#728a54']]},stops:[[0,'#244a10'],[.5,'#2c5414'],[1,'#346018']],
+  bstops:[[0,'#3c6a20'],[.5,'#447226'],[1,'#4a7a2a']],bshade:'#1a3a0a',blite:'#7aa050',fine:{tone:.5,gloss:22,ks:.32,glow:.1}};
+const LILP_LA=Object.assign({},LILP,{nL:12,leafL:.8,lw:4,ang:32,pedL:.42,fA:34,nF:4,bract:.36,stag:.1});  /* stag: the LA opens 3 or 4 flowers together (Barolo) */
+function lilLaPlant(g,t,o){return lilOriPlant(g,t,o,{cws:CW_LASI,sid:'lis-asiatique-la',head:lilLaSvg,P:LILP_LA,cw0:'orange',leaf:LIL_LEAF_LA})}
+if(typeof GH!=='undefined'&&GH['lis-asiatique-la']){const lilLaOld=GH['lis-asiatique-la'];GH['lis-asiatique-la']=function(g,t,o){return typeof SV_ON!=='undefined'&&SV_ON?lilLaPlant(g,t,o):lilLaOld(g,t,o)}}
