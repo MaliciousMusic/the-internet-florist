@@ -119,7 +119,7 @@ function svReflex(par,B,O,D,S,cwx,op,seed,wl){const P=Object.assign({},SVRX_DEF,
   /* it only exists once the bud loosens, is gone as they wither (fan), and never reaches past the tepals' feet (their spine at floorV,
      x floorC): seen from the mouth it stays hidden under the claws; its colour is the claws' own (the inner ramp at floorV) */
   const kF=bud<.9?1-svSm(fan/.45):0;
-  if(P.floor&&kF>.02){const dF=dec*(1-svSm(fan/.45)),rf=kF*Math.min(R0*P.r0*P.floor*(1+P.floorO*r2*(1-dF)+P.floorD*dF),P.floorC*rCl),zk=P.floorK*Math.max(dF,.5*r2),
+  if(P.floor&&kF>.02&&SVRX_SOLO<0){  /* (not in a solo test render: the piece alone is measured) */const dF=dec*(1-svSm(fan/.45)),rf=kF*Math.min(R0*P.r0*P.floor*(1+P.floorO*r2*(1-dF)+P.floorD*dF),P.floorC*rCl),zk=P.floorK*Math.max(dF,.5*r2),
       rampAt=(S,v)=>{for(let j=1;j<S.length;j++)if(v<=S[j][0])return mix(S[j-1][1],S[j][1],(v-S[j-1][0])/Math.max(1e-6,S[j][0]-S[j-1][0]));return S[S.length-1][1]},
       bc=rampAt(mat.stops,P.floorV*.7),fm=Object.assign({},mat,{stops:[[0,mix(rampAt(mat.stops,0),'#3a3a10',.2)],[.6,bc],[1,bc]],bstops:[[0,bc],[1,bc]],cross:null,transmit:null,flames:null,veins:null,grid:null,bgrid:null});  /* the floor: the claws' own colour, never the tepal's grid */
     pieces.push(svSheet(B,O,(u,v)=>{const a=(u+1)*Math.PI;return[Math.cos(a)*rf*v,Math.sin(a)*rf*v,R0*(.012-.02*v)-zk*rf*v*v]},{nu:10,nv:3,mat:fm,zb:-.003,qa:false}))}  /* qa:false: the floor lies under the claws by design (y3-qa3d.js skips it) */

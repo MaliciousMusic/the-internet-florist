@@ -1,0 +1,2191 @@
+{
+ "schema": "fiche-morpho/1",
+ "sid": "lis-asiatique-la",
+ "nom": "Lis asiatique LA",
+ "taxon": {
+  "genre": "Lilium",
+  "espece": "Lilium LA hybrids (L. longiflorum x hybrides asiatiques)",
+  "groupe": "LA (Longiflorum x Asiatic)"
+ },
+ "kit": {
+  "moteur": "svBloom",
+  "module": "app/y-lilium.js",
+  "defauts": "SVB_DEF",
+  "spec": "LIS_LA",
+  "genes": "LIS_GENES",
+  "coeur": "lisHeart (app/y-lilium.js, réglages LIS_H)",
+  "fane_couleurs": "lisWiltCol (GHI[sid].wilt)",
+  "couleurs": "LIS_CW, lisSpec, lisMat (app/y-lilium.js)",
+  "lecture_du_code": "Les expressions `code` sont évaluées par fleur/fiche_eval.js avec P = Object.assign({}, SVB_DEF, LIS_LA) (le P de svBloom)."
+ },
+ "etat": {
+  "date": "2026-10-18",
+  "auteur": "pipe.py (squelette), étape fiche",
+  "note": "Registre posé d'après keep.json ; 4 photos de Lilium lancifolium marquées groupe autre. Mesures lancées : organ.py leaf/stem/head sur t021, t032, t132 (écartée), t125 (écartée), règles en pixels sur t015, t021, t032. Relais 3 (2026-10-19) : champs code et retenu retirés (le dessin n'existe pas encore dans cette copie) ; mesures ajoutées : réceptacle (t015), tige (t007), jeune bouton (t007)."
+ },
+ "photos": {
+  "lis-asiatique-la:7190df7f": {
+   "titre": "File:Lilium 'Bright Diamond' 6 2021 LA Hybrid Lily- (51276484356).jpg",
+   "auteur": "F. D. Richards from Clinton, MI",
+   "licence": "CC BY-SA 2.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Lilium_%27Bright_Diamond%27_6_2021_LA_Hybrid_Lily-_(51276484356).jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/41/Lilium_%27Bright_Diamond%27_6_2021_LA_Hybrid_Lily-_%2851276484356%29.jpg/500px-Lilium_%27Bright_Diamond%27_6_2021_LA_Hybrid_Lily-_%2851276484356%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/lis-asiatique/refcache/lis-asiatique-la/t001.jpg",
+   "tags": [
+    "stade:ouvert",
+    "stade:bouton",
+    "vue:trois-quarts",
+    "organe:plante"
+   ],
+   "vu": "stade=ouvert+bouton vue=trois-quarts organe=plante groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 1,
+   "groupe": "jardin"
+  },
+  "lis-asiatique-la:dde5c2d2": {
+   "titre": "File:Lilium 'Salmon Classic' 6 2021 LA Hybrid Lily- (51264052156).jpg",
+   "auteur": "F. D. Richards from Clinton, MI",
+   "licence": "CC BY-SA 2.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Lilium_%27Salmon_Classic%27_6_2021_LA_Hybrid_Lily-_(51264052156).jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/Lilium_%27Salmon_Classic%27_6_2021_LA_Hybrid_Lily-_%2851264052156%29.jpg/500px-Lilium_%27Salmon_Classic%27_6_2021_LA_Hybrid_Lily-_%2851264052156%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/lis-asiatique/refcache/lis-asiatique-la/t003.jpg",
+   "tags": [
+    "stade:ouvert",
+    "stade:bouton",
+    "vue:trois-quarts",
+    "vue:face",
+    "organe:bourgeon",
+    "organe:feuille-dessus"
+   ],
+   "vu": "stade=ouvert+bouton vue=trois-quarts+face organe=bourgeon+feuille-dessus groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 3,
+   "groupe": "jardin"
+  },
+  "lis-asiatique-la:fd04decf": {
+   "titre": "File:Lilium 'Salmon Classic' 6 2021 LA Hybrid Lily- (51264794214).jpg",
+   "auteur": "F. D. Richards from Clinton, MI",
+   "licence": "CC BY-SA 2.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Lilium_%27Salmon_Classic%27_6_2021_LA_Hybrid_Lily-_(51264794214).jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/aa/Lilium_%27Salmon_Classic%27_6_2021_LA_Hybrid_Lily-_%2851264794214%29.jpg/500px-Lilium_%27Salmon_Classic%27_6_2021_LA_Hybrid_Lily-_%2851264794214%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/lis-asiatique/refcache/lis-asiatique-la/t006.jpg",
+   "tags": [
+    "stade:ouvert",
+    "stade:bouton",
+    "vue:face",
+    "vue:trois-quarts",
+    "organe:bourgeon"
+   ],
+   "vu": "stade=ouvert+bouton vue=face+trois-quarts organe=bourgeon groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 6,
+   "groupe": "jardin"
+  },
+  "lis-asiatique-la:114daa52": {
+   "titre": "File:LA Hybrid Lily (9198333303).jpg",
+   "auteur": "F. D. Richards from Clinton, MI",
+   "licence": "CC BY-SA 2.0",
+   "url": "https://commons.wikimedia.org/wiki/File:LA_Hybrid_Lily_(9198333303).jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c6/LA_Hybrid_Lily_%289198333303%29.jpg/500px-LA_Hybrid_Lily_%289198333303%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/lis-asiatique/refcache/lis-asiatique-la/t007.jpg",
+   "tags": [
+    "stade:ouvert",
+    "stade:bouton",
+    "vue:trois-quarts",
+    "organe:plante",
+    "organe:bourgeon",
+    "organe:feuille-dessus"
+   ],
+   "vu": "stade=ouvert+bouton vue=trois-quarts organe=plante+bourgeon+feuille-dessus groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 7,
+   "groupe": "jardin"
+  },
+  "lis-asiatique-la:e651daaa": {
+   "titre": "File:Lilium 'Eyeliner' 03.jpg",
+   "auteur": "Kor!An (Андрей Корзун)",
+   "licence": "CC BY-SA 3.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Lilium_%27Eyeliner%27_03.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Lilium_%27Eyeliner%27_03.jpg/500px-Lilium_%27Eyeliner%27_03.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/lis-asiatique/refcache/lis-asiatique-la/t015.jpg",
+   "tags": [
+    "stade:ouvert",
+    "vue:profil",
+    "vue:trois-quarts",
+    "stade:bouton"
+   ],
+   "vu": "stade=ouvert+bouton vue=profil+trois-quarts organe=- groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 15,
+   "groupe": "jardin"
+  },
+  "lis-asiatique-la:6082dead": {
+   "titre": "File:Lilium 'Royal Sunset' 02.JPG",
+   "auteur": "Андрей Корзун (Kor!An)",
+   "licence": "CC BY-SA 3.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Lilium_%27Royal_Sunset%27_02.JPG",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cb/Lilium_%27Royal_Sunset%27_02.JPG/500px-Lilium_%27Royal_Sunset%27_02.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/lis-asiatique/refcache/lis-asiatique-la/t032.jpg",
+   "tags": [
+    "stade:ouvert",
+    "vue:trois-quarts",
+    "organe:tige"
+   ],
+   "vu": "stade=ouvert vue=trois-quarts organe=tige groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 32,
+   "groupe": "jardin"
+  },
+  "lis-asiatique-la:3e8b8a6c": {
+   "titre": "File:Lilium 'Royal Delight' 03.jpg",
+   "auteur": "Kor!An (Андрей Корзун)",
+   "licence": "CC BY-SA 3.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Lilium_%27Royal_Delight%27_03.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6d/Lilium_%27Royal_Delight%27_03.jpg/500px-Lilium_%27Royal_Delight%27_03.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/lis-asiatique/refcache/lis-asiatique-la/t021.jpg",
+   "tags": [
+    "stade:ouvert",
+    "vue:face",
+    "stade:bouton",
+    "organe:bourgeon",
+    "organe:feuille-dessus"
+   ],
+   "vu": "stade=ouvert+bouton vue=face organe=bourgeon+feuille-dessus groupe=jardin",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 21,
+   "groupe": "jardin"
+  },
+  "lis-asiatique-la:68579fd3": {
+   "titre": "File:Dried lily tea.jpg",
+   "auteur": "Fumikas Sagisavas",
+   "licence": "CC0",
+   "url": "https://commons.wikimedia.org/wiki/File:Dried_lily_tea.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Dried_lily_tea.jpg/500px-Dried_lily_tea.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/lis-asiatique/refcache/lis-asiatique-la/t146.jpg",
+   "tags": [
+    "stade:fane",
+    "organe:feuille-fanee"
+   ],
+   "vu": "stade=fane organe=feuille-fanee groupe=jardin ; Lilium lancifolium (espèce voisine, non LA) : pas de mesure de forme",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 146,
+   "groupe": "autre"
+  },
+  "lis-asiatique-la:15a0c30b": {
+   "titre": "File:Kleurenopname van tijgerlelies Lelies, samengesteld uit drie zwart-wit opnames die digitaal, SFA027000002.jpg",
+   "auteur": "Leendert Blok",
+   "licence": "Public domain",
+   "url": "https://commons.wikimedia.org/wiki/File:Kleurenopname_van_tijgerlelies_Lelies,_samengesteld_uit_drie_zwart-wit_opnames_die_digitaal,_SFA027000002.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/Kleurenopname_van_tijgerlelies_Lelies%2C_samengesteld_uit_drie_zwart-wit_opnames_die_digitaal%2C_SFA027000002.jpg/500px-Kleurenopname_van_tijgerlelies_Lelies%2C_samengesteld_uit_drie_zwart-wit_opnames_die_digitaal%2C_SFA027000002.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/lis-asiatique/refcache/lis-asiatique-la/t106.jpg",
+   "tags": [
+    "stade:declin",
+    "vue:face"
+   ],
+   "vu": "stade=declin vue=face organe=- groupe=jardin ; Lilium lancifolium (espèce voisine, non LA) : pas de mesure de forme",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 106,
+   "groupe": "autre"
+  },
+  "lis-asiatique-la:2a21fb63": {
+   "titre": "File:Lilium lancifolium 15-p.bot-lilia.lilium-50.jpg",
+   "auteur": "Ayotte, Gilles, 1948-",
+   "licence": "CC BY-SA 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Lilium_lancifolium_15-p.bot-lilia.lilium-50.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0a/Lilium_lancifolium_15-p.bot-lilia.lilium-50.jpg/500px-Lilium_lancifolium_15-p.bot-lilia.lilium-50.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/lis-asiatique/refcache/lis-asiatique-la/t132.jpg",
+   "tags": [
+    "organe:feuille-dessus",
+    "organe:tige",
+    "organe:plante"
+   ],
+   "vu": "organe=feuille-dessus+tige+plante stade=- vue=- groupe=jardin ; Lilium lancifolium (espèce voisine, non LA) : pas de mesure de forme",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 132,
+   "groupe": "autre"
+  },
+  "lis-asiatique-la:6599d346": {
+   "titre": "File:Lilium lancifolium 15-p.bot-lilia.lilium-43.jpg",
+   "auteur": "Ayotte, Gilles, 1948-",
+   "licence": "CC BY-SA 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Lilium_lancifolium_15-p.bot-lilia.lilium-43.jpg",
+   "url_image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c2/Lilium_lancifolium_15-p.bot-lilia.lilium-43.jpg/500px-Lilium_lancifolium_15-p.bot-lilia.lilium-43.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "local": "ch/lis-asiatique/refcache/lis-asiatique-la/t125.jpg",
+   "tags": [
+    "organe:tige"
+   ],
+   "vu": "organe=tige stade=- vue=- groupe=jardin ; Lilium lancifolium (espèce voisine, non LA) : pas de mesure de forme",
+   "echelle": null,
+   "cle_depuis": "url_image",
+   "local_index": 125,
+   "groupe": "autre"
+  }
+ },
+ "organes": {
+  "tepale.externe": {
+   "role": "perianthe",
+   "dessinee": true,
+   "nombre": {
+    "v": 3,
+    "unite": "n",
+    "n": 2,
+    "methode": "oeil",
+    "photos": [
+     "lis-asiatique-la:3e8b8a6c",
+     "lis-asiatique-la:6082dead"
+    ],
+    "conf": "A",
+    "ref": "3 tépales externes (sépaloïdes), flore Lilium"
+   },
+   "disposition": {
+    "type": {
+     "v": "verticilles",
+     "methode": "reference",
+     "conf": "A",
+     "ref": "Lilium : deux verticilles de trois tépales alternes (flore)"
+    },
+    "verticilles": {
+     "v": 2,
+     "unite": "n",
+     "n": 2,
+     "methode": "oeil",
+     "photos": [
+      "lis-asiatique-la:3e8b8a6c",
+      "lis-asiatique-la:6082dead"
+     ],
+     "conf": "A"
+    },
+    "recouvrement": {
+     "v": 0.05,
+     "unite": "ratio",
+     "methode": "oeil",
+     "photos": [
+      "lis-asiatique-la:3e8b8a6c"
+     ],
+     "conf": "C",
+     "note": "tépales presque libres, se touchent à la base"
+    },
+    "ordre": {
+     "v": "externes derrière, internes devant",
+     "methode": "oeil",
+     "photos": [
+      "lis-asiatique-la:3e8b8a6c",
+      "lis-asiatique-la:e651daaa"
+     ],
+     "conf": "C"
+    },
+    "insertion": {
+     "v": {
+      "externe": 0,
+      "interne": 0.04
+     },
+     "unite": "L",
+     "methode": "oeil",
+     "photos": [
+      "lis-asiatique-la:e651daaa",
+      "lis-asiatique-la:3e8b8a6c"
+     ],
+     "conf": "C",
+     "note": "les six tépales sur un même anneau autour de l'ovaire ; les internes alternes, un peu plus haut et devant"
+    },
+    "decalage_deg": {
+     "v": 60,
+     "unite": "deg",
+     "methode": "reference",
+     "conf": "A",
+     "ref": "deux verticilles de trois, alternes",
+     "repere": "axe"
+    },
+    "differences": {
+     "v": "internes un peu plus larges, onglet plus étroit, marge plus plate ; externes à nervure médiane verte saillante au revers, pointe un peu plus aiguë, revers plus vert à la base",
+     "methode": "oeil",
+     "photos": [
+      "lis-asiatique-la:e651daaa",
+      "lis-asiatique-la:3e8b8a6c",
+      "lis-asiatique-la:6082dead"
+     ],
+     "conf": "C"
+    },
+    "profondeur_gorge": {
+     "v": 0.4,
+     "unite": "L",
+     "methode": "mesure-echelle",
+     "photos": [
+      "lis-asiatique-la:e651daaa"
+     ],
+     "conf": "C",
+     "note": "volume.py paire p015 : profondeur de l'entonnoir 0,55 de la hauteur de la tête, soit environ 0,4 L (fleur/volume.py)"
+    }
+   },
+   "contour": {
+    "base": {
+     "v": "cunee",
+     "methode": "oeil",
+     "photos": [
+      "lis-asiatique-la:3e8b8a6c",
+      "lis-asiatique-la:6082dead"
+     ],
+     "conf": "C",
+     "note": "onglet étroit vers le centre"
+    },
+    "pointe": {
+     "type": {
+      "v": "aigue",
+      "methode": "oeil",
+      "photos": [
+       "lis-asiatique-la:3e8b8a6c",
+       "lis-asiatique-la:6082dead"
+      ],
+      "conf": "C"
+     },
+     "recourbee": {
+      "v": "légèrement, dernier quart",
+      "methode": "oeil",
+      "photos": [
+       "lis-asiatique-la:6082dead",
+       "lis-asiatique-la:e651daaa"
+      ],
+      "conf": "C"
+     }
+    },
+    "L_sur_l": {
+     "v": 2.2,
+     "plage": [
+      1.8,
+      2.6
+     ],
+     "unite": "ratio",
+     "n": 2,
+     "methode": "regle",
+     "photos": [
+      "lis-asiatique-la:3e8b8a6c",
+      "lis-asiatique-la:6082dead"
+     ],
+     "conf": "C",
+     "note": "t021 : tépale externe du haut L 240 px, l 130 px ; t032 : interne L 197, l 75 ; les externes sont plus larges"
+    },
+    "vb": {
+     "v": 0.5,
+     "unite": "L",
+     "n": 1,
+     "methode": "regle",
+     "photos": [
+      "lis-asiatique-la:3e8b8a6c"
+     ],
+     "conf": "C",
+     "note": "plus grande largeur vers le milieu du tépale"
+    },
+    "marge": {
+     "v": "entiere",
+     "methode": "oeil",
+     "photos": [
+      "lis-asiatique-la:3e8b8a6c",
+      "lis-asiatique-la:6082dead"
+     ],
+     "conf": "C"
+    }
+   },
+   "taille": {
+    "longueur": {
+     "v": 1.0,
+     "plage": [
+      0.95,
+      1.0
+     ],
+     "unite": "R0",
+     "n": 2,
+     "methode": "regle",
+     "photos": [
+      "lis-asiatique-la:3e8b8a6c",
+      "lis-asiatique-la:6082dead"
+     ],
+     "conf": "B",
+     "note": "du centre à la pointe : t021 220-240 px pour une fleur de 405 px de large ; t032 197 px pour 395 px"
+    },
+    "largeur": {
+     "v": 0.5,
+     "plage": [
+      0.38,
+      0.65
+     ],
+     "unite": "R0",
+     "n": 1,
+     "methode": "regle",
+     "photos": [
+      "lis-asiatique-la:3e8b8a6c"
+     ],
+     "conf": "C"
+    }
+   },
+   "courbure": {
+    "longitudinale": {
+     "profil": {
+      "v": "droite puis recourbée à la pointe",
+      "methode": "oeil",
+      "photos": [
+       "lis-asiatique-la:6082dead",
+       "lis-asiatique-la:e651daaa"
+      ],
+      "conf": "C"
+     },
+     "pied_deg": {
+      "v": 30,
+      "unite": "deg",
+      "methode": "oeil",
+      "photos": [
+       "lis-asiatique-la:e651daaa"
+      ],
+      "conf": "C",
+      "repere": "plan",
+      "note": "relevés en coupe chez Eyeliner, plus plats chez Royal Delight (t021)",
+      "ecart": {
+       "type": "divergence",
+       "texte": "Relevé d'une passe de dessin antérieure (photos citées), à vérifier par le modeleur : Le pied monte à environ 58° au-dessus du plan, coupe profonde puis pointes rejetées : profil de la photo t015 (lis LA blanc), où la coupe est nettement creuse ; la valeur 30 vient d'une seule photo regardée de trois quarts."
+      }
+     },
+     "pointe_deg": {
+      "v": 10,
+      "unite": "deg",
+      "methode": "oeil",
+      "photos": [
+       "lis-asiatique-la:6082dead"
+      ],
+      "conf": "C",
+      "repere": "plan",
+      "ecart": {
+       "type": "divergence",
+       "texte": "Relevé d'une passe de dessin antérieure (photos citées), à vérifier par le modeleur : La pointe passe sous le plan (environ -18°) : les pointes sont retroussées dans leur dernier quart (aPow 3), comme sur t015 et t021 ; 10° au-dessus du plan les laissait en étoile plate."
+      }
+     }
+    },
+    "transversale": {
+     "type": {
+      "v": "gouttiere",
+      "methode": "oeil",
+      "photos": [
+       "lis-asiatique-la:e651daaa",
+       "lis-asiatique-la:6082dead"
+      ],
+      "conf": "C"
+     },
+     "profondeur": {
+      "v": 0.15,
+      "plage": [
+       0.1,
+       0.2
+      ],
+      "unite": "ratio",
+      "methode": "oeil",
+      "photos": [
+       "lis-asiatique-la:e651daaa",
+       "lis-asiatique-la:6082dead"
+      ],
+      "conf": "C",
+      "note": "creux de la gouttière en part de la largeur du tépale, lu sur le tépale avant de t015 (bords relevés, nervure médiane en creux) ; Q3"
+     }
+    }
+   },
+   "matiere": {
+    "epaisseur": {
+     "v": "moyenne",
+     "methode": "oeil",
+     "photos": [
+      "lis-asiatique-la:e651daaa"
+     ],
+     "conf": "C"
+    },
+    "translucidite": {
+     "v": 0.1,
+     "unite": "ratio",
+     "methode": "oeil",
+     "photos": [
+      "lis-asiatique-la:e651daaa"
+     ],
+     "conf": "C",
+     "note": "presque opaque",
+     "ecart": {
+      "type": "confirme",
+      "texte": "Rendue par lisMat.transmit (alpha .18 sur blanc, .26 sur orangé, aux bords minces seulement : app/y-lilium.js, lisMat) ; pas de grandeur unique à comparer au ratio .1."
+     }
+    },
+    "texture": {
+     "v": "cire",
+     "methode": "oeil",
+     "photos": [
+      "lis-asiatique-la:e651daaa",
+      "lis-asiatique-la:3e8b8a6c"
+     ],
+     "conf": "C"
+    },
+    "brillance": {
+     "v": 0.3,
+     "unite": "ratio",
+     "methode": "oeil",
+     "photos": [
+      "lis-asiatique-la:3e8b8a6c"
+     ],
+     "conf": "C",
+     "ecart": {
+      "type": "confirme",
+      "texte": "Reflet cireux modéré : light.ks .15, gloss 22, sky .16 (LIS_LA.light) ; l'échelle de ks n'est pas celle du ratio .3."
+     }
+    },
+    "grain": {
+     "v": "lisse",
+     "methode": "oeil",
+     "photos": [
+      "lis-asiatique-la:3e8b8a6c"
+     ],
+     "conf": "C"
+    }
+   },
+   "nervation": {
+    "type": {
+     "v": "parallele",
+     "methode": "oeil",
+     "photos": [
+      "lis-asiatique-la:3e8b8a6c",
+      "lis-asiatique-la:e651daaa"
+     ],
+     "conf": "C"
+    },
+    "visible": {
+     "v": "face",
+     "methode": "oeil",
+     "photos": [
+      "lis-asiatique-la:3e8b8a6c"
+     ],
+     "conf": "C"
+    },
+    "relief": {
+     "v": "plat",
+     "methode": "oeil",
+     "photos": [
+      "lis-asiatique-la:3e8b8a6c"
+     ],
+     "conf": "C"
+    },
+    "couleur": {
+     "v": "plus-claire",
+     "methode": "oeil",
+     "photos": [
+      "lis-asiatique-la:3e8b8a6c"
+     ],
+     "conf": "C",
+     "note": "médiane claire, verdâtre à la base"
+    }
+   },
+   "zones": [
+    {
+     "zone": "base",
+     "etendue": {
+      "v": [
+       0,
+       0.3
+      ],
+      "u": [
+       "L"
+      ],
+      "methode": "oeil",
+      "conf": "C",
+      "photos": [
+       "lis-asiatique-la:3e8b8a6c",
+       "lis-asiatique-la:e651daaa"
+      ],
+      "ecart": {
+       "type": "confirme",
+       "texte": "La gorge verte monte du pied jusqu'à v .24, fondue jusqu'à .5 (lisMat.blot v .24, w .5) et le sillon nectarifère jusqu'à .24 (lisMat.cross[0])."
+      }
+     },
+     "motif": {
+      "type": {
+       "v": "gorge verdâtre ou jaune-vert",
+       "methode": "oeil",
+       "photos": [
+        "lis-asiatique-la:3e8b8a6c",
+        "lis-asiatique-la:e651daaa"
+       ],
+       "conf": "C"
+      }
+     },
+     "bord": "fondu"
+    },
+    {
+     "zone": "corps",
+     "etendue": {
+      "v": [
+       0.3,
+       0.9
+      ],
+      "u": [
+       "L"
+      ],
+      "methode": "oeil",
+      "conf": "C",
+      "photos": [
+       "lis-asiatique-la:3e8b8a6c",
+       "lis-asiatique-la:e651daaa"
+      ],
+      "ecart": {
+       "type": "confirme",
+       "texte": "Corps uni du coloris de .28 à .88 dans les dégradés st (LIS_CW, lisSpec), pointe un peu plus soutenue au-delà."
+      }
+     },
+     "motif": {
+      "type": {
+       "v": "uni, couleur du coloris",
+       "methode": "oeil",
+       "photos": [
+        "lis-asiatique-la:3e8b8a6c",
+        "lis-asiatique-la:6082dead",
+        "lis-asiatique-la:e651daaa"
+       ],
+       "conf": "B"
+      }
+     },
+     "bord": "fondu"
+    },
+    {
+     "zone": "mouchetures",
+     "etendue": {
+      "v": [
+       0.05,
+       0.45
+      ],
+      "u": [
+       "L"
+      ],
+      "methode": "oeil",
+      "conf": "C",
+      "photos": [
+       "lis-asiatique-la:3e8b8a6c",
+       "lis-asiatique-la:e651daaa"
+      ]
+     },
+     "motif": {
+      "type": {
+       "v": "points bruns épars près de la base sur les coloris orangés ; absents sur blanc et jaune",
+       "methode": "oeil",
+       "photos": [
+        "lis-asiatique-la:6082dead",
+        "lis-asiatique-la:dde5c2d2"
+       ],
+       "conf": "C"
+      }
+     },
+     "bord": "net"
+    }
+   ],
+   "jointures": [
+    {
+     "vers": "receptacle",
+     "type": "onglet",
+     "params": {
+      "v": "insertion étroite au centre, gorge en entonnoir",
+      "methode": "oeil",
+      "photos": [
+       "lis-asiatique-la:e651daaa",
+       "lis-asiatique-la:3e8b8a6c"
+      ],
+      "conf": "C"
+     }
+    }
+   ],
+   "stades": {
+    "bouton": {
+     "v": "fermés en bouton allongé, pointes vers le haut",
+     "methode": "oeil",
+     "photos": [
+      "lis-asiatique-la:7190df7f",
+      "lis-asiatique-la:e651daaa"
+     ],
+     "conf": "C"
+    },
+    "gonfle": {
+     "v": "pointes qui se desserrent, couleur du coloris visible",
+     "methode": "hypothese",
+     "conf": "D",
+     "note": "aucune photo"
+    },
+    "entrouvert": {
+     "v": "tépales écartés d'environ 30° de l'axe",
+     "methode": "hypothese",
+     "conf": "D",
+     "note": "Q2"
+    },
+    "ouvert": {
+     "v": "étoile à 6 pointes, tépales à environ 80° de l'axe, pointes retroussées",
+     "methode": "oeil",
+     "photos": [
+      "lis-asiatique-la:3e8b8a6c",
+      "lis-asiatique-la:6082dead"
+     ],
+     "conf": "C"
+    },
+    "plein": {
+     "v": "tépales à plat ou retroussés, cuvette creuse",
+     "methode": "oeil",
+     "photos": [
+      "lis-asiatique-la:6082dead"
+     ],
+     "conf": "C"
+    },
+    "declin": {
+     "v": "teinte ternie, bords roulés",
+     "methode": "hypothese",
+     "conf": "D",
+     "note": "Q2 : seule photo, autre espèce"
+    },
+    "fane": {
+     "v": "tépales ratatinés brun orangé",
+     "methode": "hypothese",
+     "conf": "D",
+     "note": "Q2 : seule photo, autre espèce"
+    }
+   }
+  },
+  "tepale.interne": {
+   "role": "perianthe",
+   "dessinee": true,
+   "nombre": {
+    "v": 3,
+    "unite": "n",
+    "n": 2,
+    "methode": "oeil",
+    "photos": [
+     "lis-asiatique-la:3e8b8a6c",
+     "lis-asiatique-la:6082dead"
+    ],
+    "conf": "A",
+    "ref": "3 tépales internes (pétaloïdes), flore Lilium"
+   },
+   "disposition": {
+    "suit": "tepale.externe.disposition"
+   },
+   "contour": {
+    "base": {
+     "suit": "tepale.externe.contour.base"
+    },
+    "pointe": {
+     "suit": "tepale.externe.contour.pointe"
+    },
+    "L_sur_l": {
+     "v": 2.6,
+     "plage": [
+      2.3,
+      3.0
+     ],
+     "unite": "ratio",
+     "n": 2,
+     "methode": "regle",
+     "photos": [
+      "lis-asiatique-la:6082dead",
+      "lis-asiatique-la:3e8b8a6c"
+     ],
+     "conf": "C",
+     "note": "t032 L 197 l 75 ; t021 tépale droit L 220 l 85 ; plus étroits que les externes",
+     "ecart": {
+      "type": "divergence",
+      "texte": "Relevé d'une passe de dessin antérieure (photos citées), à vérifier par le modeleur : Tépales internes plus larges que les externes (L/l 1,7) : photos t021 et t006, où les trois internes sont nettement plus larges ; la fiche les donne plus étroits (2,6) d'après deux photos lues à l'œil."
+     }
+    },
+    "marge": {
+     "suit": "tepale.externe.contour.marge"
+    }
+   },
+   "taille": {
+    "longueur": {
+     "suit": "tepale.externe.taille.longueur"
+    },
+    "largeur": {
+     "v": 0.4,
+     "plage": [
+      0.35,
+      0.45
+     ],
+     "unite": "R0",
+     "n": 2,
+     "methode": "regle",
+     "photos": [
+      "lis-asiatique-la:6082dead",
+      "lis-asiatique-la:3e8b8a6c"
+     ],
+     "conf": "C",
+     "ecart": {
+      "type": "divergence",
+      "texte": "Relevé d'une passe de dessin antérieure (photos citées), à vérifier par le modeleur : Largeur .54 R0 : internes plus larges que les externes (photos t021, t006) ; à .4 la tête de face devenait une étoile maigre (planche du tour 8)."
+     }
+    }
+   },
+   "courbure": {
+    "suit": "tepale.externe.courbure"
+   },
+   "matiere": {
+    "suit": "tepale.externe.matiere"
+   },
+   "nervation": {
+    "suit": "tepale.externe.nervation"
+   },
+   "zones": {
+    "suit": "tepale.externe.zones"
+   },
+   "jointures": {
+    "suit": "tepale.externe.jointures"
+   },
+   "stades": {
+    "suit": "tepale.externe.stades"
+   }
+  },
+  "coeur.etamines": {
+   "role": "coeur",
+   "dessinee": true,
+   "nombre": {
+    "v": 6,
+    "unite": "n",
+    "n": 3,
+    "methode": "oeil",
+    "photos": [
+     "lis-asiatique-la:3e8b8a6c",
+     "lis-asiatique-la:e651daaa",
+     "lis-asiatique-la:6082dead"
+    ],
+    "conf": "A",
+    "ref": "Lilium : 6 étamines (flore)"
+   },
+   "disposition": {
+    "type": {
+     "v": "verticilles",
+     "methode": "reference",
+     "conf": "A",
+     "ref": "6 étamines en cercle autour du style"
+    },
+    "verticilles": {
+     "v": 1,
+     "unite": "n",
+     "n": 2,
+     "methode": "oeil",
+     "photos": [
+      "lis-asiatique-la:3e8b8a6c",
+      "lis-asiatique-la:e651daaa"
+     ],
+     "conf": "B",
+     "ecart": {
+      "type": "confirme",
+      "texte": "Un seul cercle de six filets partant du fond de la gorge (lisHeart, boucle j < 6), chacun à son angle propre."
+     }
+    }
+   },
+   "contour": {
+    "base": {
+     "v": "filet fin dressé",
+     "methode": "oeil",
+     "photos": [
+      "lis-asiatique-la:e651daaa"
+     ],
+     "conf": "C"
+    }
+   },
+   "taille": {
+    "longueur": {
+     "v": 0.55,
+     "unite": "R0",
+     "n": 2,
+     "methode": "oeil",
+     "photos": [
+      "lis-asiatique-la:e651daaa",
+      "lis-asiatique-la:3e8b8a6c"
+     ],
+     "conf": "C",
+     "note": "anthères à la moitié du rayon environ",
+     "ecart": {
+      "type": "divergence",
+      "texte": "Relevé d'une passe de dessin antérieure (photos citées), à vérifier par le modeleur : Filets de .75 R0 (tirés de .58 à .89) : sur t015 les anthères dépassent l'entrée de la coupe ; à .55 elles restaient cachées dans la coupe de profil (tour 5)."
+     }
+    },
+    "largeur": {
+     "v": 0.04,
+     "unite": "R0",
+     "methode": "oeil",
+     "photos": [
+      "lis-asiatique-la:e651daaa"
+     ],
+     "conf": "C",
+     "ecart": {
+      "type": "divergence",
+      "texte": "Relevé d'une passe de dessin antérieure (photos citées), à vérifier par le modeleur : Le filet est fin (.02 R0, environ 1,5 mm sur un tépale de 8 cm) ; .04 est la largeur de l'anthère, tenue par LIS_H.aw .04."
+     }
+    }
+   },
+   "matiere": {
+    "texture": {
+     "v": "mat",
+     "methode": "oeil",
+     "photos": [
+      "lis-asiatique-la:e651daaa"
+     ],
+     "conf": "C"
+    },
+    "epaisseur": {
+     "v": "fine",
+     "methode": "oeil",
+     "photos": [
+      "lis-asiatique-la:e651daaa"
+     ],
+     "conf": "C"
+    }
+   },
+   "zones": [
+    {
+     "zone": "corps",
+     "etendue": {
+      "v": [
+       0.7,
+       1.0
+      ],
+      "u": [
+       "L"
+      ],
+      "methode": "oeil",
+      "conf": "C",
+      "photos": [
+       "lis-asiatique-la:3e8b8a6c",
+       "lis-asiatique-la:e651daaa"
+      ],
+      "ecart": {
+       "type": "confirme",
+       "texte": "L'anthère est une pièce à part, oblongue (LIS_H.an .145, aw .04), versatile au bout du filet : elle occupe le dernier quart de l'étamine."
+      }
+     },
+     "motif": {
+      "type": {
+       "v": "anthères brun sombre oblongues, filet clair",
+       "methode": "oeil",
+       "photos": [
+        "lis-asiatique-la:e651daaa",
+        "lis-asiatique-la:3e8b8a6c",
+        "lis-asiatique-la:6082dead"
+       ],
+       "conf": "B"
+      }
+     },
+     "bord": "net"
+    }
+   ],
+   "jointures": [
+    {
+     "vers": "receptacle",
+     "type": "insertion",
+     "params": {
+      "v": "filets partant du fond de la gorge",
+      "methode": "oeil",
+      "photos": [
+       "lis-asiatique-la:e651daaa"
+      ],
+      "conf": "C"
+     }
+    }
+   ],
+   "stades": {
+    "ouvert": {
+     "v": "anthères chargées de pollen brun, écartées",
+     "methode": "oeil",
+     "photos": [
+      "lis-asiatique-la:e651daaa",
+      "lis-asiatique-la:3e8b8a6c"
+     ],
+     "conf": "C"
+    },
+    "fane": {
+     "v": "anthères desséchées",
+     "methode": "hypothese",
+     "conf": "D",
+     "note": "aucune photo"
+    }
+   }
+  },
+  "coeur.pistils": {
+   "role": "coeur",
+   "dessinee": true,
+   "nombre": {
+    "v": 1,
+    "unite": "n",
+    "n": 2,
+    "methode": "oeil",
+    "photos": [
+     "lis-asiatique-la:e651daaa",
+     "lis-asiatique-la:3e8b8a6c"
+    ],
+    "conf": "B",
+    "ref": "1 pistil à style unique, stigmate à 3 lobes (flore)",
+    "ecart": {
+     "type": "confirme",
+     "texte": "Un style (lisHeart, j === 6), terminé par un stigmate à trois lobes."
+    }
+   },
+   "disposition": {
+    "type": {
+     "v": "verticilles",
+     "methode": "oeil",
+     "photos": [
+      "lis-asiatique-la:e651daaa",
+      "lis-asiatique-la:3e8b8a6c"
+     ],
+     "conf": "C",
+     "note": "un seul pistil au centre (ovaire supère, style droit, stigmate trilobé) : un verticille d'une pièce"
+    }
+   },
+   "contour": {
+    "base": {
+     "v": "style droit, stigmate en tête renflée",
+     "methode": "oeil",
+     "photos": [
+      "lis-asiatique-la:e651daaa",
+      "lis-asiatique-la:3e8b8a6c"
+     ],
+     "conf": "C"
+    }
+   },
+   "taille": {
+    "longueur": {
+     "v": 0.6,
+     "unite": "R0",
+     "n": 2,
+     "methode": "oeil",
+     "photos": [
+      "lis-asiatique-la:e651daaa",
+      "lis-asiatique-la:3e8b8a6c"
+     ],
+     "conf": "C",
+     "ecart": {
+      "type": "divergence",
+      "texte": "Relevé d'une passe de dessin antérieure (photos citées), à vérifier par le modeleur : Style de .82 R0, un peu plus long que les filets, comme sur t015 où il dépasse les anthères ; à .6 il restait sous elles."
+     }
+    },
+    "largeur": {
+     "v": 0.03,
+     "unite": "R0",
+     "methode": "oeil",
+     "photos": [
+      "lis-asiatique-la:e651daaa"
+     ],
+     "conf": "C"
+    }
+   },
+   "matiere": {
+    "texture": {
+     "v": "mat",
+     "methode": "oeil",
+     "photos": [
+      "lis-asiatique-la:e651daaa"
+     ],
+     "conf": "C"
+    }
+   },
+   "zones": [
+    {
+     "zone": "pointe",
+     "etendue": {
+      "v": [
+       0.9,
+       1.0
+      ],
+      "u": [
+       "L"
+      ],
+      "methode": "oeil",
+      "conf": "C",
+      "photos": [
+       "lis-asiatique-la:3e8b8a6c",
+       "lis-asiatique-la:e651daaa"
+      ],
+      "ecart": {
+       "type": "confirme",
+       "texte": "Le stigmate est un renflement à trois lobes de rayon LIS_H.sgR .05 R0 au bout du style."
+      }
+     },
+     "motif": {
+      "type": {
+       "v": "stigmate jaune-vert (t015), rose-violacé (t021)",
+       "methode": "oeil",
+       "photos": [
+        "lis-asiatique-la:e651daaa",
+        "lis-asiatique-la:3e8b8a6c"
+       ],
+       "conf": "C"
+      }
+     },
+     "bord": "net"
+    }
+   ],
+   "jointures": [
+    {
+     "vers": "receptacle",
+     "type": "insertion",
+     "params": {
+      "v": "style émergeant du centre",
+      "methode": "oeil",
+      "photos": [
+       "lis-asiatique-la:e651daaa"
+      ],
+      "conf": "C"
+     }
+    }
+   ],
+   "stades": {
+    "ouvert": {
+     "v": "style dressé ou légèrement incliné",
+     "methode": "oeil",
+     "photos": [
+      "lis-asiatique-la:e651daaa",
+      "lis-asiatique-la:3e8b8a6c"
+     ],
+     "conf": "C"
+    }
+   }
+  },
+  "receptacle": {
+   "role": "receptacle",
+   "dessinee": true,
+   "taille": {
+    "diametre": {
+     "v": 0.16,
+     "plage": [
+      0.14,
+      0.19
+     ],
+     "unite": "R0",
+     "n": 1,
+     "methode": "regle",
+     "photos": [
+      "lis-asiatique-la:e651daaa"
+     ],
+     "conf": "C",
+     "note": "t015 (agrandi x3) : base du périanthe 30 à 42 px au-dessus du pédicelle, fleur 441 px d'une pointe à l'autre (R0 220 px) ; vue de trois-quarts, la base reste en partie cachée (Q4)"
+    },
+    "evasement": {
+     "v": 1.34,
+     "unite": "ratio",
+     "n": 1,
+     "methode": "segmente",
+     "photos": [
+      "lis-asiatique-la:e651daaa"
+     ],
+     "conf": "C",
+     "note": "organ.py stem t015 box 235,325,295,375 : pédicelle 17.8 px en bas, 23.9 px sous la fleur (effilement bas/haut 0.74) : le col s'évase vers le réceptacle"
+    }
+   },
+   "matiere": {
+    "v": "verte, charnue",
+    "methode": "oeil",
+    "photos": [
+     "lis-asiatique-la:e651daaa"
+    ],
+    "conf": "C"
+   },
+   "zones": [
+    {
+     "zone": "corps",
+     "motif": {
+      "type": {
+       "v": "vert uni",
+       "methode": "oeil",
+       "photos": [
+        "lis-asiatique-la:e651daaa"
+       ],
+       "conf": "C"
+      }
+     },
+     "bord": "fondu"
+    }
+   ],
+   "jointures": [
+    {
+     "vers": "pedicelle",
+     "type": "col",
+     "params": {
+      "v": "évasement vers la fleur",
+      "methode": "oeil",
+      "photos": [
+       "lis-asiatique-la:e651daaa"
+      ],
+      "conf": "C"
+     }
+    }
+   ],
+   "stades": {
+    "fane": {
+     "v": "capsule non vue à ce stade",
+     "methode": "hypothese",
+     "conf": "D",
+     "note": "Q4"
+    }
+   }
+  },
+  "bouton": {
+   "role": "bouton",
+   "dessinee": true,
+   "disposition": {
+    "type": {
+     "v": "grappe",
+     "n": 3,
+     "methode": "oeil",
+     "photos": [
+      "lis-asiatique-la:7190df7f",
+      "lis-asiatique-la:dde5c2d2",
+      "lis-asiatique-la:114daa52"
+     ],
+     "conf": "B",
+     "note": "plusieurs boutons étagés sur la tige, le plus bas s'ouvre d'abord"
+    },
+    "ordre": {
+     "v": "l'ouverture monte de bas en haut",
+     "n": 2,
+     "methode": "oeil",
+     "photos": [
+      "lis-asiatique-la:114daa52",
+      "lis-asiatique-la:dde5c2d2"
+     ],
+     "conf": "C"
+    }
+   },
+   "contour": {
+    "base": {
+     "v": "arrondie",
+     "methode": "oeil",
+     "photos": [
+      "lis-asiatique-la:e651daaa"
+     ],
+     "conf": "C"
+    },
+    "pointe": {
+     "type": {
+      "v": "obtuse",
+      "methode": "oeil",
+      "photos": [
+       "lis-asiatique-la:e651daaa",
+       "lis-asiatique-la:3e8b8a6c"
+      ],
+      "conf": "C"
+     }
+    },
+    "L_sur_l": {
+     "v": 1.7,
+     "plage": [
+      1.3,
+      2.0
+     ],
+     "unite": "ratio",
+     "n": 2,
+     "methode": "regle",
+     "photos": [
+      "lis-asiatique-la:e651daaa",
+      "lis-asiatique-la:3e8b8a6c"
+     ],
+     "conf": "C",
+     "note": "t015 bouton gauche L 150 l 75 ; t021 bouton L 105 l 85, incliné"
+    }
+   },
+   "taille": {
+    "longueur": {
+     "v": 0.4,
+     "unite": "R0",
+     "n": 1,
+     "methode": "regle",
+     "photos": [
+      "lis-asiatique-la:e651daaa"
+     ],
+     "conf": "C",
+     "note": "bouton 150 px pour une fleur de 440 px de large sur t015",
+     "ecart": {
+      "type": "divergence",
+      "texte": "Relevé d'une passe de dessin antérieure (photos citées), à vérifier par le modeleur : Bouton mûr, juste avant l'ouverture : aussi long que le tépale (1 R0), sinon la fleur sortirait d'un bouton deux fois plus court qu'elle ; .4 vaut pour un jeune bouton (une photo)."
+     }
+    },
+    "largeur": {
+     "v": 0.18,
+     "unite": "R0",
+     "n": 1,
+     "methode": "regle",
+     "photos": [
+      "lis-asiatique-la:e651daaa"
+     ],
+     "conf": "C",
+     "ecart": {
+      "type": "divergence",
+      "texte": "Relevé d'une passe de dessin antérieure (photos citées), à vérifier par le modeleur : Largeur du bouton mûr (.4 R0) à proportion de sa longueur 1 R0 ; .18 vaut pour un jeune bouton."
+     }
+    },
+    "hw": {
+     "v": 0.7883,
+     "plage": [
+      0.56,
+      1.02
+     ],
+     "unite": "ratio",
+     "n": 2,
+     "methode": "segmente",
+     "photos": [
+      "lis-asiatique-la:7190df7f",
+      "lis-asiatique-la:e651daaa"
+     ],
+     "conf": "C",
+     "note": "targets.json bouton.hw, tol 0.227",
+     "ecart": {
+      "type": "divergence",
+      "texte": "La mesure de targets.json (.79, plus large que haut) contredit la même fiche (L/l 1,7) et les photos t003 et t015 : la segmentation a pris une touffe de boutons. Le dessin mesure 2,6 (t-dessin.json)."
+     }
+    },
+    "jeune_L_sur_l": {
+     "v": 3.3,
+     "unite": "ratio",
+     "n": 1,
+     "methode": "segmente",
+     "photos": [
+      "lis-asiatique-la:114daa52"
+     ],
+     "conf": "C",
+     "note": "organ.py head t007 box 440,138,472,200 : jeune bouton vert dressé 19 x 62 px ; le bouton s'allonge avant de gonfler (le bouton mûr fait 1,7)"
+    }
+   },
+   "matiere": {
+    "texture": {
+     "v": "cire",
+     "methode": "oeil",
+     "photos": [
+      "lis-asiatique-la:e651daaa",
+      "lis-asiatique-la:3e8b8a6c"
+     ],
+     "conf": "C"
+    },
+    "epaisseur": {
+     "v": "moyenne",
+     "methode": "oeil",
+     "photos": [
+      "lis-asiatique-la:e651daaa"
+     ],
+     "conf": "C"
+    },
+    "brillance": {
+     "v": 0.35,
+     "unite": "ratio",
+     "methode": "oeil",
+     "photos": [
+      "lis-asiatique-la:e651daaa"
+     ],
+     "conf": "C",
+     "ecart": {
+      "type": "confirme",
+      "texte": "Même reflet cireux que les tépales : light.ks .15, gloss 22 (LIS_LA.light)."
+     }
+    }
+   },
+   "zones": [
+    {
+     "zone": "corps",
+     "motif": {
+      "type": {
+       "v": "vert, nervures médianes des tépales plus claires ; teinte du coloris qui monte du bout avant l'ouverture",
+       "methode": "oeil",
+       "photos": [
+        "lis-asiatique-la:dde5c2d2",
+        "lis-asiatique-la:e651daaa",
+        "lis-asiatique-la:3e8b8a6c"
+       ],
+       "conf": "B"
+      }
+     },
+     "bord": "fondu"
+    }
+   ],
+   "jointures": [
+    {
+     "vers": "pedicelle",
+     "type": "col",
+     "params": {
+      "v": "pédicelle court et dressé",
+      "methode": "oeil",
+      "photos": [
+       "lis-asiatique-la:e651daaa",
+       "lis-asiatique-la:3e8b8a6c"
+      ],
+      "conf": "C"
+     }
+    }
+   ],
+   "stades": {
+    "bouton": {
+     "v": "vert fermé",
+     "methode": "oeil",
+     "photos": [
+      "lis-asiatique-la:7190df7f",
+      "lis-asiatique-la:e651daaa"
+     ],
+     "conf": "B"
+    },
+    "gonfle": {
+     "v": "bout qui prend la teinte du coloris",
+     "methode": "oeil",
+     "photos": [
+      "lis-asiatique-la:dde5c2d2"
+     ],
+     "conf": "C",
+     "note": "t003, bourgeon orangé"
+    }
+   }
+  },
+  "pedicelle": {
+   "role": "pedicelle",
+   "dessinee": true,
+   "taille": {
+    "longueur": {
+     "v": 0.15,
+     "plage": [
+      0.1,
+      0.4
+     ],
+     "unite": "R0",
+     "n": 1,
+     "methode": "regle",
+     "photos": [
+      "lis-asiatique-la:3e8b8a6c"
+     ],
+     "conf": "C",
+     "note": "t021 : 40-60 px pour R0 200 px ; très court sous la fleur du bas"
+    }
+   },
+   "courbure": {
+    "longitudinale": {
+     "profil": {
+      "v": "arquee, redressée sous le bouton",
+      "methode": "oeil",
+      "photos": [
+       "lis-asiatique-la:3e8b8a6c",
+       "lis-asiatique-la:e651daaa"
+      ],
+      "conf": "C"
+     }
+    }
+   },
+   "matiere": {
+    "texture": {
+     "v": "mat",
+     "methode": "oeil",
+     "photos": [
+      "lis-asiatique-la:3e8b8a6c"
+     ],
+     "conf": "C"
+    }
+   },
+   "zones": [
+    {
+     "zone": "corps",
+     "motif": {
+      "type": {
+       "v": "vert foncé uni",
+       "methode": "oeil",
+       "photos": [
+        "lis-asiatique-la:3e8b8a6c"
+       ],
+       "conf": "C"
+      }
+     },
+     "bord": "fondu"
+    }
+   ],
+   "jointures": [
+    {
+     "vers": "tige",
+     "type": "noeud",
+     "params": {
+      "v": "part de la tige à l'aisselle d'une feuille réduite",
+      "methode": "oeil",
+      "photos": [
+       "lis-asiatique-la:3e8b8a6c",
+       "lis-asiatique-la:114daa52"
+      ],
+      "conf": "C"
+     }
+    }
+   ],
+   "section": {
+    "forme": {
+     "v": "ronde",
+     "methode": "oeil",
+     "photos": [
+      "lis-asiatique-la:3e8b8a6c"
+     ],
+     "conf": "C"
+    },
+    "diametre": {
+     "v": 0.035,
+     "unite": "D",
+     "n": 1,
+     "methode": "regle",
+     "photos": [
+      "lis-asiatique-la:6082dead"
+     ],
+     "conf": "C",
+     "note": "D = largeur de la fleur ; t032 : 15 px sous une fleur de 395 px"
+    }
+   },
+   "stades": {
+    "fane": {
+     "v": "pédicelle qui se courbe sous la fleur fanée",
+     "methode": "hypothese",
+     "conf": "D",
+     "note": "Q2"
+    }
+   }
+  },
+  "tige": {
+   "role": "tige",
+   "dessinee": true,
+   "taille": {
+    "longueur": {
+     "v": 60,
+     "methode": "hypothese",
+     "conf": "D",
+     "note": "tige coupée de lis LA 60 à 90 cm en pratique florale : à confirmer par le catalogue"
+    },
+    "rapport_tete": {
+     "v": 0.11,
+     "unite": "ratio",
+     "n": 2,
+     "methode": "segmente",
+     "photos": [
+      "lis-asiatique-la:6082dead",
+      "lis-asiatique-la:114daa52"
+     ],
+     "conf": "B",
+     "note": "organ.py stem --head 395 sur t032 : tige / fleur = 1/8.9 ; organ.py stem t007 box 362,90,395,300 : 19.1 px pour une fleur de 172 px (organ.py head t007 box 125,85,298,222) = 1/9.0",
+     "plage": [
+      0.11,
+      0.112
+     ]
+    }
+   },
+   "courbure": {
+    "longitudinale": {
+     "profil": {
+      "v": "droite, dressée, arquée sous la fleur",
+      "methode": "oeil",
+      "photos": [
+       "lis-asiatique-la:6082dead",
+       "lis-asiatique-la:3e8b8a6c"
+      ],
+      "conf": "C"
+     }
+    }
+   },
+   "matiere": {
+    "texture": {
+     "v": "mat",
+     "methode": "oeil",
+     "photos": [
+      "lis-asiatique-la:3e8b8a6c",
+      "lis-asiatique-la:6082dead"
+     ],
+     "conf": "C"
+    },
+    "epaisseur": {
+     "v": "moyenne",
+     "methode": "oeil",
+     "photos": [
+      "lis-asiatique-la:3e8b8a6c"
+     ],
+     "conf": "C"
+    }
+   },
+   "zones": [
+    {
+     "zone": "corps",
+     "motif": {
+      "type": {
+       "v": "vert uni",
+       "methode": "oeil",
+       "photos": [
+        "lis-asiatique-la:3e8b8a6c",
+        "lis-asiatique-la:6082dead"
+       ],
+       "conf": "B"
+      }
+     },
+     "bord": "fondu",
+     "couleurs": {
+      "corps": {
+       "v": [
+        "#183300",
+        "#223f06",
+        "#8c8b18"
+       ],
+       "unite": "hex",
+       "n": 1,
+       "methode": "segmente",
+       "photos": [
+        "lis-asiatique-la:3e8b8a6c"
+       ],
+       "conf": "C",
+       "note": "ombre, corps, lumière : organ.py stem t021"
+      },
+      "sous_fleur": {
+       "v": [
+        "#20300f",
+        "#3c6f2b",
+        "#537844"
+       ],
+       "unite": "hex",
+       "n": 1,
+       "methode": "segmente",
+       "photos": [
+        "lis-asiatique-la:6082dead"
+       ],
+       "conf": "C",
+       "note": "organ.py stem t032"
+      }
+     }
+    }
+   ],
+   "jointures": [
+    {
+     "vers": "feuille",
+     "type": "noeud",
+     "params": {
+      "v": "feuilles insérées en spirale, sans gaine",
+      "methode": "oeil",
+      "photos": [
+       "lis-asiatique-la:114daa52",
+       "lis-asiatique-la:dde5c2d2"
+      ],
+      "conf": "C"
+     }
+    }
+   ],
+   "section": {
+    "forme": {
+     "v": "ronde",
+     "methode": "oeil",
+     "photos": [
+      "lis-asiatique-la:3e8b8a6c",
+      "lis-asiatique-la:6082dead"
+     ],
+     "conf": "C"
+    },
+    "diametre": {
+     "v": 0.063,
+     "unite": "D",
+     "n": 1,
+     "methode": "segmente",
+     "photos": [
+      "lis-asiatique-la:3e8b8a6c"
+     ],
+     "conf": "C",
+     "note": "organ.py stem t021 box 250,0,290,120 : 25.5 px pour une fleur de 405 px ; inclut un pédicelle ; t007 (organ.py stem, box 362,90,395,300) : 19.1 px, effilement bas/haut 1.53, bases de feuilles comprises : borne haute"
+    },
+    "effilement": {
+     "v": 1.11,
+     "unite": "ratio",
+     "n": 1,
+     "methode": "segmente",
+     "photos": [
+      "lis-asiatique-la:3e8b8a6c"
+     ],
+     "conf": "C",
+     "note": "bas/haut sur 120 px de tige"
+    },
+    "poils": {
+     "v": "aucun",
+     "methode": "oeil",
+     "photos": [
+      "lis-asiatique-la:3e8b8a6c"
+     ],
+     "conf": "C"
+    }
+   },
+   "stades": {
+    "fane": {
+     "v": "tige verte qui reste dressée",
+     "methode": "hypothese",
+     "conf": "D",
+     "note": "Q2"
+    }
+   }
+  },
+  "feuille": {
+   "role": "feuille",
+   "dessinee": true,
+   "nombre": {
+    "v": "nombreuses, alternes sur toute la tige",
+    "methode": "hypothese",
+    "conf": "D",
+    "note": "Q5 : non comptées"
+   },
+   "disposition": {
+    "type": {
+     "v": "alternes",
+     "n": 2,
+     "methode": "oeil",
+     "photos": [
+      "lis-asiatique-la:114daa52",
+      "lis-asiatique-la:dde5c2d2"
+     ],
+     "conf": "B",
+     "note": "en spirale ; feuilles étroites sur tige (légende t007)"
+    },
+    "ordre": {
+     "v": "feuilles hautes plus courtes près des fleurs",
+     "methode": "oeil",
+     "photos": [
+      "lis-asiatique-la:114daa52"
+     ],
+     "conf": "C"
+    }
+   },
+   "contour": {
+    "base": {
+     "v": "arrondie",
+     "methode": "oeil",
+     "photos": [
+      "lis-asiatique-la:dde5c2d2",
+      "lis-asiatique-la:114daa52"
+     ],
+     "conf": "C",
+     "note": "sessile ou pétiole très court"
+    },
+    "pointe": {
+     "type": {
+      "v": "aigue",
+      "methode": "oeil",
+      "photos": [
+       "lis-asiatique-la:dde5c2d2",
+       "lis-asiatique-la:114daa52"
+      ],
+      "conf": "C"
+     }
+    },
+    "L_sur_l": {
+     "v": 1.28,
+     "plage": [
+      0.98,
+      1.58
+     ],
+     "unite": "ratio",
+     "n": 3,
+     "methode": "segmente",
+     "photos": [
+      "lis-asiatique-la:dde5c2d2",
+      "lis-asiatique-la:114daa52",
+      "lis-asiatique-la:3e8b8a6c"
+     ],
+     "conf": "C",
+     "note": "targets.json feuille.leaflw ; paraît court pour des feuilles lancéolées (Q5)"
+    },
+    "marge": {
+     "v": "entiere",
+     "methode": "oeil",
+     "photos": [
+      "lis-asiatique-la:dde5c2d2",
+      "lis-asiatique-la:114daa52"
+     ],
+     "conf": "C"
+    }
+   },
+   "taille": {
+    "longueur": {
+     "v": 0.55,
+     "unite": "R0",
+     "n": 1,
+     "methode": "regle",
+     "photos": [
+      "lis-asiatique-la:3e8b8a6c"
+     ],
+     "conf": "C",
+     "note": "t021 : feuille du bas L 148 px (organ.py leaf), R0 200 px"
+    },
+    "largeur": {
+     "v": 0.35,
+     "unite": "R0",
+     "n": 1,
+     "methode": "segmente",
+     "photos": [
+      "lis-asiatique-la:3e8b8a6c"
+     ],
+     "conf": "C",
+     "note": "organ.py leaf t021 : l 71 px"
+    }
+   },
+   "courbure": {
+    "longitudinale": {
+     "profil": {
+      "v": "arquee",
+      "methode": "oeil",
+      "photos": [
+       "lis-asiatique-la:dde5c2d2",
+       "lis-asiatique-la:114daa52"
+      ],
+      "conf": "C"
+     },
+     "pied_deg": {
+      "v": 20.4778,
+      "plage": [
+       11.1,
+       29.8
+      ],
+      "unite": "deg",
+      "n": 3,
+      "methode": "segmente",
+      "photos": [
+       "lis-asiatique-la:dde5c2d2",
+       "lis-asiatique-la:114daa52",
+       "lis-asiatique-la:3e8b8a6c"
+      ],
+      "conf": "C",
+      "repere": "tige",
+      "note": "targets.json feuille.leafang, tol 9.35"
+     }
+    },
+    "transversale": {
+     "type": {
+      "v": "gouttiere",
+      "methode": "oeil",
+      "photos": [
+       "lis-asiatique-la:114daa52"
+      ],
+      "conf": "C"
+     }
+    }
+   },
+   "matiere": {
+    "texture": {
+     "v": "cuir",
+     "methode": "oeil",
+     "photos": [
+      "lis-asiatique-la:3e8b8a6c"
+     ],
+     "conf": "C"
+    },
+    "epaisseur": {
+     "v": "moyenne",
+     "methode": "oeil",
+     "photos": [
+      "lis-asiatique-la:3e8b8a6c"
+     ],
+     "conf": "C"
+    },
+    "brillance": {
+     "v": 0.35,
+     "unite": "ratio",
+     "methode": "oeil",
+     "photos": [
+      "lis-asiatique-la:3e8b8a6c"
+     ],
+     "conf": "C"
+    }
+   },
+   "nervation": {
+    "type": {
+     "v": "parallele",
+     "methode": "oeil",
+     "photos": [
+      "lis-asiatique-la:3e8b8a6c"
+     ],
+     "conf": "C"
+    },
+    "visible": {
+     "v": "face",
+     "methode": "oeil",
+     "photos": [
+      "lis-asiatique-la:3e8b8a6c"
+     ],
+     "conf": "C"
+    },
+    "relief": {
+     "v": "creux",
+     "methode": "oeil",
+     "photos": [
+      "lis-asiatique-la:3e8b8a6c"
+     ],
+     "conf": "D"
+    }
+   },
+   "zones": [
+    {
+     "zone": "corps",
+     "motif": {
+      "type": {
+       "v": "vert foncé, nervure médiane claire",
+       "methode": "oeil",
+       "photos": [
+        "lis-asiatique-la:3e8b8a6c",
+        "lis-asiatique-la:dde5c2d2"
+       ],
+       "conf": "C"
+      }
+     },
+     "bord": "fondu",
+     "couleurs": {
+      "corps": {
+       "v": [
+        "#0f250b",
+        "#162e10",
+        "#28461a"
+       ],
+       "unite": "hex",
+       "n": 1,
+       "methode": "segmente",
+       "photos": [
+        "lis-asiatique-la:3e8b8a6c"
+       ],
+       "conf": "C",
+       "note": "ombre, corps, lumière : organ.py leaf t021, feuille à l'ombre"
+      }
+     }
+    }
+   ],
+   "jointures": [
+    {
+     "vers": "tige",
+     "type": "petiole",
+     "params": {
+      "v": 0.13,
+      "unite": "L",
+      "methode": "segmente",
+      "photos": [
+       "lis-asiatique-la:3e8b8a6c"
+      ],
+      "conf": "C",
+      "note": "organ.py leaf t021 : pétiole 0.13 de la longueur"
+     }
+    }
+   ],
+   "section": {
+    "forme": {
+     "v": "plate",
+     "methode": "oeil",
+     "photos": [
+      "lis-asiatique-la:3e8b8a6c"
+     ],
+     "conf": "C"
+    },
+    "diametre": {
+     "v": null,
+     "methode": "hypothese",
+     "conf": "D",
+     "note": "Q5"
+    }
+   },
+   "stades": {
+    "fane": {
+     "v": "feuilles basses jaunies qui sèchent sur la tige",
+     "methode": "hypothese",
+     "conf": "D",
+     "note": "Q2"
+    }
+   }
+  }
+ },
+ "varietes": {
+  "white-twinkle": {
+   "forme": "non-mesure"
+  }
+ },
+ "stades": {
+  "table": [
+   {
+    "stade": "bouton",
+    "op": {
+     "v": 0.06,
+     "unite": "ratio",
+     "methode": "reference",
+     "conf": "B",
+     "ref": "catalogue/serre/methode/BONNES-PRATIQUES.md 5.5 (grille .06, .2, .4, .75, 1:0, 1:.35, 1:.75)"
+    },
+    "wl": {
+     "v": 0,
+     "unite": "ratio",
+     "methode": "reference",
+     "conf": "B",
+     "ref": "BONNES-PRATIQUES.md 5.5"
+    },
+    "photos": [
+     "lis-asiatique-la:7190df7f",
+     "lis-asiatique-la:e651daaa",
+     "lis-asiatique-la:dde5c2d2"
+    ],
+    "statut": "mesure",
+    "note": "Boutons verts allongés en grappe (t001, t015, t003)."
+   },
+   {
+    "stade": "gonfle",
+    "op": {
+     "v": 0.2,
+     "unite": "ratio",
+     "methode": "reference",
+     "conf": "B",
+     "ref": "catalogue/serre/methode/BONNES-PRATIQUES.md 5.5 (grille .06, .2, .4, .75, 1:0, 1:.35, 1:.75)"
+    },
+    "wl": {
+     "v": 0,
+     "unite": "ratio",
+     "methode": "reference",
+     "conf": "B",
+     "ref": "BONNES-PRATIQUES.md 5.5"
+    },
+    "photos": [
+     "lis-asiatique-la:dde5c2d2"
+    ],
+    "statut": "hypothese",
+    "note": "Bourgeon orangé de t003 ; pas d'autre photo."
+   },
+   {
+    "stade": "entrouvert",
+    "op": {
+     "v": 0.4,
+     "unite": "ratio",
+     "methode": "reference",
+     "conf": "B",
+     "ref": "catalogue/serre/methode/BONNES-PRATIQUES.md 5.5 (grille .06, .2, .4, .75, 1:0, 1:.35, 1:.75)"
+    },
+    "wl": {
+     "v": 0,
+     "unite": "ratio",
+     "methode": "reference",
+     "conf": "B",
+     "ref": "BONNES-PRATIQUES.md 5.5"
+    },
+    "photos": [],
+    "statut": "hypothese",
+    "note": "Aucune photo nette ; Q2."
+   },
+   {
+    "stade": "ouvert",
+    "op": {
+     "v": 0.75,
+     "unite": "ratio",
+     "methode": "reference",
+     "conf": "B",
+     "ref": "catalogue/serre/methode/BONNES-PRATIQUES.md 5.5 (grille .06, .2, .4, .75, 1:0, 1:.35, 1:.75)"
+    },
+    "wl": {
+     "v": 0,
+     "unite": "ratio",
+     "methode": "reference",
+     "conf": "B",
+     "ref": "BONNES-PRATIQUES.md 5.5"
+    },
+    "photos": [
+     "lis-asiatique-la:3e8b8a6c",
+     "lis-asiatique-la:6082dead",
+     "lis-asiatique-la:e651daaa"
+    ],
+    "statut": "mesure",
+    "note": "Étoile à 6 tépales, face et trois-quarts."
+   },
+   {
+    "stade": "plein",
+    "op": {
+     "v": 1,
+     "unite": "ratio",
+     "methode": "reference",
+     "conf": "B",
+     "ref": "catalogue/serre/methode/BONNES-PRATIQUES.md 5.5 (grille .06, .2, .4, .75, 1:0, 1:.35, 1:.75)"
+    },
+    "wl": {
+     "v": 0,
+     "unite": "ratio",
+     "methode": "reference",
+     "conf": "B",
+     "ref": "BONNES-PRATIQUES.md 5.5"
+    },
+    "photos": [
+     "lis-asiatique-la:3e8b8a6c",
+     "lis-asiatique-la:6082dead"
+    ],
+    "statut": "mesure",
+    "note": "Pleinement ouvert, tépales retroussés."
+   },
+   {
+    "stade": "declin",
+    "op": {
+     "v": 1,
+     "unite": "ratio",
+     "methode": "reference",
+     "conf": "B",
+     "ref": "catalogue/serre/methode/BONNES-PRATIQUES.md 5.5 (grille .06, .2, .4, .75, 1:0, 1:.35, 1:.75)"
+    },
+    "wl": {
+     "v": 0.35,
+     "unite": "ratio",
+     "methode": "reference",
+     "conf": "B",
+     "ref": "BONNES-PRATIQUES.md 5.5"
+    },
+    "photos": [],
+    "statut": "hypothese",
+    "note": "Seule photo (t106) d'une autre espèce, non citée ; Q2."
+   },
+   {
+    "stade": "fane",
+    "op": {
+     "v": 1,
+     "unite": "ratio",
+     "methode": "reference",
+     "conf": "B",
+     "ref": "catalogue/serre/methode/BONNES-PRATIQUES.md 5.5 (grille .06, .2, .4, .75, 1:0, 1:.35, 1:.75)"
+    },
+    "wl": {
+     "v": 0.75,
+     "unite": "ratio",
+     "methode": "reference",
+     "conf": "B",
+     "ref": "BONNES-PRATIQUES.md 5.5"
+    },
+    "photos": [],
+    "statut": "hypothese",
+    "note": "Seule photo (t146) d'une autre espèce, non citée ; Q2."
+   }
+  ]
+ },
+ "rendu": {},
+ "questions": [
+  {
+   "id": "Q1",
+   "organe": "tepale.externe",
+   "question": "Le moteur et le module app/y-lilium.js existent-ils ?",
+   "proposition": "Le modeleur choisit svBloom ou un moteur dédié à 6 tépales."
+  },
+  {
+   "id": "Q2",
+   "organe": "tepale.externe",
+   "question": "Aucune photo gardée de LA pour entrouvert, déclin et fané (les deux seules sont de L. lancifolium).",
+   "proposition": "Chercher des photos de LA flétri, sinon prendre le comportement du lis tigré."
+  },
+  {
+   "id": "Q3",
+   "organe": "tepale.externe",
+   "question": "Profondeur de la gouttière et angle d'ouverture non mesurés (pas de vue de coupe).",
+   "proposition": "Mesurer sur un profil comme t015 et deux autres photos."
+  },
+  {
+   "id": "Q4",
+   "organe": "receptacle",
+   "question": "Taille du réceptacle et capsule non visibles.",
+   "proposition": "Réceptacle d'environ 0.1 R0 caché sous les tépales."
+  },
+  {
+   "id": "Q5",
+   "organe": "feuille",
+   "question": "Le L/l 1.28 de targets.json paraît trop court pour des feuilles lancéolées ; nombre de feuilles non compté.",
+   "proposition": "Mesurer le limbe entier sur t007 (plante) ; L/l proche de 4 en attendant."
+  }
+ ]
+}
