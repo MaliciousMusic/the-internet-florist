@@ -67,6 +67,9 @@ svg text{fill:var(--mut);font-size:10px}
 
   <h2>Les sortes en cours</h2>
   <div class="card scroll"><table class="mat" id="mat"></table>
+<h2 style="margin-top:28px">Liste de sortie : toutes les bonnes pratiques, vérifiées (BONNES-PRATIQUES §15, fleur/sortie.py)</h2>
+<p class="small mut">Une sorte n'est finie, fusionnée ni publiée que quand ses 14 points sont verts : sources, fiche et couches, pièce et grille de chaque coloris, chaque composant du cœur, profondeur 3D, couleurs, matière (brillance, grain), lumière et transitions, stades et fané, croisements (x3d 0), trous, témoins, plante. Le détail de chaque point est au survol.</p>
+<table id="sortie"></table>
     <div class="legend small" style="margin-top:8px">
       <span><i class="dot" style="background:var(--ok)"></i>faite</span><span><i class="dot" style="background:var(--run)"></i>en cours</span>
       <span><i class="dot" style="background:var(--ko)"></i>échouée (une question)</span><span><i class="dot" style="background:var(--cap)"></i>arrêtée au plafond</span>
@@ -103,7 +106,7 @@ const M=x=>(x/1e6).toFixed(x>=1e7?0:x>=1e6?1:2)+' M';
 const fmt=n=>n>=1e6?(n/1e6).toFixed(1)+' M':n>=1e3?(n/1e3).toFixed(0)+' k':String(Math.round(n));
 const chip=m=>`<span class="chip m-${esc(m)}">${esc({haiku:'Haiku',sonnet:'Sonnet',opus:'Opus',fable:'Fable',python:'sans modèle',hand:'à la main'}[m]||m)}</span>`;
 const hhmm=ts=>{if(!ts)return'';const d=new Date(ts.endsWith('Z')||ts.length>19?ts:ts);return d.toLocaleTimeString('fr-FR',{hour:'2-digit',minute:'2-digit'})};
-const PHASES=[['Sources',['census','refs','coloris','targets','fiche']],['La tête',['forme','fit']],['La plante',['plante','finition']],['Contrôle',['temoins','comparaison','juge','qa','planches']]];
+const PHASES=[['Sources',['census','refs','coloris','targets','fiche']],['La tête',['forme','fit']],['La plante',['plante','finition']],['Contrôle',['temoins','comparaison','juge','qa','sortie','planches']]];
 const STL={done:'ok',running:'…',failed:'ko',capped:'cap',blocked:'bloq',skipped:'—',dry:'dry'};
 
 function render(d){
@@ -136,6 +139,9 @@ function render(d){
         return `<td class="s"><span class="st ${t?esc(t.status):'none'}" title="${esc(tip)}">${t?STL[t.status]||esc(t.status):''}</span></td>`}).join('')}
         <td class="small" style="white-space:nowrap">${M(s.eq)}</td><td><div class="bar" title="part du plafond de 8 M"><i style="width:${pct}%;background:${pct>=100?'var(--ko)':'var(--sonnet)'}"></i></div></td></tr>`}).join('');
 
+  const SP=d.sorts.filter(s=>s.sortie),SK=SP.length?SP[0].sortie.points.map(p=>p.k):[];
+  $('sortie').innerHTML=SP.length?`<tr><th>Sorte</th><th>Vérifiée</th>${SK.map(k=>`<th title="${esc(k)}">${esc(k.replace(/^\d+ /,''))}</th>`).join('')}<th>Verdict</th></tr>`+
+    SP.map(s=>{const P=s.sortie.points,n=P.filter(p=>!p.ok).length;return `<tr><td><b>${esc(s.sid)}</b><div class="small mut">${esc(s.chantier)}</div></td><td class="small">${esc((s.sortie.quand||'').replace('T',' ').slice(0,16))}</td>${P.map(p=>`<td class="s"><span class="st ${p.ok?'done':'failed'}" title="${esc(p.k+' : '+p.why)}">${p.ok?'✓':'✗'}</span></td>`).join('')}<td class="small"><b style="color:${n?'var(--ko)':'inherit'}">${n?n+' manquant(s)':'finie'}</b></td></tr>`}).join(''):'<tr><td class="small mut">Aucune sorte vérifiée encore : python fleur/sortie.py &lt;sid&gt; --mesurer --json</td></tr>';
   const U=S.usage||{};
   $('bymodel').innerHTML='<tr><th>Modèle</th><th>Appels</th><th>Entrée</th><th>Cache écrit</th><th>Cache lu</th><th>Sortie</th><th>eq-Opus</th></tr>'+
     Object.entries(U).sort((a,b)=>b[1].eq-a[1].eq).map(([m,v])=>`<tr><td>${chip(m)}</td><td>${v.calls}</td><td>${fmt(v.in)}</td><td>${fmt(v.cw)}</td><td>${fmt(v.cr)}</td><td>${fmt(v.out)}</td><td><b>${M(v.eq)}</b></td></tr>`).join('');

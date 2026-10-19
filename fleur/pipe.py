@@ -25,7 +25,7 @@ MAIN = 'C:/Users/agent/Desktop/flower/flower-atelier'  # the shared atelier: gat
 FC = 'C:/Users/agent/Desktop/flower/flower-atelier'    # the-internet-florist: standards read in docs/, sheets copied to catalogue/serre
 # P13: the light witnesses (build, anemone, rtest, kit sheets, SKU order, budget: no QA batch) come BEFORE the costly comparison and judge, and are
 # redone without a model on the judged code when the comparison retouched app/; the QA batches come after the judge
-STEPS = ['census', 'refs', 'coloris', 'targets', 'fiche', 'forme', 'fit', 'plante', 'finition', 'temoins', 'comparaison', 'juge', 'qa', 'planches']
+STEPS = ['census', 'refs', 'coloris', 'targets', 'fiche', 'forme', 'fit', 'plante', 'finition', 'temoins', 'comparaison', 'juge', 'qa', 'sortie', 'planches']
 MODELS = {'haiku': 'claude-haiku-5-5', 'sonnet': 'claude-sonnet-5-5', 'opus': 'claude-opus-5-5'}
 W = {'in': 1, 'cw': 1.25, 'cr': .1, 'out': 5}  # Opus input-equivalent weights (bill.py)
 M = {'opus': 1, 'sonnet': .6, 'haiku': .2}
@@ -42,7 +42,7 @@ EFFORT = {'haiku': 'low', 'sonnet': 'medium', 'opus': 'high'}  # opus xhigh -> h
 # RATE-OEILLET M1: one complete flower for 8 M at most (owner, 2026-10-18), each step cut at its own share; --caps forme=4,plante=1.5 overrides.
 # A step's spend is summed over every run of the sort (pipe-bill.json): a resumed step keeps what it already spent.
 STEP_CAP = {'census': .1, 'refs': .3, 'coloris': .1, 'targets': .05, 'fiche': .25, 'forme': 3.0, 'fit': .2, 'plante': 1.0, 'finition': .8,
-            'temoins': .05, 'comparaison': .6, 'juge': .4, 'qa': .1, 'planches': .1}  # comparaison .3 -> .6: one Opus call of 40 turns is .6 (oeillet); refs .15 -> .3, census .2 -> .1: pick + fill + brief run .17 to .27, a census .1 (wave 3)
+            'temoins': .05, 'comparaison': .6, 'juge': .4, 'qa': .1, 'sortie': .01, 'planches': .1}  # comparaison .3 -> .6: one Opus call of 40 turns is .6 (oeillet); refs .15 -> .3, census .2 -> .1: pick + fill + brief run .17 to .27, a census .1 (wave 3)
 CAP_DEFAULT = 8.0
 # Owner, 2026-10-18: « pour la qualité il n'y a aucun plafond ». The steps that make the look of the flower (the photos it is drawn from, the
 # head, its comparison and its judge) are never cut at their share or at the flower's cap: both stay measures (pipe-bill.json), and only a
@@ -3360,6 +3360,24 @@ def planches_fiche(ctx):
     return True, ''
 
 
+def step_sortie(ctx):
+    """the exit checklist (BONNES-PRATIQUES §15, fleur/sortie.py; owner 2026-10-19: every good practice checked, « je serai intransigeant »):
+    the automatic proofs made (holes, witnesses, the 3D bench), then every point checked: sources, fiche and its layers, the piece and the grid
+    of every colourway, each heart component, the depth (volume), colours, gloss / grain and light (photo | render tables), stages and the faded,
+    layers (x3d 0), holes, witnesses, plant. No model. Fails while one point is missing; planches (the catalogue) does not run before it passes."""
+    if ctx.dry:
+        return {'status': 'done', 'msg': 'dry: python fleur/sortie.py %s --mesurer --banc --json' % ctx.sid}
+    code, text = run_cmd(ctx, [sys.executable, 'fleur/sortie.py', ctx.sid, '--mesurer', '--banc', '--json'], 'sortie', timeout=14400)
+    try:
+        res = json.load(open('%s/sortie.json' % ctx.rc, encoding='utf-8'))
+    except Exception:
+        res = None
+    miss = [p['k'] + ' : ' + p['why'] for p in (res or {}).get('points', []) if not p['ok']]
+    if not res or not res.get('finie'):
+        raise StepFailed('sortie : %d point(s) manquant(s) : %s' % (len(miss), ' | '.join(miss)[:1500]))
+    return {'status': 'done', 'msg': 'sortie : les %d points de la liste sont tenus' % len(res['points'])}
+
+
 def step_planches(ctx):
     ok, why = judged_code(ctx)
     if ok:
@@ -3370,6 +3388,13 @@ def step_planches(ctx):
         planches_fiche(ctx)
     if not ok and not ctx.dry:
         raise StepFailed('%s: no sheet for the catalogue' % why)
+    if not ctx.dry and not getattr(ctx, 'selftest', False):
+        try:
+            fin = json.load(open('%s/sortie.json' % ctx.rc, encoding='utf-8')).get('finie')
+        except Exception:
+            fin = False
+        if not fin:
+            raise StepFailed("la liste de sortie (étape sortie, fleur/sortie.py) n'est pas tenue : pas de planche pour le catalogue")
     ids = cw_ids(ctx, 6)
     if not ids and not ctx.dry:
         raise StepFailed('no coloris.json: no sheet')
@@ -3398,7 +3423,7 @@ def step_planches(ctx):
 
 STEPFN = {'census': step_census, 'refs': step_refs, 'coloris': step_coloris, 'targets': step_targets, 'fiche': step_fiche, 'forme': step_forme, 'fit': step_fit,
           'plante': step_plante, 'finition': step_finition, 'comparaison': step_comparaison, 'juge': step_juge, 'temoins': step_temoins, 'qa': step_qa,
-          'planches': step_planches}
+          'sortie': step_sortie, 'planches': step_planches}
 
 
 # ---------------------------------------------------------------------------------------------------------------- the commands
@@ -4646,7 +4671,7 @@ def cmd_selftest(a):
         t('order: the light witnesses before the comparison, the QA after the judge', STEPS.index('finition') + 1 == STEPS.index('temoins') == STEPS.index('comparaison') - 1
           and STEPS.index('juge') < STEPS.index('qa') < STEPS.index('planches'))
         code_, out_ = run_(['fx-o', '--from', 'finition', '--dry'])
-        t('--dry shows the order: finition temoins comparaison juge qa planches', 'steps finition temoins comparaison juge qa planches ;' in out_, out_[:400])
+        t('--dry shows the order: finition temoins comparaison juge qa sortie planches', 'steps finition temoins comparaison juge qa sortie planches ;' in out_, out_[:400])
         rR = tmp + '/refcache/fx-r'
         os.makedirs(rR, exist_ok=True)
         jsave(rR + '/keep.json', [x for x in KEEP if x['i'] not in (4, 5)] + [dict(KEEP[4], m='vu: stade=declin groupe=espece-sauvage')])
