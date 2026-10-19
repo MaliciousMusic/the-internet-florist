@@ -134,7 +134,8 @@ def main():
     if f:
         r = subprocess.run([sys.executable, os.path.join(ROOT, 'fleur', 'fiche.py'), 'check', sid, '--quiet'], capture_output=True, text=True, cwd=ROOT)
         chk = (r.stdout + r.stderr).strip()
-    line('2 fiche', f and struct and not re.search(r'erreur|error', chk, re.I), 'absente' if not f else ('structure des couches absente (insertion, profondeur_gorge)' if not struct else ('check : ' + chk[:100] if re.search(r'erreur|error', chk, re.I) else 'lue, structure des couches présente')))
+    bad_chk = re.search(r'[1-9]\d* erreur|"valide": false|error', chk, re.I)  # (fiche.py says "sans erreur" and "0 erreur(s)" when clean)
+    line('2 fiche', f and struct and not bad_chk, 'absente' if not f else ('structure des couches absente (insertion, profondeur_gorge)' if not struct else ('check : ' + bad_chk.group(0) if bad_chk else 'lue, structure des couches présente')))
     # 3 piece, 4 grille
     code = ' '.join(txt(p) for p in glob.glob(os.path.join(ROOT, 'app', '*.js')))
     np_, ng = [], []
