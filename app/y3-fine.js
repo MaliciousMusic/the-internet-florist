@@ -66,6 +66,9 @@ function svFine(cg,it,sh,front,Dm){const m=sh.mat,F=m.fine===true?SVFN_DEF:Objec
       gr=1+F.grain*(Math.sin(u*Math.PI*26+3.1*Math.sin(v*6+seed))*.7+(hsh(i,j)-.5)*.6),lum=ao*(F.amb+F.dif*dif+F.sky*sky)*gr;
     const mx=Math.max(c[0],c[1],c[2]),sat=c.map(x=>mx-(mx-x)*(1+F.sat*(1-Math.min(1,lum))));
     let r=lum<1?[sat[0]*lum,sat[1]*lum,sat[2]*lum]:svfMix(c,[255,255,255],Math.min(.22,(lum-1)*.45));
+    /* opt-in F.shadeC (a hex) and F.shadeK: the shade takes that colour at the same luminance (a white's or a pale pink's shadow warm, never
+       grey: BONNES-PRATIQUES 3.7); absent, nothing changes */
+    if(F.shadeC&&lum<1){const s0=svfRgb(F.shadeC),Y=x=>.299*x[0]+.587*x[1]+.114*x[2],ys=Y(s0)||1,t=Math.min(1,(1-lum)*1.6)*(F.shadeK??.6),tint=s0.map(x=>Math.min(255,x*Y(r)/ys));r=svfMix(r,tint,t)}
     const thin=svSm((Math.abs(u)-.55)/.45)*.6+svSm((v-.75)/.25)*.4,gl=F.glow*Math.min(1,thin*.5+Math.max(0,-dl)*.8);
     if(gl>0)r=svfMix(r,svfMix(c,[255,255,255],.35),gl*.5);
     r=svfMix(r,[255,255,255],Math.min(.85,sp));return[Math.min(255,r[0]),Math.min(255,r[1]),Math.min(255,r[2])]};
