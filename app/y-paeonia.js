@@ -99,15 +99,15 @@ const PEO_KEYS=[
   {op:.65,sep:[[.15,-.15],[.34,-.13],[.52,-.04],[.66,.1],[.72,.3],[.7,.55],[.5,.85],[0,.98]],gO:[[.15,-.12],[.32,-.07],[.5,.04],[.63,.18],[.7,.38],[.68,.62],[.48,.88],[0,.96]],
     gI:[[.14,-.1],[.29,-.05],[.45,.05],[.57,.19],[.62,.38],[.6,.6],[.44,.84],[0,.92]],hO:[[.12,-.08],[.25,-.03],[.39,.07],[.5,.21],[.54,.38],[.52,.58],[.38,.78],[0,.86]],
     hI:[[.04,0],[.08,.1],[.12,.24],[.14,.4],[.12,.56],[0,.66]]},
-  {op:1,sep:[[.16,-.17],[.36,-.21],[.58,-.2],[.8,-.12],[1.0,.02],[1.12,.24],[1.12,.6],[.9,1],[0,1.3]],gO:[[.16,-.13],[.34,-.11],[.56,-.05],[.8,.07],[.99,.26],[1.07,.5],[1.0,.86],[.6,1.2],[0,1.28]],
-    gI:[[.15,-.11],[.31,-.07],[.5,.0],[.7,.13],[.86,.32],[.92,.56],[.86,.86],[.5,1.16],[0,1.24]],hO:[[.13,-.09],[.3,-.03],[.49,.1],[.64,.3],[.71,.55],[.68,.8],[.5,1.02],[.25,1.14],[0,1.18]],
+  {op:1,sep:[[.16,-.22],[.36,-.27],[.58,-.26],[.8,-.17],[1.0,-.02],[1.12,.24],[1.12,.6],[.9,1],[0,1.3]],gO:[[.16,-.18],[.33,-.17],[.55,-.1],[.8,.03],[.99,.24],[1.07,.5],[1.0,.86],[.6,1.2],[0,1.28]],
+    gI:[[.15,-.15],[.3,-.12],[.5,-.04],[.7,.1],[.86,.3],[.92,.56],[.86,.86],[.5,1.16],[0,1.24]],hO:[[.13,-.11],[.3,-.05],[.49,.08],[.64,.28],[.69,.5],[.62,.78],[.44,1.0],[.2,1.12],[0,1.16]],
     hI:[[.04,0],[.08,.15],[.13,.4],[.16,.65],[.13,.9],[0,1.02]]}];
 /* the free settings. Counts: sepals, guards, heart petaloids (by DET). Widths are half widths in R0 at the widest; tips: where each piece ends,
    as an angle from the axis (radians), [bud, marshmallow, cup, open] */
 const PEO_DBL={nS:5,nG:[11,12],nH:[32,44],
-  H:[.17,.25,.4,.5],tight:[0,0,.26,.36,0],cap:.12,sepW:.27,sepTip:[1.45,1.9,2.42,2.6],sepLeaf:[.3,.25,.2,.15],gW:.4,gTip:[.06,.28,1.15,1.57],hW:[.17,.28],hTipI:[.04,.04,.03,.025],hTipO:[.4,.65,1.05,1.15],
+  H:[.17,.25,.4,.5],tight:[0,0,.34,.42,0],apart:[0,0,.07,.1,0],cap:.12,sepW:.27,sepTip:[1.45,1.9,2.42,2.6],sepLeaf:[.3,.25,.2,.15],gW:.4,gTip:[.06,.28,1.15,1.57],hW:[.17,.28],hTipI:[.04,.04,.03,.025],hTipO:[.4,.65,1.05,1.15],
   sOut:[.06,.04],  /* the first sepal's shell past sep, and the sepals' spread */
-  ruf:[.012,.045,.065],rufK:[5,9],amp:.45,curl:.06,cupG:.25,cupH:.35,
+  ruf:[.012,.045,.065],rufK:[5,9],amp:.35,curl:.06,cupG:.25,cupH:.35,
   dec:[.1,.4],fan:[.5,.35],fall:[.42,.5],keep:.08,flop:.32,loose:.12,
   nu:[9,19],nv:[14,24],gnu:[13,17],gnv:[20,30],pmin:3,
   light:{wrap:.32,amb:.3,dif:.68,sky:.14,ks:.1,gloss:14,dark:[.94,.86,.78,.7,.62,.54],da:.16,lit:[1.05,1.13,1.21],la:.17,darkLo:[.9,.78,.66],daLo:.22,litLo:[1.07,1.17],laLo:.2,soft:.05}};
@@ -137,11 +137,13 @@ function peoShells(P,op,dec,fan){const names=['sep','gO','gI','hO','hI'],eps=.01
   const C=names.map(n=>peoBlend(PEO_KEYS,op,k=>k[n])),core=peoBlend(PEO_CORE.map(([o,c])=>({op:o,c})),op,k=>k.c);
   /* the decline: the guards and the sepals flop away from the axis, the heart loosens (wider, lower); the faded more */
   const fl=P.flop*(dec+.6*fan),lo=P.loose*(dec+.8*fan);
-  C.forEach((c,i)=>{const n=c.length;for(let q=1;q<n;q++){const t=q/(n-1),p=c[q],a=Math.atan2(p[0],p[1]),r=Math.hypot(p[0],p[1]);
-    if(i<3&&fl>0){const a2=a+fl*svSm((t-.1)/.6)*(i?1:.7);c[q]=[r*Math.sin(a2),r*Math.cos(a2)]}else if(i>=3&&lo>0)c[q]=[p[0]*(1+lo*t),p[1]*(1-.45*lo*t)]}});
+  /* one smooth deformation of the plane for every curve, the core included (a twist and a stretch that depend on the place only): the shells
+     stay nested as they flop and loosen (deforming each curve along its own length let two neighbours cross) */
+  if(fl>0||lo>0){const D=p=>{let r=Math.hypot(p[0],p[1]),a=Math.atan2(p[0],p[1]);const k=1+lo*svSm((r-.1)/.8);a+=fl*svSm((r-.35)/.6);return[r*Math.sin(a)*k,r*Math.cos(a)*(1-.45*(k-1))]};
+    C.forEach((c,i)=>{for(let q=0;q<c.length;q++)c[q]=D(c[q])});for(let q=0;q<core.length;q++)core[q]=D(core[q])}
   const H=peoSt(P.H,op)-.08*lo;if(fan>0)core.forEach((p,q)=>{core[q]=[p[0]*(1+.3*fan),p[1]*(1+.3*fan)]});
   /* while the head is shut (bud, marshmallow) the guards lie a petal's thickness apart: the inner key curves are drawn toward the centre */
-  {const bw=1-svSm((op-.32)/.5);if(bw>0)C.forEach((c,i)=>{const f=1-(P.tight[i]||0)*bw;if(f!==1)c.forEach((p,q)=>{c[q]=[p[0]*f,H+(p[1]-H)*f]})})}
+  {const bw=1-svSm((op-.32)/.5);C.forEach((c,i)=>{const f=1-(P.tight[i]||0)*bw-(P.apart[i]||0)*(1-bw);if(f!==1)c.forEach((p,q)=>{c[q]=[p[0]*f,H+(p[1]-H)*f]})})}  /* apart: the same, a little, once open: twelve guards need room between their two shells */
   const T=C.map(c=>peoTab(c,H)),K=peoTab(core,H,0);
   for(let j=0;j<=PEO_NJ;j++){let lo2=K[j];for(let i=4;i>=0;i--){if(T[i][j]<lo2+eps)T[i][j]=lo2+eps;lo2=T[i][j]}}
   const ins=C.map(c=>Math.atan2(c[0][0],c[0][1]-H));
@@ -291,6 +293,10 @@ function peoHead(par,B,O,D,S,cwx,op,seed,wl){const P=S?Object.assign({},PEO_DBL,
        petaloids (qa:false: it lies under them by design, as the lily's floor) */
     if(ff<.5){const fc=mix(C.h.st[0][1],C.h.shade,.35),fm=Object.assign({},M.h,{stops:[[0,fc],[1,mix(fc,C.h.st[2][1],.35)]],bstops:[[0,fc],[1,fc]],fine:null,grid:null,cross:null,veins:null,transmit:null});
       pieces.push(svSheet(B,O,(u,v)=>{const a=(1-v)*PEO_PSI*.92,th=(u+1)*Math.PI,rr=Math.max(.01,sh.core(a))*.96*R0;return[rr*Math.sin(a)*Math.cos(th),rr*Math.sin(a)*Math.sin(th),sh.H*R0+rr*Math.cos(a)]},{nu:12,nv:8,mat:fm,qa:false,zb:-.004}))}
+    /* the receptacle (fiche: a fleshy disc under the carpels, hidden while the petals hold; seen once they fall): a flattened dome from the
+       sepals' insertion to round the carpels' feet, in the sepals' green going yellow as the flower fades (qa:false: under the pieces by design) */
+    {const rc=.2*R0*(1+.25*fan),zc=-.09*R0,hz=.13*R0,rcol=peoShv(C.s.st[2][1],.5,0,dec,fan,'s'),rm=Object.assign({},M.s,{stops:[[0,mix(rcol,'#2a3a10',.3)],[.6,rcol],[1,mix(rcol,'#d8d8a0',.2)]],bstops:[[0,rcol],[1,rcol]],fine:null,grid:null,cross:null,veins:null,transmit:null});
+      pieces.push(svSheet(B,O,(u,v)=>{const th=(u+1)*Math.PI,a=Math.PI*(1-v)*.98;return[rc*Math.sin(a)*Math.cos(th),rc*Math.sin(a)*Math.sin(th),zc-hz*Math.cos(a)]},{nu:14,nv:8,mat:rm,qa:false,zb:-.006}))}
     peoCarpels(B,O,R0,g,C,oo,fan,pieces,ff);
     return svDraw(par,pieces,{D,pmin:P.pmin,shadow:hi})}
   finally{if(typeof WILT!=='undefined')WILT=W0}}
