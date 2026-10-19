@@ -22,16 +22,17 @@ const SVRX_DEF={bud:[.08,.24],rf:[.2,.28],sp:[.46,.44],dec:[.1,.4],fan:[.5,.32],
 /* test only: &nohrt=1 draws the perianth without its heart (fleur/apparence.py measures a tepal without the stamens over it) */
 const SVRX_SOLO=typeof location!=='undefined'&&/[?&]solo=(\d+)/.test(location.search||'')?+RegExp.$1:-1;  /* test only: &solo=k draws tepal k alone */
 const SVRX_NOHRT=typeof location!=='undefined'&&/[?&]nohrt=1/.test(location.search||'');
-function svReflex(par,B,O,D,S,cwx,op,seed,wl){const P=Object.assign({},SVRX_DEF,S),g=P.genes(seed),cw0=P.mat(cwx),R0=D/2*(cw0.sz||1),pieces=[],hi=DET>=1.5,det=hi?1.3:.8;
+function svReflex(par,B,O,D,S,cwx,op,seed,wl){const P=Object.assign({},SVRX_DEF,S),g=P.genes(seed),cw0=P.mat(cwx),R0=D/2*(cw0.sz||1),_w=P.wilt&&cw0.wilt?(P.wilt=Object.assign({},P.wilt,cw0.wilt)):0,  /* opt-in: the colourway's own drying colours (an orange dries rust, a white cream) */
+    pieces=[],hi=DET>=1.5,det=hi?1.3:.8;
   if(wl==null)wl=P.life?P.life():0;
   const oo=op+g.op,bud=1-svSm((oo-P.bud[0])/P.bud[1]),r1=svSm((oo-P.rf[0])/P.rf[1]),r2=svSm((oo-P.sp[0])/P.sp[1]),dec=svSm((wl-P.dec[0])/P.dec[1]),fan=svSm((wl-P.fan[0])/P.fan[1]),
     grow=P.grow[0]+(1-P.grow[0])*svSm(oo/P.grow[1]),gt=P.green[0]*(1-svSm((oo-P.green[1])/P.green[2])),
     age=P.wilt?Math.min(1,P.wilt.k[0]*dec+P.wilt.k[1]*fan):0,  /* opt-in wilt {c, c2, vein, n, k [decline, faded], roll}: the tissue dries */
     shv=(c,v)=>{let x=svShift(c,g.dh,g.ds,g.dl);const k2=gt*(1-P.greenTip*v);if(k2>0)x=mix(x,P.greenC,Math.min(1,k2*(1.15-v*.5)));
-      if(age>0){x=mix(mix(x,'#c8b8a2',.6*age),P.wilt.c,Math.min(1,age*(.45+.4*v)));if(age>.4)x=mix(x,P.wilt.c2,Math.min(1,(age-.4)*v))}return x},
+      if(age>0){x=mix(mix(x,P.wilt.g||'#c8b8a2',.6*age),P.wilt.c,Math.min(1,age*(.45+.4*v)));if(age>.4)x=mix(x,P.wilt.c2,Math.min(1,(age-.4)*v))}return x},
     ramp=st=>st.map(([v,c])=>[v,shv(c,v)]),
     mat=Object.assign({stops:ramp(cw0.st),bstops:ramp(cw0.bst),shade:shv(cw0.shade,.5),lite:cw0.lite,bshade:shv(cw0.bshade,.5),blite:cw0.blite,rim:age>0&&cw0.rim?mix(cw0.rim,P.wilt.vein,Math.min(1,age*.8)):cw0.rim,cast:cw0.cast},P.light,
-      {trans:.1+.12*dec,rw:hi?.003+.003*dec:0,ro:.22});
+      {trans:.1+.12*dec,rw:hi?(cw0.rw??.003)+.003*dec:0,ro:cw0.ro??.22});  /* opt-in rw, ro: a drawn margin line (the LA 'Eyeliner': a fine dark edge) */
   if(cw0.soft!=null)mat.soft=cw0.soft;  /* opt-in: the washes' softening (svDraw m.soft, default .05) */
   /* opt-in: the fine material (y3-fine.js) and the piece's measured colour grids (fleur/apparence.py grille); a fading flower keeps its hand ramps (they fade) */
   if(cw0.fine){mat.fine=age>0?Object.assign({},cw0.fine===true?{}:cw0.fine,{age:{a:age,c:P.wilt.c,c2:P.wilt.c2,vein:P.wilt.vein,n:P.wilt.n}}):cw0.fine;

@@ -285,8 +285,12 @@ Rappel de base : SVG natif seulement, ni 3D, ni image incorporée, ni ruban, ni 
     1. **Sources** : une photo nommée par coloris (coloris-photos.json), et des photos de fané.
     2. **Fiche Opus** : elle est lue avant de dessiner, avec la structure des couches (insertion, décalage, profondeur de la gorge).
     3. **Pièce** : mesurée sur la photo de chaque coloris (apparence.py piece, sorties nommées d'après le coloris).
-    4. **Grille** : une par coloris (apparence.py grille), et utilisée dans le code. Jamais une rampe à la main là où une photo existe.
-    5. **Cœur** : chaque composant mesuré (anthère, pollen, filet, style, stigmate, gorge, taches), dans coeur.json, avec la photo.
+    4. **Grille** : une par coloris (apparence.py grille, 18 × 72 cases par défaut, porteur 2026-10-19 : en 6 × 24, une tache ou un
+       liseré disparaissent), utilisée dans le code. Jamais une rampe à la main là où une photo existe. Les cartes .npy sont regardées en
+       image avant la grille : une exclusion par couleur trop large y découpe la pièce.
+    5. **Cœur** : chaque composant mesuré (anthère, pollen, filet, style, stigmate, gorge, taches), dans coeur.json, avec la photo,
+       **sur la photo de chaque coloris** (porteur 2026-10-19 : des filets verts sur un lys rouge). Un coloris dont la photo montre une
+       autre construction (un asiatique parmi les LA) garde aussi sa propre forme, mesurée sur sa photo.
     6. **Volume** : le profil comparé à angle égal (volume.py paire), avec des verdicts ok.
     7. **Comparaison** : une planche photo | rendu par coloris, au même angle, et les tableaux apparence.py paire.
     8. **Stades** : la planche du bouton au fané, et le fané comparé à des photos de fleurs fanées.

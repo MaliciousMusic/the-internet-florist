@@ -89,6 +89,7 @@ def mask_of(rgb, pts, w, kind):
     if kind == 'render':  # the uniform ground of a render (its corner colour)
         bg = np.median(np.concatenate([rgb[:4, :4].reshape(-1, 3), rgb[:4, -4:].reshape(-1, 3), rgb[-4:, :4].reshape(-1, 3), rgb[-4:, -4:].reshape(-1, 3)]), 0)
         fg = np.abs(rgb[y0:y1, x0:x1] - bg).sum(2) > 18 / 255.0
+        fg = ndi.binary_erosion(fg, iterations=2)  # the soft edge (blur, antialiasing) mixes the ground in: kept out, as the photo's GrabCut keeps it out
     else:
         crop = (rgb[y0:y1, x0:x1] * 255).astype(np.uint8)[:, :, ::-1].copy()
         m = np.full(crop.shape[:2], cv2.GC_BGD, np.uint8)
@@ -396,11 +397,11 @@ def montage(mp, mr, path, H=420):
     out.save(path)
 
 
-def tissue(lab):
+def tissue(lab, motif=False):
     """the colour of the tissue itself in a cell: the well-lit samples (L* between its 35th and 85th percentiles: a cast shadow, a fold's
     shade are darker), then without the colour outliers (a filament, an anther, a neighbour seen through: chroma or hue beyond 2.5 MAD), median"""
     L = lab[:, 0]
-    lo, hi = np.percentile(L, [35, 85])
+    lo, hi = np.percentile(L, [5, 95] if motif else [35, 85])  # motif: a blotch, a heart, dense flecks are pigment, not shade: kept
     s = lab[(L >= lo) & (L <= hi)]
     if len(s) < 4:
         s = lab
@@ -411,7 +412,7 @@ def tissue(lab):
     return np.median(s2 if len(s2) >= 3 else s, 0)
 
 
-def grille(maps, nu=6, nv=24):
+def grille(maps, nu=18, nv=72, motif=False):
     """the measured colour grid of a piece: its maps (one per photo, in the piece's frame) folded on the axis (u and -u together: a hidden
     half is filled by the other, the noise halved), cut into nu bands of |u| (axis to edge) by nv rows (base to tip); the median CIELAB of each
     cell over every photo; an empty cell is filled along v then across u. Spots and fine lines vanish in the medians (they are drawn apart)."""
@@ -431,7 +432,7 @@ def grille(maps, nu=6, nv=24):
     for r in range(nv):
         for c in range(nu):
             if len(acc[r][c]) >= 4:
-                G[r, c] = tissue(np.array(acc[r][c]))
+                G[r, c] = tissue(np.array(acc[r][c]), motif)
                 N[r, c] = len(acc[r][c])
     for c in range(nu):  # fill along v, then across u
         ok = ~np.isnan(G[:, c, 0])
@@ -468,8 +469,9 @@ def main():
     g = s.add_parser('grille')
     g.add_argument('out')
     g.add_argument('maps', nargs='+', help='the .npy maps written by piece (one per photo)')
-    g.add_argument('--nu', type=int, default=6)
-    g.add_argument('--nv', type=int, default=24)
+    g.add_argument('--nu', type=int, default=18)
+    g.add_argument('--nv', type=int, default=72)
+    g.add_argument('--motif', action='store_true', help='a patterned colourway (blotch, dark heart, dense flecks): the dark samples are pigment, kept')
     q = s.add_parser('paire')
     q.add_argument('photo')
     q.add_argument('pframe')
@@ -482,7 +484,7 @@ def main():
         r, _ = piece(o.img, o.frame, o.bg, o.out, ex)
         print(json.dumps({k: r[k] for k in ('nervures', 'taches', 'marge', 'couverture')}, ensure_ascii=False))
     elif o.cmd == 'grille':
-        r = grille([np.load(x) for x in o.maps], o.nu, o.nv)
+        r = grille([np.load(x) for x in o.maps], o.nu, o.nv, o.motif)
         with open(o.out, 'w', encoding='utf-8', newline=chr(10)) as f:
             json.dump(r, f, ensure_ascii=False)
         print('grid %dx%d from %d map(s): js {nu:%d,nv:%d,c:%s}' % (r['nv'], r['nu'], r['photos'], r['nu'], r['nv'], json.dumps(sum(r['c'], []))[:120] + '...'))

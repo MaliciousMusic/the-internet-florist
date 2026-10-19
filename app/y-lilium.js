@@ -191,7 +191,7 @@ function lilOriMat(cw){const key=cw.id;if(LIL_ORI_M[key])return LIL_ORI_M[key];
   const C=LIL_ORI_CW[cw.id]||lilOriSpec(cw),body=C.st[Math.floor(C.st.length*.6)][1];
   const M={st:C.st,bst:C.bst,shade:C.shade,lite:C.lite,bshade:C.bshade,blite:C.blite,vein:C.vein,bvein:C.bvein,vo:C.vo,
     soft:C.soft,fine:C.fine,grid:C.grid,bgrid:C.bgrid,gridV:C.gridV,rim:C.rim||mix(body,h2l(body)[2]>.85?'#8a8a68':'#5a1830',.3),cast:mix(C.shade,'#1a0a08',.45),cross:C.cross,transmit:C.transmit,over:lilOver(C),
-    fil:C.fil,filT:C.filT,anth:C.anth,pol:C.pol,sty:C.sty,styT:C.styT,sg:C.sg,ov:C.ov};
+    fil:C.fil,filT:C.filT,anth:C.anth,pol:C.pol,sty:C.sty,styT:C.styT,sg:C.sg,ov:C.ov,rw:C.rw,ro:C.ro,wilt:C.wilt};
   return LIL_ORI_M[key]=M}
 /* the lily's heart: filaments, anthers, style and stigma, each a drawn piece with a proxy sheet for the order (the tepals' svDraw) */
 const LILH_DEF={cb:.2,filR:.052,filL:.64,filW:.034,a0:.28,a1:.78,rise:.28,anL:.28,anW:.064,anTilt:1.1,styL:.72,styW:.045,styA:.62,styD:.3,sgR:.058,ovR:.04,ovH:.08,st:[.42,.38]};
