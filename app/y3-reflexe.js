@@ -19,50 +19,101 @@ const SVRX_DEF={bud:[.08,.24],rf:[.2,.28],sp:[.46,.44],dec:[.1,.4],fan:[.5,.32],
   fanL:.32,fanW:.6,wavD:1.2,decB:.25,fanIn:.85,limp:[.5,.1],crk:[.025,.09],twF:1.2,twD:.6,
   ao:[.5,.26,.2,.3],nu:[7,11],nv:20,pmin:3,veinN:[11,6],veinNet:[.2,0],veinFork:[.45,.2],floor:3,floorO:0,floorD:0,floorK:0,floorV:.14,floorC:.95,
   light:Object.assign({},SVB_DEF.light,{ks:.12,gloss:16})};
+/* test only: &nohrt=1 draws the perianth without its heart (fleur/apparence.py measures a tepal without the stamens over it) */
+const SVRX_SOLO=typeof location!=='undefined'&&/[?&]solo=(\d+)/.test(location.search||'')?+RegExp.$1:-1;  /* test only: &solo=k draws tepal k alone */
+const SVRX_NOHRT=typeof location!=='undefined'&&/[?&]nohrt=1/.test(location.search||'');
 function svReflex(par,B,O,D,S,cwx,op,seed,wl){const P=Object.assign({},SVRX_DEF,S),g=P.genes(seed),cw0=P.mat(cwx),R0=D/2*(cw0.sz||1),pieces=[],hi=DET>=1.5,det=hi?1.3:.8;
   if(wl==null)wl=P.life?P.life():0;
   const oo=op+g.op,bud=1-svSm((oo-P.bud[0])/P.bud[1]),r1=svSm((oo-P.rf[0])/P.rf[1]),r2=svSm((oo-P.sp[0])/P.sp[1]),dec=svSm((wl-P.dec[0])/P.dec[1]),fan=svSm((wl-P.fan[0])/P.fan[1]),
     grow=P.grow[0]+(1-P.grow[0])*svSm(oo/P.grow[1]),gt=P.green[0]*(1-svSm((oo-P.green[1])/P.green[2])),
-    shv=(c,v)=>{const x=svShift(c,g.dh,g.ds,g.dl),k2=gt*(1-P.greenTip*v);return k2>0?mix(x,P.greenC,Math.min(1,k2*(1.15-v*.5))):x},
+    age=P.wilt?Math.min(1,P.wilt.k[0]*dec+P.wilt.k[1]*fan):0,  /* opt-in wilt {c, c2, vein, n, k [decline, faded], roll}: the tissue dries */
+    shv=(c,v)=>{let x=svShift(c,g.dh,g.ds,g.dl);const k2=gt*(1-P.greenTip*v);if(k2>0)x=mix(x,P.greenC,Math.min(1,k2*(1.15-v*.5)));
+      if(age>0){x=mix(mix(x,'#c8b8a2',.6*age),P.wilt.c,Math.min(1,age*(.45+.4*v)));if(age>.4)x=mix(x,P.wilt.c2,Math.min(1,(age-.4)*v))}return x},
     ramp=st=>st.map(([v,c])=>[v,shv(c,v)]),
     mat=Object.assign({stops:ramp(cw0.st),bstops:ramp(cw0.bst),shade:shv(cw0.shade,.5),lite:cw0.lite,bshade:shv(cw0.bshade,.5),blite:cw0.blite,rim:cw0.rim,cast:cw0.cast},P.light,
       {trans:.1+.12*dec,rw:hi?.003+.003*dec:0,ro:.22});
+  if(cw0.soft!=null)mat.soft=cw0.soft;  /* opt-in: the washes' softening (svDraw m.soft, default .05) */
+  /* opt-in: the fine material (y3-fine.js) and the piece's measured colour grids (fleur/apparence.py grille); a fading flower keeps its hand ramps (they fade) */
+  if(cw0.fine){mat.fine=age>0?Object.assign({},cw0.fine===true?{}:cw0.fine,{age:{a:age,c:P.wilt.c,c2:P.wilt.c2,vein:P.wilt.vein,n:P.wilt.n}}):cw0.fine;
+    if(dec<.05||P.wilt){if(cw0.grid)mat.grid=cw0.grid;if(cw0.bgrid)mat.bgrid=cw0.bgrid;if(cw0.gridV)mat.gridV=cw0.gridV}}  /* with wilt the measured grid stays and dries */
   if(cw0.cross)mat.cross=cw0.cross.map(z=>Object.assign({},z,{st:z.st.map(([x,c,a])=>[x,shv(c,.6),(a??1)*(1-.7*gt)])}));
   if(cw0.transmit&&hi)mat.transmit=cw0.transmit;
   /* the angle of a whorl's table at this stage: bud -> column (r1) -> open (r2); the faded gathers back toward the column (fanIn) */
   const ang=(A,w)=>{const a=A[w];return a[0]+(a[1]-a[0])*r1+(a[2]-a[1])*r2*(1-P.fanIn*fan)},
     dn=[-B[0][1],-B[1][1],-B[2][1]],wpf=v=>{const W=P.wp;for(let j=1;j<W.length;j++)if(v<=W[j][0]){const q=(v-W[j-1][0])/(W[j][0]-W[j-1][0]);return W[j-1][1]+(W[j][1]-W[j-1][1])*svSm(q)}return W[W.length-1][1]};
-  let k=0,rCl=1e9;const n=g.n||6,nO=Math.ceil(n/2);
+  let k=0,rCl=1e9;const n=g.n||6,nO=Math.ceil(n/2),tq=[];
   for(let w=0;w<2;w++)for(let i=0;i<(w?n-nO:nO);i++,k++){const t=g.tep[k],phi=g.rot+(i+(w?.5:0))/(w?n-nO:nO)*6.2832+t.dph;
-    const rad=[Math.cos(phi),Math.sin(phi),0],T=[-Math.sin(phi),Math.cos(phi),0],L=R0*P.L[w]*t.dL*grow*(1-P.fanL*fan),
+    const rad=[Math.cos(phi),Math.sin(phi),0],T=[-Math.sin(phi),Math.cos(phi),0],L=R0*P.L[w]*t.dL*grow*(1-P.fanL*fan)*(P.budL?1-P.budL[w]*bud:1),  /* opt-in budL [outer, inner]: in the bud the inner tips lie tucked under the outer dome, not at its apex */
+      
       aS=ang(P.aS,w)+t.da*.5*r1,aB=ang(P.aB,w)+t.da*r1+P.decB*dec*t.wl*(1-r2*.5),aT=ang(P.aT,w)+t.dt*r1+.5*fan*t.hang,
       s0=P.s0[0]+(P.s0[1]-P.s0[0])*r1,s1=P.s1[0]+(P.s1[1]-P.s1[0])*r1,f0=P.f0[0]+(P.f0[1]-P.f0[0])*r1,ns=24,sp=[],dv=[],rr=[],
       limp=P.limp[0]*fan+P.limp[1]*dec,lat=t.lat*L*r1*(1+.8*fan);
+    const dr0=dn[0]*rad[0]+dn[1]*rad[1],dnO=dr0<0?V3.nz([dn[0]-dr0*rad[0],dn[1]-dr0*rad[1],dn[2]]):dn;
     let p=[rad[0]*R0*P.r0,rad[1]*R0*P.r0,R0*P.z0[w]];
     for(let j=0;j<=ns;j++){const v=j/ns,tt=svSm((v-s0)/s1),ff=svSm((v-f0)/(1-f0)),a=aS*(1-tt)+aB*tt+(aT-aB)*ff;let d=[rad[0]*Math.sin(a),rad[1]*Math.sin(a),Math.cos(a)];
-      if(limp>0)d=V3.nz(V3.add(d,V3.sc(dn,limp*v*v)));
+      /* opt-in limpOut (absent: unchanged): a limp tepal sags, but its base is held on the ring: the share of the sag that points toward the axis is
+         dropped, so a tepal on the upper side falls back past the centre instead of through the style and the tepals across it (y3-qa3d.js) */
+      if(limp>0)d=V3.nz(V3.add(d,V3.sc(P.limpOut?dnO:dn,limp*v*v)));
       d=V3.nz(V3.add(d,V3.sc(T,lat/L*Math.PI*Math.cos(Math.PI*v)*.5)));
-      if(j)p=V3.add(p,V3.sc(d,L/ns));const kb=bud*svSm((v-.7)/.3),q=kb>0?[p[0]*(1-kb),p[1]*(1-kb),p[2]]:p;sp.push(q);dv.push(d);rr.push(Math.max(L*.012,Math.hypot(q[0],q[1])))}
+      if(j)p=V3.add(p,V3.sc(d,L/ns));const kb=bud*svSm((v-.7)/.3)*(P.budTip?P.budTip[w]:1),q=kb>0?[p[0]*(1-kb),p[1]*(1-kb),p[2]]:p;sp.push(q);dv.push(d);rr.push(Math.max(L*.012,Math.hypot(q[0],q[1])))}
     {const q=sp[Math.round(P.floorV*ns)];rCl=Math.min(rCl,Math.hypot(q[0],q[1]))}
     const at=(A,v)=>{const x=Math.max(0,Math.min(1,v))*ns,j=Math.min(ns-1,Math.floor(x)),f2=x-j;return Array.isArray(A[0])?V3.add(V3.sc(A[j],1-f2),V3.sc(A[j+1],f2)):A[j]*(1-f2)+A[j+1]*f2};
     const vbB=P.vb+(1-P.vb)*bud*.9,Lu=u=>vbB+(1-vbB)*Math.pow(Math.max(0,1-Math.pow(Math.abs(u),t.tip)),1/t.tip),
-      wv=t.wav*(P.wavO[0]+(P.wavO[1]-P.wavO[0])*r1)*(1+P.wavD*dec)*(hi?1:.8),ew=t.ew*(P.ewO[0]+(P.ewO[1]-P.ewO[0])*r1)*(1+.6*fan),
+      wv=t.wav*(P.wavO[0]+(P.wavO[1]-P.wavO[0])*r1)*(1+P.wavD*dec)*(hi?1:.8)*(P.wavW?P.wavW[w]:1)*(P.wavP?1-P.wavP*(1-r2):1),  /* opt-in wavP: the margins wave as the tepals part (r2), pressed flat while one lies over another */
+      ew=t.ew*(P.ewO[0]+(P.ewO[1]-P.ewO[0])*r1)*(1+.6*fan),
       tw=t.tw*r1*(1+P.twF*fan)+P.twD*dec*Math.sign(t.tw||1),crk=(P.crk[0]*dec+P.crk[1]*fan)*(hi?1:.5),
-      hW=R0*P.W[w]*t.dW*grow*(1-P.fanW*fan),cup=P.cup[w]*(1-.5*fan);
+      hW=R0*P.W[w]*t.dW*grow*(1-P.fanW*fan),cup=P.cup[w]*(1-.5*fan)+(P.wilt&&P.wilt.roll?P.wilt.roll*Math.min(1,.35*dec+fan):0);  /* wilt.roll: the drying blade rolls in on its inner face, toward a tube */
     const Sf=(u,v)=>{const vv=v*Lu(u),c=at(sp,vv),d=V3.nz(at(dv,vv)),r=at(rr,vv),nrm=V3.cr(d,T),ca=Math.cos(tw*vv),sa=Math.sin(tw*vv),A=V3.add(V3.sc(T,ca),V3.sc(nrm,sa)),N=V3.add(V3.sc(nrm,ca),V3.sc(T,-sa)),
         side=u<0?1:0,hO=hW*wpf(vv)*(1+t.asym*Math.sign(u))*(1+ew*Math.sin(t.wk*1.3*Math.PI*vv+t.wph*1.7+side*2.3)*svSm((vv-.1)/.25)),
-        hB=P.budW[w]*r*1.0472,hw=bud>0?hO*(1-bud)+Math.max(hO,hB)*bud:hO,rhoB=r/Math.max(.3,Math.abs(d[2])),kk=Math.max(1e-5,bud/rhoB+(1-bud)*cup/Math.max(1e-4,hw)),th=u*hw*kk,
+        hB=P.budW[w]*r*1.0472,hw=bud>0?hO*(1-bud)+(P.budFit?hB*P.budFit[w]+Math.max(hO,hB)*(1-P.budFit[w]):Math.max(hO,hB))*bud:hO,rhoB=r/Math.max(.3,Math.abs(d[2])),kk=Math.max(1e-5,bud/rhoB+(1-bud)*cup/Math.max(1e-4,hw)),th=u*hw*kk,
         lift=(1-Math.cos(th))/kk+wv*L*Math.pow(Math.abs(u),1.6)*Math.sin(t.wk*Math.PI*vv+t.wph+side*2.1)*svSm((vv-.08)/.3)*(1-.85*bud)
-          +crk*L*Math.sin(u*Math.PI*(2.2+t.wk*.3)+t.wph*2+vv*9)*svSm(vv/.25);
+          +crk*L*Math.sin(u*Math.PI*(2.2+t.wk*.3)+t.wph*2+vv*9)*(P.crkV?svSm((vv-P.crkV[0])/P.crkV[1]):svSm(vv/.25))  /* opt-in crkV [from, over]: the crumpling starts higher, past the claws that still overlap */
+          /* opt-in mrx (absent: 0, unchanged): the margins rolled back past the blade (oriental lilies), from the shoulder on */
+          -(P.mrx||0)*L*Math.pow(Math.abs(u),2.4)*svSm((vv-.12)/.3)*(P.mrxO?r2:1-bud)*(1-.5*fan)  /* opt-in mrxO: the margins roll back only as the tepals part (r2), never through a neighbour still over them */
+          /* opt-in budTip [outer, inner] (in the spine above, absent: 1): how far a bud's tips draw in to the axis; the inner ones stop short, under the outer dome */
+          /* opt-in budFit [outer, inner] (absent: 0): in the bud a whorl's tepals keep to their share of the turn (hB) instead of their open width
+             when it is wider: the margins tuck in, never round past the neighbour's middle */
+          /* opt-in nest [outer, inner] (absent: 0): when the tepals gather (the bud, the column, the faded) the inner whorl passes inside the outer one, never
+             through it (y3-qa3d.js: 0 crossings); it fades as the flower opens */
+          +(P.nest?P.nest[w]*L*Math.min(1,(1-r2)+.9*fan)*svSm(vv/.15):0);
       return V3.add(V3.add(c,V3.sc(A,Math.sin(th)/kk)),V3.sc(N,lift))};
     const vr=svRng(t.sd),vn=svVeins(vr,(hi?P.veinN[0]:P.veinN[1])+vr.in(0,2),hi?P.veinNet[0]:P.veinNet[1],hi?P.veinFork[0]:P.veinFork[1]),vc=shv(cw0.vein,.5),vo=cw0.vo??.22;
     const fl=cw0.flames,flames=fl&&r1>.3?(()=>{const fr=svRng(t.sd+13),nf=Math.round(fr.in(fl.n[0],fl.n[1])),L2=[];for(let q=0;q<nf;q++){const u0=fr.in(-.75,.75),v0=fl.from*fr.in(.6,1.3),v1=Math.min(.95,fl.to*fr.in(.7,1.1)),pl=[],ph=fr.in(0,6.3);
         for(let s2=0;s2<=9;s2++){const v=v0+(v1-v0)*s2/9;pl.push([Math.max(-.9,Math.min(.9,u0*(.5+.5*svSm(v/.5))+.06*Math.sin(v*9+ph))),v])}L2.push([pl,fl.w*fr.in(.6,1.4)])}return L2})():null;
     const m=Object.assign({},mat,{flames:flames?{c:shv(fl.c,.3),op:fl.op*(hi?1:.8),list:flames}:null,
       veins:!hi&&vo<.3?null:(s2,front)=>front?[[vn.main,.0024,vc,vo*.8+.2*dec],[vn.fine,.0017,vc,vo*.45]]:[[vn.main,.0024,shv(cw0.bvein||cw0.vein,.5),vo*.8+.15*dec]]});
+    /* opt-in (absent: unchanged): the colourway's own layer per piece (spots, papillae), made from the piece's seed and the stage; svDraw's m.over */
+    if(cw0.over){const ov=cw0.over(t.sd,w,{r1,r2,dec,fan,hi,gt});if(ov)m.over=ov}
     if(!hi)for(const q of['stops','bstops'])if(m[q].length>3)m[q]=[m[q][0],m[q][Math.floor(m[q].length/2)],m[q][m[q].length-1]];
-    pieces.push(svSheet(B,O,Sf,{nu:Math.round((fan>.2&&hi?P.nu[1]:P.nu[0])*det),nv:Math.round(P.nv*det),mat:m,zb:w?.002:0,
-      ao:(u,v,front)=>front?1-P.ao[0]*(1-svSm((v-.02)/P.ao[1])):1-P.ao[2]*(1-svSm(v/P.ao[3]))}))}
+    /* opt-in tepalFn (absent: unchanged): the sort draws the tepal itself (lily: the fine material), a piece {fn, proxy} for the order */
+    if(SVRX_SOLO>=0&&k!==SVRX_SOLO)continue;
+    tq.push({Sf,w,phi,mk:Sf=>{
+      if(P.tepalFn){const pc=P.tepalFn({B,O,Sf,w,t,m,cw0,R0,L,hi,r1,r2,dec,fan,bud});if(pc){pc.wh=w;pieces.push(pc);return}}
+      pieces.push(svSheet(B,O,Sf,{nu:Math.round((fan>.2&&hi?P.nu[1]:P.nu[0])*det),nv:Math.round(P.nv*det),mat:m,zb:w?.002:0,
+        ao:(u,v,front)=>front?1-P.ao[0]*(1-svSm((v-.02)/P.ao[1])):1-P.ao[2]*(1-svSm(v/P.ao[3]))}));pieces[pieces.length-1].wh=w}})}  /* wh: the whorl, for the 3D check's report */
+  /* opt-in layers (absent: unchanged): while the tepals gather (the bud, the opening, the faded) the inner whorl stays inside the outer one and, within
+     a whorl, each tepal's right margin passes inside its neighbour's (y3-couches.js); a head that does not cross is drawn as before. The gap is the
+     sort's layers[0] x R0, faded out as the flower opens fully (at the open stage only a piece truly on the wrong side would move) */
+  const gth=Math.min(1,(1-r2)+fan+bud),hT=[];  /* hT: the heart's tubes resolved dry, drawn as they are (the tepals are layered round them) */
+  if(P.layers&&tq.length>1){const pr=[],ccw=(a,b)=>{const d=((b.phi-a.phi)%6.2832+6.2832)%6.2832;return d>1e-3&&d<3.1416};
+    for(let a=0;a<tq.length;a++)for(let b=0;b<tq.length;b++){if(a===b)continue;const A=tq[a],Bq=tq[b];
+      if(A.w===0&&Bq.w===1)pr.push([a,b]);else if(A.w===Bq.w&&ccw(Bq,A))pr.push([a,b,true])}  /* [out, in]: outer over inner; neighbours of a whorl in the order they mostly have */
+    const lm=Array.isArray(P.layers[0])?P.layers[0][0]*bud+P.layers[0][1]*(1-bud):P.layers[0];  /* the gap: [in the bud, once it loosens] */
+    const nr=(Array.isArray(P.layers[1])?P.layers[1][0]+(P.layers[1][1]-P.layers[1][0])*(1-bud)*(1-fan):P.layers[1])*R0,  /* the window: [gathered (bud, faded), open] */
+      lo={m:lm*R0*Math.max(.3,Math.min(1,10*gth)),it:P.layers[2],nu:P.layers[3],nv:P.layers[4],fix:P.layers[5],fixR:P.layers[6],v0:P.layers[7],sweep:gth+dec>.01,rmin:R0*P.r0*.8*(1-bud)};
+    /* a head is tried with a few windows and phases, kept at the first that the measure finds clean (or the best): one set of numbers does not
+       suit every seed, and a head clean at the first try pays nothing more */
+    /* the heart built once dry (it draws nothing, the same every time): its tubes, obstacles the tepals lie under (always), and the radius they fill at each height, whole, while the
+       tepals still gather; the tepals keep outside it (y3-couches.js col) */
+    if(P.heart&&!SVRX_NOHRT){const tmp=tq.map(q=>({S:q.Sf}));P.heart({par,B,O,D,R0,g,cw0,op:oo,r1,r2,bud,dec,fan,det,pieces:tmp,dn,outT:hT});const TB=tmp.filter(p=>p.tube).map(p=>p.tube);if(TB.length&&gth<.3){lo.tubes=TB;lo.tgap=R0*.012}  /* obstacles once the tepals stand apart; while they gather, the column (below) */if(gth>.01)
+      if(TB.length){const zs=[];for(const T of TB)for(let i=0;i<T.P.length;i++){const q=T.P[i],rr=T.r0+(T.r1-T.r0)*i/(T.P.length-1);zs.push([q[2],Math.hypot(q[0],q[1])+rr])}
+        const gp=lo.m,hz=R0*.04;lo.col=z=>{let r=0;for(const[zq,rq]of zs)if(Math.abs(zq-z)<hz)r=Math.max(r,rq);return r?r+gp:0}}}
+    const S0=tq.map(q=>q.Sf);let best=null;
+    for(const[kn,fr,km]of[[1,P.layers[6],1],[1.5,P.layers[6],1],[.75,P.layers[6],1],[1.5,P.layers[6],2],[1,P.layers[6],2],[1,3,1],[1.5,3,1],[2,P.layers[6],1],[1.5,P.layers[6],3],[2,P.layers[6],2]]){tq.forEach((q,x)=>q.Sf=S0[x]);
+      svLayers(tq,pr.map(x=>x.slice()),Object.assign({},lo,{near:nr*kn,fixR:fr,m:lo.m*km}));const left=svLayers.left;
+      if(!best||left<best.left)best={left,Sf:tq.map(q=>q.Sf)};if(!left)break}
+    tq.forEach((q,x)=>q.Sf=best.Sf[x])}
+  for(const q of tq)q.mk(q.Sf);
   /* the floor: a small disc round the ovary where the claws meet, so that nothing shows between their feet (the base colour, darker) */
   /* in the decline the claws part: the floor widens into a shallow cone behind their feet (floorD, its rise floorK toward the pedicel) */
   /* it only exists once the bud loosens, is gone as they wither (fan), and never reaches past the tepals' feet (their spine at floorV,
@@ -70,9 +121,9 @@ function svReflex(par,B,O,D,S,cwx,op,seed,wl){const P=Object.assign({},SVRX_DEF,
   const kF=bud<.9?1-svSm(fan/.45):0;
   if(P.floor&&kF>.02){const dF=dec*(1-svSm(fan/.45)),rf=kF*Math.min(R0*P.r0*P.floor*(1+P.floorO*r2*(1-dF)+P.floorD*dF),P.floorC*rCl),zk=P.floorK*Math.max(dF,.5*r2),
       rampAt=(S,v)=>{for(let j=1;j<S.length;j++)if(v<=S[j][0])return mix(S[j-1][1],S[j][1],(v-S[j-1][0])/Math.max(1e-6,S[j][0]-S[j-1][0]));return S[S.length-1][1]},
-      bc=rampAt(mat.stops,P.floorV*.7),fm=Object.assign({},mat,{stops:[[0,mix(rampAt(mat.stops,0),'#3a3a10',.2)],[.6,bc],[1,bc]],bstops:[[0,bc],[1,bc]],cross:null,transmit:null,flames:null,veins:null});
-    pieces.push(svSheet(B,O,(u,v)=>{const a=(u+1)*Math.PI;return[Math.cos(a)*rf*v,Math.sin(a)*rf*v,R0*(.012-.02*v)-zk*rf*v*v]},{nu:10,nv:3,mat:fm,zb:-.003}))}
-  if(P.heart)P.heart({par,B,O,D,R0,g,cw0,op:oo,r1,r2,bud,dec,fan,det,pieces,dn});
+      bc=rampAt(mat.stops,P.floorV*.7),fm=Object.assign({},mat,{stops:[[0,mix(rampAt(mat.stops,0),'#3a3a10',.2)],[.6,bc],[1,bc]],bstops:[[0,bc],[1,bc]],cross:null,transmit:null,flames:null,veins:null,grid:null,bgrid:null});  /* the floor: the claws' own colour, never the tepal's grid */
+    pieces.push(svSheet(B,O,(u,v)=>{const a=(u+1)*Math.PI;return[Math.cos(a)*rf*v,Math.sin(a)*rf*v,R0*(.012-.02*v)-zk*rf*v*v]},{nu:10,nv:3,mat:fm,zb:-.003,qa:false}))}  /* qa:false: the floor lies under the claws by design (y3-qa3d.js skips it) */
+  if(P.heart&&!SVRX_NOHRT)P.heart({par,B,O,D,R0,g,cw0,op:oo,r1,r2,bud,dec,fan,det,pieces,dn,fixT:hT.length?hT:null});
   return svDraw(par,pieces,{D:R0*2,pmin:P.pmin,shadow:hi})}
 
 /* ---------- svReflexHeart(o): the heart of a reflexed flower, its parts spread out across the axis ----------
@@ -109,7 +160,8 @@ function svReflexHeart(o0){const o=Object.assign({},SVRXH_DEF,o0);
         const mid=[(A[0]+Bq[0])/2+nx*aw*.12,(A[1]+Bq[1])/2+ny*aw*.12];
         E('path',{d:'M'+svJ([svR(A[0]),svR(A[1])])+'Q'+svJ([svR(mid[0]),svR(mid[1])])+' '+svJ([svR(Bq[0]),svR(Bq[1])]),fill:'none',stroke:anth,'stroke-width':svF(aw),'stroke-linecap':'round'},hk);
         if(!LOD&&!lo)E('path',{d:'M'+svJ([svR(A[0]+nx*aw*.22*sg+dx*.15),svR(A[1]+ny*aw*.22*sg+dy*.15)])+'l'+svJ([svR(dx*.68),svR(dy*.68)]),fill:'none',stroke:pol,'stroke-width':svF(aw*.4),'stroke-linecap':'round','stroke-opacity':.6},hk);
-        E('circle',{cx:svF(C[0]),cy:svF(C[1]),r:svF(Math.max(.2,aw*.28)),fill:mix(fil,'#000000',.2)},hk)})}
+        /* opt-in anDot 0 (default 1: unchanged): no joint drawn over the anther (lilies: the filament meets it from behind) */
+        if(o.anDot!==0)E('circle',{cx:svF(C[0]),cy:svF(C[1]),r:svF(Math.max(.2,aw*.28)),fill:mix(fil,'#000000',.2)},hk)})}
     /* the pistil: the ovary, the style bent square to one side, three short stigmas */
     if(ost>.05){const sa=g.sty??0,sr=[Math.cos(sa),Math.sin(sa),0],sL=R0*o.styL*sz*(.5+.5*ost),P3=[[0,0,R0*o.ovH]];let p=P3[0];
       for(let j=1;j<=8;j++){const v=j/8,a=v<.18?.1:(o.styA*ost+.1*(1-ost))-.12*(v-.18);let d=[sr[0]*Math.sin(a),sr[1]*Math.sin(a),Math.cos(a)];if(fan>0)d=V3.nz(V3.add(d,V3.sc(dn,.6*fan*v)));
@@ -118,4 +170,8 @@ function svReflexHeart(o0){const o=Object.assign({},SVRXH_DEF,o0);
         E('path',{d:svSpl(hull2(pts.map(q=>[q[0],q[1]]))),fill:ovC,stroke:mix(ovC,'#2a3010',.4),'stroke-width':svF(Math.max(.15,R0*.006)),'stroke-opacity':.5},k2)};
       const end=P3[P3.length-1],tg=V3.nz(V3s(end,P3[P3.length-2]));
       strap(P3,R0*o.styW*1.3,R0*o.styW,styC,hk=>{if(!lo)ov(hk);let d='';for(let q=0;q<3;q++){const bq=V3.nz(V3.add(tg,V3.sc([Math.cos(q*2.09+sa),Math.sin(q*2.09+sa),Math.cos(q*2.09)*.6],.8))),a=PJ(B,O,end),b=PJ(B,O,V3.add(end,V3.sc(bq,R0*o.sgL*sz)));
-          d+='M'+svJ([svR(a[0]),svR(a[1])])+'L'+svJ([svR(b[0]),svR(b[1])])}E('path',{d,fill:'none',stroke:sgC,'stroke-width':svF(Math.max(.3,R0*o.styW*.9)),'stroke-linecap':'round'},hk)})}}}
+          d+='M'+svJ([svR(a[0]),svR(a[1])])+'L'+svJ([svR(b[0]),svR(b[1])])}E('path',{d,fill:'none',stroke:sgC,'stroke-width':svF(Math.max(.3,R0*o.styW*.9)),'stroke-linecap':'round'},hk);
+          /* opt-in sgK (0: none): a swollen three-lobed stigma head (lilies), three lobes round the style's end, lit on the light's side */
+          if(o.sgK>0){const rk=R0*o.sgK*sz*(.6+.4*ost),cs=[];for(let q=0;q<3;q++){const aq=q*2.0944+sa,bq=V3.nz(V3.add(tg,V3.sc([Math.cos(aq),Math.sin(aq),0],.9)));cs.push(PJ(B,O,V3.add(end,V3.sc(bq,rk*.75))))}
+            cs.sort((p,q)=>q[2]-p[2]);for(const c of cs){E('circle',{cx:svF(c[0]),cy:svF(c[1]),r:svF(Math.max(.4,rk)),fill:sgC,stroke:mix(sgC,'#2a1810',.45),'stroke-width':svF(Math.max(.12,rk*.12)),'stroke-opacity':.6},hk);
+              if(!LOD&&!lo)E('circle',{cx:svF(c[0]+lt[0]*rk*.35),cy:svF(c[1]+lt[1]*rk*.35),r:svF(Math.max(.2,rk*.42)),fill:mix(sgC,'#ffffff',.4),'fill-opacity':.55},hk)}}})}}}
