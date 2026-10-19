@@ -281,21 +281,66 @@ Rappel de base : SVG natif seulement, ni 3D, ni image incorporée, ni ruban, ni 
     gardaient les anthères orange du lys oriental au lieu de leur brun chocolat, avaient un orange peint à la main et un revers gris. Leur
     profil n'avait pas été comparé, et il n'y avait aucune planche photo | rendu. Toute sorte suit donc les étapes ci-dessous, dans cet
     ordre, et chacune laisse sa preuve dans refcache/<sid>/.
-15.2 Les étapes et leurs preuves (`python fleur/sortie.py <sid> --cws <coloris du catalogue>` les vérifie et dit ce qui manque) :
+15.2 Les 14 points et leurs preuves, dans refcache/<sid>/. `python fleur/sortie.py <sid> --cws <coloris du catalogue>` les vérifie et dit
+    ce qui manque. Le labo (8805/labo/) en montre les voyants pour chaque sorte. La façon de tenir chaque point est au §16.
     1. **Sources** : une photo nommée par coloris (coloris-photos.json), et des photos de fané.
     2. **Fiche Opus** : elle est lue avant de dessiner, avec la structure des couches (insertion, décalage, profondeur de la gorge).
     3. **Pièce** : mesurée sur la photo de chaque coloris (apparence.py piece, sorties nommées d'après le coloris).
-    4. **Grille** : une par coloris (apparence.py grille, 18 × 72 cases par défaut, porteur 2026-10-19 : en 6 × 24, une tache ou un
-       liseré disparaissent), utilisée dans le code. Jamais une rampe à la main là où une photo existe. Les cartes .npy sont regardées en
-       image avant la grille : une exclusion par couleur trop large y découpe la pièce.
-    5. **Cœur** : chaque composant mesuré (anthère, pollen, filet, style, stigmate, gorge, taches), dans coeur.json, avec la photo,
-       **sur la photo de chaque coloris** (porteur 2026-10-19 : des filets verts sur un lys rouge). Un coloris dont la photo montre une
-       autre construction (un asiatique parmi les LA) garde aussi sa propre forme, mesurée sur sa photo.
-    6. **Volume** : le profil comparé à angle égal (volume.py paire), avec des verdicts ok.
-    7. **Comparaison** : une planche photo | rendu par coloris, au même angle, et les tableaux apparence.py paire.
-    8. **Stades** : la planche du bouton au fané, et le fané comparé à des photos de fleurs fanées.
-    9. **x3d** : banc3d.txt, sur tous les stades, au moins 6 graines et les vues 0, 2 et 7, cœur compris, avec des totaux à 0.
-    10. **Témoins** : temoins.txt, identiques au pixel.
-    11. **Plante** : tige, feuilles avec leur grille et boutons, comparés à une photo de la plante.
+    4. **Grille** : une par coloris, en 18 × 72 cases (porteur 2026-10-19 : en 6 × 24, une tache ou un liseré disparaissent), utilisée
+       dans le code. Jamais une rampe à la main là où une photo existe. Les cartes .npy sont regardées en image avant la grille : une
+       exclusion par couleur trop large y découpe la pièce.
+    5. **Composantes du cœur** : chaque composant (anthère, pollen, filet, style, stigmate, gorge, taches) mesuré **sur la photo de
+       chaque coloris** (porteur 2026-10-19 : des filets verts sur un lys rouge), dans coeur.json, photo et code à ΔE2000 ≤ 6. Un
+       coloris dont la photo montre une autre construction (un asiatique parmi les LA) garde sa propre forme, mesurée sur sa photo.
+    6. **Profondeur** : le profil comparé à angle égal (volume.py paire), verdicts ok.
+    7. **Couleurs** : une planche photo | rendu par coloris, au même angle, et les tableaux apparence.py paire sans région ko
+       (ΔE2000 > 6).
+    8. **Matière** : dans les mêmes tableaux, contraste et grain (rendu / photo) entre 0,7 et 1,4 dans chaque région.
+    9. **Lumière** : le long de l'axe et en travers, écart moyen de L* ≤ 6.
+    10. **Stades** : la planche du bouton au fané, et le fané comparé à des photos de fleurs fanées.
+    11. **Couches** : banc3d.txt, sur tous les stades, au moins 6 graines et les vues 0, 2 et 7, cœur compris, avec des totaux à 0.
+    12. **Trous** : trous.json, pire case ≤ 0,5 % (rien ne se voit à travers la fleur).
+    13. **Témoins** : temoins.txt, identiques au pixel.
+    14. **Plante** : tige, feuilles avec leur grille et boutons, comparés à une photo de la plante.
 15.3 Une sorte n'est montrée comme finie, et n'est fusionnée, que quand `sortie.py` dit « finie ». Une étape faite sans sa preuve est une
     étape à refaire.
+15.4 Un chantier qui reprend fusionne d'abord main dans sa branche, pour avoir les outils et cette liste à jour, puis relit le §16. Un
+    chantier mis en pause écrit son état dans `catalogue/serre/fiches/<sid>-ETAT.md` : les 14 points, les résidus mesurés, les
+    questions, les prochaines actions. C'est ce fichier que la session suivante lit en premier.
+
+## 16. Comment tenir chaque point (leçons du lis LA, porteur 2026-10-19 et 2026-10-20)
+16.1 **La photo d'un coloris.** On rejette une photo brûlée : un canal à 253 ou plus sur plus de 10 % de la pièce (orange Barolo en serre :
+    R ≥ 253 sur 59 %). Une photo de studio sur fond neutre vaut mieux qu'une photo de jardin. On prend les pièces entières et nettes, pas
+    celles qui tombent sur le fond. Un coloris sans photo prouvée est une question au porteur, pas une couleur inventée.
+16.2 **Mise à plat et grille** : `sh fleur/coloris_cw.sh pieces <sid> <cw> <photo> "<cadre>" ...` sur 3 à 5 pièces. `EXCL` reste
+    étroit : il découpait le cœur bordeaux du Sweet Valley et la base du Dynamix. Les cartes .npy sont regardées en image. Les
+    coloris à motif (tache, macule, traits, liseré) prennent `MOTIF=1` : les centiles 35 à 85 effacent le motif, 5 à 95 le gardent.
+16.3 **Étalonnage photo | rendu** : `PUT=... sh fleur/coloris_cw.sh calib <sid> <cw> <photo> 3 "<cadre>" ...`. On fait 3 tours, amorti
+    k = 0,8. La pièce est rendue seule, cœur caché, et son masque est érodé de 2 px pour retirer le halo du bord (apparence.py le
+    fait). Un coloris à motif s'étalonne sur 3 à 4 pièces à la fois : sur une seule, la tache de Pup Art s'éclaircissait. Si l'éclairage des
+    pièces de la photo diffère (une garde au soleil, l'autre à l'ombre), on n'apparie que des pièces d'éclairage voisin : la grille
+    est le tissu éclairé, la matière fait l'ombre (pivoine). Repère : ΔE moyen de 1 à 5 selon le coloris sur le LA.
+16.4 **Tables par coloris** : tout ce que la photo d'un coloris montre de propre a sa table, lue par l'id du coloris, avec une valeur
+    par défaut. Pour le LA : grille, cœur (filet, style, anthère, pollen, stigmate), taches (couleur, nombre, zone, taille), traits le
+    long des nervures, liseré de marge, fané, forme propre, sans taches. Jamais une couleur d'une autre sorte gardée par défaut (les
+    anthères orange de l'oriental sur le LA).
+16.5 **Chaque composant au même soin que le tépale** (porteur 2026-10-20, sur le stigmate du LA : « boules brillantes moches ») : le
+    stigmate, l'anthère, le filet, le style et leurs jonctions ont leur forme réelle, mesurée sur un gros plan, leur couleur par coloris,
+    leur texture et leur matière. On ne met jamais une sphère avec un reflet blanc. Le stigmate d'un lys est une massue à trois lobes,
+    papilleuse et mate, humide sans miroir. Il naît du style sans cassure. La planche du cœur se regarde à D 900 à côté de la photo.
+16.6 **Les longues mesures** (banc, trous, calibrages) tournent en fond, une à la fois, avec `node --max-old-space-size=900`. Le banc est
+    lancé détaché, pour survivre à la fin de la session :
+    `powershell -c "Start-Process -WindowStyle Hidden python -ArgumentList 'fleur/sortie.py','<sid>','--mesurer','--banc','--json'"`.
+    Il s'écrit au fil de l'eau dans banc3d.part, renommé banc3d.txt à la fin. On ne le relance que sur les stades qui ont changé (`--st`).
+16.7 **Le bouton** est fermé à la pointe (LA : budTip [.97, .35], trous 0 %). Les trous de profil des stades ouverts d'une fleur en étoile
+    restent une question au porteur (lis-asiatique-la-ETAT.md, question 1).
+16.8 **Le fané** se mesure sur des photos de la même sorte fanée, par coloris (couleur de séchage, ternissement `dull`, ombre `cast`).
+    Si le rendu ne vire pas, on cherche ce qui ne vieillit pas (lavis, face externe roulée) avant de forcer la couleur.
+
+## 17. Discipline de séance et coût (porteur, 2026-10-19)
+17.1 Étapes de 1 à 2 h, chacune finie par une image montrée au porteur. Un résidu est garé après deux essais : il est mesuré et noté dans
+    l'ETAT. On ne poursuit pas un sous-pixel. Avant de régler, on vérifie qu'un stade ressemble à ses photos.
+17.2 Une session neuve par sorte. Sur le LA, 85 % des 38 M sont partis à relire un contexte de 400 k. Les boucles mécaniques
+    (étalonnage, mises à plat) vont à un agent Sonnet avec `coloris_cw.sh`. On lit peu d'images : les tableaux disent où regarder.
+17.3 Repères de coût mesurés : 15 à 20 M pour une sorte sur un moteur existant, 30 à 50 M pour une nouvelle construction, 1 à 1,5 M par
+    coloris.
