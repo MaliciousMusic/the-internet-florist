@@ -134,7 +134,8 @@ def main():
     if f:
         r = subprocess.run([sys.executable, os.path.join(ROOT, 'fleur', 'fiche.py'), 'check', sid, '--quiet'], capture_output=True, text=True, cwd=ROOT)
         chk = (r.stdout + r.stderr).strip()
-    line('2 fiche', f and struct and not re.search(r'erreur|error', chk, re.I), 'absente' if not f else ('structure des couches absente (insertion, profondeur_gorge)' if not struct else ('check : ' + chk[:100] if re.search(r'erreur|error', chk, re.I) else 'lue, structure des couches présente')))
+    bad_f = bool(f) and ('NON VALIDE' in chk or '"valide": false' in chk)
+    line('2 fiche', f and struct and not bad_f, 'absente' if not f else ('structure des couches absente (insertion, profondeur_gorge)' if not struct else ('fiche.py check : non valide' if bad_f else 'valide, structure des couches présente')))
     # 3 piece, 4 grille
     code = ' '.join(txt(p) for p in glob.glob(os.path.join(ROOT, 'app', '*.js')))
     np_, ng = [], []
@@ -165,7 +166,8 @@ def main():
     line('5 composantes', len(h) >= 4 and nm > 0 and not bad, 'coeur.json absent' if not h else ('; '.join(bad[:6]) if bad else '%d composants, %d couleurs photo = code' % (len(h), nm)))
     # 6 profondeur
     vt = glob.glob(os.path.join(R, 'volume', '*.txt'))
-    vb = [os.path.basename(p) + ' : ' + ', '.join(sorted(set(re.findall(r'trop (?:haut|bas|profond|plat)|écart [0-9.]+', txt(p))))) for p in vt if re.search(r'trop (haut|bas|profond|plat)|écart', txt(p))]
+    VBAD = r'\| (trop (?:haut|bas|profond|plat)|écart [0-9.]+) \|'  # a verdict cell, not the column's label
+    vb = [os.path.basename(p) + ' : ' + ', '.join(sorted(set(re.findall(VBAD, txt(p))))) for p in vt if re.search(VBAD, txt(p))]
     line('6 profondeur', vt and not vb, 'aucune comparaison de profil' if not vt else ('; '.join(vb) if vb else 'profil conforme (%d vues)' % len(vt)))
     # 7, 8, 9 from the paire tables
     ko, mat, lum, nt = [], [], [], {}
