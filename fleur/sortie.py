@@ -163,6 +163,11 @@ def main():
                 d = de2000(hx, cd[cw_])
                 if d > 6:
                     bad.append('%s/%s ΔE %.1f' % (k, cw_, d))
+    # the heart's parts are measured on every colourway's photo, not once for the sort (owner, 2026-10-19: green filaments on an orange LA)
+    for k in ('anthere', 'filet', 'style', 'stigmate'):
+        miss = [c for c in cws if c not in ((h.get(k) or {}).get('photo') or {})]
+        if h and miss:
+            bad.append('%s non mesuré : %s' % (k, ', '.join(miss)))
     line('5 composantes', len(h) >= 4 and nm > 0 and not bad, 'coeur.json absent' if not h else ('; '.join(bad[:6]) if bad else '%d composants, %d couleurs photo = code' % (len(h), nm)))
     # 6 profondeur
     vt = glob.glob(os.path.join(R, 'volume', '*.txt'))
