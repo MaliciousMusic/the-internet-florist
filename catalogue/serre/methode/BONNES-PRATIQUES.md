@@ -275,3 +275,23 @@ Rappel de base : SVG natif seulement, ni 3D, ni image incorporée, ni ruban, ni 
 14.4 État au 2026-10-18 (lys oriental, graine 3, quatre coloris) : ouvert 0 ; trois-quarts ouvert 0,4 ; bouton qui s'ouvre 23 ; fané 2 à 58.
     Le bouton et le fané restent à reprendre (les tépales d'un même verticille s'y chevauchent en se refermant et en se froissant). Mesuré
     sur les autres sortes, ouvertes : tulipe simple 76, cymbidium 46, gloriosa 21, anémone 1, nérine 0,2 par tête : à reprendre à leur tour.
+
+## 15. La liste de sortie d'une sorte (porteur, 2026-10-19 : « TOUTES nos bonnes pratiques »)
+15.1 Le niveau du lys oriental ne s'obtient pas en reprenant son moteur à l'œil : le lis LA et le lis tigré ont d'abord été faits ainsi. Ils
+    gardaient les anthères orange du lys oriental au lieu de leur brun chocolat, avaient un orange peint à la main et un revers gris. Leur
+    profil n'avait pas été comparé, et il n'y avait aucune planche photo | rendu. Toute sorte suit donc les étapes ci-dessous, dans cet
+    ordre, et chacune laisse sa preuve dans refcache/<sid>/.
+15.2 Les étapes et leurs preuves (`python fleur/sortie.py <sid> --cws <coloris du catalogue>` les vérifie et dit ce qui manque) :
+    1. **Sources** : une photo nommée par coloris (coloris-photos.json), et des photos de fané.
+    2. **Fiche Opus** : elle est lue avant de dessiner, avec la structure des couches (insertion, décalage, profondeur de la gorge).
+    3. **Pièce** : mesurée sur la photo de chaque coloris (apparence.py piece, sorties nommées d'après le coloris).
+    4. **Grille** : une par coloris (apparence.py grille), et utilisée dans le code. Jamais une rampe à la main là où une photo existe.
+    5. **Cœur** : chaque composant mesuré (anthère, pollen, filet, style, stigmate, gorge, taches), dans coeur.json, avec la photo.
+    6. **Volume** : le profil comparé à angle égal (volume.py paire), avec des verdicts ok.
+    7. **Comparaison** : une planche photo | rendu par coloris, au même angle, et les tableaux apparence.py paire.
+    8. **Stades** : la planche du bouton au fané, et le fané comparé à des photos de fleurs fanées.
+    9. **x3d** : banc3d.txt, sur tous les stades, au moins 6 graines et les vues 0, 2 et 7, cœur compris, avec des totaux à 0.
+    10. **Témoins** : temoins.txt, identiques au pixel.
+    11. **Plante** : tige, feuilles avec leur grille et boutons, comparés à une photo de la plante.
+15.3 Une sorte n'est montrée comme finie, et n'est fusionnée, que quand `sortie.py` dit « finie ». Une étape faite sans sa preuve est une
+    étape à refaire.
