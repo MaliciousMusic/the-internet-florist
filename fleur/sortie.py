@@ -96,9 +96,13 @@ def mesurer(sid, cws, R, banc):
         lines.append('%s : %s' % (w, 'identique' if n == 0 else 'DIFF %s px' % n))
     open(os.path.join(R, 'temoins.txt'), 'w', encoding='utf-8').write('\n'.join(lines) + '\n')
     if banc:
-        r = subprocess.run(['node', '--max-old-space-size=900', 'fleur/banc3d.js', '--head', "SV_HEAD['%s']({},B,O,200,CW,OP,SD,WL)" % sid, '--cws', ','.join(cws),
-                            '--seeds', '1,2,3,4,5,6,14,21'], cwd=ROOT, capture_output=True, text=True)
-        open(os.path.join(R, 'banc3d.txt'), 'w', encoding='utf-8').write(r.stdout)
+        # written as it runs (banc3d.part, renamed at the end): a session that ends mid-bench keeps what was measured, and a partial
+        # bench is never taken for a finished one. Launch it detached (BONNES-PRATIQUES §16.6) so it outlives the session.
+        part = os.path.join(R, 'banc3d.part')
+        with open(part, 'w', encoding='utf-8') as f:
+            subprocess.run(['node', '--max-old-space-size=900', 'fleur/banc3d.js', '--head', "SV_HEAD['%s']({},B,O,200,CW,OP,SD,WL)" % sid, '--cws', ','.join(cws),
+                            '--seeds', '1,2,3,4,5,6,14,21'], cwd=ROOT, stdout=f, stderr=subprocess.DEVNULL, text=True)
+        os.replace(part, os.path.join(R, 'banc3d.txt'))
 
 
 def main():

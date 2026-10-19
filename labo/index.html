@@ -47,6 +47,7 @@ table{border-collapse:collapse;width:100%}th,td{padding:5px 6px;text-align:left;
 .live{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--ok);margin-right:6px}
 .live.idle{background:var(--skip)}
 .tools .k{margin-bottom:10px}.tools .k div{font-size:12.5px;padding:2px 0}.tools code{font-weight:600}
+.proto h3{margin:16px 0 6px;text-transform:none;font-size:14px;color:var(--ink)}.proto p{margin:4px 0;font-size:12.8px}.proto p.i{padding-left:22px}.proto code{font-size:11.5px;background:var(--soft);padding:0 3px;border-radius:3px;overflow-wrap:anywhere}
 .note{font-size:12.5px;background:var(--soft);border-radius:8px;padding:10px 12px;margin:8px 0}
 svg text{fill:var(--mut);font-size:10px}
 </style>
@@ -75,6 +76,13 @@ svg text{fill:var(--mut);font-size:10px}
       <span><i class="dot" style="background:var(--ko)"></i>échouée (une question)</span><span><i class="dot" style="background:var(--cap)"></i>arrêtée au plafond</span>
       <span><i class="dot" style="background:var(--skip)"></i>sautée</span><span class="mut">Survole une case : son message et son coût.</span></div>
   </div>
+
+  <h2>Les chantiers : où reprendre</h2>
+  <p class="small mut">Une session qui ouvre un chantier lit d'abord son fichier d'état, fusionne main si les outils sont en retard, puis relit le protocole plus bas (BONNES-PRATIQUES §15.4).</p>
+  <div class="card scroll"><table id="chant"></table></div>
+
+  <h2>Le protocole : ce qu'on fait et comment (BONNES-PRATIQUES §15 à §17)</h2>
+  <div class="card proto" id="proto"></div>
 
   <h2>Cette session au travail</h2>
   <div class="grid g2">
@@ -142,6 +150,20 @@ function render(d){
   const SP=d.sorts.filter(s=>s.sortie),SK=SP.length?SP[0].sortie.points.map(p=>p.k):[];
   $('sortie').innerHTML=SP.length?`<tr><th>Sorte</th><th>Vérifiée</th>${SK.map(k=>`<th title="${esc(k)}">${esc(k.replace(/^\d+ /,''))}</th>`).join('')}<th>Verdict</th></tr>`+
     SP.map(s=>{const P=s.sortie.points,n=P.filter(p=>!p.ok).length;return `<tr><td><b>${esc(s.sid)}</b><div class="small mut">${esc(s.chantier)}</div></td><td class="small">${esc((s.sortie.quand||'').replace('T',' ').slice(0,16))}</td>${P.map(p=>`<td class="s"><span class="st ${p.ok?'done':'failed'}" title="${esc(p.k+' : '+p.why)}">${p.ok?'✓':'✗'}</span></td>`).join('')}<td class="small"><b style="color:${n?'var(--ko)':'inherit'}">${n?n+' manquant(s)':'finie'}</b></td></tr>`}).join(''):'<tr><td class="small mut">Aucune sorte vérifiée encore : python fleur/sortie.py &lt;sid&gt; --mesurer --json</td></tr>';
+  const CH=d.chantiers||[];
+  $('chant').innerHTML=CH.length?'<tr><th>Chantier</th><th>Dernier commit</th><th>Outils de main</th><th>Grilles de couleur</th><th>Fichier d’état</th></tr>'+CH.map(c=>{
+    const G=Object.entries(c.grilles||{}).filter(([k])=>{const [u,v]=k.split(' × ').map(Number);return u*v>=100}).sort((a,b)=>b[1]-a[1]);
+    return `<tr><td><b>${esc(c.nom)}</b></td><td class="small">${esc((c.last||'').slice(0,16).replace('T',' '))}<div class="mut">${esc(c.msg)}</div></td>`+
+    `<td class="small"><span class="st ${c.outils_a_jour?'done':'failed'}"></span> ${c.outils_a_jour?'à jour':'en retard : fusionner main'}</td>`+
+    `<td class="small">${G.map(([k,n])=>`<div style="color:${k==='18 × 72'?'inherit':'var(--ko)'}">${esc(k)} : ${n}</div>`).join('')||'<span class="mut">aucune</span>'}</td>`+
+    `<td class="small">${c.etat.map(f=>`<code>ch/${esc(c.nom)}/${esc(f)}</code>`).join('<br>')}</td></tr>`}).join(''):'<tr><td class="small mut">Aucun chantier avec un fichier d’état.</td></tr>';
+  const md=t=>esc(t).replace(/\*\*(.+?)\*\*/g,'<b>$1</b>').replace(/`([^`]+)`/g,'<code>$1</code>');
+  {const L=(d.protocole||'').split(String.fromCharCode(10)),o=[];let cur=null;
+   const flush=()=>{if(cur){o.push(`<p class="${cur.i?'i':''}">${md(cur.t)}</p>`);cur=null}};
+   for(const l of L){if(l.startsWith('## ')){flush();o.push(`<h3>${md(l.slice(3))}</h3>`)}
+     else if(/^\d+\.\d+ /.test(l)){flush();cur={t:l,i:0}}else if(/^\s+\d+\. /.test(l)){flush();cur={t:l.trim(),i:1}}
+     else if(l.trim()&&cur)cur.t+=' '+l.trim();else if(!l.trim())flush()}
+   flush();$('proto').innerHTML=o.join('')||'<p class="mut">BONNES-PRATIQUES.md introuvable.</p>'}
   const U=S.usage||{};
   $('bymodel').innerHTML='<tr><th>Modèle</th><th>Appels</th><th>Entrée</th><th>Cache écrit</th><th>Cache lu</th><th>Sortie</th><th>eq-Opus</th></tr>'+
     Object.entries(U).sort((a,b)=>b[1].eq-a[1].eq).map(([m,v])=>`<tr><td>${chip(m)}</td><td>${v.calls}</td><td>${fmt(v.in)}</td><td>${fmt(v.cw)}</td><td>${fmt(v.cr)}</td><td>${fmt(v.out)}</td><td><b>${M(v.eq)}</b></td></tr>`).join('');

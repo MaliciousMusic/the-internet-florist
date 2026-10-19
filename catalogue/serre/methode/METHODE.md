@@ -1,5 +1,11 @@
 # Méthode fleur : le niveau de l'anémone au moindre coût en tokens
 
+> **À lire d'abord (2026-10-20).** La barre n'est plus l'anémone mais la photo, au niveau du lys oriental. Ce qui fait foi pour
+> finir une sorte est [BONNES-PRATIQUES.md](BONNES-PRATIQUES.md) §15 à §17 : la liste de sortie en 14 points (`python fleur/sortie.py <sid>`),
+> la façon de tenir chaque point, la discipline de séance et le coût. Le labo (http://localhost:8805/labo/) les affiche, avec l'état de
+> chaque chantier. Ce document reste valable pour l'organisation des agents. Ses critères de sortie (§7) et ses cibles de coût datent
+> d'avant cette liste.
+
 Ce document décrit comment refaire une espèce en SVG natif au niveau de l'anémone de référence (voir `docs/STANDARD-RENDU.md`, section 4 bis) en
 dépensant le moins de tokens possible. Une espèce couvre :
 - ses pétales et son cœur ;
