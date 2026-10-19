@@ -170,14 +170,14 @@ function svTrans(cg,it,sh,front,Dm,Ls,tol){const t=sh.mat.transmit,hi=DET>=1.5,f
     stops(gr,[[0,'white',svF(Math.min(1,eo[1]/(eo[0]||1)))],[1,'white',1]]);svLevels(it,sh,Ge,FF,(t.en||[4,3])[hi?0:1],t.ec||t.tc||own(lk[1]),cg,tol,null,`url(#${id})`)}}
 /* draw the pieces of one flower: pieces are sheets (svSheet with a material) or drawn parts {fn, proxy (a sheet, for the order only)} */
 function svDraw(par,pieces,o){const Dm=o.D,tol=Math.max(.06,Dm*.0035),k=G(par),items=[];
-  if(typeof SVQA_ON!=='undefined'&&SVQA_ON)svQa3d(pieces);  /* test only (&qa3d=1): sheets that pass through one another, y3-qa3d.js */
+  if(typeof SVQA_ON!=='undefined'&&SVQA_ON)svQa3d(pieces,par);  /* test only (&qa3d=1): sheets that pass through one another, y3-qa3d.js */
   for(const p of pieces){if(p.fn){const cells=svCells(p.proxy,0);if(!cells.length){items.push({kind:'fn',fn:p.fn,cells:[],bb:[0,0,-1,-1],z:p.z??0});continue}let x0=1e9,y0=1e9,x1=-1e9,y1=-1e9,z=0;
-      for(const c of cells){x0=Math.min(x0,c.x0);y0=Math.min(y0,c.y0);x1=Math.max(x1,c.x1);y1=Math.max(y1,c.y1);z+=c.cz}items.push({kind:'fn',fn:p.fn,px:p.proxy,cells,bb:[x0,y0,x1,y1],z:z/cells.length+(p.zb||0)})}
+      for(const c of cells){x0=Math.min(x0,c.x0);y0=Math.min(y0,c.y0);x1=Math.max(x1,c.x1);y1=Math.max(y1,c.y1);z+=c.cz}items.push({kind:'fn',fn:p.fn,px:p.proxy,cells,bb:[x0,y0,x1,y1],z:z/cells.length+(p.zb||0),pmin:p.pmin})}
     else items.push(...svRegions(p,{tol}))}
   const eps=Dm*.005,order=svOrder(items,eps),regs=order.filter(it=>it.kind==='reg'),dd=GDEF||defs;
   /* the patches: where a piece drawn earlier is in front of a later one (a tepal curling over its neighbour, the stamens over a tepal's claw), the earlier
      piece is drawn again over the later one, clipped to where it is in front */
-  order.forEach((it,i)=>it.oi=i);if(SV_PATCH)for(const[A,B2,fa,fb]of order.fr){const[e,l,c]=A.oi<B2.oi?[A,B2,fa]:[B2,A,fb];if(c<(o.pmin||3))continue;const d=svFrontD(e,l,eps,tol,Dm);if(!d)continue;
+  order.forEach((it,i)=>it.oi=i);if(SV_PATCH)for(const[A,B2,fa,fb]of order.fr){const[e,l,c]=A.oi<B2.oi?[A,B2,fa]:[B2,A,fb];if(c<Math.min(o.pmin||3,e.pmin??99,l.pmin??99))continue;  /* (a piece's own pmin: a thin drawn piece, a filament, has few cells) */const d=svFrontD(e,l,eps,tol,Dm);if(!d)continue;
     (l.patch=l.patch||[]).push([e.oi,e,d]);if(!e.gid)e.gid='sk'+(gid++)}
   for(const it of regs){it.id='sp'+(gid++);E('path',{id:it.id,d:it.d},dd);it.cid='sc'+(gid++);E('use',{href:'#'+it.id},E('clipPath',{id:it.cid},dd))}
   let uid=null;if(!LOD&&o.shadow!==false&&regs.length>1){uid='su'+(gid++);const cl=E('clipPath',{id:uid},dd);for(const it of regs)E('use',{href:'#'+it.id},cl)}
