@@ -28,7 +28,7 @@ branche le 2026-10-20 : les outils sont à jour. Ce chantier n'est **pas** encor
 1 ter. **Posées le 2026-10-20, par fusion** : `fleur/pivoine/fondre.py <base 6x24> <fine 18x72> <sortie>` garde la couleur d'ensemble de la
    grille 6 × 24, déjà vérifiée, et y ajoute le détail de la 18 × 72, en Lab. Le détail est borné à ΔE 6 et s'éteint sur les deux dernières
    colonnes du bord. Le blanc reste blanc et le rouge n'a plus de taches (`fleur/out/pv672.png`). Les 10 grilles des gardes sont dans
-   `app/y-paeonia.js` en 18 × 72 (`grille-<cw>-fondu.json`). Le cœur reste en 6 × 24. L'étalonnage photo | rendu reste à faire.
+   `app/y-paeonia.js` en 18 × 72 (`grille-<cw>-fondu.json`). Le cœur aussi est passé en 18 × 72 : trois bandes par coloris (l'axe du repère `_coeur` de `reperes.json`, puis le même axe tourné de ±60°, en demi-largeur × 1,5), soit 0 à 46 cases vides sur 1296 (`<cw>-coeur-b0..2`, `grille-h-<cw>-fondu.json`), fondu de la même façon. Les 20 grilles de la pivoine sont en 18 × 72. L'étalonnage photo | rendu reste à faire.
 4. **Fichier d'état** : ce fichier fait office de `<sid>-ETAT.md` (§15.4). Le labo le lit.
 5. **Banc** lancé détaché (§16.6).
 
