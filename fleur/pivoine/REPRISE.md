@@ -17,6 +17,14 @@ branche le 2026-10-20 : les outils sont à jour. Ce chantier n'est **pas** encor
    par coloris. Il faut mesurer les carpelles, les stigmates, les étamines et le creux sur la photo de chaque coloris, et les mettre
    dans une table lue par l'id du coloris. Les stigmates demandent le même soin que les pétales (§16.5) : forme réelle, couleur,
    texture, jonction, regardés à D 900 à côté de la photo.
+1 bis. **Essai du 2026-10-20** : les grilles des gardes sont refaites en 18 × 72 à partir des mises à plat existantes (t1, t2) :
+   `refcache/.../apparence/grille-<cw>-18x72.json`, de 24 à 97 px par case, aucune case vide. `gridio.py put` accepte maintenant
+   un changement de taille. **Elles ne sont pas dans le code** : posées sans étalonnage (`fleur/out/pv672.png`, vue 2, D 420), le
+   blanc vire au gris-vert et le rouge prend des taches grises au bord. Les cases de bord (|u| proche de 1) prennent du fond, et les
+   ombres de la photo ne sont plus noyées dans la médiane. Prochain pas : refaire les mises à plat avec un masque resserré au bord
+   (regarder les .npy en image), puis `coloris_cw.sh calib` par paires d'éclairage voisin, avant de les poser. La carte du cœur
+   (`<cw>-coeur1.npy`) est trop petite pour du 18 × 72 : de 82 à 1296 cases vides sur 1296. Il faut une mise à plat du cœur sur un
+   recadrage plus grand ; d'ici là, le cœur reste en 6 × 24.
 4. **Fichier d'état** : ce fichier fait office de `<sid>-ETAT.md` (§15.4). Le labo le lit.
 5. **Banc** lancé détaché (§16.6).
 
