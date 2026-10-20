@@ -214,3 +214,15 @@ l'étalonnage peuvent aller à un agent Sonnet.
   - **Proposition** : les noter introuvables dans le registre, avec la recherche faite. La translucidité se règle alors sur r14 et
     r41, gros plans de gardes où la lumière traverse les bords. Le dessous de la feuille se règle sur o15 et o17 (nervures en relief,
     face mate). À reprendre dès qu'une photo arrive.
+
+### Pause (2026-10-20, crédits épuisés)
+- **Cartes forme2 faites** : r02, r03, r04 (profils), dans `cartes/`. r05 a été interrompue : la refaire.
+- **À reprendre** : `sh .scratch/cartes_forme2.sh`, en retirant d'abord de sa liste r02, r03 et r04. Restent r05 et r07 (profils),
+  r31 et r33 (trois-quarts), r36 et r38 (face). Les centres et les rayons sont déjà dans le script.
+- **Ensuite** :
+  - `carte.py fiche`, puis `sortie.py --jusqua 5` ;
+  - le pétale seul à D 900 ;
+  - la nouvelle tête dans la plage du verdict ;
+  - les mises à plat refaites avec pmasque ;
+  - la planche finale : V1, V2 et la nouvelle tête côte à côte, avec leurs chiffres (demande du porteur).
+- **Question ouverte** : les six cases introuvables sur Commons, voir plus haut.
