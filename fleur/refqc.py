@@ -2,6 +2,7 @@
 
   python fleur/refqc.py note <img>...                       the quality of each photo (one line each, verdict and reasons)
   python fleur/refqc.py inscrire <sid> <img> <organes> <vue> [--stade s] [--cultivar c] [--source url] [--note "..."]
+  <organes> and <vue> take several values joined by + (a bud photo that also shows its peduncle: pedoncule+bouton gros-plan+profil).
                                                             adds a photo to the sort's register refcache/<sid>/refs-organes.json, with its quality;
                                                             <organes>: names of the fiche's organes joined by '+', or 'fleur' (the whole head)
   python fleur/refqc.py couverture <sid>                    the matrix organ x view or stage: how many good photos each cell has against what
@@ -71,7 +72,7 @@ def couverture(sid):
     for org in orgs:
         need = NEED.get(kind(org), {'gros-plan': 1})
         for vue, n in need.items():
-            have = [p for p in reg['photos'] if org in p['organes'] and (p['vue'] == vue or p.get('stade') == vue)]
+            have = [p for p in reg['photos'] if org in p['organes'] and (vue in p['vue'].split('+') or p.get('stade') == vue)]
             good = [p for p in have if p['qualite']['verdict'] == 'ok']
             rows.append((org, vue, len(good), len(have), n))
             if len(good) < n: miss.append((org, vue, n - len(good)))
