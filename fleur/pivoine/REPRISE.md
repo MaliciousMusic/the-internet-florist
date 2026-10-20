@@ -3,6 +3,32 @@
 Branche `ch/pivoine`, copie `ch/pivoine`. Module `app/y-paeonia.js` (tête en nappes, `SV_HEAD['pivoine-herbacee-double']`).
 Main fusionné jusqu'à c2a78f1 (calibre.py, repere.py, sortie.py plus juste).
 
+## PRIORITÉ 1 : la forme (porteur, 2026-10-20 : « ressemble à un cœur d'artichaut, pas glorieux »)
+
+Sur la planche `refcache/.../comparaison/validation-coloris.jpg`, avec les photos détourées sur fond beige (`fleur/pivoine/planche.py`),
+le rendu est une boule en dôme d'écailles pareilles, rangées en cercles réguliers, posée dans une coupe de gardes. Les photos des cultivars
+(Sarah Bernhardt, Félix Crousse, Kansas, Cincinnati, Mons. Jules Élie) montrent autre chose :
+- un cœur aussi large que la fleur, au contour irrégulier ;
+- des centaines de pétales chiffonnés de toutes tailles, aux bouts déchiquetés, qui partent vers le haut et vers l'extérieur ;
+- des gardes plus ouvertes que le cœur.
+
+**Deux essais de réglage, garés le 2026-10-20** :
+1. nH 72-96, hW plus étroit, ruf h 0,13, amp 0,5, des découpes plus profondes, des gardes plus ouvertes : le cœur est un peu plus fouillé, mais
+   la silhouette ne bouge pas, et le poids double (137 000 éléments, 18 Mo à D 420).
+2. Les coques du cœur desserrées (tight 0,12/0,2) : aucun changement visible.
+
+**Cause** : chaque pétaloïde est posé sur une coque emboîtée (peoShells), et son froissage est limité par l'écart à ses voisines (§14).
+La silhouette est donc celle des coques : un dôme.
+
+**Refonte proposée** :
+- le profil des coques du cœur mesuré sur les photos de profil (volume.py), plat et large, et non un dôme ;
+- les bouts des pétaloïdes libres hors de leur coque, en languettes qui se dressent et s'écartent, empilés dans l'ordre (les coques ne
+  gardent que les pieds) ;
+- des tailles très inégales.
+
+C'est un changement de construction, à faire en début de session, à juger sur la planche de profil et de trois-quarts avant toute couleur
+(§17.1 : la forme avant la couleur ; je l'avais fait dans l'autre sens).
+
 ## Avant de reprendre : écarts au protocole du 2026-10-20 (à lire en premier)
 
 Le protocole a été complété après la pause (BONNES-PRATIQUES §15 à §17, affiché au labo 8805/labo/). Main a été fusionné dans cette
