@@ -19,7 +19,7 @@ poussée sur GitHub. Il n'est pas fusionné dans main : la liste de sortie ne di
 | 8 matière | MANQUE | les tépales rendus sont plus lisses que les photos (contraste et grain sous 0,7 dans beaucoup de régions) |
 | 9 lumière | OK | |
 | 10 stades | OK | planches stades-la.jpg et fane-la.jpg |
-| 11 couches | EN COURS | voir plus bas |
+| 11 couches | MANQUE | 0 jusqu'au début du fané ; 23,5 par coloris en fin de fané (36 pour le cœur-noir), voir plus bas |
 | 12 trous | MANQUE | les boutons sont fermés (0 %). Les vues de profil des stades ouverts et fanés montrent du jour entre des tépales séparés : voir la question 1 |
 | 13 témoins | OK | six sortes identiques au pixel |
 | 14 plante | OK | plante-la.jpg ; résidu : la tige est plus claire que sur la photo (L* 38 contre 26) |
@@ -59,5 +59,10 @@ et Eyeliner. La planche locale est `comparaison/stigmate-la.jpg`. Le lys orienta
 ## Banc des couches (point 11)
 
 Le banc lancé le 2026-10-19 à 19 h 02 n'a rien laissé. Il n'écrivait qu'à la fin, et il s'est arrêté avec la session. Depuis, `sortie.py`
-l'écrit au fil de l'eau dans `banc3d.part`. Il a été relancé détaché le 2026-10-20, après la refonte du stigmate. Résultat à
-inscrire à la fin du banc.
+l'écrit au fil de l'eau dans `banc3d.part`. Il a été relancé détaché le 2026-10-20, après la refonte du stigmate. Résultat (fini le 2026-10-20 à 7 h 32, 8 graines, vues 0, 2 et 7, cœur compris) :
+- **0 croisement** sur tous les stades du bouton à l'ouvert, et au début du fané (1:0,2 et 1:0,4) ;
+- des croisements à la fin du fané seulement (1:0,6 à 1:1), soit un total de **23,5 par coloris**, et **36 pour le cœur-noir**, à cause de sa
+  forme propre (tépales plus longs et plus étroits). Exemple pour le cœur-pourpre : 1:0,8 → 2 1 5 1 0 1 0 1 ; 1:1 → 0 1 7 1 0 2 0 1.
+
+Le point 11 reste MANQUE. Prochaine action : les tépales fanés qui se roulent se touchent entre voisins ; réduire leur ondulation, ou les
+emboîter en fin de fané (§14.3), puis relancer le banc sur `--st 1:.6,1:.8,1:1` seulement.
