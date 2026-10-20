@@ -183,3 +183,14 @@ Le vrai état de la sorte d'après `sortie.py` : 16 points manquent sur 18 (seul
 
 C'est une nouvelle construction : 30 à 50 M et 1 à 1,5 jour (§17.3), dans une session neuve par sorte (§17.2). Les mises à plat et
 l'étalonnage peuvent aller à un agent Sonnet.
+
+### Mesures après l'occlusion (2026-10-20)
+- **Témoins** : identiques au pixel. L'occlusion ne change rien tant que la clé `occ` n'est pas mise.
+- **Trous** : la pire case est à 13,1 %, sur la fleur défleurie (stade 1:1), coloris blush, vue de face. Les cinq cases suivantes
+  sont aussi au stade 1:1 (de 5 à 8 %).
+  - Sur cette tête, les sépales forment un anneau ouvert au centre : on voit le fond à travers.
+  - Sur une vraie pivoine défleurie, le réceptacle et les carpelles reposent sur les sépales et ferment ce centre.
+  - À reprendre avec la nouvelle tête (étape 4 de la reprise) : poser un réceptacle plein sous les carpelles au stade défleuri.
+- **Références par organe** : 23 photos d'organes inscrites (refcache/.../organes/), couverture 23/42. Pour couvrir plusieurs vues,
+  une photo de bouton peut maintenant être inscrite sous plusieurs vues jointes par « + » (refqc).
+  - Sur Commons, aucune photo utilisable du dessous de la feuille : il faudra une autre source.
