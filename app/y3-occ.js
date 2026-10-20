@@ -7,7 +7,7 @@
      sh.sunA  the direct light that reaches it (0..1): a few rays toward LIGHT (a small soft cone), blocked the same way: the cast shadow.
    svShade (washes, DET < 1.5) and svFine (DET >= 1.5) read them: the ambient and sky terms by occA, the direct, specular and back-lit terms by sunA.
    Without o.occ nothing here runs and every sort draws the same bytes. Distances are in head radii R0 (o.D / 2). */
-const SVOC_DEF={k:.9,dirs:14,steps:[.06,.14,.26,.42],sun:.9,sunK:.85,soft:.07,rays:3,self:.22,cell:.03,blur:1,eps:.012};
+const SVOC_DEF={k:.5,dirs:14,steps:[.06,.14,.26,.42],sun:.9,sunK:.6,soft:.07,rays:3,self:.22,cell:.03,blur:1,eps:.012};
 const SVOC_OFF=typeof location!=='undefined'&&/[?&]noocc=1/.test(location.search||'');  /* test only: &noocc=1 draws without it */
 function svOcclude(sheets,R0,cfg){const C=cfg===true?SVOC_DEF:Object.assign({},SVOC_DEF,cfg),cs=C.cell*R0,H=new Map(),key=(x,y,z)=>x+','+y+','+z,pts=[];
   /* the cloud: every vertex of every sheet, x right, y up, z toward the eye (the projection is orthographic: the screen with y turned up) */
