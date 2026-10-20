@@ -3,28 +3,40 @@ trucs à checker soient checkés, je serai intransigeant »). Each point of the 
 a sort is not shown as finished, nor merged, nor published while one point is MANQUE. pipe.py runs it as its last step (sortie), the lab
 dashboard shows its lights (refcache/<sid>/sortie.json).
 
-  python fleur/sortie.py <sid> --cws <catalogue colourway ids> [--mesurer] [--banc] [--json]
+  python fleur/sortie.py <sid> --cws <catalogue colourway ids> [--mesurer] [--banc] [--json] [--jusqua N]
 
   --mesurer  makes the automatic proofs first: the holes sheet (a grid on a green ground, fleur/trous.py), the witnesses (tm_ / tn_);
   --banc     also runs the 3D bench (fleur/banc3d.js, every stage, 6 seeds, views 0,2,7, heart included): long (an hour or more)
   --json     writes refcache/<sid>/sortie.json (the lab dashboard reads it)
+  --jusqua N the gate before step N: exit 1 when a point before N is missing (a session runs it before starting a step: §18)
 
-The points and their proofs (refcache/<sid>/; photos stay in refcache, never committed):
-  1 sources      coloris-photos.json: a named photo for every colourway; photos of faded flowers (fane/ or the registry)
-  2 fiche        catalogue/serre/fiches/<sid>.json read before drawing: organs, the layer structure (insertion, profondeur_gorge), check clean
-  3 piece        apparence/<cw>/<cw>-*.json: the piece measured on the photo of each colourway (apparence.py piece)
-  4 grille       apparence/grille-<cw>.json (or apparence/coloris/) per colourway, its cells in the code: no hand ramp where a photo exists
-  5 composantes  coeur.json: each component (anther, pollen, filament, style, stigma, throat, spots...) its photo colour and its code colour,
+The 18 points in the order of the work, and their proofs (refcache/<sid>/; photos stay in refcache, never committed). Hardened on
+2026-10-20 (owner: « un contrôle qualité durci pour chaque étape tout au long du process »): 2, 3, 8, 18 are new; 1, 4, 5, 6, 12 stricter.
+  1 sources      coloris-photos.json: a named photo for every colourway, each passing refqc.py (not burnt, smaller side >= 1200 px, sharp);
+                 photos of faded flowers (fane/ or the registry)
+  2 references   refs-organes.json (fleur/refqc.py): every organ of the fiche in the views and stages it needs, good photos only
+  3 cartes       cartes/<photo>/carte.json (fleur/carte.py: mask, depth, normals, pieces, light) on >= 2 photos in each of face,
+                 trois-quarts and profil
+  4 fiche        catalogue/serre/fiches/<sid>.json read before drawing: organs, the layer structure (insertion, profondeur_gorge), check
+                 clean, and forme_mesuree (carte.py fiche: the photos' ranges the drawing is built to)
+  5 piece        apparence/<cw>/<cw>-*.json: the piece measured on the photo of each colourway, every map with its control ok
+  6 grille       apparence/grille-<cw>.json (or apparence/coloris/) per colourway, its cells in the code, built from controlled maps, none forced
+  7 composantes  coeur.json: each component (anther, pollen, filament, style, stigma, throat, spots...) its photo colour and its code colour,
                  ΔE2000 <= 6 between them
-  6 profondeur   volume/*.txt (volume.py paire, same angle): H/W, fill, funnel depth, width profile all ok (3D dimension, depth of the centre)
-  7 couleurs     apparence/<cw>/*paire*.txt per colourway (apparence.py paire, photo | render): no region ko (ΔE2000 > 6)
-  8 matiere      the same tables: contrast and grain (render / photo) 0.7 to 1.4 in every region: gloss / matte, smooth / grained
-  9 lumiere      the same tables: light along the axis and across (L*), mean gap <= 6: the transitions from throat to tip, axis to margin
-  10 stades      comparaison/stades*.jpg (bud to faded) and comparaison/fane*.jpg (the faded against photos of faded flowers)
-  11 couches     banc3d.txt (fleur/banc3d.js): every stage, >= 6 seeds, heart included, totals 0 (no piece through another, layers in order)
-  12 trous       trous.json (fleur/trous.py on the green sheet): worst cell <= 0.5 % (nothing seen through the flower)
-  13 temoins     temoins.txt: the witness sorts identical to the pixel after the last engine change
-  14 plante      comparaison/plante*.jpg: stem, leaves with their grid, buds against a photo of the plant
+  8 forme        cartes/verdict.json (carte.py verdict): every render map within the photos' range of the same view on the shape measures
+                 (outline, edges, rings, pieces, relief)
+  9 profondeur   volume/*.txt (volume.py paire, same angle): H/W, fill, funnel depth, width profile all ok (3D dimension, depth of the centre)
+  10 couleurs    apparence/<cw>/*paire*.txt per colourway (apparence.py paire, photo | render): no region ko (ΔE2000 > 6)
+  11 matiere     the same tables: contrast and grain (render / photo) 0.7 to 1.4 in every region: gloss / matte, smooth / grained
+  12 lumiere     the same tables: light along the axis and across (L*), mean gap <= 6; and the verdict's light measures (dark share,
+                 hollows, lit rims, pockets, the fitted light) within the photos' range
+  13 stades      comparaison/stades*.jpg (bud to faded) and comparaison/fane*.jpg (the faded against photos of faded flowers)
+  14 couches     banc3d.txt (fleur/banc3d.js): every stage, >= 6 seeds, heart included, totals 0 (no piece through another, layers in order)
+  15 trous       trous.json (fleur/trous.py on the green sheet): worst cell <= 0.5 % (nothing seen through the flower)
+  16 temoins     temoins.txt: the witness sorts identical to the pixel after the last engine change
+  17 plante      comparaison/plante*.jpg: stem, leaves with their grid, buds against a photo of the plant
+  18 revue       revue/juge.json: the cropped pairs reviewed by a fresh judge, verdict ok, newer than the sort's last render; and
+                 portes.json: the owner's gates (forme, gros plan) ok, written when the owner says so
 """
 import sys, os, json, glob, re, subprocess, argparse
 
@@ -112,6 +124,7 @@ def main():
     a.add_argument('--mesurer', action='store_true')
     a.add_argument('--banc', action='store_true')
     a.add_argument('--json', action='store_true')
+    a.add_argument('--jusqua', type=int, help='the gate before step N: exit 1 when a point before N is missing')
     o = a.parse_args()
     sid = o.sid
     cws = o.cws.split(',') if o.cws else catalogue_cws(sid)
@@ -129,7 +142,25 @@ def main():
     miss = [c for c in cws if not cp.get(c)]
     reg = ' '.join(txt(p) for p in glob.glob(os.path.join(R, 'keep*.json')) + [os.path.join(R, 'refs-vus.json')])
     fane = bool(glob.glob(os.path.join(R, 'fane', '*'))) or bool(re.search(r'fan[eé]', reg))
-    line('1 sources', not miss and fane, ('sans photo nommée : ' + ', '.join(miss) if miss else 'une photo nommée par coloris') + ('' if fane else ' ; aucune photo de fané'))
+    sys.path.insert(0, os.path.join(ROOT, 'fleur'))
+    import refqc
+    badq = []
+    for c in cws:
+        fi = (cp.get(c) or {}).get('fichier') if isinstance(cp.get(c), dict) else None
+        if fi and os.path.exists(os.path.join(R, fi)):
+            q = refqc.note(os.path.join(R, fi))
+            if q['verdict'] == 'ko': badq.append('%s (%s)' % (c, q['raisons'][0]))
+    line('1 sources', not miss and fane and not badq, ('sans photo nommée : ' + ', '.join(miss) if miss else 'une photo nommée par coloris') + ('' if fane else ' ; aucune photo de fané')
+         + (' ; photo à changer : ' + '; '.join(badq[:4]) if badq else ''))
+    # 2 references
+    import io, contextlib
+    with contextlib.redirect_stdout(io.StringIO()):
+        okr, totr, missr = refqc.couverture(sid)
+    line('2 references', totr and not missr, 'couverture par organe %d / %d' % (okr, totr) + (' ; manque : ' + ', '.join('%s %s' % (m[0], m[1]) for m in missr[:5]) if missr else ''))
+    # 3 cartes
+    cj = [js(p) or {} for p in glob.glob(os.path.join(R, 'cartes', '*', 'carte.json'))]
+    nv = {v: sum(1 for x in cj if x.get('kind') == 'photo' and x.get('vue') == v) for v in ('face', 'tq', 'profil')}
+    line('3 cartes', all(n >= 2 for n in nv.values()), 'photos cartographiées : ' + ', '.join('%s %d' % kv for kv in nv.items()) + ' (2 par vue au moins)')
     # 2 fiche
     f = js(os.path.join(ROOT, 'catalogue', 'serre', 'fiches', sid + '.json'))
     ft = json.dumps(f, ensure_ascii=False) if f else ''
@@ -139,18 +170,28 @@ def main():
         r = subprocess.run([sys.executable, os.path.join(ROOT, 'fleur', 'fiche.py'), 'check', sid, '--quiet'], capture_output=True, text=True, cwd=ROOT)
         chk = (r.stdout + r.stderr).strip()
     bad_f = bool(f) and ('NON VALIDE' in chk or '"valide": false' in chk)
-    line('2 fiche', f and struct and not bad_f, 'absente' if not f else ('structure des couches absente (insertion, profondeur_gorge)' if not struct else ('fiche.py check : non valide' if bad_f else 'valide, structure des couches présente')))
+    fm = bool(f) and bool((f.get('forme_mesuree') or {}).get('vues'))
+    line('4 fiche', f and struct and not bad_f and fm, 'absente' if not f else ('structure des couches absente (insertion, profondeur_gorge)' if not struct else ('fiche.py check : non valide' if bad_f else
+         ('valide, structure des couches et forme mesurée présentes' if fm else 'forme_mesuree absente (carte.py fiche)'))))
     # 3 piece, 4 grille
     code = ' '.join(txt(p) for p in glob.glob(os.path.join(ROOT, 'app', '*.js')))
     np_, ng = [], []
     for c in cws:
-        if not (glob.glob(os.path.join(R, 'apparence', c, c + '-*.json')) or glob.glob(os.path.join(R, 'apparence', '*', c + '-*.json'))):
+        pj = glob.glob(os.path.join(R, 'apparence', c, c + '-*.json')) or glob.glob(os.path.join(R, 'apparence', '*', c + '-*.json'))
+        pj = [x for x in pj if 'paire' not in os.path.basename(x)]
+        if not pj:
             np_.append(c)
+        else:
+            qs = [(js(x) or {}).get('controle') for x in pj]
+            if any(q is None for q in qs): np_.append(c + ' (mise à plat sans contrôle, à refaire)')
+            elif any(q['verdict'] == 'ko' for q in qs): np_.append(c + ' (contrôle ko)')
         g = js(os.path.join(R, 'apparence', 'grille-%s.json' % c)) or js(os.path.join(R, 'apparence', 'coloris', 'grille-%s.json' % c))
         if not g or g['c'][0][0] not in code or g['c'][-1][-1] not in code:
             ng.append(c)
-    line('3 piece', not np_, 'non mesurée : ' + ', '.join(np_) if np_ else 'mesurée sur chaque coloris')
-    line('4 grille', not ng, 'grille absente ou hors du code : ' + ', '.join(ng) if ng else 'une grille mesurée par coloris, dans le code')
+        elif not g.get('controle') or g['controle'].get('forcees'):
+            ng.append(c + (' (cartes forcées)' if g.get('controle') else ' (faite de cartes sans contrôle)'))
+    line('5 piece', not np_, 'non mesurée ou non contrôlée : ' + ', '.join(np_) if np_ else 'mesurée sur chaque coloris, contrôles ok')
+    line('6 grille', not ng, 'grille absente, hors du code ou non contrôlée : ' + ', '.join(ng) if ng else 'une grille mesurée par coloris, dans le code, cartes contrôlées')
     # 5 composantes
     h = js(os.path.join(R, 'coeur.json')) or {}
     bad, nm = [], 0
@@ -172,12 +213,18 @@ def main():
         miss = [c for c in cws if c not in ((h.get(k) or {}).get('photo') or {})]
         if h and miss:
             bad.append('%s non mesuré : %s' % (k, ', '.join(miss)))
-    line('5 composantes', len(h) >= 4 and nm > 0 and not bad, 'coeur.json absent' if not h else ('; '.join(bad[:6]) if bad else '%d composants, %d couleurs photo = code' % (len(h), nm)))
-    # 6 profondeur
+    line('7 composantes', len(h) >= 4 and nm > 0 and not bad, 'coeur.json absent' if not h else ('; '.join(bad[:6]) if bad else '%d composants, %d couleurs photo = code' % (len(h), nm)))
+    # 8 forme (and the light half of the same verdict for 12)
+    vd = js(os.path.join(R, 'cartes', 'verdict.json')) or {}
+    rd = vd.get('rendus') or {}
+    hf = ['%s : %s' % (n, ', '.join(v['hors_forme'])) for n, v in rd.items() if v['hors_forme']]
+    hl = ['%s : %s' % (n, ', '.join(v['hors_lumiere'])) for n, v in rd.items() if v['hors_lumiere']]
+    line('8 forme', rd and not hf, 'aucune carte de rendu jugée (carte.py rendu, puis carte.py verdict)' if not rd else ('hors plage des photos : ' + '; '.join(hf[:3]) if hf else '%d rendus dans la plage des photos' % len(rd)))
+    # 9 profondeur
     vt = glob.glob(os.path.join(R, 'volume', '*.txt'))
     VBAD = r'\| (trop (?:haut|bas|profond|plat)|écart [0-9.]+) \|'  # a verdict cell, not the column's label
     vb = [os.path.basename(p) + ' : ' + ', '.join(sorted(set(re.findall(VBAD, txt(p))))) for p in vt if re.search(VBAD, txt(p))]
-    line('6 profondeur', vt and not vb, 'aucune comparaison de profil' if not vt else ('; '.join(vb) if vb else 'profil conforme (%d vues)' % len(vt)))
+    line('9 profondeur', vt and not vb, 'aucune comparaison de profil' if not vt else ('; '.join(vb) if vb else 'profil conforme (%d vues)' % len(vt)))
     # 7, 8, 9 from the paire tables
     ko, mat, lum, nt = [], [], [], {}
     for c in cws:
@@ -195,25 +242,35 @@ def main():
             if m and float(m.group(1)) > 6:
                 lum.append('%s %s' % (c, m.group(1)))
     nopair = [c for c in cws if not nt[c]]
-    line('7 couleurs', not nopair and not ko, ('sans tableau photo | rendu : ' + ', '.join(nopair) + ' ; ' if nopair else '') + ('%d régions ko : ' % len(ko) + '; '.join(ko[:4]) if ko else ('' if nopair else 'aucune région ko')))
-    line('8 matiere', not nopair and not mat, ('sans tableau' if nopair else '') + (' ; %d régions hors 0.7-1.4 (brillance, grain) : ' % len(mat) + '; '.join(mat[:3]) if mat else ''))
-    line('9 lumiere', not nopair and not lum, ('sans tableau' if nopair else '') + (' ; écart de lumière le long de l\'axe > 6 L* : ' + '; '.join(lum) if lum else ''))
+    line('10 couleurs', not nopair and not ko, ('sans tableau photo | rendu : ' + ', '.join(nopair) + ' ; ' if nopair else '') + ('%d régions ko : ' % len(ko) + '; '.join(ko[:4]) if ko else ('' if nopair else 'aucune région ko')))
+    line('11 matiere', not nopair and not mat, ('sans tableau' if nopair else '') + (' ; %d régions hors 0.7-1.4 (brillance, grain) : ' % len(mat) + '; '.join(mat[:3]) if mat else ''))
+    line('12 lumiere', not nopair and not lum and rd and not hl, ('sans tableau' if nopair else '') + (' ; écart de lumière le long de l\'axe > 6 L* : ' + '; '.join(lum) if lum else '')
+         + (' ; aucune carte de rendu' if not rd else (' ; ombres et lumière hors plage : ' + '; '.join(hl[:3]) if hl else '')))
     # 10 stades
     st, fa = glob.glob(os.path.join(R, 'comparaison', 'stades*.jpg')), glob.glob(os.path.join(R, 'comparaison', 'fane*.jpg'))
-    line('10 stades', st and fa, ('' if st else 'planche des stades absente ; ') + ('' if fa else 'fané non comparé aux photos de fané'))
+    line('13 stades', st and fa, ('' if st else 'planche des stades absente ; ') + ('' if fa else 'fané non comparé aux photos de fané'))
     # 11 couches
     t = txt(os.path.join(R, 'banc3d.txt'))
     tot = [float(x) for x in re.findall(r'^total \S+ ([0-9.]+)', t, re.M)]
     seeds = max((len(l.split()) - 1 for l in t.splitlines() if re.match(r'^[0-9.]+:[0-9.]+', l)), default=0)
-    line('11 couches', tot and max(tot) == 0 and seeds >= 6, 'banc3d.txt absent (sortie.py --mesurer --banc)' if not t else 'totaux %s sur %d graines' % (tot, seeds))
+    line('14 couches', tot and max(tot) == 0 and seeds >= 6, 'banc3d.txt absent (sortie.py --mesurer --banc)' if not t else 'totaux %s sur %d graines' % (tot, seeds))
     # 12 trous
     tr = js(os.path.join(R, 'trous.json'))
-    line('12 trous', tr and tr['worst'] <= .5, 'trous.json absent (sortie.py --mesurer)' if not tr else 'pire case %.2f %%' % tr['worst'])
+    line('15 trous', tr and tr['worst'] <= .5, 'trous.json absent (sortie.py --mesurer)' if not tr else 'pire case %.2f %%' % tr['worst'])
     # 13 temoins
     tt = txt(os.path.join(R, 'temoins.txt'))
-    line('13 temoins', tt and 'DIFF' not in tt and 'pas de référence' not in tt, 'temoins.txt absent (sortie.py --mesurer)' if not tt else ('; '.join(l for l in tt.splitlines() if 'identique' not in l)[:160] or 'identiques au pixel'))
+    line('16 temoins', tt and 'DIFF' not in tt and 'pas de référence' not in tt, 'temoins.txt absent (sortie.py --mesurer)' if not tt else ('; '.join(l for l in tt.splitlines() if 'identique' not in l)[:160] or 'identiques au pixel'))
     # 14 plante
-    line('14 plante', glob.glob(os.path.join(R, 'comparaison', 'plante*.jpg')), 'plante non comparée' if not glob.glob(os.path.join(R, 'comparaison', 'plante*.jpg')) else 'plante comparée')
+    line('17 plante', glob.glob(os.path.join(R, 'comparaison', 'plante*.jpg')), 'plante non comparée' if not glob.glob(os.path.join(R, 'comparaison', 'plante*.jpg')) else 'plante comparée')
+    # 18 revue: a fresh judge on the cropped pairs (§11.4), newer than the last render of the sort, and the owner's gates
+    jg = js(os.path.join(R, 'revue', 'juge.json')) or {}
+    last = max([os.path.getmtime(x) for x in glob.glob(os.path.join(R, 'comparaison', '*.jpg'))] or [0])
+    jt = os.path.getmtime(os.path.join(R, 'revue', 'juge.json')) if jg else 0
+    pt = js(os.path.join(R, 'portes.json')) or {}
+    pok = all((pt.get(k) or {}).get('verdict') == 'ok' for k in ('forme', 'gros-plan'))
+    line('18 revue', jg.get('verdict') == 'ok' and jt >= last and pok, ('pas de juge neuf (revue/juge.json)' if not jg else ('juge : ' + str(jg.get('verdict')) if jg.get('verdict') != 'ok' else ('juge plus ancien que les planches' if jt < last else 'juge ok')))
+         + ' ; portes du porteur : ' + (', '.join('%s %s' % (k, (pt.get(k) or {}).get('verdict', 'à faire')) for k in ('forme', 'gros-plan'))))
+    out.sort(key=lambda t: int(t[0].split()[0]))
     n = sum(0 if ok else 1 for _, ok, _ in out)
     print('Liste de sortie de %s (%s)' % (sid, ', '.join(cws)))
     for k, ok, why in out:
@@ -223,6 +280,10 @@ def main():
         import datetime
         json.dump(dict(sid=sid, cws=cws, quand=datetime.datetime.now().isoformat(timespec='seconds'), finie=n == 0,
                        points=[dict(k=k, ok=ok, why=why) for k, ok, why in out]), open(os.path.join(R, 'sortie.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+    if o.jusqua:
+        before = [k for k, ok, _ in out if int(k.split()[0]) < o.jusqua and not ok]
+        print('  porte de l\'étape %d : %s' % (o.jusqua, 'ouverte' if not before else 'FERMÉE, à finir avant : ' + ', '.join(before)))
+        sys.exit(0 if not before else 1)
     sys.exit(0 if n == 0 else 1)
 
 

@@ -281,27 +281,40 @@ Rappel de base : SVG natif seulement, ni 3D, ni image incorporée, ni ruban, ni 
     gardaient les anthères orange du lys oriental au lieu de leur brun chocolat, avaient un orange peint à la main et un revers gris. Leur
     profil n'avait pas été comparé, et il n'y avait aucune planche photo | rendu. Toute sorte suit donc les étapes ci-dessous, dans cet
     ordre, et chacune laisse sa preuve dans refcache/<sid>/.
-15.2 Les 14 points et leurs preuves, dans refcache/<sid>/. `python fleur/sortie.py <sid> --cws <coloris du catalogue>` les vérifie et dit
-    ce qui manque. Le labo (8805/labo/) en montre les voyants pour chaque sorte. La façon de tenir chaque point est au §16.
-    1. **Sources** : une photo nommée par coloris (coloris-photos.json), et des photos de fané.
-    2. **Fiche Opus** : elle est lue avant de dessiner, avec la structure des couches (insertion, décalage, profondeur de la gorge).
-    3. **Pièce** : mesurée sur la photo de chaque coloris (apparence.py piece, sorties nommées d'après le coloris).
-    4. **Grille** : une par coloris, en 18 × 72 cases (porteur 2026-10-19 : en 6 × 24, une tache ou un liseré disparaissent), utilisée
-       dans le code. Jamais une rampe à la main là où une photo existe. Les cartes .npy sont regardées en image avant la grille : une
-       exclusion par couleur trop large y découpe la pièce.
-    5. **Composantes du cœur** : chaque composant (anthère, pollen, filet, style, stigmate, gorge, taches) mesuré **sur la photo de
+15.2 Les 18 points et leurs preuves, dans l'ordre du travail, dans refcache/<sid>/ (14 points jusqu'au 2026-10-20, durcis ce jour-là, §18).
+    `python fleur/sortie.py <sid> --cws <coloris du catalogue>` les vérifie et dit ce qui manque ; `--jusqua N` est la porte de l'étape N
+    (elle reste fermée tant qu'un point d'avant manque). Le labo (8805/labo/) en montre les voyants pour chaque sorte. La façon de tenir
+    chaque point est au §16, l'outillage et les seuils au §18.
+    1. **Sources** : une photo nommée par coloris (coloris-photos.json), chacune passée par `refqc.py` (ni brûlée, ni sous 1200 px de
+       petit côté, nette), et des photos de fané.
+    2. **Références par organe** : `refqc.py couverture` complète : chaque organe de la fiche dans les vues et les stades qu'il demande
+       (§18.1), bonnes photos seulement.
+    3. **Cartes** : `carte.py` sur au moins 2 photos de chaque vue (face, trois-quarts, profil) : masque, profondeur, normales, pièces,
+       lumière (§18.2).
+    4. **Fiche Opus** : elle est lue avant de dessiner, avec la structure des couches (insertion, décalage, profondeur de la gorge) et
+       `forme_mesuree` (`carte.py fiche` : les plages des photos par vue, que le dessin doit tenir).
+    5. **Pièce** : mesurée sur la photo de chaque coloris (apparence.py piece, sorties nommées d'après le coloris), chaque mise à plat
+       avec son contrôle ok et son image de contrôle regardée (§18.3).
+    6. **Grille** : une par coloris, en 18 × 72 cases (porteur 2026-10-19 : en 6 × 24, une tache ou un liseré disparaissent), utilisée
+       dans le code, faite de mises à plat contrôlées, aucune forcée. Jamais une rampe à la main là où une photo existe.
+    7. **Composantes du cœur** : chaque composant (anthère, pollen, filet, style, stigmate, gorge, taches) mesuré **sur la photo de
        chaque coloris** (porteur 2026-10-19 : des filets verts sur un lys rouge), dans coeur.json, photo et code à ΔE2000 ≤ 6. Un
        coloris dont la photo montre une autre construction (un asiatique parmi les LA) garde sa propre forme, mesurée sur sa photo.
-    6. **Profondeur** : le profil comparé à angle égal (volume.py paire), verdicts ok.
-    7. **Couleurs** : une planche photo | rendu par coloris, au même angle, et les tableaux apparence.py paire sans région ko
-       (ΔE2000 > 6).
-    8. **Matière** : dans les mêmes tableaux, contraste et grain (rendu / photo) entre 0,7 et 1,4 dans chaque région.
-    9. **Lumière** : le long de l'axe et en travers, écart moyen de L* ≤ 6.
-    10. **Stades** : la planche du bouton au fané, et le fané comparé à des photos de fleurs fanées.
-    11. **Couches** : banc3d.txt, sur tous les stades, au moins 6 graines et les vues 0, 2 et 7, cœur compris, avec des totaux à 0.
-    12. **Trous** : trous.json, pire case ≤ 0,5 % (rien ne se voit à travers la fleur).
-    13. **Témoins** : temoins.txt, identiques au pixel.
-    14. **Plante** : tige, feuilles avec leur grille et boutons, comparés à une photo de la plante.
+    8. **Forme** : `carte.py verdict` : chaque carte de rendu dans la plage des photos de la même vue pour les mesures de forme (contour,
+       bords, anneaux, pièces, relief). C'est la porte de forme, avant toute couleur, et elle se montre avec la matière et les ombres.
+    9. **Profondeur** : le profil comparé à angle égal (volume.py paire), verdicts ok.
+    10. **Couleurs** : une planche photo | rendu par coloris, au même angle, la photo détourée sur le fond beige (§16.9), et les tableaux
+       apparence.py paire sans région ko (ΔE2000 > 6).
+    11. **Matière** : dans les mêmes tableaux, contraste et grain (rendu / photo) entre 0,7 et 1,4 dans chaque région.
+    12. **Lumière** : le long de l'axe et en travers, écart moyen de L* ≤ 6 ; et, dans le verdict des cartes, la part sombre, les creux,
+       les bords clairs, les poches et la lumière ajustée dans la plage des photos (§18.4).
+    13. **Stades** : la planche du bouton au fané, et le fané comparé à des photos de fleurs fanées.
+    14. **Couches** : banc3d.txt, sur tous les stades, au moins 6 graines et les vues 0, 2 et 7, cœur compris, avec des totaux à 0.
+    15. **Trous** : trous.json, pire case ≤ 0,5 % (rien ne se voit à travers la fleur).
+    16. **Témoins** : temoins.txt, identiques au pixel.
+    17. **Plante** : tige, feuilles avec leur grille et boutons, comparés à une photo de la plante.
+    18. **Revue** : revue/juge.json, un juge neuf sur les paires recadrées, verdict ok, plus récent que les planches ; et portes.json,
+       les portes du porteur (forme, gros plan) écrites « ok » quand il le dit.
 15.3 Une sorte n'est montrée comme finie, et n'est fusionnée, que quand `sortie.py` dit « finie ». Une étape faite sans sa preuve est une
     étape à refaire.
 15.4 Un chantier qui reprend fusionne d'abord main dans sa branche, pour avoir les outils et cette liste à jour, puis relit le §16. Un
@@ -352,3 +365,59 @@ Rappel de base : SVG natif seulement, ni 3D, ni image incorporée, ni ruban, ni 
     (étalonnage, mises à plat) vont à un agent Sonnet avec `coloris_cw.sh`. On lit peu d'images : les tableaux disent où regarder.
 17.3 Repères de coût mesurés : 15 à 20 M pour une sorte sur un moteur existant, 30 à 50 M pour une nouvelle construction, 1 à 1,5 M par
     coloris.
+
+## 18. L'outillage de mesure et les portes durcies (porteur, 2026-10-20, après la pivoine refusée)
+Le porteur : « ce process de mapping je le veux amélioré, je veux que tu utilises aussi des depthmaps et plus d'outils de mesure utiles sur
+les références […] un contrôle qualité durci pour chaque étape tout au long du process ». La pivoine refaite a été jugée à l'œil sur des
+vignettes. Mesurées après coup, ses trois défauts se lisaient en chiffres : bords clairs 2 à 4 fois trop rares, creux entre pétales 3 à
+10 fois trop rares, bords rangés en cercles (conc 0,65 à 0,75 contre 0,32 à 0,59 sur les photos), et un centre plus clair que le bord, là
+où les photos ont un creux. Les outils qui suivent rendent ces chiffres obligatoires à chaque étape. Ils tournent dans
+`vases5/.venv-depth`, sur le processeur, avec les modèles déjà téléchargés (SAM facebook/sam-vit-base, Depth Anything V2 base). Ce sont
+des tâches lourdes : une à la fois, jamais pendant un rendu Chrome.
+18.1 **Les références par organe** (`fleur/refqc.py`). Chaque photo est notée avant de servir : petit côté ≥ 1200 px, netteté de son
+    dixième le plus net ≥ 300 (un fond flou ne la pénalise pas), part brûlée du centre ≤ 10 % (§16.1), noirs écrasés ≤ 15 %. Le
+    registre `refcache/<sid>/refs-organes.json` range les photos par organe de la fiche, vue et stade (`refqc.py inscrire`), et
+    `refqc.py couverture` dit ce qui manque. Les besoins : la fleur de face, de trois-quarts et de profil (2 chacune), de dos, entrouverte,
+    en déclin et fanée (2), sur fond uni (2) ; chaque pétale en gros plan (2), en contre-jour et détaché ; le cœur en gros plan (2) ;
+    le calice et la bractée de dos ; le bouton de profil (2) ; la tige entière (2) et en gros plan ; la feuille dessus (2), dessous et
+    son attache. La liste des cases vides est le cahier de la recherche suivante (agent sans navigateur, Commons). Constat du jour sur la
+    pivoine : ses photos de coloris étaient des vignettes de 1280 px (petit côté 853 à 1002 px), et la photo de mesure du rose comme
+    celle du fuchsia étaient brûlées (11 à 21 % du centre) : à remplacer.
+18.2 **La carte d'une photo** (`fleur/carte.py photo <img> <cx,cy,r> --out refcache/<sid>/cartes/<nom> --vue face|tq|profil`). La
+    fleur est détourée par SAM (une boîte et des points dedans), ramenée à un rayon de 256 px, sa clarté divisée par son niveau éclairé.
+    La carte donne :
+    - le contour (rondeur, lobes, rapport largeur sur hauteur) ;
+    - les tons (part sombre, creux entre pétales, profil de clarté du centre au bord) ;
+    - les bords (longueur, bords clairs, taille des plages lisses, ordre en cercles, couches traversées le long d'un rayon, pétales vus
+      par anneau) ;
+    - le relief, par la carte de profondeur (hauteur par anneau, froissé, poches, part des normales de face, obliques et de chant) ;
+    - la lumière, ajustée sur la fleur : direction, ambiante a, directe b, assombrissement des poches c ;
+    - les pièces, découpées par SAM : nombre, aires, allongement, part posée en cercle, nombre par anneau.
+
+    Le rendu se cartographie de la même façon (`carte.py rendu`), au même estimateur : les deux se comparent. `carte.py verdict <sid>`
+    juge chaque rendu contre les photos de la même vue (plage des photos élargie de 25 %), `carte.py fiche <sid>` écrit ces plages dans
+    la fiche (`forme_mesuree`). L'image `carte.jpg` (détourage, profondeur, normales, sombres et poches, pièces, bords et bords clairs) se
+    regarde avant de croire les chiffres.
+18.3 **La mise à plat d'une pièce** (`apparence.py piece`). Trois améliorations, et un contrôle :
+    - `--masque` prend le masque de `fleur/pmasque.py` : SAM, guidé par des points sur la nervure et hors des bords. GrabCut et le tri
+      par couleur collaient une voisine de même teinte (garde framboise : 6,8 % de cases étrangères, un pétaloïde pâle à sa base).
+    - `--carte <dossier de carte.py>` suit la longueur en 3D : une pièce penchée n'est plus écrasée par la perspective.
+    - `--albedo` (avec `--carte`) retire l'ombre de forme par les normales et la lumière ajustée : la grille décrit le tissu, pas
+      l'éclairage de la photo.
+    - Chaque mise à plat a son contrôle (`controle` dans le .json) et son image `<base>-controle.jpg` (la pièce, son masque en vert, sa
+      nervure en rouge, la carte à plat). Elle est refusée quand la carte couvre moins de 60 %, quand la photo est brûlée sur plus de
+      10 % de la pièce, quand les noirs sont écrasés sur plus de 15 %, quand plus de 35 % des rangs sortent du contour lissé, quand moins
+      de 80 % des rangs sont présents, quand la pièce touche le bord du cadre sur plus de 25 % des rangs, ou quand plus de 4 % des cases
+      sont étrangères à leur rang (ΔE > 18). `apparence.py grille` refuse une carte en échec (`--force` seulement en l'écrivant dans
+      l'ETAT) et signale les cartes anciennes sans contrôle, à refaire.
+18.4 **La lumière et l'ombre entre les calques** (`app/y3-occ.js`, dans la branche ch/pivoine jusqu'à sa fusion, à la demande : `svDraw(..., {occ: true})`). Pour chaque sommet de
+    chaque pièce, sur la face vue, le moteur calcule la part de ciel que les autres pièces laissent passer (des rayons sur l'hémisphère de
+    la normale, contre le nuage des sommets voisins) et la part de lumière directe (des rayons vers la lampe : l'ombre portée). La
+    matière les lit : l'ambiante et le ciel par la première, la directe, le reflet et la lumière qui traverse par la seconde, aussi bien
+    dans les lavis (`svShade`) que dans la matière fine (`svFine`). Avant cela, la seule occlusion était le pied de chaque pièce : un
+    pétale au fond du cœur était éclairé comme un pétale du dessus. Sans la clé, rien ne change (témoins identiques). Ses réglages se
+    tiennent par les chiffres de la carte du rendu (creux, poches, lumière c) contre ceux des photos, jamais à l'œil.
+18.5 **Les portes**. Avant de commencer l'étape N, la session lance `sortie.py <sid> --jusqua N`. Si la porte est fermée, on finit ce qui
+    manque avant. Les portes du porteur (forme, puis gros plan) ne s'ouvrent que sur une planche qui porte ses chiffres (verdict des
+    cartes, paires) et le verdict d'un juge neuf. Ce que le porteur valide s'écrit dans `refcache/<sid>/portes.json` avec la date et ses
+    mots.
