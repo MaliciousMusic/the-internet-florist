@@ -76,6 +76,27 @@ Une session neuve, des étapes de 1 à 2 h, chacune finie par une planche.
 6. Les stades (du bouton au fané, comparés aux photos de fané), le banc, les trous, les témoins, la plante : `sortie.py` jusqu'à
    « finie ».
 
+## Avancement de la refonte
+
+**Étape 1 (sources de forme), commencée le 2026-10-20.** Huit photos Commons sont dans `refcache/pivoine-herbacee-double/forme/`
+(`f1` à `f8`, avec leur titre dans `sources.txt` et la planche `planche.jpg`). Elles servent à la mesure locale, jamais à la publication.
+- **f1, f2** : Sarah Bernhardt, type rose, vue de face et de trois-quarts.
+- **f3** : « Félix Crousse » d'après son titre, mais d'un rose vif : nom douteux, à vérifier avant de mesurer.
+- **f4** : Félix Crousse rouge, gardes ouvertes, cœur plein.
+- **f6** : Duchesse de Nemours, double blanche.
+- **f5** : une forme couronne à étamines jaunes ; ce n'est sans doute pas Duchesse de Nemours, **à écarter**.
+- **f7** : Monsieur Jules Élie, type bombe.
+- **f8** : un pétale en gros plan sous la pluie, qui montre la feuille fine, satinée et nervurée.
+
+**Constat qui oriente la construction** (f1, f2, f4, f7 et le gros plan de Félix Crousse, `cw/felix-crousse_2.jpg`) : les pétales du cœur
+ne sont pas des languettes étroites. Ce sont de **larges feuilles minces, plissées et cannelées**, souvent vues par la tranche comme des
+rubans ondulés. Elles se recouvrent sans ordre, avec des **creux très sombres** entre elles et un **bord clair et fin** qui attrape la lumière.
+Le cœur se construit donc avec peu de grandes feuilles froissées, de 25 à 40 environ, chacune avec ses plis propres (des cannelures
+dans le sens de la longueur et un bord ondulé). Pas avec beaucoup de petites écailles. L'occlusion entre feuilles fait le volume.
+
+Reste à faire pour l'étape 1 : un profil strict d'une pleine double (p096 est une framboise de profil, déjà mesurée : H/L 0,60) et un pétale
+détaché en contre-jour.
+
 ## Coût
 
 C'est une nouvelle construction : 30 à 50 M et 1 à 1,5 jour (§17.3), dans une session neuve par sorte (§17.2). Les mises à plat et
