@@ -1,7 +1,7 @@
 """apparence.py: the appearance of one petal or tepal, measured in its own frame (along v from base to tip, across u from edge to edge), on a
 photograph and on a render alike, so that the two compare region by region (BONNES-PRATIQUES §11: the bar is the photo). No model, no browser.
 
-  python fleur/apparence.py piece <img> <frame> [--out <base>] [--bg photo|render]
+  python fleur/apparence.py piece <img> <frame> [--out <base>] [--bg photo|render] [--masque m.png] [--carte dir [--albedo]]
   python fleur/apparence.py compare <photo.json> <render.json> [--out <base>]
   python fleur/apparence.py paire <photo> <frame> <render> <frame> --out <base>      (both pieces, then compare)
   python fleur/apparence.py grille <out.json> <map.npy>...                           (the measured colour grid of a piece)
@@ -137,8 +137,9 @@ def mask_of(rgb, pts, w, kind):
     return out
 
 
-def sample_piece(rgb, msk, pts, w):
-    """the piece in its own frame: an NV x NU map of RGB (NaN outside), u from its own left edge to its right edge"""
+def sample_piece(rgb, msk, pts, w, zf=None):
+    """the piece in its own frame: an NV x NU map of RGB (NaN outside), u from its own left edge to its right edge. With zf (the depth in
+    pixels at image points, from carte.py), u and v follow the piece's length in 3D: a part tilted away is not squeezed (foreshortening)"""
     _, P0, _ = curve(pts, 200)
     L = float(np.linalg.norm(np.diff(P0, axis=0), axis=1).sum())
     NV = int(np.clip(round(L), 40, 600))
@@ -176,6 +177,7 @@ def sample_piece(rgb, msk, pts, w):
     # leave it (a run leaking into a neighbour, a bite of an overlapping piece) are dropped and the fit made again, three times; the map is then
     # resampled between the smooth edges, and a cell outside the piece's mask (a hidden part, a hole) stays empty, never stretched
     good = ~np.isnan(ab[:, 0])
+    rej = np.zeros(NV, bool)
     if good.sum() > 5:
         sig = max(2.0, NV / 25)
         for q in (0, 1):
@@ -190,6 +192,7 @@ def sample_piece(rgb, msk, pts, w):
                 if nk.sum() < max(6, good.sum() * .4) or (nk == keep).all():
                     break
                 keep = nk
+            rej |= good & ~keep
             ab[:, q] = np.where(good | ((np.arange(NV) > np.nonzero(good)[0][0]) & (np.arange(NV) < np.nonzero(good)[0][-1])), sm, np.nan)
     mid = np.full((NV, 2), np.nan)
     for j in range(NV):
@@ -200,10 +203,23 @@ def sample_piece(rgb, msk, pts, w):
         mid[j] = np.interp(cm, np.arange(NW), X[j]), np.interp(cm, np.arange(NW), Y[j])
         hw[j] = (b - a) / (NW - 1) * 2.5 / 2
         t = np.linspace(a, b, NU)
+        if zf is not None:  # across: equal steps of 3D length from edge to edge
+            cc = np.linspace(a, b, max(8, int(b - a) + 1)); xs = np.interp(cc, np.arange(NW), X[j]); ys = np.interp(cc, np.arange(NW), Y[j]); zs = zf(xs, ys)
+            sl = np.concatenate([[0], np.cumsum(np.sqrt(np.diff(xs) ** 2 + np.diff(ys) ** 2 + np.diff(zs) ** 2))])
+            if sl[-1] > 0: t = np.interp(np.linspace(0, sl[-1], NU), sl, cc)
         inside = np.interp(t, np.arange(NW), mk[j].astype(float)) > .5
         for k in range(3):
             out[j, :, k] = np.where(inside, np.interp(t, np.arange(NW), ch[k][j]), np.nan)
-    return out, dict(NV=NV, NU=NU, len_px=float(L), w_px=float(w), width_profile=[round(float(x), 3) for x in hw[::max(1, NV // 20)]]), mid, hw
+    meta = dict(NV=NV, NU=NU, len_px=float(L), w_px=float(w), width_profile=[round(float(x), 3) for x in hw[::max(1, NV // 20)]],
+                bord_rejets=round(float(rej.sum() / max(1, good.sum())), 3), rangs=round(float(good.mean()), 3),
+                plein_cadre=round(float((hw[good] > .98 * 1.25).mean()) if good.any() else 0, 3))
+    if zf is not None and (~np.isnan(mid[:, 0])).sum() > 5:  # along: rows at equal steps of 3D length of the midrib
+        ok = ~np.isnan(mid[:, 0]); idx = np.nonzero(ok)[0]; zm = zf(mid[idx, 0], mid[idx, 1])
+        sl = np.concatenate([[0], np.cumsum(np.sqrt(np.diff(mid[idx, 0]) ** 2 + np.diff(mid[idx, 1]) ** 2 + np.diff(zm) ** 2))])
+        jj = np.round(np.interp(np.linspace(0, sl[-1], len(idx)), sl, idx)).astype(int)
+        lo = idx[0]; out2 = np.full_like(out, np.nan); out2[lo:lo + len(jj)] = out[jj]; out = out2
+        meta['len_3d_px'] = round(float(sl[-1]), 1); meta['raccourci'] = round(float(sl[-1] / max(1, np.linalg.norm(np.diff(mid[idx], axis=0), axis=1).sum())), 3)
+    return out, meta, mid, hw
 
 
 def refit(pts, w, mid, hw):
@@ -289,23 +305,108 @@ def measure(rgbmap, meta):
                 couleur=spot_col), lumiere=dict(axe=along, travers=across), marge=margin, couverture=round(float(ok.mean()), 3))
 
 
-def piece(img, frame, kind, out=None, exclure=None):
+def relief_of(carte, shape):
+    """the depth of carte.py (a crop of the photo, scaled) brought back to the photo's pixels, in pixels (the flower's relief about as deep
+    as 0.9 of its radius, as carte.py's normals), with the light fitted there: (zf(x, y), z map, light dict)"""
+    cr = json.load(open(os.path.join(carte, 'crop.json'), encoding='utf-8')); cj = json.load(open(os.path.join(carte, 'carte.json'), encoding='utf-8'))
+    d = np.load(os.path.join(carte, 'depth.npy')); mk = np.asarray(Image.open(os.path.join(carte, 'mask.png'))) > 127
+    lo, hi = np.percentile(d[mk], [2, 98]); z = np.clip((d - lo) / (hi - lo + 1e-9), 0, 1.2) * .9 * cr['R'] / cr['s']
+    H, W = shape
+    def zf(x, y):
+        return ndi.map_coordinates(z, [(np.asarray(y, float) - cr['y0']) * cr['s'], (np.asarray(x, float) - cr['x0']) * cr['s']], order=1, mode='nearest')
+    yy, xx = np.mgrid[:H, :W]
+    zfull = zf(xx.ravel(), yy.ravel()).reshape(H, W)
+    return zf, zfull, cj.get('light')
+
+
+def albedo(rgb, msk, zfull, light):
+    """the colour less the form's shading: linear RGB divided by a + b max(0, n.L) (the light fitted by carte.py on the same photo), the
+    shading brought to 1 on the piece's lit part (its 90th centile) and kept within .35-1.6 (a deep shade is not made up)"""
+    zs = ndi.gaussian_filter(zfull, 2.0); gy, gx = np.gradient(zs); n = np.dstack([-gx, gy, np.ones_like(zs)]); n /= np.linalg.norm(n, axis=2, keepdims=True)
+    Ld = np.array(light['dir']); S = light['a'] + light['b'] * np.maximum(0, n @ Ld)
+    S = S / max(1e-3, np.percentile(S[msk], 90)); S = np.clip(S, .35, 1.6)
+    lin = np.where(rgb > .04045, ((rgb + .055) / 1.055) ** 2.4, rgb / 12.92) / S[..., None]
+    lin = np.clip(lin, 0, 1)
+    return np.where(lin > .0031308, 1.055 * lin ** (1 / 2.4) - .055, 12.92 * lin)
+
+
+QC = dict(couverture=.6, brule=.10, ecrase=.15, bord_rejets=.35, rangs=.8, plein_cadre=.25, intrus=.04)
+def controle(rgb, msk, m, meta):
+    """hard checks of one flattened piece (BONNES-PRATIQUES §18.3): the map is refused when one of them fails"""
+    band = msk
+    q = dict(couverture=float((~np.isnan(m[:, :, 0])).mean()), brule=float((rgb[band] >= 253 / 255).any(1).mean()) if band.any() else 1.0,
+             ecrase=float((color.rgb2lab(rgb[band][None])[0][:, 0] < 8).mean()) if band.any() else 1.0,
+             bord_rejets=meta.get('bord_rejets', 0), rangs=meta.get('rangs', 0), plein_cadre=meta.get('plein_cadre', 0))
+    L = color.rgb2lab(rgb)[:, :, 0]; lap = ndi.laplace(ndi.gaussian_filter(L, .7)); q['nettete'] = round(float(np.std(lap[band])), 2) if band.any() else 0
+    ok = ~np.isnan(m[:, :, 0]); lm = color.rgb2lab(np.nan_to_num(m)); far = np.zeros(ok.shape, bool)
+    for j in range(ok.shape[0]):  # an intruder: a cell far from its row's median (a neighbour of another tone glued to the piece)
+        if ok[j].sum() > 4: far[j] = ok[j] & (np.linalg.norm(lm[j] - np.median(lm[j][ok[j]], 0), axis=1) > 18)
+    q['intrus'] = float(far.sum() / max(1, ok.sum()))
+    why = []
+    if q['couverture'] < QC['couverture']: why.append('pièce couverte à %d %% (< 60 %%) : cadre ou masque à refaire' % (q['couverture'] * 100))
+    if q['brule'] > QC['brule']: why.append('photo brûlée sur %d %% de la pièce (§16.1)' % (q['brule'] * 100))
+    if q['ecrase'] > QC['ecrase']: why.append('noirs écrasés sur %d %%' % (q['ecrase'] * 100))
+    if q['bord_rejets'] > QC['bord_rejets']: why.append('bords irréguliers : %d %% des rangs hors du contour lissé (voisine collée ou morsure)' % (q['bord_rejets'] * 100))
+    if q['rangs'] < QC['rangs']: why.append('pièce tronquée : %d %% des rangs seulement' % (q['rangs'] * 100))
+    if q['intrus'] > QC['intrus']: why.append('%d %% de cases étrangères à leur rang (ΔE > 18) : une voisine est collée à la pièce' % (q['intrus'] * 100))
+    if q['plein_cadre'] > QC['plein_cadre']: why.append('la pièce touche le bord du cadre sur %d %% des rangs : demi-largeur trop petite' % (q['plein_cadre'] * 100))
+    q = {k: (round(v, 3) if isinstance(v, float) else v) for k, v in q.items()}
+    q['verdict'] = 'ko' if why else 'ok'; q['raisons'] = why
+    return q
+
+
+def control_image(rgb, msk, pts, m, q, path):
+    """what the owner and the next session look at: the photo's piece with its mask (green) and frame (red), and its flat map"""
+    from PIL import ImageDraw
+    _, P, _ = curve(pts, 50); ys, xs = np.nonzero(msk)
+    if not len(xs): return
+    x0, y0 = max(0, xs.min() - 20), max(0, ys.min() - 20); x1, y1 = min(rgb.shape[1], xs.max() + 20), min(rgb.shape[0], ys.max() + 20)
+    a = (np.clip(rgb[y0:y1, x0:x1], 0, 1) * 255).astype(np.uint8).copy(); ed = ndi.binary_dilation(msk, iterations=1) & ~msk
+    a[ed[y0:y1, x0:x1]] = (0, 220, 0); im = Image.fromarray(a); dr = ImageDraw.Draw(im)
+    dr.line([(float(p[0] - x0), float(p[1] - y0)) for p in P], fill=(230, 0, 0), width=2)
+    H = 360; im = im.resize((max(8, int(im.width * H / im.height)), H))
+    mp = np.where(np.isnan(m), .92, m); mi = Image.fromarray((np.clip(mp, 0, 1) * 255).astype(np.uint8)).transpose(Image.FLIP_TOP_BOTTOM)
+    mi = mi.resize((max(8, int(mi.width * H / mi.height)), H))
+    out = Image.new('RGB', (im.width + mi.width + 30, H + 46), (235, 232, 226)); out.paste(im, (0, 0)); out.paste(mi, (im.width + 30, 0))
+    t = ImageDraw.Draw(out)
+    t.text((6, H + 4), '%s  couverture %.2f  brule %.2f  bords %.2f  rangs %.2f  intrus %.3f  nettete %.1f' % (q['verdict'].upper(), q['couverture'], q['brule'], q['bord_rejets'], q['rangs'], q['intrus'], q['nettete']), fill=(0, 0, 0))
+    if q['raisons']: t.text((6, H + 24), ' ; '.join(q['raisons'])[:160].encode('latin-1', 'replace').decode('latin-1'), fill=(180, 0, 0))
+    out.save(path, quality=88)
+
+
+def piece(img, frame, kind, out=None, exclure=None, masque=None, carte=None, alb=False):
     rgb = load(img)
     pts, w = parse_frame(frame)
-    msk = mask_of(rgb, pts, w, kind)
+    zf = zfull = light = None
+    if carte:
+        zf, zfull, light = relief_of(carte, rgb.shape[:2])
+    if masque:  # the piece's mask from fleur/pmasque.py (SAM prompted by the frame): only its part that holds the midrib
+        msk = np.asarray(Image.open(masque).convert('L')) > 127
+        lb, n_ = ndi.label(msk)
+        if n_ > 1:
+            _, Pa, _ = curve(pts, 30)
+            ids = [lb[int(p[1]), int(p[0])] for p in Pa[5:25] if 0 <= int(p[1]) < lb.shape[0] and 0 <= int(p[0]) < lb.shape[1]]
+            ids = [i for i in ids if i]; msk = lb == (np.bincount(ids).argmax() if ids else 1)
+    else:
+        msk = mask_of(rgb, pts, w, kind)
+    if alb and light is not None:
+        rgb = albedo(rgb, msk, zfull, light)
     if exclure:  # another component lying over the piece (filaments, an anther): its colours are cut out, it has its own sheet
         lab = color.rgb2lab(rgb)
         for h, de in exclure:
             c = color.rgb2lab(np.array([[[int(h[1:3], 16), int(h[3:5], 16), int(h[5:7], 16)]]]) / 255.0)[0, 0]
             msk &= np.linalg.norm(lab - c, axis=2) >= de
-    m, meta, mid, hw = sample_piece(rgb, msk, pts, w)
+    m, meta, mid, hw = sample_piece(rgb, msk, pts, w, zf)
     pts2, w2 = refit(pts, w, mid, hw)  # second pass on the corrected axis (the mask is kept: it does not depend much on the axis)
-    m, meta, mid, hw = sample_piece(rgb, msk, pts2, w2)
+    m, meta, mid, hw = sample_piece(rgb, msk, pts2, w2, zf)
     meta['frame_fit'] = ';'.join('%.0f,%.0f' % tuple(p) for p in pts2) + ';%.0f' % w2
     meta.update(img=os.path.basename(img), frame=frame, kind=kind)
+    meta.update(masque='sam' if masque else 'grabcut', relief=bool(carte), albedo=bool(alb and light is not None))
     r = measure(m, meta)
+    r['controle'] = controle(rgb, msk, m, meta)
     if out:
         np.save(out + '.npy', m)
+        control_image(rgb, msk, pts2, m, r['controle'], out + '-controle.jpg')
         with open(out + '.json', 'w', encoding='utf-8', newline='\n') as f:
             json.dump(r, f, ensure_ascii=False, indent=1)
     return r, m
@@ -462,6 +563,9 @@ def main():
     p.add_argument('--out')
     p.add_argument('--bg', choices=['photo', 'render'], default='photo')
     p.add_argument('--exclure', help='"#hex:dE,#hex:dE": colours of another component over the piece, cut out (CIE76 under dE)')
+    p.add_argument('--masque', help='the piece mask from fleur/pmasque.py (SAM), instead of GrabCut and the colour gate')
+    p.add_argument('--carte', help='the carte.py folder of the same photo: u and v follow the 3D length (foreshortening)')
+    p.add_argument('--albedo', action='store_true', help='with --carte: the form shading divided out (the tissue colour, not the light)')
     c = s.add_parser('compare')
     c.add_argument('photo')
     c.add_argument('render')
@@ -472,6 +576,7 @@ def main():
     g.add_argument('--nu', type=int, default=18)
     g.add_argument('--nv', type=int, default=72)
     g.add_argument('--motif', action='store_true', help='a patterned colourway (blotch, dark heart, dense flecks): the dark samples are pigment, kept')
+    g.add_argument('--force', action='store_true', help='keep a map whose control failed (written in the grid as forced)')
     q = s.add_parser('paire')
     q.add_argument('photo')
     q.add_argument('pframe')
@@ -481,10 +586,19 @@ def main():
     o = a.parse_args()
     if o.cmd == 'piece':
         ex = [(x.split(':')[0], float(x.split(':')[1])) for x in o.exclure.split(',')] if o.exclure else None
-        r, _ = piece(o.img, o.frame, o.bg, o.out, ex)
-        print(json.dumps({k: r[k] for k in ('nervures', 'taches', 'marge', 'couverture')}, ensure_ascii=False))
+        r, _ = piece(o.img, o.frame, o.bg, o.out, ex, o.masque, o.carte, o.albedo)
+        print(json.dumps({k: r[k] for k in ('nervures', 'taches', 'marge', 'couverture', 'controle')}, ensure_ascii=False))
     elif o.cmd == 'grille':
+        bad = []
+        for x in o.maps:  # a map whose control failed is refused (BONNES-PRATIQUES §18.3); an old map without control is reported
+            j = x[:-4] + '.json'; q = json.load(open(j, encoding='utf-8')).get('controle') if os.path.exists(j) else None
+            if q is None: print('sans contrôle (ancienne mise à plat, à refaire) :', x)
+            elif q['verdict'] == 'ko': bad.append((x, q['raisons']))
+        if bad and not o.force:
+            for x, why in bad: print('REFUSÉE', x, ':', ' ; '.join(why))
+            sys.exit("grille non écrite : %d carte(s) en échec (refaire la mise à plat, ou --force en le notant dans l'ETAT)" % len(bad))
         r = grille([np.load(x) for x in o.maps], o.nu, o.nv, o.motif)
+        r['controle'] = {'cartes': len(o.maps), 'forcees': [x for x, _ in bad]}
         with open(o.out, 'w', encoding='utf-8', newline=chr(10)) as f:
             json.dump(r, f, ensure_ascii=False)
         print('grid %dx%d from %d map(s): js {nu:%d,nv:%d,c:%s}' % (r['nv'], r['nu'], r['photos'], r['nu'], r['nv'], json.dumps(sum(r['c'], []))[:120] + '...'))
