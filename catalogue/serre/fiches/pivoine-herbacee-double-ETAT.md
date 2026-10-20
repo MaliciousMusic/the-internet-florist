@@ -194,3 +194,23 @@ l'étalonnage peuvent aller à un agent Sonnet.
 - **Références par organe** : 23 photos d'organes inscrites (refcache/.../organes/), couverture 23/42. Pour couvrir plusieurs vues,
   une photo de bouton peut maintenant être inscrite sous plusieurs vues jointes par « + » (refqc).
   - Sur Commons, aucune photo utilisable du dessous de la feuille : il faudra une autre source.
+
+### Références de forme (forme2, 2026-10-20)
+- 43 photos r01 à r43, de Commons. Sources, auteurs et licences sont dans `forme2/sources.txt`. Toutes sont inscrites au registre
+  par organe, vue et stade.
+- **Couverture : 36/42.** Les notes refqc ont écarté sept photos : r01 et r19 brûlées, r13 et r24 floues, r35 brûlée, r37 aux noirs
+  écrasés. r42 (« The Studio Rose ») reste hors mesure : il faut d'abord vérifier que c'est bien une pivoine.
+- **Photos de coloris en -hd** : `cw/<slug>_N-hd.jpg`, 30 fichiers, dont le petit côté va de 1200 à 3600 px. Sept sont brûlées :
+  kansas_0 et kansas_1, pamyati_0, pamyati_1 et pamyati_2, sarah-bernhardt_0 (le rapport en donne un de plus). L'agent a trouvé des
+  remplaçantes du même cultivar qui passent refqc :
+  - Kansas : 'Kansas' 2014 (Wild), 'Kansas' 14 ;
+  - Pamyati Akademika Kurchatova : 06 et 05 ;
+  - Sarah Bernhardt : la série 2021 (51236202933, 51236203198), dont la couleur reste à vérifier.
+  Elles sont à reprendre dans `cw/` sous `-hd2`, quand on mesurera ces coloris.
+- **Cases introuvables sur Commons** : pétale de garde et pétale du cœur en contre-jour, puis détachés (4 cases) ; dessous de la
+  feuille ; un second déclin de pleine double.
+  - **Question au porteur** : peut-on chercher ces 6 photos ailleurs que sur Commons, ou les prendre soi-même (un pétale tenu
+    devant une fenêtre suffit) ? Ou bien la porte 2 s'ouvre-t-elle avec ces cases notées « introuvables » ?
+  - **Proposition** : les noter introuvables dans le registre, avec la recherche faite. La translucidité se règle alors sur r14 et
+    r41, gros plans de gardes où la lumière traverse les bords. Le dessous de la feuille se règle sur o15 et o17 (nervures en relief,
+    face mate). À reprendre dès qu'une photo arrive.
