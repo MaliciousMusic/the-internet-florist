@@ -150,6 +150,35 @@ D. **Question au porteur** : pour le cœur d'une pleine double, garder la simula
 
 
 
+## Outillage refait avant la reprise (porteur, 2026-10-20 : « GO sérieusement », puis les outils à améliorer)
+
+Les outils sont sur main (6f307a0) et fusionnés ici. Ils sont décrits au §18 de BONNES-PRATIQUES. La liste de sortie compte maintenant
+18 points ; `sortie.py --jusqua N` est la porte de chaque étape.
+- **Carte de chaque photo et de chaque rendu** (`fleur/carte.py`) : détourage SAM, profondeur, normales, creux, bords clairs, pièces,
+  lumière ajustée. Les cartes sont dans `refcache/.../cartes/` : f1, f4, f7, fc2, sb0, cin1, et les rendus refusés v1_*, v2_*, t_occ*.
+  `carte.py verdict` rejette les deux têtes refusées : l'ordre en cercles (conc 0,65 à 0,75 contre 0,32 à 0,59), le centre en dôme
+  (zc−ze), et peu de creux et de bords clairs (ridge 0,013 à 0,054 contre 0,045 à 0,11). Le jugement du porteur est retrouvé en chiffres.
+- **Notation des références** (`fleur/refqc.py`) :
+  - les photos de coloris sont des vignettes de 853 à 1002 px de petit côté ; l'agent les retélécharge en `-hd` ;
+  - la photo de mesure du rose (sarah-bernhardt_0) et celle du fuchsia (pamyati-…_2) sont brûlées, de 11 à 21 % du centre : à changer (§16.1) ;
+  - un agent rassemble les références de forme manquantes dans `refcache/.../forme2/` (profil strict, cœur en gros plan, pétale en
+    contre-jour, fond uni, fané d'une double, bouton).
+- **Mises à plat** : toutes les anciennes sont sans contrôle, donc à refaire avec `pmasque.py`, `--masque` et `--carte`. La garde g1
+  de la framboise était polluée par un pétaloïde pâle collé par GrabCut (6,8 % de cases étrangères). Avec SAM, il en reste 2,1 % et le
+  contrôle passe. Les cadres posés à l'œil se vérifient sur l'image de contrôle.
+- **Ombre entre les calques** (`app/y3-occ.js`, `&peoocc=1`) : les creux et les ombres portées apparaissent. Elle est encore trop forte
+  sur les gardes ; elle se règle sur les chiffres de la carte du rendu (hollow, cav, light_c), sur la nouvelle tête.
+
+Le vrai état de la sorte d'après `sortie.py` : 16 points manquent sur 18 (seuls la profondeur et les témoins passent).
+
+**Reprise, dans l'ordre des portes :**
+1. Références (points 1 et 2) : photos -hd, photos de forme de l'agent, inscription par organe (`refqc.py inscrire`), couverture complète.
+2. Cartes (point 3) : au moins 2 photos de face, de trois-quarts et de profil. Puis `carte.py fiche` (point 4) : les plages que la
+   forme doit tenir.
+3. Pétale seul à D 900, contre le gros plan et le pétale en contre-jour, avec la matière fine et l'occlusion.
+4. Assemblage : `carte.py verdict` dans la plage sur chaque vue, avant toute planche. Puis paires recadrées, juge neuf, et porte 1
+   présentée au porteur avec ses chiffres.
+
 ## Coût
 
 C'est une nouvelle construction : 30 à 50 M et 1 à 1,5 jour (§17.3), dans une session neuve par sorte (§17.2). Les mises à plat et
