@@ -110,7 +110,45 @@ construction, et `&peov1=1` montre l'ancienne tête ouverte.
 - **Planche** : `fleur/out/pv2-cmp.jpg`, photos (Sarah Bernhardt de face et de trois-quarts, p096 de profil) à côté du rendu gris D 420.
   Silhouette proche ; centre encore morcelé vu de face ; matière plate (étape 4).
 
-**Porte 1 : en attente du porteur** (silhouette).
+**Porte 1 : refusée par le porteur (2026-10-20)** : « honnêtement c'est très mauvais […] cette fleur n'est vraiment pas réussie ».
+La construction en feuilles libres n'est plus active que par `&peov2=1`. Par défaut, la branche dessine l'ancienne tête.
+
+## Où le processus a cédé (diagnostic, 2026-10-20)
+
+1. **Aucune mesure de forme.** Le plan écrit le jour même demandait des sources de forme complètes (étape 1) et une fiche de forme mesurée
+   (étape 2) avant de construire. J'ai sauté l'étape 2 : élévations, longueurs, largeurs, cannelures et nombre de feuilles ont été choisis
+   à l'œil. C'est le défaut déjà refusé sur les crêtes-de-coq (« dessinées de mémoire »).
+2. **Je me suis validé moi-même** sur des vignettes de 420 px. Il n'y a eu ni paires recadrées région par région, ni juge neuf
+   (§11.2 et §11.4), et j'ai annoncé « une pleine double crédible ».
+3. **La porte de forme en gris plat était un mauvais choix pour cette fleur.** La pivoine pleine se lit par ses ombres : des creux noirs
+   entre des feuilles minces, au bord clair. Sans elles, les feuilles deviennent des éclats de papier, et ni toi ni moi ne pouvons juger
+   la forme.
+4. **Les bords** : les découpes et les ondulations font des contours anguleux en éclats, alors que la photo montre des bords arrondis
+   et festonnés et des plis qui se lisent par des dégradés.
+5. **Six itérations d'affilée** dans une session très longue, sans les mesures qui auraient dit où était l'écart (§17.1).
+
+Ce qui reste utile : le résolveur de couches en deux passes (x3d 336 → 9), les feuilles enroulées autour de l'axe, les photos de forme,
+les grilles de couleur et les outils de planche.
+
+## Nouveau plan proposé (à valider par le porteur, en session neuve)
+
+A. **Mesurer le cœur d'abord**, sur les photos détourées (f1, f2, f4, f7, `cw/felix-crousse_2`), avec un outil à écrire (`fleur/pivoine/coeur_mesure.py`)
+   qui donne des chiffres comparables entre photo et rendu :
+   - la part de creux sombres (L* sous un seuil relatif) ;
+   - la densité de bords clairs (arêtes fines par unité de surface) ;
+   - la taille des plages lisses entre deux bords ;
+   - l'orientation des bords (concentrique ou rayonnante) ;
+   - le profil de luminance du centre vers le bord.
+B. **Un pétale seul d'abord**, à D 900, contre le gros plan f8 et un pétale détaché : une feuille mince, un bord en trait clair, satinée,
+   nervurée, avec la lumière qui traverse au bord. Porte du porteur sur ce pétale.
+C. **L'assemblage ensuite**, avec la matière et les ombres dès le premier rendu, et des chiffres de l'outil A dans la tolérance avant toute
+   planche. Les paires recadrées et un juge neuf passent avant le porteur.
+D. **Question au porteur** : pour le cœur d'une pleine double, garder la simulation en 3D de centaines de feuilles, ou dessiner ce que
+   l'œil voit ? La seconde voie dessine, en SVG, des rubans de bords clairs et festonnés sur des creux sombres, guidés par les mesures de A.
+   C'est plus proche de la photo et bien plus léger. Proposition : essayer la seconde voie sur le cœur, et garder la 3D pour les gardes,
+   qui sont de grandes pièces lisibles.
+
+
 
 ## Coût
 

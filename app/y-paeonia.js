@@ -225,7 +225,7 @@ const PEO_V2={nG:12,nH:[18,24],nS:5,
   g:{rb:.08,zb:-.06,e:[.05,.75],L:[.8,.95],W:[.46,.56],bend:[-.6,-.15],cup:.36,fl:[3,5],af:[.05,.1],ae:.06,ke:[3,5]},
   h:{rb:[.17,.05],zb:[.02,.16],e:[.8,1.35],L:[.74,.36],W:[.46,.3],bend:[-.3,.35],cup:.42,fl:[3,6],af:[.18,.34],ae:.07,ke:[3,6]},
   prof:[[0,.16],[.12,.32],[.4,.74],[.68,1],[.86,.94],[.96,.72],[1,.5]]};
-const PEO_V2ON=typeof location==='undefined'||!/[?&]peov1=1/.test(location.search||'');
+const PEO_V2ON=typeof location!=='undefined'&&/[?&]peov2=1/.test(location.search||'');  /* opt-in only: refused by the owner 2026-10-20 (see the ETAT) */
 function peoV2Pieces(g,nH){const r=svRng(g.sd+911),P=PEO_V2,L=[],GA=2.39996,lr=(a,t)=>a[0]+(a[1]-a[0])*t,jr=(a)=>r.in(a[0],a[1]);
   for(let k=0;k<P.nS;k++){const q=P.s;L.push({kind:'s',v2:1,t:0,th:g.rot+k*2.5133+r.in(-.1,.1),rb:q.rb,zb:q.zb,e:jr(q.e),L:jr(q.L),W:jr(q.W),bend:jr(q.bend),cup:q.cup,
     fl:2,af:.02,ae:.01,ke:2,ph:r.in(0,6.28),ph2:r.in(0,6.28),ph3:r.in(0,6.28),tw:0,sd:Math.floor(r()*1e9),notch:[],leafy:k===0})}
