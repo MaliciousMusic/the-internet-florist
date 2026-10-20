@@ -1,5 +1,7 @@
 # Pivoine herbacée double : état du chantier à la pause (2026-10-19)
 
+> **2026-10-20 : le porteur demande la refonte du modèle depuis le début.** L'état à jour est `catalogue/serre/fiches/pivoine-herbacee-double-ETAT.md`. Ce fichier reste l'historique des essais.
+
 Branche `ch/pivoine`, copie `ch/pivoine`. Module `app/y-paeonia.js` (tête en nappes, `SV_HEAD['pivoine-herbacee-double']`).
 Main fusionné jusqu'à c2a78f1 (calibre.py, repere.py, sortie.py plus juste).
 
