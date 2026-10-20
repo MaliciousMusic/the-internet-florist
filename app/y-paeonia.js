@@ -341,6 +341,7 @@ function peoCarpels(B,O,R0,g,C,op,fan,pieces,ff){if(ff<.15)return;const r=svRng(
       proxy:prox,pmin:1,tube:{P:P3,r0:w(1),r1:w(7),ins:.15}})})}
 /* the head: in the frame B at O (Z from the stem to the face), D the open flower's diameter */
 /* test only: &solo=g3 / &solo=h12 draws guard 3 / petaloid 12 alone, no floor, receptacle nor carpels (fleur/repere.py, apparence.py paire) */
+const PEO_OCC=typeof location!=='undefined'&&/[?&]peoocc=1/.test(location.search||'');  /* test: occlusion between pieces (y3-occ.js), until it is validated */
 const PEO_SOLO=typeof location!=='undefined'&&/[?&]solo=([gh])(\d+)/.test(location.search||'')?[RegExp.$1,+RegExp.$2]:null;
 function peoHead(par,B,O,D,S,cwx,op,seed,wl){const P=S?Object.assign({},PEO_DBL,S):PEO_DBL,hi=DET>=1.5,R0=D/2,r=svRng(seed||1),W0=typeof WILT!=='undefined'?WILT:null;
   const g={rot:r.in(0,6.2832),sd:Math.floor(r()*1e9),dop:r.in(-.025,.025)},oo=Math.max(.02,Math.min(1,op+g.dop)),wl0=wl||0,
@@ -368,7 +369,7 @@ function peoHead(par,B,O,D,S,cwx,op,seed,wl){const P=S?Object.assign({},PEO_DBL,
     {const rc=(V2?.1:.2)*R0*(1+.25*fan),zc=(V2?-.06:-.09)*R0,hz=(V2?.07:.13)*R0,rcol=peoShv(C.s.st[2][1],.5,0,dec,fan,'s'),rm=Object.assign({},M.s,{stops:[[0,mix(rcol,'#2a3a10',.3)],[.6,rcol],[1,mix(rcol,'#d8d8a0',.2)]],bstops:[[0,rcol],[1,rcol]],fine:null,grid:null,cross:null,veins:null,transmit:null});
       pieces.push(svSheet(B,O,(u,v)=>{const th=(u+1)*Math.PI,a=Math.PI*(1-v)*.98;return[rc*Math.sin(a)*Math.cos(th),rc*Math.sin(a)*Math.sin(th),zc-hz*Math.cos(a)]},{nu:14,nv:8,mat:rm,qa:false,zb:-.006}))}
     peoCarpels(B,O,R0,g,C,oo,fan,pieces,ff);
-    return svDraw(par,pieces,{D,pmin:P.pmin,shadow:hi})}
+    return svDraw(par,pieces,{D,pmin:P.pmin,shadow:hi,occ:PEO_OCC||undefined})}
   finally{if(typeof WILT!=='undefined')WILT=W0}}
 function peoSvg(par,B,O,D,cwId,op,seed,wl,S){const cwx=(typeof CW_PDBL!=='undefined'&&CW_PDBL.find(x=>x.id===cwId))||{id:cwId};return peoHead(par,B,O,D,S,cwx,op,seed,wl==null?0:wl)}
 var SV_HEAD=typeof SV_HEAD!=='undefined'?SV_HEAD:{};SV_HEAD['pivoine-herbacee-double']=peoSvg;

@@ -111,7 +111,7 @@ function svFaceFill(sh,st,Dm){const pb=svAt(sh,0,0),pt=svAt(sh,0,1),dx=pt[0]-pb[
   const id='sg'+(gid++),gr=E('linearGradient',{id,gradientUnits:'userSpaceOnUse',x1:svF(pb[0]),y1:svF(pb[1]),x2:svF(pt[0]),y2:svF(pt[1])},GDEF||defs);stops(gr,off.map(([t,c,a])=>[svF(t),c,a]));return`url(#${id})`}
 /* the light of every vertex of a sheet, relative to its face lit straight on */
 function svShade(sh){if(sh.K)return sh.K;const m=sh.mat,r=svLight([0,0,1],m,1),K=new Float32Array(sh.F.length);
-  for(let j=0;j<=sh.nv;j++)for(let i=0;i<=sh.nu;i++){const q=j*sh.W+i,n=sh.N[q],nf=sh.F[q]>=0?n:V3.sc(n,-1),ao=sh.ao?sh.ao(-1+2*i/sh.nu,j/sh.nv,sh.F[q]>=0):1;K[q]=svLight(nf,m,ao)/r}return sh.K=K}
+  for(let j=0;j<=sh.nv;j++)for(let i=0;i<=sh.nu;i++){const q=j*sh.W+i,n=sh.N[q],nf=sh.F[q]>=0?n:V3.sc(n,-1),ao=sh.ao?sh.ao(-1+2*i/sh.nu,j/sh.nv,sh.F[q]>=0):1;K[q]=(sh.occA?svLightO(nf,m,ao,sh.occA[q],sh.sunA[q]):svLight(nf,m,ao))/r}return sh.K=K}
 /* ---------- opt-in layers of a material (2026-10-18, audit v4 A5): read only when the material has the key (m.cross, m.transmit); without it svDraw writes the
    same bytes. Drawn from the piece's own sheet, inside its clip: nothing outside the piece, no outline of another piece, no chance drawn ---------- */
 /* nested level sets of a coverage field C (0..1 at the grid's vertices) on one face of a sheet (FF > 0): n paths, each a little more opaque inside the
@@ -171,6 +171,7 @@ function svTrans(cg,it,sh,front,Dm,Ls,tol){const t=sh.mat.transmit,hi=DET>=1.5,f
 /* draw the pieces of one flower: pieces are sheets (svSheet with a material) or drawn parts {fn, proxy (a sheet, for the order only)} */
 function svDraw(par,pieces,o){const Dm=o.D,tol=Math.max(.06,Dm*.0035),k=G(par),items=[];
   if(typeof SVQA_ON!=='undefined'&&SVQA_ON)svQa3d(pieces,par);  /* test only (&qa3d=1): sheets that pass through one another, y3-qa3d.js */
+  if(o.occ&&typeof svOcclude==='function'&&!SVOC_OFF)svOcclude(pieces.map(p=>p.fn?p.proxy:p).filter(Boolean),Dm/2,o.occ);  /* opt-in: occlusion between pieces and cast shadows, y3-occ.js */
   for(const p of pieces){if(p.fn){const cells=svCells(p.proxy,0);if(!cells.length){items.push({kind:'fn',fn:p.fn,cells:[],bb:[0,0,-1,-1],z:p.z??0});continue}let x0=1e9,y0=1e9,x1=-1e9,y1=-1e9,z=0;
       for(const c of cells){x0=Math.min(x0,c.x0);y0=Math.min(y0,c.y0);x1=Math.max(x1,c.x1);y1=Math.max(y1,c.y1);z+=c.cz}items.push({kind:'fn',fn:p.fn,px:p.proxy,cells,bb:[x0,y0,x1,y1],z:z/cells.length+(p.zb||0),pmin:p.pmin})}
     else items.push(...svRegions(p,{tol}))}
