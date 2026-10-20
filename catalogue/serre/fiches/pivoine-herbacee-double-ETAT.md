@@ -97,6 +97,21 @@ dans le sens de la longueur et un bord ondulé). Pas avec beaucoup de petites é
 Reste à faire pour l'étape 1 : un profil strict d'une pleine double (p096 est une framboise de profil, déjà mesurée : H/L 0,60) et un pétale
 détaché en contre-jour.
 
+**Étape 3 (forme seule, en gris), 2026-10-20** : la tête ouverte est reconstruite en feuilles libres (`PEO_V2`, `peoV2Pieces`, `peoV2Surf`,
+`peoV2Resolve` dans `app/y-paeonia.js`). Elle n'est active qu'au stade ouvert non fané (op ≥ 0,9) ; les autres stades restent l'ancienne
+construction, et `&peov1=1` montre l'ancienne tête ouverte.
+- **Pièces** : 5 sépales en coupes, 12 gardes ouvertes en anneau (des plus basses, presque à plat, aux plus hautes), et 18 à 24 feuilles de
+  cœur larges. Chaque feuille a son épine propre (insertion, élévation, longueur, bout qui rentre ou se roule), une coupe en travers, 3 à 7
+  cannelures en éventail, un bord ondulé et des découpes. Sa largeur est un arc autour de l'axe, au plus ±1,05 rad : près du centre, une
+  feuille s'enroule au lieu de traverser.
+- **Couches** : deux passes d'enveloppe polaire, depuis un point dans le cœur pour les feuilles dressées, puis depuis un point au-dessus de
+  la fleur pour les gardes et les sépales. Chaque feuille est poussée juste au-delà de celles déjà posées, le long du rayon ; la poussée est
+  lissée. Croisements x3d (vues 0, 2, 7) : **336 → 9,5 (graine 7) et 8,2 (graine 3) par tête**, tous sur les gardes. Pas encore 0.
+- **Planche** : `fleur/out/pv2-cmp.jpg`, photos (Sarah Bernhardt de face et de trois-quarts, p096 de profil) à côté du rendu gris D 420.
+  Silhouette proche ; centre encore morcelé vu de face ; matière plate (étape 4).
+
+**Porte 1 : en attente du porteur** (silhouette).
+
 ## Coût
 
 C'est une nouvelle construction : 30 à 50 M et 1 à 1,5 jour (§17.3), dans une session neuve par sorte (§17.2). Les mises à plat et
