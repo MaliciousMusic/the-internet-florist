@@ -215,6 +215,41 @@ function peoSurf(P,q,sh,R0,dec,fan){const kind=q.kind,A=P.ruf[kind==='g'?1:kind=
     else x=-.5*hw*u*u+.01*Math.sin(3*Math.PI*u+q.ph)*svSm((ve-.4)/.4)+(fan+dec)*.04*svSm((ve-.6)/.4);
     const bo=q.amp(q.aO,ve),bi=q.amp(q.aI,ve),d=x>0?(bo>1e-6?bo*Math.tanh(x/bo):0):(bi>1e-6?-bi*Math.tanh(-x/bi):0),rr=(rs+d)*R0;
     return[rr*sn*Math.cos(th),rr*sn*Math.sin(th),sh.H*R0+rr*Math.cos(a)]}}
+/* ---- the open head rebuilt from the photos (owner 2026-10-20: the shell-built head reads as « un chou / une laitue avec un cœur et une
+   couronne », its petals thick, the render « cake »). Photos forme/f1-f8 and cw/felix-crousse_2: the heart is not a dome of narrow tongues in
+   rows but ~30 BROAD THIN SHEETS, each fluted lengthwise like a fan and waved at its edge, overlapping in no order, seen edge-on as ruffled
+   ribbons, with deep shadow between them; the guards open wider than the heart. Each piece is a free sheet (no shell): a spine rising from
+   the receptacle at its own elevation, curving in or rolling out at its end; across it, a cup and deep flutes; svDraw orders the cells. */
+const PEO_V2={nG:12,nH:[18,24],nS:5,
+  s:{rb:.05,zb:-.1,e:[-.75,-.35],L:[.2,.26],W:[.13,.16],bend:[.5,.9],cup:.7,fl:[2,3],af:[.02,.04],ae:.01,ke:[2,3]},
+  g:{rb:.08,zb:-.06,e:[.05,.75],L:[.8,.95],W:[.46,.56],bend:[-.6,-.15],cup:.36,fl:[3,5],af:[.05,.1],ae:.06,ke:[3,5]},
+  h:{rb:[.17,.05],zb:[.02,.24],e:[.85,1.4],L:[.72,.58],W:[.46,.36],bend:[-.3,.7],cup:.42,fl:[3,6],af:[.18,.34],ae:.07,ke:[3,6]},
+  prof:[[0,.16],[.12,.32],[.4,.74],[.68,1],[.86,.94],[.96,.72],[1,.5]]};
+const PEO_V2ON=typeof location==='undefined'||!/[?&]peov1=1/.test(location.search||'');
+function peoV2Pieces(g,nH){const r=svRng(g.sd+911),P=PEO_V2,L=[],GA=2.39996,lr=(a,t)=>a[0]+(a[1]-a[0])*t,jr=(a)=>r.in(a[0],a[1]);
+  for(let k=0;k<P.nS;k++){const q=P.s;L.push({kind:'s',v2:1,t:0,th:g.rot+k*2.5133+r.in(-.1,.1),rb:q.rb,zb:q.zb,e:jr(q.e),L:jr(q.L),W:jr(q.W),bend:jr(q.bend),cup:q.cup,
+    fl:2,af:.02,ae:.01,ke:2,ph:r.in(0,6.28),ph2:r.in(0,6.28),ph3:r.in(0,6.28),tw:0,sd:Math.floor(r()*1e9),notch:[],leafy:k===0})}
+  for(let k=0;k<P.nG;k++){const q=P.g,tk=k/(P.nG-1);L.push({kind:'g',t:0,th:g.rot+k*GA+r.in(-.12,.12),rb:q.rb*r.in(.85,1.15),zb:q.zb+.05*tk,e:lr(q.e,tk)+r.in(-.08,.08),L:jr(q.L),W:jr(q.W),bend:jr(q.bend),cup:q.cup*r.in(.7,1.2),
+    fl:Math.round(jr(q.fl)),af:jr(q.af),ae:q.ae*r.in(.6,1.4),ke:Math.round(jr(q.ke)),ph:r.in(0,6.28),ph2:r.in(0,6.28),ph3:r.in(0,6.28),tw:r.in(-.15,.15),sd:Math.floor(r()*1e9),
+    notch:Array.from({length:1+Math.floor(r()*3)},()=>[r.in(-.7,.7),r.in(.04,.1),r.in(.06,.14)])})}
+  for(let k=0;k<nH;k++){const q=P.h,t=Math.pow(k/(nH-1),.85),jit=r.in(-.22,.22);
+    L.push({kind:'h',t,th:g.rot+.9+k*GA+r.in(-.3,.3),rb:lr(q.rb,t)*r.in(.7,1.3),zb:lr(q.zb,t),e:Math.min(1.5,Math.max(.4,lr(q.e,t)+jit)),L:lr(q.L,t)*r.in(.72,1.25),
+      W:lr(q.W,t)*r.in(.7,1.3),bend:lr(q.bend,t)+r.in(-.35,.35),cup:q.cup*r.in(.5,1.3),fl:Math.round(jr(q.fl)),af:jr(q.af),ae:q.ae*r.in(.6,1.5),ke:Math.round(jr(q.ke)),
+      ph:r.in(0,6.28),ph2:r.in(0,6.28),ph3:r.in(0,6.28),tw:r.in(-.25,.25),sd:Math.floor(r()*1e9),
+      notch:Array.from({length:1+Math.floor(r()*3)},()=>[r.in(-.8,.8),r.in(.04,.12),r.in(.08,.16)])})}
+  return L}
+/* a free petal: (u in -1..1 across, v in 0..1 along) -> [x,y,z] (px, z up, the receptacle's top at z 0) */
+function peoV2Surf(q,R0){const N=24,cs=Math.cos(q.th),sn=Math.sin(q.th),Rr=[cs,sn,0],T=[-sn,cs,0],sp=[],an=[];let x=q.rb,z=q.zb;
+  for(let i=0;i<=N;i++){const v=i/N,a=q.e+q.bend*v*v;sp.push([x,z]);an.push(a);x+=Math.cos(a)*q.L/N;z+=Math.sin(a)*q.L/N}
+  const at=v=>{const f=Math.max(0,Math.min(1,v))*N,j=Math.min(N-1,Math.floor(f)),w=f-j;return[sp[j][0]*(1-w)+sp[j+1][0]*w,sp[j][1]*(1-w)+sp[j+1][1]*w,an[j]*(1-w)+an[j+1]*w]};
+  const Lu=u=>{let e=.9+.1*Math.sqrt(Math.max(0,1-u*u));for(const[un,dp,wn]of q.notch)e-=dp*Math.exp(-Math.pow((u-un)/wn,2));return Math.max(.3,e)};
+  return(u,v)=>{const ve=v*Lu(u),[px,pz,a]=at(ve),w=q.W*peoProf(PEO_V2.prof,ve),au=Math.abs(u),s1=svSm((ve-.08)/.3),
+      /* across: the cup toward the axis, the flutes (a fan of folds from the claw), the edge's waves, a crumple along the length */
+      n=q.cup*w*u*u+q.af*w*Math.sin(q.fl*Math.PI*u+q.ph)*s1*(.4+.6*ve)+q.ae*Math.sin(q.ke*Math.PI*(ve*1.4+.35*u)+q.ph2)*svSm((au-.45)/.5)*svSm((ve-.4)/.4)
+        +.05*q.L*Math.sin(5.3*ve+q.ph3+2*u)*s1,
+      tw=q.tw*ve*u*w,  /* a twist: one side of the end lifts */
+      nx=-Math.sin(a),nz=Math.cos(a),ox=px+nx*(n+tw),oz=pz+nz*(n+tw),ot=u*w*(1-.12*Math.sin(q.ph+ve*3)*au);
+    return[(Rr[0]*ox+T[0]*ot)*R0,(Rr[1]*ox+T[1]*ot)*R0,oz*R0]}}
 /* the colours of a colourway, by piece: g the guards, h the heart, s the sepals; ramps from the base (0) to the end (1), inner face st and back
    bst, shade and light of the washes, veins. A measured entry (PEO_CW) wins; else derived from the catalogue's c (guards) and c2 (heart): a
    paler cream base, the body, the end a little silvered (photos 106, 98: the heart's frilled ends catch the light), the back paler */
@@ -285,13 +320,15 @@ function peoHead(par,B,O,D,S,cwx,op,seed,wl){const P=S?Object.assign({},PEO_DBL,
   try{const sh=peoShells(P,oo,dec,fan),nG=P.nG[hi?1:0],nH=Math.round(P.nH[hi?1:0]*(oo<.3?.5:1)),ff=svSm((wl0-P.fall[0])/P.fall[1]);
     let L=peoPieces(P,g,oo,nG,nH);if(ff>0)L=L.filter(q=>q.kind==='s'||q.fall>=ff*(1-(q.kind==='g'||q.t<.3?P.keep*2:0)));  /* the last to hang on are guards and outer petaloids */
     peoGeom(P,L,sh,oo,dec,fan,R0);if(typeof SVQA_DBG!=='undefined'&&SVQA_DBG)PEO_LAST={L,sh,P,dec,fan,R0};
-    const C=peoCol(cwx),M={g:peoMat(P,C,'g',gt,dec,fan,hi),h:peoMat(P,C,'h',gt*.6,dec,fan,hi),s:peoMat(P,C,'s',0,dec,fan,hi)},pieces=[],det=hi?1.25:.8;
+    const C=peoCol(typeof location!=='undefined'&&/[?&]peogris=1/.test(location.search||'')?{id:'gris',c:'#d2cec8',c2:'#d8d4ce'}:cwx),M={g:peoMat(P,C,'g',gt,dec,fan,hi),h:peoMat(P,C,'h',gt*.6,dec,fan,hi),s:peoMat(P,C,'s',0,dec,fan,hi)},pieces=[],det=hi?1.25:.8;
     if(PEO_SOLO){const k=L.filter(q=>q.kind===PEO_SOLO[0]);L=k[PEO_SOLO[1]%k.length]?[k[PEO_SOLO[1]%k.length]]:[]}
+    const V2=PEO_V2ON&&oo>=.9&&dec<.05&&fan<.05&&!PEO_SOLO;
+    if(V2)L=peoV2Pieces(g,Math.round(PEO_V2.nH[hi?1:0]));
      for(const q of L){const vr=svRng(q.sd+5),vn=q.kind==='s'?svVeins(vr,5,0,.2):svVeins(vr,q.kind==='g'?(hi?24:11):(hi?9:5),hi?.2:0,hi?.35:.2),base=M[q.kind],vc=base.stops[Math.floor(base.stops.length/2)][1],
         K=C[q.kind],vo=K.vo;
       const m=Object.assign({},base,{fineVeins:false,veins:q.kind==='h'?null:(s2,front)=>front?[[vn.main,.0016,peoShv(K.vein,.5,gt,dec,fan,q.kind),Math.min(1,vo*1.8)+.15*dec],[vn.fine,.0011,peoShv(K.vein,.5,gt,dec,fan,q.kind),vo*1.1]]:[[vn.main,.0016,peoShv(K.bvein,.5,gt,dec,fan,q.kind),vo*.7]]});
       const big=q.kind==='g',nu=Math.round((big?P.gnu:P.nu)[hi?1:0]*(q.kind==='s'?.7:1)),nv=Math.round((big?P.gnv:P.nv)[hi?1:0]*(q.kind==='s'?.7:1)),dz=q.kind==='h'?.45:.3;
-      const pc=svSheet(B,O,peoSurf(P,q,sh,R0,dec,fan),{nu,nv,mat:m,ao:(u,v,front)=>front?1-dz*(1-svSm((v-.02)/.4)):1-.2*(1-svSm(v/.25))});pc.wh=q.kind;pieces.push(pc)}
+      const pc=svSheet(B,O,q.rb!=null?peoV2Surf(q,R0):peoSurf(P,q,sh,R0,dec,fan),{nu:q.rb!=null?Math.round(nu*1.4):nu,nv,mat:m,ao:(u,v,front)=>front?1-dz*(1-svSm((v-.02)/.4)):1-.2*(1-svSm(v/.25))});pc.wh=q.kind;pieces.push(pc)}
     /* the floor of the heart: the core's surface in the hollow's darkest colour, so that nothing shows through between the innermost
        petaloids (qa:false: it lies under them by design, as the lily's floor) */
     if(PEO_SOLO)return svDraw(par,pieces,{D,pmin:P.pmin,shadow:false});
@@ -299,7 +336,7 @@ function peoHead(par,B,O,D,S,cwx,op,seed,wl){const P=S?Object.assign({},PEO_DBL,
       pieces.push(svSheet(B,O,(u,v)=>{const a=(1-v)*PEO_PSI*.92,th=(u+1)*Math.PI,rr=Math.max(.01,sh.core(a))*.96*R0;return[rr*Math.sin(a)*Math.cos(th),rr*Math.sin(a)*Math.sin(th),sh.H*R0+rr*Math.cos(a)]},{nu:12,nv:8,mat:fm,qa:false,zb:-.004}))}
     /* the receptacle (fiche: a fleshy disc under the carpels, hidden while the petals hold; seen once they fall): a flattened dome from the
        sepals' insertion to round the carpels' feet, in the sepals' green going yellow as the flower fades (qa:false: under the pieces by design) */
-    {const rc=.2*R0*(1+.25*fan),zc=-.09*R0,hz=.13*R0,rcol=peoShv(C.s.st[2][1],.5,0,dec,fan,'s'),rm=Object.assign({},M.s,{stops:[[0,mix(rcol,'#2a3a10',.3)],[.6,rcol],[1,mix(rcol,'#d8d8a0',.2)]],bstops:[[0,rcol],[1,rcol]],fine:null,grid:null,cross:null,veins:null,transmit:null});
+    {const rc=(V2?.1:.2)*R0*(1+.25*fan),zc=(V2?-.06:-.09)*R0,hz=(V2?.07:.13)*R0,rcol=peoShv(C.s.st[2][1],.5,0,dec,fan,'s'),rm=Object.assign({},M.s,{stops:[[0,mix(rcol,'#2a3a10',.3)],[.6,rcol],[1,mix(rcol,'#d8d8a0',.2)]],bstops:[[0,rcol],[1,rcol]],fine:null,grid:null,cross:null,veins:null,transmit:null});
       pieces.push(svSheet(B,O,(u,v)=>{const th=(u+1)*Math.PI,a=Math.PI*(1-v)*.98;return[rc*Math.sin(a)*Math.cos(th),rc*Math.sin(a)*Math.sin(th),zc-hz*Math.cos(a)]},{nu:14,nv:8,mat:rm,qa:false,zb:-.006}))}
     peoCarpels(B,O,R0,g,C,oo,fan,pieces,ff);
     return svDraw(par,pieces,{D,pmin:P.pmin,shadow:hi})}
