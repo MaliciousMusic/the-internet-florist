@@ -29,6 +29,13 @@ branche le 2026-10-20 : les outils sont à jour. Ce chantier n'est **pas** encor
    grille 6 × 24, déjà vérifiée, et y ajoute le détail de la 18 × 72, en Lab. Le détail est borné à ΔE 6 et s'éteint sur les deux dernières
    colonnes du bord. Le blanc reste blanc et le rouge n'a plus de taches (`fleur/out/pv672.png`). Les 10 grilles des gardes sont dans
    `app/y-paeonia.js` en 18 × 72 (`grille-<cw>-fondu.json`). Le cœur aussi est passé en 18 × 72 : trois bandes par coloris (l'axe du repère `_coeur` de `reperes.json`, puis le même axe tourné de ±60°, en demi-largeur × 1,5), soit 0 à 46 cases vides sur 1296 (`<cw>-coeur-b0..2`, `grille-h-<cw>-fondu.json`), fondu de la même façon. Les 20 grilles de la pivoine sont en 18 × 72. L'étalonnage photo | rendu reste à faire.
+1 quater. **Étalonnage avec l'éclairage apparié, essai du 2026-10-20** (`fleur/pivoine/calib2.py <tours> <cw>...`). Les 12 gardes solo sont
+   classées une fois par éclairement (`_solo_L` dans `reperes.json` ; la plus éclairée est g2). Seule la garde éclairée de la photo est appariée
+   à g2. **Le calcul converge** (framboise ΔE 18,6 → 8,8 → 7,7 ; rose 9,7 → 6,8 → 6,3), alors que calib.py divergeait. **L'œil refuse
+   pourtant le résultat** : les deux coloris virent au mauve, alors que les photos (Cincinnati, Sarah Bernhardt) sont rose vif et rose franc
+   (`fleur/out/pvcal_cmp.jpg`). Les grilles ne sont pas gardées. Piste : le cadre `R[cw][2]` de la photo tombe sur une zone ombrée
+   ou bleutée de la garde. Il faut regarder `<cw>-paire-lit.png`, resserrer le cadre sur le tissu au soleil, puis relancer. Le cœur ne bouge pas
+   (rose ΔE 11) : son cadre fixe sur la tête entière ne correspond pas à la photo, et il faut un repère du cœur sur le rendu.
 4. **Fichier d'état** : ce fichier fait office de `<sid>-ETAT.md` (§15.4). Le labo le lit.
 5. **Banc** lancé détaché (§16.6).
 
