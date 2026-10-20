@@ -194,7 +194,7 @@ function lilOriMat(cw){const key=cw.id;if(LIL_ORI_M[key])return LIL_ORI_M[key];
     fil:C.fil,filT:C.filT,anth:C.anth,pol:C.pol,sty:C.sty,styT:C.styT,sg:C.sg,ov:C.ov,rw:C.rw,ro:C.ro,wilt:C.wilt};
   return LIL_ORI_M[key]=M}
 /* the lily's heart: filaments, anthers, style and stigma, each a drawn piece with a proxy sheet for the order (the tepals' svDraw) */
-const LILH_DEF={cb:.2,filR:.052,filL:.64,filW:.034,a0:.28,a1:.78,rise:.28,anL:.28,anW:.064,anTilt:1.1,styL:.72,styW:.045,styA:.62,styD:.3,sgR:.058,ovR:.04,ovH:.08,st:[.42,.38]};
+const LILH_DEF={cb:.2,filR:.052,filL:.64,filW:.034,a0:.28,a1:.78,rise:.28,anL:.28,anW:.064,anTilt:1.1,styL:.72,styW:.045,styA:.62,styD:.3,sgR:.09,ovR:.04,ovH:.08,st:[.42,.38]};
 function lilHeart(o0){const o=Object.assign({},LILH_DEF,o0);
   return({B,O,R0,g,cw0,op,bud,dec,fan,pieces,dn,fixT,outT})=>{if(bud>.08)return;  /* drawn once the bud has loosened: shut inside it, the heart is never seen and only fills it */const hi=DET>=1.5,ost=svSm((op-o.st[0])/o.st[1]),sz=g.stL||1,
       lt=(()=>{const x=LIGHT[0],y=-LIGHT[1],l=Math.hypot(x,y)||1;return[x/l,y/l]})(),
@@ -275,25 +275,49 @@ function lilHeart(o0){const o=Object.assign({},LILH_DEF,o0);
       for(let j=1;j<=9;j++){const v=j/9,a=o.styA*ost*Math.pow(v,1.4);let d=[sr[0]*Math.sin(a),sr[1]*Math.sin(a),Math.cos(a)];
         d=V3.nz(V3.add(d,V3.sc(dn,o.styD*ost*v*v)));if(fan>0)d=V3.nz(V3.add(d,V3.sc(dn,.15*fan*v)));  /* the style stays up, long and stiff, as the tepals hang (photos of faded lilies) */p=V3.add(p,V3.sc(d,sL/9));P3.push(p)}
       const end0=P3[P3.length-1],tg=V3.nz(V3s(end0,P3[P3.length-2]));
-      tube(P3,R0*o.styW*1.05,R0*o.styW*1.25,styC,styT,(hk,sh)=>{const end=sh?V3.add(end0,sh):end0,rk=R0*o.sgR*sz*(.6+.4*ost),cs=[];
-        for(let q=0;q<3;q++){const aq=q*2.0944+sa+.4,bq=V3.nz(V3.add(V3.sc(tg,.55),V3.sc([Math.cos(aq),Math.sin(aq),0],.8)));const c=PJ(B,O,V3.add(end,V3.sc(bq,rk*.36)));cs.push(c)}
-        const ce=PJ(B,O,V3.add(end,V3.sc(tg,rk*.35)));
-        /* one knob of three fused lobes (photo p004: a soft, slightly wet, matte head, never three beads): the union drawn twice, a darker
-           rim under the body, one radial shade from the lit side, the grooves between the lobes, a dull sheen */
-        /* the knob in volume (owner: « la boule du bout fait toute plate »; photo p002: brown at the rim, paler at the centre, a soft wet sheen):
-           a dark occlusion where it sits on the style, then each lobe from the back, its own light from the lit side and its own dark rim,
-           the grooves between them, one dull sheen */
-        /* the knob as ONE body in volume (owner: no fuzzy glow, no flat discs): the three lobes and the centre fused in one outline, shaded as a
-           whole from the lit side (light, body, dark under-rim), a crisp darker rim, the three shallow grooves, one small dull sheen inside it */
-        const rl=Math.max(.35,rk*.66),disc=(x,y,r)=>`M${svF(x-r)},${svF(y)}a${svF(r)},${svF(r)} 0 1,0 ${svF(2*r)},0a${svF(r)},${svF(r)} 0 1,0 ${svF(-2*r)},0`,
-          un=k=>cs.map(c=>disc(c[0],c[1],rl*k)).join('')+disc(ce[0],ce[1],rk*.78*k),id='lsg'+(gid++),
-          gr=E('radialGradient',{id,gradientUnits:'userSpaceOnUse',cx:svF(ce[0]+lt[0]*rk*.5),cy:svF(ce[1]+lt[1]*rk*.5),r:svF(rk*1.7)},GDEF||defs);
-        for(const[o2,c2]of[[0,mix(sgC,'#fff8ec',.42)],[.32,mix(sgC,'#fff8ec',.12)],[.62,sgC],[.84,mix(sgC,'#24120a',.38)],[1,mix(sgC,'#24120a',.62)]])E('stop',{offset:o2,'stop-color':c2},gr);
-        E('path',{d:un(1.06),fill:mix(sgC,'#24120a',.55)},hk);E('path',{d:un(1),fill:`url(#${id})`},hk);
-        if(!LOD){let gv='';for(const c of cs)gv+=`M${svF(ce[0])},${svF(ce[1])}L${svF(ce[0]+(c[0]-ce[0])*.62)},${svF(ce[1]+(c[1]-ce[1])*.62)}`;
-          E('path',{d:gv,fill:'none',stroke:mix(sgC,'#24120a',.6),'stroke-width':svF(Math.max(.12,rk*.1)),'stroke-opacity':.5,'stroke-linecap':'round'},hk);
-          const cl='lsk'+(gid++);E('path',{d:un(1)},E('clipPath',{id:cl},GDEF||defs));
-          E('ellipse',{cx:svF(ce[0]+lt[0]*rk*.42),cy:svF(ce[1]+lt[1]*rk*.42),rx:svF(Math.max(.15,rk*.26)),ry:svF(Math.max(.1,rk*.15)),fill:'#fffaf0','fill-opacity':.32,filter:svBlur(rk*.06)},G(hk,{'clip-path':`url(#${cl})`}))}})}
+      tube(P3,R0*o.styW*1.05,R0*o.styW*1.25,styC,styT,(hk,sh)=>{const end=sh?V3.add(end0,sh):end0,rk=R0*o.sgR*sz*(.6+.4*ost),cs=[],cm=[];
+        /* the stigma (owner 2026-10-20: « boules brillantes moches », not at the level of the rest; photos dl/stigma: Large stigma,
+           L. longiflorum detail, Fire lily): a club of three rounded lobes split by deep notches, ~2.5x the style, the style flaring into it
+           without a break; its surface papillose like a fine foam (many small lights, never one mirror), wet; darker in the grooves and
+           under the rim, the lobes' tips a little deeper in colour */
+        for(let q=0;q<3;q++){const aq=q*2.0944+sa+.4,bq=V3.nz(V3.add(V3.sc(tg,.55),V3.sc([Math.cos(aq),Math.sin(aq),0],.8)));cs.push(PJ(B,O,V3.add(end,V3.sc(bq,rk*.62))));cm.push(PJ(B,O,V3.add(end,V3.sc(bq,rk*.32))))}
+        const ce=PJ(B,O,V3.add(end,V3.sc(tg,rk*.3))),rl=Math.max(.35,rk*.42),rc=rk*.46,disc=[[ce,rc]].concat(cs.map(c=>[c,rl]),cm.map(c=>[c,rk*.44]));  /* each lobe an arm (two discs): fused at the centre, rounded at its end */
+        /* the collar: the style's end flaring into the head (a trumpet, radius r0 -> r1 along the axis), drawn under the head */
+        const r0=R0*o.styW*1.25*.5,b0=PJ(B,O,V3.add(end,V3.sc(tg,-rk*1.5))),b1=PJ(B,O,V3.add(end,V3.sc(tg,rk*.1))),cx=b1[0]-b0[0],cy=b1[1]-b0[1],cl0=Math.hypot(cx,cy);
+        if(cl0>.2){const nx=-cy/cl0,ny=cx/cl0,Lc=[],Rc=[];
+          for(let q=0;q<=8;q++){const s=q/8,w2=r0+(rk*.78-r0)*Math.pow(s,2.2),x=b0[0]+cx*s,y=b0[1]+cy*s;Lc.push([x+nx*w2,y+ny*w2]);Rc.push([x-nx*w2,y-ny*w2])}
+          const cid='lsc'+(gid++),cg=E('linearGradient',{id:cid,gradientUnits:'userSpaceOnUse',x1:svF(b0[0]),y1:svF(b0[1]),x2:svF(b1[0]),y2:svF(b1[1])},GDEF||defs);
+          for(const[o2,c2]of[[0,styT],[.55,mix(styT,sgC,.35)],[1,mix(sgC,'#200c08',.2)]])E('stop',{offset:o2,'stop-color':c2},cg);
+          const cd=svSpl(Lc.concat(Rc.slice().reverse()));E('path',{d:cd,fill:`url(#${cid})`,stroke:mix(styT,'#2a2a10',.3),'stroke-width':svF(Math.max(.08,r0*.12)),'stroke-opacity':.22},hk);
+          if(!LOD){const sgn=nx*lt[0]+ny*lt[1]>0?-1:1,ccl='lscc'+(gid++);E('path',{d:cd},E('clipPath',{id:ccl},GDEF||defs));
+            E('path',{d:svSpl(Lc.map((p2,q)=>[p2[0]*.5+Rc[q][0]*.5+nx*sgn*(Math.hypot(p2[0]-Rc[q][0],p2[1]-Rc[q][1])*.32),p2[1]*.5+Rc[q][1]*.5+ny*sgn*(Math.hypot(p2[0]-Rc[q][0],p2[1]-Rc[q][1])*.32)]),false),
+              fill:'none',stroke:mix(styT,'#2a2410',.5),'stroke-width':svF(Math.max(.15,rk*.36)),'stroke-opacity':.3,'stroke-linecap':'round',filter:svBlur(Math.max(.15,rk*.12))},G(hk,{'clip-path':`url(#${ccl})`}))}}
+        /* the head's outline: the union of the centre and the three lobes, cast from the centre ray by ray, then a smooth closed spline:
+           rounded lobes, the notches kept */
+        const NA=60,rr0=[];for(let q=0;q<NA;q++){const a=q/NA*6.2832,dx=Math.cos(a),dy=Math.sin(a);let t=rc*.5;
+          for(const[c,r]of disc){const ox=c[0]-ce[0],oy=c[1]-ce[1],b=dx*ox+dy*oy,h=r*r-(ox*ox+oy*oy)+b*b;if(h>=0)t=Math.max(t,b+Math.sqrt(h))}rr0.push(t)}
+        const RR=rr0.map((t,q)=>(rr0[(q+NA-1)%NA]+4*t+rr0[(q+1)%NA])/6),OP=RR.map((t,q)=>[ce[0]+Math.cos(q/NA*6.2832)*t,ce[1]+Math.sin(q/NA*6.2832)*t]),hd=svSpl(OP);
+        const id='lsg'+(gid++),gr=E('radialGradient',{id,gradientUnits:'userSpaceOnUse',cx:svF(ce[0]+lt[0]*rk*.45),cy:svF(ce[1]+lt[1]*rk*.45),r:svF(rk*1.6)},GDEF||defs);
+        for(const[o2,c2]of[[0,mix(sgC,'#fff2ea',.2)],[.45,mix(sgC,'#fff2ea',.08)],[.72,sgC],[.9,mix(sgC,'#200c08',.22)],[1,mix(sgC,'#200c08',.38)]])E('stop',{offset:o2,'stop-color':c2},gr);
+        E('path',{d:hd,fill:`url(#${id})`,stroke:mix(sgC,'#200c08',.5),'stroke-width':svF(Math.max(.08,rk*.06)),'stroke-opacity':.4},hk);
+        if(LOD)return;
+        const kcl='lsk'+(gid++);E('path',{d:hd},E('clipPath',{id:kcl},GDEF||defs));const ck=G(hk,{'clip-path':`url(#${kcl})`});
+        /* the grooves between the lobes, the shade under the rim (an inner shadow) and where the head sits on the collar */
+        let gv='';for(let q=0;q<3;q++){const a=Math.atan2((cs[q][1]+cs[(q+1)%3][1])/2-ce[1],(cs[q][0]+cs[(q+1)%3][0])/2-ce[0]),
+            k=Math.round((a<0?a+6.2832:a)/6.2832*NA)%NA,t=RR[k]*.95,t0=RR[k]*.35;gv+=`M${svF(ce[0]+Math.cos(a)*t0)},${svF(ce[1]+Math.sin(a)*t0)}L${svF(ce[0]+Math.cos(a)*t)},${svF(ce[1]+Math.sin(a)*t)}`}
+        E('path',{d:gv,fill:'none',stroke:mix(sgC,'#1a0806',.6),'stroke-width':svF(Math.max(.12,rk*.16)),'stroke-opacity':.3,'stroke-linecap':'round',filter:svBlur(Math.max(.1,rk*.08))},ck);
+        E('path',{d:hd,fill:'none',stroke:mix(sgC,'#1a0806',.55),'stroke-width':svF(Math.max(.2,rk*.34)),'stroke-opacity':.32,filter:svBlur(Math.max(.12,rk*.12))},ck);
+        if(cl0>.2){const ux=-cx/cl0,uy=-cy/cl0;E('ellipse',{cx:svF(ce[0]+ux*rk*.8),cy:svF(ce[1]+uy*rk*.8),rx:svF(rk*.6),ry:svF(rk*.45),
+          transform:`rotate(${svF(Math.atan2(uy,ux)*180/Math.PI)} ${svF(ce[0]+ux*rk*.8)} ${svF(ce[1]+uy*rk*.8)})`,fill:mix(sgC,'#1a0806',.6),'fill-opacity':.28,filter:svBlur(rk*.2)},ck)}
+        if(!hi)return;
+        /* the papillae: a fine foam of grains, pale on the lit side, deep in the shade, and a few tiny wet glints where the light falls */
+        const r=svRng(g.sd*7+911),k=Math.round(240+rk*24);let dL='',dD='',dW='',dM='';
+        for(let q=0;q<k;q++){const a=r()*6.2832,kk=Math.round(a/6.2832*NA)%NA,t=Math.sqrt(r())*RR[kk]*.98,x=ce[0]+Math.cos(a)*t,y=ce[1]+Math.sin(a)*t,
+            sd2=((x-ce[0])*lt[0]+(y-ce[1])*lt[1])/rk,ra=Math.max(.08,rk*(.024+.03*r()*r())),c3=`M${svF(x-ra)},${svF(y)}a${svF(ra)},${svF(ra)} 0 1,0 ${svF(2*ra)},0a${svF(ra)},${svF(ra)} 0 1,0 ${svF(-2*ra)},0`;
+          if(sd2>.1&&r()<.8){dL+=c3;if(sd2>.35&&r()<.08){const rw=ra*.45;dW+=`M${svF(x-ra*.3-rw)},${svF(y-ra*.3)}a${svF(rw)},${svF(rw)} 0 1,0 ${svF(2*rw)},0a${svF(rw)},${svF(rw)} 0 1,0 ${svF(-2*rw)},0`}}
+          else if(sd2<-.15&&r()<.75)dD+=c3;else dM+=c3}
+        E('path',{d:dD,fill:mix(sgC,'#1a0806',.32),'fill-opacity':.3},ck);E('path',{d:dL,fill:mix(sgC,'#fff2ea',.3),'fill-opacity':.45},ck);
+        E('path',{d:dM,fill:mix(sgC,'#fff2ea',.2),'fill-opacity':.22},ck);E('path',{d:dW,fill:'#fffaf2','fill-opacity':.4},ck)})}
     /* resolve: three rounds of apart (two tubes past their shared insertion never nearer than their radii + a gap) and inside (the throat, its
        tepal); then each drawn, its extra moved with its tip */
     if(TQ.length){const rad=q=>k=>(q.w0+(q.w1-q.w0)*k/(q.P3.length-1))*.5,ins=typeof svInside==='function'&&o.inside!==false;
