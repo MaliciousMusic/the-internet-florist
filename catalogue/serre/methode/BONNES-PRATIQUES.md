@@ -336,6 +336,9 @@ Rappel de base : SVG natif seulement, ni 3D, ni image incorporée, ni ruban, ni 
     restent une question au porteur (lis-asiatique-la-ETAT.md, question 1).
 16.8 **Le fané** se mesure sur des photos de la même sorte fanée, par coloris (couleur de séchage, ternissement `dull`, ombre `cast`).
     Si le rendu ne vire pas, on cherche ce qui ne vieillit pas (lavis, face externe roulée) avant de forcer la couleur.
+16.9 **La couleur se juge sur les pixels** (porteur, 2026-10-20, sur la pivoine framboise). Une photo dans son feuillage vert trompe l'œil :
+    la framboise de Cincinnati paraît rose vif, alors que son tissu mis à plat est framboise violacé. L'étalonnage suit les pixels. Une planche
+    de validation montre la photo recadrée sur le même fond beige que le rendu, jamais dans son décor.
 
 ## 17. Discipline de séance et coût (porteur, 2026-10-19)
 17.1 Étapes de 1 à 2 h, chacune finie par une image montrée au porteur. Un résidu est garé après deux essais : il est mesuré et noté dans
