@@ -36,6 +36,11 @@ branche le 2026-10-20 : les outils sont à jour. Ce chantier n'est **pas** encor
    (`fleur/out/pvcal_cmp.jpg`). Les grilles ne sont pas gardées. Piste : le cadre `R[cw][2]` de la photo tombe sur une zone ombrée
    ou bleutée de la garde. Il faut regarder `<cw>-paire-lit.png`, resserrer le cadre sur le tissu au soleil, puis relancer. Le cœur ne bouge pas
    (rose ΔE 11) : son cadre fixe sur la tête entière ne correspond pas à la photo, et il faut un repère du cœur sur le rendu.
+   **Vu ensuite sur `framboise-paire-lit.png`** : mis à plat, le tissu de la photo est réellement framboise violacé. Il ne paraît rose vif que
+   sur la vignette, à côté du feuillage vert. L'étalonnage suit donc les pixels. Le vrai défaut est la **base de la garde rendue, trop
+   pâle** (rangées du bas en rouge dans la carte ΔE) là où la photo est saturée : c'est la rampe de base de la matière, pas la grille.
+   **Question au porteur** : juger la couleur sur les pixels (étalonnée, plus violacée) ou sur l'impression à côté de la photo entière
+   (avant, plus rose) ? Proposition : les pixels, et une planche de validation qui montre la photo sur le même fond beige que le rendu.
 4. **Fichier d'état** : ce fichier fait office de `<sid>-ETAT.md` (§15.4). Le labo le lit.
 5. **Banc** lancé détaché (§16.6).
 
