@@ -339,6 +339,11 @@ Rappel de base : SVG natif seulement, ni 3D, ni image incorporée, ni ruban, ni 
 16.9 **La couleur se juge sur les pixels** (porteur, 2026-10-20, sur la pivoine framboise). Une photo dans son feuillage vert trompe l'œil :
     la framboise de Cincinnati paraît rose vif, alors que son tissu mis à plat est framboise violacé. L'étalonnage suit les pixels. Une planche
     de validation montre la photo recadrée sur le même fond beige que le rendu, jamais dans son décor.
+16.10 **Une forme ne se règle jamais à l'œil** (porteur, 2026-10-20, sur la pivoine refaite : « très mauvais »). Avant de construire, la
+    forme est mesurée sur les photos : comptes, tailles, élévations, et pour une fleur pleine, la part de creux sombres et la densité des
+    bords clairs. Les mêmes chiffres sont relevés sur le rendu. Une porte de forme se montre avec la matière et les ombres : en gris plat, une
+    fleur qui se lit par ses ombres (pivoine, rose pleine, œillet) ne se juge pas. Avant le porteur passent les paires recadrées et un juge
+    neuf (§11.4), jamais ma propre vignette.
 
 ## 17. Discipline de séance et coût (porteur, 2026-10-19)
 17.1 Étapes de 1 à 2 h, chacune finie par une image montrée au porteur. Un résidu est garé après deux essais : il est mesuré et noté dans
