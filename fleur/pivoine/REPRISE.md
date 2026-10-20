@@ -25,6 +25,10 @@ branche le 2026-10-20 : les outils sont à jour. Ce chantier n'est **pas** encor
    (regarder les .npy en image), puis `coloris_cw.sh calib` par paires d'éclairage voisin, avant de les poser. La carte du cœur
    (`<cw>-coeur1.npy`) est trop petite pour du 18 × 72 : de 82 à 1296 cases vides sur 1296. Il faut une mise à plat du cœur sur un
    recadrage plus grand ; d'ici là, le cœur reste en 6 × 24.
+1 ter. **Posées le 2026-10-20, par fusion** : `fleur/pivoine/fondre.py <base 6x24> <fine 18x72> <sortie>` garde la couleur d'ensemble de la
+   grille 6 × 24, déjà vérifiée, et y ajoute le détail de la 18 × 72, en Lab. Le détail est borné à ΔE 6 et s'éteint sur les deux dernières
+   colonnes du bord. Le blanc reste blanc et le rouge n'a plus de taches (`fleur/out/pv672.png`). Les 10 grilles des gardes sont dans
+   `app/y-paeonia.js` en 18 × 72 (`grille-<cw>-fondu.json`). Le cœur reste en 6 × 24. L'étalonnage photo | rendu reste à faire.
 4. **Fichier d'état** : ce fichier fait office de `<sid>-ETAT.md` (§15.4). Le labo le lit.
 5. **Banc** lancé détaché (§16.6).
 
