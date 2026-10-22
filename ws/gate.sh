@@ -1,8 +1,9 @@
 #!/bin/sh
 # gate.sh <command...>: runs one headless-Chrome job when a slot is free (GATE_MAX, 3 by default, shared by every workspace)
-# and the PC has room (CPU under 85 %, more than 3.8 GB of free RAM); the slot number is exported as GATE_SLOT
+# and the PC has room (CPU under 85 %, more than GATE_RAM GB of free RAM); the slot number is exported as GATE_SLOT
+# GATE_RAM is 5.5 by default (2026-10-22): a render of the rich lily scenes grows to about 2.5 GB after it starts, and free RAM must stay over 3 GB
 SP="C:/Users/agent/Desktop/flower/flower-atelier"
-LK="$SP/ws/locks"; mkdir -p "$LK"; MAX=${GATE_MAX:-3}; SLOT=""; waited=0
+LK="$SP/ws/locks"; mkdir -p "$LK"; MAX=${GATE_MAX:-3}; NEED=${GATE_RAM:-5.5}; SLOT=""; waited=0
 while [ -z "$SLOT" ]; do
   now=$(date +%s)
   for i in $(seq 1 $MAX); do
@@ -14,7 +15,7 @@ while [ -z "$SLOT" ]; do
   if [ -n "$SLOT" ]; then
     L=$(powershell -NoProfile -Command "\$c=(Get-CimInstance Win32_Processor|Measure-Object LoadPercentage -Average).Average;\$m=(Get-CimInstance Win32_OperatingSystem).FreePhysicalMemory/1MB;[string]::Format([cultureinfo]::InvariantCulture,'{0:F0} {1:F1}',\$c,\$m)" | tr -d '\r')
     cpu=${L% *}; ram=${L#* }
-    ok=$(python -c "print(1 if float('$cpu')<85 and float('$ram')>3.8 else 0)" 2>/dev/null)
+    ok=$(python -c "print(1 if float('$cpu')<85 and float('$ram')>$NEED else 0)" 2>/dev/null)
     if [ "$ok" != 1 ]; then rm -rf "$LK/slot$SLOT"; SLOT=""; [ $waited = 0 ] && echo "gate: PC chargé (CPU $cpu %, RAM libre $ram Go), j'attends" >&2; waited=1; sleep 8; fi
   else
     [ $waited = 0 ] && echo "gate: 3 rendus déjà en cours, j'attends un créneau" >&2; waited=1; sleep 3
