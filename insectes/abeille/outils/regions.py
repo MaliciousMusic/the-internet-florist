@@ -73,5 +73,5 @@ S = Image.new('RGB', (W, len(rows) * 390), '#efe9df')
 for j, r in enumerate(rows):
     for i, t in enumerate(r): S.paste(t, (i * (2 * 360 + 12), j * 390))
 S.save(os.path.join(ref, 'regions.jpg'), quality=86)
-json.dump(res, open(os.path.join(HERE, '..', 'formes', 'regions.json'), 'w', encoding='utf-8'), indent=1)
+json.dump(res, open(os.path.join(HERE, '..', 'formes', 'regions.json'), 'w', encoding='utf-8', newline='\n'), indent=1)
 print(os.path.join(ref, 'regions.jpg'), S.size)
