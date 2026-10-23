@@ -115,13 +115,14 @@
  "vivant": {
   "_doc": "proportions de l'ouvrière vivante (c123 vue de dessus, c013 de profil), rapportées à la largeur de la tête yeux compris (pièce rigide, 1,08 mm sur AntWeb) : le gastre sec des spécimens se rétracte, celui des vivantes est distendu",
   "gastre": {
-   "longueur": 1.76,
+   "longueur": 1.62,
    "largeur": 1.35,
-   "hauteur": 1.2
+   "hauteur": 1.25
   },
   "mesosome_largeur_pronotum": 0.78,
   "mesosome_hauteur_pronotum": 0.72,
   "tete_hauteur": 0.8,
-  "sources": "c123 : tête 1,14, gastre 1,86 × 1,43, mésosome 0,95 (vu un peu de côté), en mm à l'échelle de la tête ; c013 : tête haute de 0,87 pour 1,23 de long, mésosome haut de 0,8 coxas comprises"
+  "sources": "c123 : tête 1,14, gastre 1,86 × 1,43, mésosome 0,95 (vu un peu de côté), en mm à l'échelle de la tête ; c013 : tête haute de 0,87 pour 1,23 de long, mésosome haut de 0,8 coxas comprises",
+  "_gastre_note": "longueur ramenée de 1,76 à 1,62 mm (second juge : « ovale plus court et plus haut », c013 et c115 de profil)"
  }
 }
