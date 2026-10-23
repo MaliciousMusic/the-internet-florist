@@ -17,6 +17,7 @@ export const MYRMICA = {
 const lerp = (a, b, t) => a + (b - a) * t;
 const clamp = (x, lo, hi) => Math.max(lo, Math.min(hi, x));
 const WALK = 8, TAP = 4;
+const TH = 4, SK = 1.22;
 
 export class FourmiRouge {
   // ground: { y (scene px of the ground line), x0, x1, z0, z1 (the strip it walks on) }; colony: every ant on the ground (shared)
@@ -61,11 +62,13 @@ export class FourmiRouge {
     const S = this.S, px = this.pxmm;
     this.t -= dt; this.cool -= dt;
     if (this.state === 'marche' || this.state === 'alarme') {
-      // sinuosity: the heading wanders so that the turning summed over a centimetre is the measured one (deg/cm): a smooth random turn
-      // rate whose mean size is S * v / 10 deg/s
+      // sinuosity: the heading wanders so that the turning summed over a centimetre is the measured one (deg/cm): the turn rate is an
+      // Ornstein-Uhlenbeck process (correlation time 1 / TH s) whose mean size is S * v / 10 deg/s, times SK: the factor that brings the
+      // angle summed on a trajectory sampled every 2 mm, as Cammaerts et al. traced it, to the measured value (outils/simule.mjs)
       const sin = this.state === 'alarme' ? S.alarmSinuosity : S.sinuosity;
-      const rate = (lerp(sin[0], sin[1], 0.5) * this.v / 10) * Math.PI / 180;
-      this.turn += (-(this.turn) * 2.5 + (this.rnd() - 0.5) * rate * 7) * dt;
+      const rate = (lerp(sin[0], sin[1], 0.5) * this.v / 10) * Math.PI / 180 * SK;
+      const sigma = (rate / Math.sqrt(2 / Math.PI)) * Math.sqrt(2 * TH);
+      this.turn += -TH * this.turn * dt + sigma * Math.sqrt(dt) * (this.rnd() - 0.5) * Math.sqrt(12);
       this.heading += this.turn * dt;
       // the strip's edges turn it back in
       const { x0, x1, z0, z1 } = this.g, m = 6 * px;
