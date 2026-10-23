@@ -1,4 +1,4 @@
-# Coccinelle à sept points (Coccinella septempunctata) : état au 2026-10-23
+# Coccinelle à sept points (Coccinella septempunctata) : état au 2026-10-24
 
 Reprise complète, d'après la méthode du machaon (PROTOCOLE §1 à §7, §3.4 à §3.6). La première passe, rejetée par le porteur, est
 remplacée. Ce fichier est tenu à jour au fil des étapes.
@@ -58,7 +58,7 @@ remplacée. Ce fichier est tenu à jour au fil des étapes.
 
 ## Fichiers partagés touchés (pour l'intégration)
 - `moteur/insecte.mjs` : clés nouvelles `mat.box`, `mat.sky` (reflet du ciel), `b.over` (marques au-dessus du spéculaire),
-  `b.fine` (maillage, flou et pas de couleur des gros plans), `paint` reçoit l'id du corps ; exports `shadePoint`, `toLinear`,
+  `b.fine` (maillage, flou et pas de couleur des gros plans), `mat.up` (le zénith du reflet), `paint` reçoit l'id du corps ; exports `shadePoint`, `toLinear`,
   `fromLinear`, `gridAt`, `material`.
 - `runtime/essaim.mjs` : `placeWings` lit `b.wingsHidden`, `ang.hidden`, `ang.unfold`, `ang.alpha`, et `K.wingsDepth`.
 - `demo/demo.mjs` : `?coccinelle=N` (4 au plus).
@@ -85,6 +85,17 @@ remplacée. Ce fichier est tenu à jour au fil des étapes.
   le sujet, montent le rouge jusqu'à L* 62.
 - Contour de dessus, photo contre rendu, sur les mêmes stations : largeurs à 0,03-0,07 près, rapport longueur sur largeur 1,08
   (photos 1,06 et 1,23).
+- **Second passage (2026-10-24) : encore ko sur les 7 paires.** Le juge garde le nombre et la place des taches, la teinte du rouge,
+  le noir, la suture, le rapport hauteur sur longueur du profil, la largeur du pronotum, le rebord vu de dessous et l'éclat net.
+  Corrigé après lui :
+  - la plage crème du pronotum était un polygone recoupé (l'arc de son coin parcouru à l'envers) ; elle est réparée et diffuse ;
+  - le pronotum est relu sur la surface dessinée (`surface.json`, grille du pronotum incliné), ce qui redonne la même plage ;
+  - le reflet du ciel est tenu au zénith (clé moteur `mat.up`) : vu de dessus, il n'y a plus de bandes en travers du dos. L'horizon
+    est adouci, ce qui atténue les anneaux ;
+  - l'éclat est calculé sur une grille deux fois plus fine, son contour n'est plus anguleux ;
+  - le bord des taches n'ondule plus (il faisait des facettes) et reste adouci ;
+  - au dessous, les sutures des ventrites sont courbes, leur écart diminue vers l'arrière, leur contraste est baissé de 55 %, et les
+    points clairs sont retirés.
 
 ## Résidus et questions
 1. **Masques par GrabCut plutôt que SAM.** La RAM libre est restée sous le seuil du verrou toute la session (jusqu'à 0,6 Go libres).
@@ -95,3 +106,16 @@ remplacée. Ce fichier est tenu à jour au fil des étapes.
 3. **Élytres ouverts en plans** (décision du porteur). Vus de chant au runtime, ils perdent leur courbure. Au tout début de l'envol, le
    couvercle est plat pendant 0,12 s.
 4. **Élytre gauche en miroir du droit.** Le flanc gauche du spécimen mesuré n'a pas été photographié.
+5. **Pronotum et tête, deux essais, mis de côté.** Vu de dessus (c370), le pronotum de la photo a des côtés aplatis, tournés vers le
+   haut, qui portent les plages crème bien de face, et la tête dépasse avec ses deux taches. Le rendu garde des flancs raides : la plage
+   y est vue en fuite, et la tête reste sous le bord.
+   Proposition : abaisser la section aux côtés (|u| > 0,6) en rebord plat, au lieu de 55 % de la hauteur de corde, et creuser
+   l'échancrure au milieu de 0,215 à 0,17 W (c101). Cela demande une nouvelle mesure du profil du pronotum sur c542.
+6. **Demandes du juge contraires aux mesures, non suivies.**
+   - Largeur maximale reculée de 15 % : les quatre vues de dessus la placent à 58 % depuis l'apex.
+   - Taches agrandies de 15 à 30 % : ce sont celles du spécimen relevé (c541, c542) ; leur taille varie d'une bête à l'autre.
+   - Pattes épaissies de moitié : le premier juge les voulait amincies de 40 %, et elles l'ont été.
+7. **Tache scutellaire, deux essais.** Le juge la veut en deux lobes ronds accolés ; le rendu la lit encore comme une cloche.
+   Proposition : la tracer sur c370, de près, plutôt que sur c541.
+8. **Dessous sans relief de sternum ni de hanches.** Le ventre est une coque unique. Modeler le métasternum et les hanches postérieures
+   comme des pièces à part est un chantier en soi ; la vue de dessous n'apparaît pas au runtime.

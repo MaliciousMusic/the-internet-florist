@@ -236,6 +236,17 @@ def cmd_pronotum(C, names, out):
         x = (Pp @ ex - x1) / sx; y = (-(Pp @ ey) - mid) / sy
         t = np.interp(y, Y, tt); xc = np.interp(t, tt, XC); rx = np.maximum(np.interp(t, tt, RX), 1e-3)
         th = np.arccos(np.clip((x - xc) / rx, -1, 1))
+        if 'grille' in P:
+            # read on the drawn surface: at each t, the th whose point lies at x, over the part that faces up (front edge to rear edge)
+            Qt = np.array(P['grille']['t']); Qth = np.array(P['grille']['th']); Qx = np.array(P['grille']['x']); Qn = np.array(P['grille']['nz'])
+            it = np.clip(np.rint(t * (len(Qt) - 1)).astype(int), 0, len(Qt) - 1)
+            for i in np.unique(it):
+                up = Qn[i] > 0
+                if up.sum() < 2: continue
+                xs_ = Qx[i][up]; ths = Qth[up]
+                xs_ = np.minimum.accumulate(xs_)        # x falls from the front edge to the rear one
+                sel = it == i
+                th[sel] = np.interp(x[sel], xs_[::-1], ths[::-1])
         lab = lab_of(cv2.GaussianBlur(rgb, (0, 0), 1.0))[ys, xs]; L = lab[:, 0]; Ch = np.hypot(lab[:, 1], lab[:, 2])
         k = ((L > 55) & (Ch < 30) & (lab[:, 1] < 15)).astype(int)
         w = np.sin(th) ** 1.0 + 0.05
