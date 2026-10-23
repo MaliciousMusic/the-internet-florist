@@ -250,8 +250,11 @@ function paintBody(sc, b, id) {
   for (let i = 0; i <= 10; i++) { const p = b.profile(i / 10); rmax = Math.max(rmax, p.ry, p.rz); }
   ext = Math.abs(b.profile(1).x - b.profile(0).x);
   const q = 4 / Math.sqrt(Math.max(0.6, sc.detail ?? 1));
-  const nt = Math.round(clamp((ext * sc.k) / q, 8, 150));
-  const nthFull = Math.round(clamp((2 * Math.PI * rmax * sc.k) / q, 12, 150));
+  // (coccinelle) b.fine { max, blur, q }: a smooth varnished shell seen in close-up needs more than 150 quads a turn, a wider blur
+  // and finer colour steps (its terraces showed at 160 px/mm); the defaults are the engine's
+  const FN = b.fine || {};
+  const nt = Math.round(clamp((ext * sc.k) / q, 8, FN.max ?? 150));
+  const nthFull = Math.round(clamp((2 * Math.PI * rmax * sc.k) / q, 12, FN.max ?? 150));
   // the blur follows the real size of a quad, so facets never show in close-ups
   const qpx = Math.max((ext * sc.k) / nt, (2 * Math.PI * rmax * sc.k) / nthFull);
   const nth = b.th0 === undefined ? nthFull : Math.max(6, Math.round(nthFull * (b.th1 - b.th0) / (2 * Math.PI)));
@@ -294,9 +297,9 @@ function paintBody(sc, b, id) {
   // Under the blurred mesh, the outline filled with the rim colour: no see-through at the edge.
   const under = rimN ? hexl(vs(rimC, 1 / rimN)) : b.color;
   out += `<path d="${sil}" fill="${under}"/>`;
-  const blur = sc.id('f'), sd = clamp(qpx * 0.5, 0.35, 3);
+  const blur = sc.id('f'), sd = clamp(qpx * 0.5, 0.35, FN.blur ?? 3);
   sc.defs.push(`<filter id="${blur}" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="${fmt(sd)}"/></filter>`);
-  out += `<g clip-path="url(#${clip})"><g filter="url(#${blur})">` + quadPaths(quads, (x) => hexl(x.D)) + '</g>';
+  out += `<g clip-path="url(#${clip})"><g filter="url(#${blur})">` + quadPaths(quads, (x) => hexl(x.D), null, FN.q) + '</g>';
   // Decals: spots and flecks laid on the surface (ladybird spots, chafer flecks), lit with the surface.
   if (b.decals) out += b.decals.map((d) => decal(sc, b, M, d, id)).join('');
   if (b.punct && sc.k * b.punct.r > 0.35) out += punctures(sc, b, M);
@@ -306,7 +309,7 @@ function paintBody(sc, b, id) {
   const spec = quads.filter((x) => Math.max(...x.S) > 0.012);
   if (spec.length) {
     out += `<g filter="url(#${blur})">` + quadPaths(spec, (x) => { const a = clamp(Math.max(...x.S)); return hexl(vs(x.S, 1 / Math.max(a, 1e-3))); },
-      (x) => Math.round(clamp(Math.max(...x.S)) * 20) / 20) + '</g>';
+      (x) => Math.round(clamp(Math.max(...x.S)) * 20) / 20, FN.q) + '</g>';
   }
   // (coccinelle) marks drawn by the species over the specular layer, clipped by the outline: a crisp glint of the lamp
   if (b.over) out += b.over(sc, b, g, id);
@@ -323,8 +326,9 @@ function paintBody(sc, b, id) {
 
 // Quads written lean: in depth order, cut in three slices, and within a slice gathered by colour (quantised to steps of 6 per
 // channel: under the blur no step shows) and opacity: one path per group, in relative steps of a tenth of a pixel.
-function quadPaths(quads, colOf, opOf = null) {
-  const q6 = (h) => '#' + [1, 3, 5].map((i) => Math.min(255, Math.round(parseInt(h.slice(i, i + 2), 16) / 6) * 6).toString(16).padStart(2, '0')).join('');
+function quadPaths(quads, colOf, opOf = null, step = 6) {
+  const st = step ?? 6;
+  const q6 = (h) => '#' + [1, 3, 5].map((i) => Math.min(255, Math.round(parseInt(h.slice(i, i + 2), 16) / st) * st).toString(16).padStart(2, '0')).join('');
   const f1 = (v) => { const r = Math.round(v * 10) / 10; return (r === 0 ? '0' : r.toString()).replace(/^(-?)0\./, '$1.'); };
   const jn = (v) => v.map(f1).reduce((o, t, i) => o + (i && t[0] !== '-' ? ' ' : '') + t, '');
   const qd = (S) => `M${jn([S[0][0], S[0][1]])}l${jn([S[1][0] - S[0][0], S[1][1] - S[0][1], S[2][0] - S[1][0], S[2][1] - S[1][1], S[3][0] - S[2][0], S[3][1] - S[2][1]])}z`;

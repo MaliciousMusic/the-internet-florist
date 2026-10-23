@@ -163,7 +163,13 @@ function contours(F, c) {
 // A thin line along a curve of the surface (the suture, the bright edge of the elytral margin): a polyline of (t, th), kept where
 // it faces the camera, stroked.
 export function line(sc, b, P, stroke, w, a = 1) {
-  const pts = dense(P, 0.006, 0.02);
+  // an open line: straight steps between its points (dense() closes and rounds an outline)
+  const pts = [];
+  for (let i = 0; i + 1 < P.length; i++) {
+    const a = P[i], c = P[i + 1], m = Math.max(1, Math.ceil(Math.max(Math.abs(c[0] - a[0]) / 0.006, Math.abs(c[1] - a[1]) / 0.02)));
+    for (let k = 0; k < m; k++) pts.push([a[0] + (c[0] - a[0]) * k / m, a[1] + (c[1] - a[1]) * k / m]);
+  }
+  pts.push(P[P.length - 1]);
   let d = '', run = [];
   const flush = () => { if (run.length > 1) d += 'M' + run.map((p) => f1(p[0]) + ' ' + f1(p[1])).join('L'); run = []; };
   for (const [t, th] of pts) {

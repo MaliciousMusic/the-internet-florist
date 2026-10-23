@@ -136,18 +136,24 @@ def outlines(lbl, cls, amin=0.002, npts=32, convexe=False):
 
 
 def scutellaire(P):
-    """the scutellar spot is one round spot across the suture: each elytron holds a half ellipse whose straight side is the suture,
-    its extent the measured half's (in t, and in its width from the suture)"""
+    """the scutellar spot, one spot across the suture, bilobed toward the base (a lobe each side of the scutellum) and pointed toward
+    the apex (c137, c246): each elytron holds one lobe, an ellipse a little off the suture, joined to the suture down to the tip. Its
+    extent is the measured half's, reduced by a fifth (the dead specimen's spot is large; the judge, 2026-10-23: too big by a third)"""
     S, demi, _, _ = surface(); n = S['n_sec']
     t = np.array([q[0] for q in P]); th = np.array([q[1] for q in P])
     w = (np.cos(np.clip(th, 0, np.pi / 2)) ** (2 / n)) * demi(t)          # distance from the suture, mm
-    t0, t1, wm = t.min(), t.max(), np.percentile(w, 95)
-    tc, rt = (t0 + t1) / 2, (t1 - t0) / 2
+    t0, t1, wm = t.min(), t.max(), np.percentile(w, 95) * 0.8
+    rt = (t1 - t0) / 2 * 0.8; tc = t1 - rt * 1.05
+    tl, wl, a_, b_ = tc + 0.25 * rt, 0.5 * wm, 0.75 * rt, 0.55 * wm      # the lobe
+    pts = [(tc + 0.85 * rt, 0.0)]
+    for a in np.linspace(np.pi * 0.62, -np.pi * 0.55, 15):              # around the lobe from the suture side over the outside
+        pts.append((tl + a_ * np.sin(a), wl + b_ * np.cos(a - np.pi / 2) * -1 if False else wl + b_ * np.sin(a + np.pi / 2)))
+    pts.append((tc - 0.95 * rt, 0.0))                                    # the tip on the suture
     out = []
-    for a in np.linspace(-np.pi / 2, np.pi / 2, 17):
-        tt = tc + rt * np.sin(a); ww = wm * np.cos(a)
+    for tt, ww in pts:
+        ww = max(0.0, ww)
         out.append([round(float(tt), 4), round(float(np.arccos(np.clip(ww / max(1e-3, demi(tt)), 0, 1) ** (n / 2))), 4)])
-    return out + [[round(float(t1), 4), round(np.pi / 2, 4)], [round(float(t0), 4), round(np.pi / 2, 4)]][::-1][:0]
+    return out
 
 
 def cmd_motif(C, names, out, miroir, sym=None):
@@ -177,7 +183,7 @@ def cmd_motif(C, names, out, miroir, sym=None):
         lbl = lbls[side][0]
         # the dark gap of a suture left ajar on a dead specimen is not a spot (along the suture, behind the base), nor the shade
         # of the apex (the species has no spot in its last fifth: Iqbal et al. 2024 fig. 1A)
-        spots = [P for P in outlines(lbl, 1, convexe=True) if not (np.mean([q[1] for q in P]) > 1.25 and max(q[0] for q in P) < 0.75) and max(q[0] for q in P) > 0.2]
+        spots = [P for P in outlines(lbl, 1, convexe=True) if not (np.mean([q[1] for q in P]) > 1.25 and max(q[0] for q in P) < 0.75) and max(q[0] for q in P) > 0.2 and min(q[0] for q in P) < 0.95]
         spots = [scutellaire(P) if np.mean([q[1] for q in P]) > 1.25 and max(q[0] for q in P) > 0.9 else P for P in spots]
         res['elytres'][side] = [{'poly': P, 'c': None, 'classe': 'tache'} for P in spots] + \
                                [{'poly': P, 'c': None, 'classe': 'blanc'} for P in outlines(lbl, 2, 0.0005)]
@@ -257,11 +263,18 @@ def cmd_pronotum(C, names, out):
     # reaching the edge), and mirrored to the other side
     P = max([p_ for p_ in polys if np.mean([q[0] for q in p_]) > 0.5] or polys, key=lambda p_: abs(cv2.contourArea(np.array(p_, np.float32))))
     lo, hi = min(q[1] for q in P), max(q[1] for q in P)
-    P = [[q[0], round(hi - (hi - q[1]) * hi / (hi - lo), 4)] for q in P]
+    t0, t1 = min(q[0] for q in P), max(q[0] for q in P)
+    # its measured extent kept, its edge regularised: the patch fills the front corner, from the margin (t 1) inward to t0 and from the
+    # front edge (th 0) back to hi, its inner rear corner rounded (c137, c246, c370: a clean cream quadrant, not a torn edge)
+    rr = 0.35
+    P = []
+    for i in range(10): a_ = np.pi / 2 * i / 9; P.append([t0 + (t1 - t0) * rr * (1 - np.sin(a_)), hi - hi * rr * (1 - np.cos(a_))])
+    P = [[round(float(t0), 4), 0.0]] + P + [[1.0, round(float(hi), 4)], [1.0, 0.0]]
+    P = [[round(float(a_), 4), round(float(b_), 4)] for a_, b_ in P]
     M['pronotum'] = [{'poly': P, 'c': None, 'classe': 'blanc'}, {'poly': [[round(1 - q[0], 4), q[1]] for q in P][::-1], 'c': None, 'classe': 'blanc'}]
     M['pronotum_photos'] = names
-    M['pronotum_traitement'] = ("plage gauche relevée (th %.2f-%.2f), prolongée jusqu'au bord antérieur (vue de dessus sa partie avant est raccourcie ; "
-                                "c246 la montre au bord), reportée en miroir à droite" % (lo, hi))
+    M['pronotum_traitement'] = ("plage gauche relevée (t %.2f-%.2f, th %.2f-%.2f), prolongée jusqu'au bord antérieur (vue de dessus sa partie avant est raccourcie ; "
+                                "c246 la montre au bord), son bord régularisé en coin arrondi, reportée en miroir à droite" % (t0, t1, lo, hi))
     json.dump(M, open(out, 'w', encoding='utf-8', newline=chr(10)), ensure_ascii=False, separators=(',', ':'))
     pal = np.array([[14, 12, 12], [240, 235, 220]], np.uint8)
     cv2.imwrite(os.path.join(ROOT, 'refcache', C['_sid'], 'forme', 'pronotum-controle.png'), cv2.resize(pal[lbl].transpose(1, 0, 2)[::-1], None, fx=2, fy=2, interpolation=cv2.INTER_NEAREST)[..., ::-1])

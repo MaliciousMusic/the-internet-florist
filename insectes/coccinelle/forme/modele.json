@@ -19,7 +19,7 @@
   "pr_L": 0.226,
   "pr_W": 0.7,
   "pr_Wf": 0.273,
-  "te_W": 0.37,
+  "te_W": 0.34,
   "el_w": [
    0.378,
    0.506,
@@ -127,6 +127,6 @@
  "_lissage": "el_w et el_z : y^2 ajusté par un polynôme de degré 5 en t (les taches du bord échancrent les masques), puis ramené à 1 au maximum ; les valeurs brutes sont gardées (_brut)",
  "_choix": {
   "pr_W": "0,70 : c370 (studio, pronotum entier) ; c101 donne 0,55 parce que son pronotum passe sous l'ombre et la feuille ; c246 et c137 le montrent presque aussi large que la base des élytres",
-  "te_W": "0,37 : largeur de la tête aux yeux sur c246 (0,37) et c137 ; c370 (0,30) ne mesure que sa partie dégagée du pronotum"
+  "te_W": "0,34 : largeur de la tête aux yeux sur c246 (272 px pour des élytres de 816 px) ; c370 (0,30) ne mesure que sa partie dégagée du pronotum"
  }
 }
