@@ -238,3 +238,7 @@ Proposition envoyée à la session de coordination : deux lignes neuves dans `li
 Réponse de la coordination (2026-10-23) : D pose les crochets dans z1, la coordination fusionne dans ch/lis-oriental après avoir montré la planche au porteur ; `vpSocle` et `vpRestOn` rendent null si `CMP_V < 3`. Questions posées :
 - Qui modifie z1 ?
 - Le porteur avait-il validé des pétales sous la panse ?
+
+**Décision du porteur (2026-10-23)** : « un pétale tombé ne se pose jamais sous la panse, il va au-delà du point le plus large ou reste
+sur l'épaule. Applique le plan du vase dans la chute des pétales. » Elle est transmise à la coordination des lys pour le chantier D, qui
+pose les deux crochets dans `lifeScatter`.
