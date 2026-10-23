@@ -10,7 +10,7 @@
 import { readFileSync } from 'node:fs';
 import { add, sub, mul, norm, cross, dot, rot, rad, clamp, smooth, rng, fmt, camera } from '../moteur/geo.mjs';
 import { Scene, drawBody, drawTube, drawWing, surf, normalAt } from '../moteur/insecte.mjs';
-import { X, Y, Z, frame0, legChain, tripod, articleLeg, fringe, segment } from '../moteur/kit.mjs';
+import { X, Y, Z, frame0, legChain, tripod, articleLeg, fringe, segment, curve } from '../moteur/kit.mjs';
 import { flapAxes } from '../moteur/papillon.mjs';
 
 const J = (p) => { try { return JSON.parse(readFileSync(new URL(p, import.meta.url), 'utf8')); } catch { return null; } };
@@ -44,8 +44,8 @@ const sup = (ey, ez) => (th) => { const c = Math.abs(Math.cos(th)), s = Math.abs
 // ---------------------------------------------------------------------------------------------------------------
 const XA = -11.94, XB = -0.12;                   // elytral apex, elytral base (the shoulders meet the pronotum)
 const W_EL = tab([[-11.94, 0], [-11.85, 0.62], [-11.69, 1.09], [-11.44, 1.8], [-11.19, 2.37], [-10.69, 3.06], [-10.19, 3.45], [-9.69, 3.71],
-  [-9.19, 3.92], [-8.69, 4.07], [-8.19, 4.19], [-7.69, 4.29], [-7.19, 4.37], [-6.69, 4.44], [-6.19, 4.46], [-5.0, 4.53], [-3.7, 4.6],
-  [-2.69, 4.63], [-2.19, 4.66], [-1.69, 4.72], [-1.19, 4.7], [-0.69, 4.6], [-0.35, 4.3], [-0.12, 3.95]]);
+  [-9.19, 3.92], [-8.69, 4.07], [-8.19, 4.19], [-7.69, 4.29], [-7.19, 4.37], [-6.69, 4.44], [-6.19, 4.46], [-5.5, 4.42], [-4.5, 4.34], [-3.5, 4.36],
+  [-2.6, 4.5], [-2.19, 4.62], [-1.69, 4.72], [-1.19, 4.7], [-0.69, 4.6], [-0.35, 4.3], [-0.12, 3.95]]);
 // the suture's height (the dorsal line of c111, from its top), and the lateral margin's (the lower edge of the elytron seen from
 // the side: high behind the shoulder, where the notch lets the wing out; low around the apex)
 const Z_TOP = tab([[-11.94, -3.05], [-11.85, -2.55], [-11.6, -1.75], [-11.4, -1.38], [-10.96, -1.12], [-9.62, -0.58], [-7.84, -0.13],
@@ -54,7 +54,8 @@ const Z_MAR = tab([[-11.94, -3.05], [-11.7, -3.55], [-11.2, -3.75], [-10.5, -3.5
   [-4.0, -1.85], [-3.0, -1.7], [-2.2, -1.75], [-1.4, -2.05], [-0.7, -2.3], [-0.12, -2.35]]);
 // the scutellum: a triangle from the pronotum's hind margin to its apex at x -3.26, 2.79 mm wide at its base
 const XS = -3.26, SC_HALF = 1.4;
-const S_HALF = (x) => (x <= XS ? 0 : SC_HALF * Math.pow(clamp((x - XS) / (-0.12 - XS)), 0.82));
+// its sides concave (c114: a long narrow V), wide only near its base
+const S_HALF = (x) => (x <= XS ? 0 : SC_HALF * Math.pow(clamp((x - XS) / (-0.12 - XS)), 1.45));
 // pronotum: half-width (c114, the rows clear of the front legs), height of its top (c111) and of its lateral margin (c109)
 const XP0 = -0.45, XP1 = 3.81;
 const W_PR = tab([[-0.45, 3.7], [-0.18, 4.02], [0.19, 3.99], [0.38, 3.88], [0.56, 3.86], [0.74, 3.78], [0.92, 3.74], [1.11, 3.67], [1.29, 3.58],
@@ -68,16 +69,17 @@ const Z_PRM = tab([[-0.45, -2.1], [-0.18, -2.45], [1.0, -2.6], [2.2, -2.7], [3.0
 // Its own diffuse is a dark green; the ramp carries the hue through the reflected sky and lamp.
 // ---------------------------------------------------------------------------------------------------------------
 const RAMP = LAW?.ramp ?? [[0, '#0b2a26'], [0.25, '#155a35'], [0.5, '#2f8c2c'], [0.75, '#7db331'], [0.9, '#b6b23a'], [1, '#c9a23c']];
-const RAMP_UNDER = LAW?.rampDessous ?? [[0, '#2a120e'], [0.4, '#5a2a1a'], [0.75, '#8a4a28'], [1, '#a8683a']];
+// the underside: dark purple-copper sternites, bright where they mirror (c103, c106, c111)
+const RAMP_UNDER = LAW?.rampDessous ?? [[0, '#24120e'], [0.4, '#4e2820'], [0.75, '#80503c'], [1, '#a06c52']];
 // the ramp is a reflectance (the studio's white = 1): mirrored at that strength (Fresnel 1), the lamp's lobes tinted by it
 // (c114: the highlights are yellow-green, L* 75 to 80, far above the mean)
-const SHELL = { metal: 1, ks: 0.32, p: 140, ks2: 0.06, p2: 9, env: 1.0, amb: 0.1, wrap: 0.1, mottle: 0.05, ramp: RAMP, fresnel: [1, 0], lobeColor: '#d6c25e' };
+const SHELL = { metal: 1, ks: 0.2, p: 70, ks2: 0.1, p2: 7, env: 1.0, amb: 0.22, wrap: 0.25, mottle: 0.06, ramp: RAMP, fresnel: [1, 0], lobeColor: '#c8b860' };
 // the head's own law: face on it turns copper (c109: the clypeus copper-pink seen square, the pronotum green beside it; c013, c027)
 const HEADMAT = { ...SHELL, ramp: [[0, '#16402c'], [0.35, '#2e5a2a'], [0.6, '#5a5a2e'], [0.82, '#7a5232'], [1, '#8a5a40']], lobeColor: '#d8a070', ks: 0.2 };
 const UNDER = { metal: 1, ks: 0.5, p: 60, ks2: 0.2, p2: 7, env: 1.1, amb: 0.2, wrap: 0.2, mottle: 0.06, ramp: RAMP_UNDER, fresnel: [0.5, 0.5] };
 // legs: green to copper femora (c058 copper-pink, c130 green, c027 copper), darker tarsi
-const LEGMAT = { ...SHELL, ks: 0.45, p: 70, ramp: [[0, '#26301a'], [0.45, '#3f5a2a'], [0.8, '#635a2e'], [1, '#76503a']], lobeColor: '#d8b080' };
-const GREEN = '#0d2412', BRONZE = '#2a1a10', HAIR = '#d7c39a', HAIR2 = '#b9a27a', CREAM = '#efe6d2';
+const LEGMAT = { ...SHELL, ks: 0.35, p: 60, ramp: [[0, '#221a12'], [0.45, '#3e3a22'], [0.8, '#6e4c34'], [1, '#8e644a']], lobeColor: '#d8a882' };
+const GREEN = '#1a3e1a', BRONZE = '#2a1a10', HAIR = '#d7c39a', HAIR2 = '#b9a27a', CREAM = '#efe6d2';
 
 // Pits of the shell (mesures/taches.json): on the elytral disc horseshoes open toward the rear, 0.2 mm wide and 0.24 long, in double
 // rows (period 0.62 mm across, the two rows 0.25 mm apart, 0.38 mm between pits along a row), scattered on the sides and the
@@ -98,7 +100,7 @@ function pits(P) {
       const q = sc.S(surf(b, t, th));
       const f = sc.S(surf(b, clamp(t + 0.004), th));                       // forward along the body, on screen
       let ax = f[0] - q[0], ay = f[1] - q[1]; const l = Math.hypot(ax, ay) || 1; ax /= l; ay /= l;
-      const r = sc.k * P.r * (0.85 + 0.3 * R());
+      const r = sc.k * P.r * (0.7 + 0.7 * R());
       const rr = r * (0.35 + 0.65 * vis), nx = -ay, ny = ax;
       if (P.arc) {
         // the horseshoe: two legs toward the rear, the arch toward the front (foreshortened across by the surface's tilt)
@@ -114,10 +116,10 @@ function pits(P) {
       }
     }
     if (!dk) return '';
-    const w = Math.max(0.35, sc.k * P.r * 0.38);
+    const w = Math.max(0.4, sc.k * P.r * 0.5);
     return (P.arc ? `<path d="${dk}" stroke="${P.color}" stroke-width="${fmt(w)}" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="${P.a}"/>`
       : `<path d="${dk}" fill="${P.color}" opacity="${P.a}"/>`) +
-      `<path d="${lt}" stroke="${P.lip}" stroke-width="${fmt(w * 0.8)}" fill="none" stroke-linecap="round" opacity="${P.alip}"/>`;
+      `<path d="${lt}" stroke="${P.lip}" stroke-width="${fmt(w * 0.5)}" fill="none" stroke-linecap="round" opacity="${P.alip}"/>`;
   };
 }
 
@@ -126,7 +128,7 @@ function pits(P) {
 function elytronPits(s) {
   return (b) => {
     const R = rng(500 + s), out = [], L = XB - XA;
-    const thOf = (f) => { const th = Math.acos(Math.pow(clamp(f, 0, 1), 1 / 0.75)); return s > 0 ? th : Math.PI - th; };
+    const thOf = (f) => { const th = Math.acos(Math.pow(clamp(f, 0, 1), 1 / 0.6)); return s > 0 ? th : Math.PI - th; };
     const W = 4.4, step = 0.38 / L;
     for (let pair = 0; pair < 6; pair++) for (const off of [-0.125, 0.125]) {
       const d = 0.55 + pair * 0.62 + off;                                  // mm from the suture
@@ -159,17 +161,21 @@ function elytron(s, lift = 0) {
     return { x: lift ? x - XB : x, yc: s * yi, zc: zm, ry: Math.max(0.02, w - yi), rz: Math.max(0.02, zt - zm) };
   };
   // the disc fairly flat, the sides steep; under the margin a short fold (the epipleuron)
-  const sec = sup(0.75, 0.85);
+  const sec = sup(0.6, 1.0);
   const b = {
     name: 'elytron', frame, color: GREEN, seed: 70 + s, mat: SHELL, bias: 0.05,
     profile: prof,
     shape: (th, t) => { const q = sec(th); const under = Math.sin(th) < 0; return under ? [0.97, 0.22] : [q[0], q[1] * (1 + costae(t, th))]; },
     ...(s > 0 ? { th0: -0.32, th1: Math.PI / 2 } : { th0: Math.PI / 2, th1: Math.PI + 0.32 }),
-    inner: '#0c2410',
+    inner: '#241812',
     depthAt: [-6, s * 2.6, -0.4],
   };
-  b.paint = pits({ seed: 300 + s, r: 0.11, arc: true, points: elytronPits(s), color: '#041407', a: 0.85, lip: '#c8e070', alip: 0.45 });
+  const P = pits({ seed: 300 + s, r: 0.11, arc: true, points: elytronPits(s), color: '#020a04', a: 0.9, lip: '#d8e070', alip: 0.35 });
+  b.paint = (sc, bb) => P(sc, bb) + suture(sc, bb);
   b.mesh = 400;
+  // the rear rounded (judge 1: not a vertical wall): near the apex the lower part of each section is drawn forward, up to 0.6 mm at the
+  // margin, so the declivity curves from the suture's top down to the margin as on c027 and c111
+  b.warp = (q, t, th) => { const x = XA + (XB - XA) * t, r = 0.6 * smooth(-9.0, -11.94, x), low = 1 - Math.max(0, Math.sin(th)); return r > 0 ? [q[0] + r * Math.pow(low, 2), q[1], q[2]] : q; };
   // the dimples, in mm along the body and across from the suture
   b.bump = (t, th) => { const p = b.profile(t); return DIMPLE_EL(XA + (XB - XA) * t, Math.abs(p.ry * Math.cos(th))); };
   b.decals = flecks(b, s);
@@ -183,17 +189,25 @@ function dimples(sx, sy, A, sig, seed) {
     const i0 = Math.floor(x / sx), j0 = Math.floor(y / sy);
     let h = 0;
     for (let i = i0 - 1; i <= i0 + 1; i++) for (let j = j0 - 1; j <= j0 + 1; j++) {
-      const cx = (i + 0.2 + 0.6 * hash(i, j)) * sx, cy = (j + 0.2 + 0.6 * hash(j, i)) * sy, d2 = (x - cx) ** 2 + (y - cy) ** 2;
-      h -= A * Math.exp(-d2 / (sig * sig));
+      const cx = (i + hash(i, j)) * sx, cy = (j + hash(j + 11, i - 5)) * sy, d2 = (x - cx) ** 2 + (y - cy) ** 2;
+      h -= A * (0.4 + 1.2 * hash(i + 7, j - 3)) * Math.exp(-d2 / (sig * sig));
     }
     return h;
   };
 }
-const DIMPLE_EL = dimples(0.38, 0.31, 0.045, 0.11, 7), DIMPLE_PR = dimples(0.42, 0.42, 0.012, 0.09, 9);
+const DIMPLE_HD = dimples(0.16, 0.16, 0.025, 0.06, 5);
+const DIMPLE_EL = dimples(0.29, 0.25, 0.02, 0.085, 7), DIMPLE_PR = dimples(0.42, 0.42, 0.012, 0.09, 9);
+// The suture behind the scutellum: a sharp dark line between the elytra, a narrow lit bevel beside it (c114 at 3x)
+function suture(sc, b) {
+  const tS = (XS - XA) / (XB - XA), pts = [];
+  for (let i = 0; i <= 40; i++) { const t = tS * i / 40, q = sc.S(surf(b, t, Math.PI / 2)); pts.push(q); }
+  const w = Math.max(0.4, 0.035 * sc.k), d = 'M' + pts.map((q) => fmt(q[0]) + ' ' + fmt(q[1])).join('L');
+  return `<path d="${d}" stroke="#020804" stroke-width="${fmt(w)}" fill="none" opacity="0.85"/>`;
+}
 // the two smooth longitudinal costae of the disc (c114: lines free of pits), a slight swell of the section
 function costae(t, th) {
   const u = Math.abs(Math.cos(th));               // 0 at the suture, 1 at the margin
-  return 0.035 * Math.exp(-(((u - 0.32) / 0.05) ** 2)) + 0.025 * Math.exp(-(((u - 0.6) / 0.05) ** 2));
+  return 0.012 * Math.exp(-(((u - 0.32) / 0.05) ** 2)) + 0.008 * Math.exp(-(((u - 0.6) / 0.05) ** 2));
 }
 
 // The white flecks: outlines read on c114 in mm of the dorsal projection (x forward, y left), carried onto the shell: each point
@@ -203,7 +217,7 @@ function flecks(b, s) {
   const out = [];
   const inv = (x, y) => {
     // t from x; th from the across position: y = yc + ry cos^e(th)
-    const t = clamp((x - XA) / (XB - XA)), p = b.profile(t), sec = sup(0.75, 0.85);
+    const t = clamp((x - XA) / (XB - XA)), p = b.profile(t), sec = sup(0.6, 1.0);
     let best = Math.PI / 2, bd = 1e9;
     for (let i = 0; i <= 60; i++) {
       const th = s > 0 ? -0.3 + (Math.PI / 2 + 0.3) * (i / 60) : Math.PI / 2 + (Math.PI / 2 + 0.3) * (i / 60);
@@ -215,7 +229,8 @@ function flecks(b, s) {
   for (const F of TACHES.taches.filter((f) => Math.sign(f.cote) === s)) {
     const poly = F.contour.map(([x, y]) => inv(x, y));
     const c = inv(F.centre[0], F.centre[1]);
-    out.push({ poly, t: c[0], th: c[1], r: 0.1, color: F.c || CREAM, a: F.a ?? 0.95, top: true });
+    // the wax is chalk white (c114 at 3x, a little greyer where thin)
+    out.push({ poly, t: c[0], th: c[1], r: 0.1, color: '#ece8dd', a: 0.95, top: true });
   }
   return out;
 }
@@ -247,14 +262,15 @@ function epimeron(s) {
     name: 'epimere', frame: { o: [0.35, s * 4.02, -0.85], ax: norm([-0.45, s * 0.12, -1]), ay: X, az: [0, s, 0] }, color: BRONZE, seed: 85 + s,
     mat: { ...SHELL, ramp: RAMP_UNDER }, bias: -0.05,
     // a wedge, wide under the pronotum's hind angle, pointed below, its face outward (c058, c130: a large copper plate)
-    profile: (t) => { const e = Math.pow(Math.min(1, 6 * t), 0.5) * Math.pow(1 - t, 0.7); return { x: 1.8 * t, zc: 0, yc: -0.25 * t, ry: 0.72 * e, rz: 0.2 * Math.sqrt(e) }; },
+    profile: (t) => { const e = Math.pow(Math.min(1, 6 * t), 0.5) * Math.pow(1 - t, 0.7); return { x: 1.6 * t, zc: -0.12, yc: -0.3 * t, ry: 0.6 * e, rz: 0.12 * Math.sqrt(e) }; },
   };
 }
 
 // The underside: the thorax, hairy on its sides and below (c027, c111, c109), and the abdomen's sternites, copper with
 // cream tufts at their sides (c027, c103).
 function belly(pose) {
-  const W = tab([[-11.3, 0.6], [-10.6, 2.0], [-9.2, 3.0], [-7.0, 3.6], [-4.5, 3.95], [-1.5, 3.95], [0.8, 3.4], [2.0, 2.4], [2.9, 1.2]]);
+  // the abdomen narrower than the elytra (c103: 5.5 mm against 9.4), the thorax as wide as the coxae
+  const W = tab([[-11.3, 0.6], [-10.6, 1.6], [-9.2, 2.4], [-7.0, 2.85], [-4.8, 3.15], [-2.5, 3.6], [-0.5, 3.7], [0.8, 3.3], [2.0, 2.4], [2.9, 1.2]]);
   const ZC = tab([[-11.3, -3.9], [-9.5, -3.5], [-5.0, -3.25], [0, -3.1], [2.9, -3.2]]);
   const RZ = tab([[-11.3, 0.5], [-10.4, 1.7], [-9.0, 2.2], [-5.0, 2.45], [-1.0, 2.45], [1.5, 2.0], [2.9, 1.1]]);
   const X0 = -11.3, X1 = 2.9;
@@ -272,7 +288,7 @@ function belly(pose) {
     hair: { n: 2400, len: 0.85, w: 0.02, lean: 0.75, a: 0.75, droop: 0.9, twist: 0.7, wave: 0.18, fleece: 0.3, pile: 0.35,
       color: (t, th, R) => (R() < 0.65 ? HAIR : R() < 0.6 ? HAIR2 : CREAM),
       // long hair on the thorax's sides and below; on the abdomen only tufts at the sides of the sternites
-      density: (t, th) => { const x = X0 + (X1 - X0) * t; if (Math.sin(th) > 0.55) return 0; if (x > -4.6) return 1; return Math.abs(Math.cos(th)) > 0.75 && sternite(x) > 0.2 && sternite(x) < 0.5 ? 0.55 : 0.04; },
+      density: (t, th) => { const x = X0 + (X1 - X0) * t; if (Math.sin(th) > 0.55) return 0; if (x > -4.6) return x < 0.5 && Math.sin(th) < -0.4 ? 0.06 : 1; return Math.abs(Math.cos(th)) > 0.75 && sternite(x) > 0.2 && sternite(x) < 0.5 ? 0.55 : 0.04; },
       lenAt: (t, th) => { const x = X0 + (X1 - X0) * t; return x > -4.6 ? 1 : 0.55; } },
   };
 }
@@ -291,17 +307,18 @@ function pygidium() {
 // Head: deflexed about 31 degrees under the pronotum (c027, c058 live; c114 pinned less), the clypeus a flat plate with a raised
 // front margin, notched in the middle, tufts of yellow setae at its corners (c114); copper-green, coarsely pitted (c109).
 // ---------------------------------------------------------------------------------------------------------------
-const HEAD = { o: [3.5, 0, -2.3], pitch: -50, len: 2.4 };
+const HEAD = { o: [3.5, 0, -2.3], pitch: -52, len: 2.15 };
 const headFrame = () => { const a = rad(HEAD.pitch); const ax = [Math.cos(a), 0, Math.sin(a)]; return { o: HEAD.o, ax, ay: Y, az: norm(cross(ax, Y)) }; };
 function head() {
   const F = headFrame();
-  const W = tab([[0, 0.95], [0.3, 0.98], [0.7, 1.0], [0.92, 1.0], [1, 0.95]]);
-  const RZ = tab([[0, 0.72], [0.3, 0.6], [0.7, 0.34], [1, 0.22]]);
+  const W = tab([[0, 1.0], [0.3, 1.0], [0.7, 0.92], [0.92, 0.84], [1, 0.78]]);
+  const RZ = tab([[0, 0.55], [0.3, 0.48], [0.7, 0.3], [1, 0.2]]);
   return {
     name: 'head', frame: F, color: '#1a1408', seed: 82, mat: HEADMAT, bias: 0.05,
     profile: (t) => ({ x: HEAD.len * t, zc: 0, ry: W(t), rz: RZ(t) }),
     // rounded; the clypeus' front margin turned up (a rim), notched in its middle
     shape: (th, t) => { const q = sup(0.62, 0.8)(th); const rim = t > 0.9 && Math.sin(th) > 0 ? 1 + 0.25 * (t - 0.9) / 0.1 : 1; const notch = t > 0.95 && Math.abs(Math.cos(th)) < 0.2 ? 0.8 : 1; return [q[0], q[1] * rim * notch]; },
+    bump: (t, th) => DIMPLE_HD(t * HEAD.len, th * 1.0), mesh: 220,
     paint: pits({ seed: 403, n: 380, r: 0.055, t0: 0.05, t1: 0.97, color: '#0a0804', a: 0.75, lip: '#f0c070', alip: 0.4, where: (t, th) => Math.sin(th) > -0.2 }),
     // the yellow setae of the clypeus' front corners and the fringe under the head
     hair: { n: 260, len: 0.42, w: 0.02, lean: 0.25, a: 0.85, fleece: 0, pile: 0, twist: 0.4, curl: 0.1,
@@ -313,9 +330,9 @@ const inHead = (p) => { const F = headFrame(); return add(add(add(F.o, mul(F.ax,
 
 // Eyes: round, glossy dark red-brown (c027: a reddish eye with a window highlight), half hidden under the canthus.
 function eye(s) {
-  const o = inHead([0.42, s * 1.12, -0.05]), r = 0.42;
+  const o = inHead([0.4, s * 1.08, -0.02]), r = 0.5;
   return {
-    name: 'eye', frame: frame0(o), color: '#3a1610', seed: 87 + s, bias: 0.02,
+    name: 'eye', frame: frame0(o), color: '#1e0e0a', seed: 87 + s, bias: 0.02,
     profile: (t) => { const q = Math.sqrt(Math.max(0, 1 - (2 * t - 1) ** 2)); return { x: r * (2 * t - 1), zc: 0, ry: r * q, rz: r * q }; },
     mat: { ks: 0.7, p: 140, ks2: 0.2, p2: 10, env: 0.55, wrap: 0.2, amb: 0.3, mottle: 0.1, specColor: '#fff6ea' }, facets: 0.025,
   };
@@ -338,7 +355,7 @@ function antenna(sc, s, open) {
     const az = norm(cross(ax, side));
     drawBody(sc, {
       name: 'lamelle', frame: { o: add(p3, mul(up, (i - 1) * 0.035)), ax, ay: side, az }, color: '#120c08', seed: 90 + i,
-      profile: (t) => { const e = Math.pow(Math.sin(Math.PI * Math.min(1, t * 1.02)), 0.6); return { x: 1.1 * t, zc: 0, ry: 0.2 * e, rz: 0.045 * e }; },
+      profile: (t) => { const e = Math.pow(Math.sin(Math.PI * Math.min(1, t * 1.02)), 0.6); return { x: 1.3 * t, zc: 0, ry: 0.26 * e, rz: 0.05 * e }; },
       mat: { ks: 0.45, p: 50, ks2: 0.1, p2: 6, env: 0.25, amb: 0.3, mottle: 0.05 }, bias: 0.02 + i * 0.002,
     });
   }
@@ -347,8 +364,8 @@ function antenna(sc, s, open) {
 // mouthparts seen from the front: the maxillary palps, red-brown, under the clypeus (c109, c080)
 function palps(sc, s) {
   sc.part = s > 0 ? 'palpe-g' : 'palpe-d';
-  const a = inHead([2.2, s * 0.55, -0.45]), b = inHead([2.55, s * 0.62, -0.85]), c = inHead([2.75, s * 0.58, -1.15]);
-  drawTube(sc, [a, b, c], [0.07, 0.06, 0.045], { color: '#5a2a14', gloss: 0.4, bias: 0.01 });
+  const a = inHead([1.85, s * 0.5, -0.38]), b = inHead([2.05, s * 0.56, -0.6]), c = inHead([2.15, s * 0.5, -0.76]);
+  drawTube(sc, [a, b, c], [0.07, 0.06, 0.045], { color: '#3a1c10', gloss: 0.4, bias: 0.01 });
 }
 
 // ---------------------------------------------------------------------------------------------------------------
@@ -394,7 +411,7 @@ function legs(sc, pose, ph, lift) {
       sc.part = `patte-${k === 'front' ? 'avant' : k === 'mid' ? 'milieu' : 'arriere'}-${s > 0 ? 'g' : 'd'}`;
       const L = LEGS[k], [ankle, td, pole] = P[k];
       const ch = legChain(L, s, ankle, td, pole, [0.22, 0.17, 0.17, 0.17, 0.27], 0.05);
-      const A = { ...ART, coxa: { from: [0.4, -0.5 * 0, 0.6], r: [0.5, 0.55, 0.42], c: BRONZE, hair: fringe(30, 0.6, HAIR, 0.3) } };
+      const A = { ...ART, coxa: { from: [0.4, 0, 0.5], r: [0.42, 0.45, 0.3], c: BRONZE, hair: fringe(30, 0.6, HAIR, 0.3) } };
       articleLeg(sc, drawBody, drawTube, ch.pts.map(lift), ch.dir, lift(ch.tip), A, s, LEGMAT);
       const [B, knee, an] = ch.pts.map(lift);
       const tdir = norm(sub(an, knee)), out = norm(cross(tdir, Z)).map((v) => v * s * (k === 'front' ? 1 : 1));
@@ -419,17 +436,26 @@ function legs(sc, pose, ph, lift) {
 // The hind wing (ailes/aile.json): an amber membrane of measured opacity, the costa, radius, media, cubitus and anal veins,
 // the red-brown spot of the costal hinge, the folds of the apical field; drawn flat in its frame (s along it, q toward the costa).
 // ---------------------------------------------------------------------------------------------------------------
+// the wing measured on c230 is 14.9 mm long, its apex perhaps not wholly unfolded; on c228 (from above) the same beetle's other wing
+// spans 15.8 mm for the same elytra: the larger is kept (WING_K, every measure of the wing scaled by it)
+export const WING_K = 15.8 / 14.9;
 function wingDef() {
   if (!WING) return null;
-  const C = WING.releve;
+  const C0 = WING.releve, sk = (P) => P.map((p) => [p[0] * WING_K, p[1] * WING_K]);
+  const C = { ...C0, bord_attaque: sk(C0.bord_attaque), bord_fuite: sk(C0.bord_fuite), nervures: C0.nervures.map((v) => ({ ...v, trait: sk(v.trait) })),
+    tache_radiale: { ...C0.tache_radiale, centre: sk([C0.tache_radiale.centre])[0], rayons: C0.tache_radiale.rayons.map((r) => r * WING_K) } };
   const pts = (P) => P.map((p) => p.map((v) => +v.toFixed(2)).join(' '));
-  const outline = 'M' + pts(WING.contour).join('L') + 'Z';
+  // the outline: the leading edge traced along the costa, the trailing edge read on the measured outline (aile.json releve), as a
+  // closed curve
+  const outline = curve([...C.bord_attaque, ...C.bord_fuite]);
   const veins = C.nervures.filter((v) => v.nom !== 'costa' && v.nom !== 'radius').map((v) => 'M' + pts(v.trait).join('L')).join('');
   const base = C.nervures.filter((v) => v.nom === 'costa' || v.nom === 'radius').map((v) => 'M' + pts(v.trait).join('L')).join('');
   const m = WING.membrane;
   return {
-    span: WING.longueur, outline, veins, veinsBase: base, vein: '#3e2010', vw: 0.07, edge: '#5a3418', ew: 0.06,
-    tint: m[1].teinte, membrane: m.reduce((a, z) => a + z.alpha, 0) / m.length * 0.55, irid: 0.05, shadow: 0.3,
+    span: WING.longueur * WING_K, outline, veins, veinsBase: base, vein: '#3e2010', vw: 0.07, edge: '#5a3418', ew: 0.06,
+    // the membrane's opacity measured on c230 (the stone's grain seen through it); its tint matched by eye on the flight photos c071
+    // and c072 (the one-alpha fit on the stone gave a red that the photos do not show)
+    tint: '#5e3410', membrane: 1.5 * m.reduce((a, z) => a + z.alpha, 0) / m.length, irid: 0.05, shadow: 0.3,
     stigma: (() => { const t = C.tache_radiale, [cx, cy] = t.centre, [rx, ry] = t.rayons; return `M${cx - rx} ${cy}A${rx} ${ry} 0 1 0 ${cx + rx} ${cy}A${rx} ${ry} 0 1 0 ${cx - rx} ${cy}Z`; })(),
   };
 }
@@ -458,11 +484,13 @@ export function chafer(az, el, opts = {}) {
   for (const s of [1, -1]) { sc.part = s > 0 ? 'oeil-g' : 'oeil-d'; drawBody(sc, sh(eye(s))); }
   for (const s of [1, -1]) { antenna(sc, s, flying); palps(sc, s); }
   legs(sc, pose, frame, lift);
-  if (wings && HINDWING) {
+  // the hind wings: one set at (flap, sweep), or several (opts.wingSets: the faux of the stroke, a set and its ghost, as the runtime)
+  const sets = opts.wingSets ?? (wings ? [{ flap: flap ?? 10, sweep, alpha }] : []);
+  if (HINDWING) for (const w of sets) {
     for (const s of [1, -1]) {
-      const f = flapAxes(s, flap ?? 10, sweep);
+      const f = flapAxes(s, w.flap, w.sweep ?? 0);
       sc.part = s > 0 ? 'aile-g' : 'aile-d';
-      drawWing(sc, HINDWING, lift([HINGE[0], HINGE[1] * s, HINGE[2]]), f.e1, f.e2, { side: s, bias: -0.3, alpha });
+      drawWing(sc, HINDWING, lift([HINGE[0], HINGE[1] * s, HINGE[2]]), f.e1, f.e2, { side: s, bias: w.bias ?? -0.3, alpha: w.alpha ?? 1 });
     }
   }
   sc.part = '';

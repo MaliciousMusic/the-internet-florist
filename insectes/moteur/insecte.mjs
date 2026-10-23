@@ -93,7 +93,9 @@ export function surf(b, t, th) {
   const ly = (p.yc || 0) + p.ry * Math.cos(th) * s[0];
   const lz = p.zc + p.rz * Math.sin(th) * s[1];
   const F = b.frame;
-  return add(add(add(F.o, mul(F.ax, p.x)), mul(F.ay, ly)), mul(F.az, lz));
+  const q = add(add(add(F.o, mul(F.ax, p.x)), mul(F.ay, ly)), mul(F.az, lz));
+  // b.warp(point, t, th, p): a body bent beyond its sections (the chafer's elytra rounded at the rear, their lower edge drawn forward)
+  return b.warp ? b.warp(q, t, th, p) : q;
 }
 
 // Angle of the j-th sample around a section: the whole turn, or th0..th1 for an open shell.

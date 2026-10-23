@@ -61,7 +61,7 @@ def main():
     for cn in cs:
         if cv2.contourArea(cn) * k * k < 0.012: continue
         if to_mm(*cn[:, 0, :].mean(0))[0] > -0.3: continue      # c114's pronotum has no fleck: a white glint there
-        ap = cv2.approxPolyDP(cn, max(1.0, 0.03 / k), True)[:, 0, :]
+        ap = cv2.approxPolyDP(cn, max(0.8, 0.015 / k), True)[:, 0, :]
         if len(ap) < 3: continue
         P = [to_mm(float(x), float(y)) for x, y in ap]
         m = np.zeros(fm.shape, np.uint8); cv2.drawContours(m, [cn], -1, 1, -1)

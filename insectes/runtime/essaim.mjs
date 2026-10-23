@@ -124,7 +124,9 @@ export class Essaim {
       // depth: the wing's middle toward the viewer, minus the body's radius (the body lies over the wings' bases)
       const mid = toS(at((s0 + s1) * 0.5, (q0 + q1) * 0.5));
       g.m.zIndex = b.P[2] + ((mid[0] * eye[0] + mid[1] * eye[1] + mid[2] * eye[2]) - 2.4) * mmS;
-      g.m.visible = true;
+      // a wing's own opacity (ang.alpha: the chafer's ghost wings of the faux stroke; 0 hides a folded wing)
+      if (ang.alpha !== undefined) g.m.alpha = ang.alpha;
+      g.m.visible = ang.alpha !== 0;
     }
   }
 
