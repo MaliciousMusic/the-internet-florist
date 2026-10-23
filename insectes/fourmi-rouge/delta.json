@@ -1,49 +1,49 @@
 {
  "profil-c013": {
   "tete": {
-   "dE": 6.2,
-   "contraste": 1.61,
-   "grain": 2.38,
+   "dE": 6.0,
+   "contraste": 1.4,
+   "grain": 2.29,
    "ok": false,
    "photo": "#46270a",
-   "rendu": "#4b2c1f"
+   "rendu": "#4c2c1e"
   },
   "mesosome": {
-   "dE": 4.7,
+   "dE": 4.6,
    "contraste": 0.84,
-   "grain": 1.66,
+   "grain": 1.62,
    "ok": false,
    "photo": "#6f3c14",
-   "rendu": "#663920"
+   "rendu": "#673921"
   },
   "noeuds": {
    "dE": 8.0,
-   "contraste": 1.52,
-   "grain": 3.01,
+   "contraste": 1.53,
+   "grain": 3.07,
    "ok": false,
    "photo": "#6a3c0a",
-   "rendu": "#824b2a"
+   "rendu": "#824b29"
   },
   "gastre": {
    "dE": 6.5,
    "contraste": 0.99,
-   "grain": 2.22,
+   "grain": 2.21,
    "ok": false,
    "photo": "#7b4208",
-   "rendu": "#8c4a23"
+   "rendu": "#8d4a23"
   },
   "pattes": {
-   "dE": 10.9,
-   "contraste": 1.13,
-   "grain": 2.61,
+   "dE": 11.0,
+   "contraste": 1.07,
+   "grain": 2.53,
    "ok": false,
    "photo": "#784c1a",
-   "rendu": "#9a663d"
+   "rendu": "#9b663c"
   },
   "entier": {
    "dE": 6.1,
-   "contraste": 1.11,
-   "grain": 2.12,
+   "contraste": 1.08,
+   "grain": 2.07,
    "ok": false,
    "photo": "#67390d",
    "rendu": "#774426"
@@ -51,28 +51,28 @@
  },
  "trois-quarts-c115": {
   "tete": {
-   "dE": 3.6,
-   "contraste": 1.45,
-   "grain": 1.98,
+   "dE": 3.0,
+   "contraste": 1.43,
+   "grain": 1.92,
    "ok": false,
    "photo": "#5e362a",
-   "rendu": "#512f21"
+   "rendu": "#533122"
   },
   "mesosome": {
-   "dE": 3.4,
-   "contraste": 1.72,
+   "dE": 3.3,
+   "contraste": 1.73,
    "grain": 1.33,
    "ok": false,
    "photo": "#713c2b",
-   "rendu": "#6e3f26"
+   "rendu": "#6e3f27"
   },
   "noeuds": {
    "dE": 3.4,
-   "contraste": 1.09,
-   "grain": 1.9,
+   "contraste": 1.08,
+   "grain": 1.89,
    "ok": false,
    "photo": "#824d38",
-   "rendu": "#7f4d31"
+   "rendu": "#7f4c30"
   },
   "gastre": {
    "dE": 5.8,
@@ -83,34 +83,34 @@
    "rendu": "#8e4821"
   },
   "pattes": {
-   "dE": 8.6,
-   "contraste": 1.29,
-   "grain": 1.81,
+   "dE": 7.5,
+   "contraste": 1.21,
+   "grain": 1.71,
    "ok": false,
    "photo": "#845435",
-   "rendu": "#9e683e"
+   "rendu": "#9b663b"
   },
   "entier": {
-   "dE": 4.1,
-   "contraste": 1.26,
-   "grain": 1.62,
+   "dE": 4.2,
+   "contraste": 1.25,
+   "grain": 1.59,
    "ok": false,
    "photo": "#74422e",
-   "rendu": "#7a4728"
+   "rendu": "#7b4728"
   }
  },
  "dessus-c123": {
   "tete": {
-   "dE": 10.4,
+   "dE": 9.8,
    "contraste": 0.6,
    "grain": 0.69,
    "ok": false,
    "photo": "#67493c",
-   "rendu": "#4b291d"
+   "rendu": "#4d2b1e"
   },
   "mesosome": {
    "dE": 9.9,
-   "contraste": 0.84,
+   "contraste": 0.83,
    "grain": 0.61,
    "ok": false,
    "photo": "#7d4f38",
@@ -133,17 +133,17 @@
    "rendu": "#8b4323"
   },
   "pattes": {
-   "dE": 3.6,
-   "contraste": 1.11,
-   "grain": 1.12,
+   "dE": 3.7,
+   "contraste": 1.08,
+   "grain": 1.1,
    "ok": true,
    "photo": "#905e31",
-   "rendu": "#89552e"
+   "rendu": "#88552d"
   },
   "entier": {
    "dE": 7.3,
-   "contraste": 0.93,
-   "grain": 0.77,
+   "contraste": 0.91,
+   "grain": 0.76,
    "ok": false,
    "photo": "#865533",
    "rendu": "#724022"
@@ -151,17 +151,17 @@
  },
  "face-c124": {
   "entier": {
-   "dE": 13.6,
-   "contraste": 1.36,
-   "grain": 1.64,
+   "dE": 13.4,
+   "contraste": 1.33,
+   "grain": 1.62,
    "ok": false,
    "photo": "#a9633a",
-   "rendu": "#76482e"
+   "rendu": "#77482e"
   }
  },
  "_synthese": {
   "tete": {
-   "dE": 4.0,
+   "dE": 3.4,
    "dispersion": 5.6,
    "ok": true
   },
@@ -171,17 +171,17 @@
    "ok": true
   },
   "noeuds": {
-   "dE": 1.8,
+   "dE": 1.7,
    "dispersion": 5.1,
    "ok": true
   },
   "gastre": {
-   "dE": 3.3,
+   "dE": 3.4,
    "dispersion": 4.5,
    "ok": true
   },
   "pattes": {
-   "dE": 5.3,
+   "dE": 4.9,
    "dispersion": 3.8,
    "ok": true
   }

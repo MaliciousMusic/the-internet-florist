@@ -265,13 +265,8 @@ function head(sc, pose, frame) {
   });
   // the neck: the occipital foramen on the pronotum's collar
   drawTube(sc, [[1.42, 0, 0.47], [1.52, 0, 0.49], [1.6, 0, 0.5]], [0.09, 0.08, 0.09], { color: '#7a3a1a', gloss: 0.3, bias: -0.08 });
-  // the clypeus: a raised glossy plate between the antennal sockets, its front margin over the mandibles (c124: it shines)
-  sc.part = 'tete';
-  drawBody(sc, {
-    name: 'clypeus', frame: pitched(at(1.0, 0, hd * 0.3), HEAD.pitch - 30), color: C.head, seed: 8, grid: G.tete, mat: MAT.sculpt,
-    profile: (t) => { const s = Math.sqrt(Math.max(0, 1 - (2 * t - 1) ** 2)); return { x: 0.19 * (2 * t - 1), zc: 0, ry: 0.2 * s, rz: 0.04 * s }; }, bias: 0.03,
-    paint: rugae({ period: 0.03, dark: '#1a0703', light: '#f0bc90', a: 0.4, seed: 19, wobble: 0.2 }),
-  });
+  // the clypeus is the head's own front, in its outline and its grid (drawn apart, a flat plate turned down shaded into a dark hole
+  // from the front: judge 4)
   // the frontal lobes are in the head's outline and its grid (drawn apart, they read as a hollow ellipse on the vertex: judge 3)
   // eyes: oval, dark grey, set at mid-height on the side of the head (H.oeil)
   const E = H.oeil;
@@ -304,6 +299,12 @@ function head(sc, pose, frame) {
       drawTube(sc, [q, add(q, mul(dt, tl))], [0.012, 0.002], { color: '#4a1a08', gloss: 0.5, bias: 0.025 });
     }
   }
+  // the labrum and the folded mouthparts under the clypeus, between the mandibles' bases: no hollow shows from the front
+  sc.part = 'tete';
+  drawBody(sc, {
+    name: 'labrum', frame: pitched(at(CL - 0.06, 0, -0.08), HEAD.pitch - 10), color: C.mandible, seed: 41, mat: MAT.node, bias: 0.015,
+    profile: (t) => { const q = Math.sqrt(Math.max(0, 1 - (2 * t - 1) ** 2)); return { x: 0.16 * (2 * t - 1), zc: 0, ry: 0.17 * q, rz: 0.07 * q }; },
+  });
   antennae(sc, at, F, pose, frame);
 }
 
@@ -322,7 +323,7 @@ function antennae(sc, at, F, pose, frame) {
     const sd = norm([-0.35 + 0.25 * swing, (0.85 - 0.15 * swing) * s, 0.22]);
     const elbow = add(base, mul(sd, A.scape));
     // the funiculus: forward, out, then down toward the ground ahead
-    let d = norm([0.9, (0.2 + 0.4 * swing) * s, -0.2 - 0.55 * dip]);
+    let d = norm([0.85, (0.25 + 0.4 * swing) * s, -0.45 - 0.5 * dip]);
     // the scape: slender, bent near its base, thickening toward the elbow
     const bend = add(base, mul(norm(add(sd, [0, 0, 0.5])), A.scape * 0.12));
     const pts = [base, bend, add(bend, mul(sd, A.scape * 0.45)), elbow], rad = [0.03, 0.026, 0.034, 0.04];
@@ -373,10 +374,10 @@ function legs(sc, pose, frame) {
       // the coxa a cone hanging from the mesosoma (the fore coxa the largest), not a disc
       coxa: { from: k === 'front' ? [0.06, -0.1, 0.3] : [0.0, -0.1, 0.26], r: k === 'front' ? [0.1, 0.12, 0.075] : [0.085, 0.1, 0.065], c: C.coxa },
       // the femur clavate: thin at its base, swollen beyond the middle, narrowing to the knee
-      fem: { r: [0.045, 0.1, 0.07], c: C.leg, flat: 0.8, hair: pubescence(26) },
-      tib: { r: [0.034, 0.042, 0.05], c: C.tib, flat: 0.9, hair: pubescence(24) },
+      fem: { r: [0.045, 0.09, 0.065], c: C.leg, flat: 0.95, hair: pubescence(26) },
+      tib: { r: [0.034, 0.042, 0.05], c: C.tib, flat: 1, hair: pubescence(24) },
       bas: { r: [r(0.028), 0.026, 0.024], c: C.tar, hair: pubescence(12) },
-      tar: { r: 0.022, c: C.tar }, claw: 0.032,
+      tar: { r: 0.022, c: C.tar }, claw: 0.02,
     };
     if (fine(sc)) articleLeg(sc, drawBody, drawTube, ch.pts, ch.dir, ch.tip, A, s, MAT.limb);
     else {
