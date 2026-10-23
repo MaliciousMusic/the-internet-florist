@@ -7,7 +7,8 @@ fleurs [catalogue/serre/methode/METHODE.md](catalogue/serre/methode/METHODE.md).
 
 ## Règles permanentes
 
-- **Que du SVG.** Pas de 3D, pas de rendu raster dans les produits.
+- **Que du SVG.** Pas de 3D, pas de rendu raster dans les produits. Seule exception, les insectes : leur source reste en
+  SVG, et leurs atlas WebP en sont une sortie compilée, affichée par canvas (voir [insectes/DECISIONS.md](insectes/DECISIONS.md)).
 - **Le dessin reste à Claude** : modules `app/` et `demo/src`, vases, décor. Un autre agent les utilise sans les modifier.
 - **Les numéros des fleurs ne bougent pas** : ne jamais régénérer `k0.js` depuis les sources du catalogue.
 - **Photos de tiers jamais ajoutées à git** (voir le README). On peut décrire une référence, jamais la publier.

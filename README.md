@@ -14,6 +14,7 @@ cette librairie en lecture seule. Le jeu Belai's Garden est en pause : il est ar
 | `fleur/`, `pilote/`, `lab/`, `ws/`, `serre/` | Méthode des fleurs : références, coloris, modelage, planches, contrôle qualité, verrou des navigateurs |
 | `bronze/`, `verre/`, `vases/` | Vases : rendu du bronze, verre dépoli, et l'étude des 116 références (fiches, méthode, concepts, essais, outils) |
 | `decor/` | Site de la boutique : la scène SVG (ciel, horizon, herbe, dalles, pilier), les bouquets pré-dessinés et les pages |
+| `insectes/` | Chantier des insectes : décisions, modèles SVG par pièces, atlas WebP compilés et comportements |
 | `bureau/` | Widget Windows (Tauri) et ses livrables d'essai |
 | `packages/engine` | Moteur de dessin empaqueté (`build.sh`), ponts vers la musique et placement des tiges |
 | `packages/music` | Moteur musical : outils, banque de sons (VCSL, VSCO), écriture et gènes. Le studio y lit sa banque de sons |
