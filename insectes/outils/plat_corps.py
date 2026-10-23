@@ -1,7 +1,7 @@
 """plat_corps.py: a body piece of an insect laid flat along its axis and read as a grid (PROTOCOLE §3.1), for striped bodies where
 the flower tool's colour gate keeps only the axis colour (the swallowtail's abdomen: a black back between yellow flanks).
 
-  python insectes/outils/plat_corps.py <photo> "<x,y;x,y;...;w>" <grille.json> [--exclure "#hex:dE,..."] [--nv 72] [--nu 18]
+  python insectes/outils/plat_corps.py <photo> "<x,y;x,y;...;w>" <grille.json> [--exclure "#hex:dE,..."] [--nv 72] [--nu 18] [--masque m.png]
 
 The frame runs from the front of the piece to its rear (x,y points on its midline, px), w its half-width (px) at the widest, the
 width following the piece's own outline row by row: at each row, the band where the pixels stand off the plate's neutral ground
@@ -25,6 +25,8 @@ def hexof(lab):
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument('photo'); ap.add_argument('frame'); ap.add_argument('out')
     ap.add_argument('--exclure', default=''); ap.add_argument('--nv', type=int, default=72); ap.add_argument('--nu', type=int, default=18)
+    # --masque <png>: the piece's own mask (white inside), for a body on a ground that is not a plate, or beside wings and legs
+    ap.add_argument('--masque', default='')
     o = ap.parse_args()
     q = o.frame.split(';'); pts = np.array([list(map(float, a.split(','))) for a in q[:-1]]); W = float(q[-1])
     rgb = cv2.imread(o.photo)[..., ::-1].copy(); lab = lab_of(cv2.GaussianBlur(rgb, (0, 0), 1.0))
@@ -45,7 +47,7 @@ def main():
     # lightness off a smooth fit of the ground: a black body is as dark as the plate, but not as smooth)
     sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
     from aile import ground
-    gm = ground(rgb, 40).astype(np.float32)
+    gm = (cv2.imread(o.masque, 0) > 127).astype(np.float32) if o.masque else ground(rgb, 40).astype(np.float32)
     ok = cv2.remap(gm, X.astype(np.float32), Y.astype(np.float32), cv2.INTER_NEAREST) > 0.5
     for c, d in ex: ok &= np.linalg.norm(S - c, axis=2) > d
     half = np.zeros(n)
