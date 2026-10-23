@@ -562,15 +562,18 @@ function membraneFrom(R, o) {
   const m0 = hex2lab(R.zones[0].c), damp = (h) => { const l = hex2lab(h); return lab2hex(...l.map((v, i) => m0[i] + (v - m0[i]) * 0.6)); };
   R = { ...R, zones: R.zones.map((z) => ({ ...z, c: damp(z.c), degrade: z.degrade && { ...z.degrade, stops: z.degrade.stops.map(([q, c]) => [q, damp(c)]) } })) };
   const M = motif({ ...R, nervures: [] }, { seed: o.seed, dustK: o.cal });
+  // in a small cell (under 4 px/mm) the grains of the dust and the net of cells are under a pixel: left out (lean SVG, §3.5)
+  const Ms = motif({ ...R, nervures: [] }, { seed: o.seed, dustK: o.cal, dust: 0 });
   const V = o.veins ? veinPaths(o.veins) : '';
   const top = (sc) => {
+    if (sc.k < 4) return V;
     const id = sc.id('net');
     sc.defs.push(netTile(id, o.cell, o.net, o.netA, o.seed));
     // the dark green band along the costal margin: the folded hind wing seen through and under it (c166)
     const band = o.band ? '<path d="M-2 -8.3L46 -8.0L46 -11L-2 -11Z" fill="#22381a" opacity="0.5"/>' : '';
     return `<path d="${M.outline}" fill="url(#${id})"/>` + band + V;
   };
-  return { span: M.length, opaque: true, outline: M.outline, box: M.box, base: M.base, baseUnder: C.belly, paint: M.paint, paintUnder: '',
+  return { span: M.length, opaque: true, outline: M.outline, box: M.box, base: M.base, baseUnder: C.belly, paint: (sc, u) => (sc.k < 4 ? Ms.paint(sc, u) : M.paint(sc, u)), paintUnder: '',
     top, topUnder: null, soft: o.soft, grain: 0, veins: null, sheen: '#f2ffe0' };
 }
 
@@ -625,13 +628,13 @@ function dorsalField(left, female = false) {
   // translucent silvery grey to light brown, its veins red-brown in a net of small diamonds (c157)
   const base = '#a39a86';
   const paint = (sc) => {
-    const id = sc.id('dnet');
-    sc.defs.push(netTile(id, 0.7, '#7a4e2c', 0.55, left ? 31 : 32));
+    const id = sc.id('dnet'), net = sc.k >= 4;
+    if (net) sc.defs.push(netTile(id, 0.7, '#7a4e2c', 0.55, left ? 31 : 32));
     // the female has no stridulatory field: her dorsal field grey-brown and reticulate from the base (c157 #887873 mid)
     let s = female ? '' : `<path d="M0 -0.1L${f(left ? 10.6 : 10)} -0.1L${f(left ? 11.4 : 10.8)} 1.2L${f(left ? 9.8 : 9.3)} 3.4L0 3.4Z" fill="${left ? '#86643a' : '#8b744c'}"/>`;
     // the file vein across the left field's base, and the strong veins of the field (c087, c013)
     if (left && !female) s += `<path d="M1.2 3.1Q4.5 1.4 9.8 1.9M0.6 1.6Q4 0.9 8.6 0.5M2.5 3.2Q5.5 2.4 10.2 2.6" fill="none" stroke="#3e2a14" stroke-width="0.16" stroke-linecap="round"/>`;
-    s += `<path d="${outline}" fill="url(#${id})"/>`;
+    if (net) s += `<path d="${outline}" fill="url(#${id})"/>`;
     // the pale cream line along the fold (c087, c166 top edge #c8c298)
     s += `<path d="M0 0.05L27 0.05" stroke="#cdc39a" stroke-width="0.3"/>`;
     return s;
