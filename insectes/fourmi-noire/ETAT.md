@@ -136,7 +136,13 @@ Selon la règle des deux essais (§17.1), les écarts restants sont garés plus 
   diagramme des appuis, le port d'un pétale et l'arrêt où les antennes palpent.
 - **Comportement** : `runtime/fourmi.mjs` (préréglage `LASIUS`), chiffres et sources dans `COMPORTEMENT.md`.
 - **Démo** : `insectes/demo/index.html?n=0&fourmi=7`, serveur `insectes-05` (`python -m http.server 8825`, `.claude/launch.json`).
-- **Atlas** : voir « Poids » plus bas.
+- **Atlas** : 2 025 cellules cuites en 31 min, passées par le verrou. Le niveau S compte 1 430 cellules de 20 px, à 13 azimuts et
+  5 élévations, pour les poses pose, marche, porte, palpe et petale ; il pèse **287 Ko (2,2 Mo sur le GPU)**. Le niveau L compte
+  595 cellules de 48 px, à 7 azimuts, pour les poses marche, porte et petale ; il pèse **385 Ko (5,3 Mo sur le GPU)**. Les
+  8 fourmis partagent ces 672 Ko et 7,5 Mo.
+- **Démo vérifiée** dans le navigateur, avec `?n=0&fourmi=7&taille=4`. Les fourmis marchent sur la bande de sol au pied du vase,
+  s'arrêtent et se rencontrent. Après un clic, toutes vont aux pétales, prennent un fragment teinté (sprite `carry`) et
+  l'emportent vers les bords. Les pétales rapetissent à mesure qu'on les découpe.
 
 ## Moteur partagé (pour l'intégration)
 - `moteur/insecte.mjs`, deux ajouts derrière des clés nouvelles :

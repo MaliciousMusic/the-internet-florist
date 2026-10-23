@@ -64,17 +64,17 @@ function layout() {
 }
 // The ants' ground: a band at the vase's foot, a few faded petals fallen on it (drawn on their own canvas, in front of the
 // bouquet and behind the front layer of insects), and the nest's ways out at both ends.
-const ground = { y: 0, z0: 40, z1: 160, x0: 0, x1: 0 }, petals = [], nest = [];
+const ground = { y: 0, z0: -50, z1: 50, x0: 0, x1: 0 }, petals = [], nest = [];
 let petalCanvas = null;
 if (NF) { petalCanvas = document.createElement('canvas'); petalCanvas.style.pointerEvents = 'none'; scene.insertBefore(petalCanvas, canvases[PLANS]); }
 function layoutGround() {
   if (!NF) return;
   const W = innerWidth, H = innerHeight;
-  ground.y = H * 0.95; ground.x0 = W * 0.12; ground.x1 = W * 0.88;
-  nest.splice(0, nest.length, [ground.x0 - 60, ground.y, 100], [ground.x1 + 60, ground.y, 80]);
+  ground.y = H * 0.925; ground.x0 = W * 0.15; ground.x1 = W * 0.85;
+  nest.splice(0, nest.length, [ground.x0 - 60, ground.y, 20], [ground.x1 + 60, ground.y, -10]);
   if (!petals.length) {
     const tints = [0xf0c8cc, 0xf4ece0, 0xe8d090, 0xf0c8cc, 0xf4ece0];
-    for (let i = 0; i < 5; i++) petals.push({ u: 0.3 + 0.4 * (i / 4) + 0.03 * Math.sin(i * 7), z: 60 + 80 * ((i * 0.37) % 1), tint: tints[i], left: 6, P: [0, 0, 0] });
+    for (let i = 0; i < 5; i++) petals.push({ u: 0.3 + 0.4 * (i / 4) + 0.03 * Math.sin(i * 7), z: -35 + 70 * ((i * 0.37) % 1), tint: tints[i], left: 6, P: [0, 0, 0] });
   }
   for (const p of petals) p.P = [ground.x0 + (ground.x1 - ground.x0) * p.u, ground.y, p.z];
   const dpr = Math.min(2, devicePixelRatio || 1);
@@ -88,7 +88,7 @@ function drawPetals() {
   ctx.setTransform(dpr, 0, 0, dpr, 0, 0); ctx.clearRect(0, 0, innerWidth, innerHeight);
   for (const p of petals) {
     if (p.left <= 0) continue;
-    const q = essaim.project(p.P), r = 40 * UNITS_PER_MM * S * SIZE * 0.5 * q.s * (0.4 + 0.6 * p.left / 6);
+    const q = essaim.project(p.P), r = 40 * UNITS_PER_MM * S * 0.5 * q.s * (0.4 + 0.6 * p.left / 6);
     const c = `#${p.tint.toString(16).padStart(6, '0')}`;
     const gr = ctx.createRadialGradient(q.x, q.y, r * 0.1, q.x, q.y, r);
     gr.addColorStop(0, c); gr.addColorStop(0.7, c); gr.addColorStop(1, '#9a7a52');
