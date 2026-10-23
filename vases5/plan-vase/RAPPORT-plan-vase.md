@@ -262,3 +262,39 @@ Rendus au fané (`life=3`, graine 23) dans une copie temporaire de d7cea77 : v2 
 Planche : `planche-etape5-fane.jpg`.
 
 Le modèle 68 ne perd aucun pétale au fané : la chauve-souris a donc été rendue avec le modèle 18.
+
+## Étape 6 : le plan sur les 73 vases
+
+`vPlan` a tourné sur les 73 vases du catalogue, tels que le moteur les lit dans la page, cavités mesurées (`SVGB`) comprises :
+`plans73.js` (page `mkplans.sh`, `?plans=1`), puis `plans73.py`. Aucune erreur.
+
+- Tableau complet, avec chaque vase et ses raisons : [plans73.md](plans73.md).
+- Planche des coupes : `planche-etape6.svg`. Cadre rouge : à mesurer ; orange : à vérifier ; gris : hors du plan ; vert : sans remarque.
+
+### Verdicts
+
+| Verdict | Nombre | Signaux |
+|---|---|---|
+| **À mesurer à part** | 13 | Le profil ne décrit pas la cavité. Vases sculptés dont le profil à la bouche est la sculpture (cavité à prendre sur le modèle 3D) ; formes non tournées (contour, boîte : bouche allongée ou rectangulaire) ; profondeur utile sous 3 cm. |
+| **À vérifier** | 18 | Lecture plausible mais incertaine. Sculptés lus sur le profil extérieur ; fond haut (pied plein supposé) ; étranglement bas (pied plein ou cavité ?) ; col très étroit ; coupes très ouvertes (plus de 55°, où les tiges se couchent sans pique). |
+| **Hors du plan** | 5 | Les 4 pique-fleurs, où les tiges sont piquées et non posées au fond, et le vase à plusieurs bouches (prismes-bronze). |
+| **Sans remarque** | 37 | — |
+
+### À mesurer à part (13)
+
+- **Sculptés**, cavité à prendre sur le modèle 3D avec `compo.py` (`vases5`), qui mesure déjà la bouche, le devant et la fente :
+  bronze-bambous, bronze-lys, calla-gres, coque-verte, gres-chauve-souris, gui-argent, jardiniere-cristaux.
+  - La chauve-souris est l'un des 5 vases du chantier : sa cavité était lue sur son profil, ce qui était connu dès l'étape 1.
+  - La jardinière n'a que 1,7 cm de profondeur utile, d'après la lecture.
+- **Non tournés**, coupe et bouche à décrire : suiban-lobe-rose, suiban-ovale-peint, vase-coeur-anthracite, vase-tete-veine-sable,
+  prisme-jaune, colonne-blanche.
+
+### Proposition pour la suite
+
+Une surcharge mesurée `v.plan = {yF, cav}`, déjà prévue dans `vPlan`, à remplir vase par vase :
+- **sculptés** : depuis le modèle 3D, en ajoutant la cavité à `compo.py` ;
+- **non tournés** : depuis la photo.
+
+Les 18 à vérifier se règlent à l'œil sur leur planche, avec le porteur.
+
+Ce travail n'est pas lancé : il attend la décision du porteur.
