@@ -27,7 +27,8 @@ comportements viennent après la validation de cette étape.
 ## Planches
 
 - `planches/p06-sphere.png` : 48 vues (12 azimuts × 4 élévations), posée.
-- `planches/p07-gros.png` : gros plans, posée et en vol avec pollen.
+- `planches/p11-gros.png` : gros plans, posée et en vol avec pollen.
+- `planches/p10-gros.png` : profil et face après la passe 2.
 - `planches/p08-marche.png` et `marche.webp` : cycle de marche.
 - `planches/vol-profil.webp`, `planches/vol-3q.webp` : boucle de battement en 3 dessins.
 
@@ -43,6 +44,22 @@ comportements viennent après la validation de cette étape.
 
 1. **Lumière** : pour que le miroir des vues reste exact, la lumière vient du haut et de face, sans composante latérale.
    Si le site éclaire de côté, il faut dessiner les deux moitiés de la sphère, soit deux fois plus de vues.
-   Proposition : lumière du haut-avant.
+   Proposition : lumière du haut-avant. **Validé le 2026-10-23.**
 2. **Validation du dessin** : ce niveau est-il la bonne base avant de passer à l'atlas, à Pixi et au butinage, ou faut-il
-   d'abord la passe sur la face, les yeux et les pattes ?
+   d'abord la passe sur la face, les yeux et les pattes ? **Réponse : la passe d'abord.**
+
+## Passe 2 (2026-10-23) : face, yeux, pattes, bandes
+
+- **Face** :
+  - clypeus sombre et luisant au bas de la face, labre, mandibules brun-rouge en deux articles ;
+  - poils par zone : frange jaune pâle sur le front, clypeus presque nu, vertex fauve, genas pâles.
+- **Yeux** : forme réniforme plus marquée, noir profond, liseré satiné discret au bord, reflet vif au centre du reflet doux,
+  poils courts.
+- **Pattes** : chaque article du tarse est un fuseau resserré à ses articulations, deux griffes recourbées au bout, brosse
+  dorée sur le basitarse arrière, articles distaux plus clairs.
+- **Bandes de l'abdomen** : bords adoucis par un fondu, et poils plus nombreux et plus longs sur chaque limite, couchés
+  par-dessus.
+- **Bug corrigé** : sur une planche, les cases partageaient les mêmes identifiants SVG, et une abeille prenait la découpe de
+  sa voisine (bandes ternes ou coupées). Chaque scène préfixe maintenant ses identifiants. Toutes les planches sont refaites.
+
+Reste à voir : la face vue de très près (le clypeus luisant fait encore un peu « nez »), le grain des ailes en vol.

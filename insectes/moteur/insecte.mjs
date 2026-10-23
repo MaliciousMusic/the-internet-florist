@@ -57,11 +57,12 @@ function lit(col, n, cam, amb = 0.32) {
 }
 
 export class Scene {
-  constructor(cam, k, cx, cy, seed = 1) {
-    this.cam = cam; this.k = k; this.cx = cx; this.cy = cy; this.items = []; this.defs = []; this.uid = 0; this.seed = seed;
+  // idp prefixes every id, so that several scenes can share one SVG document (sheets).
+  constructor(cam, k, cx, cy, seed = 1, idp = '') {
+    this.cam = cam; this.k = k; this.cx = cx; this.cy = cy; this.items = []; this.defs = []; this.uid = 0; this.seed = seed; this.idp = idp;
   }
   S(p) { const q = this.cam.proj(p); return [this.cx + q[0] * this.k, this.cy - q[1] * this.k, q[2]]; }
-  id(p) { return `${p}${this.uid++}`; }
+  id(p) { return `${this.idp}${p}${this.uid++}`; }
   push(depth, svg) { this.items.push({ depth, svg }); }
   svg(w, h, bg) {
     this.items.sort((a, b) => a.depth - b.depth);
@@ -99,13 +100,21 @@ export function drawBody(sc, b) {
       const dz = mid.reduce((s, p) => s + dot(p, cam.c), 0) / mid.length;
       return { d: smoothPath(resample(hull(pts), 56)), col: bd.color, dz };
     }).sort((a, b2) => a.dz - b2.dz);
-    out += `<g clip-path="url(#${clip})">` + bands.map((x) => `<path d="${x.d}" fill="${x.col}" stroke="${x.col}" stroke-width="0.4"/>`).join('') + '</g>';
+    const fe = b.feather ? b.bands.map((bd) => {
+      const i0 = Math.max(0, Math.round((bd.t0 - b.feather) * g.nt)), i1 = Math.min(g.nt, Math.round((bd.t1 + b.feather) * g.nt));
+      const pts = [];
+      for (let i = i0; i <= i1; i++) g.P[i].forEach((p) => pts.push(sc.S(p)));
+      return `<path d="${smoothPath(resample(hull(pts), 56))}" fill="${bd.color}" opacity="0.45"/>`;
+    }).join('') : '';
+    out += `<g clip-path="url(#${clip})">` + fe + bands.map((x) => `<path d="${x.d}" fill="${x.col}" stroke="${x.col}" stroke-width="0.4"/>`).join('') + '</g>';
   }
   if (b.paint) out += `<g clip-path="url(#${clip})">${b.paint(sc, b, g)}</g>`;
 
   // Shading: a radial gradient fitted to the outline, its focus on the lit point.
   out += shade(sc, b, g, all, sil, clip);
 
+  // Grazing sheen just inside the outline (the facets of an eye catch the sky at the rim).
+  if (b.rim) out += `<path d="${sil}" clip-path="url(#${clip})" fill="none" stroke="${b.rim.color}" stroke-width="${fmt(b.rim.w * sc.k)}" opacity="${b.rim.a}"/>`;
   // Contact shadows where another piece meets this one.
   if (b.ao) out += `<g clip-path="url(#${clip})">` + b.ao.map((o) => ao(sc, o)).join('') + '</g>';
   // Gloss spot where the surface mirrors the light.
@@ -176,7 +185,12 @@ function gloss(sc, b, g) {
   const id = sc.id('s');
   sc.defs.push(`<radialGradient id="${id}"><stop offset="0" stop-color="${gl.color || '#fffaf0'}" stop-opacity="${fmt(a)}"/>` +
     `<stop offset="0.35" stop-color="${gl.color || '#fffaf0'}" stop-opacity="${fmt(a * 0.45)}"/><stop offset="1" stop-color="${gl.color || '#fffaf0'}" stop-opacity="0"/></radialGradient>`);
-  return `<ellipse cx="${fmt(q[0])}" cy="${fmt(q[1])}" rx="${fmt(r * squash)}" ry="${fmt(r)}" transform="rotate(${fmt(ang)} ${fmt(q[0])} ${fmt(q[1])})" fill="url(#${id})"/>`;
+  let s = `<ellipse cx="${fmt(q[0])}" cy="${fmt(q[1])}" rx="${fmt(r * squash)}" ry="${fmt(r)}" transform="rotate(${fmt(ang)} ${fmt(q[0])} ${fmt(q[1])})" fill="url(#${id})"/>`;
+  if (gl.core) {
+    const rc = gl.core.size * sc.k;
+    s += `<ellipse cx="${fmt(q[0])}" cy="${fmt(q[1])}" rx="${fmt(rc * squash)}" ry="${fmt(rc * 0.8)}" transform="rotate(${fmt(ang)} ${fmt(q[0])} ${fmt(q[1])})" fill="#fffdf8" opacity="${fmt(gl.core.a * smooth(0.85, 0.98, best))}"/>`;
+  }
+  return s;
 }
 
 // Hairs: sampled on the surface (area weighted), leaning toward the rear, lit by their root normal.

@@ -91,11 +91,12 @@ function legChain(L, side, ankleT, tarDir, pole) {
   const segs = [0.42, 0.16, 0.14, 0.13, 0.15];
   let p = ankle, d = td;
   for (let i = 0; i < segs.length; i++) {
+    pts.push(add(p, mul(d, L.tar * segs[i] * 0.5)));
     p = add(p, mul(d, L.tar * segs[i]));
     pts.push(p);
     d = norm(add(d, [0, 0, -0.06]));
   }
-  return pts;
+  return { pts, tip: p, dir: d };
 }
 
 // Poses give the ankle targets, tarsus directions and knee poles of the left legs (y > 0); the right side mirrors.
@@ -137,18 +138,47 @@ function head(o) {
     shape: (th) => [1 + 0.14 * Math.sin(th), Math.sin(th) < 0 ? 1.1 : 1],
     shade: { hl: 0.12, dark: 0.6 },
     gloss: { size: 0.3, a: 0.12 },
-    hair: { n: 1500, len: 0.3, w: 0.02, lean: 0.55, a: 0.75, twist: 1.4, color: (t, th, R) => (R() < 0.6 ? C.hairPale : C.hairHi), density: (t, th) => (Math.sin(th) > 0.2 ? 1 : 0.7) },
+    hair: {
+      n: 1900, len: 0.3, w: 0.019, lean: 0.55, a: 0.75, twist: 1.4,
+      color: (t, th, R) => {
+        const up = Math.sin(th), r = R();
+        if (t > 0.62 && up > -0.25) return r < 0.7 ? '#dcc89a' : C.hairPale; // frons: pale yellow fringe
+        if (up > 0.6) return r < 0.5 ? C.hair : C.hairLo;                     // vertex
+        return r < 0.6 ? C.hairPale : '#b9a68a';                              // genae behind the eyes
+      },
+      density: (t, th) => { const up = Math.sin(th); if (t > 0.6 && up < -0.25) return 0.12; return up > 0.2 ? 1 : 0.8; },
+      lenAt: (t, th) => (t > 0.62 && Math.sin(th) > -0.25 ? 1.15 : 1),
+    },
   };
 }
 
 function eye(o, side) {
   return {
     name: 'eye', frame: { o, ax: Z, ay: X, az: [0, side, 0] }, color: C.eye, seed: 21 + side,
-    profile: (t) => { const r = Math.pow(env(t, 0.5, 0.5) * 2, 0.7); return { x: -1.3 + 2.6 * t, zc: 0, yc: -0.12 * Math.sin(Math.PI * t), ry: 0.78 * r, rz: 0.4 * r }; },
-    color: '#3a2a1a', shade: { hl: 0.16, dark: 0.5 },
-    gloss: { size: 0.42, a: 0.5, color: '#e9e4dc' },
-    hair: { n: 90, len: 0.12, w: 0.018, lean: 0.4, a: 0.55, color: () => '#b9a88c' },
+    profile: (t) => { const r = Math.pow(env(t, 0.5, 0.5) * 2, 0.62); return { x: -1.3 + 2.55 * t, zc: 0, yc: -0.24 * Math.sin(Math.PI * t), ry: 0.74 * r * (0.86 + 0.24 * t), rz: 0.42 * r }; },
+    color: '#1d130a', shade: { hl: 0.1, dark: 0.42 },
+    rim: { color: '#8f877c', w: 0.07, a: 0.28 },
+    gloss: { size: 0.4, a: 0.42, color: '#e9e4dc', core: { size: 0.1, a: 0.9 } },
+    hair: { n: 260, len: 0.11, w: 0.013, lean: 0.4, a: 0.55, color: () => '#b9a88c' },
     bias: 0.05,
+  };
+}
+
+// A small lens-shaped plate on the face (thickness along x).
+function lens(name, o, tx, ry, rz, color) {
+  return {
+    name, frame: frame0(o), color,
+    profile: (t) => { const s = Math.sqrt(Math.max(0, 1 - (2 * t - 1) ** 2)); return { x: tx * (2 * t - 1), zc: 0, ry: ry * s, rz: rz * s }; },
+    shade: { hl: 0.12, dark: 0.45 }, bias: 0.04,
+  };
+}
+
+function clypeus(o) {
+  return {
+    ...lens('clypeus', o, 0.13, 0.7, 0.5, '#2e2014'),
+    shape: (th) => [1 + 0.16 * Math.sin(th), 1],
+    gloss: { size: 0.22, a: 0.3, core: { size: 0.05, a: 0.45 } },
+    hair: { n: 140, len: 0.13, w: 0.013, lean: 0.35, a: 0.6, color: () => C.hairPale },
   };
 }
 
@@ -191,6 +221,8 @@ function abdomen(o, pitch) {
     if (t > 0.40) return C.tom; if (t > 0.30) return C.band;
     if (t > 0.26) return C.tomLo; return C.band;
   };
+  const EDGES = [0.84, 0.80, 0.68, 0.62, 0.53, 0.45, 0.40, 0.30, 0.26];
+  const edge = (t) => Math.min(...EDGES.map((e) => Math.abs(t - e)));
   return {
     name: 'abdomen', frame: { o, ax, ay: Y, az }, color: C.band, seed: 41,
     profile: (t) => {
@@ -206,13 +238,15 @@ function abdomen(o, pitch) {
       { t0: 0.40, t1: 0.45, color: C.tom }, { t0: 0.30, t1: 0.40, color: C.band },
       { t0: 0.26, t1: 0.30, color: C.tomLo }, { t0: 0.0, t1: 0.26, color: C.band },
     ],
+    feather: 0.014,
     shade: { hl: 0.2, dark: 0.6 },
     gloss: { size: 0.9, a: 0.2 },
     ao: [{ p: add(o, [0.2, 0, 0.2]), r: 1.9, a: 0.6 }],
     hair: {
-      n: 2600, len: 0.18, w: 0.018, lean: 1.1, a: 0.6,
+      n: 3600, len: 0.18, w: 0.017, lean: 1.1, a: 0.6,
       color: (t, th, R) => { const c = bandColor(t); if (c === C.tom || c === C.tomLo) return R() < 0.6 ? C.tom : C.hairPale; if (c === C.band) return R() < 0.7 ? C.bandHi : '#8a6a48'; return R() < 0.5 ? C.amberHi : '#e8c088'; },
-      density: (t) => { const c = bandColor(t); return c === C.tom || c === C.tomLo ? 1 : t < 0.2 ? 0.9 : 0.35; },
+      density: (t) => { if (edge(t) < 0.022) return 1; const c = bandColor(t); return c === C.tom || c === C.tomLo ? 1 : t < 0.2 ? 0.9 : 0.35; },
+      lenAt: (t) => (edge(t) < 0.022 ? 1.4 : 1),
     },
   };
 }
@@ -220,9 +254,9 @@ function abdomen(o, pitch) {
 // ---- Assembly -----------------------------------------------------------------------------------------------
 // opts: pose 'pose' | 'vol' | 'marche', frame (flight drawing 0..2, walk phase 0..1), pollen
 export function bee(az, el, opts = {}) {
-  const { size = 512, k = 30, pose = 'pose', frame = 0, pollen = false, bg = null, detail = 1 } = opts;
+  const { size = 512, k = 30, pose = 'pose', frame = 0, pollen = false, bg = null, detail = 1, idp = '' } = opts;
   const cam = camera(az, el);
-  const sc = new Scene(cam, k, size / 2, size / 2, 7);
+  const sc = new Scene(cam, k, size / 2, size / 2, 7, idp);
   sc.detail = detail;
   const bob = pose === 'marche' ? 0.06 * Math.sin(frame * 4 * Math.PI) : 0;
   const lift = (p) => [p[0], p[1], p[2] + bob];
@@ -233,8 +267,11 @@ export function bee(az, el, opts = {}) {
   drawBody(sc, head(H));
   for (const s of [1, -1]) {
     drawBody(sc, eye(add(H, [-0.05, 1.68 * s, -0.05]), s));
-    drawTube(sc, [add(H, [0.62, 0.42 * s, -1.38]), add(H, [0.82, 0.2 * s, -1.68])], [0.16, 0.08], { color: '#7a4c1e', gloss: 0.6 });
+    drawTube(sc, [add(H, [0.62, 0.5 * s, -1.22]), add(H, [0.9, 0.36 * s, -1.52]), add(H, [0.98, 0.13 * s, -1.62])], [0.13, 0.09, 0.04],
+      { color: '#5e3016', gloss: 0.6, glossColor: '#c98a58', bias: 0.03 });
   }
+  drawBody(sc, clypeus(add(H, [0.74, 0, -0.72])));
+  drawBody(sc, { ...lens('labrum', add(H, [0.86, 0, -1.3]), 0.12, 0.32, 0.13, '#5e3216'), gloss: { size: 0.1, a: 0.5 } });
   drawBody(sc, sphere('ocellus', add(H, [0.3, 0, 1.5]), 0.085, '#120a04', 0.8));
   for (const s of [1, -1]) drawBody(sc, sphere('ocellus', add(H, [0.08, 0.4 * s, 1.44]), 0.08, '#120a04', 0.8));
 
@@ -257,17 +294,32 @@ export function bee(az, el, opts = {}) {
     for (const k2 of ['front', 'mid', 'hind']) {
       const L = LEGS[k2];
       const [ankle, td, pole] = P[k2];
-      const pts = legChain({ ...L }, s, ankle, td, pole);
-      const lift3 = pts.map(lift);
-      const radii = [L.rf[0], L.rf[1], L.rt[1], L.rr[0], L.rr[0] * 0.7, L.rr[1] * 1.3, L.rr[1] * 1.15, L.rr[1]].map((r) => r * 1.2);
+      const ch = legChain({ ...L }, s, ankle, td, pole);
+      const lift3 = ch.pts.map(lift);
+      // femur, tibia, then each tarsomere as a spindle: wide in its middle, narrow at its joints
+      const radii = [L.rf[0], L.rf[1], L.rt[1]];
+      for (let j = 0; j < 5; j++) {
+        const mid = j === 0 ? L.rr[0] : L.rr[1] * (1.35 - j * 0.06);
+        radii.push(mid, j === 0 ? L.rr[0] * 0.55 : L.rr[1] * 0.82);
+      }
+      for (let i = 0; i < radii.length; i++) radii[i] *= 1.2;
+      const brush = k2 === 'hind'
+        ? { n: 22, len: 0.24, w: 0.016, color: C.hairHi, side: [0, 0, 1], both: true, lean: 0.6, a: 0.85 }
+        : { n: 10, len: 0.15, w: 0.014, color: '#c9a477', side: [0, 0, -1], both: true, a: 0.75 };
+      const small = { n: 3, len: 0.08, w: 0.012, color: '#b08f6a', side: [0, 0, 1], both: true, a: 0.7 };
       const hair = [
         { n: 26, len: 0.3, w: 0.018, color: C.hairPale, side: [0, 0, 1], both: true, a: 0.75 },
         k2 === 'hind' ? { n: 34, len: 0.48, w: 0.02, color: C.hairHi, side: [0, 0, 1], both: true, lean: 0.25, a: 0.85 } : { n: 18, len: 0.2, w: 0.016, color: C.hairPale, side: [0, 0, 1], both: true, a: 0.7 },
-        { n: 16, len: 0.16, w: 0.015, color: '#c9a477', side: [0, 0, -1], both: true, a: 0.7 },
-        { n: 6, len: 0.1, w: 0.014, color: '#b08f6a', side: [0, 0, 1], both: true },
-        { n: 5, len: 0.09, w: 0.014, color: '#b08f6a', side: [0, 0, 1], both: true },
+        brush, brush, small, small, small, small, small, small, small, small,
       ];
-      drawTube(sc, lift3, radii, { color: C.leg, gloss: 0.55, glossColor: C.legHi, hair, seed: 60 + s * 3 + k2.length, bias: k2 === 'hind' ? 0 : 0.01 });
+      drawTube(sc, lift3, radii, { color: (i) => (i < 2 ? C.leg : i < 4 ? '#35190f' : '#4a2a17'), gloss: 0.55, glossColor: C.legHi, hair, seed: 60 + s * 3 + k2.length, bias: k2 === 'hind' ? 0 : 0.01 });
+      // Two claws, curved down and apart.
+      const out = norm(cross(ch.dir, Z));
+      for (const c of [1, -1]) {
+        const d1 = norm(add(add(mul(ch.dir, 0.55), [0, 0, -0.55]), mul(out, 0.35 * c)));
+        const p1 = add(ch.tip, mul(d1, 0.09)), p2 = add(p1, mul(norm(add(d1, [0, 0, -0.9])), 0.08));
+        drawTube(sc, [ch.tip, p1, p2].map(lift), [0.045, 0.03, 0.012], { color: '#1a0f08', bias: 0.01 });
+      }
       if (k2 === 'hind' && pollen) {
         const mid = mul(add(lift3[1], lift3[2]), 0.5);
         drawBody(sc, { ...sphere('pollen', add(mid, [0, 0.25 * s, 0]), 0.6, '#d9a93e', 0.05), shade: { hl: 0.1, dark: 0.45 }, hair: { n: 420, len: 0.05, w: 0.045, lean: 0.1, a: 0.7, color: (t, th, R) => (R() < 0.5 ? '#f0cd6a' : '#c8962e') } });

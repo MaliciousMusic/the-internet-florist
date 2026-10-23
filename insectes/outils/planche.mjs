@@ -10,7 +10,7 @@ const k = tile / 15;
 let body = '';
 views.forEach((v, i) => {
   const [pose, az, el, fr] = v.split(':');
-  const svg = bee(+az, +el, { pose, frame: +(fr || 0), size: tile, k, pollen: pose === 'vol' });
+  const svg = bee(+az, +el, { pose, frame: +(fr || 0), size: tile, k, pollen: pose === 'vol', idp: `t${i}_` });
   const inner = svg.replace(/^<svg[^>]*>/, '').replace(/<\/svg>$/, '');
   const x = (i % cols) * tile, y = Math.floor(i / cols) * tile;
   body += `<g transform="translate(${x} ${y})">${inner}<text x="8" y="18" font-family="Arial" font-size="13" fill="#6a5a48">${pose} az ${az} el ${el}${fr ? ' f' + fr : ''}</text></g>`;
