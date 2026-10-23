@@ -337,3 +337,21 @@ Les mesures vont dans `app/z7-plan-mesures.js` (`VPLAN_OV`), que `vPlan` lit à 
   - cœur : 145 → 38 tiges de 6 mm (bouche ovale de profondeur 0,53) ;
   - suiban ovale : 2264 → 1290 tiges ;
   - colonne : 186 → 237 tiges.
+
+### Correction du porteur (2026-10-23) : les cavités tracées à la main
+
+Sur la planche des 13, le porteur a tracé en rouge la cavité de cinq vases : coque, calla, lys, tête veinée et colonne. Son trait
+(224, 49, 49) se distingue des tirets du plan (192, 57, 43). Il est lu pixel par pixel, à l'échelle de chaque cellule recalculée comme
+`planche6b.js` l'a dessinée :
+- les deux bords donnent la demi-largeur et le centre ;
+- le trait du bas donne le fond.
+
+Résultat dans `porteur/traces.json`. Ces tracés passent avant le modèle 3D et le contour (`src: 'porteur'`).
+- **Coque** : la cavité épouse tout l'intérieur. La demi-largeur passe à 51-66, contre 38-44 mesurés sur le modèle 3D.
+- **Calla** : elle suit la paroi à travers le col jusqu'au bas de la panse.
+- **Lys** : cavité asymétrique, avec un fond à 5,8 cm. Elle remplace la cavité supposée : le lys est réglé.
+- **Tête veinée** : le cou est creux jusqu'au socle (fond à 3,4 cm). Ma règle du « pied plein » se trompait.
+  - Conséquence : M7 (30 tiges) ne tient plus, même avec un vase agrandi ×1,5. Le col en prend 13 au plus. Question au porteur.
+- **Colonne** : la largeur tracée, centrée et droite (demi-largeur 127,7 à l'échelle 1). Sa bouche ronde reste sa section la plus étroite.
+
+Après correction : 9 vases mesurés ou tracés, 22 à vérifier, 5 hors du plan, 37 sans remarque. Seule la jardinière reste supposée.

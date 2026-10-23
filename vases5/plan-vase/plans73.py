@@ -16,8 +16,8 @@ def flags(r):
     m, v = [], []
     lip = max(r['mo'], 1)
     src = r.get('src', 'profil')
-    if src in ('glb', 'contour', 'boite'):
-        why = {'glb': 'cavité mesurée sur le modèle 3D', 'contour': 'coupe tirée du contour de la photo', 'boite': 'cavité carrée de la colonne'}[src]
+    if src in ('glb', 'contour', 'boite', 'porteur'):
+        why = {'glb': 'cavité mesurée sur le modèle 3D', 'contour': 'coupe tirée du contour de la photo', 'boite': 'cavité carrée de la colonne', 'porteur': 'cavité tracée par le porteur'}[src]
         if max(r['edge']) > 55:
             v.append('très ouvert (%.0f°) : sans pique, les tiges se couchent' % max(r['edge']))
         if r['n6'] < 5:

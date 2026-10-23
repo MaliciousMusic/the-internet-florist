@@ -6,7 +6,7 @@ vm.runInContext('var D=Math.PI/180,UPC=6.5,SVGB={};',ctx);
 for(const f of['v0.js','v1a.js','z7-plan.js','z7-plan-mesures.js'])vm.runInContext(fs.readFileSync(path.join(A,f),'utf8'),ctx,{filename:f});
 const VZ=vm.runInContext('VZ',ctx),vPlan=vm.runInContext('vPlan',ctx),OV=vm.runInContext('VPLAN_OV',ctx);
 const plan=(v,ov)=>{v._plan=null;v._planKey=null;if(!ov)vm.runInContext('var VPLAN_OV_KEEP=VPLAN_OV;VPLAN_OV={}',ctx);try{return vPlan(v)}finally{if(!ov)vm.runInContext('VPLAN_OV=VPLAN_OV_KEEP',ctx);v._plan=null;v._planKey=null}};
-const cm=u=>(u/6.5).toFixed(1),f1=x=>x.toFixed(1),SRC={glb:'modèle 3D',contour:'contour de la photo',boite:'colonne carrée',suppose:'supposé (3D non creusé)'};
+const cm=u=>(u/6.5).toFixed(1),f1=x=>x.toFixed(1),SRC={glb:'modèle 3D',contour:'contour de la photo',boite:'colonne carrée',suppose:'supposé (3D non creusé)',porteur:'tracé par le porteur'};
 const NC=5,CW=300,CH=330,ids=Object.keys(OV),g=[];
 ids.forEach((id,i)=>{const v=VZ[id],a=plan(v,false),b=plan(v,true),x0=10+(i%NC)*CW,y0=60+Math.floor(i/NC)*CH,P=v.prof,
     hmax=Math.max(...P.map(p=>p[0]),b.yM),rmax=Math.max(...P.map(p=>p[1])),k=Math.min(210/hmax,120/rmax),cx=x0+CW/2,gy=y0+250,tx=x=>cx+x*k,ty=h=>gy-h*k;
@@ -22,5 +22,5 @@ ids.forEach((id,i)=>{const v=VZ[id],a=plan(v,false),b=plan(v,true),x0=10+(i%NC)*
 const W=20+NC*CW,H=60+Math.ceil(ids.length/NC)*CH+10;
 fs.writeFileSync(path.join(__dirname,'planche-etape6-mesures.svg'),`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" font-family="Segoe UI,Arial,sans-serif"><rect width="100%" height="100%" fill="#f4efe6"/>
 <text x="12" y="28" font-size="17" font-weight="bold" fill="#222">Plan du vase, étape 6 : les 13 vases mesurés à part — cavité lue sur le profil (tirets rouges) → mesurée (bleu)</text>
-<text x="12" y="48" font-size="12" fill="#555">cadre bleu : mesuré (modèle 3D, contour de la photo, colonne carrée) · cadre orange : supposé, le modèle 3D n'est pas creusé · en brun, les tiges les plus penchées du plan mesuré</text>${g.join('')}</svg>`);
+<text x="12" y="48" font-size="12" fill="#555">cadre bleu : mesuré (modèle 3D, contour de la photo) ou tracé par le porteur · cadre orange : supposé, le modèle 3D n'est pas creusé · en brun, les tiges les plus penchées du plan mesuré</text>${g.join('')}</svg>`);
 console.log('ok',W,H);

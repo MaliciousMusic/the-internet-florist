@@ -1,6 +1,6 @@
 # Plan des 73 vases (étape 6)
 
-Verdicts : 0 à mesurer à part, 23 à vérifier, 5 hors du plan, 37 sans remarque.
+Verdicts : 0 à mesurer à part, 22 à vérifier, 5 hors du plan, 37 sans remarque.
 
 | Vase | Famille | Profondeur | Bouche Ø | Gorge Ø | Inclinaison max | Classe | Tiges de 6 mm | Verdict | Pourquoi |
 |---|---|---|---|---|---|---|---|---|---|
@@ -17,7 +17,6 @@ Verdicts : 0 à mesurer à part, 23 à vérifier, 5 hors du plan, 37 sans remarq
 | suiban-lobe-rose | sculpture | 5.7 cm | 25.7 cm | 25.7 cm | 77° | dome | 284 | voir | coupe tirée du contour de la photo ; très ouvert (77°) : sans pique, les tiges se couchent |
 | suiban-ovale-peint | sculpture | 7.2 cm | 36.9 cm | 36.9 cm | 79° | dome | 1290 | voir | coupe tirée du contour de la photo ; très ouvert (79°) : sans pique, les tiges se couchent |
 | bouteille-dragon | vase | 27.6 cm | 4.0 cm | 2.8 cm | 10° | droit | 12 | voir | sculpté : cavité lue sur le profil extérieur, à confirmer sur le modèle 3D |
-| bronze-lys | vase | 26.2 cm | 11.2 cm | 11.2 cm | 22° | eventail | 209 | voir | modèle 3D non creusé : cavité supposée (droite, largeur de la bouche), à confirmer sur une photo de l’intérieur |
 | colonne-art-nouveau | vase | 28.2 cm | 4.0 cm | 3.6 cm | 9° | droit | 21 | voir | sculpté : cavité lue sur le profil extérieur, à confirmer sur le modèle 3D |
 | cristal-ginkgo | vase | 19.6 cm | 6.9 cm | 6.9 cm | 20° | eventail | 78 | voir | sculpté : cavité lue sur le profil extérieur, à confirmer sur le modèle 3D |
 | dragon-cloisonne | vase | 68.4 cm | 11.8 cm | 9.7 cm | 11° | droit | 157 | voir | sculpté : cavité lue sur le profil extérieur, à confirmer sur le modèle 3D |
@@ -28,11 +27,12 @@ Verdicts : 0 à mesurer à part, 23 à vérifier, 5 hors du plan, 37 sans remarq
 | porcelaine-papillon | vase | 21.7 cm | 4.9 cm | 1.3 cm | 0° | droit | 2 | voir | sculpté : cavité lue sur le profil extérieur, à confirmer sur le modèle 3D ; col plus étroit que la moitié de la lèvre : les tiges s'appuient sur le col ; col minuscule : 2 tiges de 6 mm au plus |
 | ronces-noires | vase | 32.9 cm | 8.9 cm | 8.9 cm | 15° | eventail | 131 | voir | sculpté : cavité lue sur le profil extérieur, à confirmer sur le modèle 3D |
 | vase-coeur-anthracite | sculpture | 21.2 cm | 9.4 cm | 9.4 cm | 16° | eventail | 38 | mesuré | coupe tirée du contour de la photo |
-| vase-tete-veine-sable | sculpture | 12.5 cm | 6.8 cm | 6.8 cm | 32° | eventail | 39 | mesuré | coupe tirée du contour de la photo |
+| vase-tete-veine-sable | sculpture | 19.0 cm | 6.8 cm | 6.8 cm | 18° | droit | 21 | mesuré | cavité tracée par le porteur |
 | bronze-bambous | vase | 43.7 cm | 3.1 cm | 3.1 cm | 7° | droit | 15 | mesuré | cavité mesurée sur le modèle 3D |
-| calla-gres | vase | 39.0 cm | 3.4 cm | 3.4 cm | 7° | droit | 19 | mesuré | cavité mesurée sur le modèle 3D |
-| colonne-blanche | vase | 24.8 cm | 10.6 cm | 10.6 cm | 23° | eventail | 237 | mesuré | cavité carrée de la colonne |
-| coque-verte | vase | 23.2 cm | 14.9 cm | 14.9 cm | 40° | dome | 369 | mesuré | cavité mesurée sur le modèle 3D |
+| bronze-lys | vase | 23.5 cm | 11.2 cm | 11.2 cm | 23° | droit | 57 | mesuré | cavité tracée par le porteur |
+| calla-gres | vase | 38.6 cm | 3.4 cm | 3.4 cm | 10° | droit | 19 | mesuré | cavité tracée par le porteur |
+| colonne-blanche | vase | 25.0 cm | 10.6 cm | 10.6 cm | 27° | eventail | 186 | mesuré | cavité tracée par le porteur |
+| coque-verte | vase | 23.3 cm | 14.9 cm | 14.9 cm | 38° | dome | 369 | mesuré | cavité tracée par le porteur |
 | gres-chauve-souris | vase | 35.5 cm | 7.7 cm | 7.7 cm | 14° | droit | 99 | mesuré | cavité mesurée sur le modèle 3D |
 | prisme-jaune | vase | 30.3 cm | 2.9 cm | 2.9 cm | 8° | droit | 10 | mesuré | coupe tirée du contour de la photo |
 | coupe-basse-anthracite | coupe | — | — | — | — | — | — | hors | pique-fleurs : les tiges sont piquées, pas posées au fond (plan non appliqué) |
