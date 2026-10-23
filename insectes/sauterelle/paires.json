@@ -1,4 +1,126 @@
-{"sid": "tettigonia-viridissima", "pairs": [
- {"nom": "profil", "photo": "hd/c166.jpg", "box": [200, 300, 3700, 2100], "vue": "pose:270:8", "k": 22, "w": 1500, "h": 780, "focus": [-6, 0, 0]},
- {"nom": "tete", "photo": "hd/c016.jpg", "box": [0, 0, 2848, 2136], "vue": "pose:90:12", "k": 55, "w": 1300, "h": 980, "focus": [13, 0, 0]}
-]}
+{
+ "sid": "tettigonia-viridissima",
+ "_doc": "paires photo | rendu (paires.py) : boîte de la photo en px, vue pose:az:el[:f], k px/mm, focus mm. Les rendus restent ici, les paires (pixels de photos) dans refcache.",
+ "pairs": [
+  {
+   "nom": "profil",
+   "photo": "hd/c166.jpg",
+   "box": [
+    200,
+    700,
+    3700,
+    2000
+   ],
+   "vue": "pose:270:5",
+   "k": 18,
+   "w": 1489,
+   "h": 553,
+   "focus": [
+    5.6,
+    0,
+    1.85
+   ]
+  },
+  {
+   "nom": "tete-profil",
+   "photo": "hd/c166.jpg",
+   "box": [
+    2050,
+    1080,
+    2800,
+    1700
+   ],
+   "vue": "pose:270:5",
+   "k": 60,
+   "w": 1064,
+   "h": 880,
+   "focus": [
+    16.8,
+    0,
+    0.9
+   ]
+  },
+  {
+   "nom": "tete-3q",
+   "photo": "hd/c016.jpg",
+   "box": [
+    800,
+    450,
+    2800,
+    1700
+   ],
+   "vue": "pose:70:10",
+   "k": 25,
+   "w": 943,
+   "h": 590,
+   "focus": [
+    11,
+    0,
+    -2
+   ]
+  },
+  {
+   "nom": "face",
+   "photo": "hd/c026.jpg",
+   "box": [
+    1000,
+    300,
+    3000,
+    2100
+   ],
+   "vue": "pose:18:12",
+   "k": 80,
+   "w": 1072,
+   "h": 966,
+   "focus": [
+    18.8,
+    0.6,
+    -0.8
+   ]
+  },
+  {
+   "nom": "dessus-femelle",
+   "photo": "hd/c157.jpg",
+   "box": [
+    300,
+    250,
+    3150,
+    1800
+   ],
+   "vue": "pose:90:89",
+   "k": 14,
+   "w": 1020,
+   "h": 554,
+   "focus": [
+    -9.9,
+    -1.2,
+    3
+   ],
+   "env": {
+    "SAUTERELLE_SEXE": "f"
+   }
+  },
+  {
+   "nom": "vol-femelle",
+   "photo": "hd/c250.jpg",
+   "box": [
+    1300,
+    500,
+    2900,
+    2200
+   ],
+   "vue": "vol:120:-35",
+   "k": 12,
+   "w": 900,
+   "h": 950,
+   "focus": [
+    0,
+    0,
+    0
+   ],
+   "env": {
+    "SAUTERELLE_SEXE": "f"
+   }
+  }
+ ]
+}

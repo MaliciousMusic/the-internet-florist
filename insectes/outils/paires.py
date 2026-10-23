@@ -20,10 +20,13 @@ for i, p in enumerate(cfg['pairs']):
     if only and i not in only: continue
     out = os.path.join(HERE, '..', sp, 'planches', 'paire-%s.png' % p['nom'])
     f = ','.join(str(v) for v in p['focus'])
-    r0 = subprocess.run(['node', os.path.join(HERE, 'gros.mjs'), sp, out, str(p['k']), str(p['w']), str(p['h']), f, p['vue'], str(p.get('detail', 1))], capture_output=True, text=True)
+    # "env": variables for the species module (a variant drawn for one photo, the female against a female); "rot": the photo turned
+    # (degrees, counter-clockwise) after its crop, when the insect lies tilted in it
+    r0 = subprocess.run(['node', '--max-old-space-size=900', os.path.join(HERE, 'gros.mjs'), sp, out, str(p['k']), str(p['w']), str(p['h']), f, p['vue'], str(p.get('detail', 1))], capture_output=True, text=True, env={**os.environ, **p.get('env', {})})
     if r0.returncode: sys.exit(r0.stderr[-1500:])
     ph = Image.open(os.path.join(ref, p['photo'])).convert('RGB').crop(tuple(p['box']))
     if p.get('flip'): ph = ImageOps.mirror(ph)
+    if p.get('rot'): ph = ph.rotate(p['rot'], resample=Image.BICUBIC, expand=False, fillcolor='#efe9df')
     r = Image.open(out).convert('RGB')
     ph = ph.resize((round(ph.width * H / ph.height), H), Image.LANCZOS)
     r = r.resize((round(r.width * H / r.height), H), Image.LANCZOS)

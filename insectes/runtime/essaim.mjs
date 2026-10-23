@@ -168,7 +168,9 @@ export class Essaim {
       sp.position.set(q.x * this.dpr, q.y * this.dpr);
       sp.visible = true;
       b.screen = { x: q.x, y: q.y, r: shown * 0.28, view: v, lod: lodName };
-      if (b.wingMeshes) {
+      // b.wingsShown === false (a bush-cricket at rest: its folded tegmina are in the body's cell): the wing quads are hidden
+      if (b.wingMeshes && b.wingsShown === false) for (const g of b.wingMeshes) g.m.visible = false;
+      else if (b.wingMeshes) {
         this.placeWings(b, K, fr, [eye[0] / el, eye[1] / el, eye[2] / el], b.lengthPx / K.bodyMm);
         b.screen.r = Math.max(b.screen.r, (K.wings.reach * pxmm) / 2.2 * 1.08);
       }
@@ -181,7 +183,7 @@ export class Essaim {
       if (!mine.length && !L.box) return;
       for (const b of this.insects) {
         b.sprite.renderable = b.visible && b.layer === li;
-        if (b.wingMeshes) for (const g of b.wingMeshes) g.m.renderable = b.sprite.renderable;
+        if (b.wingMeshes) for (const g of b.wingMeshes) g.m.renderable = b.sprite.renderable && b.wingsShown !== false;
       }
       const ctx = L.ctx;
       // Only the region the insects of this layer cover, now and at the previous frame, is cleared and copied.
