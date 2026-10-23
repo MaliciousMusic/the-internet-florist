@@ -2,7 +2,7 @@
 
   python insectes/outils/paires.py <id> [--only i,j] [--scale 0.6]
 paires.json: {"sid": "<refcache folder>", "pairs": [{"nom", "photo": "hd/c123.jpg", "box": [x0,y0,x1,y1], "vue": "pose:az:el[:f]",
-"k": px/mm, "w", "h", "focus": [x,y,z], "flip": false, "detail": 1}]}. Renders go to insectes/<id>/planches/paire-<nom>.png,
+"k": px/mm, "w", "h", "focus": [x,y,z], "flip": false, "detail": 1, "rot": deg}]}. Renders go to insectes/<id>/planches/paire-<nom>.png,
 pairs and the sheet to refcache/<sid>/ (they hold photo pixels: never in git)."""
 import sys, os, json, subprocess
 from PIL import Image, ImageOps
@@ -22,7 +22,11 @@ for i, p in enumerate(cfg['pairs']):
     f = ','.join(str(v) for v in p['focus'])
     r0 = subprocess.run(['node', os.path.join(HERE, 'gros.mjs'), sp, out, str(p['k']), str(p['w']), str(p['h']), f, p['vue'], str(p.get('detail', 1))], capture_output=True, text=True)
     if r0.returncode: sys.exit(r0.stderr[-1500:])
-    ph = Image.open(os.path.join(ref, p['photo'])).convert('RGB').crop(tuple(p['box']))
+    ph = Image.open(os.path.join(ref, p['photo'])).convert('RGB')
+    if p.get('rot'):
+        # a photo taken askew turned upright about its box's centre (degrees, counter-clockwise), before the crop
+        bx = p['box']; ph = ph.rotate(p['rot'], resample=Image.BICUBIC, center=((bx[0] + bx[2]) / 2, (bx[1] + bx[3]) / 2), fillcolor='#efe9df')
+    ph = ph.crop(tuple(p['box']))
     if p.get('flip'): ph = ImageOps.mirror(ph)
     r = Image.open(out).convert('RGB')
     ph = ph.resize((round(ph.width * H / ph.height), H), Image.LANCZOS)

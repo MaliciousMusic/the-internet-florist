@@ -37,6 +37,9 @@ function material(b) {
     // the colour a metal mirrors (its reflectance), when it differs from its body colour
     rtint: m.tintColor ? lin(m.tintColor) : null,
     mottle: m.mottle ?? 0.07,
+    // (coccinelle) the surround a varnish mirrors: box weighs the softbox around the lamp (1: as before), sky the band of the
+    // horizon [from, to] in r.u (a narrow band: the crisp window line of a lacquered dome)
+    box: m.box ?? 1, sky: m.sky ?? null,
   };
 }
 
@@ -55,10 +58,10 @@ function shadePoint(cam, M, A, n, sh, occ) {
   let S = vs(tint, sh * (M.ks * Math.pow(nh, M.p) * (M.p + 2) / 16 + M.ks2 * Math.pow(nh, M.p2)));
   if (M.env > 0) {
     const r = sub(mul(n, 2 * dot(n, cam.c)), cam.c);
-    const sky = smooth(-0.25, 0.55, dot(r, cam.u));
+    const sky = M.sky ? smooth(M.sky[0], M.sky[1], dot(r, cam.u)) : smooth(-0.25, 0.55, dot(r, cam.u));
     // a structured surround: the ground, a darker horizon band, the sky, and a broad bright softbox around the lamp
     const ru = dot(r, cam.u), hor = 1 - 0.6 * smooth(-0.2, 0.05, ru) * (1 - smooth(0.12, 0.35, ru));
-    const box = smooth(0.55, 0.92, dot(r, cam.L));
+    const box = smooth(0.55, 0.92, dot(r, cam.L)) * (M.box ?? 1);
     const envC = vadd(vs(vadd(vs(GROUND, 0.55 * (1 - sky)), vs(SKY, 1.2 * sky)), hor), vs(SUN, 1.6 * box));
     const F = 0.18 + 0.82 * Math.pow(1 - nv, 3);
     S = vadd(S, vs(vmul(envC, tint), M.env * F * occ));
@@ -298,13 +301,15 @@ function paintBody(sc, b, id) {
   if (b.decals) out += b.decals.map((d) => decal(sc, b, M, d, id)).join('');
   if (b.punct && sc.k * b.punct.r > 0.35) out += punctures(sc, b, M);
   // Marks drawn by the species (a seam, a stripe), under the specular layer.
-  if (b.paint) out += b.paint(sc, b, g);
+  if (b.paint) out += b.paint(sc, b, g, id);
   // Specular layer over the albedo and the decals: highlight lobes and the reflected sky.
   const spec = quads.filter((x) => Math.max(...x.S) > 0.012);
   if (spec.length) {
     out += `<g filter="url(#${blur})">` + quadPaths(spec, (x) => { const a = clamp(Math.max(...x.S)); return hexl(vs(x.S, 1 / Math.max(a, 1e-3))); },
       (x) => Math.round(clamp(Math.max(...x.S)) * 20) / 20) + '</g>';
   }
+  // (coccinelle) marks drawn by the species over the specular layer, clipped by the outline: a crisp glint of the lamp
+  if (b.over) out += b.over(sc, b, g, id);
   // Grazing sheen just inside the outline (the facets of an eye catch the sky at the rim).
   if (b.rim) out += `<path d="${sil}" fill="none" stroke="${b.rim.color}" stroke-width="${fmt(b.rim.w * sc.k)}" opacity="${fmt(b.rim.a * 0.6)}"/>`;
   // Facets of a compound eye, seen in close-up only.
@@ -769,3 +774,5 @@ export function wingSkin(sc, w, upper, lam, glint) {
 const fmt4 = (x) => (Math.round(x * 10000) / 10000).toString();
 
 export { openPath };
+// (coccinelle) the light of the engine for marks a species draws itself (measured spots shaded like the surface they lie on)
+export { shadePoint, lin as toLinear, hexl as fromLinear, gridAt, material };

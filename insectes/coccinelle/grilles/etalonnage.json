@@ -1,0 +1,9 @@
+{
+ "_doc": "étalonnage du rouge sur les paires de studio à fond blanc (c137, c370 : l'exposition y est calée sur le blanc, le rouge vrai y est L* 22 à 35, chroma 46, teinte 38 à 45°) ; les photos d'extérieur, exposées sur le sujet, donnent la teinte mais pas le niveau",
+ "rouge": {
+  "k": 0.92,
+  "dL": -11,
+  "da": 1,
+  "db": -5
+ }
+}
