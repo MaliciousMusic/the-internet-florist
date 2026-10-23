@@ -1,0 +1,36 @@
+{
+ "_doc": "Myrmica rubra, ouvrière : longueurs en mm lues à la grille millimétrée (outils/echelle.py) sur les spécimens AntWeb, échelle lue sur leur barre ; sculpture par le spectre (outils/sculpture.py). Des chiffres seulement, les photos restent dans refcache/.",
+ "echelles_px_mm": {"c140 casent0104804 profil": 294, "c141 casent0172750 profil": 253, "c148 casent0922785 dessus": 244, "c082 casent0104804 tete": 524, "c081 casent0010684 tete": 476, "c083 casent0172750 tete": 484},
+ "tete": {
+  "longueur_CL": 1.13, "largeur_CW_sans_yeux": 0.94, "largeur_avec_yeux": 1.08, "plus_large_a": "0,45 à 0,65 de CL depuis l'occiput",
+  "mandibules_au_dela_du_clypeus": 0.25,
+  "oeil": {"grand_axe": 0.25, "petit_axe": 0.2, "centre_depuis_occiput_CL": 0.55, "facette": 0.017},
+  "insertion_antenne_depuis_occiput_CL": 0.8, "ecart_insertions": 0.56,
+  "sources": "c082 (casent0104804, face, 524 px/mm), c081, c083"
+ },
+ "antenne": {"scape": 0.85, "funicule": 1.1, "massue_3_articles": 0.45, "articles": 12, "sources": "c148 (dessus), c140 (profil) ; scape raccourci en vue de dessus, valeur de profil retenue"},
+ "mesosome": {
+  "longueur_Weber": 1.5, "largeur_pronotum": 0.62, "largeur_mesonotum": 0.65, "largeur_propodeum": 0.42,
+  "sillon_metanotal_depuis_avant": 0.62,
+  "epines": {"longueur": 0.27, "elevation_deg": 30, "divergence_deg": 22, "sources": "c140 0,25 ; c141 0,27 ; c148 dessus"},
+  "sources": "c140, c141 (profil), c148 (dessus)"
+ },
+ "petiole": {"longueur": 0.48, "hauteur": 0.4, "largeur": 0.27, "pedoncule_avant": 0.18, "noeud": "dôme arrondi, bord avant concave", "sources": "c140, c141, c148"},
+ "postpetiole": {"longueur": 0.35, "hauteur": 0.45, "largeur": 0.4, "sources": "c140, c141, c148"},
+ "gastre": {"longueur": 1.5, "largeur": 1.05, "hauteur": 0.95, "aiguillon_visible": 0.2, "sources": "c140, c141 (aiguillon sorti), c148"},
+ "pattes": {
+  "avant": {"femur": 0.9, "tibia": 0.8, "tarse": 0.9},
+  "milieu": {"femur": 1.05, "tibia": 0.9, "tarse": 0.95},
+  "arriere": {"femur": 1.3, "tibia": 1.15, "tarse": 1.25},
+  "sources": "c148 (dessus : fémurs avant 0,84, milieu 1,03, arrière 1,26, raccourcis de quelques %) ; tibias et tarses en rapport des fémurs, vus en partie sur c140 et c141"
+ },
+ "longueur_totale_tendue": 4.9,
+ "sculpture": {
+  "tete_dessus": {"rides": "longitudinales, divergeant vers l'arrière", "periode": 0.06, "ordre": 0.5, "sources": "c082 0,059 ; c081 0,062"},
+  "joues": {"rides": "fines, longitudinales", "periode": 0.028, "ordre": 0.75, "sources": "c082"},
+  "mesosome": {"rides": "réticulées, grossières", "periode": 0.145, "ordre": 0.22, "sources": "c148 mésonotum 0,138 ; c140 mésopleure 0,150"},
+  "propodeum_cotes": {"rides": "fines, obliques", "periode": 0.025, "sources": "c140"},
+  "noeuds": "peu sculptés, luisants (forme laevinodis), finement ridés au pied",
+  "gastre": "lisse et très luisant, poils dressés épars"
+ }
+}
