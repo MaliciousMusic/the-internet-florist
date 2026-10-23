@@ -24,6 +24,12 @@ machaon (*Papilio machaon*), cétoine dorée, sauterelle.
 - **Exception à « que du SVG »** (accord du propriétaire, 2026-10-23) : la source reste en SVG ; les atlas WebP en sont
   une sortie compilée. Règle amendée dans `AGENTS.md`.
 - **Affichage** : canvas WebGL (PixiJS). Les images sont calculées hors ligne avec resvg, pas avec Chrome headless.
+- **Lumière** (validée le 2026-10-23) : du haut et de face, sans composante latérale, fixe dans le repère de la caméra.
+  Le miroir des vues reste donc exact.
+- **Taille à l'écran** (2026-10-23) : vraie taille, à l'échelle du bouquet. Une abeille de 12,5 mm fait environ 9 px à
+  côté d'une tulipe de 5 cm. Pas de facteur d'agrandissement sur le site.
+- **Lumière face au décor** (2026-10-23) : l'atlas garde la lumière haut-avant, même si le soleil du décor de la boutique
+  vient de la gauche (`SUN` de `decor/PLAN.md`).
 - **Profondeur** : un canvas intercalé entre chaque plan de profondeur du bouquet SVG. Chaque fleur expose ses points de pose.
 
 ## Nombre à l'écran (au plus, en même temps)
