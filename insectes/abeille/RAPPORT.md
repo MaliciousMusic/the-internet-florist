@@ -101,7 +101,7 @@ Reste à voir : la face vue de très près (le clypeus luisant fait encore un pe
 
 1. **Taille à l'écran** : à l'échelle vraie du bouquet (abeille de 12,5 mm contre une tulipe de 5 cm), une abeille fait
    environ 9 px sur un écran d'ordinateur. Elle est réaliste mais difficile à voir. Proposition : facteur 2 sur le site
-   (environ 20 px), et la vraie taille quand elle est posée dans un bouquet vu de près.
+   (environ 20 px), et la vraie taille quand elle est posée dans un bouquet vu de près. **Réponse (2026-10-23) : vraie taille, environ 9 px.**
 2. **Lumière** : le décor de la boutique est éclairé par un soleil à gauche (`SUN` de `decor/PLAN.md`), et l'atlas par la
    lumière haut-avant validée. Proposition : garder haut-avant, l'écart se voit peu à ces tailles. L'autre option, la
-   lumière du décor, demande de cuire les 24 azimuts sans miroir (2 fois plus de cases, 30 Mo de plus).
+   lumière du décor, demande de cuire les 24 azimuts sans miroir (2 fois plus de cases, 30 Mo de plus). **Réponse : haut-avant gardée.**
