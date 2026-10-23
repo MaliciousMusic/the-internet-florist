@@ -1,5 +1,135 @@
-{"sid": "cetonia-aurata", "pairs": [
- {"nom": "3q", "photo": "hd/c105.jpg", "box": [150, 100, 2600, 1700], "vue": "pose:290:40", "k": 55, "w": 1400, "h": 950, "focus": [-1.5, 0, 0.8]},
- {"nom": "dessus", "photo": "hd/c114.jpg", "box": [0, 0, 1364, 1800], "vue": "pose:180:90", "k": 50, "w": 1000, "h": 1300, "focus": [-1.5, 0, 0]},
- {"nom": "profil", "photo": "hd/c027.jpg", "box": [300, 600, 3100, 2000], "vue": "pose:270:6", "k": 55, "w": 1400, "h": 750, "focus": [-1, 0, 0]}
-]}
+{
+ "sid": "cetonia-aurata",
+ "_doc": "paires photo | rendu (PROTOCOLE §5) : vue pose:az:el, cadre de la photo (px), son échelle (px/mm, lue sur la longueur du corps), le point du modèle au centre du cadre (mm)",
+ "pairs": [
+  {
+   "nom": "dessus",
+   "photo": "hd/c114.jpg",
+   "box": [
+    150,
+    100,
+    1230,
+    1650
+   ],
+   "pxmm": 82.2,
+   "vue": "pose:180:90",
+   "focus": [
+    -2.8,
+    0,
+    0
+   ]
+  },
+  {
+   "nom": "3q-dessus",
+   "photo": "hd/c013.jpg",
+   "box": [
+    384,
+    726,
+    2987,
+    2475
+   ],
+   "pxmm": 124,
+   "vue": "pose:90:78",
+   "focus": [
+    -3.5,
+    0,
+    -1.0
+   ],
+   "rot": -4,
+   "decal": [
+    -20,
+    -170
+   ]
+  },
+  {
+   "nom": "3q-flanc",
+   "photo": "hd/c130.jpg",
+   "box": [
+    512,
+    597,
+    3243,
+    2560
+   ],
+   "pxmm": 150,
+   "vue": "pose:90:22",
+   "focus": [
+    -3.5,
+    0,
+    -2.5
+   ],
+   "rot": -15,
+   "decal": [
+    0,
+    -430
+   ]
+  },
+  {
+   "nom": "profil",
+   "photo": "hd/c027.jpg",
+   "box": [
+    500,
+    700,
+    3195,
+    2150
+   ],
+   "pxmm": 129.5,
+   "vue": "pose:270:5",
+   "focus": [
+    -2.3,
+    0,
+    -4.2
+   ]
+  },
+  {
+   "nom": "profil-epingle",
+   "photo": "hd/c111.jpg",
+   "box": [
+    0,
+    0,
+    2445,
+    1279
+   ],
+   "pxmm": 112,
+   "vue": "pose:90:0",
+   "focus": [
+    -5.35,
+    0,
+    -5.3
+   ]
+  },
+  {
+   "nom": "face",
+   "photo": "hd/c109.jpg",
+   "box": [
+    39,
+    0,
+    1268,
+    1370
+   ],
+   "pxmm": 152,
+   "vue": "pose:0:10",
+   "focus": [
+    3.0,
+    0,
+    -4.0
+   ]
+  },
+  {
+   "nom": "dessous",
+   "photo": "hd/c103.jpg",
+   "box": [
+    145,
+    115,
+    2611,
+    1860
+   ],
+   "pxmm": 130,
+   "vue": "pose:270:-90",
+   "focus": [
+    -3.0,
+    0,
+    -5.0
+   ]
+  }
+ ]
+}

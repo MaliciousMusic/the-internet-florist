@@ -37,7 +37,20 @@ function material(b) {
     // the colour a metal mirrors (its reflectance), when it differs from its body colour
     rtint: m.tintColor ? lin(m.tintColor) : null,
     mottle: m.mottle ?? 0.07,
+    // structural colour measured as a law of the angle to the eye (rose chafer, cetoine/outils/loi_angle.py): [[n.v, '#hex'], ...]
+    // the colour the cuticle reflects at that angle; and its own Fresnel [f0, f1] (a multilayer reflects strongly face on too)
+    ramp: m.ramp ? m.ramp.map(([v, h]) => [v, lin(h)]).sort((a, b) => a[0] - b[0]) : null,
+    fres: m.fresnel ?? null,
+    // the colour of the lamp's lobes when it differs from the mirrored colour (a multilayer's peak is brighter than its mean)
+    lobe: m.lobeColor ? lin(m.lobeColor) : null,
   };
+}
+
+// The colour of a ramp at n.v (linear interpolation between its stops).
+function rampAt(R, v) {
+  if (v <= R[0][0]) return R[0][1];
+  for (let i = 1; i < R.length; i++) if (v <= R[i][0]) { const f = (v - R[i - 1][0]) / (R[i][0] - R[i - 1][0]); return vadd(vs(R[i - 1][1], 1 - f), vs(R[i][1], f)); }
+  return R[R.length - 1][1];
 }
 
 // Shade one surface point: albedo A (linear), normal n, light visibility sh, ambient occlusion occ.
@@ -52,7 +65,8 @@ function shadePoint(cam, M, A, n, sh, occ) {
   const nh = clamp(dot(n, cam.H));
   let tint = M.metal ? vadd(vs(M.spec, 1 - M.metal), vs(M.rtint || vs(A, 2.2), M.metal)) : M.spec;
   if (M.shift) { const w = M.shift.k * Math.pow(1 - nv, 1.5); tint = vadd(vs(tint, 1 - w), vs(M.shift.c, w)); }
-  let S = vs(tint, sh * (M.ks * Math.pow(nh, M.p) * (M.p + 2) / 16 + M.ks2 * Math.pow(nh, M.p2)));
+  if (M.ramp) tint = rampAt(M.ramp, nv);
+  let S = vs(M.lobe || tint, sh * (M.ks * Math.pow(nh, M.p) * (M.p + 2) / 16 + M.ks2 * Math.pow(nh, M.p2)));
   if (M.env > 0) {
     const r = sub(mul(n, 2 * dot(n, cam.c)), cam.c);
     const sky = smooth(-0.25, 0.55, dot(r, cam.u));
@@ -60,7 +74,7 @@ function shadePoint(cam, M, A, n, sh, occ) {
     const ru = dot(r, cam.u), hor = 1 - 0.6 * smooth(-0.2, 0.05, ru) * (1 - smooth(0.12, 0.35, ru));
     const box = smooth(0.55, 0.92, dot(r, cam.L));
     const envC = vadd(vs(vadd(vs(GROUND, 0.55 * (1 - sky)), vs(SKY, 1.2 * sky)), hor), vs(SUN, 1.6 * box));
-    const F = 0.18 + 0.82 * Math.pow(1 - nv, 3);
+    const F = M.fres ? M.fres[0] + M.fres[1] * Math.pow(1 - nv, 3) : 0.18 + 0.82 * Math.pow(1 - nv, 3);
     S = vadd(S, vs(vmul(envC, tint), M.env * F * occ));
   }
   return { D, S };
@@ -247,8 +261,9 @@ function paintBody(sc, b, id) {
   for (let i = 0; i <= 10; i++) { const p = b.profile(i / 10); rmax = Math.max(rmax, p.ry, p.rz); }
   ext = Math.abs(b.profile(1).x - b.profile(0).x);
   const q = 4 / Math.sqrt(Math.max(0.6, sc.detail ?? 1));
-  const nt = Math.round(clamp((ext * sc.k) / q, 8, 150));
-  const nthFull = Math.round(clamp((2 * Math.PI * rmax * sc.k) / q, 12, 150));
+  // b.mesh: a finer cap for a body whose relief (b.bump) must hold in close-ups (the chafer's elytra); 150 otherwise
+  const nt = Math.round(clamp((ext * sc.k) / q, 8, b.mesh ?? 150));
+  const nthFull = Math.round(clamp((2 * Math.PI * rmax * sc.k) / q, 12, b.mesh ?? 150));
   // the blur follows the real size of a quad, so facets never show in close-ups
   const qpx = Math.max((ext * sc.k) / nt, (2 * Math.PI * rmax * sc.k) / nthFull);
   const nth = b.th0 === undefined ? nthFull : Math.max(6, Math.round(nthFull * (b.th1 - b.th0) / (2 * Math.PI)));
@@ -278,6 +293,14 @@ function paintBody(sc, b, id) {
     if (vis < -0.02) { if (!open) continue; n = mul(n, -1); vis = -vis; inner = true; }
     const c3 = mul(add(add(P[0], P[1]), add(P[2], P[3])), 0.25);
     const t = (i + 0.5) / nt, th = thAt(b, j + 0.5, nth);
+    // a relief finer than the mesh (b.bump(t, th): a height in mm, the chafer's dimpled shell): the normal tilted by its slopes
+    if (b.bump && !inner) {
+      const e = 1e-3, p0 = surf(b, t, th), h0 = b.bump(t, th);
+      const et = sub(surf(b, Math.min(1, t + e), th), p0), eh = sub(surf(b, t, th + e), p0);
+      const lt = len(et) || 1, lh = len(eh) || 1;
+      n = norm(sub(n, add(mul(et, (b.bump(Math.min(1, t + e), th) - h0) / (lt * lt)), mul(eh, (b.bump(t, th + e) - h0) / (lh * lh)))));
+      vis = dot(n, cam.c);
+    }
     let A = albedoOf(b, M, t, th);
     if (inner) A = b.inner ? lin(b.inner) : vs(A, 0.45);
     const Lt = sc.light(c3, n, id);
@@ -295,7 +318,7 @@ function paintBody(sc, b, id) {
   sc.defs.push(`<filter id="${blur}" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="${fmt(sd)}"/></filter>`);
   out += `<g clip-path="url(#${clip})"><g filter="url(#${blur})">` + quadPaths(quads, (x) => hexl(x.D)) + '</g>';
   // Decals: spots and flecks laid on the surface (ladybird spots, chafer flecks), lit with the surface.
-  if (b.decals) out += b.decals.map((d) => decal(sc, b, M, d, id)).join('');
+  if (b.decals) out += b.decals.filter((d) => !d.top).map((d) => decal(sc, b, M, d, id)).join('');
   if (b.punct && sc.k * b.punct.r > 0.35) out += punctures(sc, b, M);
   // Marks drawn by the species (a seam, a stripe), under the specular layer.
   if (b.paint) out += b.paint(sc, b, g);
@@ -305,6 +328,10 @@ function paintBody(sc, b, id) {
     out += `<g filter="url(#${blur})">` + quadPaths(spec, (x) => { const a = clamp(Math.max(...x.S)); return hexl(vs(x.S, 1 / Math.max(a, 1e-3))); },
       (x) => Math.round(clamp(Math.max(...x.S)) * 20) / 20) + '</g>';
   }
+  // Decals over the specular layer (d.top): a matte mark that does not mirror the sky (the chafer's white flecks of wax).
+  if (b.decals) out += b.decals.filter((d) => d.top).map((d) => decal(sc, b, M, d, id)).join('');
+  // Marks of the species drawn over the specular layer (b.paintTop), as b.paint is under it.
+  if (b.paintTop) out += b.paintTop(sc, b, g);
   // Grazing sheen just inside the outline (the facets of an eye catch the sky at the rim).
   if (b.rim) out += `<path d="${sil}" fill="none" stroke="${b.rim.color}" stroke-width="${fmt(b.rim.w * sc.k)}" opacity="${fmt(b.rim.a * 0.6)}"/>`;
   // Facets of a compound eye, seen in close-up only.
@@ -352,7 +379,9 @@ function decal(sc, b, M, d, id) {
   const eh = norm(cross(n, et));
   const r1 = d.r, r2 = d.r2 ?? d.r, rot0 = d.rot || 0;
   const pts = [];
-  for (let i = 0; i < 24; i++) {
+  // a measured outline (d.poly: points [t, th] on the body's surface), lit at its centre (d.t, d.th)
+  if (d.poly) for (const [t, th] of d.poly) { const s2 = sc.S(surf(b, t, th)); pts.push([s2[0], s2[1]]); }
+  for (let i = 0; i < (d.poly ? 0 : 24); i++) {
     const a = (i / 24) * 2 * Math.PI + rot0;
     const wob = 1 + (d.wobble || 0) * Math.sin(3 * a + (d.seed || 0)) + (d.wobble || 0) * 0.4 * Math.sin(5 * a + 2 * (d.seed || 0));
     // follow the curved surface: each outline point is put back on the body by its local normal
