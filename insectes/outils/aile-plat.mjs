@@ -6,8 +6,9 @@ import { espece } from './espece.mjs';
 import { wingSkin } from '../moteur/insecte.mjs';
 
 const [id, which, face, recp, out] = process.argv.slice(2);
-const { WINGS } = await espece(id);
-const w = WINGS[which];
+// a species whose living colours differ from its dried specimen's gives the dried wings for this comparison (WINGS_PLAT)
+const { WINGS, WINGS_PLAT } = await espece(id);
+const w = (WINGS_PLAT || WINGS)[which];
 const rec = JSON.parse(readFileSync(recp, 'utf8'));
 const [s0, q1] = rec.origine, r = rec.r;
 const [W, H] = rec.taille;

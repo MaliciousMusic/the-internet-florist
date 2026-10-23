@@ -25,6 +25,7 @@ def hexof(lab):
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument('photo'); ap.add_argument('frame'); ap.add_argument('out')
     ap.add_argument('--exclure', default=''); ap.add_argument('--nv', type=int, default=72); ap.add_argument('--nu', type=int, default=18)
+    ap.add_argument('--fond', default='')               # degrade: a plate whose ground is a coloured gradient (aile.py ground_tinted)
     o = ap.parse_args()
     q = o.frame.split(';'); pts = np.array([list(map(float, a.split(','))) for a in q[:-1]]); W = float(q[-1])
     rgb = cv2.imread(o.photo)[..., ::-1].copy(); lab = lab_of(cv2.GaussianBlur(rgb, (0, 0), 1.0))
@@ -44,8 +45,8 @@ def main():
     # the piece's edge at each row: the specimen against the plate's smooth neutral ground (aile.py ground: chroma, and the
     # lightness off a smooth fit of the ground: a black body is as dark as the plate, but not as smooth)
     sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-    from aile import ground
-    gm = ground(rgb, 40).astype(np.float32)
+    from aile import ground, ground_tinted
+    gm = (ground_tinted(rgb) if o.fond == 'degrade' else ground(rgb, 40)).astype(np.float32)
     ok = cv2.remap(gm, X.astype(np.float32), Y.astype(np.float32), cv2.INTER_NEAREST) > 0.5
     for c, d in ex: ok &= np.linalg.norm(S - c, axis=2) > d
     half = np.zeros(n)

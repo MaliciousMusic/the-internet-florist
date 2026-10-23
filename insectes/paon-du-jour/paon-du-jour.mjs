@@ -1,115 +1,241 @@
-// Peacock butterfly (Aglais io): rusty red upper side with the four great eyespots, an almost black, finely
-// striated underside (a dead leaf when the wings close). Wings drawn from the dorsal photo (FICHE.md, n. 11) in the
-// wing's own millimetres: s from the hinge toward the apex, q toward the costa.
-import { curve, lines } from '../moteur/kit.mjs';
+// Peacock butterfly (Aglais io): the rusty upper side with its four great eyespots (the forewing's black, cream, maroon,
+// with blue and lilac scales; the hindwing's black disc dusted with blue in a cream ring), the scalloped grey-brown margins,
+// the barred costa; an almost black underside, striated like a dead leaf. A nymphalid: its forelegs are reduced to hairy
+// brushes folded against the chest, it stands on four legs.
+// The four wing faces are measured on the spread specimens of MHNT (porteur 2026-10-23, « contours extraits »): the upper side on
+// c258 (64.8 px/mm), the underside on c259 (65.1 px/mm), by outils/aile.py plat (zones, tones per cell, dust, fringe, hairs),
+// calibrated against the flattened photos with aile.py paire and poudre.py (ETAT.md).
+// Wing frame: s outward from the hinge, perpendicular to the body axis; q toward the head; mm.
+import { readFileSync } from 'node:fs';
 import { butterfly, butterflyBody } from '../moteur/papillon.mjs';
+import { motif, loadMotif } from '../moteur/motif.mjs';
+import { drawBody, drawTube } from '../moteur/insecte.mjs';
+import { frame0, env, sphere, pitched, ik, articleLeg, fringe } from '../moteur/kit.mjs';
+import { add, sub, mul, norm } from '../moteur/geo.mjs';
 
-// Traced on the spread specimen MHNT c258 (64 px/mm, the wing frame: s outward from the hinge, q toward the head),
-// colours measured with couleur.py (ETAT.md): a rusty ground, the forewing ocellus (black, cream crescent, maroon disc,
-// blue and lilac scales), the hindwing's great cream-ringed ocellus, grey-brown margins. Underside from c259.
-const GROUND = '#944b18', GROUND_D = '#7a3810', HGROUND = '#6d512a', MARGIN = '#5e5a50', BLACK = '#1e2030';
-const CREAM = '#e7e2b0', MAROON = '#6a260a', BLUE = '#4a72c0', LILAC = '#b8b4e8';
-const UNDER = '#4a3a2a', UNDER_L = '#8a7456', UNDER_D = '#1e150e';
-// The underside, a dead leaf: dense wavy striations, dark and pale, crossing the wing (c259 under studio light:
-// ombre #4d3417, milieu #7f6443, lumiere #cdb188), darker toward the base.
-function bark(out, n, seed) {
-  let r = seed;
-  const R = () => { r = (r * 16807) % 2147483647; return r / 2147483647; };
-  const xs = out.map((p) => p[0]), ys = out.map((p) => p[1]);
-  const s0 = Math.min(...xs), s1 = Math.max(...xs), q0 = Math.min(...ys), q1 = Math.max(...ys);
-  let d = '';
-  for (let i = 0; i < n; i++) {
-    const sx = s0 + (s1 - s0) * R(), dark = R() < 0.62;
-    let path = `M${sx.toFixed(2)} ${q0.toFixed(2)}`;
-    for (let q = q0; q < q1; q += 0.9) path += `L${(sx + 0.45 * Math.sin(q * 1.7 + i) + 0.25 * (R() - 0.5)).toFixed(2)} ${(q + 0.9).toFixed(2)}`;
-    d += `<path d="${path}" stroke="${dark ? UNDER_D : UNDER_L}" stroke-width="${(0.12 + 0.2 * R()).toFixed(2)}" fill="none" opacity="${(0.5 + 0.4 * R()).toFixed(2)}"/>`;
+const rec = (n) => loadMotif(new URL(`./ailes/${n}.json`, import.meta.url));
+const R_FU = rec('avant-dessus'), R_FD = rec('avant-dessous'), R_HU = rec('arriere-dessus'), R_HD = rec('arriere-dessous');
+// The underside is another specimen (c259), spread at its own angle: aile.py fitted one outline on the other (alignement: the
+// scale and turn that bring the face seen whole onto the face that completes from it). U: underside record -> upper frame.
+const aF = R_FD.alignement, aH = R_HU.alignement;
+const U_F = { k: 1 / aF.echelle, rot: -aF.angle }, U_H = { k: aH.echelle, rot: aH.angle };
+const E = (() => { try { return rec('etalonnage'); } catch { return {}; } })();
+// The living colours. The underside of c259 is lit far brighter than a living peacock's: L* 44 at its median against 6 to 27 on
+// the living c140, c374, c223 and c004 (median about 20): scaled whole. The upper side (c258) keeps its measured colours,
+// its blacks brought to the living ones as the swallowtail's (LIVE_UP, checked on c016 and c167: ETAT.md).
+const LIVE_UNDER = { k: 0.47, kc: 0.8 };
+const LIVE_UP = { below: 30, dL: -6 };
+const faces = (live) => {
+  const M_FU = motif(R_FU, { seed: 11, dustK: E['avant-dessus'], live: live && LIVE_UP });
+  const M_FD = motif(R_FD, { seed: 12, dustK: E['avant-dessous'], live: live && LIVE_UNDER, ...U_F });
+  const M_HU = motif(R_HU, { seed: 13, dustK: E['arriere-dessus'], live: live && LIVE_UP });
+  const M_HD = motif(R_HD, { seed: 14, dustK: E['arriere-dessous'], live: live && LIVE_UNDER, ...U_H });
+  const wing = (U, D, under) => ({
+    span: U.length, opaque: true, outline: U.outline, box: U.box, base: U.base, baseUnder: D.base,
+    paint: U.paint, paintUnder: D.paint, top: U.top, topUnder: D.top, under,
+    // a light softening only: a stronger one blurred the dust and the striae with the zones' edges (grain 0.64 -> 0.30)
+    soft: 0.01, grain: 0.04, veins: null, sheen: '#fff6ec',
+  });
+  return { fore: wing(M_FU, M_FD, U_F), hind: wing(M_HU, M_HD, U_H) };
+};
+const LIVING = faces(true), DRIED = faces(false);
+const FORE = LIVING.fore, HIND = LIVING.hind;
+
+// ---------------------------------------------------------------------------------------------------------------
+// The body, measured (ETAT.md): on the spread specimens c258 (above, 64.8 px/mm) and c259 (below, 65.1 px/mm) for its lengths
+// and its grids, on the living c120 (thorax fur), c136 (face, eyes, palps), c144 (forelegs, palps), c374 and c140 (profile,
+// legs, antennae) for what a dried specimen loses.
+// Body frame: x forward, y to the left, z up, mm; the origin on the axis at the forewings' hinge line.
+// Every organ is drawn under its own name (sc.part): the SVG keeps one group per organ, for animation.
+// ---------------------------------------------------------------------------------------------------------------
+const grid = (n) => JSON.parse(readFileSync(new URL(`./grilles/${n}.json`, import.meta.url), 'utf8'));
+const G_ABD = grid('abdomen'), G_THX = grid('thorax');           // plat_corps.py + grille_corps.py on c258 and c259
+const DARK = '#1d1510', BROWN = '#3a2618', RUST = '#8a4a22', TAWNY = '#a8743e', BUFF = '#cdb48a', PALE = '#e2d4b4';
+// hairy eyes (Aglais), satin brown with an olive cast (c136), a broad soft highlight
+const EYEMAT = { ks: 0.22, p: 30, ks2: 0.08, p2: 6, env: 0.18, wrap: 0.2, amb: 0.32, mottle: 0.1, specColor: '#efe9dc' };
+const LEGMAT = { ks: 0.35, p: 50, ks2: 0.06, p2: 6, env: 0.3, mottle: 0.06, specColor: '#fff4e6' };
+const pick = (R, a) => a[Math.floor(R() * a.length) % a.length];
+
+// lengths (mm) measured on c258 / c259: eyes x 2.16 (1.4 mm across, 3.1 mm over both), head front x 2.9, palps to x 4.9;
+// thorax x 1.5 to -5.6 (4.3 mm wide with its fur), abdomen x -5.0 to -14.0 (its width from the living c374 and c140: the
+// spread specimen's is pressed to 3.1 mm); antennae 12.4 mm with a club of 2.0 mm, pale at the tip (c374, c140)
+const B = {
+  head: [2.25, 0, 0.45], eye: [2.2, 0.82, 0.55], eyeR: 0.72,
+  thorax: [1.6, -5.6], thoraxR: [1.95, 1.8], abdomen: [-4.8, -14.0], abdomenR: 1.3,
+  antBase: [2.75, 0.32, 1.05], antLen: 12.4, club: 2.0,
+};
+
+function head(sc) {
+  sc.part = 'tete';
+  drawBody(sc, {
+    name: 'head', frame: frame0(B.head), color: DARK, seed: 11, mat: { ks: 0.12, p: 18, env: 0.08 },
+    profile: (t) => { const e = Math.pow(env(t, 0.5, 0.5) * 2, 0.6); return { x: -0.75 + 1.5 * t, zc: 0, ry: 0.8 * e, rz: 0.85 * e }; },
+    // the frons and the crown: dark, with tawny hairs behind the antennae and pale ones at the eyes' rims (c120, c136)
+    hair: { n: 700, len: 0.5, w: 0.02, lean: 0.4, a: 0.85, droop: 0.4, twist: 0.8, fleece: 0.3,
+      color: (t, th, R) => (t < 0.45 ? pick(R, [RUST, TAWNY, BROWN]) : pick(R, [DARK, BROWN, BROWN, BUFF])) },
+  });
+  for (const s of [1, -1]) {
+    sc.part = s > 0 ? 'oeil-g' : 'oeil-d';
+    drawBody(sc, { ...sphere('eye', [B.eye[0], B.eye[1] * s, B.eye[2]], B.eyeR, '#3a3020', 0), mat: EYEMAT, facets: 0.016, bias: 0.04,
+      // Aglais has hairy eyes: short fine hairs between the facets (c136, c144)
+      hair: { n: 260, len: 0.12, w: 0.012, lean: 0.2, a: 0.7, pile: 0, fleece: 0, color: () => '#5a4a36' } });
+    // labial palps: long, held forward and a little up before the face, dark on the outer face, buff hairs below (c136, c144)
+    sc.part = s > 0 ? 'palpe-g' : 'palpe-d';
+    drawTube(sc, [[2.85, 0.3 * s, -0.45], [3.7, 0.33 * s, -0.25], [4.6, 0.26 * s, 0.15]], [0.2, 0.2, 0.11], {
+      color: BROWN, hair: [{ n: 70, len: 0.45, w: 0.024, color: BUFF, side: [0, 0, -1], both: true }, { n: 50, len: 0.4, w: 0.024, color: DARK, side: [0, s, 0.6], both: false }], seed: 5 + s });
+    // antennae: slender, dark with pale rings, a club of 2.0 mm, black with an ochre-cream tip (c374, c140)
+    sc.part = s > 0 ? 'antenne-g' : 'antenne-d';
+    const pts = [[B.antBase[0], B.antBase[1] * s, B.antBase[2]]];
+    let d = norm([0.62, 0.3 * s, 0.72]), p = pts[0];
+    const n = 26;
+    for (let i = 0; i < n; i++) {
+      p = add(p, mul(d, B.antLen / n)); pts.push(p);
+      const clubbing = i > n * (1 - B.club / B.antLen);
+      d = norm(add(d, clubbing ? [0.012, 0.006 * s, -0.025] : [0.004, 0.003 * s, -0.01]));
+    }
+    const c0 = 1 - B.club / B.antLen;
+    const rad = pts.map((_, i) => { const f = i / n; return f < c0 ? 0.065 - 0.012 * f : 0.06 + 0.13 * Math.sin(Math.min(1, (f - c0) / (1 - c0)) * Math.PI * 0.7); });
+    // the shaft in rings: one tube per ring, dark and pale by turns; the club black, its last fifth ochre-cream
+    const ring = 3;
+    for (let i = 0; i + 1 < pts.length; i += ring) {
+      const j = Math.min(pts.length - 1, i + ring), f = i / n;
+      const col = f >= c0 + 0.8 * (1 - c0) ? '#c9a868' : f >= c0 ? '#16110c' : (i / ring) % 2 ? '#d8d0c0' : '#1c1612';
+      drawTube(sc, pts.slice(i, j + 1), rad.slice(i, j + 1), { color: col, gloss: 0.3, bias: 0.02 });
+    }
   }
-  return d;
 }
 
-const foreOut = [[0, -0.16], [1.72, 2.19], [4.69, 6.09], [8.59, 9.53], [12.5, 11.88], [16.4, 12.97], [20.3, 13.28], [22.66, 12.97], [24.06, 12.03],
-  [24.84, 10.47], [25.63, 8.59], [26.09, 8.13], [25.31, 6.88], [25.16, 4.69], [25.31, 2.34], [25.0, 0], [25.16, -2.03], [24.38, -4.06],
-  [19.53, -4.53], [13.28, -4.38], [7.03, -3.59], [2.34, -2.34], [0.16, -1.25]];
-const hindOut = [[0, -0.16], [3.9, -1.2], [8.6, -1.6], [14.84, -2.2], [19.53, -3.3], [22.66, -5.16], [23.75, -7.03], [23.9, -9.38], [23.28, -11.72],
-  [22.66, -14.06], [21.4, -16.4], [20.3, -18.75], [18.75, -20.78], [17.19, -20.47], [14.84, -19.22], [11.72, -17.97], [8.59, -16.4],
-  [5.47, -14.06], [2.34, -10.16], [0.78, -5.47], [0.08, -1.4]];
+// The proboscis: coiled under the head at rest (three turns, in the plane of symmetry); uncoiled to feed (about 14 mm: c259,
+// where the dried galeae run 17 mm along their bends).
+function proboscis(sc, pose) {
+  sc.part = 'trompe';
+  const P = [];
+  if (pose === 'butine') {
+    for (let i = 0; i <= 16; i++) { const t = i / 16; P.push([3.0 + 8.0 * t, 0, -0.55 - 7.0 * t - 1.0 * t * t]); }
+  } else {
+    const c = [3.25, 0, -1.05], turns = 3, N = 60;
+    P.push([2.95, 0, -0.5]);
+    for (let i = 0; i <= N; i++) {
+      const f = i / N, a = Math.PI * 0.6 + f * turns * 2 * Math.PI, r = 0.62 * (1 - 0.82 * f);
+      P.push([c[0] + r * Math.cos(a), 0, c[2] + r * Math.sin(a)]);
+    }
+  }
+  drawTube(sc, P, P.map((_, i) => 0.07 - 0.025 * (i / P.length)), { color: '#2a2016', gloss: 0.45, bias: 0.03 });
+}
 
-// Veins: from the base cell toward the margin.
-const veins = (out, from) => lines(out.filter((_, i) => i % 2 === 0 && i > 1 && i < out.length - 2).map((p) => [from, [p[0] * 0.95, p[1] * 0.95]]));
-const edge = (out, i0, i1) => 'M' + out.slice(i0, i1 + 1).map((p) => p.join(' ')).join('L');
+function thorax(sc) {
+  sc.part = 'thorax';
+  const [x0, x1] = B.thorax, L = x0 - x1, [ry, rz] = B.thoraxR;
+  drawBody(sc, {
+    name: 'thorax', frame: frame0([x1, 0, 0.2]), color: DARK, seed: 21, grid: G_THX, mat: { ks: 0.08, p: 14, env: 0.06 },
+    profile: (t) => { const e = Math.pow(env(t, 0.42, 0.5) / 0.6, 0.6); return { x: L * t, zc: 0.12 * Math.sin(Math.PI * t), ry: ry * 0.82 * e, rz: rz * 0.82 * e }; },
+    shape: (th) => [1, Math.sin(th) < 0 ? 0.88 : 1],
+    // long rusty fur in the colours of its grid, lying back over the thorax and the wing bases (c120, c258)
+    hair: { n: 7000, len: 1.05, w: 0.022, lean: 1.2, a: 0.9, droop: 0.9, twist: 0.55, wave: 0.14, curl: 0.18, fleece: 0.12, pile: 0.45, locks: 0.3,
+      sheen: 0.04, sheenP: 50, color: 'grid', gridK: 1.0, lenAt: (t, th) => (t > 0.85 ? 0.75 : t < 0.15 ? 1.3 : 1) },
+  });
+  // the tegulae: hairy scales over the forewings' bases, rusty-brown like the fur (c120: they hide the hinge)
+  for (const s of [1, -1]) {
+    sc.part = s > 0 ? 'tegula-g' : 'tegula-d';
+    drawBody(sc, {
+      name: 'tegula', frame: pitched([0.4, 1.6 * s, 0.95], -12), color: BROWN, seed: 23 + s,
+      profile: (t) => { const e = Math.pow(env(t, 0.5, 0.5) * 2, 0.7); return { x: -1.1 + 2.4 * t, zc: 0, ry: 0.65 * e, rz: 0.36 * e }; },
+      hair: { n: 800, len: 1.1, w: 0.022, lean: 0.85, a: 0.85, droop: 1.6, twist: 1.1, fleece: 0.4, pile: 0.3,
+        color: (t, th, R) => pick(R, [RUST, TAWNY, BROWN, RUST]) },
+      bias: 0.06,
+    });
+  }
+}
 
-const FORE = {
-  span: 26, opaque: true, base: GROUND, baseUnder: UNDER, outline: curve(foreOut), soft: 0.12, grain: 0.22,
-  veins: veins(foreOut, [3, 0]), vein: '#6a3012', veinUnder: '#0a0604', vw: 0.1,
-  sheen: '#fff0e0',
-  paint:
-    // darker base, hairy
-    `<path d="M0 -0.2L3.5 3.4L5 0L3.5 -3.2L0.2 -1.3Z" fill="#5a3418" opacity="0.8"/>` +
-    // the costa: black and cream bars from the base to the ocellus
-    Array.from({ length: 9 }, (_, i) => { const s0 = 1.8 + i * 1.05, q0 = 2.3 + s0 * 0.78; return `<path d="M${s0} ${q0}L${s0 + 0.5} ${q0 + 0.4}L${s0 + 0.9} ${q0 - 0.9}L${s0 + 0.4} ${q0 - 1.2}Z" fill="${i % 2 ? CREAM : BLACK}" opacity="0.9"/>`; }).join('') +
-    // the costal cream patch and the black bar before it
-    `<path d="M5.4 6.6Q6.6 7.6 7.8 7.9L8.4 5.2Q7 4.6 5.8 4.8Z" fill="${CREAM}"/>` +
-    `<path d="M8.4 8.6Q9.8 9.6 11.4 10.2L11.6 6.4Q10.2 5.6 8.8 5.4Z" fill="${BLACK}"/>` +
-    // the ocellus: black blotch, cream crescent, maroon disc, blue and lilac scales, white dots
-    `<path d="M11.4 11.6Q12.6 12.4 13.2 12.6L13.6 5.6Q12.6 4.8 11.6 5Z" fill="${CREAM}"/>` +
-    `<ellipse cx="16.6" cy="9.4" rx="3.6" ry="3.2" fill="${MAROON}"/>` +
-    `<ellipse cx="20.4" cy="9.2" rx="2.8" ry="3.4" fill="${BLUE}" opacity="0.9"/>` +
-    `<ellipse cx="20.2" cy="10.4" rx="1.6" ry="1.2" fill="${LILAC}" opacity="0.85"/>` +
-    `<ellipse cx="19.6" cy="7.2" rx="1.2" ry="0.9" fill="${LILAC}" opacity="0.8"/>` +
-    `<path d="M13.4 12.8Q18 14.6 23.2 12.6Q24.4 9.6 23.6 6.2Q18 4.4 13.6 5.6Q18.2 6.6 22 7.6Q22.6 10.6 21.6 11.8Q17.6 12.8 13.4 12.8Z" fill="${BLACK}" opacity="0.85"/>` +
-    `<circle cx="16.2" cy="3.6" r="0.55" fill="#f2eef8"/><circle cx="16.4" cy="0.8" r="0.4" fill="#f2eef8"/>` +
-    // the grey-brown outer margin, scalloped
-    `<path d="${edge(foreOut, 8, 17)}L22.6 -3.4L23.2 0L23 4.6L23.6 8.2L22.6 11.6Z" fill="${MARGIN}" opacity="0.95"/>` +
-    `<path d="M19.5 -4.5L13.3 -4.4L7 -3.6L2.3 -2.3L7 -2.8L13 -3.6L19 -3.6Z" fill="${GROUND_D}" opacity="0.6"/>`,
-  paintUnder:
-    `<path d="M0 -0.2L13 12L20 13.3L14 4L13.3 -4.4L2.3 -2.3Z" fill="${UNDER_D}" opacity="0.55"/>` +
-    `<path d="M14 6L22 9L24 3L22 -3L15 -2Z" fill="${UNDER_L}" opacity="0.35"/>` + bark(foreOut, 70, 11) +
-    `<path d="${edge(foreOut, 8, 17)}" stroke="#a08a68" stroke-width="0.5" fill="none" opacity="0.7"/>`,
-};
+function abdomen(sc, pose) {
+  sc.part = 'abdomen';
+  const [x0, x1] = B.abdomen, L = x0 - x1, R0 = B.abdomenR;
+  drawBody(sc, {
+    name: 'abdomen', frame: pitched([x1, 0, -0.5], pose === 'vol' ? -4 : -8), color: DARK, seed: 31, grid: G_ABD, mat: { ks: 0.04, p: 10, env: 0.0, ks2: 0.01, wrap: 0.35, mottle: 0.12 },
+    // t from the tip (0) to the base (1): a blunt tip, widest at two thirds, 80 % wide where it meets the thorax (c374, c140)
+    profile: (t) => {
+      const a = Math.pow(Math.sin((Math.PI / 2) * Math.min(1, t / 0.55)), 0.55), b = t > 0.6 ? 1 - 0.2 * ((t - 0.6) / 0.4) ** 2 : 1;
+      const e = Math.max(0.15, a * b);
+      return { x: L * t, zc: -0.2 * (1 - t), ry: R0 * e, rz: R0 * 0.95 * e };
+    },
+    // scales and a short pile in the colours of the grid (the dark back speckled tawny, the buff belly); long hairs at the base
+    hair: { n: 2200, len: 0.32, w: 0.02, lean: 1.2, a: 0.8, fleece: 0, pile: 0.5, sheen: 0.02, color: 'grid', gridK: 1.0,
+      lenAt: (t, th) => (t > 0.82 ? 3.2 : 1) },
+  });
+}
 
-const HIND = {
-  span: 24, opaque: true, base: HGROUND, baseUnder: UNDER, outline: curve(hindOut), soft: 0.15, grain: 0.22,
-  veins: veins(hindOut, [3, -3]), vein: '#4a3016', veinUnder: '#0a0604', vw: 0.1,
-  sheen: '#fff0e0',
-  paint: (sc) => {
-    const g = sc.id('ho');
-    sc.defs.push(`<radialGradient id="${g}" gradientUnits="userSpaceOnUse" cx="12.3" cy="-8.8" r="5.6">` +
-      `<stop offset="0.52" stop-color="#d8d4ac"/><stop offset="0.75" stop-color="#c4c098"/><stop offset="0.92" stop-color="#8a7e58"/><stop offset="1" stop-color="${HGROUND}" stop-opacity="0"/></radialGradient>`);
-    return (
-      // reddish base, the pale hairy inner margin, the grey-brown outer margin
-      `<path d="M0 -0.2L6 -1.6L7 -7L3 -9L0.8 -5.5Z" fill="#7a3f1a" opacity="0.7"/>` +
-      `<path d="M0.8 -5.5L2.3 -10.2L5.5 -14L8.6 -16.4L6.4 -13L4 -9.6L2.4 -6Z" fill="#b8b0a0" opacity="0.75"/>` +
-      `<path d="${edge(hindOut, 4, 14)}L15.4 -17.4L18.6 -18.2L20.6 -16L21.6 -12.4L22.2 -8.4L21.2 -5.6L18.6 -3.6Z" fill="${MARGIN}" opacity="0.92"/>` +
-      // the great ocellus: a cream ring fading outward, a black disc, blue scales toward the front
-      `<ellipse cx="12.3" cy="-8.8" rx="5.6" ry="5.6" fill="url(#${g})"/>` +
-      `<ellipse cx="12.3" cy="-8.8" rx="2.9" ry="3.1" fill="#101018"/>` +
-      `<ellipse cx="11.6" cy="-8.0" rx="1.7" ry="2.0" fill="${BLUE}" opacity="0.85"/>` +
-      `<ellipse cx="11.2" cy="-7.4" rx="0.7" ry="0.8" fill="#9ab8f0" opacity="0.7"/>`
-    );
-  },
-  paintUnder:
-    `<path d="M0 -0.2L9 -1.6L11 -9L6 -14L2 -10Z" fill="${UNDER_D}" opacity="0.6"/>` +
-    `<path d="M12 -4L20 -6L21 -13L15 -16L11 -10Z" fill="${UNDER_L}" opacity="0.3"/>` + bark(hindOut, 64, 23),
-};
+// Legs. A nymphalid stands on four: the mid and hind legs, buff with darker joints (c374, c140, c136), femur 3.2, tibia 3.4,
+// tarsus 3.6 mm. The forelegs are reduced to short hairy brushes (about 3 mm) folded against the chest (c144).
+const LEG = { coxa: 0.8, fem: 3.2, tib: 3.4, tar: 3.6 };
+const legArt = () => ({
+  fem: { r: [0.13, 0.14, 0.11], c: '#9c8460', hair: fringe(30, 0.14, BUFF, 0.6) },
+  tib: { r: [0.1, 0.1, 0.085], c: '#b49c74', hair: fringe(24, 0.1, '#7a6448', 0.6) },
+  bas: { r: [0.07, 0.065, 0.06], c: '#c0a880', flat: 0.8 },
+  tar: { r: 0.05, c: '#a89070' },
+});
+function legs(sc, pose) {
+  const G = -4.4;
+  const SET = {
+    // [coxa on the chest, foot target (standing), pole of the knee]: the feet a little wider than the body (c374, c136)
+    mid: [[0.3, 0.45, -1.55], [2.6, 2.6, G], [0.2, 1, 0.9]],
+    hind: [[-1.1, 0.42, -1.45], [-3.4, 2.5, G], [-0.4, 1, 0.9]],
+  };
+  for (const [k, [cb, foot, pole]] of Object.entries(SET)) for (const s of [1, -1]) {
+    sc.part = `patte-${k}-${s > 0 ? 'g' : 'd'}`;
+    const sy = (p) => [p[0], p[1] * s, p[2]];
+    const base = sy(cb);
+    let ankle, tdir;
+    if (pose === 'etale') { ankle = add(base, [-1.3, 1.0 * s, -1.3]); tdir = norm([-0.9, 0.15 * s, -0.25]); }
+    else if (pose === 'vol') { ankle = add(base, [-2.1, 1.1 * s, -1.5]); tdir = norm([-0.9, 0.2 * s, -0.3]); }
+    else {
+      const f = sy(foot); tdir = norm([Math.sign(foot[0] - cb[0]) * 0.5, 0.45 * s, -0.75]);
+      ankle = sub(f, mul(tdir, LEG.tar * 0.92));
+    }
+    const fb = add(base, [0, 0.3 * s, -0.45]);
+    const { knee, ankle: an } = ik(fb, ankle, LEG.fem, LEG.tib, sy(pole));
+    const q = [fb, knee, an];
+    const fr = [0.4, 0.15, 0.15, 0.14, 0.16];
+    let pp = an;
+    for (const f of fr) { const nx = add(pp, mul(tdir, LEG.tar * f)); q.push(add(pp, mul(tdir, LEG.tar * f * 0.5)), nx); pp = nx; }
+    const A = legArt(); A.coxa = { from: [0, -0.3, 0.45], r: [0.22, 0.24, 0.18], c: BROWN, hair: fringe(40, 0.3, BUFF, 0.2) };
+    articleLeg(sc, drawBody, drawTube, q, tdir, pp, A, s, LEGMAT);
+  }
+  // the reduced forelegs: a hairy brush from the chest, bent forward along the head's underside, then back (c144)
+  for (const s of [1, -1]) {
+    sc.part = `patte-front-${s > 0 ? 'g' : 'd'}`;
+    const P = [[1.4, 0.5 * s, -1.5], [2.2, 0.7 * s, -1.85], [2.7, 0.75 * s, -1.6], [2.5, 0.7 * s, -1.25]];
+    drawTube(sc, P, [0.16, 0.14, 0.11, 0.08], {
+      color: DARK, hair: [{ n: 70, len: 0.38, w: 0.022, color: '#2a2018', side: [0, 0, -1], both: true }, { n: 40, len: 0.32, w: 0.02, color: BUFF, side: [0, s, -0.3], both: false }], seed: 80 + s });
+  }
+}
+
+export function paonBody(S, sc, pose) {
+  head(sc); proboscis(sc, pose); thorax(sc); abdomen(sc, pose); legs(sc, pose);
+  sc.part = '';
+}
 
 export const SPEC = {
-  seed: 37, thorax: 1.7, abdomen: 9.5, fur: 0.65, antenna: 9,
-  colors: { body: '#2a1c16', abdomen: '#2a1c16', fur: '#7a4a30', furHi: '#9a6a48', eye: '#3a2a20', palp: '#4a3a30', antenna: '#1e1612', leg: '#3a2a22' },
-  antennaTip: '#d8d0c4',
-  abdomenBands: [{ t0: 0, t1: 1, color: '#2a1c16' }],
-  fore: FORE, hind: HIND, hingeFore: [2.6, 0.9, 1.4], hingeHind: [1.6, 0.9, 1.0], sweep: { fore: 0, hind: 0 },
+  seed: 37, body: paonBody,
+  fore: FORE, hind: HIND,
+  // the hinges where the wings leave the fur (c258: the fore 2.30 mm off the axis, the hind 2.16 mm behind it and 2.16 mm off)
+  hingeFore: [0, 2.3, 0.85], hingeHind: [-2.16, 2.16, 0.7], sweep: { fore: 0, hind: 0 },
+  // closed over the back at rest, the forewing drawn back between the hindwings (c374, c140, c223: the forewing's costa about
+  // 45 deg back from the vertical, its apex just past the hindwing's costa); basking, the forewings a little forward (c016, c167)
+  sweepPose: { pose: { fore: 40, hind: 4 }, butine: { fore: 16, hind: 2 }, soleil: { fore: 6, hind: 0 } },
 };
 
 export const META = {
-  id: 'paon-du-jour', bodyMm: 15, span: 30, wingspan: 56,
+  id: 'paon-du-jour', bodyMm: 17, span: 32, wingspan: 55, behaviour: 'PAON',
   el: [-25, 0, 20, 40, 65, 90],
-  poses: { pose: [0], vol: [0] },
-  lod: { S: { cell: 32, az: 15, poses: ['pose', 'vol'] }, L: { cell: 96, az: 30, poses: ['pose', 'vol'] } },
+  poses: { pose: [0], vol: [0], butine: [0] },
+  lod: { S: { cell: 32, az: 15, poses: ['pose', 'vol', 'butine'] }, L: { cell: 96, az: 30, poses: ['pose', 'vol', 'butine'] } },
   // runtime wings: textures baked by outils/ailes.mjs, hinges in the body frame (mm)
-  wings: { fore: { hinge: SPEC.hingeFore, span: FORE.span, sweep: SPEC.sweep.fore }, hind: { hinge: SPEC.hingeHind, span: HIND.span, sweep: SPEC.sweep.hind } },
+  wings: { fore: { hinge: SPEC.hingeFore, span: FORE.span, sweep: 0 }, hind: { hinge: SPEC.hingeHind, span: HIND.span, sweep: 0 } },
 };
-// The atlas holds the body only; sheets can show the whole butterfly with opts.wings.
+// The atlas holds the body only; sheets show the whole butterfly with opts.wings.
 export const draw = (az, el, opts = {}) => butterfly(SPEC, az, el, { wings: false, ...opts });
 export const whole = (az, el, opts = {}) => butterfly(SPEC, az, el, { wings: true, ...opts });
 export const WINGS = { fore: FORE, hind: HIND };
+// the dried specimens' own colours, for the flat pairs against c258 and c259 (outils/aile-plat.mjs)
+export const WINGS_PLAT = DRIED;
 export { butterflyBody };

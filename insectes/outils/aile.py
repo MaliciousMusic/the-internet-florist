@@ -91,6 +91,30 @@ def ground(rgb, pxmm):
     return ndimage.binary_fill_holes(off > 0)
 
 
+def ground_tinted(rgb, de=5.0):
+    """a plate whose ground is a coloured gradient (cadres key fond: "degrade"; MHNT c258 navy, c259 brown, black at the
+    bottom): its Lab is a smooth field (cubic in x and y), fitted on the dark, smooth pixels and refitted on those close to it;
+    a pixel stands off it by its ΔE76 over `de`. Returns the mask of the specimen (holes filled)."""
+    H, W = rgb.shape[:2]
+    lab = lab_of(cv2.GaussianBlur(rgb, (0, 0), 1.2))
+    sm = cv2.resize(lab, (W // 16, H // 16), interpolation=cv2.INTER_AREA)
+    sd = cv2.resize(cv2.GaussianBlur(lab[..., 0] ** 2, (0, 0), 6) - cv2.GaussianBlur(lab[..., 0], (0, 0), 6) ** 2, (W // 16, H // 16), interpolation=cv2.INTER_AREA)
+    C = np.hypot(sm[..., 1], sm[..., 2])
+    cand = (sm[..., 0] < 32) & (C < 22) & (np.sqrt(np.maximum(sd, 0)) < 1.5)
+    ys, xs = np.mgrid[:sm.shape[0], :sm.shape[1]]
+    A = lambda X, Y: np.stack([np.ones_like(X), X, Y, X * X, Y * Y, X * Y, X ** 3, Y ** 3, X * X * Y, X * Y * Y], -1).astype(np.float64)
+    for _ in range(4):
+        f = np.linalg.lstsq(A(xs[cand] / 100, ys[cand] / 100), sm[cand].astype(np.float64), rcond=None)[0]
+        fit = (A(xs / 100, ys / 100) @ f).astype(np.float32)
+        cand = np.linalg.norm(sm - fit, axis=-1) < 3.0
+    YY, XX = np.mgrid[:H, :W]
+    fit = (A(XX / 1600, YY / 1600) @ f).astype(np.float32)
+    off = np.linalg.norm(lab - fit, axis=-1) > de
+    off = cv2.morphologyEx(off.astype(np.uint8), cv2.MORPH_CLOSE, np.ones((5, 5), np.uint8))
+    from scipy import ndimage
+    return ndimage.binary_fill_holes(off > 0)
+
+
 def flat(rgb, m, c, r, org=None, size=None):
     h, es, eq = frame(c); pxmm = c['pxmm']
     if org is None:
@@ -152,7 +176,7 @@ def gradient(labf, sel, org, r):
     return {'p0': [round(float(x), 2) for x in p0], 'p1': [round(float(x), 2) for x in p1], 'stops': [[f, hexof(v)] for f, v in stops]}
 
 
-def veins(img, mm, org, r, hm=None, wmax=0.35, thr=12.0):
+def veins(img, mm, org, r, hm=None, wmax=0.35, thr=12.0, medmin=58, lmin=1.2, wmean=0.22):
     """the veins: thin dark lines across the lighter scales (the black-hat of L* over a disk of wmax mm, over thr L*), thinned to
     their skeleton and walked into polylines between their junctions; each with its measured width (twice the distance to its
     edge) and colour (its darkest third). Grouped by width (0.03 mm steps) and colour for a few stroked paths. Returns the
@@ -165,7 +189,7 @@ def veins(img, mm, org, r, hm=None, wmax=0.35, thr=12.0):
     # on a light ground only (its median over 1 mm): between the light grains of a dusted black band the black reads as a net
     # of thin lines, which are not veins
     med = cv2.medianBlur(np.clip(L * 2.55, 0, 255).astype(np.uint8), (int(1.0 * r) | 1)).astype(np.float32) / 2.55
-    vm = (bh > thr) & (med > 58) & cv2.erode(mm.astype(np.uint8), np.ones((5, 5), np.uint8)).astype(bool)
+    vm = (bh > thr) & (med > medmin) & cv2.erode(mm.astype(np.uint8), np.ones((5, 5), np.uint8)).astype(bool)
     if hm is not None: vm &= ~hm
     # the gaps of a vein where it pales for a few scales are closed (0.15 mm), so it is walked as one line, not in dashes
     vm = cv2.morphologyEx(vm.astype(np.uint8), cv2.MORPH_CLOSE, cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (int(0.15 * r) | 1, int(0.15 * r) | 1))) > 0
@@ -176,7 +200,7 @@ def veins(img, mm, org, r, hm=None, wmax=0.35, thr=12.0):
     n, cc, st, _ = cv2.connectedComponentsWithStats(vm.astype(np.uint8), connectivity=8)
     skl = np.bincount(cc[sk0], minlength=n).astype(float) / r
     area = st[:, cv2.CC_STAT_AREA] / r / r
-    keep = (skl > 1.2) & (area / np.maximum(skl, 1e-3) < 0.22)
+    keep = (skl > lmin) & (area / np.maximum(skl, 1e-3) < wmean)
     keep[0] = False
     vm = keep[cc]
     sk = skeletonize(vm)
@@ -215,16 +239,17 @@ def veins(img, mm, org, r, hm=None, wmax=0.35, thr=12.0):
     return V, vm
 
 
-def zones(img, mm, org, k, r, amin=0.25, tol=0.05, hm=None, vm=None):
+def zones(img, mm, org, k, r, amin=0.25, tol=0.05, hm=None, vm=None, flou=0.02, poudre=True, forcer=(), teinte=1.4, sous=None):
     """fine labels by k-means (Lab, on a light blur); macro zones: the fine labels with their small islands (scattered scales,
     under amin mm²) filled by the zone around them, so veins and bars stay and dust goes. Each zone: its contours (simplified to
     tol mm, drawn as smooth curves), its colour and its gradient. Dust: the islands of one zone in another, as density levels
     (contours), with the grains' size and spacing: the renderer fills each level with a tile of grains."""
     from scipy import ndimage
     from scipy.spatial import cKDTree
-    lab = lab_of(cv2.GaussianBlur(img, (0, 0), 0.02 * r)); px = lab[mm]
+    # flou (mm): a striated face (cadres key stries) reads its zones on the tones under the striae, which are measured apart
+    lab = lab_of(cv2.GaussianBlur(img, (0, 0), flou * r)); px = lab[mm]
     crit = (cv2.TERM_CRITERIA_EPS + cv2.TERM_CRITERIA_MAX_ITER, 60, 0.2)
-    wt = np.array([1.0, 1.4, 1.4], np.float32)               # a little more weight on hue than on lightness: blue against grey
+    wt = np.array([1.0, teinte, teinte], np.float32)         # a little more weight on hue than on lightness: blue against grey
     rng = np.random.default_rng(3); sub = px[rng.choice(len(px), min(150000, len(px)), replace=False)] * wt
     _, _, cen = cv2.kmeans(sub.astype(np.float32), k, None, crit, 4, cv2.KMEANS_PP_CENTERS)
     lb = np.argmin(np.linalg.norm((px * wt)[:, None, :] - cen[None], axis=2), 1)
@@ -246,7 +271,10 @@ def zones(img, mm, org, k, r, amin=0.25, tol=0.05, hm=None, vm=None):
         n_, cc_, st_, _ = cv2.connectedComponentsWithStats(m_, connectivity=8)
         big = st_[1:, cv2.CC_STAT_AREA][st_[1:, cv2.CC_STAT_AREA] > 2 * r * r].sum() / m_.sum()
         print('  classe %d %s : %.0f %% reste après ouverture, %.0f %% en grands morceaux' % (j, hexof(np.median(lab_of(img)[fine == j], 0)), 100 * kept, 100 * big))
-        if kept < 0.45 and big < 0.3 and (fine == j).sum() < 0.3 * mm.sum(): gran.append(j)
+        if poudre and kept < 0.45 and big < 0.3 and (fine == j).sum() < 0.3 * mm.sum(): gran.append(j)
+        # cadres key poudre_seule: colours read on the photo as scales scattered over another zone even where they are dense (the
+        # peacock's blue and lilac scales over the black and the maroon of its eyespot): never a zone
+        elif poudre and any(np.linalg.norm(np.median(lab_of(img)[fine == j], 0) - f) < 14 for f in forcer): gran.append(j)
     for j in range(k):
         if j in gran: macro[fine == j] = -2; continue
         n, cc, st, _ = cv2.connectedComponentsWithStats((fine == j).astype(np.uint8), connectivity=8)
@@ -257,6 +285,27 @@ def zones(img, mm, org, k, r, amin=0.25, tol=0.05, hm=None, vm=None):
     keep = macro >= 0
     _, (iy, ix) = ndimage.distance_transform_edt(~keep, return_indices=True)
     macro = np.where(mm, macro[iy, ix], -1)
+    # cadres key poudre_sous: the zone a granular colour lies on, read on the photo (the peacock's blue scales lie on the black of
+    # its eyespot, not on the maroon beside it): its pixels go to the zone of the nearest given colour instead of the nearest zone
+    if sous:
+        labb = lab_of(img)
+        cen_lab = {j: np.median(labb[fine == j], 0) for j in range(k) if (fine == j).any()}
+        rules = []
+        for g_lab, z_lab in sous:
+            j = min(gran, key=lambda j: np.linalg.norm(cen_lab[j] - g_lab)) if gran else None
+            if j is None or np.linalg.norm(cen_lab[j] - g_lab) > 14: continue
+            zi = min((i for i in range(k) if i not in gran and i in cen_lab), key=lambda i: np.linalg.norm(cen_lab[i] - z_lab))
+            rules.append((j, zi))
+        if rules:
+            # where the grains lie (their area closed over 0.25 mm), each pixel goes to the zone under the colour of grains that
+            # is densest there (blurred over 0.15 mm)
+            ker_ = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (int(0.25 * r) | 1,) * 2)
+            area = np.zeros(mm.shape, bool)
+            for j, _ in rules: area |= cv2.morphologyEx((fine == j).astype(np.uint8), cv2.MORPH_CLOSE, ker_) > 0
+            dens = np.stack([cv2.GaussianBlur((fine == j).astype(np.float32), (0, 0), 0.15 * r) for j, _ in rules], -1)
+            zsel = np.array([zi for _, zi in rules])[np.argmax(dens, -1)]
+            ok = area & mm & np.isin(macro, [i for i in range(k) if i not in gran])
+            macro[ok] = zsel[ok]
     # under the long hairs lies the membrane of the zone that borders them most (the hairs' own dark mass is drawn as hairs)
     if hm is not None and hm.any():
         ring = (cv2.dilate(hm.astype(np.uint8), np.ones((int(0.6 * r), int(0.6 * r)), np.uint8)) > 0) & ~hm & mm
@@ -280,7 +329,7 @@ def zones(img, mm, org, k, r, amin=0.25, tol=0.05, hm=None, vm=None):
                   'poly': P, 'degrade': gradient(labf, (fine == j) & (macro == j), org, r)})
     # dust: per pair (grains of zone j over zone i), the grains' count per mm², smoothed over 0.3 mm, cut in density levels
     D = []; tot = 0
-    for i in order:
+    for i in (order if poudre else []):
         for j in range(k):
             if i == j: continue
             sel = (macro == i) & (fine == j)
@@ -338,6 +387,94 @@ def zones(img, mm, org, k, r, amin=0.25, tol=0.05, hm=None, vm=None):
         keepD.append(x); acc += x['poids']
     for x in keepD: x['poids'] = round(x['poids'], 2)
     return Z, keepD, fine, macro, cols
+
+
+def striae(img, mm, org, r, vm=None, seuil=3.0, cell_mm=0.6, ncol=6, periode=None, vis=None, pc=5.0):
+    """the striae of a dead-leaf underside (cadres key stries; the peacock's): rows of scales along which dark and light scales
+    run in short dashes. Read per cell of cell_mm, in numbers only, as the hairs are: the striae's direction (structure tensor
+    over 0.3 mm), the share of the cell its dark and its light scales cover (the lightness against its median over 0.5 mm, by
+    `seuil` L*), their colours (each quantised to `ncol` measured colours); over the wing, the dashes' length along the rows
+    (runs walked along the measured direction) and width (across). The renderer lays dashes cell by cell to those numbers."""
+    s0, q1, _ = org
+    lab = lab_of(img); L = lab[..., 0]
+    k = int(0.5 * r) | 1
+    med = cv2.medianBlur(np.clip(L * 2.55, 0, 255).astype(np.uint8), k).astype(np.float32) / 2.55
+    inner = cv2.erode(mm.astype(np.uint8), np.ones((5, 5), np.uint8)) > 0
+    if vm is not None: inner &= ~vm
+    g1 = cv2.GaussianBlur(L, (0, 0), 0.7)
+    ix = cv2.Sobel(g1, cv2.CV_32F, 1, 0, ksize=3); iy = cv2.Sobel(g1, cv2.CV_32F, 0, 1, ksize=3); si = 0.3 * r
+    jxx = cv2.GaussianBlur(ix * ix, (0, 0), si); jyy = cv2.GaussianBlur(iy * iy, (0, 0), si); jxy = cv2.GaussianBlur(ix * iy, (0, 0), si)
+    th_img = 0.5 * np.arctan2(2 * jxy, jxx - jyy) + np.pi / 2           # the lines' direction in the image (y down)
+    # the scales read through a blur of 0.025 mm (one scale stays whole: unblurred, a dash breaks into specks of single scales)
+    Lb = cv2.GaussianBlur(L, (0, 0), 0.025 * r)
+    dark = (Lb < med - seuil) & inner; light = (Lb > med + seuil) & inner
+    rng_ = np.random.default_rng(7)
+    def runs(m):
+        ys, xs = np.nonzero(m); i = rng_.choice(len(ys), min(5000, len(ys)), replace=False)
+        out = []
+        for y, x in zip(ys[i], xs[i]):
+            dx, dy = np.cos(th_img[y, x]), np.sin(th_img[y, x]); n = 1
+            for sg in (1, -1):
+                for st in range(1, int(1.5 * r)):
+                    xx, yy = int(round(x + sg * st * dx)), int(round(y + sg * st * dy))
+                    if not (0 <= yy < m.shape[0] and 0 <= xx < m.shape[1]) or not m[yy, xx]: break
+                    n += 1
+            out.append(n / r)
+        # a point falls in a run in proportion to its length: the median of this sample is the run that holds half of the dark
+        # (light) area, the dash the eye sees (the specks of one scale count for little)
+        return float(np.median(out))
+    def width(m):
+        # across the direction: the same walk, perpendicular
+        ys, xs = np.nonzero(m); i = rng_.choice(len(ys), min(3000, len(ys)), replace=False); out = []
+        for y, x in zip(ys[i], xs[i]):
+            dx, dy = -np.sin(th_img[y, x]), np.cos(th_img[y, x]); n = 1
+            for sg in (1, -1):
+                for st in range(1, int(0.5 * r)):
+                    xx, yy = int(round(x + sg * st * dx)), int(round(y + sg * st * dy))
+                    if not (0 <= yy < m.shape[0] and 0 <= xx < m.shape[1]) or not m[yy, xx]: break
+                    n += 1
+            out.append(n / r)
+        return float(np.median(out)) * 0.75                         # less the blur's widening
+    cell = max(2, int(cell_mm * r)); cases = []; cd, cl = [], []
+    for gy in range(0, mm.shape[0], cell):
+        for gx in range(0, mm.shape[1], cell):
+            b = inner[gy:gy + cell, gx:gx + cell]
+            if b.sum() < 0.3 * cell * cell: continue
+            t2 = 2 * th_img[gy:gy + cell, gx:gx + cell][b]
+            a = np.arctan2(np.sin(t2).mean(), np.cos(t2).mean()) / 2
+            ang = (-np.degrees(a) + 90) % 180 - 90                      # in the frame (q up)
+            d_ = dark[gy:gy + cell, gx:gx + cell][b]; l_ = light[gy:gy + cell, gx:gx + cell][b]
+            v = lab[gy:gy + cell, gx:gx + cell][b]
+            # a little past their median toward their own side (their edges mix with the ground under the blur), as the dust
+            cd.append((np.median(v[d_], 0) if d_.sum() >= 3 else np.median(v, 0)) - [4, 0, 0])
+            cl.append((np.median(v[l_], 0) if l_.sum() >= 3 else np.median(v, 0)) + [3, 0, 0])
+            cases.append([gx // cell, gy // cell, round(float(ang)), round(float(d_.mean()), 2), round(float(l_.mean()), 2)])
+    pal = {}
+    for side, C in (('sombre', cd), ('clair', cl)):
+        C = np.array(C, np.float32)
+        _, lb, cen = cv2.kmeans(C, ncol, None, (cv2.TERM_CRITERIA_EPS + cv2.TERM_CRITERIA_MAX_ITER, 40, 0.2), 3, cv2.KMEANS_PP_CENTERS)
+        pal[side] = ([hexof(c) for c in cen], lb.ravel())
+    for i, c in enumerate(cases): c += [int(pal['sombre'][1][i]), int(pal['clair'][1][i])]
+    res = {'cellule': round(cell / r, 3), 'cases': cases, 'sombre': pal['sombre'][0], 'clair': pal['clair'][0],
+           'longueur': [round(runs(dark), 3), round(runs(light), 3)], 'largeur': [round(width(dark), 3), round(width(light), 3)]}
+    # the dark lines (the zigzag postdiscal and basal lines): the darkest pc % of the lightness over 0.075 mm, in pieces whose
+    # skeleton runs over 1.5 mm, outside the strip completed from the other face; drawn over the striae as measured contours
+    from skimage.morphology import skeletonize
+    zone_in = inner if vis is None else inner & (cv2.erode(vis.astype(np.uint8), np.ones((9, 9), np.uint8)) > 0)
+    Lb3 = cv2.GaussianBlur(L, (0, 0), 0.075 * r)
+    lm = (Lb3 < np.percentile(Lb3[zone_in], pc)) & zone_in
+    lm = cv2.morphologyEx(lm.astype(np.uint8), cv2.MORPH_CLOSE, cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (7, 7))) > 0
+    n_, cc_, st_, _ = cv2.connectedComponentsWithStats(lm.astype(np.uint8), connectivity=8)
+    skl = np.bincount(cc_[skeletonize(lm)], minlength=n_) / r
+    keep = skl > 1.5; keep[0] = False; lm = keep[cc_]
+    res['lignes'] = [{'c': hexof(np.median(lab[lm & (L <= np.percentile(L[lm], 60))], 0) - [2, 0, 0]), 'poly': poly_mm(lm, org, r, 0.04, 0.05)}] if lm.any() else []
+    print('lignes : %d morceaux, %.1f mm de long, %.2f mm²' % (keep.sum(), skl[keep].sum(), lm.sum() / r / r))
+    # a dash is one row of scales wide: the walk across, widened by the blur and by neighbouring rows, is bounded by the rows'
+    # measured period (scale_rows)
+    if periode: res['largeur'] = [round(min(w_, 0.8 * periode), 3) for w_ in res['largeur']]
+    print('stries : %d cases, sombre %.0f %% clair %.0f %%, tirets %.2f / %.2f mm de long, %.3f / %.3f mm de large'
+          % (len(cases), 100 * dark[inner].mean(), 100 * light[inner].mean(), *res['longueur'], *res['largeur']))
+    return res
 
 
 def outline(mm, org, r):
@@ -417,7 +554,7 @@ def fringe(img, mm, ol, org, r, pas=0.25, larg=0.1):
     return {'pas': pas, 'largeur': larg, 'couleurs': [pal[i] for i in lb.ravel()]}
 
 
-def hairs(img, mm, hm, org, r, cell_mm=0.8):
+def hairs(img, mm, hm, org, r, cell_mm=0.8, couleurs=False):
     """the long hairs over a wing's base and inner margin (their region read on the photo's grid, porteur's rule « tracé »,
     their content measured): per cell of cell_mm, the hairs' direction (structure tensor of the flat photo, integration over
     0.25 mm), its coherence, the share of the cell the light hairs cover; the light and dark hair colours over the region"""
@@ -433,7 +570,7 @@ def hairs(img, mm, hm, org, r, cell_mm=0.8):
     lab = lab_of(img); L = lab[..., 0]
     loc = cv2.GaussianBlur(L, (0, 0), 0.15 * r)
     light = (L > loc + 4) & hm
-    cell = max(2, int(cell_mm * r)); cases = []
+    cell = max(2, int(cell_mm * r)); cases = []; cd_, cl_ = [], []
     for gy in range(0, mm.shape[0], cell):
         for gx in range(0, mm.shape[1], cell):
             b = hm[gy:gy + cell, gx:gx + cell]
@@ -445,11 +582,21 @@ def hairs(img, mm, hm, org, r, cell_mm=0.8):
             ang = (ang + 90) % 180 - 90
             cases.append([gx // cell, gy // cell, round(float(ang), 0), round(float(np.median(w)), 2),
                           round(float(light[gy:gy + cell, gx:gx + cell][b].mean()), 2)])
+            if couleurs:
+                # cadres key poils_couleurs: the hairs change colour over the region (the peacock's: rusty over the brown, white
+                # along the inner margin): the cell's dark and light hairs (its lower and upper thirds of lightness), measured
+                vv = lab[gy:gy + cell, gx:gx + cell][b]; lo, hi = np.percentile(vv[:, 0], [33, 67])
+                cd_.append(np.median(vv[vv[:, 0] <= lo], 0)); cl_.append(np.median(vv[vv[:, 0] >= hi], 0))
     v = lab[hm]
     out = {'cellule': round(cell / r, 3), 'cases': cases,
            'clair': hexof(np.median(v[v[:, 0] >= np.percentile(v[:, 0], 80)], 0)),
            'sombre': hexof(np.median(v[v[:, 0] <= np.percentile(v[:, 0], 20)], 0)),
            'moyen': hexof(np.median(v, 0)), 'poly': poly_mm(hm, org, r, 0.08, 0.2)}
+    if couleurs and len(cases) >= 6:
+        for key, C in (('sombres', cd_), ('clairs', cl_)):
+            _, lb, cen = cv2.kmeans(np.array(C, np.float32), 6, None, (cv2.TERM_CRITERIA_EPS + cv2.TERM_CRITERIA_MAX_ITER, 40, 0.2), 3, cv2.KMEANS_PP_CENTERS)
+            out[key] = [hexof(c) for c in cen]
+            for cs, l in zip(cases, lb.ravel()): cs.append(int(l))
     print('poils : %d cases, clair %s sombre %s' % (len(cases), out['clair'], out['sombre']))
     return out
 
@@ -486,18 +633,26 @@ def cmd_plat(o):
     C = json.load(open(o.cadres, encoding='utf-8')); c = C[o.nom]
     sid = C['_sid']; out = os.path.join(ROOT, 'refcache', sid, 'ailes', o.nom); os.makedirs(out, exist_ok=True)
     rgb = cv2.imread(os.path.join(ROOT, 'refcache', sid, c['photo']))[..., ::-1].copy()
+    g = ground_tinted(rgb, c.get('fond_de', 5.0)) if c.get('fond') == 'degrade' else ground(rgb, c['pxmm'])
     mp = os.path.join(out, 'sam.png')
-    if os.path.exists(mp) and not o.sam: m = cv2.imread(mp, 0) > 127
+    if c.get('masque') == 'fond':
+        # no model (cadres key masque: "fond"): where the plate's ground is clean, the specimen inside the wing's box is the wing,
+        # its neighbours (the other wing, the body) cut off by the polygons read on the grid (retirer)
+        x0, y0, x1, y1 = c['box']; m = np.zeros(g.shape, bool); m[y0:y1, x0:x1] = True; m &= g
+        cv2.imwrite(mp, m.astype(np.uint8) * 255)
+    elif os.path.exists(mp) and not o.sam: m = cv2.imread(mp, 0) > 127
     else: m = sam_mask(rgb, c); cv2.imwrite(mp, m.astype(np.uint8) * 255)
-    g = ground(rgb, c['pxmm'])
     # SAM separates the wing from its neighbours; the ground test sets its edge against the plate (SAM's edge is ~1.5 px coarse)
     # where a cut line was read on the grid (the edge between the two wings), SAM's own edge there (a few tenths of a mm short of
     # it) gives way: the specimen within 1 mm of SAM's mask, minus the cut region
-    grow = int(c['pxmm'] * 1.0) if c.get('retirer') else 7
+    grow = 1 if c.get('masque') == 'fond' else int(c['pxmm'] * 1.0) if c.get('retirer') else 7
     m = (cv2.dilate(m.astype(np.uint8), np.ones((grow, grow), np.uint8)) > 0) & g
     if c.get('retirer'):
         # the neighbour wing where SAM cannot tell the two apart: a polygon (px) read on the photo's grid
-        cut = np.zeros(m.shape, np.uint8); cv2.fillPoly(cut, [np.array(c['retirer'], np.int32)], 1); m &= cut == 0
+        R_ = c['retirer']; R_ = R_ if isinstance(R_[0][0], list) else [R_]          # one polygon, or several
+        cut = np.zeros(m.shape, np.uint8)
+        for P_ in R_: cv2.fillPoly(cut, [np.array(P_, np.int32)], 1)
+        m &= cut == 0
     n_, lb_, st_, _ = cv2.connectedComponentsWithStats(m.astype(np.uint8))
     if n_ > 2: m = lb_ == (1 + np.argmax(st_[1:, cv2.CC_STAT_AREA]))
     img, mm, org = flat(rgb, m, c, o.r)
@@ -547,16 +702,23 @@ def cmd_plat(o):
         hp = np.zeros(rgb.shape[:2], np.uint8)
         for P in c['poils']: cv2.fillPoly(hp, [np.array(P, np.int32)], 1)
         _, hm, _ = flat(rgb, hp > 0, c, o.r, org, (mm.shape[1], mm.shape[0])); hm &= mm
-    V, vm = veins(img, mm, org, o.r, hm)
-    Z, D, fine, macro, cols = zones(img, mm, org, o.k, o.r, hm=hm, vm=vm)
+    # cadres key nervures: the thresholds of a dark face (the peacock's underside: its zigzag lines are drawn as measured lines)
+    V, vm = veins(img, mm, org, o.r, hm, **c.get('nervures', {}))
+    st_ = c.get('stries')
+    forcer = [lab_of(np.array([[[int(h[i:i + 2], 16) for i in (1, 3, 5)]]], np.uint8))[0, 0] for h in c.get('poudre_seule', [])]
+    hexlab = lambda h: lab_of(np.array([[[int(h[i:i + 2], 16) for i in (1, 3, 5)]]], np.uint8))[0, 0]
+    sous = [(hexlab(a), hexlab(b)) for a, b in c.get('poudre_sous', {}).items()]
+    Z, D, fine, macro, cols = zones(img, mm, org, o.k, o.r, hm=hm, vm=vm, forcer=forcer, teinte=c.get('poids_teinte', 1.4), sous=sous, **({'flou': st_.get('flou', 0.12), 'poudre': False} if st_ else {}))
     ol = outline(mm, org, o.r)
-    rows = scale_rows(img, mm, macro, org, o.r)
+    # the rows of a striated face are read over the whole wing (its zones are only tones under the striae)
+    rows = scale_rows(img, mm, np.where(mm, 0, -1) if st_ else macro, org, o.r)
     fr = fringe(img, mm, ol, org, o.r)
     rec = {'_doc': 'aile.py plat: contours et couleurs mesurés sur %s (repère : s vers l\'extérieur depuis la charnière, q vers la tête, mm). '
                    'Des chiffres, jamais l\'image.' % c['photo'], 'photo': c['photo'], 'pxmm': c['pxmm'], 'k': o.k, 'r': o.r, 'origine': [round(org[0], 3), round(org[1], 3)], 'taille': [int(mm.shape[1]), int(mm.shape[0])],
            'longueur': round(max(p[0] for p in ol), 2), 'contour': ol, 'zones': Z, 'poussiere': D,
            'cache': round(float(hid.sum() / mm.sum()), 3), 'rangees': rows, 'frange': fr, 'alignement': align, 'nervures': V,
-           'poils': hairs(img, mm, hm, org, o.r) if hm is not None and hm.any() else None}
+           'poils': hairs(img, mm, hm, org, o.r, couleurs=bool(c.get('poils_couleurs'))) if hm is not None and hm.any() else None,
+           'stries': striae(img, mm, org, o.r, vm, st_.get('seuil', 3.0), st_.get('cellule', 0.6), st_.get('ncol', 6), rows.get('periode'), vis, st_.get('lignes', 5.0)) if st_ else None}
     dst = os.path.join(os.path.dirname(os.path.abspath(o.cadres)), o.nom + '.json')
     json.dump(rec, open(dst, 'w', encoding='utf-8', newline='\n'), ensure_ascii=False, separators=(',', ':'))
     # control image: the flat wing | its zones in their colours | contours over the photo

@@ -99,7 +99,11 @@ export function motif(rec, opt = {}) {
   const ZC = opt.dustK?.zones || {};
   // opt.live {below, dL}: a dried specimen's blacks are greyer than the living butterfly's (machaon: L* 16.5 on c032 against 7
   // to 10 on the living c131, c086): every colour under `below` L* is taken down by dL
-  const live = (h) => { if (!opt.live) return h; const l = hex2lab(h); if (l[0] >= opt.live.below) return h; const f = 1 - l[0] / opt.live.below;
+  // opt.live.k (and kc): a face whose dried specimen is lit far brighter than the living butterfly (the peacock's underside: L*
+  // 44 on c259 against 6 to 27 on the living c140, c374, c223, c004) is scaled whole, lightness by k and chroma by kc
+  const live = (h) => { if (!opt.live) return h; const l = hex2lab(h);
+    if (opt.live.k) return lab2hex(l[0] * opt.live.k, l[1] * (opt.live.kc ?? 1), l[2] * (opt.live.kc ?? 1));
+    if (l[0] >= opt.live.below) return h; const f = 1 - l[0] / opt.live.below;
     return lab2hex(Math.max(2, l[0] + opt.live.dL * f), l[1], l[2]); };
   const zones = rec.zones.map((z) => ({ ...z, c: live(shift(z.c, ZC[z.zone])),
     degrade: z.degrade && { ...z.degrade, stops: z.degrade.stops.map(([o, c]) => [o, live(shift(c, ZC[z.zone]))]) } }));
@@ -154,6 +158,34 @@ export function motif(rec, opt = {}) {
       }
       if (g) s += `<g clip-path="url(#${clip[z.zone]})">${g}</g>`;
     });
+    // the striae of a dead-leaf underside (rec.stries, aile.py striae): per measured cell, dashes of dark and of light scales
+    // laid along the measured direction, as many as cover the measured shares (random throws overlap: -ln(1 - share)), of the
+    // measured length and width, in the cell's measured colours; one stroked path per colour (opt.striae weighs them)
+    const ST = rec.stries;
+    if (ST && ST.cases && (opt.striae ?? 1) > 0) {
+      const [s0, q1] = rec.origine, c = ST.cellule, R = rng((opt.seed ?? 7) * 13 + 5), by = {};
+      // the calibration of the zones (poudre.py) measured over the striae as well: their colours take its mean, weighed by part
+      const SH = [0, 1, 2].map((i) => rec.zones.reduce((a, z) => a + (ZC[z.zone]?.[i] ?? 0) * z.part, 0) / rec.zones.reduce((a, z) => a + z.part, 0));
+      const sides = [['sombre', 3, 5, 0], ['clair', 4, 6, 1]];
+      for (const [gx, gy, ang, ...v] of ST.cases) {
+        const x0 = s0 + gx * c, y0 = q1 - (gy + 1) * c;
+        for (const [side, fi, pi, j] of sides) {
+          const f = Math.min(0.9, v[fi - 3]), L = ST.longueur[j], W = ST.largeur[j];
+          const n = Math.round((-Math.log(1 - f) * c * c) / (L * W) * (opt.striae ?? 1));
+          const col = ST[side][v[pi - 3]], key = side + col;
+          let d = by[key]?.d ?? '';
+          for (let i = 0; i < n; i++) {
+            const t = ((ang + (R() - 0.5) * 16) * Math.PI) / 180, l = Math.max(0, L * (0.4 + 1.2 * R()) - W);
+            const x = x0 + R() * c, y = y0 + R() * c, ux = 0.5 * l * Math.cos(t), uy = 0.5 * l * Math.sin(t);
+            d += `M${pair((x - ux) * k, (y - uy) * k)}l${pair(2 * ux * k, 2 * uy * k)}`;
+          }
+          by[key] = { d, col, w: W };
+        }
+      }
+      for (const v of Object.values(by)) if (v.d) s += `<path d="${v.d}" stroke="${live(shift(v.col, SH))}" stroke-width="${f3(v.w * k)}" stroke-linecap="round" fill="none"/>`;
+      // the dark lines over the striae (the zigzag postdiscal line): measured contours, one smooth path
+      for (const G of ST.lignes || []) s += `<path d="${smoothAll(G.poly, k)}" fill="${live(G.c)}" fill-rule="evenodd"/>`;
+    }
     // the long hairs over the base and the inner margin: per measured cell, light and dark hairs along the measured direction
     // (pointing away from the hinge), their number from the cover the light hairs take; two paths
     // the veins: measured strokes, one path per width and colour, over the zones and the dust
@@ -171,7 +203,9 @@ export function motif(rec, opt = {}) {
       const [s0, q1] = rec.origine, c = H.cellule, R = rng((opt.seed ?? 7) * 7 + 3);
       const hw = (opt.hairW ?? 0.018), hl = (opt.hairL ?? 2.2), per = (c * c) / (hw * hl);
       let dl = '', dd = '';
-      for (const [gx, gy, ang, coh, cover] of H.cases) {
+      // measured colours per cell (aile.py poils_couleurs): the hairs grouped by colour, one path per colour
+      const DD = {}, DL = {};
+      for (const [gx, gy, ang, coh, cover, id, il] of H.cases) {
         const x0 = s0 + gx * c, y0 = q1 - (gy + 1) * c;
         let a = (ang * Math.PI) / 180;
         if (Math.cos(a) * (x0 + c / 2) + Math.sin(a) * (y0 + c / 2) < 0) a += Math.PI;   // away from the hinge
@@ -185,12 +219,17 @@ export function motif(rec, opt = {}) {
         for (let i = 0; i < nh; i++) {
           const x = x0 + R() * c, y = y0 + R() * c, t = a + (R() - 0.5) * (0.3 - 0.2 * coh), l = hl * (0.6 + 0.8 * R());
           const ex = Math.cos(t) * l, ey = Math.sin(t) * l, b = (R() - 0.5) * 0.08 * l;
-          dd += seg(x, y, ex, ey, t, b, 0);
-          if (R() < cover + 0.25) dl += seg(x, y, ex, ey, t, b, 0.55);
+          if (id === undefined) { dd += seg(x, y, ex, ey, t, b, 0); if (R() < cover + 0.25) dl += seg(x, y, ex, ey, t, b, 0.55); continue; }
+          DD[id] = (DD[id] ?? '') + seg(x, y, ex, ey, t, b, 0);
+          if (R() < cover + 0.25) DL[il] = (DL[il] ?? '') + seg(x, y, ex, ey, t, b, 0.55);
         }
       }
       // not clipped by their region: the hairs spill past it, so the mass ends in wisps as on the photo
-      s += `<g fill="none" stroke-linecap="round"><path d="${dd}" stroke="${live(H.sombre)}" stroke-width="${f3(hw * 1.3 * k)}" opacity="0.8"/>` +
+      if (H.sombres) {
+        s += '<g fill="none" stroke-linecap="round">' +
+          Object.entries(DD).map(([i, d]) => `<path d="${d}" stroke="${live(H.sombres[i])}" stroke-width="${f3(hw * 1.3 * k)}" opacity="0.8"/>`).join('') +
+          Object.entries(DL).map(([i, d]) => `<path d="${d}" stroke="${H.clairs[i]}" stroke-width="${f3(hw * k)}" opacity="0.7"/>`).join('') + '</g>';
+      } else s += `<g fill="none" stroke-linecap="round"><path d="${dd}" stroke="${live(H.sombre)}" stroke-width="${f3(hw * 1.3 * k)}" opacity="0.8"/>` +
         `<path d="${dl}" stroke="${H.clair}" stroke-width="${f3(hw * k)}" opacity="0.7"/></g>`;
     }
     return opt.rot ? `<g transform="rotate(${f2(opt.rot)})">${s}</g>` : s;
