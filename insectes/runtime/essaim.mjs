@@ -79,6 +79,8 @@ export class Essaim {
     insect.sprite = new Sprite();
     insect.sprite.anchor.set(0.5);
     this.stage.addChild(insect.sprite);
+    // insect.carry (ants, 2026-10-23): a second sprite for the load, the 'petale' cell of the same view laid over the body, tinted
+    if (insect.carry) { insect.carrySprite = new Sprite(); insect.carrySprite.anchor.set(0.5); insect.carrySprite.visible = false; this.stage.addChild(insect.carrySprite); }
     const W = this.kinds[insect.kind]?.wings;
     if (W) {
       insect.wingMeshes = [];
@@ -146,7 +148,7 @@ export class Essaim {
     const stats = { sprites: 0 };
     for (const b of this.insects) {
       const sp = b.sprite;
-      if (!b.visible) { sp.visible = false; if (b.wingMeshes) for (const g of b.wingMeshes) g.m.visible = false; continue; }
+      if (!b.visible) { sp.visible = false; if (b.carrySprite) b.carrySprite.visible = false; if (b.wingMeshes) for (const g of b.wingMeshes) g.m.visible = false; continue; }
       const K = this.kinds[b.kind];
       const q = this.project(b.P);
       // Orientation: the runtime frame is Y down, the view maths are Y up.
@@ -159,7 +161,7 @@ export class Essaim {
       const lodName = K.lods.L && shown > K.lods.S.cell * 1.25 && K.lods.L.poses.includes(b.pose) ? 'L' : 'S';
       const lod = K.lods[lodName];
       const c = pickCell(lod, lod.el || K.idx.el, b.pose, b.frame, K.idx.frames[b.pose], v);
-      if (c.i === undefined) { sp.visible = false; if (b.wingMeshes) for (const g of b.wingMeshes) g.m.visible = false; continue; }
+      if (c.i === undefined) { sp.visible = false; if (b.carrySprite) b.carrySprite.visible = false; if (b.wingMeshes) for (const g of b.wingMeshes) g.m.visible = false; continue; }
       sp.texture = lod.cells[c.i];
       const sc = shown / lod.cell;
       sp.scale.set((c.flip ? -sc : sc) * this.dpr, sc * this.dpr);
@@ -168,6 +170,13 @@ export class Essaim {
       sp.position.set(q.x * this.dpr, q.y * this.dpr);
       sp.visible = true;
       b.screen = { x: q.x, y: q.y, r: shown * 0.28, view: v, lod: lodName };
+      if (b.carrySprite) {
+        const cs = b.carrySprite, c2 = b.carrying ? pickCell(lod, lod.el || K.idx.el, 'petale', 0, 1, v) : {};
+        if (c2.i !== undefined) {
+          cs.texture = lod.cells[c2.i]; cs.scale.set((c2.flip ? -sc : sc) * this.dpr, sc * this.dpr); cs.rotation = v.rotation;
+          cs.position.set(q.x * this.dpr, q.y * this.dpr); cs.zIndex = b.P[2] + 0.001; cs.tint = b.carryTint ?? 0xffffff; cs.visible = true;
+        } else cs.visible = false;
+      }
       if (b.wingMeshes) {
         this.placeWings(b, K, fr, [eye[0] / el, eye[1] / el, eye[2] / el], b.lengthPx / K.bodyMm);
         b.screen.r = Math.max(b.screen.r, (K.wings.reach * pxmm) / 2.2 * 1.08);
@@ -181,6 +190,7 @@ export class Essaim {
       if (!mine.length && !L.box) return;
       for (const b of this.insects) {
         b.sprite.renderable = b.visible && b.layer === li;
+        if (b.carrySprite) b.carrySprite.renderable = b.sprite.renderable;
         if (b.wingMeshes) for (const g of b.wingMeshes) g.m.renderable = b.sprite.renderable;
       }
       const ctx = L.ctx;

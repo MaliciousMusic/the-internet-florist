@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "insectes-05",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["-m", "http.server", "8825", "--directory", "C:/Users/agent/Desktop/flower/flower-atelier/ch/insectes-05-fourmi-noire"],
+      "port": 8825
+    }
+  ]
+}

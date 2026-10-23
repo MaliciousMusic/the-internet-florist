@@ -1,0 +1,204 @@
+{
+ "profil-studio": {
+  "entier": {
+   "dE": 22.13,
+   "dE_teinte": 6.32,
+   "dL50": -25.0,
+   "dL10": -22.3,
+   "dL90": -22.5,
+   "contraste": 2.11,
+   "grain": 1.17,
+   "ok": false
+  },
+  "tete": {
+   "dE": 21.97,
+   "dE_teinte": 3.9,
+   "dL50": -25.5,
+   "dL10": -17.1,
+   "dL90": -28.5,
+   "contraste": 1.41,
+   "grain": 0.83,
+   "ok": false
+  },
+  "mesosome": {
+   "dE": 24.25,
+   "dE_teinte": 10.18,
+   "dL50": -27.4,
+   "dL10": -23.0,
+   "dL90": -19.3,
+   "contraste": 2.43,
+   "grain": 1.64,
+   "ok": false
+  },
+  "gastre": {
+   "dE": 21.48,
+   "dE_teinte": 4.51,
+   "dL50": -23.9,
+   "dL10": -19.9,
+   "dL90": -21.6,
+   "contraste": 1.98,
+   "grain": 1.11,
+   "ok": false
+  }
+ },
+ "dessus-studio": {
+  "entier": {
+   "dE": 24.81,
+   "dE_teinte": 7.13,
+   "dL50": -28.7,
+   "dL10": -22.2,
+   "dL90": -31.7,
+   "contraste": 1.75,
+   "grain": 0.75,
+   "ok": false
+  },
+  "tete": {
+   "dE": 23.9,
+   "dE_teinte": 2.54,
+   "dL50": -26.4,
+   "dL10": -14.8,
+   "dL90": -28.4,
+   "contraste": 1.28,
+   "grain": 1.16,
+   "ok": false
+  },
+  "mesosome": {
+   "dE": 26.77,
+   "dE_teinte": 9.66,
+   "dL50": -30.1,
+   "dL10": -25.9,
+   "dL90": -31.3,
+   "contraste": 2.09,
+   "grain": 1.29,
+   "ok": false
+  },
+  "gastre": {
+   "dE": 23.12,
+   "dE_teinte": 6.9,
+   "dL50": -27.1,
+   "dL10": -22.9,
+   "dL90": -32.4,
+   "contraste": 1.74,
+   "grain": 0.5,
+   "ok": false
+  }
+ },
+ "profil-jour": {
+  "entier": {
+   "dE": 8.79,
+   "dE_teinte": 7.42,
+   "dL50": 6.8,
+   "dL10": 5.0,
+   "dL90": 5.9,
+   "contraste": 0.85,
+   "grain": 2.36,
+   "ok": false
+  },
+  "gastre": {
+   "dE": 8.27,
+   "dE_teinte": 4.17,
+   "dL50": 10.3,
+   "dL10": 7.3,
+   "dL90": 12.3,
+   "contraste": 0.78,
+   "grain": 1.67,
+   "ok": false
+  },
+  "mesosome": {
+   "dE": 9.62,
+   "dE_teinte": 7.68,
+   "dL50": 8.7,
+   "dL10": 2.6,
+   "dL90": 19.6,
+   "contraste": 1.12,
+   "grain": 3.56,
+   "ok": false
+  },
+  "tete": {
+   "dE": 9.93,
+   "dE_teinte": 4.95,
+   "dL50": 12.2,
+   "dL10": 11.6,
+   "dL90": 11.9,
+   "contraste": 0.65,
+   "grain": 2.54,
+   "ok": false
+  }
+ },
+ "trois-quarts-jour": {
+  "entier": {
+   "dE": 10.49,
+   "dE_teinte": 8.23,
+   "dL50": -8.6,
+   "dL10": -9.8,
+   "dL90": 4.7,
+   "contraste": 2.07,
+   "grain": 1.81,
+   "ok": false
+  },
+  "tete": {
+   "dE": 5.24,
+   "dE_teinte": 4.64,
+   "dL50": -3.1,
+   "dL10": -7.6,
+   "dL90": 7.3,
+   "contraste": 1.82,
+   "grain": 1.74,
+   "ok": false
+  }
+ },
+ "face-jour": {
+  "entier": {
+   "dE": 8.92,
+   "dE_teinte": 7.61,
+   "dL50": -6.4,
+   "dL10": 4.2,
+   "dL90": -5.6,
+   "contraste": 0.9,
+   "grain": 1.51,
+   "ok": false
+  },
+  "tete": {
+   "dE": 2.92,
+   "dE_teinte": 2.91,
+   "dL50": 0.3,
+   "dL10": 10.4,
+   "dL90": -3.7,
+   "contraste": 0.58,
+   "grain": 1.0,
+   "ok": false
+  }
+ },
+ "dessous": {
+  "entier": {
+   "dE": 4.48,
+   "dE_teinte": 4.16,
+   "dL50": 2.4,
+   "dL10": 3.4,
+   "dL90": 4.0,
+   "contraste": 0.96,
+   "grain": 1.41,
+   "ok": false
+  },
+  "gastre": {
+   "dE": 2.73,
+   "dE_teinte": 2.59,
+   "dL50": 1.2,
+   "dL10": 2.3,
+   "dL90": 6.9,
+   "contraste": 1.15,
+   "grain": 1.11,
+   "ok": true
+  },
+  "tete": {
+   "dE": 6.25,
+   "dE_teinte": 5.09,
+   "dL50": 5.3,
+   "dL10": 3.1,
+   "dL90": 10.7,
+   "contraste": 0.95,
+   "grain": 1.47,
+   "ok": false
+  }
+ }
+}
