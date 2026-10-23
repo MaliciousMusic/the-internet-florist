@@ -14,17 +14,20 @@ import { frame0, env, pitched, legChain, tripod, segment, articleLeg, fringe } f
 const MES = JSON.parse(readFileSync(new URL('./mesures.json', import.meta.url), 'utf8'));
 const grid = (n) => { try { return JSON.parse(readFileSync(new URL(`./grilles/${n}.json`, import.meta.url), 'utf8')); } catch { return null; } };
 // measured colour grids (outils/plat_corps.py + grille_corps.py on the living c013 and c123), flat colours until they exist
-const G = { tete: grid('tete'), mesosome: grid('mesosome'), gastre: grid('gastre'), noeud: grid('noeud') };
+// a grid's albedo scaled (étalonnage: outils/delta.py, the render's region against the photos' mean)
+const lift = (g, k) => g && { ...g, rows: g.rows.map((r) => r.map((h) => '#' + [1, 3, 5].map((i) => Math.min(255, Math.round(parseInt(h.slice(i, i + 2), 16) * k)).toString(16).padStart(2, '0')).join(''))) };
+// the small round nodes shade darker than the photos' (delta.py: ΔE 6.1 against a spread of 5.1): their albedo lifted by 12 %
+const G = { tete: grid('tete'), mesosome: grid('mesosome'), gastre: grid('gastre'), noeud: lift(grid('noeud'), 1.12) };
 const C = {
-  head: '#5c2414', meso: '#6e2c14', node: '#7a3416', gaster: '#7c3a14', mandible: '#843818', leg: '#a04c1c', legHi: '#b45c24',
-  eye: '#2a2622', hair: '#ead6aa', claw: '#3a1a0a',
+  head: '#5c2414', meso: '#6e2c14', node: '#7a3416', gaster: '#7c3a14', mandible: '#843818', leg: '#82461c', legHi: '#8e5022',
+  eye: '#3a3632', hair: '#d2b282', claw: '#3a1a0a',
 };
 // the cuticle: the sculpted head and mesosoma satin, the nodes and the gaster lacquered (c123: a window reflected whole on the gaster)
 const MAT = {
-  sculpt: { ks: 0.28, p: 60, ks2: 0.08, p2: 8, env: 0.22, wrap: 0.25, mottle: 0.06 },
-  node: { ks: 0.55, p: 140, ks2: 0.1, p2: 10, env: 0.45, wrap: 0.25, mottle: 0.04, trans: { color: '#c2581e', k: 0.16 } },
-  gaster: { ks: 0.7, p: 220, ks2: 0.12, p2: 12, env: 0.62, wrap: 0.25, mottle: 0.05, trans: { color: '#d2701e', k: 0.3 } },
-  limb: { ks: 0.45, p: 90, ks2: 0.08, p2: 8, env: 0.35, mottle: 0.04, trans: { color: '#c86a26', k: 0.18 } },
+  sculpt: { ks: 0.16, p: 45, ks2: 0.05, p2: 6, env: 0.07, wrap: 0.22, mottle: 0.09, specColor: '#ffe2c4' },
+  node: { ks: 0.6, p: 160, ks2: 0.08, p2: 10, env: 0.28, wrap: 0.22, mottle: 0.04, trans: { color: '#b04a14', k: 0.12 } },
+  gaster: { ks: 0.75, p: 260, ks2: 0.08, p2: 12, env: 0.32, wrap: 0.2, mottle: 0.04, trans: { color: '#b8460e', k: 0.16 } },
+  limb: { ks: 0.45, p: 90, ks2: 0.06, p2: 8, env: 0.2, mottle: 0.04, trans: { color: '#c05a1c', k: 0.14 } },
   eye: { ks: 0.35, p: 80, ks2: 0.1, p2: 8, env: 0.3, wrap: 0.15, amb: 0.3, mottle: 0.1, specColor: '#f2eee6' },
 };
 
@@ -90,20 +93,22 @@ function rugae(R) {
       }
     }
     const w = P * sc.k;
-    return `<path d="${dk}" fill="none" stroke="${R.dark}" stroke-width="${fmt(w * 0.32)}" stroke-linejoin="round" opacity="${R.a ?? 0.55}"/>` +
-      `<path d="${lt}" fill="none" stroke="${R.light}" stroke-width="${fmt(w * 0.16)}" stroke-linejoin="round" opacity="${fmt((R.a ?? 0.55) * 0.55)}"/>`;
+    return `<path d="${dk}" fill="none" stroke="${R.dark}" stroke-width="${fmt(Math.max(0.5, w * 0.2))}" stroke-linejoin="round" stroke-linecap="round" opacity="${R.a ?? 0.55}"/>` +
+      `<path d="${lt}" fill="none" stroke="${R.light}" stroke-width="${fmt(Math.max(0.4, w * 0.1))}" stroke-linejoin="round" stroke-linecap="round" opacity="${fmt((R.a ?? 0.55) * 0.4)}"/>`;
   };
 }
 
 // sparse erect setae, pale gold (c013, c123: long on the head, the mesosoma and the nodes, shorter over the gaster)
-const setae = (n, len, lean = 0.25) => ({ n, len, w: 0.009, lean, a: 0.85, droop: 0.15, twist: 0.6, curl: 0.15, wave: 0.05, pile: 0, fleece: 0, locks: 0.1,
+const setae = (n, len, lean = 0.25) => ({ n, len, w: 0.008, lean, a: 0.6, droop: 0.15, twist: 0.6, curl: 0.15, wave: 0.05, pile: 0, fleece: 0, locks: 0.1,
   sheen: 0.35, sheenP: 30, color: () => C.hair });
 
 // ---------------------------------------------------------------------------------------------------------------
 // The trunk, in the living posture (c013, c115: the head level, its face a little down; the mesosoma's back sloping to the
 // propodeum; the petiole low, the postpetiole higher; the gaster level)
 // ---------------------------------------------------------------------------------------------------------------
-const M = MES.mesosome, H = MES.tete, PE = MES.petiole, PP = MES.postpetiole, GA = MES.gastre;
+const M = MES.mesosome, H = MES.tete, PE = MES.petiole, PP = MES.postpetiole, V = MES.vivant, GA = V.gastre;
+// the living worker is stouter than the dried specimens (mesures.json vivant): widths and heights brought to it
+const MW = V.mesosome_largeur_pronotum / M.largeur_pronotum, MH = V.mesosome_hauteur_pronotum / 0.6;
 const HEAD = { o: [1.47, 0, 0.5], pitch: -14 };
 
 function mesosoma(sc) {
@@ -111,16 +116,18 @@ function mesosoma(sc) {
   const W = M.longueur_Weber;
   // rows rear (propodeal lobes) to front (the neck): [t, x, zc, ry, rz]; the hump of the pronotum, the metanotal groove at
   // 0.62 mm from the front (mesures.json), the propodeum narrower
+  // half-widths of the living worker (mesures.json vivant: the promesonotum a broad oval, 0.78 of the head's width; the propodeum
+  // narrow), heights from the profiles (c141, c013: the pronotum convex and high, the propodeum lower)
+  const hp = V.mesosome_largeur_pronotum / 2 + 0.05, hz = V.mesosome_hauteur_pronotum / 2 + 0.03;
   const rows = [
-    [0, 0, 0.32, 0.05, 0.05], [0.06, 0.06, 0.34, 0.16, 0.2], [0.2, 0.28, 0.34, M.largeur_propodeum / 2, 0.22],
-    [0.42, 0.62, 0.35, M.largeur_propodeum / 2 + 0.02, 0.23], [0.58, 0.88, 0.36, M.largeur_mesonotum / 2 - 0.06, 0.25],
-    [0.72, 1.08, 0.38, M.largeur_mesonotum / 2, 0.3], [0.88, 1.32, 0.38, M.largeur_pronotum / 2, 0.3],
-    [0.96, 1.45, 0.4, 0.2, 0.18], [1, W, 0.42, 0.06, 0.06],
+    [0, 0, 0.32, 0.05, 0.05], [0.06, 0.06, 0.34, 0.17, 0.21], [0.2, 0.28, 0.35, M.largeur_propodeum / 2 + 0.02, 0.25],
+    [0.42, 0.62, 0.37, M.largeur_propodeum / 2 + 0.05, 0.27], [0.56, 0.86, 0.42, hp * 0.8, hz * 0.84],
+    [0.7, 1.06, 0.46, hp * 0.97, hz], [0.82, 1.24, 0.46, hp, hz * 0.98], [0.93, 1.4, 0.45, hp * 0.75, hz * 0.7], [1, W, 0.44, 0.08, 0.08],
   ];
   const prof = table(rows);
   drawBody(sc, {
-    name: 'mesosoma', frame: frame0([0, 0, 0]), color: C.meso, seed: 5, grid: G.mesosome, mat: MAT.sculpt,
-    profile: (t) => { const p = prof(t); const dip = 1 - 0.1 * Math.exp(-(((t - 0.58) / 0.05) ** 2)); return { ...p, rz: p.rz * dip }; },
+    name: 'mesosoma', frame: frame0([0, 0, 0]), depthAt: [0.75, 0, 0.4], color: C.meso, seed: 5, grid: G.mesosome, mat: MAT.sculpt,
+    profile: (t) => { const p = prof(t); const dip = 1 - 0.12 * Math.exp(-(((t - 0.5) / 0.05) ** 2)); return { ...p, rz: p.rz * dip }; },
     // laterally compressed, the back a little flat (c148 from above, c140 in profile)
     shape: (th) => [1, Math.sin(th) > 0 ? 1.0 : 0.92],
     paint: rugae({ period: MES.sculpture.mesosome.periode, mesh: true, dark: '#1e0904', light: '#f4c49a', a: 0.5, seed: 11, wobble: 0.45, t0: 0.08, t1: 0.94 }),
@@ -141,7 +148,7 @@ function waist(sc) {
   sc.part = 'petiole';
   const x0 = -0.04, L = PE.longueur;
   drawBody(sc, {
-    name: 'petiole', frame: frame0([x0 - L, 0, 0]), color: C.node, seed: 9, grid: G.noeud, mat: MAT.node,
+    name: 'petiole', frame: frame0([x0 - L, 0, 0]), depthAt: [x0 - L * 0.6, 0, 0.3], color: C.node, seed: 9, grid: G.noeud, mat: MAT.node,
     profile: table([[0, 0, 0.22, 0.05, 0.05], [0.12, 0.05, 0.24, 0.11, 0.13], [0.35, 0.16, 0.33, PE.largeur / 2, PE.hauteur / 2],
       [0.55, 0.27, 0.3, PE.largeur / 2 - 0.02, PE.hauteur / 2 - 0.05], [0.78, 0.38, 0.25, 0.08, 0.08], [1, L, 0.25, 0.06, 0.06]]),
     paint: rugae({ period: 0.03, dark: '#2a0e04', light: '#f6caa0', a: 0.3, seed: 13, t0: 0.55, t1: 0.95 }),
@@ -150,7 +157,7 @@ function waist(sc) {
   sc.part = 'postpetiole';
   const x1 = x0 - L;
   drawBody(sc, {
-    name: 'postpetiole', frame: frame0([x1 - PP.longueur, 0, 0]), color: C.node, seed: 10, grid: G.noeud, mat: MAT.node,
+    name: 'postpetiole', frame: frame0([x1 - PP.longueur, 0, 0]), depthAt: [x1 - PP.longueur * 0.5, 0, 0.3], color: C.node, seed: 10, grid: G.noeud, mat: MAT.node,
     profile: table([[0, 0, 0.26, 0.1, 0.1], [0.15, 0.04, 0.27, 0.15, 0.17], [0.5, 0.17, 0.3, PP.largeur / 2, PP.hauteur / 2],
       [0.85, 0.3, 0.3, 0.12, 0.15], [1, PP.longueur, 0.28, 0.06, 0.06]]),
     hair: setae(16, 0.14, 0.2),
@@ -163,14 +170,14 @@ function gaster(sc, xf) {
   const L = GA.longueur;
   // the first tergite covers most of it, three short segments to the tip (c123, c013); widest at a third from the front
   drawBody(sc, {
-    name: 'gaster', frame: pitched([xf - L + 0.04, 0, 0.3], 4), color: C.gaster, seed: 3, grid: G.gastre, mat: MAT.gaster,
+    name: 'gaster', frame: pitched([xf - L + 0.06, 0, 0.32], 6), color: C.gaster, seed: 3, grid: G.gastre, mat: MAT.gaster,
     profile: (t) => { const w = Math.pow(env(t, 0.55, 0.42) / 0.515, 0.62); return { x: L * t, zc: -0.05 * (1 - t), ry: (GA.largeur / 2) * w, rz: (GA.hauteur / 2) * w * (0.95 + 0.05 * t) }; },
     bands: [0.14, 0.24, 0.33].map((t) => ({ t0: t - 0.008, t1: t + 0.008, color: '#4a1c08' })),
     hair: setae(110, 0.13, 0.55),
   });
   // the sting, its tip out of the last segment
   sc.part = 'aiguillon';
-  const tip = [xf - L + 0.02, 0, 0.26];
+  const tip = [xf - L + 0.04, 0, 0.22];
   drawTube(sc, [add(tip, [0.06, 0, 0.01]), add(tip, [-0.05, 0, -0.01]), add(tip, [-0.12, 0, -0.03])], [0.025, 0.014, 0.004], { color: '#3a1608', gloss: 0.5, bias: -0.02 });
 }
 
@@ -180,23 +187,23 @@ function gaster(sc, xf) {
 // ---------------------------------------------------------------------------------------------------------------
 function head(sc, pose, frame) {
   sc.part = 'tete';
-  const F = pitched(HEAD.o, HEAD.pitch), CL = H.longueur_CL, hw = H.largeur_CW_sans_yeux / 2;
+  const F = pitched(HEAD.o, HEAD.pitch), CL = H.longueur_CL, hw = H.largeur_CW_sans_yeux / 2, hd = V.tete_hauteur / 2;
   const at = (x, y, z) => add(add(add(F.o, mul(F.ax, x)), mul(F.ay, y)), mul(F.az, z));
   drawBody(sc, {
     name: 'head', frame: F, color: C.head, seed: 7, grid: G.tete, mat: MAT.sculpt,
-    profile: table([[0, 0, 0.02, 0.12, 0.1], [0.05, 0.03, 0.02, hw * 0.78, 0.26], [0.2, 0.15, 0.02, hw * 0.96, 0.32], [0.5, 0.52, 0.0, hw, 0.33],
-      [0.75, 0.82, -0.02, hw * 0.9, 0.29], [0.92, 1.03, -0.05, hw * 0.72, 0.22], [1, CL, -0.07, hw * 0.45, 0.1]]),
+    profile: table([[0, 0, 0.02, 0.14, 0.12], [0.05, 0.03, 0.02, hw * 0.82, hd * 0.72], [0.2, 0.15, 0.02, hw * 0.98, hd * 0.95], [0.5, 0.52, 0.0, hw, hd],
+      [0.75, 0.82, -0.03, hw * 0.92, hd * 0.86], [0.92, 1.03, -0.07, hw * 0.74, hd * 0.62], [1, CL, -0.09, hw * 0.48, hd * 0.3]]),
     // the head a little flat on the face and the vertex, round on the sides
     shape: (th) => [1, Math.sin(th) > 0 ? 0.94 : 0.9],
-    paint: rugae({ period: MES.sculpture.tete_dessus.periode, dark: '#1a0703', light: '#f0bc90', a: 0.55, seed: 17, spread: 0.12, wobble: 0.22, t0: 0.05, t1: 0.9,
+    paint: rugae({ period: MES.sculpture.tete_dessus.periode, dark: '#1a0703', light: '#f0bc90', a: 0.55, seed: 17, spread: 0.12, wobble: 0.1, t0: 0.05, t1: 0.9,
       where: (t, th) => Math.sin(th) > -0.3 }),
     hair: setae(60, 0.15, 0.35),
   });
   // the clypeus: a raised glossy plate between the antennal sockets, its front margin over the mandibles (c124: it shines)
   sc.part = 'tete';
   drawBody(sc, {
-    name: 'clypeus', frame: pitched(at(0.98, 0, 0.13), HEAD.pitch - 25), color: C.head, seed: 8, mat: MAT.node,
-    profile: (t) => { const s = Math.sqrt(Math.max(0, 1 - (2 * t - 1) ** 2)); return { x: 0.16 * (2 * t - 1), zc: 0, ry: 0.2 * s, rz: 0.06 * s }; }, bias: 0.02,
+    name: 'clypeus', frame: pitched(at(0.98, 0, hd * 0.5), HEAD.pitch - 22), color: C.head, seed: 8, mat: MAT.node,
+    profile: (t) => { const s = Math.sqrt(Math.max(0, 1 - (2 * t - 1) ** 2)); return { x: 0.15 * (2 * t - 1), zc: 0, ry: 0.19 * s, rz: 0.04 * s }; }, bias: 0.02,
   });
   // frontal lobes over the antennal sockets
   for (const s of [1, -1]) drawBody(sc, {
@@ -207,19 +214,26 @@ function head(sc, pose, frame) {
   const E = H.oeil;
   for (const s of [1, -1]) {
     sc.part = s > 0 ? 'oeil-g' : 'oeil-d';
-    const c = at(CL * E.centre_depuis_occiput_CL, (hw - 0.04) * s, 0.06);
+    const c = at(CL * E.centre_depuis_occiput_CL, (hw - 0.065) * s, 0.06);
     drawBody(sc, {
       name: 'eye', frame: { o: sub(c, mul(F.ax, E.grand_axe / 2)), ax: F.ax, ay: F.ay, az: F.az }, color: C.eye, seed: 21 + s, mat: MAT.eye,
       profile: (t) => { const q = Math.sqrt(Math.max(0, 1 - (2 * t - 1) ** 2)); return { x: E.grand_axe * t, zc: 0, ry: 0.07 * q, rz: (E.petit_axe / 2) * q }; },
       facets: E.facette, bias: 0.03,
     });
   }
-  // mandibles: closed, flat triangular blades under the clypeus, their tips crossing (c082, c124)
+  // mandibles: closed, flat triangular blades under the clypeus, their apical teeth crossing at the midline (c082, c124): each a flat
+  // body from its outer base to its apex, widest over the masticatory margin
   for (const s of [1, -1]) {
     sc.part = s > 0 ? 'mandibule-g' : 'mandibule-d';
-    const b0 = at(CL - 0.1, 0.25 * s, -0.12), tip = at(CL + H.mandibules_au_dela_du_clypeus, -0.03 * s, -0.16);
-    drawBody(sc, segment('mandible', b0, tip, [0.1, 0.085, 0.02], { color: C.mandible, mat: MAT.node, seed: 31 + s, up: F.az, flat: 0.38, wide: 1, bias: 0.02,
-      paint: rugae({ period: 0.025, dark: '#2a0e04', light: '#f6caa0', a: 0.35, seed: 33 + s }) }));
+    const b0 = at(CL - 0.12, 0.27 * s, -0.08), tip = at(CL + H.mandibules_au_dela_du_clypeus, -0.04 * s, -0.12);
+    const ax = norm(sub(tip, b0)), ay = norm(cross(F.az, ax)), az = cross(ax, ay), L = Math.hypot(...sub(tip, b0));
+    drawBody(sc, {
+      name: 'mandible', frame: { o: b0, ax, ay, az }, color: C.mandible, seed: 31 + s, mat: MAT.node, bias: 0.02,
+      profile: table([[0, 0, 0, 0.05, 0.04], [0.2, L * 0.2, 0, 0.085, 0.045], [0.6, L * 0.6, 0, 0.075, 0.035], [0.88, L * 0.88, 0, 0.04, 0.022], [1, L, 0, 0.008, 0.008]]),
+      // the blade's inner margin forward, toward the other mandible: shifted toward the midline
+      shape: (th) => [Math.cos(th) * s < 0 ? 1.25 : 0.7, 1],
+      paint: rugae({ period: 0.025, dark: '#2a0e04', light: '#f6caa0', a: 0.3, seed: 33 + s }),
+    });
   }
   antennae(sc, at, F, pose, frame);
 }
@@ -236,17 +250,17 @@ function antennae(sc, at, F, pose, frame) {
     if (pose === 'marche') swing = 0.35 * Math.sin(2 * Math.PI * ph);
     if (pose === 'palpe') { dip = 0.5 * Math.max(0, Math.sin(2 * Math.PI * ph)); swing = 0.15 * Math.sin(2 * Math.PI * ph + 1); }
     // the scape: out, a little back and up from the socket (c124, c013)
-    const sd = norm([0.35 + 0.25 * swing, (0.85 - 0.15 * swing) * s, 0.45]);
+    const sd = norm([-0.2 + 0.25 * swing, (0.85 - 0.15 * swing) * s, 0.42]);
     const elbow = add(base, mul(sd, A.scape));
     // the funiculus: forward, out, then down toward the ground ahead
-    let d = norm([0.85, (0.35 + 0.4 * swing) * s, -0.25 - 0.55 * dip]);
-    const pts = [base, add(base, mul(sd, A.scape * 0.5)), elbow], rad = [0.04, 0.042, 0.035];
+    let d = norm([0.9, (0.2 + 0.4 * swing) * s, -0.2 - 0.55 * dip]);
+    const pts = [base, add(base, mul(sd, A.scape * 0.5)), elbow], rad = [0.045, 0.055, 0.048];
     const segL = [];
     for (let i = 0; i < 11; i++) segL.push(i < 8 ? (A.funicule - A.massue_3_articles) / 8 : A.massue_3_articles / 3);
     let p = elbow;
     for (let i = 0; i < 11; i++) {
-      p = add(p, mul(d, segL[i] * 0.5)); pts.push(p); rad.push(i < 8 ? 0.028 + 0.002 * i : 0.045 + 0.01 * (i - 8));
-      p = add(p, mul(d, segL[i] * 0.5)); pts.push(p); rad.push(i < 8 ? 0.024 + 0.002 * i : (i === 10 ? 0.025 : 0.042 + 0.01 * (i - 8)));
+      p = add(p, mul(d, segL[i] * 0.5)); pts.push(p); rad.push(i < 8 ? 0.036 + 0.002 * i : 0.058 + 0.012 * (i - 8));
+      p = add(p, mul(d, segL[i] * 0.5)); pts.push(p); rad.push(i < 8 ? 0.031 + 0.002 * i : (i === 10 ? 0.03 : 0.054 + 0.012 * (i - 8)));
       d = norm(add(d, [0.0, 0.01 * s, -0.05 - 0.04 * dip]));
     }
     drawTube(sc, pts, rad, { color: C.legHi, gloss: 0.35, bias: 0.02 });
@@ -259,9 +273,10 @@ function antennae(sc, at, F, pose, frame) {
 // ---------------------------------------------------------------------------------------------------------------
 const GROUND = -0.5;
 const LEGS = {
-  front: { base: [1.28, 0.14, 0.02], foot: [2.45, 1.45], tdir: [0.75, 0.45, -0.5], pole: [0.2, 0.8, 1] },
-  mid: { base: [0.78, 0.2, 0.02], foot: [0.85, 1.85], tdir: [0.2, 0.85, -0.5], pole: [0, 0.8, 1] },
-  hind: { base: [0.3, 0.2, 0.06], foot: [-1.05, 1.75], tdir: [-0.7, 0.55, -0.45], pole: [-0.2, 0.8, 1] },
+  // the coxae under the sides of the mesosoma; the knees out and a little up, about level with the back (c013, c115, c123)
+  front: { base: [1.3, 0.22, -0.02], foot: [2.45, 1.45], tdir: [0.75, 0.45, -0.5], pole: [0.25, 1, 0.45] },
+  mid: { base: [0.8, 0.27, -0.02], foot: [0.85, 1.85], tdir: [0.2, 0.85, -0.5], pole: [0, 1, 0.45] },
+  hind: { base: [0.34, 0.26, 0.02], foot: [-1.05, 1.75], tdir: [-0.7, 0.55, -0.45], pole: [-0.25, 1, 0.45] },
 };
 const STRIDE = 0.9, LIFT = 0.28;
 function legs(sc, pose, frame) {
@@ -276,11 +291,11 @@ function legs(sc, pose, frame) {
     const ch = legChain(L, s, ankle, D.tdir, D.pole, [0.36, 0.16, 0.14, 0.12, 0.22], 0.07);
     const r = (v) => v;
     const A = {
-      coxa: { from: [0.04, -0.05, 0.12], r: [0.1, 0.11, 0.08], c: C.leg },
-      fem: { r: [0.05, 0.07, 0.04], c: C.leg, flat: 0.8, hair: fringe(14, 0.07, C.hair, 0.5, 0.007) },
-      tib: { r: [0.035, 0.04, 0.042], c: C.legHi, flat: 0.9, hair: fringe(16, 0.07, C.hair, 0.4, 0.007) },
-      bas: { r: [r(0.03), 0.028, 0.026], c: C.legHi, hair: fringe(10, 0.05, C.hair, 0.3, 0.006) },
-      tar: { r: 0.024, c: C.legHi }, claw: 0.05,
+      coxa: { from: k === 'front' ? [0.1, -0.12, 0.24] : [0.02, -0.12, 0.2], r: k === 'front' ? [0.13, 0.15, 0.1] : [0.12, 0.13, 0.09], c: C.leg },
+      fem: { r: [0.06, 0.09, 0.05], c: C.leg, flat: 0.8, hair: fringe(14, 0.07, C.hair, 0.5, 0.007) },
+      tib: { r: [0.04, 0.05, 0.055], c: C.legHi, flat: 0.9, hair: fringe(16, 0.07, C.hair, 0.4, 0.007) },
+      bas: { r: [r(0.036), 0.033, 0.03], c: C.legHi, hair: fringe(10, 0.05, C.hair, 0.3, 0.006) },
+      tar: { r: 0.028, c: C.legHi }, claw: 0.05,
     };
     articleLeg(sc, drawBody, drawTube, ch.pts, ch.dir, ch.tip, A, s, MAT.limb);
     // the pectinate spur at the end of the mid and hind tibiae

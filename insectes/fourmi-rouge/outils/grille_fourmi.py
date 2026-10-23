@@ -27,11 +27,17 @@ def hexof(lab):
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument('photo'); ap.add_argument('frame'); ap.add_argument('out')
     ap.add_argument('--masque'); ap.add_argument('--ventre'); ap.add_argument('--nv', type=int, default=72); ap.add_argument('--nu', type=int, default=18)
-    ap.add_argument('--controle'); ap.add_argument('--falloff', type=float, default=0.33)
+    ap.add_argument('--controle'); ap.add_argument('--clair', action='store_true'); ap.add_argument('--falloff', type=float, default=0.33)
     o = ap.parse_args()
     q = o.frame.split(';'); pts = np.array([list(map(float, a.split(','))) for a in q[:-1]]); W = float(q[-1])
     rgb = cv2.imread(o.photo)[..., ::-1].copy(); lab = lab_of(cv2.GaussianBlur(rgb, (0, 0), 0.8))
     if o.masque: gm = cv2.imread(o.masque, 0) > 127
+    elif o.clair:
+        # a pale ground (paper, tissue): the ant is what is coloured or dark, holes (highlights) filled
+        from scipy import ndimage
+        Cc = np.hypot(lab[..., 1], lab[..., 2]); gm = (Cc > 14) | (lab[..., 0] < 55)
+        gm = cv2.morphologyEx(gm.astype(np.uint8), cv2.MORPH_OPEN, np.ones((5, 5), np.uint8)) > 0
+        gm = ndimage.binary_fill_holes(gm)
     else:
         sys.path.insert(0, os.path.join(HERE, '..', '..', 'outils')); from aile import ground
         gm = ground(rgb, 40)
@@ -59,7 +65,8 @@ def main():
         sel = inside[i]
         if sel.sum() < 5: continue
         l70 = np.percentile(Lr[i][sel], 70); cmed = np.median(Cr[i][sel])
-        spec[i] = sel & (Lr[i] > l70) & (Cr[i] < cmed * 0.8)
+        lmed = np.median(Lr[i][sel])
+        spec[i] = sel & (((Lr[i] > l70) & (Cr[i] < cmed * 0.8)) | (Lr[i] > lmed + 12) | (Cr[i] < cmed * 0.5))
     keep = inside & ~spec
     G = np.zeros((o.nv, o.nu, 3)); core = np.zeros((o.nv, 3))
     for gi in range(o.nv):

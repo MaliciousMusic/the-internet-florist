@@ -22,7 +22,11 @@ for i, p in enumerate(cfg['pairs']):
     f = ','.join(str(v) for v in p['focus'])
     r0 = subprocess.run(['node', os.path.join(HERE, 'gros.mjs'), sp, out, str(p['k']), str(p['w']), str(p['h']), f, p['vue'], str(p.get('detail', 1))], capture_output=True, text=True)
     if r0.returncode: sys.exit(r0.stderr[-1500:])
-    ph = Image.open(os.path.join(ref, p['photo'])).convert('RGB').crop(tuple(p['box']))
+    ph = Image.open(os.path.join(ref, p['photo'])).convert('RGB')
+    # rot (degrees, counter-clockwise): the photo turned about its box's centre first, so the insect lies along the render's axis
+    if p.get('rot'): b = p['box']; ph = ph.rotate(p['rot'], resample=Image.BICUBIC, center=((b[0] + b[2]) / 2, (b[1] + b[3]) / 2), fillcolor='#efe9df')
+    # a box past the photo's edge is filled with the beige ground, not black
+    ph = ImageOps.expand(ph, border=800, fill='#efe9df').crop(tuple(v + 800 for v in p['box']))
     if p.get('flip'): ph = ImageOps.mirror(ph)
     r = Image.open(out).convert('RGB')
     ph = ph.resize((round(ph.width * H / ph.height), H), Image.LANCZOS)
