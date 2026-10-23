@@ -1,7 +1,7 @@
 // The membranous wings of the bumblebee, drawn from their measured records (outils/membrane.py plat on the spread specimen c115):
 // the outline and the zones of the membrane as smooth paths, each a colour over its measured opacity (the pair that best passes
-// the light the membrane lets through over any ground); the veins as measured strokes (width, colour turned into a colour over an
-// opacity against the plate they were read on); the papillae of the distal membrane as a small seamless tile of dark points, seen in
+// the light the membrane lets through over any ground); the veins as measured strokes (width, and the opacity of their dark cuticle
+// that gives the colour read on the plate); the papillae of the distal membrane as a small seamless tile of dark points, seen in
 // close-ups only. Over the measured paint, the light of the moment: the sky mirrored at grazing angles (Fresnel), thin-film colours,
 // the lamp's glint. Nothing of the photograph is kept: contours, colours and counts only.
 // Wing frame: s outward from the hinge, q toward the head (the costa), mm. The point (s, q) is o + s e1 + q e2.
@@ -69,6 +69,18 @@ function dotTile(n, T, dd, seed) {
   return d;
 }
 
+// A vein: a fine tube of its own brown (CORE: the darkest quarter of the veins on the flat wings of c115, L* 38 a 10 b 11) over
+// the opacity that gives, over the plate's light f, the colour c read there (least squares over the channels), lowered by VA, its
+// width capped at WMAX (the 90th centile of the widths at half depth along the veins of the photo). Fitted as a filter the veins
+// went to saturated reds glowing over the black body; the cap and VA bring the median depth along the veins to the photo's.
+const CORE = '#6f5349', VA = 0.8, WMAX = 0.095;
+function veinOver(c, f) {
+  const V = lin(c), F = lin(f), K = lin(CORE);
+  let num = 0, den = 0;
+  for (let i = 0; i < 3; i++) { num += (F[i] - V[i]) * (F[i] - K[i]); den += (F[i] - K[i]) ** 2; }
+  return { a: clamp(VA * num / Math.max(1e-6, den), 0, 0.9), c: CORE };
+}
+
 // One wing's record prepared once: its paths and colours.
 export function membrane(name, opt = {}) {
   const R = load(name);
@@ -86,9 +98,11 @@ export function membrane(name, opt = {}) {
   const outline = smoothClosed(S(R.contour));
   const CT = S(R.contour), xs = CT.map((p) => p[0]), ys = CT.map((p) => p[1]);
   const box = [Math.min(...xs), Math.min(...ys), Math.max(...xs), Math.max(...ys)];
-  const zones = R.zones.map((z) => ({ c: z.c, a: z.a, d: z.poly ? z.poly.map((P) => smoothClosed(S(P))).join('') : outline }));
+  // the zones' opacity halved: rendered flat over the plate, the measured pairs left the membrane at L* 89 against the photo's 94.6
+  // (the fit counts the dark veins and papillae inside each zone); halved, 93.4 and 91.8 against 94.6 and 93.4
+  const zones = R.zones.map((z) => ({ c: z.c, a: z.a * 0.5, d: z.poly ? z.poly.map((P) => smoothClosed(S(P))).join('') : outline }));
   // veins grouped again by their colour over opacity (a few strokes of one width and colour each)
-  const veins = R.nervures.map((V) => ({ w: V.largeur * k, ...overPlate(V.c, R.fond), d: V.traits.map((P) => 'M' + S(P).map((p) => pair(p[0], p[1])).join('L')).join('') }));
+  const veins = R.nervures.map((V) => ({ w: Math.min(V.largeur, WMAX) * k, ...veinOver(V.c, R.fond), d: V.traits.map((P) => 'M' + S(P).map((p) => pair(p[0], p[1])).join('L')).join('') }));
   const pap = R.papilles && { ...R.papilles, d: R.papilles.poly.map((P) => smoothClosed(S(P))).join(''), ...overPlate(R.papilles.c, R.fond) };
   return { name, R, k, outline, box, zones, veins, pap, length: Math.max(...xs), turn: (ang * 180) / Math.PI, seed: opt.seed ?? 7 };
 }

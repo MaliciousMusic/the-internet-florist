@@ -19,7 +19,7 @@ const G_THX = grid('thorax'), G_ABD = grid('abdomen');   // plat_corps.py + gril
 const C = {
   black: '#2a2a2e', blackLo: '#1c1b1d', cuticle: '#151314', belly: '#1e1b1a',
   eye: '#2b231c', clypeus: '#141112', mandible: '#2a1810', mandibleTip: '#5a2c14',
-  leg: '#171413', tibia: '#100d0c', basitarsus: '#2a1a14', tarsus: '#5a3524', tarsusHair: '#8a5a3a',
+  leg: '#171413', tibia: '#100d0c', basitarsus: '#2a1a14', tarsus: '#3e2820', tarsusHair: '#8a5a3a',
   antenna: '#151110', tongue: '#7a4a24', galea: '#3a2416',
 };
 const pick = (R, a) => a[Math.floor(R() * a.length) % a.length];
@@ -126,12 +126,12 @@ function head(sc, pose) {
     });
     // mandibles: dark, toothed at their reddish tips, crossing under the labrum (c082)
     sc.part = s > 0 ? 'mandibule-g' : 'mandibule-d';
-    const m0 = onHead(0.93, Math.PI / 2 + 0.95 * s, 0.95);
+    const m0 = onHead(0.93, Math.PI / 2 - 0.95 * s, 0.95);
     const m1 = add(m0, add(mul(B.headAx, 0.45), [0.12, -0.42 * s, 0])), m2 = add(m1, [0.05, -0.32 * s, -0.08]);
     drawTube(sc, [m0, m1, m2], [0.2, 0.15, 0.07], { color: C.mandible, gloss: 0.6, glossColor: '#c08a60', bias: 0.07 });
     // antennae: elbowed, the scape up and forward from the middle of the face, the flagellum of ten articles curving out (c082, c120)
     sc.part = s > 0 ? 'antenne-g' : 'antenne-d';
-    const a0 = onHead(0.42, Math.PI / 2 + 0.42 * s, 0.98);
+    const a0 = onHead(0.42, Math.PI / 2 - 0.42 * s, 0.98);
     const fly = pose === 'vol';
     const scape = add(a0, mul(norm(fly ? [0.7, 0.25 * s, 0.75] : [0.45, 0.28 * s, 0.85]), 1.45));
     const pts = [a0, add(a0, mul(sub(scape, a0), 0.5)), scape];
@@ -215,12 +215,12 @@ const ARTICLES = {
   hind: { coxa: { from: [0.05, -0.3, 0.4], r: [0.32, 0.34, 0.26], c: C.leg, hair: fringe(70, 0.6, blackHair, 0) },
     fem: { r: [0.22, 0.3, 0.2], c: C.leg, hair: fringe(140, 0.7, blackHair, 0.3, 0.02) },
     // the corbicula: smooth and glossy on its face, the long hairs only along its two edges (fringe edge 0.82), curving over it
-    tib: { r: [0.15, 0.4, 0.56], c: C.tibia, flat: 0.32, mat: { ...LEGMAT, ks: 0.75, p: 110, env: 0.5 }, hair: fringe(220, 1.0, blackHair, 0.84, 0.022) },
+    tib: { r: [0.15, 0.4, 0.56], c: C.tibia, flat: 0.32, mat: { ...LEGMAT, ks: 0.6, p: 110, env: 0.22 }, hair: fringe(220, 1.0, blackHair, 0.84, 0.022) },
     bas: { r: [0.36, 0.36, 0.27], c: C.basitarsus, flat: 0.38, hair: fringe(120, 0.25, '#6a4430', 0.3) }, tar: { r: 0.085, c: C.tarsus, hair: fringe(6, 0.14, C.tarsusHair, 0) }, claw: 0.13 },
 };
 
 function legs(sc, pose, ph = 0) {
-  const G = -4.4;
+  const G = -4.0;
   const SET = {
     // [foot target (standing), pole of the knee]: the feet wide of the body, the knees out and up (c126, c060, c024)
     front: [[5.2, 2.2], [0.3, 1, 0.8]],
@@ -285,13 +285,14 @@ export function strokeAxes(s, ph) {
 // (DECISIONS: two or three drawings that loop, no blur).
 export const FLIGHT = [[0.06, 0.18], [0.36, 0.48], [0.66, 0.8]];
 
-function wings(sc, pose, frame) {
+function wings(sc, pose, frame, phases) {
   for (const s of [1, -1]) {
     const lr = s > 0 ? 'g' : 'd';
     const fo = [B.hingeFore[0], B.hingeFore[1] * s, B.hingeFore[2]], ho = [B.hingeHind[0], B.hingeHind[1] * s, B.hingeHind[2]];
     if (pose === 'vol') {
-      FLIGHT[frame % FLIGHT.length].forEach((ph, i) => {
-        const al = i === 0 ? 0.85 : 0.45;
+      // opts.phases: chosen phases of the stroke, each one set at full opacity (the animation sheet's true cycle)
+      (phases ?? FLIGHT[frame % FLIGHT.length]).forEach((ph, i) => {
+        const al = phases ? 1 : i === 0 ? 0.85 : 0.45;
         const f = strokeAxes(s, ph), h = strokeAxes(s, ph - 0.02);
         sc.part = `aile-arriere-${lr}`; drawMembrane(sc, HIND, ho, h.e1, h.e2, { alpha: al, bias: -0.01 });
         sc.part = `aile-avant-${lr}`; drawMembrane(sc, FORE, fo, f.e1, f.e2, { alpha: al });
@@ -308,7 +309,7 @@ function wings(sc, pose, frame) {
 
 // ---- Assembly -----------------------------------------------------------------------------------------------------------------
 export function bumblebee(az, el, opts = {}) {
-  const { size = 512, k = 20, pose = 'pose', frame = 0, bg = null, detail = 1, idp = '', light, wing = true } = opts;
+  const { size = 512, k = 20, pose = 'pose', frame = 0, bg = null, detail = 1, idp = '', light, wing = true, phases } = opts;
   const cam = camera(az, el, light);
   const sc = new Scene(cam, k, size / 2, size / 2, 9, idp);
   sc.detail = detail;
@@ -316,7 +317,7 @@ export function bumblebee(az, el, opts = {}) {
   // view of it: the scene is built level and seen pitched
   head(sc, pose); thorax(sc); abdomen(sc, pose);
   legs(sc, pose, pose === 'marche' ? frame : 0);
-  if (wing) wings(sc, pose, frame);
+  if (wing) wings(sc, pose, frame, phases);
   sc.part = '';
   return sc.svg(size, size, bg);
 }
