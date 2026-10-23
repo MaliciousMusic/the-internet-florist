@@ -198,3 +198,43 @@ Planche : `planche-etape4.jpg`, produite par `rendus4.sh`. Sans en haut, avec en
 
 - **Les coefficients 0,82 et 1,15** sont une proposition.
 - **Les 8 bouquets hors proportion** : c'est au porteur de dire s'il faut leur proposer un autre vase, comme pour l'étape 3.
+
+## Étape 5 : le socle des pétales tombés (avec le chantier D des lys)
+
+### Interface (`app/z7-plan.js`)
+
+- **`vpSocle(v)`** donne ce que le vase offre à un pétale qui tombe :
+  - son pied (`rFoot`) ;
+  - son point le plus large (`rWide`) ;
+  - ses anneaux de pose (`rings` : lèvre, épaule, glissade, sol) ;
+  - le facteur de profondeur du sol (`KZ` = 0,16, comme z1).
+- **`vpRestOn(v, X, Z, len)`** donne où un pétale de longueur `len`, lâché au-dessus de (X, Z), vient se poser : `{X, Z, h, kind}`.
+  - **Lèvre ou épaule douce** (pente sous 35°) : il y reste si la partie douce fait au moins 0,4 fois sa longueur.
+  - **Sinon** : il glisse sur le corps et tombe au sol juste au-delà du point le plus large.
+  - **Sol sous une panse qui déborde du pied** : jamais atteint en tombant. Le plus près qu'un pétale repose au sol est `rWide`.
+  - **`in`** : il tombe dans la bouche, parmi les tiges.
+
+### Constat
+
+La règle actuelle de `lifeScatter` (z1, 9c6705d) pose chaque pétale au sol, à partir du rayon du pied + 0,45 de pétale + 4. Planche
+`planche-etape5.svg` (`node vases5/plan-vase/planche5.js`) : 40 pétales de 4,6 cm lâchés sous la couronne, avec la règle actuelle
+simplifiée à sa distance minimale.
+
+| Vase | Pied → panse (rayon) | Règle actuelle : au sol sous la panse | Avec le plan |
+|---|---|---|---|
+| bronze-carpe | 5,6 → 10,3 cm | 14 / 40 | 39 au sol au-delà de la panse, 1 dans la bouche |
+| verre-danseuses | 6,6 → 10,1 cm | 2 / 40 | 38 au sol, 2 dans la bouche |
+| gres-chauve-souris | 4,2 → 11,3 cm | 35 / 40 | 18 au sol, 20 sur l'épaule plate autour de la bouche, 2 dans la bouche |
+| cylindre-verre-clair | 8,2 → 8,5 cm | 0 / 40 | 39 au sol, 1 dans la bouche |
+| soliflore-balustre-noir | 5,7 → 5,8 cm (le pied est le plus large) | 0 / 40 | 40 au sol |
+| pot-agate-rose | 2,6 → 6,7 cm | 9 / 40 | 38 au sol, 2 dans la bouche |
+
+### Intégration dans z1 (chantier D) : en attente de la coordination des lys
+
+Proposition envoyée à la session de coordination : deux lignes neuves dans `lifeScatter`, sans réécrire les longues lignes.
+- `need` au moins égal à `rWide + 0,3 len` ;
+- `vpRestOn` sur le meilleur emplacement retenu, en dessinant à `y = FL − h + Z·KZ` quand le pétale repose sur le vase.
+
+Réponse de la coordination (2026-10-23) : D pose les crochets dans z1, la coordination fusionne dans ch/lis-oriental après avoir montré la planche au porteur ; `vpSocle` et `vpRestOn` rendent null si `CMP_V < 3`. Questions posées :
+- Qui modifie z1 ?
+- Le porteur avait-il validé des pétales sous la panse ?

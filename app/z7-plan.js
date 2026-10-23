@@ -155,3 +155,20 @@ function vpAspK(){return VPL&&VPL.pl.env&&!VP_NOASP?VP_ASP[VPL.pl.env.cls]||1:1}
 function vpProp(c,vid){const v=typeof VZ!=='undefined'&&VZ[vid],pl=v&&vPlan(v);if(!pl||!c||!c.out||!c.BP)return null;let top=c.BP[1];
   for(const o of c.out){if(o.kind==='head')top=Math.min(top,o.y-(o.rr||20)*.8);else if(o.spine){const e=o.spine[o.spine.length-1];top=Math.min(top,o.y+e[1])}}
   const big=pl.env.big,r=(c.BP[1]-top)/big;return{r,h:c.BP[1]-top,big,cls:r<VP_PROP[0]?'petit':r>VP_PROP[2]?'grand':'juste'}}
+/* ---------- the plinth of fallen petals (step 5, with the lily chantier D: z1 lifeScatter) ----------
+   vpSocle(v): what the vessel offers a falling petal, from vpLand: its foot, its widest point (rWide: a petal let go above the vessel meets
+   its body first, so the ground under a belly that overhangs its foot is never reached by a fall: the nearest a petal lies on the ground),
+   its rings [rho, kind, y, rho at rest, slope] and the ground's depth factor KZ (as z1). vpRestOn(v, X, Z, len): where a petal of length len
+   let go above (X, Z) (units from the axis, Z toward the eye) comes to rest: {X, Z, h, kind}, h its height above the ground (0 on it).
+   On the lip or on a shoulder it stays only if the gentle stretch it falls on is at least .4 of its length; else it slides, round the
+   body, down to the ground just past the widest point. 'in': it falls into the mouth, among the stems (the caller keeps its own place) */
+function vpSocle(v){if(typeof CMP_V!=='undefined'&&CMP_V<3)return null;/* composer version 3 only: a bouquet composed before keeps its petals */
+  const pl=v&&v.prof&&!['hand','wrap'].includes(v.kind)?vPlan(v):null;if(!pl)return null;const L=pl.land;return{rFoot:L.rFoot,rWide:L.rWide,rings:L.rings,KZ:L.KZ}}
+function vpRestOn(v,X,Z,len){const so=vpSocle(v);if(!so)return null;const rho=Math.hypot(X,Z),R=so.rings,ux=rho>1e-6?X/rho:1,uz=rho>1e-6?Z/rho:0,
+    out=r=>({X:ux*r,Z:uz*r,h:0,kind:'ground'});
+  if(rho>=so.rWide+2)return{X,Z,h:0,kind:'ground'};let i=R.findIndex(r=>r[0]>=rho);if(i<0)return out(so.rWide+.3*len);const q=R[i];
+  if(q[1]==='in')return{X,Z,h:0,kind:'in'};
+  if(q[1]==='lip'||q[1]==='shoulder'){let a=i,b=i;while(a>0&&R[a-1][1]===q[1])a--;while(b<R.length-1&&R[b+1][1]===q[1])b++;
+    if(R[b][0]-R[a][0]>=.4*len){const r=q[3];return{X:ux*r,Z:uz*r,h:q[2],kind:q[1]}}}
+  if(q[1]==='slide'&&q[2]>1){const r=q[3];return{X:ux*r,Z:uz*r,h:q[2],kind:'shoulder'}}
+  return out(so.rWide+.3*len)}
