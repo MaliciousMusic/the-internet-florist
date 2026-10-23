@@ -242,3 +242,23 @@ Réponse de la coordination (2026-10-23) : D pose les crochets dans z1, la coord
 **Décision du porteur (2026-10-23)** : « un pétale tombé ne se pose jamais sous la panse, il va au-delà du point le plus large ou reste
 sur l'épaule. Applique le plan du vase dans la chute des pétales. » Elle est transmise à la coordination des lys pour le chantier D, qui
 pose les deux crochets dans `lifeScatter`.
+
+### Vérification sur les vrais pétales du chantier D (d7cea77, ch/lys-compo, lecture seule)
+
+D a posé les deux crochets derrière `LIFE_PET_VER` 3. Écart avec ma proposition : `vpRestOn` est appelé sur le point de lâcher brut, pas
+sur la place finale.
+
+Rendus au fané (`life=3`, graine 23) dans une copie temporaire de d7cea77 : v2 (`?petv=2`) contre v3. Positions relevées par
+`lifeLandOf()` :
+
+| Vase (modèle) | Pétales | Au sol sous la panse : v2 → v3 | Distance mini à l'axe : v2 → v3 | Sur le vase (v3) |
+|---|---|---|---|---|
+| bronze-carpe (M33) | 9 | 2 → 0 | 57 → 78 | 0 |
+| verre-danseuses (M18) | 13 | 1 → 0 | 59 → 75 | 0 |
+| gres-chauve-souris (M18) | 13 | 4 → 0 | 47 → 85 | 0 |
+| cylindre-verre-clair (M18) | 14 | 0 → 0 | 62 → 62 | 2, sur la lèvre |
+| soliflore-balustre-noir (M13) | 8 | 0 → 0 | 47 → 47 | 0 |
+
+Planche : `planche-etape5-fane.jpg`.
+
+Le modèle 68 ne perd aucun pétale au fané : la chauve-souris a donc été rendue avec le modèle 18.
