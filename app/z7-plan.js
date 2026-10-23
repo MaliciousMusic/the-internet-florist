@@ -8,7 +8,8 @@
 const VP_PROP=[1,2.2,3.5],VP_WALL={glass:2.6,metal:3.2,gloss:4,satin:4,matte:4.5,stone:5,wood:5},VP_BASE={glass:7,metal:4},VP_PACK=.6,VP_SLIP=35,VP_STEM=2,VP_D=Math.PI/180;
 /* a vessel's plan, cached on it while its size stays the same (a bench may scale a vessel in place with vScaleBy, ?vs=: the plan follows) */
 function vPlan(v){if(!v||!v.prof)return null;const key=`${v.h}|${v.mo}|${v.vs||1}|${v.prof.length}`;if(v._plan&&v._planKey===key)return v._plan;v._planKey=key;const o=v.plan||(typeof VPLAN_OV!=='undefined'&&VPLAN_OV[v.base||v.id])||{},P=v.prof,sb=v.svgb&&typeof SVGB!=='undefined'?SVGB[v.svgb]:null,k=v.vs||1,
-    wall=o.wall??VP_WALL[v.mat]??4,yM=v.mh!=null?v.mh:v.h,mx=v.mx||0,lw=Math.max(1.1,Math.min(v.lipw||3,(v.mo||20)*.14)),rM=Math.max(2,(v.mo||20)-lw);
+    wall=o.wall??VP_WALL[v.mat]??4,yM=o.mouth?o.mouth[0]*k:v.mh!=null?v.mh:v.h,mx=o.mouth?o.mouth[2]*k:v.mx||0,lw=Math.max(1.1,Math.min(v.lipw||3,(v.mo||20)*.14)),
+    rM=o.mouth?o.mouth[1]*k:Math.max(2,(v.mo||20)-lw);/* (a mouth the owner traced: o.mouth [height, inner half width, centre x], scale 1) */
   /* the bottom: above a solid foot (a footed coupe or a soliflore's pedestal holds water only above its waist), or the measured one */
   const rMax=Math.max(...P.map(p=>p[1]));let hf=0;for(const p of P)if(p[0]<yM*.6&&p[1]<rMax*.45)hf=Math.max(hf,p[0]);
   const yF=o.yF!=null?o.yF*(o.cav?k:1):(sb&&sb.cavb?(FL-sb.cavb)*k:hf+(VP_BASE[v.mat]??5));

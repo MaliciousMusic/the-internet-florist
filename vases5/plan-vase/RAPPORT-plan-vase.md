@@ -355,3 +355,26 @@ Résultat dans `porteur/traces.json`. Ces tracés passent avant le modèle 3D et
 - **Colonne** : la largeur tracée, centrée et droite (demi-largeur 127,7 à l'échelle 1). Sa bouche ronde reste sa section la plus étroite.
 
 Après correction : 9 vases mesurés ou tracés, 22 à vérifier, 5 hors du plan, 37 sans remarque. Seule la jardinière reste supposée.
+
+### Deuxième tracé du porteur : bouches et cavités du lys, de la jardinière et de la tête
+
+Sur la planche corrigée, le porteur a tracé la vraie ouverture en rouge, sur tout le haut du vase, et les parois de la cavité en bleu
+(25, 113, 194), qui se distingue du bleu de la planche. Lecture dans `porteur/traces2.json`.
+
+**Bouches** (`mouth` : hauteur, demi-largeur intérieure, centre ; échelle 1). Le plan les utilise pour la bouche, et le compositeur aussi,
+dans la version 3 seulement : `z7-plan-mesures.js` réécrit `mo`, `mh` et `mx` du vase, et un bouquet composé avant garde son dessin.
+- lys : Ø 11,2 → 16,5 cm ;
+- tête : Ø 6,8 → 9,5 cm ;
+- jardinière : Ø 31,1 cm supposé → 28,9 cm tracé.
+
+**Cavités**.
+- **Lys et jardinière** : la cavité entière vient du trait bleu. La jardinière n'est plus supposée : c'est un bol de 24,2 cm qui s'élargit
+  sous la lèvre (gorge Ø 26 cm).
+- **Tête** : le fond est tracé dans le cou (3,2 cm), et la cavité tracée la première fois est gardée au-dessus.
+
+**Résultat**.
+- Les 13 vases sont tous mesurés ou tracés, plus aucun n'est supposé. Verdicts : 10 mesurés ou tracés, 21 à vérifier, 5 hors du plan,
+  37 sans remarque.
+- qa13 sur les trois vases (9 bouquets) : 0 partie flottante, 0 débord sous le bord, 3 cassures, toutes sur des fleurs posées sur la
+  lèvre, la famille connue.
+- M7 (30 tiges dans la tête) ne tient toujours pas : 232 % du col, même agrandi ×1,5. La question reste posée au porteur.
