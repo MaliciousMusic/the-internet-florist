@@ -378,3 +378,11 @@ dans la version 3 seulement : `z7-plan-mesures.js` réécrit `mo`, `mh` et `mx` 
 - qa13 sur les trois vases (9 bouquets) : 0 partie flottante, 0 débord sous le bord, 3 cassures, toutes sur des fleurs posées sur la
   lèvre, la famille connue.
 - M7 (30 tiges dans la tête) ne tient toujours pas : 232 % du col, même agrandi ×1,5. La question reste posée au porteur.
+
+**M7 (décision du porteur, 2026-10-23)** : un vase plus large de la même famille, comme M24, M28 et M66.
+- **Famille** (sculptures, `capa_plan.html?capa=1&alt=7`) : suiban ovale (col rempli à 4 %), suiban lobé (17 %), vase cœur (128 %),
+  tête (232 %).
+- **Choix** : le **vase cœur**, de la même pierre et élancé comme la tête. Le Composer l'agrandit ×1,15.
+- **Écartés** : les suibans, des bassins de 6 à 7 cm ouverts à près de 80°, où un bouquet de 30 tiges se coucherait sans pique.
+- **Mise en œuvre** : `app/k1.js` (`VWIDE`). Planche : `planche-m7.jpg`.
+- Les 77 modèles tiennent : trois dans un vase agrandi (M7 ×1,15, M30 ×1,1, M77 ×1,3).

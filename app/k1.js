@@ -2,9 +2,10 @@
 /* ================= Catalogue v4 : chaque espèce × ses couleurs devient une fleur à cueillir ================= */
 /* every reference model stands in the vessel of its photo */
 for(const m of MODELS){const nv=VREF[m.n];if(nv)m.vase=nv}
-/* three models whose vessel's neck cannot hold their stems, even enlarged (z7-plan vpFit): moved to a wider vessel of the same family,
-   nearest in material and bearing (owner, 2026-10-23; vases5/plan-vase/RAPPORT-plan-vase.md) */
-{const VWIDE={24:'cylindre-inox-miroir',28:'calice-celadon-pans',66:'calice-etain'};for(const m of MODELS)if(VWIDE[m.n])m.vase=VWIDE[m.n]}
+/* the models whose vessel's neck cannot hold their stems, even enlarged (z7-plan vpFit): moved to a wider vessel of the same family,
+   nearest in material and bearing (owner, 2026-10-23; vases5/plan-vase/RAPPORT-plan-vase.md); M7 after the owner traced the head's
+   neck hollow: the heart, of the same stone and bearing, enlarged by the Composer (the suibans are basins: stems would lie down) */
+{const VWIDE={7:'vase-coeur-anthracite',24:'cylindre-inox-miroir',28:'calice-celadon-pans',66:'calice-etain'};for(const m of MODELS)if(VWIDE[m.n])m.vase=VWIDE[m.n]}
 const RBY=Object.fromEntries(RECIPES.map(r=>[r.id,r])),MBY=Object.fromEntries(CATMETA.map(m=>[m.id,m]));
 const FAMS=[['blanc','Blancs & crèmes','#f4efe4'],['rose','Roses tendres','#efb7c0'],['fuchsia','Fuchsias','#c2387f'],['rouge','Rouges','#c8162a'],['bordeaux','Bordeaux & prunes','#6d1028'],
  ['peche','Pêches & corails','#f2a27e'],['orange','Oranges & cuivres','#ef7a26'],['jaune','Jaunes','#f2c832'],['vert','Verts','#6f9a4a'],['bleu','Bleus','#6f8fd8'],['violet','Violets & lilas','#8a5ac0'],['noir','Noirs & bruns','#3a2a24']];
