@@ -4,6 +4,7 @@
   "type": "module",
   "description": "Offline tools of the insect chantier: SVG sheets, atlas baking",
   "dependencies": {
-    "@resvg/resvg-js": "2.6.2"
+    "@resvg/resvg-js": "2.6.2",
+    "pixi.js": "8.6.6"
   }
 }

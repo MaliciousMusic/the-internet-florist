@@ -254,8 +254,8 @@ function abdomen(o, pitch) {
 // ---- Assembly -----------------------------------------------------------------------------------------------
 // opts: pose 'pose' | 'vol' | 'marche', frame (flight drawing 0..2, walk phase 0..1), pollen
 export function bee(az, el, opts = {}) {
-  const { size = 512, k = 30, pose = 'pose', frame = 0, pollen = false, bg = null, detail = 1, idp = '' } = opts;
-  const cam = camera(az, el);
+  const { size = 512, k = 30, pose = 'pose', frame = 0, pollen = false, bg = null, detail = 1, idp = '', light } = opts;
+  const cam = camera(az, el, light);
   const sc = new Scene(cam, k, size / 2, size / 2, 7, idp);
   sc.detail = detail;
   const bob = pose === 'marche' ? 0.06 * Math.sin(frame * 4 * Math.PI) : 0;
