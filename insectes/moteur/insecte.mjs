@@ -11,7 +11,7 @@ import {
 // section (a head wider at the top, a flat belly). frame = { o, ax, ay, az } places the body in the model.
 // ---------------------------------------------------------------------------------------------------------------
 
-function surf(b, t, th) {
+export function surf(b, t, th) {
   const p = b.profile(t);
   const s = b.shape ? b.shape(th, t) : [1, 1];
   const ly = (p.yc || 0) + p.ry * Math.cos(th) * s[0];
@@ -20,22 +20,28 @@ function surf(b, t, th) {
   return add(add(add(F.o, mul(F.ax, p.x)), mul(F.ay, ly)), mul(F.az, lz));
 }
 
+// Angle of the j-th sample around a section: the whole turn, or th0..th1 for an open shell.
+function thAt(b, j, nth) {
+  if (b.th0 === undefined) return (j / nth) * 2 * Math.PI;
+  return b.th0 + (b.th1 - b.th0) * (j / (nth - 1));
+}
+
 function sample(b, nt = 44, nth = 40) {
   const P = [], N = [];
   for (let i = 0; i <= nt; i++) {
     const t = i / nt, row = [], nrow = [];
-    for (let j = 0; j < nth; j++) row.push(surf(b, t, (j / nth) * 2 * Math.PI));
+    for (let j = 0; j < nth; j++) row.push(surf(b, t, thAt(b, j, nth)));
     P.push(row);
   }
   for (let i = 0; i <= nt; i++) {
     const nrow = [];
-    for (let j = 0; j < nth; j++) nrow.push(normalAt(b, i / nt, (j / nth) * 2 * Math.PI));
+    for (let j = 0; j < nth; j++) nrow.push(normalAt(b, i / nt, thAt(b, j, nth)));
     N.push(nrow);
   }
   return { P, N, nt, nth };
 }
 
-function normalAt(b, t, th) {
+export function normalAt(b, t, th) {
   const e = 1e-3;
   const t0 = clamp(t - e, 0, 1), t1 = clamp(t + e, 0, 1);
   const dt = sub(surf(b, t1, th), surf(b, t0, th));
@@ -113,12 +119,14 @@ export function drawBody(sc, b) {
   // Shading: a radial gradient fitted to the outline, its focus on the lit point.
   out += shade(sc, b, g, all, sil, clip);
 
+  // Decals: spots and flecks laid on the surface (ladybird spots, chafer flecks), lit with the surface.
+  if (b.decals) out += `<g clip-path="url(#${clip})">` + b.decals.map((d) => decal(sc, b, d)).join('') + '</g>';
   // Grazing sheen just inside the outline (the facets of an eye catch the sky at the rim).
   if (b.rim) out += `<path d="${sil}" clip-path="url(#${clip})" fill="none" stroke="${b.rim.color}" stroke-width="${fmt(b.rim.w * sc.k)}" opacity="${b.rim.a}"/>`;
   // Contact shadows where another piece meets this one.
   if (b.ao) out += `<g clip-path="url(#${clip})">` + b.ao.map((o) => ao(sc, o)).join('') + '</g>';
   // Gloss spot where the surface mirrors the light.
-  if (b.gloss) out += gloss(sc, b, g);
+  if (b.gloss) out += `<g clip-path="url(#${clip})">${gloss(sc, b, g)}</g>`; // never past the outline
   out += hairs.front;
   sc.push(depth, `<g>${out}</g>`);
 }
@@ -156,6 +164,27 @@ function shade(sc, b, g, all, sil, clip) {
     `<stop offset="0.55" stop-color="#000" stop-opacity="0"/><stop offset="0.86" stop-color="#140a02" stop-opacity="${fmt(dk * 0.55)}"/>` +
     `<stop offset="1" stop-color="#140a02" stop-opacity="${dk}"/></radialGradient>`);
   return `<path d="${sil}" fill="url(#${id})"/>`;
+}
+
+// A small patch of the surface around (t, th): an ellipse of radii r (along t) and r2 (around), in millimetres.
+function decal(sc, b, d) {
+  const { cam } = sc;
+  const p = surf(b, d.t, d.th), n = normalAt(b, d.t, d.th);
+  const vis = dot(n, cam.c);
+  if (vis < -0.05) return '';
+  const e = 1e-3;
+  const et = norm(sub(surf(b, clamp(d.t + e, 0, 1), d.th), surf(b, clamp(d.t - e, 0, 1), d.th)));
+  const eh = norm(cross(n, et));
+  const r1 = d.r, r2 = d.r2 ?? d.r, rot0 = d.rot || 0;
+  const pts = [];
+  for (let i = 0; i < 18; i++) {
+    const a = (i / 18) * 2 * Math.PI + rot0;
+    const wob = 1 + (d.wobble || 0) * Math.sin(3 * a + (d.seed || 0));
+    const q = add(p, add(mul(et, Math.cos(a) * r1 * wob), mul(eh, Math.sin(a) * r2 * wob)));
+    const s2 = sc.S(q); pts.push([s2[0], s2[1]]);
+  }
+  const col = d.lit === false ? d.color : lit(d.color, n, cam, 0.3);
+  return `<path d="${smoothPath(pts)}" fill="${col}" opacity="${fmt((d.a ?? 1) * smooth(-0.05, 0.25, vis))}"/>`;
 }
 
 function ao(sc, o) {
@@ -204,7 +233,7 @@ function makeHairs(sc, b, g) {
   const count = Math.round(H.n * (sc.detail ?? 1));
   while (made < count && tries < count * 8) {
     tries++;
-    const t = R(), th = R() * 2 * Math.PI;
+    const t = R(), th = b.th0 === undefined ? R() * 2 * Math.PI : b.th0 + R() * (b.th1 - b.th0);
     const pr = b.profile(t);
     if (R() > Math.max(pr.ry, pr.rz) / rmax) continue;
     const dens = H.density ? H.density(t, th) : 1;
@@ -296,7 +325,9 @@ export function drawTube(sc, pts, radii, opt = {}) {
 // ---------------------------------------------------------------------------------------------------------------
 export function drawWing(sc, w, o, e1, e2, opt = {}) {
   const { cam, k } = sc;
-  const a = k * dot(e1, cam.r), b = -k * dot(e1, cam.u), c = k * dot(e2, cam.r), d = -k * dot(e2, cam.u);
+  // opt.scale: the same drawing for a larger or smaller wing of a related species
+  const ks = k * (opt.scale || 1);
+  const a = ks * dot(e1, cam.r), b = -ks * dot(e1, cam.u), c = ks * dot(e2, cam.r), d = -ks * dot(e2, cam.u);
   const q = sc.S(o);
   const nw = norm(cross(e1, e2));
   const facing = Math.abs(dot(nw, cam.c));
@@ -308,13 +339,41 @@ export function drawWing(sc, w, o, e1, e2, opt = {}) {
     `<stop offset="0" stop-color="${w.tint}" stop-opacity="${fmt(mem * 1.25)}"/><stop offset="0.6" stop-color="${w.tint}" stop-opacity="${fmt(mem)}"/>` +
     `<stop offset="1" stop-color="${w.tint}" stop-opacity="${fmt(mem * 0.8)}"/></linearGradient>`);
   let s = `<g transform="matrix(${fmt4(a)} ${fmt4(b)} ${fmt4(c)} ${fmt4(d)} ${fmt(q[0])} ${fmt(q[1])})" opacity="${fmt(alpha)}">`;
+  if (w.opaque) {
+    s += paintedWing(sc, w, nw, glint, opt) + '</g>';
+    sc.push(dot(add(o, mul(e1, w.span * 0.5 * (opt.scale || 1))), cam.c) + (opt.bias || 0), s);
+    return;
+  }
   s += `<path d="${w.outline}" fill="url(#${gid})"/>`;
   if (glint > 0.01) s += `<path d="${w.outline}" fill="#fffdf6" opacity="${fmt(glint * 0.12)}"/>`;
   s += `<path d="${w.veins}" stroke="${w.vein}" stroke-width="${w.vw}" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="${fmt(0.75 + 0.25 * (1 - facing))}"/>`;
   s += `<path d="${w.outline}" stroke="${w.edge}" stroke-width="${w.ew}" fill="none" opacity="0.7"/>`;
   s += '</g>';
-  const mid = add(o, mul(e1, w.span * 0.5));
+  const mid = add(o, mul(e1, w.span * 0.5 * (opt.scale || 1)));
   sc.push(dot(mid, cam.c) + (opt.bias || 0), s);
+}
+
+// Scaled wings (butterflies) and elytra: the upper side or the underside, painted in the wing plane, flat-lit.
+// opt.side: +1 for a left wing, -1 for a right one (their frames mirror, so the upper side's normal flips).
+export function wingFace(nw, cam, side) {
+  const up = mul(nw, side > 0 ? -1 : 1);
+  return dot(up, cam.c) >= 0;
+}
+
+function paintedWing(sc, w, nw, glint, opt) {
+  const { cam } = sc;
+  const upper = wingFace(nw, cam, opt.side ?? 1);
+  const lam = clamp(0.45 + 0.55 * Math.abs(dot(nw, cam.L)));
+  const cid = sc.id('wc');
+  sc.defs.push(`<clipPath id="${cid}"><path d="${w.outline}"/></clipPath>`);
+  let s = `<path d="${w.outline}" fill="${upper ? w.base : (w.baseUnder || w.base)}"/>`;
+  s += `<g clip-path="url(#${cid})">${upper ? (w.paint || '') : (w.paintUnder || w.paint || '')}`;
+  s += `<path d="${w.outline}" fill="#120a02" opacity="${fmt((1 - lam) * 0.55)}"/>`;
+  if (glint > 0.01 && w.sheen) s += `<path d="${w.outline}" fill="${w.sheen}" opacity="${fmt(glint * 0.25)}"/>`;
+  s += '</g>';
+  if (w.veins) s += `<path d="${w.veins}" stroke="${upper ? w.vein : (w.veinUnder || w.vein)}" stroke-width="${w.vw}" fill="none" stroke-linecap="round" opacity="${upper ? 0.5 : 0.65}"/>`;
+  if (w.fringe) s += `<path d="${w.outline}" stroke="${w.fringe}" stroke-width="${w.fw || 0.12}" fill="none" opacity="0.9"/>`;
+  return s;
 }
 
 const fmt4 = (x) => (Math.round(x * 10000) / 10000).toString();

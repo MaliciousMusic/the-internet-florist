@@ -366,3 +366,15 @@ function strokeAxes(side, phiDeg, psiDeg, dihedral) {
   e2 = rot(e2, side > 0 ? e1 : mul(e1, -1), -rad(psiDeg));
   return { e1, e2 };
 }
+
+// ---- Species contract (outils/, runtime/) ---------------------------------------------------------------------
+export const META = {
+  id: 'abeille', bodyMm: 12.5, span: 22,
+  el: [-25, 0, 20, 40, 65, 90],
+  poses: { pose: [0], marche: [0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875], vol: [0, 1, 2] },
+  lod: {
+    S: { cell: 64, az: 15, poses: ['pose', 'marche', 'vol'] },
+    L: { cell: 152, az: 30, poses: ['pose', 'vol'] },
+  },
+};
+export const draw = (az, el, opts = {}) => bee(az, el, { pollen: false, ...opts });

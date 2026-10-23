@@ -91,9 +91,9 @@ export class Essaim {
       const v = viewOf(fr, [eye[0] / el, eye[1] / el, eye[2] / el]);
       const pxmm = (b.lengthPx / K.bodyMm) * q.s;
       const shown = K.idx.span * pxmm;
-      const lodName = shown > K.lods.S.cell * 1.25 && K.lods.L.poses.includes(b.pose) ? 'L' : 'S';
+      const lodName = K.lods.L && shown > K.lods.S.cell * 1.25 && K.lods.L.poses.includes(b.pose) ? 'L' : 'S';
       const lod = K.lods[lodName];
-      const c = pickCell(lod, K.idx.el, b.pose, b.frame, K.idx.frames[b.pose], v);
+      const c = pickCell(lod, lod.el || K.idx.el, b.pose, b.frame, K.idx.frames[b.pose], v);
       if (c.i === undefined) { sp.visible = false; continue; }
       sp.texture = lod.cells[c.i];
       const sc = shown / lod.cell;
