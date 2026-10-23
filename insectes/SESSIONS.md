@@ -36,6 +36,10 @@ sous-session numérotée par insecte. La méthode est celle du machaon (`machaon
 - Un seul modèle à la fois pour tout le chantier : SAM ou profondeur passent par `GATE_MAX=1 sh ws/gate.sh <commande>`.
 - Une cuisson d'atlas ou un rendu resvg lourd passe par `sh ws/gate.sh <commande>` (3 au plus).
 - `node --max-old-space-size=900` pour les cuissons.
+- Depuis le 2026-10-24, un seul rendu passe à la fois pour tout le chantier. Avec neuf sessions ouvertes, trois rendus en même
+  temps faisaient tomber la RAM libre à 2,1 Go. Les créneaux 2 et 3 du verrou sont donc réservés : `ws/locks/slot2` et `slot3`
+  ont une date `t` dans le futur, si bien que le verrou ne les voit jamais périmés. Pour les rendre :
+  `rm -r C:/Users/agent/Desktop/flower/flower-atelier/ws/locks/slot2 C:/Users/agent/Desktop/flower/flower-atelier/ws/locks/slot3`.
 
 ### Le moteur partagé
 `moteur/insecte.mjs`, `moteur/motif.mjs`, `moteur/papillon.mjs`, `moteur/fourmi.mjs`, `runtime/essaim.mjs`, `runtime/vue.mjs`,
