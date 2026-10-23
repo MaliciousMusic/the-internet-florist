@@ -34,7 +34,7 @@ export const SAUTERELLE = {
   wings: [
     { fore: { flap: 62, sweep: -6 }, hind: { flap: 70, sweep: -4 } },
     { fore: { flap: 25, sweep: 4 }, hind: { flap: 20, sweep: 6 } },
-    { fore: { flap: -8, sweep: 10 }, hind: { flap: -28, sweep: 14 } },
+    { fore: { flap: 4, sweep: 2 }, hind: { flap: -12, sweep: 6 } },
   ],
   visit: [10, 28],
 };

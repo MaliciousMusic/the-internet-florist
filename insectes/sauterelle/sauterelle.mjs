@@ -38,13 +38,13 @@ const B = {
   fastigium: [20.1, 0, 4.0],                 // between the antennal sockets (c166 2569,1253; c087)
   socket: [19.65, 0.7, 3.15],                // the antennal sockets between the eyes, at their height, one eye apart (c072, c026)
   // the eyes in the head's upper front corners, beside the antennae, bulging 15 % of their diameter (c166, c072, c026; juge 1)
-  eye: [19.0, 1.55, 2.9], eyeR: [0.68, 0.58, 0.74],   // 5 mm across the eyes seen from above (c157)
+  eye: [19.0, 1.62, 2.9], eyeR: [0.66, 0.48, 0.68],   // 5 mm across the eyes seen from above (c157)
   pronotum: [10.3, 17.4],                    // rear and front margins (c166, 7.1 mm on c087)
   hinge: [11.7, 2.4, 4.95],                 // the tegmen's base, under the pronotum's rear (c166 2210,1222; c087 fold lines)
   abdomen: [-12.4, 8.5],                     // tip to its front under the tegmina (body 32.4 mm, c090 dried 28.4 mm)
   coxa: { front: [16.6, 1.15, -1.5], mid: [11.0, 1.55, -2.5], hind: [6.9, 1.95, -2.9] },
   // femur, tibia, tarsus (c090 hind 20.5, 19.5, 6.2; c087 and c090 fore 8.3 and mid 8.6 femora)
-  leg: { front: [8.3, 8.6, 4.4], mid: [8.7, 9.2, 4.6], hind: [21.0, 20.0, 6.2] },
+  leg: { front: [8.3, 8.6, 3.5], mid: [8.7, 9.2, 3.7], hind: [21.0, 20.0, 6.2] },   // tarsi 0.4 of the tibia in front (juge 2)
   antenna: 56,                               // c090: 55.5 and 56 mm, 1.75 body lengths
 };
 // Standing feet on c166 (side) and c157 (above, female, legs a little splayed on the paper): the hind tarsi far back, under the
@@ -61,7 +61,7 @@ const STAND = {
 const C = {
   // leg: the hind femur on c166 (L* 54, a* -27, b* 38)
   green: '#56862a', leg: '#5a8d1f', greenDk: '#3f6526', greenPale: '#8fae5c', belly: '#a9b86a', cream: '#d9d6a2',
-  stripe: '#9a6a3a', stripeDk: '#6e4a26', eye: '#c6cc6c', pupil: '#2a2414', antenna: '#c58a46', antTip: '#9a5f2c',
+  stripe: '#9a6a3a', stripeDk: '#6e4a26', eye: '#b4b45c', pupil: '#2a2414', antenna: '#c58a46', antTip: '#9a5f2c',
   spine: '#b8cc8a', spineTip: '#6a4a26', claw: '#5a3e22', pad: '#c9cf94', mandible: '#3a2a1a', labrum: '#9fb35a',
 };
 const CUT = { ks: 0.42, p: 64, ks2: 0.1, p2: 7, env: 0.18, wrap: 0.35, amb: 0.4, mottle: 0.05, specColor: '#f4f8ec', trans: { color: '#a8d860', k: 0.16 } };
@@ -100,15 +100,17 @@ function head(sc) {
     profile: (t) => {
       // widest at the eyes in its upper third, narrowing to the mouth (c072: width with the eyes 0.6 of the height); its depth from
       // the face to the occiput 3.3 mm, the back hidden in the pronotum (c166: 2.8 mm seen in front of it)
-      const e = Math.sqrt(Math.max(0, Math.sin(Math.PI * Math.min(1, 0.12 + 0.88 * t))));
-      const w = 1.2 + 0.75 * Math.sin((Math.PI / 2) * Math.min(1, t / 0.72)) - 0.35 * clamp((t - 0.84) / 0.16);
+      // the lower face broad (the clypeus and the mandibles' bases: c072), rounded only at the vertex
+      const e = Math.sqrt(Math.max(0, Math.sin(Math.PI * Math.min(1, 0.3 + 0.7 * t))));
+      const w = 1.45 + 0.5 * Math.sin((Math.PI / 2) * Math.min(1, t / 0.72)) - 0.35 * clamp((t - 0.84) / 0.16);
       return { x: 6.65 * t, zc: 0.35 + 0.2 * Math.sin(Math.PI * t), ry: w * e, rz: (1.45 + 0.3 * Math.sin(Math.PI * t)) * e };
     },
     // the face flat, the back of the head rounder (it fits into the pronotum)
-    shape: (th) => [1, Math.sin(th) > 0 ? 0.86 : 1.05],
+    // the face nearly upright over most of its height and the cheeks flat (c166, c016: juge 2, point 2)
+    shape: (th) => { const c = Math.abs(Math.cos(th)), sn = Math.sin(th); return [Math.pow(Math.max(c, 1e-4), -0.25), sn > 0 ? 0.92 * Math.pow(Math.max(sn, 1e-4), -0.55) : 1.05]; },
     // the flank's grid (c166): rows from the face (sin th = 1) to the back of the head, columns from the mouth to the vertex; the
     // brown stripe of the vertex between the antennae (c072, c157)
-    albedo: (t, th) => (t > 0.9 && Math.sin(th) > -0.2 && Math.abs(Math.cos(th)) < 0.3 ? C.stripe : GP_HEAD ? cellAt(GP_HEAD, (1 - Math.sin(th)) / 2, t) : C.green),
+    albedo: (t, th) => (t > 0.88 && Math.sin(th) > -0.3 && Math.abs(Math.cos(th)) < 0.16 ? C.stripe : t > 0.82 ? '#64963a' : GP_HEAD ? cellAt(GP_HEAD, (1 - Math.sin(th)) / 2, t) : C.green),
     bias: 0.06,
   });
   // the neck: the pale membrane between the head and the pronotum's front opening (c023)
@@ -165,8 +167,8 @@ export function antennaPath(s, pitch, yaw, curl, n = 44) {
   const base = [B.socket[0], B.socket[1] * s, B.socket[2]];
   const pts = [base];
   let d = norm([Math.cos(rad(pitch)) * Math.cos(rad(yaw)), s * Math.cos(rad(pitch)) * Math.sin(rad(yaw)), Math.sin(rad(pitch))]);
-  let p = add(base, mul(d, 1.2)); pts.push(p);                 // the scape: short and thick (a fifth of the head's height)
-  p = add(p, mul(d, 0.35)); pts.push(p);                         // the pedicel
+  let p = add(base, mul(d, 0.95)); pts.push(p);                // the scape: short and thick (about an eye's diameter)
+  p = add(p, mul(d, 0.3)); pts.push(p);                          // the pedicel
   const L = B.antenna - 1.55, step = L / n;
   for (let i = 0; i < n; i++) {
     const f = i / n;
@@ -187,8 +189,8 @@ function antennae(sc, pose, frame) {
     const pts = antennaPath(s, A.pitch, A.yaw, A.curl);
     const n = pts.length;
     // the flagellum fine (0.1 mm at its base, 0.025 at its tip) and orange (c166, c026), the scape green
-    const rad0 = pts.map((_, i) => (i === 0 ? 0.36 : i === 1 ? 0.33 : i === 2 ? 0.17 : 0.1 - 0.075 * Math.pow((i - 3) / (n - 4), 0.7)));
-    const col = (i) => (i < 1 ? C.green : i < 2 ? '#7aa04a' : mixh(C.antenna, C.antTip, Math.pow((i - 2) / (n - 3), 1.3)));
+    const rad0 = pts.map((_, i) => (i === 0 ? 0.32 : i === 1 ? 0.28 : i === 2 ? 0.15 : 0.09 - 0.068 * Math.pow((i - 3) / (n - 4), 0.7)));
+    const col = (i) => (i < 1 ? '#6f9a3c' : i < 2 ? '#86a44c' : mixh(C.antenna, C.antTip, Math.pow((i - 2) / (n - 3), 1.3)));
     tube(sc, pts, rad0, { color: col, gloss: 0.35, bias: 0.03 });
   }
 }
@@ -221,7 +223,11 @@ function at(T, t, k) { for (let i = 1; i < T.length; i++) if (t <= T[i][0]) { co
 function pronotum(sc) {
   sc.part = 'pronotum';
   const [x0, x1] = B.pronotum, sb = Math.pow(Math.sin(PRO_TH), 1 / 2);
-  body(sc, {
+  // its depth is taken at the point of the shell nearest the viewer (the disc from above, a lobe from the side, the rear from
+  // behind), so that it lies over the tegmina's bases yet behind the head seen from the front (juge 2, point 1)
+  const cand = [[x0, 0, 5.6], [x0 + 3.5, 2.75, 1.5], [x0 + 3.5, -2.75, 1.5], [x0 + 3.5, 0, 4.9], [x1 - 0.6, 0, 4.4], [x1 - 0.6, 2.4, 1.2], [x1 - 0.6, -2.4, 1.2], [x0 + 1, 2.8, 4.2], [x0 + 1, -2.8, 4.2]].map(TF);
+  const near = cand.reduce((a, b) => (dot(b, sc.cam.c) > dot(a, sc.cam.c) ? b : a));
+  body(sc, { depthAt: near,
     name: 'pronotum', frame: frame0([x0, 0, 0]), color: C.green, seed: 21, mat: { ...CUT, ks: 0.14, p: 30, env: 0.03, ks2: 0.05 }, grid: G_PRO,
     profile: (t) => {
       const zt = at(PRO, t, 1), zb = at(PRO, t, 2), w = at(PRO, t, 3);
@@ -246,7 +252,7 @@ function pronotum(sc) {
     },
     punct: { n: 260, r: 0.04, color: '#1c2a10', a: 0.55 },
     // the pronotum's lobes lie over the tegmina's bases and the head's back (c166), its disc over the dorsal fields (c157)
-    bias: 6.0,   // (its depth is taken on the axis, z = 0: the disc lies 5 mm higher)
+    bias: 0.2,
   });
 }
 
@@ -265,10 +271,16 @@ function discRear(sc) {
 // Meso- and metathorax: under the tegmina's bases, seen between the legs (pale pleura behind the mid coxa, c166, c080).
 function thorax(sc) {
   sc.part = 'thorax';
+  // the pleura: sclerites parted by their sutures (meso- and metathorax), satin, the sternites pale (c166, c080; juge 2, point 5)
   body(sc, {
-    name: 'thorax', frame: frame0([5.5, 0, -0.6]), color: C.green, seed: 23, mat: CUT,
-    profile: (t) => { const e = Math.pow(env(t, 0.5, 0.5) * 2, 0.5); return { x: 11 * t, zc: -0.3, ry: 2.25 * e, rz: 2.7 * e }; },
-    albedo: (t, th) => (Math.sin(th) < -0.6 ? C.belly : C.green),
+    name: 'thorax', frame: frame0([5.5, 0, -0.6]), color: C.green, seed: 23, mat: { ...CUT, ks: 0.14, env: 0.05 },
+    profile: (t) => { const e = Math.pow(env(t, 0.5, 0.5) * 2, 0.5); return { x: 11 * t, zc: -0.4, ry: 1.95 * e, rz: 2.5 * e }; },
+    albedo: (t, th) => {
+      const sn = Math.sin(th);
+      if (sn < -0.65) return '#b8bf78';
+      const su = [0.36, 0.52, 0.7].some((x) => Math.abs(t - x) < 0.012) && sn < 0.5;
+      return su ? '#2e4a1a' : mixh('#4a7a28', '#6a9440', 0.5 + 0.5 * Math.sin(t * 40));
+    },
   });
 }
 
@@ -532,13 +544,13 @@ function veinPaths(V) {
   // each vein a light ridge with its shaded side under it (lit from above)
   // the veins only 10 to 15 % lighter than the membrane (c166; juge 7)
   const ridge = (d, w) => st(d.replace(/(-?\d+\.?\d*) (-?\d+\.?\d*)/g, (m, a, b) => `${a} ${f(+b - w * 0.6)}`), w * 0.9, V.dark, 0.22) + st(d, w, V.light, 0.6);
-  return ridge(line(V.main), V.w.main) + V.radial.map((P) => ridge(line(P), V.w.radial)).join('') + V.fan.map((P) => ridge(line(P), V.w.fan)).join('') + st(costal, V.w.costal, V.light, 0.45);
+  return ridge(line(V.main), V.w.main) + V.radial.map((P) => ridge(line(P), V.w.radial)).join('') + V.fan.map((P) => ridge(line(P), V.w.fan)).join('') + st(costal, V.w.costal, V.light, 0.25);
 }
 
 // The lateral field: measured outline, zones (blurred into the gradients they are: the light radial field, the darker costal
 // field) and veins (sharp, over them), then the reticulation of the cells as a repeated tile measured on c166 flattened: cells of
 // 0.81 mm (spectrum of the flattened field), their veins 5.5 L* lighter than the cells.
-const LAT = R_LAT ? membraneFrom(R_LAT, { seed: 21, cal: E['tegmen-lateral'], cell: 0.45, net: '#8fa86a', netA: 0.24, soft: 0.1, veins: VEINS_LAT, band: true }) : {
+const LAT = R_LAT ? membraneFrom(R_LAT, { seed: 21, cal: E['tegmen-lateral'], cell: 0.45, net: '#a3bd7c', netA: 0.5, soft: 0.1, veins: VEINS_LAT, band: true }) : {
   span: 44.8, opaque: true, base: C.green, baseUnder: C.belly, soft: 0, grain: 0, sheen: '#f2ffe0',
   outline: curve([[0, 0.2], [8, 0.35], [20, 0.1], [32, -0.9], [40, -2.3], [44, -4.1], [44.7, -5.4], [43.5, -6.2], [36, -6.9], [24, -7.6], [12, -7.9], [3, -7.6], [0, -6.2]]),
   paint: '',
@@ -597,7 +609,7 @@ function netTile(id, cell, color, alpha, seed) {
     }
     d += 'M' + poly.map((v) => f(v[0]) + ' ' + f(v[1])).join('L') + 'Z';
   }
-  return `<pattern id="${id}" patternUnits="userSpaceOnUse" width="${f(T)}" height="${f(T)}"><path d="${d}" fill="none" stroke="${color}" stroke-width="${f(cell * 0.07)}" stroke-opacity="${alpha}" stroke-linejoin="round"/></pattern>`;
+  return `<pattern id="${id}" patternUnits="userSpaceOnUse" width="${f(T)}" height="${f(T)}"><path d="${d}" fill="none" stroke="${color}" stroke-width="${f(cell * 0.1)}" stroke-opacity="${alpha}" stroke-linejoin="round"/></pattern>`;
 }
 // The dorsal field (s along the fold, back from the base; q from the fold toward the midline, mm). Its widths read on c087 (male,
 // 44.2 px/mm: both fields 4.8 mm across at the base, the brown stridulatory field 10 mm long, then a strip 1.3 mm across both),
@@ -707,8 +719,9 @@ function hindFrom(R) {
     const a = rays[i], b = rays[i + 1], la = Math.hypot(a[0], a[1]), lb = Math.hypot(b[0], b[1]);
     for (let r = 3; r < Math.min(la, lb) * 0.97; r += 0.9 + 0.2 * Math.sin(i * 3.1 + r)) dc += `M${f(a[0] * r / la)} ${f(a[1] * r / la)}L${f(b[0] * r / lb)} ${f(b[1] * r / lb)}`;
   }
-  const paint = () => `<path d="${M.outline}" fill="#a9b394" fill-opacity="0.46"/><path d="${dc}" fill="none" stroke="#e6ead8" stroke-width="0.035" stroke-opacity="0.7"/>` +
-    `<path d="${dv}" fill="none" stroke="#3e4230" stroke-width="0.07" stroke-opacity="0.85" stroke-linecap="round"/><path d="${M.outline}" fill="none" stroke="#5a5e44" stroke-width="0.08"/>`;
+  // hyaline and smoked: 30 % opaque, the veins fine (juge 2, point 11)
+  const paint = () => `<path d="${M.outline}" fill="#a9b394" fill-opacity="0.3"/><path d="${dc}" fill="none" stroke="#eef0e2" stroke-width="0.03" stroke-opacity="0.55"/>` +
+    `<path d="${dv}" fill="none" stroke="#5e6248" stroke-width="0.05" stroke-opacity="0.6" stroke-linecap="round"/><path d="${M.outline}" fill="none" stroke="#6a6e54" stroke-width="0.06" stroke-opacity="0.7"/>`;
   return { span: M.length, opaque: true, outline: M.outline, box: M.box, base: 'none', baseUnder: 'none', paint, paintUnder: paint, soft: 0, grain: 0, veins: null, sheen: null, membrane: true };
 }
 
