@@ -100,11 +100,13 @@ def panels(rgb, m, core, dz, axe, path):
     cv2.imwrite(path, im[..., ::-1], [cv2.IMWRITE_JPEG_QUALITY, 85])
 
 
-def run(o, rgb, m, axe, kind):
+def run(o, rgb, m, axe, kind, crop=None):
     os.makedirs(o.out, exist_ok=True)
     d = depth(rgb) if not o.nodepth else None
     rec, core, dz = measure(rgb, m, axe, d)
     rec.update({'type': kind, 'vue': o.vue, 'source': os.path.basename(o.img), 'axe': axe})
+    # the map's frame in the image: the crop's offset and the scale it was brought to (the mask reads back in the image's pixels)
+    if crop: rec['crop'] = crop
     json.dump(rec, open(os.path.join(o.out, 'forme.json'), 'w', encoding='utf-8', newline='\n'), ensure_ascii=False)
     cv2.imwrite(os.path.join(o.out, 'masque.png'), m.astype(np.uint8) * 255)
     if d is not None: np.save(os.path.join(o.out, 'depth.npy'), d.astype(np.float16))
@@ -136,7 +138,7 @@ def cmd_photo(o):
     # crop to the box (padded) for the depth model: it sees the insect, not the whole frame
     x0, y0, x1, y1 = box; pad = 0.08 * max(x1 - x0, y1 - y0)
     X0, Y0, X1, Y1 = int(max(0, x0 - pad)), int(max(0, y0 - pad)), int(min(rgb.shape[1], x1 + pad)), int(min(rgb.shape[0], y1 + pad))
-    run(o, rgb[Y0:Y1, X0:X1].copy(), m[Y0:Y1, X0:X1], [[x - X0, y - Y0] for x, y in axe], 'photo')
+    run(o, rgb[Y0:Y1, X0:X1].copy(), m[Y0:Y1, X0:X1], [[x - X0, y - Y0] for x, y in axe], 'photo', {'x0': X0, 'y0': Y0, 's': s})
 
 
 def cmd_rendu(o):

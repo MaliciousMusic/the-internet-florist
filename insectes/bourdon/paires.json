@@ -1,5 +1,9 @@
-{"sid": "bombus-terrestris", "pairs": [
- {"nom": "profil", "photo": "hd/c060.jpg", "box": [300, 250, 2200, 1400], "vue": "pose:90:10", "k": 62, "w": 1300, "h": 900, "focus": [0.5, 0, -1]},
- {"nom": "dessus", "photo": "hd/c024.jpg", "box": [200, 100, 1500, 1684], "vue": "pose:180:90", "k": 62, "w": 1100, "h": 1200, "focus": [-1, 0, 0]},
- {"nom": "3q", "photo": "hd/c046.jpg", "box": [300, 0, 3600, 2890], "vue": "pose:235:40", "k": 62, "w": 1300, "h": 900, "focus": [0, 0, 0]}
+{"sid": "bombus-terrestris",
+ "_doc": "Paires photo | rendu (PROTOCOLE §5.1) sur les copies demi-taille ; k = px/mm de la photo (le corps de 15 mm mesuré sur l'axe), la boîte centrée sur le milieu de l'axe.",
+ "pairs": [
+ {"nom": "dessus", "photo": "demi/c024.png", "box": [105, 60, 665, 780], "vue": "pose:180:90", "k": 37.3, "w": 560, "h": 720, "focus": [-3.1, 0, 0], "forme": "c024"},
+ {"nom": "profil", "photo": "demi/c126.png", "box": [150, 265, 950, 765], "vue": "pose:90:8", "k": 45, "w": 800, "h": 500, "focus": [-3.1, 0, 0], "forme": "c126"},
+ {"nom": "profil2", "photo": "demi/c060.png", "box": [195, 170, 915, 630], "vue": "pose:90:5", "k": 33.3, "w": 720, "h": 460, "focus": [-3.1, 0, 0], "forme": "c060"},
+ {"nom": "face", "photo": "demi/c084.png", "box": [535, 245, 1195, 905], "vue": "pose:0:12", "k": 136, "w": 660, "h": 660, "focus": [3.75, 0, -0.8], "forme": "c084", "detail": 1},
+ {"nom": "dessous", "photo": "demi/c120.png", "box": [0, 10, 600, 750], "vue": "pose:0:-55", "k": 37, "w": 600, "h": 740, "focus": [-2.5, 0, -1], "forme": "c120"}
 ]}

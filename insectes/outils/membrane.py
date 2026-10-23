@@ -26,7 +26,7 @@ sys.stdout.reconfigure(encoding='utf-8', errors='replace')
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(os.path.dirname(HERE))
 sys.path.insert(0, HERE)
-from aile import frame, ground, flat, veins, outline, poly_mm, lab_of, hexof, de2000  # noqa: E402
+from aile import frame, ground, flat, outline, poly_mm, lab_of, hexof, de2000  # noqa: E402
 
 
 def lin(x):
@@ -99,6 +99,63 @@ def papillae(img, mm, vm, org, r, T):
             'c': hexof(np.median(cols, 0)), 'contraste': round(Lm - Lp, 1), 'aire': round(float(reg.sum() / r / r), 2)}
 
 
+def veins(img, mm, org, r, wmax=0.25, thr=5.0):
+    """the veins of a clear membrane: dark lines over it (the black-hat of L* over a disk of wmax mm, over thr L*: a clear membrane
+    shows its finest veins at a few L*), joined over their pale gaps (a closing of 0.1 mm) and kept when their skeleton runs over
+    0.8 mm (the papillae are points); walked into polylines between their junctions, each with its width (twice the distance to
+    the edge of the line as seen, not as joined) and colour (its darkest third). Grouped by width (0.02 mm) and colour."""
+    from skimage.morphology import skeletonize
+    s0, q1, _ = org
+    lab = lab_of(img); L = lab[..., 0]
+    ker = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (int(wmax * r) | 1, int(wmax * r) | 1))
+    bh = cv2.morphologyEx(cv2.GaussianBlur(L, (0, 0), 0.5), cv2.MORPH_BLACKHAT, ker)
+    inner = cv2.erode(mm.astype(np.uint8), np.ones((3, 3), np.uint8)).astype(bool)
+    v0 = (bh > thr) & inner
+    vc = cv2.morphologyEx(v0.astype(np.uint8), cv2.MORPH_CLOSE, cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (int(0.1 * r) | 1,) * 2)) > 0
+    sk0 = skeletonize(vc)
+    n, cc, st, _ = cv2.connectedComponentsWithStats(vc.astype(np.uint8), connectivity=8)
+    skl = np.bincount(cc[sk0], minlength=n).astype(float) / r
+    keep = skl > 0.8; keep[0] = False
+    vm = keep[cc] & vc
+    sk = skeletonize(vm)
+    # the line as seen: where the black-hat stands over half of its own crest nearby (its soft halo left out)
+    crest = cv2.dilate(bh, cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (int(0.15 * r) | 1,) * 2))
+    dt = cv2.distanceTransform((v0 & vm & (bh > 0.5 * crest)).astype(np.uint8), cv2.DIST_L2, 3)
+    ys, xs = np.nonzero(sk)
+    pix = set(zip(ys.tolist(), xs.tolist()))
+    nb = lambda p: [(p[0] + a, p[1] + b) for a in (-1, 0, 1) for b in (-1, 0, 1) if (a or b) and (p[0] + a, p[1] + b) in pix]
+    deg = {p: len(nb(p)) for p in pix}
+    seen = set(); paths = []
+    def walk(a, b):
+        path = [a, b]; seen.add((a, b)); seen.add((b, a)); prev, cur = a, b
+        while deg[cur] == 2:
+            nx = [q for q in nb(cur) if q != prev]
+            if not nx or (cur, nx[0]) in seen: break
+            prev, cur = cur, nx[0]; seen.add((prev, cur)); seen.add((cur, prev)); path.append(cur)
+        return path
+    for p in pix:
+        if deg[p] != 2:
+            for q in nb(p):
+                if (p, q) not in seen: paths.append(walk(p, q))
+    for p in pix:
+        for q in nb(p):
+            if (p, q) not in seen: paths.append(walk(p, q))
+    out = {}
+    for P in paths:
+        if len(P) < 3: continue
+        # a line fainter than 7 L* along most of its length is a fold of the membrane, not a vein
+        if np.median([bh[y, x] for y, x in P]) < 7: continue
+        A = np.array([[x, y] for y, x in P], np.int32)
+        ap = cv2.approxPolyDP(A.reshape(-1, 1, 2), 0.02 * r, False)[:, 0, :]
+        wd = (2 * float(np.median([dt[y, x] for y, x in P]))) / r
+        vals = np.array([L[y, x] for y, x in P]); core = np.array([lab[y, x] for y, x in P])[vals <= np.percentile(vals, 35)]
+        key = (round(max(0.03, wd) / 0.02) * 0.02, hexof(np.round(np.median(core, 0) / 8) * 8))
+        out.setdefault(key, []).append([[round(s0 + (x + .5) / r, 2), round(q1 - (y + .5) / r, 2)] for x, y in ap])
+    V = [{'largeur': round(k[0], 3), 'c': k[1], 'traits': v} for k, v in out.items()]
+    print('nervures : %d traits, %d groupes, %.1f mm²' % (sum(len(v['traits']) for v in V), len(V), vm.sum() / r / r))
+    return V, vm
+
+
 def cmd_plat(o):
     Cf = json.load(open(o.cadres, encoding='utf-8')); c = Cf[o.nom]; sid = Cf['_sid']
     out = os.path.join(ROOT, 'refcache', sid, 'ailes', o.nom); os.makedirs(out, exist_ok=True)
@@ -124,10 +181,10 @@ def cmd_plat(o):
     if hid.any():
         _, (iy, ix) = ndimage.distance_transform_edt(~vis, return_indices=True)
         img[hid] = img[iy[hid], ix[hid]]
-    V, vm = veins(img, mm, org, r, None, wmax=0.3, thr=8.0)
+    V, vm = veins(img, mm, org, r)
     # the light let through, per channel, against the plate behind
     T = np.clip(lin(img) / np.maximum(Gs, 1e-3), 0, 1.2)
-    a, Cc = over_pair(np.minimum(T, 1))
+    a = np.clip(1 - np.minimum(T, 1).mean(-1), 0, 1)          # the opacity map of the control image only
     memb = mm & ~cv2.dilate(vm.astype(np.uint8), np.ones((7, 7), np.uint8)).astype(bool)
     P = papillae(img, mm, vm, org, r, T)
     # zones of the membrane: k-means on the light let through (blurred over 0.3 mm), small islands given to their surround
