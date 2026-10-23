@@ -62,3 +62,10 @@ s'écrit dans l'ETAT, pour l'intégration.
 - `ETAT.md` avec ses résidus.
 - Un juge neuf sur les paires.
 - La session s'arrête sur une image pour le porteur. Elle ne passe pas à une autre espèce.
+
+## Intégration (décision du porteur, 2026-10-24)
+On attend que les neuf sessions aient fini et que toutes les animations soient prêtes. Ensuite seulement, j'assemble les
+branches `refs/heads/ch/insectes-01-abeille` à `refs/heads/ch/insectes-09-sauterelle`. La démo de tous les insectes ne se fait
+pas sur la page `insectes/demo/` : elle se fait sur le vrai site de vente (la scène de la boutique, `decor/`, voir
+`decor/PLAN.md`), car c'est surtout là qu'on veut voir les insectes. Ils y sont à taille réelle, posés sur les bouquets de la
+scène.
