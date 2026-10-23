@@ -66,5 +66,32 @@ remplacée. Ce fichier est tenu à jour au fil des étapes.
 - Le machaon reste identique au pixel : trois cellules d'atlas et une vue entière donnent les mêmes empreintes SVG et PNG avant et après
   (`outils/temoin.mjs`).
 
+### Juge neuf (§11.4)
+- **Premier passage : ko sur les 7 paires** (rendu « jouet » : pain bombé, éclat rectangulaire, taches en papier découpé, pattes en
+  tubes). Corrigé ensuite :
+  - les profils de forme sont placés au bord de leurs bandes de mesure (apex arrondi, dos continu) ;
+  - le rebord est mince ;
+  - l'éclat est une longue bande de fenêtre nette avec un petit soleil ;
+  - la tache scutellaire est bilobée et réduite d'un cinquième ; les plages blanches de la base des élytres apparaissent ;
+  - le pronotum est posé sur une corde inclinée (plus de casque ni de marche), avec un bord avant échancré et des plages crème en coins
+    arrondis ;
+  - les pattes sont affinées de 40 % et sortent sous le rebord ;
+  - la tête est dégagée, ses taches frontales sont visibles, l'œil est ovale et les antennes sont courtes et brun roux ;
+  - le dessous a ses ventrites, des mésépimères crème, une microsculpture satinée et des épipleures plus clairs vers l'intérieur ;
+  - le maillage est fin aux gros plans (plus de paliers) ;
+  - le bord des taches est adouci et faiblement irrégulier.
+- Mesure par régions (`outils/paire_de.py`). Sur les paires de studio à fond blanc, le rouge est à ΔE2000 2,6 à 3,5 (trois-quarts c137)
+  et de profil (c275) à ΔE 3,4. Les autres paires s'écartent surtout par l'exposition de la photo : les photos d'extérieur, exposées sur
+  le sujet, montent le rouge jusqu'à L* 62.
+- Contour de dessus, photo contre rendu, sur les mêmes stations : largeurs à 0,03-0,07 près, rapport longueur sur largeur 1,08
+  (photos 1,06 et 1,23).
+
 ## Résidus et questions
-(à compléter après le juge)
+1. **Masques par GrabCut plutôt que SAM.** La RAM libre est restée sous le seuil du verrou toute la session (jusqu'à 0,6 Go libres).
+   SAM reste en file. Les mesures sont contrôlées sur les images `controle.jpg`.
+2. **Aile postérieure non mesurée à plat.** Aucun spécimen étalé libre de droits. Elle est relevée sur c365, presque de face : corde
+   moyenne de 3,2 mm contre 3,5 mm dans l'étude, car le lobe anal est replié sur la photo.
+   Question : peut-on photographier une aile étalée, ou accepter une source sous licence non libre dont on ne garderait que les chiffres ?
+3. **Élytres ouverts en plans** (décision du porteur). Vus de chant au runtime, ils perdent leur courbure. Au tout début de l'envol, le
+   couvercle est plat pendant 0,12 s.
+4. **Élytre gauche en miroir du droit.** Le flanc gauche du spécimen mesuré n'a pas été photographié.

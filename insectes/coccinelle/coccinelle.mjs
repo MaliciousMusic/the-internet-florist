@@ -66,7 +66,7 @@ const C = {
 };
 // The varnish (porteur: « reflet du ciel, Fresnel, éclat net »): no softbox, a narrow horizon (the window line of a lacquered
 // dome), the lamp's glint drawn crisp by surface.glint; a faint broad sheen; a little light through the thin margin.
-const VARNISH = { wrap: 0.2, amb: 0.32, ks: 0, ks2: 0.05, p2: 7, env: 0.55, box: 0, sky: [-0.06, 0.1], mottle: 0, specColor: '#fff8f0' };
+const VARNISH = { wrap: 0.2, amb: 0.32, ks: 0, ks2: 0.05, p2: 7, env: 0.55, box: 0, sky: [-0.06, 0.1], up: [0, 0, 1], mottle: 0, specColor: '#fff8f0' };
 // the lamp as a softbox, a rectangular window (the studio photos c137, c370 show such windows, sharp, a little rounded by the dome):
 // its edge crisp, its core brighter
 const GLINT = [{ rect: [34, 4.2], color: '#fff1ea', a: 0.22 }, { rect: [28, 2.6], color: '#fff6f0', a: 0.55 }, { rect: [5, 2.2], color: '#fffdf9', a: 0.95 }];
@@ -106,14 +106,15 @@ function elytron(side) {
     th0: side > 0 ? TH0 : Math.PI / 2, th1: side > 0 ? Math.PI / 2 : Math.PI - TH0,
     profile: (t) => ({ x: -EL * (1 - t), zc: rimZ(t), ry: Math.max(1e-4, halfW(t)), rz: Math.max(1e-4, crestZ(t) - rimZ(t)) }),
     shape: (th, t) => { const m = side > 0 ? th : Math.PI - th; const r = elytronShape(m, t); return [r[0], r[1]]; },
-    albedo: (t, th) => { const m = side > 0 ? th : Math.PI - th; return m < 0 ? C.epi : elytraAlbedo(t, m); },
+    // the epipleuron: orange, paler toward its inner edge where it is thinnest (c543)
+    albedo: (t, th) => { const m = side > 0 ? th : Math.PI - th; return m < 0 ? (m < TH0 * 0.6 ? '#dc8442' : C.epi) : elytraAlbedo(t, m); },
     mat: { ...VARNISH, trans: { color: '#ff5a14', k: 0.06 } }, inner: C.epi, bias: 0.05, fine: FINE,
     depthAt: [-EL * 0.5, side * W * 0.22, H * 0.55],
   };
   // the measured marks of this elytron (left: g, right: d), in its own (t, th): the spots, the half scutellar spot, the white
   // patch at its base beside the scutellum
   // (marks stop where the base rounds off under the pronotum's rear margin, t 0.984: there the surface closes to a point)
-  const L = side > 0 ? 'g' : 'd', mine = (MK.elytres?.[L] || []).map((m) => ({ c: m.c || (m.classe === 'blanc' ? C.white : C.spot), poly: m.poly.map(([t, th]) => [Math.min(t, 0.984), side > 0 ? th : Math.PI - th]) }));
+  const L = side > 0 ? 'g' : 'd', mine = (MK.elytres?.[L] || []).map((m) => ({ c: m.c || (m.classe === 'blanc' ? C.white : C.spot), wob: m.classe === 'blanc' ? 0 : 0.006, soft: 0.025, poly: m.poly.map(([t, th]) => [Math.min(t, 0.984), side > 0 ? th : Math.PI - th]) }));
   b.paint = (sc, bb, g, id) => marks(sc, bb, id, mine.length ? mine : fallbackSpots(side)) +
     // the suture: a fine dark seam where the two shells meet, and the lit edge of the margin
     line(sc, bb, [[0.02, side > 0 ? Math.PI / 2 - 0.004 : Math.PI / 2 + 0.004], [0.985, side > 0 ? Math.PI / 2 - 0.004 : Math.PI / 2 + 0.004]], '#3a0802', 0.022, 0.75) +
@@ -204,7 +205,8 @@ function pronotum() {
     mat: { ...VARNISH, env: 0.5 }, bias: 0.08, fine: FINE,
     depthAt: [PL * 0.4, 0, H * 0.6],
   };
-  const mine = MK.pronotum ? MK.pronotum.map((m) => ({ poly: m.poly, c: m.c || C.white })) : fallbackPatches();
+  // the cream of the front corners scatters: seen from above (c370, c101) it is as bright as on the face (c246), not greyed by its tilt
+  const mine = MK.pronotum ? MK.pronotum.map((m) => ({ poly: m.poly, c: m.c || C.white, mat: { wrap: 0.6, amb: 0.55 } })) : fallbackPatches();
   b.paint = (sc, bb, g, id) => marks(sc, bb, id, mine);
   b.over = (sc, bb) => glint(sc, bb, GLINT, { th0: 0, th1: Math.PI });
   return b;
@@ -305,12 +307,14 @@ function venter() {
     profile: (t) => { const e = Math.pow(Math.max(0, Math.sin(Math.PI * t)), 0.55); return { x: -EL * 0.5 + (EL * 0.5 + PL * 0.9 + EL * 0.42) * t - 0.1, zc: 0.05, ry: (W / 2 - 0.42) * e, rz: 0.62 * e }; },
     shape: (th) => [1, Math.sin(th) < 0 ? 0.42 : 1],
     mat: { wrap: 0.3, amb: 0.34, ks: 0, ks2: 0.05, p2: 6, env: 0.22, box: 0, sky: [-0.06, 0.1], mottle: 0.05 }, bias: -0.8, fine: { max: 220, blur: 5, q: 4 },
+    // the fine reticulate microsculpture of the venter: a satin of tiny pits that catch the light (c543)
+    punct: { n: 900, r: 0.022, color: '#3a3634', a: 0.35 },
   };
   // the pale mesepimera at the sides of the mid-breast, and the sutures of the abdomen's five ventrites and of the hind coxae,
   // fine lines that catch the light (c543, c548)
   b.paint = (sc, bb, g, id) => marks(sc, bb, id, MK.ventre || [1, -1].map((s) => {
-    const P = []; for (let i = 0; i < 16; i++) { const a = i / 16 * 2 * Math.PI; P.push([0.66 + 0.035 * Math.cos(a), -Math.PI / 2 + s * (0.95 + 0.16 * Math.sin(a))]); }
-    return { poly: P, c: '#ddd6c6' };
+    const P = []; for (let i = 0; i < 16; i++) { const a = i / 16 * 2 * Math.PI; P.push([0.66 + 0.05 * Math.cos(a), -Math.PI / 2 + s * (0.98 + 0.26 * Math.sin(a))]); }
+    return { poly: P, c: '#d8cdb2' };
   })) + [0.1, 0.18, 0.26, 0.34, 0.43].map((t) => line(sc, bb, [[t, -Math.PI / 2 - 1.05], [t + 0.015, -Math.PI / 2], [t, -Math.PI / 2 + 1.05]], '#46423e', 0.025, 0.8)).join('') +
     line(sc, bb, [[0.5, -Math.PI / 2 - 1.1], [0.55, -Math.PI / 2 - 0.3], [0.52, -Math.PI / 2], [0.55, -Math.PI / 2 + 0.3], [0.5, -Math.PI / 2 + 1.1]], '#3c3836', 0.03, 0.8);
   return b;

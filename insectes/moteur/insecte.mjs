@@ -39,7 +39,7 @@ function material(b) {
     mottle: m.mottle ?? 0.07,
     // (coccinelle) the surround a varnish mirrors: box weighs the softbox around the lamp (1: as before), sky the band of the
     // horizon [from, to] in r.u (a narrow band: the crisp window line of a lacquered dome)
-    box: m.box ?? 1, sky: m.sky ?? null,
+    box: m.box ?? 1, sky: m.sky ?? null, up: m.up ?? null,
   };
 }
 
@@ -58,9 +58,12 @@ function shadePoint(cam, M, A, n, sh, occ) {
   let S = vs(tint, sh * (M.ks * Math.pow(nh, M.p) * (M.p + 2) / 16 + M.ks2 * Math.pow(nh, M.p2)));
   if (M.env > 0) {
     const r = sub(mul(n, 2 * dot(n, cam.c)), cam.c);
-    const sky = M.sky ? smooth(M.sky[0], M.sky[1], dot(r, cam.u)) : smooth(-0.25, 0.55, dot(r, cam.u));
+    // (coccinelle) M.up: the surround's up in the world (the zenith), not the screen's: seen from above, the horizon is a ring round
+    // the dome, not bands across it
+    const up = M.up || cam.u;
+    const sky = M.sky ? smooth(M.sky[0], M.sky[1], dot(r, up)) : smooth(-0.25, 0.55, dot(r, up));
     // a structured surround: the ground, a darker horizon band, the sky, and a broad bright softbox around the lamp
-    const ru = dot(r, cam.u), hor = 1 - 0.6 * smooth(-0.2, 0.05, ru) * (1 - smooth(0.12, 0.35, ru));
+    const ru = dot(r, up), hor = 1 - 0.6 * smooth(-0.2, 0.05, ru) * (1 - smooth(0.12, 0.35, ru));
     const box = smooth(0.55, 0.92, dot(r, cam.L)) * (M.box ?? 1);
     const envC = vadd(vs(vadd(vs(GROUND, 0.55 * (1 - sky)), vs(SKY, 1.2 * sky)), hor), vs(SUN, 1.6 * box));
     const F = 0.18 + 0.82 * Math.pow(1 - nv, 3);

@@ -56,13 +56,18 @@ export function marks(sc, b, id, list) {
   const M = material(b);
   let s = '';
   for (const mk of list) {
-    const P = visiblePart(sc, b, dense(mk.poly));
+    // a pigment's edge is not a drawn line: a faint wobble along it (mk.wob, in th radians), deterministic
+    let D = dense(mk.poly);
+    if (mk.wob) D = D.map(([t, th], i) => [t + mk.wob * 0.25 * Math.sin(i * 0.9 + 1.7) * Math.sin(i * 0.37), th + mk.wob * (Math.sin(i * 0.53 + 0.4) + 0.5 * Math.sin(i * 1.31))]);
+    const P = visiblePart(sc, b, D);
     if (!P) continue;
     const S = P.map(([t, th]) => sc.S(surf(b, t, th)));
     // the light at a few points of the mark (its outline every eighth, and its middle)
     const pick = [];
     for (let i = 0; i < P.length; i += Math.max(1, Math.floor(P.length / 8))) pick.push(i);
-    const ls = pick.map((i) => { const c = litAt(sc, b, M, id, mk.c, P[i][0], P[i][1]); return { i, c, y: 0.2126 * c[0] + 0.7152 * c[1] + 0.0722 * c[2] }; });
+    // mk.mat: the mark's own material over the body's (a cream cuticle scatters, lit more evenly than the lacquer around it)
+    const MM = mk.mat ? { ...M, ...mk.mat } : M;
+    const ls = pick.map((i) => { const c = litAt(sc, b, MM, id, mk.c, P[i][0], P[i][1]); return { i, c, y: 0.2126 * c[0] + 0.7152 * c[1] + 0.0722 * c[2] }; });
     let lo = ls[0], hi = ls[0];
     for (const x of ls) { if (x.y < lo.y) lo = x; if (x.y > hi.y) hi = x; }
     let fill;
@@ -73,7 +78,9 @@ export function marks(sc, b, id, list) {
         `<stop offset="0" stop-color="${fromLinear(lo.c)}"/><stop offset="1" stop-color="${fromLinear(hi.c)}"/></linearGradient>`);
       fill = `url(#${gid})`;
     } else fill = fromLinear(ls.reduce((o, x) => [o[0] + x.c[0] / ls.length, o[1] + x.c[1] / ls.length, o[2] + x.c[2] / ls.length], [0, 0, 0]));
-    s += `<path d="${pathOf(S)}" fill="${fill}"${mk.a !== undefined && mk.a < 1 ? ` opacity="${mk.a}"` : ''}/>`;
+    // mk.soft: the edge softened over a few hundredths of a millimetre (a stroke of the same colour, half transparent)
+    const soft = mk.soft ? ` stroke="${fill}" stroke-width="${f1(Math.max(0.4, mk.soft * sc.k))}" stroke-opacity="0.45" stroke-linejoin="round"` : '';
+    s += `<path d="${pathOf(S)}" fill="${fill}"${soft}${mk.a !== undefined && mk.a < 1 ? ` opacity="${mk.a}"` : ''}/>`;
   }
   return s;
 }

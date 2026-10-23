@@ -269,7 +269,7 @@ def cmd_pronotum(C, names, out):
     rr = 0.35
     P = []
     for i in range(10): a_ = np.pi / 2 * i / 9; P.append([t0 + (t1 - t0) * rr * (1 - np.sin(a_)), hi - hi * rr * (1 - np.cos(a_))])
-    P = [[round(float(t0), 4), 0.0]] + P + [[1.0, round(float(hi), 4)], [1.0, 0.0]]
+    P = [[round(float(t0), 4), 0.0]] + P[::-1] + [[1.0, round(float(hi), 4)], [1.0, 0.0]]   # the arc from the inner edge round to the rear edge
     P = [[round(float(a_), 4), round(float(b_), 4)] for a_, b_ in P]
     M['pronotum'] = [{'poly': P, 'c': None, 'classe': 'blanc'}, {'poly': [[round(1 - q[0], 4), q[1]] for q in P][::-1], 'c': None, 'classe': 'blanc'}]
     M['pronotum_photos'] = names
