@@ -5,9 +5,10 @@
 import { Essaim } from '../runtime/essaim.mjs';
 import { Abeille } from '../runtime/abeille.mjs';
 import { Papillon, MACHAON } from '../runtime/papillon.mjs';
+import { FourmiRouge, MYRMICA } from '../runtime/fourmi-rouge.mjs';
 
 const q = new URLSearchParams(location.search);
-const N = +(q.get('n') ?? 4), NM = Math.min(3, +(q.get('machaon') ?? 0)), SIZE = +(q.get('taille') || 1), DEBUG = q.get('debug') === '1';
+const N = +(q.get('n') ?? 4), NM = Math.min(3, +(q.get('machaon') ?? 0)), NFR = Math.min(8, +(q.get('fourmi-rouge') ?? 0)), SIZE = +(q.get('taille') || 1), DEBUG = q.get('debug') === '1';
 const BQ = '../../decor/scene/bouquets/printemps-a-la-carpe/';
 const PLANS = 4, ZS = [-90, -30, 30, 90];
 const UNITS_PER_MM = 0.9; // bouquet drawing units per millimetre (a tulip head of about 5 cm is about 45 units)
@@ -39,16 +40,20 @@ for (let g = 0; g <= PLANS; g++) {
 
 const essaim = await Essaim.create({ layers: canvases, zCuts: ZS });
 if (N) await essaim.kind('abeille', '../abeille/atlas/abeille', 12.5);
+if (NFR) await essaim.kind('fourmi-rouge', '../fourmi-rouge/atlas/fourmi-rouge', MYRMICA.bodyMm);
 if (NM) { await essaim.kind('machaon', '../machaon/atlas/machaon', MACHAON.bodyMm); await essaim.wings('machaon', '../machaon/atlas/machaon-ailes'); }
 
 let S = 1, left = 0, top = 0;
 const flowers = [];
+// ?fourmi-rouge=N: red ants walking on the table at the bouquet's foot, in front of the vase (the front canvas)
+const ground = { y: 0, x0: 0, x1: 0, z0: 95, z1: 220 };
 function layout() {
   essaim.resize();
   const W = innerWidth, H = innerHeight;
   S = Math.min((H * 0.8) / vh, (W * 0.92) / vw);
   left = (W - vw * S) / 2; top = H * 0.95 - vh * S;
   for (const d of plans) d.style.transform = `translate(${left}px, ${top}px) scale(${S})`;
+  ground.y = top + vh * S; ground.x0 = left + vw * S * 0.18; ground.x1 = left + vw * S * 0.82;
   // Flower hearts: the boxes of the head pieces, a little above their middle.
   const heads = m.pieces.filter((p) => p.t === 'tete');
   const old = flowers.splice(0);
@@ -71,6 +76,12 @@ for (let i = 0; i < N; i++) {
 for (let i = 0; i < NM; i++) {
   const b = new Papillon(essaim, flowers, rnd, { species: MACHAON, lengthPx: MACHAON.bodyMm * UNITS_PER_MM * S * SIZE });
   b.bodyMm = MACHAON.bodyMm; essaim.add(b); bees.push(b);
+}
+
+const colony = [];
+for (let i = 0; i < NFR; i++) {
+  const a = new FourmiRouge(essaim, ground, colony, rnd, { lengthPx: MYRMICA.bodyMm * UNITS_PER_MM * S * SIZE });
+  essaim.add(a); bees.push(a);
 }
 
 addEventListener('pointerdown', (ev) => { const b = essaim.hit(ev.clientX, ev.clientY); if (b) b.poke(ev.clientX, ev.clientY); });

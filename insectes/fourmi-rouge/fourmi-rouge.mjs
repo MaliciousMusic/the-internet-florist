@@ -278,7 +278,9 @@ const LEGS = {
   mid: { base: [0.8, 0.27, -0.02], foot: [0.85, 1.85], tdir: [0.2, 0.85, -0.5], pole: [0, 1, 0.45] },
   hind: { base: [0.34, 0.26, 0.02], foot: [-1.05, 1.75], tdir: [-0.7, 0.55, -0.45], pole: [-0.25, 1, 0.45] },
 };
-const STRIDE = 0.9, LIFT = 0.28;
+// the foot's sweep against the body over its stance: duty factor 0.5 times the stride length, 0.67 body length (Clifton et al. 2020:
+// 1.8 to 2.6 mm for a 3 mm ant), so 0.5 x 0.67 x 4.9 mm; the foot lifts by a fifth of the hind tibia
+const STRIDE = 1.6, LIFT = 0.24;
 function legs(sc, pose, frame) {
   const P = MES.pattes, key = { front: 'avant', mid: 'milieu', hind: 'arriere' };
   for (const s of [1, -1]) for (const k of ['front', 'mid', 'hind']) {
