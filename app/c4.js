@@ -99,9 +99,10 @@ function stiffOf(it){const r=it.p.rec||{},ty=(r.p||{}).type,gh=GHI[it.p.sid];if(
 /* a stem leaving the mouth upright then bending to its tip at angle th (degrees from vertical) and chord len; arching stems end leaning further out */
 function spineFor(th,len,stiff,droop=1){const a=th*D,ex=Math.sin(a)*len,ey=-Math.cos(a)*len,sg=Math.sign(th)||(rnd()<.5?-1:1),
     ea=(typeof stiff==='number'?th*stiff:stiff?th*1.06:th+sg*Math.min(32,6+Math.abs(th)*.38)*droop)*D,k1=len*.36,k2=len*.34;
+  if(typeof VPL!=='undefined'&&VPL&&VP_T0!=null)return[[0,0],[Math.sin(VP_T0)*k1*.8,-Math.cos(VP_T0)*k1*.8],[ex-Math.sin(ea)*k2,ey+Math.cos(ea)*k2],[ex,ey]];/* the vessel's plan (z7-plan) */
   return leanP([[0,0],[Math.sin(a)*k1*.22,-k1],[ex-Math.sin(ea)*k2,ey+Math.cos(ea)*k2],[ex,ey]])}
 /* where a stem enters the mouth: spread across the opening in the order of the stems' angles, so stems never cross at the neck */
-const baseAt=(BP,mw,th)=>[BP[0]+Math.max(-1,Math.min(1,th/65))*mw*.5+R(-2.5,2.5),BP[1]-3];
+const baseAt=(BP,mw,th)=>typeof VPL!=='undefined'&&VPL?vpBase(BP,th):[BP[0]+Math.max(-1,Math.min(1,th/65))*mw*.5+R(-2.5,2.5),BP[1]-3];
 /* clusters carried on their own stem (sprays, berries, leafy stems, smoke bush) are drawn along a bent stem from the mouth */
 /* stems that can be drawn along a bent spine (everything else is a head on its own stem) */
 const SPINE_A=new Set(['line','spike','accessory','spray','berries','foliage']),SPINE_FN=new Set(['xDelph','xAllium','oncidium','xSanders','xSnake','xLichen','xSmoke']),bends=it=>{const r=it.p.rec||{};return SPINE_A.has(r.a)||r.a==='custom'&&SPINE_FN.has((r.p||{}).fn)};
@@ -158,7 +159,7 @@ function vLean(vid,BP){const v=VZ[vid]||{},sb=v.svgb&&typeof SVGB!=='undefined'?
   if(!see||!v.prof||v.kind==='hand'||v.kind==='wrap'||v.kind==='kenzan')return null;const k=v.vs||1,
     yb=sb&&sb.cavb?FL-(FL-sb.cavb)*k:FL-5,rb=sb&&sb.cavr?sb.cavr*k*.55:Math.max(3,sRad(profSamples(v.prof,40).map(([y,w])=>[y,Math.max(1,w-2.6)]),8))*.82;
   return Math.atan2((vMouth(v)||26)*.45+rb,Math.max(20,yb-BP[1]))}
-const leanP=P=>{if(LEANMAX==null)return P;const[a,b]=P,dx=b[0]-a[0],dy=b[1]-a[1],l=Math.hypot(dx,dy)||1,t=Math.atan2(dx,-dy);
+const leanP=P=>{if(typeof VPL!=='undefined'&&VPL)return vpLean(P);if(LEANMAX==null)return P;const[a,b]=P,dx=b[0]-a[0],dy=b[1]-a[1],l=Math.hypot(dx,dy)||1,t=Math.atan2(dx,-dy);
   /* its handle lengthened to the stem's chord, so the bend spreads along the stem instead of gathering at the lip */
   if(Math.abs(t)>LEANMAX){const u=Math.sign(t)*LEANMAX,L2=Math.max(l,.45*Math.hypot(P[3][0]-a[0],P[3][1]-a[1]));P[1]=[a[0]+Math.sin(u)*L2,a[1]-Math.cos(u)*L2]}return P};
 function stemSamples(x,y,BP,mw,rx,rimY){const bx=BP[0]+Math.max(-1,Math.min(1,(x-BP[0])/Math.max(60,rx)))*mw*.45,by=BP[1]+8,dy=BP[1]-y,Lc=Math.hypot(x-bx,by-y),sh=Math.max(0,Math.min(1,1-(Lc-20)/50)),
@@ -245,6 +246,7 @@ function candidate(P,sv,vid,tk){sd(sv);const T=P.asp?Object.assign({},TPL[tk],{a
      its area kept, never past that reach) */
   /* a mass held down by its stems opens its fan wider (up to ~64° from upright), so that its flowers find room at the sides */
   let fan=FAN;{const a=pool.map(reachOf).sort((x,y)=>x-y),RQ=a.length&&!NOREACH?a[Math.floor(a.length*.5)]:1e9;if(1.82*ry>RQ){const k=RQ/(1.82*ry);ry*=k;rx=Math.max(rx,Math.min(rx/k,RQ*1.1));fan=FAN*Math.min(1.3,1/Math.sqrt(k))}}
+  if(typeof VPL!=='undefined'&&VPL)fan*=VPL.fan/FAN;/* the fan of the stems from the vessel's cone (z7-plan) */
   const dec=R(T.dec[0],T.dec[1])*(st.dec??1),FP=[BP[0]+s*dec*rx*.5,BP[1]-ry*(v.kind==='wrap'?1.02:.82)],H=ry*2.1;
   /* three-lobed envelope: main mass, a lower lobe on the other side, a higher lobe toward the apex — never a ball */
   const lobes=[{cx:FP[0],cy:FP[1],rx,ry},{cx:FP[0]-s*rx*.72,cy:FP[1]+ry*.3,rx:rx*.48,ry:ry*.5},{cx:FP[0]+s*rx*.28,cy:FP[1]-ry*.62,rx:rx*.42,ry:ry*.48}];
@@ -402,6 +404,7 @@ function composeMouths(ids,sv,occ,vid,model,recipe){const v=VZ[vid],keep={mx:v.m
         for(let i=0;i<nk;i++){const o=its[Math.floor(i*st)];o.mouth=mo;c.out.push(o)}}finally{Object.assign(v,keep)}});
     LEANMAX=lean0;return c}finally{COMPOSE_SUB=false}}
 function compose(ids,sv,occ,vid,model,recipe){if(!COMPOSE_SUB&&VZ[vid]&&VZ[vid].m2&&VZ[vid].m2.length)return composeMouths(ids,sv,occ,vid,model,recipe);LEANMAX=vLean(vid,basePoint(vid));
+  if(typeof vpUse==='function'){VPL=COMPOSE_SUB?null:vpUse(vid);VP_T0=null}/* the vessel's plan (z7-plan) */
   /* a vessel made for a larger bouquet (v.bq: its wide opening, owner 2026-10-17) holds more stems of the model, in the same proportions */
   const BQK=VZ[vid]&&VZ[vid].bq;if(model&&BQK&&BQK!==1)model=Object.assign({},model,{els:model.els.map(e=>Object.assign({},e,{n:Math.max(1,Math.round((e.n||1)*BQK))}))});
   const P=model?planModel(model):recipe?planRecipe(recipe,occ,vid):plan(ids,occ,vid);sd(sv*31+7);const tk=model&&TPL[model.tpl]?model.tpl:pickTpl(P,vid);let best=null;for(let k=0;k<8;k++){const c=candidate(P,sv*97+k*13+1,vid,tk),sc=scoreC(c);if(!best||sc>best.score){best=c;best.score=sc}}
