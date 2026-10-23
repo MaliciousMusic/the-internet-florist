@@ -327,7 +327,7 @@ function paintBody(sc, b, id) {
   if (b.rim) out += `<path d="${sil}" fill="none" stroke="${b.rim.color}" stroke-width="${fmt(b.rim.w * sc.k)}" opacity="${fmt(b.rim.a * 0.6)}"/>`;
   // Facets of a compound eye, seen in close-up only.
   if (b.facets && sc.k * b.facets > 2.2) out += facets(sc, b, g, nt, nth);
-  if (b.ommatidia && sc.k * b.ommatidia.d > 2.2) out += ommatidia(sc, b, M, id);
+  if (b.ommatidia && sc.k * b.ommatidia.d > (b.ommatidia.min ?? 2.2)) out += ommatidia(sc, b, M, id);
   // Contact shadows where another piece meets this one (v1 hand-placed spots, kept lighter).
   if (b.ao) out += b.ao.map((o) => ao(sc, { ...o, a: o.a * 0.55 })).join('');
   out += '</g>';

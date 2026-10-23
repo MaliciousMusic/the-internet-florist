@@ -2,7 +2,7 @@
 // its own name (sc.part) and grouped in the SVG for animation (PROTOCOLE §3.6). Numbers: ETAT.md, FICHE.md, formes/, grilles/, ailes/.
 // Body frame: x forward (the head), y to the bee's left, z up, mm. The origin sits on the axis at the thorax-petiole junction.
 import { readFileSync, existsSync } from 'node:fs';
-import { add, sub, mul, dot, cross, norm, clamp, rad, rot, mix } from '../moteur/geo.mjs';
+import { add, sub, mul, dot, cross, norm, clamp, rad, rot, mix, hull } from '../moteur/geo.mjs';
 import { Scene, drawBody, drawTube, drawWing, surf, normalAt } from '../moteur/insecte.mjs';
 import { camera } from '../moteur/geo.mjs';
 import { X, Y, Z, frame0, env, legChain, segment, articleLeg, sphere, lens, pitched, strokeAxes, curve, lines } from '../moteur/kit.mjs';
@@ -20,12 +20,12 @@ const G_ABD = grid('abdomen'), G_THX = grid('thorax');
 const B = {
   abd: [-6.25, -0.3], abdR: 2.25, abdH: 1.9,          // tip to petiole; half width 2.1 (4.2 across), half height
   thx: [-0.2, 3.7], thxR: 1.9, thxH: 1.78,            // propodeum to pronotum
-  head: [4.6, 0, 0.05], headT: 0.95, headR: 1.52, headH: 1.72, tilt: 30, eyeY: 1.4,
+  head: [4.6, 0, 0.05], headT: 0.95, headR: 1.48, headH: 1.72, tilt: 30, eyeY: 1.42,
 };
 
 const C = {
   // the legs glossy black, catching the light in silvery streaks (c166, c311)
-  cuticle: '#241a14', leg: '#17100c', legHi: '#1d140e', tarsus: '#2e1c10', claw: '#1a0f08',
+  cuticle: '#241a14', leg: '#120c09', legHi: '#150e0a', tarsus: '#1e130b', claw: '#1a0f08',
   eye: ['#1f1815', '#2f2522', '#4d3f39'],           // c214, c256, c311 (couleur.py: ombre, milieu, lumière hors reflets)
   furPale: '#d9bf8f', furGold: '#c99b5f', furDeep: '#8b6337', faceHair: '#9b7e68', rim: '#f0c789',
   mandible: '#7a4a22', proboscis: '#5a3a1e', glossa: '#b98c5a',
@@ -51,8 +51,9 @@ function head(sc, pose) {
       // on the face the hairs lie down toward the mouth and a little outward (c214), elsewhere back along the body
       toward: (t, th) => (t > 0.58 ? norm(add(HR([0, 0, -1]), [0, 0.25 * Math.cos(th), 0])) : null),
       color: (t, th, R) => { const up = Math.sin(th), r = R(); if (t < 0.45) return r < 0.6 ? C.furPale : C.furGold; if (up > 0.35) return r < 0.5 ? '#6e5644' : r < 0.8 ? '#544032' : '#8f7558'; return r < 0.55 ? '#9a8064' : '#bba582'; },
-      density: (t, th) => { const u = Math.sin(th); if (t > 0.62 && u < -0.3 && Math.abs(Math.cos(th)) < 0.75) return 0.08; return 1; },
-      lenAt: (t, th) => (t < 0.45 ? 1.35 : Math.sin(th) > 0.5 ? 1.1 : 0.8),
+      // bare where the eyes lie (the flanks between the genae and the face: the judge saw no eyes under the hair from the front)
+      density: (t, th) => { const u = Math.sin(th), c = Math.abs(Math.cos(th)); if (t > 0.12 && t < 0.78 && c > 0.55) return 0.04; if (t > 0.62 && u < -0.3 && c < 0.75) return 0.08; return 1; },
+      lenAt: (t, th) => { const u = Math.sin(th); return u < -0.3 ? 0.55 : t < 0.45 ? 1.2 : u > 0.5 ? 1.0 : 0.7; },
     },
   });
   // compound eyes: reniform, 2.6 mm long, grey-brown marbled (c214, c256, c311), satin with the window drawn out along the curve,
@@ -63,7 +64,7 @@ function head(sc, pose) {
     const o = HP([-0.12, B.eyeY * s, 0.08]);
     drawBody(sc, {
       name: 'eye', frame: { o, ax: HR(Z), ay: HR(X), az: [0, s, 0] }, seed: 21 + s, color: C.eye[1],
-      profile: (t) => { const r = Math.pow(env(t, 0.5, 0.5) * 2, 0.6); return { x: -1.2 + 2.4 * t, zc: 0, yc: -0.18 * Math.sin(Math.PI * t), ry: 0.52 * r * (0.82 + 0.3 * t), rz: 0.38 * r }; },
+      profile: (t) => { const r = Math.pow(env(t, 0.5, 0.5) * 2, 0.6); return { x: -1.2 + 2.4 * t, zc: 0, yc: -0.18 * Math.sin(Math.PI * t), ry: 0.52 * r * (0.82 + 0.3 * t), rz: 0.44 * r }; },
       albedo: (t, th) => {
         // marbling: low-frequency patches about 0.3 mm across, between the measured shadow and light of the eye
         const n = 0.5 + 0.28 * Math.sin(t * 17 + 2.1 * s) * Math.sin(th * 5 + 1.3) + 0.22 * Math.sin(t * 31 - th * 7 + 0.7 * s);
@@ -71,7 +72,7 @@ function head(sc, pose) {
       },
       mat: { ks: 0.32, p: 70, ks2: 0.07, p2: 7, env: 0.5, wrap: 0.22, amb: 0.42, mottle: 0.04, specColor: '#f2eee8',
         window: { k: 1.15, x: [-0.3, 0.12], y: [0.4, 0.82], soft: 0.05 } },
-      ommatidia: { d: 0.022, a: 0.55, ga: 0.6, window: { x: [-0.3, 0.12], y: [0.4, 0.82] } },
+      ommatidia: { d: 0.022, a: 0.55, ga: 0.6, min: 1.5, window: { x: [-0.3, 0.12], y: [0.4, 0.82] } },
       hair: { n: 700, len: 0.13, w: 0.007, lean: 0.45, a: 0.5, pile: 0, fleece: 0, twist: 0.6, curl: 0.1, color: (t, th, R) => (R() < 0.6 ? '#c9b597' : '#9d8a70') },
       bias: 0.05,
     });
@@ -94,9 +95,11 @@ function head(sc, pose) {
   // the clypeus: a shining black plate with sparse pale hairs (c214), the labrum under it, the mandibles at the corners
   sc.part = 'clypeus';
   drawBody(sc, {
-    ...lens('clypeus', HP([0.8, 0, -0.85]), 0.14, 0.72, 0.62, '#2a211f'), frame: HF(HP([0.8, 0, -0.85])),
-    shape: (th) => [1 + 0.18 * Math.sin(th), 1],
-    mat: { ks: 0.45, p: 90, ks2: 0.08, env: 0.35, mottle: 0.06, specColor: '#f4efe8' },
+    ...lens('clypeus', HP([0.86, 0, -0.9]), 0.18, 0.86, 0.66, '#211917'), frame: HF(HP([0.86, 0, -0.9])),
+    shape: (th) => [1 + 0.22 * Math.sin(th), 1],
+    mat: { ks: 0.55, p: 110, ks2: 0.1, env: 0.45, mottle: 0.06, specColor: '#f4efe8' },
+    // pitted: the punctures of the clypeus catching the light (c214)
+    punct: { n: 260, r: 0.018, color: '#0a0605', a: 0.6, glint: '#d8d2cc' },
     hair: { n: 160, len: 0.16, w: 0.009, lean: 0.4, a: 0.6, pile: 0, fleece: 0, color: () => '#cdb895' },
   });
   sc.part = 'labre';
@@ -117,11 +120,11 @@ function antennae(sc, pose) {
     sc.part = s > 0 ? 'antenne-g' : 'antenne-d';
     const base = HP([0.92, 0.37 * s, 0.1]);
     const fly = pose === 'vol';
-    const scape = norm(fly ? [0.75, 0.25 * s, 0.6] : pose === 'butine' ? [0.55, 0.22 * s, 0.75] : [0.75, 0.22 * s, 0.6]);
+    const scape = norm(fly ? [0.7, 0.28 * s, 0.65] : pose === 'butine' ? [0.4, 0.26 * s, 0.88] : [0.42, 0.26 * s, 0.87]);
     const elbow = add(base, mul(scape, 1.1));
     const pts = [base, add(base, mul(scape, 0.55)), elbow];
     // at rest and on a flower the flagella hang forward and down before the face (c311, c166), in flight they point ahead
-    let d = norm(fly ? [0.95, 0.32 * s, 0.05] : pose === 'butine' ? [0.45, 0.25 * s, -0.85] : [0.4, 0.22 * s, -0.88]);
+    let d = norm(fly ? [0.95, 0.32 * s, 0.05] : pose === 'butine' ? [0.62, 0.3 * s, -0.72] : [0.66, 0.3 * s, -0.68]);
     let p = elbow;
     const seg = 2.7 / 11;
     for (let i = 0; i < 11; i++) {
@@ -166,13 +169,17 @@ function thorax(sc) {
   const [x1, x0] = B.thx, L = x0 - x1;
   drawBody(sc, {
     name: 'thorax', frame: frame0([x1, 0, 0.12]), color: C.cuticle, seed: 21, grid: G_THX,
+    // the cuticle under the fur is black: the grid (which reads fur and cuticle together) darkened, so the ground shows between hairs
+    albedo: (t, th) => mix(gridHex(G_THX, t, th), '#120c08', 0.6),
     mat: { ks: 0.07, p: 18, env: 0.05, wrap: 0.35, mottle: 0.06 },
     profile: (t) => { const e = Math.pow(env(t, 0.46, 0.5) / 0.5, 0.6); return { x: L * t, zc: 0.12 + 0.22 * Math.sin(Math.PI * Math.pow(t, 0.8)), ry: B.thxR * Math.min(1, e), rz: B.thxH * Math.min(1, e) }; },
     shape: (th) => [1, Math.sin(th) < 0 ? 0.86 : 1],
     hair: {
       // c256, c181, c214: hairs 0.4 mm on the scutum to 0.75 mm on the pleura and the collar, curved back along the body, plumose
-      n: 11000, len: 0.56, w: 0.015, lean: 0.95, a: 0.88, droop: 0.75, twist: 1.0, wave: 0.18, curl: 0.38, fleece: 0.45, pile: 0.55, locks: 0.38,
-      sheen: 0.22, sheenP: 30, color: 'grid', gridK: 0.82, rim: { v: 0.24, color: C.rim, k: 0.45 },
+      n: 11000, len: 0.56, w: 0.014, lean: 0.9, a: 0.9, droop: 0.75, twist: 1.3, wave: 0.22, curl: 0.42, fleece: 0.35, pile: 0.55, locks: 0.6,
+      sheen: 0.22, sheenP: 30, gridK: 0.82,
+      // the grid's colour warmed toward the golden-rufous of the living fur (c311, c181: the judge saw a grey-beige)
+      color: (t, th, R) => mix(gridHex(G_THX, t, th), R() < 0.5 ? '#c4894a' : R() < 0.5 ? '#a8763e' : '#dcb47a', 0.3 + 0.2 * R()), rim: { v: 0.24, color: C.rim, k: 0.45 },
       lenAt: (t, th) => { const u = Math.sin(th); return u > 0.75 && t > 0.25 && t < 0.85 ? 0.72 : t > 0.88 ? 1.25 : u < -0.2 ? 1.2 : 1; },
       density: (t, th) => (Math.sin(th) > 0.8 && t > 0.35 && t < 0.8 ? 0.7 : 1),
     },
@@ -228,18 +235,19 @@ function lips(sc, b) {
 function abdomen(sc, pose) {
   sc.part = 'abdomen';
   const [xt, x0] = B.abd, L = x0 - xt;
-  const step = (t) => { for (const [a, b] of TERG) if (t >= a && t <= b) return 1 + 0.1 * ((b - t) / (b - a)); return 1; };
+  const step = (t) => { for (const [a, b] of TERG) if (t >= a && t <= b) return 1 + 0.14 * ((b - t) / (b - a)); return 1; };
   const edgeD = (t) => Math.min(...TERG.map(([a]) => Math.abs(t - a)));
   drawBody(sc, {
     name: 'abdomen', frame: pitched([x0, 0, -0.12], pose === 'vol' ? -14 : -6), color: '#3a2a1c', seed: 41, grid: G_ABD,
     // t from the tip to the petiole: round at the tip, widest at 55 % (c282), narrowing into the petiole
     profile: (t) => {
-      const e = Math.pow(env(t, 0.55, 0.3) / 0.62, 0.9) * step(t);
+      // widest at 60 % (T2-T3), a cone to the pointed tip (c311, c181, the judge: « se rétrécir vers la pointe »)
+      const e = Math.min(1, Math.pow(env(t, 0.9, 0.6) / 0.364, 0.62)) * step(t);
       return { x: -L * (1 - t), zc: -0.08 - 0.5 * Math.pow(1 - t, 1.7), ry: B.abdR * e, rz: B.abdH * e };
     },
     shape: (th) => [1, Math.sin(th) < 0 ? 0.84 : 1],
     paint: (sc2, b2) => lips(sc2, b2),
-    mat: { ks: 0.2, p: 55, ks2: 0.05, p2: 6, env: 0.12, wrap: 0.38, mottle: 0.05, specColor: '#fff2dc', transAlb: { k: 0.26, g: 1.6, core: 0.12, p: 0.6 } },
+    mat: { ks: 0.24, p: 70, ks2: 0.06, p2: 6, env: 0.16, wrap: 0.38, mottle: 0.05, specColor: '#fff2dc', transAlb: { k: 0.26, g: 1.6, core: 0.12, p: 0.6 } },
     hair: {
       // a short dense pile all over (c282, c311: the cuticle seen through it), longer and denser on the felt bands
       n: 9000, len: 0.2, w: 0.008, lean: 1.25, a: 0.85, twist: 0.7, wave: 0.14, curl: 0.25, fleece: 0.3, pile: 0.6, locks: 0.25, sheen: 0.32, sheenP: 24,
@@ -260,7 +268,7 @@ const LEGS = {
   mid: { base: [2.0, 0.85, -1.48], fem: 2.3, tib: 2.3, tar: 2.4, segs: [0.5, 0.13, 0.11, 0.1, 0.16] },
   hind: { base: [0.95, 0.88, -1.38], fem: 2.8, tib: 3.0, tar: 3.9, segs: [0.64, 0.09, 0.08, 0.07, 0.12] },
 };
-const LEGMAT = { ks: 0.95, p: 140, ks2: 0.16, p2: 8, env: 0.3, mottle: 0.04, specColor: '#f4f2f0' };
+const LEGMAT = { ks: 1.1, p: 160, ks2: 0.2, p2: 10, env: 0.22, amb: 0.3, mottle: 0.04, specColor: '#f4f2f0' };
 const fr = (n, len, color, edge = 0.75, w = 0.012, lean = 0.75) => ({ n, len, w, lean, a: 0.85, twist: 0.6, curl: 0.3, pile: 0, fleece: 0.3, color: typeof color === 'function' ? color : () => color, density: (t, th) => (Math.abs(Math.cos(th)) > edge ? 1 : 0.1) });
 const ART = {
   front: { coxa: { from: [0.05, -0.28, 0.35], r: [0.22, 0.25, 0.2], c: C.leg, hair: fr(80, 0.4, C.furPale, 0) }, fem: { r: [0.15, 0.2, 0.13], c: C.leg, hair: fr(110, 0.38, C.furPale, 0.3) },
@@ -271,8 +279,8 @@ const ART = {
     tar: { r: 0.062, c: C.tarsus, hair: fr(8, 0.1, '#b48a5c', 0) }, claw: 0.08 },
   hind: { coxa: { from: [0.05, -0.3, 0.35], r: [0.26, 0.29, 0.24], c: C.leg, hair: fr(80, 0.45, C.furPale, 0) }, fem: { r: [0.18, 0.25, 0.16], c: C.leg, hair: fr(140, 0.42, C.furPale, 0.3) },
     // the corbicula: 1.2 mm wide at its end, a glossy plate, fringed on both edges with long hairs bent over it
-    tib: { r: [0.12, 0.3, 0.5], c: '#2e1d12', flat: 0.26, hair: fr(220, 0.62, (t, th, R) => (R() < 0.6 ? '#d9b98a' : '#b8925e'), 0.88, 0.012, 1.05) },
-    bas: { r: [0.4, 0.46, 0.38], c: '#3a2414', flat: 0.24, hair: fr(200, 0.2, (t, th, R) => (R() < 0.6 ? '#c8945a' : '#e0b878'), 0.15, 0.012, 0.9) },
+    tib: { r: [0.12, 0.3, 0.5], c: '#120c08', flat: 0.26, hair: fr(300, 0.68, (t, th, R) => (R() < 0.6 ? '#d9b98a' : '#b8925e'), 0.88, 0.012, 1.05) },
+    bas: { r: [0.4, 0.46, 0.38], c: '#140d09', flat: 0.24, hair: fr(200, 0.2, (t, th, R) => (R() < 0.6 ? '#c8945a' : '#e0b878'), 0.15, 0.012, 0.9) },
     tar: { r: 0.07, c: C.tarsus, hair: fr(8, 0.1, '#b48a5c', 0) }, claw: 0.09 },
 };
 const CORBMAT = { ks: 0.7, p: 110, ks2: 0.12, p2: 8, env: 0.55, mottle: 0.04, specColor: '#fff6ea' };
@@ -379,9 +387,12 @@ function measuredWing(name, drawn, opts = {}) {
   // the veins (the base's first 0.45 mm left out: the hair of the thorax was read there), their colour a little darkened: read on the
   // darker half of each vein over a white plate, they lose their depth over the body
   const dk = (h) => '#' + [1, 3, 5].map((i) => Math.round(parseInt(h.slice(i, i + 2), 16) * 0.72).toString(16).padStart(2, '0')).join('');
-  const groups = (R.nervures || []).map((g) => ({ w: g.largeur, c: dk(g.c), d: g.traits.filter((l) => l.some(([s]) => s > 0.45)).map((l) => 'M' + l.map((q) => q.join(' ')).join('L')).join('') })).filter((g) => g.d);
+  // widths read on the closed vein mask run wide (the costa with its hairs): taken to 0.7, at most 0.08 mm
+  const groups = (R.nervures || []).map((g) => ({ w: Math.min(0.08, g.largeur * 0.7), c: dk(g.c), d: g.traits.filter((l) => l.some(([s]) => s > 0.45) && l.every(([s]) => s < R.longueur - 0.9)).map((l) => 'M' + l.map((q) => q.join(' ')).join('L')).join('') })).filter((g) => g.d);
+  // the outline's hull: the folded apex of c278 left notches the living wing has not
+  R.contour = hull(R.contour);
   const box = R.contour.reduce((b, [s, q]) => [Math.min(b[0], s), Math.min(b[1], q), Math.max(b[2], s), Math.max(b[3], q)], [1e9, 1e9, -1e9, -1e9]);
-  return { ...drawn, span: R.longueur, outline: sm(R.contour), box, veinGroups: groups, tint, membrane: a / 1.1, edge: R.couleur_nervures || drawn.edge, ew: 0.025, vein: R.couleur_nervures || drawn.vein, measured: true };
+  return { ...drawn, span: R.longueur, outline: sm(R.contour), box, veinGroups: groups, tint: mix(tint, '#8a7a66', 0.6), membrane: a / 1.1, edge: R.couleur_nervures || drawn.edge, ew: 0.025, vein: R.couleur_nervures || drawn.vein, measured: true };
 }
 const FORE = measuredWing('avant', FOREWING);
 // the hindwing of c278 lies in its own plane under the forewing: brought to its published length, 6.74 mm (Al-Kahtani & Taha 2021)
