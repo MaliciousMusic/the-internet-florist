@@ -103,7 +103,18 @@ cerque-g/d (ou oviscapte), tegmen-g/d, patte-avant/milieu/arriere-g/d, aile-avan
 - **Chiffres** : `COMPORTEMENT.md` (Burrows & Morris 2003 pour le saut, Brackenbury 1990, la marche des sauterelles bioRxiv 2025).
 
 ### Atlas
-Voir « Poids » plus bas.
+- Niveaux définis dans `META.lod` :
+  - S : cellules de 80 px, 7 azimuts, 5 élévations, toutes les poses, soit 385 cellules ;
+  - L : cellules de 160 px, 5 azimuts, 4 élévations, poses pose, saut et vol, soit 100 cellules ;
+  - ailes au runtime : `outils/ailes.mjs`.
+- Une cellule pèse 0,9 à 1 Mo de SVG.
+- **Cuisson : en attente du verrou.** Elle est lancée (`GATE_RAM=5 sh ws/gate.sh …`), mais pendant plus d'une heure la RAM
+  libre est restée entre 2,5 et 3,1 Go : un jeu tournait sur le PC. Elle partira seule dès qu'un créneau s'ouvre. Les poids
+  (Ko, Mo sur le GPU) seront ajoutés ici.
+- Prévision :
+  - S : 1600 × 1600, environ 10 Mo sur le GPU ;
+  - L : 1600 × 1600, environ 10 Mo ;
+  - ailes : environ 2 Mo.
 
 ## Fichiers partagés touchés (pour l'intégration)
 - `runtime/essaim.mjs` : clé nouvelle `b.wingsShown === false`, qui masque les quads d'ailes. Le machaon n'est pas concerné.
@@ -126,7 +137,7 @@ Voir « Poids » plus bas.
    et de dessus le vert des champs latéraux paraît plus étroit que sur c157.
 4. **Rapport tibia sur fémur postérieur** : 0,95 mesuré à plat sur c090 ; le juge lit environ 1,25 sur c166, en raccourci. On garde
    la mesure à plat.
-5. **SAM et profondeur** non passés (RAM). Les mesures de forme viennent des calques.
+5. **SAM et profondeur** non passés (RAM). Les cellules S pèsent 0,9 Mo de SVG (machaon L : 0,8 Mo) ; maillage et dégradés des tubes dominent. Les mesures de forme viennent des calques.
 7. **Pleures du thorax** : les sutures sont dessinées, mais pas les sclérites en relief ni les hanches médianes et postérieures.
 8. **Pièces buccales de profil** : le clypéus, le labre et les mandibules sont modelés, mais restent schématiques en gros plan.
 9. **Champ dorsal** : il est gris-brun réticulé, alors que c157 le montre plus rosé et translucide. Les fémurs postérieurs vus de
