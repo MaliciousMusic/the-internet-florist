@@ -507,7 +507,9 @@ function makeHairs(sc, b, M, id) {
       const p = surf(b, t, th), n = normalAt(b, t, th);
       const vis = dot(n, cam.c);
       if (vis < -0.22) continue;
-      const rear = mul(ax, -1);
+      let rear = mul(ax, -1);
+      // (abeille) the way the hair lies, given per point (the face of a bee: down toward the mouth, not back along the axis)
+      if (H.toward) rear = H.toward(t, th, p, n) || rear;
       const tan = norm(sub(rear, mul(n, dot(n, rear))));
       const lean = (H.lean ?? 0.6) * (ly.lk < 1 ? 1.25 : 1) + (R() - 0.5) * 0.5;
       let d = norm(add(mul(n, Math.cos(lean)), mul(tan, Math.sin(lean))));

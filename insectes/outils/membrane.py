@@ -50,12 +50,90 @@ def plate(rgb, m, wide):
     return np.clip(A(XX / S, YY / S) @ f, 1e-3, 1)
 
 
+def flat2(rgb, m, c, r, cos, org=None, size=None):
+    """aile.flat with the span foreshortened by cos (a raised wing seen from above): the image distance along the span is s pxmm cos"""
+    h, es, eq = aile.frame(c); pxmm = c['pxmm']
+    if org is None:
+        ys, xs = np.nonzero(m); P = np.stack([xs, ys], 1) - h
+        s = P @ es / (pxmm * cos); q = P @ eq / pxmm
+        s0, s1, q0, q1 = min(0, s.min()) - 0.5, s.max() + 0.5, q.min() - 0.5, q.max() + 0.5
+        W, H = int((s1 - s0) * r), int((q1 - q0) * r)
+    else:
+        s0, q1, _ = org; W, H = size
+    S, Q = np.meshgrid(s0 + (np.arange(W) + .5) / r, q1 - (np.arange(H) + .5) / r)
+    mx = (h[0] + (S * es[0] * cos + Q * eq[0]) * pxmm).astype(np.float32); my = (h[1] + (S * es[1] * cos + Q * eq[1]) * pxmm).astype(np.float32)
+    img = cv2.remap(rgb, mx, my, cv2.INTER_CUBIC, borderMode=cv2.BORDER_REPLICATE)
+    mm = cv2.remap(m.astype(np.uint8) * 255, mx, my, cv2.INTER_LINEAR) > 127
+    return img, mm, (s0, q1, r)
+
+
+def veins(img, mm, org, r, wmax=0.3, thr=8.0, lmin=0.12):
+    """the veins of a membrane (aile.veins, for a clear membrane): the black-hat of L* over a disk of wmax mm, over thr L*, kept where
+    the piece is a line (skeleton over 0.6 mm in all, mean width under 0.2 mm), walked between junctions into polylines; the short
+    cross veins are kept (pieces down to lmin mm, aile.veins drops those under 0.4 mm), each with its width (twice the distance
+    from its skeleton to the edge of the un-closed vein, its darker half) and colour; grouped by width (0.02 mm) and colour"""
+    from skimage.morphology import skeletonize
+    s0, q1, _ = org
+    lab = aile.lab_of(img); L = lab[..., 0]
+    k = int(wmax * r) | 1
+    bh = cv2.morphologyEx(cv2.GaussianBlur(L, (0, 0), 0.6), cv2.MORPH_BLACKHAT, cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (k, k)))
+    raw = (bh > thr) & (cv2.erode(mm.astype(np.uint8), np.ones((5, 5), np.uint8)) > 0)
+    vm = cv2.morphologyEx(raw.astype(np.uint8), cv2.MORPH_CLOSE, cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (int(0.08 * r) | 1, int(0.08 * r) | 1))) > 0
+    sk0 = skeletonize(vm)
+    n, cc, st, _ = cv2.connectedComponentsWithStats(vm.astype(np.uint8), connectivity=8)
+    skl = np.bincount(cc[sk0], minlength=n).astype(float) / r
+    area = st[:, cv2.CC_STAT_AREA] / r / r
+    keep = (skl > 0.6) & (area / np.maximum(skl, 1e-3) < 0.2); keep[0] = False
+    vm = keep[cc]; raw &= vm
+    sk = skeletonize(vm)
+    dt = cv2.distanceTransform(raw.astype(np.uint8), cv2.DIST_L2, 3)
+    ys, xs = np.nonzero(sk)
+    pix = set(zip(ys.tolist(), xs.tolist()))
+    nb = lambda p: [(p[0] + a, p[1] + b) for a in (-1, 0, 1) for b in (-1, 0, 1) if (a or b) and (p[0] + a, p[1] + b) in pix]
+    deg = {p: len(nb(p)) for p in pix}
+    seen = set(); paths = []
+    def walk(a, b):
+        path = [a, b]; seen.add((a, b)); seen.add((b, a)); prev, cur = a, b
+        while deg[cur] == 2:
+            nx = [q for q in nb(cur) if q != prev]
+            if not nx or (cur, nx[0]) in seen: break
+            prev, cur = cur, nx[0]; seen.add((prev, cur)); seen.add((cur, prev)); path.append(cur)
+        return path
+    for p in pix:
+        if deg[p] != 2:
+            for q in nb(p):
+                if (p, q) not in seen: paths.append(walk(p, q))
+    for p in pix:
+        for q in nb(p):
+            if (p, q) not in seen: paths.append(walk(p, q))
+    out = {}
+    for P in paths:
+        if len(P) < lmin * r: continue
+        A = np.array([[x, y] for y, x in P], np.int32)
+        ap = cv2.approxPolyDP(A.reshape(-1, 1, 2), 0.02 * r, False)[:, 0, :]
+        wd = float(np.median([dt[y, x] for y, x in P])) * 2 / r
+        vals = np.array([L[y, x] for y, x in P]); core = np.array([lab[y, x] for y, x in P])[vals <= np.percentile(vals, 50)]
+        c = np.median(core, 0)
+        key = (round(wd / 0.02) * 0.02, aile.hexof(np.round(c / 6) * 6))
+        out.setdefault(key, []).append([[round(s0 + (x + .5) / r, 3), round(q1 - (y + .5) / r, 3)] for x, y in ap])
+    V = [{'largeur': round(max(0.02, k[0]), 3), 'c': k[1], 'traits': v} for k, v in sorted(out.items())]
+    print('nervures : %d traits, %d groupes, %.1f mm' % (sum(len(v['traits']) for v in V), len(V), sk.sum() / r))
+    return V, vm
+
+
 def cmd_plat(o):
     C = json.load(open(o.cadres, encoding='utf-8')); c = dict(C[o.nom]); sid = C['_sid']
     out = os.path.join(ROOT, 'refcache', sid, 'ailes', o.nom); os.makedirs(out, exist_ok=True)
     rgb = cv2.imread(os.path.join(ROOT, 'refcache', sid, c['photo']))[..., ::-1].copy()
     mp = os.path.join(out, 'sam.png')
-    if os.path.exists(mp) and not o.sam: m = cv2.imread(mp, 0) > 127
+    if c.get('masque') == 'plaque':
+        # no model: on a smooth light plate the membrane stands off the plate by its tint (aile.ground), within the box
+        g = aile.ground(rgb, 40)
+        x0, y0, x1, y1 = c['box']; m = np.zeros(g.shape, bool); m[y0:y1, x0:x1] = g[y0:y1, x0:x1]
+        m = cv2.morphologyEx(m.astype(np.uint8), cv2.MORPH_CLOSE, cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (15, 15))) > 0
+        from scipy import ndimage
+        m = ndimage.binary_fill_holes(m)
+    elif os.path.exists(mp) and not o.sam: m = cv2.imread(mp, 0) > 127
     else: m = aile.sam_mask(rgb, c); cv2.imwrite(mp, m.astype(np.uint8) * 255)
     if c.get('retirer'):
         cut = np.zeros(m.shape, np.uint8)
@@ -68,19 +146,27 @@ def cmd_plat(o):
     m = cv2.morphologyEx(m.astype(np.uint8), cv2.MORPH_CLOSE, cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (7, 7))) > 0
     n_, lb_, st_, _ = cv2.connectedComponentsWithStats(m.astype(np.uint8))
     if n_ > 2: m = lb_ == (1 + np.argmax(st_[1:, cv2.CC_STAT_AREA]))
-    # the scale: a bar on the plate, or the wing's own length (the farthest point of the mask from the hinge, along the span)
-    if 'pxmm' not in c:
-        h, es, eq = aile.frame(dict(c, pxmm=1))
-        ys, xs = np.nonzero(m); s = (np.stack([xs, ys], 1) - h) @ es
-        c['pxmm'] = float(s.max() / c['longueur_mm'])
+    # the scale: a bar on the plate (pxmm), the wing's own length (longueur_mm), or, for a pinned specimen whose wings are raised
+    # (the span foreshortened, the chord seen true), its width (largeur_mm) and its length / width measured flat (rapport): the
+    # chord gives the scale, the ratio the foreshortening of the span (cos of the wing's tilt), undone in the flat frame
+    h, es, eq = aile.frame(dict(c, pxmm=1))
+    ys, xs = np.nonzero(m); P = np.stack([xs, ys], 1) - h; sp, qp = P @ es, P @ eq
+    cos = 1.0
+    if 'largeur_mm' in c:
+        c['pxmm'] = float((np.percentile(qp, 99.8) - np.percentile(qp, 0.2)) / c['largeur_mm'])
+        cos = float(min(1.0, np.percentile(sp, 99.8) / (c['pxmm'] * c['largeur_mm'] * c['rapport'])))
+        print('échelle lue sur la largeur : %.1f px/mm, envergure raccourcie par %.3f (aile levée de %.0f°)' % (c['pxmm'], cos, np.degrees(np.arccos(cos))))
+    elif 'pxmm' not in c:
+        c['pxmm'] = float(sp.max() / c['longueur_mm'])
         print('échelle lue sur la longueur de l\'aile : %.1f px/mm' % c['pxmm'])
-    img, mm, org = aile.flat(rgb, m, c, o.r)
+    if 'raccourci' in c: cos = c['raccourci']
+    img, mm, org = flat2(rgb, m, c, o.r, cos)
     if c.get('plaque', 'claire') == 'claire':
         G = plate(rgb, m, int(1.5 * c['pxmm']))
-        Gf, _, _ = aile.flat((np.clip(gam(G), 0, 1) * 255).astype(np.uint8), m, c, o.r, org, (mm.shape[1], mm.shape[0]))
+        Gf, _, _ = flat2((np.clip(gam(G), 0, 1) * 255).astype(np.uint8), m, c, o.r, cos, org, (mm.shape[1], mm.shape[0]))
     else:
         Gf = None
-    V, vm = aile.veins(img, mm, org, o.r, None, wmax=c.get('wmax', 0.3), thr=c.get('seuil', 8.0))
+    V, vm = veins(img, mm, org, o.r, wmax=c.get('wmax', 0.3), thr=c.get('seuil', 8.0))
     ol = aile.outline(mm, org, o.r)
     # the membrane alone: the mask off the veins (dilated by their half width) and off the very edge
     memb = mm & ~(cv2.dilate(vm.astype(np.uint8), np.ones((5, 5), np.uint8)) > 0)
@@ -107,7 +193,7 @@ def cmd_plat(o):
         res['ecart'] = round(float(np.std((T[memb] @ [0.2126, 0.7152, 0.0722]))), 3)
     vcol = np.median(lab[vm], 0) if vm.any() else None
     rec = {'_doc': 'membrane.py plat: aile transparente mesurée sur %s (repère : s vers l\'extérieur depuis la charnière, q vers la tête, mm). '
-                   'Des chiffres, jamais l\'image.' % c['photo'], 'photo': c['photo'], 'pxmm': round(c['pxmm'], 2), 'r': o.r,
+                   'Des chiffres, jamais l\'image.' % c['photo'], 'photo': c['photo'], 'pxmm': round(c['pxmm'], 2), 'raccourci': round(cos, 3), 'r': o.r,
            'origine': [round(org[0], 3), round(org[1], 3)], 'taille': [int(mm.shape[1]), int(mm.shape[0])],
            'longueur': round(max(p[0] for p in ol), 2), 'largeur': round(max(p[1] for p in ol) - min(p[1] for p in ol), 2),
            'contour': ol, 'nervures': V, 'couleur_nervures': aile.hexof(vcol) if vcol is not None else None, 'membrane': res}

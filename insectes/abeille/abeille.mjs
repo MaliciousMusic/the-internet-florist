@@ -3,7 +3,7 @@
 // Body frame: x forward (the head), y to the bee's left, z up, mm. The origin sits on the axis at the thorax-petiole junction.
 import { readFileSync, existsSync } from 'node:fs';
 import { add, sub, mul, dot, cross, norm, clamp, rad, rot, mix } from '../moteur/geo.mjs';
-import { Scene, drawBody, drawTube, drawWing } from '../moteur/insecte.mjs';
+import { Scene, drawBody, drawTube, drawWing, surf, normalAt } from '../moteur/insecte.mjs';
 import { camera } from '../moteur/geo.mjs';
 import { X, Y, Z, frame0, env, legChain, segment, articleLeg, sphere, lens, pitched, strokeAxes, curve, lines } from '../moteur/kit.mjs';
 
@@ -18,14 +18,15 @@ const G_ABD = grid('abdomen'), G_THX = grid('thorax');
 // 9.13 x 3.00, tibia 2.91). Proportions along the body: formes/*.json (SAM on c282, c134 above, c181, c311 in profile).
 // ---------------------------------------------------------------------------------------------------------------
 const B = {
-  abd: [-6.25, -0.3], abdR: 2.1, abdH: 1.86,          // tip to petiole; half width 2.1 (4.2 across), half height
+  abd: [-6.25, -0.3], abdR: 2.25, abdH: 1.9,          // tip to petiole; half width 2.1 (4.2 across), half height
   thx: [-0.2, 3.7], thxR: 1.9, thxH: 1.78,            // propodeum to pronotum
-  head: [4.62, 0, 0.42], headT: 0.95, headR: 1.85, headH: 1.72, tilt: 22,
+  head: [4.6, 0, 0.05], headT: 0.95, headR: 1.52, headH: 1.72, tilt: 30, eyeY: 1.4,
 };
 
 const C = {
-  cuticle: '#241a14', leg: '#2a1d15', legHi: '#3d2a1c', tarsus: '#4a2c18', claw: '#1a0f08',
-  eye: ['#352723', '#4d3c38', '#66534d'],           // c214, c256, c311 (couleur.py: ombre, milieu, lumière hors reflets)
+  // the legs glossy black, catching the light in silvery streaks (c166, c311)
+  cuticle: '#241a14', leg: '#17100c', legHi: '#1d140e', tarsus: '#2e1c10', claw: '#1a0f08',
+  eye: ['#1f1815', '#2f2522', '#4d3f39'],           // c214, c256, c311 (couleur.py: ombre, milieu, lumière hors reflets)
   furPale: '#d9bf8f', furGold: '#c99b5f', furDeep: '#8b6337', faceHair: '#9b7e68', rim: '#f0c789',
   mandible: '#7a4a22', proboscis: '#5a3a1e', glossa: '#b98c5a',
 };
@@ -45,10 +46,12 @@ function head(sc, pose) {
     mat: { ks: 0.18, p: 50, ks2: 0.04, env: 0.12, wrap: 0.25, mottle: 0.05, specColor: '#efe8e0' },
     hair: {
       // frons and vertex: dense pale-brown hair (c214 #785b49 .. #9b7e68), the genae behind the eyes long and pale, the clypeus bare
-      n: 2600, len: 0.36, w: 0.014, lean: 0.7, a: 0.8, droop: 0.5, twist: 1.0, curl: 0.35, wave: 0.15, pile: 0.4, fleece: 0.35, locks: 0.3,
+      n: 3200, len: 0.34, w: 0.011, lean: 0.7, a: 0.8, droop: 0.5, twist: 1.0, curl: 0.35, wave: 0.15, pile: 0.4, fleece: 0.35, locks: 0.3,
       sheen: 0.2, rim: { v: 0.25, color: C.rim, k: 0.4 },
-      color: (t, th, R) => { const up = Math.sin(th), r = R(); if (t < 0.45) return r < 0.6 ? C.furPale : C.furGold; if (up > 0.35) return r < 0.5 ? '#9b7e68' : r < 0.8 ? '#785b49' : '#c2a37a'; return r < 0.55 ? '#b49a7c' : '#d6c2a0'; },
-      density: (t, th) => { const u = Math.sin(th); if (t > 0.62 && u < -0.2) return 0.08; if (t > 0.7 && u < 0.25) return 0.55; return 1; },
+      // on the face the hairs lie down toward the mouth and a little outward (c214), elsewhere back along the body
+      toward: (t, th) => (t > 0.58 ? norm(add(HR([0, 0, -1]), [0, 0.25 * Math.cos(th), 0])) : null),
+      color: (t, th, R) => { const up = Math.sin(th), r = R(); if (t < 0.45) return r < 0.6 ? C.furPale : C.furGold; if (up > 0.35) return r < 0.5 ? '#6e5644' : r < 0.8 ? '#544032' : '#8f7558'; return r < 0.55 ? '#9a8064' : '#bba582'; },
+      density: (t, th) => { const u = Math.sin(th); if (t > 0.62 && u < -0.3 && Math.abs(Math.cos(th)) < 0.75) return 0.08; return 1; },
       lenAt: (t, th) => (t < 0.45 ? 1.35 : Math.sin(th) > 0.5 ? 1.1 : 0.8),
     },
   });
@@ -56,26 +59,38 @@ function head(sc, pose) {
   // the ommatidia (0.022 mm) seen in close-up, short hairs between them
   for (const s of [1, -1]) {
     sc.part = s > 0 ? 'oeil-g' : 'oeil-d';
-    const o = HP([0.02, 1.4 * s, 0.08]);
+    // the eyes make the head's outline seen from the front: their outer edge 1.85 mm off the axis (3.7 across)
+    const o = HP([-0.12, B.eyeY * s, 0.08]);
     drawBody(sc, {
       name: 'eye', frame: { o, ax: HR(Z), ay: HR(X), az: [0, s, 0] }, seed: 21 + s, color: C.eye[1],
-      profile: (t) => { const r = Math.pow(env(t, 0.5, 0.5) * 2, 0.6); return { x: -1.32 + 2.64 * t, zc: 0, yc: -0.2 * Math.sin(Math.PI * t), ry: 0.62 * r * (0.82 + 0.3 * t), rz: 0.44 * r }; },
+      profile: (t) => { const r = Math.pow(env(t, 0.5, 0.5) * 2, 0.6); return { x: -1.2 + 2.4 * t, zc: 0, yc: -0.18 * Math.sin(Math.PI * t), ry: 0.52 * r * (0.82 + 0.3 * t), rz: 0.38 * r }; },
       albedo: (t, th) => {
         // marbling: low-frequency patches about 0.3 mm across, between the measured shadow and light of the eye
         const n = 0.5 + 0.28 * Math.sin(t * 17 + 2.1 * s) * Math.sin(th * 5 + 1.3) + 0.22 * Math.sin(t * 31 - th * 7 + 0.7 * s);
         return n < 0.5 ? mix(C.eye[0], C.eye[1], n * 2) : mix(C.eye[1], C.eye[2], (n - 0.5) * 2);
       },
       mat: { ks: 0.32, p: 70, ks2: 0.07, p2: 7, env: 0.5, wrap: 0.22, amb: 0.42, mottle: 0.04, specColor: '#f2eee8',
-        window: { k: 0.85, x: [-0.3, 0.12], y: [0.4, 0.82], soft: 0.06 } },
-      ommatidia: { d: 0.022, a: 0.32, ga: 0.45, window: { x: [-0.3, 0.12], y: [0.4, 0.82] } },
+        window: { k: 1.15, x: [-0.3, 0.12], y: [0.4, 0.82], soft: 0.05 } },
+      ommatidia: { d: 0.022, a: 0.55, ga: 0.6, window: { x: [-0.3, 0.12], y: [0.4, 0.82] } },
       hair: { n: 700, len: 0.13, w: 0.007, lean: 0.45, a: 0.5, pile: 0, fleece: 0, twist: 0.6, curl: 0.1, color: (t, th, R) => (R() < 0.6 ? '#c9b597' : '#9d8a70') },
       bias: 0.05,
     });
   }
-  // three ocelli on the vertex, glossy
+  // the frons between the eyes: a broad plate under a dense short grey-brown pile lying down toward the clypeus (c214, couleur.py:
+  // #5d483b .. #9b7e68), the antennae's sockets in it
+  sc.part = 'front';
+  drawBody(sc, {
+    ...lens('frons', HP([0.72, 0, 0.3]), 0.16, 1.05, 1.12, C.cuticle), frame: HF(HP([0.72, 0, 0.3])),
+    shape: (th) => [1 + 0.12 * Math.sin(th), 1],
+    mat: { ks: 0.12, p: 40, env: 0.08 },
+    hair: { n: 2200, len: 0.24, w: 0.009, lean: 1.15, a: 0.85, twist: 0.7, curl: 0.25, wave: 0.12, pile: 0.6, fleece: 0.5, locks: 0.3, sheen: 0.18,
+      toward: () => norm(HR([0, 0, -1])), color: (t, th, R) => { const r = R(); return r < 0.35 ? '#785b49' : r < 0.75 ? '#9b7e68' : r < 0.92 ? '#5d483b' : '#c2a684'; } },
+    bias: 0.07,
+  });
+  // three ocelli on the vertex, glossy, half hidden in the hair (0.25 mm across, FICHE)
   sc.part = 'ocelles';
-  drawBody(sc, { ...sphere('ocellus', HP([0.22, 0, 1.5]), 0.12, '#1d140e', 0.9), bias: 0.06 });
-  for (const s of [1, -1]) drawBody(sc, { ...sphere('ocellus', HP([0.02, 0.42 * s, 1.42]), 0.11, '#1d140e', 0.9), bias: 0.06 });
+  drawBody(sc, { ...sphere('ocellus', HP([0.26, 0, 1.44]), 0.065, '#1d140e', 0.9), bias: 0.02 });
+  for (const s of [1, -1]) drawBody(sc, { ...sphere('ocellus', HP([0.06, 0.34 * s, 1.36]), 0.06, '#1d140e', 0.9), bias: 0.02 });
   // the clypeus: a shining black plate with sparse pale hairs (c214), the labrum under it, the mandibles at the corners
   sc.part = 'clypeus';
   drawBody(sc, {
@@ -102,17 +117,19 @@ function antennae(sc, pose) {
     sc.part = s > 0 ? 'antenne-g' : 'antenne-d';
     const base = HP([0.92, 0.37 * s, 0.1]);
     const fly = pose === 'vol';
-    const scape = norm(fly ? [0.75, 0.25 * s, 0.6] : pose === 'butine' ? [0.45, 0.22 * s, 0.85] : [0.5, 0.2 * s, 0.84]);
+    const scape = norm(fly ? [0.75, 0.25 * s, 0.6] : pose === 'butine' ? [0.55, 0.22 * s, 0.75] : [0.75, 0.22 * s, 0.6]);
     const elbow = add(base, mul(scape, 1.1));
     const pts = [base, add(base, mul(scape, 0.55)), elbow];
-    let d = norm(fly ? [0.95, 0.32 * s, 0.05] : pose === 'butine' ? [0.6, 0.28 * s, -0.55] : [0.82, 0.32 * s, 0.1]);
+    // at rest and on a flower the flagella hang forward and down before the face (c311, c166), in flight they point ahead
+    let d = norm(fly ? [0.95, 0.32 * s, 0.05] : pose === 'butine' ? [0.45, 0.25 * s, -0.85] : [0.4, 0.22 * s, -0.88]);
     let p = elbow;
     const seg = 2.7 / 11;
     for (let i = 0; i < 11; i++) {
       pts.push(add(p, mul(d, seg * 0.5))); p = add(p, mul(d, seg)); pts.push(p);
       d = norm(add(d, [0, 0, fly ? -0.03 : -0.085]));
     }
-    const radii = pts.map((_, i) => (i < 3 ? 0.072 - 0.01 * (i === 2) : (i % 2 ? 0.08 : 0.069) - 0.0006 * i));
+    // c214: the scape 0.18 mm thick, the flagellum 0.22 mm, the joints a little narrower
+    const radii = pts.map((_, i) => (i < 3 ? 0.09 - 0.012 * (i === 2) : (i % 2 ? 0.112 : 0.098) - 0.0008 * i));
     drawTube(sc, pts, radii, { color: (i) => (i < 2 ? '#2f241e' : '#2a2320'), gloss: 0.3, glossColor: '#8f857e', seed: 50 + s, bias: 0.03 });
   }
 }
@@ -155,7 +172,7 @@ function thorax(sc) {
     hair: {
       // c256, c181, c214: hairs 0.4 mm on the scutum to 0.75 mm on the pleura and the collar, curved back along the body, plumose
       n: 11000, len: 0.56, w: 0.015, lean: 0.95, a: 0.88, droop: 0.75, twist: 1.0, wave: 0.18, curl: 0.38, fleece: 0.45, pile: 0.55, locks: 0.38,
-      sheen: 0.22, sheenP: 30, color: 'grid', gridK: 1.18, rim: { v: 0.24, color: C.rim, k: 0.45 },
+      sheen: 0.22, sheenP: 30, color: 'grid', gridK: 0.82, rim: { v: 0.24, color: C.rim, k: 0.45 },
       lenAt: (t, th) => { const u = Math.sin(th); return u > 0.75 && t > 0.25 && t < 0.85 ? 0.72 : t > 0.88 ? 1.25 : u < -0.2 ? 1.2 : 1; },
       density: (t, th) => (Math.sin(th) > 0.8 && t > 0.35 && t < 0.8 ? 0.7 : 1),
     },
@@ -173,7 +190,10 @@ function thorax(sc) {
 
 // ---- abdomen: six tergites, each overlapping the next toward the tip (a lip and its shadow), the amber cuticle of T1-T3 letting
 // the light through, dark hind margins, the pale felt bands (tomentum) and a short pile; long hairs on T1 (c282, c134, c311) -----
-const TERG = [[0.8, 1.0], [0.62, 0.8], [0.45, 0.62], [0.3, 0.45], [0.16, 0.3], [0, 0.16]]; // t from the tip (0) to the petiole (1)
+// t from the tip (0) to the petiole (1). The lips sit where the measured grid (dorsal column of grilles/abdomen.json) steps from
+// a tergite's dark hind margin to the pale base of the next one, toward the tip: rows 4, 15, 33 of 72, then the faint margins of
+// T1 and T2 inside the amber (rows 47, 60)
+const TERG = [[0, 0.056], [0.056, 0.211], [0.211, 0.465], [0.465, 0.66], [0.66, 0.845], [0.845, 1.0]];
 const gridLC = (G, t, th) => {
   const u = (Math.asin(clamp(Math.sin(th), -1, 1)) + Math.PI / 2) / Math.PI;
   const h = G.rows[Math.round(clamp(t, 0, 1) * (G.rows.length - 1))][Math.round(u * (G.rows[0].length - 1))];
@@ -181,10 +201,34 @@ const gridLC = (G, t, th) => {
   const mx = Math.max(...v), mn = Math.min(...v);
   return { L: (v[0] + v[1] + v[2]) / 3, C: mx - mn };
 };
+const gridHex = (G, t, th) => {
+  const u = (Math.asin(clamp(Math.sin(th), -1, 1)) + Math.PI / 2) / Math.PI;
+  return G.rows[Math.round(clamp(t, 0, 1) * (G.rows.length - 1))][Math.round(u * (G.rows[0].length - 1))];
+};
+// The lip of each tergite: its hind margin overhangs the next one, a sheen along the edge and a thin shadow under it, drawn along
+// the visible part of the ring (over the mesh, whose blur would smooth the step away)
+function lips(sc, b) {
+  let s = '';
+  const f1 = (v) => (Math.round(v * 10) / 10).toString();
+  for (const [a] of TERG.slice(1)) {
+    for (const [dt, col, w, op] of [[-0.01, '#140a04', 0.1, 0.32], [0.008, '#f0d8a6', 0.025, 0.22]]) {
+      let d = '', on = false;
+      for (let j = 0; j <= 96; j++) {
+        const th = (j / 96) * 2 * Math.PI, t = a + dt;
+        const v = dot(normalAt(b, t, th), sc.cam.c);
+        if (v < 0.08) { on = false; continue; }
+        const q = sc.S(surf(b, t, th));
+        d += (on ? 'L' : 'M') + f1(q[0]) + ' ' + f1(q[1]); on = true;
+      }
+      if (d) s += `<path d="${d}" fill="none" stroke="${col}" stroke-width="${f1(Math.max(0.5, w * sc.k))}" stroke-linecap="round" opacity="${op}"/>`;
+    }
+  }
+  return s;
+}
 function abdomen(sc, pose) {
   sc.part = 'abdomen';
   const [xt, x0] = B.abd, L = x0 - xt;
-  const step = (t) => { for (const [a, b] of TERG) if (t >= a && t <= b) return 1 + 0.06 * Math.pow((b - t) / (b - a), 1.5); return 1; };
+  const step = (t) => { for (const [a, b] of TERG) if (t >= a && t <= b) return 1 + 0.1 * ((b - t) / (b - a)); return 1; };
   const edgeD = (t) => Math.min(...TERG.map(([a]) => Math.abs(t - a)));
   drawBody(sc, {
     name: 'abdomen', frame: pitched([x0, 0, -0.12], pose === 'vol' ? -14 : -6), color: '#3a2a1c', seed: 41, grid: G_ABD,
@@ -194,12 +238,15 @@ function abdomen(sc, pose) {
       return { x: -L * (1 - t), zc: -0.08 - 0.5 * Math.pow(1 - t, 1.7), ry: B.abdR * e, rz: B.abdH * e };
     },
     shape: (th) => [1, Math.sin(th) < 0 ? 0.84 : 1],
-    mat: { ks: 0.2, p: 55, ks2: 0.05, p2: 6, env: 0.12, wrap: 0.38, mottle: 0.05, specColor: '#fff2dc', transAlb: { k: 0.42, g: 1.6, core: 0.18, p: 0.6 } },
+    paint: (sc2, b2) => lips(sc2, b2),
+    mat: { ks: 0.2, p: 55, ks2: 0.05, p2: 6, env: 0.12, wrap: 0.38, mottle: 0.05, specColor: '#fff2dc', transAlb: { k: 0.26, g: 1.6, core: 0.12, p: 0.6 } },
     hair: {
-      n: 3000, len: 0.2, w: 0.01, lean: 1.35, a: 0.62, twist: 0.6, wave: 0.12, curl: 0.2, fleece: 0, pile: 0.3, locks: 0.2, sheen: 0.12,
-      color: 'grid', gridK: 1.0, rim: { v: 0.2, color: '#e9c88e', k: 0.3 },
+      // a short dense pile all over (c282, c311: the cuticle seen through it), longer and denser on the felt bands
+      n: 9000, len: 0.2, w: 0.008, lean: 1.25, a: 0.85, twist: 0.7, wave: 0.14, curl: 0.25, fleece: 0.3, pile: 0.6, locks: 0.25, sheen: 0.32, sheenP: 24,
+      // the pile is lighter than the cuticle it lies on: the grid's colour taken halfway to the pale gold of the hairs (c311, c282)
+      color: (t, th, R) => mix(gridHex(G_ABD, t, th), R() < 0.6 ? '#dcc79a' : '#bfa070', 0.55 + 0.25 * R()), rim: { v: 0.2, color: '#e9c88e', k: 0.3 },
       // dense where the grid shows the pale felt (light, unsaturated), sparse on the bare amber and on the dark margins
-      density: (t, th) => { if (t > 0.86) return 1; const g = gridLC(G_ABD, t, th); return g.C < 0.16 && g.L > 0.42 ? 1 : edgeD(t) < 0.025 ? 0.7 : 0.3; },
+      density: (t, th) => { if (t > 0.86) return 1; const g = gridLC(G_ABD, t, th); return g.C < 0.16 && g.L > 0.42 ? 1 : edgeD(t) < 0.025 ? 0.8 : 0.5; },
       lenAt: (t) => (t > 0.86 ? 2.6 : t < 0.1 ? 1.4 : 1),
     },
   });
@@ -213,7 +260,7 @@ const LEGS = {
   mid: { base: [2.0, 0.85, -1.48], fem: 2.3, tib: 2.3, tar: 2.4, segs: [0.5, 0.13, 0.11, 0.1, 0.16] },
   hind: { base: [0.95, 0.88, -1.38], fem: 2.8, tib: 3.0, tar: 3.9, segs: [0.64, 0.09, 0.08, 0.07, 0.12] },
 };
-const LEGMAT = { ks: 0.55, p: 75, ks2: 0.08, p2: 6, env: 0.4, mottle: 0.05, specColor: '#fff2e6' };
+const LEGMAT = { ks: 0.95, p: 140, ks2: 0.16, p2: 8, env: 0.3, mottle: 0.04, specColor: '#f4f2f0' };
 const fr = (n, len, color, edge = 0.75, w = 0.012, lean = 0.75) => ({ n, len, w, lean, a: 0.85, twist: 0.6, curl: 0.3, pile: 0, fleece: 0.3, color: typeof color === 'function' ? color : () => color, density: (t, th) => (Math.abs(Math.cos(th)) > edge ? 1 : 0.1) });
 const ART = {
   front: { coxa: { from: [0.05, -0.28, 0.35], r: [0.22, 0.25, 0.2], c: C.leg, hair: fr(80, 0.4, C.furPale, 0) }, fem: { r: [0.15, 0.2, 0.13], c: C.leg, hair: fr(110, 0.38, C.furPale, 0.3) },
@@ -231,7 +278,7 @@ const ART = {
 const CORBMAT = { ks: 0.7, p: 110, ks2: 0.12, p2: 8, env: 0.55, mottle: 0.04, specColor: '#fff6ea' };
 
 function poseLegs(pose, side, ph = 0) {
-  const G = -3.3; // ground under the standing bee
+  const G = -3.1; // ground under the standing bee
   if (pose === 'vol') {
     // in flight the legs hang, the hind pair trailing (c018, c026, c321)
     return {
@@ -240,7 +287,8 @@ function poseLegs(pose, side, ph = 0) {
       hind: [[-1.2, 1.3, -3.6], [-0.6, 0.12, -1], [0, 1, 0.8]],
     };
   }
-  const feet = { front: [5.2, 1.35], mid: [2.9, 2.6], hind: [-3.4, 2.0] };
+  // the feet under the body, the hind ones under the front of the abdomen (c311, c166)
+  const feet = { front: [4.4, 1.4], mid: [1.9, 2.5], hind: [-1.7, 2.1] };
   const tdir = { front: [0.5, 0.2, -0.85], mid: [0.35, 0.5, -0.8], hind: [-0.75, 0.25, -0.6] };
   const res = {};
   for (const k of ['front', 'mid', 'hind']) {
@@ -313,19 +361,31 @@ export const HINDWING = {
 
 // A measured membrane (membrane.py plat) as an engine wing: the outline as a smooth path, the veins grouped by width, the tint and
 // opacity that give over a white plate the transmission measured (T per channel: alpha = 1 - min T, the tint C = 1 - (1 - T) / alpha).
-function measuredWing(name, drawn) {
+// opts.longueur: the wing brought to its published length (a hindwing measured in another plane than the forewing it is read
+// with); opts.T: the transmission of another record (a hindwing seen over the forewing gives none of its own)
+function measuredWing(name, drawn, opts = {}) {
   const p = here(`./ailes/${name}.json`);
   if (!existsSync(p)) return drawn;
-  const R = JSON.parse(readFileSync(p, 'utf8'));
+  const R0 = JSON.parse(readFileSync(p, 'utf8'));
+  const f = opts.longueur ? opts.longueur / R0.longueur : 1;
+  const R = f === 1 ? R0 : { ...R0, longueur: R0.longueur * f, contour: R0.contour.map(([s, q]) => [s * f, q * f]),
+    nervures: (R0.nervures || []).map((g) => ({ ...g, traits: g.traits.map((l) => l.map(([s, q]) => [Math.round(s * f * 100) / 100, Math.round(q * f * 100) / 100])) })) };
   const sm = (P) => curve(P.map(([s, q]) => [Math.round(s * 1000) / 1000, Math.round(q * 1000) / 1000]));
-  const T = R.membrane?.transmission ?? [0.9, 0.86, 0.78];
-  const a = clamp(1 - Math.min(...T), 0.04, 0.6);
-  const tint = '#' + T.map((t) => Math.round(255 * Math.pow(clamp(1 - (1 - t) / a, 0, 1), 1 / 2.2)).toString(16).padStart(2, '0')).join('');
-  const groups = (R.nervures || []).map((g) => ({ w: g.largeur, c: g.c, d: g.traits.map((l) => 'M' + l.map((q) => q.join(' ')).join('L')).join('') }));
+  const T = opts.T ?? R.membrane?.transmission ?? [0.9, 0.86, 0.78];
+  // SVG blends in sRGB: the transmission brought to sRGB first, then alpha and tint such that (1 - a) white + a tint gives it
+  const Ts = T.map((t) => Math.pow(clamp(t, 0, 1), 1 / 2.2));
+  const a = clamp(1 - Math.min(...Ts), 0.03, 0.6);
+  const tint = '#' + Ts.map((t) => Math.round(255 * clamp(1 - (1 - t) / a, 0, 1)).toString(16).padStart(2, '0')).join('');
+  // the veins (the base's first 0.45 mm left out: the hair of the thorax was read there), their colour a little darkened: read on the
+  // darker half of each vein over a white plate, they lose their depth over the body
+  const dk = (h) => '#' + [1, 3, 5].map((i) => Math.round(parseInt(h.slice(i, i + 2), 16) * 0.72).toString(16).padStart(2, '0')).join('');
+  const groups = (R.nervures || []).map((g) => ({ w: g.largeur, c: dk(g.c), d: g.traits.filter((l) => l.some(([s]) => s > 0.45)).map((l) => 'M' + l.map((q) => q.join(' ')).join('L')).join('') })).filter((g) => g.d);
   const box = R.contour.reduce((b, [s, q]) => [Math.min(b[0], s), Math.min(b[1], q), Math.max(b[2], s), Math.max(b[3], q)], [1e9, 1e9, -1e9, -1e9]);
-  return { ...drawn, span: R.longueur, outline: sm(R.contour), box, veinGroups: groups, tint, membrane: a, edge: R.couleur_nervures || drawn.edge, ew: 0.025, vein: R.couleur_nervures || drawn.vein, measured: true };
+  return { ...drawn, span: R.longueur, outline: sm(R.contour), box, veinGroups: groups, tint, membrane: a / 1.1, edge: R.couleur_nervures || drawn.edge, ew: 0.025, vein: R.couleur_nervures || drawn.vein, measured: true };
 }
-const FORE = measuredWing('avant', FOREWING), HIND = measuredWing('arriere', HINDWING);
+const FORE = measuredWing('avant', FOREWING);
+// the hindwing of c278 lies in its own plane under the forewing: brought to its published length, 6.74 mm (Al-Kahtani & Taha 2021)
+const HIND = measuredWing('arriere', HINDWING, { longueur: 6.74, T: existsSync(here('./ailes/avant.json')) ? JSON.parse(readFileSync(here('./ailes/avant.json'), 'utf8')).membrane.transmission : undefined });
 
 // Flight (DECISIONS: a fake of 2 or 3 drawings, two wing sets each, no blur). The positions follow the bee's stroke (Altshuler et
 // al. 2005, PNAS 102:18213: about 230 Hz, a short amplitude of about 90 degrees in a nearly horizontal stroke plane, the wing turning
@@ -354,11 +414,12 @@ function wings(sc, pose, frame) {
       }
     } else {
       // at rest: folded flat over the abdomen, a little apart, the forewing over the hindwing (c311, c181, c166)
-      const e1 = norm([-0.985, 0.14 * s, -0.06]);
+      // raised toward the tip, about 15 degrees over the body's axis (c311, c181)
+      const e1 = norm([-0.975, 0.13 * s, 0.17]);
       const e2 = norm(sub([0, s, -0.1], mul(e1, dot([0, s, -0.1], e1))));
       sc.part = `aile-avant-${lr}`;
       drawWing(sc, FORE, fo, e1, e2, { bias: 0.03 + (s > 0 ? 0.01 : 0) });
-      const h1 = norm([-0.99, 0.1 * s, -0.05]);
+      const h1 = norm([-0.98, 0.1 * s, 0.13]);
       const h2 = norm(sub([0, s, -0.1], mul(h1, dot([0, s, -0.1], h1))));
       sc.part = `aile-arriere-${lr}`;
       drawWing(sc, HIND, ho, h1, h2, { bias: 0.015 });

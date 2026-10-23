@@ -1,0 +1,186 @@
+{
+ "_sid": "apis-mellifera",
+ "_doc": "cadres des ailes à plat (outils/membrane.py) : pixels de c278 (ouvrière épinglée vue de dessous, plaque blanche), aile gauche de l'abeille (à droite de l'image). Échelle lue sur la largeur de l'aile antérieure (3,00 mm), rapport longueur / largeur 3,04 (9,13 x 3,00 mm, relevé morphométrique de l'Himalaya du Nord-Ouest) ; l'aile postérieure prend la même échelle. Chiffres seulement.",
+ "avant": {
+  "photo": "hd/c278.jpg",
+  "plaque": "claire",
+  "largeur_mm": 3.0,
+  "rapport": 3.04,
+  "hinge": [
+   2050,
+   1285
+  ],
+  "axe": [
+   [
+    1600,
+    2460
+   ],
+   [
+    1600,
+    520
+   ]
+  ],
+  "side": "d",
+  "box": [
+   2048,
+   1180,
+   3045,
+   1800
+  ],
+  "pos": [
+   [
+    2300,
+    1330
+   ],
+   [
+    2600,
+    1390
+   ],
+   [
+    2850,
+    1330
+   ],
+   [
+    2700,
+    1500
+   ],
+   [
+    2450,
+    1450
+   ]
+  ],
+  "neg": [
+   [
+    2400,
+    1730
+   ],
+   [
+    2250,
+    1660
+   ],
+   [
+    1800,
+    1400
+   ],
+   [
+    2500,
+    1100
+   ]
+  ],
+  "retirer": [
+   [
+    1990,
+    1452
+   ],
+   [
+    2690,
+    1576
+   ],
+   [
+    2880,
+    1612
+   ],
+   [
+    3060,
+    1640
+   ],
+   [
+    3060,
+    1900
+   ],
+   [
+    1990,
+    1900
+   ]
+  ],
+  "masque": "plaque",
+  "seuil": 12
+ },
+ "arriere": {
+  "photo": "hd/c278.jpg",
+  "plaque": "claire",
+  "hinge": [
+   2070,
+   1445
+  ],
+  "axe": [
+   [
+    1600,
+    2460
+   ],
+   [
+    1600,
+    520
+   ]
+  ],
+  "side": "d",
+  "box": [
+   2060,
+   1420,
+   3000,
+   1830
+  ],
+  "pos": [
+   [
+    2400,
+    1700
+   ],
+   [
+    2650,
+    1720
+   ],
+   [
+    2300,
+    1620
+   ],
+   [
+    2800,
+    1700
+   ]
+  ],
+  "neg": [
+   [
+    2600,
+    1350
+   ],
+   [
+    2850,
+    1350
+   ],
+   [
+    1800,
+    1600
+   ]
+  ],
+  "retirer": [
+   [
+    1990,
+    1100
+   ],
+   [
+    3060,
+    1100
+   ],
+   [
+    3060,
+    1636
+   ],
+   [
+    2880,
+    1608
+   ],
+   [
+    2690,
+    1572
+   ],
+   [
+    1990,
+    1448
+   ]
+  ],
+  "masque": "plaque",
+  "seuil": 10,
+  "pxmm": 124.3,
+  "raccourci": 0.835
+ }
+}
