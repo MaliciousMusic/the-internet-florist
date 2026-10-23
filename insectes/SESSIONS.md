@@ -40,6 +40,15 @@ sous-session numérotée par insecte. La méthode est celle du machaon (`machaon
   temps faisaient tomber la RAM libre à 2,1 Go. Les créneaux 2 et 3 du verrou sont donc réservés : `ws/locks/slot2` et `slot3`
   ont une date `t` dans le futur, si bien que le verrou ne les voit jamais périmés. Pour les rendre :
   `rm -r C:/Users/agent/Desktop/flower/flower-atelier/ws/locks/slot2 C:/Users/agent/Desktop/flower/flower-atelier/ws/locks/slot3`.
+- Depuis le 2026-10-24, toutes les sessions passent par le verrou corrigé, en chemin absolu :
+  `GATE_MAX=1 sh C:/Users/agent/Desktop/flower/flower-atelier/ch/insectes-suite/ws/gate.sh <commande>`.
+  L'ancien verrou avait une course : une attente prenait un créneau tout juste créé, sans son fichier `t`, pour un créneau
+  mort et le supprimait ; il faisait de même avec un travail de plus de 15 minutes. Deux rendus partaient alors ensemble.
+  Le verrou corrigé fait trois choses :
+  - il marque son créneau d'un identifiant et le garde vivant par un battement tant que le travail tourne, même si le verrou
+    lui-même est tué ;
+  - il libère le créneau à la fin du travail ;
+  - il arrête tout le travail (node ou python sous `sh -c` compris) quand on l'arrête proprement.
 
 ### Le moteur partagé
 `moteur/insecte.mjs`, `moteur/motif.mjs`, `moteur/papillon.mjs`, `moteur/fourmi.mjs`, `runtime/essaim.mjs`, `runtime/vue.mjs`,
