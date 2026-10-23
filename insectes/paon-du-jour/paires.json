@@ -1,0 +1,5 @@
+{"sid": "aglais-io", "pairs": [
+ {"nom": "etale", "photo": "hd/c258.jpg", "box": [0, 0, 3840, 2660], "vue": "etale:180:90", "k": 22, "w": 1500, "h": 1040, "focus": [-1, 0, 0]},
+ {"nom": "dessous", "photo": "hd/c259.jpg", "box": [0, 0, 3840, 2671], "vue": "etale:0:-90", "k": 22, "w": 1500, "h": 1040, "focus": [-1, 0, 0]},
+ {"nom": "ferme", "photo": "hd/c374.jpg", "box": [0, 0, 2323, 2175], "vue": "pose:90:5", "k": 30, "w": 1100, "h": 1030, "focus": [-2, 0, 8]}
+]}

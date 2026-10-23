@@ -3,20 +3,20 @@
 import { add, sub, mul, norm, cross } from '../moteur/geo.mjs';
 import { camera } from '../moteur/geo.mjs';
 import { Scene, drawBody, drawTube, drawWing } from '../moteur/insecte.mjs';
-import { Z, frame0, env, legChain, tripod, strokeAxes, restAxes, lens, sphere, pitched, antenna } from '../moteur/kit.mjs';
+import { Z, frame0, env, legChain, tripod, strokeAxes, restAxes, lens, sphere, pitched, antenna, articleLeg, fringe } from '../moteur/kit.mjs';
 import { FOREWING as APIS_FORE, HINDWING as APIS_HIND } from '../abeille/abeille.mjs';
 
 const C = {
-  black: '#1d1b1c', blackHi: '#4a4648', blackLo: '#0f0d0e',
+  black: '#161415', blackHi: '#34302f', blackLo: '#0b0a0a',
   yellow: '#d99a0c', yellowHi: '#f2bf2a', yellowLo: '#8a5a05', band: '#fec513',
   white: '#e8dcc4', whiteLo: '#bfae90', buff: '#d9c08a',
   cuticle: '#141213', eye: '#17110c', leg: '#1a1615', tarsus: '#6e4433',
-  wingTint: '#6b5644', vein: '#3a2a1c',
+  wingTint: '#5a4330', vein: '#2e2014',
 };
 
 // Bombus wings: the Apis drawing enlarged (forewing 10.8 mm), smoky brown, a little more opaque.
-const FORE = { ...APIS_FORE, tint: C.wingTint, vein: C.vein, edge: '#3a2c20', membrane: 0.2 };
-const HIND = { ...APIS_HIND, tint: C.wingTint, vein: C.vein, edge: '#3a2c20', membrane: 0.18 };
+const FORE = { ...APIS_FORE, tint: C.wingTint, vein: C.vein, edge: '#3a2c20', membrane: 0.2, irid: 0.1 };
+const HIND = { ...APIS_HIND, tint: C.wingTint, vein: C.vein, edge: '#3a2c20', membrane: 0.18, irid: 0.1 };
 const WS = 10.8 / 9.2;
 
 const LEGS = {
@@ -26,6 +26,14 @@ const LEGS = {
 };
 const G = -4.55; // ground under the standing bumblebee
 
+const LEGMAT = { ks: 0.6, p: 70, ks2: 0.1, p2: 6, env: 0.4, mottle: 0.05, specColor: '#f2eee8' };
+const blackHair = (t, th, R) => (R() < 0.7 ? C.black : C.blackHi);
+const ARTICLES = {
+  front: { coxa: { from: [0.05, -0.3, 0.4], r: [0.3, 0.32, 0.25], c: C.leg, hair: fringe(80, 0.5, blackHair, 0) }, fem: { r: [0.2, 0.28, 0.18], c: C.leg, hair: fringe(110, 0.55, blackHair, 0.3, 0.022) }, tib: { r: [0.13, 0.17, 0.2], c: C.leg, hair: fringe(60, 0.3, blackHair, 0.5) }, bas: { r: [0.14, 0.13, 0.1], c: C.tarsus, flat: 0.6, hair: fringe(50, 0.16, '#8a5a40', 0.2) }, tar: { r: 0.08, c: C.tarsus, hair: fringe(8, 0.14, '#8a5a40', 0) }, claw: 0.12 },
+  mid: { coxa: { from: [0.05, -0.3, 0.4], r: [0.3, 0.32, 0.25], c: C.leg, hair: fringe(80, 0.5, blackHair, 0) }, fem: { r: [0.21, 0.29, 0.19], c: C.leg, hair: fringe(130, 0.55, blackHair, 0.3, 0.022) }, tib: { r: [0.13, 0.19, 0.22], c: C.leg, hair: fringe(80, 0.35, blackHair, 0.5) }, bas: { r: [0.16, 0.15, 0.11], c: C.tarsus, flat: 0.55, hair: fringe(60, 0.18, '#8a5a40', 0.2) }, tar: { r: 0.085, c: C.tarsus, hair: fringe(8, 0.14, '#8a5a40', 0) }, claw: 0.12 },
+  hind: { coxa: { from: [0.05, -0.3, 0.4], r: [0.32, 0.34, 0.26], c: C.leg, hair: fringe(80, 0.5, blackHair, 0) }, fem: { r: [0.22, 0.3, 0.2], c: C.leg, hair: fringe(140, 0.6, blackHair, 0.3, 0.022) }, tib: { r: [0.14, 0.36, 0.52], c: '#100c0b', flat: 0.4, hair: fringe(200, 0.75, blackHair, 0.82, 0.024) }, bas: { r: [0.36, 0.36, 0.28], c: '#2a1a14', flat: 0.4, hair: fringe(120, 0.22, '#5a3a2a', 0.3) }, tar: { r: 0.085, c: C.tarsus, hair: fringe(8, 0.14, '#8a5a40', 0) }, claw: 0.12 },
+};
+
 function poseLegs(pose, side, ph) {
   if (pose === 'vol') {
     return {
@@ -34,14 +42,14 @@ function poseLegs(pose, side, ph) {
       hind: [[-1.2, 1.8, -4.7], [-0.55, 0.12, -1], [0, 1, 0.8]],
     };
   }
-  const feet = { front: [6.8, 2.7], mid: [3.2, 4.2], hind: [-2.3, 3.7] };
-  const tdir = { front: [0.65, 0.35, -0.35], mid: [0.15, 0.75, -0.4], hind: [-0.55, 0.55, -0.35] };
+  const feet = { front: [6.6, 1.8], mid: [3.8, 3.3], hind: [-4.4, 2.6] };
+  const tdir = { front: [0.5, 0.2, -0.85], mid: [0.35, 0.5, -0.8], hind: [-0.75, 0.25, -0.6] };
   const res = {};
   for (const k of ['front', 'mid', 'hind']) {
     let [fx, fy] = feet[k]; let lift = 0;
     if (pose === 'marche') { const g = tripod(k, side, ph, 1.5, 0.7); fx += g.dx; lift = g.lift; }
     const L = LEGS[k], td = norm(tdir[k]);
-    res[k] = [sub([fx, fy, G + lift], mul(td, L.tar)), tdir[k], [0, 0.7, 1]];
+    res[k] = [sub([fx, fy, G + lift], mul(td, L.tar)), tdir[k], k === 'hind' ? [-0.2, 0.3, 1] : k === 'mid' ? [-0.3, 0.6, 1] : [0.2, 0.5, 1]];
   }
   return res;
 }
@@ -57,31 +65,31 @@ function thorax(o) {
     shade: { hl: 0.1, dark: 0.6 },
     ao: [{ p: add(o, [2.5, 0, 0.3]), r: 1.6, a: 0.4 }],
     hair: {
-      n: 6500, len: 0.8, w: 0.03, lean: 0.38, a: 0.78, droop: 1.6, twist: 1.6,
+      n: 9000, len: 1.15, w: 0.026, lean: 0.5, a: 0.8, droop: 1.6, twist: 1.7, wave: 0.25, curl: 0.3, fleece: 0.6, pile: 0.7, locks: 0.35, sheen: 0.1, sheenP: 60,
       // the collar: the front third of the thorax, over the top and down the sides
-      color: (t, th, R) => (t > 0.64 && Math.sin(th) > -0.55 ? pick(R, [C.yellow, C.yellow, C.yellowHi, C.yellowLo]) : pick(R, [C.black, C.black, C.blackHi, C.blackLo])),
+      color: (t, th, R) => (t > 0.74 && Math.sin(th) > -0.55 ? pick(R, [C.yellow, C.yellow, C.yellowHi, C.yellowLo]) : pick(R, [C.black, C.black, C.blackHi, C.blackLo])),
       lenAt: (t, th) => (Math.sin(th) > 0.8 && t < 0.64 ? 0.7 : 1),
     },
   };
 }
 
-const BANDS = [ // hair colours of the abdomen, t from the tip (0) to the petiole (1)
-  { t0: 0.84, t1: 1.0, color: C.black }, { t0: 0.66, t1: 0.84, color: C.yellow },
-  { t0: 0.52, t1: 0.66, color: C.black }, { t0: 0.47, t1: 0.52, color: C.buff }, { t0: 0, t1: 0.47, color: C.white },
+const BANDS = [ // hair colours of the abdomen, t from the tip (0) to the petiole (1), measured on c024, c046, c060
+  { t0: 0.82, t1: 1.0, color: C.black }, { t0: 0.62, t1: 0.82, color: C.yellow },
+  { t0: 0.34, t1: 0.62, color: C.black }, { t0: 0.29, t1: 0.34, color: C.buff }, { t0: 0, t1: 0.29, color: C.white },
 ];
 const bandAt = (t) => BANDS.find((b) => t >= b.t0 && t <= b.t1)?.color || C.black;
 
 function abdomen(o, pitch) {
   return {
     name: 'abdomen', frame: pitched(o, -pitch), color: C.cuticle, seed: 41,
-    profile: (t) => { const e = env(t, 0.38, 0.3) / 0.627; return { x: -7.6 * (1 - t), zc: -0.2 - 0.5 * Math.pow(1 - t, 1.8), ry: 3.3 * e, rz: 2.7 * e }; },
+    profile: (t) => { const e = env(t, 0.42, 0.26) / 0.62; return { x: -7.0 * (1 - t), zc: -0.25 - 0.6 * Math.pow(1 - t, 1.8), ry: 3.5 * e, rz: 3.0 * e }; },
     shape: (th) => [1, Math.sin(th) < 0 ? 0.85 : 1],
     bands: BANDS.map((b) => ({ ...b, color: b.color === C.white ? C.whiteLo : b.color === C.yellow ? C.yellowLo : b.color === C.buff ? C.whiteLo : C.blackLo })),
     feather: 0.02,
     shade: { hl: 0.12, dark: 0.58 },
     ao: [{ p: add(o, [0.3, 0, 0.3]), r: 2.4, a: 0.55 }],
     hair: {
-      n: 7500, len: 0.62, w: 0.03, lean: 0.85, a: 0.78, droop: 1.3, twist: 1.5,
+      n: 11000, len: 0.95, w: 0.026, lean: 0.8, a: 0.8, droop: 1.3, twist: 1.6, wave: 0.25, curl: 0.3, fleece: 0.6, pile: 0.7, locks: 0.3, sheen: 0.1, sheenP: 60,
       color: (t, th, R) => {
         const c = bandAt(t + (R() - 0.5) * 0.03);
         if (c === C.yellow) return pick(R, [C.band, C.yellow, C.yellowHi, C.yellowLo]);
@@ -100,7 +108,7 @@ function head(o) {
     shape: (th) => [1 + 0.1 * Math.sin(th), Math.sin(th) < 0 ? 1.12 : 1],
     shade: { hl: 0.1, dark: 0.55 },
     hair: {
-      n: 1800, len: 0.45, w: 0.024, lean: 0.5, a: 0.8, twist: 1.4,
+      n: 2600, len: 0.6, w: 0.022, lean: 0.5, a: 0.8, twist: 1.5, wave: 0.2, fleece: 0.5, pile: 0.6,
       color: (t, th, R) => pick(R, [C.black, C.black, C.blackHi]),
       density: (t, th) => (t > 0.6 && Math.sin(th) < -0.2 ? 0.1 : 1),
     },
@@ -111,9 +119,10 @@ function eye(o, side) {
   return {
     name: 'eye', frame: { o, ax: Z, ay: [1, 0, 0], az: [0, side, 0] }, color: C.eye, seed: 21 + side,
     profile: (t) => { const r = Math.pow(env(t, 0.5, 0.5) * 2, 0.6); return { x: -1.3 + 2.6 * t, zc: 0, yc: -0.15 * Math.sin(Math.PI * t), ry: 0.55 * r, rz: 0.34 * r }; },
-    shade: { hl: 0.1, dark: 0.4 },
+    color: '#241b15', shade: { hl: 0.1, dark: 0.42 },
+    mat: { ks: 0.5, p: 90, ks2: 0.08, p2: 8, env: 0.45, mottle: 0.12, specColor: '#f2efe8' }, facets: 0.03,
+    hair: { n: 400, len: 0.1, w: 0.01, lean: 0.5, a: 0.5, pile: 0, fleece: 0.4, color: () => '#5a4a3c' },
     rim: { color: '#6f675e', w: 0.06, a: 0.25 },
-    gloss: { size: 0.36, a: 0.45, color: '#e9e4dc', core: { size: 0.09, a: 0.9 } },
     bias: 0.05,
   };
 }
@@ -148,31 +157,18 @@ export function bumblebee(az, el, opts = {}) {
     drawTube(sc, pts, pts.map((_, i) => (i < 2 ? 0.1 : 0.095 - i * 0.0015)), { color: '#120e0c', gloss: 0.3, glossColor: '#6a5a4e', seed: 50 + s });
   }
 
+  // Legs as articles (PROTOCOLE §4.5): black glossy femora and tibiae, the hind tibia a flat basket fringed with long
+  // black hairs, reddish-brown tarsi (FICHE.md), the legs clothed in long black hair.
   for (const s of [1, -1]) {
     const P = poseLegs(pose, s, frame);
     for (const k2 of ['front', 'mid', 'hind']) {
       const L = LEGS[k2];
       const [ankle, td, pole] = P[k2];
       const ch = legChain(L, s, ankle, td, pole);
-      const pts = ch.pts.map(lift);
-      const radii = [L.rf[0], L.rf[1], L.rt[1]];
-      for (let j = 0; j < 5; j++) radii.push(j === 0 ? L.rr[0] : L.rr[1] * (1.35 - j * 0.06), j === 0 ? L.rr[0] * 0.55 : L.rr[1] * 0.82);
-      const long = { n: 30, len: 0.55, w: 0.024, color: C.black, side: [0, 0, 1], both: true, a: 0.85 };
-      const fringe = k2 === 'hind' ? { n: 40, len: 0.7, w: 0.026, color: C.black, side: [0, 0, 1], both: true, lean: 0.25, a: 0.85 } : { n: 22, len: 0.4, w: 0.022, color: C.black, side: [0, 0, 1], both: true, a: 0.8 };
-      const tars = { n: 5, len: 0.14, w: 0.016, color: '#8a5a40', side: [0, 0, 1], both: true, a: 0.8 };
-      drawTube(sc, pts, radii, {
-        color: (i) => (i < 2 ? C.leg : i < 4 ? '#2a1a14' : C.tarsus), gloss: 0.4, glossColor: '#6a5a50',
-        hair: [long, fringe, tars, tars, tars, tars, tars, tars, tars, tars, tars, tars], seed: 60 + s * 3 + k2.length,
-      });
-      const out = norm(cross(ch.dir, Z));
-      for (const c of [1, -1]) {
-        const d1 = norm(add(add(mul(ch.dir, 0.55), [0, 0, -0.55]), mul(out, 0.35 * c)));
-        const p1 = add(ch.tip, mul(d1, 0.12)), p2 = add(p1, mul(norm(add(d1, [0, 0, -0.9])), 0.1));
-        drawTube(sc, [ch.tip, p1, p2].map(lift), [0.055, 0.035, 0.014], { color: '#2a160c', bias: 0.01 });
-      }
+      articleLeg(sc, drawBody, drawTube, ch.pts.map(lift), ch.dir, lift(ch.tip), ARTICLES[k2], s, LEGMAT);
       if (k2 === 'hind' && pollen) {
-        const mid = mul(add(pts[1], pts[2]), 0.5);
-        drawBody(sc, { ...sphere('pollen', add(mid, [0, 0.35 * s, 0]), 0.85, '#d9892e', 0.05), shade: { hl: 0.1, dark: 0.45 }, hair: { n: 500, len: 0.06, w: 0.05, lean: 0.1, a: 0.7, color: (t, th, R) => (R() < 0.5 ? '#f0a84a' : '#b8701e') } });
+        const mid = mul(add(ch.pts[1], ch.pts[2]), 0.5);
+        drawBody(sc, { ...sphere('pollen', lift(add(mid, [0, 0.35 * s, 0])), 0.85, '#d9892e', 0.05), shade: { hl: 0.1, dark: 0.45 }, hair: { n: 500, len: 0.06, w: 0.05, lean: 0.1, a: 0.7, color: (t, th, R) => (R() < 0.5 ? '#f0a84a' : '#b8701e') } });
       }
     }
   }

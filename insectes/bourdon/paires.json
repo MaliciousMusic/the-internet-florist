@@ -1,0 +1,5 @@
+{"sid": "bombus-terrestris", "pairs": [
+ {"nom": "profil", "photo": "hd/c060.jpg", "box": [300, 250, 2200, 1400], "vue": "pose:90:10", "k": 62, "w": 1300, "h": 900, "focus": [0.5, 0, -1]},
+ {"nom": "dessus", "photo": "hd/c024.jpg", "box": [200, 100, 1500, 1684], "vue": "pose:180:90", "k": 62, "w": 1100, "h": 1200, "focus": [-1, 0, 0]},
+ {"nom": "3q", "photo": "hd/c046.jpg", "box": [300, 0, 3600, 2890], "vue": "pose:235:40", "k": 62, "w": 1300, "h": 900, "focus": [0, 0, 0]}
+]}

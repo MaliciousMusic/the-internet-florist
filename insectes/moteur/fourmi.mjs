@@ -3,19 +3,19 @@
 import { add, sub, mul, norm, cross } from './geo.mjs';
 import { camera } from './geo.mjs';
 import { Scene, drawBody, drawTube } from './insecte.mjs';
-import { Z, frame0, env, legChain, tripod, sphere, antenna } from './kit.mjs';
+import { Z, frame0, env, legChain, tripod, sphere, antenna, articleLeg, fringe } from './kit.mjs';
 
-const G = -0.78; // ground under the ant (mm)
+const G = -0.98; // ground under the ant (mm): ants stand high on their legs (profile photos c107, c013)
 
 function poseLegs(S, pose, side, ph) {
-  const feet = { front: [2.35, 1.15], mid: [1.0, 1.6], hind: [-0.7, 1.5] };
-  const tdir = { front: [0.7, 0.45, -0.3], mid: [0.1, 0.85, -0.35], hind: [-0.65, 0.6, -0.3] };
+  const feet = { front: [3.0, 1.35], mid: [1.05, 1.85], hind: [-1.35, 1.75] };
+  const tdir = { front: [0.75, 0.35, -0.55], mid: [0.15, 0.8, -0.55], hind: [-0.7, 0.5, -0.5] };
   const res = {};
   for (const k of ['front', 'mid', 'hind']) {
     let [fx, fy] = feet[k]; let lift = 0;
     if (pose === 'marche') { const g = tripod(k, side, ph, 0.55, 0.22); fx += g.dx; lift = g.lift; }
     const L = S.legs[k];
-    res[k] = [sub([fx * S.scale, fy * S.scale, G * S.scale + lift], mul(norm(tdir[k]), L.tar)), tdir[k], [0, 1, 0.45]]; // knees out, a little up
+    res[k] = [sub([fx * S.scale, fy * S.scale, G * S.scale + lift], mul(norm(tdir[k]), L.tar)), tdir[k], [0, 0.8, 1]]; // knees out and up
   }
   return res;
 }
@@ -32,28 +32,30 @@ export function ant(S, az, el, opts = {}) {
 
   // Gaster: glossy, with faint segment edges.
   drawBody(sc, {
-    name: 'gaster', frame: frame0(P(-0.02, 0, 0.05)), color: S.gaster, seed: 3,
-    profile: (t) => { const e = env(t, 0.42, 0.38) / 0.6; return { x: -1.75 * f * (1 - t), zc: -0.05 * f * (1 - t), ry: 0.66 * f * e, rz: 0.6 * f * e }; },
+    name: 'gaster', frame: frame0(P(-0.02 - (S.waistLen ?? 0), 0, 0.05)), color: S.gaster, seed: 3,
+    profile: (t) => { const e = env(t, 0.42, 0.38) / 0.6, g = S.gasterK ?? 1; return { x: -1.75 * f * g * (1 - t), zc: -0.05 * f * (1 - t), ry: 0.66 * f * g * e, rz: 0.6 * f * g * e }; },
     bands: [0.3, 0.52, 0.74].map((t) => ({ t0: t - 0.015, t1: t + 0.015, color: S.gasterLo })),
-    shade: { hl: 0.25, dark: 0.6 }, gloss: { size: 0.28 * f, a: 0.75, core: { size: 0.07 * f, a: 0.8 } },
-    hair: hairs(60),
+    mat: { ks: 0.5, p: 160, ks2: 0.1, p2: 10, env: 0.45, mottle: 0.05, trans: S.trans ? { color: S.trans, k: 0.25 } : undefined },
+    hair: { ...hairs(260), lean: 1.2, a: 0.5 },
   });
   // Waist: a single upright scale (Lasius) or a petiole and a postpetiole (Myrmica).
   for (const n of S.waist) drawBody(sc, { ...sphere('node', P(n[0], 0, n[1]), n[2] * f, S.body, 0.4), profile: (t) => { const s = Math.sqrt(Math.max(0, 1 - (2 * t - 1) ** 2)); return { x: n[2] * f * (2 * t - 1) * (n[3] || 1), zc: 0, ry: n[2] * f * s * 0.8, rz: n[2] * f * s * 1.3 }; } });
   // Mesosoma: a hump at the pronotum, lower at the propodeum.
   drawBody(sc, {
     name: 'mesosoma', frame: frame0(P(0.25, 0, 0)), color: S.body, seed: 5,
-    profile: (t) => { const e = Math.pow(env(t, 0.5, 0.5) * 2, 0.5); return { x: 1.45 * f * t, zc: 0.08 * f * t, ry: 0.32 * f * e * (0.8 + 0.3 * t), rz: 0.4 * f * e * (0.7 + 0.45 * t) }; },
-    shade: { hl: 0.18, dark: 0.6 }, gloss: { size: 0.15 * f, a: S.rugose ? 0.2 : 0.5 },
-    hair: hairs(40),
+    profile: (t) => { const e = Math.pow(env(t, 0.5, 0.5) * 2, 0.5), dip = 1 - 0.16 * Math.exp(-(((t - 0.42) / 0.1) ** 2)); return { x: 1.5 * f * t, zc: (0.1 * t - 0.04 * Math.exp(-(((t - 0.42) / 0.1) ** 2))) * f, ry: 0.28 * f * e * (0.8 + 0.35 * t), rz: 0.34 * f * e * (0.72 + 0.5 * t) * dip }; },
+    mat: { ks: S.rugose ? 0.25 : 0.6, p: S.rugose ? 40 : 120, ks2: 0.1, p2: 8, env: S.rugose ? 0.2 : 0.45, mottle: 0.08 },
+    punct: S.rugose ? { n: 500, r: 0.025 * f, color: '#2a0e06', a: 0.6 } : undefined,
+    hair: hairs(60),
   });
   if (S.spines) for (const s of [1, -1]) drawTube(sc, [P(0.32, 0.12 * s, 0.28), P(0.12, 0.17 * s, 0.55)], [0.05 * f, 0.02 * f], { color: S.body, bias: 0.01 });
   // Head: rounded, slightly heart-shaped, mandibles in front.
   const H = P(2.2, 0, 0.22);
   drawBody(sc, {
     name: 'head', frame: frame0(H), color: S.head, seed: 7,
-    profile: (t) => { const e = Math.pow(env(t, 0.5, 0.5) * 2, 0.55); return { x: (-0.52 + 1.04 * t) * f, zc: 0, ry: 0.47 * f * e * (1.05 - 0.15 * t), rz: 0.36 * f * e }; },
-    shade: { hl: 0.2, dark: 0.6 }, gloss: { size: 0.16 * f, a: S.rugose ? 0.25 : 0.6 },
+    profile: (t) => { const e = Math.pow(env(t, 0.5, 0.5) * 2, 0.55); return { x: (-0.56 + 1.12 * t) * f, zc: 0, ry: 0.52 * f * e * (1.05 - 0.15 * t), rz: 0.4 * f * e }; },
+    mat: { ks: S.rugose ? 0.3 : 0.6, p: S.rugose ? 40 : 120, ks2: 0.1, p2: 8, env: S.rugose ? 0.2 : 0.45, mottle: 0.08 },
+    punct: S.rugose ? { n: 300, r: 0.022 * f, color: '#2a0e06', a: 0.6 } : undefined,
     hair: hairs(40),
   });
   for (const s of [1, -1]) {
@@ -69,10 +71,13 @@ export function ant(S, az, el, opts = {}) {
       const L = S.legs[k2];
       const [ankle, td, pole] = PL[k2];
       const ch = legChain(L, s, ankle, td, pole, [0.4, 0.15, 0.13, 0.12, 0.2], 0.05);
-      const pts = ch.pts.map((p) => [p[0], p[1], p[2] + bob]);
-      const radii = [L.rf[0], L.rf[1], L.rt[1]];
-      for (let j = 0; j < 5; j++) radii.push(L.rr[0] * (1.2 - j * 0.07), L.rr[1]);
-      drawTube(sc, pts, radii, { color: (i) => (i < 2 ? S.limb : S.limbHi), gloss: 0.4, glossColor: S.limbGloss, seed: 9 + s + k2.length });
+      const q = ch.pts.map((p) => [p[0], p[1], p[2] + bob]);
+      const A = {
+        fem: { r: [L.rf[0] * 0.9, L.rf[0] * 1.15, L.rf[1]], c: S.limb, flat: 0.7, hair: fringe(10, 0.08 * f, S.hair, 0.6, 0.008 * f) },
+        tib: { r: [L.rt[0], L.rt[1] * 0.95, L.rt[1] * 1.1], c: S.limbHi, hair: fringe(12, 0.07 * f, S.hair, 0.4, 0.008 * f) },
+        bas: { r: [L.rr[0] * 1.1, L.rr[0], L.rr[0] * 0.85], c: S.limbHi }, tar: { r: L.rr[1] * 1.1, c: S.limbHi }, claw: 0.05 * f,
+      };
+      articleLeg(sc, drawBody, drawTube, q, ch.dir, [ch.tip[0], ch.tip[1], ch.tip[2] + bob], A, s, { ks: 0.6, p: 90, ks2: 0.1, p2: 8, env: 0.4, mottle: 0.04, trans: S.trans ? { color: S.trans, k: 0.2 } : undefined });
     }
   }
   return sc.svg(size, size, bg);

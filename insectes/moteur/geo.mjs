@@ -112,3 +112,13 @@ export function hex2rgb(h) { const n = parseInt(h.slice(1), 16); return [(n >> 1
 export function rgb2hex(c) { return '#' + c.map((v) => Math.round(clamp(v, 0, 255)).toString(16).padStart(2, '0')).join(''); }
 export function mix(a, b, t) { const A = hex2rgb(a), B = hex2rgb(b); return rgb2hex([lerp(A[0], B[0], t), lerp(A[1], B[1], t), lerp(A[2], B[2], t)]); }
 export function scale(a, s) { return rgb2hex(hex2rgb(a).map((v) => v * s)); }
+
+// The same camera looking at a model pitched by deg around its y axis (positive raises the head): the camera's
+// vectors turn the other way, so projection and lighting stay exact (a hovering moth, its body tilted up).
+export function tiltCam(cam, deg) {
+  if (!deg) return cam;
+  const a = rad(deg), Yv = [0, 1, 0];
+  const t = (v) => rot(v, Yv, a);
+  const c = t(cam.c), r = t(cam.r), u = t(cam.u), L = t(cam.L), H = t(cam.H);
+  return { ...cam, c, r, u, L, H, proj: (p) => [dot(p, r), dot(p, u), dot(p, c)] };
+}

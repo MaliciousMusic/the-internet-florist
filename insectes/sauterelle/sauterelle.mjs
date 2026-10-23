@@ -3,10 +3,10 @@
 import { add, sub, mul, norm, cross, dot, rad, rot } from '../moteur/geo.mjs';
 import { camera } from '../moteur/geo.mjs';
 import { Scene, drawBody, drawTube, drawWing } from '../moteur/insecte.mjs';
-import { X, Y, Z, frame0, env, curve, lines, legChain, tripod, strokeAxes, restAxes, sphere, pitched } from '../moteur/kit.mjs';
+import { X, Y, Z, frame0, env, curve, lines, legChain, tripod, strokeAxes, restAxes, sphere, pitched, articleLeg, fringe } from '../moteur/kit.mjs';
 
 const C = {
-  green: '#5aa62a', greenHi: '#8ad24a', greenLo: '#2e6a18', belly: '#a8c860',
+  green: '#4e7e2c', greenHi: '#6e9a46', greenLo: '#2e4e18', belly: '#8aa858', tegmen: '#3e6424',
   stripe: '#a8642a', field: '#8a6a40', eye: '#b8a070', antenna: '#a88850', spine: '#c8b070',
   wingTint: '#c8d8a0', vein: '#6a8a40',
 };
@@ -17,12 +17,12 @@ function tegmenVeins() {
   const L = [[[0.2, 0.2], [12, 1.4], [24, 1.1], [29.4, -0.1]], [[0.2, -0.2], [12, 0.6], [24, 0.3], [29.6, -0.5]],
     [[0.4, -0.6], [12, -0.4], [24, -0.6], [29.3, -0.9]], [[0.8, -1.2], [12, -1.4], [24, -1.6], [28.6, -1.2]], [[1.6, -2.0], [12, -2.5], [23, -2.4]]];
   // the net of cross veins
-  for (let s = 2; s < 28; s += 1.1) L.push([[s, 1.4 - Math.abs(s - 14) * 0.03], [s + 0.3, -2.4 + Math.abs(s - 14) * 0.03]]);
+  for (let s = 2, i = 0; s < 28; s += 0.8 + 0.6 * Math.abs(Math.sin(i * 2.3)), i++) { const w = 0.35 * Math.sin(i * 1.7); L.push([[s, 1.4 - Math.abs(s - 14) * 0.03], [s + w, -0.4], [s + 0.3 - w, -2.4 + Math.abs(s - 14) * 0.03]]); }
   return lines(L);
 }
 const TEGMEN = {
-  span: 30, opaque: true, base: C.green, baseUnder: C.belly, outline: curve(TEGMEN_OUT),
-  veins: tegmenVeins(), vein: '#8ac850', veinUnder: '#9ab858', vw: 0.07,
+  span: 30, opaque: true, base: C.tegmen, baseUnder: C.belly, outline: curve(TEGMEN_OUT), soft: 0.08, grain: 0.12, grainF: 1.6,
+  veins: tegmenVeins(), vein: '#5e8a3a', veinUnder: '#7a9a4a', vw: 0.045,
   sheen: '#e8ffd0',
   // upper side: the brown stripe along the dorsal (trailing) edge and the male's stridulatory field at the base
   paint: `<path d="M2 -2.5L14 -3.0L24 -2.45L28.8 -1.3L29.3 -1.6L24 -2.75L14 -3.4L6 -3.3Z" fill="${C.stripe}" opacity="0.75"/>` +
@@ -66,7 +66,7 @@ function poseLegs(pose, side, ph) {
   }
   const feet = { front: [12, 4.6], mid: [3.4, 8.0], hind: [2.8, 7.5] }; // hind foot: knee above the tegmina, tibia sloping down and forward
   const tdir = { front: [0.6, 0.45, -0.4], mid: [0.1, 0.8, -0.4], hind: [0.9, 0.4, -0.14] };
-  const pole = { front: [0.2, 0.6, 1], mid: [0, 0.6, 1], hind: [-0.85, 0.09, 0.52] };
+  const pole = { front: [0.2, 0.6, 1], mid: [0, 0.6, 1], hind: [-0.45, 0.06, 1] }; // the hind knee high above the back (c166)
   const res = {};
   for (const k of ['front', 'mid', 'hind']) {
     let [fx, fy] = feet[k]; let lift = 0;
@@ -150,13 +150,12 @@ export function bushCricket(az, el, opts = {}) {
       const L = LEGS[k2];
       const [ankle, td, pole] = P[k2];
       const ch = legChain(L, s, ankle, td, pole, TSEGS, 0.05);
-      const pts = ch.pts.map(lift);
-      const radii = [L.rf[0], L.rf[1], L.rt[1]];
-      for (let j = 0; j < TSEGS.length; j++) radii.push(L.rr[0] * (1.15 - j * 0.08), L.rr[1]);
-      drawTube(sc, pts, radii, {
-        color: (i) => (i === 0 && k2 === 'hind' ? C.green : i < 2 ? C.green : C.greenHi), gloss: 0.35, glossColor: '#d8ffb0', seed: 30 + s + k2.length,
-        hair: [{ n: k2 === 'hind' ? 10 : 4, len: 0.5, w: 0.08, color: C.spine, side: [0, 0, -1], both: true, lean: 0.9 }, { n: k2 === 'hind' ? 16 : 7, len: 0.6, w: 0.08, color: C.spine, side: [0, 0, -1], both: true, lean: 1.0 }],
-      });
+      const A = {
+        fem: { r: k2 === 'hind' ? [0.95, 1.05, 0.34] : [0.36, 0.42, 0.3], c: C.green, flat: 0.75, hair: fringe(k2 === 'hind' ? 14 : 4, 0.4, C.spine, 0.7, 0.06) },
+        tib: { r: [0.24, 0.24, 0.26], c: C.greenHi, flat: 0.8, hair: fringe(k2 === 'hind' ? 30 : 12, 0.55, C.spine, 0.75, 0.07) },
+        bas: { r: [0.26, 0.24, 0.22], c: C.greenHi, flat: 0.55 }, tar: { r: 0.2, c: C.greenHi }, claw: 0.3,
+      };
+      articleLeg(sc, drawBody, drawTube, ch.pts.map(lift), ch.dir, lift(ch.tip), A, s, { ks: 0.4, p: 60, ks2: 0.08, p2: 6, env: 0.25, mottle: 0.06, trans: { color: '#9ad050', k: 0.12 } });
     }
   }
 

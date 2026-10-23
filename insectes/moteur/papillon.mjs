@@ -9,10 +9,11 @@ import { X, Y, Z, frame0, env, legChain, sphere, pitched } from './kit.mjs';
 // Wing axes of a butterfly wing for a flap angle (0: spread flat, +90: closed above the back) and a sweep (positive:
 // swept back). side +1 for the left wings. The leading edge (q) points forward.
 export function flapAxes(side, flapDeg, sweepDeg, twistDeg = 0) {
+  // the wing turned in its own plane by the sweep (about the body's z, as the wing is drawn back over the hindwing), then raised
+  // by the flap about the body's x axis: at rest (flap near 90) the sweep turns the wing within the plane of the closed wings
   const fl = rad(flapDeg), sw = rad(sweepDeg);
-  let e1 = norm([-Math.sin(sw), side * Math.cos(sw) * Math.cos(fl), Math.sin(fl)]);
-  let e2 = norm([Math.cos(sw), side * Math.sin(sw) * Math.cos(fl), 0]);
-  e2 = norm(sub(e2, mul(e1, e1[0] * e2[0] + e1[1] * e2[1] + e1[2] * e2[2])));
+  const e1 = [-Math.sin(sw), side * Math.cos(sw) * Math.cos(fl), Math.cos(sw) * Math.sin(fl)];
+  let e2 = [Math.cos(sw), side * Math.sin(sw) * Math.cos(fl), Math.sin(sw) * Math.sin(fl)];
   if (twistDeg) e2 = rot(e2, side > 0 ? e1 : mul(e1, -1), -rad(twistDeg));
   return { e1, e2 };
 }
@@ -72,14 +73,21 @@ export function butterfly(S, az, el, opts = {}) {
   const cam = camera(az, el, light);
   const sc = new Scene(cam, k, size / 2, size / 2, S.seed, idp);
   sc.detail = detail;
-  butterflyBody(S, sc, pose);
+  (S.body || butterflyBody)(S, sc, pose === 'soleil' ? 'pose' : pose);
   if (wings) {
-    const fl = flap ?? (pose === 'vol' ? 20 : 85);
+    const fl = flap ?? (pose === 'etale' ? 0 : pose === 'soleil' ? 3 : pose === 'vol' ? 20 : 85); // etale: spread flat as a set specimen; soleil: basking
     const sw = sweep ?? 0;
+    // per pose, the forewings swing back over the hindwings when the wings close (S.sweepPose, measured on resting photos)
+    // (an explicit sweep, as the animation sheet gives, replaces the pose's own)
+    const sp = sweep === undefined ? (S.sweepPose?.[pose] ?? { fore: 0, hind: 0 }) : { fore: 0, hind: 0 };
     for (const s of [1, -1]) {
-      const f = flapAxes(s, fl, sw + S.sweep.fore, 0), h = flapAxes(s, fl - 3, sw + S.sweep.hind, 0);
+      const f = flapAxes(s, fl, sw + S.sweep.fore + sp.fore, 0), h = flapAxes(s, fl - 3, sw + S.sweep.hind + sp.hind, 0);
+      const lr = s > 0 ? 'g' : 'd';
+      sc.part = `aile-arriere-${lr}`;
       drawWing(sc, S.hind, [S.hingeHind[0], S.hingeHind[1] * s, S.hingeHind[2]], h.e1, h.e2, { side: s, bias: -0.02 });
+      sc.part = `aile-avant-${lr}`;
       drawWing(sc, S.fore, [S.hingeFore[0], S.hingeFore[1] * s, S.hingeFore[2]], f.e1, f.e2, { side: s, bias: 0.02 });
+      sc.part = '';
     }
   }
   return sc.svg(size, size, bg);

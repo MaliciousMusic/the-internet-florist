@@ -7,7 +7,7 @@ const SPEC = {
   scale: f, seed: 23, legs: legs(f),
   head: '#211c19', body: '#241e1a', gaster: '#1e1916', gasterLo: '#3a302a', mandible: '#6a4a2a',
   limb: '#2e2420', limbHi: '#4a3a2e', limbGloss: '#8a7a6a', hair: '#c8c0b0',
-  waist: [[0.12, 0.16, 0.16, 0.4]], // one thin upright scale
+  waist: [[0.1, 0.18, 0.19, 0.4]], waistLen: 0.08, // one thin upright scale
 };
 export const META = {
   id: 'fourmi-noire', bodyMm: 4.2, span: 7.5,

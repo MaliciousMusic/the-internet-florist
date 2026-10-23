@@ -4,11 +4,11 @@
 import { add, sub, mul, norm, cross, rot, rad, dot } from '../moteur/geo.mjs';
 import { camera } from '../moteur/geo.mjs';
 import { Scene, drawBody, drawTube, drawWing, surf, normalAt } from '../moteur/insecte.mjs';
-import { X, Y, Z, frame0, env, curve, lines, legChain, tripod, strokeAxes, sphere } from '../moteur/kit.mjs';
+import { X, Y, Z, frame0, env, curve, lines, legChain, tripod, strokeAxes, sphere, articleLeg, fringe } from '../moteur/kit.mjs';
 import { fmt, openPath } from '../moteur/geo.mjs';
 
 const C = {
-  red: '#d42a04', redHi: '#f0401a', redLo: '#7a1a06',
+  red: '#b4300c', redHi: '#d04a20', redLo: '#5a1206',
   spot: '#160d0b', white: '#e6dfc0', black: '#0e0a09', blackHi: '#3a3434',
   wingTint: '#8a6a58', vein: '#4a2e1e',
 };
@@ -28,6 +28,8 @@ const LEGS = {
 };
 const G = -1.15;
 const TSEGS = [0.38, 0.27, 0.35]; // three visible tarsomeres (the fourth is hidden): cryptotetramerous
+const LEGMAT = { ks: 0.7, p: 120, ks2: 0.12, p2: 10, env: 0.5, mottle: 0.03, specColor: '#f4f0ee' };
+const ARTICLES = { fem: { r: [0.12, 0.15, 0.1], c: C.black, flat: 0.6 }, tib: { r: [0.07, 0.09, 0.1], c: C.black, flat: 0.75, hair: fringe(16, 0.08, '#4a3a34', 0.6, 0.01) }, bas: { r: [0.09, 0.1, 0.08], c: '#1e1412', flat: 0.5, hair: fringe(14, 0.06, '#8a7060', 0.2, 0.01) }, tar: { r: 0.055, c: '#1e1412' }, claw: 0.07 };
 
 function poseLegs(pose, side, ph) {
   if (pose === 'vol' || pose === 'decollage') {
@@ -51,14 +53,14 @@ function poseLegs(pose, side, ph) {
 // ---- Shells and bodies ----------------------------------------------------------------------------------------
 // The dome of the closed elytra, x from -5.2 (rear, t = 0) to 0 (front, t = 1); flat underneath.
 // Seen from the side the dome rises quickly behind the pronotum and rounds off down to the ground at the rear.
-const domeProfile = (t) => { const ey = Math.pow(env(t, 0.5, 0.5) * 2, 0.62), ez = Math.pow(env(t, 0.56, 0.44) / 0.4964, 0.85); return { x: -5.15 * (1 - t), zc: 0, ry: 2.85 * ey, rz: 2.55 * ez }; };
+const domeProfile = (t) => { const ey = Math.pow(env(t, 0.5, 0.5) * 2, 0.62), ez = Math.pow(env(t, 0.56, 0.44) / 0.4964, 0.85); return { x: -5.15 * (1 - t), zc: 0, ry: 2.85 * ey, rz: 2.3 * ez }; };
 
 // Spots of one elytron (left side: th < pi/2 is toward +y). The scutellar spot is shared and painted on both.
 const SPOTS = [
-  { t: 0.93, d: 0.0, r: 0.5, r2: 0.62 },    // scutellar, half on each elytron
-  { t: 0.74, d: 0.78, r: 0.42, r2: 0.48 },  // shoulder
-  { t: 0.47, d: 0.36, r: 0.62, r2: 0.7 },   // middle, the largest
-  { t: 0.2, d: 0.86, r: 0.42, r2: 0.46 },   // rear
+  { t: 0.93, d: 0.0, r: 0.42, r2: 0.52 },   // scutellar, half on each elytron
+  { t: 0.74, d: 0.8, r: 0.33, r2: 0.38 },   // shoulder
+  { t: 0.47, d: 0.38, r: 0.52, r2: 0.58 },  // middle, the largest
+  { t: 0.2, d: 0.88, r: 0.33, r2: 0.37 },   // rear
 ];
 
 function elytron(side, open) {
@@ -79,8 +81,9 @@ function elytron(side, open) {
     profile: domeProfile,
     shape: (th) => [1, Math.sin(th) < 0 ? 0.3 : 1],
     shade: { hl: 0.22, dark: 0.66 },
-    rim: { color: C.redLo, w: 0.08, a: 0.5 },
-    gloss: { size: 0.55, a: 0.75, color: '#fff4ea', core: { size: 0.16, a: 0.95 } },
+    mat: { ks: 0.9, p: 260, ks2: 0.18, p2: 18, env: 0.55, mottle: 0.03, specColor: '#fffaf4', wrap: 0.2 },
+    rim: { color: C.redLo, w: 0.06, a: 0.35 },
+    inner: '#3a0a02',
     bias: 0.05,
   };
   b.decals = SPOTS.map((sp, i) => ({ t: sp.t, th: Math.PI / 2 - side * sp.d, r: sp.r, r2: i === 0 ? sp.r2 : sp.r2, color: C.spot, wobble: 0.08, seed: i * 2 + side, lit: true }));
@@ -104,22 +107,22 @@ function suture(sc, b, side) {
 function pronotum(o) {
   const b = {
     name: 'pronotum', frame: frame0(o), color: C.black, seed: 81,
-    profile: (t) => { const e = Math.pow(env(t, 0.5, 0.5) * 2, 0.5); return { x: -0.15 + 1.3 * t, zc: 0, ry: 1.9 * e * (1.05 - 0.25 * t), rz: 0.95 * e }; },
+    profile: (t) => { const e = Math.pow(env(t, 0.5, 0.5) * 2, 0.5); return { x: -0.15 + 1.3 * t, zc: 0, ry: 2.05 * e * (1.05 - 0.25 * t), rz: 0.92 * e }; },
     shape: (th) => [1, Math.sin(th) < 0 ? 0.2 : 1],
     shade: { hl: 0.2, dark: 0.55 },
-    gloss: { size: 0.3, a: 0.6, core: { size: 0.08, a: 0.8 } },
+    mat: { ks: 0.8, p: 220, ks2: 0.15, p2: 16, env: 0.55, mottle: 0.03, specColor: '#fffaf4' },
   };
   // the two pale patches at its front corners
-  b.decals = [1, -1].map((s) => ({ t: 0.62, th: Math.PI / 2 - s * 1.05, r: 0.34, r2: 0.42, color: C.white, wobble: 0.1, seed: s }));
+  b.decals = [1, -1].map((s) => ({ t: 0.66, th: Math.PI / 2 - s * 1.0, r: 0.45, r2: 0.56, color: C.white, wobble: 0.1, seed: s }));
   return b;
 }
 
 function head(o) {
   const b = {
     name: 'head', frame: frame0(o), color: C.black, seed: 82,
-    profile: (t) => { const e = Math.pow(env(t, 0.5, 0.5) * 2, 0.6); return { x: -0.45 + 0.9 * t, zc: 0, ry: 0.85 * e, rz: 0.68 * e }; },
+    profile: (t) => { const e = Math.pow(env(t, 0.5, 0.5) * 2, 0.6); return { x: -0.45 + 0.9 * t, zc: 0, ry: 0.76 * e, rz: 0.6 * e }; },
     shade: { hl: 0.15, dark: 0.55 },
-    gloss: { size: 0.15, a: 0.5 },
+    mat: { ks: 0.7, p: 160, ks2: 0.12, p2: 14, env: 0.5, mottle: 0.03 },
   };
   b.decals = [1, -1].map((s) => ({ t: 0.78, th: Math.PI / 2 - s * 0.55, r: 0.13, r2: 0.16, color: C.white, seed: s }));
   return b;
@@ -145,8 +148,8 @@ export function ladybird(az, el, opts = {}) {
 
   drawBody(sc, shift(underside([0, 0, -0.3])));
   drawBody(sc, shift(pronotum([0.12, 0, 0.2])));
-  drawBody(sc, shift(head([1.55, 0, 0.1])));
-  for (const s of [1, -1]) drawBody(sc, { ...sphere('eye', lift([1.75, 0.58 * s, 0.15]), 0.24, '#0a0606', 0.7), bias: 0.03 });
+  drawBody(sc, shift(head([1.32, 0, 0.0])));
+  for (const s of [1, -1]) drawBody(sc, { ...sphere('eye', lift([1.5, 0.55 * s, 0.05]), 0.19, '#0a0606', 0.7), mat: { ks: 0.6, p: 120, env: 0.4 }, bias: 0.03 });
   const open = pose === 'vol' ? 1 : pose === 'decollage' ? (frame ? 1 : 0.5) : 0;
   for (const s of [1, -1]) {
     const e = elytron(s, open);
@@ -155,7 +158,7 @@ export function ladybird(az, el, opts = {}) {
 
   // Short clubbed antennae.
   for (const s of [1, -1]) {
-    const b0 = lift([1.95, 0.42 * s, 0.25]);
+    const b0 = lift([1.72, 0.4 * s, 0.12]);
     const pts = [b0];
     let d = norm([0.6, 0.55 * s, 0.25]), p = b0;
     for (let i = 0; i < 6; i++) { p = add(p, mul(d, 0.16)); pts.push(p); d = norm(add(d, [0, 0.05 * s, -0.05])); }
@@ -168,15 +171,7 @@ export function ladybird(az, el, opts = {}) {
       const L = LEGS[k2];
       const [ankle, td, pole] = P[k2];
       const ch = legChain(L, s, ankle, td, pole, TSEGS, 0.08);
-      const pts = ch.pts.map(lift);
-      const radii = [L.rf[0], L.rf[1], L.rt[1]];
-      for (let j = 0; j < TSEGS.length; j++) radii.push(L.rr[0] * (1.3 - j * 0.15), L.rr[1]);
-      drawTube(sc, pts, radii, { color: C.black, gloss: 0.6, glossColor: '#6a5a58', seed: 90 + s + k2.length });
-      const out = norm(cross(ch.dir, Z));
-      for (const c of [1, -1]) {
-        const d1 = norm(add(add(mul(ch.dir, 0.5), [0, 0, -0.6]), mul(out, 0.35 * c)));
-        drawTube(sc, [ch.tip, add(ch.tip, mul(d1, 0.09))].map(lift), [0.025, 0.01], { color: '#1a0f08', bias: 0.01 });
-      }
+      articleLeg(sc, drawBody, drawTube, ch.pts.map(lift), ch.dir, lift(ch.tip), ARTICLES, s, LEGMAT);
     }
   }
 

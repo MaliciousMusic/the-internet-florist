@@ -3,11 +3,11 @@
 import { add, sub, mul, norm, cross, rad, rot, dot } from '../moteur/geo.mjs';
 import { camera } from '../moteur/geo.mjs';
 import { Scene, drawBody, drawTube, drawWing, surf, normalAt } from '../moteur/insecte.mjs';
-import { X, Y, Z, frame0, env, curve, lines, legChain, tripod, strokeAxes, sphere } from '../moteur/kit.mjs';
+import { X, Y, Z, frame0, env, curve, lines, legChain, tripod, strokeAxes, sphere, articleLeg, fringe } from '../moteur/kit.mjs';
 import { fmt, openPath } from '../moteur/geo.mjs';
 
 const C = {
-  green: '#1f6e22', greenHi: '#9ccc3a', greenLo: '#0c3212',
+  green: '#0c2e0e', greenHi: '#9ccc3a', greenLo: '#0c3212',
   copper: '#e8a06a', gold: '#d8b04a', fleck: '#f0e6e4',
   under: '#2a1e16', leg: '#1d2e1c', wingTint: '#7a5a44', vein: '#3e2818',
 };
@@ -24,6 +24,12 @@ const LEGS = {
   hind: { base: [-3.6, 2.2, -1.5], fem: 3.5, tib: 3.3, tar: 3.8, rf: [0.34, 0.27], rt: [0.21, 0.27], rr: [0.13, 0.08] },
 };
 const G = -3.4;
+const LEGMAT = { metal: 1, ks: 0.8, p: 60, ks2: 0.25, p2: 6, env: 1.0, amb: 0.22, mottle: 0.04, tintColor: '#5a7a3a', shift: { color: '#c87a3a', k: 0.7 } };
+const ARTICLES = {
+  fem: { r: [0.55, 0.65, 0.45], c: '#163a16', flat: 0.55, hair: fringe(40, 0.5, '#d0bc94', 0.85, 0.02) },
+  tib: { r: [0.36, 0.44, 0.55], c: '#142a12', flat: 0.7, hair: fringe(14, 0.25, '#1a1a14', 0.6, 0.04) },
+  bas: { r: [0.18, 0.17, 0.15], c: '#101a0e' }, tar: { r: 0.15, c: '#101a0e' }, claw: 0.2,
+};
 
 function poseLegs(pose, side, ph) {
   if (pose === 'vol') {
@@ -48,20 +54,21 @@ function poseLegs(pose, side, ph) {
 const superSection = (ey, ez) => (th) => {
   const c = Math.abs(Math.cos(th)), s = Math.abs(Math.sin(th));
   const my = Math.min(4, Math.pow(Math.max(c, 1e-3), ey - 1)), mz = Math.min(4, Math.pow(Math.max(s, 1e-3), ez - 1));
-  return [my, (Math.sin(th) < 0 ? 0.35 : 1) * mz];
+  return [my, (Math.sin(th) < 0 ? 0.7 : 1) * mz];
 };
 
 // Metallic: a deep green, strong shading, a broad copper glint where the light mirrors and a yellow-green sheen at the
 // grazing rim (the structural colour shifts toward yellow at low angles).
 const metal = {
-  shade: { hl: 0.28, dark: 0.82 },
-  rim: { color: '#8ab830', w: 0.35, a: 0.22 },
-  gloss: { size: 3.6, a: 0.9, color: '#e8925a', core: { size: 0.5, a: 0.9 } },
+  // a metal (no white highlight: the reflection carries the green), turning gold and copper at grazing angles
+  // (studio dorsal photos c052, c053, c114; living c020, c105)
+  mat: { metal: 1, ks: 0.9, p: 55, ks2: 0.35, p2: 6, env: 1.5, amb: 0.15, wrap: 0.1, mottle: 0.12, tintColor: '#7cc032', shift: { color: '#e0b040', k: 0.7 } },
+  punct: { n: 6500, r: 0.06, color: '#041204', a: 0.85, glint: '#f2d060' },
 };
 
-const FLECKS = [ // white transverse flecks of one elytron: t from the rear, d from the suture (radians)
-  [0.18, 0.55, 0.09, 0.42], [0.26, 0.95, 0.08, 0.3], [0.34, 0.35, 0.07, 0.25], [0.42, 1.05, 0.1, 0.35],
-  [0.12, 1.1, 0.07, 0.22], [0.5, 0.7, 0.06, 0.2], [0.58, 1.15, 0.08, 0.26], [0.08, 0.3, 0.06, 0.25],
+const FLECKS = [ // white transverse streaks of one elytron (c105, c114): t from the rear, d from the suture (radians), r along, r2 across
+  [0.2, 0.55, 0.1, 0.62], [0.3, 1.0, 0.09, 0.4], [0.38, 0.32, 0.08, 0.32], [0.46, 1.08, 0.12, 0.5],
+  [0.12, 1.12, 0.08, 0.3], [0.54, 0.68, 0.07, 0.28], [0.62, 1.18, 0.09, 0.36], [0.08, 0.34, 0.07, 0.34], [0.26, 1.3, 0.07, 0.22],
 ];
 
 function elytron(side, lifted) {
@@ -69,7 +76,7 @@ function elytron(side, lifted) {
   let ax = X, ay = Y, az = Z;
   if (lifted) { const r = rad(8); const spin = (v) => rot(v, Y, -r); ax = spin(X); ay = spin(Y); az = spin(Z); }
   const o = add(hinge, mul(az, -2.6));
-  const half = side > 0 ? { th0: -0.5, th1: Math.PI / 2 + 0.02 } : { th0: Math.PI / 2 - 0.02, th1: Math.PI + 0.5 };
+  const half = side > 0 ? { th0: -0.85, th1: Math.PI / 2 + 0.02 } : { th0: Math.PI / 2 - 0.02, th1: Math.PI + 0.85 };
   const b = {
     name: 'elytron', frame: { o, ax, ay, az }, color: C.green, seed: 70 + side, ...half,
     depthAt: add(add(add(o, mul(ax, -5.2)), mul(ay, 2.4 * side)), mul(az, 2.2)),
@@ -82,7 +89,7 @@ function elytron(side, lifted) {
     shape: superSection(0.55, 0.7),
     ...metal, bias: 0.05,
   };
-  b.decals = FLECKS.map(([t, d, r, r2], i) => ({ t, th: Math.PI / 2 - side * d, r, r2, rot: 0, color: C.fleck, wobble: 0.25, seed: i + side, a: 0.92 }));
+  b.decals = FLECKS.map(([t, d, r, r2], i) => ({ t, th: Math.PI / 2 - side * d, r, r2, rot: 0, color: C.fleck, wobble: 0.45, seed: i + side, a: 0.95 }));
   b.paint = (sc, bb) => seam(sc, bb);
   return b;
 }
@@ -100,9 +107,9 @@ function seam(sc, b) {
 function pronotum(o) {
   return {
     name: 'pronotum', frame: frame0(o), color: C.green, seed: 81,
-    profile: (t) => { const e = Math.pow(env(t, 0.5, 0.5) * 2, 0.5); return { x: -0.3 + 4.6 * t, zc: 0, ry: 3.8 * e * (1.12 - 0.42 * t), rz: 2.1 * e }; },
-    shape: superSection(0.7, 0.8),
-    ...metal, gloss: { size: 2.0, a: 0.85, color: '#e8925a', core: { size: 0.3, a: 0.9 } },
+    profile: (t) => { const e = Math.pow(env(t, 0.5, 0.5) * 2, 0.5); return { x: -0.3 + 4.6 * t, zc: -0.15 * t, ry: 4.0 * e * (1.12 - 0.45 * t), rz: 1.75 * e }; },
+    shape: superSection(0.45, 0.6),
+    ...metal,
   };
 }
 
@@ -111,7 +118,7 @@ function scutellum(o) {
   return {
     name: 'scutellum', frame: frame0(o), color: C.green, seed: 84,
     profile: (t) => ({ x: -3.0 + 3.0 * t, zc: 0, ry: 1.3 * Math.pow(t, 0.9) + 0.02, rz: 0.12 }),
-    ...metal, gloss: { size: 0.6, a: 0.6, color: C.copper }, bias: 0.12,
+    ...metal, bias: 0.12,
   };
 }
 
@@ -119,16 +126,16 @@ function head(o) {
   return {
     name: 'head', frame: frame0(o), color: C.greenLo, seed: 82,
     profile: (t) => { const e = Math.pow(env(t, 0.5, 0.5) * 2, 0.5); return { x: -0.9 + 1.8 * t, zc: 0, ry: 1.25 * e * (1.1 - 0.25 * t), rz: 0.75 * e }; },
-    shade: { hl: 0.1, dark: 0.6 }, gloss: { size: 0.4, a: 0.5, color: C.copper },
-    hair: { n: 60, len: 0.3, w: 0.03, lean: 0.6, a: 0.6, color: () => '#c8b89a' },
+    mat: { metal: 1, ks: 0.8, p: 50, ks2: 0.3, p2: 6, env: 0.9, amb: 0.22, shift: { color: '#c87a3a', k: 0.8 } },
+    hair: { n: 140, len: 0.35, w: 0.02, lean: 0.6, a: 0.6, color: () => '#c8b89a' },
   };
 }
 
 const underside = (o) => ({
-  name: 'belly', frame: frame0(o), color: C.under, seed: 83, bias: -1.5,
+  name: 'belly', frame: frame0(o), color: '#3a3018', seed: 83, bias: -1.5,
   profile: (t) => { const e = Math.pow(env(t, 0.5, 0.5) * 2, 0.5); return { x: -9.6 + 13 * t, zc: 0, ry: 3.6 * e, rz: 1.1 * e }; },
-  shade: { hl: 0.12, dark: 0.55 }, gloss: { size: 1.0, a: 0.4, color: '#c87a5a' },
-  hair: { n: 300, len: 0.4, w: 0.03, lean: 0.8, a: 0.6, color: () => '#c8b89a', density: (t, th) => (Math.sin(th) < -0.3 ? 1 : 0) },
+  mat: { metal: 1, ks: 0.7, p: 40, ks2: 0.25, p2: 6, env: 0.8, amb: 0.25, shift: { color: '#c86a4a', k: 0.6 } },
+  hair: { n: 3200, len: 0.85, w: 0.02, lean: 0.7, a: 0.7, wave: 0.25, fleece: 0.5, pile: 0.3, color: (t, th, R) => (R() < 0.6 ? '#d8c49a' : '#a8946a'), density: (t, th) => (Math.sin(th) < -0.1 ? (t > 0.5 ? 1 : 0.6) : 0) },
 });
 
 export function chafer(az, el, opts = {}) {
@@ -142,14 +149,14 @@ export function chafer(az, el, opts = {}) {
 
   drawBody(sc, shift(underside([0, 0, -0.9])));
   drawBody(sc, shift(pronotum([0.2, 0, 0.6])));
-  drawBody(sc, shift(head([4.9, 0, -0.1])));
-  for (const s of [1, -1]) drawBody(sc, { ...sphere('eye', lift([4.6, 1.05 * s, 0.0]), 0.42, '#0b0a07', 0.6), bias: 0.03 });
+  drawBody(sc, shift(head([4.55, 0, -0.55])));
+  for (const s of [1, -1]) drawBody(sc, { ...sphere('eye', lift([4.35, 1.0 * s, -0.45]), 0.32, '#16120c', 0.6), mat: { ks: 0.5, p: 90, env: 0.35, mottle: 0.1 }, facets: 0.03, bias: 0.03 });
   for (const s of [1, -1]) drawBody(sc, shift(elytron(s, pose === 'vol')));
-  drawBody(sc, shift(scutellum([0.25, 0, 2.62])));
+  drawBody(sc, shift(scutellum([0.25, 0, 2.2])));
 
   // Antennae: a short stalk and a lamellate club of three leaves.
   for (const s of [1, -1]) {
-    const b0 = lift([5.3, 0.8 * s, 0.1]);
+    const b0 = lift([5.0, 0.75 * s, -0.4]);
     const pts = [b0]; let d = norm([0.6, 0.6 * s, 0.1]), p = b0;
     for (let i = 0; i < 6; i++) { p = add(p, mul(d, 0.28)); pts.push(p); d = norm(add(d, [0, 0.03 * s, -0.04])); }
     drawTube(sc, pts, [0.06, 0.055, 0.05, 0.05, 0.16, 0.2, 0.17], { color: '#1a140e', gloss: 0.3, bias: 0.01 });
@@ -161,18 +168,7 @@ export function chafer(az, el, opts = {}) {
       const L = LEGS[k2];
       const [ankle, td, pole] = P[k2];
       const ch = legChain(L, s, ankle, td, pole, [0.2, 0.18, 0.18, 0.18, 0.26], 0.05);
-      const pts = ch.pts.map(lift);
-      const radii = [L.rf[0], L.rf[1], L.rt[1]];
-      for (let j = 0; j < 5; j++) radii.push(L.rr[0] * (1.25 - j * 0.06), L.rr[1]);
-      drawTube(sc, pts, radii, {
-        color: (i) => (i < 2 ? C.leg : '#141c12'), gloss: 0.7, glossColor: '#6aa060', seed: 90 + s + k2.length,
-        hair: [{ n: 8, len: 0.3, w: 0.03, color: '#c8b89a', side: [0, 0, -1], both: true, a: 0.6 }, { n: 5, len: 0.25, w: 0.035, color: '#1a1a14', side: [0, 0, 1], both: true, lean: 0.8 }],
-      });
-      const out = norm(cross(ch.dir, Z));
-      for (const c of [1, -1]) {
-        const d1 = norm(add(add(mul(ch.dir, 0.5), [0, 0, -0.6]), mul(out, 0.35 * c)));
-        drawTube(sc, [ch.tip, add(ch.tip, mul(d1, 0.22))].map(lift), [0.05, 0.015], { color: '#0e0a06', bias: 0.01 });
-      }
+      articleLeg(sc, drawBody, drawTube, ch.pts.map(lift), ch.dir, lift(ch.tip), ARTICLES, s, LEGMAT);
     }
   }
 

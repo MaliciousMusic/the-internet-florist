@@ -100,3 +100,55 @@ export function antenna(base, scapeDir, scapeLen, flagDir, n, segLen, bend) {
   for (let i = 0; i < n; i++) { p = add(p, mul(d, segLen)); pts.push(p); d = norm(add(d, bend)); }
   return pts;
 }
+
+// A rigid article between p0 and p1 as a body (engine v2 shades it like the trunk): radius from r[0] at p0 through
+// r[1] in the middle to r[2] at p1, rounded ends that overlap the neighbours, a section flattened by `flat` (rz / ry)
+// around the `up` hint. Extra body fields (color, mat, hair, gloss) pass through.
+export function segment(name, p0, p1, r, extra = {}) {
+  const v = sub(p1, p0), L = len(v), ax = norm(v);
+  let up = extra.up || Z;
+  let az = sub(up, mul(ax, dot(up, ax)));
+  if (len(az) < 1e-3) { up = X; az = sub(up, mul(ax, dot(up, ax))); }
+  az = norm(az);
+  const ay = cross(az, ax);
+  const flat = extra.flat ?? 1, wide = extra.wide ?? 1;
+  const ov = Math.min(r[0], r[2]) * 0.6;
+  const rad3 = (t) => (t < 0.5 ? r[0] + (r[1] - r[0]) * Math.sin(Math.PI * t) : r[2] + (r[1] - r[2]) * Math.sin(Math.PI * t));
+  const b = {
+    name, frame: { o: sub(p0, mul(ax, ov)), ax, ay, az }, seed: extra.seed || 3,
+    profile: (t) => {
+      const x = t * (L + 2 * ov);
+      const tt = clamp((x - ov) / L, 0, 1);
+      const cap = Math.sqrt(Math.max(0, 1 - Math.pow(Math.max(0, Math.abs(2 * t - 1) - (1 - 2 * ov / (L + 2 * ov))) / (2 * ov / (L + 2 * ov) + 1e-6), 2)));
+      const rr = rad3(tt) * Math.max(0.05, cap);
+      return { x, zc: 0, ry: rr * wide, rz: rr * flat };
+    },
+    bias: extra.bias ?? 0.01,
+  };
+  delete extra.up; delete extra.flat; delete extra.wide;
+  return { ...b, ...extra };
+}
+
+// A whole leg drawn as articles (engine v2): coxa, femur, tibia, basitarsus, four tarsomeres, two claws.
+// q: the chain of legChain (B, knee, ankle, then mid/end points of the tarsomeres). A: { coxa?, fem, tib, bas, tar }
+// with for each article r (radii), c (colour), flat, hair; side +1 left / -1 right; mat: the cuticle material.
+export function articleLeg(sc, drawBody, drawTube, q, dir, tip, A, side, mat) {
+  const lat = [0, side, 0];
+  if (A.coxa) drawBody(sc, segment('coxa', add(q[0], A.coxa.from.map((v, i) => (i === 1 ? v * side : v))), q[0], A.coxa.r, { color: A.coxa.c, mat, seed: 70 + side, hair: A.coxa.hair }));
+  drawBody(sc, segment('femur', q[0], q[1], A.fem.r, { color: A.fem.c, mat, seed: 71 + side, up: Z, flat: A.fem.flat ?? 0.85, hair: A.fem.hair }));
+  drawBody(sc, segment('tibia', q[1], q[2], A.tib.r, { color: A.tib.c, mat, seed: 72 + side, up: lat, flat: A.tib.flat ?? 0.85, hair: A.tib.hair }));
+  drawBody(sc, segment('basitarsus', q[2], q[4], A.bas.r, { color: A.bas.c, mat, seed: 73 + side, up: lat, flat: A.bas.flat ?? 0.8, hair: A.bas.hair }));
+  for (let j = 1; j < 5 && q[4 + 2 * j]; j++) {
+    const r = A.tar.r * (1 - j * 0.06);
+    drawBody(sc, segment('tarsomere', q[2 + 2 * j], q[4 + 2 * j], [r * 0.8, r, r * 0.75], { color: A.tar.c, mat, seed: 74 + j, hair: A.tar.hair }));
+  }
+  const out = norm(cross(dir, Z)), cl = A.claw ?? 0.09;
+  for (const c of [1, -1]) {
+    const d1 = norm(add(add(mul(dir, 0.55), [0, 0, -0.55]), mul(out, 0.35 * c)));
+    const p1 = add(tip, mul(d1, cl)), p2 = add(p1, mul(norm(add(d1, [0, 0, -0.9])), cl * 0.9));
+    drawTube(sc, [tip, p1, p2], [cl * 0.45, cl * 0.3, cl * 0.11], { color: '#1a0f08', gloss: 0.6, bias: 0.01 });
+  }
+}
+
+// Hairs along the edges of an article (fringes), or all round when edge = 0.
+export const fringe = (n, len, color, edge = 0.75, w = 0.017) => ({ n, len, w, lean: 0.75, a: 0.8, twist: 0.6, pile: 0, fleece: 0.4, color: typeof color === 'function' ? color : () => color, density: (t, th) => (Math.abs(Math.cos(th)) > edge ? 1 : 0.12) });

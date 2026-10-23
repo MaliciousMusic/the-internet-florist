@@ -1,0 +1,5 @@
+{"sid": "cetonia-aurata", "pairs": [
+ {"nom": "3q", "photo": "hd/c105.jpg", "box": [150, 100, 2600, 1700], "vue": "pose:290:40", "k": 55, "w": 1400, "h": 950, "focus": [-1.5, 0, 0.8]},
+ {"nom": "dessus", "photo": "hd/c114.jpg", "box": [0, 0, 1364, 1800], "vue": "pose:180:90", "k": 50, "w": 1000, "h": 1300, "focus": [-1.5, 0, 0]},
+ {"nom": "profil", "photo": "hd/c027.jpg", "box": [300, 600, 3100, 2000], "vue": "pose:270:6", "k": 55, "w": 1400, "h": 750, "focus": [-1, 0, 0]}
+]}

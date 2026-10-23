@@ -1,0 +1,5 @@
+{"sid": "macroglossum", "pairs": [
+ {"nom": "etale", "photo": "hd/c184.jpg", "box": [0, 0, 3840, 2554], "vue": "etale:180:90", "k": 28, "w": 1500, "h": 1000, "focus": [-2, 0, 0]},
+ {"nom": "repos", "photo": "hd/c037.jpg", "box": [300, 300, 3700, 2900], "vue": "pose:270:90", "k": 38, "w": 1300, "h": 1000, "focus": [-4, 0, 0]},
+ {"nom": "butine", "photo": "hd/c153.jpg", "box": [0, 200, 2744, 1900], "vue": "butine:270:5:1", "k": 30, "w": 1500, "h": 900, "focus": [0, 0, 0]}
+]}

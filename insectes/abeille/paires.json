@@ -1,0 +1,5 @@
+{"sid": "apis-mellifera", "pairs": [
+ {"nom": "profil", "photo": "hd/c256.jpg", "box": [300, 200, 3700, 2500], "vue": "pose:270:8", "k": 80, "w": 1100, "h": 800, "focus": [0.5, 0, -0.6], "flip": true},
+ {"nom": "dessus", "photo": "hd/c282.jpg", "box": [700, 600, 2000, 2150], "vue": "pose:180:90", "k": 75, "w": 900, "h": 1100, "focus": [-1.5, 0, 0]},
+ {"nom": "3q", "photo": "hd/c166.jpg", "box": [200, 100, 2900, 2000], "vue": "pose:75:22", "k": 70, "w": 1300, "h": 900, "focus": [0.8, 0, -0.8]}
+]}
