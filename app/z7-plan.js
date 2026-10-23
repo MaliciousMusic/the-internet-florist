@@ -7,16 +7,21 @@
    where their feet stand. */
 const VP_PROP=[1,2.2,3.5],VP_WALL={glass:2.6,metal:3.2,gloss:4,satin:4,matte:4.5,stone:5,wood:5},VP_BASE={glass:7,metal:4},VP_PACK=.6,VP_SLIP=35,VP_STEM=2,VP_D=Math.PI/180;
 /* a vessel's plan, cached on it while its size stays the same (a bench may scale a vessel in place with vScaleBy, ?vs=: the plan follows) */
-function vPlan(v){if(!v||!v.prof)return null;const key=`${v.h}|${v.mo}|${v.vs||1}|${v.prof.length}`;if(v._plan&&v._planKey===key)return v._plan;v._planKey=key;const o=v.plan||{},P=v.prof,sb=v.svgb&&typeof SVGB!=='undefined'?SVGB[v.svgb]:null,k=v.vs||1,
+function vPlan(v){if(!v||!v.prof)return null;const key=`${v.h}|${v.mo}|${v.vs||1}|${v.prof.length}`;if(v._plan&&v._planKey===key)return v._plan;v._planKey=key;const o=v.plan||(typeof VPLAN_OV!=='undefined'&&VPLAN_OV[v.base||v.id])||{},P=v.prof,sb=v.svgb&&typeof SVGB!=='undefined'?SVGB[v.svgb]:null,k=v.vs||1,
     wall=o.wall??VP_WALL[v.mat]??4,yM=v.mh!=null?v.mh:v.h,mx=v.mx||0,lw=Math.max(1.1,Math.min(v.lipw||3,(v.mo||20)*.14)),rM=Math.max(2,(v.mo||20)-lw);
   /* the bottom: above a solid foot (a footed coupe or a soliflore's pedestal holds water only above its waist), or the measured one */
   const rMax=Math.max(...P.map(p=>p[1]));let hf=0;for(const p of P)if(p[0]<yM*.6&&p[1]<rMax*.45)hf=Math.max(hf,p[0]);
-  const yF=o.yF??(sb&&sb.cavb?(FL-sb.cavb)*k:hf+(VP_BASE[v.mat]??5));
+  const yF=o.yF!=null?o.yF*(o.cav?k:1):(sb&&sb.cavb?(FL-sb.cavb)*k:hf+(VP_BASE[v.mat]??5));
   /* the cavity: the smoothed outer profile less the wall, from the bottom (as wide as measured, SVGB cavr) up to the mouth, never wider than the
      lip lets in at the top */
   const S=profSamples(P,120),rIn=y=>Math.max(0,sRad(S,y)-wall),cav=[];
   for(let i=0;i<=48;i++){const y=yF+(yM-yF)*i/48;cav.push([y,i===48?rM:Math.max(.5,i===0&&sb&&sb.cavr?Math.min(rIn(y),sb.cavr*k):rIn(y))])}
-  if(o.cav)cav.splice(0,cav.length,...o.cav);
+  /* a measure of its own (VPLAN_OV, z7-plan-mesures.js: on the GLB, from the photo outline, or assumed; scale 1): its points [height,
+     half width, centre x] times the vessel's scale, resampled on the same 49 heights, on up to the mouth past the last point measured */
+  if(o.cav){const M=o.cav.map(q=>[q[0]*k,q[1]*k,(q[2]||0)*k]).sort((p,q)=>p[0]-q[0]),top=M[M.length-1],at=y=>{if(y<=M[0][0])return M[0];
+      for(let i=1;i<M.length;i++)if(M[i][0]>=y){const p=M[i-1],q=M[i],u=(y-p[0])/((q[0]-p[0])||1);return[y,p[1]+(q[1]-p[1])*u,p[2]+(q[2]-p[2])*u]}
+      const u=(y-top[0])/Math.max(1e-6,yM-top[0]);return[y,top[1]+(rM-top[1])*u,top[2]+(mx-top[2])*u]};
+    for(let i=0;i<=48;i++){const y=yF+(yM-yF)*i/48;cav[i]=i===48?[yM,rM,mx]:[y,Math.max(.5,at(y)[1]),at(y)[2]]}}
   const rAtIn=y=>{if(y<=cav[0][0])return cav[0][1];for(let i=1;i<cav.length;i++)if(cav[i][0]>=y){const a=cav[i-1],b=cav[i],u=(y-a[0])/((b[0]-a[0])||1);return a[1]+(b[1]-a[1])*u}return rM};
   /* the throat: the narrowest section above the belly (a balustre leans its stems on its neck, not on its lip; a vessel widening to its
      mouth has its mouth for throat); the pinch: the narrowest section every stem passes, above the bottom tenth of the depth (where a bowl narrows to its foot the stems
@@ -27,9 +32,11 @@ function vPlan(v){if(!v||!v.prof)return null;const key=`${v.h}|${v.mo}|${v.vs||1
   const dep=yM-yF,rF=rAtIn(yF+.5);
   /* the cone: for an entry point u (-1 left edge … 1 right edge of the mouth, centred on mx) the least and greatest tilt (radians, + to the
      right) of a straight stem of radius sr whose foot stands on the bottom and which stays inside the cavity all the way up */
+  /* (a measured cavity may stand off the vessel's axis: its centre cav[i][2]) */
+  const xc0=cav[0][2]||0;
   function coneX(xe,u,sr=VP_STEM){let lo=null,hi=null,fLo=0,fHi=0;
-    for(let j=0;j<=80;j++){const xf=-(rF-sr)+2*(rF-sr)*j/80;let ok=true;
-      for(let m=1;m<48&&ok;m++){const y=cav[m][0],x=xf+(xe-xf)*(y-yF)/dep;if(Math.abs(x)>cav[m][1]-sr+.01)ok=false}
+    for(let j=0;j<=80;j++){const xf=xc0-(rF-sr)+2*(rF-sr)*j/80;let ok=true;
+      for(let m=1;m<48&&ok;m++){const y=cav[m][0],x=xf+(xe-xf)*(y-yF)/dep;if(Math.abs(x-(cav[m][2]||0))>cav[m][1]-sr+.01)ok=false}
       if(!ok)continue;const t=Math.atan2(xe-xf,dep);if(lo==null||t<lo){lo=t;fLo=xf}if(hi==null||t>hi){hi=t;fHi=xf}}
     return lo==null?null:{u,xe,lo,hi,fLo,fHi}}
   /* the reach of the entry on each side: under a neck narrower than the lip (a soliflore) the stems cannot lie against the lip, they lean
@@ -40,8 +47,8 @@ function vPlan(v){if(!v||!v.prof)return null;const key=`${v.h}|${v.mo}|${v.vs||1
   const edgeR=CONE.length?CONE[CONE.length-1].hi:0,edgeL=CONE.length?-CONE[0].lo:0;
   /* the capacity: the throat's section times the share a bundle of round stems fills (VP_PACK, to check on photos of full vases), in stems
      of 4, 6 and 10 mm; area() for a bouquet is the sum of its stems' sections (units²) */
-  const capA=Math.PI*pinch[1]*pinch[1]*VP_PACK,capN=mm=>Math.floor(capA/(Math.PI*Math.pow(mm/20*UPC,2)));
-  const plan={id:v.id,yF,yM,mx,rM,rE:[rE[-1],rE[1]],lw,wall,D:dep,rF,throat:th,pinch,cav,cone,CONE,edge:[edgeL,edgeR],cap:{area:capA,n4:capN(4),n6:capN(6),n10:capN(10)}};
+  const capA=Math.PI*pinch[1]*pinch[1]*VP_PACK*(o.zk||1),capN=mm=>Math.floor(capA/(Math.PI*Math.pow(mm/20*UPC,2)));
+  const plan={id:v.id,src:o.src||'profil',yF,yM,mx,rM,rE:[rE[-1],rE[1]],lw,wall,D:dep,rF,throat:th,pinch,cav,cone,CONE,edge:[edgeL,edgeR],cap:{area:capA,n4:capN(4),n6:capN(6),n10:capN(10)}};
   plan.rest=(s,f)=>vpRest(plan,s,f);plan.env=vpEnvelope(v,plan);plan.sides=vpSides(v,plan);plan.land=vpLand(v,plan);
   v._plan=plan;return plan}
 /* where a stem rests, given its place s in the bundle (-1 … 1, left to right) and how full the throat is (f = the bundle's sections over

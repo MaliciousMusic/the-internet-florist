@@ -15,6 +15,16 @@ def flags(r):
         return 'hors', ['plusieurs bouches : plan non appliqué (composeMouths)']
     m, v = [], []
     lip = max(r['mo'], 1)
+    src = r.get('src', 'profil')
+    if src in ('glb', 'contour', 'boite'):
+        why = {'glb': 'cavité mesurée sur le modèle 3D', 'contour': 'coupe tirée du contour de la photo', 'boite': 'cavité carrée de la colonne'}[src]
+        if max(r['edge']) > 55:
+            v.append('très ouvert (%.0f°) : sans pique, les tiges se couchent' % max(r['edge']))
+        if r['n6'] < 5:
+            v.append('col minuscule : %d tiges de 6 mm au plus' % r['n6'])
+        return ('voir' if v else 'mesuré'), [why] + v
+    if src == 'suppose':
+        return 'voir', ['modèle 3D non creusé : cavité supposée (droite, largeur de la bouche), à confirmer sur une photo de l’intérieur']
     if r['sil'] and r['rOutAtMouth'] > 1.5 * lip:
         m.append('sculpté : le profil à la bouche (%.1f cm) est la sculpture, pas la paroi ; cavité à mesurer sur le modèle 3D' % (r['rOutAtMouth'] / CM))
     elif r['sil']:
@@ -51,7 +61,7 @@ rows = []
 for r in R:
     vd, why = flags(r)
     rows.append((r, vd, why))
-order = {'mesure': 0, 'voir': 1, 'hors': 2, 'ok': 3}
+order = {'mesure': 0, 'voir': 1, 'mesuré': 2, 'hors': 3, 'ok': 4}
 rows.sort(key=lambda t: (order[t[1]], t[0]['fam'], t[0]['id']))
 cnt = {k: sum(1 for t in rows if t[1] == k) for k in order}
 
@@ -67,7 +77,7 @@ open(os.path.join(D, 'plans73.md'), 'w', encoding='utf8', newline='\n').write(
     '# Plan des 73 vases (étape 6)\n\nVerdicts : %d à mesurer à part, %d à vérifier, %d hors du plan, %d sans remarque.\n\n' % (cnt['mesure'], cnt['voir'], cnt['hors'], cnt['ok']) + '\n'.join(L) + '\n')
 
 # ---- sheet: one section per vessel, frame coloured by verdict
-COL = {'mesure': '#c0392b', 'voir': '#d68910', 'hors': '#7f8c8d', 'ok': '#5d8a3e'}
+COL = {'mesure': '#c0392b', 'voir': '#d68910', 'mesuré': '#2e86c1', 'hors': '#7f8c8d', 'ok': '#5d8a3e'}
 NC, CWD, CHT = 10, 150, 190
 H = 60 + math.ceil(len(rows) / NC) * CHT + 20
 g = []
@@ -99,10 +109,10 @@ for i, (r, vd, why) in enumerate(rows):
         g.append('<line x1="%.1f" y1="%.1f" x2="%.1f" y2="%.1f" stroke="#c0392b" stroke-width="1.2"/>' % (tx(-th[1]), ty(th[0]), tx(th[1]), ty(th[0])))
     g.append('<text x="%.1f" y="%d" font-size="9" text-anchor="middle" fill="#333">%s</text>' % (cx, y0 + 168, r['id'][:26]))
     g.append('<text x="%.1f" y="%d" font-size="8.5" text-anchor="middle" fill="%s">%s</text>' % (cx, y0 + 180, COL[vd],
-             {'mesure': 'à mesurer', 'voir': 'à vérifier', 'hors': 'hors du plan', 'ok': 'ok'}[vd] + ('' if not r.get('cls') or r['kind'] == 'kenzan' else ' · ' + r['cls'])))
+             {'mesure': 'à mesurer', 'voir': 'à vérifier', 'mesuré': 'mesuré à part', 'hors': 'hors du plan', 'ok': 'ok'}[vd] + ('' if not r.get('cls') or r['kind'] == 'kenzan' else ' · ' + r['cls'])))
 W = 20 + NC * CWD
 svg = ('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 %d %d" width="%d" height="%d" font-family="Segoe UI,Arial,sans-serif"><rect width="100%%" height="100%%" fill="#f4efe6"/>'
        '<text x="12" y="28" font-size="17" font-weight="bold" fill="#222">Plan du vase, étape 6 : les 73 vases (coupe, cavité en bleu, gorge en rouge, tiges les plus penchées en brun)</text>'
-       '<text x="12" y="48" font-size="12" fill="#555">cadre rouge : à mesurer à part (%d) · orange : à vérifier (%d) · gris : hors du plan (%d) · vert : sans remarque (%d)</text>%s</svg>') % (W, H, W, H, cnt['mesure'], cnt['voir'], cnt['hors'], cnt['ok'], ''.join(g))
+       '<text x="12" y="48" font-size="12" fill="#555">rouge : à mesurer (%d) · bleu : mesuré à part (%d) · orange : à vérifier (%d) · gris : hors du plan (%d) · vert : sans remarque (%d)</text>%s</svg>') % (W, H, W, H, cnt['mesure'], cnt['mesuré'], cnt['voir'], cnt['hors'], cnt['ok'], ''.join(g))
 open(os.path.join(D, 'planche-etape6.svg'), 'w', encoding='utf8', newline='\n').write(svg)
 print(cnt, W, H)

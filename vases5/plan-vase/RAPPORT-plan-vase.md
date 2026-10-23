@@ -298,3 +298,42 @@ Une surcharge mesurée `v.plan = {yF, cav}`, déjà prévue dans `vPlan`, à rem
 Les 18 à vérifier se règlent à l'œil sur leur planche, avec le porteur.
 
 Ce travail n'est pas lancé : il attend la décision du porteur.
+
+### Les 13 vases mesurés à part (demande du porteur, 2026-10-23)
+
+Les mesures vont dans `app/z7-plan-mesures.js` (`VPLAN_OV`), que `vPlan` lit à la place du profil. Le fichier est généré par
+`mesures.js` et chargé par le motif `z7-*`.
+- **Format** : échelle 1, points [hauteur, demi-largeur, centre x], rééchantillonnés sur les hauteurs du plan, puis raccordés à la bouche.
+- **Cavité décentrée** : elle est permise (`cav[i][2]`), et le cône en tient compte.
+- **Bouche ovale ou carrée** : elle donne sa vraie section à la capacité (`zk`, profondeur sur largeur).
+- **Planche** : `planche-etape6-mesures.svg` montre la cavité lue sur le profil (tirets rouges) et la cavité mesurée (bleu).
+
+**Sculptés, sur leur modèle 3D** (`cavite_glb.py`).
+- **Méthode** : coupes horizontales du maillage (`trimesh.mesh_plane`, sans `rtree`). À chaque hauteur, l'axe du creux est le point le plus
+  loin des parois ; le rayon est la moyenne de 48 rayons vers la paroi intérieure ; le fond est la hauteur où l'axe entre dans la matière.
+- **Échelle** : la hauteur 1 du modèle vaut `h` du vase. Le haut du creux retrouve la bouche de `compo.py` à quelques unités près.
+- **Résultats** :
+  - **mesurés** : chauve-souris (34,5 cm de creux), bambous (49,7 cm), coque (18 cm, cavité décentrée) ;
+  - **mesurés en partie** : calla (la spathe est ouverte au-dessus de 9 cm, raccordée à la bouche) et gui (creux de 6 à 17 cm, bouche de
+    1,1 cm d'après `compo.py`).
+  - **non mesurables** : le modèle 3D du **lys** et celui de la **jardinière** ne sont pas creusés, on n'y trouve qu'une cuvette de 0,1 à
+    6 cm. J'ai posé une hypothèse, marquée `suppose` : une cavité droite de la largeur de la bouche, avec un fond au dixième de la hauteur.
+    Elle est à confirmer sur une photo de l'intérieur, ou à remplacer par la décision du porteur.
+
+**Non tournés, depuis le contour relevé sur la photo** (`ol`).
+- **Méthode** : à chaque hauteur, l'intérieur du contour de face moins la paroi, avec son centre ; profondeur sur largeur pour la section.
+- **Fond** : il est posé au-dessus d'un pied plein quand une partie étroite a une partie plus large en dessous d'elle (le cou de la tête
+  veinée), ou pour les suibans posés sur pieds. Le cœur, qui se resserre jusqu'à sa pointe, reste creux jusqu'en bas.
+  - La photo de référence de la tête montre 30 tiges, que son cou ne pourrait pas laisser passer : c'est elle qui a tranché.
+- **Colonne blanche** : cavité carrée, demi-côté moins la paroi. Le profil prenait la demi-diagonale du carré.
+
+### Après les mesures
+
+- **Verdicts des 73 vases** : 8 mesurés à part, 23 à vérifier (dont lys et jardinière, supposés), 5 hors du plan, 37 sans remarque.
+- **Modèles du catalogue** : les 77 tiennent tous dans leur vase. M7 (tête veinée) demande un vase agrandi ×1,15, en plus de M77 (×1,3)
+  et de M30 (×1,1).
+- **Changements notables** :
+  - calla : profondeur utile 15,7 → 39 cm ;
+  - cœur : 145 → 38 tiges de 6 mm (bouche ovale de profondeur 0,53) ;
+  - suiban ovale : 2264 → 1290 tiges ;
+  - colonne : 186 → 237 tiges.
