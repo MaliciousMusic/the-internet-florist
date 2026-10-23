@@ -93,7 +93,11 @@ Trois sous-agents qui n'avaient pas vu le travail ont rendu leur verdict. Les tr
   Corrigé ensuite : les bords des taches sont lissés (Chaikin), les tibias épaissis de 25 % et les pattes teintées cuivre. Les autres points sont gardés comme résidus, ci-dessous.
 
 ### Sortie
-- **Atlas** (`outils/cuisson.mjs`, puis `outils/atlas.py`) : ATLAS_POIDS.
+- **Atlas** (`outils/cuisson.mjs`, puis `outils/atlas.py`) : 864 cellules, cuites en 621 s.
+  - **S** : 780 cellules de 48 px, 1344 × 1344, **652 Ko**, **6,9 Mo** sur le GPU (vues tous les 15°, 6 élévations ; poses
+    posée, marche ×8, vol).
+  - **L** : 84 cellules de 128 px, 1280 × 1152, **278 Ko**, **5,6 Mo** sur le GPU (vues tous les 30° ; poses posée, vol).
+  - **Total** : 0,93 Mo de fichiers et 12,6 Mo sur le GPU, ailes comprises.
 - **Ailes** : texture de membrane `atlas/cetoine-ailes.webp`, 197 × 74 px, 0,06 Mo sur le GPU.
 - **Runtime** : `runtime/cetoine.mjs` (classe `Cetoine`, constante `CETOINE`). Ses états :
   - au loin, trajet, atterrissage ;
