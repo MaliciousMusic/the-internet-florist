@@ -10,5 +10,8 @@
   const alt=(Q.get('alt')||'').split(',').filter(Boolean).map(Number),AL={};
   for(const n of alt){const i=MODELS.findIndex(x=>x.n===n);if(i<0)continue;const m=MODELS[i],v0=VZ[vpVid(m.vase)]||{},P=planModel(m);
     AL[n]=Object.values(VZ).filter(v=>v.fam===v0.fam&&!v.base).map(v=>{const L=vpLoad(P,v.id);return{vase:v.id,n:v.n,m:v.m,mat:v.mat,h:Math.round(v.h),fill:L?+L.fill.toFixed(2):null,max:L?L.max:null}}).sort((a,b)=>a.fill-b.fill)}
-  if(alt.length){const pre=document.createElement('pre');pre.id='out';pre.textContent=JSON.stringify(AL);document.body.prepend(pre);document.title='CAPA-DONE'}
+  /* ?prop=1: each model composed in its vessel (seed 7), how tall it stands over the lip against the vessel's larger size (vpProp) */
+  if(Q.get('prop')){const PR=[];MODELS.forEach((m,i)=>{try{const vid=vpVid(m.vase),c=compose([],7,null,vid,m),p=vpProp(c,vid);PR.push({i,n:m.n,vase:vid,cls:VPL&&VPL.pl.env.cls,r:p&&+p.r.toFixed(2),pc:p&&p.cls})}catch(e){PR.push({i,n:m.n,err:String(e).slice(0,100)})}});
+    const pre=document.createElement('pre');pre.id='out';pre.textContent=JSON.stringify(PR);document.body.prepend(pre);document.title='CAPA-DONE'}
+  else if(alt.length){const pre=document.createElement('pre');pre.id='out';pre.textContent=JSON.stringify(AL);document.body.prepend(pre);document.title='CAPA-DONE'}
   else{const pre=document.createElement('pre');pre.id='out';pre.textContent=JSON.stringify(out);document.body.prepend(pre);document.title='CAPA-DONE'}}}

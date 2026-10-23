@@ -61,7 +61,7 @@ function showStep(){const k=FS[FI],b=$('flBody');$('flT').textContent=STEPS[k];$
   else if(k==='contenant'){const fam0=(VZ[S.vase]||{}).fam||'cylindre';
     b.innerHTML=`<div class="vfams" id="fVF" role="tablist">${VFAMS.map(([id,n])=>`<button class="oc${fam0===id?' on':''}" data-f="${id}" type="button" role="tab">${n}</button>`).join('')}</div><div class="vases" id="fV"></div><p class="vwhy" id="fVW"></p>`+
       `<p class="papl">Couleur du fond</p><div class="papers" id="fBg">${BGS.map(b=>`<button class="pap${S.bg===b.id?' on':''}" data-b="${b.id}" style="--pc:${b.c}" type="button" aria-label="Fond ${b.n}" title="${b.n}"></button>`).join('')}</div>`;
-    const why=()=>{const v=VZ[S.vase]||{};$('fVW').innerHTML=(v.why?esc(`${v.n}, ${v.m}. ${v.why}`)+'<br>':'')+gaugeHtml(FIT)},
+    const why=()=>{const v=VZ[S.vase]||{};$('fVW').innerHTML=(v.why?esc(`${v.n}, ${v.m}. ${v.why}`)+'<br>':'')+gaugeHtml(FIT)+propHtml()},
       fill=fam=>{$('fV').innerHTML=VASES.filter(v=>v.fam===fam).map(v=>`<button class="vase${S.vase===v.id?' on':''}" data-v="${v.id}" type="button"><svg viewBox="0 0 10 10" aria-hidden="true"></svg><b>${esc(v.n)}</b><small>${v.p?'+'+eur(v.p):'Inclus'}</small><small class="vg" style="display:block;margin-top:3px;white-space:nowrap">${gaugeHtml(flowFit(v.id),1)}</small></button>`).join('');
         const L0=LOD;LOD=1;try{$('fV').querySelectorAll('.vase').forEach(x=>renderStatic(()=>miniVessel(x.querySelector('svg'),x.dataset.v)))}finally{LOD=L0}
         $('fVF').querySelectorAll('.oc').forEach(x=>x.classList.toggle('on',x.dataset.f===fam));$('fV').scrollLeft=0};
@@ -79,7 +79,7 @@ function showStep(){const k=FS[FI],b=$('flBody');$('flT').textContent=STEPS[k];$
   else if(k==='musique'){b.innerHTML=`<div class="music" id="fM">${MUS.map(m=>`<button class="mu${S.music===m.id?' on':''}" data-m="${m.id}" type="button"><b>${m.n}</b><small>${m.p?'+'+eur(m.p):'Offert'}</small>${m.id!=='none'?`<span class="play" data-play="${m.id}" title="Écouter">▶</span>`:''}</button>`).join('')}</div>`;
     $('fM').onclick=e=>{const pl=e.target.closest('[data-play]');if(pl){preview(pl.dataset.play);return}const x=e.target.closest('.mu');if(!x)return;S.music=x.dataset.m;$('fM').querySelectorAll('.mu').forEach(y=>y.classList.toggle('on',y===x));$('flP').textContent=eur(total())}}
   else{b.innerHTML=`<div class="sum">${sums()}</div><p class="bqstat">Le lien s’ouvre sur une enveloppe : le bouquet éclot, ${S.conf!=='aucun'?'les confettis tombent, ':''}${S.bf!=='aucun'?'les papillons s’envolent, ':''}puis ton mot apparaît.</p>`}}
-function statLine(){const c=lastFlowC,el=$('fcS'),w=$('fWhy');if(el&&c)el.innerHTML=`${c.P.tot} tiges composées pour « ${esc(OCCS[S.occ].n)} »<br>${gaugeHtml(FIT)}`;if(w&&c&&c.P.notes)w.innerHTML=c.P.notes.map(n=>`<li>${esc(n)}</li>`).join('')}
+function statLine(){const c=lastFlowC,el=$('fcS'),w=$('fWhy');if(el&&c)el.innerHTML=`${c.P.tot} tiges composées pour « ${esc(OCCS[S.occ].n)} »<br>${gaugeHtml(FIT)}${propHtml()}`;if(w&&c&&c.P.notes)w.innerHTML=c.P.notes.map(n=>`<li>${esc(n)}</li>`).join('')}
 /* the vessel's neck (z7-plan vpFit, owner 2026-10-23): the Composer draws the vessel scaled up when the bouquet needs it (FIT.vid), and its
    gauge says how full the neck is, how much the vessel was enlarged, or how many stems it takes at most */
 let FIT={vid:'',k:1,ok:true,L:null};
@@ -91,6 +91,9 @@ function gaugeHtml(F,short){const L=F&&F.L;if(!L)return'';const pc=Math.round(Ma
   if(short)return bar+(!F.ok?'trop étroit':F.k>1?`agrandi ×${k}`:`col ${pc} %`);
   return bar+(!F.ok?`Trop de tiges pour ce col : ${L.maxGrow} au plus, même agrandi ×${String(VP_GROW).replace('.',',')}. Choisis un vase plus large.`:
     F.k>1?`Vase agrandi ×${k} pour tenir ses ${L.n} tiges (${L.max} au plus à sa taille).`:`Col du vase rempli à ${pc} % (${L.n} tiges, ${L.max} au plus).`)}
+/* how tall the bouquet stands over its vessel (z7-plan vpProp: 1 to 2 times the vessel's larger size) */
+function propHtml(){const c=lastFlowC,p=c&&typeof vpProp==='function'?vpProp(c,FIT.vid||S.vase):null;if(!p)return'';const x=p.r.toFixed(1).replace('.',',');
+  return'<br>'+(p.cls==='petit'?`Bouquet bas pour ce vase (${x} fois sa taille) : un vase plus petit l'élancerait.`:p.cls==='grand'?`Bouquet haut pour ce vase (${x} fois sa taille) : un vase plus grand le porterait mieux.`:`Bouquet à ${x} fois la taille du vase.`)}
 let lastFlowC=null;const _dfb=drawFlowBq;drawFlowBq=function(now){lastFlowC=_dfb(now);return lastFlowC};
 /* the composition's elements: every variety, chosen or proposed, with its stems (− n +), its place from 1 (back) to 10 (front), and Retirer */
 function elRows(){const P=lastFlowC&&lastFlowC.P;if(!P)return[];const L=expand().map(id=>({p:PBY[id],prop:S.prop.has(id)}));if(!S.adopt)for(const it of P.adds)L.push({p:it.p,prop:1,why:it.why});return L.filter(x=>x.p)}

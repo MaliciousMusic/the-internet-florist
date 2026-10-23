@@ -242,6 +242,7 @@ function candidate(P,sv,vid,tk){sd(sv);const T=P.asp?Object.assign({},TPL[tk],{a
     reachOf=q=>{const cm=((((q.it||{}).p||{}).rec||{}).stem||{}).cm||50;return Math.max(q.r*1.3,(cm-dep)*UPC/1.06)},
     inReach=(q,x,y,k=1)=>{const Rr=NOREACH?1e9:reachOf(q)*k,d=Math.hypot(x-BP[0],y-BP[1]);return d<=Rr?[x,y]:[BP[0]+(x-BP[0])*Rr/d,BP[1]+(y-BP[1])*Rr/d]};
   const st=P.model?{}:P.O;let ry=Math.max(60,Math.sqrt(area*.6/(Math.PI*T.asp*(st.dens||1)))),rx=ry*T.asp;
+  if(typeof VPL!=='undefined'&&VPL){const k=Math.sqrt(vpAspK());rx*=k;ry/=k}/* the mass shaped by the vessel's class, its area kept (z7-plan) */
   /* the mass stays within reach of its stems: half of its heads must be able to reach its top, the longest stems hold the top (it widens,
      its area kept, never past that reach) */
   /* a mass held down by its stems opens its fan wider (up to ~64° from upright), so that its flowers find room at the sides */

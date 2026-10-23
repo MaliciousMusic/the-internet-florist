@@ -143,3 +143,58 @@ Planche : `planche-etape3.jpg`, chaque modèle tel quel et dans le vase agrandi,
 - **Coulée.** Un vase coulé agrandi (la carpe de bronze, `id~k`) relance sa propre coulée, son cache étant indexé par id. Pour l'instant,
   aucun modèle n'agrandit la carpe : son col prend 124 tiges de 6 mm. Si cela arrive, il faudra réutiliser la coulée du vase d'origine
   à l'échelle.
+
+## Étape 4 : la silhouette que le vase appelle
+
+### Principe
+
+La masse du bouquet reste dimensionnée par ses fleurs (c4 : la surface réelle des têtes), jamais étirée. Le vase n'agit que de deux
+façons.
+
+1. **La classe du vase façonne la masse, à surface égale** (`vpAspK`, une ligne neuve dans `candidate`).
+   - La classe vient de la pente des tiges au repos : `droit` sous 12°, `eventail` jusqu'à 30°, `dome` au-delà.
+   - `droit` rend la masse plus étroite et plus haute (largeur / hauteur × 0,82) ; `dome` la rend plus large (× 1,15).
+   - La portée des tiges garde le dernier mot : un bouquet limité par ses tiges ne s'élance pas plus haut. C'est le cas du modèle 33 sur
+     la chauve-souris, identique au pixel.
+   - `?noasp=1` permet de comparer.
+2. **Le Composer dit la proportion du bouquet** (`vpProp`) : la hauteur au-dessus de la lèvre, comparée à la plus grande taille du vase
+   (sa hauteur, ou sa largeur pour une coupe basse).
+   - « Bouquet bas pour ce vase » sous 1 fois, « haut » au-delà de 3,5 fois.
+   - Le message s'affiche à l'étape « composition » et sous le vase choisi à l'étape « contenant ».
+
+**Seuils calés sur le catalogue.** La règle des fleuristes (1 à 2 fois) ne tient pas sur les 77 compositions de référence, tirées de
+photos : leur médiane est à 2,17 fois et 45 seraient « hautes ». Les seuils retenus sont 1 et 3,5 (`VP_PROP`). Ils ne signalent que les
+écarts nets : 5 bouquets bas (M16 à 0,34, M56, M32, M11, M38) et 3 hauts (M34 à 3,96, M25 à 3,97, M24 à 5,5 sur son cylindre inox).
+
+### Côtés
+
+Rien à rebrancher. Les vases sculptés ont déjà leurs côtés par `sil` dans c4 : fleurs de bord et retombées du côté libre. Un vase
+tourné a ses deux côtés libres. `vPlan(v).sides` les expose pour le futur protocole des fleurs.
+
+L'indicateur `env.cascade` n'est pas fiable : `mo` n'est pas toujours le rayon extérieur de la lèvre (cylindre : `mo` 50,8 pour un
+profil à 54,9). Il n'est pas utilisé.
+
+### Mesures
+
+Mêmes 4 modèles × 3 graines par vase, sans → avec la classe :
+
+| Vase | Classe | Tige nue | Hauteur | Largeur |
+|---|---|---|---|---|
+| bronze-carpe | eventail | 0,217 → 0,217 | 224 → 224 | 282 → 282 |
+| verre-danseuses | eventail | 0,129 → 0,129 | 229 → 229 | 299 → 299 |
+| gres-chauve-souris | droit | 0,248 → 0,230 | 216 → 223 | 180 → 179 |
+| cylindre-verre-clair | dome | 0,190 → 0,185 | 238 → 232 | 289 → 306 |
+| soliflore-balustre-noir | eventail | 0,195 → 0,195 | 221 → 221 | 291 → 291 |
+
+**qa13** (10 bouquets, graine 1) : 0 partie flottante, 0 débord sous le bord, 6 cassures, toutes des fleurs posées sur la lèvre (5 à
+l'étape 2).
+
+**Classes des 77 modèles :** 37 `eventail`, 36 `dome`, 1 `droit`, 3 sans plan : tiges plantées sur un pique-fleurs (M2, M57, M69), où le cône ne s’applique pas. La moitié du
+catalogue s'élargit donc un peu.
+
+Planche : `planche-etape4.jpg`, produite par `rendus4.sh`. Sans en haut, avec en bas.
+
+### Questions ouvertes
+
+- **Les coefficients 0,82 et 1,15** sont une proposition.
+- **Les 8 bouquets hors proportion** : c'est au porteur de dire s'il faut leur proposer un autre vase, comme pour l'étape 3.

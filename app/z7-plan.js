@@ -5,7 +5,7 @@
    vessel's frame: y up from the floor, x from the axis (VX). Physics (owner, 2026-10-23): a stem's foot stands on the bottom and the stem
    leans on the lip; how far it can lean comes from the depth and the width inside; where stems cross is not imposed, it follows from
    where their feet stand. */
-const VP_WALL={glass:2.6,metal:3.2,gloss:4,satin:4,matte:4.5,stone:5,wood:5},VP_BASE={glass:7,metal:4},VP_PACK=.6,VP_SLIP=35,VP_STEM=2,VP_D=Math.PI/180;
+const VP_PROP=[1,2.2,3.5],VP_WALL={glass:2.6,metal:3.2,gloss:4,satin:4,matte:4.5,stone:5,wood:5},VP_BASE={glass:7,metal:4},VP_PACK=.6,VP_SLIP=35,VP_STEM=2,VP_D=Math.PI/180;
 /* a vessel's plan, cached on it while its size stays the same (a bench may scale a vessel in place with vScaleBy, ?vs=: the plan follows) */
 function vPlan(v){if(!v||!v.prof)return null;const key=`${v.h}|${v.mo}|${v.vs||1}|${v.prof.length}`;if(v._plan&&v._planKey===key)return v._plan;v._planKey=key;const o=v.plan||{},P=v.prof,sb=v.svgb&&typeof SVGB!=='undefined'?SVGB[v.svgb]:null,k=v.vs||1,
     wall=o.wall??VP_WALL[v.mat]??4,yM=v.mh!=null?v.mh:v.h,mx=v.mx||0,lw=Math.max(1.1,Math.min(v.lipw||3,(v.mo||20)*.14)),rM=Math.max(2,(v.mo||20)-lw);
@@ -51,13 +51,14 @@ function vpRest(pl,s,f){const p=Math.max(.15,Math.min(1,f)),a=Math.sign(s)*Math.
   if(!c)return null;const full=Math.atan2((pl.rM-pl.throat[1])*Math.sign(a),Math.max(10,pl.yM-pl.throat[0])),
     t0=a>=0?c.hi:c.lo,t=a===0?(c.lo+c.hi)/2:t0*(1-p)+Math.max(c.lo,Math.min(c.hi,full+Math.abs(a)*(t0-full)))*p;
   return{xe:c.xe,t,xf:c.xe-Math.tan(t)*pl.D}}
-/* the bouquet a vessel calls for: its height above the lip (1 to 2 times the vessel's larger size, 1.5 the aim), the half width that the
+/* the bouquet a vessel calls for: its height above the lip (VP_PROP times the vessel's larger size: 1 to 3.5, 2.2 the aim, measured on the
+   catalogue's 77 reference compositions, whose median stands 2.17 times over its vessel), the half width that the
    resting outer stems (s = .8, throat 60 % full) reach at that height, and its class (droit, eventail, dome; cascade allowed when the body below the lip stays inside
    it, so stems may hang without lying on the vessel) */
 function vpEnvelope(v,pl){const P=v.prof,big=Math.max(pl.yM,2*Math.max(...P.map(p=>p[1]))),lip=pl.rM+pl.lw,
     below=Math.max(...P.filter(p=>p[0]<pl.yM&&p[0]>pl.yM-.4*pl.yM).map(p=>p[1]).concat([0])),
-    a=Math.max(Math.abs(pl.edge[0]),Math.abs(pl.edge[1])),a6=Math.abs((pl.rest(.8,.6)||{}).t||a),H=1.5*big;
-  return{h:[big,H,2*big],w:pl.rM+H*Math.tan(a6),fan:a6,fanMax:a,cls:a6<12*VP_D?'droit':a6<30*VP_D?'eventail':'dome',cascade:below<=lip+2}}
+    a=Math.max(Math.abs(pl.edge[0]),Math.abs(pl.edge[1])),a6=Math.abs((pl.rest(.8,.6)||{}).t||a),H=VP_PROP[1]*big;
+  return{big,h:[VP_PROP[0]*big,H,VP_PROP[2]*big],w:pl.rM+H*Math.tan(a6),fan:a6,fanMax:a,cls:a6<12*VP_D?'droit':a6<30*VP_D?'eventail':'dome',cascade:below<=lip+2}}
 /* the sides of the mouth: what rises above the lip on each side (a sculpted vessel's wings, horns, spathe; a turned one rises nowhere),
    in units, and whether that side is free for rim flowers and drapes */
 function vpSides(v,pl){const r={'-1':{rise:0,free:true},'1':{rise:0,free:true}};if(!v.sil)return r;
@@ -142,3 +143,15 @@ function vpScaled(vid,k){if(k===1)return vid;const id=`${vid}~${k.toFixed(2)}`;i
   Object.defineProperty(VZ,id,{value:v,enumerable:false,configurable:true});return id}
 /* a vessel id as a gift keeps it: '<id>~<k>' is the catalogue vessel scaled by k (vpScaled), registered again on another page or device */
 function vpVid(id){if(!id||typeof VZ==='undefined'||VZ[id])return id;const m=/^(.+)~(\d+\.\d\d)$/.exec(id);return m&&VZ[m[1]]?vpScaled(m[1],+m[2]):id}
+/* ---------- the bouquet the vessel calls for (step 4) ----------
+   the mass is sized from its flowers (c4: their real heads), never stretched; the vessel only shapes it: its class (vpEnvelope: droit,
+   eventail, dome, from how far its stems lean at rest) sets the mass's proportions at the same area (VP_ASP: width over height times this),
+   and the Composer tells how tall the bouquet stands over its vessel (vpProp, VP_PROP) */
+const VP_ASP={droit:.82,eventail:1,dome:1.15};
+const VP_NOASP=typeof location!=='undefined'&&/[?&]noasp=1/.test(location.search||'');/* ?noasp=1: the mass not shaped by the class, to compare */
+function vpAspK(){return VPL&&VPL.pl.env&&!VP_NOASP?VP_ASP[VPL.pl.env.cls]||1:1}
+/* how tall a composed bouquet (c4 compose: c.out, c.BP) stands over its vessel's lip, against the vessel's larger size (its height, or its
+   width for a low bowl): 'petit' under VP_PROP[0], 'juste' up to VP_PROP[2], 'grand' over it */
+function vpProp(c,vid){const v=typeof VZ!=='undefined'&&VZ[vid],pl=v&&vPlan(v);if(!pl||!c||!c.out||!c.BP)return null;let top=c.BP[1];
+  for(const o of c.out){if(o.kind==='head')top=Math.min(top,o.y-(o.rr||20)*.8);else if(o.spine){const e=o.spine[o.spine.length-1];top=Math.min(top,o.y+e[1])}}
+  const big=pl.env.big,r=(c.BP[1]-top)/big;return{r,h:c.BP[1]-top,big,cls:r<VP_PROP[0]?'petit':r>VP_PROP[2]?'grand':'juste'}}
