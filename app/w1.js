@@ -10,7 +10,7 @@ async function wSave(name,blob,img){
 /* the bouquet drawn once at full detail, off screen, its growth at its end: the svg source, its frame, and the layers the breeze sways (marked data-bz) */
 function wSnap(d){const host=document.createElement('div');host.style.cssText='position:fixed;left:-12000px;top:0;width:600px;height:700px;opacity:0;pointer-events:none';document.body.append(host);
   const s=E('svg',{},host),a=tw.length,keep=idle.splice(0),L0=LOD;let bz=[];LOD=0;CAST_SYNC=1;
-  try{buildBq(s,d.ids||[],d.seed||7,d.vase,0,d.occ,d.model||null);for(const w of tw.splice(a))w.fn(1,1);bz=idle.splice(0)}finally{LOD=L0;CAST_SYNC=0;idle.length=0;idle.push(...keep)}
+  try{buildBq(s,d.ids||[],d.seed||7,(typeof vpVid==='function'?vpVid(d.vase):d.vase),0,d.occ,d.model||null);for(const w of tw.splice(a))w.fn(1,1);bz=idle.splice(0)}finally{LOD=L0;CAST_SYNC=0;idle.length=0;idle.push(...keep)}
   for(const m of bz)m.el.setAttribute('data-bz',[+m.a.toFixed(4),+(+m.x).toFixed(1),+(+m.y).toFixed(1),m.lag||0].join(','));
   const vb=(s.getAttribute('viewBox')||'300 600 400 440').split(/\s+/).map(Number);s.removeAttribute('style');
   const src=new XMLSerializer().serializeToString(s).replace(/ data-o="[^"]*"/g,'');host.remove();return{src,vb}}

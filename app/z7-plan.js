@@ -6,8 +6,8 @@
    leans on the lip; how far it can lean comes from the depth and the width inside; where stems cross is not imposed, it follows from
    where their feet stand. */
 const VP_WALL={glass:2.6,metal:3.2,gloss:4,satin:4,matte:4.5,stone:5,wood:5},VP_BASE={glass:7,metal:4},VP_PACK=.6,VP_SLIP=35,VP_STEM=2,VP_D=Math.PI/180;
-/* a vessel's plan, cached on it (a scaled vessel is another object, hence another plan) */
-function vPlan(v){if(!v||!v.prof)return null;if(v._plan)return v._plan;const o=v.plan||{},P=v.prof,sb=v.svgb&&typeof SVGB!=='undefined'?SVGB[v.svgb]:null,k=v.vs||1,
+/* a vessel's plan, cached on it while its size stays the same (a bench may scale a vessel in place with vScaleBy, ?vs=: the plan follows) */
+function vPlan(v){if(!v||!v.prof)return null;const key=`${v.h}|${v.mo}|${v.vs||1}|${v.prof.length}`;if(v._plan&&v._planKey===key)return v._plan;v._planKey=key;const o=v.plan||{},P=v.prof,sb=v.svgb&&typeof SVGB!=='undefined'?SVGB[v.svgb]:null,k=v.vs||1,
     wall=o.wall??VP_WALL[v.mat]??4,yM=v.mh!=null?v.mh:v.h,mx=v.mx||0,lw=Math.max(1.1,Math.min(v.lipw||3,(v.mo||20)*.14)),rM=Math.max(2,(v.mo||20)-lw);
   /* the bottom: above a solid foot (a footed coupe or a soliflore's pedestal holds water only above its waist), or the measured one */
   const rMax=Math.max(...P.map(p=>p[1]));let hf=0;for(const p of P)if(p[0]<yM*.6&&p[1]<rMax*.45)hf=Math.max(hf,p[0]);
@@ -19,10 +19,11 @@ function vPlan(v){if(!v||!v.prof)return null;if(v._plan)return v._plan;const o=v
   if(o.cav)cav.splice(0,cav.length,...o.cav);
   const rAtIn=y=>{if(y<=cav[0][0])return cav[0][1];for(let i=1;i<cav.length;i++)if(cav[i][0]>=y){const a=cav[i-1],b=cav[i],u=(y-a[0])/((b[0]-a[0])||1);return a[1]+(b[1]-a[1])*u}return rM};
   /* the throat: the narrowest section above the belly (a balustre leans its stems on its neck, not on its lip; a vessel widening to its
-     mouth has its mouth for throat); the pinch: the narrowest section anywhere, which every stem passes (the bottom included: feet stand there) */
+     mouth has its mouth for throat); the pinch: the narrowest section every stem passes, above the bottom tenth of the depth (where a bowl narrows to its foot the stems
+     lean and their feet rest on the low wall, they are not packed there) */
   let bi=0;for(let i=0;i<cav.length;i++)if(cav[i][1]>=cav[bi][1])bi=i;
   let th=[yM,rM];for(let i=bi;i<cav.length;i++)if(cav[i][1]<th[1])th=cav[i].slice();
-  let pinch=th.slice();for(const q of cav)if(q[1]<pinch[1])pinch=q.slice();
+  let pinch=th.slice();for(const q of cav)if(q[0]>yF+(yM-yF)*.1&&q[1]<pinch[1])pinch=q.slice();
   const dep=yM-yF,rF=rAtIn(yF+.5);
   /* the cone: for an entry point u (-1 left edge … 1 right edge of the mouth, centred on mx) the least and greatest tilt (radians, + to the
      right) of a straight stem of radius sr whose foot stands on the bottom and which stays inside the cavity all the way up */
@@ -113,3 +114,31 @@ function vpLean(P){const[a,b,, e]=P,q=vpEntry(Math.atan2(e[0]-a[0],a[1]-e[1])),L
 function vpFeet(k,feet,g){const pl=VPL.pl,yf=FL-pl.yF,SG0=['#4f7a36','#5f8a3e','#3f6a2e','#6a8a3a'];
   for(const ft of feet){const[x0,y0]=ft.p,[dx,dy]=ft.d,D1=yf-y0;if(D1<4||dy<=.05*Math.hypot(dx,dy))continue;const x1=Math.max(VX-pl.rF,Math.min(VX+pl.rF,x0+dx/dy*D1)),T0=TINT;TINT=ft.tn||null;
     try{stem3(k,[[x0,y0],[x0+(x1-x0)/3,y0+D1/3],[x0+(x1-x0)*2/3,y0+D1*2/3],[x1,yf]],ft.w,ft.w*.92,ft.c||SG0,10)}finally{TINT=T0}}return g}
+/* ---------- capacity (step 3, owner 2026-10-23: a limit for us when we compose a bouquet; the Composer scales the vessel up or tells the
+   most it holds) ----------
+   a stem's section from its species' sheet (rec.stem.w, mm; 6 mm when not given); a bouquet's load is the sum over its composed stems (the
+   player's flowers and the greenery the composer adds: P.cnt of c4 plan / planModel), against the vessel's capacity (its narrowest section
+   times VP_PACK). Its fill is load / capacity; the scale the vessel needs is the square root of it, since a section grows as the square of
+   the vessel. Up to VP_GROW the Composer draws the vessel larger (vpFit, vpScaled); past it the vessel stays at VP_GROW and the Composer
+   says how many stems its neck takes at most */
+const VP_GROW=1.5,vpStemMm=p=>+(((p&&p.rec||{}).stem||{}).w)||6,vpSect=mm=>Math.PI*Math.pow(mm/20*UPC,2);
+function vpLoad(P,vid){const v=typeof VZ!=='undefined'&&VZ[vid],pl=v&&vPlan(v);if(!pl||!P||!P.cnt)return null;let area=0,n=0,mm=[];
+  for(const[it,c]of P.cnt){const k=c||1,w=vpStemMm(it.p);area+=k*vpSect(w);n+=k;for(let i=0;i<k;i++)mm.push(w)}
+  mm.sort((a,b)=>a-b);const fill=area/pl.cap.area,need=Math.sqrt(fill),md=mm.length?mm[mm.length>>1]:6;
+  /* at most: how many stems of this bouquet (its own mix of sections) the neck takes */
+  return{n,area,fill,need,md,max:Math.floor(n/Math.max(fill,1e-6))}}
+/* the vessel the Composer draws for a bouquet: the vessel itself when its neck holds the stems, else the same vessel scaled up by the
+   least step of 0.05 that holds them (its wall keeps its thickness, so its neck opens faster than its size: measured on the scaled vessel,
+   not guessed from the square root), VP_GROW at most; ok false when even that is too small. L.maxGrow: the most stems of this bouquet
+   the vessel takes at VP_GROW */
+function vpFit(P,vid){const L=vpLoad(P,vid);if(!L)return{vid,k:1,ok:true,L:null};const LG=vpLoad(P,vpScaled(vid,VP_GROW));L.maxGrow=LG?LG.max:L.max;
+  if(L.fill<=1)return{vid,k:1,ok:true,L};for(let k=1.05;k<VP_GROW+1e-9;k+=.05){const kk=Math.round(k*20)/20,id=vpScaled(vid,kk),Lk=vpLoad(P,id);if(Lk&&Lk.fill<=1)return{vid:id,k:kk,ok:true,L}}
+  return{vid:vpScaled(vid,VP_GROW),k:VP_GROW,ok:false,L}}
+/* a vessel of the catalogue drawn k times larger, registered once as VZ['<id>~<k>'] (not listed among the vessels): a copy of the entry as
+   loaded (already at the owner's scale, VSC), every length times k (vScaleBy), its scale vs times k for its drawn body (svgbT); its id is
+   its own, so that what is cached by id (a cast body's pixels) is not taken from the vessel at its usual size */
+function vpScaled(vid,k){if(k===1)return vid;const id=`${vid}~${k.toFixed(2)}`;if(VZ[id])return id;const src=VZ[vid];if(!src)return vid;
+  const v=JSON.parse(JSON.stringify(src,(n,x)=>n==='_plan'?undefined:x));vScaleBy(v,k);v.vs=(src.vs||1)*k;v._vs=1;v.id=id;v.base=vid;
+  Object.defineProperty(VZ,id,{value:v,enumerable:false,configurable:true});return id}
+/* a vessel id as a gift keeps it: '<id>~<k>' is the catalogue vessel scaled by k (vpScaled), registered again on another page or device */
+function vpVid(id){if(!id||typeof VZ==='undefined'||VZ[id])return id;const m=/^(.+)~(\d+\.\d\d)$/.exec(id);return m&&VZ[m[1]]?vpScaled(m[1],+m[2]):id}

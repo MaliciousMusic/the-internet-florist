@@ -73,3 +73,73 @@ L'inclinaison au col suit maintenant le vase : les bouches larges et peu profond
 - **Flexion de 25° au-delà du cône.** C'est une proposition, qui donne l'éventail de la carpe : 47° au lieu de 58°. À juger sur la planche.
 - **Gravité dans les bouches larges.** Avec peu de tiges, elles devraient toutes tomber contre la lèvre (`vpRest`, étape 1). C'est
   prévu à l'étape 4 (silhouette), pas branché ici.
+
+## Étape 3 : capacité du col et jauge du Composer
+
+Décision du porteur : la capacité est une limite pour nous quand nous composons. Le Composer agrandit le vase, ou indique combien de
+tiges il prend au plus.
+
+### Calcul (`app/z7-plan.js`)
+
+- **Section d'une tige** : elle vient de la fiche de l'espèce, `rec.stem.w` en mm (6 mm si la fiche n'en a pas). Par exemple : rose 5,
+  tulipe 7, lys 10, tournesol 12, amaryllis 15.
+- **Charge d'un bouquet** (`vpLoad`) : la somme des sections de toutes ses tiges composées, celles du joueur comme le feuillage ajouté par
+  le compositeur (`P.cnt`).
+- **Capacité du vase** : la section du pincement × 0,6.
+  - Le pincement est la section la plus étroite au-dessus du dixième le plus bas de la profondeur. Là où un bol se resserre sur son pied,
+    les tiges penchent : elles ne s'y serrent pas.
+- **Remplissage** : la charge divisée par la capacité. « Au plus » : le nombre de tiges de ce bouquet que le col prend.
+- **Agrandissement** (`vpFit`) : le vase grandit par pas de 0,05, jusqu'à ×1,5 (`VP_GROW`).
+  - La paroi garde son épaisseur, donc le col s'ouvre plus vite que le vase ne grandit. Le pas est donc vérifié sur le vase agrandi
+    lui-même, pas tiré d'une racine carrée.
+- **Vase agrandi** (`vpScaled`) : `VZ['<id>~<k>']` est une copie de l'entrée du catalogue, toutes longueurs × k. Elle n'apparaît pas dans
+  la liste des vases, et elle a son propre `id`, pour que le cache d'un corps coulé ne la confonde pas avec le vase d'origine.
+  - `vpVid` réenregistre ces copies sur une autre page : un cadeau ouvert, le jardin, le widget.
+
+### Composer (`u2`, `u3`, `w1`)
+
+- **Dessin** : `drawFlowBq` et `renderModel` dessinent dans le vase ajusté (`FIT = flowFit()`).
+- **Étape « composition »** : la ligne d'état porte la jauge.
+- **Étape « contenant »** : chaque vase porte la sienne (« col 22 % », « agrandi ×1,25 », « trop étroit »), et la phrase du vase choisi
+  dit ce qui se passe.
+- **Cadeau** : il garde le vase ajusté (`curGift`, `vase: FIT.vid`).
+- **Vérifié dans la page de l'appli** (`mkui.sh`, capture `ui_contenant.png`) : modèle M77 dans le soliflore, « Vase agrandi ×1,3 pour
+  tenir ses 15 tiges (6 au plus à sa taille) ».
+
+### Les modèles du catalogue
+
+77 modèles, chacun dans son vase (`capa_plan.js`, résultat dans `qa/capa.json`). Remplissage médian 0,18, 90e centile 0,77.
+5 modèles dépassent :
+
+| Modèle | Vase | Tiges | Remplissage | Au plus | Composer |
+|---|---|---|---|---|---|
+| M77 | soliflore-balustre-noir | 15 | 216 % | 6 (22 à ×1,5) | agrandi ×1,3 |
+| M30 | balustre-argent-patine | 12 | 121 % | 9 (29 à ×1,5) | agrandi ×1,1 |
+| M24 | tube-acier-disque | 34 | 576 % | 5 (20 à ×1,5) | trop étroit |
+| M28 | calice-souffle-col-tube | 22 | 463 % | 4 (14 à ×1,5) | trop étroit |
+| M66 | calice-souffle-col-tube | 20 | 329 % | 6 (17 à ×1,5) | trop étroit |
+
+Le tube acier a 1,9 cm de diamètre intérieur, le col tube du calice 2,4 cm : ces bouquets n'y tiennent pas, même agrandis.
+
+Planche : `planche-etape3.jpg`, chaque modèle tel quel et dans le vase agrandi, produite par `rendus3.sh` puis `montage3.py`.
+
+### Questions ouvertes
+
+- **Les 3 modèles trop étroits : décision du porteur (2026-10-23)** : un vase plus large de la même famille, le plus proche par la matière et
+  l'allure (`app/k1.js`, `VWIDE`), mesuré avec `capa_plan.html?capa=1&alt=24,28,66` :
+  - M24 → `cylindre-inox-miroir` (même inox poli), col rempli à 10 % ;
+  - M28 → `calice-celadon-pans` (le plus haut de la famille, ton bleuté proche du verre soufflé), 35 % ;
+  - M66 → `calice-etain`, 32 %.
+  Planche : `planche-etape3-vases.jpg`. Les 77 modèles tiennent désormais : deux dans un vase agrandi (M77 ×1,3, M30 ×1,1).
+  M24 est un grand bouquet sur un cylindre de 11,5 cm : la proportion entre bouquet et vase relève de l'étape 4. Le cylindre chinoiserie,
+  de 20 cm et rempli à 5 %, serait l'autre choix.
+- **Taux de remplissage d'une botte, 0,6** : à vérifier sur des photos de vrais vases pleins.
+- **Agrandissement au plus ×1,5** : c'est une proposition.
+- **Moteur sur chaîne** (`packages/engine`, côté Codex) : il désigne un vase par son numéro et ne connaît pas encore `~k`. À lui
+  transmettre avec la décision, si le Composer y passe.
+- **Cache du plan.** `vPlan` est mis en cache tant que le vase garde sa taille (clé : h, mo, vs). Le banc des lys (`?vs=1.35`) agrandit la
+  carpe sur place avec `vScaleBy` : le plan suit (vérifié : rM 28,1 → 37,9). Un vase agrandi par le Composer porte `_vs = 1`, donc
+  `vScale` ne le remet pas à l'échelle une seconde fois.
+- **Coulée.** Un vase coulé agrandi (la carpe de bronze, `id~k`) relance sa propre coulée, son cache étant indexé par id. Pour l'instant,
+  aucun modèle n'agrandit la carpe : son col prend 124 tiges de 6 mm. Si cela arrive, il faudra réutiliser la coulée du vase d'origine
+  à l'échelle.
