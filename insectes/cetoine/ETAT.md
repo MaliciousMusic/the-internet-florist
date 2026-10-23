@@ -1,4 +1,4 @@
-# Cétoine dorée (Cetonia aurata) : état au 2026-10-23
+# Cétoine dorée (Cetonia aurata) : état au 2026-10-24
 
 Deuxième passe, après le refus de la première par le porteur, selon la méthode du machaon (PROTOCOLE §1 à §7). Session 04 du chantier
 insectes, branche `ch/insectes-04-cetoine`.
@@ -63,6 +63,68 @@ nourriture enfouie. Le vol élytres fermées est vérifié sur les photos c061 �
 | ailes | `aile-g/d` (planches seulement) |
 
 Au runtime, les ailes sont des quads (`essaim.placeWings`). La texture `atlas/cetoine-ailes.webp` fait 0,06 Mo sur le GPU.
+
+### Juges neufs (§6)
+Trois sous-agents qui n'avaient pas vu le travail ont rendu leur verdict. Les trois ont dit **ko**.
+- **Premier juge**, sur les paires recadrées. Ses points :
+  - silhouette en dalle ;
+  - stries de reflet ;
+  - point chaud jaune sur le pronotum ;
+  - dessous et pattes à faire bronze-cuivre ;
+  - clypéus, antennes et yeux ;
+  - ailes ;
+  - scutellum en V.
+
+  Tout a été corrigé (ce23f93), sauf la dalle, reprise en partie : arrière arrondi par `warp`.
+- **Deuxième juge**, qui n'a vu que les rendus, faute de la bonne image. Ses points :
+  - fers à cheval trop gras ;
+  - taches jaunes floues des fossettes ;
+  - tête beige ;
+  - aile vue par la tranche sur le vol 2/3.
+
+  Corrigé (1e4ace1).
+- **Troisième juge**, sur la planche photo | rendu (`paires.jpg`). Ses points :
+  - dos plat ;
+  - pattes longues et grêles ;
+  - ailes fantômes du faux de vol ;
+  - or-cuivre absent ;
+  - bords des taches en escalier.
+
+  Corrigé ensuite : les bords des taches sont lissés (Chaikin), les tibias épaissis de 25 % et les pattes teintées cuivre. Les autres points sont gardés comme résidus, ci-dessous.
+
+### Sortie
+- **Atlas** (`outils/cuisson.mjs`, puis `outils/atlas.py`) : ATLAS_POIDS.
+- **Ailes** : texture de membrane `atlas/cetoine-ailes.webp`, 197 × 74 px, 0,06 Mo sur le GPU.
+- **Runtime** : `runtime/cetoine.mjs` (classe `Cetoine`, constante `CETOINE`). Ses états :
+  - au loin, trajet, atterrissage ;
+  - marche (atlas « marche », 8 phases) ;
+  - enfouie (tête en bas vers le cœur) ;
+  - déploiement des ailes, envol, départ ;
+  - au clic, elle lâche prise et fuit.
+
+  Une cétoine au plus.
+- **Démo** : `insectes/demo/index.html?n=0&cetoine=1&taille=3`, serveur `insectes-04` sur le port 8824. Vérifiée au navigateur : en
+  pas à pas, la cétoine passe par tous les états et revient ; LOD L à taille ×8 ; pas d'erreur dans la console.
+- **Planches** :
+  - `planches/anim.png` : faux de vol à 3 dessins, déploiement 20/50/85 %, marche 4 phases, posée, enfouie ;
+  - `planches/g-zoom.png` : gros plan d'élytre à 120 px/mm.
+
+  La planche des paires `refcache/cetonia-aurata/paires.jpg` contient des pixels de photos : elle reste hors de git.
+- **Comportement** : `COMPORTEMENT.md`, chiffres sourcés ou marqués comme chiffres de travail.
+
+## Résidus (deux essais faits, garés)
+1. **Dos en dalle.** De profil et en 3/4, le dessus reste trop droit, et le bord inférieur des élytres trop horizontal. Il
+   faudrait relire `Z_TOP` et `Z_MAR` sur c027 et c111 en suivant le bord jusqu'à l'apex : le bord remonte derrière l'échancrure.
+2. **Or-cuivré de face trop jaune.** La rampe, lue au 85e centile de L*, donne une teinte de 84 de face. c013 montre un cuivre
+   rosé que ce centile écrase. Il faudrait relire la rampe de face au 50e centile, sur c013 seul.
+3. **Échancrure peu lisible de dessus.** Le contour mesuré sur c114 a un creux de 0,15 mm seulement ; les juges en attendent plus.
+   Le spécimen est peut-être aplati par l'épinglage. La mesurer sur un second dessus (c110).
+4. **Faux de vol.** Le fantôme de l'aile se lit comme une seconde paire d'ailes sur une planche fixe. À 30 images par seconde, il se
+   fond. Le juger en démo plutôt que sur planche.
+5. **Hanches en boules** vues de dessous, et pas de saillie mésosternale.
+6. **Cartes SAM et profondeur, grilles 72×18.** Elles n'ont pas tourné : le verrou a été saturé toute la session (RAM libre
+   entre 2,6 et 4,6 Go, il en faut 5,5). J'ai arrêté le lot (`outils/cartes.py` est prêt). La loi d'angle a été mesurée à travers les
+   normales du modèle.
 
 ## Fichiers partagés touchés (pour l'intégration)
 Tous les ajouts sont derrière des clés nouvelles. Le machaon est identique au pixel : `outils/temoin-machaon.mjs` compare trois

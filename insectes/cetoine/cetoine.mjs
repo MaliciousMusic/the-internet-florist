@@ -78,7 +78,7 @@ const SHELL = { metal: 1, ks: 0.2, p: 70, ks2: 0.1, p2: 7, env: 1.0, amb: 0.22, 
 const HEADMAT = { ...SHELL, ramp: [[0, '#16402c'], [0.35, '#2e5a2a'], [0.6, '#4e4a2a'], [0.82, '#6e3e30'], [1, '#88483e']], lobeColor: '#e0a088', ks: 0.2 };
 const UNDER = { metal: 1, ks: 0.5, p: 60, ks2: 0.2, p2: 7, env: 1.1, amb: 0.2, wrap: 0.2, mottle: 0.06, ramp: RAMP_UNDER, fresnel: [0.5, 0.5] };
 // legs: green to copper femora (c058 copper-pink, c130 green, c027 copper), darker tarsi
-const LEGMAT = { ...SHELL, ks: 0.35, p: 60, ramp: [[0, '#221a12'], [0.45, '#3e3a22'], [0.8, '#6e4c34'], [1, '#8e644a']], lobeColor: '#d8a882' };
+const LEGMAT = { ...SHELL, ks: 0.35, p: 60, ramp: [[0, '#24160f'], [0.45, '#3e3022'], [0.8, '#74463a'], [1, '#965c4c']], lobeColor: '#e0a090' };
 const GREEN = '#1a3e1a', BRONZE = '#2a1a10', HAIR = '#d7c39a', HAIR2 = '#b9a27a', CREAM = '#efe6d2';
 
 // Pits of the shell (mesures/taches.json): on the elytral disc horseshoes open toward the rear, 0.2 mm wide and 0.24 long, in double
@@ -151,11 +151,16 @@ function elytronPits(s) {
 // The elytra: two open shells, from the suture (or the scutellum's edge) over the disc down to the lateral margin, with the
 // epipleuron curling under it. t from the apex (0) to the base (1).
 // ---------------------------------------------------------------------------------------------------------------
-function elytron(s, lift = 0) {
+// In flight the elytra stay nearly closed (c061 to c072: the wings come out through the lateral notches), but they are raised off
+// the body and part a little at the suture, so the shell reads open while the wings are out (the porteur, 2026-10-24: « entrouvertes »):
+// each turns about its base at the suture, the rear up by ELY_OPEN.pitch and the apex out by ELY_OPEN.yaw (degrees).
+const ELY_OPEN = { pitch: 11, yaw: 6 };
+function elytron(s, open = 0) {
+  const lift = open;
   const xOf = (t) => XA + (XB - XA) * t;
   const L = { o: [0, 0, 0], ax: X, ay: Y, az: Z };
-  // in flight the elytra stay closed, held a little off the body (c071: a thin gap at the margins)
-  const frame = lift ? { o: [XB, 0, 0], ax: rot(X, Y, rad(-lift)), ay: Y, az: rot(Z, Y, rad(-lift)) } : L;
+  const pitch = rad(ELY_OPEN.pitch * open), yaw = rad(-s * ELY_OPEN.yaw * open);
+  const frame = open ? { o: [XB, 0, 0], ax: rot(rot(X, Y, pitch), Z, yaw), ay: rot(Y, Z, yaw), az: rot(rot(Z, Y, pitch), Z, yaw) } : L;
   const prof = (t) => {
     const x = xOf(t), yi = S_HALF(x), w = W_EL(x), zt = Z_TOP(x) - (yi > 0 ? 0.06 : 0), zm = Z_MAR(x);
     return { x: lift ? x - XB : x, yc: s * yi, zc: zm, ry: Math.max(0.02, w - yi), rz: Math.max(0.02, zt - zm) };
@@ -227,12 +232,15 @@ function flecks(b, s) {
     return [t, best];
   };
   for (const F of TACHES.taches.filter((f) => Math.sign(f.cote) === s)) {
-    // the wax edge is grainy (c114 at 3x): the outline densified every 0.04 mm and each point moved 0 to 0.025 mm across it
-    const R = rng(900 + out.length * 7 + (s > 0 ? 0 : 3)), C0 = F.contour, dense = [];
+    // the wax edge is grainy (c114 at 3x): the outline densified every 0.04 mm and each point moved 0 to 0.015 mm across it
+    // the read outline steps on the photo's pixels: two rounds of corner cutting (Chaikin) before the grain
+    let C0 = F.contour;
+    for (let k = 0; k < 2; k++) C0 = C0.flatMap((a, i) => { const b = C0[(i + 1) % C0.length]; return [[0.75 * a[0] + 0.25 * b[0], 0.75 * a[1] + 0.25 * b[1]], [0.25 * a[0] + 0.75 * b[0], 0.25 * a[1] + 0.75 * b[1]]]; });
+    const R = rng(900 + out.length * 7 + (s > 0 ? 0 : 3)), dense = [];
     for (let i = 0; i < C0.length; i++) {
       const a = C0[i], b = C0[(i + 1) % C0.length], L = Math.hypot(b[0] - a[0], b[1] - a[1]), n = Math.max(1, Math.round(L / 0.04));
       const nx = -(b[1] - a[1]) / (L || 1), ny = (b[0] - a[0]) / (L || 1);
-      for (let j = 0; j < n; j++) { const f = j / n, w = (R() - 0.35) * 0.025; dense.push([a[0] + (b[0] - a[0]) * f + nx * w, a[1] + (b[1] - a[1]) * f + ny * w]); }
+      for (let j = 0; j < n; j++) { const f = j / n, w = (R() - 0.35) * 0.015; dense.push([a[0] + (b[0] - a[0]) * f + nx * w, a[1] + (b[1] - a[1]) * f + ny * w]); }
     }
     const poly = dense.map(([x, y]) => inv(x, y));
     const c = inv(F.centre[0], F.centre[1]);
@@ -387,7 +395,7 @@ const LEGS = {
 const GROUND = -6.3;
 const ART = {
   fem: { r: [0.4, 0.48, 0.36], c: '#16300f', flat: 0.85, hair: fringe(40, 0.55, HAIR, 0.8, 0.018) },
-  tib: { r: [0.24, 0.3, 0.38], c: '#12280c', flat: 0.75, hair: fringe(16, 0.3, '#2a2010', 0.6, 0.03) },
+  tib: { r: [0.3, 0.37, 0.46], c: '#12280c', flat: 0.7, hair: fringe(16, 0.3, '#2a2010', 0.6, 0.03) },
   bas: { r: [0.19, 0.18, 0.17], c: '#0e1a0c', flat: 0.85 }, tar: { r: 0.17, c: '#0e1a0c' }, claw: 0.32,
 };
 function poseLegs(pose, s, ph) {
@@ -486,7 +494,7 @@ export function chafer(az, el, opts = {}) {
   sc.part = 'pronotum'; drawBody(sc, sh(pronotum()));
   sc.part = 'scutellum'; drawBody(sc, sh(scutellum()));
   for (const s of [1, -1]) { sc.part = s > 0 ? 'epimere-g' : 'epimere-d'; drawBody(sc, sh(epimeron(s))); }
-  for (const s of [1, -1]) { sc.part = s > 0 ? 'elytre-g' : 'elytre-d'; drawBody(sc, sh(elytron(s, flying ? 1.5 : 0))); }
+  for (const s of [1, -1]) { sc.part = s > 0 ? 'elytre-g' : 'elytre-d'; drawBody(sc, sh(elytron(s, opts.open ?? (flying ? 1 : 0)))); }
   sc.part = 'tete'; drawBody(sc, sh(head()));
   for (const s of [1, -1]) { sc.part = s > 0 ? 'oeil-g' : 'oeil-d'; drawBody(sc, sh(eye(s))); }
   for (const s of [1, -1]) { antenna(sc, s, flying); palps(sc, s); }

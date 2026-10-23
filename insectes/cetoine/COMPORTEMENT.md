@@ -6,7 +6,10 @@ travail, à mesurer sur vidéo et marqués comme tels.
 ## Vol
 - **Élytres fermées en vol.** Les ailes postérieures sortent par l'échancrure latérale, derrière l'épaule. C'est vérifié sur la
   série d'envol c061 à c071 (Commons, 05172009, CC BY-SA 3.0, 7 positions sur la composition c071) et sur les vols c072 et c077. Les
-  élytres restent closes, à peine soulevées (fente fine au bord).
+  élytres restent presque closes, soulevées (fente au bord).
+- **Élytres entrouvertes.** C'est le choix du porteur (2026-10-24) : dès que les ailes sortent, chaque élytre tourne sur sa base
+  à la suture. L'arrière se lève de 11° et l'apex s'écarte de 6° (`ELY_OPEN` dans `cetoine.mjs`). La carapace se lit ainsi ouverte,
+  et les ailes passent dessous, par les côtés.
 - **Tenue.** Le corps est cabré, tête haute de 25 à 35° (c071), les pattes antérieures tendues vers l'avant et le bas, les autres
   pendantes (c071, c072). Le runtime cabre le corps (`pitchFly`) dans la direction du vol.
 - **Battement.** Aucune mesure publiée sur *Cetonia aurata* n'a été trouvée. Le chiffre de travail est de 85 Hz. Il est tiré de

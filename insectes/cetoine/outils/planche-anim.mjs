@@ -15,7 +15,7 @@ S.faux.forEach((d, i) => frames.push({ label: `vol, dessin ${i + 1}/3`, pose: 'v
 // the unfolding, with the runtime's own law (Cetoine.strokeWings at open = u)
 for (const u of [0.2, 0.5, 0.85]) {
   const c = new Cetoine({}, [], () => 0.5); c.phase = 0; c.strokeWings(0, u);
-  frames.push({ label: `déploiement ${Math.round(u * 100)} %`, pose: 'vol', sets: [{ ...c.wingPose.hind, bias: -2.5 }] });
+  frames.push({ label: `déploiement ${Math.round(u * 100)} %`, pose: 'vol', open: Math.min(1, u * 2), sets: [{ ...c.wingPose.hind, bias: -2.5 }] });
 }
 for (const f of [0, 0.25, 0.5, 0.75]) frames.push({ label: `marche ${f * 8 + 1}/8`, pose: 'marche', frame: f, sets: [] });
 frames.push({ label: 'posée', pose: 'pose', sets: [] });
@@ -23,7 +23,7 @@ frames.push({ label: 'enfouie, tête en bas', pose: 'pose', el: el + 45, az: az 
 const cols = 4, rows = Math.ceil(frames.length / cols);
 let body = '';
 frames.forEach((f, i) => {
-  const svg = chafer(f.az ?? az, f.el ?? el, { pose: f.pose, frame: f.frame ?? 0, wingSets: f.sets, size: cell, k, detail: 1, idp: `f${i}_` });
+  const svg = chafer(f.az ?? az, f.el ?? el, { pose: f.pose, frame: f.frame ?? 0, wingSets: f.sets, open: f.open, size: cell, k, detail: 1, idp: `f${i}_` });
   const x = (i % cols) * cell, y = Math.floor(i / cols) * (cell + 22);
   body += `<g transform="translate(${x} ${y + 22})">${svg.replace(/^<svg[^>]*>/, '').replace(/<\/svg>$/, '')}</g>` +
     `<text x="${x + 8}" y="${y + 16}" font-family="sans-serif" font-size="14" fill="#5a4a38">${f.label}</text>`;
