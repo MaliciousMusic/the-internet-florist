@@ -75,7 +75,7 @@ const RAMP_UNDER = LAW?.rampDessous ?? [[0, '#24120e'], [0.4, '#4e2820'], [0.75,
 // (c114: the highlights are yellow-green, L* 75 to 80, far above the mean)
 const SHELL = { metal: 1, ks: 0.2, p: 70, ks2: 0.1, p2: 7, env: 1.0, amb: 0.22, wrap: 0.25, mottle: 0.06, ramp: RAMP, fresnel: [1, 0], lobeColor: '#c8b860' };
 // the head's own law: face on it turns copper (c109: the clypeus copper-pink seen square, the pronotum green beside it; c013, c027)
-const HEADMAT = { ...SHELL, ramp: [[0, '#16402c'], [0.35, '#2e5a2a'], [0.6, '#5a5a2e'], [0.82, '#7a5232'], [1, '#8a5a40']], lobeColor: '#d8a070', ks: 0.2 };
+const HEADMAT = { ...SHELL, ramp: [[0, '#16402c'], [0.35, '#2e5a2a'], [0.6, '#4e4a2a'], [0.82, '#6e3e30'], [1, '#88483e']], lobeColor: '#e0a088', ks: 0.2 };
 const UNDER = { metal: 1, ks: 0.5, p: 60, ks2: 0.2, p2: 7, env: 1.1, amb: 0.2, wrap: 0.2, mottle: 0.06, ramp: RAMP_UNDER, fresnel: [0.5, 0.5] };
 // legs: green to copper femora (c058 copper-pink, c130 green, c027 copper), darker tarsi
 const LEGMAT = { ...SHELL, ks: 0.35, p: 60, ramp: [[0, '#221a12'], [0.45, '#3e3a22'], [0.8, '#6e4c34'], [1, '#8e644a']], lobeColor: '#d8a882' };
@@ -116,7 +116,7 @@ function pits(P) {
       }
     }
     if (!dk) return '';
-    const w = Math.max(0.4, sc.k * P.r * 0.5);
+    const w = Math.max(0.4, sc.k * P.r * (P.w ?? 0.5));
     return (P.arc ? `<path d="${dk}" stroke="${P.color}" stroke-width="${fmt(w)}" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="${P.a}"/>`
       : `<path d="${dk}" fill="${P.color}" opacity="${P.a}"/>`) +
       `<path d="${lt}" stroke="${P.lip}" stroke-width="${fmt(w * 0.5)}" fill="none" stroke-linecap="round" opacity="${P.alip}"/>`;
@@ -170,7 +170,7 @@ function elytron(s, lift = 0) {
     inner: '#241812',
     depthAt: [-6, s * 2.6, -0.4],
   };
-  const P = pits({ seed: 300 + s, r: 0.11, arc: true, points: elytronPits(s), color: '#020a04', a: 0.9, lip: '#d8e070', alip: 0.35 });
+  const P = pits({ seed: 300 + s, r: 0.09, arc: true, points: elytronPits(s), color: '#031208', a: 0.6, lip: '#d8e070', alip: 0.18, w: 0.3 });
   b.paint = (sc, bb) => P(sc, bb) + suture(sc, bb);
   b.mesh = 400;
   // the rear rounded (judge 1: not a vertical wall): near the apex the lower part of each section is drawn forward, up to 0.6 mm at the
@@ -196,7 +196,7 @@ function dimples(sx, sy, A, sig, seed) {
   };
 }
 const DIMPLE_HD = dimples(0.16, 0.16, 0.025, 0.06, 5);
-const DIMPLE_EL = dimples(0.29, 0.25, 0.02, 0.085, 7), DIMPLE_PR = dimples(0.42, 0.42, 0.012, 0.09, 9);
+const DIMPLE_EL = dimples(0.29, 0.25, 0.011, 0.085, 7), DIMPLE_PR = dimples(0.42, 0.42, 0.012, 0.09, 9);
 // The suture behind the scutellum: a sharp dark line between the elytra, a narrow lit bevel beside it (c114 at 3x)
 function suture(sc, b) {
   const tS = (XS - XA) / (XB - XA), pts = [];
@@ -227,7 +227,14 @@ function flecks(b, s) {
     return [t, best];
   };
   for (const F of TACHES.taches.filter((f) => Math.sign(f.cote) === s)) {
-    const poly = F.contour.map(([x, y]) => inv(x, y));
+    // the wax edge is grainy (c114 at 3x): the outline densified every 0.04 mm and each point moved 0 to 0.025 mm across it
+    const R = rng(900 + out.length * 7 + (s > 0 ? 0 : 3)), C0 = F.contour, dense = [];
+    for (let i = 0; i < C0.length; i++) {
+      const a = C0[i], b = C0[(i + 1) % C0.length], L = Math.hypot(b[0] - a[0], b[1] - a[1]), n = Math.max(1, Math.round(L / 0.04));
+      const nx = -(b[1] - a[1]) / (L || 1), ny = (b[0] - a[0]) / (L || 1);
+      for (let j = 0; j < n; j++) { const f = j / n, w = (R() - 0.35) * 0.025; dense.push([a[0] + (b[0] - a[0]) * f + nx * w, a[1] + (b[1] - a[1]) * f + ny * w]); }
+    }
+    const poly = dense.map(([x, y]) => inv(x, y));
     const c = inv(F.centre[0], F.centre[1]);
     // the wax is chalk white (c114 at 3x, a little greyer where thin)
     out.push({ poly, t: c[0], th: c[1], r: 0.1, color: '#ece8dd', a: 0.95, top: true });
@@ -289,7 +296,7 @@ function belly(pose) {
       color: (t, th, R) => (R() < 0.65 ? HAIR : R() < 0.6 ? HAIR2 : CREAM),
       // long hair on the thorax's sides and below; on the abdomen only tufts at the sides of the sternites
       density: (t, th) => { const x = X0 + (X1 - X0) * t; if (Math.sin(th) > 0.55) return 0; if (x > -4.6) return x < 0.5 && Math.sin(th) < -0.4 ? 0.06 : 1; return Math.abs(Math.cos(th)) > 0.75 && sternite(x) > 0.2 && sternite(x) < 0.5 ? 0.55 : 0.04; },
-      lenAt: (t, th) => { const x = X0 + (X1 - X0) * t; return x > -4.6 ? 1 : 0.55; } },
+      lenAt: (t, th) => { const x = X0 + (X1 - X0) * t; return x > -4.6 ? 0.8 : 0.5; } },
   };
 }
 

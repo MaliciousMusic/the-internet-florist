@@ -31,7 +31,7 @@ export const CETOINE = {
   // and a ghost at another (alpha): the top of the stroke, the downstroke swept forward, the bottom
   faux: [
     { main: { flap: 62, sweep: 12 }, ghost: { flap: 30, sweep: 4, alpha: 0.45 } },
-    { main: { flap: 8, sweep: -22 }, ghost: { flap: 38, sweep: -8, alpha: 0.4 } },
+    { main: { flap: 20, sweep: -24 }, ghost: { flap: 44, sweep: -6, alpha: 0.4 } },
     { main: { flap: -38, sweep: -8 }, ghost: { flap: -12, sweep: -18, alpha: 0.45 } },
   ],
   fauxHz: 30,
