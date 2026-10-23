@@ -1,5 +1,6 @@
 {"sid": "macroglossum", "pairs": [
- {"nom": "etale", "photo": "hd/c184.jpg", "box": [0, 0, 3840, 2554], "vue": "etale:180:90", "k": 28, "w": 1500, "h": 1000, "focus": [-2, 0, 0]},
- {"nom": "repos", "photo": "hd/c037.jpg", "box": [300, 300, 3700, 2900], "vue": "pose:270:90", "k": 38, "w": 1300, "h": 1000, "focus": [-4, 0, 0]},
- {"nom": "butine", "photo": "hd/c153.jpg", "box": [0, 200, 2744, 1900], "vue": "butine:270:5:1", "k": 30, "w": 1500, "h": 900, "focus": [0, 0, 0]}
+ {"nom": "etale", "photo": "hd/c186.jpg", "box": [0, 0, 3840, 2510], "vue": "etale:180:90", "k": 33.3, "w": 1500, "h": 980, "focus": [-5.16, -0.23, 0]},
+ {"nom": "dessous", "photo": "hd/c188.jpg", "box": [0, 0, 3840, 2469], "vue": "etale:0:-90", "k": 33.3, "w": 1500, "h": 964, "focus": [-4.64, -0.18, 0]},
+ {"nom": "repos", "photo": "hd/c037.jpg", "box": [0, 0, 3840, 3058], "vue": "pose:270:90", "k": 45.7, "w": 1300, "h": 1035, "focus": [-3.85, 0, 0]},
+ {"nom": "butine", "photo": "hd/c153.jpg", "box": [0, 200, 2744, 1900], "vue": "butine:270:5:0", "k": 38.3, "w": 1500, "h": 929, "focus": [3.5, 0, 3.46]}
 ]}

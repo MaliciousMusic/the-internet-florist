@@ -9,10 +9,10 @@
 // living c014, c037, c073, c074, c076 and c153 (ETAT.md).
 import { readFileSync, existsSync } from 'node:fs';
 import { flapAxes } from '../moteur/papillon.mjs';
-import { motif, loadMotif } from '../moteur/motif.mjs';
+import { motif, loadMotif, lab2hex } from '../moteur/motif.mjs';
 import { Scene, drawBody, drawTube, drawWing } from '../moteur/insecte.mjs';
 import { frame0, env, pitched, ik, articleLeg, fringe } from '../moteur/kit.mjs';
-import { add, sub, mul, norm, dot, cross, rad, camera, tiltCam } from '../moteur/geo.mjs';
+import { add, sub, mul, norm, dot, cross, rad, rng, camera, tiltCam } from '../moteur/geo.mjs';
 
 // ---------------------------------------------------------------------------------------------------------------
 // Wings
@@ -27,17 +27,88 @@ const U_F = aF ? { k: 1 / aF.echelle, rot: -aF.angle } : { k: 1, rot: 0 };
 const U_H = aH ? { k: aH.echelle, rot: aH.angle } : { k: 1, rot: 0 };
 const E = rec('etalonnage') || {};
 // a dried specimen keeps its colours here (grey-brown scales, no black field): no `live` correction (ETAT.md)
-const face = (R, seed, key, U = {}) => (R ? motif(R, { seed, dustK: E[key], ...U }) : null);
+// the fringe's palette (aile.py frange, 0.1 mm inside the edge) takes in the white plate where the fringe is thin: a colour over
+// L* 80 there is the plate, not the fringe (the moro's palest fringe, the hindwing's yellow one, reads L* 71 to 78 on c186): it
+// gives way to the nearest darker colour of the palette
+function cleanFringe(R) {
+  const F = R.frange; if (!F) return R;
+  const pal = [...new Set(F.couleurs)], L = (h) => hex2lab(h)[0];
+  const ok = pal.filter((h) => L(h) <= 80).sort((x, y) => L(y) - L(x));
+  const map = Object.fromEntries(pal.map((h) => [h, L(h) <= 80 ? h : ok[0] ?? h]));
+  return { ...R, frange: { ...F, couleurs: F.couleurs.map((h) => map[h]) } };
+}
+const face = (R, seed, key, U = {}) => (R ? motif(cleanFringe(R), { seed, dustK: E[key], ...U }) : null);
 const M_FU = face(R_FU, 11, 'avant-dessus'), M_FD = face(R_FD, 12, 'avant-dessous', U_F);
 const M_HU = face(R_HU, 13, 'arriere-dessus'), M_HD = face(R_HD, 14, 'arriere-dessous', U_H);
 
-const wing = (U, D, under) => (U && D ? {
+// The scales as fibres (outils/fibres.py): long narrow scales running out from the hinge, their direction, contrast, length and
+// width measured per cell of 0.6 mm on each flattened face. Each scale a short stroke laid along the measured direction (the field
+// interpolated between the cells, so no cell edge shows), lighter or darker than the zone under it in soft-light (the hue kept),
+// its opacity by the cell's contrast level, calibrated against the photo's grain (fibres.py --etalonne). Their number follows the
+// size on screen (none under 8 px/mm, where a scale is under a pixel): one path per level and tone. Numbers only, no pixel.
+const fib = (n) => (existsSync(recUrl(n + '-fibres')) ? loadMotif(recUrl(n + '-fibres')) : null);
+function fibres(F, seed, U = { k: 1, rot: 0 }) {
+  if (!F) return () => '';
+  const c = F.cellule, [s0, q1] = F.origine;
+  const grid = new Map();
+  for (const x of F.cases) grid.set(`${x[0]},${x[1]}`, x);
+  const at = (s, q) => grid.get(`${Math.floor((s - s0) / c)},${Math.floor((q1 - q) / c)}`);
+  // the direction field: doubled angles averaged over the four nearest cells (an axis, not a vector)
+  const dirAt = (s, q) => {
+    const fx = (s - s0) / c - 0.5, fy = (q1 - q) / c - 0.5, x0 = Math.floor(fx), y0 = Math.floor(fy);
+    let cx = 0, cy = 0;
+    for (const [dx, dy] of [[0, 0], [1, 0], [0, 1], [1, 1]]) {
+      const g = grid.get(`${x0 + dx},${y0 + dy}`);
+      if (!g) continue;
+      const w = (dx ? fx - x0 : 1 - (fx - x0)) * (dy ? fy - y0 : 1 - (fy - y0)), a = (2 * g[2] * Math.PI) / 180;
+      cx += w * Math.cos(a); cy += w * Math.sin(a);
+    }
+    return Math.atan2(cy, cx) / 2;
+  };
+  const cache = new Map();
+  const r3 = (x) => Math.round(x * 1000) / 1000;
+  return (sc) => {
+    if (sc.k < 8) return '';
+    const kk = Math.min(1, sc.k / 30), key = Math.round(kk * 10);
+    if (!cache.has(key)) {
+      const R = rng(seed * 7919 + key), l = F.longueur, w = Math.max(0.022, F.largeur * 0.55) / Math.sqrt(kk);
+      // scales overlap like shingles: about half the surface carries a stroke lighter or darker than its zone
+      const dens = (0.5 / (l * w)) * kk;
+      const xs = F.cases.map((x) => x[0]), ys = F.cases.map((x) => x[1]);
+      const S0 = s0 + Math.min(...xs) * c, S1 = s0 + (Math.max(...xs) + 1) * c, Q1 = q1 - Math.min(...ys) * c, Q0 = q1 - (Math.max(...ys) + 1) * c;
+      const n = Math.round(dens * (S1 - S0) * (Q1 - Q0));
+      const P = { };
+      for (let i = 0; i < n; i++) {
+        const s = S0 + R() * (S1 - S0), q = Q0 + R() * (Q1 - Q0), g = at(s, q);
+        if (!g) continue;
+        const a = dirAt(s, q) + ((R() - 0.5) * 12 * Math.PI) / 180, ll = l * (0.6 + 0.8 * R());
+        const ux = (Math.cos(a) * ll) / 2, uy = (Math.sin(a) * ll) / 2, tone = R() < 0.5 ? 'l' : 'd', k2 = `${g[7]}${tone}`;
+        P[k2] = (P[k2] || '') + `M${r3(s - ux)} ${r3(q - uy)}l${r3(2 * ux)} ${r3(2 * uy)}`;
+      }
+      cache.set(key, { P, w });
+    }
+    const { P, w } = cache.get(key);
+    let out = '';
+    for (const [k2, d] of Object.entries(P)) {
+      const lv = +k2[0], a = Math.min(1, (F.niveaux[lv] / 14) * (F.k?.[lv] ?? 1));
+      out += `<path d="${d}" stroke="${k2[1] === 'l' ? '#fff' : '#000'}" stroke-width="${r3(w)}" stroke-opacity="${Math.round(a * 100) / 100}"/>`;
+    }
+    out = `<g fill="none" stroke-linecap="round" style="mix-blend-mode:soft-light">${out}</g>`;
+    return U.k === 1 && !U.rot ? out : `<g transform="rotate(${Math.round(U.rot * 100) / 100}) scale(${Math.round(U.k * 1e4) / 1e4})">${out}</g>`;
+  };
+}
+const F_FU = fibres(fib('avant-dessus'), 21), F_FD = fibres(fib('avant-dessous'), 22, U_F);
+const F_HU = fibres(fib('arriere-dessus'), 23), F_HD = fibres(fib('arriere-dessous'), 24, U_H);
+const withTop = (fb, M) => (sc, up) => fb(sc) + (M.top ? M.top(sc, up) : '');
+
+const wing = (U, D, under, fu, fd) => (U && D ? {
   span: U.length, opaque: true, outline: U.outline, box: U.box, base: U.base, baseUnder: D.base,
-  paint: U.paint, paintUnder: D.paint, top: U.top, topUnder: D.top, under,
-  // no grain filter (porteur: no grain); the scales' texture is the measured dust
-  soft: 0.01, grain: 0, veins: null, sheen: '#f6f1e6',
+  paint: U.paint, paintUnder: D.paint, top: withTop(fu, U), topUnder: withTop(fd, D), under,
+  // no grain filter (porteur: no grain): the scales' texture is the measured fibres; the zones' edges soft as the scales blur
+  // them (0.04 mm, about one scale's width)
+  soft: 0.04, grain: 0, veins: null, sheen: '#f6f1e6',
 } : null);
-const FORE = wing(M_FU, M_FD, U_F), HIND = wing(M_HU, M_HD, U_H);
+const FORE = wing(M_FU, M_FD, U_F, F_FU, F_FD), HIND = wing(M_HU, M_HD, U_H, F_HU, F_HD);
 
 // ---------------------------------------------------------------------------------------------------------------
 // The body. Frame: x forward, y to the left, z up, mm; the origin on the axis at the forewings' hinge line.
@@ -50,7 +121,17 @@ const FORE = wing(M_FU, M_FD, U_F), HIND = wing(M_HU, M_HD, U_H);
 // Every organ is drawn under its own name (sc.part): the SVG keeps one group per organ, for animation.
 // ---------------------------------------------------------------------------------------------------------------
 const grid = (n) => JSON.parse(readFileSync(new URL(`./grilles/${n}.json`, import.meta.url), 'utf8'));
-const G_HEAD = grid('tete'), G_THX = grid('thorax'), G_ABD = grid('abdomen');   // plat_corps.py + grille_corps.py, c186 / c188
+// The specimen's pale scales have yellowed (the abdomen's flank patches: b* 25 on c186): on the living they are white (c153: L* 78,
+// b* 7; c037, c014). Every cell over L* 60 keeps 30 % of its chroma above that white; the darker cells are left as measured.
+function hex2lab(h) {
+  const v = [1, 3, 5].map((i) => parseInt(h.slice(i, i + 2), 16) / 255).map((u) => (u <= 0.04045 ? u / 12.92 : Math.pow((u + 0.055) / 1.055, 2.4)));
+  const X = (0.4124 * v[0] + 0.3576 * v[1] + 0.1805 * v[2]) / 0.95047, Y = 0.2126 * v[0] + 0.7152 * v[1] + 0.0722 * v[2], Z = (0.0193 * v[0] + 0.1192 * v[1] + 0.9505 * v[2]) / 1.08883;
+  const f = (t) => (t > 0.008856 ? Math.cbrt(t) : 7.787 * t + 16 / 116);
+  return [116 * f(Y) - 16, 500 * (f(X) - f(Y)), 200 * (f(Y) - f(Z))];
+}
+const whiten = (G) => ({ ...G, rows: G.rows.map((r) => r.map((h) => { const [L, a, bb] = hex2lab(h); if (L < 60) return h; const w = Math.min(1, (L - 60) / 8);
+  return lab2hex(L, a * (1 - 0.7 * w), bb - (bb - 7) * 0.7 * w); })) });
+const G_HEAD = grid('tete'), G_THX = whiten(grid('thorax')), G_ABD = whiten(grid('abdomen'));   // plat_corps.py + grille_corps.py, c186 / c188
 const pick = (R, a) => a[Math.floor(R() * a.length) % a.length];
 // hair colours read on the photos: the grey-brown fur of the back (c186, c037), the white of the face and chest (c188, c073)
 const FUR = ['#5e5647', '#6d6555', '#7d7563', '#4c463b'], WHITE = ['#ece8de', '#e2ddd0', '#f4f1ea', '#d4cfc2'];
@@ -59,7 +140,7 @@ const LEGMAT = { ks: 0.35, p: 50, ks2: 0.06, p2: 6, env: 0.25, mottle: 0.05, spe
 const EYEMAT = { ks: 0.3, p: 60, ks2: 0.1, p2: 7, env: 0.25, wrap: 0.12, amb: 0.3, mottle: 0.04, specColor: '#f2eee6' };
 
 export const B = {
-  head: [3.3, 0, -0.05], headR: [1.95, 1.8], eye: [3.05, 1.55, 0.1], eyeR: 0.88,
+  head: [3.3, 0, -0.05], headR: [2.0, 1.85], eye: [3.05, 1.45, 0.1], eyeR: 0.88,
   antBase: [3.35, 1.15, 1.45], antLen: 10.6,
   thorax: [1.6, -5.2], thoraxR: [2.85, 2.75], thoraxZ: 0.4,
   abdomen: [-3.6, -14.3], abdomenR: [2.65, 2.4], tuft: 2.4,
@@ -336,5 +417,6 @@ export const META = {
 };
 // The atlas: in flight the beating wings are baked in the cell (the fake of DECISIONS), at rest the body only.
 export const draw = (az, el, opts = {}) => sphinx(az, el, { ...opts, wings: opts.pose === 'pose' ? false : true });
-export const whole = (az, el, opts = {}) => sphinx(az, el, { wings: true, ...opts });
+// Sheets and pairs (gros.mjs): the whole moth, its body pitched up 32° when it hovers, as the runtime holds it (c153).
+export const whole = (az, el, opts = {}) => sphinx(az, el, { wings: true, pitch: opts.pose === 'butine' ? 32 : 0, ...opts });
 export const WINGS = { fore: FORE, hind: HIND };

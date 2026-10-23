@@ -1,13 +1,15 @@
 // Demo: the bees of the spring bouquet with the carp. The bouquet is laid out from its pre-drawn pieces (final state of
 // the growth, decor/scene/bouquets), cut into four depth planes; a canvas sits behind, between and in front of them.
 // URL options: ?n=4 bees, ?machaon=2 swallowtails (3 at most), ?taille=1 body size factor (1 = true size against the bouquet),
-// ?debug=1 shows the flowers.
+// ?debug=1 shows the flowers, ?sphinx=1 a hummingbird hawk-moth (1 at most).
 import { Essaim } from '../runtime/essaim.mjs';
 import { Abeille } from '../runtime/abeille.mjs';
 import { Papillon, MACHAON } from '../runtime/papillon.mjs';
+import { Sphinx, SPHINX } from '../runtime/moro-sphinx.mjs';
 
 const q = new URLSearchParams(location.search);
 const N = +(q.get('n') ?? 4), NM = Math.min(3, +(q.get('machaon') ?? 0)), SIZE = +(q.get('taille') || 1), DEBUG = q.get('debug') === '1';
+const NSX = Math.min(1, +(q.get('sphinx') ?? 0));
 const BQ = '../../decor/scene/bouquets/printemps-a-la-carpe/';
 const PLANS = 4, ZS = [-90, -30, 30, 90];
 const UNITS_PER_MM = 0.9; // bouquet drawing units per millimetre (a tulip head of about 5 cm is about 45 units)
@@ -39,6 +41,7 @@ for (let g = 0; g <= PLANS; g++) {
 
 const essaim = await Essaim.create({ layers: canvases, zCuts: ZS });
 if (N) await essaim.kind('abeille', '../abeille/atlas/abeille', 12.5);
+if (NSX) { await essaim.kind('moro-sphinx', '../moro-sphinx/atlas/moro-sphinx', SPHINX.bodyMm); await essaim.wings('moro-sphinx', '../moro-sphinx/atlas/moro-sphinx-ailes'); }
 if (NM) { await essaim.kind('machaon', '../machaon/atlas/machaon', MACHAON.bodyMm); await essaim.wings('machaon', '../machaon/atlas/machaon-ailes'); }
 
 let S = 1, left = 0, top = 0;
@@ -71,6 +74,11 @@ for (let i = 0; i < N; i++) {
 for (let i = 0; i < NM; i++) {
   const b = new Papillon(essaim, flowers, rnd, { species: MACHAON, lengthPx: MACHAON.bodyMm * UNITS_PER_MM * S * SIZE });
   b.bodyMm = MACHAON.bodyMm; essaim.add(b); bees.push(b);
+}
+
+for (let i = 0; i < NSX; i++) {
+  const b = new Sphinx(essaim, flowers, rnd, { lengthPx: SPHINX.bodyMm * UNITS_PER_MM * S * SIZE });
+  b.bodyMm = SPHINX.bodyMm; essaim.add(b); bees.push(b);
 }
 
 addEventListener('pointerdown', (ev) => { const b = essaim.hit(ev.clientX, ev.clientY); if (b) b.poke(ev.clientX, ev.clientY); });
