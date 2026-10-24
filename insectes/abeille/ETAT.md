@@ -98,7 +98,12 @@ Sur dessus-282, l'écart de clarté de l'abdomen passe de −5,4 à −1,0, et s
 - **Butinage** : pose `butine`, glosse sortie.
 - **Nombre à l'écran** : quatre abeilles au plus (`MAX_VISIBLE` dans `runtime/abeille.mjs`). Au-delà, `?n=` fait attendre
   les autres hors de la vue.
-- **Atlas** : voir « Atlas » plus bas.
+- **Atlas** recuit le 2026-10-24 (1182 cellules en 1063 s) :
+  - S : 1014 cellules de 64 px (pas de 15°, 6 élévations), feuille 2048 × 2048, 960 Ko, 16,0 Mo sur le GPU ;
+  - L : 168 cellules de 152 px (pas de 30°), feuille 1976 × 1976, 882 Ko, 14,9 Mo sur le GPU ;
+  - en tout 1,84 Mo à charger et 30,9 Mo sur le GPU.
+- **Démo** (port 8821) : abeille par défaut, `?n=8&taille=3`. Sur 25 s relevées, jamais plus de 4 abeilles visibles ; poses
+  `transit`, `hover`, `forage` (butine), `leave`. 72 images par seconde (la pire à 88 ms), aucune erreur à la console.
 
 ### Le machaon est resté identique au pixel
 Trois cellules sont rendues avant et après chaque changement du moteur (`outils/temoin.mjs`). Leurs empreintes ne changent
