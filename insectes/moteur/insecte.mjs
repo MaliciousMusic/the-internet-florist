@@ -37,6 +37,11 @@ function material(b) {
     // the colour a metal mirrors (its reflectance), when it differs from its body colour
     rtint: m.tintColor ? lin(m.tintColor) : null,
     mottle: m.mottle ?? 0.07,
+    // (abeille, 2026-10-23) a window mirrored by a glossy curved surface (an eye): a soft-edged rectangle of the surround, in the
+    // directions of the reflected ray across (r) and up (u) the camera, stretched by the curvature as on the photos
+    window: m.window ? { k: m.window.k ?? 0.6, x: m.window.x ?? [-0.3, 0.3], y: m.window.y ?? [0.45, 0.85], soft: m.window.soft ?? 0.08, c: lin(m.window.color ?? '#fffdf8') } : null,
+    // (abeille) light through the cuticle tinted by the albedo itself: the amber bands glow, the dark ones stay dark
+    transAlb: m.transAlb ?? null,
   };
 }
 
@@ -49,6 +54,14 @@ function shadePoint(cam, M, A, n, sh, occ) {
   let E = vadd(vs(SUN, 0.92 * wrapL * sh), vs(amb, M.amb * occ));
   let D = vmul(A, E);
   if (M.trans) D = vadd(D, vs(M.trans.c, M.trans.k * Math.pow(1 - nv, 2) * (0.35 + 0.65 * clamp(nl + 0.3)) * (0.5 + 0.5 * sh)));
+  if (M.transAlb) {
+    // a thin shell lit through: the albedo's own colour, saturated (A^g), strongest at grazing view and where the lamp reaches
+    // the shell from its side; weighted by the albedo's lightness so that dark cuticle passes no light
+    const T = M.transAlb, g = T.g ?? 1.6, a = Math.max(A[0], A[1], A[2]);
+    const sat = [Math.pow(A[0] / Math.max(a, 1e-4), g), Math.pow(A[1] / Math.max(a, 1e-4), g), Math.pow(A[2] / Math.max(a, 1e-4), g)];
+    const w = T.k * Math.pow(a, T.p ?? 0.7) * ((T.core ?? 0.25) + Math.pow(1 - nv, 1.5)) * (0.4 + 0.6 * clamp(nl + 0.4)) * (0.4 + 0.6 * sh);
+    D = vadd(D, vs(sat, w));
+  }
   const nh = clamp(dot(n, cam.H));
   let tint = M.metal ? vadd(vs(M.spec, 1 - M.metal), vs(M.rtint || vs(A, 2.2), M.metal)) : M.spec;
   if (M.shift) { const w = M.shift.k * Math.pow(1 - nv, 1.5); tint = vadd(vs(tint, 1 - w), vs(M.shift.c, w)); }
@@ -62,6 +75,11 @@ function shadePoint(cam, M, A, n, sh, occ) {
     const envC = vadd(vs(vadd(vs(GROUND, 0.55 * (1 - sky)), vs(SKY, 1.2 * sky)), hor), vs(SUN, 1.6 * box));
     const F = 0.18 + 0.82 * Math.pow(1 - nv, 3);
     S = vadd(S, vs(vmul(envC, tint), M.env * F * occ));
+    if (M.window) {
+      const W = M.window, rx = dot(r, cam.r), ry = dot(r, cam.u), e = W.soft;
+      const win = smooth(W.x[0] - e, W.x[0] + e, rx) * (1 - smooth(W.x[1] - e, W.x[1] + e, rx)) * smooth(W.y[0] - e, W.y[0] + e, ry) * (1 - smooth(W.y[1] - e, W.y[1] + e, ry));
+      if (win > 0) S = vadd(S, vs(W.c, W.k * win * (0.3 + 0.7 * F) * sh));
+    }
   }
   return { D, S };
 }
@@ -309,6 +327,7 @@ function paintBody(sc, b, id) {
   if (b.rim) out += `<path d="${sil}" fill="none" stroke="${b.rim.color}" stroke-width="${fmt(b.rim.w * sc.k)}" opacity="${fmt(b.rim.a * 0.6)}"/>`;
   // Facets of a compound eye, seen in close-up only.
   if (b.facets && sc.k * b.facets > 2.2) out += facets(sc, b, g, nt, nth);
+  if (b.ommatidia && sc.k * b.ommatidia.d > (b.ommatidia.min ?? 2.2)) out += ommatidia(sc, b, M, id);
   // Contact shadows where another piece meets this one (v1 hand-placed spots, kept lighter).
   if (b.ao) out += b.ao.map((o) => ao(sc, { ...o, a: o.a * 0.55 })).join('');
   out += '</g>';
@@ -417,6 +436,46 @@ function facets(sc, b, g, nt, nth) {
   return s;
 }
 
+// (abeille, 2026-10-23) Ommatidia written lean: a hexagonal lattice of facets of diameter d (mm) over the visible face of the eye,
+// each a ring foreshortened by the surface, the dark seams between lenses and, on the lenses that face the lamp or the window, a
+// small glint; all of one kind in one path (relative arcs), so a close-up eye is a handful of elements, not thousands.
+function ommatidia(sc, b, M, id) {
+  const { cam } = sc, O = b.ommatidia, d = O.d;
+  let rmax = 0;
+  for (let i = 0; i <= 10; i++) { const p = b.profile(i / 10); rmax = Math.max(rmax, p.ry, p.rz); }
+  const ext = Math.abs(b.profile(1).x - b.profile(0).x);
+  const nT = Math.round(ext / (d * 0.866)), nH = Math.round((2 * Math.PI * rmax) / d);
+  const f1 = (v) => { const r = Math.round(v * 10) / 10; return (r === 0 ? '0' : r.toString()).replace(/^(-?)0\./, '$1.'); };
+  const ring = (x, y, rx, ry, ang) => {
+    // an ellipse as two relative arcs, turned by ang
+    const c = Math.cos(ang), s = Math.sin(ang);
+    const ax = rx * c, ay = rx * s;
+    return `M${f1(x - ax)} ${f1(y - ay)}a${f1(rx)} ${f1(ry)} ${Math.round((ang * 180) / Math.PI)} 1 0 ${f1(2 * ax)} ${f1(2 * ay)}a${f1(rx)} ${f1(ry)} ${Math.round((ang * 180) / Math.PI)} 1 0 ${f1(-2 * ax)} ${f1(-2 * ay)}`;
+  };
+  const bins = [[], [], []], glints = [[], []];
+  for (let i = 1; i < nT; i++) for (let j = 0; j < nH; j++) {
+    const t = i / nT, th = ((j + (i % 2) * 0.5) / nH) * 2 * Math.PI;
+    const n = normalAt(b, t, th), vis = dot(n, cam.c);
+    if (vis < 0.2) continue;
+    const p = sc.S(surf(b, t, th));
+    const r = 0.5 * d * sc.k;
+    // the ring flattened toward the rim, its short axis along the surface normal's screen direction
+    const nx = dot(n, cam.r), ny = -dot(n, cam.u), ang = Math.atan2(ny, nx);
+    bins[vis > 0.75 ? 0 : vis > 0.45 ? 1 : 2].push(ring(p[0], p[1], r * Math.max(0.2, vis) * 0.86, r * 0.86, ang));
+    const h = Math.pow(clamp(dot(n, cam.H)), O.p ?? 40);
+    const r2 = sub(mul(n, 2 * dot(n, cam.c)), cam.c);
+    const wx = dot(r2, cam.r), wy = dot(r2, cam.u);
+    const win = O.window && wx > O.window.x[0] && wx < O.window.x[1] && wy > O.window.y[0] && wy < O.window.y[1] ? 1 : 0;
+    const g = Math.max(h, win * 0.8);
+    if (g > 0.25) glints[g > 0.6 ? 0 : 1].push(`M${f1(p[0] - r * 0.25 + nx * r * 0.2)} ${f1(p[1] - r * 0.3)}h${f1(r * 0.3)}`);
+  }
+  const ops = [1, 0.75, 0.45];
+  let s = '';
+  bins.forEach((L, k) => { if (L.length) s += `<path d="${L.join('')}" fill="none" stroke="${O.seam ?? '#0c0806'}" stroke-width="${fmt(Math.max(0.25, 0.5 * d * sc.k * 0.22))}" opacity="${fmt((O.a ?? 0.35) * ops[k])}"/>`; });
+  glints.forEach((L, k) => { if (L.length) s += `<path d="${L.join('')}" fill="none" stroke="${O.glint ?? '#f6f2ea'}" stroke-width="${fmt(Math.max(0.3, 0.5 * d * sc.k * 0.35))}" stroke-linecap="round" opacity="${fmt((O.ga ?? 0.5) * (k ? 0.5 : 1))}"/>`; });
+  return s;
+}
+
 // Hairs: sampled on the surface (area weighted), leaning toward the rear, tapered from root to tip, lit as fibres
 // (Kajiya-Kay: diffuse by the angle to the light, a sheen band along them), shadowed by the other pieces, and
 // brighter where they catch the light at the silhouette. A short dense pile lies under the guard hairs.
@@ -448,7 +507,9 @@ function makeHairs(sc, b, M, id) {
       const p = surf(b, t, th), n = normalAt(b, t, th);
       const vis = dot(n, cam.c);
       if (vis < -0.22) continue;
-      const rear = mul(ax, -1);
+      let rear = mul(ax, -1);
+      // (abeille) the way the hair lies, given per point (the face of a bee: down toward the mouth, not back along the axis)
+      if (H.toward) rear = H.toward(t, th, p, n) || rear;
       const tan = norm(sub(rear, mul(n, dot(n, rear))));
       const lean = (H.lean ?? 0.6) * (ly.lk < 1 ? 1.25 : 1) + (R() - 0.5) * 0.5;
       let d = norm(add(mul(n, Math.cos(lean)), mul(tan, Math.sin(lean))));
@@ -479,6 +540,8 @@ function makeHairs(sc, b, M, id) {
       const A = H.color === 'grid' && b.grid ? vs(gridAt(b.grid, t, th), ly.dk * lock * (0.75 + 0.5 * R()) * (H.gridK ?? 1.1)) : vs(lin(H.color(t, th, R)), ly.dk * lock);
       let C = vadd(vmul(A, vadd(vs(SUN, 0.95 * diff * sh), vs(SKY, 0.42 * Lt.occ))), vs(SUN, shn * sh));
       if (vis < 0.3) C = vadd(C, vs(A, 0.55 * (1 - Math.max(0, vis) / 0.3) * (0.4 + 0.6 * sh)));
+      // (abeille) the fringe of the silhouette lit from behind: a measured golden colour over the hairs seen edge on
+      if (H.rim && vis < H.rim.v) C = vadd(C, vs(lin(H.rim.color), H.rim.k * (1 - Math.max(0, vis) / H.rim.v) * (0.5 + 0.5 * Lt.occ)));
       const col = hexl(C);
       const a = sc.S(p), m = sc.S(mid), z = sc.S(tip);
       let w = (H.w * sc.k * 1.5 * ly.wk) / kk;
@@ -671,6 +734,15 @@ export function drawWing(sc, w, o, e1, e2, opt = {}) {
   }
   if (glint > 0.01) s += `<path d="${w.outline}" fill="#fffdf6" opacity="${fmt(glint * 0.3)}"/>`;
   // Veins: the basal ones thicker (veinsBase), all darker seen edge-on.
+  // (abeille) measured veins: groups of one width (mm) and colour (membrane.py), a little darker seen edge on
+  if (w.veinGroups) {
+    for (const g of w.veinGroups) s += `<path d="${g.d}" stroke="${g.c}" stroke-width="${fmt4(g.w)}" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="${fmt(0.85 + 0.15 * (1 - facing))}"/>`;
+    if (w.stigma) s += `<path d="${w.stigma}" fill="${w.vein}" opacity="0.9"/>`;
+    if (w.edge) s += `<path d="${w.outline}" stroke="${w.edge}" stroke-width="${w.ew}" fill="none" opacity="0.6"/>`;
+    s += '</g>';
+    sc.push(dot(add(o, mul(e1, w.span * 0.5 * sk)), cam.c) + (opt.bias || 0), s);
+    return;
+  }
   if (w.veinsBase) s += `<path d="${w.veinsBase}" stroke="${w.vein}" stroke-width="${fmt(w.vw * 1.8)}" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.9"/>`;
   s += `<path d="${w.veins}" stroke="${w.vein}" stroke-width="${w.vw}" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="${fmt(0.78 + 0.22 * (1 - facing))}"/>`;
   if (w.stigma) s += `<path d="${w.stigma}" fill="${w.vein}" opacity="0.9"/>`;
