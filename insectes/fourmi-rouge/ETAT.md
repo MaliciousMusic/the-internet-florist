@@ -154,8 +154,10 @@ Cuit le 2026-10-24 (`outils/cuisson.mjs fourmi-rouge` puis `outils/atlas.py`, de
    poilus.
 4. **Posture** : les juges trouvent le corps « long et bas » de trois-quarts et les pattes « en échasses ». Les longueurs sont
    mesurées sur AntWeb : c'est la pose des pattes qui est en cause.
-5. **Cartes SAM et profondeur non faites**, faute de RAM libre (le gate demande 5,5 Go). L'outil est prêt : relancer
-   `sh insectes/fourmi-rouge/outils/formes.sh` sur un PC moins chargé.
+5. **Cartes SAM et profondeur pas encore faites**, faute de RAM libre. Elles sont relancées le 2026-10-24, en file sur le verrou
+   corrigé (`GATE_MAX=1`, `GATE_RAM` 4,4), après la cuisson de l'atlas : `sh insectes/fourmi-rouge/outils/formes.sh`, six photos,
+   résultats dans `refcache/myrmica-rubra/cartes/`. Les profils du modèle restent calés sur les mesures d'AntWeb tant qu'elles ne
+   sont pas comparées.
 6. **Vue de dessous** : aucune photo d'ouvrière vivante vue de dessous. Le dessous du gastre est vu de profil seulement.
 7. **resvg plante à 500 px/mm** sur le dessin entier (`geom.rs:27`), mais pas sur chaque organe seul. Jusqu'à 320 px/mm, le rendu
    passe. Pour les gros plans, rester à 320 px/mm au plus, ou rendre par organe.
