@@ -1,4 +1,4 @@
-# Grande sauterelle verte (Tettigonia viridissima) : état au 2026-10-23
+# Grande sauterelle verte (Tettigonia viridissima) : état au 2026-10-24
 
 Seconde passe, après le rejet de la première par le porteur. Méthode du machaon (PROTOCOLE §1 à §7). Le modèle dessiné est le mâle ;
 la femelle (oviscapte) est une variante (`opts.sex = 'f'` ou `SAUTERELLE_SEXE=f`).
@@ -108,13 +108,21 @@ cerque-g/d (ou oviscapte), tegmen-g/d, patte-avant/milieu/arriere-g/d, aile-avan
   - L : cellules de 160 px, 5 azimuts, 4 élévations, poses pose, saut et vol, soit 100 cellules ;
   - ailes au runtime : `outils/ailes.mjs`.
 - Une cellule pèse 0,9 à 1 Mo de SVG.
-- **Cuisson : en attente du verrou.** Elle est lancée (`GATE_RAM=5 sh ws/gate.sh …`), mais pendant plus d'une heure la RAM
-  libre est restée entre 2,5 et 3,1 Go : un jeu tournait sur le PC. Elle partira seule dès qu'un créneau s'ouvre. Les poids
-  (Ko, Mo sur le GPU) seront ajoutés ici.
-- Prévision :
-  - S : 1600 × 1600, environ 10 Mo sur le GPU ;
-  - L : 1600 × 1600, environ 10 Mo ;
-  - ailes : environ 2 Mo.
+- **Cuit le 2026-10-24** par le verrou à un créneau (`GATE_MAX=1`) : 485 cellules en 218 s.
+
+| fichier | taille | Ko | Mo sur le GPU |
+|---|---|---|---|
+| `sauterelle-S.webp` (385 cellules de 80 px) | 1600 × 1600 | 434 | 9,8 |
+| `sauterelle-L.webp` (100 cellules de 160 px) | 1600 × 1600 | 288 | 9,8 |
+| `sauterelle-ailes.webp` (tegmen et aile, dessus et dessous) | 1704 × 208 | 65 | 1,4 |
+| **total** | | **787** | **21** |
+
+  Pour comparer, le machaon pèse 409 Ko de WebP. La différence vient des antennes : elles imposent des cellules de 100 mm
+  (voir les questions).
+- **Démo** (`insectes/demo/index.html?n=0&sauterelle=3`, port 8829) : arrivée en vol, pose, marche, saut au clic avec les ailes
+  ouvertes, vol et départ ; aucune erreur dans la console ; l'essaim compte 21 Mo de textures. Un défaut du runtime a été trouvé
+  là et corrigé : pendant la marche, l'image valait une fraction au lieu d'un index de 0 à 5, si bien que la sauterelle qui marchait
+  disparaissait.
 
 ## Fichiers partagés touchés (pour l'intégration)
 - `runtime/essaim.mjs` : clé nouvelle `b.wingsShown === false`, qui masque les quads d'ailes. Le machaon n'est pas concerné.
@@ -144,6 +152,9 @@ cerque-g/d (ou oviscapte), tegmen-g/d, patte-avant/milieu/arriere-g/d, aile-avan
    dessus partent trop près du pronotum : leur base devrait passer sous le tegmen.
 10. **Pointe du tegmen** : son contour vient du relevé de c166 ; elle reste un peu anguleuse.
 6. **Vitesse de vol, durée des visites, accroupi avant le saut** : ordres de grandeur, à mesurer sur vidéo.
+11. **Marche en grand** : le niveau L n'a pas la marche. Une sauterelle qui marche à grande taille est donc tirée des cellules
+    S de 80 px, agrandies. Ajouter la marche au niveau L coûterait 120 cellules de plus, soit un second WebP L d'environ 10 Mo
+    sur le GPU.
 
 ## Questions au porteur
 - **Sexe dessiné** : mâle ou femelle ?

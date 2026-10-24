@@ -154,7 +154,7 @@ export class Sauterelle {
     if (this.state === 'marche') {
       // a few steps over the flower: the walk cycle at its measured cadence, the body moving one stride per cycle
       this.walkPh = (this.walkPh + dt * S.walkHz) % 1;
-      this.frame = Math.floor(this.walkPh * 6) / 6;
+      this.frame = Math.floor(this.walkPh * 6) % 6;
       const step = S.strideMm * S.walkHz * this.pxmm;
       this.P = add(this.P, mul(norm([this.fwd[0], 0, this.fwd[2]]), step * dt));
       if (this.flower && len(sub(this.P, this.flower.P)) > this.flower.r * 0.6) this.fwd = norm([-this.fwd[0], this.fwd[1], -this.fwd[2]]);
