@@ -58,6 +58,11 @@ sous-session numérotée par insecte. La méthode est celle du machaon (`machaon
   10 minutes, elle passe en fin de file (`GATE_YIELD`, en secondes).
 - Seuils de RAM libre au départ (`GATE_RAM`) : 4,4 Go pour un rendu léger (gros plans, paires, planches), 5,0 Go pour une
   cuisson d'atlas, 5,5 Go pour SAM ou la profondeur.
+- 2026-10-24 midi : sur ce PC, chaque processus lancé laisse environ 4 Ko de jetons dans le noyau (pool « Toke »),
+  jusqu'au redémarrage. C'est un défaut de pilote. Les attentes qui lançaient `date`, `stat`, `ls` et `sort` toutes les 3 s en
+  ont laissé 3 Go dans la nuit, et la RAM libre est tombée à 1,3 Go. Le verrou attend maintenant sans lancer de processus,
+  et chaque attente ne regarde la file que toutes les 20 s (`GATE_POLL`). Pour les veilles, une tâche de fond qui prévient
+  à la fin vaut mieux qu'une boucle `until … sleep` qui lance PowerShell toutes les 30 s.
 - Le verrou se remplace par renommage (copie puis `mv`) : les instances déjà lancées gardent leur version, alors qu'une
   écriture sur place les ferait lire n'importe quoi.
 
