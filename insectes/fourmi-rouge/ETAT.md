@@ -154,10 +154,28 @@ Cuit le 2026-10-24 (`outils/cuisson.mjs fourmi-rouge` puis `outils/atlas.py`, de
    poilus.
 4. **Posture** : les juges trouvent le corps « long et bas » de trois-quarts et les pattes « en échasses ». Les longueurs sont
    mesurées sur AntWeb : c'est la pose des pattes qui est en cause.
-5. **Cartes SAM et profondeur pas encore faites**, faute de RAM libre. Elles sont relancées le 2026-10-24, en file sur le verrou
-   corrigé (`GATE_MAX=1`, `GATE_RAM` 4,4), après la cuisson de l'atlas : `sh insectes/fourmi-rouge/outils/formes.sh`, six photos,
-   résultats dans `refcache/myrmica-rubra/cartes/`. Les profils du modèle restent calés sur les mesures d'AntWeb tant qu'elles ne
-   sont pas comparées.
+5. **Cartes SAM et profondeur : faites le 2026-10-24**, sur le verrou corrigé (`GATE_MAX=1`), pour six photos.
+   - Résultats dans `refcache/myrmica-rubra/cartes/`, hors git.
+   - Les rendus des paires sont mesurés par le même outil (`forme.py rendu`, puis `forme.py table --ref 2`, plage des deux photos
+     élargie de 25 %).
+   - Résultat : **7 stations sur 12 hors plage**, de profil comme de dessus. L'écart est le même que celui des juges, un corps
+     « long et bas ». Hauteur ou largeur du tronc, en fraction de la longueur L :
+
+   | vue | station | photos | rendu | lecture |
+   |---|---|---|---|---|
+   | profil | 0,39 à 0,55 (mésosome) | 0,17 à 0,25 | 0,09 à 0,14 | mésosome trop bas d'environ 30 % |
+   | profil | 0,05 à 0,14 (tête) | 0,17 à 0,22 | 0,08 à 0,12 | tête trop basse, les mandibules trop en avant |
+   | dessus | 0,14 (tête) | 0,22 à 0,28 | 0,18 | tête trop étroite |
+   | dessus | 0,72 (avant du gastre) | 0,11 à 0,18 | 0,22 | gastre trop large à l'avant |
+   | dessus | 0,55 (pétiole) | 0,06 à 0,12 | 0,08 | dans la plage |
+
+   - Réserves : les pattes repliées sous le corps des photos gonflent un peu leur hauteur de profil ; c013 a la tête levée.
+   - **Proposition** (une cinquième passe, que je n'ai pas faite : le résidu « posture » est déjà garé) :
+     - le mésosome et la tête plus hauts de 25 % ;
+     - la tête plus large de 20 % ;
+     - l'avant du gastre plus étroit ;
+     - les mandibules plus courtes ;
+     - remesurer ensuite avec `forme.py table`.
 6. **Vue de dessous** : aucune photo d'ouvrière vivante vue de dessous. Le dessous du gastre est vu de profil seulement.
 7. **resvg plante à 500 px/mm** sur le dessin entier (`geom.rs:27`), mais pas sur chaque organe seul. Jusqu'à 320 px/mm, le rendu
    passe. Pour les gros plans, rester à 320 px/mm au plus, ou rendre par organe.
