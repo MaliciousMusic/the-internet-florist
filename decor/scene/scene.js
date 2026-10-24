@@ -131,7 +131,11 @@
     });
   Promise.all([sceneJson, afterBouquet])
     .then(([m]) => m)
+    // insectes.mjs draws the clumps as sprites with the insects (window.PREMIER_PIXI resolves once it does): the SVG clumps
+    // below are then left out; they come when it cannot (it rejects, or with prefers-reduced-motion it never starts)
+    .then((m) => (window.PREMIER_PIXI ? window.PREMIER_PIXI.then(() => null, () => m) : m))
     .then((m) => {
+      if (!m) return;
       // The gust crosses the field left to right in about 1.6 s.
       // Only the clumps on screen are read (each is a whole SVG document for the main thread), one at a time when the page
       // is idle, so the breeze never stalls; the others when the window grows to show them. Each one has its place in the

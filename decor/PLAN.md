@@ -290,3 +290,18 @@ l'identité de son éditeur dans ses mentions légales.
   Mesuré dans le panneau du navigateur : 55 images/s sur ordinateur (1,4 ms par image pour les insectes), 140 sur téléphone
   émulé. À faire pour le dépôt du site : y copier `insectes/runtime` et les atlas (aujourd'hui lus à la racine du dépôt,
   serveur « insectes-site », port 8830).
+- 2026-10-24, suite (porteur) : les touffes animées du premier plan passent en sprites PixiJS. Les insectes vont surtout
+  dans le parterre et un peu sur le bouquet ; la sauterelle reste au sol ; les fourmis n'y sont pas, elles auront un rôle
+  dans le HUD, à définir.
+  - **Touffes** : `decor/premier.mjs` cuit les 20 touffes de `out/scene.json` en WebP (`out/premier/`, 1 Mo, 1,6 px par
+    unité, coupées au bord bas du cadre plus la portée du balancement). `insectes.mjs` les dessine dans la couche avant :
+    c'est le canvas même du moteur, dessiné sans copie, où elles balancent comme le faisait le CSS et se trient en
+    profondeur avec les insectes de moins de 2 m. `scene.js` ne charge plus les touffes SVG que si cette couche ne démarre
+    pas (prefers-reduced-motion, `?insectes=0` ou échec).
+  - **Où se posent les insectes** : sur les têtes du parterre et des touffes, lues dans les fichiers du sol par
+    `decor/tetes.mjs` (`out/tetes.json` : 552 têtes au sol, 44 dans les touffes). La distance de chaque tête se lit sur
+    l'échelle de sa matrice. S'y ajoutent les têtes du bouquet une fois qu'il a poussé.
+  - **Réglages par espèce** : chaque espèce ne vise que les fleurs où son corps fait au moins 3 px, et ne connaît qu'un
+    quart des fleurs du bouquet. Mesuré sur 30 s : 92 % des visites au sol, 8 % au bouquet. La sauterelle ne connaît que
+    les fleurs du sol à moins de 6 m.
+  - **Mesure** : 135 images/s dans le panneau du navigateur.

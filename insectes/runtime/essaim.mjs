@@ -9,6 +9,10 @@
 // perspective there (the shop's horizon) instead of the frame's middle; setView(ox, oy, s) says the canvases cover only the
 // part of the frame from (ox, oy), magnified s times (the shop's close-up scales the whole scene), and are drawn at that
 // resolution, so the insects stay sharp in it.
+// And two for a front layer that moves as a whole (the shop's foreground clumps swaying): direct makes the renderer's own
+// canvas (e.canvas) the last layer, drawn into at every frame without a copy, which the page lays in place; prop(obj)
+// puts a display object of the page's (placed by the page in canvas px) in that layer, sorted by its zIndex with the
+// insects.
 import { Application, Assets, Container, MeshSimple, Rectangle, Sprite, Texture } from './vendor/pixi-8.6.6.min.mjs';
 import { bodyFrame, viewOf, pickCell, flapAxes } from './vue.mjs';
 
@@ -16,13 +20,14 @@ export const PERSPECTIVE = 1400;
 
 export class Essaim {
   // layers: canvases from the back to the front; zCuts[i]: depth that separates layer i from layer i + 1.
-  static async create({ layers, zCuts, size = null }) {
+  static async create({ layers, zCuts, size = null, direct = false }) {
     const e = new Essaim();
     e.layers = layers.map((c) => ({ canvas: c, ctx: c.getContext('2d'), box: null }));
     e.zCuts = zCuts;
-    e.size = size; e.centre = null; e.ox = 0; e.oy = 0; e.vs = 1;
+    e.size = size; e.centre = null; e.ox = 0; e.oy = 0; e.vs = 1; e.props = [];
     e.app = new Application();
     await e.app.init({ width: 8, height: 8, backgroundAlpha: 0, antialias: false, autoStart: false, preference: 'webgl', autoDensity: false, resolution: 1 });
+    if (direct) { e.canvas = e.app.canvas; e.layers.push({ canvas: e.canvas, ctx: null, box: null, direct: true }); }
     e.stage = new Container();
     e.stage.sortableChildren = true; // far insects first
     e.insects = [];
@@ -39,7 +44,7 @@ export class Essaim {
     this.res = dpr * this.vs;
     [this.cx, this.cy] = this.centre || [this.w / 2, this.h / 2];
     for (const l of this.layers) {
-      l.canvas.width = Math.round(this.w * dpr); l.canvas.height = Math.round(this.h * dpr);
+      if (!l.direct) { l.canvas.width = Math.round(this.w * dpr); l.canvas.height = Math.round(this.h * dpr); }
       l.canvas.style.width = this.w / this.vs + 'px'; l.canvas.style.height = this.h / this.vs + 'px';
       l.box = null;
     }
@@ -53,6 +58,8 @@ export class Essaim {
     this.ox = ox; this.oy = oy; this.vs = s;
     this.resize();
   }
+
+  prop(obj) { this.stage.addChild(obj); this.props.push(obj); return obj; }
 
   // scene px to canvas px
   cvx(x) { return (x - this.ox) * this.res; }
@@ -227,12 +234,15 @@ export class Essaim {
     const r = this.app.renderer;
     this.layers.forEach((L, li) => {
       const mine = this.insects.filter((b) => b.visible && b.layer === li);
-      if (!mine.length && !L.box) return;
+      if (!mine.length && !L.box && !L.direct) return;
       for (const b of this.insects) {
         b.sprite.renderable = b.visible && b.layer === li;
         if (b.carrySprite) b.carrySprite.renderable = b.sprite.renderable;
         if (b.wingMeshes) for (const g of b.wingMeshes) g.m.renderable = b.sprite.renderable && b.wingsShown !== false;
       }
+      for (const o of this.props) o.renderable = !!L.direct;
+      // the direct layer, the last one: drawn whole into the renderer's canvas, which the page shows
+      if (L.direct) { r.render({ container: this.stage, clear: true }); return; }
       const ctx = L.ctx;
       // Only the region the insects of this layer cover, now and at the previous frame, is cleared and copied.
       let box = null;
