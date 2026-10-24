@@ -121,7 +121,7 @@ Le juge reste **ko**. Les causes restantes sont dans les résidus 1 à 4.
   (`outils/simule.mjs`) donne :
   - en exploration, 8,7 mm/s (cible 8,5 à 9,6) et 159°/cm (cible 154 à 162) ;
   - en alarme, 21,6 mm/s (cible 18 à 25) et 91°/cm (cible 77 à 115).
-- **Atlas** : S 198 Ko (1,3 Mo sur le GPU), L 434 Ko (5,5 Mo) ; détail dans la section suivante.
+- **Atlas** : S 199 Ko (1,3 Mo sur le GPU), L 437 Ko (5,5 Mo) ; détail dans la section suivante.
 - **Démo** :
   - adresse : `insectes/demo/index.html?n=0&fourmi-rouge=8&taille=3` ;
   - serveur : `insectes-06`, `python -m http.server 8826`, déclaré dans `.claude/launch.json` du dossier (non committé, propre au
@@ -129,20 +129,17 @@ Le juge reste **ko**. Les causes restantes sont dans les résidus 1 à 4.
   - les fourmis marchent sur la table au pied du vase, dans le canvas de devant.
 
 ## Atlas
-Cuit le 2026-10-24 (`outils/cuisson.mjs fourmi-rouge` puis `outils/atlas.py`, derrière le verrou corrigé de `ch/insectes-suite`,
-`GATE_MAX=1`) : 1300 cellules en 536 s.
+Recuit le 2026-10-24 après la cinquième passe de forme (`outils/cuisson.mjs fourmi-rouge` puis `outils/atlas.py`, derrière le verrou corrigé de `ch/insectes-suite`,
+`GATE_MAX=1`) : 1300 cellules en 380 s.
 
-**Attention : cet atlas date d'avant la cinquième passe de forme.** La recuisson (`GATE_RAM=5.0`) est en file au verrou. À
-11 h 58 il restait 1,5 Go de RAM libre, pris par l'application et les sessions, et aucun rendu ne tournait. Les poids ci-dessous
-seront remplacés au commit de la recuisson.
 
 | LOD | cellule | azimuts | cellules | feuille | WebP | GPU |
 |---|---|---|---|---|---|---|
-| S | 20 px | 15° | 845 | 600 × 580 | 198 Ko | 1,3 Mo |
-| L | 56 px | 30° | 455 | 1232 × 1176 | 434 Ko | 5,5 Mo |
+| S | 20 px | 15° | 845 | 600 × 580 | 199 Ko | 1,3 Mo |
+| L | 56 px | 30° | 455 | 1232 × 1176 | 437 Ko | 5,5 Mo |
 
 - **Poses** : `pose`, `marche` (8 dessins) et `palpe` (4 dessins), aux 5 élévations (−15, 10, 35, 60, 90°).
-- **Total** : 632 Ko à télécharger, 6,8 Mo sur le GPU.
+- **Total** : 636 Ko à télécharger, 6,8 Mo sur le GPU.
 - **Dans git** : les feuilles WebP, `fourmi-rouge.json` et `cells.json`. Les cellules PNG (`atlas/cells/`, 7,2 Mo) restent ignorées,
   comme pour les autres espèces.
 
