@@ -309,6 +309,8 @@ function paintBody(sc, b, id) {
 
   // Hairs that grow from the hidden side of the rim go behind the body.
   const hairs = b.hair ? makeHairs(sc, b, M, id) : { back: '', front: '' };
+  // b.hairMore (fourmi-noire, 2026-10-23): further layers on the same body, each with its own seed (erect setae over a pubescence)
+  if (b.hairMore) b.hairMore.forEach((h, i) => { const x = makeHairs(sc, { ...b, hair: h, seed: (b.seed || 1) + 101 * (i + 1) }, M, id); hairs.back += x.back; hairs.front += x.front; });
   out += hairs.back;
 
   // The mesh: quads from far to near, each shaded at its centre.
@@ -476,7 +478,8 @@ function facets(sc, b, g, nt, nth) {
     if (vis < 0.25) continue;
     const p = sc.S(surf(b, t, th));
     const r = 0.5 * f * sc.k * (0.55 + 0.45 * vis);
-    s += `<circle cx="${fmt(p[0])}" cy="${fmt(p[1])}" r="${fmt(r * 0.8)}" fill="none" stroke="#000" stroke-width="${fmt(r * 0.28)}" opacity="${fmt(0.05 * vis + 0.02 * R())}"/>`;
+    // b.facetsA (fourmi-noire, 2026-10-23): the rims' opacity multiplied, for an eye whose facets show at its size
+    s += `<circle cx="${fmt(p[0])}" cy="${fmt(p[1])}" r="${fmt(r * 0.8)}" fill="none" stroke="#000" stroke-width="${fmt(r * 0.28)}" opacity="${fmt((0.05 * vis + 0.02 * R()) * (b.facetsA ?? 1))}"/>`;
   }
   return s;
 }

@@ -4,7 +4,8 @@
 // ?paon=2 peacocks (2 at most, 3 butterflies in all), ?sauterelle=2 bush-crickets (3 at most),
 // ?bourdon=2 bumblebees (3 at most), ?coccinelle=2 ladybirds (4 at most),
 // ?taille=1 body size factor (1 = true size against the bouquet),
-// ?debug=1 shows the flowers.
+// ?debug=1 shows the flowers, ?fourmi=7 black garden ants on the ground at the vase's foot (8 at most; a click on one sends them
+// all to carry off the faded petals).
 import { Essaim } from '../runtime/essaim.mjs';
 import { Abeille } from '../runtime/abeille.mjs';
 import { Papillon, MACHAON, PAON } from '../runtime/papillon.mjs';
@@ -13,6 +14,7 @@ import { Sphinx, SPHINX } from '../runtime/moro-sphinx.mjs';
 import { Sauterelle, SAUTERELLE } from '../runtime/sauterelle.mjs';
 import { Bourdon, BOURDON } from '../runtime/bourdon.mjs';
 import { Coccinelle, COCCINELLE } from '../runtime/coccinelle.mjs';
+import { Fourmi, LASIUS } from '../runtime/fourmi.mjs';
 
 const q = new URLSearchParams(location.search);
 const N = +(q.get('n') ?? 4), NM = Math.min(3, +(q.get('machaon') ?? 0)), NC = Math.min(1, +(q.get('cetoine') ?? 0)), SIZE = +(q.get('taille') || 1), DEBUG = q.get('debug') === '1';
@@ -21,6 +23,7 @@ const NP = Math.min(2, 3 - NM, +(q.get('paon') ?? 0));
 const NS = Math.min(3, +(q.get('sauterelle') ?? 0));
 const NB = Math.min(BOURDON.max, +(q.get('bourdon') ?? 0));
 const NCO = Math.min(COCCINELLE.max, +(q.get('coccinelle') ?? 0));
+const NF = Math.min(8, +(q.get('fourmi') ?? 0));
 const BQ = '../../decor/scene/bouquets/printemps-a-la-carpe/';
 const PLANS = 4, ZS = [-90, -30, 30, 90];
 const UNITS_PER_MM = 0.9; // bouquet drawing units per millimetre (a tulip head of about 5 cm is about 45 units)
@@ -53,6 +56,7 @@ for (let g = 0; g <= PLANS; g++) {
 const essaim = await Essaim.create({ layers: canvases, zCuts: ZS });
 if (N) await essaim.kind('abeille', '../abeille/atlas/abeille', 12.5);
 if (NSX) { await essaim.kind('moro-sphinx', '../moro-sphinx/atlas/moro-sphinx', SPHINX.bodyMm); await essaim.wings('moro-sphinx', '../moro-sphinx/atlas/moro-sphinx-ailes'); }
+if (NF) await essaim.kind('fourmi-noire', '../fourmi-noire/atlas/fourmi-noire', LASIUS.bodyMm);
 if (NM) { await essaim.kind('machaon', '../machaon/atlas/machaon', MACHAON.bodyMm); await essaim.wings('machaon', '../machaon/atlas/machaon-ailes'); }
 if (NC) { await essaim.kind('cetoine', '../cetoine/atlas/cetoine', CETOINE.bodyMm); await essaim.wings('cetoine', '../cetoine/atlas/cetoine-ailes'); }
 if (NP) { await essaim.kind('paon-du-jour', '../paon-du-jour/atlas/paon-du-jour', PAON.bodyMm); await essaim.wings('paon-du-jour', '../paon-du-jour/atlas/paon-du-jour-ailes'); }
@@ -77,8 +81,41 @@ function layout() {
     flowers.push({ P: essaim.unproject(x, y, z), r: Math.min(p.b[2], p.b[3]) * S * 0.38, layer: p.g + 1, busy: old[i]?.busy || null });
   });
 }
-layout();
-addEventListener('resize', layout);
+// The ants' ground: a band at the vase's foot, a few faded petals fallen on it (drawn on their own canvas, in front of the
+// bouquet and behind the front layer of insects), and the nest's ways out at both ends.
+const ground = { y: 0, z0: -50, z1: 50, x0: 0, x1: 0 }, petals = [], nest = [];
+let petalCanvas = null;
+if (NF) { petalCanvas = document.createElement('canvas'); petalCanvas.style.pointerEvents = 'none'; scene.insertBefore(petalCanvas, canvases[PLANS]); }
+function layoutGround() {
+  if (!NF) return;
+  const W = innerWidth, H = innerHeight;
+  ground.y = H * 0.925; ground.x0 = W * 0.15; ground.x1 = W * 0.85;
+  nest.splice(0, nest.length, [ground.x0 - 60, ground.y, 20], [ground.x1 + 60, ground.y, -10]);
+  if (!petals.length) {
+    const tints = [0xf0c8cc, 0xf4ece0, 0xe8d090, 0xf0c8cc, 0xf4ece0];
+    for (let i = 0; i < 5; i++) petals.push({ u: 0.3 + 0.4 * (i / 4) + 0.03 * Math.sin(i * 7), z: -35 + 70 * ((i * 0.37) % 1), tint: tints[i], left: 6, P: [0, 0, 0] });
+  }
+  for (const p of petals) p.P = [ground.x0 + (ground.x1 - ground.x0) * p.u, ground.y, p.z];
+  const dpr = Math.min(2, devicePixelRatio || 1);
+  petalCanvas.width = W * dpr; petalCanvas.height = H * dpr; petalCanvas.style.width = W + 'px'; petalCanvas.style.height = H + 'px';
+  petalCanvas.style.position = 'absolute'; petalCanvas.style.left = '0'; petalCanvas.style.top = '0';
+  drawPetals();
+}
+// fallen petals at true size (a tepal of about 4 cm), faded: their colour browning toward the margins, shrinking as ants cut them
+function drawPetals() {
+  const ctx = petalCanvas.getContext('2d'), dpr = petalCanvas.width / innerWidth;
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0); ctx.clearRect(0, 0, innerWidth, innerHeight);
+  for (const p of petals) {
+    if (p.left <= 0) continue;
+    const q = essaim.project(p.P), r = 40 * UNITS_PER_MM * S * 0.5 * q.s * (0.4 + 0.6 * p.left / 6);
+    const c = `#${p.tint.toString(16).padStart(6, '0')}`;
+    const gr = ctx.createRadialGradient(q.x, q.y, r * 0.1, q.x, q.y, r);
+    gr.addColorStop(0, c); gr.addColorStop(0.7, c); gr.addColorStop(1, '#9a7a52');
+    ctx.fillStyle = gr; ctx.beginPath(); ctx.ellipse(q.x, q.y, r, r * 0.32, 0.2 * Math.sin(p.u * 9), 0, 2 * Math.PI); ctx.fill();
+  }
+}
+layout(); layoutGround();
+addEventListener('resize', () => { layout(); layoutGround(); });
 
 let seed = 20261023;
 const rnd = () => { seed = (seed * 1664525 + 1013904223) >>> 0; return seed / 4294967296; };
@@ -121,6 +158,12 @@ for (let i = 0; i < NCO; i++) {
   b.bodyMm = COCCINELLE.bodyMm; essaim.add(b); bees.push(b);
 }
 
+for (let i = 0; i < NF; i++) {
+  const b = new Fourmi(essaim, ground, petals, nest, rnd, { lengthPx: LASIUS.bodyMm * UNITS_PER_MM * S * SIZE });
+  b.bodyMm = LASIUS.bodyMm; b.layerHint = PLANS; essaim.add(b); bees.push(b);
+}
+let petalsLeft = -1;
+
 addEventListener('pointerdown', (ev) => { const b = essaim.hit(ev.clientX, ev.clientY); if (b) b.poke(ev.clientX, ev.clientY); });
 
 if (DEBUG) {
@@ -137,6 +180,7 @@ function frame(now) {
   const dt = Math.min(0.05, (now - last) / 1000);
   const t0 = performance.now();
   for (const b of bees) { b.lengthPx = b.bodyMm * UNITS_PER_MM * S * SIZE; b.update(dt); }
+  if (NF) { const n = petals.reduce((a, p) => a + p.left, 0); if (n !== petalsLeft) { petalsLeft = n; drawPetals(); } }
   const st = essaim.render();
   const t1 = performance.now();
   js = js * 0.95 + (t1 - t0) * 0.05;
