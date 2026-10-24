@@ -32,6 +32,11 @@
 <meta property="og:locale:alternate" content="es_ES">
 <meta property="og:locale:alternate" content="zh_CN">
 <meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="boutique.json" as="fetch" crossorigin>
+<link rel="preload" href="../out/ciel.svg" as="image" fetchpriority="high">
+<link rel="preload" href="../out/calques/colonne/horizon.webp" as="image" media="(max-aspect-ratio: 28/45)" fetchpriority="high">
+<link rel="preload" href="../out/calques/horizon.webp" as="image" media="(min-aspect-ratio: 28.001/45)" fetchpriority="high">
+<link rel="preload" href="bouquets/printemps-a-la-carpe/ouvert.json" as="fetch" crossorigin>
 <link rel="stylesheet" href="scene.css">
 <link rel="stylesheet" href="boutique.css">
 <link rel="stylesheet" href="entete.css">
@@ -387,19 +392,17 @@
   pre-drawn by predessin.mjs into bouquets/<id>/):
   - .pilier-repere: the pillar's place (x 1100-1300, y 700-1040 of the world), drawn in grey under ?debug=1 only,
     until decor/out/pilier.svg exists;
-  - #bouquet: the bouquet of the chosen card, its pre-drawn pieces grown in on the pillar by eclosion.js (plane z8);
+  - #bouquet: the bouquet shown, open and swaying on the pillar (bouquets/<id>/ouvert.json by paquet.mjs, eclosion.js; plane z8);
   - .cartes: the shelf under the header (soliflores, bouquets sold);
   - .achat: the Buy button for the bouquet on the pillar, fixed at the bottom (the purchase is not wired yet);
   - #perf-bq: the shop's measures under ?perf=1 (also in window.BOUTIQUE_MESURES).
   - the header (dock of icons opening the shelves, OpenSea, About) and the footer (legal notice): entete.js, entete.css;
-  - .galerie: one glass frame per bouquet standing on the horizon behind the pillar, the chosen one in the middle, the
-    others left and right (a click, a swipe or the arrow keys bring one to the middle); "Open" (.bq-voir) in the middle
-    one; the price bubble (.achat) only shows in the close-up;
+  - .pager: one dot per bouquet of the day, under the dock on a phone, just above it on a computer; a dot, a swipe or the arrow keys show
+    another bouquet (one at a time, open and swaying, no frame around it); the price bubble (.achat) only shows in the close-up;
   - a click on the bouquet or on "Open" brings the camera closer (the whole scene scaled by one transform); a click, Escape or another
     shelf takes it back.
   ?rayon=bouquets|soliflores|vendus|aucun opens that shelf first (default: the bouquets).
-  ?b=<product id or index> picks the first bouquet; the card thumbnails (bouquets/<id>/vignette.svg), the foreground and
-  the clouds load once it has grown (?vignettes=tot: the thumbnails at once).
+  ?b=<product id or index> picks the first bouquet; the foreground and the clouds load once it shows.
 -->
 <!-- what the page is about, for screen readers and for the crawlers that do not run scripts (the scene says it in
      pictures); the same words as the About page -->
@@ -415,18 +418,13 @@
     <img class="plan" style="--z:0" data-src="ciel.svg" alt="" decoding="async" fetchpriority="high">
     <div class="plan nuages hauts" style="--z:1" id="nuages-hauts"></div>
     <div class="plan nuages bas" style="--z:2" id="nuages-bas"></div>
-    <img class="plan" style="--z:3" data-src="horizon.svg" alt="" decoding="async" fetchpriority="high">
-    <!-- the gallery (boutique.js): one glass frame per bouquet on the horizon, under the ground's layers, so the pillar
-         and the meadow pass in front of the frames' feet; the chosen one in the middle, the others left and right -->
-    <div class="plan galerie" style="--z:3" id="galerie" aria-label="Blumensträuße des Tages">
-      <div class="galerie-rail" id="galerie-rail"></div>
-    </div>
+    <img class="plan" style="--z:3" data-src="horizon.svg" data-apercu='{"plein":["calques/horizon.webp",0,661.875,2400,77.5],"colonne":["calques/colonne/horizon.webp",780,671.875,840,67.5]}' alt="" decoding="async" fetchpriority="high">
     <!-- The flowered ground, composed by depth (sol.mjs + fleurs.mjs: meadow, path, slabs, pillar, flowers), split into
          three files of similar drawing cost so the browser rasterises them in parallel. -->
-    <img class="plan" style="--z:4" data-src="sol-loin.svg" alt="" decoding="async">
-    <img class="plan" style="--z:5" data-src="sol-milieu.svg" alt="" decoding="async">
+    <img class="plan" style="--z:4" data-src="sol-loin.svg" data-apercu='{"plein":["calques/sol-loin.webp",0,705.625,2400,644.375],"colonne":["calques/colonne/sol-loin.webp",780,705.625,840,644.375]}' alt="" decoding="async">
+    <img class="plan" style="--z:5" data-src="sol-milieu.svg" data-apercu='{"plein":["calques/sol-milieu.webp",0,698.125,2400,651.875],"colonne":["calques/colonne/sol-milieu.webp",780,698.125,840,651.875]}' alt="" decoding="async">
     <div class="pilier-repere" aria-hidden="true"></div>
-    <img class="plan" style="--z:7" data-src="sol-pres.svg" alt="" decoding="async">
+    <img class="plan" style="--z:7" data-src="sol-pres.svg" data-apercu='{"plein":["calques/sol-pres.webp",0,828.125,2400,521.875],"colonne":["calques/colonne/sol-pres.webp",780,944.375,840,405.625]}' alt="" decoding="async">
     <div class="plan bouquet" style="--z:8" id="bouquet" role="img" aria-label=""></div>
     <!-- the bouquet's place in the world (its manifest's box): a click brings the camera closer (boutique.js) -->
     <button class="bq-cible" id="bq-cible" type="button" aria-pressed="false" aria-label="Den Blumenstrauß näher ansehen" hidden></button>
@@ -434,11 +432,13 @@
     <div class="plan premier" style="--z:9" id="premier"></div>
     <div class="colonne" aria-hidden="true"></div>
   </div>
+  <!-- the pager (boutique.js): one dot per bouquet of the day, fixed on the screen by the dock (entete.css) -->
+  <div class="pager" id="pager" role="group" aria-label="Blumensträuße des Tages" hidden></div>
   <div class="perf" id="perf" hidden></div>
 </main>
 
 <!-- the shelf under the header, opened by the dock's icons (entete.js): the soliflores, the bouquets already sold; one
-     at a time (the bouquets of the day are the gallery in the scene) -->
+     at a time (the bouquets of the day are the scene itself) -->
 <nav class="cartes" id="cartes" aria-label="Regale">
   <div class="rayon" data-rayon="soliflores" hidden>
     <p class="rayon-mot">Solitärvasen kommen bald: eine einzelne Blume in ihrer Vase.</p>

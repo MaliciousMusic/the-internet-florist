@@ -32,6 +32,9 @@
 // The parent gets the event "eclosion:ouvert" (detail: the bouquet) once its boxes are in, "eclosion:repli" when it starts
 // folding back.
 // prefers-reduced-motion: the bouquet is shown open and still.
+//
+// The shop page no longer grows its bouquets (owner, 2026-10-24): it shows them open and swaying with Eclosion.pose, from
+// the one file paquet.mjs writes (see pose below). ouvre stays for the growth.
 (() => {
   'use strict';
   const RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -317,5 +320,145 @@
     return b;
   }
 
-  window.Eclosion = { ouvre };
+  // ---------- pose: the bouquet open, already swaying, from its one file bouquets/<id>/ouvert.json (paquet.mjs)
+  // Every image is made and drawn hidden; the bouquet shows whole, at once, when montre() is called (never piece by piece).
+  // Each swaying image turns round its joint as in the breeze of aliveBq, all of them shifted by one common time so the
+  // breeze is already under way at the first frame, its phases between pieces unchanged.
+  //
+  //   const b = await Eclosion.pose(parent, 'bouquets/<id>/ouvert.json', { monde: [2400, 1350], plans: 4 });
+  //   await b.pret;    // every image drawn, hidden
+  //   b.montre();      // shown, swaying; the parent gets "eclosion:ouvert"
+  //   b.repli();       // gone at once; the parent gets "eclosion:repli"
+  //
+  // Options: monde, plans (as ouvre), final (still, no breeze), donnees (the file's JSON already read: no request).
+  // The object answers like ouvre's for the shop and the insects: manifeste (vb, boite, echelle, pieces: every piece of the
+  // growth's cut with its kind and box), plan[k] (the box of that piece), plans, el, vase/tout/grandi (= pret).
+  const AHEAD = 60000; // the breeze's common head start (ms)
+  async function pose(parent, url, opt = {}) {
+    const m =
+      opt.donnees ||
+      (await fetch(url).then((r) => {
+        if (!r.ok) throw new Error(`bouquet ${r.status}`);
+        return r.json();
+      }));
+    const sway = !RM && !opt.final;
+    const [vx, vy, vw, vh] = m.vb;
+    const X0 = Math.floor(vx);
+    const Y0 = Math.floor(vy);
+    const nPlans = Math.max(1, Math.min(m.pieces.length, opt.plans | 0 || 1));
+    const per = Math.ceil(m.pieces.length / nPlans);
+    const boxes = [];
+    for (let g = 0; g < nPlans; g++) {
+      const bx = document.createElement('div');
+      bx.className = 'bq-pose';
+      bx.style.cssText = `position:absolute;left:0;top:0;width:${Math.ceil(vx + vw) - X0}px;height:${Math.ceil(vy + vh) - Y0}px;overflow:hidden;pointer-events:none;transform-origin:0 0;visibility:hidden`;
+      boxes.push(bx);
+    }
+    const fit = () => {
+      const pw = parent.clientWidth;
+      if (!pw) return;
+      let e = pw / vw;
+      let ox = 0;
+      let oy = 0;
+      if (opt.monde && m.boite) {
+        const k = pw / opt.monde[0];
+        e = (k * m.boite[2]) / vw;
+        ox = k * m.boite[0];
+        oy = k * m.boite[1];
+      }
+      const tf = `translate(${(ox - (vx - X0) * e).toFixed(3)}px,${(oy - (vy - Y0) * e).toFixed(3)}px) scale(${e.toFixed(6)})`;
+      for (const bx of boxes) bx.style.transform = tf;
+    };
+    const ro = window.ResizeObserver ? new ResizeObserver(fit) : null;
+    const urls = [];
+    const imgs = m.pieces.map((p, k) => {
+      const [bx, by, bw, bh] = p.b;
+      const place = `position:absolute;left:${bx - X0}px;top:${by - Y0}px;width:${bw}px;height:${bh}px`;
+      const img = new Image();
+      img.alt = '';
+      img.decoding = 'async';
+      img.draggable = false;
+      img.className = 'bq-piece';
+      const u = URL.createObjectURL(new Blob([p.s], { type: 'image/svg+xml' }));
+      urls.push(u);
+      img.src = u;
+      let outer = img;
+      if (p.z && sway) {
+        outer = document.createElement('div');
+        outer.className = 'bq-brise';
+        outer.style.cssText = `${place};transform-origin:${+(p.o[0] - bx).toFixed(2)}px ${+(p.o[1] - by).toFixed(2)}px;will-change:transform`;
+        img.style.cssText = 'position:absolute;left:0;top:0;width:100%;height:100%;max-width:none';
+        outer.append(img);
+      } else img.style.cssText = `${place};max-width:none`;
+      boxes[Math.floor(k / per)].append(outer);
+      return { p, img, outer };
+    });
+    parent.append(...boxes);
+    fit();
+    if (ro) ro.observe(parent);
+    // drawn once, hidden: decode() resolves once the browser can paint the image without waiting
+    const ready = Promise.all(imgs.map(({ img }) => img.decode().catch(() => {})));
+    const anims = [];
+    let shownAt = null;
+    let shownRes;
+    const parti = new Promise((r) => (shownRes = r));
+    const end = () => {
+      if (ro) ro.disconnect();
+      for (const a of anims) a.cancel();
+      for (const bx of boxes) bx.remove();
+      for (const u of urls) URL.revokeObjectURL(u);
+    };
+    const b = {
+      manifeste: { vb: m.vb, boite: m.boite, pied: m.pied, echelle: m.echelle, pieces: m.orig, finCroissanceMs: 0 },
+      el: boxes[0],
+      plans: boxes,
+      plan: m.orig.map((o) => Math.floor(o.k / per)),
+      retards: [],
+      pieces: imgs.map((x) => x.img),
+      pret: ready.then(() => b),
+      parti,
+      montre() {
+        if (shownAt != null) return parti;
+        if (sway)
+          for (const { p, outer } of imgs) {
+            if (!p.z || outer === p.img) continue;
+            const [amp, duration, delay] = p.z;
+            anims.push(
+              outer.animate(
+                [
+                  { transform: 'rotate(0deg)', easing: 'ease-out' },
+                  { transform: `rotate(${amp}deg)`, easing: 'ease-in' },
+                  { transform: 'rotate(0deg)', easing: 'ease-out' },
+                  { transform: `rotate(${-amp}deg)`, easing: 'ease-in' },
+                  { transform: 'rotate(0deg)' },
+                ],
+                { duration, delay: delay - AHEAD, iterations: Infinity },
+              ),
+            );
+          }
+        for (const bx of boxes) bx.style.visibility = '';
+        boxes[0].dataset.etat = 'fini';
+        shownAt = performance.now();
+        shownRes(shownAt);
+        parent.dispatchEvent(new CustomEvent('eclosion:ouvert', { detail: b }));
+        return parti;
+      },
+      depart() {
+        return b.montre();
+      },
+      fin() {
+        return shownAt;
+      },
+      repli() {
+        parent.dispatchEvent(new CustomEvent('eclosion:repli', { detail: b }));
+        end();
+        return Promise.resolve();
+      },
+      arret: end,
+    };
+    b.vase = b.tout = b.grandi = b.pret;
+    return b;
+  }
+
+  window.Eclosion = { ouvre, pose };
 })();

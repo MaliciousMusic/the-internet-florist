@@ -59,7 +59,7 @@
   };
   const layers = [...document.querySelectorAll('img[data-src]')];
   let cut = !q.has('plein') && inColumn();
-  const load = (el) => {
+  const loadSvg = (el) => {
     const name = el.dataset.src;
     el.dataset.on = '1';
     return new Promise((done) => {
@@ -83,7 +83,46 @@
       cut = false;
       removeEventListener('resize', full);
       for (const el of layers) if (CUT.has(el.dataset.src) && el.dataset.on && el.isConnected) el.src = OUT + el.dataset.src;
+      for (const el of layers) if (el.apercu) swap(el);
     });
+
+  // Compiled previews (decor/calques.mjs; owner, 2026-10-25: "image compilée d'abord puis SVG au repos, seulement pour le
+  // décor"). The heavy layers first come as WebP pictures cut to their drawn part (data-apercu, written by build.mjs: the
+  // full layer's and the column's, [src, x, y, w, h] in world units), which the browser decodes off the main thread. Each
+  // SVG then takes its preview's place, one at a time when the main thread is idle, once the first bouquet is on screen: the
+  // SVG is what stays. ?apercu=non loads the SVG at once (as before), ?apercu=garde keeps the previews.
+  const AP = q.get('apercu');
+  window.SCENE_APERCUS = {};
+  const load = (el) => {
+    const a = AP !== 'non' && el.dataset.apercu && JSON.parse(el.dataset.apercu)[cut ? 'colonne' : 'plein'];
+    if (!a) return loadSvg(el);
+    const [src, x, y, w, h] = a;
+    const p = new Image();
+    p.alt = '';
+    p.className = 'plan';
+    p.style.cssText = `${el.style.cssText};left:${(x / 24).toFixed(4)}%;top:${(y / 13.5).toFixed(4)}%;width:${(w / 24).toFixed(4)}%;height:${(h / 13.5).toFixed(4)}%`;
+    el.before(p);
+    el.apercu = p;
+    return new Promise((done) => {
+      const on = () => ((window.SCENE_APERCUS[el.dataset.src] = Math.round(performance.now())), done());
+      p.onload = () => p.decode().then(on, on);
+      p.onerror = () => (p.remove(), (el.apercu = null), loadSvg(el).then(done));
+      p.src = OUT + src;
+    });
+  };
+  // the SVG under its preview, hidden until it is read, shown when the main thread is idle, the preview gone a frame later;
+  // a layer whose SVG fails keeps its preview
+  const swap = async (el) => {
+    const p = el.apercu;
+    if (!p) return;
+    el.apercu = null;
+    el.style.visibility = 'hidden';
+    await loadSvg(el);
+    await idle();
+    el.style.visibility = '';
+    await frame();
+    if (el.isConnected) p.remove();
+  };
 
   // In stages, so something shows at once and nothing waits on what comes after it: the sky and the horizon (light), then,
   // once they are on screen, the drifting veils (light too, see below) and the ground with its pillar, its three layers revealed together (the meadow comes in one go,
@@ -98,7 +137,10 @@
   window.SCENE_DECOR = skyIn
     .then(() => Promise.all(ground.map(load)))
     .then(() => {
-      for (const el of ground) el.style.visibility = '';
+      for (const el of ground) {
+        el.style.visibility = '';
+        if (el.apercu) el.apercu.style.visibility = '';
+      }
       return frame();
     })
     .then(() => Math.round(performance.now()));
@@ -119,6 +161,11 @@
     document.addEventListener('boutique:bouquet', r, { once: true });
     setTimeout(r, 15000);
   });
+  // the SVG layers in place of their previews, in their stacking order, after the first bouquet
+  if (AP !== 'garde')
+    Promise.all([window.SCENE_DECOR, afterBouquet]).then(async () => {
+      for (const el of layers) await swap(el);
+    });
   const sceneJson = fetch(OUT + 'scene.json')
     .then((r) => (r.ok ? r.json() : {}))
     .catch(() => ({}));

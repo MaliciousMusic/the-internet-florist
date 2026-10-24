@@ -20,6 +20,9 @@ body {
   position: fixed;
   inset: 0;
   overflow: hidden;
+  /* a sideways swipe is the page's (another bouquet, boutique.js): without this the phone's browser takes the gesture and
+     cancels the pointer before it ends */
+  touch-action: pan-y pinch-zoom;
   /* the sky's zenith (ciel.svg's top), showing above the world when it is lowered */
   background: #6c9bcf;
 }
