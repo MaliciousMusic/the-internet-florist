@@ -160,6 +160,8 @@ const M = MES.mesosome, H = MES.tete, PE = MES.petiole, PP = MES.postpetiole, V 
 const MW = V.mesosome_largeur_pronotum / M.largeur_pronotum, MH = V.mesosome_hauteur_pronotum / 0.6;
 // the head held a little down (c013, c124), on a short neck
 const HEAD = { o: [1.53, 0, 0.5], pitch: -22 };
+// the trunk's measured shape against the SAM maps (ETAT §5): the mesosoma's and the head's heights, the head's width
+const SH = { meso: 1.25, propodeum: 0.18, headH: 1.25, headW: 1.2, gasterW: 0.96 };
 
 function mesosoma(sc) {
   sc.part = 'mesosome';
@@ -174,7 +176,8 @@ function mesosoma(sc) {
     [0.42, 0.62, 0.37, M.largeur_propodeum / 2 + 0.05, 0.26], [0.56, 0.86, 0.42, hp * 0.78, hz * 0.82],
     [0.7, 1.06, 0.48, hp * 0.97, hz], [0.84, 1.26, 0.49, hp * 1.02, hz * 0.98], [0.93, 1.4, 0.47, hp * 0.92, hz * 0.8], [1, W, 0.44, 0.12, 0.12],
   ];
-  const prof = table(rows);
+  // the SAM maps (c013, c115): the trunk 25 % higher than the dried specimens gave, raised on its belly line
+  const prof = ((f) => (t) => { const p = f(t); const q = clamp((t - 0.3) / 0.35), r = 1 + SH.propodeum * (1 - q * q * (3 - 2 * q)); return { ...p, zc: p.zc + p.rz * 0.125, ry: p.ry * r, rz: p.rz * SH.meso * r }; })(table(rows));
   drawBody(sc, {
     name: 'mesosoma', frame: frame0([0, 0, 0]), depthAt: [0.75, 0, 0.4], color: C.meso, seed: 5, grid: G.mesosome, mat: MAT.sculpt,
     profile: (t) => { const p = prof(t); const dip = 1 - 0.24 * Math.exp(-(((t - 0.5) / 0.04) ** 2)); return { ...p, rz: p.rz * dip }; },
@@ -187,7 +190,7 @@ function mesosoma(sc) {
   const E = M.epines, el = (E.elevation_deg * Math.PI) / 180, dv = (E.divergence_deg * Math.PI) / 180;
   for (const s of [1, -1]) {
     sc.part = s > 0 ? 'epine-g' : 'epine-d';
-    const b0 = [0.1, 0.09 * s, 0.54];
+    const b0 = [0.1, 0.09 * s, 0.6];
     const tip = add(b0, mul(norm([-Math.cos(el) * Math.cos(dv), s * Math.cos(el) * Math.sin(dv), Math.sin(el)]), E.longueur));
     drawTube(sc, [b0, add(b0, mul(sub(tip, b0), 0.35)), add(b0, mul(sub(tip, b0), 0.7)), tip], [0.045, 0.03, 0.018, 0.005], { color: C.meso, gloss: 0.45, bias: 0.01 });
   }
@@ -228,10 +231,10 @@ function gaster(sc, xf) {
     name: 'gaster', frame: F, color: C.gaster, seed: 3, grid: G.gastre, mat: MAT.gaster,
     profile: (t) => {
       // the front blunt, where the postpetiole sits in the first tergite's hollow
-      const u = t < 0.62 ? (0.62 - t) / 0.62 : (t - 0.62) / 0.38, e = t < 0.62 ? 2.4 : 2.7;
+      const u = t < 0.62 ? (0.62 - t) / 0.62 : (t - 0.62) / 0.38, e = t < 0.62 ? 3.0 : 2.0;
       let w = Math.pow(Math.max(0, 1 - Math.pow(u, e)), 1 / e);
       for (const st of seg) w *= 1 - 0.035 * (1 - clamp((t - st) / 0.012 + 0.5));
-      return { x: L * t, zc: -0.04 * (1 - t), ry: Math.max(0.01, (GA.largeur / 2) * w), rz: Math.max(0.01, (GA.hauteur / 2) * w) };
+      return { x: L * t, zc: -0.04 * (1 - t), ry: Math.max(0.01, (GA.largeur / 2) * SH.gasterW * w), rz: Math.max(0.01, (GA.hauteur / 2) * w) };
     },
     // each tergite's hind margin: a thin translucent amber rim over the dark seam of the next
     bands: seg.flatMap((t) => [{ t0: t - 0.005, t1: t + 0.002, color: '#3a1606' }, { t0: t + 0.002, t1: t + 0.014, color: '#c27a34' }]), feather: 0.004,
@@ -250,13 +253,13 @@ function gaster(sc, xf) {
 // ---------------------------------------------------------------------------------------------------------------
 function head(sc, pose, frame) {
   sc.part = 'tete';
-  const F = pitched(HEAD.o, HEAD.pitch), CL = H.longueur_CL, hw = H.largeur_CW_sans_yeux / 2, hd = V.tete_hauteur / 2;
+  const F = pitched(HEAD.o, HEAD.pitch), CL = H.longueur_CL, hw = (H.largeur_CW_sans_yeux / 2) * SH.headW, hd = (V.tete_hauteur / 2) * SH.headH;
   const at = (x, y, z) => add(add(add(F.o, mul(F.ax, x)), mul(F.ay, y)), mul(F.az, z));
   drawBody(sc, {
     name: 'head', frame: F, color: C.head, seed: 7, grid: G.tete, mat: MAT.sculpt,
     // a rounded square-oval from above (c082, c123): the occipital corners round, the sides nearly parallel, the front a little narrower
     profile: table([[0, 0, 0.03, 0.12, 0.1], [0.03, 0.02, 0.03, hw * 0.62, hd * 0.6], [0.1, 0.08, 0.02, hw * 0.9, hd * 0.86], [0.25, 0.25, 0.01, hw * 0.99, hd * 0.98],
-      [0.5, 0.55, 0.0, hw, hd], [0.75, 0.84, -0.03, hw * 0.97, hd * 0.86], [0.92, 1.03, -0.06, hw * 0.9, hd * 0.68], [1, CL, -0.07, hw * 0.78, hd * 0.42]]),
+      [0.5, 0.55, 0.0, hw, hd], [0.75, 0.84, -0.03, hw * 0.97, hd * 0.86], [0.92, 1.03, -0.06, hw * 0.86, hd * 0.8], [1, CL, -0.07, hw * 0.7, hd * 0.6]]),
     // the head a little flat on the face and the vertex, round on the sides
     shape: (th) => [1, Math.sin(th) > 0 ? 0.94 : 0.9],
     paint: rugae({ period: MES.sculpture.tete_dessus.periode, dark: '#1a0703', light: '#f0bc90', a: 0.5, seed: 17, spread: 0.12, wobble: 0.45, gaps: 0.1, t0: 0.05, t1: 0.9,
@@ -283,7 +286,7 @@ function head(sc, pose, frame) {
   // body from its outer base to its apex, widest over the masticatory margin
   for (const s of [1, -1]) {
     sc.part = s > 0 ? 'mandibule-g' : 'mandibule-d';
-    const b0 = at(CL - 0.14, 0.31 * s, -0.09), tip = at(CL + H.mandibules_au_dela_du_clypeus - 0.02, -0.05 * s, -0.12);
+    const b0 = at(CL - 0.14, 0.31 * s, -0.09), tip = at(CL + H.mandibules_au_dela_du_clypeus - 0.08, -0.05 * s, -0.12);
     const ax = norm(sub(tip, b0)), ay = norm(cross(F.az, ax)), az = cross(ax, ay), L = Math.hypot(...sub(tip, b0));
     drawBody(sc, {
       name: 'mandible', frame: { o: b0, ax, ay, az }, color: C.mandible, seed: 31 + s, mat: MAT.node, bias: 0.02,

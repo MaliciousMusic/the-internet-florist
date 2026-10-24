@@ -89,11 +89,14 @@
 
 | région | ΔE moyen | dispersion des photos | verdict |
 |---|---|---|---|
-| tête | 3,4 | 5,6 | ok |
-| mésosome | 3,9 | 4,3 | ok |
-| nœuds | 1,7 | 5,1 | ok |
-| gastre | 3,4 | 4,5 | ok |
-| pattes | 4,9 | 3,8 | ok (≤ 6) |
+| tête | 4,0 | 5,6 | ok |
+| mésosome | 4,9 | 4,3 | ok (≤ 6) |
+| nœuds | 2,6 | 5,1 | ok |
+| gastre | 3,2 | 4,5 | ok |
+| pattes | 4,7 | 3,8 | ok (≤ 6) |
+
+Chiffres après la cinquième passe de forme (résidu 5). Avant cette passe : tête 3,4, mésosome 3,9, nœuds 1,7, gastre 3,4, pattes
+4,9. Les volumes plus hauts montrent plus de flancs dans l'ombre, d'où un rendu un peu plus sombre sur le tronc.
 
 - **Grain.** Celui du rendu est 1,2 à 3 fois celui des photos de profil (soies et rides plus contrastées). Il est de 0,5 à 0,8 sur
   la photo de dessus c123, plus nette.
@@ -128,6 +131,10 @@ Le juge reste **ko**. Les causes restantes sont dans les résidus 1 à 4.
 ## Atlas
 Cuit le 2026-10-24 (`outils/cuisson.mjs fourmi-rouge` puis `outils/atlas.py`, derrière le verrou corrigé de `ch/insectes-suite`,
 `GATE_MAX=1`) : 1300 cellules en 536 s.
+
+**Attention : cet atlas date d'avant la cinquième passe de forme.** La recuisson (`GATE_RAM=5.0`) est en file au verrou. À
+11 h 58 il restait 1,5 Go de RAM libre, pris par l'application et les sessions, et aucun rendu ne tournait. Les poids ci-dessous
+seront remplacés au commit de la recuisson.
 
 | LOD | cellule | azimuts | cellules | feuille | WebP | GPU |
 |---|---|---|---|---|---|---|
@@ -170,12 +177,39 @@ Cuit le 2026-10-24 (`outils/cuisson.mjs fourmi-rouge` puis `outils/atlas.py`, de
    | dessus | 0,55 (pétiole) | 0,06 à 0,12 | 0,08 | dans la plage |
 
    - Réserves : les pattes repliées sous le corps des photos gonflent un peu leur hauteur de profil ; c013 a la tête levée.
-   - **Proposition** (une cinquième passe, que je n'ai pas faite : le résidu « posture » est déjà garé) :
-     - le mésosome et la tête plus hauts de 25 % ;
-     - la tête plus large de 20 % ;
-     - l'avant du gastre plus étroit ;
-     - les mandibules plus courtes ;
-     - remesurer ensuite avec `forme.py table`.
+   - **Cinquième passe de forme, faite le 2026-10-24** (deux essais, puis garée). Les facteurs sont dans la constante `SH` de
+     `fourmi-rouge.mjs`. Les fichiers du moteur ne sont pas touchés.
+     - mésosome plus haut de 25 % (`SH.meso`), propodéum plus épais de 18 % vers l'arrière (`SH.propodeum`), axe relevé d'un
+       huitième de demi-hauteur ;
+     - tête plus haute de 25 % (`SH.headH`) et plus large de 20 % (`SH.headW`), avant de la tête resserré ;
+     - mandibules plus courtes de 0,08 L ;
+     - avant du gastre plus étroit (exposant de la courbe de 3,0 avant 0,62, `SH.gasterW` 0,96).
+     - Mesure : `sh outils/mesure-rendus.sh` (rendus des paires contre les cartes, 12 stations). **Hors plage : 7 → 6 de profil,
+       7 → 4 de dessus.**
+
+   | vue | station | photos | rendu (passe 5) | lecture |
+   |---|---|---|---|---|
+   | profil | 0,05 (mandibules) | 0,170 à 0,182 | 0,133 | la tête est encore basse à sa pointe |
+   | profil | 0,39 | 0,230 à 0,249 | 0,164 | mésosome encore trop bas |
+   | profil | 0,47 | 0,182 à 0,195 | 0,148 | idem |
+   | profil | 0,55 | 0,165 à 0,231 | 0,114 | la taille du rendu est plus en arrière |
+   | profil | 0,64 (postpétiole) | 0,104 à 0,202 | 0,072 | idem |
+   | profil | part éclairée | 0,079 à 0,088 | 0,074 | à peine sous la plage |
+   | dessus | 0,05 | 0,173 à 0,173 | 0,189 | les deux photos coïncident : la plage est presque nulle |
+   | dessus | 0,30 | 0,168 à 0,171 | 0,185 | plage étroite, écart de 8 % |
+   | dessus | 0,47 | 0,135 à 0,140 | 0,122 | mésosome un peu étroit à l'arrière |
+   | dessus | 0,64 (postpétiole) | 0,071 à 0,090 | 0,050 | taille décalée vers l'arrière |
+
+   - Rentrées dans la plage : de profil, la tête (0,14) et le gastre (0,89, 0,97) ; de dessus, la tête (0,14) et l'avant du
+     gastre (0,72).
+   - **Ce qui reste.** Ce n'est plus une question d'épaisseur, mais de position le long de l'axe. Le mésosome du rendu est plus
+     long, et sa taille (pétiole, postpétiole) tombe plus en arrière que sur les photos. Les stations 0,55 et 0,64 mesurent donc
+     un creux là où les photos ont encore du nœud. S'y ajoutent deux stations de dessus dont la plage est presque nulle.
+   - **Proposition** (non faite, garée après deux essais) : raccourcir le mésosome de 6 à 8 % de L, en avançant les nœuds d'autant,
+     puis remesurer. Cela change les proportions mesurées sur AntWeb (`HEAD`, `MESO`) : c'est au porteur de décider s'il faut
+     suivre AntWeb ou les cartes SAM.
+   - La vue de face (c124) monte à ΔE 16,4 (13,4 avant) : la tête plus large et plus haute rend la face plus sombre que la
+     photo orangée (résidu 2).
 6. **Vue de dessous** : aucune photo d'ouvrière vivante vue de dessous. Le dessous du gastre est vu de profil seulement.
 7. **resvg plante à 500 px/mm** sur le dessin entier (`geom.rs:27`), mais pas sur chaque organe seul. Jusqu'à 320 px/mm, le rendu
    passe. Pour les gros plans, rester à 320 px/mm au plus, ou rendre par organe.
