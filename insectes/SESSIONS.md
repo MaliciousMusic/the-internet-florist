@@ -49,6 +49,17 @@ sous-session numérotée par insecte. La méthode est celle du machaon (`machaon
     lui-même est tué ;
   - il libère le créneau à la fin du travail ;
   - il arrête tout le travail (node ou python sous `sh -c` compris) quand on l'arrête proprement.
+- Le même jour, plus tard, une seconde course est apparue. Une attente pouvait lire `t` pendant que le battement le
+  réécrivait, le trouver vide et supprimer un créneau vivant. Le verrou remplace maintenant `t` d'un seul renommage et relit un
+  `t` vide une seconde plus tard.
+- Les attentes font la queue par ordre d'arrivée (tickets dans `ws/locks/queue`). Seule la première peut prendre le créneau,
+  si bien qu'un travail gourmand en RAM n'est plus doublé sans fin par des travaux plus légers. `GATE_SINCE=<epoch>` garde une
+  place plus ancienne quand on relance une file. Si la première attente trouve le PC au repos mais trop peu de RAM pendant
+  10 minutes, elle passe en fin de file (`GATE_YIELD`, en secondes).
+- Seuils de RAM libre au départ (`GATE_RAM`) : 4,4 Go pour un rendu léger (gros plans, paires, planches), 5,0 Go pour une
+  cuisson d'atlas, 5,5 Go pour SAM ou la profondeur.
+- Le verrou se remplace par renommage (copie puis `mv`) : les instances déjà lancées gardent leur version, alors qu'une
+  écriture sur place les ferait lire n'importe quoi.
 
 ### Le moteur partagé
 `moteur/insecte.mjs`, `moteur/motif.mjs`, `moteur/papillon.mjs`, `moteur/fourmi.mjs`, `runtime/essaim.mjs`, `runtime/vue.mjs`,
