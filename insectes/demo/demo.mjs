@@ -15,6 +15,7 @@ import { Sauterelle, SAUTERELLE } from '../runtime/sauterelle.mjs';
 import { Bourdon, BOURDON } from '../runtime/bourdon.mjs';
 import { Coccinelle, COCCINELLE } from '../runtime/coccinelle.mjs';
 import { Fourmi, LASIUS } from '../runtime/fourmi.mjs';
+import { FourmiRouge, MYRMICA } from '../runtime/fourmi-rouge.mjs';
 
 const q = new URLSearchParams(location.search);
 const N = +(q.get('n') ?? 4), NM = Math.min(3, +(q.get('machaon') ?? 0)), NC = Math.min(1, +(q.get('cetoine') ?? 0)), SIZE = +(q.get('taille') || 1), DEBUG = q.get('debug') === '1';
@@ -24,6 +25,7 @@ const NS = Math.min(3, +(q.get('sauterelle') ?? 0));
 const NB = Math.min(BOURDON.max, +(q.get('bourdon') ?? 0));
 const NCO = Math.min(COCCINELLE.max, +(q.get('coccinelle') ?? 0));
 const NF = Math.min(8, +(q.get('fourmi') ?? 0));
+const NFR = Math.min(8, +(q.get('fourmi-rouge') ?? 0));
 const BQ = '../../decor/scene/bouquets/printemps-a-la-carpe/';
 const PLANS = 4, ZS = [-90, -30, 30, 90];
 const UNITS_PER_MM = 0.9; // bouquet drawing units per millimetre (a tulip head of about 5 cm is about 45 units)
@@ -57,6 +59,7 @@ const essaim = await Essaim.create({ layers: canvases, zCuts: ZS });
 if (N) await essaim.kind('abeille', '../abeille/atlas/abeille', 12.5);
 if (NSX) { await essaim.kind('moro-sphinx', '../moro-sphinx/atlas/moro-sphinx', SPHINX.bodyMm); await essaim.wings('moro-sphinx', '../moro-sphinx/atlas/moro-sphinx-ailes'); }
 if (NF) await essaim.kind('fourmi-noire', '../fourmi-noire/atlas/fourmi-noire', LASIUS.bodyMm);
+if (NFR) await essaim.kind('fourmi-rouge', '../fourmi-rouge/atlas/fourmi-rouge', MYRMICA.bodyMm);
 if (NM) { await essaim.kind('machaon', '../machaon/atlas/machaon', MACHAON.bodyMm); await essaim.wings('machaon', '../machaon/atlas/machaon-ailes'); }
 if (NC) { await essaim.kind('cetoine', '../cetoine/atlas/cetoine', CETOINE.bodyMm); await essaim.wings('cetoine', '../cetoine/atlas/cetoine-ailes'); }
 if (NP) { await essaim.kind('paon-du-jour', '../paon-du-jour/atlas/paon-du-jour', PAON.bodyMm); await essaim.wings('paon-du-jour', '../paon-du-jour/atlas/paon-du-jour-ailes'); }
@@ -66,12 +69,16 @@ if (NCO) { const K = await essaim.kind('coccinelle', '../coccinelle/atlas/coccin
 
 let S = 1, left = 0, top = 0;
 const flowers = [];
+// ?fourmi-rouge=N: red ants walking on the table at the bouquet's foot, in front of the vase (the front canvas)
+const groundR = { y: 0, x0: 0, x1: 0, z0: 95, z1: 160 };
 function layout() {
   essaim.resize();
   const W = innerWidth, H = innerHeight;
   S = Math.min((H * 0.8) / vh, (W * 0.92) / vw);
   left = (W - vw * S) / 2; top = H * 0.95 - vh * S;
   for (const d of plans) d.style.transform = `translate(${left}px, ${top}px) scale(${S})`;
+  // the ground's far edge seen just below the vase's foot (about 0.9 H); the perspective spreads the strip down from there
+  groundR.y = essaim.unproject(W / 2, H * 0.92, groundR.z0)[1]; groundR.x0 = left + vw * S * 0.18; groundR.x1 = left + vw * S * 0.82;
   // Flower hearts: the boxes of the head pieces, a little above their middle.
   const heads = m.pieces.filter((p) => p.t === 'tete');
   const old = flowers.splice(0);
@@ -163,6 +170,12 @@ for (let i = 0; i < NF; i++) {
   b.bodyMm = LASIUS.bodyMm; b.layerHint = PLANS; essaim.add(b); bees.push(b);
 }
 let petalsLeft = -1;
+
+const colony = [];
+for (let i = 0; i < NFR; i++) {
+  const a = new FourmiRouge(essaim, groundR, colony, rnd, { lengthPx: MYRMICA.bodyMm * UNITS_PER_MM * S * SIZE });
+  essaim.add(a); bees.push(a);
+}
 
 addEventListener('pointerdown', (ev) => { const b = essaim.hit(ev.clientX, ev.clientY); if (b) b.poke(ev.clientX, ev.clientY); });
 

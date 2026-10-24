@@ -1,3 +1,6 @@
 {"sid": "myrmica-rubra", "pairs": [
- {"nom": "profil", "photo": "hd/c013.jpg", "box": [1300, 900, 3750, 2500], "vue": "pose:270:10", "k": 200, "w": 1400, "h": 900, "focus": [0.3, 0, 0.2]}
+ {"nom": "profil-c013", "photo": "hd/c013.jpg", "box": [1150, 1250, 3350, 2550], "vue": "pose:270:8", "k": 200, "w": 1239, "h": 732, "focus": [0.3, 0, 0.1]},
+ {"nom": "trois-quarts-c115", "photo": "hd/c115.jpg", "box": [500, 450, 1700, 1250], "vue": "pose:70:25", "k": 150, "w": 1029, "h": 686, "focus": [0.3, 0, 0.1]},
+ {"nom": "dessus-c123", "photo": "hd/c123.jpg", "box": [201, 260, 2201, 1460], "rot": -27.5, "vue": "pose:90:90", "k": 150, "w": 1000, "h": 600, "focus": [0.3, 0, 0.2]},
+ {"nom": "face-c124", "photo": "hd/c124.jpg", "box": [600, 250, 1300, 1000], "vue": "pose:0:42", "k": 300, "w": 700, "h": 750, "focus": [2.1, 0, 0.3]}
 ]}

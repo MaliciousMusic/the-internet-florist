@@ -28,7 +28,8 @@ for i, p in enumerate(cfg['pairs']):
     # rot (degrees, counter-clockwise): a photo whose body lies askew (an insect perched on a slanting stem) is turned about the
     # box's centre so that its body lies as the render's does, before the crop
     if p.get('rot'): ph = ph.rotate(p['rot'], center=((p['box'][0] + p['box'][2]) / 2, (p['box'][1] + p['box'][3]) / 2), resample=Image.BICUBIC, fillcolor='#efe9df')
-    ph = ph.crop(tuple(p['box']))
+    # a box past the photo's edge is filled with the beige ground, not black
+    ph = ImageOps.expand(ph, border=800, fill='#efe9df').crop(tuple(v + 800 for v in p['box']))
     if p.get('flip'): ph = ImageOps.mirror(ph)
     if p.get('rot'): ph = ph.rotate(p['rot'], resample=Image.BICUBIC, expand=False, fillcolor='#efe9df')
     r = Image.open(out).convert('RGB')
