@@ -102,7 +102,13 @@ export function motif(rec, opt = {}) {
   // opt.live.k (and kc): a face whose dried specimen is lit far brighter than the living butterfly (the peacock's underside: L*
   // 44 on c259 against 6 to 27 on the living c140, c374, c223, c004) is scaled whole, lightness by k and chroma by kc
   const live = (h) => { if (!opt.live) return h; const l = hex2lab(h);
-    if (opt.live.k) return lab2hex(l[0] * opt.live.k, l[1] * (opt.live.kc ?? 1), l[2] * (opt.live.kc ?? 1));
+    // opt.live.gamma: a tone curve rather than a scale (L' = 100 (L/100)^gamma): the darks go down, the few bright scales of the
+    // striae keep their light; opt.live.dh turns the hue (degrees, the living red of a rusty ground)
+    if (opt.live.k || opt.live.gamma) {
+      const L = opt.live.gamma ? 100 * Math.pow(l[0] / 100, opt.live.gamma) : l[0] * opt.live.k, kc = opt.live.kc ?? 1;
+      const h = ((opt.live.dh ?? 0) * Math.PI) / 180, a = l[1] * kc, b = l[2] * kc;
+      return lab2hex(L, a * Math.cos(h) - b * Math.sin(h), a * Math.sin(h) + b * Math.cos(h));
+    }
     if (l[0] >= opt.live.below) return h; const f = 1 - l[0] / opt.live.below;
     return lab2hex(Math.max(2, l[0] + opt.live.dL * f), l[1], l[2]); };
   const zones = rec.zones.map((z) => ({ ...z, c: live(shift(z.c, ZC[z.zone])),
@@ -119,6 +125,8 @@ export function motif(rec, opt = {}) {
         g.stops.map(([o, c]) => `<stop offset="${o}" stop-color="${c}"/>`).join('') + '</linearGradient>');
       return `url(#${id})`;
     };
+    const zb = opt.zoneBlur ?? 0; let zs = '', ds = '';
+    const xs0 = rec.contour.map((p) => p[0] * k), ys0 = rec.contour.map((p) => p[1] * k);
     zones.forEach((z, i) => {
       const d = i === 0 ? outline : smoothAll(z.poly, k);
       const dust = (rec.poussiere || []).filter((D) => D.sur === z.zone);
@@ -127,7 +135,7 @@ export function motif(rec, opt = {}) {
       let ref = null;
       if (shared) { ref = sc.id('mzd'); sc.defs.push(`<path id="${ref}" d="${d}" fill-rule="evenodd" clip-rule="evenodd"/>`); }
       const draw = (f) => (ref ? `<use href="#${ref}" fill="${f}"/>` : `<path d="${d}" fill="${f}" fill-rule="evenodd"/>`);
-      if (i > 0 || z.degrade) s += draw(fill(z));
+      if (i > 0 || z.degrade) { if (zb) zs += draw(fill(z)); else s += draw(fill(z)); }
       if (!shared) return;
       if (!clip[z.zone]) {
         clip[z.zone] = sc.id('mz');
@@ -135,6 +143,19 @@ export function motif(rec, opt = {}) {
       }
       let g = '';
       for (const D of dust) {
+        // grains measured in place (aile.py poudre_seule): each one at its place, axes and angle, in one of its measured tones
+        if (D.grains) {
+          const by = {};
+          for (const [x, y, a, b, t, l] of D.grains) {
+            // opt.grainK: the grains' size against their measured axes (a grain read on a blurred flat photo comes out smaller than
+            // the scale it is)
+            const gk = opt.grainK ?? 1, w = Math.round(Math.max(0.03, b * gk + (opt.edge ?? 0.02)) * 100) / 100, len = Math.max(0, a * gk - b * gk) / 2, th = (t * Math.PI) / 180;
+            const key = l + ':' + w, ux = len * Math.cos(th), uy = len * Math.sin(th);
+            by[key] = (by[key] ?? '') + `M${pair((x - ux) * k, (y - uy) * k)}l${pair(2 * ux * k, 2 * uy * k)}`;
+          }
+          for (const [key, d] of Object.entries(by)) { const [l, w] = key.split(':'); g += `<path d="${d}" stroke="${live(D.tons[+l])}" stroke-width="${f3(+w * k)}" stroke-linecap="round" fill="none"/>`; }
+          continue;
+        }
         const kd = (opt.dustK?.[`${D.de}/${D.sur}`] ?? 1) * (opt.dust ?? 1);
         const [maj, mnr] = D.grain.map((v) => (v + (opt.edge ?? 0.02)) * k);
         const lv = D.niveaux.map((L) => ({ ...L, dens: (L.densite * kd) / (k * k) })).filter((L) => L.dens > 0);
@@ -156,8 +177,15 @@ export function motif(rec, opt = {}) {
         });
         for (const L of lv) g += `<path d="${smoothAll(L.poly, k)}" fill="url(#${pat[Math.max(1, Math.min(N, Math.round(L.dens * T * T)))]})" fill-rule="evenodd"/>`;
       }
-      if (g) s += `<g clip-path="url(#${clip[z.zone]})">${g}</g>`;
+      if (g) { const gg = `<g clip-path="url(#${clip[z.zone]})">${g}</g>`; if (zb) ds += gg; else s += gg; }
     });
+    // opt.zoneBlur (mm): the zones' edges blended over a few scales, the dust kept sharp over them (the peacock's eyespot rings:
+    // their edges are rows of mixed scales, 0.1 to 0.2 mm wide on c258); the zones drawn first, blurred, then all the dust
+    if (zb) {
+      const fid = sc.id('mzb'), [bx0, by0, bx1, by1] = [Math.min(...xs0), Math.min(...ys0), Math.max(...xs0), Math.max(...ys0)];
+      sc.defs.push(`<filter id="${fid}" filterUnits="userSpaceOnUse" x="${f2(bx0 - 1)}" y="${f2(by0 - 1)}" width="${f2(bx1 - bx0 + 2)}" height="${f2(by1 - by0 + 2)}"><feGaussianBlur stdDeviation="${f3(zb * k)}"/></filter>`);
+      s += `<g filter="url(#${fid})">${zs}</g>${ds}`;
+    }
     // the striae of a dead-leaf underside (rec.stries, aile.py striae): per measured cell, dashes of dark and of light scales
     // laid along the measured direction, as many as cover the measured shares (random throws overlap: -ln(1 - share)), of the
     // measured length and width, in the cell's measured colours; one stroked path per colour (opt.striae weighs them)
@@ -176,13 +204,26 @@ export function motif(rec, opt = {}) {
           let d = by[key]?.d ?? '';
           for (let i = 0; i < n; i++) {
             const t = ((ang + (R() - 0.5) * 16) * Math.PI) / 180, l = Math.max(0, L * (0.4 + 1.2 * R()) - W);
-            const x = x0 + R() * c, y = y0 + R() * c, ux = 0.5 * l * Math.cos(t), uy = 0.5 * l * Math.sin(t);
+            let x = x0 + R() * c, y = y0 + R() * c;
+            // on the rows: the dash's centre moved across onto the nearest row of scales (the measured period, rows counted from
+            // the frame's origin so that they carry on from cell to cell)
+            if (ST.periode) {
+              const a0 = (ang * Math.PI) / 180, nx = -Math.sin(a0), ny = Math.cos(a0), v = x * nx + y * ny, dv = Math.round(v / ST.periode) * ST.periode - v;
+              x += nx * dv; y += ny * dv;
+            }
+            const ux = 0.5 * l * Math.cos(t), uy = 0.5 * l * Math.sin(t);
             d += `M${pair((x - ux) * k, (y - uy) * k)}l${pair(2 * ux * k, 2 * uy * k)}`;
           }
           by[key] = { d, col, w: W };
         }
       }
       for (const v of Object.values(by)) if (v.d) s += `<path d="${v.d}" stroke="${live(shift(v.col, SH))}" stroke-width="${f3(v.w * k)}" stroke-linecap="round" fill="none"/>`;
+      // the golden scales at their places, over the striae
+      const PL = ST.paillettes;
+      if (PL) for (let ci = 0; ci < PL.c.length; ci++) {
+        const d = PL.pts.filter((p) => p[2] === ci).map(([x, y]) => `M${pair(x * k, y * k)}h0`).join('');
+        if (d) s += `<path d="${d}" stroke="${live(PL.c[ci])}" stroke-width="${f3(Math.max(0.04, PL.taille) * k)}" stroke-linecap="round" fill="none"/>`;
+      }
       // the dark lines over the striae (the zigzag postdiscal line): measured contours, one smooth path
       for (const G of ST.lignes || []) s += `<path d="${smoothAll(G.poly, k)}" fill="${live(G.c)}" fill-rule="evenodd"/>`;
     }
@@ -221,7 +262,9 @@ export function motif(rec, opt = {}) {
           const ex = Math.cos(t) * l, ey = Math.sin(t) * l, b = (R() - 0.5) * 0.08 * l;
           if (id === undefined) { dd += seg(x, y, ex, ey, t, b, 0); if (R() < cover + 0.25) dl += seg(x, y, ex, ey, t, b, 0.55); continue; }
           DD[id] = (DD[id] ?? '') + seg(x, y, ex, ey, t, b, 0);
-          if (R() < cover + 0.25) DL[il] = (DL[il] ?? '') + seg(x, y, ex, ey, t, b, 0.55);
+          // opt.hairLight: the share of light-tipped hairs against the cover read on a dried, sunlit specimen (the peacock's base
+          // is darker on the living: c167, c016)
+          if (R() < (cover + 0.25) * (opt.hairLight ?? 1)) DL[il] = (DL[il] ?? '') + seg(x, y, ex, ey, t, b, 0.55);
         }
       }
       // not clipped by their region: the hairs spill past it, so the mass ends in wisps as on the photo

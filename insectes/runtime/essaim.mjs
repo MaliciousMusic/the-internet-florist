@@ -117,6 +117,8 @@ export class Essaim {
       const n = [e1[1] * e2[2] - e1[2] * e2[1], e1[2] * e2[0] - e1[0] * e2[2], e1[0] * e2[1] - e1[1] * e2[0]];
       const up = toS(g.side > 0 ? [-n[0], -n[1], -n[2]] : n);
       const face = up[0] * eye[0] + up[1] * eye[1] + up[2] * eye[2] >= 0 ? 'upper' : 'under';
+      // S.hideFarClosed (moteur/papillon.mjs): closed past 90 deg, a far wing showing its upper side is left out
+      if (b.S?.hideFarClosed && ang.flap >= 90 && face === 'upper' && g.side * (eye[0] * fr.l[0] + eye[1] * fr.l[1] + eye[2] * fr.l[2]) < 0) { g.m.visible = false; continue; }
       if (face !== g.face) { g.m.texture = W.faces[`${g.wn}/${face}`]; g.face = face; }
       const lam = 0.45 + 0.55 * Math.abs(up[0] * L[0] + up[1] * L[1] + up[2] * L[2]);
       const k = Math.round(255 * (1 - 0.55 * (1 - lam)));

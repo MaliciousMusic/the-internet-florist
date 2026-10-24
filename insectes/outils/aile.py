@@ -259,7 +259,7 @@ def zones(img, mm, org, k, r, amin=0.25, tol=0.05, hm=None, vm=None, flou=0.02, 
     # a granular class (the blue of the swallowtail's band) is made of grains even where they are
     # dense: its edge per area is that of grains (over 18 per mm, a grain of 0.2 mm), not of a solid zone. It is never a zone,
     # only dust over the zone around it.
-    gran = []
+    gran = []; forced = set()
     disk = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (int(0.15 * r) | 1, int(0.15 * r) | 1))
     for j in range(k):
         m_ = (fine == j).astype(np.uint8)
@@ -274,7 +274,7 @@ def zones(img, mm, org, k, r, amin=0.25, tol=0.05, hm=None, vm=None, flou=0.02, 
         if poudre and kept < 0.45 and big < 0.3 and (fine == j).sum() < 0.3 * mm.sum(): gran.append(j)
         # cadres key poudre_seule: colours read on the photo as scales scattered over another zone even where they are dense (the
         # peacock's blue and lilac scales over the black and the maroon of its eyespot): never a zone
-        elif poudre and any(np.linalg.norm(np.median(lab_of(img)[fine == j], 0) - f) < 14 for f in forcer): gran.append(j)
+        elif poudre and any(np.linalg.norm(np.median(lab_of(img)[fine == j], 0) - f) < 14 for f in forcer): gran.append(j); forced.add(j)
     for j in range(k):
         if j in gran: macro[fine == j] = -2; continue
         n, cc, st, _ = cv2.connectedComponentsWithStats((fine == j).astype(np.uint8), connectivity=8)
@@ -378,8 +378,29 @@ def zones(img, mm, org, k, r, amin=0.25, tol=0.05, hm=None, vm=None, flou=0.02, 
             # the grains' colour: a little past their median toward their own side (their soft edges mix with the ground)
             v = labf[sel]; Lz = cols[i][0]; q = 60 if np.median(v[:, 0]) > Lz else 40
             core = v[(v[:, 0] >= np.percentile(v[:, 0], q - 20)) & (v[:, 0] <= np.percentile(v[:, 0], q + 20))]
+            # a forced colour (poudre_seule: blue scales over black): its grains mix with the ground at their edges in hue as well;
+            # their colour is that of their more chromatic half
+            if j in forced: Cv = np.hypot(v[:, 1], v[:, 2]); core = v[Cv >= np.percentile(Cv, 50)]
             D.append({'sur': int(i), 'de': int(j), 'c': hexof(np.median(core, 0)), 'grain': [round(maj, 3), round(mnr, 3)], 'angle': round(angm, 1),
                       'espacement': round(float(np.median(nn[nn < np.percentile(nn, 50)])), 3), 'poids': weight, 'niveaux': levels})
+            if j in forced:
+                # a forced colour lies dense on a small area (the peacock's blue over its eyespot's black: about a thousand grains):
+                # a tile there melts into a flat tint; every grain is kept at its place instead, with its tone (one of 3 measured
+                # tones), in numbers. Where they touch, the grains are told apart by their lightness peaks (one scale, one peak,
+                # 0.05 mm apart at least), with the axes and angle of the single grains
+                s0_, q1_, _ = org
+                Ls = cv2.GaussianBlur(labf[..., 0], (0, 0), 0.02 * r)
+                kp = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (int(0.05 * r) | 1,) * 2)
+                pk = (Ls >= cv2.dilate(Ls, kp)) & sel
+                py_, px_ = np.nonzero(pk)
+                lb3 = cv2.GaussianBlur(labf, (0, 0), 0.02 * r)[py_, px_]
+                _, lbt, cent = cv2.kmeans(lb3.astype(np.float32), 3, None, (cv2.TERM_CRITERIA_EPS + cv2.TERM_CRITERIA_MAX_ITER, 40, 0.2), 3, cv2.KMEANS_PP_CENTERS)
+                D[-1]['tons'] = [hexof(c_ + [2, 0, 0]) for c_ in cent]
+                rg_ = np.random.default_rng(int(i * 31 + j))
+                D[-1]['grains'] = [[round(s0_ + (x_ + .5) / r, 2), round(q1_ - (y_ + .5) / r, 2), round(maj, 3), round(mnr, 3), int(round(angm + rg_.normal(0, 12))), int(l_)]
+                                   for x_, y_, l_ in zip(px_, py_, lbt.ravel())]
+                g = py_
+                print('grains en place : %d sur la zone %d, tons %s' % (len(g), i, D[-1]['tons']))
     # keep the groups that carry 96 % of the grains' area (the rest does not show), at most 6
     D.sort(key=lambda x: -x['poids']); keepD = []; acc = 0
     for x in D:
@@ -389,7 +410,7 @@ def zones(img, mm, org, k, r, amin=0.25, tol=0.05, hm=None, vm=None, flou=0.02, 
     return Z, keepD, fine, macro, cols
 
 
-def striae(img, mm, org, r, vm=None, seuil=3.0, cell_mm=0.6, ncol=6, periode=None, vis=None, pc=5.0):
+def striae(img, mm, org, r, vm=None, seuil=3.0, cell_mm=0.6, ncol=6, periode=None, vis=None, pc=5.0, centre=None):
     """the striae of a dead-leaf underside (cadres key stries; the peacock's): rows of scales along which dark and light scales
     run in short dashes. Read per cell of cell_mm, in numbers only, as the hairs are: the striae's direction (structure tensor
     over 0.3 mm), the share of the cell its dark and its light scales cover (the lightness against its median over 0.5 mm, by
@@ -443,6 +464,11 @@ def striae(img, mm, org, r, vm=None, seuil=3.0, cell_mm=0.6, ncol=6, periode=Non
             t2 = 2 * th_img[gy:gy + cell, gx:gx + cell][b]
             a = np.arctan2(np.sin(t2).mean(), np.cos(t2).mean()) / 2
             ang = (-np.degrees(a) + 90) % 180 - 90                      # in the frame (q up)
+            if centre is not None:
+                # the rows of scales cross the veins: arcs around the point the veins radiate from (cadres stries.centre, mm; the
+                # hinge for the peacock's underside, read on c259). On this face the tensor reads the scales' sides, not the rows
+                cs_, cq_ = s0 + (gx + cell / 2) / r, q1 - (gy + cell / 2) / r
+                ang = (np.degrees(np.arctan2(cq_ - centre[1], cs_ - centre[0])) + 90 + 90) % 180 - 90
             d_ = dark[gy:gy + cell, gx:gx + cell][b]; l_ = light[gy:gy + cell, gx:gx + cell][b]
             v = lab[gy:gy + cell, gx:gx + cell][b]
             # a little past their median toward their own side (their edges mix with the ground under the blur), as the dust
@@ -471,7 +497,19 @@ def striae(img, mm, org, r, vm=None, seuil=3.0, cell_mm=0.6, ncol=6, periode=Non
     print('lignes : %d morceaux, %.1f mm de long, %.2f mm²' % (keep.sum(), skl[keep].sum(), lm.sum() / r / r))
     # a dash is one row of scales wide: the walk across, widened by the blur and by neighbouring rows, is bounded by the rows'
     # measured period (scale_rows)
-    if periode: res['largeur'] = [round(min(w_, 0.8 * periode), 3) for w_ in res['largeur']]
+    if periode: res['largeur'] = [round(min(w_, 0.8 * periode), 3) for w_ in res['largeur']]; res['periode'] = round(periode, 4)
+    # the golden scales: a few bright, warm scales scattered over the striae (L* over its median by 15, chroma over 18), kept at
+    # their places, in two measured tones
+    Cc = np.hypot(lab[..., 1], lab[..., 2])
+    gm = (Lb > med + 15) & (Cc > 18) & inner
+    n_, cc2, st2, cen2 = cv2.connectedComponentsWithStats(gm.astype(np.uint8), connectivity=8)
+    ok_ = np.nonzero((st2[1:, cv2.CC_STAT_AREA] >= 2) & (st2[1:, cv2.CC_STAT_AREA] <= 0.06 * r * r))[0] + 1
+    if len(ok_) >= 10:
+        cols_ = np.array([np.median(lab[cc2 == i], 0) for i in ok_], np.float32)
+        _, lbp, cenp = cv2.kmeans(cols_, 2, None, (cv2.TERM_CRITERIA_EPS + cv2.TERM_CRITERIA_MAX_ITER, 40, 0.2), 3, cv2.KMEANS_PP_CENTERS)
+        res['paillettes'] = {'c': [hexof(c_) for c_ in cenp], 'taille': round(float(np.median(2 * np.sqrt(st2[ok_, cv2.CC_STAT_AREA] / np.pi)) / r), 3),
+                             'pts': [[round(s0 + (cen2[i][0] + .5) / r, 2), round(q1 - (cen2[i][1] + .5) / r, 2), int(l_)] for i, l_ in zip(ok_, lbp.ravel())]}
+        print('paillettes : %d, %s, %.3f mm' % (len(ok_), res['paillettes']['c'], res['paillettes']['taille']))
     print('stries : %d cases, sombre %.0f %% clair %.0f %%, tirets %.2f / %.2f mm de long, %.3f / %.3f mm de large'
           % (len(cases), 100 * dark[inner].mean(), 100 * light[inner].mean(), *res['longueur'], *res['largeur']))
     return res
@@ -718,7 +756,7 @@ def cmd_plat(o):
            'longueur': round(max(p[0] for p in ol), 2), 'contour': ol, 'zones': Z, 'poussiere': D,
            'cache': round(float(hid.sum() / mm.sum()), 3), 'rangees': rows, 'frange': fr, 'alignement': align, 'nervures': V,
            'poils': hairs(img, mm, hm, org, o.r, couleurs=bool(c.get('poils_couleurs'))) if hm is not None and hm.any() else None,
-           'stries': striae(img, mm, org, o.r, vm, st_.get('seuil', 3.0), st_.get('cellule', 0.6), st_.get('ncol', 6), rows.get('periode'), vis, st_.get('lignes', 5.0)) if st_ else None}
+           'stries': striae(img, mm, org, o.r, vm, st_.get('seuil', 3.0), st_.get('cellule', 0.6), st_.get('ncol', 6), rows.get('periode'), vis, st_.get('lignes', 5.0), st_.get('centre')) if st_ else None}
     dst = os.path.join(os.path.dirname(os.path.abspath(o.cadres)), o.nom + '.json')
     json.dump(rec, open(dst, 'w', encoding='utf-8', newline='\n'), ensure_ascii=False, separators=(',', ':'))
     # control image: the flat wing | its zones in their colours | contours over the photo
