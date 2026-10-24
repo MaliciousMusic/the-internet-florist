@@ -4,7 +4,9 @@ PY=C:/Users/agent/Desktop/flower/flower-atelier/vases5/.venv-depth/Scripts/pytho
 F=insectes/fourmi-rouge/outils/forme.py
 H=refcache/myrmica-rubra/hd
 C=refcache/myrmica-rubra/cartes
-run() { GATE_MAX=1 sh ws/gate.sh $PY $F photo "$@"; }
+# the fixed gate of ch/insectes-suite (2026-10-24: the older ws/gate.sh let two jobs share a slot)
+GATE=${GATE:-C:/Users/agent/Desktop/flower/flower-atelier/ch/insectes-suite/ws/gate.sh}
+run() { GATE_MAX=1 GATE_RAM=${GATE_RAM:-4.4} sh $GATE $PY $F photo "$@"; }
 run $H/c115.jpg 440,250,1560,1160 "820,660;1025,820;1389,957" "694,683;1521,1070" --out $C/profil-c115 --vue profil
 run $H/c013.jpg 1250,1350,3150,2420 "2816,1536;2304,1685;1557,2048" "3093,1643;1408,2304" --out $C/profil-c013 --vue profil
 run $H/c123.jpg 420,240,1960,1340 "638,1116;979,911;1640,524" "490,1230;1913,490" --out $C/dessus-c123 --vue dessus

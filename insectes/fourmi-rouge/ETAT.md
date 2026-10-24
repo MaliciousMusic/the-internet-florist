@@ -118,7 +118,7 @@ Le juge reste **ko**. Les causes restantes sont dans les résidus 1 à 4.
   (`outils/simule.mjs`) donne :
   - en exploration, 8,7 mm/s (cible 8,5 à 9,6) et 159°/cm (cible 154 à 162) ;
   - en alarme, 21,6 mm/s (cible 18 à 25) et 91°/cm (cible 77 à 115).
-- **Atlas** : voir la section suivante.
+- **Atlas** : S 198 Ko (1,3 Mo sur le GPU), L 434 Ko (5,5 Mo) ; détail dans la section suivante.
 - **Démo** :
   - adresse : `insectes/demo/index.html?n=0&fourmi-rouge=8&taille=3` ;
   - serveur : `insectes-06`, `python -m http.server 8826`, déclaré dans `.claude/launch.json` du dossier (non committé, propre au
@@ -126,7 +126,18 @@ Le juge reste **ko**. Les causes restantes sont dans les résidus 1 à 4.
   - les fourmis marchent sur la table au pied du vase, dans le canvas de devant.
 
 ## Atlas
-_(rempli après la cuisson, voir plus bas)_
+Cuit le 2026-10-24 (`outils/cuisson.mjs fourmi-rouge` puis `outils/atlas.py`, derrière le verrou corrigé de `ch/insectes-suite`,
+`GATE_MAX=1`) : 1300 cellules en 536 s.
+
+| LOD | cellule | azimuts | cellules | feuille | WebP | GPU |
+|---|---|---|---|---|---|---|
+| S | 20 px | 15° | 845 | 600 × 580 | 198 Ko | 1,3 Mo |
+| L | 56 px | 30° | 455 | 1232 × 1176 | 434 Ko | 5,5 Mo |
+
+- **Poses** : `pose`, `marche` (8 dessins) et `palpe` (4 dessins), aux 5 élévations (−15, 10, 35, 60, 90°).
+- **Total** : 632 Ko à télécharger, 6,8 Mo sur le GPU.
+- **Dans git** : les feuilles WebP, `fourmi-rouge.json` et `cells.json`. Les cellules PNG (`atlas/cells/`, 7,2 Mo) restent ignorées,
+  comme pour les autres espèces.
 
 ## Résidus (garés : quatre passages du juge, PROTOCOLE §17.1)
 1. **Réalisme en gros plan : 3/10 au juge.** À 150 à 200 px/mm, des corps maillés et des tubes ombrés, avec une sculpture tracée par
