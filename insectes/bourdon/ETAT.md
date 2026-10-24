@@ -29,6 +29,23 @@ squelette des nervures :
 | teinte du quart le plus sombre (b*) | 10,6 | 16 | 9 |
 | membrane à plat (L*) | 94,6 et 93,4 | 89 | 93,4 et 91,8 |
 
+### Proportions et jaunes des vivants
+Les premières paires montraient un rendu trop petit d'environ 0,9 et trop élancé (hauteur / longueur 0,42 contre 0,56 sur c060).
+- **Échelle.** L'abdomen de c115 est étiré : aile / corps vaut 0,63 sur ce spécimen, contre 0,70 sur les vivants c024 et c126.
+  Le modèle est maintenant tracé 1,11 fois plus grand (`S_LIVE`). L'abdomen est raccourci pour garder 15 mm, et les ailes restent à
+  leur longueur mesurée.
+- **Jaunes** (`vivant.py`, nouveau). Sur c115, le poil sec a passé au brun orangé. Le collier et la bande du 2e tergite sont ramenés
+  au jaune pur des vivants c024 et c126 : teinte 83°, et la luminance de chaque bande rapportée à celle de la queue.
+  - Bande du 2e tergite : L* 68,5 a 7,5 b 61.
+  - Collier : L* 58,6 a 6,4 b 52.
+  - La queue et sa lisière chamois restent comme elles ont été mesurées.
+- **Fourrure.** 1,6 mm sur le thorax et 1,0 mm sur l'abdomen, dressée et hirsute (c060, c126).
+- **Ailes sur le corps.** Elles disparaissaient sur la fourrure noire. Elles portent maintenant :
+  - le reflet chaud du ciel (L* 45 sur le corps noir, c060) ;
+  - une ombre de 0,28 sous chaque aile (c024 : la lumière y traverse la membrane deux fois) ;
+  - au repos, une position repliée qui se croise sur la ligne médiane.
+- **Matières.** Pattes noires mates et velues, tarses roux, yeux noirs, face velue. Clypéus et tégulae plus petits.
+
 ### Modèle (`bourdon.mjs`, `membrane.mjs`)
 - **Tête.** Penchée en avant. Yeux ovales de 2,35 × 0,72 mm, à facettes, avec le reflet d'une fenêtre. Trois ocelles, clypéus
   brillant, labre, mandibules qui se croisent. Antennes coudées (scape et 11 articles). Langue repliée, ou sortie pour butiner.
@@ -56,6 +73,16 @@ après les changements de cette session : 0 pixel différent, SVG identiques.
    squelette du rendu fait 38 mm contre bien plus sur la photo, où les papilles se mêlent à la mesure.
 2. **Zones de la membrane.** Leurs contours, tirés d'un k-means sur la lumière transmise, font des plaques là où la photo montre
    une teinte ambrée le long des nervures de la côte. L'ambre de la côte reste trop pâle.
+3. **Vol vu de profil.** À plusieurs phases du battement, les ailes sont vues par la tranche et ne se voient presque plus
+   (`planches/anim.png`). C'est juste en géométrie, mais la photo de vol c014 garde toujours une aile lisible.
+4. **Corps à plat en vol.** Le corps reste horizontal, alors que les sources le donnent relevé de 46,8° en vol stationnaire.
+
+## En attente (RAM du PC)
+Depuis 06:40, le PC n'a qu'environ 1,4 Go de RAM libre, alors que la porte en demande 4,4 pour les paires, 5,0 pour l'atlas et
+5,5 pour SAM. Ces travaux sont dans la file :
+- les paires rendues à la nouvelle échelle, puis leurs mesures et le juge neuf sur les paires recadrées (`recadre.py`) ;
+- la cuisson de l'atlas et sa pesée ;
+- les cartes de forme SAM (`formes.sh`).
 
 ## Questions au porteur
 
