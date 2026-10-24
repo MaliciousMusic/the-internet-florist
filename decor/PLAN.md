@@ -330,3 +330,4 @@ l'identité de son éditeur dans ses mentions légales.
   - 22 px de place entre les pièces empilées.
   Le détail et les durées mesurées sont dans `insectes/DECISIONS.md`. La fourmi d'Open revient à chaque chargement et part dès
   que le bouquet a poussé. Les papillons du téléphone tiennent le dock par ses bouts et sont 25 % plus petits.
+- 2026-10-25, panneau Legal (porteur) : il s'ouvre et se referme seul, sans fourmis. Les fourmis n'apportent que la pastille.

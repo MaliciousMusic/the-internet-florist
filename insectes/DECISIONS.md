@@ -77,7 +77,8 @@ QCM du 2026-10-24 avec le propriétaire. Sur le site, les fourmis ne butinent pa
 - **Par deux** : chaque pièce est portée par deux fourmis, dans leurs mandibules :
   - la barre d'outils (le dock d'icônes), d'un seul tenant ;
   - dans le gros plan, chaque case de la bulle : « Fades in… », « On your desktop », le bouton Buy avec son prix ;
-  - la pastille Legal du bas. Elles la déplient et la replient en tirant dessus.
+  - la pastille Legal du bas. Elles la déplient et la replient en tirant dessus (remplacé le 2026-10-25 : le panneau
+    s'ouvre seul, voir le deuxième prototype).
 - **Sans fourmis** : la ligne de revente apparaît seule, une fois Buy posé. Les cartes des rayons s'ouvrent seules.
 - **À chaque fois** : une paire fait chaque arrivée et chaque départ de ces pièces. C'est le cas au chargement, à l'entrée
   et à la sortie du gros plan, et à chaque dépli de la pastille.
@@ -126,8 +127,8 @@ Deuxième prototype (`decor/scene/porteuses.mjs`) :
   | départ sur téléphone | 29 s |
 
   Ces durées comptent les piles qui se défont.
-- **Panneau Legal** : de profil, rien ne se trouve au-dessus du panneau pour qu'une fourmi s'y accroche et le tire. Il
-  s'ouvre donc seul, sans fourmis. C'est une question au porteur.
+- **Panneau Legal** (décision du porteur, 2026-10-25) : il s'ouvre et se referme seul, sans fourmis. De profil, rien ne se
+  trouve au-dessus du panneau pour qu'une fourmi s'y accroche et le tire. Les fourmis n'apportent que la pastille.
 
 Propositions, à valider sur le premier prototype :
 - ~~**Pose** : les fourmis marchent de profil sur le bord bas de l'écran comme sur un sol. Elles tiennent la case levée
