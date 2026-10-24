@@ -2,6 +2,7 @@
 // the growth, decor/scene/bouquets), cut into four depth planes; a canvas sits behind, between and in front of them.
 // URL options: ?n=4 bees, ?machaon=2 swallowtails (3 at most), ?cetoine=1 a rose chafer (1 at most), ?sphinx=1 a hummingbird hawk-moth (1 at most),
 // ?paon=2 peacocks (2 at most, 3 butterflies in all), ?sauterelle=2 bush-crickets (3 at most),
+// ?bourdon=2 bumblebees (3 at most),
 // ?taille=1 body size factor (1 = true size against the bouquet),
 // ?debug=1 shows the flowers.
 import { Essaim } from '../runtime/essaim.mjs';
@@ -10,12 +11,14 @@ import { Papillon, MACHAON, PAON } from '../runtime/papillon.mjs';
 import { Cetoine, CETOINE } from '../runtime/cetoine.mjs';
 import { Sphinx, SPHINX } from '../runtime/moro-sphinx.mjs';
 import { Sauterelle, SAUTERELLE } from '../runtime/sauterelle.mjs';
+import { Bourdon, BOURDON } from '../runtime/bourdon.mjs';
 
 const q = new URLSearchParams(location.search);
 const N = +(q.get('n') ?? 4), NM = Math.min(3, +(q.get('machaon') ?? 0)), NC = Math.min(1, +(q.get('cetoine') ?? 0)), SIZE = +(q.get('taille') || 1), DEBUG = q.get('debug') === '1';
 const NSX = Math.min(1, +(q.get('sphinx') ?? 0));
 const NP = Math.min(2, 3 - NM, +(q.get('paon') ?? 0));
 const NS = Math.min(3, +(q.get('sauterelle') ?? 0));
+const NB = Math.min(BOURDON.max, +(q.get('bourdon') ?? 0));
 const BQ = '../../decor/scene/bouquets/printemps-a-la-carpe/';
 const PLANS = 4, ZS = [-90, -30, 30, 90];
 const UNITS_PER_MM = 0.9; // bouquet drawing units per millimetre (a tulip head of about 5 cm is about 45 units)
@@ -52,6 +55,7 @@ if (NM) { await essaim.kind('machaon', '../machaon/atlas/machaon', MACHAON.bodyM
 if (NC) { await essaim.kind('cetoine', '../cetoine/atlas/cetoine', CETOINE.bodyMm); await essaim.wings('cetoine', '../cetoine/atlas/cetoine-ailes'); }
 if (NP) { await essaim.kind('paon-du-jour', '../paon-du-jour/atlas/paon-du-jour', PAON.bodyMm); await essaim.wings('paon-du-jour', '../paon-du-jour/atlas/paon-du-jour-ailes'); }
 if (NS) { await essaim.kind('sauterelle', '../sauterelle/atlas/sauterelle', SAUTERELLE.bodyMm); await essaim.wings('sauterelle', '../sauterelle/atlas/sauterelle-ailes'); }
+if (NB) await essaim.kind('bourdon', '../bourdon/atlas/bourdon', BOURDON.bodyMm);
 
 let S = 1, left = 0, top = 0;
 const flowers = [];
@@ -102,6 +106,11 @@ for (let i = 0; i < NSX; i++) {
 for (let i = 0; i < NS; i++) {
   const b = new Sauterelle(essaim, flowers, rnd, { lengthPx: SAUTERELLE.bodyMm * UNITS_PER_MM * S * SIZE });
   b.bodyMm = SAUTERELLE.bodyMm; essaim.add(b); bees.push(b);
+}
+
+for (let i = 0; i < NB; i++) {
+  const b = new Bourdon(essaim, flowers, rnd, { lengthPx: BOURDON.bodyMm * UNITS_PER_MM * S * SIZE });
+  b.bodyMm = BOURDON.bodyMm; essaim.add(b); bees.push(b);
 }
 
 addEventListener('pointerdown', (ev) => { const b = essaim.hit(ev.clientX, ev.clientY); if (b) b.poke(ev.clientX, ev.clientY); });
