@@ -30,6 +30,26 @@ export const MACHAON = {
   visit: [6, 16], speed: 230,
 };
 
+// The peacock (Aglais io, paon-du-jour/COMPORTEMENT.md): smaller wings beating faster, a dark leaf when closed, and its
+// startle display: touched or nearly so while settled, it snaps its wings open in 0.2 s, showing the four eyespots, then flicks
+// them shut and open again about once every 2.7 s (11 flicks in 30 s), the wings held open between flicks with a slight pulsing
+// (Olofsson et al. 2013, Behav. Ecol. 24: 305; Vallin et al. 2005, Proc. R. Soc. B 272: 1203). On fruit or flowers it keeps
+// its wings mostly closed (Wiklund 2005, Entomol. Fenn. 16: 17); in the sun it spreads them flat.
+export const PAON = {
+  kind: 'paon-du-jour', bodyMm: 17,
+  beatHz: 8, glide: [0.2, 0.5], bout: [0.6, 1.6],
+  flapUp: 70, flapDown: -30, glideFlap: 10,
+  feed: { hz: 0.45, lo: 40, hi: 94, sweepFore: 16, sweepHind: 2 },
+  bask: { flap: 2, sweepFore: 6, sweepHind: 0 },
+  // closed past 90 deg: the hinges sit 2.3 mm either side of the axis, so at 90 the wings are two parallel planes and the far
+  // one's coloured upper side shows above and behind the near one; at 94 they converge and meet near the tips (2.3 / cos 86 = 33 mm)
+  rest: { flap: 94, sweepFore: 40, sweepHind: 4 },
+  visit: [5, 20], speed: 220,
+  hideFarClosed: true, // closed past 90 deg only the undersides show (essaim.mjs)
+  // the startle display: open in 0.2 s, flicks every 2.7 s for 2 to 4 flicks, then a third fly off, the rest settle again
+  startle: { open: 0.2, flap: 4, every: 2.7, flicks: [2, 4], shut: 0.12, flickFlap: 72, pulse: { hz: 1.6, sweep: 5 }, flee: 0.35 },
+};
+
 export class Papillon {
   constructor(essaim, flowers, rnd, opts = {}) {
     this.S = opts.species ?? MACHAON;
@@ -86,7 +106,15 @@ export class Papillon {
   }
 
   poke(x) {
-    if (['feed', 'bask', 'rest', 'land'].includes(this.state)) {
+    // a species with a startle display (S.startle) answers a touch while settled by showing its eyespots, not by fleeing
+    if (this.S.startle && ['feed', 'bask', 'rest'].includes(this.state)) {
+      const St = this.S.startle;
+      this.state = 'startle'; this.pose = 'pose'; this.st = 0;
+      this.flicks = St.flicks[0] + Math.floor(this.rnd() * (St.flicks[1] - St.flicks[0] + 1));
+      this.t = (this.flicks + 0.5) * St.every;
+      return;
+    }
+    if (['feed', 'bask', 'rest', 'land', 'startle'].includes(this.state)) {
       this.layerHint = null; this.pose = 'vol';
       this.V = mul(norm([this.P[0] - x, -80, 30 * (this.rnd() - 0.5)]), 380 * this.speed);
       this.leave(true);
@@ -219,6 +247,20 @@ export class Papillon {
         this.state = 'takeoff'; this.t = 0.45; this.pose = 'vol'; this.layerHint = null; this.visits++;
         this.V = [(this.rnd() - 0.5) * 120, -170, (this.rnd() - 0.5) * 120];
         this.gliding = 0; this.boutLeft = 1.2;
+      }
+    } else if (this.state === 'startle') {
+      // the eyespots shown: the wings snap open, then at each flick shut a little and open again, pulsing in between
+      const St = S.startle;
+      this.st += dt; this.t -= dt;
+      this.fwd = norm(mix(this.fwd, this.restFwd, clamp(dt * 2, 0, 1)));
+      const ph = this.st % St.every, inFlick = this.st > St.every * 0.5 && ph < St.shut + St.open;
+      const want = inFlick && ph < St.shut ? St.flickFlap : St.flap;
+      // a 0.2 s opening: an easing rate that covers 95 % of the way in that time
+      this.ease({ flap: want, sweepFore: St.pulse.sweep * Math.sin(2 * Math.PI * St.pulse.hz * this.st), sweepHind: 0 }, dt, 3 / St.open);
+      this.setWings(this.att.flap, this.att.flap - 2);
+      if (this.t <= 0) {
+        if (this.rnd() < St.flee) { this.pose = 'vol'; this.V = [(this.rnd() - 0.5) * 200, -260, (this.rnd() - 0.5) * 120]; this.leave(true); }
+        else { this.state = 'rest'; this.pose = 'pose'; this.t = 2 + this.rnd() * 6; this.mood = 1.5 + this.rnd() * 2; }
       }
     } else if (this.state === 'takeoff') {
       this.P = add(this.P, mul(this.V, dt));

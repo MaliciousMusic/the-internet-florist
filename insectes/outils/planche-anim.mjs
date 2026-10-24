@@ -4,11 +4,12 @@
 import { Resvg } from '@resvg/resvg-js';
 import { writeFileSync } from 'node:fs';
 import { espece } from './espece.mjs';
-import { MACHAON } from '../runtime/papillon.mjs';
+import * as RT from '../runtime/papillon.mjs';
 
 const [id, out, azS, elS, kS] = process.argv.slice(2);
 const { whole, META } = await espece(id);
-const S = MACHAON, az = +(azS ?? 120), el = +(elS ?? 25), k = +(kS ?? 7);
+// the species' behaviour constants (META.behaviour, the swallowtail's by default)
+const S = RT[META.behaviour ?? 'MACHAON'], az = +(azS ?? 120), el = +(elS ?? 25), k = +(kS ?? 7);
 const cell = Math.ceil(META.wingspan * 1.25 * k);
 const lerp = (a, b, t) => a + (b - a) * t;
 const frames = [];
@@ -21,6 +22,12 @@ frames.push({ label: 'butine (haut)', pose: 'butine', flap: S.feed.hi, sweep: S.
 frames.push({ label: 'butine (bas)', pose: 'butine', flap: S.feed.lo, sweep: S.feed.sweepFore });
 frames.push({ label: 'au soleil', pose: 'pose', flap: S.bask.flap, sweep: S.bask.sweepFore });
 frames.push({ label: 'repos', pose: 'pose', flap: S.rest.flap });
+// a startle display (S.startle): the snap open and a flick
+if (S.startle) {
+  frames.push({ label: 'clic : ailes ouvertes (0,2 s)', pose: 'pose', flap: S.startle.flap, sweep: 0 });
+  frames.push({ label: 'clic : battement', pose: 'pose', flap: S.startle.flickFlap, sweep: 0 });
+  frames.push({ label: 'clic : pulsation', pose: 'pose', flap: S.startle.flap, sweep: S.startle.pulse.sweep });
+}
 const cols = 4, rows = Math.ceil(frames.length / cols);
 let body = '';
 frames.forEach((f, i) => {

@@ -3,7 +3,7 @@
 // any flap angle (DECISIONS: flat wings as textured planes). The same drawings serve the sheets through drawWing.
 import { add, sub, mul, norm, cross, rot, rad } from './geo.mjs';
 import { camera } from './geo.mjs';
-import { Scene, drawBody, drawTube, drawWing } from './insecte.mjs';
+import { Scene, drawBody, drawTube, drawWing, wingFace } from './insecte.mjs';
 import { X, Y, Z, frame0, env, legChain, sphere, pitched } from './kit.mjs';
 
 // Wing axes of a butterfly wing for a flap angle (0: spread flat, +90: closed above the back) and a sweep (positive:
@@ -83,10 +83,13 @@ export function butterfly(S, az, el, opts = {}) {
     for (const s of [1, -1]) {
       const f = flapAxes(s, fl, sw + S.sweep.fore + sp.fore, 0), h = flapAxes(s, fl - 3, sw + S.sweep.hind + sp.hind, 0);
       const lr = s > 0 ? 'g' : 'd';
+      // S.hideFarClosed: closed past 90 deg the wings press together, so a far wing showing its upper side to the viewer is only
+      // the gap between the hinges; it is left out (only undersides show on a closed butterfly)
+      const hid = (ax, a) => S.hideFarClosed && a >= 90 && s * cam.c[1] < 0 && wingFace(norm(cross(ax.e1, ax.e2)), cam, s);
       sc.part = `aile-arriere-${lr}`;
-      drawWing(sc, S.hind, [S.hingeHind[0], S.hingeHind[1] * s, S.hingeHind[2]], h.e1, h.e2, { side: s, bias: -0.02 });
+      if (!hid(h, fl - 3)) drawWing(sc, S.hind, [S.hingeHind[0], S.hingeHind[1] * s, S.hingeHind[2]], h.e1, h.e2, { side: s, bias: -0.02 });
       sc.part = `aile-avant-${lr}`;
-      drawWing(sc, S.fore, [S.hingeFore[0], S.hingeFore[1] * s, S.hingeFore[2]], f.e1, f.e2, { side: s, bias: 0.02 });
+      if (!hid(f, fl)) drawWing(sc, S.fore, [S.hingeFore[0], S.hingeFore[1] * s, S.hingeFore[2]], f.e1, f.e2, { side: s, bias: 0.02 });
       sc.part = '';
     }
   }
