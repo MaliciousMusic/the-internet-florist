@@ -160,7 +160,7 @@ export class Scene {
     // measurement aid: INS_DBG=nolight renders without cast shadows and occlusion
     if (globalThis.process?.env?.INS_DBG === 'nolight') return { sh: 1, occ: 1 };
     const L = this.cam.L, p0 = add(p, mul(n, 0.03));
-    let sh = 1, ao = 0;
+    let sh = 1, ao = 0, wo = 1;
     for (const s of this.occ) {
       if (s.id === self) continue;
       const v = sub(s.c, p0), d2 = dot(v, v), tp = dot(v, L);
@@ -180,8 +180,10 @@ export class Scene {
       const u = (dot(q, w.e1) - w.cx) / w.rx, v = (dot(q, w.e2) - w.cy) / w.ry;
       const r = Math.hypot(u, v);
       if (r < 1.1) sh *= 1 - w.shadow * (1 - smooth(0.85, 1.1, r));
+      // w.occ (optional): a wing folded close over the body also hides the sky from what lies under it
+      if (w.occ && r < 1.1) wo *= 1 - w.occ * (1 - smooth(0.85, 1.1, r));
     }
-    return { sh, occ: 1 - clamp(ao * 0.55, 0, 0.72) };
+    return { sh, occ: (1 - clamp(ao * 0.55, 0, 0.72)) * wo };
   }
 }
 

@@ -149,9 +149,10 @@ export function drawMembrane(sc, W, o, e1, e2, opt = {}) {
   const { cam, k } = sc;
   const [x0, y0, x1, y1] = W.box;
   const alpha = opt.alpha ?? 1;
-  // what lies under the wing gets the light through it twice: T about 0.85 flat, so 0.72 (on c024 the stacked wings over the
-  // midline take the band of the 2nd tergite from L* 37 to 22)
-  sc.wings.push({ o, e1, e2, n: norm(cross(e1, e2)), cx: (x0 + x1) / 2, cy: (y0 + y1) / 2, rx: (x1 - x0) / 2 * 0.95, ry: (y1 - y0) / 2 * 0.9, shadow: 0.28 * alpha });
+  // what lies under the wing is in its shade, the sky hidden too: on c024 the folded wings pass about 0.09 of the black, yellow
+  // and white under them (linear, fit over the three) and add their own sheen (L* 27, warm); over a far ground they stay clear
+  // (c060: the ground under the wing tip only warmed, as the flat c115 gives). Two stacked wings at 0.62 each pass about 0.14.
+  sc.wings.push({ o, e1, e2, n: norm(cross(e1, e2)), cx: (x0 + x1) / 2, cy: (y0 + y1) / 2, rx: (x1 - x0) / 2 * 0.95, ry: (y1 - y0) / 2 * 0.9, shadow: 0.62 * alpha, occ: 0.62 * alpha });
   const a = k * dot(e1, cam.r), b = -k * dot(e1, cam.u), c = k * dot(e2, cam.r), d = -k * dot(e2, cam.u);
   const det = Math.abs(a * d - b * c) / (k * k);
   const q = sc.S(o);

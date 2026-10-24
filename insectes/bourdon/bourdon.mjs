@@ -17,9 +17,10 @@ const grid = (n) => JSON.parse(readFileSync(new URL(`./grilles/${n}.json`, impor
 // (vivant.py: pure yellow, not the faded orange of the dry specimen)
 const G_THX = grid('thorax-vivant'), G_ABD = grid('abdomen-vivant');
 
-// Colours measured (sample on c115 under its neutral plate, c120 for the underside; FICHE.md)
+// Colours measured (sample on c115 under its neutral plate, c120 for the underside; FICHE.md); the blacks of the hair and legs
+// brought to the living (c024, c060: L* 4 to 12 in the photos, the render's floor of sheen and sky lifting them; vivant.py)
 const C = {
-  black: '#2a2a2e', blackLo: '#1c1b1d', cuticle: '#151314', belly: '#1e1b1a',
+  black: '#171513', blackLo: '#0f0e0d', cuticle: '#151314', belly: '#1e1b1a',
   eye: '#1a1613', clypeus: '#141112', mandible: '#2a1810', mandibleTip: '#5a2c14',
   leg: '#171413', tibia: '#100d0c', basitarsus: '#2a1a14', tarsus: '#5a3524', tarsusHair: '#a0703f',
   antenna: '#151110', tongue: '#7a4a24', galea: '#3a2416',
@@ -37,17 +38,19 @@ const FORE = membrane('avant', { seed: 11, scale: 1 / S_LIVE }), HIND = membrane
 // The abdomen of c115 is stretched (wing / body 0.63 against 0.69 to 0.70 on the living c024 and c126), so bringing its body
 // to 15 mm shrank all the rest by 0.9: the living are 0.55 as deep as long in profile (c060, c126), the model was 0.42. The
 // model is drawn S_LIVE = 0.70 / 0.63 larger (lengths below are c115's), the abdomen shortened so that the body stays 15 mm.
+// Depths: the first pairs left the body 0.46 as deep as long in profile against 0.56 to 0.6 on c060 and c126 (the spread c115 gives
+// only widths): the thorax a high dome as deep as the abdomen, the abdomen about round in section; the widths are unchanged.
 const B = {
-  thorax: [2.35, -3.0], thoraxR: [2.45, 2.35], thoraxZ: 0.45,
-  abdomen: [-2.7, -8.6], abdomenR: [2.95, 2.6], abdomenZ: -0.35,
+  thorax: [2.35, -3.0], thoraxR: [2.45, 2.75], thoraxZ: 0.55,
+  abdomen: [-2.7, -8.6], abdomenR: [2.95, 3.1], abdomenZ: -0.45,
   head: [3.15, 0, 0.75],                     // the vertex, from which the head's axis runs down to the mouth
   headAx: norm([0.36, 0, -1]), headLen: 3.35, headR: 1.75,
   eyeLen: 2.35, eyeW: 0.72, eyeBulge: 0.42,
-  hingeFore: [0, 2.2, 2.35], hingeHind: [-0.85, 2.1, 2.1],
+  hingeFore: [0, 2.2, 2.85], hingeHind: [-0.85, 2.1, 2.6],  // raised with the thorax's dome
 };
 
 // satin black eyes with the window of the sky mirrored on their curve (c082, c120); the cuticle of the clypeus glossier (c084)
-const EYEMAT = { ks: 0.4, p: 45, ks2: 0.06, p2: 6, env: 0.22, wrap: 0.15, amb: 0.2, mottle: 0.08, specColor: '#f2efe8' };
+const EYEMAT = { ks: 0.55, p: 60, ks2: 0.06, p2: 6, env: 0.22, wrap: 0.15, amb: 0.2, mottle: 0.08, specColor: '#f2efe8' };
 const GLOSS = { ks: 0.55, p: 90, ks2: 0.12, p2: 8, env: 0.5, wrap: 0.2, mottle: 0.05, specColor: '#f4f0ea' };
 const LEGMAT = { ks: 0.2, p: 30, ks2: 0.05, p2: 5, env: 0.1, mottle: 0.05, specColor: '#c8c0b6' };
 
@@ -64,7 +67,7 @@ const onHead = (t, th, r = 1) => {          // a point on the head's surface (t 
 };
 function headProfile(t) {
   // widest at the eyes' middle (t 0.4), the clypeus narrower, the vertex rounded
-  const w = t < 0.4 ? 0.72 + 0.28 * Math.sin((Math.PI / 2) * (t / 0.4)) : 1 - 0.42 * Math.pow((t - 0.4) / 0.6, 1.6);
+  const w = t < 0.4 ? 0.72 + 0.28 * Math.sin((Math.PI / 2) * (t / 0.4)) : 1 - 0.55 * Math.pow((t - 0.4) / 0.6, 1.3);
   const cap = Math.sqrt(Math.max(0, 1 - Math.pow(Math.max(0, 0.08 - t) / 0.08, 2)));
   const end = Math.sqrt(Math.max(0, 1 - Math.pow(Math.max(0, t - 0.94) / 0.06, 2)));
   return { x: B.headLen * t, zc: 0.1 * Math.sin(Math.PI * t), ry: B.headR * w * cap * end, rz: 1.02 * (1 - 0.25 * t) * cap * end };
@@ -94,31 +97,33 @@ function windowPaint(sc, b, g) {
 function head(sc, pose) {
   sc.part = 'tete';
   drawBody(sc, {
-    name: 'head', frame: HF, color: C.cuticle, seed: 11, mat: { ks: 0.25, p: 40, ks2: 0.06, env: 0.2, mottle: 0.05 },
+    name: 'head', frame: HF, color: C.cuticle, seed: 11, mat: { ks: 0.5, p: 70, ks2: 0.1, p2: 8, env: 0.35, mottle: 0.05 },
     profile: headProfile, shape: headShape,
-    // long black hair over the vertex and the back of the head, short on the frons; none on the eyes and the clypeus (c084, c082)
+    // long black hair over the vertex and the back of the head; the frons bare and shining between the eyes, brown hair again
+    // over the lower face and round the mouth; none on the eyes (c084, c082)
     hair: { n: 2600, len: 0.75, w: 0.022, lean: 0.55, a: 0.85, droop: 0.6, twist: 0.9, wave: 0.15, curl: 0.2, fleece: 0.3, pile: 0.5,
-      color: (t, th, R) => pick(R, [C.black, C.black, C.blackLo, '#3c3a3e']),
-      density: (t, th) => { const c = Math.cos(th), s = Math.sin(th); if (Math.abs(c) > 0.62 && t > 0.12 && t < 0.86) return 0; if (s > 0.45 && t > 0.6) return 0.45; return t > 0.55 ? 0.6 : 1; },
+      color: (t, th, R) => (Math.sin(th) > 0.3 && t > 0.62 ? pick(R, ['#5a3a22', '#3a2618', '#6e4a2a']) : pick(R, [C.black, C.black, C.blackLo, '#2c2724'])),
+      density: (t, th) => { const c = Math.cos(th), s = Math.sin(th); if (Math.abs(c) > 0.62 && t > 0.12 && t < 0.86) return 0; if (s > 0.3 && t > 0.16 && t < 0.62) return 0.05; if (s > 0.3 && t >= 0.62) return 0.55; return t > 0.55 ? 0.6 : 1; },
       lenAt: (t, th) => (t < 0.25 ? 1.2 : Math.sin(th) > 0.3 ? 0.55 : 0.9) },
   });
   // the clypeus: a broad, smooth, shining plate on the lower face, the labrum under it (c084)
   const cl = onHead(0.8, Math.PI / 2, 0.97);
   drawBody(sc, {
     name: 'clypeus', frame: { o: cl, ax: B.headAx, ay: [0, 1, 0], az: HF.az }, color: C.clypeus, seed: 13, mat: { ...GLOSS, ks: 0.18, p: 50, env: 0.12, mottle: 0.12 }, bias: 0.05,
-    profile: (t) => { const e = Math.sqrt(Math.max(0, 1 - (2 * t - 1) ** 2)); return { x: -0.55 + 1.1 * t, zc: 0, ry: 0.72 * e * (1 - 0.25 * t), rz: 0.12 * e }; },
+    profile: (t) => { const e = Math.sqrt(Math.max(0, 1 - (2 * t - 1) ** 2)); return { x: -0.55 + 1.1 * t, zc: 0, ry: 0.58 * e * (1 - 0.25 * t), rz: 0.07 * e }; },
+    hair: { n: 160, len: 0.32, w: 0.016, lean: 0.55, a: 0.85, droop: 0.5, pile: 0, fleece: 0.2, color: (t, th, R) => pick(R, ['#6e4a2a', '#4a2e1a', '#8a5a34']) },
   });
   const lb = onHead(0.985, Math.PI / 2, 0.75);
   drawBody(sc, {
     name: 'labrum', frame: { o: lb, ax: B.headAx, ay: [0, 1, 0], az: HF.az }, color: '#1c1412', seed: 14, mat: GLOSS, bias: 0.06,
     profile: (t) => { const e = Math.sqrt(Math.max(0, 1 - (2 * t - 1) ** 2)); return { x: -0.15 + 0.3 * t, zc: 0, ry: 0.55 * e, rz: 0.16 * e }; },
-    hair: { n: 60, len: 0.22, w: 0.016, lean: 0.3, a: 0.8, pile: 0, fleece: 0, color: () => '#8a5a34' },
+    hair: { n: 140, len: 0.3, w: 0.016, lean: 0.3, a: 0.85, pile: 0, fleece: 0, color: (t, th, R) => pick(R, ['#8a5a34', '#a06a3a', '#6e4a2a']) },
   });
   // the ocelli: three small glassy lenses in a triangle on the vertex (c084, c082)
-  for (const [t, th] of [[0.1, Math.PI / 2], [0.06, Math.PI / 2 + 0.55], [0.06, Math.PI / 2 - 0.55]]) {
+  for (const [t, th] of [[0.14, Math.PI / 2], [0.09, Math.PI / 2 + 0.42], [0.09, Math.PI / 2 - 0.42]]) {
     const p = onHead(t, th, 1.0);
     drawBody(sc, { name: 'ocellus', frame: frame0(p), color: '#0e0b09', seed: 15, mat: { ks: 0.8, p: 200, ks2: 0.1, env: 0.6, mottle: 0 }, bias: 0.08,
-      profile: (u) => { const e = Math.sqrt(Math.max(0, 1 - (2 * u - 1) ** 2)); return { x: 0.11 * (2 * u - 1), zc: 0, ry: 0.11 * e, rz: 0.11 * e }; } });
+      profile: (u) => { const e = Math.sqrt(Math.max(0, 1 - (2 * u - 1) ** 2)); return { x: 0.075 * (2 * u - 1), zc: 0, ry: 0.075 * e, rz: 0.075 * e }; } });
   }
   for (const s of [1, -1]) {
     // compound eyes: long ovals on the sides of the head, from near the vertex to near the mandibles (c084: 2.35 x 0.72 mm)
@@ -129,20 +134,21 @@ function head(sc, pose) {
     drawBody(sc, {
       name: 'eye', frame: { o: ec, ax: B.headAx, ay: ey, az: out }, color: C.eye, seed: 21 + s, mat: EYEMAT, bias: 0.05,
       profile: (t) => { const e = Math.pow(Math.sqrt(Math.max(0, 1 - (2 * t - 1) ** 2)), 0.9); return { x: B.eyeLen * (t - 0.5), zc: 0, ry: B.eyeW / 2 * e * (1 - 0.15 * t), rz: B.eyeBulge * e }; },
-      facets: 0.025, paint: windowPaint, window: 0.22, rim: { color: '#7a7268', w: 0.04, a: 0.3 },
+      facets: 0.025, paint: windowPaint, window: 0.35, rim: { color: '#7a7268', w: 0.04, a: 0.3 },
     });
     // mandibles: dark, toothed at their reddish tips, crossing under the labrum (c082)
     sc.part = s > 0 ? 'mandibule-g' : 'mandibule-d';
     const m0 = onHead(0.93, Math.PI / 2 - 0.95 * s, 0.95);
     const m1 = add(m0, add(mul(B.headAx, 0.45), [0.12, -0.42 * s, 0])), m2 = add(m1, [0.05, -0.32 * s, -0.08]);
     drawTube(sc, [m0, m1, m2], [0.14, 0.11, 0.05], { color: C.mandible, gloss: 0.4, glossColor: '#c08a60', bias: 0.07 });
-    // antennae: elbowed, the scape up and forward from the middle of the face, the flagellum of ten articles curving out (c082, c120)
+    // antennae: elbowed, from the middle of the face, the scape forward and out, the flagellum of ten articles bending down and
+    // out over the eyes (c084, c082, c120)
     sc.part = s > 0 ? 'antenne-g' : 'antenne-d';
-    const a0 = onHead(0.42, Math.PI / 2 - 0.42 * s, 0.98);
+    const a0 = onHead(0.5, Math.PI / 2 - 0.26 * s, 0.98);
     const fly = pose === 'vol';
-    const scape = add(a0, mul(norm(fly ? [0.7, 0.25 * s, 0.75] : [0.45, 0.28 * s, 0.85]), 1.45));
+    const scape = add(a0, mul(norm(fly ? [0.75, 0.3 * s, 0.6] : [0.7, 0.4 * s, 0.55]), 1.45));
     const pts = [a0, add(a0, mul(sub(scape, a0), 0.5)), scape];
-    let d = norm(fly ? [0.9, 0.38 * s, 0.1] : [0.75, 0.45 * s, 0.35]), p = scape;
+    let d = norm(fly ? [0.9, 0.38 * s, 0.1] : [0.6, 0.6 * s, 0.05]), p = scape;
     for (let i = 0; i < 11; i++) { p = add(p, mul(d, i === 0 ? 0.22 : 0.3)); pts.push(p); d = norm(add(d, [-0.02, 0.012 * s, -0.075])); }
     drawTube(sc, pts, pts.map((_, i) => (i < 3 ? 0.09 : i === 3 ? 0.075 : 0.085)), { color: C.antenna, gloss: 0.35, glossColor: '#8a7a6e', seed: 50 + s, bias: 0.04 });
   }
@@ -167,7 +173,7 @@ function thorax(sc) {
     name: 'thorax', frame: frame0([x1, 0, B.thoraxZ]), color: C.cuticle, belly: C.belly, seed: 21, grid: G_THX,
     mat: { ks: 0.05, p: 16, env: 0.03, wrap: 0.35, mottle: 0.06 },
     profile: (t) => { const e = Math.pow(env(t, 0.45, 0.5) / 0.61, 0.62); return { x: L * t, zc: 0.15 * Math.sin(Math.PI * t), ry: ry * e, rz: rz * e }; },
-    shape: (th) => [1, Math.sin(th) < 0 ? 0.86 : 1],
+    shape: (th) => [1, Math.sin(th) < 0 ? 0.95 : 1],
     // the long dense pile in the colours of its grid: the collar over the front and down the sides, the black scutum (c115, c046);
     // standing out from the body and shaggy, 1.5 to 2 mm on the living (c060, c126): the body in profile about 0.55 as deep as long
     hair: { n: 9000, len: 1.6, w: 0.022, lean: 0.45, a: 0.9, droop: 0.6, twist: 0.9, wave: 0.35, curl: 0.45, fleece: 0.4, pile: 0.8, pileLen: 0.45,
@@ -178,7 +184,7 @@ function thorax(sc) {
   for (const s of [1, -1]) {
     sc.part = s > 0 ? 'tegula-g' : 'tegula-d';
     drawBody(sc, {
-      name: 'tegula', frame: pitched([0.15, 2.15 * s, 2.05], -10), color: '#1d1512', seed: 23 + s, mat: { ...GLOSS, ks: 0.3, env: 0.2 },
+      name: 'tegula', frame: pitched([0.15, 2.15 * s, 2.55], -10), color: '#1d1512', seed: 23 + s, mat: { ...GLOSS, ks: 0.3, env: 0.2 },
       profile: (t) => { const e = Math.sqrt(Math.max(0, 1 - (2 * t - 1) ** 2)); return { x: -0.3 + 0.6 * t, zc: 0, ry: 0.26 * e, rz: 0.12 * e }; },
     });
   }
@@ -196,12 +202,13 @@ function abdomen(sc, pose) {
       const e = Math.max(0.1, a * b);
       return { x: L * t, zc: -0.3 * (1 - t) ** 2, ry: ry * e, rz: rz * e };
     },
-    shape: (th) => [1, Math.sin(th) < 0 ? 0.82 : 1],
+    shape: (th) => [1, Math.sin(th) < 0 ? 0.92 : 1],
     hair: { n: 9000, len: 1.0, w: 0.022, lean: 0.6, a: 0.9, droop: 0.55, twist: 0.8, wave: 0.3, curl: 0.4, fleece: 0.35, pile: 0.75, pileLen: 0.45,
       locks: 0.45, sheen: 0.015, sheenP: 50, color: 'grid', gridK: 0.78,
       // longer at the tail and the sides of the tail, sparse on the shining sternites (c120)
       lenAt: (t, th) => (t < 0.35 ? 1.35 : 1) * (Math.sin(th) < -0.5 ? 0.6 : 1),
-      density: (t, th) => (Math.sin(th) < -0.65 ? 0.25 : 1) },
+      // the sternites bare in the middle (c120: shining black plates, the pale hair only along the sides)
+      density: (t, th) => (Math.sin(th) < -0.8 ? 0.04 : Math.sin(th) < -0.6 ? 0.3 : 1) },
   });
 }
 
@@ -212,23 +219,25 @@ const LEGS = {
   mid: { coxa: [0.05, 0.95, -1.85], fem: 2.65, tib: 2.75, tar: 2.95 },
   hind: { coxa: [-1.55, 1.05, -1.75], fem: 3.3, tib: 3.8, tar: 3.6 },
 };
-const blackHair = (t, th, R) => (R() < 0.7 ? C.black : '#3a3638');
+const blackHair = (t, th, R) => (R() < 0.7 ? C.black : '#2c2724');
+// the long hairs of the femora and tibiae stand out from the article, longer than its width (c060, c126), not laid along it
+const shaggy = (n, len, edge, w) => ({ ...fringe(n, len, blackHair, edge, w), lean: 0.4, wave: 0.3 });
 const ARTICLES = {
   front: { coxa: { from: [0.05, -0.3, 0.4], r: [0.3, 0.32, 0.25], c: C.leg, hair: fringe(70, 0.6, blackHair, 0) },
-    fem: { r: [0.2, 0.26, 0.17], c: C.leg, hair: fringe(260, 0.85, blackHair, 0, 0.02) }, tib: { r: [0.13, 0.17, 0.19], c: C.leg, hair: fringe(150, 0.55, blackHair, 0.3) },
+    fem: { r: [0.2, 0.26, 0.17], c: C.leg, hair: shaggy(380, 0.95, 0, 0.02) }, tib: { r: [0.13, 0.17, 0.19], c: C.leg, hair: shaggy(220, 0.65, 0.3) },
     bas: { r: [0.13, 0.12, 0.09], c: C.tarsus, flat: 0.6, hair: fringe(50, 0.18, C.tarsusHair, 0.2) }, tar: { r: 0.075, c: C.tarsus, hair: fringe(6, 0.14, C.tarsusHair, 0) }, claw: 0.12 },
   mid: { coxa: { from: [0.05, -0.3, 0.4], r: [0.3, 0.32, 0.25], c: C.leg, hair: fringe(70, 0.6, blackHair, 0) },
-    fem: { r: [0.21, 0.28, 0.18], c: C.leg, hair: fringe(300, 0.95, blackHair, 0, 0.02) }, tib: { r: [0.13, 0.19, 0.22], c: C.leg, hair: fringe(190, 0.7, blackHair, 0.3) },
+    fem: { r: [0.21, 0.28, 0.18], c: C.leg, hair: shaggy(440, 1.05, 0, 0.02) }, tib: { r: [0.13, 0.19, 0.22], c: C.leg, hair: shaggy(280, 0.8, 0.3) },
     bas: { r: [0.15, 0.14, 0.1], c: C.tarsus, flat: 0.55, hair: fringe(60, 0.2, C.tarsusHair, 0.2) }, tar: { r: 0.08, c: C.tarsus, hair: fringe(6, 0.14, C.tarsusHair, 0) }, claw: 0.12 },
   hind: { coxa: { from: [0.05, -0.3, 0.4], r: [0.32, 0.34, 0.26], c: C.leg, hair: fringe(70, 0.6, blackHair, 0) },
-    fem: { r: [0.22, 0.3, 0.2], c: C.leg, hair: fringe(320, 1.0, blackHair, 0, 0.02) },
+    fem: { r: [0.22, 0.3, 0.2], c: C.leg, hair: shaggy(460, 1.1, 0, 0.02) },
     // the corbicula: smooth and glossy on its face, the long hairs only along its two edges (fringe edge 0.82), curving over it
     tib: { r: [0.15, 0.4, 0.56], c: C.tibia, flat: 0.32, mat: { ...LEGMAT, ks: 0.45, p: 90, env: 0.15 }, hair: fringe(220, 1.0, blackHair, 0.84, 0.022) },
     bas: { r: [0.36, 0.36, 0.27], c: C.basitarsus, flat: 0.38, hair: fringe(120, 0.25, '#6a4430', 0.3) }, tar: { r: 0.085, c: C.tarsus, hair: fringe(6, 0.14, C.tarsusHair, 0) }, claw: 0.13 },
 };
 
 function legs(sc, pose, ph = 0) {
-  const G = -4.0;
+  const G = -4.4;   // the deeper body: its belly hair just clear of the ground (c060)
   const SET = {
     // [foot target (standing), pole of the knee]: the feet wide of the body, the knees out and up (c126, c060, c024)
     front: [[5.2, 2.2], [0.3, 1, 0.8]],
