@@ -176,7 +176,7 @@ def gradient(labf, sel, org, r):
     return {'p0': [round(float(x), 2) for x in p0], 'p1': [round(float(x), 2) for x in p1], 'stops': [[f, hexof(v)] for f, v in stops]}
 
 
-def veins(img, mm, org, r, hm=None, wmax=0.35, thr=12.0, medmin=58, lmin=1.2, wmean=0.22):
+def veins(img, mm, org, r, hm=None, wmax=0.35, thr=12.0, medmin=58, lmin=1.2, wmean=0.22, light=False):
     """the veins: thin dark lines across the lighter scales (the black-hat of L* over a disk of wmax mm, over thr L*), thinned to
     their skeleton and walked into polylines between their junctions; each with its measured width (twice the distance to its
     edge) and colour (its darkest third). Grouped by width (0.03 mm steps) and colour for a few stroked paths. Returns the
@@ -185,7 +185,8 @@ def veins(img, mm, org, r, hm=None, wmax=0.35, thr=12.0, medmin=58, lmin=1.2, wm
     s0, q1, _ = org
     lab = lab_of(img); L = lab[..., 0]
     ker = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (int(wmax * r) | 1, int(wmax * r) | 1))
-    bh = cv2.morphologyEx(cv2.GaussianBlur(L, (0, 0), 0.6), cv2.MORPH_BLACKHAT, ker)
+    # light=True: veins paler than the cells between them (a bush-cricket's green tegmen), read by the top-hat
+    bh = cv2.morphologyEx(cv2.GaussianBlur(L, (0, 0), 0.6), cv2.MORPH_TOPHAT if light else cv2.MORPH_BLACKHAT, ker)
     # on a light ground only (its median over 1 mm): between the light grains of a dusted black band the black reads as a net
     # of thin lines, which are not veins
     med = cv2.medianBlur(np.clip(L * 2.55, 0, 255).astype(np.uint8), (int(1.0 * r) | 1)).astype(np.float32) / 2.55
@@ -230,7 +231,7 @@ def veins(img, mm, org, r, hm=None, wmax=0.35, thr=12.0, medmin=58, lmin=1.2, wm
         A = np.array([[x, y] for y, x in P], np.int32)
         ap = cv2.approxPolyDP(A.reshape(-1, 1, 2), 0.03 * r, False)[:, 0, :]
         wd = float(np.median([dt[y, x] for y, x in P])) * 2 / r
-        vals = np.array([L[y, x] for y, x in P]); core = np.array([lab[y, x] for y, x in P])[vals <= np.percentile(vals, 35)]
+        vals = np.array([L[y, x] for y, x in P]); core = np.array([lab[y, x] for y, x in P])[(vals >= np.percentile(vals, 65)) if light else (vals <= np.percentile(vals, 35))]
         c = np.median(core, 0)
         key = (round(wd / 0.04) * 0.04, hexof(np.round(c / 8) * 8))
         out.setdefault(key, []).append([[round(s0 + (x + .5) / r, 2), round(q1 - (y + .5) / r, 2)] for x, y in ap])
@@ -680,10 +681,12 @@ def cmd_plat(o):
         cv2.imwrite(mp, m.astype(np.uint8) * 255)
     elif os.path.exists(mp) and not o.sam: m = cv2.imread(mp, 0) > 127
     else: m = sam_mask(rgb, c); cv2.imwrite(mp, m.astype(np.uint8) * 255)
+    # --sansfond: the mask is traced by hand on a natural ground (masques.json), not read against an MHNT plate
+    if o.sansfond: g = np.ones(rgb.shape[:2], bool)
     # SAM separates the wing from its neighbours; the ground test sets its edge against the plate (SAM's edge is ~1.5 px coarse)
     # where a cut line was read on the grid (the edge between the two wings), SAM's own edge there (a few tenths of a mm short of
     # it) gives way: the specimen within 1 mm of SAM's mask, minus the cut region
-    grow = 1 if c.get('masque') == 'fond' else int(c['pxmm'] * 1.0) if c.get('retirer') else 7
+    grow = 1 if c.get('masque') == 'fond' else int(c['pxmm'] * 1.0) if c.get('retirer') else 1 if o.sansfond else 7
     m = (cv2.dilate(m.astype(np.uint8), np.ones((grow, grow), np.uint8)) > 0) & g
     if c.get('retirer'):
         # the neighbour wing where SAM cannot tell the two apart: a polygon (px) read on the photo's grid
@@ -730,18 +733,26 @@ def cmd_plat(o):
     n_, lb_, st_, _ = cv2.connectedComponentsWithStats(mm.astype(np.uint8))
     if n_ > 2: mm = lb_ == (1 + np.argmax(st_[1:, cv2.CC_STAT_AREA]))
     hid &= mm
+    if c.get('masquer'):
+        # what lies over the wing without being the wing (a leg crossing it, px polygons): kept in the outline, filled from around
+        hp = np.zeros(rgb.shape[:2], np.uint8)
+        for P in c['masquer']: cv2.fillPoly(hp, [np.array(P, np.int32)], 1)
+        _, hq, _ = flat(rgb, hp > 0, c, o.r, org, (mm.shape[1], mm.shape[0])); hid |= hq & mm
     vis = mm & ~hid
     if hid.any():
         from scipy import ndimage
         _, (iy, ix) = ndimage.distance_transform_edt(~vis, return_indices=True)
         img[hid] = img[iy[hid], ix[hid]]
+        # --lisse: wide hidden strips (a leg across a tegmen) inpainted smooth rather than smeared from their nearest edge
+        if o.lisse: img = cv2.inpaint(np.ascontiguousarray(img), (cv2.dilate(hid.astype(np.uint8), np.ones((3, 3), np.uint8))).astype(np.uint8), 6, cv2.INPAINT_TELEA)
     hm = None
     if c.get('poils'):
         hp = np.zeros(rgb.shape[:2], np.uint8)
         for P in c['poils']: cv2.fillPoly(hp, [np.array(P, np.int32)], 1)
         _, hm, _ = flat(rgb, hp > 0, c, o.r, org, (mm.shape[1], mm.shape[0])); hm &= mm
     # cadres key nervures: the thresholds of a dark face (the peacock's underside: its zigzag lines are drawn as measured lines)
-    V, vm = veins(img, mm, org, o.r, hm, **c.get('nervures', {}))
+    # the command line's vein options (the bush-cricket's pale veins), then the cadres key nervures over them
+    V, vm = veins(img, mm, org, o.r, hm, **{'wmax': o.vlarg, 'thr': o.vseuil, 'light': o.vclaires, 'medmin': o.vclair, **c.get('nervures', {})})
     st_ = c.get('stries')
     forcer = [lab_of(np.array([[[int(h[i:i + 2], 16) for i in (1, 3, 5)]]], np.uint8))[0, 0] for h in c.get('poudre_seule', [])]
     hexlab = lambda h: lab_of(np.array([[[int(h[i:i + 2], 16) for i in (1, 3, 5)]]], np.uint8))[0, 0]
@@ -833,6 +844,8 @@ def main():
     ap = argparse.ArgumentParser(); sp = ap.add_subparsers(dest='cmd')
     a = sp.add_parser('plat'); a.add_argument('cadres'); a.add_argument('nom'); a.add_argument('--k', type=int, default=7)
     a.add_argument('--r', type=float, default=40); a.add_argument('--sig', type=float, default=0.1); a.add_argument('--sam', action='store_true')
+    # veins: paler than the cells (--vclaires), their threshold, the lightest median ground they show on, their widest (mm)
+    a.add_argument('--sansfond', action='store_true'); a.add_argument('--lisse', action='store_true'); a.add_argument('--vclaires', action='store_true'); a.add_argument('--vseuil', type=float, default=12.0); a.add_argument('--vclair', type=float, default=58.0); a.add_argument('--vlarg', type=float, default=0.35)
     b = sp.add_parser('paire'); b.add_argument('cadres'); b.add_argument('nom'); b.add_argument('rendu')
     o = ap.parse_args()
     {'plat': cmd_plat, 'paire': cmd_paire}[o.cmd](o)
