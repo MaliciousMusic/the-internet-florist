@@ -93,22 +93,41 @@ QCM du 2026-10-24 avec le propriétaire. Sur le site, les fourmis ne butinent pa
   plan (environ 240 px). Puis elle marche sur les pierres du sol, rapetisse avec la perspective, monte le pilier et y pose
   le bouton. Ensuite, le bouton revient seul.
 
-Premier prototype (2026-10-24, `decor/scene/porteuses.mjs` et `fourmi-open.mjs`), à valider par le porteur :
-- **Vue** : les fourmis marchent sur la vitre de l'écran, vues de dessus. La proposition de profil ne tenait pas : sur
-  ordinateur, la pastille, le dock et la bulle s'empilent jusqu'à 205 px au-dessus du bord, hors de portée d'une fourmi qui
-  marcherait sur ce bord.
-- **Port à deux** : chaque fourmi tient la case par un côté, comme les vraies fourmis tiennent ensemble une grosse charge. Celle
-  de derrière marche en avant et pousse, celle de devant marche à reculons et tire. La case tourne avec leur chemin.
-- **Trajet** : elles entrent par la gauche le long du bord bas, montent jusqu'à la place de la case, la posent, puis repartent
-  par la droite.
-- **Vitesse** : 24 mm/s à vide et 17 mm/s chargées, soit 336 et 235 px/s, la foulée suivant le chemin parcouru.
-- **Ordre** : à l'ouverture, la pastille puis le dock. Au gros plan, Buy, puis « Fades in », puis « On your desktop ». À la
-  sortie du gros plan, elles reviennent prendre les cases dans l'ordre inverse.
-- **Téléphone** : un machaon et un paon-du-jour, à 1,5 px/mm, apportent le dock suspendu sous eux.
-- **Fourmi d'Open** : le sol ne se voit qu'à partir de 2,2 m. Elle sort donc du bas du cadre à 1,85 m, où elle fait de 110 à
-  145 px selon l'écran, et non 240 px. Elle passe sur les quatre dalles, monte la face du pilier, pose le bouton et disparaît
-  par le haut du pilier.
-- **Pas encore fait** : les fourmis qui tirent le panneau Legal pour le déplier et le replier.
+Retour du porteur sur le premier prototype (2026-10-24, soir) :
+- les fourmis marchent **vues de profil, sur le rebord**, jamais vues de dessus ;
+- **jamais en paire** : une fourmi par élément, qu'elle tient levé comme les fourmis tiennent leurs feuilles ;
+- pour atteindre la hauteur du dépôt, **les fourmis se montent dessus** ;
+- **attention aux chevauchements** ;
+- la fourmi d'Open revient **à chaque chargement** de la page ;
+- les papillons tiennent le dock **par ses extrémités**, et ils sont **25 % plus petits**.
+
+Deuxième prototype (`decor/scene/porteuses.mjs`) :
+- **Rebords** : le bas de l'écran est un rebord, et le dessus de chaque pièce posée en est un aussi.
+- **Port** : la fourmi porte sa case au-dessus d'elle, tête levée (pose « feuille » de l'atlas, niveau P de profil), la case
+  toujours droite.
+- **Piles** : pour monter d'un rebord à l'autre, d'autres fourmis s'empilent, couchées l'une sur le dos de l'autre, contre la
+  gauche de la pièce du dessus. La porteuse grimpe la pile.
+- **Chemin** : une case arrive tenue derrière sa porteuse par son bout droit ; une case qui part est tenue devant elle, par
+  son bout gauche. Les fourmis qui repartent se laissent tomber du bout des rebords, comme le font les fourmis.
+- **Chevauchements** : la porteuse lève sa case au-dessus de ce qui est sur son chemin (pastille, piles), en se cabrant.
+  Chaque porteuse attend au pied des piles que la précédente soit passée. Le contrôle automatique, image par image, ne
+  relève aucun chevauchement entre cases. Il reste des contacts de fourmis de 15 à 20 px de côté, surtout dans les coins
+  arrondis des pièces.
+- **Place** : pour qu'une fourmi passe sous une pièce sans la toucher, la classe `porteuses` laisse 22 px entre les pièces
+  empilées : le dock 12 px plus haut sur ordinateur, les deux petites cases 14 px plus haut au-dessus de Buy.
+- **Durées** (à vraie vitesse, mesurées image par image) :
+
+  | séquence | durée |
+  |---|---|
+  | ouverture sur ordinateur (dock posé à 3,5 s, pastille à 7,6 s) | 9,5 s |
+  | bulle sur ordinateur, assemblage (Buy à 6,7 s, petites cases à 14 et 16,9 s) | 26 s |
+  | bulle sur ordinateur, départ | 38 s |
+  | bulle sur téléphone (Buy à 2,5 s, petites cases à 8,2 et 10,3 s) | 20 s |
+  | départ sur téléphone | 29 s |
+
+  Ces durées comptent les piles qui se défont.
+- **Panneau Legal** : de profil, rien ne se trouve au-dessus du panneau pour qu'une fourmi s'y accroche et le tire. Il
+  s'ouvre donc seul, sans fourmis. C'est une question au porteur.
 
 Propositions, à valider sur le premier prototype :
 - ~~**Pose** : les fourmis marchent de profil sur le bord bas de l'écran comme sur un sol. Elles tiennent la case levée

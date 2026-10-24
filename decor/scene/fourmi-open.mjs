@@ -1,5 +1,5 @@
-// fourmi-open.mjs: the ant that brings the Open button, once per visit (owner's QCM of 2026-10-24, insectes/DECISIONS.md
-// "Fourmis du HUD"). A magic black garden ant, 16 cm long in the scene (as long as the button where it stands, on the pillar),
+// fourmi-open.mjs: the ant that brings the Open button, at every page load (owner's QCM of 2026-10-24, insectes/DECISIONS.md
+// "Fourmis du HUD"; a reload is a new visit, owner the same evening). A magic black garden ant, 16 cm long in the scene (as long as the button where it stands, on the pillar),
 // comes up from under the frame's bottom edge carrying the button in its mandibles, walks over the stepping stones, shrinking
 // with the distance, climbs the pillar's face and sets the button in its place. It walks at a real ant's pace for its size
 // (24 mm/s for a 4 mm worker, laden x 0.7: 4.2 body lengths a second). The button answers clicks while it is carried.
@@ -61,7 +61,6 @@ export class FourmiOpen {
     this.button.style.transformOrigin = '0 50%'; // it scales about its visual centre (its transform pulls it left by half)
     this.noHit = true; // a click there is for the button it carries
     window.FOURMI_OPEN_EN_ROUTE = true;
-    try { sessionStorage.setItem('fourmiOpen', '1'); } catch {}
   }
   // the ant's length at the pillar's distance in scene px; the swarm scales it with the depth
   fixedPx() { return LEN * 1000 * this.pxmm0(); }

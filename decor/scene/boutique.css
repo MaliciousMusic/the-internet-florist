@@ -668,16 +668,17 @@
   pointer-events: none;
 }
 
-/* the legal panel: open by its transform at all times, pulled up and down by its ants through the translate property */
-.porteuses .pied-panneau,
-.porteuses .pied.ouvert .pied-panneau {
-  transform: translate(-50%, 0);
-  visibility: visible;
-  transition: none;
-  translate: 0 102%;
+/* the room an ant needs (22 px) between stacked pieces, so that the carriers walk on a piece under another without touching it:
+   the dock 22 px over the pill's top on a computer, the bubble's two small boxes 22 px over Buy */
+:root.porteuses {
+  --dock-pied: calc(env(safe-area-inset-bottom) + 50px);
 }
 
-/* the dock: brought by two ants on a computer (at the bottom), laid by two butterflies on a phone (at the top) */
+.porteuses .achat-haut {
+  margin-bottom: 22px;
+}
+
+/* the dock: brought by an ant on a computer (at the bottom), laid by two butterflies on a phone (at the top) */
 .porteuses .dock {
   translate: -200vw 0;
 }

@@ -477,13 +477,16 @@ function petal(sc, P) {
 // ---------------------------------------------------------------------------------------------------------------
 function poseOf(pose, frame) {
   const P = {};
-  if (pose === 'marche' || pose === 'porte') {
+  if (pose === 'marche' || pose === 'porte' || pose === 'feuille') {
     P.walk = frame; P.stride = 1.5; // the feet's sweep in stance: 2.5 mm per cycle x duty 0.6 (COMPORTEMENT.md); a load keeps it
     // the antennae beat in alternation, twice per stride, sweeping 18 deg sideways and tapping the ground ahead
     const tap = (s) => 0.3 * Math.sin(2 * Math.PI * (2 * frame + (s > 0 ? 0 : 0.5)));
     P.ant = [[4 + 18 * Math.sin(2 * Math.PI * frame), 0, tap(1)], [4 - 18 * Math.sin(2 * Math.PI * frame + 0.6), 0, tap(-1)]];
     P.headYaw = 4 * Math.sin(2 * Math.PI * frame);
     if (pose === 'porte') { P.headPitch = -22; P.headLift = 0.05; P.gape = 24; P.ant = P.ant.map((a) => [a[0] - 6, 0.12, a[2] + 0.35]); }
+    // 'feuille' (the HUD, 2026-10-24): a load held up as leafcutters hold their leaf, the head raised steeply so the mandibles
+    // grip above the ant's back and the load stands clear over it; the antennae up and out, clear of the load
+    if (pose === 'feuille') { P.headPitch = -58; P.headLift = 0.12; P.gape = 18; P.ant = P.ant.map((a) => [a[0] + 14, 0.32, a[2] + 0.55]); }
   } else if (pose === 'palpe') {
     const a = 2 * Math.PI * frame;
     P.ant = [[34 * Math.sin(a), 0, -0.2 + 0.45 * Math.sin(a + 1)], [-34 * Math.sin(a + 1.6), 0, -0.2 + 0.45 * Math.sin(a + 2.9)]];
@@ -514,6 +517,7 @@ export function ant(az, el, opts = {}) {
 export function grip(az, el, opts = {}) {
   const { size = 256, k = 40, pose = 'porte', frame = 0 } = opts;
   const P = poseOf(pose === 'petale' ? 'porte' : pose, frame), F = headFrame(P), cam = camera(az, el);
+  // (the load is gripped a little inside the mandibles' tips)
   const q = cam.proj(hp(F, B.head.CL * 0.86 + 0.3, 0, -0.14));
   return [(size / 2 + q[0] * k) / size, (size / 2 - q[1] * k) / size];
 }
@@ -521,12 +525,16 @@ export function grip(az, el, opts = {}) {
 export const META = {
   id: 'fourmi-noire', bodyMm: B.len, span: 7.2,
   el: [-10, 15, 40, 65, 90],
-  poses: { pose: [0], marche: [0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875], porte: [0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875], palpe: [0, 0.25, 0.5, 0.75], petale: [0] },
+  poses: { pose: [0], marche: [0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875], porte: [0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875], palpe: [0, 0.25, 0.5, 0.75], petale: [0],
+    feuille: [0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875] },
   lod: { S: { cell: 20, az: 15, poses: ['pose', 'marche', 'porte', 'palpe', 'petale'] }, L: { cell: 48, az: 30, poses: ['marche', 'porte', 'petale'] },
     // the HUD's carriers, seen from above on the screen's glass (one azimuth: the runtime turns the sprite), 112 px long at 2x
     H: { cell: 200, azs: [90], el: [90], poses: ['pose', 'marche', 'porte'], detail: 1.2 },
     // the ant bringing the Open button over the stones, seen from behind as it walks off (the ground shows from 2.2 m: up to
     // 144 px long on a large screen), elevations of the camera 0.75 m high over 2.2 to 4 m
-    O: { cell: 260, azs: [165, 180], el: [12, 20], poses: ['porte'], detail: 1.2 } },
+    O: { cell: 260, azs: [165, 180], el: [12, 20], poses: ['porte'], detail: 1.2 },
+    // the HUD's carriers seen from the side, walking on the screen's ledges (owner, 2026-10-24: "vu horizontalement sur le
+    // rebord"), the camera a little above them so the far legs show; one azimuth, the runtime mirrors and turns the sprite
+    P: { cell: 200, azs: [90], el: [8], poses: ['pose', 'marche', 'feuille'], detail: 1.2 } },
 };
 export const draw = (az, el, opts = {}) => ant(az, el, opts);

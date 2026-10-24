@@ -322,3 +322,11 @@ l'identité de son éditeur dans ses mentions légales.
   - **Repli** : la classe `porteuses`, ou `fourmi-open`, est posée par `scene.js` dès le premier affichage. Elle ne l'est pas avec
     prefers-reduced-motion, `?porteuses=0` ou `?insectes=0`, et elle est retirée si les fourmis ne partent pas à temps (6 s,
     45 s pour Open). `?lent=8` ralentit tout pour regarder.
+- 2026-10-24, deuxième prototype des porteuses (porteur : de profil sur le rebord, jamais en paire, les fourmis se montent
+  dessus, attention aux chevauchements) :
+  - une fourmi par case, la case levée au-dessus d'elle ;
+  - des piles de fourmis pour monter sur le dock puis sur Buy ;
+  - des sauts au bout des rebords pour repartir ;
+  - 22 px de place entre les pièces empilées.
+  Le détail et les durées mesurées sont dans `insectes/DECISIONS.md`. La fourmi d'Open revient à chaque chargement et part dès
+  que le bouquet a poussé. Les papillons du téléphone tiennent le dock par ses bouts et sont 25 % plus petits.

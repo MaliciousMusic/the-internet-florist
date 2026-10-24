@@ -121,15 +121,9 @@ async function start(clumpsOn) {
   topCanvas.setAttribute('aria-hidden', 'true');
   document.getElementById('premier').after(topCanvas);
 
-  // one kind at a time, the page idle between two (each atlas is decoded and sent to the graphics card)
+  // the cast's kinds load one at a time once the scene's loop runs (loadCast below), the page idle between two (each atlas is
+  // decoded and sent to the graphics card); the ant of the Open button comes first
   const idle = () => new Promise((r) => (window.requestIdleCallback ? requestIdleCallback(r, { timeout: 500 }) : setTimeout(r, 50)));
-  for (const c of CAST) {
-    const url = `${BASE}${c.kind}/atlas/${c.kind}`;
-    const K = await essaim.kind(c.kind, url, c.mm(mods[c.mod]), ['S']);
-    if (c.wings) await essaim.wings(c.kind, url + '-ailes');
-    if (typeof c.wings === 'number') K.wingsDepth = c.wings;
-    await idle();
-  }
   const [heads, clumpList] = await Promise.all([fetch(OUT + 'tetes.json').then((r) => r.json()), fetch(OUT + 'premier.json').then((r) => r.json())]);
 
   // the world frame at rest in the scene's CSS px: .monde covers the scene, centred (scene.css: left 50% then -50%); read
@@ -269,23 +263,31 @@ async function start(clumpsOn) {
     for (let g = 0; g < 3; g++) b.plans[g].after(between[g]);
   };
 
-  // every insect of the cast, created out of view
+  // every insect of the cast, created out of view as soon as its kind is loaded (its wings are made when it is added)
   let seed = (Date.now() % 1e9) >>> 0;
   const rnd = () => ((seed = (seed * 1664525 + 1013904223) >>> 0) / 4294967296);
   const insects = [];
-  for (const c of CAST) {
-    const M = mods[c.mod];
-    lists.set(c, []);
-    for (let i = 0; i < c.n; i++) {
-      const s = c.make(M, [essaim, lists.get(c), rnd]);
-      s.bodyMm = c.mm(M);
-      s.lengthPx = s.bodyMm * pxmm0;
-      essaim.add(s);
-      insects.push(s);
+  for (const c of CAST) lists.set(c, []);
+  const loadCast = async () => {
+    for (const c of CAST) {
+      const url = `${BASE}${c.kind}/atlas/${c.kind}`;
+      const K = await essaim.kind(c.kind, url, c.mm(mods[c.mod]), ['S']);
+      if (c.wings) await essaim.wings(c.kind, url + '-ailes');
+      if (typeof c.wings === 'number') K.wingsDepth = c.wings;
+      const M = mods[c.mod];
+      for (let i = 0; i < c.n; i++) {
+        const s = c.make(M, [essaim, lists.get(c), rnd]);
+        s.bodyMm = c.mm(M);
+        s.lengthPx = s.bodyMm * pxmm0;
+        essaim.add(s);
+        insects.push(s);
+      }
+      if (big) essaim.more(c.kind).catch(() => {});
+      await idle();
     }
-  }
-  // the ant that brings the Open button, once per visit (fourmi-open.mjs; the button waits hidden while the page's root has the
-  // class fourmi-open, set by scene.js)
+  };
+  // the ant that brings the Open button, at every page load (fourmi-open.mjs; the button waits hidden while the page's root has
+  // the class fourmi-open, set by scene.js)
   const root = document.documentElement;
   if (root.classList.contains('fourmi-open')) {
     try {
@@ -437,4 +439,5 @@ async function start(clumpsOn) {
   };
   requestAnimationFrame(frame);
   window.__insectes = { essaim, insects, flowers, lists, clumps, W };
+  loadCast().catch((err) => console.error('[insectes]', err));
 }
