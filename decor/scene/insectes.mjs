@@ -284,6 +284,21 @@ async function start(clumpsOn) {
       insects.push(s);
     }
   }
+  // the ant that brings the Open button, once per visit (fourmi-open.mjs; the button waits hidden while the page's root has the
+  // class fourmi-open, set by scene.js)
+  const root = document.documentElement;
+  if (root.classList.contains('fourmi-open')) {
+    try {
+      const { FourmiOpen } = await import(new URL('fourmi-open.mjs', import.meta.url).href);
+      await essaim.kind('fourmi-noire', `${BASE}fourmi-noire/atlas/fourmi-noire`, 4, ['O', 'H']);
+      const a = new FourmiOpen({ essaim, zOf, sx, sy, W, pxmm0: () => pxmm0, button: document.getElementById('bq-voir'), done: () => root.classList.remove('fourmi-open') });
+      essaim.add(a);
+      insects.push(a);
+    } catch (err) {
+      console.error('[fourmi-open]', err);
+      root.classList.remove('fourmi-open');
+    }
+  }
 
   // the bouquet folds back: the insects at it fly off, its flowers no longer count
   const onFold = () => {
@@ -353,7 +368,7 @@ async function start(clumpsOn) {
       const r = monde.getBoundingClientRect(), s = r.width / W.mw;
       const x = W.ml + (ev.clientX - r.left) / s, y = W.mt + (ev.clientY - r.top) / s;
       const hit = essaim.hit(x, y);
-      if (!hit) return;
+      if (!hit || hit.noHit) return;
       hit.poke(x, y);
       caught = true;
       ev.stopPropagation();
@@ -411,7 +426,7 @@ async function start(clumpsOn) {
     sway(now);
     swayHeads();
     for (const s of insects) {
-      s.lengthPx = sizeOf(s);
+      s.lengthPx = s.fixedPx ? s.fixedPx() : sizeOf(s);
       s.update(dt);
     }
     essaim.render();

@@ -199,11 +199,13 @@ export class Essaim {
       const fr = bodyFrame([b.fwd[0], -b.fwd[1], b.fwd[2]], b.bank || 0, [0, 1, 0]);
       const eye = [this.cx - b.P[0], -(this.cy - b.P[1]), PERSPECTIVE - b.P[2]];
       const el = Math.hypot(...eye);
-      const v = viewOf(fr, [eye[0] / el, eye[1] / el, eye[2] / el]);
+      // (fourmi d'Open, 2026-10-24) b.view = { lod, az, el, rotation }: a cell chosen by the insect itself (an ant climbing a wall
+      // facing the viewer, seen from above in a level baked at one azimuth); b.lod: the level of detail it asks for
+      const v = b.view ? { az: b.view.az, el: b.view.el, rotation: b.view.rotation } : viewOf(fr, [eye[0] / el, eye[1] / el, eye[2] / el]);
       const pxmm = (b.lengthPx / K.bodyMm) * q.s;
       const shown = K.idx.span * pxmm;
-      const lodName = K.lods.L && shown * this.vs > K.lods.S.cell * 1.25 && K.lods.L.poses.includes(b.pose) ? 'L' : 'S';
-      const lod = K.lods[lodName];
+      const lodName = b.view?.lod || (b.lod && K.lods[b.lod] ? b.lod : K.lods.L && shown * this.vs > K.lods.S.cell * 1.25 && K.lods.L.poses.includes(b.pose) ? 'L' : 'S');
+      const lod = K.lods[lodName] || Object.values(K.lods)[0]; // a level asked for but not loaded: the one there is
       const c = pickCell(lod, lod.el || K.idx.el, b.pose, b.frame, K.idx.frames[b.pose], v);
       if (c.i === undefined) { sp.visible = false; if (b.carrySprite) b.carrySprite.visible = false; if (b.wingMeshes) for (const g of b.wingMeshes) g.m.visible = false; continue; }
       sp.texture = lod.cells[c.i];

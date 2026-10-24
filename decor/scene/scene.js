@@ -18,6 +18,21 @@
 // boutique.js prepares the bouquet whole and grows it, then the clumps on screen come, one at a time when the page is idle.
 (() => {
   const q = new URLSearchParams(location.search);
+  // the HUD's carriers (porteuses.mjs): from the first paint the pieces their ants bring wait off screen (boutique.css); with
+  // prefers-reduced-motion, ?porteuses=0 or ?insectes=0 they stand in their places as before, and they are put back if the
+  // ants have not set out after 6 s
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches && q.get('porteuses') !== '0' && q.get('insectes') !== '0') {
+    document.documentElement.classList.add('porteuses');
+    setTimeout(() => { if (!window.PORTEUSES_EN_ROUTE) document.documentElement.classList.remove('porteuses'); }, 6000);
+    // the Open button too, once per visit (fourmi-open.mjs, started by insectes.mjs once the first bouquet has grown): it waits
+    // for its ant, and shows by itself if the ant has not set out after 45 s
+    let seenOpen = false;
+    try { seenOpen = sessionStorage.getItem('fourmiOpen') === '1'; } catch {}
+    if (!seenOpen) {
+      document.documentElement.classList.add('fourmi-open');
+      setTimeout(() => { if (!window.FOURMI_OPEN_EN_ROUTE) document.documentElement.classList.remove('fourmi-open'); }, 45000);
+    }
+  }
   const scene = document.getElementById('scene');
   const OUT = `../${q.get('out') || 'out'}/`;
   if (q.has('debug')) scene.classList.add('debug');

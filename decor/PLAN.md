@@ -309,3 +309,16 @@ l'identité de son éditeur dans ses mentions légales.
   procession et à vraie vitesse : la barre d'outils, les cases de la bulle de prix et la pastille Legal. Sur téléphone, deux
   papillons posent la barre d'outils en haut. Une fourmi magique d'environ 16 cm apporte le bouton Open au pilier, une fois
   par visite. Le détail est dans `insectes/DECISIONS.md`, section « Fourmis du HUD ». La production n'a pas commencé.
+- 2026-10-24, prototype des porteuses (porteur : « reprends d'abord la fourmi noire, puis le prototype des porteuses ») :
+  - **`decor/scene/porteuses.mjs`** : des paires de fourmis noires, vues de dessus sur la vitre de l'écran, apportent à chaque
+    fois la pastille Legal et le dock (ordinateur) à l'ouverture, puis les trois cases de la bulle au gros plan, et les
+    remportent quand on recule. Elles déplient et replient aussi le panneau Legal en tirant son bord. Elles marchent à vraie
+    vitesse, en procession de gauche à droite, et les pièces restent cliquables en route. Les fourmis sont dessinées sur un
+    canvas PixiJS posé sur le HUD (niveau H de l'atlas), les pièces bougent par les propriétés CSS `translate` et `rotate`.
+  - **Téléphone** : un machaon et un paon-du-jour posent le dock en haut (un essaim à eux, ailes en quads).
+  - **`decor/scene/fourmi-open.mjs`** : une fois par visite, une fourmi de 16 cm sort du bas du cadre avec le bouton Open,
+    passe sur les quatre dalles (`out/chemin.json`), monte le pilier et pose le bouton. Elle est un insecte de l'essaim de la
+    scène (niveau O de dos, H de dessus sur le pilier), qui reçoit deux clés nouvelles : `b.lod` et `b.view`.
+  - **Repli** : la classe `porteuses`, ou `fourmi-open`, est posée par `scene.js` dès le premier affichage. Elle ne l'est pas avec
+    prefers-reduced-motion, `?porteuses=0` ou `?insectes=0`, et elle est retirée si les fourmis ne partent pas à temps (6 s,
+    45 s pour Open). `?lent=8` ralentit tout pour regarder.

@@ -638,3 +638,51 @@
   color: #fff;
   font-weight: 600;
 }
+
+/* the HUD's carriers (porteuses.mjs, class "porteuses" set by scene.js): until their ants bring them, the pieces wait off
+   screen, by the translate property (their own transforms untouched); the price bubble stays in its place while its boxes
+   come and go one by one, and its resale line shows once Buy is set. The ants' canvas lets every click through. */
+.porteuses .pied-poignee,
+.porteuses .achat-vie,
+.porteuses .achat-demo,
+.porteuses .achat-bouton {
+  translate: -200vw 0;
+}
+
+.porteuses .achat,
+.porteuses .achat.loin {
+  transform: translateX(-50%);
+  visibility: visible;
+  transition: none;
+}
+
+.porteuses .achat-revente {
+  visibility: hidden;
+}
+
+.porteuses-plan {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 60;
+  pointer-events: none;
+}
+
+/* the legal panel: open by its transform at all times, pulled up and down by its ants through the translate property */
+.porteuses .pied-panneau,
+.porteuses .pied.ouvert .pied-panneau {
+  transform: translate(-50%, 0);
+  visibility: visible;
+  transition: none;
+  translate: 0 102%;
+}
+
+/* the dock: brought by two ants on a computer (at the bottom), laid by two butterflies on a phone (at the top) */
+.porteuses .dock {
+  translate: -200vw 0;
+}
+
+/* the Open button waits for its ant (fourmi-open.mjs), once per visit */
+.fourmi-open .bq-voir {
+  visibility: hidden;
+}

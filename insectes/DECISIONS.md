@@ -93,9 +93,26 @@ QCM du 2026-10-24 avec le propriétaire. Sur le site, les fourmis ne butinent pa
   plan (environ 240 px). Puis elle marche sur les pierres du sol, rapetisse avec la perspective, monte le pilier et y pose
   le bouton. Ensuite, le bouton revient seul.
 
+Premier prototype (2026-10-24, `decor/scene/porteuses.mjs` et `fourmi-open.mjs`), à valider par le porteur :
+- **Vue** : les fourmis marchent sur la vitre de l'écran, vues de dessus. La proposition de profil ne tenait pas : sur
+  ordinateur, la pastille, le dock et la bulle s'empilent jusqu'à 205 px au-dessus du bord, hors de portée d'une fourmi qui
+  marcherait sur ce bord.
+- **Port à deux** : chaque fourmi tient la case par un côté, comme les vraies fourmis tiennent ensemble une grosse charge. Celle
+  de derrière marche en avant et pousse, celle de devant marche à reculons et tire. La case tourne avec leur chemin.
+- **Trajet** : elles entrent par la gauche le long du bord bas, montent jusqu'à la place de la case, la posent, puis repartent
+  par la droite.
+- **Vitesse** : 24 mm/s à vide et 17 mm/s chargées, soit 336 et 235 px/s, la foulée suivant le chemin parcouru.
+- **Ordre** : à l'ouverture, la pastille puis le dock. Au gros plan, Buy, puis « Fades in », puis « On your desktop ». À la
+  sortie du gros plan, elles reviennent prendre les cases dans l'ordre inverse.
+- **Téléphone** : un machaon et un paon-du-jour, à 1,5 px/mm, apportent le dock suspendu sous eux.
+- **Fourmi d'Open** : le sol ne se voit qu'à partir de 2,2 m. Elle sort donc du bas du cadre à 1,85 m, où elle fait de 110 à
+  145 px selon l'écran, et non 240 px. Elle passe sur les quatre dalles, monte la face du pilier, pose le bouton et disparaît
+  par le haut du pilier.
+- **Pas encore fait** : les fourmis qui tirent le panneau Legal pour le déplier et le replier.
+
 Propositions, à valider sur le premier prototype :
-- **Pose** : les fourmis marchent de profil sur le bord bas de l'écran comme sur un sol. Elles tiennent la case levée
-  devant elles. Sur ordinateur, le dock, la pastille et la bulle sont tous en bas.
+- ~~**Pose** : les fourmis marchent de profil sur le bord bas de l'écran comme sur un sol. Elles tiennent la case levée
+  devant elles.~~ Remplacée par la vue de dessus, voir plus haut.
 - **Vitesse de la fourmi d'Open** : autant de longueurs de corps par seconde qu'une vraie ouvrière. Elle va donc du premier
   plan au pilier en 4 s environ, et le bouton est cliquable en route.
 - **Accessibilité** : avec prefers-reduced-motion, ni fourmis ni papillons, et les pièces apparaissent directement. Les

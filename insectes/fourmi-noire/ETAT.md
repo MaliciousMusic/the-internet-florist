@@ -186,6 +186,35 @@ d'ensemble, et la marche.
 Tous ces points avaient déjà été relevés et corrigés deux fois. Ils sont donc garés (§17.1), et l'atlas n'a pas été recuit.
 Les points 1 à 3 changent la lecture de l'espèce : une reprise ciblée est posée en question au porteur.
 
+### 5 bis. Reprise ciblée (2026-10-24, demande du porteur : « vue de profil et grand niveau de détail »)
+Le porteur a dit oui à la reprise, pour le HUD du site, où la fourmi est vue jusqu'à 112 px de profil ou de dessus, et
+jusqu'à 145 px de dos pour la fourmi du bouton Open. Deux passes, chacune avec ses paires et un juge neuf :
+- **Silhouette.**
+  - Le mésosome est fait de deux pièces au même contour inférieur : un promésonotum en un seul dôme, dont la couronne est au
+    niveau du dos du gastre comme sur c254, et un propodéum plus bas, à la face dorsale courte et à la déclivité raide.
+  - Il mesure 1,17 mm, soit 0,29 du corps (c254 0,33, c107 0,25 ; il en faisait 0,40). Ses contours sont des hauteurs mesurées le
+    long de l'axe (`knots`).
+  - Le sillon métanotal est un V, à la rencontre des deux contours. La suture promésonotale est marquée, et de dessus le
+    pronotum fait 0,8 fois la tête.
+- **Taille.** L'écaille est au ton du mésosome, aussi large que le bout du propodéum, et se lit de dessus comme une barre
+  transversale. Le gastre est plaqué contre elle, et seul un court sternite reste dessous.
+- **Tête.** Elle est tenue à 30° (40° avant) : de profil, elle fait 0,25 du corps le long de l'axe. L'œil est plus en avant
+  et plus bombé, et les insertions des antennes sont plus basses. Le clypéus est plat et peu velu, et les mandibules couleur
+  rouille.
+- **Teintes et matière.**
+  - Le mésosome est roux et le plus clair ; la tête et le gastre sont brun-noir, au reflet gris.
+  - Le reflet est petit et net, sur un satin large.
+  - La pubescence est 0,6 fois aussi longue et deux fois moins opaque, grise.
+  - Les marges des tergites forment des arcs, et la quatrième est pâle.
+- **Pattes.** Les fémurs sont clavés et un cinquième plus fins, avec des articulations plus claires. Les hanches sont plus
+  petites, et les hanches antérieures sont rentrées sous le pronotum.
+
+Quatrième juge (sur la première passe) : « mieux mais insuffisant » sur 10 des 11 points, la pubescence corrigée, la planche à
+112 px de profil « ok pour une fourmi » et la marche ok. Selon lui, on lisait de profil plutôt une *Camponotus*, et de dessus
+une Myrmicinae. La seconde passe a répondu à ses points 1 à 3, 5, 7 à 10 et à ses deux défauts de dessus (taille en deux
+perles, hanches en disques). Elle n'a pas été rejugée : c'était le deuxième essai de cette reprise, et les écarts restants
+sont garés, dans les résidus 8 à 10.
+
 ### 6. Animation, comportement, atlas, démo
 - **Planche** : `planches/marche.png`, faite par `outils/planche-marche.mjs`. Elle montre la marche de profil et de dessus, le
   diagramme des appuis, le port d'un pétale et l'arrêt où les antennes palpent.
@@ -243,6 +272,19 @@ Le SVG compte 72 groupes `p-<organe>`. Il est plus lourd que celui du machaon (0
 7. **Proportions mesurées par SAM.** Le lot a tourné le 2026-10-24, après la cuisson de l'atlas (§2). Il mesure un mésosome
    trop long (0,40 contre 0,25 à 0,33) et trop haut, une tête courte (0,19 contre 0,24), et des pattes trop épaisses. Ces écarts
    ne sont pas corrigés : ils entrent dans la reprise ciblée posée en question.
+
+8. **De dos** (fourmi d'Open), selon le quatrième juge : le gastre se lit en pastille plate. La lumière de l'atlas vient du haut
+   et de face, donc de dos elle frappe le gastre de face. Un halo clair restait sur l'occiput, et les pattes font araignée.
+9. **Œil** : à 100 %, c'est un galet sombre sans facettes. Les facettes ne se dessinent qu'au-delà de 130 px/mm.
+10. **Pattes** : elles restent régulières, avec des embouts ronds aux articulations (les bouts des `segment` du moteur).
+
+## Niveaux du HUD (2026-10-24)
+- **H** : la fourmi vue de dessus pour les porteuses du HUD, en un seul azimut, que le runtime tourne. Il compte 17 cellules de
+  200 px, pour les poses pose, marche et porte (112 px de long à 2×). Il pèse 76 Ko et 3,1 Mo sur le GPU.
+- **O** : la fourmi d'Open vue de dos, aux azimuts 165 et 180 et aux élévations 12 et 20, en 32 cellules de 260 px, pose porte.
+- Pour chaque cellule, le point où les mandibules tiennent une charge est dans l'index de l'atlas (`grip`, exporté par
+  `fourmi-noire.mjs`).
+- Planche : `planches/hud.png` (`outils/planche-hud.mjs`).
 
 ## Questions au porteur
 - **Une reprise ciblée de la silhouette ?** Le troisième juge et les cartes SAM s'accordent sur trois défauts. Le propodéum se
