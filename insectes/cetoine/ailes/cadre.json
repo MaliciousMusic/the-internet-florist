@@ -1,0 +1,10 @@
+{
+ "_doc": "aile postérieure gauche vue de dessous sur c230 (coléoptère sur le dos, ailes étalées sur la pierre). Échelle lue sur la largeur des élytres (1006 px pour 9,4 mm). Repère : s le long de l'aile depuis la charnière, q vers la côte (bord d'attaque).",
+ "photo": "refcache/cetonia-aurata/hd/c230.jpg",
+ "pxmm": 107.0,
+ "hinge": [1720, 950],
+ "axe": [[1720, 950], [2352, 175]],
+ "side": "d",
+ "garder": [[1705, 860], [2400, 1150], [3030, 1820], [3010, 2030], [2700, 2030], [2100, 1800], [1705, 1460]],
+ "retirer": [[[1702, 1070], [1784, 1070], [1937, 1325], [2153, 1631], [2166, 1796], [2089, 1796], [1886, 1529], [1702, 1274]]]
+}
