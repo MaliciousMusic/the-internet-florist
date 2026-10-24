@@ -43,14 +43,15 @@ def sam_mask(rgb, box, pos, neg):
     torch = carte.torch_(); proc, model = carte.sam()
     pts = [list(p) for p in pos] + [list(p) for p in neg]
     lab = [1] * len(pos) + [0] * len(neg)
-    inp = proc(rgb, input_boxes=[[list(box)]], input_points=[[pts]], input_labels=[[lab]], return_tensors='pt')
+    # points only: the box is the whole crop, and with it SAM's best-scored candidate is the whole frame (87 % of c254)
+    inp = proc(rgb, input_points=[[pts]], input_labels=[[lab]], return_tensors='pt')
     with torch.no_grad(): out = model(**inp, multimask_output=True)
     m = proc.image_processor.post_process_masks(out.pred_masks, inp['original_sizes'], inp['reshaped_input_sizes'])[0][0].numpy()
     sc = out.iou_scores[0, 0].numpy()
-    best, bs = None, -1
+    best, bs = None, -9
     for k in range(m.shape[0]):
         ok = all(m[k][int(y), int(x)] for x, y in pos)
-        s = sc[k] + (1 if ok else 0)
+        s = sc[k] + (1 if ok else 0) - (2 if m[k].mean() > 0.6 else 0)
         if s > bs: best, bs = k, s
     return m[best].astype(np.uint8), float(sc[best])
 

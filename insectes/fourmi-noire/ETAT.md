@@ -29,8 +29,34 @@ cases « vol » et « ailes » sont sans objet : l'ouvrière n'a pas d'ailes.
 - `outils/carte_fourmi.py` : SAM et Depth Anything (venv `vases5/.venv-depth`), plus un mode `seuil` sans modèle pour une fourmi
   sombre sur fond clair. Il mesure le profil du tronc (pattes et antennes ôtées par ouverture), les longueurs et hauteurs des
   pièces, et le ton (L* p10/p50/p90, lustre, contraste, grain).
-- Le lot SAM et profondeur (`refcache/lasius-niger/cartes/lot1.json`, 5 vues) attend toujours le verrou : la RAM libre n'a pas
-  dépassé 5,5 Go de la session. Les cartes par seuil sont faites (c254, c248, c107, c033).
+- Les cartes par seuil sont faites (c254, c248, c107, c033).
+- Le lot SAM et profondeur (`refcache/lasius-niger/cartes/lot2.json`, 5 vues) a tourné le 2026-10-24, par le verrou corrigé
+  de `ch/insectes-suite`. Au premier passage, SAM rendait le cadre entier (87 à 93 % de l'image) : le cadre donné couvrait toute
+  la découpe, et le candidat le mieux noté était « tout le cadre ». L'outil interroge désormais SAM par les points seuls, et il
+  écarte tout masque de plus de 60 % de l'image. Les masques sont alors justes sur c254, c107 et c248 (20 à 33 % du cadre,
+  score 0,93 à 0,95). c095 est une macro déformée par le grand angle, et c033 une vue de face où l'axe ne mesure rien : ces deux
+  cartes ne servent pas aux proportions.
+- Le rendu du profil studio est mesuré avec le même outil (mode `rendu`, la paire détourée sur son fond). Longueurs et hauteurs
+  en longueurs de corps :
+
+  | mesure | c254 (studio) | c107 (jour) | rendu |
+  |---|---|---|---|
+  | tête, longueur | 0,24 | 0,24 | **0,19** |
+  | mésosome, longueur | 0,33 | 0,25 | **0,40** |
+  | pétiole, longueur | 0,05 | 0,08 | 0,05 |
+  | gastre, longueur | 0,39 | 0,44 | 0,36 |
+  | tête, hauteur | 0,21 | 0,22 | 0,20 |
+  | mésosome, hauteur | 0,25 | 0,21 | **0,33** |
+  | gastre, hauteur | 0,28 | 0,26 | 0,28 |
+  | part des appendices | 0,01 | 0,01 | **0,08** |
+  | grain | 6,3 | 5,4 | **9,1** |
+
+  Le mésosome du rendu est trop long (+25 % sur c254) et trop haut (+30 %). Une partie de cette hauteur vient des hanches et des
+  fémurs, trop épais pour que l'ouverture les ôte : la part des appendices est huit fois celle des photos. La tête est courte de
+  20 % le long de l'axe, et le grain dépasse les photos de moitié. Ces mesures confirment les points 1, 3, 4 et 11 du troisième
+  juge.
+- La profondeur (Depth Anything) montre le gastre comme la pièce la plus bombée (médiane 0,73 sur c254, 0,82 sur c107), le
+  mésosome plat en travers (0,2), et le propodéum dans la continuité du mésonotum, sans creux net.
 - `outils/grille_fourmi.py` : grilles 72 × 18 lues le long de l'axe dans le masque de la carte. Options :
   - `--pct 35` : écarte les reflets et les poils clairs ;
   - `--plat 8` : retire la lumière propre de la photo (albédo) ;
@@ -129,7 +155,36 @@ Corrigé ensuite, en un essai :
 - pétale de 1,5 mm, translucide et relevé ;
 - palpation de ±34°.
 
-Selon la règle des deux essais (§17.1), les écarts restants sont garés plus bas. Le troisième passage du juge n'a pas été fait.
+Selon la règle des deux essais (§17.1), les écarts restants sont garés plus bas.
+
+Troisième passage (2026-10-24, un juge neuf, sur le modèle tel que commité) : **ko** sur les six vues et sur la planche de
+marche. À taille d'écran on lit « une fourmi », pas encore une *Lasius niger*. Ses défauts, du plus visible au moins visible :
+1. **Taille à deux nœuds.** Le propodéum se lit comme un globe détaché du mésosome par un étranglement profond. Suivi du
+   pétiole, il donne l'allure d'une Myrmicinae. Correction proposée : propodéum soudé au mésonotum, sillon métanotal à 5 % de
+   la hauteur, face dorsale courte puis déclivité.
+2. **Pétiole.** Il se lit comme une bobine noire sur une tige, plus sombre que le corps. Correction proposée : une écaille au ton
+   du mésosome (L* à ±3), sans tige visible, épaisse du quart de sa hauteur.
+3. **Mésosome.** On y lit encore trois bourrelets. Correction proposée : un seul dôme, pronotum à 0,7 fois la largeur de la tête.
+4. **Pubescence.** Elle se lit comme de la paille et déborde la silhouette (grain de 1,2 à 3,6 fois la photo). Correction
+   proposée : poils deux fois plus courts, deux à trois fois moins opaques, orientés par sclérite.
+5. **Brillant.** Un reflet unique, large et bleuté, et des tons moyens trop clairs en lumière de jour (+7 à +12 L*).
+6. **Antennes.** L'insertion paraît trop haute de profil, et l'antenne forme une équerre de face.
+7. **Mandibules.** Pas de dents lisibles, et un orange trop saturé.
+8. **Tête.** Les côtés paraissent encore droits, et le clypéus se lit comme un nez sombre.
+9. **Œil.** Il est plat, trop en arrière de profil, et apparaît sur le dessus en vue de dessous.
+10. **Gastre.** Contour en tonneau vu de dessus, stries en trop de profil.
+11. **Pattes.** Elles se lisent comme des tubes, au ton du corps.
+12. **Mésosome trop gris en studio.** ΔE de teinte de 10 environ.
+
+Planche de marche : le juge confirme le tripode, le diagramme et l'absence de glissement des appuis. Il relève trois défauts : le
+fragment porté se lit comme un bâtonnet, la palpation est trop faible, et les pattes avant se confondent avec les antennes vues de
+dessus.
+
+Juste, selon lui : la teinte brun-noir de jour (ΔE 2,7 sur le gastre vu de dessous, 2,9 sur la tête de face), les proportions
+d'ensemble, et la marche.
+
+Tous ces points avaient déjà été relevés et corrigés deux fois. Ils sont donc garés (§17.1), et l'atlas n'a pas été recuit.
+Les points 1 à 3 changent la lecture de l'espèce : une reprise ciblée est posée en question au porteur.
 
 ### 6. Animation, comportement, atlas, démo
 - **Planche** : `planches/marche.png`, faite par `outils/planche-marche.mjs`. Elle montre la marche de profil et de dessus, le
@@ -185,10 +240,16 @@ Le SVG compte 72 groupes `p-<organe>`. Il est plus lourd que celui du machaon (0
    (`P.repletion` est prévu, à 0).
 6. **Poids.** On pourrait alléger la cellule S de moitié en sautant les tarsomères et les griffes sous 1 px. Ce n'est pas fait,
    car cela ne change pas l'atlas WebP livré.
-7. **Cartes SAM et profondeur.** Le lot est prêt, mais n'a pas tourné : le verrou demande 5,5 Go libres et la RAM est restée
-   entre 3,4 et 4,7 Go, avec neuf sessions. Les mesures de forme viennent des cartes par seuil et des repères lus sur les grilles.
+7. **Proportions mesurées par SAM.** Le lot a tourné le 2026-10-24, après la cuisson de l'atlas (§2). Il mesure un mésosome
+   trop long (0,40 contre 0,25 à 0,33) et trop haut, une tête courte (0,19 contre 0,24), et des pattes trop épaisses. Ces écarts
+   ne sont pas corrigés : ils entrent dans la reprise ciblée posée en question.
 
 ## Questions au porteur
+- **Une reprise ciblée de la silhouette ?** Le troisième juge et les cartes SAM s'accordent sur trois défauts. Le propodéum se
+  détache du mésosome et donne une taille « à deux nœuds ». Le mésosome est trop long et trop haut. Les pattes sont trop
+  épaisses. Ils font lire une autre sous-famille, alors que la règle des deux essais les a garés. Proposition : un troisième
+  essai limité à ces points, mesuré contre `cartes/c254-profil` et `c107-profil` (cibles : mésosome 0,28 de long et 0,23 de
+  haut, tête 0,24), puis une nouvelle cuisson de l'atlas (31 min, par le verrou).
 - **Le pétale porté.** C'est un fragment de 1,5 mm découpé dans un pétale tombé, un sprite à part teinté de la couleur du
   pétale. Proposition : garder cette convention pour tous les bouquets, le fragment tirant sa teinte du pétale fané le plus
   proche.
