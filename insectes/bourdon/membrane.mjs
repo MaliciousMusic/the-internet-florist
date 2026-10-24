@@ -123,7 +123,7 @@ export function membranePaint(sc, W, light = { fres: 0.05, sky: 0.5, irid: 0, gl
     s += `<path d="${W.pap.d}" fill="url(#${pid})" opacity="${fmt(clamp(W.pap.a * 1.4, 0.1, 0.8))}"/>`;
   }
   // the reflected sky and the thin-film colours, over the membrane, under the veins
-  if (light.fres > 0.004) s += `<path d="${W.outline}" fill="#eef2f6" fill-opacity="${fmt(light.fres * light.sky)}"/>`;
+  if (light.fres > 0.004) s += `<path d="${W.outline}" fill="#e6d3b4" fill-opacity="${fmt(light.fres * light.sky)}"/>`;
   if (light.irid > 0.01) {
     const [x0, y0, x1, y1] = W.box, iid = sc.id('mi'), cx = (x0 + x1) / 2 + (x1 - x0) * 0.25 * (light.ish ?? 0);
     sc.defs.push(`<radialGradient id="${iid}" gradientUnits="userSpaceOnUse" cx="${fmt(cx)}" cy="${fmt((y0 + y1) / 2)}" r="${fmt((x1 - x0) * 0.6)}">` +
@@ -149,13 +149,17 @@ export function drawMembrane(sc, W, o, e1, e2, opt = {}) {
   const { cam, k } = sc;
   const [x0, y0, x1, y1] = W.box;
   const alpha = opt.alpha ?? 1;
-  sc.wings.push({ o, e1, e2, n: norm(cross(e1, e2)), cx: (x0 + x1) / 2, cy: (y0 + y1) / 2, rx: (x1 - x0) / 2 * 0.95, ry: (y1 - y0) / 2 * 0.9, shadow: 0.16 * alpha });
+  // what lies under the wing gets the light through it twice: T about 0.85 flat, so 0.72 (on c024 the stacked wings over the
+  // midline take the band of the 2nd tergite from L* 37 to 22)
+  sc.wings.push({ o, e1, e2, n: norm(cross(e1, e2)), cx: (x0 + x1) / 2, cy: (y0 + y1) / 2, rx: (x1 - x0) / 2 * 0.95, ry: (y1 - y0) / 2 * 0.9, shadow: 0.28 * alpha });
   const a = k * dot(e1, cam.r), b = -k * dot(e1, cam.u), c = k * dot(e2, cam.r), d = -k * dot(e2, cam.u);
   const det = Math.abs(a * d - b * c) / (k * k);
   const q = sc.S(o);
   const nw = norm(cross(e1, e2)), facing = Math.abs(dot(nw, cam.c));
   const light = {
-    fres: (0.04 + 0.45 * Math.pow(1 - facing, 4)) * 0.7,
+    // the sky mirrored on the membrane: over the black abdomen the folded wing of c060 reads L* 45 a 4 b 15 (a warm sheen of
+    // about a tenth of the sky, the back surface's share tinted by the membrane), brighter toward grazing
+    fres: 0.1 + 0.15 * Math.pow(1 - facing, 4),
     sky: 0.5 + 0.5 * Math.abs(dot(nw, cam.u)),
     irid: 0.12 * Math.pow(1 - facing, 1.2) * (opt.irid ?? 1),
     ish: dot(nw, cam.H) * 0.5,

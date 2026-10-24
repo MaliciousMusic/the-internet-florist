@@ -10,7 +10,7 @@ D=refcache/bombus-terrestris/demi; O=refcache/bombus-terrestris/formes
 one() {
   n=$1; shift
   [ $# -gt 0 ] || return
-  GATE_MAX=1 sh ws/gate.sh $PY insectes/outils/forme.py photo "$@" --out $O/$n
+  GATE_MAX=1 GATE_RAM=${GATE_RAM:-5.5} sh C:/Users/agent/Desktop/flower/flower-atelier/ch/insectes-suite/ws/gate.sh $PY insectes/outils/forme.py photo "$@" --out $O/$n
 }
 want() { [ -z "$SEL" ] || echo " $SEL " | grep -q " $1 "; }
 SEL="$*"
