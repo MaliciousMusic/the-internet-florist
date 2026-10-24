@@ -2,7 +2,8 @@
 // (Lasius niger) bring the HUD's pieces and take them away, every time a piece comes or goes: the footer's pill and, on a
 // computer, the dock when the page opens; in the close-up each box of the price bubble (Buy with its price, "On your desktop",
 // "Fades in"; the resale line then shows by itself). They walk at the ant's real speed, in from the left and out to the right.
-// A piece answers clicks while it is carried.
+// A piece answers clicks while it is carried. Flying insects lay two pieces, once per load: the phone's dock (two butterflies)
+// and the pager (a ladybird and a rose chafer).
 //
 // Seen from the side (owner, the same evening: "vu horizontalement sur le rebord", "jamais en paire", "fais attention au
 // overlap"): the screen's bottom edge is a ledge, and every piece at rest is a block whose top is a ledge too. One ant carries
@@ -34,6 +35,9 @@ const PAUSE = 0.3; // s, when a piece is set down or taken up
 const OFF = '-200vw 0px'; // where a piece waits (as boutique.css puts it before this module runs)
 // ?lent=8: everything 8 times slower, to look at the carriers (a check, not a setting)
 const SLOW = Math.max(1, +(q.get('lent') || 1));
+// the pager's ladybird and rose chafer, nearer than the dock's butterflies (a proposal, insectes/DECISIONS.md): 2.5 px per mm,
+// the ladybird 18 px long, the chafer 45
+const BEETLE_PXMM = 2.5;
 
 if (root.classList.contains('porteuses')) {
   window.PORTEUSES = true;
@@ -46,7 +50,7 @@ if (root.classList.contains('porteuses')) {
 // the pieces back in their places, the class off: the HUD as it was without the ants
 function stopAll() {
   root.classList.remove('porteuses');
-  for (const el of document.querySelectorAll('.dock, .pied-poignee, .achat-vie, .achat-demo, .achat-bouton, .achat-revente')) {
+  for (const el of document.querySelectorAll('.dock, .pager, .pied-poignee, .achat-vie, .achat-demo, .achat-bouton, .achat-revente')) {
     el.style.translate = ''; el.style.visibility = '';
   }
 }
@@ -523,6 +527,7 @@ async function start() {
     for (let i = jobs.length - 1; i >= 0; i--) if (jobs[i].next(dt).done) jobs.splice(i, 1);
     for (const a of ants) a.draw();
     app.render();
+    if (flying && skyE) skyE.render();
   }
   function frame(t) {
     tick(Math.min(0.05, (t - tPrev) / 1000) / SLOW);
@@ -538,13 +543,133 @@ async function start() {
     if (g) run((function* () { yield* g; next(); })());
   }
 
+  // ---- pieces laid by two flying insects, one at each end ----
+  // The phone's dock: a swallowtail and a peacock. The pager: a ladybird and a rose chafer (owner, 2026-10-25: « le pager en haut
+  // où en bas est apporté par une coccinelle et une cétoine en volant »). They hold the piece by its ends with their legs and fly
+  // it in from the left, the piece hanging level between them, set it in its place, let go and fly off. They are drawn by a
+  // swarm of their own (insectes/runtime/essaim.mjs, its canvas over the HUD) with their wings as quads; their flight is their
+  // species' own (wingbeats, the body pitched up), their course is this one's.
+  // Sizes: the butterflies are real butterflies a little way in front of the screen, a quarter smaller than first tried (owner,
+  // 2026-10-24): 1.125 px per mm, the swallowtail about 85 px across. The beetles are nearer (a proposal, insectes/DECISIONS.md):
+  // at the butterflies' scale a ladybird would be an 8 px dot under a 22 px pill.
+  const FLYER = {
+    machaon: { mod: 'papillon.mjs', cls: 'Papillon', sp: 'MACHAON', wings: (b, dt) => { b.flyWings(dt); b.faceFlight(dt); } },
+    paon: { mod: 'papillon.mjs', cls: 'Papillon', sp: 'PAON', wings: (b, dt) => { b.flyWings(dt); b.faceFlight(dt); } },
+    // the elytra held up and open, the hind wings out and beating; its wings' depth as on the scene (insectes.mjs)
+    coccinelle: { mod: 'coccinelle.mjs', cls: 'Coccinelle', sp: 'COCCINELLE', depth: 1.6, set: (b) => { b.setFlight(1, 1); b.wingsHidden = false; }, wings: (b, dt) => { b.planes(dt); b.faceFlight(dt); } },
+    cetoine: { mod: 'cetoine.mjs', cls: 'Cetoine', sp: 'CETOINE', wings: (b, dt) => { b.strokeWings(dt); b.faceFlight(dt); } },
+  };
+  // the flyers' swarm, made once; the loop renders it while some fly
+  let sky = null, skyE = null, flying = 0;
+  const swarm = () => sky || (sky = (async () => {
+    const { Essaim } = await import(BASE + 'runtime/essaim.mjs');
+    const e = await Essaim.create({ layers: [], zCuts: [], size: () => [W(), H()], direct: true });
+    e.canvas.className = 'porteuses-plan';
+    e.canvas.setAttribute('aria-hidden', 'true');
+    const fit = () => { e.resize(); e.canvas.style.width = W() + 'px'; e.canvas.style.height = H() + 'px'; };
+    fit();
+    document.body.appendChild(e.canvas);
+    addEventListener('resize', fit);
+    skyE = e;
+    return e;
+  })());
+  // names: the left end's flyer, then the right end's. o: pxmm (their scale); hang (px, or a fraction of the flyer's length when
+  // under 1: how high its body's origin, at its thorax, is over the piece's upper edge); inset (px from the very ends; hang and
+  // inset may be given per flyer); rise (px: where the course starts,
+  // under the place when positive, over it when negative); speed (px/s along the course); away(R): where they fly off to.
+  // Resolves once the piece is in its place.
+  async function airlift(box, names, o) {
+    const e = await swarm();
+    const pair = [], flaps = [];
+    for (const name of names) {
+      const F = FLYER[name], M = await import(BASE + 'runtime/' + F.mod), S = M[F.sp];
+      if (!e.kinds[S.kind]) {
+        const url = `${BASE}${S.kind}/atlas/${S.kind}`;
+        const K = await e.kind(S.kind, url, S.bodyMm);
+        await e.wings(S.kind, url + '-ailes');
+        if (F.depth) K.wingsDepth = F.depth;
+      }
+      let seed = 7 + pair.length;
+      const b = new M[F.cls](e, [], () => ((seed = (seed * 1664525 + 1013904223) >>> 0) / 4294967296), { species: S, lengthPx: S.bodyMm * o.pxmm });
+      b.visible = true;
+      b.pose = 'vol';
+      if (F.set) F.set(b);
+      e.add(b);
+      pair.push(b);
+      flaps.push(F.wings);
+    }
+    // each flyer holds its end from above, its body over the end's upper edge (the phone's dock stands 14 px under the top edge:
+    // its butterflies hang a little lower, or they would leave the screen)
+    const R = box.rest();
+    const each = (v, i) => (Array.isArray(v) ? v[i] : v);
+    const lift = pair.map((b, i) => (Math.abs(each(o.hang, i)) < 1 ? each(o.hang, i) * b.lengthPx : each(o.hang, i)));
+    const ends = (x, y) => [[x - R.w / 2 + each(o.inset, 0), y - R.h / 2 - lift[0]], [x + R.w / 2 - each(o.inset, 1), y - R.h / 2 - lift[1]]];
+    // the piece's centre: in from the left, lower or higher, to its place (a cubic, level at both ends)
+    const p0 = [-R.w / 2 - 90, R.cy + o.rise], p3 = [R.cx, R.cy], run1 = Math.max(80, Math.abs(p0[1] - p3[1]) * 1.8);
+    const bez = (u) => { const v = 1 - u, A = v * v * v, B = 3 * v * v * u, C = 3 * v * u * u, D = u * u * u; return [A * p0[0] + B * (p3[0] - run1) + C * (p3[0] - run1 * 0.5) + D * p3[0], A * p0[1] + B * p0[1] + C * p3[1] + D * p3[1]]; };
+    const len = Math.hypot(p3[0] - p0[0], p3[1] - p0[1]) * 1.15, away = o.away(R);
+    const fly = (i, to, dt) => {
+      const b = pair[i];
+      b.V = [(to[0] - b.P[0]) / Math.max(dt, 1e-3), (to[1] - b.P[1]) / Math.max(dt, 1e-3), 0];
+      b.P = [to[0], to[1], 0];
+      flaps[i](b, dt);
+    };
+    let s = 0, phase = 'in', t = 0;
+    ends(...bez(0)).forEach((q, i) => { pair[i].P = [q[0], q[1], 0]; });
+    box.state = 'moving';
+    flying++;
+    return new Promise((set) => run((function* () {
+      for (;;) {
+        const dt = yield;
+        if (phase === 'in') {
+          s = Math.min(len, s + o.speed * dt);
+          const [x, y] = bez(s / len);
+          ends(x, y).forEach((q, i) => fly(i, q, dt));
+          box.el.style.translate = `${(x - R.cx).toFixed(1)}px ${(y - R.cy).toFixed(1)}px`;
+          if (s >= len) { box.home(); set(); phase = 'let'; t = 0; }
+        } else {
+          // let go: a short hover, then off, faster and faster
+          t += dt;
+          const go = Math.max(0, t - 0.35), sp = 60 + 260 * Math.min(1, go);
+          pair.forEach((b, i) => {
+            const d = [away[0] - b.P[0], away[1] - b.P[1]], l = Math.hypot(d[0], d[1]) || 1;
+            fly(i, [b.P[0] + (d[0] / l) * sp * dt, b.P[1] + (d[1] / l) * sp * dt], dt);
+          });
+          if (pair.every((b) => b.P[1] < -60 || b.P[0] > W() + 80)) {
+            for (const b of pair) b.visible = false;
+            flying--;
+            e.render();
+            return;
+          }
+        }
+      }
+    })()));
+  }
+
   // ---- when the pieces come and go ----
   if (!root.classList.contains('porteuses')) { app.destroy(true); return; } // scene.js gave up waiting: the HUD stands as it was
   // when the page opens: the dock (computer), then the footer's pill
   order((function* () { if (dock) yield* dockIn(); if (pill) yield* pillIn(); })());
   window.PORTEUSES_EN_ROUTE = true;
-  // on a phone the dock is at the top: two butterflies lay it (below); if they cannot, it stands in its place
-  if (!DESK.matches && $('.dock')) butterflies(new Box($('.dock'))).catch((err) => { console.error('[porteuses]', err); $('.dock').style.translate = 'none'; });
+  // on a phone the dock is at the top: two butterflies lay it (airlift, above); if they cannot, it stands in its place
+  const topDock = !DESK.matches && $('.dock') ? new Box($('.dock'), { name: 'dock' }) : null;
+  const docked = topDock ? airlift(topDock, ['machaon', 'paon'], { pxmm: 1.125, hang: -6, inset: 0, rise: 90, speed: 170, away: () => [W() + 140, -120] }).catch((err) => { console.error('[porteuses]', err); topDock.home(); })
+    : dock ? new Promise((ok) => { dock.after = ok; }) : Promise.resolve();
+  // the pager (one dot per bouquet of the day, by the dock: under it on a phone, just above it on a computer), brought by a
+  // ladybird and a rose chafer once the dock is in its place and the pager has its dots (boutique.js shows it when there are two
+  // bouquets or more)
+  const pager = $('#pager');
+  if (pager) {
+    const pg = new Box(pager, { name: 'pager' });
+    const shown = new Promise((ok) => {
+      if (!pager.hidden) return ok();
+      const mo = new MutationObserver(() => { if (!pager.hidden) { mo.disconnect(); ok(); } });
+      mo.observe(pager, { attributes: true, attributeFilter: ['hidden'] });
+    });
+    Promise.all([docked, shown])
+      .then(() => airlift(pg, ['coccinelle', 'cetoine'], { pxmm: BEETLE_PXMM, hang: 0.12, inset: [11, 6], rise: DESK.matches ? -110 : 90, speed: 190, away: (R) => [W() + 140, R.cy - 70] }))
+      .catch((err) => { console.error('[porteuses]', err); pg.home(); });
+  }
   // the close-up: the bubble's boxes come with it and go with it; the resale line shows once Buy is set
   const achat = $('#achat');
   if (achat && buy && vie && demo) {
@@ -563,74 +688,5 @@ async function start() {
     check();
   }
   // a handle for checks in the browser
-  window.__porteuses = { ants, jobs, pieces, stacks, tick, order, GRIP_UP, LIFT };
-
-  // ---- the phone's dock, laid at the top by a swallowtail and a peacock, one at each end ----
-  // They hold it by its very ends with their legs and fly it in from the left, the dock hanging between them, set it in its
-  // place, let go and fly off up and to the right. They are drawn by a swarm of their own (insectes/runtime/essaim.mjs, its
-  // canvas over the HUD) with their wings as quads; their flight is the butterflies' own (papillon.mjs: wingbeats, the body
-  // pitched up), their course is this one's. Their size is that of real butterflies a little way in front of the screen, a
-  // quarter smaller than first tried (owner, 2026-10-24): 1.125 px per mm, the swallowtail about 85 px across.
-  async function butterflies(box) {
-    const [{ Essaim }, P] = await Promise.all([import(BASE + 'runtime/essaim.mjs'), import(BASE + 'runtime/papillon.mjs')]);
-    const e = await Essaim.create({ layers: [], zCuts: [], size: () => [W(), H()], direct: true });
-    e.canvas.className = 'porteuses-plan';
-    e.canvas.setAttribute('aria-hidden', 'true');
-    const fit = () => { e.resize(); e.canvas.style.width = W() + 'px'; e.canvas.style.height = H() + 'px'; };
-    fit();
-    document.body.appendChild(e.canvas);
-    addEventListener('resize', fit);
-    const PXMM = 1.125;
-    const pair = [];
-    for (const S of [P.MACHAON, P.PAON]) {
-      const url = `${BASE}${S.kind}/atlas/${S.kind}`;
-      await e.kind(S.kind, url, S.bodyMm);
-      await e.wings(S.kind, url + '-ailes');
-      let seed = 7 + pair.length;
-      const b = new P.Papillon(e, [], () => ((seed = (seed * 1664525 + 1013904223) >>> 0) / 4294967296), { species: S, lengthPx: S.bodyMm * PXMM });
-      b.visible = true;
-      b.pose = 'vol';
-      e.add(b);
-      pair.push(b);
-    }
-    const [mach, paon] = pair;
-    // each butterfly holds the dock by its very end, its body on the end's upper edge (the dock stands 14 px under the top edge:
-    // held from above, they would leave the screen)
-    const R = box.rest(), hang = -6;
-    const ends = (x, y) => [[x - R.w / 2, y - R.h / 2 - hang], [x + R.w / 2, y - R.h / 2 - hang]];
-    // the dock's centre: in from the left, lower, up to its place (a cubic, level at both ends)
-    const p0 = [-R.w / 2 - 90, R.cy + 90], p3 = [R.cx, R.cy], run1 = Math.max(80, (p0[1] - p3[1]) * 1.8);
-    const bez = (u) => { const v = 1 - u, A = v * v * v, B = 3 * v * v * u, C = 3 * v * u * u, D = u * u * u; return [A * p0[0] + B * (p3[0] - run1) + C * (p3[0] - run1 * 0.5) + D * p3[0], A * p0[1] + B * p0[1] + C * p3[1] + D * p3[1]]; };
-    const len = Math.hypot(p3[0] - p0[0], p3[1] - p0[1]) * 1.15, away = [W() + 140, -120];
-    const fly = (b, to, dt) => {
-      b.V = [(to[0] - b.P[0]) / Math.max(dt, 1e-3), (to[1] - b.P[1]) / Math.max(dt, 1e-3), 0];
-      b.P = [to[0], to[1], 0];
-      b.flyWings(dt); b.faceFlight(dt);
-    };
-    let s = 0, phase = 'in', t = 0;
-    [mach.P, paon.P] = ends(...bez(0)).map((q) => [q[0], q[1], 0]);
-    box.state = 'moving';
-    run((function* () {
-      for (;;) {
-        const dt = yield;
-        if (phase === 'in') {
-          s = Math.min(len, s + 170 * dt);
-          const [x, y] = bez(s / len), [a, b] = ends(x, y);
-          fly(mach, a, dt); fly(paon, b, dt);
-          box.el.style.translate = `${(x - R.cx).toFixed(1)}px ${(y - R.cy).toFixed(1)}px`;
-          if (s >= len) { box.home(); phase = 'let'; t = 0; }
-        } else {
-          // let go: a short hover, then off up and to the right, faster and faster
-          t += dt;
-          const go = Math.max(0, t - 0.35), sp = 60 + 260 * Math.min(1, go);
-          for (const b of pair) {
-            const d = [away[0] - b.P[0], away[1] - b.P[1]], l = Math.hypot(d[0], d[1]) || 1;
-            fly(b, [b.P[0] + (d[0] / l) * sp * dt, b.P[1] + (d[1] / l) * sp * dt], dt);
-          }
-          if (pair.every((b) => b.P[1] < -60 || b.P[0] > W() + 80)) { for (const b of pair) b.visible = false; e.render(); return; }
-        }
-        e.render();
-      }
-    })());
-  }
+  window.__porteuses = { ants, jobs, pieces, stacks, tick, order, GRIP_UP, LIFT, sky: () => skyE };
 }

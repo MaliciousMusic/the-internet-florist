@@ -678,12 +678,14 @@
   margin-bottom: 22px;
 }
 
-/* the dock: brought by an ant on a computer (at the bottom), laid by two butterflies on a phone (at the top) */
-.porteuses .dock {
+/* the dock: brought by an ant on a computer (at the bottom), laid by two butterflies on a phone (at the top); the pager: brought
+   by a ladybird and a rose chafer */
+.porteuses .dock,
+.porteuses .pager {
   translate: -200vw 0;
 }
 
-/* the Open button waits for its ant (fourmi-open.mjs), once per visit */
+/* the Open button waits for its ant (fourmi-open.mjs), at every load */
 .fourmi-open .bq-voir {
   visibility: hidden;
 }

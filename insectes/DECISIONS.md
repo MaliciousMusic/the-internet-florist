@@ -130,6 +130,28 @@ Deuxième prototype (`decor/scene/porteuses.mjs`) :
 - **Panneau Legal** (décision du porteur, 2026-10-25) : il s'ouvre et se referme seul, sans fourmis. De profil, rien ne se
   trouve au-dessus du panneau pour qu'une fourmi s'y accroche et le tire. Les fourmis n'apportent que la pastille.
 
+Le pager (demande du porteur, 2026-10-25, relayée par la session « Optimisation site marchand ») : « le pager en haut où en bas
+est apporté par une coccinelle et une cétoine en volant ».
+- **Qui** : la coccinelle tient le bout gauche, la cétoine le bout droit, celui qui va devant. Elles le tiennent par-dessus,
+  pattes sur le bord haut, et volent avec leur propre vol : élytres levées et ailes battantes pour la coccinelle, élytres closes
+  et ailes sorties pour la cétoine, corps cabré.
+- **Chemin** : elles entrent par la gauche, le pager à plat entre elles. Sur ordinateur, elles descendent jusqu'au-dessus du
+  dock ; sur téléphone, elles montent jusque sous le dock. Elles le posent, le lâchent et repartent vers la droite.
+- **Quand** : une fois par chargement, après le dock (posé par la fourmi sur ordinateur, par les papillons sur téléphone), et
+  dès que le pager a ses points (il en faut au moins deux).
+- **Durées** (mesurées image par image) : pager posé 3,9 s après le dock sur ordinateur, 2,1 s après sur téléphone. Les deux
+  insectes ont quitté l'écran 3 s plus tard.
+- **Code** : `airlift()` de `decor/scene/porteuses.mjs` sert maintenant aux deux duos volants, les papillons du dock et les
+  coléoptères du pager.
+
+Questions au porteur, avec ma proposition :
+- **Taille des deux coléoptères** : à l'échelle des papillons du dock (1,125 px/mm), la coccinelle ne ferait que 8 px sous un
+  pager de 22 px. Je propose 2,5 px/mm : la coccinelle fait 18 px, la cétoine 45 px (constante `BEETLE_PXMM`). Elles sont donc
+  plus près de l'œil que les papillons, et la cétoine reste plus petite qu'une fourmi du HUD (56 px).
+- **Gros plan et étagère** : le pager est masqué en gros plan et sous l'étagère ouverte. Je propose qu'il réapparaisse seul,
+  sans que les deux insectes le rapportent à chaque fois. Sinon, une coccinelle et une cétoine voleraient à chaque retour du
+  gros plan.
+
 Propositions, à valider sur le premier prototype :
 - ~~**Pose** : les fourmis marchent de profil sur le bord bas de l'écran comme sur un sol. Elles tiennent la case levée
   devant elles.~~ Remplacée par la vue de dessus, voir plus haut.

@@ -331,3 +331,8 @@ l'identité de son éditeur dans ses mentions légales.
   Le détail et les durées mesurées sont dans `insectes/DECISIONS.md`. La fourmi d'Open revient à chaque chargement et part dès
   que le bouquet a poussé. Les papillons du téléphone tiennent le dock par ses bouts et sont 25 % plus petits.
 - 2026-10-25, panneau Legal (porteur) : il s'ouvre et se referme seul, sans fourmis. Les fourmis n'apportent que la pastille.
+- 2026-10-25, pager (porteur : « apporté par une coccinelle et une cétoine en volant ») : une fois par chargement, après le
+  dock, une coccinelle et une cétoine l'apportent en volant, une à chaque bout, jusqu'à sa place : au-dessus du dock sur
+  ordinateur, sous lui sur téléphone. `porteuses.mjs` le garde hors de l'écran (classe `porteuses`) jusqu'à leur arrivée, et
+  attend que `boutique.js` le montre. Le pager lui-même vient de la branche `ch/site-leger`. Taille des insectes et retour
+  après le gros plan : questions dans `insectes/DECISIONS.md`.
