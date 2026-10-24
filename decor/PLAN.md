@@ -271,3 +271,22 @@ l'identité de son éditeur dans ses mentions légales.
   seulement). Téléphone : premier affichage 5,3 → 0,7 s, plus grand affichage 13,8 → 2,6 s, pousse 1 → 50 images/s.
   Ordinateur : plus grand affichage 20,9 → 3,0 s, mais la pousse reste à 12 images/s et le bouquet part vers 10 à 13 s.
   Question ouverte au porteur : servir le décor fixe en WebP pré-rendu depuis les SVG (le produit reste en SVG) ?
+- 2026-10-24 (porteur) : les insectes finis volent sur le site, à leur vraie taille (`scene/insectes.mjs`) : 4 abeilles, le
+  machaon, 2 paons-du-jour (3 papillons au plus), la cétoine, le moro-sphinx et la sauterelle. Ce sont des sprites de leurs
+  atlas WebP, posés par PixiJS dans des canvas intercalés entre les plans :
+  - derrière le bouquet ;
+  - entre ses quatre boîtes de profondeur (`eclosion.js`, option `plans`) ;
+  - devant lui ;
+  - devant les touffes du premier plan.
+  La perspective suit la caméra commune : point de fuite au milieu de l'horizon, distance d = 4,37 m × (1 − z / 1400).
+  La taille suit la distance : vraie taille contre la prairie (1,854 / d unités par mm). Au bouquet, dessiné 1,8 fois plus
+  grand que nature, c'est la vraie taille contre ses fleurs, et l'insecte passe en douceur de l'une à l'autre en s'éloignant.
+  Chargement et comportement :
+  - ils arrivent après la première éclosion ; l'éclosion part toujours à 4,1 s, avec ou sans eux ;
+  - le gros plan les redessine nets et charge les grands niveaux de détail ;
+  - quand le bouquet se replie, ils s'envolent ;
+  - un clic sur un insecte le fait fuir sans ouvrir le gros plan ;
+  - `?insectes=0` les retire ; il n'y en a aucun avec prefers-reduced-motion.
+  Mesuré dans le panneau du navigateur : 55 images/s sur ordinateur (1,4 ms par image pour les insectes), 140 sur téléphone
+  émulé. À faire pour le dépôt du site : y copier `insectes/runtime` et les atlas (aujourd'hui lus à la racine du dépôt,
+  serveur « insectes-site », port 8830).

@@ -3,6 +3,12 @@
 //
 // Scene frame of the runtime: X to the right and Y down in CSS pixels of the page, Z toward the viewer. A point at depth Z
 // is seen at c + (P - c) * F / (F - Z), c being the centre of the view.
+//
+// For a page whose scene is not the window (the shop, decor/scene/insectes.mjs), three options, none of which changes the
+// default: size() gives the scene frame (CSS px) instead of the window; centreAt(x, y) puts the vanishing point of the
+// perspective there (the shop's horizon) instead of the frame's middle; setView(ox, oy, s) says the canvases cover only the
+// part of the frame from (ox, oy), magnified s times (the shop's close-up scales the whole scene), and are drawn at that
+// resolution, so the insects stay sharp in it.
 import { Application, Assets, Container, MeshSimple, Rectangle, Sprite, Texture } from './vendor/pixi-8.6.6.min.mjs';
 import { bodyFrame, viewOf, pickCell, flapAxes } from './vue.mjs';
 
@@ -10,10 +16,11 @@ export const PERSPECTIVE = 1400;
 
 export class Essaim {
   // layers: canvases from the back to the front; zCuts[i]: depth that separates layer i from layer i + 1.
-  static async create({ layers, zCuts }) {
+  static async create({ layers, zCuts, size = null }) {
     const e = new Essaim();
     e.layers = layers.map((c) => ({ canvas: c, ctx: c.getContext('2d'), box: null }));
     e.zCuts = zCuts;
+    e.size = size; e.centre = null; e.ox = 0; e.oy = 0; e.vs = 1;
     e.app = new Application();
     await e.app.init({ width: 8, height: 8, backgroundAlpha: 0, antialias: false, autoStart: false, preference: 'webgl', autoDensity: false, resolution: 1 });
     e.stage = new Container();
@@ -27,21 +34,45 @@ export class Essaim {
   resize() {
     const dpr = Math.min(2, window.devicePixelRatio || 1);
     this.dpr = dpr;
-    this.w = window.innerWidth; this.h = window.innerHeight;
+    [this.w, this.h] = this.size ? this.size() : [window.innerWidth, window.innerHeight];
+    // canvas px per scene px
+    this.res = dpr * this.vs;
+    [this.cx, this.cy] = this.centre || [this.w / 2, this.h / 2];
     for (const l of this.layers) {
       l.canvas.width = Math.round(this.w * dpr); l.canvas.height = Math.round(this.h * dpr);
-      l.canvas.style.width = this.w + 'px'; l.canvas.style.height = this.h + 'px';
+      l.canvas.style.width = this.w / this.vs + 'px'; l.canvas.style.height = this.h / this.vs + 'px';
       l.box = null;
     }
     this.app.renderer.resize(Math.round(this.w * dpr), Math.round(this.h * dpr));
   }
 
-  // An insect kind: its atlas index, its textures, its body length in millimetres.
-  async kind(name, url, bodyMm) {
+  centreAt(x, y) { this.centre = [x, y]; [this.cx, this.cy] = this.centre; }
+
+  setView(ox, oy, s) {
+    if (ox === this.ox && oy === this.oy && s === this.vs) return;
+    this.ox = ox; this.oy = oy; this.vs = s;
+    this.resize();
+  }
+
+  // scene px to canvas px
+  cvx(x) { return (x - this.ox) * this.res; }
+  cvy(y) { return (y - this.oy) * this.res; }
+
+  // An insect kind: its atlas index, its textures, its body length in millimetres. only: the levels of detail to load now
+  // (all by default); more() loads the others later.
+  async kind(name, url, bodyMm, only = null) {
     const idx = await (await fetch(url + '.json')).json();
     const base = url.slice(0, url.lastIndexOf('/') + 1);
     const lods = {};
+    this.kinds[name] = { idx, lods, bodyMm, base };
+    await this.more(name, only);
+    return this.kinds[name];
+  }
+
+  async more(name, only = null) {
+    const K = this.kinds[name], idx = K.idx, base = K.base, lods = K.lods;
     for (const [k, L] of Object.entries(idx.lod)) {
+      if (lods[k] || (only && !only.includes(k))) continue;
       const tex = await Assets.load(base + L.file);
       tex.source.scaleMode = 'linear';
       // Insects are often shown much smaller than their cell: mipmaps keep the hairs from shimmering.
@@ -52,8 +83,6 @@ export class Essaim {
       for (let i = 0; i < n; i++) cells.push(new Texture({ source: tex.source, frame: new Rectangle((i % L.cols) * L.cell, Math.floor(i / L.cols) * L.cell, L.cell, L.cell) }));
       lods[k] = { ...L, cells };
     }
-    this.kinds[name] = { idx, lods, bodyMm };
-    return this.kinds[name];
   }
 
   // The wings of a butterfly (outils/ailes.mjs): one sheet with each wing's upper side and underside, drawn in the wing's
@@ -110,7 +139,7 @@ export class Essaim {
       [[s0, q1], [s1, q1], [s1, q0], [s0, q0]].forEach(([s, q], i) => {
         const o = toS(at(s, q));
         const P = this.project([b.P[0] + o[0] * mmS, b.P[1] - o[1] * mmS, b.P[2] + o[2] * mmS]);
-        v[2 * i] = P.x * this.dpr; v[2 * i + 1] = P.y * this.dpr;
+        v[2 * i] = this.cvx(P.x); v[2 * i + 1] = this.cvy(P.y);
       });
       g.m.geometry.getBuffer('aPosition').update();
       // the face toward the viewer (wingFace in the engine: the upper side's normal is -n for a left wing, n for a right one)
@@ -134,13 +163,13 @@ export class Essaim {
 
   project(P) {
     const s = PERSPECTIVE / (PERSPECTIVE - P[2]);
-    return { x: this.w / 2 + (P[0] - this.w / 2) * s, y: this.h / 2 + (P[1] - this.h / 2) * s, s };
+    return { x: this.cx + (P[0] - this.cx) * s, y: this.cy + (P[1] - this.cy) * s, s };
   }
 
   // Inverse: the scene point at depth z that is seen at the page point (x, y).
   unproject(x, y, z) {
     const s = PERSPECTIVE / (PERSPECTIVE - z);
-    return [this.w / 2 + (x - this.w / 2) / s, this.h / 2 + (y - this.h / 2) / s, z];
+    return [this.cx + (x - this.cx) / s, this.cy + (y - this.cy) / s, z];
   }
 
   layerOf(z) { let i = 0; while (i < this.zCuts.length && z > this.zCuts[i]) i++; return i; }
@@ -155,21 +184,21 @@ export class Essaim {
       const q = this.project(b.P);
       // Orientation: the runtime frame is Y down, the view maths are Y up.
       const fr = bodyFrame([b.fwd[0], -b.fwd[1], b.fwd[2]], b.bank || 0, [0, 1, 0]);
-      const eye = [this.w / 2 - b.P[0], -(this.h / 2 - b.P[1]), PERSPECTIVE - b.P[2]];
+      const eye = [this.cx - b.P[0], -(this.cy - b.P[1]), PERSPECTIVE - b.P[2]];
       const el = Math.hypot(...eye);
       const v = viewOf(fr, [eye[0] / el, eye[1] / el, eye[2] / el]);
       const pxmm = (b.lengthPx / K.bodyMm) * q.s;
       const shown = K.idx.span * pxmm;
-      const lodName = K.lods.L && shown > K.lods.S.cell * 1.25 && K.lods.L.poses.includes(b.pose) ? 'L' : 'S';
+      const lodName = K.lods.L && shown * this.vs > K.lods.S.cell * 1.25 && K.lods.L.poses.includes(b.pose) ? 'L' : 'S';
       const lod = K.lods[lodName];
       const c = pickCell(lod, lod.el || K.idx.el, b.pose, b.frame, K.idx.frames[b.pose], v);
       if (c.i === undefined) { sp.visible = false; if (b.wingMeshes) for (const g of b.wingMeshes) g.m.visible = false; continue; }
       sp.texture = lod.cells[c.i];
       const sc = shown / lod.cell;
-      sp.scale.set((c.flip ? -sc : sc) * this.dpr, sc * this.dpr);
+      sp.scale.set((c.flip ? -sc : sc) * this.res, sc * this.res);
       sp.rotation = v.rotation;
       sp.zIndex = b.P[2];
-      sp.position.set(q.x * this.dpr, q.y * this.dpr);
+      sp.position.set(this.cvx(q.x), this.cvy(q.y));
       sp.visible = true;
       b.screen = { x: q.x, y: q.y, r: shown * 0.28, view: v, lod: lodName };
       // b.wingsOff: the wings are baked in the cell (the moro-sphinx's fake beat in flight); b.wingsShown === false (a bush-cricket
@@ -194,7 +223,7 @@ export class Essaim {
       // Only the region the insects of this layer cover, now and at the previous frame, is cleared and copied.
       let box = null;
       for (const b of mine) {
-        const rr = b.screen.r * 2.2 * this.dpr, x = b.screen.x * this.dpr, y = b.screen.y * this.dpr;
+        const rr = b.screen.r * 2.2 * this.res, x = this.cvx(b.screen.x), y = this.cvy(b.screen.y);
         box = grow(box, x - rr, y - rr, x + rr, y + rr);
       }
       const dirty = union(box, L.box);

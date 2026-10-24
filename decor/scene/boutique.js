@@ -561,7 +561,8 @@
     let b;
     try {
       // past its lifespan: shown in its final state, still (the faded drawing is still to be pre-drawn)
-      b = await Eclosion.ouvre(plane, p.bouquet, { monde: [WW, WH], auto: false, final: faded(p) });
+      // four depth boxes: the insects (insectes.mjs) fly between them, in front of some flowers and behind others
+      b = await Eclosion.ouvre(plane, p.bouquet, { monde: [WW, WH], auto: false, final: faded(p), plans: 4 });
     } catch (err) {
       console.error('[boutique]', p.id, err);
       return;

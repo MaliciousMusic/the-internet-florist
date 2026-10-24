@@ -27,7 +27,10 @@
 // Options: monde (the parent's frame in world units: the box comes from manifest.boite; without it, the bouquet fills the
 // parent), final (everything at rest, as drawn: no growth, no breeze), immobile (it grows, no breeze), auto (start as soon
 // as ready, true by default), avance (ms of growth that must be loaded before the start, 450 by default), parallele
-// (files loading at once, 6 by default).
+// (files loading at once, 6 by default), plans (the pieces cut, in their stacking order, into that many boxes of equal
+// count laid over one another, so the insects' canvases can sit between them: b.plans, b.plan[k] the box of piece k).
+// The parent gets the event "eclosion:ouvert" (detail: the bouquet) once its boxes are in, "eclosion:repli" when it starts
+// folding back.
 // prefers-reduced-motion: the bouquet is shown open and still.
 (() => {
   'use strict';
@@ -57,9 +60,16 @@
     // CSS pixel per unit, brought to its place and size in the world by a single transform; clipped like the engine's
     const X0 = Math.floor(vx);
     const Y0 = Math.floor(vy);
-    const box = document.createElement('div');
-    box.className = 'bq-pose';
-    box.style.cssText = `position:absolute;left:0;top:0;width:${Math.ceil(vx + vw) - X0}px;height:${Math.ceil(vy + vh) - Y0}px;overflow:hidden;pointer-events:none;transform-origin:0 0`;
+    const nPlans = Math.max(1, Math.min(m.pieces.length, opt.plans | 0 || 1));
+    const per = Math.ceil(m.pieces.length / nPlans);
+    const boxes = [];
+    for (let g = 0; g < nPlans; g++) {
+      const bx = document.createElement('div');
+      bx.className = 'bq-pose';
+      bx.style.cssText = `position:absolute;left:0;top:0;width:${Math.ceil(vx + vw) - X0}px;height:${Math.ceil(vy + vh) - Y0}px;overflow:hidden;pointer-events:none;transform-origin:0 0`;
+      boxes.push(bx);
+    }
+    const box = boxes[0];
     box.dataset.etat = 'charge';
     const fit = () => {
       const pw = parent.clientWidth;
@@ -73,7 +83,8 @@
         ox = k * m.boite[0];
         oy = k * m.boite[1];
       }
-      box.style.transform = `translate(${(ox - (vx - X0) * e).toFixed(3)}px,${(oy - (vy - Y0) * e).toFixed(3)}px) scale(${e.toFixed(6)})`;
+      const tf = `translate(${(ox - (vx - X0) * e).toFixed(3)}px,${(oy - (vy - Y0) * e).toFixed(3)}px) scale(${e.toFixed(6)})`;
+      for (const bx of boxes) bx.style.transform = tf;
     };
     const ro = window.ResizeObserver ? new ResizeObserver(fit) : null;
 
@@ -105,8 +116,8 @@
       if (!still && p.t !== 'vase') img.style.visibility = 'hidden';
       return { p, img, outer, k, need, ok: null, anims: [] };
     });
-    for (const it of items) box.append(it.outer);
-    parent.append(box);
+    for (const it of items) boxes[Math.floor(it.k / per)].append(it.outer);
+    parent.append(...boxes);
     fit();
     if (ro) ro.observe(parent);
 
@@ -222,6 +233,8 @@
     const b = {
       manifeste: m,
       el: box,
+      plans: boxes,
+      plan: items.map((x) => Math.floor(x.k / per)),
       // the lateness (ms) of every piece that came after its own start
       retards: late,
       pieces: items.map((x) => x.img),
@@ -257,9 +270,10 @@
       // the bouquet folds back: each flower closes on the tip of its stem, then each stem goes back into the mouth, then the
       // vessel goes at once (a scale on the piece itself: its growth is over, its breeze, on its box, goes on meanwhile)
       repli() {
+        parent.dispatchEvent(new CustomEvent('eclosion:repli', { detail: b }));
         const end = () => {
           if (ro) ro.disconnect();
-          box.remove();
+          for (const bx of boxes) bx.remove();
         };
         if (RM || !started) return Promise.resolve(end());
         const out = [];
@@ -286,7 +300,7 @@
       arret() {
         for (const it of items) for (const a of it.anims) a.cancel();
         if (ro) ro.disconnect();
-        box.remove();
+        for (const bx of boxes) bx.remove();
       },
     };
     vReady.then(() => {
@@ -299,6 +313,7 @@
       startRes(startedAt);
       box.dataset.etat = 'fini';
     } else if (opt.auto !== false) b.pret.then(() => b.depart());
+    parent.dispatchEvent(new CustomEvent('eclosion:ouvert', { detail: b }));
     return b;
   }
 
