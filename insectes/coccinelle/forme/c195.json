@@ -1,1 +1,1 @@
-{"_doc":"forme.py : mesures de forme sur hd/c195.jpg (vue dessus), des rapports, jamais l'image","vue":"dessus","L_tot":1.11,"el_L":1.11,"t_wmax":0.583,"el_w":[0.377,0.545,0.646,0.745,0.816,0.885,0.934,0.967,0.983,0.994,1.0,0.998,0.989,0.963,0.932,0.895,0.832,0.688]}
+{"_doc":"forme.py : mesures de forme sur hd/c195.jpg (vue dessus), des rapports, jamais l'image","vue":"dessus","L_tot":1.103,"el_L":1.103,"t_wmax":0.639,"el_w":[0.386,0.552,0.64,0.742,0.82,0.889,0.936,0.971,0.985,0.999,0.999,1.0,0.989,0.968,0.938,0.892,0.832,0.709],"_masques":"élytres par SAM (2026-10-24)"}

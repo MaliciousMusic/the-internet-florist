@@ -18,9 +18,14 @@ remplacée. Ce fichier est tenu à jour au fil des étapes.
 
 ### Cartes de forme (outils/forme.py)
 - Masques par pièce (élytres, pronotum, tête) sur 4 vues de dessus (c370, c101, c299, c195) et 2 de profil (c542, c275).
-- SAM n'a pas pu tourner : la RAM libre est restée sous le seuil du verrou (2,6 à 4,5 Go, neuf sessions). Les masques viennent d'un mode
-  léger : GrabCut amorcé par les mêmes invites, rouge ou noir selon la pièce, enveloppe convexe des élytres. Les contrôles sont dans
-  `refcache/coccinella-7/forme/*/controle.jpg`. SAM reste en file au verrou et contrôlera les masques quand il passera.
+- Masques d'abord par un mode léger (la RAM manquait pour SAM) : GrabCut amorcé par les mêmes invites, rouge ou noir selon la pièce,
+  enveloppe convexe des élytres. SAM a tourné ensuite au verrou (2026-10-24, scores 0,96 à 0,99 sur les élytres) :
+  - les élytres sont repris de SAM sur les six vues ;
+  - le pronotum et la tête restent ceux de GrabCut, contrôlés : SAM y prend le fond (c542) ou la tache scutellaire (c370), et la lecture
+    par couleur, refaite sur les élytres de SAM, prend des rectangles de fond blanc ou gris ;
+  - les mesures confirment le modèle : longueur des élytres 1,098 W (1,102 retenu), largeur maximale à 0,583, dôme 0,573 de la longueur
+    (0,565 retenu), sommet au milieu, profils de largeur et de rebord à 0,01 près en moyenne. `modele.json` n'est pas changé.
+  Les contrôles sont dans `refcache/coccinella-7/forme/*/controle.jpg`.
 - Mesures (rapports à la largeur W des élytres, `forme/*.json`, plages des photos élargies de 25 % dans `forme/plages.json`), valeurs
   gardées dans `forme/modele.json` (médianes, profils lissés) :
   - longueur des élytres 1,10 W, largeur maximale à 58 % depuis l'apex, apex arrondi (demi-largeur 0,38 à 3 % de la longueur) ;
@@ -54,7 +59,18 @@ remplacée. Ce fichier est tenu à jour au fil des étapes.
 
 ### Animation et runtime
 - `runtime/coccinelle.mjs` et `COMPORTEMENT.md` (chiffres sourcés : 72,5 Hz, amplitude 190°, dépliage 0,1 s, repli 0,2 s).
-- Démo : `insectes/demo/index.html?n=0&coccinelle=4&taille=3`, serveur `insectes-03` (port 8823).
+- Démo : `insectes/demo/index.html?n=0&coccinelle=4&taille=3`, serveur `insectes-03` (port 8823). Vérifiée avec l'atlas recuit : les
+  quatre arrivent, se posent, marchent sur les cœurs ; aucune erreur, 6 Mo de textures en tout.
+- Atlas recuit (2026-10-24, 864 cellules en 132 s) :
+
+  | Atlas | Cellules | Taille | Fichier | GPU |
+  |---|---|---|---|---|
+  | S | 780 | 784 × 784 | 306 Ko | 2,3 Mo |
+  | L | 84 | 960 × 864 | 168 Ko | 3,2 Mo |
+  | ailes (plans) | | | 6 Ko | |
+
+  Soit 480 Ko à télécharger et 5,5 Mo sur le GPU (machaon : 409 Ko).
+- Planche d'animation : `planches/animation.png` (marche, pose, envol, battement, repli, vue à 300° et 30° d'élévation).
 
 ## Fichiers partagés touchés (pour l'intégration)
 - `moteur/insecte.mjs` : clés nouvelles `mat.box`, `mat.sky` (reflet du ciel), `b.over` (marques au-dessus du spéculaire),
@@ -98,13 +114,16 @@ remplacée. Ce fichier est tenu à jour au fil des étapes.
     points clairs sont retirés.
 
 ## Résidus et questions
-1. **Masques par GrabCut plutôt que SAM.** La RAM libre est restée sous le seuil du verrou toute la session (jusqu'à 0,6 Go libres).
-   SAM reste en file. Les mesures sont contrôlées sur les images `controle.jpg`.
+1. **Pronotum et tête mesurés sur les masques de GrabCut**, SAM les manquant (voir plus haut). Un seul écart entre SAM et le modèle :
+   au profil, la hauteur du dôme à la station la plus avancée (base des élytres, sous le bord du pronotum) est de 0,64 avec SAM contre
+   0,53 retenu.
+   Question : faut-il relever l'avant du dôme ? Proposition : non, tant que le juge ne le voit pas ; cette station est cachée sous le
+   pronotum au repos, et la changer demande de refaire les paires et l'atlas.
 2. **Aile postérieure non mesurée à plat.** Aucun spécimen étalé libre de droits. Elle est relevée sur c365, presque de face : corde
    moyenne de 3,2 mm contre 3,5 mm dans l'étude, car le lobe anal est replié sur la photo.
    Question : peut-on photographier une aile étalée, ou accepter une source sous licence non libre dont on ne garderait que les chiffres ?
-3. **Élytres ouverts en plans** (décision du porteur). Vus de chant au runtime, ils perdent leur courbure. Au tout début de l'envol, le
-   couvercle est plat pendant 0,12 s.
+3. **Élytres ouverts en plans** (décision du porteur). Vus de chant au runtime, ils perdent leur courbure ; sur la planche d'animation
+   (vue à 300°), l'élytre du côté opposé disparaît presque en vol. Au tout début de l'envol, le couvercle est plat pendant 0,12 s.
 4. **Élytre gauche en miroir du droit.** Le flanc gauche du spécimen mesuré n'a pas été photographié.
 5. **Pronotum et tête, deux essais, mis de côté.** Vu de dessus (c370), le pronotum de la photo a des côtés aplatis, tournés vers le
    haut, qui portent les plages crème bien de face, et la tête dépasse avec ses deux taches. Le rendu garde des flancs raides : la plage
