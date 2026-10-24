@@ -19,7 +19,7 @@ const lerp = (a, b, t) => a + (b - a) * t;
 export const SPHINX = {
   kind: 'moro-sphinx', bodyMm: 21.9,
   // body pitched head up while hovering (c153: 32°); the proboscis tip in the body frame (mm, moro-sphinx.mjs proboscisPath)
-  pitch: 32, tip: [25.34, 0, -15.06],
+  pitch: 32, tip: [24.12, 0, -16.55],
   // drawings of the fake beat (the real one runs at 77 to 86 Hz, Kihlström et al. 2020: no display can show it)
   seq: [0, 1, 2, 1],
   // at a flower 3 to 10 s (Doremi, after Herrera 1992), probing it a few times; 3 to 9 flowers, then it leaves
@@ -27,7 +27,7 @@ export const SPHINX = {
   // fast darting transit, quick side-steps between flowers (orders of magnitude, to be measured on video: COMPORTEMENT.md)
   speed: 620, hop: 420,
   // at rest: wings in a low roof, the forewings drawn back over the hindwings (moro-sphinx.mjs REST)
-  rest: { fore: { flap: -14, sweep: 65 }, hind: { flap: -16, sweep: 48 } }, restChance: 0.08, restTime: [4, 10],
+  rest: { fore: { flap: -10, sweep: 81 }, hind: { flap: -16, sweep: 66 } }, restChance: 0.08, restTime: [4, 10],
 };
 
 export class Sphinx {

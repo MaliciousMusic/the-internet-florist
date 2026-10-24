@@ -32,6 +32,6 @@ vidéo.
   et sous le corps). Il n'y a pas de flou.
 - **Fleur suivante.** Il fait un saut de côté vers une fleur voisine. Après 3 à 9 fleurs, il repart aussi vite qu'il est venu.
 - **Repos (rare, 8 %).** Il se pose sur la fleur qu'il vient de visiter, ailes repliées en toit bas. Les antérieures sont tirées
-  en arrière de 65° au-dessus des postérieures (c037, c038, c005). À partir de là, les ailes sont des quads au runtime
+  en arrière de 81° au-dessus des postérieures, tirées de 66° et plus basses (−16°), rangées dessous à côté de l'abdomen (apex à 24,7° de l'axe sur c037 ; c038, c005). À partir de là, les ailes sont des quads au runtime
   (`b.wingsOff = false`). Il reste 4 à 10 s, puis repart.
 - **Clic.** Il file aussitôt hors de l'écran, à 1,8 fois sa vitesse.

@@ -6,5 +6,5 @@ PY=C:/Users/agent/Desktop/flower/flower-atelier/vases5/.venv-depth/Scripts/pytho
 C=insectes/moro-sphinx/ailes/cadres.json; SAM=$1
 for f in "avant-dessus 4" "arriere-dessous 5" "arriere-dessus 5" "avant-dessous 4"; do
   set -- $f
-  GATE_MAX=1 sh ws/gate.sh $PY insectes/outils/aile.py plat $C $1 --k $2 $SAM || exit 1
+  GATE_MAX=1 sh C:/Users/agent/Desktop/flower/flower-atelier/ch/insectes-suite/ws/gate.sh $PY insectes/outils/aile.py plat $C $1 --k $2 $SAM || exit 1
 done

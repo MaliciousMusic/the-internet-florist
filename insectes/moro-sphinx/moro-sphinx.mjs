@@ -37,7 +37,7 @@ function cleanFringe(R) {
   const map = Object.fromEntries(pal.map((h) => [h, L(h) <= 80 ? h : ok[0] ?? h]));
   return { ...R, frange: { ...F, couleurs: F.couleurs.map((h) => map[h]) } };
 }
-const face = (R, seed, key, U = {}) => (R ? motif(cleanFringe(R), { seed, dustK: E[key], ...U }) : null);
+const face = (R, seed, key, U = {}) => (R ? motif(cleanFringe(R), { seed, dustK: E[key], fringe: 0, ...U }) : null);   // no fringe stroke: it drew a pale halo (judge)
 const M_FU = face(R_FU, 11, 'avant-dessus'), M_FD = face(R_FD, 12, 'avant-dessous', U_F);
 const M_HU = face(R_HU, 13, 'arriere-dessus'), M_HD = face(R_HD, 14, 'arriere-dessous', U_H);
 
@@ -71,7 +71,8 @@ function fibres(F, seed, U = { k: 1, rot: 0 }) {
     if (sc.k < 8) return '';
     const kk = Math.min(1, sc.k / 30), key = Math.round(kk * 10);
     if (!cache.has(key)) {
-      const R = rng(seed * 7919 + key), l = F.longueur, w = Math.max(0.022, F.largeur * 0.55) / Math.sqrt(kk);
+      // fine strokes (at most 0.035 mm: wider ones read as brush touches on the silky underside, judge)
+      const R = rng(seed * 7919 + key), l = F.longueur, w = Math.min(0.035, Math.max(0.022, F.largeur * 0.55)) / Math.sqrt(kk);
       // scales overlap like shingles: about half the surface carries a stroke lighter or darker than its zone
       const dens = (0.5 / (l * w)) * kk;
       const xs = F.cases.map((x) => x[0]), ys = F.cases.map((x) => x[1]);
@@ -106,7 +107,7 @@ const wing = (U, D, under, fu, fd) => (U && D ? {
   paint: U.paint, paintUnder: D.paint, top: withTop(fu, U), topUnder: withTop(fd, D), under,
   // no grain filter (porteur: no grain): the scales' texture is the measured fibres; the zones' edges soft as the scales blur
   // them (0.04 mm, about one scale's width)
-  soft: 0.04, grain: 0, veins: null, sheen: '#f6f1e6',
+  soft: 0.025, grain: 0, veins: null, sheen: '#f6f1e6',
 } : null);
 const FORE = wing(M_FU, M_FD, U_F, F_FU, F_FD), HIND = wing(M_HU, M_HD, U_H, F_HU, F_HD);
 
@@ -131,7 +132,11 @@ function hex2lab(h) {
 }
 const whiten = (G) => ({ ...G, rows: G.rows.map((r) => r.map((h) => { const [L, a, bb] = hex2lab(h); if (L < 60) return h; const w = Math.min(1, (L - 60) / 8);
   return lab2hex(L, a * (1 - 0.7 * w), bb - (bb - 7) * 0.7 * w); })) });
-const G_HEAD = grid('tete'), G_THX = whiten(grid('thorax')), G_ABD = whiten(grid('abdomen'));   // plat_corps.py + grille_corps.py, c186 / c188
+// the thorax's grey-brown flanks reach lower than the dorsal flattening shows (c153, c014: the white is the chest only): the
+// dorsal columns stretched 45° below the equator
+const lowerFlank = (G, sh) => ({ ...G, rows: G.rows.map((r) => r.map((_, j) => { const n = r.length, u = j / (n - 1), m = 0.5 - sh;
+  const v = u < m ? (u * 0.5) / m : 0.5 + ((u - m) * 0.5) / (0.5 + sh); return r[Math.min(n - 1, Math.round(v * (n - 1)))]; })) });
+const G_HEAD = grid('tete'), G_THX = lowerFlank(whiten(grid('thorax')), 0.25), G_ABD = whiten(grid('abdomen'));   // plat_corps.py + grille_corps.py, c186 / c188
 const pick = (R, a) => a[Math.floor(R() * a.length) % a.length];
 // hair colours read on the photos: the grey-brown fur of the back (c186, c037), the white of the face and chest (c188, c073)
 const FUR = ['#5e5647', '#6d6555', '#7d7563', '#4c463b'], WHITE = ['#ece8de', '#e2ddd0', '#f4f1ea', '#d4cfc2'];
@@ -140,9 +145,10 @@ const LEGMAT = { ks: 0.35, p: 50, ks2: 0.06, p2: 6, env: 0.25, mottle: 0.05, spe
 const EYEMAT = { ks: 0.3, p: 60, ks2: 0.1, p2: 7, env: 0.25, wrap: 0.12, amb: 0.3, mottle: 0.04, specColor: '#f2eee6' };
 
 export const B = {
-  head: [3.3, 0, -0.05], headR: [2.0, 1.85], eye: [3.05, 1.45, 0.1], eyeR: 0.88,
-  antBase: [3.35, 1.15, 1.45], antLen: 10.6,
-  thorax: [1.6, -5.2], thoraxR: [2.85, 2.75], thoraxZ: 0.4,
+  // the head sunk into the thorax's fur, a cone forward (c186): no neck shows
+  head: [3.1, 0, -0.05], headR: [2.0, 1.85], eye: [2.9, 1.22, -0.25], eyeR: 0.78,
+  antBase: [3.15, 1.15, 1.45], antLen: 10.6,
+  thorax: [1.6, -5.2], thoraxR: [3.0, 2.8], thoraxZ: 0.4,
   abdomen: [-3.6, -14.3], abdomenR: [2.65, 2.4], tuft: 2.4,
   proboscis: 25,
   hingeFore: [0, 3.05, 1.05], hingeHind: [-2.17, 3.0, 0.85],
@@ -156,7 +162,8 @@ function head(sc, pose) {
     profile: (t) => { const e = Math.pow(env(t, 0.5, 0.5) * 2, 0.5); return { x: -1.5 + 3.1 * t, zc: 0.1 * t, ry: B.headR[0] * e, rz: B.headR[1] * e }; },
     hair: { n: 1500, len: 0.5, w: 0.02, lean: 0.55, a: 0.85, droop: 0.4, twist: 0.7, fleece: 0.3, pile: 0.5, color: 'grid', gridK: 1.0,
       // the frons tuft, longer between the antennae (c074, c186)
-      lenAt: (t, th) => (t > 0.7 && Math.sin(th) > -0.2 ? 1.5 : 1) },
+      // and the scales of the vertex over the eyes' upper half (c037, c186: the eyes half hidden from above; judge 2026-10-24)
+      lenAt: (t, th) => (t > 0.7 && Math.sin(th) > -0.2 ? 1.5 : Math.sin(th) > 0.2 && Math.abs(Math.cos(th)) > 0.45 ? 1.6 : t < 0.2 ? 1.6 : 1) },
   });
   for (const s of [1, -1]) {
     const o = [B.eye[0], B.eye[1] * s, B.eye[2]], R = B.eyeR;
@@ -169,15 +176,15 @@ function head(sc, pose) {
       albedo: (t, th) => {
         const x = 2 * t - 1, q = Math.sqrt(Math.max(0, 1 - x * x)), n = [x, q * Math.cos(th), q * Math.sin(th)];
         const f = Math.max(0, (dot(n, c) - 0.86) / 0.14);
-        return f > 0 ? mixHex('#3a3024', '#0d0b09', Math.min(1, f * 1.6)) : '#3a3024';
+        return f > 0 ? mixHex('#5a4632', '#0d0b09', Math.min(1, f * 1.6)) : '#5a4632';
       },
     });
     // the labial palps: broad, clothed in white scales, meeting under the face, their outer lower edge dark (c073, c076)
     sc.part = s > 0 ? 'palpe-g' : 'palpe-d';
     drawBody(sc, {
-      name: 'palp', frame: pitched([3.55, 0.48 * s, -1.05], 22), color: '#e6e1d6', seed: 17 + s, mat: { ks: 0.04, p: 10, env: 0.02, wrap: 0.4 },
+      name: 'palp', frame: pitched([3.55, 0.48 * s, -1.05], 22), color: '#d9d3c5', seed: 17 + s, mat: { ks: 0.04, p: 10, env: 0.02, wrap: 0.4 },
       profile: (t) => { const e = Math.pow(env(t, 0.45, 0.6) * 2.1, 0.7); return { x: -0.4 + 2.15 * t, zc: 0, ry: 0.55 * e, rz: 0.72 * e }; },
-      albedo: (t, th) => (Math.cos(th) * s > 0.55 && Math.sin(th) < 0.1 ? '#5a554c' : '#e8e4da'),
+      albedo: (t, th) => (Math.cos(th) * s > 0.55 && Math.sin(th) < 0.1 ? '#5a554c' : '#d6d0c2'),
       hair: { n: 260, len: 0.32, w: 0.02, lean: 0.9, a: 0.9, pile: 0.4, fleece: 0.4, color: (t, th, R) => (Math.cos(th) * s > 0.6 && Math.sin(th) < 0 ? pick(R, ['#55504a', '#3e3a34', '#bdb8ac']) : pick(R, WHITE)) },
       bias: 0.06,
     });
@@ -185,16 +192,17 @@ function head(sc, pose) {
     sc.part = s > 0 ? 'antenne-g' : 'antenne-d';
     const pts = [[B.antBase[0], B.antBase[1] * s, B.antBase[2]]];
     let d = norm([0.86, 0.4 * s, 0.32]), p = pts[0];
-    const n = 26, hookAt = 0.95;
+    const n = 26, hookAt = 0.94;
     for (let i = 0; i < n; i++) {
       const f = i / n;
       p = add(p, mul(d, B.antLen / n)); pts.push(p);
       d = norm(add(d, f > hookAt ? [-0.35, 0.3 * s, -0.25] : f > 0.55 ? [0.0, 0.004 * s, -0.02] : [0.0, 0.0, -0.012]));
     }
     // radius: 0.11 at the base, the club widest (0.29) from 0.55 to 0.9 of the length, the hook thin
-    const rr = pts.map((_, i) => { const f = i / n; return f < 0.35 ? 0.1 : f < 0.6 ? 0.1 + 0.15 * (f - 0.35) / 0.25 : f < 0.9 ? 0.25 : 0.25 - 0.18 * Math.min(1, (f - 0.9) / 0.1); });
+    // the club thick to its end (c074: 0.55 to 0.6 mm across the flattened male club, seen edge on 0.4: c153), then the short hook
+    const rr = pts.map((_, i) => { const f = i / n; return f < 0.3 ? 0.09 : f < 0.6 ? 0.09 + 0.12 * (f - 0.3) / 0.3 : f < 0.94 ? 0.21 : 0.21 - 0.12 * Math.min(1, (f - 0.94) / 0.06); });
     // grey-brown, white-scaled at the base (c076), the club darker (c074)
-    drawTube(sc, pts, rr, { color: (i) => (i < 3 ? '#a49c8c' : i < 12 ? '#6a6254' : '#4e483f'), gloss: 0.25, bias: 0.02 });
+    drawTube(sc, pts, rr, { color: (i) => (i < 3 ? '#8a8272' : i < 10 ? '#5a534a' : '#38332d'), gloss: 0.25, bias: 0.02 });
   }
 }
 
@@ -204,10 +212,10 @@ function head(sc, pose) {
 export function proboscisPath(pose) {
   const P = [];
   if (pose === 'butine') {
-    let p = [4.55, 0, -1.25], d = norm([0.78, 0, -0.62]);
+    let p = [4.55, 0, -1.25], d = norm([0.82, 0, -0.57]);
     const n = 30, L = B.proboscis;
     P.push(p);
-    for (let i = 0; i < n; i++) { p = add(p, mul(d, L / n)); P.push(p); d = norm(add(d, [0, 0, i < n * 0.6 ? 0.012 : -0.02])); }
+    for (let i = 0; i < n; i++) { p = add(p, mul(d, L / n)); P.push(p); d = norm(add(d, [0, 0, i < n * 0.3 ? 0.012 : -0.024])); }
   } else {
     const c = [4.6, 0, -1.55], turns = 2.4, N = 54;
     P.push([4.35, 0, -1.05]);
@@ -233,16 +241,17 @@ function thorax(sc) {
     profile: (t) => { const e = Math.pow(Math.max(0, 1 - Math.pow(Math.abs(2 * t - 1.08), 2.6)), 0.5); return { x: L * t, zc: 0.25 * Math.sin(Math.PI * t), ry: ry * e, rz: rz * e }; },
     shape: (th) => [1, Math.sin(th) < 0 ? 0.9 : 1],
     // the thick fur in the colours of its grid: grey-brown above, white beneath (c186, c188, c014)
-    hair: { n: 7500, len: 1.0, w: 0.022, lean: 0.95, a: 0.88, droop: 0.8, twist: 0.6, wave: 0.12, curl: 0.18, fleece: 0.25, pile: 0.5, locks: 0.3,
-      sheen: 0.04, sheenP: 40, color: 'grid', gridK: 1.0, lenAt: (t, th) => (t > 0.85 ? 0.75 : Math.sin(th) < -0.3 ? 1.2 : 1) },
+    hair: { n: 7500, len: 1.0, w: 0.022, lean: 0.95, a: 0.88, droop: 0.8, twist: 0.6, wave: 0.12, curl: 0.18, fleece: 0.1, pile: 0.5, locks: 0.3,
+      sheen: 0.04, sheenP: 40, color: 'grid', gridK: 1.0, lenAt: (t, th) => (t > 0.85 ? 0.75 : t < 0.18 ? 1.7 : Math.sin(th) < -0.3 ? 1.2 : 1) },   // the rear fur over the abdomen's base
   });
   // the tegulae: long-haired scales over the forewings' bases, grey-brown like the back (c186: they hide the hinges)
   for (const s of [1, -1]) {
     sc.part = s > 0 ? 'tegula-g' : 'tegula-d';
     drawBody(sc, {
       name: 'tegula', frame: pitched([-0.6, 2.05 * s, 1.85], -10), color: '#5e5748', seed: 23 + s,
-      profile: (t) => { const e = Math.pow(env(t, 0.5, 0.5) * 2, 0.7); return { x: -1.9 + 3.6 * t, zc: 0, ry: 0.95 * e, rz: 0.5 * e }; },
-      hair: { n: 1000, len: 1.2, w: 0.022, lean: 1.0, a: 0.85, droop: 1.2, twist: 0.8, fleece: 0.3, pile: 0.3, color: (t, th, R) => pick(R, FUR) },
+      profile: (t) => { const e = Math.pow(env(t, 0.5, 0.5) * 2, 0.7); return { x: -1.9 + 3.6 * t, zc: 0, ry: 0.7 * e, rz: 0.4 * e }; },
+      // olive-brown like the back, lying flat, small (judges: no grey tufts at the wings' bases)
+      hair: { n: 500, len: 0.6, w: 0.022, lean: 1.25, a: 0.85, droop: 1.0, twist: 0.6, fleece: 0.1, pile: 0.3, color: (t, th, R) => pick(R, ['#5a523e', '#4e4736', '#665c46', '#433d2e']) },
       bias: 0.06,
     });
   }
@@ -255,7 +264,7 @@ function abdomen(sc, pose) {
   const droop = pose === 'pose' ? -3 : -9;
   const F = pitched([x1, 0, 0.0], droop);
   drawBody(sc, {
-    name: 'abdomen', frame: F, color: '#4a4438', seed: 31, grid: G_ABD, mat: { ks: 0.04, p: 10, env: 0.02, ks2: 0.01, wrap: 0.4, mottle: 0.08 },
+    name: 'abdomen', frame: F, color: '#4a4438', seed: 31, grid: G_ABD, mat: { ks: 0.015, p: 10, env: 0, ks2: 0.005, wrap: 0.4, mottle: 0.1 },
     // t from the tip (0) to the base (1): broad, widest at two thirds, rounded at the tip under the tuft
     profile: (t) => {
       // its base slips under the thorax's fur, narrowing (no seam: the thorax rounds over it)
@@ -264,18 +273,21 @@ function abdomen(sc, pose) {
       return { x: L * t, zc: 0.15 * (1 - t), ry: Ry * e, rz: Rz * e };
     },
     // dense short pile; the flank patches are tufts of longer scales standing out sideways (c188, c185, c037)
-    hair: { n: 3600, len: 0.38, w: 0.02, lean: 1.2, a: 0.85, fleece: 0.2, pile: 0.5, sheen: 0.02, color: 'grid', gridK: 1.0,
-      lenAt: (t, th) => (Math.abs(Math.cos(th)) > 0.88 && Math.sin(th) < 0.3 && t > 0.25 && t < 0.62 ? 2.2 : t > 0.85 && Math.sin(th) > 0 ? 2.4 : 1) },
+    // a dense pile of scales, not a smooth tube (judge 2026-10-24)
+    hair: { n: 6500, len: 0.5, w: 0.02, lean: 1.15, a: 0.88, fleece: 0.15, pile: 0.7, sheen: 0.01, color: 'grid', gridK: 1.0,
+      lenAt: (t, th) => (Math.abs(Math.cos(th)) > 0.9 && Math.sin(th) < 0.1 && t > 0.25 && t < 0.62 ? 1.4 : t > 0.85 && Math.sin(th) > 0 ? 2.4 : 1) },
   });
   // the tail tuft: a flat fan of long dark scales, spread sideways, pale-tipped at its edges (c037, c186, c188)
   const tip = add(F.o, mul(F.ax, 0.15));
   drawBody(sc, {
     name: 'tuft', frame: { o: add(tip, mul(F.ax, -B.tuft * 0.55)), ax: F.ax, ay: F.ay, az: F.az }, color: '#2d2922', seed: 33,
     mat: { ks: 0.03, p: 10, env: 0.02, wrap: 0.45 },
-    profile: (t) => { const e = Math.pow(env(t, 0.6, 0.35) * 2.2, 0.6); return { x: B.tuft * 0.95 * t, zc: 0, ry: 2.0 * e + 0.25, rz: 0.55 * e }; },
-    hair: { n: 1600, len: 1.5, w: 0.022, lean: 1.35, a: 0.9, droop: 0.2, twist: 0.4, fleece: 0, pile: 0.3,
-      color: (t, th, R) => (Math.abs(Math.cos(th)) > 0.85 && R() < 0.35 ? pick(R, ['#cfc9bb', '#9a9384']) : pick(R, ['#26221c', '#36312a', '#1c1915', '#4a443a'])),
-      lenAt: (t) => (t < 0.45 ? 1.4 : 0.8) },
+    // a brush tapering back from the abdomen's end (c186, c037), not a ball
+    profile: (t) => { const e = Math.pow(Math.min(1, t * 2.5), 0.5) * (0.55 + 0.45 * t); return { x: B.tuft * 0.95 * t, zc: 0, ry: 1.7 * e + 0.2, rz: 0.6 * e }; },
+    // compact, brown-black, pale at its sides (judge: not a broom)
+    hair: { n: 1800, len: 1.05, w: 0.022, lean: 1.4, a: 0.9, droop: 0.15, twist: 0.25, fleece: 0, pile: 0.4,
+      color: (t, th, R) => (Math.abs(Math.cos(th)) > 0.85 && R() < 0.35 ? pick(R, ['#cfc9bb', '#9a9384']) : pick(R, ['#2e281f', '#3b3428', '#252019', '#4d4436'])),
+      lenAt: (t) => (t < 0.45 ? 1.25 : 0.8) },
     bias: -0.02,
   });
 }
@@ -287,11 +299,12 @@ const LEGS = {
   mid: { coxa: [0.4, 0.7, -2.2], fem: 3.4, tib: 3.6, tar: 4.4 },
   hind: { coxa: [-1.4, 0.65, -2.1], fem: 3.6, tib: 4.0, tar: 4.6 },
 };
-const legArt = () => ({
-  fem: { r: [0.17, 0.19, 0.14], c: '#bdb6a6', hair: fringe(46, 0.42, () => '#e8e3d8', 0.3) },
-  tib: { r: [0.13, 0.14, 0.12], c: '#9e978a', hair: fringe(30, 0.26, () => '#d6d0c4', 0.5) },
-  bas: { r: [0.09, 0.08, 0.075], c: '#5a5348', flat: 0.85 },
-  tar: { r: 0.065, c: '#4e483e' },
+// standing they show their pale hair (c014, c046); folded in flight they read fine and dark against the body (c153, judge)
+const legArt = (fly) => ({
+  fem: { r: fly ? [0.12, 0.13, 0.1] : [0.15, 0.16, 0.12], c: fly ? '#6e665a' : '#a9a294', hair: fringe(fly ? 20 : 40, fly ? 0.25 : 0.38, () => (fly ? '#9a9284' : '#ddd8cc'), 0.3) },
+  tib: { r: fly ? [0.09, 0.1, 0.085] : [0.12, 0.13, 0.11], c: fly ? '#5e574c' : '#8e877a', hair: fringe(fly ? 14 : 28, 0.2, () => (fly ? '#857d70' : '#c8c2b6'), 0.5) },
+  bas: { r: [0.075, 0.07, 0.065], c: '#4a443a', flat: 0.85 },
+  tar: { r: 0.055, c: '#433d34' },
 });
 function legs(sc, pose) {
   const G = -5.3;
@@ -308,9 +321,9 @@ function legs(sc, pose) {
       pole = sy([k === 'hind' ? -0.5 : 0.4, 1, 0.9]);
     } else {
       // in flight: folded under the chest, the tarsi trailing back under the abdomen (c153, c154)
-      ankle = add(base, [k === 'front' ? 0.6 : -2.2, 0.9 * s, -1.7]);
-      tdir = norm([k === 'front' ? 0.2 : -0.9, 0.15 * s, -0.4]);
-      pole = sy([0.6, 1, -0.4]);
+      ankle = add(base, [k === 'front' ? -2.2 : k === 'mid' ? -2.8 : -3.4, 0.5 * s, -0.35]);
+      tdir = norm([-0.97, 0.04 * s, -0.12]);
+      pole = sy([-0.3, 1, 1]);   // the knees up against the chest, hidden in its fur (c153)
     }
     const fb = add(base, [0, 0.3 * s, -0.45]);
     const { knee, ankle: an } = ik(fb, ankle, L.fem, L.tib, pole);
@@ -318,8 +331,8 @@ function legs(sc, pose) {
     const fr = [0.38, 0.16, 0.15, 0.14, 0.17];
     let pp = an;
     for (const f of fr) { const nx = add(pp, mul(tdir, L.tar * f)); q.push(add(pp, mul(tdir, L.tar * f * 0.5)), nx); pp = nx; }
-    const A = legArt();
-    A.coxa = { from: [0.1, -0.3, 0.5], r: [0.3, 0.32, 0.22], c: '#d8d3c7', hair: fringe(40, 0.45, () => '#ebe7dd', 0.1) };
+    const A = legArt(pose !== 'pose');
+    A.coxa = { from: [0.1, -0.3, 0.5], r: [0.28, 0.3, 0.2], c: '#d8d3c7', hair: fringe(40, 0.45, () => '#ebe7dd', 0.1) };
     articleLeg(sc, drawBody, drawTube, q, tdir, pp, A, s, LEGMAT);
   }
 }
@@ -355,9 +368,11 @@ export const FLIGHT = [
   [{ phi: -8, alpha: 42, a: 0.66 }, { phi: 12, alpha: 40, a: 0.38 }],
   [{ phi: 56, alpha: 80, a: 0.66 }, { phi: 42, alpha: 60, a: 0.38, up: true }],
 ];
-// At rest: a low roof, the forewings drawn back over the hindwings until their costa runs 25° off the body's axis (c037, c038,
-// c005), the hindwings hidden under them but for an orange edge by the abdomen (c005).
-export const REST = { flap: -14, sweepFore: 65, sweepHind: 48 };
+// At rest: a low roof, the forewings drawn back over the hindwings (c037, c038, c005).
+// c037 (135 px/mm): the forewing's apex 14.7 mm behind its hinge and 6.75 mm out from it, 24.7° off the axis; the apex leaves
+// the hinge 16° ahead of the record's s axis, so the wing is drawn back 81°. The hindwing, 66° and lower (-16°), lies under it, beside the abdomen (c037: the abdomen bare; c005: a sliver of
+// orange by the abdomen).
+export const REST = { flap: -10, sweepFore: 81, sweepHind: 66, flapHind: -16 };
 
 function wingsAt(sc, attitude, frame) {
   if (!FORE || !HIND) return;
@@ -374,7 +389,7 @@ function wingsAt(sc, attitude, frame) {
       }
     } else {
       const { flap, sweepFore, sweepHind } = attitude;
-      const f = flapAxes(s, flap, sweepFore), h = flapAxes(s, flap - 2, sweepHind);
+      const f = flapAxes(s, flap, sweepFore), h = flapAxes(s, attitude.flapHind ?? flap - 2, sweepHind);
       sc.part = `aile-arriere-${lr}`;
       drawWing(sc, HIND, ho, h.e1, h.e2, { side: s, bias: -0.03 });
       sc.part = `aile-avant-${lr}`;
@@ -392,7 +407,8 @@ export function sphinx(az, el, opts = {}) {
   const cam = tiltCam(camera(az, el, light), pitch);
   const sc = new Scene(cam, k, size / 2, size / 2, 41, idp);
   sc.detail = detail;
-  sphinxBody(null, sc, pose === 'etale' ? 'pose' : pose);
+  // the spread specimen: legs folded against the body (no stance), proboscis coiled
+  sphinxBody(null, sc, pose === 'etale' ? 'vol' : pose);
   if (wings === 'etale' || pose === 'etale') wingsAt(sc, { flap: 0, sweepFore: 0, sweepHind: 0 });
   else if (pose === 'vol' || pose === 'butine') wingsAt(sc, 'beat', frame);
   else if (wings) wingsAt(sc, { ...REST, ...(opts.flap !== undefined ? { flap: opts.flap } : {}), ...(opts.sweep !== undefined ? { sweepFore: opts.sweep, sweepHind: opts.sweepHind ?? opts.sweep * 0.75 } : {}) });
@@ -405,7 +421,8 @@ function mixHex(a, b, t) {
 }
 
 export const META = {
-  id: 'moro-sphinx', bodyMm: 21.9, span: 48, wingspan: 40,
+  // span: the cell holds the unrolled proboscis, its tip 29.3 mm from the origin (64 mm across)
+  id: 'moro-sphinx', bodyMm: 21.9, span: 64, wingspan: 40,
   el: [-25, 0, 20, 40, 65, 90],
   poses: { pose: [0], vol: [0, 1, 2], butine: [0, 1, 2] },
   lod: {

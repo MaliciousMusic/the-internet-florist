@@ -7,7 +7,7 @@ import { sphinx, META } from '../moro-sphinx/moro-sphinx.mjs';
 import { SPHINX } from '../runtime/moro-sphinx.mjs';
 
 const [out, kS] = process.argv.slice(2);
-const k = +(kS ?? 8), cell = Math.ceil(META.span * 1.15 * k);
+const k = +(kS ?? 8), cell = Math.ceil(64 * k);   // the moth with its unrolled proboscis
 const names = ['haut (retournement)', 'descente', 'bas (retournement)', 'descente'];
 const frames = [];
 for (const [az, el] of [[90, 5], [130, 30]]) {
