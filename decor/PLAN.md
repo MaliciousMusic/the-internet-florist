@@ -305,3 +305,7 @@ l'identité de son éditeur dans ses mentions légales.
     quart des fleurs du bouquet. Mesuré sur 30 s : 92 % des visites au sol, 8 % au bouquet. La sauterelle ne connaît que
     les fleurs du sol à moins de 6 m.
   - **Mesure** : 135 images/s dans le panneau du navigateur.
+- 2026-10-24, QCM des fourmis (porteur) : sur le site, des paires de fourmis noires portent le HUD, à chaque fois, en
+  procession et à vraie vitesse : la barre d'outils, les cases de la bulle de prix et la pastille Legal. Sur téléphone, deux
+  papillons posent la barre d'outils en haut. Une fourmi magique d'environ 16 cm apporte le bouton Open au pilier, une fois
+  par visite. Le détail est dans `insectes/DECISIONS.md`, section « Fourmis du HUD ». La production n'a pas commencé.

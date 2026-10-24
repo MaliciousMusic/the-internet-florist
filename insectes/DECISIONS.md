@@ -67,6 +67,47 @@ Pas de contrôle par le joueur ; un clic déclenche un état (saut, envol, fuite
 **L'abeille**, de bout en bout : SVG, modèle, atlas, Pixi, comportement de butinage, pose sur le bouquet, battement en
 2 ou 3 dessins.
 
+## Fourmis du HUD (site)
+
+QCM du 2026-10-24 avec le propriétaire. Sur le site, les fourmis ne butinent pas : elles portent les pièces du HUD.
+
+- **Espèce** : la fourmi noire (*Lasius niger*). La fourmi rouge n'a pas de rôle sur le site pour l'instant.
+- **Taille** : le HUD est sur un plan tout proche de l'œil. À l'écran, une fourmi a la longueur du bouton Open, environ
+  50 à 60 px sur un écran d'ordinateur (une ouvrière de 5 mm vue à une douzaine de centimètres).
+- **Par deux** : chaque pièce est portée par deux fourmis, dans leurs mandibules :
+  - la barre d'outils (le dock d'icônes), d'un seul tenant ;
+  - dans le gros plan, chaque case de la bulle : « Fades in… », « On your desktop », le bouton Buy avec son prix ;
+  - la pastille Legal du bas. Elles la déplient et la replient en tirant dessus.
+- **Sans fourmis** : la ligne de revente apparaît seule, une fois Buy posé. Les cartes des rayons s'ouvrent seules.
+- **À chaque fois** : une paire fait chaque arrivée et chaque départ de ces pièces. C'est le cas au chargement, à l'entrée
+  et à la sortie du gros plan, et à chaque dépli de la pastille.
+- **En procession** : les fourmis entrent par la gauche et longent le bord de l'écran. Elles posent la pièce, puis
+  ressortent par la droite. Quand une pièce s'en va, une paire vient la prendre et l'emporte par le même chemin.
+- **Vraie vitesse** : celle d'une ouvrière à ce plan, soit 2 à 3 s pour venir du bord. Une pièce répond aux clics dès
+  qu'elle entre dans l'écran, même portée.
+- **Sans charge**, les fourmis ne se montrent pas.
+- **Téléphone** : la barre d'outils est en haut. Deux papillons la posent, un machaon et un paon-du-jour, un à chaque bout.
+  Des paires de fourmis portent le reste, comme sur ordinateur.
+- **Le bouton Open** : une fourmi le pose une seule fois par visite, à la première vue large. Elle mesure environ 16 cm dans
+  le décor : c'est une fourmi magique, qui a ainsi la taille du bouton au pilier. On la voit d'abord grosse au premier
+  plan (environ 240 px). Puis elle marche sur les pierres du sol, rapetisse avec la perspective, monte le pilier et y pose
+  le bouton. Ensuite, le bouton revient seul.
+
+Propositions, à valider sur le premier prototype :
+- **Pose** : les fourmis marchent de profil sur le bord bas de l'écran comme sur un sol. Elles tiennent la case levée
+  devant elles. Sur ordinateur, le dock, la pastille et la bulle sont tous en bas.
+- **Vitesse de la fourmi d'Open** : autant de longueurs de corps par seconde qu'une vraie ouvrière. Elle va donc du premier
+  plan au pilier en 4 s environ, et le bouton est cliquable en route.
+- **Accessibilité** : avec prefers-reduced-motion, ni fourmis ni papillons, et les pièces apparaissent directement. Les
+  pièces sont dans la page dès le départ, pour le clavier et les lecteurs d'écran.
+- **Technique** : le HUD reste en HTML. Une couche PixiJS posée dessus, qui laisse passer les clics, dessine les porteuses.
+  À chaque image, la case suit la pointe des mandibules par une transformation.
+- **Préalable** : le troisième juge a encore noté la fourmi noire « ko » sur ses six vues (`fourmi-noire/ETAT.md`). Ces
+  défauts se verront à 60 px, et plus encore à 240 px. La vue de profil et son grand niveau de détail sont à reprendre avant
+  le site.
+- **Durée** : à vraie vitesse, une paire met 6 à 7 s pour traverser tout l'écran. Quand on quitte le gros plan, les cases
+  de la bulle restent donc visibles quelques secondes, le temps qu'on les emporte.
+
 ## Questions ouvertes
 
 - Grille de comportement détaillée de chaque espèce (états, vitesses, durées) : à mesurer sur vidéos, puis à valider.
