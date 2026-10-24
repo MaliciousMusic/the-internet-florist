@@ -132,9 +132,13 @@ export class Essaim {
     for (const g of b.wingMeshes) {
       const Wi = idx.wings[g.wn], [s0, q0, s1, q1] = Wi.box, h = idx.hinges[g.wn];
       const ang = b.wingPose?.[g.wn] || { flap: 0, sweep: 0 };
+      // (coccinelle) b.wingsHidden: no plane shown (the beetle walks with its elytra closed in the atlas); ang.unfold: the plane drawn
+      // shorter while it unfolds (0..1); ang.alpha: a beating membrane shown faint
+      if (b.wingsHidden || ang.hidden) { g.m.visible = false; continue; }
       const { e1, e2 } = flapAxes(g.side, ang.flap, ang.sweep);
       const H = [h[0], h[1] * g.side, h[2]];
-      const at = (s, q) => [H[0] + s * e1[0] + q * e2[0], H[1] + s * e1[1] + q * e2[1], H[2] + s * e1[2] + q * e2[2]];
+      const uf = ang.unfold ?? 1;
+      const at = (s, q) => [H[0] + uf * s * e1[0] + q * e2[0], H[1] + uf * s * e1[1] + q * e2[1], H[2] + uf * s * e1[2] + q * e2[2]];
       const v = g.m.geometry.positions;
       [[s0, q1], [s1, q1], [s1, q0], [s0, q0]].forEach(([s, q], i) => {
         const o = toS(at(s, q));
@@ -154,7 +158,7 @@ export class Essaim {
       g.m.tint = (k << 16) | (k << 8) | k;
       // depth: the wing's middle toward the viewer, minus the body's radius (the body lies over the wings' bases)
       const mid = toS(at((s0 + s1) * 0.5, (q0 + q1) * 0.5));
-      g.m.zIndex = b.P[2] + ((mid[0] * eye[0] + mid[1] * eye[1] + mid[2] * eye[2]) - 2.4) * mmS;
+      g.m.zIndex = b.P[2] + ((mid[0] * eye[0] + mid[1] * eye[1] + mid[2] * eye[2]) - (K.wingsDepth ?? 2.4)) * mmS;
       // a wing's own opacity (ang.alpha: the chafer's ghost wings of the faux stroke; 0 hides a folded wing)
       if (ang.alpha !== undefined) g.m.alpha = ang.alpha;
       g.m.visible = ang.alpha !== 0;

@@ -48,6 +48,9 @@ function material(b) {
     fres: m.fresnel ?? null,
     // the colour of the lamp's lobes when it differs from the mirrored colour (a multilayer's peak is brighter than its mean)
     lobe: m.lobeColor ? lin(m.lobeColor) : null,
+    // (coccinelle) the surround a varnish mirrors: box weighs the softbox around the lamp (1: as before), sky the band of the
+    // horizon [from, to] in r.u (a narrow band: the crisp window line of a lacquered dome)
+    box: m.box ?? 1, sky: m.sky ?? null, up: m.up ?? null,
   };
 }
 
@@ -82,10 +85,13 @@ function shadePoint(cam, M, A, n, sh, occ) {
   let S = vs(M.lobe || tint, sh * (M.ks * Math.pow(nh, M.p) * (M.p + 2) / 16 + M.ks2 * Math.pow(nh, M.p2)));
   if (M.env > 0) {
     const r = sub(mul(n, 2 * dot(n, cam.c)), cam.c);
-    const sky = smooth(-0.25, 0.55, dot(r, cam.u));
+    // (coccinelle) M.up: the surround's up in the world (the zenith), not the screen's: seen from above, the horizon is a ring round
+    // the dome, not bands across it
+    const up = M.up || cam.u;
+    const sky = M.sky ? smooth(M.sky[0], M.sky[1], dot(r, up)) : smooth(-0.25, 0.55, dot(r, up));
     // a structured surround: the ground, a darker horizon band, the sky, and a broad bright softbox around the lamp
-    const ru = dot(r, cam.u), hor = 1 - 0.6 * smooth(-0.2, 0.05, ru) * (1 - smooth(0.12, 0.35, ru));
-    const box = smooth(0.55, 0.92, dot(r, cam.L));
+    const ru = dot(r, up), hor = 1 - 0.6 * smooth(-0.2, 0.05, ru) * (1 - smooth(0.12, 0.35, ru));
+    const box = smooth(0.55, 0.92, dot(r, cam.L)) * (M.box ?? 1);
     const envC = vadd(vs(vadd(vs(GROUND, 0.55 * (1 - sky)), vs(SKY, 1.2 * sky)), hor), vs(SUN, 1.6 * box));
     const F = M.fres ? M.fres[0] + M.fres[1] * Math.pow(1 - nv, 3) : 0.18 + 0.82 * Math.pow(1 - nv, 3);
     S = vadd(S, vs(vmul(envC, tint), M.env * F * occ));
@@ -284,8 +290,11 @@ function paintBody(sc, b, id) {
   ext = Math.abs(b.profile(1).x - b.profile(0).x);
   const q = 4 / Math.sqrt(Math.max(0.6, sc.detail ?? 1));
   // b.mesh: a finer cap for a body whose relief (b.bump) must hold in close-ups (the chafer's elytra); 150 otherwise
-  const nt = Math.round(clamp((ext * sc.k) / q, 8, b.mesh ?? 150));
-  const nthFull = Math.round(clamp((2 * Math.PI * rmax * sc.k) / q, 12, b.mesh ?? 150));
+  // (coccinelle) b.fine { max, blur, q }: a smooth varnished shell seen in close-up needs more than 150 quads a turn, a wider blur
+  // and finer colour steps (its terraces showed at 160 px/mm); the defaults are the engine's
+  const FN = b.fine || {};
+  const nt = Math.round(clamp((ext * sc.k) / q, 8, FN.max ?? b.mesh ?? 150));
+  const nthFull = Math.round(clamp((2 * Math.PI * rmax * sc.k) / q, 12, FN.max ?? b.mesh ?? 150));
   // the blur follows the real size of a quad, so facets never show in close-ups
   const qpx = Math.max((ext * sc.k) / nt, (2 * Math.PI * rmax * sc.k) / nthFull);
   const nth = b.th0 === undefined ? nthFull : Math.max(6, Math.round(nthFull * (b.th1 - b.th0) / (2 * Math.PI)));
@@ -336,24 +345,26 @@ function paintBody(sc, b, id) {
   // Under the blurred mesh, the outline filled with the rim colour: no see-through at the edge.
   const under = rimN ? hexl(vs(rimC, 1 / rimN)) : b.color;
   out += `<path d="${sil}" fill="${under}"/>`;
-  const blur = sc.id('f'), sd = clamp(qpx * 0.5, 0.35, 3);
+  const blur = sc.id('f'), sd = clamp(qpx * 0.5, 0.35, FN.blur ?? 3);
   sc.defs.push(`<filter id="${blur}" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="${fmt(sd)}"/></filter>`);
-  out += `<g clip-path="url(#${clip})"><g filter="url(#${blur})">` + quadPaths(quads, (x) => hexl(x.D)) + '</g>';
+  out += `<g clip-path="url(#${clip})"><g filter="url(#${blur})">` + quadPaths(quads, (x) => hexl(x.D), null, FN.q) + '</g>';
   // Decals: spots and flecks laid on the surface (ladybird spots, chafer flecks), lit with the surface.
   if (b.decals) out += b.decals.filter((d) => !d.top).map((d) => decal(sc, b, M, d, id)).join('');
   if (b.punct && sc.k * b.punct.r > 0.35) out += punctures(sc, b, M);
   // Marks drawn by the species (a seam, a stripe), under the specular layer.
-  if (b.paint) out += b.paint(sc, b, g);
+  if (b.paint) out += b.paint(sc, b, g, id);
   // Specular layer over the albedo and the decals: highlight lobes and the reflected sky.
   const spec = quads.filter((x) => Math.max(...x.S) > 0.012);
   if (spec.length) {
     out += `<g filter="url(#${blur})">` + quadPaths(spec, (x) => { const a = clamp(Math.max(...x.S)); return hexl(vs(x.S, 1 / Math.max(a, 1e-3))); },
-      (x) => Math.round(clamp(Math.max(...x.S)) * 20) / 20) + '</g>';
+      (x) => Math.round(clamp(Math.max(...x.S)) * 20) / 20, FN.q) + '</g>';
   }
   // Decals over the specular layer (d.top): a matte mark that does not mirror the sky (the chafer's white flecks of wax).
   if (b.decals) out += b.decals.filter((d) => d.top).map((d) => decal(sc, b, M, d, id)).join('');
   // Marks of the species drawn over the specular layer (b.paintTop), as b.paint is under it.
   if (b.paintTop) out += b.paintTop(sc, b, g);
+  // (coccinelle) marks drawn by the species over the specular layer, clipped by the outline: a crisp glint of the lamp
+  if (b.over) out += b.over(sc, b, g, id);
   // Grazing sheen just inside the outline (the facets of an eye catch the sky at the rim).
   if (b.rim) out += `<path d="${sil}" fill="none" stroke="${b.rim.color}" stroke-width="${fmt(b.rim.w * sc.k)}" opacity="${fmt(b.rim.a * 0.6)}"/>`;
   // Facets of a compound eye, seen in close-up only.
@@ -368,8 +379,9 @@ function paintBody(sc, b, id) {
 
 // Quads written lean: in depth order, cut in three slices, and within a slice gathered by colour (quantised to steps of 6 per
 // channel: under the blur no step shows) and opacity: one path per group, in relative steps of a tenth of a pixel.
-function quadPaths(quads, colOf, opOf = null) {
-  const q6 = (h) => '#' + [1, 3, 5].map((i) => Math.min(255, Math.round(parseInt(h.slice(i, i + 2), 16) / 6) * 6).toString(16).padStart(2, '0')).join('');
+function quadPaths(quads, colOf, opOf = null, step = 6) {
+  const st = step ?? 6;
+  const q6 = (h) => '#' + [1, 3, 5].map((i) => Math.min(255, Math.round(parseInt(h.slice(i, i + 2), 16) / st) * st).toString(16).padStart(2, '0')).join('');
   const f1 = (v) => { const r = Math.round(v * 10) / 10; return (r === 0 ? '0' : r.toString()).replace(/^(-?)0\./, '$1.'); };
   const jn = (v) => v.map(f1).reduce((o, t, i) => o + (i && t[0] !== '-' ? ' ' : '') + t, '');
   const qd = (S) => `M${jn([S[0][0], S[0][1]])}l${jn([S[1][0] - S[0][0], S[1][1] - S[0][1], S[2][0] - S[1][0], S[2][1] - S[1][1], S[3][0] - S[2][0], S[3][1] - S[2][1]])}z`;
@@ -874,3 +886,5 @@ export function wingSkin(sc, w, upper, lam, glint) {
 const fmt4 = (x) => (Math.round(x * 10000) / 10000).toString();
 
 export { openPath };
+// (coccinelle) the light of the engine for marks a species draws itself (measured spots shaded like the surface they lie on)
+export { shadePoint, lin as toLinear, hexl as fromLinear, gridAt, material };

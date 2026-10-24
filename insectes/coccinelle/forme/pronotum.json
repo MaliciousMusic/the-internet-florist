@@ -1,0 +1,38 @@
+{
+ "_doc": "contour du pronotum vu de dessus, relevé sur la grille de c370 (studio, pronotum entier ; grille.py, pas de 50 px) : pour |u| = |y| / demi-largeur, la position du bord avant et du bord arrière (x vers l'avant depuis le bord arrière au milieu), en fraction de la largeur W des élytres. Largeur maximale 0,71 W à x = 0,08 W ; angles antérieurs arrondis ; bord avant échancré derrière la tête.",
+ "demi": 0.355,
+ "u": [
+  0,
+  0.2,
+  0.42,
+  0.55,
+  0.68,
+  0.8,
+  0.9,
+  0.96,
+  1.0
+ ],
+ "avant": [
+  0.215,
+  0.222,
+  0.245,
+  0.255,
+  0.252,
+  0.228,
+  0.186,
+  0.128,
+  0.07
+ ],
+ "arriere": [
+  -0.005,
+  -0.004,
+  -0.002,
+  0,
+  0,
+  0,
+  0.005,
+  0.02,
+  0.04
+ ],
+ "_choix": "bord avant au milieu ramené de 0,25 à 0,215 W : de dessus le pronotum se découvre selon que la tête avance (c370, tête sortie : 0,25 ; c101, tête rentrée : 0,17) ; échancrure creusée d'autant (le juge : bord antérieur concave autour de la tête)"
+}

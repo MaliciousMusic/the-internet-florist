@@ -2,7 +2,7 @@
 
   python insectes/outils/paires.py <id> [--only i,j] [--scale 0.6]
 paires.json: {"sid": "<refcache folder>", "pairs": [{"nom", "photo": "hd/c123.jpg", "box": [x0,y0,x1,y1], "vue": "pose:az:el[:f]",
-"k": px/mm, "w", "h", "focus": [x,y,z], "flip": false, "detail": 1}]}. Renders go to insectes/<id>/planches/paire-<nom>.png,
+"k": px/mm, "w", "h", "focus": [x,y,z], "flip": false, "detail": 1, "rot": deg}]}. Renders go to insectes/<id>/planches/paire-<nom>.png,
 pairs and the sheet to refcache/<sid>/ (they hold photo pixels: never in git)."""
 import sys, os, json, subprocess
 from PIL import Image, ImageOps
