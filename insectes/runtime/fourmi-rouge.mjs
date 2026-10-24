@@ -71,8 +71,9 @@ export class FourmiRouge {
       this.turn += -TH * this.turn * dt + sigma * Math.sqrt(dt) * (this.rnd() - 0.5) * Math.sqrt(12);
       this.heading += this.turn * dt;
       // the strip's edges turn it back in
-      const { x0, x1, z0, z1 } = this.g, m = 6 * px;
-      const tx = this.P[0] < x0 + m ? 1 : this.P[0] > x1 - m ? -1 : 0, tz = this.P[2] < z0 + m ? 1 : this.P[2] > z1 - m ? -1 : 0;
+      // (the strip is shallow in depth: its margin there a quarter of it at most, or both edges would turn it at once)
+      const { x0, x1, z0, z1 } = this.g, m = 6 * px, mz = Math.min(m, (z1 - z0) / 4);
+      const tx = this.P[0] < x0 + m ? 1 : this.P[0] > x1 - m ? -1 : 0, tz = this.P[2] < z0 + mz ? 1 : this.P[2] > z1 - mz ? -1 : 0;
       if (tx || tz) {
         const want = Math.atan2(tz || Math.sin(this.heading), tx || Math.cos(this.heading));
         let d = want - this.heading; d = Math.atan2(Math.sin(d), Math.cos(d));

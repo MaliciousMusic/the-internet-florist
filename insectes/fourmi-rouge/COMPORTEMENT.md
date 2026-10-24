@@ -29,6 +29,10 @@ Sources :
   face et s'antennent 0,8 à 2 s. Puis chacune repart, tournée de 70 à 125°, et ne rencontre plus personne pendant 2,5 s.
 - **Alarme au clic.** Demi-tour de 110 à 250°, course de 3 à 5 s aux vitesses d'alarme, puis retour à l'exploration.
 - **Bords.** La bande de sol a ses bords. À moins de 6 longueurs de corps d'un bord, la fourmi tourne vers l'intérieur, à 3 rad/s au plus.
+  La bande est peu profonde (z de 95 à 160 dans la démo) : en profondeur, la marge vaut au plus un quart de la bande. Sinon, les deux
+  bords la tourneraient en même temps.
+- **Sol de la démo.** Le bord lointain de la bande est vu juste sous le pied du vase (0,92 H). La perspective étale la bande vers le
+  bas à partir de là.
 
 ## Atlas et runtime
 - **Poses de l'atlas.** `pose` (1 dessin), `marche` (8 dessins du tripode), `palpe` (4 dessins). Le dessin de marche suit la phase,

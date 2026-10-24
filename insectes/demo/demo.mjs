@@ -46,14 +46,15 @@ if (NM) { await essaim.kind('machaon', '../machaon/atlas/machaon', MACHAON.bodyM
 let S = 1, left = 0, top = 0;
 const flowers = [];
 // ?fourmi-rouge=N: red ants walking on the table at the bouquet's foot, in front of the vase (the front canvas)
-const ground = { y: 0, x0: 0, x1: 0, z0: 95, z1: 220 };
+const ground = { y: 0, x0: 0, x1: 0, z0: 95, z1: 160 };
 function layout() {
   essaim.resize();
   const W = innerWidth, H = innerHeight;
   S = Math.min((H * 0.8) / vh, (W * 0.92) / vw);
   left = (W - vw * S) / 2; top = H * 0.95 - vh * S;
   for (const d of plans) d.style.transform = `translate(${left}px, ${top}px) scale(${S})`;
-  ground.y = top + vh * S; ground.x0 = left + vw * S * 0.18; ground.x1 = left + vw * S * 0.82;
+  // the ground's far edge seen just below the vase's foot (about 0.9 H); the perspective spreads the strip down from there
+  ground.y = essaim.unproject(W / 2, H * 0.92, ground.z0)[1]; ground.x0 = left + vw * S * 0.18; ground.x1 = left + vw * S * 0.82;
   // Flower hearts: the boxes of the head pieces, a little above their middle.
   const heads = m.pieces.filter((p) => p.t === 'tete');
   const old = flowers.splice(0);
