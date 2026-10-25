@@ -671,8 +671,10 @@ async function start() {
 
   // ---- when the pieces come and go ----
   if (!root.classList.contains('porteuses')) { app.destroy(true); return; } // scene.js gave up waiting: the HUD stands as it was
-  // when the page opens: the dock (computer), then the footer's pill
-  order((function* () { if (dock) yield* dockIn(); if (pill) yield* pillIn(); })());
+  // when the page opens (owner, 2026-10-25): first the toolbar (the dock: an ant on a computer, two butterflies on a phone) and
+  // the pager (its two beetles); then the Open button, whose ant (fourmi-open.mjs) sets out on "porteuses:haut"; the footer's
+  // Legal pill once that ant is halfway ("fourmi-open:moitie")
+  if (dock) order(dockIn());
   window.PORTEUSES_EN_ROUTE = true;
   // on a phone the dock is at the top: two butterflies lay it (airlift, above); if they cannot, it stands in its place
   const topDock = !DESK.matches && $('.dock') ? new Box($('.dock'), { name: 'dock' }) : null;
@@ -683,6 +685,7 @@ async function start() {
   // bouquets or more). Out of sight (the close-up hides it, the open shelf covers it), it is not carried: it stands in its place
   // and shows again alone (owner, 2026-10-25)
   const pager = $('#pager');
+  let haut = docked;
   if (pager) {
     const pg = new Box(pager, { name: 'pager' });
     const gone = () => pager.hidden || getComputedStyle(pager).visibility === 'hidden' || !!$('.cartes.ouvert');
@@ -697,9 +700,20 @@ async function start() {
       const mo = new MutationObserver(() => { if (!pager.hidden) { mo.disconnect(); ok(); } });
       mo.observe(pager, { attributes: true, attributeFilter: ['hidden'] });
     });
-    Promise.all([docked, shown])
+    const pagerIn = Promise.all([docked, shown])
       .then(() => airlift(pg, ['coccinelle', 'cetoine'], { pxmm: BEETLE_PXMM, hang: 0.12, inset: [11, 6], rise: DESK.matches ? -110 : 90, speed: 190, away: (R) => [W() + 140, R.cy - 70], gone, tilt }))
       .catch((err) => { console.error('[porteuses]', err); pg.home(); pager.style.rotate = ''; pager.style.transformOrigin = ''; });
+    // the top is done once the pager is in its place; a pager still without its dots 3 s after the dock (one bouquet) is not
+    // waited for
+    haut = docked.then(() => Promise.race([shown.then(() => pagerIn), new Promise((ok) => setTimeout(ok, 3000)).then(() => (pager.hidden ? null : pagerIn))]));
+  }
+  haut.then(() => { window.PORTEUSES_HAUT = true; document.dispatchEvent(new Event('porteuses:haut')); });
+  // the Legal pill: when the Open ant is halfway; at once if there is no Open ant; 30 s after the top whatever happens
+  if (pill) {
+    let sent = false;
+    const send = () => { if (!sent) { sent = true; order(pillIn()); } };
+    document.addEventListener('fourmi-open:moitie', send, { once: true });
+    haut.then(() => { if (!root.classList.contains('fourmi-open')) send(); setTimeout(send, 30000); });
   }
   // the close-up: the bubble's boxes come with it and go with it; the resale line shows once Buy is set
   const achat = $('#achat');

@@ -26,6 +26,7 @@ export class Abeille {
     this.kind = 'abeille';
     this.lengthPx = opts.lengthPx ?? 30;
     this.speed = (opts.speed ?? 1) * (0.85 + 0.3 * rnd());
+    this.maxVisible = opts.maxVisible ?? MAX_VISIBLE; // (the shop's scene, 2026-10-25: three times as many bees)
     this.P = [0, 0, 0]; this.V = [0, 0, 0]; this.fwd = [1, 0, 0]; this.bank = 0;
     this.pose = 'vol'; this.frame = 0; this.visible = false;
     this.state = 'away'; this.t = 0.3 + rnd() * 3;
@@ -126,7 +127,7 @@ export class Abeille {
       this.t -= dt;
       if (this.t <= 0) {
         const shown = this.e.insects.filter((b) => b.kind === 'abeille' && b.visible).length;
-        if (shown < MAX_VISIBLE) this.spawn(); else this.t = 0.5 + this.rnd() * 2;
+        if (shown < this.maxVisible) this.spawn(); else this.t = 0.5 + this.rnd() * 2;
       }
       return;
     }

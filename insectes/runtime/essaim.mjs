@@ -208,9 +208,19 @@ export class Essaim {
       const lod = K.lods[lodName] || Object.values(K.lods)[0]; // a level asked for but not loaded: the one there is
       const c = pickCell(lod, lod.el || K.idx.el, b.pose, b.frame, K.idx.frames[b.pose], v);
       if (c.i === undefined) { sp.visible = false; if (b.carrySprite) b.carrySprite.visible = false; if (b.wingMeshes) for (const g of b.wingMeshes) g.m.visible = false; continue; }
-      sp.texture = lod.cells[c.i];
-      const sc = shown / lod.cell;
-      sp.scale.set((c.flip ? -sc : sc) * this.res, sc * this.res);
+      // (fourmi d'Open, 2026-10-25) b.keep = [u0, u1, ua]: only the part u0..u1 of the cell's width is drawn, the cell's point
+      // ua at the insect's place (the ant going round the pillar, cut by its edge); b.squash: the sprite narrowed along the
+      // cell's width (the ant foreshortened on the curve)
+      if (b.keep) {
+        const [u0, u1, ua] = b.keep, T = lod.cells[c.i], f = T.frame;
+        sp.texture = new Texture({ source: T.source, frame: new Rectangle(f.x + f.width * u0, f.y, f.width * (u1 - u0), f.height) });
+        sp.anchor.set((ua - u0) / (u1 - u0), 0.5);
+      } else {
+        sp.texture = lod.cells[c.i];
+        if (sp.anchor.x !== 0.5) sp.anchor.set(0.5);
+      }
+      const sc = shown / lod.cell, sq = b.squash ?? 1;
+      sp.scale.set((c.flip ? -sc : sc) * this.res * sq, sc * this.res);
       sp.rotation = v.rotation;
       sp.zIndex = b.P[2];
       sp.position.set(this.cvx(q.x), this.cvy(q.y));

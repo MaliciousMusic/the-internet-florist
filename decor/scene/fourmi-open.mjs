@@ -2,9 +2,10 @@
 // "Fourmis du HUD"; a reload is a new visit, owner the same evening). A magic black garden ant, 5.3 cm long in the scene (a
 // third of the first 16 cm, owner 2026-10-25), comes up from under the frame's bottom edge carrying the button in its mandibles
 // by its lower edge, walks over the stepping stones, shrinking with the distance, climbs the pillar's face, sets the button in
-// its place, then turns and leaves by the pillar's side (not on up under the vase, owner the same day). It walks at a real
-// ant's pace for its size (24 mm/s for a 4 mm worker, laden x 0.7: 4.2 body lengths a second). The button answers clicks while
-// it is carried.
+// its place, then turns and leaves by the pillar's side, going round it out of sight (not on up under the vase, nor a sudden
+// vanishing: owner the same day). It sets out once the toolbar and the pager are in their places, and tells porteuses.mjs when
+// it is halfway (the Legal pill comes then). It walks at a real ant's pace for its size (24 mm/s for a 4 mm worker, laden
+// x 0.7: 4.2 body lengths a second). The button answers clicks while it is carried.
 //
 // An insect of the swarm (insectes/runtime/essaim.mjs) placed by insectes.mjs: seen from behind over the stones (level O of
 // its atlas), from above on the pillar's face, head up (level H, one azimuth: the cell and its turn given by b.view).
@@ -18,7 +19,6 @@ const LEN = 0.16 / 3; // m, the ant's length in the scene
 const SPEED = 4.2 * LEN; // m/s laden
 const STRIDE = 0.625 * LEN; // m per cycle (2.5 mm for 4 mm)
 const AXIS = 4.37, PIL_R = 0.235, FACE = AXIS - PIL_R; // the pillar's axis, its radius and its face (m)
-const SIDE_DOWN = 0.42; // rad: leaving, it walks to its right and a little down (24 degrees)
 // the walk: from under the frame's bottom edge (the ground shows from 2.2 m) over the four stones to the pillar's foot
 const WALK = [[0.03, 1.85], [0.02, 2.29], [0.12, 2.58], [0.18, 2.83], [0.09, 3.1], [-0.01, 3.35], [0.04, 3.62], [0.08, 3.86], [0.03, 4.02], [0, FACE]];
 // the button (decor/scene/boutique.css .bq-voir): its top at world y 736, centred on x 1200, 30 px high at every scale (so
@@ -53,7 +53,7 @@ function along(c, s) {
 
 export class FourmiOpen {
   // ctx: { essaim, zOf (m to the swarm's z), sx, sy (world units to scene px), W (world frame: k), pxmm0 () (scene px per mm
-  // at the pillar's distance), button (#bq-voir), done () }
+  // at the pillar's distance), button (#bq-voir), done (), moitie () (halfway) }; state 'wait' until the caller sets 'walk'
   constructor(ctx) {
     Object.assign(this, ctx);
     this.kind = 'fourmi-noire'; this.pose = 'porte'; this.frame = 0; this.phase = 0;
@@ -90,8 +90,14 @@ export class FourmiOpen {
   }
   update(dt) {
     if (this.state === 'done') return;
+    if (this.state === 'wait') { this.visible = false; return; }
     this.visible = true;
     const step = SPEED * dt, B = this.btn();
+    // halfway along the stones and up the face
+    if (!this.half && (this.state === 'walk' || this.state === 'climb') && (this.s + this.h) / (this.path.len + B.at - B.h / 2 - GRIP_AHEAD) >= 0.5) {
+      this.half = true;
+      this.moitie?.();
+    }
     if (this.state === 'walk') {
       this.s = Math.min(this.path.len, this.s + step);
       const [X, Z] = along(this.path, this.s), [X2, Z2] = along(this.path, this.s + 0.03);
@@ -111,18 +117,34 @@ export class FourmiOpen {
       this.carry(this.X, FACE - 0.01 - GRIP_UP, this.h + GRIP_AHEAD + B.h / 2);
       if (this.h >= top) this.set();
     } else if (this.state === 'turn') {
-      // it lets go and turns on the spot to its right, head up to head right and a little down
+      // it lets go and turns on the spot to its right, head up to head right (level: the pillar's edge cuts it upright)
       this.t += dt;
       const u = Math.min(1, this.t / 0.35);
-      this.view = { lod: 'H', az: 90, el: 90, rotation: Math.PI / 2 + (Math.PI / 2 + SIDE_DOWN) * u * u * (3 - 2 * u) };
-      if (u >= 1) this.state = 'side';
+      this.view = { lod: 'H', az: 90, el: 90, rotation: Math.PI / 2 + (Math.PI / 2) * u * u * (3 - 2 * u) };
+      if (u >= 1) {
+        this.state = 'side';
+        this.th = Math.asin(Math.max(-1, Math.min(1, this.X / PIL_R))); // its angle round the pillar from the face's middle
+        this.layerHint = this.essaim.layerOf(this.P[2]); // the layer it climbed in, as it goes deeper round the curve
+        this.fwd = [1, 0, 0];
+      }
     } else if (this.state === 'side') {
-      // across the face to the pillar's edge, where it goes round out of sight, the face curving away from the viewer
-      this.X += step * Math.cos(SIDE_DOWN);
-      this.h -= step * Math.sin(SIDE_DOWN);
-      if (this.X >= PIL_R) { this.state = 'done'; this.visible = false; return; }
-      this.P = this.at(this.X, AXIS - Math.sqrt(PIL_R * PIL_R - this.X * this.X) - 0.01, this.h);
-      this.fwd = [Math.cos(SIDE_DOWN), Math.sin(SIDE_DOWN), 0];
+      // across the face and round the pillar at its pace: seen more and more edgewise, then cut by the pillar's edge from the
+      // head back, as if it went on round to the other side
+      this.th += step / PIL_R;
+      const k = (1.8 * LEN) / PIL_R; // the cell's width as an angle on the pillar (its span: 7.2 mm for a 4 mm ant)
+      // the cell's point u (the head at u 0.2, the gaster's tip at 0.76) lies (0.5 - u) k ahead of the ant's origin; past the
+      // edge (pi / 2) it is out of sight
+      const cut = 0.5 - (Math.PI / 2 - this.th) / k;
+      if (cut >= 0.8) { this.state = 'done'; this.visible = false; this.keep = null; this.squash = 1; return; }
+      const tail = this.th - 0.5 * k, head = Math.min(Math.PI / 2, this.th + 0.5 * k);
+      this.squash = Math.max(0.12, Math.cos((tail + head) / 2));
+      if (cut > 0) {
+        this.keep = [cut, 1, cut]; // the cut at the edge
+        this.P = this.at(PIL_R, AXIS - 0.01, this.h);
+      } else {
+        this.keep = null;
+        this.P = this.at(PIL_R * Math.sin(this.th), AXIS - PIL_R * Math.cos(this.th) - 0.01, this.h);
+      }
     }
     this.phase += step / STRIDE;
     this.frame = Math.floor((((this.phase % 1) + 1) % 1) * 8) % 8;

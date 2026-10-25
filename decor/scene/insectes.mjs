@@ -34,24 +34,29 @@ const ZB = [-90, -30, 30, 90];
 const D_FAR = 7, D_TOP = 2.0; // decor/fleurs.mjs SPLIT[0] (sol-loin beyond it); the front layer nearer than D_TOP
 const SIZE = +(q.get('taille') || 1);
 // an insect only aims at the ground's flowers where its body shows at least this long (CSS px): the ladybirds keep to the
-// near beds and the clumps, the butterflies go further; the bouquet's flowers, drawn larger than nature, are always in reach
-const MIN_PX = 3;
+// near beds and the clumps, the butterflies go further; the bouquet's flowers, drawn larger than nature, are always in reach.
+// 2 px since 2026-10-25 (owner: more insects far off), 3 before
+const MIN_PX = 2;
 // the share of the bouquet's flowers each kind knows (a different quarter for each): the insects go mostly to the beds and
 // now and then to the bouquet (owner, 2026-10-24)
 const BQ_SHARE = 0.25;
 
-// who flies on the site: four bees, two bumblebees, two ladybirds, three butterflies at most (shop-design rule), one of
-// each of the others; ground: the bush-cricket lands on the beds' flowers only
+// who flies on the site: three times the first cast (owner, 2026-10-25: « triple le nombre d'insectes », more bush-crickets
+// jumping, more bees, bumblebees, ladybirds, chafers and butterflies flying in the sky and far off; the shop-design rule of
+// three butterflies at most is lifted by that request), 42 in all. n of each kind visit flowers; sky more pass by without
+// landing (an empty list of flowers: each comes in from the far meadow, from above or from a side and flies out again, across
+// the sky). Ground: the bush-crickets land on the beds' flowers only, and jump from one to the next.
 const CAST = [
-  { kind: 'abeille', n: 4, mod: 'abeille.mjs', make: (M, a) => new M.Abeille(...a), mm: () => 12.5 },
-  { kind: 'bourdon', n: 2, mod: 'bourdon.mjs', make: (M, a) => new M.Bourdon(...a), mm: (M) => M.BOURDON.bodyMm },
-  { kind: 'coccinelle', n: 2, mod: 'coccinelle.mjs', wings: 1.6, make: (M, a) => new M.Coccinelle(...a), mm: (M) => M.COCCINELLE.bodyMm },
-  { kind: 'machaon', n: 1, mod: 'papillon.mjs', wings: true, make: (M, a) => new M.Papillon(a[0], a[1], a[2], { species: M.MACHAON }), mm: (M) => M.MACHAON.bodyMm },
-  { kind: 'paon-du-jour', n: 2, mod: 'papillon.mjs', wings: true, make: (M, a) => new M.Papillon(a[0], a[1], a[2], { species: M.PAON }), mm: (M) => M.PAON.bodyMm },
-  { kind: 'cetoine', n: 1, mod: 'cetoine.mjs', wings: true, make: (M, a) => new M.Cetoine(...a), mm: (M) => M.CETOINE.bodyMm },
-  { kind: 'moro-sphinx', n: 1, mod: 'moro-sphinx.mjs', wings: true, make: (M, a) => new M.Sphinx(...a), mm: (M) => M.SPHINX.bodyMm },
-  { kind: 'sauterelle', n: 1, mod: 'sauterelle.mjs', wings: true, ground: true, make: (M, a) => new M.Sauterelle(...a), mm: (M) => M.SAUTERELLE.bodyMm },
+  { kind: 'abeille', n: 8, sky: 4, mod: 'abeille.mjs', make: (M, a) => new M.Abeille(...a, { maxVisible: 12 }), mm: () => 12.5 },
+  { kind: 'bourdon', n: 4, sky: 2, mod: 'bourdon.mjs', make: (M, a) => new M.Bourdon(...a), mm: (M) => M.BOURDON.bodyMm },
+  { kind: 'coccinelle', n: 4, sky: 2, mod: 'coccinelle.mjs', wings: 1.6, make: (M, a) => new M.Coccinelle(...a), mm: (M) => M.COCCINELLE.bodyMm },
+  { kind: 'machaon', n: 2, sky: 1, mod: 'papillon.mjs', wings: true, make: (M, a) => new M.Papillon(a[0], a[1], a[2], { species: M.MACHAON }), mm: (M) => M.MACHAON.bodyMm },
+  { kind: 'paon-du-jour', n: 4, sky: 2, mod: 'papillon.mjs', wings: true, make: (M, a) => new M.Papillon(a[0], a[1], a[2], { species: M.PAON }), mm: (M) => M.PAON.bodyMm },
+  { kind: 'cetoine', n: 2, sky: 1, mod: 'cetoine.mjs', wings: true, make: (M, a) => new M.Cetoine(...a), mm: (M) => M.CETOINE.bodyMm },
+  { kind: 'moro-sphinx', n: 2, sky: 1, mod: 'moro-sphinx.mjs', wings: true, make: (M, a) => new M.Sphinx(...a), mm: (M) => M.SPHINX.bodyMm },
+  { kind: 'sauterelle', n: 3, mod: 'sauterelle.mjs', wings: true, ground: true, make: (M, a) => new M.Sauterelle(...a), mm: (M) => M.SAUTERELLE.bodyMm },
 ];
+const NO_FLOWERS = [];
 
 const scene = document.getElementById('scene');
 const monde = document.getElementById('monde');
@@ -275,8 +280,8 @@ async function start(clumpsOn) {
       if (c.wings) await essaim.wings(c.kind, url + '-ailes');
       if (typeof c.wings === 'number') K.wingsDepth = c.wings;
       const M = mods[c.mod];
-      for (let i = 0; i < c.n; i++) {
-        const s = c.make(M, [essaim, lists.get(c), rnd]);
+      for (let i = 0; i < c.n + (c.sky || 0); i++) {
+        const s = c.make(M, [essaim, i < c.n ? lists.get(c) : NO_FLOWERS, rnd]);
         s.bodyMm = c.mm(M);
         s.lengthPx = s.bodyMm * pxmm0;
         essaim.add(s);
@@ -293,7 +298,15 @@ async function start(clumpsOn) {
     try {
       const { FourmiOpen } = await import(new URL('fourmi-open.mjs', import.meta.url).href);
       await essaim.kind('fourmi-noire', `${BASE}fourmi-noire/atlas/fourmi-noire`, 4, ['O', 'H']);
-      const a = new FourmiOpen({ essaim, zOf, sx, sy, W, pxmm0: () => pxmm0, button: document.getElementById('bq-voir'), done: () => root.classList.remove('fourmi-open') });
+      const a = new FourmiOpen({ essaim, zOf, sx, sy, W, pxmm0: () => pxmm0, button: document.getElementById('bq-voir'), done: () => root.classList.remove('fourmi-open'), moitie: () => document.dispatchEvent(new Event('fourmi-open:moitie')) });
+      // it sets out once the toolbar and the pager are in their places (porteuses.mjs, "porteuses:haut"; owner, 2026-10-25), at
+      // once without the carriers, after 30 s whatever happens
+      if (root.classList.contains('porteuses') && !window.PORTEUSES_HAUT) {
+        a.state = 'wait';
+        const go = () => { if (a.state === 'wait') a.state = 'walk'; };
+        document.addEventListener('porteuses:haut', go, { once: true });
+        setTimeout(go, 30000);
+      }
       essaim.add(a);
       insects.push(a);
     } catch (err) {

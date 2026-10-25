@@ -341,3 +341,6 @@ l'identité de son éditeur dans ses mentions légales.
   bat des ailes au lieu de faire l'hélice, pager qui penche du côté de la coccinelle pendant le trajet. Fourmi d'Open trois
   fois plus petite, qui tient le bouton par son bord inférieur et repart par le côté du pilier. Elle garde le vrai pas
   d'une ouvrière : bouton posé vers 18 s (porteur). Détails dans `insectes/DECISIONS.md`.
+- 2026-10-25, ordre d'arrivée du HUD (porteur) : barre d'outils et pager d'abord, puis la fourmi d'Open, et la pastille Legal
+  quand elle est à mi-chemin. La fourmi repart en passant derrière le pilier. Trois fois plus d'insectes dans la scène
+  (42), dont des passants qui traversent le ciel.

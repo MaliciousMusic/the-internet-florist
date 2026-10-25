@@ -175,6 +175,24 @@ le côté du pilier au lieu de continuer sous le vase ».
   corps par seconde, comme les autres fourmis. Trois fois plus petite, elle va trois fois moins vite : le bouton est posé
   environ 18 s après le chargement, contre 9 s avant.
 
+Demande du porteur (2026-10-25, suite) : « d'abord la toolbar et le pager amenés, puis ensuite le bouton Open, et Legal à la
+moitié du chemin de Open », « la fourmi ne dépope pas mais disparaît crédiblement, comme si elle tournait de l'autre côté du
+pilier », « triple le nombre d'insectes ».
+- **Ordre d'arrivée** : la barre d'outils (fourmi sur ordinateur, papillons sur téléphone), puis le pager (coccinelle et
+  cétoine). Ensuite la fourmi d'Open part (`porteuses:haut`). Quand elle a fait la moitié de son chemin, pierres et pilier
+  compris, la pastille Legal arrive (`fourmi-open:moitie`). Mesuré sur ordinateur : dock posé à 9,6 s, pager à 14,0 s,
+  départ de la fourmi à 14,0 s, Legal de 20,5 à 23,2 s, bouton Open posé à 27,0 s. Sur téléphone : 6,1, 8,3, 8,3, de 14,9 à
+  16,1 et 21,5 s. Garde-fous : sans pager (un seul bouquet), la fourmi n'attend pas plus de 3 s après le dock ; sans
+  fourmi d'Open, Legal vient tout de suite ; dans tous les cas, au plus 30 s d'attente.
+- **Sortie par le côté** : la fourmi suit la courbe du pilier. Elle se voit de plus en plus de biais, donc plus étroite, puis
+  le bord du pilier la coupe de la tête vers l'abdomen, comme si elle passait de l'autre côté. Le moteur de l'essaim a deux
+  clés nouvelles pour cela, `keep` (une partie de la cellule) et `squash` (raccourci) ; sans elles, rien ne change.
+- **Trois fois plus d'insectes** : 42 au lieu de 14. Douze abeilles, six bourdons, six coccinelles, trois machaons, six
+  paons-du-jour, trois cétoines, trois moro-sphinx et trois sauterelles. Une partie des volants ne se pose jamais : ces
+  passants entrent par la prairie lointaine, par le haut ou par un côté, et traversent le ciel. Les fleurs lointaines sont
+  visitées dès qu'un insecte y fait 2 px, au lieu de 3. La règle d'au plus trois papillons tombe avec cette demande. Mesuré
+  à 136 images par seconde, 95 % des images sous 14 ms, avec 30 insectes visibles à la fois.
+
 Propositions, à valider sur le premier prototype :
 - ~~**Pose** : les fourmis marchent de profil sur le bord bas de l'écran comme sur un sol. Elles tiennent la case levée
   devant elles.~~ Remplacée par la vue de dessus, voir plus haut.
