@@ -1,23 +1,25 @@
 // porteuses.mjs: the HUD's carriers (owner's QCM of 2026-10-24, insectes/DECISIONS.md "Fourmis du HUD"). Black garden ants
-// (Lasius niger) bring the HUD's pieces and take them away, every time a piece comes or goes: the footer's pill and, on a
-// computer, the dock when the page opens; in the close-up each box of the price bubble (Buy with its price, "On your desktop",
-// "Fades in"; the resale line then shows by itself). They walk at the ant's real speed, in from the left and out to the right.
-// A piece answers clicks while it is carried. Flying insects lay two pieces, once per load: the phone's dock (two butterflies)
-// and the pager (a ladybird and a rose chafer).
+// (Lasius niger) bring the HUD's pieces, once per page load (owner, 2026-10-25: nothing is taken down when the close-up closes
+// and opens again; only a reload brings them anew): the footer's pill and, on a computer, the dock when the page opens, Buy with
+// its price at the first close-up (the resale line then shows by itself). They walk at the ant's real speed, in from the left
+// and out to the right. A piece answers clicks while it is carried. Flying insects lay the other pieces, once per load too: the
+// phone's dock (two butterflies), the pager (a ladybird and a rose chafer), and the bubble's two small boxes over Buy, "Fades
+// in" and "On your desktop" (two honeybees each, owner 2026-10-25).
 //
 // Seen from the side (owner, the same evening: "vu horizontalement sur le rebord", "jamais en paire", "fais attention au
 // overlap"): the screen's bottom edge is a ledge, and every piece at rest is a block whose top is a ledge too. One ant carries
 // one piece, holding it up by its lower edge as leafcutters hold their leaf (the piece stays upright). To reach a place higher
 // than its ledge, other ants climb on one another into a stack against the block above, and the carrier climbs the stack (owner:
 // "les fourmis se montent dessus pour atteindre le dépôt"). The routes keep every carried piece clear of the pieces at rest:
-// a piece comes in held behind its carrier, which climbs on the left of the blocks and puts it down by its right end; a piece
-// goes out held ahead, down the stacks on the right. The carriers that have put their piece down drop from the ends of the
-// ledges, as ants do. The ants are 56 CSS px long (the Open button's length), sprites of their atlas (level P: seen from the
+// a piece comes in held behind its carrier, which climbs on the left of the blocks and puts it down by its right end. The
+// carriers that have put their piece down drop from the ends of the ledges, as ants do. The ants are 56 CSS px long (the Open button's length), sprites of their atlas (level P: seen from the
 // side, one azimuth, mirrored and turned by the runtime), drawn by PixiJS on a canvas laid over the HUD that lets the clicks
 // through; the pieces move by their CSS translate property (their own transform untouched).
 // The pieces wait off screen from the first paint (boutique.css, class "porteuses" set by scene.js), and the class gives the
-// stacked pieces the room an ant needs between them (22 px); with prefers-reduced-motion, ?porteuses=0 or ?insectes=0 the class
-// is never set, and if this module fails it is taken off, the pieces then standing in their places as before.
+// stacked pieces the room an ant needs between them (22 px); once Buy is set (or the close-up has closed before), the class
+// bulle-posee gives the bubble back its own coming and going with the close-up. With prefers-reduced-motion, ?porteuses=0 or
+// ?insectes=0 the class porteuses is never set, and if this module fails it is taken off, the pieces then standing in their
+// places as before.
 
 const q = new URLSearchParams(location.search);
 const BASE = new URL('../../insectes/', import.meta.url).href;
@@ -36,8 +38,8 @@ const OFF = '-200vw 0px'; // where a piece waits (as boutique.css puts it before
 // ?lent=8: everything 8 times slower, to look at the carriers (a check, not a setting)
 const SLOW = Math.max(1, +(q.get('lent') || 1));
 // the pager's ladybird and rose chafer, nearer than the dock's butterflies (owner, 2026-10-25): 2.5 px per mm,
-// the ladybird 18 px long, the chafer 45
-const BEETLE_PXMM = 2.5;
+// the ladybird 18 px long, the chafer 45; the bubble's honeybees at the same scale, 31 px long
+const BEETLE_PXMM = 2.5, BEE_PXMM = 2.5;
 
 if (root.classList.contains('porteuses')) {
   window.PORTEUSES = true;
@@ -139,7 +141,7 @@ async function start() {
     kill() { this.sp.destroy(); ants.delete(this); }
   }
   const ants = new Set();
-  const ant = (x, y, t, n) => { const a = new Ant(x, y, t, n); ants.add(a); return a; };
+  const ant = (x, y, t, n) => { const a = new Ant(x, y, t, n); ants.add(a); if (scope) scope.ants.add(a); return a; };
 
   // ---- the pieces: a DOM element, its place at rest (measured with our own translate off) ----
   const H = () => innerHeight, W = () => innerWidth;
@@ -297,6 +299,7 @@ async function start() {
     }
     *build(route) {
       stacks.add(this);
+      if (scope) scope.stacks.add(this);
       const jobs = [];
       for (let k = 0; k < this.n; k++) {
         const a = ant(-BODY_PX * 1.2, LEDGE());
@@ -357,36 +360,6 @@ async function start() {
     a.placing = false;
     run(leave(a));
   }
-  // a piece taken away: its carrier comes empty by the route in, takes it by its left end (ahead), and the route out
-  function* take(box, routeIn, stand, routeOut) {
-    const R = box.rest(), along = 10, feet = feetFor([R.l + along, R.b]);
-    const a = ant(-BODY_PX, LEDGE());
-    a.pose = 'marche';
-    yield* routeIn(a, {});
-    yield* move(a, feet[0], stand(), RIGHT, UP);
-    a.pose = 'feuille';
-    a.placing = true;
-    yield* reach(a, R.b);
-    box.state = 'moving';
-    yield* wait(PAUSE);
-    a.placing = false;
-    yield* holding(a, box, R, along, routeOut(a, LOADED));
-    box.away();
-    a.kill();
-  }
-  // out to the right along the bottom ledge until the piece held ahead (w wide) is off screen
-  const offRight = (w) => function* (a, o) { yield* walkLedge(a, W() + w + BODY_PX, o); };
-  // out to the right with a piece held ahead (w wide): along each ledge to its end, dropping with it to the one under it (the
-  // piece ahead clears the ledge's end before the drop), then along the bottom ledge until it is off screen
-  const outRight = (w) => function* (a, o) {
-    for (let i = 0; i < 8 && a.y < LEDGE() - 1; i++) {
-      const R = blocks().filter((B) => Math.abs(B.t - a.y) < 2 && B.l - 2 <= a.x && a.x <= B.r + 2).sort((p, q) => q.r - p.r)[0];
-      const end = (R ? R.r : a.x) + BODY_PX * 0.55;
-      yield* move(a, end, a.y, RIGHT, UP, o);
-      yield* fall(a, under(end, a.y + 1));
-    }
-    yield* offRight(w)(a, o);
-  };
 
   // ---- the pieces ----
   const $ = (s) => document.querySelector(s);
@@ -394,8 +367,8 @@ async function start() {
   const pill = mk('.pied-poignee', { name: 'pill' });
   if (pill) pill.low = true;
   const dock = DESK.matches ? mk('.dock', { name: 'dock' }) : null;
-  const revente = $('.achat-revente');
-  const buy = mk('.achat-bouton', { name: 'buy', after: () => revente && (revente.style.visibility = 'visible') });
+  // Buy set: the resale line shows, and the bubble comes and goes whole with the close-up from then on (boutique.css)
+  const buy = mk('.achat-bouton', { name: 'buy', after: () => root.classList.add('bulle-posee') });
   const vie = mk('.achat-vie', { name: 'vie' }), demo = mk('.achat-demo', { name: 'demo' });
 
   // the footer's pill: dragged by its right end, the ant walking backward, its head down (the pill lies just over the ledge)
@@ -428,99 +401,76 @@ async function start() {
     if (S) yield* S.takeDown();
   }
 
-  // the price bubble on a computer, over the dock: a stack against the dock's left end (T1) leads onto its top, one on the dock
-  // against Buy's left end (T2) onto Buy's top. The carriers wait their turn at the stacks' feet, so that no piece held behind
-  // one meets the piece of the one ahead. Taken away, each box goes out held ahead, dropped with its carrier from Buy's end to
-  // the dock, from the dock's end to the bottom ledge.
-  function towersDesk() {
-    const D = dock.rest(), Bq = buy.rest(), y0 = LEDGE();
-    const T1 = new Stack(D.l - BODY_PX / 2 + 4, y0, D.t), T2 = new Stack(Bq.l - BODY_PX / 2, D.t, Bq.t);
-    const at = (a, fx) => (a.pose === 'feuille' ? footLoaded(fx) : foot(fx));
-    const onDock = (go = () => true) => function* (a, o) { yield* walkLedge(a, at(a, T1.l), o); while (!T1.done || !go()) yield; yield* up(a, T1.l, T1.top, o); };
-    const onBuy = (go = () => true) => function* (a, o) { yield* onDock(go)(a, o); yield* move(a, at(a, T2.l), D.t, RIGHT, UP, o); while (!T2.done) yield; yield* up(a, T2.l, T2.top, o); };
-    return { D, Bq, T1, T2, onDock, onBuy };
-  }
+  // the price bubble on a computer, over the dock: a stack against the dock's left end leads onto its top, where Buy's carrier
+  // sets it down; the two small boxes come by air (bees, below)
   function* bubbleInDesk() {
-    const T = towersDesk(), D = T.D, Bq = T.Bq, done = {};
-    let bA = null;
-    run(T.T1.build((h) => walkLedge(h, foot(T.T1.l))));
-    let dA = null;
-    run((function* () { while (!T.T1.done) yield; yield* bring(buy, T.onDock(), () => D.t, (a) => (bA = a)); done.buy = true; })());
-    // T2 once Buy's carrier has gone past its place on the dock
-    run((function* () { while (!bA || bA.y > D.t + 2 || bA.x < T.T2.r + 8) yield; yield* T.T2.build((h) => T.onDock()(h, {})); })());
-    run((function* () { while (!T.T2.done || !done.buy) yield; yield* bring(demo, T.onBuy(), () => Bq.t, (a) => (dA = a)); done.demo = true; })());
-    // the next one once the one ahead is up on Buy
-    run((function* () { while (!dA || dA.y > Bq.t + 2) yield; yield* bring(vie, T.onBuy(() => done.demo), () => Bq.t); done.vie = true; })());
-    while (!done.buy || !done.demo || !done.vie) yield;
-    yield* all(T.T2.takeDown(), T.T1.takeDown());
+    const D = dock.rest(), y0 = LEDGE();
+    const T = new Stack(D.l - BODY_PX / 2 + 4, y0, D.t);
+    run(T.build((h) => walkLedge(h, foot(T.l))));
+    while (!T.done) yield;
+    yield* bring(buy, function* (a, o) { yield* walkLedge(a, footLoaded(T.l), o); yield* up(a, T.l, T.top, o); }, () => D.t);
+    yield* T.takeDown();
   }
-  function* bubbleOutDesk() {
-    const T = towersDesk(), D = T.D, Bq = T.Bq, done = {};
-    run(T.T1.build((h) => walkLedge(h, foot(T.T1.l))));
-    run(T.T2.build((h) => T.onDock()(h, {})));
-    run((function* () { while (!T.T2.done) yield; yield* take(demo, T.onBuy(), () => Bq.t, outRight(demo.rest().w)); done.demo = true; })());
-    run((function* () { while (demo.state !== 'moving') yield; yield* take(vie, T.onBuy(), () => Bq.t, outRight(vie.rest().w)); done.vie = true; })());
-    while (!done.demo || !done.vie) yield;
-    yield* T.T2.takeDown();
-    yield* take(buy, T.onDock(), () => D.t, outRight(Bq.w));
-    yield* T.T1.takeDown();
-  }
-
   // the price bubble on a phone, over the pill with nothing under it: one stack against Buy's left end, up to under Buy's lower
-  // edge for Buy (held ahead by its left end, its carrier on the stack's top), then grown to Buy's top for the two small boxes.
-  // Taken away, the two small boxes go down a stack against Buy's right end; Buy goes from the lowered first stack, lifted over
-  // the pill, off to the right
+  // edge, Buy held ahead by its left end by its carrier on the stack's top
   function* bubbleInPhone() {
     const Bq = buy.rest(), y0 = LEDGE();
     const T = new Stack(Bq.l - BODY_PX / 2, y0, y0 - Math.max(1, helpers(y0, Bq.b)) * HB);
     yield* T.build((h) => walkLedge(h, foot(T.l)));
-    {
-      const R = Bq, along = 10, feet = feetFor([R.l + along, R.b]);
-      const a = ant(-BODY_PX, y0);
-      a.pose = 'feuille';
-      buy.state = 'moving';
-      yield* holding(a, buy, R, along, (function* () {
-        yield* walkLedge(a, foot(T.l), LOADED);
-        yield* up(a, T.l, T.top, LOADED);
-        yield* move(a, feet[0], T.top, RIGHT, UP, LOADED);
-        a.placing = true;
-        yield* reach(a, R.b);
-      })());
-      buy.home();
-      if (buy.after) buy.after();
-      yield* wait(PAUSE);
-      a.placing = false;
-      run(leave(a));
-    }
-    const T2 = new Stack(T.x0, T.top, Bq.t);
-    yield* T2.build((h) => (function* () { yield* walkLedge(h, foot(T.l)); yield* up(h, T.l, T.top); })());
-    const done = {};
-    const onBuy = (go = () => true) => function* (a, o) { yield* walkLedge(a, footLoaded(T.l), o); while (!go()) yield; yield* up(a, T.l, T2.top, o); };
-    let dA = null;
-    run((function* () { yield* bring(demo, onBuy(), () => Bq.t, (a) => (dA = a)); done.demo = true; })());
-    run((function* () { while (!dA || dA.y > Bq.t + 2) yield; yield* bring(vie, onBuy(() => done.demo), () => Bq.t); done.vie = true; })());
-    while (!done.demo || !done.vie) yield;
-    yield* T2.takeDown();
+    const R = Bq, along = 10, feet = feetFor([R.l + along, R.b]);
+    const a = ant(-BODY_PX, y0);
+    a.pose = 'feuille';
+    buy.state = 'moving';
+    yield* holding(a, buy, R, along, (function* () {
+      yield* walkLedge(a, foot(T.l), LOADED);
+      yield* up(a, T.l, T.top, LOADED);
+      yield* move(a, feet[0], T.top, RIGHT, UP, LOADED);
+      a.placing = true;
+      yield* reach(a, R.b);
+    })());
+    buy.home();
+    buy.after();
+    yield* wait(PAUSE);
+    a.placing = false;
+    run(leave(a));
     yield* T.takeDown();
   }
-  function* bubbleOutPhone() {
-    const Bq = buy.rest(), y0 = LEDGE(), done = {};
-    const T = new Stack(Bq.l - BODY_PX / 2, y0, Bq.t);
-    run(T.build((h) => walkLedge(h, foot(T.l))));
-    const onBuy = (go = () => true) => function* (a, o) { yield* walkLedge(a, foot(T.l), o); while (!T.done || !go()) yield; yield* up(a, T.l, T.top, o); };
-    run((function* () { while (!T.done) yield; yield* take(demo, onBuy(), () => Bq.t, outRight(demo.rest().w)); done.demo = true; })());
-    run((function* () { while (demo.state !== 'moving') yield; yield* take(vie, onBuy(), () => Bq.t, outRight(vie.rest().w)); done.vie = true; })());
-    while (!done.demo || !done.vie) yield;
-    yield* T.takeDown();
-    const T0 = new Stack(Bq.l - BODY_PX / 2, y0, y0 - Math.max(1, helpers(y0, Bq.b)) * HB);
-    yield* T0.build((h) => walkLedge(h, foot(T0.l)));
-    yield* take(buy, function* (a, o) { yield* walkLedge(a, foot(T0.l), o); yield* up(a, T0.l, T0.top, o); }, () => T0.top, outRight(Bq.w));
-    yield* T0.takeDown();
+  // the bubble closed before its carriers are done: its pieces in their places (they go down with it), the ants at work let go
+  // and drop under the bottom edge; the bees fly off by themselves (airlift's gone)
+  function abort(sc) {
+    sc.stopped = true;
+    sc.done = true;
+    for (const S of sc.stacks) stacks.delete(S);
+    for (const a of sc.ants) if (ants.has(a)) run(drop(a), null);
+    if (buy.state !== 'rest') { buy.home(); buy.after(); }
+  }
+  function* drop(a) {
+    a.rear = 0;
+    a.placing = false;
+    let v = 0;
+    while (a.y < H() + BODY_PX) { const dt = yield; v += 2600 * dt; a.y += v * dt; }
+    a.kill();
   }
 
   // ---- the loop, and the works one after another (a piece asked back while it comes waits its turn) ----
   const jobs = [];
-  const run = (g) => { g.next(); jobs.push(g); loop(); };
+  // a work that can be called off (the bubble's): sc, the scope it runs in, holds the ants and the stacks it makes, and the jobs
+  // it starts (run within one of its steps) are its own too; all stop once sc.stopped
+  let scope = null;
+  const run = (g, sc = scope) => { const w = sc ? guarded(g, sc) : g; w.next(); jobs.push(w); loop(); };
+  function* guarded(g, sc) {
+    for (let dt, first = true; ; first = false) {
+      if (sc.stopped) return;
+      const prev = scope;
+      scope = sc;
+      let r;
+      try { r = first ? g.next() : g.next(dt); } finally { scope = prev; }
+      if (r.done) return;
+      dt = yield;
+    }
+  }
+  // the work g in the scope sc, sc.done once it is over
+  function* within(sc, g) { yield* guarded(g, sc); sc.done = true; }
   let raf = 0, tPrev = 0;
   function loop() { if (!raf) { tPrev = performance.now(); raf = requestAnimationFrame(frame); } }
   function tick(dt) {
@@ -559,9 +509,12 @@ async function start() {
     // the elytra held up and open, the hind wings out and beating; its wings' depth as on the scene (insectes.mjs)
     coccinelle: { mod: 'coccinelle.mjs', cls: 'Coccinelle', sp: 'COCCINELLE', depth: 1.6, lod: 'L', set: (b) => { b.setFlight(1, 1); b.wingsHidden = false; }, wings: (b, dt) => { b.planes(dt); b.faceFlight(dt); } },
     cetoine: { mod: 'cetoine.mjs', cls: 'Cetoine', sp: 'CETOINE', lod: 'L', wings: (b, dt) => { b.strokeWings(dt); b.faceFlight(dt); } },
+    // its wings drawn in its cells (baked: no wing sheet), the three drawings of its false wingbeat one a frame (abeille.mjs)
+    abeille: { mod: 'abeille.mjs', cls: 'Abeille', S: { kind: 'abeille', bodyMm: 12.5 }, baked: true, lod: 'L', wings: (b, dt) => { b.frame = [0, 1, 2, 1][++b.tick % 4]; b.faceFlight(dt); } },
   };
-  // the flyers' swarm, made once; the loop renders it while some fly
+  // the flyers' swarm, made once; the loop renders it while some fly; each kind loaded once
   let sky = null, skyE = null, flying = 0;
+  const loaded = {};
   const swarm = () => sky || (sky = (async () => {
     const { Essaim } = await import(BASE + 'runtime/essaim.mjs');
     const e = await Essaim.create({ layers: [], zCuts: [], size: () => [W(), H()], direct: true });
@@ -585,13 +538,13 @@ async function start() {
     const e = await swarm();
     const pair = [], flaps = [];
     for (const name of names) {
-      const F = FLYER[name], M = await import(BASE + 'runtime/' + F.mod), S = M[F.sp];
-      if (!e.kinds[S.kind]) {
+      const F = FLYER[name], M = await import(BASE + 'runtime/' + F.mod), S = F.S || M[F.sp];
+      await (loaded[S.kind] ||= (async () => {
         const url = `${BASE}${S.kind}/atlas/${S.kind}`;
         const K = await e.kind(S.kind, url, S.bodyMm);
-        await e.wings(S.kind, url + '-ailes');
+        if (!F.baked) await e.wings(S.kind, url + '-ailes');
         if (F.depth) K.wingsDepth = F.depth;
-      }
+      })());
       let seed = 7 + pair.length;
       const b = new M[F.cls](e, [], () => ((seed = (seed * 1664525 + 1013904223) >>> 0) / 4294967296), { species: S, lengthPx: S.bodyMm * o.pxmm });
       b.visible = true;
@@ -666,7 +619,7 @@ async function start() {
           }
         }
       }
-    })()));
+    })(), null));
   }
 
   // ---- when the pieces come and go ----
@@ -715,19 +668,23 @@ async function start() {
     document.addEventListener('fourmi-open:moitie', send, { once: true });
     haut.then(() => { if (!root.classList.contains('fourmi-open')) send(); setTimeout(send, 30000); });
   }
-  // the close-up: the bubble's boxes come with it and go with it; the resale line shows once Buy is set
+  // the close-up, the first time in the visit: Buy's ant brings Buy, four honeybees the two small boxes over it (the right one
+  // first, the second pair behind the first). From then on the bubble comes and goes whole with the close-up, as without
+  // carriers (owner, 2026-10-25: only a reload brings them anew). Closed before they are done, the pieces drop into their places
+  // and go down with the bubble (abort)
   const achat = $('#achat');
   if (achat && buy && vie && demo) {
-    let near = false;
+    const far = () => achat.hidden || achat.classList.contains('loin');
+    const lay = (box) => airlift(box, ['abeille', 'abeille'], { pxmm: BEE_PXMM, hang: 0.15, inset: 8, rise: -90, speed: 260, away: (R) => [W() + 140, R.cy - 180], gone: far })
+      .catch((err) => { console.error('[porteuses]', err); box.home(); });
+    let crew = null;
     const check = () => {
-      const now = !achat.hidden && !achat.classList.contains('loin');
-      if (now === near) return;
-      near = now;
-      if (near) order(dock ? bubbleInDesk() : bubbleInPhone());
-      else {
-        if (revente) revente.style.visibility = '';
-        order(dock ? bubbleOutDesk() : bubbleOutPhone());
-      }
+      if (crew) { if (!crew.done && far()) abort(crew); return; }
+      if (far()) return;
+      crew = { stopped: false, done: false, ants: new Set(), stacks: new Set() };
+      order(within(crew, dock ? bubbleInDesk() : bubbleInPhone()));
+      lay(demo);
+      run((function* () { yield* wait(0.8); lay(vie); })(), null);
     };
     new MutationObserver(check).observe(achat, { attributes: true, attributeFilter: ['class', 'hidden'] });
     check();

@@ -615,9 +615,11 @@
   font-weight: 600;
 }
 
-/* the HUD's carriers (porteuses.mjs, class "porteuses" set by scene.js): until their ants bring them, the pieces wait off
-   screen, by the translate property (their own transforms untouched); the price bubble stays in its place while its boxes
-   come and go one by one, and its resale line shows once Buy is set. The ants' canvas lets every click through. */
+/* the HUD's carriers (porteuses.mjs, class "porteuses" set by scene.js): until their insects bring them, once per page load,
+   the pieces wait off screen, by the translate property (their own transforms untouched); the price bubble stays in its place
+   while its boxes come one by one at the first close-up, and its resale line shows once Buy is set (class "bulle-posee"); from
+   then on the bubble comes and goes whole with the close-up, as without carriers. The carriers' canvas lets every click
+   through. */
 .porteuses .pied-poignee,
 .porteuses .achat-vie,
 .porteuses .achat-demo,
@@ -625,14 +627,14 @@
   translate: -200vw 0;
 }
 
-.porteuses .achat,
-.porteuses .achat.loin {
+.porteuses:not(.bulle-posee) .achat,
+.porteuses:not(.bulle-posee) .achat.loin {
   transform: translateX(-50%);
   visibility: visible;
   transition: none;
 }
 
-.porteuses .achat-revente {
+.porteuses:not(.bulle-posee) .achat-revente {
   visibility: hidden;
 }
 
@@ -645,13 +647,9 @@
 }
 
 /* the room an ant needs (22 px) between stacked pieces, so that the carriers walk on a piece under another without touching it:
-   the dock 22 px over the pill's top on a computer, the bubble's two small boxes 22 px over Buy */
+   the dock 22 px over the pill's top on a computer (the bubble's two small boxes come by air: their own gap over Buy) */
 :root.porteuses {
   --dock-pied: calc(env(safe-area-inset-bottom) + 50px);
-}
-
-.porteuses .achat-haut {
-  margin-bottom: 22px;
 }
 
 /* the dock: brought by an ant on a computer (at the bottom), laid by two butterflies on a phone (at the top); the pager: brought
@@ -661,7 +659,7 @@
   translate: -200vw 0;
 }
 
-/* the Open button waits for its ant (fourmi-open.mjs), at every load */
+/* the Open button waits for its carrier, at every load: a bumblebee (bourdon-open.mjs), the ant at ?open=fourmi (fourmi-open.mjs) */
 .fourmi-open .bq-voir {
   visibility: hidden;
 }

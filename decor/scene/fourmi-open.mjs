@@ -53,19 +53,20 @@ function along(c, s) {
 
 export class FourmiOpen {
   // ctx: { essaim, zOf (m to the swarm's z), sx, sy (world units to scene px), W (world frame: k), pxmm0 () (scene px per mm
-  // at the pillar's distance), button (#bq-voir), done (), moitie () (halfway) }; state 'wait' until the caller sets 'walk'
+  // at the pillar's distance), button (#bq-voir), done (), moitie () (halfway) }; it waits until go()
   constructor(ctx) {
     Object.assign(this, ctx);
     this.kind = 'fourmi-noire'; this.pose = 'porte'; this.frame = 0; this.phase = 0;
     this.lod = 'O'; this.view = null; this.layerHint = null;
     this.P = [0, 0, 0]; this.fwd = [0, 0, -1]; this.visible = false;
-    this.path = curve(WALK); this.s = 0; this.h = 0; this.state = 'walk';
+    this.path = curve(WALK); this.s = 0; this.h = 0; this.state = 'wait';
     this.bodyMm = 4;
     this.btnPx = this.button.offsetHeight || 30; // its height on the page, which no transform changes
     this.button.style.transformOrigin = '0 50%'; // it scales about its visual centre (its transform pulls it left by half)
     this.noHit = true; // a click there is for the button it carries
     window.FOURMI_OPEN_EN_ROUTE = true;
   }
+  go() { if (this.state === 'wait') this.state = 'walk'; }
   // the ant's length at the pillar's distance in scene px; the swarm scales it with the depth
   fixedPx() { return LEN * 1000 * this.pxmm0(); }
   poke() {} // at work: it does not run off when clicked

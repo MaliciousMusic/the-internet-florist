@@ -24,8 +24,9 @@
   if (!matchMedia('(prefers-reduced-motion: reduce)').matches && q.get('porteuses') !== '0' && q.get('insectes') !== '0') {
     document.documentElement.classList.add('porteuses');
     setTimeout(() => { if (!window.PORTEUSES_EN_ROUTE) document.documentElement.classList.remove('porteuses'); }, 6000);
-    // the Open button too, at every page load (fourmi-open.mjs, started by insectes.mjs once the first bouquet has grown): it
-    // waits for its ant, and shows by itself if the ant has not set out after 45 s
+    // the Open button too, at every page load (its bumblebee, bourdon-open.mjs, or its ant at ?open=fourmi, fourmi-open.mjs,
+    // started by insectes.mjs once the first bouquet has grown): it waits for its carrier, and shows by itself if the carrier
+    // has not set out after 45 s
     document.documentElement.classList.add('fourmi-open');
     setTimeout(() => { if (!window.FOURMI_OPEN_EN_ROUTE) document.documentElement.classList.remove('fourmi-open'); }, 45000);
   }

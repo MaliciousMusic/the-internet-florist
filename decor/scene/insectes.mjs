@@ -129,7 +129,7 @@ async function start(clumpsOn) {
   document.getElementById('premier').after(topCanvas);
 
   // the cast's kinds load one at a time once the scene's loop runs (loadCast below), the page idle between two (each atlas is
-  // decoded and sent to the graphics card); the ant of the Open button comes first
+  // decoded and sent to the graphics card); the Open button's carrier comes first
   const idle = () => new Promise((r) => (window.requestIdleCallback ? requestIdleCallback(r, { timeout: 500 }) : setTimeout(r, 50)));
   const [heads, clumpList] = await Promise.all([fetch(OUT + 'tetes.json').then((r) => r.json()), fetch(OUT + 'premier.json').then((r) => r.json())]);
 
@@ -281,7 +281,8 @@ async function start(clumpsOn) {
   const loadCast = async () => {
     for (const c of CAST) {
       const url = `${BASE}${c.kind}/atlas/${c.kind}`;
-      const K = await essaim.kind(c.kind, url, c.mm(mods[c.mod]), ['S']);
+      // (a kind already loaded with more levels, the bumblebee of the Open button, is kept as it is)
+      const K = essaim.kinds[c.kind] || (await essaim.kind(c.kind, url, c.mm(mods[c.mod]), ['S']));
       if (c.wings) await essaim.wings(c.kind, url + '-ailes');
       if (typeof c.wings === 'number') K.wingsDepth = c.wings;
       const M = mods[c.mod];
@@ -297,22 +298,31 @@ async function start(clumpsOn) {
       await idle();
     }
   };
-  // the ant that brings the Open button, at every page load (fourmi-open.mjs; the button waits hidden while the page's root has
-  // the class fourmi-open, set by scene.js)
+  // the Open button's carrier, at every page load (the button waits hidden while the page's root has the class fourmi-open, set
+  // by scene.js): a bumblebee flying it in (bourdon-open.mjs, owner 2026-10-25), or the ant walking it in at ?open=fourmi
+  // (fourmi-open.mjs)
   const root = document.documentElement;
   if (root.classList.contains('fourmi-open')) {
     try {
-      const { FourmiOpen } = await import(new URL('fourmi-open.mjs', import.meta.url).href);
-      await essaim.kind('fourmi-noire', `${BASE}fourmi-noire/atlas/fourmi-noire`, 4, ['O', 'H']);
-      const a = new FourmiOpen({ essaim, zOf, sx, sy, W, pxmm0: () => pxmm0, button: document.getElementById('bq-voir'), done: () => root.classList.remove('fourmi-open'), moitie: () => document.dispatchEvent(new Event('fourmi-open:moitie')) });
+      const ant = q.get('open') === 'fourmi';
+      const ctx = { essaim, zOf, sx, sy, W, pxmm0: () => pxmm0, bqScale: () => B, button: document.getElementById('bq-voir'), done: () => root.classList.remove('fourmi-open'), moitie: () => document.dispatchEvent(new Event('fourmi-open:moitie')) };
+      let a;
+      if (ant) {
+        const { FourmiOpen } = await import(new URL('fourmi-open.mjs', import.meta.url).href);
+        await essaim.kind('fourmi-noire', `${BASE}fourmi-noire/atlas/fourmi-noire`, 4, ['O', 'H']);
+        a = new FourmiOpen(ctx);
+      } else {
+        const { BourdonOpen } = await import(new URL('bourdon-open.mjs', import.meta.url).href);
+        await essaim.kind('bourdon', `${BASE}bourdon/atlas/bourdon`, mods['bourdon.mjs'].BOURDON.bodyMm, ['S', 'L']);
+        a = new BourdonOpen(ctx);
+      }
       // it sets out once the toolbar and the pager are in their places (porteuses.mjs, "porteuses:haut"; owner, 2026-10-25), at
       // once without the carriers, after 30 s whatever happens
       if (root.classList.contains('porteuses') && !window.PORTEUSES_HAUT) {
-        a.state = 'wait';
-        const go = () => { if (a.state === 'wait') a.state = 'walk'; };
+        const go = () => a.go();
         document.addEventListener('porteuses:haut', go, { once: true });
         setTimeout(go, 30000);
-      }
+      } else a.go();
       essaim.add(a);
       insects.push(a);
     } catch (err) {
@@ -452,8 +462,9 @@ async function start(clumpsOn) {
       // at a flower of a foreground clump, over that clump: its heads lie deeper than its foot, whose distance sorts the
       // clump's sprite, so an insect on one was drawn behind its own clump (owner, 2026-10-25: too few insects seen there);
       // the clumps nearer than it still hide it
+      // (the Open button's carrier sorts itself)
       const f = s.flower;
-      s.zLift = f && f.kind === 'tf' && f.P && f.c.s && Math.hypot(s.P[0] - f.P[0], s.P[1] - f.P[1]) < Math.max(40, f.r * 4) ? Math.max(0, f.c.s.zIndex + 2 - s.P[2]) : 0;
+      if (!s.fixedPx) s.zLift = f && f.kind === 'tf' && f.P && f.c.s && Math.hypot(s.P[0] - f.P[0], s.P[1] - f.P[1]) < Math.max(40, f.r * 4) ? Math.max(0, f.c.s.zIndex + 2 - s.P[2]) : 0;
     }
     essaim.render();
     if (first) {

@@ -198,6 +198,36 @@ pilier », « triple le nombre d'insectes ».
   (clé `zLift` de l'essaim), et reste derrière les touffes plus proches. Treize des 42 insectes (au moins un de chaque
   espèce) ne visitent plus que ces touffes. Mesuré : 12 insectes en moyenne à la fois sur le premier plan, à leur vraie
   taille (de 12 px pour une abeille à 90 px pour une sauterelle sur un écran de 1 060 px), 144 images par seconde.
+- **Bourdon d'Open** (porteur, 2026-10-25 : « une version où c'est un bourdon plutôt qu'une fourmi ») : c'est maintenant la
+  version par défaut, la fourmi reste à `?open=fourmi`. Le bourdon tient le bouton sous lui par le milieu du bord haut. Il
+  sort du vrai bas de l'écran, par-dessus les fleurs du premier plan, et rétrécit à mesure qu'il s'enfonce dans la scène.
+  Il pose le bouton, plane un instant, puis s'envole au loin vers la droite jusqu'à n'être qu'un point
+  (`decor/scene/bourdon-open.mjs`).
+  - **Taille vraie à l'arrivée** (porteur, même jour) : une ouvrière de 15 mm à l'échelle du bouquet, comme les bourdons
+    qui le butinent. Les bouquets sont dessinés 1,81 fois plus grands que nature. Posé, il fait environ 8 px sur un écran
+    de 1 600 px, contre 30 px de haut pour le bouton. Il part à 75 cm de l'œil : environ 45 px, avec le bouton 5,5 fois plus
+    grand qu'à sa place.
+  - **Profondeur** : jusqu'à 2 m, il est dessiné par-dessus les touffes, le bouton aussi, et il monte à hauteur d'œil
+    avant cette distance, au-dessus des têtes des touffes. Au-delà, il passe dans le plan devant le bouquet, au-dessus du
+    bouton et sous les touffes.
+  - **Allure** : 0,6 m/s chargé (un bourdon vole à 0,5 m/s entre deux fleurs), plus lent en posant le bouton, et jusqu'à
+    8 m/s à vide. Mesuré sur ordinateur : il part avec le signal du haut, à 15,1 s. Il est à mi-chemin à 18,2 s, quand
+    Legal part, et pose le bouton à 22,6 s ; il a disparu à 25,7 s. Le bouton se balance un peu sous lui, comme un
+    pendule d'environ une seconde.
+  - Essayé puis retiré : un niveau d'atlas très grand du bourdon (cellules de 320 px), utile tant qu'il était 1,25 fois
+    plus long que la hauteur du bouton. À sa vraie taille, son grand niveau suffit.
+- **Bulle : quatre abeilles et une seule pose par visite** (porteur, même jour : « fades in » et « on your desktop » ne
+  sont plus aux fourmis mais à quatre abeilles ; « les fourmis ne démontent pas le décor quand on dézoome et rezoome,
+  seulement au rechargement ») :
+  - au premier gros plan de la visite, une fourmi apporte Buy, comme avant. Sur ordinateur elle passe par une pile contre
+    le bout gauche du dock ; sur téléphone, par une pile sous Buy ;
+  - deux abeilles par case apportent les deux petites cases en volant, la case de droite d'abord. Elles font 31 px
+    (2,5 px/mm, l'échelle des scarabées du pager) ;
+  - plus rien n'est emporté. Une fois Buy posé (classe `bulle-posee`), la bulle descend et remonte entière avec le gros
+    plan, comme sans porteurs. La ligne de revente se montre en même temps ;
+  - si l'on quitte le gros plan avant la fin, les cases tombent à leur place et descendent avec la bulle. Les fourmis au
+    travail lâchent prise et tombent sous le bord de l'écran ; les abeilles repartent d'où elles sont ;
+  - les 22 px réservés aux fourmis entre Buy et les petites cases ne servent plus et sont rendus.
 
 Propositions, à valider sur le premier prototype :
 - ~~**Pose** : les fourmis marchent de profil sur le bord bas de l'écran comme sur un sol. Elles tiennent la case levée
@@ -212,8 +242,9 @@ Propositions, à valider sur le premier prototype :
 - **Préalable** : le troisième juge a encore noté la fourmi noire « ko » sur ses six vues (`fourmi-noire/ETAT.md`). Ces
   défauts se verront à 60 px, et plus encore à 240 px. La vue de profil et son grand niveau de détail sont à reprendre avant
   le site.
-- **Durée** : à vraie vitesse, une paire met 6 à 7 s pour traverser tout l'écran. Quand on quitte le gros plan, les cases
-  de la bulle restent donc visibles quelques secondes, le temps qu'on les emporte.
+- ~~**Durée** : à vraie vitesse, une paire met 6 à 7 s pour traverser tout l'écran. Quand on quitte le gros plan, les cases
+  de la bulle restent donc visibles quelques secondes, le temps qu'on les emporte.~~ Depuis le 2026-10-25, rien n'est
+  emporté : la bulle descend avec le gros plan.
 
 ## Questions ouvertes
 
