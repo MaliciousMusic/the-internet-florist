@@ -198,8 +198,8 @@ pilier », « triple le nombre d'insectes ».
   (clé `zLift` de l'essaim), et reste derrière les touffes plus proches. Treize des 42 insectes (au moins un de chaque
   espèce) ne visitent plus que ces touffes. Mesuré : 12 insectes en moyenne à la fois sur le premier plan, à leur vraie
   taille (de 12 px pour une abeille à 90 px pour une sauterelle sur un écran de 1 060 px), 144 images par seconde.
-- **Bourdon d'Open** (porteur, 2026-10-25 : « une version où c'est un bourdon plutôt qu'une fourmi ») : c'est maintenant la
-  version par défaut, la fourmi reste à `?open=fourmi`. Le bourdon tient le bouton sous lui par le milieu du bord haut. Il
+- **Bourdon d'Open** (porteur, 2026-10-25 : « une version où c'est un bourdon plutôt qu'une fourmi » ; retenu le même soir,
+  « garde le bourdon pour le bouton Open ») : c'est la version par défaut, la fourmi reste à `?open=fourmi`. Le bourdon tient le bouton sous lui par le milieu du bord haut. Il
   sort du vrai bas de l'écran, par-dessus les fleurs du premier plan, et rétrécit à mesure qu'il s'enfonce dans la scène.
   Il pose le bouton, plane un instant, puis s'envole au loin vers la droite jusqu'à n'être qu'un point
   (`decor/scene/bourdon-open.mjs`).

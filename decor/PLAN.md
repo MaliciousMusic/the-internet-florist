@@ -352,7 +352,8 @@ l'identité de son éditeur dans ses mentions légales.
   touffe (ils étaient cachés derrière) ; treize d'entre eux ne visitent que ces touffes.
 - 2026-10-25, porteur : un bourdon apporte le bouton Open à la place de la fourmi, qui reste à `?open=fourmi`. Il tient le
   bouton par le milieu du bord haut. Il sort du vrai bas de l'écran par-dessus les fleurs, s'enfonce jusqu'au pilier où il
-  a sa taille vraie (celle des bourdons du bouquet), puis s'envole au loin (`decor/scene/bourdon-open.mjs`). Les deux
+  a sa taille vraie (celle des bourdons du bouquet), puis s'envole au loin (`decor/scene/bourdon-open.mjs`). Le porteur
+  l'a retenu le même soir. Les deux
   petites cases de la bulle viennent avec quatre abeilles. Les porteurs ne posent la bulle qu'une fois par visite : ensuite
   elle descend et remonte entière avec le gros plan, et seul un rechargement la fait rapporter. Détails dans
   `insectes/DECISIONS.md`.
