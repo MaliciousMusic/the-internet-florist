@@ -1,20 +1,18 @@
 // boutique.js: the shop layer of the scene test bench (decor/scene/index.html). No flower engine in the page: every
-// bouquet is pre-drawn once by predessin.mjs (decor/scene/bouquets/<id>/) and grown in by eclosion.js.
+// bouquet is pre-drawn once by predessin.mjs (decor/scene/bouquets/<id>/), packed by paquet.mjs and shown by eclosion.js.
 //
-// - The gallery: one frosted-glass frame per bouquet, standing on the horizon behind the pillar (under the ground's layers,
-//   so the pillar and the meadow hide its foot). The chosen one is in the middle, its bouquet on the pillar in front of it;
-//   the others stand left and right with their light thumbnail (bouquets/<id>/vignette.svg, an <img>, loaded once the
-//   first bouquet has grown) at the bouquet's real size, the nearest cut by the screen's edges. A click on a side frame,
-//   a swipe or the arrow keys bring another one to the middle (one rail, one transform).
-// - The bouquet of the chosen frame grows in on the pillar (plane z8): its vessel first, whole, then the engine's growth
-//   replayed by transforms only (eclosion.js), then the breeze. Another card: the bouquet folds back by transforms only, the
-//   vessel goes at once, the new one grows in. The pieces load once the static layers are in, and the growth waits for
-//   all of them (6 s at most): the bouquet is prepared whole, hidden, then only moved.
+// - One bouquet at a time, on the pillar (plane z8), with no frame around it (owner, 2026-10-24: the gallery of frames
+//   and the bouquets beside it are gone, so the page loads a single bouquet at first). A pager of dots under the "Open"
+//   button tells which bouquet of the day is shown; a dot, a swipe across the scene or the arrow keys show another.
+// - The bouquet shows open and already swaying (no growth): one file, bouquets/<id>/ouvert.json (paquet.mjs), read
+//   beside the decor and drawn hidden, then shown whole at once (eclosion.js, Eclosion.pose). Another bouquet: the shown one
+//   stays until the next one is drawn, then they swap in one frame. The next bouquet's file is fetched ahead when the page
+//   is idle, so a dot rarely waits.
 // - The Buy button (bottom) for the bouquet on the pillar; the purchase (Seaport) is not wired yet: it only says "soon".
-// - The shelves under the header (entete.js): the bouquets are the gallery itself; the soliflores and the bouquets sold
+// - The shelves under the header (entete.js): the bouquets are the scene itself; the soliflores and the bouquets sold
 //   open a panel, one at a time, folded by their icon. ?rayon=<name> picks the first one (default: the bouquets).
-// - Far view: an "Open" button in the middle frame; the price bubble stays hidden. Each frame shows its bouquet's
-//   lifespan: 3 months from its minting, counted down in hours and minutes, then "Faded" (shown still for good).
+// - Far view: an "Open" button on the pillar, the pager under it; the price bubble stays hidden. A bouquet lives 3 months
+//   from its minting, counted down in hours and minutes (in the close-up), then "Faded" (shown still for good).
 // - The close-up: a click on "Open" or on the bouquet brings the camera closer (the whole scene scaled by one transform so
 //   the bouquet's box fills the room between the header and the price bubble), and the price bubble rises at the bottom.
 //   A click anywhere on the scene, Escape or a header icon takes it back. The bubble's price: in ETH, then its exact
@@ -27,8 +25,8 @@
 //   the consent's time kept for the receipt (Boutique.recu: a page to download, in the page's language). The payment
 //   itself (Seaport) is not wired yet: it says "soon".
 // - The words: the page's JSON block id="i18n" (build.mjs, langues/<code>.mjs), the bouquets' spoken descriptions too.
-// - ?perf=1: the measures (time to the first growth, frames per second while growing, while the thumbnails come and in
-//   the breeze, the weights transferred), also in window.BOUTIQUE_MESURES. ?debug=1: the pillar's place, the bouquet's box.
+// - ?perf=1: the measures (time to the first bouquet shown, frames per second in the breeze, the weights transferred),
+//   also in window.BOUTIQUE_MESURES. ?debug=1: the pillar's place, the bouquet's box.
 //
 // Data: boutique.json (products, their stems and prices, the ETH/EUR rate of configuration, the paths of each bouquet's
 // manifest and thumbnail). The prices are computed when the bouquets are pre-drawn (predessin.mjs), not here: the sum
@@ -37,8 +35,6 @@
   'use strict';
   const q = new URLSearchParams(location.search);
   const PERF = q.has('perf');
-  // thumbnails wait for the first bouquet to have grown; ?vignettes=tot: at once
-  const THUMBS_EARLY = q.get('vignettes') === 'tot';
   const WW = 2400;
   const WH = 1350;
   const M = (window.BOUTIQUE_MESURES = {});
@@ -53,72 +49,23 @@
   let chosen = -1;
   const cards = [];
 
-  // ---------- the gallery: one frosted-glass frame per bouquet, standing behind the pillar on the horizon, in a loop
-  // The chosen one is in the middle, its bouquet on the pillar in front of it (the frame's foot passes behind the
-  // pillar, its rounded corners show on either side); the others stand left and right, their light thumbnail inside at the bouquet's real size, the
-  // nearest ones cut by the screen's edges. Each frame slides by its own transform. A click on a side frame, a swipe
-  // or the arrow keys bring another bouquet to the middle.
-  const rail = $('galerie-rail');
-  const FW = 460; // a frame, in world units: wide enough for the widest bouquet (the carp's, 407)
-  const FT = 205; // its top, just above the tallest bouquet (230)
-  const FB = 712; // its foot, just above the meadow (the horizon is at 722): the rounded corners show, the pillar
-  // (its top at 700) hides the middle
-  const FX = WW / 2 - FW / 2;
-  function buildFrames() {
-    for (const [k, v] of [['--x0', FX], ['--ft', FT], ['--fw', FW], ['--fh', FB - FT]]) rail.style.setProperty(k, v);
+  // ---------- the pager: one dot per bouquet of the day, by the dock (under it on a phone, just above it on a computer)
+  // The dot of the bouquet shown is drawn longer. A dot, a swipe across the scene (finger or mouse) or the arrow keys show
+  // another bouquet; the pager loops at its ends. Hovering or focusing a dot fetches its bouquet's file ahead.
+  const pager = $('pager');
+  function buildPager() {
     const frag = document.createDocumentFragment();
     CFG.produits.forEach((p, i) => {
       const b = document.createElement('button');
       b.type = 'button';
-      b.className = 'vitrine';
+      b.className = 'point';
       b.dataset.i = i;
-      const img = document.createElement('img');
-      img.className = 'vitrine-art';
-      img.alt = '';
-      img.decoding = 'async';
-      img.draggable = false;
-      img.hidden = true;
-      img.onload = () => (img.hidden = false);
-      const vie = document.createElement('span');
-      vie.className = 'vitrine-vie';
-      vie.setAttribute('aria-hidden', 'true');
-      b.append(img, vie);
       frag.append(b);
-      cards.push({ b, img, vie, p });
+      cards.push({ b, p });
     });
-    rail.append(frag);
-    pitch();
+    pager.append(frag);
+    pager.hidden = cards.length < 2;
     labelFrames();
-    showLives();
-  }
-  // the step between two frames: the neighbours always show about a seventh of the screen, never closer than 40 units;
-  // on a wide screen, up to five frames: the middle one, two whole on either side and the outer ones cut by the edges
-  // (when two fit with at least 60 units between frames)
-  function pitch() {
-    const W = scene.clientWidth;
-    const H = scene.clientHeight;
-    const v = (W / Math.max(W, (H * WW) / WH)) * WW;
-    const two = (v / 2 + FW / 2 - 0.06 * v) / 2;
-    rail.style.setProperty('--pas', Math.round(two >= FW + 60 ? two : Math.max(FW + 40, v / 2 + FW / 2 - 0.14 * v)));
-  }
-  addEventListener('resize', pitch);
-
-  // the gallery loops: each frame stands at its offset from the chosen one, -n/2 .. n/2; a frame that goes round from one
-  // end to the other (always off screen) jumps there without sliding
-  function place(i) {
-    const n = cards.length;
-    const h = Math.floor(n / 2);
-    cards.forEach((c, k) => {
-      const d = ((((k - i + h) % n) + n) % n) - h;
-      const jump = c.d != null && Math.abs(d - c.d) > 1;
-      if (jump) c.b.style.transition = 'none';
-      c.b.style.setProperty('--d', d);
-      if (jump) {
-        void c.b.offsetWidth;
-        c.b.style.transition = '';
-      }
-      c.d = d;
-    });
   }
 
   function choose(i) {
@@ -131,29 +78,27 @@
       if (k === i) c.b.setAttribute('aria-current', 'true');
       else c.b.removeAttribute('aria-current');
     });
-    place(i);
     const c = cards[i];
     buyFor(c.p);
     plane.setAttribute('aria-label', fill(T.planeLabel, { name: c.p.nom, alt: altOf(c.p) }));
     showBouquet(c.p);
   }
 
-  // a side frame brings its bouquet to the middle; the middle one opens the close-up
-  rail.addEventListener('click', (e) => {
-    const b = e.target.closest('.vitrine');
+  pager.addEventListener('click', (e) => {
+    const b = e.target.closest('.point');
     if (!b) return;
     e.stopPropagation();
-    if (swiped) return;
-    if (+b.dataset.i === chosen) closeUp(true);
-    else choose(+b.dataset.i);
+    choose(+b.dataset.i);
   });
-  // a swipe across the scene (finger or mouse) moves one frame along
+  for (const ev of ['pointerenter', 'focusin'])
+    pager.addEventListener(ev, (e) => {
+      const b = e.target.closest && e.target.closest('.point');
+      if (b) ahead(cards[+b.dataset.i].p);
+    }, true);
   let swipe = null;
-  let swiped = false;
   scene.addEventListener('pointerdown', (e) => {
     if (near || (e.pointerType === 'mouse' && e.button !== 0)) return;
     swipe = { x: e.clientX, y: e.clientY, id: e.pointerId };
-    swiped = false;
   });
   scene.addEventListener('pointerup', (e) => {
     if (!swipe || e.pointerId !== swipe.id) return;
@@ -161,8 +106,6 @@
     const dy = e.clientY - swipe.y;
     swipe = null;
     if (Math.abs(dx) < 40 || Math.abs(dx) < Math.abs(dy) * 1.5) return;
-    swiped = true;
-    setTimeout(() => (swiped = false), 0);
     choose(chosen + (dx < 0 ? 1 : -1));
   });
   scene.addEventListener('pointercancel', () => (swipe = null));
@@ -175,23 +118,29 @@
     e.preventDefault();
   });
 
-  // a frame's thumbnail at its bouquet's real size and place: the manifest maps the drawing's frame (vb) onto the world
-  // box (boite); the thumbnail's own viewBox is read from its file
-  async function placeThumb(c) {
-    const m = await fetch(c.p.bouquet).then((r) => r.json());
-    const t = await fetch(c.p.vignette).then((r) => r.text());
-    const vb = /viewBox="([^"]+)"/.exec(t)[1].trim().split(/[\s,]+/).map(Number);
-    const e = m.boite[2] / m.vb[2];
-    const x = m.boite[0] + (vb[0] - m.vb[0]) * e - FX;
-    const y = m.boite[1] + (vb[1] - m.vb[1]) * e - FT;
-    const fh = FB - FT;
-    Object.assign(c.img.style, { left: `${(x / FW) * 100}%`, top: `${(y / fh) * 100}%`, width: `${((vb[2] * e) / FW) * 100}%`, height: `${((vb[3] * e) / fh) * 100}%` });
+  // a bouquet's one file (paquet.mjs), read once: the shown one at first, its neighbours ahead when the page is idle
+  const fileOf = (p) => p.bouquet.replace(/manifeste\.json$/, 'ouvert.json');
+  const files = new Map();
+  function read(p, low) {
+    const u = fileOf(p);
+    if (!files.has(u))
+      files.set(
+        u,
+        fetch(u, low ? { priority: 'low' } : {}).then((r) => {
+          if (!r.ok) throw new Error(`${u} ${r.status}`);
+          return r.json();
+        }),
+      );
+    const f = files.get(u);
+    f.catch(() => files.delete(u));
+    return f;
   }
+  const ahead = (p) => firstAllIn.then(() => read(p, true)).catch(() => {});
 
   // ---------- the shelves under the header: one open at a time (entete.js keeps the icons, tells us with "entete:rayon")
   const shelf = $('cartes');
   let shelfOpen = null;
-  // the bouquets' shelf is the gallery itself (no panel); folding another shelf comes back to it
+  // the bouquets' shelf is the scene itself (no panel); folding another shelf comes back to it
   function openShelf(name) {
     name = name || 'bouquets';
     shelfOpen = name;
@@ -365,11 +314,6 @@
   }
   const HOURGLASS = '<svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3.5h10M7 20.5h10M8 3.5c0 4 4 5.5 4 8.5s-4 4.5-4 8.5M16 3.5c0 4-4 5.5-4 8.5s4 4.5 4 8.5"/></svg>';
   function showLives() {
-    for (const c of cards) {
-      const t = lifeTxt(c.p);
-      c.vie.innerHTML = `${HOURGLASS}<span>${t || T.faded}</span>`;
-      c.vie.classList.toggle('fane', !t);
-    }
     if (curP) {
       const t = lifeTxt(curP);
       $('achat-vie').innerHTML = `${HOURGLASS}<span>${t ? fill(T.fadesIn, { t }) : T.fadedForGood}</span>`;
@@ -529,19 +473,19 @@
     else im.addEventListener('load', note, { once: true });
   }
 
-  // ---------- the decor under the bouquet: the bouquet's pieces load once the static layers are on screen (the sky, the
-  // horizon and the ground with its pillar: scene.js tells it with SCENE_DECOR; 6 s at most). Each layer is one long task of
-  // the main thread: pieces read meanwhile would only push back the first picture and come no sooner
+  // ---------- the decor under the bouquet: the bouquet's file is read at once, beside the decor, but its images are made
+  // once the static layers are on screen (the sky, the horizon and the ground with its pillar: scene.js tells it with
+  // SCENE_DECOR; 6 s at most): each layer is one long task of the main thread, and a bouquet shown before its pillar would
+  // float in the sky
   const decorIn = Promise.race([window.SCENE_DECOR || Promise.resolve(), new Promise((r) => setTimeout(r, 6000))]).then(() => Math.round(performance.now()));
 
   // ---------- the bouquet on the pillar
   let cur = null;
   let gen = 0;
-  const PREPARE = 6000;
   let firstDone = null;
   const first = new Promise((res) => (firstDone = res));
-  // the first bouquet grown (all its pieces in and grown, 15 s at most): the thumbnails, the foreground and the clouds come
-  // after it, never during it (each new image costs the main thread and the graphics card a moment: the growth would stall)
+  // the first bouquet shown (15 s at most): the foreground, the clouds, the insects and the next bouquets' files come
+  // after it, never before it
   let allInRes = null;
   const firstAllIn = new Promise((res) => (allInRes = res));
   setTimeout(() => allInRes(), 15000);
@@ -549,86 +493,45 @@
 
   async function showBouquet(p) {
     const my = ++gen;
-    if (cur) {
-      const old = cur;
-      cur = null;
-      await old.repli();
-      if (my !== gen) return;
-    }
-    await decorIn;
-    if (my !== gen) return;
     const t0 = performance.now();
     let b;
     try {
-      // past its lifespan: shown in its final state, still (the faded drawing is still to be pre-drawn)
-      b = await Eclosion.ouvre(plane, p.bouquet, { monde: [WW, WH], auto: false, final: faded(p) });
+      const data = await read(p);
+      const tFile = performance.now();
+      await decorIn;
+      if (my !== gen) return;
+      // past its lifespan: shown still (the faded drawing is still to be pre-drawn)
+      // four depth boxes: the insects (insectes.mjs) fly between them, in front of some flowers and behind others
+      b = await Eclosion.pose(plane, fileOf(p), { monde: [WW, WH], final: faded(p), plans: 4, donnees: data });
+      b.tFile = tFile;
     } catch (err) {
       console.error('[boutique]', p.id, err);
       return;
     }
+    // drawn whole, hidden, then shown in the frame the previous one goes
+    await b.pret;
+    await new Promise((r) => requestAnimationFrame(r));
     if (my !== gen) return b.arret();
+    if (cur) cur.repli();
     cur = b;
+    const t2 = await b.montre();
     box = b.manifeste.boite || null;
     placeTarget();
     frameCloseUp();
     if (q.has('debug')) console.info(`[boutique] ${p.id}: échelle ${b.manifeste.echelle.s}, sommet y ${b.manifeste.echelle.sommet}${b.manifeste.echelle.reduit ? ', réduit (' + b.manifeste.echelle.reduit + ')' : ''}`);
-    await b.vase;
-    const tVase = performance.now();
-    // the bouquet prepared whole before it grows (PREPARE ms at most, then the late pieces join as they come): every piece
-    // read and drawn once, hidden, so the growth only moves layers already drawn and never stalls on a new one
-    await Promise.race([b.tout, new Promise((r) => setTimeout(r, PREPARE))]);
-    await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
-    const t1 = performance.now();
-    if (my !== gen || cur !== b) return;
-    const tGo = performance.now();
-    const t2 = await b.depart();
-    const rec = { produit: p.id, appelMs: Math.round(t0), vaseMs: Math.round(tVase), premieresPiecesMs: Math.round(t1), departMs: Math.round(tGo), debutEclosionMs: Math.round(t2), pieces: b.pieces.length };
+    const rec = { produit: p.id, appelMs: Math.round(t0), fichierMs: Math.round(b.tFile), montreMs: Math.round(t2), images: b.pieces.length };
     if (!M.premiere) {
-      M.premiere = Object.assign(rec, { decorMs: await decorIn, finCroissanceMs: b.manifeste.finCroissanceMs, echelle: b.manifeste.echelle });
+      M.premiere = Object.assign(rec, { decorMs: await decorIn, echelle: b.manifeste.echelle });
       firstDone(b);
+      allInRes();
     } else (M.suivantes ||= []).push(rec);
     report();
-    // every piece in, and those that came after their own start (they grew late, never half-grown)
-    await b.tout;
-    rec.toutesPiecesMs = Math.round(performance.now());
-    rec.enRetard = b.retards.length;
-    rec.pireRetardMs = b.retards.length ? Math.max(...b.retards) : 0;
-    report();
-    await b.grandi;
-    rec.grandiMs = Math.round(performance.now());
-    allInRes();
-  }
-
-  // ---------- thumbnails: one light SVG file per frame, as an <img>, one after the other (the chosen card's first, then the
-  // others from the middle out), each when the page is idle: reading one is a single task of the main thread, and a touch
-  // waits at most for that one. Only the frames on screen or next to it: the others when the gallery or the window
-  // brings them near (more frames are drawn than a phone shows)
-  const idle = (ms) => new Promise((r) => (window.requestIdleCallback ? requestIdleCallback(() => r(), { timeout: ms }) : setTimeout(r, 50)));
-  // a frame on screen, or the next one beyond either edge, once the gallery has settled (from its place, not its slide)
-  const nearScreen = (c) => {
-    const [a, b] = window.SCENE_VUE ? window.SCENE_VUE() : [0, WW];
-    const pas = parseFloat(rail.style.getPropertyValue('--pas')) || FW;
-    const x = WW / 2 + (c.d || 0) * pas;
-    return x - FW / 2 < b + pas && x + FW / 2 > a - pas;
-  };
-  let thumbsBusy = false;
-  async function loadThumbs() {
-    if (thumbsBusy) return;
-    thumbsBusy = true;
-    for (;;) {
-      const c = cards.filter((c) => !c.thumb && nearScreen(c)).sort((a, b) => Math.abs(a.d || 0) - Math.abs(b.d || 0))[0];
-      if (!c) break;
-      c.thumb = true;
-      await new Promise((res) => {
-        c.img.addEventListener('load', res, { once: true });
-        c.img.addEventListener('error', res, { once: true });
-        placeThumb(c)
-          .catch((err) => console.warn('[boutique]', c.p.id, err))
-          .then(() => (c.img.src = c.p.vignette));
-      });
-      await idle(400);
-    }
-    thumbsBusy = false;
+    // the neighbours' files, ahead: once the foreground and the insects have come (6 s after the first bouquet), when idle
+    const i = cards.findIndex((c) => c.p === p);
+    await new Promise((r) => setTimeout(r, M.suivantes ? 0 : 6000));
+    await new Promise((r) => (window.requestIdleCallback ? requestIdleCallback(r, { timeout: 3000 }) : setTimeout(r, 100)));
+    if (my !== gen) return;
+    for (const d of [1, -1]) ahead(cards[(i + d + cards.length) % cards.length].p);
   }
 
   // ---------- measures (?perf=1)
@@ -668,7 +571,7 @@
   }
   // the weights transferred, by kind (as the browser reports them: this test server does not compress)
   function weights() {
-    const out = { page: [0, 0, 0], decor: [0, 0, 0], bouquet: [0, 0, 0], vignettes: [0, 0, 0] };
+    const out = { page: [0, 0, 0], decor: [0, 0, 0], bouquet: [0, 0, 0] };
     const add = (k, e) => {
       out[k][0]++;
       out[k][1] += e.transferSize || 0;
@@ -678,8 +581,7 @@
     if (nav) add('page', nav);
     for (const e of performance.getEntriesByType('resource')) {
       const u = e.name;
-      if (/\/vignette\.svg/.test(u)) add('vignettes', e);
-      else if (/\/bouquets\//.test(u)) add('bouquet', e);
+      if (/\/bouquets\//.test(u)) add('bouquet', e);
       else if (/\/out\//.test(u)) add('decor', e);
       else add('page', e);
     }
@@ -692,23 +594,13 @@
     const box = $('perf-bq');
     box.hidden = false;
     const L = [];
-    if (M.premiere) L.push(`1re éclosion à ${M.premiere.debutEclosionMs} ms (vase à ${M.premiere.vaseMs} ms, ${M.premiere.pieces} pièces toutes là à ${M.premiere.toutesPiecesMs ?? '…'} ms, ${M.premiere.enRetard ?? '…'} en retard)`);
-    if (M.eclosion) L.push(`éclosion ${M.eclosion.dureeMs} ms : ${M.eclosion.ips} i/s, pire ${M.eclosion.pireMs} ms`);
-    if (M.pendantVignettes) L.push(`vignettes en cours : ${M.pendantVignettes.ips} i/s, pire ${M.pendantVignettes.pireMs} ms`);
+    if (M.premiere) L.push(`1er bouquet montré à ${M.premiere.montreMs} ms (fichier lu à ${M.premiere.fichierMs} ms, décor à ${M.premiere.decorMs} ms, ${M.premiere.images} images)`);
     if (M.brise) L.push(`brise : ${M.brise.ips} i/s, pire ${M.brise.pireMs} ms`);
-    if (M.poids) L.push(`poids : bouquet ${M.poids.bouquet.ko} Ko, vignettes ${M.poids.vignettes.ko} Ko, page ${M.poids.page.ko} Ko`);
+    if (M.poids) L.push(`poids : bouquet ${M.poids.bouquet.ko} Ko, décor ${M.poids.decor.ko} Ko, page ${M.poids.page.ko} Ko`);
     box.textContent = L.join('\n');
   }
   async function measure() {
-    const b = await first;
-    const g0 = performance.now();
-    const end = b.fin() != null ? b.fin() : g0 + 4000;
-    // the growth (its pieces still coming in on a slow phone; the thumbnails wait for them)
-    const fe = await frames(Math.max(500, end - g0));
-    M.eclosion = Object.assign(fe, { debutMs: Math.round(g0), finMs: Math.round(end), tachesLongues: longIn(g0, g0 + fe.dureeMs) });
-    report();
-    await thumbsDone;
-    M.vignettesChargeesMs = Math.round(thumbsTime);
+    await first;
     await new Promise((r) => setTimeout(r, 300));
     const g1 = performance.now();
     const fb = await frames(5000);
@@ -728,16 +620,13 @@
     report();
   }
 
-  // ---------- start: the cards and the first bouquet at once (the bouquet's files load beside the decor)
-  let thumbsTime = 0;
-  let thumbsDoneRes;
-  const thumbsDone = new Promise((r) => (thumbsDoneRes = r));
+  // ---------- start: the pager and the first bouquet at once (the bouquet's file loads beside the decor)
   async function start() {
     CFG = await fetch('boutique.json').then((r) => r.json());
     rate = CUR === 'eur' ? CFG.cours.eurParEth : CFG.coursUsd.usdParEth;
     liveRate();
     setInterval(liveRate, 5 * 60 * 1000);
-    buildFrames();
+    buildPager();
     const r0 = q.get('rayon');
     openShelf(shelf.querySelector(`[data-rayon="${r0}"]`) ? r0 : 'bouquets');
     const want = q.get('b');
@@ -745,23 +634,6 @@
     if (!(i >= 0 && i < cards.length)) i = 0;
     if (PERF) measure();
     choose(i);
-    if (!THUMBS_EARLY) await firstAllIn;
-    // while the thumbnails come in: frames per second and long tasks (they used to block the touches)
-    const v0 = performance.now();
-    const loading = loadThumbs();
-    const fv = PERF ? frames(60000, loading) : null;
-    await loading;
-    thumbsTime = performance.now();
-    if (fv) {
-      const r = await fv;
-      M.pendantVignettes = Object.assign(r, { tachesLongues: longIn(v0, v0 + r.dureeMs) });
-    }
-    thumbsDoneRes();
-    report();
-    // the frames the gallery or the window brings near later
-    addEventListener('resize', loadThumbs);
-    rail.addEventListener('transitionend', loadThumbs);
-    document.addEventListener('keyup', loadThumbs);
   }
 
   // nothing grows or sways while the tab is hidden (only what was running starts again: a finished entrance stays finished)

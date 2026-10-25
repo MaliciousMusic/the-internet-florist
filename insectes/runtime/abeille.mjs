@@ -8,6 +8,8 @@ import { PERSPECTIVE } from './essaim.mjs';
 
 const BODY_MM = 12.5, STRIDE_MM = 2.2;
 const FLIGHT = [0, 1, 2, 1];
+// at most four bees on screen at once (DECISIONS); the others wait out of view, so ?n= may ask for more
+export const MAX_VISIBLE = 4;
 
 const sub = (a, b) => [a[0] - b[0], a[1] - b[1], a[2] - b[2]];
 const add = (a, b) => [a[0] + b[0], a[1] + b[1], a[2] + b[2]];
@@ -24,6 +26,7 @@ export class Abeille {
     this.kind = 'abeille';
     this.lengthPx = opts.lengthPx ?? 30;
     this.speed = (opts.speed ?? 1) * (0.85 + 0.3 * rnd());
+    this.maxVisible = opts.maxVisible ?? MAX_VISIBLE; // (the shop's scene, 2026-10-25: three times as many bees)
     this.P = [0, 0, 0]; this.V = [0, 0, 0]; this.fwd = [1, 0, 0]; this.bank = 0;
     this.pose = 'vol'; this.frame = 0; this.visible = false;
     this.state = 'away'; this.t = 0.3 + rnd() * 3;
@@ -122,7 +125,10 @@ export class Abeille {
     if (this.state === 'away') {
       this.visible = false;
       this.t -= dt;
-      if (this.t <= 0) this.spawn();
+      if (this.t <= 0) {
+        const shown = this.e.insects.filter((b) => b.kind === 'abeille' && b.visible).length;
+        if (shown < this.maxVisible) this.spawn(); else this.t = 0.5 + this.rnd() * 2;
+      }
       return;
     }
     if (this.pose === 'vol') this.frame = FLIGHT[this.tick % 4];
@@ -151,10 +157,10 @@ export class Abeille {
       const e = this.t * this.t * (3 - 2 * this.t);
       this.P = mix(this.from, this.landAt, clamp(e, 0, 1));
       this.layerHint = f.layer;
-      if (this.t >= 1) { this.state = 'forage'; this.t = 2 + this.rnd() * 5; this.pose = 'pose'; this.frame = 0; this.step = 0.4 + this.rnd(); this.visits++; }
+      if (this.t >= 1) { this.state = 'forage'; this.t = 2 + this.rnd() * 5; this.pose = 'butine'; this.frame = 0; this.step = 0.4 + this.rnd(); this.visits++; }
     } else if (this.state === 'forage') {
       this.t -= dt; this.step -= dt;
-      if (this.pose === 'pose' && this.step <= 0) {
+      if (this.pose === 'butine' && this.step <= 0) {
         // a few steps on the flower, around its heart
         this.pose = 'marche'; this.step = 0.4 + this.rnd() * 0.8;
         const a = this.rnd() * Math.PI * 2, rr = f.r * 0.3;
@@ -168,7 +174,7 @@ export class Abeille {
           this.phase = (this.phase + v / (STRIDE_MM * this.pxmm)) % 1;
           this.frame = Math.floor(this.phase * 8) % 8;
         }
-        if (this.step <= 0 || dist < 0.5) { this.pose = 'pose'; this.frame = 0; this.step = 0.6 + this.rnd() * 1.4; }
+        if (this.step <= 0 || dist < 0.5) { this.pose = 'butine'; this.frame = 0; this.step = 0.6 + this.rnd() * 1.4; }
       } else {
         // head down into the flower
         this.fwd = norm(mix(this.fwd, [this.fwd[0], 0.35, this.fwd[2]], clamp(dt * 3, 0, 1)));

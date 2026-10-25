@@ -57,3 +57,13 @@ export function pickCell(lod, elList, pose, frame, frames, view) {
   const i = lod.keys[`${pose}/${f}/${ba}/${be}`];
   return { i, flip, az: ba, el: be };
 }
+
+// Wing axes of a butterfly wing (moteur/papillon.mjs flapAxes, kept identical): the sweep turns the flat wing in its plane
+// (positive: drawn back), then the flap raises it about the body's axis (0 spread flat, +90 closed above the back); side +1 for
+// the left wings. Body frame: x forward, y left, z up.
+export function flapAxes(side, flapDeg, sweepDeg) {
+  const fl = flapDeg / DEG, sw = sweepDeg / DEG;
+  const e1 = [-Math.sin(sw), side * Math.cos(sw) * Math.cos(fl), Math.cos(sw) * Math.sin(fl)];
+  const e2 = [Math.cos(sw), side * Math.sin(sw) * Math.cos(fl), Math.sin(sw) * Math.sin(fl)];
+  return { e1, e2 };
+}

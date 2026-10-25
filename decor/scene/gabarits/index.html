@@ -25,19 +25,17 @@
   pre-drawn by predessin.mjs into bouquets/<id>/):
   - .pilier-repere: the pillar's place (x 1100-1300, y 700-1040 of the world), drawn in grey under ?debug=1 only,
     until decor/out/pilier.svg exists;
-  - #bouquet: the bouquet of the chosen card, its pre-drawn pieces grown in on the pillar by eclosion.js (plane z8);
+  - #bouquet: the bouquet shown, open and swaying on the pillar (bouquets/<id>/ouvert.json by paquet.mjs, eclosion.js; plane z8);
   - .cartes: the shelf under the header (soliflores, bouquets sold);
   - .achat: the Buy button for the bouquet on the pillar, fixed at the bottom (the purchase is not wired yet);
   - #perf-bq: the shop's measures under ?perf=1 (also in window.BOUTIQUE_MESURES).
   - the header (dock of icons opening the shelves, OpenSea, About) and the footer (legal notice): entete.js, entete.css;
-  - .galerie: one glass frame per bouquet standing on the horizon behind the pillar, the chosen one in the middle, the
-    others left and right (a click, a swipe or the arrow keys bring one to the middle); "Open" (.bq-voir) in the middle
-    one; the price bubble (.achat) only shows in the close-up;
+  - .pager: one dot per bouquet of the day, under the dock on a phone, just above it on a computer; a dot, a swipe or the arrow keys show
+    another bouquet (one at a time, open and swaying, no frame around it); the price bubble (.achat) only shows in the close-up;
   - a click on the bouquet or on "Open" brings the camera closer (the whole scene scaled by one transform); a click, Escape or another
     shelf takes it back.
   ?rayon=bouquets|soliflores|vendus|aucun opens that shelf first (default: the bouquets).
-  ?b=<product id or index> picks the first bouquet; the card thumbnails (bouquets/<id>/vignette.svg), the foreground and
-  the clouds load once it has grown (?vignettes=tot: the thumbnails at once).
+  ?b=<product id or index> picks the first bouquet; the foreground and the clouds load once it shows.
 -->
 <!-- what the page is about, for screen readers and for the crawlers that do not run scripts (the scene says it in
      pictures); the same words as the About page -->
@@ -54,11 +52,6 @@
     <div class="plan nuages hauts" style="--z:1" id="nuages-hauts"></div>
     <div class="plan nuages bas" style="--z:2" id="nuages-bas"></div>
     <img class="plan" style="--z:3" data-src="horizon.svg" alt="" decoding="async" fetchpriority="high">
-    <!-- the gallery (boutique.js): one glass frame per bouquet on the horizon, under the ground's layers, so the pillar
-         and the meadow pass in front of the frames' feet; the chosen one in the middle, the others left and right -->
-    <div class="plan galerie" style="--z:3" id="galerie" aria-label="{{index.galleryLabel}}">
-      <div class="galerie-rail" id="galerie-rail"></div>
-    </div>
     <!-- The flowered ground, composed by depth (sol.mjs + fleurs.mjs: meadow, path, slabs, pillar, flowers), split into
          three files of similar drawing cost so the browser rasterises them in parallel. -->
     <img class="plan" style="--z:4" data-src="sol-loin.svg" alt="" decoding="async">
@@ -72,11 +65,13 @@
     <div class="plan premier" style="--z:9" id="premier"></div>
     <div class="colonne" aria-hidden="true"></div>
   </div>
+  <!-- the pager (boutique.js): one dot per bouquet of the day, fixed on the screen by the dock (entete.css) -->
+  <div class="pager" id="pager" role="group" aria-label="{{index.galleryLabel}}" hidden></div>
   <div class="perf" id="perf" hidden></div>
 </main>
 
 <!-- the shelf under the header, opened by the dock's icons (entete.js): the soliflores, the bouquets already sold; one
-     at a time (the bouquets of the day are the gallery in the scene) -->
+     at a time (the bouquets of the day are the scene itself) -->
 <nav class="cartes" id="cartes" aria-label="{{index.shelvesLabel}}">
   <div class="rayon" data-rayon="soliflores" hidden>
     <p class="rayon-mot">{{index.budVases}}</p>
@@ -139,5 +134,7 @@
 <script src="eclosion.js" defer></script>
 <script src="entete.js" defer></script>
 <script src="boutique.js" defer></script>
+<script type="module" src="insectes.mjs"></script>
+<script type="module" src="porteuses.mjs"></script>
 </body>
 </html>

@@ -271,3 +271,89 @@ l'identité de son éditeur dans ses mentions légales.
   seulement). Téléphone : premier affichage 5,3 → 0,7 s, plus grand affichage 13,8 → 2,6 s, pousse 1 → 50 images/s.
   Ordinateur : plus grand affichage 20,9 → 3,0 s, mais la pousse reste à 12 images/s et le bouquet part vers 10 à 13 s.
   Question ouverte au porteur : servir le décor fixe en WebP pré-rendu depuis les SVG (le produit reste en SVG) ?
+- 2026-10-24 (porteur) : les insectes finis volent sur le site, à leur vraie taille (`scene/insectes.mjs`) : 4 abeilles, le
+  machaon, 2 paons-du-jour (3 papillons au plus), la cétoine, le moro-sphinx et la sauterelle. Ce sont des sprites de leurs
+  atlas WebP, posés par PixiJS dans des canvas intercalés entre les plans :
+  - derrière le bouquet ;
+  - entre ses quatre boîtes de profondeur (`eclosion.js`, option `plans`) ;
+  - devant lui ;
+  - devant les touffes du premier plan.
+  La perspective suit la caméra commune : point de fuite au milieu de l'horizon, distance d = 4,37 m × (1 − z / 1400).
+  La taille suit la distance : vraie taille contre la prairie (1,854 / d unités par mm). Au bouquet, dessiné 1,8 fois plus
+  grand que nature, c'est la vraie taille contre ses fleurs, et l'insecte passe en douceur de l'une à l'autre en s'éloignant.
+  Chargement et comportement :
+  - ils arrivent après la première éclosion ; l'éclosion part toujours à 4,1 s, avec ou sans eux ;
+  - le gros plan les redessine nets et charge les grands niveaux de détail ;
+  - quand le bouquet se replie, ils s'envolent ;
+  - un clic sur un insecte le fait fuir sans ouvrir le gros plan ;
+  - `?insectes=0` les retire ; il n'y en a aucun avec prefers-reduced-motion.
+  Mesuré dans le panneau du navigateur : 55 images/s sur ordinateur (1,4 ms par image pour les insectes), 140 sur téléphone
+  émulé. À faire pour le dépôt du site : y copier `insectes/runtime` et les atlas (aujourd'hui lus à la racine du dépôt,
+  serveur « insectes-site », port 8830).
+- 2026-10-24, suite (porteur) : les touffes animées du premier plan passent en sprites PixiJS. Les insectes vont surtout
+  dans le parterre et un peu sur le bouquet ; la sauterelle reste au sol ; les fourmis n'y sont pas, elles auront un rôle
+  dans le HUD, à définir.
+  - **Touffes** : `decor/premier.mjs` cuit les 20 touffes de `out/scene.json` en WebP (`out/premier/`, 1 Mo, 1,6 px par
+    unité, coupées au bord bas du cadre plus la portée du balancement). `insectes.mjs` les dessine dans la couche avant :
+    c'est le canvas même du moteur, dessiné sans copie, où elles balancent comme le faisait le CSS et se trient en
+    profondeur avec les insectes de moins de 2 m. `scene.js` ne charge plus les touffes SVG que si cette couche ne démarre
+    pas (prefers-reduced-motion, `?insectes=0` ou échec).
+  - **Où se posent les insectes** : sur les têtes du parterre et des touffes, lues dans les fichiers du sol par
+    `decor/tetes.mjs` (`out/tetes.json` : 552 têtes au sol, 44 dans les touffes). La distance de chaque tête se lit sur
+    l'échelle de sa matrice. S'y ajoutent les têtes du bouquet une fois qu'il a poussé.
+  - **Réglages par espèce** : chaque espèce ne vise que les fleurs où son corps fait au moins 3 px, et ne connaît qu'un
+    quart des fleurs du bouquet. Mesuré sur 30 s : 92 % des visites au sol, 8 % au bouquet. La sauterelle ne connaît que
+    les fleurs du sol à moins de 6 m.
+  - **Mesure** : 135 images/s dans le panneau du navigateur.
+- 2026-10-24, QCM des fourmis (porteur) : sur le site, des paires de fourmis noires portent le HUD, à chaque fois, en
+  procession et à vraie vitesse : la barre d'outils, les cases de la bulle de prix et la pastille Legal. Sur téléphone, deux
+  papillons posent la barre d'outils en haut. Une fourmi magique d'environ 16 cm apporte le bouton Open au pilier, une fois
+  par visite. Le détail est dans `insectes/DECISIONS.md`, section « Fourmis du HUD ». La production n'a pas commencé.
+- 2026-10-24, prototype des porteuses (porteur : « reprends d'abord la fourmi noire, puis le prototype des porteuses ») :
+  - **`decor/scene/porteuses.mjs`** : des paires de fourmis noires, vues de dessus sur la vitre de l'écran, apportent à chaque
+    fois la pastille Legal et le dock (ordinateur) à l'ouverture, puis les trois cases de la bulle au gros plan, et les
+    remportent quand on recule. Elles déplient et replient aussi le panneau Legal en tirant son bord. Elles marchent à vraie
+    vitesse, en procession de gauche à droite, et les pièces restent cliquables en route. Les fourmis sont dessinées sur un
+    canvas PixiJS posé sur le HUD (niveau H de l'atlas), les pièces bougent par les propriétés CSS `translate` et `rotate`.
+  - **Téléphone** : un machaon et un paon-du-jour posent le dock en haut (un essaim à eux, ailes en quads).
+  - **`decor/scene/fourmi-open.mjs`** : une fois par visite, une fourmi de 16 cm sort du bas du cadre avec le bouton Open,
+    passe sur les quatre dalles (`out/chemin.json`), monte le pilier et pose le bouton. Elle est un insecte de l'essaim de la
+    scène (niveau O de dos, H de dessus sur le pilier), qui reçoit deux clés nouvelles : `b.lod` et `b.view`.
+  - **Repli** : la classe `porteuses`, ou `fourmi-open`, est posée par `scene.js` dès le premier affichage. Elle ne l'est pas avec
+    prefers-reduced-motion, `?porteuses=0` ou `?insectes=0`, et elle est retirée si les fourmis ne partent pas à temps (6 s,
+    45 s pour Open). `?lent=8` ralentit tout pour regarder.
+- 2026-10-24, deuxième prototype des porteuses (porteur : de profil sur le rebord, jamais en paire, les fourmis se montent
+  dessus, attention aux chevauchements) :
+  - une fourmi par case, la case levée au-dessus d'elle ;
+  - des piles de fourmis pour monter sur le dock puis sur Buy ;
+  - des sauts au bout des rebords pour repartir ;
+  - 22 px de place entre les pièces empilées.
+  Le détail et les durées mesurées sont dans `insectes/DECISIONS.md`. La fourmi d'Open revient à chaque chargement et part dès
+  que le bouquet a poussé. Les papillons du téléphone tiennent le dock par ses bouts et sont 25 % plus petits.
+- 2026-10-25, panneau Legal (porteur) : il s'ouvre et se referme seul, sans fourmis. Les fourmis n'apportent que la pastille.
+- 2026-10-25, pager (porteur : « apporté par une coccinelle et une cétoine en volant ») : une fois par chargement, après le
+  dock, une coccinelle et une cétoine l'apportent en volant, une à chaque bout, jusqu'à sa place : au-dessus du dock sur
+  ordinateur, sous lui sur téléphone. `porteuses.mjs` le garde hors de l'écran (classe `porteuses`) jusqu'à leur arrivée, et
+  attend que `boutique.js` le montre. Le pager lui-même vient de la branche `ch/site-leger`. Taille des insectes validée
+  par le porteur : 2,5 px/mm, coccinelle 18 px, cétoine 45 px. Après le gros plan et l'étagère, il réapparaît seul,
+  sans les insectes (porteur).
+- 2026-10-25, retour du porteur sur les volants et la fourmi d'Open : cétoine nette (grand niveau d'atlas), coccinelle qui
+  bat des ailes au lieu de faire l'hélice, pager qui penche du côté de la coccinelle pendant le trajet. Fourmi d'Open trois
+  fois plus petite, qui tient le bouton par son bord inférieur et repart par le côté du pilier. Elle garde le vrai pas
+  d'une ouvrière : bouton posé vers 18 s (porteur). Détails dans `insectes/DECISIONS.md`.
+- 2026-10-25, ordre d'arrivée du HUD (porteur) : barre d'outils et pager d'abord, puis la fourmi d'Open, et la pastille Legal
+  quand elle est à mi-chemin. La fourmi repart en passant derrière le pilier. Trois fois plus d'insectes dans la scène
+  (42), dont des passants qui traversent le ciel.
+- 2026-10-25, porteur : les voiles du ciel ne bougent plus (« le mouvement des nuages est imperceptible ») ; chaque bande
+  reste où sa boucle la mettait au chargement, sans animation. Plus d'ombres portées dans les bouquets du site : le filtre
+  d'ombre du dessin (`cs<n>`, décalé de 4 et 6 et flouté) tombait sur un mur imaginaire, donc sur le ciel, à côté des
+  fleurs et au pied du vase. `paquet.mjs` le retire en empaquetant ; les sept `ouvert.json` sont refaits. L'ombre de
+  contact du vase, sur le dessus du pilier, reste. Les insectes posés sur les touffes du premier plan passent devant leur
+  touffe (ils étaient cachés derrière) ; treize d'entre eux ne visitent que ces touffes.
+- 2026-10-25, porteur : un bourdon apporte le bouton Open à la place de la fourmi, qui reste à `?open=fourmi`. Il tient le
+  bouton par le milieu du bord haut. Il sort du vrai bas de l'écran par-dessus les fleurs, s'enfonce jusqu'au pilier où il
+  a sa taille vraie (celle des bourdons du bouquet), puis s'envole au loin (`decor/scene/bourdon-open.mjs`). Le porteur
+  l'a retenu le même soir. Les deux
+  petites cases de la bulle viennent avec quatre abeilles. Les porteurs ne posent la bulle qu'une fois par visite : ensuite
+  elle descend et remonte entière avec le gros plan, et seul un rechargement la fait rapporter. Détails dans
+  `insectes/DECISIONS.md`.

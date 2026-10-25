@@ -1,7 +1,7 @@
 /* Shop scene test bench. One world frame of 2400 x 1350 units, scaled to cover the screen and anchored at the bottom
    centre, so a phone sees the central column and a desktop the whole panorama. Positions inside are in % of the world.
-   Drifting sky: looping veil bands (.bande, 200 % wide, translateX -50 % -> 0) or single crossing clouds (.nuage);
-   see the head of scene.js for the scene.json keys.
+   Sky: veil bands (.bande, 200 % wide) or single clouds (.nuage), still since 2026-10-25 (owner: their drift could not be
+   seen); see the head of scene.js for the scene.json keys.
    Shop (2026-10-15): .bouquet is the whole world plane (boutique.js places the bouquet's own box in it); the cards
    (.cartes), the Buy button and the pillar marker of ?debug=1 are styled in boutique.css. */
 :root {
@@ -20,6 +20,9 @@ body {
   position: fixed;
   inset: 0;
   overflow: hidden;
+  /* a sideways swipe is the page's (another bouquet, boutique.js): without this the phone's browser takes the gesture and
+     cancels the pointer before it ends */
+  touch-action: pan-y pinch-zoom;
   /* the sky's zenith (ciel.svg's top), showing above the world when it is lowered */
   background: #6c9bcf;
 }
@@ -58,46 +61,25 @@ body {
   }
 }
 
-/* Clouds: each one crosses the world from just off the left edge to just off the right edge. --t is the crossing time
-   (higher clouds faster, low clouds near the horizon slower), --d a negative delay that spreads them along the way. */
+/* Clouds: each one stands where its old crossing (from just off the left edge to just off the right edge) had it at the
+   page's load, --f the fraction of the way (scene.js). They no longer drift (owner, 2026-10-25). */
 .nuage {
   position: absolute;
   left: 0;
   top: var(--y);
   width: var(--w);
-  will-change: transform;
-  animation: derive var(--t) linear var(--d) infinite;
+  transform: translateX(calc(-100% + var(--f) * (100cqw + 100%)));
 }
 
-@keyframes derive {
-  from {
-    transform: translateX(-100%);
-  }
-  to {
-    transform: translateX(100cqw);
-  }
-}
-
-/* Veil bands: a 4800-wide image, periodic every 2400 (one tile), at 200 % of the world's width, sliding left to right
-   by half its width in --t seconds, then looping; the tile wraps, so there is no seam and no empty sky. Only a
-   translation moves: nothing inside the image, no opacity, no filter. The lower band is slower (farther). */
+/* Veil bands: a 4800-wide image, periodic every 2400 (one tile), at 200 % of the world's width, set where their old loop
+   had them at the page's load (--f, scene.js): still, no seam, no empty sky. */
 .bande {
   position: absolute;
   left: 0;
   top: var(--y);
   width: 200%;
   height: auto;
-  will-change: transform;
-  animation: boucle var(--t) linear var(--d) infinite;
-}
-
-@keyframes boucle {
-  from {
-    transform: translateX(-50%);
-  }
-  to {
-    transform: translateX(0);
-  }
+  transform: translateX(calc(-50% * (1 - var(--f))));
 }
 
 /* Foreground clumps sway around their base; the delay grows from left to right, so a gust crosses the field. */
@@ -126,15 +108,11 @@ body {
   overflow: visible;
 }
 
-.paused .nuage,
-.paused .bande,
 .paused .touffe {
   animation-play-state: paused;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .nuage,
-  .bande,
   .touffe {
     animation: none;
   }

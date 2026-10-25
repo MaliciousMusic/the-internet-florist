@@ -1,0 +1,96 @@
+# Sessions parallèles du chantier insectes
+
+Demande du porteur, le 2026-10-23 : finir complètement le machaon, animation comprise, le faire valider, puis lancer une
+sous-session numérotée par insecte. La méthode est celle du machaon (`machaon/ETAT.md`, PROTOCOLE §1 à §7, avec §3.4 à §3.6).
+
+| n° | espèce | module | refcache | port de démo |
+|---|---|---|---|---|
+| 00 | machaon (pilote) | `machaon/` | `papilio-machaon` | 8812 |
+| 01 | abeille domestique, ouvrière | `abeille/` | `apis-mellifera` | 8821 |
+| 02 | bourdon terrestre | `bourdon/` | `bombus-terrestris` | 8822 |
+| 03 | coccinelle à sept points | `coccinelle/` | `coccinella-7` | 8823 |
+| 04 | cétoine dorée | `cetoine/` | `cetonia-aurata` | 8824 |
+| 05 | fourmi noire des jardins | `fourmi-noire/` | `lasius-niger` | 8825 |
+| 06 | fourmi rouge (Myrmica rubra, proposée) | `fourmi-rouge/` | `myrmica-rubra` | 8826 |
+| 07 | moro-sphinx | `moro-sphinx/` | `macroglossum` | 8827 |
+| 08 | paon-du-jour | `paon-du-jour/` | `aglais-io` | 8828 |
+| 09 | grande sauterelle verte | `sauterelle/` | `tettigonia-viridissima` | 8829 |
+
+## Règles communes
+
+### Branche, photos et outils
+- Chaque session a sa branche `ch/insectes-NN-<id>`, partie de `ch/insectes-suite` au commit du machaon (8f0bc99), dans son
+  dossier `flower-atelier/ch/insectes-NN-<id>`. Elle ne touche que son module, ses outils propres et sa fiche. Elle committe sur
+  sa branche, ne pousse rien et ne fusionne rien : la session coordinatrice intègre.
+- Son serveur de démo tourne sur le port de la table, déclaré dans le `.claude/launch.json` de son dossier.
+- Les photos de référence restent hors de git. Elles sont dans
+  `C:/Users/agent/Desktop/flower/flower-atelier/ch/insectes-suite/refcache/`, partagé, et chaque session n'écrit que dans le dossier
+  de son espèce.
+- Dans le worktree, deux jonctions :
+  - `mklink /J refcache <ce chemin>` ;
+  - `mklink /J insectes\outils\node_modules` vers celui de `ch/insectes-suite`.
+  Les modèles SAM et Depth Anything sont dans `C:/Users/agent/Desktop/flower/flower-atelier/vases5/.venv-depth`.
+
+### Le PC du porteur
+- Il a déjà planté. On garde plus de 4 Go de RAM libre.
+- Un seul modèle à la fois pour tout le chantier : SAM ou profondeur passent par `GATE_MAX=1 sh ws/gate.sh <commande>`.
+- Une cuisson d'atlas ou un rendu resvg lourd passe par `sh ws/gate.sh <commande>` (3 au plus).
+- `node --max-old-space-size=900` pour les cuissons.
+- Depuis le 2026-10-24, un seul rendu passe à la fois pour tout le chantier. Avec neuf sessions ouvertes, trois rendus en même
+  temps faisaient tomber la RAM libre à 2,1 Go. Les créneaux 2 et 3 du verrou sont donc réservés : `ws/locks/slot2` et `slot3`
+  ont une date `t` dans le futur, si bien que le verrou ne les voit jamais périmés. Pour les rendre :
+  `rm -r C:/Users/agent/Desktop/flower/flower-atelier/ws/locks/slot2 C:/Users/agent/Desktop/flower/flower-atelier/ws/locks/slot3`.
+- Depuis le 2026-10-24, toutes les sessions passent par le verrou corrigé, en chemin absolu :
+  `GATE_MAX=1 sh C:/Users/agent/Desktop/flower/flower-atelier/ch/insectes-suite/ws/gate.sh <commande>`.
+  L'ancien verrou avait une course : une attente prenait un créneau tout juste créé, sans son fichier `t`, pour un créneau
+  mort et le supprimait ; il faisait de même avec un travail de plus de 15 minutes. Deux rendus partaient alors ensemble.
+  Le verrou corrigé fait trois choses :
+  - il marque son créneau d'un identifiant et le garde vivant par un battement tant que le travail tourne, même si le verrou
+    lui-même est tué ;
+  - il libère le créneau à la fin du travail ;
+  - il arrête tout le travail (node ou python sous `sh -c` compris) quand on l'arrête proprement.
+- Le même jour, plus tard, une seconde course est apparue. Une attente pouvait lire `t` pendant que le battement le
+  réécrivait, le trouver vide et supprimer un créneau vivant. Le verrou remplace maintenant `t` d'un seul renommage et relit un
+  `t` vide une seconde plus tard.
+- Les attentes font la queue par ordre d'arrivée (tickets dans `ws/locks/queue`). Seule la première peut prendre le créneau,
+  si bien qu'un travail gourmand en RAM n'est plus doublé sans fin par des travaux plus légers. `GATE_SINCE=<epoch>` garde une
+  place plus ancienne quand on relance une file. Si la première attente trouve le PC au repos mais trop peu de RAM pendant
+  10 minutes, elle passe en fin de file (`GATE_YIELD`, en secondes).
+- Seuils de RAM libre au départ (`GATE_RAM`) : 4,4 Go pour un rendu léger (gros plans, paires, planches), 5,0 Go pour une
+  cuisson d'atlas, 5,5 Go pour SAM ou la profondeur.
+- 2026-10-24 midi : sur ce PC, chaque processus lancé laisse environ 4 Ko de jetons dans le noyau (pool « Toke »),
+  jusqu'au redémarrage. C'est un défaut de pilote. Les attentes qui lançaient `date`, `stat`, `ls` et `sort` toutes les 3 s en
+  ont laissé 3 Go dans la nuit, et la RAM libre est tombée à 1,3 Go. Le verrou attend maintenant sans lancer de processus,
+  et chaque attente ne regarde la file que toutes les 20 s (`GATE_POLL`). Pour les veilles, une tâche de fond qui prévient
+  à la fin vaut mieux qu'une boucle `until … sleep` qui lance PowerShell toutes les 30 s.
+- Le verrou se remplace par renommage (copie puis `mv`) : les instances déjà lancées gardent leur version, alors qu'une
+  écriture sur place les ferait lire n'importe quoi.
+
+### Le moteur partagé
+`moteur/insecte.mjs`, `moteur/motif.mjs`, `moteur/papillon.mjs`, `moteur/fourmi.mjs`, `runtime/essaim.mjs`, `runtime/vue.mjs`,
+`runtime/papillon.mjs` et `demo/demo.mjs` sont partagés. Une session n'y fait que des ajouts derrière une clé nouvelle, sans
+changer le rendu des autres espèces. Le machaon reste identique au pixel : trois cellules rendues avant et après le prouvent.
+Les sessions 05 et 06 partagent `moteur/fourmi.mjs` ; chacune y ajoute derrière ses propres clés. Tout changement commun
+s'écrit dans l'ETAT, pour l'intégration.
+
+### Sortie d'une espèce (PROTOCOLE §7)
+- Photos HD par organe : la tête et l'œil, les antennes, les pièces buccales, le thorax, l'abdomen dessus, dessous et profil, les
+  pattes, et les ailes ou élytres dessus et dessous.
+- Grilles 72 × 18 mesurées.
+- Motifs relevés en chiffres : `aile.py` pour les ailes. Pour les élytres et les taches, la même méthode est à adapter.
+- Organes groupés pour l'animation.
+- Paires photo | rendu sur toutes les vues.
+- Planche d'animation.
+- Comportement runtime avec ses chiffres sourcés (`COMPORTEMENT.md`).
+- Atlas recuit et pesé.
+- Entrée dans la démo.
+- `ETAT.md` avec ses résidus.
+- Un juge neuf sur les paires.
+- La session s'arrête sur une image pour le porteur. Elle ne passe pas à une autre espèce.
+
+## Intégration (décision du porteur, 2026-10-24)
+On attend que les neuf sessions aient fini et que toutes les animations soient prêtes. Ensuite seulement, j'assemble les
+branches `refs/heads/ch/insectes-01-abeille` à `refs/heads/ch/insectes-09-sauterelle`. La démo de tous les insectes ne se fait
+pas sur la page `insectes/demo/` : elle se fait sur le vrai site de vente (la scène de la boutique, `decor/`, voir
+`decor/PLAN.md`), car c'est surtout là qu'on veut voir les insectes. Ils y sont à taille réelle, posés sur les bouquets de la
+scène.
