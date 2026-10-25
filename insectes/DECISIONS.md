@@ -141,13 +141,14 @@ est apporté par une coccinelle et une cétoine en volant ».
   dès que le pager a ses points (il en faut au moins deux).
 - **Durées** (mesurées image par image) : pager posé 3,9 s après le dock sur ordinateur, 2,1 s après sur téléphone. Les deux
   insectes ont quitté l'écran 3 s plus tard.
+- **Taille** (décision du porteur, 2026-10-25) : 2,5 px/mm, soit une coccinelle de 18 px et une cétoine de 45 px (constante
+  `BEETLE_PXMM`). À l'échelle des papillons du dock (1,125 px/mm), la coccinelle n'aurait fait que 8 px sous un pager de 22 px.
+  Les deux coléoptères sont donc plus près de l'œil que les papillons, et la cétoine reste plus petite qu'une fourmi du HUD
+  (56 px).
 - **Code** : `airlift()` de `decor/scene/porteuses.mjs` sert maintenant aux deux duos volants, les papillons du dock et les
   coléoptères du pager.
 
-Questions au porteur, avec ma proposition :
-- **Taille des deux coléoptères** : à l'échelle des papillons du dock (1,125 px/mm), la coccinelle ne ferait que 8 px sous un
-  pager de 22 px. Je propose 2,5 px/mm : la coccinelle fait 18 px, la cétoine 45 px (constante `BEETLE_PXMM`). Elles sont donc
-  plus près de l'œil que les papillons, et la cétoine reste plus petite qu'une fourmi du HUD (56 px).
+Question au porteur, avec ma proposition :
 - **Gros plan et étagère** : le pager est masqué en gros plan et sous l'étagère ouverte. Je propose qu'il réapparaisse seul,
   sans que les deux insectes le rapportent à chaque fois. Sinon, une coccinelle et une cétoine voleraient à chaque retour du
   gros plan.

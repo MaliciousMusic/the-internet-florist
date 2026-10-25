@@ -35,7 +35,7 @@ const PAUSE = 0.3; // s, when a piece is set down or taken up
 const OFF = '-200vw 0px'; // where a piece waits (as boutique.css puts it before this module runs)
 // ?lent=8: everything 8 times slower, to look at the carriers (a check, not a setting)
 const SLOW = Math.max(1, +(q.get('lent') || 1));
-// the pager's ladybird and rose chafer, nearer than the dock's butterflies (a proposal, insectes/DECISIONS.md): 2.5 px per mm,
+// the pager's ladybird and rose chafer, nearer than the dock's butterflies (owner, 2026-10-25): 2.5 px per mm,
 // the ladybird 18 px long, the chafer 45
 const BEETLE_PXMM = 2.5;
 
@@ -550,7 +550,7 @@ async function start() {
   // swarm of their own (insectes/runtime/essaim.mjs, its canvas over the HUD) with their wings as quads; their flight is their
   // species' own (wingbeats, the body pitched up), their course is this one's.
   // Sizes: the butterflies are real butterflies a little way in front of the screen, a quarter smaller than first tried (owner,
-  // 2026-10-24): 1.125 px per mm, the swallowtail about 85 px across. The beetles are nearer (a proposal, insectes/DECISIONS.md):
+  // 2026-10-24): 1.125 px per mm, the swallowtail about 85 px across. The beetles are nearer (owner, 2026-10-25):
   // at the butterflies' scale a ladybird would be an 8 px dot under a 22 px pill.
   const FLYER = {
     machaon: { mod: 'papillon.mjs', cls: 'Papillon', sp: 'MACHAON', wings: (b, dt) => { b.flyWings(dt); b.faceFlight(dt); } },
