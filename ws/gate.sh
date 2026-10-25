@@ -16,11 +16,20 @@
 # waiters that forked date, stat, ls and sort every 3 s leaked 3 GB overnight. Waiting now runs on shell builtins only:
 # clock by printf, sleep by a timed read on a fifo, free RAM from /proc/meminfo, ticket ages written inside the tickets.
 # A waiter polls every GATE_POLL seconds (20); PowerShell checks CPU and RAM once, just before a start.
+# 2026-10-25 (owner): the floor is 4 GB for good (5.5 was too much), and the RAM is read live from fleur/res/ram.txt, written every
+# 2 s by fleur/res/ramlive.py (shell builtins only, no PowerShell at each start); PowerShell is the fallback when that file is older than
+# 10 s. To throttle well, a job also waits GATE_SETTLE seconds (30) after the last start, the time a new render takes to reach its size.
 SP="C:/Users/agent/Desktop/flower/flower-atelier"
 LK=${GATE_LOCKS:-$SP/ws/locks}; Q="$LK/queue"; [ -d "$Q" ] || mkdir -p "$Q"
-MAX=${GATE_MAX:-3}; NEED=${GATE_RAM:-5.5}; CPU=${GATE_CPU:-85}; YIELD=${GATE_YIELD:-600}; POLL=${GATE_POLL:-20}
+MAX=${GATE_MAX:-3}; NEED=${GATE_RAM:-4}; CPU=${GATE_CPU:-85}; YIELD=${GATE_YIELD:-600}; POLL=${GATE_POLL:-20}; SETTLE=${GATE_SETTLE:-30}
+RAMTXT="$SP/fleur/res/ram.txt"
 SLOT=""; waited=0; since=""
 case $NEED in *.*) i=${NEED%%.*}; f=${NEED#*.}; NEEDK=$(( ${i:-0} * 1048576 + ${f:0:1} * 104858 ));; *) NEEDK=$(( NEED * 1048576 ));; esac
+case $NEED in *.*) i=${NEED%%.*}; f=${NEED#*.}00; NEEDC=$(( 10#${i:-0} * 100 + 10#${f:0:2} ));; *) NEEDC=$(( NEED * 100 ));; esac
+# live() reads ram.txt: LIVE=1 when fresh, with RAMC (free RAM in hundredths of a GB) and LCPU; SETTLED=0 when a slot started < SETTLE s ago
+live() { local t r c m x; LIVE=0; read -r t r c m x < "$RAMTXT" 2>/dev/null || return; [ -n "$t" ] && [ $((now - t)) -le 10 ] || return
+  RAMC=$(( 10#${r%%.*} * 100 + 10#${r#*.} )); LCPU=${c%%.*}; LIVE=1; }
+settled() { local d t0; SETTLED=1; for d in "$LK"/slot*; do [ -f "$d/t0" ] || continue; t0=""; read -r t0 < "$d/t0" 2>/dev/null; [ -n "$t0" ] && [ $((now - t0)) -lt $SETTLE ] && SETTLED=0; done; }
 printf -v now '%(%s)T' -1
 ID="$$-$now$RANDOM"
 printf -v TK '%s/%010d-%s' "$Q" "${GATE_SINCE:-$now}" "$ID"
@@ -58,8 +67,10 @@ while [ -z "$SLOT" ]; do
     since=""
     [ $waited = 0 ] && echo "gate: $MAX rendu(s) déjà en cours, j'attends un créneau" >&2; waited=1; nap $POLL; continue
   fi
-  ok=0; freek
-  if [ "$FREEK" -gt "$NEEDK" ]; then
+  ok=0; live; settled
+  if [ $LIVE = 1 ]; then
+    cpu=$LCPU; [ "$SETTLED" = 1 ] && [ "${cpu:-100}" -lt "$CPU" ] && [ "$RAMC" -gt "$NEEDC" ] && ok=1
+  elif freek; [ "$FREEK" -gt "$NEEDK" ]; then
     L=$(powershell -NoProfile -Command "\$c=(Get-CimInstance Win32_Processor|Measure-Object LoadPercentage -Average).Average;\$m=(Get-CimInstance Win32_OperatingSystem).FreePhysicalMemory/1MB;[string]::Format([cultureinfo]::InvariantCulture,'{0:F0} {1:F1}',\$c,\$m)" | tr -d '\r')
     cpu=${L% *}; ram=${L#* }; cpu=${cpu%%.*}
     freek; [ "${cpu:-100}" -lt "$CPU" ] && [ "$FREEK" -gt "$NEEDK" ] && ok=1
@@ -67,7 +78,7 @@ while [ -z "$SLOT" ]; do
     cpu="?"
   fi
   if [ $ok = 1 ] && mkdir "$LK/slot$free" 2>/dev/null; then
-    echo "$now" > "$LK/slot$free/t"; echo "$ID" > "$LK/slot$free/id"; SLOT=$free; break
+    echo "$now" > "$LK/slot$free/t"; echo "$now" > "$LK/slot$free/t0"; echo "$ID" > "$LK/slot$free/id"; SLOT=$free; break
   fi
   [ $waited = 0 ] && echo "gate: PC chargé (CPU $cpu %, RAM libre insuffisante pour $NEED Go), j'attends" >&2; waited=1
   [ -n "$since" ] || since=$now

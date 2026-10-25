@@ -1,18 +1,29 @@
-#!/bin/sh
-# ramwait.sh: before a modeller or a heavy render (waves 2 and 3). Waits, up to 30 min, until free RAM is back over 3 GB (owner, 2026-10-18: 4.5 before; he plays while the atelier works): the last sample
-# AND at least 6 of the last 8 samples (2 minutes) of the freshest load log (fleur/res/vague1.csv, vague2.csv or vague3.csv). Prints RAM OK / RAM BASSE.
-# Since the 2026-10-17 crash: no log, or a log older than 5 minutes, also waits (the load logger fleur/res.ps1 must run).
+#!/bin/bash
+# ramwait.sh: before a modeller or a heavy render. Waits, up to 30 min, until free RAM is over the atelier's floor, 4 GB (owner, 2026-10-25:
+# « 5,5 est exagéré, on peut descendre à 4 ; grave-le définitivement à 4 » ; 3 GB before, 4.5 before 2026-10-18). Prints RAM OK / RAM BASSE.
+# The RAM is read live from fleur/res/ram.txt, written every 2 s by fleur/res/ramlive.py; when that file is older than 10 s, the freshest
+# load log (fleur/res/vague*.csv, fleur/res.ps1) is the fallback, as before. Shell builtins only while waiting (the kernel token leak).
 R=C:/Users/agent/Desktop/flower/flower-atelier/fleur/res
-for i in $(seq 1 30); do
-  f=$(ls -t $R/vague1.csv $R/vague2.csv $R/vague3.csv 2>/dev/null | head -1)
-  if [ -n "$f" ] && [ -n "$(find "$f" -mmin -5 2>/dev/null)" ]; then
-    last=$(tail -1 "$f" | cut -d, -f3)
-    ok=$(tail -8 "$f" | grep "^20" | awk -F, '$3>=3{n++} END{print n+0}')
-    if awk -v l="$last" 'BEGIN{exit !(l>=3)}' && [ "$ok" -ge 6 ]; then echo "RAM OK ($last Go libres)"; exit 0; fi
-    [ "$i" = 1 ] && echo "RAM basse ($last Go libres) : attente"
+SEUILC=400
+FF="$R/.ramwait-$$"; mkfifo "$FF" && exec 9<>"$FF"; rm -f "$FF"
+nap() { read -t "$1" -u 9 _; }
+for ((i = 1; i <= 180; i++)); do
+  printf -v now '%(%s)T' -1
+  t=""; r=""; read -r t r _ < "$R/ram.txt" 2>/dev/null
+  if [ -n "$t" ] && [ $((now - t)) -le 10 ]; then
+    rc=$(( 10#${r%%.*} * 100 + 10#${r#*.} ))
+    if [ "$rc" -ge "$SEUILC" ]; then echo "RAM OK ($r Go libres)"; exit 0; fi
+    [ "$i" = 1 ] && echo "RAM basse ($r Go libres, 4 demandés) : attente"
   else
-    [ "$i" = 1 ] && echo "relevé de charge absent ou figé : attente (préviens l'orchestrateur)"
+    f=$(ls -t $R/vague1.csv $R/vague2.csv $R/vague3.csv 2>/dev/null | head -1)
+    if [ -n "$f" ] && [ -n "$(find "$f" -mmin -5 2>/dev/null)" ]; then
+      last=$(tail -1 "$f" | cut -d, -f3)
+      if awk -v l="$last" 'BEGIN{exit !(l>=4)}'; then echo "RAM OK ($last Go libres, relevé de charge)"; exit 0; fi
+      [ "$i" = 1 ] && echo "RAM basse ($last Go libres) : attente"
+    else
+      [ "$i" = 1 ] && echo "mesure de la RAM absente (fleur/res/ramlive.py arrêté, relevé de charge figé) : attente (préviens l'orchestrateur)"
+    fi
   fi
-  sleep 60
+  nap 10
 done
 echo "RAM BASSE depuis plus de 30 min : modeleur ou rendu différé, préviens l'orchestrateur"; exit 1
