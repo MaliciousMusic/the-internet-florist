@@ -576,8 +576,9 @@ async function start() {
   // names: the left end's flyer, then the right end's. o: pxmm (their scale); hang (px, or a fraction of the flyer's length when
   // under 1: how high its body's origin, at its thorax, is over the piece's upper edge); inset (px from the very ends; hang and
   // inset may be given per flyer); rise (px: where the course starts,
-  // under the place when positive, over it when negative); speed (px/s along the course); away(R): where they fly off to.
-  // Resolves once the piece is in its place.
+  // under the place when positive, over it when negative); speed (px/s along the course); away(R): where they fly off to;
+  // gone() (optional): true while the piece is out of sight, then it is set in its place with no flight, or dropped there at
+  // once if they are on their way. Resolves once the piece is in its place.
   async function airlift(box, names, o) {
     const e = await swarm();
     const pair = [], flaps = [];
@@ -615,12 +616,15 @@ async function start() {
       flaps[i](b, dt);
     };
     let s = 0, phase = 'in', t = 0;
+    if (o.gone && o.gone()) { for (const b of pair) b.visible = false; box.home(); return; }
     ends(...bez(0)).forEach((q, i) => { pair[i].P = [q[0], q[1], 0]; });
     box.state = 'moving';
     flying++;
     return new Promise((set) => run((function* () {
       for (;;) {
         const dt = yield;
+        // out of sight on the way: the piece drops into its place, they fly off from where they are, no hover
+        if (phase === 'in' && o.gone && o.gone()) { box.home(); set(); phase = 'let'; t = 0.35; }
         if (phase === 'in') {
           s = Math.min(len, s + o.speed * dt);
           const [x, y] = bez(s / len);
@@ -657,17 +661,19 @@ async function start() {
     : dock ? new Promise((ok) => { dock.after = ok; }) : Promise.resolve();
   // the pager (one dot per bouquet of the day, by the dock: under it on a phone, just above it on a computer), brought by a
   // ladybird and a rose chafer once the dock is in its place and the pager has its dots (boutique.js shows it when there are two
-  // bouquets or more)
+  // bouquets or more). Out of sight (the close-up hides it, the open shelf covers it), it is not carried: it stands in its place
+  // and shows again alone (owner, 2026-10-25)
   const pager = $('#pager');
   if (pager) {
     const pg = new Box(pager, { name: 'pager' });
+    const gone = () => pager.hidden || getComputedStyle(pager).visibility === 'hidden' || !!$('.cartes.ouvert');
     const shown = new Promise((ok) => {
       if (!pager.hidden) return ok();
       const mo = new MutationObserver(() => { if (!pager.hidden) { mo.disconnect(); ok(); } });
       mo.observe(pager, { attributes: true, attributeFilter: ['hidden'] });
     });
     Promise.all([docked, shown])
-      .then(() => airlift(pg, ['coccinelle', 'cetoine'], { pxmm: BEETLE_PXMM, hang: 0.12, inset: [11, 6], rise: DESK.matches ? -110 : 90, speed: 190, away: (R) => [W() + 140, R.cy - 70] }))
+      .then(() => airlift(pg, ['coccinelle', 'cetoine'], { pxmm: BEETLE_PXMM, hang: 0.12, inset: [11, 6], rise: DESK.matches ? -110 : 90, speed: 190, away: (R) => [W() + 140, R.cy - 70], gone }))
       .catch((err) => { console.error('[porteuses]', err); pg.home(); });
   }
   // the close-up: the bubble's boxes come with it and go with it; the resale line shows once Buy is set

@@ -335,5 +335,5 @@ l'identité de son éditeur dans ses mentions légales.
   dock, une coccinelle et une cétoine l'apportent en volant, une à chaque bout, jusqu'à sa place : au-dessus du dock sur
   ordinateur, sous lui sur téléphone. `porteuses.mjs` le garde hors de l'écran (classe `porteuses`) jusqu'à leur arrivée, et
   attend que `boutique.js` le montre. Le pager lui-même vient de la branche `ch/site-leger`. Taille des insectes validée
-  par le porteur : 2,5 px/mm, coccinelle 18 px, cétoine 45 px. Retour après le gros plan : question dans
-  `insectes/DECISIONS.md`.
+  par le porteur : 2,5 px/mm, coccinelle 18 px, cétoine 45 px. Après le gros plan et l'étagère, il réapparaît seul,
+  sans les insectes (porteur).

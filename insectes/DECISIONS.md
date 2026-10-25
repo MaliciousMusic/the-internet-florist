@@ -148,10 +148,10 @@ est apporté par une coccinelle et une cétoine en volant ».
 - **Code** : `airlift()` de `decor/scene/porteuses.mjs` sert maintenant aux deux duos volants, les papillons du dock et les
   coléoptères du pager.
 
-Question au porteur, avec ma proposition :
-- **Gros plan et étagère** : le pager est masqué en gros plan et sous l'étagère ouverte. Je propose qu'il réapparaisse seul,
-  sans que les deux insectes le rapportent à chaque fois. Sinon, une coccinelle et une cétoine voleraient à chaque retour du
-  gros plan.
+- **Gros plan et étagère** (décision du porteur, 2026-10-25) : le pager est masqué en gros plan et sous l'étagère ouverte.
+  Il réapparaît seul, sans les insectes. S'il disparaît pendant leur vol, il tombe aussitôt à sa place et elles repartent
+  de là où elles sont. S'il est déjà caché quand elles devraient partir, elles ne volent pas et il attend à sa place
+  (option `gone` d'`airlift()`).
 
 Propositions, à valider sur le premier prototype :
 - ~~**Pose** : les fourmis marchent de profil sur le bord bas de l'écran comme sur un sol. Elles tiennent la case levée
