@@ -85,3 +85,4 @@ fleur/res/ramlive.stop
 # secrets: API keys live only in .env, never committed
 .env
 .env.*
+fleur/res/ramlive.err

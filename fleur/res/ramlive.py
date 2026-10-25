@@ -50,9 +50,16 @@ def alive(pid):
 
 
 def put(p, s):
+    """one rename; on Windows it fails while a reader holds the file open (2026-10-25: that killed the sampler after a few minutes),
+    so it is tried again, and a sample is skipped rather than the sampler stopped"""
     with open(p + '.tmp', 'w', encoding='ascii', newline='\n') as f:
         f.write(s)
-    os.replace(p + '.tmp', p)
+    for _ in range(10):
+        try:
+            os.replace(p + '.tmp', p)
+            return
+        except PermissionError:
+            time.sleep(0.05)
 
 
 def read(max_age=10):
@@ -92,8 +99,11 @@ def main():
             now, free = int(time.time()), free_gb()
             hist = [h for h in hist if now - h[0] <= 60] + [(now, round(free, 2), round(busy))]
             mn = min(h[1] for h in hist)
-            put(os.path.join(HERE, 'ram.txt'), '%d %.2f %.0f %.2f %.1f\n' % (now, free, busy, mn, SEUIL))
-            put(os.path.join(HERE, 'ram.json'), json.dumps(dict(quand=now, libre=round(free, 2), cpu=round(busy), min60=mn, seuil=SEUIL, histo=hist)))
+            try:
+                put(os.path.join(HERE, 'ram.txt'), '%d %.2f %.0f %.2f %.1f\n' % (now, free, busy, mn, SEUIL))
+                put(os.path.join(HERE, 'ram.json'), json.dumps(dict(quand=now, libre=round(free, 2), cpu=round(busy), min60=mn, seuil=SEUIL, histo=hist)))
+            except OSError as e:  # a full disk or a locked file: keep sampling, never die
+                print('ramlive: %s' % e, file=sys.stderr)
     finally:
         if os.path.exists(pf) and open(pf).read().strip() == str(os.getpid()):
             os.remove(pf)
