@@ -91,7 +91,47 @@ function head(L, page) {
     '<link rel="manifest" href="site.webmanifest">',
     ...og.map(([k, v]) => `<meta property="${k}" content="${esc(v)}">`),
     '<meta name="twitter:card" content="summary_large_image">',
+    ...(page === 'index' ? preloads() : []),
   ].join('\n');
+}
+
+// the home page's files, asked for from its head (and sent ahead by the host as early hints): the shop's data, the first
+// bouquet's one file (paquet.mjs) and the decor's static layers. A phone held upright (the screen no wider than 28/45 of
+// its height) sees only the world's central column and gets the cut layers (scene.js, recadre.mjs), the others the full ones.
+// the compiled previews of the heavy static layers (calques.mjs): scene.js shows them first, then their SVG
+const calquesFile = join(HERE, '..', 'out', 'calques.json');
+const calques = existsSync(calquesFile) ? JSON.parse(readFileSync(calquesFile, 'utf8')) : {};
+const apercu = (html) =>
+  html.replace(/data-src="([\w-]+\.svg)"/g, (m, name) => {
+    const a = calques[name];
+    if (!a) return m;
+    const v = Object.fromEntries(Object.entries(a).map(([k, o]) => [k, [o.src, ...o.box]]));
+    return `${m} data-apercu='${JSON.stringify(v)}'`;
+  });
+
+function preloads() {
+  const first = cfg.produits[0].bouquet.replace(/manifeste\.json$/, 'ouvert.json');
+  const COL = '(max-aspect-ratio: 28/45)';
+  const WIDE = '(min-aspect-ratio: 28.001/45)';
+  // a layer with a compiled preview (calques.mjs) is asked for by its preview, which the page shows first
+  const layer = (name, hi) => {
+    const a = calques[name];
+    const col = a ? a.colonne?.src : ['horizon.svg', 'sol-loin.svg', 'sol-milieu.svg', 'sol-pres.svg'].includes(name) && `colonne/${name}`;
+    const full = a ? a.plein.src : name;
+    const pri = hi ? ' fetchpriority="high"' : '';
+    return col
+      ? [
+          `<link rel="preload" href="../out/${col}" as="image" media="${COL}"${pri}>`,
+          `<link rel="preload" href="../out/${full}" as="image" media="${WIDE}"${pri}>`,
+        ]
+      : [`<link rel="preload" href="../out/${full}" as="image"${pri}>`];
+  };
+  return [
+    '<link rel="preload" href="boutique.json" as="fetch" crossorigin>',
+    ...layer('ciel.svg', true),
+    ...layer('horizon.svg', true),
+    `<link rel="preload" href="${first}" as="fetch" crossorigin>`,
+  ];
 }
 
 // ---------- the structured data of a page
@@ -224,6 +264,7 @@ for (const L of langs) {
         if (v == null) throw new Error(`build.mjs: ${L.code} ${page}: no text for {{${k}}}`);
         return String(v);
       });
+    if (page === 'index') html = apercu(html);
     writeFileSync(join(HERE, p, `${page}.html`), html.replace(/\n/g, '\r\n'));
     written++;
   }

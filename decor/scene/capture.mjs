@@ -224,7 +224,7 @@ print('ok', out, sheet.size)
     // another card while the first bouquet sways: the fold (frozen half-way), then the new bouquet grown
     await until(READY, 90000);
     await sleep(6500);
-    await evaluate(`document.querySelectorAll('.carte')[${+(opt('--carte', 1))}].click()`);
+    await evaluate(`document.querySelectorAll('.point')[${+(opt('--carte', 1))}].click()`);
     await sleep(380);
     await evaluate(`document.getAnimations().forEach((a) => { const el = a.effect && a.effect.target; if (el && document.getElementById('bouquet').contains(el)) a.pause(); })`);
     await screenshot(out.replace(/\.png$/, '-repli.png'));

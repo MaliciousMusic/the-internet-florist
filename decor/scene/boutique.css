@@ -182,8 +182,7 @@
 }
 
 .achat-vie,
-.achat-demo,
-.vitrine-vie {
+.achat-demo {
   display: inline-flex;
   align-items: center;
   gap: 5px;
@@ -216,27 +215,6 @@
   margin: 6px 0 0;
   font: 500 11px/1.2 system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
   color: rgb(255 255 255 / 0.92);
-}
-
-/* a frame's lifespan, at its top */
-.vitrine-vie {
-  position: absolute;
-  top: 8px;
-  left: 50%;
-  height: 24px;
-  padding: 0 9px;
-  font-size: 11px;
-  transform: translateX(-50%);
-  pointer-events: none;
-}
-
-/* the middle bouquet's lifespan shows in the close-up only (above the price bubble) */
-.vitrine[aria-current='true'] .vitrine-vie {
-  visibility: hidden;
-}
-
-.vitrine-vie.fane {
-  background: rgb(60 40 20 / 0.22);
 }
 
 /* ---------- the demo video ---------- */
@@ -353,69 +331,7 @@
   transition: transform 0.9s cubic-bezier(0.3, 0.1, 0.2, 1);
 }
 
-/* ---------- the gallery: one glass frame per bouquet, standing on the horizon (plane z3, under the ground) ----------
-   Units are the world's (2400 x 1350), set by boutique.js: --x0 the middle frame's left, --ft its top, --fw and --fh
-   its size, --pas the step between frames; --d each frame's offset from the chosen one (a loop, boutique.js). */
-.galerie {
-  overflow: visible;
-}
-
-.galerie-rail {
-  position: absolute;
-  inset: 0;
-}
-
-.vitrine {
-  position: absolute;
-  left: calc(var(--x0) * 100% / 2400);
-  top: calc(var(--ft) * 100% / 1350);
-  width: calc(var(--fw) * 100% / 2400);
-  height: calc(var(--fh) * 100% / 1350);
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  overflow: hidden;
-  border: 1px solid rgb(255 255 255 / 0.42);
-  border-radius: clamp(10px, 1.6cqw, 22px);
-  /* clearer than the header's glass: a faint veil, a light blur */
-  background: linear-gradient(to bottom, rgb(255 255 255 / 0.07), rgb(16 48 86 / 0.04));
-  -webkit-backdrop-filter: blur(3px);
-  backdrop-filter: blur(3px);
-  cursor: pointer;
-  pointer-events: auto;
-  -webkit-tap-highlight-color: transparent;
-  /* its offset --d from the chosen one, in steps of --pas (a translation's % is of its own width, --fw) */
-  transform: translateX(calc(var(--d, 0) * var(--pas, 500) * 100% / var(--fw)));
-  transition: transform 0.7s cubic-bezier(0.3, 0.1, 0.2, 1);
-}
-
-.vitrine[aria-current='true'] {
-  border-color: var(--verre-bord-choisi);
-  cursor: zoom-in;
-}
-
-.vitrine:focus-visible {
-  outline: 2px solid #fff;
-  outline-offset: 2px;
-}
-
-.vitrine:focus:not(:focus-visible) {
-  outline: none;
-}
-
-/* a side frame's bouquet: its light thumbnail, at the bouquet's size and place (boutique.js); the middle one's is on the
-   pillar */
-.vitrine-art {
-  position: absolute;
-  max-width: none;
-  pointer-events: none;
-}
-
-.vitrine[aria-current='true'] .vitrine-art {
-  visibility: hidden;
-}
-
-/* "Voir": a glass pill on the pillar's face, centred under the middle frame (x 1200, its top at y 736) */
+/* "Open": a glass pill on the pillar's face (x 1200, its top at y 736) */
 .bq-voir {
   position: absolute;
   left: 50%;
@@ -450,8 +366,64 @@
   display: none;
 }
 
-/* the close-up: no gallery, no "Voir" */
-.scene.proche .galerie,
+/* the pager: one dot per bouquet of the day, in a glass pill fixed on the screen (boutique.js); the shown bouquet's dot is
+   longer. On a phone it hangs under the dock (owner, 2026-10-25), on a computer it stands just above it (media query
+   below); the shelf (.cartes, z 40) covers it while open. Each dot is a 22 px button for the finger, its mark drawn inside. */
+.pager {
+  position: fixed;
+  left: 50%;
+  top: calc(var(--entete-bas) + 10px);
+  z-index: 30;
+  display: flex;
+  padding: 0 6px;
+  height: 22px;
+  border: 1px solid rgb(255 255 255 / 0.45);
+  border-radius: 999px;
+  background: rgb(16 48 86 / 0.16);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  transform: translateX(-50%);
+}
+
+.pager[hidden] {
+  display: none;
+}
+
+.point {
+  display: grid;
+  place-items: center;
+  width: 18px;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.point::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 3px;
+  background: rgb(255 255 255 / 0.55);
+  transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.point[aria-current='true']::before {
+  width: 14px;
+  background: #fff;
+}
+
+.point:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: -2px;
+  border-radius: 999px;
+}
+
+/* the close-up: no pager, no "Voir" */
+.scene.proche .pager,
 .scene.proche .bq-voir {
   visibility: hidden;
 }
@@ -519,7 +491,6 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .vitrine,
   .cartes,
   .cartes.ouvert,
   .achat,
@@ -544,6 +515,11 @@
 
   .achat {
     bottom: var(--dessus-dock);
+  }
+
+  .pager {
+    top: auto;
+    bottom: calc(var(--dock-pied) + var(--dock-h) + 10px);
   }
 }
 
