@@ -171,11 +171,9 @@ le côté du pilier au lieu de continuer sous le vase ».
   à toute échelle ; sur téléphone, il descendait sur la tête de la fourmi. Une fois le bouton posé, elle tourne sur place vers
   la droite et part sur la face, un peu en descendant, jusqu'au bord du pilier, où elle disparaît dans la courbe.
 
-Question au porteur, avec ma proposition :
-- **Durée de la fourmi d'Open** : elle garde le pas d'une vraie ouvrière, 4,2 longueurs de corps par seconde. Trois fois plus
-  petite, elle va trois fois moins vite : le bouton est posé environ 18 s après le chargement, contre 9 s avant. Je propose de
-  garder ce vrai pas, comme pour les autres fourmis. Sinon, elle peut trotter trois fois plus vite que nature et garder
-  l'ancienne durée.
+- **Durée de la fourmi d'Open** (décision du porteur, 2026-10-25) : elle garde le pas d'une vraie ouvrière, 4,2 longueurs de
+  corps par seconde, comme les autres fourmis. Trois fois plus petite, elle va trois fois moins vite : le bouton est posé
+  environ 18 s après le chargement, contre 9 s avant.
 
 Propositions, à valider sur le premier prototype :
 - ~~**Pose** : les fourmis marchent de profil sur le bord bas de l'écran comme sur un sol. Elles tiennent la case levée

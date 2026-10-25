@@ -339,5 +339,5 @@ l'identité de son éditeur dans ses mentions légales.
   sans les insectes (porteur).
 - 2026-10-25, retour du porteur sur les volants et la fourmi d'Open : cétoine nette (grand niveau d'atlas), coccinelle qui
   bat des ailes au lieu de faire l'hélice, pager qui penche du côté de la coccinelle pendant le trajet. Fourmi d'Open trois
-  fois plus petite, qui tient le bouton par son bord inférieur et repart par le côté du pilier. Détails et question sur sa
-  durée dans `insectes/DECISIONS.md`.
+  fois plus petite, qui tient le bouton par son bord inférieur et repart par le côté du pilier. Elle garde le vrai pas
+  d'une ouvrière : bouton posé vers 18 s (porteur). Détails dans `insectes/DECISIONS.md`.
