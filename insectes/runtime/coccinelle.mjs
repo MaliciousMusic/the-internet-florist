@@ -25,6 +25,11 @@ export const COCCINELLE = {
   beatHz: 72.5, stroke: 190, strokePlane: 61,
   // the elytra's planes: closed (the lid that the atlas's dome becomes at take-off) and open in flight (flapAxes angles)
   elyClosed: { flap: 0, sweep: 90 }, elyOpen: { flap: 42, sweep: 14 },
+  // the spread wings' beat, as a faux of the stroke (owner, 2026-10-25: sampling the 72.5 Hz stroke at 60 images a second made
+  // it turn like a propeller): three drawings, the top of the stroke, the downstroke swept forward, the bottom, played back and
+  // forth (top, middle, bottom, middle) at 60 a second, so that the wing only goes up and down
+  faux: [{ flap: 46, sweep: 4 }, { flap: 12, sweep: -18 }, { flap: -22, sweep: -6 }],
+  fauxOrder: [0, 1, 2, 1], fauxHz: 60,
   openS: 0.12, unfoldS: 0.1, foldS: 0.22,
   walkMmS: 8, strideMm: 1.6, flightMmS: 1000, speed: 210,
   visit: [6, 18], walkBout: [0.6, 2.2], pause: [0.4, 2.5],
@@ -96,14 +101,19 @@ export class Coccinelle {
   }
 
   // ---- the planes -----------------------------------------------------------------------------------------------
-  // flight attitude: open (0 closed lid .. 1 held up), unfold (0 folded under .. 1 spread); the beating wing sampled at a phase
-  // that jumps each frame (72.5 Hz against 60 images a second: the eye sees a blur of positions), drawn faint
+  // flight attitude: open (0 closed lid .. 1 held up), unfold (0 folded under .. 1 spread); spread, the wing beats as the faux
+  // of the stroke (S.faux); while it unfolds, a small stroke sampled at a phase that jumps each frame, drawn faint
   setFlight(open, unfold) { this.open = open; this.unfold = unfold; }
 
   planes(dt) {
     const S = this.S, A = S.elyClosed, B = S.elyOpen, o = ease(this.open);
     this.wingPose.fore = { flap: lerp(A.flap, B.flap, o), sweep: lerp(A.sweep, B.sweep, o) };
     if (this.unfold <= 0.02) { this.wingPose.hind = { flap: 0, sweep: 90, hidden: true }; return; }
+    if (this.unfold >= 1 && S.faux) {
+      this.fx = ((this.fx || 0) + dt * S.fauxHz) % S.fauxOrder.length;
+      this.wingPose.hind = { ...S.faux[S.fauxOrder[Math.floor(this.fx)]], unfold: 1, alpha: 0.55 };
+      return;
+    }
     this.beat = (this.beat + dt * S.beatHz) % 1;
     // the stroke: a wide arc in a plane tilted from the body axis, forward on the downstroke, back on the upstroke
     const a = Math.PI * 2 * this.beat;

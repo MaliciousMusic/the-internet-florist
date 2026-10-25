@@ -51,7 +51,7 @@ if (root.classList.contains('porteuses')) {
 function stopAll() {
   root.classList.remove('porteuses');
   for (const el of document.querySelectorAll('.dock, .pager, .pied-poignee, .achat-vie, .achat-demo, .achat-bouton, .achat-revente')) {
-    el.style.translate = ''; el.style.visibility = '';
+    el.style.translate = ''; el.style.visibility = ''; el.style.rotate = '';
   }
 }
 
@@ -551,13 +551,14 @@ async function start() {
   // species' own (wingbeats, the body pitched up), their course is this one's.
   // Sizes: the butterflies are real butterflies a little way in front of the screen, a quarter smaller than first tried (owner,
   // 2026-10-24): 1.125 px per mm, the swallowtail about 85 px across. The beetles are nearer (owner, 2026-10-25):
-  // at the butterflies' scale a ladybird would be an 8 px dot under a 22 px pill.
+  // at the butterflies' scale a ladybird would be an 8 px dot under a 22 px pill. lod: their atlas's large level, asked for
+  // (at 18 and 45 px the small one's cells, 28 and 48 px, were drawn stretched: the chafer came out blurred, owner 2026-10-25).
   const FLYER = {
     machaon: { mod: 'papillon.mjs', cls: 'Papillon', sp: 'MACHAON', wings: (b, dt) => { b.flyWings(dt); b.faceFlight(dt); } },
     paon: { mod: 'papillon.mjs', cls: 'Papillon', sp: 'PAON', wings: (b, dt) => { b.flyWings(dt); b.faceFlight(dt); } },
     // the elytra held up and open, the hind wings out and beating; its wings' depth as on the scene (insectes.mjs)
-    coccinelle: { mod: 'coccinelle.mjs', cls: 'Coccinelle', sp: 'COCCINELLE', depth: 1.6, set: (b) => { b.setFlight(1, 1); b.wingsHidden = false; }, wings: (b, dt) => { b.planes(dt); b.faceFlight(dt); } },
-    cetoine: { mod: 'cetoine.mjs', cls: 'Cetoine', sp: 'CETOINE', wings: (b, dt) => { b.strokeWings(dt); b.faceFlight(dt); } },
+    coccinelle: { mod: 'coccinelle.mjs', cls: 'Coccinelle', sp: 'COCCINELLE', depth: 1.6, lod: 'L', set: (b) => { b.setFlight(1, 1); b.wingsHidden = false; }, wings: (b, dt) => { b.planes(dt); b.faceFlight(dt); } },
+    cetoine: { mod: 'cetoine.mjs', cls: 'Cetoine', sp: 'CETOINE', lod: 'L', wings: (b, dt) => { b.strokeWings(dt); b.faceFlight(dt); } },
   };
   // the flyers' swarm, made once; the loop renders it while some fly
   let sky = null, skyE = null, flying = 0;
@@ -578,7 +579,8 @@ async function start() {
   // inset may be given per flyer); rise (px: where the course starts,
   // under the place when positive, over it when negative); speed (px/s along the course); away(R): where they fly off to;
   // gone() (optional): true while the piece is out of sight, then it is set in its place with no flight, or dropped there at
-  // once if they are on their way. Resolves once the piece is in its place.
+  // once if they are on their way; tilt(t, u) (optional): degrees the left end hangs lower at time t (s) and course fraction u,
+  // the piece turning about the right flyer's grip. Resolves once the piece is in its place.
   async function airlift(box, names, o) {
     const e = await swarm();
     const pair = [], flaps = [];
@@ -594,6 +596,7 @@ async function start() {
       const b = new M[F.cls](e, [], () => ((seed = (seed * 1664525 + 1013904223) >>> 0) / 4294967296), { species: S, lengthPx: S.bodyMm * o.pxmm });
       b.visible = true;
       b.pose = 'vol';
+      if (F.lod) b.lod = F.lod;
       if (F.set) F.set(b);
       e.add(b);
       pair.push(b);
@@ -604,7 +607,21 @@ async function start() {
     const R = box.rest();
     const each = (v, i) => (Array.isArray(v) ? v[i] : v);
     const lift = pair.map((b, i) => (Math.abs(each(o.hang, i)) < 1 ? each(o.hang, i) * b.lengthPx : each(o.hang, i)));
-    const ends = (x, y) => [[x - R.w / 2 + each(o.inset, 0), y - R.h / 2 - lift[0]], [x + R.w / 2 - each(o.inset, 1), y - R.h / 2 - lift[1]]];
+    // the flyers' places and the piece's centre for the course point (x, y) (the level piece's centre) and a tilt: the piece turns
+    // about the right flyer's grip, on its upper edge, its left end lower when the tilt is positive
+    const grip = R.w - each(o.inset, 0) - each(o.inset, 1);
+    const place = (x, y, deg) => {
+      const a = (deg * Math.PI) / 180, c = Math.cos(a), sn = Math.sin(a);
+      const gx = x + R.w / 2 - each(o.inset, 1), gy = y - R.h / 2, dx = -(R.w / 2 - each(o.inset, 1)), dy = R.h / 2;
+      return {
+        fly: [[gx - grip * c, gy + grip * sn - lift[0]], [gx, gy - lift[1]]],
+        c: [gx + dx * c + dy * sn, gy - dx * sn + dy * c],
+      };
+    };
+    const st = box.el.style;
+    // turned about its visual centre (the pager's own transform pulls it left by half: its centre is not its box's)
+    if (o.tilt) st.transformOrigin = `${(R.cx - box.el.offsetLeft).toFixed(1)}px ${(R.cy - box.el.offsetTop).toFixed(1)}px`;
+    const settle = () => { box.home(); st.rotate = ''; st.transformOrigin = ''; };
     // the piece's centre: in from the left, lower or higher, to its place (a cubic, level at both ends)
     const p0 = [-R.w / 2 - 90, R.cy + o.rise], p3 = [R.cx, R.cy], run1 = Math.max(80, Math.abs(p0[1] - p3[1]) * 1.8);
     const bez = (u) => { const v = 1 - u, A = v * v * v, B = 3 * v * v * u, C = 3 * v * u * u, D = u * u * u; return [A * p0[0] + B * (p3[0] - run1) + C * (p3[0] - run1 * 0.5) + D * p3[0], A * p0[1] + B * p0[1] + C * p3[1] + D * p3[1]]; };
@@ -615,22 +632,24 @@ async function start() {
       b.P = [to[0], to[1], 0];
       flaps[i](b, dt);
     };
-    let s = 0, phase = 'in', t = 0;
-    if (o.gone && o.gone()) { for (const b of pair) b.visible = false; box.home(); return; }
-    ends(...bez(0)).forEach((q, i) => { pair[i].P = [q[0], q[1], 0]; });
+    let s = 0, phase = 'in', t = 0, clock = 0;
+    if (o.gone && o.gone()) { for (const b of pair) b.visible = false; settle(); return; }
+    place(...bez(0), o.tilt ? o.tilt(0, 0) : 0).fly.forEach((q, i) => { pair[i].P = [q[0], q[1], 0]; });
     box.state = 'moving';
     flying++;
     return new Promise((set) => run((function* () {
       for (;;) {
         const dt = yield;
         // out of sight on the way: the piece drops into its place, they fly off from where they are, no hover
-        if (phase === 'in' && o.gone && o.gone()) { box.home(); set(); phase = 'let'; t = 0.35; }
+        if (phase === 'in' && o.gone && o.gone()) { settle(); set(); phase = 'let'; t = 0.35; }
         if (phase === 'in') {
           s = Math.min(len, s + o.speed * dt);
-          const [x, y] = bez(s / len);
-          ends(x, y).forEach((q, i) => fly(i, q, dt));
-          box.el.style.translate = `${(x - R.cx).toFixed(1)}px ${(y - R.cy).toFixed(1)}px`;
-          if (s >= len) { box.home(); set(); phase = 'let'; t = 0; }
+          clock += dt;
+          const deg = o.tilt ? o.tilt(clock, s / len) : 0, q = place(...bez(s / len), deg);
+          q.fly.forEach((p, i) => fly(i, p, dt));
+          st.translate = `${(q.c[0] - R.cx).toFixed(1)}px ${(q.c[1] - R.cy).toFixed(1)}px`;
+          if (o.tilt) st.rotate = `${(-deg).toFixed(2)}deg`;
+          if (s >= len) { settle(); set(); phase = 'let'; t = 0; }
         } else {
           // let go: a short hover, then off, faster and faster
           t += dt;
@@ -667,14 +686,20 @@ async function start() {
   if (pager) {
     const pg = new Box(pager, { name: 'pager' });
     const gone = () => pager.hidden || getComputedStyle(pager).visibility === 'hidden' || !!$('.cartes.ouvert');
+    // the load is uneven (owner, 2026-10-25): the chafer, two and a half times the ladybird's length, holds its end steady; the
+    // ladybird's end hangs about 5 degrees low and dips as it labours, levelled over the last fifth of the course to be set down
+    const tilt = (t, u) => {
+      const lv = 1 - Math.min(1, Math.max(0, (u - 0.8) / 0.2));
+      return lv * lv * (3 - 2 * lv) * (5 + 2.2 * Math.sin(t * 7.1) + 1.4 * Math.sin(t * 12.3 + 1.3));
+    };
     const shown = new Promise((ok) => {
       if (!pager.hidden) return ok();
       const mo = new MutationObserver(() => { if (!pager.hidden) { mo.disconnect(); ok(); } });
       mo.observe(pager, { attributes: true, attributeFilter: ['hidden'] });
     });
     Promise.all([docked, shown])
-      .then(() => airlift(pg, ['coccinelle', 'cetoine'], { pxmm: BEETLE_PXMM, hang: 0.12, inset: [11, 6], rise: DESK.matches ? -110 : 90, speed: 190, away: (R) => [W() + 140, R.cy - 70], gone }))
-      .catch((err) => { console.error('[porteuses]', err); pg.home(); });
+      .then(() => airlift(pg, ['coccinelle', 'cetoine'], { pxmm: BEETLE_PXMM, hang: 0.12, inset: [11, 6], rise: DESK.matches ? -110 : 90, speed: 190, away: (R) => [W() + 140, R.cy - 70], gone, tilt }))
+      .catch((err) => { console.error('[porteuses]', err); pg.home(); pager.style.rotate = ''; pager.style.transformOrigin = ''; });
   }
   // the close-up: the bubble's boxes come with it and go with it; the resale line shows once Buy is set
   const achat = $('#achat');

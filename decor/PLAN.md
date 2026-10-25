@@ -337,3 +337,7 @@ l'identité de son éditeur dans ses mentions légales.
   attend que `boutique.js` le montre. Le pager lui-même vient de la branche `ch/site-leger`. Taille des insectes validée
   par le porteur : 2,5 px/mm, coccinelle 18 px, cétoine 45 px. Après le gros plan et l'étagère, il réapparaît seul,
   sans les insectes (porteur).
+- 2026-10-25, retour du porteur sur les volants et la fourmi d'Open : cétoine nette (grand niveau d'atlas), coccinelle qui
+  bat des ailes au lieu de faire l'hélice, pager qui penche du côté de la coccinelle pendant le trajet. Fourmi d'Open trois
+  fois plus petite, qui tient le bouton par son bord inférieur et repart par le côté du pilier. Détails et question sur sa
+  durée dans `insectes/DECISIONS.md`.

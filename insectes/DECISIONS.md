@@ -153,11 +153,36 @@ est apporté par une coccinelle et une cétoine en volant ».
   de là où elles sont. S'il est déjà caché quand elles devraient partir, elles ne volent pas et il attend à sa place
   (option `gone` d'`airlift()`).
 
+Retour du porteur sur le site (2026-10-25) : « le scarabée est flou et les ailes de la coccinelle font une hélice au lieu de
+battre », « le scarabée devrait mieux porter vu sa taille, donc on devrait avoir un déséquilibre sur le trajet », et la fourmi
+d'Open « devrait être 3 fois plus petite sur le pilier, bien tenir le bouton par le bord inférieur et une fois posé partir par
+le côté du pilier au lieu de continuer sous le vase ».
+- **Netteté** : les deux coléoptères demandent le grand niveau de leur atlas (cellules de 128 et 96 px). Le petit (48 et 28 px)
+  était étiré à l'écran, d'où le flou de la cétoine.
+- **Battement de la coccinelle** : son battement à 72,5 Hz, échantillonné à 60 images par seconde, se repliait en une rotation
+  lente vers 12 Hz : une hélice. Ailes déployées, elle bat maintenant en faux de battement, comme la cétoine : trois dessins
+  (haut, milieu balayé vers l'avant, bas) joués en aller-retour à 60 par seconde. L'aile ne fait que monter et descendre.
+  Le changement vaut aussi pour les coccinelles du parterre.
+- **Déséquilibre** : la cétoine, deux fois et demie plus longue, tient son bout sans broncher. Le bout de la coccinelle pend
+  d'environ 5° et plonge par à-coups (de 0 à 8,5° mesurés), puis le pager se remet à plat sur le dernier cinquième du trajet
+  pour être posé (option `tilt` d'`airlift()`, rotation autour de la prise de la cétoine).
+- **Fourmi d'Open** : 5,3 cm dans le décor au lieu de 16 cm, soit 12 px au pilier au lieu de 35 sur un écran de téléphone.
+  Elle tient le bouton par son bord inférieur : le code prenait le bouton pour 30 unités du décor, alors qu'il mesure 30 px
+  à toute échelle ; sur téléphone, il descendait sur la tête de la fourmi. Une fois le bouton posé, elle tourne sur place vers
+  la droite et part sur la face, un peu en descendant, jusqu'au bord du pilier, où elle disparaît dans la courbe.
+
+Question au porteur, avec ma proposition :
+- **Durée de la fourmi d'Open** : elle garde le pas d'une vraie ouvrière, 4,2 longueurs de corps par seconde. Trois fois plus
+  petite, elle va trois fois moins vite : le bouton est posé environ 18 s après le chargement, contre 9 s avant. Je propose de
+  garder ce vrai pas, comme pour les autres fourmis. Sinon, elle peut trotter trois fois plus vite que nature et garder
+  l'ancienne durée.
+
 Propositions, à valider sur le premier prototype :
 - ~~**Pose** : les fourmis marchent de profil sur le bord bas de l'écran comme sur un sol. Elles tiennent la case levée
   devant elles.~~ Remplacée par la vue de dessus, voir plus haut.
 - **Vitesse de la fourmi d'Open** : autant de longueurs de corps par seconde qu'une vraie ouvrière. Elle va donc du premier
-  plan au pilier en 4 s environ, et le bouton est cliquable en route.
+  plan au pilier en 4 s environ, et le bouton est cliquable en route. (Depuis le 2026-10-25, trois fois plus petite, elle
+  met trois fois plus longtemps : voir plus haut.)
 - **Accessibilité** : avec prefers-reduced-motion, ni fourmis ni papillons, et les pièces apparaissent directement. Les
   pièces sont dans la page dès le départ, pour le clavier et les lecteurs d'écran.
 - **Technique** : le HUD reste en HTML. Une couche PixiJS posée dessus, qui laisse passer les clics, dessine les porteuses.

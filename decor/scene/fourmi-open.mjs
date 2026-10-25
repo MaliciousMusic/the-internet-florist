@@ -1,8 +1,10 @@
 // fourmi-open.mjs: the ant that brings the Open button, at every page load (owner's QCM of 2026-10-24, insectes/DECISIONS.md
-// "Fourmis du HUD"; a reload is a new visit, owner the same evening). A magic black garden ant, 16 cm long in the scene (as long as the button where it stands, on the pillar),
-// comes up from under the frame's bottom edge carrying the button in its mandibles, walks over the stepping stones, shrinking
-// with the distance, climbs the pillar's face and sets the button in its place. It walks at a real ant's pace for its size
-// (24 mm/s for a 4 mm worker, laden x 0.7: 4.2 body lengths a second). The button answers clicks while it is carried.
+// "Fourmis du HUD"; a reload is a new visit, owner the same evening). A magic black garden ant, 5.3 cm long in the scene (a
+// third of the first 16 cm, owner 2026-10-25), comes up from under the frame's bottom edge carrying the button in its mandibles
+// by its lower edge, walks over the stepping stones, shrinking with the distance, climbs the pillar's face, sets the button in
+// its place, then turns and leaves by the pillar's side (not on up under the vase, owner the same day). It walks at a real
+// ant's pace for its size (24 mm/s for a 4 mm worker, laden x 0.7: 4.2 body lengths a second). The button answers clicks while
+// it is carried.
 //
 // An insect of the swarm (insectes/runtime/essaim.mjs) placed by insectes.mjs: seen from behind over the stones (level O of
 // its atlas), from above on the pillar's face, head up (level H, one azimuth: the cell and its turn given by b.view).
@@ -12,15 +14,16 @@
 // 0.47 m across: its face at 4.13 m).
 
 const CAM = { F: 1854, Y0: 722, EYE: 0.75, CX: 1200 };
-const LEN = 0.16; // m, the ant's length in the scene
+const LEN = 0.16 / 3; // m, the ant's length in the scene
 const SPEED = 4.2 * LEN; // m/s laden
 const STRIDE = 0.625 * LEN; // m per cycle (2.5 mm for 4 mm)
-const FACE = 4.37 - 0.235; // the pillar's face (m)
+const AXIS = 4.37, PIL_R = 0.235, FACE = AXIS - PIL_R; // the pillar's axis, its radius and its face (m)
+const SIDE_DOWN = 0.42; // rad: leaving, it walks to its right and a little down (24 degrees)
 // the walk: from under the frame's bottom edge (the ground shows from 2.2 m) over the four stones to the pillar's foot
 const WALK = [[0.03, 1.85], [0.02, 2.29], [0.12, 2.58], [0.18, 2.83], [0.09, 3.1], [-0.01, 3.35], [0.04, 3.62], [0.08, 3.86], [0.03, 4.02], [0, FACE]];
-// the button (decor/scene/boutique.css .bq-voir): top at world y 736, 30 units high, centred on x 1200
-const BTN_Y = 736 + 15, BTN_H = (30 * FACE) / CAM.F; // its centre's world y; its height in m on the pillar
-const BTN_H_AT = CAM.EYE - ((BTN_Y - CAM.Y0) * FACE) / CAM.F; // its centre's height on the pillar (m)
+// the button (decor/scene/boutique.css .bq-voir): its top at world y 736, centred on x 1200, 30 px high at every scale (so
+// 30 / k world units: taken as 30 units, it hung lower than the mandibles, over the ant's head)
+const BTN_TOP = 736;
 // where the mandibles hold it, from the ant's origin (under its waist), in the 'porte' pose: ahead, and up over its raised head
 // (m): the button stands above the ant like a leaf a leafcutter holds up, so that from behind the ant is seen under it
 const GRIP_AHEAD = 0.535 * LEN, GRIP_UP = 0.3 * LEN;
@@ -58,6 +61,7 @@ export class FourmiOpen {
     this.P = [0, 0, 0]; this.fwd = [0, 0, -1]; this.visible = false;
     this.path = curve(WALK); this.s = 0; this.h = 0; this.state = 'walk';
     this.bodyMm = 4;
+    this.btnPx = this.button.offsetHeight || 30; // its height on the page, which no transform changes
     this.button.style.transformOrigin = '0 50%'; // it scales about its visual centre (its transform pulls it left by half)
     this.noHit = true; // a click there is for the button it carries
     window.FOURMI_OPEN_EN_ROUTE = true;
@@ -65,6 +69,11 @@ export class FourmiOpen {
   // the ant's length at the pillar's distance in scene px; the swarm scales it with the depth
   fixedPx() { return LEN * 1000 * this.pxmm0(); }
   poke() {} // at work: it does not run off when clicked
+  // the button at its place: its centre's world y, its height and its centre's height on the pillar (m)
+  btn() {
+    const hW = this.btnPx / this.W.k, y = BTN_TOP + hW / 2;
+    return { y, h: (hW * FACE) / CAM.F, at: CAM.EYE - ((y - CAM.Y0) * FACE) / CAM.F };
+  }
   // a point X to the side, Z away, h high, as the swarm's scene point
   at(X, Z, h) {
     const wx = CAM.CX + (CAM.F * X) / Z, wy = CAM.Y0 + (CAM.F * (CAM.EYE - h)) / Z;
@@ -76,36 +85,44 @@ export class FourmiOpen {
     const st = this.button.style;
     st.visibility = 'visible';
     st.zIndex = '7'; // in the scene while carried: behind the ant that holds it and the clumps nearer than it
-    st.translate = `${((wx - CAM.CX) * k).toFixed(1)}px ${((wy - BTN_Y) * k).toFixed(1)}px`;
+    st.translate = `${((wx - CAM.CX) * k).toFixed(1)}px ${((wy - this.btn().y) * k).toFixed(1)}px`;
     st.scale = (FACE / Z).toFixed(4);
   }
   update(dt) {
     if (this.state === 'done') return;
     this.visible = true;
-    const step = SPEED * dt;
+    const step = SPEED * dt, B = this.btn();
     if (this.state === 'walk') {
       this.s = Math.min(this.path.len, this.s + step);
       const [X, Z] = along(this.path, this.s), [X2, Z2] = along(this.path, this.s + 0.03);
       const P = this.at(X, Z, 0), Q = this.at(X2, Z2 === Z ? Z + 0.01 : Z2, 0);
       this.P = P; this.fwd = [Q[0] - P[0], Q[1] - P[1], Q[2] - P[2]];
       const d = Math.hypot(X2 - X, Z2 - Z) || 1, ax = (X2 - X) / d, az = (Z2 - Z) / d;
-      this.carry(X + ax * GRIP_AHEAD, Z + az * GRIP_AHEAD, GRIP_UP + BTN_H / 2);
+      this.carry(X + ax * GRIP_AHEAD, Z + az * GRIP_AHEAD, GRIP_UP + B.h / 2);
       if (this.s >= this.path.len) { this.state = 'climb'; this.X = X; }
     } else if (this.state === 'climb') {
       // up the face, head up, its back to the viewer: from above, in the level baked at one azimuth, turned head up
-      const top = BTN_H_AT - BTN_H / 2 - GRIP_AHEAD;
+      const top = B.at - B.h / 2 - GRIP_AHEAD;
       this.h = Math.min(top, this.h + step);
       this.lod = 'H';
       this.view = { lod: 'H', az: 90, el: 90, rotation: Math.PI / 2 };
       this.P = this.at(this.X, FACE - 0.01, this.h);
       this.fwd = [0, -1, 0];
-      this.carry(this.X, FACE - 0.01 - GRIP_UP, this.h + GRIP_AHEAD + BTN_H / 2);
+      this.carry(this.X, FACE - 0.01 - GRIP_UP, this.h + GRIP_AHEAD + B.h / 2);
       if (this.h >= top) this.set();
-    } else if (this.state === 'leave') {
-      // it lets go, then climbs on over the pillar's top and out of sight behind the bouquet
-      this.h += step * 0.8;
-      this.P = this.at(this.X, FACE - 0.01, this.h);
-      if (this.h > BTN_H_AT + 0.12) { this.state = 'done'; this.visible = false; }
+    } else if (this.state === 'turn') {
+      // it lets go and turns on the spot to its right, head up to head right and a little down
+      this.t += dt;
+      const u = Math.min(1, this.t / 0.35);
+      this.view = { lod: 'H', az: 90, el: 90, rotation: Math.PI / 2 + (Math.PI / 2 + SIDE_DOWN) * u * u * (3 - 2 * u) };
+      if (u >= 1) this.state = 'side';
+    } else if (this.state === 'side') {
+      // across the face to the pillar's edge, where it goes round out of sight, the face curving away from the viewer
+      this.X += step * Math.cos(SIDE_DOWN);
+      this.h -= step * Math.sin(SIDE_DOWN);
+      if (this.X >= PIL_R) { this.state = 'done'; this.visible = false; return; }
+      this.P = this.at(this.X, AXIS - Math.sqrt(PIL_R * PIL_R - this.X * this.X) - 0.01, this.h);
+      this.fwd = [Math.cos(SIDE_DOWN), Math.sin(SIDE_DOWN), 0];
     }
     this.phase += step / STRIDE;
     this.frame = Math.floor((((this.phase % 1) + 1) % 1) * 8) % 8;
@@ -114,7 +131,7 @@ export class FourmiOpen {
   set() {
     const st = this.button.style;
     st.translate = ''; st.scale = ''; st.transformOrigin = ''; st.visibility = ''; st.zIndex = '';
-    this.state = 'leave'; this.pose = 'marche';
+    this.state = 'turn'; this.t = 0; this.pose = 'marche';
     this.done();
   }
 }
