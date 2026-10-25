@@ -43,18 +43,20 @@ const BQ_SHARE = 0.25;
 
 // who flies on the site: three times the first cast (owner, 2026-10-25: « triple le nombre d'insectes », more bush-crickets
 // jumping, more bees, bumblebees, ladybirds, chafers and butterflies flying in the sky and far off; the shop-design rule of
-// three butterflies at most is lifted by that request), 42 in all. n of each kind visit flowers; sky more pass by without
-// landing (an empty list of flowers: each comes in from the far meadow, from above or from a side and flies out again, across
-// the sky). Ground: the bush-crickets land on the beds' flowers only, and jump from one to the next.
+// three butterflies at most is lifted by that request), 42 in all. n of each kind visit flowers; front more only the
+// foreground's swaying clumps, where they show large (owner, the same day: « pas suffisamment d'insectes sur les fleurs du
+// premier plan, celles qui bougent »); sky more pass by without landing (an empty list of flowers: each comes in from the far
+// meadow, from above or from a side and flies out again, across the sky). Ground: the bush-crickets land on the beds' flowers
+// only, and jump from one to the next.
 const CAST = [
-  { kind: 'abeille', n: 8, sky: 4, mod: 'abeille.mjs', make: (M, a) => new M.Abeille(...a, { maxVisible: 12 }), mm: () => 12.5 },
-  { kind: 'bourdon', n: 4, sky: 2, mod: 'bourdon.mjs', make: (M, a) => new M.Bourdon(...a), mm: (M) => M.BOURDON.bodyMm },
-  { kind: 'coccinelle', n: 4, sky: 2, mod: 'coccinelle.mjs', wings: 1.6, make: (M, a) => new M.Coccinelle(...a), mm: (M) => M.COCCINELLE.bodyMm },
-  { kind: 'machaon', n: 2, sky: 1, mod: 'papillon.mjs', wings: true, make: (M, a) => new M.Papillon(a[0], a[1], a[2], { species: M.MACHAON }), mm: (M) => M.MACHAON.bodyMm },
-  { kind: 'paon-du-jour', n: 4, sky: 2, mod: 'papillon.mjs', wings: true, make: (M, a) => new M.Papillon(a[0], a[1], a[2], { species: M.PAON }), mm: (M) => M.PAON.bodyMm },
-  { kind: 'cetoine', n: 2, sky: 1, mod: 'cetoine.mjs', wings: true, make: (M, a) => new M.Cetoine(...a), mm: (M) => M.CETOINE.bodyMm },
-  { kind: 'moro-sphinx', n: 2, sky: 1, mod: 'moro-sphinx.mjs', wings: true, make: (M, a) => new M.Sphinx(...a), mm: (M) => M.SPHINX.bodyMm },
-  { kind: 'sauterelle', n: 3, mod: 'sauterelle.mjs', wings: true, ground: true, make: (M, a) => new M.Sauterelle(...a), mm: (M) => M.SAUTERELLE.bodyMm },
+  { kind: 'abeille', n: 5, front: 3, sky: 4, mod: 'abeille.mjs', make: (M, a) => new M.Abeille(...a, { maxVisible: 12 }), mm: () => 12.5 },
+  { kind: 'bourdon', n: 2, front: 2, sky: 2, mod: 'bourdon.mjs', make: (M, a) => new M.Bourdon(...a), mm: (M) => M.BOURDON.bodyMm },
+  { kind: 'coccinelle', n: 2, front: 2, sky: 2, mod: 'coccinelle.mjs', wings: 1.6, make: (M, a) => new M.Coccinelle(...a), mm: (M) => M.COCCINELLE.bodyMm },
+  { kind: 'machaon', n: 1, front: 1, sky: 1, mod: 'papillon.mjs', wings: true, make: (M, a) => new M.Papillon(a[0], a[1], a[2], { species: M.MACHAON }), mm: (M) => M.MACHAON.bodyMm },
+  { kind: 'paon-du-jour', n: 2, front: 2, sky: 2, mod: 'papillon.mjs', wings: true, make: (M, a) => new M.Papillon(a[0], a[1], a[2], { species: M.PAON }), mm: (M) => M.PAON.bodyMm },
+  { kind: 'cetoine', n: 1, front: 1, sky: 1, mod: 'cetoine.mjs', wings: true, make: (M, a) => new M.Cetoine(...a), mm: (M) => M.CETOINE.bodyMm },
+  { kind: 'moro-sphinx', n: 1, front: 1, sky: 1, mod: 'moro-sphinx.mjs', wings: true, make: (M, a) => new M.Sphinx(...a), mm: (M) => M.SPHINX.bodyMm },
+  { kind: 'sauterelle', n: 2, front: 1, mod: 'sauterelle.mjs', wings: true, ground: true, make: (M, a) => new M.Sauterelle(...a), mm: (M) => M.SAUTERELLE.bodyMm },
 ];
 const NO_FLOWERS = [];
 
@@ -183,7 +185,7 @@ async function start(clumpsOn) {
 
   // the flowers: of the meadow and of the clumps (always), of the bouquet (once grown); each kind has its own list, the
   // ground's flowers within its reach (MIN_PX), the bush-cricket's without the bouquet's
-  const flowers = [], lists = new Map();
+  const flowers = [], lists = new Map(), fronts = new Map();
   const bqFlowers = [];
   const meadow = heads.sol
     .filter((h) => h[1] < WH - 12 && h[3] < 14)
@@ -211,6 +213,9 @@ async function start(clumpsOn) {
       const bq = c.ground ? [] : bqFlowers.filter((f, i) => (Math.abs(Math.sin((i + 1) * 12.9898 + k * 78.233) * 43758.5453) % 1) < BQ_SHARE);
       L.splice(0, L.length, ...ground.filter((f) => f.Z <= zMax), ...bq);
     }
+    // the foreground's visitors: the heads of the clumps on screen
+    const near = clumpHeads.filter(shown);
+    for (const L of fronts.values()) L.splice(0, L.length, ...near);
   };
 
   // the bouquet's heads: their hearts, each in front of its own box
@@ -272,7 +277,7 @@ async function start(clumpsOn) {
   let seed = (Date.now() % 1e9) >>> 0;
   const rnd = () => ((seed = (seed * 1664525 + 1013904223) >>> 0) / 4294967296);
   const insects = [];
-  for (const c of CAST) lists.set(c, []);
+  for (const c of CAST) { lists.set(c, []); fronts.set(c, []); }
   const loadCast = async () => {
     for (const c of CAST) {
       const url = `${BASE}${c.kind}/atlas/${c.kind}`;
@@ -280,8 +285,9 @@ async function start(clumpsOn) {
       if (c.wings) await essaim.wings(c.kind, url + '-ailes');
       if (typeof c.wings === 'number') K.wingsDepth = c.wings;
       const M = mods[c.mod];
-      for (let i = 0; i < c.n + (c.sky || 0); i++) {
-        const s = c.make(M, [essaim, i < c.n ? lists.get(c) : NO_FLOWERS, rnd]);
+      const nf = c.n + (c.front || 0);
+      for (let i = 0; i < nf + (c.sky || 0); i++) {
+        const s = c.make(M, [essaim, i < c.n ? lists.get(c) : i < nf ? fronts.get(c) : NO_FLOWERS, rnd]);
         s.bodyMm = c.mm(M);
         s.lengthPx = s.bodyMm * pxmm0;
         essaim.add(s);
@@ -443,6 +449,11 @@ async function start(clumpsOn) {
     for (const s of insects) {
       s.lengthPx = s.fixedPx ? s.fixedPx() : sizeOf(s);
       s.update(dt);
+      // at a flower of a foreground clump, over that clump: its heads lie deeper than its foot, whose distance sorts the
+      // clump's sprite, so an insect on one was drawn behind its own clump (owner, 2026-10-25: too few insects seen there);
+      // the clumps nearer than it still hide it
+      const f = s.flower;
+      s.zLift = f && f.kind === 'tf' && f.P && f.c.s && Math.hypot(s.P[0] - f.P[0], s.P[1] - f.P[1]) < Math.max(40, f.r * 4) ? Math.max(0, f.c.s.zIndex + 2 - s.P[2]) : 0;
     }
     essaim.render();
     if (first) {

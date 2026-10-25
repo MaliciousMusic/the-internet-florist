@@ -344,3 +344,9 @@ l'identité de son éditeur dans ses mentions légales.
 - 2026-10-25, ordre d'arrivée du HUD (porteur) : barre d'outils et pager d'abord, puis la fourmi d'Open, et la pastille Legal
   quand elle est à mi-chemin. La fourmi repart en passant derrière le pilier. Trois fois plus d'insectes dans la scène
   (42), dont des passants qui traversent le ciel.
+- 2026-10-25, porteur : les voiles du ciel ne bougent plus (« le mouvement des nuages est imperceptible ») ; chaque bande
+  reste où sa boucle la mettait au chargement, sans animation. Plus d'ombres portées dans les bouquets du site : le filtre
+  d'ombre du dessin (`cs<n>`, décalé de 4 et 6 et flouté) tombait sur un mur imaginaire, donc sur le ciel, à côté des
+  fleurs et au pied du vase. `paquet.mjs` le retire en empaquetant ; les sept `ouvert.json` sont refaits. L'ombre de
+  contact du vase, sur le dessus du pilier, reste. Les insectes posés sur les touffes du premier plan passent devant leur
+  touffe (ils étaient cachés derrière) ; treize d'entre eux ne visitent que ces touffes.

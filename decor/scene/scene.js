@@ -7,12 +7,12 @@
 //                 { "src": "nuage-3.svg", "rang": "hauts"|"bas", "y": 12, "w": 9, "t": 180, "d": -40 }],
 //     "touffes": [{ "src": "touffe-2.svg", "x": 31, "b": -2, "w": 12, "a": 1.2, "t": 3.6 }] }
 // y, w, x, b are % of the world frame (2400 x 1350); t and d are seconds; a is the sway in degrees.
-// Two kinds of drifting sky pieces:
+// Two kinds of sky pieces, still since 2026-10-25 (owner: « le mouvement des nuages dans le fond est imperceptible »): each
+// stands where its old drift had it at the load (t the old period, d its negative delay):
 // - "boucle" (the veils of voiles.mjs): a band image 4800 wide, periodic every 2400 (one tile), shown at 200 % of
-//   the world's width, top at y %, sliding left to right by half its width in t seconds and looping; the tile wraps,
-//   so the loop has no seam and the sky is never empty. "lumiere" (optional) is a static brightness across the world,
-//   [x %, factor], set as a mask on the band's plane (it stays put while the band slides under it).
-// - otherwise (one cloud per image): it crosses the world from just off the left edge to just off the right edge.
+//   the world's width, top at y %. "lumiere" (optional) is a static brightness across the world, [x %, factor], set as a
+//   mask on the band's plane.
+// - otherwise (one cloud per image): somewhere on the way from just off the left edge to just off the right edge.
 // The order of loading (2026-10-16, measured on a phone): the sky and the horizon, then the veils and the ground (the
 // static layers cut to the phone's column when it is all that shows; ?plein=1 always takes the full ones), then
 // boutique.js prepares the bouquet whole and grows it, then the clumps on screen come, one at a time when the page is idle.
@@ -171,8 +171,9 @@
     .then(([m]) => {
       for (const n of m.nuages || []) {
         const plan = document.getElementById(n.rang === 'bas' ? 'nuages-bas' : 'nuages-hauts');
+        const f = (((-n.d / n.t) % 1) + 1) % 1; // the fraction of its old drift it stands at
         if (n.boucle) {
-          const el = img(n.src, { '--y': `${n.y}%`, '--t': `${n.t}s`, '--d': `${n.d}s` });
+          const el = img(n.src, { '--y': `${n.y}%`, '--f': f.toFixed(4) });
           el.className = 'bande';
           plan.append(el);
           if (n.lumiere) {
@@ -182,7 +183,7 @@
           }
           continue;
         }
-        const el = img(n.src, { '--y': `${n.y}%`, '--w': `${n.w}%`, '--t': `${n.t}s`, '--d': `${n.d}s` });
+        const el = img(n.src, { '--y': `${n.y}%`, '--w': `${n.w}%`, '--f': f.toFixed(4) });
         el.className = 'nuage';
         plan.append(el);
       }

@@ -192,6 +192,12 @@ pilier », « triple le nombre d'insectes ».
   passants entrent par la prairie lointaine, par le haut ou par un côté, et traversent le ciel. Les fleurs lointaines sont
   visitées dès qu'un insecte y fait 2 px, au lieu de 3. La règle d'au plus trois papillons tombe avec cette demande. Mesuré
   à 136 images par seconde, 95 % des images sous 14 ms, avec 30 insectes visibles à la fois.
+- **Premier plan** (porteur, même jour : « pas suffisamment d'insectes sur les fleurs du premier plan, celles qui bougent ») :
+  les insectes posés sur les touffes du premier plan étaient dessinés derrière leur propre touffe. La touffe se trie à la
+  distance de son pied, ses fleurs sont plus loin. Un insecte à une fleur de touffe passe maintenant juste devant elle
+  (clé `zLift` de l'essaim), et reste derrière les touffes plus proches. Treize des 42 insectes (au moins un de chaque
+  espèce) ne visitent plus que ces touffes. Mesuré : 12 insectes en moyenne à la fois sur le premier plan, à leur vraie
+  taille (de 12 px pour une abeille à 90 px pour une sauterelle sur un écran de 1 060 px), 144 images par seconde.
 
 Propositions, à valider sur le premier prototype :
 - ~~**Pose** : les fourmis marchent de profil sur le bord bas de l'écran comme sur un sol. Elles tiennent la case levée

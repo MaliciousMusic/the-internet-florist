@@ -167,7 +167,7 @@ export class Essaim {
       g.m.tint = (k << 16) | (k << 8) | k;
       // depth: the wing's middle toward the viewer, minus the body's radius (the body lies over the wings' bases)
       const mid = toS(at((s0 + s1) * 0.5, (q0 + q1) * 0.5));
-      g.m.zIndex = b.P[2] + ((mid[0] * eye[0] + mid[1] * eye[1] + mid[2] * eye[2]) - (K.wingsDepth ?? 2.4)) * mmS;
+      g.m.zIndex = b.P[2] + (b.zLift || 0) + ((mid[0] * eye[0] + mid[1] * eye[1] + mid[2] * eye[2]) - (K.wingsDepth ?? 2.4)) * mmS;
       // a wing's own opacity (ang.alpha: the chafer's ghost wings of the faux stroke; 0 hides a folded wing)
       if (ang.alpha !== undefined) g.m.alpha = ang.alpha;
       g.m.visible = ang.alpha !== 0;
@@ -222,7 +222,8 @@ export class Essaim {
       const sc = shown / lod.cell, sq = b.squash ?? 1;
       sp.scale.set((c.flip ? -sc : sc) * this.res * sq, sc * this.res);
       sp.rotation = v.rotation;
-      sp.zIndex = b.P[2];
+      // b.zLift (the shop's scene, 2026-10-25): added to the sort key only, the insect raised over the clump it stands on
+      sp.zIndex = b.P[2] + (b.zLift || 0);
       sp.position.set(this.cvx(q.x), this.cvy(q.y));
       sp.visible = true;
       b.screen = { x: q.x, y: q.y, r: shown * 0.28, view: v, lod: lodName };

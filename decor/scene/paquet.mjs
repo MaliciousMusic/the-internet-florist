@@ -33,6 +33,11 @@ const inner = (text, pre) => {
     .replace(/\b((?:xlink:)?href)="#([^"]+)"/g, `$1="#${pre}$2"`);
 };
 const SVG = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"';
+// no cast shadows in the shop's scene (owner, 2026-10-25: « les fleurs du vase projettent des ombres de background alors
+// qu'elles ne devraient pas, pareil pour le bottom du vase »): the drawing's drop shadow (filter cs<n>: the piece's
+// silhouette flooded dark, offset 4, 6 and blurred) fell on a wall behind the bouquet, and here there is open sky behind it.
+// The filter and its uses go; the vase's contact shadow, on the pillar's top under its foot, stays.
+const noCast = (text) => text.replace(/<filter id="cs\d+"[^>]*>[\s\S]*?<\/filter>/g, '').replace(/ filter="url\(#cs\d+\)"/g, '');
 
 for (const id of ids) {
   const dir = join(HERE, 'bouquets', id);
@@ -60,7 +65,7 @@ for (const id of ids) {
     run = null;
   };
   for (const p of m.pieces) {
-    const text = readFileSync(join(dir, p.f), 'utf8');
+    const text = noCast(readFileSync(join(dir, p.f), 'utf8'));
     if (p.z) {
       close();
       pieces.push({ b: p.b, o: p.o, z: p.z, s: text });
