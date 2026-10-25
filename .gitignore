@@ -82,3 +82,6 @@ fleur/res/ram.txt
 fleur/res/ram.json
 fleur/res/ramlive.pid
 fleur/res/ramlive.stop
+# secrets: API keys live only in .env, never committed
+.env
+.env.*
