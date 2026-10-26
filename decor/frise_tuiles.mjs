@@ -10,6 +10,7 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { gzipSync } from 'node:zlib';
 import { tiles } from './tuiles.mjs';
+import { stamp } from './frise_versions.mjs';
 import { renderCrop } from './compose.mjs';
 import { SLICES, HORIZON, TILE, PITCH, PLACES, LOOP, CX, PZ, stripX0, stripCX } from './frise.mjs';
 
@@ -92,5 +93,5 @@ if (old) {
     if (o && o.apercu && o.src === P.src) P.apercu = o.apercu;
   });
 }
-writeFileSync(join(OUT, 'frise.json'), JSON.stringify(manifest));
+writeFileSync(join(OUT, 'frise.json'), JSON.stringify(stamp(manifest, OUT)));
 console.log(`frise.json : ${order.length} bandes, ${manifest.piliers.length} piliers`);

@@ -146,14 +146,14 @@
     const a = B.cx - half - margin + shift;
     const b = B.cx + half + margin + shift;
     const want = new Set();
-    B.tiles.forEach(([x, w], j) => {
+    B.tiles.forEach(([x, w, ver], j) => {
       for (let m = Math.floor((a - x - w) / B.w) + 1; x + m * B.w < b; m++) {
         if (x + m * B.w + w <= a) continue;
         const key = `${j}:${m}`;
         want.add(key);
         if (B.on.has(key)) continue;
         const pre = B.apercus && B.apercus[j];
-        B.on.set(key, piece(B.el, 'frise-tuile', `${B.id}/${j}.svg`, [x, 0, w, B.h], pre, m * B.w - B.cx + M.cx));
+        B.on.set(key, piece(B.el, 'frise-tuile', `${B.id}/${j}.svg${ver ? `?v=${ver}` : ''}`, [x, 0, w, B.h], pre, m * B.w - B.cx + M.cx));
       }
     });
     // the tiles far behind go (two screens away)
@@ -191,7 +191,7 @@
       if (pillarImgs.has(key)) continue;
       const P = M.piliers[place];
       if (!P) continue;
-      pillarImgs.set(key, piece(pillarsEl, 'frise-pilier', P.src, P.boite, P.apercu, i * M.pas));
+      pillarImgs.set(key, piece(pillarsEl, 'frise-pilier', P.src + (P.v ? `?v=${P.v}` : ''), P.boite, P.apercu, i * M.pas));
     }
     for (const [key, P] of pillarImgs) {
       if (want.has(key)) continue;
@@ -274,7 +274,7 @@
         img.className = 'frise-touffe';
         img.style.cssText = `left:${pct(x0, WW)};top:${pct(by, WH)};width:${pct(bw, WW)};height:${pct(bh, WH)};transform-origin:${t.o}`;
         for (const [p, v] of Object.entries({ '--a': `${t.a}deg`, '--t': `${t.t}s`, '--d': `${t.d}s` })) img.style.setProperty(p, v);
-        img.src = OUT + t.src;
+        img.src = OUT + t.src + (t.v ? `?v=${t.v}` : '');
         clumpsEl.append(img);
         clumpOn.set(key, img);
       });
@@ -511,6 +511,8 @@
   // ---------- start
   let decorRes;
   const decor = new Promise((r) => (decorRes = r));
+  // (the files the manifests point to carry a digest of their content, ?v= (frise_versions.mjs, premier.mjs): a changed
+  // picture is never taken from a cache under a new box)
   const pret = fetch(`${OUT}frise/frise.json`)
     .then((r) => (r.ok ? r.json() : Promise.reject(new Error(`frise.json ${r.status}`))))
     .then(async (m) => {
@@ -557,7 +559,7 @@
                   if (!p) return null;
                   const fx = ((t.x + t.w / 2) / 100) * WW, fy = WH * (1 - t.b / 100);
                   const [bx, by, bw, bh] = p.box;
-                  return { src: p.src, box: p.box, a: t.a, t: t.t, d: -t.t + (t.x / 100) * 1.6, o: `${(((fx - bx) / bw) * 100).toFixed(2)}% ${(((fy - by) / bh) * 100).toFixed(2)}%` };
+                  return { src: p.src, v: p.v, box: p.box, a: t.a, t: t.t, d: -t.t + (t.x / 100) * 1.6, o: `${(((fx - bx) / bw) * 100).toFixed(2)}% ${(((fy - by) / bh) * 100).toFixed(2)}%` };
                 })
                 .filter(Boolean);
               draw();

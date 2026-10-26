@@ -11,6 +11,7 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { execFileSync } from 'node:child_process';
 import { createRequire } from 'node:module';
+import { stamp } from './frise_versions.mjs';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const OUT = join(HERE, 'out', 'frise');
@@ -73,5 +74,5 @@ jobs.forEach((j, n) => {
   if (j.band) (j.band.apercus ||= [])[j.j] = bb ? [rel, ...box] : null;
   else j.pillar.apercu = bb ? [rel, ...box] : null;
 });
-writeFileSync(join(OUT, 'frise.json'), JSON.stringify(M));
+writeFileSync(join(OUT, 'frise.json'), JSON.stringify(stamp(M, OUT)));
 console.log(`${jobs.length} images, ${Math.round(ko)} Ko de WebP (${PXU} px par unité) ; resvg ${Math.round(tR - t0)} ms, WebP ${Math.round(performance.now() - tR)} ms`);

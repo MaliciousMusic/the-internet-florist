@@ -9,12 +9,13 @@
 // that can show: from its top down to the frame's bottom (y 1350, or --bas: 1460 for the frieze) plus the reach of its sway (it turns about its foot, the
 // file's bottom centre), and within the world's width plus that reach. Its depth comes from its foot on the ground
 // (decor/PLAN.md: a point of the ground at Z m is at y = 722 + 1854 x 0.75 / Z).
-// premier.json: [{ src, box: [x, y, w, h] (world units of the sprite), pivot: [x, y], Z, a (deg), t (s), d (s) }]
+// premier.json: [{ src, box: [x, y, w, h] (world units of the sprite), pivot: [x, y], Z, a (deg), t (s), d (s), v (digest) }]
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { execFileSync } from 'node:child_process';
 import { createRequire } from 'node:module';
+import { createHash } from 'node:crypto';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const OUT = join(HERE, 'out');
@@ -67,7 +68,12 @@ for f in sorted(os.listdir(d)):
     Image.open(p).save(p[:-4] + '.webp', 'WEBP', quality=88, method=6, alpha_quality=90)
     os.remove(p)
 `, DEST]);
-for (const o of out) o.ko = Math.round(readFileSync(join(OUT, o.src)).length / 1024);
+// (v: a digest of the picture, which the page adds to its address so that a changed picture is never taken from a cache)
+for (const o of out) {
+  const b = readFileSync(join(OUT, o.src));
+  o.ko = Math.round(b.length / 1024);
+  o.v = createHash('md5').update(b).digest('hex').slice(0, 8);
+}
 writeFileSync(join(OUT, 'premier.json'), JSON.stringify(out));
 const gpu = out.reduce((a, o) => a + o.px[0] * o.px[1] * 4, 0) / 2 ** 20;
 console.log(`premier.json: ${out.length} touffes, ${out.reduce((a, o) => a + o.ko, 0)} Ko de WebP, ${gpu.toFixed(1)} Mo sur la carte graphique (${PXU} px par unité)`);

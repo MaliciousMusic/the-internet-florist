@@ -149,7 +149,9 @@ async function start(clumpsOn) {
   // the cast's kinds load one at a time once the scene's loop runs (loadCast below), the page idle between two (each atlas is
   // decoded and sent to the graphics card); the Open button's carrier comes first
   const idle = () => new Promise((r) => (window.requestIdleCallback ? requestIdleCallback(r, { timeout: 500 }) : setTimeout(r, 50)));
+  // (the clumps' pictures carry a digest of their content, premier.mjs: a changed picture is never taken from a cache)
   const [heads, clumpList] = await Promise.all([fetch(OUT + (FRISE ? 'frise/tetes.json' : 'tetes.json')).then((r) => r.json()), fetch(OUT + 'premier.json').then((r) => r.json())]);
+  const picture = (c) => OUT + c.src + (c.v ? `?v=${c.v}` : '');
   const FZ = FRISE ? { M: await window.Frise.pret, c: window.Frise.camera(), half: WW / 2, frame: 0, flip: false, built: 0 } : null;
   if (FRISE) heads.touffes = (await fetch(OUT + 'tetes.json').then((r) => r.json())).touffes;
 
@@ -179,7 +181,7 @@ async function start(clumpsOn) {
       const c = clumps.find((c) => !c.on && c.box[0] + c.box[2] > a - 40 && c.box[0] < b + 40);
       if (!c) break;
       c.on = true;
-      const tex = await Assets.load(OUT + c.src);
+      const tex = await Assets.load(picture(c));
       tex.source.scaleMode = 'linear';
       c.s.texture = tex;
       c.s.visible = true;
@@ -356,7 +358,7 @@ async function start(clumpsOn) {
     texBusy = true;
     while (texQueue.length) {
       const c = texQueue.shift();
-      const tex = await Assets.load(OUT + c.src);
+      const tex = await Assets.load(picture(c));
       tex.source.scaleMode = 'linear';
       c.tex = tex;
       await idle();
