@@ -1,10 +1,10 @@
 #!/bin/bash
-# ramwait.sh: before a modeller or a heavy render. Waits, up to 30 min, until free RAM is over the atelier's floor, 4 GB (owner, 2026-10-25:
+# ramwait.sh: before a modeller or a heavy render. Waits, up to 30 min, until free RAM is over the atelier's floor, 2.5 GB since 2026-10-26 (before: 4 GB, owner, 2026-10-25:
 # « 5,5 est exagéré, on peut descendre à 4 ; grave-le définitivement à 4 » ; 3 GB before, 4.5 before 2026-10-18). Prints RAM OK / RAM BASSE.
 # The RAM is read live from fleur/res/ram.txt, written every 2 s by fleur/res/ramlive.py; when that file is older than 10 s, the freshest
 # load log (fleur/res/vague*.csv, fleur/res.ps1) is the fallback, as before. Shell builtins only while waiting (the kernel token leak).
 R=C:/Users/agent/Desktop/flower/flower-atelier/fleur/res
-SEUILC=400
+SEUILC=250
 FF="$R/.ramwait-$$"; mkfifo "$FF" && exec 9<>"$FF"; rm -f "$FF"
 nap() { read -t "$1" -u 9 _; }
 for ((i = 1; i <= 180; i++)); do

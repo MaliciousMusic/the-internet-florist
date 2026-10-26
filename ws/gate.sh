@@ -21,7 +21,7 @@
 # 10 s. To throttle well, a job also waits GATE_SETTLE seconds (30) after the last start, the time a new render takes to reach its size.
 SP="C:/Users/agent/Desktop/flower/flower-atelier"
 LK=${GATE_LOCKS:-$SP/ws/locks}; Q="$LK/queue"; [ -d "$Q" ] || mkdir -p "$Q"
-MAX=${GATE_MAX:-3}; NEED=${GATE_RAM:-4}; CPU=${GATE_CPU:-85}; YIELD=${GATE_YIELD:-600}; POLL=${GATE_POLL:-20}; SETTLE=${GATE_SETTLE:-30}
+MAX=${GATE_MAX:-3}; NEED=${GATE_RAM:-2.5}; CPU=${GATE_CPU:-85}; YIELD=${GATE_YIELD:-600}; POLL=${GATE_POLL:-20}; SETTLE=${GATE_SETTLE:-30}
 RAMTXT="$SP/fleur/res/ram.txt"
 SLOT=""; waited=0; since=""
 case $NEED in *.*) i=${NEED%%.*}; f=${NEED#*.}; NEEDK=$(( ${i:-0} * 1048576 + ${f:0:1} * 104858 ));; *) NEEDK=$(( NEED * 1048576 ));; esac

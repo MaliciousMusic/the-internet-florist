@@ -1,19 +1,19 @@
 """ramlive.py: the PC's free RAM and CPU, live, for every tool that throttles (owner, 2026-10-25: « un module qui track la RAM libre pour
-qu'il puisse sourcer en live l'info et throttle optimalement » ; the floor is 4 GB, for good).
+qu'il puisse sourcer en live l'info et throttle optimalement » ; the floor is 2.5 GB since 2026-10-26).
 
   python fleur/res/ramlive.py [--every 2]        one instance (fleur/res/ramlive.pid), runs until fleur/res/ramlive.stop exists
 
 Every --every seconds it writes, each in one rename:
   fleur/res/ram.txt    one line read by shell builtins:  <epoch> <free GB> <cpu %> <lowest free GB over 60 s> <floor GB>
   fleur/res/ram.json   the same, plus the last 60 s of samples (the live page and the runner read it)
-The floor (SEUIL, 4 GB) is the one threshold of the atelier: ws/gate.sh, fleur/res/ramwait.sh and the live runner start a heavy job or a
+The floor (SEUIL, 2.5 GB) is the one threshold of the atelier: ws/gate.sh, fleur/res/ramwait.sh and the live runner start a heavy job or a
 model call only above it. A reader treats a file older than 10 s as absent (the sampler stopped) and falls back to its own measure.
 No process is spawned: RAM by GlobalMemoryStatusEx, CPU by GetSystemTimes, both through ctypes (the kernel token leak, 2026-10-24).
 """
 import ctypes, json, os, sys, time, argparse
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-SEUIL = 4.0  # GB of free RAM (owner, 2026-10-25: « 5,5 est exagéré, on peut descendre à 4 ; grave-le définitivement à 4 »)
+SEUIL = 2.5  # GB of free RAM (owner, 2026-10-26: the floor goes from 4 to 2.5 GB; 2026-10-25 it was 4)
 
 
 class MEM(ctypes.Structure):
