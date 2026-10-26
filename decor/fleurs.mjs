@@ -336,6 +336,10 @@ function scOf(sid) {
 // colourway, never the same as its left neighbour, a height of its own (t: 0 the species' shortest, 1 its tallest) and a
 // breeze that leans its heads a little the same way.
 const ZNEAR = 1.6, ZFAR = 90;
+// The strip of the frame planted, in screen units (default the frame and 30 units beyond each side). The frieze
+// (frise_sol.mjs) plants a strip as long as its loop: setStrip([x0, x1]).
+let STRIP = [-30, W + 30];
+export const setStrip = (xr) => { STRIP = xr || [-30, W + 30]; };
 const PZ = 4.37, RB = 0.235 * 1.08; // the pillar's axis and foot radius (sol.mjs)
 function mkDrift(r, sid, cw, X, Z, rx, rz, row, extra = {}) {
   const low = lowOf(sid, cw);
@@ -356,9 +360,10 @@ export function drifts(seed = 1, okAt = () => 1, split = SPLIT) {
     const g = Math.max(0.72, Z / 9);
     const dz = 0.62 * g * r.range(0.8, 1.2);
     const dx = 1.7 * g;
-    const half = (W / 2 + 60) * (Z + dz / 2) / F;
-    let X = -half - r.range(0, dx), prev = null;
-    while (X < half) {
+    const Zc = Z + dz / 2;
+    const xa = ((STRIP[0] - 30 - CX) * Zc) / F, xb = ((STRIP[1] + 30 - CX) * Zc) / F;
+    let X = xa - r.range(0, dx), prev = null;
+    while (X < xb) {
       const cx = X + dx * r.range(0.2, 0.8), cz = Z + dz * r.range(0.25, 0.75);
       X += dx * r.range(0.75, 1.25);
       if (r() > cover(cz)) { prev = null; continue; }
@@ -612,7 +617,7 @@ export function plant(seed = 1, { okAt = () => 1, canopy = (X, Z) => canopyAt(X,
         // (round the pillar the gardener's bulbs stand right up to the mown collar)
         if (m < (isLow || d.pilier ? 0.3 : 0.55)) continue;
         const [sx0] = project(X, 0, Z);
-        if (sx0 < -60 || sx0 > W + 60) continue;
+        if (sx0 < STRIP[0] - 30 || sx0 > STRIP[1] + 30) continue;
         const can = canopy(X, Z) * low(X, Z) * (m < 1 ? lerp(0.45, 1, m) : 1);
         // its height: its head and a share of stem over the grass, the drift's own (t: from just over the grass to
         // well above it), spread inside it, within the species' range; its size grows a little with it
@@ -708,7 +713,7 @@ export function plant(seed = 1, { okAt = () => 1, canopy = (X, Z) => canopyAt(X,
           const X = d.X + u * d.rx * cr - v * d.rz * sr, Zp = Zr + u * d.rx * sr;
           const hm = (hr[0] * 0.85 + r() * (hr[1] - hr[0] * 0.85)) / 100 - (f.head * k0) / 200;
           const [x, y] = project(X, hm, Zp);
-          if (x < -5 || x > W + 5) continue;
+          if (x < STRIP[0] + 25 || x > STRIP[1] - 25) continue;
           dots.push([x, y]);
           if (r() < 0.55) lits.push([x - Ws * 0.15, y - Hs * 0.18]);
         }

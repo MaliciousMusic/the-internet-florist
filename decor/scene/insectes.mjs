@@ -73,7 +73,9 @@ plane?.addEventListener('eclosion:repli', (ev) => {
 });
 let live = null;
 
-if (scene && monde && plane && !RM && q.get('insectes') !== '0') {
+// (the catalogue frieze, frise.js: not with its travelling camera yet, unless ?insectes=1)
+const FRISE = !!document.getElementById('frise-ancre');
+if (scene && monde && plane && !RM && (FRISE ? q.get('insectes') === '1' : q.get('insectes') !== '0')) {
   // scene.js leaves the foreground's clumps to this module while it runs (or until it fails)
   let done, failed;
   window.PREMIER_PIXI = new Promise((a, b) => ((done = a), (failed = b)));

@@ -27,7 +27,10 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { gzipSync } from 'node:zlib';
 
-const W = 2400, Y0 = 722, F = 1854, EYE = 1.7, CX = 1200;
+// W and CX change only for the frieze's strip (opts.largeur, opts.axe of horizon()); the noises along x keep their
+// scale per unit (W0)
+let W = 2400, CX = 1200;
+const W0 = 2400, Y0 = 722, F = 1854, EYE = 1.7;
 const TAU = Math.PI * 2;
 
 // ---------- random ----------
@@ -864,7 +867,7 @@ function rankC(rng, P, h) {
   const dN = noise1(rng, 2), hN = noise1(rng, 3), gN = noise1(rng, 2), tN = noise1(rng, 2);
   let x = -20;
   while (x < W + 20) {
-    const u = x / W, D = lerp(2100, 3400, (dN(u * 2.4 + 3) + 1) / 2), k = ppm(D), fy = footY(D);
+    const u = x / W0, D = lerp(2100, 3400, (dN(u * 2.4 + 3) + 1) / 2), k = ppm(D), fy = footY(D);
     const wooded = gN(u * 4.5 + 1) > -0.45;
     const lobes = [];
     const n = rng.int(3, 9);
@@ -903,7 +906,7 @@ function rankC(rng, P, h) {
 function rankB(rng, P, h) {
   const st = new Strip(-30, Y0 - 44, W + 30, Y0 + 3.4, h, 1300);
   const dN = noise1(rng, 2), tN = noise1(rng, 2), hN = noise1(rng, 3), lN = noise1(rng, 2);
-  const Dof = (x) => lerp(1000, 1650, (dN((x / W) * 2.2 + 7) + 1) / 2);
+  const Dof = (x) => lerp(1000, 1650, (dN((x / W0) * 2.2 + 7) + 1) / 2);
   const shadows = [];
   // over the calm centre the cap would set every crown to the same height (a flat line): there the curtain gets
   // its own lows and highs, 7-16 units along a noise of ~90 units
@@ -918,7 +921,7 @@ function rankB(rng, P, h) {
   const pop = rng() < 0.85 ? (rng() < 0.5 ? rng.range(160, 640) : rng.range(1760, 2240)) : -1e9;
   let x = -40;
   while (x < W + 40) {
-    const u = x / W, D = Dof(x) + rng.range(-20, 20), k = ppm(D);
+    const u = x / W0, D = Dof(x) + rng.range(-20, 20), k = ppm(D);
     // in the phone column the curtain is a wood all along (the owner's frame: a continuous mass behind the edge)
     const t = Math.abs(x - CX) < 430 ? Math.max(0, tN(u * 4.2 + 2)) : tN(u * 4.2 + 2), lit = 2.2 * lN(u * 6 + 1);
     if (Math.abs(x - pop) < 1) {
@@ -1307,10 +1310,19 @@ function paintStrip(st, r, P, coarse = 1) {
 
 // Weight budget (plan: < 120 KB gzip for this plane): a seed that goes over is drawn again, the same way, with
 // simpler inner tone outlines (the silhouettes keep their detail), so a seed always gives the same horizon.
+// opts.largeur, opts.axe (the frieze, frise_horizon.mjs): a strip that wide (default 2400), the opening pillar's axis at
+// x = axe in it (default 1200); the weight budget grows with the width
 export function horizon(seed = 1, opts = {}) {
-  let coarse = 1, svg = draw(seed, opts, coarse);
-  while (!opts.only && coarse < 2 && gzipSync(svg, { level: 9 }).length > 120 * 1024) { coarse *= 1.25; svg = draw(seed, opts, coarse); }
-  return svg;
+  const keep = [W, CX];
+  W = opts.largeur || 2400;
+  CX = opts.axe ?? W / 2;
+  try {
+    let coarse = 1, svg = draw(seed, opts, coarse);
+    while (!opts.only && coarse < 2 && gzipSync(svg, { level: 9 }).length > ((120 * W) / W0) * 1024) { coarse *= 1.25; svg = draw(seed, opts, coarse); }
+    return svg;
+  } finally {
+    [W, CX] = keep;
+  }
 }
 function draw(seed, opts, coarse) {
   setSky(opts.sky || SKY_DEFAULT);

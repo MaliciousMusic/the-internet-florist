@@ -86,3 +86,6 @@ fleur/res/ramlive.stop
 .env
 .env.*
 fleur/res/ramlive.err
+
+# the catalogue frieze: its strips before they are cut into tiles (frise_sol.mjs, frise_horizon.mjs; regenerated in seconds)
+decor/out/frise/src/

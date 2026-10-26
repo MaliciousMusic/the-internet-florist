@@ -51,14 +51,11 @@
     <img class="plan" style="--z:0" data-src="ciel.svg" alt="" decoding="async" fetchpriority="high">
     <div class="plan nuages hauts" style="--z:1" id="nuages-hauts"></div>
     <div class="plan nuages bas" style="--z:2" id="nuages-bas"></div>
-    <img class="plan" style="--z:3" data-src="horizon.svg" alt="" decoding="async" fetchpriority="high">
-    <!-- The flowered ground, composed by depth (sol.mjs + fleurs.mjs: meadow, path, slabs, pillar, flowers), split into
-         three files of similar drawing cost so the browser rasterises them in parallel. -->
-    <img class="plan" style="--z:4" data-src="sol-loin.svg" alt="" decoding="async">
-    <img class="plan" style="--z:5" data-src="sol-milieu.svg" alt="" decoding="async">
-    <div class="pilier-repere" aria-hidden="true"></div>
-    <img class="plan" style="--z:7" data-src="sol-pres.svg" alt="" decoding="async">
-    <div class="plan bouquet" style="--z:8" id="bouquet" role="img" aria-label=""></div>
+    <!-- The catalogue frieze (frise.js, decor/FRISE.md): the horizon and the ground's depth slices as looping strips of
+         tiles, each sliding at its own speed as the camera travels, and the 21 pillars between them, laid here at load;
+         the bouquets in #bouquet, one plane per place in view, over the whole ground as before. -->
+    <div id="frise-ancre" hidden></div>
+    <div class="plan bouquet frise-bouquets" style="--z:8" id="bouquet" role="img" aria-label=""></div>
     <!-- the bouquet's place in the world (its manifest's box): a click brings the camera closer (boutique.js) -->
     <button class="bq-cible" id="bq-cible" type="button" aria-pressed="false" aria-label="{{index.lookCloser}}" hidden></button>
     <button class="bq-voir" id="bq-voir" type="button" hidden>{{index.open}}</button>
@@ -133,6 +130,7 @@
 <script src="scene.js"></script>
 <script src="eclosion.js" defer></script>
 <script src="entete.js" defer></script>
+<script src="frise.js" defer></script>
 <script src="boutique.js" defer></script>
 <script type="module" src="insectes.mjs"></script>
 <script type="module" src="porteuses.mjs"></script>
