@@ -20,6 +20,13 @@ Décisions et lots : [FRISE.md](FRISE.md). Ce fichier décrit ce qui est constru
   le chemin le plus court). Un toucher sur un bouquet de côté l'amène au centre.
 - **Le nom du bouquet** face à la caméra s'écrit dans le ciel en Nunito ExtraLight, blanc. Il glisse plus lentement que les
   piliers et s'efface quand son bouquet quitte le centre. Il est caché en gros plan.
+- **Le gros plan** (un clic sur le bouquet face à la caméra) ne montre que ce bouquet : ses voisins se cachent sur leurs
+  piliers. Le bouton « Ouvrir » et son bourdon sont retirés (porteur, 26 octobre). Le bouton Acheter porte le prix dans la
+  monnaie du visiteur (plus de prix en ETH à l'écran) et, dessous, la durée avant la fanaison ; la ligne « 0 % de royalties »
+  est retirée.
+- **Le rond tondu** autour de chaque pilier et le chemin d'ouverture repoussent en herbe haute sur environ un demi-mètre,
+  d'un bord qui ondule d'une vingtaine de centimètres (`WALK_FRISE`, frise_sol.mjs) : la limite entre herbe haute et gazon
+  ras se lisait comme un trait sous les piliers.
 - **Le pager** a 7 points, un par bouquet en vente (porteur, 26 octobre : les 21 points sortaient des bords du téléphone).
   Le point du bouquet face à la caméra s'allonge, où qu'il soit dans la boucle ; un point fait voyager la caméra jusqu'à la
   place de ce bouquet la plus proche. Le bouton « Open », la bulle Acheter et le gros plan suivent le bouquet face à la
@@ -37,7 +44,8 @@ Décisions et lots : [FRISE.md](FRISE.md). Ce fichier décrit ce qui est constru
 - **Ordinateur** : 2 400 unités de large (3 bouquets entiers, et le 1ᵉʳ et le 5ᵉ coupés par les bords). **Téléphone debout** :
   850 unités de large (`?vue=` pour essayer ; porteur, 26 octobre : à 1 180 les bouquets étaient trop petits et le ciel
   trop grand). Le bouquet est centré sur l'écran (le y 470 du monde à mi-hauteur), le bord des bouquets voisins larges se
-  voit encore. Sous l'ancien cadre, le sol proche et les touffes sont dessinés jusqu'à y 1 460, pour que le sol fleuri
+  voit encore ; le bas de l'écran reste entre y 1 350 (touffes entières, pour les fenêtres moins hautes qu'un téléphone) et
+  y 1 460. Sous l'ancien cadre, le sol proche et les touffes sont dessinés jusqu'à y 1 460, pour que le sol fleuri
   descende jusqu'au bas de l'écran (porteur, 26 octobre : « bouquet centré », moins de ciel). Le ciel continue au-dessus du
   monde, en dégradé jusqu'au zénith ; le nom du bouquet y monte, juste sous le pager.
 

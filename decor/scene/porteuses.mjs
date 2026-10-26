@@ -1,10 +1,10 @@
 // porteuses.mjs: the HUD's carriers (owner's QCM of 2026-10-24, insectes/DECISIONS.md "Fourmis du HUD"). Black garden ants
 // (Lasius niger) bring the HUD's pieces, once per page load (owner, 2026-10-25: nothing is taken down when the close-up closes
 // and opens again; only a reload brings them anew): the footer's pill and, on a computer, the dock when the page opens, Buy with
-// its price at the first close-up (the resale line then shows by itself). They walk at the ant's real speed, in from the left
+// its price and its lifespan at the first close-up. They walk at the ant's real speed, in from the left
 // and out to the right. A piece answers clicks while it is carried. Flying insects lay the other pieces, once per load too: the
-// phone's dock (two butterflies), the pager (a ladybird and a rose chafer), and the bubble's two small boxes over Buy, "Fades
-// in" and "On your desktop" (two honeybees each, owner 2026-10-25).
+// phone's dock (two butterflies), the pager (a ladybird and a rose chafer), and the bubble's small box over Buy, "On your
+// desktop" (two honeybees, owner 2026-10-25; the lifespan's box went into Buy on 2026-10-26).
 //
 // Seen from the side (owner, the same evening: "vu horizontalement sur le rebord", "jamais en paire", "fais attention au
 // overlap"): the screen's bottom edge is a ledge, and every piece at rest is a block whose top is a ledge too. One ant carries
@@ -52,7 +52,7 @@ if (root.classList.contains('porteuses')) {
 // the pieces back in their places, the class off: the HUD as it was without the ants
 function stopAll() {
   root.classList.remove('porteuses');
-  for (const el of document.querySelectorAll('.dock, .pager, .pied-poignee, .achat-vie, .achat-demo, .achat-bouton, .achat-revente')) {
+  for (const el of document.querySelectorAll('.dock, .pager, .pied-poignee, .achat-demo, .achat-bouton')) {
     el.style.translate = ''; el.style.visibility = ''; el.style.rotate = '';
   }
 }
@@ -367,9 +367,9 @@ async function start() {
   const pill = mk('.pied-poignee', { name: 'pill' });
   if (pill) pill.low = true;
   const dock = DESK.matches ? mk('.dock', { name: 'dock' }) : null;
-  // Buy set: the resale line shows, and the bubble comes and goes whole with the close-up from then on (boutique.css)
+  // Buy set (its lifespan inside it since 2026-10-26): the bubble comes and goes whole with the close-up from then on (boutique.css)
   const buy = mk('.achat-bouton', { name: 'buy', after: () => root.classList.add('bulle-posee') });
-  const vie = mk('.achat-vie', { name: 'vie' }), demo = mk('.achat-demo', { name: 'demo' });
+  const demo = mk('.achat-demo', { name: 'demo' });
 
   // the footer's pill: dragged by its right end, the ant walking backward, its head down (the pill lies just over the ledge)
   function* pillIn() {
@@ -625,8 +625,7 @@ async function start() {
   // ---- when the pieces come and go ----
   if (!root.classList.contains('porteuses')) { app.destroy(true); return; } // scene.js gave up waiting: the HUD stands as it was
   // when the page opens (owner, 2026-10-25): first the toolbar (the dock: an ant on a computer, two butterflies on a phone) and
-  // the pager (its two beetles); then the Open button, whose ant (fourmi-open.mjs) sets out on "porteuses:haut"; the footer's
-  // Legal pill once that ant is halfway ("fourmi-open:moitie")
+  // the pager (its two beetles); then the footer's Legal pill (the Open button and its carrier are gone, owner 2026-10-26)
   if (dock) order(dockIn());
   window.PORTEUSES_EN_ROUTE = true;
   // on a phone the dock is at the top: two butterflies lay it (airlift, above); if they cannot, it stands in its place
@@ -661,19 +660,14 @@ async function start() {
     haut = docked.then(() => Promise.race([shown.then(() => pagerIn), new Promise((ok) => setTimeout(ok, 3000)).then(() => (pager.hidden ? null : pagerIn))]));
   }
   haut.then(() => { window.PORTEUSES_HAUT = true; document.dispatchEvent(new Event('porteuses:haut')); });
-  // the Legal pill: when the Open ant is halfway; at once if there is no Open ant; 30 s after the top whatever happens
-  if (pill) {
-    let sent = false;
-    const send = () => { if (!sent) { sent = true; order(pillIn()); } };
-    document.addEventListener('fourmi-open:moitie', send, { once: true });
-    haut.then(() => { if (!root.classList.contains('fourmi-open')) send(); setTimeout(send, 30000); });
-  }
-  // the close-up, the first time in the visit: Buy's ant brings Buy, four honeybees the two small boxes over it (the right one
-  // first, the second pair behind the first). From then on the bubble comes and goes whole with the close-up, as without
+  // the Legal pill once the top is in its place
+  if (pill) haut.then(() => order(pillIn()));
+  // the close-up, the first time in the visit: Buy's ant brings Buy, two honeybees the small box over it ("On your desktop";
+  // the lifespan is in Buy since 2026-10-26). From then on the bubble comes and goes whole with the close-up, as without
   // carriers (owner, 2026-10-25: only a reload brings them anew). Closed before they are done, the pieces drop into their places
   // and go down with the bubble (abort)
   const achat = $('#achat');
-  if (achat && buy && vie && demo) {
+  if (achat && buy && demo) {
     const far = () => achat.hidden || achat.classList.contains('loin');
     const lay = (box) => airlift(box, ['abeille', 'abeille'], { pxmm: BEE_PXMM, hang: 0.15, inset: 8, rise: -90, speed: 260, away: (R) => [W() + 140, R.cy - 180], gone: far })
       .catch((err) => { console.error('[porteuses]', err); box.home(); });
@@ -684,7 +678,6 @@ async function start() {
       crew = { stopped: false, done: false, ants: new Set(), stacks: new Set() };
       order(within(crew, dock ? bubbleInDesk() : bubbleInPhone()));
       lay(demo);
-      run((function* () { yield* wait(0.8); lay(vie); })(), null);
     };
     new MutationObserver(check).observe(achat, { attributes: true, attributeFilter: ['class', 'hidden'] });
     check();

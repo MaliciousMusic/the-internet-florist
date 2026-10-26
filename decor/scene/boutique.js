@@ -12,13 +12,13 @@
 //   open a panel, one at a time, folded by their icon. ?rayon=<name> picks the first one (default: the bouquets).
 // - Far view: an "Open" button on the pillar, the pager under it; the price bubble stays hidden. A bouquet lives 3 months
 //   from its minting, counted down in hours and minutes (in the close-up), then "Faded" (shown still for good).
-// - The close-up: a click on "Open" or on the bouquet brings the camera closer (the whole scene scaled by one transform so
+// - The close-up: a click on the bouquet facing the camera brings the camera closer (only that bouquet shows then) (the whole scene scaled by one transform so
 //   the bouquet's box fills the room between the header and the price bubble), and the price bubble rises at the bottom.
-//   A click anywhere on the scene, Escape or a header icon takes it back. The bubble's price: in ETH, then its exact
-//   value in the visitor's currency (euros in the euro area, US dollars elsewhere; the country is set on <html
-//   data-pays> by _worker.js, else read from the browser's language) at the live rate (CoinGecko, else the configured
-//   one), every 5 s. Above it, the lifespan and the
-//   desktop demo video; under it, "0% royalties on resale".
+//   A click anywhere on the scene, Escape or a header icon takes it back. The bubble's price: set in ETH, shown at its exact
+//   value in the visitor's currency only (owner 2026-10-26: no crypto price; euros in the euro area, US dollars elsewhere;
+//   the country is set on <html data-pays> by _worker.js, else read from the browser's language) at the live rate
+//   (CoinGecko, else the configured one). In the Buy button, under the price, the lifespan; above it, the desktop demo
+//   video.
 // - The purchase sheet: Buy opens it above the button; its box (unticked) asks for immediate delivery and the waiver of
 //   the right of withdrawal (French Consumer Code L221-28, 13°); "Confirm and pay" goes on only once it is ticked, with
 //   the consent's time kept for the receipt (Boutique.recu: a page to download, in the page's language). The payment
@@ -125,7 +125,7 @@
   });
   document.addEventListener('frise:depart', () => {
     if (near) closeUp(false);
-    $('bq-cible').hidden = $('bq-voir').hidden = true;
+    $('bq-cible').hidden = true;
   });
 
   pager.addEventListener('click', (e) => {
@@ -198,15 +198,14 @@
   }
   const pct = (v, of) => `${((v / of) * 100).toFixed(3)}%`;
   function placeTarget() {
-    const see = $('bq-voir');
     // the bouquet facing the camera at rest (frise.js); none while it travels
     const f = Frise.face();
     const b = f >= 0 ? Frise.bouquet(f) : null;
     box = (b && b.manifeste.boite) || null;
-    if (!box) return (target.hidden = see.hidden = true);
+    if (!box) return (target.hidden = true);
     const [x, y, w, h] = box;
     Object.assign(target.style, { left: pct(x, WW), top: pct(y, WH), width: pct(w, WW), height: pct(h, WH) });
-    target.hidden = see.hidden = false;
+    target.hidden = false;
   }
   function frameCloseUp() {
     if (!near || !box) return;
@@ -237,6 +236,10 @@
     // the camera stays facing the bouquet while it is seen close
     Frise.fige(on);
     scene.classList.toggle('proche', on);
+    // only the chosen bouquet in the close-up (owner 2026-10-26): its place's plane is marked, the others hide (scene.css)
+    for (const el of document.querySelectorAll('.frise-bouquet.choisi')) el.classList.remove('choisi');
+    const b = on ? Frise.bouquet(Frise.face()) : null;
+    if (b && b.el.closest('.frise-bouquet')) b.el.closest('.frise-bouquet').classList.add('choisi');
     target.setAttribute('aria-pressed', String(on));
     target.setAttribute('aria-label', on ? T.stepBack : T.lookCloser);
     $('achat').classList.toggle('loin', !on);
@@ -251,10 +254,6 @@
       keptShelf = undefined;
     }
   }
-  $('bq-voir').addEventListener('click', (e) => {
-    e.stopPropagation();
-    closeUp(true);
-  });
   target.addEventListener('click', (e) => {
     e.stopPropagation();
     closeUp(!near);
@@ -265,8 +264,8 @@
   });
   addEventListener('resize', frameCloseUp);
 
-  // ---------- the price in the bubble: in ETH, then its exact value in the visitor's currency, every 5 s. The new price
-  // comes down from above and crushes the shown one against the bubble's floor (transforms only).
+  // ---------- the price in the bubble: set in ETH, shown at its exact value in the visitor's currency; a new value (the live
+  // rate) comes down from above and crushes the shown one against the bubble's floor (transforms only).
   // The currency: euros in the euro area (French law asks for euros), US dollars elsewhere. The country comes from
   // _worker.js (Cloudflare reads it from the IP address), else from the browser's language ("fr-FR" -> FR).
   const EURO = new Set('AT BE CY DE EE ES FI FR GR HR IE IT LT LU LV MT NL PT SI SK AD MC SM VA ME XK GP MQ GF RE YT PM BL MF'.split(' '));
@@ -289,7 +288,7 @@
       M.cours = { devise: CUR, parEth: r, pays: country, enDirect: true, lu: new Date().toISOString() };
       if (curP) {
         labelBuy(curP);
-        if (showFiat) setPrice(fiatOf(curP), false);
+        setPrice(fiatOf(curP), false);
       }
       labelFrames();
     } catch (_) {}
@@ -297,8 +296,6 @@
   const priceBox = $('achat-prix');
   const buy = $('acheter');
   let curP = null;
-  let showFiat = false;
-  let flipT = 0;
   function setPrice(text, roll) {
     const old = priceBox.querySelector('.prix-ligne:not(.part)');
     const el = document.createElement('span');
@@ -312,16 +309,10 @@
     el.animate([{ transform: 'translateY(-100%)' }, { transform: 'none' }], o);
     old.animate([{ transform: 'scaleY(1)' }, { transform: 'scaleY(0)' }], o).finished.then(() => old.remove(), () => old.remove());
   }
+  // (owner 2026-10-26: no price in crypto shown; the price stays set in ETH, shown at its value in the visitor's currency)
   function priceFor(p) {
     curP = p;
-    showFiat = false;
-    setPrice(ethTxt(p), false);
-    clearInterval(flipT);
-    flipT = setInterval(() => {
-      if (document.hidden || !curP) return;
-      showFiat = !showFiat;
-      setPrice(showFiat ? fiatOf(curP) : ethTxt(curP), true);
-    }, 5000);
+    setPrice(fiatOf(p), false);
   }
 
   // ---------- the lifespan: a bouquet lives 3 months from its minting (boutique.json "vie"), counted down in hours and

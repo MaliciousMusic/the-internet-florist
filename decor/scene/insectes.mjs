@@ -510,39 +510,6 @@ async function start(clumpsOn) {
       await idle();
     }
   };
-  // the Open button's carrier, at every page load (the button waits hidden while the page's root has the class fourmi-open, set
-  // by scene.js): a bumblebee flying it in (bourdon-open.mjs, owner 2026-10-25), or the ant walking it in at ?open=fourmi
-  // (fourmi-open.mjs)
-  const root = document.documentElement;
-  if (root.classList.contains('fourmi-open')) {
-    try {
-      const ant = q.get('open') === 'fourmi';
-      const ctx = { essaim, zOf, sx, sy, W, pxmm0: () => pxmm0, bqScale: () => B, button: document.getElementById('bq-voir'), done: () => root.classList.remove('fourmi-open'), moitie: () => document.dispatchEvent(new Event('fourmi-open:moitie')) };
-      let a;
-      if (ant) {
-        const { FourmiOpen } = await import(new URL('fourmi-open.mjs', import.meta.url).href);
-        await essaim.kind('fourmi-noire', `${BASE}fourmi-noire/atlas/fourmi-noire`, 4, ['O', 'H']);
-        a = new FourmiOpen(ctx);
-      } else {
-        const { BourdonOpen } = await import(new URL('bourdon-open.mjs', import.meta.url).href);
-        await essaim.kind('bourdon', `${BASE}bourdon/atlas/bourdon`, mods['bourdon.mjs'].BOURDON.bodyMm, ['S', 'L']);
-        a = new BourdonOpen(ctx);
-      }
-      // it sets out once the toolbar and the pager are in their places (porteuses.mjs, "porteuses:haut"; owner, 2026-10-25), at
-      // once without the carriers, after 30 s whatever happens
-      if (root.classList.contains('porteuses') && !window.PORTEUSES_HAUT) {
-        const go = () => a.go();
-        document.addEventListener('porteuses:haut', go, { once: true });
-        setTimeout(go, 30000);
-      } else a.go();
-      essaim.add(a);
-      insects.push(a);
-    } catch (err) {
-      console.error('[fourmi-open]', err);
-      root.classList.remove('fourmi-open');
-    }
-  }
-
   // the bouquet folds back: the insects at it fly off, its flowers no longer count
   const onFold = () => {
     const was = new Set(bqFlowers);

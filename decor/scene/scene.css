@@ -104,10 +104,12 @@ body {
 
 @media (max-aspect-ratio: 1/1) {
   /* the bouquet centred on the screen (owner 2026-10-26): the world's y 470 (a bouquet's middle on its pillar) at half the
-     screen's height, the world's top --haut-tel above the screen's; the nearest ground and the clumps are drawn down to y 1460
-     (frise_sol.mjs, premier.mjs --bas), so the world never shows below that line on the tallest phones */
+     screen's height, the world's top --haut-tel above the screen's. The screen's bottom edge stays between y 1350 (the
+     single scene's frame: the foreground's clumps whole; a window less tall than a phone pushed them off the screen,
+     owner the same day: « les fleurs de premier plan sont trop basses ») and y 1460 (the nearest ground and the clumps are
+     drawn down to there: frise_sol.mjs, premier.mjs --bas) */
   .scene:has(#frise-ancre) {
-    --haut-tel: max(calc(50dvh - 100vw * 470 / var(--vue-tel, 850)), calc(100dvh - 100vw * 1460 / var(--vue-tel, 850)));
+    --haut-tel: clamp(calc(100dvh - 100vw * 1460 / var(--vue-tel, 850)), calc(50dvh - 100vw * 470 / var(--vue-tel, 850)), calc(100dvh - 100vw * 1350 / var(--vue-tel, 850)));
   }
 
   .monde:has(#frise-ancre) {

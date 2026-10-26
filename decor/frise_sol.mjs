@@ -65,14 +65,19 @@ function nearPillar(s, X, Z) {
   return [p, X - (i * PITCH * s.f * Z) / F];
 }
 
+// The mown ground's edge on the frieze (owner 2026-10-26: « la séparation entre herbe haute et gazon ras n'est pas assez
+// fondue »): the hay grows back over about half a metre instead of 10 cm (seen from the front, 30 cm of depth at the
+// pillars is only some 26 units of screen: still a line), from an edge that wanders some 20 cm back and forth (the flowered
+// ground's walk, fleurs.mjs WALK_FLEURI, had ret [0.1, 0.03] and edge [0.03, 0.02, 0.012])
+const WALK_FRISE = { ...WALK_FLEURI, ret: [0.5, 0.15], edge: [0.08, 0.2, 0.04] };
 // The mown collar round a pillar without a walk (mowField of sol.mjs, its pillar part alone): 1 in the hay, 0 mown,
 // -1 in the foot
 function collar(seed, X, Z) {
   const dP = Math.hypot(X, Z - PZ) - RB;
   if (dP < 0.004) return -1;
-  const d = dP - WALK_FLEURI.disc;
-  const e = WALK_FLEURI.edge[0] + WALK_FLEURI.edge[1] * fbm(seed * 7 + 1, X / 0.22, Z / 0.22) + WALK_FLEURI.edge[2] * vnoise(seed * 7 + 3, X / 0.06, Z / 0.06);
-  const w = WALK_FLEURI.ret[0] + WALK_FLEURI.ret[1] * fbm(seed * 7 + 5, X / 0.4, Z / 0.4);
+  const d = dP - WALK_FRISE.disc;
+  const e = WALK_FRISE.edge[0] + WALK_FRISE.edge[1] * fbm(seed * 7 + 1, X / 0.22, Z / 0.22) + WALK_FRISE.edge[2] * vnoise(seed * 7 + 3, X / 0.06, Z / 0.06);
+  const w = WALK_FRISE.ret[0] + WALK_FRISE.ret[1] * fbm(seed * 7 + 5, X / 0.4, Z / 0.4);
   const th = Math.atan2(X, PZ - Z);
   const ring = 0.6 * (1 - smooth(0.02, 0.13, dP)) * smooth(-0.2, 0.5, vnoise(seed * 7 + 9, th * 2.2, 0.5));
   return Math.max(smooth(e, e + w, d), ring);
@@ -90,7 +95,7 @@ export function slice(s, { seed = 1, dalles = 7 } = {}) {
   const x0 = stripX0(s), xr = [x0 - MARGIN, x0 + s.w + MARGIN];
   const [zMin, zMax] = s.z;
   // the opening pillar's walk and stones, as the flowered ground has them
-  setWalk(WALK_FLEURI);
+  setWalk(WALK_FRISE);
   const Dd = dallesStones(dalles, { lawn: true, lawnH: 0.06 });
   const mowOpen = mowField(1, Dd.layout, Dd.stones);
   const lawnOpen = lawnField(1, Dd.stones, Dd.layout);
