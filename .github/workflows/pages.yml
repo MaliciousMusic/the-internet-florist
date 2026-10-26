@@ -1,0 +1,58 @@
+# Publishes the shop site on GitHub Pages (https://maliciousmusic.github.io/the-internet-florist/).
+# The whole repository is over Pages' 1 GB limit, so only what the site loads is copied, at the same relative paths as
+# in the repository: decor/scene (the pages), decor/out (the decor they read as ../out/) and insectes (../../insectes/).
+# The site's root sends visitors on to decor/scene/.
+name: Site
+
+on:
+  push:
+    branches: [main]
+    paths: ['decor/scene/**', 'decor/out/**', 'insectes/**', '.github/workflows/pages.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            decor/scene
+            decor/out
+            insectes
+      - name: Assemble the site
+        run: |
+          mkdir -p _site/decor
+          cp -r decor/scene decor/out _site/decor/
+          cp -r insectes _site/
+          rm -f _site/decor/scene/_worker.js
+          touch _site/.nojekyll
+          cat > _site/index.html <<'HTML'
+          <!doctype html>
+          <html lang="en">
+          <head>
+          <meta charset="utf-8">
+          <meta http-equiv="refresh" content="0; url=decor/scene/">
+          <link rel="canonical" href="decor/scene/">
+          <title>The Internet Florist</title>
+          </head>
+          <body><a href="decor/scene/">The Internet Florist</a></body>
+          </html>
+          HTML
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - id: deployment
+        uses: actions/deploy-pages@v4
