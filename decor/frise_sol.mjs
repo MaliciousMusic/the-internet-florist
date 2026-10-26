@@ -1,7 +1,7 @@
 // frise_sol.mjs: the flowered meadow of the catalogue frieze (frise.mjs, decor/FRISE.md), one looping strip per depth
 // slice, drawn with the very modules of the single-bouquet ground (sol.mjs: herbe.mjs, fleurs.mjs, dalles.mjs).
 //
-//   node decor/frise_sol.mjs [--only z1,avant] [--flank 0.5] [--out <dir>]   (default dir: decor/out/frise/src)
+//   node decor/frise_sol.mjs [--only z1,avant] [--flank 0.5] [--bas 1460] [--out <dir>]   (default dir: decor/out/frise/src)
 //     writes <id>.svg for each slice of frise.mjs SLICES (screen units, x from stripX0 to stripX0 + w, plus a margin
 //     on each side for the tiles), and frise_sol.json (their boxes, weights, counts).
 //
@@ -13,13 +13,15 @@
 //   "arriere" and "avant"; the ground keeps, round each pillar's foot, its mown collar, the blades standing in its cast
 //   shadow and the ring of flowers at its foot, all drawn in that pillar's own head-on frame (frise.mjs);
 // - the stepping stones and the trodden walk only lead to the opening pillar (place 0, owner 2026-10-26);
+// - the nearest slice goes down to y 1460 (--bas), below the single scene's frame: a phone held upright shows the bouquet
+//   in the middle of its screen and the ground down to its bottom edge (owner 2026-10-26);
 // - each slice is cut at the bottom where the next nearer slice's first deep-canopy mass covers it whatever the
 //   camera does (the camera only travels sideways: what covers a point below that line always covers it).
 import { writeFileSync, mkdirSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { gzipSync } from 'node:zlib';
-import { CAM, grassBand, farMeadow, MID, rowZ, rowsIn, RATIO, lawnAt, groundY, setFlank } from './herbe.mjs';
+import { CAM, grassBand, farMeadow, MID, rowZ, rowsIn, RATIO, lawnAt, groundY, setFlank, setBottom, bottom } from './herbe.mjs';
 import { stones as dallesStones } from './dalles.mjs';
 import { mowField, lawnField, setWalk } from './sol.mjs';
 import { drifts, lowField, thinField, plant, setStrip, SPLIT, FAR_THIN, WALK_FLEURI } from './fleurs.mjs';
@@ -158,7 +160,7 @@ export function slice(s, { seed = 1, dalles = 7 } = {}) {
   if (ins.length) defs += fdefs;
   // the bottom: the next nearer slice's first mass covers everything below the ground line of its farthest row
   const next = SLICES[SLICES.indexOf(s) + 1];
-  const y1 = next ? Math.min(H, Math.ceil(groundY(next.z[1] / RATIO) + 2)) : H;
+  const y1 = next ? Math.min(H, Math.ceil(groundY(next.z[1] / RATIO) + 2)) : bottom();
   const box = [xr[0], 0, xr[1], y1];
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="${box[0]} 0 ${box[2] - box[0]} ${y1}" width="${box[2] - box[0]}" height="${y1}"><defs>${defs}</defs>${body.join('')}</svg>`;
   const ids = [...svg.matchAll(/\bid="([^"]+)"/g)].map((m) => m[1]);
@@ -174,6 +176,8 @@ if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) {
   const out = opt('--out', join(HERE, 'out', 'frise', 'src'));
   const only = opt('--only', null);
   setFlank(Number(opt('--flank', 0.5)));
+  // the nearest slice goes down to y 1460 (owner 2026-10-26: a phone shows the bouquet centred, the ground to its bottom)
+  setBottom(Number(opt('--bas', 1460)));
   mkdirSync(out, { recursive: true });
   const info = {};
   for (const s of SLICES) {

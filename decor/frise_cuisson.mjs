@@ -4,7 +4,8 @@
 // piliers[].apercu: [src, x, y, w, h] in the strip's or the world's units). The page shows the picture first, then the SVG
 // at idle once the camera rests (frise.js). The bouquets are never compiled.
 //
-//   sh ws/gate.sh node decor/frise_cuisson.mjs [px per unit, 1.2]     (after frise_tuiles.mjs and frise_piliers.mjs)
+//   sh ws/gate.sh node decor/frise_cuisson.mjs [px per unit, 1.2] [--only z1,piliers]   (after frise_tuiles.mjs and
+//   frise_piliers.mjs; --only: those strips, or the pillars, the other previews kept)
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -15,7 +16,9 @@ const HERE = dirname(fileURLToPath(import.meta.url));
 const OUT = join(HERE, 'out', 'frise');
 const require = createRequire('C:/Users/agent/Desktop/flower/belai-studio/package.json');
 const { Resvg } = require('@resvg/resvg-js');
-const PXU = +(process.argv[2] || 1.2);
+const args = process.argv.slice(2);
+const only = args.includes('--only') ? args.splice(args.indexOf('--only'), 2)[1].split(',') : null;
+const PXU = +(args[0] || 1.2);
 const M = JSON.parse(readFileSync(join(OUT, 'frise.json'), 'utf8'));
 
 const jobs = [];
@@ -27,11 +30,11 @@ const render = (file, w) => {
 };
 const t0 = performance.now();
 for (const B of M.bandes)
-  B.tuiles.forEach(([x, w], j) => {
+  if (!only || only.includes(B.id)) B.tuiles.forEach(([x, w], j) => {
     const f = join(OUT, B.id, `${j}.svg`);
     if (existsSync(f)) jobs.push({ base: render(f, w), band: B, j, x, y: 0 });
   });
-M.piliers.forEach((P, i) => {
+if (!only || only.includes('piliers')) M.piliers.forEach((P, i) => {
   const f = join(OUT, P.src);
   if (existsSync(f)) jobs.push({ base: render(f, P.boite[2]), pillar: P, x: P.boite[0], y: P.boite[1] });
 });

@@ -36,9 +36,10 @@ Décisions et lots : [FRISE.md](FRISE.md). Ce fichier décrit ce qui est constru
   17 images par seconde).
 - **Ordinateur** : 2 400 unités de large (3 bouquets entiers, et le 1ᵉʳ et le 5ᵉ coupés par les bords). **Téléphone debout** :
   850 unités de large (`?vue=` pour essayer ; porteur, 26 octobre : à 1 180 les bouquets étaient trop petits et le ciel
-  trop grand). Le bouquet est au milieu de l'écran, le bord des bouquets voisins larges se voit encore. Le monde est un peu
-  moins haut que l'écran : le ciel continue au-dessus, en dégradé jusqu'au zénith. Le nom du bouquet y monte, juste sous
-  le pager.
+  trop grand). Le bouquet est centré sur l'écran (le y 470 du monde à mi-hauteur), le bord des bouquets voisins larges se
+  voit encore. Sous l'ancien cadre, le sol proche et les touffes sont dessinés jusqu'à y 1 460, pour que le sol fleuri
+  descende jusqu'au bas de l'écran (porteur, 26 octobre : « bouquet centré », moins de ciel). Le ciel continue au-dessus du
+  monde, en dégradé jusqu'au zénith ; le nom du bouquet y monte, juste sous le pager.
 
 ### Comment c'est fait
 
@@ -49,6 +50,7 @@ Décisions et lots : [FRISE.md](FRISE.md). Ce fichier décrit ce qui est constru
 | Piliers | `node decor/frise_piliers.mjs` | `out/frise/piliers/<place>.svg` et `piliers.json` |
 | Tuiles | `node decor/frise_tuiles.mjs [--verifie]` | `out/frise/<tranche>/<j>.svg` (1 600 unités chacune), `tuiles.json`, `frise.json` (le manifeste de la page) |
 | Aperçus | `sh ws/gate.sh node decor/frise_cuisson.mjs` | `<j>.webp` à côté de chaque tuile et de chaque pilier (1,2 px par unité), ajoutés à `frise.json` |
+| Touffes du premier plan | `node decor/herbe.mjs --only touffes --bas 1460` puis `node decor/fleurs.mjs touffes --bas 1460`, et `sh ws/gate.sh node decor/premier.mjs --bas 1460` | les touffes dessinées et cuites jusqu'à y 1 460 (feuilles et tiges sous l'ancien cadre) |
 | Têtes de fleurs | `node decor/frise_tetes.mjs` | `out/frise/tetes.json` : les 2 851 têtes où les insectes se posent, par tranche (unités de la bande) |
 | Pages | `node decor/scene/build.mjs` | les pages des 5 langues |
 | Contrôle | `node decor/frise_apercu.mjs <png> --c 0 --vue 2400` | une image de la frise pour une position de caméra (resvg, sans Chrome) |

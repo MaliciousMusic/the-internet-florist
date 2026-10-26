@@ -103,20 +103,29 @@ body {
 }
 
 @media (max-aspect-ratio: 1/1) {
+  /* the bouquet centred on the screen (owner 2026-10-26): the world's y 470 (a bouquet's middle on its pillar) at half the
+     screen's height, the world's top --haut-tel above the screen's; the nearest ground and the clumps are drawn down to y 1460
+     (frise_sol.mjs, premier.mjs --bas), so the world never shows below that line on the tallest phones */
+  .scene:has(#frise-ancre) {
+    --haut-tel: max(calc(50dvh - 100vw * 470 / var(--vue-tel, 850)), calc(100dvh - 100vw * 1460 / var(--vue-tel, 850)));
+  }
+
   .monde:has(#frise-ancre) {
     width: calc(100vw * 2400 / var(--vue-tel, 850));
+    top: var(--haut-tel);
+    bottom: auto;
   }
 
   /* the sky above the world: from the zenith down to the colour the world's sky shows at its top edge (measured on a
      phone: the veils lighten ciel.svg's first stop there), so no edge shows */
   .scene:has(#frise-ancre) {
-    background: linear-gradient(#6c9bcf, #7fa8d5 calc(100% - 100vw * 1350 / var(--vue-tel, 850)));
+    background: linear-gradient(#6c9bcf, #7fa8d5 var(--haut-tel));
   }
 
   /* the name higher in the sky (owner 2026-10-26): 80 px under the toolbar's bottom, the pager between them, whatever the
-     phone's height (the world's top is 100dvh - 100vw x 1350 / vue on the screen; the sky goes on above it) */
+     phone's height (the sky goes on above the world) */
   .monde:has(#frise-ancre) .nom-ciel {
-    top: calc(var(--entete-bas, 0px) + 80px - 100dvh + 100vw * 1350 / var(--vue-tel, 850));
+    top: calc(var(--entete-bas, 0px) + 80px - var(--haut-tel));
   }
 }
 

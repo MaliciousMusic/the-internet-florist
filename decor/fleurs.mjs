@@ -2,7 +2,7 @@
 // fleurs_moteur.mjs + fleurs_page.js from decor/scene/engine.js, list in fleurs/bibliotheque.mjs), planted through the
 // common camera of decor/PLAN.md.
 //
-//   node decor/fleurs.mjs touffes [seed]       the flowered foreground clumps: out/touffe-fleurie-N.svg and their entries in
+//   node decor/fleurs.mjs touffes [seed] [--bas y]   the flowered foreground clumps: out/touffe-fleurie-N.svg and their entries in
 //                                              the "touffes" key of out/scene.json (other entries and keys untouched)
 //   node decor/fleurs.mjs sol [seed] [--split 8.5,3]
 //                                              the meadow's flowers laid by depth through sol.mjs (its `inserts` entry), the
@@ -44,7 +44,7 @@ import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { gzipSync } from 'node:zlib';
-import { CAM, project, canopyAt, tuft, MID } from './herbe.mjs';
+import { CAM, project, canopyAt, tuft, MID, bottom } from './herbe.mjs';
 import { requantAll } from './fleurs/chemins.mjs';
 import { STEM_W } from './fleurs/bibliotheque.mjs';
 
@@ -223,8 +223,9 @@ function tuftParts(seed, spec) {
   const m = r.svg.match(/^<svg[^>]*><defs>([\s\S]*?)<\/defs>([\s\S]*)<\/svg>$/);
   return { defs: m[1], body: m[2], box: r.box, base: r.base };
 }
-// the frame's bottom edge is the ground at 2.2 m: at depth Z it stands this high (m)
-const cutHeight = (Z) => EYE - ((H - Y0) * Z) / F;
+// the frame's bottom edge is the ground at 2.2 m (lower on the frieze: herbe.mjs setBottom): at depth Z it stands this
+// high (m)
+const cutHeight = (Z) => EYE - ((bottom() - Y0) * Z) / F;
 
 export function touffesFleuries(seed = 1, budget = 59 * 1024) {
   const out = [];
@@ -793,6 +794,9 @@ if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) {
   const args = process.argv.slice(2);
   const opt = (k, d) => { const i = args.indexOf(k); if (i < 0) return d; const v = args[i + 1]; args.splice(i, 2); return v; };
   const split = opt('--split', SPLIT.join(',')).split(',').map(Number);
+  // --bas y: the frame's bottom for the clumps (the frieze: 1460, herbe.mjs setBottom)
+  const bas = opt('--bas', null);
+  if (bas) (await import('./herbe.mjs')).setBottom(Number(bas));
   const [cmd = 'touffes', seedArg] = args;
   const seed = Number(seedArg || 1);
   const out = join(HERE, 'out');

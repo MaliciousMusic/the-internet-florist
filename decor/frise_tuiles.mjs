@@ -80,5 +80,17 @@ const manifest = {
   piliers: existsSync(pj) ? JSON.parse(readFileSync(pj, 'utf8')).map((p) => ({ src: p.src, boite: p.boite, sommet: p.plateau.y })) : [],
   touffes: { f: +((CLUMP_FRAMES * 2400) / LOOP).toFixed(6), periode: 2400 },
 };
+// (the compiled previews of the strips not cut again, and of the pillars, are kept: frise_cuisson.mjs --only)
+const old = existsSync(join(OUT, 'frise.json')) ? JSON.parse(readFileSync(join(OUT, 'frise.json'), 'utf8')) : null;
+if (old) {
+  for (const B of manifest.bandes) {
+    const o = old.bandes.find((b) => b.id === B.id);
+    if (o && o.apercus && only && !only.split(',').includes(B.id)) B.apercus = o.apercus;
+  }
+  manifest.piliers.forEach((P, i) => {
+    const o = old.piliers[i];
+    if (o && o.apercu && o.src === P.src) P.apercu = o.apercu;
+  });
+}
 writeFileSync(join(OUT, 'frise.json'), JSON.stringify(manifest));
 console.log(`frise.json : ${order.length} bandes, ${manifest.piliers.length} piliers`);

@@ -1,7 +1,7 @@
 // herbe.mjs: the grass of the shop scene's hay meadow (late spring, full sun, sun behind the viewer on the left),
 // in native SVG, at three distances, through the common camera of decor/PLAN.md.
 //
-//   node decor/herbe.mjs [seed] [--only loin,milieu,touffes]
+//   node decor/herbe.mjs [seed] [--only loin,milieu,touffes] [--bas y]   (--bas: the frame's bottom, setBottom)
 //     writes decor/out/prairie-loin.svg (z4), prairie-milieu.svg (z5), touffe-1..N.svg (z9) and the "touffes" key
 //     of decor/out/scene.json (other keys untouched).
 //
@@ -904,6 +904,11 @@ let FLANK = null;
 // the frieze (frise_sol.mjs) draws every place of its loop at one level of detail: setFlank(v) fixes the flank share
 // (null: by x, as above)
 export const setFlank = (v) => { FLANK = v; };
+// the frame's bottom (world y) below which nothing is drawn: H by default; the frieze shows a phone more ground under it
+// (owner 2026-10-26: the bouquet centred on a phone, the ground to the screen's bottom), setBottom(v) lowers it
+let HB = H;
+export const setBottom = (v) => { HB = v; };
+export const bottom = () => HB;
 const flankOf = (x) => FLANK ?? smooth(430, 860, Math.abs(x - CX));
 // The row's blade colour at the TONE_Y heights: light computed from the blade's normal at its upper third.
 function bladeTone(b, k, Hc) {
@@ -1099,7 +1104,7 @@ function paintRow(o, blades, T, Z, lod, show) {
       if (bl.hero || !show(bl)) return;
       const fr = tones[i].fr, n = fr.length;
       const B = proj(fr[0].P), M = proj(fr[Math.floor(n / 2)].P), T = proj(fr[n - 1].P);
-      if (T[1] > H + 4 && B[1] > H + 4) return;
+      if (T[1] > HB + 4 && B[1] > HB + 4) return;
       const hb = Math.max(0.3, (F * bl.b.w * 0.42) / fr[0].P[2]);
       const t0 = norm2([T[0] - B[0], T[1] - B[1]]), nn = [-t0[1], t0[0]];
       // a slight bow through the mid point: the spike's flanks are quadratic
@@ -1122,7 +1127,7 @@ function paintRow(o, blades, T, Z, lod, show) {
     for (const fr of g.items) {
       const n = fr.length;
       const B = proj(fr[0].P), M = proj(fr[Math.floor(n / 2)].P), T = proj(fr[n - 1].P);
-      if (T[1] > H + 4 && B[1] > H + 4) continue;
+      if (T[1] > HB + 4 && B[1] > HB + 4) continue;
       const S = [grid(B[0]), grid(B[1])], E = [grid(T[0]), grid(T[1])];
       const C = [grid(2 * M[0] - (B[0] + T[0]) / 2), grid(2 * M[1] - (B[1] + T[1]) / 2)];
       const bend = Math.abs((C[0] - S[0]) * (E[1] - S[1]) - (C[1] - S[1]) * (E[0] - S[0])) / (Math.hypot(E[0] - S[0], E[1] - S[1]) || 1);
@@ -1171,7 +1176,7 @@ function rowCulms(k, seed, Z, Z1, X0, X1, lod, g) {
   for (const cu of kept) {
     const fr = culmFrames(cu.c, 3);
     const p = fr.map((f) => proj(f.P));
-    if (p[2][1] > H + 2) continue;
+    if (p[2][1] > HB + 2) continue;
     // culm light at its upper half (a cylinder: the side toward the sun)
     const V = toEye(fr[1].P);
     const Wd = norm(cross(fr[1].T, V)), Nv = norm(cross(Wd, fr[1].T));
@@ -1257,7 +1262,7 @@ function bladeShape(fr, b, curved, d) {
   const n = fr.length;
   const B0 = proj(fr[0].P), M = proj(fr[Math.floor(n / 2)].P), T = proj(fr[n - 1].P);
   const hb = Math.max(0.22, (F * b.w * 0.5 * 0.85) / fr[0].P[2]);
-  if (T[1] > H + 4 && B0[1] > H + 4) return null;
+  if (T[1] > HB + 4 && B0[1] > HB + 4) return null;
   if (curved) {
     const C = [2 * M[0] - (B0[0] + T[0]) / 2, 2 * M[1] - (B0[1] + T[1]) / 2];
     const t0 = norm2([C[0] - B0[0], C[1] - B0[1]]), t1 = norm2([T[0] - C[0], T[1] - C[1]]);
@@ -1280,7 +1285,7 @@ function sheafShape(items, d) {
     return { B0, T, hb: Math.max(0.25, (F * bl.b.w * 0.42) / fr[0].P[2]) };
   }).sort((a, b) => a.B0[0] + a.T[0] * 0.3 - (b.B0[0] + b.T[0] * 0.3));
   const yb = Math.max(...teeth.map((t) => t.B0[1]));
-  if (Math.min(...teeth.map((t) => t.T[1])) > H + 4) return null;
+  if (Math.min(...teeth.map((t) => t.T[1])) > HB + 4) return null;
   const pts = [[teeth[0].B0[0] - teeth[0].hb, yb]];
   for (let i = 0; i < teeth.length; i++) {
     const t = teeth[i];
@@ -1346,7 +1351,7 @@ function drawMass(o, k, seed, xr = [-30, W + 30], g = null) {
   } else fill = o.vgrad(yT, yB, [[0, top], [0.45, mid], [1, deep]]);
   const tw = clamp((F * 0.03) / Z, 5, 16);
   let x = xr[0];
-  const pts = [[x, H + 2]];
+  const pts = [[x, HB + 2]];
   // the top wanders between 15 and 60 % of the canopy along x (no line at a constant height: no band)
   const lvl = (X) => clamp(0.37 + 0.2 * fbm2(seed * 97 + k, X / 0.8, Z, 2) + 0.1 * fbm2(seed * 97 + k + 5, X / 0.25, Z, 1), 0.12, 0.62);
   // the local canopy, lowered on mown ground
@@ -1359,7 +1364,7 @@ function drawMass(o, k, seed, xr = [-30, W + 30], g = null) {
     pts.push([x, yOf(c * lv * r.range(0.7, 0.95))], [x + w * r.range(0.3, 0.7), yOf(c * lv * r.range(1.15, 1.6))]);
     x += w;
   }
-  pts.push([x, yOf(can(Xof(x, Z)) * lvl(Xof(x, Z)) * 0.8)], [x, H + 2]);
+  pts.push([x, yOf(can(Xof(x, Z)) * lvl(Xof(x, Z)) * 0.8)], [x, HB + 2]);
   // On mown ground the gaps show a short sward's base: lit through its thin leaf layer, with thatch and soil, not
   // the meadow's deep shade. An overlay of that turf, its opacity following the mowing across x (soft at the edges).
   let turf = '';
@@ -1542,7 +1547,7 @@ function drawPlages(o, seed, zMin, zMax, xr = [-30, W + 30]) {
     const id = o.id();
     o.defs.push(`<linearGradient id="${id}" href="#${o.p}X">${stops.map(([t, c]) => `<stop offset="${fmt(t, 3)}" stop-color="${shortHex(linHex(c))}"/>`).join('')}</linearGradient>`);
     // top: the canopy edge at this depth, uneven (taller tufts, gaps) within a fraction of a unit
-    const pts = [[xr[0], H + 2]];
+    const pts = [[xr[0], HB + 2]];
     const Hc = canopyAt(0, Z, seed);
     const step = clamp(F * 0.6 / Z, 9, 30);
     for (let x = xr[0]; x <= xr[1] + step; x += step * r.range(0.7, 1.3)) {
@@ -1550,7 +1555,7 @@ function drawPlages(o, seed, zMin, zMax, xr = [-30, W + 30]) {
       const top = Hc * (1.05 + 0.25 * fbm2(seed * 19 + k, X / 3, Z, 2)) + reliefAt(X, Z, seed);
       pts.push([x, yOf(top, Z)]);
     }
-    pts.push([pts[pts.length - 1][0], H + 2]);
+    pts.push([pts[pts.length - 1][0], HB + 2]);
     o.path(relPoly(pts, 1), `url(#${id})`);
   }
 }
@@ -1641,7 +1646,7 @@ export function tuft(seed, spec) {
   }
   els.sort((a, b) => b.z - a.z);
   const o = new Out('t' + (spec.id ?? 0) + '_', 1);
-  const cull = spec.cull ?? H + 10;
+  const cull = spec.cull ?? HB + 10;
   for (const e of els) {
     if (e.kind === 'leaf') {
       // a leaf that never rises into the frame is never seen (the clump's foot is below the frame bottom)
@@ -1734,6 +1739,7 @@ export const _dbg = { shadeFace, canopyLight, SP, OPEN, linHex, hexLin, SUN, lea
 // ---------- command line ----------
 if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) {
   const a = process.argv.slice(2);
+  if (a.includes('--bas')) setBottom(Number(a.splice(a.indexOf('--bas'), 2)[1]));
   const seed = Number(a.find((v) => /^\d+$/.test(v)) ?? 1);
   const only = a.includes('--only') ? a[a.indexOf('--only') + 1].split(',') : ['loin', 'milieu', 'touffes'];
   const out = join(dirname(fileURLToPath(import.meta.url)), 'out');

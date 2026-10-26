@@ -22,7 +22,7 @@ fois en route, d'un milieu à l'autre, pour que chaque groupe de bouquets ait so
 | Répartition | Environ 7 bouquets par milieu. |
 | Stock | **21 piliers** dès maintenant. Avec 7 bouquets en vente, chacun revient plusieurs fois. |
 | Piliers | La même lave sombre partout. D'un pilier à l'autre ne changent que la graine des alvéoles et le dessin de la mousse et des lichens (`pilier(seed)` le permet déjà). |
-| Cadrage | Sur téléphone, un bouquet au centre, au milieu de l'écran, avec le bord des bouquets voisins larges sur les côtés : **850 unités de large** (26 octobre ; 1 180 d'abord, bouquets trop petits et trop de ciel). Le nom monte dans le ciel, sous le pager. Sur ordinateur, 5 bouquets à l'écran, **le 1ᵉʳ et le 5ᵉ seulement à moitié ou au quart** (26 octobre). |
+| Cadrage | Sur téléphone, un bouquet au centre, au milieu de l'écran, avec le bord des bouquets voisins larges sur les côtés : **850 unités de large** (26 octobre ; 1 180 d'abord, bouquets trop petits et trop de ciel). Le bouquet est centré sur l'écran et le sol proche est dessiné sous l'ancien cadre jusqu'à y 1 460 pour descendre jusqu'au bas de l'écran. Le nom monte dans le ciel, sous le pager. Sur ordinateur, 5 bouquets à l'écran, **le 1ᵉʳ et le 5ᵉ seulement à moitié ou au quart** (26 octobre). |
 | Mouvement de la caméra | **Travelling avec parallaxe** (26 octobre) : la caméra glisse le long de la frise, le premier plan défile vite, le lointain lentement. |
 | Dalles | **Seulement sous le pilier d'ouverture** (26 octobre), celui que montre la page à son arrivée. Les autres piliers sortent de la prairie avec leur collier de mousse. |
 | Voisins | Tous les bouquets à l'écran se balancent dans la brise, en SVG. Ils se chargent au fur et à mesure que la caméra approche. |
