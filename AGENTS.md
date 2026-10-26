@@ -16,7 +16,7 @@ fleurs [catalogue/serre/methode/METHODE.md](catalogue/serre/methode/METHODE.md).
   « plus-value », « bourse », « trading », « spéculation » ou « token sale ».
 - **Aucun secret dans le dépôt** : clés dans `.env` (ignoré) ou dans les variables d'environnement. Jamais le port 8766.
 - **Une tâche lourde à la fois** sur le PC du porteur, au plus 3 navigateurs headless (verrou `ws/gate.sh`) et plus de
-  4 Go de RAM libre. Le PC a déjà planté.
+  2,5 Go de RAM libre (porteur, 2026-10-26). Le PC a déjà planté.
 
 ## Conventions
 
