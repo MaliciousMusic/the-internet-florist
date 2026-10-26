@@ -175,6 +175,12 @@ Points ouverts : le corps en bronze de la carpe reste l'image WebP calculée du 
 « que du SVG » : question à poser au porteur) ; les décors dépassent largement le budget de 400 Ko gzip visé au départ
 (sol fleuri 711 Ko avant reprise) : mesurer sur un vrai réseau avec compression brotli, et alléger ce qui est caché.
 
+## La frise du catalogue (porteur, 25-26 octobre)
+
+Le catalogue devient une frise en boucle de 21 piliers, à travers trois milieux : plaine montagneuse, prairie et bord
+d'étang. Décisions, lots et questions ouvertes dans [FRISE.md](FRISE.md). Le milieu montagne lève, pour lui seul, la
+règle de l'horizon plat.
+
 ## Après la scène (porteur, 15 octobre)
 
 Une fois la scène assemblée : les menus, le pied de page avec les mentions légales, les polices, puis les

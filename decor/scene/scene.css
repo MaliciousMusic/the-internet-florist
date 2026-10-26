@@ -61,6 +61,103 @@ body {
   }
 }
 
+/* The catalogue frieze (frise.js): its strips, pillars, bouquets and clumps move by one transform each (on the graphics
+   card); the tiles inside them stay where they are laid. A phone held upright sees --vue-tel units of the world (frise.js,
+   ?vue=), the sky's zenith colour above the world (.scene's background). */
+.frise-bande,
+.frise-piliers,
+.frise-bouquets,
+.frise-bouquets ~ .premier {
+  will-change: transform;
+}
+
+.frise-tuile,
+.frise-pilier {
+  position: absolute;
+  max-width: none;
+  pointer-events: none;
+  user-select: none;
+}
+
+.frise-bouquet {
+  overflow: visible;
+}
+
+/* a clump of the frieze's foreground: its compiled picture swaying about its foot (frise.js) */
+.frise-touffe {
+  position: absolute;
+  max-width: none;
+  pointer-events: none;
+  will-change: transform;
+  animation: balance var(--t) ease-in-out var(--d) infinite alternate;
+}
+
+.paused .frise-touffe {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .frise-touffe {
+    animation: none;
+  }
+}
+
+@media (max-aspect-ratio: 1/1) {
+  /* the bouquet centred on the screen (owner 2026-10-26): the world's y 470 (a bouquet's middle on its pillar) at half the
+     screen's height, the world's top --haut-tel above the screen's. The screen's bottom edge stays between y 1350 (the
+     single scene's frame: the foreground's clumps whole; a window less tall than a phone pushed them off the screen,
+     owner the same day: « les fleurs de premier plan sont trop basses ») and y 1460 (the nearest ground and the clumps are
+     drawn down to there: frise_sol.mjs, premier.mjs --bas) */
+  .scene:has(#frise-ancre) {
+    --haut-tel: clamp(calc(100dvh - 100vw * 1460 / var(--vue-tel, 850)), calc(50dvh - 100vw * 470 / var(--vue-tel, 850)), calc(100dvh - 100vw * 1350 / var(--vue-tel, 850)));
+  }
+
+  .monde:has(#frise-ancre) {
+    width: calc(100vw * 2400 / var(--vue-tel, 850));
+    top: var(--haut-tel);
+    bottom: auto;
+  }
+
+  /* the sky above the world: from the zenith down to the colour the world's sky shows at its top edge (measured on a
+     phone: the veils lighten ciel.svg's first stop there), so no edge shows */
+  .scene:has(#frise-ancre) {
+    background: linear-gradient(#6c9bcf, #7fa8d5 var(--haut-tel));
+  }
+
+  /* the name higher in the sky (owner 2026-10-26): 80 px under the toolbar's bottom, the pager between them, whatever the
+     phone's height (the sky goes on above the world) */
+  .monde:has(#frise-ancre) .nom-ciel {
+    top: calc(var(--entete-bas, 0px) + 80px - var(--haut-tel));
+  }
+}
+
+/* the name of the bouquet facing the camera, in the sky (owner 2026-10-26: thin letters, gliding with the sky, gone as
+   its bouquet leaves the centre) */
+@font-face {
+  font-family: 'Nunito Frise';
+  src: url('polices/nunito-extralight.woff2') format('woff2');
+  font-weight: 200;
+  font-display: swap;
+}
+
+.nom-ciel {
+  position: absolute;
+  left: 50%;
+  top: calc(118 / 1350 * 100%);
+  z-index: 2;
+  font: 200 calc(100cqw * 72 / 2400) / 1 'Nunito Frise', system-ui, sans-serif;
+  letter-spacing: 0.02em;
+  color: #fff;
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+  opacity: 0;
+}
+
+.proche .nom-ciel {
+  visibility: hidden;
+}
+
 /* Clouds: each one stands where its old crossing (from just off the left edge to just off the right edge) had it at the
    page's load, --f the fraction of the way (scene.js). They no longer drift (owner, 2026-10-25). */
 .nuage {

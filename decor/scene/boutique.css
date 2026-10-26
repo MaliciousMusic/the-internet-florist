@@ -131,11 +131,12 @@
 
 .achat-bouton {
   display: flex;
-  align-items: center;
-  gap: 14px;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 4px;
   min-width: 200px;
   min-height: 48px;
-  padding: 7px 16px 7px 22px;
+  padding: 8px 18px 8px 22px;
   border: 1px solid var(--verre-bord);
   border-radius: 999px;
   background: linear-gradient(to bottom, var(--verre), var(--verre-bas)), var(--verre);
@@ -148,9 +149,26 @@
   -webkit-tap-highlight-color: transparent;
 }
 
+.achat-ligne {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
 .achat-mot {
   flex: 1 0 auto;
   text-align: left;
+}
+
+/* in the button, under its price: the lifespan (owner 2026-10-26) */
+.achat-vie {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font: 500 11.5px/1 system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  opacity: 0.78;
 }
 
 .achat-prix {
@@ -172,7 +190,7 @@
   transform-origin: 50% 100%;
 }
 
-/* above the Buy button: the lifespan and the wallpaper demo */
+/* above the Buy button: the wallpaper demo */
 .achat-haut {
   display: flex;
   align-items: center;
@@ -181,7 +199,6 @@
   margin-bottom: 8px;
 }
 
-.achat-vie,
 .achat-demo {
   display: inline-flex;
   align-items: center;
@@ -209,12 +226,6 @@
 .achat-demo:focus-visible {
   outline: 2px solid #fff;
   outline-offset: 2px;
-}
-
-.achat-revente {
-  margin: 6px 0 0;
-  font: 500 11px/1.2 system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-  color: rgb(255 255 255 / 0.92);
 }
 
 /* ---------- the demo video ---------- */
@@ -331,41 +342,6 @@
   transition: transform 0.9s cubic-bezier(0.3, 0.1, 0.2, 1);
 }
 
-/* "Open": a glass pill on the pillar's face (x 1200, its top at y 736) */
-.bq-voir {
-  position: absolute;
-  left: 50%;
-  top: calc(736 * 100% / 1350);
-  z-index: 10;
-  margin: 0;
-  padding: 0 14px;
-  height: 30px;
-  border: 1px solid var(--verre-bord-choisi);
-  border-radius: 999px;
-  background: rgb(255 255 255 / 0.26);
-  -webkit-backdrop-filter: blur(12px);
-  backdrop-filter: blur(12px);
-  color: #fff;
-  font: 600 13px/1 system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-  letter-spacing: 0.02em;
-  cursor: pointer;
-  transform: translateX(-50%);
-  -webkit-tap-highlight-color: transparent;
-}
-
-.bq-voir:active {
-  transform: translateX(-50%) scale(0.95);
-}
-
-.bq-voir:focus-visible {
-  outline: 2px solid #fff;
-  outline-offset: 2px;
-}
-
-.bq-voir[hidden] {
-  display: none;
-}
-
 /* the pager: one dot per bouquet of the day, in a glass pill fixed on the screen (boutique.js); the shown bouquet's dot is
    longer. On a phone it hangs under the dock (owner, 2026-10-25), on a computer it stands just above it (media query
    below); the shelf (.cartes, z 40) covers it while open. Each dot is a 22 px button for the finger, its mark drawn inside. */
@@ -422,9 +398,9 @@
   border-radius: 999px;
 }
 
-/* the close-up: no pager, no "Voir" */
+/* the close-up: no pager, and only the chosen bouquet (owner 2026-10-26: the neighbours on their pillars hide) */
 .scene.proche .pager,
-.scene.proche .bq-voir {
+.scene.proche .frise-bouquet:not(.choisi) {
   visibility: hidden;
 }
 
@@ -617,11 +593,10 @@
 
 /* the HUD's carriers (porteuses.mjs, class "porteuses" set by scene.js): until their insects bring them, once per page load,
    the pieces wait off screen, by the translate property (their own transforms untouched); the price bubble stays in its place
-   while its boxes come one by one at the first close-up, and its resale line shows once Buy is set (class "bulle-posee"); from
+   while its pieces come one by one at the first close-up, until Buy is set (class "bulle-posee"); from
    then on the bubble comes and goes whole with the close-up, as without carriers. The carriers' canvas lets every click
    through. */
 .porteuses .pied-poignee,
-.porteuses .achat-vie,
 .porteuses .achat-demo,
 .porteuses .achat-bouton {
   translate: -200vw 0;
@@ -632,10 +607,6 @@
   transform: translateX(-50%);
   visibility: visible;
   transition: none;
-}
-
-.porteuses:not(.bulle-posee) .achat-revente {
-  visibility: hidden;
 }
 
 .porteuses-plan {
@@ -657,9 +628,4 @@
 .porteuses .dock,
 .porteuses .pager {
   translate: -200vw 0;
-}
-
-/* the Open button waits for its carrier, at every load: a bumblebee (bourdon-open.mjs), the ant at ?open=fourmi (fourmi-open.mjs) */
-.fourmi-open .bq-voir {
-  visibility: hidden;
 }

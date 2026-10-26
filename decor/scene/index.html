@@ -33,8 +33,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preload" href="boutique.json" as="fetch" crossorigin>
 <link rel="preload" href="../out/ciel.svg" as="image" fetchpriority="high">
-<link rel="preload" href="../out/calques/colonne/horizon.webp" as="image" media="(max-aspect-ratio: 28/45)" fetchpriority="high">
-<link rel="preload" href="../out/calques/horizon.webp" as="image" media="(min-aspect-ratio: 28.001/45)" fetchpriority="high">
+<link rel="preload" href="../out/frise/frise.json" as="fetch" crossorigin>
 <link rel="preload" href="bouquets/printemps-a-la-carpe/ouvert.json" as="fetch" crossorigin>
 <link rel="stylesheet" href="scene.css">
 <link rel="stylesheet" href="boutique.css">
@@ -374,7 +373,7 @@
   ]
 }
 </script>
-<script type="application/json" id="i18n">{"code":"en","locale":"en-US","page":"index","p":"","langues":[{"code":"en","name":"English","href":"index.html"},{"code":"fr","name":"Français","href":"fr/index.html"},{"code":"es","name":"Español","href":"es/index.html"},{"code":"zh","name":"中文","href":"zh/index.html"},{"code":"de","name":"Deutsch","href":"de/index.html"}],"t":{"menu":"Menu","shelves":{"bouquets":"Bouquets of the day","soliflores":"Bud vases","vendus":"Bouquets collected"},"desktopTitle":"On my desktop","desktopLabel":"Your bouquet on your desktop","openSeaTitle":"Our collection on OpenSea","openSeaLabel":"Our collection on OpenSea (new tab)","about":"About","legal":"Legal","closeLegal":"Close the legal panel","footer":"<p>Each bouquet is a one-of-a-kind digital collectible (an NFT on Base), priced in ETH, with no VAT (VAT not applicable, art. 293 B of the French General Tax Code); the amount in euros or US dollars is the same price at the current rate. It lives three months from its minting, then stays faded for good. Delivery is immediate, so the right of withdrawal does not apply once you confirm. We take no royalty on resale (0%).<\/p><p>No tracking, no advertising: one cookie at most, to remember the language you chose.<\/p>","links":{"notice":"Legal notice","terms":"Terms of sale","privacy":"Privacy","app":"Belai Bureau licence","accessibility":"Accessibility","contact":"Contact"},"credit":"ETH rate by {coingecko}.","language":"Language","lookCloser":"Look closer at the bouquet","stepBack":"Step back","planeLabel":"{name}, on the pillar. {alt}","frameLabel":"{name}, {eth}, about {fiat}, {life}. {alt}","buyLabel":"Buy “{name}”, {eth}, about {fiat}","lifeLeft":"{h} h {m} min","fadesIn":"Fades in {t}","fadesInLower":"fades in {t}","faded":"Faded","fadedLower":"faded","fadedForGood":"Faded for good","buy":"Buy","soon":"Soon","soonMessage":"Buying from the site is coming soon.","tickFirst":"Tick the box first: your bouquet is delivered at once.","receipt":{"title":"Receipt","download":"Download your receipt","bouquet":"Bouquet","token":"Token","price":"Price","date":"Date","buyer":"Buyer’s wallet","transaction":"Transaction","seller":"Seller","waiver":"Before paying, you asked for immediate delivery and acknowledged that you thereby lose your right of withdrawal (French Consumer Code, article L221-28, 13°).","terms":"Terms of sale accepted on that day: {url}","taxes":"VAT not applicable, art. 293 B of the French General Tax Code."}},"alts":{"printemps-a-la-carpe":"A one-of-a-kind digital bouquet of 70 hand-drawn stems (ranunculus, Dutch iris, tulip, sweet pea, hyacinth, grape hyacinth and more) in a cast-bronze carp vase. It lives three months, then stays faded for good.","ronde-bleue":"A one-of-a-kind digital bouquet of 37 hand-drawn stems (Dutch iris, anemone, lilac, Japanese quince, snowball viburnum, tulip and more) in a frosted-glass vase with dancers. It lives three months, then stays faded for good.","printemps-cobalt":"A one-of-a-kind digital bouquet of 13 hand-drawn stems (tulip, pussy willow, forsythia, lily grass, trumpet daffodil, ranunculus and more) in a speckled cobalt bowl. It lives three months, then stays faded for good.","nuage-sorbet":"A one-of-a-kind digital bouquet of 19 hand-drawn stems (sweet pea, burnet, cymbidium orchid and garden rose) in a matte white footed bowl. It lives three months, then stays faded for good.","songe-amethyste":"A one-of-a-kind digital bouquet of 31 hand-drawn stems (anemone, sweet pea, jasmine, sweet william, calla lily, phalaenopsis orchid and more) in a mirror steel cylinder. It lives three months, then stays faded for good.","lune-d-orchidees":"A one-of-a-kind digital bouquet of 14 hand-drawn stems (cyclamen, phalaenopsis orchid, tulip and parrot tulip) in a sand-coloured footed bulb vase. It lives three months, then stays faded for good.","carnaval-de-corail":"A one-of-a-kind digital bouquet of 30 hand-drawn stems (dyed ruscus, freesia, ranunculus, phalaenopsis orchid, lisianthus, Dutch iris and more) in a speckled chalice vase. It lives three months, then stays faded for good."}}</script>
+<script type="application/json" id="i18n">{"code":"en","locale":"en-US","page":"index","p":"","langues":[{"code":"en","name":"English","href":"index.html"},{"code":"fr","name":"Français","href":"fr/index.html"},{"code":"es","name":"Español","href":"es/index.html"},{"code":"zh","name":"中文","href":"zh/index.html"},{"code":"de","name":"Deutsch","href":"de/index.html"}],"t":{"menu":"Menu","shelves":{"bouquets":"Bouquets of the day","soliflores":"Bud vases","vendus":"Bouquets collected"},"desktopTitle":"On my desktop","desktopLabel":"Your bouquet on your desktop","openSeaTitle":"Our collection on OpenSea","openSeaLabel":"Our collection on OpenSea (new tab)","about":"About","legal":"Legal","closeLegal":"Close the legal panel","footer":"<p>Each bouquet is a one-of-a-kind digital collectible (an NFT on Base), priced in ETH, with no VAT (VAT not applicable, art. 293 B of the French General Tax Code); the amount in euros or US dollars is the same price at the current rate. It lives three months from its minting, then stays faded for good. Delivery is immediate, so the right of withdrawal does not apply once you confirm. We take no royalty on resale (0%).<\/p><p>No tracking, no advertising: one cookie at most, to remember the language you chose.<\/p>","links":{"notice":"Legal notice","terms":"Terms of sale","privacy":"Privacy","app":"Belai Bureau licence","accessibility":"Accessibility","contact":"Contact"},"credit":"ETH rate by {coingecko}.","language":"Language","lookCloser":"Look closer at the bouquet","stepBack":"Step back","planeLabel":"{name}, on the pillar. {alt}","frameLabel":"{name}, about {fiat}, {life}. {alt}","buyLabel":"Buy “{name}”, about {fiat}","lifeLeft":"{h} h {m} min","fadesIn":"Fades in {t}","fadesInLower":"fades in {t}","faded":"Faded","fadedLower":"faded","fadedForGood":"Faded for good","buy":"Buy","soon":"Soon","soonMessage":"Buying from the site is coming soon.","tickFirst":"Tick the box first: your bouquet is delivered at once.","receipt":{"title":"Receipt","download":"Download your receipt","bouquet":"Bouquet","token":"Token","price":"Price","date":"Date","buyer":"Buyer’s wallet","transaction":"Transaction","seller":"Seller","waiver":"Before paying, you asked for immediate delivery and acknowledged that you thereby lose your right of withdrawal (French Consumer Code, article L221-28, 13°).","terms":"Terms of sale accepted on that day: {url}","taxes":"VAT not applicable, art. 293 B of the French General Tax Code."}},"alts":{"printemps-a-la-carpe":"A one-of-a-kind digital bouquet of 70 hand-drawn stems (ranunculus, Dutch iris, tulip, sweet pea, hyacinth, grape hyacinth and more) in a cast-bronze carp vase. It lives three months, then stays faded for good.","ronde-bleue":"A one-of-a-kind digital bouquet of 37 hand-drawn stems (Dutch iris, anemone, lilac, Japanese quince, snowball viburnum, tulip and more) in a frosted-glass vase with dancers. It lives three months, then stays faded for good.","printemps-cobalt":"A one-of-a-kind digital bouquet of 13 hand-drawn stems (tulip, pussy willow, forsythia, lily grass, trumpet daffodil, ranunculus and more) in a speckled cobalt bowl. It lives three months, then stays faded for good.","nuage-sorbet":"A one-of-a-kind digital bouquet of 19 hand-drawn stems (sweet pea, burnet, cymbidium orchid and garden rose) in a matte white footed bowl. It lives three months, then stays faded for good.","songe-amethyste":"A one-of-a-kind digital bouquet of 31 hand-drawn stems (anemone, sweet pea, jasmine, sweet william, calla lily, phalaenopsis orchid and more) in a mirror steel cylinder. It lives three months, then stays faded for good.","lune-d-orchidees":"A one-of-a-kind digital bouquet of 14 hand-drawn stems (cyclamen, phalaenopsis orchid, tulip and parrot tulip) in a sand-coloured footed bulb vase. It lives three months, then stays faded for good.","carnaval-de-corail":"A one-of-a-kind digital bouquet of 30 hand-drawn stems (dyed ruscus, freesia, ranunculus, phalaenopsis orchid, lisianthus, Dutch iris and more) in a speckled chalice vase. It lives three months, then stays faded for good."}}</script>
 </head>
 <body>
 <!--
@@ -398,7 +397,7 @@
   - the header (dock of icons opening the shelves, OpenSea, About) and the footer (legal notice): entete.js, entete.css;
   - .pager: one dot per bouquet of the day, under the dock on a phone, just above it on a computer; a dot, a swipe or the arrow keys show
     another bouquet (one at a time, open and swaying, no frame around it); the price bubble (.achat) only shows in the close-up;
-  - a click on the bouquet or on "Open" brings the camera closer (the whole scene scaled by one transform); a click, Escape or another
+  - a click on the bouquet brings the camera closer (the whole scene scaled by one transform); a click, Escape or another
     shelf takes it back.
   ?rayon=bouquets|soliflores|vendus|aucun opens that shelf first (default: the bouquets).
   ?b=<product id or index> picks the first bouquet; the foreground and the clouds load once it shows.
@@ -417,17 +416,13 @@
     <img class="plan" style="--z:0" data-src="ciel.svg" alt="" decoding="async" fetchpriority="high">
     <div class="plan nuages hauts" style="--z:1" id="nuages-hauts"></div>
     <div class="plan nuages bas" style="--z:2" id="nuages-bas"></div>
-    <img class="plan" style="--z:3" data-src="horizon.svg" data-apercu='{"plein":["calques/horizon.webp",0,661.875,2400,77.5],"colonne":["calques/colonne/horizon.webp",780,671.875,840,67.5]}' alt="" decoding="async" fetchpriority="high">
-    <!-- The flowered ground, composed by depth (sol.mjs + fleurs.mjs: meadow, path, slabs, pillar, flowers), split into
-         three files of similar drawing cost so the browser rasterises them in parallel. -->
-    <img class="plan" style="--z:4" data-src="sol-loin.svg" data-apercu='{"plein":["calques/sol-loin.webp",0,705.625,2400,644.375],"colonne":["calques/colonne/sol-loin.webp",780,705.625,840,644.375]}' alt="" decoding="async">
-    <img class="plan" style="--z:5" data-src="sol-milieu.svg" data-apercu='{"plein":["calques/sol-milieu.webp",0,698.125,2400,651.875],"colonne":["calques/colonne/sol-milieu.webp",780,698.125,840,651.875]}' alt="" decoding="async">
-    <div class="pilier-repere" aria-hidden="true"></div>
-    <img class="plan" style="--z:7" data-src="sol-pres.svg" data-apercu='{"plein":["calques/sol-pres.webp",0,828.125,2400,521.875],"colonne":["calques/colonne/sol-pres.webp",780,944.375,840,405.625]}' alt="" decoding="async">
-    <div class="plan bouquet" style="--z:8" id="bouquet" role="img" aria-label=""></div>
+    <!-- The catalogue frieze (frise.js, decor/FRISE.md): the horizon and the ground's depth slices as looping strips of
+         tiles, each sliding at its own speed as the camera travels, and the 21 pillars between them, laid here at load;
+         the bouquets in #bouquet, one plane per place in view, over the whole ground as before. -->
+    <div id="frise-ancre" hidden></div>
+    <div class="plan bouquet frise-bouquets" style="--z:8" id="bouquet" role="img" aria-label=""></div>
     <!-- the bouquet's place in the world (its manifest's box): a click brings the camera closer (boutique.js) -->
     <button class="bq-cible" id="bq-cible" type="button" aria-pressed="false" aria-label="Look closer at the bouquet" hidden></button>
-    <button class="bq-voir" id="bq-voir" type="button" hidden>Open</button>
     <div class="plan premier" style="--z:9" id="premier"></div>
     <div class="colonne" aria-hidden="true"></div>
   </div>
@@ -448,12 +443,11 @@
   </div>
 </nav>
 
-<!-- the close-up's bottom: the bouquet's lifespan and the wallpaper demo, the Buy button with its price (ETH, then
-     euros or US dollars by the visitor's country, every 5 s), the resale line; the purchase sheet (the express
-     waiver of the right of withdrawal) opens above the button -->
+<!-- the close-up's bottom: the wallpaper demo, the Buy button with its price (euros or US dollars by the visitor's
+     country) and, under it, the bouquet's lifespan (owner 2026-10-26: no price in crypto shown, the lifespan in the
+     button, no resale line); the purchase sheet (the express waiver of the right of withdrawal) opens above the button -->
 <div class="achat loin" id="achat" hidden>
   <div class="achat-haut">
-    <p class="achat-vie" id="achat-vie"></p>
     <button class="achat-demo" id="achat-demo" type="button" aria-haspopup="dialog">
       <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg>
       <span>On your desktop</span>
@@ -472,10 +466,12 @@
     </div>
   </form>
   <button class="achat-bouton" id="acheter" type="button" aria-controls="accord" aria-expanded="false">
-    <span class="achat-mot" id="achat-mot">Buy</span>
-    <span class="achat-prix" id="achat-prix" aria-hidden="true"></span>
+    <span class="achat-ligne">
+      <span class="achat-mot" id="achat-mot">Buy</span>
+      <span class="achat-prix" id="achat-prix" aria-hidden="true"></span>
+    </span>
+    <span class="achat-vie" id="achat-vie"></span>
   </button>
-  <p class="achat-revente">0% royalties on resale</p>
   <p class="achat-etat" id="achat-etat" role="status" aria-live="polite"></p>
 </div>
 
@@ -499,6 +495,7 @@
 <script src="scene.js"></script>
 <script src="eclosion.js" defer></script>
 <script src="entete.js" defer></script>
+<script src="frise.js" defer></script>
 <script src="boutique.js" defer></script>
 <script type="module" src="insectes.mjs"></script>
 <script type="module" src="porteuses.mjs"></script>

@@ -32,7 +32,7 @@
   - the header (dock of icons opening the shelves, OpenSea, About) and the footer (legal notice): entete.js, entete.css;
   - .pager: one dot per bouquet of the day, under the dock on a phone, just above it on a computer; a dot, a swipe or the arrow keys show
     another bouquet (one at a time, open and swaying, no frame around it); the price bubble (.achat) only shows in the close-up;
-  - a click on the bouquet or on "Open" brings the camera closer (the whole scene scaled by one transform); a click, Escape or another
+  - a click on the bouquet brings the camera closer (the whole scene scaled by one transform); a click, Escape or another
     shelf takes it back.
   ?rayon=bouquets|soliflores|vendus|aucun opens that shelf first (default: the bouquets).
   ?b=<product id or index> picks the first bouquet; the foreground and the clouds load once it shows.
@@ -51,17 +51,13 @@
     <img class="plan" style="--z:0" data-src="ciel.svg" alt="" decoding="async" fetchpriority="high">
     <div class="plan nuages hauts" style="--z:1" id="nuages-hauts"></div>
     <div class="plan nuages bas" style="--z:2" id="nuages-bas"></div>
-    <img class="plan" style="--z:3" data-src="horizon.svg" alt="" decoding="async" fetchpriority="high">
-    <!-- The flowered ground, composed by depth (sol.mjs + fleurs.mjs: meadow, path, slabs, pillar, flowers), split into
-         three files of similar drawing cost so the browser rasterises them in parallel. -->
-    <img class="plan" style="--z:4" data-src="sol-loin.svg" alt="" decoding="async">
-    <img class="plan" style="--z:5" data-src="sol-milieu.svg" alt="" decoding="async">
-    <div class="pilier-repere" aria-hidden="true"></div>
-    <img class="plan" style="--z:7" data-src="sol-pres.svg" alt="" decoding="async">
-    <div class="plan bouquet" style="--z:8" id="bouquet" role="img" aria-label=""></div>
+    <!-- The catalogue frieze (frise.js, decor/FRISE.md): the horizon and the ground's depth slices as looping strips of
+         tiles, each sliding at its own speed as the camera travels, and the 21 pillars between them, laid here at load;
+         the bouquets in #bouquet, one plane per place in view, over the whole ground as before. -->
+    <div id="frise-ancre" hidden></div>
+    <div class="plan bouquet frise-bouquets" style="--z:8" id="bouquet" role="img" aria-label=""></div>
     <!-- the bouquet's place in the world (its manifest's box): a click brings the camera closer (boutique.js) -->
     <button class="bq-cible" id="bq-cible" type="button" aria-pressed="false" aria-label="{{index.lookCloser}}" hidden></button>
-    <button class="bq-voir" id="bq-voir" type="button" hidden>{{index.open}}</button>
     <div class="plan premier" style="--z:9" id="premier"></div>
     <div class="colonne" aria-hidden="true"></div>
   </div>
@@ -82,12 +78,11 @@
   </div>
 </nav>
 
-<!-- the close-up's bottom: the bouquet's lifespan and the wallpaper demo, the Buy button with its price (ETH, then
-     euros or US dollars by the visitor's country, every 5 s), the resale line; the purchase sheet (the express
-     waiver of the right of withdrawal) opens above the button -->
+<!-- the close-up's bottom: the wallpaper demo, the Buy button with its price (euros or US dollars by the visitor's
+     country) and, under it, the bouquet's lifespan (owner 2026-10-26: no price in crypto shown, the lifespan in the
+     button, no resale line); the purchase sheet (the express waiver of the right of withdrawal) opens above the button -->
 <div class="achat loin" id="achat" hidden>
   <div class="achat-haut">
-    <p class="achat-vie" id="achat-vie"></p>
     <button class="achat-demo" id="achat-demo" type="button" aria-haspopup="dialog">
       <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg>
       <span>{{index.onDesktop}}</span>
@@ -106,10 +101,12 @@
     </div>
   </form>
   <button class="achat-bouton" id="acheter" type="button" aria-controls="accord" aria-expanded="false">
-    <span class="achat-mot" id="achat-mot">{{index.buy}}</span>
-    <span class="achat-prix" id="achat-prix" aria-hidden="true"></span>
+    <span class="achat-ligne">
+      <span class="achat-mot" id="achat-mot">{{index.buy}}</span>
+      <span class="achat-prix" id="achat-prix" aria-hidden="true"></span>
+    </span>
+    <span class="achat-vie" id="achat-vie"></span>
   </button>
-  <p class="achat-revente">{{index.royalties}}</p>
   <p class="achat-etat" id="achat-etat" role="status" aria-live="polite"></p>
 </div>
 
@@ -133,6 +130,7 @@
 <script src="scene.js"></script>
 <script src="eclosion.js" defer></script>
 <script src="entete.js" defer></script>
+<script src="frise.js" defer></script>
 <script src="boutique.js" defer></script>
 <script type="module" src="insectes.mjs"></script>
 <script type="module" src="porteuses.mjs"></script>

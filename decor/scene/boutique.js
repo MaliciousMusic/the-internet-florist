@@ -1,25 +1,24 @@
 // boutique.js: the shop layer of the scene test bench (decor/scene/index.html). No flower engine in the page: every
 // bouquet is pre-drawn once by predessin.mjs (decor/scene/bouquets/<id>/), packed by paquet.mjs and shown by eclosion.js.
 //
-// - One bouquet at a time, on the pillar (plane z8), with no frame around it (owner, 2026-10-24: the gallery of frames
-//   and the bouquets beside it are gone, so the page loads a single bouquet at first). A pager of dots under the "Open"
-//   button tells which bouquet of the day is shown; a dot, a swipe across the scene or the arrow keys show another.
-// - The bouquet shows open and already swaying (no growth): one file, bouquets/<id>/ouvert.json (paquet.mjs), read
-//   beside the decor and drawn hidden, then shown whole at once (eclosion.js, Eclosion.pose). Another bouquet: the shown one
-//   stays until the next one is drawn, then they swap in one frame. The next bouquet's file is fetched ahead when the page
-//   is idle, so a dot rarely waits.
+// - The catalogue frieze (frise.js, owner 2026-10-26): every bouquet stands on its own pillar along a looping landscape of
+//   21 places, the bouquets of the day repeated to fill them; the camera travels along it (drag, swipe, wheel, arrow keys).
+//   The bouquet the camera stops facing is the one on sale. A pager of dots (one per place) travels to a place.
+// - Each bouquet shows open and already swaying (no growth): one file, bouquets/<id>/ouvert.json (paquet.mjs), read once
+//   for all its places, each place drawn hidden, then shown whole at once (eclosion.js, Eclosion.pose); frise.js asks for
+//   the places in view, the nearest the centre first, and takes down those far away.
 // - The Buy button (bottom) for the bouquet on the pillar; the purchase (Seaport) is not wired yet: it only says "soon".
 // - The shelves under the header (entete.js): the bouquets are the scene itself; the soliflores and the bouquets sold
 //   open a panel, one at a time, folded by their icon. ?rayon=<name> picks the first one (default: the bouquets).
 // - Far view: an "Open" button on the pillar, the pager under it; the price bubble stays hidden. A bouquet lives 3 months
 //   from its minting, counted down in hours and minutes (in the close-up), then "Faded" (shown still for good).
-// - The close-up: a click on "Open" or on the bouquet brings the camera closer (the whole scene scaled by one transform so
+// - The close-up: a click on the bouquet facing the camera brings the camera closer (only that bouquet shows then) (the whole scene scaled by one transform so
 //   the bouquet's box fills the room between the header and the price bubble), and the price bubble rises at the bottom.
-//   A click anywhere on the scene, Escape or a header icon takes it back. The bubble's price: in ETH, then its exact
-//   value in the visitor's currency (euros in the euro area, US dollars elsewhere; the country is set on <html
-//   data-pays> by _worker.js, else read from the browser's language) at the live rate (CoinGecko, else the configured
-//   one), every 5 s. Above it, the lifespan and the
-//   desktop demo video; under it, "0% royalties on resale".
+//   A click anywhere on the scene, Escape or a header icon takes it back. The bubble's price: set in ETH, shown at its exact
+//   value in the visitor's currency only (owner 2026-10-26: no crypto price; euros in the euro area, US dollars elsewhere;
+//   the country is set on <html data-pays> by _worker.js, else read from the browser's language) at the live rate
+//   (CoinGecko, else the configured one). In the Buy button, under the price, the lifespan; above it, the desktop demo
+//   video.
 // - The purchase sheet: Buy opens it above the button; its box (unticked) asks for immediate delivery and the waiver of
 //   the right of withdrawal (French Consumer Code L221-28, 13°); "Confirm and pay" goes on only once it is ticked, with
 //   the consent's time kept for the receipt (Boutique.recu: a page to download, in the page's language). The payment
@@ -49,40 +48,85 @@
   let chosen = -1;
   const cards = [];
 
-  // ---------- the pager: one dot per bouquet of the day, by the dock (under it on a phone, just above it on a computer)
-  // The dot of the bouquet shown is drawn longer. A dot, a swipe across the scene (finger or mouse) or the arrow keys show
-  // another bouquet; the pager loops at its ends. Hovering or focusing a dot fetches its bouquet's file ahead.
+  // ---------- the frieze's places (frise.js, decor/FRISE.md, owner 2026-10-26): 21 pillars, the bouquets of the day
+  // repeated to fill them. Each setting of the frieze holds every bouquet once (7 places each for 7 bouquets), never the
+  // same bouquet twice side by side, across a setting's edge or the loop's seam either.
+  // (until the settings exist, the order is a fixed rotation per setting; it will follow each bouquet's contrast with its
+  // background, FRISE.md question 4)
+  let slots = []; // place -> { p: product, k: its index }
+  function lay(n, places) {
+    const per = Math.ceil(places / 3);
+    const shift = [0, Math.floor(n / 2), n - 2 > 0 ? n - 2 : 0];
+    const out = [];
+    for (let s = 0; s < places; s++) out.push((Math.floor(s % per) + shift[Math.floor(s / per)]) % n);
+    // no twins side by side (fewer bouquets than places in a setting, or a rotation that meets itself)
+    for (let s = 0; s < places && n > 2; s++) {
+      const prev = out[(s + places - 1) % places];
+      if (out[s] === prev) out[s] = (out[s] + 1) % n;
+      if (out[s] === out[(s + 1) % places]) out[s] = (out[s] + n - 1) % n === prev ? (out[s] + 2) % n : (out[s] + n - 1) % n;
+    }
+    return out;
+  }
+  const productAt = (s) => slots[s] && slots[s].p;
+
+  // ---------- the pager: one dot per bouquet on sale (owner 2026-10-26: 21 dots, one per place, ran off a phone's
+  // edges), by the dock (under it on a phone, just above it on a computer). The dot of the bouquet facing the camera is
+  // drawn longer, wherever on the loop it stands. A dot travels the camera to that bouquet's place nearest it; the drag, the
+  // swipe and the arrow keys are the frieze's (frise.js). Hovering or focusing a dot fetches its bouquet's file ahead.
   const pager = $('pager');
   function buildPager() {
     const frag = document.createDocumentFragment();
-    CFG.produits.forEach((p, i) => {
+    CFG.produits.forEach((p, k) => {
       const b = document.createElement('button');
       b.type = 'button';
       b.className = 'point';
-      b.dataset.i = i;
+      b.dataset.i = k;
       frag.append(b);
-      cards.push({ b, p });
+      cards.push({ p, b });
     });
     pager.append(frag);
     pager.hidden = cards.length < 2;
     labelFrames();
   }
 
-  function choose(i) {
-    const n = cards.length;
-    i = ((i % n) + n) % n;
-    if (!n || i === chosen) return;
-    if (near) closeUp(false);
+  // the camera stopped facing a place: its bouquet is the one on sale (Buy, its price, its lifespan), its dot is marked
+  function facing(i) {
+    if (!slots.length) return; // (start() calls it again once the places are laid)
+    if (i === chosen) return placeTarget();
     chosen = i;
     cards.forEach((c, k) => {
-      if (k === i) c.b.setAttribute('aria-current', 'true');
+      if (k === slots[i].k) c.b.setAttribute('aria-current', 'true');
       else c.b.removeAttribute('aria-current');
     });
-    const c = cards[i];
-    buyFor(c.p);
-    plane.setAttribute('aria-label', fill(T.planeLabel, { name: c.p.nom, alt: altOf(c.p) }));
-    showBouquet(c.p);
+    const p = productAt(i);
+    buyFor(p);
+    plane.setAttribute('aria-label', fill(T.planeLabel, { name: p.nom, alt: altOf(p) }));
+    placeTarget();
   }
+  // a dot: the place of its bouquet nearest the camera (the frieze's loop holds it once per setting)
+  function choose(k) {
+    if (!cards.length) return;
+    if (near) closeUp(false);
+    const n = slots.length, here = Frise.camera() / CFG.pas;
+    let best = -1, bd = Infinity;
+    slots.forEach((s, i) => {
+      if (s.k !== k) return;
+      const d = Math.abs(((((i - here) % n) + n + n / 2) % n) - n / 2);
+      if (d < bd) (bd = d), (best = i);
+    });
+    if (best >= 0) Frise.va(best);
+  }
+  document.addEventListener('frise:arret', (e) => facing(e.detail));
+  // the bouquet facing the camera has just been posed: its button and close-up box
+  document.addEventListener('frise:bouquet', (e) => {
+    if (e.detail !== Frise.face()) return;
+    placeTarget();
+    frameCloseUp();
+  });
+  document.addEventListener('frise:depart', () => {
+    if (near) closeUp(false);
+    $('bq-cible').hidden = true;
+  });
 
   pager.addEventListener('click', (e) => {
     const b = e.target.closest('.point');
@@ -93,30 +137,8 @@
   for (const ev of ['pointerenter', 'focusin'])
     pager.addEventListener(ev, (e) => {
       const b = e.target.closest && e.target.closest('.point');
-      if (b) ahead(cards[+b.dataset.i].p);
+      if (b) ahead(CFG.produits[+b.dataset.i]);
     }, true);
-  let swipe = null;
-  scene.addEventListener('pointerdown', (e) => {
-    if (near || (e.pointerType === 'mouse' && e.button !== 0)) return;
-    swipe = { x: e.clientX, y: e.clientY, id: e.pointerId };
-  });
-  scene.addEventListener('pointerup', (e) => {
-    if (!swipe || e.pointerId !== swipe.id) return;
-    const dx = e.clientX - swipe.x;
-    const dy = e.clientY - swipe.y;
-    swipe = null;
-    if (Math.abs(dx) < 40 || Math.abs(dx) < Math.abs(dy) * 1.5) return;
-    choose(chosen + (dx < 0 ? 1 : -1));
-  });
-  scene.addEventListener('pointercancel', () => (swipe = null));
-  scene.addEventListener('dragstart', (e) => e.preventDefault());
-  document.addEventListener('keydown', (e) => {
-    if (near || e.altKey || e.ctrlKey || e.metaKey || /^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement.tagName)) return;
-    if (e.key === 'ArrowRight') choose(chosen + 1);
-    else if (e.key === 'ArrowLeft') choose(chosen - 1);
-    else return;
-    e.preventDefault();
-  });
 
   // a bouquet's one file (paquet.mjs), read once: the shown one at first, its neighbours ahead when the page is idle
   const fileOf = (p) => p.bouquet.replace(/manifeste\.json$/, 'ouvert.json');
@@ -168,18 +190,22 @@
   function onScreen(x, y) {
     const W = scene.clientWidth;
     const H = scene.clientHeight;
-    const mw = Math.max(W, (H * WW) / WH);
+    // (the world's width as laid out: on the frieze a phone sees more than the screen's height would give, scene.css)
+    const mw = monde.offsetWidth || Math.max(W, (H * WW) / WH);
     const k = mw / WW;
     const low = -parseFloat(getComputedStyle(monde).bottom) || 0;
     return [(W - mw) / 2 + x * k, H + low - WH * k + y * k, k];
   }
   const pct = (v, of) => `${((v / of) * 100).toFixed(3)}%`;
   function placeTarget() {
-    const see = $('bq-voir');
-    if (!box) return (target.hidden = see.hidden = true);
+    // the bouquet facing the camera at rest (frise.js); none while it travels
+    const f = Frise.face();
+    const b = f >= 0 ? Frise.bouquet(f) : null;
+    box = (b && b.manifeste.boite) || null;
+    if (!box) return (target.hidden = true);
     const [x, y, w, h] = box;
     Object.assign(target.style, { left: pct(x, WW), top: pct(y, WH), width: pct(w, WW), height: pct(h, WH) });
-    target.hidden = see.hidden = false;
+    target.hidden = false;
   }
   function frameCloseUp() {
     if (!near || !box) return;
@@ -207,7 +233,13 @@
   function closeUp(on, keepShelf) {
     if (on === near || (on && !box)) return;
     near = on;
+    // the camera stays facing the bouquet while it is seen close
+    Frise.fige(on);
     scene.classList.toggle('proche', on);
+    // only the chosen bouquet in the close-up (owner 2026-10-26): its place's plane is marked, the others hide (scene.css)
+    for (const el of document.querySelectorAll('.frise-bouquet.choisi')) el.classList.remove('choisi');
+    const b = on ? Frise.bouquet(Frise.face()) : null;
+    if (b && b.el.closest('.frise-bouquet')) b.el.closest('.frise-bouquet').classList.add('choisi');
     target.setAttribute('aria-pressed', String(on));
     target.setAttribute('aria-label', on ? T.stepBack : T.lookCloser);
     $('achat').classList.toggle('loin', !on);
@@ -222,10 +254,6 @@
       keptShelf = undefined;
     }
   }
-  $('bq-voir').addEventListener('click', (e) => {
-    e.stopPropagation();
-    closeUp(true);
-  });
   target.addEventListener('click', (e) => {
     e.stopPropagation();
     closeUp(!near);
@@ -236,8 +264,8 @@
   });
   addEventListener('resize', frameCloseUp);
 
-  // ---------- the price in the bubble: in ETH, then its exact value in the visitor's currency, every 5 s. The new price
-  // comes down from above and crushes the shown one against the bubble's floor (transforms only).
+  // ---------- the price in the bubble: set in ETH, shown at its exact value in the visitor's currency; a new value (the live
+  // rate) comes down from above and crushes the shown one against the bubble's floor (transforms only).
   // The currency: euros in the euro area (French law asks for euros), US dollars elsewhere. The country comes from
   // _worker.js (Cloudflare reads it from the IP address), else from the browser's language ("fr-FR" -> FR).
   const EURO = new Set('AT BE CY DE EE ES FI FR GR HR IE IT LT LU LV MT NL PT SI SK AD MC SM VA ME XK GP MQ GF RE YT PM BL MF'.split(' '));
@@ -260,7 +288,7 @@
       M.cours = { devise: CUR, parEth: r, pays: country, enDirect: true, lu: new Date().toISOString() };
       if (curP) {
         labelBuy(curP);
-        if (showFiat) setPrice(fiatOf(curP), false);
+        setPrice(fiatOf(curP), false);
       }
       labelFrames();
     } catch (_) {}
@@ -268,8 +296,6 @@
   const priceBox = $('achat-prix');
   const buy = $('acheter');
   let curP = null;
-  let showFiat = false;
-  let flipT = 0;
   function setPrice(text, roll) {
     const old = priceBox.querySelector('.prix-ligne:not(.part)');
     const el = document.createElement('span');
@@ -283,16 +309,10 @@
     el.animate([{ transform: 'translateY(-100%)' }, { transform: 'none' }], o);
     old.animate([{ transform: 'scaleY(1)' }, { transform: 'scaleY(0)' }], o).finished.then(() => old.remove(), () => old.remove());
   }
+  // (owner 2026-10-26: no price in crypto shown; the price stays set in ETH, shown at its value in the visitor's currency)
   function priceFor(p) {
     curP = p;
-    showFiat = false;
-    setPrice(ethTxt(p), false);
-    clearInterval(flipT);
-    flipT = setInterval(() => {
-      if (document.hidden || !curP) return;
-      showFiat = !showFiat;
-      setPrice(showFiat ? fiatOf(curP) : ethTxt(curP), true);
-    }, 5000);
+    setPrice(fiatOf(p), false);
   }
 
   // ---------- the lifespan: a bouquet lives 3 months from its minting (boutique.json "vie"), counted down in hours and
@@ -480,8 +500,6 @@
   const decorIn = Promise.race([window.SCENE_DECOR || Promise.resolve(), new Promise((r) => setTimeout(r, 6000))]).then(() => Math.round(performance.now()));
 
   // ---------- the bouquet on the pillar
-  let cur = null;
-  let gen = 0;
   let firstDone = null;
   const first = new Promise((res) => (firstDone = res));
   // the first bouquet shown (15 s at most): the foreground, the clouds, the insects and the next bouquets' files come
@@ -491,47 +509,34 @@
   setTimeout(() => allInRes(), 15000);
   firstAllIn.then(() => document.dispatchEvent(new Event('boutique:bouquet')));
 
-  async function showBouquet(p) {
-    const my = ++gen;
+  // a bouquet on its place of the frieze (frise.js asks for the places in view, the nearest the centre first): drawn whole,
+  // hidden, then shown at once, swaying
+  async function poseAt(place, into) {
+    const p = productAt(place);
     const t0 = performance.now();
-    let b;
-    try {
-      const data = await read(p);
-      const tFile = performance.now();
-      await decorIn;
-      if (my !== gen) return;
-      // past its lifespan: shown still (the faded drawing is still to be pre-drawn)
-      // four depth boxes: the insects (insectes.mjs) fly between them, in front of some flowers and behind others
-      b = await Eclosion.pose(plane, fileOf(p), { monde: [WW, WH], final: faded(p), plans: 4, donnees: data });
-      b.tFile = tFile;
-    } catch (err) {
-      console.error('[boutique]', p.id, err);
-      return;
-    }
-    // drawn whole, hidden, then shown in the frame the previous one goes
+    const data = await read(p);
+    const tFile = performance.now();
+    await decorIn;
+    if (!into.isConnected) return null;
+    // past its lifespan: shown still (the faded drawing is still to be pre-drawn)
+    // four depth boxes: the insects (insectes.mjs) fly between them, in front of some flowers and behind others
+    const b = await Eclosion.pose(into, fileOf(p), { monde: [WW, WH], final: faded(p), plans: 4, donnees: data });
     await b.pret;
-    await new Promise((r) => requestAnimationFrame(r));
-    if (my !== gen) return b.arret();
-    if (cur) cur.repli();
-    cur = b;
+    if (!into.isConnected) return (b.arret(), null);
     const t2 = await b.montre();
-    box = b.manifeste.boite || null;
-    placeTarget();
-    frameCloseUp();
-    if (q.has('debug')) console.info(`[boutique] ${p.id}: échelle ${b.manifeste.echelle.s}, sommet y ${b.manifeste.echelle.sommet}${b.manifeste.echelle.reduit ? ', réduit (' + b.manifeste.echelle.reduit + ')' : ''}`);
-    const rec = { produit: p.id, appelMs: Math.round(t0), fichierMs: Math.round(b.tFile), montreMs: Math.round(t2), images: b.pieces.length };
+    if (q.has('debug')) console.info(`[boutique] ${place} ${p.id}: échelle ${b.manifeste.echelle.s}, sommet y ${b.manifeste.echelle.sommet}`);
+    const rec = { place, produit: p.id, appelMs: Math.round(t0), fichierMs: Math.round(tFile), montreMs: Math.round(t2), images: b.pieces.length };
     if (!M.premiere) {
       M.premiere = Object.assign(rec, { decorMs: await decorIn, echelle: b.manifeste.echelle });
       firstDone(b);
       allInRes();
     } else (M.suivantes ||= []).push(rec);
     report();
-    // the neighbours' files, ahead: once the foreground and the insects have come (6 s after the first bouquet), when idle
-    const i = cards.findIndex((c) => c.p === p);
-    await new Promise((r) => setTimeout(r, M.suivantes ? 0 : 6000));
-    await new Promise((r) => (window.requestIdleCallback ? requestIdleCallback(r, { timeout: 3000 }) : setTimeout(r, 100)));
-    if (my !== gen) return;
-    for (const d of [1, -1]) ahead(cards[(i + d + cards.length) % cards.length].p);
+    if (place === Frise.face()) {
+      placeTarget();
+      frameCloseUp();
+    }
+    return b;
   }
 
   // ---------- measures (?perf=1)
@@ -626,14 +631,23 @@
     rate = CUR === 'eur' ? CFG.cours.eurParEth : CFG.coursUsd.usdParEth;
     liveRate();
     setInterval(liveRate, 5 * 60 * 1000);
+    const F = await Frise.pret;
+    const order = lay(CFG.produits.length, F.places);
+    slots = order.map((k) => ({ p: CFG.produits[k], k }));
+    CFG.pas = F.pas;
     buildPager();
     const r0 = q.get('rayon');
     openShelf(shelf.querySelector(`[data-rayon="${r0}"]`) ? r0 : 'bouquets');
+    // ?b=<product id or index>: start facing that bouquet's first place
     const want = q.get('b');
-    let i = want == null ? 0 : /^\d+$/.test(want) ? +want : CFG.produits.findIndex((p) => p.id === want);
-    if (!(i >= 0 && i < cards.length)) i = 0;
+    const k = want == null ? 0 : /^\d+$/.test(want) ? +want : CFG.produits.findIndex((p) => p.id === want);
+    const at = order.indexOf(k >= 0 && k < CFG.produits.length ? k : 0);
     if (PERF) measure();
-    choose(i);
+    Frise.nommer((s) => productAt(s).nom);
+    if (at > 0) Frise.va(at, { instant: true });
+    Frise.poser(poseAt);
+    const f = Frise.face();
+    if (f >= 0) facing(f);
   }
 
   // nothing grows or sways while the tab is hidden (only what was running starts again: a finished entrance stays finished)

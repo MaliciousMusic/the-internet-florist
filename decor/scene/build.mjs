@@ -129,7 +129,8 @@ function preloads() {
   return [
     '<link rel="preload" href="boutique.json" as="fetch" crossorigin>',
     ...layer('ciel.svg', true),
-    ...layer('horizon.svg', true),
+    // the catalogue frieze's manifest (frise.js): its strips' tiles follow
+    '<link rel="preload" href="../out/frise/frise.json" as="fetch" crossorigin>',
     `<link rel="preload" href="${first}" as="fetch" crossorigin>`,
   ];
 }

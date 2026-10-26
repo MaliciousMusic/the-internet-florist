@@ -34,8 +34,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preload" href="boutique.json" as="fetch" crossorigin>
 <link rel="preload" href="../out/ciel.svg" as="image" fetchpriority="high">
-<link rel="preload" href="../out/calques/colonne/horizon.webp" as="image" media="(max-aspect-ratio: 28/45)" fetchpriority="high">
-<link rel="preload" href="../out/calques/horizon.webp" as="image" media="(min-aspect-ratio: 28.001/45)" fetchpriority="high">
+<link rel="preload" href="../out/frise/frise.json" as="fetch" crossorigin>
 <link rel="preload" href="bouquets/printemps-a-la-carpe/ouvert.json" as="fetch" crossorigin>
 <link rel="stylesheet" href="scene.css">
 <link rel="stylesheet" href="boutique.css">
@@ -375,7 +374,7 @@
   ]
 }
 </script>
-<script type="application/json" id="i18n">{"code":"fr","locale":"fr-FR","page":"index","p":"fr/","langues":[{"code":"en","name":"English","href":"index.html"},{"code":"fr","name":"Français","href":"fr/index.html"},{"code":"es","name":"Español","href":"es/index.html"},{"code":"zh","name":"中文","href":"zh/index.html"},{"code":"de","name":"Deutsch","href":"de/index.html"}],"t":{"menu":"Menu","shelves":{"bouquets":"Bouquets du jour","soliflores":"Soliflores","vendus":"Bouquets collectionnés"},"desktopTitle":"Sur mon bureau","desktopLabel":"Votre bouquet sur votre bureau","openSeaTitle":"Notre collection sur OpenSea","openSeaLabel":"Notre collection sur OpenSea (nouvel onglet)","about":"À propos","legal":"Mentions légales","closeLegal":"Fermer le panneau des mentions légales","footer":"<p>Chaque bouquet est un objet de collection numérique unique (un NFT sur Base), dont le prix est fixé en ETH, sans TVA (TVA non applicable, art. 293 B du CGI) ; le montant en euros ou en dollars américains correspond au même prix au cours du moment. Il vit trois mois à compter de sa frappe, puis reste fané pour de bon. La livraison est immédiate : le droit de rétractation ne s’applique donc plus une fois votre achat confirmé. Nous ne percevons pas de royalties sur la revente (0 %).<\/p><p>Aucun pistage, aucune publicité : un cookie au plus, pour retenir la langue que vous avez choisie.<\/p>","links":{"notice":"Mentions légales","terms":"Conditions générales de vente","privacy":"Confidentialité","app":"Licence de Belai Bureau","accessibility":"Accessibilité","contact":"Contact"},"credit":"Cours de l’ETH fourni par {coingecko}.","language":"Langue","lookCloser":"Regarder le bouquet de plus près","stepBack":"Prendre du recul","planeLabel":"{name}, sur le pilier. {alt}","frameLabel":"{name}, {eth}, environ {fiat}, {life}. {alt}","buyLabel":"Acheter « {name} », {eth}, environ {fiat}","lifeLeft":"{h} h {m} min","fadesIn":"Fane dans {t}","fadesInLower":"fane dans {t}","faded":"Fané","fadedLower":"fané","fadedForGood":"Fané pour toujours","buy":"Acheter","soon":"Bientôt","soonMessage":"L’achat depuis le site arrive bientôt.","tickFirst":"Cochez d’abord la case : votre bouquet est livré immédiatement.","receipt":{"title":"Reçu","download":"Télécharger votre reçu","bouquet":"Bouquet","token":"Jeton","price":"Prix","date":"Date","buyer":"Portefeuille de l’acheteur","transaction":"Transaction","seller":"Vendeur","waiver":"Avant de payer, vous avez demandé la livraison immédiate et reconnu renoncer ainsi à votre droit de rétractation (Code de la consommation, article L221-28, 13°).","terms":"Conditions générales de vente acceptées à cette date : {url}","taxes":"TVA non applicable, art. 293 B du CGI."}},"alts":{"printemps-a-la-carpe":"Un bouquet numérique unique de 70 tiges dessinées à la main (renoncule, iris de Hollande, tulipe, pois de senteur, jacinthe, muscari et autres) dans un vase carpe en bronze coulé. Il vit trois mois, puis reste fané pour de bon.","ronde-bleue":"Un bouquet numérique unique de 37 tiges dessinées à la main (iris de Hollande, anémone, lilas, cognassier du Japon, viorne boule-de-neige, tulipe et autres) dans un vase en verre dépoli aux danseuses. Il vit trois mois, puis reste fané pour de bon.","printemps-cobalt":"Un bouquet numérique unique de 13 tiges dessinées à la main (tulipe, chatons de saule, forsythia, liriope, narcisse trompette, renoncule et autres) dans une coupe cobalt mouchetée. Il vit trois mois, puis reste fané pour de bon.","nuage-sorbet":"Un bouquet numérique unique de 19 tiges dessinées à la main (pois de senteur, sanguisorbe, orchidée cymbidium et rose de jardin) dans une coupe sur pied blanche mate. Il vit trois mois, puis reste fané pour de bon.","songe-amethyste":"Un bouquet numérique unique de 31 tiges dessinées à la main (anémone, pois de senteur, jasmin, œillet de poète, arum, orchidée phalaenopsis et autres) dans un cylindre en inox poli miroir. Il vit trois mois, puis reste fané pour de bon.","lune-d-orchidees":"Un bouquet numérique unique de 14 tiges dessinées à la main (cyclamen, orchidée phalaenopsis, tulipe et tulipe perroquet) dans un vase boule sur pied couleur sable. Il vit trois mois, puis reste fané pour de bon.","carnaval-de-corail":"Un bouquet numérique unique de 30 tiges dessinées à la main (ruscus teinté, freesia, renoncule, orchidée phalaenopsis, lisianthus, iris de Hollande et autres) dans un vase calice moucheté. Il vit trois mois, puis reste fané pour de bon."}}</script>
+<script type="application/json" id="i18n">{"code":"fr","locale":"fr-FR","page":"index","p":"fr/","langues":[{"code":"en","name":"English","href":"index.html"},{"code":"fr","name":"Français","href":"fr/index.html"},{"code":"es","name":"Español","href":"es/index.html"},{"code":"zh","name":"中文","href":"zh/index.html"},{"code":"de","name":"Deutsch","href":"de/index.html"}],"t":{"menu":"Menu","shelves":{"bouquets":"Bouquets du jour","soliflores":"Soliflores","vendus":"Bouquets collectionnés"},"desktopTitle":"Sur mon bureau","desktopLabel":"Votre bouquet sur votre bureau","openSeaTitle":"Notre collection sur OpenSea","openSeaLabel":"Notre collection sur OpenSea (nouvel onglet)","about":"À propos","legal":"Mentions légales","closeLegal":"Fermer le panneau des mentions légales","footer":"<p>Chaque bouquet est un objet de collection numérique unique (un NFT sur Base), dont le prix est fixé en ETH, sans TVA (TVA non applicable, art. 293 B du CGI) ; le montant en euros ou en dollars américains correspond au même prix au cours du moment. Il vit trois mois à compter de sa frappe, puis reste fané pour de bon. La livraison est immédiate : le droit de rétractation ne s’applique donc plus une fois votre achat confirmé. Nous ne percevons pas de royalties sur la revente (0 %).<\/p><p>Aucun pistage, aucune publicité : un cookie au plus, pour retenir la langue que vous avez choisie.<\/p>","links":{"notice":"Mentions légales","terms":"Conditions générales de vente","privacy":"Confidentialité","app":"Licence de Belai Bureau","accessibility":"Accessibilité","contact":"Contact"},"credit":"Cours de l’ETH fourni par {coingecko}.","language":"Langue","lookCloser":"Regarder le bouquet de plus près","stepBack":"Prendre du recul","planeLabel":"{name}, sur le pilier. {alt}","frameLabel":"{name}, environ {fiat}, {life}. {alt}","buyLabel":"Acheter « {name} », environ {fiat}","lifeLeft":"{h} h {m} min","fadesIn":"Fane dans {t}","fadesInLower":"fane dans {t}","faded":"Fané","fadedLower":"fané","fadedForGood":"Fané pour toujours","buy":"Acheter","soon":"Bientôt","soonMessage":"L’achat depuis le site arrive bientôt.","tickFirst":"Cochez d’abord la case : votre bouquet est livré immédiatement.","receipt":{"title":"Reçu","download":"Télécharger votre reçu","bouquet":"Bouquet","token":"Jeton","price":"Prix","date":"Date","buyer":"Portefeuille de l’acheteur","transaction":"Transaction","seller":"Vendeur","waiver":"Avant de payer, vous avez demandé la livraison immédiate et reconnu renoncer ainsi à votre droit de rétractation (Code de la consommation, article L221-28, 13°).","terms":"Conditions générales de vente acceptées à cette date : {url}","taxes":"TVA non applicable, art. 293 B du CGI."}},"alts":{"printemps-a-la-carpe":"Un bouquet numérique unique de 70 tiges dessinées à la main (renoncule, iris de Hollande, tulipe, pois de senteur, jacinthe, muscari et autres) dans un vase carpe en bronze coulé. Il vit trois mois, puis reste fané pour de bon.","ronde-bleue":"Un bouquet numérique unique de 37 tiges dessinées à la main (iris de Hollande, anémone, lilas, cognassier du Japon, viorne boule-de-neige, tulipe et autres) dans un vase en verre dépoli aux danseuses. Il vit trois mois, puis reste fané pour de bon.","printemps-cobalt":"Un bouquet numérique unique de 13 tiges dessinées à la main (tulipe, chatons de saule, forsythia, liriope, narcisse trompette, renoncule et autres) dans une coupe cobalt mouchetée. Il vit trois mois, puis reste fané pour de bon.","nuage-sorbet":"Un bouquet numérique unique de 19 tiges dessinées à la main (pois de senteur, sanguisorbe, orchidée cymbidium et rose de jardin) dans une coupe sur pied blanche mate. Il vit trois mois, puis reste fané pour de bon.","songe-amethyste":"Un bouquet numérique unique de 31 tiges dessinées à la main (anémone, pois de senteur, jasmin, œillet de poète, arum, orchidée phalaenopsis et autres) dans un cylindre en inox poli miroir. Il vit trois mois, puis reste fané pour de bon.","lune-d-orchidees":"Un bouquet numérique unique de 14 tiges dessinées à la main (cyclamen, orchidée phalaenopsis, tulipe et tulipe perroquet) dans un vase boule sur pied couleur sable. Il vit trois mois, puis reste fané pour de bon.","carnaval-de-corail":"Un bouquet numérique unique de 30 tiges dessinées à la main (ruscus teinté, freesia, renoncule, orchidée phalaenopsis, lisianthus, iris de Hollande et autres) dans un vase calice moucheté. Il vit trois mois, puis reste fané pour de bon."}}</script>
 </head>
 <body>
 <!--
@@ -399,7 +398,7 @@
   - the header (dock of icons opening the shelves, OpenSea, About) and the footer (legal notice): entete.js, entete.css;
   - .pager: one dot per bouquet of the day, under the dock on a phone, just above it on a computer; a dot, a swipe or the arrow keys show
     another bouquet (one at a time, open and swaying, no frame around it); the price bubble (.achat) only shows in the close-up;
-  - a click on the bouquet or on "Open" brings the camera closer (the whole scene scaled by one transform); a click, Escape or another
+  - a click on the bouquet brings the camera closer (the whole scene scaled by one transform); a click, Escape or another
     shelf takes it back.
   ?rayon=bouquets|soliflores|vendus|aucun opens that shelf first (default: the bouquets).
   ?b=<product id or index> picks the first bouquet; the foreground and the clouds load once it shows.
@@ -418,17 +417,13 @@
     <img class="plan" style="--z:0" data-src="ciel.svg" alt="" decoding="async" fetchpriority="high">
     <div class="plan nuages hauts" style="--z:1" id="nuages-hauts"></div>
     <div class="plan nuages bas" style="--z:2" id="nuages-bas"></div>
-    <img class="plan" style="--z:3" data-src="horizon.svg" data-apercu='{"plein":["calques/horizon.webp",0,661.875,2400,77.5],"colonne":["calques/colonne/horizon.webp",780,671.875,840,67.5]}' alt="" decoding="async" fetchpriority="high">
-    <!-- The flowered ground, composed by depth (sol.mjs + fleurs.mjs: meadow, path, slabs, pillar, flowers), split into
-         three files of similar drawing cost so the browser rasterises them in parallel. -->
-    <img class="plan" style="--z:4" data-src="sol-loin.svg" data-apercu='{"plein":["calques/sol-loin.webp",0,705.625,2400,644.375],"colonne":["calques/colonne/sol-loin.webp",780,705.625,840,644.375]}' alt="" decoding="async">
-    <img class="plan" style="--z:5" data-src="sol-milieu.svg" data-apercu='{"plein":["calques/sol-milieu.webp",0,698.125,2400,651.875],"colonne":["calques/colonne/sol-milieu.webp",780,698.125,840,651.875]}' alt="" decoding="async">
-    <div class="pilier-repere" aria-hidden="true"></div>
-    <img class="plan" style="--z:7" data-src="sol-pres.svg" data-apercu='{"plein":["calques/sol-pres.webp",0,828.125,2400,521.875],"colonne":["calques/colonne/sol-pres.webp",780,944.375,840,405.625]}' alt="" decoding="async">
-    <div class="plan bouquet" style="--z:8" id="bouquet" role="img" aria-label=""></div>
+    <!-- The catalogue frieze (frise.js, decor/FRISE.md): the horizon and the ground's depth slices as looping strips of
+         tiles, each sliding at its own speed as the camera travels, and the 21 pillars between them, laid here at load;
+         the bouquets in #bouquet, one plane per place in view, over the whole ground as before. -->
+    <div id="frise-ancre" hidden></div>
+    <div class="plan bouquet frise-bouquets" style="--z:8" id="bouquet" role="img" aria-label=""></div>
     <!-- the bouquet's place in the world (its manifest's box): a click brings the camera closer (boutique.js) -->
     <button class="bq-cible" id="bq-cible" type="button" aria-pressed="false" aria-label="Regarder le bouquet de plus près" hidden></button>
-    <button class="bq-voir" id="bq-voir" type="button" hidden>Ouvrir</button>
     <div class="plan premier" style="--z:9" id="premier"></div>
     <div class="colonne" aria-hidden="true"></div>
   </div>
@@ -449,12 +444,11 @@
   </div>
 </nav>
 
-<!-- the close-up's bottom: the bouquet's lifespan and the wallpaper demo, the Buy button with its price (ETH, then
-     euros or US dollars by the visitor's country, every 5 s), the resale line; the purchase sheet (the express
-     waiver of the right of withdrawal) opens above the button -->
+<!-- the close-up's bottom: the wallpaper demo, the Buy button with its price (euros or US dollars by the visitor's
+     country) and, under it, the bouquet's lifespan (owner 2026-10-26: no price in crypto shown, the lifespan in the
+     button, no resale line); the purchase sheet (the express waiver of the right of withdrawal) opens above the button -->
 <div class="achat loin" id="achat" hidden>
   <div class="achat-haut">
-    <p class="achat-vie" id="achat-vie"></p>
     <button class="achat-demo" id="achat-demo" type="button" aria-haspopup="dialog">
       <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg>
       <span>Sur votre bureau</span>
@@ -473,10 +467,12 @@
     </div>
   </form>
   <button class="achat-bouton" id="acheter" type="button" aria-controls="accord" aria-expanded="false">
-    <span class="achat-mot" id="achat-mot">Acheter</span>
-    <span class="achat-prix" id="achat-prix" aria-hidden="true"></span>
+    <span class="achat-ligne">
+      <span class="achat-mot" id="achat-mot">Acheter</span>
+      <span class="achat-prix" id="achat-prix" aria-hidden="true"></span>
+    </span>
+    <span class="achat-vie" id="achat-vie"></span>
   </button>
-  <p class="achat-revente">0 % de royalties à la revente</p>
   <p class="achat-etat" id="achat-etat" role="status" aria-live="polite"></p>
 </div>
 
@@ -500,6 +496,7 @@
 <script src="scene.js"></script>
 <script src="eclosion.js" defer></script>
 <script src="entete.js" defer></script>
+<script src="frise.js" defer></script>
 <script src="boutique.js" defer></script>
 <script type="module" src="insectes.mjs"></script>
 <script type="module" src="porteuses.mjs"></script>

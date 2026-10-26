@@ -18,17 +18,17 @@
 // boutique.js prepares the bouquet whole and grows it, then the clumps on screen come, one at a time when the page is idle.
 (() => {
   const q = new URLSearchParams(location.search);
+  // The catalogue frieze (frise.js, owner 2026-10-26): the horizon, the ground, the pillars and the foreground's clumps are
+  // its own (the camera travels along them); here only the sky and its veils. The insects follow its camera
+  // (insectes.mjs).
+  const FRISE = !!document.getElementById('frise-ancre');
+  const bugs = q.get('insectes') !== '0';
   // the HUD's carriers (porteuses.mjs): from the first paint the pieces their ants bring wait off screen (boutique.css); with
   // prefers-reduced-motion, ?porteuses=0 or ?insectes=0 they stand in their places as before, and they are put back if the
   // ants have not set out after 6 s
-  if (!matchMedia('(prefers-reduced-motion: reduce)').matches && q.get('porteuses') !== '0' && q.get('insectes') !== '0') {
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches && q.get('porteuses') !== '0' && bugs) {
     document.documentElement.classList.add('porteuses');
     setTimeout(() => { if (!window.PORTEUSES_EN_ROUTE) document.documentElement.classList.remove('porteuses'); }, 6000);
-    // the Open button too, at every page load (its bumblebee, bourdon-open.mjs, or its ant at ?open=fourmi, fourmi-open.mjs,
-    // started by insectes.mjs once the first bouquet has grown): it waits for its carrier, and shows by itself if the carrier
-    // has not set out after 45 s
-    document.documentElement.classList.add('fourmi-open');
-    setTimeout(() => { if (!window.FOURMI_OPEN_EN_ROUTE) document.documentElement.classList.remove('fourmi-open'); }, 45000);
   }
   const scene = document.getElementById('scene');
   const OUT = `../${q.get('out') || 'out'}/`;
@@ -190,10 +190,11 @@
       }
     });
   Promise.all([sceneJson, afterBouquet])
-    .then(([m]) => m)
+    // (on the frieze, frise.js lays the clumps along their own strip)
+    .then(([m]) => (FRISE ? null : m))
     // insectes.mjs draws the clumps as sprites with the insects (window.PREMIER_PIXI resolves once it does): the SVG clumps
     // below are then left out; they come when it cannot (it rejects, or with prefers-reduced-motion it never starts)
-    .then((m) => (window.PREMIER_PIXI ? window.PREMIER_PIXI.then(() => null, () => m) : m))
+    .then((m) => (m && window.PREMIER_PIXI ? window.PREMIER_PIXI.then(() => null, () => m) : m))
     .then((m) => {
       if (!m) return;
       // The gust crosses the field left to right in about 1.6 s.
