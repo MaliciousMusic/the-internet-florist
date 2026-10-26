@@ -13,7 +13,7 @@ fois en route, d'un milieu à l'autre, pour que chaque groupe de bouquets ait so
 
 | Sujet | Décision du porteur |
 |---|---|
-| Caméra | Glissé libre avec inertie. Un swipe fait passer au bouquet suivant, et son nom s'affiche dans le ciel. |
+| Caméra | Glissé libre. Un swipe fait passer au bouquet suivant, et son nom s'affiche dans le ciel. Lâchée, la caméra s'arrête toujours face à un bouquet, d'un seul mouvement fluide (26 octobre). |
 | Nom dans le ciel | En Nunito ExtraLight, blanc et grand, au-dessus du pilier. Il glisse avec le ciel et s'efface quand on quitte le bouquet. |
 | Milieux | Trois, dans cet ordre de boucle : **plaine montagneuse**, **prairie fleurie** (le décor actuel), **bord d'étang**. Tout est en plein jour. |
 | Plaine montagneuse | Une plaine plate et fleurie, avec des montagnes vertes et pierreuses en fond (référence : la 2ᵉ photo du porteur, un haut plateau de montagne en été). Seul ce milieu a un relief : la règle de l'horizon plat reste valable pour les deux autres. |
@@ -22,11 +22,11 @@ fois en route, d'un milieu à l'autre, pour que chaque groupe de bouquets ait so
 | Répartition | Environ 7 bouquets par milieu. |
 | Stock | **21 piliers** dès maintenant. Avec 7 bouquets en vente, chacun revient plusieurs fois. |
 | Piliers | La même lave sombre partout. D'un pilier à l'autre ne changent que la graine des alvéoles et le dessin de la mousse et des lichens (`pilier(seed)` le permet déjà). |
-| Cadrage | Sur téléphone, un bouquet au centre, avec le bord des colonnes et des bouquets voisins sur les côtés : **1 180 unités de large** (26 octobre). Sur ordinateur, 5 bouquets à l'écran, **le 1ᵉʳ et le 5ᵉ seulement à moitié ou au quart** (26 octobre). |
+| Cadrage | Sur téléphone, un bouquet au centre, au milieu de l'écran, avec le bord des bouquets voisins larges sur les côtés : **850 unités de large** (26 octobre ; 1 180 d'abord, bouquets trop petits et trop de ciel). Le nom monte dans le ciel, sous le pager. Sur ordinateur, 5 bouquets à l'écran, **le 1ᵉʳ et le 5ᵉ seulement à moitié ou au quart** (26 octobre). |
 | Mouvement de la caméra | **Travelling avec parallaxe** (26 octobre) : la caméra glisse le long de la frise, le premier plan défile vite, le lointain lentement. |
 | Dalles | **Seulement sous le pilier d'ouverture** (26 octobre), celui que montre la page à son arrivée. Les autres piliers sortent de la prairie avec leur collier de mousse. |
 | Voisins | Tous les bouquets à l'écran se balancent dans la brise, en SVG. Ils se chargent au fur et à mesure que la caméra approche. |
-| Pager | On le garde, avec ses 21 points. Un clic sur un point fait voyager la caméra jusqu'à ce bouquet. La coccinelle et la cétoine l'apportent toujours. |
+| Pager | On le garde, avec **un point par bouquet en vente** (7 ; 26 octobre, les 21 points sortaient des bords du téléphone). Un clic sur un point fait voyager la caméra jusqu'à la place de ce bouquet la plus proche. La coccinelle et la cétoine l'apportent toujours. |
 | Fleur en vol | Dans le gros plan, un clic sur une fleur fait monter la caméra vers le ciel. **La tige entière** (tête, tige, feuilles) sort du bouquet et flotte seule dans les airs ; le bouquet garde un vide à sa place jusqu'à son retour. |
 | Bulle de la fleur | **Deux abeilles portent la bulle d'info** et la tiennent en l'air. Elle donne le nom de la variété, son sens dans sa couleur et une ligne sur l'origine de ce sens, dans les 5 langues du site. |
 | Animaux de l'étang | Un chantier à part, selon le protocole des insectes : libellule, grenouille et carpe koï. |

@@ -19,10 +19,10 @@
 (() => {
   const q = new URLSearchParams(location.search);
   // The catalogue frieze (frise.js, owner 2026-10-26): the horizon, the ground, the pillars and the foreground's clumps are
-  // its own (the camera travels along them); here only the sky and its veils. The insects and the HUD's carriers are not
-  // made for a travelling camera yet: off on the frieze, unless ?insectes=1.
+  // its own (the camera travels along them); here only the sky and its veils. The insects follow its camera
+  // (insectes.mjs).
   const FRISE = !!document.getElementById('frise-ancre');
-  const bugs = FRISE ? q.get('insectes') === '1' : q.get('insectes') !== '0';
+  const bugs = q.get('insectes') !== '0';
   // the HUD's carriers (porteuses.mjs): from the first paint the pieces their ants bring wait off screen (boutique.css); with
   // prefers-reduced-motion, ?porteuses=0 or ?insectes=0 they stand in their places as before, and they are put back if the
   // ants have not set out after 6 s

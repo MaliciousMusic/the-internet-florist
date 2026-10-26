@@ -104,13 +104,19 @@ body {
 
 @media (max-aspect-ratio: 1/1) {
   .monde:has(#frise-ancre) {
-    width: calc(100vw * 2400 / var(--vue-tel, 1180));
+    width: calc(100vw * 2400 / var(--vue-tel, 850));
   }
 
   /* the sky above the world: from the zenith down to the colour the world's sky shows at its top edge (measured on a
      phone: the veils lighten ciel.svg's first stop there), so no edge shows */
   .scene:has(#frise-ancre) {
-    background: linear-gradient(#6c9bcf, #7fa8d5 calc(100% - 100vw * 1350 / var(--vue-tel, 1180)));
+    background: linear-gradient(#6c9bcf, #7fa8d5 calc(100% - 100vw * 1350 / var(--vue-tel, 850)));
+  }
+
+  /* the name higher in the sky (owner 2026-10-26): 80 px under the toolbar's bottom, the pager between them, whatever the
+     phone's height (the world's top is 100dvh - 100vw x 1350 / vue on the screen; the sky goes on above it) */
+  .monde:has(#frise-ancre) .nom-ciel {
+    top: calc(var(--entete-bas, 0px) + 80px - 100dvh + 100vw * 1350 / var(--vue-tel, 850));
   }
 }
 

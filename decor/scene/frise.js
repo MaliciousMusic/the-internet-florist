@@ -10,8 +10,8 @@
 // - the foreground's clumps (out/scene.json "touffes", swaying), repeated along their own fast strip;
 // - the name of the bouquet facing the camera, in the sky.
 //
-// The camera (owner 2026-10-26): free drag with inertia (finger, mouse, trackpad or wheel); a quick swipe goes to the
-// next bouquet; the arrow keys and the pager's dots travel to a bouquet; a tap on a bouquet beside the centre brings it
+// The camera (owner 2026-10-26): free drag (finger, mouse, trackpad or wheel); let go, it glides on and always comes to
+// rest facing a bouquet, a quick swipe on the next one, in one smooth motion from the finger's speed; the arrow keys and the pager's dots travel to a bouquet; a tap on a bouquet beside the centre brings it
 // to the centre. ?c=<units> starts elsewhere than the opening pillar. Units: c = 0 faces place 0 (the opening pillar, its
 // stepping stones), c = k x PITCH faces place k.
 //
@@ -36,9 +36,10 @@
   const WH = 1350;
   const RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const pct = (v, of) => `${((v / of) * 100).toFixed(4)}%`;
-  // a phone held upright sees about VUE units of the world (owner: the edges of the neighbours' columns and bouquets
-  // show: 1180; ?vue= to compare)
-  const VUE = +q.get('vue') || 1180;
+  // a phone held upright sees about VUE units of the world (owner, 2026-10-26: 1180 first, to see the edges of the
+  // neighbours' columns and bouquets; then the bouquets were too small and there was too much sky: 850, the bouquet in the
+  // middle of the screen, the edges of the wide neighbours still showing; ?vue= to compare)
+  const VUE = +q.get('vue') || 850;
   document.documentElement.style.setProperty('--vue-tel', VUE);
 
   let M = null; // the manifest
@@ -325,7 +326,9 @@
     lastT = now;
     if (travel) {
       const t = Math.min(1, (now - travel.t0) / travel.ms);
-      c = travel.from + (travel.to - travel.from) * ease(t);
+      // (a release: a cubic that leaves at the finger's speed and comes to rest on the place; else eased in and out)
+      if (travel.v0 != null) c = (2 * t ** 3 - 3 * t ** 2 + 1) * travel.from + (t ** 3 - 2 * t ** 2 + t) * (travel.ms / 1000) * travel.v0 + (3 * t ** 2 - 2 * t ** 3) * travel.to;
+      else c = travel.from + (travel.to - travel.from) * ease(t);
       if (t >= 1) {
         travel = null;
         v = 0;
@@ -382,6 +385,25 @@
     travel = { from: c, to, t0: performance.now(), ms: ms || Math.min(1600, 420 + Math.abs(to - c) * 0.35) };
     go();
   }
+  // the camera let go at the speed v0 (units/s): it glides on to a place without a jolt (owner 2026-10-26: a swipe must
+  // bring the next bouquet in one smooth motion; the camera always comes to rest facing a bouquet)
+  function glideTo(i, v0) {
+    const to = i * M.pas, d = to - c;
+    if (RM) return travelTo(i, 0);
+    let T = Math.min(0.9, Math.max(0.35, 0.3 + Math.abs(d) / 1500));
+    // a cubic leaving faster than 3 d / T overshoots its place: shorter then; against the way to go, the speed is damped
+    if (v0 * d > 0 && Math.abs(v0) * T > 2.8 * Math.abs(d)) T = Math.max(0.25, (2.8 * Math.abs(d)) / Math.abs(v0));
+    if (v0 * d < 0) v0 *= 0.3;
+    if (Math.abs(d) < 0.5 && Math.abs(v0) < 20) {
+      c = to;
+      v = 0;
+      draw();
+      return stop();
+    }
+    travel = { from: c, to, v0, t0: performance.now(), ms: T * 1000 };
+    v = 0;
+    go();
+  }
   function va(place, opt = {}) {
     if (!M || frozen) return;
     const here = c / M.pas;
@@ -395,8 +417,7 @@
     travelTo(base + d);
   }
 
-  // pointer: free drag; a quick swipe (fast at the release) goes to the next place from where it began; a tap on a
-  // bouquet beside the centre brings it there
+  // pointer: free drag; let go, a glide to a place (glideTo); a tap on a bouquet beside the centre brings it there
   let drag = null;
   const samples = [];
   scene.addEventListener('pointerdown', (e) => {
@@ -437,20 +458,27 @@
       if (i !== Math.round(c / M.pas) && Math.abs(c + X - M.cx - i * M.pas) < M.pas * 0.42 && e.clientY > r.top + 0.12 * r.height) {
         const n = M.places;
         va(((i % n) + n) % n);
-      } else if (moving) go();
+      } else if (moving) glideTo(Math.round(c / M.pas), 0);
       return;
     }
     const [t0, c0] = samples[0];
     const [t1, c1] = samples[samples.length - 1];
-    v = t1 > t0 ? ((c1 - c0) / (t1 - t0)) * 1000 : 0;
-    // a swipe: short and fast
-    if (Math.abs(v) > 900 && Math.abs(c - d.c0) < M.pas * 0.9) return travelTo(d.from + Math.sign(v));
-    go();
+    const vr = t1 > t0 && performance.now() - t1 < 250 ? ((c1 - c0) / (t1 - t0)) * 1000 : 0;
+    // a swipe (fast at the release): the next place in its direction from where it began, or, after a long drag, where
+    // its glide would end, never back against it; a slow release: the place nearest where its glide would end
+    const p = M.pas;
+    let to = Math.round((c + vr / FRICTION) / p);
+    if (Math.abs(vr) > 500) {
+      if (Math.abs(c - d.c0) < p * 0.9) to = d.from + Math.sign(vr);
+      to = vr > 0 ? Math.max(to, Math.ceil(c / p - 0.02)) : Math.min(to, Math.floor(c / p + 0.02));
+    }
+    glideTo(to, vr);
   };
   addEventListener('pointerup', release);
   addEventListener('pointercancel', release);
   scene.addEventListener('dragstart', (e) => e.preventDefault());
-  // wheel and trackpad: free travel (sideways, or the wheel turned)
+  // wheel and trackpad: free travel (sideways, or the wheel turned), then on to the nearest place
+  let wheelT = 0;
   scene.addEventListener(
     'wheel',
     (e) => {
@@ -461,6 +489,9 @@
       c += px / k;
       v = 0;
       go();
+      // the wheel let go: on to the nearest place
+      clearTimeout(wheelT);
+      wheelT = setTimeout(() => !drag && !travel && glideTo(Math.round(c / M.pas), 0), 220);
       e.preventDefault();
     },
     { passive: false },
@@ -510,12 +541,14 @@
       nameEl.className = 'nom-ciel';
       nameEl.setAttribute('aria-hidden', 'true');
       monde.append(nameEl);
-      // the clumps come once the first bouquet is shown (scene.js's order), and only without the insects' sprites
-      // each clump turns about its foot (scene.json: the bottom middle of its frame), its picture cut to its drawn box
+      // the clumps come once the first bouquet is shown (scene.js's order), and only without the insects' sprites (insectes.mjs
+      // draws them with the insects, along the same strip, while it runs: window.PREMIER_PIXI); each clump turns about its
+      // foot (scene.json: the bottom middle of its frame), its picture cut to its drawn box
       document.addEventListener(
         'boutique:bouquet',
         () =>
-          Promise.all([fetch(`${OUT}scene.json`).then((r) => r.json()), fetch(`${OUT}premier.json`).then((r) => r.json())])
+          (window.PREMIER_PIXI ? window.PREMIER_PIXI.then(() => Promise.reject(), () => null) : Promise.resolve())
+            .then(() => Promise.all([fetch(`${OUT}scene.json`).then((r) => r.json()), fetch(`${OUT}premier.json`).then((r) => r.json())]))
             .then(([j, pre]) => {
               const byName = new Map(pre.map((p) => [p.src.replace(/^premier\//, '').replace(/\.webp$/, '.svg'), p]));
               clumpList = (j.touffes || [])

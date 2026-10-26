@@ -14,16 +14,31 @@ Décisions et lots : [FRISE.md](FRISE.md). Ce fichier décrit ce qui est constru
 - **Le travelling** : chaque tranche de profondeur défile à sa vitesse (facteur 0,3 pour l'horizon, 0,36 à 0,8 derrière les
   piliers, 1 pour les piliers et leurs pieds, 1,32 à 2,25 devant, environ 3,9 pour les touffes du premier plan). Le ciel ne
   bouge pas.
-- **La caméra** : glissé libre au doigt, à la souris, au pavé tactile ou à la molette, avec inertie, qui s'arrête où il veut.
-  Un swipe rapide passe au bouquet suivant. Les flèches du clavier et les points du pager voyagent jusqu'à une place (par
+- **La caméra** : glissé libre au doigt, à la souris, au pavé tactile ou à la molette. Lâchée, elle glisse encore et
+  s'arrête toujours face à un bouquet, d'un seul mouvement qui part de la vitesse du doigt (porteur, 26 octobre). Un swipe
+  rapide passe au bouquet suivant ; un glissé lent revient au bouquet le plus proche de là où il s'arrêterait. Les flèches du clavier et les points du pager voyagent jusqu'à une place (par
   le chemin le plus court). Un toucher sur un bouquet de côté l'amène au centre.
 - **Le nom du bouquet** face à la caméra s'écrit dans le ciel en Nunito ExtraLight, blanc. Il glisse plus lentement que les
   piliers et s'efface quand son bouquet quitte le centre. Il est caché en gros plan.
-- **Le pager** a 21 points (un par place). Le bouton « Open », la bulle Acheter et le gros plan suivent le bouquet face à la
+- **Le pager** a 7 points, un par bouquet en vente (porteur, 26 octobre : les 21 points sortaient des bords du téléphone).
+  Le point du bouquet face à la caméra s'allonge, où qu'il soit dans la boucle ; un point fait voyager la caméra jusqu'à la
+  place de ce bouquet la plus proche. Le bouton « Open », la bulle Acheter et le gros plan suivent le bouquet face à la
   caméra au repos ; ils se cachent pendant un déplacement. En gros plan, la caméra est figée.
+- **Les insectes suivent la caméra** (26 octobre) : les 42 insectes, les touffes du premier plan qui se balancent avec
+  eux, les porteuses du HUD et le bourdon d'Open, comme dans la scène simple. Un travelling est une translation du monde
+  avant la perspective : chaque fleur est replacée à chaque image depuis la caméra (une tête du sol avec sa bande, une tête
+  du bouquet avec son pilier, une touffe avec la bande des touffes), un insecte se déplace avec la fleur qu'il vise, et
+  sans fleur avec le monde ; la perspective donne d'elle-même la parallaxe. Un insecte laissé loin hors de la vue s'en va,
+  et revient comme les autres par les bords. Ils visitent les fleurs du sol proches de la vue et le bouquet face à la
+  caméra. Posés, ils restent sur leur fleur pendant un glissé (écart mesuré de 1 à 15 px, toujours dans le cœur). Ils
+  sont aussi nombreux par largeur de monde vue que sur un ordinateur : un téléphone, qui voit 850 unités sur 2 400, en a
+  environ le tiers (l'essaim vit dans le cadre de l'écran ; les 42 serraient le téléphone et faisaient tomber la brise de 46 à
+  17 images par seconde).
 - **Ordinateur** : 2 400 unités de large (3 bouquets entiers, et le 1ᵉʳ et le 5ᵉ coupés par les bords). **Téléphone debout** :
-  1 180 unités de large (`?vue=` pour essayer), pour voir le bord des colonnes et des bouquets voisins. Le monde est alors
-  moins haut que l'écran : le ciel continue au-dessus, en dégradé jusqu'au zénith.
+  850 unités de large (`?vue=` pour essayer ; porteur, 26 octobre : à 1 180 les bouquets étaient trop petits et le ciel
+  trop grand). Le bouquet est au milieu de l'écran, le bord des bouquets voisins larges se voit encore. Le monde est un peu
+  moins haut que l'écran : le ciel continue au-dessus, en dégradé jusqu'au zénith. Le nom du bouquet y monte, juste sous
+  le pager.
 
 ### Comment c'est fait
 
@@ -34,6 +49,7 @@ Décisions et lots : [FRISE.md](FRISE.md). Ce fichier décrit ce qui est constru
 | Piliers | `node decor/frise_piliers.mjs` | `out/frise/piliers/<place>.svg` et `piliers.json` |
 | Tuiles | `node decor/frise_tuiles.mjs [--verifie]` | `out/frise/<tranche>/<j>.svg` (1 600 unités chacune), `tuiles.json`, `frise.json` (le manifeste de la page) |
 | Aperçus | `sh ws/gate.sh node decor/frise_cuisson.mjs` | `<j>.webp` à côté de chaque tuile et de chaque pilier (1,2 px par unité), ajoutés à `frise.json` |
+| Têtes de fleurs | `node decor/frise_tetes.mjs` | `out/frise/tetes.json` : les 2 851 têtes où les insectes se posent, par tranche (unités de la bande) |
 | Pages | `node decor/scene/build.mjs` | les pages des 5 langues |
 | Contrôle | `node decor/frise_apercu.mjs <png> --c 0 --vue 2400` | une image de la frise pour une position de caméra (resvg, sans Chrome) |
 
@@ -68,6 +84,7 @@ Décisions et lots : [FRISE.md](FRISE.md). Ce fichier décrit ce qui est constru
 | Bouquets voisins | tous à 2,9 s | un toutes les 1 à 2 s ensuite |
 | Brise au repos | 138-142 images/s | 46-52 images/s |
 | Pendant un déplacement | 51-70 images/s, pire image 139-285 ms | 21 images/s, pire image 90-132 ms |
+| Avec les insectes (26 oct., vue 850) | — | 15 insectes : 27 images/s au repos, 16 pendant le glissé (46 et 25 sans insectes) |
 | Après l'arrêt | — | 0,6-0,8 s d'à-coup quand le bouquet suivant se pose (0,9 s après l'arrêt) |
 
 Poids : les tuiles SVG du sol pèsent 4,2 Mo gzip pour toute la boucle ; les aperçus WebP 14,8 Mo ; chaque pilier 140 Ko
@@ -75,17 +92,13 @@ gzip. Un écran d'ordinateur charge environ 8,7 Mo de décor (en local, sans com
 
 ### Pas encore sur la frise
 
-- **Les insectes, les porteuses du HUD et le bourdon d'Open** : ils sont faits pour un cadre fixe. Ils sont éteints sur la
-  frise (`?insectes=1` pour les rallumer, sans garantie). Le dock, le pager et la mention « Legal » sont posés d'emblée.
-  À faire : que l'essaim suive la caméra (chaque insecte et chaque fleur décalés de c × 4,37 / d), et des têtes de fleurs
-  (`tetes.json`) pour toute la boucle.
 - **La couture de la boucle** : chaque bande montre un raccord en face du pilier d'ouverture, vers c = 6 720 (entre les
   places 10 et 11). C'est le lot F4.
 
 ### Questions pour le porteur
 
-1. ~~**Téléphone** : 1 180 ou 1 000 unités de large ?~~ **Tranché le 26 octobre : 1 180 unités.** On voit le bord des
-   colonnes et des bouquets voisins ; la moitié haute du ciel servira au nom et, plus tard, à la bulle des abeilles.
+1. ~~**Téléphone** : 1 180 ou 1 000 unités de large ?~~ **Tranché le 26 octobre : 1 180 unités**, puis **850** le même
+   jour (bouquets trop petits, trop de ciel ; compromis qui garde le bord des bouquets voisins larges).
 2. **À-coup après l'arrêt** sur téléphone, le temps de poser le bouquet suivant. *Proposition :* poser ses images une à une,
    entre deux images de l'écran (à faire dans `eclosion.js`).
 3. **Finesse de l'herbe du premier plan** : la frise la dessine partout au niveau des flancs de l'ancienne scène, un peu moins

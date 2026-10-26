@@ -73,16 +73,24 @@ plane?.addEventListener('eclosion:repli', (ev) => {
 });
 let live = null;
 
-// (the catalogue frieze, frise.js: not with its travelling camera yet, unless ?insectes=1)
+// The catalogue frieze (frise.js, decor/FRISE.md): the camera travels along the ring of pillars. A travelling camera is a
+// translation of the world before the perspective, so the swarm keeps its frame (the view at rest, the camera's place
+// subtracted): every flower is placed again from the camera at each frame (a ground head moves with its strip, f x c; a
+// bouquet's with its pillar; a clump's with the clumps' strip), an insect moves with the flower it is bound for, and one
+// without a flower with the world (c units, the same at every depth: the perspective makes the parallax). An insect left
+// far out of view is sent away; it comes back in, as they all do, from the edges of the view. The flowers in reach are those
+// near the view; the bouquet's, those of the bouquet facing the camera at rest. Heads: out/frise/tetes.json (frise_tetes.mjs);
+// the clumps are repeated along their strip as frise.js lays them (out/frise/frise.json "touffes").
 const FRISE = !!document.getElementById('frise-ancre');
-if (scene && monde && plane && !RM && (FRISE ? q.get('insectes') === '1' : q.get('insectes') !== '0')) {
+if (scene && monde && plane && !RM && q.get('insectes') !== '0') {
   // scene.js leaves the foreground's clumps to this module while it runs (or until it fails)
   let done, failed;
   window.PREMIER_PIXI = new Promise((a, b) => ((done = a), (failed = b)));
   // after the first bouquet has really grown (boutique.js gives up waiting for it after 15 s; a slow phone may still be
   // growing it then), 40 s at most
   const after = new Promise((r) => {
-    document.addEventListener('boutique:bouquet', () => (bouquet ? bouquet.grandi.then(r) : r()), { once: true });
+    const first = () => (FRISE ? window.Frise.bouquet(window.Frise.face()) : bouquet);
+    document.addEventListener('boutique:bouquet', () => (first() ? first().grandi.then(r) : r()), { once: true });
     setTimeout(r, 40000);
   });
   after
@@ -113,8 +121,16 @@ async function start(clumpsOn) {
   };
   const far = mk(4), mid = mk(6), between = [mk(), mk(), mk()], front = mk(8);
   const layer = (src) => monde.querySelector(`img[data-src="${src}"]`);
-  (layer('sol-loin.svg') || plane).after(far);
-  monde.insertBefore(mid, layer('sol-pres.svg') || plane);
+  if (FRISE) {
+    // the frieze's strips (frise.js): the far canvas over the slices beyond about 6 m, the middle one behind the pillars
+    const band = (id) => monde.querySelector(`[data-bande="${id}"]`);
+    (band('z6') || plane).after(far);
+    mid.style.zIndex = 4;
+    (band('arriere') || plane).after(mid);
+  } else {
+    (layer('sol-loin.svg') || plane).after(far);
+    monde.insertBefore(mid, layer('sol-pres.svg') || plane);
+  }
   plane.after(front);
   const essaim = await Essaim.create({
     layers: [far, mid, ...between, front],
@@ -133,7 +149,9 @@ async function start(clumpsOn) {
   // the cast's kinds load one at a time once the scene's loop runs (loadCast below), the page idle between two (each atlas is
   // decoded and sent to the graphics card); the Open button's carrier comes first
   const idle = () => new Promise((r) => (window.requestIdleCallback ? requestIdleCallback(r, { timeout: 500 }) : setTimeout(r, 50)));
-  const [heads, clumpList] = await Promise.all([fetch(OUT + 'tetes.json').then((r) => r.json()), fetch(OUT + 'premier.json').then((r) => r.json())]);
+  const [heads, clumpList] = await Promise.all([fetch(OUT + (FRISE ? 'frise/tetes.json' : 'tetes.json')).then((r) => r.json()), fetch(OUT + 'premier.json').then((r) => r.json())]);
+  const FZ = FRISE ? { M: await window.Frise.pret, c: window.Frise.camera(), half: WW / 2, frame: 0, flip: false, built: 0 } : null;
+  if (FRISE) heads.touffes = (await fetch(OUT + 'tetes.json').then((r) => r.json())).touffes;
 
   // the world frame at rest in the scene's CSS px: .monde covers the scene, centred (scene.css: left 50% then -50%); read
   // from its style, not its offsets, which are rounded to whole pixels
@@ -142,18 +160,19 @@ async function start(clumpsOn) {
 
   // the foreground's clumps: a sprite each, turning about its foot as the CSS sway did (scene.css balance: from -a to a
   // and back, ease-in-out, t s each way, the gust crossing the field left to right); loaded once on screen
-  const clumps = clumpList.map((c) => {
+  // (on the frieze, a sprite for each copy of a clump along its strip: fzClumps below)
+  const clumpSprite = (c) => {
     const s = new Sprite();
     s.anchor.set((c.pivot[0] - c.box[0]) / c.box[2], (c.pivot[1] - c.box[1]) / c.box[3]);
     s.zIndex = zOf(c.Z);
     s.visible = false;
-    essaim.prop(s);
-    return { ...c, s, on: false, ang: 0 };
-  });
+    return essaim.prop(s);
+  };
+  const clumps = clumpList.map((c) => ({ ...c, s: FRISE ? null : clumpSprite(c), on: false, ang: 0 }));
   const seenX = () => [(essaim.ox - W.ml) / W.k, (essaim.ox + essaim.w / essaim.vs - W.ml) / W.k];
   let loading = false;
   const loadClumps = async () => {
-    if (loading) return;
+    if (loading || FRISE) return;
     loading = true;
     for (;;) {
       const [a, b] = seenX();
@@ -173,11 +192,12 @@ async function start(clumpsOn) {
   const sway = (now) => {
     const t = now / 1000;
     for (const c of clumps) {
-      if (!c.on) continue;
+      if (!c.on && !FRISE) continue;
       const u = (t - c.d) / c.t, n = Math.floor(u);
       let f = u - n;
       if (n & 1) f = 1 - f;
       c.ang = ((-c.a + 2 * c.a * ease(f)) * Math.PI) / 180;
+      if (FRISE) continue;
       const sc = (c.box[2] / c.px[0]) * W.k * essaim.res;
       c.s.scale.set(sc);
       c.s.rotation = c.ang;
@@ -189,11 +209,18 @@ async function start(clumpsOn) {
   // ground's flowers within its reach (MIN_PX), the bush-cricket's without the bouquet's
   const flowers = [], lists = new Map(), fronts = new Map();
   const bqFlowers = [];
-  const meadow = heads.sol
-    .filter((h) => h[1] < WH - 12 && h[3] < 14)
-    .map(([x, y, r, Z, file]) => ({ kind: 'sol', x, y, rw: r, Z, layer: file === 0 ? 0 : file === 1 ? 1 : Z < D_TOP ? TOP : TOP - 1, busy: null }));
+  const meadow = FRISE
+    ? FZ.M.bandes.flatMap((B) => {
+        const behind = FZ.M.bandes.indexOf(B) <= FZ.M.bandes.findIndex((b) => b.id === FZ.M.devant) - 1;
+        return (heads.bandes[B.id] || [])
+          .filter((h) => h[1] < WH - 12 && h[3] < 14)
+          .map(([x, y, r, Z]) => ({ kind: 'sol', X0: x - B.cx + FZ.M.cx, Y: y, rate: B.f, wrap: B.w, z: zOf(Z) + 1, rw: r, Z, layer: behind ? (Z > D_FAR ? 0 : 1) : Z < D_TOP ? TOP : TOP - 1, busy: null }));
+      })
+    : heads.sol
+        .filter((h) => h[1] < WH - 12 && h[3] < 14)
+        .map(([x, y, r, Z, file]) => ({ kind: 'sol', x, y, rw: r, Z, layer: file === 0 ? 0 : file === 1 ? 1 : Z < D_TOP ? TOP : TOP - 1, busy: null }));
   const clumpHeads = [];
-  for (const c of clumps) {
+  if (!FRISE) for (const c of clumps) {
     for (const [x, y, r, Z] of heads.touffes[c.src.replace(/^premier\//, '').replace(/\.webp$/, '.svg')] || []) {
       if (y > WH - 12) continue;
       clumpHeads.push({ kind: 'tf', c, x, y, rw: r, Z, layer: TOP, busy: null });
@@ -204,9 +231,24 @@ async function start(clumpsOn) {
     f.P = essaim.unproject(sx(x), sy(y), z);
     f.r = (f.rw * W.k * f.Z) / D_REF;
   };
-  const shown = (f) => f.kind !== 'tf' || (f.c.on && f.P);
+  // on the frieze: a flower at its frame place for the camera (X0 at c = 0, moving at its rate; a looping strip's head at
+  // its copy nearest the view's middle), its move since the last frame (dP, for the insects bound for it), and whether it
+  // is near the view (within reach)
+  const placeFz = (f) => {
+    let X = f.X0 - f.rate * FZ.c;
+    if (f.wrap) X -= f.wrap * Math.round((X - FZ.M.cx) / f.wrap);
+    const P = essaim.unproject(sx(X), sy(f.Y), f.z);
+    f.dP = f.P ? [P[0] - f.P[0], P[1] - f.P[1]] : null;
+    f.dpAt = FZ.frame;
+    f.P = P;
+    if (f.rw != null) f.r = (f.rw * W.k * f.Z) / D_REF;
+    const near = Math.abs(X - FZ.M.cx) < FZ.half + 300;
+    if (near !== f.near) FZ.flip = true;
+    f.near = near;
+  };
+  const shown = (f) => (FRISE ? f.near : f.kind !== 'tf' || (f.c.on && f.P));
   const rebuild = () => {
-    const ground = [...meadow, ...clumpHeads.filter(shown)];
+    const ground = [...(FRISE ? meadow.filter(shown) : meadow), ...clumpHeads.filter(shown)];
     flowers.splice(0, flowers.length, ...ground, ...bqFlowers);
     let ci = 0;
     for (const [c, L] of lists) {
@@ -231,19 +273,29 @@ async function start(clumpsOn) {
     }
     const m = b.manifeste, [vx, vy, vw, vh] = m.vb, bt = m.boite;
     const e = bt[2] / vw; // world units per drawing unit
-    const px = (x) => sx(bt[0] + (x - vx) * e), py = (y) => sy(bt[1] + (y - vy) * e);
+    // (on the frieze, the bouquet stands on its place's pillar: its plane's offset in the frame at c = 0, frise.js)
+    const pl = FRISE && b.el.closest('.frise-bouquet');
+    const ox = pl ? (parseFloat(pl.style.left) / 100) * WW : 0, oy = pl ? (parseFloat(pl.style.top) / 100) * WH : 0;
+    const fx = (x) => ox + bt[0] + (x - vx) * e, fy = (y) => oy + bt[1] + (y - vy) * e;
+    const px = (x) => sx(fx(x)), py = (y) => sy(fy(y));
     const now = [];
     m.pieces.forEach((p, k) => {
       if (p.t !== 'tete') return;
       const g = b.plan[k];
-      now.push({ kind: 'bq', P: essaim.unproject(px(p.b[0] + p.b[2] / 2), py(p.b[1] + p.b[3] * 0.42), ZB[g] + 1), r: Math.min(p.b[2], p.b[3]) * e * W.k * 0.38, layer: g + 2, busy: null });
+      const X = p.b[0] + p.b[2] / 2, Y = p.b[1] + p.b[3] * 0.42;
+      const f = { kind: 'bq', r: Math.min(p.b[2], p.b[3]) * e * W.k * 0.38, layer: g + 2, busy: null };
+      if (FRISE) Object.assign(f, { X0: fx(X), Y: fy(Y), rate: 1, wrap: 0, z: ZB[g] + 1 }), placeFz(f);
+      else f.P = essaim.unproject(px(X), py(Y), ZB[g] + 1);
+      now.push(f);
     });
     // (on a resize, the same flowers move: the insects bound for one keep it)
-    if (bqFlowers.length === now.length && bqFlowers.b === b) now.forEach((f, i) => Object.assign(bqFlowers[i], { P: f.P, r: f.r, layer: f.layer }));
+    if (bqFlowers.length === now.length && bqFlowers.b === b) now.forEach((f, i) => Object.assign(bqFlowers[i], { P: f.P, r: f.r, layer: f.layer, X0: f.X0, Y: f.Y }));
     else bqFlowers.splice(0, bqFlowers.length, ...now);
     bqFlowers.b = b;
     // the bouquet's volume in the swarm's frame, and how much larger than nature it is drawn
+    if (FRISE) FZ.vol = [fx(vx), fx(vx + vw), fy(vy), fy(vy + vh)];
     vol = { x0: px(vx), x1: px(vx + vw), y0: py(vy), y1: py(vy + vh), z: 120 };
+    if (FRISE) fzVol();
     B = (UNITS_PER_MM * e) / (1.854 / D_REF);
     rebuild();
   };
@@ -258,21 +310,171 @@ async function start(clumpsOn) {
     essaim.centreAt(sx(HORIZON[0]), sy(HORIZON[1]));
     // px per mm at z = 0, true size against the meadow at the pillar's distance
     pxmm0 = (1.854 / D_REF) * W.k;
+    if (FRISE) {
+      FZ.half = scene.clientWidth / W.k / 2;
+      FZ.frame++;
+      for (const f of meadow) placeFz(f);
+    } else for (const f of meadow) placeHead(f, f.x, f.y);
     placeCanvases();
-    for (const f of meadow) placeHead(f, f.x, f.y);
     readBouquet();
     loadClumps().then(rebuild);
   };
   const placeCanvases = () => {
     for (const c of canvases) {
-      c.style.left = essaim.ox - W.ml + 'px';
-      c.style.top = essaim.oy - W.mt + 'px';
+      let dx = 0, dy = 0;
+      // (on the frieze, the canvases between a bouquet's boxes are inside its place's plane, which moves with the camera)
+      const pl = FRISE && between.includes(c) && c.parentElement && c.closest('.frise-bouquet');
+      if (pl) {
+        dx = ((parseFloat(pl.style.left) / 100) * WW - FZ.c) * W.k;
+        dy = (parseFloat(pl.style.top) / 100) * WH * W.k;
+      }
+      c.style.left = essaim.ox - W.ml - dx + 'px';
+      c.style.top = essaim.oy - W.mt - dy + 'px';
     }
   };
   // between the boxes of the bouquet on the pillar
   const interleave = (b) => {
     if (!b?.plans || b.plans.length < 4) return;
     for (let g = 0; g < 3; g++) b.plans[g].after(between[g]);
+    if (FRISE) placeCanvases();
+  };
+
+  // ---- the frieze's camera (frise.js): see the header
+  // the bouquet's volume for the camera
+  const fzVol = () => {
+    if (!FZ.vol || !vol) return;
+    const [x0, x1, y0, y1] = FZ.vol;
+    Object.assign(vol, { x0: sx(x0 - FZ.c), x1: sx(x1 - FZ.c), y0: sy(y0), y1: sy(y1) });
+  };
+  // the clumps, repeated every `periode` units of their strip (frise.js clumps): a sprite and the heads of each copy near
+  // the view, their pictures loaded one at a time
+  const copies = new Map(); // "j:m" -> { c, m, s, heads }
+  const texQueue = [];
+  let texBusy = false;
+  const loadTex = async () => {
+    if (texBusy) return;
+    texBusy = true;
+    while (texQueue.length) {
+      const c = texQueue.shift();
+      const tex = await Assets.load(OUT + c.src);
+      tex.source.scaleMode = 'linear';
+      c.tex = tex;
+      await idle();
+    }
+    texBusy = false;
+  };
+  const fzClumps = () => {
+    const T = FZ.M.touffes, shift = T.f * FZ.c;
+    const a = FZ.M.cx - FZ.half - 300 + shift, b = FZ.M.cx + FZ.half + 300 + shift;
+    const want = new Set();
+    for (let m = Math.floor((a - WW) / T.periode); m * T.periode < b; m++) {
+      clumps.forEach((c, j) => {
+        const x0 = c.box[0] + m * T.periode;
+        if (x0 + c.box[2] < a || x0 > b) return;
+        const key = `${j}:${m}`;
+        want.add(key);
+        if (copies.has(key)) return;
+        if (!c.tex) {
+          if (!c.queued) (c.queued = true), texQueue.push(c), loadTex();
+          return;
+        }
+        const s = clumpSprite(c);
+        s.texture = c.tex;
+        s.visible = true;
+        const C = { c, m, s };
+        C.heads = (heads.touffes[c.src.replace(/^premier\//, '').replace(/\.webp$/, '.svg')] || [])
+          .filter((h) => h[1] <= WH - 12)
+          .map(([x, y, r, Z]) => ({ kind: 'tf', c: C, x, y, rw: r, Z, rate: T.f, wrap: 0, z: zOf(Z) + 1, layer: TOP, busy: null }));
+        copies.set(key, C);
+        clumpHeads.push(...C.heads);
+        FZ.flip = true;
+      });
+    }
+    for (const [key, C] of copies) {
+      if (want.has(key)) continue;
+      essaim.stage.removeChild(C.s);
+      essaim.props.splice(essaim.props.indexOf(C.s), 1);
+      C.s.destroy();
+      for (const f of C.heads) f.near = false;
+      clumpHeads.splice(0, clumpHeads.length, ...clumpHeads.filter((f) => f.c !== C));
+      copies.delete(key);
+      FZ.flip = true;
+    }
+    // each copy turns about its foot as its clump does (sway), its heads with it
+    for (const C of copies.values()) {
+      const c = C.c, sc = (c.box[2] / c.px[0]) * W.k * essaim.res;
+      const X = c.pivot[0] + C.m * T.periode - shift;
+      C.s.scale.set(sc);
+      C.s.rotation = c.ang;
+      C.s.position.set(essaim.cvx(sx(X)), essaim.cvy(sy(c.pivot[1])));
+      const ca = Math.cos(c.ang), sa = Math.sin(c.ang);
+      for (const f of C.heads) {
+        const dx = f.x - c.pivot[0], dy = f.y - c.pivot[1];
+        f.X0 = c.pivot[0] + ca * dx - sa * dy + C.m * T.periode;
+        f.Y = c.pivot[1] + sa * dx + ca * dy;
+        placeFz(f);
+      }
+    }
+  };
+  // an insect goes with its flower, or with the world (dx scene px); every point of its course with it (P, and where it
+  // lands, hovers, walks or jumps to; its exit is in the view's frame)
+  const POINTS = ['P', 'from', 'landAt', 'walkTo', 'hoverAt', 'goal'];
+  const carry = (s, dx, dy) => {
+    const moved = new Map();
+    for (const key of POINTS) {
+      const v = s[key];
+      if (!Array.isArray(v) || v.length !== 3) continue;
+      if (!moved.has(v)) moved.set(v, [v[0] + dx, v[1] + dy, v[2]]);
+      s[key] = moved.get(v);
+    }
+  };
+  // an insect far out of view: away, to come back in from the edges
+  const sendAway = (s) => {
+    if (s.claim) s.claim(null);
+    else {
+      if (s.flower && s.flower.busy === s) s.flower.busy = null;
+      s.flower = null;
+    }
+    s.state = 'away';
+    s.visible = false;
+    s.layerHint = null;
+    s.pose = 'vol';
+    s.boost = 1;
+    s.t = 1 + rnd() * 4;
+    if (s.kind === 'sauterelle') s.wingsShown = false;
+  };
+  const fzStep = (now) => {
+    const c = window.Frise.camera(), dc = c - FZ.c;
+    FZ.c = c;
+    FZ.frame++;
+    fzClumps();
+    if (dc) {
+      for (const f of meadow) placeFz(f);
+      for (const f of bqFlowers) placeFz(f);
+      fzVol();
+      placeCanvases();
+    }
+    const dx = -dc * W.k;
+    for (const s of insects) {
+      if (s.fixedPx) continue;
+      const f = s.flower;
+      if (f && f.dpAt === FZ.frame && f.dP) {
+        if (Math.abs(f.dP[0]) < 400) carry(s, f.dP[0], f.dP[1]);
+      } else if (dc) carry(s, dx, 0);
+      if (dc && s.visible && s.screen && (s.screen.x < -300 || s.screen.x > essaim.w + 300)) sendAway(s);
+    }
+    if (FZ.flip && now - FZ.built > 200) {
+      FZ.flip = false;
+      FZ.built = now;
+      rebuild();
+    }
+  };
+  // the bouquet facing the camera at rest: its flowers are the ones in reach
+  const fzFacing = () => {
+    const b = window.Frise.bouquet(window.Frise.face());
+    if (!b || b === bouquet) return;
+    bouquet = b;
+    onBouquet(b);
   };
 
   // every insect of the cast, created out of view as soon as its kind is loaded (its wings are made when it is added)
@@ -288,9 +490,15 @@ async function start(clumpsOn) {
       if (c.wings) await essaim.wings(c.kind, url + '-ailes');
       if (typeof c.wings === 'number') K.wingsDepth = c.wings;
       const M = mods[c.mod];
-      const nf = c.n + (c.front || 0);
-      for (let i = 0; i < nf + (c.sky || 0); i++) {
-        const s = c.make(M, [essaim, i < c.n ? lists.get(c) : i < nf ? fronts.get(c) : NO_FLOWERS, rnd]);
+      // (on the frieze, as many per width of the world in view as a computer shows: a phone held upright, 850 units of the
+      // 2400, has about a third of them; the swarm lives in the screen's frame, so the full cast crowded it and its frames
+      // fell from 46 to 17 per second on a phone slowed 4 times)
+      const share = FRISE ? Math.min(1, Math.max(0.3, scene.clientWidth / W.k / WW)) : 1;
+      const n = FRISE ? Math.max(1, Math.round(c.n * share)) : c.n;
+      const nf = n + (FRISE ? Math.round((c.front || 0) * share) : c.front || 0);
+      const all = nf + (FRISE ? Math.round((c.sky || 0) * share) : c.sky || 0);
+      for (let i = 0; i < all; i++) {
+        const s = c.make(M, [essaim, i < n ? lists.get(c) : i < nf ? fronts.get(c) : NO_FLOWERS, rnd]);
         s.bodyMm = c.mm(M);
         s.lengthPx = s.bodyMm * pxmm0;
         essaim.add(s);
@@ -358,7 +566,11 @@ async function start(clumpsOn) {
     });
   };
   live = { onBouquet, onFold };
-  if (bouquet) {
+  if (FRISE) {
+    document.addEventListener('frise:arret', fzFacing);
+    document.addEventListener('frise:bouquet', fzFacing);
+    fzFacing();
+  } else if (bouquet) {
     interleave(bouquet);
     bouquet.grandi.then(() => {
       grownFor = bouquet;
@@ -457,7 +669,8 @@ async function start(clumpsOn) {
     last = now;
     follow();
     sway(now);
-    swayHeads();
+    if (FRISE) fzStep(now);
+    else swayHeads();
     for (const s of insects) {
       s.lengthPx = s.fixedPx ? s.fixedPx() : sizeOf(s);
       s.update(dt);

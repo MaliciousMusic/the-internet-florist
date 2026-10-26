@@ -53,7 +53,7 @@
   // same bouquet twice side by side, across a setting's edge or the loop's seam either.
   // (until the settings exist, the order is a fixed rotation per setting; it will follow each bouquet's contrast with its
   // background, FRISE.md question 4)
-  let slots = []; // place -> product
+  let slots = []; // place -> { p: product, k: its index }
   function lay(n, places) {
     const per = Math.ceil(places / 3);
     const shift = [0, Math.floor(n / 2), n - 2 > 0 ? n - 2 : 0];
@@ -69,20 +69,20 @@
   }
   const productAt = (s) => slots[s] && slots[s].p;
 
-  // ---------- the pager: one dot per place of the frieze, by the dock (under it on a phone, just above it on a computer)
-  // The dot of the place facing the camera is drawn longer. A dot travels the camera to its place; the drag, the swipe and
-  // the arrow keys are the frieze's (frise.js). Hovering or focusing a dot fetches its bouquet's file ahead.
+  // ---------- the pager: one dot per bouquet on sale (owner 2026-10-26: 21 dots, one per place, ran off a phone's
+  // edges), by the dock (under it on a phone, just above it on a computer). The dot of the bouquet facing the camera is
+  // drawn longer, wherever on the loop it stands. A dot travels the camera to that bouquet's place nearest it; the drag, the
+  // swipe and the arrow keys are the frieze's (frise.js). Hovering or focusing a dot fetches its bouquet's file ahead.
   const pager = $('pager');
   function buildPager() {
     const frag = document.createDocumentFragment();
-    slots.forEach((c, i) => {
+    CFG.produits.forEach((p, k) => {
       const b = document.createElement('button');
       b.type = 'button';
       b.className = 'point';
-      b.dataset.i = i;
+      b.dataset.i = k;
       frag.append(b);
-      c.b = b;
-      cards.push(c);
+      cards.push({ p, b });
     });
     pager.append(frag);
     pager.hidden = cards.length < 2;
@@ -95,7 +95,7 @@
     if (i === chosen) return placeTarget();
     chosen = i;
     cards.forEach((c, k) => {
-      if (k === i) c.b.setAttribute('aria-current', 'true');
+      if (k === slots[i].k) c.b.setAttribute('aria-current', 'true');
       else c.b.removeAttribute('aria-current');
     });
     const p = productAt(i);
@@ -103,10 +103,18 @@
     plane.setAttribute('aria-label', fill(T.planeLabel, { name: p.nom, alt: altOf(p) }));
     placeTarget();
   }
-  function choose(i) {
+  // a dot: the place of its bouquet nearest the camera (the frieze's loop holds it once per setting)
+  function choose(k) {
     if (!cards.length) return;
     if (near) closeUp(false);
-    Frise.va(i);
+    const n = slots.length, here = Frise.camera() / CFG.pas;
+    let best = -1, bd = Infinity;
+    slots.forEach((s, i) => {
+      if (s.k !== k) return;
+      const d = Math.abs(((((i - here) % n) + n + n / 2) % n) - n / 2);
+      if (d < bd) (bd = d), (best = i);
+    });
+    if (best >= 0) Frise.va(best);
   }
   document.addEventListener('frise:arret', (e) => facing(e.detail));
   // the bouquet facing the camera has just been posed: its button and close-up box
@@ -129,7 +137,7 @@
   for (const ev of ['pointerenter', 'focusin'])
     pager.addEventListener(ev, (e) => {
       const b = e.target.closest && e.target.closest('.point');
-      if (b) ahead(productAt(+b.dataset.i));
+      if (b) ahead(CFG.produits[+b.dataset.i]);
     }, true);
 
   // a bouquet's one file (paquet.mjs), read once: the shown one at first, its neighbours ahead when the page is idle
@@ -634,7 +642,8 @@
     setInterval(liveRate, 5 * 60 * 1000);
     const F = await Frise.pret;
     const order = lay(CFG.produits.length, F.places);
-    slots = order.map((k) => ({ p: CFG.produits[k] }));
+    slots = order.map((k) => ({ p: CFG.produits[k], k }));
+    CFG.pas = F.pas;
     buildPager();
     const r0 = q.get('rayon');
     openShelf(shelf.querySelector(`[data-rayon="${r0}"]`) ? r0 : 'bouquets');
