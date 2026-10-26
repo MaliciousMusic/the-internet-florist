@@ -84,9 +84,8 @@ gzip. Un écran d'ordinateur charge environ 8,7 Mo de décor (en local, sans com
 
 ### Questions pour le porteur
 
-1. **Téléphone** : 1 180 unités de large montrent bien le bord des colonnes et des bouquets voisins, mais le bouquet est plus
-   petit et le haut de l'écran n'est que du ciel. À 1 000 unités, on ne voit que le bord des bouquets larges. *Proposition :*
-   1 180, et la moitié haute du ciel servira au nom et, plus tard, à la bulle des abeilles.
+1. ~~**Téléphone** : 1 180 ou 1 000 unités de large ?~~ **Tranché le 26 octobre : 1 180 unités.** On voit le bord des
+   colonnes et des bouquets voisins ; la moitié haute du ciel servira au nom et, plus tard, à la bulle des abeilles.
 2. **À-coup après l'arrêt** sur téléphone, le temps de poser le bouquet suivant. *Proposition :* poser ses images une à une,
    entre deux images de l'écran (à faire dans `eclosion.js`).
 3. **Finesse de l'herbe du premier plan** : la frise la dessine partout au niveau des flancs de l'ancienne scène, un peu moins
