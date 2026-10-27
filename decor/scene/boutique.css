@@ -1102,3 +1102,12 @@
   width: 100%;
   border: 0;
 }
+
+/* the close-up: no toolbar (owner, 2026-10-27), Buy and its bubble down where it stood */
+.gros-plan .entete {
+  visibility: hidden;
+}
+
+.gros-plan .achat {
+  bottom: calc(var(--dock-pied) + 4px);
+}

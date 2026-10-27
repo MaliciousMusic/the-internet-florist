@@ -7,7 +7,8 @@
 // choosing one, its size, its place, in front of or behind the windows (computers), validating, the long press.
 // A camera comes closer on the crucial moments (the icon clicked, the sign-in, the corner drawn, the ✓, the long press) and
 // goes back; the clicks ripple, the fields show their caret, the buttons give, the ✓ pops.
-// The numbered steps stand beside the device in black Nunito (under it on a narrow screen, one at a time with dots).
+// No numbered steps, no toolbar under it (owner, 2026-10-27): the device as large as the room allows, the laptop's keyboard
+// spilling a little off the screen's sides if it must.
 // Four devices, chosen above the toolbar: a generic Windows laptop, a coloured all-in-one (macOS-like), a generic Android
 // phone, a phone of the 18th kind (iOS-like); never a brand's logo. The first is the visitor's own system. Belai Bureau
 // exists for Windows only: the others are marked "coming soon" (READY).
@@ -83,6 +84,7 @@ export async function ouvrir(api) {
   D.root.hidden = false;
   D.sous.hidden = false;
   A.Frise.replie(true);
+  setTimeout(() => state && document.documentElement.classList.add('demo-replie'), RM ? 0 : 1200);
   await device(state.dev, true);
   D.fermer.focus({ preventScroll: true });
 }
@@ -92,6 +94,7 @@ export function fermer() {
   stop();
   state = null;
   for (const el of [D.app, D.root, D.sous]) el.classList.add('sort');
+  document.documentElement.classList.remove('demo-replie');
   A.Frise.replie(false);
   A.reframe();
   setTimeout(() => {
@@ -138,8 +141,6 @@ function build() {
   root.setAttribute('aria-label', T.demoTitle);
   root.hidden = true;
   const dessus = h('div', 'demo-dessus');
-  const etapes = h('ol', 'demo-etapes');
-  const points = h('div', 'demo-points');
   const appareils = h('div', 'demo-appareils');
   appareils.setAttribute('role', 'radiogroup');
   appareils.setAttribute('aria-label', T.demoDevices);
@@ -167,7 +168,7 @@ function build() {
     if (state.step >= steps().length) return goto(0, true);
     goto(state.step, true);
   });
-  root.append(dessus, etapes, points, bientot, appareils, lecture, fermerBtn);
+  root.append(dessus, bientot, appareils, lecture, fermerBtn);
   document.body.append(root);
   addEventListener('keydown', (e) => {
     if (state && e.key === 'Escape') {
@@ -176,7 +177,7 @@ function build() {
     }
   }, true);
   addEventListener('resize', () => state && device(state.dev, false, true));
-  D = { sous, blanc, app, inner, ecran, cadre, root, dessus, etapes, points, bientot, appareils, fermer: fermerBtn, lecture };
+  D = { sous, blanc, app, inner, ecran, cadre, root, dessus, bientot, appareils, fermer: fermerBtn, lecture };
 }
 
 // ---------- a device: its frame, its desktop, its place on the screen, the bouquet into it, the steps
@@ -209,38 +210,28 @@ async function device(k, entering = false, resizing = false) {
   D.root.classList.toggle('large', geo.large);
   D.bientot.hidden = READY.has(k);
   D.bientot.textContent = READY.has(k) ? '' : A.T.demoSoonOn.replace('{device}', A.T.demoDevice[k]);
-  // (over the device on a wide screen; under the step and its dots on a narrow one, the top being the buttons')
-  D.bientot.style.top = `${geo.large ? Math.max(8, geo.y - 34) : geo.y + geo.h + 136}px`;
   if (!resizing) {
     desktop(dv);
-    stepsList();
     // it rises and comes forward on a wide screen; on a phone's it only appears (owner, 2026-10-27)
     D.inner.classList.remove('entre', 'parait');
     void D.inner.offsetWidth;
     D.inner.classList.add(geo.large ? 'entre' : 'parait');
   } else layoutPage();
-  placeSteps(geo);
   if (resizing) return goto(state.step, false);
   setTimeout(() => state && goto(0, state.playing), entering && !RM ? 400 : 0);
 }
 
-// where the device stands: as large as the room allows between the top and the device buttons over the toolbar, the steps
-// on its two sides on a wide screen, under it on a narrow one
+// where the device stands: as large as the room allows between the buttons at the top and the device buttons at the bottom
+// (the toolbar is away during the demo); a computer may be up to 14 % wider than the screen (its sides off it, the screen
+// itself inside), a phone stands in the room's height
 function layout(dv) {
   const W = innerWidth, H = innerHeight;
-  const dock = document.querySelector('.entete').getBoundingClientRect();
-  const bottom = (dock.top > H / 2 ? dock.top : H) - 62;
   const large = W >= 900;
-  const side = large ? Math.min(230, W * 0.17) : 0;
-  const top = large ? 40 : 60;
-  // (on a narrow screen, room under the device for its step, its dots and, for a device to come, its "coming soon")
-  const under = 150 + (READY.has(state.dev) ? 0 : 40);
-  const room = { w: W - 2 * (side + 24), h: (large ? bottom : bottom - under) - top };
-  const k = Math.min(room.w / dv.vb[0], room.h / dv.vb[1]);
+  const top = 62, bottom = H - 76;
+  const roomW = DEVICES[state.dev].tel ? W - 24 : W * (large ? 1 : 1.14);
+  const k = Math.min(roomW / dv.vb[0], (bottom - top) / dv.vb[1]);
   const w = dv.vb[0] * k, hh = dv.vb[1] * k;
-  // (on a narrow screen the device, its step and its dots as one block, in the middle of the room)
-  const y = large ? top + (room.h - hh) / 2 : top + Math.max(0, (bottom - top - (hh + under)) / 2);
-  return { k, w, h: hh, x: (W - w) / 2, y, large, side, bottom };
+  return { k, w, h: hh, x: (W - w) / 2, y: top + (bottom - top - hh) / 2, large, bottom };
 }
 
 // ---------- the view: the camera (c times closer, the screen's point (fx, fy) brought toward the middle of the device) and
@@ -424,52 +415,10 @@ function follow(sel, hash = '') {
   } catch (_) {}
 }
 
-// ---------- the steps
+// ---------- the steps (no list shown since 2026-10-27: they play one after another)
 function steps() {
   const T = A.T;
   return state && DEVICES[state.dev].tel ? T.demoPhone.map((t, i) => ({ t, run: PHONE[i] })) : T.demoDesk.map((t, i) => ({ t, run: DESK[i] }));
-}
-function stepsList() {
-  D.etapes.innerHTML = '';
-  D.points.innerHTML = '';
-  D.etapes.style.setProperty('--rangs', String(Math.ceil(steps().length / 2)));
-  steps().forEach((s, i) => {
-    // (a narrow screen shows the step under way alone, and a row of dots to go to another)
-    const pt = h('button', 'demo-point');
-    pt.type = 'button';
-    pt.setAttribute('aria-label', `${i + 1}. ${s.t}`);
-    pt.addEventListener('click', () => goto(i, true));
-    D.points.append(pt);
-    const li = h('li');
-    const b = h('button', 'demo-etape', `<span class="n">${i + 1}</span><span class="t">${esc(s.t)}</span>`);
-    b.type = 'button';
-    b.addEventListener('click', () => goto(i, true));
-    li.append(b);
-    D.etapes.append(li);
-  });
-}
-function placeSteps(geo) {
-  const E = D.etapes;
-  if (geo.large) {
-    // the two columns close to the device's sides
-    const m = Math.max(16, geo.x - geo.side - 24);
-    Object.assign(E.style, { left: `${m}px`, right: `${m}px`, top: `${geo.y}px`, height: `${geo.h}px` });
-    E.style.setProperty('--cote', `${geo.side}px`);
-  } else {
-    Object.assign(E.style, { left: '20px', right: '20px', top: `${geo.y + geo.h + 14}px`, height: '' });
-    D.points.style.top = `${geo.y + geo.h + 104}px`;
-  }
-}
-function mark(i) {
-  [...D.points.children].forEach((pt, j) => pt.classList.toggle('en-cours', j === i));
-  [...D.etapes.children].forEach((li, j) => {
-    li.classList.toggle('actif', j === i);
-    const b = li.firstChild;
-    b.classList.toggle('fait', j < i);
-    b.classList.toggle('en-cours', j === i);
-    if (j === i) b.setAttribute('aria-current', 'step');
-    else b.removeAttribute('aria-current');
-  });
 }
 function setPlay(on) {
   state.playing = on;
@@ -500,7 +449,6 @@ async function goto(i, play) {
   for (let j = i; j < list.length; j++) {
     if (tok.stop) return;
     state.step = j;
-    mark(j);
     await list[j].run({ fast: false, tok });
     if (!play) {
       state.tok = null;
@@ -512,7 +460,6 @@ async function goto(i, play) {
   await back({ tok });
   state.step = list.length;
   state.tok = null;
-  mark(list.length);
   setPlay(false);
 }
 
