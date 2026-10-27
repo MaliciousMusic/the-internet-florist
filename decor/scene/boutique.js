@@ -95,14 +95,30 @@
     if (!slots.length) return; // (start() calls it again once the places are laid)
     if (i === chosen) return placeTarget();
     chosen = i;
-    cards.forEach((c, k) => {
-      if (k === slots[i].k) c.b.setAttribute('aria-current', 'true');
-      else c.b.removeAttribute('aria-current');
-    });
+    markDot(i);
     const p = productAt(i);
     buyFor(p);
     plane.setAttribute('aria-label', fill(T.planeLabel, { name: p.nom, alt: altOf(p) }));
     placeTarget();
+  }
+  // the dot of the place i lit (the others not)
+  let lit = -1;
+  function markDot(i) {
+    const k = slots[i] ? slots[i].k : -1;
+    if (k === lit) return;
+    lit = k;
+    cards.forEach((c, j) => {
+      if (j === k) c.b.setAttribute('aria-current', 'true');
+      else c.b.removeAttribute('aria-current');
+    });
+  }
+  // While the camera moves (a dot, a drag, a swipe, the arrows), the lit dot follows the screen, frame by frame: the place
+  // nearest the camera (owner, 2026-10-27: lit only on arrival, the click seemed not to have worked)
+  let following = 0;
+  function follow() {
+    const n = slots.length;
+    if (n) markDot(((Math.round(Frise.camera() / CFG.pas) % n) + n) % n);
+    following = requestAnimationFrame(follow);
   }
   // a dot: the place of its bouquet nearest the camera (the frieze's loop holds it once per setting)
   function choose(k) {
@@ -117,7 +133,11 @@
     });
     if (best >= 0) Frise.va(best);
   }
-  document.addEventListener('frise:arret', (e) => facing(e.detail));
+  document.addEventListener('frise:arret', (e) => {
+    cancelAnimationFrame(following);
+    following = 0;
+    facing(e.detail);
+  });
   // the bouquet facing the camera has just been posed: its button and close-up box
   document.addEventListener('frise:bouquet', (e) => {
     if (e.detail !== Frise.face()) return;
@@ -125,6 +145,7 @@
     frameCloseUp();
   });
   document.addEventListener('frise:depart', () => {
+    if (!following) following = requestAnimationFrame(follow);
     if (near) closeUp(false);
     $('bq-cible').hidden = true;
   });
