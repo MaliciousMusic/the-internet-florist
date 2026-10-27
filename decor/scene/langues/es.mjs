@@ -367,6 +367,7 @@ export default {
     fadedForGood: 'Marchito para siempre',
     // the month's collection and the copies left, under the bouquet's name ({month}: the month in the page's language)
     series: 'Colección de {month} · quedan {left} de {total}',
+    fadeReminder: '(Los ramos se marchitan en {n} días)',
     buy: 'Comprar',
     soon: 'Pronto',
     soonMessage: 'Pronto podrás comprar desde el sitio.',

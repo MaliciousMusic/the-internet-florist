@@ -322,8 +322,7 @@
     }
   };
 
-  // the name of the bouquet facing the camera, in the sky: it glides slower than the pillars and fades as its bouquet
-  // leaves the centre
+  // the name of the bouquet facing the camera, in the screen's top left corner: it fades as its bouquet leaves the centre
   let nameFor = -1;
   function name() {
     const i = Math.round(c / M.pas);
@@ -334,11 +333,11 @@
       nameFor = place;
       // (a string, or { nom, sous }: the name and, under it, a line in smaller letters)
       const v = nameOf(place) || '';
-      nameEl.firstChild.textContent = typeof v === 'string' ? v : v.nom || '';
-      nameEl.lastChild.textContent = typeof v === 'string' ? '' : v.sous || '';
+      nameEl.children[0].textContent = typeof v === 'string' ? v : v.nom || '';
+      nameEl.children[1].textContent = typeof v === 'string' ? '' : v.rappel || '';
+      nameEl.children[2].textContent = typeof v === 'string' ? '' : v.sous || '';
     }
     nameEl.style.opacity = (show * show * (3 - 2 * show)).toFixed(3);
-    nameEl.style.transform = `translate3d(calc(-50% + ${(-d * 0.35 * k).toFixed(2)}px),0,0)`;
   }
 
   // ---------- one frame of the camera
@@ -559,8 +558,10 @@
       (await fetch(url).then((r) => (r.ok ? r.json() : Promise.reject(new Error(`bouquet ${r.status}`)))));
     const base = url.slice(0, url.lastIndexOf('/') + 1);
     const F = m.frise;
+    // (each bouquet lowered or raised so its vase stands on its pillar's top: sprites.mjs "assise")
+    const dy = m.assise || 0;
     const still = new toile.PIXI.Sprite(await toile.texture(base + F.src));
-    still.position.set(F.x, F.y);
+    still.position.set(F.x, F.y + dy);
     still.width = F.w;
     still.height = F.h;
     still.visible = false;
@@ -572,9 +573,9 @@
     let gone = false;
     let near = null; // { sprites, sway, sheets }
     const b = {
-      manifeste: { vb: m.vb, boite: m.boite, pied: m.pied, echelle: m.echelle, pieces: m.orig, finCroissanceMs: 0 },
+      manifeste: { vb: m.vb, boite: [m.boite[0], m.boite[1] + dy, m.boite[2], m.boite[3]], pied: m.pied, echelle: m.echelle, pieces: m.orig, finCroissanceMs: 0 },
       // the place's offset in the world (the insects place the bouquet's flowers from it)
-      lieu: { x: plane.x, y: plane.y },
+      lieu: { x: plane.x, y: plane.y + dy },
       plans: plane.groups,
       plan: m.orig.map((o) => groupOf(o.k)),
       pieces: [still],
@@ -605,9 +606,9 @@
             const s = new Sprite(new Texture({ source: texs[f.sheet].source, frame: new Rectangle(f.sx, f.sy, f.sw, f.sh) }));
             if (f.o) {
               s.anchor.set((f.o[0] - f.x) / f.w, (f.o[1] - f.y) / f.h);
-              s.position.set(f.o[0], f.o[1]);
+              s.position.set(f.o[0], f.o[1] + dy);
               moving.push([s, f.z]);
-            } else s.position.set(f.x, f.y);
+            } else s.position.set(f.x, f.y + dy);
             s.width = f.w;
             s.height = f.h;
             plane.groups[groupOf(f.k)].addChild(s);
@@ -667,8 +668,9 @@
       nameEl = document.createElement('div');
       nameEl.className = 'nom-ciel';
       nameEl.setAttribute('aria-hidden', 'true');
-      nameEl.innerHTML = '<span class="nom-titre"></span><span class="nom-sous"></span>';
-      monde.append(nameEl);
+      nameEl.innerHTML = '<span class="nom-titre"></span><span class="nom-rappel"></span><span class="nom-sous"></span>';
+      // in the screen's top left corner (owner, 2026-10-27), over the canvas
+      scene.append(nameEl);
       // the clumps come once the first bouquet is shown (scene.js's order), and only without the insects' sprites (insectes.mjs
       // draws them with the insects, along the same strip, while it runs: window.PREMIER_PIXI); each clump turns about its
       // foot (scene.json: the bottom middle of its frame), its picture cut to its drawn box

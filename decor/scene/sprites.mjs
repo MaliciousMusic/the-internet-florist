@@ -25,6 +25,13 @@ const { Resvg } = require('@resvg/resvg-js');
 const PX_FRISE = 1.2; // the decor's previews too (frise_cuisson.mjs): two device pixels per CSS pixel on a 1440 px screen
 const PX_PROCHE = 3; // the close-up's zoom (up to 2.6) over the frieze's scale
 const SHEET = 2048;
+// where a vase stands on its pillar (owner, 2026-10-27: « abaisse légèrement les vases pour que le socle et le bas du vase
+// ne flottent pas »): the pillar's top is seen almost edge-on, a light band about 8 units deep from its far rim (frise.json
+// piliers[].sommet); a vase standing in its middle has its lowest point 4.5 units under that rim. Each bouquet is moved
+// by its own amount (sprites.json "assise"), its foot measured on its picture: the vases' feet were drawn 2 to 3 units
+// above the rim, and two (the frosted glass and the snowdrops) already lower.
+const ASSISE = 4.5;
+const SOMMET = JSON.parse(readFileSync(join(HERE, '..', 'out', 'frise', 'frise.json'), 'utf8')).piliers[0].sommet;
 const cfg = JSON.parse(readFileSync(join(HERE, 'boutique.json'), 'utf8'));
 const want = process.argv.slice(2);
 const ids = want.length ? want : cfg.produits.map((p) => p.id);
@@ -103,6 +110,13 @@ for (const id of ids) {
   writeFileSync(join(tmp, 'frise.png'), f.png);
   const fs = f.full[0] / vw; // pixels per drawing unit
   const [fx, fy] = world(vx + f.x / fs, vy + f.y / fs);
+  // its lowest drawn row (alpha over half): the vase's foot
+  const bas = (() => {
+    const im = new Resvg(pngify(whole), { fitTo: { mode: 'width', value: f.full[0] }, background: 'rgba(0,0,0,0)', font: { loadSystemFonts: false } }).render();
+    for (let y = im.height - 1; y >= 0; y--) for (let x = 0; x < im.width; x++) if (im.pixels[(y * im.width + x) * 4 + 3] > 128) return y + 1;
+    return im.height;
+  })();
+  const assise = Math.round((SOMMET + ASSISE - world(0, vy + bas / fs)[1]) * 100) / 100;
   const frise = { crop: [f.x, f.y, f.w, f.h], x: fx, y: fy, w: f.w / fs * e, h: f.h / fs * e };
 
   // the close-up: each image of ouvert.json on its own
@@ -134,6 +148,7 @@ for (const id of ids) {
     echelle: m.echelle,
     orig: m.orig,
     images: m.pieces.length,
+    assise,
     frise: { src: 'frise.webp', x: r2(frise.x), y: r2(frise.y), w: r2(frise.w), h: r2(frise.h), px: [frise.crop[2], frise.crop[3]] },
     proche: {
       pxu: PX_PROCHE,
@@ -155,5 +170,5 @@ for (const id of ids) {
   };
   writeFileSync(join(out, 'sprites.json'), JSON.stringify(index));
   rmSync(tmp, { recursive: true, force: true });
-  console.log(`${id}: frise ${frise.crop[2]}x${frise.crop[3]} ${packed.kb.frise} Ko ; gros plan ${cells.length} images sur ${packed.sheets.length} planche(s) ${packed.kb.proche} Ko ; ${Math.round(performance.now() - t0)} ms`);
+  console.log(`${id}: assise ${assise > 0 ? '+' : ''}${assise} ; frise ${frise.crop[2]}x${frise.crop[3]} ${packed.kb.frise} Ko ; gros plan ${cells.length} images sur ${packed.sheets.length} planche(s) ${packed.kb.proche} Ko ; ${Math.round(performance.now() - t0)} ms`);
 }

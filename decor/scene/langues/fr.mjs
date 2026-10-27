@@ -366,6 +366,7 @@ export default {
     fadedForGood: 'Fané pour toujours',
     // the month's collection and the copies left, under the bouquet's name ({month}: the month in the page's language)
     series: 'Collection {month} · {left} sur {total}',
+    fadeReminder: '(Les bouquets fanent en {n} jours)',
     buy: 'Acheter',
     soon: 'Bientôt',
     soonMessage: 'L’achat depuis le site arrive bientôt.',

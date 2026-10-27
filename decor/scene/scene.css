@@ -124,11 +124,6 @@ body {
     background: linear-gradient(#6c9bcf, #7fa8d5 var(--haut-tel));
   }
 
-  /* the name high in the sky (owner 2026-10-26, higher again 2026-10-27 once the toolbar went to the bottom): 44 px under
-     the screen's top edge, whatever the phone's height (the sky goes on above the world) */
-  .monde:has(#frise-ancre) .nom-ciel {
-    top: calc(env(safe-area-inset-top, 0px) + 44px - var(--haut-tel));
-  }
 }
 
 /* the name of the bouquet facing the camera, in the sky (owner 2026-10-26: thin letters, gliding with the sky, gone as
@@ -140,34 +135,48 @@ body {
   font-display: swap;
 }
 
+/* the name of the bouquet facing the camera, in the screen's top left corner (owner, 2026-10-27: smaller, in the corner,
+   with the reminder of the lifespan in brackets under it), then the month's collection */
 .nom-ciel {
   position: absolute;
-  left: 50%;
-  top: calc(118 / 1350 * 100%);
-  z-index: 2;
-  font: 200 calc(100cqw * 72 / 2400) / 1 'Nunito Frise', system-ui, sans-serif;
-  letter-spacing: 0.02em;
+  left: max(18px, env(safe-area-inset-left, 0px));
+  top: calc(env(safe-area-inset-top, 0px) + 16px);
+  z-index: 20;
+  max-width: calc(100vw - 36px);
   color: #fff;
-  white-space: nowrap;
+  text-align: left;
   pointer-events: none;
   user-select: none;
   opacity: 0;
+  text-shadow: 0 1px 6px rgb(30 60 100 / 0.25);
 }
 
-/* the name, and under it the month's collection and the copies left, smaller and finer (owner, 2026-10-27) */
 .nom-titre,
+.nom-rappel,
 .nom-sous {
   display: block;
-  text-align: center;
+  text-align: left;
+}
+
+.nom-titre {
+  font: 300 clamp(22px, 2.4vw, 32px) / 1.1 'Nunito Frise', system-ui, sans-serif;
+  letter-spacing: 0.01em;
+}
+
+.nom-rappel {
+  margin-top: 4px;
+  font: 400 clamp(12px, 1vw, 14px) / 1.2 system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  opacity: 0.9;
 }
 
 .nom-sous {
-  margin-top: 0.45em;
-  font-size: 0.36em;
-  letter-spacing: 0.06em;
-  opacity: 0.92;
+  margin-top: 2px;
+  font: 400 clamp(11px, 0.9vw, 13px) / 1.2 system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  letter-spacing: 0.02em;
+  opacity: 0.8;
 }
 
+.nom-rappel:empty,
 .nom-sous:empty {
   display: none;
 }

@@ -354,6 +354,7 @@ export default {
     fadedForGood: 'Faded for good',
     // the month's collection and the copies left, under the bouquet's name ({month}: the month in the page's language)
     series: '{month} collection · {left} of {total} left',
+    fadeReminder: '(Bouquets fade in {n} days)',
     buy: 'Buy',
     soon: 'Soon',
     soonMessage: 'Buying from the site is coming soon.',

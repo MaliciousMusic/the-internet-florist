@@ -362,6 +362,8 @@
     const left = Math.max(0, total - (p.vendus || 0));
     return fill(T.series, { month, left: nInt.format(left), total: nInt.format(total) });
   }
+  // the name in the corner, the reminder of the lifespan in brackets under it (owner, 2026-10-27), then the collection
+  const nameOf = (s) => ({ nom: productAt(s).nom, rappel: fill(T.fadeReminder, { n: nInt.format((CFG.vie && CFG.vie.jours) || 30) }), sous: seriesTxt(productAt(s)) });
   function lifeTxt(p) {
     const ms = lifeEnd(p) - Date.now();
     if (ms <= 0) return null;
@@ -788,7 +790,7 @@
     const at = order.indexOf(k >= 0 && k < CFG.produits.length ? k : 0);
     if (PERF) measure();
     // the name in the sky, and under it the month's collection and the copies left (owner, 2026-10-27)
-    Frise.nommer((s) => ({ nom: productAt(s).nom, sous: seriesTxt(productAt(s)) }));
+    Frise.nommer(nameOf);
     if (at > 0) Frise.va(at, { instant: true });
     Frise.poser(poseAt);
     const f = Frise.face();
@@ -805,7 +807,7 @@
       const x = r.restants[p.id];
       if (x) Object.assign(p, { exemplaires: x.total, vendus: x.total - x.restants });
     }
-    Frise.nommer((s) => ({ nom: productAt(s).nom, sous: seriesTxt(productAt(s)) }));
+    Frise.nommer(nameOf);
     showLives();
   }
 

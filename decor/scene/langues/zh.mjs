@@ -325,6 +325,7 @@ export default {
     fadedForGood: '已永久凋谢',
     // the month's collection and the copies left, under the bouquet's name ({month}: the month in the page's language)
     series: '{month}系列 · 剩余 {left}/{total}',
+    fadeReminder: '（花束 {n} 天后凋谢）',
     buy: '购买',
     soon: '即将推出',
     soonMessage: '站内购买即将开放。',
