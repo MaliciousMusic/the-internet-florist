@@ -711,8 +711,8 @@
   --dock-pied: calc(env(safe-area-inset-bottom) + 50px);
 }
 
-/* the dock: brought by an ant on a computer (at the bottom), laid by two butterflies on a phone (at the top); the pager: brought
-   by a ladybird and a rose chafer */
+/* the dock: carried by two ants, one at each end, which rear up to set it (owner, 2026-10-27); the pager: brought by a ladybird
+   and a rose chafer; Buy: by a swallowtail */
 .porteuses .dock,
 .porteuses .pager {
   translate: -200vw 0;
