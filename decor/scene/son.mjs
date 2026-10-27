@@ -11,7 +11,7 @@
 
 const BASE = new URL('son/', import.meta.url);
 const XF = 3; // s, the beds' crossfade
-const LEVEL = 0.8; // the master's level when on (about -32 dBFS RMS: soft)
+const LEVEL = 0.528; // the master's level when on: 0.8 lowered by 34 % (owner, 2026-10-27), about -35.6 dBFS RMS
 const rnd = (a, b) => a + Math.random() * (b - a);
 const pick = (a) => a[Math.floor(Math.random() * a.length)];
 
