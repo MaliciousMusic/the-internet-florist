@@ -339,8 +339,18 @@
       ligne.children[1].textContent = o.copies || '';
       ligne.children[2].textContent = o.fane || '';
       sous.textContent = o.sous || '';
+      fitName();
     }
     nameEl.style.opacity = (show * show * (3 - 2 * show)).toFixed(3);
+  }
+
+  // the band always on its line, whatever the screen's width: its letters made smaller until its widest line fits
+  // (--f, 1 down to 0.5; owner, 2026-10-27: « le layout doit scale pour toujours avoir son display correct »)
+  function fitName() {
+    if (!nameEl) return;
+    nameEl.style.setProperty('--f', 1);
+    const over = Math.max(...[...nameEl.children].map((el) => el.scrollWidth / Math.max(1, el.clientWidth)));
+    if (over > 1) nameEl.style.setProperty('--f', Math.max(0.5, 0.98 / over).toFixed(3));
   }
 
   // ---------- one frame of the camera
@@ -672,8 +682,11 @@
       nameEl.className = 'nom-ciel';
       nameEl.setAttribute('aria-hidden', 'true');
       nameEl.innerHTML = '<span class="nom-ligne"><span class="nom-titre"></span><span class="nom-copies"></span><span class="nom-fane"></span></span><span class="nom-sous"></span>';
-      // in the screen's top left corner (owner, 2026-10-27), over the canvas
-      scene.append(nameEl);
+      // in the screen's top band (owner, 2026-10-27), over the canvas; outside the scene, which the close-up scales
+      document.body.append(nameEl);
+      addEventListener('resize', fitName);
+      // (the name's thin face arrives after the first measure)
+      if (document.fonts) document.fonts.ready.then(fitName);
       // the clumps come once the first bouquet is shown (scene.js's order), and only without the insects' sprites (insectes.mjs
       // draws them with the insects, along the same strip, while it runs: window.PREMIER_PIXI); each clump turns about its
       // foot (scene.json: the bottom middle of its frame), its picture cut to its drawn box
@@ -749,6 +762,7 @@
         drag = null;
       }
     },
+    ajusteNom: () => fitName(),
     seul(place) {
       only = place == null ? null : place;
       for (const P of places.values()) P.plane.montre(only == null || P.place === only);

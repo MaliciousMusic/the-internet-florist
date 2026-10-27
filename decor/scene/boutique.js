@@ -276,6 +276,9 @@
     const f = Frise.face();
     const b = f >= 0 ? Frise.bouquet(f) : null;
     Frise.seul(on && f >= 0 ? f : null);
+    // the top band: the name alone on the frieze, with the copies, the fading and the collection in the close-up
+    document.documentElement.classList.toggle('gros-plan', on);
+    Frise.ajusteNom();
     if (b && b.proche) b.proche(on);
     target.setAttribute('aria-pressed', String(on));
     target.setAttribute('aria-label', on ? T.stepBack : T.lookCloser);

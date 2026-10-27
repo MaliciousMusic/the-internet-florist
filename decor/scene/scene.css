@@ -48,6 +48,15 @@ body {
   user-select: none;
 }
 
+/* the sky over the world's top edge, where a phone held upright shows sky above the world (owner, 2026-10-27: the CSS
+   gradient there made a visible step): ciel.svg's own gradients carried on over the 1400 units above it (ciel-haut.svg) */
+.ciel-haut {
+  top: auto;
+  bottom: 100%;
+  height: calc(100% * 1400 / 1350);
+}
+
+
 /* Computer (a landscape screen 900 px wide or more): the world hangs from the top edge, whatever the window's shape, so
    a window wider than 16:9 (not full screen) frames the sky and the frames as the full screen does and only shows less of
    the foreground, which goes under the bottom edge. --ciel-en-plus lowers it by that fraction of its own height for more
@@ -118,11 +127,6 @@ body {
     bottom: auto;
   }
 
-  /* the sky above the world: from the zenith down to the colour the world's sky shows at its top edge (measured on a
-     phone: the veils lighten ciel.svg's first stop there), so no edge shows */
-  .scene:has(#frise-ancre) {
-    background: linear-gradient(#6c9bcf, #7fa8d5 var(--haut-tel));
-  }
 
 }
 
@@ -135,10 +139,12 @@ body {
   font-display: swap;
 }
 
-/* the top band (owner's sketch, 2026-10-27): on one line the bouquet's name, the copies available and the fading (at the
-   right edge); under them the month's collection and when it ends */
+/* the top band (owner's sketch, 2026-10-27): on the frieze the bouquet's name alone; in the close-up, on one line the name,
+   the copies available and the fading (at the right edge), and under them the month's collection and when it ends. Fixed
+   on the screen (outside the scaled scene), always on its lines: frise.js lowers --f until the widest line fits. */
 .nom-ciel {
-  position: absolute;
+  --f: 1;
+  position: fixed;
   left: max(18px, env(safe-area-inset-left, 0px));
   right: max(18px, env(safe-area-inset-right, 0px));
   top: calc(env(safe-area-inset-top, 0px) + 14px);
@@ -153,20 +159,20 @@ body {
 .nom-ligne {
   display: flex;
   align-items: baseline;
-  gap: 10px 12px;
-  flex-wrap: wrap;
+  gap: calc(var(--f) * 12px);
+  flex-wrap: nowrap;
+  white-space: nowrap;
 }
 
 .nom-titre {
-  font: 300 clamp(22px, 2.4vw, 32px) / 1.1 'Nunito Frise', system-ui, sans-serif;
+  font: 300 calc(var(--f) * clamp(22px, 2.4vw, 32px)) / 1.1 'Nunito Frise', system-ui, sans-serif;
   letter-spacing: 0.01em;
 }
 
 .nom-copies,
 .nom-fane {
-  font: 600 clamp(11.5px, 0.95vw, 13.5px) / 1.2 system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  font: 600 calc(var(--f) * clamp(12px, 1vw, 14px)) / 1.2 system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
   font-variant-numeric: tabular-nums;
-  white-space: nowrap;
 }
 
 .nom-fane {
@@ -175,19 +181,20 @@ body {
 
 .nom-sous {
   display: block;
-  margin-top: 6px;
-  font: 400 clamp(12px, 1vw, 14px) / 1.2 system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  margin-top: calc(var(--f) * 6px);
+  font: 400 calc(var(--f) * clamp(12px, 1vw, 14px)) / 1.2 system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
   letter-spacing: 0.02em;
+  white-space: nowrap;
   opacity: 0.9;
 }
 
+/* on the frieze, the name alone */
+:root:not(.gros-plan) .nom-copies,
+:root:not(.gros-plan) .nom-fane,
+:root:not(.gros-plan) .nom-sous,
 .nom-copies:empty,
 .nom-sous:empty {
   display: none;
-}
-
-.proche .nom-ciel {
-  visibility: hidden;
 }
 
 /* Clouds: each one stands where its old crossing (from just off the left edge to just off the right edge) had it at the
