@@ -696,6 +696,8 @@
     buy.setAttribute('aria-expanded', String(on));
     $('achat').classList.toggle('accord-ouvert', on);
     if (on) {
+      // the price on the sheet's left, as the button showed it
+      $('accord-prix').textContent = curP ? fiatOf(curP) : '';
       waiver.checked = false;
       waiver.removeAttribute('aria-invalid');
       note.textContent = '';
@@ -703,7 +705,7 @@
     }
   }
   buy.addEventListener('click', () => openSheet(sheet.hidden));
-  $('accord-annuler').addEventListener('click', () => {
+  $('accord-fermer').addEventListener('click', () => {
     openSheet(false);
     buy.focus({ preventScroll: true });
   });

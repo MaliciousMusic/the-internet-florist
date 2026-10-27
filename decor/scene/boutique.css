@@ -637,55 +637,128 @@
   cursor: progress;
 }
 
-/* the purchase sheet above the Buy button: the express waiver of the right of withdrawal, then "Confirm and pay" */
+/* the purchase sheet: the Buy button unfolded upward in its own blue (owner, 2026-10-27), the button hidden meanwhile; the
+   waiver with its box, then the price on the left and "Confirm and pay" in white with blue letters. It unfolds from the
+   button's place (a transform from its size), its words coming after */
+.achat.accord-ouvert .achat-bouton {
+  display: none;
+}
+
 .accord {
-  width: min(calc(100vw - 32px), 360px);
+  position: relative;
+  width: min(calc(100vw - 32px), 380px);
   box-sizing: border-box;
-  margin: 0 0 10px;
-  padding: 12px 14px 12px;
-  border: 1px solid var(--verre-fonce-bord);
-  border-radius: 16px;
-  background: var(--verre-fonce);
-  -webkit-backdrop-filter: blur(18px) saturate(1.1);
-  backdrop-filter: blur(18px) saturate(1.1);
+  margin: 0;
+  padding: 16px 18px 14px;
+  border: 1px solid #0058b8;
+  border-radius: 24px;
+  background: linear-gradient(to bottom, #1477e6, #0a6cdb 40%, #0863cb);
+  box-shadow: 0 6px 24px rgb(0 40 100 / 0.3);
   color: #fff;
-  font: 400 13px/1.45 system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  font: 500 13.5px/1.5 system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  letter-spacing: 0.005em;
+  transform-origin: 50% 100%;
+  animation: accord-deplie 0.36s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.accord > * {
+  animation: accord-mots 0.24s ease-out 0.14s both;
+}
+
+@keyframes accord-deplie {
+  from {
+    transform: scale(0.56, 0.16);
+  }
+}
+
+@keyframes accord-mots {
+  from {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .accord,
+  .accord > * {
+    animation: none;
+  }
 }
 
 .accord[hidden] {
   display: none;
 }
 
+.accord-fermer {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: rgb(255 255 255 / 0.14);
+  color: #fff;
+  cursor: pointer;
+}
+
+.accord-fermer:hover {
+  background: rgb(255 255 255 / 0.24);
+}
+
 .accord-titre {
-  margin: 0 0 6px;
-  font-weight: 600;
-  font-size: 14px;
+  margin: 0 36px 10px 0;
+  font: 700 15.5px/1.3 system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  letter-spacing: 0.01em;
 }
 
 .accord-case {
   display: flex;
-  gap: 9px;
+  gap: 12px;
   align-items: flex-start;
+  padding: 10px 12px;
+  border-radius: 14px;
+  background: rgb(255 255 255 / 0.1);
   cursor: pointer;
 }
 
+.accord-case span {
+  text-wrap: pretty;
+}
+
+/* the box: drawn here, a white edge; ticked, white with a blue mark */
 .accord-case input {
   flex: none;
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
   margin: 1px 0 0;
-  accent-color: #3c8c5a;
+  -webkit-appearance: none;
+  appearance: none;
+  border: 2px solid rgb(255 255 255 / 0.92);
+  border-radius: 7px;
+  background: transparent center / 14px 14px no-repeat;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.accord-case input:checked {
+  border-color: #fff;
+  background-color: #fff;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 14'%3E%3Cpath d='M2.6 7.4l2.9 2.9 5.9-6.4' fill='none' stroke='%230a6cdb' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
 }
 
 .accord-case input[aria-invalid='true'] {
-  outline: 2px solid #ffd666;
-  outline-offset: 2px;
+  border-color: #ffd666;
+  box-shadow: 0 0 0 3px rgb(255 214 102 / 0.35);
 }
 
 .accord-cgv {
-  margin: 8px 0 0;
-  color: rgb(255 255 255 / 0.88);
+  margin: 10px 2px 0;
+  color: rgb(255 255 255 / 0.86);
   font-size: 12px;
+  font-weight: 400;
 }
 
 .accord a {
@@ -693,32 +766,42 @@
   font-weight: 600;
 }
 
-.accord-boutons {
+.accord-bas {
   display: flex;
-  justify-content: flex-end;
-  gap: 8px;
-  margin-top: 10px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 14px;
 }
 
-.accord-boutons button {
-  min-height: 40px;
-  padding: 0 16px;
-  border: 1px solid var(--verre-bord);
-  border-radius: 999px;
-  color: #fff;
-  font: 600 14px/1 system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-  cursor: pointer;
-}
-
-.accord-annuler {
-  background: rgb(255 255 255 / 0.12);
+.accord-prix {
+  font: 700 19px/1 system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
 }
 
 .accord-payer {
-  background: linear-gradient(to bottom, rgb(255 255 255 / 0.3), rgb(255 255 255 / 0.08)), #3c8c5a;
+  min-height: 44px;
+  padding: 0 20px;
+  border: 0;
+  border-radius: 999px;
+  background: #fff;
+  color: #0a6cdb;
+  font: 700 14.5px/1 system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  box-shadow: 0 2px 8px rgb(0 30 80 / 0.22);
+  cursor: pointer;
 }
 
-.accord-boutons button:focus-visible,
+.accord-payer:hover {
+  background: #eef5ff;
+}
+
+.accord-payer:active {
+  background: #dce9fc;
+}
+
+.accord-payer:focus-visible,
+.accord-fermer:focus-visible,
 .accord-case input:focus-visible {
   outline: 2px solid #fff;
   outline-offset: 2px;
