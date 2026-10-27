@@ -688,7 +688,11 @@
       <span>摆上桌面</span>
     </button>
   </div>
+  <!-- the purchase sheet: the Buy button unfolded upward, in its blue (owner, 2026-10-27): the waiver, then the price on the left
+       and "Confirm and pay" in white; a small cross folds it back (and Escape) -->
   <form class="accord" id="accord" aria-labelledby="accord-titre" hidden>
+    <button class="accord-fermer" id="accord-fermer" type="button" aria-label="取消">
+      <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M7 7l10 10M17 7 7 17"/></svg></button>
     <p class="accord-titre" id="accord-titre">付款之前</p>
     <label class="accord-case">
       <input type="checkbox" id="renonce" name="renonce" required>
@@ -707,8 +711,8 @@
       </div>
     </div>
     <p class="accord-cgv">付款即表示你确认已成年，并接受<a href="zh/legal.html#terms">销售条款</a>。</p>
-    <div class="accord-boutons">
-      <button class="accord-annuler" id="accord-annuler" type="button">取消</button>
+    <div class="accord-bas">
+      <span class="accord-prix" id="accord-prix"></span>
       <button class="accord-payer" id="accord-payer" type="submit">确认并付款</button>
     </div>
   </form>

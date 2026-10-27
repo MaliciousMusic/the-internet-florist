@@ -688,7 +688,11 @@
       <span>Sur votre bureau</span>
     </button>
   </div>
+  <!-- the purchase sheet: the Buy button unfolded upward, in its blue (owner, 2026-10-27): the waiver, then the price on the left
+       and "Confirm and pay" in white; a small cross folds it back (and Escape) -->
   <form class="accord" id="accord" aria-labelledby="accord-titre" hidden>
+    <button class="accord-fermer" id="accord-fermer" type="button" aria-label="Annuler">
+      <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M7 7l10 10M17 7 7 17"/></svg></button>
     <p class="accord-titre" id="accord-titre">Avant de payer</p>
     <label class="accord-case">
       <input type="checkbox" id="renonce" name="renonce" required>
@@ -707,8 +711,8 @@
       </div>
     </div>
     <p class="accord-cgv">En payant, vous confirmez être majeur et accepter les <a href="fr/legal.html#terms">conditions générales de vente</a>.</p>
-    <div class="accord-boutons">
-      <button class="accord-annuler" id="accord-annuler" type="button">Annuler</button>
+    <div class="accord-bas">
+      <span class="accord-prix" id="accord-prix"></span>
       <button class="accord-payer" id="accord-payer" type="submit">Confirmer et payer</button>
     </div>
   </form>
