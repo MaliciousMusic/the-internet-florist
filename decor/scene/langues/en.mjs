@@ -72,6 +72,15 @@ export default {
     sendCode: 'Get the code',
     code: 'Code received',
     firstName: 'First name (optional)',
+    giftsTitle: 'My gifts',
+    giftsHelp: 'Enter the first name of the person giving you a bouquet, and the code they sent you.',
+    giftSender: 'Their first name',
+    giftCode: 'Code',
+    giftOpen: 'Open the gift',
+    accountTitle: 'My account',
+    accountHelp: 'Sign in with your mobile number: a code is sent to you by text message.',
+    signIn: 'Sign in',
+    signOut: 'Sign out',
   },
 
   // ---------- the About page
@@ -326,7 +335,7 @@ export default {
   // ---------- the strings of the scripts (entete.js, boutique.js), with {placeholders}
   js: {
     menu: 'Menu',
-    shelves: { bouquets: 'Bouquets of the day', soliflores: 'Bud vases', vendus: 'Bouquets collected' },
+    shelves: { bouquets: 'Bouquets of the day', soliflores: 'Bud vases', vendus: 'Bouquets collected', cadeaux: 'My gifts', profil: 'My account' },
     desktopTitle: 'On my desktop',
     desktopLabel: 'Your bouquet on your desktop',
     appTitle: 'Belai Bureau',
@@ -375,6 +384,14 @@ export default {
     paid: 'Your bouquet is yours: copy no. {n} of {total}.',
     paymentPending: 'Confirming the payment…',
     cancelled: 'Payment cancelled: the copy is back on sale.',
+    accountSoon: 'Your account is coming soon: you will sign in with your mobile number and find your bouquets here.',
+    accountSignIn: 'Sign in',
+    hello: 'Hello {name}',
+    copyNo: 'copy no. {n}',
+    noBouquet: 'No bouquet on your account yet.',
+    giftsSoon: 'Gifts are coming soon: you will open here the bouquet someone gives you.',
+    giftOpened: 'Your gift has arrived.',
+    giftWrong: 'This first name and code match no gift.',
     receipt: {
       title: 'Receipt',
       download: 'Download your receipt',

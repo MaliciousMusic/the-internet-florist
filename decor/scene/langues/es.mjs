@@ -77,6 +77,15 @@ export default {
     sendCode: 'Recibir el código',
     code: 'Código recibido',
     firstName: 'Nombre (opcional)',
+    giftsTitle: 'Mis regalos',
+    giftsHelp: 'Introduce el nombre de la persona que te regala un ramo y el código que te ha enviado.',
+    giftSender: 'Su nombre',
+    giftCode: 'Código',
+    giftOpen: 'Abrir el regalo',
+    accountTitle: 'Mi cuenta',
+    accountHelp: 'Inicia sesión con tu número de móvil: te enviamos un código por SMS.',
+    signIn: 'Iniciar sesión',
+    signOut: 'Cerrar sesión',
   },
 
   // ---------- the About page
@@ -339,7 +348,7 @@ export default {
   // ---------- the strings of the scripts (entete.js, boutique.js), with {placeholders}
   js: {
     menu: 'Menú',
-    shelves: { bouquets: 'Ramos del día', soliflores: 'Floreros solitarios', vendus: 'Ramos coleccionados' },
+    shelves: { bouquets: 'Ramos del día', soliflores: 'Floreros solitarios', vendus: 'Ramos coleccionados', cadeaux: 'Mis regalos', profil: 'Mi cuenta' },
     desktopTitle: 'En mi escritorio',
     desktopLabel: 'Tu ramo en tu escritorio',
     appTitle: 'Belai Bureau',
@@ -388,6 +397,14 @@ export default {
     paid: 'Tu ramo es tuyo: ejemplar n.º {n} de {total}.',
     paymentPending: 'Confirmando el pago…',
     cancelled: 'Pago cancelado: el ejemplar vuelve a estar a la venta.',
+    accountSoon: 'Tu cuenta llega pronto: iniciarás sesión con tu número de móvil y encontrarás aquí tus ramos.',
+    accountSignIn: 'Iniciar sesión',
+    hello: 'Hola, {name}',
+    copyNo: 'ejemplar n.º {n}',
+    noBouquet: 'Todavía no hay ningún ramo en tu cuenta.',
+    giftsSoon: 'Los regalos llegan pronto: aquí podrás abrir el ramo que te regalen.',
+    giftOpened: 'Tu regalo ha llegado.',
+    giftWrong: 'Este nombre y este código no corresponden a ningún regalo.',
     receipt: {
       title: 'Recibo',
       download: 'Descarga tu recibo',

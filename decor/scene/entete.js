@@ -2,10 +2,11 @@
 //
 // - The header is a dock of round frosted-glass icons, drawn here in SVG: a vase with flowers (the bouquets of the day), a
 //   bud vase (the soliflores), a screen with a vase (desktop.html: your bouquet on your computer, the video and the app to
-//   download) and an i (the About page); the bouquets already sold and our collection on OpenSea left the dock on
-//   2026-10-27 (owner). On the shop page the first two open and close their shelf over the dock (one at a time; the
-//   same icon again folds it): entete.js only keeps the icons' state and tells the page with the event "entete:rayon"
-//   (detail: "bouquets" | "soliflores" | null). On any other page they lead back to the shop, shelf open.
+//   download), then a gift (my gifts), a head (my account) and an i (the About page); the bouquets already sold and our
+//   collection on OpenSea left the dock on 2026-10-27 (owner). On the shop page the bouquets, the soliflores, the gifts
+//   and the account open and close their shelf over the dock (one at a time; the same icon again folds it): entete.js
+//   only keeps the icons' state and tells the page with the event "entete:rayon" (detail: "bouquets" | "soliflores" |
+//   "cadeaux" | "profil" | null). On any other page they lead back to the shop, shelf open.
 // - The footer is a small pill at the bottom edge that unfolds a short summary of the legal notice with the links to
 //   legal.html (notice, terms of sale, privacy, the app's licence, accessibility) and folds it back (the pill, the
 //   cross, Escape or a click outside). It also holds the language switch: the same page in each language; a choice
@@ -50,11 +51,20 @@
     ),
     // a phone: an arrow into a tray (Belai Bureau to download)
     telecharger: svg('<path d="M12 3.6v11"/><path d="M7.4 10.4 12 15l4.6-4.6"/><path d="M4.4 15.8v2.6c0 1.1.9 2 2 2h11.2c1.1 0 2-.9 2-2v-2.6"/>'),
+    // a gift box with its bow (« My gifts »: a bouquet received with the sender's first name and a code)
+    cadeaux: svg(
+      '<rect x="3.6" y="9.2" width="16.8" height="4.2" rx="1"/><path d="M5 13.4v6.1c0 .8.6 1.4 1.4 1.4h11.2c.8 0 1.4-.6 1.4-1.4v-6.1"/>' +
+        '<path d="M12 9.2v11.7"/><path d="M12 9.2c-1.6-.1-3.9-.6-4.3-2.3-.3-1.3.8-2.4 2-2.1 1.5.4 2.1 2.6 2.3 4.4z"/><path d="M12 9.2c1.6-.1 3.9-.6 4.3-2.3.3-1.3-.8-2.4-2-2.1-1.5.4-2.1 2.6-2.3 4.4z"/>',
+    ),
+    // a head and shoulders (« My account »: signed in with a mobile number, the bouquets bought and received)
+    profil: svg('<circle cx="12" cy="8.4" r="3.8"/><path d="M4.8 20.4c.6-3.8 3.6-6.2 7.2-6.2s6.6 2.4 7.2 6.2"/>'),
     apropos: svg('<circle cx="12" cy="12" r="9.4"/><path d="M12 10.8v5.8"/><circle cx="12" cy="7.5" r=".9" fill="currentColor" stroke="none"/>'),
     plier: svg('<path d="M6 15l6-6 6 6"/>'),
     fermer: svg('<path d="M7 7l10 10M17 7 7 17"/>'),
   };
   const SHELVES = ['bouquets', 'soliflores'].map((n) => [n, T.shelves[n]]);
+  // after the separator: the gifts and the account (owner, 2026-10-27, in place of OpenSea), shelves too
+  const SHELVES2 = ['cadeaux', 'profil'].map((n) => [n, T.shelves[n]]);
 
   // ---------- the header
   const head = document.createElement('header');
@@ -64,7 +74,7 @@
   dock.className = 'dock';
   dock.setAttribute('aria-label', T.menu);
   const shelfButtons = {};
-  for (const [name, label] of SHELVES) {
+  const shelfButton = (name, label) => {
     let el;
     if (SHOP) {
       el = document.createElement('button');
@@ -82,7 +92,8 @@
     el.setAttribute('aria-label', label);
     el.innerHTML = ICONS[name];
     dock.append(el);
-  }
+  };
+  for (const [name, label] of SHELVES) shelfButton(name, label);
   // your bouquet on your computer: the how-to video and the desktop app (desktop.html); on a phone, the same page as the
   // place to download Belai Bureau, the app that sets the widgets (owner, 2026-10-27), with a download icon
   const phone = !matchMedia('(min-width: 900px) and (min-aspect-ratio: 4/3)').matches;
@@ -98,6 +109,7 @@
   sep.className = 'dock-sep';
   sep.setAttribute('aria-hidden', 'true');
   dock.append(sep);
+  for (const [name, label] of SHELVES2) shelfButton(name, label);
   const about = document.createElement('a');
   about.className = 'dock-bouton';
   about.href = `${P}about.html`;

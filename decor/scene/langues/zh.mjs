@@ -72,6 +72,15 @@ export default {
     sendCode: '获取验证码',
     code: '收到的验证码',
     firstName: '名字（选填）',
+    giftsTitle: '我的礼物',
+    giftsHelp: '输入送你花束的人的名字，以及对方发给你的代码。',
+    giftSender: '对方的名字',
+    giftCode: '代码',
+    giftOpen: '打开礼物',
+    accountTitle: '我的账户',
+    accountHelp: '用手机号登录：我们会通过短信发送验证码。',
+    signIn: '登录',
+    signOut: '退出登录',
   },
 
   // ---------- the About page
@@ -297,7 +306,7 @@ export default {
   // ---------- the strings of the scripts (entete.js, boutique.js), with {placeholders}
   js: {
     menu: '菜单',
-    shelves: { bouquets: '今日花束', soliflores: '单枝花瓶', vendus: '已被收藏的花束' },
+    shelves: { bouquets: '今日花束', soliflores: '单枝花瓶', vendus: '已被收藏的花束', cadeaux: '我的礼物', profil: '我的账户' },
     desktopTitle: '摆上我的桌面',
     desktopLabel: '把你的花束摆上桌面',
     appTitle: 'Belai Bureau',
@@ -346,6 +355,14 @@ export default {
     paid: '这束花属于你了：第 {n} 份，共 {total} 份。',
     paymentPending: '正在确认付款…',
     cancelled: '付款已取消：这一份重新开放购买。',
+    accountSoon: '账户即将推出：你将用手机号登录，并在这里看到你的花束。',
+    accountSignIn: '登录',
+    hello: '你好，{name}',
+    copyNo: '第 {n} 份',
+    noBouquet: '你的账户里还没有花束。',
+    giftsSoon: '礼物功能即将推出：你可以在这里打开别人送你的花束。',
+    giftOpened: '你的礼物到了。',
+    giftWrong: '这个名字和代码没有对应的礼物。',
     receipt: {
       title: '收据',
       download: '下载你的收据',
