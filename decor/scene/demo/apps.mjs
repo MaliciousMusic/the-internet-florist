@@ -24,8 +24,8 @@ export const APPS = {
   reglages: svg(`${sq('g-reg', '#c3c8cf', '#8d949e')}<circle cx="32" cy="32" r="13" fill="none" stroke="#fff" stroke-width="7" stroke-dasharray="5.1 5.1"/><circle cx="32" cy="32" r="10.5" fill="none" stroke="#fff" stroke-width="3.4"/><circle cx="32" cy="32" r="4" fill="#fff"/>`),
   // the notes: lines on a pad
   notes: svg(`<rect width="64" height="64" rx="14.5" fill="#fff"/><rect x="0" y="0" width="64" height="16" rx="14.5" fill="#ffd54a"/><rect x="0" y="9" width="64" height="7" fill="#ffd54a"/><path d="M14 28h36M14 37h36M14 46h24" stroke="#c7cbd1" stroke-width="2.4" stroke-linecap="round"/>`),
-  // Belai Bureau: a tulip on the shop's blue
-  belai: svg(`${sq('g-bel', '#7fb7ee', '#2f78cf')}<path d="M32 50V33" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/><path d="M32 43c-4-4.5-9-4.6-12-3 3.3 4.2 8.6 5 12 3z" fill="#fff"/><path d="M22 19c0 9 4.4 14 10 14s10-5 10-14l-5 4.4L32 15l-5 8.4z" fill="#fff"/>`),
+  // Belai Bureau: the site's own icon (the vase and its three flowers on the shop's blue)
+  belai: '<img alt="" src="apple-touch-icon.png">',
 };
 
 // a row of icons by name, each an <i> the desktop's styles size; the browser's carries .ic-nav (the cursor's target), Belai
