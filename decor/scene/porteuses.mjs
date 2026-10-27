@@ -589,9 +589,10 @@ async function start() {
     .then(() => pill && new Promise((ok) => order((function* () { yield* pillIn(); ok(); })())))
     .then(() => { window.PORTEUSES_POSE = true; document.dispatchEvent(new Event('porteuses:pose')); });
   // the close-up, the first time in the visit: a swallowtail brings Buy (owner, 2026-10-27), two honeybees the small box over it
-  // ("On your desktop"). The swallowtail holds Buy by its upper edge, comes from the left and goes back there; the bees set out
-  // once Buy is set, from the right, back to the right: their courses never cross (owner, 2026-10-27). From then on the bubble comes and goes whole with the close-up, as without carriers (owner, 2026-10-25:
-  // only a reload brings them anew). Closed before they are done, the pieces drop into their places and go down with the bubble
+  // ("On your desktop"). The swallowtail holds Buy by its upper edge and flies off to the right along it; the bees follow it
+  // from the same side, at its speed, set out so as to lay their box once it has gone: they never overlap (owner, 2026-10-27).
+  // From then on the bubble comes and goes whole with the close-up, as without carriers (owner, 2026-10-25: only a reload
+  // brings them anew). Closed before they are done, the pieces drop into their places and go down with the bubble
   const achat = $('#achat');
   if (achat && buy && demo) {
     const far = () => achat.hidden || achat.classList.contains('loin');
@@ -601,10 +602,12 @@ async function start() {
     const check = () => {
       if (laid || far()) return;
       laid = true;
-      lay(buy, ['machaon'], { pxmm: BUY_PXMM, hang: 0.6, inset: 0, rise: -110, speed: 210, away: (R) => [-160, R.cy - 220] }).then(() => {
-        buy.after();
-        lay(demo, ['abeille', 'abeille'], { pxmm: BEE_PXMM, hang: 0.15, inset: 8, rise: -90, speed: 340, under: true, right: true });
-      });
+      lay(buy, ['machaon'], { pxmm: BUY_PXMM, hang: 0.3, inset: 0, rise: -110, speed: 210, away: (R) => [W() + 160, R.cy + 30] }).then(() => buy.after());
+      // (the bees set out so as to set their box 1.8 s after Buy, the swallowtail gone from under it: their course and its, as
+      // airlift draws them)
+      const course = (R, rise) => (Math.hypot(R.cx + R.w / 2 + 90, rise) * 1.15) / 210;
+      const lag = Math.max(1.2, course(buy.rest(), -110) + 1.8 - course(demo.rest(), -150));
+      setTimeout(() => lay(demo, ['abeille', 'abeille'], { pxmm: BEE_PXMM, hang: 0.15, inset: 8, rise: -150, speed: 210, under: true }), lag * 1000 * SLOW);
     };
     new MutationObserver(check).observe(achat, { attributes: true, attributeFilter: ['class', 'hidden'] });
     check();

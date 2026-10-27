@@ -414,10 +414,28 @@
 
   // ---------- the close-up: the camera comes closer to the bouquet
   const target = $('bq-cible');
-  // the invite to tap the bouquet facing the camera (owner, 2026-10-27): soft white rings round it once the HUD is laid (its
-  // carriers done, porteuses.mjs; at once without them; at worst after 20 s), until the visit's first close-up
-  let invited = false;
-  const invite = () => { if (!invited) target.classList.add('invite'); };
+  // the invite to tap the bouquet facing the camera (owner, 2026-10-27): soft white round ripples over its flowers once the HUD is
+  // laid (its carriers done, porteuses.mjs; at once without them; at worst after 20 s), until the visit's first close-up. Its
+  // own element after the canvas (toile.mjs), in front of the bouquet, set on the target's place
+  const ring = document.createElement('div');
+  ring.className = 'bq-invite';
+  ring.setAttribute('aria-hidden', 'true');
+  ring.hidden = true;
+  scene.append(ring);
+  let invited = false, inviting = false;
+  const syncRing = () => {
+    ring.hidden = !inviting || target.hidden || near;
+    if (ring.hidden) return;
+    const t = target.getBoundingClientRect(), s = scene.getBoundingClientRect(), d = t.width * 0.94;
+    Object.assign(ring.style, { left: `${t.left - s.left + t.width / 2}px`, top: `${t.top - s.top + t.height * 0.4}px`, width: `${d}px`, height: `${d}px` });
+  };
+  const invite = () => {
+    if (invited || inviting) return;
+    inviting = true;
+    syncRing();
+  };
+  new MutationObserver(syncRing).observe(target, { attributes: true, attributeFilter: ['hidden', 'style'] });
+  addEventListener('resize', syncRing);
   if (!document.documentElement.classList.contains('porteuses') || window.PORTEUSES_POSE) setTimeout(invite, 1200);
   else document.addEventListener('porteuses:pose', invite, { once: true });
   setTimeout(invite, 20000);
@@ -531,7 +549,8 @@
     target.setAttribute('aria-label', on ? T.stepBack : T.lookCloser);
     if (on) {
       invited = true;
-      target.classList.remove('invite');
+      inviting = false;
+      syncRing();
     }
     $('achat').classList.toggle('loin', !on);
     $('achat').inert = !on;
