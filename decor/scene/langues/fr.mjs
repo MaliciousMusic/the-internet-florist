@@ -285,7 +285,7 @@ export default {
       confidentialité. Nous recevons seulement la référence du paiement, son montant et son statut.</p>
     <h3>Cookies</h3>
     <p>Si vous choisissez vous-même une langue, le site la retient dans un cookie nommé <code>lang</code>, pendant un an.
-      Lorsque vous êtes connecté à votre compte, un cookie de session vous garde connecté. C’est tout : aucune mesure
+      Lorsque vous êtes connecté à votre compte, un cookie de session vous garde connecté. Si vous activez le son, votre navigateur retient ce choix dans son stockage local (clé <code>son</code>), sans rien nous envoyer. C’est tout : aucune mesure
       d’audience, aucune publicité. Ces cookies sont nécessaires au service que vous demandez ; ils ne requièrent donc
       pas de bandeau de consentement.</p>
     <h3>Destinataires et lieux de traitement</h3>
@@ -352,6 +352,8 @@ export default {
     desktopLabel: 'Votre bouquet sur votre bureau',
     appTitle: 'Belai Bureau',
     appLabel: 'Télécharger Belai Bureau, l’app qui pose votre bouquet sur votre écran',
+    soundOn: 'Activer le son de la nature',
+    soundOff: 'Couper le son de la nature',
     openSeaTitle: 'Notre collection sur OpenSea',
     openSeaLabel: 'Notre collection sur OpenSea (nouvel onglet)',
     about: 'À propos',

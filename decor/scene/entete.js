@@ -2,7 +2,8 @@
 //
 // - The header is a dock of round frosted-glass icons, drawn here in SVG: a vase with flowers (the bouquets of the day), a
 //   bud vase (the soliflores), a screen with a vase (desktop.html: your bouquet on your computer, the video and the app to
-//   download), then a gift (my gifts), a head (my account) and an i (the About page); the bouquets already sold and our
+//   download), then a gift (my gifts), a head (my account), on the shop page a speaker (the sound of nature, son.mjs) and an i
+//   (the About page); the bouquets already sold and our
 //   collection on OpenSea left the dock on 2026-10-27 (owner). On the shop page the bouquets, the soliflores, the gifts
 //   and the account open and close their shelf over the dock (one at a time; the same icon again folds it): entete.js
 //   only keeps the icons' state and tells the page with the event "entete:rayon" (detail: "bouquets" | "soliflores" |
@@ -59,6 +60,9 @@
     // a head and shoulders (« My account »: signed in with a mobile number, the bouquets bought and received)
     profil: svg('<circle cx="12" cy="8.4" r="3.8"/><path d="M4.8 20.4c.6-3.8 3.6-6.2 7.2-6.2s6.6 2.4 7.2 6.2"/>'),
     apropos: svg('<circle cx="12" cy="12" r="9.4"/><path d="M12 10.8v5.8"/><circle cx="12" cy="7.5" r=".9" fill="currentColor" stroke="none"/>'),
+    // a speaker, its sound waves when the sound is on, a cross when it is off
+    son: svg('<path d="M4.6 9.4h3.2l4.4-3.8v12.8l-4.4-3.8H4.6z"/><path d="M15.4 9.2a4 4 0 0 1 0 5.6"/><path d="M17.8 6.8a7.4 7.4 0 0 1 0 10.4"/>'),
+    sonCoupe: svg('<path d="M4.6 9.4h3.2l4.4-3.8v12.8l-4.4-3.8H4.6z"/><path d="m15.6 9.6 4.8 4.8M20.4 9.6l-4.8 4.8"/>'),
     plier: svg('<path d="M6 15l6-6 6 6"/>'),
     fermer: svg('<path d="M7 7l10 10M17 7 7 17"/>'),
   };
@@ -110,6 +114,42 @@
   sep.setAttribute('aria-hidden', 'true');
   dock.append(sep);
   for (const [name, label] of SHELVES2) shelfButton(name, label);
+  // the sound of nature on the shop page (owner, 2026-10-27; son.mjs): off at first, the choice remembered in the browser
+  // (localStorage "son"); remembered on, it starts with the visitor's first click or key, the browsers' rule for sound
+  if (SHOP) {
+    const SON = new URL('son.mjs', document.currentScript.src).href;
+    const sound = document.createElement('button');
+    sound.type = 'button';
+    sound.className = 'dock-bouton';
+    const remember = (v) => { try { localStorage.setItem('son', v ? '1' : '0'); } catch (_) {} };
+    const show = (v) => {
+      const label = v ? T.soundOff : T.soundOn;
+      sound.title = label;
+      sound.setAttribute('aria-label', label);
+      sound.setAttribute('aria-pressed', String(v));
+      sound.innerHTML = v ? ICONS.son : ICONS.sonCoupe;
+    };
+    let playing = false;
+    const set = (v) => {
+      playing = v;
+      show(v);
+      import(SON).then((m) => (v ? m.start() : m.stop())).catch((err) => { console.error('[son]', err); show((playing = false)); });
+    };
+    sound.addEventListener('click', () => { set(!playing); remember(playing); });
+    let wanted = false;
+    try { wanted = localStorage.getItem('son') === '1'; } catch (_) {}
+    show(false);
+    if (wanted) {
+      const first = (e) => {
+        removeEventListener('click', first, true);
+        removeEventListener('keydown', first, true);
+        if (!playing && e.target !== sound && !sound.contains(e.target)) set(true);
+      };
+      addEventListener('click', first, true);
+      addEventListener('keydown', first, true);
+    }
+    dock.append(sound);
+  }
   const about = document.createElement('a');
   about.className = 'dock-bouton';
   about.href = `${P}about.html`;

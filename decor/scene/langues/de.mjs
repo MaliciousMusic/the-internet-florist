@@ -290,7 +290,7 @@ export default {
       verarbeitet. Wir erhalten nur die Zahlungsreferenz, den Betrag und den Status.</p>
     <h3>Cookies</h3>
     <p>Wenn Sie selbst eine Sprache wählen, merkt sich die Website diese in einem Cookie namens <code>lang</code>, ein Jahr
-      lang. Solange Sie in Ihrem Konto angemeldet sind, hält ein Sitzungscookie Sie angemeldet. Das ist alles: keine
+      lang. Solange Sie in Ihrem Konto angemeldet sind, hält ein Sitzungscookie Sie angemeldet. Wenn Sie den Ton einschalten, merkt sich Ihr Browser diese Wahl in seinem lokalen Speicher (Schlüssel <code>son</code>), ohne uns etwas zu senden. Das ist alles: keine
       Reichweitenmessung, keine Werbung. Diese Cookies sind für den von Ihnen gewünschten Dienst erforderlich und
       benötigen daher kein Einwilligungsbanner.</p>
     <h3>Empfänger und Orte der Verarbeitung</h3>
@@ -358,6 +358,8 @@ export default {
     desktopLabel: 'Ihr Blumenstrauß auf Ihrem Desktop',
     appTitle: 'Belai Bureau',
     appLabel: 'Belai Bureau herunterladen, die App, die Ihren Strauß auf Ihren Bildschirm stellt',
+    soundOn: 'Naturklang einschalten',
+    soundOff: 'Naturklang ausschalten',
     openSeaTitle: 'Unsere Sammlung auf OpenSea',
     openSeaLabel: 'Unsere Sammlung auf OpenSea (neuer Tab)',
     about: 'Über uns',

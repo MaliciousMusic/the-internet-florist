@@ -1,0 +1,105 @@
+{
+ "lits": [
+  "vent",
+  "prairie"
+ ],
+ "bourdons": [
+  {
+   "id": "bourdon-passe1",
+   "debut": 0.0,
+   "duree": 3.5
+  },
+  {
+   "id": "bourdon-passe2",
+   "debut": 3.9,
+   "duree": 5.2
+  },
+  {
+   "id": "bourdon-lavande-0",
+   "debut": 9.5,
+   "duree": 1.9
+  },
+  {
+   "id": "bourdon-lavande-1",
+   "debut": 11.8,
+   "duree": 2.2
+  },
+  {
+   "id": "bourdon-lavande-2",
+   "debut": 14.4,
+   "duree": 3.4
+  },
+  {
+   "id": "bourdon-lavande-3",
+   "debut": 18.2,
+   "duree": 1.6
+  },
+  {
+   "id": "bourdon-lavande-4",
+   "debut": 20.2,
+   "duree": 1.6
+  },
+  {
+   "id": "bourdon-lavande-5",
+   "debut": 22.2,
+   "duree": 1.6
+  }
+ ],
+ "oiseaux": [
+  {
+   "id": "merle-0",
+   "debut": 0.0,
+   "duree": 4.3
+  },
+  {
+   "id": "merle-1",
+   "debut": 4.7,
+   "duree": 1.7
+  },
+  {
+   "id": "merle-2",
+   "debut": 6.8,
+   "duree": 2.4
+  },
+  {
+   "id": "merle-3",
+   "debut": 9.6,
+   "duree": 2.0
+  },
+  {
+   "id": "merle-4",
+   "debut": 12.0,
+   "duree": 2.7
+  },
+  {
+   "id": "merle-5",
+   "debut": 15.1,
+   "duree": 2.4
+  },
+  {
+   "id": "merle-6",
+   "debut": 17.9,
+   "duree": 2.6
+  },
+  {
+   "id": "merle-7",
+   "debut": 20.9,
+   "duree": 3.0
+  },
+  {
+   "id": "alouette-0",
+   "debut": 24.3,
+   "duree": 9.0
+  },
+  {
+   "id": "alouette-1",
+   "debut": 33.7,
+   "duree": 9.0
+  },
+  {
+   "id": "alouette-2",
+   "debut": 43.1,
+   "duree": 9.0
+  }
+ ]
+}
