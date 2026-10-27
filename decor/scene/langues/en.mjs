@@ -11,18 +11,18 @@ export default {
   list: (a) => (a.length < 2 ? a.join('') : `${a.slice(0, -1).join(', ')} and ${a[a.length - 1]}`),
   more: 'more',
   describe: ({ stems, flowers, vase }) =>
-    `A one-of-a-kind digital bouquet of ${stems} hand-drawn stems (${flowers}) in ${vase}. It lives three months, then stays faded for good.`,
+    `A one-of-a-kind digital bouquet of ${stems} hand-drawn stems (${flowers}) in ${vase}. It lives thirty days, then stays faded for good.`,
 
   pages: {
     index: {
       title: "Digital flower bouquets, drawn stem by stem | Belai's Garden",
-      description: 'Digital flower bouquets drawn stem by stem from real flowers. One of a kind, new every day, to collect on Base and set on your desktop.',
+      description: 'Digital flower bouquets drawn stem by stem from real flowers. A new collection every month, in limited series, to give and to set on your screen.',
       ogTitle: 'Digital flower bouquets, drawn stem by stem',
-      ogDescription: 'New one-of-a-kind bouquets every day, each in a real vase. Watch them bloom, collect one, set it on your desktop.',
+      ogDescription: 'Every month, a collection of bouquets in limited series, each in a real vase. Watch them bloom, give one, set it on your screen.',
     },
     about: {
       title: "About: digital bouquets drawn from real flowers | Belai's Garden",
-      description: 'How our digital bouquets are made: flowers drawn in code from real photos, real vases, priced at what the stems cost, living three months.',
+      description: 'How our digital bouquets are made: flowers drawn in code from real photos, real vases, priced at what the stems cost, living thirty days.',
       ogTitle: 'About our digital bouquets',
       ogDescription: 'Every flower drawn in code from real photos. One-of-a-kind bouquets, in real vases, that bloom and then fade.',
     },
@@ -40,14 +40,14 @@ export default {
     },
   },
   shareAlt: 'The Ronde bleue bouquet: lilac, irises, anemones and hyacinths in a frosted-glass vase with dancers',
-  orgDescription: 'Digital flower bouquets drawn stem by stem from real flowers, collected on Base.',
+  orgDescription: 'Digital flower bouquets drawn stem by stem from real flowers, to give and to set on your screen.',
   listName: 'Bouquets of the day',
 
   // ---------- the shop page
   index: {
     h1: "Belai's Garden: living digital flower bouquets",
     intro:
-      'Digital flower bouquets drawn stem by stem from real flowers. New one-of-a-kind bouquets every day, each in a real vase, collected on Base. A bouquet lives three months, then stays faded forever. Set yours on your computer’s desktop with Belai Bureau, a free widget for Windows.',
+      'Digital flower bouquets drawn stem by stem from real flowers. Every month, a new collection of bouquets in limited series, each in a real vase. A bouquet lives thirty days, then stays faded forever. Give it, or set it on your screen with Belai Bureau.',
     noscript:
       'This garden needs JavaScript to let the bouquets bloom. Read <a href="{{p}}about.html">about the bouquets</a>, see <a href="{{p}}desktop.html">how to set one on your desktop</a>, or the <a href="{{legal}}">legal notice and terms</a>.',
     galleryLabel: 'Bouquets of the day',
@@ -78,21 +78,20 @@ export default {
     colours measured on each variety, the buds, the open flower and the faded one. More than five hundred species are
     already in the garden.</p>
 
-  <h2>One-of-a-kind bouquets every day</h2>
-  <p>Every day, new bouquets are composed, each in a real vase, like the bronze carp. Every bouquet is one of a kind:
-    the place of each stem, each flower and each leaf is found in no other.</p>
+  <h2>Bouquets composed stem by stem</h2>
+  <p>Each bouquet is composed stem by stem, each in a real vase, like the bronze carp. The place of every stem, flower and leaf is found in no other bouquet.</p>
 
   <h2>A living bouquet</h2>
-  <p>A bouquet lives three months from its minting: a countdown, in hours and minutes, shows how long it has left.
-    Then it stays faded and still, for good.</p>
+  <p>A bouquet lives thirty days from its purchase: a countdown in hours and minutes shows the time it has left. Then it stays faded and still, for good.</p>
 
   <h2>The price of real stems</h2>
-  <p>A bouquet’s price is the sum of what its stems cost at a florist in France. The vase comes free. On resale, we take
-    nothing: 0% royalties.</p>
+  <p>A bouquet costs what its stems would cost at a florist in France. The vase comes free. You pay by card.</p>
 
-  <h2>Collecting a bouquet</h2>
-  <p>The bouquets are NFTs on the Base network, listed on our OpenSea page. You will pay for them right here, from your
-    wallet, without leaving the site.</p>
+  <h2>A collection every month</h2>
+  <p>Every month has its collection. Each bouquet in it comes in a limited number of copies, shown under its name, and the bouquet you buy is exactly the one you see.</p>
+
+  <h2>Giving a bouquet</h2>
+  <p>When you buy, you can give the bouquet: a short message carried by the insects, a piece of music, and a code to pass on. The person you give it to receives it in “My gifts” with your first name and that code.</p>
 
   <h2>On your desktop</h2>
   <p>With <a href="{{p}}desktop.html">Belai Bureau</a>, a free widget for Windows, the bouquet you collected stands on your
@@ -102,12 +101,12 @@ export default {
   <p>Every bouquet collected helps the garden grow: new species, new vases, new bouquets.</p>`,
     faqTitle: 'Questions',
     faq: [
-      ['What is a digital bouquet?', 'A bouquet of flowers drawn in vector graphics from real photos, stem by stem, in a real vase. It blooms on screen, sways in the breeze, and fades after three months. Each one is unique and is collected as an NFT on Base.'],
-      ['Can I put a flower bouquet on my computer’s desktop?', 'Yes. Download Belai Bureau (free, Windows 10 and 11), link your wallet, and the bouquet you own stands on your desktop as a widget: you place it, size it, pin it, and set it in front of or behind your windows.'],
-      ['How is a bouquet priced?', 'At the sum of what its stems would cost at a florist in France, converted to ETH, with no VAT (VAT not applicable, art. 293 B of the French General Tax Code). The vase comes free. The amount shown in euros or US dollars is an indication at the current rate.'],
-      ['What happens after three months?', 'The bouquet fades and stays faded, still, for good. It remains yours.'],
-      ['Do you take royalties on resale?', 'No: 0%. Only the marketplace’s and the network’s own fees apply.'],
-      ['Who can show a bouquet?', 'Belai Bureau only shows a bouquet held by the wallet you link, after a free signature (no transaction).'],
+      ['What is a digital bouquet?', 'A bouquet of flowers drawn in vector graphics from real photos, stem by stem, in a real vase. It blooms on screen, sways in the breeze and fades after thirty days.'],
+      ['Can I put a flower bouquet on my screen?', 'Yes. Download Belai Bureau (free), sign in once with your phone number and the code sent by text message: the bouquets of your account settle on your screen, where you place them, size them and pin them.'],
+      ['How is a bouquet priced?', 'At the sum of what its stems would cost at a florist in France. The vase comes free. The price is shown in euros (in US dollars outside the euro area) and paid by card.'],
+      ['What happens after thirty days?', 'The bouquet fades and stays faded, still, for good. It remains yours.'],
+      ['How do I give a bouquet?', 'When you buy, choose to give it: write a short message, pick a piece of music and the insects that will carry it. You get a link and a code; the person enters them in “My gifts” with your first name, and the bouquet moves to their account.'],
+      ['How many copies of each bouquet?', 'Each bouquet of the month’s collection comes in a limited number of copies, shown under its name. Once they are gone, there are no more.'],
     ],
     back: '← Back to the bouquets',
   },
@@ -316,9 +315,9 @@ export default {
     legal: 'Legal',
     closeLegal: 'Close the legal panel',
     footer:
-      '<p>Each bouquet is a one-of-a-kind digital collectible (an NFT on Base), priced in ETH, with no VAT (VAT not applicable, art. 293 B of the French General Tax Code); the amount in euros or US dollars is the same price at the current rate. It lives three months from its minting, then stays faded for good. Delivery is immediate, so the right of withdrawal does not apply once you confirm. We take no royalty on resale (0%).</p><p>No tracking, no advertising: one cookie at most, to remember the language you chose.</p>',
+      '<p>Each bouquet is a digital bouquet in a limited series, paid by card, with no VAT (VAT not applicable, art. 293 B of the French General Tax Code). It lives thirty days from its purchase, then stays faded for good. Delivery is immediate, so the right of withdrawal no longer applies once you confirm your purchase.</p><p>No tracking, no advertising: one cookie at most, to remember the language you chose.</p>',
     links: { notice: 'Legal notice', terms: 'Terms of sale', privacy: 'Privacy', app: 'Belai Bureau licence', accessibility: 'Accessibility', contact: 'Contact' },
-    credit: 'ETH rate by {coingecko}.',
+    credit: '',
     language: 'Language',
     lookCloser: 'Look closer at the bouquet',
     stepBack: 'Step back',
@@ -331,6 +330,8 @@ export default {
     faded: 'Faded',
     fadedLower: 'faded',
     fadedForGood: 'Faded for good',
+    // the month's collection and the copies left, under the bouquet's name ({month}: the month in the page's language)
+    series: '{month} collection · {left} of {total} left',
     buy: 'Buy',
     soon: 'Soon',
     soonMessage: 'Buying from the site is coming soon.',

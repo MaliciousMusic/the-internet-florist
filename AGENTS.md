@@ -1,6 +1,6 @@
 # Consignes pour les agents — the-internet-florist
 
-Librairie de fleurs et de vases en SVG, site de vente des NFT, widget bureau. Lis d'abord le [README](README.md), puis les
+Librairie de fleurs et de vases en SVG, site de vente des bouquets, widget bureau. Lis d'abord le [README](README.md), puis les
 standards [STANDARD-RENDU](docs/STANDARD-RENDU.md) et [STANDARD-SOURCES](docs/STANDARD-SOURCES.md), et la méthode des
 fleurs [catalogue/serre/methode/METHODE.md](catalogue/serre/methode/METHODE.md). Le site a son plan dans
 [decor/PLAN.md](decor/PLAN.md).

@@ -20,7 +20,7 @@
 //   Frise.pret                      resolves with the manifest once it is read
 //   Frise.decor                     resolves once the decor in view (strips, pillars) is on screen
 //   Frise.poser(fn)                 fn(place, plane) -> Promise<bouquet of Eclosion.pose>: what stands on a place
-//   Frise.nommer(fn)                fn(place) -> the bouquet's name, written in the sky
+//   Frise.nommer(fn)                fn(place) -> the bouquet's name, or { nom, sous } (a second, smaller line), in the sky
 //   Frise.va(place, { instant })    travels to a place (the shorter way round)
 //   Frise.pas(+1 | -1)              the next or previous place
 //   Frise.face()                    the place facing the camera, or -1 while it moves away from one
@@ -332,7 +332,10 @@
     const show = Math.max(0, 1 - Math.abs(d) / (M.pas * 0.42));
     if (place !== nameFor) {
       nameFor = place;
-      nameEl.textContent = nameOf(place) || '';
+      // (a string, or { nom, sous }: the name and, under it, a line in smaller letters)
+      const v = nameOf(place) || '';
+      nameEl.firstChild.textContent = typeof v === 'string' ? v : v.nom || '';
+      nameEl.lastChild.textContent = typeof v === 'string' ? '' : v.sous || '';
     }
     nameEl.style.opacity = (show * show * (3 - 2 * show)).toFixed(3);
     nameEl.style.transform = `translate3d(calc(-50% + ${(-d * 0.35 * k).toFixed(2)}px),0,0)`;
@@ -664,6 +667,7 @@
       nameEl = document.createElement('div');
       nameEl.className = 'nom-ciel';
       nameEl.setAttribute('aria-hidden', 'true');
+      nameEl.innerHTML = '<span class="nom-titre"></span><span class="nom-sous"></span>';
       monde.append(nameEl);
       // the clumps come once the first bouquet is shown (scene.js's order), and only without the insects' sprites (insectes.mjs
       // draws them with the insects, along the same strip, while it runs: window.PREMIER_PIXI); each clump turns about its

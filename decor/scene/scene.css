@@ -154,6 +154,24 @@ body {
   opacity: 0;
 }
 
+/* the name, and under it the month's collection and the copies left, smaller and finer (owner, 2026-10-27) */
+.nom-titre,
+.nom-sous {
+  display: block;
+  text-align: center;
+}
+
+.nom-sous {
+  margin-top: 0.45em;
+  font-size: 0.36em;
+  letter-spacing: 0.06em;
+  opacity: 0.92;
+}
+
+.nom-sous:empty {
+  display: none;
+}
+
 .proche .nom-ciel {
   visibility: hidden;
 }

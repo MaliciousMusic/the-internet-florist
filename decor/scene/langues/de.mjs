@@ -11,18 +11,18 @@ export default {
   list: (a) => (a.length < 2 ? a.join('') : `${a.slice(0, -1).join(', ')} und ${a[a.length - 1]}`),
   more: 'weitere',
   describe: ({ stems, flowers, vase }) =>
-    `Ein einzigartiger digitaler Blumenstrauß aus ${stems} handgezeichneten Stielen (${flowers}) in ${vase}. Er lebt drei Monate und bleibt danach für immer verblüht.`,
+    `Ein einzigartiger digitaler Blumenstrauß aus ${stems} von Hand gezeichneten Stielen (${flowers}) in ${vase}. Er lebt dreißig Tage und bleibt dann für immer verblüht.`,
 
   pages: {
     index: {
       title: "Digitaler Blumenstrauß, von Hand gezeichnet | Belai's Garden",
-      description: 'Digitale Blumensträuße, Stiel für Stiel nach echten Blumen gezeichnet. Einzigartig, jeden Tag neu, zum Sammeln auf Base und für Ihren Desktop.',
+      description: 'Digitale Blumensträuße, Stiel für Stiel nach echten Blumen gezeichnet. Jeden Monat eine Kollektion in limitierten Serien, zum Verschenken und für Ihren Bildschirm.',
       ogTitle: 'Digitale Blumensträuße, Stiel für Stiel gezeichnet',
-      ogDescription: 'Jeden Tag neue, einzigartige Blumensträuße, jeder in einer echten Vase. Sehen Sie sie erblühen, sammeln Sie einen, stellen Sie ihn auf Ihren Desktop.',
+      ogDescription: 'Jeden Monat eine Kollektion von Sträußen in limitierten Serien, jeder in einer echten Vase. Sehen Sie ihnen beim Blühen zu, verschenken Sie einen, stellen Sie ihn auf Ihren Bildschirm.',
     },
     about: {
       title: "So entstehen unsere digitalen Blumensträuße | Belai's Garden",
-      description: 'Digitale Blumensträuße: in Code nach echten Fotos gezeichnet, in echten Vasen, zum Preis der echten Stiele, mit drei Monaten Leben.',
+      description: 'Wie unsere digitalen Blumensträuße entstehen: Blumen in Code nach echten Fotos gezeichnet, echte Vasen, der Preis der Stiele, dreißig Tage Leben.',
       ogTitle: 'Über unsere digitalen Blumensträuße',
       ogDescription: 'Jede Blume in Code nach echten Fotos gezeichnet. Einzigartige Blumensträuße in echten Vasen, die erblühen und dann verblühen.',
     },
@@ -40,14 +40,14 @@ export default {
     },
   },
   shareAlt: 'Der Blumenstrauß Ronde bleue: Flieder, Iris, Anemonen und Hyazinthen in einer Milchglasvase mit Tänzerinnen',
-  orgDescription: 'Digitale Blumensträuße, Stiel für Stiel nach echten Blumen gezeichnet, gesammelt auf Base.',
+  orgDescription: 'Digitale Blumensträuße, Stiel für Stiel nach echten Blumen gezeichnet, zum Verschenken und für Ihren Bildschirm.',
   listName: 'Blumensträuße des Tages',
 
   // ---------- the shop page
   index: {
     h1: "Belai's Garden: lebendige digitale Blumensträuße",
     intro:
-      'Digitale Blumensträuße, Stiel für Stiel nach echten Blumen gezeichnet. Jeden Tag neue, einzigartige Blumensträuße, jeder in einer echten Vase, gesammelt auf Base. Ein Blumenstrauß lebt drei Monate und bleibt danach für immer verblüht. Stellen Sie Ihren auf den Desktop Ihres Computers – mit Belai Bureau, einem kostenlosen Widget für Windows.',
+      'Digitale Blumensträuße, Stiel für Stiel nach echten Blumen gezeichnet. Jeden Monat eine neue Kollektion von Sträußen in limitierten Serien, jeder in einer echten Vase. Ein Strauß lebt dreißig Tage und bleibt dann für immer verblüht. Verschenken Sie ihn, oder stellen Sie ihn mit Belai Bureau auf Ihren Bildschirm.',
     noscript:
       'Dieser Garten braucht JavaScript, damit die Blumensträuße erblühen. Lesen Sie <a href="{{p}}about.html">mehr über die Blumensträuße</a>, sehen Sie, <a href="{{p}}desktop.html">wie Sie einen auf Ihren Desktop stellen</a>, oder lesen Sie <a href="{{legal}}">Impressum und AGB</a>.',
     galleryLabel: 'Blumensträuße des Tages',
@@ -78,21 +78,20 @@ export default {
     ihre an jeder Sorte gemessenen Farben, die Knospen, die offene Blüte und die verblühte. Mehr als fünfhundert Arten
     sind bereits im Garten.</p>
 
-  <h2>Jeden Tag einzigartige Blumensträuße</h2>
-  <p>Jeden Tag werden neue Blumensträuße komponiert, jeder in einer echten Vase, wie der Bronzekarpfen. Jeder
-    Blumenstrauß ist ein Unikat: Die Lage jedes Stiels, jeder Blüte und jedes Blattes findet sich in keinem anderen.</p>
+  <h2>Stiel für Stiel gebundene Sträuße</h2>
+  <p>Jeder Strauß wird Stiel für Stiel gebunden, jeder in einer echten Vase, wie der Bronzekarpfen. Die Stelle jedes Stiels, jeder Blüte und jedes Blatts findet sich in keinem anderen Strauß.</p>
 
   <h2>Ein lebendiger Blumenstrauß</h2>
-  <p>Ein Blumenstrauß lebt ab seiner Prägung drei Monate: Ein Countdown in Stunden und Minuten zeigt, wie viel Zeit ihm
-    bleibt. Danach bleibt er verblüht und unbewegt, für immer.</p>
+  <p>Ein Strauß lebt dreißig Tage ab dem Kauf: Ein Countdown in Stunden und Minuten zeigt die verbleibende Zeit. Danach bleibt er verblüht und unbewegt, für immer.</p>
 
   <h2>Der Preis echter Stiele</h2>
-  <p>Der Preis eines Blumenstraußes ist die Summe dessen, was seine Stiele bei einem Floristen in Frankreich kosten. Die
-    Vase gibt es gratis dazu. Beim Weiterverkauf nehmen wir nichts: 0 % Lizenzgebühren.</p>
+  <p>Der Preis eines Straußes ist die Summe dessen, was seine Stiele bei einem Floristen in Frankreich kosten. Die Vase gibt es dazu. Bezahlt wird mit Karte.</p>
 
-  <h2>Einen Blumenstrauß sammeln</h2>
-  <p>Die Blumensträuße sind NFTs im Base-Netzwerk, angeboten auf unserer OpenSea-Seite. Sie bezahlen sie direkt hier,
-    aus Ihrer Wallet, ohne die Website zu verlassen.</p>
+  <h2>Eine Kollektion pro Monat</h2>
+  <p>Jeder Monat hat seine Kollektion. Jeder Strauß darin gibt es in einer begrenzten Zahl von Exemplaren, angegeben unter seinem Namen, und der Strauß, den Sie kaufen, ist genau der, den Sie sehen.</p>
+
+  <h2>Einen Strauß verschenken</h2>
+  <p>Beim Kauf können Sie den Strauß verschenken: eine kurze Nachricht, von den Insekten getragen, eine Musik und ein Code zum Weitergeben. Die beschenkte Person erhält ihn unter „Meine Geschenke“ mit Ihrem Vornamen und diesem Code.</p>
 
   <h2>Auf Ihrem Desktop</h2>
   <p>Mit <a href="{{p}}desktop.html">Belai Bureau</a>, einem kostenlosen Widget für Windows, steht der Blumenstrauß, den
@@ -102,12 +101,12 @@ export default {
   <p>Jeder gesammelte Blumenstrauß lässt den Garten wachsen: neue Arten, neue Vasen, neue Blumensträuße.</p>`,
     faqTitle: 'Fragen',
     faq: [
-      ['Was ist ein digitaler Blumenstrauß?', 'Ein Strauß aus Blumen, die in Vektorgrafik nach echten Fotos gezeichnet sind, Stiel für Stiel, in einer echten Vase. Er erblüht auf dem Bildschirm, wiegt sich im Wind und verblüht nach drei Monaten. Jeder ist ein Unikat und wird als NFT auf Base gesammelt.'],
-      ['Kann ich einen Blumenstrauß auf den Desktop meines Computers stellen?', 'Ja. Laden Sie Belai Bureau herunter (kostenlos, Windows 10 und 11), verknüpfen Sie Ihre Wallet, und der Blumenstrauß, der Ihnen gehört, steht als Widget auf Ihrem Desktop: Sie platzieren ihn, wählen seine Größe, fixieren ihn und stellen ihn vor oder hinter Ihre Fenster.'],
-      ['Wie wird der Preis eines Blumenstraußes festgelegt?', 'Nach der Summe dessen, was seine Stiele bei einem Floristen in Frankreich kosten würden, umgerechnet in ETH, ohne Umsatzsteuer (gemäß Art. 293 B des französischen Steuergesetzbuchs nicht umsatzsteuerpflichtig). Die Vase gibt es gratis dazu. Der in Euro oder US-Dollar angezeigte Betrag ist ein Richtwert zum aktuellen Kurs.'],
-      ['Was passiert nach drei Monaten?', 'Der Blumenstrauß verblüht und bleibt verblüht und unbewegt, für immer. Er gehört weiterhin Ihnen.'],
-      ['Erheben Sie Lizenzgebühren beim Weiterverkauf?', 'Nein: 0 %. Es fallen nur die eigenen Gebühren des Marktplatzes und des Netzwerks an.'],
-      ['Wer kann einen Blumenstrauß anzeigen?', 'Belai Bureau zeigt nur einen Blumenstrauß an, den die verknüpfte Wallet hält, nach einer kostenlosen Signatur (keine Transaktion).'],
+      ['Was ist ein digitaler Blumenstrauß?', 'Ein Strauß aus Blumen, die in Vektorgrafik nach echten Fotos Stiel für Stiel gezeichnet sind, in einer echten Vase. Er blüht auf dem Bildschirm, wiegt sich im Wind und verblüht nach dreißig Tagen.'],
+      ['Kann ich einen Blumenstrauß auf meinen Bildschirm stellen?', 'Ja. Laden Sie Belai Bureau herunter (kostenlos), melden Sie sich einmal mit Ihrer Telefonnummer und dem per SMS erhaltenen Code an: Die Sträuße Ihres Kontos erscheinen auf Ihrem Bildschirm, wo Sie sie platzieren, in der Größe anpassen und fixieren.'],
+      ['Wie wird der Preis eines Blumenstraußes festgelegt?', 'Nach der Summe dessen, was seine Stiele bei einem Floristen in Frankreich kosten würden. Die Vase gibt es dazu. Der Preis wird in Euro angezeigt (außerhalb des Euroraums in US-Dollar) und mit Karte bezahlt.'],
+      ['Was passiert nach dreißig Tagen?', 'Der Blumenstrauß verblüht und bleibt verblüht und unbewegt, für immer. Er bleibt Ihrer.'],
+      ['Wie verschenke ich einen Strauß?', 'Wählen Sie beim Kauf „Verschenken“: Schreiben Sie eine kurze Nachricht, wählen Sie eine Musik und die Insekten, die sie tragen. Sie erhalten einen Link und einen Code; die Person gibt sie mit Ihrem Vornamen unter „Meine Geschenke“ ein, und der Strauß geht auf ihr Konto über.'],
+      ['Wie viele Exemplare gibt es von jedem Strauß?', 'Jeder Strauß der Monatskollektion gibt es in einer begrenzten Zahl von Exemplaren, angegeben unter seinem Namen. Sind sie vergriffen, gibt es keine mehr.'],
     ],
     back: '← Zurück zu den Blumensträußen',
   },
@@ -334,9 +333,9 @@ export default {
     legal: 'Rechtliches',
     closeLegal: 'Rechtliche Hinweise schließen',
     footer:
-      '<p>Jeder Blumenstrauß ist ein einzigartiges digitales Sammlerstück (ein NFT auf Base) mit einem Preis in ETH, ohne Umsatzsteuer (gemäß Art. 293 B des französischen Steuergesetzbuchs nicht umsatzsteuerpflichtig); der Betrag in Euro oder US-Dollar ist derselbe Preis zum aktuellen Kurs. Er lebt ab seiner Prägung drei Monate und bleibt danach für immer verblüht. Die Lieferung erfolgt sofort, daher besteht nach Ihrer Bestätigung kein Widerrufsrecht. Beim Weiterverkauf erheben wir keine Lizenzgebühr (0 %).</p><p>Kein Tracking, keine Werbung: höchstens ein Cookie, um sich die von Ihnen gewählte Sprache zu merken.</p>',
+      '<p>Jeder Blumenstrauß ist ein digitaler Strauß in limitierter Serie, mit Karte bezahlt, ohne Mehrwertsteuer (nicht anwendbar, Art. 293 B des französischen Steuergesetzbuchs). Er lebt dreißig Tage ab dem Kauf und bleibt dann für immer verblüht. Die Lieferung erfolgt sofort, daher gilt das Widerrufsrecht nach Bestätigung Ihres Kaufs nicht mehr.</p><p>Kein Tracking, keine Werbung: höchstens ein Cookie, um die gewählte Sprache zu speichern.</p>',
     links: { notice: 'Impressum', terms: 'AGB', privacy: 'Datenschutz', app: 'Lizenz von Belai Bureau', accessibility: 'Barrierefreiheit', contact: 'Kontakt' },
-    credit: 'ETH-Kurs von {coingecko}.',
+    credit: '',
     language: 'Sprache',
     lookCloser: 'Den Blumenstrauß näher ansehen',
     stepBack: 'Zurücktreten',
@@ -349,6 +348,8 @@ export default {
     faded: 'Verblüht',
     fadedLower: 'verblüht',
     fadedForGood: 'Für immer verblüht',
+    // the month's collection and the copies left, under the bouquet's name ({month}: the month in the page's language)
+    series: 'Kollektion {month} · noch {left} von {total}',
     buy: 'Kaufen',
     soon: 'Bald',
     soonMessage: 'Der Kauf direkt auf der Website ist bald möglich.',

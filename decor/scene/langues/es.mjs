@@ -16,18 +16,18 @@ export default {
   },
   more: 'más',
   describe: ({ stems, flowers, vase }) =>
-    `Un ramo digital único de ${stems} tallos dibujados a mano (${flowers}) en ${vase}. Vive tres meses y luego queda marchito para siempre.`,
+    `Un ramo digital único de ${stems} tallos dibujados a mano (${flowers}) en ${vase}. Vive treinta días y luego queda marchito para siempre.`,
 
   pages: {
     index: {
       title: "Ramo de flores digital, dibujado tallo a tallo | Belai's Garden",
-      description: 'Ramos de flores digitales dibujados tallo a tallo a partir de flores reales. Únicos, nuevos cada día, para coleccionar en Base y poner en tu escritorio.',
+      description: 'Ramos de flores digitales dibujados tallo a tallo a partir de flores reales. Una colección cada mes, en series limitadas, para regalar y poner en tu pantalla.',
       ogTitle: 'Ramos de flores digitales, dibujados tallo a tallo',
-      ogDescription: 'Nuevos ramos únicos cada día, cada uno en un jarrón real. Míralos florecer, colecciona uno y ponlo en tu escritorio.',
+      ogDescription: 'Cada mes, una colección de ramos en series limitadas, cada uno en un jarrón real. Míralos florecer, regala uno, ponlo en tu pantalla.',
     },
     about: {
       title: "Acerca de: ramos digitales de flores reales | Belai's Garden",
-      description: 'Cómo se hacen nuestros ramos digitales: flores dibujadas en código a partir de fotos reales, jarrones reales, al precio de sus tallos, tres meses de vida.',
+      description: 'Cómo nacen nuestros ramos digitales: flores dibujadas en código a partir de fotos reales, jarrones reales, el precio de los tallos, treinta días de vida.',
       ogTitle: 'Acerca de nuestros ramos digitales',
       ogDescription: 'Cada flor, dibujada en código a partir de fotos reales. Ramos únicos, en jarrones reales, que florecen y luego se marchitan.',
     },
@@ -45,14 +45,14 @@ export default {
     },
   },
   shareAlt: 'El ramo Ronde bleue: lilas, iris, anémonas y jacintos en un jarrón de vidrio esmerilado con bailarinas',
-  orgDescription: 'Ramos de flores digitales dibujados tallo a tallo a partir de flores reales, coleccionados en Base.',
+  orgDescription: 'Ramos de flores digitales dibujados tallo a tallo a partir de flores reales, para regalar y poner en tu pantalla.',
   listName: 'Ramos del día',
 
   // ---------- the shop page
   index: {
     h1: "Belai's Garden: ramos de flores digitales que viven",
     intro:
-      'Ramos de flores digitales dibujados tallo a tallo a partir de flores reales. Nuevos ramos únicos cada día, cada uno en un jarrón real, para coleccionar en Base. Un ramo vive tres meses y luego queda marchito para siempre. Ponlo en el escritorio de tu ordenador con Belai Bureau, un widget gratuito para Windows.',
+      'Ramos de flores digitales dibujados tallo a tallo a partir de flores reales. Cada mes, una nueva colección de ramos en series limitadas, cada uno en un jarrón real. Un ramo vive treinta días y luego queda marchito para siempre. Regálalo, o ponlo en tu pantalla con Belai Bureau.',
     noscript:
       'Este jardín necesita JavaScript para que los ramos florezcan. Lee <a href="{{p}}about.html">más sobre los ramos</a>, descubre <a href="{{p}}desktop.html">cómo poner uno en tu escritorio</a> o consulta el <a href="{{legal}}">aviso legal y las condiciones</a>.',
     galleryLabel: 'Ramos del día',
@@ -83,21 +83,20 @@ export default {
     sus colores medidos en cada variedad, los capullos, la flor abierta y la flor marchita. En el jardín ya hay más de
     quinientas especies.</p>
 
-  <h2>Ramos únicos cada día</h2>
-  <p>Cada día se componen ramos nuevos, cada uno en un jarrón real, como la carpa de bronce. Cada ramo es único:
-    la posición de cada tallo, de cada flor y de cada hoja no se repite en ningún otro.</p>
+  <h2>Ramos compuestos tallo a tallo</h2>
+  <p>Cada ramo se compone tallo a tallo, cada uno en un jarrón real, como la carpa de bronce. El lugar de cada tallo, de cada flor y de cada hoja no se repite en ningún otro ramo.</p>
 
   <h2>Un ramo que vive</h2>
-  <p>Un ramo vive tres meses desde su acuñación: una cuenta atrás, en horas y minutos, muestra cuánto tiempo le queda.
-    Después queda marchito e inmóvil, para siempre.</p>
+  <p>Un ramo vive treinta días desde su compra: una cuenta atrás, en horas y minutos, indica el tiempo que le queda. Después queda marchito e inmóvil para siempre.</p>
 
   <h2>El precio de los tallos reales</h2>
-  <p>El precio de un ramo es la suma de lo que cuestan sus tallos en una floristería de Francia. El jarrón es gratis.
-    En la reventa, no nos quedamos con nada: 0 % de regalías.</p>
+  <p>El precio de un ramo es la suma de lo que cuestan sus tallos en una floristería de Francia. El jarrón es un regalo. Se paga con tarjeta.</p>
 
-  <h2>Coleccionar un ramo</h2>
-  <p>Los ramos son NFT en la red Base, publicados en nuestra página de OpenSea. Los pagarás aquí mismo, desde tu
-    monedero, sin salir del sitio.</p>
+  <h2>Una colección cada mes</h2>
+  <p>Cada mes tiene su colección. Cada ramo existe en un número limitado de ejemplares, indicado bajo su nombre, y el ramo que compras es exactamente el que ves.</p>
+
+  <h2>Regalar un ramo</h2>
+  <p>Al comprar, puedes regalar el ramo: un mensaje corto que llevan los insectos, una música y un código para transmitir. La persona a quien lo regalas lo recibe en «Mis regalos» con tu nombre y ese código.</p>
 
   <h2>En tu escritorio</h2>
   <p>Con <a href="{{p}}desktop.html">Belai Bureau</a>, un widget gratuito para Windows, el ramo que coleccionaste se queda
@@ -107,12 +106,12 @@ export default {
   <p>Cada ramo coleccionado ayuda a que el jardín crezca: nuevas especies, nuevos jarrones, nuevos ramos.</p>`,
     faqTitle: 'Preguntas',
     faq: [
-      ['¿Qué es un ramo digital?', 'Un ramo de flores dibujado en gráficos vectoriales a partir de fotos reales, tallo a tallo, en un jarrón real. Florece en la pantalla, se mece con la brisa y se marchita al cabo de tres meses. Cada uno es único y se colecciona como NFT en Base.'],
-      ['¿Puedo poner un ramo de flores en el escritorio de mi ordenador?', 'Sí. Descarga Belai Bureau (gratis, Windows 10 y 11), vincula tu monedero y el ramo que tienes se queda en tu escritorio como widget: lo colocas, ajustas su tamaño, lo fijas y lo pones delante o detrás de tus ventanas.'],
-      ['¿Cómo se fija el precio de un ramo?', 'Es la suma de lo que costarían sus tallos en una floristería de Francia, convertida a ETH, sin IVA (IVA no aplicable, art. 293 B del Código General de Impuestos francés). El jarrón es gratis. El importe mostrado en euros o dólares estadounidenses es orientativo, al cambio actual.'],
-      ['¿Qué pasa al cabo de tres meses?', 'El ramo se marchita y queda marchito e inmóvil para siempre. Sigue siendo tuyo.'],
-      ['¿Cobráis regalías en la reventa?', 'No: 0 %. Solo se aplican las comisiones propias del mercado y de la red.'],
-      ['¿Quién puede mostrar un ramo?', 'Belai Bureau solo muestra un ramo que esté en el monedero que vinculas, tras una firma gratuita (sin transacción).'],
+      ['¿Qué es un ramo digital?', 'Un ramo de flores dibujado en gráficos vectoriales a partir de fotos reales, tallo a tallo, en un jarrón real. Florece en la pantalla, se mece con la brisa y se marchita a los treinta días.'],
+      ['¿Puedo poner un ramo de flores en mi pantalla?', 'Sí. Descarga Belai Bureau (gratis), inicia sesión una vez con tu número de teléfono y el código recibido por SMS: los ramos de tu cuenta se posan en tu pantalla, donde los colocas, ajustas su tamaño y los fijas.'],
+      ['¿Cómo se fija el precio de un ramo?', 'Es la suma de lo que costarían sus tallos en una floristería de Francia. El jarrón es un regalo. El precio se muestra en euros (en dólares estadounidenses fuera de la zona euro) y se paga con tarjeta.'],
+      ['¿Qué pasa a los treinta días?', 'El ramo se marchita y queda marchito e inmóvil para siempre. Sigue siendo tuyo.'],
+      ['¿Cómo regalo un ramo?', 'Al comprar, elige regalarlo: escribe un mensaje corto, elige una música y los insectos que lo llevarán. Recibes un enlace y un código; la persona los introduce en «Mis regalos» con tu nombre, y el ramo pasa a su cuenta.'],
+      ['¿Cuántos ejemplares hay de cada ramo?', 'Cada ramo de la colección del mes existe en un número limitado de ejemplares, indicado bajo su nombre. Cuando se acaban, no hay más.'],
     ],
     back: '← Volver a los ramos',
   },
@@ -331,9 +330,9 @@ export default {
     legal: 'Legal',
     closeLegal: 'Cerrar el panel legal',
     footer:
-      '<p>Cada ramo es un objeto de colección digital único (un NFT en Base), con precio en ETH, sin IVA (IVA no aplicable, art. 293 B del Código General de Impuestos francés); el importe en euros o dólares estadounidenses es el mismo precio al cambio actual. Vive tres meses desde su acuñación y luego queda marchito para siempre. La entrega es inmediata, por lo que el derecho de desistimiento no se aplica una vez que confirmas. No cobramos regalías en la reventa (0 %).</p><p>Sin rastreo ni publicidad: como mucho una cookie, para recordar el idioma que elegiste.</p>',
+      '<p>Cada ramo es un ramo digital de serie limitada, pagado con tarjeta, sin IVA (IVA no aplicable, art. 293 B del Código General de Impuestos francés). Vive treinta días desde su compra y luego queda marchito para siempre. La entrega es inmediata: el derecho de desistimiento deja de aplicarse una vez confirmada tu compra.</p><p>Sin rastreo ni publicidad: como mucho una cookie, para recordar el idioma que has elegido.</p>',
     links: { notice: 'Aviso legal', terms: 'Condiciones de venta', privacy: 'Privacidad', app: 'Licencia de Belai Bureau', accessibility: 'Accesibilidad', contact: 'Contacto' },
-    credit: 'Cambio de ETH por {coingecko}.',
+    credit: '',
     language: 'Idioma',
     lookCloser: 'Ver el ramo más de cerca',
     stepBack: 'Alejarse',
@@ -346,6 +345,8 @@ export default {
     faded: 'Marchito',
     fadedLower: 'marchito',
     fadedForGood: 'Marchito para siempre',
+    // the month's collection and the copies left, under the bouquet's name ({month}: the month in the page's language)
+    series: 'Colección de {month} · quedan {left} de {total}',
     buy: 'Comprar',
     soon: 'Pronto',
     soonMessage: 'Pronto podrás comprar desde el sitio.',

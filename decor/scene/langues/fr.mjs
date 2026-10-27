@@ -11,18 +11,18 @@ export default {
   list: (a) => (a.length < 2 ? a.join('') : `${a.slice(0, -1).join(', ')} et ${a[a.length - 1]}`),
   more: 'autres',
   describe: ({ stems, flowers, vase }) =>
-    `Un bouquet numérique unique de ${stems} tiges dessinées à la main (${flowers}) dans ${vase}. Il vit trois mois, puis reste fané pour de bon.`,
+    `Un bouquet numérique unique de ${stems} tiges dessinées à la main (${flowers}) dans ${vase}. Il vit trente jours, puis reste fané pour de bon.`,
 
   pages: {
     index: {
       title: "Bouquet de fleurs numérique, dessiné tige à tige | Belai's Garden",
-      description: 'Bouquets de fleurs numériques dessinés tige à tige d’après de vraies fleurs. Uniques, nouveaux chaque jour, à collectionner sur Base et à poser sur le bureau.',
+      description: 'Bouquets de fleurs numériques dessinés tige à tige d’après de vraies fleurs. Une collection par mois, en séries limitées, à offrir et à poser sur votre écran.',
       ogTitle: 'Bouquets de fleurs numériques, dessinés tige à tige',
-      ogDescription: 'Chaque jour, de nouveaux bouquets uniques, chacun dans un vrai vase. Regardez-les fleurir, collectionnez-en un, posez-le sur votre bureau.',
+      ogDescription: 'Chaque mois, une collection de bouquets en séries limitées, chacun dans un vrai vase. Regardez-les fleurir, offrez-en un, posez-le sur votre écran.',
     },
     about: {
       title: "À propos : bouquets numériques d’après nature | Belai's Garden",
-      description: 'Comment naissent nos bouquets numériques : des fleurs dessinées en code d’après de vraies photos, de vrais vases, le prix des tiges, trois mois de vie.',
+      description: 'Comment naissent nos bouquets numériques : des fleurs dessinées en code d’après de vraies photos, de vrais vases, le prix des tiges, trente jours de vie.',
       ogTitle: 'À propos de nos bouquets numériques',
       ogDescription: 'Chaque fleur dessinée en code d’après de vraies photos. Des bouquets uniques, dans de vrais vases, qui fleurissent puis fanent.',
     },
@@ -40,14 +40,14 @@ export default {
     },
   },
   shareAlt: 'Le bouquet Ronde bleue : lilas, iris, anémones et jacinthes dans un vase en verre dépoli aux danseuses',
-  orgDescription: 'Des bouquets de fleurs numériques dessinés tige à tige d’après de vraies fleurs, à collectionner sur Base.',
+  orgDescription: 'Des bouquets de fleurs numériques dessinés tige à tige d’après de vraies fleurs, à offrir et à poser sur votre écran.',
   listName: 'Bouquets du jour',
 
   // ---------- the shop page
   index: {
     h1: "Belai's Garden : des bouquets de fleurs numériques vivants",
     intro:
-      'Des bouquets de fleurs numériques dessinés tige à tige d’après de vraies fleurs. Chaque jour, de nouveaux bouquets uniques, chacun dans un vrai vase, à collectionner sur Base. Un bouquet vit trois mois, puis reste fané pour toujours. Posez le vôtre sur le bureau de votre ordinateur avec Belai Bureau, un widget gratuit pour Windows.',
+      'Des bouquets de fleurs numériques dessinés tige à tige d’après de vraies fleurs. Chaque mois, une nouvelle collection de bouquets en séries limitées, chacun dans un vrai vase. Un bouquet vit trente jours, puis reste fané pour toujours. Offrez-le, ou posez-le sur votre écran avec Belai Bureau.',
     noscript:
       'Ce jardin a besoin de JavaScript pour faire fleurir les bouquets. Lisez <a href="{{p}}about.html">la présentation des bouquets</a>, découvrez <a href="{{p}}desktop.html">comment en poser un sur votre bureau</a>, ou consultez les <a href="{{legal}}">mentions légales et conditions de vente</a>.',
     galleryLabel: 'Bouquets du jour',
@@ -78,21 +78,20 @@ export default {
     couleurs mesurées sur chaque variété, les boutons, la fleur ouverte et la fleur fanée. Plus de cinq cents espèces
     poussent déjà dans le jardin.</p>
 
-  <h2>Des bouquets uniques chaque jour</h2>
-  <p>Chaque jour, de nouveaux bouquets sont composés, chacun dans un vrai vase, comme la carpe en bronze. Chaque bouquet est
-    unique : la place de chaque tige, de chaque fleur et de chaque feuille ne se retrouve dans aucun autre.</p>
+  <h2>Des bouquets composés tige à tige</h2>
+  <p>Chaque bouquet est composé tige à tige, chacun dans un vrai vase, comme la carpe en bronze. La place de chaque tige, de chaque fleur et de chaque feuille ne se retrouve dans aucun autre bouquet.</p>
 
   <h2>Un bouquet vivant</h2>
-  <p>Un bouquet vit trois mois à compter de sa frappe : un compte à rebours, en heures et en minutes, indique le temps
-    qu’il lui reste. Il reste ensuite fané et immobile, pour de bon.</p>
+  <p>Un bouquet vit trente jours à compter de son achat : un compte à rebours, en heures et en minutes, indique le temps qu’il lui reste. Il reste ensuite fané et immobile, pour de bon.</p>
 
   <h2>Le prix des vraies tiges</h2>
-  <p>Le prix d’un bouquet est la somme de ce que coûtent ses tiges chez un fleuriste en France. Le vase est offert. À la
-    revente, nous ne prenons rien : 0 % de royalties.</p>
+  <p>Le prix d’un bouquet est la somme de ce que coûtent ses tiges chez un fleuriste en France. Le vase est offert. Vous le réglez par carte bancaire.</p>
 
-  <h2>Collectionner un bouquet</h2>
-  <p>Les bouquets sont des NFT sur le réseau Base, proposés sur notre page OpenSea. Vous les réglerez ici même, depuis
-    votre portefeuille, sans quitter le site.</p>
+  <h2>Une collection par mois</h2>
+  <p>Chaque mois a sa collection. Chaque bouquet y existe en un nombre limité d’exemplaires, indiqué sous son nom, et le bouquet que vous achetez est exactement celui que vous voyez.</p>
+
+  <h2>Offrir un bouquet</h2>
+  <p>À l’achat, vous pouvez offrir le bouquet : un court message porté par les insectes, une musique, et un code à transmettre. La personne à qui vous l’offrez le reçoit dans « Mes cadeaux » avec votre prénom et ce code.</p>
 
   <h2>Sur votre bureau</h2>
   <p>Avec <a href="{{p}}desktop.html">Belai Bureau</a>, un widget gratuit pour Windows, le bouquet que vous avez collectionné
@@ -102,12 +101,12 @@ export default {
   <p>Chaque bouquet collectionné aide le jardin à grandir : de nouvelles espèces, de nouveaux vases, de nouveaux bouquets.</p>`,
     faqTitle: 'Questions',
     faq: [
-      ['Qu’est-ce qu’un bouquet numérique ?', 'Un bouquet de fleurs dessiné en graphisme vectoriel d’après de vraies photos, tige à tige, dans un vrai vase. Il fleurit à l’écran, se balance dans la brise et fane au bout de trois mois. Chacun est unique et se collectionne sous la forme d’un NFT sur Base.'],
-      ['Puis-je mettre un bouquet de fleurs sur le bureau de mon ordinateur ?', 'Oui. Téléchargez Belai Bureau (gratuit, Windows 10 et 11), liez votre portefeuille, et le bouquet que vous possédez se pose sur votre bureau en widget : vous le placez, ajustez sa taille, le fixez, devant ou derrière vos fenêtres.'],
-      ['Comment le prix d’un bouquet est-il fixé ?', 'À la somme de ce que coûteraient ses tiges chez un fleuriste en France, convertie en ETH, sans TVA (TVA non applicable, art. 293 B du CGI). Le vase est offert. Le montant affiché en euros ou en dollars américains est indicatif, au cours du moment.'],
-      ['Que se passe-t-il au bout de trois mois ?', 'Le bouquet fane et reste fané, immobile, pour de bon. Il reste à vous.'],
-      ['Prenez-vous des royalties à la revente ?', 'Non : 0 %. Seuls s’appliquent les frais propres à la place de marché et au réseau.'],
-      ['Qui peut afficher un bouquet ?', 'Belai Bureau n’affiche qu’un bouquet détenu par le portefeuille que vous liez, après une signature gratuite (sans transaction).'],
+      ['Qu’est-ce qu’un bouquet numérique ?', 'Un bouquet de fleurs dessiné en graphisme vectoriel d’après de vraies photos, tige à tige, dans un vrai vase. Il fleurit à l’écran, se balance dans la brise et fane au bout de trente jours.'],
+      ['Puis-je mettre un bouquet de fleurs sur mon écran ?', 'Oui. Téléchargez Belai Bureau (gratuit), connectez-vous une fois avec votre numéro de téléphone et le code reçu par SMS : les bouquets de votre compte se posent sur votre écran, vous les placez, ajustez leur taille et les fixez.'],
+      ['Comment le prix d’un bouquet est-il fixé ?', 'À la somme de ce que coûteraient ses tiges chez un fleuriste en France. Le vase est offert. Le prix est affiché en euros (en dollars américains hors de la zone euro) et se règle par carte bancaire.'],
+      ['Que se passe-t-il au bout de trente jours ?', 'Le bouquet fane et reste fané, immobile, pour de bon. Il reste à vous.'],
+      ['Comment offrir un bouquet ?', 'Au moment de l’achat, choisissez de l’offrir : écrivez un court message, choisissez une musique et les insectes qui le porteront. Vous recevez un lien et un code ; la personne les saisit dans « Mes cadeaux » avec votre prénom, et le bouquet passe sur son compte.'],
+      ['Combien d’exemplaires de chaque bouquet ?', 'Chaque bouquet de la collection du mois existe en un nombre limité d’exemplaires, indiqué sous son nom. Quand ils sont partis, il n’y en a plus.'],
     ],
     back: '← Retour aux bouquets',
   },
@@ -330,9 +329,9 @@ export default {
     legal: 'Mentions légales',
     closeLegal: 'Fermer le panneau des mentions légales',
     footer:
-      '<p>Chaque bouquet est un objet de collection numérique unique (un NFT sur Base), dont le prix est fixé en ETH, sans TVA (TVA non applicable, art. 293 B du CGI) ; le montant en euros ou en dollars américains correspond au même prix au cours du moment. Il vit trois mois à compter de sa frappe, puis reste fané pour de bon. La livraison est immédiate : le droit de rétractation ne s’applique donc plus une fois votre achat confirmé. Nous ne percevons pas de royalties sur la revente (0 %).</p><p>Aucun pistage, aucune publicité : un cookie au plus, pour retenir la langue que vous avez choisie.</p>',
+      '<p>Chaque bouquet est un bouquet numérique en série limitée, payé par carte bancaire, sans TVA (TVA non applicable, art. 293 B du CGI). Il vit trente jours à compter de son achat, puis reste fané pour de bon. La livraison est immédiate : le droit de rétractation ne s’applique donc plus une fois votre achat confirmé.</p><p>Aucun pistage, aucune publicité : un cookie au plus, pour retenir la langue que vous avez choisie.</p>',
     links: { notice: 'Mentions légales', terms: 'Conditions générales de vente', privacy: 'Confidentialité', app: 'Licence de Belai Bureau', accessibility: 'Accessibilité', contact: 'Contact' },
-    credit: 'Cours de l’ETH fourni par {coingecko}.',
+    credit: '',
     language: 'Langue',
     lookCloser: 'Regarder le bouquet de plus près',
     stepBack: 'Prendre du recul',
@@ -345,6 +344,8 @@ export default {
     faded: 'Fané',
     fadedLower: 'fané',
     fadedForGood: 'Fané pour toujours',
+    // the month's collection and the copies left, under the bouquet's name ({month}: the month in the page's language)
+    series: 'Collection {month} · {left} sur {total}',
     buy: 'Acheter',
     soon: 'Bientôt',
     soonMessage: 'L’achat depuis le site arrive bientôt.',
