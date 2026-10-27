@@ -1180,8 +1180,6 @@
   width: 60%;
 }
 
-/* ---------- the steps round the device, in black Nunito on the white page (owner, 2026-10-27: no glass bubbles): on its two
-   sides on a wide screen, in a row under it on a narrow one */
 @font-face {
   font-family: 'Nunito Demo';
   src: url('polices/nunito-black.woff2') format('woff2');
@@ -1189,130 +1187,11 @@
   font-display: swap;
 }
 
-.demo-etapes {
-  position: fixed;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.demo2.large .demo-etapes {
-  display: grid;
-  grid-template-columns: repeat(2, var(--cote));
-  grid-template-rows: repeat(var(--rangs), auto);
-  grid-auto-flow: column;
-  justify-content: space-between;
-  align-content: center;
-  gap: 18px 0;
-  pointer-events: none;
-}
-
-.demo2:not(.large) .demo-etapes li:not(.actif) {
-  display: none;
-}
-
-.demo2:not(.large) .demo-etapes li {
-  display: flex;
-  justify-content: center;
-}
-
-.demo-points {
-  display: none;
-}
-
-.demo2:not(.large) .demo-points {
-  position: fixed;
-  left: 0;
-  right: 0;
-  display: flex;
-  justify-content: center;
-  gap: 2px;
-}
-
-.demo-point {
-  width: 22px;
-  height: 22px;
-  padding: 0;
-  border: 0;
-  background: none;
-  cursor: pointer;
-}
-
-.demo-point::before {
-  content: '';
-  display: block;
-  width: 6px;
-  height: 6px;
-  margin: auto;
-  border-radius: 3px;
-  background: #c9ced5;
-  transition: width 0.3s ease, background-color 0.3s ease;
-}
-
-.demo-point.en-cours::before {
-  width: 16px;
-  background: #111;
-}
-
-.demo-etape {
-  display: flex;
-  align-items: baseline;
-  gap: 10px;
-  width: 100%;
-  padding: 0;
-  border: 0;
-  background: none;
-  color: #111;
-  font: 900 15px/1.3 'Nunito Demo', 'Nunito', system-ui, sans-serif;
-  text-align: left;
-  cursor: pointer;
-  pointer-events: auto;
-  opacity: 0.28;
-  transition: opacity 0.35s ease, transform 0.45s cubic-bezier(0.3, 1.6, 0.5, 1);
-  transform-origin: 0 50%;
-}
-
-.demo2:not(.large) .demo-etape {
-  width: auto;
-  max-width: 340px;
-  font-size: 16px;
-}
-
-.demo2:not(.large) .demo-etape .n {
-  font-size: 30px;
-}
-
-.demo-etapes li {
-  min-width: 0;
-}
-
-.demo-etape .n {
-  flex: none;
-  min-width: 1.6em;
-  font-size: 26px;
-  line-height: 1;
-}
-
-.demo-etape.fait {
-  opacity: 0.5;
-}
-
-.demo-etape.en-cours {
-  opacity: 1;
-  transform: scale(1.06);
-}
-
-.demo-etape:focus-visible {
-  outline: 2px solid #111;
-  outline-offset: 4px;
-  border-radius: 6px;
-}
-
 /* ---------- the devices over the toolbar, play and close: black on white, as the steps */
 .demo-appareils {
   position: fixed;
   left: 50%;
-  bottom: calc(var(--dock-pied) + var(--dock-h) + 12px);
+  bottom: calc(env(safe-area-inset-bottom, 0px) + 16px);
   display: flex;
   gap: 4px;
   padding: 4px;
@@ -1386,13 +1265,18 @@
   padding: 0 14px;
 }
 
-/* the toolbar and the Legal pill stay over the white page: their glass a denser blue */
-.demo-ouverte .dock,
-.demo-ouverte .pied-poignee {
-  background: var(--glass-texte);
+/* the toolbar and the Legal pill leave during the demo (owner, 2026-10-27); so does the decor, the white page alone behind
+   the device: the sky's own layer and any canvas other than the bouquets' (a phone's browser kept a strip of ground) */
+.demo-ouverte .entete,
+.demo-ouverte .pied,
+.demo-ouverte canvas:not(.toile) {
+  visibility: hidden;
 }
 
-.demo2.sort .demo-etapes,
+.demo-ouverte.demo-replie .monde {
+  visibility: hidden;
+}
+
 .demo2.sort .demo-appareils,
 .demo2.sort .demo2-fermer,
 .demo2.sort .demo2-lecture,
@@ -1437,18 +1321,26 @@
   }
 }
 
+/* at the top left, by the play and close buttons */
 .demo-bientot {
   position: fixed;
-  left: 50%;
+  left: max(16px, env(safe-area-inset-left, 0px));
+  top: calc(env(safe-area-inset-top, 0px) + 18px);
   margin: 0;
-  padding: 6px 14px;
+  padding: 6px 12px;
   border-radius: 999px;
   background: #fff3c4;
   color: #4d3b00;
   font: 900 14px/1.2 'Nunito Demo', 'Nunito', system-ui, sans-serif;
   white-space: nowrap;
-  transform: translateX(-50%);
   z-index: 2;
+}
+
+@media (max-width: 520px) {
+  .demo-bientot {
+    padding: 5px 10px;
+    font-size: 12px;
+  }
 }
 
 .demo-bientot[hidden] {
@@ -1678,53 +1570,10 @@
   transition: transform 0.08s ease, filter 0.08s ease;
 }
 
-/* the step under way: its number pops, its words come in; legible over a device brought closer */
-.demo-etape .t,
-.demo-etape .n {
-  text-shadow: 0 0 10px #fff, 0 0 4px #fff, 0 0 2px #fff;
-}
-
-.demo-etape.en-cours .n {
-  animation: num-pop 0.5s cubic-bezier(0.3, 1.6, 0.5, 1);
-}
-
-.demo-etape.en-cours .t {
-  animation: mots 0.45s cubic-bezier(0.2, 0.8, 0.2, 1);
-}
-
-@keyframes num-pop {
-  from {
-    transform: scale(0.5);
-  }
-}
-
-@keyframes mots {
-  from {
-    transform: translateX(-10px);
-    opacity: 0;
-  }
-}
-
-.demo-etape .n {
-  display: inline-block;
-}
-
-.demo-etape .t {
-  display: inline-block;
-}
-
-/* the steps stay over the device brought closer */
-.demo-etapes,
-.demo-points,
-.demo-bientot {
-  z-index: 3;
-}
 
 @media (prefers-reduced-motion: reduce) {
   .d-onde,
   .d-ok,
-  .demo-etape.en-cours .n,
-  .demo-etape.en-cours .t,
   .demo-ecran.installe .ic-belai {
     animation: none;
   }

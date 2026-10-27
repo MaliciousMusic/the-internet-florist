@@ -371,3 +371,29 @@
   background: radial-gradient(120% 160% at 18% -40%, rgb(255 255 255 / 0.38), rgb(255 255 255 / 0) 55%);
   pointer-events: none;
 }
+
+/* a narrow phone (owner, 2026-10-27: an iPhone X's 375 px): the toolbar a little smaller, so it stays inside the screen */
+@media (max-width: 420px) {
+  :root {
+    --dock-h: 46px;
+  }
+
+  .dock {
+    gap: 1px;
+    padding: 0 4px;
+  }
+
+  .dock-bouton {
+    width: 36px;
+    height: 36px;
+  }
+
+  .dock-bouton svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .dock-sep {
+    margin: 0 3px;
+  }
+}
