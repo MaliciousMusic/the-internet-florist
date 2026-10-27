@@ -287,7 +287,7 @@ export default {
       privacidad. Solo recibimos la referencia del pago, su importe y su estado.</p>
     <h3>Cookies</h3>
     <p>Si elige usted mismo un idioma, el sitio lo recuerda en una cookie llamada <code>lang</code>, durante un año.
-      Mientras está conectado a su cuenta, una cookie de sesión le mantiene conectado. Nada más: ninguna medición de
+      Mientras está conectado a su cuenta, una cookie de sesión le mantiene conectado. Si activa el sonido, su navegador recuerda esa elección en su almacenamiento local (clave <code>son</code>), sin enviarnos nada. Nada más: ninguna medición de
       audiencia, ninguna publicidad. Estas cookies son necesarias para el servicio que usted pide, por lo que no
       requieren aviso de consentimiento.</p>
     <h3>Destinatarios y lugares de tratamiento</h3>
@@ -353,6 +353,8 @@ export default {
     desktopLabel: 'Tu ramo en tu escritorio',
     appTitle: 'Belai Bureau',
     appLabel: 'Descargar Belai Bureau, la app que pone tu ramo en tu pantalla',
+    soundOn: 'Activar el sonido de la naturaleza',
+    soundOff: 'Silenciar el sonido de la naturaleza',
     openSeaTitle: 'Nuestra colección en OpenSea',
     openSeaLabel: 'Nuestra colección en OpenSea (nueva pestaña)',
     about: 'Acerca de',

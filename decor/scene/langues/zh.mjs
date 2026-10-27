@@ -257,7 +257,7 @@ export default {
     <p>你的银行卡信息在 Stripe 的页面上输入，由 Stripe 按其自身的隐私政策处理。我们只收到付款编号、金额和状态。</p>
     <h3>Cookie</h3>
     <p>如果你自行选择语言，网站会把它保存在名为 <code>lang</code> 的 Cookie 中，为期一年。登录账户期间，一个会话 Cookie 会让你
-      保持登录。仅此而已：没有流量统计，没有广告。这些 Cookie 是你所请求的服务所必需的，因此无需同意横幅。</p>
+      保持登录。如果你打开声音，浏览器会把这个选择保存在本地存储中（键名 <code>son</code>），不会向我们发送任何内容。仅此而已：没有流量统计，没有广告。这些 Cookie 是你所请求的服务所必需的，因此无需同意横幅。</p>
     <h3>接收方与处理地点</h3>
     <p>GitHub, Inc.（网站托管，美国）、Cloudflare, Inc.（账户与礼物服务器，美国）、Stripe（付款，爱尔兰和美国）以及 OVHcloud
       （短信发送，法国）。向欧盟以外的传输依据欧盟—美国数据隐私框架（Data Privacy Framework）以及欧盟委员会的标准合同条款。</p>
@@ -311,6 +311,8 @@ export default {
     desktopLabel: '把你的花束摆上桌面',
     appTitle: 'Belai Bureau',
     appLabel: '下载 Belai Bureau，把花束摆上屏幕的应用',
+    soundOn: '打开自然之声',
+    soundOff: '关闭自然之声',
     openSeaTitle: '我们在 OpenSea 上的收藏系列',
     openSeaLabel: '我们在 OpenSea 上的收藏系列（新标签页）',
     about: '关于我们',

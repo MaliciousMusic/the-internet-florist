@@ -277,7 +277,7 @@ export default {
       receive the payment reference, its amount and its status.</p>
     <h3>Cookies</h3>
     <p>If you choose a language yourself, the site remembers it in a cookie named <code>lang</code>, for one year. While
-      you are signed in to your account, a session cookie keeps you signed in. That is all: no audience measurement, no
+      you are signed in to your account, a session cookie keeps you signed in. If you turn the sound on, your browser remembers it in its local storage (key <code>son</code>), sending us nothing. That is all: no audience measurement, no
       advertising. These cookies are needed for the service you ask for, so they require no consent banner.</p>
     <h3>Recipients and places of processing</h3>
     <p>GitHub, Inc. (site hosting, United States), Cloudflare, Inc. (accounts and gifts server, United States), Stripe
@@ -340,6 +340,8 @@ export default {
     desktopLabel: 'Your bouquet on your desktop',
     appTitle: 'Belai Bureau',
     appLabel: 'Download Belai Bureau, the app that sets your bouquet on your screen',
+    soundOn: 'Turn on the sound of nature',
+    soundOff: 'Turn off the sound of nature',
     openSeaTitle: 'Our collection on OpenSea',
     openSeaLabel: 'Our collection on OpenSea (new tab)',
     about: 'About',
