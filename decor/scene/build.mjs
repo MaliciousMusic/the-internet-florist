@@ -203,25 +203,6 @@ function structured(L, page) {
           publisher: org,
           screenshot: `${ORIGIN}/videos/fond-ecran.jpg`,
         },
-        {
-          '@type': 'VideoObject',
-          name: d.videoName,
-          description: d.videoDescription,
-          thumbnailUrl: `${ORIGIN}/videos/fond-ecran.jpg`,
-          contentUrl: `${ORIGIN}/videos/fond-ecran.mp4`,
-          uploadDate: '2026-10-16T14:25:16+02:00',
-          duration: 'PT1M1S',
-          width: 720,
-          height: 1280,
-        },
-        {
-          '@type': 'HowTo',
-          name: d.howToName,
-          inLanguage: L.code,
-          totalTime: 'PT2M',
-          tool: d.howToTools.map((name) => ({ '@type': 'HowToTool', name })),
-          step: d.steps.map((text, k) => ({ '@type': 'HowToStep', position: k + 1, text })),
-        },
       ],
     });
   }

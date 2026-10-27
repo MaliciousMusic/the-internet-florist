@@ -39,150 +39,97 @@
 <link rel="stylesheet" href="scene.css?v=e7a888109e">
 <link rel="stylesheet" href="entete.css?v=58229ed303">
 <style>
-  /* The desktop page: the shop's still decor behind (as the About page), one frosted-glass panel that scrolls between
-     the header and the footer's pill, with the how-to video and the app to download. */
-  .bureau {
+  /* The desktop page (owner, 2026-10-27): nothing but the two downloads, Windows and Mac, on the shop's still decor; no
+     toolbar, no explanation (they are in the demo "On your desktop" of the bouquets). The buttons in one colour as the Buy
+     button is, a light apple green, its words dark green; the Mac one waits, "coming soon". */
+  .entete {
+    display: none;
+  }
+
+  .telechargements {
     position: fixed;
-    top: calc(var(--entete-bas) + 12px);
-    bottom: calc(env(safe-area-inset-bottom) + 40px);
-    left: 50%;
+    inset: 0;
     z-index: 40;
-    width: min(calc(100vw - 24px), 620px);
-    box-sizing: border-box;
-    overflow-y: auto;
-    overscroll-behavior: contain;
-    padding: 22px clamp(18px, 5vw, 34px) 26px;
-    border: 1px solid var(--verre-bord);
-    border-radius: 20px;
-    background: linear-gradient(to bottom, rgb(255 255 255 / 0.22), rgb(16 48 86 / 0.16)), rgb(60 98 140 / 0.28);
-    -webkit-backdrop-filter: blur(20px) saturate(1.1);
-    backdrop-filter: blur(20px) saturate(1.1);
-    color: #fff;
-    font: 400 15px/1.6 var(--texte);
-    transform: translateX(-50%);
-  }
-
-  /* computer: the dock is at the bottom */
-  @media (min-width: 900px) and (min-aspect-ratio: 4/3) {
-    .bureau {
-      top: 24px;
-      bottom: var(--dessus-dock);
-      width: min(calc(100vw - 48px), 880px);
-    }
-  }
-
-  .bureau h1 {
-    margin: 0 0 4px;
-    font: 600 24px/1.2 var(--texte);
-  }
-
-  .bureau .chapeau {
-    margin: 0 0 18px;
-    color: rgb(255 255 255 / 0.9);
-    font-size: 16px;
-  }
-
-  .bureau h2 {
-    margin: 0 0 6px;
-    font: 600 16px/1.3 var(--texte);
-  }
-
-  .bureau p {
-    margin: 0;
-  }
-
-  /* the video beside the steps on a computer, above them on a phone */
-  .bureau-corps {
-    display: grid;
-    gap: 22px;
-    align-items: start;
-  }
-
-  @media (min-width: 760px) {
-    .bureau-corps {
-      grid-template-columns: minmax(0, 300px) 1fr;
-    }
-  }
-
-  .bureau-video {
-    display: block;
-    width: 100%;
-    max-width: 300px;
-    max-height: 64vh;
-    aspect-ratio: 9 / 16;
-    margin: 0 auto;
-    border-radius: 16px;
-    background: rgb(16 48 86 / 0.35);
-    box-shadow: 0 10px 30px rgb(10 30 60 / 0.35);
-    object-fit: contain;
-  }
-
-  .bureau ol {
-    margin: 0 0 18px;
-    padding-left: 22px;
-  }
-
-  .bureau li {
-    margin: 0 0 6px;
-  }
-
-  /* the download: one big glass button with its note */
-  .telecharger {
-    display: inline-flex;
+    display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    gap: 12px;
-    padding: 13px 22px 13px 16px;
-    border: 1px solid rgb(255 255 255 / 0.7);
+    align-content: center;
+    justify-content: center;
+    gap: 18px;
+    padding: 24px;
+    pointer-events: none;
+  }
+
+  .telechargements h1 {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  .dl {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    min-width: 250px;
+    min-height: 68px;
+    box-sizing: border-box;
+    padding: 0 30px 0 24px;
+    border: 1px solid #7cc24a;
     border-radius: 999px;
-    background: linear-gradient(to bottom, rgb(255 255 255 / 0.35), rgb(255 255 255 / 0.12)), #3c8c5a;
-    box-shadow: 0 6px 18px rgb(10 40 25 / 0.35);
-    color: #fff;
-    font: 600 17px/1.2 var(--texte);
+    background: #a3e070;
+    box-shadow: 0 4px 18px rgb(40 90 20 / 0.28);
+    color: #173d0b;
+    font: 800 19px/1.15 var(--texte);
     text-decoration: none;
-    transition: transform 0.15s;
+    pointer-events: auto;
+    transition: transform 0.38s cubic-bezier(0.3, 1.6, 0.5, 1), background-color 0.2s ease;
   }
 
-  .telecharger:hover {
-    transform: translateY(-1px);
+  .dl small {
+    display: block;
+    margin-top: 2px;
+    font-size: 12.5px;
+    font-weight: 600;
+    opacity: 0.8;
   }
 
-  .telecharger:focus-visible {
-    outline: 2px solid #fff;
-    outline-offset: 3px;
-  }
-
-  .telecharger svg {
+  .dl svg {
     flex: none;
   }
 
-  .telecharger small {
-    display: block;
-    font-weight: 400;
-    font-size: 13px;
-    opacity: 0.9;
+  a.dl:hover {
+    background: #96d861;
   }
 
-  .note {
-    margin-top: 12px !important;
-    color: rgb(255 255 255 / 0.85);
-    font-size: 13.5px;
+  a.dl:active {
+    transform: scale(0.95);
   }
 
-  .bureau a:not(.telecharger) {
-    color: #fff;
-    font-weight: 600;
-    text-underline-offset: 3px;
+  a.dl:focus-visible {
+    outline: 3px solid #fff;
+    outline-offset: 3px;
   }
 
-  .bureau .retour {
-    display: inline-block;
-    margin-top: 22px;
+  /* Mac: not yet */
+  .dl-bientot {
+    background: #d6efc2;
+    border-color: #b9e09b;
+    color: #4a6b3a;
+    box-shadow: none;
+    cursor: default;
   }
 
-  /* the installer's fingerprint: long, breaks anywhere */
-  .empreinte code {
-    font-size: 12px;
-    overflow-wrap: anywhere;
+  @media (max-width: 560px) {
+    .telechargements {
+      flex-direction: column;
+    }
+
+    .dl {
+      width: min(100%, 320px);
+    }
   }
 </style>
 <script type="application/ld+json">
@@ -209,60 +156,6 @@
         "@id": "https://belai.garden/#org"
       },
       "screenshot": "https://belai.garden/videos/fond-ecran.jpg"
-    },
-    {
-      "@type": "VideoObject",
-      "name": "So stellen Sie Ihren Blumenstrauß auf Ihren Desktop",
-      "description": "Eine einminütige Anleitung: Belai Bureau herunterladen, Wallet verknüpfen, Blumenstrauß auf den Bildschirm holen, platzieren, Größe wählen und fixieren, sechs Sekunden gedrückt halten, um ihn erneut zu verschieben.",
-      "thumbnailUrl": "https://belai.garden/videos/fond-ecran.jpg",
-      "contentUrl": "https://belai.garden/videos/fond-ecran.mp4",
-      "uploadDate": "2026-10-16T14:25:16+02:00",
-      "duration": "PT1M1S",
-      "width": 720,
-      "height": 1280
-    },
-    {
-      "@type": "HowTo",
-      "name": "So stellen Sie einen digitalen Blumenstrauß auf Ihren Windows-Desktop",
-      "inLanguage": "de",
-      "totalTime": "PT2M",
-      "tool": [
-        {
-          "@type": "HowToTool",
-          "name": "Belai Bureau (kostenlos, Windows 10 und 11)"
-        },
-        {
-          "@type": "HowToTool",
-          "name": "Eine Wallet, die einen Blumenstrauß hält"
-        }
-      ],
-      "step": [
-        {
-          "@type": "HowToStep",
-          "position": 1,
-          "text": "Laden Sie Belai Bureau herunter und installieren Sie es."
-        },
-        {
-          "@type": "HowToStep",
-          "position": 2,
-          "text": "Verknüpfen Sie Ihre Wallet über das Belai-Symbol neben der Uhr."
-        },
-        {
-          "@type": "HowToStep",
-          "position": 3,
-          "text": "Wählen Sie Ihren Blumenstrauß und holen Sie ihn auf den Bildschirm: eine Signatur, kostenlos, keine Transaktion."
-        },
-        {
-          "@type": "HowToStep",
-          "position": 4,
-          "text": "Platzieren Sie ihn, wählen Sie seine Größe, stellen Sie ihn vor oder hinter Ihre Fenster und fixieren Sie ihn dann mit ✓."
-        },
-        {
-          "@type": "HowToStep",
-          "position": 5,
-          "text": "Um ihn erneut zu verschieben, halten Sie die Maustaste auf dem Blumenstrauß sechs Sekunden lang gedrückt."
-        }
-      ]
     }
   ]
 }
@@ -275,10 +168,10 @@
   Edit this file, never the generated pages; then run: node decor/scene/build.mjs
 -->
 <!--
-  Your bouquet on your computer: the how-to video (videos/fond-ecran.mp4, made in belai-studio, lot T10) and Belai Bureau
-  to download (telechargements/, a copy of bureau/livrables; its SHA-256 below must follow each new installer). Structured
-  data: the app (SoftwareApplication), the video (VideoObject) and the steps (HowTo). The header and the footer come from entete.js; the decor is
-  the shop's still layers (decor/out/), as on the About page.
+  Belai Bureau to download (telechargements/, a copy of bureau/livrables), Windows and Mac (coming soon); nothing else
+  (owner, 2026-10-27: no toolbar, no explanation, they are in the shop's demo "On your desktop"). Structured data: the app
+  (SoftwareApplication). entete.js still gives the footer's Legal pill (the legal notice reachable from every page); the
+  decor is the shop's still layers (decor/out/), as on the About page.
 -->
 <div class="scene" id="scene" aria-hidden="true">
   <div class="monde">
@@ -290,35 +183,16 @@
   </div>
 </div>
 
-<main class="bureau">
+<main class="telechargements">
   <h1>Ihr Blumenstrauß auf Ihrem Desktop</h1>
-  <p class="chapeau">Stellen Sie den Blumenstrauß, den Sie gesammelt haben, auf den Desktop Ihres Computers – mit Belai Bureau, einem kostenlosen Widget für Windows.</p>
-
-  <div class="bureau-corps">
-    <video class="bureau-video" src="videos/fond-ecran.mp4" poster="videos/fond-ecran.jpg" controls autoplay muted loop playsinline
-      preload="metadata" width="720" height="1280" aria-label="Anleitungsvideo: Ihren Blumenstrauß Schritt für Schritt auf den Desktop stellen (nur Musik; die Schritte stehen daneben)"></video>
-
-    <div>
-      <h2>In fünf Schritten</h2>
-      <ol>
-        <li>Laden Sie Belai Bureau herunter und installieren Sie es.</li>
-        <li>Verknüpfen Sie Ihre Wallet über das Belai-Symbol neben der Uhr.</li>
-        <li>Wählen Sie Ihren Blumenstrauß und holen Sie ihn auf den Bildschirm: eine Signatur, kostenlos, keine Transaktion.</li>
-        <li>Platzieren Sie ihn, wählen Sie seine Größe, stellen Sie ihn vor oder hinter Ihre Fenster und fixieren Sie ihn dann mit ✓.</li>
-        <li>Um ihn erneut zu verschieben, halten Sie die Maustaste auf dem Blumenstrauß sechs Sekunden lang gedrückt.</li>
-      </ol>
-
-      <a class="telecharger" id="telecharger" href="telechargements/Belai-Bureau-0.1.0-x64-setup.exe" download>
-        <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7.5 10.5 12 15l4.5-4.5M5 19.5h14"/></svg>
-        <span>Belai Bureau herunterladen<small>Windows 10 und 11 · 3 MB · kostenlos</small></span>
-      </a>
-      <p class="note">Nur die Wallet, die einen Blumenstrauß hält, kann ihn anzeigen. Beim ersten Start warnt Windows möglicherweise, dass es die App noch nicht kennt: „Weitere Informationen“, dann „Trotzdem ausführen“. Die App selbst ist vorerst nur auf Französisch verfügbar.</p>
-      <p class="note empreinte">Version 0.1.0 · SHA-256 <code>276597f33e108c53056fbe27964aac390ecfa8afd28a2f17a50994bcd6cd9558</code>
-        · <a href="de/legal.html#app">Lizenz und Datenschutz</a></p>
-    </div>
-  </div>
-
-  <a class="retour" href="de/index.html">← Zurück zu den Blumensträußen</a>
+  <a class="dl" id="telecharger" href="telechargements/Belai-Bureau-0.1.0-x64-setup.exe" download>
+    <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7.5 10.5 12 15l4.5-4.5M5 19.5h14"/></svg>
+    <span>Windows<small>10 und 11 · 3 MB · kostenlos</small></span>
+  </a>
+  <span class="dl dl-bientot" aria-disabled="true">
+    <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>
+    <span>Mac<small>Demnächst</small></span>
+  </span>
 </main>
 
 <script src="entete.js?v=161cfae1eb" defer></script>
