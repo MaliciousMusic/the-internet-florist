@@ -682,8 +682,14 @@
       nameEl.className = 'nom-ciel';
       nameEl.setAttribute('aria-hidden', 'true');
       nameEl.innerHTML = '<span class="nom-ligne"><span class="nom-titre"></span><span class="nom-copies"></span><span class="nom-fane"></span></span><span class="nom-sous"></span>';
-      // in the screen's top band (owner, 2026-10-27), over the canvas; outside the scene, which the close-up scales
-      document.body.append(nameEl);
+      // in the screen's top band (owner, 2026-10-27), behind the bouquets (« les textes doivent être derrière le
+      // bouquet »): just under the canvas, over the sky; held still in the close-up as the canvas is
+      // (in a frame over the whole scene, so the close-up's counter-transform starts from the scene's corner as the canvas's)
+      const cadre = document.createElement('div');
+      cadre.className = 'nom-cadre';
+      cadre.append(nameEl);
+      toile.canvas.before(cadre);
+      toile.tenir(cadre);
       addEventListener('resize', fitName);
       // (the name's thin face arrives after the first measure)
       if (document.fonts) document.fonts.ready.then(fitName);
