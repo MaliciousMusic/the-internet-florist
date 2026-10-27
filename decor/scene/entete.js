@@ -92,6 +92,7 @@
       el.href = `${P}index.html?rayon=${name}`;
     }
     el.className = 'dock-bouton';
+    el.dataset.icone = name;
     el.title = label;
     el.setAttribute('aria-label', label);
     el.innerHTML = ICONS[name];
@@ -103,6 +104,7 @@
   const phone = !matchMedia('(min-width: 900px) and (min-aspect-ratio: 4/3)').matches;
   const desk = document.createElement('a');
   desk.className = 'dock-bouton';
+  desk.dataset.icone = phone ? 'telecharger' : 'bureau';
   desk.href = `${P}desktop.html${phone ? '#telecharger' : ''}`;
   desk.title = phone ? T.appTitle : T.desktopTitle;
   desk.setAttribute('aria-label', phone ? T.appLabel : T.desktopLabel);
@@ -121,6 +123,7 @@
     const sound = document.createElement('button');
     sound.type = 'button';
     sound.className = 'dock-bouton';
+    sound.dataset.icone = 'son';
     const remember = (v) => { try { localStorage.setItem('son', v ? '1' : '0'); } catch (_) {} };
     const show = (v) => {
       const label = v ? T.soundOff : T.soundOn;
@@ -152,6 +155,7 @@
   }
   const about = document.createElement('a');
   about.className = 'dock-bouton';
+  about.dataset.icone = 'apropos';
   about.href = `${P}about.html`;
   about.title = T.about;
   about.setAttribute('aria-label', T.about);
