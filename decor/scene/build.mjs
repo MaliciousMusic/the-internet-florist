@@ -218,6 +218,7 @@ function i18n(L, page) {
     p: prefix(L),
     langues: langs.map((A) => ({ code: A.code, name: A.name, href: `${prefix(A)}${page}.html` })),
     t: L.js,
+    bureau: { installer, win: L.desktop.winSmall, soon: L.desktop.soon },
     alts: Object.fromEntries(cfg.produits.map((p) => [p.id, describe(L, p)])),
   };
   return `<script type="application/json" id="i18n">${JSON.stringify(data).replace(/<\//g, '<\\/')}</script>`;
@@ -272,7 +273,8 @@ for (const L of langs) {
 // ---------- sitemap.xml, with the language alternates of each page
 const FREQ = { index: ['daily', '1.0'], desktop: ['monthly', '0.8'], about: ['monthly', '0.7'], legal: ['yearly', '0.3'] };
 let sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n';
-for (const page of PAGES)
+// (desktop.html only leads to the shop with Belai Bureau's downloads open: not in the sitemap)
+for (const page of PAGES.filter((p) => p !== 'desktop'))
   for (const L of langs) {
     sm += `  <url>\n    <loc>${pageUrl(L, page)}</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>${FREQ[page][0]}</changefreq>\n    <priority>${FREQ[page][1]}</priority>\n`;
     for (const A of langs) sm += `    <xhtml:link rel="alternate" hreflang="${A.code}" href="${pageUrl(A, page)}"/>\n`;
@@ -298,7 +300,7 @@ Key facts:
 ## Pages
 
 - [Bouquets of the day](${ORIGIN}/): the shop, a meadow where each bouquet blooms on a lava pillar
-- [Your bouquet on your desktop](${ORIGIN}/desktop): the one-minute how-to video and the Belai Bureau download
+- [Belai Bureau](${ORIGIN}/telechargements/${installer}): the free Windows widget's installer (Mac coming soon)
 - [About](${ORIGIN}/about): how the flowers are drawn, how a bouquet is priced, questions and answers
 - [Legal](${ORIGIN}/legal): legal notice, terms of sale, privacy, app licence, accessibility
 

@@ -120,7 +120,7 @@ export default {
   <p>When you buy, you can give the bouquet: a short message carried by the insects, a piece of music, and a code to pass on. The person you give it to receives it in “My gifts” with your first name and that code.</p>
 
   <h2>On your desktop</h2>
-  <p>With <a href="{{p}}desktop.html">Belai Bureau</a>, a free widget for Windows, the bouquet you collected stands on your
+  <p>With <a href="{{p}}index.html?bureau">Belai Bureau</a>, a free widget for Windows, the bouquet you collected stands on your
     computer’s desktop, at the size you choose, in front of or behind your windows.</p>
 
   <h2>Growing the garden</h2>

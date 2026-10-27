@@ -397,3 +397,116 @@
     margin: 0 3px;
   }
 }
+
+/* ---------- Belai Bureau's downloads (entete.js; owner, 2026-10-27): a glass stack in the middle of the screen holding the
+   two buttons, Windows over Mac; the buttons in one colour as Buy is, a light apple green, their words dark green (white
+   would not read on it); the Mac one waits, paler */
+.bureau-voile {
+  position: fixed;
+  inset: 0;
+  z-index: 70;
+  display: grid;
+  place-items: center;
+  padding: 16px;
+  background: rgb(10 34 70 / 0.14);
+}
+
+.bureau-voile[hidden] {
+  display: none;
+}
+
+.bureau-pile {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: min(100%, 320px);
+  box-sizing: border-box;
+  padding: 12px;
+  border: 1px solid var(--glass-bord);
+  border-radius: 34px;
+  background: var(--glass);
+  -webkit-backdrop-filter: var(--glass-flou);
+  backdrop-filter: var(--glass-flou);
+  box-shadow: var(--glass-ombre);
+}
+
+.bureau-pile::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(140deg, rgb(255 255 255 / 0.95), rgb(255 255 255 / 0.22) 28%, rgb(255 255 255 / 0) 50%, rgb(255 255 255 / 0.14) 72%, rgb(255 255 255 / 0.7));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+  pointer-events: none;
+}
+
+/* it pops in from the dock's side, a little spring */
+.bureau-voile.ouvre .bureau-pile {
+  animation: bureau-pop 0.42s cubic-bezier(0.3, 1.5, 0.5, 1);
+}
+
+@keyframes bureau-pop {
+  from {
+    transform: translateY(18px) scale(0.9);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bureau-voile.ouvre .bureau-pile {
+    animation: none;
+  }
+}
+
+.bureau-pile .dl {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-height: 66px;
+  box-sizing: border-box;
+  padding: 0 26px 0 22px;
+  border: 1px solid #7cc24a;
+  border-radius: 999px;
+  background: #a3e070;
+  box-shadow: 0 3px 12px rgb(40 90 20 / 0.22);
+  color: #173d0b;
+  font: 800 19px/1.15 var(--texte);
+  text-decoration: none;
+  transition: transform 0.38s cubic-bezier(0.3, 1.6, 0.5, 1), background-color 0.2s ease;
+}
+
+.bureau-pile .dl small {
+  display: block;
+  margin-top: 2px;
+  font-size: 12.5px;
+  font-weight: 600;
+  opacity: 0.8;
+}
+
+.bureau-pile .dl svg {
+  flex: none;
+}
+
+.bureau-pile a.dl:hover {
+  background: #96d861;
+}
+
+.bureau-pile a.dl:active {
+  transform: scale(0.95);
+}
+
+.bureau-pile a.dl:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 3px;
+}
+
+.bureau-pile .dl-bientot {
+  background: #d6efc2;
+  border-color: #b9e09b;
+  color: #4a6b3a;
+  box-shadow: none;
+  cursor: default;
+}

@@ -121,66 +121,6 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://belai.garden/about"/>
   </url>
   <url>
-    <loc>https://belai.garden/desktop</loc>
-    <lastmod>2026-10-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://belai.garden/desktop"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://belai.garden/fr/desktop"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://belai.garden/es/desktop"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://belai.garden/zh/desktop"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://belai.garden/de/desktop"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://belai.garden/desktop"/>
-  </url>
-  <url>
-    <loc>https://belai.garden/fr/desktop</loc>
-    <lastmod>2026-10-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://belai.garden/desktop"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://belai.garden/fr/desktop"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://belai.garden/es/desktop"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://belai.garden/zh/desktop"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://belai.garden/de/desktop"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://belai.garden/desktop"/>
-  </url>
-  <url>
-    <loc>https://belai.garden/es/desktop</loc>
-    <lastmod>2026-10-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://belai.garden/desktop"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://belai.garden/fr/desktop"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://belai.garden/es/desktop"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://belai.garden/zh/desktop"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://belai.garden/de/desktop"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://belai.garden/desktop"/>
-  </url>
-  <url>
-    <loc>https://belai.garden/zh/desktop</loc>
-    <lastmod>2026-10-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://belai.garden/desktop"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://belai.garden/fr/desktop"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://belai.garden/es/desktop"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://belai.garden/zh/desktop"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://belai.garden/de/desktop"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://belai.garden/desktop"/>
-  </url>
-  <url>
-    <loc>https://belai.garden/de/desktop</loc>
-    <lastmod>2026-10-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://belai.garden/desktop"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://belai.garden/fr/desktop"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://belai.garden/es/desktop"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://belai.garden/zh/desktop"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://belai.garden/de/desktop"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://belai.garden/desktop"/>
-  </url>
-  <url>
     <loc>https://belai.garden/legal</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>yearly</changefreq>

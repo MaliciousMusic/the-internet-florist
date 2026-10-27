@@ -14,7 +14,7 @@ Key facts:
 ## Pages
 
 - [Bouquets of the day](https://belai.garden/): the shop, a meadow where each bouquet blooms on a lava pillar
-- [Your bouquet on your desktop](https://belai.garden/desktop): the one-minute how-to video and the Belai Bureau download
+- [Belai Bureau](https://belai.garden/telechargements/Belai-Bureau-0.1.0-x64-setup.exe): the free Windows widget's installer (Mac coming soon)
 - [About](https://belai.garden/about): how the flowers are drawn, how a bouquet is priced, questions and answers
 - [Legal](https://belai.garden/legal): legal notice, terms of sale, privacy, app licence, accessibility
 

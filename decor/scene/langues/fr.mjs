@@ -120,7 +120,7 @@ export default {
   <p>À l’achat, vous pouvez offrir le bouquet : un court message porté par les insectes, une musique, et un code à transmettre. La personne à qui vous l’offrez le reçoit dans « Mes cadeaux » avec votre prénom et ce code.</p>
 
   <h2>Sur votre bureau</h2>
-  <p>Avec <a href="{{p}}desktop.html">Belai Bureau</a>, un widget gratuit pour Windows, le bouquet que vous avez collectionné
+  <p>Avec <a href="{{p}}index.html?bureau">Belai Bureau</a>, un widget gratuit pour Windows, le bouquet que vous avez collectionné
     trône sur le bureau de votre ordinateur, à la taille de votre choix, devant ou derrière vos fenêtres.</p>
 
   <h2>Faire grandir le jardin</h2>
