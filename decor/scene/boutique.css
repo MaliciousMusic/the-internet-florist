@@ -334,12 +334,11 @@
 }
 
 /* ---------- the close-up: a click on the bouquet brings the camera closer ----------
-   The whole scene is scaled by one transform (boutique.js sets it), from its top left corner; the bouquet's box takes the
-   room between the header and the Buy button. Not kept on its own layer (no will-change): once still, the browser draws
-   the decor again at the new size, sharp. */
+   The whole scene is scaled by one transform from its top left corner, moved by boutique.js at every frame with the
+   canvas's stage (toile.mjs), 0.9 s on cubic-bezier(0.3, 0.1, 0.2, 1); the bouquet's box takes the room between the header
+   and the Buy button. */
 .scene {
   transform-origin: 0 0;
-  transition: transform 0.9s cubic-bezier(0.3, 0.1, 0.2, 1);
 }
 
 /* the pager: one dot per bouquet of the day, in a glass pill fixed on the screen (boutique.js); the shown bouquet's dot is
@@ -398,9 +397,8 @@
   border-radius: 999px;
 }
 
-/* the close-up: no pager, and only the chosen bouquet (owner 2026-10-26: the neighbours on their pillars hide) */
-.scene.proche .pager,
-.scene.proche .frise-bouquet:not(.choisi) {
+/* the close-up: no pager (the neighbours' bouquets are hidden in the canvas: Frise.seul) */
+.scene.proche .pager {
   visibility: hidden;
 }
 

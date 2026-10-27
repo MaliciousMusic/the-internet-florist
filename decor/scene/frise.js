@@ -1,14 +1,16 @@
 // frise.js: the catalogue frieze of the shop (decor/FRISE.md, decor/frise.mjs): the camera travels along a ring of 21
 // pillars, each bouquet on its own, every depth of the decor sliding at its own speed.
 //
-// What it draws, inside .monde (the world frame, 2400 x 1350 units, scene.css), far to near:
+// What it draws, as sprites of the scene's one PixiJS canvas (toile.mjs; decor/SPRITES.md, owner 2026-10-27), far to near:
 // - the strips of out/frise/frise.json (frise_tuiles.mjs): the horizon and the ground's depth slices, each a looping
-//   strip of SVG tiles moved by f x c (c the camera, in units at the pillars' depth); only the tiles near the view are
-//   in the page;
-// - between the slices "arriere" and "avant": the pillars (out/frise/piliers/<i>.svg) and, over the whole ground as in
-//   the single scene, the bouquets, one plane per place in view (boutique.js poses them: Frise.poser);
-// - the foreground's clumps (out/scene.json "touffes", swaying), repeated along their own fast strip;
-// - the name of the bouquet facing the camera, in the sky.
+//   strip of tiles moved by f x c (c the camera, in units at the pillars' depth), drawn from their baked pictures
+//   (frise_cuisson.mjs; their SVG is the source, never read by the page); only the tiles near the view are loaded;
+// - between the slices "arriere" and "avant": the pillars and, over the whole ground as in the single scene, the
+//   bouquets, a group per place in view in each of the four depth layers (boutique.js poses them: Frise.poser, with
+//   Frise.poseSprites: the bouquet's baked sprites, still on the frieze, swaying in the close-up);
+// - the foreground's clumps (out/scene.json "touffes", swaying), repeated along their own fast strip, when the insects
+//   do not draw them;
+// - in the page, over the canvas: the name of the bouquet facing the camera, in the sky.
 //
 // The camera (owner 2026-10-26): free drag (finger, mouse, trackpad or wheel); let go, it glides on and always comes to
 // rest facing a bouquet, a quick swipe on the next one, in one smooth motion from the finger's speed; the arrow keys and the pager's dots travel to a bouquet; a tap on a bouquet beside the centre brings it
@@ -24,6 +26,9 @@
 //   Frise.face()                    the place facing the camera, or -1 while it moves away from one
 //   Frise.bouquet(place)            the bouquet shown on a place (null if not yet)
 //   Frise.fige(on)                  no camera move (the close-up)
+//   Frise.seul(place | null)        only that place's bouquet shown (the close-up), or all
+//   Frise.toile                     resolves with the canvas (toile.mjs) once it is made
+//   Frise.poseSprites(plane, url, opt) -> bouquet: a bouquet's sprites (sprites.mjs) on a place's plane
 //   events on document: "frise:arret" (detail: place; the camera has stopped facing it), "frise:depart" (it moves)
 (() => {
   'use strict';
@@ -46,12 +51,13 @@
   let c = +q.get('c') || 0; // the camera
   let k = 1; // CSS px per world unit (at rest)
   let half = 1200; // half the world's width in view (units)
-  const bands = []; // { id, f, x0, cx, w, h, tiles: [[x, w]], el, on: Map(key -> img) }
-  let pillarsEl, clumpsEl, nameEl;
-  // the bouquets' plane (index.html #bouquet, the one boutique.js and the insects know): a plane per place inside it
-  const bouquetsEl = $('bouquet');
-  const pillarImgs = new Map(); // key -> img
-  const places = new Map(); // key "place:m" -> { place, m, plane, b, loading }
+  let ml = 0; // the world frame's corner in the scene (CSS px, at rest)
+  let mt = 0;
+  let toile = null; // the canvas (toile.mjs)
+  const bands = []; // { id, f, x0, cx, w, h, tiles: [[x, w]], layer, on: Map(key -> piece) }
+  let nameEl;
+  const pillarImgs = new Map(); // key -> piece
+  const places = new Map(); // key "place:m" -> { place, i, plane, b }
   let poser = null;
   let nameOf = () => '';
   let frozen = false;
@@ -61,84 +67,64 @@
 
   // ---------- the world in view
   const measure = () => {
-    k = monde.offsetWidth / WW || 1;
+    const cs = getComputedStyle(monde);
+    const mw = parseFloat(cs.width) || monde.offsetWidth;
+    k = mw / WW || 1;
     half = scene.clientWidth / k / 2;
+    ml = (scene.clientWidth - mw) / 2;
+    mt = parseFloat(cs.top) || 0;
+  };
+  // a world layer of the canvas: k CSS px per unit from the world frame's corner, moved back by `shift` units
+  const placeWorld = (L, shift) => {
+    L.scale.set(k);
+    L.position.set(ml - shift * k, mt);
   };
   const wrapDelta = (d, L) => ((((d + L / 2) % L) + L) % L) - L / 2;
 
-  // A piece of decor (a tile, a pillar): its compiled picture first (frise_cuisson.mjs, decoded off the main thread), its
-  // SVG in its place later, when the camera rests and the page is idle (owner, 2026-10-25: "image compilée d'abord puis SVG
-  // au repos, seulement pour le décor"); ?apercu=non: the SVG at once, ?apercu=garde: the pictures only.
+  // A piece of decor (a tile, a pillar): a sprite of its baked picture (frise_cuisson.mjs; owner, 2026-10-27: the site shows
+  // sprites only, their SVG stays the source). ?apercu=non: its SVG read as a texture instead (to compare).
+  // The pictures are shared by the copies of a tile along the loop; one no copy uses any more is let go two seconds later.
   const AP = q.get('apercu');
-  const toSwap = new Set();
-  function piece(parent, cls, svg, box, pre, dx) {
-    const mkImg = (src, [x, y, w, h]) => {
-      const img = new Image();
-      img.alt = '';
-      img.decoding = 'async';
-      img.draggable = false;
-      img.className = cls;
-      img.style.cssText = `left:${pct(x + dx, WW)};top:${pct(y, WH)};width:${pct(w, WW)};height:${pct(h, WH)}`;
-      img.src = OUT + 'frise/' + src;
-      return img;
-    };
-    const usePre = pre && AP !== 'non';
-    const el = usePre ? mkImg(pre[0], pre.slice(1)) : mkImg(svg, box);
-    const P = { el, svg: usePre && AP !== 'garde' ? [svg, box, mkImg] : null };
-    decorWait.push(new Promise((r) => {
-      el.onload = () => el.decode().then(r, r);
-      el.onerror = () => r();
-    }).then(() => (T.pieces[el.src.split('/frise/')[1]] = Math.round(performance.now()))));
-    parent.append(el);
-    if (P.svg) toSwap.add(P);
+  const uses = new Map(); // url -> count
+  const hold = (url) => uses.set(url, (uses.get(url) || 0) + 1);
+  const letGo = (url) => {
+    uses.set(url, uses.get(url) - 1);
+    setTimeout(() => {
+      if (uses.get(url) === 0) {
+        uses.delete(url);
+        toile.oublie(url);
+      }
+    }, 2000);
+  };
+  function piece(layer, svg, box, pre, dx) {
+    const [src, x, y, w, h] = pre && AP !== 'non' ? pre : [svg, ...box];
+    const url = OUT + 'frise/' + src;
+    const s = new toile.PIXI.Sprite();
+    s.position.set(x + dx, y);
+    s.visible = false;
+    layer.addChild(s);
+    const P = { s, url, gone: false };
+    hold(url);
+    decorWait.push(
+      toile
+        .texture(url)
+        .then((tex) => {
+          if (P.gone) return;
+          s.texture = tex;
+          s.width = w;
+          s.height = h;
+          s.visible = true;
+          T.pieces[src.split('?')[0]] = Math.round(performance.now());
+        })
+        .catch(() => {}),
+    );
     return P;
   }
   const drop = (P) => {
-    P.el.remove();
-    if (P.next) P.next.remove();
-    toSwap.delete(P);
+    P.gone = true;
+    P.s.destroy();
+    letGo(P.url);
   };
-  // the SVG under its picture, read hidden, shown once ready, the picture gone a frame later; one at a time, while the
-  // camera rests, those in view first
-  let swapping = false;
-  async function swaps() {
-    if (swapping || AP === 'garde') return;
-    swapping = true;
-    try {
-      while (!moving && toSwap.size) {
-        await idle();
-        if (moving) break;
-        const box = scene.getBoundingClientRect();
-        let P = null;
-        for (const Q of toSwap) {
-          const r = Q.el.getBoundingClientRect();
-          if (r.right > box.left && r.left < box.right) { P = Q; break; }
-        }
-        if (!P) break;
-        toSwap.delete(P);
-        const [svg, b, mkImg] = P.svg;
-        const next = mkImg(svg, b);
-        next.style.visibility = 'hidden';
-        P.next = next;
-        P.el.after(next);
-        await new Promise((r) => {
-          next.onload = () => next.decode().then(r, r);
-          next.onerror = r;
-        });
-        if (!next.isConnected) continue;
-        next.style.visibility = '';
-        await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
-        if (next.isConnected) {
-          P.el.remove();
-          P.el = next;
-          P.next = null;
-        }
-      }
-    } finally {
-      swapping = false;
-    }
-  }
-  const idle = () => new Promise((r) => (window.requestIdleCallback ? requestIdleCallback(() => r(), { timeout: 400 }) : setTimeout(r, 40)));
 
   // a strip: the tiles over [a, b) of its own units, each laid at its place(s) along the loop
   function strip(B, margin) {
@@ -153,7 +139,7 @@
         want.add(key);
         if (B.on.has(key)) continue;
         const pre = B.apercus && B.apercus[j];
-        B.on.set(key, piece(B.el, 'frise-tuile', `${B.id}/${j}.svg${ver ? `?v=${ver}` : ''}`, [x, 0, w, B.h], pre, m * B.w - B.cx + M.cx));
+        B.on.set(key, piece(B.layer, `${B.id}/${j}.svg${ver ? `?v=${ver}` : ''}`, [x, 0, w, B.h], pre, m * B.w - B.cx + M.cx));
       }
     });
     // the tiles far behind go (two screens away)
@@ -167,7 +153,7 @@
         B.on.delete(key);
       }
     }
-    B.el.style.transform = `translate3d(${(-shift * k).toFixed(2)}px,0,0)`;
+    placeWorld(B.layer, shift);
   }
 
   // the places in view (and one pitch beyond): their keys, nearest the centre first
@@ -191,29 +177,61 @@
       if (pillarImgs.has(key)) continue;
       const P = M.piliers[place];
       if (!P) continue;
-      pillarImgs.set(key, piece(pillarsEl, 'frise-pilier', P.src + (P.v ? `?v=${P.v}` : ''), P.boite, P.apercu, i * M.pas));
+      pillarImgs.set(key, piece(toile.layer('piliers'), P.src + (P.v ? `?v=${P.v}` : ''), P.boite, P.apercu, i * M.pas));
     }
     for (const [key, P] of pillarImgs) {
       if (want.has(key)) continue;
       drop(P);
       pillarImgs.delete(key);
     }
-    pillarsEl.style.transform = `translate3d(${(-c * k).toFixed(2)}px,0,0)`;
+    placeWorld(toile.layer('piliers'), c);
   }
 
   // The bouquets: posed one at a time, the nearest the centre first, only while the camera rests (a bouquet posed during a
   // travel stalls it: 7 frames per second on a phone slowed 4 times, against 35-44 without), and up to two places beyond the
   // view, so the next one is there when the camera comes; those three places beyond the view are taken down.
   let posing = false;
+  // A place's plane: a group in each of the four depth layers of the bouquets (toile.mjs bq-0..3), at the place's offset
+  // in the world, the insects flying between them.
+  let only = null; // the close-up's place: the others hidden
+  const placeBouquets = () => {
+    for (let g = 0; g < 4; g++) placeWorld(toile.layer('bq-' + g), c);
+  };
+  function makePlane(place, i, dy) {
+    const groups = [0, 1, 2, 3].map((g) => {
+      const ct = new toile.PIXI.Container();
+      ct.position.set(i * M.pas, dy);
+      toile.layer('bq-' + g).addChild(ct);
+      return ct;
+    });
+    let alive = true;
+    return {
+      place,
+      x: i * M.pas,
+      y: dy,
+      groups,
+      // (boutique.js asks, as it did of a DOM plane, whether the place is still laid once its bouquet is read)
+      get isConnected() {
+        return alive;
+      },
+      montre(on) {
+        for (const g of groups) g.visible = on;
+      },
+      destroy() {
+        alive = false;
+        for (const g of groups) g.destroy({ children: true });
+      },
+    };
+  }
   async function bouquets() {
-    bouquetsEl.style.transform = `translate3d(${(-c * k).toFixed(2)}px,0,0)`;
+    placeBouquets();
     if (!poser) return;
     const near = placesNear(M.pas * 2);
     const keep = new Set(placesNear(M.pas * 3).map((p) => p.key));
     for (const [key, P] of places) {
       if (keep.has(key)) continue;
       if (P.b) P.b.repli();
-      P.plane.remove();
+      P.plane.destroy();
       places.delete(key);
     }
     if (posing || moving) return;
@@ -221,13 +239,10 @@
     try {
       for (const { place, i, key } of near) {
         if (places.has(key)) continue;
-        const plane = document.createElement('div');
-        plane.className = 'plan frise-bouquet';
         // the bouquet stands on its own pillar's top (2 units at most from the opening one's)
         const dy = M.piliers[place] && M.piliers[0] ? M.piliers[place].sommet - M.piliers[0].sommet : 0;
-        plane.style.cssText = `left:${pct(i * M.pas, WW)};top:${pct(dy, WH)}`;
-        plane.dataset.place = place;
-        bouquetsEl.append(plane);
+        const plane = makePlane(place, i, dy);
+        plane.montre(only == null || only === place);
         const P = { place, i, plane, b: null };
         places.set(key, P);
         try {
@@ -253,35 +268,59 @@
   // four times the pillars' speed, so a whole new set comes in at every place: their compiled pictures (out/premier/,
   // premier.mjs, as the insects' sprites draw them), never their SVG, whose reading stalled a phone's travel for a second.
   let clumpList = [];
-  const clumpOn = new Map();
+  const clumpOn = new Map(); // "j:m" -> { s, t, url }
   function clumps() {
     if (!clumpList.length) return;
-    const T = M.touffes;
-    const shift = c * T.f;
+    const T2 = M.touffes;
+    const shift = c * T2.f;
     const a = M.cx - half - 300 + shift, b = M.cx + half + 300 + shift;
     const want = new Set();
-    for (let m = Math.floor((a - WW) / T.periode); m * T.periode < b; m++) {
+    for (let m = Math.floor((a - WW) / T2.periode); m * T2.periode < b; m++) {
       clumpList.forEach((t, j) => {
         const [bx, by, bw, bh] = t.box;
-        const x0 = bx + m * T.periode;
+        const x0 = bx + m * T2.periode;
         if (x0 + bw < a || x0 > b) return;
         const key = `${j}:${m}`;
         want.add(key);
         if (clumpOn.has(key)) return;
-        const img = new Image();
-        img.alt = '';
-        img.decoding = 'async';
-        img.className = 'frise-touffe';
-        img.style.cssText = `left:${pct(x0, WW)};top:${pct(by, WH)};width:${pct(bw, WW)};height:${pct(bh, WH)};transform-origin:${t.o}`;
-        for (const [p, v] of Object.entries({ '--a': `${t.a}deg`, '--t': `${t.t}s`, '--d': `${t.d}s` })) img.style.setProperty(p, v);
-        img.src = OUT + t.src + (t.v ? `?v=${t.v}` : '');
-        clumpsEl.append(img);
-        clumpOn.set(key, img);
+        // turned about its foot (scene.css's "balance", drawn here by swayClumps)
+        const s = new toile.PIXI.Sprite();
+        s.visible = false;
+        toile.layer('touffes').addChild(s);
+        const url = OUT + t.src + (t.v ? `?v=${t.v}` : '');
+        const C = { s, t, url, gone: false };
+        hold(url);
+        toile.texture(url).then((tex) => {
+          if (C.gone) return;
+          s.texture = tex;
+          s.anchor.set(t.ox, t.oy);
+          s.position.set(x0 + t.ox * bw, by + t.oy * bh);
+          s.scale.set(bw / tex.width, bh / tex.height);
+          s.visible = true;
+        });
+        clumpOn.set(key, C);
       });
     }
-    for (const [key, img] of clumpOn) if (!want.has(key)) (img.remove(), clumpOn.delete(key));
-    clumpsEl.style.transform = `translate3d(${(-shift * k).toFixed(2)}px,0,0)`;
+    for (const [key, C] of clumpOn)
+      if (!want.has(key)) {
+        C.gone = true;
+        C.s.destroy();
+        letGo(C.url);
+        clumpOn.delete(key);
+      }
+    placeWorld(toile.layer('touffes'), shift);
   }
+  // each clump from -a to a and back, ease-in-out, t s each way, the gust crossing the field left to right (scene.css)
+  const swayClumps = (now) => {
+    if (!clumpOn.size || RM) return;
+    const t = now / 1000;
+    for (const C of clumpOn.values()) {
+      const u = (t - C.t.d) / C.t.t, n = Math.floor(u);
+      let f = u - n;
+      if (n & 1) f = 1 - f;
+      C.s.rotation = ((-C.t.a + 2 * C.t.a * f * f * (3 - 2 * f)) * Math.PI) / 180;
+    }
+  };
 
   // the name of the bouquet facing the camera, in the sky: it glides slower than the pillars and fades as its bouquet
   // leaves the centre
@@ -306,8 +345,8 @@
     for (const B of bands) strip(B, 260);
     pillars();
     clumps();
-    // (while it moves, only its transform: the bouquets are set up when the camera rests, stop())
-    bouquetsEl.style.transform = `translate3d(${(-c * k).toFixed(2)}px,0,0)`;
+    // (while it moves, only its place: the bouquets are set up when the camera rests, stop())
+    placeBouquets();
     name();
     dirty = false;
   }
@@ -361,7 +400,6 @@
     // pictures
     clearTimeout(restT);
     restT = setTimeout(bouquets, firstShown ? REST_MS : 0);
-    if (firstShown) firstShown.then(() => setTimeout(swaps, REST_MS + 400));
   }
   const REST_MS = 900;
   let restT = 0;
@@ -508,37 +546,121 @@
     if (!raf) draw();
   });
 
+  // ---------- a bouquet in sprites (sprites.mjs): its still picture on the frieze; in the close-up, its images, each
+  // turning round its joint in the breeze as aliveBq's (eclosion.js before 2026-10-27), all with one common head start
+  const AHEAD = 60000;
+  const swaying = new Set(); // fn(now) of the bouquets swaying (the close-up)
+  async function poseSprites(plane, url, opt = {}) {
+    const m =
+      opt.donnees ||
+      (await fetch(url).then((r) => (r.ok ? r.json() : Promise.reject(new Error(`bouquet ${r.status}`)))));
+    const base = url.slice(0, url.lastIndexOf('/') + 1);
+    const F = m.frise;
+    const still = new toile.PIXI.Sprite(await toile.texture(base + F.src));
+    still.position.set(F.x, F.y);
+    still.width = F.w;
+    still.height = F.h;
+    still.visible = false;
+    plane.groups[0].addChild(still);
+    // the depth groups of the close-up's images (as eclosion.js split them into its four boxes)
+    const per = Math.ceil(m.images / 4);
+    const groupOf = (k) => Math.min(3, Math.floor(k / per));
+    let shown = false;
+    let gone = false;
+    let near = null; // { sprites, sway, sheets }
+    const b = {
+      manifeste: { vb: m.vb, boite: m.boite, pied: m.pied, echelle: m.echelle, pieces: m.orig, finCroissanceMs: 0 },
+      // the place's offset in the world (the insects place the bouquet's flowers from it)
+      lieu: { x: plane.x, y: plane.y },
+      plans: plane.groups,
+      plan: m.orig.map((o) => groupOf(o.k)),
+      pieces: [still],
+      get vivant() {
+        return !gone;
+      },
+      montre() {
+        if (!shown) {
+          shown = true;
+          still.visible = !near;
+        }
+        return Promise.resolve(performance.now());
+      },
+      depart() {
+        return b.montre();
+      },
+      // the close-up: its finer sprites, swaying (owner 2026-10-27: the bouquets sway in the close-up only)
+      async proche(on) {
+        if (on && !near && !gone) {
+          const P = m.proche;
+          const sheets = P.sheets.map((s) => base + s);
+          const texs = await Promise.all(sheets.map((u) => toile.texture(u)));
+          if (gone || near) return;
+          const { Sprite, Texture, Rectangle } = toile.PIXI;
+          const sprites = [];
+          const moving = [];
+          for (const f of P.frames) {
+            const s = new Sprite(new Texture({ source: texs[f.sheet].source, frame: new Rectangle(f.sx, f.sy, f.sw, f.sh) }));
+            if (f.o) {
+              s.anchor.set((f.o[0] - f.x) / f.w, (f.o[1] - f.y) / f.h);
+              s.position.set(f.o[0], f.o[1]);
+              moving.push([s, f.z]);
+            } else s.position.set(f.x, f.y);
+            s.width = f.w;
+            s.height = f.h;
+            plane.groups[groupOf(f.k)].addChild(s);
+            sprites.push(s);
+          }
+          const sway = (now) => {
+            for (const [s, [amp, duration, delay]] of moving) s.rotation = ((amp * Math.PI) / 180) * Math.sin((2 * Math.PI * (now - delay + AHEAD)) / duration);
+          };
+          if (!RM) swaying.add(sway);
+          near = { sprites, sway, sheets };
+          still.visible = false;
+        } else if (!on && near) {
+          swaying.delete(near.sway);
+          for (const s of near.sprites) s.destroy();
+          for (const u of near.sheets) toile.oublie(u);
+          near = null;
+          still.visible = shown && !gone;
+        }
+      },
+      repli() {
+        b.arret();
+        return Promise.resolve();
+      },
+      arret() {
+        if (gone) return;
+        b.proche(false);
+        gone = true;
+        still.destroy();
+      },
+    };
+    b.pret = Promise.resolve(b);
+    b.vase = b.tout = b.grandi = b.pret;
+    b.parti = Promise.resolve(0);
+    return b;
+  }
+
   // ---------- start
   let decorRes;
   const decor = new Promise((r) => (decorRes = r));
+  const toileP = import('./toile.mjs');
   // (the files the manifests point to carry a digest of their content, ?v= (frise_versions.mjs, premier.mjs): a changed
   // picture is never taken from a cache under a new box)
   const pret = fetch(`${OUT}frise/frise.json`)
     .then((r) => (r.ok ? r.json() : Promise.reject(new Error(`frise.json ${r.status}`))))
     .then(async (m) => {
       M = m;
-      const mk = (cls, z) => {
-        const el = document.createElement('div');
-        el.className = `plan ${cls}`;
-        el.style.setProperty('--z', z);
-        return el;
-      };
-      // the strips go where the single scene's layers were: the horizon over the clouds, the slices in two groups round
-      // the pillars, the bouquets over all the ground (as before), the clumps in front
-      const anchor = $('frise-ancre');
-      const before = [];
-      const after = [];
-      let front = false;
-      for (const s of M.bandes) {
-        const B = { ...s, tiles: s.tuiles, on: new Map(), el: mk('frise-bande', s.id === 'horizon' ? 3 : front ? 6 : 4) };
-        B.el.dataset.bande = s.id;
-        if (s.id === M.devant) front = true;
-        (front ? after : before).push(B.el);
-        bands.push(B);
-      }
-      pillarsEl = mk('frise-piliers', 5);
-      clumpsEl = $('premier');
-      anchor.before(...before, pillarsEl, ...after);
+      // the canvas's layers in the single scene's order: the horizon and the far slices, the pillars, the near slices, the
+      // bouquets over all the ground, the clumps in front (toile.mjs)
+      toile = await (await toileP).creer({ scene, apres: monde, bandes: M.bandes.map((s) => s.id), loin: 'z6', milieu: 'arriere', devant: M.devant });
+      window.TOILE = toile;
+      toileRes(toile);
+      for (const s of M.bandes) bands.push({ ...s, tiles: s.tuiles, on: new Map(), layer: toile.layer('bande:' + s.id) });
+      toile.chaqueImage((now) => {
+        swayClumps(now);
+        for (const fn of swaying) fn(now);
+      });
       nameEl = document.createElement('div');
       nameEl.className = 'nom-ciel';
       nameEl.setAttribute('aria-hidden', 'true');
@@ -559,7 +681,7 @@
                   if (!p) return null;
                   const fx = ((t.x + t.w / 2) / 100) * WW, fy = WH * (1 - t.b / 100);
                   const [bx, by, bw, bh] = p.box;
-                  return { src: p.src, v: p.v, box: p.box, a: t.a, t: t.t, d: -t.t + (t.x / 100) * 1.6, o: `${(((fx - bx) / bw) * 100).toFixed(2)}% ${(((fy - by) / bh) * 100).toFixed(2)}%` };
+                  return { src: p.src, v: p.v, box: p.box, a: t.a, t: t.t, d: -t.t + (t.x / 100) * 1.6, ox: (fx - bx) / bw, oy: (fy - by) / bh };
                 })
                 .filter(Boolean);
               draw();
@@ -577,6 +699,8 @@
       stop();
       return M;
     });
+  let toileRes;
+  const toileReady = new Promise((r) => (toileRes = r));
   pret.catch((err) => {
     console.error('[frise]', err);
     decorRes(Math.round(performance.now()));
@@ -587,6 +711,8 @@
   window.Frise = {
     pret,
     decor,
+    toile: toileReady,
+    poseSprites,
     poser(fn) {
       poser = fn;
       if (M) bouquets();
@@ -614,6 +740,9 @@
         drag = null;
       }
     },
-    plan: () => bouquetsEl,
+    seul(place) {
+      only = place == null ? null : place;
+      for (const P of places.values()) P.plane.montre(only == null || P.place === only);
+    },
   };
 })();

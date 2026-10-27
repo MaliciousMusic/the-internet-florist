@@ -99,7 +99,8 @@ export class Cetoine {
 
   // the faux of the stroke: one of the drawings, chosen by time, the wings fully out
   strokeWings(dt, open = 1) {
-    this.phase = (this.phase + dt * this.S.fauxHz) % this.S.faux.length;
+    // (a chafer that never flew before has no phase yet: the HUD's carrier, porteuses.mjs, starts it in flight)
+    this.phase = ((this.phase || 0) + (dt || 0) * this.S.fauxHz) % this.S.faux.length;
     const d = this.S.faux[Math.floor(this.phase)];
     // unfolding: the wing comes out flat under the elytral margin, swept back along the body (flap -8, sweep 110), opening sideways
     // (sweep to 0) before it starts to beat (c061 to c064)

@@ -34,7 +34,9 @@
 <link rel="preload" href="boutique.json" as="fetch" crossorigin>
 <link rel="preload" href="../out/ciel.svg" as="image" fetchpriority="high">
 <link rel="preload" href="../out/frise/frise.json" as="fetch" crossorigin>
-<link rel="preload" href="bouquets/printemps-a-la-carpe/ouvert.json" as="fetch" crossorigin>
+<link rel="modulepreload" href="toile.mjs">
+<link rel="modulepreload" href="../../insectes/runtime/vendor/pixi-8.6.6.min.mjs">
+<link rel="preload" href="bouquets/printemps-a-la-carpe/sprites/sprites.json" as="fetch" crossorigin>
 <link rel="stylesheet" href="scene.css">
 <link rel="stylesheet" href="boutique.css">
 <link rel="stylesheet" href="entete.css">
@@ -661,7 +663,6 @@
 <pre class="perf perf-bq" id="perf-bq" hidden></pre>
 
 <script src="scene.js"></script>
-<script src="eclosion.js" defer></script>
 <script src="entete.js" defer></script>
 <script src="frise.js" defer></script>
 <script src="boutique.js" defer></script>

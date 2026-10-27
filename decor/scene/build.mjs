@@ -110,7 +110,9 @@ const apercu = (html) =>
   });
 
 function preloads() {
-  const first = cfg.produits[0].bouquet.replace(/manifeste\.json$/, 'ouvert.json');
+  // the first bouquet's sprites index (sprites.mjs); its picture is read by PixiJS's own loader (a worker), which a preload
+  // would not serve
+  const first = cfg.produits[0].bouquet.replace(/manifeste\.json$/, 'sprites/');
   const COL = '(max-aspect-ratio: 28/45)';
   const WIDE = '(min-aspect-ratio: 28.001/45)';
   // a layer with a compiled preview (calques.mjs) is asked for by its preview, which the page shows first
@@ -131,7 +133,10 @@ function preloads() {
     ...layer('ciel.svg', true),
     // the catalogue frieze's manifest (frise.js): its strips' tiles follow
     '<link rel="preload" href="../out/frise/frise.json" as="fetch" crossorigin>',
-    `<link rel="preload" href="${first}" as="fetch" crossorigin>`,
+    // the scene's canvas (toile.mjs) and PixiJS, asked for at once instead of after frise.js has started
+    '<link rel="modulepreload" href="toile.mjs">',
+    '<link rel="modulepreload" href="../../insectes/runtime/vendor/pixi-8.6.6.min.mjs">',
+    `<link rel="preload" href="${first}sprites.json" as="fetch" crossorigin>`,
   ];
 }
 
