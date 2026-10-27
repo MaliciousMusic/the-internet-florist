@@ -414,6 +414,13 @@
 
   // ---------- the close-up: the camera comes closer to the bouquet
   const target = $('bq-cible');
+  // the invite to tap the bouquet facing the camera (owner, 2026-10-27): soft white rings round it once the HUD is laid (its
+  // carriers done, porteuses.mjs; at once without them; at worst after 20 s), until the visit's first close-up
+  let invited = false;
+  const invite = () => { if (!invited) target.classList.add('invite'); };
+  if (!document.documentElement.classList.contains('porteuses') || window.PORTEUSES_POSE) setTimeout(invite, 1200);
+  else document.addEventListener('porteuses:pose', invite, { once: true });
+  setTimeout(invite, 20000);
   let near = false;
   let box = null; // the bouquet's box in the world [x, y, w, h], from its manifest
   let keptShelf; // the shelf open before the close-up, opened again after it
@@ -522,6 +529,10 @@
     if (b && b.proche) b.proche(on);
     target.setAttribute('aria-pressed', String(on));
     target.setAttribute('aria-label', on ? T.stepBack : T.lookCloser);
+    if (on) {
+      invited = true;
+      target.classList.remove('invite');
+    }
     $('achat').classList.toggle('loin', !on);
     $('achat').inert = !on;
     if (on) {
