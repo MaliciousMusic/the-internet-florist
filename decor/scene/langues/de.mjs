@@ -120,7 +120,7 @@ export default {
   <p>Beim Kauf können Sie den Strauß verschenken: eine kurze Nachricht, von den Insekten getragen, eine Musik und ein Code zum Weitergeben. Die beschenkte Person erhält ihn unter „Meine Geschenke“ mit Ihrem Vornamen und diesem Code.</p>
 
   <h2>Auf Ihrem Desktop</h2>
-  <p>Mit <a href="{{p}}desktop.html">Belai Bureau</a>, einem kostenlosen Widget für Windows, steht der Blumenstrauß, den
+  <p>Mit <a href="{{p}}index.html?bureau">Belai Bureau</a>, einem kostenlosen Widget für Windows, steht der Blumenstrauß, den
     Sie gesammelt haben, auf dem Desktop Ihres Computers – in der Größe Ihrer Wahl, vor oder hinter Ihren Fenstern.</p>
 
   <h2>Den Garten wachsen lassen</h2>

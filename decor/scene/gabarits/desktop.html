@@ -1,141 +1,18 @@
 <!doctype html>
+<!--
+  Belai Bureau's downloads are a glass stack over any page since 2026-10-27 (owner: « pas une page à part »; entete.js): this
+  former page only leads to the shop with the stack open (?bureau), for the links already out there.
+-->
 <html lang="{{htmlLang}}">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-{{head}}
-<link rel="stylesheet" href="scene.css">
-<link rel="stylesheet" href="entete.css">
-<style>
-  /* The desktop page (owner, 2026-10-27): nothing but the two downloads, Windows and Mac, on the shop's still decor; no
-     toolbar, no explanation (they are in the demo "On your desktop" of the bouquets). The buttons in one colour as the Buy
-     button is, a light apple green, its words dark green; the Mac one waits, "coming soon". */
-  .entete {
-    display: none;
-  }
-
-  .telechargements {
-    position: fixed;
-    inset: 0;
-    z-index: 40;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
-    gap: 18px;
-    padding: 24px;
-    pointer-events: none;
-  }
-
-  .telechargements h1 {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    clip-path: inset(50%);
-    white-space: nowrap;
-  }
-
-  .dl {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    min-width: 250px;
-    min-height: 68px;
-    box-sizing: border-box;
-    padding: 0 30px 0 24px;
-    border: 1px solid #7cc24a;
-    border-radius: 999px;
-    background: #a3e070;
-    box-shadow: 0 4px 18px rgb(40 90 20 / 0.28);
-    color: #173d0b;
-    font: 800 19px/1.15 var(--texte);
-    text-decoration: none;
-    pointer-events: auto;
-    transition: transform 0.38s cubic-bezier(0.3, 1.6, 0.5, 1), background-color 0.2s ease;
-  }
-
-  .dl small {
-    display: block;
-    margin-top: 2px;
-    font-size: 12.5px;
-    font-weight: 600;
-    opacity: 0.8;
-  }
-
-  .dl svg {
-    flex: none;
-  }
-
-  a.dl:hover {
-    background: #96d861;
-  }
-
-  a.dl:active {
-    transform: scale(0.95);
-  }
-
-  a.dl:focus-visible {
-    outline: 3px solid #fff;
-    outline-offset: 3px;
-  }
-
-  /* Mac: not yet */
-  .dl-bientot {
-    background: #d6efc2;
-    border-color: #b9e09b;
-    color: #4a6b3a;
-    box-shadow: none;
-    cursor: default;
-  }
-
-  @media (max-width: 560px) {
-    .telechargements {
-      flex-direction: column;
-    }
-
-    .dl {
-      width: min(100%, 320px);
-    }
-  }
-</style>
-{{ld}}
-{{i18n}}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta http-equiv="refresh" content="0; url=index.html?bureau">
+<title>Belai Bureau</title>
+<script>location.replace('index.html?bureau');</script>
 </head>
 <body>
-<!--
-  TEMPLATE of build.mjs: the page of every language is written from it ({{ key }} = a text of langues/<code>.mjs).
-  Edit this file, never the generated pages; then run: node decor/scene/build.mjs
--->
-<!--
-  Belai Bureau to download (telechargements/, a copy of bureau/livrables), Windows and Mac (coming soon); nothing else
-  (owner, 2026-10-27: no toolbar, no explanation, they are in the shop's demo "On your desktop"). Structured data: the app
-  (SoftwareApplication). entete.js still gives the footer's Legal pill (the legal notice reachable from every page); the
-  decor is the shop's still layers (decor/out/), as on the About page.
--->
-<div class="scene" id="scene" aria-hidden="true">
-  <div class="monde">
-    <img class="plan" style="--z:0" src="../out/ciel.svg" alt="" decoding="async">
-    <img class="plan" style="--z:3" src="../out/horizon.svg" alt="" decoding="async">
-    <img class="plan" style="--z:4" src="../out/sol-loin.svg" alt="" decoding="async">
-    <img class="plan" style="--z:5" src="../out/sol-milieu.svg" alt="" decoding="async">
-    <img class="plan" style="--z:7" src="../out/sol-pres.svg" alt="" decoding="async">
-  </div>
-</div>
-
-<main class="telechargements">
-  <h1>{{desktop.h1}}</h1>
-  <a class="dl" id="telecharger" href="telechargements/{{installer}}" download>
-    <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7.5 10.5 12 15l4.5-4.5M5 19.5h14"/></svg>
-    <span>Windows<small>{{desktop.winSmall}}</small></span>
-  </a>
-  <span class="dl dl-bientot" aria-disabled="true">
-    <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>
-    <span>Mac<small>{{desktop.soon}}</small></span>
-  </span>
-</main>
-
-<script src="entete.js" defer></script>
+<p><a href="index.html?bureau">Belai Bureau</a></p>
 </body>
 </html>

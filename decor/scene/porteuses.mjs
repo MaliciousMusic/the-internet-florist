@@ -344,7 +344,7 @@ async function start() {
     for (let i = jobs.length - 1; i >= 0; i--) if (jobs[i].next(dt).done) jobs.splice(i, 1);
     for (const a of ants) a.draw();
     app.render();
-    if (flying && skyE) skyE.render();
+    if (flying) for (const e of engines) { if (e.under) cutBuy(e.canvas); e.render(); }
   }
   function frame(t) {
     tick(Math.min(0.05, (t - tPrev) / 1000) / SLOW);
@@ -379,10 +379,12 @@ async function start() {
     // its wings drawn in its cells (baked: no wing sheet), the three drawings of its false wingbeat one a frame (abeille.mjs)
     abeille: { mod: 'abeille.mjs', cls: 'Abeille', S: { kind: 'abeille', bodyMm: 12.5 }, baked: true, lod: 'L', wings: (b, dt) => { b.frame = [0, 1, 2, 1][++b.tick % 4]; b.faceFlight(dt); } },
   };
-  // the flyers' swarm, made once; the loop renders it while some fly; each kind loaded once
-  let sky = null, skyE = null, flying = 0;
+  // the flyers' swarms, each made once: the one over everything, and the one behind Buy (its canvas cut round the button, the
+  // bees of "On your desktop" over it passing behind); the loop renders them while some fly; each kind loaded once in each
+  let skyE = null, flying = 0;
+  const skies = {}, engines = [];
   const loaded = {};
-  const swarm = () => sky || (sky = (async () => {
+  const swarm = (under = false) => skies[under] || (skies[under] = (async () => {
     const { Essaim } = await import(BASE + 'runtime/essaim.mjs');
     const e = await Essaim.create({ layers: [], zCuts: [], size: () => [W(), H()], direct: true });
     e.canvas.className = 'porteuses-plan';
@@ -391,9 +393,18 @@ async function start() {
     fit();
     document.body.appendChild(e.canvas);
     addEventListener('resize', fit);
-    skyE = e;
+    if (under) e.under = true;
+    else skyE = e;
+    engines.push(e);
     return e;
   })());
+  // the swarm behind Buy: its canvas cut by the button's pill, read each frame (it moves while its swallowtail brings it)
+  const cutBuy = (cv) => {
+    const r = $('#acheter')?.getBoundingClientRect();
+    if (!r || !r.width) { cv.style.clipPath = ''; return; }
+    const f = (v) => v.toFixed(1), q = r.height / 2, x = r.left, y = r.top, w = r.width, hh = r.height;
+    cv.style.clipPath = `path(evenodd, 'M0 0H${f(W())}V${f(H())}H0Z M${f(x + q)} ${f(y)}H${f(x + w - q)}A${f(q)} ${f(q)} 0 0 1 ${f(x + w - q)} ${f(y + hh)}H${f(x + q)}A${f(q)} ${f(q)} 0 0 1 ${f(x + q)} ${f(y)}Z')`;
+  };
   // names: the left end's flyer, then the right end's; or a single flyer, holding the piece by its middle. o: pxmm (their scale); hang (px, or a fraction of the flyer's length when
   // under 1: how high its body's origin, at its thorax, is over the piece's upper edge); inset (px from the very ends; hang and
   // inset may be given per flyer); rise (px: where the course starts,
@@ -402,11 +413,11 @@ async function start() {
   // once if they are on their way; tilt(t, u) (optional): degrees the left end hangs lower at time t (s) and course fraction u,
   // the piece turning about the right flyer's grip. Resolves once the piece is in its place.
   async function airlift(box, names, o) {
-    const e = await swarm();
+    const e = await swarm(!!o.under);
     const pair = [], flaps = [];
     for (const name of names) {
       const F = FLYER[name], M = await import(BASE + 'runtime/' + F.mod), S = F.S || M[F.sp];
-      await (loaded[S.kind] ||= (async () => {
+      await (loaded[`${!!o.under}:${S.kind}`] ||= (async () => {
         const url = `${BASE}${S.kind}/atlas/${S.kind}`;
         const K = await e.kind(S.kind, url, S.bodyMm);
         if (!F.baked) await e.wings(S.kind, url + '-ailes');
@@ -543,7 +554,7 @@ async function start() {
       if (laid || far()) return;
       laid = true;
       lay(buy, ['machaon'], { pxmm: BUY_PXMM, hang: -8, inset: 0, rise: -110, speed: 210 }).then(() => buy.after());
-      lay(demo, ['abeille', 'abeille'], { pxmm: BEE_PXMM, hang: 0.15, inset: 8, rise: -90, speed: 260 });
+      lay(demo, ['abeille', 'abeille'], { pxmm: BEE_PXMM, hang: 0.15, inset: 8, rise: -90, speed: 260, under: true });
     };
     new MutationObserver(check).observe(achat, { attributes: true, attributeFilter: ['class', 'hidden'] });
     check();

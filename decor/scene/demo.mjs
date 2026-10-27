@@ -405,12 +405,13 @@ const pageReady = (sel, tok, ms = 9000) =>
     look();
   });
 // the browser's page goes to the link of the page's element sel (its own href, as the visitor's click would)
-function follow(sel, hash = '') {
+// the site's icon opens Belai Bureau's downloads over the page (entete.js); the page is loaded anew at the next run
+function follow(sel) {
   try {
     const doc = D.page.contentDocument;
-    const a = doc && doc.querySelector(sel);
-    if (!a || D.pageOn === 'bureau') return;
-    D.page.src = new URL(a.getAttribute('href').replace(/#.*$/, '') + hash, doc.baseURI).href;
+    const b = doc && doc.querySelector(sel);
+    if (!b || D.pageOn === 'bureau') return;
+    b.click();
     D.pageOn = 'bureau';
   } catch (_) {}
 }
@@ -633,10 +634,11 @@ async function siteIcon(ctx, sel) {
   await clickAt(inPage(sel) || p, ctx, 'main', 28);
   await wait(300, ctx);
 }
-// the real download page, its button (the camera on it), the download counting, installed; the launcher in the bar, named
+// the real downloads (the glass stack over the site), the Windows button (the camera on it), the download counting,
+// installed; the launcher in the bar, named
 async function download(ctx, icon) {
   showNav(true);
-  follow(icon, '#telecharger');
+  follow(icon);
   if (!ctx.fast) {
     await back(ctx, 700);
     // (the page scrolls to the button as it opens: where it stands is read again once it has settled)

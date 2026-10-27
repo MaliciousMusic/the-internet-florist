@@ -119,7 +119,7 @@ export default {
   <p>购买时，你可以把花束送人：一段由昆虫带来的短消息、一段音乐，以及一个要转交的代码。收花的人在“我的礼物”中输入你的名字和这个代码即可收到。</p>
 
   <h2>摆上桌面</h2>
-  <p>借助免费的 Windows 桌面小组件 <a href="{{p}}desktop.html">Belai Bureau</a>，你收藏的花束就能立在
+  <p>借助免费的 Windows 桌面小组件 <a href="{{p}}index.html?bureau">Belai Bureau</a>，你收藏的花束就能立在
     电脑桌面上，大小由你决定，可放在窗口前面或后面。</p>
 
   <h2>让花园生长</h2>

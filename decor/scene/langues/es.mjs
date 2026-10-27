@@ -125,7 +125,7 @@ export default {
   <p>Al comprar, puedes regalar el ramo: un mensaje corto que llevan los insectos, una música y un código para transmitir. La persona a quien lo regalas lo recibe en «Mis regalos» con tu nombre y ese código.</p>
 
   <h2>En tu escritorio</h2>
-  <p>Con <a href="{{p}}desktop.html">Belai Bureau</a>, un widget gratuito para Windows, el ramo que coleccionaste se queda
+  <p>Con <a href="{{p}}index.html?bureau">Belai Bureau</a>, un widget gratuito para Windows, el ramo que coleccionaste se queda
     en el escritorio de tu ordenador, del tamaño que elijas, delante o detrás de tus ventanas.</p>
 
   <h2>Hacer crecer el jardín</h2>

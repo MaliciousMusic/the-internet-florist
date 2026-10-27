@@ -1,8 +1,8 @@
 // entete.js: the header and the footer shared by the shop's pages (index.html, about.html, desktop.html, legal.html).
 //
 // - The header is a dock of round frosted-glass icons, drawn here in SVG: a vase with flowers (the bouquets of the day), a
-//   bud vase (the soliflores), a screen with a vase (desktop.html: your bouquet on your computer, the video and the app to
-//   download), then a gift (my gifts), a head (my account), on the shop page a speaker (the sound of nature, son.mjs) and an i
+//   bud vase (the soliflores), a screen with a vase (Belai Bureau to download: a glass stack in the middle of the screen with
+//   Windows and Mac, owner 2026-10-27; desktop.html only leads to it), then a gift (my gifts), a head (my account), on the shop page a speaker (the sound of nature, son.mjs) and an i
 //   (the About page); the bouquets already sold and our
 //   collection on OpenSea left the dock on 2026-10-27 (owner). On the shop page the bouquets, the soliflores, the gifts
 //   and the account open and close their shelf over the dock (one at a time; the same icon again folds it): entete.js
@@ -99,17 +99,18 @@
     dock.append(el);
   };
   for (const [name, label] of SHELVES) shelfButton(name, label);
-  // your bouquet on your computer: the how-to video and the desktop app (desktop.html); on a phone, the same page as the
-  // place to download Belai Bureau, the app that sets the widgets (owner, 2026-10-27), with a download icon
+  // Belai Bureau, the app that sets the bouquets on a desktop: the glass stack of its downloads (below); on a phone with a
+  // download icon
   const phone = !matchMedia('(min-width: 900px) and (min-aspect-ratio: 4/3)').matches;
-  const desk = document.createElement('a');
+  const desk = document.createElement('button');
+  desk.type = 'button';
   desk.className = 'dock-bouton';
   desk.dataset.icone = phone ? 'telecharger' : 'bureau';
-  desk.href = `${P}desktop.html${phone ? '#telecharger' : ''}`;
   desk.title = phone ? T.appTitle : T.desktopTitle;
   desk.setAttribute('aria-label', phone ? T.appLabel : T.desktopLabel);
+  desk.setAttribute('aria-haspopup', 'dialog');
+  desk.setAttribute('aria-expanded', 'false');
   desk.innerHTML = phone ? ICONS.telecharger : ICONS.bureau;
-  if (I18N.page === 'desktop') desk.setAttribute('aria-current', 'page');
   dock.append(desk);
   const sep = document.createElement('span');
   sep.className = 'dock-sep';
@@ -229,5 +230,49 @@
     if (foot.classList.contains('ouvert') && !foot.contains(e.target)) fold(false);
   });
 
-  window.Entete = { rayon: show, opensea: OPENSEA, i18n: I18N };
+  // ---------- Belai Bureau's downloads (owner, 2026-10-27: « pas une page à part », a glass stack in the middle of the screen
+  // holding the two): Windows, the installer; Mac, coming soon. No words round them (the how-to is the shop's demo "On your
+  // desktop"). The dock's icon, a click outside or Escape folds it; ?bureau in the address opens it (desktop.html leads there)
+  const B = I18N.bureau;
+  const veil = document.createElement('div');
+  veil.className = 'bureau-voile';
+  veil.hidden = true;
+  veil.innerHTML = `
+    <div class="bureau-pile" role="dialog" aria-modal="true" aria-label="${T.desktopTitle}">
+      <a class="dl" id="telecharger" href="telechargements/${B.installer}" download>
+        <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7.5 10.5 12 15l4.5-4.5M5 19.5h14"/></svg>
+        <span>Windows<small>${B.win}</small></span>
+      </a>
+      <span class="dl dl-bientot" aria-disabled="true">
+        <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>
+        <span>Mac<small>${B.soon}</small></span>
+      </span>
+    </div>`;
+  document.body.append(veil);
+  const pile = veil.firstElementChild;
+  const bureau = (on) => {
+    if (on === !veil.hidden) return;
+    veil.hidden = !on;
+    desk.setAttribute('aria-expanded', String(on));
+    if (on) {
+      veil.classList.remove('ouvre');
+      void veil.offsetWidth;
+      veil.classList.add('ouvre');
+      pile.querySelector('a').focus({ preventScroll: true });
+    } else if (veil.contains(document.activeElement)) desk.focus({ preventScroll: true });
+  };
+  desk.addEventListener('click', () => bureau(veil.hidden));
+  veil.addEventListener('click', (e) => { if (!pile.contains(e.target)) bureau(false); });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !veil.hidden) {
+      bureau(false);
+      e.stopImmediatePropagation();
+    }
+  });
+  if (new URLSearchParams(location.search).has('bureau')) {
+    bureau(true);
+    history.replaceState(history.state, '', location.pathname + location.hash);
+  }
+
+  window.Entete = { rayon: show, bureau, opensea: OPENSEA, i18n: I18N };
 })();
