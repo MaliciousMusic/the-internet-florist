@@ -72,6 +72,15 @@ export default {
     sendCode: 'Recevoir le code',
     code: 'Code reçu',
     firstName: 'Prénom (facultatif)',
+    giftsTitle: 'Mes cadeaux',
+    giftsHelp: 'Saisissez le prénom de la personne qui vous offre un bouquet, et le code qu’elle vous a transmis.',
+    giftSender: 'Son prénom',
+    giftCode: 'Code',
+    giftOpen: 'Ouvrir le cadeau',
+    accountTitle: 'Mon compte',
+    accountHelp: 'Connectez-vous avec votre numéro de mobile : un code vous est envoyé par SMS.',
+    signIn: 'Se connecter',
+    signOut: 'Se déconnecter',
   },
 
   // ---------- the About page
@@ -338,7 +347,7 @@ export default {
   // ---------- the strings of the scripts (entete.js, boutique.js), with {placeholders}
   js: {
     menu: 'Menu',
-    shelves: { bouquets: 'Bouquets du jour', soliflores: 'Soliflores', vendus: 'Bouquets collectionnés' },
+    shelves: { bouquets: 'Bouquets du jour', soliflores: 'Soliflores', vendus: 'Bouquets collectionnés', cadeaux: 'Mes cadeaux', profil: 'Mon compte' },
     desktopTitle: 'Sur mon bureau',
     desktopLabel: 'Votre bouquet sur votre bureau',
     appTitle: 'Belai Bureau',
@@ -387,6 +396,14 @@ export default {
     paid: 'Votre bouquet est à vous : exemplaire n° {n} sur {total}.',
     paymentPending: 'Paiement en cours de confirmation…',
     cancelled: 'Paiement annulé : l’exemplaire est remis en vente.',
+    accountSoon: 'Votre compte arrive bientôt : vous vous connecterez avec votre numéro de mobile, et retrouverez ici vos bouquets.',
+    accountSignIn: 'Connexion',
+    hello: 'Bonjour {name}',
+    copyNo: 'exemplaire n° {n}',
+    noBouquet: 'Aucun bouquet sur votre compte pour l’instant.',
+    giftsSoon: 'Les cadeaux arrivent bientôt : vous pourrez ouvrir ici le bouquet que l’on vous offre.',
+    giftOpened: 'Votre cadeau est arrivé.',
+    giftWrong: 'Ce prénom et ce code ne correspondent à aucun cadeau.',
     receipt: {
       title: 'Reçu',
       download: 'Télécharger votre reçu',

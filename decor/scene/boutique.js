@@ -177,6 +177,63 @@
     keptShelf = undefined;
     if (near) closeUp(false, true);
     openShelf(e.detail);
+    if (e.detail === 'profil') showAccount().catch((err) => console.error('[boutique] compte', err));
+  });
+
+  // ---------- my account (lot C6): signed in by text message through the shop's server; its bouquets; signing out.
+  // Without a server (the site today) it says the account is coming.
+  const pfNote = $('profil-etat');
+  async function showAccount() {
+    const out = !apiBase();
+    $('pf-connexion').hidden = true;
+    $('pf-compte').hidden = true;
+    if (out) return void (pfNote.textContent = T.accountSoon);
+    pfNote.textContent = '';
+    const moi = await api('/api/moi');
+    if (moi.status === 401) {
+      $('pf-titre').textContent = T.accountSignIn;
+      $('pf-connexion').hidden = false;
+      return;
+    }
+    if (moi.status !== 200) return void (pfNote.textContent = T.payError);
+    $('pf-titre').textContent = moi.compte.prenom ? fill(T.hello, { name: moi.compte.prenom }) : T.accountTitle;
+    const list = $('pf-bouquets');
+    list.textContent = '';
+    for (const b of moi.bouquets) {
+      const p = (CFG && CFG.produits.find((x) => x.id === b.produit)) || { nom: b.produit };
+      const li = document.createElement('li');
+      const t = lifeTxt({ achat: b.achat });
+      li.textContent = `${p.nom} · ${fill(T.copyNo, { n: nInt.format(b.numero) })} · ${t ? fill(T.fadesIn, { t }) : T.faded}`;
+      list.append(li);
+    }
+    if (!moi.bouquets.length) pfNote.textContent = T.noBouquet;
+    $('pf-compte').hidden = false;
+  }
+  $('pf-envoyer').addEventListener('click', async () => {
+    const r = await api('/api/sms/demande', { numero: $('pf-numero').value, langue: I18N.code });
+    if (r.status !== 200) return void (pfNote.textContent = errText(r));
+    $('pf-etape2').hidden = false;
+    pfNote.textContent = T.codeSent;
+    $('pf-code').focus({ preventScroll: true });
+  });
+  $('pf-valider').addEventListener('click', async () => {
+    const v = await api('/api/sms/verifie', { numero: $('pf-numero').value, code: $('pf-code').value, prenom: $('pf-prenom').value || undefined });
+    if (v.status !== 200) return void (pfNote.textContent = errText(v));
+    showAccount();
+  });
+  $('pf-sortir').addEventListener('click', async () => {
+    await api('/api/deconnexion', {});
+    showAccount();
+  });
+
+  // ---------- my gifts (lots C4, C5 to come): the sender's first name and the code
+  $('cadeau-forme').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const note = $('cadeau-etat');
+    if (!apiBase()) return void (note.textContent = T.giftsSoon);
+    const r = await api('/api/cadeau/ouvre', { prenom: $('cd-prenom').value, code: $('cd-code').value });
+    if (r.status === 404 && r.erreur === 'introuvable') return void (note.textContent = T.giftsSoon);
+    note.textContent = r.status === 200 ? T.giftOpened : T.giftWrong;
   });
   if (window.Entete) $('lien-opensea').href = Entete.opensea;
 
@@ -411,8 +468,6 @@
     if (curP) {
       const t = lifeTxt(curP);
       $('achat-vie').innerHTML = `${HOURGLASS}<span>${t ? fill(T.fadesIn, { t }) : T.fadedForGood}</span>`;
-      // the month's collection and the copies left, as under the name in the sky
-      $('achat-serie').textContent = seriesTxt(curP);
     }
   }
   setInterval(showLives, 15000);

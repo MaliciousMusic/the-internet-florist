@@ -74,6 +74,42 @@
   <div class="rayon" data-rayon="soliflores" hidden>
     <p class="rayon-mot">{{index.budVases}}</p>
   </div>
+  <!-- my gifts: the sender's first name and the code received open the gift (lots C4, C5: the animation, the transfer) -->
+  <div class="rayon" data-rayon="cadeaux" hidden>
+    <form class="rayon-mot rayon-forme" id="cadeau-forme">
+      <p class="rayon-titre">{{index.giftsTitle}}</p>
+      <p class="rayon-aide">{{index.giftsHelp}}</p>
+      <div class="connexion-ligne">
+        <label class="champ"><span>{{index.giftSender}}</span><input id="cd-prenom" name="prenom" autocomplete="off" maxlength="40"></label>
+        <label class="champ"><span>{{index.giftCode}}</span><input id="cd-code" name="code" autocomplete="off" maxlength="12" autocapitalize="characters"></label>
+      </div>
+      <button class="connexion-envoyer" type="submit">{{index.giftOpen}}</button>
+      <p class="rayon-etat" id="cadeau-etat" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+  <!-- my account: signed in by text message, its bouquets, signing out (the shop's server, api/) -->
+  <div class="rayon" data-rayon="profil" hidden>
+    <div class="rayon-mot rayon-forme" id="profil">
+      <p class="rayon-titre" id="pf-titre">{{index.accountTitle}}</p>
+      <div id="pf-connexion">
+        <p class="rayon-aide">{{index.accountHelp}}</p>
+        <div class="connexion-ligne">
+          <label class="champ"><span>{{index.phone}}</span><input id="pf-numero" name="numero" type="tel" autocomplete="tel" inputmode="tel" maxlength="20"></label>
+          <button class="connexion-envoyer" id="pf-envoyer" type="button">{{index.sendCode}}</button>
+        </div>
+        <div class="connexion-ligne" id="pf-etape2" hidden>
+          <label class="champ"><span>{{index.code}}</span><input id="pf-code" name="code" inputmode="numeric" autocomplete="one-time-code" maxlength="6"></label>
+          <label class="champ"><span>{{index.firstName}}</span><input id="pf-prenom" name="prenom" autocomplete="given-name" maxlength="40"></label>
+          <button class="connexion-envoyer" id="pf-valider" type="button">{{index.signIn}}</button>
+        </div>
+      </div>
+      <div id="pf-compte" hidden>
+        <ul class="pf-bouquets" id="pf-bouquets"></ul>
+        <button class="connexion-envoyer" id="pf-sortir" type="button">{{index.signOut}}</button>
+      </div>
+      <p class="rayon-etat" id="profil-etat" role="status" aria-live="polite"></p>
+    </div>
+  </div>
   <div class="rayon" data-rayon="vendus" hidden>
     <p class="rayon-mot">{{index.noneCollected}}
       <a class="rayon-lien" id="lien-opensea" href="https://opensea.io/" target="_blank" rel="noopener">{{index.seeOpenSea}}</a></p>
@@ -120,7 +156,6 @@
       <span class="achat-prix" id="achat-prix" aria-hidden="true"></span>
     </span>
     <span class="achat-vie" id="achat-vie"></span>
-    <span class="achat-serie" id="achat-serie"></span>
   </button>
   <p class="achat-etat" id="achat-etat" role="status" aria-live="polite"></p>
 </div>

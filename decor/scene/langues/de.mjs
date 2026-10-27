@@ -72,6 +72,15 @@ export default {
     sendCode: 'Code erhalten',
     code: 'Erhaltener Code',
     firstName: 'Vorname (optional)',
+    giftsTitle: 'Meine Geschenke',
+    giftsHelp: 'Geben Sie den Vornamen der Person ein, die Ihnen einen Strauß schenkt, und den Code, den sie Ihnen geschickt hat.',
+    giftSender: 'Ihr Vorname',
+    giftCode: 'Code',
+    giftOpen: 'Geschenk öffnen',
+    accountTitle: 'Mein Konto',
+    accountHelp: 'Melden Sie sich mit Ihrer Mobilnummer an: Sie erhalten einen Code per SMS.',
+    signIn: 'Anmelden',
+    signOut: 'Abmelden',
   },
 
   // ---------- the About page
@@ -344,7 +353,7 @@ export default {
   // ---------- the strings of the scripts (entete.js, boutique.js), with {placeholders}
   js: {
     menu: 'Menü',
-    shelves: { bouquets: 'Blumensträuße des Tages', soliflores: 'Solitärvasen', vendus: 'Gesammelte Blumensträuße' },
+    shelves: { bouquets: 'Blumensträuße des Tages', soliflores: 'Solitärvasen', vendus: 'Gesammelte Blumensträuße', cadeaux: 'Meine Geschenke', profil: 'Mein Konto' },
     desktopTitle: 'Auf meinem Desktop',
     desktopLabel: 'Ihr Blumenstrauß auf Ihrem Desktop',
     appTitle: 'Belai Bureau',
@@ -393,6 +402,14 @@ export default {
     paid: 'Ihr Strauß gehört Ihnen: Exemplar Nr. {n} von {total}.',
     paymentPending: 'Zahlung wird bestätigt…',
     cancelled: 'Zahlung abgebrochen: Das Exemplar ist wieder im Verkauf.',
+    accountSoon: 'Ihr Konto kommt bald: Sie melden sich mit Ihrer Mobilnummer an und finden hier Ihre Sträuße.',
+    accountSignIn: 'Anmelden',
+    hello: 'Hallo {name}',
+    copyNo: 'Exemplar Nr. {n}',
+    noBouquet: 'Noch kein Strauß in Ihrem Konto.',
+    giftsSoon: 'Geschenke kommen bald: Hier öffnen Sie den Strauß, den man Ihnen schenkt.',
+    giftOpened: 'Ihr Geschenk ist angekommen.',
+    giftWrong: 'Dieser Vorname und dieser Code passen zu keinem Geschenk.',
     receipt: {
       title: 'Beleg',
       download: 'Beleg herunterladen',

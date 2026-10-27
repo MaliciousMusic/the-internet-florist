@@ -59,6 +59,44 @@
   text-align: center;
 }
 
+/* the gifts' and the account's panels: a small form in the shelf's glass */
+.rayon-forme {
+  display: grid;
+  gap: 8px;
+  width: min(92vw, 420px);
+  box-sizing: border-box;
+}
+
+.rayon-titre {
+  margin: 0;
+  font-weight: 650;
+  font-size: 15px;
+}
+
+.rayon-aide,
+.rayon-etat {
+  margin: 0;
+  font-size: 12.5px;
+  opacity: 0.92;
+}
+
+.rayon-etat:empty {
+  display: none;
+}
+
+.pf-bouquets {
+  display: grid;
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 13px;
+}
+
+.rayon-forme [hidden] {
+  display: none;
+}
+
 .rayon-lien {
   display: inline-block;
   margin-top: 6px;
@@ -168,19 +206,7 @@
   background: #0553ab;
 }
 
-/* in the button, under its price: the month's collection and the copies left (the lifespan left it on 2026-10-27, owner:
-   it is recalled under the bouquet's name, hence .achat-vie hidden) */
-.achat-serie {
-  font: 400 10.5px/1 system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-  white-space: nowrap;
-  letter-spacing: 0.03em;
-  opacity: 0.72;
-}
-
-.achat-serie:empty {
-  display: none;
-}
-
+/* in the button: « Buy » and the price only (owner, 2026-10-27); the lifespan and the collection are in the top band */
 .achat-vie {
   display: none;
   align-items: center;
