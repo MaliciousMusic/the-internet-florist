@@ -13,6 +13,10 @@ ORIGINES = "http://localhost:8835,http://127.0.0.1:8835"
 SMS = "faux"
 # the default country for a number written without its prefix (06 12 34 56 78)
 PAYS = "FR"
+# the payment: "faux" (a payment page of this server's own, local work only) or "stripe" (STRIPE_SECRET, STRIPE_WEBHOOK_SECRET)
+PAIEMENT = "faux"
+# what the shop sells: the site's own boutique.json (prices, the month's collection)
+CATALOGUE = "http://localhost:8835/decor/scene/boutique.json"
 
 [[d1_databases]]
 binding = "DB"

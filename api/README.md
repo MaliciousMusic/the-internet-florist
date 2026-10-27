@@ -1,8 +1,8 @@
 # Le serveur des comptes et des cadeaux
 
 C'est un Worker Cloudflare avec une base D1. Le plan d'ensemble est dans [decor/COMPTE.md](../decor/COMPTE.md). Ce dossier
-couvre le lot C2 : le compte vérifié par SMS et les sessions. Les lots C3 à C5 y ajouteront l'achat Stripe, le stock et les
-cadeaux.
+couvre les lots C2 (le compte vérifié par SMS, les sessions) et C3 (l'achat par carte, le stock). Les lots C4 et C5 y
+ajouteront les cadeaux.
 
 ## Ce qu'il sait faire
 
@@ -15,6 +15,10 @@ cadeaux.
 | `DELETE /api/moi` | Supprime le compte. Il est anonymisé 30 jours plus tard, et se reconnecter avant annule la suppression. |
 | `POST /api/deconnexion` | Ferme la session. |
 | `GET /api/collection?mois=AAAA-MM&produits=a,b` | Les exemplaires restants de chaque bouquet (public). |
+| `POST /api/achat` `{ produit, renonce, texte, langue, retour }` | Lot C3. Réserve un exemplaire 31 minutes, garde le renoncement daté et renvoie l'adresse de paiement : Stripe Checkout, ou la page simulée. |
+| `GET /api/commande/<id>` | La commande de l'acheteur : son état, et une fois payée son bouquet avec son numéro dans la série. |
+| `POST /api/stripe/webhook` | Les événements de Stripe, signature vérifiée (`checkout.session.completed`, `expired`). Un même événement rejoué ne livre qu'une fois. |
+| `GET` et `POST /api/faux-stripe/<id>` | La page de paiement simulée (`PAIEMENT = "faux"`, jamais en ligne). |
 
 Chaque jour à 3 h 17 (UTC), une tâche fait le ménage : codes et sessions expirés, compteurs, comptes supprimés depuis
 30 jours.
@@ -50,6 +54,25 @@ npm run dev
 node -e "const c=require('crypto');console.log('POIVRE='+c.randomBytes(32).toString('base64url')+'\nCLE_NUMEROS='+c.randomBytes(32).toString('base64url'))"
 ```
 
+## L'achat (lot C3)
+
+- **Le prix** vient du `boutique.json` du site (`CATALOGUE`), jamais de la page de l'acheteur.
+- **La réservation.** Un exemplaire est tenu tant que la page de paiement est ouverte. Le dernier exemplaire ne peut être
+  tenu que par une personne : la réservation se fait en une seule requête, qui compte les ventes et les réservations en
+  cours.
+- **La livraison.** Une fois le paiement confirmé, le bouquet est ajouté au compte avec son numéro dans la série (n° 1,
+  2…), et la commande garde la référence du paiement.
+- **Sur le site**, le bouton Acheter fait suivre ces étapes :
+  1. le renoncement au droit de rétractation ;
+  2. la connexion par SMS, si la personne n'est pas connectée, dans la même feuille ;
+  3. la page de paiement ;
+  4. au retour, le gros plan s'ouvre avec « Votre bouquet est à vous : exemplaire n° 1 sur 100 » et le reçu à télécharger.
+
+  Ce parcours ne s'active que si le site connaît l'adresse du serveur : `api` dans `boutique.json`, ou `?api=` dans
+  l'adresse pour les essais. Sans elle, Acheter répond toujours « bientôt ».
+- **En local** : ouvrir `http://localhost:8835/decor/scene/fr/?api=http://localhost:8790`. Le code SMS s'écrit dans la
+  console de Wrangler, et la page de paiement simulée propose Payer et Annuler.
+
 ## Mise en ligne (une fois les comptes du porteur créés)
 
 1. Dans Cloudflare : `npx wrangler login`, puis `npx wrangler d1 create belai`. Recopier son `database_id` dans
@@ -63,7 +86,14 @@ node -e "const c=require('crypto');console.log('POIVRE='+c.randomBytes(32).toStr
    - `wrangler secret put` pour `OVH_APP_KEY`, `OVH_APP_SECRET`, `OVH_CONSUMER_KEY`, `OVH_SERVICE` (le nom du compte SMS)
      et `OVH_EXPEDITEUR` ;
    - passer `SMS = "ovh"` dans `wrangler.toml`.
-5. Mettre dans `ORIGINES` l'adresse du site, puis `npx wrangler deploy`.
+5. Chez Stripe :
+   - en mode test, mettre la clé `sk_test_...` avec `wrangler secret put STRIPE_SECRET` ;
+   - créer un point de terminaison de webhook vers `https://<domaine>/api/stripe/webhook`, avec les événements
+     `checkout.session.completed`, `checkout.session.async_payment_succeeded` et `checkout.session.expired` ;
+   - mettre son secret `whsec_...` avec `wrangler secret put STRIPE_WEBHOOK_SECRET` ;
+   - passer `PAIEMENT = "stripe"`.
+6. Mettre dans `ORIGINES` l'adresse du site, et dans `CATALOGUE` celle de son `boutique.json`, puis `npx wrangler deploy`.
+   Mettre enfin l'adresse du serveur dans `api` de `boutique.json` : le bouton Acheter s'ouvre alors en ligne.
 
 L'envoi par OVH est écrit d'après sa documentation (signature `$1$` en SHA-1), mais il n'a pas encore été essayé : il le
 sera avec le compte du porteur.

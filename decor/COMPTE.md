@@ -74,6 +74,10 @@ Branche `ch/compte`, copie de travail `ch/compte/`. Décidé par le porteur le 2
 - **C2** est fait en local : le serveur `api/`, avec le compte vérifié par SMS, les sessions du site et de Belai Bureau, les
   limites, la suppression, le ménage quotidien et les exemplaires restants. Les 14 tests passent, et un essai de bout en
   bout a été fait avec `wrangler dev` depuis la page du site (voir [api/README.md](../api/README.md)).
+- **C3** est fait en local : l'achat, avec la réservation d'un exemplaire, le paiement Stripe (Checkout, webhook signé)
+  ou simulé, la livraison numérotée et le reçu. Le parcours est branché sur le site derrière `?api=`. Les tests passent à
+  23, et un essai complet a été fait dans le navigateur : connexion par SMS, paiement simulé, retour, exemplaire n° 1,
+  « 99 sur 100 », reçu.
 - **À noter** : le cookie de session exige qu'en ligne le site et le serveur partagent un domaine. Il faudra donc passer le
   site sur Cloudflare Pages, ou faire pointer un domaine vers les deux, avant d'ouvrir les comptes.
 

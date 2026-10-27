@@ -434,7 +434,9 @@
     openSheet(false);
   }
 
-  // ---------- the purchase sheet: the express waiver of the right of withdrawal, then the payment (not wired yet)
+  // ---------- the purchase sheet: the express waiver of the right of withdrawal, then, through the shop's server (api/,
+  // decor/COMPTE.md), signing in by text message if needed and the card payment (Stripe Checkout). Without a server
+  // (boutique.json "api" empty and no ?api= in the address, as on the site today) the purchase still says "soon".
   const sheet = $('accord');
   const waiver = $('renonce');
   const note = $('achat-etat');
@@ -477,9 +479,115 @@
       terms: new URL(`${I18N.p}legal.html#terms`, document.baseURI).href,
     };
     M.consentement = consent;
-    // the payment through Seaport comes here; then Boutique.recu({ p, token, tx, buyer }) gives the receipt
-    note.textContent = T.soonMessage;
+    if (!apiBase()) {
+      note.textContent = T.soonMessage;
+      return;
+    }
+    payer().catch((err) => {
+      console.error('[boutique] achat', err);
+      busy(false);
+      note.textContent = T.payError;
+    });
   });
+
+  // ---------- the shop's server
+  const apiBase = () => ((CFG && CFG.api) || q.get('api') || '').replace(/\/$/, '');
+  async function api(path, body, method) {
+    const r = await fetch(apiBase() + path, {
+      method: method || (body ? 'POST' : 'GET'),
+      credentials: 'include',
+      headers: body ? { 'content-type': 'application/json' } : {},
+      body: body ? JSON.stringify(body) : undefined,
+    });
+    let j = {};
+    try {
+      j = await r.json();
+    } catch (_) {}
+    return { status: r.status, ...j };
+  }
+  const payBtn = $('accord-payer');
+  const busy = (on) => {
+    payBtn.disabled = on;
+    sheet.classList.toggle('occupe', on);
+  };
+  // signing in, inside the sheet: the number, then the code received and a first name
+  const cx = $('connexion');
+  const cxNum = $('cx-numero');
+  const cxCode = $('cx-code');
+  const cxPrenom = $('cx-prenom');
+  const cxStep2 = $('cx-etape2');
+  const errText = (j) =>
+    ({
+      numero_invalide: T.wrongNumber,
+      trop_de_demandes: T.tooMany,
+      trop_d_essais: T.tooMany,
+      code_expire: T.codeExpired,
+      code_faux: fill(T.wrongCode, { n: j.reste ?? 0 }),
+      epuise: T.soldOut,
+    })[j.erreur] || T.payError;
+  $('cx-envoyer').addEventListener('click', async () => {
+    const r = await api('/api/sms/demande', { numero: cxNum.value, langue: I18N.code });
+    if (r.status !== 200) return void (note.textContent = errText(r));
+    cxStep2.hidden = false;
+    note.textContent = T.codeSent;
+    cxCode.focus({ preventScroll: true });
+  });
+  async function payer() {
+    busy(true);
+    let moi = await api('/api/moi');
+    if (moi.status === 401) {
+      if (cx.hidden || cxStep2.hidden || !cxCode.value) {
+        cx.hidden = false;
+        note.textContent = T.signInFirst;
+        busy(false);
+        (cxStep2.hidden ? cxNum : cxCode).focus({ preventScroll: true });
+        return;
+      }
+      const v = await api('/api/sms/verifie', { numero: cxNum.value, code: cxCode.value, prenom: cxPrenom.value || undefined });
+      if (v.status !== 200) {
+        busy(false);
+        return void (note.textContent = errText(v));
+      }
+      cx.hidden = true;
+    }
+    const r = await api('/api/achat', { produit: curP.id, renonce: true, texte: consent.text, langue: I18N.code, retour: location.href });
+    if (r.status !== 200 || !r.url) {
+      busy(false);
+      return void (note.textContent = errText(r));
+    }
+    note.textContent = T.redirecting;
+    location.href = r.url;
+  }
+
+  // back from the payment page (?commande=<id>&paiement=ok|annule): the order is read until the payment is confirmed,
+  // then the bouquet's copy number and the receipt; the close-up opens on the bouquet
+  async function retourPaiement() {
+    const id = q.get('commande');
+    const etat = q.get('paiement');
+    if (!id || !apiBase()) return;
+    await first;
+    // the close-up on the bouquet, where the message shows, once its place is known (the camera at rest facing it)
+    for (let k = 0; k < 40 && !near; k++) {
+      placeTarget();
+      if (box) closeUp(true);
+      else await new Promise((r) => setTimeout(r, 250));
+    }
+    if (etat !== 'ok') return void (note.textContent = T.cancelled);
+    note.textContent = T.paymentPending;
+    for (let k = 0; k < 30; k++) {
+      const o = await api(`/api/commande/${encodeURIComponent(id)}`);
+      if (o.etat === 'payee' && o.bouquet) {
+        const p = CFG.produits.find((x) => x.id === o.produit) || curP;
+        note.textContent = fill(T.paid, { n: nInt.format(o.bouquet.numero), total: nInt.format((p && (p.exemplaires || CFG.collection.exemplaires)) || 100) });
+        receipt({ p, order: o });
+        copiesLeft().catch(() => {});
+        return;
+      }
+      if (o.etat && o.etat !== 'en_attente') break;
+      await new Promise((r) => setTimeout(r, 1000));
+    }
+    note.textContent = T.payError;
+  }
   document.addEventListener(
     'keydown',
     (e) => {
@@ -493,20 +601,20 @@
 
   // the receipt, on a durable medium (Code de la consommation L221-13): a self-contained page to download, in the
   // page's language, with the bouquet, its price, the transaction, the seller and the waiver given before paying
-  function receipt({ p, token, tx, buyer, at }) {
+  function receipt({ p, order }) {
     const R = T.receipt;
     const e = (x) => String(x == null ? '' : x).replace(/&/g, '&amp;').replace(/</g, '&lt;');
-    const when = new Date(at || Date.now());
+    const when = new Date(order.paye || Date.now());
     const rows = [
       [R.bouquet, `${e(p.nom)} (${e(p.id)})`],
-      [R.token, e(token)],
-      [R.price, `${e(new Intl.NumberFormat(I18N.locale, { style: 'currency', currency: 'EUR' }).format(p.prix.centimes / 100))} · ${e(R.taxes)}`],
+      [R.copy, e(fill(R.copyOf, { n: order.bouquet.numero, total: p.exemplaires || CFG.collection.exemplaires, month: seriesTxt(p).split(' · ')[0] }))],
+      [R.price, `${e(new Intl.NumberFormat(I18N.locale, { style: 'currency', currency: 'EUR' }).format(order.centimes / 100))} · ${e(R.taxes)}`],
       [R.date, e(when.toLocaleString(I18N.locale))],
-      [R.buyer, `<code>${e(buyer)}</code>`],
-      [R.transaction, `<code>${e(tx)}</code>`],
+      [R.order, `<code>${e(order.id)}</code>`],
+      [R.payment, `<code>${e(order.paiement)}</code>`],
       [R.seller, 'Hadrien Lonjaret (Agent 33), 35 cours Sablon, 63000 Clermont-Ferrand, France · SIREN 853 801 488 · lonjaret.hadrien@proton.me'],
     ];
-    const c = consent && consent.bouquet === p.id ? consent : null;
+    const c = order.consentement ? { at: order.consentement.le, text: order.consentement.texte, terms: new URL(`${I18N.p}legal.html#terms`, document.baseURI).href } : null;
     const html = `<!doctype html><html lang="${I18N.code}"><meta charset="utf-8"><title>${e(R.title)} · ${e(p.nom)}</title>
 <style>body{font:15px/1.5 system-ui,sans-serif;max-width:640px;margin:40px auto;padding:0 16px;color:#1b2733}th{text-align:left;padding:4px 12px 4px 0;vertical-align:top}code{word-break:break-all}</style>
 <h1>${e(R.title)}</h1><table>${rows.map(([k, v]) => `<tr><th>${e(k)}</th><td>${v}</td></tr>`).join('')}</table>
@@ -517,8 +625,8 @@
     a.href = url;
     a.download = `receipt-${p.id}-${when.toISOString().slice(0, 10)}.html`;
     a.textContent = R.download;
-    note.textContent = '';
-    note.append(a);
+    // under the message that confirms the purchase
+    note.append(document.createElement('br'), a);
     return url;
   }
   window.Boutique = { recu: receipt };
@@ -685,6 +793,20 @@
     Frise.poser(poseAt);
     const f = Frise.face();
     if (f >= 0) facing(f);
+    retourPaiement().catch((err) => console.error('[boutique] retour', err));
+    copiesLeft().catch(() => {});
+  }
+  // the copies left, from the shop's server (sold and held ones counted), under the names and in the bubble
+  async function copiesLeft() {
+    if (!apiBase() || !CFG.collection) return;
+    const r = await api(`/api/collection?mois=${CFG.collection.mois}&produits=${CFG.produits.map((p) => p.id).join(',')}`);
+    if (!r.restants) return;
+    for (const p of CFG.produits) {
+      const x = r.restants[p.id];
+      if (x) Object.assign(p, { exemplaires: x.total, vendus: x.total - x.restants });
+    }
+    Frise.nommer((s) => ({ nom: productAt(s).nom, sous: seriesTxt(productAt(s)) }));
+    showLives();
   }
 
   // nothing grows or sways while the tab is hidden (only what was running starts again: a finished entrance stays finished)

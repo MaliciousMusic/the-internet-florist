@@ -94,6 +94,18 @@
       <input type="checkbox" id="renonce" name="renonce" required>
       <span>{{index.waiver}}</span>
     </label>
+    <!-- signing in by text message, when needed before paying (the shop's server, api/) -->
+    <div class="connexion" id="connexion" hidden>
+      <p class="connexion-titre">{{index.signInTitle}}</p>
+      <div class="connexion-ligne">
+        <label class="champ"><span>{{index.phone}}</span><input id="cx-numero" name="numero" type="tel" autocomplete="tel" inputmode="tel" maxlength="20"></label>
+        <button class="connexion-envoyer" id="cx-envoyer" type="button">{{index.sendCode}}</button>
+      </div>
+      <div class="connexion-ligne" id="cx-etape2" hidden>
+        <label class="champ"><span>{{index.code}}</span><input id="cx-code" name="code" inputmode="numeric" autocomplete="one-time-code" maxlength="6"></label>
+        <label class="champ"><span>{{index.firstName}}</span><input id="cx-prenom" name="prenom" autocomplete="given-name" maxlength="40"></label>
+      </div>
+    </div>
     <p class="accord-cgv">{{index.accept}}</p>
     <div class="accord-boutons">
       <button class="accord-annuler" id="accord-annuler" type="button">{{index.cancel}}</button>

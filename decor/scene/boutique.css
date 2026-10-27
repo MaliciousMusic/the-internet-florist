@@ -488,6 +488,70 @@
 
 /* computer: the dock is at the bottom, the shelf opens above it and folds down behind it; the price bubble stands above it */
 
+/* signing in by text message inside the purchase sheet (lot C3) */
+.connexion {
+  display: grid;
+  gap: 8px;
+  margin: 10px 0 2px;
+  padding-top: 10px;
+  border-top: 1px solid rgb(255 255 255 / 0.3);
+}
+
+.connexion[hidden],
+.connexion-ligne[hidden] {
+  display: none;
+}
+
+.connexion-titre {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.connexion-ligne {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: end;
+}
+
+.champ {
+  display: grid;
+  flex: 1 1 120px;
+  gap: 3px;
+  font-size: 11.5px;
+}
+
+.champ input {
+  min-width: 0;
+  padding: 7px 10px;
+  border: 1px solid rgb(255 255 255 / 0.55);
+  border-radius: 10px;
+  background: rgb(255 255 255 / 0.18);
+  color: inherit;
+  font: 500 14px/1.2 system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+
+.champ input:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 1px;
+}
+
+.connexion-envoyer {
+  padding: 7px 12px;
+  border: 1px solid rgb(255 255 255 / 0.6);
+  border-radius: 999px;
+  background: rgb(255 255 255 / 0.16);
+  color: inherit;
+  font: 600 12.5px/1.2 system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  cursor: pointer;
+}
+
+.accord.occupe .accord-payer {
+  opacity: 0.6;
+  cursor: progress;
+}
+
 /* the purchase sheet above the Buy button: the express waiver of the right of withdrawal, then "Confirm and pay" */
 .accord {
   width: min(calc(100vw - 32px), 360px);
