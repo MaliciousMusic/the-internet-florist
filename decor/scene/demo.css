@@ -21,6 +21,30 @@
   display: none;
 }
 
+/* the white page (owner, 2026-10-27: « le fond blanc en entier »), over the sky, under the device and the bouquet */
+.demo-blanc {
+  position: absolute;
+  inset: 0;
+  background: #fff;
+  animation: blanc 0.6s ease both;
+}
+
+.demo-sous.sort .demo-blanc {
+  animation: blanc-sort 0.6s ease both;
+}
+
+@keyframes blanc {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes blanc-sort {
+  to {
+    opacity: 0;
+  }
+}
+
 .demo-appareil {
   position: absolute;
   transform-origin: 50% 60%;
@@ -28,6 +52,10 @@
 
 .demo-appareil.entre {
   animation: appareil-entre 1.15s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.demo-appareil.parait {
+  animation: blanc 0.35s ease both;
 }
 
 .demo-appareil.sort {
@@ -155,6 +183,35 @@
   transform: translateX(-50%);
 }
 
+/* the browser's icon in the bars (a generic globe), and the Windows-kind bar's search field in place of any logo */
+.ic-nav {
+  background: radial-gradient(circle at 35% 30%, #9fd0ff, #2f86e6 60%, #1b5fb8);
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 calc(var(--u) * 0.25) rgb(255 255 255 / 0.35), 0 1px 2px rgb(0 0 0 / 0.2);
+}
+
+.ic-demarrer {
+  width: calc(var(--u) * 9) !important;
+  border-radius: 999px !important;
+  background: rgb(255 255 255 / 0.9) !important;
+  box-shadow: inset 0 0 0 1px rgb(0 0 0 / 0.08) !important;
+}
+
+/* an Android phone's dock row */
+.os-dock-and {
+  position: absolute;
+  left: calc(var(--u) * 8);
+  right: calc(var(--u) * 8);
+  bottom: calc(var(--u) * 5);
+  display: flex;
+  justify-content: space-between;
+}
+
+.os-dock-and .ic {
+  width: calc(var(--u) * 15);
+  height: calc(var(--u) * 15);
+}
+
 /* of a phone: the status bar, the grid of icons, the bar at the bottom */
 .os-statut {
   position: absolute;
@@ -186,7 +243,7 @@
   position: absolute;
   left: calc(var(--u) * 8);
   right: calc(var(--u) * 8);
-  top: calc(var(--u) * 14);
+  top: calc(var(--u) * 26);
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: calc(var(--u) * 6) 0;
@@ -203,8 +260,8 @@
   position: absolute;
   left: calc(var(--u) * 8);
   right: calc(var(--u) * 8);
-  bottom: calc(var(--u) * 10);
-  height: calc(var(--u) * 11);
+  top: calc(var(--u) * 11);
+  height: calc(var(--u) * 10);
   border-radius: 999px;
   background: rgb(255 255 255 / 0.75);
 }
@@ -297,99 +354,318 @@
   margin-left: calc(var(--u) * 1);
 }
 
-/* the site, small */
-.d-site {
-  left: 6%;
-  top: 7%;
-  width: 70%;
-  height: 72%;
+/* the browser, on the real site (the page itself in a frame): its tabs, its address bar, its page. On a computer a window
+   over the desktop, opening from the bar's icon; on a phone the whole screen, the address bar at the top (Android) or at the
+   bottom (iOS) */
+.d-nav {
+  position: absolute;
+  left: 4%;
+  top: 4%;
+  width: 92%;
+  height: calc(100% - 4% - var(--u) * 6.2);
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgb(0 0 0 / 0.12);
+  border-radius: calc(var(--u) * 0.8);
+  background: #fff;
+  box-shadow: 0 calc(var(--u) * 1.2) calc(var(--u) * 4) rgb(20 40 80 / 0.3);
+  overflow: hidden;
+  transform-origin: 30% 100%;
 }
 
-.tel .d-site,
-.tel .d-app {
+.d-nav.cache {
+  visibility: hidden;
+}
+
+.d-nav.ouvre {
+  animation: nav-ouvre 0.32s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+@keyframes nav-ouvre {
+  from {
+    transform: scale(0.82) translateY(6%);
+    opacity: 0;
+  }
+}
+
+.b-onglets {
+  display: flex;
+  align-items: flex-end;
+  gap: calc(var(--u) * 0.4);
+  height: calc(var(--u) * 3.2);
+  padding: 0 0 0 calc(var(--u) * 0.8);
+  background: #dfe3e8;
+}
+
+.b-onglet {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--u) * 0.6);
+  width: calc(var(--u) * 19);
+  height: calc(var(--u) * 2.5);
+  padding: 0 calc(var(--u) * 0.8);
+  border-radius: calc(var(--u) * 0.7) calc(var(--u) * 0.7) 0 0;
+  background: #fff;
+  font-size: calc(var(--u) * 1.05);
+  color: #1f2328;
+}
+
+.b-onglet img {
+  width: calc(var(--u) * 1.3);
+  height: calc(var(--u) * 1.3);
+  border-radius: 3px;
+}
+
+.b-titre {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.b-ferme,
+.b-x {
+  position: relative;
+  width: calc(var(--u) * 1);
+  height: calc(var(--u) * 1);
+}
+
+.b-ferme::before,
+.b-ferme::after,
+.b-x::before,
+.b-x::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 1.2px;
+  height: 100%;
+  background: #5f6670;
+  transform: rotate(45deg);
+}
+
+.b-ferme::after,
+.b-x::after {
+  transform: rotate(-45deg);
+}
+
+.b-plus {
+  align-self: center;
+  margin-left: calc(var(--u) * 0.4);
+  font-size: calc(var(--u) * 1.6);
+  line-height: 1;
+  color: #5f6670;
+}
+
+.b-fen {
+  display: flex;
+  align-self: stretch;
+  margin-left: auto;
+}
+
+.b-fen i {
+  display: grid;
+  place-items: center;
+  width: calc(var(--u) * 3.6);
+}
+
+.b-min::before {
+  content: '';
+  width: calc(var(--u) * 1);
+  height: 1.2px;
+  background: #5f6670;
+}
+
+.b-max::before {
+  content: '';
+  width: calc(var(--u) * 0.85);
+  height: calc(var(--u) * 0.85);
+  border: 1.2px solid #5f6670;
+}
+
+.b-fen .b-x {
+  width: calc(var(--u) * 3.6);
+  height: auto;
+}
+
+.b-fen .b-x::before,
+.b-fen .b-x::after {
+  top: 30%;
+  height: 40%;
+}
+
+.b-feux {
+  display: flex;
+  align-self: center;
+  gap: calc(var(--u) * 0.55);
+  margin-right: calc(var(--u) * 0.8);
+}
+
+.b-feux i {
+  width: calc(var(--u) * 1);
+  height: calc(var(--u) * 1);
+  border-radius: 50%;
+  background: #ff5f57;
+}
+
+.b-feux i:nth-child(2) {
+  background: #febc2e;
+}
+
+.b-feux i:nth-child(3) {
+  background: #28c840;
+}
+
+.b-barre {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--u) * 1);
+  height: calc(var(--u) * 3.2);
+  padding: 0 calc(var(--u) * 1);
+  background: #fff;
+  border-bottom: 1px solid #e3e6ea;
+}
+
+.b-fleches {
+  display: flex;
+  gap: calc(var(--u) * 0.9);
+}
+
+.b-fleches i {
+  width: calc(var(--u) * 1);
+  height: calc(var(--u) * 1);
+  border-left: 1.4px solid #5f6670;
+  border-bottom: 1.4px solid #5f6670;
+  transform: rotate(45deg);
+}
+
+.b-fleches i:nth-child(2) {
+  transform: rotate(-135deg);
+  opacity: 0.4;
+}
+
+.b-fleches .b-recharge {
+  border: 1.4px solid #5f6670;
+  border-right-color: transparent;
+  border-radius: 50%;
+  transform: none;
+}
+
+.b-adresse {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--u) * 0.6);
+  flex: 1;
+  height: calc(var(--u) * 2.2);
+  padding: 0 calc(var(--u) * 1);
+  border-radius: 999px;
+  background: #eef1f4;
+  font-size: calc(var(--u) * 1.1);
+  color: #1f2328;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.b-cadenas {
+  flex: none;
+  width: calc(var(--u) * 0.8);
+  height: calc(var(--u) * 0.65);
+  margin-top: calc(var(--u) * 0.35);
+  border-radius: 2px;
+  background: #5f6670;
+  box-shadow: 0 calc(var(--u) * -0.35) 0 calc(var(--u) * -0.1) transparent;
+  position: relative;
+}
+
+.b-cadenas::before {
+  content: '';
+  position: absolute;
+  left: 18%;
+  bottom: 90%;
+  width: 64%;
+  height: 70%;
+  border: 1.4px solid #5f6670;
+  border-bottom: 0;
+  border-radius: 999px 999px 0 0;
+  box-sizing: border-box;
+}
+
+.b-profil {
+  width: calc(var(--u) * 2);
+  height: calc(var(--u) * 2);
+  border-radius: 50%;
+  background: linear-gradient(145deg, #c9b6f0, #8a6cd6);
+}
+
+.b-page {
+  position: relative;
+  flex: 1;
+  overflow: hidden;
+  background: #6c9bcf;
+}
+
+.b-cadre {
+  position: absolute;
+  left: 0;
+  top: 0;
+  border: 0;
+  transform-origin: 0 0;
+  pointer-events: none;
+  background: #6c9bcf;
+}
+
+/* on a phone: the whole screen, the status bar's room at the top */
+.tel .d-nav {
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
-  border-radius: 0;
   border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  padding-top: calc(var(--u) * 11);
+  background: #f6f7f9;
+  transform-origin: 50% 100%;
 }
 
-.tel .d-titre {
-  height: calc(var(--u) * 16);
-  padding-top: calc(var(--u) * 8);
-  font-size: calc(var(--u) * 3.6);
-}
-
-.tel .d-titre i {
+.tel .b-onglets {
   display: none;
 }
 
-.d-url {
-  flex: 1;
-  margin: 0 calc(var(--u) * 2) 0 calc(var(--u) * 1);
-  padding: calc(var(--u) * 0.3) calc(var(--u) * 1);
-  border-radius: 999px;
-  background: #fff;
+.tel .b-barre {
+  height: calc(var(--u) * 13);
+  padding: 0 calc(var(--u) * 4);
+  background: #f6f7f9;
 }
 
-.d-site-page {
-  position: absolute;
-  inset: calc(var(--u) * 2.6) 0 0;
-  background: linear-gradient(to bottom, #6f9fd3, #a9c8ea 55%, #5f9a4e 56%, #4c8a3f);
+.tel .b-fleches,
+.tel .b-profil {
+  display: none;
 }
 
-.tel .d-site-page {
-  inset: calc(var(--u) * 16) 0 0;
-}
-
-.d-site-bq {
-  position: absolute;
-  left: 50%;
-  bottom: 30%;
-  height: 52%;
-  transform: translateX(-50%);
-}
-
-.d-site-dock {
-  position: absolute;
-  left: 50%;
-  bottom: 7%;
-  display: flex;
-  gap: 4%;
-  width: 46%;
+.tel .b-adresse {
+  height: calc(var(--u) * 9);
+  padding: 0 calc(var(--u) * 4);
+  font-size: calc(var(--u) * 3.6);
   justify-content: center;
-  padding: 1.2% 2%;
-  border-radius: 999px;
-  background: rgb(150 195 240 / 0.6);
-  transform: translateX(-50%);
 }
 
-.tel .d-site-dock {
-  width: 80%;
+.tel[data-os='ios'] .b-barre {
+  order: 2;
+  height: calc(var(--u) * 17);
+  padding-bottom: calc(var(--u) * 5);
 }
 
-.d-site-dock i {
-  width: 8%;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  background: rgb(255 255 255 / 0.85);
-}
-
-.d-site-dock .d-cible {
-  background: #fff;
-  box-shadow: 0 0 0 2px #0a6cdb;
-}
-
-.d-site-dock .d-cible.clic {
-  animation: coche-pop 0.42s cubic-bezier(0.3, 1.6, 0.5, 1);
+.tel[data-os='ios'] .d-nav {
+  padding-top: calc(var(--u) * 13);
 }
 
 /* the download */
 .d-dl {
   position: absolute;
-  right: 4%;
-  top: 9%;
+  right: 6%;
+  top: 13%;
   display: flex;
   align-items: center;
   gap: calc(var(--u) * 1);
@@ -566,6 +842,26 @@
   box-shadow: 0 0 0 1.5px #0a6cdb;
 }
 
+/* on a phone, the app takes the whole screen, its title under the status bar */
+.tel .d-app {
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+  border: 0;
+}
+
+.tel .d-titre {
+  height: calc(var(--u) * 16);
+  padding-top: calc(var(--u) * 8);
+  font-size: calc(var(--u) * 3.6);
+}
+
+.tel .d-titre i {
+  display: none;
+}
+
 /* the bouquet's frame (Belai Bureau's widget): dashed, its corner, its buttons ✓ and front/behind, the phone's sizes */
 .d-cadre {
   position: absolute;
@@ -727,61 +1023,90 @@
   transform: translateX(-50%);
 }
 
-/* the cursor: an arrow on a computer, a fingertip on a phone */
+/* the cursor: its tip at its place (the element moves, its picture scales when it presses); its shapes: an arrow, a hand
+   over a link, a text bar over a field, the corner's resize arrows, a closed hand while it drags; on a phone, a fingertip */
 .d-curseur {
   position: absolute;
   left: 0;
   top: 0;
-  width: calc(var(--u) * 1.6);
-  height: calc(var(--u) * 2.4);
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 24'%3E%3Cpath d='M1 1v19l5-5 3.4 7.4 3-1.4L9 13.6h7z' fill='%23111' stroke='%23fff' stroke-width='1.4' stroke-linejoin='round'/%3E%3C/svg%3E") 0 0 / contain no-repeat;
-  filter: drop-shadow(0 1px 1.5px rgb(0 0 0 / 0.35));
-  transition-property: transform;
-  transition-timing-function: cubic-bezier(0.4, 0.1, 0.2, 1);
+  width: 0;
+  height: 0;
   z-index: 5;
+  pointer-events: none;
 }
 
-.tel .d-curseur {
-  width: calc(var(--u) * 9);
-  height: calc(var(--u) * 9);
-  margin: calc(var(--u) * -4.5) 0 0 calc(var(--u) * -4.5);
-  border-radius: 50%;
-  background: rgb(255 255 255 / 0.55);
-  box-shadow: 0 0 0 1.5px rgb(255 255 255 / 0.9), 0 2px 8px rgb(0 0 0 / 0.25);
-  filter: none;
-}
-
-.d-curseur.clic::after {
+.d-curseur::before {
   content: '';
   position: absolute;
+  width: calc(var(--u) * 1.7);
+  height: calc(var(--u) * 2.55);
+  background: 0 0 / contain no-repeat;
+  filter: drop-shadow(0 1px 1.2px rgb(0 0 0 / 0.35));
+  transform-origin: 0 0;
+  transition: transform 0.08s ease;
+}
+
+.d-curseur[data-forme='fleche']::before {
   left: 0;
   top: 0;
-  width: calc(var(--u) * 3);
-  height: calc(var(--u) * 3);
-  margin: calc(var(--u) * -1.5) 0 0 calc(var(--u) * -1.5);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 24'%3E%3Cpath d='M1.2 1.2v18.4l4.6-4.5 3.3 7.3 3-1.4-3.3-7.1h6.5z' fill='%23111' stroke='%23fff' stroke-width='1.3' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
+.d-curseur[data-forme='main']::before {
+  left: calc(var(--u) * -0.62);
+  top: 0;
+  width: calc(var(--u) * 2.1);
+  height: calc(var(--u) * 2.55);
+  transform-origin: 30% 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 24'%3E%3Cpath d='M6.2 1.2c-1 0-1.7.8-1.7 1.8v9.6l-1.3-1.4c-.8-.8-2-.8-2.6 0-.6.6-.6 1.6 0 2.3l4.6 5.6c1.2 1.6 2.9 2.6 5.1 2.6h1.6c3.4 0 5.6-2.5 5.6-6.1v-5c0-1-.7-1.8-1.6-1.8s-1.6.8-1.6 1.8v-.9c0-1-.7-1.8-1.7-1.8-.9 0-1.6.8-1.6 1.8v-.7c0-1-.7-1.8-1.6-1.8s-1.6.8-1.6 1.8V3c0-1-.7-1.8-1.6-1.8z' fill='%23fff' stroke='%23111' stroke-width='1.2' stroke-linejoin='round'/%3E%3Cpath d='M9.4 12v4.4M12.6 12v4.4M15.8 12v4.4' stroke='%23111' stroke-width='1' stroke-linecap='round'/%3E%3C/svg%3E");
+}
+
+.d-curseur[data-forme='texte']::before {
+  left: calc(var(--u) * -0.5);
+  top: calc(var(--u) * -1.2);
+  width: calc(var(--u) * 1);
+  height: calc(var(--u) * 2.4);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 24'%3E%3Cpath d='M2 1.5h2.2c.6 0 .8.3.8.8v19.4c0 .5-.2.8-.8.8H2M8 1.5H5.8c-.6 0-.8.3-.8.8v19.4c0 .5.2.8.8.8H8' fill='none' stroke='%23fff' stroke-width='2.6' stroke-linecap='round'/%3E%3Cpath d='M2 1.5h2.2c.6 0 .8.3.8.8v19.4c0 .5-.2.8-.8.8H2M8 1.5H5.8c-.6 0-.8.3-.8.8v19.4c0 .5.2.8.8.8H8' fill='none' stroke='%23111' stroke-width='1.2' stroke-linecap='round'/%3E%3C/svg%3E");
+}
+
+.d-curseur[data-forme='taille']::before {
+  left: calc(var(--u) * -1.1);
+  top: calc(var(--u) * -1.1);
+  width: calc(var(--u) * 2.2);
+  height: calc(var(--u) * 2.2);
+  transform-origin: 50% 50%;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 22'%3E%3Cpath d='M3 3h7l-2.6 2.6 9.2 9.2L19 12.2V19h-7l2.6-2.6-9.2-9.2L3 9.8z' fill='%23111' stroke='%23fff' stroke-width='1.3' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
+.d-curseur[data-forme='prise']::before {
+  left: calc(var(--u) * -1);
+  top: calc(var(--u) * -0.8);
+  width: calc(var(--u) * 2.1);
+  height: calc(var(--u) * 2.1);
+  transform-origin: 50% 40%;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5 6.2c0-1 .8-1.7 1.7-1.7s1.6.7 1.6 1.7V6c0-1 .8-1.7 1.7-1.7s1.6.7 1.6 1.7v.4c0-1 .8-1.7 1.6-1.7.9 0 1.7.7 1.7 1.7v1c0-.9.7-1.6 1.6-1.6s1.6.7 1.6 1.6v4.6c0 3.5-2.2 6-5.6 6H11c-2.1 0-3.6-.9-4.8-2.4L2.4 10.9c-.6-.7-.5-1.7.2-2.3.7-.5 1.7-.4 2.3.3l.1.1z' fill='%23fff' stroke='%23111' stroke-width='1.2' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
+.d-curseur.presse::before {
+  transform: scale(0.88);
+}
+
+/* a fingertip on a phone */
+.tel .d-curseur::before {
+  left: calc(var(--u) * -4.5);
+  top: calc(var(--u) * -4.5);
+  width: calc(var(--u) * 9);
+  height: calc(var(--u) * 9);
   border-radius: 50%;
-  border: 2px solid #0a6cdb;
-  animation: clic-onde 0.45s ease-out forwards;
+  background: rgb(255 255 255 / 0.5) none;
+  box-shadow: 0 0 0 1.5px rgb(255 255 255 / 0.9), 0 2px 8px rgb(0 0 0 / 0.25);
+  filter: none;
+  transform-origin: 50% 50%;
 }
 
-.tel .d-curseur.clic::after {
-  left: 50%;
-  top: 50%;
-  width: calc(var(--u) * 14);
-  height: calc(var(--u) * 14);
-  margin: calc(var(--u) * -7) 0 0 calc(var(--u) * -7);
-  border-color: #fff;
-}
-
-@keyframes clic-onde {
-  from {
-    transform: scale(0.3);
-    opacity: 1;
-  }
-  to {
-    transform: scale(1);
-    opacity: 0;
-  }
+.tel .d-curseur.presse::before {
+  transform: scale(0.8);
+  background-color: rgb(255 255 255 / 0.75);
 }
 
 /* a window to stand in front of or behind: under the bouquet (in the screen's desktop) or over it (in the top layer) */
@@ -818,7 +1143,15 @@
   width: 60%;
 }
 
-/* ---------- the steps round the device: on its two sides on a wide screen, in a row under it on a narrow one */
+/* ---------- the steps round the device, in black Nunito on the white page (owner, 2026-10-27: no glass bubbles): on its two
+   sides on a wide screen, in a row under it on a narrow one */
+@font-face {
+  font-family: 'Nunito Demo';
+  src: url('polices/nunito-black.woff2') format('woff2');
+  font-weight: 900;
+  font-display: swap;
+}
+
 .demo-etapes {
   position: fixed;
   margin: 0;
@@ -827,96 +1160,118 @@
 }
 
 .demo2.large .demo-etapes {
-  left: 20px;
-  right: 20px;
-  top: var(--haut);
-  height: var(--h);
   display: grid;
   grid-template-columns: repeat(2, var(--cote));
   grid-template-rows: repeat(var(--rangs), auto);
   grid-auto-flow: column;
   justify-content: space-between;
   align-content: center;
-  gap: 10px 0;
+  gap: 18px 0;
   pointer-events: none;
 }
 
-.demo2:not(.large) .demo-etapes {
+.demo2:not(.large) .demo-etapes li:not(.actif) {
+  display: none;
+}
+
+.demo2:not(.large) .demo-etapes li {
   display: flex;
-  gap: 8px;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scrollbar-width: none;
+  justify-content: center;
+}
+
+.demo-points {
+  display: none;
+}
+
+.demo2:not(.large) .demo-points {
+  position: fixed;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 2px;
+}
+
+.demo-point {
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+.demo-point::before {
+  content: '';
+  display: block;
+  width: 6px;
+  height: 6px;
+  margin: auto;
+  border-radius: 3px;
+  background: #c9ced5;
+  transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.demo-point.en-cours::before {
+  width: 16px;
+  background: #111;
 }
 
 .demo-etape {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   gap: 10px;
   width: 100%;
-  padding: 9px 12px;
-  border: 1px solid var(--glass-bord);
-  border-radius: 16px;
-  background: var(--glass);
-  -webkit-backdrop-filter: var(--glass-flou);
-  backdrop-filter: var(--glass-flou);
-  box-shadow: var(--glass-ombre);
-  color: #fff;
-  font: 500 13.5px/1.3 system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: #111;
+  font: 900 15px/1.3 'Nunito Demo', 'Nunito', system-ui, sans-serif;
   text-align: left;
-  text-shadow: 0 1px 2px rgb(8 36 84 / 0.35);
   cursor: pointer;
   pointer-events: auto;
-  opacity: 0.72;
-  transition: opacity 0.3s ease, transform 0.4s cubic-bezier(0.3, 1.6, 0.5, 1);
+  opacity: 0.28;
+  transition: opacity 0.35s ease, transform 0.45s cubic-bezier(0.3, 1.6, 0.5, 1);
+  transform-origin: 0 50%;
 }
 
 .demo2:not(.large) .demo-etape {
-  width: 220px;
-  flex: none;
-  scroll-snap-align: center;
+  width: auto;
+  max-width: 340px;
+  font-size: 16px;
+}
+
+.demo2:not(.large) .demo-etape .n {
+  font-size: 30px;
 }
 
 .demo-etapes li {
   min-width: 0;
 }
 
-.demo2:not(.large) .demo-etapes li {
-  flex: none;
-}
-
 .demo-etape .n {
-  display: grid;
-  place-items: center;
   flex: none;
-  width: 26px;
-  height: 26px;
-  border-radius: 50%;
-  background: rgb(255 255 255 / 0.2);
-  font-weight: 700;
+  min-width: 1.6em;
+  font-size: 26px;
+  line-height: 1;
 }
 
 .demo-etape.fait {
-  opacity: 0.9;
-}
-
-.demo-etape.fait .n {
-  background: rgb(255 255 255 / 0.85);
-  color: #0a6cdb;
+  opacity: 0.5;
 }
 
 .demo-etape.en-cours {
   opacity: 1;
-  transform: scale(1.04);
-  border-color: rgb(255 255 255 / 0.85);
+  transform: scale(1.06);
 }
 
-.demo-etape.en-cours .n {
-  background: #0a6cdb;
-  box-shadow: 0 0 0 2px #fff;
+.demo-etape:focus-visible {
+  outline: 2px solid #111;
+  outline-offset: 4px;
+  border-radius: 6px;
 }
 
-/* ---------- the devices, over the toolbar; play and close */
+/* ---------- the devices over the toolbar, play and close: black on white, as the steps */
 .demo-appareils {
   position: fixed;
   left: 50%;
@@ -924,12 +1279,10 @@
   display: flex;
   gap: 4px;
   padding: 4px;
-  border: 1px solid var(--glass-bord);
+  border: 1px solid #e3e6ea;
   border-radius: 999px;
-  background: var(--glass);
-  -webkit-backdrop-filter: var(--glass-flou);
-  backdrop-filter: var(--glass-flou);
-  box-shadow: var(--glass-ombre);
+  background: #fff;
+  box-shadow: 0 4px 16px rgb(20 40 80 / 0.1);
   transform: translateX(-50%);
 }
 
@@ -939,18 +1292,17 @@
   gap: 6px;
   height: 36px;
   padding: 0 14px;
-  border: 1px solid transparent;
+  border: 0;
   border-radius: 999px;
   background: none;
-  color: #fff;
-  font: 600 13px/1 system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-  text-shadow: 0 1px 2px rgb(8 36 84 / 0.35);
+  color: #111;
+  font: 900 13.5px/1 'Nunito Demo', 'Nunito', system-ui, sans-serif;
   cursor: pointer;
-  transition: transform 0.38s cubic-bezier(0.3, 1.6, 0.5, 1);
+  transition: transform 0.38s cubic-bezier(0.3, 1.6, 0.5, 1), background-color 0.2s ease;
 }
 
-.demo-app-btn svg {
-  filter: var(--glass-encre);
+.demo-app-btn:hover {
+  background: #f1f3f5;
 }
 
 .demo-app-btn:active {
@@ -958,9 +1310,8 @@
 }
 
 .demo-app-btn[aria-checked='true'] {
-  border-color: rgb(255 255 255 / 0.55);
-  background: radial-gradient(circle at 50% 28%, rgb(255 255 255 / 0.5), rgb(255 255 255 / 0.14) 72%);
-  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.85), 0 3px 10px rgb(10 40 90 / 0.22);
+  background: #111;
+  color: #fff;
 }
 
 @media (max-width: 520px) {
@@ -977,14 +1328,12 @@
   align-items: center;
   gap: 6px;
   height: 38px;
-  border: 1px solid var(--glass-bord);
+  border: 1px solid #e3e6ea;
   border-radius: 999px;
-  background: var(--glass);
-  -webkit-backdrop-filter: var(--glass-flou);
-  backdrop-filter: var(--glass-flou);
-  box-shadow: var(--glass-ombre);
-  color: #fff;
-  font: 600 13px/1 system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  background: #fff;
+  box-shadow: 0 4px 16px rgb(20 40 80 / 0.1);
+  color: #111;
+  font: 900 13.5px/1 'Nunito Demo', 'Nunito', system-ui, sans-serif;
   cursor: pointer;
 }
 
@@ -1000,13 +1349,30 @@
   padding: 0 14px;
 }
 
+/* the toolbar and the Legal pill stay over the white page: their glass a denser blue */
+.demo-ouverte .dock,
+.demo-ouverte .pied-poignee {
+  background: var(--glass-texte);
+}
+
+.demo2.sort .demo-etapes,
+.demo2.sort .demo-appareils,
+.demo2.sort .demo2-fermer,
+.demo2.sort .demo2-lecture,
+.demo2.sort .demo-dessus {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .demo-appareil.entre,
   .demo-appareil.sort,
   .d-cadre,
   .d-app,
   .d-dl,
-  .d-notes {
+  .d-notes,
+  .d-nav.ouvre,
+  .demo-blanc {
     animation: none;
   }
 }

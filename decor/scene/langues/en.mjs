@@ -442,7 +442,7 @@ export default {
     demoDevice: { pc: 'PC', mac: 'Mac', android: 'Android', iphone: 'iPhone' },
     demoDesk: ['On the site, tap “On my desktop”', 'Download Belai Bureau and install it', 'Sign in: first name, number, code sent by text', 'Your bouquets appear', 'Choose a bouquet: it lands on your desktop', 'Drag the corner to choose its size', 'Drag it wherever you like', 'In front of or behind the windows, in one click', 'Confirm ✓: the mouse goes back to the desktop', 'A long press (6 s) to change it again'],
     demoPhone: ['On the site, tap “On my phone”', 'Download Belai Bureau', 'Sign in: first name, number, code sent by text', 'Your bouquets appear', 'Choose a bouquet: it lands on your home screen', 'Choose its size', 'Drag it wherever you like', 'Confirm ✓', 'A long press to change it again'],
-    demoUi: { download: 'Download', installing: 'Installing…', installed: 'Installed', firstName: 'First name', phone: 'Mobile number', code: 'Code received', signIn: 'Sign in', bouquets: 'My bouquets' },
+    demoUi: { finder: 'Desktop', download: 'Download', installing: 'Installing…', installed: 'Installed', firstName: 'First name', phone: 'Mobile number', code: 'Code received', signIn: 'Sign in', bouquets: 'My bouquets' },
     copyNo: 'copy no. {n}',
     noBouquet: 'No bouquet on your account yet.',
     giftsSoon: 'Gifts are coming soon: you will open here the bouquet someone gives you.',

@@ -463,7 +463,7 @@ export default {
     demoDevice: { pc: 'PC', mac: 'Mac', android: 'Android', iphone: 'iPhone' },
     demoDesk: ['Tippen Sie auf der Website auf „Auf meinem Desktop“', 'Laden Sie Belai Bureau herunter und installieren Sie es', 'Anmelden: Vorname, Nummer, Code per SMS', 'Ihre Sträuße erscheinen', 'Wählen Sie einen Strauß: Er landet auf Ihrem Desktop', 'Ziehen Sie an der Ecke, um die Größe zu wählen', 'Ziehen Sie ihn, wohin Sie möchten', 'Vor oder hinter den Fenstern, mit einem Klick', 'Bestätigen ✓: Die Maus gehört wieder dem Desktop', 'Lange drücken (6 s), um ihn wieder zu ändern'],
     demoPhone: ['Tippen Sie auf der Website auf „Auf meinem Handy“', 'Laden Sie Belai Bureau herunter', 'Anmelden: Vorname, Nummer, Code per SMS', 'Ihre Sträuße erscheinen', 'Wählen Sie einen Strauß: Er landet auf Ihrem Startbildschirm', 'Wählen Sie die Größe', 'Ziehen Sie ihn, wohin Sie möchten', 'Bestätigen ✓', 'Lange drücken, um ihn wieder zu ändern'],
-    demoUi: { download: 'Herunterladen', installing: 'Wird installiert…', installed: 'Installiert', firstName: 'Vorname', phone: 'Mobilnummer', code: 'Erhaltener Code', signIn: 'Anmelden', bouquets: 'Meine Sträuße' },
+    demoUi: { finder: 'Schreibtisch', download: 'Herunterladen', installing: 'Wird installiert…', installed: 'Installiert', firstName: 'Vorname', phone: 'Mobilnummer', code: 'Erhaltener Code', signIn: 'Anmelden', bouquets: 'Meine Sträuße' },
     copyNo: 'Exemplar Nr. {n}',
     noBouquet: 'Noch kein Strauß in Ihrem Konto.',
     giftsSoon: 'Geschenke kommen bald: Hier öffnen Sie den Strauß, den man Ihnen schenkt.',
