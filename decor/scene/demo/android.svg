@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1640" width="800" height="1640">
+  <!-- A generic Android smartphone seen from the front (demo "On your desktop", owner 2026-10-27: no brand): a dark satin
+       frame with rounder corners, a very thin border and the camera in a small hole at the top. The screen is a hole
+       (x 66, y 56, 668 x 1528, radius 76). -->
+  <defs>
+    <linearGradient id="cadre" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#1f2329"/>
+      <stop offset="0.05" stop-color="#4a5059"/>
+      <stop offset="0.5" stop-color="#363b42"/>
+      <stop offset="0.95" stop-color="#4a5059"/>
+      <stop offset="1" stop-color="#1f2329"/>
+    </linearGradient>
+    <linearGradient id="reflet" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff" stop-opacity="0.13"/>
+      <stop offset="0.34" stop-color="#fff" stop-opacity="0.03"/>
+      <stop offset="0.35" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="ombre" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#0b1a33" stop-opacity="0.32"/>
+      <stop offset="1" stop-color="#0b1a33" stop-opacity="0"/>
+    </radialGradient>
+    <mask id="trou" maskUnits="userSpaceOnUse" x="0" y="0" width="100%" height="100%">
+      <rect width="100%" height="100%" fill="#fff"/>
+      <rect x="66" y="56" width="668" height="1528" rx="76" fill="#000"/>
+    </mask>
+  </defs>
+  <ellipse cx="400" cy="1622" rx="330" ry="14" fill="url(#ombre)"/>
+  <!-- the body, its screen cut out by the mask -->
+  <g mask="url(#trou)">
+  <rect x="754" y="330" width="8" height="90" rx="3" fill="#2b3036"/>
+  <rect x="754" y="460" width="8" height="160" rx="3" fill="#2b3036"/>
+  <rect x="44" y="24" width="712" height="1592" rx="104" fill="url(#cadre)"/>
+  <path fill="#050608" fill-rule="evenodd" d="M152 34h496a98 98 0 0 1 98 98v1376a98 98 0 0 1-98 98H152a98 98 0 0 1-98-98V132a98 98 0 0 1 98-98z
+    M142 56a76 76 0 0 0-76 76v1376a76 76 0 0 0 76 76h516a76 76 0 0 0 76-76V132a76 76 0 0 0-76-76z"/>
+  </g>
+
+  <!-- the camera's hole -->
+  <circle cx="400" cy="96" r="15" fill="#000"/>
+  <circle cx="398" cy="94" r="4" fill="#26334a"/>
+  <rect x="66" y="56" width="668" height="1528" rx="76" fill="url(#reflet)" pointer-events="none"/>
+</svg>

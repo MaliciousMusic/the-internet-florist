@@ -123,11 +123,13 @@ export async function creer({ scene, apres, bandes, loin, milieu, devant }) {
       cache.delete(url);
     },
     // the close-up: the stage magnified s times and moved (tx, ty) as the page's scene is (boutique.js), the canvas element
-    // held still on the screen inside that scaled scene
-    vue(tx, ty, s) {
+    // held still on the screen inside that scaled scene. st: the stage's own move when it differs from the scene's (the demo
+    // "On your desktop": the bouquet sized into a device's screen, the scene itself at rest)
+    vue(tx, ty, s, st = null) {
       view = { tx, ty, s };
-      app.stage.position.set(tx, ty);
-      app.stage.scale.set(s);
+      const g = st || view;
+      app.stage.position.set(g.tx, g.ty);
+      app.stage.scale.set(g.s);
       const t = s === 1 && !tx && !ty ? '' : `scale(${1 / s}) translate(${-tx}px,${-ty}px)`;
       for (const el of tenus) el.style.transform = t;
     },
