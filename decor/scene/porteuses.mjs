@@ -61,6 +61,12 @@ const RIGHT = [1, 0], LEFT = [-1, 0], UP = [0, -1];
 
 // generators run side by side, one step per frame (dt in s)
 function* wait(t) { while (t > 0) t -= yield; }
+// g step by step until it ends (false) or stop() turns true (true)
+function* unless(stop, g) {
+  let r = g.next();
+  while (!r.done) { const dt = yield; if (stop()) return true; r = g.next(dt); }
+  return false;
+}
 function* all(...gs) {
   const done = gs.map(() => false);
   gs.forEach((g) => g.next());
@@ -300,6 +306,12 @@ async function start() {
   // the toolbar (owner, 2026-10-27): two ants carry it in, one at each end, each holding its lower edge by a corner. The left one
   // faces right and walks forward, the right one faces left and walks backward, dragging, as ants share a load. Under its
   // place they rear up together on their hind legs until the toolbar is in it, let go, come down and leave, each by its side.
+  // The close-up opened before it is set (owner, 2026-10-27; the close-up has no toolbar): they get cross, jerk up twice on
+  // their hind legs, and both carry it off to the left; they bring it again once the close-up has closed.
+  const closeUp = () => root.classList.contains('gros-plan');
+  let dockGone = false;
+  const dockBack = () => { if (dockGone && !closeUp()) { dockGone = false; order(dockIn()); } };
+  new MutationObserver(dockBack).observe(root, { attributes: true, attributeFilter: ['class'] });
   function* dockIn() {
     const R = dock.rest(), y0 = LEDGE(), along = 12, gx = GRIP.feuille[0][0];
     // the feet under each corner (the mandibles ahead of the feet), and from the left ant's to the right one's
@@ -309,8 +321,8 @@ async function start() {
     dock.state = 'moving';
     // the toolbar level between their two grips
     const hold = () => { const p = A.grip(), q = B.grip(); dock.hold(R, [p[0], (p[1] + q[1]) / 2], along); };
-    function* held(g) { g.next(); hold(); for (;;) { const r = g.next(yield); hold(); if (r.done) return; } }
-    yield* held((function* () {
+    function* held(g) { g.next(); hold(); for (;;) { const r = g.next(yield); hold(); if (r.done) return r.value; } }
+    const cut = yield* held(unless(closeUp, (function* () {
       const v = SPEED * LADEN;
       while (x1 - A.x > 0.3) {
         const st = Math.min(x1 - A.x, v * (yield));
@@ -320,7 +332,38 @@ async function start() {
       yield* wait(PAUSE);
       A.placing = B.placing = true;
       yield* all(standUp(A, R.b, R.l + along), standUp(B, R.b, R.r - along));
-    })());
+    })()));
+    if (cut) {
+      // the toolbar stays in sight while they take it away (boutique.css)
+      root.classList.add('dock-emporte');
+      yield* held((function* () {
+        // down on their six legs
+        const r0 = [A.rear, B.rear];
+        for (let k = 0; k < 1; ) { k = Math.min(1, k + (yield) / 0.2); A.rear = r0[0] * (1 - k); B.rear = r0[1] * (1 - k); }
+        A.placing = B.placing = false;
+        // cross, where they can be seen: two sharp jerks up on their hind legs
+        if (B.grip()[0] > 0) {
+          yield* wait(0.12);
+          for (let i = 0; i < 2; i++)
+            for (let k = 0; k < 1; ) { k = Math.min(1, k + (yield) / 0.17); A.rear = B.rear = 0.24 * Math.sin(Math.PI * k); }
+          yield* wait(0.15);
+        }
+        // the left one turns round, its mandibles kept on its corner; both off to the left, briskly
+        const g0 = A.grip()[0];
+        A.t = LEFT;
+        A.x += g0 - A.grip()[0];
+        yield* wait(0.1);
+        const v = SPEED * LADEN * 1.5;
+        while (B.grip()[0] > -BODY_PX) { const st = v * (yield); A.go(A.x - st, y0); B.go(B.x - st, y0); }
+      })());
+      dock.away();
+      A.kill();
+      B.kill();
+      root.classList.remove('dock-emporte');
+      dockGone = true;
+      dockBack();
+      return;
+    }
     dock.home();
     if (dock.after) dock.after();
     yield* wait(PAUSE);
@@ -408,7 +451,8 @@ async function start() {
   // names: the left end's flyer, then the right end's; or a single flyer, holding the piece by its middle. o: pxmm (their scale); hang (px, or a fraction of the flyer's length when
   // under 1: how high its body's origin, at its thorax, is over the piece's upper edge); inset (px from the very ends; hang and
   // inset may be given per flyer); rise (px: where the course starts,
-  // under the place when positive, over it when negative); speed (px/s along the course); away(R): where they fly off to;
+  // under the place when positive, over it when negative); right: in from the right instead of the left; speed (px/s along the
+  // course); away(R): where they fly off to;
   // gone() (optional): true while the piece is out of sight, then it is set in its place with no flight, or dropped there at
   // once if they are on their way; tilt(t, u) (optional): degrees the left end hangs lower at time t (s) and course fraction u,
   // the piece turning about the right flyer's grip. Resolves once the piece is in its place.
@@ -455,7 +499,8 @@ async function start() {
     if (o.tilt) st.transformOrigin = `${(R.cx - box.el.offsetLeft).toFixed(1)}px ${(R.cy - box.el.offsetTop).toFixed(1)}px`;
     const settle = () => { box.home(); st.rotate = ''; st.transformOrigin = ''; };
     // the piece's centre: in from the left, lower or higher, to its place (a cubic, level at both ends)
-    const p0 = [-R.w / 2 - 90, R.cy + o.rise], p3 = [R.cx, R.cy], run1 = Math.max(80, Math.abs(p0[1] - p3[1]) * 1.8);
+    const p0 = [o.right ? W() + R.w / 2 + 90 : -R.w / 2 - 90, R.cy + o.rise], p3 = [R.cx, R.cy];
+    const run1 = Math.max(80, Math.abs(p0[1] - p3[1]) * 1.8) * (o.right ? -1 : 1);
     const bez = (u) => { const v = 1 - u, A = v * v * v, B = 3 * v * v * u, C = 3 * v * u * u, D = u * u * u; return [A * p0[0] + B * (p3[0] - run1) + C * (p3[0] - run1 * 0.5) + D * p3[0], A * p0[1] + B * p0[1] + C * p3[1] + D * p3[1]]; };
     const len = Math.hypot(p3[0] - p0[0], p3[1] - p0[1]) * 1.15, away = o.away(R);
     const fly = (i, to, dt) => {
@@ -490,7 +535,7 @@ async function start() {
             const d = [away[0] - b.P[0], away[1] - b.P[1]], l = Math.hypot(d[0], d[1]) || 1;
             fly(i, [b.P[0] + (d[0] / l) * sp * dt, b.P[1] + (d[1] / l) * sp * dt], dt);
           });
-          if (pair.every((b) => b.P[1] < -60 || b.P[0] > W() + 80)) {
+          if (pair.every((b) => b.P[1] < -60 || b.P[0] > W() + 80 || b.P[0] < -80)) {
             for (const b of pair) b.visible = false;
             flying--;
             e.render();
@@ -539,10 +584,13 @@ async function start() {
     haut = docked.then(() => Promise.race([shown.then(() => pagerIn), new Promise((ok) => setTimeout(ok, 3000)).then(() => (pager.hidden ? null : pagerIn))]));
   }
   haut.then(() => { window.PORTEUSES_HAUT = true; document.dispatchEvent(new Event('porteuses:haut')); });
-  // the Legal pill once the top is in its place
-  if (pill) haut.then(() => order(pillIn()));
+  // the Legal pill once the top is in its place; then all is laid (boutique.js: the invite to tap the bouquet)
+  haut
+    .then(() => pill && new Promise((ok) => order((function* () { yield* pillIn(); ok(); })())))
+    .then(() => { window.PORTEUSES_POSE = true; document.dispatchEvent(new Event('porteuses:pose')); });
   // the close-up, the first time in the visit: a swallowtail brings Buy (owner, 2026-10-27), two honeybees the small box over it
-  // ("On your desktop"). From then on the bubble comes and goes whole with the close-up, as without carriers (owner, 2026-10-25:
+  // ("On your desktop"). The swallowtail holds Buy by its upper edge, comes from the left and goes back there; the bees set out
+  // once Buy is set, from the right, back to the right: their courses never cross (owner, 2026-10-27). From then on the bubble comes and goes whole with the close-up, as without carriers (owner, 2026-10-25:
   // only a reload brings them anew). Closed before they are done, the pieces drop into their places and go down with the bubble
   const achat = $('#achat');
   if (achat && buy && demo) {
@@ -553,8 +601,10 @@ async function start() {
     const check = () => {
       if (laid || far()) return;
       laid = true;
-      lay(buy, ['machaon'], { pxmm: BUY_PXMM, hang: -8, inset: 0, rise: -110, speed: 210 }).then(() => buy.after());
-      lay(demo, ['abeille', 'abeille'], { pxmm: BEE_PXMM, hang: 0.15, inset: 8, rise: -90, speed: 260, under: true });
+      lay(buy, ['machaon'], { pxmm: BUY_PXMM, hang: 0.6, inset: 0, rise: -110, speed: 210, away: (R) => [-160, R.cy - 220] }).then(() => {
+        buy.after();
+        lay(demo, ['abeille', 'abeille'], { pxmm: BEE_PXMM, hang: 0.15, inset: 8, rise: -90, speed: 340, under: true, right: true });
+      });
     };
     new MutationObserver(check).observe(achat, { attributes: true, attributeFilter: ['class', 'hidden'] });
     check();
