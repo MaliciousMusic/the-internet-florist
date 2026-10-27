@@ -436,7 +436,7 @@ export default {
     accountSignIn: 'Iniciar sesión',
     hello: 'Hola, {name}',
     firstNameNeeded: 'Indica tu nombre para crear tu cuenta.',
-    credit: 'Saldo: {amount}, descontado de tu próxima compra.',
+    creditBalance: 'Saldo: {amount}, descontado de tu próxima compra.',
     exchangeUntil: 'Cambiar (hasta {t})',
     exchangeFor: 'Cambiar por',
     exchangeConfirm: 'Confirmar el cambio',

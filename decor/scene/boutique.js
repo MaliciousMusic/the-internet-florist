@@ -208,7 +208,7 @@
     $('pf-titre').textContent = moi.compte.prenom ? fill(T.hello, { name: moi.compte.prenom }) : T.accountTitle;
     const cg = $('pf-cagnotte');
     cg.hidden = !moi.compte.cagnotte;
-    cg.textContent = moi.compte.cagnotte ? fill(T.credit, { amount: eur(moi.compte.cagnotte) }) : '';
+    cg.textContent = moi.compte.cagnotte ? fill(T.creditBalance, { amount: eur(moi.compte.cagnotte) }) : '';
     const list = $('pf-bouquets');
     list.textContent = '';
     for (const b of moi.bouquets) {

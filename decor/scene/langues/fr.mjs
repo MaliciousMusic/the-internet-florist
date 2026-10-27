@@ -437,7 +437,7 @@ export default {
     accountSignIn: 'Connexion',
     hello: 'Bonjour {name}',
     firstNameNeeded: 'Indiquez votre prénom pour créer votre compte.',
-    credit: 'Cagnotte : {amount}, déduite de votre prochain achat.',
+    creditBalance: 'Cagnotte : {amount}, déduite de votre prochain achat.',
     exchangeUntil: 'Échanger (jusqu’à {t})',
     exchangeFor: 'Échanger contre',
     exchangeConfirm: 'Confirmer l’échange',

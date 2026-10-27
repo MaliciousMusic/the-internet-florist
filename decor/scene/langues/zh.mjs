@@ -380,7 +380,7 @@ export default {
     accountSignIn: '登录',
     hello: '你好，{name}',
     firstNameNeeded: '请填写你的名字以创建账户。',
-    credit: '余额：{amount}，将从下次购买中扣除。',
+    creditBalance: '余额：{amount}，将从下次购买中扣除。',
     exchangeUntil: '更换（{t} 前）',
     exchangeFor: '更换为',
     exchangeConfirm: '确认更换',

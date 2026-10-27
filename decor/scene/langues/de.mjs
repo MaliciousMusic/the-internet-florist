@@ -444,7 +444,7 @@ export default {
     accountSignIn: 'Anmelden',
     hello: 'Hallo {name}',
     firstNameNeeded: 'Geben Sie Ihren Vornamen an, um Ihr Konto anzulegen.',
-    credit: 'Guthaben: {amount}, wird von Ihrem nächsten Kauf abgezogen.',
+    creditBalance: 'Guthaben: {amount}, wird von Ihrem nächsten Kauf abgezogen.',
     exchangeUntil: 'Umtauschen (bis {t})',
     exchangeFor: 'Umtauschen gegen',
     exchangeConfirm: 'Umtausch bestätigen',
