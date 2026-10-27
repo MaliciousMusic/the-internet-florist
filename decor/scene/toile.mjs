@@ -93,6 +93,8 @@ export async function creer({ scene, apres, bandes, loin, milieu, devant }) {
   addEventListener('resize', resize);
 
   const cache = new Map();
+  // the page's elements held still on the screen in the close-up, as the canvas is (T.tenir)
+  const tenus = [canvas];
   const T = {
     PIXI,
     app,
@@ -126,7 +128,13 @@ export async function creer({ scene, apres, bandes, loin, milieu, devant }) {
       view = { tx, ty, s };
       app.stage.position.set(tx, ty);
       app.stage.scale.set(s);
-      canvas.style.transform = s === 1 && !tx && !ty ? '' : `scale(${1 / s}) translate(${-tx}px,${-ty}px)`;
+      const t = s === 1 && !tx && !ty ? '' : `scale(${1 / s}) translate(${-tx}px,${-ty}px)`;
+      for (const el of tenus) el.style.transform = t;
+    },
+    // an element of the scene (laid from its top left corner) that the close-up must not move or magnify either
+    tenir(el) {
+      el.style.transformOrigin = '0 0';
+      tenus.push(el);
     },
     get vueActuelle() {
       return view;
