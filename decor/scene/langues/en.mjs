@@ -152,6 +152,8 @@ export default {
     ],
     download: 'Download Belai Bureau',
     downloadSmall: 'Windows 10 and 11 · 3 MB · free',
+    winSmall: '10 and 11 · 3 MB · free',
+    soon: 'Coming soon',
     note: 'Only the wallet that holds a bouquet can show it. On first launch, Windows may warn that it does not know the app yet: “More info”, then “Run anyway”.',
     appLanguage: 'The app itself is in French for now.',
     fingerprint: 'Version {v} · SHA-256',

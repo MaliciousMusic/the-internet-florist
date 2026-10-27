@@ -157,6 +157,8 @@ export default {
     ],
     download: 'Descargar Belai Bureau',
     downloadSmall: 'Windows 10 y 11 · 3 MB · gratis',
+    winSmall: '10 y 11 · 3 MB · gratis',
+    soon: 'Próximamente',
     note: 'Solo el monedero que tiene un ramo puede mostrarlo. La primera vez que la abras, Windows puede avisarte de que aún no conoce la aplicación: «Más información» y después «Ejecutar de todas formas».',
     appLanguage: 'Por ahora, la aplicación está en francés.',
     fingerprint: 'Versión {v} · SHA-256',

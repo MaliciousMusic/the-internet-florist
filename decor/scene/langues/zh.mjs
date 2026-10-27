@@ -151,6 +151,8 @@ export default {
     ],
     download: '下载 Belai Bureau',
     downloadSmall: 'Windows 10 和 11 · 3 MB · 免费',
+    winSmall: '10 和 11 · 3 MB · 免费',
+    soon: '即将推出',
     note: '只有持有花束的钱包才能展示它。首次启动时，Windows 可能会提示尚不认识此应用：点击“更多信息”，再点击“仍要运行”。',
     appLanguage: '应用本身目前仅提供法语版。',
     fingerprint: '版本 {v} · SHA-256',

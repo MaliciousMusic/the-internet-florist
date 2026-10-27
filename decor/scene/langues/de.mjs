@@ -152,6 +152,8 @@ export default {
     ],
     download: 'Belai Bureau herunterladen',
     downloadSmall: 'Windows 10 und 11 · 3 MB · kostenlos',
+    winSmall: '10 und 11 · 3 MB · kostenlos',
+    soon: 'Demnächst',
     note: 'Nur die Wallet, die einen Blumenstrauß hält, kann ihn anzeigen. Beim ersten Start warnt Windows möglicherweise, dass es die App noch nicht kennt: „Weitere Informationen“, dann „Trotzdem ausführen“.',
     appLanguage: 'Die App selbst ist vorerst nur auf Französisch verfügbar.',
     fingerprint: 'Version {v} · SHA-256',

@@ -152,6 +152,8 @@ export default {
     ],
     download: 'Télécharger Belai Bureau',
     downloadSmall: 'Windows 10 et 11 · 3 Mo · gratuit',
+    winSmall: '10 et 11 · 3 Mo · gratuit',
+    soon: 'Bientôt',
     note: 'Seul le portefeuille qui détient un bouquet peut l’afficher. Au premier lancement, Windows peut signaler qu’il ne connaît pas encore l’application : « Informations complémentaires », puis « Exécuter quand même ».',
     appLanguage: '',
     fingerprint: 'Version {v} · SHA-256',
