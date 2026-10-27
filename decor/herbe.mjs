@@ -520,12 +520,23 @@ function drawLeaf(o, b, k, n = 14, opt = {}) {
 // c: { X, Z, phi (lean azimuth), lean (rad from vertical at the base), nod (extra bend at the top, rad), Hm (height, m),
 //      r (radius at the base, m) }. Returns the top frame (point, tangent) for the head.
 const CULM = { alb: hexLin('#b2c68a').map((v, i) => v / OPEN[i]), trans: hexLin('#c8dc98') };
+// no culm bends further than 45 deg from vertical, its head included (owner, 2026-10-27: « les herbes hautes vont des fois
+// complètement à l'horizontale » ; their length is kept): lean + nod reached 64 deg
+const CULM_MAX = Math.PI / 4;
+// a direction held within CULM_MAX of vertical (the Yorkshire fog's plume arched on past its culm's 45 deg, to lie flat:
+// the one the owner saw lying in the foreground's clumps)
+function capLean(T) {
+  const c = dot(T, UP);
+  if (c >= Math.cos(CULM_MAX)) return T;
+  const h = add(T, UP, -c), n = Math.hypot(...h) || 1;
+  return add(scl(UP, Math.cos(CULM_MAX)), h, Math.sin(CULM_MAX) / n);
+}
 function culmFrames(c, n) {
   const out = [];
   let P = [c.X, c.Y || 0, c.Z];
   const D = [Math.cos(c.phi), 0, Math.sin(c.phi)];
   const ds = 1 / (n - 1);
-  const ang = (s) => c.lean + c.nod * s ** 2.4; // angle from vertical
+  const ang = (s) => Math.min(CULM_MAX, c.lean + c.nod * s ** 2.4); // angle from vertical
   for (let i = 0; i < n; i++) {
     const s = i * ds, a = ang(s);
     const T = norm(add(scl(D, Math.sin(a)), UP, Math.cos(a)));
@@ -721,7 +732,7 @@ function drawHead(o, sp, top, r, k, lod = 1) {
     let Q = P, Td = T;
     for (let i = 0; i <= ns; i++) {
       sp3.push(Q); tg.push(Td);
-      Td = norm(add(Td, UP, -(bend / ns) * (0.6 + i / ns)));
+      Td = capLean(norm(add(Td, UP, -(bend / ns) * (0.6 + i / ns))));
       Q = add(Q, Td, L / ns);
     }
     const at = (t) => { const f = t * ns, i = Math.min(ns - 1, Math.floor(f)), u = f - i; return [add(scl(sp3[i], 1 - u), sp3[i + 1], u), tg[i]]; };

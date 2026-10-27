@@ -48,6 +48,36 @@ Sur téléphone, éteindre un seul poste n'aide pas.
 7. **S7, la mesure.** On relance `perf.mjs`. Les objectifs sont 60 images par seconde sur ordinateur, 30 au moins sur téléphone,
    et le premier bouquet en moins d'une seconde sur ordinateur.
 
+## État (27 octobre 2026)
+
+- **S1 à S3 faits** (commit cdfb31c) :
+  - `sprites.mjs` cuit les 11 bouquets : de 30 à 72 Ko pour la frise, de 177 à 602 Ko pour le gros plan ;
+  - `toile.mjs` porte la toile unique ;
+  - `frise.js`, `boutique.js` et `insectes.mjs` y sont branchés ;
+  - l'essaim range ses insectes dans les plans de la toile.
+- **Mesures en local** (`perf.mjs`, même protocole que le tableau du porteur) :
+
+  | | Avant | Après |
+  |---|---|---|
+  | Ordinateur au repos | 15 i/s | 139 i/s |
+  | Ordinateur en glissant | 24 i/s | 142 i/s |
+  | Téléphone ralenti 4 fois, au repos | 1 i/s | 117 i/s |
+  | Téléphone ralenti 4 fois, en glissant | 3 i/s | 124 i/s |
+  | Premier bouquet, ordinateur | 2,4 s | 1,1 s |
+  | Premier bouquet, téléphone | 8,1 s | 2,8 s |
+  | Calques | 466 | 20 |
+
+- **S5** : la tige à épillets est plafonnée à 45° dans `herbe.mjs` (`CULM_MAX`), puis le sol et les touffes sont recuits.
+- **S6** : l'insecte prend son grand niveau de détail dès que le petit serait agrandi, en pixels réels (le seuil comptait en
+  pixels CSS, ×1,25). Le grand niveau se charge à la première demande.
+- **Corrigé au passage** : la cétoine des porteuses plantait à son premier vol (phase de battement non définie).
+
+## Reste
+
+- Les porteuses du bandeau gardent leurs deux canvases, au-dessus du bandeau HTML. On peut les réunir en une seule.
+- Le ciel reste une image SVG dans la page (48 Mo décodés sur téléphone) : un dégradé CSS ou un sprite suffirait.
+- `ouvert.json`, `p*.svg` et `vignette.svg` restent publiés comme sources, mais la page ne les lit plus.
+
 ## Questions ouvertes
 
 - Le vase en bronze à la carpe : refaire son corps coulé en SVG pur ? Il est hors du chantier sprites, et le porteur en décide.

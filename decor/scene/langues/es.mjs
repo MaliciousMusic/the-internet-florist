@@ -323,6 +323,8 @@ export default {
     shelves: { bouquets: 'Ramos del día', soliflores: 'Floreros solitarios', vendus: 'Ramos coleccionados' },
     desktopTitle: 'En mi escritorio',
     desktopLabel: 'Tu ramo en tu escritorio',
+    appTitle: 'Belai Bureau',
+    appLabel: 'Descargar Belai Bureau, la app que pone tu ramo en tu pantalla',
     openSeaTitle: 'Nuestra colección en OpenSea',
     openSeaLabel: 'Nuestra colección en OpenSea (nueva pestaña)',
     about: 'Acerca de',

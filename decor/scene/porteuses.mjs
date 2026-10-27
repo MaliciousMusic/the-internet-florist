@@ -25,6 +25,8 @@ const q = new URLSearchParams(location.search);
 const BASE = new URL('../../insectes/', import.meta.url).href;
 const root = document.documentElement;
 const DESK = matchMedia('(min-width: 900px) and (min-aspect-ratio: 4/3)');
+// the dock and the pager are at the bottom of the screen on a phone too since 2026-10-27 (owner): they come in as on a computer
+const DOCK_BAS = true;
 
 // the ant (insectes/fourmi-noire/COMPORTEMENT.md): 4 mm long, walking at 24 mm/s in an alternating tripod, 2.5 mm per stride;
 // a load lowers the cadence (x 0.7), not the stride
@@ -366,7 +368,7 @@ async function start() {
   const mk = (sel, o) => { const el = $(sel); if (!el) return null; const b = new Box(el, o); pieces.push(b); return b; };
   const pill = mk('.pied-poignee', { name: 'pill' });
   if (pill) pill.low = true;
-  const dock = DESK.matches ? mk('.dock', { name: 'dock' }) : null;
+  const dock = DOCK_BAS || DESK.matches ? mk('.dock', { name: 'dock' }) : null;
   // Buy set (its lifespan inside it since 2026-10-26): the bubble comes and goes whole with the close-up from then on (boutique.css)
   const buy = mk('.achat-bouton', { name: 'buy', after: () => root.classList.add('bulle-posee') });
   const demo = mk('.achat-demo', { name: 'demo' });
@@ -629,7 +631,7 @@ async function start() {
   if (dock) order(dockIn());
   window.PORTEUSES_EN_ROUTE = true;
   // on a phone the dock is at the top: two butterflies lay it (airlift, above); if they cannot, it stands in its place
-  const topDock = !DESK.matches && $('.dock') ? new Box($('.dock'), { name: 'dock' }) : null;
+  const topDock = !DOCK_BAS && !DESK.matches && $('.dock') ? new Box($('.dock'), { name: 'dock' }) : null;
   const docked = topDock ? airlift(topDock, ['machaon', 'paon'], { pxmm: 1.125, hang: -6, inset: 0, rise: 90, speed: 170, away: () => [W() + 140, -120] }).catch((err) => { console.error('[porteuses]', err); topDock.home(); })
     : dock ? new Promise((ok) => { dock.after = ok; }) : Promise.resolve();
   // the pager (one dot per bouquet of the day, by the dock: under it on a phone, just above it on a computer), brought by a
@@ -653,7 +655,7 @@ async function start() {
       mo.observe(pager, { attributes: true, attributeFilter: ['hidden'] });
     });
     const pagerIn = Promise.all([docked, shown])
-      .then(() => airlift(pg, ['coccinelle', 'cetoine'], { pxmm: BEETLE_PXMM, hang: 0.12, inset: [11, 6], rise: DESK.matches ? -110 : 90, speed: 190, away: (R) => [W() + 140, R.cy - 70], gone, tilt }))
+      .then(() => airlift(pg, ['coccinelle', 'cetoine'], { pxmm: BEETLE_PXMM, hang: 0.12, inset: [11, 6], rise: DOCK_BAS || DESK.matches ? -110 : 90, speed: 190, away: (R) => [W() + 140, R.cy - 70], gone, tilt }))
       .catch((err) => { console.error('[porteuses]', err); pg.home(); pager.style.rotate = ''; pager.style.transformOrigin = ''; });
     // the top is done once the pager is in its place; a pager still without its dots 3 s after the dock (one bouquet) is not
     // waited for
