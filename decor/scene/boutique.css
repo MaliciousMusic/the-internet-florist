@@ -1123,54 +1123,62 @@
   pointer-events: none;
 }
 
-/* ---------- the invite to tap the bouquet (owner, 2026-10-27): two soft white rings round its flowers, widening and fading,
-   twice, then a rest; until the first close-up (boutique.js) */
-.bq-cible.invite::before,
-.bq-cible.invite::after {
-  content: '';
+/* ---------- the invite to tap the bouquet (owner, 2026-10-27): round, in front of the bouquet (after the canvas), two faint white
+   ripples widening from its flowers and fading, then a rest; until the first close-up (boutique.js) */
+.bq-invite {
   position: absolute;
-  left: 50%;
-  top: 40%;
-  width: 104%;
-  aspect-ratio: 1.45;
-  border: 1.5px solid rgb(255 255 255 / 0.9);
-  border-radius: 50%;
-  box-shadow: 0 0 10px rgb(255 255 255 / 0.35), inset 0 0 10px rgb(255 255 255 / 0.3);
-  opacity: 0;
-  transform: translate(-50%, -50%) scale(0.86);
-  animation: bq-invite 4.6s cubic-bezier(0.2, 0.7, 0.3, 1) infinite;
+  z-index: 8;
+  transform: translate(-50%, -50%);
   pointer-events: none;
 }
 
-.bq-cible.invite::after {
-  animation-delay: 0.45s;
+.bq-invite[hidden] {
+  display: none;
+}
+
+.bq-invite::before,
+.bq-invite::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 1.5px solid rgb(255 255 255 / 0.62);
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgb(255 255 255 / 0.18), inset 0 0 8px rgb(255 255 255 / 0.14);
+  opacity: 0;
+  transform: scale(0.6);
+  animation: bq-invite 4.6s cubic-bezier(0.2, 0.7, 0.3, 1) infinite;
+}
+
+.bq-invite::after {
+  border-color: rgb(255 255 255 / 0.4);
+  animation-delay: 0.5s;
 }
 
 @keyframes bq-invite {
   0% {
     opacity: 0;
-    transform: translate(-50%, -50%) scale(0.86);
+    transform: scale(0.6);
   }
 
   12% {
     opacity: 1;
   }
 
-  40%,
+  45%,
   100% {
     opacity: 0;
-    transform: translate(-50%, -50%) scale(1.14);
+    transform: scale(1.12);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .bq-cible.invite::before {
+  .bq-invite::before {
     animation: none;
-    opacity: 0.8;
-    transform: translate(-50%, -50%);
+    opacity: 0.7;
+    transform: none;
   }
 
-  .bq-cible.invite::after {
+  .bq-invite::after {
     display: none;
   }
 }
