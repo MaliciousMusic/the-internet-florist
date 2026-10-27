@@ -6,10 +6,6 @@
   --verre-bas: rgb(16 48 86 / 0.1);
   --verre-bord: rgb(255 255 255 / 0.5);
   --verre-bord-choisi: rgb(255 255 255 / 0.9);
-  /* the panels that carry text (the shelves' words, the account, the purchase sheet, "On your desktop"): a deep blue glass,
-     white text and icons readable over any sky or meadow (owner, 2026-10-27) */
-  --verre-fonce: linear-gradient(to bottom, rgb(30 64 112 / 0.74), rgb(14 36 74 / 0.8));
-  --verre-fonce-bord: rgb(255 255 255 / 0.32);
   --encre: #fff;
   --gouttiere: max(10px, env(safe-area-inset-left));
   --leve: 6px;
@@ -307,9 +303,9 @@
   height: 28px;
   padding: 0 11px;
   box-sizing: border-box;
-  border: 1px solid rgb(255 255 255 / 0.45);
+  border: 1px solid var(--verre-fonce-bord);
   border-radius: 999px;
-  background: rgb(16 48 86 / 0.16);
+  background: var(--verre-fonce-pilule);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   color: #fff;
@@ -452,9 +448,9 @@
   display: flex;
   padding: 0 6px;
   height: 22px;
-  border: 1px solid rgb(255 255 255 / 0.45);
+  border: 1px solid var(--verre-fonce-bord);
   border-radius: 999px;
-  background: rgb(16 48 86 / 0.16);
+  background: var(--verre-fonce-pilule);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   transform: translateX(-50%);

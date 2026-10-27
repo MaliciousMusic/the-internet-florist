@@ -423,7 +423,7 @@ export default {
     accountSignIn: 'Sign in',
     hello: 'Hello {name}',
     firstNameNeeded: 'Enter your first name to create your account.',
-    credit: 'Credit: {amount}, taken off your next purchase.',
+    creditBalance: 'Credit: {amount}, taken off your next purchase.',
     exchangeUntil: 'Exchange (until {t})',
     exchangeFor: 'Exchange for',
     exchangeConfirm: 'Confirm the exchange',
