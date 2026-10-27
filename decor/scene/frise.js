@@ -26,7 +26,8 @@
 //   Frise.face()                    the place facing the camera, or -1 while it moves away from one
 //   Frise.bouquet(place)            the bouquet shown on a place (null if not yet)
 //   Frise.fige(on)                  no camera move (the close-up)
-//   Frise.seul(place | null)        only that place's bouquet shown (the close-up), or all
+//   Frise.seul(place | null)        only that place's bouquet and pillar shown (the close-up: the others fold into the
+//                                   ground), or all
 //   Frise.toile                     resolves with the canvas (toile.mjs) once it is made
 //   Frise.poseSprites(plane, url, opt) -> bouquet: a bouquet's sprites (sprites.mjs) on a place's plane
 //   events on document: "frise:arret" (detail: place; the camera has stopped facing it), "frise:depart" (it moves)
@@ -103,7 +104,7 @@
     s.position.set(x + dx, y);
     s.visible = false;
     layer.addChild(s);
-    const P = { s, url, gone: false };
+    const P = { s, url, gone: false, y, h };
     hold(url);
     decorWait.push(
       toile
@@ -177,7 +178,10 @@
       if (pillarImgs.has(key)) continue;
       const P = M.piliers[place];
       if (!P) continue;
-      pillarImgs.set(key, piece(toile.layer('piliers'), P.src + (P.v ? `?v=${P.v}` : ''), P.boite, P.apercu, i * M.pas));
+      const Pc = piece(toile.layer('piliers'), P.src + (P.v ? `?v=${P.v}` : ''), P.boite, P.apercu, i * M.pas);
+      Pc.place = place;
+      pillarImgs.set(key, Pc);
+      sink(Pc);
     }
     for (const [key, P] of pillarImgs) {
       if (want.has(key)) continue;
@@ -194,6 +198,24 @@
   // A place's plane: a group in each of the four depth layers of the bouquets (toile.mjs bq-0..3), at the place's offset
   // in the world, the insects flying between them.
   let only = null; // the close-up's place: the others hidden
+  // The close-up folds the other pillars into the ground (owner, 2026-10-27: none but the bouquet's own in view): they sink
+  // by their whole height, behind the near slices of the ground, as the camera comes in, and rise again as it goes back; their
+  // bouquets stay hidden until they are up again. fold: 0 all up, 1 the others down; foldPlace: the pillar that stays.
+  const FOLD_S = 0.9; // s, as the close-up's zoom (boutique.js)
+  let fold = 0, foldTo = 0, foldPlace = null, foldLast = 0;
+  const foldEase = (t) => (t < 0.5 ? 4 * t * t * t : 1 - (-2 * t + 2) ** 3 / 2);
+  const sink = (P) => { P.s.y = P.y + (P.place === foldPlace ? 0 : foldEase(fold) * P.h); };
+  const foldStep = (now) => {
+    const dt = Math.min(0.05, (now - foldLast) / 1000 || 0);
+    foldLast = now;
+    if (fold === foldTo) return;
+    fold = RM ? foldTo : foldTo > fold ? Math.min(foldTo, fold + dt / FOLD_S) : Math.max(foldTo, fold - dt / FOLD_S);
+    for (const P of pillarImgs.values()) sink(P);
+    if (fold === 0) {
+      foldPlace = null;
+      for (const P of places.values()) P.plane.montre(true);
+    }
+  };
   const placeBouquets = () => {
     for (let g = 0; g < 4; g++) placeWorld(toile.layer('bq-' + g), c);
   };
@@ -242,7 +264,7 @@
         // the bouquet stands on its own pillar's top (2 units at most from the opening one's)
         const dy = M.piliers[place] && M.piliers[0] ? M.piliers[place].sommet - M.piliers[0].sommet : 0;
         const plane = makePlane(place, i, dy);
-        plane.montre(only == null || only === place);
+        plane.montre((only == null && fold === 0) || only === place);
         const P = { place, i, plane, b: null };
         places.set(key, P);
         try {
@@ -675,6 +697,7 @@
       toileRes(toile);
       for (const s of M.bandes) bands.push({ ...s, tiles: s.tuiles, on: new Map(), layer: toile.layer('bande:' + s.id) });
       toile.chaqueImage((now) => {
+        foldStep(now);
         swayClumps(now);
         for (const fn of swaying) fn(now);
       });
@@ -771,7 +794,14 @@
     ajusteNom: () => fitName(),
     seul(place) {
       only = place == null ? null : place;
-      for (const P of places.values()) P.plane.montre(only == null || P.place === only);
+      if (only == null) {
+        // the others' bouquets come back once their pillars are up (foldStep)
+        foldTo = 0;
+        return;
+      }
+      foldPlace = only;
+      foldTo = 1;
+      for (const P of places.values()) P.plane.montre(P.place === only);
     },
   };
 })();
