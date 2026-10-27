@@ -29,6 +29,8 @@ const DEVICES = {
   iphone: { svg: 'demo/iphone.svg', vb: [800, 1540], ecran: [66, 42, 668, 1446, 86], os: 'ios', tel: true },
 };
 const ORDER = ['pc', 'mac', 'android', 'iphone'];
+// the devices Belai Bureau exists for; the others are shown "coming soon" until their apps exist (owner, 2026-10-27)
+const READY = new Set(['pc']);
 // the all-in-one's colours: chin, chin's foot, stand
 const TEINTES = [
   ['#b8d3ee', '#9ec0e3', '#6f9dcc'],
@@ -131,7 +133,8 @@ function build() {
   appareils.setAttribute('role', 'radiogroup');
   appareils.setAttribute('aria-label', T.demoDevices);
   for (const k of ORDER) {
-    const b = h('button', 'demo-app-btn', `${ICONS[k]}<span>${T.demoDevice[k]}</span>`);
+    const soon = READY.has(k) ? '' : `<small class="demo-bientot-pastille">${esc(T.demoSoon)}</small>`;
+    const b = h('button', 'demo-app-btn', `${ICONS[k]}<span>${T.demoDevice[k]}</span>${soon}`);
     b.type = 'button';
     b.dataset.dev = k;
     b.setAttribute('role', 'radio');
@@ -142,6 +145,9 @@ function build() {
   fermerBtn.type = 'button';
   fermerBtn.setAttribute('aria-label', T.demoClose);
   fermerBtn.addEventListener('click', fermer);
+  // over a device whose app does not exist yet: « Coming soon to Mac »
+  const bientot = h('p', 'demo-bientot');
+  bientot.hidden = true;
   const lecture = h('button', 'demo2-lecture');
   lecture.type = 'button';
   lecture.addEventListener('click', () => {
@@ -150,7 +156,7 @@ function build() {
     if (state.step >= steps().length) return goto(0, true);
     goto(state.step, true);
   });
-  root.append(dessus, etapes, points, appareils, lecture, fermerBtn);
+  root.append(dessus, etapes, points, bientot, appareils, lecture, fermerBtn);
   document.body.append(root);
   addEventListener('keydown', (e) => {
     if (state && e.key === 'Escape') {
@@ -159,7 +165,7 @@ function build() {
     }
   }, true);
   addEventListener('resize', () => state && device(state.dev, false, true));
-  D = { sous, blanc, app, ecran, cadre, root, dessus, etapes, points, appareils, fermer: fermerBtn, lecture };
+  D = { sous, blanc, app, ecran, cadre, root, dessus, etapes, points, bientot, appareils, fermer: fermerBtn, lecture };
 }
 
 // ---------- a device: its frame, its desktop, its place on the screen, the bouquet into it, the steps
@@ -188,6 +194,10 @@ async function device(k, entering = false, resizing = false) {
   Object.assign(D.ecran.style, { left: `${ex}px`, top: `${ey}px` });
   Object.assign(D.dessus.style, { left: `${S.x}px`, top: `${S.y}px` });
   D.root.dataset.os = dv.os;
+  D.bientot.hidden = READY.has(k);
+  D.bientot.textContent = READY.has(k) ? '' : A.T.demoSoonOn.replace('{device}', A.T.demoDevice[k]);
+  // (over the device on a wide screen; under the step and its dots on a narrow one, the top being the buttons')
+  D.bientot.style.top = `${geo.large ? Math.max(8, geo.y - 34) : geo.y + geo.h + 136}px`;
   D.root.classList.toggle('tel', dv.tel);
   D.root.classList.toggle('large', geo.large);
   if (!resizing) {
@@ -212,11 +222,13 @@ function layout(dv) {
   const large = W >= 900;
   const side = large ? Math.min(230, W * 0.17) : 0;
   const top = large ? 40 : 60;
-  const room = { w: W - 2 * (side + 24), h: (large ? bottom : bottom - 150) - top };
+  // (on a narrow screen, room under the device for its step, its dots and, for a device to come, its "coming soon")
+  const under = 150 + (READY.has(state.dev) ? 0 : 40);
+  const room = { w: W - 2 * (side + 24), h: (large ? bottom : bottom - under) - top };
   const k = Math.min(room.w / dv.vb[0], room.h / dv.vb[1]);
   const w = dv.vb[0] * k, hh = dv.vb[1] * k;
   // (on a narrow screen the device, its step and its dots as one block, in the middle of the room)
-  const y = large ? top + (room.h - hh) / 2 : top + Math.max(0, (bottom - top - (hh + 150)) / 2);
+  const y = large ? top + (room.h - hh) / 2 : top + Math.max(0, (bottom - top - (hh + under)) / 2);
   return { k, w, h: hh, x: (W - w) / 2, y, large, side, bottom };
 }
 

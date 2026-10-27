@@ -452,6 +452,8 @@ export default {
     demoPause: 'Pausa',
     demoReplay: 'Volver a ver',
     demoDevices: 'Dispositivo',
+    demoSoon: 'Pronto',
+    demoSoonOn: 'Próximamente en {device}',
     demoDevice: { pc: 'PC', mac: 'Mac', android: 'Android', iphone: 'iPhone' },
     demoDesk: ['En el sitio, toca «En mi escritorio»', 'Descarga Belai Bureau e instálalo', 'Inicia sesión: nombre, número y código recibido por SMS', 'Aparecen tus ramos', 'Elige un ramo: se coloca en tu escritorio', 'Tira de la esquina para elegir su tamaño', 'Arrástralo donde quieras', 'Delante o detrás de las ventanas, con un clic', 'Valida ✓: el ratón vuelve al escritorio', 'Una pulsación larga (6 s) para volver a modificarlo'],
     demoPhone: ['En el sitio, toca «En mi teléfono»', 'Descarga Belai Bureau', 'Inicia sesión: nombre, número y código recibido por SMS', 'Aparecen tus ramos', 'Elige un ramo: se coloca en tu pantalla de inicio', 'Elige su tamaño', 'Arrástralo donde quieras', 'Valida ✓', 'Una pulsación larga para volver a modificarlo'],
