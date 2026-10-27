@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1080" width="1600" height="1080">
+  <!-- A generic aluminium laptop seen from the front, its lid open (demo "On your desktop", owner 2026-10-27: no brand, no
+       logo). The screen is a hole (x 236, y 96, 1128 x 705, radius 6): the page shows the desktop and the bouquet through
+       it, then lays the glass's reflection (#reflet) over them. -->
+  <defs>
+    <linearGradient id="alu" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e9ecef"/>
+      <stop offset="0.5" stop-color="#d3d7dc"/>
+      <stop offset="1" stop-color="#b9bec5"/>
+    </linearGradient>
+    <linearGradient id="alu-bord" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#a7adb5"/>
+      <stop offset="0.06" stop-color="#e3e6ea"/>
+      <stop offset="0.94" stop-color="#e3e6ea"/>
+      <stop offset="1" stop-color="#a7adb5"/>
+    </linearGradient>
+    <linearGradient id="deck" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#cdd2d8"/>
+      <stop offset="0.55" stop-color="#dfe3e7"/>
+      <stop offset="1" stop-color="#eef0f2"/>
+    </linearGradient>
+    <linearGradient id="levre" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f4f5f7"/>
+      <stop offset="0.35" stop-color="#c9ced4"/>
+      <stop offset="1" stop-color="#8f969e"/>
+    </linearGradient>
+    <linearGradient id="charniere" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2a2d31"/>
+      <stop offset="0.5" stop-color="#4a4f55"/>
+      <stop offset="1" stop-color="#1d2024"/>
+    </linearGradient>
+    <linearGradient id="touche" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3a3e44"/>
+      <stop offset="1" stop-color="#26292d"/>
+    </linearGradient>
+    <linearGradient id="pave" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#c3c8ce"/>
+      <stop offset="1" stop-color="#d9dde1"/>
+    </linearGradient>
+    <linearGradient id="reflet" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff" stop-opacity="0.16"/>
+      <stop offset="0.38" stop-color="#fff" stop-opacity="0.04"/>
+      <stop offset="0.39" stop-color="#fff" stop-opacity="0"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="ombre" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#0b1a33" stop-opacity="0.38"/>
+      <stop offset="1" stop-color="#0b1a33" stop-opacity="0"/>
+    </radialGradient>
+    <mask id="trou" maskUnits="userSpaceOnUse" x="0" y="0" width="100%" height="100%">
+      <rect width="100%" height="100%" fill="#fff"/>
+      <rect x="236" y="96" width="1128" height="705" rx="6" fill="#000"/>
+    </mask>
+  </defs>
+
+  <!-- its shadow on the ground -->
+  <ellipse cx="800" cy="1052" rx="780" ry="26" fill="url(#ombre)"/>
+
+  <!-- the body, its screen cut out by the mask -->
+  <g mask="url(#trou)">
+  <!-- the lid: aluminium behind a black glass bezel, the screen cut out -->
+  <rect x="196" y="56" width="1208" height="808" rx="30" fill="url(#alu-bord)"/>
+  <path fill="#0d0f12" fill-rule="evenodd" d="M226 62h1148a24 24 0 0 1 24 24v772H202V86a24 24 0 0 1 24-24z
+    M242 96a6 6 0 0 0-6 6v693a6 6 0 0 0 6 6h1116a6 6 0 0 0 6-6V102a6 6 0 0 0-6-6z"/>
+  <!-- the bezel's glass: a faint sheen at the top -->
+  <path fill="#fff" opacity="0.05" d="M226 62h1148a24 24 0 0 1 24 24v6H202v-6a24 24 0 0 1 24-24z"/>
+  <!-- the camera and its light -->
+  <circle cx="800" cy="79" r="6" fill="#1b2027"/>
+  <circle cx="800" cy="79" r="2.6" fill="#273548"/>
+  <circle cx="798.6" cy="77.8" r="0.9" fill="#7f9bbd"/>
+  <!-- the chin of the bezel -->
+  <rect x="202" y="801" width="1196" height="57" fill="#0d0f12"/>
+
+  <!-- the hinge -->
+  <rect x="300" y="858" width="1000" height="16" rx="6" fill="url(#charniere)"/>
+
+  <!-- the deck in perspective, its keyboard and its trackpad -->
+  <path fill="url(#deck)" d="M150 870h1300l92 140H58z"/>
+  <path fill="url(#alu)" opacity="0.35" d="M150 870h1300l10 15H140z"/>
+  <g id="clavier" fill="url(#touche)">
+    <!-- six rows, narrower toward the hinge: each row a band of keys -->
+    <path d="M312 880h976l4 9H308z"/>
+    <path d="M304 893h992l5 11H299z"/>
+    <path d="M295 908h1010l6 12H289z"/>
+    <path d="M285 924h1030l6 13H279z"/>
+    <path d="M275 941h1050l7 14H268z"/>
+    <path d="M330 959h940l7 15H323z"/>
+  </g>
+  <!-- the gaps between the keys -->
+  <g stroke="#d6dadf" stroke-width="2.2">
+    <path d="M384 880v9M456 880v9M528 880v9M600 880v9M672 880v9M744 880v9M816 880v9M888 880v9M960 880v9M1032 880v9M1104 880v9M1176 880v9M1248 880v9"/>
+    <path d="M370 893l-1 11M440 893l-1 11M510 893l-1 11M580 893l-1 11M650 893l-1 11M720 893l-1 11M790 893l0 11M860 893l1 11M930 893l1 11M1000 893l1 11M1070 893l1 11M1140 893l1 11M1210 893l1 11"/>
+    <path d="M388 908l-2 12M462 908l-1 12M536 908l-1 12M610 908l-1 12M684 908l-1 12M758 908l0 12M832 908l0 12M906 908l1 12M980 908l1 12M1054 908l1 12M1128 908l1 12M1202 908l2 12"/>
+    <path d="M400 924l-2 13M476 924l-2 13M552 924l-1 13M628 924l-1 13M704 924l-1 13M780 924l0 13M856 924l0 13M932 924l1 13M1008 924l1 13M1084 924l1 13M1160 924l2 13M1236 924l2 13"/>
+    <path d="M372 941l-3 14M452 941l-2 14M532 941l-2 14M612 941l-1 14M692 941l-1 14M772 941l0 14M852 941l0 14M932 941l1 14M1012 941l1 14M1092 941l2 14M1172 941l2 14M1252 941l3 14"/>
+    <path d="M430 959l-3 15M520 959l-2 15M1080 959l2 15M1170 959l3 15"/>
+  </g>
+  <path fill="url(#pave)" d="M640 982h320l6 22H634z"/>
+  <path fill="none" stroke="#b3b9c0" stroke-width="1.2" d="M640 982h320l6 22H634z"/>
+
+  <!-- the front edge, catching the light -->
+  <path fill="url(#levre)" d="M58 1010h1484a10 10 0 0 1 0 0l-8 18a14 14 0 0 1-12 8H78a14 14 0 0 1-12-8z"/>
+  <path fill="#5d646c" d="M740 1012h120a8 8 0 0 1-8 8h-104a8 8 0 0 1-8-8z" opacity="0.55"/>
+
+  </g>
+
+  <!-- the screen's glass over what the page shows through it -->
+  <rect id="vitre" x="236" y="96" width="1128" height="705" rx="6" fill="url(#reflet)" pointer-events="none"/>
+</svg>

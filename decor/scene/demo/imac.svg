@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1360" width="1600" height="1360">
+  <!-- A colourful all-in-one computer seen from the front (demo "On your desktop", owner 2026-10-27: a coloured one, no
+       logo): a thin light bezel, a pastel chin, a stand of the same colour, darker. The colour is the custom properties
+       teinte (chin) and teinte-fonce (stand), as custom properties, of the <svg> element when inlined; blue by default. The screen is a hole
+       (x 196, y 76, 1208 x 680, radius 4). -->
+  <defs>
+    <linearGradient id="menton" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="var(--teinte, #b8d3ee)"/>
+      <stop offset="1" stop-color="var(--teinte-bas, #9ec0e3)"/>
+    </linearGradient>
+    <linearGradient id="pied" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="var(--teinte-fonce, #6f9dcc)"/>
+      <stop offset="0.5" stop-color="var(--teinte, #b8d3ee)"/>
+      <stop offset="1" stop-color="var(--teinte-fonce, #6f9dcc)"/>
+    </linearGradient>
+    <linearGradient id="socle" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="var(--teinte, #b8d3ee)"/>
+      <stop offset="1" stop-color="var(--teinte-fonce, #6f9dcc)"/>
+    </linearGradient>
+    <linearGradient id="tranche" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="var(--teinte-fonce, #6f9dcc)"/>
+      <stop offset="0.02" stop-color="var(--teinte, #b8d3ee)"/>
+      <stop offset="0.98" stop-color="var(--teinte, #b8d3ee)"/>
+      <stop offset="1" stop-color="var(--teinte-fonce, #6f9dcc)"/>
+    </linearGradient>
+    <linearGradient id="reflet" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff" stop-opacity="0.15"/>
+      <stop offset="0.36" stop-color="#fff" stop-opacity="0.04"/>
+      <stop offset="0.37" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="ombre" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#0b1a33" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#0b1a33" stop-opacity="0"/>
+    </radialGradient>
+    <mask id="trou" maskUnits="userSpaceOnUse" x="0" y="0" width="100%" height="100%">
+      <rect width="100%" height="100%" fill="#fff"/>
+      <rect x="196" y="76" width="1208" height="680" rx="4" fill="#000"/>
+    </mask>
+  </defs>
+
+  <ellipse cx="800" cy="1330" rx="430" ry="22" fill="url(#ombre)"/>
+
+  <!-- the body, its screen cut out by the mask -->
+  <g mask="url(#trou)">
+  <!-- the stand: a bent plate, the foot under it -->
+  <path fill="url(#pied)" d="M650 980h300l26 300H624z"/>
+  <path fill="var(--teinte-fonce, #6f9dcc)" opacity="0.5" d="M650 980h300l3 30H647z"/>
+  <path fill="url(#socle)" d="M560 1276h480a14 14 0 0 1 14 14v8a14 14 0 0 1-14 14H560a14 14 0 0 1-14-14v-8a14 14 0 0 1 14-14z"/>
+
+  <!-- the body: its coloured edge, the light bezel with the screen cut out, the pastel chin -->
+  <rect x="150" y="30" width="1300" height="964" rx="26" fill="url(#tranche)"/>
+  <path fill="#f3f4f6" fill-rule="evenodd" d="M178 36h1244a22 22 0 0 1 22 22v736H156V58a22 22 0 0 1 22-22z
+    M200 76a4 4 0 0 0-4 4v672a4 4 0 0 0 4 4h1200a4 4 0 0 0 4-4V80a4 4 0 0 0-4-4z"/>
+  <path fill="url(#menton)" d="M156 794h1288v170a24 24 0 0 1-24 24H180a24 24 0 0 1-24-24z"/>
+  <!-- the camera in the bezel -->
+  <circle cx="800" cy="56" r="5" fill="#2a2f36"/>
+  <circle cx="799" cy="55" r="1.4" fill="#7f9bbd"/>
+
+  </g>
+
+  <!-- the screen's glass -->
+  <rect x="196" y="76" width="1208" height="680" rx="4" fill="url(#reflet)" pointer-events="none"/>
+</svg>

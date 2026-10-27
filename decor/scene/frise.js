@@ -203,6 +203,23 @@
   // bouquets stay hidden until they are up again. fold: 0 all up, 1 the others down; foldPlace: the pillar that stays.
   const FOLD_S = 0.9; // s, as the close-up's zoom (boutique.js)
   let fold = 0, foldTo = 0, foldPlace = null, foldLast = 0;
+  // The demo "On your desktop" (demo.mjs, owner 2026-10-27) folds the whole world into the ground but the bouquets: every
+  // layer of the canvas other than bq-0..3 sinks (its pivot, which placeWorld leaves alone) by a screen and a half, in 1.1 s,
+  // and rises again; the sky (the page's, behind the canvas) stays.
+  const REPLIE_S = 1.1;
+  let replie = 0, replieTo = 0, replieLast = 0;
+  const replieLayers = () => [...M.bandes.map((b) => 'bande:' + b.id), 'piliers', 'entre-0', 'entre-1', 'entre-2', 'touffes', 'premier', 'insectes-loin', 'insectes-milieu', 'insectes-devant'];
+  const replieStep = (now) => {
+    const dt = Math.min(0.05, (now - replieLast) / 1000 || 0);
+    replieLast = now;
+    if (replie === replieTo) return;
+    replie = RM ? replieTo : replieTo > replie ? Math.min(replieTo, replie + dt / REPLIE_S) : Math.max(replieTo, replie - dt / REPLIE_S);
+    const drop = (foldEase(replie) * 1.5 * WH) | 0;
+    for (const n of replieLayers()) {
+      const L = toile.layer(n);
+      if (L) L.pivot.y = -drop;
+    }
+  };
   const foldEase = (t) => (t < 0.5 ? 4 * t * t * t : 1 - (-2 * t + 2) ** 3 / 2);
   const sink = (P) => { P.s.y = P.y + (P.place === foldPlace ? 0 : foldEase(fold) * P.h); };
   const foldStep = (now) => {
@@ -698,6 +715,7 @@
       for (const s of M.bandes) bands.push({ ...s, tiles: s.tuiles, on: new Map(), layer: toile.layer('bande:' + s.id) });
       toile.chaqueImage((now) => {
         foldStep(now);
+        replieStep(now);
         swayClumps(now);
         for (const fn of swaying) fn(now);
       });
@@ -792,6 +810,10 @@
       }
     },
     ajusteNom: () => fitName(),
+    // the world folded into the ground but the bouquets (true), or standing again (false)
+    replie(on) {
+      replieTo = on ? 1 : 0;
+    },
     seul(place) {
       only = place == null ? null : place;
       if (only == null) {

@@ -467,6 +467,9 @@
   // where they are to where they go, in 0.9 s on the curve the scene's CSS transition had (scene.css); the canvas element is
   // held still inside the scaled scene so its sprites are drawn at the screen's resolution, sharp.
   let zoom = { tx: 0, ty: 0, s: 1 };
+  // the stage's own move (toile.mjs vue), the scene's but in the demo "On your desktop" (demo.mjs), where the scene rests and
+  // the stage alone sizes and moves the bouquet into the device's screen: zooming the scene out would shrink its sky
+  let zoomSt = { ...zoom };
   let zoomRaf = 0;
   const bezier = (x1, y1, x2, y2) => (x) => {
     let t = x;
@@ -479,21 +482,25 @@
     return 3 * y1 * t * (1 - t) ** 2 + 3 * y2 * t * t * (1 - t) + t ** 3;
   };
   const zoomEase = bezier(0.3, 0.1, 0.2, 1);
-  const applyZoom = ({ tx, ty, s }) => {
+  const applyZoom = ({ tx, ty, s }, st = { tx, ty, s }) => {
     zoom = { tx, ty, s };
+    zoomSt = st;
     scene.style.transform = s === 1 && !tx && !ty ? '' : `translate(${tx.toFixed(2)}px,${ty.toFixed(2)}px) scale(${s.toFixed(5)})`;
-    if (window.TOILE) window.TOILE.vue(tx, ty, s);
+    if (window.TOILE) window.TOILE.vue(tx, ty, s, st);
   };
-  function zoomTo(tx, ty, s) {
+  // the scene and the stage from where they are to (tx, ty, s); with stageOnly, the scene to rest and the stage alone there
+  function zoomTo(tx, ty, s, stageOnly = false) {
     cancelAnimationFrame(zoomRaf);
-    const from = { ...zoom };
-    const to = { tx, ty, s };
-    if (reduced) return applyZoom(to);
+    const from = { ...zoom }, fromSt = { ...zoomSt };
+    const toSt = { tx, ty, s };
+    const to = stageOnly ? { tx: 0, ty: 0, s: 1 } : toSt;
+    const mix = (a, b, e) => ({ tx: a.tx + (b.tx - a.tx) * e, ty: a.ty + (b.ty - a.ty) * e, s: a.s + (b.s - a.s) * e });
+    if (reduced) return applyZoom(to, toSt);
     const t0 = performance.now();
     const step = (now) => {
       const u = Math.min(1, (now - t0) / 900);
       const e = zoomEase(u);
-      applyZoom({ tx: from.tx + (to.tx - from.tx) * e, ty: from.ty + (to.ty - from.ty) * e, s: from.s + (to.s - from.s) * e });
+      applyZoom(mix(from, to, e), mix(fromSt, toSt, e));
       if (u < 1) zoomRaf = requestAnimationFrame(step);
     };
     zoomRaf = requestAnimationFrame(step);
@@ -681,7 +688,34 @@
       $('achat-demo').focus({ preventScroll: true });
     }
   }
-  $('achat-demo').addEventListener('click', () => openDemo(true));
+  // "On your desktop": the demo in the scene (demo.mjs, owner 2026-10-27: the world folds, a device comes forward with the
+  // bouquet in its screen and plays the way there); the video stays the fallback if the module cannot load
+  let demoMod = null;
+  const demoApi = () => ({
+    T,
+    I18N,
+    CFG,
+    Frise,
+    toile: window.TOILE,
+    zoomTo,
+    onScreen,
+    getBox: () => box,
+    pied: CFG.scene.pied[0],
+    product: () => curP,
+    reframe: frameCloseUp,
+    focusBack: () => $('achat-demo').focus({ preventScroll: true }),
+  });
+  $('achat-demo').addEventListener('click', () => {
+    if (!window.TOILE || !box) return openDemo(true);
+    (demoMod ||= import('./demo.mjs'))
+      .then((m) => m.ouvrir(demoApi()))
+      .catch((err) => {
+        console.error('[demo]', err);
+        openDemo(true);
+      });
+  });
+  // a shelf opened from the toolbar closes the demo
+  document.addEventListener('entete:rayon', () => demoMod && demoMod.then((m) => m.fermer()));
   $('demo-fermer').addEventListener('click', () => openDemo(false));
   demo.addEventListener('click', (e) => e.target === demo && openDemo(false));
   document.addEventListener(

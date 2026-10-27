@@ -1,0 +1,1012 @@
+/* demo.css: the demo "On your desktop" (demo.mjs, owner 2026-10-27): the device and its desktop under the canvas, what passes
+   over the bouquet clipped to the screen above it, the numbered steps round the device, the devices over the toolbar.
+   Sizes in the screen are in --u, a hundredth of the screen's width. */
+
+/* while it is open: the price bubble, the name's band, the pager and the close-up's target leave */
+.demo-ouverte .achat,
+.demo-ouverte .nom-cadre,
+.demo-ouverte .pager,
+.demo-ouverte .bq-cible {
+  visibility: hidden;
+}
+
+/* ---------- under the canvas: the device (it comes forward from behind the bouquet), its desktop */
+.demo-sous {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.demo-sous[hidden] {
+  display: none;
+}
+
+.demo-appareil {
+  position: absolute;
+  transform-origin: 50% 60%;
+}
+
+.demo-appareil.entre {
+  animation: appareil-entre 1.15s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.demo-appareil.sort {
+  animation: appareil-sort 0.6s cubic-bezier(0.4, 0, 0.8, 0.4) both;
+}
+
+@keyframes appareil-entre {
+  from {
+    transform: translateY(12%) scale(0.42);
+    opacity: 0;
+  }
+  35% {
+    opacity: 1;
+  }
+}
+
+@keyframes appareil-sort {
+  to {
+    transform: translateY(14%) scale(0.5);
+    opacity: 0;
+  }
+}
+
+.demo-cadre-appareil,
+.demo-cadre-appareil svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.demo-ecran {
+  position: absolute;
+  overflow: hidden;
+  font: 500 calc(var(--u) * 1.6) / 1.3 system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  color: #1d2a3d;
+}
+
+/* a wallpaper of our own: a dawn sky, soft */
+.os-fond {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(120% 90% at 20% 0%, #fde3ec, transparent 60%),
+    radial-gradient(110% 90% at 90% 10%, #d6e8fb, transparent 55%),
+    linear-gradient(to bottom, #cfe2f6, #eef3f9 70%, #f7efe9);
+}
+
+.ic {
+  display: inline-block;
+  width: calc(var(--u) * 3.2);
+  height: calc(var(--u) * 3.2);
+  border-radius: 24%;
+  background: linear-gradient(145deg, #8fb7e8, #4f7fc2);
+  box-shadow: 0 1px 2px rgb(0 0 0 / 0.15);
+}
+
+.ic1 { background: linear-gradient(145deg, #f3b28f, #e0735a); }
+.ic2 { background: linear-gradient(145deg, #a7dcb2, #4fa36a); }
+.ic3 { background: linear-gradient(145deg, #f5d98a, #e3a93d); }
+.ic4 { background: linear-gradient(145deg, #c9b6f0, #8a6cd6); }
+.ic5 { background: linear-gradient(145deg, #e5e9ef, #aeb7c4); }
+
+/* a computer of the Windows kind: the bar at the bottom, its icons in the middle, the clock on the right */
+.os-barre-win {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(var(--u) * 4.6);
+  background: rgb(240 244 250 / 0.82);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgb(255 255 255 / 0.7);
+}
+
+.os-barre-win .os-icones {
+  display: flex;
+  gap: calc(var(--u) * 1.1);
+}
+
+.os-barre-win .ic {
+  width: calc(var(--u) * 2.6);
+  height: calc(var(--u) * 2.6);
+}
+
+.os-heure {
+  position: absolute;
+  right: calc(var(--u) * 1.6);
+  font-size: calc(var(--u) * 1.3);
+}
+
+/* of the macOS kind: the menu bar, the dock */
+.os-menu {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 calc(var(--u) * 1.6);
+  height: calc(var(--u) * 2.6);
+  align-items: center;
+  background: rgb(255 255 255 / 0.55);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  font-size: calc(var(--u) * 1.15);
+}
+
+.os-dock {
+  position: absolute;
+  left: 50%;
+  bottom: calc(var(--u) * 0.8);
+  display: flex;
+  gap: calc(var(--u) * 0.7);
+  padding: calc(var(--u) * 0.6);
+  border: 1px solid rgb(255 255 255 / 0.6);
+  border-radius: calc(var(--u) * 1.4);
+  background: rgb(255 255 255 / 0.4);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  transform: translateX(-50%);
+}
+
+/* of a phone: the status bar, the grid of icons, the bar at the bottom */
+.os-statut {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: calc(var(--u) * 9);
+  padding: 0 calc(var(--u) * 8);
+  font: 600 calc(var(--u) * 3.6) / 1 system-ui, -apple-system, sans-serif;
+}
+
+.os-statut.ios {
+  padding: 0 calc(var(--u) * 11);
+}
+
+.os-pile {
+  width: calc(var(--u) * 6.4);
+  height: calc(var(--u) * 3);
+  border: 1.5px solid #1d2a3d;
+  border-radius: calc(var(--u) * 0.9);
+  background: linear-gradient(to right, #1d2a3d 70%, transparent 70%) content-box;
+  padding: 1px;
+}
+
+.os-grille {
+  position: absolute;
+  left: calc(var(--u) * 8);
+  right: calc(var(--u) * 8);
+  top: calc(var(--u) * 14);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: calc(var(--u) * 6) 0;
+  justify-items: center;
+}
+
+.os-grille .ic,
+.os-dock-ios .ic {
+  width: calc(var(--u) * 15);
+  height: calc(var(--u) * 15);
+}
+
+.os-recherche {
+  position: absolute;
+  left: calc(var(--u) * 8);
+  right: calc(var(--u) * 8);
+  bottom: calc(var(--u) * 10);
+  height: calc(var(--u) * 11);
+  border-radius: 999px;
+  background: rgb(255 255 255 / 0.75);
+}
+
+.os-dock-ios {
+  position: absolute;
+  left: calc(var(--u) * 4);
+  right: calc(var(--u) * 4);
+  bottom: calc(var(--u) * 6);
+  display: flex;
+  justify-content: space-around;
+  padding: calc(var(--u) * 3.5) 0;
+  border-radius: calc(var(--u) * 9);
+  background: rgb(255 255 255 / 0.4);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+.os-nav {
+  position: absolute;
+  left: 50%;
+  bottom: calc(var(--u) * 2);
+  width: calc(var(--u) * 34);
+  height: calc(var(--u) * 1.2);
+  border-radius: 999px;
+  background: #1d2a3d;
+  transform: translateX(-50%);
+}
+
+/* ---------- over the canvas: what passes over the bouquet, clipped to the screen */
+.demo2 {
+  position: fixed;
+  inset: 0;
+  z-index: 49;
+  color: #fff;
+  font: 500 14px/1.4 system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+
+.demo2[hidden] {
+  display: none;
+}
+
+.demo-dessus {
+  position: fixed;
+  overflow: hidden;
+  pointer-events: none;
+  font: 500 calc(var(--u) * 1.6) / 1.3 system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  color: #1d2a3d;
+}
+
+.tel .demo-dessus,
+.tel .demo-ecran {
+  font-size: calc(var(--u) * 4.2);
+}
+
+.d-fenetre {
+  position: absolute;
+  border: 1px solid rgb(255 255 255 / 0.85);
+  border-radius: calc(var(--u) * 1);
+  background: rgb(250 251 253 / 0.96);
+  box-shadow: 0 calc(var(--u) * 1) calc(var(--u) * 3) rgb(20 40 80 / 0.28);
+  overflow: hidden;
+}
+
+.d-fenetre[hidden],
+.demo-dessus [hidden] {
+  display: none;
+}
+
+.d-titre {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--u) * 0.5);
+  height: calc(var(--u) * 2.6);
+  padding: 0 calc(var(--u) * 1);
+  background: #eef1f5;
+  border-bottom: 1px solid #dde3ea;
+  font-size: calc(var(--u) * 1.15);
+  color: #5b6779;
+}
+
+.d-titre i {
+  width: calc(var(--u) * 0.9);
+  height: calc(var(--u) * 0.9);
+  border-radius: 50%;
+  background: #cfd6df;
+}
+
+.d-titre span {
+  margin-left: calc(var(--u) * 1);
+}
+
+/* the site, small */
+.d-site {
+  left: 6%;
+  top: 7%;
+  width: 70%;
+  height: 72%;
+}
+
+.tel .d-site,
+.tel .d-app {
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+  border: 0;
+}
+
+.tel .d-titre {
+  height: calc(var(--u) * 16);
+  padding-top: calc(var(--u) * 8);
+  font-size: calc(var(--u) * 3.6);
+}
+
+.tel .d-titre i {
+  display: none;
+}
+
+.d-url {
+  flex: 1;
+  margin: 0 calc(var(--u) * 2) 0 calc(var(--u) * 1);
+  padding: calc(var(--u) * 0.3) calc(var(--u) * 1);
+  border-radius: 999px;
+  background: #fff;
+}
+
+.d-site-page {
+  position: absolute;
+  inset: calc(var(--u) * 2.6) 0 0;
+  background: linear-gradient(to bottom, #6f9fd3, #a9c8ea 55%, #5f9a4e 56%, #4c8a3f);
+}
+
+.tel .d-site-page {
+  inset: calc(var(--u) * 16) 0 0;
+}
+
+.d-site-bq {
+  position: absolute;
+  left: 50%;
+  bottom: 30%;
+  height: 52%;
+  transform: translateX(-50%);
+}
+
+.d-site-dock {
+  position: absolute;
+  left: 50%;
+  bottom: 7%;
+  display: flex;
+  gap: 4%;
+  width: 46%;
+  justify-content: center;
+  padding: 1.2% 2%;
+  border-radius: 999px;
+  background: rgb(150 195 240 / 0.6);
+  transform: translateX(-50%);
+}
+
+.tel .d-site-dock {
+  width: 80%;
+}
+
+.d-site-dock i {
+  width: 8%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: rgb(255 255 255 / 0.85);
+}
+
+.d-site-dock .d-cible {
+  background: #fff;
+  box-shadow: 0 0 0 2px #0a6cdb;
+}
+
+.d-site-dock .d-cible.clic {
+  animation: coche-pop 0.42s cubic-bezier(0.3, 1.6, 0.5, 1);
+}
+
+/* the download */
+.d-dl {
+  position: absolute;
+  right: 4%;
+  top: 9%;
+  display: flex;
+  align-items: center;
+  gap: calc(var(--u) * 1);
+  width: 32%;
+  padding: calc(var(--u) * 1) calc(var(--u) * 1.2);
+  border-radius: calc(var(--u) * 1);
+  background: #fff;
+  box-shadow: 0 calc(var(--u) * 0.6) calc(var(--u) * 2) rgb(20 40 80 / 0.25);
+  animation: monte 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.tel .d-dl {
+  left: 5%;
+  right: 5%;
+  top: auto;
+  bottom: 5%;
+  width: auto;
+  border-radius: calc(var(--u) * 5);
+  padding: calc(var(--u) * 4);
+}
+
+.d-dl-icone {
+  flex: none;
+  width: calc(var(--u) * 3);
+  aspect-ratio: 1;
+  border-radius: 24%;
+  background: linear-gradient(145deg, #7fb4ef, #0a6cdb);
+}
+
+.tel .d-dl-icone {
+  width: calc(var(--u) * 12);
+}
+
+.d-dl-mots {
+  display: grid;
+  flex: 1;
+}
+
+.d-dl-etat {
+  color: #0a6cdb;
+}
+
+.d-dl.fini .d-dl-etat {
+  color: #2f8a52;
+}
+
+.d-dl-barre {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: calc(var(--u) * 0.35);
+  overflow: hidden;
+}
+
+.d-dl-barre i {
+  display: block;
+  height: 100%;
+  background: #0a6cdb;
+  transform-origin: 0 50%;
+  transform: scaleX(0);
+  transition: transform 1.3s ease-in-out;
+}
+
+@keyframes monte {
+  from {
+    transform: translateY(30%);
+    opacity: 0;
+  }
+}
+
+/* the app: the sign-in, then the bouquets */
+.d-app {
+  left: 22%;
+  top: 12%;
+  width: 46%;
+  min-height: 60%;
+  animation: monte 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.d-app.ferme {
+  transition: transform 0.3s ease-in, opacity 0.3s ease-in;
+  transform: scale(0.9);
+  opacity: 0;
+}
+
+.d-connexion,
+.d-liste {
+  display: grid;
+  gap: calc(var(--u) * 1.2);
+  padding: calc(var(--u) * 2.4);
+}
+
+.tel .d-connexion,
+.tel .d-liste {
+  gap: calc(var(--u) * 4);
+  padding: calc(var(--u) * 7);
+}
+
+.d-connexion label {
+  display: grid;
+  gap: calc(var(--u) * 0.4);
+  color: #5b6779;
+  font-size: 0.85em;
+}
+
+.d-champ {
+  display: block;
+  min-height: 1.3em;
+  padding: calc(var(--u) * 0.6) calc(var(--u) * 0.9);
+  border: 1px solid #cdd6e2;
+  border-radius: calc(var(--u) * 0.7);
+  background: #fff;
+  color: #1d2a3d;
+  font-size: 1.15em;
+}
+
+.tel .d-champ {
+  padding: calc(var(--u) * 2.4) calc(var(--u) * 3);
+  border-radius: calc(var(--u) * 2.4);
+}
+
+.d-code {
+  letter-spacing: 0.4em;
+}
+
+.d-bouton {
+  justify-self: start;
+  padding: calc(var(--u) * 0.7) calc(var(--u) * 1.6);
+  border-radius: 999px;
+  background: #0a6cdb;
+  color: #fff;
+  font-weight: 700;
+}
+
+.tel .d-bouton {
+  justify-self: stretch;
+  text-align: center;
+  padding: calc(var(--u) * 3);
+}
+
+.d-vignettes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: calc(var(--u) * 1);
+}
+
+.tel .d-vignettes {
+  grid-template-columns: repeat(2, 1fr);
+  gap: calc(var(--u) * 3);
+}
+
+.d-vignette {
+  display: grid;
+  justify-items: center;
+  gap: calc(var(--u) * 0.3);
+  padding: calc(var(--u) * 0.8);
+  border: 1px solid #dde3ea;
+  border-radius: calc(var(--u) * 0.9);
+  background: #f4f7fa;
+  font-size: 0.75em;
+}
+
+.d-vignette img {
+  height: calc(var(--u) * 6.5);
+}
+
+.tel .d-vignette img {
+  height: calc(var(--u) * 20);
+}
+
+.d-vignette.choisie {
+  border-color: #0a6cdb;
+  box-shadow: 0 0 0 1.5px #0a6cdb;
+}
+
+/* the bouquet's frame (Belai Bureau's widget): dashed, its corner, its buttons ✓ and front/behind, the phone's sizes */
+.d-cadre {
+  position: absolute;
+  border: 1.5px dashed rgb(255 255 255 / 0.9);
+  border-radius: calc(var(--u) * 0.9);
+  box-shadow: 0 0 0 1px rgb(20 40 80 / 0.25);
+  transition: left 0.9s cubic-bezier(0.3, 0.1, 0.2, 1), top 0.9s cubic-bezier(0.3, 0.1, 0.2, 1), width 0.9s cubic-bezier(0.3, 0.1, 0.2, 1), height 0.9s cubic-bezier(0.3, 0.1, 0.2, 1), opacity 0.3s ease;
+  animation: coche-pop 0.42s cubic-bezier(0.3, 1.6, 0.5, 1);
+}
+
+.d-cadre.valide {
+  opacity: 0;
+}
+
+.d-coin {
+  position: absolute;
+  right: calc(var(--u) * -0.9);
+  bottom: calc(var(--u) * -0.9);
+  width: calc(var(--u) * 1.8);
+  height: calc(var(--u) * 1.8);
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 1px 3px rgb(0 0 0 / 0.3);
+}
+
+.d-boutons {
+  position: absolute;
+  left: 50%;
+  top: calc(var(--u) * -1.6);
+  display: flex;
+  gap: calc(var(--u) * 0.6);
+  transform: translateX(-50%);
+}
+
+.d-fixer,
+.d-plan {
+  display: grid;
+  place-items: center;
+  width: calc(var(--u) * 3);
+  height: calc(var(--u) * 3);
+  border-radius: 50%;
+  color: #fff;
+  font-weight: 700;
+}
+
+.d-fixer {
+  background: rgb(60 140 90 / 0.95);
+}
+
+.d-plan {
+  position: relative;
+  background: rgb(40 40 46 / 0.9);
+}
+
+.d-plan i {
+  position: absolute;
+  width: 38%;
+  height: 38%;
+  border: 1.5px solid #fff;
+  border-radius: 2px;
+}
+
+.d-plan i:first-child {
+  left: 22%;
+  top: 22%;
+  background: #fff;
+}
+
+.d-plan i:last-child {
+  right: 22%;
+  bottom: 22%;
+}
+
+.d-tailles,
+.tel .d-coin,
+.tel .d-plan {
+  display: none;
+}
+
+.tel .d-tailles {
+  position: absolute;
+  left: 50%;
+  bottom: calc(var(--u) * -9);
+  display: flex;
+  gap: calc(var(--u) * 2);
+  transform: translateX(-50%);
+}
+
+.tel .d-tailles i {
+  display: grid;
+  place-items: center;
+  width: calc(var(--u) * 8);
+  height: calc(var(--u) * 8);
+  border-radius: 50%;
+  background: rgb(255 255 255 / 0.85);
+  color: #1d2a3d;
+  font-style: normal;
+  font-weight: 700;
+}
+
+.tel .d-tailles i.on {
+  background: #0a6cdb;
+  color: #fff;
+}
+
+.tel .d-fixer {
+  width: calc(var(--u) * 9);
+  height: calc(var(--u) * 9);
+}
+
+.tel .d-boutons {
+  top: calc(var(--u) * -5);
+}
+
+/* the long press's ring */
+.d-anneau {
+  position: absolute;
+  width: calc(var(--u) * 5);
+  height: calc(var(--u) * 5);
+  transform: translate(-50%, -50%);
+}
+
+.tel .d-anneau {
+  width: calc(var(--u) * 18);
+  height: calc(var(--u) * 18);
+}
+
+.d-anneau svg {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke-width: 5;
+  stroke: rgb(255 255 255 / 0.4);
+}
+
+.d-anneau .d-plein {
+  stroke: rgb(60 140 90);
+  stroke-dasharray: 126;
+  stroke-dashoffset: 126;
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+}
+
+.d-anneau.plein .d-plein {
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 2.3s linear;
+}
+
+.d-anneau span {
+  position: absolute;
+  left: 50%;
+  top: 110%;
+  padding: 0.1em 0.5em;
+  border-radius: 999px;
+  background: rgb(20 40 80 / 0.7);
+  color: #fff;
+  font-size: 0.75em;
+  white-space: nowrap;
+  transform: translateX(-50%);
+}
+
+/* the cursor: an arrow on a computer, a fingertip on a phone */
+.d-curseur {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: calc(var(--u) * 1.6);
+  height: calc(var(--u) * 2.4);
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 24'%3E%3Cpath d='M1 1v19l5-5 3.4 7.4 3-1.4L9 13.6h7z' fill='%23111' stroke='%23fff' stroke-width='1.4' stroke-linejoin='round'/%3E%3C/svg%3E") 0 0 / contain no-repeat;
+  filter: drop-shadow(0 1px 1.5px rgb(0 0 0 / 0.35));
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(0.4, 0.1, 0.2, 1);
+  z-index: 5;
+}
+
+.tel .d-curseur {
+  width: calc(var(--u) * 9);
+  height: calc(var(--u) * 9);
+  margin: calc(var(--u) * -4.5) 0 0 calc(var(--u) * -4.5);
+  border-radius: 50%;
+  background: rgb(255 255 255 / 0.55);
+  box-shadow: 0 0 0 1.5px rgb(255 255 255 / 0.9), 0 2px 8px rgb(0 0 0 / 0.25);
+  filter: none;
+}
+
+.d-curseur.clic::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: calc(var(--u) * 3);
+  height: calc(var(--u) * 3);
+  margin: calc(var(--u) * -1.5) 0 0 calc(var(--u) * -1.5);
+  border-radius: 50%;
+  border: 2px solid #0a6cdb;
+  animation: clic-onde 0.45s ease-out forwards;
+}
+
+.tel .d-curseur.clic::after {
+  left: 50%;
+  top: 50%;
+  width: calc(var(--u) * 14);
+  height: calc(var(--u) * 14);
+  margin: calc(var(--u) * -7) 0 0 calc(var(--u) * -7);
+  border-color: #fff;
+}
+
+@keyframes clic-onde {
+  from {
+    transform: scale(0.3);
+    opacity: 1;
+  }
+  to {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+/* a window to stand in front of or behind: under the bouquet (in the screen's desktop) or over it (in the top layer) */
+.d-notes {
+  right: 6%;
+  top: 14%;
+  width: 40%;
+  height: 52%;
+  animation: monte 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.demo-ecran .d-notes {
+  z-index: 1;
+}
+
+.d-lignes {
+  display: grid;
+  gap: calc(var(--u) * 1);
+  padding: calc(var(--u) * 1.6);
+}
+
+.d-lignes p {
+  height: calc(var(--u) * 0.9);
+  margin: 0;
+  border-radius: 999px;
+  background: #e2e7ee;
+}
+
+.d-lignes p:nth-child(2) {
+  width: 80%;
+}
+
+.d-lignes p:nth-child(4) {
+  width: 60%;
+}
+
+/* ---------- the steps round the device: on its two sides on a wide screen, in a row under it on a narrow one */
+.demo-etapes {
+  position: fixed;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.demo2.large .demo-etapes {
+  left: 20px;
+  right: 20px;
+  top: var(--haut);
+  height: var(--h);
+  display: grid;
+  grid-template-columns: repeat(2, var(--cote));
+  grid-template-rows: repeat(var(--rangs), auto);
+  grid-auto-flow: column;
+  justify-content: space-between;
+  align-content: center;
+  gap: 10px 0;
+  pointer-events: none;
+}
+
+.demo2:not(.large) .demo-etapes {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.demo-etape {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 9px 12px;
+  border: 1px solid var(--glass-bord);
+  border-radius: 16px;
+  background: var(--glass);
+  -webkit-backdrop-filter: var(--glass-flou);
+  backdrop-filter: var(--glass-flou);
+  box-shadow: var(--glass-ombre);
+  color: #fff;
+  font: 500 13.5px/1.3 system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  text-align: left;
+  text-shadow: 0 1px 2px rgb(8 36 84 / 0.35);
+  cursor: pointer;
+  pointer-events: auto;
+  opacity: 0.72;
+  transition: opacity 0.3s ease, transform 0.4s cubic-bezier(0.3, 1.6, 0.5, 1);
+}
+
+.demo2:not(.large) .demo-etape {
+  width: 220px;
+  flex: none;
+  scroll-snap-align: center;
+}
+
+.demo-etapes li {
+  min-width: 0;
+}
+
+.demo2:not(.large) .demo-etapes li {
+  flex: none;
+}
+
+.demo-etape .n {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: rgb(255 255 255 / 0.2);
+  font-weight: 700;
+}
+
+.demo-etape.fait {
+  opacity: 0.9;
+}
+
+.demo-etape.fait .n {
+  background: rgb(255 255 255 / 0.85);
+  color: #0a6cdb;
+}
+
+.demo-etape.en-cours {
+  opacity: 1;
+  transform: scale(1.04);
+  border-color: rgb(255 255 255 / 0.85);
+}
+
+.demo-etape.en-cours .n {
+  background: #0a6cdb;
+  box-shadow: 0 0 0 2px #fff;
+}
+
+/* ---------- the devices, over the toolbar; play and close */
+.demo-appareils {
+  position: fixed;
+  left: 50%;
+  bottom: calc(var(--dock-pied) + var(--dock-h) + 12px);
+  display: flex;
+  gap: 4px;
+  padding: 4px;
+  border: 1px solid var(--glass-bord);
+  border-radius: 999px;
+  background: var(--glass);
+  -webkit-backdrop-filter: var(--glass-flou);
+  backdrop-filter: var(--glass-flou);
+  box-shadow: var(--glass-ombre);
+  transform: translateX(-50%);
+}
+
+.demo-app-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 36px;
+  padding: 0 14px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  background: none;
+  color: #fff;
+  font: 600 13px/1 system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  text-shadow: 0 1px 2px rgb(8 36 84 / 0.35);
+  cursor: pointer;
+  transition: transform 0.38s cubic-bezier(0.3, 1.6, 0.5, 1);
+}
+
+.demo-app-btn svg {
+  filter: var(--glass-encre);
+}
+
+.demo-app-btn:active {
+  transform: scale(0.9);
+}
+
+.demo-app-btn[aria-checked='true'] {
+  border-color: rgb(255 255 255 / 0.55);
+  background: radial-gradient(circle at 50% 28%, rgb(255 255 255 / 0.5), rgb(255 255 255 / 0.14) 72%);
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.85), 0 3px 10px rgb(10 40 90 / 0.22);
+}
+
+@media (max-width: 520px) {
+  .demo-app-btn span {
+    display: none;
+  }
+}
+
+.demo2-fermer,
+.demo2-lecture {
+  position: fixed;
+  top: calc(env(safe-area-inset-top, 0px) + 14px);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 38px;
+  border: 1px solid var(--glass-bord);
+  border-radius: 999px;
+  background: var(--glass);
+  -webkit-backdrop-filter: var(--glass-flou);
+  backdrop-filter: var(--glass-flou);
+  box-shadow: var(--glass-ombre);
+  color: #fff;
+  font: 600 13px/1 system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  cursor: pointer;
+}
+
+.demo2-fermer {
+  right: max(16px, env(safe-area-inset-right, 0px));
+  justify-content: center;
+  width: 38px;
+  padding: 0;
+}
+
+.demo2-lecture {
+  right: calc(max(16px, env(safe-area-inset-right, 0px)) + 46px);
+  padding: 0 14px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .demo-appareil.entre,
+  .demo-appareil.sort,
+  .d-cadre,
+  .d-app,
+  .d-dl,
+  .d-notes {
+    animation: none;
+  }
+}
