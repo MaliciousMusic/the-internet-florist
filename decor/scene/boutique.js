@@ -180,16 +180,23 @@
     if (e.detail === 'profil') showAccount().catch((err) => console.error('[boutique] compte', err));
   });
 
-  // ---------- my account (lot C6): signed in by text message through the shop's server; its bouquets; signing out.
-  // Without a server (the site today) it says the account is coming.
+  // ---------- my account (lots C6, C9): signed in with a first name and a number verified by text message through the
+  // shop's server; its credit, its bouquets (each with its fading, and the exchange within 24 hours while it is open), its
+  // invoices; signing out. Without a server (the site today) it says the account is coming.
   const pfNote = $('profil-etat');
+  const nEur = new Intl.NumberFormat(I18N.locale, { style: 'currency', currency: 'EUR' });
+  const eur = (c) => nEur.format(c / 100);
+  const nDays = new Intl.NumberFormat(I18N.locale, { style: 'unit', unit: 'day', unitDisplay: 'long' });
+  const hour = (t) => new Intl.DateTimeFormat(I18N.locale, { weekday: 'short', hour: '2-digit', minute: '2-digit' }).format(t);
+  const day = (t) => new Intl.DateTimeFormat(I18N.locale, { dateStyle: 'medium' }).format(t);
+  const productOf = (id) => (CFG && CFG.produits.find((x) => x.id === id)) || null;
   async function showAccount() {
     const out = !apiBase();
     $('pf-connexion').hidden = true;
     $('pf-compte').hidden = true;
     if (out) return void (pfNote.textContent = T.accountSoon);
     pfNote.textContent = '';
-    const moi = await api('/api/moi');
+    const [moi, fs] = await Promise.all([api('/api/moi'), api('/api/factures')]);
     if (moi.status === 401) {
       $('pf-titre').textContent = T.accountSignIn;
       $('pf-connexion').hidden = false;
@@ -197,17 +204,88 @@
     }
     if (moi.status !== 200) return void (pfNote.textContent = T.payError);
     $('pf-titre').textContent = moi.compte.prenom ? fill(T.hello, { name: moi.compte.prenom }) : T.accountTitle;
+    const cg = $('pf-cagnotte');
+    cg.hidden = !moi.compte.cagnotte;
+    cg.textContent = moi.compte.cagnotte ? fill(T.credit, { amount: eur(moi.compte.cagnotte) }) : '';
     const list = $('pf-bouquets');
     list.textContent = '';
     for (const b of moi.bouquets) {
-      const p = (CFG && CFG.produits.find((x) => x.id === b.produit)) || { nom: b.produit };
+      const p = productOf(b.produit) || { nom: b.produit };
       const li = document.createElement('li');
-      const t = lifeTxt({ achat: b.achat });
-      li.textContent = `${p.nom} · ${fill(T.copyNo, { n: nInt.format(b.numero) })} · ${t ? fill(T.fadesIn, { t }) : T.faded}`;
+      const ms = b.fin - Date.now();
+      const m = Math.floor(ms / 60000);
+      // (in days from two days on: « Fane dans 30 jours », not « 719 h 59 min »)
+      const t = ms <= 0 ? null : ms >= 2 * 864e5 ? nDays.format(Math.round(ms / 864e5)) : fill(T.lifeLeft, { h: nInt.format(Math.floor(m / 60)), m: String(m % 60).padStart(2, '0') });
+      const line = document.createElement('span');
+      line.textContent = `${p.nom} · ${fill(T.copyNo, { n: nInt.format(b.numero) })} · ${t ? fill(T.fadesIn, { t }) : T.faded}`;
+      li.append(line);
+      if (b.echangeable && b.echangeable > Date.now()) li.append(exchangeOf(b));
       list.append(li);
     }
     if (!moi.bouquets.length) pfNote.textContent = T.noBouquet;
+    // the invoices and credit notes, each a page of the server to print or save
+    const fl = $('pf-factures');
+    fl.textContent = '';
+    const factures = (fs.status === 200 && fs.factures) || [];
+    $('pf-factures-titre').hidden = !factures.length;
+    for (const f of factures) {
+      const li = document.createElement('li');
+      const a = document.createElement('a');
+      a.href = `${apiBase()}/api/facture/${f.numero}`;
+      a.target = '_blank';
+      a.rel = 'noopener';
+      a.textContent = `${f.ref} · ${day(f.emise)} · ${eur(f.total)}`;
+      li.append(a);
+      fl.append(li);
+    }
     $('pf-compte').hidden = false;
+  }
+  // The exchange within 24 hours (owner, 2026-10-27): a button while it is open, then the bouquets of the day with a copy
+  // left at the same price or less; the difference goes into the credit.
+  function exchangeOf(b) {
+    const box = document.createElement('span');
+    box.className = 'pf-echange';
+    const open = document.createElement('button');
+    open.type = 'button';
+    open.className = 'pf-lien';
+    open.textContent = fill(T.exchangeUntil, { t: hour(b.echangeable) });
+    box.append(open);
+    open.addEventListener('click', () => {
+      open.hidden = true;
+      const own = productOf(b.produit);
+      const max = own ? own.prix.centimes : 0;
+      const choices = CFG.produits.filter((p) => p.id !== b.produit && p.prix && p.prix.centimes <= max && copiesOf(p) && copiesOf(p).left > 0);
+      if (!choices.length) return void (pfNote.textContent = T.exchangeNone);
+      const sel = document.createElement('select');
+      sel.setAttribute('aria-label', T.exchangeFor);
+      for (const p of choices) sel.append(new Option(`${p.nom} · ${eur(p.prix.centimes)}`, p.id));
+      const why = document.createElement('span');
+      why.className = 'pf-diff';
+      const diff = () => {
+        const d = max - productOf(sel.value).prix.centimes;
+        why.textContent = d > 0 ? fill(T.exchangeDiff, { amount: eur(d) }) : T.exchangeSame;
+      };
+      sel.addEventListener('change', diff);
+      diff();
+      const go = document.createElement('button');
+      go.type = 'button';
+      go.className = 'connexion-envoyer';
+      go.textContent = T.exchangeConfirm;
+      go.addEventListener('click', async () => {
+        go.disabled = true;
+        const r = await api('/api/echange', { bouquet: b.id, produit: sel.value });
+        if (r.status !== 200) {
+          go.disabled = false;
+          return void (pfNote.textContent = errText(r));
+        }
+        await showAccount();
+        pfNote.textContent = T.exchangeDone;
+        copiesLeft().catch(() => {});
+      });
+      box.append(sel, why, go);
+      sel.focus({ preventScroll: true });
+    });
+    return box;
   }
   $('pf-envoyer').addEventListener('click', async () => {
     const r = await api('/api/sms/demande', { numero: $('pf-numero').value, langue: I18N.code });
@@ -218,7 +296,11 @@
   });
   $('pf-valider').addEventListener('click', async () => {
     const v = await api('/api/sms/verifie', { numero: $('pf-numero').value, code: $('pf-code').value, prenom: $('pf-prenom').value || undefined });
-    if (v.status !== 200) return void (pfNote.textContent = errText(v));
+    if (v.status !== 200) {
+      pfNote.textContent = errText(v);
+      if (v.erreur === 'prenom_requis') $('pf-prenom').focus({ preventScroll: true });
+      return;
+    }
     showAccount();
   });
   $('pf-sortir').addEventListener('click', async () => {
@@ -605,7 +687,8 @@
     payBtn.disabled = on;
     sheet.classList.toggle('occupe', on);
   };
-  // signing in, inside the sheet: the number, then the code received and a first name
+  // signing in, inside the sheet: the first name and the number, then the code received (the first name is needed for a new
+  // account only)
   const cx = $('connexion');
   const cxNum = $('cx-numero');
   const cxCode = $('cx-code');
@@ -619,6 +702,10 @@
       code_expire: T.codeExpired,
       code_faux: fill(T.wrongCode, { n: j.reste ?? 0 }),
       epuise: T.soldOut,
+      prenom_requis: T.firstNameNeeded,
+      prenom_invalide: T.firstNameNeeded,
+      trop_cher: T.exchangeRefused,
+      echange_impossible: T.exchangeRefused,
     })[j.erreur] || T.payError;
   $('cx-envoyer').addEventListener('click', async () => {
     const r = await api('/api/sms/demande', { numero: cxNum.value, langue: I18N.code });
@@ -641,6 +728,7 @@
       const v = await api('/api/sms/verifie', { numero: cxNum.value, code: cxCode.value, prenom: cxPrenom.value || undefined });
       if (v.status !== 200) {
         busy(false);
+        if (v.erreur === 'prenom_requis') cxPrenom.focus({ preventScroll: true });
         return void (note.textContent = errText(v));
       }
       cx.hidden = true;

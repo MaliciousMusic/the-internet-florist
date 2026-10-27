@@ -25,7 +25,7 @@ let horloge = Date.now();
 async function connecte(env, n = '06 12 34 56 78', extra = {}) {
   horloge += 2 * 60_000;
   await demande(req('POST', '/api/sms/demande', { numero: n }), env, horloge);
-  const r = await verifie(req('POST', '/api/sms/verifie', { numero: n, code: dernierCode(env), ...extra }), env, horloge);
+  const r = await verifie(req('POST', '/api/sms/verifie', { numero: n, code: dernierCode(env), prenom: 'Léa', ...extra }), env, horloge);
   return { r, j: await r.json() };
 }
 
@@ -114,7 +114,8 @@ test('le site : un cookie de session, /api/moi, le prénom, la déconnexion', as
   const c = cookieDe(r);
   let m = await call(env, 'GET', '/api/moi', null, { cookie: c });
   assert.equal(m.r.status, 200);
-  assert.equal(m.j.compte.prenom, null);
+  assert.equal(m.j.compte.prenom, 'Léa');
+  assert.equal(m.j.compte.cagnotte, 0);
   assert.deepEqual(m.j.bouquets, []);
   assert.equal((await call(env, 'POST', '/api/moi', { prenom: '<b>' }, { cookie: c })).j.erreur, 'prenom_invalide');
   assert.equal((await call(env, 'POST', '/api/moi', { prenom: 'Hadrien' }, { cookie: c })).j.compte.prenom, 'Hadrien');
@@ -192,4 +193,19 @@ test('configuration incomplète : une erreur claire, jamais de secret par défau
   const { r, j } = await call(env, 'POST', '/api/sms/demande', { numero: '0612345678' });
   assert.equal(r.status, 500);
   assert.equal(j.erreur, 'configuration');
+});
+
+test('inscription : un nouveau numéro sans prénom garde son code et demande le prénom', async () => {
+  const env = envNeuf();
+  await call(env, 'POST', '/api/sms/demande', { numero: '0655555555' });
+  const code = dernierCode(env);
+  let v = await call(env, 'POST', '/api/sms/verifie', { numero: '0655555555', code });
+  assert.equal(v.r.status, 400);
+  assert.equal(v.j.erreur, 'prenom_requis');
+  v = await call(env, 'POST', '/api/sms/verifie', { numero: '0655555555', code, prenom: 'Inès' });
+  assert.equal(v.r.status, 200);
+  assert.equal(v.j.compte.prenom, 'Inès');
+  // a known number signs in again without its first name
+  const { r } = await connecte(env, '0655555555', { prenom: undefined });
+  assert.equal(r.status, 200);
 });

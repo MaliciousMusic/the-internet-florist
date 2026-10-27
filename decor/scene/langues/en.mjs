@@ -71,14 +71,15 @@ export default {
     phone: 'Mobile number',
     sendCode: 'Get the code',
     code: 'Code received',
-    firstName: 'First name (optional)',
+    firstName: 'First name',
     giftsTitle: 'My gifts',
     giftsHelp: 'Enter the first name of the person giving you a bouquet, and the code they sent you.',
     giftSender: 'Their first name',
     giftCode: 'Code',
     giftOpen: 'Open the gift',
     accountTitle: 'My account',
-    accountHelp: 'Sign in with your mobile number: a code is sent to you by text message.',
+    accountHelp: 'Your first name and mobile number: a code is sent to you by text message.',
+    invoices: 'Invoices',
     signIn: 'Sign in',
     signOut: 'Sign out',
   },
@@ -192,9 +193,10 @@ export default {
     <p>A bouquet gives no right to any income or share, and cannot be resold on this site.</p>
 
     <h3>3. Your account</h3>
-    <p>To buy or receive a bouquet, you create an account with your mobile phone number, verified by a code sent by text
-      message. The bouquets you buy or receive are attached to that account. You are responsible for access to your
-      number: let us know if you change it.</p>
+    <p>To buy or receive a bouquet, you create an account with your first name and your mobile phone number, verified
+      by a code sent by text message. Your bouquets, your invoices and your credit (article 11) are attached to this
+      account. You are responsible for access to your number: let us know if you change it. If you delete your account,
+      your bouquets and your credit go with it.</p>
 
     <h3>4. What you get</h3>
     <p>The purchase gives you the personal, non-exclusive right to view the bouquet on this site and to display it on
@@ -214,9 +216,10 @@ export default {
       immediate delivery (see section 9). Confirming the payment is an order with an obligation to pay. A copy is held
       for you while the payment page is open, thirty minutes at most.</p>
 
-    <h3>7. Delivery and receipt</h3>
-    <p>The bouquet is added to your account as soon as Stripe confirms the payment. You receive a receipt showing the
-      bouquet, its price, the date and your request for immediate delivery.</p>
+    <h3>7. Delivery and invoice</h3>
+    <p>The bouquet is added to your account as soon as Stripe confirms the payment. You receive a receipt: it states the
+      bouquet, its price, the date and your request for immediate delivery. A numbered invoice is available in your
+      account, to print or save.</p>
 
     <h3>8. Giving a bouquet</h3>
     <p>When you buy, you can give the bouquet and compose its arrival: a short message carried by the insects, a piece
@@ -234,19 +237,38 @@ export default {
 
     <h3>10. Conformity</h3>
     <p>If you are a consumer, you benefit from the legal guarantee of conformity for digital content (French Consumer
-      Code, articles L224-25-1 et seq.): if the bouquet you receive does not match its description, write to us and we
-      will bring it into conformity or, failing that, refund you.</p>
+      Code, articles L224-25-1 et seq.). If the bouquet is not supplied to you, or does not display or work as described
+      during its thirty days, write to us: we bring it into conformity free of charge within a reasonable time, and we
+      push its fading back by as many days as it was unavailable. If bringing it into conformity is impossible, fails or
+      does not happen within that time, or if the defect is serious, you may obtain a price reduction or the termination
+      of the contract and a refund, under the conditions provided by law.</p>
+    <p>Outside these cases and the exchange provided for in article 11, no refund is granted.</p>
 
-    <h3>11. Liability</h3>
+    <h3>11. Exchange within 24 hours and credit</h3>
+    <p>As a commercial gesture, which is not a right of withdrawal, you may exchange a bouquet you bought once, within 24
+      hours of its purchase, if it has not been offered. The exchange is made from your account, for a bouquet of the day
+      still available at the same price or less. The new bouquet lives thirty days from the exchange; the bouquet given
+      back leaves your account and goes back on sale.</p>
+    <p>If the new bouquet costs less, the difference is added to your credit: no money is paid out to you. The credit is
+      taken off your next purchases automatically; it can be neither refunded nor transferred, and goes with the account.
+      An exchange gives a credit note for the bouquet given back and an invoice for the new one.</p>
+
+    <h3>12. Disputing a payment</h3>
+    <p>If you dispute with your bank the payment for a bouquet that was delivered to you, we send Stripe the proofs of the
+      order, including your dated request for immediate delivery. If the dispute is decided in your favour, the bouquet,
+      or the one received in exchange, is withdrawn, including from the account of the person it was offered to, and the
+      credit from that exchange is cancelled. Write to us first: a difficulty is often settled faster that way.</p>
+
+    <h3>13. Liability</h3>
     <p>Payment is operated by Stripe and text messages are sent by OVHcloud. We are not liable for their outages or
       changes. Nothing in these terms limits the rights consumers hold under the law.</p>
 
-    <h3>12. Complaints and mediation</h3>
+    <h3>14. Complaints and mediation</h3>
     <p>Write to us first (see <a href="{{legal}}#contact">Contact</a>); we answer within 30 days. If no solution is
       found, consumers may refer the dispute free of charge to our consumer mediator:
       <span class="a-remplir">[name, website and postal address of the mediator]</span>.</p>
 
-    <h3>13. Governing law</h3>
+    <h3>15. Governing law</h3>
     <p>These terms are governed by French law. Consumers keep the protection given by the mandatory provisions of the law
       of the country where they live, and may bring a dispute before the courts of that country or of France.</p>
   </section>
@@ -389,6 +411,16 @@ export default {
     accountSoon: 'Your account is coming soon: you will sign in with your mobile number and find your bouquets here.',
     accountSignIn: 'Sign in',
     hello: 'Hello {name}',
+    firstNameNeeded: 'Enter your first name to create your account.',
+    credit: 'Credit: {amount}, taken off your next purchase.',
+    exchangeUntil: 'Exchange (until {t})',
+    exchangeFor: 'Exchange for',
+    exchangeConfirm: 'Confirm the exchange',
+    exchangeDiff: 'The difference, {amount}, will go into your credit.',
+    exchangeSame: 'Same price: nothing goes into your credit.',
+    exchangeNone: 'No bouquet of the day at this price or less is available.',
+    exchangeDone: 'Exchanged: your new bouquet lives thirty days.',
+    exchangeRefused: 'This exchange is not possible.',
     copyNo: 'copy no. {n}',
     noBouquet: 'No bouquet on your account yet.',
     giftsSoon: 'Gifts are coming soon: you will open here the bouquet someone gives you.',

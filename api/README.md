@@ -1,27 +1,47 @@
 # Le serveur des comptes et des cadeaux
 
 C'est un Worker Cloudflare avec une base D1. Le plan d'ensemble est dans [decor/COMPTE.md](../decor/COMPTE.md). Ce dossier
-couvre les lots C2 (le compte vérifié par SMS, les sessions) et C3 (l'achat par carte, le stock). Les lots C4 et C5 y
-ajouteront les cadeaux.
+couvre les lots C2 (le compte vérifié par SMS, les sessions), C3 (l'achat par carte, le stock) et C9 (les factures,
+l'échange sous 24 heures, la cagnotte, les contestations). Les lots C4 et C5 y ajouteront les cadeaux.
 
 ## Ce qu'il sait faire
 
 | Route | Rôle |
 |---|---|
 | `POST /api/sms/demande` `{ numero, langue? }` | Envoie un code à 6 chiffres, valable 10 minutes. |
-| `POST /api/sms/verifie` `{ numero, code, prenom?, client? }` | Connecte la personne et crée le compte s'il est nouveau. Le site reçoit un cookie `belai_session` (30 jours). Belai Bureau (`client: "bureau"`) reçoit un jeton porteur valable un an. |
-| `GET /api/moi` | Le compte (prénom) et ses bouquets. |
+| `POST /api/sms/verifie` `{ numero, code, prenom, client? }` | Connecte la personne et crée le compte s'il est nouveau. Un nouveau compte exige un prénom : sans lui, la réponse est `prenom_requis` et le code reste valable. Le site reçoit un cookie `belai_session` (30 jours). Belai Bureau (`client: "bureau"`) reçoit un jeton porteur valable un an. |
+| `GET /api/moi` | Le compte (prénom, cagnotte) et ses bouquets : leur fanaison, et jusqu'à quand chacun peut être échangé. |
 | `POST /api/moi` `{ prenom }` | Change le prénom. |
 | `DELETE /api/moi` | Supprime le compte. Il est anonymisé 30 jours plus tard, et se reconnecter avant annule la suppression. |
 | `POST /api/deconnexion` | Ferme la session. |
 | `GET /api/collection?mois=AAAA-MM&produits=a,b` | Les exemplaires restants de chaque bouquet (public). |
 | `POST /api/achat` `{ produit, renonce, texte, langue, retour }` | Lot C3. Réserve un exemplaire 31 minutes, garde le renoncement daté et renvoie l'adresse de paiement : Stripe Checkout, ou la page simulée. |
-| `GET /api/commande/<id>` | La commande de l'acheteur : son état, et une fois payée son bouquet avec son numéro dans la série. |
-| `POST /api/stripe/webhook` | Les événements de Stripe, signature vérifiée (`checkout.session.completed`, `expired`). Un même événement rejoué ne livre qu'une fois. |
+| `GET /api/commande/<id>` | La commande de l'acheteur : son état, et une fois payée son bouquet avec son numéro dans la série et sa facture. |
+| `POST /api/echange` `{ bouquet, produit }` | Lot C9. L'échange sous 24 heures : une fois, pour un bouquet jamais offert, contre un bouquet du jour disponible et pas plus cher. La différence va dans la cagnotte. Un avoir et une facture sont émis. |
+| `GET /api/factures` | Les factures et avoirs du compte. |
+| `GET /api/facture/<numéro>` | Une facture ou un avoir, en page à imprimer ou à enregistrer en PDF. |
+| `POST /api/stripe/webhook` | Les événements de Stripe, signature vérifiée (`checkout.session.completed`, `expired`, `charge.dispute.created`, `charge.dispute.closed`). Un même événement rejoué ne livre qu'une fois. |
 | `GET` et `POST /api/faux-stripe/<id>` | La page de paiement simulée (`PAIEMENT = "faux"`, jamais en ligne). |
 
 Chaque jour à 3 h 17 (UTC), une tâche fait le ménage : codes et sessions expirés, compteurs, comptes supprimés depuis
-30 jours.
+30 jours, et cagnotte rendue aux commandes jamais payées.
+
+## Factures, échange, cagnotte, contestations (lot C9)
+
+- **Factures.** Chaque achat payé reçoit une facture `F-000001`, et chaque échange un avoir `A-…` pour le bouquet rendu,
+  suivi d'une facture pour le nouveau. Factures et avoirs suivent une seule numérotation, sans trou. Ce qu'une facture
+  dit est figé à son émission : vendeur (`VENDEUR` dans `wrangler.toml`), prénom, numéro masqué, bouquet, montants.
+- **Cagnotte.** Elle est prise sur le prix dès la commande, et rendue si la commande n'est pas payée. Une commande que
+  la cagnotte couvre entièrement est livrée tout de suite, sans page de paiement.
+- **Exemplaires.** Un exemplaire rendu par un échange revient en vente, et son numéro est repris par l'acheteur suivant.
+- **Contestation bancaire.** On y répond depuis le tableau de bord Stripe, avec les preuves que donne
+  `GET /api/commande/<id>` : la renonciation datée et la livraison. Perdue, elle retire le bouquet (et celui reçu en
+  échange) ainsi que la cagnotte laissée par cet échange.
+- **Jours rendus après un défaut** (CGV, article 10). Le porteur repousse la fanaison d'un bouquet de N jours :
+
+```bash
+npx wrangler d1 execute belai --remote --command "UPDATE bouquets SET fin = COALESCE(fin, achat + 2592000000) + N * 86400000 WHERE id = '<bouquet>'"
+```
 
 ## Protections
 
@@ -89,7 +109,8 @@ node -e "const c=require('crypto');console.log('POIVRE='+c.randomBytes(32).toStr
 5. Chez Stripe :
    - en mode test, mettre la clé `sk_test_...` avec `wrangler secret put STRIPE_SECRET` ;
    - créer un point de terminaison de webhook vers `https://<domaine>/api/stripe/webhook`, avec les événements
-     `checkout.session.completed`, `checkout.session.async_payment_succeeded` et `checkout.session.expired` ;
+     `checkout.session.completed`, `checkout.session.async_payment_succeeded`, `checkout.session.expired`,
+     `charge.dispute.created` et `charge.dispute.closed` ;
    - mettre son secret `whsec_...` avec `wrangler secret put STRIPE_WEBHOOK_SECRET` ;
    - passer `PAIEMENT = "stripe"`.
 6. Mettre dans `ORIGINES` l'adresse du site, et dans `CATALOGUE` celle de son `boutique.json`, puis `npx wrangler deploy`.

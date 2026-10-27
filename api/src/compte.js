@@ -1,9 +1,11 @@
-// compte.js: the account (decor/COMPTE.md, owner 2026-10-27): a mobile number verified by a code sent by text message,
-// a first name, sessions for the site (a cookie) and for Belai Bureau (a bearer token, signed in once).
+// compte.js: the account (decor/COMPTE.md, owner 2026-10-27): a first name and a mobile number verified by a code sent by
+// text message (the first name required for a new account), sessions for the site (a cookie) and for Belai Bureau (a bearer
+// token, signed in once).
 //
 //   POST   /api/sms/demande   { numero, langue? }                 -> { ok, expire }          a code is sent
-//   POST   /api/sms/verifie   { numero, code, prenom?, client? }  -> { compte, jeton? }      signed in (account made if new)
-//   GET    /api/moi                                               -> { compte, bouquets }
+//   POST   /api/sms/verifie   { numero, code, prenom, client? }   -> { compte, jeton? }      signed in (account made if new;
+//                                                                    without a first name, prenom_requis: the code holds)
+//   GET    /api/moi                                               -> { compte, bouquets }    its bouquets, its credit
 //   POST   /api/moi           { prenom }                          -> { compte }
 //   POST   /api/deconnexion                                      -> { ok }
 //   DELETE /api/moi                                               -> { ok }                  erased 30 days later
@@ -56,7 +58,9 @@ const lireJson = async (req) => {
     return {};
   }
 };
-const vueCompte = (c) => ({ prenom: c.prenom || null, depuis: c.cree });
+const vueCompte = (c) => ({ prenom: c.prenom || null, depuis: c.cree, cagnotte: c.cagnotte || 0 });
+const J30 = 30 * 24 * 60 * 60 * 1000;
+const ECHANGE = 24 * 60 * 60 * 1000;
 
 export async function demande(req, env, now = Date.now()) {
   secrets(env);
@@ -100,10 +104,11 @@ export async function verifie(req, env, now = Date.now()) {
     await env.DB.prepare('UPDATE codes_sms SET essais = essais + 1 WHERE empreinte = ?').bind(fp).run();
     return erreur('code_faux', 400, { reste: Math.max(0, ESSAIS - row.essais - 1) });
   }
-  await env.DB.prepare('DELETE FROM codes_sms WHERE empreinte = ?').bind(fp).run();
-
-  // the account: found by its fingerprint, made if new (a deletion asked for is cancelled by signing in again)
+  // the account: found by its fingerprint, made if new (a deletion asked for is cancelled by signing in again). A new one
+  // needs a first name: without one the code is kept, to be sent again with it
   let c = await env.DB.prepare('SELECT * FROM comptes WHERE empreinte = ?').bind(fp).first();
+  if (!c && !prenom(corps.prenom)) return erreur('prenom_requis');
+  await env.DB.prepare('DELETE FROM codes_sms WHERE empreinte = ?').bind(fp).run();
   let nouveau = false;
   if (!c) {
     nouveau = true;
@@ -151,8 +156,21 @@ export async function moi(req, env, now = Date.now()) {
     await env.DB.prepare('DELETE FROM sessions WHERE compte = ?').bind(s.compte.id).run();
     return json({ ok: true }, 200, { 'set-cookie': cookie('', 0) });
   }
-  const { results } = await env.DB.prepare('SELECT id, produit, mois, numero, achat, origine FROM bouquets WHERE compte = ? ORDER BY achat DESC').bind(s.compte.id).all();
-  return json({ compte: vueCompte(s.compte), bouquets: results || [] });
+  // the bouquets it holds (not those given back or taken back), each with its fading and whether it may still be exchanged
+  // (echange.js: within 24 hours, once, never offered)
+  const { results } = await env.DB.prepare(
+    `SELECT b.id, b.produit, b.mois, b.numero, b.achat, b.origine, b.fin, b.echange_de,
+            (SELECT COUNT(*) FROM cadeaux k WHERE k.bouquet = b.id) AS offert
+     FROM bouquets b WHERE b.compte = ? AND b.etat = 'actif' ORDER BY b.achat DESC`,
+  )
+    .bind(s.compte.id)
+    .all();
+  const bouquets = (results || []).map(({ offert, echange_de, ...b }) => ({
+    ...b,
+    fin: b.fin || b.achat + J30,
+    echangeable: b.origine === 'achat' && !echange_de && !offert && now - b.achat < ECHANGE ? b.achat + ECHANGE : null,
+  }));
+  return json({ compte: vueCompte(s.compte), bouquets });
 }
 
 export async function deconnexion(req, env, now = Date.now()) {

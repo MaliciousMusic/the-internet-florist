@@ -55,6 +55,27 @@ Branche `ch/compte`, copie de travail `ch/compte/`. Décidé par le porteur le 2
 - **En local, tout se teste sans compte réel** : `wrangler dev`, les clés de test de Stripe, et un faux envoi de SMS qui écrit
   le code dans le journal.
 
+## Remboursements, échanges et factures (porteur, 2026-10-27)
+
+Le porteur veut rendre le moins d'argent possible, dans ce que la loi permet.
+
+- **Inscription** : prénom, numéro de mobile et code reçu par SMS. Le prénom est obligatoire pour un nouveau compte.
+- **Profil** : les bouquets du compte avec leur fanaison, la cagnotte et les factures.
+- **Rétractation** : renoncée à l'achat (case cochée, gardée datée sur la commande et le reçu), comme aujourd'hui.
+- **Garantie de conformité** (impossible à écarter) : un bouquet qui ne s'affiche pas ou ne marche pas est corrigé, et il
+  regagne les jours perdus (sa fanaison est repoussée d'autant). On ne rembourse que si la correction échoue.
+- **Geste encadré : l'échange sous 24 heures.** Une seule fois, dans les 24 h qui suivent l'achat, et seulement si le
+  bouquet n'a pas été offert. On peut l'échanger contre un bouquet du jour encore disponible, de prix égal ou
+  inférieur. La différence va dans une **cagnotte** du compte, déduite du prochain achat ; aucun argent n'est rendu. Le
+  nouveau bouquet repart pour 30 jours, et l'exemplaire rendu revient en vente.
+- **Contestation bancaire** (rétrofacturation Stripe) : on conteste avec les preuves (renonciation datée, livraison). Si la
+  banque donne raison à l'acheteur, le bouquet est retiré, y compris chez la personne à qui il a été offert.
+- **Factures** : une facture numérotée à la suite pour chaque achat, avec les mentions du vendeur, le prénom et le numéro
+  masqué de l'acheteur. Un échange donne un avoir pour le bouquet rendu et une facture pour le nouveau, réglée par
+  l'échange. Un achat payé en partie par la cagnotte l'indique sur sa facture.
+- **Médiateur** : le porteur le choisira plus tard. L'emplacement reste marqué dans les CGV, et il faut l'avoir rempli
+  avant d'ouvrir la vente.
+
 ## Lots
 
 1. **C1, textes et collection.** Retirer le NFT, la chaîne, l'ETH, OpenSea et les redevances de toutes les pages et des 5
@@ -67,6 +88,8 @@ Branche `ch/compte`, copie de travail `ch/compte/`. Décidé par le porteur le 2
 7. **C7, Belai Bureau.** Connexion par SMS, bouquets du compte.
 8. **C8, textes légaux.** Conditions de vente sans NFT, données personnelles (numéro, SMS), Stripe et OVH comme
    sous-traitants.
+9. **C9, factures, échange et cagnotte.** Prénom obligatoire à l'inscription, factures et avoirs numérotés, échange
+   sous 24 h, cagnotte, contestations Stripe, CGV de remboursement.
 
 ## État
 
@@ -78,6 +101,10 @@ Branche `ch/compte`, copie de travail `ch/compte/`. Décidé par le porteur le 2
   ou simulé, la livraison numérotée et le reçu. Le parcours est branché sur le site derrière `?api=`. Les tests passent à
   23, et un essai complet a été fait dans le navigateur : connexion par SMS, paiement simulé, retour, exemplaire n° 1,
   « 99 sur 100 », reçu.
+- **C9** est fait en local : prénom obligatoire à l'inscription, factures et avoirs numérotés dans le profil, échange sous
+  24 h avec cagnotte, cagnotte déduite à l'achat, contestations Stripe, CGV de remboursement dans les 5 langues (en
+  ligne avec le site). 31 tests passent, et le parcours a été essayé dans le navigateur : inscription, achat simulé,
+  factures, échange contre Neige de mars, avoir.
 - **À noter** : le cookie de session exige qu'en ligne le site et le serveur partagent un domaine. Il faudra donc passer le
   site sur Cloudflare Pages, ou faire pointer un domaine vers les deux, avant d'ouvrir les comptes.
 
@@ -88,6 +115,9 @@ Branche `ch/compte`, copie de travail `ch/compte/`. Décidé par le porteur le 2
 - Un compte Cloudflare, pour le serveur et la base. Le site peut y passer en même temps.
 
 ## Questions ouvertes
+
+- La cagnotte expire-t-elle ? Proposition : non, tant que le compte existe (un compte supprimé la perd, ce que disent les
+  CGV). Le porteur peut demander une durée, par exemple 12 mois.
 
 - Le nom exact d'une collection : « Collection d'octobre 2026 », ou un nom poétique par mois ?
 - Les bouquets d'une collection terminée : retirés de la vitrine, ou montrés comme épuisés ?

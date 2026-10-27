@@ -76,14 +76,15 @@ export default {
     phone: 'Número de móvil',
     sendCode: 'Recibir el código',
     code: 'Código recibido',
-    firstName: 'Nombre (opcional)',
+    firstName: 'Nombre',
     giftsTitle: 'Mis regalos',
     giftsHelp: 'Introduce el nombre de la persona que te regala un ramo y el código que te ha enviado.',
     giftSender: 'Su nombre',
     giftCode: 'Código',
     giftOpen: 'Abrir el regalo',
     accountTitle: 'Mi cuenta',
-    accountHelp: 'Inicia sesión con tu número de móvil: te enviamos un código por SMS.',
+    accountHelp: 'Tu nombre y tu número de móvil: te enviamos un código por SMS.',
+    invoices: 'Facturas',
     signIn: 'Iniciar sesión',
     signOut: 'Cerrar sesión',
   },
@@ -199,9 +200,10 @@ export default {
     <p>Un ramo no otorga ningún derecho a ingresos ni a participación alguna, y no se revende en este sitio.</p>
 
     <h3>3. Su cuenta</h3>
-    <p>Para comprar o recibir un ramo, crea una cuenta con su número de teléfono móvil, verificado mediante un código
-      enviado por SMS. Los ramos comprados o recibidos quedan vinculados a esa cuenta. Usted es responsable del acceso a
-      su número: avísenos si lo cambia.</p>
+    <p>Para comprar o recibir un ramo, crea una cuenta con su nombre y su número de teléfono móvil, verificado mediante
+      un código enviado por SMS. Sus ramos, sus facturas y su saldo (artículo 11) están vinculados a esta cuenta. Usted es
+      responsable del acceso a su número: avísenos si lo cambia. Si elimina su cuenta, sus ramos y su saldo desaparecen
+      con ella.</p>
 
     <h3>4. Lo que obtiene</h3>
     <p>La compra le da el derecho personal y no exclusivo de ver el ramo en este sitio y de mostrarlo en sus pantallas
@@ -222,9 +224,10 @@ export default {
       pedido con obligación de pago. Se le reserva un ejemplar mientras la página de pago está abierta, treinta minutos
       como máximo.</p>
 
-    <h3>7. Entrega y recibo</h3>
-    <p>El ramo se añade a su cuenta en cuanto Stripe confirma el pago. Recibe un recibo con el ramo, su precio, la fecha
-      y su solicitud de entrega inmediata.</p>
+    <h3>7. Entrega y factura</h3>
+    <p>El ramo se añade a su cuenta en cuanto Stripe confirma el pago. Se le entrega un recibo: indica el ramo, su
+      precio, la fecha y su solicitud de entrega inmediata. Una factura numerada está disponible en su cuenta, para
+      imprimirla o guardarla.</p>
 
     <h3>8. Regalar un ramo</h3>
     <p>Al comprar, puede regalar el ramo y componer su llegada: un mensaje corto que llevan los insectos, una música y
@@ -241,20 +244,39 @@ export default {
       desistimiento (Código de Consumo francés, artículo L221-28, 13°; Directiva 2011/83/UE, artículo 16, letra m).</p>
 
     <h3>10. Conformidad</h3>
-    <p>Si es usted un consumidor, goza de la garantía legal de conformidad aplicable a los contenidos digitales (Código
-      de Consumo francés, artículos L224-25-1 y siguientes): si el ramo recibido no corresponde a su descripción,
-      escríbanos y lo pondremos en conformidad o, en su defecto, le reembolsaremos.</p>
+    <p>Si es usted consumidor, disfruta de la garantía legal de conformidad aplicable a los contenidos digitales (Código
+      de Consumo francés, artículos L224-25-1 y siguientes). Si el ramo no se le suministra, o no se muestra o no funciona
+      como se describe durante sus treinta días, escríbanos: lo ponemos en conformidad sin coste en un plazo razonable, y
+      retrasamos su marchitamiento tantos días como haya estado indisponible. Si la puesta en conformidad es imposible,
+      fracasa o no se produce en ese plazo, o si el defecto es grave, puede obtener una reducción del precio o la
+      resolución del contrato y su reembolso, en las condiciones previstas por la ley.</p>
+    <p>Fuera de estos casos y del cambio previsto en el artículo 11, no se concede ningún reembolso.</p>
 
-    <h3>11. Responsabilidad</h3>
+    <h3>11. Cambio en 24 horas y saldo</h3>
+    <p>Como gesto comercial, que no constituye un derecho de desistimiento, puede cambiar una vez un ramo que haya
+      comprado, en las 24 horas siguientes a su compra, si no ha sido regalado. El cambio se hace desde su cuenta, por un
+      ramo del día aún disponible de precio igual o inferior. El nuevo ramo vive treinta días a partir del cambio; el ramo
+      devuelto sale de su cuenta y vuelve a la venta.</p>
+    <p>Si el nuevo ramo cuesta menos, la diferencia se añade a su saldo: no se le abona ninguna cantidad. El saldo se
+      descuenta automáticamente de sus compras siguientes; no es reembolsable ni transferible, y desaparece con la
+      cuenta. Un cambio da lugar a una factura rectificativa por el ramo devuelto y a una factura por el nuevo.</p>
+
+    <h3>12. Impugnación de un pago</h3>
+    <p>Si impugna ante su banco el pago de un ramo que le ha sido entregado, transmitimos a Stripe las pruebas del pedido,
+      entre ellas su solicitud fechada de entrega inmediata. Si la impugnación se resuelve a su favor, el ramo se retira,
+      o el recibido a cambio, incluso de la cuenta de la persona a quien se regaló, y se anula el saldo procedente de
+      ese cambio. Escríbanos primero: una dificultad suele resolverse antes así.</p>
+
+    <h3>13. Responsabilidad</h3>
     <p>El pago lo gestiona Stripe y los SMS los envía OVHcloud. No somos responsables de sus interrupciones ni de sus
       cambios. Ninguna estipulación de estas condiciones limita los derechos que la ley otorga a los consumidores.</p>
 
-    <h3>12. Reclamaciones y mediación</h3>
+    <h3>14. Reclamaciones y mediación</h3>
     <p>Escríbanos primero (véase <a href="{{legal}}#contact">Contacto</a>); respondemos en 30 días. Si no se encuentra
       solución, el consumidor puede someter gratuitamente el litigio a nuestro mediador de consumo:
       <span class="a-remplir">[nombre, sitio web y dirección postal del mediador]</span>.</p>
 
-    <h3>13. Ley aplicable</h3>
+    <h3>15. Ley aplicable</h3>
     <p>Estas condiciones se rigen por el derecho francés. El consumidor conserva la protección que le otorgan las
       disposiciones imperativas del país donde reside y puede llevar un litigio ante los tribunales de ese país o de
       Francia.</p>
@@ -402,6 +424,16 @@ export default {
     accountSoon: 'Tu cuenta llega pronto: iniciarás sesión con tu número de móvil y encontrarás aquí tus ramos.',
     accountSignIn: 'Iniciar sesión',
     hello: 'Hola, {name}',
+    firstNameNeeded: 'Indica tu nombre para crear tu cuenta.',
+    credit: 'Saldo: {amount}, descontado de tu próxima compra.',
+    exchangeUntil: 'Cambiar (hasta {t})',
+    exchangeFor: 'Cambiar por',
+    exchangeConfirm: 'Confirmar el cambio',
+    exchangeDiff: 'La diferencia, {amount}, irá a tu saldo.',
+    exchangeSame: 'Mismo precio: no se añade nada a tu saldo.',
+    exchangeNone: 'No hay ningún ramo del día disponible a este precio o menos.',
+    exchangeDone: 'Cambio hecho: tu nuevo ramo vive treinta días.',
+    exchangeRefused: 'Este cambio no es posible.',
     copyNo: 'ejemplar n.º {n}',
     noBouquet: 'Todavía no hay ningún ramo en tu cuenta.',
     giftsSoon: 'Los regalos llegan pronto: aquí podrás abrir el ramo que te regalen.',

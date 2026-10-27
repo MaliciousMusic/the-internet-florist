@@ -1,6 +1,6 @@
 // collection.js: the copies left of each bouquet in a month's collection, for the line under its name (« Collection
-// d'octobre 2026 · 73 sur 100 »). Public. A copy is taken once paid (bouquets), or held while its payment page is open
-// (commandes "en_attente" not yet expired, achat.js).
+// d'octobre 2026 · 73 sur 100 »). Public. A copy is taken once paid (bouquets, except one given back in an exchange), or held
+// while its payment page is open (commandes "en_attente" not yet expired, achat.js).
 //
 //   GET /api/collection?mois=2026-10&produits=a,b,c   -> { mois, restants: { a: { total, restants }, ... } }
 import { json, erreur } from './outils.js';
@@ -28,7 +28,7 @@ export async function collection(req, env, now = Date.now()) {
     const fiche = C && (C.produits || []).find((x) => x.id === p);
     const tot = await total(env, p, mois, (fiche && fiche.exemplaires) || (C && C.collection && C.collection.exemplaires) || 100);
     const pris = await env.DB.prepare(
-      "SELECT (SELECT COUNT(*) FROM bouquets WHERE produit = ?1 AND mois = ?2 AND origine = 'achat') + (SELECT COUNT(*) FROM commandes WHERE produit = ?1 AND mois = ?2 AND etat = 'en_attente' AND expire > ?3) AS n",
+      "SELECT (SELECT COUNT(*) FROM bouquets WHERE produit = ?1 AND mois = ?2 AND etat <> 'rendu') + (SELECT COUNT(*) FROM commandes WHERE produit = ?1 AND mois = ?2 AND etat = 'en_attente' AND expire > ?3) AS n",
     )
       .bind(p, mois, now)
       .first();
