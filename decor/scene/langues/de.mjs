@@ -373,6 +373,10 @@ export default {
     // the month's collection and the copies left, under the bouquet's name ({month}: the month in the page's language)
     series: 'Kollektion {month} · noch {left} von {total}',
     fadeReminder: '(Sträuße verblühen in {n} Tagen)',
+    copiesLeft: '{left}/{total} verfügbar',
+    fadeShort: 'Verblüht in {n} Tagen',
+    collectionEnds: 'Kollektion {month}, endet {when}',
+    collectionDone: 'Kollektion {month}, beendet',
     buy: 'Kaufen',
     soon: 'Bald',
     soonMessage: 'Der Kauf direkt auf der Website ist bald möglich.',

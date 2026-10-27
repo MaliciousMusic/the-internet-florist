@@ -331,11 +331,14 @@
     const show = Math.max(0, 1 - Math.abs(d) / (M.pas * 0.42));
     if (place !== nameFor) {
       nameFor = place;
-      // (a string, or { nom, sous }: the name and, under it, a line in smaller letters)
+      // (a string, or { nom, copies, fane, sous }: the name, the copies available and the fading beside it, a line under it)
       const v = nameOf(place) || '';
-      nameEl.children[0].textContent = typeof v === 'string' ? v : v.nom || '';
-      nameEl.children[1].textContent = typeof v === 'string' ? '' : v.rappel || '';
-      nameEl.children[2].textContent = typeof v === 'string' ? '' : v.sous || '';
+      const o = typeof v === 'string' ? { nom: v } : v;
+      const [ligne, sous] = nameEl.children;
+      ligne.children[0].textContent = o.nom || '';
+      ligne.children[1].textContent = o.copies || '';
+      ligne.children[2].textContent = o.fane || '';
+      sous.textContent = o.sous || '';
     }
     nameEl.style.opacity = (show * show * (3 - 2 * show)).toFixed(3);
   }
@@ -668,7 +671,7 @@
       nameEl = document.createElement('div');
       nameEl.className = 'nom-ciel';
       nameEl.setAttribute('aria-hidden', 'true');
-      nameEl.innerHTML = '<span class="nom-titre"></span><span class="nom-rappel"></span><span class="nom-sous"></span>';
+      nameEl.innerHTML = '<span class="nom-ligne"><span class="nom-titre"></span><span class="nom-copies"></span><span class="nom-fane"></span></span><span class="nom-sous"></span>';
       // in the screen's top left corner (owner, 2026-10-27), over the canvas
       scene.append(nameEl);
       // the clumps come once the first bouquet is shown (scene.js's order), and only without the insects' sprites (insectes.mjs

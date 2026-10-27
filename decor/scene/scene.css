@@ -135,27 +135,26 @@ body {
   font-display: swap;
 }
 
-/* the name of the bouquet facing the camera, in the screen's top left corner (owner, 2026-10-27: smaller, in the corner,
-   with the reminder of the lifespan in brackets under it), then the month's collection */
+/* the top band (owner's sketch, 2026-10-27): on one line the bouquet's name, the copies available and the fading (at the
+   right edge); under them the month's collection and when it ends */
 .nom-ciel {
   position: absolute;
   left: max(18px, env(safe-area-inset-left, 0px));
-  top: calc(env(safe-area-inset-top, 0px) + 16px);
+  right: max(18px, env(safe-area-inset-right, 0px));
+  top: calc(env(safe-area-inset-top, 0px) + 14px);
   z-index: 20;
-  max-width: calc(100vw - 36px);
   color: #fff;
-  text-align: left;
   pointer-events: none;
   user-select: none;
   opacity: 0;
-  text-shadow: 0 1px 6px rgb(30 60 100 / 0.25);
+  text-shadow: 0 1px 6px rgb(30 60 100 / 0.28);
 }
 
-.nom-titre,
-.nom-rappel,
-.nom-sous {
-  display: block;
-  text-align: left;
+.nom-ligne {
+  display: flex;
+  align-items: baseline;
+  gap: 10px 12px;
+  flex-wrap: wrap;
 }
 
 .nom-titre {
@@ -163,20 +162,26 @@ body {
   letter-spacing: 0.01em;
 }
 
-.nom-rappel {
-  margin-top: 4px;
-  font: 400 clamp(12px, 1vw, 14px) / 1.2 system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-  opacity: 0.9;
+.nom-copies,
+.nom-fane {
+  font: 600 clamp(11.5px, 0.95vw, 13.5px) / 1.2 system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.nom-fane {
+  margin-left: auto;
 }
 
 .nom-sous {
-  margin-top: 2px;
-  font: 400 clamp(11px, 0.9vw, 13px) / 1.2 system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  display: block;
+  margin-top: 6px;
+  font: 400 clamp(12px, 1vw, 14px) / 1.2 system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
   letter-spacing: 0.02em;
-  opacity: 0.8;
+  opacity: 0.9;
 }
 
-.nom-rappel:empty,
+.nom-copies:empty,
 .nom-sous:empty {
   display: none;
 }
