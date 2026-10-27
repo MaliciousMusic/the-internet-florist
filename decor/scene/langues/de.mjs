@@ -11,18 +11,18 @@ export default {
   list: (a) => (a.length < 2 ? a.join('') : `${a.slice(0, -1).join(', ')} und ${a[a.length - 1]}`),
   more: 'weitere',
   describe: ({ stems, flowers, vase }) =>
-    `Ein einzigartiger digitaler Blumenstrauß aus ${stems} handgezeichneten Stielen (${flowers}) in ${vase}. Er lebt drei Monate und bleibt danach für immer verblüht.`,
+    `Ein einzigartiger digitaler Blumenstrauß aus ${stems} von Hand gezeichneten Stielen (${flowers}) in ${vase}. Er lebt dreißig Tage und bleibt dann für immer verblüht.`,
 
   pages: {
     index: {
       title: "Digitaler Blumenstrauß, von Hand gezeichnet | Belai's Garden",
-      description: 'Digitale Blumensträuße, Stiel für Stiel nach echten Blumen gezeichnet. Einzigartig, jeden Tag neu, zum Sammeln auf Base und für Ihren Desktop.',
+      description: 'Digitale Blumensträuße, Stiel für Stiel nach echten Blumen gezeichnet. Jeden Monat eine Kollektion in limitierten Serien, zum Verschenken und für Ihren Bildschirm.',
       ogTitle: 'Digitale Blumensträuße, Stiel für Stiel gezeichnet',
-      ogDescription: 'Jeden Tag neue, einzigartige Blumensträuße, jeder in einer echten Vase. Sehen Sie sie erblühen, sammeln Sie einen, stellen Sie ihn auf Ihren Desktop.',
+      ogDescription: 'Jeden Monat eine Kollektion von Sträußen in limitierten Serien, jeder in einer echten Vase. Sehen Sie ihnen beim Blühen zu, verschenken Sie einen, stellen Sie ihn auf Ihren Bildschirm.',
     },
     about: {
       title: "So entstehen unsere digitalen Blumensträuße | Belai's Garden",
-      description: 'Digitale Blumensträuße: in Code nach echten Fotos gezeichnet, in echten Vasen, zum Preis der echten Stiele, mit drei Monaten Leben.',
+      description: 'Wie unsere digitalen Blumensträuße entstehen: Blumen in Code nach echten Fotos gezeichnet, echte Vasen, der Preis der Stiele, dreißig Tage Leben.',
       ogTitle: 'Über unsere digitalen Blumensträuße',
       ogDescription: 'Jede Blume in Code nach echten Fotos gezeichnet. Einzigartige Blumensträuße in echten Vasen, die erblühen und dann verblühen.',
     },
@@ -40,14 +40,14 @@ export default {
     },
   },
   shareAlt: 'Der Blumenstrauß Ronde bleue: Flieder, Iris, Anemonen und Hyazinthen in einer Milchglasvase mit Tänzerinnen',
-  orgDescription: 'Digitale Blumensträuße, Stiel für Stiel nach echten Blumen gezeichnet, gesammelt auf Base.',
+  orgDescription: 'Digitale Blumensträuße, Stiel für Stiel nach echten Blumen gezeichnet, zum Verschenken und für Ihren Bildschirm.',
   listName: 'Blumensträuße des Tages',
 
   // ---------- the shop page
   index: {
     h1: "Belai's Garden: lebendige digitale Blumensträuße",
     intro:
-      'Digitale Blumensträuße, Stiel für Stiel nach echten Blumen gezeichnet. Jeden Tag neue, einzigartige Blumensträuße, jeder in einer echten Vase, gesammelt auf Base. Ein Blumenstrauß lebt drei Monate und bleibt danach für immer verblüht. Stellen Sie Ihren auf den Desktop Ihres Computers – mit Belai Bureau, einem kostenlosen Widget für Windows.',
+      'Digitale Blumensträuße, Stiel für Stiel nach echten Blumen gezeichnet. Jeden Monat eine neue Kollektion von Sträußen in limitierten Serien, jeder in einer echten Vase. Ein Strauß lebt dreißig Tage und bleibt dann für immer verblüht. Verschenken Sie ihn, oder stellen Sie ihn mit Belai Bureau auf Ihren Bildschirm.',
     noscript:
       'Dieser Garten braucht JavaScript, damit die Blumensträuße erblühen. Lesen Sie <a href="{{p}}about.html">mehr über die Blumensträuße</a>, sehen Sie, <a href="{{p}}desktop.html">wie Sie einen auf Ihren Desktop stellen</a>, oder lesen Sie <a href="{{legal}}">Impressum und AGB</a>.',
     galleryLabel: 'Blumensträuße des Tages',
@@ -78,21 +78,20 @@ export default {
     ihre an jeder Sorte gemessenen Farben, die Knospen, die offene Blüte und die verblühte. Mehr als fünfhundert Arten
     sind bereits im Garten.</p>
 
-  <h2>Jeden Tag einzigartige Blumensträuße</h2>
-  <p>Jeden Tag werden neue Blumensträuße komponiert, jeder in einer echten Vase, wie der Bronzekarpfen. Jeder
-    Blumenstrauß ist ein Unikat: Die Lage jedes Stiels, jeder Blüte und jedes Blattes findet sich in keinem anderen.</p>
+  <h2>Stiel für Stiel gebundene Sträuße</h2>
+  <p>Jeder Strauß wird Stiel für Stiel gebunden, jeder in einer echten Vase, wie der Bronzekarpfen. Die Stelle jedes Stiels, jeder Blüte und jedes Blatts findet sich in keinem anderen Strauß.</p>
 
   <h2>Ein lebendiger Blumenstrauß</h2>
-  <p>Ein Blumenstrauß lebt ab seiner Prägung drei Monate: Ein Countdown in Stunden und Minuten zeigt, wie viel Zeit ihm
-    bleibt. Danach bleibt er verblüht und unbewegt, für immer.</p>
+  <p>Ein Strauß lebt dreißig Tage ab dem Kauf: Ein Countdown in Stunden und Minuten zeigt die verbleibende Zeit. Danach bleibt er verblüht und unbewegt, für immer.</p>
 
   <h2>Der Preis echter Stiele</h2>
-  <p>Der Preis eines Blumenstraußes ist die Summe dessen, was seine Stiele bei einem Floristen in Frankreich kosten. Die
-    Vase gibt es gratis dazu. Beim Weiterverkauf nehmen wir nichts: 0 % Lizenzgebühren.</p>
+  <p>Der Preis eines Straußes ist die Summe dessen, was seine Stiele bei einem Floristen in Frankreich kosten. Die Vase gibt es dazu. Bezahlt wird mit Karte.</p>
 
-  <h2>Einen Blumenstrauß sammeln</h2>
-  <p>Die Blumensträuße sind NFTs im Base-Netzwerk, angeboten auf unserer OpenSea-Seite. Sie bezahlen sie direkt hier,
-    aus Ihrer Wallet, ohne die Website zu verlassen.</p>
+  <h2>Eine Kollektion pro Monat</h2>
+  <p>Jeder Monat hat seine Kollektion. Jeder Strauß darin gibt es in einer begrenzten Zahl von Exemplaren, angegeben unter seinem Namen, und der Strauß, den Sie kaufen, ist genau der, den Sie sehen.</p>
+
+  <h2>Einen Strauß verschenken</h2>
+  <p>Beim Kauf können Sie den Strauß verschenken: eine kurze Nachricht, von den Insekten getragen, eine Musik und ein Code zum Weitergeben. Die beschenkte Person erhält ihn unter „Meine Geschenke“ mit Ihrem Vornamen und diesem Code.</p>
 
   <h2>Auf Ihrem Desktop</h2>
   <p>Mit <a href="{{p}}desktop.html">Belai Bureau</a>, einem kostenlosen Widget für Windows, steht der Blumenstrauß, den
@@ -102,12 +101,12 @@ export default {
   <p>Jeder gesammelte Blumenstrauß lässt den Garten wachsen: neue Arten, neue Vasen, neue Blumensträuße.</p>`,
     faqTitle: 'Fragen',
     faq: [
-      ['Was ist ein digitaler Blumenstrauß?', 'Ein Strauß aus Blumen, die in Vektorgrafik nach echten Fotos gezeichnet sind, Stiel für Stiel, in einer echten Vase. Er erblüht auf dem Bildschirm, wiegt sich im Wind und verblüht nach drei Monaten. Jeder ist ein Unikat und wird als NFT auf Base gesammelt.'],
-      ['Kann ich einen Blumenstrauß auf den Desktop meines Computers stellen?', 'Ja. Laden Sie Belai Bureau herunter (kostenlos, Windows 10 und 11), verknüpfen Sie Ihre Wallet, und der Blumenstrauß, der Ihnen gehört, steht als Widget auf Ihrem Desktop: Sie platzieren ihn, wählen seine Größe, fixieren ihn und stellen ihn vor oder hinter Ihre Fenster.'],
-      ['Wie wird der Preis eines Blumenstraußes festgelegt?', 'Nach der Summe dessen, was seine Stiele bei einem Floristen in Frankreich kosten würden, umgerechnet in ETH, ohne Umsatzsteuer (gemäß Art. 293 B des französischen Steuergesetzbuchs nicht umsatzsteuerpflichtig). Die Vase gibt es gratis dazu. Der in Euro oder US-Dollar angezeigte Betrag ist ein Richtwert zum aktuellen Kurs.'],
-      ['Was passiert nach drei Monaten?', 'Der Blumenstrauß verblüht und bleibt verblüht und unbewegt, für immer. Er gehört weiterhin Ihnen.'],
-      ['Erheben Sie Lizenzgebühren beim Weiterverkauf?', 'Nein: 0 %. Es fallen nur die eigenen Gebühren des Marktplatzes und des Netzwerks an.'],
-      ['Wer kann einen Blumenstrauß anzeigen?', 'Belai Bureau zeigt nur einen Blumenstrauß an, den die verknüpfte Wallet hält, nach einer kostenlosen Signatur (keine Transaktion).'],
+      ['Was ist ein digitaler Blumenstrauß?', 'Ein Strauß aus Blumen, die in Vektorgrafik nach echten Fotos Stiel für Stiel gezeichnet sind, in einer echten Vase. Er blüht auf dem Bildschirm, wiegt sich im Wind und verblüht nach dreißig Tagen.'],
+      ['Kann ich einen Blumenstrauß auf meinen Bildschirm stellen?', 'Ja. Laden Sie Belai Bureau herunter (kostenlos), melden Sie sich einmal mit Ihrer Telefonnummer und dem per SMS erhaltenen Code an: Die Sträuße Ihres Kontos erscheinen auf Ihrem Bildschirm, wo Sie sie platzieren, in der Größe anpassen und fixieren.'],
+      ['Wie wird der Preis eines Blumenstraußes festgelegt?', 'Nach der Summe dessen, was seine Stiele bei einem Floristen in Frankreich kosten würden. Die Vase gibt es dazu. Der Preis wird in Euro angezeigt (außerhalb des Euroraums in US-Dollar) und mit Karte bezahlt.'],
+      ['Was passiert nach dreißig Tagen?', 'Der Blumenstrauß verblüht und bleibt verblüht und unbewegt, für immer. Er bleibt Ihrer.'],
+      ['Wie verschenke ich einen Strauß?', 'Wählen Sie beim Kauf „Verschenken“: Schreiben Sie eine kurze Nachricht, wählen Sie eine Musik und die Insekten, die sie tragen. Sie erhalten einen Link und einen Code; die Person gibt sie mit Ihrem Vornamen unter „Meine Geschenke“ ein, und der Strauß geht auf ihr Konto über.'],
+      ['Wie viele Exemplare gibt es von jedem Strauß?', 'Jeder Strauß der Monatskollektion gibt es in einer begrenzten Zahl von Exemplaren, angegeben unter seinem Namen. Sind sie vergriffen, gibt es keine mehr.'],
     ],
     back: '← Zurück zu den Blumensträußen',
   },
@@ -142,7 +141,7 @@ export default {
   // ---------- the legal page
   legal: {
     h1: 'Rechtliches',
-    updated: 'Zuletzt aktualisiert: 16. Oktober 2026',
+    updated: 'Zuletzt aktualisiert: 27. Oktober 2026',
     onThisPage: 'Auf dieser Seite',
     toc: { notice: 'Impressum', terms: 'Allgemeine Geschäftsbedingungen', privacy: 'Datenschutzerklärung', app: 'Lizenz von Belai Bureau', ip: 'Geistiges Eigentum', accessibility: 'Barrierefreiheit', contact: 'Kontakt' },
     reference: '',
@@ -157,126 +156,144 @@ export default {
     <h3>Inhaltlich verantwortlich</h3>
     <p>Hadrien Lonjaret</p>
     <h3>Hosting</h3>
-    <p>Cloudflare, Inc., 101 Townsend Street, San Francisco, CA 94107, Vereinigte Staaten · +1 650 319 8930 ·
-      cloudflare.com</p>
+    <p>GitHub, Inc. (GitHub Pages), 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, Vereinigte Staaten ·
+      github.com. Der Server für Konten und Geschenke wird von Cloudflare, Inc., 101 Townsend Street, San Francisco,
+      CA 94107, Vereinigte Staaten, gehostet · cloudflare.com</p>
   </section>
 
   <section id="terms" aria-labelledby="t-terms">
-    <h2 id="t-terms">Allgemeine Geschäftsbedingungen</h2>
+    <h2 id="t-terms">Allgemeine Verkaufsbedingungen</h2>
 
-    <h3>1. Anbieter und Kunden</h3>
-    <p>Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für jeden Blumenstrauß, den der im Impressum genannte Anbieter
-      („wir“) auf dieser Website an eine volljährige Person („Sie“) verkauft. Mit der Bezahlung eines Blumenstraußes
-      akzeptieren Sie diese AGB in der am Tag des Kaufs geltenden Fassung. Sie liegen in mehreren Sprachen vor; maßgeblich
-      ist die französische Fassung.</p>
+    <h3>1. Parteien und Geltungsbereich</h3>
+    <p>Diese Allgemeinen Verkaufsbedingungen gelten für jeden Blumenstrauß, den der im Impressum genannte Herausgeber
+      („wir“) auf dieser Website an volljährige Personen („Sie“) verkauft. Mit der Bezahlung eines Straußes akzeptieren
+      Sie diese Bedingungen in ihrer am Kauftag geltenden Fassung. Sie liegen in mehreren Sprachen vor; maßgeblich ist
+      die französische Fassung.</p>
 
-    <h3>2. Was ein Blumenstrauß ist</h3>
-    <p>Ein Blumenstrauß ist ein einzigartiges digitales Kunstwerk: in Vektorgrafik gezeichnete Blumen in einer Vase,
-      erfasst als nicht austauschbares Token (NFT) im Base-Netzwerk. Die Seite jedes Blumenstraußes zeigt vor dem Kauf
-      seinen Namen, seine Vase, die Anzahl seiner Stiele und seinen Preis.</p>
-    <p>Ein Blumenstrauß lebt ab seiner Prägung drei Monate: Er blüht und wiegt sich, und ein Countdown zeigt die
-      verbleibende Zeit. Danach verblüht er und bleibt für immer verblüht und unbewegt. Dies ist Teil des Kunstwerks und
-      kein Mangel.</p>
-    <p>Ein Blumenstrauß ist ein Sammlerstück. Er begründet keinerlei Anspruch auf Einkünfte oder Beteiligungen.</p>
+    <h3>2. Gegenstand: der Blumenstrauß</h3>
+    <p>Ein Blumenstrauß ist ein digitales Werk: in Vektorgrafik gezeichnete Blumen in einer Vase, auf dem Bildschirm
+      animiert. Jeder Strauß gehört zur Kollektion eines Monats und wird nur in einer begrenzten Zahl von Exemplaren
+      verkauft, die unter seinem Namen zusammen mit den verbleibenden Exemplaren angegeben ist. Der Strauß, den Sie
+      kaufen, ist genau der, den Sie sehen, ohne Abweichung. Seine Seite zeigt vor dem Kauf seinen Namen, seine Vase,
+      seine Kollektion und seinen Preis.</p>
+    <p>Ein Strauß lebt dreißig Tage ab dem Kauf: Er blüht und wiegt sich, und ein Countdown zeigt die verbleibende Zeit.
+      Danach verblüht er und bleibt endgültig verblüht und unbewegt. Diese Entwicklung ist Teil des Werks und kein
+      Mangel.</p>
+    <p>Ein Strauß gewährt keinerlei Anspruch auf Einnahmen oder Beteiligungen und wird auf dieser Website nicht
+      weiterverkauft.</p>
 
-    <h3>3. Der Blumenstrauß gehört Ihnen</h3>
-    <p>Als Inhaber des Tokens sind Sie Eigentümer des Blumenstraußes: Sie dürfen ihn zeigen, wo Sie möchten, behalten,
-      verschenken oder weiterverkaufen, ohne weitere Formalitäten. Wie beim Kauf eines Gemäldes werden dabei keine
-      Urheber- oder Verwertungsrechte an der Zeichnung übertragen: Die Herstellung und der Verkauf von Kopien oder
-      Merchandising-Artikeln sind nicht inbegriffen.</p>
+    <h3>3. Ihr Konto</h3>
+    <p>Um einen Strauß zu kaufen oder zu erhalten, legen Sie ein Konto mit Ihrer Mobilnummer an, die durch einen per SMS
+      gesendeten Code bestätigt wird. Gekaufte oder erhaltene Sträuße werden diesem Konto zugeordnet. Sie sind für den
+      Zugang zu Ihrer Nummer verantwortlich: Teilen Sie uns mit, wenn Sie sie ändern.</p>
 
-    <h3>4. Preis</h3>
-    <p>Der Preis wird in ETH ohne Umsatzsteuer (gemäß Art. 293 B des französischen Steuergesetzbuchs nicht umsatzsteuerpflichtig) festgelegt und vor dem Kauf beim Blumenstrauß angezeigt. Der daneben
-      in Euro oder US-Dollar angezeigte Betrag ist derselbe Preis zum aktuellen Kurs, abgerufen bei CoinGecko; Sie zahlen
-      den Preis in ETH. Die Gebühren des Base-Netzwerks („Gas“) werden von Ihrer Wallet hinzugefügt und an das Netzwerk
-      gezahlt, nicht an uns.</p>
+    <h3>4. Was Sie erhalten</h3>
+    <p>Der Kauf gibt Ihnen das persönliche, nicht ausschließliche Recht, den Strauß auf dieser Website anzusehen und ihn
+      mit Belai Bureau auf Ihren Bildschirmen anzuzeigen, zur privaten Nutzung. Dieses Recht lässt sich nur durch
+      Verschenken des Straußes weitergeben (Artikel 8). Wie bei einem Gemälde überträgt der Kauf nicht das Urheberrecht
+      an der Zeichnung: Herstellung und Verkauf von Kopien oder abgeleiteten Produkten sowie jede gewerbliche Nutzung
+      sind nicht eingeschlossen.</p>
 
-    <h3>5. Bestellung und Zahlung</h3>
-    <p>Sie zahlen aus Ihrer eigenen Wallet auf dieser Website über Seaport, das Protokoll des Marktplatzes OpenSea, auf
-      dem unsere Blumensträuße angeboten werden. Vor der Zahlung setzen Sie ein Häkchen, um die sofortige Lieferung zu
-      verlangen (siehe Artikel 7), und bestätigen dann; Ihre Wallet zeigt anschließend den genauen Betrag an, und mit der
-      Bestätigung in Ihrer Wallet geben Sie eine zahlungspflichtige Bestellung auf. Eine im Netzwerk bestätigte
-      Transaktion kann nicht rückgängig gemacht werden.</p>
-    <p>Sie sind für Ihre Wallet, deren Schlüssel und die Adresse, mit der Sie kaufen, selbst verantwortlich. Wir
-      verwahren niemals Ihre Schlüssel oder Ihre Gelder.</p>
+    <h3>5. Preis</h3>
+    <p>Der Preis wird in Euro festgelegt, ohne Mehrwertsteuer (nicht anwendbar, Art. 293 B des französischen
+      Steuergesetzbuchs), und vor dem Kauf am Strauß angezeigt; er ist die Summe dessen, was seine Stiele bei einem
+      Floristen in Frankreich kosten, die Vase gibt es dazu. Außerhalb des Euroraums ist der Betrag in US-Dollar eine
+      Orientierung: Bezahlt wird in Euro, und Ihre Bank kann Umrechnungsgebühren berechnen.</p>
 
-    <h3>6. Lieferung und Beleg</h3>
-    <p>Der Blumenstrauß wird in derselben Transaktion auf Ihre Wallet übertragen, sobald das Netzwerk sie bestätigt. Die
-      Website stellt Ihnen anschließend einen Beleg zum Herunterladen bereit, der den Kauf, seinen Preis, die Transaktion
-      und Ihr Verlangen nach sofortiger Lieferung bestätigt. Auch der Eintrag der Transaktion im Base-Netzwerk dient als
-      Nachweis des Kaufs.</p>
+    <h3>6. Bestellung und Zahlung</h3>
+    <p>Sie bezahlen mit Karte, Apple Pay oder Google Pay auf der Zahlungsseite unseres Anbieters Stripe (Stripe Payments
+      Europe, Ltd., Dublin, Irland). Wir sehen und speichern Ihre Kartennummern nie. Vor der Zahlung kreuzen Sie ein Feld
+      an, um die sofortige Lieferung zu verlangen (siehe Artikel 9). Die Bestätigung der Zahlung gilt als
+      zahlungspflichtige Bestellung. Ein Exemplar wird für Sie reserviert, solange die Zahlungsseite geöffnet ist,
+      höchstens dreißig Minuten.</p>
 
-    <h3>7. Widerrufsrecht</h3>
-    <p>Wenn Sie Verbraucher in der Europäischen Union sind, steht Ihnen bei einem Fernabsatzvertrag grundsätzlich ein
-      Widerrufsrecht von 14 Tagen zu. Ein Blumenstrauß ist ein digitaler Inhalt, der nicht auf einem körperlichen
-      Datenträger geliefert und sofort bereitgestellt wird: Vor der Zahlung verlangen Sie ausdrücklich seine sofortige
-      Lieferung und bestätigen Ihre Kenntnis davon, dass Sie dadurch Ihr Widerrufsrecht verlieren (französisches
-      Verbrauchergesetzbuch – Code de la consommation –, Art. L221-28 Nr. 13; Richtlinie 2011/83/EU, Art. 16
-      Buchst. m).</p>
+    <h3>7. Lieferung und Beleg</h3>
+    <p>Der Strauß wird Ihrem Konto hinzugefügt, sobald Stripe die Zahlung bestätigt. Sie erhalten einen Beleg mit dem
+      Strauß, seinem Preis, dem Datum und Ihrem Verlangen nach sofortiger Lieferung.</p>
 
-    <h3>8. Gesetzliche Gewährleistung</h3>
-    <p>Wenn Sie Verbraucher sind, gilt für digitale Inhalte die gesetzliche Gewährleistung der Vertragsmäßigkeit
-      (französisches Verbrauchergesetzbuch, Art. L224-25-1 ff.): Entspricht der erhaltene Blumenstrauß nicht seiner
-      Beschreibung, schreiben Sie uns, und wir stellen den vertragsgemäßen Zustand her oder erstatten Ihnen andernfalls
-      den Preis.</p>
+    <h3>8. Einen Strauß verschenken</h3>
+    <p>Beim Kauf können Sie den Strauß verschenken und seine Ankunft gestalten: eine kurze Nachricht, von den Insekten
+      getragen, eine Musik und die Insekten, die sie tragen. Sie erhalten einen Link und einen Code, die Sie selbst an
+      eine Person Ihrer Wahl weitergeben. Der Code gilt bis zum Verblühen des Straußes und nur einmal; nach fünf
+      Fehlversuchen wird die Eingabe für eine Stunde gesperrt. Gibt die Person Ihren Vornamen und den Code ein, geht der
+      Strauß auf ihr Konto über und verlässt Ihres; solange der Code nicht genutzt wurde, bleibt der Strauß auf Ihrem
+      Konto. Sie sind für den Inhalt der Nachricht verantwortlich, die weder gegen Gesetze noch gegen Rechte Dritter
+      verstoßen darf.</p>
 
-    <h3>9. Weiterverkauf</h3>
-    <p>Bei einem Weiterverkauf erheben wir keine Lizenzgebühr (0 %). Es fallen nur die eigenen Gebühren des
-      Marktplatzes und des Netzwerks an. Die Preise von Blumensträußen beim Weiterverkauf legen ihre Inhaber frei fest;
-      wir geben dazu keinerlei Zusagen.</p>
+    <h3>9. Widerrufsrecht</h3>
+    <p>Wenn Sie Verbraucher mit Wohnsitz in der Europäischen Union sind, haben Sie grundsätzlich 14 Tage Zeit, einen
+      Fernabsatzkauf zu widerrufen. Ein Strauß ist ein digitaler Inhalt, der nicht auf einem körperlichen Datenträger
+      geliefert und sofort bereitgestellt wird: Vor der Zahlung verlangen Sie ausdrücklich seine sofortige Lieferung und
+      bestätigen, dass Sie dadurch Ihr Widerrufsrecht verlieren (französisches Verbrauchergesetzbuch, Artikel L221-28,
+      13°; Richtlinie 2011/83/EU, Artikel 16 Buchstabe m).</p>
 
-    <h3>10. Haftung</h3>
-    <p>Das Base-Netzwerk, die Wallets und der Marktplatz OpenSea werden von Dritten betrieben. Wir haften weder für deren
-      Ausfälle, Gebühren oder Änderungen noch für einen Verlust infolge eines verlorenen Schlüssels oder einer falschen
-      Adresse. Diese AGB schränken die gesetzlichen Rechte von Verbrauchern in keiner Weise ein.</p>
+    <h3>10. Vertragsmäßigkeit</h3>
+    <p>Als Verbraucher genießen Sie die gesetzliche Gewährleistung für digitale Inhalte (französisches
+      Verbrauchergesetzbuch, Artikel L224-25-1 ff.): Entspricht der erhaltene Strauß nicht seiner Beschreibung,
+      schreiben Sie uns, und wir stellen den vertragsgemäßen Zustand her oder erstatten Ihnen andernfalls den Preis.</p>
 
-    <h3>11. Beschwerden und Schlichtung</h3>
+    <h3>11. Haftung</h3>
+    <p>Die Zahlung wird von Stripe abgewickelt, die SMS werden von OVHcloud versendet. Für deren Ausfälle oder Änderungen
+      haften wir nicht. Keine Bestimmung dieser Bedingungen schränkt die gesetzlichen Rechte von Verbrauchern ein.</p>
+
+    <h3>12. Beschwerden und Schlichtung</h3>
     <p>Schreiben Sie uns zuerst (siehe <a href="{{legal}}#contact">Kontakt</a>); wir antworten innerhalb von 30 Tagen.
-      Wird keine Lösung gefunden, können Verbraucher die Streitigkeit kostenlos unserer Verbraucherschlichtungsstelle
-      vorlegen: <span class="a-remplir">[Name, Website und Postanschrift der Schlichtungsstelle]</span>.</p>
+      Findet sich keine Lösung, kann der Verbraucher den Streit kostenlos unserem Verbraucherschlichter vorlegen:
+      <span class="a-remplir">[Name, Website und Postanschrift des Schlichters]</span>.</p>
 
-    <h3>12. Anwendbares Recht</h3>
-    <p>Diese AGB unterliegen französischem Recht. Verbraucher behalten den Schutz der zwingenden Bestimmungen des Staates,
-      in dem sie ihren gewöhnlichen Aufenthalt haben, und können eine Streitigkeit vor die Gerichte dieses Staates oder
-      Frankreichs bringen.</p>
+    <h3>13. Anwendbares Recht</h3>
+    <p>Diese Bedingungen unterliegen französischem Recht. Verbraucher behalten den Schutz der zwingenden Vorschriften des
+      Landes, in dem sie wohnen, und können einen Rechtsstreit vor die Gerichte dieses Landes oder Frankreichs bringen.</p>
   </section>
 
   <section id="privacy" aria-labelledby="t-privacy">
     <h2 id="t-privacy">Datenschutzerklärung</h2>
-    <p>Verantwortlicher ist der im <a href="{{legal}}#notice">Impressum</a> genannte Anbieter. Wir erheben so wenige
-      Daten wie möglich und keine, um ein Profil von Ihnen zu erstellen.</p>
-    <h3>Was verarbeitet wird, wozu und auf welcher Rechtsgrundlage</h3>
+    <p>Verantwortlicher ist der im <a href="{{legal}}#notice">Impressum</a> genannte Herausgeber. Wir erheben so wenige
+      Daten wie möglich und keine, um Profile zu erstellen.</p>
+    <h3>Verarbeitete Daten, Zwecke und Rechtsgrundlagen</h3>
     <ul>
-      <li><strong>Verbindungsdaten</strong> (IP-Adresse, Browser, aufgerufene Seiten): von unserem Hoster Cloudflare in
-        seinen technischen Protokollen gespeichert, um die Website bereitzustellen und vor Missbrauch zu schützen.
+      <li><strong>Verbindungsdaten</strong> (IP-Adresse, Browser, aufgerufene Seiten): von unseren Hostern in ihren
+        technischen Protokollen gespeichert, um die Website bereitzustellen und vor Missbrauch zu schützen.
         Rechtsgrundlage: unser berechtigtes Interesse an einer funktionierenden, sicheren Website.</li>
-      <li><strong>Ihr Land</strong>, bei jedem Besuch von Cloudflare aus Ihrer IP-Adresse abgeleitet, um die Website in
-        Ihrer Sprache und den Preis in Ihrer Währung anzuzeigen. Es wird sofort verwendet und nie gespeichert.
-        Rechtsgrundlage: unser berechtigtes Interesse an einer für Sie lesbaren Website.</li>
-      <li><strong>Der ETH-Kurs:</strong> Um den Betrag in Ihrer Währung anzuzeigen, fragt Ihr Browser den aktuellen Kurs
-        bei CoinGecko (api.coingecko.com) ab; CoinGecko sieht dabei Ihre IP-Adresse. Rechtsgrundlage: unser berechtigtes
-        Interesse an der Anzeige eines aktuellen Betrags.</li>
-      <li><strong>Ihre Wallet-Adresse</strong>, wenn Sie kaufen oder eine Wallet verknüpfen: gelesen, um den Kauf
-        durchzuführen oder Ihre Blumensträuße anzuzeigen. Rechtsgrundlage: der Vertrag. Transaktionen im Base-Netzwerk
-        sind öffentlich und dauerhaft: Weder wir noch sonst jemand kann sie löschen.</li>
+      <li><strong>Ihre Sprache und Ihr Land</strong>, auf Ihrem Gerät aus den Spracheinstellungen Ihres Browsers
+        abgeleitet, um die Website in Ihrer Sprache und den Preis in Ihrer Währung anzuzeigen. Nichts wird gesendet oder
+        gespeichert.</li>
+      <li><strong>Ihr Konto</strong>: Ihre Mobilnummer, der von Ihnen gewählte Vorname und das Erstellungsdatum des Kontos,
+        um Sie zu identifizieren und Ihre Sträuße Ihrem Konto zuzuordnen. Die Nummer wird verschlüsselt gespeichert; ein
+        Fingerabdruck der Nummer dient dazu, Ihr Konto zu finden. Sie wird niemals einer anderen Person gezeigt.
+        Rechtsgrundlage: der Vertrag.</li>
+      <li><strong>Per SMS gesendete Codes</strong>, um Ihre Nummer zu bestätigen: zehn Minuten gültig, dann gelöscht.
+        Rechtsgrundlage: der Vertrag.</li>
+      <li><strong>Ihre Käufe</strong>: der Strauß, sein Preis, das Datum, die von Stripe übermittelte Zahlungsreferenz
+        und der Zahlungsstatus sowie Ihr Verlangen nach sofortiger Lieferung. Rechtsgrundlage: der Vertrag und unsere
+        Buchführungspflichten.</li>
+      <li><strong>Ihre Geschenke</strong>: die gewählte Nachricht, Musik und Insekten, der Vorname des Absenders und der
+        Status des Geschenks; der Code wird nur als Fingerabdruck gespeichert. Wer den Strauß erhält, sieht den Vornamen
+        und die Nachricht; der Absender sieht nur, dass der Strauß abgeholt wurde. Rechtsgrundlage: der Vertrag.</li>
     </ul>
+    <h3>Zahlung</h3>
+    <p>Ihre Kartendaten werden auf der Seite von Stripe eingegeben und von Stripe nach dessen eigener Datenschutzerklärung
+      verarbeitet. Wir erhalten nur die Zahlungsreferenz, den Betrag und den Status.</p>
     <h3>Cookies</h3>
-    <p>Wenn Sie selbst eine Sprache wählen, merkt sich die Website diese ein Jahr lang in einem einzigen Cookie namens
-      <code>lang</code>. Das ist alles: kein anderes Cookie, keine Reichweitenmessung, keine Werbung. Dieses Cookie
-      speichert nur Ihre Wahl und erfordert daher kein Einwilligungsbanner.</p>
-    <h3>Empfänger und Ort der Verarbeitung</h3>
-    <p>Cloudflare, Inc. (Hosting, Vereinigte Staaten) und CoinGecko (Kurs, Singapur). Übermittlungen außerhalb der
-      Europäischen Union stützen sich bei Cloudflare auf das EU-US Data Privacy Framework und im Übrigen auf die
-      Standardvertragsklauseln der Europäischen Kommission.</p>
+    <p>Wenn Sie selbst eine Sprache wählen, merkt sich die Website diese in einem Cookie namens <code>lang</code>, ein Jahr
+      lang. Solange Sie in Ihrem Konto angemeldet sind, hält ein Sitzungscookie Sie angemeldet. Das ist alles: keine
+      Reichweitenmessung, keine Werbung. Diese Cookies sind für den von Ihnen gewünschten Dienst erforderlich und
+      benötigen daher kein Einwilligungsbanner.</p>
+    <h3>Empfänger und Orte der Verarbeitung</h3>
+    <p>GitHub, Inc. (Hosting der Website, Vereinigte Staaten), Cloudflare, Inc. (Server für Konten und Geschenke,
+      Vereinigte Staaten), Stripe (Zahlung, Irland und Vereinigte Staaten) und OVHcloud (SMS-Versand, Frankreich).
+      Übermittlungen außerhalb der Europäischen Union stützen sich auf den EU-US-Datenschutzrahmen (Data Privacy
+      Framework) und auf die Standardvertragsklauseln der Europäischen Kommission.</p>
     <h3>Speicherdauer</h3>
-    <p>Technische Protokolle von Cloudflare: nach den Vorgaben von Cloudflare, einige Tage bis einige Wochen. E-Mails,
-      die Sie uns senden: so lange, wie es für die Antwort nötig ist, danach drei Jahre. Andere Daten speichern wir
-      nicht.</p>
+    <p>Technische Protokolle der Hoster: einige Tage bis einige Wochen, je nach deren Einstellungen. Konto: solange Sie es
+      behalten; nach der Löschung wird es innerhalb von 30 Tagen entfernt. Geschenke: solange der Strauß einem Konto
+      zugeordnet ist. Käufe: zehn Jahre, die Aufbewahrungsfrist für Buchungsbelege (französisches Handelsgesetzbuch,
+      Artikel L123-22). E-Mails, die Sie uns senden: so lange wie für die Antwort nötig, danach drei Jahre.</p>
     <h3>Ihre Rechte</h3>
-    <p>Sie können Auskunft über Ihre Daten, deren Berichtigung oder Löschung sowie die Einschränkung ihrer Verarbeitung
+    <p>Sie können Auskunft über Ihre Daten, deren Berichtigung oder Löschung und die Einschränkung ihrer Verarbeitung
       verlangen, der Verarbeitung widersprechen und Ihre Daten in einem übertragbaren Format erhalten, indem Sie uns
-      schreiben (siehe <a href="{{legal}}#contact">Kontakt</a>). Sie können sich außerdem bei der französischen
-      Datenschutzaufsichtsbehörde CNIL (cnil.fr) beschweren.</p>
+      schreiben (siehe <a href="{{legal}}#contact">Kontakt</a>). Sie können Ihr Konto jederzeit löschen. Sie können sich
+      außerdem bei der französischen Datenschutzbehörde CNIL (cnil.fr) beschweren.</p>
   </section>
 
   <section id="app" aria-labelledby="t-app">
@@ -295,11 +312,10 @@ export default {
 
   <section id="ip" aria-labelledby="t-ip">
     <h2 id="t-ip">Geistiges Eigentum</h2>
-    <p>Die Blumen, Vasen, Blumensträuße, die Kulisse, die Texte, das Video und der Code dieser Website und von Belai
-      Bureau sind Originalwerke. Jede Vervielfältigung ohne Genehmigung ist untersagt, soweit sie nicht in den
-      <a href="{{legal}}#terms">Allgemeinen Geschäftsbedingungen</a> erlaubt ist. OpenSea, Base und CoinGecko sind
-      Namen ihrer jeweiligen Inhaber. Der ETH-Kurs wird bereitgestellt von
-      <a href="https://www.coingecko.com/" target="_blank" rel="noopener">CoinGecko</a>.</p>
+    <p>Die Blumen, Vasen, Sträuße, Kulissen, Texte, das Video und der Code dieser Website und von Belai Bureau sind
+      Originalwerke. Jede Vervielfältigung ohne Genehmigung ist untersagt, außer in den Grenzen der
+      <a href="{{legal}}#terms">Allgemeinen Verkaufsbedingungen</a>. Stripe, OVHcloud, GitHub, Cloudflare und Base sind
+      Namen ihrer jeweiligen Inhaber.</p>
   </section>
 
   <section id="accessibility" aria-labelledby="t-accessibility">
@@ -334,9 +350,9 @@ export default {
     legal: 'Rechtliches',
     closeLegal: 'Rechtliche Hinweise schließen',
     footer:
-      '<p>Jeder Blumenstrauß ist ein einzigartiges digitales Sammlerstück (ein NFT auf Base) mit einem Preis in ETH, ohne Umsatzsteuer (gemäß Art. 293 B des französischen Steuergesetzbuchs nicht umsatzsteuerpflichtig); der Betrag in Euro oder US-Dollar ist derselbe Preis zum aktuellen Kurs. Er lebt ab seiner Prägung drei Monate und bleibt danach für immer verblüht. Die Lieferung erfolgt sofort, daher besteht nach Ihrer Bestätigung kein Widerrufsrecht. Beim Weiterverkauf erheben wir keine Lizenzgebühr (0 %).</p><p>Kein Tracking, keine Werbung: höchstens ein Cookie, um sich die von Ihnen gewählte Sprache zu merken.</p>',
+      '<p>Jeder Blumenstrauß ist ein digitaler Strauß in limitierter Serie, mit Karte bezahlt, ohne Mehrwertsteuer (nicht anwendbar, Art. 293 B des französischen Steuergesetzbuchs). Er lebt dreißig Tage ab dem Kauf und bleibt dann für immer verblüht. Die Lieferung erfolgt sofort, daher gilt das Widerrufsrecht nach Bestätigung Ihres Kaufs nicht mehr.</p><p>Kein Tracking, keine Werbung: höchstens ein Cookie, um die gewählte Sprache zu speichern.</p>',
     links: { notice: 'Impressum', terms: 'AGB', privacy: 'Datenschutz', app: 'Lizenz von Belai Bureau', accessibility: 'Barrierefreiheit', contact: 'Kontakt' },
-    credit: 'ETH-Kurs von {coingecko}.',
+    credit: '',
     language: 'Sprache',
     lookCloser: 'Den Blumenstrauß näher ansehen',
     stepBack: 'Zurücktreten',
@@ -349,6 +365,8 @@ export default {
     faded: 'Verblüht',
     fadedLower: 'verblüht',
     fadedForGood: 'Für immer verblüht',
+    // the month's collection and the copies left, under the bouquet's name ({month}: the month in the page's language)
+    series: 'Kollektion {month} · noch {left} von {total}',
     buy: 'Kaufen',
     soon: 'Bald',
     soonMessage: 'Der Kauf direkt auf der Website ist bald möglich.',

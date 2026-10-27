@@ -1,14 +1,9 @@
 {
-  "_lisez-moi": "Bouquets provisoires de la scène. tiges : [espèce, tiges, prix fleuriste d’une tige en centimes] ; les prix viennent de catalogue/recettes/sens_prix_0X.json (prix TTC d’un fleuriste en France en 2026, repris dans RECIPES.price de k0.js et dans skus.csv) ; les nombres sont les tiges que le moteur dessine vraiment pour cette graine (comptées sur sa composition) ; ecartModele : dessinées/prévues par le modèle quand elles diffèrent. recette : [SKU, tiges, place 1 (fond) à 10 (devant)] du bouquet de référence (flower-atelier/bronze/bq.py). modele : numéro du bouquet modèle du moteur (MODELS, k0.js/k2.js), dans son vase. Prix d’un bouquet = somme de ses tiges, vase offert ; prix ETH = cette somme / cours, à 3 chiffres ; ≈ € = prix ETH × cours. prix, bouquet, vignette : écrits par predessin.mjs (ne pas éditer à la main ; relancer l’outil après tout changement de tiges, de cours ou de bouquet).",
-  "cours": { "eurParEth": 2171.44, "date": "2026-10-15T16:23Z", "source": "CoinGecko, api/v3/simple/price", "enDirect": false },
-  "coursUsd": {
-    "usdParEth": 2470.85,
-    "date": "2026-10-16T15:00Z",
-    "source": "CoinGecko, api/v3/simple/price",
-    "enDirect": false,
-    "role": "repli de la page quand CoinGecko ne répond pas (prix affiché en dollars)"
-  },
-  "prix": { "regle": "somme des prix réels des tiges, vase offert", "chiffresEth": 3, "provisoire": true },
+  "_lisez-moi": "Bouquets de la vitrine. tiges : [espèce, tiges, prix fleuriste d’une tige en centimes] ; les prix viennent de catalogue/recettes/sens_prix_0X.json (prix TTC d’un fleuriste en France en 2026, repris dans RECIPES.price de k0.js et dans skus.csv) ; les nombres sont les tiges que le moteur dessine vraiment pour cette graine. recette : [SKU, tiges, place 1 (fond) à 10 (devant)]. modele : numéro du bouquet modèle du moteur (MODELS, k0.js/k2.js), dans son vase. Prix d’un bouquet = somme de ses tiges, vase offert, en euros, payé par carte (porteur, 27 octobre 2026 : plus de NFT ni de crypto) ; en dollars hors zone euro au cours cours.usdParEur. vie.jours : durée de vie d’un bouquet (30 jours). collection : la collection du mois (mois AAAA-MM, exemplaires par bouquet, sauf « exemplaires » propre à un produit) ; « vendus » viendra du serveur de la boutique (decor/COMPTE.md). prix, bouquet, vignette : écrits par predessin.mjs, puis sprites.mjs cuit les sprites.",
+  "cours": { "usdParEur": 1.07, "date": "2026-10-27", "source": "BCE, cours de référence (provisoire, à relire chaque mois)" },
+  "prix": { "regle": "somme des prix réels des tiges, vase offert, en euros", "provisoire": true },
+  "vie": { "jours": 30 },
+  "collection": { "mois": "2026-10", "exemplaires": 100 },
   "scene": {
     "pied": [1200,700],
     "echelle": 0.855,
@@ -77,7 +72,7 @@
         ["viburnum-roseum",3,650],
         ["alchemille",2,260]
       ],
-      "prix": { "centimes": 30070, "eth": 0.138, "eur": 300, "ethTxt": "0,138 ETH", "eurTxt": "≈ 300 €", "tiges": 70 },
+      "prix": { "centimes": 30070, "eurTxt": "300,70 €", "tiges": 70 },
       "bouquet": "bouquets/printemps-a-la-carpe/manifeste.json",
       "vignette": "bouquets/printemps-a-la-carpe/vignette.svg"
     },
@@ -108,7 +103,7 @@
         ["chrysantheme-disbud",2,450],
         ["alchemille",3,260]
       ],
-      "prix": { "centimes": 9480, "eth": 0.0437, "eur": 95, "ethTxt": "0.0437 ETH", "eurTxt": "≈ 95 €", "tiges": 23 },
+      "prix": { "centimes": 9480, "eurTxt": "94,80 €", "tiges": 23 },
       "bouquet": "bouquets/citrine/manifeste.json",
       "vignette": "bouquets/citrine/vignette.svg"
     },
@@ -138,7 +133,7 @@
         ["pois-de-senteur",3,320],
         ["alchemille",2,260]
       ],
-      "prix": { "centimes": 13280, "eth": 0.0612, "eur": 133, "ethTxt": "0.0612 ETH", "eurTxt": "≈ 133 €", "tiges": 23 },
+      "prix": { "centimes": 13280, "eurTxt": "132,80 €", "tiges": 23 },
       "bouquet": "bouquets/aube-au-jardin/manifeste.json",
       "vignette": "bouquets/aube-au-jardin/vignette.svg"
     },
@@ -169,7 +164,7 @@
         ["oeillet-standard",5,220],
         ["scabieuse",4,400]
       ],
-      "prix": { "centimes": 16750, "eth": 0.0771, "eur": 167, "ethTxt": "0.0771 ETH", "eurTxt": "≈ 167 €", "tiges": 28 },
+      "prix": { "centimes": 16750, "eurTxt": "167,50 €", "tiges": 28 },
       "bouquet": "bouquets/nuit-d-ambre/manifeste.json",
       "vignette": "bouquets/nuit-d-ambre/vignette.svg"
     },
@@ -194,7 +189,7 @@
         ["pois-de-senteur",3,320],
         ["narcisse-bouquet",1,220]
       ],
-      "prix": { "centimes": 15990, "eth": 0.0736, "eur": 160, "ethTxt": "0,0736 ETH", "eurTxt": "≈ 160 €", "tiges": 37 },
+      "prix": { "centimes": 15990, "eurTxt": "159,90 €", "tiges": 37 },
       "bouquet": "bouquets/ronde-bleue/manifeste.json",
       "vignette": "bouquets/ronde-bleue/vignette.svg"
     },
@@ -226,7 +221,7 @@
         ["scabieuse",3,400],
         ["muscari",4,180]
       ],
-      "prix": { "centimes": 13000, "eth": 0.0599, "eur": 130, "ethTxt": "0.0599 ETH", "eurTxt": "≈ 130 €", "tiges": 29 },
+      "prix": { "centimes": 13000, "eurTxt": "130,00 €", "tiges": 29 },
       "bouquet": "bouquets/ciel-de-faience/manifeste.json",
       "vignette": "bouquets/ciel-de-faience/vignette.svg"
     },
@@ -257,7 +252,7 @@
         ["freesia",2,270],
         ["alchemille",2,260]
       ],
-      "prix": { "centimes": 8720, "eth": 0.0402, "eur": 87, "ethTxt": "0.0402 ETH", "eurTxt": "≈ 87 €", "tiges": 22 },
+      "prix": { "centimes": 8720, "eurTxt": "87,20 €", "tiges": 22 },
       "bouquet": "bouquets/souffle-du-dragon/manifeste.json",
       "vignette": "bouquets/souffle-du-dragon/vignette.svg"
     },
@@ -288,7 +283,7 @@
         ["scabieuse",3,400],
         ["freesia",2,270]
       ],
-      "prix": { "centimes": 11630, "eth": 0.0536, "eur": 116, "ethTxt": "0.0536 ETH", "eurTxt": "≈ 116 €", "tiges": 22 },
+      "prix": { "centimes": 11630, "eurTxt": "116,30 €", "tiges": 22 },
       "bouquet": "bouquets/vol-de-nuit/manifeste.json",
       "vignette": "bouquets/vol-de-nuit/vignette.svg"
     },
@@ -319,7 +314,7 @@
         ["renoncule-classique",3,400],
         ["viburnum-roseum",2,650]
       ],
-      "prix": { "centimes": 13300, "eth": 0.0612, "eur": 133, "ethTxt": "0.0612 ETH", "eurTxt": "≈ 133 €", "tiges": 20 },
+      "prix": { "centimes": 13300, "eurTxt": "133,00 €", "tiges": 20 },
       "bouquet": "bouquets/etang-d-abricot/manifeste.json",
       "vignette": "bouquets/etang-d-abricot/vignette.svg"
     },
@@ -350,7 +345,7 @@
         ["pois-de-senteur",3,320],
         ["scabieuse",2,400]
       ],
-      "prix": { "centimes": 12010, "eth": 0.0553, "eur": 120, "ethTxt": "0.0553 ETH", "eurTxt": "≈ 120 €", "tiges": 21 },
+      "prix": { "centimes": 12010, "eurTxt": "120,10 €", "tiges": 21 },
       "bouquet": "bouquets/bronze-poudre/manifeste.json",
       "vignette": "bouquets/bronze-poudre/vignette.svg"
     },
@@ -381,7 +376,7 @@
         ["muscari",3,180],
         ["alchemille",2,260]
       ],
-      "prix": { "centimes": 8200, "eth": 0.0378, "eur": 82, "ethTxt": "0.0378 ETH", "eurTxt": "≈ 82 €", "tiges": 24 },
+      "prix": { "centimes": 8200, "eurTxt": "82,00 €", "tiges": 24 },
       "bouquet": "bouquets/neige-de-mars/manifeste.json",
       "vignette": "bouquets/neige-de-mars/vignette.svg"
     }

@@ -142,7 +142,7 @@
         ${T.footer}
         <ul class="pied-liens">${links}</ul>
         <nav class="pied-langues" aria-label="${T.language}"><ul>${langs}</ul></nav>
-        <p class="pied-credit">${T.credit.replace('{coingecko}', '<a href="https://www.coingecko.com/" target="_blank" rel="noopener">CoinGecko</a>')}</p>
+        ${T.credit ? `<p class="pied-credit">${T.credit}</p>` : ''}
       </div>
     </section>`;
   // a language chosen by hand is kept (the cookie "lang", read by _worker.js); nothing else is stored

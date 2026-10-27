@@ -161,7 +161,7 @@ function structured(L, page) {
           { '@type': 'PropertyValue', name: 'lifespan', value: 'P3M' },
           { '@type': 'PropertyValue', name: 'network', value: 'Base' },
         ],
-        offers: { '@type': 'Offer', price: String(p.prix.eth), priceCurrency: 'ETH', url: `${pageUrl(L, 'index')}?b=${p.id}`, seller: org },
+        offers: { '@type': 'Offer', price: (p.prix.centimes / 100).toFixed(2), priceCurrency: 'EUR', url: `${pageUrl(L, 'index')}?b=${p.id}`, seller: org },
       },
     }));
     return [

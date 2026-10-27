@@ -301,35 +301,20 @@
   });
   addEventListener('resize', frameCloseUp);
 
-  // ---------- the price in the bubble: set in ETH, shown at its exact value in the visitor's currency; a new value (the live
-  // rate) comes down from above and crushes the shown one against the bubble's floor (transforms only).
-  // The currency: euros in the euro area (French law asks for euros), US dollars elsewhere. The country comes from
-  // _worker.js (Cloudflare reads it from the IP address), else from the browser's language ("fr-FR" -> FR).
+  // ---------- the price in the bubble: set in euros (the sum of the stems' real prices, paid by card since 2026-10-27, owner:
+  // no NFT, no crypto), shown in the visitor's currency; a new value comes down from above and crushes the shown one
+  // against the bubble's floor (transforms only).
+  // The currency: euros in the euro area (French law asks for euros), US dollars elsewhere at the configured rate
+  // (boutique.json cours.usdParEur). The country comes from _worker.js (Cloudflare reads it from the IP address), else
+  // from the browser's language ("fr-FR" -> FR).
   const EURO = new Set('AT BE CY DE EE ES FI FR GR HR IE IT LT LU LV MT NL PT SI SK AD MC SM VA ME XK GP MQ GF RE YT PM BL MF'.split(' '));
   const country = (document.documentElement.dataset.pays || (/-([A-Z]{2})\b/.exec(navigator.language || '') || [])[1] || '').toUpperCase();
   const CUR = EURO.has(country) ? 'eur' : 'usd';
   const nFiat = new Intl.NumberFormat(I18N.locale, { style: 'currency', currency: CUR.toUpperCase(), minimumFractionDigits: 2, maximumFractionDigits: 2 });
   const nInt = new Intl.NumberFormat(I18N.locale);
-  const nEth = new Intl.NumberFormat(I18N.locale, { maximumSignificantDigits: 6 });
-  const ethTxt = (p) => `${nEth.format(p.prix.eth)} ETH`;
-  // ETH -> the currency: the live rate (CoinGecko, read at load and every 5 min), else the configured one of boutique.json
-  const RATE_URL = `https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=${CUR}`;
-  let rate = 0;
-  const fiatOf = (p) => nFiat.format(Math.round(p.prix.eth * rate * 100) / 100);
-  async function liveRate() {
-    try {
-      const j = await fetch(RATE_URL, { cache: 'no-store' }).then((r) => (r.ok ? r.json() : Promise.reject(r.status)));
-      const r = j && j.ethereum && j.ethereum[CUR];
-      if (!(r > 0)) return;
-      rate = r;
-      M.cours = { devise: CUR, parEth: r, pays: country, enDirect: true, lu: new Date().toISOString() };
-      if (curP) {
-        labelBuy(curP);
-        setPrice(fiatOf(curP), false);
-      }
-      labelFrames();
-    } catch (_) {}
-  }
+  // euros -> the currency
+  let rate = 1;
+  const fiatOf = (p) => nFiat.format(Math.round(p.prix.centimes * rate) / 100);
   const priceBox = $('achat-prix');
   const buy = $('acheter');
   let curP = null;
@@ -352,17 +337,31 @@
     setPrice(fiatOf(p), false);
   }
 
-  // ---------- the lifespan: a bouquet lives 3 months from its minting (boutique.json "vie"), counted down in hours and
-  // minutes; then it stays faded and still for good. A product not minted yet (no "frappe" date) counts from today's lot
-  // (midnight UTC): provisional, until the minting writes its date.
+  // ---------- the lifespan: a bouquet lives 30 days (owner, 2026-10-27; boutique.json "vie"), counted down in hours and
+  // minutes; then it stays faded and still for good. On the shop it counts from today's lot (midnight UTC); a bouquet
+  // bought counts from its purchase (the account, decor/COMPTE.md).
   const lot = new Date();
   lot.setUTCHours(0, 0, 0, 0);
   function lifeEnd(p) {
-    const e = new Date(p.frappe || lot);
-    e.setUTCMonth(e.getUTCMonth() + ((CFG.vie && CFG.vie.mois) || 3));
+    const e = new Date(p.achat || lot);
+    e.setUTCDate(e.getUTCDate() + ((CFG.vie && CFG.vie.jours) || 30));
     return e;
   }
   const faded = (p) => lifeEnd(p) <= Date.now();
+  // ---------- the month's collection (one a month, a limited series of each bouquet, owner 2026-10-27): its name in the
+  // page's language from its month, and the copies left of this bouquet (boutique.json collection, product "vendus"; the
+  // count will come from the shop's server, decor/COMPTE.md)
+  function seriesTxt(p) {
+    const C = CFG.collection;
+    if (!C) return '';
+    const [y, mo] = C.mois.split('-').map(Number);
+    let month = new Intl.DateTimeFormat(I18N.locale, { month: 'long', year: 'numeric', timeZone: 'UTC' }).format(Date.UTC(y, mo - 1, 1));
+    // (in French: « Collection d’octobre 2026 », « Collection de mars 2027 »)
+    if (I18N.code === 'fr') month = (/^[aeiouyàâéèêîôû]/i.test(month) ? 'd’' : 'de ') + month;
+    const total = p.exemplaires || C.exemplaires;
+    const left = Math.max(0, total - (p.vendus || 0));
+    return fill(T.series, { month, left: nInt.format(left), total: nInt.format(total) });
+  }
   function lifeTxt(p) {
     const ms = lifeEnd(p) - Date.now();
     if (ms <= 0) return null;
@@ -374,6 +373,8 @@
     if (curP) {
       const t = lifeTxt(curP);
       $('achat-vie').innerHTML = `${HOURGLASS}<span>${t ? fill(T.fadesIn, { t }) : T.fadedForGood}</span>`;
+      // the month's collection and the copies left, as under the name in the sky
+      $('achat-serie').textContent = seriesTxt(curP);
     }
   }
   setInterval(showLives, 15000);
@@ -383,11 +384,11 @@
   function labelFrames() {
     for (const c of cards) {
       const t = lifeTxt(c.p);
-      c.b.setAttribute('aria-label', fill(T.frameLabel, { name: c.p.nom, eth: ethTxt(c.p), fiat: fiatOf(c.p), life: t ? fill(T.fadesInLower, { t }) : T.fadedLower, alt: altOf(c.p) }));
+      c.b.setAttribute('aria-label', fill(T.frameLabel, { name: c.p.nom, fiat: fiatOf(c.p), life: t ? fill(T.fadesInLower, { t }) : T.fadedLower, alt: altOf(c.p) }));
     }
   }
   function labelBuy(p) {
-    buy.setAttribute('aria-label', fill(T.buyLabel, { name: p.nom, eth: ethTxt(p), fiat: fiatOf(p) }));
+    buy.setAttribute('aria-label', fill(T.buyLabel, { name: p.nom, fiat: fiatOf(p) }));
   }
 
   // ---------- the demo video: setting a bouquet as a widget or a wallpaper, on a phone and a computer
@@ -499,7 +500,7 @@
     const rows = [
       [R.bouquet, `${e(p.nom)} (${e(p.id)})`],
       [R.token, e(token)],
-      [R.price, `${e(ethTxt(p))} · ${e(R.taxes)}`],
+      [R.price, `${e(new Intl.NumberFormat(I18N.locale, { style: 'currency', currency: 'EUR' }).format(p.prix.centimes / 100))} · ${e(R.taxes)}`],
       [R.date, e(when.toLocaleString(I18N.locale))],
       [R.buyer, `<code>${e(buyer)}</code>`],
       [R.transaction, `<code>${e(tx)}</code>`],
@@ -665,9 +666,7 @@
   // ---------- start: the pager and the first bouquet at once (the bouquet's file loads beside the decor)
   async function start() {
     CFG = await fetch('boutique.json').then((r) => r.json());
-    rate = CUR === 'eur' ? CFG.cours.eurParEth : CFG.coursUsd.usdParEth;
-    liveRate();
-    setInterval(liveRate, 5 * 60 * 1000);
+    rate = CUR === 'eur' ? 1 : CFG.cours.usdParEur;
     const F = await Frise.pret;
     const order = lay(CFG.produits.length, F.places);
     slots = order.map((k) => ({ p: CFG.produits[k], k }));
@@ -680,7 +679,8 @@
     const k = want == null ? 0 : /^\d+$/.test(want) ? +want : CFG.produits.findIndex((p) => p.id === want);
     const at = order.indexOf(k >= 0 && k < CFG.produits.length ? k : 0);
     if (PERF) measure();
-    Frise.nommer((s) => productAt(s).nom);
+    // the name in the sky, and under it the month's collection and the copies left (owner, 2026-10-27)
+    Frise.nommer((s) => ({ nom: productAt(s).nom, sous: seriesTxt(productAt(s)) }));
     if (at > 0) Frise.va(at, { instant: true });
     Frise.poser(poseAt);
     const f = Frise.face();

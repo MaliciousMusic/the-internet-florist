@@ -1319,16 +1319,12 @@ function pageCode() {
   };
 }
 
-// ---------- prices: the sum of the real prices of the stems (the vessel is offered), in ETH at the rate of configuration,
-// to 3 significant digits; the euros are that ETH price at the same rate (as the page computed them until 2026-10-15)
-const nEth = new Intl.NumberFormat('en-US', { maximumSignificantDigits: 3 });
-const nEur = new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 });
-function priceOf(p, cfg) {
+// ---------- prices: the sum of the real prices of the stems (the vessel is offered), in euros, paid by card (owner,
+// 2026-10-27: no NFT, no crypto)
+const nEur = new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' });
+function priceOf(p) {
   const cts = p.tiges.reduce((a, [, n, c]) => a + n * c, 0);
-  const rate = cfg.cours.eurParEth;
-  const eth = Number((cts / 100 / rate).toPrecision(cfg.prix.chiffresEth || 3));
-  const eur = Math.round(eth * rate);
-  return { centimes: cts, eth, eur, ethTxt: `${nEth.format(eth)} ETH`, eurTxt: `≈ ${nEur.format(eur)}`, tiges: p.tiges.reduce((a, t) => a + t[1], 0) };
+  return { centimes: cts, eurTxt: nEur.format(cts / 100), tiges: p.tiges.reduce((a, t) => a + t[1], 0) };
 }
 // boutique.json as it is written by hand: arrays of plain values on one line, small flat objects on one line
 function fmt(v, ind = '') {
@@ -1476,12 +1472,12 @@ try {
     r.manifest.vignette = { ko: kb(Buffer.byteLength(th.svg)), gzipKo: +(thGz / 1024).toFixed(1), lod1Ko: kb(Buffer.byteLength(th.lod1)), lod1GzipKo: kb(gzipSync(th.lod1, { level: 9 }).length), ecart: { moyenne: cmp.moyenne, p99: cmp.p99, pctPlusDe32: cmp.plusDe32 }, retire: th.stats };
     writeFileSync(join(dir, 'manifeste.json'), JSON.stringify(r.manifest));
     // the product in boutique.json: its price (computed here, no longer in the page), its manifest and thumbnail
-    p.prix = priceOf(p, CFG);
+    p.prix = priceOf(p);
     p.bouquet = `bouquets/${p.id}/manifeste.json`;
     p.vignette = `bouquets/${p.id}/vignette.svg`;
     const tg = r.manifest.tiges;
     if (tg.bad.length || tg.extra.length || tg.price.length) console.warn(`[predessin] ${p.id}: tiges ${tg.bad.join(', ') || 'ok'}; en plus ${tg.extra.join(', ') || 'rien'}; prix changés ${tg.price.join(', ') || 'aucun'}`);
-    const line = { produit: p.id, ...r.stats, ...r.manifest.poids, vignette: r.manifest.vignette, prix: p.prix.ethTxt, secondes: Math.round((Date.now() - t0) / 100) / 10, tiges: tg.bad.length || tg.extra.length ? tg : 'ok' };
+    const line = { produit: p.id, ...r.stats, ...r.manifest.poids, vignette: r.manifest.vignette, prix: p.prix.eurTxt, secondes: Math.round((Date.now() - t0) / 100) / 10, tiges: tg.bad.length || tg.extra.length ? tg : 'ok' };
     report.push(line);
     console.log(JSON.stringify(line));
   }
