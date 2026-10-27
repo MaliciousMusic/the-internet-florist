@@ -355,6 +355,10 @@ export default {
     // the month's collection and the copies left, under the bouquet's name ({month}: the month in the page's language)
     series: '{month} collection · {left} of {total} left',
     fadeReminder: '(Bouquets fade in {n} days)',
+    copiesLeft: '{left}/{total} available',
+    fadeShort: 'Fades in {n} days',
+    collectionEnds: '{month} collection, ends {when}',
+    collectionDone: '{month} collection, closed',
     buy: 'Buy',
     soon: 'Soon',
     soonMessage: 'Buying from the site is coming soon.',

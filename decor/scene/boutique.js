@@ -351,6 +351,29 @@
   // ---------- the month's collection (one a month, a limited series of each bouquet, owner 2026-10-27): its name in the
   // page's language from its month, and the copies left of this bouquet (boutique.json collection, product "vendus"; the
   // count will come from the shop's server, decor/COMPTE.md)
+  function copiesOf(p) {
+    const C = CFG.collection;
+    if (!C) return null;
+    const total = p.exemplaires || C.exemplaires;
+    return { total, left: Math.max(0, total - (p.vendus || 0)) };
+  }
+  const monthOf = () => {
+    const [y, mo] = CFG.collection.mois.split('-').map(Number);
+    let month = new Intl.DateTimeFormat(I18N.locale, { month: 'long', year: 'numeric', timeZone: 'UTC' }).format(Date.UTC(y, mo - 1, 1));
+    // (in French: « Collection d’octobre 2026 », « Collection de mars 2027 »)
+    if (I18N.code === 'fr') month = (/^[aeiouyàâéèêîôû]/i.test(month) ? 'd’' : 'de ') + month;
+    return month;
+  };
+  // the collection and when it ends: the last day of its month, midnight UTC (« se termine dans 4 jours »)
+  function collectionTxt() {
+    const C = CFG.collection;
+    if (!C) return '';
+    const [y, mo] = C.mois.split('-').map(Number);
+    const ms = Date.UTC(y, mo, 1) - Date.now();
+    const rel = new Intl.RelativeTimeFormat(I18N.locale, { numeric: 'auto' });
+    const when = ms <= 0 ? '' : ms < 864e5 ? rel.format(Math.max(1, Math.ceil(ms / 36e5)), 'hour') : rel.format(Math.ceil(ms / 864e5), 'day');
+    return when ? fill(T.collectionEnds, { month: monthOf(), when }) : fill(T.collectionDone, { month: monthOf() });
+  }
   function seriesTxt(p) {
     const C = CFG.collection;
     if (!C) return '';
@@ -362,8 +385,18 @@
     const left = Math.max(0, total - (p.vendus || 0));
     return fill(T.series, { month, left: nInt.format(left), total: nInt.format(total) });
   }
-  // the name in the corner, the reminder of the lifespan in brackets under it (owner, 2026-10-27), then the collection
-  const nameOf = (s) => ({ nom: productAt(s).nom, rappel: fill(T.fadeReminder, { n: nInt.format((CFG.vie && CFG.vie.jours) || 30) }), sous: seriesTxt(productAt(s)) });
+  // the top band (owner's sketch, 2026-10-27): the name, the copies available, the fading; under them the month's collection
+  // and when it ends
+  const nameOf = (s) => {
+    const p = productAt(s);
+    const c = copiesOf(p);
+    return {
+      nom: p.nom,
+      copies: c ? fill(T.copiesLeft, { left: nInt.format(c.left), total: nInt.format(c.total) }) : '',
+      fane: fill(T.fadeShort, { n: nInt.format((CFG.vie && CFG.vie.jours) || 30) }),
+      sous: collectionTxt(),
+    };
+  };
   function lifeTxt(p) {
     const ms = lifeEnd(p) - Date.now();
     if (ms <= 0) return null;
@@ -380,6 +413,8 @@
     }
   }
   setInterval(showLives, 15000);
+  // the collection's end draws nearer: the band again every minute
+  setInterval(() => CFG && window.Frise && Frise.nommer(nameOf), 60000);
 
   // the words for a bouquet, for screen readers: its flowers and its vase in the page's language (build.mjs)
   const altOf = (p) => (I18N.alts && I18N.alts[p.id]) || '';
@@ -580,7 +615,8 @@
       const o = await api(`/api/commande/${encodeURIComponent(id)}`);
       if (o.etat === 'payee' && o.bouquet) {
         const p = CFG.produits.find((x) => x.id === o.produit) || curP;
-        note.textContent = fill(T.paid, { n: nInt.format(o.bouquet.numero), total: nInt.format((p && (p.exemplaires || CFG.collection.exemplaires)) || 100) });
+        // (no sentence under the button, owner 2026-10-27: only the receipt's link)
+        note.textContent = '';
         receipt({ p, order: o });
         copiesLeft().catch(() => {});
         return;
@@ -627,8 +663,7 @@
     a.href = url;
     a.download = `receipt-${p.id}-${when.toISOString().slice(0, 10)}.html`;
     a.textContent = R.download;
-    // under the message that confirms the purchase
-    note.append(document.createElement('br'), a);
+    note.append(a);
     return url;
   }
   window.Boutique = { recu: receipt };

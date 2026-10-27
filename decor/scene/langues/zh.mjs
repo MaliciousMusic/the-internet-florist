@@ -326,6 +326,10 @@ export default {
     // the month's collection and the copies left, under the bouquet's name ({month}: the month in the page's language)
     series: '{month}系列 · 剩余 {left}/{total}',
     fadeReminder: '（花束 {n} 天后凋谢）',
+    copiesLeft: '剩余 {left}/{total}',
+    fadeShort: '{n} 天后凋谢',
+    collectionEnds: '{month}系列，{when}结束',
+    collectionDone: '{month}系列，已结束',
     buy: '购买',
     soon: '即将推出',
     soonMessage: '站内购买即将开放。',
