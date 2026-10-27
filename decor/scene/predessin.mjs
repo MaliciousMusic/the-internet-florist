@@ -212,8 +212,9 @@ function pageCode() {
     const price = p.tiges.filter(([sid, , cts]) => RBY[sid] && RBY[sid].price !== cts).map(([sid]) => sid);
     return { bad, extra, price, dessinees: got };
   }
+  // (the engine's shadow, and a measured vessel's own one, drawn as its group data-svgb="s": the snowdrop vase, app/v1f.js)
   function hideTableShadow(svg) {
-    for (const p of svg.querySelectorAll('[data-l=vback] path[fill^="url(#vs"]')) p.setAttribute('display', 'none');
+    for (const p of svg.querySelectorAll('[data-l=vback] path[fill^="url(#vs"], [data-svgb="s"]')) p.setAttribute('display', 'none');
   }
   // the bouquet's box in the world (2400 x 1350): the vessel's foot (VX, FL) on the pillar's top, at the configured scale,
   // reduced only when it would rise into the cards or overflow the phone's column (the shop's place())
