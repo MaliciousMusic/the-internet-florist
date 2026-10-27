@@ -71,14 +71,15 @@ export default {
     phone: 'Mobilnummer',
     sendCode: 'Code erhalten',
     code: 'Erhaltener Code',
-    firstName: 'Vorname (optional)',
+    firstName: 'Vorname',
     giftsTitle: 'Meine Geschenke',
     giftsHelp: 'Geben Sie den Vornamen der Person ein, die Ihnen einen Strauß schenkt, und den Code, den sie Ihnen geschickt hat.',
     giftSender: 'Ihr Vorname',
     giftCode: 'Code',
     giftOpen: 'Geschenk öffnen',
     accountTitle: 'Mein Konto',
-    accountHelp: 'Melden Sie sich mit Ihrer Mobilnummer an: Sie erhalten einen Code per SMS.',
+    accountHelp: 'Ihr Vorname und Ihre Mobilnummer: Sie erhalten einen Code per SMS.',
+    invoices: 'Rechnungen',
     signIn: 'Anmelden',
     signOut: 'Abmelden',
   },
@@ -197,9 +198,10 @@ export default {
       weiterverkauft.</p>
 
     <h3>3. Ihr Konto</h3>
-    <p>Um einen Strauß zu kaufen oder zu erhalten, legen Sie ein Konto mit Ihrer Mobilnummer an, die durch einen per SMS
-      gesendeten Code bestätigt wird. Gekaufte oder erhaltene Sträuße werden diesem Konto zugeordnet. Sie sind für den
-      Zugang zu Ihrer Nummer verantwortlich: Teilen Sie uns mit, wenn Sie sie ändern.</p>
+    <p>Um einen Strauß zu kaufen oder zu erhalten, legen Sie ein Konto mit Ihrem Vornamen und Ihrer Mobilnummer an, die
+      durch einen per SMS gesendeten Code bestätigt wird. Ihre Sträuße, Ihre Rechnungen und Ihr Guthaben (Artikel 11)
+      sind diesem Konto zugeordnet. Sie sind für den Zugang zu Ihrer Nummer verantwortlich: Teilen Sie uns mit, wenn Sie
+      sie ändern. Wenn Sie Ihr Konto löschen, verschwinden Ihre Sträuße und Ihr Guthaben mit ihm.</p>
 
     <h3>4. Was Sie erhalten</h3>
     <p>Der Kauf gibt Ihnen das persönliche, nicht ausschließliche Recht, den Strauß auf dieser Website anzusehen und ihn
@@ -221,9 +223,10 @@ export default {
       zahlungspflichtige Bestellung. Ein Exemplar wird für Sie reserviert, solange die Zahlungsseite geöffnet ist,
       höchstens dreißig Minuten.</p>
 
-    <h3>7. Lieferung und Beleg</h3>
-    <p>Der Strauß wird Ihrem Konto hinzugefügt, sobald Stripe die Zahlung bestätigt. Sie erhalten einen Beleg mit dem
-      Strauß, seinem Preis, dem Datum und Ihrem Verlangen nach sofortiger Lieferung.</p>
+    <h3>7. Lieferung und Rechnung</h3>
+    <p>Der Strauß wird Ihrem Konto hinzugefügt, sobald Stripe die Zahlung bestätigt. Sie erhalten einen Beleg: Er nennt
+      den Strauß, seinen Preis, das Datum und Ihr Verlangen nach sofortiger Lieferung. Eine nummerierte Rechnung steht in
+      Ihrem Konto zum Drucken oder Speichern bereit.</p>
 
     <h3>8. Einen Strauß verschenken</h3>
     <p>Beim Kauf können Sie den Strauß verschenken und seine Ankunft gestalten: eine kurze Nachricht, von den Insekten
@@ -242,20 +245,42 @@ export default {
       13°; Richtlinie 2011/83/EU, Artikel 16 Buchstabe m).</p>
 
     <h3>10. Vertragsmäßigkeit</h3>
-    <p>Als Verbraucher genießen Sie die gesetzliche Gewährleistung für digitale Inhalte (französisches
-      Verbrauchergesetzbuch, Artikel L224-25-1 ff.): Entspricht der erhaltene Strauß nicht seiner Beschreibung,
-      schreiben Sie uns, und wir stellen den vertragsgemäßen Zustand her oder erstatten Ihnen andernfalls den Preis.</p>
+    <p>Als Verbraucher genießen Sie die gesetzliche Gewährleistung der Vertragsmäßigkeit für digitale Inhalte
+      (französisches Verbrauchergesetzbuch, Artikel L224-25-1 ff.). Wird Ihnen der Strauß nicht bereitgestellt, oder wird
+      er während seiner dreißig Tage nicht wie beschrieben angezeigt oder funktioniert er nicht, schreiben Sie uns: Wir
+      stellen den vertragsmäßigen Zustand innerhalb angemessener Frist kostenlos her und verschieben sein Verblühen um so
+      viele Tage, wie er nicht verfügbar war. Ist dies unmöglich, schlägt es fehl oder erfolgt es nicht innerhalb dieser
+      Frist, oder ist der Mangel schwerwiegend, können Sie eine Minderung des Preises oder die Beendigung des Vertrags und
+      die Erstattung verlangen, unter den gesetzlich vorgesehenen Bedingungen.</p>
+    <p>Außerhalb dieser Fälle und des in Artikel 11 vorgesehenen Umtauschs wird keine Erstattung gewährt.</p>
 
-    <h3>11. Haftung</h3>
+    <h3>11. Umtausch innerhalb von 24 Stunden und Guthaben</h3>
+    <p>Aus Kulanz, ohne dass dies ein Widerrufsrecht darstellt, können Sie einen gekauften Strauß einmal innerhalb von 24
+      Stunden nach dem Kauf umtauschen, sofern er nicht verschenkt wurde. Der Umtausch erfolgt in Ihrem Konto gegen einen
+      noch verfügbaren Strauß des Tages zum gleichen oder einem niedrigeren Preis. Der neue Strauß lebt dreißig Tage ab
+      dem Umtausch; der zurückgegebene Strauß verlässt Ihr Konto und wird wieder angeboten.</p>
+    <p>Kostet der neue Strauß weniger, wird die Differenz Ihrem Guthaben gutgeschrieben: Es wird kein Geld ausgezahlt. Das
+      Guthaben wird automatisch von Ihren nächsten Käufen abgezogen; es ist weder erstattungsfähig noch übertragbar und
+      erlischt mit dem Konto. Ein Umtausch ergibt eine Gutschrift für den zurückgegebenen Strauß und eine Rechnung für
+      den neuen.</p>
+
+    <h3>12. Anfechtung einer Zahlung</h3>
+    <p>Wenn Sie bei Ihrer Bank die Zahlung für einen Ihnen gelieferten Strauß anfechten, übermitteln wir Stripe die
+      Nachweise der Bestellung, darunter Ihr datiertes Verlangen nach sofortiger Lieferung. Wird die Anfechtung zu Ihren
+      Gunsten entschieden, wird der Strauß entzogen, oder der im Umtausch erhaltene, auch aus dem Konto der Person, der er
+      geschenkt wurde, und das Guthaben aus diesem Umtausch wird gestrichen. Schreiben Sie uns zuerst: Eine Schwierigkeit
+      lässt sich so oft schneller lösen.</p>
+
+    <h3>13. Haftung</h3>
     <p>Die Zahlung wird von Stripe abgewickelt, die SMS werden von OVHcloud versendet. Für deren Ausfälle oder Änderungen
       haften wir nicht. Keine Bestimmung dieser Bedingungen schränkt die gesetzlichen Rechte von Verbrauchern ein.</p>
 
-    <h3>12. Beschwerden und Schlichtung</h3>
+    <h3>14. Beschwerden und Schlichtung</h3>
     <p>Schreiben Sie uns zuerst (siehe <a href="{{legal}}#contact">Kontakt</a>); wir antworten innerhalb von 30 Tagen.
       Findet sich keine Lösung, kann der Verbraucher den Streit kostenlos unserem Verbraucherschlichter vorlegen:
       <span class="a-remplir">[Name, Website und Postanschrift des Schlichters]</span>.</p>
 
-    <h3>13. Anwendbares Recht</h3>
+    <h3>15. Anwendbares Recht</h3>
     <p>Diese Bedingungen unterliegen französischem Recht. Verbraucher behalten den Schutz der zwingenden Vorschriften des
       Landes, in dem sie wohnen, und können einen Rechtsstreit vor die Gerichte dieses Landes oder Frankreichs bringen.</p>
   </section>
@@ -407,6 +432,16 @@ export default {
     accountSoon: 'Ihr Konto kommt bald: Sie melden sich mit Ihrer Mobilnummer an und finden hier Ihre Sträuße.',
     accountSignIn: 'Anmelden',
     hello: 'Hallo {name}',
+    firstNameNeeded: 'Geben Sie Ihren Vornamen an, um Ihr Konto anzulegen.',
+    credit: 'Guthaben: {amount}, wird von Ihrem nächsten Kauf abgezogen.',
+    exchangeUntil: 'Umtauschen (bis {t})',
+    exchangeFor: 'Umtauschen gegen',
+    exchangeConfirm: 'Umtausch bestätigen',
+    exchangeDiff: 'Die Differenz von {amount} geht auf Ihr Guthaben.',
+    exchangeSame: 'Gleicher Preis: nichts geht auf Ihr Guthaben.',
+    exchangeNone: 'Kein Strauß des Tages ist zu diesem Preis oder günstiger verfügbar.',
+    exchangeDone: 'Umgetauscht: Ihr neuer Strauß lebt dreißig Tage.',
+    exchangeRefused: 'Dieser Umtausch ist nicht möglich.',
     copyNo: 'Exemplar Nr. {n}',
     noBouquet: 'Noch kein Strauß in Ihrem Konto.',
     giftsSoon: 'Geschenke kommen bald: Hier öffnen Sie den Strauß, den man Ihnen schenkt.',

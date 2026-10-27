@@ -29,7 +29,7 @@ async function cookie(env, n) {
   horloge += 2 * 60_000;
   await demande(req('POST', '/api/sms/demande', { numero: n }), env, horloge);
   const code = env.__sms.at(-1).message.match(/\d{6}/)[0];
-  const r = await verifie(req('POST', '/api/sms/verifie', { numero: n, code }), env, horloge);
+  const r = await verifie(req('POST', '/api/sms/verifie', { numero: n, code, prenom: 'Léa' }), env, horloge);
   return r.headers.get('set-cookie').split(';')[0];
 }
 const acheter = (env, c, produit = 'citrine', extra = {}) => worker.fetch(req('POST', '/api/achat', { produit, renonce: true, texte: TEXTE, langue: 'fr', retour: RETOUR, ...extra }, { cookie: c }), env);

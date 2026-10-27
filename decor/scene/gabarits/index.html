@@ -94,17 +94,21 @@
       <div id="pf-connexion">
         <p class="rayon-aide">{{index.accountHelp}}</p>
         <div class="connexion-ligne">
+          <label class="champ"><span>{{index.firstName}}</span><input id="pf-prenom" name="prenom" autocomplete="given-name" maxlength="40"></label>
           <label class="champ"><span>{{index.phone}}</span><input id="pf-numero" name="numero" type="tel" autocomplete="tel" inputmode="tel" maxlength="20"></label>
           <button class="connexion-envoyer" id="pf-envoyer" type="button">{{index.sendCode}}</button>
         </div>
         <div class="connexion-ligne" id="pf-etape2" hidden>
           <label class="champ"><span>{{index.code}}</span><input id="pf-code" name="code" inputmode="numeric" autocomplete="one-time-code" maxlength="6"></label>
-          <label class="champ"><span>{{index.firstName}}</span><input id="pf-prenom" name="prenom" autocomplete="given-name" maxlength="40"></label>
           <button class="connexion-envoyer" id="pf-valider" type="button">{{index.signIn}}</button>
         </div>
       </div>
+      <!-- signed in: the credit, the bouquets (with the exchange within 24 hours), the invoices (api/: lot C9) -->
       <div id="pf-compte" hidden>
+        <p class="rayon-aide" id="pf-cagnotte" hidden></p>
         <ul class="pf-bouquets" id="pf-bouquets"></ul>
+        <p class="pf-sous" id="pf-factures-titre" hidden>{{index.invoices}}</p>
+        <ul class="pf-factures" id="pf-factures"></ul>
         <button class="connexion-envoyer" id="pf-sortir" type="button">{{index.signOut}}</button>
       </div>
       <p class="rayon-etat" id="profil-etat" role="status" aria-live="polite"></p>
@@ -136,12 +140,12 @@
     <div class="connexion" id="connexion" hidden>
       <p class="connexion-titre">{{index.signInTitle}}</p>
       <div class="connexion-ligne">
+        <label class="champ"><span>{{index.firstName}}</span><input id="cx-prenom" name="prenom" autocomplete="given-name" maxlength="40"></label>
         <label class="champ"><span>{{index.phone}}</span><input id="cx-numero" name="numero" type="tel" autocomplete="tel" inputmode="tel" maxlength="20"></label>
         <button class="connexion-envoyer" id="cx-envoyer" type="button">{{index.sendCode}}</button>
       </div>
       <div class="connexion-ligne" id="cx-etape2" hidden>
         <label class="champ"><span>{{index.code}}</span><input id="cx-code" name="code" inputmode="numeric" autocomplete="one-time-code" maxlength="6"></label>
-        <label class="champ"><span>{{index.firstName}}</span><input id="cx-prenom" name="prenom" autocomplete="given-name" maxlength="40"></label>
       </div>
     </div>
     <p class="accord-cgv">{{index.accept}}</p>

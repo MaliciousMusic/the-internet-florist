@@ -71,14 +71,15 @@ export default {
     phone: 'Numéro de mobile',
     sendCode: 'Recevoir le code',
     code: 'Code reçu',
-    firstName: 'Prénom (facultatif)',
+    firstName: 'Prénom',
     giftsTitle: 'Mes cadeaux',
     giftsHelp: 'Saisissez le prénom de la personne qui vous offre un bouquet, et le code qu’elle vous a transmis.',
     giftSender: 'Son prénom',
     giftCode: 'Code',
     giftOpen: 'Ouvrir le cadeau',
     accountTitle: 'Mon compte',
-    accountHelp: 'Connectez-vous avec votre numéro de mobile : un code vous est envoyé par SMS.',
+    accountHelp: 'Votre prénom et votre numéro de mobile : un code vous est envoyé par SMS.',
+    invoices: 'Factures',
     signIn: 'Se connecter',
     signOut: 'Se déconnecter',
   },
@@ -194,9 +195,10 @@ export default {
     <p>Un bouquet ne confère aucun droit à un revenu ni à une quelconque part, et ne se revend pas sur ce site.</p>
 
     <h3>3. Votre compte</h3>
-    <p>Pour acheter ou recevoir un bouquet, vous créez un compte avec votre numéro de téléphone mobile, vérifié par un
-      code envoyé par SMS. Les bouquets achetés ou reçus sont attachés à ce compte. Vous êtes responsable de l’accès à
-      votre numéro : prévenez-nous si vous en changez.</p>
+    <p>Pour acheter ou recevoir un bouquet, vous créez un compte avec votre prénom et votre numéro de téléphone mobile,
+      vérifié par un code envoyé par SMS. Vos bouquets, vos factures et votre cagnotte (article 11) sont attachés à ce
+      compte. Vous êtes responsable de l’accès à votre numéro : prévenez-nous si vous en changez. Si vous supprimez votre
+      compte, vos bouquets et votre cagnotte disparaissent avec lui.</p>
 
     <h3>4. Ce que vous obtenez</h3>
     <p>L’achat vous donne le droit personnel et non exclusif de regarder le bouquet sur ce site et de l’afficher sur vos
@@ -217,9 +219,10 @@ export default {
       vaut commande avec obligation de paiement. Un exemplaire vous est réservé pendant la durée de la page de paiement,
       trente minutes au plus.</p>
 
-    <h3>7. Livraison et reçu</h3>
+    <h3>7. Livraison et facture</h3>
     <p>Le bouquet est ajouté à votre compte dès que Stripe confirme le paiement. Un reçu vous est remis : il indique le
-      bouquet, son prix, la date et votre demande de livraison immédiate.</p>
+      bouquet, son prix, la date et votre demande de livraison immédiate. Une facture numérotée est disponible dans votre
+      compte, à imprimer ou à enregistrer.</p>
 
     <h3>8. Offrir un bouquet</h3>
     <p>Lors de l’achat, vous pouvez offrir le bouquet et composer son arrivée : un court message porté par les insectes,
@@ -238,20 +241,41 @@ export default {
 
     <h3>10. Conformité</h3>
     <p>Si vous êtes un consommateur, vous bénéficiez de la garantie légale de conformité applicable aux contenus
-      numériques (Code de la consommation, articles L224-25-1 et suivants) : si le bouquet reçu ne correspond pas à sa
-      description, écrivez-nous et nous le mettrons en conformité ou, à défaut, nous vous rembourserons.</p>
+      numériques (Code de la consommation, articles L224-25-1 et suivants). Si le bouquet ne vous est pas fourni, ou s’il
+      ne s’affiche pas ou ne fonctionne pas comme décrit pendant ses trente jours, écrivez-nous : nous le mettons en
+      conformité sans frais dans un délai raisonnable, et nous repoussons sa fanaison d’autant de jours qu’il a été
+      indisponible. Si la mise en conformité est impossible, échoue ou n’intervient pas dans ce délai, ou si le défaut
+      est grave, vous pouvez obtenir une réduction du prix ou la résolution du contrat et son remboursement, dans les
+      conditions prévues par la loi.</p>
+    <p>En dehors de ces cas et de l’échange prévu à l’article 11, aucun remboursement n’est accordé.</p>
 
-    <h3>11. Responsabilité</h3>
+    <h3>11. Échange sous 24 heures et cagnotte</h3>
+    <p>À titre commercial, sans que cela constitue un droit de rétractation, vous pouvez échanger une fois un bouquet
+      que vous avez acheté, dans les 24 heures qui suivent son achat, s’il n’a pas été offert. L’échange se fait depuis
+      votre compte, contre un bouquet du jour encore disponible dont le prix est égal ou inférieur. Le nouveau bouquet vit
+      trente jours à compter de l’échange ; le bouquet rendu quitte votre compte et revient en vente.</p>
+    <p>Si le nouveau bouquet coûte moins cher, la différence est portée sur votre cagnotte : aucune somme ne vous est
+      versée. La cagnotte est déduite automatiquement de vos achats suivants ; elle n’est ni remboursable ni cessible, et
+      disparaît avec le compte. Un échange donne lieu à un avoir pour le bouquet rendu et à une facture pour le nouveau.</p>
+
+    <h3>12. Contestation d’un paiement</h3>
+    <p>Si vous contestez auprès de votre banque le paiement d’un bouquet qui vous a été livré, nous transmettons à Stripe
+      les preuves de la commande, dont votre demande datée de livraison immédiate. Si la contestation aboutit en votre
+      faveur, le bouquet est retiré, ou celui reçu en échange, y compris du compte de la personne à qui il a été offert,
+      et la cagnotte issue de cet échange est annulée. Écrivez-nous d’abord : une difficulté se règle souvent plus vite
+      ainsi.</p>
+
+    <h3>13. Responsabilité</h3>
     <p>Le paiement est opéré par Stripe et les SMS sont envoyés par OVHcloud. Nous ne sommes pas responsables de leurs
       interruptions ni de leurs modifications. Aucune stipulation des présentes conditions ne limite les droits que les
       consommateurs tiennent de la loi.</p>
 
-    <h3>12. Réclamations et médiation</h3>
+    <h3>14. Réclamations et médiation</h3>
     <p>Écrivez-nous d’abord (voir <a href="{{legal}}#contact">Contact</a>) ; nous répondons sous 30 jours. À défaut de
       solution, le consommateur peut soumettre gratuitement le litige à notre médiateur de la consommation :
       <span class="a-remplir">[nom, site internet et adresse postale du médiateur]</span>.</p>
 
-    <h3>13. Droit applicable</h3>
+    <h3>15. Droit applicable</h3>
     <p>Les présentes conditions sont soumises au droit français. Le consommateur conserve la protection que lui assurent
       les dispositions impératives du droit du pays où il réside, et peut porter un litige devant les juridictions de
       ce pays ou de la France.</p>
@@ -401,6 +425,16 @@ export default {
     accountSoon: 'Votre compte arrive bientôt : vous vous connecterez avec votre numéro de mobile, et retrouverez ici vos bouquets.',
     accountSignIn: 'Connexion',
     hello: 'Bonjour {name}',
+    firstNameNeeded: 'Indiquez votre prénom pour créer votre compte.',
+    credit: 'Cagnotte : {amount}, déduite de votre prochain achat.',
+    exchangeUntil: 'Échanger (jusqu’à {t})',
+    exchangeFor: 'Échanger contre',
+    exchangeConfirm: 'Confirmer l’échange',
+    exchangeDiff: 'La différence, {amount}, ira dans votre cagnotte.',
+    exchangeSame: 'Même prix : rien ne va dans la cagnotte.',
+    exchangeNone: 'Aucun bouquet du jour à ce prix ou moins n’est disponible.',
+    exchangeDone: 'Échange fait : votre nouveau bouquet vit trente jours.',
+    exchangeRefused: 'Cet échange n’est pas possible.',
     copyNo: 'exemplaire n° {n}',
     noBouquet: 'Aucun bouquet sur votre compte pour l’instant.',
     giftsSoon: 'Les cadeaux arrivent bientôt : vous pourrez ouvrir ici le bouquet que l’on vous offre.',

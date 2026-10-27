@@ -93,6 +93,62 @@
   font-size: 13px;
 }
 
+/* the account (lot C9): the exchange within 24 hours under a bouquet, the invoices */
+.pf-bouquets li {
+  display: grid;
+  gap: 4px;
+}
+
+.pf-echange {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 8px;
+}
+
+.pf-echange select {
+  font: inherit;
+  padding: 4px 8px;
+  border-radius: 8px;
+  border: 1px solid rgb(0 0 0 / 0.18);
+  background: rgb(255 255 255 / 0.85);
+}
+
+.pf-lien {
+  justify-self: start;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.pf-diff {
+  flex-basis: 100%;
+  opacity: 0.85;
+}
+
+.pf-sous {
+  margin: 10px 0 2px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.pf-factures {
+  display: grid;
+  gap: 3px;
+  margin: 0 0 10px;
+  padding: 0;
+  list-style: none;
+  font-size: 13px;
+}
+
+.pf-factures a {
+  color: inherit;
+}
+
 .rayon-forme [hidden] {
   display: none;
 }

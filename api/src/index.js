@@ -1,9 +1,12 @@
 // index.js: the shop's account and gift server (decor/COMPTE.md), a Cloudflare Worker. It answers the site's pages,
 // which are served elsewhere (GitHub Pages today), with their cookie when they come from env.ORIGINES; and Belai Bureau,
-// with a bearer token. Lot C2: the account; lot C3: the purchase and the copies. Lots C4, C5 add the gifts.
+// with a bearer token. Lot C2: the account; lot C3: the purchase and the copies; lot C9: the invoices, the exchange within
+// 24 hours and the account's credit. Lots C4, C5 add the gifts.
 import { demande, verifie, moi, deconnexion, menage } from './compte.js';
 import { collection } from './collection.js';
-import { achat, commande, webhook, fauxStripe } from './achat.js';
+import { achat, commande, webhook, fauxStripe, menageCommandes } from './achat.js';
+import { echange } from './echange.js';
+import { factures, facture } from './factures.js';
 import { erreur } from './outils.js';
 
 const ROUTES = {
@@ -16,11 +19,14 @@ const ROUTES = {
   'GET /api/collection': collection,
   'POST /api/achat': achat,
   'POST /api/stripe/webhook': webhook,
+  'POST /api/echange': echange,
+  'GET /api/factures': factures,
 };
 // routes with an identifier in their path
 const AVEC_ID = [
   [/^GET \/api\/commande\/([\w-]{8,40})$/, commande],
   [/^(?:GET|POST) \/api\/faux-stripe\/([\w-]{8,40})$/, fauxStripe],
+  [/^GET \/api\/facture\/(\d{1,9})$/, facture],
 ];
 function route(cle) {
   if (ROUTES[cle]) return ROUTES[cle];
@@ -65,5 +71,6 @@ export default {
   },
   async scheduled(_ev, env) {
     await menage(env);
+    await menageCommandes(env);
   },
 };

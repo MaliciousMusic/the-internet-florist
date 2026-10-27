@@ -64,6 +64,16 @@ export function numero(brut, pays = 'FR') {
   }
   return /^\+[1-9]\d{7,14}$/.test(s) ? s : null;
 }
+// a number shown on an invoice: its prefix and its last two digits only (+33 •• •• •• •• 22)
+export function masque(n) {
+  if (typeof n !== 'string' || !/^\+\d{8,15}$/.test(n)) return null;
+  const p = Object.values(PREFIXES).filter((x) => n.startsWith('+' + x)).sort((x, y) => y.length - x.length)[0] || n.slice(1, 3);
+  const reste = n.slice(1 + p.length);
+  const c = [...('•'.repeat(reste.length - 2) + reste.slice(-2))];
+  const paires = [];
+  while (c.length) paires.unshift(c.splice(-2).join('')); // in pairs from the right, as numbers are read
+  return `+${p} ${paires.join(' ')}`;
+}
 // a first name as people write it: 1 to 40 letters, spaces, apostrophes and hyphens
 export function prenom(brut) {
   if (typeof brut !== 'string') return null;
