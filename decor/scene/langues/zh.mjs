@@ -399,7 +399,7 @@ export default {
     demoDevice: { pc: 'PC', mac: 'Mac', android: 'Android', iphone: 'iPhone' },
     demoDesk: ['在网站上点按“放到我的桌面”', '下载并安装 Belai Bureau', '登录：名字、手机号、短信验证码', '你的花束出现了', '选择一束花：它会落在你的桌面上', '拖动角落来调整大小', '拖到你喜欢的位置', '一键放在窗口前面或后面', '确认 ✓：鼠标回到桌面', '长按（6 秒）即可再次修改'],
     demoPhone: ['在网站上点按“放到我的手机”', '下载 Belai Bureau', '登录：名字、手机号、短信验证码', '你的花束出现了', '选择一束花：它会落在你的主屏幕上', '选择大小', '拖到你喜欢的位置', '确认 ✓', '长按即可再次修改'],
-    demoUi: { download: '下载', installing: '正在安装…', installed: '已安装', firstName: '名字', phone: '手机号码', code: '收到的验证码', signIn: '登录', bouquets: '我的花束' },
+    demoUi: { finder: '桌面', download: '下载', installing: '正在安装…', installed: '已安装', firstName: '名字', phone: '手机号码', code: '收到的验证码', signIn: '登录', bouquets: '我的花束' },
     copyNo: '第 {n} 份',
     noBouquet: '你的账户里还没有花束。',
     giftsSoon: '礼物功能即将推出：你可以在这里打开别人送你的花束。',

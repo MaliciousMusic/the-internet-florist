@@ -488,17 +488,18 @@
     scene.style.transform = s === 1 && !tx && !ty ? '' : `translate(${tx.toFixed(2)}px,${ty.toFixed(2)}px) scale(${s.toFixed(5)})`;
     if (window.TOILE) window.TOILE.vue(tx, ty, s, st);
   };
-  // the scene and the stage from where they are to (tx, ty, s); with stageOnly, the scene to rest and the stage alone there
-  function zoomTo(tx, ty, s, stageOnly = false) {
+  // the scene and the stage from where they are to (tx, ty, s) in ms (0: at once); with stageOnly, the scene to rest and the
+  // stage alone there
+  function zoomTo(tx, ty, s, stageOnly = false, ms = 900) {
     cancelAnimationFrame(zoomRaf);
     const from = { ...zoom }, fromSt = { ...zoomSt };
     const toSt = { tx, ty, s };
     const to = stageOnly ? { tx: 0, ty: 0, s: 1 } : toSt;
     const mix = (a, b, e) => ({ tx: a.tx + (b.tx - a.tx) * e, ty: a.ty + (b.ty - a.ty) * e, s: a.s + (b.s - a.s) * e });
-    if (reduced) return applyZoom(to, toSt);
+    if (reduced || !ms) return applyZoom(to, toSt);
     const t0 = performance.now();
     const step = (now) => {
-      const u = Math.min(1, (now - t0) / 900);
+      const u = Math.min(1, (now - t0) / ms);
       const e = zoomEase(u);
       applyZoom(mix(from, to, e), mix(fromSt, toSt, e));
       if (u < 1) zoomRaf = requestAnimationFrame(step);

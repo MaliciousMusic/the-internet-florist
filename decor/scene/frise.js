@@ -205,7 +205,8 @@
   let fold = 0, foldTo = 0, foldPlace = null, foldLast = 0;
   // The demo "On your desktop" (demo.mjs, owner 2026-10-27) folds the whole world into the ground but the bouquets: every
   // layer of the canvas other than bq-0..3 sinks (its pivot, which placeWorld leaves alone) by a screen and a half, in 1.1 s,
-  // and rises again; the sky (the page's, behind the canvas) stays.
+  // and rises again; the sky (the page's, behind the canvas) stays. (The drop in each layer's own units: the world's layers are
+  // scaled k CSS px a unit, small on a phone, the insects' are in CSS px.)
   const REPLIE_S = 1.1;
   let replie = 0, replieTo = 0, replieLast = 0;
   const replieLayers = () => [...M.bandes.map((b) => 'bande:' + b.id), 'piliers', 'entre-0', 'entre-1', 'entre-2', 'touffes', 'premier', 'insectes-loin', 'insectes-milieu', 'insectes-devant'];
@@ -214,10 +215,13 @@
     replieLast = now;
     if (replie === replieTo) return;
     replie = RM ? replieTo : replieTo > replie ? Math.min(replieTo, replie + dt / REPLIE_S) : Math.max(replieTo, replie - dt / REPLIE_S);
-    const drop = (foldEase(replie) * 1.5 * WH) | 0;
+    const drop = foldEase(replie) * 1.6 * innerHeight;
     for (const n of replieLayers()) {
       const L = toile.layer(n);
-      if (L) L.pivot.y = -drop;
+      if (!L) continue;
+      L.pivot.y = -drop / (L.scale.y || 1);
+      // down, they are hidden: the demo then zooms the stage out to size the bouquet, which would bring them back in view
+      L.visible = replie < 1;
     }
   };
   const foldEase = (t) => (t < 0.5 ? 4 * t * t * t : 1 - (-2 * t + 2) ** 3 / 2);
