@@ -50,11 +50,17 @@
   transform-origin: 50% 60%;
 }
 
-.demo-appareil.entre {
+.demo-appareil-in {
+  position: absolute;
+  inset: 0;
+  transform-origin: 50% 60%;
+}
+
+.demo-appareil-in.entre {
   animation: appareil-entre 1.15s cubic-bezier(0.2, 0.8, 0.2, 1) both;
 }
 
-.demo-appareil.parait {
+.demo-appareil-in.parait {
   animation: blanc 0.35s ease both;
 }
 
@@ -897,7 +903,7 @@
   border: 1.5px dashed rgb(255 255 255 / 0.9);
   border-radius: calc(var(--u) * 0.9);
   box-shadow: 0 0 0 1px rgb(20 40 80 / 0.25);
-  transition: left 0.9s cubic-bezier(0.3, 0.1, 0.2, 1), top 0.9s cubic-bezier(0.3, 0.1, 0.2, 1), width 0.9s cubic-bezier(0.3, 0.1, 0.2, 1), height 0.9s cubic-bezier(0.3, 0.1, 0.2, 1), opacity 0.3s ease;
+  transition: opacity 0.3s ease;
   animation: coche-pop 0.42s cubic-bezier(0.3, 1.6, 0.5, 1);
 }
 
@@ -970,13 +976,15 @@
   display: none;
 }
 
+/* (in a column on the frame's right, clear of the dock) */
 .tel .d-tailles {
   position: absolute;
-  left: 50%;
-  bottom: calc(var(--u) * -9);
+  left: calc(100% + var(--u) * 3);
+  top: 50%;
   display: flex;
+  flex-direction: column;
   gap: calc(var(--u) * 2);
-  transform: translateX(-50%);
+  transform: translateY(-50%);
 }
 
 .tel .d-tailles i {
@@ -1394,7 +1402,8 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .demo-appareil.entre,
+  .demo-appareil-in.entre,
+  .demo-appareil-in.parait,
   .demo-appareil.sort,
   .d-cadre,
   .d-app,
@@ -1444,4 +1453,279 @@
 
 .demo-bientot[hidden] {
   display: none;
+}
+
+/* ---------- the motion (owner, 2026-10-27: « du motion design dynamique, des fx sympas ») */
+/* a click's ripple */
+.d-onde {
+  position: absolute;
+  width: calc(var(--u) * 4);
+  height: calc(var(--u) * 4);
+  margin: calc(var(--u) * -2) 0 0 calc(var(--u) * -2);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgb(10 108 219 / 0.28), rgb(10 108 219 / 0) 70%);
+  box-shadow: 0 0 0 1.5px rgb(10 108 219 / 0.55);
+  pointer-events: none;
+  animation: onde 0.62s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  z-index: 4;
+}
+
+.tel .d-onde {
+  width: calc(var(--u) * 16);
+  height: calc(var(--u) * 16);
+  margin: calc(var(--u) * -8) 0 0 calc(var(--u) * -8);
+  background: radial-gradient(circle, rgb(255 255 255 / 0.55), rgb(255 255 255 / 0) 70%);
+  box-shadow: 0 0 0 1.5px rgb(255 255 255 / 0.85);
+}
+
+@keyframes onde {
+  from {
+    transform: scale(0.3);
+    opacity: 1;
+  }
+  to {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+
+/* a target giving under the click */
+.appuye {
+  transform: scale(0.94);
+  filter: brightness(0.92);
+  transition: transform 0.08s ease, filter 0.08s ease;
+}
+
+/* the caret in the field being typed into */
+.d-champ.saisie {
+  border-color: #0a6cdb;
+  box-shadow: 0 0 0 2px rgb(10 108 219 / 0.18);
+}
+
+.d-champ.saisie::after {
+  content: '';
+  display: inline-block;
+  width: 1.5px;
+  height: 1em;
+  margin-left: 1px;
+  vertical-align: -0.12em;
+  background: #0a6cdb;
+  animation: caret 1s steps(1) infinite;
+}
+
+@keyframes caret {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* the check that pops over the validated bouquet */
+.d-ok {
+  position: absolute;
+  width: calc(var(--u) * 9);
+  height: calc(var(--u) * 9);
+  margin: calc(var(--u) * -4.5) 0 0 calc(var(--u) * -4.5);
+  pointer-events: none;
+  animation: ok-pop 1.3s cubic-bezier(0.3, 1.6, 0.5, 1) forwards;
+  z-index: 4;
+}
+
+.tel .d-ok {
+  width: calc(var(--u) * 26);
+  height: calc(var(--u) * 26);
+  margin: calc(var(--u) * -13) 0 0 calc(var(--u) * -13);
+}
+
+.d-ok svg {
+  width: 100%;
+  height: 100%;
+}
+
+.d-ok circle {
+  fill: rgb(60 140 90 / 0.92);
+}
+
+.d-ok path {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 4.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 32;
+  stroke-dashoffset: 32;
+  animation: ok-trait 0.4s 0.15s ease-out forwards;
+}
+
+@keyframes ok-pop {
+  0% {
+    transform: scale(0.2);
+    opacity: 0;
+  }
+  25% {
+    transform: scale(1.12);
+    opacity: 1;
+  }
+  40% {
+    transform: scale(1);
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes ok-trait {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* the launcher: the site's icon, popping into the bar once installed, its name over it a moment */
+.ic-app img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 22%;
+  filter: drop-shadow(0 1px 1px rgb(0 0 0 / 0.16));
+}
+
+.ic-belai {
+  position: relative;
+}
+
+.ic-nom {
+  position: absolute;
+  left: 50%;
+  bottom: 125%;
+  padding: 0.25em 0.6em;
+  border-radius: 999px;
+  background: #111;
+  color: #fff;
+  font: 700 calc(var(--u) * 1.15) / 1.2 system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  white-space: nowrap;
+  transform: translateX(-50%) scale(0.6);
+  transform-origin: 50% 100%;
+  opacity: 0;
+  transition: opacity 0.25s ease, transform 0.35s cubic-bezier(0.3, 1.6, 0.5, 1);
+  pointer-events: none;
+}
+
+.tel .ic-nom {
+  font-size: calc(var(--u) * 3.6);
+}
+
+.installe-neuf .ic-nom {
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
+}
+
+.demo-ecran.installe .ic-belai {
+  animation: lanceur 0.6s cubic-bezier(0.3, 1.6, 0.5, 1);
+}
+
+@keyframes lanceur {
+  from {
+    transform: scale(0) translateY(40%);
+  }
+}
+
+/* the Windows-kind tray, by the clock: Belai Bureau's small icon */
+.os-plateau {
+  position: absolute;
+  right: calc(var(--u) * 6);
+  display: flex;
+}
+
+.ic.ic-mini {
+  width: calc(var(--u) * 1.5);
+  height: calc(var(--u) * 1.5);
+}
+
+/* the download: its icon, its count */
+.d-dl-icone img {
+  width: 100%;
+  height: 100%;
+  border-radius: 22%;
+}
+
+.d-dl-icone {
+  background: none;
+}
+
+.d-dl-pc {
+  font-variant-numeric: tabular-nums;
+  color: #5b6779;
+  font-size: 0.85em;
+}
+
+/* the app's sign-in under its logo */
+.d-app-logo {
+  justify-self: center;
+  width: calc(var(--u) * 4.4);
+  height: calc(var(--u) * 4.4);
+  border-radius: 22%;
+}
+
+.tel .d-app-logo {
+  width: calc(var(--u) * 16);
+  height: calc(var(--u) * 16);
+}
+
+.d-bouton {
+  transition: transform 0.08s ease, filter 0.08s ease;
+}
+
+/* the step under way: its number pops, its words come in; legible over a device brought closer */
+.demo-etape .t,
+.demo-etape .n {
+  text-shadow: 0 0 10px #fff, 0 0 4px #fff, 0 0 2px #fff;
+}
+
+.demo-etape.en-cours .n {
+  animation: num-pop 0.5s cubic-bezier(0.3, 1.6, 0.5, 1);
+}
+
+.demo-etape.en-cours .t {
+  animation: mots 0.45s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+@keyframes num-pop {
+  from {
+    transform: scale(0.5);
+  }
+}
+
+@keyframes mots {
+  from {
+    transform: translateX(-10px);
+    opacity: 0;
+  }
+}
+
+.demo-etape .n {
+  display: inline-block;
+}
+
+.demo-etape .t {
+  display: inline-block;
+}
+
+/* the steps stay over the device brought closer */
+.demo-etapes,
+.demo-points,
+.demo-bientot {
+  z-index: 3;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .d-onde,
+  .d-ok,
+  .demo-etape.en-cours .n,
+  .demo-etape.en-cours .t,
+  .demo-ecran.installe .ic-belai {
+    animation: none;
+  }
 }

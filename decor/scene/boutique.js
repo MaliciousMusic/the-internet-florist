@@ -708,7 +708,8 @@
   });
   $('achat-demo').addEventListener('click', () => {
     if (!window.TOILE || !box) return openDemo(true);
-    (demoMod ||= import('./demo.mjs'))
+    // (with the digest of the demo's files: never an old module from a cache)
+    (demoMod ||= import(`./demo.mjs?v=${document.documentElement.dataset.demoV || ''}`))
       .then((m) => m.ouvrir(demoApi()))
       .catch((err) => {
         console.error('[demo]', err);
