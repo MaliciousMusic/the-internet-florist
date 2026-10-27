@@ -171,6 +171,8 @@
     shelf.classList.toggle('ouvert', !!panel);
     shelf.inert = !panel;
     for (const el of shelf.querySelectorAll('[data-rayon]')) el.hidden = el !== panel;
+    // (the pager hides while the account or the gifts are open: owner, 2026-10-27; boutique.css)
+    document.documentElement.dataset.rayon = panel ? name : '';
     if (window.Entete) Entete.rayon(name);
   }
   document.addEventListener('entete:rayon', (e) => {
@@ -227,19 +229,60 @@
     const fl = $('pf-factures');
     fl.textContent = '';
     const factures = (fs.status === 200 && fs.factures) || [];
-    $('pf-factures-titre').hidden = !factures.length;
+    $('pf-factures-vide').hidden = !!factures.length;
     for (const f of factures) {
       const li = document.createElement('li');
       const a = document.createElement('a');
       a.href = `${apiBase()}/api/facture/${f.numero}`;
       a.target = '_blank';
       a.rel = 'noopener';
-      a.textContent = `${f.ref} · ${day(f.emise)} · ${eur(f.total)}`;
+      a.innerHTML = '<span class="pf-ref"></span><span class="pf-date"></span><span class="pf-montant"></span>';
+      a.children[0].textContent = f.ref;
+      a.children[1].textContent = day(f.emise);
+      a.children[2].textContent = eur(f.total);
+      a.addEventListener('click', (e) => {
+        if (e.ctrlKey || e.metaKey || e.shiftKey) return;
+        e.preventDefault();
+        showInvoice(a.href);
+      });
       li.append(a);
       fl.append(li);
     }
+    // after-sales: a mail to the shop, with the first name and the bouquets of the account
+    const mail = (CFG && CFG.contact) || '';
+    const body = `${moi.compte.prenom || ''}\n\n${moi.bouquets.map((b) => `${(productOf(b.produit) || { nom: b.produit }).nom} n° ${b.numero} (${b.id})`).join('\n')}\n\n`;
+    $('pf-ecrire').href = `mailto:${mail}?subject=${encodeURIComponent(T.helpSubject)}&body=${encodeURIComponent(body)}`;
     $('pf-compte').hidden = false;
   }
+  // the sub-bar: one tab shown at a time, the arrows move between the icons
+  const tabs = ['profil', 'factures', 'sav'];
+  function showTab(name, focus) {
+    for (const t of tabs) {
+      const on = t === name;
+      const b = $(`pf-o-${t}`);
+      b.setAttribute('aria-selected', String(on));
+      b.tabIndex = on ? 0 : -1;
+      $(`pf-t-${t}`).hidden = !on;
+      if (on && focus) b.focus({ preventScroll: true });
+    }
+  }
+  for (const t of tabs) {
+    $(`pf-o-${t}`).addEventListener('click', () => showTab(t));
+    $(`pf-o-${t}`).addEventListener('keydown', (e) => {
+      const k = { ArrowRight: 1, ArrowLeft: -1 }[e.key];
+      if (k) showTab(tabs[(tabs.indexOf(t) + k + tabs.length) % tabs.length], true);
+    });
+  }
+  // an invoice in a window over the page, contained (owner, 2026-10-27): the server's page in a frame, printed from there
+  const win = $('facture-fenetre');
+  function showInvoice(url) {
+    $('facture-page').src = url;
+    win.showModal();
+  }
+  $('facture-fermer').addEventListener('click', () => win.close());
+  $('facture-imprimer').addEventListener('click', () => $('facture-page').contentWindow.print());
+  win.addEventListener('click', (e) => e.target === win && win.close());
+  win.addEventListener('close', () => ($('facture-page').src = 'about:blank'));
   // The exchange within 24 hours (owner, 2026-10-27): a button while it is open, then the bouquets of the day with a copy
   // left at the same price or less; the difference goes into the credit.
   function exchangeOf(b) {
@@ -251,22 +294,51 @@
     open.textContent = fill(T.exchangeUntil, { t: hour(b.echangeable) });
     box.append(open);
     open.addEventListener('click', () => {
+      if (box.querySelector('.pf-choix')) return;
       open.hidden = true;
       const own = productOf(b.produit);
       const max = own ? own.prix.centimes : 0;
       const choices = CFG.produits.filter((p) => p.id !== b.produit && p.prix && p.prix.centimes <= max && copiesOf(p) && copiesOf(p).left > 0);
       if (!choices.length) return void (pfNote.textContent = T.exchangeNone);
-      const sel = document.createElement('select');
+      // the bouquets to choose from: cards with their picture (the frieze's sprite), their name and their price
+      const sel = document.createElement('div');
+      sel.className = 'pf-choix';
+      sel.setAttribute('role', 'radiogroup');
       sel.setAttribute('aria-label', T.exchangeFor);
-      for (const p of choices) sel.append(new Option(`${p.nom} · ${eur(p.prix.centimes)}`, p.id));
       const why = document.createElement('span');
       why.className = 'pf-diff';
-      const diff = () => {
+      const pick = (card) => {
+        for (const c of sel.children) {
+          c.setAttribute('aria-checked', String(c === card));
+          c.tabIndex = c === card ? 0 : -1;
+        }
+        sel.value = card.dataset.id;
         const d = max - productOf(sel.value).prix.centimes;
         why.textContent = d > 0 ? fill(T.exchangeDiff, { amount: eur(d) }) : T.exchangeSame;
       };
-      sel.addEventListener('change', diff);
-      diff();
+      for (const p of choices) {
+        const c = document.createElement('button');
+        c.type = 'button';
+        c.className = 'pf-carte';
+        c.setAttribute('role', 'radio');
+        c.dataset.id = p.id;
+        c.innerHTML = '<img alt="" loading="lazy" decoding="async"><span class="pf-nom"></span><span class="pf-prix"></span>';
+        c.children[0].src = `bouquets/${p.id}/sprites/frise.webp`;
+        c.children[1].textContent = p.nom;
+        c.children[2].textContent = eur(p.prix.centimes);
+        c.addEventListener('click', () => pick(c));
+        c.addEventListener('keydown', (e) => {
+          const k = { ArrowRight: 1, ArrowDown: 1, ArrowLeft: -1, ArrowUp: -1 }[e.key];
+          if (!k) return;
+          e.preventDefault();
+          const all = [...sel.children];
+          const n = all[(all.indexOf(c) + k + all.length) % all.length];
+          pick(n);
+          n.focus({ preventScroll: true });
+        });
+        sel.append(c);
+      }
+      pick(sel.children[0]);
       const go = document.createElement('button');
       go.type = 'button';
       go.className = 'connexion-envoyer';
@@ -283,7 +355,7 @@
         copiesLeft().catch(() => {});
       });
       box.append(sel, why, go);
-      sel.focus({ preventScroll: true });
+      sel.children[0].focus({ preventScroll: true });
     });
     return box;
   }

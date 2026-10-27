@@ -76,15 +76,18 @@ export async function facture(req, env, numero, now = Date.now()) {
   const html = `<!doctype html><html lang="fr"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>${esc(titre)}</title>
 <style>
-body{font:15px/1.5 system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;color:#1d2420;max-width:720px;margin:40px auto;padding:0 20px}
+html{background:#eef2ef}body{font:14.5px/1.5 system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;color:#1d2420;margin:0;padding:24px 16px 32px}
+.f{box-sizing:border-box;max-width:680px;margin:0 auto;padding:34px 38px 30px;background:#fff;border:1px solid #dfe5e1;border-radius:14px;box-shadow:0 6px 24px rgb(20 40 30 / .08)}
+@media (max-width:560px){.f{padding:22px 18px}}.cadre button{display:none}
 h1{font-size:24px;margin:0 0 4px}.m{color:#5b665f;margin:0 0 28px}
 .p{display:flex;gap:32px;flex-wrap:wrap;margin-bottom:28px}.p div{flex:1 1 240px}.p h2{font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:#5b665f;margin:0 0 6px}
 table{width:100%;border-collapse:collapse;margin-bottom:20px}th,td{text-align:left;padding:8px 6px;border-bottom:1px solid #dfe5e1;vertical-align:top}
 th{font-size:13px;color:#5b665f;font-weight:600}td.n,th.n{text-align:right;white-space:nowrap}
 .t td{font-weight:700;border-bottom:0}.r{margin:0 0 24px}.r td{border:0;padding:3px 6px}.x{font-size:13px;color:#5b665f}
 button{font:inherit;padding:8px 16px;border-radius:999px;border:1px solid #2f6b4f;background:#2f6b4f;color:#fff;cursor:pointer}
-@media print{button{display:none}body{margin:0}}
+@media print{button{display:none}html{background:none}body{padding:0}.f{max-width:none;border:0;box-shadow:none;padding:0}}
 </style>
+<div class="f">
 <h1>${esc(titre)}</h1>
 <p class="m">Émis le ${esc(jour(f.emise))}${avoir && f.annule ? ` · annule la facture ${esc(ref({ type: 'facture', numero: f.annule }))}` : ''}</p>
 <div class="p">
@@ -102,6 +105,8 @@ button{font:inherit;padding:8px 16px;border-radius:999px;border:1px solid #2f6b4
     .map(([k, v]) => `<tr><td>${esc(k)}</td><td class="n">${eur(v)}</td></tr>`)
     .join('')}</table>
 <button onclick="print()">Imprimer ou enregistrer en PDF</button>
+</div>
+<script>if (window.top !== window) document.documentElement.classList.add('cadre')</script>
 </html>`;
   return new Response(html, { headers: { 'content-type': 'text/html; charset=utf-8', 'cache-control': 'no-store' } });
 }
