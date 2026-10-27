@@ -396,6 +396,8 @@ export default {
     demoPause: '暂停',
     demoReplay: '重看',
     demoDevices: '设备',
+    demoSoon: '即将推出',
+    demoSoonOn: '{device} 版即将推出',
     demoDevice: { pc: 'PC', mac: 'Mac', android: 'Android', iphone: 'iPhone' },
     demoDesk: ['在网站上点按“放到我的桌面”', '下载并安装 Belai Bureau', '登录：名字、手机号、短信验证码', '你的花束出现了', '选择一束花：它会落在你的桌面上', '拖动角落来调整大小', '拖到你喜欢的位置', '一键放在窗口前面或后面', '确认 ✓：鼠标回到桌面', '长按（6 秒）即可再次修改'],
     demoPhone: ['在网站上点按“放到我的手机”', '下载 Belai Bureau', '登录：名字、手机号、短信验证码', '你的花束出现了', '选择一束花：它会落在你的主屏幕上', '选择大小', '拖到你喜欢的位置', '确认 ✓', '长按即可再次修改'],

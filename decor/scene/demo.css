@@ -1405,3 +1405,43 @@
     animation: none;
   }
 }
+
+/* the devices Belai Bureau does not exist for yet (owner, 2026-10-27): a small "coming soon" on their button, and over the
+   device while it is shown */
+.demo-bientot-pastille {
+  margin-left: 2px;
+  padding: 2px 6px;
+  border-radius: 999px;
+  background: #fff3c4;
+  color: #6b5200;
+  font: 900 10.5px/1.2 'Nunito Demo', 'Nunito', system-ui, sans-serif;
+}
+
+.demo-app-btn[aria-checked='true'] .demo-bientot-pastille {
+  background: #ffd84d;
+  color: #111;
+}
+
+@media (max-width: 520px) {
+  .demo-bientot-pastille {
+    display: none;
+  }
+}
+
+.demo-bientot {
+  position: fixed;
+  left: 50%;
+  margin: 0;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: #fff3c4;
+  color: #4d3b00;
+  font: 900 14px/1.2 'Nunito Demo', 'Nunito', system-ui, sans-serif;
+  white-space: nowrap;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.demo-bientot[hidden] {
+  display: none;
+}

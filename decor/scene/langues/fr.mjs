@@ -453,6 +453,8 @@ export default {
     demoPause: 'Pause',
     demoReplay: 'Revoir',
     demoDevices: 'Appareil',
+    demoSoon: 'Bientôt',
+    demoSoonOn: 'Bientôt disponible sur {device}',
     demoDevice: { pc: 'PC', mac: 'Mac', android: 'Android', iphone: 'iPhone' },
     demoDesk: ['Sur le site, touchez « Sur mon bureau »', 'Téléchargez Belai Bureau et installez-le', 'Connectez-vous : prénom, numéro, code reçu par SMS', 'Vos bouquets s’affichent', 'Choisissez un bouquet : il se pose sur votre bureau', 'Tirez le coin pour choisir sa taille', 'Glissez-le où vous voulez', 'Devant ou derrière les fenêtres, d’un clic', 'Validez ✓ : la souris repasse au bureau', 'Un appui long (6 s) pour le modifier à nouveau'],
     demoPhone: ['Sur le site, touchez « Sur mon téléphone »', 'Téléchargez Belai Bureau', 'Connectez-vous : prénom, numéro, code reçu par SMS', 'Vos bouquets s’affichent', 'Choisissez un bouquet : il se pose sur votre écran d’accueil', 'Choisissez sa taille', 'Glissez-le où vous voulez', 'Validez ✓', 'Un appui long pour le modifier à nouveau'],
